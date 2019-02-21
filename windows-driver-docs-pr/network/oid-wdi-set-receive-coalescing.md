@@ -1,0 +1,77 @@
+---
+title: OID_WDI_SET_RECEIVE_COALESCING
+description: OID_WDI_SET_RECEIVE_COALESCING は、パケットの結合のパケット フィルターを追加する、ホストによって使用されます。
+ms.assetid: c8856813-0d81-4735-95cc-d9b5dc6ede87
+ms.date: 07/18/2017
+keywords:
+- OID_WDI_SET_RECEIVE_COALESCING ネットワーク ドライバーが Windows Vista 以降
+ms.localizationpriority: medium
+ms.openlocfilehash: 335c6473e06e133ac2c4fd33aca38d38f1fc859c
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56559671"
+---
+# <a name="oidwdisetreceivecoalescing"></a>OID\_WDI\_設定\_受信\_COALESCING
+
+
+OID\_WDI\_設定\_受信\_COALESCING がパケットの結合のパケット フィルターを追加する、ホストによって使用されます。
+
+| Scope | タスクでシリアル化された設定します。 | 通常の実行時間 (秒) |
+|-------|--------------------------|---------------------------------|
+| ポート  | 〇                      | 1                               |
+
+ 
+
+ホストは、パケットの結合フィルターの設定を OS からの要求を受信したときに、パケットの結合のパケット フィルターを追加するのにこのコマンドを使用します。 パケットの結合のパケット フィルターをクリアするを参照してください。 [OID\_WDI\_設定\_オフ\_受信\_COALESCING](oid-wdi-set-clear-receive-coalescing.md)します。
+
+## <a name="set-property-parameters"></a>プロパティ パラメーターの設定
+
+
+| TLV                                                                               | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                 |
+|-----------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------|
+| [**WDI\_TLV\_設定\_受信\_COALESCING**](https://msdn.microsoft.com/library/windows/hardware/dn898061) |                                |          | 設定するパケット結合パラメーター。 |
+
+ 
+
+## <a name="set-property-results"></a>セットのプロパティの結果
+
+
+追加のパラメーターはありません。 ヘッダー内のデータで十分です。
+要件
+------------
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>サポートされている最小のクライアント</p></td>
+<td><p>Windows 10</p></td>
+</tr>
+<tr class="even">
+<td><p>サポートされている最小のサーバー</p></td>
+<td><p>Windows Server 2016</p></td>
+</tr>
+<tr class="odd">
+<td><p>Header</p></td>
+<td>Dot11wdi.h</td>
+</tr>
+</tbody>
+</table>
+
+## <a name="see-also"></a>関連項目
+
+
+[OID\_WDI\_設定\_クリア\_受信\_COALESCING](oid-wdi-set-clear-receive-coalescing.md)
+
+ 
+
+ 
+
+
+
+
