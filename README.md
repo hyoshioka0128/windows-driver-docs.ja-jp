@@ -1,17 +1,17 @@
-## Microsoft Open Source Code of Conduct
+## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft のオープン ソース倫理
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+このプロジェクトを採用しています、 [Microsoft オープン ソース倫理規定](https://opensource.microsoft.com/codeofconduct/)します。
+詳細については、次を参照してください。、 [FAQ の実施コード](https://opensource.microsoft.com/codeofconduct/faq/)にお問い合わせくださいまたは[ opencode@microsoft.com ](mailto:opencode@microsoft.com)その他の質問またはコメント。
 
-# Windows Driver Documentation
+# <a name="windows-driver-documentation"></a>Windows Driver ドキュメント
 
-Welcome to the Windows driver docs repository, housing the source for the official Windows Driver Kit documentation available on [Docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers). 
+公式の Windows Driver Kit ドキュメントで使用可能なソースを格納している、Windows ドライバー docs リポジトリへようこそ[Docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers)します。 
 
-If you're looking for the driver reference (API/DDI) documentation, that's in a different repo.
-See https://github.com/MicrosoftDocs/windows-driver-docs-ddi.
+ドライバーのリファレンス (API/DDI) ドキュメントを探している場合のさまざまなリポジトリです。
+「 https://github.com/MicrosoftDocs/windows-driver-docs-ddi」を参照してください。
 
-## Contributing
+## <a name="contributing"></a>貢献します。
 
-We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch (for the public repo) or the *master* branch (for the private repo). 
+積極的に投稿をこのリポジトリを使用してマージ[プル要求](https://help.github.com/articles/using-pull-requests/)に、*ステージング*(パブリック リポジトリ) のブランチまたは*マスター* (プライベート リポジトリ) に分岐します。 
 
-For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
+投稿に関する詳細については、読み取り、[投稿ガイド](CONTRIBUTING.md)します。
