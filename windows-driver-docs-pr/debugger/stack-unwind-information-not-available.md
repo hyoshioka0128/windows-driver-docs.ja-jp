@@ -1,0 +1,38 @@
+---
+title: スタック アンワインド情報を利用できません。
+description: スタック アンワインド情報を利用できません。
+ms.assetid: 82260f85-780b-4f30-bebd-62faed6efeeb
+keywords:
+- スタック アンワインド情報を利用できません (警告)
+- コール スタック、スタック アンワインド情報を利用できません (警告)
+ms.date: 05/23/2017
+ms.localizationpriority: medium
+ms.openlocfilehash: 16a3eafedf8830351550145b6724a2fbf509647f
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56549145"
+---
+# <a name="stack-unwind-information-not-available"></a>スタック アンワインド情報を利用できません。
+
+
+## <span id="ddk_stack_unwind_information_not_available_dbg"></span><span id="DDK_STACK_UNWIND_INFORMATION_NOT_AVAILABLE_DBG"></span>
+
+
+デバッガーは、呼び出し履歴を調べることが、ときに、メッセージが表示"スタック アンワインド情報を利用できません。 次のフレームがありますが正しくありません。"
+
+この警告は、デバッガーがない特定の後、このメッセージが正しいが、コール スタックのフレームに表示されていることを示します。
+
+コール スタックをトレースするには、デバッガーは、スタックを検査し、スタックを使用している関数を分析します。 これにより、コール スタックを形成する戻り値のアドレスのチェーンを識別することができます。 ただし、この手順では、スタックを使用する関数が含まれる各モジュールのシンボル情報が必要です。
+
+このシンボル情報が利用できない場合は、デバッガーを強制的に妥当などのフレームには戻り値のアドレス。 この警告の情報は、この時点より後の呼び出し履歴の不明な性質を示すために表示されます。
+
+ 
+
+ 
+
+
+
+
+
