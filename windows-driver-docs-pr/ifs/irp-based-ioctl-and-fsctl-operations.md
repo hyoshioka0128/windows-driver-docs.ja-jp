@@ -1,0 +1,57 @@
+---
+title: IRP ベース IOCTL と FSCTL 操作
+description: IRP ベース IOCTL と FSCTL 操作
+ms.assetid: 08d6cf89-aaba-4aa1-baff-eb6aece2875f
+keywords:
+- WDK の Ioctl ファイル システム
+- FSCTL WDK ファイル システム
+- WDK のバッファーにファイル システムがありません。
+ms.date: 04/20/2017
+ms.localizationpriority: medium
+ms.openlocfilehash: 73cbfd8855a3481090d997b436f5d80d36dd1c84
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56530384"
+---
+# <a name="irp-based-ioctl-and-fsctl-operations"></a>IRP ベース IOCTL と FSCTL 操作
+
+
+## <span id="ddk_irp_based_ioctl_and_fsctl_operations_if"></span><span id="DDK_IRP_BASED_IOCTL_AND_FSCTL_OPERATIONS_IF"></span>
+
+
+次の IRP ベースの I/O 操作では、I/O 制御コード (IOCTL) またはファイル システムの制御コード (FSCTL) の定義で指定されている転送の種類に一致するバッファリング メソッドを使用します。
+
+-   IRP\_MJ\_デバイス\_コントロール
+
+-   IRP\_MJ\_ファイル\_システム\_コントロール
+
+-   IRP\_MJ\_内部\_デバイス\_コントロール
+
+転送の種類がで指定された、 *TransferType*パラメーターは、CTL の\_コード マクロ。 特定の IOCTL または FSCTL 転送の種類を取得するには、次のマクロを使用します。
+
+```cpp
+#define METHOD_FROM_CTL_CODE(ctrlCode)         ((ULONG)(ctrlCode & 3))
+```
+
+このマクロは、次の値のいずれかを返します。
+
+```cpp
+#define METHOD_BUFFERED                 0
+#define METHOD_IN_DIRECT                1
+#define METHOD_OUT_DIRECT               2
+#define METHOD_NEITHER                  3
+```
+
+詳細については、CTL\_マクロのコードは、「 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。
+
+注その IRP\_MJ\_デバイス\_コントロールは高速な I/O 操作にもできます。 高速な I/O 操作である場合は、IOCTL の転送の種類に関係なく、バッファーも直接 I/O が常に使用します。 タイミングの詳細については IRP\_MJ\_デバイス\_コントロールが高速な I/O 操作を参照してください[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)します。
+
+ 
+
+ 
+
+
+
+

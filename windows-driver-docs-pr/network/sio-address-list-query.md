@@ -1,0 +1,105 @@
+---
+title: SIO_ADDRESS_LIST_QUERY
+description: SIO_ADDRESS_LIST_QUERY
+ms.assetid: c50520a3-6ba3-448e-bbb4-bf3425dcbc41
+ms.date: 08/08/2017
+keywords: -SIO_ADDRESS_LIST_QUERY ネットワーク ドライバーが Windows Vista 以降
+ms.localizationpriority: medium
+ms.openlocfilehash: 06e8f6308dd07e453592c612a65f91189d913eb2
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56531354"
+---
+# <a name="sioaddresslistquery"></a>SIO\_アドレス\_一覧\_クエリ
+
+
+SIO\_アドレス\_一覧\_クエリ ソケット I/O 制御操作により、現在、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧を照会する WSK アプリケーション。 このソケット I/O 制御操作は、すべての種類のソケットに適用されます。
+
+WSK アプリケーションを呼び出して、現在、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧を照会するには[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>パラメーター</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><em>RequestType</em></p></td>
+<td><p><strong>WskIoctl</strong></p></td>
+</tr>
+<tr class="even">
+<td><p><em>ControlCode</em></p></td>
+<td><p>SIO_ADDRESS_LIST_QUERY</p></td>
+</tr>
+<tr class="odd">
+<td><p><em>レベル</em></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="even">
+<td><p><em>InputSize</em></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="odd">
+<td><p><em>InputBuffer</em></p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="even">
+<td><p><em>OutputSize</em></p></td>
+<td><p>指すバッファーのバイト単位で、サイズ、 <em>OutputBuffer</em>パラメーター。</p></td>
+</tr>
+<tr class="odd">
+<td><p><em>OutputBuffer</em></p></td>
+<td><p>現在のローカル トランスポート アドレスの一覧を受け取るバッファーへのポインター。 バッファーのサイズがで指定された、 <em>OutputSize</em>パラメーター。</p></td>
+</tr>
+<tr class="even">
+<td><p><em>OutputSizeReturned</em></p></td>
+<td><p>指すバッファーにコピーされたデータのバイト数を受け取る ULONG に型指定された変数へのポインター、 <em>OutputBuffer</em>パラメーター。</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+呼び出すときに、WSK アプリケーションが IRP へのポインターを指定しない、 **WskControlSocket**ソケットのアドレス ファミリ用のローカル トランスポート アドレスの現在の一覧を照会する関数。
+
+場合に呼び出し、 **WskControlSocket**関数が成功すると、出力バッファーが含まれています、 [**ソケット\_アドレス\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff570826)構造体SOCKADDR 構造体、ソケットのアドレス ファミリ用のローカル トランスポート アドレスごとに続きます。
+
+場合、 **WskControlSocket**ステータスを返します\_バッファー\_オーバーフロー、変数を指していますが、 *OutputSizeReturned*パラメーターには、出力バッファーが含まれています。サイズ (バイト単位)、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの完全な一覧を格納するために必要な。
+
+[ **SIO\_アドレス\_一覧\_変更**](sio-address-list-change.md)ソケット I/O 制御操作により、ローカルの一覧への変更があったときに通知する WSK アプリケーションソケットのアドレス ファミリ用のトランスポート アドレス。
+
+<a name="requirements"></a>要件
+------------
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>バージョン</p></td>
+<td><p>Windows Vista および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
+</tr>
+<tr class="even">
+<td><p>Header</p></td>
+<td>Ws2def.h (Wsk.h を含む)</td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+ 
+
+
+
+
