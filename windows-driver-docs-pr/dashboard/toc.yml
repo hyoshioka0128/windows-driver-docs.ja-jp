@@ -1,0 +1,208 @@
+items:
+- name: Windows ハードウェア デベロッパー センター ダッシュボード
+  href: index.md
+  items:
+  - name: ハードウェア プログラム ダッシュボードに関する FAQ
+    href: hardware-dashboard-faq.md
+  - name: ハードウェアの提出
+    href: hardware-certification-submissions.md
+    items:
+    - name: 新しいハードウェア申請の作成
+      href: create-a-new-hardware-submission.md
+    - name: ハードウェア提出の管理
+      href: manage-your-hardware-submissions.md
+    - name: ハードウェア申請を検索する
+      href: find-hardware-submission.md
+    - name: 新しい WLK デバイス認定申請の作成
+      href: create-a-new-hardware-logo-submission.md
+      items:
+      - name: Winqual Submission Tool (winqual.exe)
+        href: winqual-submission-tool--winqualexe-.md
+    - name: ID の定義
+      href: id-definitions.md
+    - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
+      href: attestation-signing-a-kernel-driver-for-public-release.md
+    - name: 複数のバージョンの Windows で Microsoft によって署名されたドライバーを取得する方法
+      href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
+    - name: ドライバーのフライティング
+      href: driver-flighting.md
+    - name: 拡張 INF ファイルの使用
+      href: submit-dashboard-extension-inf-files.md
+    - name: バグ管理
+      href: bug-management.md
+  - name: 出荷ラベルによるドライバーの配布の管理
+    href: manage-driver-distribution-by-submission.md
+    items:
+    - name: 公開の制限
+      href: publishing-restrictions.md
+    - name: Windows Update にドライバーを公開する
+      href: publish-a-driver-to-windows-update.md
+    - name: ドライバーの配布に関する Windows Update の自動規則とオプション規則について
+      href: understanding-windows-update-automatic-and-optional-rules-for-driver-distribution.md
+    - name: パートナーとのドライバーの共有
+      href: sharing-drivers-with-your-partners.md
+    - name: Windows Update からドライバーの期限を終了する
+      href: expire-a-driver-from-windows-update.md
+    - name: パートナーによる共有ドライバーの出荷ラベルを表示する
+      href: viewing-shipping-labels-for-your-shared-driver.md
+    - name: コンピューター ハードウェア ID (CHID) の使用
+      href: using-chids.md
+    - name: 拡張 INF ファイルの使用
+      href: submit-dashboard-extension-inf-files.md
+    - name: Windows のバージョンによってドライバーの配布を制限する
+      href: limit-driver-distribution.md
+    - name: テスト配布用の公開
+      href: publishing-for-test-distribution.md
+  - name: ハードウェア ダッシュボード API
+    href: dashboard-api.md
+    items:
+    - name: 製品データの取得
+      href: get-product-data.md
+      items:
+      - name: すべての製品の取得
+        href: get-all-products.md
+      - name: 製品の取得
+        href: get-a-product.md
+      - name: すべての申請の取得
+        href: get-all-submissions.md
+      - name: 申請の取得
+        href: get-a-submission.md
+    - name: 製品申請の管理
+      href: manage-product-submissions.md
+      items:
+      - name: 新しい製品の作成
+        href: create-a-new-product.md
+      - name: 製品の新しい申請の作成
+        href: create-a-new-submission-for-a-product.md
+      - name: 製品申請のコミット
+        href: commit-a-product-submission.md
+      - name: 申請データの更新
+        href: update-submission-data.md
+      - name: 製品データの更新
+        href: update-product-data.md
+    - name: 配送先住所ラベルのデータを取得する
+      href: get-shipping-labels.md
+      items:
+      - name: すべての配送先住所ラベルを取得する
+        href: get-all-shipping-labels.md
+      - name: 配送先住所ラベルの取得
+        href: get-a-shipping-label.md
+    - name: 配送先住所ラベルを管理する
+      href: manage-shipping-labels.md
+      items:
+      - name: 新しい配送先住所ラベルを作成する
+        href: create-a-new-shipping-label.md
+      - name: 配送先住所ラベルの更新
+        href: update-a-shipping-label.md
+    - name: 対象ユーザー データの取得
+      href: get-audience-data.md
+    - name: ドライバー パッケージ メタデータ
+      href: driver-package-metadata.md
+    - name: ドライバー エラー詳細のカスタム レポートをスケジュールする
+      href: schedule-custom-reports-for-driver-failure-details.md
+      items:
+      - name: セキュリティ保護されたデータ共有を有効にする
+        href: enable-secure-data-sharing.md
+      - name: 新しいレポート テンプレートを作成する
+        href: create-a-new-report-template.md
+      - name: 新しいレポートをスケジュールする
+        href: schedule-a-new-report.md
+      - name: レポート データの取得
+        href: get-report-data.md
+      - name: エラー CAB をダウンロードする
+        href: download-failure-cabs.md
+    - name: レポート テンプレートとスケジュールされたレポートを管理する
+      href: manage-report-templates-and-scheduled-reports.md
+    - name: サンプル レポート テンプレート
+      href: sample-report-templates.md
+    - name: 従来のエラー レポート データの処理
+      href: legacy-error-reporting-data-process.md
+      items:
+      - name: Windows 10 のドライバーに関するエラー報告データを取得する
+        href: get-error-reporting-data-for-windows-10-drivers.md
+        items:
+        - name: Windows 10 のドライバー エラーに関する詳細を取得する
+          href: get-details-for-a-windows-10-driver-error.md
+        - name: Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする
+          href: download-the-cab-file-for-a-windows-10-driver-error.md
+      - name: Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する
+        href: get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md
+        items:
+        - name: Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する
+          href: get-details-for-a-windows-7-or-windows-8.x-driver-error.md
+        - name: Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする
+          href: download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md
+      - name: OEM ハードウェア エラー報告データを取得する
+        href: get-oem-hardware-error-reporting-data.md
+        items:
+        - name: OEM ハードウェア エラーの詳細を取得する
+          href: get-details-for-an-oem-hardware-error.md
+        - name: OEM ハードウェア エラーの CAB ファイルをダウンロードする
+          href: download-the-cab-file-for-an-oem-hardware-error.md
+  - name: LSA プラグインと UEFI ファームウェアのファイル署名
+    href: lsa-and-uefi-file-signing.md
+  - name: ダッシュボードの管理
+    href: dashboard-administration.md
+    items:
+    - name: ハードウェア プログラムの概要
+      href: get-started-with-the-hardware-dashboard.md
+    - name: ハードウェア プログラムの登録
+      href: register-for-the-hardware-program.md
+    - name: ドライバー エラー レポート
+      href: driver-failure-reporting.md
+    - name: ユーザーの追加または削除
+      href: adding-or-removing-users.md
+    - name: ユーザー ロールの管理
+      href: managing-user-roles.md
+    - name: コード署名証明書の取得
+      href: get-a-code-signing-certificate.md
+    - name: コード署名証明書の追加または更新
+      href: update-a-code-signing-certificate.md
+  - name: デバイス メタデータ
+    href: device-metadata.md
+    items:
+    - name: デバイス メタデータ エクスペリエンスの作成
+      href: create-a-device-metadata-experience.md
+      items:
+      - name: プレビュー パッケージの作成
+        href: creating-a-preview-package.md
+    - name: デバイス メタデータ エクスペリエンスの管理
+      href: manage-device-metadata-experiences.md
+    - name: デバイス メタデータ パッケージの提出 (ダッシュボード ヘルプ)
+      href: submit-a-device-metadata-package--dashboard-help-.md
+      items:
+      - name: LocaleInfo.xml サブミッション ファイルの作成
+        href: create-the-localeinfoxml-submission-file.md
+      - name: PC デバイス マニフェスト パッケージの提出
+        href: submit-a-pc-device-manifest-package.md
+      - name: モバイル ブロードバンド デバイス マニフェスト パッケージの提出
+        href: submit-a-mobile-broadband-device-manifest-package.md
+      - name: 複数ロケールのデバイス マニフェスト パッケージの提出
+        href: submit-a-multiple-locale-device-manifest-package.md
+      - name: バルク メタデータ パッケージの提出
+        href: submit-a-bulk-metadata-package.md
+      - name: デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法
+        href: errors-and-solutions-when-submitting-device-metadata-experiences.md
+    - name: デバイス メタデータのビジネス規則
+      href: device-metadata-business-rules.md
+    - name: モバイル ブロードバンド エクスペリエンスの作成
+      href: create-a-mobile-broadband-experience.md
+      items:
+      - name: 開発者モードとプレビュー モード
+        href: developer-and-preview-mode.md
+      - name: サービス アイコンの要件
+        href: service-icon-requirements.md
+      - name: サービス番号
+        href: service-number.md
+      - name: 信頼できる証明書
+        href: trusted-certificates.md
+  - name: Windows Device Experience List
+    href: windows-device-experience-list.md
+  - name: Windows 認定製品リスト
+    href: windows-certified-products-list.md
+ms.openlocfilehash: e547ec2507749cb8fc95a71aeae4430a9798a294
+ms.sourcegitcommit: a58b4859254a651502e4329a6e521fe0fa11c7f2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56465805"
