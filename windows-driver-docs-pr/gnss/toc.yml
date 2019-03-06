@@ -1,0 +1,59 @@
+items:
+- name: GNSS ドライバー設計ガイド
+  href: index.md
+  items:
+  - name: Windows 8.1 用 GNSS ドライバー設計ガイド
+    href: gnss-driver-design-guide-for-windows-8-1.md
+    items:
+    - name: Windows 8.1 用位置センサー ドライバーの作成
+      href: writing-a-location-sensor-driver.md
+      items:
+      - name: 電力とパフォーマンスに関する位置情報ドライバーのガイドライン
+        href: location-driver-guidelines-for-power-and-performance.md
+      - name: 位置情報シミュレーターのガイドライン
+        href: guidelines-for-location-simulators.md
+      - name: センサーおよび位置情報プラットフォームのプライバシーとセキュリティ
+        href: privacy-and-security-in-the-sensor-and-location-platform.md
+    - name: Windows 8.1 用位置情報ドライバー サンプル
+      href: sensors-geolocation-driver-sample.md
+      items:
+      - name: 位置情報オブジェクトの定義
+        href: defining-the-geolocation-object.md
+        items:
+        - name: 位置情報オブジェクトの初期化
+          href: initializing-the-geolocation-object.md
+        - name: 位置情報プロパティの設定と取得
+          href: setting-and-retrieving-the-geolocation-properties.md
+      - name: センサー クラス拡張機能によるイベントの処理
+        href: using-the-sensor-class-extension-to-handle-events.md
+      - name: 位置情報プロパティのサポート
+        href: supporting-the-geolocation-properties.md
+      - name: 実際のハードウェアのサポートの追加
+        href: adding-support-for-actual-hardware.md
+      - name: 無線管理のサポート
+        href: supporting-radio-management.md
+      - name: 位置情報ドライバー サンプルのインストール
+        href: installing-the-sample-driver.md
+      - name: 無線マネージャー DLL のインストール
+        href: installing-the-radio-manager-dll.md
+      - name: サンプル ドライバー ファイル一覧
+        href: the-sample-driver-file-list.md
+      - name: 無線マネージャー ファイル一覧
+        href: the-radio-manager-file-list.md
+  - name: Windows 10 用 GNSS ドライバー設計ガイド
+    href: gnss-driver-design-guide-for-windows-10.md
+    items:
+    - name: GNSS ドライバーの概要
+      href: gnss-driver-overview.md
+    - name: GNSS ドライバーの要件
+      href: gnss-driver-requirements.md
+    - name: GNSS ドライバーのアーキテクチャ
+      href: gnss-driver-architecture.md
+    - name: GNSS ドライバーの設計
+      href: gnss-driver-design.md
+ms.openlocfilehash: 2c26842e7d1bdf05b4695ed969f85c0b1726047d
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465692"

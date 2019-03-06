@@ -1,0 +1,59 @@
+items:
+- name: 3D プリンター ドライバー設計ガイド
+  href: index.md
+  items:
+  - name: 3D 印刷パートナー オンボーディング ガイド
+    href: 3d-partner-onboarding-guide.md
+  - name: 3D プリンター用の Microsoft 標準ドライバー
+    href: microsoft-standard-driver-for-3d-printers-.md
+  - name: MS3DPrint 標準 G コード ドライバー
+    href: ms3dprint-standard-g-code-driver.md
+    items:
+    - name: ドライバーのインストール
+      href: driver-installation.md
+    - name: デバイスの構成
+      href: configuring-the-device.md
+    - name: スライサーの設定
+      href: slicer-settings.md
+    - name: サンプル構成 XML
+      href: sample-configuration-xml.md
+  - name: 3D プリンターのカスタム USB インターフェイスのサポート
+    href: 3d-printer-custom-usb-interface.md
+  - name: 3D 印刷のサンプル WSD アプリ
+    href: 3d-printing-sample-wsd-app.md
+    items:
+    - name: ドライバーとサンプル アプリのインストール
+      href: install-the-driver-and-sample-app.md
+    - name: WSD サンプルへのファイルの出力
+      href: print-files-to-the-wsd-sample.md
+    - name: ドライバー パッケージのテスト署名
+      href: test-sign-a-driver-package.md
+  - name: デバイスで WSPrint 2.0 を有効にする
+    href: enabling-wsprint-on-a-device.md
+  - name: 3D 製造用の印刷スキーマのキーワード
+    href: print-schema-keywords-for-3d-manufacturing.md
+    items:
+    - name: 3D 製造のキーワードの概要
+      href: 3d-manufacturing-keywords-overview.md
+    - name: デバイス制御のキーワード
+      href: device-control-keywords.md
+    - name: 素材のキーワード
+      href: material-keywords.md
+    - name: 出力のキーワード
+      href: output-keywords.md
+    - name: 印刷スキーマの用語集
+      href: print-schema-glossary.md
+    - name: PrintCapabilities ドキュメント例
+      href: example-printcapabilities-document.md
+    - name: PrintTicket ドキュメント例
+      href: example-printticket-document.md
+    - name: 印刷スキーマ リファレンス
+      href: print-schema-references.md
+  - name: 3D ハードウェア パートナー
+    href: 3d-printing-partners.md
+ms.openlocfilehash: c6f9b47a6de5ed211a047004df5e3912f7e15941
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465662"

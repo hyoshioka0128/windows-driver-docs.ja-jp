@@ -1,0 +1,73 @@
+items:
+- name: 設計ガイド
+  href: index.md
+  items:
+  - name: スマート カード ドライバー環境
+    href: smart-card-driver-environment.md
+  - name: スマート カード リーダー ドライバーでの IOCTL 要求の管理
+    href: management-of-ioctl-requests-in-a-smart-card-reader-driver.md
+    items:
+    - name: スマート カード ドライバー ライブラリ
+      href: smart-card-driver-library.md
+    - name: スマート カード ドライバー ライブラリとの相互作用
+      href: interaction-with-the-smart-card-driver-library.md
+    - name: スマート カード ドライバー ライブラリのコールバックルーチン
+      href: smart-card-driver-library-callback-routines.md
+    - name: スマート カードのコールバック パラメーター
+      href: smart-card-callback-parameters.md
+  - name: WDM リーダー ドライバー
+    href: wdm-reader-driver.md
+  - name: スマート カード ミニドライバー
+    href: smart-card-minidrivers.md
+    items:
+    - name: スマート カード ミニドライバーの概要
+      href: smart-card-minidriver-overview.md
+    - name: スマート カード ミニドライバーのバージョン
+      href: smart-card-minidriver-versions.md
+      items:
+      - name: ミニドライバー バージョン 7.07 の機能
+        href: minidriver-version-7-07-features.md
+      - name: ミニドライバー バージョン 7.06 の機能
+        href: minidriver-version-7-06-features.md
+      - name: ミニドライバー バージョン 6.02 の機能
+        href: minidriver-version-6-02-features.md
+      - name: ミニドライバー バージョン 5.07 の機能
+        href: minidriver-version-5-07-features.md
+    - name: 開発者向けのガイドライン
+      href: developer-guidelines.md
+    - name: カードの要件
+      href: card-requirements.md
+    - name: ファイル システムの要件
+      href: file-system-requirements.md
+    - name: カード PIN 操作
+      href: card-pin-operations.md
+    - name: スマート カードのプラグ アンド プレイ
+      href: smart-card-plug-and-play.md
+    - name: 検出プロセス
+      href: discovery-process.md
+    - name: セキュリティで保護されたキーの挿入
+      href: secure-key-injection.md
+    - name: Windows Inbox スマート カード ミニドライバー
+      href: windows-inbox-smart-card-minidriver.md
+    - name: ミニドライバーの登録
+      href: minidriver-registration.md
+  - name: スマート カード リーダーの状態
+    href: smart-card-reader-states.md
+  - name: スマート カード リーダー ドライバーのインストール
+    href: installing-smart-card-reader-drivers.md
+  - name: WDM スマート カード リーダー ドライバーの登録
+    href: registering-a-wdm-smart-card-reader-driver.md
+  - name: スマート カードのイベント ログをレジストリで有効にする
+    href: enabling-smart-card-event-logging-in-the-registry.md
+  - name: スマート カード リーダーの WDM デバイス名
+    href: wdm-device-names-for-smart-card-readers.md
+  - name: スマート カード ドライバーのデバッグ
+    href: smart-card-driver-debugging.md
+  - name: 仕様とリソース
+    href: specifications-and-resources.md
+ms.openlocfilehash: 7af99c0574eebd287f3070a3abc6b6dd4f67e2dc
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465646"

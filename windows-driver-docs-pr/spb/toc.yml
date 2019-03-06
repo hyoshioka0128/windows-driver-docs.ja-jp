@@ -1,0 +1,73 @@
+items:
+- name: Simple Peripheral Bus (SPB) ドライバー設計ガイド
+  href: index.md
+  items:
+  - name: SPB コントローラー ドライバー
+    href: spb-controller-drivers.md
+    items:
+    - name: SPB フレームワーク拡張機能 (SpbCx)
+      href: spb-framework-extension.md
+    - name: SpbCx インターフェイス
+      href: spbcx-interfaces.md
+    - name: SPB の I/O 要求
+      href: spb-ioctls.md
+    - name: I/O 転送シーケンス
+      href: i-o-transfer-sequences.md
+    - name: クライアント実装シーケンスの処理
+      href: handling-client-implemented-sequences.md
+    - name: カスタム IOCTL に対する SPB_TRANSFER_LIST 構造体の使用
+      href: using-the-spb-transfer-list-structure.md
+    - name: IOCTL_SPB_FULL_DUPLEX 要求の処理
+      href: handling-ioctl-spb-full-duplex-requests.md
+    - name: デバイスの接続設定を取得する方法
+      href: how-to-get-the-connection-settings-for-a-device.md
+    - name: SpbCx オブジェクト ハンドル
+      href: spbcx-object-handles.md
+  - name: SPB 周辺機器ドライバー
+    href: spb-peripheral-device-drivers.md
+    items:
+    - name: SPB I/O 要求インターフェイスの使用
+      href: using-the-spb-i-o-request-interface.md
+    - name: SPB 接続周辺機器の接続 ID
+      href: connection-ids-for-spb-connected-peripheral-devices.md
+    - name: SPB デバイス スタック
+      href: spb-device-stacks.md
+    - name: SPB 接続周辺機器からの割り込み
+      href: interrupts-from-spb-connected-peripheral-devices.md
+    - name: カーネルモード SPB 周辺機器ドライバーのハードウェア リソース
+      href: hardware-resources-for-kernel-mode-spb-peripheral-drivers.md
+    - name: ユーザーモード SPB 周辺機器ドライバーのハードウェア リソース
+      href: hardware-resources-for-user-mode-spb-peripheral-drivers.md
+    - name: 全二重 I/O 要求
+      href: full-duplex-i-o-requests.md
+    - name: アトミック バス操作
+      href: atomic-bus-operations.md
+    - name: SPB 接続のロック
+      href: spb-connection-locks.md
+  - name: Multi Interface Test Tool (MITT) によるテスト
+    href: testing-with-multi-interface-test-tool--mitt-.md
+    items:
+    - name: MITT を使用するためのハードウェアの購入
+      href: multi-interface-test-tool--mitt--.md
+    - name: MITT の概要
+      href: get-started-with-mitt---.md
+    - name: MITT でのオーディオ再生の忠実さテスト
+      href: audio-playback-fidelity-tests-in-mitt.md
+    - name: MITT の静電容量式タッチ テスト
+      href: capacitive-touch-tests-in-mitt.md
+    - name: MITT の GPIO テスト
+      href: gpio-tests-in-mitt.md
+    - name: MITT の I2C コントローラー テスト
+      href: run-mitt-tests-for-an-i2c-controller-.md
+    - name: MITT の SPI テスト
+      href: spi-tests-in-mitt.md
+    - name: MITT の UART テスト
+      href: uart-tests-in-mitt.md
+- name: on-SoC PWM モジュールの PWM ドライバー
+  href: pulse-width-controller driver.md
+ms.openlocfilehash: 44e104aa59aa52f0f766ed6e44968e3be5697dba
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465681"
