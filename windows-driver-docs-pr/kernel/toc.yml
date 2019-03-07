@@ -1,0 +1,1736 @@
+items:
+- name: カーネルモード ドライバー アーキテクチャ設計ガイド
+  href: index.md
+  items:
+  - name: Windows ドライバーの概要
+    href: introduction-to-windows-drivers.md
+    items:
+    - name: Windows コンポーネントの概要
+      href: overview-of-windows-components.md
+    - name: Windows ドライバーの種類
+      href: types-of-windows-drivers.md
+    - name: カーネルモード ドライバーの設計目標
+      href: design-goals-for-kernel-mode-drivers.md
+      items:
+      - name: 移植性があります。
+        href: portable.md
+      - name: 構成可能
+        href: configurable.md
+      - name: 常に割り込み可能で常に中断可能
+        href: always-preemptible-and-always-interruptible.md
+      - name: マルチプロセッサ セーフ
+        href: multiprocessor-safe.md
+      - name: オブジェクトベース
+        href: object-based.md
+      - name: 再利用可能な IRP を使用したパケット駆動型 I/O
+        href: packet-driven-i-o-with-reusable-irps.md
+      - name: 非同期 I/O のサポート
+        href: supporting-asynchronous-i-o.md
+    - name: サンプル カーネルモード ドライバー
+      href: sample-kernel-mode-drivers.md
+  - name: カーネルモードのマネージャーとライブラリ
+    href: kernel-mode-managers-and-libraries.md
+    items:
+    - name: Windows カーネルモード オブジェクト マネージャー
+      href: windows-kernel-mode-object-manager.md
+    - name: Windows カーネルモード メモリ マネージャー
+      href: windows-kernel-mode-memory-manager.md
+    - name: Windows カーネル モード プロセスとスレッド マネージャー
+      href: windows-kernel-mode-process-and-thread-manager.md
+    - name: Windows カーネルモード I/O マネージャー
+      href: windows-kernel-mode-i-o-manager.md
+    - name: Windows カーネルモード プラグ アンド プレイ マネージャー
+      href: windows-kernel-mode-plug-and-play-manager.md
+    - name: Windows カーネルモード電源マネージャー
+      href: windows-kernel-mode-power-manager.md
+    - name: Windows カーネルモード構成マネージャー
+      href: windows-kernel-mode-configuration-manager.md
+    - name: Windows カーネルモード カーネル トランザクション マネージャー
+      href: windows-kernel-mode-kernel-transaction-manager.md
+    - name: Windows カーネルモード セキュリティ リファレンス モニター
+      href: windows-kernel-mode-security-reference-monitor.md
+    - name: Windows カーネルモード カーネル ライブラリ
+      href: windows-kernel-mode-kernel-library.md
+    - name: Windows カーネルモード エグゼクティブ サポート ライブラリ
+      href: windows-kernel-mode-executive-support-library.md
+    - name: Windows カーネルモード ランタイム ライブラリ
+      href: windows-kernel-mode-run-time-library.md
+    - name: Windows カーネルモード セーフ文字列ライブラリ
+      href: windows-kernel-mode-safe-string-library.md
+    - name: Windows カーネルモード DMA ライブラリ
+      href: windows-kernel-mode-dma-library.md
+    - name: Windows カーネルモード HAL ライブラリ
+      href: windows-kernel-mode-hal-library.md
+    - name: Windows カーネルモード CLFS ライブラリ
+      href: windows-kernel-mode-clfs-library.md
+    - name: Windows カーネルモード WMI ライブラリ
+      href: windows-kernel-mode-wmi-library.md
+  - name: WDM ドライバーの記述
+    href: writing-wdm-drivers.md
+    items:
+    - name: Windows Driver Model (WDM)
+      href: windows-driver-model.md
+      items:
+      - name: WDM の概要
+        href: introduction-to-wdm.md
+      - name: WDM ドライバーの種類
+        href: types-of-wdm-drivers.md
+        items:
+        - name: バス ドライバー
+          href: bus-drivers.md
+        - name: ファンクション ドライバー
+          href: function-drivers.md
+        - name: フィルター ドライバー
+          href: filter-drivers.md
+        - name: 'WDM ドライバー レイヤー: 例'
+          href: wdm-driver-layers---an-example.md
+      - name: デバイス構成と複数層ドライバー
+        href: device-configurations-and-layered-drivers.md
+        items:
+        - name: サンプル デバイスとドライバー構成
+          href: sample-device-and-driver-configuration.md
+        - name: ドライバーを追加するときに考慮すべき点
+          href: points-to-consider-when-adding-drivers.md
+      - name: WDM のバージョン
+        href: wdm-versions.md
+        items:
+        - name: WDM バージョンの特定
+          href: determining-the-wdm-version.md
+        - name: WDM バージョン間の違い
+          href: differences-in-wdm-versions.md
+    - name: カーネルモード ドライバーのコンポーネント
+      href: kernel-mode-driver-components.md
+      items:
+      - name: 標準ドライバー ルーチンの概要
+        href: introduction-to-standard-driver-routines.md
+      - name: 標準ドライバー ルーチンの要件
+        href: standard-driver-routine-requirements.md
+      - name: ドライバー オブジェクトの概要
+        href: introduction-to-driver-objects.md
+        items:
+        - name: ドライバー オブジェクト内のドライバー エントリ ポイント
+          href: driver-entry-points-in-driver-objects.md
+        - name: その他の標準ドライバー ルーチン
+          href: other-standard-driver-routines.md
+      - name: DriverEntry ルーチンの記述
+        href: writing-a-driverentry-routine.md
+        items:
+        - name: DriverEntry の必須の役割
+          href: driverentry-s-required-responsibilities.md
+        - name: DriverEntry のオプションの役割
+          href: driverentry-s-optional-responsibilities.md
+        - name: DriverEntry の戻り値
+          href: driverentry-return-values.md
+      - name: 再初期化ルーチンの記述
+        href: writing-a-reinitialize-routine.md
+      - name: AddDevice ルーチンの記述
+        href: writing-an-adddevice-routine.md
+        items:
+        - name: ファンクション ドライバーまたはフィルター ドライバー内の AddDevice ルーチン
+          href: adddevice-routines-in-function-or-filter-drivers.md
+        - name: バス ドライバー内の AddDevice ルーチン
+          href: adddevice-routines-in-bus-drivers.md
+        - name: AddDevice ルーチンの記述に関するガイドライン
+          href: guidelines-for-writing-adddevice-routines.md
+      - name: ディスパッチ ルーチンの記述
+        href: writing-dispatch-routines.md
+        items:
+        - name: ディスパッチ ルーチンの機能
+          href: dispatch-routine-functionality.md
+        - name: 必須のディスパッチ ルーチン
+          href: required-dispatch-routines.md
+        - name: オプションのディスパッチ ルーチン
+          href: optional-dispatch-routines.md
+        - name: ディスパッチ ルーチンと IRQL
+          href: dispatch-routines-and-irqls.md
+        - name: ドライバーの I/O スタック位置を確認すべき場合
+          href: when-to-check-the-driver-s-i-o-stack-location.md
+        - name: DispatchCreate、DispatchClose、DispatchCreateClose ルーチン
+          href: dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md
+          items:
+          - name: DispatchCreate ルーチンと DispatchClose ルーチンの分離
+            href: separate-dispatchcreate-and-dispatchclose-routines.md
+          - name: 単一の DispatchCreateClose ルーチン
+            href: a-single-dispatchcreateclose-routine.md
+          - name: DispatchCreate、DispatchClose、DispatchCreateClose ルーチンの実装に関する規則
+            href: rules-for-implementing-dispatchcreate--dispatchclose--and-dispatchcrea.md
+        - name: DispatchCleanup ルーチン
+          href: dispatchcleanup-routines.md
+        - name: DispatchRead、DispatchWrite、DispatchReadWrite ルーチン
+          href: dispatchread--dispatchwrite--and-dispatchreadwrite-routines.md
+          items:
+          - name: 転送の非同期処理
+            href: handling-transfers-asynchronously.md
+          - name: バッファー付き I/O を使用した DispatchReadWrite
+            href: dispatchreadwrite-using-buffered-i-o.md
+          - name: ダイレクト I/O を使用した DispatchReadWrite
+            href: dispatchreadwrite-using-direct-i-o.md
+          - name: 上位レベル ドライバーの DispatchReadWrite
+            href: dispatchreadwrite-in-higher-level-drivers.md
+          - name: 読み取り/書き込みディスパッチ ルーチンの概要
+            href: summary-of-read-write-dispatch-routines.md
+        - name: DispatchDeviceControl および DispatchInternalDeviceControl ルーチン
+          href: dispatchdevicecontrol-and-dispatchinternaldevicecontrol-routines.md
+          items:
+          - name: 最下位レベル ドライバーの DispatchDeviceControl
+            href: dispatchdevicecontrol-in-lowest-level-drivers.md
+          - name: 上位レベル ドライバーの DispatchDeviceControl
+            href: dispatchdevicecontrol-in-higher-level-drivers.md
+          - name: クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
+            href: dispatch-internal-devicecontrol-in-class-port-drivers.md
+          - name: Dispatch(Internal)DeviceControl ルーチンの記述に関するガイドライン
+            href: guidelines-for-writing-dispatch-internal-devicecontrol-routines.md
+        - name: DispatchPnP ルーチン
+          href: dispatchpnp-routines.md
+        - name: DispatchPower ルーチン
+          href: dispatchpower-routines.md
+        - name: DispatchQueryInformation ルーチン
+          href: dispatchqueryinformation-routines.md
+        - name: DispatchSetInformation ルーチン
+          href: dispatchsetinformation-routines.md
+        - name: DispatchFlushBuffers ルーチン
+          href: dispatchflushbuffers-routines.md
+        - name: DispatchShutdown ルーチン
+          href: dispatchshutdown-routines.md
+        - name: DispatchSystemControl ルーチン
+          href: dispatchsystemcontrol-routines.md
+      - name: アンロード ルーチンの記述
+        href: writing-an-unload-routine.md
+        items:
+        - name: アンロード ルーチンの環境
+          href: unload-routine-environment.md
+        - name: アンロード ルーチンの機能
+          href: unload-routine-functionality.md
+          items:
+          - name: PnP ドライバーのアンロード ルーチン
+            href: pnp-driver-s-unload-routine.md
+          - name: PnP でないドライバーのアンロード ルーチン
+            href: non-pnp-driver-s-unload-routine.md
+          - name: ドライバーによって割り当てられたリソースの解放
+            href: releasing-driver-allocated-resources.md
+          - name: デバイス オブジェクトとコントローラー オブジェクトの解放
+            href: releasing-device-and-controller-objects.md
+    - name: デバイス オブジェクトとデバイス スタック
+      href: device-objects-and-device-stacks.md
+      items:
+      - name: デバイス オブジェクトの概要
+        href: introduction-to-device-objects.md
+      - name: WDM のデバイス オブジェクトとデバイス スタック
+        href: wdm-device-objects-and-device-stacks.md
+        items:
+        - name: WDM デバイス オブジェクトの種類
+          href: types-of-wdm-device-objects.md
+        - name: WDM デバイス オブジェクトの例
+          href: example-wdm-device-objects.md
+        - name: WDM デバイス オブジェクトが作成される場合
+          href: when-are-wdm-device-objects-created-.md
+        - name: WDM デバイス スタックの例
+          href: example-wdm-device-stack.md
+      - name: デバイス オブジェクトの作成
+        href: creating-a-device-object.md
+      - name: デバイス オブジェクトの初期化
+        href: initializing-a-device-object.md
+      - name: 名前付きデバイス オブジェクト
+        href: named-device-objects.md
+        items:
+        - name: NT デバイス名
+          href: nt-device-names.md
+        - name: MS-DOS デバイス名
+          href: ms-dos-device-names.md
+          items:
+          - name: MS-DOS デバイス名の概要
+            href: introduction-to-ms-dos-device-names.md
+          - name: ローカルおよびグローバル MS-DOS デバイス名
+            href: local-and-global-ms-dos-device-names.md
+      - name: デバイス拡張
+        href: device-extensions.md
+      - name: デバイス オブジェクトのプロパティ
+        href: properties-of-device-objects.md
+        items:
+        - name: デバイスの種類の指定
+          href: specifying-device-types.md
+        - name: デバイスの特性の指定
+          href: specifying-device-characteristics.md
+        - name: デバイス オブジェクトへの排他アクセスの指定
+          href: specifying-exclusive-access-to-device-objects.md
+        - name: レジストリでのデバイス オブジェクトのプロパティの設定
+          href: setting-device-object-properties-in-the-registry.md
+          items:
+          - name: インストール時のデバイス オブジェクト レジストリ プロパティの設定
+            href: setting-device-object-registry-properties-during-installation.md
+          - name: インストール後のデバイス オブジェクト レジストリ プロパティの設定
+            href: setting-device-object-registry-properties-after-installation.md
+      - name: デバイス オブジェクトのセキュリティ保護
+        href: securing-device-objects.md
+        items:
+        - name: デバイス アクセスの制御
+          href: controlling-device-access.md
+        - name: デバイスの名前空間アクセスの制御
+          href: controlling-device-namespace-access.md
+        - name: デバイス オブジェクトを表す SDDL
+          href: sddl-for-device-objects.md
+      - name: デバイス オブジェクトについて考慮すべき点
+        href: points-to-consider-about-device-objects.md
+    - name: カーネル オブジェクトの管理
+      href: managing-kernel-objects.md
+      items:
+      - name: オブジェクト名
+        href: object-names.md
+      - name: オブジェクト ディレクトリ
+        href: object-directories.md
+      - name: オブジェクトのライフ サイクル
+        href: life-cycle-of-an-object.md
+      - name: オブジェクト ハンドル
+        href: object-handles.md
+      - name: オブジェクトのセキュリティ
+        href: object-security.md
+        items:
+        - name: アクセス権
+          href: access-rights.md
+        - name: セキュリティ記述子
+          href: security-descriptors.md
+        - name: 権限
+          href: privileges.md
+    - name: Windows ドライバーのメモリ管理
+      href: managing-memory-for-drivers.md
+      items:
+      - name: Windows メモリ領域の概要
+        href: overview-of-windows-memory-space.md
+      - name: システム領域メモリの割り当て
+        href: allocating-system-space-memory.md
+      - name: レジスターのマッピング
+        href: map-registers.md
+      - name: バス相対アドレスの仮想アドレスへのマッピング
+        href: mapping-bus-relative-addresses-to-virtual-addresses.md
+      - name: カーネル スタックの使用
+        href: using-the-kernel-stack.md
+      - name: ルックアサイド リストの使用
+        href: using-lookaside-lists.md
+      - name: ドライバーをページング可能にする
+        href: making-drivers-pageable.md
+        items:
+        - name: コードとデータをページング可能にすべき場合
+          href: when-should-code-and-data-be-pageable-.md
+        - name: ドライバーのコードまたはデータをページング可能にする
+          href: making-driver-code-or-data-pageable.md
+          items:
+          - name: ページング可能にできるコードの検出
+            href: detecting-code-that-can-be-pageable.md
+          - name: ページング可能なコードの分離
+            href: isolating-pageable-code.md
+          - name: ページング可能なコードまたはデータのロック
+            href: locking-pageable-code-or-data.md
+          - name: ドライバー全体のページング
+            href: paging-an-entire-driver.md
+      - name: 読み取り専用システム メモリへのアクセス
+        href: accessing-read-only-system-memory.md
+      - name: ユーザー領域メモリへのアクセス
+        href: accessing-user-space-memory.md
+      - name: No-Execute (NX) の非ページ プール
+        href: no-execute-nonpaged-pool.md
+        items:
+        - name: プールの種類 (NX と Execute)
+          href: nx-and-execute-pool-types.md
+        - name: NX プールの互換性の問題
+          href: nx-pool-compatibility-issues.md
+        - name: NX プールのオプトイン メカニズム
+          href: nx-pool-opt-in-mechanisms.md
+          items:
+          - name: '単一バイナリ オプトイン: POOL_NX_OPTIN'
+            href: single-binary-opt-in-pool-nx-optin.md
+          - name: '複数バイナリ オプトイン: POOL_NX_OPTIN_AUTO'
+            href: multiple-binary-opt-in-pool-nx-optin-auto.md
+          - name: '選択的オプトアウト: POOL_NX_OPTOUT'
+            href: selective-opt-out-pool-nx-optout.md
+      - name: セクション オブジェクトとビュー
+        href: section-objects-and-views.md
+        items:
+        - name: ファイルに格納されたセクションとページ ファイルに格納されたセクション
+          href: file-backed-and-page-file-backed-sections.md
+        - name: メモリ セクションの管理
+          href: managing-memory-sections.md
+        - name: セクション オブジェクトとビューに関するセキュリティの問題
+          href: security-issues-for-section-objects-and-views.md
+      - name: MDL の使用
+        href: using-mdls.md
+    - name: ドライバーの入出力の管理
+      href: managing-input-output-for-drivers.md
+      items:
+      - name: IRP の処理
+        href: handling-irps.md
+        items:
+        - name: Windows I/O モデルの概要
+          href: overview-of-the-windows-i-o-model.md
+        - name: エンドユーザーの I/O 要求とファイル オブジェクト
+          href: end-user-i-o-requests-and-file-objects.md
+        - name: I/O 要求の有効期間
+          href: the-life-of-an-i-o-request.md
+          items:
+          - name: I/O 要求の例 - 概要
+            href: example-i-o-request---an-overview.md
+          - name: I/O 要求の例 - 詳細
+            href: example-i-o-request---the-details.md
+          - name: ドライバーのスレッド コンテキスト
+            href: driver-thread-context.md
+          - name: ユーザーの I/O 要求について考慮すべき点
+            href: points-to-consider-about-user-i-o-requests.md
+        - name: IRP の主要な関数コード
+          href: irp-major-function-codes.md
+          items:
+          - name: IRP_MJ_CLEANUP
+            href: irp-mj-cleanup.md
+          - name: IRP_MJ_CLOSE
+            href: irp-mj-close.md
+          - name: IRP_MJ_CREATE
+            href: irp-mj-create.md
+          - name: IRP_MJ_DEVICE_CONTROL
+            href: irp-mj-device-control.md
+          - name: IRP_MJ_FILE_SYSTEM_CONTROL
+            href: irp-mj-file-system-control.md
+          - name: IRP_MJ_FLUSH_BUFFERS
+            href: irp-mj-flush-buffers.md
+          - name: IRP_MJ_INTERNAL_DEVICE_CONTROL
+            href: irp-mj-internal-device-control.md
+          - name: IRP_MJ_PNP
+            href: irp-mj-pnp.md
+          - name: IRP_MJ_POWER
+            href: irp-mj-power.md
+          - name: IRP_MJ_QUERY_INFORMATION
+            href: irp-mj-query-information.md
+          - name: IRP_MJ_READ
+            href: irp-mj-read.md
+          - name: IRP_MJ_SET_INFORMATION
+            href: irp-mj-set-information.md
+          - name: IRP_MJ_SHUTDOWN
+            href: irp-mj-shutdown.md
+          - name: IRP_MJ_SYSTEM_CONTROL
+            href: irp-mj-system-control.md
+          - name: IRP_MJ_WRITE
+            href: irp-mj-write.md
+        - name: I/O スタック位置
+          href: i-o-stack-locations.md
+        - name: I/O ステータス ブロック
+          href: i-o-status-blocks.md
+        - name: 下のドライバー スタックへの IRP の受け渡し
+          href: passing-irps-down-the-driver-stack.md
+        - name: 下位レベル ドライバー用 IRP の作成
+          href: creating-irps-for-lower-level-drivers.md
+        - name: IRP のキューとデキュー
+          href: queuing-and-dequeuing-irps.md
+        - name: StartIo ルーチンの記述
+          href: writing-a-startio-routine.md
+          items:
+          - name: 最下位レベル ドライバーの StartIo ルーチン
+            href: startio-routines-in-lowest-level-drivers.md
+          - name: 上位レベル ドライバーの StartIo ルーチン
+            href: startio-routines-in-higher-level-drivers.md
+          - name: StartIo ルーチンについて考慮すべき点
+            href: points-to-consider-for-startio-routines.md
+        - name: ドライバーによって管理される IRP キュー
+          href: driver-managed-irp-queues.md
+          items:
+          - name: デバイス キューのセットアップと使用
+            href: setting-up-and-using-device-queues.md
+          - name: デバイス キューの管理
+            href: managing-device-queues.md
+          - name: インタロック キューのセットアップと使用
+            href: setting-up-and-using-interlocked-queues.md
+          - name: ドライバーによって作成されたスレッドを使用したインタロック キューの管理
+            href: managing-interlocked-queues-with-a-driver-created-thread.md
+          - name: キャンセル セーフの IRP キュー
+            href: cancel-safe-irp-queues.md
+        - name: IRP の完了
+          href: completing-irps.md
+        - name: IRP を完了するタイミング
+          href: when-to-complete-an-irp.md
+        - name: ディスパッチ ルーチン内での IRP の完了
+          href: completing-irps-in-dispatch-routines.md
+          items:
+          - name: ディスパッチ ルーチン内で IRP を完了する方法
+            href: how-to-complete-an-irp-in-a-dispatch-routine.md
+          - name: ディスパッチ ルーチン内で IRP を完了するタイミング
+            href: when-to-complete-an-irp-in-a-dispatch-routine.md
+        - name: IoCompletion ルーチンの使用
+          href: using-iocompletion-routines.md
+          items:
+          - name: IoCompletion ルーチンの登録
+            href: registering-an-iocompletion-routine.md
+          - name: IoCompletion ルーチンの実装
+            href: implementing-an-iocompletion-routine.md
+        - name: IRP のキャンセル
+          href: canceling-irps.md
+          items:
+          - name: キャンセル ルーチンの概要
+            href: introduction-to-cancel-routines.md
+          - name: キャンセル ルーチンの登録
+            href: registering-a-cancel-routine.md
+          - name: IRP をキャンセルするときに考慮すべき点
+            href: points-to-consider-when-canceling-irps.md
+        - name: IRP キャンセルの同期
+          href: synchronizing-irp-cancellation.md
+          items:
+          - name: システムのキャンセル スピン ロックの使用
+            href: using-the-system-s-cancel-spin-lock.md
+          - name: IRP を処理するドライバー ルーチン内でのキャンセルの同期
+            href: synchronizing-cancellation-in-driver-routines-that-process-irps.md
+          - name: 上位レベル ドライバーでのキャンセル ルーチンを使用しないキャンセルの同期
+            href: synchronizing-cancellation-in-higher-level-drivers-without-cancel-rout.md
+          - name: ドライバーによって提供されるスピン ロックの使用
+            href: using-a-driver-supplied-spin-lock.md
+        - name: キャンセル ルーチンの実装
+          href: implementing-a-cancel-routine.md
+          items:
+          - name: StartIo ルーチンを使用しているドライバーのキャンセル ルーチン
+            href: cancel-routines-in-drivers-with-startio-routines.md
+          - name: StartIo ルーチンを使用していないドライバーのキャンセル ルーチン
+            href: cancel-routines-in-drivers-without-startio-routines.md
+        - name: IRP の再利用
+          href: reusing-irps.md
+        - name: デバイスの種類に固有の I/O 要求
+          href: device-type-specific-i-o-requests.md
+        - name: I/O 制御コードの使用
+          href: using-i-o-control-codes.md
+          items:
+          - name: I/O 制御コードの概要
+            href: introduction-to-i-o-control-codes.md
+          - name: ドライバー内での IOCTL 要求の作成
+            href: creating-ioctl-requests-in-drivers.md
+          - name: I/O 制御コードの定義
+            href: defining-i-o-control-codes.md
+          - name: I/O 制御コードのバッファー記述
+            href: buffer-descriptions-for-i-o-control-codes.md
+          - name: I/O 制御コードに関するセキュリティの問題
+            href: security-issues-for-i-o-control-codes.md
+        - name: IRP 優先度ヒントの使用
+          href: using-irp-priority-hints.md
+        - name: IRP 処理の例
+          href: irp-processing-examples.md
+          items:
+          - name: 最下位レベル ドライバーでの IRP の処理
+            href: processing-irps-in-a-lowest-level-driver.md
+          - name: 中間レベル ドライバーでの IRP の処理
+            href: processing-irps-in-an-intermediate-level-driver.md
+          - name: IRP 処理のさまざまな方法 - チート シート
+            href: different-ways-of-handling-irps-cheat-sheet.md
+      - name: I/O のプログラミング手法
+        href: i-o-programming-techniques.md
+      - name: I/O の一般的なプログラミング手法
+        href: general-i-o-programming-techniques.md
+        items:
+        - name: 同期 I/O のプログラミング
+          href: synchronous-i-o-programming.md
+        - name: 非同期 I/O のプログラミング
+          href: asynchronous-i-o-programming.md
+        - name: Vista での待機の制限
+          href: restricting-waits-in-vista.md
+        - name: デバイスのポーリングの回避
+          href: avoid-polling-devices.md
+        - name: キャッシュの一貫性の維持
+          href: maintaining-cache-coherency.md
+      - name: データ バッファーにアクセスする方法
+        href: methods-for-accessing-data-buffers.md
+        items:
+        - name: バッファー付き I/O の使用
+          href: using-buffered-i-o.md
+        - name: ダイレクト I/O の使用
+          href: using-direct-i-o.md
+        - name: DMA でのダイレクト I/O の使用
+          href: using-direct-i-o-with-dma.md
+        - name: PIO でのダイレクト I/O の使用
+          href: using-direct-i-o-with-pio.md
+        - name: バッファー付き I/O とダイレクト I/O のどちらも使用しない
+          href: using-neither-buffered-nor-direct-i-o.md
+      - name: DMA のプログラミング手法
+        href: dma-programming-techniques.md
+        items:
+        - name: DMA 操作中のキャッシュ データのフラッシュ
+          href: flushing-cached-data-during-dma-operations.md
+        - name: DMA 転送要求の分割
+          href: splitting-dma-transfer-requests.md
+      - name: アダプター オブジェクトと DMA
+        href: adapter-objects-and-dma.md
+        items:
+        - name: アダプター オブジェクトの概要
+          href: introduction-to-adapter-objects.md
+        - name: アダプター オブジェクトの取得
+          href: getting-an-adapter-object.md
+        - name: スキャッター/ギャザー DMA の使用
+          href: using-scatter-gather-dma.md
+        - name: AdapterControl ルーチンの記述
+          href: writing-adaptercontrol-routines.md
+          items:
+          - name: AdapterControl ルーチンの記憶域の要件
+            href: storage-requirements-for-adaptercontrol-routines.md
+          - name: AdapterControl ルーチンのセットアップ
+            href: setting-up-adaptercontrol-routines.md
+          - name: AdapterControl ルーチンの要件
+            href: adaptercontrol-routine-requirements.md
+      - name: システム DMA の使用
+        href: using-system-dma.md
+        items:
+        - name: パケットベース システム DMA の使用
+          href: using-packet-based-system-dma.md
+          items:
+          - name: パケットベース DMA 用のアダプター チャネルの割り当て
+            href: allocating-an-adapter-channel-for-packet-based-dma.md
+          - name: パケットベース DMA 用のシステム DMA コントローラーのセットアップ
+            href: setting-up-the-system-dma-controller-for-packet-based-dma.md
+        - name: 共通バッファー システム DMA の使用
+          href: using-common-buffer-system-dma.md
+          items:
+          - name: 共通バッファー システム DMA 用のアダプター チャネルの割り当て
+            href: allocating-an-adapter-channel-for-common-buffer-system-dma.md
+          - name: 共通バッファー DMA 用のシステム DMA コントローラーのセットアップ
+            href: setting-up-the-system-dma-controller-for-common-buffer-dma.md
+      - name: バス マスター DMA の使用
+        href: using-bus-master-dma.md
+        items:
+        - name: パケットベース バス マスター DMA の使用
+          href: using-packet-based-bus-master-dma.md
+          items:
+          - name: バス マスター アダプター オブジェクトの割り当て
+            href: allocating-the-bus-master-adapter-object.md
+          - name: 転送操作のセットアップ
+            href: setting-up-a-transfer-operation.md
+        - name: 共通バッファー バス マスター DMA の使用
+          href: using-common-buffer-bus-master-dma.md
+      - name: DMA 操作インターフェイスのバージョン 3
+        href: version-3-of-the-dma-operations-interface.md
+        items:
+        - name: バージョン 3 の DMA ルーチンの基本的な呼び出しパターン
+          href: basic-calling-pattern-for-version-3-dma-routines.md
+        - name: MapTransferEx ルーチンの使用
+          href: using-the-maptransferex-routine.md
+      - name: PIO の手法
+        href: pio-techniques.md
+        items:
+        - name: PIO 操作中のキャッシュ データのフラッシュ
+          href: flushing-cached-data-during-pio-operations.md
+      - name: レガシ I/O プログラミング
+        href: legacy-i-o-programming.md
+        items:
+        - name: デバイス構成領域へのアクセス
+          href: accessing-device-configuration-space.md
+          items:
+          - name: IRQL = PASSIVE_LEVEL のデバイス構成情報の取得
+            href: obtaining-device-configuration-information-at-irql---passive-level.md
+          - name: IRQL = DISPATCH_LEVEL のデバイス構成情報の取得
+            href: obtaining-device-configuration-information-at-irql---dispatch-level.md
+          - name: その他のドライバー スタックからの構成情報の取得
+            href: obtaining-configuration-information-from-other-driver-stacks.md
+        - name: コントローラー オブジェクトの使用
+          href: using-controller-objects.md
+          items:
+          - name: コントローラー オブジェクトの概要
+            href: introduction-to-controller-objects.md
+          - name: コントローラー オブジェクトとコントローラー拡張の作成
+            href: creating-controller-objects-and-controller-extensions.md
+          - name: I/O 操作用のコントローラー オブジェクトの割り当て
+            href: allocating-controller-objects-for-i-o-operations.md
+        - name: ControllerControl ルーチンの記述
+          href: writing-controllercontrolroutines.md
+          items:
+          - name: ControllerControl ルーチンの記憶域の要件
+            href: storage-requirements-for-controllercontrol-routines.md
+          - name: ControllerControl ルーチンのセットアップ
+            href: setting-up-controllercontrolroutines.md
+          - name: ControllerControl ルーチンの要件
+            href: controllercontrol-routine-requirements.md
+      - name: 割り込みの処理
+        href: servicing-interrupts.md
+        items:
+        - name: 割り込みサービス ルーチン
+          href: interrupt-service-routines.md
+          items:
+          - name: 割り込みサービス ルーチンの概要
+            href: introduction-to-interrupt-service-routines.md
+          - name: ISR の削除
+            href: removing-an-isr.md
+          - name: ISR をアクティブまたは非アクティブにする
+            href: making-an-isr-active-or-inactive.md
+          - name: 割り込みアフィニティ
+            href: interrupt-affinity-and-priority.md
+          - name: ISR コンテキスト情報の提供
+            href: providing-isr-context-information.md
+          - name: ISR の記述
+            href: writing-an-isr.md
+          - name: デバイス データへのアクセスの同期
+            href: synchronizing-access-to-device-data.md
+        - name: メッセージ シグナル割り込みの使用
+          href: using-message-signaled-interrupts.md
+          items:
+          - name: メッセージ シグナル割り込みの概要
+            href: introduction-to-message-signaled-interrupts.md
+          - name: レジストリでのメッセージ シグナル割り込みの有効化
+            href: enabling-message-signaled-interrupts-in-the-registry.md
+          - name: 割り込みリソース記述子の使用
+            href: using-interrupt-resource-descriptors.md
+          - name: MSI-X の動的な構成
+            href: dynamically-configuring-msi-x.md
+        - name: ISR の登録
+          href: registering-an-isr.md
+          items:
+          - name: IoConnectInterruptEx の CONNECT_LINE_BASED バージョンの使用
+            href: using-the-connect-line-based-version-of-ioconnectinterruptex.md
+          - name: IoConnectInterruptEx の CONNECT_MESSAGE_BASED バージョンの使用
+            href: using-the-connect-message-based-version-of-ioconnectinterruptex.md
+          - name: IoConnectInterruptEx の CONNECT_FULLY_SPECIFIED バージョンの使用
+            href: using-the-connect-fully-specified-version-of-ioconnectinterruptex.md
+          - name: パッシブ レベル割り込みサービス ルーチンの使用
+            href: using-passive-level-interrupt-handling-routines.md
+          - name: Windows Vista より前の IoConnectInterruptEx の使用
+            href: using-ioconnectinterruptex-prior-to-windows-vista.md
+        - name: DPC オブジェクトと DPC
+          href: dpc-objects-and-dpcs.md
+          items:
+          - name: DPC オブジェクトの概要
+            href: introduction-to-dpc-objects.md
+          - name: DPC の概要
+            href: introduction-to-dpcs.md
+          - name: 使用すべき DPC の種類
+            href: which-type-of-dpc-should-you-use-.md
+          - name: DpcForIsr ルーチンの登録とキュー
+            href: registering-and-queuing-a-dpcforisr-routine.md
+          - name: CustomDpc ルーチンの登録とキュー
+            href: registering-and-queuing-a-customdpc-routine.md
+          - name: 重複した I/O 操作の処理
+            href: handling-overlapped-i-o-operations.md
+          - name: DPC ルーチンの記述
+            href: writing-dpc-routines.md
+          - name: DPC ルーチンの記述に関するガイドライン
+            href: guidelines-for-writing-dpc-routines.md
+          - name: DPC キューの構造
+            href: organization-of-dpc-queues.md
+        - name: スレッド DPC
+          href: threaded-dpcs.md
+          items:
+          - name: スレッド DPC の概要
+            href: introduction-to-threaded-dpcs.md
+          - name: 同期とスレッド DPC
+            href: synchronization-and-threaded-dpcs.md
+          - name: 通常の DPC からスレッド DPC への変換
+            href: converting-an-ordinary-dpc-to-a-threaded-dpc.md
+        - name: クリティカル セクションの使用
+          href: using-critical-sections.md
+          items:
+          - name: SynchCritSection ルーチンの概要
+            href: introduction-to-synchcritsection-routines.md
+          - name: SynchCritSection ルーチンの記述
+            href: writing-synchcritsection-routines.md
+          - name: I/O 操作のためのデバイスのプログラミング
+            href: programming-a-device-for-an-i-o-operation.md
+          - name: 共有している状態情報へのアクセス
+            href: accessing-shared-state-information.md
+        - name: ハードウェアの優先度の管理
+          href: managing-hardware-priorities.md
+    - name: プラグ アンド プレイの実装
+      href: implementing-plug-and-play.md
+      items:
+      - name: プラグ アンド プレイの概要
+        href: introduction-to-plug-and-play.md
+        items:
+        - name: PnP のコンポーネント
+          href: pnp-components.md
+        - name: PnP のサポートのレベル
+          href: levels-of-support-for-pnp.md
+        - name: PnP ドライバーの設計ガイドライン
+          href: pnp-driver-design-guidelines.md
+        - name: デバイス ツリー
+          href: device-tree.md
+        - name: ハードウェア リソース
+          href: hardware-resources.md
+        - name: PnP デバイスの状態遷移
+          href: state-transitions-for-pnp-devices.md
+      - name: 実行中システムへの PnP デバイスの追加
+        href: adding-a-pnp-device-to-a-running-system.md
+      - name: プラグ アンド プレイのマイナー IRP
+        href: plug-and-play-minor-irps.md
+        items:
+        - name: IRP_MN_CANCEL_REMOVE_DEVICE
+          href: irp-mn-cancel-remove-device.md
+        - name: IRP_MN_CANCEL_STOP_DEVICE
+          href: irp-mn-cancel-stop-device.md
+        - name: IRP_MN_DEVICE_ENUMERATED
+          href: irp-mn-device-enumerated.md
+        - name: IRP_MN_DEVICE_USAGE_NOTIFICATION
+          href: irp-mn-device-usage-notification.md
+        - name: IRP_MN_EJECT
+          href: irp-mn-eject.md
+        - name: IRP_MN_FILTER_RESOURCE_REQUIREMENTS
+          href: irp-mn-filter-resource-requirements.md
+        - name: IRP_MN_QUERY_BUS_INFORMATION
+          href: irp-mn-query-bus-information.md
+        - name: IRP_MN_QUERY_CAPABILITIES
+          href: irp-mn-query-capabilities.md
+        - name: IRP_MN_QUERY_DEVICE_RELATIONS
+          href: irp-mn-query-device-relations.md
+        - name: IRP_MN_QUERY_DEVICE_TEXT
+          href: irp-mn-query-device-text.md
+        - name: IRP_MN_QUERY_ID
+          href: irp-mn-query-id.md
+        - name: IRP_MN_QUERY_INTERFACE
+          href: irp-mn-query-interface.md
+        - name: IRP_MN_QUERY_LEGACY_BUS_INFORMATION
+          href: irp-mn-query-legacy-bus-information.md
+        - name: IRP_MN_QUERY_PNP_DEVICE_STATE
+          href: irp-mn-query-pnp-device-state.md
+        - name: IRP_MN_QUERY_REMOVE_DEVICE
+          href: irp-mn-query-remove-device.md
+        - name: IRP_MN_QUERY_RESOURCE_REQUIREMENTS
+          href: irp-mn-query-resource-requirements.md
+        - name: IRP_MN_QUERY_RESOURCES
+          href: irp-mn-query-resources.md
+        - name: IRP_MN_QUERY_STOP_DEVICE
+          href: irp-mn-query-stop-device.md
+        - name: IRP_MN_READ_CONFIG
+          href: irp-mn-read-config.md
+        - name: IRP_MN_REMOVE_DEVICE
+          href: irp-mn-remove-device.md
+        - name: IRP_MN_SET_LOCK
+          href: irp-mn-set-lock.md
+        - name: IRP_MN_START_DEVICE
+          href: irp-mn-start-device.md
+        - name: IRP_MN_STOP_DEVICE
+          href: irp-mn-stop-device.md
+        - name: IRP_MN_SURPRISE_REMOVAL
+          href: irp-mn-surprise-removal.md
+        - name: IRP_MN_WRITE_CONFIG
+          href: irp-mn-write-config.md
+      - name: 下のデバイス スタックへの PnP IRP の受け渡し
+        href: passing-pnp-irps-down-the-device-stack.md
+      - name: 下位のドライバーが完了するまで PnP IRP 処理を延期する
+        href: postponing-pnp-irp-processing-until-lower-drivers-finish.md
+      - name: デバイスの開始
+        href: starting-a-device.md
+        items:
+        - name: ファンクション ドライバーでのデバイスの開始
+          href: starting-a-device-in-a-function-driver.md
+        - name: フィルター ドライバーでのデバイスの開始
+          href: starting-a-device-in-a-filter-driver.md
+        - name: バス ドライバーでのデバイスの開始
+          href: starting-a-device-in-a-bus-driver.md
+        - name: デバイスの開始に関する設計ガイドライン
+          href: design-guidelines-for-starting-devices.md
+      - name: デバイスの停止
+        href: stopping-a-device.md
+        items:
+        - name: リソースを再調整するためのデバイスの停止
+          href: stopping-a-device-to-rebalance-resources.md
+        - name: 無効にするためのデバイスの停止 (Windows 98/Me)
+          href: stopping-a-device-to-disable-it--windows-98-me-.md
+        - name: 開始が失敗した後のデバイスの停止 (Windows 98/Me)
+          href: stopping-a-device-after-a-failed-start--windows-98-me-.md
+        - name: 停止 IRP の処理 (Windows 2000 以降)
+          href: handling-stop-irps--windows-2000-and-later-.md
+          items:
+          - name: IPR_MN_QUERY_STOP_DEVICE 要求の処理 (Windows 2000 以降)
+            href: handling-an-irp-mn-query-stop-device-request--windows-2000-and-later-.md
+          - name: IRP_MN_STOP_DEVICE 要求の処理 (Windows 2000 以降)
+            href: handling-an-irp-mn-stop-device-request--windows-2000-and-later-.md
+          - name: IRP_MN_CANCEL_STOP_DEVICE 要求の処理 (Windows 2000 以降)
+            href: handling-an-irp-mn-cancel-stop-device-request--windows-2000-and-later-.md
+          - name: デバイスが一時停止したときの着信 IRP の保留
+            href: holding-incoming-irps-when-a-device-is-paused.md
+        - name: 停止 IRP の処理 (Windows 98/Me)
+          href: handling-stop-irps--windows-98-me-.md
+          items:
+          - name: IRP_MN_QUERY_STOP_DEVICE 要求の処理 (Windows 98/Me)
+            href: handling-an-irp-mn-query-stop-device-request--windows-98-me-.md
+          - name: IRP_MN_STOP_DEVICE 要求の処理 (Windows 98/Me)
+            href: handling-an-irp-mn-stop-device-request--windows-98-me-.md
+          - name: IRP_MN_CANCEL_STOP_DEVICE 要求の処理 (Windows 98/Me)
+            href: handling-an-irp-mn-cancel-stop-device-request--windows-98-me-.md
+      - name: デバイスのリセットと回復
+        href: resetting-and-recovering-a-device.md
+      - name: デバイスの削除
+        href: removing-a-device.md
+        items:
+        - name: IRP の削除が発行される場合の概要
+          href: understanding-when-remove-irps-are-issued.md
+        - name: IRP_MN_QUERY_REMOVE_DEVICE 要求の処理
+          href: handling-an-irp-mn-query-remove-device-request.md
+        - name: IRP_MN_REMOVE_DEVICE 要求の処理
+          href: handling-an-irp-mn-remove-device-request.md
+          items:
+          - name: ファンクション ドライバーでのデバイスの削除
+            href: removing-a-device-in-a-function-driver.md
+          - name: フィルター ドライバーでのデバイスの削除
+            href: removing-a-device-in-a-filter-driver.md
+          - name: バス ドライバーでのデバイスの削除
+            href: removing-a-device-in-a-bus-driver.md
+        - name: IRP_MN_CANCEL_REMOVE_DEVICE 要求の処理
+          href: handling-an-irp-mn-cancel-remove-device-request.md
+        - name: IRP_MN_SURPRISE_REMOVAL 要求の処理
+          href: handling-an-irp-mn-surprise-removal-request.md
+        - name: 削除ロックの使用
+          href: using-remove-locks.md
+      - name: PnP 通知の使用
+        href: using-pnp-notification.md
+        items:
+        - name: PnP 通知の概要
+          href: pnp-notification-overview.md
+        - name: PnP 通知コールバック ルーチンの記述に関するガイドライン
+          href: guidelines-for-writing-pnp-notification-callback-routines.md
+        - name: PnP デバイス インターフェイス変更通知の使用
+          href: using-pnp-device-interface-change-notification.md
+          items:
+          - name: デバイス インターフェイス変更の通知登録
+            href: registering-for-device-interface-change-notification.md
+          - name: デバイス インターフェイス変更イベントの処理
+            href: handling-device-interface-change-events.md
+        - name: PnP ターゲット デバイス変更通知の使用
+          href: using-pnp-target-device-change-notification.md
+          items:
+          - name: ターゲット デバイス変更の通知登録
+            href: registering-for-target-device-change-notification.md
+          - name: GUID_TARGET_DEVICE_QUERY_REMOVE イベントの処理
+            href: handling-a-guid-target-device-query-remove-event.md
+          - name: GUID_TARGET_DEVICE_REMOVE_COMPLETE イベントの処理
+            href: handling-a-guid-target-device-remove-complete-event.md
+          - name: GUID_TARGET_DEVICE_REMOVE_CANCELLED イベントの処理
+            href: handling-a-guid-target-device-remove-cancelled-event.md
+        - name: PnP ハードウェア プロファイル変更通知の使用
+          href: using-pnp-hardware-profile-change-notification.md
+          items:
+          - name: ハードウェア プロファイル変更の通知登録
+            href: registering-for-hardware-profile-change-notification.md
+          - name: ハードウェア プロファイル変更イベントの処理
+            href: handling-hardware-profile-change-events.md
+        - name: PnP カスタム通知の使用
+          href: using-pnp-custom-notification.md
+    - name: Windows ドライバーの電源管理
+      href: implementing-power-management.md
+      items:
+      - name: 電源管理の概要
+        href: introduction-to-power-management.md
+        items:
+        - name: 電源管理についての業界の取り組み
+          href: industry-initiatives-for-power-management.md
+        - name: 電源管理のサポート
+          href: support-for-power-management.md
+        - name: 電源管理のシステム全体の概要
+          href: system-wide-overview-of-power-management.md
+        - name: 電源の状態
+          href: power-states.md
+      - name: カーネル モードの電源管理のコンポーネント
+        href: kernel-mode-power-management-components.md
+        items:
+        - name: ACPI BIOS
+          href: acpi-bios.md
+        - name: 'Acpi.sys: Windows ACPI ドライバー'
+          href: acpi-driver.md
+        - name: 電源マネージャー
+          href: power-manager.md
+        - name: 電源管理でのドライバーの役割
+          href: driver-role-in-power-management.md
+        - name: ACPI 通知
+          href: acpi-notifications.md
+        - name: デバイス電源管理 (DPM) の通知
+          href: dpm-notifications.md
+        - name: プロセッサ電源管理 (PPM) の通知
+          href: ppm-notifications.md
+        - name: PPM 電源制御コード
+          href: ppm-power-control-codes.md
+      - name: ドライバーの電源管理の役割
+        href: power-management-responsibilities-for-drivers.md
+        items:
+        - name: デバイスの電源機能のレポート
+          href: reporting-device-power-capabilities.md
+          items:
+          - name: DeviceD1 と DeviceD2
+            href: deviced1-and-deviced2.md
+          - name: WakeFromD0、WakeFromD1、WakeFromD2、WakeFromD3
+            href: wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md
+          - name: DeviceState
+            href: devicestate.md
+          - name: SystemWake
+            href: systemwake.md
+          - name: DeviceWake
+            href: devicewake.md
+          - name: D1Latency、D2Latency、D3Latency
+            href: d1latency--d2latency--and-d3latency.md
+        - name: 電源管理に関するデバイス オブジェクト フラグの設定
+          href: setting-device-object-flags-for-power-management.md
+        - name: 電源 IRP の処理
+          href: handling-power-irps.md
+          items:
+          - name: システムの電源 IRP
+            href: power-irps-for-the-system.md
+          - name: 個々のデバイスの電源 IRP
+            href: power-irps-for-individual-devices.md
+        - name: 電源管理のマイナー IRP
+          href: power-management-minor-irps.md
+          items:
+          - name: IRP_MN_POWER_SEQUENCE
+            href: irp-mn-power-sequence.md
+          - name: IRP_MN_QUERY_POWER
+            href: irp-mn-query-power.md
+          - name: IRP_MN_SET_POWER
+            href: irp-mn-set-power.md
+          - name: IRP_MN_WAIT_WAKE
+            href: irp-mn-wait-wake.md
+        - name: デバイスの電源投入
+          href: powering-up-a-device.md
+        - name: デバイスの電源切断
+          href: powering-down-a-device.md
+        - name: デバイス ウェイクアップの有効化
+          href: enabling-device-wake-up.md
+        - name: デバイスのパフォーマンス状態の管理
+          href: managing-device-performance-states.md
+        - name: 休止状態からのウェイクと高速スタートアップの区別
+          href: distinguishing-fast-startup-from-wake-from-hibernation.md
+      - name: 電源 IRP の処理に関するルール
+        href: rules-for-handling-power-irps.md
+        items:
+        - name: IoCallDriver の呼び出しとPoCallDriver の呼び出し
+          href: calling-iocalldriver-versus-calling-pocalldriver.md
+        - name: PoStartNextPowerIrp の呼び出し
+          href: calling-postartnextpowerirp.md
+          items:
+          - name: フィルター ドライバーからの PoStartNextPowerIrp の呼び出し
+            href: calling-postartnextpowerirp-from-a-filter-driver.md
+          - name: デバイス電源ポリシー オーナーからの PoStartNextPowerIrp の呼び出し
+            href: calling-postartnextpowerirp-from-a-device-power-policy-owner.md
+          - name: バス ドライバーからの PoStartNextPowerIrp の呼び出し
+            href: calling-postartnextpowerirp-from-a-bus-driver.md
+        - name: 電源 IRP の受け渡し
+          href: passing-power-irps.md
+        - name: デバイスがスリープ状態のときの I/O 要求のキュー
+          href: queuing-i-o-requests-while-a-device-is-sleeping.md
+        - name: サポートされていないか認識できない電源 IRP の処理
+          href: handling-unsupported-or-unrecognized-power-irps.md
+        - name: 電源 IRP 処理中の ExSetTimerResolution の呼び出し
+          href: calling-exsettimerresolution-while-processing-a-power-irp.md
+      - name: 個々のデバイスの電源の管理
+        href: managing-power-for-individual-devices.md
+        items:
+        - name: デバイスの電源状態
+          href: device-power-states.md
+          items:
+          - name: デバイス稼働状態 D0
+            href: device-working-state-d0.md
+          - name: デバイスの低電力状態
+            href: device-sleeping-states.md
+          - name: デバイスの電源状態に関して必要なサポート
+            href: required-support-for-device-power-states.md
+        - name: デバイス電源ポリシーの管理
+          href: managing-device-power-policy.md
+        - name: デバイス電源状態についての IRP_MN_SET_POWER の処理
+          href: handling-irp-mn-set-power-for-device-power-states.md
+          items:
+          - name: デバイスの電源切断 IRP の処理
+            href: handling-device-power-down-irps.md
+          - name: デバイスの電源投入 IRP の処理
+            href: handling-device-power-up-irps.md
+          - name: デバイス電源 IRP の IoCompletion ルーチン
+            href: iocompletion-routines-for-device-power-irps.md
+        - name: デバイス電源状態についての IRP_MN_QUERY_POWER の処理
+          href: handling-irp-mn-query-power-for-device-power-states.md
+        - name: デバイス電源状態についての IRP_MN_QUERY_POWER または IRP_MN_SET_POWER の送信
+          href: sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md
+        - name: アイドル状態デバイスの検出
+          href: detecting-an-idle-device.md
+          items:
+          - name: アイドル状態検出のための電源マネージャー ルーチンの使用
+            href: using-power-manager-routines-for-idle-detection.md
+          - name: デバイス固有のアイドル状態検出の実行
+            href: performing-device-specific-idle-detection.md
+        - name: ドライバーでの D3cold のサポート
+          href: supporting-d3cold-in-a-driver.md
+          items:
+          - name: D3cold への遷移の有効化
+            href: enabling-transitions-to-d3cold.md
+          - name: デバイスの D3cold 機能
+            href: d3cold-capabilities-of-a-device.md
+          - name: GUID_D3COLD_SUPPORT_INTERFACE ドライバー インターフェイスの使用
+            href: using-guid-d3cold-support-interface.md
+          - name: 予期しないウェイクアップ
+            href: surprise-wake-up.md
+      - name: システム電源状態要求の処理
+        href: handling-system-power-state-requests.md
+        items:
+        - name: システムの電源状態
+          href: system-power-states.md
+          items:
+          - name: システム稼働状態 S0
+            href: system-working-state-s0.md
+          - name: システムのスリープ状態
+            href: system-sleeping-states.md
+          - name: システム シャットダウン状態 S5
+            href: system-shutdown-state-s5.md
+          - name: システム電源操作
+            href: system-power-actions.md
+        - name: システム電源ポリシー
+          href: system-power-policy.md
+        - name: システム電源状態変更の防止
+          href: preventing-system-power-state-changes.md
+        - name: システム電源状態についての IRP_MN_QUERY_POWER の処理
+          href: handling-irp-mn-query-power-for-system-power-states.md
+          items:
+          - name: デバイス電源ポリシー オーナーでのシステム電源クエリ IRP の処理
+            href: handling-a-system-query-power-irp-in-a-device-power-policy-owner.md
+          - name: フィルター ドライバーまたはファンクション ドライバーでのシステム電源クエリ IRP の処理
+            href: handling-a-system-query-power-irp-in-a-filter-or-function-driver.md
+          - name: フィルター ドライバーまたはファンクション ドライバーでのシステム電源クエリ IRP の失敗
+            href: failing-a-system-query-power-irp-in-a-filter-or-function-driver.md
+          - name: バス ドライバーでのシステム電源クエリ IRP の処理
+            href: handling-a-system-query-power-irp-in-a-bus-driver.md
+        - name: システム電源状態についての IRP_MN_SET_POWER の処理
+          href: handling-irp-mn-set-power-for-system-power-states.md
+          items:
+          - name: デバイス電源ポリシー所有者のシステム電源設定 IRP の処理
+            href: handling-a-system-set-power-irp-in-a-device-power-policy-owner.md
+          - name: 正しいデバイス電源状態の判断
+            href: determining-the-correct-device-power-state.md
+          - name: システム電源設定 IRP への応答におけるデバイス電源設定 IRP の送信
+            href: sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp.md
+          - name: バス ドライバーでのシステム電源設定 IRP の処理
+            href: handling-a-system-set-power-irp-in-a-bus-driver.md
+          - name: フィルター ドライバーでのシステム電源設定 IRP の処理
+            href: handling-a-system-set-power-irp-in-a-filter-driver.md
+      - name: 電源管理フレームワークの概要
+        href: overview-of-the-power-management-framework.md
+        items:
+        - name: デバイスの電源管理リファレンス
+          href: device-power-management-reference.md
+        - name: コンポーネント レベルの電源管理
+          href: component-level-power-management.md
+        - name: コンポーネント レベルのパフォーマンス状態の管理
+          href: component-level-performance-management.md
+      - name: プラットフォーム拡張プラグイン (PEP)
+        href: platform-extension-plug-ins--peps-.md
+        items:
+        - name: ACPI サービス用 PEP の使用
+          href: using-peps-for-acpi-services.md
+        - name: プラットフォームのパフォーマンスしきい値
+          href: platform-performance-thresholds.md
+      - name: ウェイクアップ機能を備えたデバイスのサポート
+        href: supporting-devices-that-have-wake-up-capabilities.md
+        items:
+        - name: 待機/ウェイク操作の概要
+          href: overview-of-wait-wake-operation.md
+          items:
+          - name: デバイスがシステムをウェイクできるかどうかの判断
+            href: determining-whether-a-device-can-wake-the-system.md
+          - name: デバイス ツリーを通じた待機/ウェイク IRP のパスの概要
+            href: understanding-the-path-of-wait-wake-irps-through-a-device-tree.md
+          - name: 待機/ウェイク IRP 完了の概要
+            href: overview-of-wait-wake-irp-completion.md
+        - name: 待機/ウェイク IRP の受信
+          href: receiving-a-wait-wake-irp.md
+          items:
+          - name: ファンクション ドライバー (FDO) またはフィルター ドライバー (フィルター DO) での待機/ウェイク IRP の処理
+            href: handling-a-wait-wake-irp-in-a-function--fdo--or-filter-driver--filter-.md
+          - name: バス ドライバー (PDO) での待機/ウェイク IRP の処理
+            href: handling-a-wait-wake-irp-in-a-bus-driver--pdo-.md
+          - name: 待機/ウェイク IRP の IoCompletion ルーチン
+            href: iocompletion-routines-for-wait-wake-irps.md
+        - name: 待機/ウェイク IRP の送信
+          href: sending-a-wait-wake-irp.md
+          items:
+          - name: 待機/ウェイク IRP を送信するタイミングの決定
+            href: determining-when-to-send-a-wait-wake-irp.md
+          - name: 待機/ウェイク IRP 要求
+            href: wait-wake-irp-requests.md
+          - name: 待機/ウェイク コールバック ルーチン
+            href: wait-wake-callback-routines.md
+        - name: 待機/ウェイク IRP のキャンセル
+          href: canceling-a-wait-wake-irp.md
+      - name: システム スタートアップのパフォーマンス向上
+        href: improving-system-startup-performance.md
+        items:
+        - name: 低電力状態からスタートアップするときのプロセッサ リソースの共有
+          href: sharing-processor-resources-during-startup-from-a-low-power-state.md
+        - name: 低電力状態からの高速スタートアップ
+          href: fast-startup-from-a-low-power-state.md
+      - name: デバイス レベルの温度管理
+        href: device-level-thermal-management.md
+        items:
+        - name: パッシブとアクティブの冷却モード
+          href: passive-and-active-cooling-modes.md
+        - name: グローバル温度管理
+          href: global-thermal-mgmt.md
+    - name: WMI の実装
+      href: implementing-wmi.md
+      items:
+      - name: WMI の概要
+        href: introduction-to-wmi.md
+      - name: WMI のアーキテクチャ
+        href: wmi-architecture.md
+      - name: WDM ドライバーについての WMI の要件
+        href: wmi-requirements-for-wdm-drivers.md
+      - name: WMI データ ブロックとイベント ブロックの MOF 構文
+        href: mof-syntax-for-wmi-data-and-event-blocks.md
+        items:
+        - name: WMI クラス修飾子
+          href: wmi-class-qualifiers.md
+        - name: WMI クラス名と基本クラス
+          href: wmi-class-names-and-base-classes.md
+        - name: WMI のクラスの必須項目
+          href: required-items-in-wmi-classes.md
+        - name: WMI プロパティ修飾子
+          href: wmi-property-qualifiers.md
+        - name: ドライバーによって定義される WMI データ項目
+          href: driver-defined-wmi-data-items.md
+        - name: WMI クラスの例
+          href: wmi-class-examples.md
+      - name: WMI データ ブロックとイベント ブロックの設計
+        href: designing-wmi-data-and-event-blocks.md
+        items:
+        - name: 標準 WMI ブロックのサポート
+          href: supporting-standard-wmi-blocks.md
+        - name: カスタム WMI ブロックの実装
+          href: implementing-custom-wmi-blocks.md
+        - name: WMI インスタンス名の定義
+          href: defining-wmi-instance-names.md
+      - name: WMI スキーマの公開
+        href: publishing-a-wmi-schema.md
+        items:
+        - name: ドライバーの MOF ファイルのコンパイル
+          href: compiling-a-driver-s-mof-file.md
+        - name: MofImagePath レジストリ値の設定
+          href: setting-the-mofimagepath-registry-value.md
+        - name: 動的 MOF データの実装
+          href: implementing-dynamic-mof-data.md
+        - name: MOF ファイルのローカライズ
+          href: localizing-mof-files.md
+          items:
+          - name: ローカライズされた MOF ファイルの作成
+            href: creating-the-localized-mof-file.md
+          - name: ローカライズされた MOF ファイルのビルドと展開
+            href: building-and-deploying-the-localized-mof-file.md
+      - name: WMI データ プロバイダーとしての登録
+        href: registering-as-a-wmi-data-provider.md
+        items:
+        - name: ブロックを登録するための WMI ライブラリの使用
+          href: using-the-wmi-library-to-register-blocks.md
+        - name: ブロックを登録するための IRP_MN_REGINFO と IRP_MN_REGINFO_EX の処理
+          href: handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md
+        - name: WMI 登録フラグ
+          href: wmi-registration-flags.md
+        - name: WMI 登録情報の更新
+          href: updating-wmi-registration-information.md
+      - name: WMI 要求の処理
+        href: handling-wmi-requests.md
+        items:
+        - name: WMI のマイナー IRP
+          href: wmi-minor-irps.md
+          items:
+          - name: IRP_MN_CHANGE_SINGLE_INSTANCE
+            href: irp-mn-change-single-instance.md
+          - name: IRP_MN_CHANGE_SINGLE_ITEM
+            href: irp-mn-change-single-item.md
+          - name: IRP_MN_DISABLE_COLLECTION
+            href: irp-mn-disable-collection.md
+          - name: IRP_MN_DISABLE_EVENTS
+            href: irp-mn-disable-events.md
+          - name: IRP_MN_ENABLE_COLLECTION
+            href: irp-mn-enable-collection.md
+          - name: IRP_MN_ENABLE_EVENTS
+            href: irp-mn-enable-events.md
+          - name: IRP_MN_EXECUTE_METHOD
+            href: irp-mn-execute-method.md
+          - name: IRP_MN_QUERY_ALL_DATA
+            href: irp-mn-query-all-data.md
+          - name: IRP_MN_QUERY_SINGLE_INSTANCE
+            href: irp-mn-query-single-instance.md
+          - name: IRP_MN_REGINFO
+            href: irp-mn-reginfo.md
+          - name: IRP_MN_REGINFO_EX
+            href: irp-mn-reginfo-ex.md
+        - name: WMI IRP を処理するための WmiSystemControl の呼び出し
+          href: calling-wmisystemcontrol-to-handle-wmi-irps.md
+        - name: DispatchSystemControl ルーチンでの WMI IRP の処理
+          href: processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md
+        - name: WMI WNODE_XXX 構造体
+          href: wmi-wnode-xxx-structures.md
+      - name: WMI イベントの送信
+        href: sending-wmi-events.md
+        items:
+        - name: WmiFireEvent でのイベントの送信
+          href: sending-an-event-with-wmifireevent.md
+        - name: IoWMIWriteEvent イベントでのイベントの送信
+          href: sending-an-event-with-iowmiwriteevent.md
+        - name: カスタム WMI イベントの使用
+          href: using-custom-wmi-events.md
+      - name: WMI プロパティ シート
+        href: wmi-property-sheets.md
+        items:
+        - name: WMI の汎用プロパティ ページ プロバイダー
+          href: wmi-generic-property-page-provider.md
+        - name: WMI と電源管理タブ
+          href: wmi-and-the-power-management-tab.md
+      - name: Wmimofck.exe の使用
+        href: using-wmimofck-exe.md
+      - name: WMI イベント トレース
+        href: wmi-event-tracing.md
+      - name: WMI ドライバー サポートのテストとトラブルシューティング
+        href: testing-and-troubleshooting-wmi-driver-support.md
+        items:
+        - name: WMI ドライバーのサポートをテストするための一般的な手法
+          href: general-techniques-for-testing-wmi-driver-support.md
+        - name: WMI に関する特定の問題のトラブルシューティング
+          href: troubleshooting-specific-wmi-problems.md
+  - name: ドライバーのプログラミング手法
+    href: driver-programming-techniques.md
+    items:
+    - name: Nt および Zw バージョンのネイティブ システム サービス ルーチンの使用
+      href: using-nt-and-zw-versions-of-the-native-system-services-routines.md
+      items:
+      - name: PreviousMode
+        href: previousmode.md
+      - name: ライブラリとヘッダー
+        href: libraries-and-headers.md
+      - name: Zw プレフィックスの意味
+        href: what-does-the-zw-prefix-mean-.md
+      - name: アクセス権の指定
+        href: access-mask.md
+      - name: NtXxx ルーチン
+        href: ntxxx-routines.md
+    - name: 同期の手法
+      href: synchronization-techniques.md
+      items:
+      - name: カーネル ディスパッチャー オブジェクト
+        href: kernel-dispatcher-objects.md
+        items:
+        - name: カーネル ディスパッチャー オブジェクトの概要
+          href: introduction-to-kernel-dispatcher-objects.md
+        - name: タイマー オブジェクト
+          href: timer-objects.md
+        - name: KeXxxTimer ルーチン、KTIMER オブジェクト、DPC
+          href: timer-objects-and-dpcs.md
+          items:
+          - name: タイマー オブジェクトの使用
+            href: using-timer-objects.md
+          - name: タイマー精度
+            href: timer-accuracy.md
+          - name: CustomTimerDpc ルーチンの登録とキュー
+            href: registering-and-queuing-a-customtimerdpc-routine.md
+          - name: CustomTimerDpc コンテキスト情報の提供
+            href: providing-customtimerdpc-context-information.md
+          - name: CustomTimerDpc ルーチンの使用
+            href: using-a-customtimerdpc-routine.md
+        - name: ExXxxTimer ルーチンと EX_TIMER オブジェクト
+          href: exxxxtimer-routines-and-ex-timer-objects.md
+          items:
+          - name: 高分解能タイマー
+            href: high-resolution-timers.md
+          - name: ウェイクなしタイマー
+            href: no-wake-timers.md
+          - name: システムによって割り当てられたタイマー オブジェクトの削除
+            href: deleting-a-system-allocated-timer-object.md
+        - name: イベント オブジェクト
+          href: event-objects.md
+          items:
+          - name: イベント オブジェクトの定義と使用
+            href: defining-and-using-an-event-object.md
+          - name: 標準イベント オブジェクト
+            href: standard-event-objects.md
+        - name: セマフォ オブジェクト
+          href: semaphore-objects.md
+        - name: ミューテックス オブジェクト
+          href: mutex-objects.md
+          items:
+          - name: ミューテックス オブジェクトの概要
+            href: introduction-to-mutex-objects.md
+          - name: ミュー テックス オブジェクトの代替
+            href: alternatives-to-mutex-objects.md
+        - name: スレッド オブジェクト
+          href: thread-objects.md
+          items:
+          - name: スレッド オブジェクトの概要
+            href: introduction-to-thread-objects.md
+          - name: スレッドの優先度
+            href: thread-priorities.md
+          - name: デバイス専用スレッド
+            href: device-dedicated-threads.md
+          - name: システム ワーカー スレッド
+            href: system-worker-threads.md
+        - name: 待機と APC
+          href: waits-and-apcs.md
+      - name: コールバック オブジェクト
+        href: callback-objects.md
+        items:
+        - name: コールバック オブジェクトの定義
+          href: defining-a-callback-object.md
+        - name: ドライバーによって定義されたコールバック オブジェクトの使用
+          href: using-a-driver-defined-callback-object.md
+        - name: システムによって定義されたコールバック オブジェクトの使用
+          href: using-a-system-defined-callback-object.md
+      - name: スピン ロック
+        href: spin-locks.md
+        items:
+        - name: スピン ロックの概要
+          href: introduction-to-spin-locks.md
+        - name: スピン ロックおよび保護されたデータ用の記憶域の提供
+          href: providing-storage-for-spin-locks-and-protected-data.md
+        - name: スピン ロックの初期化
+          href: initializing-spin-locks.md
+        - name: スピン ロックを使用するサポート ルーチンの呼び出し
+          href: calling-support-routines-that-use-spin-locks.md
+        - name: 'スピン ロックの使用: 例'
+          href: using-spin-locks--an-example.md
+        - name: スピン ロック使用中のエラーおよびデッドロックの防止
+          href: preventing-errors-and-deadlocks-while-using-spin-locks.md
+        - name: キューを使用するスピン ロック
+          href: queued-spin-locks.md
+        - name: 読み取り/書き込みスピン ロック
+          href: reader-writer-spin-locks.md
+      - name: 高速ミューテックスと保護されたミューテックス
+        href: fast-mutexes-and-guarded-mutexes.md
+      - name: ERESOURCE 構造体
+        href: eresource-structures.md
+        items:
+        - name: ERESOURCE 構造体の概要
+          href: introduction-to-eresource-routines.md
+      - name: その他のタイマーとカウンター
+        href: additional-timers-and-counters.md
+        items:
+        - name: IoTimer ルーチン
+          href: iotimer-routines.md
+          items:
+          - name: IoTimer ルーチンの登録と有効化
+            href: registering-and-enabling-an-iotimer-routine.md
+          - name: IoTimer コンテキスト情報の提供
+            href: providing-iotimer-context-information.md
+          - name: IoTimer ルーチンの使用
+            href: using-an-iotimer-routine.md
+        - name: カウンター
+          href: counters.md
+      - name: 非同期プロシージャ呼び出し
+        href: asynchronous-procedure-calls.md
+        items:
+        - name: APC の種類
+          href: types-of-apcs.md
+        - name: APC の無効化
+          href: disabling-apcs.md
+        - name: クリティカル領域と保護された領域
+          href: critical-regions-and-guarded-regions.md
+      - name: 取得と解放のセマンティクス
+        href: acquire-and-release-semantics.md
+      - name: ランダウン防止
+        href: run-down-protection.md
+    - name: 共通ログ ファイル システムの使用
+      href: using-common-log-file-system.md
+      items:
+      - name: 共通ログ ファイル システムの概要
+        href: introduction-to-the-common-log-file-system.md
+      - name: CLFS の関連用語
+        href: clfs-terminology.md
+      - name: CLFS ログ シーケンス番号
+        href: clfs-log-sequence-numbers.md
+      - name: CLFS マーシャリング領域
+        href: clfs-marshalling-areas.md
+      - name: CLFS ストリームへのデータ レコードの書き込み
+        href: writing-data-records-to-a-clfs-stream.md
+      - name: CLFS ストリームへの再開始レコードの書き込み
+        href: writing-restart-records-to-a-clfs-stream.md
+      - name: CLFS ストリームからのデータ レコードの読み取り
+        href: reading-data-records-from-a-clfs-stream.md
+      - name: CLFS ストリームからの再開始レコードの読み取り
+        href: reading-restart-records-from-a-clfs-stream.md
+      - name: CLFS の安定した記憶域
+        href: clfs-stable-storage.md
+      - name: 専用 CLFS ログ
+        href: dedicated-clfs-logs.md
+      - name: 多重化された CLFS ログ
+        href: multiplexed-clfs-logs.md
+      - name: アーカイブの CLFS サポート
+        href: clfs-support-for-archiving.md
+    - name: カーネル トランザクション マネージャーの使用
+      href: using-kernel-transaction-manager.md
+      items:
+      - name: KTM の概要
+        href: introduction-to-ktm.md
+        items:
+        - name: カーネル モード KTM を使用する場合
+          href: when-to-use-kernel-mode-ktm.md
+        - name: トランザクション処理の用語
+          href: transaction-processing-terms.md
+        - name: TPS コンポーネントの概要
+          href: understanding-tps-components.md
+        - name: その他のトランザクション インターフェイス
+          href: additional-transactional-interfaces.md
+      - name: KTM オブジェクト
+        href: ktm-objects.md
+        items:
+        - name: トランザクション マネージャー オブジェクト
+          href: transaction-manager-objects.md
+        - name: リソース マネージャー オブジェクト
+          href: resource-manager-objects.md
+        - name: トランザクション オブジェクト
+          href: transaction-objects.md
+        - name: 登録オブジェクト
+          href: enlistment-objects.md
+      - name: KTM の使用
+        href: using-ktm.md
+        items:
+        - name: リソース マネージャーの作成
+          href: creating-a-resource-manager.md
+        - name: トランザクション クライアントの作成
+          href: creating-a-transactional-client.md
+        - name: 上位トランザクション マネージャーの作成
+          href: creating-a-superior-transaction-manager.md
+        - name: トランザクション操作の処理
+          href: handling-transaction-operations.md
+          items:
+          - name: コミット操作の処理
+            href: handling-commit-operations.md
+          - name: ロールバック操作の処理
+            href: handling-rollback-operations.md
+          - name: 回復操作の処理
+            href: handling-recovery-operations.md
+        - name: トランザクション通知
+          href: transaction-notifications.md
+        - name: KTM でのログ ストリームの使用
+          href: using-log-streams-with-ktm.md
+        - name: 仮想クロック値の使用
+          href: using-virtual-clock-values.md
+        - name: TmXxx ルーチンの使用
+          href: using-tmxxx-routines.md
+    - name: 動的ハードウェア パーティション分割の手法
+      href: dynamic-hardware-partitioning-techniques.md
+      items:
+      - name: 動的ハードウェア パーティション分割の概要
+        href: introduction-to-dynamic-hardware-partitioning.md
+      - name: 動的ハードウェア パーティション分割のアーキテクチャ
+        href: dynamic-hardware-partitioning-architecture.md
+      - name: デバイス ドライバーに関する重要な問題
+        href: critical-issues-for-device-drivers.md
+        items:
+        - name: プロセッサ数の変更
+          href: changes-to-the-number-of-processors.md
+        - name: 物理メモリ量の変更
+          href: changes-to-the-amount-of-physical-memory.md
+        - name: パーティション単位のホット リプレース
+          href: hot-replace-of-partition-units.md
+      - name: ドライバー通知
+        href: driver-notification.md
+        items:
+        - name: ドライバー通知の概要
+          href: introduction-to-driver-notification.md
+        - name: 同期ドライバー通知
+          href: synchronous-driver-notification.md
+          items:
+          - name: 同期ドライバー通知登録
+            href: registering-for-synchronous-driver-notification.md
+          - name: 同期ドライバー通知の処理
+            href: processing-a-synchronous-driver-notification.md
+        - name: 非同期ドライバー通知
+          href: asynchronous-driver-notification.md
+          items:
+          - name: 非同期ドライバー通知登録
+            href: registering-for-asynchronous-driver-notification.md
+          - name: 非同期ドライバー通知の処理
+            href: processing-an-asynchronous-driver-notification.md
+      - name: アプリケーション通知
+        href: application-notification.md
+        items:
+        - name: アプリケーション通知の概要
+          href: introduction-to-application-notification.md
+        - name: アプリケーションの通知登録
+          href: registering-for-application-notification.md
+        - name: アプリケーション通知の処理
+          href: processing-an-application-notification.md
+    - name: その他のドライバー プログラミング手法
+      href: miscellaneous-driver-programming-techniques.md
+      items:
+      - name: NTSTATUS 値
+        href: ntstatus-values.md
+        items:
+        - name: NTSTATUS 値の使用
+          href: using-ntstatus-values.md
+        - name: 新しい NTSTATUS 値の定義
+          href: defining-new-ntstatus-values.md
+      - name: 片方向および双方向リンク リスト
+        href: singly-and-doubly-linked-lists.md
+      - name: 例外処理
+        href: handling-exceptions.md
+      - name: エラーのログ記録
+        href: logging-errors.md
+        items:
+        - name: システム イベント ログへの書き込み
+          href: writing-to-the-system-event-log.md
+        - name: カスタム エラーの種類の定義
+          href: defining-custom-error-types.md
+        - name: エラー メッセージのソースとしての登録
+          href: registering-as-a-source-of-error-messages.md
+      - name: バグ チェック コールバック ルーチンの記述
+        href: writing-a-bug-check-callback-routine.md
+      - name: セーフ文字列関数の使用
+        href: using-safe-string-functions.md
+        items:
+        - name: カーネルモード セーフ文字列関数の概要
+          href: summary-of-kernel-mode-safe-string-functions.md
+        - name: カーネルモード セーフ文字列関数のインポート
+          href: importing-kernel-mode-safe-string-functions.md
+      - name: セーフ整数関数の使用
+        href: ntintsafe-design-guide.md
+        items:
+        - name: カーネルモード セーフ整数関数の概要
+          href: summary-of-safe-integer-functions.md
+        - name: カーネルモード セーフ整数関数のインポート
+          href: importing-safe-integer-functions.md
+      - name: オペレーティング システムがセーフ モードで実行されているかどうかの判断
+        href: determining-whether-the-operating-system-is-running-in-safe-mode.md
+      - name: ドライバーでの GUID の使用
+        href: using-guids-in-drivers.md
+        items:
+        - name: 新しい GUID の定義とエクスポート
+          href: defining-and-exporting-new-guids.md
+        - name: ドライバー コードに GUID を含める
+          href: including-guids-in-driver-code.md
+      - name: WDM ドライバーでの浮動小数点の使用
+        href: using-floating-point-or-mmx-in-a-wdm-driver.md
+      - name: ドライバーでのファイルの使用
+        href: using-files-in-a-driver.md
+        items:
+        - name: ファイルのハンドルを開く
+          href: opening-a-handle-to-a-file.md
+        - name: ファイル ハンドルの使用
+          href: using-a-file-handle.md
+        - name: 現在のファイル位置の使用
+          href: using-the-current-file-position.md
+      - name: ドライバーでのレジストリの使用
+        href: using-the-registry-in-a-driver.md
+        items:
+        - name: レジストリ キー オブジェクトのルーチン
+          href: registry-key-object-routines.md
+          items:
+          - name: レジストリ キー オブジェクトのハンドルを開く
+            href: opening-a-handle-to-a-registry-key-object.md
+          - name: レジストリ キー オブジェクトのハンドルの使用
+            href: using-a-handle-to-a-registry-key-object.md
+        - name: レジストリ ランタイム ライブラリ ルーチン
+          href: registry-run-time-library-routines.md
+        - name: プラグ アンド プレイ レジストリ ルーチン
+          href: plug-and-play-registry-routines.md
+      - name: リムーバブル メディアのサポート
+        href: supporting-removable-media.md
+        items:
+        - name: ファイル システムからの検証チェック要求への応答
+          href: responding-to-check-verify-requests-from-the-file-system.md
+        - name: メディア変更の可能性に関するファイル システムへの通知
+          href: notifying-the-file-system-of-possible-media-changes.md
+        - name: デバイス オブジェクトのフラグの確認
+          href: checking-flags-in-the-device-object.md
+        - name: 中間ドライバーでの IRP の設定
+          href: setting-up-irps-in-intermediate-drivers.md
+      - name: エクスポート ドライバーの作成
+        href: creating-export-drivers.md
+      - name: 信頼性の高いカーネルモード ドライバーの作成
+        href: creating-reliable-kernel-mode-drivers.md
+        items:
+        - name: デバイス オブジェクトの検証失敗
+          href: failure-to-validate-device-objects.md
+        - name: オブジェクト ハンドルの検証失敗
+          href: failure-to-validate-object-handles.md
+        - name: マルチプロセッサ環境におけるエラー
+          href: errors-in-a-multiprocessor-environment.md
+        - name: ドライバーの状態の確認エラー
+          href: failure-to-check-a-driver-s-state.md
+        - name: バッファー付き I/O のエラー
+          href: errors-in-buffered-i-o.md
+          items:
+          - name: バッファーのサイズの確認エラー
+            href: failure-to-check-the-size-of-buffers.md
+          - name: 出力バッファーの初期化失敗
+            href: failure-to-initialize-output-buffers.md
+          - name: 可変長バッファーの検証失敗
+            href: failure-to-validate-variable-length-buffers.md
+        - name: ダイレクト I/O のエラー
+          href: errors-in-direct-i-o.md
+        - name: ユーザー領域のアドレス参照エラー
+          href: errors-in-referencing-user-space-addresses.md
+        - name: クリーンアップ操作と閉じる操作の処理エラー
+          href: errors-in-handling-cleanup-and-close-operations.md
+        - name: IRP 処理に関するその他のエラー
+          href: additional-errors-in-handling-irps.md
+      - name: デバイス マネージャーでのデバイスの非表示
+        href: hiding-devices-from-device-manager.md
+      - name: レジストリ呼び出しのフィルター処理
+        href: filtering-registry-calls.md
+        items:
+        - name: 通知登録
+          href: registering-for-notifications.md
+        - name: 通知の処理
+          href: handling-notifications.md
+        - name: 複数層レジストリ フィルター ドライバーのサポート
+          href: supporting-layered-registry-filtering-drivers.md
+        - name: コンテキスト情報の指定
+          href: specifying-context-information.md
+        - name: 追加のレジストリ情報の取得
+          href: obtaining-additional-registry-information.md
+        - name: レジストリ通知内の無効なキー オブジェクト ポインター
+          href: invalid-key-object-pointers-in-registry-notifications.md
+        - name: アプリケーション ハイブのレジストリ操作のフィルター処理
+          href: filtering-registry-operations-on-application-hives.md
+      - name: タグを使用したオブジェクト参照トレース
+        href: object-reference-tracing-with-tags.md
+      - name: 64 ビット ドライバーのプログラミングに関する問題
+        href: programming-issues-for-64-bit-drivers.md
+        items:
+        - name: 64 ビット Windows へのドライバーの移植
+          href: porting-your-driver-to-64-bit-windows.md
+          items:
+          - name: 変更点
+            href: what-s-changed.md
+          - name: 新しいデータ型
+            href: the-new-data-types.md
+          - name: 64 ビット コンパイラ
+            href: 64-bit-compiler.md
+          - name: 64 ビットの Windows での DMA の実行
+            href: performing-dma-in-64-bit-windows.md
+          - name: Windows ドライバーでの拡張プロセッサ機能の使用
+            href: floating-point-support-for-64-bit-drivers.md
+          - name: 移植に関する問題のチェックリスト
+            href: porting-issues-checklist.md
+        - name: 64 ビット ドライバーでの 32 ビット I/O のサポート
+          href: supporting-32-bit-i-o-in-your-64-bit-driver.md
+          items:
+          - name: サンキングが必要な理由
+            href: why-thunking-is-necessary.md
+          - name: サンキングが必要なデータ型
+            href: which-data-types-need-thunking.md
+          - name: ドライバーで 32 ビットの呼び出し元を識別する方法
+            href: how-drivers-identify-32-bit-callers.md
+          - name: '方法 1: 64 ビット フィールドの定義'
+            href: technique-1--defining-a--64bit--field.md
+          - name: '方法 2: IoIs32bitProcess の使用'
+            href: technique-2--using-iois32bitprocess.md
+          - name: '拡張の例: 64 ビット フィールドの定義'
+            href: extended-example--defining-a--64bit--field.md
+          - name: '拡張の例: IoIs32bitProcess の使用'
+            href: extended-example--using-iois32bitprocess.md
+          - name: 精度が固定されているデータ型の不整合回避
+            href: avoiding-misalignment-of-fixed-precision-data-types.md
+        - name: ドライバーの x64 に関する制限
+          href: driver-x64-restrictions.md
+      - name: 古いカーネル プログラミング インターフェイスと予約済みカーネル プログラミング インターフェイス
+        href: obsolete-and-reserved-kernel-programming-interfaces.md
+        items:
+        - name: Windows カーネルの古いマクロ
+          href: compute-pages-spanned.md
+        - name: Windows カーネルの古いルーチン
+          href: mmcreatemdl.md
+        - name: システムで使用するために予約済みの Windows カーネル ルーチン
+          href: ioacquireremovelockex.md
+        - name: Windows カーネル ランタイム ライブラリの古いルーチン
+          href: rtlenlargedintegermultiply.md
+      - name: カーネル マクロ、グローバル変数、不透明な構造体
+        href: kernel-macros--global-variables--and-opaque-structures.md
+        items:
+        - name: Windows カーネルのグローバル変数
+          href: mm64bitphysicaladdress.md
+        - name: Windows カーネルのマクロ
+          href: mm-bad-pointer.md
+        - name: Windows カーネルの不透明な構造体
+          href: eprocess.md
+      - name: GUID_DEVICE_RESET_INTERFACE_STANDARD の操作
+        href: working-with-guid-device-reset-interface-standard.md
+ms.openlocfilehash: 6d3e5ef8a953cdc3fdffb675ff27b59a91dbd7d2
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465750"
