@@ -1,0 +1,943 @@
+items:
+- name: インストール可能ファイル システム ドライバー設計ガイド
+  href: index.md
+  items:
+  - name: ファイル システム ドライバー
+    href: file-system-drivers.md
+    items:
+    - name: ファイル システム ドライバーのインストール
+      href: installing-a-file-system-driver.md
+      items:
+      - name: ファイル システム ドライバー用の INF ファイルの作成
+        href: creating-an-inf-file-for-a-file-system-driver.md
+    - name: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
+      href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
+      items:
+      - name: カーネルモード ドライバーが開始した IRP_MJ_CREATE 操作に ECP をアタッチする
+        href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
+      - name: ファイル システム フィルター ドライバーで ECP を使用して IRP_MJ_CREATE 操作を処理する
+        href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-filter.md
+      - name: ユーザー定義の ECP
+        href: user-defined-ecps.md
+      - name: システム定義の ECP
+        href: system-defined-ecps.md
+  - name: ファイル システム フィルター ドライバー
+    href: file-system-filter-drivers.md
+    items:
+    - name: ファイル システムの基礎
+      href: file-system-fundamentals.md
+      items:
+      - name: ドライバーのロード時期の決定方法
+        href: what-determines-when-a-driver-is-loaded.md
+      - name: システム起動時のファイル システムの状態
+        href: what-happens-to-file-systems-during-system-boot.md
+      - name: ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
+        href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
+        items:
+        - name: ストレージ デバイス スタック
+          href: storage-device-stacks.md
+        - name: ストレージ ボリューム
+          href: storage-volumes.md
+        - name: ファイル システム スタック
+          href: file-system-stacks.md
+      - name: ボリュームのマウント
+        href: mounting-a-volume.md
+        items:
+        - name: ボリュームのマウント方法
+          href: how-the-volume-is-mounted.md
+        - name: ボリュームのマウントの例
+          href: volume-mount-example.md
+    - name: ファイル システム フィルター ドライバーの概要
+      href: introduction-to-file-system-filter-drivers.md
+      items:
+      - name: ファイル システム フィルター ドライバーについて
+        href: what-is-a-file-system-filter-driver-.md
+      - name: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
+        href: file-system-filter-drivers-are-not-device-drivers.md
+        items:
+        - name: ファイル システム フィルター ドライバーとデバイス ドライバーの類似点
+          href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
+        - name: ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
+          href: how-file-system-filter-drivers-are-different-from-device-drivers.md
+      - name: ファイル システム フィルター ドライバーのインストール
+        href: installing-a-file-system-filter-driver.md
+        items:
+        - name: ファイル システム フィルター ドライバー用の INF ファイルの作成
+          href: creating-an-inf-file-for-a-file-system-filter-driver.md
+        - name: 'ファイル システム フィルター ドライバー用のロード順序グループ '
+          href: load-order-groups-for-file-system-filter-drivers.md
+        - name: ファイル システム フィルター ドライバー クラスとクラス GUID
+          href: file-system-filter-driver-classes-and-class-guids.md
+        - name: INF ファイルを使用したファイル システム フィルター ドライバーのインストール
+          href: using-an-inf-file-to-install-a-file-system-filter-driver.md
+        - name: INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
+          href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
+      - name: ファイル システム フィルター ドライバーの初期化
+        href: initializing-a-file-system-filter-driver.md
+        items:
+        - name: コントロール デバイス オブジェクトの作成
+          href: creating-the-control-device-object.md
+        - name: IRP ディスパッチ ルーチンの登録
+          href: registering-irp-dispatch-routines.md
+        - name: 高速 I/O ディスパッチ ルーチンの登録
+          href: registering-fast-i-o-dispatch-routines.md
+        - name: FsFilter コールバック ルーチンの登録
+          href: registering-fsfilter-callback-routines.md
+        - name: その他必要な初期化の実行
+          href: performing-any-other-needed-initialization.md
+        - name: 省略可能] コールバック ルーチンの登録
+          href: -optional--registering-callback-routines.md
+        - name: 省略可能] レジストリ パス文字列のコピーの保存
+          href: -optional--saving-a-copy-of-the-registry-path-string.md
+        - name: 返される状態
+          href: returning-status.md
+      - name: ファイル システムまたはボリュームへのフィルターのアタッチ
+        href: attaching-a-filter-to-a-file-system-or-volume.md
+        items:
+        - name: フィルター デバイス オブジェクトの作成
+          href: creating-the-filter-device-object.md
+        - name: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
+          href: attaching-the-filter-device-object-to-the-target-device-object.md
+        - name: DO_BUFFERED_IO と DO_DIRECT_IO フラグの伝達
+          href: propagating-the-do-buffered-io-and-do-direct-io-flags.md
+        - name: FILE_DEVICE_SECURE_OPEN フラグの伝達
+          href: propagating-the-file-device-secure-open-flag.md
+        - name: DO_DEVICE_INITIALIZING フラグのクリア
+          href: clearing-the-do-device-initializing-flag.md
+    - name: IRP と高速 I/O のフィルタリング
+      href: filtering-irps-and-fast-i-o.md
+      items:
+      - name: IRP と高速 I/O の違い
+        href: irps-are-different-from-fast-i-o.md
+      - name: ファイル システム フィルター ドライバーが使用するデバイス オブジェクトの種類
+        href: types-of-device-objects-used-by-file-system-filter-drivers.md
+        items:
+        - name: フィルター ドライバーのコントロール デバイス オブジェクト
+          href: the-filter-driver-s-control-device-object.md
+        - name: ファイル システムにアタッチされるフィルター デバイス オブジェクト
+          href: filter-device-object-attached-to-a-file-system.md
+        - name: ボリュームにアタッチされるフィルター デバイス オブジェクト
+          href: filter-device-object-attached-to-a-volume.md
+    - name: IRP ディスパッチ ルーチンの記述
+      href: writing-irp-dispatch-routines.md
+      items:
+      - name: IRP の完了
+        href: completing-the-irp.md
+      - name: IRP を下位レベルのドライバーに渡す
+        href: passing-the-irp-down-to-lower-level-drivers.md
+      - name: ディスパッチ ルーチンから返される状態
+        href: returning-status-from-dispatch-routines.md
+      - name: 以下に例を示します。完了ルーチンを設定せずに IRP を渡す
+        href: example--passing-the-irp-down-without-setting-a-completion-routine.md
+      - name: ディスパッチ ルーチンに関する制約
+        href: constraints-on-dispatch-routines.md
+      - name: ディスパッチ ルーチン IRQL とスレッド コンテキスト
+        href: dispatch-routine-irql-and-thread-context.md
+    - name: IRP 完了ルーチンの使用
+      href: using-irp-completion-routines.md
+      items:
+      - name: 完了処理の実行方法
+        href: how-completion-processing-is-performed.md
+      - name: PendingReturned フラグの確認
+        href: checking-the-pendingreturned-flag.md
+      - name: 完了ルーチンから返される状態
+        href: returning-status-from-completion-routines.md
+      - name: 以下に例を示します。ディスパッチと完了間のシンプルなパススルー
+        href: example--simple-pass-through-dispatch-and-completion.md
+      - name: 完了ルーチンに関する制約
+        href: constraints-on-completion-routines.md
+    - name: レガシ ファイル システム フィルター ドライバー内のストリーム別コンテキストの追跡
+      href: tracking-per-stream-context-in-a-legacy-file-system-filter-driver.md
+      items:
+      - name: ファイル ストリーム、ストリーム コンテキスト、ストリーム別コンテキスト
+        href: file-streams--stream-contexts--and-per-stream-contexts.md
+      - name: ストリーム別コンテキスト構造の作成と使用
+        href: creating-and-using-per-stream-context-structures.md
+        items:
+        - name: ストリーム別コンテキストの作成
+          href: creating-a-per-stream-context.md
+        - name: ストリーム別コンテキストとファイル ストリームの関連付け
+          href: associating-a-per-stream-context-with-a-file-stream.md
+        - name: ストリーム別コンテキストの削除
+          href: deleting-a-per-stream-context.md
+    - name: レガシ ファイル システム フィルター ドライバー内のファイル別コンテキストの追跡
+      href: tracking-per-file-context-in-a-legacy-file-system-filter-driver.md
+    - name: レガシ ファイル システム フィルター ドライバーのブロック
+      href: blocking-file-system-filter-drivers.md
+  - name: ファイル システム ミニフィルター ドライバー
+    href: file-system-minifilter-drivers.md
+    items:
+    - name: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
+      href: filter-manager-and-minifilter-driver-architecture.md
+      items:
+      - name: フィルター マネージャーの概念
+        href: filter-manager-concepts.md
+      - name: フィルター マネージャー モデルの利点
+        href: advantages-of-the-filter-manager-model.md
+      - name: ミニフィルター ドライバーに対するフィルター マネージャーのサポート
+        href: filter-manager-support-for-minifilter-drivers.md
+        items:
+        - name: ロードとアンロード
+          href: loading-and-unloading.md
+        - name: I/O 操作の処理
+          href: processing-i-o-operations.md
+        - name: パラメーターの修正
+          href: modifying-parameters.md
+        - name: ユーザー バッファーへのアクセス
+          href: accessing-user-buffers.md
+        - name: ファイル名の管理
+          href: managing-file-names.md
+        - name: コンテキストの管理
+          href: managing-contexts.md
+        - name: ミニフィルター ドライバーで生成された I/O 要求
+          href: i-o-requests-generated-by-the-minifilter-driver.md
+        - name: ユーザー モードとカーネル モード間のコミュニケーション
+          href: communication-between-user-mode-and-kernel-mode.md
+        - name: ユーザーモード ライブラリ
+          href: user-mode-library.md
+      - name: フィルター マネージャー操作の制御
+        href: controlling-filter-manager-operation.md
+      - name: 開発とテスト ツール
+        href: development-and-testing-tools.md
+      - name: レガシ フィルター ドライバーの移植ガイドライン
+        href: guidelines-for-porting-legacy-filter-drivers.md
+    - name: ミニフィルター ドライバーのインストール
+      href: installing-a-minifilter-driver.md
+      items:
+      - name: ミニフィルター ドライバー用の INF ファイルの作成
+        href: creating-an-inf-file-for-a-minifilter-driver.md
+      - name: ミニフィルター ドライバー用のロード順序グループと高度
+        href: load-order-groups-and-altitudes-for-minifilter-drivers.md
+      - name: 割り当て済み高度
+        href: allocated-altitudes.md
+      - name: ミニフィルター高度要求
+        href: minifilter-altitude-request.md
+      - name: 再解析ポイント タグ要求
+        href: reparse-point-tag-request.md
+    - name: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
+      href: writing-a-driverentry-routine-for-a-minifilter-driver.md
+      items:
+      - name: ミニフィルター ドライバーの登録
+        href: registering-the-minifilter-driver.md
+      - name: フィルタリングの開始
+        href: initiating-filtering.md
+      - name: ミニフィルター DriverEntry ルーチンから返される状態
+        href: returning-status-from-a-minifilter-driverentry-routine.md
+    - name: ミニフィルター ドライバー用の FilterUnloadCallback ルーチンの記述
+      href: writing-a-filterunloadcallback-routine-for-a-minifilter-driver.md
+      items:
+      - name: FilterUnloadCallback ルーチンの呼び出し時期
+        href: when-the-filterunloadcallback-routine-is-called.md
+      - name: FilterUnloadCallback ルーチンの記述
+        href: writing-a-filterunloadcallback-routine.md
+        items:
+        - name: 通信サーバー ポートを閉じる
+          href: closing-the-communication-server-port.md
+        - name: ミニフィルターの登録解除
+          href: unregistering-the-minifilter.md
+        - name: グローバル クリーンアップの実行
+          href: performing-global-cleanup.md
+        - name: FilterUnloadCallback ルーチンから返される状態
+          href: returning-status-from-a-filterunloadcallback-routine.md
+    - name: 操作前と操作後のコールバック ルーチンの記述
+      href: writing-preoperation-and-postoperation-callback-routines.md
+      items:
+      - name: 操作前と操作後のコールバック ルーチンの登録
+        href: registering-preoperation-and-postoperation-callback-routines.md
+      - name: ミニフィルター ドライバーでの I/O 操作のフィルタリング
+        href: filtering-i-o-operations-in-a-minifilter-driver.md
+      - name: 操作前コールバック ルーチンの記述
+        href: writing-preoperation-callback-routines.md
+        items:
+        - name: 下のミニフィルター ドライバー インスタンス スタックへ I/O 操作を渡す
+          href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
+          items:
+          - name: FLT_PREOP_SUCCESS_WITH_CALLBACK が返される場合
+            href: returning-flt-preop-success-with-callback.md
+          - name: FLT_PREOP_SUCCESS_NO_CALLBACK が返される場合
+            href: returning-flt-preop-success-no-callback.md
+          - name: FLT_PREOP_SYNCHRONIZE が返される場合
+            href: returning-flt-preop-synchronize.md
+        - name: 操作前コールバック ルーチン内で I/O 操作を完了する
+          href: completing-an-i-o-operation-in-a-preoperation-callback-routine.md
+        - name: 操作前コールバック ルーチン内で高速 I/O 操作を許可しない
+          href: disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md
+        - name: 操作前コールバック ルーチン内で I/O 操作を保留にする
+          href: pending-an-i-o-operation-in-a-preoperation-callback-routine.md
+      - name: 操作後コールバック ルーチンの記述
+        href: writing-postoperation-callback-routines.md
+        items:
+        - name: I/O 操作の完了処理を実行する
+          href: performing-completion-processing-for-an-i-o-operation.md
+          items:
+          - name: 完了処理が安全な IRQL で実行されるようにする
+            href: ensuring-that-completion-processing-is-performed-at-safe-irql.md
+        - name: 操作後コールバック ルーチン内で I/O 操作を保留にする
+          href: pending-an-i-o-operation-in-a-postoperation-callback-routine.md
+        - name: 操作後コールバック ルーチン内で I/O 操作を失敗とする
+          href: failing-an-i-o-operation-in-a-postoperation-callback-routine.md
+      - name: I/O 操作用のパラメーターの修正
+        href: modifying-the-parameters-for-an-i-o-operation.md
+      - name: I/O 操作用のバッファー処理メソッドの確認
+        href: determining-the-buffering-method-for-an-i-o-operation.md
+        items:
+        - name: IRP ベースまたは高速 I/O とすることが可能な操作
+          href: operations-that-can-be-irp-based-or-fast-i-o.md
+        - name: デバイス オブジェクト フラグに従う IRP ベースの I/O 操作
+          href: irp-based-i-o-operations-that-obey-device-object-flags.md
+        - name: バッファー処理された I/O を常に使用する IRP ベースの I/O 操作
+          href: irp-based-i-o-operations-that-always-use-buffered-i-o.md
+        - name: バッファー処理された I/O またはダイレクト I/O を常に使用しない IRP ベースの I/O 操作
+          href: irp-based-i-o-operations-that-always-use-neither-buffered-nor-direct-i.md
+        - name: IRP ベースの IOCTL と FSCTL 操作
+          href: irp-based-ioctl-and-fsctl-operations.md
+        - name: バッファーが存在しない IRP ベースの I/O 操作
+          href: irp-based-i-o-operations-that-have-no-buffers.md
+      - name: I/O 操作用のユーザー バッファーへのアクセス
+        href: accessing-the-user-buffers-for-an-i-o-operation.md
+        items:
+        - name: 操作前コールバック ルーチン内でユーザー バッファーへアクセスする
+          href: accessing-user-buffers-in-a-preoperation-callback-routine.md
+        - name: 操作後コールバック ルーチン内でユーザー バッファーへアクセスする
+          href: accessing-user-buffers-in-a-postoperation-callback-routine.md
+    - name: ミニフィルター ドライバーでのコンテキストの管理
+      href: managing-contexts-in-a-minifilter-driver.md
+      items:
+      - name: コンテキストの種類の登録
+        href: registering-context-types.md
+      - name: コンテキストの作成
+        href: creating-contexts.md
+      - name: コンテキストの設定
+        href: setting-contexts.md
+      - name: コンテキストの取得
+        href: getting-contexts.md
+      - name: コンテキストの参照
+        href: referencing-contexts.md
+      - name: コンテキストのリリース
+        href: releasing-contexts.md
+      - name: コンテキストの削除
+        href: deleting-contexts.md
+      - name: コンテキストの解放
+        href: freeing-contexts.md
+      - name: ファイル システムによるコンテキストのサポート
+        href: file-system-support-for-contexts.md
+      - name: ベスト プラクティス
+        href: best-practices.md
+  - name: ネットワーク リダイレクター ドライバー
+    href: network-redirector-drivers.md
+    items:
+    - name: リモート ファイル システムの概要
+      href: introduction-to-remote-file-systems.md
+      items:
+      - name: リモート ファイル システムのコンポーネント
+        href: components-of-a-remote-file-system.md
+    - name: ネットワーク リダイレクターの概要
+      href: introduction-to-network-redirectors.md
+      items:
+      - name: ネットワーク リダイレクターについて
+        href: what-is-a-network-redirector-.md
+        items:
+        - name: ネットワーク リダイレクターの基本的なアーキテクチャ
+          href: basic-architecture-of-a-network-redirector.md
+      - name: カーネルモードのネットワーク リダイレクター ドライバー
+        href: the-kernel-mode-network-redirector-driver.md
+        items:
+        - name: ネットワーク リダイレクターの設計とパフォーマンス
+          href: network-redirector-design-and-performance.md
+        - name: Windows NT におけるネットワーク リダイレクターの設計
+          href: network-redirector-design-in-windows-nt.md
+        - name: Windows 2000 におけるネットワーク リダイレクターの設計
+          href: network-redirector-design-in-windows-2000.md
+        - name: リダイレクトされたドライブのバッファー サブシステム
+          href: the-redirected-drive-buffering-subsystem.md
+        - name: Oplock セマンティクス
+          href: oplock-semantics.md
+          items:
+          - name: 概要
+            href: overview.md
+          - name: Oplock の付与
+            href: granting-oplocks.md
+          - name: Oplock の破損
+            href: breaking-oplocks.md
+            items:
+            - name: IRP_MJ_CREATE
+              href: irp-mj-create2.md
+            - name: IRP_MJ_READ
+              href: irp-mj-read2.md
+            - name: IRP_MJ_WRITE
+              href: irp-mj-write2.md
+            - name: IRP_MJ_CLEANUP
+              href: irp-mj-cleanup2.md
+            - name: IRP_MJ_LOCK_CONTROL
+              href: irp-mj-lock-control2.md
+            - name: IRP_MJ_SET_INFORMATION
+              href: irp-mj-set-information2.md
+            - name: IRP_MJ_FILE_SYSTEM_CONTROL
+              href: irp-mj-file-system-control2.md
+          - name: Oplock の破損の確認
+            href: acknowledging-oplock-breaks.md
+    - name: カーネル ネットワーク リダイレクター ドライバーのコンポーネント
+      href: kernel-network-redirector-driver-components.md
+      items:
+      - name: RDBSS ドライバーとライブラリ
+        href: the-rdbss-driver-and-library.md
+        items:
+        - name: RDBSS が提供するルーチン
+          href: routines-provided-by-rdbss.md
+        - name: RDBSS が定義するマクロ
+          href: macros-defined-by-rdbss.md
+        - name: ドライバーの登録と開始/停止制御
+          href: driver-registration-and-start-stop-control.md
+        - name: プールの割り当てとフリー ルーチン
+          href: pool-allocation-and-free-routines.md
+        - name: タイマーとワーカー スレッド管理
+          href: timer-and-worker-thread-management.md
+        - name: ワーク キューのディスパッチ メカニズム
+          href: work-queue-dispatching-mechanisms.md
+        - name: 診断とデバッグ
+          href: diagnostics-and-debugging.md
+        - name: ログ記録用ルーチンとマクロ
+          href: logging-routines-and-macros.md
+        - name: その他のルーチン
+          href: miscellaneous-routines2.md
+        - name: RX_CONTEXT と IRP 管理
+          href: rx-context-and-irp-management.md
+        - name: 接続とファイル構造管理
+          href: connection-and-file-structure-management.md
+          items:
+          - name: SRV_CALL 構造
+            href: the-srv-call-structure.md
+          - name: NET_ROOT 構造
+            href: the-net-root-structure.md
+          - name: V_NET_ROOT 構造
+            href: the-v-net-root-structure.md
+          - name: FCB 構造
+            href: the-fcb-structure.md
+          - name: SRV_OPEN 構造
+            href: the-srv-open-structure.md
+          - name: FOBX 構造
+            href: the-fobx-structure.md
+          - name: 接続とファイル構造のロック
+            href: connections-and-file-structure-locking.md
+          - name: 接続とファイル制御ブロック管理ルーチン
+            href: connection-and-file-control-block-management-routines.md
+        - name: FCB リソース同期
+          href: fcb-resource-synchronization.md
+        - name: バッファー処理状態の制御
+          href: buffering-state-control.md
+        - name: 低速 I/O ルーチン
+          href: low-i-o-routines.md
+        - name: 名前キャッシュ管理
+          href: name-cache-management.md
+        - name: プレフィックス テーブル管理
+          href: prefix-table-management.md
+        - name: 消去と清掃の制御
+          href: purging-and-scavenging-control.md
+        - name: 多重 ID 管理
+          href: multiplex-id-management.md
+        - name: 接続エンジン管理
+          href: connection-engine-management.md
+      - name: カーネル ネットワーク ミニリダイレクター ドライバー
+        href: the-kernel-network-mini-redirector-driver.md
+        items:
+        - name: カーネル ネットワーク ミニリダイレクターによって実装されるルーチン
+          href: routines-implemented-by-the-kernel-network-mini-redirector.md
+        - name: RDBSS が使用しないルーチン
+          href: routines-not-used-by-rdbss.md
+        - name: 接続と名前の解決
+          href: connection-and-name-resolution.md
+        - name: ドライバーの開始、停止、デバイス制御
+          href: driver-start--stop--and-device-control.md
+        - name: ファイル システム オブジェクトの作成と削除
+          href: file-system-object-creation-and-deletion.md
+        - name: ファイル システム オブジェクトの I/O ルーチン
+          href: file-system-object-i-o-routines.md
+        - name: ファイル システム オブジェクトのクエリと設定ルーチン
+          href: file-system-object-query-and-set-routines.md
+        - name: その他のネットワーク ミニリダイレクター ルーチン
+          href: miscellaneous-network-mini-redirector-routines.md
+    - name: カーネル ネットワーク リダイレクターの記述
+      href: writing-a-kernel-network-redirector.md
+      items:
+      - name: UNC 名前付けと MUP のサポート
+        href: support-for-unc-naming-and-mup.md
+      - name: MUP と DFS の対話
+        href: mup-and-dfs-interactions.md
+      - name: Microsoft Windows Vista における MUP の変更点
+        href: mup-changes-in-microsoft-windows-vista.md
+      - name: Microsoft Windows Vista におけるトランザクションのサポート
+        href: support-for-transactions-in-microsoft-windows-vista.md
+      - name: ネットワーク リダイレクターとファイル システムの処理
+        href: network-redirectors-and-the-file-system-process.md
+  - name: ファイル システムのセキュリティに関する考慮事項
+    href: security-considerations-for-file-systems.md
+    items:
+    - name: ファイル システムのセキュリティの概要
+      href: introduction-to-file-systems-security.md
+    - name: ドライバーの一般的なセキュリティに関する問題
+      href: general-driver-security-issues.md
+      items:
+      - name: ドライバーのセキュリティについて
+        href: what-is-driver-security.md
+      - name: セキュリティ脅威モデルを使用した設計
+        href: designing-with-security-threat-models.md
+        items:
+        - name: なりすまし
+          href: spoofing-identity.md
+        - name: データの改ざん
+          href: tampering-with-data.md
+        - name: 否認
+          href: repudiation.md
+        - name: 情報の漏洩
+          href: information-disclosure.md
+        - name: サービス拒否
+          href: denial-of-service.md
+        - name: 特権の昇格
+          href: elevation-of-privilege.md
+      - name: ファイル システムを実装してセキュリティの脅威を最小限にする
+        href: implementing-file-systems-to-minimize-security-threats.md
+        items:
+        - name: バッファー処理
+          href: buffer-handling.md
+        - name: 認証と ID
+          href: authentication-and-identification.md
+        - name: アクセス制御
+          href: access-control.md
+        - name: ハンドル管理
+          href: handle-management.md
+      - name: セキュリティのテスト
+        href: testing-for-security.md
+    - name: ファイル システム向けのセキュリティ機能
+      href: security-features-for-file-systems.md
+      items:
+      - name: セキュリティ記述子
+        href: security-descriptors.md
+        items:
+        - name: セキュリティ識別子
+          href: security-identifier.md
+        - name: アクセス マスク
+          href: access-mask.md
+        - name: アクセス制御エントリ
+          href: access-control-entry.md
+        - name: アクセス制御リスト
+          href: access-control-list.md
+      - name: 権限
+        href: privileges.md
+      - name: 監査
+        href: auditing.md
+      - name: カーネル拡張属性
+        href: kernel-extended-attributes.md
+    - name: ファイル システムのセキュリティに関する問題
+      href: file-system-security-issues.md
+      items:
+      - name: セマンティック モデルの確認
+        href: semantic-model-checks.md
+        items:
+        - name: 作成処理
+          href: create-processing.md
+        - name: 閉じるときに削除
+          href: delete-on-close.md
+        - name: 実行可能イメージ
+          href: executable-images.md
+        - name: 名前変更とハード リンク処理
+          href: rename-and-hard-link-processing.md
+        - name: ファイル情報設定処理
+          href: set-file-information-processing.md
+        - name: I/O のどちらでもない操作
+          href: neither-i-o-operations.md
+        - name: ファイル システム制御処理
+          href: file-system-control-processing.md
+        - name: メディアの検証
+          href: media-validation.md
+      - name: セキュリティの検査
+        href: security-checks.md
+        items:
+        - name: デバイス オブジェクトに対するセキュリティ記述子の摘要
+          href: applying-security-descriptors-on-the-device-object.md
+        - name: IRP_MJ_CREATE ディスパッチ ルーチン
+          href: irp-mj-create-dispatch-routine.md
+          items:
+          - name: IRP_MJ_CREATE での走査特権の確認
+            href: checking-for-traverse-privilege-on-irp-mj-create.md
+          - name: IRP_MJ_CREATE でのその他の特殊ケースの確認
+            href: checking-for-other-special-cases--on-irp-mj-create.md
+          - name: IRP_MJ_CREATE での監査の追加
+            href: adding-auditing-on-irp-mj-create.md
+          - name: IRP_MJ_CREATE でのアクセス制御リストの確認
+            href: management-of-access-control-lists-on-irp-mj-create.md
+          - name: IRP_MJ_CREATE での新規ファイルへのセキュリティの割り当て
+            href: assigning-security-to-a-new-file-on-irp-mj-create.md
+          - name: IRP_MJ_CREATE でのクォータの処理
+            href: handling-quotas-on-irp-mj-create.md
+        - name: IRP_MJ_QUERY_SECURITY と IRP_MJ_SET_SECURITY
+          href: irp-mj-query-security-and-irp-mj-set-security.md
+        - name: IRP_MJ_DIRECTORY_CONTROL
+          href: irp-mj-directory-control2.md
+        - name: IRP_MJ_FILE_SYSTEM_CONTROL
+          href: irp-mj-file-system-control3.md
+        - name: IRP_MJ_SET_INFORMATION
+          href: irp-mj-set-information3.md
+        - name: 偽装
+          href: impersonation.md
+        - name: 処理とスレッド終了に関する問題
+          href: process-and-thread-termination-issues.md
+    - name: ファイル システム フィルター ドライバーのセキュリティに関する考慮事項
+      href: security-considerations-for-file-system-filter-drivers.md
+      items:
+      - name: ファイル システム フィルター ドライバーでのプロキシ操作
+        href: proxy-operations-in-file-system-filter-drivers.md
+      - name: ファイル システム フィルター ドライバーでの偽装
+        href: impersonation-in-a-file-system-filter-driver.md
+      - name: 他のファイル システム フィルター ドライバーとの共存
+        href: coexistence-with-other-file-system-filter-drivers.md
+      - name: ファイル システム フィルター ドライバーのメモリ マップ ファイル
+        href: memory-mapped-files-in-a-file-system-filter-driver.md
+      - name: ファイル システム フィルター ドライバーの再解析ポイント
+        href: reparse-points-in-a-file-system-filter-driver.md
+  - name: その他の情報
+    href: miscellaneous-information.md
+    items:
+    - name: Windows コンテナー用のウイルス対策最適化
+      href: anti-virus-optimization-for-windows-containers.md
+    - name: オフロード データ転送
+      href: offloaded-data-transfers.md
+    - name: ディスク イメージの正しい場所を見つける
+      href: locating-disk-images-correctly.md
+    - name: 重複するボリューム名がある場合のボリュームの列挙について
+      href: understanding-volume-enumerations-with-duplicate-volume-names.md
+  - name: リファレンス
+    href: ifs-reference.md
+    items:
+    - name: CcIsThereDirtyLoggedPages
+      href: ccistheredirtyloggedpages.md
+    - name: CcSetLogHandleForFileEx
+      href: ccsetloghandleforfileex.md
+    - name: CcSetLoggedDataThreshold
+      href: ccsetloggeddatathreshold.md
+    - name: CcSetReadAheadGranularityEx
+      href: ccsetreadaheadgranularityex.md
+      items:
+      - name: READ_AHEAD_PARAMETERS
+        href: read-ahead-parameters.md
+    - name: CcUnmapFileOffsetFromSystemCache
+      href: ccunmapfileoffsetfromsystemcache.md
+    - name: ExDisableResourceBoost
+      href: exdisableresourceboost.md
+    - name: FsRtlAllocatePool
+      href: fsrtlallocatepool.md
+    - name: FsRtlAllocatePoolWithQuota
+      href: fsrtlallocatepoolwithquota.md
+    - name: FsRtlEnterFileSystem
+      href: fsrtlenterfilesystem.md
+    - name: FsRtlExitFileSystem
+      href: fsrtlexitfilesystem.md
+    - name: FltAcquireResourceExclusive
+      href: fltacquireresourceexclusive.md
+    - name: FltAcquireResourceShared
+      href: fltacquireresourceshared.md
+    - name: FltReleaseResource
+      href: fltreleaseresource.md
+    - name: KeAcquireQueuedSpinLock
+      href: keacquirequeuedspinlock.md
+    - name: MRxCollapseOpen
+      href: mrxcollapseopen.md
+    - name: MRxCreate
+      href: mrxcreate.md
+    - name: MRxDevFcbXXXControlFile
+      href: mrxdevfcbxxxcontrolfile.md
+    - name: MRxExtendForNonCache
+      href: mrxextendfornoncache.md
+    - name: MRxFlush
+      href: mrxflush.md
+    - name: MRxLowIOSubmitLOWIO_OP_EXCLUSIVELOCK]
+      href: mrxlowiosubmit-lowio-op-exclusivelock-.md
+    - name: MRxLowIOSubmitLOWIO_OP_FSCTL]
+      href: mrxlowiosubmit-lowio-op-fsctl-.md
+    - name: MRxLowIOSubmitLOWIO_OP_IOCTL]
+      href: mrxlowiosubmit-lowio-op-ioctl-.md
+    - name: MRxLowIOSubmitLOWIO_OP_NOTIFY_CHANGE_DIRECTORY]
+      href: mrxlowiosubmit-lowio-op-notify-change-directory-.md
+    - name: MRxLowIOSubmitLOWIO_OP_READ]
+      href: mrxlowiosubmit-lowio-op-read-.md
+    - name: MRxLowIOSubmitLOWIO_OP_SHAREDLOCK]
+      href: mrxlowiosubmit-lowio-op-sharedlock-.md
+    - name: MRxLowIOSubmitLOWIO_OP_UNLOCK]
+      href: mrxlowiosubmit-lowio-op-unlock-.md
+    - name: MRxLowIOSubmitLOWIO_OP_UNLOCK_MULTIPLE]
+      href: mrxlowiosubmit-lowio-op-unlock-multiple-.md
+    - name: MRxLowIOSubmitLOWIO_OP_WRITE]
+      href: mrxlowiosubmit-lowio-op-write-.md
+    - name: MRxQueryDirectory
+      href: mrxquerydirectory.md
+    - name: MRxQueryEaInfo
+      href: mrxqueryeainfo.md
+    - name: MRxQueryFileInfo
+      href: mrxqueryfileinfo.md
+    - name: MRxQueryQuotaInfo
+      href: mrxqueryquotainfo.md
+    - name: MRxQuerySdInfo
+      href: mrxquerysdinfo.md
+    - name: MRxQueryVolumeInfo
+      href: mrxqueryvolumeinfo.md
+    - name: MRxSetEaInfo
+      href: mrxseteainfo.md
+    - name: MRxSetFileInfo
+      href: mrxsetfileinfo.md
+    - name: MRxSetFileInfoAtCleanup
+      href: mrxsetfileinfoatcleanup.md
+    - name: MRxSetQuotaInfo
+      href: mrxsetquotainfo.md
+    - name: MRxSetSdInfo
+      href: mrxsetsdinfo.md
+    - name: MRxSetVolumeInfo
+      href: mrxsetvolumeinfo.md
+    - name: MRxShouldTryToCollapseThisOpen
+      href: mrxshouldtrytocollapsethisopen.md
+    - name: MRxStop
+      href: mrxstop.md
+    - name: MRxTruncate
+      href: mrxtruncate.md
+    - name: MRxZeroExtend
+      href: mrxzeroextend.md
+    - name: RxNewMapUserBuffer
+      href: rxnewmapuserbuffer.md
+    - name: _RxAllocatePoolWithTag
+      href: -rxallocatepoolwithtag.md
+    - name: _RxCheckMemoryBlock
+      href: -rxcheckmemoryblock.md
+    - name: _RxFreePool
+      href: -rxfreepool.md
+    - name: __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock
+      href: --rxsynchronizeblockingoperationsmaybedroppingfcblock.md
+    - name: SeStopImpersonatingClient
+      href: sestopimpersonatingclient.md
+    - name: PCOMPLETE_LOCK_IRP_ROUTINE
+      href: pcomplete-lock-irp-routine.md
+    - name: PFREE_FUNCTION
+      href: pfree-function.md
+    - name: PUNLOCK_ROUTINE
+      href: punlock-routine.md
+    - name: DUAL_OPLOCK_KEY_ECP_CONTEXT
+      href: dual-oplock-key-ecp-context.md
+    - name: OPLOCK_KEY_ECP_CONTEXT
+      href: oplock-key-ecp-context.md
+    - name: WCIFS_REDIRECTION_ECP_CONTEXT
+      href: wcifs-redirection-ecp-context.md
+    - name: FLT_FILE_NAME_OPTIONS
+      href: flt-file-name-options.md
+    - name: FLT_PARAMETERS (IRP_MJ_ACQUIRE_FOR_MOD_WRITE 用)
+      href: flt-parameters-for-irp-mj-acquire-for-mod-write.md
+    - name: FLT_PARAMETERS (IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 用)
+      href: flt-parameters-for-irp-mj-acquire-for-section-synchronization.md
+    - name: FLT_PARAMETERS (IRP_MJ_CREATE 用)
+      href: flt-parameters-for-irp-mj-create.md
+    - name: FLT_PARAMETERS (IRP_MJ_DEVICE_CONTROL と IRP_MJ_INTERNAL_DEVICE_CONTROL 用)
+      href: flt-parameters-for-irp-mj-device-control-and-irp-mj-internal-device-co.md
+    - name: FLT_PARAMETERS (IRP_MJ_DIRECTORY_CONTROL 用)
+      href: flt-parameters-for-irp-mj-directory-control.md
+    - name: FLT_PARAMETERS (IRP_MJ_FAST_IO_CHECK_IF_POSSIBLE 用)
+      href: flt-parameters-for-irp-mj-fast-io-check-if-possible.md
+    - name: FLT_PARAMETERS (IRP_MJ_FILE_SYSTEM_CONTROL 用)
+      href: flt-parameters-for-irp-mj-file-system-control.md
+    - name: FLT_PARAMETERS (IRP_MJ_LOCK_CONTROL 用)
+      href: flt-parameters-for-irp-mj-lock-control.md
+    - name: FLT_PARAMETERS (IRP_MJ_MDL_READ 用)
+      href: flt-parameters-for-irp-mj-mdl-read.md
+    - name: FLT_PARAMETERS (IRP_MJ_MDL_READ_COMPLETE 用)
+      href: flt-parameters-for-irp-mj-mdl-read-complete.md
+    - name: FLT_PARAMETERS (IRP_MJ_MDL_WRITE_COMPLETE 用)
+      href: flt-parameters-for-irp-mj-mdl-write-complete.md
+    - name: FLT_PARAMETERS (IRP_MJ_NETWORK_QUERY_OPEN 用)
+      href: flt-parameters-for-irp-mj-network-query-open.md
+    - name: FLT_PARAMETERS (IRP_MJ_PNP 用)
+      href: flt-parameters-for-irp-mj-pnp.md
+    - name: FLT_PARAMETERS (IRP_MJ_PREPARE_MDL_WRITE 用)
+      href: flt-parameters-for-irp-mj-prepare-mdl-write.md
+    - name: FLT_PARAMETERS (IRP_MJ_QUERY_EA 用)
+      href: flt-parameters-for-irp-mj-query-ea.md
+    - name: FLT_PARAMETERS (IRP_MJ_QUERY_INFORMATION 用)
+      href: flt-parameters-for-irp-mj-query-information.md
+    - name: FLT_PARAMETERS (IRP_MJ_QUERY_OPEN 用)
+      href: flt-parameters-for-irp-mj-query-open.md
+    - name: FLT_PARAMETERS (IRP_MJ_QUERY_QUOTA 用)
+      href: flt-parameters-for-irp-mj-query-quota.md
+    - name: FLT_PARAMETERS (IRP_MJ_QUERY_SECURITY 用)
+      href: flt-parameters-for-irp-mj-query-security.md
+    - name: FLT_PARAMETERS (IRP_MJ_QUERY_VOLUME_INFORMATION 用)
+      href: flt-parameters-for-irp-mj-query-volume-information.md
+    - name: FLT_PARAMETERS (IRP_MJ_READ 用)
+      href: flt-parameters-for-irp-mj-read.md
+    - name: FLT_PARAMETERS (IRP_MJ_RELEASE_FOR_MOD_WRITE 用)
+      href: flt-parameters-for-irp-mj-release-for-mod-write.md
+    - name: FLT_PARAMETERS (IRP_MJ_RELEASE_FOR_SECTION_SYNCHRONIZATION 用)
+      href: flt-parameters-for-irp-mj-release-for-section-synchronization.md
+    - name: FLT_PARAMETERS (IRP_MJ_SET_EA 用)
+      href: flt-parameters-for-irp-mj-set-ea.md
+    - name: FLT_PARAMETERS (IRP_MJ_SET_INFORMATION 用)
+      href: flt-parameters-for-irp-mj-set-information.md
+    - name: FLT_PARAMETERS (IRP_MJ_SET_QUOTA 用)
+      href: flt-parameters-for-irp-mj-set-quota.md
+    - name: FLT_PARAMETERS (IRP_MJ_SET_SECURITY 用)
+      href: flt-parameters-for-irp-mj-set-security.md
+    - name: FLT_PARAMETERS (IRP_MJ_SET_VOLUME_INFORMATION 用)
+      href: flt-parameters-for-irp-mj-set-volume-information.md
+    - name: FLT_PARAMETERS (IRP_MJ_SYSTEM_CONTROL 用)
+      href: flt-parameters-for-irp-mj-system-control.md
+    - name: FLT_PARAMETERS (IRP_MJ_VOLUME_MOUNT 用)
+      href: flt-parameters-for-irp-mj-volume-mount.md
+    - name: FLT_PARAMETERS (IRP_MJ_WRITE 用)
+      href: flt-parameters-for-irp-mj-write.md
+    - name: FILE_LOCK
+      href: file-lock.md
+    - name: ACE
+      href: ace.md
+    - name: SECURITY_DESCRIPTOR_CONTROL
+      href: security-descriptor-control.md
+    - name: SECURITY_INFORMATION
+      href: security-information.md
+    - name: IRP_MJ_CLEANUP
+      href: irp-mj-cleanup.md
+    - name: IRP_MJ_CLOSE
+      href: irp-mj-close.md
+    - name: IRP_MJ_CREATE
+      href: irp-mj-create.md
+    - name: IRP_MJ_DEVICE_CONTROL
+      href: irp-mj-device-control.md
+    - name: IRP_MJ_DIRECTORY_CONTROL
+      href: irp-mj-directory-control.md
+    - name: IRP_MJ_FILE_SYSTEM_CONTROL
+      href: irp-mj-file-system-control.md
+    - name: IRP_MJ_FLUSH_BUFFERS
+      href: irp-mj-flush-buffers.md
+    - name: IRP_MJ_INTERNAL_DEVICE_CONTROL
+      href: irp-mj-internal-device-control.md
+    - name: IRP_MJ_LOCK_CONTROL
+      href: irp-mj-lock-control.md
+    - name: IRP_MJ_PNP
+      href: irp-mj-pnp.md
+    - name: IRP_MJ_QUERY_EA
+      href: irp-mj-query-ea.md
+    - name: IRP_MJ_QUERY_INFORMATION
+      href: irp-mj-query-information.md
+    - name: IRP_MJ_QUERY_QUOTA
+      href: irp-mj-query-quota.md
+    - name: IRP_MJ_QUERY_SECURITY
+      href: irp-mj-query-security.md
+    - name: IRP_MJ_QUERY_VOLUME_INFORMATION
+      href: irp-mj-query-volume-information.md
+    - name: IRP_MJ_READ
+      href: irp-mj-read.md
+    - name: IRP_MJ_SET_EA
+      href: irp-mj-set-ea.md
+    - name: IRP_MJ_SET_INFORMATION
+      href: irp-mj-set-information.md
+    - name: IRP_MJ_SET_QUOTA
+      href: irp-mj-set-quota.md
+    - name: IRP_MJ_SET_SECURITY
+      href: irp-mj-set-security.md
+    - name: IRP_MJ_SET_VOLUME_INFORMATION
+      href: irp-mj-set-volume-information.md
+    - name: IRP_MJ_SHUTDOWN
+      href: irp-mj-shutdown.md
+    - name: IRP_MJ_WRITE
+      href: irp-mj-write.md
+    - name: FSCTL_ADD_OVERLAY
+      href: fsctl-add-overlay.md
+    - name: FSCTL_DELETE_EXTERNAL_BACKING
+      href: fsctl-delete-external-backing.md
+    - name: FSCTL_DELETE_REPARSE_POINT
+      href: fsctl-delete-reparse-point.md
+    - name: FSCTL_DISMOUNT_VOLUME
+      href: fsctl-dismount-volume.md
+    - name: FSCTL_DUPLICATE_EXTENTS_TO_FILE_EX
+      href: fsctl-duplicate-extents-to-file-ex.md
+    - name: FSCTL_ENUM_EXTERNAL_BACKING
+      href: fsctl-enum-external-backing.md
+    - name: FSCTL_ENUM_OVERLAY
+      href: fsctl-enum-overlay.md
+    - name: FSCTL_FILE_LEVEL_TRIM
+      href: fsctl-file-level-trim.md
+    - name: FSCTL_FIND_FILES_BY_SID
+      href: fsctl-find-files-by-sid.md
+    - name: FSCTL_GET_BOOT_AREA_INFO
+      href: fsctl-get-boot-area-info.md
+    - name: FSCTL_GET_EXTERNAL_BACKING
+      href: fsctl-get-external-backing.md
+    - name: FSCTL_GET_REPARSE_POINT
+      href: fsctl-get-reparse-point.md
+    - name: FSCTL_GET_RETRIEVAL_POINTER_BASE
+      href: fsctl-get-retrieval-pointer-base.md
+    - name: FSCTL_GET_RETRIEVAL_POINTERS
+      href: fsctl-get-retrieval-pointers.md
+    - name: FSCTL_GET_WOF_VERSION
+      href: fsctl-get-wof-version.md
+    - name: FSCTL_INVALIDATE_VOLUMES
+      href: fsctl-invalidate-volumes.md
+    - name: FSCTL_IS_PATHNAME_VALID
+      href: fsctl-is-pathname-valid.md
+    - name: FSCTL_IS_VOLUME_DIRTY
+      href: fsctl-is-volume-dirty.md
+    - name: FSCTL_LMR_GET_LINK_TRACKING_INFORMATION
+      href: fsctl-lmr-get-link-tracking-information.md
+    - name: FSCTL_MARK_AS_SYSTEM_HIVE
+      href: fsctl-mark-as-system-hive.md
+    - name: FSCTL_MARK_VOLUME_DIRTY
+      href: fsctl-mark-volume-dirty.md
+    - name: FSCTL_QUERY_VOLUME_NUMA_INFO
+      href: fsctl-query-volume-numa-info.md
+    - name: FSCTL_OFFLOAD_READ
+      href: fsctl-offload-read.md
+    - name: FSCTL_OFFLOAD_WRITE
+      href: fsctl-offload-write.md
+    - name: FSCTL_OPBATCH_ACK_CLOSE_PENDING
+      href: fsctl-opbatch-ack-close-pending.md
+    - name: FSCTL_OPLOCK_BREAK_ACK_NO_2
+      href: fsctl-oplock-break-ack-no-2.md
+    - name: FSCTL_OPLOCK_BREAK_ACKNOWLEDGE
+      href: fsctl-oplock-break-acknowledge.md
+    - name: FSCTL_OPLOCK_BREAK_NOTIFY
+      href: fsctl-oplock-break-notify.md
+    - name: FSCTL_QUERY_FILE_LAYOUT
+      href: fsctl-query-file-layout.md
+    - name: FSCTL_QUERY_PERSISTENT_VOLUME_STATE
+      href: fsctl-query-persistent-volume-state.md
+    - name: FSCTL_QUERY_REFS_SMR_VOLUME_INFO
+      href: fsctl-query-refs-smr-volume-info.md
+    - name: FSCTL_QUERY_RETRIEVAL_POINTERS
+      href: fsctl-query-retrieval-pointers.md
+    - name: FSCTL_REMOVE_OVERLAY
+      href: fsctl-remove-overlay.md
+    - name: FSCTL_REQUEST_BATCH_OPLOCK
+      href: fsctl-request-batch-oplock.md
+    - name: FSCTL_REQUEST_FILTER_OPLOCK
+      href: fsctl-request-filter-oplock.md
+    - name: FSCTL_REQUEST_OPLOCK
+      href: fsctl-request-oplock.md
+    - name: FSCTL_REQUEST_OPLOCK_LEVEL_1
+      href: fsctl-request-oplock-level-1.md
+    - name: FSCTL_REQUEST_OPLOCK_LEVEL_2
+      href: fsctl-request-oplock-level-2.md
+    - name: FSCTL_SET_EXTERNAL_BACKING
+      href: fsctl-set-external-backing.md
+    - name: FSCTL_SET_PERSISTENT_VOLUME_STATE
+      href: fsctl-set-persistent-volume-state.md
+    - name: FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS
+      href: fsctl-set-refs-smr-volume-gc-parameters.md
+    - name: FSCTL_SET_REPARSE_POINT
+      href: fsctl-set-reparse-point.md
+    - name: FSCTL_SET_ZERO_DATA
+      href: fsctl-set-zero-data.md
+    - name: FSCTL_SUSPEND_OVERLAY
+      href: fsctl-suspend-overlay.md
+    - name: FSCTL_UPDATE_OVERLAY
+      href: fsctl-update-overlay.md
+    - name: RxAssert
+      href: rxassert.md
+    - name: RxDbgBreakPoint
+      href: rxdbgbreakpoint.md
+ms.openlocfilehash: e7ae449eed801ebed7d6ba849e2e19e94dfe229c
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465538"
