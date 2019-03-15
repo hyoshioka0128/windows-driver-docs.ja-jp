@@ -157,7 +157,7 @@ Windows の通常版を使っている場合は、次のコマンドを入力し
 .\Create-DevboardImage -SourcePath Setup\sources\install.wim -Index 1 -BspManifest SharksCoveBsp\SharksCoveBsp.xml
 ```
 
-**注****Create-DevboardImage** スクリプトを実行する前に、実行ポリシーの設定が必要になる場合があります。 次に、例を示します。
+**注** **Create-DevboardImage** スクリプトを実行する前に、実行ポリシーの設定が必要になる場合があります。 次に、例を示します。
 
 
 
