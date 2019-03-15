@@ -112,7 +112,7 @@ ms.locfileid: "56518930"
     </tbody>
     </table>
 
-     **&lt;KernelBufferOverflowLib&gt;** 要素は、ドライバー プロジェクト ファイル内で、ツールセットをインポートする Microsoft.Cpp.props をインポートする要素の前に配置する必要があります。
+    **&lt;KernelBufferOverflowLib&gt;** 要素は、ドライバー プロジェクト ファイル内で、ツールセットをインポートする Microsoft.Cpp.props をインポートする要素の前に配置する必要があります。
 
     ドライバー プロジェクト ファイルを変更および保存した後、Visual Studio でプロジェクト ファイルを開き、ドライバーをビルドすることができます。
 
