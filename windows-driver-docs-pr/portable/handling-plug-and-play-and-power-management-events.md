@@ -24,7 +24,7 @@ WpdHelloWorldDriver サンプルでは、ほとんどの PnP および PM のイ
 
  
 
-各インターフェイスとそのメソッドの説明は、次を参照してください、 [UMDF ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=153678).。
+各インターフェイスとそのメソッドの説明は、次を参照してください、 [UMDF ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=153678)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

@@ -82,7 +82,7 @@ ms.locfileid: "56559286"
 [ **WdfDeviceInitSetRequestAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff546786)
 [**WdfFdoInitAllocAndQueryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff547239) 
  [ **WdfFdoInitOpenRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff547249)
-[{**](https://msdn.microsoft.com/library/windows/hardware/ff547281)
+[**](https://msdn.microsoft.com/library/windows/hardware/ff547281)
  
 
  
