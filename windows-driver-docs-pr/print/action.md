@@ -24,7 +24,7 @@ ms.locfileid: "56530334"
 
 省略可能な**アクション**要素は、ユーザーがバルーン メッセージ内のボタンをクリックしたときに完了する必要がアクションを表します。
 
-**アクション**で要素が定義されている、 *asyncui*この URI に、名前空間:http://schemas.microsoft.com/2003/print/asyncui/v1/requestします。 (このリソースできない場合がありますのいくつかの言語および国。)
+**アクション**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="usage"></a>使用方法
 -----
