@@ -4,12 +4,12 @@ title: 異なるバージョンの Windows に対するドライバーのビル�
 description: 以下のセクションでは、異なるバージョンの Windows に対するドライバーの作成をしている方のために、Windows Driver Kit (WDK) 8.1 か WDK 8、Visual Studio、MSBuild を使ってドライバーをビルドするためのガイドラインをいくつか紹介しています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8e1c4fc7abc7ab876c27e8900d4c46b203ae5d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b485699ff9a7e602ebe2e8d59c49ac7362174b8b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518930"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463939"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>異なるバージョンの Windows に対するドライバーのビルド
 
@@ -76,7 +76,7 @@ ms.locfileid: "56518930"
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left"><pre><code>  &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8.1 Debug|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+    <td align="left"><pre><code>  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;WindowsV6.3&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;true&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -84,7 +84,7 @@ ms.locfileid: "56518930"
         &lt;ConfigurationType&gt;Driver&lt;/ConfigurationType&gt;
         &lt;DriverType&gt;KMDF&lt;/DriverType&gt;
       &lt;/PropertyGroup&gt;
-      &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8.1 Release|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+      &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;WindowsV6.3&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;false&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -92,7 +92,7 @@ ms.locfileid: "56518930"
         &lt;ConfigurationType&gt;Driver&lt;/ConfigurationType&gt;
         &lt;DriverType&gt;KMDF&lt;/DriverType&gt;
       &lt;/PropertyGroup&gt;
-      &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8 Debug|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+      &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;Windows8&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;true&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -100,7 +100,7 @@ ms.locfileid: "56518930"
         &lt;ConfigurationType&gt;Driver&lt;/ConfigurationType&gt;
         &lt;DriverType&gt;KMDF&lt;/DriverType&gt;
       &lt;/PropertyGroup&gt;
-      &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8 Release|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+      &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;Windows8&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;false&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -112,7 +112,7 @@ ms.locfileid: "56518930"
     </tbody>
     </table>
 
-     **&lt;KernelBufferOverflowLib&gt;** 要素は、ドライバー プロジェクト ファイル内で、ツールセットをインポートする Microsoft.Cpp.props をインポートする要素の前に配置する必要があります。
+    **&lt;KernelBufferOverflowLib&gt;** 要素は、ドライバー プロジェクト ファイル内で、ツールセットをインポートする Microsoft.Cpp.props をインポートする要素の前に配置する必要があります。
 
     ドライバー プロジェクト ファイルを変更および保存した後、Visual Studio でプロジェクト ファイルを開き、ドライバーをビルドすることができます。
 
