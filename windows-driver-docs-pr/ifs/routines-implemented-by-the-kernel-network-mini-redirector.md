@@ -1,19 +1,19 @@
 ---
-title: カーネル ネットワーク Mini-redirector によって実装されるルーチン
-description: カーネル ネットワーク Mini-redirector によって実装されるルーチン
+title: カーネル ネットワーク ミニリダイレクターによって実装されるルーチン
+description: カーネル ネットワーク ミニリダイレクターによって実装されるルーチン
 ms.assetid: bd1a8989-100d-4b7b-9a61-521af6433b00
 keywords:
 - ミニ-リダイレクター WDK、ルーチンの実装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a39afd2e7eb8617c4e55917212de1bce1a1b98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d839ef5d02349f4a3729cfa2213d4e413d5b046e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536213"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464096"
 ---
-# <a name="routines-implemented-by-the-kernel-network-mini-redirector"></a>カーネル ネットワーク Mini-redirector によって実装されるルーチン
+# <a name="routines-implemented-by-the-kernel-network-mini-redirector"></a>カーネル ネットワーク ミニリダイレクターによって実装されるルーチン
 
 
 ネットワークのミニ リダイレクターでは、次のルーチンを実装できます。
@@ -216,7 +216,7 @@ ms.locfileid: "56536213"
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550824" data-raw-source="[&lt;strong&gt;MRxSrvCallWinnerNotify&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550824)"><strong>MRxSrvCallWinnerNotify</strong></a></td>
-<td align="left"><p>それがネットワーク ・ mini-リダイレクターに通知する RDBSS によって呼び出されるこのルーチンがもともと&quot;勝者&quot;とき複数リダイレクターで、要求を満たすため。 SRV_CALL 構造を作成し、サーバーとの接続を確立するには、優先ネットワーク ミニリダイレクターが予定です。</p>
+<td align="left"><p>このルーチンが「勝者」ネットワークのミニ リダイレクターに通知する RDBSS によって呼び出されるに設計されたときに複数のリダイレクターで、要求を満たすため。 SRV_CALL 構造を作成し、サーバーとの接続を確立するには、優先ネットワーク ミニリダイレクターが予定です。</p>
 <p>RDBSS の現在の実装で、RDBSS 層でネットワーク リダイレクターの競合がないために、各ネットワーク ミニリダイレクターは RDBSS のコピーが。 このルーチンは SRV_CALL 構造を作成するすべての要求後に呼び出されます。</p>
 <p>同じ汎用名前付け規則 (UNC) の名前空間を処理するため複数リダイレクターがインストールされると、要求をリダイレクターがリダイレクターが、レジストリで指定された順序に基づいて複数 UNC プロバイダー (MUP) によって選択されます。</p></td>
 </tr>
