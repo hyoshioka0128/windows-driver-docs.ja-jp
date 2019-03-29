@@ -1,6 +1,6 @@
 ---
-title: ファイル ハンドルを開く
-description: ファイル ハンドルを開く
+title: ファイルのハンドルを開く
+description: ファイルのハンドルを開く
 ms.assetid: 9378282a-ee29-44b6-b206-602eee94ec3b
 keywords:
 - ファイルの WDK カーネル
@@ -11,14 +11,14 @@ keywords:
 - ファイルへのハンドルを開く
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f8c3d475e4bb5e282794b3b9ed3deb426abc768
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8a802bf10a78f6935d9cdb6196a2655ab2ccbaa2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531033"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348677"
 ---
-# <a name="opening-a-handle-to-a-file"></a>ファイル ハンドルを開く
+# <a name="opening-a-handle-to-a-file"></a>ファイルのハンドルを開く
 
 
 
@@ -63,11 +63,11 @@ ms.locfileid: "56531033"
 <td><p>FILE_APPEND_DATA</p></td>
 </tr>
 <tr class="even">
-<td><p>ファイルを読み取る&#39;ファイルなど、メタデータ&#39;作成時刻。</p></td>
+<td><p>ファイルの作成時刻などのファイルのメタデータを読み取る。</p></td>
 <td><p>FILE_READ_ATTRIBUTES または GENERIC_READ</p></td>
 </tr>
 <tr class="odd">
-<td><p>ファイルを書き込む&#39;ファイルなど、メタデータ&#39;作成時刻。</p></td>
+<td><p>ファイルの作成時刻などのファイルのメタデータを記述します。</p></td>
 <td><p>FILE_WRITE_ATTRIBUTES または GENERIC_WRITE</p></td>
 </tr>
 </tbody>

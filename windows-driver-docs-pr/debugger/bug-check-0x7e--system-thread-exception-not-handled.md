@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6102df67f174903a7dba4b7a8f4f941278e393de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ccfca5fb8d8a3c138fb4fdc2518119225fad643c
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551420"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743443"
 ---
-# <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>バグ チェック 0x7E の。システム\_スレッド\_例外\_いない\_処理済み
+# <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>バグ チェック 0x7E:システム\_スレッド\_例外\_いない\_処理済み
 
 
 システム\_スレッド\_例外\_いない\_処理済みのバグ チェックが 0x0000007E の値を持ちます。 このバグ チェックでは、システム スレッドがエラー ハンドラーをキャッチされなかった例外を生成することを示します。
@@ -97,7 +97,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 
 **この問題をデバッグする予定の場合**パラメーター 2 (例外のアドレス) は、ドライバーまたはこの問題の原因となった関数を識別する必要があります。
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。 追加の分析を行うことができますを使用して、 [ **! スレッド**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)拡張子だけでなく[ **dds、dp、dqs** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dds--dps--dqs--display-words-and-symbols-)コマンド: これが特に当てはまるWinDbg のレポートと"おそらくにより: ntkrnlmp.exe"との実行によって生成される出力を確認した後、メモリ ダンプ ファイルの最初のクイック分析後、 [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッグ拡張機能を"**-v**"パラメーター。
 
 例外コード 0x80000003 が発生、アサーション、ハード コーディングされたブレークポイントにヒットした、システムで開始された場合、 **/NODEBUG**スイッチします。 この問題は頻繁に発生する必要があります。 これが繰り返し発生する場合は、カーネル デバッガーが接続されていることと、システムを使用してください。 こと、 **/debug**スイッチ。
 

@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b4504a028bc288fd6b4cf7b238098dddd2bbf2ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7dceba8d19fb18bb6c9f06970d6cde3272d3c374
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538632"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348929"
 ---
-# <a name="bug-check-0x10e-videomemorymanagementinternal"></a>バグ チェック 0x10E の。ビデオ\_メモリ\_管理\_内部
+# <a name="bug-check-0x10e-videomemorymanagementinternal"></a>バグ チェック 0x10E:ビデオ\_メモリ\_管理\_内部
 
 
 ビデオ\_メモリ\_管理\_内部バグ チェックが 0x0000010E の値を持ちます。 これは、ビデオ メモリ マネージャーがないから回復できるように条件を発生したことを示します。
@@ -138,7 +138,7 @@ ms.locfileid: "56538632"
 </tr>
 <tr class="even">
 <td align="left"><p>0x18</p></td>
-<td align="left"><p>固定された割り当てを解放しよう&#39;s リソースが失敗しました。</p></td>
+<td align="left"><p>固定された割り当てのリソースを解放できませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x19</p></td>

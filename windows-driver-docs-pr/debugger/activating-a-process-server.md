@@ -1,5 +1,5 @@
 ---
-title: プロセス サーバーをアクティブ化します。
+title: プロセス サーバーのアクティブ化
 description: プロセス サーバーをアクティブ化するには、(管理者として実行)、管理者特権でコマンド プロンプト ウィンドウを開き dbgsrv コマンドを入力します。
 ms.assetid: 566a4f64-8a14-469b-b50c-20e3c00aa2f8
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdda091634cab38db94f82ebcf2faf702898e45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5a4c23fc841cf552ae9b369b702b787db39f5186
+ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549132"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203939"
 ---
-# <a name="activating-a-process-server"></a>プロセス サーバーをアクティブ化します。
+# <a name="activating-a-process-server"></a>プロセス サーバーのアクティブ化
 
 
 ツールを Windows のデバッグに含まれているプロセス サーバーは、DbgSrv (dbgsrv.exe) と呼ばれます。 プロセス サーバーをアクティブ化する (管理者として実行)、管理者特権でコマンド プロンプト ウィンドウを開くし、入力、 **dbgsrv**コマンド。
@@ -124,10 +124,3 @@ SSL または SPIPE プロトコルを使用すると場合、 *Cert*証明書�
 1 台のコンピューターで任意の数のプロセス サーバーを開始できます。 ただし、一般に必要ない、(別のデバッグ セッションで各進行中)、スマート クライアントの任意の数が 1 つのプロセス サーバーに使用されることができます。
 
  
-
- 
-
-
-
-
-

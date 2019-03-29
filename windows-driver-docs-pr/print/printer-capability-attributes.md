@@ -1,6 +1,6 @@
 ---
-title: プリンターの機能の属性
-description: プリンターの機能の属性
+title: プリンター機能属性
+description: プリンター機能属性
 ms.assetid: 3ee98eee-8f46-4bf0-ac2c-f47f8402fa86
 keywords:
 - プリンターの機能は、WDK Unidrv を属性します。
@@ -8,14 +8,14 @@ keywords:
 - 機能の WDK Unidrv 属性します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b5b5a43f7ef00ddb1b7f57f33e2bcd379344f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3eefb56f0fc8d4f93c6b7d370972197e986141c6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558324"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349029"
 ---
-# <a name="printer-capability-attributes"></a>プリンターの機能の属性
+# <a name="printer-capability-attributes"></a>プリンター機能属性
 
 
 
@@ -42,7 +42,7 @@ ms.locfileid: "56558324"
 <td><p></p>
 プリンターのメモリに格納されているデータの種類を示す定数のリスト。 1 つ以上を指定できます。フォントのラスター ベクター
 <p>データ型が表示されているが、プリンターでサポートされていない、する場合は無視されます。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は (フォント、ラスター、ベクトル) の一覧にします。 詳細については、次を参照してください。<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">プリンター メモリの構成を記述する</a>します。</p></td>
+<td><p>任意。 指定しない場合、既定値は (フォント、ラスター、ベクトル) の一覧にします。 詳細については、次を参照してください。<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">プリンター メモリの構成を記述する</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>OEMCustomData</strong></p></td>
@@ -54,7 +54,7 @@ ms.locfileid: "56558324"
 <tr class="odd">
 <td><p></em><strong>OutputOrderReversed でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、最初にマルチページ ドキュメントが最後のページを並べ替えるかどうか。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>FALSE</strong>します。</p>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。</p>
 <p>使用していない EXTERN_GLOBAL 記号<em> <strong>OutputOrderReversed?</strong>します。</p></td>
 </tr>
 <tr class="even">
@@ -63,7 +63,7 @@ ms.locfileid: "56558324"
 操作の現在のフォントが Unidrv を再度選択する必要がありますかを示す定数の一覧です。 次になります。すべて CmdSend 後 - AFTER_GRXDATA<em>Xxxx</em>データ<a href="raster-data-emission-commands.md" data-raw-source="[raster data emission commands](raster-data-emission-commands.md)">ラスター データ出力コマンド</a>します。
 X 移動後の AFTER_XMOVE<a href="cursor-commands.md" data-raw-source="[cursor commands](cursor-commands.md)">カーソル コマンド</a>します。
 AFTER_FF - CmdFF コマンドの後にします。</td>
-<td><p>(省略可能)。 指定されていない場合は、Unidrv にフォントが再度選択されません。</p></td>
+<td><p>任意。 指定されていない場合は、Unidrv にフォントが再度選択されません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em><strong>ReverseBandOrderForEvenPages でしょうか。</strong></p></td>
@@ -75,22 +75,22 @@ AFTER_FF - CmdFF コマンドの後にします。</td>
 <tr class="even">
 <td><p></em><strong>RotateCoordinate でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、プリンターがページの向きに合わせて座標系を回転するためのコマンドをサポートするかどうか。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、<em>オプション エントリ向きの機能は、プリンターのコマンドを指定する必要があります。 配置することはできません、 <a href="conditional-statements.md" data-raw-source="[&lt;/em&gt;Case](conditional-statements.md)"></em>ケース</a>エントリ。</p></td>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、<em>オプション エントリ向きの機能は、プリンターのコマンドを指定する必要があります。 配置することはできません、 <a href="conditional-statements.md" data-raw-source="[&lt;/em&gt;Case](conditional-statements.md)"></em>ケース</a>エントリ。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em><strong>RotateFont でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、プリンターが自動的にページの向きを一致するようにフォントを回転するかどうか。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、し *<strong>RotateCoordinate?</strong>必要もあります<strong>TRUE</strong>します。 配置することはできません、* エントリの場合します。</p></td>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、し *<strong>RotateCoordinate?</strong>必要もあります<strong>TRUE</strong>します。 配置することはできません、* エントリの場合します。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>RotateRaster でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、プリンターが自動的にページの向きに合わせてデータをラスターを回転するかどうか。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、し<em> <strong>RotateCoordinate?</strong>必要もあります<strong>TRUE</strong>します。 配置することはできません、* エントリの場合します。</p></td>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、し<em> <strong>RotateCoordinate?</strong>必要もあります<strong>TRUE</strong>します。 配置することはできません、* エントリの場合します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>TextCaps</strong></p></td>
-<td><p>プリンターを示す定数のリスト&#39;テキスト機能。 1 つ以上の TC_ で構成できます<em>xxx</em> Microosft Windows SDK のドキュメントで説明されているフラグ&#39;の s 説明<strong>調べるため</strong>。</p></td>
-<td><p>(省略可能)。 指定しない場合、Unidrv では、テキストの機能はサポートされていません前提としています。</p></td>
+<td><p>プリンターのテキストの機能を示す定数のリスト。 1 つ以上の TC_ で構成できます<em>xxx</em>のマイクロソフトの Windows SDK ドキュメントの説明で説明されているフラグ<strong>調べるため</strong>します。</p></td>
+<td><p>任意。 指定しない場合、Unidrv では、テキストの機能はサポートされていません前提としています。</p></td>
 </tr>
 </tbody>
 </table>

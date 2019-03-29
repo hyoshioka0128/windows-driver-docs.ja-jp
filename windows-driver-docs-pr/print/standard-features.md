@@ -1,20 +1,20 @@
 ---
-title: 標準的な機能
-description: 標準的な機能
+title: 標準機能
+description: 標準機能
 ms.assetid: 5cd90992-5ab8-4cb3-89b0-19e58e55b652
 keywords:
 - WDK Unidrv、標準的なプリンターの機能
 - WDK Unidrv の標準機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd594419c0b56da317510885aa600983e84469c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f6dc952e6c94fca9f27d1e61da6ceab81368e060
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557422"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348917"
 ---
-# <a name="standard-features"></a>標準的な機能
+# <a name="standard-features"></a>標準機能
 
 
 
@@ -48,14 +48,14 @@ ms.locfileid: "56557422"
 <td><p>ページの照合順序</p></td>
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションを指定することはできません。</p></td>
-<td><p>(省略可能)。 指定しない場合、Unidrv は、ページの照合順序をサポートしていません。</p></td>
+<td><p>任意。 指定しない場合、Unidrv は、ページの照合順序をサポートしていません。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>返さ</strong></p></td>
 <td><p><strong>PageOutputColor</strong></p></td>
 <td><p>カラー印刷モード</p></td>
 <td><p>なし。 すべてのオプションをカスタマイズします。 参照してください<a href="option-attributes-for-the-colormode-feature.md" data-raw-source="[Option Attributes for the ColorMode Feature](option-attributes-for-the-colormode-feature.md)">返さ機能のオプション属性</a>します。</p></td>
-<td><p>(省略可能)。 指定しない場合、Unidrv 単一平面、ピクセルあたり 1 ビットの形式で画像を表示します。</p></td>
+<td><p>任意。 指定しない場合、Unidrv 単一平面、ピクセルあたり 1 ビットの形式で画像を表示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Duplex</strong></p></td>
@@ -63,7 +63,7 @@ ms.locfileid: "56557422"
 <td><p>両面印刷</p></td>
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションを指定することはできません。</p></td>
-<td><p>(省略可能)。 指定しない場合、Unidrv のみ片面印刷を実行します。</p></td>
+<td><p>任意。 指定しない場合、Unidrv のみ片面印刷を実行します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ハーフトーン</strong></p></td>
@@ -72,7 +72,7 @@ ms.locfileid: "56557422"
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションが許可されます。</p>
 <p>参照してください<a href="option-attributes-for-the-halftone-feature.md" data-raw-source="[Option Attributes for the Halftone Feature](option-attributes-for-the-halftone-feature.md)">ハーフトーン機能のオプション属性</a>します。</p></td>
-<td><p>(省略可能)。 指定しない場合、Unidrv は GDI でサポートされているハーフトーン メソッドを選択します。</p>
+<td><p>任意。 指定しない場合、Unidrv は GDI でサポートされているハーフトーン メソッドを選択します。</p>
 <p>参照してください<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv のハーフトーン</a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -91,14 +91,14 @@ ms.locfileid: "56557422"
 <td><p>印刷メディアの種類</p></td>
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションが許可されます。</p></td>
-<td><p>(省略可能)。 プリンターを指定しない場合&#39;s の既定のメディアは常に使用します。</p></td>
+<td><p>任意。 指定しない場合、プリンターの既定のメディアが使用されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>メモリ</strong></p></td>
 <td><p>既定のキーワードがありません。 PrintSchemaKeywordMap 属性を使用して、印刷スキーマ機能のキーワードを割り当てます。</p></td>
 <td><p>プリンター メモリの構成</p></td>
 <td><p>すべてのオプションをカスタマイズします。 参照してください<a href="option-attributes-for-the-memory-feature.md" data-raw-source="[Option Attributes for the Memory Feature](option-attributes-for-the-memory-feature.md)">メモリ機能のオプション属性</a>します。</p></td>
-<td><p>(省略可能)。 指定した場合、Unidrv はメモリ使用量を追跡しようとします。</p>
+<td><p>任意。 指定した場合、Unidrv はメモリ使用量を追跡しようとします。</p>
 <p>既定 * FeatureType は PRINTER_PROPERTY します。</p></td>
 </tr>
 <tr class="even">
@@ -107,7 +107,7 @@ ms.locfileid: "56557422"
 <td><p>用紙の向き</p></td>
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションを指定することはできません。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定の方向は縦にします。</p>
+<td><p>任意。 指定しない場合、既定の方向は縦にします。</p>
 <p>Windows 7 では、 <strong>MxdcGetPDEVAdjustment</strong>関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557558" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557558)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -116,7 +116,7 @@ ms.locfileid: "56557422"
 <td><p>出力ビンのタイプ</p></td>
 <td><p>なし。 すべてのオプションをカスタマイズします。</p>
 <p>参照してください<a href="option-attributes-for-the-outputbin-feature.md" data-raw-source="[Option Attributes for the OutputBin Feature](option-attributes-for-the-outputbin-feature.md)">OutputBin 機能のオプション属性</a>します。</p></td>
-<td><p>(省略可能)。 指定しない場合、Unidrv しようとしません、出力トレイを選択します。</p></td>
+<td><p>任意。 指定しない場合、Unidrv しようとしません、出力トレイを選択します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>PageProtect</strong></p></td>
@@ -124,7 +124,7 @@ ms.locfileid: "56557422"
 <td><p>現在の印刷ページの保護を実現にします。</p></td>
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションを指定することはできません。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は OFF です。 Unidrv は、十分なプリンターのメモリがある場合にのみページ保護をできます。 既定 * FeatureType は PRINTER_PROPERTY します。 参照してください * PageProtectMem します。</p></td>
+<td><p>任意。 指定しない場合、既定値は OFF です。 Unidrv は、十分なプリンターのメモリがある場合にのみページ保護をできます。 既定 * FeatureType は PRINTER_PROPERTY します。 参照してください * PageProtectMem します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>用紙サイズ</strong></p></td>
@@ -141,7 +141,7 @@ ms.locfileid: "56557422"
 <td><p>リソース Dll</p></td>
 <td><p>すべてのオプションをカスタマイズします。</p>
 <p>参照してください<a href="using-resource-dlls-in-a-minidriver.md" data-raw-source="[Using Resource DLLs in a Minidriver](using-resource-dlls-in-a-minidriver.md)">リソース Dll を使用して、ミニドライバーで</a>します。</p></td>
-<td><p>(省略可能)。 参照してください * ResourceDLL します。</p></td>
+<td><p>任意。 参照してください * ResourceDLL します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>解決方法</strong></p></td>
@@ -155,7 +155,7 @@ ms.locfileid: "56557422"
 <td><p><strong>JobStapleAllDocuments</strong></p></td>
 <td><p>ホチキス止めの機能</p></td>
 <td><p>すべてのオプションをカスタマイズします。</p></td>
-<td><p>(省略可能)。 指定した場合、ディレクトリ サービスは、プリンターがホチキス止めをサポートを示します。</p></td>
+<td><p>任意。 指定した場合、ディレクトリ サービスは、プリンターがホチキス止めをサポートを示します。</p></td>
 </tr>
 </tbody>
 </table>

@@ -4,7 +4,7 @@ description: UCMUCSI_LIVEDUMP ライブ ダンプには、0x000001D4 の値が�
 keywords:
 - バグ チェック 0x1D4 UCMUCSI_LIVEDUMP
 - UCMUCSI_LIVEDUMP
-ms.date: 05/23/2018
+ms.date: 02/22/2019
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 787940afd8e50a3db56f642927842ff8a20c4250
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecc29e7b0ce9dd4611981ee5fdee46aa6d88a118
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553790"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743461"
 ---
 # <a name="bug-check-bug-check-0x1d4-ucmucsilivedump"></a>チェックのバグ チェック 0x1D4 をバグします。UCMUCSI\_LIVEDUMP  
 
@@ -32,13 +32,16 @@ UcmUcsi.sys ドライバー エラーが発生しました。 UcmUcsi.sys は、
 
 パラメーター | 説明 
 |---------|--------------|
-1 | UCSI コマンドがタイムアウトしました。
-2 | このコマンドがタイムアウトしました。
-3 | 予約済み
-4 | 予約済み
+1 | エラーの種類-次の値を参照してください。
+2 | UCSI コマンドの値。
+3 | 0 以外の場合の追加情報へのポインター (dt UcmUcsiCx!UCMUCSICX_TRIAGE)。
+4 | 予約済み。
  
+**エラーの種類**
 
- 
+0x0 :UCSI コマンドは、ファームウェアが時間で、コマンドに応答しなかったためにタイムアウトしました。
+
+0x1:クライアント ドライバーにエラーが返されるか、またはファームウェアには、エラー コードが返されたために、UCSI コマンドの実行が失敗しました。
 
 
 

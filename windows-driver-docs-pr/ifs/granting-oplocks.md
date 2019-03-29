@@ -1,17 +1,17 @@
 ---
-title: 各 Oplock の許可
-description: 各 Oplock の許可
+title: Oplock の付与
+description: Oplock の付与
 ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee9daf785f1e5f9f3e2b309afe41027895f82afb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c2e2f77d7b12be4d97f73dd0f93dccb23e001a59
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529053"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348911"
 ---
-# <a name="granting-oplocks"></a>各 Oplock の許可
+# <a name="granting-oplocks"></a>Oplock の付与
 
 
 ## <span id="ddk_network_redirector_design_and_performance_if"></span><span id="DDK_NETWORK_REDIRECTOR_DESIGN_AND_PERFORMANCE_IF"></span>
@@ -116,7 +116,7 @@ NTFS ファイル システム ファイルでこの手順の最適化を提供�
 <li><p>ない Oplock:要求が付与されます。</p></li>
 <li>第 2 レベルや読み取り:要求が付与されます。 複数のレベル 2 がある/と同時に同じストリームで許可されている oplock を読み取ることができます。 複数のレベル 2 (ただし、未読) の各 oplock は、同じハンドルも存在できます。
 <ul>
-<li>読み取り oplock が既にには読み取り oplock を最初の読み取り oplock を許可するハンドルで要求された場合&#39;IRP が完了した 2 つ目の読み取り前に STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE oplock が与えられます。</li>
+<li>最初の読み取り oplock の IRP が完了した場合読み取り oplock が既に付与されて読み取り oplock ハンドルで要求されると、2 つ目の読み取り前に STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE oplock が与えられます。</li>
 </ul></li>
 <li><p>レベル 1、バッチをフィルター処理、読み取りハンドル、読み取り/書き込み、読み取り、書き込みハンドル。STATUS_OPLOCK_NOT_GRANTED が返されます。</p></li>
 </ul></td>
@@ -212,7 +212,7 @@ NTFS ファイル システム ファイルでこの手順の最適化を提供�
 <p>対応する場合に現在の oplock の状態は。</p>
 <ul>
 <li><p>Oplock: 要求が付与されません。</p></li>
-<li>読み取りまたは読み取り/書き込み、および既存の oplock が要求と同じ oplock キー: 既存の oplock&#39;、要求が許可される s STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE IRP が完了しました。
+<li>読み取りまたは読み取り/書き込み、および既存の oplock が要求と同じ oplock キー: STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で既存の oplock の IRP を完了すると、要求が許可されます。
 <ul>
 <li>他の STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>
@@ -243,7 +243,7 @@ NTFS ファイル システム ファイルでこの手順の最適化を提供�
 <p>対応する場合に現在の oplock の状態は。</p>
 <ul>
 <li><p>Oplock: 要求が付与されません。</p></li>
-<li>ハンドルの読み取り、読み取り/書き込みまたは読み取り-書き込みハンドルを読み取るし、既存の oplock が要求と同じ oplock キー: 既存の oplock&#39;s STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE IRP が完了しました、要求が許可されます。
+<li>読み取り、読み取りハンドル、読み取り/書き込みまたは読み取り-書き込みハンドルと、既存の oplock が要求と同じ oplock キー: STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE で既存の oplock の IRP を完了すると、要求が許可されます。
 <ul>
 <li>他の STATUS_OPLOCK_NOT_GRANTED が返されます。</li>
 </ul></li>

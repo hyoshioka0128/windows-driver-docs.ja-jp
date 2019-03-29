@@ -4,12 +4,12 @@ description: ProjectUpgradeTool は Microsoft Visual Studio 2012 プロジェク
 ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 721587fdeadc05d616f68b66aadb381ab87ea207
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cc2c4d12bd3c55ba6ec0a1f531e781415e8eff06
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536794"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348767"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
@@ -113,7 +113,7 @@ WDK 8 でプラットフォーム ツールセットが**WindowsKernelModeDriver
 
 ### <span id="build_vista_with_WDK_8.1"></span><span id="build_vista_with_wdk_8.1"></span><span id="BUILD_VISTA_WITH_WDK_8.1"></span><a name="build-vista-with-wdk-8-1"></a>WDK 8 プロジェクトを WDK 8.1 に移行した後、Windows Vista のターゲットをビルドできるようにする場合の対処方法
 
-**問題:** WDK 8 プロジェクトを WDK 8.1 に移行した後、Windows Vista のターゲットをビルドできません。
+**問題点:** WDK 8 プロジェクトを WDK 8.1 に移行した後、Windows Vista のターゲットをビルドできません。
 
 **シナリオ:** WDK 8 と Visual Studio 2012 を使用してプロジェクトを作成しました。 WDK 8.1 と ProjectUpgradeTool ツールを使用して、Visual Studio 2013 を使用してプロジェクト/ソリューションをアップグレードしました。 これを行う、Windows Vista の構成を保持するために、次のコマンドを使用します。**ProjectUpgradeTool.exe** *PathToProjectFolder* **-KeepObsoleteConfigs.**
 
@@ -133,7 +133,7 @@ error TRK0002: Failed to execute command: ""C:\Program Files (x86)\Windows Kits\
 error : Verification Error: Driver package has no driver version.    C:\Program Files (x86)\Windows Kits\8.0\build\WindowsDriver8.0.common.targets   1338    5   KMDF Driver1 Package
 ```
 
-**対応策 :** 2 つの変更を加える必要があります。
+**回避策:** 2 つの変更を加える必要があります。
 
 1.  **WindowsDriver8.0.x64.props と WindowsDriver8.0.Win32.props ファイルを修正します。**
 
@@ -142,15 +142,15 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     各\*.props ファイルで、式の検索場所`('$(VisualStudioVersion)' != '11.0')`。 たとえば、最初のインスタンスは、次のようになります。
 
     ```XML
-            <When  Condition="&#39;$(VisualStudioVersion)&#39; != &#39;11.0&#39;">
+            <When  Condition="'$(VisualStudioVersion)' != '11.0'">
           <PropertyGroup>
-            <CLToolPath Condition="&#39;$(CLToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86\x64</CLToolPath>
+            <CLToolPath Condition="'$(CLToolPath)' == ''">$(WDKContentRoot)bin\x86\x64</CLToolPath>
             <CLToolArchitecture>Native32Bit</CLToolArchitecture>
-            <LinkToolPath Condition="&#39;$(LinkToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86\x64</LinkToolPath>
+            <LinkToolPath Condition="'$(LinkToolPath)' == ''">$(WDKContentRoot)bin\x86\x64</LinkToolPath>
             <LinkToolArchitecture>Native32Bit</LinkToolArchitecture>
-            <MIDLToolPath Condition="&#39;$(MIDLToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86</MIDLToolPath>
+            <MIDLToolPath Condition="'$(MIDLToolPath)' == ''">$(WDKContentRoot)bin\x86</MIDLToolPath>
             <MIDLToolArchitecture>Native32Bit</MIDLToolArchitecture>
-            <LibToolPath Condition="&#39;$(LibToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86</LibToolPath>
+            <LibToolPath Condition="'$(LibToolPath)' == ''">$(WDKContentRoot)bin\x86</LibToolPath>
             <LibToolArchitecture>Native32Bit</LibToolArchitecture>
             <ExecutablePath>$(WDKContentRoot)bin\x86\x64;$(WDKContentRoot)bin\x86;$(WDKContentRoot)tools\pfd\bin\bin\AMD64;$(WDKContentRoot)tools\tracing\x64;$(ExecutablePath)</ExecutablePath>      
         </PropertyGroup>
@@ -160,19 +160,19 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     変更は、不等号 (! =) をより小さい ("&lt;")。
 
     ```XML
-        <When  Condition="&#39;$(VisualStudioVersion)&#39; &lt;&#39;11.0&#39;">
+        <When  Condition="'$(VisualStudioVersion)' &lt;'11.0'">
     ```
 
     式の次のインスタンスを検索する場所 `('$(VisualStudioVersion)' != '11.0')`
 
     ```XML
-        <When Condition="(&#39;$(PlatformToolset)&#39; == &#39;WindowsApplicationForDrivers8.0&#39;) and (&#39;$(VisualStudioVersion)&#39; != &#39;11.0&#39;)">
+        <When Condition="('$(PlatformToolset)' == 'WindowsApplicationForDrivers8.0') and ('$(VisualStudioVersion)' != '11.0')">
     ```
 
     変更は、不等号 (! =) をより小さい ("&lt;")。
 
     ```XML
-        <When Condition="(&#39;$(PlatformToolset)&#39; == &#39;WindowsApplicationForDrivers8.0&#39;) and (&#39;$(VisualStudioVersion)&#39; &lt;&#39;11.0&#39;)">
+        <When Condition="('$(PlatformToolset)' == 'WindowsApplicationForDrivers8.0') and ('$(VisualStudioVersion)' &lt;'11.0')">
     ```
 
     変更を行った後は保存両方\*.props ファイル。
@@ -181,10 +181,10 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
 
     プロジェクト ファイルを開きます (\*.vcxproj) は、ドライバーの。
 
-    プロジェクト ファイル (リリースおよびデバッグ) では、Vista 対象となる構成を見つけます。 次に、例を示します。
+    プロジェクト ファイル (リリースおよびデバッグ) では、Vista 対象となる構成を見つけます。 以下に例を示します。
 
     ```XML
-       <PropertyGroup Label="Configuration" Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Vista Debug|Win32&#39;">
+       <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
         <TargetVersion>Vista</TargetVersion>
         <UseDebugLibraries>True</UseDebugLibraries>
         <PlatformToolset>WindowsKernelModeDriver8.0</PlatformToolset>
@@ -194,7 +194,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     追加、 **PackageDir**プロパティを Windows Vista の構成設定にします。 ほとんどの状況では、既定値を使用する必要があります:`<PackageDir>$(OutDir)\$(Intdir)</PackageDir>`します。
 
     ```XML
-       <PropertyGroup Label="Configuration" Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Vista Debug|Win32&#39;">
+       <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
         <TargetVersion>Vista</TargetVersion>
         <PackageDir>$(OutDir)\$(Intdir)</PackageDir>
         <UseDebugLibraries>True</UseDebugLibraries>
@@ -205,7 +205,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     その他の構成と同じ変更を加えます。
 
     ```XML
-        <PropertyGroup Label="Configuration" Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Vista Release|Win32&#39;">
+        <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Release|Win32'">
         <TargetVersion>Vista</TargetVersion>
         <PackageDir>$(OutDir)\$(Intdir)</PackageDir>
         <UseDebugLibraries>False</UseDebugLibraries>
@@ -218,7 +218,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[ドライバーの構築](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)
+[ドライバーのビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)
 
 [WDK と Visual Studio のビルド環境](wdk-and-visual-studio-build-environment.md)
 

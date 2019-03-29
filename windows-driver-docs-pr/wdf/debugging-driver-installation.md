@@ -10,12 +10,12 @@ keywords:
 - ドライバー WDK KMDF のデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0912301a578b3fcc62af100dbd334aafa1c47546
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d4deee1f1341e7436154a32c2186539ed9ec9b60
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552712"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348915"
 ---
 # <a name="troubleshooting-kmdf-and-umdf-driver-installation"></a>KMDF および UMDF ドライバーのインストールのトラブルシューティング
 
@@ -50,7 +50,7 @@ WdfCoInstaller: DIF_INSTALLDEVICE: Coinstaller version: 1.9.7100
 WdfCoInstaller: DIF_INSTALLDEVICE: KMDF in-memory version: 1.7.6000
 WdfCoInstaller: DIF_INSTALLDEVICE: KMDF on-disk version: 1.7.6000
 WdfCoInstaller: Service Wdf01000 is running
-WdfCoInstaller: DIF_INSTALLDEVICE: Reboot is required, because the in-memory KMDF version is older than the coinstaller&#39;s version.
+WdfCoInstaller: DIF_INSTALLDEVICE: Reboot is required, because the in-memory KMDF version is older than the coinstaller's version.
 WdfCoInstaller: DIF_INSTALLDEVICE: Update is required, because the on-disk KMDF version is older than the coinstaller
 WdfCoInstaller: VerifyMSRoot: exit: error(0) The operation completed successfully.
 WdfCoInstaller: Invoking "D:\Windows\system32\wusa.exe "D:\Windows\Temp\WdfTemp\Microsoft Kernel-Mode Driver Framework Install-v1.9-Vista.msu" /quiet /norestart".

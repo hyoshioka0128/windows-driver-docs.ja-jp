@@ -1,16 +1,16 @@
 ---
-Description: Defining the Sensor Objects
-title: センサーのオブジェクトを定義します。
+Description: ソース オブジェクトの定義
+title: ソース オブジェクトの定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a61abc0fa1324a82750a909d552971e675a0b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 092e2a6207fee203b9af46854db5e3031ddc852d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527950"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348782"
 ---
-# <a name="defining-the-sensor-objects"></a>センサーのオブジェクトを定義します。
+# <a name="defining-the-sensor-objects"></a>ソース オブジェクトの定義
 
 
 Windows ポータブル デバイス (WPD)、デバイス上の論理エンティティと呼びますオブジェクト。 オブジェクトは、デバイスの情報や機能の部分を表すことができます。 任意のオブジェクトには、1 つまたは複数のプロパティがあります。 プロパティは、オブジェクトの説明のメタデータとして考えることができます。 たとえば、サンプル気温・湿度センサーで TempHumidity オブジェクトがセンサーをサポート\_読み取りプロパティ。 このプロパティは、現在の温度と相対湿度デバイスの取得を指定します。
@@ -21,7 +21,7 @@ WpdHelloWorldDriver には、次の表に示すオブジェクトがサポート
 |---------|----------------------------------------------------------------------------------------------------------------------------|
 | デバイス  | 説明のプロパティを含むルート オブジェクト、ファームウェアのバージョン、モデル、およびフレンドリ名。 |
 | ストレージ | たとえば、プロパティを公開するオブジェクトを記憶域容量、ファイル システムの種類では、および空きバイト数。         |
-| Folder  | たとえば、フォルダー名のプロパティを公開するオブジェクト。                                                             |
+| フォルダー  | たとえば、フォルダー名のプロパティを公開するオブジェクト。                                                             |
 | ファイル    | ファイル名と実際のファイルの内容などのプロパティを公開するオブジェクト。                                      |
 
  
@@ -85,7 +85,7 @@ WPD、オブジェクトが文字列で識別されます。 デバイス オブ
         {
             // We are being asked for the WPD_DEVICE_OBJECT_ID
             hr = AddStringValueToPropVariantCollection(pObjectIDCollection, WPD_DEVICE_OBJECT_ID);
-            CHECK_HR(hr, "Failed to add &#39;DEVICE&#39; object ID to enumeration collection");
+            CHECK_HR(hr, "Failed to add 'DEVICE' object ID to enumeration collection");
 
             // Update the number of children we are returning for this enumeration call
             NumObjectsEnumerated++;

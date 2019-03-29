@@ -1,16 +1,16 @@
 ---
-Description: Supporting Event Cookies
-title: イベントの Cookie をサポート
+Description: イベント Cookie のサポート
+title: イベント Cookie のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 371bc7d597f7578c0ff667c41e47964af3141f17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 61ebf90a6099af34ff0c7eca57c2f5fb777f5d64
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549622"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348969"
 ---
-# <a name="supporting-event-cookies"></a>イベントの Cookie をサポート
+# <a name="supporting-event-cookies"></a>イベント Cookie のサポート
 
 
 WPD アプリケーションまたは指定できます、一意の文字列「クッキー」クライアント情報のいずれかの呼び出し時に、 **IPortableDevice::Open**メソッドまたは**IPortableDeviceService::Open**メソッド。 これらのアプリケーションは、ドライバーを使用して、それぞれのイベント ハンドラーを登録するときに、ドライバーはこの cookie をイベント データを返します。 Cookie を確認するには、アプリケーションは、指定したイベントを処理するかどうかを判断できます。
@@ -49,7 +49,7 @@ HRESULT hrEventCookie = GetClientEventCookie(pCommandParams, &pszEventCookie);
 if (hrEventCookie == S_OK && pszEventCookie != NULL)
 {    
 // Add it to the event parameters    
-// The application&#39;s OnEvent callback will match this with its cookie    
+// The application's OnEvent callback will match this with its cookie    
 hrEventCookie = pEventParams->SetStringValue(WPD_CLIENT_EVENT_COOKIE, pszEventCookie);
 }
 CoTaskMemFree(pszEventCookie);

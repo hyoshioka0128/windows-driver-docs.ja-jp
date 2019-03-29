@@ -1,19 +1,19 @@
 ---
-title: ハーフトーン機能のオプションの属性
-description: ハーフトーン機能のオプションの属性
+title: Halftone 機能のオプション属性
+description: Halftone 機能のオプション属性
 ms.assetid: a188908a-ddf7-4b4d-a46d-e3550ffb0418
 keywords:
 - ハーフトーン機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c24b5a8f7c99bee149e0bf90be555553b568eb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ee48e901314796fb817a03ef93fd88b4155bbeae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551173"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348663"
 ---
-# <a name="option-attributes-for-the-halftone-feature"></a>ハーフトーン機能のオプションの属性
+# <a name="option-attributes-for-the-halftone-feature"></a>Halftone 機能のオプション属性
 
 
 
@@ -37,14 +37,14 @@ ms.locfileid: "56551173"
 <tbody>
 <tr class="odd">
 <td><p><em><strong>HTCallbackID</strong></p></td>
-<td><p>レンダリングに渡される正の数値がプラグイン&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff554258" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554258)"> <strong>IPrintOemUni::HalftonePattern</strong> </a>メソッドとしてその<em>dwCallbackID</em>パラメーター。</p></td>
+<td><p>レンダリング プラグインの正の数値が渡される<a href="https://msdn.microsoft.com/library/windows/hardware/ff554258" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554258)"> <strong>IPrintOemUni::HalftonePattern</strong> </a>メソッドとしてその<em>dwCallbackID</em>パラメーター。</p></td>
 <td><p>必要な場合、 <strong>IPrintOemUni::HalftonePattern</strong>メソッドが提供されます。 参照してください<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv のハーフトーン</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>HTNumPatterns</strong></p></td>
 <td><p>ハーフトーン パターンの数を表す数値。</p>
 <p>参照してください<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv のハーフトーン</a>します。</p></td>
-<td><p>(省略可能)。 1 またはできます 3、3 は赤、緑、およびその順序で、青の個別のパターンを意味します。 指定しない場合、既定値は 1 です。 いずれかで使用できる<em> <strong>rcHTPatternID</strong>または *<strong>HTCallbackID</strong>します。</p></td>
+<td><p>任意。 1 またはできます 3、3 は赤、緑、およびその順序で、青の個別のパターンを意味します。 指定しない場合、既定値は 1 です。 いずれかで使用できる<em> <strong>rcHTPatternID</strong>または *<strong>HTCallbackID</strong>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>HTPatternSize</strong></p></td>

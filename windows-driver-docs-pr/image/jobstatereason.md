@@ -12,12 +12,12 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e311538ed80b498bcf2ab48c95e017e3e0c0972
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ab2809441e4a488a115205a63a56c6f0c92b070a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550305"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348965"
 ---
 # <a name="jobstatereason-element"></a>JobStateReason 要素
 
@@ -50,7 +50,7 @@ ms.locfileid: "56550305"
 </colgroup>
 <thead>
 <tr class="header">
-<th>用語</th>
+<th>項目</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -69,7 +69,7 @@ ms.locfileid: "56550305"
 </tr>
 <tr class="even">
 <td><p><span id="JobCanceledAtDevice"></span><span id="jobcanceledatdevice"></span><span id="JOBCANCELEDATDEVICE"></span>JobCanceledAtDevice</p></td>
-<td><p>デバイスのスキャンでスキャンの現在のジョブが取り消されました&#39;s フロント パネル。</p></td>
+<td><p>スキャン デバイスのフロント パネルで、現在のスキャン ジョブが取り消されました。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="JobCompletedWithErrors"></span><span id="jobcompletedwitherrors"></span><span id="JOBCOMPLETEDWITHERRORS"></span>JobCompletedWithErrors</p></td>
@@ -135,7 +135,7 @@ ms.locfileid: "56550305"
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 WSD スキャン サービスの実装を検出する条件を表す値をサポートする必要があります。 特定の場合に使用できる値のサブセットのみをサポートするそのため、 **JobStateReason**理由は、実装では検出されません。

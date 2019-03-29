@@ -1,16 +1,16 @@
 ---
-Description: USB Dual Role controllers are now supported in Windows, starting with Windows 10.
-title: USB ドライバー スタック アーキテクチャがデュアル ロール
+Description: 2 つのロールを USB コント ローラーは、Windows、Windows 10 以降ではサポートされています。
+title: USB デュアル ロール ドライバー スタック アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c90f96a756d3003711c08f3320a1e076990939
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 505f71a6bf3b1ad66aeb377cae63a9ab4ecd9adc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556527"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348941"
 ---
-# <a name="usb-dual-role-driver-stack-architecture"></a>USB ドライバー スタック アーキテクチャがデュアル ロール
+# <a name="usb-dual-role-driver-stack-architecture"></a>USB デュアル ロール ドライバー スタック アーキテクチャ
 
 
 **最終更新日**
@@ -45,19 +45,19 @@ Windows 10 での USB デュアル ロール、サポートを提供し、次の
 
 | ホストの USB クラス ドライバー                                             | Windows 10 Mobile | Windows 10 デスクトップ エディション |
 |--------------------------------------------------------------------|-------------------|---------------------------------|
-| USB ハブ (USBHUB)                                                  | 〇               | はい (Windows 2000) 以降        |
-| HID のキーボード/マウス (HidClass、KBDCLass、MouClass、KBDHid、MouHid) | 〇               | はい (Windows 2000) 以降        |
-| USB 大容量記憶装置 (一括 & UASP)                                     | 〇               | はい (Windows 2000) 以降        |
-| 汎用 USB ホスト ドライバー (WinUSB)                                   | 〇               | [はい] (Windows Vista) 以降       |
-| USB オーディオ入力/出力 (USBAUDIO)                                      | 〇               | [はい] (Windows XP) 以降          |
-| シリアル デバイス (USBSER)                                            | 〇               | [はい] (Windows 10) 以降          |
-| Bluetooth (BTHUSB)                                                 | 〇               | [はい] (Windows XP) 以降          |
-| 印刷 (usbprint)                                                   | X                | [はい] (Windows XP) 以降          |
-| スキャン (USBSCAN)                                                 | X                | はい (Windows 2000) 以降        |
-| Web カメラ (USBVIDEO)                                                  | X                | [はい] (Windows Vista) 以降       |
-| メディア転送プロトコル (MTP 開始側)                            | X                | [はい] (Windows Vista) 以降       |
-| リモートの NDIS (RNDIS)                                                | X                | [はい] (Windows XP) 以降          |
-| IP over USB (IPoverUSB)                                            | X                | [はい] (新しい Windows 10 の)        |
+| USB ハブ (USBHUB)                                                  | はい               | はい (Windows 2000) 以降        |
+| HID のキーボード/マウス (HidClass、KBDCLass、MouClass、KBDHid、MouHid) | はい               | はい (Windows 2000) 以降        |
+| USB 大容量記憶装置 (一括 & UASP)                                     | はい               | はい (Windows 2000) 以降        |
+| 汎用 USB ホスト ドライバー (WinUSB)                                   | はい               | [はい] (Windows Vista) 以降       |
+| USB オーディオ入力/出力 (USBAUDIO)                                      | はい               | [はい] (Windows XP) 以降          |
+| シリアル デバイス (USBSER)                                            | はい               | [はい] (Windows 10) 以降          |
+| Bluetooth (BTHUSB)                                                 | はい               | [はい] (Windows XP) 以降          |
+| 印刷 (usbprint)                                                   | いいえ                | [はい] (Windows XP) 以降          |
+| スキャン (USBSCAN)                                                 | いいえ                | はい (Windows 2000) 以降        |
+| Web カメラ (USBVIDEO)                                                  | いいえ                | [はい] (Windows Vista) 以降       |
+| メディア転送プロトコル (MTP 開始側)                            | いいえ                | [はい] (Windows Vista) 以降       |
+| リモート NDIS (RNDIS)                                                | いいえ                | [はい] (Windows XP) 以降          |
+| IP over USB (IPoverUSB)                                            | いいえ                | [はい] (新しい Windows 10 の)        |
 
 
 
@@ -71,11 +71,11 @@ Windows 10 Mobile の含まれる受信トレイではないサード パーテ�
 
 
 
-| 関数の USB クラス ドライバー                 | Windows 10 Mobile | Windows 10 デスクトップ エディション | 説明                                                                                                                                  |
+| 関数の USB クラス ドライバー                 | Windows 10 Mobile | Windows 10 デスクトップ エディション | メモ                                                                                                                                  |
 |--------------------------------------------|-------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| メディア転送プロトコル (MTP 応答側)    | 〇               | X                              | デスクトップ上の MTP レスポンダーのシナリオはありません。 デスクトップ システム間での P2P シナリオは、WinUSB 経由で簡単な MigCable 経由で有効にされました。 |
-| Out (vidstream) のビデオの表示              | 〇               | X                              |                                                                                                                                        |
-| 一般的な USB 機能ドライバー (GenericUSBFn) | 〇               | X                              | これは、IPoverUSB とシナリオが点滅している他のデスクトップで必要になります。                                                                 |
+| メディア転送プロトコル (MTP 応答側)    | はい               | いいえ                              | デスクトップ上の MTP レスポンダーのシナリオはありません。 デスクトップ システム間での P2P シナリオは、WinUSB 経由で簡単な MigCable 経由で有効にされました。 |
+| Out (vidstream) のビデオの表示              | はい               | いいえ                              |                                                                                                                                        |
+| 一般的な USB 機能ドライバー (GenericUSBFn) | はい               | いいえ                              | これは、IPoverUSB とシナリオが点滅している他のデスクトップで必要になります。                                                                 |
 
 
 
@@ -141,7 +141,7 @@ USB デュアル ロール コント ローラーの ACPI 定義の例を次に�
 
 ```Text
 //
-// You may name the device whatever you want; we don&#39;t depend on it being called &#39;URS0&#39;.
+// You may name the device whatever you want; we don't depend on it being called 'URS0'.
 //
 Device(URS0)
 {
@@ -179,12 +179,12 @@ Device(URS0)
     //
     // This child device represents the USB host controller. This device node is in effect
     // when the controller is in host mode.
-    // You may name the device whatever you want; we don&#39;t depend on it being called &#39;USB0&#39;.
+    // You may name the device whatever you want; we don't depend on it being called 'USB0'.
     //
     Device(USB0)
     {
         //
-        // The host controller device node needs to have an address of &#39;0&#39;
+        // The host controller device node needs to have an address of '0'
         //
         Name(_ADR, 0)
         Name(_CRS, ResourceTemplate() {
@@ -199,12 +199,12 @@ Device(URS0)
     //
     // This child device represents the USB function controller. This device node is in effect
     // when the controller is in device/function/peripheral mode.
-    // You may name the device whatever you want; we don&#39;t depend on it being called &#39;UFN0&#39;.
+    // You may name the device whatever you want; we don't depend on it being called 'UFN0'.
     //
     Device(UFN0)
     {
         //
-        // The function controller device node needs to have an address of &#39;1&#39;
+        // The function controller device node needs to have an address of '1'
         //
         Name(_ADR, 1)
         Name(_CRS, ResourceTemplate() {
@@ -261,7 +261,7 @@ IHV または OEM のドライバー パッケージを提供する検討する�
   必要がある/受信トレイが含まれている IHV と OEM が提供ドライバー パッケージ*Ufxsynopsys.inf*と一致するハードウェア ID の周辺機器が必要です。 ハードウェア ID の一致は、前のセクションで説明されているスキームに基づくなります。
 
   また、IHV と OEM は、ドライバー パッケージにフィルター ドライバーを含めることができます。
-  ## <a name="see-also"></a>参照
+  ## <a name="see-also"></a>関連項目
 
 [デュアル ロール コント ローラー ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#dual-role-controller-driver-reference)
 

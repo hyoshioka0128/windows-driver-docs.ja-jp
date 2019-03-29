@@ -8,12 +8,12 @@ keywords:
 - WDK Pscript のエスケープ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 957d0fb84c88c2ea5afcf6167920e3b75b300c97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 24b5cb6b6cb2f0bb6e26622921a34fa492e64ca9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552884"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349013"
 ---
 # <a name="pscript-supported-escapes"></a>Pscript でサポートされているエスケープ
 
@@ -31,7 +31,7 @@ Pscript5 のプリンター ドライバーでは、以下のエスケープを�
 <thead>
 <tr class="header">
 <th>Esc キー</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -60,13 +60,13 @@ Pscript5 のプリンター ドライバーでは、以下のエスケープを�
 <tr class="even">
 <td><p>DRAWPATTERNRECT</p></td>
 <td><p>Hewlett Packard LaserJet または LaserJet と互換性のあるプリンターでページ制御言語 (PCL) のパターンとルールの機能を使用して、白、グレースケール、または黒い実線の四角形を作成します。 グレースケールは、白と黒のピクセルの特定の組み合わせを含む灰色パターンです。 このエスケープの詳細については、Windows sdk で DRAWPATTERNRECT を参照してください。</p>
-<p>このエスケープは、ドライバーに関連付けられている&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"> <strong>DrvEscape</strong> </a>関数。</p></td>
+<p>このエスケープは、ドライバーの関連付け<a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"> <strong>DrvEscape</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ENCAPSULATED_POSTSCRIPT</p></td>
 <td><p>Encapsulated PostScript (EPS) のデータをプリンターに送信します。</p>
 <p>Microsoft Windows NT 4.0 のプリンター ドライバーでは、このエスケープはサポートされていません。</p>
-<p>このエスケープは、ドライバーに関連付けられている&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556203" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556203)"> <strong>DrvDrawEscape</strong> </a>関数。</p></td>
+<p>このエスケープは、ドライバーの関連付け<a href="https://msdn.microsoft.com/library/windows/hardware/ff556203" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556203)"> <strong>DrvDrawEscape</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>END_PATH</p></td>

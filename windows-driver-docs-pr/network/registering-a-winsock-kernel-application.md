@@ -1,6 +1,6 @@
 ---
-title: Winsock カーネル アプリケーションを登録します。
-description: Winsock カーネル アプリケーションを登録します。
+title: Winsock カーネル アプリケーションの登録
+description: Winsock カーネル アプリケーションの登録
 ms.assetid: aaba39b8-8609-46e6-906d-3f050d91af7f
 keywords:
 - Winsock カーネル WDK ネットワーク、登録します。
@@ -12,14 +12,14 @@ keywords:
 - WskRegister
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d58728f106dcfea269315c8a05f3c4834cca66b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d67b641949397063071d8f4e49faeb28f67abc04
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532021"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348671"
 ---
-# <a name="registering-a-winsock-kernel-application"></a>Winsock カーネル アプリケーションを登録します。
+# <a name="registering-a-winsock-kernel-application"></a>Winsock カーネル アプリケーションの登録
 
 
 ### <a name="wsk-client-object-registration"></a>WSK クライアント オブジェクトの登録
@@ -124,7 +124,7 @@ NTSTATUS
   {
     // The WSK Provider NPI could not be captured.
     if( Status == STATUS_NOINTERFACE ) {
-      // WSK application&#39;s requested version is not supported
+      // WSK application's requested version is not supported
     }
     else if( status == STATUS_DEVICE_NOT_READY ) {
       // WskDeregister was invoked in another thread thereby causing

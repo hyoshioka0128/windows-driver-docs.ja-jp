@@ -11,12 +11,12 @@ keywords:
 - バッファーの WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d65ffda8c4276598c2221cb9c5ef845ab8538ff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8b76b4cd08b5bc0ae475a9637f6232fcb139effe
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536131"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348763"
 ---
 # <a name="windows-display-driver-model-wddm-operation-flow"></a>Windows Display Driver Model (WDDM) の操作フロー
 
@@ -39,7 +39,7 @@ ms.locfileid: "56536131"
 </tr>
 <tr class="even">
 <td align="left"><p>2.</p></td>
-<td align="left"><p>場合、ディスプレイのミニポート ドライバーへの呼び出し&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559615" data-raw-source="[&lt;strong&gt;DxgkDdiCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559615)"> <strong>DxgkDdiCreateDevice</strong> </a>成功すると、マイクロソフトの Direct3D ランタイムは、ユーザー モードのディスプレイ ドライバーを呼び出して&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540634" data-raw-source="[&lt;strong&gt;CreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540634)"> <strong>CreateDevice</strong> </a>関数。</p></td>
+<td align="left"><p>場合、ディスプレイのミニポート ドライバーへの呼び出し<a href="https://msdn.microsoft.com/library/windows/hardware/ff559615" data-raw-source="[&lt;strong&gt;DxgkDdiCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559615)"> <strong>DxgkDdiCreateDevice</strong> </a>成功すると、マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff540634" data-raw-source="[&lt;strong&gt;CreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540634)"> <strong>CreateDevice</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3.</p></td>
@@ -60,11 +60,11 @@ ms.locfileid: "56536131"
 <tbody>
 <tr class="odd">
 <td align="left"><p>4.</p></td>
-<td align="left"><p>Direct3D ランタイムがユーザー モードのディスプレイ ドライバーを呼び出すアプリケーションは、レンダリング デバイスのサーフェスを作成する要求、&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>関数。</p></td>
+<td align="left"><p>アプリケーションは、レンダリング デバイスのサーフェスを作成する要求、Direct3D ランタイム呼び出して、ユーザー モードのディスプレイ ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>5.</p></td>
-<td align="left"><p>ユーザー モードのディスプレイ ドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>呼び出し、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568893" data-raw-source="[&lt;strong&gt;pfnAllocateCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568893)"> <strong>pfnAllocateCb</strong> </a>ランタイムによって提供される関数。</p></td>
+<td align="left"><p>ユーザー モードのディスプレイ ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>呼び出し、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568893" data-raw-source="[&lt;strong&gt;pfnAllocateCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568893)"> <strong>pfnAllocateCb</strong> </a>ランタイムによって提供される関数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>6.</p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "56536131"
 </tr>
 <tr class="even">
 <td align="left"><p>8.</p></td>
-<td align="left"><p>カーネル モードをコマンド バッファーを送信するには、Direct3D ランタイムはユーザー モードのいずれかのディスプレイ ドライバーを呼び出します&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff569176" data-raw-source="[&lt;strong&gt;Present&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569176)"><strong>存在</strong></a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff565957" data-raw-source="[&lt;strong&gt;Flush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565957)"><strong>フラッシュ</strong>。</a>関数。 また、ユーザー モードのディスプレイ ドライバーは、コマンド バッファーがいっぱいの場合、コマンド バッファーを送信します。</p></td>
+<td align="left"><p>カーネル モードをコマンド バッファーを送信する Direct3D ランタイムは、ユーザー モード ディスプレイ ドライバーを呼び出して<a href="https://msdn.microsoft.com/library/windows/hardware/ff569176" data-raw-source="[&lt;strong&gt;Present&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569176)"><strong>存在</strong></a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff565957" data-raw-source="[&lt;strong&gt;Flush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565957)"><strong>フラッシュ</strong></a>関数。 また、ユーザー モードのディスプレイ ドライバーは、コマンド バッファーがいっぱいの場合、コマンド バッファーを送信します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>9.</p></td>
@@ -97,7 +97,7 @@ ms.locfileid: "56536131"
 </tr>
 <tr class="even">
 <td align="left"><p>10.</p></td>
-<td align="left"><p>ディスプレイのミニポート ドライバーへの呼び出しを受信する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559743" data-raw-source="[&lt;strong&gt;DxgkDdiPresent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559743)"> <strong>DxgkDdiPresent</strong> </a>機能<a href="https://msdn.microsoft.com/library/windows/hardware/ff568916" data-raw-source="[&lt;strong&gt;pfnPresentCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568916)"> <strong>pfnPresentCb</strong> </a>が呼び出されたまたは、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559793" data-raw-source="[&lt;strong&gt;DxgkDdiRender&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559793)"> <strong>DxgkDdiRender</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff559800" data-raw-source="[&lt;strong&gt;DxgkDdiRenderKm&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559800)"> <strong>DxgkDdiRenderKm</strong> </a>機能<a href="https://msdn.microsoft.com/library/windows/hardware/ff568923" data-raw-source="[&lt;strong&gt;pfnRenderCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568923)"> <strong>pfnRenderCb</strong></a>が呼び出されました。 ディスプレイのミニポート ドライバー コマンド バッファーを検証、ハードウェアの DMA バッファーに書き込みます&#39;s 形式、および、サーフェスを記述した割り当て一覧の使用が生成されます。</p></td>
+<td align="left"><p>ディスプレイのミニポート ドライバーへの呼び出しを受信する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559743" data-raw-source="[&lt;strong&gt;DxgkDdiPresent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559743)"> <strong>DxgkDdiPresent</strong> </a>機能<a href="https://msdn.microsoft.com/library/windows/hardware/ff568916" data-raw-source="[&lt;strong&gt;pfnPresentCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568916)"> <strong>pfnPresentCb</strong> </a>が呼び出されたまたは、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559793" data-raw-source="[&lt;strong&gt;DxgkDdiRender&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559793)"> <strong>DxgkDdiRender</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff559800" data-raw-source="[&lt;strong&gt;DxgkDdiRenderKm&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559800)"> <strong>DxgkDdiRenderKm</strong> </a>機能<a href="https://msdn.microsoft.com/library/windows/hardware/ff568923" data-raw-source="[&lt;strong&gt;pfnRenderCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568923)"> <strong>pfnRenderCb</strong></a>が呼び出されました。 ディスプレイのミニポート ドライバーは、コマンド バッファーを検証、ハードウェアの形式で DMA バッファーに書き込み、使用サーフェスを記述した割り当て一覧を生成します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -114,9 +114,9 @@ ms.locfileid: "56536131"
 <tbody>
 <tr class="odd">
 <td align="left"><p>11.</p></td>
-<td align="left"><p>Microsoft DirectX グラフィックスのカーネル サブシステムは、ディスプレイのミニポート ドライバーを呼び出す&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"> <strong>DxgkDdiBuildPagingBuffer</strong> </a> DMA バッファー、ページングのバッファーと呼ばれる特殊な目的を作成する関数GPU からアクセス可能なメモリとの間の割り当てリストで指定した割り当てを移動するとします。</p>
+<td align="left"><p>Microsoft DirectX グラフィックスのカーネル サブシステム呼び出しディスプレイ ミニポート ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"> <strong>DxgkDdiBuildPagingBuffer</strong> </a> DMA バッファー、移動するページング バッファーと呼ばれる特殊な目的を作成する関数割り当ての一覧と GPU からアクセス可能なメモリの間で指定された割り当てです。</p>
 <div class="alert">
-<strong>注</strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"><strong>DxgkDdiBuildPagingBuffer</strong> </a>のすべてのフレームは呼び出されません。  
+<strong>注</strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"><strong>DxgkDdiBuildPagingBuffer</strong> </a>のすべてのフレームは呼び出されません。
 </div>
 <div>
  
@@ -124,15 +124,15 @@ ms.locfileid: "56536131"
 </tr>
 <tr class="even">
 <td align="left"><p>12.</p></td>
-<td align="left"><p>DirectX グラフィックスのカーネル サブシステムは、ディスプレイのミニポート ドライバーを呼び出す&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>関数 GPU 実行単位にページング バッファーをキューに登録します。</p></td>
+<td align="left"><p>DirectX グラフィックスのカーネル サブシステム呼び出しディスプレイ ミニポート ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>関数 GPU 実行単位にページング バッファーをキューに登録します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>13.</p></td>
-<td align="left"><p>DirectX グラフィックスのカーネル サブシステムは、ディスプレイのミニポート ドライバーを呼び出す&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559737" data-raw-source="[&lt;strong&gt;DxgkDdiPatch&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559737)"> <strong>DxgkDdiPatch</strong> </a> DMA バッファー内のリソースへの物理アドレスを割り当てる関数。</p></td>
+<td align="left"><p>DirectX グラフィックスのカーネル サブシステム呼び出しディスプレイ ミニポート ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff559737" data-raw-source="[&lt;strong&gt;DxgkDdiPatch&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559737)"> <strong>DxgkDdiPatch</strong> </a> DMA バッファー内のリソースへの物理アドレスを割り当てる関数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>14.</p></td>
-<td align="left"><p>DirectX グラフィックスのカーネル サブシステムは、ディスプレイのミニポート ドライバーを呼び出す&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>関数 DMA バッファーを GPU の実行の単位をキューに登録します。 GPU に送信される各 DMA バッファーには、数値、フェンスの識別子が含まれています。 GPU では、DMA バッファーの処理が完了すると、GPU は、割り込みを生成します。</p></td>
+<td align="left"><p>DirectX グラフィックスのカーネル サブシステム呼び出しディスプレイ ミニポート ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>関数 DMA バッファーを GPU の実行の単位をキューに登録します。 GPU に送信される各 DMA バッファーには、数値、フェンスの識別子が含まれています。 GPU では、DMA バッファーの処理が完了すると、GPU は、割り込みを生成します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>15.</p></td>

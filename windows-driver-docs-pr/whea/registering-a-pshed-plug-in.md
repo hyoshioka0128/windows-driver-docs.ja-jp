@@ -1,6 +1,6 @@
 ---
-title: プラグインの PSHED を登録します。
-description: プラグインの PSHED を登録します。
+title: PSHED プラグインの登録
+description: PSHED プラグインの登録
 ms.assetid: 8b710aa2-1477-4906-b5cb-d269d821ea28
 keywords:
 - プラットフォーム固有のハードウェア エラー ドライバー プラグインを WDK WHEA、登録します。
@@ -8,14 +8,14 @@ keywords:
 - PSHED プラグイン WDK WHEA、登録します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85bc147fdf0f860f164480c9c9ba21f6ebc566f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e5a3fa067f6a6a6b381aaa4a5e4fa06f474d5bc7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550630"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348669"
 ---
-# <a name="registering-a-pshed-plug-in"></a>プラグインの PSHED を登録します。
+# <a name="registering-a-pshed-plug-in"></a>PSHED プラグインの登録
 
 
 プラグインの PSHED 自身を登録、PSHED で呼び出すことによって、 [ **PshedRegisterPlugin** ](https://msdn.microsoft.com/library/windows/hardware/ff559466)に初期化されたポインターを渡す関数[ **WHEA\_PSHED\_プラグイン\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff560617)構造体。 通常、プラグインの PSHED を呼び出します、 **PshedRegisterPlugin**内でいずれかの関数からその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数またはその[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)関数。
@@ -108,7 +108,7 @@ WHEA_PSHED_PLUGIN_REGISTRATION_PACKET RegPacket =
 }
 
 //
-// The PSHED plug-in&#39;s DriverEntry function
+// The PSHED plug-in's DriverEntry function
 //
 NTSTATUS
   DriverEntry(

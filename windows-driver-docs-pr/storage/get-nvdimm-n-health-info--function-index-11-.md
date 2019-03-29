@@ -1,15 +1,15 @@
 ---
-title: NVDIMM-N の正常性の情報 (関数インデックス 11) を取得します。
+title: NVDIMM-N の正常性に関する情報の取得 (関数インデックス 11)
 description: この関数は、NVDIMM-N のモジュールの正常性に関する情報を返します。
 ms.assetid: E0FCC4C6-31CB-4D46-ADCE-99EBA2BFF798
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 91daf19792d900f5413ea32b5917555019d1838a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ddadffd117fad3f731e3cd2f64f56c1ad11a397d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538365"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348810"
 ---
 # <a name="span-idstoragegetnvdimm-nhealthinfofunctionindex11spanget-nvdimm-n-health-info-function-index-11"></a><span id="storage.get_nvdimm-n_health_info__function_index_11_"></span>NVDIMM-N の正常性の情報 (関数インデックス 11) を取得します。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56538365"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
@@ -56,7 +56,7 @@ ms.locfileid: "56538365"
 <td align="left"><strong>モジュールの正常性</strong></td>
 <td align="left">2</td>
 <td align="left">4</td>
-<td align="left"><p>NVDIMM-N モジュールに関する情報の詳細な&#39;s 正常性。</p>
+<td align="left"><p>NVDIMM-N モジュールの正常性に関する詳細を取得します。</p>
 <p><em>バイト 0 – <em>MODULE_HEALTH_STATUS0</em> (0, 0xA1)</p>
 <p></em>1 – バイト<em>MODULE_HEALTH_STATUS1</em> (0, 0xA2)</p></td>
 </tr>

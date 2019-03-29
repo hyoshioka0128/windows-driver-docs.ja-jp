@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - SIO_WSK_REGISTER_EXTENSION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565e9cd247807123a8185c3241ecda24bf5b75d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 722f69616475e59f1a343f5895a9afd513b5fefd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532666"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349023"
 ---
 # <a name="siowskregisterextension"></a>SIO\_WSK\_登録\_拡張機能
 
@@ -28,7 +28,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -50,7 +50,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff571167" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_IN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571167)"> <strong>WSK_EXTENSION_CONTROL_IN</strong> </a>構造体。 この構造体にはへのポインターが含まれています、<a href="https://msdn.microsoft.com/library/windows/hardware/ff568373" data-raw-source="[Network Programming Interface (NPI)](https://msdn.microsoft.com/library/windows/hardware/ff568373)">ネットワーク プログラミング インターフェイス (NPI)</a>識別子の拡張機能インターフェイスとディスパッチ テーブルおよび WSK アプリケーションのコンテキストにポインター&#39;の実装、拡張機能インターフェイスです。</p></td>
+<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff571167" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_IN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571167)"> <strong>WSK_EXTENSION_CONTROL_IN</strong> </a>構造体。 この構造体にはへのポインターが含まれています、<a href="https://msdn.microsoft.com/library/windows/hardware/ff568373" data-raw-source="[Network Programming Interface (NPI)](https://msdn.microsoft.com/library/windows/hardware/ff568373)">ネットワーク プログラミング インターフェイス (NPI)</a>拡張機能インターフェイスやディスパッチ テーブルと拡張機能の WSK アプリケーションの実装のコンテキストへのポインターの識別子インターフェイスです。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -58,7 +58,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff571168" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_OUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571168)"> <strong>WSK_EXTENSION_CONTROL_OUT</strong> </a>構造体。 この構造体は、ディスパッチ テーブルへのポインターと WSK サブシステムのコンテキストへのポインターを受け取る&#39;、拡張機能インターフェイスの実装。</p></td>
+<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff571168" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_OUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571168)"> <strong>WSK_EXTENSION_CONTROL_OUT</strong> </a>構造体。 この構造体は、ディスパッチ テーブルへのポインターと、拡張機能インターフェイスの実装の WSK サブシステムのためのコンテキストへのポインターを受け取ります。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -74,7 +74,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 
 拡張機能インターフェイスを登録の詳細については、次を参照してください。[拡張機能インターフェイスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff570461)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

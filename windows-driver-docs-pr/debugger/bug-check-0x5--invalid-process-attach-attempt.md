@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dbaf5dbf1a6e23b3cd30b9d21153111c5819b683
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9afc207e4a93859334bb95cca5703222ef9f46cf
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553843"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348675"
 ---
-# <a name="bug-check-0x5-invalidprocessattachattempt"></a>0x5 チェックをバグします。無効な\_プロセス\_アタッチ\_試行
+# <a name="bug-check-0x5-invalidprocessattachattempt"></a>バグ チェック 0x5:無効な\_プロセス\_アタッチ\_試行
 
 
 無効な\_プロセス\_アタッチ\_試行のバグ チェックが 0x00000005 の値を持ちます。 これは、通常、スレッドは許可されていませんかのような状況でのプロセスにアタッチされたことを示します。 たとえば、このバグ チェックが場合に発生する**KeAttachProcess** (これは有効ではありません)、接続されている状態で特定の関数を呼び出すスレッドから返された場合、スレッドが既に (これは、法律ではありません)、プロセスにアタッチされている、またはときに呼び出されました
@@ -54,7 +54,7 @@ ms.locfileid: "56553843"
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>スレッドの値&#39;s APC 状態のインデックス。</p></td>
+<td align="left"><p>スレッドの APC 状態インデックスの値。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -65,7 +65,7 @@ ms.locfileid: "56553843"
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 このバグ チェックは、ドライバーを呼び出す場合に発生することができます、 **KeAttachProcess**関数と、スレッドは既に別のプロセスにアタッチされています。 使用することをお勧め、 **KeStackAttachProcess**関数。 現在のスレッドが既に別のプロセスにアタッチされている場合、 **KeStackAttachProcess**新しいプロセスに現在のスレッドをアタッチする前に、関数が現在の APC 状態を保存します。

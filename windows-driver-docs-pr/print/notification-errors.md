@@ -9,12 +9,12 @@ keywords:
 - エラー WDK スプーラー通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a399cfaab9c784039d247ce98b1135d1ca9e195
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 01e19431dbecdea7e366840bbaa8e7951b19c487
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531213"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348773"
 ---
 # <a name="notification-errors"></a>通知エラー
 
@@ -35,9 +35,9 @@ ms.locfileid: "56531213"
 <thead>
 <tr class="header">
 <th>エラー コード</th>
-<th>Value</th>
+<th>値</th>
 <th>通信の種類</th>
-<th>適用対象</th>
+<th>対象</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -181,7 +181,7 @@ ms.locfileid: "56531213"
 <td><p>0x14</p></td>
 <td><p>双方向と一方向</p></td>
 <td><p>送信者</p></td>
-<td><p><strong>SendNotification</strong>ときにこの値を返します。 通知&#39;s の型は、チャネルとは異なる&#39;型。</p></td>
+<td><p><strong>SendNotification</strong>通知の種類が、チャネルの種類とは異なる場合は、この値を返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>MAX_REGISTRATION_COUNT_EXCEEDED</p></td>

@@ -16,12 +16,12 @@ keywords:
 - 認証の WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 596b6f7fc46f4300e78602b8b55b292e62890088
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d352d4a10be9167c1216316029f285ee4936841c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539208"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349027"
 ---
 # <a name="copyright-protection-implementation"></a>著作権保護の実装
 
@@ -59,7 +59,7 @@ DVD の各入力ストリームでは、著作権保護のプロパティを受�
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565142" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_DEC_KEY2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565142)"><strong>KSPROPERTY_DVDCOPY_DEC_KEY2</strong></a></p></td>
-<td><p>取得専用プロパティです。 このプロパティを要求するデコーダー&#39;s bus キー 2 を DVD ドライブに転送します。 渡されたデータ型の構造体は、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567635" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_BUSKEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567635)"> <strong>KS_DVDCOPY_BUSKEY</strong></a>します。</p></td>
+<td><p>取得専用プロパティです。 このプロパティは、デコーダーのバス キー 2 を DVD ドライブに転送を要求します。 渡されたデータ型の構造体は、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567635" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_BUSKEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567635)"> <strong>KS_DVDCOPY_BUSKEY</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565148" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_TITLE_KEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565148)"><strong>KSPROPERTY_DVDCOPY_TITLE_KEY</strong></a></p></td>

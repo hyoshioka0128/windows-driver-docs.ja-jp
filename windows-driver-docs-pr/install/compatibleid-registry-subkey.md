@@ -1,17 +1,17 @@
 ---
-title: CompatibleID レジストリのサブキー
-description: CompatibleID レジストリのサブキー
+title: CompatibleID レジストリ サブキー
+description: CompatibleID レジストリ サブキー
 ms.assetid: 0111b013-d559-47bb-9cc8-d3930661a0a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a51cc5acaac5682ed2ba4f75b247fc23678fe0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8cfb020c44d30f13303b8df5c7206c688ae519ec
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552581"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349103"
 ---
-# <a name="compatibleid-registry-subkey"></a>CompatibleID レジストリのサブキー
+# <a name="compatibleid-registry-subkey"></a>CompatibleID レジストリ サブキー
 
 
 Windows 7 以降、 **CompatibleID**レジストリ サブキーでは、リムーバブル デバイスの機能をコンピューターにインストールされているデバイスのオーバーライドを指定します。 リムーバブル デバイスの機能の詳細を上書きするを参照してください。 [DeviceOverrides レジストリ キー](deviceoverrides-registry-key.md)します。
@@ -41,7 +41,7 @@ Windows 7 以降、 **CompatibleID**レジストリ サブキーでは、リム�
 <tr class="odd">
 <td align="left"><p>有効な<a href="compatible-ids.md" data-raw-source="[compatible ID](compatible-ids.md)">互換性 ID</a>値</p></td>
 <td align="left"><p>必須</p></td>
-<td align="left"><p>互換性のある ID を含める必要があります&#39;s bus プレフィックス。</p>
+<td align="left"><p>この互換性のあるを含める必要があります bus プレフィックスの ID。</p>
 <p>数 (#) 文字では、すべてスラッシュ () のパスの区切り記号内での互換性のある ID を置き換える必要があります。</p></td>
 <td align="left"><a href="deviceoverrides-registry-key.md" data-raw-source="[DeviceOverrides](deviceoverrides-registry-key.md)">DeviceOverrides</a></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a>や<a href="childlocationpaths-registry-subkey.md" data-raw-source="[ChildLocationPaths](childlocationpaths-registry-subkey.md)">ChildLocationPaths</a></p></td>

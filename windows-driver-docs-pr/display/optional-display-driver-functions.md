@@ -1,19 +1,19 @@
 ---
-title: オプションのディスプレイ ドライバー関数
-description: オプションのディスプレイ ドライバー関数
+title: ディスプレイ ドライバーの必須関数
+description: ディスプレイ ドライバーの必須関数
 ms.assetid: 7c1489c9-40de-4b44-95b7-af227c7d8205
 keywords:
 - グラフィックス DDI 関数 WDK Windows 2000 を表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a25f75f6c27dce9a30fa3ed12d76b1811586bb73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 30f841fe876dab7b0114b4ceb435625a21450c4e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550314"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348923"
 ---
-# <a name="optional-display-driver-functions"></a>オプションのディスプレイ ドライバー関数
+# <a name="optional-display-driver-functions"></a>ディスプレイ ドライバーの必須関数
 
 
 ## <span id="ddk_optional_display_driver_functions_gg"></span><span id="DDK_OPTIONAL_DISPLAY_DRIVER_FUNCTIONS_GG"></span>
@@ -239,7 +239,7 @@ ms.locfileid: "56550314"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557273" data-raw-source="[&lt;strong&gt;DrvSynchronizeSurface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557273)"><strong>DrvSynchronizeSurface</strong></a></p></td>
-<td align="left"><p>デバイスで実行される操作を描画できる&#39;s コプロセッサ GDI を使用して調整します。</p></td>
+<td align="left"><p>描画操作の GDI と組み合わせて使用するデバイスのコプロセッサによって実行されるようにします。</p></td>
 </tr>
 </tbody>
 </table>

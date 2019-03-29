@@ -7,12 +7,12 @@ keywords:
 - 頂点バッファーの WDK DirectX 8.0、Windows 2000 で名前を変更します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a856a2f526a4c66c667b50d56ebeb9f245b16ea5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f6395e2ecd2df7d8f82efc80e4562d6c536062f0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532194"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348665"
 ---
 # <a name="handling-renaming-on-windows-2000"></a>Windows 2000 での名前変更の処理
 
@@ -42,7 +42,7 @@ AGP の概念のベース アドレスには、ドライバーが通知される
 次のコード フラグメントを示して、新しいコンピューティング**fpVidMem** AGP サーフェス ロックの呼び出しで。
 
 ```cpp
-// Get the vertex buffer&#39;s surface local and global from the
+// Get the vertex buffer's surface local and global from the
 // lock data
 LPDDRAWI_DDRAWSURFACE_LCL*pLcl = pLockData->lpDDSurface;
 LPDDRAWI_DDRAWSURFACE_GBL*pGbl = pLcl->lpGbl;

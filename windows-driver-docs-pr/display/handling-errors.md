@@ -4,12 +4,12 @@ description: エラーの処理
 ms.assetid: ac4e056e-3304-4934-887a-5cc2b87989bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 954368c30181fd7101dcb29a93161a8d77477045
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b602d001d8e617b2151e4060061eb1bd427ef8e3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530486"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348679"
 ---
 # <a name="handling-errors"></a>エラーの処理
 
@@ -34,7 +34,7 @@ Direct3D ランタイム、認識された場合、エラー状態が重要な�
 <thead>
 <tr class="header">
 <th align="left">エラー カテゴリ</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -56,7 +56,7 @@ Direct3D ランタイム、認識された場合、エラー状態が重要な�
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowMapErrors</p></td>
-<td align="left"><p>ドライバーは、リソースの競合を確認する必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_WASSTILLDRAWING を渡すことができます<strong>pfnSetErrorCb</strong> D3D10_DDI_MAP_FLAG_DONOTWAIT フラグは、ドライバーに渡された場合&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff569492" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569492)"> <strong>ResourceMap</strong></a>関数。 ドライバーはを通じて D3DDDIERR_DEVICEREMOVED を渡すことができますも<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p></td>
+<td align="left"><p>ドライバーは、リソースの競合を確認する必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_WASSTILLDRAWING を渡すことができます<strong>pfnSetErrorCb</strong> D3D10_DDI_MAP_FLAG_DONOTWAIT フラグが、ドライバーに渡されたかどうか<a href="https://msdn.microsoft.com/library/windows/hardware/ff569492" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569492)"> <strong>ResourceMap</strong> </a>関数。 ドライバーはを通じて D3DDDIERR_DEVICEREMOVED を渡すことができますも<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowGetDataErrors</p></td>
@@ -64,7 +64,7 @@ Direct3D ランタイム、認識された場合、エラー状態が重要な�
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowWKCheckCounterErrors</p></td>
-<td align="left"><p>ドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff539385" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539385)"> <strong>CheckCounter</strong> </a>関数は、実行時に定義されているカウンターがサポートしているかどうかを示す必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_UNSUPPORTED を渡すことができます<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p>
+<td align="left"><p>ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff539385" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539385)"> <strong>CheckCounter</strong> </a>関数は、実行時に定義されているカウンターがサポートしているかどうかを示す必要があります。 そのため、ドライバーがを通じて DXGI_DDI_ERR_UNSUPPORTED を渡すことができます<strong>pfnSetErrorCb</strong>します。 ランタイムは、その他のエラー コードが重要なことが決定します。</p>
 <p>ドライバーは、任意の型チェック関数の D3DDDIERR_DEVICEREMOVED を返すことはできません。</p></td>
 </tr>
 <tr class="even">

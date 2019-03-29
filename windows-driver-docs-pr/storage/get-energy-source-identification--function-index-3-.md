@@ -1,17 +1,17 @@
 ---
-title: エネルギー ソースの識別 (関数インデックス 3) を取得します。
+title: 動力源 ID の取得 (関数インデックス 3)
 description: この関数は、管理されているホストまたはデバイス管理について、エネルギー ソース (ES) などの識別情報を返します。
 ms.assetid: E1589FD0-5D03-42EF-8078-0AE53CFB1ACA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6f5824b20adc05091c170042a4a0665c37cde9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5c76bff652d9cad466c66907bc26828a0395c435
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536552"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348933"
 ---
-# <a name="get-energy-source-identification-function-index-3"></a>エネルギー ソースの識別 (関数インデックス 3) を取得します。
+# <a name="get-energy-source-identification-function-index-3"></a>動力源 ID の取得 (関数インデックス 3)
 
 
 この関数は、管理されているホストまたはデバイス管理について、エネルギー ソース (ES) などの識別情報を返します。
@@ -48,7 +48,7 @@ ms.locfileid: "56536552"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
@@ -121,7 +121,7 @@ ES のポリシーの値が 0 と Device-Managed ES 識別フィールドは有�
 <td align="left"><strong>ES の正常性チェックの頻度</strong></td>
 <td align="left">1</td>
 <td align="left">9</td>
-<td align="left"><p>モジュールの現在の頻度&#39;s ES の正常性評価。</p>
+<td align="left"><p>現在のモジュールの ES の正常性評価の頻度。</p>
 <p></em>バイト 0 – <em>AUTO_ES_HEALTH_CHECK_FREQUENCY</em> (0, 0xA9)</p></td>
 </tr>
 <tr class="even">
@@ -189,7 +189,7 @@ ES ポリシーの値が 1 と Host-Managed ES 識別フィールドは有効な
 <td align="left"><strong>ES の正常性チェックの頻度</strong></td>
 <td align="left">1</td>
 <td align="left">16</td>
-<td align="left"><p>プラットフォームの現在の頻度&#39;s ES の正常性評価。</p>
+<td align="left"><p>現在、プラットフォームの ES の正常性評価の頻度です。</p>
 <p><em>バイト 0 – <em>AUTO_ES_HEALTH_FREQUENCY</em> (0, 0xA9)。</p></td>
 </tr>
 <tr class="even">

@@ -1,6 +1,6 @@
 ---
-title: アプリケーションで通知を処理
-description: アプリケーションで通知を処理
+title: アプリケーション通知の処理
+description: アプリケーション通知の処理
 ms.assetid: 475d8e37-5d31-4989-92ce-3c4a7c09d292
 keywords:
 - 動的なハードウェアの WDK、アプリケーション通知をパーティション分割
@@ -12,14 +12,14 @@ keywords:
 - アプリケーション通知 WDK のハードウェアの動的パーティションの処理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a780005ded4256076083aef8a343957bd80b72e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 676df98a2afb890a539e348a2b5e7b3a8c493c1c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536701"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348657"
 ---
-# <a name="processing-an-application-notification"></a>アプリケーションで通知を処理
+# <a name="processing-an-application-notification"></a>アプリケーション通知の処理
 
 
 ユーザー モード アプリケーションが WM をどのように処理するか\_DEVICECHANGE メッセージは、アプリケーションを Win32 API に基づいているか、または Microsoft Foundation Class (MFC) ライブラリに基づいているかどうかによって異なります。
@@ -39,7 +39,7 @@ OnDeviceChange(
   LPARAM lParam
   ); 
 
-// The application&#39;s message processing function
+// The application's message processing function
 // for the window that receives the WM_DEVICECHANGE
 // messages.
 LRESULT CALLBACK

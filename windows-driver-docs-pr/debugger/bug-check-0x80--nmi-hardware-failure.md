@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 079354003a8a7eedc724dbe7fdb8f855b3caae68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: a55dbebcc53e18aa328985079a034da07c358c9c
+ms.sourcegitcommit: fac288eb2cceb6a7a8248ae0f8086553d1659b23
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560135"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588957"
 ---
-# <a name="bug-check-0x80-nmihardwarefailure"></a>0x80 チェックをバグします。NMI\_ハードウェア\_エラー
+# <a name="bug-check-0x80-nmihardwarefailure"></a>バグ チェック 0x80:NMI\_ハードウェア\_エラー
 
 
 NMI\_ハードウェア\_エラーのバグ チェックが 0x00000080 の値を持ちます。 このバグ チェックでは、ハードウェアの故障が発生したことを示します。
@@ -40,7 +40,7 @@ NMI\_ハードウェア\_エラーのバグ チェックが 0x00000080 の値を
 <a name="resolution"></a>解決方法
 ----------
 
-すべてのハードウェアや最近インストールされたドライバーを削除します。 メモリのすべてのモジュールは、同じ型のことを確認します。
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。 すべてのハードウェアや最近インストールされたドライバーを削除します。 メモリのすべてのモジュールは、同じ型のことを確認します。
 
  
 

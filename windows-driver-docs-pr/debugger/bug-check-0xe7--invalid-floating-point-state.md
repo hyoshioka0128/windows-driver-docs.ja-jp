@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d98f7133d19db7a610d49888cfbc8934ca2f23d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b0ebe7ff3b33834d222e20f2f0ee4627b787a97b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558076"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348667"
 ---
-# <a name="bug-check-0xe7-invalidfloatingpointstate"></a>バグ チェック 0xE7 の。無効な\_浮動\_ポイント\_状態
+# <a name="bug-check-0xe7-invalidfloatingpointstate"></a>バグ チェック 0xE7:無効な\_浮動\_ポイント\_状態
 
 
 無効な\_浮動\_ポイント\_状態のバグ チェックが 0x000000E7 の値を持ちます。 これは、スレッドの保存された浮動小数点状態が無効であることを示します。
@@ -58,7 +58,7 @@ ms.locfileid: "56558076"
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>保存した IRQL</p></td>
 <td align="left"><p>現在の IRQL</p></td>
-<td align="left"><p>現在のプロセッサ&#39;s IRQL が浮動小数点のコンテキストの保存時と同じではありません。</p></td>
+<td align="left"><p>現在のプロセッサの IRQL でない浮動小数点のコンテキストの保存時と同じです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>

@@ -1,16 +1,16 @@
 ---
-Description: Handling Access Control
-title: 処理へのアクセス制御
+Description: アクセス制御の処理
+title: アクセス制御の処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31fdd53b47f4d7e762368ca571209967beb9e23a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c2c685e7d494b481e3e809ad9ea601fd65d1c1f6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552905"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348759"
 ---
-# <a name="handling-access-control"></a>処理へのアクセス制御
+# <a name="handling-access-control"></a>アクセス制御の処理
 
 
 WPD ドライバーでは、WPD コマンドのペイロードに I/O マネージャーが適切な ACL の確認を実行するために適切な I/O 制御コード (IOCTL) とが送信されたことを確認する必要があります。 すべてのドライバーでは、この検証を実行する必要がありますので、WPD には、プロセスを自動化するマクロが用意されています。
@@ -112,7 +112,7 @@ CQueue::OnDeviceIoControl(
     else
     {
         hr = E_UNEXPECTED;
-        CHECK_HR(hr, "Received invalid/unsupported IOCTL code &#39;0x%lx&#39;",ControlCode);
+        CHECK_HR(hr, "Received invalid/unsupported IOCTL code '0x%lx'",ControlCode);
     }
 
     // Complete the request

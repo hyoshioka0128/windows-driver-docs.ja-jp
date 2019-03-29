@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6f7fd5c66c5a0b02bea1e8b1b3355e544f6c5f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e6a112fc1e2f55a8c2b051be97cfcec53e06e859
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538569"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348955"
 ---
-# <a name="bug-check-0x144-bugcodeusb3driver"></a>バグ チェック 0x144 の。BUGCODE\_USB3\_ドライバー
+# <a name="bug-check-0x144-bugcodeusb3driver"></a>バグ チェック 0x144:BUGCODE\_USB3\_ドライバー
 
 
 **BUGCODE\_USB3\_ドライバー**バグ チェックが 0x00000144 の値を持ちます。 これは、すべての USB 3 のバグ チェックに使用されるコードです。 パラメーター 1 は、USB 3 のバグ チェックの種類を指定し、その他のパラメーターの意味では、パラメーター 1 に依存します。
@@ -50,9 +50,9 @@ ms.locfileid: "56538569"
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>(省略可能)。 IRP へのポインター、URB を再送信するために使用</p></td>
+<td align="left"><p>任意。 IRP へのポインター、URB を再送信するために使用</p></td>
 <td align="left"><p>URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、core スタックすることが以前に送信する、URB を使用します。</p></td>
 </tr>
 <tr class="even">
@@ -64,37 +64,37 @@ ms.locfileid: "56538569"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>(省略可能)。 IRP へのポインター、URB を送信するために使用</p></td>
+<td align="left"><p>任意。 IRP へのポインター、URB を送信するために使用</p></td>
 <td align="left"><p>破損した URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、core スタックに破損した URB が送信されます。 クライアント ドライバーを使用して、URB も割り当てられませんでしたので、これに<strong>USBD_<em>xxx</em>UrbAllocate</strong>またはクライアント ドライバーが、バッファー アンダーラン URB の。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x800</p></td>
 <td align="left"><p>IRQL は静的、開いているストリーム要求の送信</p></td>
 <td align="left"><p>開いている静的ストリーム IRP へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>IRQL で、静的、開いているストリームの要求が送信された&gt;パッシブ レベル。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x801</p></td>
 <td align="left"><p>開いている静的ストリーム IRP へのポインター</p></td>
 <td align="left"><p>開いている静的ストリーム URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、ストリームの機能のクエリを実行する前に静的ストリームを開こうとしました。 クライアント ドライバー開くことができませんまで静的ストリーム後に正常にストリームの機能のためのクエリ。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x802</p></td>
 <td align="left"><p>クライアント ドライバーを開こうとした静的のストリームの数</p></td>
 <td align="left"><p>クライアント ドライバーに与えられていた静的ストリームの数</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、静的なストリームの数が無効を開こうとしました。 ストリームの数は 0 にすることはできませんし、クエリ機能の呼び出しを USB クライアント ドライバーに返される値より大きくすることはできません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x803</p></td>
 <td align="left"><p>開いている静的ストリーム IRP へのポインター</p></td>
 <td align="left"><p>開いている静的ストリーム URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーは、静的なストリームを開く、静的なストリームが既に存在するエンドポイントを開こうとしました。 静的ストリームを開く前に、クライアント ドライバーは、以前に開かれた静的ストリームを閉じる必要があります。</p></td>
 </tr>
 <tr class="even">
@@ -108,21 +108,21 @@ ms.locfileid: "56538569"
 <td align="left"><p>0x805</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff542962" data-raw-source="[WDFREQUEST](https://msdn.microsoft.com/library/windows/hardware/ff542962)">WDFREQUEST</a>閉じる静的ストリーム URB の処理</p></td>
 <td align="left"><p>閉じる静的ストリーム URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、(たとえば、D0 の終了を処理) 後、無効な状態で閉じる静的ストリーム URB を送信します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x806</p></td>
 <td align="left"><p>IRP へのポインター</p></td>
 <td align="left"><p>URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクト</p></td>
+<td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーが、チェーンを送信しようとしています。 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>チェーンのクエリを実行する前に<strong>MDL</strong>機能します。 クライアント ドライバーは、連鎖送信できない<strong>MDL</strong> 、チェーンを正常に照会した後まで<strong>MDL</strong>機能します。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x807</p></td>
 <td align="left"><p>連鎖的に呼び出すへのポインター  <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong></p></td>
 <td align="left"><p>URB へのポインター</p></td>
-<td align="left"><p>クライアント ドライバーへのポインター&#39;s デバイス オブジェクトを利用できる場合</p></td>
+<td align="left"><p>使用可能な場合に、クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバー、URB に送信、転送 core スタック バッファー長をバイト数よりも長い (によって返される <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554530" data-raw-source="[MmGetMdlByteCount](https://msdn.microsoft.com/library/windows/hardware/ff554530)">MmGetMdlByteCount</a></strong>) の <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>で渡されます。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="even">
@@ -333,7 +333,7 @@ ms.locfileid: "56538569"
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>示された転送の完了が保留中のコント ローラー、コント ローラーにします。 EventData 1 = = (イベントの転送 TRB を逆参照&#39;のポインターが原因でのバグチェック)</p></td>
+<td align="left"><p>示された転送の完了が保留中のコント ローラー、コント ローラーにします。 EventData 1 = = (転送イベント TRB のポインターの逆参照が発生しますが、バグチェック)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x101F</p></td>
@@ -396,7 +396,7 @@ ms.locfileid: "56538569"
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 USB 機能の 1 つのクエリを実行するクライアント ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)または[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)

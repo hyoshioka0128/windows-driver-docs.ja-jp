@@ -7,12 +7,12 @@ keywords:
 - PROPSETID_EXT_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc036620e340ed2fba5e4e234985cd925887c15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fe2b139c9a0075e18768af8c5a01026b0ca28ca5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531594"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349033"
 ---
 # <a name="external-device-properties"></a>外部デバイスのプロパティ
 
@@ -33,7 +33,7 @@ ms.locfileid: "56531594"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565153" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_ID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565153)"><strong>KSPROPERTY_EXTDEVICE_ID</strong></a></p></td>
-<td><p>外部デバイスを返します&#39;s 一般化システム全体の id。</p></td>
+<td><p>外部のデバイスの汎用システム全体の id。 を返します</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565157" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_VERSION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565157)"><strong>KSPROPERTY_EXTDEVICE_VERSION</strong></a></p></td>
@@ -45,7 +45,7 @@ ms.locfileid: "56531594"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565154" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_PORT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565154)"><strong>KSPROPERTY_EXTDEVICE_PORT</strong></a></p></td>
-<td><p>外部デバイスを返します&#39;1394 など、接続ポートの s の型、または USB です。</p></td>
+<td><p>外部デバイスの接続ポートの種類、1394 などまたは USB を返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565152" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565152)"><strong>KSPROPERTY_EXTDEVICE_CAPABILITIES</strong></a></p></td>

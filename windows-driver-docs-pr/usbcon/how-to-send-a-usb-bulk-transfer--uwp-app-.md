@@ -1,19 +1,19 @@
 ---
-Description: Learn about a USB bulk transfer and how to initiate a transfer request from your UWP app that communicates with a USB device.
-title: USB 一括転送要求 (UWP アプリ) を送信する方法
+Description: USB 一括転送と USB デバイスと通信する UWP アプリからの転送要求を開始する方法について説明します。
+title: USB バルク転送要求の送信方法 (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c1d006450d4e4390e17c34e4e3edec8f844225
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1912e02c55ab98b462982c929600b9e8a1203595
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550176"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348919"
 ---
-# <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>USB 一括転送要求 (UWP アプリ) を送信する方法
+# <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>USB バルク転送要求の送信方法 (UWP アプリ)
 
 
-**要約**
+**概要**
 
 -   一括でパイプからの読み取り
 -   パイプを一括への書き込み
@@ -89,7 +89,7 @@ USB フル_スピード、高速および SuperSpeed デバイスは、一括の
 <p>データ要求は、各転送と呼ばれるバイト数が含まれている 1 つまたは複数の転送に分けることが、<em>最大転送サイズ</em>します。 複数の転送の遅延が発生可能性がある、ドライバーによって実行されるエラー チェックのためのキューの 2 つ転送。 このフラグは、そのエラーのチェックをバイパスします。 最大転送サイズを取得するには、使用、 <a href="https://msdn.microsoft.com/library/windows/apps/dn297606" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.MaxTransferSizeBytes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn297606)"> <strong>UsbBulkInPipe.MaxTransferSizeBytes</strong> </a>プロパティ。 要求のサイズが場合<strong>UsbBulkInPipe.MaxTransferSizeBytes</strong>、このフラグを設定する必要があります。 注:</p>
 <p></p>
 <div class="alert">
-<strong>重要</strong><br/><p>このフラグを設定するかどうかは、パイプの倍数でのデータを要求する必要があります&#39;s 最大パケット サイズ。 その情報は、エンドポイントの記述子に格納されます。 サイズは、デバイスのバス速度に依存します。 フル_スピード、高速および SuperSpeed;最大パケット サイズは、それぞれ 64、512、1024 バイトです。 その値を取得する、 <a href="https://msdn.microsoft.com/library/windows/apps/dn297563" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn297563)"> <strong>UsbBulkInPipe.EndpointDescriptor.MaxPacketSize</strong> </a>プロパティ。</p>
+<strong>重要</strong><br/><p>このフラグを設定した場合は、パイプの最大パケット サイズの倍数でのデータを要求する必要があります。 その情報は、エンドポイントの記述子に格納されます。 サイズは、デバイスのバス速度に依存します。 フル_スピード、高速および SuperSpeed;最大パケット サイズは、それぞれ 64、512、1024 バイトです。 その値を取得する、 <a href="https://msdn.microsoft.com/library/windows/apps/dn297563" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn297563)"> <strong>UsbBulkInPipe.EndpointDescriptor.MaxPacketSize</strong> </a>プロパティ。</p>
 </div>
 <div>
 

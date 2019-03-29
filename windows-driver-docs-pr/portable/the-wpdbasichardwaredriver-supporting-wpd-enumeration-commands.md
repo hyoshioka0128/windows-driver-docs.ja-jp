@@ -1,14 +1,14 @@
 ---
-Description: Support for enumeration commands (WpdBasicHardwareDriverSample)
+Description: 列挙型のコマンド (WpdBasicHardwareDriverSample) のサポート
 title: 列挙型のコマンド (WpdBasicHardwareDriverSample) のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 655b946704ff169cc07113ad307f9de6e3b6d51d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5074671e507c94df29c2009e1f0fea38b13fd81
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528278"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348819"
 ---
 # <a name="support-for-enumeration-commands-wpdbasichardwaredriversample"></a>列挙型のコマンド (WpdBasicHardwareDriverSample) のサポート
 
@@ -52,8 +52,8 @@ VOID WpdObjectEnumerator::InitializeEnumerationContext(
     // The eumeration context is initialized below with this information.
     if (strParentObjectID.CompareNoCase(L"") == 0)
     {
-        // Clients passing an &#39;empty&#39; string for the parent are asking for the
-        // &#39;DEVICE&#39; object.  We should return 1 child in this case.
+        // Clients passing an 'empty' string for the parent are asking for the
+        // 'DEVICE' object.  We should return 1 child in this case.
         pEnumeratorContext->m_TotalChildren = 1;
     }
     else if (strParentObjectID.CompareNoCase(WPD_DEVICE_OBJECT_ID) == 0)
