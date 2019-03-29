@@ -4,12 +4,12 @@ title: Device Fundamental テストを選んで構成する方法
 description: Windows 8 用 WDK には、Device Fundamental テストと呼ばれる一連のテストを含むドライバー テスト フレームワークが用意されています。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c518e67607917b728d486e1c88aa4523ff1ff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 20842ec8fd3dd48672fe9ea1f7301739c36d00aa
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518808"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349145"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>Device Fundamental テストを選んで構成する方法
 
@@ -72,7 +72,7 @@ WDK には、"基本" と "認定" の 2 つの構成の Device Fundamental テ�
 <dl>
 <dt><span id="To_test_all_devices_that_were_installed_with_a_specific_INF_File_"></span><span id="to_test_all_devices_that_were_installed_with_a_specific_inf_file_"></span><span id="TO_TEST_ALL_DEVICES_THAT_WERE_INSTALLED_WITH_A_SPECIFIC_INF_FILE_"></span>特定の INF ファイルを使ってインストールされたすべてのデバイスをテストするには:</dt>
 <dd><p><strong>INF::FileName=</strong><em>INF_File_Name</em></p>
-<p>例: <strong>INF::OriginalInfFileName=&#39;%InfFileName%&#39;</strong></p>
+<p>例: <strong>INF::OriginalInfFileName='%InfFileName%'</strong></p>
 <p>これが既定値です。</p>
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_Device_Id__"></span><span id="to_test_a_device_with_a_specific_device_id__"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DEVICE_ID__"></span>特定のデバイス ID を持つデバイスをテストするには: </dt>

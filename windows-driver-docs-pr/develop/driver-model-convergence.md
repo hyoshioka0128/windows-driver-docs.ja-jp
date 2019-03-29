@@ -4,12 +4,12 @@ title: Windows 10 のドライバーの収束モデル
 description: Windows 10 より前のリリースの Windows と Windows Phone にデバイスを対応させるには、多くの場合、2 つの異なるドライバーを作成する必要がありました。たとえば、Windows 8.1 用のドライバーと Windows Phone 8.1 用のドライバーが必要となりました。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0069603ccf04499a3b86e9b6ed291e0b9df40b63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0195d6ebc13009f06de34fe78fda4606b020f65c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518827"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349659"
 ---
 # <a name="driver-convergence-model-for-windows10"></a>Windows 10 のドライバーの収束モデル
 

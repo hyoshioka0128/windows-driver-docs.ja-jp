@@ -6,12 +6,12 @@ keywords:
 - KMDF ドライバーの作成
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2836f36dfe5e8bebce61f08ffb0ec7c06af80238
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e5a2e2c000b21f1752a09a0df92a26c480689ab
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518597"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419581"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
 
@@ -57,8 +57,6 @@ ms.locfileid: "56518597"
 
 
 通常、ドライバーのテストと展開には、デバッガーとドライバーがそれぞれ別のコンピューター上で実行されます。 デバッガーを実行するコンピューターを*ホスト コンピューター*、ドライバーを実行するコンピューターを*ターゲット コンピューター*と呼びます。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーのデバッグについて詳しくは、[Debugging Tools for Windows に関するページ](https://go.microsoft.com/fwlink/p?linkid=223405)をご覧ください。
-
-ここまでは、ホスト コンピューター上の Visual Studio を使ってドライバーのビルドを行いました。 次にターゲット コンピューターの構成が必要です。 
 
 ここまでは、ホスト コンピューター上の Visual Studio を使ってドライバーのビルドを行いました。 次にターゲット コンピューターの構成が必要です。 
 

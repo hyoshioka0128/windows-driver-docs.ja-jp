@@ -4,12 +4,12 @@ description: Microsoft Windows には、さまざまなデバイスの種類に�
 ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43fb2ddef3dbbfaf9baf33a20e582a91380b587a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6adf04958f07f0ed460c07a0c9c71091f23f54b4
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518788"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349905"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>ドライバーの作成の必要性
 
@@ -126,7 +126,7 @@ Microsoft Windows には、さまざまなデバイスの種類に対応する�
 <td align="left"><p>印刷:Microsoft XPS プリンター ドライバー</p></td>
 <td align="left"><p>XPSDrv</p></td>
 <td align="left"><p>Windows Vista 以降</p></td>
-<td align="left"><p>Microsoft は、XPS プリンター ドライバー (XPSDrv) によって XPS ドキュメント形式の印刷をサポートしています。 このドライバーでは、Microsoft の GDI ベースのバージョン 3 プリンター ドライバー アーキテクチャが拡張され、XML Paper Specification (XPS) ドキュメントの処理がサポートされます。 XPSDrv プリンター ドライバーにより、XPS ドキュメント形式はスプール ファイル形式としてもドキュメント ファイル形式としても使われます。 XPSDrv プリンター ドライバーは、変更しなくても単独で基本的な XPS 印刷機能をサポートします。 詳しくは、<a href="https://msdn.microsoft.com/library/windows/hardware/ff564289" data-raw-source="[XPSDrv Printer Drivers](https://msdn.microsoft.com/library/windows/hardware/ff564289)">XPSDrv プリンター ドライバーに関するページ</a>をご覧ください。</p></td>
+<td align="left"><p>Microsoft は、XPS プリンター ドライバー (XPSDrv) によって XPS ドキュメント形式の印刷をサポートしています。 このドライバーは、Microsoft の GDI ベースのバージョン 3 プリンター ドライバー アーキテクチャを拡張して、XML Paper Specification (XPS) ドキュメントの処理をサポートします。 XPSDrv プリンター ドライバーにより、XPS ドキュメント形式はスプール ファイル形式としてもドキュメント ファイル形式としても使われます。 XPSDrv プリンター ドライバーは、変更しなくても単独で基本的な XPS 印刷機能をサポートします。 詳しくは、<a href="https://msdn.microsoft.com/library/windows/hardware/ff564289" data-raw-source="[XPSDrv Printer Drivers](https://msdn.microsoft.com/library/windows/hardware/ff564289)">XPSDrv プリンター ドライバーに関するページ</a>をご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>センサー: センサー HID クラス ドライバー</p></td>

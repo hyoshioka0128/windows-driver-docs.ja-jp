@@ -4,12 +4,12 @@ title: ドライバー パッケージ プロジェクトの KMDF 検証ツー�
 description: リモート コンピューター上の KMDF 検証ツールのプロパティを設定します。  これらの設定を使って、KMDF ドライバーをビルドし、テスト コンピューターに展開します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9056c83c5236a294201fa0f5157a340247f63e1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0ae1c204b9819dc9039de47a8af54396894b3159
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518731"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349771"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティ
 

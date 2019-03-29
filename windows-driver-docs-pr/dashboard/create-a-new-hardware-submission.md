@@ -5,12 +5,12 @@ ms.assetid: 3F433F0A-422C-46E5-B59E-8DB4AC537F01
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a31cae38cb919d243d6af8120940a7100d1080
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 577e467d1248a0b8e734136e63c65b6645792e2c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518879"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463820"
 ---
 # <a name="create-a-new-hardware-submission"></a>新しいハードウェア申請の作成
 
@@ -66,7 +66,7 @@ Windows 10 用の Windows ハードウェア互換性プログラム (または�
    </tr>
    <tr class="odd">
    <td><p>Device metadata category (デバイス メタデータ カテゴリ)</p></td>
-   <td><p>デバイス カテゴリに基づく既定のアイコンのリストから、デバイスのアイコンを選びます。 この選択によって、[デバイスとプリンター] に表示されるアイコンが決まります。 デバイスが表示されないようにする場合は、&quot;[Internal device]&quot; (内部デバイス) を選びます。</p>
+   <td><p>デバイス カテゴリに基づく既定のアイコンのリストから、デバイスのアイコンを選びます。 この選択によって、[デバイスとプリンター] に表示されるアイコンが決まります。 デバイスが表示されないようにする場合は、[Internal device] (内部デバイス) を選びます。</p>
    <p>Windows Device Stage によるエクスペリエンスの向上については、「<a href="https://msdn.microsoft.com/library/windows/hardware/br230800.aspx" data-raw-source="[Device Metadata](https://msdn.microsoft.com/library/windows/hardware/br230800.aspx)">デバイス メタデータ</a>」をご覧ください。</p></td>
    </tr>
    <tr class="even">
