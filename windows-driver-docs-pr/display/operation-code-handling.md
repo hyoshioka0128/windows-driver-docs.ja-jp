@@ -8,12 +8,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56064c8f44bcde7744540735d399d90090ad1f6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 42a7aaadd3f2dbeaf196e000e08d88538a9f9409
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539069"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350071"
 ---
 # <a name="operation-code-handling"></a>操作コードの処理
 
@@ -47,7 +47,7 @@ ms.locfileid: "56539069"
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDP2OP_CLEAR</p></td>
-<td align="left"><p><strong>常に必要です。</strong> 使用して、コンテキストをクリア&#39;s レンダー ターゲット、Z バッファー。 置換<em>D3dClear2</em>します。 ハードウェアのステンシル バッファーと深度の塗りつぶしのビット ブロック転送を適切に消去できません深度バッファーをクリアするも使用されます。</p></td>
+<td align="left"><p><strong>常に必要です。</strong> コンテキストのレンダー ターゲット、Z バッファーをクリアするために使用します。 置換<em>D3dClear2</em>します。 ハードウェアのステンシル バッファーと深度の塗りつぶしのビット ブロック転送を適切に消去できません深度バッファーをクリアするも使用されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDP2OP_SETPALETTE</p></td>

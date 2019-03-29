@@ -9,12 +9,12 @@ keywords:
 - 標準の MOF 修飾子 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b4d168ae82784490422b5da3199ebdbb1e75793
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 86dd32e25cfe4a16e8a0c379abed235015420850
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549484"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464334"
 ---
 # <a name="wmi-property-qualifiers"></a>WMI プロパティ修飾子
 
@@ -67,7 +67,7 @@ ms.locfileid: "56549484"
 <td><p>プロパティの値を表示する任意の WMI クライアントが 16 進数でこれにを指定します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>DisplayName(&quot;</strong><em>string</em><strong>&quot;)</strong></p></td>
+<td><p><strong>DisplayName("</strong><em>string</em><strong>")</strong></p></td>
 <td><p>プロパティ名として表示する WMI クライアントが使用できるキャプションを指定します。</p></td>
 </tr>
 <tr class="odd">
@@ -84,14 +84,14 @@ ms.locfileid: "56549484"
 </tr>
 <tr class="even">
 <td><p><strong>WmiDataId(</strong><em>data-item-ID</em><strong>)</strong></p></td>
-<td><p>(必須)データ ブロック内のデータ項目を識別します。 データ項目の Id は、必要な項目を除くブロック内のすべての項目に割り当てる必要があります<strong>InstanceName</strong>と<strong>Active</strong>します。 データ項目の Id は、1 から始まる連続した一連の割り当てる必要があります。 項目&#39;データ ID は、データ ブロックのインスタンスで、項目が表示される順序を決定しますMOF クラスの定義内の項目の順序は関係ありません。</p></td>
+<td><p>(必須)データ ブロック内のデータ項目を識別します。 データ項目の Id は、必要な項目を除くブロック内のすべての項目に割り当てる必要があります<strong>InstanceName</strong>と<strong>Active</strong>します。 データ項目の Id は、1 から始まる連続した一連の割り当てる必要があります。 項目のデータの ID は、データ ブロックのインスタンスで、項目が表示される順序を決定しますMOF クラスの定義内の項目の順序は関係ありません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>WmiMethodId(</strong><em>method-item-ID</em><strong>)</strong></p></td>
 <td><p>データ ブロック内でメソッドを識別します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>WmiSizeIs(&quot;</strong><em>data-item-name</em><strong>&quot;)</strong></p></td>
+<td><p><strong>WmiSizeIs("</strong><em>data-item-name</em><strong>")</strong></p></td>
 <td><p>このデータ項目に可変長配列の要素の数を示すこのブロックでは、別のデータ項目の名前を指定します。 <strong>WmiSizeIs</strong>配列を定義するデータ項目に対してのみ有効です。</p></td>
 </tr>
 <tr class="odd">
@@ -111,12 +111,12 @@ ms.locfileid: "56549484"
 <td><p>このデータ項目の更新プログラムの間のミリ秒、間隔を指定します。 たとえば、データ項目が 1 回更新された場合の各秒、<em>間隔</em>1000 になります。 WMI クライアント チェック<strong>WmiVolatility</strong>可能性のある新しい値に対してクエリを実行するには、多くの場合、方法を決定します。 場合<strong>WmiVolatility</strong>を省略すると、<em>間隔</em>が定義されていません。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>WmiEventTrigger(</strong> <strong>&quot;</strong> <em>data-item-name</em><strong>&quot;)</strong></p></td>
-<td><p>イベントのトリガーの値を定義する WMI クライアントが設定できる、イベント ブロックでは、データ項目の名前を指定します。 TooHot イベントで修飾する場合など、 <strong>WmiEventTrigger</strong>(&quot;TooHotTemperature&quot;)、WMI クライアントは TooHot イベントを送信するドライバーに指示する TooHotTemperature 設定でしたとデバイスTooHotTemperature のユーザーが指定した値に達しました。 通常、ドライバーは、トリガーの値を定義します。 公開することで、 <strong>WmiEventTrigger</strong>データ項目では、ドライバーにより、クライアントは、特定のイベントを発生するタイミングを制御します。</p></td>
+<td><p><strong>WmiEventTrigger(</strong> <strong>"</strong> <em>data-item-name</em><strong>")</strong></p></td>
+<td><p>イベントのトリガーの値を定義する WMI クライアントが設定できる、イベント ブロックでは、データ項目の名前を指定します。 TooHot イベントで修飾する場合など、 <strong>WmiEventTrigger</strong>("TooHotTemperature")、WMI クライアント設定、デバイス、ユーザー指定の値に達すると TooHot イベントを送信するドライバーに指示する TooHotTemperatureTooHotTemperature します。 通常、ドライバーは、トリガーの値を定義します。 公開することで、 <strong>WmiEventTrigger</strong>データ項目では、ドライバーにより、クライアントは、特定のイベントを発生するタイミングを制御します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>WmiEventRate(&quot;</strong><em>data-item-name</em><strong>&quot;)</strong></p></td>
-<td><p>WMI クライアントがこのイベントを送信する頻度を制御する設定できる、イベント ブロックでは、データ項目の名前を指定します。 場合は、データ項目 TooHot はで修飾、たとえば、 <strong>WmiEventRate (&quot;</strong>SendEventRate<strong>&quot;)</strong>、WMI クライアントのユーザーがドライバーに送信するように指示する SendEventRate を設定できますユーザーが指定した間隔で TooHot します。</p></td>
+<td><p><strong>WmiEventRate("</strong><em>data-item-name</em><strong>")</strong></p></td>
+<td><p>WMI クライアントがこのイベントを送信する頻度を制御する設定できる、イベント ブロックでは、データ項目の名前を指定します。 場合は、データ項目 TooHot はで修飾、たとえば、 <strong>WmiEventRate ("</strong>SendEventRate<strong>")</strong>、WMI クライアント ユーザーは TooHot をユーザーが指定した間隔で送信するドライバーに指示する SendEventRate を設定できます。</p></td>
 </tr>
 </tbody>
 </table>

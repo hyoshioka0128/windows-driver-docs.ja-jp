@@ -13,12 +13,12 @@ keywords:
 - HAL の更新の例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3980ffa3a4310fc48556d17c6a596b76587c950
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 23508e68c050334b1090993d5b3b00921d9b4ed7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552618"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350273"
 ---
 # <a name="device-console-devconexe-examples"></a>デバイス コンソール (DevCon.exe) の例
 
@@ -205,9 +205,9 @@ devcon hwids *floppy*
 ```
 FDC\GENERIC_FLOPPY_DRIVE\5&39194F6D&0&0
     Name: Floppy disk drive
-    Hardware ID&#39;s:
+    Hardware ID's:
         FDC\GENERIC_FLOPPY_DRIVE
-    Compatible ID&#39;s:
+    Compatible ID's:
         GenFloppyDisk
 1 matching device(s) found.
 ```
@@ -227,17 +227,17 @@ devcon hwids =ports
 ```
 ACPI\PNP0401\4&B4063F4&0
     Name: ECP Printer Port (LPT1)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ACPI\PNP0401
         *PNP0401
 ACPI\PNP0501\1
     Name: Communications Port (COM1)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ACPI\PNP0501
         *PNP0501
 ACPI\PNP0501\2
     Name: Communications Port (COM2)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ACPI\PNP0501
         *PNP0501
 3 matching device(s) found.
@@ -308,12 +308,12 @@ devcon hwids =net
 ```
 PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028&REV_78\4&BB7B4AE&0&60F0
     Name: 3Com 3C920 Integrated Fast Ethernet Controller (3C905C-TX Compatible)
-    Hardware ID&#39;s:
+    Hardware ID's:
         PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028&REV_78
         PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028
         PCI\VEN_10B7&DEV_9200&CC_020000
         PCI\VEN_10B7&DEV_9200&CC_0200
-    Compatible ID&#39;s:
+    Compatible ID's:
         PCI\VEN_10B7&DEV_9200&REV_78
         PCI\VEN_10B7&DEV_9200
         PCI\VEN_10B7&CC_020000
@@ -323,23 +323,23 @@ PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028&REV_78\4&BB7B4AE&0&60F0
  PCI\CC_0200
 ROOT\MS_L2TPMINIPORT\0000
     Name: WAN Miniport (L2TP)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_l2tpminiport
 ROOT\MS_NDISWANIP\0000
     Name: WAN Miniport (IP)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_ndiswanip
 ROOT\MS_PPPOEMINIPORT\0000
     Name: WAN Miniport (PPPOE)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_pppoeminiport
 ROOT\MS_PPTPMINIPORT\0000
     Name: WAN Miniport (PPTP)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_pptpminiport
 ROOT\MS_PTIMINIPORT\0000
     Name: Direct Parallel
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_ptiminiport
 6 matching device(s) found.
 ```
@@ -625,7 +625,7 @@ devcon hwids *lpt*
 ```
 LPTENUM\MICROSOFTRAWPORT\5&CA97D7E&0&LPT1
     Name: Printer Port Logical Interface
-    Hardware ID&#39;s:
+    Hardware ID's:
         LPTENUM\MicrosoftRawPort958A
         MicrosoftRawPort958A
 1 matching device(s) found.
@@ -1075,7 +1075,7 @@ Class filters changed. Class devices must be restarted for changes to take effec
 次のコマンドを使用して、 [ **DevCon 有効**](devcon-enable.md)システムの問題の修正を無効化されていた programmable interrupt controller を有効にする操作。 ため、コント ローラーのハードウェア ID \*PNP0000 にアスタリスクが含まれています、コマンドは、単一引用符を使用して (**'**) コマンドで指定されているのとまったく同様に、ハードウェア ID を検索する DevCon に出力するためです。 それ以外の場合、アスタリスクをワイルドカード文字として解釈は。
 
 ```
-devcon enable &#39;*PNP0000
+devcon enable '*PNP0000
 ```
 
 応答では、DevCon は、デバイスのデバイス インスタンス ID が表示され、デバイスを有効にするシステムを再起動する必要がありますを説明します。
@@ -1090,7 +1090,7 @@ Not all of 1 device(s) enabled, at least one requires reboot to complete the ope
 次のコマンドを追加、 **/r**前のコマンド パラメーター。 **/R**操作を完了する必要が再起動する場合にのみ、パラメーターは、システムを再起動します。
 
 ```
-devcon /r enable &#39;*PNP0000
+devcon /r enable '*PNP0000
 ```
 
 応答として、DevCon は、デバイスし、有効化を有効にするシステムを再起動します。
@@ -1098,7 +1098,7 @@ devcon /r enable &#39;*PNP0000
 システムの起動時には、DevCon 状態のコマンドを使用して、デバイスが有効になっていることを確認します。
 
 ```
-devcon status &#39;*PNP0000
+devcon status '*PNP0000
 
 ACPI\PNP0000\4&B4063F4&0
     Name: Programmable interrupt controller
@@ -1225,7 +1225,7 @@ Drivers updated successfully.
 次に、 **\[GUIRunOnce\]** セクションの無人セットアップ ファイルには、次の DevCon コマンドを追加します。
 
 ```
-a:\devcon /r install a:\Netloop.inf &#39;*MSLOOP
+a:\devcon /r install a:\Netloop.inf '*MSLOOP
 ```
 
 このコマンドは、ハードウェア ID を使用して、ループバック アダプターを識別する\*MSLOOP します。 上記の単一引用符文字"\*MSLOOP"DevCon は文字どおり、文字列を解釈する、ワイルドカード文字としてではなく、ハードウェア ID の一部としてアスタリスクを解釈するように指示します。
@@ -1299,7 +1299,7 @@ devcon /m:\\server01 rescan
 次のコマンドを使用して、 [ **DevCon 再起動**](devcon-restart.md)ループバック アダプターは、ローカル コンピューターを再起動する操作。 デバイス インスタンス ID、ループバック アダプターのコマンドは、Net セットアップ クラスと、そのクラス内の検索の制限を指定します**ルート\\\*MSLOOP\\0000**します。 文字 (**@**) デバイス インスタンス ID として文字列を識別します。 単一引用符文字 (**'**)、DevCon がアスタリスクをワイルドカード文字として ID を解釈するを防ぎますリテラル検索では、どの要求。
 
 ```
-devcon restart =net @&#39;ROOT\*MSLOOP\0000
+devcon restart =net @'ROOT\*MSLOOP\0000
 ```
 
 応答では、DevCon はデバイスのデバイス インスタンス ID が表示され、結果を報告します。

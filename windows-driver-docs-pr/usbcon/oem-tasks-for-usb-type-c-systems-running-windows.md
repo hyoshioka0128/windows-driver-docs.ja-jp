@@ -1,16 +1,16 @@
 ---
-Description: This table describes the use cases is supported by Windows 10, and the additional tasks OEMs must perform for those use case to work.
-title: USB タイプ-c システムの OEM タスク
+Description: この表は、使用の場合は、Windows 10 でサポートされて、作業にこれらのユース ケースの Oem 追加のタスクを実行する必要があります。
+title: USB Type-C システムの OEM タスク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b8e437053df692aa79aea3a95bd56a70204f2bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c82a8d7a88289e19d547fa006ea07accabd08ee7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550851"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463897"
 ---
-# <a name="oem-tasks-for-usb-type-c-systems"></a>USB タイプ-c システムの OEM タスク
+# <a name="oem-tasks-for-usb-type-c-systems"></a>USB Type-C システムの OEM タスク
 
 
 \[いくつかの情報は、リリース版の発売までに著しく変更される可能性がありますが、リリース前の製品に関連します。 Microsoft では、一切の保証、明示または黙示にかかわらず、ここで提供される情報はありません。\]
@@ -121,7 +121,7 @@ ms.locfileid: "56550851"
 </div></td>
 <td><p>ロールのデュアル ポートは、適切なタイミングで適切なソフトウェア スタック (ホストまたは関数) が読み込まれるかどうかを確認するオペレーティング システムで動作する必要があります。</p>
 <p>デュアル ロールの USB ポートが Windows ホストまたは関数のいずれかのモードに構成する必要があるように、システムを設計できます。 これらの設計は、USB ロール スイッチのスタックを使用する必要があります。 システムが Synopsys または ChipIdea のロールのデュアル コント ローラーを使用しない場合は、システムの役割のデュアル コント ローラー用の USB ロール切り替えのクライアント ドライバーを記述する必要があります。</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt628026" data-raw-source="[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)">USB コント ローラーのデュアル ロール ドライバーのプログラミング リファレンス</a></p>
+<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt628026" data-raw-source="[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)">USB デュアルロール コントローラー ドライバーのプログラミング参照</a></p>
 <p>ファームウェアまたはドライバーの顧客が指定したポートに接続されているデバイスに応じて、ホストまたは関数のいずれかのポートとしてポートを構成するよう、システムを設計こともできます。 これらの設計では、必要があるか、このロジックで実装、ファームウェア、または USB コネクタ マネージャーのクライアント ドライバーで実装する必要があります。 これらのシステムで、Windows は、正しいソフトウェア スタックを自動的に読み込まれます。</p>
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">USB タイプ-c コネクタのドライバーを作成します。</a></p></td>
 </tr>
@@ -129,8 +129,8 @@ ms.locfileid: "56550851"
 <td><strong>オーディオのアクセサリ</strong>
 <p>USB タイプ-c コネクタは、オーディオ ジャックとして使用できます。</p></td>
 <td>Windows 10 は、ハードウェアが、機能をサポートしている場合の 3.5 mm のオーディオ ジャックとして USB 型-C# のアナログ入力を検出することができます。
-<p>USB 型-C# の仕様のコネクタにより使用される型-C# の USB コネクタ、3.5 に似ています&quot;オーディオ アクセサリ モードを使用してアナログ オーディオ ジャックに接続します。 Windows 10 は、通常 3.5 として、アクセサリを検出することでオーディオの accessories の USB 型-C# のサポートを実装するシステムをサポートしている&quot;アナログのオーディオ デバイス。</p></td>
-<td>この機能を使用するには、ハードウェアまたはファームウェア検出オーディオ アクセサリが接続されている場合およびオーディオ型-C# の仕様どおりそのモードに切り替えます。 これは、3.5 のピンをマップすることによって行われます&quot;型-C# の USB コネクタにピン留めするアナログ オーディオ コネクタ。</td>
+<p>USB 型-C# の仕様のコネクタでは、オーディオ アクセサリ モードを使用して、3.5"アナログのオーディオ ジャックのような使用する USB 型-c コネクタをできます。 Windows 10 には、通常 3.5"アナログ オーディオ デバイスとしてアクセサリを検出してオーディオ accessories の USB 型-C# のサポートを実装するシステムがサポートしています。</p></td>
+<td>この機能を使用するには、ハードウェアまたはファームウェア検出オーディオ アクセサリが接続されている場合およびオーディオ型-C# の仕様どおりそのモードに切り替えます。 これは、USB 型-c コネクタのピンを 3.5"アナログ オーディオ コネクタのピンをマップすることによって行います。</td>
 </tr>
 </tbody>
 </table>

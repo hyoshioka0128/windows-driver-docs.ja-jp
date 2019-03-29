@@ -1,6 +1,6 @@
 ---
-title: デバイス オブジェクトの SDDL
-description: デバイス オブジェクトの SDDL
+title: デバイス オブジェクトを表す SDDL
+description: デバイス オブジェクトを表す SDDL
 ms.assetid: c0e4432a-4429-4ecd-a2e5-f93a9e3caf48
 keywords:
 - デバイス オブジェクトの WDK カーネル、セキュリティ
@@ -11,14 +11,14 @@ keywords:
 - WDK のデバイス オブジェクトのセキュリティ記述子
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a0a85012f66c444b1850f207d93a265cb32eee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 223c6ae8277ad5a31984ecdf1c3ada1851b941b3
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464346"
 ---
-# <a name="sddl-for-device-objects"></a>デバイス オブジェクトの SDDL
+# <a name="sddl-for-device-objects"></a>デバイス オブジェクトを表す SDDL
 
 
 
@@ -92,7 +92,7 @@ SDDL 文字列の形式の"D:P"後では、フォームの 1 つまたは複数�
 </tr>
 <tr class="even">
 <td><p>SD</p></td>
-<td><p>DELETE</p></td>
+<td><p>Del</p></td>
 </tr>
 <tr class="odd">
 <td><p>WD</p></td>
@@ -226,7 +226,7 @@ SDDL 文字列の形式の"D:P"後では、フォームの 1 つまたは複数�
 <tr class="odd">
 <td><p>IU</p></td>
 <td><p>対話型ユーザー</p>
-<p>最初に、マシンにログオンしているユーザー&quot;対話形式で&quot;、ローカルのログオンおよびリモート デスクトップ ログオンなど。</p></td>
+<p>最初にコンピューターにログオンして、「対話」ローカル ログオンおよびリモート デスクトップ ログオンなどユーザー。</p></td>
 </tr>
 <tr class="even">
 <td><p>NU</p></td>
@@ -238,7 +238,7 @@ SDDL 文字列の形式の"D:P"後では、フォームの 1 つまたは複数�
 <td><p>World</p>
 <p>この SID が認証されたかどうか、すべてのセッションをカバー Windows XP では、前にユーザー、匿名ユーザー、または組み込みのゲスト アカウント。</p>
 <p>Windows XP 以降、この SID は匿名ログオン セッションについて説明しません。認証されたユーザーと、組み込みのゲスト アカウントのみを説明します。</p>
-<p>信頼されていないので注意または&quot;制限&quot;コードも含まれていない世界の SID。 詳細については、次の表の説明、制限付きのコード (RC) の SID を参照してください。</p></td>
+<p>ある信頼されていないか、"restricted"のコードも含まれていない World SID に注意してください。 詳細については、次の表の説明、制限付きのコード (RC) の SID を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -262,7 +262,7 @@ SDDL 文字列の形式の"D:P"後では、フォームの 1 つまたは複数�
 <tr class="odd">
 <td><p>RC</p></td>
 <td><p>制限付きのコード</p>
-<p>この SID は、信頼できないコードによってアクセスを制御するために使用されます。 RC でのトークンに対する ACL 検証トークンに対して 1 つ、2 つのチェックから成る&#39;Sid が (たとえば WD を含む)、および (RC および元のトークンの Sid のサブセットを含む通常) 2 番目のリストに対して 1 つの s 通常のリスト。 アクセスは、トークンが両方のテストに合格かどうかのみ許可されます。 そのため、実際に RC が他の Sid と組み合わせて動作します。</p>
+<p>この SID は、信頼できないコードによってアクセスを制御するために使用されます。 RC でのトークンに対する検証を ACL は、2 つのチェック、(RC および元のトークンの Sid のサブセットを含む通常) 2 番目のリストに対して 1 つと (たとえば WD を含む)、Sid のトークンの通常のリストに対して 1 つで構成されます。 アクセスは、トークンが両方のテストに合格かどうかのみ許可されます。 そのため、実際に RC が他の Sid と組み合わせて動作します。</p>
 <p>RC を指定する任意の ACL では、WD も指定する必要があります。 RC は、ACL で WD とペアになり、信頼できないコードを含むすべてのユーザーのスーパー セットが記載されています。</p>
 <p>信頼できないコードには、コード エクスプ ローラーで実行 のオプションを使用して起動される可能性があります。 既定では、世界では信頼できないコードは含まれません。</p></td>
 </tr>
@@ -270,7 +270,7 @@ SDDL 文字列の形式の"D:P"後では、フォームの 1 つまたは複数�
 <td><p>UD</p></td>
 <td><p>ユーザー モード ドライバー</p>
 <p>この SID は、ユーザー モード ドライバーへのアクセスを付与します。 現時点では、この SID は、ユーザー モード ドライバー フレームワーク (UMDF) 用に記述されているドライバーのみを説明します。 この SID は、Windows 8 以降で使用できます。</p>
-<p>認識されるしない Windows の以前のバージョンで、 &quot;UD&quot;の省略形のこの SID (S-1-5-84-0-0-0-0-0) UMDF ドライバーへのアクセスを許可する完全修飾形式を指定する必要があります。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh439567" data-raw-source="[Controlling Device Access](https://msdn.microsoft.com/library/windows/hardware/hh439567)">デバイスへのアクセスを制御する</a>ユーザー モード ドライバー フレームワークのドキュメント。</p></td>
+<p>以前のバージョンの Windows で、"UD"の省略形を認識しないには、完全修飾形式のこの SID (S-1-5-84-0-0-0-0-0) UMDF ドライバーへのアクセスを許可するを指定する必要があります。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh439567" data-raw-source="[Controlling Device Access](https://msdn.microsoft.com/library/windows/hardware/hh439567)">デバイスへのアクセスを制御する</a>ユーザー モード ドライバー フレームワークのドキュメント。</p></td>
 </tr>
 </tbody>
 </table>

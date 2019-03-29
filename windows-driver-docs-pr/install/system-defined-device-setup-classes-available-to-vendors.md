@@ -1,17 +1,17 @@
 ---
-title: システム定義のデバイス セットアップ クラスがベンダーに使用できます。
-description: システム定義のデバイス セットアップ クラスがベンダーに使用できます。
+title: ベンダーが使用できるシステム定義のデバイス セットアップ クラス
+description: ベンダーが使用できるシステム定義のデバイス セットアップ クラス
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5debac8428ea3bb252f02a2ab0178ff96fea6b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 913deb31788028721c29f7d1ccf0551adcba74d6
+ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529520"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57693055"
 ---
-# <a name="system-defined-device-setup-classes-available-to-vendors"></a>システム定義のデバイス セットアップ クラスがベンダーに使用できます。  
+# <a name="system-defined-device-setup-classes-available-to-vendors"></a>ベンダーが使用できるシステム定義のデバイス セットアップ クラス  
   
   
 次のクラスと Guid は、オペレーティング システムによって定義されます。 明記されない限り、これらのクラスと Guid をデバイス (またはドライバー) のインストールを使用して Windows 2000 以降のバージョンの Windows で。  
@@ -118,7 +118,7 @@ ClassGuid = {6bdd1fc6-810f-11d0-bec7-08002be2092f}
 ClassGuid = {6bdd1fc5-810f-11d0-bec7-08002be2092f}  
 このクラスには、赤外線デバイスが含まれています。 このクラスのドライバーでは、シリアル IR と高速 IR NDIS ミニポートが含まれますも他の NDIS ネットワーク アダプターのミニポートのネットワーク アダプター クラスを参照してください。  
   
-**キーボード**  
+**[キーボード]**  
 クラス キーボードを =  
 ClassGuid = {4d36e96b-e325-11ce-bfc1-08002be10318}  
 このクラスには、すべてのキーボードが含まれています。 つまり、する必要がありますも指定する必要が列挙子 HID キーボード デバイスの (セカンダリ) の INF にします。  
@@ -166,7 +166,7 @@ ClassGuid = {50906cb8-ba12-11d1-bf5d-0000f805f530}
 <a href="" id="network-adapter-"></a>**ネットワーク アダプター**  
 クラス = Net  
 ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}  
-このクラスには、高速 IR ミニポート ドライバー、(仮想アダプターの場合) の NDIS 中間ドライバおよびいる CoNDIS MCM ミニポート ドライバーを除く NDIS ミニポート ドライバーが含まれています。  
+このクラスは、ネットワーク アダプターのドライバーで構成されます。  これらのドライバーには、いずれかの呼び出しが必要があります[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)または[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)します。  NDIS または NetAdapter を使用しないドライバーには、別のセットアップ クラスを使用する必要があります。
   
 <a href="" id="network-client-"></a>**ネットワーク クライアント**  
 クラス NetClient を =  

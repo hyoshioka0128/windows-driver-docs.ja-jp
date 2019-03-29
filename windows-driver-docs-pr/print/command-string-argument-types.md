@@ -1,6 +1,6 @@
 ---
-title: コマンド文字列引数の型
-description: コマンド文字列引数の型
+title: コマンド文字列引数型
+description: コマンド文字列引数型
 ms.assetid: c7540c3f-265a-4fee-aca9-b8cc10b6be8f
 keywords:
 - プリンターが WDK Unidrv、文字列をコマンドします。
@@ -8,14 +8,14 @@ keywords:
 - WDK Unidrv 文字列
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1823c4ded01c59c03bbd92e3223b1756350b0da9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3601e71eb0892cbbd2314ed0fcbe533763e98261
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537221"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464322"
 ---
-# <a name="command-string-argument-types"></a>コマンド文字列引数の型
+# <a name="command-string-argument-types"></a>コマンド文字列引数型
 
 
 
@@ -51,15 +51,15 @@ ms.locfileid: "56537221"
 </tr>
 <tr class="even">
 <td><p>%C</p></td>
-<td><p>バイナリ バイトを ASCII に追加&quot;0&quot;します。</p></td>
+<td><p>バイナリ バイトを ASCII「0」に追加します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>%f</p></td>
-<td><p>右から 3 番目の文字として挿入小数点付きの 10 進数の値を表す符号なしの ASCII 文字列&quot;12.25&quot;します。</p></td>
+<td><p>「12.25」のように、右から 3 番目の文字として挿入小数点付きの 10 進数の値を表す符号なしの ASCII 文字列。</p></td>
 </tr>
 <tr class="even">
 <td><p>%g</p></td>
-<td><p>2 * ABS (<em>パラメーター</em>) + IS_NEGATIVE (<em>パラメーター</em>) 最上位桁を base 64 指定すると、最下位の数字です。 最上位桁 (0 ~ 63) は、254 を通じて 191 のバイト数で表されます。 その他のすべての桁は 63 126 からのバイト数で表されます。 &quot;IS_NEGATIVE (<em>パラメーター</em>)&quot;場合は 1<em>パラメーター</em>負、および、それ以外の場合は 0 です。</p></td>
+<td><p>2 * ABS (<em>パラメーター</em>) + IS_NEGATIVE (<em>パラメーター</em>) 最上位桁を base 64 指定すると、最下位の数字です。 最上位桁 (0 ~ 63) は、254 を通じて 191 のバイト数で表されます。 その他のすべての桁は 63 126 からのバイト数で表されます。 "IS_NEGATIVE (<em>パラメーター</em>)"場合は 1<em>パラメーター</em>負、および、それ以外の場合は 0 です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>%l</p></td>
@@ -79,7 +79,7 @@ ms.locfileid: "56537221"
 </tr>
 <tr class="odd">
 <td><p>%v</p></td>
-<td><p>NEC VFU (垂直形式単位) のエンコーディングします。 指定された変数&#39;秒の値が 1/6 インチで割った値します。 VFU データは、プリンターに送信回数の合計になります。</p></td>
+<td><p>NEC VFU (垂直形式単位) のエンコーディングします。 指定した変数の値は 1/6 インチで除算します。 VFU データは、プリンターに送信回数の合計になります。</p></td>
 </tr>
 </tbody>
 </table>

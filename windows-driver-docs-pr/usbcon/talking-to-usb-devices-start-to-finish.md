@@ -1,19 +1,19 @@
 ---
-Description: Use the Windows Runtime APIs, introduced in Windows 8.1, to write UWP apps that gives users access to their peripheral USB device.
-title: USB デバイスとの対話を開始する (UWP アプリ) の完了
+Description: Windows 8.1 で導入された、Windows ランタイム Api を使用すると、ユーザーが自分の USB 周辺機器にアクセスする UWP アプリを記述できます。
+title: USB デバイスとの対話、開始から終了まで (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fb258a310851002a0b4c72e8d3455aa533383a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dba4c150128653fc2a724408bc1b70c6fb531871
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535308"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464352"
 ---
-# <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>USB デバイスとの対話を開始する (UWP アプリ) の完了
+# <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>USB デバイスとの対話、開始から終了まで (UWP アプリ)
 
 
-**要約**
+**概要**
 
 -   USB デバイスと通信する UWP アプリを作成するためのエンド ツー エンド チュートリアル
 -   **付属のサンプル**:[カスタム USB デバイスへのアクセスのサンプル](https://go.microsoft.com/fwlink/p/?linkid=309716)
@@ -87,7 +87,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <td><p>その情報は、デバイスの製造元から入手できます。</p>
 <ul>
 <li><p><strong>ベンダーと製品の id</strong></p>
-<p>デバイス マネージャーでは、デバイスのプロパティを表示します。 <strong>詳細</strong> タブで、表示、<strong>ハードウェア Id</strong>プロパティの値。 その値は、これら 2 つの識別子の組み合わせです。 SuperMUTT デバイスなどの<strong>ハードウェア Id</strong>は&quot;USB\VID_045E&amp;PID_F001&quot;; 仕入先 ID が&quot;0x045E&quot; 、製品 ID が&quot;0xF001&quot;します。</p></li>
+<p>デバイス マネージャーでは、デバイスのプロパティを表示します。 <strong>詳細</strong> タブで、表示、<strong>ハードウェア Id</strong>プロパティの値。 その値は、これら 2 つの識別子の組み合わせです。 SuperMUTT デバイスなどの<strong>ハードウェア Id</strong>は"USB\VID_045E&amp;PID_F001"ベンダー ID は"0x045E"と、製品 ID が"0xF001";。</p></li>
 <li><strong>デバイス クラスやサブクラスでは、プロトコル コード</strong></li>
 <li><strong>デバイス インターフェイスの GUID</strong></li>
 </ul>
@@ -118,7 +118,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <td><a href="" id="step5"></a>
 <p><strong>手順 5</strong>: アプリケーション マニフェストに追加の USB デバイスの機能です。</p></td>
 <td><p><strong>クイック スタート:</strong><a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">アプリケーション マニフェストに USB デバイスの機能を追加する方法</a></p>
-<p>テキスト エディターで、Package.appxmanifest ファイルを開き、追加、 <a href="https://msdn.microsoft.com/library/windows/apps/br211430" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br211430)"> <strong>DeviceCapability</strong> </a>を持つ要素<strong>名前</strong>属性に設定&quot;usb&quot;としてこの例で示すようにします。</p>
+<p>テキスト エディターで、Package.appxmanifest ファイルを開き、追加、 <a href="https://msdn.microsoft.com/library/windows/apps/br211430" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br211430)"> <strong>DeviceCapability</strong> </a>を持つ要素<strong>名前</strong>属性は、この例で示すように"usb"に設定します。</p>
 <div class="alert">
 <strong>注</strong>  Visual Studio 2013 での USB デバイスの機能を変更することはできません。 Package.appxmanifest ファイルを右クリックする必要があります<strong>ソリューション エクスプ ローラー</strong>選択<strong>プログラムから開く.</strong>、し<strong>XML (テキスト) エディター</strong>します。 プレーンな XML では、ファイルが開きます。
 </div>
@@ -126,14 +126,14 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
  
 </div>
 <pre class="syntax" space="preserve"><code>&lt;Capabilities&gt;
-      &lt;!--When the device&#39;s classId is FF * *, there is a predefined name for the class. 
+      &lt;!--When the device's classId is FF * *, there is a predefined name for the class. 
           You can use the name instead of the class id. 
           There are also other predefined names that correspond to a classId.--&gt;
-      &lt;m2:DeviceCapability Name=&quot;usb&quot;&gt;
+      &lt;m2:DeviceCapability Name="usb"&gt;
           &lt;!--SuperMutt Device--&gt;
-          &lt;m2:Device Id=&quot;vidpid:045E 0611&quot;&gt;
-              &lt;!--&lt;wb:Function Type=&quot;classId:ff * *&quot;/&gt;--&gt;
-              &lt;m2:Function Type=&quot;name:vendorSpecific&quot;/&gt;
+          &lt;m2:Device Id="vidpid:045E 0611"&gt;
+              &lt;!--&lt;wb:Function Type="classId:ff * *"/&gt;--&gt;
+              &lt;m2:Function Type="name:vendorSpecific"/&gt;
           &lt;/m2:Device&gt;
       &lt;/m2:DeviceCapability&gt;
   &lt;/Capabilities&gt;</code></pre>
@@ -281,7 +281,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <div>
  
 </div></li>
-<li>開く、<strong>完了</strong>タブ。選択、<strong>システムにパッケージをコピー&#39;s ローカル メタデータ ストア</strong>チェック ボックスをオンします。</li>
+<li>開く、<strong>完了</strong>タブ。選択、<strong>システムのローカル メタデータ ストアにパッケージをコピー</strong>チェック ボックスをオンします。</li>
 <li>コントロール パネルを開いて、デバイス接続<strong>デバイスとプリンターの表示</strong>し、デバイスのアイコンが正しいことを確認します。</li>
 </ol>
 <p><strong>サンプルにあります。</strong>DeviceMetadata フォルダーを参照してください。</p></td>
@@ -372,7 +372,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <td><a href="" id="step17"></a>
 <p><strong>手順 17</strong>— Windows アプリ認定キットを実行します。</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/apps/hh694081" data-raw-source="[Using the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/hh694081)">Windows アプリ認定キットの使用</a></p>
-<p>推奨。 Windows アプリ認定キットを実行している場合に、このを行う必要がありますので、アプリが Microsoft Store の要件を満たしていることを確認するために役立つ&#39;主要な機能をアプリに追加します。</p></td>
+<p>推奨。 Windows アプリ認定キットを実行すると、主要な機能をアプリに追加したときにこれ行う必要がありますので、アプリが Microsoft Store の要件を満たしていることを確認できます。</p></td>
 </tr>
 </tbody>
 </table>

@@ -8,12 +8,12 @@ keywords:
 - ネットワーク ドライバー WDK、IP ヘルパー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db7d3f15c108b21edfe9ecd8763d4211f5709fd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9ef140229d32f743fc2695d7ea6ea4716377eed9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552621"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350227"
 ---
 # <a name="ip-helper"></a>IP ヘルパー
 
@@ -177,7 +177,7 @@ IP ヘルパー ドキュメント「アダプター」という用語を使用�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546219" data-raw-source="[&lt;strong&gt;CreateSortedAddressPairs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546219)"><strong>CreateSortedAddressPairs</strong></a></p></td>
-<td align="left"><p>指定されたホスト マシンと宛先アドレスの一覧のペアを&#39;のローカル IP アドレスし、の通信の優先順位に従ってペアを並べ替えます。</p></td>
+<td align="left"><p>ペアと共に、ホスト マシンのローカル IP アドレスし、の通信の優先順位に従ってペアの並べ替え変換先の指定された一覧に対処します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546227" data-raw-source="[&lt;strong&gt;CreateUnicastIpAddressEntry&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546227)"><strong>CreateUnicastIpAddressEntry</strong></a></p></td>

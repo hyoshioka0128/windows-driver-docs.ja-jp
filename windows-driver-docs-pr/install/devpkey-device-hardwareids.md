@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e8f972968b7a8f3b1049085781502f3c704ea788
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 259d7a3e59f4d73d36ba8893dabe1b2510b07380
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464298"
 ---
 # <a name="devpkeydevicehardwareids"></a>DEVPKEY_Device_HardwareIds
 
@@ -42,7 +42,7 @@ DEVPKEY_DEVICE_HardwareIds デバイス プロパティでは、デバイスの�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>データ形式</strong></p></td>
-<td align="left">&quot;<em>hw-id1</em>\0<em>hw-id</em>2\0...<em>hw-idn</em>\0\0&quot;</td>
+<td align="left">"<em>hw-id1</em>\0<em>hw-id</em>2\0...<em>hw-idn</em>\0\0"</td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
@@ -54,14 +54,14 @@ DEVPKEY_DEVICE_HardwareIds デバイス プロパティでは、デバイスの�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 DEVPKEY_DEVICE_HardwareIds の値によって設定されます、 *hw id*によって提供されるデバイスのエントリの値、 [ **INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)のデバイスをインストールする INF ファイル。
@@ -70,7 +70,7 @@ DEVPKEY_DEVICE_HardwareIds の値によって設定されます、 *hw id*によ
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DEVICE_HardwareIds プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_HARDWAREID 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

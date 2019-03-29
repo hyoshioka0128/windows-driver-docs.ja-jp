@@ -1,6 +1,6 @@
 ---
-title: Code Analysis for Drivers の警告
-description: Code Analysis for Drivers の警告
+title: ドライバーのコード分析の警告
+description: ドライバーのコード分析の警告
 ms.assetid: 61dba158-7e1b-42ee-9882-0ba9cef77b3c
 keywords:
 - PREfast ドライバー WDK、警告の
@@ -8,14 +8,14 @@ keywords:
 - 'WDK: PREfast for Drivers のエラー'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba77475c1343f224052fde589037e4af12bb47e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9d863b23ce42ef9854171537c4856001f7053a4c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560650"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350193"
 ---
-# <a name="code-analysis-for-drivers-warnings"></a>Code Analysis for Drivers の警告
+# <a name="code-analysis-for-drivers-warnings"></a>ドライバーのコード分析の警告
 
 
 このセクションでは、Code Analysis for Drivers ドライバー コードに潜在的なエラーを検出したときの報告される警告の一覧です。 いくつかの警告がカーネル モード コードを意図していて、ユーザー モード ドライバーの分析時に無視することができますに注意してください。
@@ -32,7 +32,7 @@ ms.locfileid: "56560650"
 
 -   **メモリ割り当ての警告**(30029 30035)。これらは、メモリ割り当ての警告です。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -145,7 +145,7 @@ ms.locfileid: "56560650"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28147-improper-use-of-default-pool-tag.md" data-raw-source="[C28147](28147-improper-use-of-default-pool-tag.md)">C28147</a></p></td>
-<td align="left"><p>C28147 を警告します。既定のプール タグの使用 (&#39; kdD&#39;または&#39;mdW&#39;) この関数の呼び出しのプールのタグ付けの目的が果たせなくなります</p></td>
+<td align="left"><p>C28147 を警告します。既定のプール タグの使用 (' kdD' または 'mdW') のこの関数の呼び出しのプールがタグ付けの目的が果たせなくなります</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28150-function-causes-irq-level-to-be-set-above-max.md" data-raw-source="[C28150](28150-function-causes-irq-level-to-be-set-above-max.md)">C28150</a></p></td>
@@ -257,7 +257,7 @@ ms.locfileid: "56560650"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28615-must-call-resetstkoflw-in-except-block.md" data-raw-source="[C28615](28615-must-call-resetstkoflw-in-except-block.md)">C28615</a></p></td>
-<td align="left"><p>C28615 を警告します。_ _Try ブロックで _alloca を呼び出すときに、_ _except() ブロックで _resetstkoflw を呼び出す必要があります。 Don&#39;catch() ブロック内から t 呼び出し _resetstkoflw</p></td>
+<td align="left"><p>C28615 を警告します。_ _Try ブロックで _alloca を呼び出すときに、_ _except() ブロックで _resetstkoflw を呼び出す必要があります。 Catch() ブロック内から _resetstkoflw を呼び出さないでください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28616-multithreaded-av-condition.md" data-raw-source="[C28616](28616-multithreaded-av-condition.md)">C28616</a></p></td>
@@ -386,7 +386,7 @@ ms.locfileid: "56560650"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28730-possible-null-character-assignment.md" data-raw-source="[C28730](28730-possible-null-character-assignment.md)">C28730</a></p></td>
-<td align="left"><p>C28730 を警告します。可能な割り当て&#39;\0&#39;直接ポインターにします。</p></td>
+<td align="left"><p>C28730 を警告します。'\0' 直接ポインターに代入できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28735-banned-crimson-api-usage.md" data-raw-source="[C28735](28735-banned-crimson-api-usage.md)">C28735</a></p></td>

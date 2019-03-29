@@ -15,15 +15,14 @@ keywords:
 - ENCAPIPARAM_PEAK_BITRATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df17f1be9e6441ce326655fa56ca3cc968ad183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cd29935e2de3aae94f170c5b0fe3aaa64aa37f75
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553323"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419566"
 ---
 # <a name="encoder-implementation-and-support"></a>エンコーダーの実装とサポート
-
 
 Windows XP Service Pack 1 で、Microsoft では、3 つのカーネル ストリーミング プロパティ セットとに 1 つの列挙が定義されている*ksmedia.h*ビデオのみのエンコーダーのデバイスをサポートします。 各プロパティ セットには、1 つのプロパティが含まれています。 つまり、各プロパティは、独自のプロパティ セットを受け取ります。 場合は、ドライバーによって*取得*-プロパティまたは*設定*-プロパティの呼び出し、プロパティ セットの GUID を指定し (で定義されている*ksmedia.h*) で、 **設定**のメンバー、 [ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)で 0 構造体であり、 **Id**メンバーの呼び出しを設定する場合。
 
@@ -54,8 +53,6 @@ Windows XP Service Pack 1 で、Microsoft では、3 つのカーネル スト�
 </tbody>
 </table>
 
- 
-
 クライアントが派生することによってこれらのプロパティをアクセス、 **IVideoEncoder**から COM インターフェイス、 **IEncoderAPI** (、Windows ソフトウェア開発キット (SDK) ドキュメントに記載) COM インターフェイスです。
 
 各、ENCAPIPARAM の既定値を指定する必要があります、ミニドライバー\_*Xxx*プロパティ。 トピック[エンコーダーのコード例](encoder-code-examples.md)既定のプロパティ値を指定する方法を示します。 開発とエンコーダー フィルターのデバッグ中に現在のプロパティ ページをサポートしている、ENCAPIPARAM ミニドライバーからトリガーできる\_ビットレート プロパティのセット。
@@ -84,7 +81,7 @@ DirectX 9.0、6 つの追加のプロパティ セットと 1 つのイベント
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557702" data-raw-source="[CODECAPI_SETALLDEFAULTS](https://msdn.microsoft.com/library/windows/hardware/ff557702)">CODECAPI_SETALLDEFAULTS</a></td>
-<td><p>このプロパティは、エンコーダーのすべてのデバイスをリセットする設定を実装&#39;s 内部などの設定、エンコード ビット レートとモードを既定値をエンコードします。</p></td>
+<td><p>このプロパティのエンコード ビット レートとモードを既定値をエンコードするなど、すべてのエンコーダー デバイスの内部設定をリセットする設定を実装します。</p></td>
 </tr>
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557691" data-raw-source="[CODECAPI_ALLSETTINGS](https://msdn.microsoft.com/library/windows/hardware/ff557691)">CODECAPI_ALLSETTINGS</a></td>
@@ -101,8 +98,6 @@ DirectX 9.0、6 つの追加のプロパティ セットと 1 つのイベント
 </tbody>
 </table>
 
- 
-
 <table>
 <colgroup>
 <col width="50%" />
@@ -117,12 +112,10 @@ DirectX 9.0、6 つの追加のプロパティ セットと 1 つのイベント
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557696" data-raw-source="[CODECAPI_CHANGELISTS](https://msdn.microsoft.com/library/windows/hardware/ff557696)">CODECAPI_CHANGELISTS</a></p></td>
-<td><p>デバイスは、CODECAPI_SUPPORTSEVENTS プロパティ セットをユーザー モード イベントへの応答をサポートする場合は、このイベントがクライアントの結果として変更されたエンコーダーの設定の一覧を返すように設定を実装し、&#39;s 前<em>設定</em>-CODECAPI_SETALLDEFAULTS または CODECAPI_ALLSETTINGS にプロパティの呼び出し。</p></td>
+<td><p>デバイスは、CODECAPI_SUPPORTSEVENTS プロパティ セットをユーザー モード イベントへの応答をサポートする場合は、このイベントがクライアントの結果の前と変更されたエンコーダーの設定の一覧を返すように設定を実装し、<em>設定</em>-プロパティの CODECAPI_SETALLDEFAULTS または CODECAPI_ALLSETTINGS のいずれかの呼び出しです。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
 クライアント アクセスのこれらのプロパティを**ICodecAPI** (Windows SDK のドキュメントで説明) COM インターフェイスです。 参照してください[エンコーダーのインストールと登録](encoder-installation-and-registration.md)COM インターフェイスの詳細については、どのインターフェイス KsProxy を公開する必要がありますを指定する方法を含むです。
 
@@ -130,12 +123,4 @@ Basic のサポートを実装する必要があります、ミニドライバ�
 
 エンコーダー フィルターを開発する場合は、ビデオ キャプチャ フィルターから別のフィルターにエンコード機能を移動します。 グラフ ビルダーが正しくエンコーダーを接続してフィルターをキャプチャできるように、独自のプライベート メディアを定義します。 ハードウェアがエンコードされていないコンテンツをマスターするバスの対応の場合は、パブリック メディアも公開できます。 パブリックとプライベート両方のメディアを実装する場合、最初に表示プライベート メディア グラフの作成に時間が減るため、フィルターのグラフを作成するときに、適切なフィルターが見つかりません。
 
-独自のフィルターにエンコード機能を分離する理由と問題の詳細については、次を参照してください。、 [Microsoft ActiveX のビデオのコントロールで使用するためのビデオ キャプチャ ボードのデザイン](https://go.microsoft.com/fwlink/p/?linkid=204793)、Microsoft web サイトの給紙方法。 (別個のフィルターのグラフ) でのメディアとフィルターの複数のインスタンスの使用の詳細については、次を参照してください。[メディアとカテゴリ](mediums-and-categories.md)します。
-
- 
-
- 
-
-
-
-
+(別個のフィルターのグラフ) でのメディアとフィルターの複数のインスタンスの使用の詳細については、次を参照してください。[メディアとカテゴリ](mediums-and-categories.md)します。

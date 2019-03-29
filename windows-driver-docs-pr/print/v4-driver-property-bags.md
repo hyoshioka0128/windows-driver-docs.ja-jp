@@ -1,17 +1,17 @@
 ---
-title: V4 プリンター ドライバーのプロパティ バッグ
+title: V4 プリンター ドライバー プロパティ バッグ
 description: V4 印刷ドライバー モデルは、さまざまなレンダリング プロセスをカスタマイズした UI アプリケーションからのデータ フローを容易にするプロパティ バッグを提供します。
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a0d9c5515f67b8507933fc0143c9e5e20a6d74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7b6c12ec567d99dc8d96b1fc2dbae21352e0f41d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528121"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464150"
 ---
-# <a name="v4-printer-driver-property-bags"></a>V4 プリンター ドライバーのプロパティ バッグ
+# <a name="v4-printer-driver-property-bags"></a>V4 プリンター ドライバー プロパティ バッグ
 
 
 V4 印刷ドライバー モデルは、さまざまなレンダリング プロセスをカスタマイズした UI アプリケーションからのデータ フローを容易にするプロパティ バッグを提供します。
@@ -27,7 +27,7 @@ V4 印刷ドライバー モデルは、さまざまなレンダリング プロ
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>コンポーネント</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -58,9 +58,9 @@ PrinterQueue.GetProperties() – キューのプロパティ バッグを参照�
 </tr>
 <tr class="odd">
 <td>XPS 表示フィルター</td>
-<td><p>XPS フィルター内からドライバーのプロパティ バッグにアクセスできる、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561066" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561066)"><strong>印刷フィルター パイプラインのプロパティ バッグ</strong></a>プロパティ名を使用して&quot;DriverPropertyBag&quot;、または定義済みの値XPS_FP_PROPERTY_BAG <em>filterpipeline.h</em>します。 DriverPropertyBag に関する情報を次に示します。</p>
+<td><p>XPS フィルター内からドライバーのプロパティ バッグにアクセスできる、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561066" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561066)"><strong>印刷フィルター パイプラインのプロパティ バッグ</strong></a> "DriverPropertyBag"またはから定義されている値XPS_FP_PROPERTY_BAG名前プロパティを使用します。<em>filterpipeline.h</em>します。 DriverPropertyBag に関する情報を次に示します。</p>
 <strong>プロパティの種類:</strong>VT_UNKNOWN<strong>説明。</strong>IUnknown インターフェイスへのポインター。 ドライバーのプロパティ バッグに IPrinterPropertyBag インターフェイスへのポインターを取得する QueryInterface を呼び出してください。
-<p>XPS フィルター キューのプロパティ バッグ内からアクセスできますプロパティ名を使用して印刷フィルター パイプラインのプロパティ バッグと&quot;QueuePropertyBag&quot;、または、定義されている値から XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>. QueuePropertyBag に関する情報を次に示します。</p>
+<p>XPS フィルター キューのプロパティ バッグ内からアクセスできますプロパティ名"QueuePropertyBag"、または、定義を使用して印刷フィルター パイプラインのプロパティ バッグと値から XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>します。 QueuePropertyBag に関する情報を次に示します。</p>
 <strong>プロパティの種類:</strong>VT_UNKNOWN<strong>説明。</strong>IUnknown インターフェイスへのポインター。 キューのプロパティ バッグに IPrinterPropertyBag インターフェイスへのポインターを取得する QueryInterface を呼び出してください。</td>
 </tr>
 </tbody>

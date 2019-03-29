@@ -1,6 +1,6 @@
 ---
-title: DVD デコーダーに関連する KS プロパティ
-description: DVD デコーダーに関連する KS プロパティ
+title: DVD デコーダー関連の KS プロパティ
+description: DVD デコーダー関連の KS プロパティ
 ms.assetid: 97ce831e-429b-4097-a9f4-625315fe1247
 keywords:
 - DVD デコーダー ミニドライバー WDK、KS プロパティ
@@ -9,14 +9,14 @@ keywords:
 - プロパティは、WDK DVD デコーダーを設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 223c6ce2c4121a5a6bf233df369f80f9f0ec5f50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecf271ac61821383bef130c1284271980e88f1e3
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464137"
 ---
-# <a name="dvd-decoder-related-ks-properties"></a>DVD デコーダーに関連する KS プロパティ
+# <a name="dvd-decoder-related-ks-properties"></a>DVD デコーダー関連の KS プロパティ
 
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "56537881"
 <thead>
 <tr class="header">
 <th>KSPROPSETID_AudioDecoderOut KS プロパティ</th>
-<th>プロパティの説明</th>
+<th>[プロパティの説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -61,7 +61,7 @@ ms.locfileid: "56537881"
 <thead>
 <tr class="header">
 <th>KSPROPSETID_DvdSubPic KS プロパティ</th>
-<th>プロパティの説明</th>
+<th>[プロパティの説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +92,7 @@ ms.locfileid: "56537881"
 <thead>
 <tr class="header">
 <th>KSPROPSETID_CopyProt KS プロパティ</th>
-<th>プロパティの説明</th>
+<th>[プロパティの説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +122,7 @@ ms.locfileid: "56537881"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565147" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_SET_COPY_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565147)"><strong>KSPROPERTY_DVDCOPY_SET_COPY_STATE</strong></a></p></td>
-<td><p>ハードウェア DVD デコーダーのコピー状態を示す&#39;ストリーム。</p></td>
+<td><p>ハードウェアの DVD デコーダーのストリームのコピー状態を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565144" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_DISC_KEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565144)"><strong>KSPROPERTY_DVDCOPY_DISC_KEY</strong></a></p></td>
@@ -143,7 +143,7 @@ ms.locfileid: "56537881"
 <thead>
 <tr class="header">
 <th>KSPROPSETID_TSRateChange KS プロパティ</th>
-<th>プロパティの説明</th>
+<th>[プロパティの説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -153,7 +153,7 @@ ms.locfileid: "56537881"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567280" data-raw-source="[&lt;strong&gt;KS_AM_RATE_ExactRateChange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567280)"><strong>KS_AM_RATE_ExactRateChange</strong></a></p></td>
-<td><p>指定します、&quot;入力&quot;にタイムスタンプを新しい時刻スタンプ レートを開始します。 このプロパティはまだ実装されていません。</p></td>
+<td><p>新しい時刻スタンプ レートを開始する「の入力」タイムスタンプを指定します。 このプロパティはまだ実装されていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567284" data-raw-source="[&lt;strong&gt;KS_AM_RATE_MaxFullDataRate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567284)"><strong>KS_AM_RATE_MaxFullDataRate</strong></a></p></td>
@@ -178,7 +178,7 @@ ms.locfileid: "56537881"
 <thead>
 <tr class="header">
 <th>KSPROPSETID_VPConfig と KSPROPSETID_VPVBIConfig KS プロパティ</th>
-<th>プロパティの説明</th>
+<th>[プロパティの説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -257,13 +257,13 @@ ms.locfileid: "56537881"
 <thead>
 <tr class="header">
 <th>KSPROPSETID_Wave KS プロパティ</th>
-<th>プロパティの説明</th>
+<th>[プロパティの説明]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566516" data-raw-source="[&lt;strong&gt;KSPROPERTY_WAVE_COMPATIBLE_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566516)"><strong>KSPROPERTY_WAVE_COMPATIBLE_CAPABILITIES</strong></a></p></td>
-<td><p>デバイスを指定します&#39;s wave 互換性のある機能など、デバイスを受け入れるかどうか、入力し、出力が生成されます。</p></td>
+<td><p>デバイスの wave 互換性のある機能、このような入力し、出力は、デバイスを受け入れるかどうかを指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566521" data-raw-source="[&lt;strong&gt;KSPROPERTY_WAVE_INPUT_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566521)"><strong>KSPROPERTY_WAVE_INPUT_CAPABILITIES</strong></a></p></td>

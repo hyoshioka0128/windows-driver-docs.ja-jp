@@ -1,19 +1,19 @@
 ---
-title: プラグ アンド プレイ (PnP) および WDDM 1.2 以降
+title: WDDM 1.2 以降でのプラグ アンド プレイ (PnP)
 description: すべての Windows 表示 Driver Model (WDDM) 1.2 およびそれ以降の表示のミニポート ドライバーは、開始および停止要求への応答で、次の動作をサポートする必要があります。
 ms.assetid: A95DCFEA-BC1B-4A13-9850-13814725D53E
 keywords:
 - WDK の表示のディスプレイ ドライバーのプラグ アンド プレイします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3f8933433cba5b7d44bb1692b8c349826dcbd82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9f7ea04050b879a58e41dbb6a143e77dbd90756f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549840"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350117"
 ---
-# <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>プラグ アンド プレイ (PnP) および WDDM 1.2 以降
+# <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>WDDM 1.2 以降でのプラグ アンド プレイ (PnP)
 
 
 すべての Windows 表示 Driver Model (WDDM) 1.2 以降ディスプレイ ミニポート ドライバーでは、開始およびプラグ アンド プレイ (PnP) インフラストラクチャによって要求を停止する応答で、次の動作をサポートする必要があります。 ドライバーは、成功または失敗コードを返すかどうか、またはシステムのハードウェアを基本入出力システム (BIOS) または Unified Extensible Firmware Interface (UEFI) に基づくかどうかによって動作が異なることができます。
@@ -122,8 +122,8 @@ Windows 8 以降、Microsoft DirectX グラフィックスのカーネルのサ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Success__and_driver_returns_mode_information"></span><span id="success__and_driver_returns_mode_information"></span><span id="SUCCESS__AND_DRIVER_RETURNS_MODE_INFORMATION"></span>成功した場合、およびドライバー モードの情報を返します</p></td>
-<td align="left"><p>ドライバーを停止する前に、基本的なディスプレイ ドライバーが使用できる、現在の解像度を使用して、フレーム バッファーに設定する必要があり、オペレーティング システムを呼び出すと、ドライバーはこの情報を返す必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>関数。 保存モードの情報は&#39;BIOS と互換性がある t があり、基本的なディスプレイ ドライバーが勝利した&#39;システムが再起動されるまで、t が BIOS モードを提供します。</p>
-<p>オペレーティング システムが勝利したことを保証&#39;t 呼び出し<a href="https://msdn.microsoft.com/library/windows/hardware/ff560781" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560781)"> <em>DxgkDdiStopDevice</em> </a>場合<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a>返します<strong>STATUS_SUCCESS</strong>します。</p></td>
+<td align="left"><p>ドライバーを停止する前に、基本的なディスプレイ ドライバーが使用できる、現在の解像度を使用して、フレーム バッファーに設定する必要があり、オペレーティング システムを呼び出すと、ドライバーはこの情報を返す必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>関数。 保存モードの情報は、BIOS と互換性があるがないし、システムが再起動されるまで、基本的なディスプレイ ドライバーが BIOS モードを提供しません。</p>
+<p>オペレーティング システムにより呼び出すことはありませんが、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff560781" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560781)"> <em>DxgkDdiStopDevice</em> </a>場合<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>返します<strong>STATUS_SUCCESS</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Success__and_driver_sets_the_Width_and_Height_members_of_the_DXGK_DISPLAY_INFORMATION_structure_to_zero"></span><span id="success__and_driver_sets_the_width_and_height_members_of_the_dxgk_display_information_structure_to_zero"></span><span id="SUCCESS__AND_DRIVER_SETS_THE_WIDTH_AND_HEIGHT_MEMBERS_OF_THE_DXGK_DISPLAY_INFORMATION_STRUCTURE_TO_ZERO"></span>成功した場合、およびドライバーのセット、<strong>幅</strong>と<strong>高さ</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh464017" data-raw-source="[&lt;strong&gt;DXGK_DISPLAY_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh464017)"> <strong>DXGK_DISPLAY_INFORMATION</strong> </a>をゼロに構造体</p></td>

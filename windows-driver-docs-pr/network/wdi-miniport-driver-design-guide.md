@@ -1,24 +1,24 @@
 ---
-title: WDI ミニポート ドライバーの設計ガイド
+title: WDI ミニポート ドライバー設計ガイド
 description: WLAN デバイス ドライバー インターフェイス (WDI) は、デスクトップのエディション (Home、Pro、Enterprise、および教育機関向け) の場合は、どちらも Windows 10 および Windows 10 Mobile の新しい WLAN のユニバーサル Windows ドライバー モデルです。
 ms.assetid: E1666D5E-1932-4378-B4F6-61F28716183E
 keywords:
 - wi-fi ドライバー、wi-fi ドライバーを Windows 10、ワイヤレス ドライバー、ワイヤレス ドライバーの windows 10、wlan ドライバー、windows 10 の wlan ドライバー、wlan ドライバー インターフェイス、WDI ドライバー、WDI ネットワーク ドライバー、WDI Windows 10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 180e3d7b9e561d058b2dc8b952f01ebdafa66ae2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 23aff4fa1d8ac998f021aa9d284deffbc36365f7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531583"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464198"
 ---
-# <a name="wdi-miniport-driver-design-guide"></a>WDI ミニポート ドライバーの設計ガイド
+# <a name="wdi-miniport-driver-design-guide"></a>WDI ミニポート ドライバー設計ガイド
 
 
-WLAN デバイス ドライバー インターフェイス (WDI) は、デスクトップのエディション (Home、Pro、Enterprise、および教育機関向け) の場合は、どちらも Windows 10 および Windows 10 Mobile 用の Wi-fi ドライバーの新しいユニバーサル Windows ドライバー モデルです。 WLAN のデバイスの製造元は、Windows 10 OS 実装 WDI ミニポート ドライバーを書き込みます。 WDI は、以前のネイティブ WLAN ドライバー モデルよりも少ないコードを記述するデバイスの製造元を使用できます。 Windows 10 で導入されたすべての新しい WLAN 機能では、WDI ベースのドライバーが必要です。
+WLAN デバイス ドライバー インターフェイス (WDI) は、デスクトップのエディション (Home、Pro、Enterprise、および教育機関向け) の場合は、どちらも Windows 10 および Windows 10 Mobile 用の Wi-fi ドライバーの新しいユニバーサル Windows ドライバー モデルです。 WLAN のデバイスの製造元は、Windows 10 OS 実装 WDI ミニポート ドライバーを書き込みます。 WDI は、以前のネイティブ WLAN ドライバー モデルよりも少ないコードを記述するデバイスの製造元を使用できます。 Windows 10 で導入されるすべての新しい WLAN 機能には WDI ベースのドライバーが必要です。
 
-ネイティブ WLAN ドライバーのベンダーから提供された Windows 10 で動作しますが、機能が開発された Windows のバージョンに制限されています。
+ベンダーから提供されるネイティブ WLAN ドライバーは Windows 10 で引き続き動作しますが、開発時に対象とした Windows バージョンの機能に限定されます。
 
 この設計ガイドでは、WDI 要件とインターフェイスの仕様が記載されています。 新しいモデルの重要な目標は次のとおりです。
 
@@ -49,7 +49,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) は、デスク
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -113,7 +113,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) は、デスク
 </tr>
 <tr class="even">
 <td align="left"><p>MAC アドレスのランダム化</p></td>
-<td align="left"><p>構成されている Windows 10 のユーザーのプライバシー保護を強化するために、Wi-fi MAC アドレスはなどで使用されて状況によっては、特定の Wi-fi ネットワーク、または特定の条件でスキャンを開始するときに接続する前にします。 これは、ステーションのポートにのみ適用されます。 システムはにより重要な接続のシナリオが切断されていないためそのランダム化を適切に使用されます。 システムでは、アドレスの変更を管理を発行して<a href="https://msdn.microsoft.com/library/windows/hardware/dn925952" data-raw-source="[OID_WDI_TASK_DOT11_RESET](https://msdn.microsoft.com/library/windows/hardware/dn925952)">OID_WDI_TASK_DOT11_RESET</a>スキャンを発行する前にコマンドやコマンドを接続します。 リセット コマンド パラメーターには、省略可能な MAC アドレス引数が含まれます。 引数が存在する場合は、MAC アドレスが指定した値にリセットされます。 存在しない場合は、MAC アドレスは現在の値のまま。 オペレーティング システムを使用してランダム化された MAC アドレスを構成するときに、&quot;ローカルで管理される&quot;IEEE802 アドレスに対して定義されている形式。</p></td>
+<td align="left"><p>構成されている Windows 10 のユーザーのプライバシー保護を強化するために、Wi-fi MAC アドレスはなどで使用されて状況によっては、特定の Wi-fi ネットワーク、または特定の条件でスキャンを開始するときに接続する前にします。 これは、ステーションのポートにのみ適用されます。 システムはにより重要な接続のシナリオが切断されていないためそのランダム化を適切に使用されます。 システムでは、アドレスの変更を管理を発行して<a href="https://msdn.microsoft.com/library/windows/hardware/dn925952" data-raw-source="[OID_WDI_TASK_DOT11_RESET](https://msdn.microsoft.com/library/windows/hardware/dn925952)">OID_WDI_TASK_DOT11_RESET</a>スキャンを発行する前にコマンドやコマンドを接続します。 リセット コマンド パラメーターには、省略可能な MAC アドレス引数が含まれます。 引数が存在する場合は、MAC アドレスが指定した値にリセットされます。 存在しない場合は、MAC アドレスは現在の値のまま。 ランダム化された MAC アドレスを構成するときに、オペレーティング システムは IEEE802 アドレスに対して定義されている「ローカルで管理」の形式を使用します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ECSA</p></td>

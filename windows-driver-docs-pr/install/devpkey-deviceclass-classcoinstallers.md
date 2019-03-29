@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c07709466762f40a080875bdd371f16f4136f432
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 25ae30272396b1a31b699e730dfcb0e3017adc85
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536295"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464104"
 ---
 # <a name="devpkeydeviceclassclasscoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 
@@ -42,7 +42,7 @@ DEVPKEY_DeviceClass_ClassCoInstallers デバイス プロパティがインス�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>データ形式</strong></p></td>
-<td align="left"><p>&quot;<em>coinstaller1.dll</em>、<em>coinstaller1 エントリ ポイント</em>\0.<em>coinstallerN.dll</em>、<em>coinstallerN エントリ ポイント</em>\0\0&quot;</p></td>
+<td align="left"><p>"<em>coinstaller1.dll</em>、<em>coinstaller1 エントリ ポイント</em>\0.<em>coinstallerN.dll</em>、<em>coinstallerN エントリ ポイント</em>\0\0"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
@@ -54,14 +54,14 @@ DEVPKEY_DeviceClass_ClassCoInstallers デバイス プロパティがインス�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 クラスの共同インストーラー リスト内の各クラス インストーラーは、その DLL とエントリ ポイントで識別されます。
@@ -72,7 +72,7 @@ DEVPKEY_DeviceClass_ClassCoInstallers の値を取得するには呼び出すこ
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassCoInstallers プロパティのキーをサポートしていません。 Windows の以前のバージョンに対応する情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスの共同インストーラー レジストリ エントリの値にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537754)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

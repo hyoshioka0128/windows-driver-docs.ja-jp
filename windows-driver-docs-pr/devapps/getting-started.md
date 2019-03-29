@@ -1,30 +1,30 @@
 ---
 title: UWP デバイス アプリの概要
-description: UWP デバイス アプリのビルドを開始するには、ここから開始します。
+description: UWP デバイス アプリのビルドを開始するには、ここから始めます。
 ms.assetid: 6280E9CC-422B-4100-8B38-07BADD6A578A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf5eb51b1a9a5a9ff6aba1a4ff8a189e458ec8b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d4189c4b4978a106f21e8197889cb4107a7b3e75
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530061"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419564"
 ---
 # <a name="getting-started-with-uwp-device-apps"></a>UWP デバイス アプリの概要
 
 
-UWP デバイス アプリのビルドを開始するには、ここから開始します。
+UWP デバイス アプリのビルドを開始するには、ここから始めます。
 
 ![windows ストア デバイス アプリを概要します。](images/devices-diagram-350x350.png)
 
-デバイスの製造元は、自分のデバイスに付属として機能する UWP デバイス アプリを作成できます。 UWP デバイス アプリでは、通常の UWP アプリのより多くの機能があるし、ファームウェアの更新など、特権操作を実行できます。 また、UWP デバイス アプリことができます (他のアプリよりも多くのデバイス) で自動再生の開始、自動的にインストール、デバイスが接続されている場合、最初にして Windows に組み込まれているプリンター、カメラ エクスペリエンスを拡張します。
+デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 UWP デバイス アプリには、通常の UWP アプリより多くの機能を備え、ファームウェアの更新などの特権操作を実行できます。 また、UWP デバイス アプリことができます (他のアプリよりも多くのデバイス) で自動再生の開始、自動的にインストール、デバイスが接続されている場合、最初にして Windows に組み込まれているプリンター、カメラ エクスペリエンスを拡張します。
 
 **注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、次を参照してください。[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)します。
 
  
 
-UWP のモバイル ブロード バンド アプリに関する情報を探している場合は、次を参照してください。[モバイル ブロード バンド](https://go.microsoft.com/fwlink/p/?LinkID=301754)します。
+UWP モバイル ブロードバンド アプリに関する情報を探している場合は、「[Mobile Broadband](https://go.microsoft.com/fwlink/p/?LinkID=301754)」 (モバイル ブロードバンド) を参照してください。
 
 ## <a name="span-id1getsetupspanspan-id1getsetupspan1-get-set-up"></a><span id="1._get_set_up"></span><span id="1._GET_SET_UP"></span>1.準備
 
@@ -44,9 +44,9 @@ UWP デバイスのアプリだけでなく Windows ドライバーを開発す�
 
 ### <a name="span-idifyourenotgoingtobedevelopingdriversspanspan-idifyourenotgoingtobedevelopingdriversspanspan-idifyourenotgoingtobedevelopingdriversspanif-youre-not-going-to-be-developing-drivers"></a><span id="If_you_re_not_going_to_be_developing_drivers"></span><span id="if_you_re_not_going_to_be_developing_drivers"></span><span id="IF_YOU_RE_NOT_GOING_TO_BE_DEVELOPING_DRIVERS"></span>ドライバーの開発を続けない場合
 
-ドライバーの開発に不要な場合は、UWP デバイス アプリを作成する Microsoft Visual Studio Express for Windows を使用できます。 このバージョンの Visual Studio がデバイス メタデータの作成ウィザードが含まれていない SDK のバージョンをインストールします。 新しいデバイス メタデータの作成ウィザードを取得するには、スタンドアロンの Windows 8.1 SDK をダウンロードすることも必要があります。
+ドライバーの開発に不要な場合は、UWP デバイス アプリを作成する Microsoft Visual Studio Express 2015 for Windows を使用できます。 このバージョンの Visual Studio がデバイス メタデータの作成ウィザードが含まれていない SDK のバージョンをインストールします。 新しいデバイス メタデータの作成ウィザードを取得するには、スタンドアロンの Windows 8.1 SDK をダウンロードすることも必要があります。
 
-1.  [Windows の Visual Studio Express をダウンロードします。](https://go.microsoft.com/fwlink/p/?LinkId=302196)
+1.  [ダウンロードの Visual Studio Express 2015 for Windows 10](https://visualstudio.microsoft.com/vs/express/)
 2.  [スタンドアロンの Windows 8.1 SDK をダウンロードします。](https://go.microsoft.com/fwlink/p/?LinkId=302196)
 
 ## <a name="span-id2buildsomeregularwindowsstoreappsspanspan-id2buildsomeregularwindowsstoreappsspan2-build-some-regular-uwp-apps"></a><span id="2._build_some_regular_windows_store_apps"></span><span id="2._BUILD_SOME_REGULAR_WINDOWS_STORE_APPS"></span>2.いくつかの通常の UWP アプリをビルドします。

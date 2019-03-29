@@ -1,17 +1,17 @@
 ---
-title: IPv6 NS オフロードを実装します。
+title: IPv6 NS オフロードの実装
 description: このセクションは、IPv6 近隣要請 (NS) オフロードを実装する方法を説明します
 ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3df9909bbadcbcf47bcbced468d8f81463e2cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 685fecb635c435e52ecd5a3f7adde5d6075fbab8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464120"
 ---
-# <a name="implementing-ipv6-ns-offload"></a>IPv6 NS オフロードを実装します。
+# <a name="implementing-ipv6-ns-offload"></a>IPv6 NS オフロードの実装
 
 
 NDIS プロトコル ドライバーに送信します (NS) として要求をオフロードする IPv6 近隣要請、 [OID\_PM\_追加\_プロトコル\_オフロード](https://msdn.microsoft.com/library/windows/hardware/ff569763)OID 要求。 これらの NS オフロード要求をサポートするには、ミニポートを次に行う必要があります。
@@ -54,7 +54,7 @@ NS メッセージの形式で指定されます[RFC 4861](https://go.microsoft.
 <tr class="header">
 <th align="left">フィールド</th>
 <th align="left">一致する値</th>
-<th align="left">説明</th>
+<th align="left">メモ</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +84,7 @@ NS メッセージの形式で指定されます[RFC 4861](https://go.microsoft.
 <td align="left"><p>ミニポートは、このフィールドの両方のオプションと一致する必要があります。<strong>OID。TargetIPv6Addresses [x]</strong>と<strong>OID。SolicitedNodeIPv6Address</strong>します。</p>
 <p>このフィールドは場合<strong>OID。TargetIPv6Addresses [x]</strong>、NS メッセージは、ユニキャスト メッセージ。</p>
 <p>このフィールドは場合<strong>OID。SolicitedNodeIPv6Address</strong>、NS メッセージがマルチキャストのメッセージ。</p>
-<p><strong>OID。TargetIPv6Addresses</strong>は 1 つまたは 2 のアドレスを含むことのできる配列です。 2 つのアドレスがある場合ミニポートに、これらの両方と一致する必要があります。 2 番目のアドレスがある場合&quot;0::0&quot;、無視する必要があります、および 2 つ目の一致パターンを作成しない必要があります。</p></td>
+<p><strong>OID。TargetIPv6Addresses</strong>は 1 つまたは 2 のアドレスを含むことのできる配列です。 2 つのアドレスがある場合ミニポートに、これらの両方と一致する必要があります。 2 番目のアドレスが「0::0」の場合は、無視する必要があり、2 番目の一致パターンを作成しない必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>IPv6.ICMPv6.Type</strong></td>
@@ -104,7 +104,7 @@ NS メッセージの形式で指定されます[RFC 4861](https://go.microsoft.
 <tr class="odd">
 <td align="left"><strong>IPv6.Source</strong></td>
 <td align="left"><p><strong>OID。RemoteIPv6Address</strong></p></td>
-<td align="left"><p>場合<strong>OID。RemoteIPv6Address</strong>は&quot;0::0&quot;、このフィールドを無視する必要があります。</p></td>
+<td align="left"><p>場合<strong>OID。RemoteIPv6Address</strong> 「0::0」は、このフィールドを無視する必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -125,8 +125,8 @@ NS メッセージを受信すると、デバイスのファームウェアが�
 <thead>
 <tr class="header">
 <th align="left">フィールド</th>
-<th align="left">Value</th>
-<th align="left">説明</th>
+<th align="left">[値]</th>
+<th align="left">メモ</th>
 </tr>
 </thead>
 <tbody>
@@ -153,7 +153,7 @@ NS メッセージを受信すると、デバイスのファームウェアが�
 <tr class="odd">
 <td align="left"><strong>IPv6.Destination</strong></td>
 <td align="left"><strong>IPv6.Source</strong></td>
-<td align="left"><p>しない限り、NS フレームからこの値をコピーの値<strong>IPv6.Source</strong>が&quot;0::0&quot;します。 場合の値<strong>IPv6.Source</strong>が&quot;0::0&quot;にこのフィールドを設定&quot;FF02::1&quot;します。</p></td>
+<td align="left"><p>しない限り、NS フレームからこの値をコピーの値<strong>IPv6.Source</strong> 「0::0」でした。 場合の値<strong>IPv6.Source</strong> 「0::0」でしたこのフィールドを"FF02::1"に設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>IPv6.ICMPv6.Type</strong></td>
@@ -173,7 +173,7 @@ NS メッセージを受信すると、デバイスのファームウェアが�
 <tr class="odd">
 <td align="left"><strong>IPv6.ICMPv6.SolicitedFlag</strong></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>場合の値<strong>IPv6.Source</strong> NS フレームが&quot;0::0&quot;、このフィールドを 1 に設定します。</p></td>
+<td align="left"><p>場合の値<strong>IPv6.Source</strong> ns フレームが「0::0」、このフィールドを 1 に設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>IPv6.ICMPv6.OverrideFlag</strong></td>

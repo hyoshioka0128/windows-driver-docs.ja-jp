@@ -4,12 +4,12 @@ description: V4 印刷ドライバー マニフェストは、特定のプリン
 ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 504e211114e04fa62989b8272d1805aeacad6948
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fc09503d34bea29e78406eb34c5884e853f0ab25
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553946"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464028"
 ---
 # <a name="v4-driver-manifest"></a>V4 ドライバー マニフェスト
 
@@ -48,7 +48,7 @@ V4 印刷ドライバー マニフェストは、すべてのプリンター固�
 <td><p><strong>RequiredFiles</strong></p>
 <p>Ntprint.inf または ntprint4.inf からファイルが含まれています。</p>
 <p>RequiredFiles ディレクティブは、Windows 10 では、次の値をサポートします。</p>
-<p>PWGRRenderFilter.dll:ドライバーを Microsoft PWG ラスター レンダリングのフィルターを追加します。&#39;依存ファイル の一覧。</p>
+<p>PWGRRenderFilter.dll:ドライバーの依存ファイルの一覧には、Microsoft PWG ラスター レンダリングのフィルターを追加します。</p>
 <p>PWG ラスター レンダリング フィルター レンダー フィルターでは、ドライバーの構成 PrintDeviceCapabilities ファイルで使用する必要があります。</p></td>
 <td><p>問い合わせて、pscript5.dll、および mxdwdrv.dll は、このリストから省略する必要があります。 これらは自動的に解決されます。</p></td>
 <td><p>例:</p>
@@ -59,11 +59,11 @@ V4 印刷ドライバー マニフェストは、すべてのプリンター固�
 <tr class="even">
 <td><p><strong>RequiredClass</strong></p>
 <p>キーとして、デバイスとその GUID のドライバー/フレンドリ名を使用して、定義済みのクラス ドライバーからのすべてのファイルを含めるには、このドライバーをによりします。 これは、printclass ドライバーを特定のドライバーをモデルにリンクするためのメカニズムです。</p></td>
-<td><p>RequiredClass ディレクティブは、クラス ドライバーでは使用できません。 RequiredClass を使用する場合は、プリンター ドライバーとする印刷クラス ドライバーのファイル名の競合を避ける必要がありますが&#39;再リンクします。</p>
-<p>類似したファイル名は&#39;t が相互に上書きが困難になる、トラブルシューティング時に、クラスのドライバー パッケージ ファイルと、v4 プリンター ドライバーからファイルとを区別します。</p></td>
-<td><p>以下に例を示します。</p>
+<td><p>RequiredClass ディレクティブは、クラス ドライバーでは使用できません。 RequiredClass を使用する場合は、プリンター ドライバーとリンクしている印刷クラス ドライバーのファイル名の競合を避ける必要があります。</p>
+<p>類似した名前のファイルは、相互に上書きされません、クラスのドライバー パッケージ ファイルと、v4 プリンター ドライバーからファイルを区別する、トラブルシューティングの際に難しいあります。</p></td>
+<td><p>例:</p>
 <p>RequiredClass =</p>
-<p>&quot;Fabrikam PCL5e クラス ドライバー&quot;、{9343720D-B67E-4451-B93F-6F721C439771}</p></td>
+<p>「Fabrikam PCL5e クラス ドライバー」, {9343720D-B67E-4451-B93F-6F721C439771}</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DriverFile</strong></p>
@@ -85,9 +85,9 @@ V4 印刷ドライバー マニフェストは、すべてのプリンター固�
 <td><p><strong>DataFileType</strong></p>
 <p>DataFileType は GPD または PPD ベース DataFile も使用もデータ ファイル、および月として PrintDeviceCapabilities ファイルを記述するときに使用する必要があります。</p></td>
 <td><p>PrintDeviceCapabilities ファイルが必要です。</p></td>
-<td><p>以下に例を示します。</p>
+<td><p>例:</p>
 <p>DataFileType =</p>
-<p>&quot;application/vnd.ms-PrintDeviceCapabilities+xml&quot;</p></td>
+<p>"application/vnd.ms-PrintDeviceCapabilities+xml"</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>フラグ</strong></p>
@@ -120,7 +120,7 @@ ArchiveEnabled v4 ドライバーでは、このフラグを使用して、操�
 </tr>
 <tr class="odd">
 <td><p><strong>ResourceFile</strong></p>
-<p>ドライバーの名前を定義&#39;s 文字列リソース DLL です。</p>
+<p>ドライバーの文字列リソース DLL の名前を定義します。</p>
 <p>Windows 10 では、ドライバーが .resx の形式を使用して ResourceFile を指定できます。</p></td>
 <td><p>なし。</p></td>
 <td><p>例:</p>
@@ -129,7 +129,7 @@ ArchiveEnabled v4 ドライバーでは、このフラグを使用して、操�
 </tr>
 <tr class="even">
 <td><p><strong>ConstraintScript</strong></p>
-<p>ドライバーの名前を定義&#39;s JavaScript 制約ファイル。</p></td>
+<p>ドライバーの JavaScript の制約のファイルの名前を定義します。</p></td>
 <td><p>なし。</p></td>
 <td><p>ConstraintScript =</p>
 <p>FAConst.js</p></td>
@@ -148,7 +148,7 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <p>プリンター拡張アプリのコピーを取得するには、ユーザーの URL を指定します。 プリンターの共有で使用されます。</p></td>
 <td><p>なし。</p></td>
 <td><p>PrinterExtensionUrl =</p>
-<p>&quot;<a href="http://www.fabrikam.com/files/setup.exe&amp;quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&amp;quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
+<p>"<a href="http://www.fabrikam.com/files/setup.exe&amp;quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&amp;quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DevModeMap</strong></p>
@@ -191,13 +191,13 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 </tr>
 <tr class="even">
 <td><p><strong>RetrievePrintDeviceCapabilitiesFromDevice</strong></p>
-<p>v4 ドライバーを指定できます Ws-print v2.0 のプリンターから PrintDeviceCapabilities ファイルを取得する必要がありますドライバーとして PrintDeviceCapabilities ファイルを設定する場合に限り&#39;s データ ファイルと、DataFileType は、MIME の種類のデータ ファイルがあることを示しますも&quot;アプリケーション/vnd.ms-PrintDeviceCapabilities + xml&quot;します。 有効なオプション:</p>
+<p>v4 ドライバーには、PrintDeviceCapabilities ファイル Ws-print v2.0 プリンターから取得する必要があります、PrintDeviceCapabilities ファイル、ドライバーのデータ ファイルとして設定して、DataFileType もことを示します限り、データ ファイルがの MIME の種類はのことを指定可能性があります"アプリケーション/vnd.ms-PrintDeviceCapabilities + xml"。 有効なオプション:</p>
 <p>有効なオプション:</p>
-<p>True:ドライバーは、&#39;s ローカル DataFile、デバイスから PrintDeviceCapabilities ファイルに置き換えられます。</p>
-<p>False:ドライバー&#39;s ローカル データ ファイルは、デバイスからの PrintDeviceCapabilities ファイルには置き換えられません。</p>
+<p>True:ドライバーのデバイスから PrintDeviceCapabilities ファイルに置き換えられますのローカル データ ファイルを使用できます。</p>
+<p>False:ドライバーのローカル データ ファイルは、デバイスからの PrintDeviceCapabilities ファイルに置き換えられません。</p>
 <p>指定しない場合、このディレクティブの既定値は false です。</p></td>
 <td><p>なし。</p></td>
-<td><p>以下に例を示します。</p>
+<td><p>例:</p>
 <p>RetrievePrintDeviceCapabilitiesFromDevice =</p>
 <p>true</p></td>
 </tr>
@@ -288,7 +288,7 @@ BidiFiles セクションを使用して、双方向の拡張機能のファイ�
 </tr>
 <tr class="even">
 <td><p><strong>XpsFormat</strong></p>
-<p>このドライバーの印刷システムで生成された XPS 形式を変更します。 複数の値を指定することがあります、および順序が、ドライバーを表す&#39;s 基本設定。</p></td>
+<p>このドライバーの印刷システムで生成された XPS 形式を変更します。 複数の値を指定することがあります、および順序が、ドライバーの基本設定を表します。</p></td>
 <td><p>Unidrv/PScript レンダリングを使用するクラスのドライバーでは使用できません。</p></td>
 <td><p>XpsFormat XPS を =</p>
 <p>XpsFormat OpenXPS を =</p>
@@ -302,13 +302,13 @@ BidiFiles セクションを使用して、双方向の拡張機能のファイ�
 <td><p>なし。</p></td>
 <td><p>有効な使用法の種類は次のとおりです。</p>
 <p>OutputFormat =</p>
-<p>&quot;アプリケーション/oxps&quot;</p>
+<p>"application/oxps"</p>
 <p>OutputFormat =</p>
-<p>&quot;application/vnd.ms-xpsdocument&quot;</p>
+<p>"application/vnd.ms-xpsdocument"</p>
 <p>OutputFormat =</p>
-<p>&quot;image/pwg-raster&quot;</p>
+<p>"image/pwg-raster"</p>
 <p>OutputFormat =</p>
-<p>&quot;application/vnd.ms-3mfdocument&quot;</p>
+<p>"application/vnd.ms-3mfdocument"</p>
 <p>その他の有効な定義された MIME 型はここでも指定できます。</p></td>
 </tr>
 </tbody>
@@ -370,7 +370,7 @@ PageOutputQuality ディレクティブの MxdcImageType キーワードには�
 <tbody>
 <tr class="odd">
 <td><p><strong>&lt;FileExtensionName&gt;</strong></p>
-<p>このディレクティブは、PORTPROMPT ポートを使用してこのドライバーからファイルを保存するときに使用される FileExtension について説明します。 値は、ドライバーからの resourceID&#39;s ResourceFile します。 XPS と OXPS のみの場合は、0 のリソース Id を指定することがあり、印刷スプーラーはこれらの内部のリソースを使用します。</p></td>
+<p>このディレクティブは、PORTPROMPT ポートを使用してこのドライバーからファイルを保存するときに使用される FileExtension について説明します。 値は、ドライバーの ResourceFile からの resourceID です。 XPS と OXPS のみの場合は、0 のリソース Id を指定することがあり、印刷スプーラーはこれらの内部のリソースを使用します。</p></td>
 <td><p>なし。</p></td>
 <td><p>&lt;FileExtensionName&gt;=</p>
 <p>&lt;resourceID&gt;</p>
@@ -378,7 +378,7 @@ PageOutputQuality ディレクティブの MxdcImageType キーワードには�
 </tr>
 <tr class="even">
 <td><p><strong>SaveAsTitle</strong></p>
-<p>このディレクティブは、ファイルの保存 ダイアログで使用するタイトルをについて説明します。 値は、ドライバーからの resourceID&#39;s ResourceFile します。</p></td>
+<p>このディレクティブは、ファイルの保存 ダイアログで使用するタイトルをについて説明します。 値は、ドライバーの ResourceFile からの resourceID です。</p></td>
 <td><p>なし。</p></td>
 <td><p>SaveAsTitle =</p>
 <p>&lt;resourceID&gt;</p>

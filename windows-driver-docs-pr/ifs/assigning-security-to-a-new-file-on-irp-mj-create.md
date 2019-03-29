@@ -1,6 +1,6 @@
 ---
-title: Irp_mj_create 用に新しいファイルへのセキュリティの割り当てください。
-description: Irp_mj_create 用に新しいファイルへのセキュリティの割り当てください。
+title: IRP_MJ_CREATE での新規ファイルへのセキュリティの割り当て
+description: IRP_MJ_CREATE での新規ファイルへのセキュリティの割り当て
 ms.assetid: f01a09c4-f71f-4b9e-99c8-9bc7ca5ca316
 keywords:
 - IRP_MJ_CREATE
@@ -9,12 +9,12 @@ keywords:
 - WDK のセキュリティ記述子をファイル システムでは、新しいファイルします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23125b7cc86b9253d0004b091883fc8d3e965191
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c9d9b60374ee4c7f214f8bfc887b7e1c5f316c74
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527221"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350271"
 ---
 # <a name="assigning-security-to-a-new-file-on-irpmjcreate"></a>IRP 上の新しいファイルへのセキュリティの割り当て\_MJ\_を作成します。
 
@@ -36,12 +36,12 @@ NTSTATUS FsdAssignInitialSecurity( PIRP_CONTEXT IrpContext,
     PSECURITY_DESCRIPTOR SecurityDescriptor = NULL;
 
     //
-    // Make sure the parent directory&#39;s security descriptor is loaded.
+    // Make sure the parent directory's security descriptor is loaded.
     //
     (void) FsdLoadSecurityDescriptor(IrpContext, Directory);
 
     //
-    // don&#39;t care about the return code here, as it is handled later
+    // don't care about the return code here, as it is handled later
     //
     if (Directory->SecurityDescriptor == NULL) {
 
@@ -84,7 +84,7 @@ NTSTATUS FsdAssignInitialSecurity( PIRP_CONTEXT IrpContext,
         RtlLengthSecurityDescriptor( SecurityDescriptor );
  
     Fcb->SecurityDescriptor = ExAllocatePoolWithTag(PagedPool, 
-        Fcb->SecurityDescriptorLength, &#39;DSyM&#39;);
+        Fcb->SecurityDescriptorLength, 'DSyM');
 
     if (!Fcb->SecurityDescriptor) {
         //

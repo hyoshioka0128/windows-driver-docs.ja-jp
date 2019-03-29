@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d575ede17b41c115a383c67f325bdd56ce78d91b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4d5827981537496860abf8e254f1ef8f40c24660
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528918"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350387"
 ---
-# <a name="bug-check-0xd2-bugcodeiddriver"></a>バグ チェック 0xD2 の。BUGCODE\_ID\_ドライバー
+# <a name="bug-check-0xd2-bugcodeiddriver"></a>バグ チェック 0xD2:BUGCODE\_ID\_ドライバー
 
 
 BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ちます。 これは、NDIS ドライバーで問題が発生したことを示します。
@@ -74,7 +74,7 @@ BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ち
 <td align="left"><p>パケットの配列に正しく含まれるパケットのアドレス</p></td>
 <td align="left"><p>パケットの配列のアドレス</p></td>
 <td align="left"><p>配列内のパケットの数</p></td>
-<td align="left"><p><strong>これが所有していないパケットを示すです。</strong> ミニポート&#39;s パケットの配列が破損しています。</p></td>
+<td align="left"><p><strong>これが所有していないパケットを示すです。</strong> ミニポートのパケットの配列が壊れています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MiniBlock のアドレス</p></td>
@@ -85,7 +85,7 @@ BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ち
 </tr>
 <tr class="even">
 <td align="left"><p>MiniBlock のアドレス</p></td>
-<td align="left"><p>MiniBlock&#39;s 参照カウント</p></td>
+<td align="left"><p>MiniBlock の参照カウント</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p><strong>NdisMUnload:MiniBlock</strong>がアンロードを取得するが、まだが<strong>NdisMiniDriverList</strong>します。</p></td>
@@ -155,7 +155,7 @@ BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ち
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 このバグ チェック コードは、Windows 2000 および Windows XP でのみ行われます。 対応するコードは、Windows Server 2003 以降では、 [**バグ チェック 0x7C** ](bug-check-0x7c--bugcode-ndis-driver.md) (BUGCODE\_NDIS\_ドライバー)。

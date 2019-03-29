@@ -1,20 +1,20 @@
 ---
-title: 登録を解除し、アンロード、WSK クライアント
-description: 登録を解除し、アンロード、WSK クライアント
+title: WSK クライアントの登録解除とアンロード
+description: WSK クライアントの登録解除とアンロード
 ms.assetid: dd9030b1-271f-46e4-9139-b49903ca8313
 keywords:
 - ネットワーク モジュール レジストラー WDK Winsock カーネル
 - NMR WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0866b59318fad1745a4bdd4955084f70e6c685d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f0df3b4cbc19b082553bec52093ba7f201c77329
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550795"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350152"
 ---
-# <a name="unregistering-and-unloading-the-wsk-client"></a>登録を解除し、アンロード、WSK クライアント
+# <a name="unregistering-and-unloading-the-wsk-client"></a>WSK クライアントの登録解除とアンロード
 
 
 使用するアプリケーションは、Winsock カーネル (WSK)、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md) WSK へのアタッチのサブシステムはアンロードの前に解除 NMR にする必要があります。 ときに WSK アプリケーションの登録を解除、NMR で呼び出すことによって、 [ **NmrDeregisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568774)関数の場合、NMR を呼び出すアプリケーションの[ *ClientDetachProvider*](https://msdn.microsoft.com/library/windows/hardware/ff544908)コールバック関数、アプリケーションがそれ自体を WSK アプリケーションの登録解除プロセスの一環として、WSK サブシステムからデタッチされるようにします。
@@ -29,7 +29,7 @@ WSK アプリケーションは、NMR を通知がデタッチが完了すると
 
 WSK アプリケーションを実装している場合、 [ *ClientCleanupBindingContext* ](https://msdn.microsoft.com/library/windows/hardware/ff544904)コールバック関数、NMR を呼び出すアプリケーションの*ClientCleanupBindingContext*コールバックWSK アプリケーションおよび WSK サブシステムの両方がお互いからのデタッチを完了してからの関数。 WSK アプリケーションの*ClientCleanupBindingContext*コールバック関数は、アプリケーションのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、アプリケーションは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
 
-次に、例を示します。
+例:
 
 ```C++
 // ClientDetachProvider callback function
@@ -86,7 +86,7 @@ VOID
   // Clean up the binding context structure
   ...
 
-  // Free the memory for client&#39;s binding context structure
+  // Free the memory for client's binding context structure
   ExFreePoolWithTag(
     BindingContext,
     BINDING_CONTEXT_POOL_TAG
@@ -96,7 +96,7 @@ VOID
 
 WSK アプリケーションの[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数では、アプリケーションがから登録解除されますを確認する必要があります、 [NMR](network-module-registrar2.md)アプリケーションは、システム メモリからアンロードする前にします。 WSK アプリケーションから返す必要がありますいないその*アンロード*まで、NMR から完全に登録解除がされた後に機能します。 場合に呼び出し**NmrDeregisterClient**ステータスを返します\_保留中、WSK アプリケーションを呼び出す必要があります、 **NmrWaitForClientDeregisterComplete**関数を登録解除のために待機するには返す前に完了、*アンロード*関数。
 
-次に、例を示します。
+例:
 
 ```C++
 // Variable containing the handle for registration with the NMR

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1b5a0338982d28d00d277053dff1ba0aa3bbae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 47737642b2140960f35982b761febda96d9da59a
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535388"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463810"
 ---
 # <a name="export-switch"></a>/Export スイッチ
 
@@ -83,34 +83,34 @@ ms.locfileid: "56535388"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>&quot;ASCm&quot;</p></td>
+<td align="left"><p>"ASCm"</p></td>
 <td align="left"><p>認証サイロ (ASC) の証明書の製造元。</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&quot;ASCh&quot;</p></td>
+<td align="left"><p>"ASCh"</p></td>
 <td align="left"><p>ホストに証明書認証サイロの認証に使用される ASC ホスト証明書。</p></td>
 <td align="left"><p>インデックスを 1 より大きい場合。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>&quot;HCh&quot;</p></td>
+<td align="left"><p>"HCh"</p></td>
 <td align="left"><p>証明書認証サイロへのホストの認証に使用されるホストの証明書。</p></td>
 <td align="left"><p>インデックスを 1 より大きい場合。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&quot;PCp&quot;</p></td>
+<td align="left"><p>"PCp"</p></td>
 <td align="left"><p>管理コマンドのシーケンスでのプロビジョニングし、証明書認証サイロの管理に使用されるプロビジョニング証明書。</p></td>
 <td align="left"><p>1</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>&quot;SCh&quot;</p></td>
+<td align="left"><p>"SCh"</p></td>
 <td align="left"><p>署名者証明書をホストによって信頼されている証明書を定義するために使用します。 これは、信頼された証明書が ASCh 証明書と 0 個以上の SCh 証明書のチェーン。</p></td>
 <td align="left"><p>インデックスを 1 より大きい場合。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&quot;無効です&quot;</p></td>
+<td align="left"><p>「が無効です」</p></td>
 <td align="left"><p>証明書の種類は、指定したインデックス位置に配置されました。</p></td>
-<td align="left"><p>該当なし</p></td>
+<td align="left"><p>適用なし</p></td>
 </tr>
 </tbody>
 </table>

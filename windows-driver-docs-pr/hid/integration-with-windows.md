@@ -14,12 +14,12 @@ keywords:
 - DirectInput コントロール パネルのデバイスの登録
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fdf7c7332981170c492f16efc838b3c4beea9501
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f3649c75c807479fc1040577ded80728582ce405
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463900"
 ---
 # <a name="integration-with-windows"></a>Windows との統合
 
@@ -64,12 +64,12 @@ ms.locfileid: "56553444"
     <tr class="odd">
     <td><p>ConfigCLSID</p></td>
     <td><p>文字列値</p></td>
-    <td><p>&quot;{CLSID プロパティ シート}&quot;</p></td>
+    <td><p>「{プロパティ シート CLSID}」</p></td>
     </tr>
     <tr class="even">
     <td><p>OEMName</p></td>
     <td><p>文字列値</p></td>
-    <td><p>&quot;デバイスの製品名&quot;</p></td>
+    <td><p>「デバイスの製品名」</p></td>
     </tr>
     </tbody>
     </table>

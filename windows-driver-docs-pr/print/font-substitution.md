@@ -1,20 +1,20 @@
 ---
-title: フォントの置き換え
-description: フォントの置き換え
+title: フォント代替
+description: フォント代替
 ms.assetid: a67f42cd-1c10-46b7-8d24-0cb26339bc92
 keywords:
 - WDK Unidrv、代替プリンターのフォントの記述
 - 代替フォント表 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4090f8ed6b1bfa1c8bb0c8659ef9a3e3559b6536
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4bd35155aa40204511b834fc442a3cf79092cd64
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552755"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464304"
 ---
-# <a name="font-substitution"></a>フォントの置き換え
+# <a name="font-substitution"></a>フォント代替
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "56552755"
 <tbody>
 <tr class="odd">
 <td><p></p>
-* TTFS:<em>FontName</em> { *TTFontName:&quot;<em>TTFontNameString</em>&quot; *DevFontName:&quot;<em>DeviceFontNameString</em>&quot; <strong>}</strong></td>
+* TTFS:<em>FontName</em> { *TTFontName:"<em>TTFontNameString</em>"* DevFontName:"<em>DeviceFontNameString</em>" <strong>}</strong></td>
 </tr>
 </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
-title: PCD ソース ファイルの形式
-description: PCD ソース ファイルの形式
+title: PCD ソース ファイル形式
+description: PCD ソース ファイル形式
 ms.assetid: 8651d6ca-7cd7-4c07-aa66-2766dd2222e0
 keywords:
 - プロッター ドライバー WDK の印刷、ミニドライバー
@@ -11,14 +11,14 @@ keywords:
 - WDK MSPlot キーワード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ced2e4810a82f02cd8401fd4910225b0398ee4fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5c0bd65790530946f0874ef3a197175b81aad2c7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560029"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463958"
 ---
-# <a name="pcd-source-file-format"></a>PCD ソース ファイルの形式
+# <a name="pcd-source-file-format"></a>PCD ソース ファイル形式
 
 
 
@@ -44,7 +44,7 @@ ColorCap {1}
 </colgroup>
 <thead>
 <tr class="header">
-<th>キーワード</th>
+<th>Keyword</th>
 <th>値の定義</th>
 <th>既定値</th>
 </tr>
@@ -77,11 +77,11 @@ ColorCap {1}
 <tr class="odd">
 <td><p><strong>デバイス名</strong></p></td>
 <td><p>表示可能なデバイス名 (31 最大文字。) を表す文字列を引用符で囲まれました。</p></td>
-<td><p>&quot;HPGL/2 プロッター&quot;</p></td>
+<td><p>「HPGL/2 プロッター」</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>デバイスを表す 1 つの DWORD のサイズ値&#39;s 有効な DPI。 詳細については、次を参照してください。、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>します。</p></td>
+<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、次を参照してください。、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>します。</p></td>
 <td><p>既定値は 0、値を計算する GDI の原因です。</p></td>
 </tr>
 <tr class="odd">
@@ -103,7 +103,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>InitString</strong></p></td>
-<td><p>ドライバーによってプリンターに送信されたコマンドを表す C 言語文字列を引用符で囲まれた&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556298" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556298)"> <strong>DrvStartPage</strong> </a>関数。</p></td>
+<td><p>ドライバーからプリンターに送信されたコマンドを表す C 言語文字列を引用符で囲まれた<a href="https://msdn.microsoft.com/library/windows/hardware/ff556298" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556298)"> <strong>DrvStartPage</strong> </a>関数。</p></td>
 <td><p>NULL 文字列です。</p></td>
 </tr>
 <tr class="odd">
@@ -151,7 +151,7 @@ ColorCap {1}
 </tr>
 <tr class="odd">
 <td><p><strong>PlotDPI</strong></p></td>
-<td><p>ペンのプロッターを表す 2 つの DWORD のサイズの値&#39;s <em>x</em>と<em>y</em>解像度、ドット/インチにします。</p></td>
+<td><p>2 つの DWORD のサイズ値が表すペン プロッターの<em>x</em>と<em>y</em>インチあたりのドットでの解決。</p></td>
 <td><p></p>
 {1016, 1016}</td>
 </tr>

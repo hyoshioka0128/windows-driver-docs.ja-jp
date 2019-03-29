@@ -1,6 +1,6 @@
 ---
-title: ファイル システムのコントロールの処理
-description: ファイル システムのコントロールの処理
+title: ファイル システム制御処理
+description: ファイル システム制御処理
 ms.assetid: 95a610c8-b48c-4fff-bf1f-f9fb6abb0fd9
 keywords:
 - WDK ファイル システムのセキュリティ、セマンティック モデルを確認します
@@ -10,14 +10,14 @@ keywords:
 - WDK のファイル システムの処理を制御
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3953cf0ae579b4d3d6d3421dc748a185e763b9c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0035ec5d7ec3110d1f261d97f88eea0c1beed0d5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552950"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350087"
 ---
-# <a name="file-system-control-processing"></a>ファイル システムのコントロールの処理
+# <a name="file-system-control-processing"></a>ファイル システム制御処理
 
 
 ## <span id="ddk_file_system_control_processing_if"></span><span id="DDK_FILE_SYSTEM_CONTROL_PROCESSING_IF"></span>
@@ -80,13 +80,13 @@ typedef struct {
     //
     //    - extract and decode the file object and check for type of open.
     //
-    //    - if this is a directory, verify that it&#39;s not the root and that
+    //    - if this is a directory, verify that it's not the root and that
     //      you are not trying to move the first cluster.  You cannot move the
     //      first cluster because sub-directories have this cluster number
     //      in them and there is no safe way to simultaneously update them
     //      all.
     //
-    //  Allow movefile on the root directory if it&#39;s FAT32, since the root dir
+    //  Allow movefile on the root directory if it's FAT32, since the root dir
     //  is a real chained file.
     //    //
 ```

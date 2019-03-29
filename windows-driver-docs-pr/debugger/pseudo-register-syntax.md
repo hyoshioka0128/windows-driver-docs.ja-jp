@@ -1,6 +1,6 @@
 ---
-title: 擬似レジスタ構文
-description: 擬似レジスタ構文
+title: 疑似レジスタの構文
+description: 疑似レジスタの構文
 ms.assetid: f7dc52ea-e97e-4251-a517-c115cbc7d056
 keywords:
 - 擬似レジスタ
@@ -14,14 +14,14 @@ keywords:
 - $ea
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d459b99d76a14123a6a407d69a271822451f52b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58feed7cb5c865f3589f00a8abdde67a5b4a4bf6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464366"
 ---
-# <a name="pseudo-register-syntax"></a>擬似レジスタ構文
+# <a name="pseudo-register-syntax"></a>疑似レジスタの構文
 
 
 ## <span id="ddk_pseudo_register_syntax_dbg"></span><span id="DDK_PSEUDO_REGISTER_SYNTAX_DBG"></span>
@@ -70,11 +70,11 @@ C++ の式の構文を使用している場合、アット マーク ( **@** ) �
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>$ea</strong></p></td>
-<td align="left"><p>実行された最後の命令の有効なアドレス。 この命令には有効なアドレスがあるない場合、デバッガーが表示されます&quot;不適切な登録エラー&quot;します。 この命令は、2 つの有効なアドレスを持っている場合、デバッガーには、最初のアドレスが表示されます。</p></td>
+<td align="left"><p>実行された最後の命令の有効なアドレス。 この命令には有効なアドレスがあるない場合、デバッガーでは、「無効な登録エラー」が表示されます。 この命令は、2 つの有効なアドレスを持っている場合、デバッガーには、最初のアドレスが表示されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>$ea2</strong></p></td>
-<td align="left"><p>実行された最後の命令の 2 番目の有効なアドレス。 デバッガーを表示する場合はこの命令には、2 つの有効なアドレスがあるない、&quot;不適切な登録エラー&quot;します。</p></td>
+<td align="left"><p>実行された最後の命令の 2 番目の有効なアドレス。 この命令は 2 つの有効なアドレスを持たない場合、デバッガーでは、「無効な登録エラー」が表示されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$exp</strong></p></td>
@@ -83,7 +83,7 @@ C++ の式の構文を使用している場合、アット マーク ( **@** ) �
 <tr class="even">
 <td align="left"><p><strong>$ra</strong></p></td>
 <td align="left"><p>現在、スタック上にあるリターン アドレス。</p>
-<p>このアドレスは、コマンドの実行で特に便利です。 たとえば、 <strong>g @$ ra</strong>リターン アドレスが見つかるまで続けられます (が<strong><a href="gu--go-up-.md" data-raw-source="[gu (Go Up)](gu--go-up-.md)">gu (Go Up)</a></strong>効果的な方法がより正確なの&quot;ステップ アウト&quot;、現在の関数)。</p></td>
+<p>このアドレスは、コマンドの実行で特に便利です。 たとえば、 <strong>g @$ ra</strong>リターン アドレスが見つかるまで続けられます (が<strong><a href="gu--go-up-.md" data-raw-source="[gu (Go Up)](gu--go-up-.md)">(Go Up) gu</a></strong> 「ステップ イン」現在の関数の場合より正確な効果的な方法は、)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$ip</strong></p></td>

@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) には、MSBuild を使用してドライ�
 ms.assetid: 77B2DBF4-64EB-4396-BAA5-80F23C9899CC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ca4c943a088ab36052a4f414137e5d585e683e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9ff8bbe41ff03e3392bf439c989ec07b00782cc
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539424"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464021"
 ---
 # <a name="message-compiler-task"></a>メッセージ コンパイラ タスク
 
@@ -156,7 +156,7 @@ MSBuild がメタデータ GenerateBaselineResource が設定されているた�
 </tr>
 <tr class="even">
 <td align="left"><strong>GenerateMOFFile</strong>
-<p>すべての関数と生成されるマクロのダウン レベルのサポートが生成されます。 MOF ファイルは、マニフェストから生成されます。 MOF ファイルがで指定した場所に配置、 &quot;-h&quot;スイッチします。</p></td>
+<p>すべての関数と生成されるマクロのダウン レベルのサポートが生成されます。 MOF ファイルは、マニフェストから生成されます。 MOF ファイルがで指定した場所に配置、"-h"スイッチします。</p></td>
 <td align="left">%(MessageCompile.GenerateMOFFile)</td>
 <td align="left"><strong>-mof</strong></td>
 </tr>
@@ -186,7 +186,7 @@ MSBuild がメタデータ GenerateBaselineResource が設定されているた�
 </tr>
 <tr class="odd">
 <td align="left"><strong>PrefixMacroName</strong>
-<p>生成されたログ記録マクロに適用される、マクロ名のプレフィックスを定義します。 既定値は&quot;EventWrite&quot;します。</p></td>
+<p>生成されたログ記録マクロに適用される、マクロ名のプレフィックスを定義します。 既定では"EventWrite です"。</p></td>
 <td align="left">% (MessageCompile PrefixMacroName)</td>
 <td align="left"><strong>-p</strong><em>&lt;プレフィックス&gt;</em></td>
 </tr>

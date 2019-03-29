@@ -1,17 +1,17 @@
 ---
-title: ユーザー モードのモニタ
-description: ユーザー モードのモニタ
+title: ユーザー モードのモニター
+description: ユーザー モードのモニター
 ms.assetid: CE6CEC2C-5E8E-40aa-A5D3-0062D6F82EFE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbd12a98997fda7ecc2470aed5ba61ee3d27f1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 51048cfe66858aef208bc094026869dbcadd975b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537625"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464038"
 ---
-# <a name="user-mode-monitor"></a>ユーザー モードのモニタ
+# <a name="user-mode-monitor"></a>ユーザー モードのモニター
 
 
 ユーザー モードのモニターにより、'プロセスでテスト' の実行に関する詳細なコンテキストを取得するためのテスト、テストの失敗を調査するため、または既存のテストからの向上の検証を有効にする詳細なコンテキストを取得するためにします。 現在のユーザー モードのモニターの実装では、詳細のカスタマイズと構成の後続のリリースで予定で、基本的な実装を提供します。
@@ -40,7 +40,7 @@ UMM コードを使用する場合に、次の点を考慮する必要があり�
 
 ユーザー モードのモニターには、監視対象のプロセスで指定されたデバッガー イベントが発生したときにかかることが 'アクション' のセットがあります。 現在の実装では、特定のイベントだけ呼び出しの既定のアクション。現在の構成のサポートはありません。
 
-| アクション     | 説明                                                            |
+| 操作     | 説明                                                            |
 |------------|------------------------------------------------------------------------|
 | LogComment | イベントからコンテキスト情報と共に、ログには、コメントを追加します。 |
 | LogError   | 現在のテストが失敗すると、ログにエラーが記録されます。            |
@@ -54,7 +54,7 @@ UMM コードを使用する場合に、次の点を考慮する必要があり�
 
 ユーザー モードのモニターには、上、記載されている '操作' のいずれかに適用可能な ' イベント' が表示されます。 次の表では、現在の既定のイベントを受信したときに実行されるアクションと共に、報告されたイベントの一覧を示します。
 
-| イベント                                | 既定のアクション (2 番目のチャンスの既定のアクション) |
+| event                                | 既定のアクション (2 番目のチャンスの既定のアクション) |
 |--------------------------------------|-----------------------------------------------|
 | スレッドを作成します。                        | 無視                                        |
 | スレッドを終了します。                          | 無視                                        |
@@ -135,7 +135,7 @@ namespace UserModeMonitorExample
         [TestCleanup]
         public void TestCleanup()
         {
-            // Close the &#39;mspaint under test&#39; - if it&#39;s already gone, this will throw, but that&#39;s no big deal.
+            // Close the 'mspaint under test' - if it's already gone, this will throw, but that's no big deal.
             this.mspaintUnderTest.CloseMainWindow();
         }
 
@@ -144,8 +144,8 @@ namespace UserModeMonitorExample
         [TestProperty("Description", "Shows how a test can be failed if the UI is closed from underneath the test.")]
         public void SimpleInteraction()
         {
-            Log.Comment("If the &#39;user mode monitor&#39; is enabled and mspaint.exe is closed,&quot;);
-            Log.Comment(&quot;then this test will be failed.&quot;);
+            Log.Comment("If the 'user mode monitor' is enabled and mspaint.exe is closed,");
+            Log.Comment("then this test will be failed.");
             Log.Comment("Sleeping for 5 seconds");
 
             Thread.Sleep(TimeSpan.FromSeconds(5));

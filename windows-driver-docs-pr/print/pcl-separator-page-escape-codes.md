@@ -1,6 +1,6 @@
 ---
-title: コードの PCL の区切り記号 ページのエスケープ
-description: コードの PCL の区切り記号 ページのエスケープ
+title: PCL 区切りページのエスケープ コード
+description: PCL 区切りページのエスケープ コード
 ms.assetid: 8e571fcd-f6ee-4a56-8d8a-20bf3a5c333c
 keywords:
 - PCL の区切り記号 ページのエスケープ コード WDK PCL XL
@@ -8,14 +8,14 @@ keywords:
 - エスケープ コード WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd72c46f30b22995d72d867863b8de8a7af6336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3ef63ceb12b1f08b9367797206a9581d27463917
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537141"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464200"
 ---
-# <a name="pcl-separator-page-escape-codes"></a>コードの PCL の区切り記号 ページのエスケープ
+# <a name="pcl-separator-page-escape-codes"></a>PCL 区切りページのエスケープ コード
 
 
 
@@ -31,7 +31,7 @@ PCL 区切りページを作成するときに、次の表に示すようにエ�
 <thead>
 <tr class="header">
 <th>エスケープ コード</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -73,7 +73,7 @@ PCL 区切りページを作成するときに、次の表に示すようにエ�
 </tr>
 <tr class="even">
 <td><p>\L<em>xxx</em></p></td>
-<td><p>\L エスケープのコードの後に表示されるテキストの文字列を出力します。 \LTest、テキストを入力すると&quot;テスト&quot;区切りページに表示されます。</p></td>
+<td><p>\L エスケープのコードの後に表示されるテキストの文字列を出力します。 \LTest を入力すると、区切りページに"Test"というテキストが表示されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p>\N</p></td>

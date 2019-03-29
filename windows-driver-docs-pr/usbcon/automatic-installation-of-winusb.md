@@ -1,14 +1,14 @@
 ---
-Description: In this topic, you will learn about how a WinUSB device is recognized in Windows 8.
+Description: このトピックでは、WinUSB デバイスを Windows 8 で認識する方法について学びます。
 title: WinUSB デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f35a76342d480b9933b8292b9281f189b71596c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ab0ae35ab57fdbea90f6b7c4a143b3c36b161cfc
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528474"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464166"
 ---
 # <a name="winusb-device"></a>WinUSB デバイス
 
@@ -54,9 +54,9 @@ Windows 8、インボックス Winusb.inf ファイルが更新されました�
 
 ### <a name="about-using-the-usbdevice-class"></a>USBDevice クラスの使い方。
 
-使用しないでください、 &quot;USB&quot; unclassified デバイスのクラスをセットアップします。 そのクラスは、コント ローラー、ハブ、および複合デバイスをインストールするために予約されています。 不正使用、 &quot;USB&quot;クラスは、信頼性とパフォーマンスの重要な問題につながることができます。 Unclassified デバイスは、使用&quot;USBDevice&quot;します。
+Unclassified デバイス セットアップ クラスが、"USB"を使用しないでください。 そのクラスは、コント ローラー、ハブ、および複合デバイスをインストールするために予約されています。 "USB"クラスの不正使用については、大きな信頼性とパフォーマンスの問題につながります。 Unclassified デバイスは、"USBDevice"を使用します。
 
-Windows 8 で使用する&quot;USBDevice&quot;デバイス クラスを単にこれを INF を追加します。
+Windows 8 では、"USBDevice"デバイス クラスを使用する追加するだけでこれを INF:
 
 ```cpp
   …

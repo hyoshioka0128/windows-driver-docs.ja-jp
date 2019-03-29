@@ -4,12 +4,12 @@ description: WIA デバイスの INF ファイル
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 807c9a58687c6fb602f1f2eb45035c42c58b775a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ef278843da0b6e35b5954b238a2f44f201f5a51c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530050"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463856"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA デバイスの INF ファイル
 
@@ -25,7 +25,7 @@ ms.locfileid: "56530050"
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>Value</th>
+<th>[値]</th>
 <th>コメント</th>
 </tr>
 </thead>
@@ -48,8 +48,8 @@ ms.locfileid: "56530050"
 <td><p>省略可能</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>接続</strong></p></td>
-<td><p>プラグ アンド プレイ デバイスのシリアル ポートまたはパラレル ポートに接続されている場合、ユーザーを制限するには、シリアルまたは並列を指定できます&#39;のインストール時にポートの s 選択します。</p></td>
+<td><p><strong>[接続]</strong></p></td>
+<td><p>プラグ アンド プレイ デバイスのシリアル ポートまたはパラレル ポートに接続されている場合は、インストール時にポートのユーザーの選択を制限するには、シリアルまたは並列このできます。</p></td>
 <td><p>省略可能</p>
 <p>指定しない場合、ユーザーは、任意のシリアル ポートまたはパラレル ポートを選択できます。</p></td>
 </tr>
@@ -83,17 +83,17 @@ ms.locfileid: "56530050"
 <tr class="even">
 <td><p><strong>イベント</strong></p></td>
 <td><p>静止画像デバイス イベントの一覧を表示するベンダーから提供されたデータのセクションを識別します。 このセクションでは、各エントリには、次の形式が必要です。</p>
-<p><em>EventName</em><strong>=&quot;</strong><em>文字列</em><strong>&quot;、{</strong><em>GUID</em> <strong>}、</strong>アプリ</p>
-<p><em>EventName</em>イベントは、&#39;の内部の名前、<em>文字列</em>イベント&#39;s 表示文字列、 <em>GUID</em>イベントは、&#39;s GUID、および<em>アプリ</em>イベントの発生時に起動されるようにイメージング アプリケーションを指定します。 現在登録されているアプリケーションを起動するには、アスタリスクを使用して、(<strong>*</strong>) の<em>アプリ</em>します。</p></td>
+<p><em>EventName</em><strong>="</strong><em>文字列</em><strong>"、{</strong><em>GUID</em><strong>}、</strong>アプリ</p>
+<p><em>EventName</em>イベントの内部名は、<em>文字列</em>は、イベントの表示文字列、 <em>GUID</em>イベントの guid をおよび<em>アプリ</em>がイメージの作成を指定しますイベントの発生時に起動するアプリケーション。 現在登録されているアプリケーションを起動するには、アスタリスクを使用して、(<strong>*</strong>) の<em>アプリ</em>します。</p></td>
 <td><p>必須</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>PortSelect</strong></p></td>
-<td><p>デバイスのインストールには、ポートの選択 ページの値が必要としない場合&quot;ありません&quot;によりスキップするには、そのページ。 この値はまた、 <strong>CreateFileName</strong>エントリの値 (を参照してください、<strong>注</strong>で<strong>CreateFileName</strong>と<strong>PortSelect</strong>次の表の後) を AUTO に自動的に設定します。</p>
+<td><p>デバイスのインストールにポートの選択 ページが必要としない場合はスキップするには、そのページと、"no"の値。 この値はまた、 <strong>CreateFileName</strong>エントリの値 (を参照してください、<strong>注</strong>で<strong>CreateFileName</strong>と<strong>PortSelect</strong>次の表の後) を AUTO に自動的に設定します。</p>
 <p>Message1 原因がシステム提供のメッセージが表示されます、およびセットの値、 <strong>CreateFileName</strong>エントリの値を AUTO にします。</p>
 <p>スキャナーとカメラを手動でインストールを必要とする両方に適用されます。</p></td>
 <td><p>省略可能</p>
-<p>プラグ アンド プレイ デバイスの場合は、注意してください<strong>PortSelect</strong>は無視されます、デバイスが引き続き必要がありますが、 <strong>CreateFileName</strong> WIA をデバイスを読み込むために、エントリの値が自動に設定します。 使用して、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff546320" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546320)"> <strong>INF AddReg ディレクティブ</strong></a>にこのエントリを追加する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547344" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547344)"> <strong>INF DDInstall セクション</strong></a>デバイスの&#39;s INF ファイル。</p></td>
+<p>プラグ アンド プレイ デバイスの場合は、注意してください<strong>PortSelect</strong>は無視されます、デバイスが引き続き必要がありますが、 <strong>CreateFileName</strong> WIA をデバイスを読み込むために、エントリの値が自動に設定します。 使用して、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff546320" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546320)"> <strong>INF AddReg ディレクティブ</strong></a>にこのエントリを追加する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547344" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547344)"> <strong>INF DDInstall セクション</strong></a>のデバイスの INF ファイル。</p></td>
 </tr>
 </tbody>
 </table>
@@ -130,7 +130,7 @@ ms.locfileid: "56530050"
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>Value</th>
+<th>値</th>
 <th>コメント</th>
 </tr>
 </thead>
@@ -148,13 +148,13 @@ ms.locfileid: "56530050"
 <tr class="even">
 <td><p><strong>USDClass</strong></p></td>
 <td><p>ミニドライバーの GUID を示します。</p></td>
-<td><p>(省略可能)。</p>
+<td><p>任意。</p>
 <p>内の GUID、 <strong>USDClass</strong>と<strong>CLSID</strong>エントリで使用されている GUID が一致する必要があります、 <strong>DllGetClassObject</strong>ミニドライバーの関数。 Microdriver を記述する場合、値が BB6CF8E2-1511-40bd-91BA-80D43C53064E にあります。 を使用して、新しい GUID を、生成する必要がありますそれ以外の場合、 <em>genguid.exe</em>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>CLSID</strong></p></td>
 <td><p>ミニドライバーの GUID を示します。</p></td>
-<td><p>(省略可能)。</p>
+<td><p>任意。</p>
 <p>直前のコメントを参照してください、 <strong>USDClass</strong>エントリ。</p></td>
 </tr>
 </tbody>
@@ -263,13 +263,13 @@ WIA デバイスとして、デバイスを指定するには、ミニドライ�
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>Value</th>
+<th>[値]</th>
 <th>コメント</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>サーバー</strong></p></td>
+<td><p><strong>[サーバー]</strong></p></td>
 <td><p>ローカル</p></td>
 <td><p>ローカルのデバイスとしては、デバイスを指定します。 これは省略可能と仕入先がエントリの値を指定しない場合、デバイスをローカルと見なされます。 つまり、WIA_DIP_SERVER_NAME プロパティは、ローカルに設定されます。</p></td>
 </tr>
@@ -302,7 +302,7 @@ WIA デバイスとして、デバイスを指定するには、ミニドライ�
 
 ユーザー インターフェイス (UI) のエントリが、ベンダー、イメージング デバイスのカスタム ユーザー インターフェイスを提供している場合にのみ必要です。
 
-**「解説」**
+**注釈**
 
 スキャナー、INF ファイルを開発するときに使用できます[Microsoft OS ディスクリプター](https://msdn.microsoft.com/library/windows/hardware/gg463179.aspx)互換性 ID 機能を有効にします。 これを行う場合は、複数のスキャナー モデルと互換性がある 1 つのスキャナー ドライバーを許可します。
 

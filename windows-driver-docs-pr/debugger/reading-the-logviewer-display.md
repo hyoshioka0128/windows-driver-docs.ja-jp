@@ -6,12 +6,12 @@ keywords:
 - LogViewer、表示
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f830e62284a3ff7eca0c407561a00a9ae4a699
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7edf95aba0116d9326e96e57c388f2f26108ec5e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558374"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463813"
 ---
 # <a name="reading-the-logviewer-display"></a>LogViewer 表示の読み取り
 
@@ -30,15 +30,15 @@ LogViewer では、ログに記録された順序ですべての関数の一覧�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">列</th>
-<th align="left">意味</th>
+<th align="left">[列]</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>+/-</strong></p></td>
-<td align="left"><p>この列が含まれている場合、 &quot; + &quot; (プラス記号)、関数が 1 つまたは複数のパラメーターを受け取ることを示します。 パラメーターとその値を表示するには、行をダブルクリックするか、行が赤に記載されているときに、右矢印キーを押します。 再び非表示に、もう一度クリックを 2 倍または行が赤に記載されているときに、左矢印キーを押します。</p>
-<p>&quot;D #&quot;この列の値。 これを示します、&quot;深さ&quot;関数 (つまり、深さの呼び出しが他のログに記録された関数の呼び出しで入れ子になった) 呼び出します。</p></td>
+<td align="left"><p>この列が含まれている場合、この関数は、1 つまたは複数のパラメーターを受け取ります「+」(プラス記号)、ことを示します。 パラメーターとその値を表示するには、行をダブルクリックするか、行が赤に記載されているときに、右矢印キーを押します。 再び非表示に、もう一度クリックを 2 倍または行が赤に記載されているときに、左矢印キーを押します。</p>
+<p>このコラムでは、「d 番号」値があります。 これには、関数呼び出しの「奥行き」(つまり、深さの呼び出しが他のログに記録された関数の呼び出しで入れ子になっている) ことを示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>#</strong></p></td>
@@ -53,7 +53,7 @@ LogViewer では、ログに記録された順序ですべての関数の一覧�
 <td align="left"><p>命令ポインター アドレス、関数の呼び出しが行われます。 これは、呼び出しの戻り値のアドレスから派生します。 -5 バイトのリターン アドレス実際には (の一般的なサイズを<strong>dword ptr を呼び出す</strong>命令)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>モジュール</strong></p></td>
+<td align="left"><p><strong>Module</strong></p></td>
 <td align="left"><p>このモジュールは、呼び出し元の命令が含まれています。</p></td>
 </tr>
 <tr class="even">

@@ -1,6 +1,6 @@
 ---
-title: コマンドの属性
-description: コマンドの属性
+title: コマンド属性
+description: コマンド属性
 ms.assetid: 8ce2c668-a130-428e-bf5f-0eab2dcd3fdb
 keywords:
 - プリンターは、WDK Unidrv、コマンドを属性します。
@@ -13,14 +13,14 @@ keywords:
 - params
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b33202afc8d3163859c1f17c9043aec70dfe377
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bff0efceae5936f6a41ba19ffd2c233be0795fcc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539531"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350339"
 ---
-# <a name="command-attributes"></a>コマンドの属性
+# <a name="command-attributes"></a>コマンド属性
 
 
 
@@ -52,7 +52,7 @@ ms.locfileid: "56539531"
 <tbody>
 <tr class="odd">
 <td><p><strong><em>CallbackID</strong></p></td>
-<td><p>正の数値があり、プラグイン、レンダリングに渡される&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff554216" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554216)"> <strong>IPrintOemUni::CommandCallback</strong> </a>メソッドとしてその<em>dCmdCbID</em>引数。</p></td>
+<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://msdn.microsoft.com/library/windows/hardware/ff554216" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554216)"> <strong>IPrintOemUni::CommandCallback</strong> </a>メソッドとしてその<em>dCmdCbID</em>引数。</p></td>
 <td><p>必要な<a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">プリンター コマンドを動的に生成される</a>します。 有効でない場合 <strong></em>Cmd</strong>を指定します。</p></td>
 </tr>
 <tr class="even">
@@ -64,7 +64,7 @@ ms.locfileid: "56539531"
 <td><p><strong><em>NoPageEject?</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>ことを示す、プリンターを現在の物理ページを取り出すと、コマンドを実行するかどうか。</p>
 <p>使用されている場合にのみ<strong></em>順序</strong>DOC_SETUP セクションを指定します、両面印刷が有効になっている場合。 二重のドキュメントのページ間での早期ページ取り出しを避けるためには、Unidrv のみを発行コマンドでは、この属性を設定する<strong>TRUE</strong>、可能な場合。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>FALSE</strong>、意味のコマンドは、ページの取り出しが発生する可能性があります。</p>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>、意味のコマンドは、ページの取り出しが発生する可能性があります。</p>
 <p>必要があります<strong>TRUE</strong>コマンドは、副作用を引き起こす場合 (外でのコマンドによって制御されているプリンターの設定を変更する場合に、 <strong> <em>NoPageEject?</strong>に設定<strong>TRUE</strong>)。</p></td>
 </tr>
 <tr class="even">
@@ -74,7 +74,7 @@ ms.locfileid: "56539531"
 </tr>
 <tr class="odd">
 <td><p><strong><em>params</strong></p></td>
-<td><p><a href="lists.md" data-raw-source="[List](lists.md)">リスト</a>の<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">標準変数</a>プラグインの表示に渡される&#39;IPrintOemUni::CommandCallback メソッドとして渡される EXTRAPARAM 構造でその<em>pdwParams</em>引数.</p></td>
+<td><p><a href="lists.md" data-raw-source="[List](lists.md)">リスト</a>の<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">標準変数</a>として渡される EXTRAPARAM 構造で、レンダリング プラグインの IPrintOemUni::CommandCallback メソッドに渡されるその<em>pdwParams</em>引数。</p></td>
 <td><p>有効な場合にのみ <strong></em>CallbackID</strong>も指定します。</p></td>
 </tr>
 </tbody>

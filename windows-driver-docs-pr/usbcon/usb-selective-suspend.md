@@ -1,16 +1,16 @@
 ---
-Description: This section provides information about choosing the correct mechanism for the selective suspend feature.
-title: USB のセレクティブ サスペンドします。
+Description: このセクションでは、セレクティブ サスペンド機能の適切なメカニズムの選択についての情報を提供します。
+title: USB セレクティブ サスペンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58342f6c9d500e304c3705a212586e159a4af5bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9c29b337842ee640f962eb6e262a896bbb75c9a
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539415"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464246"
 ---
-# <a name="usb-selective-suspend"></a>USB のセレクティブ サスペンドします。
+# <a name="usb-selective-suspend"></a>USB セレクティブ サスペンド
 
 
 このセクションでは、セレクティブ サスペンド機能の適切なメカニズムの選択についての情報を提供します。
@@ -136,12 +136,12 @@ USB のセレクティブ サスペンド機能は、ハブ上の他のポート
 </thead>
 <tbody>
 <tr class="odd">
-<td>クライアント ドライバーは IRP がアイドル状態を取り消さし、USB ドライバー スタックは呼び出されませんが、 &quot;USB アイドル状態の通知コールバック ルーチン&quot;します。</td>
+<td>クライアント ドライバーが IRP がアイドル状態をキャンセルし、USB ドライバー スタックは、「USB アイドル状態の通知コールバック ルーチン」呼び出されていません。</td>
 <td><p>USB ドライバー スタックは、アイドル状態の IRP を完了します。 デバイスは決してため、 <strong>D0</strong>ドライバーでは、デバイスの状態は変更されません。</p></td>
 </tr>
 <tr class="even">
 <td>クライアント ドライバーは IRP がアイドル状態に取り消さ、USB ドライバー スタックが USB アイドル状態の通知のコールバック ルーチンを呼び出しましたが、まだ返ってが。</td>
-<td><p>クライアント ドライバーが IRP のキャンセルを呼び出された場合でも、USB のアイドル状態の通知コールバック ルーチンが呼び出されることができます。 この場合、クライアント ドライバー&#39;低電力状態にデバイスを同期的に送信することによって、s コールバック ルーチンはデバイスを電源もする必要があります。</p>
+<td><p>クライアント ドライバーが IRP のキャンセルを呼び出された場合でも、USB のアイドル状態の通知コールバック ルーチンが呼び出されることができます。 この場合、クライアント ドライバーのコールバック ルーチンは、低電力状態にデバイスを同期的に送信してデバイスを電源もする必要があります。</p>
 <p>クライアント ドライバーに送信できますし、デバイスが低電力状態にある場合、 <strong>D0</strong>要求。</p>
 <p>または、ドライバーは IRP がアイドル状態を完了し、送信する USB ドライバー スタックの待機できる、 <strong>D0</strong> IRP します。</p>
 <p>コールバック ルーチンは、デバイスを電源 IRP を割り当てるメモリの不足が原因の低電力状態にできない場合はアイドル状態の IRP をキャンセルする必要があり、即座に終了します。 コールバック ルーチンが返されます。 までアイドル状態の IRP は完了しませんそのため、コールバック ルーチンを完了するキャンセルされたアイドル IRP の待機をブロックしないでください。</p></td>

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4e58cfc638d3d6df6fca42325b95ab20d01ff335
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d411783efbcc7ac57fca58c21979085becbe4fb2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463893"
 ---
 # <a name="devpkeydeviceclassupperfilters"></a>DEVPKEY_DeviceClass_UpperFilters
 
@@ -42,7 +42,7 @@ DEVPKEY_DeviceClass_UpperFilters デバイス プロパティは、上位レベ�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>データ形式</strong></p></td>
-<td align="left"><p>&quot;<em>service-name1</em>\0<em>service-name2</em>\0…<em>service-nameN</em>\0\0&quot;</p></td>
+<td align="left"><p>"<em>service-name1</em>\0<em>service-name2</em>\0…<em>service-nameN</em>\0\0"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
@@ -58,14 +58,14 @@ DEVPKEY_DeviceClass_UpperFilters デバイス プロパティは、上位レベ�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 DEVPKEY_DeviceClass_UpperFilters の値は、クラス フィルター ドライバーのインストール時に設定されます。 クラスのフィルター ドライバーをインストールする方法の詳細については、次を参照してください。[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)と[ **INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)します。
@@ -74,7 +74,7 @@ DEVPKEY_DeviceClass_UpperFilters の値は、クラス フィルター ドライ
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_UpperFilters プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**再**クラスのレジストリ キーの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

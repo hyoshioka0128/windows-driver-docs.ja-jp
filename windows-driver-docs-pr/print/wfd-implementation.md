@@ -4,12 +4,12 @@ description: Wi-Fi Direct 印刷の実装のデバイスの要件についてを
 ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c11f8af1dea23f2a68de08748ead4a5a1fb0e81e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9acae4bdd2577d02567bd9feb027ae9a18def63c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558945"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464034"
 ---
 # <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 印刷の実装
 
@@ -141,13 +141,13 @@ Microsoft では、仕入先 ID 0x137 を使用して、Microsoft によって�
 <td><p>垂直方向のペアの識別子 (デバイスの内部のトポロジは、通信)</p></td>
 <td><p>0x1001</p></td>
 <td><p>0x0002</p></td>
-<td><p>参照してください&quot;垂直ペアリング識別子 TLV&quot;以下。</p></td>
+<td><p>以下は、"垂直方向のペアリング識別子 TLV"を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p>トランスポート UUID (デバイスのトランスポート UUID 値)</p></td>
 <td><p>0x1002</p></td>
 <td><p>0x0010</p></td>
-<td><p>参照してください&quot;コンテナー UUID の TLV 定義&quot;上。</p></td>
+<td><p>上記の「UUID のコンテナーの TLV 定義」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -176,7 +176,7 @@ VPI TLV に含まれているデータは 2 バイト長であり、2 つの異�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>[値]</th>
 <th>[トランスポート]</th>
 </tr>
 </thead>
@@ -227,7 +227,7 @@ VPI は WPS プロトコルを使用して、デバイスのサービスをプ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -278,7 +278,7 @@ VPI は WPS プロトコルを使用して、デバイスのサービスをプ�
 <thead>
 <tr class="header">
 <th>サービス</th>
-<th>Identity</th>
+<th>同一。</th>
 </tr>
 </thead>
 <tbody>

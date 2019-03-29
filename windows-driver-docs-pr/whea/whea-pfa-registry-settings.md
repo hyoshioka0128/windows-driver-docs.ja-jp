@@ -1,6 +1,6 @@
 ---
-title: WHEA のポリシー設定
-description: WHEA のポリシー設定
+title: WHEA ポリシー設定
+description: WHEA ポリシー設定
 ms.assetid: 65ef70b7-a517-4428-9e6d-09c6da84e798
 keywords:
 - 予測的な失敗の分析 (PFA) WDK WHEA、レジストリ設定
@@ -9,14 +9,14 @@ keywords:
 - WDK WHEA のポリシー設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62efc525f01cadd330eae9edbf5c0a8e035bf6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dcbafed57b2ffb0e88de467d680cab4006e7b6c2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532151"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350365"
 ---
-# <a name="whea-policy-settings"></a>WHEA のポリシー設定
+# <a name="whea-policy-settings"></a>WHEA ポリシー設定
 
 
 予測的な障害の分析 (PFA) として Windows ハードウェア エラー アーキテクチャ (WHEA) での実行は、レジストリ設定を使用して構成されます。 WHEA は、コンピューター システムの起動時に、これらのレジストリ設定を読み取ります。 これらの設定を変更するを有効にするには、システムを再起動する必要があります。
@@ -80,7 +80,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WHEA\Policy
 <tr class="odd">
 <td><p></p>
 <p><strong>MemPfaDisable</strong></p></td>
-<td><p>ブール値を指定するかどうか WHEA&#39;s PFA ECC メモリ ページが無効になっています。</p>
+<td><p>WHEA の PFA ECC メモリ ページが無効になっているかどうかを指定するブール値。</p>
 <p>値が 0 のでは、ECC メモリ ページの PFA ができるようにします。 その他の値には、ECC メモリ ページの PFA が無効にします。</p>
 <p>この設定の既定値は 0 です。</p></td>
 </tr>

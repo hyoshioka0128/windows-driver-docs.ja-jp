@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f12e096d02c698cac65541dc2d4903c370c6bdd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b4fb8b1627b224e8188e753bd39dddf814578480
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527757"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464132"
 ---
-# <a name="bug-check-0x23-fatfilesystem"></a>バグ チェック 0x23 の。FAT\_ファイル\_システム
+# <a name="bug-check-0x23-fatfilesystem"></a>バグ チェック 0x23:FAT\_ファイル\_システム
 
 
 FAT\_ファイル\_システムのバグ チェックが 0x00000023 の値を持ちます。 これは、FAT ファイル システムで問題が発生したことを示します。
@@ -44,7 +44,7 @@ FAT\_ファイル\_システムのバグ チェックが 0x00000023 の値を持
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>ソース ファイルと行番号情報を指定します。 上位 16 ビット (後の最初の 4 つの 16 進、 &quot;0 x&quot;) 識別子番号でソース ファイルを識別します。 下位 16 ビットは、バグ チェックが発生したファイル内のソース行を特定します。</p></td>
+<td align="left"><p>ソース ファイルと行番号情報を指定します。 上位 16 ビット ("0 x"の後に最初の 4 つの 16 進数字) は、その識別子番号によってソース ファイルを特定します。 下位 16 ビットは、バグ チェックが発生したファイル内のソース行を特定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

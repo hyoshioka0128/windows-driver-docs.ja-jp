@@ -1,18 +1,17 @@
 ---
-title: アカウントの準備
-description: アカウントの準備
+title: アカウントのプロビジョニング
+description: アカウントのプロビジョニング
 ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61395fc97cbb93c63c93226ac8904fbd216a70fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dbf7dc1f67600a9deccc4773d733330654744c7a
+ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557893"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349271"
 ---
-# <a name="account-provisioning"></a>アカウントの準備
-
+# <a name="account-provisioning"></a>アカウントのプロビジョニング
 
 プロビジョニングは、オペレーターのネットワークに接続するために必要な情報を Windows コンピューターの構成を表します。 通常、プロビジョニングは、モバイル ブロード バンドのサブスクリプションの購入後に実行します。 Windows では、演算子から XML ベースのプロビジョニング ファイルを受け入れます。 プロビジョニング API では、モバイル ブロード バンドのアプリを使用するか、購入の web サイトに、演算子からプロビジョニング XML ファイルを適用します。
 
@@ -22,11 +21,11 @@ ms.locfileid: "56557893"
 
 プロビジョニングのスキーマの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
 
-## <a name="span-idupdatingtheprovisioningmetadataspanspan-idupdatingtheprovisioningmetadataspanspan-idupdatingtheprovisioningmetadataspanupdating-the-provisioning-metadata"></a><span id="Updating_the_provisioning_metadata"></span><span id="updating_the_provisioning_metadata"></span><span id="UPDATING_THE_PROVISIONING_METADATA"></span>プロビジョニングのメタデータを更新します。
+## <a name="updating-the-provisioning-metadata"></a>プロビジョニングのメタデータを更新します。
 
 コンピューターのプロビジョニングのメタデータを更新するいくつかの方法はあります。
 
-### <a name="span-idmobilebroadbandappspanspan-idmobilebroadbandappspanspan-idmobilebroadbandappspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>モバイル ブロード バンド アプリ
+### <a name="mobile-broadband-app"></a>モバイル ブロード バンド アプリ
 
 モバイル ブロード バンド アプリは、コンピューターにインストールした後、取得または更新されたアプリに実装する任意のトリガーに基づくプロビジョニング ファイルを生成することできます。
 
@@ -34,48 +33,47 @@ ms.locfileid: "56557893"
 
 モバイル ブロード バンド アプリは、次のトリガーを使用して、プロビジョニングのメタデータを更新できます。
 
--   **使用状況**後、データの制限は最初に構成すると、すべて 5% の使用状況の増分でアプリに通知を Windows がわかります。 これにより、アプリが最新の使用状況情報を取得します。
+- **使用状況**後、データの制限は最初に構成すると、すべて 5% の使用状況の増分でアプリに通知を Windows がわかります。 これにより、アプリが最新の使用状況情報を取得します。
 
--   **タイマー**タイマーは、適切な時間間隔でプロビジョニングのメタデータを更新できます。
+- **タイマー**タイマーは、適切な時間間隔でプロビジョニングのメタデータを更新できます。
 
--   **受信した SMS**アプリで認識される SMS メッセージを送信することができます。 これには、更新を開始します。 または、しきい値通知を受信すると、更新された使用量を自動的にチェックするメッセージを定義します。
+- **受信した SMS**アプリで認識される SMS メッセージを送信することができます。 これには、更新を開始します。 または、しきい値通知を受信すると、更新された使用量を自動的にチェックするメッセージを定義します。
 
--   **Windows 通知サービス**Any UWP アプリがプッシュ通知を登録し、コンテンツに基づいてアクションを実行します。 この操作は、更新プログラムをプロビジョニングするため、通知チャンネルとして使用できます。
+- **Windows 通知サービス**Any UWP アプリがプッシュ通知を登録し、コンテンツに基づいてアクションを実行します。 この操作は、更新プログラムをプロビジョニングするため、通知チャンネルとして使用できます。
 
--   **大規模な場所の変更**場所の変更がユーザーの新しい場所に更新された設定を適用するアプリをトリガー可能性がありますさまざまなパラメーターは、さまざまなロケールであるユーザーに適用される場合。
+- **大規模な場所の変更**場所の変更がユーザーの新しい場所に更新された設定を適用するアプリをトリガー可能性がありますさまざまなパラメーターは、さまざまなロケールであるユーザーに適用される場合。
 
--   **タイム ゾーンの変更**大きな領域サイズは、システムのタイム ゾーンの変更として使用できます、プロキシの場所を変更します。 これは、GPS またはモバイル ブロード バンドを持たないコンピューターで興味のあることができます。
+- **タイム ゾーンの変更**大きな領域サイズは、システムのタイム ゾーンの変更として使用できます、プロキシの場所を変更します。 これは、GPS またはモバイル ブロード バンドを持たないコンピューターで興味のあることができます。
 
-### <a name="span-idweb-basedprovisioningspanspan-idweb-basedprovisioningspanspan-idweb-basedprovisioningspanweb-based-provisioning"></a><span id="Web-based_provisioning"></span><span id="web-based_provisioning"></span><span id="WEB-BASED_PROVISIONING"></span>Web ベースのプロビジョニング
+### <a name="web-based-provisioning"></a>Web ベースのプロビジョニング
 
 Web サイトを使用してプロビジョニング データを指定できます、 [ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316) API。 この API に渡されるファイルのプロビジョニングは、X.509 証明書と XML DSig を使用して署名する必要があります。
 
 証明書は、APN データベース、サービスのメタデータまたはメタデータ ファイルをプロビジョニングする前のアカウントを使用して、コンピューターを事前に用意されたであることができます。 証明書は既に信頼されている場合、ユーザー操作はありません。 証明書は、コンピューターにまだは認識されて、EV 証明書である必要があり、証明書を受け入れる前に同意を求められます。
 
-### <a name="span-idautomaticprovisioningrefreshspanspan-idautomaticprovisioningrefreshspanspan-idautomaticprovisioningrefreshspanautomatic-provisioning-refresh"></a><span id="Automatic_provisioning_refresh"></span><span id="automatic_provisioning_refresh"></span><span id="AUTOMATIC_PROVISIONING_REFRESH"></span>自動プロビジョニングの更新
+### <a name="automatic-provisioning-refresh"></a>自動プロビジョニングの更新
 
 プロビジョニング ファイルには、特定の SMS メッセージに応答したり、スケジュールされた間隔で更新されたプロビジョニング ファイルを自動的に取得する Windows のためのディレクティブを含めることができます。 このメソッドでは、モバイル ブロード バンド アプリがローカル コンピューターにインストールすることは必要ありません。
 
-## <a name="span-idapmdconspanspan-idapmdconspanprovisioning-metadata-contents"></a><span id="apmdcon"></span><span id="APMDCON"></span>プロビジョニングのメタデータの内容
-
+## <a name="provisioning-metadata-contents"></a>プロビジョニングのメタデータの内容
 
 プロビジョニングのメタデータには、次のセクションが含まれています。
 
--   [グローバル](#global)
+- [グローバル](#global)
 
--   [アクティブ化](#activation)
+- [アクティブ化](#activation)
 
--   [モバイル ブロード バンド情報](#mobile-broadband-information)
+- [モバイル ブロード バンド情報](#mobile-broadband-information)
 
--   [Wi-fi 情報](#wi-fi-information)
+- [Wi-fi 情報](#wi-fi-information)
 
--   [プラン情報](#plan-information)
+- [プラン情報](#plan-information)
 
--   [更新](#refresh)
+- [[更新]](#refresh)
 
--   [署名](#signature)
+- [署名](#signature)
 
--   [許可されている組み合わせ](#permitted-combinations)
+- [許可されている組み合わせ](#permitted-combinations)
 
 これらのセクションの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
 
@@ -95,11 +93,11 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 デバイスのアクティブ化では、アクティブ化プロセスが、バック エンドに完了した後に発生します。 PC がネットワークに接続する前に特定の手順を実行する必要があります。 プロビジョニング エンジンでは、デバイスのアクティブ化要素で受信したアクティブ化の手順を使用します。 値が指定されていない場合は、クライアントの操作もする必要はありません。 使用可能なアクションは次のとおりです。
 
--   **再接続**切断し、オペレーターのネットワークに接続します。
+- **再接続**切断し、オペレーターのネットワークに接続します。
 
     **再登録**切断とオペレーターのネットワークに登録します。
 
--   **データ**データや接続をアクティブ化するデバイスに送信する命令です。 プロビジョニング エンジンでは、デバイスには、このデータを渡します。 CDMA、この含めることができます指示など **\*228** OTA プログラミングのセッションを開始し、ネットワークに再接続します。
+- **データ**データや接続をアクティブ化するデバイスに送信する命令です。 プロビジョニング エンジンでは、デバイスには、このデータを渡します。 CDMA、この含めることができます指示など **\*228** OTA プログラミングのセッションを開始し、ネットワークに再接続します。
 
 ### <a name="mobile-broadband-information"></a>モバイル ブロード バンド情報
 
@@ -109,9 +107,9 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 通信事業者ネットワーク上のサブスクライバーの情報を定義します。 使用できる 2 つの異なるプロファイルがあります。
 
--   [**PurchaseProfile**](https://msdn.microsoft.com/library/windows/apps/hh868301):新しいサブスクリプションを購入するオペレーターのネットワークに接続するために必要な情報です。
+- [**PurchaseProfile**](https://msdn.microsoft.com/library/windows/apps/hh868301):新しいサブスクリプションを購入するオペレーターのネットワークに接続するために必要な情報です。
 
--   [**DefaultProfile** ](https://msdn.microsoft.com/library/windows/apps/hh868290)すべてのモバイル ブロード バンド サブスクリプションは、ホーム ネットワーク オペレーターへの接続に使用される 1 つの既定のプロファイルを持つことができます。 Windows 接続マネージャーは、ネットワークに自動接続するため、このプロファイルを使用します。
+- [**DefaultProfile** ](https://msdn.microsoft.com/library/windows/apps/hh868290)すべてのモバイル ブロード バンド サブスクリプションは、ホーム ネットワーク オペレーターへの接続に使用される 1 つの既定のプロファイルを持つことができます。 Windows 接続マネージャーは、ネットワークに自動接続するため、このプロファイルを使用します。
 
     ```xml
     <MBNProfiles>
@@ -141,19 +139,19 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 Windows が、モバイル ブロード バンド ネットワークを表示する方法を指定することができますをブランド化します。 この情報は、存在する場合に、サービス メタデータをオーバーライドします。 情報が指定されていない場合は、サービス メタデータ パッケージの内容が使用されます。 ブランド化要素は次のとおりです。
 
--   [**ロゴ**](https://msdn.microsoft.com/library/windows/apps/hh868460) Base64 でエンコードされました。PNG またはします。XML に埋め込まれている BMP ファイルです。 このロゴは、ネットワークの一覧に表示する場合は、モバイル ブロード バンド プロファイルに適用されます。
+- [**ロゴ**](https://msdn.microsoft.com/library/windows/apps/hh868460) Base64 でエンコードされました。PNG またはします。XML に埋め込まれている BMP ファイルです。 このロゴは、ネットワークの一覧に表示する場合は、モバイル ブロード バンド プロファイルに適用されます。
 
--   [**名前**](https://msdn.microsoft.com/library/windows/apps/hh868463)モバイル ブロード バンド プロファイルの通信事業者の表示名を設定します。
+- [**名前**](https://msdn.microsoft.com/library/windows/apps/hh868463)モバイル ブロード バンド プロファイルの通信事業者の表示名を設定します。
 
-**SMS の解析**
+#### <a name="sms-parsing"></a>SMS の解析
 
 テキスト メッセージを識別およびプロビジョニング XML ファイルの一部として情報を抽出規則をプロビジョニングすることができます。 データ使用状況の統計を更新するか、プロビジョニング情報の更新を開始する、SMS メッセージを使用することができます。 これらのメッセージは、次の組み合わせによって識別できます。
 
--   ベアラーの種類 (SMS/USSD)
+- ベアラーの種類 (SMS/USSD)
 
--   送信者 (SMS のみ)
+- 送信者 (SMS のみ)
 
--   正規表現
+- 正規表現
 
 SMS 通知の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
 
@@ -228,8 +226,6 @@ SMS 通知の詳細については、次を参照してください。 [mobile o
     </tbody>
     </table>
 
-         
-
   - **DataLimit**:絶対に使用できる、ユーザーが許可されているバイト数これには、値を表す単位を指定するグループが含まれます。
 
   - **混雑 OverDataLimit**:ユーザーが、データの上限を超えたこと、負荷の高いネットワークが存在するかを示すアプリに報告するフラグを変更します。
@@ -240,35 +236,32 @@ SMS 通知の詳細については、次を参照してください。 [mobile o
 
 **注意**  だけで SMS メッセージを使用できる信頼されているため、SMS メッセージが Windows の動作に影響します。 センダのアドレスを制限することで、セキュリティが維持されます。 このセキュリティ メソッドでは、ネットワークの SMS ゲートウェイは、制限された送信者からのメッセージがスプーフィングされるにより前提としています。
 
- 
-
 ### <a name="wi-fi-information"></a>Wi-fi 情報
 
 このセクションでは、使用する Windows の Wi-fi ネットワーク プロファイルの任意の数を指定できます。 セクションの形式は、Windows ネイティブ WLAN API によって使用される XML スキーマに似ています。
 
-**注**  他のすべての設定が同じ場合、1 つのプロファイルは複数の Ssid を含めることができます。 (認証方法、暗号化の設定、プラン、およびなど) は、他の方法でさまざまなネットワークが異なる場合は、追加のプロファイルを作成する必要があります。
-
- 
+> [!NOTE]
+> その他のすべての設定が同じ場合、1 つのプロファイルは複数の Ssid を含めることができます。 (認証方法、暗号化の設定、プラン、およびなど) は、他の方法でさまざまなネットワークが異なる場合は、追加のプロファイルを作成する必要があります。
 
 WLAN セクションを指定すると、コンピューターで構成される必要がありますすべてのプロファイルを指定する必要もあります。 それらのプロファイルでは、データ プランを参照するプランのセクションでは、含まれる必要があります。 このセクションが処理されるときに発生する動作は次のとおりです。
 
--   コンピューターに、不要になったに指定されているプロファイルが削除されます。
+- コンピューターに、不要になったに指定されているプロファイルが削除されます。
 
--   プロファイルを指定する場合、更新または作成します。
+- プロファイルを指定する場合、更新または作成します。
 
--   空の WLAN のセクションでは、すべてのプロファイルを削除します。
+- 空の WLAN のセクションでは、すべてのプロファイルを削除します。
 
--   変更されていないコンピューターで WLAN プロファイルのまま WLAN セクションを省略するとします。
+- 変更されていないコンピューターで WLAN プロファイルのまま WLAN セクションを省略するとします。
 
 このセクションでは、追加のノードは、関連付けられているプランです。 このノードは、Windows に WLAN のプロファイルを関連付けるプラン セクションで説明されているプランを使用できます。 プランでは、ネットワークの使用状況測定の状態の Windows に通知し、コンピューターがネットワークに接続されている期間中に Windows の動作を制御することができます。
 
-**暗号化されていないネットワーク、自動認証なし**
+#### <a name="unencrypted-network-no-automatic-authentication"></a>暗号化されていないネットワーク、自動認証なし
 
 このプロファイルは、オープン ネットワークへの接続に Windows を構成します。
 
--   このネットワークに captive portal が含まれている場合は、ネットワークに接続するたびに、ブラウザーが開かれます。
+- このネットワークに captive portal が含まれている場合は、ネットワークに接続するたびに、ブラウザーが開かれます。
 
--   ネットワークに captive portal が含まれていない場合は、操作を行わなくても、ユーザーが接続されています。
+- ネットワークに captive portal が含まれていない場合は、操作を行わなくても、ユーザーが接続されています。
 
 ``` syntax
 <WLANProfile xmlns="http://www.microsoft.com/networking/CarrierControl/WLAN/v1">
@@ -290,15 +283,15 @@ WLAN セクションを指定すると、コンピューターで構成される
 </WLANProfile>
 ```
 
-**暗号化されていないネットワーク、WISPr 認証**
+#### <a name="unencrypted-network-wispr-authentication"></a>暗号化されていないネットワーク、WISPr 認証
 
 このプロファイルでは、オープン ネットワークへの接続に Windows を構成し、ワイヤレス インターネット サービス プロバイダーがローミング (WISPr) 認証を使用します。
 
--   ネットワークに WISPr 対応 captive portal が含まれている場合、指定されたユーザー名とパスワードが指定された認証サーバーに送信されます。
+- ネットワークに WISPr 対応 captive portal が含まれている場合、指定されたユーザー名とパスワードが指定された認証サーバーに送信されます。
 
--   Captive portal が WISPr の対応でない場合は、ネットワークに接続するたびに、ブラウザーが開かれます。
+- Captive portal が WISPr の対応でない場合は、ネットワークに接続するたびに、ブラウザーが開かれます。
 
--   ネットワークに captive portal が含まれていない場合は、操作を行わなくても、ユーザーが接続されています。
+- ネットワークに captive portal が含まれていない場合は、操作を行わなくても、ユーザーが接続されています。
 
 ``` syntax
 <WLANProfile xmlns="http://www.microsoft.com/networking/CarrierControl/WLAN/v1">
@@ -327,7 +320,7 @@ WLAN セクションを指定すると、コンピューターで構成される
 </WLANProfile>
 ```
 
-**暗号化されたネットワーク、EAP SIM 認証**
+#### <a name="encrypted-network-eap-sim-authentication"></a>暗号化されたネットワーク、EAP SIM 認証
 
 このプロファイルは、ホット スポット 2.0 ネットワークなど、認証の種類として、SIM を使用して、暗号化されたネットワークへの接続に Windows を構成します。 ホット スポット 2.0 では、EAP SIM 認証で WPA2-エンタープライズを使用する、このようなネットワークを定義します。
 
@@ -369,15 +362,15 @@ WLAN セクションを指定すると、コンピューターで構成される
 </WLANProfile>
 ```
 
-**暗号化されていないネットワーク、アプリ ベースの認証**
+#### <a name="unencrypted-network-app-based-authentication"></a>暗号化されていないネットワーク、アプリ ベースの認証
 
 このプロファイルは、オープン ネットワークに接続し、モバイル ブロード バンド アプリと連携 WISPr 認証を使用して Windows を構成します。
 
--   ネットワークに captive portal が含まれている場合、アプリが WISPr 資格情報を提供するバック グラウンドで開かれます。 資格情報は、指定した認証サーバーに送信されます。
+- ネットワークに captive portal が含まれている場合、アプリが WISPr 資格情報を提供するバック グラウンドで開かれます。 資格情報は、指定した認証サーバーに送信されます。
 
--   Captive portal が WISPr の対応でない場合は、ネットワークに接続するたびに、ブラウザーが開かれます。
+- Captive portal が WISPr の対応でない場合は、ネットワークに接続するたびに、ブラウザーが開かれます。
 
--   ネットワークに captive portal が含まれていない場合は、操作を行わなくても、ユーザーが接続されています。
+- ネットワークに captive portal が含まれていない場合は、操作を行わなくても、ユーザーが接続されています。
 
 ``` syntax
 <WLANProfile xmlns="http://www.microsoft.com/networking/CarrierControl/WLAN/v1">
@@ -419,49 +412,47 @@ WLAN セクションを指定すると、コンピューターで構成される
 
 一般に、顧客のサブスクリプションの期間にわたって低頻度で変更する要素を含みます。
 
--   [**PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)演算子での顧客が請求関係の種類。
+- [**PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)演算子での顧客が請求関係の種類。
 
-    -   **無制限**使用状況では追加コストは発生しません。
+  - **無制限**使用状況では追加コストは発生しません。
 
-    -   **固定**ユーザーには、固定コストの使用量が割り当てられます。
+  - **固定**ユーザーには、固定コストの使用量が割り当てられます。
 
-    -   **変数**ユーザーに基づいて使用量を支払います。
+  - **変数**ユーザーに基づいて使用量を支払います。
 
--   [**SecurityUpdatesExempt** ](https://msdn.microsoft.com/library/windows/apps/hh868374)セキュリティがお客様による使用量にカウントを更新するかどうかを指定するブール値。
+- [**SecurityUpdatesExempt** ](https://msdn.microsoft.com/library/windows/apps/hh868374)セキュリティがお客様による使用量にカウントを更新するかどうかを指定するブール値。
 
--   [**DataLimitInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868367)ユーザーの場合、使用量が割り当てられた[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)は**固定**します。
+- [**DataLimitInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868367)ユーザーの場合、使用量が割り当てられた[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)は**固定**します。
 
--   [**BillingCycle** ](https://msdn.microsoft.com/library/windows/apps/hh868366)定義、プランの開始日付と時間、その継続時間、および請求サイクルの最後で何が発生します。
+- [**BillingCycle** ](https://msdn.microsoft.com/library/windows/apps/hh868366)定義、プランの開始日付と時間、その継続時間、および請求サイクルの最後で何が発生します。
 
--   [**BandwidthInKbps** ](https://msdn.microsoft.com/library/windows/apps/hh868343)としてネットワークで許可されているユーザーの接続を高速化; これは、そのプランでは、標準を反映または輻輳または過剰な使用 (最大 2 Gbps) のため、通信事業者による削減率が反映されます。
+- [**BandwidthInKbps** ](https://msdn.microsoft.com/library/windows/apps/hh868343)としてネットワークで許可されているユーザーの接続を高速化; これは、そのプランでは、標準を反映または輻輳または過剰な使用 (最大 2 Gbps) のため、通信事業者による削減率が反映されます。
 
--   [**MaxTransferSizeInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868371)準拠しているアプリケーションを許可するように使用されている接続の明示的なユーザーの承認がない場合、従量制課金接続を経由する個別のダウンロードのサイズを表す整数。
+- [**MaxTransferSizeInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868371)準拠しているアプリケーションを許可するように使用されている接続の明示的なユーザーの承認がない場合、従量制課金接続を経由する個別のダウンロードのサイズを表す整数。
 
--   [**UserSMSEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh868376)ユーザー - SMS のサポートが、プランに含まれるかどうかを示します。 True の場合、Windows には、モバイル ブロード バンド インターフェイスが使用されていない場合でも、コネクト スタンバイのネットワークに接続されたデバイスが保持されます。 コンピューターがアイドル状態のとき、場合は false、Windows の電源の電源を節約するためにモバイル ブロード バンド インターフェイスがネットワークでアドレス指定可能なデバイスでないされいます。
+- [**UserSMSEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh868376)ユーザー - SMS のサポートが、プランに含まれるかどうかを示します。 True の場合、Windows には、モバイル ブロード バンド インターフェイスが使用されていない場合でも、コネクト スタンバイのネットワークに接続されたデバイスが保持されます。 コンピューターがアイドル状態のとき、場合は false、Windows の電源の電源を節約するためにモバイル ブロード バンド インターフェイスがネットワークでアドレス指定可能なデバイスでないされいます。
 
 ### <a name="usage"></a>使用方法
 
 次の要素は、高い頻度で変更できます。
 
--   [**UsageInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868350)ユーザーの最新のデータ使用量。
+- [**UsageInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868350)ユーザーの最新のデータ使用量。
 
--   [**OverDataLimit** ](https://msdn.microsoft.com/library/windows/apps/hh868465)を示すブール値をユーザーが割り当てられた使用量を渡すかどうかを示す場合[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)は**固定**します。
+- [**OverDataLimit** ](https://msdn.microsoft.com/library/windows/apps/hh868465)を示すブール値をユーザーが割り当てられた使用量を渡すかどうかを示す場合[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)は**固定**します。
 
--   [**混雑**](https://msdn.microsoft.com/library/windows/apps/hh868449)通常よりも低接続速度は過剰な使用により強制されているかどうかを示す、ブール値。 Congested フラグことを示します、ネットワークが、現在発生している (またはされると予想して)、負荷の高い優先順位の低い転送を可能であれば、別の時間まで延期する必要があります。 ピーク時間帯などの概念を示すために、オーバー ロードされたホット スポットに応答するか、このフラグを使用することができます。
+- [**混雑**](https://msdn.microsoft.com/library/windows/apps/hh868449)通常よりも低接続速度は過剰な使用により強制されているかどうかを示す、ブール値。 Congested フラグことを示します、ネットワークが、現在発生している (またはされると予想して)、負荷の高い優先順位の低い転送を可能であれば、別の時間まで延期する必要があります。 ピーク時間帯などの概念を示すために、オーバー ロードされたホット スポットに応答するか、このフラグを使用することができます。
 
 ### <a name="refresh"></a>Refresh
 
 ネットワークの変更のため、またはテクニカル サポートについては、必要に応じて、コンピューターに更新された設定をプッシュできます。 Windows では、ユーザーやプロビジョニング API によって提供される情報を使用して定期的な更新を試行します。 更新は、演算子からの SMS 通知によってトリガーできます。 更新を有効にするには、プロビジョニング XML では、次の情報を提供する必要があります。
 
--   [**TrustedCertificates** ](https://msdn.microsoft.com/library/windows/apps/hh868307)今後プロビジョニング ファイルの署名が信頼された証明書の拇印の一覧。
+- [**TrustedCertificates** ](https://msdn.microsoft.com/library/windows/apps/hh868307)今後プロビジョニング ファイルの署名が信頼された証明書の拇印の一覧。
 
--   [**DelayInDays** ](https://msdn.microsoft.com/library/windows/apps/hh868291) (整数) の数日前に、更新は行われません。
+- [**DelayInDays** ](https://msdn.microsoft.com/library/windows/apps/hh868291) (整数) の数日前に、更新は行われません。
 
--   [**RefreshURL** ](https://msdn.microsoft.com/library/windows/apps/hh868303)ユーザーの最新のコピーを取得するための HTTPS URL のファイルをプロビジョニングします。
+- [**RefreshURL** ](https://msdn.microsoft.com/library/windows/apps/hh868303)ユーザーの最新のコピーを取得するための HTTPS URL のファイルをプロビジョニングします。
 
--   [**ユーザー名**](https://msdn.microsoft.com/library/windows/apps/hh868308) & [**パスワード**](https://msdn.microsoft.com/library/windows/apps/hh868297)再プロビジョニング ファイルを取得するときに、HTTP 認証を使用して、表示される省略可能な資格情報。 格納されている場合、この情報を暗号化する必要があります。
-
--   
+- [**ユーザー名**](https://msdn.microsoft.com/library/windows/apps/hh868308) & [**パスワード**](https://msdn.microsoft.com/library/windows/apps/hh868297)再プロビジョニング ファイルを取得するときに、HTTP 認証を使用して、表示される省略可能な資格情報。 格納されている場合、この情報を暗号化する必要があります。
 
 または、モバイル ブロード バンド アプリを提供できます、新しいファイルをプロビジョニング、いつでも、アプリとオペレーターのバックエンド間の通信に基づきます。
 
@@ -525,40 +516,37 @@ WLAN セクションを指定すると、コンピューターで構成される
 </tbody>
 </table>
 
- 
-
 ### <a name="permitted-combinations"></a>許可されている組み合わせ
 
 [ **Global** ](https://msdn.microsoft.com/library/windows/apps/hh868294)は他のノードの特定の組み合わせは一般的なスキーマで必要なだけ最初のレベル ノードです。 このセクションでは、これらの一般的な組み合わせについて説明します。
 
--   **プロファイル (WLANProfiles、MBNProfiles) + 説明と使用状況を含むプラン**情報およびそれぞれに現在の使用量の計画を作成または更新プログラムの完全なプロファイルの設定し、適用されます。 プロファイルが同じプロビジョニング ファイルで指定されていないプランを参照し、プロビジョニング ファイル内のプロファイルには、指定したプランが参照されていない場合に警告が返される場合は、エラーが返されます。
+- **プロファイル (WLANProfiles、MBNProfiles) + 説明と使用状況を含むプラン**情報およびそれぞれに現在の使用量の計画を作成または更新プログラムの完全なプロファイルの設定し、適用されます。 プロファイルが同じプロビジョニング ファイルで指定されていないプランを参照し、プロビジョニング ファイル内のプロファイルには、指定したプランが参照されていない場合に警告が返される場合は、エラーが返されます。
 
--   **説明と (必要に応じて) の使用状況を含むプラン**既存の更新プログラムの計画情報がコンピューターで、プロファイルしますが、コンピューター上のプロファイルを変更しません。 コンピューターのプロファイルには、指定したプランが参照されていない場合は、警告が返されます。
+- **説明と (必要に応じて) の使用状況を含むプラン**既存の更新プログラムの計画情報がコンピューターで、プロファイルしますが、コンピューター上のプロファイルを変更しません。 コンピューターのプロファイルには、指定したプランが参照されていない場合は、警告が返されます。
 
--   **プランの使用状況をのみ含む**コンピューターで、既存のプロファイルの使用状況情報を更新します。 ただし、プロファイルまたは各プロファイルに関連付けられているプランの説明を変更しません。
+- **プランの使用状況をのみ含む**コンピューターで、既存のプロファイルの使用状況情報を更新します。 ただし、プロファイルまたは各プロファイルに関連付けられているプランの説明を変更しません。
 
-## <a name="span-idcommonscenariosspanspan-idcommonscenariosspanspan-idcommonscenariosspancommon-scenarios"></a><span id="Common_Scenarios"></span><span id="common_scenarios"></span><span id="COMMON_SCENARIOS"></span>一般的なシナリオ
-
+## <a name="common-scenarios"></a>一般的なシナリオ
 
 プロビジョニングのメタデータを作成する必要がある一般的なシナリオを次に示します。
 
--   [スキーマをプロビジョニングするアカウントを検索します。](#find-the-account-provisioning-schema)
+- [スキーマをプロビジョニングするアカウントを検索します。](#find-the-account-provisioning-schema)
 
--   [デバイスにプロビジョニング XML を適用します。](#apply-provisioning-xml-to-the-device)
+- [デバイスにプロビジョニング XML を適用します。](#apply-provisioning-xml-to-the-device)
 
--   [モバイル ブロード バンド ネットワークに自動的に接続するデバイスのプロビジョニング](#provision-the-device-to-connect-automatically-to-a-mobile-broadband-network)
+- [モバイル ブロード バンド ネットワークに自動的に接続するデバイスのプロビジョニング](#provision-the-device-to-connect-automatically-to-a-mobile-broadband-network)
 
--   [Wi-fi ネットワークに自動的に接続するデバイスのプロビジョニング](#provision-the-device-to-connect-automatically-to-a-wi-fi-network)
+- [Wi-fi ネットワークに自動的に接続するデバイスのプロビジョニング](#provision-the-device-to-connect-automatically-to-a-wi-fi-network)
 
--   [WISPr が有効なホット スポットに自動的に接続するデバイスをプロビジョニングします。](#provision-the-device-to-connect-automatically-to-a-wispr-enabled-hotspot)
+- [WISPr が有効なホット スポットに自動的に接続するデバイスをプロビジョニングします。](#provision-the-device-to-connect-automatically-to-a-wispr-enabled-hotspot)
 
--   [モバイル ブロード バンド デバイスにライセンス認証を送信します。](#sending-activation-to-the-mobile-broadband-device)
+- [モバイル ブロード バンド デバイスにライセンス認証を送信します。](#sending-activation-to-the-mobile-broadband-device)
 
--   [プロビジョニングが完了したら、ネットワークに再接続する場合は、モバイル ブロード バンド デバイスを強制します。](#force-the-mobile-broadband-device-to-reconnect-to-the-network-after-provisioning-completes)
+- [プロビジョニングが完了したら、ネットワークに再接続する場合は、モバイル ブロード バンド デバイスを強制します。](#force-the-mobile-broadband-device-to-reconnect-to-the-network-after-provisioning-completes)
 
--   [接続プロファイルのデータ使用状況の統計を更新しています](#updating-data-usage-statistics-for-a-connection-profile)
+- [接続プロファイルのデータ使用状況の統計を更新しています](#updating-data-usage-statistics-for-a-connection-profile)
 
--   [SMS メッセージを使用してデータの使用状況を更新します。](#update-data-usage-by-using-an-sms-message)
+- [SMS メッセージを使用してデータの使用状況を更新します。](#update-data-usage-by-using-an-sms-message)
 
 ### <a name="find-the-account-provisioning-schema"></a>スキーマをプロビジョニングするアカウントを検索します。
 
@@ -570,27 +558,27 @@ XSD スキーマで使用可能な **%systemroot%\\スキーマ\\プロビジョ
 
 モバイル ブロード バンド アプリからプロビジョニングします。
 
-1.  インスタンスを作成、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)インスタンス (を使用して[ **Windows.Networking.NetworkOperators.ProvisioningAgent.CreateFromNetworkAccountId**](https://msdn.microsoft.com/library/windows/apps/br207398)).
+1. インスタンスを作成、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)インスタンス (を使用して[ **Windows.Networking.NetworkOperators.ProvisioningAgent.CreateFromNetworkAccountId**](https://msdn.microsoft.com/library/windows/apps/br207398)).
 
-2.  呼び出す[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、符号なしのプロビジョニングの XML ドキュメントに渡します。
+2. 呼び出す[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、符号なしのプロビジョニングの XML ドキュメントに渡します。
 
 非同期操作の完了と、プロビジョニング操作の結果が返されます。
 
 モバイル ブロード バンド アプリ以外の UWP アプリからプロビジョニングします。
 
-1.  署名付きのアカウント プロビジョニング XML ドキュメントを生成します。
+1. 署名付きのアカウント プロビジョニング XML ドキュメントを生成します。
 
-2.  インスタンスを作成、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397) (を既定のコンス トラクターを使用) のインスタンス。
+2. インスタンスを作成、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397) (を既定のコンス トラクターを使用) のインスタンス。
 
-3.  呼び出す[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、署名の XML ドキュメントに渡します。
+3. 呼び出す[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、署名の XML ドキュメントに渡します。
 
 非同期操作が完了して、プロビジョニング操作の結果が返されます。
 
 Web サイト: から
 
-1.  署名付きのアカウント プロビジョニング XML ドキュメントを生成します。
+1. 署名付きのアカウント プロビジョニング XML ドキュメントを生成します。
 
-2.  呼び出す[ **window.external.msProvisionNetworks**](https://msdn.microsoft.com/library/hh848316)、署名の XML ドキュメントに渡します。
+2. 呼び出す[ **window.external.msProvisionNetworks**](https://msdn.microsoft.com/library/hh848316)、署名の XML ドキュメントに渡します。
 
 操作が完了して、プロビジョニング操作の結果が返されます。
 
@@ -622,9 +610,8 @@ Web サイト: から
 </CarrierProvisioning>
 ```
 
-**注**  の子要素**DefaultProfile**が必要です。 詳細については、プロビジョニングの XML スキーマ リファレンスを参照してください。
-
- 
+> [!NOTE]
+> 子要素**DefaultProfile**が必要です。 詳細については、プロビジョニングの XML スキーマ リファレンスを参照してください。
 
 ### <a name="provision-the-device-to-connect-automatically-to-a-wi-fi-network"></a>Wi-fi ネットワークに自動的に接続するデバイスのプロビジョニング
 
@@ -665,7 +652,7 @@ Web サイト: から
 
 ホット スポット認証を有効にする次の 2 つの方法のいずれかを使用できます。
 
-1.  使用して資格情報を直接宣言、 **BasicAuth**ディレクティブ。
+1. 使用して資格情報を直接宣言、 **BasicAuth**ディレクティブ。
 
     ``` syntax
     <?xml version="1.0"?>
@@ -701,7 +688,7 @@ Web サイト: から
     </CarrierProvisioning>
     ```
 
-2.  使用して認証用のアプリにリダイレクト、 **ExtAuth**ディレクティブ。
+2. 使用して認証用のアプリにリダイレクト、 **ExtAuth**ディレクティブ。
 
     ``` syntax
     <?xml version="1.0"?>
@@ -769,9 +756,8 @@ Web サイト: から
 
 必要に応じて、これらのディレクティブを使用して再試行カウント/間隔と、実行時間の遅延を指定できます。
 
-**注**  で無線が正常に循環の場合、 **ReregisterToNetwork**既定のプロファイルを使用してネットワークに自動接続に失敗した場合、後続の再試行では、ラジオが循環しません。もう一度です。
-
- 
+> [!NOTE]
+> ラジオが正常にリサイクルで場合、 **ReregisterToNetwork**既定のプロファイルを使用してネットワークに自動接続に失敗した場合、後続の再試行の無線をもう一度循環しない操作を行います。
 
 ``` syntax
 <?xml version="1.0"?>
@@ -785,7 +771,7 @@ Web サイト: から
            initial execution delay of 30 seconds and retries every 1 minute 
            up to 3 times.
            -->
-      <ReregisterToNetwork 
+      <ReregisterToNetwork
           xmlns="http://www.microsoft.com/networking/CarrierControl/WWAN/v1"
           Delay="PT30S"
           RetryCount="3"
@@ -799,11 +785,11 @@ Web サイト: から
 
 使用してプロビジョニングしたプロファイルの使用状況を更新することができますのみ、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)プラン情報が更新されたファイルをプロビジョニングする新しいアカウントを適用することで。 使用状況の情報のみを含むプロビジョニング ファイルを提供したりできますのみプラン情報。 量に応じて、システム構成を変更する、新しいプロビジョニング ファイルは、次を含めることができます。
 
--   プロファイル、プランの説明については、および使用状況
+- プロファイル、プランの説明については、および使用状況
 
--   説明と使用状況 (既存のプロファイルを更新する) を計画します。
+- 説明と使用状況 (既存のプロファイルを更新する) を計画します。
 
--   プランの使用量 (既存のプロファイルとプランを更新)
+- プランの使用量 (既存のプロファイルとプランを更新)
 
 新しいプロファイルと、XML で定義されていない参照プランを適用する場合、プロビジョニングの結果には、警告が含まれます。
 
@@ -811,24 +797,23 @@ Web サイト: から
 
 これは、次の方法のいずれかで実現されます。
 
--   オペレーターのメッセージを指定、演算子の通知メッセージが表示されるで SMS API を使用してメッセージを読み取るアプリでは、メッセージを解析およびを使用して、使用量を設定**IProvisionedProfile**します。
+- オペレーターのメッセージを指定、演算子の通知メッセージが表示されるで SMS API を使用してメッセージを読み取るアプリでは、メッセージを解析およびを使用して、使用量を設定**IProvisionedProfile**します。
 
--   使用法フィールドの有効な組み合わせである演算子メッセージ ルールを指定し、直接、SMS で更新された使用量を指定します。
+- 使用法フィールドの有効な組み合わせである演算子メッセージ ルールを指定し、直接、SMS で更新された使用量を指定します。
 
-## <a name="span-idtblshtprovspanspan-idtblshtprovspantroubleshooting"></a><span id="tblshtprov"></span><span id="TBLSHTPROV"></span>トラブルシューティング
-
+## <a name="troubleshooting"></a>トラブルシューティング
 
 プロビジョニングの問題に遭遇した場合は、認識するため、次のセクションを使用できます。
 
-### <a name="span-idprovisioningapiresultsspanspan-idprovisioningapiresultsspanspan-idprovisioningapiresultsspanprovisioning-api-results"></a><span id="Provisioning_API_results"></span><span id="provisioning_api_results"></span><span id="PROVISIONING_API_RESULTS"></span>API の結果のプロビジョニング
+### <a name="provisioning-api-results"></a>API の結果のプロビジョニング
 
 プロビジョニングが失敗した場合、プロビジョニング操作を実行するときに例外を受け取ります。 例外が発生したエラーを以下に示します。
 
--   プロビジョニング XML は準拠していない、 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
+- プロビジョニング XML は準拠していない、 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
 
--   プロビジョニング XML は、シグネチャが必要ですが、適切に署名がありません。
+- プロビジョニング XML は、シグネチャが必要ですが、適切に署名がありません。
 
-### <a name="span-idpartialprovisioningfailuresspanspan-idpartialprovisioningfailuresspanspan-idpartialprovisioningfailuresspanpartial-provisioning-failures"></a><span id="Partial_provisioning_failures"></span><span id="partial_provisioning_failures"></span><span id="PARTIAL_PROVISIONING_FAILURES"></span>部分的なプロビジョニング エラー
+### <a name="partial-provisioning-failures"></a>部分的なプロビジョニング エラー
 
 プロビジョニング操作の一部のさまざまな理由により成功しません。 たとえば、プロビジョニング時に、Wi-fi ハードウェアへの参照があります。 プロビジョニング エージェントは、ファイル内のすべてのプロビジョニングを試行します。 プロビジョニングを使用して非同期的に返される結果が記載されて何かが失敗した場合、 [ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)します。
 
@@ -852,11 +837,11 @@ Web サイト: から
 </CarrierProvisioningResult>
 ```
 
-### <a name="span-ideventlogsspanspan-ideventlogsspanspan-ideventlogsspanevent-logs"></a><span id="Event_Logs"></span><span id="event_logs"></span><span id="EVENT_LOGS"></span>イベント ログ
+### <a name="event-logs"></a>イベント ログ
 
 内のイベント、 **Applications and Services Logs\\Microsoft\\Windows\\NetworkProvisioning\\Operational**チャネルでのプロビジョニングについての詳細なフィードバックを提供できますエラー。
 
-### <a name="span-idpowershellprovisioningtesthelpermodulespanspan-idpowershellprovisioningtesthelpermodulespanspan-idpowershellprovisioningtesthelpermodulespanpowershell-provisioningtesthelper-module"></a><span id="PowerShell_ProvisioningTestHelper_module"></span><span id="powershell_provisioningtesthelper_module"></span><span id="POWERSHELL_PROVISIONINGTESTHELPER_MODULE"></span>PowerShell ProvisioningTestHelper モジュール
+### <a name="powershell-provisioningtesthelper-module"></a>PowerShell ProvisioningTestHelper モジュール
 
 インポートすることができます、 **ProvisioningTestHelper**から Windows 8、Windows 8.1、および Windows 10 Sdk モジュール。 このモジュールを使用すると、生成し EV 証明書をインストール、インストールされた証明書を使用して XML ファイルに署名してプロビジョニングのスキーマに対して XML を検証します。 PowerShell セッションにモジュールをインポートするには、次のコマンドを入力します。
 
@@ -868,7 +853,7 @@ Import-Module "<path_to_sdk>\bin\<arch>\ProvisioningTestHelper.psd1"
 
 このモジュールをインポートした後、次の 4 つの PowerShell コマンドレットを使用できます。
 
--   **インストール TestEVCert**新しい CA 証明書を生成、EV SSL プロバイダーを信頼するには、テスト コンピューターに登録および生成しての署名に使用するため、EV 証明書をインストールすることを使用します。 証明書のインストールは、このコマンドレットを 1 回だけ実行する必要があります。 ファイルの任意の数は、証明書を使用してサインインできます。
+- **インストール TestEVCert**新しい CA 証明書を生成、EV SSL プロバイダーを信頼するには、テスト コンピューターに登録および生成しての署名に使用するため、EV 証明書をインストールすることを使用します。 証明書のインストールは、このコマンドレットを 1 回だけ実行する必要があります。 ファイルの任意の数は、証明書を使用してサインインできます。
 
     ``` syntax
     Install-TestEVCert -CertName <Certificate Name> -RootCertOutputPath <complete path to the folder to which the root certificate is to be exported>
@@ -878,13 +863,13 @@ Import-Module "<path_to_sdk>\bin\<arch>\ProvisioningTestHelper.psd1"
 
     *- RootCertOutputPath*パラメーターも省略可能です。 インストール RootCertFromFile コマンドレットを使用して別のコンピューターにインストールするルート証明書をエクスポートする場合に使用する必要があります。
 
--   **インストール RootCertFromFile**テスト ルート証明書を開発コンピューター以外のコンピューターにクライアント エクスペリエンスをテストする別のコンピューターに適用されます。
+- **インストール RootCertFromFile**テスト ルート証明書を開発コンピューター以外のコンピューターにクライアント エクスペリエンスをテストする別のコンピューターに適用されます。
 
     ``` syntax
     Install-RootCertFromFile -CertFile <complete path to the root certificate>
     ```
 
--   **ConvertTo SignedXml** (テストの生成またはサード パーティ プロバイダーによって発行された) が EV 証明書を使用してプロビジョニング XML ファイルに、XML DSig 署名を適用します。 信頼された証明書からこの署名は、ハードウェアの関連で、モバイル ブロード バンド アプリから有効なものとしてプロビジョニング ファイルを受け入れるように Windows をによりします。
+- **ConvertTo SignedXml** (テストの生成またはサード パーティ プロバイダーによって発行された) が EV 証明書を使用してプロビジョニング XML ファイルに、XML DSig 署名を適用します。 信頼された証明書からこの署名は、ハードウェアの関連で、モバイル ブロード バンド アプリから有効なものとしてプロビジョニング ファイルを受け入れるように Windows をによりします。
 
     ``` syntax
     ConvertTo-SignedXml -InputFile <complete path to the input XML file> -OutputFile <complete path to the output XML file> -CertName <name of the certificate used to sign the xml>
@@ -892,17 +877,8 @@ Import-Module "<path_to_sdk>\bin\<arch>\ProvisioningTestHelper.psd1"
 
     このコマンドは入力 XML ファイルに署名、署名を XML ファイルに配置し、出力 XML ファイルに保存します。
 
--   **テスト ValidProvisioningXml**プロビジョニング スキーマに対して、プロビジョニング XML (符号付きまたは符号なし) を検証します。
+- **テスト ValidProvisioningXml**プロビジョニング スキーマに対して、プロビジョニング XML (符号付きまたは符号なし) を検証します。
 
     ``` syntax
     Test-ValidProvisioningXml -InputFile <complete path to the input XML file>
     ```
-
- 
-
- 
-
-
-
-
-

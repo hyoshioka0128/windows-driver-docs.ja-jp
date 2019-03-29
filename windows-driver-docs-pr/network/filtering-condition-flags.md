@@ -1,19 +1,19 @@
 ---
-title: 条件のフラグをフィルター処理
+title: フィルター条件フラグ
 description: このセクションでは、フィルター処理条件フラグについて説明します。
 ms.assetid: a2493fc5-614f-47df-a818-cdec06dc9f4a
 keywords:
 - ネットワーク ドライバーをフィルター処理条件フラグ
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a5116fea6a204bd53ea45a30361bdfd01f1f3161
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1ad23cac352db91acafb9a1526b3897c7e3ed591
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531675"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463957"
 ---
-# <a name="filtering-condition-flags"></a>条件のフラグをフィルター処理
+# <a name="filtering-condition-flags"></a>フィルター条件フラグ
 
 フィルター条件のフラグは、各ビット フィールドで表されます。 これらのフラグの定義は次のとおりです。
 
@@ -310,7 +310,7 @@ ms.locfileid: "56531675"
 <p>0x00010000</p>
 </td>
 <td>
-<p>パケットが認証済みファイアウォール ポリシーと一致していることを示します。 一致する接続のみ、&quot;場合は、セキュリティで保護された接続を許可する&quot;ファイアウォール規則がオプションでこのフラグが設定が必要があります。 詳細については、次を参照してください。<a href="https://technet.microsoft.com/library/cc753463">ファイアウォールのバイパスの認証を有効にする方法</a>します。</p>
+<p>パケットが認証済みファイアウォール ポリシーと一致していることを示します。 ファイアウォール ルールの「セキュリティで保護された場合は、接続を許可する」オプションに一致する接続だけでは、このフラグが設定があります。 詳細については、次を参照してください。<a href="https://technet.microsoft.com/library/cc753463">ファイアウォールのバイパスの認証を有効にする方法</a>します。</p>
 <p>このフラグは、Windows Server 2008、Windows Vista SP1 と以降のバージョンの Windows で次のフィルター処理レイヤーで該当するもです。<dl>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V4</dd>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V6</dd>
@@ -353,7 +353,7 @@ ms.locfileid: "56531675"
 <p>0x00040000</p>
 </td>
 <td>
-<p>示しますパケットは弱いホスト、送信されることを意味するわけではありません&#39;t このネットワークから送信インターフェイスし、そのため、別のインターフェイスに転送する必要があります。</p>
+<p>示しますパケットは弱いホストの送信、つまり、このネットワーク インターフェイスを離れることはありませんし、そのため、別のインターフェイスに転送する必要があります。</p>
 <p>このフラグは、Windows Server 2008 R2、Windows 7、および以降のバージョンの Windows で次のフィルター処理の層に適用。<dl>
 <dd>FWPM_LAYER_IPFORWARD_V4</dd>
 <dd>FWPM_LAYER_IPFORWARD_V6</dd>
@@ -369,7 +369,7 @@ ms.locfileid: "56531675"
 <p>0x00080000</p>
 </td>
 <td>
-<p>示します、パケットは弱いホスト、受信したことを意味するわけではありません&#39;t 宛ての受信側のネットワーク インターフェイスと、そのため、別のインターフェイスに転送する必要があります。</p>
+<p>示します、パケットは弱いホストの受信されると、つまり、受信側のネットワーク インターフェイスの宛先はありませんし、そのため、別のインターフェイスに転送する必要があります。</p>
 <p>このフラグは、Windows Server 2008 R2、Windows 7、および以降のバージョンの Windows で次のフィルター処理の層に適用。<dl>
 <dd>FWPM_LAYER_IPFORWARD_V4</dd>
 <dd>FWPM_LAYER_IPFORWARD_V6</dd>

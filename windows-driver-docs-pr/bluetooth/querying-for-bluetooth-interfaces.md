@@ -1,6 +1,6 @@
 ---
-title: Bluetooth のインターフェイスの照会
-description: Bluetooth のインターフェイスの照会
+title: Bluetooth インターフェイスの照会
+description: Bluetooth インターフェイスの照会
 ms.assetid: 56db29cd-26ab-4262-9b9f-40d46372ffe9
 keywords:
 - Bluetooth の WDK、インターフェイスのクエリ
@@ -8,14 +8,14 @@ keywords:
 - WDK Bluetooth インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef3ea4735bb297c313fbe5b78af15c16a0505ad7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0231b26e38aba2af044d921ee9fb0039e07e1fec
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539101"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350307"
 ---
-# <a name="querying-for-bluetooth-interfaces"></a>Bluetooth のインターフェイスの照会
+# <a name="querying-for-bluetooth-interfaces"></a>Bluetooth インターフェイスの照会
 
 
 Bluetooth ドライバー スタックは、プロファイルのドライバーは、Bluetooth デバイスとの対話に使用できる次のインターフェイスを公開します。
@@ -79,8 +79,8 @@ Bluetooth ドライバー スタックは、プロファイルのドライバー
 
 ...
 
-// Define a custom pool tag to identify your profile driver&#39;s dynamic memory allocations. You should change this tag to easily identify your driver&#39;s allocations from other drivers.
-#define PROFILE_DRIVER_POOL_TAG &#39;_htB&#39;
+// Define a custom pool tag to identify your profile driver's dynamic memory allocations. You should change this tag to easily identify your driver's allocations from other drivers.
+#define PROFILE_DRIVER_POOL_TAG '_htB'
 
 PIRP Irp;
 Irp = IoAllocateIrp( DeviceExtension->ParentDeviceObject->StackSize, FALSE );

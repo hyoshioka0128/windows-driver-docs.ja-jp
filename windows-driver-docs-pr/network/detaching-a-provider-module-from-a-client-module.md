@@ -1,6 +1,6 @@
 ---
-title: クライアントのモジュールからプロバイダー モジュールのデタッチ
-description: クライアントのモジュールからプロバイダー モジュールのデタッチ
+title: クライアント モジュールからのプロバイダー モジュールのデタッチ
+description: クライアント モジュールからのプロバイダー モジュールのデタッチ
 ms.assetid: 011d0770-6942-480e-95ee-88a2903822b2
 keywords:
 - プロバイダー モジュール デタッチ WDK ネットワーク モジュール レジストラー
@@ -11,14 +11,14 @@ keywords:
 - NmrDeregisterProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d885a13b9cf2182574809b695cb58315cf71fa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6852d48f426a1c09c124eb1d510dc694e9ef3a51
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538307"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350425"
 ---
-# <a name="detaching-a-provider-module-from-a-client-module"></a>クライアントのモジュールからプロバイダー モジュールのデタッチ
+# <a name="detaching-a-provider-module-from-a-client-module"></a>クライアント モジュールからのプロバイダー モジュールのデタッチ
 
 
 ときにプロバイダー モジュールの登録を解除ネットワーク モジュール レジストラー (NMR) を呼び出すことによって、 [ **NmrDeregisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568778)関数の場合、NMR 呼び出し、プロバイダー モジュールの[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)それがアタッチされている、プロバイダー モジュールでデタッチ自体からすべてのクライアントのモジュール プロバイダー モジュールのパーツ 's プロセス登録の解除できるようにクライアント モジュールごとに 1 回のコールバック関数.
@@ -33,7 +33,7 @@ ms.locfileid: "56538307"
 
 プロバイダーのモジュールを実装する場合、 [ *ProviderCleanupBindingContext* ](https://msdn.microsoft.com/library/windows/hardware/ff570396)コールバック関数、NMR 呼び出し、プロバイダー モジュールの*ProviderCleanupBindingContext*プロバイダー モジュールおよびクライアント モジュールの両方がお互いからのデタッチを完了してからのコールバック関数。 プロバイダー モジュールの*ProviderCleanupBindingContext*コールバック関数は、プロバイダー モジュールのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、プロバイダー モジュールは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
 
-次に、例を示します。
+例:
 
 ```C++
 // ProviderDetachClient callback function
@@ -49,7 +49,7 @@ NTSTATUS
 
   // Set a flag indicating that the provider module is detaching
   // from the client module so that no more calls are made to
-  // the client module&#39;s NPI callback functions.
+  // the client module's NPI callback functions.
   ...
 
   // Check if there are no in-progress NPI callback function calls
@@ -68,7 +68,7 @@ NTSTATUS
     // completion of the in-progress NPI callback function calls
     return STATUS_PENDING;
 
-    // When the last in-progress call to the client module&#39;s
+    // When the last in-progress call to the client module's
     // NPI callback functions completes, the provider module
     // must call NmrProviderDetachClientComplete() with the
     // binding handle for the attachment to the client module.
@@ -89,7 +89,7 @@ VOID
   // Clean up the provider binding context structure
   ...
 
-  // Free the memory for provider&#39;s binding context structure
+  // Free the memory for provider's binding context structure
   ExFreePoolWithTag(
     BindingContext,
     BINDING_CONTEXT_POOL_TAG

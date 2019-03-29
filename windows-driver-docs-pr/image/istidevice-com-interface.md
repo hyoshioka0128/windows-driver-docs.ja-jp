@@ -4,12 +4,12 @@ description: IStiDevice COM インターフェイス
 ms.assetid: b026fb74-9ce6-4d4e-8a5b-402731904064
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 702ed90d5cc5efa4935ee084454cce47461469d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 47ad78260900a330768d124e6e39850a31190098
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529968"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350279"
 ---
 # <a name="istidevice-com-interface"></a>IStiDevice COM インターフェイス
 
@@ -54,7 +54,7 @@ ms.locfileid: "56529968"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543745" data-raw-source="[&lt;strong&gt;IStiDevice::GetCapabilities&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543745)"><strong>IStiDevice::GetCapabilities</strong></a></p></td>
-<td><p>静止画像デバイスを返します&#39;機能します。</p></td>
+<td><p>デバイスの機能に静止画像を返します。</p></td>
 <td><p>イベント モニターを静止画像します。</p></td>
 </tr>
 <tr class="odd">
@@ -74,7 +74,7 @@ ms.locfileid: "56529968"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543752" data-raw-source="[&lt;strong&gt;IStiDevice::GetStatus&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543752)"><strong>IStiDevice::GetStatus</strong></a></p></td>
-<td><p>静止画像デバイスを返します&#39;s 状態情報。</p></td>
+<td><p>静止画像デバイスの状態情報を返します。</p></td>
 <td><p>イメージの取得 Api と、まだイベント モニターの画像</p></td>
 </tr>
 <tr class="odd">

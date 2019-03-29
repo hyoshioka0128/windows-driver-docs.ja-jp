@@ -1,17 +1,17 @@
 ---
-title: LocationPath レジストリのサブキー
-description: LocationPath レジストリのサブキー
+title: LocationPath レジストリ サブキー
+description: LocationPath レジストリ サブキー
 ms.assetid: 3b6f3501-5969-453c-a04b-5559761c3222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb81115900f3f99571552a9c7b9fa57e4aad86f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6f76da6c69a25caf6c202ac76cbc0a0a55d71973
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559387"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463942"
 ---
-# <a name="locationpath-registry-subkey"></a>LocationPath レジストリのサブキー
+# <a name="locationpath-registry-subkey"></a>LocationPath レジストリ サブキー
 
 
 Windows 7 以降、 **LocationPath**レジストリ サブキーをいずれかで識別される 1 つのデバイスのリムーバブル デバイス機能の上書きの場所のパスを指定します、 [HardwareID](hardwareid-registry-subkey.md)または[CompatibleID](compatibleid-registry-subkey.md)レジストリ サブキー。 リムーバブル デバイスの機能の詳細を上書きするを参照してください。 [DeviceOverrides レジストリ キー](deviceoverrides-registry-key.md)します。
@@ -41,7 +41,7 @@ Windows 7 以降、 **LocationPath**レジストリ サブキーをいずれか�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>有効な&quot; <em>LocationPath</em> &quot;値</p></td>
+<td align="left"><p>有効な"<em>LocationPath</em>"の値</p></td>
 <td align="left"><p>省略可能な (* または有効な場所のパスは、リムーバブル デバイスの機能のスコープのオーバーライドを指定するために必要)</p></td>
 <td align="left"><p>なし</p></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a>または<a href="childlocationpaths-registry-subkey.md" data-raw-source="[ChildLocationPaths](childlocationpaths-registry-subkey.md)">ChildLocationPaths</a></p></td>

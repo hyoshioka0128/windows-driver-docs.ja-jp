@@ -4,12 +4,12 @@ description: このトピックでは、開発ボード、センサー ドライ
 ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e877c36c2e88319970a05ed560af88e7a992e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cda94f5dc8955bce05a900764d818c967f15779c
+ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529953"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349265"
 ---
 # <a name="install-the-sensor-driver"></a>センサー ドライバーをインストールします。
 
@@ -191,7 +191,7 @@ SSDT を更新する次のタスクを実行し、読み込む工場出荷時の
 
 2. センサー ドライバーをフラッシュ ドライブをサメ Cove に接続されている電源の USB ハブに接続します。 たとえば、次の手順で作成したドライバーの保存先となる、フラッシュ ドライブをられます[センサー ドライバー](build-the-sensor-driver.md)します。
 
-3. 開いている**デバイス マネージャー**、「不明なデバイス」内で検索し、**他のデバイス**ノード黄色い感嘆符シンボルに対して (次のスクリーン ショットを参照してください)。<br/>![デバイス マネージャーのスクリーン ショットに黄色の感嘆符に不明なデバイスを示します。 ](images/dev-manager.png)
+3. 開いている**デバイス マネージャー**、「不明なデバイス」内で検索し、**他のデバイス**ノード黄色い感嘆符シンボルに対して (次のスクリーン ショットを参照してください)。<br/>![デバイス マネージャーのスクリーン ショットに黄色の感嘆符に不明なデバイスを示します。](images/dev-manager.png)
 
 4. (不明なデバイスとして表示)、黄色の感嘆符でデバイスを右クリックして**ドライバー ソフトウェアの更新**、 をクリック**参照コンピューターでドライバー ソフトウェア**します。
 

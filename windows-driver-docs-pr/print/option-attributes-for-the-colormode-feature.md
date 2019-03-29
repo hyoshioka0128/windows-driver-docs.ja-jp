@@ -1,19 +1,19 @@
 ---
-title: 返さ機能のオプションの属性
-description: 返さ機能のオプションの属性
+title: ColorMode 機能のオプション属性
+description: ColorMode 機能のオプション属性
 ms.assetid: e6f68a50-f044-406e-b92c-8449d126bceb
 keywords:
 - 返さ機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bb2fff887edf7fc21eabfa111b448b16cf954dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f635661505a0a8249b061feebf124e41fc0e8e58
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558099"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463858"
 ---
-# <a name="option-attributes-for-the-colormode-feature"></a>返さ機能のオプションの属性
+# <a name="option-attributes-for-the-colormode-feature"></a>ColorMode 機能のオプション属性
 
 
 
@@ -38,7 +38,7 @@ ms.locfileid: "56558099"
 <tr class="odd">
 <td><p><em><strong>色。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、オプションで色を生成するかどうか。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>TRUE</strong>の *<strong>DrvBPP</strong> &gt; 1。 灰色のスケーリングを作成するに設定<strong>FALSE</strong>で *<strong>DrvBPP</strong> &gt; 1。</p></td>
+<td><p>任意。 指定されていない場合、既定値は<strong>TRUE</strong>の *<strong>DrvBPP</strong> &gt; 1。 灰色のスケーリングを作成するに設定<strong>FALSE</strong>で *<strong>DrvBPP</strong> &gt; 1。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>ColorPlaneOrder</strong></p></td>
@@ -51,38 +51,38 @@ ms.locfileid: "56558099"
 <tr class="odd">
 <td><p></em><strong>DevBPP</strong></p></td>
 <td><p>プリンターでサポートされている色データの 1 ピクセルあたりのビット数を表す数値を指定します。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は 1 です。</p></td>
+<td><p>任意。 指定しない場合、既定値は 1 です。</p></td>
 </tr>
 <tr class="even">
 <td><p><em><strong>DevNumOfPlanes</strong></p></td>
 <td><p>プリンターでサポートされているカラー プレーンの数を示す数値。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は 1 です。 (カラー プリンターの値を 1 と呼びますピクセル モード。)</p></td>
+<td><p>任意。 指定しない場合、既定値は 1 です。 (カラー プリンターの値を 1 と呼びますピクセル モード。)</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>DrvBPP</strong></p></td>
 <td><p>1 ピクセルのビットマップ レンダリング バッファー Unidrv が使用するビット数を示す数値。 ビットマップ形式は、Windows <a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-device-independent-bitmap--dib-" data-raw-source="&lt;em&gt;device-independent bitmap (DIB)&lt;/em&gt;"><em>デバイスに依存しないビットマップ (DIB)</em></a>、有効な値は 1、4、8、16、24、または 32 とします。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は 1 です。 (カラー プリンターの値を 1 と呼びます&quot;平面モード&quot;)。</p>
+<td><p>任意。 指定しない場合、既定値は 1 です。 (カラー プリンターの値を 1 と呼びます「平面モード」。)</p>
 <p>Windows Dib では、1 つのカラー プレーン常に使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p><em><strong>IPCallbackID</strong></p></td>
-<td><p>正の数値があり、プラグイン、レンダリングに渡される&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff554261" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554261)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>メソッドとしてその<strong>IPCallbackID</strong>引数。</p></td>
+<td><p>正の数値があり、レンダリング プラグインでは、に渡される<a href="https://msdn.microsoft.com/library/windows/hardware/ff554261" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554261)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>メソッドとしてその<strong>IPCallbackID</strong>引数。</p></td>
 <td><p>必要な場合、<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">プラグインでレンダリング</a>が指定されてを格納している、 <strong>IPrintOemUni::ImageProcessing</strong>メソッド。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>PaletteProgrammable でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、カラー パレットがプログラミング可能なかどうか。</p></td>
-<td><p>(省略可能)。 指定されていない場合、既定値は<strong>FALSE</strong>します。</p></td>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><em><strong>PaletteSize</strong></p></td>
 <td><p>指定されたオプションと共に使用するカラー パレット内のエントリの数を表す数値。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は 2 です。</p></td>
+<td><p>任意。 指定しない場合、既定値は 2 です。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>RasterMode</strong></p></td>
 <td><p>直接またはインデックス付きかを示すラスター データが、プリンターに直接送信されるかどうかまたはカラー パレット インデックスが作成されます。</p></td>
-<td><p>(省略可能)。 指定しない場合、既定値は、インデックスを作成します。</p></td>
+<td><p>任意。 指定しない場合、既定値は、インデックスを作成します。</p></td>
 </tr>
 </tbody>
 </table>

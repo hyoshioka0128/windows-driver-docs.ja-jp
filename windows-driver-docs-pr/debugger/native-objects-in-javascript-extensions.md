@@ -1,17 +1,17 @@
 ---
-title: JavaScript の拡張機能のネイティブ デバッガー オブジェクト
+title: JavaScript 拡張機能のネイティブ デバッガー オブジェクト
 description: ネイティブ デバッガー オブジェクトは、さまざまな構成要素とデバッガー環境の動作を表します。 オブジェクトは、JavaScript の拡張機能に渡された (またはで取得した)。
 ms.assetid: A8E12564-D083-43A7-920E-22C4D627FEE8
 ms.date: 12/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d88712e1cf2fbe462320547b7d1af11cd06352f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fddf5a08df7845bf1eecfdd24596a608a9d5cd2f
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528259"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464386"
 ---
-# <a name="native-debugger-objects-in-javascript-extensions"></a>JavaScript の拡張機能のネイティブ デバッガー オブジェクト
+# <a name="native-debugger-objects-in-javascript-extensions"></a>JavaScript 拡張機能のネイティブ デバッガー オブジェクト
 
 
 ネイティブ デバッガー オブジェクトは、さまざまな構成要素とデバッガー環境の動作を表します。 オブジェクトは、デバッガーの状態を操作するに渡された (またはで取得した) の JavaScript 拡張機能。
@@ -523,7 +523,7 @@ JavaScript--object.propertyName とオブジェクト プロパティへのア�
 | プロパティ名 | 署名        | 説明                                          |
 |---------------|------------------|------------------------------------------------------|
 | 追加           | .add(value)      | 場所に、絶対のバイト オフセットを追加します。        |
-| 減算      | .subtract(value) | 場所から絶対のバイト オフセットを減算します。 |
+| 減算 (subtract)      | .subtract(value) | 場所から絶対のバイト オフセットを減算します。 |
 
  
 
@@ -594,20 +594,20 @@ JavaScript スクリプトがネイティブのオブジェクトへのアクセ
 <td align="left"><p>getModuleSymbol (moduleName、シンボル、[contextInheritor])</p>
 <p>getModuleSymbol (moduleName、シンボル、[typeName]、[contextInheritor])</p></td>
 <td align="left"><p>特定のモジュール内でグローバル シンボルのオブジェクトを返します。 シンボル名とモジュールの名前は、文字列です。</p>
-<p>場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーで&#39;s の現在のコンテキスト。 1 回限りのテスト スクリプトではない JavaScript 拡張機能では、コンテキストの明示的なを必ず指定する必要があります。</p>
+<p>場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーの現在のコンテキストでします。 1 回限りのテスト スクリプトではない JavaScript 拡張機能では、コンテキストの明示的なを必ず指定する必要があります。</p>
 <p>場合、省略可能な<em>typeName</em>引数が指定されて、シンボルは、渡された型であると想定されます、およびシンボルで示される型は無視されます。 モジュールのパブリック シンボルを操作するを待ち受けている呼び出し元が、明示的な型名を指定する必要があります常に注意してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>host.createPointerObject</p></td>
 <td align="left"><p>createPointerObject (アドレス、moduleName、typeName [contextInheritor])</p></td>
 <td align="left"><p>指定したアドレスまたは場所には、ポインター オブジェクトを作成します。 モジュール名と型名は、文字列です。</p>
-<p>場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーで&#39;s の現在のコンテキスト。 1 回限りのテスト スクリプトではない JavaScript 拡張機能では、コンテキストの明示的なを必ず指定する必要があります。</p></td>
+<p>場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーの現在のコンテキストでします。 1 回限りのテスト スクリプトではない JavaScript 拡張機能では、コンテキストの明示的なを必ず指定する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>host.createTypedObject</p></td>
 <td align="left"><p>createTypedObject(location, moduleName, typeName, [contextInheritor])</p></td>
 <td align="left"><p>指定した位置にデバッグ対象のアドレス空間内のネイティブな型指定されたオブジェクトを表すオブジェクトを作成します。 モジュール名と型名は、文字列です。</p>
-<p>場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーで&#39;s の現在のコンテキスト。 1 回限りのテスト スクリプトではない JavaScript 拡張機能では、コンテキストの明示的なを必ず指定する必要があります。</p></td>
+<p>場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーの現在のコンテキストでします。 1 回限りのテスト スクリプトではない JavaScript 拡張機能では、コンテキストの明示的なを必ず指定する必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -627,7 +627,7 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 
 いくつかの重要な機能では、ホスト オブジェクトの直下です。 残りの部分は、サブ名前です。 名前空間は、次に示します。
 
-| 名前空間   | 説明                                                              |
+| Namespace   | 説明                                                              |
 |-------------|--------------------------------------------------------------------------|
 | 診断 | 診断とスクリプトのコードのデバッグを支援する機能    |
 | memory      | 読み取りと書き込みデバッグ ターゲット内のメモリを有効にする機能 |
@@ -700,7 +700,7 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">getModuleSymbol</td>
 <td align="left"><p>getModuleSymbol (moduleName、シンボル、[contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">特定のモジュール内でグローバル シンボルのオブジェクトを返します。 シンボル名とモジュールの名前は、文字列です。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーで&#39;s の現在のコンテキスト。 1 回限りのスクリプトではない JavaScript 拡張機能はコンテキストの明示的なを必ず指定する必要があります。</td>
+<td align="left">特定のモジュール内でグローバル シンボルのオブジェクトを返します。 シンボル名とモジュールの名前は、文字列です。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグ対象) 内で探されます。 引数が指定されていない場合、モジュールと記号を検索する、デバッガーの現在のコンテキストでします。 1 回限りのスクリプトではない JavaScript 拡張機能はコンテキストの明示的なを必ず指定する必要があります。</td>
 </tr>
 <tr class="odd">
 <td align="left">getNamedModel</td>
@@ -766,13 +766,13 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">typeSignatureExtension</td>
 <td align="left"><p>新しい typeSignatureExtension (オブジェクト、typeSignature、[moduleName]、[minVersion]、[maxVersion])</p></td>
 <td align="left">1</td>
-<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたは ES6 クラスによって型署名を使用して説明されているネイティブ型の拡張機能を表します。 このような登録&quot;フィールドを追加します。&quot;デバッガーに&#39;完全引き継ぐのではなく、シグネチャに一致する任意の型の視覚化を s。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンが指定する&quot;1.2.3.4&quot;スタイルの文字列。</td>
+<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたは ES6 クラスによって型署名を使用して説明されているネイティブ型の拡張機能を表します。 完全引き継ぐのではなく、シグネチャに一致する任意の型のような登録「フィールドを追加」デバッガーの視覚化。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
 </tr>
 <tr class="even">
 <td align="left">typeSignatureRegistration</td>
 <td align="left"><p>新しい typeSignatureRegistration (オブジェクト、typeSignature、[moduleName]、[minVersion]、[maxVersion])</p></td>
 <td align="left">1</td>
-<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたはネイティブ型署名に対する ES6 クラスでの正規の登録を表します。 このような登録&quot;引き継ぎます&quot;デバッガー&#39;s の視覚エフェクト拡張することよりもだけではなく、シグネチャに一致する任意の型。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンが指定する&quot;1.2.3.4&quot;スタイルの文字列。</td>
+<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたはネイティブ型署名に対する ES6 クラスでの正規の登録を表します。 このような登録「は」シグネチャに一致する任意の型ではなく拡張することよりも単に、デバッガーの視覚化。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterNamedModel</td>
@@ -784,13 +784,13 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">UnregisterExtensionForTypeSignature</td>
 <td align="left"><p>unregisterExtensionForTypeSignature (オブジェクト、typeSignature、[moduleName]、[minVersion]、[maxVersion])</p></td>
 <td align="left">2</td>
-<td align="left">これは、JavaScript プロトタイプまたは ES6 クラスの指定された型のシグネチャで指定されたネイティブ型の拡張データ モデルの中から登録解除します。 論理的に元に戻して registerExtensionForTypeSignature になります。 返すスクリプトを優先する必要がありますに注意してください、 <strong>typeSignatureExtension</strong>オブジェクトからその<strong>initializeScript</strong>これを強制的に行うのではなく、メソッド。 変更を強制的に、任意のスクリプトが必要ですが、 <strong>initializeScript</strong>クリーンアップするためにメソッド。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンが指定する&quot;1.2.3.4&quot;スタイルの文字列。</td>
+<td align="left">これは、JavaScript プロトタイプまたは ES6 クラスの指定された型のシグネチャで指定されたネイティブ型の拡張データ モデルの中から登録解除します。 論理的に元に戻して registerExtensionForTypeSignature になります。 返すスクリプトを優先する必要がありますに注意してください、 <strong>typeSignatureExtension</strong>オブジェクトからその<strong>initializeScript</strong>これを強制的に行うのではなく、メソッド。 変更を強制的に、任意のスクリプトが必要ですが、 <strong>initializeScript</strong>クリーンアップするためにメソッド。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterPrototypeForTypeSignature</td>
 <td align="left"><p>unregisterPrototypeForTypeSignature (オブジェクト、typeSignature、[moduleName]、[minVersion]、[maxVersion])</p></td>
 <td align="left">2</td>
-<td align="left">これは、JavaScript プロトタイプまたは正規のデータ モデルからの ES6 クラス登録解除します。 (例:: ビジュアライザー) のネイティブ型として指定された型のシグネチャで指定します。 論理的に元に戻して registerPrototypeForTypeSignature になります。 返すスクリプトを優先する必要がありますに注意してください、 <strong>typeSignatureRegistration</strong>オブジェクトからその<strong>initializeScript</strong>これを強制的に行うのではなく、メソッド。 変更を強制的に、任意のスクリプトが必要ですが、 <strong>uninitializeScript</strong>クリーンアップするためにメソッド。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンが指定する&quot;1.2.3.4&quot;スタイルの文字列。</td>
+<td align="left">これは、JavaScript プロトタイプまたは正規のデータ モデルからの ES6 クラス登録解除します。 (例:: ビジュアライザー) のネイティブ型として指定された型のシグネチャで指定します。 論理的に元に戻して registerPrototypeForTypeSignature になります。 返すスクリプトを優先する必要がありますに注意してください、 <strong>typeSignatureRegistration</strong>オブジェクトからその<strong>initializeScript</strong>これを強制的に行うのではなく、メソッド。 変更を強制的に、任意のスクリプトが必要ですが、 <strong>uninitializeScript</strong>クリーンアップするためにメソッド。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
 </tr>
 </tbody>
 </table>
@@ -831,21 +831,21 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">readMemoryValues</td>
 <td align="left"><p>readMemoryValues (場所、numElements、[elementSize]、[isSigned]、[contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">これにより、デバッグ対象のアドレス空間からされた生の配列の値を読み取るし、このメモリのビューの上部に型指定された配列を配置します。 指定された場所には、アドレス (64 ビット値)、場所オブジェクト、またはネイティブ ポインターを指定できます。 配列のサイズが付いて、 <em>numElements</em>引数。 配列の各要素のサイズ (よぶ型) は、オプションで指定されます<em>elementSize</em>と<em>isSigned</em>引数。 このような引数が指定されていない、既定値はバイト (符号なし/1 バイト)。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、コンテキストには、メモリを読み込み、(例:: アドレス空間とデバッグのターゲット) の引数で指定された; それ以外の場合、デバッガーから読み取られます&#39;s の現在のコンテキスト。 このメソッドを使用して、8、16、32 ビット値に、読み取りのメモリ上に配置されている高速な型指定されたビューに注意してください。 64 ビット値でこのメソッドを使用して結果が大幅にコストが高く構築される 64 ビット ライブラリ型の配列。</td>
+<td align="left">これにより、デバッグ対象のアドレス空間からされた生の配列の値を読み取るし、このメモリのビューの上部に型指定された配列を配置します。 指定された場所には、アドレス (64 ビット値)、場所オブジェクト、またはネイティブ ポインターを指定できます。 配列のサイズが付いて、 <em>numElements</em>引数。 配列の各要素のサイズ (よぶ型) は、オプションで指定されます<em>elementSize</em>と<em>isSigned</em>引数。 このような引数が指定されていない、既定値はバイト (符号なし/1 バイト)。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、コンテキストには、メモリを読み込み、(例:: アドレス空間とデバッグのターゲット) の引数で指定された; それ以外の場合、デバッガーの現在のコンテキストから読み取られます。 このメソッドを使用して、8、16、32 ビット値に、読み取りのメモリ上に配置されている高速な型指定されたビューに注意してください。 64 ビット値でこのメソッドを使用して結果が大幅にコストが高く構築される 64 ビット ライブラリ型の配列。</td>
 </tr>
 <tr class="even">
 <td align="left">readString</td>
 <td align="left"><p>readString(location, [contextInheritor])</p>
 <p>readString (場所、[長さ]、[contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">これにより、utf-16 に変換します、デバッグ対象のアドレス空間から (現在のコード ページ) のナロー文字列を読み取り、JavaScript 文字列として結果を返します。 メモリを読み取ることができませんでした例外をスロー、可能性があります。 指定された場所 (64 ビット値) のアドレス、または指定できます場所オブジェクトでは、ネイティブの char<em>します。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、コンテキストには、メモリを読み込み、(例:: アドレス空間とデバッグのターゲット) の引数で指定された; それ以外の場合、デバッガーから読み取られます&#39;s の現在のコンテキスト。 場合、省略可能な<em>長さ</em>引数を指定すると、指定した長さの読み取り文字列になります。</td>
+<td align="left">これにより、utf-16 に変換します、デバッグ対象のアドレス空間から (現在のコード ページ) のナロー文字列を読み取り、JavaScript 文字列として結果を返します。 メモリを読み取ることができませんでした例外をスロー、可能性があります。 指定された場所 (64 ビット値) のアドレス、または指定できます場所オブジェクトでは、ネイティブの char<em>します。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、コンテキストには、メモリを読み込み、(例:: アドレス空間とデバッグのターゲット) の引数で指定された; それ以外の場合、デバッガーの現在のコンテキストから読み取られます。 場合、省略可能な<em>長さ</em>引数を指定すると、指定した長さの読み取り文字列になります。</td>
 </tr>
 <tr class="odd">
 <td align="left">readWideString</td>
 <td align="left"><p>readWideString (場所や [contextInheritor])</p>
 <p>readWideString (場所、[長さ]、[contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">これにより、デバッグ対象のアドレス空間から wide(UTF-16) 文字列を読み取り、JavaScript 文字列として結果を返します。 メモリを読み取ることができませんでした例外をスロー、可能性があります。 指定された場所は、アドレス (64 ビット値)、場所オブジェクト、またはネイティブの wchar_t にできる</em>します。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、コンテキストには、メモリを読み込み、(例:: アドレス空間とデバッグのターゲット) の引数で指定された; それ以外の場合、デバッガーから読み取られます&#39;s の現在のコンテキスト。 場合、省略可能な<em>長さ</em>引数を指定すると、指定した長さの読み取り文字列になります。</td>
+<td align="left">これにより、デバッグ対象のアドレス空間から wide(UTF-16) 文字列を読み取り、JavaScript 文字列として結果を返します。 メモリを読み取ることができませんでした例外をスロー、可能性があります。 指定された場所は、アドレス (64 ビット値)、場所オブジェクト、またはネイティブの wchar_t にできる</em>します。 場合、省略可能な<em>contextInheritor</em>引数を指定すると、コンテキストには、メモリを読み込み、(例:: アドレス空間とデバッグのターゲット) の引数で指定された; それ以外の場合、デバッガーの現在のコンテキストから読み取られます。 場合、省略可能な<em>長さ</em>引数を指定すると、指定した長さの読み取り文字列になります。</td>
 </tr>
 </tbody>
 </table>
@@ -1073,7 +1073,7 @@ class myNativeModel
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Scripting JavaScript デバッガー](javascript-debugger-scripting.md)
+[JavaScript デバッガー スクリプト](javascript-debugger-scripting.md)
 
 [JavaScript デバッガーの スクリプトの例](javascript-debugger-example-scripts.md)
 

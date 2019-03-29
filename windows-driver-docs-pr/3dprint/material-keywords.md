@@ -4,12 +4,12 @@ description: これらのキーワードでは、3 D オブジェクトの作成
 ms.assetid: B2264CA8-64F9-4A20-AC55-46A0C48EDF3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f88783c5db8e98e14689876652c7349bc24d53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a105e855aecd5eecd238d2edafde8e9cb25ecb8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464016"
 ---
 # <a name="material-keywords"></a>素材のキーワード
 
@@ -48,7 +48,7 @@ ms.locfileid: "56551881"
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>Value</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:integer</p>
 <p><strong>値:</strong>JobMaterialCountText</p>
 <p><strong>説明 :</strong>JobMaterialCountText、このプロパティが指定されている場合がこのデバイスで利用できる資料の数を指定する正の整数を含める必要があります。</p></td>
@@ -99,7 +99,7 @@ Job3DMaterialCount キーワードの使用状況
 <td>目次</td>
 <td><p>次のように、1 つ以上の子プロパティ要素が含まれます。</p>
 <p><strong>子:</strong>プロパティの一覧</p>
-<p><strong>xsi:type:</strong>なし</p>
+<p><strong>xsi:type:</strong>N/A</p>
 <p><strong>値:</strong>MaterialsList</p>
 <p><strong>説明 :</strong>MaterialsList には、一連子プロパティにはが含まれています。</p></td>
 </tr>
@@ -139,15 +139,15 @@ Job3DMaterialCount キーワードの使用状況
 <td><p>デバイスは、マテリアルの色を指定するには、このプロパティを定義できます。 指定する場合は、以下の説明に準拠している、sRGB 色である必要があります、値。</p>
 <div class="code">
 <code>cpp
-sRGBColorText = &quot;#&quot; hR hG hB hA
+sRGBColorText = "#" hR hG hB hA
 hR = hG = hB = hA = hexpair
 hexpair = hexdigit hexdigit
-hexdigit = &quot;0&quot; / &quot;1&quot; / &quot;2&quot; / &quot;3&quot; /
-           &quot;4&quot; / &quot;5&quot; / &quot;6&quot; / &quot;7&quot; /
-           &quot;8&quot; / &quot;9&quot; / &quot;A&quot; / &quot;B&quot; /
-           &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot; /
-           &quot;a&quot; / &quot;b&quot; / &quot;c&quot; / &quot;d&quot; /
-           &quot;e&quot; / &quot;f&quot;</code>
+hexdigit = "0" / "1" / "2" / "3" /
+           "4" / "5" / "6" / "7" /
+           "8" / "9" / "A" / "B" /
+           "C" / "D" / "E" / "F" /
+           "a" / "b" / "c" / "d" /
+           "e" / "f"</code>
 </div>
 <p>人事、hG、hB、hA、赤、緑、青、およびアルファのコンポーネントの 16 進数の 1 バイト値をそれぞれ指定、00 ~ FF 範囲とします。 デバイスは、FF の既定値 (完全に不透明) にどの大文字と小文字のアルファのアルファ (つまり #hRhGhB) を省略することもできます。</p></td>
 </tr>
@@ -270,7 +270,7 @@ Job3DSupportsMaterial キーワード プロファイル
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>§2.1.3.1、」の説明に従って、psk3d:Job3DSupportsMaterial は、の QNameParamType &quot; &lt;psf:ParameterDef&gt; &quot;印刷スキーマ仕様で。</p>
+<td><p>§2.1.3.1、」の説明に従って、psk3d:Job3DSupportsMaterial は、の QNameParamType"&lt;psf:ParameterDef&gt;"印刷スキーマ仕様で。</p>
 <p><strong>子:</strong>QNameParamType</p>
 <p><strong>説明 :</strong></p>
 <p>プロパティ値が必要があります psf:MinLength 整数 1 以上であります。</p>
@@ -312,7 +312,7 @@ Job3DSupportsMaterial 初期化プロファイル
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>Value</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:QName</p>
 <p><strong>値:</strong>MaterialName</p>
 <p><strong>説明 :</strong>Psk3D:Job3DMaterials プロパティの子として識別された資料を参照 MaterialName 必要があります。</p></td>
@@ -448,7 +448,7 @@ Job3DRaftMaterial キーワード プロファイル
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>§2.1.3.1、」の説明に従って、psk3d:Job3DRaftMaterial は、の QNameParamType &quot; &lt;psf:ParameterDef&gt; &quot;印刷スキーマ仕様で。</p>
+<td><p>§2.1.3.1、」の説明に従って、psk3d:Job3DRaftMaterial は、の QNameParamType"&lt;psf:ParameterDef&gt;"印刷スキーマ仕様で。</p>
 <p><strong>子:</strong>QNameParamType</p>
 <p><strong>説明 :</strong></p>
 <p>プロパティ値が必要があります psf:MinLength 整数 1 以上であります。</p>
@@ -490,7 +490,7 @@ Job3DRaftMaterial 初期化プロファイル
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>Value</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:QName</p>
 <p><strong>値:</strong>MaterialName</p>
 <p><strong>説明 :</strong>Psk3D:Job3DMaterials プロパティの子として識別された資料を参照 MaterialName 必要があります。</p></td>
@@ -611,7 +611,7 @@ Job3DRaftMaterial 初期化プロファイル
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;子要素として次のとおりです。</p>
-<p><strong>子:</strong>Value</p>
+<p><strong>子:</strong>[値]</p>
 <p><strong>xsi:type:</strong>Psk3d:MaterialMapUnitType</p>
 <p><strong>値:</strong>素材のリスト</p>
 <p><strong>説明 :</strong>資料一覧する必要があります、素材 ID:index 値のセミコロンで区切られたリスト basematerials モデル ペイロード内の参照します。</p></td>

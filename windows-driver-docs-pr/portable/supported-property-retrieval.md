@@ -1,14 +1,14 @@
 ---
-Description: Supported Property Retrieval
+Description: サポートされているプロパティの取得
 title: サポートされているプロパティの取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1a348ee9339b71cf5fdfab31aab04c174ee33b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a93b0e31aa3a7d511ff134de60fa21c76307e36
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528376"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350157"
 ---
 # <a name="supported-property-retrieval"></a>サポートされているプロパティの取得
 
@@ -50,7 +50,7 @@ HRESULT WpdObjectProperties::OnGetSupportedProperties(
     if (hr == S_OK)
     {
         hr = AddSupportedPropertyKeys(wszObjectID, pKeys);
-        CHECK_HR(hr, "Failed to add supported property keys for object &#39;%ws&#39;", wszObjectID);
+        CHECK_HR(hr, "Failed to add supported property keys for object '%ws'", wszObjectID);
     }
 
     // Set the WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS value in the results.

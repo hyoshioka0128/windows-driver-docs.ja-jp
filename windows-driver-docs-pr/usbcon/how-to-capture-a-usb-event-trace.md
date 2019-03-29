@@ -1,16 +1,16 @@
 ---
-Description: This topic provides information about using the Logman tool to capture a USB ETW event trace.
-title: Logman の USB イベント トレースをキャプチャする方法
+Description: このトピックでは、イベント トレース、Logman ツールを使用して USB ETW をキャプチャする方法の情報を提供します。
+title: Logman を使用して USB イベント トレースをキャプチャする方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c3a47e60c46aa84138e32c66f6a53be7da9e02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4cb23adec030ad43785acdc47776ef3d0eb6e182
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537795"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350341"
 ---
-# <a name="how-to-capture-a-usb-event-trace-with-logman"></a>Logman の USB イベント トレースをキャプチャする方法
+# <a name="how-to-capture-a-usb-event-trace-with-logman"></a>Logman を使用して USB イベント トレースをキャプチャする方法
 
 
 このトピックの使用に関する情報を提供する、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=617153) USB ETW イベントのトレースをキャプチャするツール。 Logman は、Windows に組み込まれているトレース ツールです。 Logman を使用して、イベント トレース ログ ファイルにイベントをキャプチャすることができます。
@@ -64,7 +64,7 @@ USB 3.0 ドライバー スタックからのイベント トレースは、Wind
 
 ファイルには、USB 3.0 と USB 2.0 ドライバー スタックからのイベント トレースが含まれています。 USB ドライバー スタックの 1 つだけにイベント トレースを削減する場合は、他のドライバー スタックを次のトレース セッションから削除します。 トレース セッションから削除するドライバー スタックに対応する"logman update"の行を削除する手順 2 に示したコマンド シーケンスを変更することによって行うことができます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 **USB 3.0 ドライバー スタックのイベントのフィルターをキャプチャします。**
@@ -86,11 +86,11 @@ ETW のキーワードをなどに注意してください**既定**と**Partial
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>既定値</strong></p></td>
+<td><p><strong>Default</strong></p></td>
 <td><p>一般的なトラブルシューティングに役立つイベントを示します。 イベントは、USB 2.0 の ETW イベントと同じですが、任意の USB 転送イベントを含めないでください。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>ステート マシン</strong></p></td>
+<td><p><strong>StateMachine</strong></p></td>
 <td><p>ドライバー内部のステート マシンの遷移を示しています。 イベントが含まれない、<strong>既定</strong>キーワード。</p></td>
 </tr>
 <tr class="odd">
@@ -107,7 +107,7 @@ ETW のキーワードをなどに注意してください**既定**と**Partial
 </tr>
 <tr class="even">
 <td><p><strong>HeadersBusTrace</strong></p></td>
-<td><p>イベントがすべての USB 転送を示します&#39;t は、データ パケットを保存します。</p></td>
+<td><p>すべての USB 転送イベントが表示されますが、データ パケットは保存されません。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>PartialDataBusTrace</strong></p></td>

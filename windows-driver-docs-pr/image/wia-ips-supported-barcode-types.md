@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ed2a52a5572b724783071dc6f4b14632255f30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c454e2deea3ad0f27476f75fff549f8541f59cd9
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529898"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464274"
 ---
 # <a name="wiaipssupportedbarcodetypes"></a>WIA\_IP\_サポートされている\_バーコード\_型
 
@@ -33,9 +33,9 @@ ms.locfileid: "56529898"
 
 有効な値 :WIA\_PROP\_NONE (1 つの配列/ベクトル値)
 
-アクセス権:読み取り専用かどうか
+アクセス権:読み取り専用です。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 次の表に、有効な値、 **WIA\_IP\_サポートされている\_バーコード\_型**プロパティ。
@@ -47,7 +47,7 @@ ms.locfileid: "56529898"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>[値]</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -126,15 +126,15 @@ ms.locfileid: "56529898"
 </tr>
 <tr class="odd">
 <td><p>WIA_BARCODE_POSTNETA</p></td>
-<td><p>POSTNET (郵便番号数値エンコード技法) &quot;A&quot;コード</p></td>
+<td><p>POSTNET (郵便番号数値エンコード技法)"A"のコード</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_BARCODE_POSTNETB</p></td>
-<td><p>POSTNET (郵便番号数値エンコード技法) &quot;B&quot;コード</p></td>
+<td><p>POSTNET (郵便番号数値エンコード技法)"B"のコード</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_BARCODE_POSTNETC</p></td>
-<td><p>POSTNET (郵便番号数値エンコード技法) &quot;C&quot;コード</p></td>
+<td><p>POSTNET (郵便番号数値エンコード技法)"C"コード</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_BARCODE_POSTNET_DPBC</p></td>
@@ -241,7 +241,7 @@ WIA ミニドライバーは、WIA として定義されている追加のカス
 
 このプロパティは、バーコード リーダーのすべての項目に必要です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

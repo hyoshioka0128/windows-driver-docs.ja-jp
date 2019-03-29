@@ -1,17 +1,17 @@
 ---
-title: レジストリ エントリは、デバイスを静止画像します。
-description: レジストリ エントリは、デバイスを静止画像します。
+title: 静止画像デバイスのレジストリ エントリ
+description: 静止画像デバイスのレジストリ エントリ
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a7722bb95a39d2011d4ae1e5ec5c7893c7cbfb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ac2f74a3c2b78b90ebc585964b8cb93cdbd290e8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536125"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464244"
 ---
-# <a name="registry-entries-for-still-image-devices"></a>レジストリ エントリは、デバイスを静止画像します。
+# <a name="registry-entries-for-still-image-devices"></a>静止画像デバイスのレジストリ エントリ
 
 
 
@@ -39,23 +39,23 @@ Microsoft STI のうちいくつかはベンダーから提供されたコンポ
 <tbody>
 <tr class="odd">
 <td><p>STI_DEVICE_VALUE_ICM_PROFILE</p></td>
-<td><p>&quot;ICMProfile&quot;</p></td>
+<td><p>"ICMProfile"</p></td>
 <td><p>デバイスの ICM プロファイルの名前を含む REG_MULTI_SZ 型。</p></td>
 </tr>
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_ISIS_NAME</p></td>
-<td><p>&quot;ISISDriverName&quot;</p></td>
-<td><p>デバイスを含む REG_SZ 型&#39;s イシス ドライバー名など、 &quot;epson.pxn&quot;します。</p></td>
+<td><p>"ISISDriverName"</p></td>
+<td><p>"Epson.pxn"などのデバイスのイシス ドライバー名を含む REG_SZ 型。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STI_DEVICE_VALUE_TIMEOUT</p></td>
-<td><p>&quot;PollTimeout&quot;</p></td>
+<td><p>"PollTimeout"</p></td>
 <td><p>デバイスをポーリングするときに使用されるミリ秒単位のタイムアウト値を表す REG_DWORD 型。 既定値は 1000 (1 秒) です。</p></td>
 </tr>
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_TWAIN_NAME</p></td>
-<td><p>&quot;TwainDS&quot;</p></td>
-<td><p>デバイスの表示可能な名前を含む REG_SZ 型&#39;s TWAIN データ ソースなど&quot;HP PictureScan 3.0&quot;します。</p></td>
+<td><p>"TwainDS"</p></td>
+<td><p>"HP PictureScan 3.0"などのデバイスの TWAIN データ ソースの表示可能な名前を含む REG_SZ 型。</p></td>
 </tr>
 </tbody>
 </table>

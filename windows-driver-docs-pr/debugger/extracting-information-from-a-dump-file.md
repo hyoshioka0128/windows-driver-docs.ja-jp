@@ -1,6 +1,6 @@
 ---
-title: ダンプ ファイルから情報を抽出
-description: ダンプ ファイルから情報を抽出
+title: ダンプ ファイルからの情報の抽出
+description: ダンプ ファイルからの情報の抽出
 ms.assetid: abde266e-e3ab-4e5e-ac6d-a27933f3d1a9
 keywords:
 - ダンプ ファイルから情報を抽出
@@ -8,16 +8,16 @@ keywords:
 - (ダンプ ファイルから決定する) コンピューター名
 - (ダンプ ファイルから決定する) コンピューター名
 - (ダンプ ファイルから決定する) の IP アドレス
-ms.date: 05/23/2017
+ms.date: 03/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ac63398b42b99a6cedad91bf4ff51041d0f0ba5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 534c208507ed2c07e233984b3a159fac8fc82854
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537032"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909201"
 ---
-# <a name="extracting-information-from-a-dump-file"></a>ダンプ ファイルから情報を抽出
+# <a name="extracting-information-from-a-dump-file"></a>ダンプ ファイルからの情報の抽出
 
 
 ## <span id="ddk_extracting_information_from_a_dump_file_dbg"></span><span id="DDK_EXTRACTING_INFORMATION_FROM_A_DUMP_FILE_DBG"></span>
@@ -28,13 +28,6 @@ ms.locfileid: "56537032"
 ### <a name="span-idfindingthecomputernameinakernelmodedumpfilespanspan-idfindingthecomputernameinakernelmodedumpfilespanfinding-the-computer-name-in-a-kernel-mode-dump-file"></a><span id="finding_the_computer_name_in_a_kernel_mode_dump_file"></span><span id="FINDING_THE_COMPUTER_NAME_IN_A_KERNEL_MODE_DUMP_FILE"></span>カーネル モードのダンプ ファイルで、コンピューター名の検索
 
 使用することができます、クラッシュ ダンプが行われたコンピューターの名前を決定する必要がある場合、 [ **! peb** ](-peb.md)拡張機能を探してコンピューター名の値が出力されます。
-
-または、次のコマンドを使用することができます。
-
-```dbgcmd
-0: kd> x srv!SrvComputerName
-be8ce2e8  srv!SrvComputerName  = _UNICODE_STRING "AIGM-MYCOMP-PUB01"
-```
 
 ### <a name="span-idfindingtheipaddressinakernelmodedumpfilespanspan-idfindingtheipaddressinakernelmodedumpfilespanfinding-the-ip-address-in-a-kernel-mode-dump-file"></a><span id="finding_the_ip_address_in_a_kernel_mode_dump_file"></span><span id="FINDING_THE_IP_ADDRESS_IN_A_KERNEL_MODE_DUMP_FILE"></span>カーネル モードのダンプ ファイル内の IP アドレスの検索
 

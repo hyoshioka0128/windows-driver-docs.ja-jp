@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 829cbca4f2db3534eafcb6466e1c945a1d3760ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ccde555cee1569001d053652d654a43284fd12e5
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559680"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464372"
 ---
-# <a name="bug-check-0x164-win32kcriticalfailure"></a>バグ チェック 0x164 の。WIN32K\_重大\_エラー
+# <a name="bug-check-0x164-win32kcriticalfailure"></a>バグ チェック 0x164:WIN32K\_重大\_エラー
 
 
 WIN32K\_重大\_エラーのバグ チェックが 0x00000164 の値を持ちます。 これは、Win32k の重大なエラーが発生したことを示します。
@@ -49,7 +49,7 @@ WIN32K\_重大\_エラーのバグ チェックが 0x00000164 の値を持ちま
 <p>2 - DC へのポインター</p>
 <p>3 - 画面へのポインター</p>
 <p>4 - リージョンへのポインター</p>
-0x2:OPERATOR_NEW_USED - 演算子&quot;新しい&quot;メモリを割り当てるために使用します。
+0x2:OPERATOR_NEW_USED -"new"演算子は、メモリの割り当てに使用されます。
 <p>2-予約されています</p>
 <p>3-予約されています</p>
 <p>4-予約されています</p>
@@ -58,7 +58,7 @@ WIN32K\_重大\_エラーのバグ チェックが 0x00000164 の値を持ちま
 <p>2-wchar_t * に不足している関数の名前</p>
 <p>3-予約されています</p>
 <p>4-予約されています</p>
-0x4:GDI_SPRITE_SURFACE_INVALID_DELETE - GDI スプライト&#39;s 図形は、スプライトを削除することがなく削除中です。
+0x4:GDI_SPRITE_SURFACE_INVALID_DELETE - GDI スプライトの図形は、スプライトを削除することがなく削除中です。
 <p>2 - 画面に処理します。</p>
 <p>3 - 画面に参照カウント</p>
 <p>4 - サーフェスの所有者の PID</p>

@@ -1,17 +1,17 @@
 ---
-title: Ws-discovery モバイル印刷のサポート
-description: Ws-discovery モバイル印刷のサポート
+title: WS-Discovery モバイル印刷サポート
+description: WS-Discovery モバイル印刷サポート
 ms.assetid: 788E2A1C-FBE9-40CD-A3EB-14A2DE266A2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70089971f168209eedfa79a3fd4507ebfe0154a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a785fcf2b460884877c39e84d93877b171bf7028
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548947"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464134"
 ---
-# <a name="ws-discovery-mobile-printing-support"></a>Ws-discovery モバイル印刷のサポート
+# <a name="ws-discovery-mobile-printing-support"></a>WS-Discovery モバイル印刷サポート
 
 
 Windows 10 Mobile からの印刷をサポートするデバイスは次の例に示すように、Ws-discovery のようなモデル応答に MobilePrinter カテゴリを追加する必要があります。
@@ -91,7 +91,7 @@ Windows 10 Mobile からの印刷をサポートするデバイスは次の例�
 <tbody>
 <tr class="odd">
 <td><p>PNPX_DEVICECATEGORY_PRINTER_MOBILE</p>
-<p>L&quot;MobilePrinter&quot;</p></td>
+<p>L"MobilePrinter"</p></td>
 <td><p>MobilePrinter カテゴリ</p>
 <p>キーワード:プリンター</p></td>
 </tr>

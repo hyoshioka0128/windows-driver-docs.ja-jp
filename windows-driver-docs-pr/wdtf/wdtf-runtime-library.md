@@ -9,12 +9,12 @@ keywords:
 - ドライバーのテスト
 ms.date: 08/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9590bf8f303fc55d1c229fbc6f18d3ab6ad5e64b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e0d3456068a930d2ab8f3859709d1e45e0884c86
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532756"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136115"
 ---
 # <a name="the-wdtf-runtime-library"></a>WDTF ランタイム ライブラリ
 
@@ -44,11 +44,9 @@ WDTF ランタイム ライブラリには、トリアージ、およびテス�
 
 ## <a name="how-to-install-the-wdtf-runtime-library"></a>WDTF ランタイム ライブラリをインストールする方法
 
-展開のテスト コンピューターを設定するとき、WDTF ランタイム ライブラリは、テスト コンピューターにインストールされます。 WDK の正しいバージョンの手順に従います。
+展開のテスト コンピューターを設定するとき、WDTF ランタイム ライブラリは、テスト コンピューターにインストールされます。 指示に従って[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 10 および WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)
 
-- [ドライバーの展開と (WDK 10 および WDK 8.1) をテスト用にプロビジョニングします。](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)
-
-- [ドライバーの展開と (WDK 8) のテスト用にプロビジョニングします。](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8)
+<!-- [Provision a computer for driver deployment and testing (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8) -->
 
 また、WDTF ランタイム ライブラリを手動でインストールできます。
 
@@ -78,7 +76,7 @@ WDTF ランタイム ライブラリには、トリアージ、およびテス�
 
 次の表は、オプションで使用できる、 **msiexec**コマンド。
 
-|構成方法|説明|
+|オプション|説明|
 |----|----|
 |**/l*** *filename*|すべてのメッセージとエラーをファイルに書き込みます*filename*します。|
 |**WDTFDIR =**_CustomInstallationDirectory_|WDTF ランタイムのインストール先ディレクトリを指定します。 既定の**WDTFDir** %programfiles%\Windows Kits\10\Testing\Runtimes\WDTF には|

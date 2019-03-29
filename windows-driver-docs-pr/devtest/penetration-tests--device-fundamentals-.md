@@ -4,12 +4,12 @@ description: デバイスの基礎の侵入テストは、セキュリティの�
 ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 032f9387f8281a8b1a94fa856bfddcd209794763
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4326689b9b276cc1f7be8d753042b52dd15f6d64
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538541"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464091"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>侵入テスト (Device Fundamental)
 
@@ -178,8 +178,8 @@ ms.locfileid: "56538541"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="fuzz_sub-opens_test"></span>ファジー サブ開きますテスト</p></td>
-<td align="left"><p>テストの実行、迅速な一連のデバイスでオブジェクトを開く呼び出し&#39;s 名前空間。 これらの呼び出しで、デバイスで始まり、任意の名前とさまざまな長さで、コンテンツの意味がない文字列が含まれているパスを渡します。</p>
-<p>中に、<em>相対開くテスト</em>、(とも呼ばれます、<em>サブ オープン テスト</em>) ファジー テストが、デバイス オブジェクトを開こうと&#39;s<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[namespace](https://msdn.microsoft.com/library/windows/hardware/ff542068)">名前空間</a>します。</p>
+<td align="left"><p>テストは、迅速な一連のデバイスの名前空間でオブジェクトを開く呼び出しを実行します。 これらの呼び出しで、デバイスで始まり、任意の名前とさまざまな長さで、コンテンツの意味がない文字列が含まれているパスを渡します。</p>
+<p>中に、<em>相対開くテスト</em>、(とも呼ばれます、<em>サブ オープン テスト</em>) ファジー テストが、デバイスのオブジェクトを開こうと<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[namespace](https://msdn.microsoft.com/library/windows/hardware/ff542068)">名前空間</a>します。</p>
 <p>ファジー テストをこのテストは中に、は、迅速な一連の呼び出しを使用して開かれたデバイスの名前空間でオブジェクトを開くを実行します<a href="#basic-open-operations" data-raw-source="[Basic Open Operations](#basic-open-operations)">を開く操作の基本的な</a>およびその他の開く操作。 これらの呼び出しでは、ファジー テストは、デバイスで始まり、任意の名前とさまざまな長さで、コンテンツの意味がない文字列が含まれているパスを渡します。</p>
 <p>このテストでは、ドライバーまたはファイル システムがその名前空間でのオープン要求を管理する方法を決定します。 具体的には、ドライバーは、名前空間でのオープン要求をサポートしていない場合、防ぐ必要があります未承認のアクセスを要求、失敗したかを使用する場合は、FILE_DEVICE_SECURE_OPEN デバイスの特性を設定して<a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"> <strong>IoCreateDevice</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff548407" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548407)"> <strong>IoCreateDeviceSecure</strong> </a>デバイス オブジェクトを作成します。</p>
 <p>デバイスの名前空間の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[Controlling Device Namespace Access](https://msdn.microsoft.com/library/windows/hardware/ff542068)">デバイス Namespace のアクセスを制御する</a>します。</p>
@@ -197,7 +197,7 @@ ms.locfileid: "56538541"
 <td align="left"><p><span id="Fuzz_Sub-opens_with_Streams_test"></span><span id="fuzz_sub-opens_with_streams_test"></span><span id="FUZZ_SUB-OPENS_WITH_STREAMS_TEST"></span>ストリームのテストがファジー サブ表示</p></td>
 <td align="left"><p>このテストでは、さまざまなデバイス上の名前付きのデータ ストリームを開こうとします。 テストでは、一連の任意のストリーム名を使用して、コンテンツと一部のデバイスでの他の使用を有効になる可能性がある文字で。</p>
 <p>中に、<em>ストリーム テスト</em>、ファジー テストは、さまざまなデバイス上の名前付きのデータ ストリームを開こうとします。 テストは、コンテンツと一部のデバイスでの他の使用を有効になる可能性がある文字で、一連の任意のストリーム名を使用します。 このテストでは、ドライバーがドライバーはサポートされておらず、データ ストリームを予測するデバイスをエクスポートする場合は特に、データ ストリームの要求を処理適切かどうかを判断します。</p>
-<p>A<em>という名前のデータ ストリーム</em>ファイル オブジェクトの属性です。 ファイル、コロン、およびデータ ストリームの名前の名前を記述することで、名前付きのデータ ストリームを指定する&quot;File01.txt:AccessDate&quot;場所<em>AccessDate</em>は、属性、名前付きのデータ ストリームは、File01.txt ファイル。</p>
+<p>A<em>という名前のデータ ストリーム</em>ファイル オブジェクトの属性です。 場所、ファイル、コロン、およびデータ ストリーム、たとえば、"File01.txt:AccessDate"の名前の名前を記述することで、名前付きのデータ ストリームを指定する<em>AccessDate</em> 、File01.txt ファイルの属性は、名前付きのデータ ストリームです。</p>
 <p>ファジー テスト レコード ストリーム名は、テストで使用します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoSubOpensWithStreamsTest</p>
@@ -213,7 +213,7 @@ ms.locfileid: "56538541"
 <td align="left"><p><span id="Fuzz_Zero-Length_Buffer_FSCTL_test___Fuzz_Zero-Length_Buffer_IOCTL_test"></span><span id="fuzz_zero-length_buffer_fsctl_test___fuzz_zero-length_buffer_ioctl_test"></span><span id="FUZZ_ZERO-LENGTH_BUFFER_FSCTL_TEST___FUZZ_ZERO-LENGTH_BUFFER_IOCTL_TEST"></span>ファジー バッファー FSCTL を長さ 0 のテスト/長さ 0 のバッファー IOCTL のファジー テスト</p></td>
 <td align="left"><p>このテストへの呼び出しの一連の問題、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまなファイル システムの制御コードを生成します。</p>
 <p>ファジー テストへの呼び出しの一連の問題を長さ 0 のバッファーのテスト中に、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまな I/O 制御コードを生成します。 I/O 制御コードの内容については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff543023" data-raw-source="[Defining I/O Control Codes](https://msdn.microsoft.com/library/windows/hardware/ff543023)">I/O 制御コードを定義する</a>します。</p>
-<p>ドライバーをテスト&#39;s 処理の無効なバッファーのポインター、これらのユーザー モードの呼び出しでバッファー ポインターは、0xFFFFFC00 などのカーネルの仮想アドレス空間で高のアドレスを指定)。</p>
+<p>無効なバッファーのポインターのドライバーの処理をテストするには、これらのユーザー モードの呼び出しでバッファー ポインターのアドレスを指定高 0xFFFFFC00 などのカーネルの仮想アドレス空間)。</p>
 <p>ファジー テストでは、基本および追加の開いているテスト中に開かれたすべてのデバイスでバッファーの長さ 0 のテストを実行します。 使用してこのテストをカスタマイズすることができます、 <em>MinFunctionCode</em>と<em>MaxFunctionCode</em>関数の呼び出しで使用されるコードの範囲の IOCTL または FSCTL を指定するパラメーターのコマンドと<em>MinDeviceType</em>と<em>MaxDeviceType</em>の呼び出しで使用されるデバイスの種類の範囲を指定します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoZeroLengthBufferIOCTLTest、DoZeroLengthBufferFSCTLTest</p>
@@ -283,15 +283,15 @@ Open の呼び出しで使用されるパラメーターによって異なりま
 ## <a name="related-topics"></a>関連トピック
 
 
-[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[デバイスの基本テスト](device-fundamentals-tests.md)
+[Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[単純な I/O の WDTF プラグインを提供](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/library/windows/hardware/hh781398)
 
 [コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
 

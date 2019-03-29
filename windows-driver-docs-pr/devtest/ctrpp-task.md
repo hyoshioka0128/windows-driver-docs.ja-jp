@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) には、MSBuild を使用してドライ�
 ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac80cf63d6de82e25ee9dee34df56082f4808eea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8989e988f12be06b037ecc580c5352b78d201970
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527392"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464344"
 ---
 # <a name="ctrpp-task"></a>Ctrpp タスク
 
@@ -54,7 +54,7 @@ MSBuild がで ctrpp.exe ファイル a.manifest でを呼び出す上記の例�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Source</td>
+<td align="left">ソース</td>
 <td align="left">@(Ctrpp)</td>
 <td align="left"></td>
 <td align="left">ITaskItem の必須パラメーターです。 処理するカウンター マニフェストを指定します。</td>
@@ -117,7 +117,7 @@ MSBuild がで ctrpp.exe ファイル a.manifest でを呼び出す上記の例�
 <td align="left">GenerateNotificationCallback</td>
 <td align="left">%(Ctrpp.GenerateNotificationCallback)</td>
 <td align="left"><strong>-NotificationCallback</strong></td>
-<td align="left">省略可能なブール型パラメーター。 カスタマイズした通知コールバックのテンプレートを生成します。 ような&quot;コールバック&quot;属性、&lt;プロバイダー&gt;要素。</td>
+<td align="left">省略可能なブール型パラメーター。 カスタマイズした通知コールバックのテンプレートを生成します。 "Callback"属性と似ています、&lt;プロバイダー&gt;要素。</td>
 </tr>
 <tr class="even">
 <td align="left">GenerateResourceSourceFile</td>

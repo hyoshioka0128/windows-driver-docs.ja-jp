@@ -1,15 +1,15 @@
 ---
-title: 内蔵カメラの位置を特定します。
+title: 内蔵カメラの位置を特定する
 description: このトピックでは、Windows 8.1 でのシステムで内蔵カメラのサポートについての情報を提供します。
 ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6350b5fabdafbc5d253e044aba98d0776289ff5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af9bc003e24c90fa776d8161af8879e8ca9d1fc6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529031"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463960"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>内蔵カメラ (UWP デバイス アプリ) の場所を識別します。
 
@@ -139,7 +139,7 @@ InternalDeviceModification のレジストリ キーでは、その 1 つ以上�
 | 必須/省略可能   | 必須                                                                                   |
 | 形式の要件 | キー名は、OEM によって作成された GUID です。 開始と終了の角かっこの両方が必要です。 |
 | 有効な値        | ハードウェア ID のレジストリ値または `PLD_Panel`                                                 |
-| 例            | `{43922620-DAD9-4C05-BE3F-F65B089D84D8}`                                                   |
+| 使用例            | `{43922620-DAD9-4C05-BE3F-F65B089D84D8}`                                                   |
 
  
 
@@ -160,15 +160,15 @@ InternalDeviceModification のレジストリ キーでは、その 1 つ以上�
 <td align="left">必須</td>
 </tr>
 <tr class="odd">
-<td align="left">種類</td>
+<td align="left">型</td>
 <td align="left">複数の文字列</td>
 </tr>
 <tr class="even">
 <td align="left">形式の要件</td>
-<td align="left">ハードウェア ID のバスのプレフィックスを含める必要があります。 すべて&quot; &amp;quot; 文字を置換する必要がある、 &quot; #&quot;します。</td>
+<td align="left">ハードウェア ID のバスのプレフィックスを含める必要があります。 すべて"&amp;quot;文字は、「#」で置き換える必要があります。</td>
 </tr>
 <tr class="odd">
-<td align="left">例</td>
+<td align="left">使用例</td>
 <td align="left"><p><code>USB#VID_1234&amp;PID_ABCD&amp;REV_0001</code></p>
 <p><code>PCI#VEN_ABCD&amp;DEV_1234&amp;SUBSYS_000</code></p></td>
 </tr>
@@ -187,9 +187,9 @@ InternalDeviceModification のレジストリ キーでは、その 1 つ以上�
 |---------------------|--------------------------------------------------------------------------------------------------|
 | レジストリ値の名前 | `PLD_Panel`                                                                                      |
 | 必須/省略可能   | 省略可能                                                                                         |
-| 種類                | DWORD                                                                                            |
+| 型                | DWORD                                                                                            |
 | 形式の要件 | HardwareID のバスのプレフィックスを含める必要があります。 すべて"\\"文字を置換する必要がある、"\#"。 |
-| 例            | 4,5                                                                                              |
+| 使用例            | 4,5                                                                                              |
 
  
 
@@ -203,7 +203,7 @@ PLD\_ACPI テーブルで指定されたパネル値により、システムが 
 
 PLD\_としてパネル レジストリ値が定義されている\_ACPI 仕様で PLD (物理デバイスの場所)。 この値は、エンクロージャ内のカメラの物理的な場所を示すは、次のいずれかである必要があります。
 
-| Value | 説明                                                         |
+| 値 | 説明                                                         |
 |-------|---------------------------------------------------------------------|
 | 0     | Top                                                                 |
 | 1     | Bottom                                                              |

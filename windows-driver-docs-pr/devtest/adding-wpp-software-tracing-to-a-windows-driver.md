@@ -1,23 +1,23 @@
 ---
-title: Windows Driver のトレース WPP ソフトウェアを追加します。
+title: Windows ドライバーへの WPP ソフトウェア トレースの追加
 description: カーネル モード ドライバーなど、ユーザー モード アプリケーションのトレース プロバイダーを使用して、WPP ソフトウェア トレースを使用するにはコード (またはインストルメント化) ドライバーのソース ファイルを追加およびドライバーのプロジェクトを変更する必要があります。 このセクションでは、これらの手順を説明します。
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 683bbe2b001494fd8c101d54337d2a061b089f0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0755dd805032549faaca00bfb4185fac858ffc5a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527791"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350129"
 ---
-# <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>Windows Driver のトレース WPP ソフトウェアを追加します。
+# <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>Windows ドライバーへの WPP ソフトウェア トレースの追加
 
 カーネル モード ドライバーなど、ユーザー モード アプリケーションのトレース プロバイダーを使用して、WPP ソフトウェア トレースを使用するにはコードを追加する必要があります (または*インストルメント化*) ドライバーのソース ファイルとドライバーのプロジェクトを変更します。 このセクションでは、これらの手順を説明します。
 
 **ヒント:** WPP トレースには、ドライバーを追加する最も簡単な方法は、Visual Studio で KMDF または UMDF ドライバー テンプレートのいずれかを使用します。 テンプレートを使用する場合に追加する必要があるコードの多くは既にが行われます。 Visual Studio で、次のようにクリックします。**ファイル&gt;新規&gt;プロジェクト**、Windows Driver (ユーザー モードまたはカーネル モード) WDF プロジェクトを選択します。 WPP マクロは、プロジェクトの一部として含まれている Trace.h ヘッダー ファイルで定義されます。 テンプレートのいずれかを使用する場合に進んでかまいません[手順 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)します。 
 
--   [手順 1: コントロールの GUID とトレース フラグを定義します。](#step-1-define-the-control-guid-and-trace-flags)
+-   [ステップ 1: コントロールの GUID とトレース フラグを定義します。](#step-1-define-the-control-guid-and-trace-flags)
 -   [手順 2:使用してこれらの関数の WPP マクロを定義するトレース メッセージ機能を選択します。](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
 -   [手順 3:C または C++ ソース ファイルに関連付けられているトレースのヘッダー ファイル (.h および .tmh) を含める](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
 -   [手順 4:WPP を初期化してクリーンアップするには、適切なコールバック関数にマクロを追加します。](#step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp)
@@ -110,7 +110,7 @@ ms.locfileid: "56527791"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -277,7 +277,7 @@ DriverEntry(
         // Cleanup tracing here because DriverContextCleanup will not be called
         // as we have failed to create WDFDRIVER object itself.
         // Please note that if you return failure from DriverEntry after the
-        // WDFDRIVER object is created successfully, you don&#39;t have to
+        // WDFDRIVER object is created successfully, you don't have to
         // call WPP cleanup because in those cases DriverContextCleanup
         // will be executed when the framework deletes the DriverObject.
         //

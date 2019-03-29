@@ -1,19 +1,19 @@
 ---
-Description: This topic describes the device capabilities that are required for a Windows app that uses the Windows.Devices.Usb namespace.
-title: アプリケーション マニフェストに USB デバイスの機能を追加する方法
+Description: このトピックでは、Windows.Devices.Usb 名前空間を使用する Windows アプリを必要とされるデバイスの機能について説明します。
+title: アプリ マニフェストへの USB デバイス機能の追加方法
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aa7fa17cb6a71b5b9c6a47687f91e9e1c69e05c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 013695e2f0990172d3a79304f96dda4a9f0db553
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464312"
 ---
-# <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>アプリケーション マニフェストに USB デバイスの機能を追加する方法
+# <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>アプリ マニフェストへの USB デバイス機能の追加方法
 
 
-**要約**
+**概要**
 
 -   USB デバイスの機能では、Package.appxmanifest を更新する必要があります。
 -   デバイス クラスには、サポートされているクラスのいずれかを指定する必要があります。
@@ -101,38 +101,38 @@ USB デバイスの機能を定義するためのいくつかの例を次に示�
 </thead>
 <tbody>
 <tr class="odd">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot;any&quot;&gt;
-    &lt;Function Type=&quot;classId:ef 01 01&quot;/&gt;
-    &lt;Function Type=&quot;name:stillImage&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id="any"&gt;
+    &lt;Function Type="classId:ef 01 01"/&gt;
+    &lt;Function Type="name:stillImage"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
 <td><p>任意のデバイスの ActiveSync または StillImage インターフェイスにアクセスするアプリを許可します。 アプリは、これらは既知のクラス型であるために、ベンダーや製品識別子を指定する必要はありません。</p></td>
 </tr>
 <tr class="even">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot;vidpid:045e 930a&quot;&gt;
-    &lt;Function Type=&quot;name:vendorSpecific&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id="vidpid:045e 930a"&gt;
+    &lt;Function Type="name:vendorSpecific"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
 <td><p>OSR USB Fx2 デバイスのベンダー固有のインターフェイスにアクセスするアプリを許可します。</p></td>
 </tr>
 <tr class="odd">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot;vidpid:045e 930a&quot;&gt;
-    &lt;Function Type=&quot;classId:ff * <em>&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id="vidpid:045e 930a"&gt;
+    &lt;Function Type="classId:ff * <em>"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
-<td><p>OSR USB Fx2 デバイスの異なるバージョンのベンダー固有のインターフェイスにアクセスするアプリを許可します。 ClassId 形式に注意してください: &quot;ff * *&quot;します。 クラスのコードは&quot;ff&quot;後に、ワイルドカード (</em>) とプロトコルのサブクラス コードを含めます。</p></td>
+<td><p>OSR USB Fx2 デバイスの異なるバージョンのベンダー固有のインターフェイスにアクセスするアプリを許可します。 ClassId 形式に注意してください:"ff * *"。 クラスのコードは、"ff"の後に、ワイルドカード (</em>) とプロトコルのサブクラス コードを含めます。</p></td>
 </tr>
 <tr class="even">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot; vidpid:1234 5678&quot;&gt;
-    &lt;Function Type=&quot;winUsbId:&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id=" vidpid:1234 5678"&gt;
+    &lt;Function Type="winUsbId:"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
 <td><p>MS OS 記述子またはデバイスの INF に GUID が定義されているデバイスのインターフェイスを持つデバイスにアクセスするアプリを許可します。</p>
-<p>この場合、デバイス Id の値でなければなりません&quot;任意&quot;します。</p></td>
+<p>この場合、デバイス Id の値では、"any"は等しくない必要があります。</p></td>
 </tr>
 </tbody>
 </table>

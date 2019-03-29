@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5945f90e52da2b23b91a274567ff60d95b71f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fec71d67eabeb87eb9c13f860be93e28ec95a6c8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553476"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350427"
 ---
-# <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>バグ チェック 0xC9 の。ドライバー\_VERIFIER\_IOMANAGER\_違反
+# <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>バグ チェック 0xC9:ドライバー\_VERIFIER\_IOMANAGER\_違反
 
 
 ドライバー\_VERIFIER\_IOMANAGER\_違反のバグ チェックが 0x000000C9 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**I/O の検証**違反。
@@ -272,7 +272,7 @@ ms.locfileid: "56553476"
 <tr class="even">
 <td align="left"><p>0x207</p></td>
 <td align="left"><p>致命的なエラー</p></td>
-<td align="left"><p>呼び出し元がスタックを手動でコピーし、上位のレイヤーがコピー間違って&#39;s 完了ルーチン。 ドライバーを使用する必要があります<strong>IoCopyCurrentIrpStackLocationToNext</strong>します。 (IRP を指定します。)</p></td>
+<td align="left"><p>呼び出し元は、スタックが手動でコピーし、上位層の完了ルーチンのコピーが誤ってします。 ドライバーを使用する必要があります<strong>IoCopyCurrentIrpStackLocationToNext</strong>します。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x208</p></td>
@@ -327,7 +327,7 @@ ms.locfileid: "56553476"
 <tr class="odd">
 <td align="left"><p>0x212</p></td>
 <td align="left"><p>致命的でないエラー</p></td>
-<td align="left"><p>呼び出し元がごみ箱に入れまたは IRP が正しくコピーされていない&#39;s スタック。 (IRP を指定します。)</p></td>
+<td align="left"><p>呼び出し元は、ごみ箱に入れがまたはの IRP スタックが正しくコピーされていません。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x213</p></td>
@@ -376,7 +376,7 @@ ms.locfileid: "56553476"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x21C</p></td>
-<td align="left"><p>Warning</p></td>
+<td align="left"><p>警告</p></td>
 <td align="left"><p>IRP スタックのコピーが、呼び出し元が、完了ルーチンを設定できません。 これは効率的ではありません--を使用して、 <strong>IoSkipCurrentIrpStackLocation</strong>代わりにします。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="even">
@@ -407,7 +407,7 @@ ms.locfileid: "56553476"
 <tr class="odd">
 <td align="left"><p>0x222</p></td>
 <td align="left"><p>致命的なエラー</p></td>
-<td align="left"><p>Bus フィルター&#39;s IRP ディスパッチ ハンドラーが PDO がアライブの場合は、削除 IRP を受信するとデタッチします。 クリーンアップする必要があります bus フィルター <strong>FastIoDetach</strong>コールバック。 (デバイス オブジェクト、ディスパッチ ルーチン、および IRP の指定)</p></td>
+<td align="left"><p>Bus フィルターの IRP ディスパッチ ハンドラーが PDO がアライブの場合は、削除 IRP を受信するとデタッチします。 クリーンアップする必要があります bus フィルター <strong>FastIoDetach</strong>コールバック。 (デバイス オブジェクト、ディスパッチ ルーチン、および IRP の指定)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x223</p></td>
@@ -417,7 +417,7 @@ ms.locfileid: "56553476"
 <tr class="odd">
 <td align="left"><p>0x224</p></td>
 <td align="left"><p>致命的なエラー</p></td>
-<td align="left"><p>IRP のディスパッチ ハンドラーの IRP に矛盾する状態が返される&#39;s <strong>IoStatus.Status</strong>フィールド。 (ハンドラー ルーチン、IRP、IRP をディスパッチ&#39;s IoStatus.Status、および返されるステータスを指定します)。</p></td>
+<td align="left"><p>IRP のディスパッチ ハンドラーに IRP に矛盾する状態が返される<strong>IoStatus.Status</strong>フィールド。 (ハンドラー ルーチン、IRP、IRP の IoStatus.Status、および返された状態の指定をディスパッチします。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x225</p></td>
@@ -437,7 +437,7 @@ ms.locfileid: "56553476"
 <tr class="odd">
 <td align="left"><p>0x228</p></td>
 <td align="left"><p>致命的でないエラー</p></td>
-<td align="left"><p>ドライバー&#39;s 完了ルーチンが保留中の場合は IRP をマークしていない、 <strong>PendingReturned</strong>フィールドが渡された IRP に設定します。 スタックによってエラーが返される場合は特に、停止して Windows があります。 (ルーチンと IRP を指定します)。</p></td>
+<td align="left"><p>ドライバーの完了のルーチンが保留中の場合は IRP をマークしていない、 <strong>PendingReturned</strong>フィールドが渡された IRP に設定します。 スタックによってエラーが返される場合は特に、停止して Windows があります。 (ルーチンと IRP を指定します)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x229</p></td>
@@ -462,7 +462,7 @@ ms.locfileid: "56553476"
 <tr class="even">
 <td align="left"><p>0x22D</p></td>
 <td align="left"><p>致命的でないエラー</p></td>
-<td align="left"><p>呼び出し元には、IRP_MJ_PNP が完了したことは一致しませんでした&#39;渡すことではなく理解します。 (IRP を指定します。)</p></td>
+<td align="left"><p>呼び出し元に渡すことではなくそれを理解していない IRP_MJ_PNP が完了しました。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x22E</p></td>
@@ -477,7 +477,7 @@ ms.locfileid: "56553476"
 <tr class="odd">
 <td align="left"><p>0x230</p></td>
 <td align="left"><p>致命的でないエラー</p></td>
-<td align="left"><p>呼び出し元に対し、IRP_MJ_POWER が完了したことは一致しませんでした&#39;渡すことではなく理解します。 (IRP を指定します。)</p></td>
+<td align="left"><p>呼び出し元渡すことではなく理解していないことに対し、IRP_MJ_POWER が完了しました。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x231</p></td>
@@ -516,12 +516,12 @@ ms.locfileid: "56553476"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x238</p></td>
-<td align="left"><p>Warning</p></td>
+<td align="left"><p>警告</p></td>
 <td align="left"><p>呼び出し元<strong>IoInitializeIrp</strong>で割り当てられた IRP が渡される<strong>IoAllocateIrp</strong>します。 これは無効な不要なし、通常の用途でのパフォーマンスが低下します。 この IRP がリサイクルされている場合は、次を参照してください。 <strong>IoReuseIrp</strong> Windows Driver Kit でします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x239</p></td>
-<td align="left"><p>Warning</p></td>
+<td align="left"><p>警告</p></td>
 <td align="left"><p>呼び出し元<strong>IoCompleteRequest</strong>が完了しているが、決してへの呼び出しを使用して転送された IRP<strong>保留</strong>または<strong>PoCallDriver</strong>します。 バグがあります。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="odd">
@@ -568,7 +568,7 @@ ms.locfileid: "56553476"
 <tr class="odd">
 <td align="left"><p>0x23E</p></td>
 <td align="left"><p>致命的でないエラー</p></td>
-<td align="left"><p>ドライバーが一致しませんでしたが、保留中の IRP をマーク&#39;t は STATUS_PENDING を返します。 (IRP を指定します。)</p></td>
+<td align="left"><p>ドライバーは保留中の IRP がマークしますが、STATUS_PENDING を返されませんでした。 (IRP を指定します。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x23F</p></td>

@@ -1,17 +1,17 @@
 ---
-title: 3D の製造キーワードの概要
+title: 3D 製造のキーワードの概要
 description: 印刷スキーマの 3D の製造キーワードは、デバイスの機能の使用可能な設定やデバイスの構成の選択した設定を特定します。
 ms.assetid: D78EB9E6-584A-419C-B320-8962CDCC966E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046e87f1e2226c181e0844ca5ada4bb87a0ab60f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7ba0b83a438b54e28d34ca3a8c7b7b6ea7e5e359
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551546"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464044"
 ---
-# <a name="3d-manufacturing-keywords-overview"></a>3D の製造キーワードの概要
+# <a name="3d-manufacturing-keywords-overview"></a>3D 製造のキーワードの概要
 
 
 印刷スキーマの 3D の製造キーワードは、3D 製造デバイスの機能の使用可能な設定または選択した特定のデバイス構成設定を特定します。 これらのキーワードは各 3D 製造業のため印刷スキーマ ドキュメントのプロデューサーとコンシューマー間の設定の通信でわかりやすくするための最大化するために適切に定義された方法で、特定の概念を説明します。
@@ -108,7 +108,7 @@ http://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d
 <tr class="header">
 <th>[12 才以下]</th>
 <th>xsi:type</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -132,7 +132,7 @@ http://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d
 <tr class="even">
 <td>プロパティ psf:Mandatory</td>
 <td>xsd:QName</td>
-<td>ときに、パラメーターを初期化する必要がありますを指定します。 §2.1.3.1.1 を参照してください。&quot;パラメーター psf:Mandatory プロパティ&quot;とこのプロパティの要件について説明します。</td>
+<td>ときに、パラメーターを初期化する必要がありますを指定します。 説明と、このプロパティの要件は、§2.1.3.1.1、「パラメーター psf:Mandatory プロパティ」を参照してください。</td>
 </tr>
 <tr class="odd">
 <td>プロパティ psf:UnitType</td>

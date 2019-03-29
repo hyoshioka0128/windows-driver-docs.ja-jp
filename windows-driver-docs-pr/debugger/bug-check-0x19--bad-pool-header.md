@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8dff91de6527a79daf8f40c2481507cfd451a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b64fb39b576b67b81776ee55f7052e0c60f74172
+ms.sourcegitcommit: 91db84a97ce13a851f500acd4af67aa0b0a05aa8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536929"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319234"
 ---
 # <a name="developer-content-bug-check-0x19-badpoolheader"></a>(開発者向けコンテンツ)0x19 チェックをバグします。不適切な\_プール\_ヘッダー
 
@@ -78,7 +78,7 @@ ms.locfileid: "56536929"
 <td align="left"><p>1 つの計算が正しくないエントリ</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>計算式の原因となった無効なエントリ</p></td>
-<td align="left"><p>プールのブロック ヘッダー&#39;s の前のサイズが大きすぎます。</p></td>
+<td align="left"><p>プールのブロック ヘッダーの前のサイズが大きすぎます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x7</p></td>
@@ -157,9 +157,9 @@ ms.locfileid: "56536929"
 
 説明する手順を使用して、 [**青い画面データ**](blue-screen-data.md)停止コード パラメーターを収集します。 停止コード パラメーターを使用して、コードの動作追跡するために作業しているは、特定の種類を決定します。
 
-**Driver Verifier**
+**ドライバーの検証ツール**
 
-Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
+Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifier*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
 
 **Windows メモリ診断**
 

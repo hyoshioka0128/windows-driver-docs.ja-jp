@@ -1,20 +1,20 @@
 ---
-title: WDM リーダーのドライバー
-description: WDM リーダーのドライバー
+title: WDM リーダー ドライバー
+description: WDM リーダー ドライバー
 ms.assetid: ead76f5f-1d28-4343-99c0-e7974fa4c3da
 keywords:
 - ベンダーから提供されたドライバー WDK スマート カード、必須のルーチン
 - WDM WDK スマート カード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85cd0bf8e273d015fec7c3002e140ced8df8fc31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0a5ed983d3e32e4491d965624726e9cadf070512
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548778"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350287"
 ---
-# <a name="wdm-reader-driver"></a>WDM リーダーのドライバー
+# <a name="wdm-reader-driver"></a>WDM リーダー ドライバー
 
 
 ## <span id="_ntovr_wdm_reader_driver"></span><span id="_NTOVR_WDM_READER_DRIVER"></span>
@@ -85,7 +85,7 @@ DriverDeviceControl(
         Irp
         );
 }</code></pre>
-<p>呼び出しで示されている特定の IOCTL を処理することがない場合<strong>SmartcardDeviceControl</strong>ドライバーを呼び出す&#39;IOCTL の不明な要求のコールバック。</p></td>
+<p>呼び出しで示されている特定の IOCTL を処理することがない場合<strong>SmartcardDeviceControl</strong>は不明な IOCTL 要求のドライバーのコールバックを呼び出します。</p></td>
 </tr>
 </tbody>
 </table>

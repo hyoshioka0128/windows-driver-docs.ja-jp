@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: def2328270192eb63d59efa73d98ad58dc9b364a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0a36cdab836d208cf90c5cd6aa458f066d4441f0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539050"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350423"
 ---
 # <a name="iprintoemui-com-interface"></a>IPrintOemUI COM インターフェイス
 
@@ -45,11 +45,11 @@ ms.locfileid: "56539050"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554165" data-raw-source="[&lt;strong&gt;IPrintOemUI::DevicePropertySheets&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554165)"><strong>IPrintOemUI::DevicePropertySheets</strong></a></p></td>
-<td><p>により、プリンター デバイスに新しいページを追加する UI プラグイン&#39;s プリンターのプロパティ シートです。</p></td>
+<td><p>プリンター デバイスのプリンターのプロパティ シートに新しいページを追加する UI プラグインを有効にします。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554167" data-raw-source="[&lt;strong&gt;IPrintOemUI::DevMode&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554167)"><strong>IPrintOemUI::DevMode</strong></a></p></td>
-<td><p>プラグインの UI での操作を実行します。&#39;s プライベート<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>メンバー。</p></td>
+<td><p>UI プラグインのプライベートに対して操作を実行<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>メンバー。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554172" data-raw-source="[&lt;strong&gt;IPrintOemUI::DevQueryPrintEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554172)"><strong>IPrintOemUI::DevQueryPrintEx</strong></a></p></td>
@@ -57,7 +57,7 @@ ms.locfileid: "56539050"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554173" data-raw-source="[&lt;strong&gt;IPrintOemUI::DocumentPropertySheets&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554173)"><strong>IPrintOemUI::DocumentPropertySheets</strong></a></p></td>
-<td><p>により、プリンター デバイスに新しいページを追加する UI プラグイン&#39;s ドキュメントのプロパティ シートです。</p></td>
+<td><p>プリンター デバイスのドキュメントのプロパティ シートに新しいページを追加する UI プラグインを有効にします。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554175" data-raw-source="[&lt;strong&gt;IPrintOemUI::DriverEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554175)"><strong>IPrintOemUI::DriverEvent</strong></a></p></td>
@@ -65,11 +65,11 @@ ms.locfileid: "56539050"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554176" data-raw-source="[&lt;strong&gt;IPrintOemUI::FontInstallerDlgProc&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554176)"><strong>IPrintOemUI::FontInstallerDlgProc</strong></a></p></td>
-<td><p>Unidrv フォントのインストーラーを置き換える&#39;s ユーザー インターフェイス。</p></td>
+<td><p>Unidrv フォント インストーラーのユーザー インターフェイスが置き換えられます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554178" data-raw-source="[&lt;strong&gt;IPrintOemUI::GetInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554178)"><strong>IPrintOemUI::GetInfo</strong></a></p></td>
-<td><p>(必要な実装です。)プラグインの UI を返す&#39;情報を識別します。</p></td>
+<td><p>(必要な実装です。)UI プラグインの識別情報を返します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554182" data-raw-source="[&lt;strong&gt;IPrintOemUI::PrinterEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554182)"><strong>IPrintOemUI::PrinterEvent</strong></a></p></td>
@@ -77,7 +77,7 @@ ms.locfileid: "56539050"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554184" data-raw-source="[&lt;strong&gt;IPrintOemUI::PublishDriverInterface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554184)"><strong>IPrintOemUI::PublishDriverInterface</strong></a></p></td>
-<td><p>(必要な実装です。)Unidrv または Pscript5 ドライバーへのポインターを提供&#39;s <a href="iprintoemdriverui-com-interface.md" data-raw-source="[IPrintOemDriverUI COM interface](iprintoemdriverui-com-interface.md)">IPrintOemDriverUI COM インターフェイス</a>、 <a href="iprintcoreui2-com-interface.md" data-raw-source="[IPrintCoreUI2 COM interface](iprintcoreui2-com-interface.md)">IPrintCoreUI2 COM インターフェイス</a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff552906" data-raw-source="[IPrintCoreHelperPS interface](https://msdn.microsoft.com/library/windows/hardware/ff552906)">IPrintCoreHelperPS インターフェイス</a>、または<a href="https://msdn.microsoft.com/library/windows/hardware/ff552940" data-raw-source="[IPrintCoreHelperUni interface](https://msdn.microsoft.com/library/windows/hardware/ff552940)">IPrintCoreHelperUni インターフェイス</a>します。</p></td>
+<td><p>(必要な実装です。)Unidrv または Pscript5 ドライバーへのポインターを提供<a href="iprintoemdriverui-com-interface.md" data-raw-source="[IPrintOemDriverUI COM interface](iprintoemdriverui-com-interface.md)">IPrintOemDriverUI COM インターフェイス</a>、 <a href="iprintcoreui2-com-interface.md" data-raw-source="[IPrintCoreUI2 COM interface](iprintcoreui2-com-interface.md)">IPrintCoreUI2 COM インターフェイス</a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff552906" data-raw-source="[IPrintCoreHelperPS interface](https://msdn.microsoft.com/library/windows/hardware/ff552906)">IPrintCoreHelperPS インターフェイス</a>、または<a href="https://msdn.microsoft.com/library/windows/hardware/ff552940" data-raw-source="[IPrintCoreHelperUni interface](https://msdn.microsoft.com/library/windows/hardware/ff552940)">IPrintCoreHelperUni インターフェイス</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554186" data-raw-source="[&lt;strong&gt;IPrintOemUI::QueryColorProfile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554186)"><strong>IPrintOemUI::QueryColorProfile</strong></a></p></td>
@@ -85,7 +85,7 @@ ms.locfileid: "56539050"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554188" data-raw-source="[&lt;strong&gt;IPrintOemUI::UpdateExternalFonts&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554188)"><strong>IPrintOemUI::UpdateExternalFonts</strong></a></p></td>
-<td><p>プリンター インターフェイス プリンターを更新する DLL を有効に&#39;s <a href="customized-font-management.md#ddk-unidrv-font-format-files-gg" data-raw-source="[Unidrv font format files](customized-font-management.md#ddk-unidrv-font-format-files-gg)">Unidrv フォント形式ファイル</a>します。</p></td>
+<td><p>プリンターのインターフェイスを更新するプリンターの DLL を有効に<a href="customized-font-management.md#ddk-unidrv-font-format-files-gg" data-raw-source="[Unidrv font format files](customized-font-management.md#ddk-unidrv-font-format-files-gg)">Unidrv フォント形式ファイル</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554189" data-raw-source="[&lt;strong&gt;IPrintOemUI::UpgradePrinter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554189)"><strong>IPrintOemUI::UpgradePrinter</strong></a></p></td>

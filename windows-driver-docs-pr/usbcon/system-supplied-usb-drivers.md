@@ -1,16 +1,16 @@
 ---
-Description: This topics in this section describe the class drivers, generic client driver, and the parent composite driver that are provided by Microsoft.
-title: Microsoft 提供の USB ドライバー
+Description: このセクションでは、このトピックでは、クラス ドライバーや汎用的なクライアント ドライバーでは、Microsoft によって提供される、親複合ドライバーについて説明します。
+title: Microsoft が提供する USB ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f67a7f1c8e0e647ed7f51c12bd3b5fce5c6102a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 572b867501af1658d4ef7d89c5880743bdfefaf5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530921"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350195"
 ---
-# <a name="microsoft-provided-usb-drivers"></a>Microsoft 提供の USB ドライバー
+# <a name="microsoft-provided-usb-drivers"></a>Microsoft が提供する USB ドライバー
 
 
 このセクションでは、このトピックでは、クラス ドライバーや汎用的なクライアント ドライバーでは、Microsoft によって提供される、親複合ドライバーについて説明します。
@@ -86,7 +86,7 @@ ms.locfileid: "56530921"
 <p>Windows 7</p>
 <p>Windows Vista</p>
 <p>Windows XP Service Pack 2 (SP2)</p></td>
-<td>USB デバイスとして使用できる Winusb.sys&#39;s 関数のドライバーのドライバーを実装する代わりにします。 参照してください<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[WinUSB](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB</a>します。</td>
+<td>Winusb.sys は、ドライバーを実装する代わりに、USB デバイスの機能のドライバーとして使用できます。 参照してください<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[WinUSB](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB</a>します。</td>
 </tr>
 </tbody>
 </table>

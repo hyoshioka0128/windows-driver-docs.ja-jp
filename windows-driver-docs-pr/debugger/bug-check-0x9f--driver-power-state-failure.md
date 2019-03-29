@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bc16844999aea1ea084cd9438c57edd6cab1051
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ea7402b6e1d6bab19d0a245ff095f3d6f171712f
+ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536880"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505148"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>(開発者向けコンテンツ)チェック 0x9F バグの。ドライバー\_POWER\_状態\_エラー
 
 
-このバグ チェックでは、0x0000009F の値を持ちます。 このバグ チェックでは、一貫性のない、または無効な電源状態で、ドライバーがあることを示します。
+DRIVER_POWER_STATE_FAILURE のバグ チェックでは、0x0000009F の値を持ちます。 このバグ チェックでは、一貫性のない、または無効な電源状態で、ドライバーがあることを示します。
 
 **重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "56536880"
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>ターゲット デバイス&#39;s デバイス オブジェクトを使用できる場合</p></td>
+<td align="left"><p>入手可能になった場合は、ターゲット デバイスのデバイス オブジェクト</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>使用可能になる場合は、ドライバー オブジェクト</p></td>
 <td align="left"><p>デバイス オブジェクトは、システム電源の状態要求では、I/O 要求パケット (IRP) を完了しましたが、呼び出されませんでした<strong>PoStartNextPowerIrp</strong>します。</p></td>
@@ -80,7 +80,7 @@ ms.locfileid: "56536880"
 <tr class="odd">
 <td align="left"><p>0x500</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ターゲット デバイス&#39;s デバイス オブジェクト、使用可能な場合</p></td>
+<td align="left"><p>使用可能な場合に、ターゲット デバイスのデバイス オブジェクト</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>デバイス オブジェクトには、システム電源の状態要求の IRP が完了しましたが、呼び出されませんでした<strong>PoStartNextPowerIrp</strong>します。</p></td>
 </tr>

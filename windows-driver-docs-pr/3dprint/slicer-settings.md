@@ -4,12 +4,12 @@ description: XML 構成ファイルには、さまざまな Windows の 3D 印�
 ms.assetid: 9203AABB-48D9-47A6-A2B1-7A878BF82FD1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed24f5c8807b10ef5a838feb52148676af22b3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53fba2c8daaad75fe8bd354aae08588a91d39e8f
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559165"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464074"
 ---
 # <a name="slicer-settings"></a>スライサーの設定
 
@@ -44,7 +44,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3d:Job3DOutputAreaDepth</p>
 <p>psk3d:Job3DOutputArea\ </p>
 <p>psk3d:Job3DOutputAreaHeight</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>幅 (最大 x)、深度 (最大 y)、高さ (z が最大) で定義されているミクロンでボリュームを印刷します。</p>
 <p>ボリュームには、プリンターが宣言されているボリュームを使用できますが、ドライバーの発行、認定フェーズでのテストの 1 つとして、物理デバイスの機能を表す必要があります。</p></td>
 </tr>
@@ -70,7 +70,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <td><p>psk3d:Job3DMaterials\ </p>
 <p>psk3d:Material&lt;マテリアル&gt;\ </p>
 <p>psk:DisplayName</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>素材の表示名。 これにより、ユーザーの割り当ての 3D 印刷 ダイアログ ボックスに表示される任意の文字列がでことができます。</p></td>
 </tr>
 
@@ -78,7 +78,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <td><p>psk3d:Job3DMaterials\ </p>
 <p>psk3d:Material&lt;マテリアル&gt;\ </p>
 <p>psk:MaterialColor</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>3D 印刷 ダイアログ ボックスでは、素材のレンダリングの RGB または RGBA 色です。</p></td>
 </tr>
 
@@ -87,14 +87,14 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3d:Material&lt;マテリアル&gt;\ </p>
 <p>psk:MaterialType</p></td>
 <td><p>予約済み</p></td>
-<td><p>3D 印刷用の印刷スキーマのキーワードで定義されている素材の種類 (たとえば、 &quot;psk3d:PLA&quot;)。 名と色で指定された汎用の資料を優先してこの設定は非推奨です。</p></td>
+<td><p>3D 印刷 (たとえば、"psk3d:PLA") の印刷スキーマのキーワードで定義されている素材の種類です。 名と色で指定された汎用の資料を優先してこの設定は非推奨です。</p></td>
 </tr>
 
 <tr>
 <td><p>psk3d:Job3DMaterials\ </p>
 <p>psk3d:Material&lt;マテリアル&gt;\ </p>
 <p>psk3dx:platformtemperature</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>印刷のベッドを印刷時に過熱する必要があります温度 (摂氏)。 値の 0 の場合は、ベッドは白熱いない必要があります。</p>
 <p>この値を使用して後で参照できます、 <em>$platformtemperature$</em>前のコマンドでテンプレート。</p></td>
 </tr>
@@ -103,7 +103,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <td><p>psk3d:Job3DMaterials\ </p>
 <p>psk3d:Material&lt;マテリアル&gt;\ </p>
 <p>psk3dx:filamentdiameter</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>3D のプリンターでの・ フィラメント ・ ミクロン直径が読み込まれます。 たとえば、1750 では、標準の 1.75 mm ・ フィラメント ・です。</p></td>
 </tr>
 
@@ -119,7 +119,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <td><p>psk3d:Job3DMaterials\ </p>
 <p>psk3d:Material&lt;マテリアル&gt;\ </p>
 <p>psk3dx:extrudertemperature</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>摂氏で温度押し出しときに熱 extruder ホット/終了する必要があります。 この値から参照できる、 <em>$extrudertemperature$</em>前のコマンドでテンプレート。</p></td>
 </tr>
 
@@ -136,7 +136,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3d:Material&lt;マテリアル&gt;\  </p>
 <p>psk3dx:SetupCommands\ </p>
 <p>psk3dx:command</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>セットアップの材料として使用するコマンドの一覧。 これは、準備、nozzle の事前暖房を制御するための前のコマンドの中に実行される通常の G コードです。</p></td>
 </tr>
 
@@ -145,7 +145,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3d:Material&lt;マテリアル&gt;\  </p>
 <p>psk3dx:SelectCommands\ </p>
 <p>psk3dx:command</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>素材が印刷中に使用する必要がある場合に発行するコマンドの一覧。 これは、に対して実行される通常の G コードです。T0/T1 extruder 選択した場合、nozzle のシーケンスでのワイプは、ファンに/オフ/段階的なを有効にする、材料、温度、および具合を取り消します。</p></td>
 </tr>
 
@@ -154,19 +154,19 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3d:Material&lt;マテリアル&gt;\  </p>
 <p>psk3dx:DeselectCommands\ </p>
 <p>psk3dx:command</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>印刷時に、リソースが解放されるときに発行するためのコマンドの一覧。 これは通常 G-コードの実行: 材料を取り消し、nozzle が駐車温度の削減および具合です。</p></td>
 </tr>
 
 <tr>
 <td><p>psk3dx:customStatus</p></td>
 <td><p>省略可能</p></td>
-<td><p>通常、スライスのフェーズの初期の印刷ジョブの状態を表す文字列。 ジョブの状態に設定がない場合、&quot;印刷&quot;します。 通常この値に設定する必要があります&quot;Slicing&quot;スライスが行われるタイミング レンダー フィルターでなど、Microsoft のスライサーを使用する場合。</p></td>
+<td><p>通常、スライスのフェーズの初期の印刷ジョブの状態を表す文字列。 ない場合、ジョブの状態は「印刷」に設定されます。 通常、スライスが発生したとき、レンダリングのフィルターになど、Microsoft のスライサーを使用する場合は、この値を"Slicing"に設定する必要があります。</p></td>
 </tr>
 
 <tr>
 <td><p>psk3dx:userprompt</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>メッセージが表示されます、印刷する前に、ユーザー プロンプトを開始します。 このプロンプトは、extruder の印刷を手動で削除を必要とするデバイス上の既存の印刷にクラッシュを防ぐために使用されます。</p>
 <p>先頭または印刷の末尾には、デバイス自体では、プロンプトを表示できるデバイスの場合は、この設定は必要ありません。</p></td>
 </tr>
@@ -178,7 +178,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <td><p>省略可能</p></td>
 <td><p>存在する場合、この設定は、ので、開発者は、G コードおよびファームウェアの応答を検査するファイルにログ記録するドライバー デバッグを有効します。</p>
 <p>この設定も可能にグローバルに HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print のレジストリ キーを使用して</p>
-<p>StandardGCodeDebugLog=&quot;c:\Path\To\LogFile&quot;</p></td>
+<p>StandardGCodeDebugLog="c:\Path\To\LogFile"</p></td>
 </tr>
 
 <tr>
@@ -231,7 +231,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:customcommands\ </p>
 <p>psk3dx:initcommands\ </p>
 <p>psk3dx:command</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>スライスする前に送信されたコマンドのシーケンス。 これらのコマンドは、スライサーを並列で実行されます。 これは、通常、調整、自動レベルやほぼの最終的な温度にプリンターを熱 G コード コマンドのシーケンスです。</p></td>
 </tr>
 
@@ -240,7 +240,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:customcommands\ </p>
 <p>psk3dx:precommands\ </p>
 <p>psk3dx:command</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>一般に、各ジョブの開始時に回帰と最終的な温度 extruder を暖房、extruder の準備など、3 D プリンターを初期化するために送信する G コード コマンドのセット。 各デバイスには、別の必要な事前コマンドがあります。 G コードの各行は、子に反映する&lt;コマンド&gt;要素。 参照されている設定によって置換される変数を '$' 文字で区切られた名前として宣言できます&lt;コマンド&gt;M104 <em>S$ extrudertemperature$</em>&lt;/command&gt;. 組み込み変数は次のセクションを参照してください。</p></td>
 </tr>
 
@@ -249,8 +249,8 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:customcommands\ </p>
 <p>psk3dx:postcommands\ </p>
 <p>psk3dx:command</p></td>
-<td><p>〇</p></td>
-<td><p>安全な状態では、3 D プリンターに一般に、各ジョブの最後に送信する G コード コマンドのセットなど、extruder ダウン冷却先 extruder ホット/末尾から一部を移行、&#39;、ベッドから削除するの簡単です。 各デバイスには、別の必要な後コマンドがあります。</p>
+<td><p>はい</p></td>
+<td><p>Extruder/ホットからパーツを移動、extruder ダウン冷却などの安全な状態を 3D プリンターに一般に、各ジョブの最後に送信する G コード コマンドのセットは、ベッドから削除する簡単な場所に終了します。 各デバイスには、別の必要な後コマンドがあります。</p>
 <p>このシーケンスは、ジョブがキャンセルされたときにも実行されます。</p></td>
 </tr>
 
@@ -260,7 +260,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:failsafepostcommands\ </p>
 <p>psk3dx:command</p></td>
 <td><p>省略可能</p></td>
-<td><p>スライサーのエラーが発生した場合など、安全なメカニズムが失敗するように送信される G コード コマンドのセット。 ドライバーの実行は、不足している場合、 &quot;M110 N0&quot;続けて&quot;M104 S0&quot;します。</p></td>
+<td><p>スライサーのエラーが発生した場合など、安全なメカニズムが失敗するように送信される G コード コマンドのセット。 ない場合、ドライバーは"M110 N0"の後に"M104 S0"を実行します。</p></td>
 </tr>
 
 <tr>
@@ -268,7 +268,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:layerthickness</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロンのレイヤーの太さ (z 高さ)。 この値は、配置エラーを最小限に抑えるマシンの物理的な解像度に基づいて定義する必要があります。</p></td>
 </tr>
 
@@ -297,7 +297,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:pathwidth</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン押し出された toolpath の (XY 平面) の幅。 近いと若干より大きい値 nozzle 直径は最良の結果を生成する傾向があります。</p></td>
 </tr>
 
@@ -371,7 +371,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:speed</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン/秒で、動きの印刷の既定の速度。 これは、X と Y 軸の速度の 2 つのノルムです。</p></td>
 </tr>
 
@@ -380,7 +380,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:speedouter</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>外側の境界の速度 (最初は、シェル) ミクロン/秒します。 これは、印刷に優れた表面の仕上げを作成する標準の速度よりも低い設定することができます。</p></td>
 </tr>
 
@@ -389,7 +389,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:speedfirst</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>最初のレイヤーの速度 (置き換え<strong>speedouter</strong>) ミクロン/秒します。 これは、標準の速度向上の印刷ベッド adhesion を作成するよりも低い設定することができます。</p></td>
 </tr>
 
@@ -398,7 +398,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:speedtravel</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>浮き出し以外の速度は、ミクロン/秒に移動します。 これは、標準の速度を糸を最小限に抑え、extruder が制限要因の場合、印刷速度よりも高く設定することができます。</p></td>
 </tr>
 
@@ -407,7 +407,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:speedretract</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>・ フィラメント ・取り消しおよびミクロンでプッシュ バックの速度/秒します。 その他の速度の設定とは異なり、X と Y 軸ではなく、入力の・ フィラメント ・単位は。 この速度は 20 (、・ フィラメント ・) に応じて上記速度よりも小さいためです。 ただし、同等の速度より高いあるためにありますプラスチックが取り消し中に面を浮き出し表示に強制されません。</p></td>
 </tr>
 
@@ -416,7 +416,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:retraction</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>取り消す・ フィラメント ・の長さは、もう一度ミクロンの入力・ フィラメント ・で測定されます。 これは取り消しおよび戻す対称であり、組み合わせると、出張した場合、nozzle のにじみの削減は設計されています。</p></td>
 </tr>
 
@@ -444,7 +444,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:supportzgap</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>一部のサポートとミクロン Z 間隔。 この設定は、サポートを簡単に削除をサポートする adhesion を減らすことができます。</p></td>
 </tr>
 
@@ -453,7 +453,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:supportxygap</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン サポートと XY 平面にパーツ間の間隔。</p></td>
 </tr>
 
@@ -480,7 +480,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:raftlayerthickness</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン ラフトのレイヤーの太さ (Z 高さ)。</p></td>
 </tr>
 
@@ -489,7 +489,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:raftpathwidth</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン ラフトのパスの幅。 これは、一般に、印刷ベッド サーフェスの変動に対応するより大きい値です。</p></td>
 </tr>
 
@@ -516,7 +516,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:raftzgap</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン、ラフトとオブジェクトの間で Z 間隔。 高い値を指定すると、ラフトは簡単に削除するが不均一の画面を生成する可能性があります。</p></td>
 </tr>
 
@@ -525,7 +525,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:raftspeedfirst</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ラフトの速度第一層でミクロン/秒。 類似または下にあります<strong>speedfirst</strong>ベッド adhesion を向上させる。</p></td>
 </tr>
 
@@ -552,7 +552,7 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <p>psk3dx:print\ </p>
 <p>psk3dx:{quality}\ </p>
 <p>psk3dx:bridgingspeed</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p>ミクロン ブリッジでの 3-d の速度です。 この値は、マシン冷却装置の特性と・ フィラメント ・型などの要因によって異なります、通常、印刷速度が通常より低速です。</p></td>
 </tr>
 
@@ -596,18 +596,18 @@ XML 構成ファイルには、さまざまな Windows の 3D 印刷ダイアロ
 <tr>
 <td><p>$rampup $</p></td>
 <td><p>これは、変数を 0..255 は、および Z 軸を拡大または縮小し、によって制御されます、 &lt;psk3dx:rampuptarget&gt;スライサーの品質設定でします。</p>
-<p>たとえばコマンド&quot;M106 S$ rampup$&quot;段階的には Z 軸が増加するにつれて、ファンをオンにします。 場合、 &lt;psk3dx:rampuptarget&gt;設定されている 500 ミクロン、変数の値とする最初のレイヤーでは、0 から 255 レイヤーが 500 ミクロン以上。</p>
+<p>たとえば、コマンド「M106 S$ rampup$」にファンの段階的に Z 軸が増加するとします。 場合、 &lt;psk3dx:rampuptarget&gt;設定されている 500 ミクロン、変数の値とする最初のレイヤーでは、0 から 255 レイヤーが 500 ミクロン以上。</p>
 <p>この変数が過熱印刷ベッドで印刷 adhesion の向上をサポートするものですが、任意のコマンドで使用できます。</p></td>
 </tr>
 
 <tr>
 <td><p>;?ack=&lt;pattern&gt;</p></td>
-<td><p>この設定が既定値から、コマンド確認パターン (プリンターの応答) を変更するドライバーに指示&#39;ok&#39;例については、一時的なものに&quot;; でしょうか。ack をファイルに書き込みを =&quot;プリンターの内部ストレージに書き込む準備が確認を待機するドライバーに話したことでしょう。</p></td>
+<td><p>この設定コマンド ACK パターン (プリンターの応答) の既定値 'ok' を変更、一時的ななどドライバーに指示"; でしょうか。ack をファイルに書き込みを ="プリンターの内部ストレージに書き込む準備が確認を待機するドライバーに話したことでしょう。</p></td>
 </tr>
 
 <tr>
 <td><p>;?err=&lt;pattern&gt;</p></td>
-<td><p>この設定を既定値をさらに応答をプリンターの追加のエラー パターンを検索するドライバーに指示&#39;エラー&#39;します。 たとえば"; でしょうか。err = オープンに失敗しました"(この例は、ハードウェアの SD カードの内部記憶域が初期化されていない場合は、この応答を返すまたは完全) では、このような応答が受信したかどうか、ドライバーがエラーに話したことでしょう。</p></td>
+<td><p>この設定は、プリンター応答には、既定の 'エラー' だけでなく、追加のエラー パターンを検索するドライバーに指示します。 たとえば"; でしょうか。err = オープンに失敗しました"(この例は、ハードウェアの SD カードの内部記憶域が初期化されていない場合は、この応答を返すまたは完全) では、このような応答が受信したかどうか、ドライバーがエラーに話したことでしょう。</p></td>
 </tr>
 
 <tr>

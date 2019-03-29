@@ -1,6 +1,6 @@
 ---
-title: チューナー プロパティ
-description: チューナー プロパティ
+title: チューナーのプロパティ
+description: チューナーのプロパティ
 ms.assetid: 43a0c018-fb0e-4a45-9c9a-5896f1e728ac
 keywords:
 - チューナー プロパティ WDK ビデオのキャプチャします。
@@ -9,14 +9,14 @@ keywords:
 - テレビ チューナー プロパティ WDK ビデオのキャプチャします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dffec1d6fbc734bea110e89fa91c24f4256f420
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7ee3e1290f0a7bfd5ea775e47e55fd2d61c46f29
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537765"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350323"
 ---
-# <a name="tuner-properties"></a>チューナー プロパティ
+# <a name="tuner-properties"></a>チューナーのプロパティ
 
 
 [PROPSETID\_チューナー](https://msdn.microsoft.com/library/windows/hardware/ff567800)ラジオとテレビ チューナーに関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_チューナー プロパティ セット。 2 番目のテーブルには、Windows Vista 以降を実行している AVStream ミニドライバーに実装されているプロパティについて説明します。
@@ -55,7 +55,7 @@ ms.locfileid: "56537765"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565907" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565907)"><strong>KSPROPERTY_TUNER_STANDARD</strong></a></p></td>
-<td><p>アナログ チューナーを返します&#39;s NTSC、PAL、SECAM などの標準です。</p></td>
+<td><p>アナログ チューナーの標準、NTSC、PAL、SECAM などを返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565921" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565921)"><strong>KSPROPERTY_TUNER_STATUS</strong></a></p></td>
@@ -94,7 +94,7 @@ ms.locfileid: "56537765"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565909" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565909)"><strong>KSPROPERTY_TUNER_STANDARD_MODE</strong></a></p></td>
-<td><p>チューナーがチューナーを自動的に検出できるかどうかを制御&#39;信号から標準 s。</p></td>
+<td><p>チューナーが信号をチューナーの標準を自動的に検出するかどうかを制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565881" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565881)"><strong>KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS</strong></a></p></td>

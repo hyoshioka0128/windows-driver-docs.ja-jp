@@ -6,12 +6,12 @@ keywords:
 - LogViewer、マニフェスト、ファイルの形式
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b289e0d526d5906528b4112ddb56836ae1eca60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8676e65a2a0a57fb185a8915d820a7cff71d32f6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532024"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464002"
 ---
 # <a name="manifest-file-format"></a>マニフェスト ファイルの形式
 
@@ -75,7 +75,7 @@ value DWORD HANDLE
 
 COM インターフェイスは、基本的に、COM オブジェクトのクライアントで呼び出すことができる関数のベクトルです。 マニフェストの形式でインターフェイスを定義する COM で使用されるインターフェイス定義言語 (IDL) から利用大きくします。
 
-次の例を検討してください。
+次に例を示します。
 
 ```cpp
 interface IDispatch : IUnknown
@@ -116,7 +116,7 @@ interface IDispatch : IUnknown
 
 ロガーを許可するビット マスク内の個々 のビット ラベル付けすることもでき、DWORD を中断する LogViewer ビット マスクをそのコンポーネントにします。
 
-マニフェストでサポートされている 13 の基本的な種類があります。 これらは、次の表に表示されます。
+マニフェストでサポートされている 13 の基本的な種類があります。 これらを次の表に示します。
 
 <table>
 <colgroup>
@@ -126,7 +126,7 @@ interface IDispatch : IUnknown
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">種類</th>
+<th align="left">型</th>
 <th align="left">長さ</th>
 <th align="left">表示例</th>
 </tr>
@@ -165,12 +165,12 @@ interface IDispatch : IUnknown
 <tr class="odd">
 <td align="left"><p>LPSTR</p></td>
 <td align="left"><p>バイトの長さと文字の任意の数</p></td>
-<td align="left"><p>&quot;クイック brown fox&quot;</p></td>
+<td align="left"><p>"Quick brown fox"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>LPWSTR</p></td>
 <td align="left"><p>バイトの長さと Unicode 文字の任意の数</p></td>
-<td align="left"><p>&quot;亜ジャンプ&quot;</p></td>
+<td align="left"><p>「Over the lazy dog ジャンプ」</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GUID</p></td>

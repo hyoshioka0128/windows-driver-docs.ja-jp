@@ -6,12 +6,12 @@ keywords:
 - IPrintCoreUI2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d4d2f522fe96544211ee643024c70b6620e673
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a0a5213c41a1c50867280bccf60c0af28f321f23
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551338"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350347"
 ---
 # <a name="iprintcoreui2-com-interface"></a>IPrintCoreUI2 COM インターフェイス
 
@@ -51,7 +51,7 @@ ms.locfileid: "56551338"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553050" data-raw-source="[&lt;strong&gt;IPrintCoreUI2::EnumFeatures&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553050)"><strong>IPrintCoreUI2::EnumFeatures</strong></a></p></td>
-<td><p>プリンターを列挙&#39;s の使用可能な機能です。</p></td>
+<td><p>プリンターの使用可能な機能を列挙します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553052" data-raw-source="[&lt;strong&gt;IPrintCoreUI2::EnumOptions&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553052)"><strong>IPrintCoreUI2::EnumOptions</strong></a></p></td>
@@ -71,7 +71,7 @@ ms.locfileid: "56551338"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553069" data-raw-source="[&lt;strong&gt;IPrintCoreUI2::GetOptions&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553069)"><strong>IPrintCoreUI2::GetOptions</strong></a></p></td>
-<td><p>ドライバーを取得します。&#39;s 機能またはオプションのキーワードの組み合わせの一覧の形式で現在機能の設定。</p></td>
+<td><p>ドライバーの機能またはオプションのキーワードの組み合わせの一覧の形式で現在機能の設定を取得します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553074" data-raw-source="[&lt;strong&gt;IPrintCoreUI2::QuerySimulationSupport&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553074)"><strong>IPrintCoreUI2::QuerySimulationSupport</strong></a></p></td>
@@ -79,7 +79,7 @@ ms.locfileid: "56551338"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553081" data-raw-source="[&lt;strong&gt;IPrintCoreUI2::SetOptions&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553081)"><strong>IPrintCoreUI2::SetOptions</strong></a></p></td>
-<td><p>ドライバーの設定&#39;s 機能の設定。</p></td>
+<td><p>ドライバーの機能の設定を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553087" data-raw-source="[&lt;strong&gt;IPrintCoreUI2::WhyConstrained&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553087)"><strong>IPrintCoreUI2::WhyConstrained</strong></a></p></td>

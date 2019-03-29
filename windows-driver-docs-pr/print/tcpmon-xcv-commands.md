@@ -19,12 +19,12 @@ keywords:
 - SNMPEnabled
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 643b9e4cd2aaa4570b0ea72ca4f6ab9c9f053c68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 03a92b5e358c21369390f2030b07232aa85336d8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559172"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464350"
 ---
 # <a name="tcpmon-xcv-commands"></a>TCPMON Xcv コマンド
 
@@ -48,13 +48,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;AddPort&quot;</p></td>
+<td><p>L"AddPort"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -95,13 +95,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;ConfigPort&quot;</p></td>
+<td><p>L"ConfigPort"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -142,13 +142,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;DeletePort&quot;</p></td>
+<td><p>L"DeletePort"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -189,13 +189,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;GetConfigInfo&quot;</p></td>
+<td><p>L"GetConfigInfo"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -236,13 +236,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;HostAddress&quot;</p></td>
+<td><p>L"HostAddress"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -254,7 +254,7 @@ ms.locfileid: "56559172"
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p>プリンターを含む文字列を受信するバッファーのアドレス&#39;のホスト名</p></td>
+<td><p>プリンターのホスト名を含む文字列を受信するバッファーのアドレス</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -283,13 +283,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;IPAddress&quot;</p></td>
+<td><p>L"IPAddress"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -301,7 +301,7 @@ ms.locfileid: "56559172"
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p>プリンターを含む文字列を受信するバッファーのアドレス&#39;の IP アドレス</p></td>
+<td><p>プリンターの IP アドレスを含む文字列を受信するバッファーのアドレス</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -330,13 +330,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;MonitorUI&quot;</p></td>
+<td><p>L"MonitorUI"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -377,13 +377,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;SNMPCommunity&quot;</p></td>
+<td><p>L"SNMPCommunity"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -395,7 +395,7 @@ ms.locfileid: "56559172"
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p>プリンターを含む文字列を受信するバッファーのアドレス&#39;s SNMP コミュニティ</p></td>
+<td><p>プリンターの SNMP コミュニティを含む文字列を受信するバッファーのアドレス</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -424,13 +424,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;SNMPDeviceIndex&quot;</p></td>
+<td><p>L"SNMPDeviceIndex"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
@@ -471,13 +471,13 @@ ms.locfileid: "56559172"
 <thead>
 <tr class="header">
 <th>XcvData パラメーター</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>pszDataName</em></p></td>
-<td><p>L&quot;SNMPEnabled&quot;</p></td>
+<td><p>L"SNMPEnabled"</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>

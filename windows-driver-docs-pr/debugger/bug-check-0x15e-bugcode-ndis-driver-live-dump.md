@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c212bdb9d1bf878736bc0b40903b1f910892c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 94ec32f20958089c4a68410dcf49b5847a1c3d2d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552196"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463846"
 ---
-# <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>バグ チェック 0x15E の。BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ
+# <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>バグ チェック 0x15E:BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ
 
 
 BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E の値を持ちます。 このバグのコードでは、NDIS がライブ カーネル ダンプをキャプチャしたことを示します。 NDIS には、このような状況でのバグ チェックが生成されません。
@@ -55,7 +55,7 @@ BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E �
 <td align="left"><p>NDIS_BUGCHECK_MINIPORT_FATAL_ERROR</p>
 <p>ミニポート ドライバーでは、致命的なエラーが発生し、再列挙を要求します。</p></td>
 <td align="left"><p>ミニポート ブロックのアドレス。 実行<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">! ndiskd.minidriver</a></strong>詳細については、このアドレスを使用します。</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s 物理デバイス オブジェクト (PDO)</p></td>
+<td align="left"><p>ミニポートの物理デバイス オブジェクト (PDO) のアドレス</p></td>
 <td align="left"><p>このライブ ダンプされる原因となった致命的なエラーです。 設定可能な値:</p>
 <ol>
 <li>70:ユーザー モードに起因</li>
@@ -70,7 +70,7 @@ BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E �
 <td align="left"><p>0x25</p></td>
 <td align="left"><p>NDIS_BUGCHECK_WATCHDOG</p>
 <p>ネットワーク スタックを管理しようとすると、時間がかかりすぎています。 NDIS は、他のドライバーに呼び出す、NDIS は呼び出しが迅速に完了したことを確認するウォッチドッグ タイマーを開始します。 呼び出し時間がかかりすぎる場合、NDIS はバグチェックを挿入します。</p>
-<p>単純なデッドロックの可能性があります。 検索&quot;! スタックの 2 つの ndis&quot;または類似したにすべてのスレッド検索疑わしいかどうかを参照してください。 NDIS_WATCHDOG_TRIAGE_BLOCK、PrimaryThread に特別な注意してください。</p>
+<p>単純なデッドロックの可能性があります。 検索"! スタックの 2 つの ndis"または類似したにすべてのスレッド検索疑わしいかどうかを参照してください。 NDIS_WATCHDOG_TRIAGE_BLOCK、PrimaryThread に特別な注意してください。</p>
 <p>可能性がありますが失われた NBLs、後者<strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">! ndiskd.pendingnbls</a></strong>役立つ場合があります。 チェックを使用して保持されている Oid を <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">! ndiskd.oid</a></strong>します。</p></td>
 <td align="left"><p>この操作は、時間がかかりすぎました。 設定可能な値:</p>
 <ul>
@@ -146,7 +146,7 @@ BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E �
 
 パラメーター 1 が、BUGCODE の具体的な原因を示す\_NDIS\_ドライバー\_LIVE\_バグチェックをダンプします。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 NDIS が検出され、別のネットワーク ドライバーで重大な問題から回復しました。 システムは停止しませんが、この問題が接続の問題や致命的なバグチェックにより後で可能性があります。

@@ -4,12 +4,12 @@ description: Irp_mj_create 用操作の Oplock の状態を確認
 ms.assetid: 30684025-9da0-4f4c-a850-ab0390bef091
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a970302fe1bddae85e728615bf130994581e333
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 883d03a15f8c0f8eb2a1773d4cf955d32d406b03
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553563"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464282"
 ---
 # <a name="checking-the-oplock-state-of-an-irpmjcreate-operation"></a>Irp_mj_create 用操作の Oplock の状態を確認
 
@@ -155,14 +155,14 @@ ms.locfileid: "56553563"
 </li>
 <li><b>そして：</b><ul>
 <li>
-<p>A&quot;書き込み可能な&quot;FILE_SHARE_READ アクセス用に開かれませんでしたが、ストリームで要求されたアクセスが必要です。  なお&quot;書き込み可能な&quot;へのアクセスが以外の任意の属性として定義されます。</p>
+<p>FILE_SHARE_READ アクセス用に開かれませんでしたが、ストリームで目的の「書き込み」アクセスが要求されました。  「書き込み」アクセスが以外の任意の属性として定義されていることを確認してください。</p>
 <ul>
 <li>FILE_READ_ATTRIBUTES</li>
 <li>FILE_WRITE_ATTRIBUTES</li>
 <li>FILE_READ_DATA</li>
 <li>FILE_READ_EA</li>
 <li>FILE_EXECUTE</li>
-<li>同期</li>
+<li>SYNCHRONIZE</li>
 <li>READ_CONTROL</li>
 </ul>
 </li>

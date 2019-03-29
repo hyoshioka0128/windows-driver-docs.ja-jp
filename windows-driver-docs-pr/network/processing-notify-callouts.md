@@ -1,6 +1,6 @@
 ---
-title: 処理のコールアウトを通知します。
-description: 処理のコールアウトを通知します。
+title: 通知コールアウトの処理
+description: 通知コールアウトの処理
 ms.assetid: d686989e-97f0-4095-b172-1c2ccf7a26e6
 keywords:
 - Windows Filtering Platform コールアウト ドライバー WDK、コールアウトを通知します。
@@ -11,14 +11,14 @@ keywords:
 - コールアウト ドライバー WDK Windows フィルタ リング プラットフォームの追加と削除をフィルター処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 737a7245630fbd3ab14591805029c0e4069dadc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6c8c1c6ef8155b032951d64458926aa991894737
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528895"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350361"
 ---
-# <a name="processing-notify-callouts"></a>処理のコールアウトを通知します。
+# <a name="processing-notify-callouts"></a>通知コールアウトの処理
 
 
 フィルター エンジン呼び出し吹き出しの[ *notifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff568803)コールアウト関数引き出し線に関連付けられているイベントに関するコールアウト ドライバーに通知します。
@@ -41,7 +41,7 @@ ms.locfileid: "56528895"
 
 コールアウト ドライバーでは、フィルター エンジンに追加されると、フィルター、フィルターに関連するコンテキストを指定できます。 このようなコンテキストでは、フィルター エンジンに対して非透過的です。 吹き出しの[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数は、このコンテキストを使用して、フィルター エンジンによって呼び出されたときに [次へ] に状態情報を保存します。 フィルター エンジンからフィルターを削除すると、コールアウト ドライバーは、コンテキストのために必要なクリーンアップを実行します。
 
-次に、例を示します。
+例:
 
 ```C++
 // Context structure to be associated with the filters
@@ -52,7 +52,7 @@ typedef struct FILTER_CONTEXT_ {
 } FILTER_CONTEXT, *PFILTER_CONTEXT;
 
 // Memory pool tag for filter context structures
-#define FILTER_CONTEXT_POOL_TAG &#39;fcpt&#39;
+#define FILTER_CONTEXT_POOL_TAG 'fcpt'
 
 // notifyFn callout function
 NTSTATUS NTAPI

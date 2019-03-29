@@ -1,6 +1,6 @@
 ---
-title: WMI クラスの修飾子
-description: WMI クラスの修飾子
+title: WMI クラス修飾子
+description: WMI クラス修飾子
 ms.assetid: 62a00184-59b7-496d-b523-f4adb879d402
 keywords:
 - WDK の WMI クラスの修飾子
@@ -12,14 +12,14 @@ keywords:
 - WMI の WDK カーネルでは、クラス
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 085e106ae366c2fe28be970fddd3feceed580687
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9ebbe1965c85dee13af57a4e2817ae7930df8845
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537729"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464210"
 ---
-# <a name="wmi-class-qualifiers"></a>WMI クラスの修飾子
+# <a name="wmi-class-qualifiers"></a>WMI クラス修飾子
 
 
 
@@ -49,10 +49,10 @@ ms.locfileid: "56537729"
 </tr>
 <tr class="even">
 <td><p><strong>静的</strong></p></td>
-<td><p>データ プロバイダーが実行時に、データ ブロックのインスタンスを提供するのではなく、MOF ファイルの静的データのインスタンスを提供することを示します。 静的なデータが WMI データベースに存在するため、ドライバーは WMI を使って、静的データ ブロックを登録できません。 マークされたクラス<strong>静的</strong>で MOF ファイルに、ドライバーによって登録されないこと&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff551731" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551731)"> <strong>IRP_MN_REGINFO</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff551734" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551734)"> <strong>IRP_MN_REGINFO_EX</strong> </a>ハンドラー。</p></td>
+<td><p>データ プロバイダーが実行時に、データ ブロックのインスタンスを提供するのではなく、MOF ファイルの静的データのインスタンスを提供することを示します。 静的なデータが WMI データベースに存在するため、ドライバーは WMI を使って、静的データ ブロックを登録できません。 マークされたクラス<strong>静的</strong>、MOF でファイルが登録されていないドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff551731" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551731)"> <strong>IRP_MN_REGINFO</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff551734" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551734)"> <strong>IRP_MN_REGINFO_EX</strong> </a>ハンドラー。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Provider(&quot;WMIProv&quot;)</strong></p></td>
+<td><p><strong>Provider("WMIProv")</strong></p></td>
 <td><p>(必須)クラスのプロバイダーが WMI プロバイダーであることを示します。</p></td>
 </tr>
 <tr class="even">
@@ -60,20 +60,20 @@ ms.locfileid: "56537729"
 <td><p>(必須)クラスが WMI クラスであることを示します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>説明 (&quot;</strong><em>説明文字列</em><strong>&quot;)</strong></p></td>
+<td><p><strong>説明 ("</strong><em>説明文字列</em><strong>")</strong></p></td>
 <td><p>(省略可能)ブロックで指定されたロケールの説明を指定します、<strong>ロケール</strong>修飾子。 で定義されている場合、WMI クライアントは、ユーザーに説明文字列を表示できます。 ドライバーのライターを使用できます<strong>説明</strong>クラスを文書化します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Guid(&quot;</strong><em>guid-string</em><strong>&quot;)</strong></p></td>
-<td><p>(必須)WMI にブロックを一意に識別する文字列の形式で、GUID を指定します。 ドライバー開発者は、ドライバーの各データ ブロックの GUID を生成する必要があります&#39;guidgen.exe または uuidgen.exe (これは、Windows sdk に含まれる) のいずれかを使用して、s の MOF ファイル。 ドライバーは、ドライバーのブロックを登録するときにこの値を GUID 形式で、WMI に渡します。 WMI を使用して、GUID、ブロックを調べる&#39;ドライバー定義&#39;s MOF リソース。</p></td>
+<td><p><strong>Guid ("</strong><em>guid 文字列</em><strong>")</strong></p></td>
+<td><p>(必須)WMI にブロックを一意に識別する文字列の形式で、GUID を指定します。 ドライバー開発者が各データ ブロックの GUID を内で生成、ドライバーの MOF ファイルでは、guidgen.exe または uuidgen.exe (これは、Windows sdk に含まれる) を使用しています。 ドライバーは、ドライバーのブロックを登録するときにこの値を GUID 形式で、WMI に渡します。 WMI は、この GUID を使用して、ドライバーの MOF リソースのブロックの定義を検索します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Locale(&quot;MS&lt;/strong&gt;<em>locale-identifier</em><strong>&quot;)</strong></p></td>
+<td><p><strong>Locale("MS&lt;/strong&gt;<em>locale-identifier</em><strong>")</strong></p></td>
 <td><p>(省略可能)指定された文字列のロケールと言語識別子を指定します<strong>説明</strong>します。 たとえば、<em>ロケール識別子</em>0x409 の米国英語を指定します。 1 つの MOF ファイルが別のロケールでのブロックを含めることができますが、通常、MOF ファイル内のブロックのすべて同じロケールであります。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>WmiExpense(</strong><em>expense-value</em><strong>)</strong></p></td>
-<td><p>(省略可能)データ ブロックのデータを収集するために必要な CPU サイクルの平均数を指定します。 たとえば、WMI クライアントはデータ ブロックをチェックする可能性が&#39;s <strong>WmiExpense</strong>そのデータを照会する頻度を決定する値。 場合<strong>WmiExpense</strong>を省略すると、<em>経費値</em>0 と見なされます。 <strong>WmiExpense</strong>として収集する負荷の高いデータ ブロックを登録するとは関係ありません。</p></td>
+<td><p>(省略可能)データ ブロックのデータを収集するために必要な CPU サイクルの平均数を指定します。 たとえば、WMI クライアントはデータ ブロックの可能性がありますチェック<strong>WmiExpense</strong>そのデータを照会する頻度を決定する値。 場合<strong>WmiExpense</strong>を省略すると、<em>経費値</em>0 と見なされます。 <strong>WmiExpense</strong>として収集する負荷の高いデータ ブロックを登録するとは関係ありません。</p></td>
 </tr>
 </tbody>
 </table>

@@ -10,12 +10,12 @@ keywords:
 - DrvUnloadFontFile
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 288d9d83df13f40092fe31f81bb449cc834421d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d5560ff7b1bdffd5057a3a6fef235db53211fe92
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552839"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350305"
 ---
 # <a name="font-driver-functions"></a>フォント ドライバー関数
 
@@ -55,7 +55,7 @@ ms.locfileid: "56552839"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556267" data-raw-source="[&lt;strong&gt;DrvQueryGlyphAttrs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556267)"><strong>DrvQueryGlyphAttrs</strong></a></p></td>
-<td align="left"><p>フォントに関する情報を返します&#39;s グリフ。</p></td>
+<td align="left"><p>フォントのグリフについての情報を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557287" data-raw-source="[&lt;strong&gt;DrvUnloadFontFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557287)"><strong>DrvUnloadFontFile</strong></a></p></td>

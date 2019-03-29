@@ -1,6 +1,6 @@
 ---
-title: コンポーネントを追加します。
-description: コンポーネントを追加します。
+title: コンポーネントの追加
+description: コンポーネントの追加
 ms.assetid: f8177904-77a2-4d1a-8c72-0b47a100bc37
 keywords:
 - 通知オブジェクト WDK ネットワー キング、コンポーネントの追加
@@ -9,14 +9,14 @@ keywords:
 - ネットワーク コンポーネントの追加 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9441d3a528e0b9fb0ef1974e0087fcebea576a99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e9fc5f79e9a754f0b1e0e68f6345c1addb5a4037
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556873"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350289"
 ---
-# <a name="adding-a-component"></a>コンポーネントを追加します。
+# <a name="adding-a-component"></a>コンポーネントの追加
 
 
 
@@ -30,7 +30,7 @@ HRESULT CSample::SysNotifyComponent(DWORD dwChangeFlag,
 {
     HRESULT hr = S_OK;
     INetCfgComponentBindings *pncfgcompbind;
-    // Retrieve bindings for the notify object&#39;s component (m_pncc)
+    // Retrieve bindings for the notify object's component (m_pncc)
     hr = m_pncc->QueryInterface(IID_INetCfgComponentBindings, 
                                 (LPVOID*)&pncfgcompbind);
     // Determine if notification is about adding a component
@@ -40,11 +40,11 @@ HRESULT CSample::SysNotifyComponent(DWORD dwChangeFlag,
         hr = pnccItem->GetCharacteristics(&dwcc);
         // Determine if the added component is a physical adapter
         if (SUCCEEDED(hr) && (dwcc & NCF_PHYSICAL)) {
-            // Determine the component&#39;s ID
+            // Determine the component's ID
             LPWSTR pszwInfId;
             hr = pnccItem->GetId(&pszwInfId);
             if (SUCCEEDED(hr)) {
-                // Compare the component&#39;s ID to the required ID
+                // Compare the component's ID to the required ID
                 // and if they are the same perform the binding.
                 static const TCHAR c_szCompId[] = TEXT("BINDTO_NIC");
                 if (!_tcsicmp(pszwInfId, c_szCompId)) {

@@ -5,7 +5,7 @@ ms.assetid: badf8948-356c-4728-b34e-02f1638630a6
 keywords:
 - バグ チェック 0xE6 DRIVER_VERIFIER_DMA_VIOLATION
 - DRIVER_VERIFIER_DMA_VIOLATION
-ms.date: 05/23/2017
+ms.date: 03/14/2019
 topic_type:
 - apiref
 api_name:
@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6835e4d93d2180f6c2ba7dca5a93eb8fce257f83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4e340b024b80a29c65c4e2a25ed3f75bb4c0e3ba
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532265"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136113"
 ---
-# <a name="bug-check-0xe6-driververifierdmaviolation"></a>バグ チェック 0xE6 の。ドライバー\_VERIFIER\_DMA\_違反
+# <a name="bug-check-0xe6-driververifierdmaviolation"></a>バグ チェック 0xE6:ドライバー\_VERIFIER\_DMA\_違反
 
 
 ドライバー\_VERIFIER\_DMA\_違反のバグ チェックが 0x000000E6 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**DMA の検証**違反。
@@ -160,11 +160,40 @@ ms.locfileid: "56532265"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x20</p></td>
-<td align="left"><p>マップをフラッシュしようとしています。 ドライバーの登録を&#39;t されたマップ。 マップの登録ベース、フラッシュのアドレス MDL が表示されます。</p></td>
+<td align="left"><p>ドライバーは、マップされていない map レジスタをフラッシュしようとしました。 マップの登録ベース、フラッシュのアドレス MDL が表示されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x21</p></td>
 <td align="left"><p>ドライバーが長さ 0 のバッファー転送をマップしようとしました。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x22</p></td>
+<td align="left"><p>DMA バッファーの問い合わせください。 システムにマップされていません</p>
+<p>パラメーター 2 - MDL</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x23</p></td>
+<td align="left"><p>完了するかキャンセルされていないチャネルをフラッシュできません。 </p>
+<p>パラメーター 2 - 違反コード。 </p>
+<p>値: 0x00:無効なチャネルのフラッシュ </p>
+<p>   パラメーター 3 - コント ローラーの id。</p>
+<p>   パラメーター 4 - チャネルの数。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x24</p></td>
+<td align="left"><p>要求された長さのバッファーが不足します。
+<p>2 - 原因不明の長さのパラメーター。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x25</p></td>
+<td align="left"><p>不明なデバイスの説明のバージョンです。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x26</p></td>
+<td align="left"><p>IOMMU は DMA の違反を検出しました。 </p>
+<p>2 - 障害が発生してデバイスのデバイス オブジェクトのパラメーター。</p>
+<p>パラメーター 3 - エラー発生の情報 (通常の障害発生の物理アドレス)。</p>
+<p>パラメーター 4 - エラーの種類 (ハードウェアの特定) します。</p></td>
 </tr>
 </tbody>
 </table>

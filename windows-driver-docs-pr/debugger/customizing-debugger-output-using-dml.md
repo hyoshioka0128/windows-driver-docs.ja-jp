@@ -1,17 +1,17 @@
 ---
-title: DML を使用して出力をデバッガーのカスタマイズ
+title: DML を使用したデバッガー出力のカスタマイズ
 description: デバッガーのマークアップ言語 (DML) は、デバッガーと拡張機能からの出力の強化メカニズムを提供します。
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d01459dac3dc448cc30273d9cbcc27b8b161d6a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a734a7c41b28019e0b59fe63ba4a5120e9ed1527
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529427"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464164"
 ---
-# <a name="customizing-debugger-output-using-dml"></a>DML を使用して出力をデバッガーのカスタマイズ
+# <a name="customizing-debugger-output-using-dml"></a>DML を使用したデバッガー出力のカスタマイズ
 
 
 デバッガーのマークアップ言語 (DML) は、デバッガーと拡張機能からの出力の強化メカニズムを提供します。 HTML と同様に、デバッガーのマークアップのサポートには、表示ディレクティブを追加、表示されない情報タグの形式で出力ができます。 WinDbg などのデバッガー ユーザー インターフェイスは、グリッドの表示など、情報の表示を拡張し、新しい動作を提供する DML で提供され、並べ替えの追加情報を解析します。 このトピックでは、DML を使用して、デバッグ出力をカスタマイズする方法について説明します。 有効化と DML での使用の概要については、デバッガーを参照してください[デバッガー マークアップ言語を使用して](debugger-markup-language-commands.md)します。
@@ -48,14 +48,14 @@ XML と同様に、DML タグは、開始点として指定する、 &lt;tagname
 
 **特殊文字**
 
-DML のコンテンツには、特殊文字の XML や HTML の規則がほぼに従います。 文字 (&)、 &lt;、 &gt; "特別なとはプレーン テキストでは使用できません。 同等のエスケープされたバージョンは、&、 &lt;、&gt;と&quot;します。 たとえば文字列:
+DML のコンテンツには、特殊文字の XML や HTML の規則がほぼに従います。 文字 (&)、 &lt;、 &gt; "特別なとはプレーン テキストでは使用できません。 同等のエスケープされたバージョンは、&、 &lt;、&gt;と"。 たとえば文字列:
 
 "Alice と Bob は、3 を考える&lt;4"
 
 次の DML に変換されます。
 
 ```text
-&quot;Alice & Bob think 3 &lt 4&quot;
+"Alice & Bob think 3 &lt 4"
 ```
 
 **C プログラミング言語の書式設定文字**
@@ -241,49 +241,49 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <td align="left"><p>wbg - Windows の背景</p>
 <p>wfg - Windows の前景色</p></td>
 <td align="left">既定のウィンドウの前景色および背景色。 既定のウィンドウとウィンドウのテキストのシステム カラーになります。
-<p>&lt;col fg =&quot;wfg&quot; bg =&quot;wbg&quot; &gt;これは、標準の前景色および背景テキスト&lt;/col&gt;</p></td>
+<p>&lt;col fg ="wfg"bg"wbg"=&gt;これは、標準の前景テキストをバック グラウンド/ &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>clbg - 現在の行の前景色</p>
 <p>clfg - 現在の行の背景</p></td>
 <td align="left">現在の行の背景色と前景色。 強調表示のシステム カラーを既定し、テキストを強調表示されます。
-<p>&lt;col fg =&quot;clfg&quot; bg =&quot;clbg&quot; &gt;テスト テキスト - 現在の行&lt;/col&gt;</p></td>
+<p>&lt;col fg ="clfg"bg"clbg"=&gt;テスト テキスト - 現在の行&lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>empbg の強調表示されたバック グラウンド</p>
 <p>emphfg - 強調フォア グラウンド</p></td>
 <td align="left">強調表示されたテキスト。 薄い青に既定値です。
-<p>&lt;col fg =&quot;empfg&quot; bg =&quot;empbg&quot; &gt;これは、強調の前景色および背景テキスト&lt;/col&gt;</p></td>
+<p>&lt;col fg ="empfg"bg ="empbg"&gt;これは、強調の前景色および背景のテキスト&lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>subbg - バック グラウンドの末</p>
 <p>subfg 末の前景色</p></td>
 <td align="left">末のテキスト。 既定で非アクティブなキャプションのテキストと非アクティブなキャプションのシステム カラーです。
-<p>&lt;col fg =&quot;subfg&quot; bg =&quot;subbg&quot; &gt;フォア グラウンドの末は、このテキストをバック グラウンド/ &lt;/col&gt;</p></td>
+<p>&lt;col fg ="subfg"bg"subbg"=&gt;フォア グラウンドの末は、このテキストをバック グラウンド/ &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>normbg の通常のバック グラウンド</p>
 <p>normfg の通常の前景色</p></td>
 <td align="left">標準
-<p>&lt;col fg =&quot;normfg&quot; bg =&quot;normbg&quot; &gt;テスト テキスト - Normal (normfg/normbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg ="normfg"bg"normbg"=&gt;テスト テキスト - Normal (normfg/normbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>warnbg - バック グラウンドの警告</p>
 <p>warnfg - 警告の前景色</p></td>
-<td align="left">Warning
-<p>&lt;col fg =&quot;warnfg&quot; bg =&quot;warnbg&quot; &gt;テストのテキストの警告 (warnfg/warnbg) &lt;/col&gt;</p></td>
+<td align="left">警告
+<p>&lt;col fg ="warnfg"bg"warnbg"=&gt;テストのテキストの警告 (warnfg/warnbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>errbg - エラーの背景</p>
 <p>errfg - エラーの前景色</p></td>
-<td align="left">エラー
-<p>&lt;col fg =&quot;errfg&quot; bg =&quot;errbg&quot; &gt;テスト テキスト - エラー (errfg/errbg) &lt;/col&gt;</p></td>
+<td align="left">[エラー]
+<p>&lt;col fg ="errfg"bg"errbg"=&gt;テスト テキスト - エラー (errfg/errbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>verbbg - 詳細な背景</p>
 <p>verbfg - Verbose フォア グラウンド</p></td>
 <td align="left">Verbose
-<p>&lt;col fg =&quot;verbfg&quot; bg =&quot;verbbg&quot; &gt;テスト テキスト - 詳細 (verbfg/verbbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg="verbfg" bg="verbbg"&gt; Test Text - Verbose (verbfg / verbbg) &lt;/col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,48 +301,48 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 <tr class="odd">
 <td align="left"><p>srcnum - ソース数値定数</p></td>
 <td align="left">ソース要素の色。
-<p>&lt;col fg =&quot;srcnum&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcnum &lt;/col&gt;</p></td>
+<p>&lt;col fg="srcnum" bg="wbg"&gt; Test Text - srcnum &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcchar - ソース文字定数</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcchar&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcchar &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcchar"bg"wbg"=&gt;テスト テキスト - srcchar &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcstr - ソース文字列定数</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcstr&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcstr &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcstr"bg"wbg"=&gt;テスト テキスト - srcstr &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcid-ソース識別子</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcid &quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcid"bg"wbg"=&gt;テスト テキスト - srcid &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srckw キーワード</p></td>
-<td align="left"><p>&lt;col fg=&quot;srckw&quot; bg=&quot;wbg&quot;&gt; Test Text - srckw &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srckw"bg"wbg"=&gt;テスト テキスト - srckw &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcpair - ソースの中かっこまたは一致するシンボル ペア</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcpair&quot; bg =&quot;empbbg&quot; &gt;テスト テキスト - srcpair &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcpair"bg"empbbg"=&gt;テスト テキスト - srcpair &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srccmnt - ソースのコメント</p></td>
-<td align="left"><p>&lt;col fg =&quot;srccmnt&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srccmnt &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srccmnt"bg"wbg"=&gt;テスト テキスト - srccmnt &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcdrct - ソース ディレクティブ</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcdrct&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcdrct &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcdrct"bg"wbg"=&gt;テスト テキスト - srcdrct &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcspid - ソースの特殊な識別子</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcspid&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcspid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcspid"bg"wbg"=&gt;テスト テキスト - srcspid &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcannot - ソースの注釈</p></td>
-<td align="left"><p>&lt;col fg =&quot;srcannot&quot; bg =&quot;wbg&quot; &gt;テスト テキスト - srcannot &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srcannot"bg"wbg"=&gt;テスト テキスト - srcannot &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>変更されたデータを変更</p></td>
 <td align="left">WinDbg で変更されたレジスタなど、以前の停止時点以降に変更されたデータに使用します。 既定値は赤です。
-<p>&lt;col fg =&quot;変更&quot;bg =&quot;wbg&quot; &gt;テスト テキスト - 変更&lt;/col&gt;</p></td>
+<p>&lt;col fg =「変更」bg"wbg"=&gt;テスト テキスト - 変更&lt;/col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -554,7 +554,7 @@ DML/NORMAL Y{T}: "Hello <World>"
 DML/NORMAL Y{s}: Hello <World>
 DML/NORMAL Y{S}: Hello <World>
 TEXT/NORMAL Y{t}: "Hello <World>"
-TEXT/NORMAL Y{T}: &quot;Hello &lt;World&gt;&quot;
+TEXT/NORMAL Y{T}: "Hello &lt;World&gt;"
 TEXT/NORMAL Y{s}: Hello <World>
 TEXT/NORMAL Y{S}: Hello &lt;World&gt;
 DML/NORMAL Y{a}: 00007ffa`7da163c0

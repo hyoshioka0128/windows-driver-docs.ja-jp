@@ -1,5 +1,5 @@
 ---
-title: DevCon 検索
+title: DevCon Find
 description: 現在のコンピューターに接続されているすべてのデバイスを検索します。 デバイス インスタンス ID とデバイスの説明が表示されます。 ローカルおよびリモート コンピューターで有効です。
 ms.assetid: ecd72b34-4117-4360-95d2-e87702f025a1
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fadc15cd43584f7e471560a4abc7f2194b055e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 57439bce9647b5d4a26f256c80e2ab994f7ee54e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527399"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350177"
 ---
-# <a name="devcon-find"></a>DevCon 検索
+# <a name="devcon-find"></a>DevCon Find
 
 
 現在のコンピューターに接続されているすべてのデバイスを検索します。 デバイス インスタンス ID とデバイスの説明が表示されます。 ローカルおよびリモート コンピューターで有効です。
@@ -67,9 +67,9 @@ ms.locfileid: "56527399"
 <td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>&#39;</strong></p>
+<td align="left"><p><strong>'</strong></p>
 <p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に <strong>&#39;* PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
 </tr>
 </tbody>
 </table>

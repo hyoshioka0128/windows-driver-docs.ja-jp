@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28134
-ms.openlocfilehash: 525052c57703d81d4b13ac601165e2a4be860060
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 373e85d31a3ca2bc9d90974523d0d2d9abbb2c39
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557970"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350415"
 ---
 # <a name="c28134"></a>C28134
 
@@ -29,7 +29,7 @@ C28134 を警告します。プール タグの種類が整数、いない文字
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>追加情報</strong></p></td>
-<td align="left"><p>プール タグ名は文字リテラルは単一引用符を使用する必要があります (&#39;gaT_&#39;)、二重引用符で文字列ではありません。 逆バイト順で通常は。</p></td>
+<td align="left"><p>文字リテラル二重引用符で文字列ではなく単一引用符 ('gaT_') を使用して、プール タグ名があります。 逆バイト順で通常は。</p></td>
 </tr>
 </tbody>
 </table>
@@ -49,7 +49,7 @@ p = ExAllocatePoolWithTag(NonPagedPool, 30, "_Tag");
 次のコード例は、この警告を回避できます。
 
 ```
-p = ExAllocatePoolWithTag(NonPagedPool, 30, &#39;gaT_&#39;);
+p = ExAllocatePoolWithTag(NonPagedPool, 30, 'gaT_');
 ```
 
  

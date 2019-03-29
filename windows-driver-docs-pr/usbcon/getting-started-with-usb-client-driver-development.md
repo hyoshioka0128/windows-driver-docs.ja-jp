@@ -1,16 +1,16 @@
 ---
-Description: This section introduces you to USB driver development.
-title: USB クライアント ドライバー開発を入門
+Description: このセクションでは、USB ドライバーの開発を紹介します。
+title: USB クライアント ドライバー開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f55df5b190d698be6ddd7e53d533e45af3bbbdc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 07f8120c47fd0ff99ba20465d37061f5260fbb9e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560752"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464251"
 ---
-# <a name="getting-started-with-usb-client-driver-development"></a>USB クライアント ドライバー開発を入門
+# <a name="getting-started-with-usb-client-driver-development"></a>USB クライアント ドライバー開発の概要
 
 
 このセクションでは、USB ドライバーの開発を紹介します。 ドライバーの開発に慣れていない場合に、セクションが適用されます。Microsoft が、インボックス ドライバーを行いません、USB デバイスのドライバーを実装します。 このようなドライバーと呼ばれる、 *USB クライアント ドライバー*このドキュメントで設定します。 このセクションのトピックでは、USB の高度な概念について説明し、USB クライアント ドライバーの一般的なタスクを実行する詳細な手順を提供します。 これらの概念の詳細についてでの USB 仕様を参照してください。 [USB ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=617552)します。
@@ -34,13 +34,13 @@ ms.locfileid: "56560752"
 <tbody>
 <tr class="odd">
 <td><p><strong>手順 1.</strong>、読み取り、<a href="https://go.microsoft.com/fwlink/p/?linkid=617552" data-raw-source="[Official USB specification version 2.0 and 3.0](https://go.microsoft.com/fwlink/p/?linkid=617552)">公式 USB 仕様のバージョン 2.0 および 3.0</a>します。</p></td>
-<td>業界の仕様とアーキテクチャのさまざまなコンポーネント (デバイス、ホスト コント ローラーとハブ) について説明します。 これは、&#39;データ フロー モデルを理解することが重要に相互通信と、デバイスが要求される要求の形式とのホストとデバイスの通信する方法。</td>
+<td>業界の仕様とアーキテクチャのさまざまなコンポーネント (デバイス、ホスト コント ローラーとハブ) について説明します。 データ フロー モデルを理解することが重要相互通信と、デバイスが要求される要求の形式でのホストとデバイスの通信方法です。</td>
 </tr>
 <tr class="even">
 <td><p><strong>手順 2</strong>: テストの USB デバイスを取得します。</p></td>
 <td><ul>
 <li>USB デバイスとそのハードウェアの仕様があります。 仕様では、デバイスの機能とサポートされているベンダー コマンドについて説明します。 仕様を使用すると、デバイス ドライバーとの関連の設計に関する決定の機能を確認できます。</li>
-<li>OSR USB FX2 ラーニング キットは、USB ドライバーの開発に慣れていない場合があります。 キットは、このドキュメント セットに含まれる USB サンプルを調べる最も適しています。 ラーニング キットを入手することができます<a href="https://go.microsoft.com/fwlink/p/?linkid=617553" data-raw-source="[OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617553)">OSR オンライン</a>します。</li>
+<li>OSR USB FX2 ラーニング キットは、USB ドライバーの開発に慣れていない場合があります。 このキットは、このドキュメント セットに含まれている学習用 USB サンプルに最も適しています。 ラーニング キットを入手することができます<a href="https://go.microsoft.com/fwlink/p/?linkid=617553" data-raw-source="[OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617553)">OSR オンライン</a>します。</li>
 <li>Microsoft USB Test Tool (MUTT) デバイスを持っています。 MUTT ハードウェアを購入できる<a href="https://go.microsoft.com/fwlink/p/?linkid=617554" data-raw-source="[JJG Technologies](https://go.microsoft.com/fwlink/p/?linkid=617554)">JJG テクノロジ</a>します。 デバイスのファームウェアがインストールされているインストールではありません。 ファームウェアをインストールする<a href="https://go.microsoft.com/fwlink/p/?linkid=617555" data-raw-source="[download the MUTT software package](https://go.microsoft.com/fwlink/p/?linkid=617555)">MUTT ソフトウェア パッケージをダウンロード</a>MUTTUtil.exe を実行します。 詳細については、パッケージに付属のマニュアルを参照してください。</li>
 </ul></td>
 </tr>
@@ -95,7 +95,7 @@ ms.locfileid: "56560752"
 </tr>
 <tr class="odd">
 <td><p><strong>手順 9</strong>-拡張、ドライバーを WDF USB I/O ターゲットのオブジェクトを使用して USB データ転送を実行します。 <a href="usb-device-i-o.md" data-raw-source="[USB data transfers](usb-device-i-o.md)">データ転送の USB</a>します。</p></td>
-<td><p>一般的なタスクを実行するには、ドライバーを拡張します。 このトピックで、&quot;方法&quot;それらのタスクに関するステップ バイ ステップ ガイダンスを提供する、このドキュメント セットのトピックです。</p>
+<td><p>一般的なタスクを実行するには、ドライバーを拡張します。 このトピックでは、「する方法」トピックでは、このドキュメント セットはそれらのタスクに関するステップ バイ ステップ ガイダンスを提供しますします。</p>
 <ul>
 <li><a href="wdk-resources-for-usb-driver-development.md" data-raw-source="[Common tasks for USB client drivers](wdk-resources-for-usb-driver-development.md)">USB クライアント ドライバーに関する一般的なタスク</a></li>
 </ul></td>
@@ -109,13 +109,13 @@ ms.locfileid: "56560752"
 
 
 <a href="" id="microsoft-windows-usb-core-team-blog"></a>[Microsoft Windows USB コア チームのブログ](https://go.microsoft.com/fwlink/p/?linkid=617581)  
-Microsoft USB チームが作成した投稿をご覧ください。 ブログは、さまざまな USB ホスト コント ローラーと Windows PC の USB ハブで動作する Windows USB ドライバー スタックについて説明します。 USB クライアント ドライバー開発者および USB ハードウェアの設計者の役に立つリソースでドライバー スタック実装の理解し、一般的な問題を解決するトレースを収集するためのツールを使用する方法について説明し、ログ ファイル。
+Microsoft USB チームが記述した投稿をご覧ください。 このブログでは、Windows PC に搭載されたさまざまな USB ホスト コントローラーや USB ハブと連動する Windows USB ドライバー スタックを中心に取り上げています。 USB クライアント ドライバーの開発者や USB ハードウェアのデザイナーがドライバー スタック実装を理解し、一般的な問題を解決し、ツールを利用してトレースとログ ファイルを集める方法を説明する際に役立つリソース。
 
 <a href="" id="osr-online-lists---ntdev"></a>[OSR オンライン リスト -:ntdev](https://go.microsoft.com/fwlink/p/?linkid=617582)  
-によって管理されるディスカッション リスト[OSR オンライン](https://go.microsoft.com/fwlink/p/?linkid=617590)カーネル モード ドライバー開発者向け。
+カーネルモード ドライバーの開発者のための [OSR オンライン](https://go.microsoft.com/fwlink/p/?linkid=617590)によって管理されるディスカッション リスト。
 
 <a href="" id="usb-technologies"></a>[USB テクノロジ](https://go.microsoft.com/fwlink/p/?linkid=617583)  
-その他のリソースに頻繁に基づく寄せられる質問の開発者から USB デバイスと Windows オペレーティング システムで動作するドライバーを開発するは初めてです。
+Windows オペレーティング システムで動作する USB デバイスとドライバーを初めて開発する開発者からよく寄せられる質問に基づくその他のリソース。
 
 <a href="" id="windows-dev-center-for-hardware-development"></a>[Windows ハードウェア開発のデベロッパー センター](https://go.microsoft.com/fwlink/p/?linkid=617584)  
 [ドライバーの開発用最新ツールをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=617585)、お使いの製品が信頼性が高く、を通じて Windows と互換性があることを確認、 [Windows 認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=617591)、学習[Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507).

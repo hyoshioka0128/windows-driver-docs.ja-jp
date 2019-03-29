@@ -1,6 +1,6 @@
 ---
-title: ドライバーの同期の通知を登録します。
-description: ドライバーの同期の通知を登録します。
+title: 同期ドライバー通知登録
+description: 同期ドライバー通知登録
 ms.assetid: 852a2b69-c71f-4127-946e-8179954d504c
 keywords:
 - ドライバーの通知の WDK が動的なハードウェア パーティション分割、登録します。
@@ -10,14 +10,14 @@ keywords:
 - ドライバーの通知の WDK の動的なハードウェア パーティショニングの登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c312eed9a3b350b020f9564c5fe476c1829d1d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f055374a1a700fcffb813076868d625a3425e1e8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549247"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350343"
 ---
-# <a name="registering-for-synchronous-driver-notification"></a>ドライバーの同期の通知を登録します。
+# <a name="registering-for-synchronous-driver-notification"></a>同期ドライバー通知登録
 
 
 ドライバーの同期の通知を使用するには、デバイス ドライバーは、ハードウェア パーティションに新しいプロセッサを動的に追加するときに、オペレーティング システムが呼び出すコールバック関数を実装します。 次のコード例では、このようなコールバック関数のプロトタイプを示します。
@@ -39,7 +39,7 @@ VOID
 PVOID CallbackRegistrationHandle;
 NTSTATUS CallbackStatus = STATUS_SUCCESS;
 
-// The driver&#39;s DriverEntry routine
+// The driver's DriverEntry routine
 NTSTATUS  DriverEntry(
     PDRIVER_OBJECT DriverObject,
     PUNICODE_STRING RegistryPath
@@ -83,7 +83,7 @@ NTSTATUS  DriverEntry(
 ときにデバイス ドライバをする必要がありますの受信を停止ドライバーの同期の通知など、呼び出すことによってコールバック関数を解除する必要がありますアンロードされているときに、 [ **KeDeregisterProcessorChangeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff552015)関数。 デバイス ドライバーの通常の呼び出し、 **KeDeregisterProcessorChangeCallback**関数内からその[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数。 次のコード例では、コールバック関数を登録解除する方法を示します。
 
 ```cpp
-// The driver&#39;s Unload routine
+// The driver's Unload routine
 VOID
   Unload(
     IN PDRIVER_OBJECT DriverObject

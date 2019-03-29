@@ -1,6 +1,6 @@
 ---
-title: UVC 1.0 と 1.1 UVC の違い
-description: UVC 1.0 と 1.1 UVC の違い
+title: UVC 1.0 と UVC 1.1 の違い
+description: UVC 1.0 と UVC 1.1 の違い
 ms.assetid: 5199fc4f-7bc2-4edb-bb52-cd2028756f64
 keywords:
 - USB ビデオ クラス ドライバー WDK AVStream のバージョンの違い
@@ -9,14 +9,14 @@ keywords:
 - UVC ドライバー WDK AVStream、UVC 1.0 と 1.1 の UVC の違い
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8113d17cc94d9464d63da905122cf10f0c03df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a9aa4b8b9235a9522a1d4e985ef7a5d5176dfda
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549160"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464188"
 ---
-# <a name="differences-between-uvc-10-and-uvc-11"></a>UVC 1.0 と 1.1 UVC の違い
+# <a name="differences-between-uvc-10-and-uvc-11"></a>UVC 1.0 と UVC 1.1 の違い
 
 
 Windows 7 または Windows の以前のバージョンを使用する UVC 準拠のハードウェアを設計するとき、UVC 1.0 および 1.1 をサポートしている間する必要があります。
@@ -40,7 +40,7 @@ UVC 1.1 に準拠しているデバイスを設定する必要があります、
 </colgroup>
 <thead>
 <tr class="header">
-<th>状況</th>
+<th>状態</th>
 <th>記述子と要求/管理</th>
 <th>フィールド</th>
 <th>コメント</th>
@@ -75,7 +75,7 @@ UVC 1.1 に準拠しているデバイスを設定する必要があります、
 <td><p>change</p></td>
 <td><p>特定のクラスとインターフェイスの入力ヘッダー</p></td>
 <td><p><strong>bmaControls(n)</strong></p></td>
-<td><p>1.1 を使用していくつかの異なる方法でこれらのビットの&quot;プローブし、コミット&quot;</p></td>
+<td><p>1.1 を使用してこれらのビットが異なる「プローブとコミット」で</p></td>
 </tr>
 <tr class="even">
 <td><p>change</p></td>

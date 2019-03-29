@@ -1,6 +1,6 @@
 ---
-title: ブレークポイントのフラグとパラメーターを制御します。
-description: ブレークポイントのフラグとパラメーターを制御します。
+title: ブレークポイントのフラグとパラメーターの制御
+description: ブレークポイントのフラグとパラメーターの制御
 ms.assetid: ed702f01-2a30-4ffb-a804-167cf3b19936
 keywords:
 - ブレークポイント、フラグ、およびパラメーター
@@ -10,14 +10,14 @@ keywords:
 - DEBUG_BREAK_IO
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183619dc34aefd78aa00e8d91ca8170956332b0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b6484dbad9d33ee3f66a0f219c9d66276b094737
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528909"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350191"
 ---
-# <a name="controlling-breakpoint-flags-and-parameters"></a>ブレークポイントのフラグとパラメーターを制御します。
+# <a name="controlling-breakpoint-flags-and-parameters"></a>ブレークポイントのフラグとパラメーターの制御
 
 
 ## <span id="controlling_breakpoint_flags_and_parameters"></span><span id="CONTROLLING_BREAKPOINT_FLAGS_AND_PARAMETERS"></span>
@@ -92,27 +92,27 @@ ms.locfileid: "56528909"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_BREAK_READ</p></td>
-<td align="left"><p>CPU がブレークポイントでのメモリを読み取るとき、ブレークポイントがトリガーされる&#39;s メモリ ブロック。</p></td>
+<td align="left"><p>CPU ブレークポイントのメモリ ブロックにメモリを読み取るとき、ブレークポイントがトリガーされます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_BREAK_WRITE</p></td>
-<td align="left"><p>内のブレークポイントで、CPU、メモリに書き込み時に、ブレークポイントがトリガーされる&#39;s メモリ ブロック。</p></td>
+<td align="left"><p>ブレークポイントのメモリ ブロックに、CPU、メモリに書き込み、ブレークポイントがトリガーされます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
 DEBUG_BREAK_READ | DEBUG_BREAK_WRITE</td>
-<td align="left"><p>CPU の読み取りまたはブレークポイントでのメモリの書き込み時に、ブレークポイントがトリガーされる&#39;s メモリ ブロック。</p></td>
+<td align="left"><p>CPU の読み取りまたはブレークポイントのメモリ ブロックにメモリを書き込み時に、ブレークポイントがトリガーされます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_BREAK_EXECUTE</p></td>
-<td align="left"><p>CPU がブレークポイントで命令をフェッチしたときに、ブレークポイントがトリガーされる&#39;s メモリ ブロック。</p></td>
+<td align="left"><p>CPU ブレークポイントのメモリ ブロックに命令をフェッチしたときに、ブレークポイントがトリガーされます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_BREAK_IO</p></td>

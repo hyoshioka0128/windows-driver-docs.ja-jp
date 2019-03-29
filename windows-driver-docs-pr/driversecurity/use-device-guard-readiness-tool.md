@@ -1,17 +1,17 @@
 ---
-title: デバイス ガードの準備ツールを使用して、HVCI ドライバーの互換性を評価するには
+title: Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
 description: デバイス ガード準備ツールを使用して、ドライバー コードの HVCI ドライバーの互換性を評価するこれらの手順に従います。
 ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eac9403029b3e021d65f7f29f16c5fc5f4cc549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 89ff1d974c319a79a210a4652f2c8b533be8ee90
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560963"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464187"
 ---
-# <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>デバイス ガードの準備ツールを使用して、HVCI ドライバーの互換性を評価するには
+# <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
 
 ## <a name="overview"></a>概要
 
@@ -243,7 +243,7 @@ Device Guard の互換性のあるコードを実装するには、次のドラ�
 <tr class="odd">
 <td align="left"><p>ページ保護を実行します。</p></td>
 <td align="left"><p>呼び出し元は、実行可能ファイルのページ保護を指定します。</p>
-<p>指定、&quot;ない実行&quot;ページ保護のマスク。</p>
+<p>「実行なし」ページの保護のマスクを指定します。</p>
 </td>
 </tr>
 
@@ -358,8 +358,8 @@ BAD_STRUCT MayHaveStraddleRelocations[4096] = { // as a global variable
 HVCI と UEFI ロックなしの重心を有効にします。
 
 ```reg
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 1 /f&#39; 
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "RequirePlatformSecurityFeatures" /t REG_DWORD /d 1 /f&#39; 
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 1 /f' 
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "RequirePlatformSecurityFeatures" /t REG_DWORD /d 1 /f' 
 ```
 
 ## <a name="driver-verifier-code-integrity"></a>Driver Verifier のコードの整合性

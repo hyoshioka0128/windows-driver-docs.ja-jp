@@ -1,6 +1,6 @@
 ---
-title: シンボルの状態の省略形
-description: シンボルの状態の省略形
+title: シンボル状態の省略形
+description: シンボル状態の省略形
 ms.assetid: 198453f2-fc9a-4313-875e-ac963b843df9
 keywords:
 - シンボル、シンボルの状態の省略形
@@ -14,14 +14,14 @@ keywords:
 - PDB (シンボルの状態の省略形)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 241e0405dd8f207749dc4e943c5ded74dbd8abab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c7aadee45618c5fddfc3641d2c049b55c719e877
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551046"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350359"
 ---
-# <a name="symbol-status-abbreviations"></a>シンボルの状態の省略形
+# <a name="symbol-status-abbreviations"></a>シンボル状態の省略形
 
 
 ## <span id="ddk_symbol_status_abbreviations_dbg"></span><span id="DDK_SYMBOL_STATUS_ABBREVIATIONS_DBG"></span>
@@ -41,7 +41,7 @@ ms.locfileid: "56551046"
 <thead>
 <tr class="header">
 <th align="left">省略形</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,8 +66,8 @@ ms.locfileid: "56551046"
 <td align="left"><p>シンボル ファイルは、デバッグ インターフェイスへのアクセス (DIA) 経由で読み込まれました。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>エクスポート</strong></p></td>
-<td align="left"><p>実際のシンボル ファイルが見つかりませんでした、シンボル情報は、バイナリ ファイルから抽出されたように&#39;s エクスポート テーブル。</p></td>
+<td align="left"><p><strong>[エクスポート]</strong></p></td>
+<td align="left"><p>シンボル情報は、バイナリ ファイルのエクスポート テーブルから抽出されたため、実際のシンボル ファイルがありませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>M</strong></p></td>

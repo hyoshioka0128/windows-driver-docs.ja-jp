@@ -1,5 +1,5 @@
 ---
-title: Driver Verifier のコマンド構文
+title: ドライバーの検証ツールのコマンド構文
 description: 次の構文は、コマンド プロンプト ウィンドウで検証ユーティリティを実行しているときに使用されます。同じ 1 つの行にいくつかのオプションを入力することができます。
 ms.assetid: 7cdf5277-7187-4e90-b22a-6f828f06e2fb
 keywords:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08244ff058d2bb9582a558111408455f104b03fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 463b13e77e3ed54609b1c733f9b18593c28d93c7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529434"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350371"
 ---
-# <a name="driver-verifier-command-syntax"></a>Driver Verifier のコマンド構文
+# <a name="driver-verifier-command-syntax"></a>ドライバーの検証ツールのコマンド構文
 
 
 次の構文は、コマンド プロンプト ウィンドウで検証ユーティリティを実行しているときに使用されます。
 
-同じ 1 つの行にいくつかのオプションを入力することができます。 次に、例を示します。
+同じ 1 つの行にいくつかのオプションを入力することができます。 例:
 
 ```
 verifier /flags 7 /driver beep.sys flpydisk.sys
@@ -135,7 +135,7 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="persistent"></span><span id="PERSISTENT"></span><strong>永続的です</strong></p></td>
-<td align="left"><p>Driver Verifier の設定が何回も再起動経由で (影響の維持) を保持するようにします。 これは、既定の設定です。</p></td>
+<td align="left"><p>Driver Verifier の設定が何回も再起動経由で (影響の維持) を保持するようにします。 これが既定の設定です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="disableafterfail"></span><span id="DISABLEAFTERFAIL"></span><strong>disableafterfail</strong></p></td>
@@ -147,7 +147,7 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="resetonunusualshutdown"></span><span id="RESETONUNUSUALSHUTDOWN"></span><strong>resetonunusualshutdown</strong></p></td>
-<td align="left"><p>(Windows 10 1709 ビルドで導入されました)Driver Verifier は、異常なシャット ダウンが発生するまで保持されます。 その略称、  <strong>&#39;rous&#39;</strong>、使用することができます。
+<td align="left"><p>(Windows 10 1709 ビルドで導入されました)Driver Verifier は、異常なシャット ダウンが発生するまで保持されます。 その略称、 <strong>'rous'</strong>、使用することができます。
 </p></td>
 </tr>
 </tbody>
@@ -285,20 +285,20 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 <th align="left">10 進数</th>
 <th align="left">16 進数</th>
 <th align="left">標準の設定</th>
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x1 (ビット 0)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="special-pool.md" data-raw-source="[Special Pool](special-pool.md)">特別なプール</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
 <td align="left"><p>0x2 (ビット 1)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="force-irql-checking.md" data-raw-source="[Force IRQL Checking](force-irql-checking.md)">強制 IRQL 検査</a></p></td>
 </tr>
 <tr class="odd">
@@ -310,19 +310,19 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 <tr class="even">
 <td align="left"><p>8</p></td>
 <td align="left"><p>0x8 (ビット 3)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="pool-tracking.md" data-raw-source="[Pool Tracking](pool-tracking.md)">プールの追跡</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>16</p></td>
 <td align="left"><p>0x10 (4 ビット)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="i-o-verification.md" data-raw-source="[I/O Verification](i-o-verification.md)">I/O の検証</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>32</p></td>
 <td align="left"><p>0x20 (bit 5)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="deadlock-detection.md" data-raw-source="[Deadlock Detection](deadlock-detection.md)">デッドロックの検出</a>(Windows XP 以降)</p></td>
 </tr>
 <tr class="odd">
@@ -334,13 +334,13 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 <tr class="even">
 <td align="left"><p>128</p></td>
 <td align="left"><p>0x80 (7 ビット)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="dma-verification.md" data-raw-source="[DMA Verification](dma-verification.md)">DMA の検証</a>(Windows XP 以降)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>256</p></td>
 <td align="left"><p>0x100 (8 ビット)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="security-checks.md" data-raw-source="[Security Checks](security-checks.md)">セキュリティ チェック</a>(Windows XP 以降)</p></td>
 </tr>
 <tr class="even">
@@ -358,7 +358,7 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 <tr class="even">
 <td align="left"><p>2048</p></td>
 <td align="left"><p>0x800 (bit 11)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="miscellaneous-checks.md" data-raw-source="[Miscellaneous Checks](miscellaneous-checks.md)">その他の検査</a>(Windows Vista 以降)</p></td>
 </tr>
 <tr class="odd">
@@ -388,7 +388,7 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 <tr class="odd">
 <td align="left"><p>131072</p></td>
 <td align="left"><p>0x20000 (ビット 17)</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>x</p></td>
 <td align="left"><p><a href="ddi-compliance-checking.md" data-raw-source="[DDI compliance checking](ddi-compliance-checking.md)">DDI 準拠の検査</a>(Windows 8 以降)</p></td>
 </tr>
 <tr class="even">
@@ -451,14 +451,14 @@ Windows 2000 では、10 進数形式で数値を入力します。 Windows XP �
 <tr class="header">
 <th align="left">10 進数</th>
 <th align="left">16 進数</th>
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x1 (ビット 0)</p></td>
-<td align="left"><p>特別なプール</p></td>
+<td align="left"><p>Special Pool</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -468,7 +468,7 @@ Windows 2000 では、10 進数形式で数値を入力します。 Windows XP �
 <tr class="odd">
 <td align="left"><p>4</p></td>
 <td align="left"><p>0x4 (ビット 2)</p></td>
-<td align="left"><p>低リソース シミュレーション</p></td>
+<td align="left"><p>低リソースのシミュレーション</p></td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +519,7 @@ I/O の検証が有効でない場合 (を使用して **/flags 0x10**)、 **/io
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -543,13 +543,13 @@ I/O の検証が有効でない場合 (を使用して **/flags 0x10**)、 **/io
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>クエリ</strong></p></td>
+<td align="left"><p><strong>query</strong></p></td>
 <td align="left"><p>制御可能な規則の現在の状態を示しています。</p></td>
 </tr>
 <tr class="even">
@@ -591,7 +591,7 @@ Windows Vista では、前に Windows のバージョンで、 **/volatile**パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -665,7 +665,7 @@ Driver Verifier の現在のアクティビティの概要を表示します。 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[<em>オプション</em>]</th>
+<th align="left"><em>[オプション]</em></th>
 <th align="left">説明</th>
 </tr>
 </thead>

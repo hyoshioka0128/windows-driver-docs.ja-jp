@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e66f2d92a05595e019492374315a9b5eb8d4a62c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9e3e653fbc3b1ec7ba73081813d3888869e8fe7c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529383"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464302"
 ---
-# <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>バグ チェック 0x190 の。WIN32K\_重大\_エラー\_LIVEDUMP
+# <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>バグ チェック 0x190:WIN32K\_重大\_エラー\_LIVEDUMP
 
 
 WIN32K\_重大\_エラー\_LIVEDUMP バグ チェックが 0x00000190 の値を持ちます。 これは、Win32k の重大なエラーが発生したことを示します。 デバッグ情報を収集するライブのダンプがキャプチャされます。
@@ -47,7 +47,7 @@ WIN32K\_重大\_エラー\_LIVEDUMP バグ チェックが 0x00000190 の値を�
 <td align="left"><p>エラーの種類</p>
 <p>0x1:REGION_VALIDATION_FAILURE - リージョンは、画面の範囲外です。</p>
 2 - DC 3 - 画面 4 ポインター リージョンへのポインターへのポインター
-<p>0x2:OPERATOR_NEW_USED - 演算子&quot;新しい&quot;メモリを割り当てるために使用します。</p>
+<p>0x2:OPERATOR_NEW_USED -"new"演算子は、メモリの割り当てに使用されます。</p>
 2 - 3 - 予約済み 4 - 予約済みの予約</td>
 </tr>
 <tr class="even">

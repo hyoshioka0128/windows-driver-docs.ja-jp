@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd08b461351859bc453700247addd6a77b9f32c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e5d1ea9041b1d4d5fee011516c1f2a1e5a61ea9
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529916"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463882"
 ---
 # <a name="gflags-command-overview"></a>GFlags コマンドの概要
 
@@ -105,7 +105,7 @@ glags /?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">表記</th>
+<th align="left">形式</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -182,7 +182,7 @@ glags /?
 <tr class="even">
 <td align="left"><p><strong>/i</strong> <em>ImageFile</em></p></td>
 <td align="left"><p>指定したイメージ ファイルを使用して、プロセスによって作成されたオブジェクトをトレースに制限されます。 1 つのみのイメージ ファイルを指定することができます、 <strong>/i</strong>パラメーター。</p>
-<p>最大 64 文字で、notepad.exe などのイメージ ファイル名を入力します。 &quot;システム&quot;と&quot;Idle&quot;有効なイメージ名ではありません。</p>
+<p>最大 64 文字で、notepad.exe などのイメージ ファイル名を入力します。 "System"と"Idle"は有効なイメージ名ではありません。</p>
 <p>イメージ ファイルを指定しない場合、Windows は、指定されたプール タグを含むすべてのオブジェクトをトレースします。 両方のイメージ ファイルを指定する場合 (<strong>/i</strong>) と 1 つまたは複数のプール タグ (<strong>/t</strong>)、Windows は、指定したイメージによって作成される指定されたプール タグのいずれかでオブジェクトをトレースします。</p></td>
 </tr>
 <tr class="odd">

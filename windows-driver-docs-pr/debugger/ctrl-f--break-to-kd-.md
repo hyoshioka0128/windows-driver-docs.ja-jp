@@ -1,5 +1,5 @@
 ---
-title: CTRL + F (KD を切断)
+title: Ctrl + F (中断して KD を起動)
 description: Ctrl キーを押しながら F キーでは、コマンドをキャンセルまたはデバッガーを中断します。
 ms.assetid: 45bb7eaf-cb79-4fb4-a01d-373bfb1957c3
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55351200570cd1c5bffed2e49277073aa83cea8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d35629ef83e832fa147661431be722ed065d9195
+ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535870"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505150"
 ---
-# <a name="ctrlf-break-to-kd"></a>CTRL + F (KD を切断)
+# <a name="ctrlf-break-to-kd"></a>Ctrl + F (中断して KD を起動)
 
 
 Ctrl キーを押しながら F キーでは、コマンドをキャンセルまたはデバッガーを中断します。 (このコントロールのキーは、CDB KD 自体のデバッグに使用するときに特に役立ちます)。
@@ -28,10 +28,8 @@ Ctrl キーを押しながら F キーでは、コマンドをキャンセルま
 CTRL+F  ENTER 
 ```
 
-## <span id="ddk_meta_ctrl_f_dbg"></span><span id="DDK_META_CTRL_F_DBG"></span>
 
-
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+## <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
 <table>
 <colgroup>
@@ -60,7 +58,7 @@ CTRL+F  ENTER
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 通常の状況では、CTRL キーを押しながら F キーは、標準的な中断コマンドと同じです ([**CTRL + C** ](ctrl-c--break-.md) KD、CDB でと[デバッグ |中断](debug---break.md)または CTRL + BREAK WinDbg でします)。

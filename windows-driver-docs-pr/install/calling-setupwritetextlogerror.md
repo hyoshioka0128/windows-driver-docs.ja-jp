@@ -1,17 +1,17 @@
 ---
-title: SetupWriteTextLogError を呼び出す
-description: SetupWriteTextLogError を呼び出す
+title: SetupWriteTextLogError の呼び出し
+description: SetupWriteTextLogError の呼び出し
 ms.assetid: 55edc72a-2d53-4084-a1e4-e7e6515a4990
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56db982e2686a67c36dd3ac9b038256ef0de8183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e1c43885ad71347e009312daa1088bd9d6e71d87
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532196"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350259"
 ---
-# <a name="calling-setupwritetextlogerror"></a>SetupWriteTextLogError を呼び出す
+# <a name="calling-setupwritetextlogerror"></a>SetupWriteTextLogError の呼び出し
 
 
 [**SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232) SetupAPI 固有のエラーまたは Win32 エラーに関する情報を書き込みます、 [SetupAPI テキスト ログ](setupapi-text-logs.md)します。 **SetupWriteTextLogError**テキスト ログに 2 つの連続するエントリが書き込まれます最初のエントリが書き込まれたのと同じ形式で同じ情報が含まれています[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)と。2 番目のエントリは、対応するエラー コードおよびエラーのわかりやすい説明を記録します。
@@ -59,13 +59,13 @@ DWORD Category = TXTLOG_VENDOR;
 DWORD Flags = TXTLOG_ERROR ;
 DWORD ErrorCode = 1056; // The corresponding Win32 error code
 
-SetupWriteTextLog(LogToken, Category, Flags, ErrorCode, TEXT("Start Service: Failed to start service &#39;SomeService&#39;"),);
+SetupWriteTextLog(LogToken, Category, Flags, ErrorCode, TEXT("Start Service: Failed to start service 'SomeService'"),);
 ```
 
 TXTLOG_VENDOR イベントのカテゴリが有効になっており、TXTLOG_ERROR イベントのレベルは、テキスト ログの設定の場合、このコードは次のように書式設定は、テキスト ログをエントリを作成しました。
 
 ```cpp
-!!!     :  Start Service: Failed to start service &#39;SomeService&#39; 
+!!!     :  Start Service: Failed to start service 'SomeService' 
 !!!   :  Error 1056: An instance of the service is already running.
 ```
 

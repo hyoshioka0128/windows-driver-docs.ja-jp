@@ -1,27 +1,25 @@
 ---
-title: Get 要求および応答スキーマ
+title: Get 要求と応答のスキーマ
 description: Get 要求のスキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
 ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 402649b40d3ff825fd9697c142b3aa544ee243a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ff1d2e9ab650b9ea94eff9ec5c17f7fbe459e0e3
+ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559605"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58441922"
 ---
-# <a name="get-request-and-response-schemas"></a>Get 要求および応答スキーマ
-
+# <a name="get-request-and-response-schemas"></a>Get 要求と応答のスキーマ
 
 Get 要求のスキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
 
 ## <a name="the-get-request-schema"></a>Get 要求のスキーマ
 
-
 Get 要求と応答は、現在の値の 1 つ以上のプリンターをクエリに使用されます。
 
-この例では、3 つのクエリです。 最初のクエリは、双方向通信のスキーマの特定の値と 2 番目のサブツリーを定義する双方向通信のスキーマのプロパティを指します。 3 番目は意図的なエラー: がない&lt;Foo&gt;双方向通信のスキーマ内のプロパティ。 (この要求に応答が、次のセクションでは[取得応答スキーマ](#get-response-schema))。
+この例では、3 つのクエリです。 最初のクエリは、双方向通信のスキーマの特定の値と 2 番目のサブツリーを定義する双方向通信のスキーマのプロパティを指します。 3 番目は意図的なエラー: がない&lt;Foo&gt;双方向通信のスキーマ内のプロパティ。 (この要求に応答が、次のセクションでは[取得応答スキーマ](#the-get-response-schema))。
 
 ```xml
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -60,7 +58,6 @@ Get 要求のスキーマの正式な定義
 ```
 
 ## <a name="the-get-response-schema"></a>Get 応答スキーマ
-
 
 この例では、上記の Get 要求に応答を示します。 クエリの成功は、結果は、値の特定のスキーマ。 結果がエラー コード、3 番目のクエリが失敗しました。 2 番目のクエリに子を持つプロパティが要求されたため、応答が提供するすべての子の値と名前に注意してください。
 

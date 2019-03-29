@@ -1,5 +1,5 @@
 ---
-title: DevCon 再起動
+title: DevCon Restart
 description: 停止し、指定したデバイスを再起動します。 ローカル コンピューターでのみ有効です。
 ms.assetid: 3d16435d-e80d-408c-8e61-fad4a5aa7b9b
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d70dee7b45a2674daf4432d6aeeab1f2b92400
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 555d22fd0f02365c3cdb373912a2629b7d65b979
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530815"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350231"
 ---
-# <a name="devcon-restart"></a>DevCon 再起動
+# <a name="devcon-restart"></a>DevCon Restart
 
 
 停止し、指定したデバイスを再起動します。 ローカル コンピューターでのみ有効です。
@@ -63,9 +63,9 @@ ms.locfileid: "56530815"
 <td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>&#39;</strong></p>
+<td align="left"><p><strong>'</strong></p>
 <p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に <strong>&#39;* PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
 </tr>
 </tbody>
 </table>

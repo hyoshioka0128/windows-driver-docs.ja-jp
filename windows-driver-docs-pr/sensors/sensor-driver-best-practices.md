@@ -4,12 +4,12 @@ description: センサー ドライバーのベスト プラクティス
 ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b42d93098e1af74891a7e4a8f89bdc5545ddabe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 08bbeaf79f0cb6e91fc0ee847df4b1211c8644bc
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556505"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136111"
 ---
 # <a name="sensor-driver-best-practices"></a>センサー ドライバーのベスト プラクティス
 
@@ -20,7 +20,7 @@ ms.locfileid: "56556505"
 
 Windows ハードウェア認定プログラムには、ハードウェアの製造元を自分のデバイスが Windows を操作するための必要な基準を満たす証明書を受信するができます。 プログラムでは、すべてのセンサーの要件と場所のセンサーと周辺光センサーの特定の要件を提供します。 すべての Windows ハードウェア認定プログラム要件を満たすには、センサー ドライバーをする必要があります。
 
-一般に、この WDK ドキュメントの推奨事項では、プログラムの要件と一致します。 ただし、証明書を送信するセンサー ドライバーを作成するときに、Windows ハードウェア認定プログラムの公式ドキュメントを確認する必要があります。 Windows ハードウェア認定プログラムに関する詳細については、次を参照してください。、 [Windows Hardware Developer Central](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125187) web サイト。
+一般に、この WDK ドキュメントの推奨事項では、プログラムの要件と一致します。 ただし、証明書を送信するセンサー ドライバーを作成するときに、Windows ハードウェア認定プログラムの公式ドキュメントを確認する必要があります。 Windows ハードウェア認定プログラムに関する詳細については、次を参照してください。、 [Windows Hardware Developer Central](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) web サイト。
 
 ## <a name="performance"></a>パフォーマンス
 

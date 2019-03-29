@@ -8,20 +8,16 @@ keywords:
 - 実行中のインストール状態の検証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d97c6d217eeeaa76d29c1730ffb33d8791d8d247
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2da342604306c7a3123d45ca61555d97809d6a9c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537995"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350419"
 ---
 # <a name="checking-for-in-progress-installations"></a>進行中のインストールの確認
 
-
-
-
-
-*デバイス インストール アプリケーション*そのインストールを実行する前に他のインストール操作が進行中ですがかどうかを判断する必要があります。 この判断をするためには、デバイスのインストール アプリケーションを呼び出す必要があります[ **CMP_WaitNoPendingInstallEvents**](https://msdn.microsoft.com/library/windows/hardware/ff537916)、ゼロのタイムアウト値を通常します。 インストール操作が保留中でこの関数の戻り値では、その他のことを示す場合 (たとえば、新しい Found ハードウェア ウィザードは、アクティブな可能性があります)、デバイスのインストール アプリケーションを終了する必要があります。
+*デバイス インストール アプリケーション*そのインストールを実行する前に他のインストール操作が進行中ですがかどうかを判断する必要があります。 この判断をするためには、デバイスのインストール アプリケーションを呼び出す必要があります[ **CMP_WaitNoPendingInstallEvents**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_waitnopendinginstallevents)、ゼロのタイムアウト値を通常します。 インストール操作が保留中でこの関数の戻り値では、その他のことを示す場合 (たとえば、新しい Found ハードウェア ウィザードは、アクティブな可能性があります)、デバイスのインストール アプリケーションを終了する必要があります。
 
 させる、*デバイス インストール アプリケーション*をサポートしないプラットフォームと互換性のある**CMP_WaitNoPendingInstallEvents**アプリケーションは、次のコードを含める必要があります。
 
@@ -35,16 +31,16 @@ IsDeviceInstallInProgress (VOID)
     hModule = GetModuleHandle(TEXT("setupapi.dll"));
     if(!hModule)
     {
-        // Should never happen since we&#39;re linked to SetupAPI, but...
+        // Should never happen since we're linked to SetupAPI, but...
         return FALSE;
     }
 
-    pCMP_WaitNoPendingInstallEvents = 
+    pCMP_WaitNoPendingInstallEvents =
         (CMP_WAITNOPENDINGINSTALLEVENTS_PROC)GetProcAddress(hModule,
                                              "CMP_WaitNoPendingInstallEvents");
     if(!pCMP_WaitNoPendingInstallEvents)
     {
-        // We&#39;re running on a release of the operating system that doesn&#39;t supply this function.
+        // We're running on a release of the operating system that doesn't supply this function.
         // Trust the operating system to suppress AutoRun when appropriate.
         return FALSE;
     }
@@ -57,8 +53,8 @@ _tmain(IN int argc, IN PTCHAR argv[])
 {
     if(IsDeviceInstallInProgress()) {
         //
-        // We don&#39;t want to start right now.  Instead, our 
-        // device co-installer will invoke this application 
+        // We don't want to start right now.  Instead, our
+        // device co-installer will invoke this application
         // (if necessary) during finish-install processing.
         //
         return -1;
@@ -71,12 +67,3 @@ _tmain(IN int argc, IN PTCHAR argv[])
 このコードの使用に基づいて、内部設置型の場合に、プラットフォームはサポートしていません**CMP_WaitNoPendingInstallEvents**、インストール操作が進行中である場合に、プラットフォームが自動実行を開始できません。
 
 このコードの使用例、下のトースター インストール パッケージを参照してください、 *src\\全般\\トースター* Windows Driver Kit (WDK) のサブディレクトリ。
-
- 
-
- 
-
-
-
-
-

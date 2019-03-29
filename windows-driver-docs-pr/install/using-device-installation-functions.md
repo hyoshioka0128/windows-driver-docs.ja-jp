@@ -1,20 +1,20 @@
 ---
-title: デバイス インストールの機能を使用します。
-description: デバイス インストールの機能を使用します。
+title: デバイス インストール関数の使用
+description: デバイス インストール関数の使用
 ms.assetid: a7cfa359-a45c-45fa-a854-ee70de66b12e
 keywords:
 - SetupAPI 関数 WDK、デバイスのインストール機能
 - デバイスのインストールは、WDK SetupAPI を関数します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789460aaeccb5afbcc00495475dd51f355762446
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5dbf67fa17ae99a66ea2e7241c2b1d0969daa498
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559876"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350409"
 ---
-# <a name="using-device-installation-functions"></a>デバイス インストールの機能を使用します。
+# <a name="using-device-installation-functions"></a>デバイス インストール関数の使用
 
 
 
@@ -190,7 +190,7 @@ ms.locfileid: "56559876"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff550917" data-raw-source="[&lt;strong&gt;SetupDiBuildDriverInfoList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550917)"><strong>SetupDiBuildDriverInfoList</strong></a></p></td>
-<td align="left"><p>デバイスの情報セットまたは指定したデバイスのインスタンスと関連付けられたドライバーのリストを構築&#39;s グローバル クラス ドライバーの一覧。</p></td>
+<td align="left"><p>デバイス情報設定のグローバル クラス ドライバーの一覧または指定したデバイスのインスタンスと関連付けられたドライバーの一覧を作成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551018" data-raw-source="[&lt;strong&gt;SetupDiEnumDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551018)"><strong>SetupDiEnumDriverInfo</strong></a></p></td>

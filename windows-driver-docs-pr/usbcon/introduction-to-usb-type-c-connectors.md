@@ -1,14 +1,14 @@
 ---
-Description: Possible causes and resolutions to troubleshooting messages in Windows 10 that users might get on USB Type-C systems running Windows.
+Description: 考えられる原因と解決策をユーザーが Windows を実行している USB 型-C# のシステムで発生可能性のある Windows 10 でのメッセージのトラブルシューティングします。
 title: USB タイプ C Windows システムのメッセージをトラブルシューティングします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2581654f6d6c5c11d6f7dcac2657d9dfab08b3d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 060ecddcb41ae474d0845afc0b9f11216525c407
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536548"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350331"
 ---
 # <a name="troubleshoot-messages-for-a-usb-type-c-windows-system"></a>USB タイプ C Windows システムのメッセージをトラブルシューティングします。
 
@@ -50,7 +50,7 @@ USB 型-c コネクタの対称的、および元に戻すことのデザイン�
 <td><ol>
 <li>エラー コードに注意してください。
 <ul>
-<li>Windows 10 デスクトップ エディションのシステムで、デバイス マネージャーを開き、デバイスを探します。 これは、&#39;s の黄色の感嘆符が付いています。 開いているデバイス プロパティ、ノードで右クリックします。 下のエラー コードは<strong>デバイス ステータス</strong>します。</li>
+<li>Windows 10 デスクトップ エディションのシステムで、デバイス マネージャーを開き、デバイスを探します。 これは、黄色の感嘆符でマークされます。 開いているデバイス プロパティ、ノードで右クリックします。 下のエラー コードは<strong>デバイス ステータス</strong>します。</li>
 <li>Windows 10 Mobile のシステムでは、通知は、エラー コードを示します。</li>
 </ul></li>
 <li>説明されているトラブルシューティングの手順に従います<a href="https://go.microsoft.com/fwlink/p/?LinkId=526896" data-raw-source="[this article](https://go.microsoft.com/fwlink/p/?LinkId=526896)">今回</a>します。</li>
@@ -106,7 +106,7 @@ USB 型-c コネクタの対称的、および元に戻すことのデザイン�
 </div></td>
 <td><ul>
 <li>充電器とデバイスに付属しているケーブルを使用します。</li>
-<li>確認する&#39;re、充電器をシステムに充電型-C# の USB ポートに接続します。</li>
+<li>充電器、システムに充電型-C# の USB ポートに接続していることを確認します。</li>
 </ul></td>
 </tr>
 </tbody>

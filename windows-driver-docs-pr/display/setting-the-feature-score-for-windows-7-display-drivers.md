@@ -1,17 +1,17 @@
 ---
-title: Windows 7 のディスプレイ ドライバーの特徴のスコアの設定
-description: Windows 7 のディスプレイ ドライバーの特徴のスコアの設定
+title: Windows 7 ディスプレイ ドライバーの機能スコアの設定
+description: Windows 7 ディスプレイ ドライバーの機能スコアの設定
 ms.assetid: 7b2cf25d-a88d-48e1-8d62-8c245c289566
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7552c94a24a6eb710fbca980de296c137080d8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9148246fd84492b9a12f0ffe2e2d4e47f93ca185
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551645"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350201"
 ---
-# <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>Windows 7 のディスプレイ ドライバーの特徴のスコアの設定
+# <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>Windows 7 ディスプレイ ドライバーの機能スコアの設定
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
@@ -36,15 +36,15 @@ ms.locfileid: "56551645"
 <tbody>
 <tr class="odd">
 <td align="left"><p>E6</p></td>
-<td align="left"><p>Windows Display Driver Model (WDDM) に書き込まれるベンダーから提供されたドライバーは、モデル用に最適化された&#39;s Windows 7 の機能は、Windows Hardware Quality Labs (WHQL) によってが修飾されている Windows 7 ドライバー パッケージでパッケージ化されが含まれていますWindows で<a href="https://go.microsoft.com/fwlink/p/?linkid=138031" data-raw-source="[Compatibility Center](https://go.microsoft.com/fwlink/p/?linkid=138031)">互換性センター</a>テスト済み製品一覧</p></td>
+<td align="left"><p>Windows Display Driver Model (WDDM) に書き込まれるベンダーから提供されたドライバー モデルの Windows 7 の機能用に最適化された、Windows Hardware Quality Labs (WHQL) によってが修飾されている Windows 7 ドライバー パッケージでパッケージ化されに含まれる、Windows<a href="https://go.microsoft.com/fwlink/p/?linkid=138031" data-raw-source="[Compatibility Center](https://go.microsoft.com/fwlink/p/?linkid=138031)">互換性センター</a>テスト済み製品一覧</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>E6</p></td>
-<td align="left"><p>WDDM に書き込まれるベンダーから提供されたドライバーは、モデル用に最適化された&#39;s Windows 7 の機能とはパッケージ化と統合された Windows 7 および Windows Vista ドライバー パッケージ、Windows ハードウェア認定キットを使用して、認定されています。</p></td>
+<td align="left"><p>ベンダーから提供されたドライバーは、WDDM に書き込まれるモデルの Windows 7 の機能用に最適化され、の統合された Windows 7 および Windows Vista ドライバー パッケージ、Windows ハードウェア認定キットを使用して、認定されているパッケージに付属</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>EC</p></td>
-<td align="left"><p>WDDM に書き込まれるインボックス ドライバーは、モデル用に最適化された&#39;Windows 7 のドライバー パッケージに同梱されて s Windows 7 の機能とは</p></td>
+<td align="left"><p>WDDM に書き込まれるインボックス ドライバー モデルの Windows 7 の機能用に最適化された、Windows 7 のドライバー パッケージに同梱されています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>F4</p></td>

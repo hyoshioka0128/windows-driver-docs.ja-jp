@@ -9,12 +9,12 @@ keywords:
 - プリプロセッサ シンボル WDK GPD ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62dc9af28d17601861da465784a9362076d30ece
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d4d8a855c0cfc79cfd2ce46480ce8ff6c2fcaf01
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558320"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464100"
 ---
 # <a name="preprocessor-directives"></a>プリプロセッサ ディレクティブ
 
@@ -62,7 +62,7 @@ GPD ファイルは、GPD ファイル内のセクションの条件付きの解
 <td><p>GPD ファイル エントリのブロックの終了を示します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em><strong>含める</strong>:&quot;<em>FileName</em>&quot;</p></td>
+<td><p><em><strong>含める</strong>:"<em>FileName</em>"</p></td>
 <td><p>追加の GPD ファイルの名前を指定します。 参照してください<a href="using-multiple-gpd-files-in-a-minidriver.md" data-raw-source="[Using Multiple GPD Files in a Minidriver](using-multiple-gpd-files-in-a-minidriver.md)">、ミニドライバーにファイルを複数 GPD を使用して</a>します。</p></td>
 </tr>
 <tr class="even">
@@ -144,7 +144,7 @@ Microsoft では、次のプリプロセッサ シンボルを定義します。
 </colgroup>
 <thead>
 <tr class="header">
-<th>記号</th>
+<th>シンボル</th>
 <th>定義されている場所</th>
 <th>定義</th>
 </tr>

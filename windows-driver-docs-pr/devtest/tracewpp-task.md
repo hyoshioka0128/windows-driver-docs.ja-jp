@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) には、MSBuild を使用してドライ�
 ms.assetid: 74CE1912-8D1D-417E-8B29-36B2AB0253EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5c57fda2efcea68d68adae2e8c3f3272eae2da6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 908b3fe9a66ae0b216d6c1c4f8312d0e19f4189a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549231"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350285"
 ---
 # <a name="tracewpp-task"></a>TraceWPP タスク
 
@@ -116,7 +116,7 @@ tracewpp.exe  dll test2.c
 </tr>
 <tr class="odd">
 <td align="left"><strong>AddControlGUID</strong>
-<p>省略可能な文字列パラメーター。 という名前の指定したコントロールの GUID と WPP_DEFINE_BIT エントリを含む WPP_CONTROL_GUIDS マクロを定義します。&#39;エラー&#39;、&#39;異常な&#39;、および&#39;ノイズ&#39;します。</p></td>
+<p>省略可能な文字列パラメーター。 WPP_CONTROL_GUIDS マクロが、指定したコントロールの GUID と名前付き 'Error'、'異常な' および 'ノイズ' WPP_DEFINE_BIT エントリを定義します。</p></td>
 <td align="left">%(TraceWpp.WppAddControlGUID)</td>
 <td align="left"><strong>-ctl:</strong><em>GUID</em></td>
 </tr>
@@ -146,7 +146,7 @@ tracewpp.exe  dll test2.c
 </tr>
 <tr class="even">
 <td align="left"><strong>IgnoreExclamationmarks</strong>
-<p>省略可能なブール型パラメーター。 WPP とも呼ばれるの感嘆符を無視するように指示&#39;途切れ、&#39; % などの複雑な書式設定に使用します。 タイムスタンプ! % です。</p></td>
+<p>省略可能なブール型パラメーター。 WPP '途切れ、' % などの複雑な書式設定で使用されるとも呼ばれる、感嘆符を無視するように指示! タイムスタンプ! % です。</p></td>
 <td align="left">%(TraceWpp.WppIgnoreExclamationmarks)</td>
 <td align="left"><strong>-noshrieks</strong></td>
 </tr>

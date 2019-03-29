@@ -1,19 +1,19 @@
 ---
-title: メタデータの作成ウィザードのトラブルシューティング
-description: メタデータの作成ウィザードのトラブルシューティング
+title: メタデータ作成ウィザードのトラブルシューティング
+description: メタデータ作成ウィザードのトラブルシューティング
 ms.assetid: EBAF4289-DA23-4FFE-8CC0-DD21021CBA86
 keywords:
 - メタデータの編集ウィザードのトラブルシューティング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3441230699846562e153f70bcb59cbcdfc10be28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d0121ffa85d2c0886a7195a95dc930cd6f32f223
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530550"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464332"
 ---
-# <a name="troubleshooting-the-metadata-authoring-wizards"></a>メタデータの作成ウィザードのトラブルシューティング
+# <a name="troubleshooting-the-metadata-authoring-wizards"></a>メタデータ作成ウィザードのトラブルシューティング
 
 
 \[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
@@ -49,7 +49,7 @@ ms.locfileid: "56530550"
 <tr class="even">
 <td align="left"></td>
 <td align="left">Welcome</td>
-<td align="left">選択したファイルは&#39;存在しません。</td>
+<td align="left">選択したファイルが存在しません。</td>
 <td align="left">ファイル パスまたは名前を修正します。</td>
 </tr>
 <tr class="odd">
@@ -84,20 +84,20 @@ ms.locfileid: "56530550"
 <tr class="odd">
 <td align="left"></td>
 <td align="left">関連付け</td>
-<td align="left">形式が無効です。&quot;値&quot;-don&#39;t は、先頭と末尾に {} を追加します。</td>
+<td align="left">形式が無効です。「値」-、{} が、先頭と末尾に追加しないでください。</td>
 <td align="left">削除、{}もう一度やり直してください。</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">関連付け</td>
-<td align="left">GUID の形式が無効です。&quot;値&quot;</td>
+<td align="left">GUID の形式が無効です。"Value"</td>
 <td align="left">正しい GUID を入力し、もう一度やり直してください。</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">Icon</td>
-<td align="left">アイコン ファイルがある問題が発生しました。&quot;エラー メッセージ&quot;検証エラーのアイコン</td>
-<td align="left">アイコンは&#39;見つかりませんか、&#39;デバイスとプリンターのコントロール パネルに表示される要件を満たします。 検索するか、アイコンを修正してもう一度やり直してください。
+<td align="left">アイコン ファイルがある問題が発生しました。「エラー メッセージ」アイコンの検証エラー</td>
+<td align="left">アイコンが見つからないか、デバイスとプリンターのコントロール パネルに表示される要件を満たしていません。 検索するか、アイコンを修正してもう一度やり直してください。
 <p>エラーの例:</p>
 <ul>
 <li>エラー:256 x 256 の画像の透明度を設定する必要があります。</li>

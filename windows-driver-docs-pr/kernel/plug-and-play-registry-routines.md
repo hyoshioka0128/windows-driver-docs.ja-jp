@@ -13,12 +13,12 @@ keywords:
 - PnP WDK カーネルでは、レジストリのルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 522dff75517d99234bc6443a8817fb210b4d5cc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ffa464523400ac527775ae1a350c74a45749e4cb
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536112"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350389"
 ---
 # <a name="plug-and-play-registry-routines"></a>プラグ アンド プレイ レジストリ ルーチン
 
@@ -51,7 +51,7 @@ INF ファイル、またはを使用して、これらのキーを設定する�
 PDEVICE_OBJECT pDeviceObject; // A pointer to the PDO for the device.
 HANDLE handle;
 UNICODE_STRING ValueName;
-ULONG Value = 109; // This is the value we&#39;re setting the key to.
+ULONG Value = 109; // This is the value we're setting the key to.
 NTSTATUS status;
 
 RtlInitUnicodeString(&ValueName, L"Value");

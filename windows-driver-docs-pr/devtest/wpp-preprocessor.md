@@ -12,12 +12,12 @@ keywords:
 - WDK、ビルド プロセスのトレース WPP ソフトウェア
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b6bd50e9fb1cb992db8ef8399d4461ba96f985
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 85b399b4e2490cbec2ec4fd6a3c3d02f9d832d91
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549008"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464348"
 ---
 # <a name="wpp-preprocessor"></a>WPP プリプロセッサ
 
@@ -152,13 +152,13 @@ TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別�
 <tr class="odd">
 <td align="left"><p>感嘆符を無視します。</p></td>
 <td align="left"><p><strong>-noshrieks</strong></p></td>
-<td align="left"><p>WPP とも呼ばれるの感嘆符を無視するように指示&quot;途切れします。&quot;</p>
+<td align="left"><p>WPP「途切れ」とも呼ばれる、感嘆符を無視するように指示します。</p>
 <p>% などの複雑な書式設定に使用します。 タイムスタンプ! % です。 既定では、感嘆符が必要です、WPP がそれらを解釈しようとします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>数値書式指定文字列の番号付けの基本</p></td>
 <td align="left"><p><strong>-argbase:</strong><em>数</em></p></td>
-<td align="left"><p>などの書式指定文字列の番号付けの数値の基数を確立&quot;%1 %1!s!、%2!s! です。&quot;既定値は 1 です。</p></td>
+<td align="left"><p>「%1 いますが、%2!s!。」などの書式指定文字列の番号付けの数値の基数を確立します。 既定値は 1 です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>トレース メッセージを生成するには、関数</p></td>
@@ -172,7 +172,7 @@ TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別�
 <tr class="even">
 <td align="left"><p>検索する文字列を指定します。</p></td>
 <td align="left"><p><strong>-行末:</strong><em>文字列</em></p></td>
-<td align="left"><p>WPP トレースを開始する指定した文字列のソース ファイルを検索するように指示します。 既定では、WPP は文字列を検索&quot;WPP_INIT_TRACING します。&quot;</p>
+<td align="left"><p>WPP トレースを開始する指定した文字列のソース ファイルを検索するように指示します。 既定では、WPP は文字列"WPP_INIT_TRACING"を検索します。</p>
 <p>これは、ユーザーが独自のテンプレートを作成するための高度なオプションです。</p>
 <p>たとえば、default.tpl: で</p>
 <pre space="preserve"><code><code>IF FOUND WPP_INIT_TRACING</code>
@@ -227,7 +227,7 @@ TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別�
 <td align="left"><p><strong>-ext: です。</strong> <em>ext1</em> <strong>[.</strong><em>ext2</em><strong>]</strong></p></td>
 <td align="left"><p>ソース ファイルとして WPP を認識するファイルの種類を指定します。 WPP は、別のファイル名拡張子の付いたファイルを無視します。</p>
 <p>既定では、WPP は .c、.c ファイルでは、.cpp と .cxx ファイルのみを認識します。</p>
-<p>このオプションでは、WPP ではありませんがファイルを削除したり、リソースの名前を変更することがなく、WPP の既定の設定を使用できます。&#39;.rc、.mc ファイルなどを使用します。</p>
+<p>このオプションを使用すると、WPP の削除または .rc など、WPP を使用しないリソース ファイルと .mc ファイルの名前を変更することがなく、既定の設定を使用できます。</p>
 <p>たとえば、C++ ファイルとヘッダー (.h) ファイルには、トレースを追加するに次のコマンドを使用します。</p>
 <p><strong>-ext:.cpp.CPP.h.H</strong></p>
 <p>また、使用して、C++ とヘッダー ファイルの異なる名前 TMH ファイルを得られるように、 <strong>- preserveext</strong>オプション。</p></td>

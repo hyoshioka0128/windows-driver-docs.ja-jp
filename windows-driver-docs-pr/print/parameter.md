@@ -12,12 +12,12 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0a7a18b204465ea6669006d6a433b256f2d2cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 820b1985308399f83af8cb2b23b594e5763aebe2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464262"
 ---
 # <a name="parameter-element"></a>Parameter 要素
 
@@ -49,7 +49,7 @@ ms.locfileid: "56549511"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>種類</th>
+<th>型</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -58,23 +58,23 @@ ms.locfileid: "56549511"
 <tr class="odd">
 <td><p><strong>ResourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p></p>
 <p>リソース イベントの通知メッセージを表示するテキストを含んでいる DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>はい</p></td>
 <td><p></p>
 <p>割合 (%) の場所に表示するテキストを指定する必須の属性イベント通知メッセージのテキストの文字。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>型</strong></p></td>
+<td><p><strong>type</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p></p>
-<p>プリンターやドキュメントの名前を指定する省略可能な属性。 この属性は、印刷中のドキュメントの次の値: DocumentThe 名前のいずれかを実行できます。」の一覧に、プリンター、プリンターの PrinterNameThe 名前およびコントロール パネルの [fax] フォルダーで、 &quot;\printserver の Fabrikam 5000&quot;または&quot;2 階の寝室のプリンターです。&quot;</p></td>
+<p>プリンターやドキュメントの名前を指定する省略可能な属性。 この属性は、印刷中のドキュメントの次の値: DocumentThe 名前のいずれかを実行できます。PrinterNameThe 名、プリンタと Fax に記載されているプリンターのコントロール パネル、たとえば、"Fabrikam 5000 \printserver で"フォルダーまたは「2 階の寝室のプリンター」。</p></td>
 </tr>
 </tbody>
 </table>
@@ -112,12 +112,12 @@ ms.locfileid: "56549511"
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 リソース DLL から読み込まれたテキストは割合 (%) を含めることができます。指定されたテキスト文字列で置き換えられる文字、**パラメーター**要素。
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 次のコード例に示す方法、**パラメーター**要素を使用して、完了イベントの通知メッセージを生成します。

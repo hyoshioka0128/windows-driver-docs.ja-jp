@@ -7,12 +7,12 @@ keywords:
 - リダイレクトされたサブシステムの WDK のバッファリングをドライブのファイル システム、その他のルーチン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab8c00e8d7fb3fe4791121959d6a764277abece
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1fd2eb0d92e75bcd6259ae0a9b979204b3518a2b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464290"
 ---
 # <a name="miscellaneous-routines"></a>その他のルーチン
 
@@ -55,7 +55,7 @@ RDBSS の他のルーチンを以下に示します。
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554532" data-raw-source="[&lt;strong&gt;RxMakeLateDeviceAvailable&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554532)"><strong>RxMakeLateDeviceAvailable</strong></a></p></td>
-<td align="left"><p>このルーチンは、デバイス オブジェクトを変更します。、&quot;遅延デバイス&quot;使用できます。 遅延のデバイスは、いずれかのドライバーでは作成されません&#39;s 読み込みルーチン。</p></td>
+<td align="left"><p>このルーチンは、"遅延"デバイスのデバイス オブジェクトを変更します。 使用可能な。 遅延のデバイスは、いずれかのドライバーの読み込みルーチンでは作成されません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554649" data-raw-source="[&lt;strong&gt;RxPrepareToReparseSymbolicLink&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554649)"><strong>RxPrepareToReparseSymbolicLink</strong></a></p></td>

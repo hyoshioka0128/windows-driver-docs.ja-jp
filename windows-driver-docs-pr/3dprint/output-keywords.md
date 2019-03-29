@@ -1,17 +1,17 @@
 ---
-title: 出力キーワード
+title: 出力のキーワード
 description: これらのキーワードを使用して、特定の 3D 製造ジョブの実際の出力のプロセスを記述します。
 ms.assetid: FBCE5E9C-8411-46C1-899E-A6C8FE27D947
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2191cc564de1a13331d9185b9c4d161ab31b6d35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 80c190b112862a9068f9ef8e5c067f1b8f12c905
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550217"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463848"
 ---
-# <a name="output-keywords"></a>出力キーワード
+# <a name="output-keywords"></a>出力のキーワード
 
 
 これらのキーワードを使用して、特定の 3D 製造ジョブの実際の出力のプロセスを記述します。
@@ -175,7 +175,7 @@ Job3DSliceHeight キーワード プロファイル
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>§2.1.3.1、」の説明に従って、psk3d:Job3DSliceHeight は、の IntegerParamType &quot; &lt;psf:ParameterDef&gt; &quot;印刷スキーマ仕様でします。</p>
+<td><p>§2.1.3.1、」の説明に従って、psk3d:Job3DSliceHeight は、の IntegerParamType"&lt;psf:ParameterDef&gt;"印刷スキーマ仕様でします。</p>
 <p><strong>子:</strong>IntegerParamType</p>
 <p><strong>説明 :</strong></p>
 <p>Psf:MinValue は 0 より大きくなければプロパティ値が必要があります。</p>
@@ -218,7 +218,7 @@ Job3DSliceHeight 初期化プロファイル
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;子要素として次のとおりです。</p>
-<p><strong>子:</strong>Value</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:integer</p>
 <p><strong>値:</strong>SliceHeight</p>
 <p><strong>説明 :</strong>ミクロンで目的のスライスの高さに等しいの正の整数を含める SliceHeight 必要があります。</p></td>

@@ -1,20 +1,20 @@
 ---
-title: ビデオのミニポート ドライバー ヘッダー ファイル (Windows 2000 モデル)
-description: ビデオのミニポート ドライバー ヘッダー ファイル (Windows 2000 モデル)
+title: ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
+description: ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
 ms.assetid: 7ce0df41-ce1e-4d76-b7e8-6d0a3576a58d
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、ヘッダー ファイル
 - ヘッダー ファイル WDK のビデオのミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6cb260ea3f44704852e50775172625ba2a93057
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 67c8035c69d2cd8b42e5332b68ec7ab783685c81
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550345"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350401"
 ---
-# <a name="video-miniport-driver-header-files-windows-2000-model"></a>ビデオのミニポート ドライバー ヘッダー ファイル (Windows 2000 モデル)
+# <a name="video-miniport-driver-header-files-windows-2000-model"></a>ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
 
 
 ## <span id="ddk_video_miniport_driver_header_files_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_HEADER_FILES_WINDOWS_2000_MODEL__GG"></span>
@@ -36,7 +36,7 @@ Windows 2000 のディスプレイ ドライバー モデル内のビデオの�
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>dderror.h</em></p></td>
-<td align="left"><p>ミニポート ドライバーに返されることも、ビデオ ポート ドライバーにミニポート ドライバーを返す Win32 の状態定数が含まれます&#39;s 対応するカーネル モードのディスプレイ ドライバー。</p></td>
+<td align="left"><p>ミニポート ドライバーの対応するカーネル モードにも返されますが、ビデオ ポート ドライバーに戻るミニポート ドライバーがドライバーを表示する Win32 状態定数が含まれています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>devioctl.h</em></p></td>

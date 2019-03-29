@@ -19,12 +19,12 @@ api_type:
 - COM
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a72d3ed639e8130c8aac72fc6eb3e1990a2e80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72c20fb8ab212c301cebc5263e8f962fc746601a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530945"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350187"
 ---
 # <a name="idebugadvanced2request-method"></a>IDebugAdvanced2::Request メソッド
 
@@ -59,7 +59,7 @@ HRESULT Request(
 <thead>
 <tr class="header">
 <th align="left">要求</th>
-<th align="left">アクション</th>
+<th align="left">操作</th>
 </tr>
 </thead>
 <tbody>
@@ -101,15 +101,15 @@ HRESULT Request(
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-set-local-implicit-command-line.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE&lt;/strong&gt;](debug-request-set-local-implicit-command-line.md)"><strong>DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE</strong></a></p></td>
-<td align="left"><p>設定、<a href="https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine" data-raw-source="[debugger engine](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)">デバッガー エンジン</a>&#39;s 暗黙的なコマンドライン。</p></td>
+<td align="left"><p>設定、<a href="https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine" data-raw-source="[debugger engine](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)">デバッガー エンジン</a>の暗黙的なコマンドライン。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-get-captured-event-code-offset.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET&lt;/strong&gt;](debug-request-get-captured-event-code-offset.md)"><strong>DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET</strong></a></p></td>
-<td align="left"><p>現在のイベントを返す&#39;の命令ポインター。</p></td>
+<td align="left"><p>現在のイベントの命令ポインターを返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-read-captured-event-code-stream.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM&lt;/strong&gt;](debug-request-read-captured-event-code-stream.md)"><strong>DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM</strong></a></p></td>
-<td align="left"><p>現在のイベントのメモリの最大 64 バイトを返します&#39;の命令ポインター。</p></td>
+<td align="left"><p>現在のイベントの命令ポインターのメモリの最大 64 バイトを返します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-ext-typed-data-ansi.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_EXT_TYPED_DATA_ANSI&lt;/strong&gt;](debug-request-ext-typed-data-ansi.md)"><strong>DEBUG_REQUEST_EXT_TYPED_DATA_ANSI</strong></a></p></td>
@@ -153,7 +153,7 @@ HRESULT Request(
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>S_OK を返します</strong></td>
+<td align="left"><strong>S_OK</strong></td>
 <td align="left"><p>メソッドが正常に完了しました。</p></td>
 </tr>
 <tr class="even">
@@ -171,7 +171,7 @@ HRESULT Request(
 
 このメソッドは、エラー値を返すも可能性があります。 参照してください[**戻り値**](https://msdn.microsoft.com/library/windows/hardware/ff549771)の詳細。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

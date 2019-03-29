@@ -1,6 +1,6 @@
 ---
-title: Dirids を使用します。
-description: Dirids を使用します。
+title: Dirids の使用
+description: Dirids の使用
 ms.assetid: 231bc313-b5c3-48ef-b2e2-c4e287517679
 keywords:
 - dirids WDK
@@ -9,14 +9,14 @@ keywords:
 - WDK の INF ファイルのディレクトリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4d3c69602c79a2ef01005a5128e6355b43ad5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e977273eaca5dc17251a24b73451bce303047e5d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559539"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463854"
 ---
-# <a name="using-dirids"></a>Dirids を使用します。
+# <a name="using-dirids"></a>Dirids の使用
 
 
 
@@ -75,7 +75,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">宛先ディレクトリ</th>
 </tr>
 </thead>
@@ -101,14 +101,14 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>13</strong></p></td>
-<td align="left"><p>ドライバー パッケージ&#39;s<a href="https://msdn.microsoft.com/windows/hardware/drivers/install/driver-store">ドライバー ストア</a>ディレクトリ。</p>
+<td align="left"><p>ドライバー パッケージの<a href="https://msdn.microsoft.com/windows/hardware/drivers/install/driver-store">ドライバー ストア</a>ディレクトリ。</p>
 <p>Windows 8.1 と Windows の以降のバージョンでは、ドライバー パッケージがインポートされたドライバー ストア ディレクトリへのパスを指定します。
 
-Don&#39;t 使用<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>対象のファイルで<strong>DestinationDirs</strong>が含まれています<em>dirid</em> 13。
+使用しない<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>対象のファイルで<strong>DestinationDirs</strong>が含まれています<em>dirid</em> 13。
 
 省略可能なサブディレクトリ内にある、 <strong>SourceDiskFiles</strong>セクション ファイルは、サブディレクトリ内にあると一致する必要があります、 <strong>DestinationDirs</strong>セクションのこのファイルに適用されるエントリ。
 
-Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles](inf-copyfiles-directive.md)">CopyFiles</a>対象のファイルの名前を変更する<strong>DestinationDirs</strong>が含まれています<em>dirid</em> 13。
+使用しない<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles](inf-copyfiles-directive.md)">CopyFiles</a>対象のファイルの名前を変更する<strong>DestinationDirs</strong>が含まれています<em>dirid</em> 13。
 </p></td>
 </tr>
 <tr class="even">
@@ -134,7 +134,7 @@ Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles
 <tr class="odd">
 <td align="left"><p><strong>24</strong></p></td>
 <td align="left"><p>システム ディスクのルート ディレクトリ。</p>
-<p>これは、Windows のファイルがインストールされているディスクのルート ディレクトリです。 たとえば場合、 <em>dirid</em> 10 は&quot; <em>C:\winnt</em>&quot;、し<em>dirid</em> 24 は&quot; <em>C:\</em> &quot;.</p></td>
+<p>これは、Windows のファイルがインストールされているディスクのルート ディレクトリです。 たとえば場合、 <em>dirid</em> 10 は"<em>C:\winnt</em>"、し<em>dirid</em> 24 は、"<em>C:\</em>"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>25</strong></p></td>
@@ -142,7 +142,7 @@ Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>30</strong></p></td>
-<td align="left"><p>ブート ディスクのディレクトリをルートとも呼ばれます&quot;円弧システム パーティション&quot;します。 (これがかによって表されると同じディレクトリにあります<em>dirid</em> 24)。</p></td>
+<td align="left"><p>「円弧システム パーティション」とも呼ばれる、ブート ディスクのルート ディレクトリ。 (これがかによって表されると同じディレクトリにあります<em>dirid</em> 24)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>50</strong></p></td>
@@ -187,7 +187,7 @@ Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">シェルの特別なフォルダー</th>
 </tr>
 </thead>

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d15549dcd9f14123dd20a224da9bd793eff50d96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 23052d536b36ab488c793e9b70ee9fecc019d951
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551535"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350173"
 ---
 # <a name="inf-ddinstallhw-section"></a>INF DDInstall.HW セクション
 
@@ -66,7 +66,7 @@ ms.locfileid: "56551535"
 <a href="" id="bitreg-bit-registry-section--bit-registry-section-----"></a>**BitReg=**<em>bit-registry-section</em>\[**,**<em>bit-registry-section</em>\] ...  
 このセクションで有効ですが、ほとんどない使用です。 **HKR**仕様が参照されているビット レジストリ セクションでは指定の場合と同様に、同じサブキー **AddReg**します。 詳細については、次を参照してください。 [ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 <em>DDInstall</em>**します。HW**クロスプラット フォーム対応の INF ファイルでセクション名。 詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
@@ -82,7 +82,7 @@ ms.locfileid: "56551535"
 
 多機能デバイスをインストールする方法の詳細については、次を参照してください。[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)します。
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 この例は、CD-ROM デバイス クラスのインストーラーを使用する方法を示しています。 <em>DDInstall</em>**します。HW**セクションと<em>DDInstall</em>**します。サービス**セクションでは PnP としてこれらを上部のフィルター ドライバーの設定を適切なレジストリ セクションを作成して CD オーディオおよびチェンジャー機能の両方をサポートするためにします。
@@ -109,7 +109,7 @@ CopyFiles=changer_copyfiles,cdrom_copyfiles
 [changer_install.HW]
 AddReg=changer_addreg
 
-; ... changer_install.Services section similar to cdaudio&#39;s
+; ... changer_install.Services section similar to cdaudio's
 
 ; ... some similar cdrom_install(.HW)/addreg sections omitted 
 
@@ -145,7 +145,7 @@ StartType      = 1
 ErrorControl   = 1
 ServiceBinary  = %12%\cdaudio.sys
 
-; ... changer_ServiceInstallSection similar to cdaudio&#39;s
+; ... changer_ServiceInstallSection similar to cdaudio's
 ```
 
 ## <a name="see-also"></a>関連項目

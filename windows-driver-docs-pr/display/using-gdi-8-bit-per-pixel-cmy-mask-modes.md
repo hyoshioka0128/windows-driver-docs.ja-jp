@@ -1,6 +1,6 @@
 ---
-title: GDI ピクセルあたり 8 ビット CMY マスク モードを使用します。
-description: GDI ピクセルあたり 8 ビット CMY マスク モードを使用します。
+title: GDI 8 ビット/ピクセル CMY マスク モードの使用
+description: GDI 8 ビット/ピクセル CMY マスク モードの使用
 ms.assetid: 0631f292-c1f1-4627-b116-0b54a34ea295
 keywords:
 - GDI WDK Windows 2000 の表示、ハーフトーン
@@ -10,14 +10,14 @@ keywords:
 - ピクセルあたり 8 ビット CMY マスク モード WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9500b22bbb52cc6530a8f618cc56d6aa53d7d6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 32dad429bf1ce8b92fa66ffeeb4eca5bb1e95c0f
+ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552075"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349269"
 ---
-# <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>GDI ピクセルあたり 8 ビット CMY マスク モードを使用します。
+# <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>GDI 8 ビット/ピクセル CMY マスク モードの使用
 
 
 ## <span id="ddk_using_gdi_8_bit_per_pixel_cmy_mask_modes_gg"></span><span id="DDK_USING_GDI_8_BIT_PER_PIXEL_CMY_MASK_MODES_GG"></span>
@@ -40,10 +40,10 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 2.  設定*pPaletteEntry*\[0\]への呼び出しの前に次のように**HT\_Get8BPPMaskPalette**:
 
     ```cpp
-    pPaletteEntry[0].peRed   = &#39;R&#39;;
-    pPaletteEntry[0].peGreen = &#39;G&#39;;
-    pPaletteEntry[0].peBlue  = &#39;B&#39;;
-    pPaletteEntry[0].peFlags = &#39;0&#39;;
+    pPaletteEntry[0].peRed   = 'R';
+    pPaletteEntry[0].peGreen = 'G';
+    pPaletteEntry[0].peBlue  = 'B';
+    pPaletteEntry[0].peFlags = '0';
     ```
 
     これを行うには、呼び出し元を使用する必要があります、 **HT\_設定\_BITMASKPAL2RGB**マクロ (で定義されている*winddi.h*)。 このマクロの使用例を次に示します。
@@ -78,23 +78,23 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 <div>
  
 </div>
-Value</th>
+値</th>
 <th align="left">CMY モード インデックス
 <div>
  
 </div>
-(pPaletteEntry [0]! = &#39;RGB0&#39;)</th>
+(pPaletteEntry[0] != 'RGB0')</th>
 <th align="left">CMY_INVERTED モード インデックス
 <div>
  
 </div>
-(pPaletteEntry [0] = = &#39;RGB0&#39;)</th>
+(pPaletteEntry[0] == 'RGB0')</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>0:ホワイト</p>
+<td align="left"><p>0:白</p>
 <div>
  
 </div>
@@ -111,11 +111,11 @@ Value</th>
 <div>
  
 </div>
-255:ホワイト</td>
+255:白</td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>0:ホワイト</p>
+<td align="left"><p>0:白</p>
 <div>
  
 </div>
@@ -132,7 +132,7 @@ Value</th>
 <div>
  
 </div>
-190 ~ 255:ホワイト
+190 ~ 255:白
 <div>
  
 </div>
@@ -143,7 +143,7 @@ XOR ROP が正しく動作するためには、インデックス 127 と 128 �
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>0:ホワイト</p>
+<td align="left"><p>0:白</p>
 <div>
  
 </div>
@@ -160,11 +160,11 @@ XOR ROP が正しく動作するためには、インデックス 127 と 128 �
 <div>
  
 </div>
-235 ~ 255:ホワイト</td>
+235 ~ 255:白</td>
 </tr>
 <tr class="even">
 <td align="left"><p>3 ~ 255</p></td>
-<td align="left"><p>0:ホワイト</p>
+<td align="left"><p>0:白</p>
 <div>
  
 </div>
@@ -199,7 +199,7 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
 <div>
  
 </div>
-255:ホワイト
+255:白
 <div>
  
 </div>
@@ -213,7 +213,7 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
 <div>
  
 </div>
-<strong>注: </strong>(C x M x Y) のインデックスは、256 エントリ パレットで中央揃えされます。 つまりと同じ数のパレットおよび padding、ハイ エンド白のエントリの下限を padding 黒のエントリがあります。
+<strong>注:</strong>(C x M x Y) のインデックスは、256 エントリ パレットで中央揃えされます。 つまりと同じ数のパレットおよび padding、ハイ エンド白のエントリの下限を padding 黒のエントリがあります。
 <div>
  
 </div>
@@ -259,10 +259,7 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
     <tbody>
     <tr class="odd">
     <td align="left"><p>0 に 113</p>
-    <div>
-     
-    </div>
-黒</td>
+    <p>黒</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
@@ -434,14 +431,14 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
     </tr>
     <tr class="odd">
     <td align="left"><p>141 (27)</p>
-    <p>ホワイト</p></td>
+    <p>白</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
     <td align="left"><p>142 ~ 255</p>
-    <p>ホワイト</p></td>
+    <p>白</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>

@@ -1,19 +1,19 @@
 ---
-title: SymProxy をインストールします。
-description: SymProxy をインストールします。
+title: SymProxy のインストール
+description: SymProxy のインストール
 ms.assetid: 63633de7-d254-415d-bf06-c0e81bd03e74
 keywords:
 - SymProxy のインストール
-ms.date: 01/03/2019
+ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fab2a9a40a858b4ff1e8820f5a31acaf06960b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 378343416a1cc61c49b4353a97794154ccd58f0e
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530976"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909199"
 ---
-# <a name="installing-symproxy"></a>SymProxy をインストールします。
+# <a name="installing-symproxy"></a>SymProxy のインストール
 
 
 ## <a name="span-idsummaryofinstallationtasksspanspan-idsummaryofinstallationtasksspanspan-idsummaryofinstallationtasksspansummary-of-installation-tasks"></a><span id="Summary_of_installation_tasks"></span><span id="summary_of_installation_tasks"></span><span id="SUMMARY_OF_INSTALLATION_TASKS"></span>インストールのタスクの概要
@@ -39,6 +39,8 @@ SymProxy ファイルは、Windows Driver Kit のデバッガーのディレク�
 SymProxy をサーバーにインストールするには、%windir% symproxy.dll、symsrv.dll および symproxy.man をコピー\\system32\\inetsrv します。
 
 Microsoft のシンボル ストアにアクセス中に発生する問題を回避するには、%windir% と呼ばれる新しいファイルを作成\\system32\\inetsrv\\symsrv.yes します。 このファイルの内容は重要ではありません。 Symsrv.yes ファイルが存在する場合は、Microsoft パブリック シンボル ストアの使用許諾契約書が自動的に受け入れます。
+
+SymProxy のコンピューターになど、アップ ストリームのプロバイダーへの HTTPS/TLS 通信"Baltimore CyberTrust Root"が使用され、信頼されたルートに必要な IIS および Windows server で通常インストールされる証明書を格納することに注意してください。実行中です。 SSL の問題のトラブルシューティングに関する概要については、次を参照してください。[トラブルシューティング SSL 関連の問題 (サーバー証明書)](https://docs.microsoft.com/iis/troubleshoot/security-issues/troubleshooting-ssl-related-issues-server-certificate)します。
 
  
 

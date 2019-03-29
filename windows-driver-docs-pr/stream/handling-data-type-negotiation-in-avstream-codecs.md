@@ -1,6 +1,6 @@
 ---
-title: AVStream コーデックで処理データの種類のネゴシエーション
-description: AVStream コーデックで処理データの種類のネゴシエーション
+title: AVStream コーデックのデータ型ネゴシエーションの処理
+description: AVStream コーデックのデータ型ネゴシエーションの処理
 ms.assetid: b5212429-dbc8-4e9a-b5a9-2431f8a1eb2a
 keywords:
 - ハードウェアのコーデック サポート WDK AVStream、データ型のネゴシエーション
@@ -8,15 +8,14 @@ keywords:
 - AVStream ハードウェア コーデック WDK、データの種類のネゴシエーションを処理のサポートします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e96a9417bf674421b4eb4c5af77fe71c13f814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bd97a63202e9d56b6d62228536be2a99a3e80da2
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535971"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419558"
 ---
-# <a name="handling-data-type-negotiation-in-avstream-codecs"></a>AVStream コーデックで処理データの種類のネゴシエーション
-
+# <a name="handling-data-type-negotiation-in-avstream-codecs"></a>AVStream コーデックのデータ型ネゴシエーションの処理
 
 デバイスが初期化されると、システム提供のデバイス プロキシ (Devproxy) モジュールは、ドライバーによって提供されるフィルター記述子を解析します。 さらに、Devproxy は、対応する MFT (Media Foundation の変換) の入力と出力ピンのドライバーでサポートされているデータの範囲を公開します。
 
@@ -36,7 +35,7 @@ ms.locfileid: "56535971"
 
 成功したデータの種類のネゴシエーションを有効にするには、ミニドライバーは以下の手順を実行する必要があります。
 
-1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 次に、例を示します。
+1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 以下に例を示します。
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {
@@ -71,7 +70,7 @@ ms.locfileid: "56535971"
 
 7.  入力メディアの種類が設定されている場合、ビデオ プロセッサは、指定された入力メディアの種類に基づいて、出力の種類を報告する必要があります。
 
-8.  ドライバーをサポートする必要があります、 [ICodecAPI](https://go.microsoft.com/fwlink/p/?linkid=146348)インターフェイス。 ユーザー モード コンポーネントは、このユーザー モード インターフェイスを使用してコーデック構成情報を取得できます。
+8.  ドライバーをサポートする必要があります、 [ICodecAPI](https://docs.microsoft.com/en-us/previous-versions/ms784893(v%3Dvs.85))インターフェイス。 ユーザー モード コンポーネントは、このユーザー モード インターフェイスを使用してコーデック構成情報を取得できます。
 
 9.  エンコーダーのセットアップ中に最初に、ICodecAPI プロパティを設定後に、出力メディアの種類。 次に、エンコーダーは入力の種類でサポートできるを現在の構成でのみ提供する必要があります。
 
@@ -86,11 +85,3 @@ ms.locfileid: "56535971"
 14. AVStream ドライバーでピンは互いに依存しない状態が必要です。 つまり、入力ピンがからに移行できます、 **KSSTATE\_停止**まで、 **KSSTATE\_実行**で出力ピン留めしたまま、 **KSSTATE\_停止**状態。
 
 15. ミニドライバーを解釈する必要があります、ミニドライバーは、変数のデータ バッファーのサイズとプロパティの GET 要求を受信すると、 **NULL**としてクエリに必要なバッファーのサイズのバッファー。 ここでは、ドライバーは Irp の必要な長さを指定する必要があります&gt;IoStatus.Information フィールドと状態の戻り値\_バッファー\_オーバーフローが発生します。 さらに、ミニドライバーは、警告とエラーではなく、リターン コードを設定する必要があります。 たとえば、データの積集合のハンドラーを使用して、このガイダンスに従ってください。
-
- 
-
- 
-
-
-
-

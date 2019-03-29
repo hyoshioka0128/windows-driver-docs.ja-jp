@@ -1,17 +1,17 @@
 ---
-title: SymProxy 自動インストール
+title: SymProxy の自動インストール
 description: 次のスクリプト Install.cmd と共に次の手順は、SymProxy の既定の IIS インストールへのインストールを自動化できます。
 ms.assetid: 9E5433D8-D024-4E2B-AEAA-2271C133FD0E
-ms.date: 11/28/2017
+ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a269a3c44078c556b872d87ac18875102d2e8060
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 793172c6f2b0b1fda5e43be688c38b532886c25e
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549152"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909213"
 ---
-# <a name="symproxy-automated-installation"></a>SymProxy 自動インストール
+# <a name="symproxy-automated-installation"></a>SymProxy の自動インストール
 
 
 次のスクリプト Install.cmd と共に次の手順は、SymProxy の既定の IIS インストールへのインストールを自動化できます。 環境内の特定のニーズには、この手順を適用する必要があります。
@@ -114,6 +114,7 @@ rem Add * to the MIME Types of the 'Default Web Site'
             <clear />
         </system.webServer-staticContent>
     </CONFIG>
+</appcmd>    
 ```
 
 ## <a name="span-idtestingthesymproxyinstallationspanspan-idtestingthesymproxyinstallationspanspan-idtestingthesymproxyinstallationspantesting-the-symproxy-installation"></a><span id="Testing_the_SymProxy_Installation_"></span><span id="testing_the_symproxy_installation_"></span><span id="TESTING_THE_SYMPROXY_INSTALLATION_"></span>SymProxy インストールのテスト

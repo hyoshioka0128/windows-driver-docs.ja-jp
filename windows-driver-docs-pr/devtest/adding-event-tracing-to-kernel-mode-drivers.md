@@ -1,6 +1,6 @@
 ---
-title: カーネル モード ドライバーのトレース イベントを追加します。
-description: カーネル モード ドライバーのトレース イベントを追加します。
+title: カーネル モード ドライバーへのイベント トレーシングの追加
+description: カーネル モード ドライバーへのイベント トレーシングの追加
 ms.assetid: 74fdb4b2-aad1-4d8a-b146-40a92e1fdbb5
 keywords:
 - Event Tracing for Windows WDK、カーネル モード
@@ -8,14 +8,14 @@ keywords:
 - カーネル モードの ETW WDK ソフトウェア トレース
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ececc26d2f69b0e8cc260657ef29ddf3bcc728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d28efb71879df2ae4700e770484753bb15b98bb5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527432"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350405"
 ---
-# <a name="adding-event-tracing-to-kernel-mode-drivers"></a>カーネル モード ドライバーのトレース イベントを追加します。
+# <a name="adding-event-tracing-to-kernel-mode-drivers"></a>カーネル モード ドライバーへのイベント トレーシングの追加
 
 このセクションでは、Event Tracing for Windows (ETW) のカーネル モード API を使用して、イベント トレースのカーネル モード ドライバーを追加する方法について説明します。 ETW カーネル モードの API は、Windows Vista で導入され、は、以前のオペレーティング システムではサポートされていません。 使用[WPP ソフトウェア トレース](wpp-software-tracing.md)または[WMI イベントのトレース](https://msdn.microsoft.com/library/windows/hardware/ff566350)ドライバーが Windows 2000 以降のトレース機能をサポートする必要がある場合。
 
@@ -44,13 +44,13 @@ ms.locfileid: "56527432"
 
 ![カーネル モード ドライバーにイベントのトレースを追加するプロセスの概要です。](images/etw-km-process.png)
 
-## <a name="1-decide-the-type-of-events-to-raise-and-where-to-publish-them"></a>1. 発生させるイベントとそれらを公開する場所の種類を決める
+## <a name="1-decide-the-type-of-events-to-raise-and-where-to-publish-them"></a>1.発生させるイベントとそれらを公開する場所の種類を決める
 
 コーディングを開始する前にログを Event Tracing for Windows (ETW) にドライバーをするイベントの種類を決定する必要があります。 たとえばに、ドライバーを配布すると後の問題を診断するのに役立つイベントまたは参考にして、ドライバーを開発中のイベントを記録する可能性があります。 イベントの種類は、チャネルで識別されます。 A*チャネル*が管理者の種類のイベントの名前付きストリーム、運用、分析、またはデバッグのテレビ チャンネルのような特定対象ユーザーにリダイレクトされます。 チャネルは、イベント ログとイベント コンシューマーにイベント プロバイダーからのイベントを配信します。 チャネルとイベントの種類については、次を参照してください。[イベント ログと Windows イベント ログ チャネル](https://go.microsoft.com/fwlink/p/?linkid=62587)します。
 
 開発中は、ほとんどの場合に興味のあるコードをデバッグする際に役立つトレース イベント。 この同じチャネルは、ドライバーを展開した後に表示される問題のトラブルシューティングに役立つ実稼働コードで使用可能性があります。 パフォーマンスを測定するために使用するトレース イベントにすることもこれらのイベントは、IT プロフェッショナルの微調整サーバーのパフォーマンスを向上でき、ネットワークのボトルネックを特定するのに役立ちます。
 
-## <a name="2-create-an-instrumentation-manifest-that-defines-the-provider-the-events-and-channels"></a>2. プロバイダー、イベント、およびチャネルを定義するインストルメンテーション マニフェストを作成します。
+## <a name="2-create-an-instrumentation-manifest-that-defines-the-provider-the-events-and-channels"></a>2.プロバイダー、イベント、およびチャネルを定義するインストルメンテーション マニフェストを作成します。
 
 インストルメンテーション マニフェストは、プロバイダーが発生するイベントの正式な説明を提供する XML ファイルです。 インストルメンテーション マニフェストは、イベント プロバイダーを識別して、チャネルまたは (最大 8 つ)、チャネルを指定します、イベントについて説明し、イベントのテンプレートを使用しています。 インストルメンテーション マニフェストはさらに、トレース メッセージをローカライズするための文字列のローカライズできます。 システムのイベントとイベント コンシューマー利用できます。 構造化された XML のクエリと分析を実行するマニフェストに指定されたデータ。
 
@@ -68,7 +68,7 @@ ms.locfileid: "56527432"
 イベント ペイロード (イベント メッセージ、およびデータ) のテンプレートを作成するときに、入力と出力の種類を指定する必要があります。 サポートされている型の「解説」セクションに記述されます[ **InputType 複合型 (Windows)**](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)します。
 
 ```XML
-<?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39;?>
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <instrumentationManifest
     xmlns="http://schemas.microsoft.com/win/2004/08/events"
     xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events"
@@ -209,7 +209,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
 
 3. メッセージ コンパイラ プロパティが表示されます。 で、**全般**の設定が、次のオプションを設定し、クリックして**適用**します。
 
-    | 全般的な情報                                 | 設定       |
+    | 全般                                 | 設定       |
     |-----------------------------------------|---------------|
     | **カーネル モードのログ記録のマクロを生成します。** | **[はい] (-km)** |
     | **入力の基本名を使用して、**              | **[はい] (-b)**  |
@@ -229,7 +229,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
 > [!NOTE]
 > Visual Studio プロジェクトで生成される .rc ファイルを含めない場合に関するリソースが見つかりません、マニフェスト ファイルをインストールするときにエラー メッセージが表示することがあります。
 
-## <a name="4-add-the-generated-code-to-raise-publish-the-events-register-unregister-and-write-events"></a>4。発生させる、生成されたコードを追加 (公開)、イベント (登録、登録を解除、およびイベントの書き込み)
+## <a name="4-add-the-generated-code-to-raise-publish-the-events-register-unregister-and-write-events"></a>4.発生させる、生成されたコードを追加 (公開)、イベント (登録、登録を解除、およびイベントの書き込み)
 
 インストルメンテーション マニフェストでは、イベント プロバイダーは、イベント記述子の名前を定義します。 メッセージ コンパイラを使用してインストルメンテーション マニフェストをコンパイルするときに、メッセージ コンパイラは、リソースの説明し、も、イベントのマクロが定義されたヘッダー ファイルを生成します。 次に、これらのイベントを発生させるドライバーに生成されたコードを追加する必要があります。
 
@@ -423,7 +423,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
                   DeviceName.Buffer,
                   LengthToCopy);
 
-    DeviceNameString[LengthToCopy/sizeof(WCHAR)] = L&#39;\0&#39;;
+    DeviceNameString[LengthToCopy/sizeof(WCHAR)] = L'\0';
 
     EventWriteStartEvent(NULL, DeviceName.Length, DeviceNameString, Status);
 
@@ -447,7 +447,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
        EventUnregisterSample_Driver();
    ```
 
-## <a name="5-build-the-driver"></a>5。ドライバーのビルド
+## <a name="5-build-the-driver"></a>5.ドライバーのビルド
 
 計器マニフェストをプロジェクトに追加し、メッセージ コンパイラ (MC.exe) プロパティを構成する場合は、ドライバーのプロジェクトまたは Visual Studio および MSBuild を使用してソリューションを構築できます。
 
@@ -455,7 +455,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
 
 2. 選択して、[ビルド] メニューからサンプルをビルド**ソリューションのビルド**します。 ソリューションの構築の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
-## <a name="6-install-the-manifest"></a>6。マニフェストをインストールします。
+## <a name="6-install-the-manifest"></a>6.マニフェストをインストールします。
 
 イベント コンシューマー (たとえば、イベント ログ) は、イベントのメタデータを含むバイナリの場所を検索できるように、ターゲット システムに、マニフェストをインストールする必要があります。 手順 3 でドライバーのプロジェクトに、メッセージ コンパイラ タスクを追加した場合は、インストルメンテーション マニフェストがコンパイルされ、リソース ファイルは、ドライバーをビルドしたときに生成されました。 マニフェストをインストールするのに、Windows イベント コマンド ライン ユーティリティ (Wevtutil.exe) を使用します。 マニフェストをインストールするための構文は次のとおりです。
 

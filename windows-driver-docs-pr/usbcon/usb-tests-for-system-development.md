@@ -1,16 +1,16 @@
 ---
-Description: If you are building a new system, the tests in this topic are recommended.
-title: システムの開発用の USB テストをお勧めします。
+Description: 新しいシステムを構築する場合、このトピックのテストがお勧めします。
+title: システム開発において推奨される USB テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b234a7c1d38095a8eccc24a13c78da4085d5bfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22770ad4938e8c30b30e4595fdd9b8d97504d93d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536065"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464254"
 ---
-# <a name="recommended-usb-tests-for-system-development"></a>システムの開発用の USB テストをお勧めします。
+# <a name="recommended-usb-tests-for-system-development"></a>システム開発において推奨される USB テスト
 
 
 新しいシステムを構築する場合、このトピックのテストがお勧めします。
@@ -27,9 +27,9 @@ ms.locfileid: "56536065"
 
 
 -   [DF – (Basic) の前後に IO とスリープ](https://msdn.microsoft.com/library/windows/hardware/dn247481.aspx)
--   [DF - PNP (無効にする に、有効にする) (Basic) の前後に IO の前に](https://msdn.microsoft.com/library/windows/hardware/dn260411.aspx)
+-   [DF - 前後の I/O を伴う PNP (無効化/有効化) (基本)](https://msdn.microsoft.com/library/windows/hardware/dn260411.aspx)
 -   [USB Exposed ポート コント ローラーのテスト](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
--   [USB xHCI Transfer Speed Test](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [USB xHCI 転送速度テスト](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
 -   [USB3 終了](https://msdn.microsoft.com/library/windows/hardware/jj124672.aspx)
 
 <table>
@@ -63,7 +63,7 @@ ms.locfileid: "56536065"
 <li>Windows HCK Studio での<strong>選択</strong>] タブで [<strong>デバイス マネージャー</strong>します。</li>
 <li>XHCI コント ローラーとそのルート ハブを選択します。
 <div class="alert">
-<strong>注</strong>  コント ローラーをすばやく見つけるには、入力&quot;xhci&quot;で検索します。
+<strong>注</strong>  コント ローラーをすばやく見つけるには、検索に"xhci"を入力します。
 </div>
 <div>
  
@@ -82,7 +82,7 @@ ms.locfileid: "56536065"
 
 -   [DF - 再起動の再起動と IO (機能) の前後](https://msdn.microsoft.com/library/windows/hardware/dn260266.aspx)
 -   [DF - スリープと PNP (無効および有効にする) (機能) の前後に IO の前に](https://msdn.microsoft.com/library/windows/hardware/dn260391.aspx)
--   [USB xHCI Transfer Speed Test](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [USB xHCI 転送速度テスト](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
 
 <table>
 <colgroup>
@@ -119,7 +119,7 @@ ms.locfileid: "56536065"
 <li><strong>選択</strong>] タブで [<strong>デバイス マネージャー</strong>します。</li>
 <li>XHCI コント ローラーとそのルート ハブを選択します。
 <div class="alert">
-<strong>注</strong>  コント ローラーをすばやく見つけるには、入力&quot;xhci&quot;で検索します。
+<strong>注</strong>  コント ローラーをすばやく見つけるには、検索に"xhci"を入力します。
 </div>
 <div>
  
@@ -144,7 +144,7 @@ ms.locfileid: "56536065"
 システム 2
 
 -   [DF - スリープと PNP (無効および有効にする) (機能) の前後に IO の前に](https://msdn.microsoft.com/library/windows/hardware/dn260391.aspx)
--   [USB xHCI Transfer Speed Test](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
+-   [USB xHCI 転送速度テスト](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
 
 システム (ドッキング ステーションがサポートされている) 場合 3
 
@@ -185,7 +185,7 @@ ms.locfileid: "56536065"
 <li><strong>選択</strong>] タブで [<strong>デバイス マネージャー</strong>します。</li>
 <li>XHCI コント ローラーとそのルート ハブを選択します。
 <div class="alert">
-<strong>注</strong>  コント ローラーをすばやく見つけるには、入力&quot;xhci&quot;で検索します。
+<strong>注</strong>  コント ローラーをすばやく見つけるには、検索に"xhci"を入力します。
 </div>
 <div>
  
@@ -198,7 +198,7 @@ ms.locfileid: "56536065"
 <li><strong>選択</strong>] タブで [<strong>デバイス マネージャー</strong>します。</li>
 <li>一覧に表示トポロジでは、すべての MUTT デバイスを選択します。
 <div class="alert">
-<strong>注</strong>  コント ローラーをすばやく見つけるには、入力&quot;MUTT&quot;で検索します。
+<strong>注</strong>  コント ローラーをすばやく見つけるには、検索に"MUTT"を入力します。
 </div>
 <div>
  

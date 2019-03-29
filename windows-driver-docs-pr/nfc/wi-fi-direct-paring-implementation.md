@@ -1,23 +1,23 @@
 ---
-title: Wi-fi direct 実装のペアリング
+title: Wi-Fi Direct ペアリングの実装
 description: このセクションでは、デザインのガイドラインを提供します。 とユース ケースをタップし、セットアップし、タップおよび再接続に参加する周辺機器のデバイスの要件。
 ms.assetid: 1B729E9F-DF9F-4263-9F0B-5EDCF817D2C3
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a4387f395ec44fcc2d63e6bc8d76a9b874e596
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b0f1a2ff29bd16f0eba6a57b54be41173c750db8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532892"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464196"
 ---
-# <a name="wi-fi-direct-pairing-implementation"></a>Wi-fi direct 実装のペアリング
+# <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi Direct ペアリングの実装
 
 
 このセクションでは、デザインのガイドラインを提供します。 とユース ケースをタップし、セットアップし、タップおよび再接続に参加する周辺機器のデバイスの要件。
@@ -63,10 +63,10 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 
 次のサンプルの使用の場合、NFC の 2 種類のタグは、分かりやすい例として使用されます。 を別の NFC タグの種類を使用する必要がある場合、そのタグの定義に従って NDEF メッセージを正しくカプセル化する必要があります。
 
-| フィールド                 | Value                                            | 説明                                                               |
+| フィールド                 | 値                                            | 説明                                                               |
 |-----------------------|--------------------------------------------------|---------------------------------------------------------------------------|
 | TNF                   | 0x02                                             | 次の種類 フィールドの形式です。 RFC 2046 で定義されている、メディアの種類。 |
-| 種類                  | 'application/vnd.ms-windows.wfd.oob'             | 新しい型の文字列がこのシナリオを定義します。                              |
+| 型                  | 'application/vnd.ms-windows.wfd.oob'             | 新しい型の文字列がこのシナリオを定義します。                              |
 | OOB のデータのサイズ      | WORD                                             | サポートされている OOB データに最大 64 KB です。                                        |
 | Wi-Fi Direct OOB データ | &lt;前のフィールドで示されるサイズの blob&gt; | Wi-Fi Direct OOB データ定義は後述します。                                   |
 
@@ -95,7 +95,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 <tr class="odd">
 <td align="left"><p>OOB ヘッダー</p>
 <p>OOB ヘッダー属性の形式のテーブルを参照してください。</p></td>
-<td align="left">なし</td>
+<td align="left">N/A</td>
 <td align="left">必須</td>
 <td align="left">OOB ヘッダー属性は、P2P OOB データの blob に存在して、「OOB 一方向のプロビジョニング データ」に設定、OOB 型の値があるものとします。</td>
 </tr>
@@ -127,7 +127,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 
 ### <a name="oob-header-attribute-format"></a>OOB ヘッダー属性の形式
 
-| フィールド名        | サイズ (オクテット) | Value    | 説明                                                                                                    |
+| フィールド名        | サイズ (オクテット) | [値]    | 説明                                                                                                    |
 |-------------------|---------------|----------|----------------------------------------------------------------------------------------------------------------|
 | データの合計の長さ | 2             | 変数 | OOB データ Blob 全体 (ヘッダーを含む) の長さ。                                                             |
 | 長さ            | 2             | 変数 | OOB のヘッダーには、次のフィールドの長さ。                                                                  |
@@ -165,7 +165,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 <tr class="header">
 <th align="left">フィールド名</th>
 <th align="left">サイズ (オクテット)</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -253,7 +253,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 
 ### <a name="oob-provisioning-info-attribute-format"></a>OOB プロビジョニング情報の属性の形式
 
-| フィールド名                   | サイズ (オクテット) | Value                   | 説明                                                                                                                                                             |
+| フィールド名                   | サイズ (オクテット) | [値]                   | 説明                                                                                                                                                             |
 |------------------------------|---------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                 | 1             | 1                       | P2P OOB 属性の型を識別します。 特定の値が定義されている*P2P OOB 属性*テーブル。                                                                 |
 | 長さ                       | 2             | 変数                | 属性には、次のフィールドの長さ。                                                                                                                        |
@@ -276,7 +276,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 <tr class="header">
 <th align="left">ビット (s)</th>
 <th align="left">情報</th>
-<th align="left">説明</th>
+<th align="left">メモ</th>
 </tr>
 </thead>
 <tbody>
@@ -307,7 +307,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 
 ### <a name="oob-configuration-timeout-attribute-format"></a>OOB 構成タイムアウト属性の形式
 
-| フィールド名                     | サイズ (オクテット) | Value   | 説明                                                                                                                                                        |
+| フィールド名                     | サイズ (オクテット) | 値   | 説明                                                                                                                                                        |
 |--------------------------------|---------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                   | 1             | 5       | P2P OOB 属性の型を識別します。 特定の値が定義されている*P2P OOB 属性*テーブル。                                                            |
 | 長さ                         | 2             | 1       | 属性には、次のフィールドの長さ。                                                                                                                   |
@@ -329,7 +329,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <thead>
 <tr class="header">
 <th align="left">フィールド名</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">長さの値</th>
 <th align="left">説明</th>
 </tr>
@@ -342,8 +342,8 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <td align="left">次の種類 フィールドの形式です。 RFC 2046 で定義されている、メディアの種類。</td>
 </tr>
 <tr class="even">
-<td align="left">種類</td>
-<td align="left">&#39;application/vnd.ms-windows.devicepairing&#39;</td>
+<td align="left">型</td>
+<td align="left">'application/vnd.ms-windows.devicepairing'</td>
 <td align="left">0x28 バイト</td>
 <td align="left">新しい型の文字列がこのシナリオを定義します。</td>
 </tr>
@@ -405,7 +405,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <thead>
 <tr class="header">
 <th align="left">Offset</th>
-<th align="left">コンテンツ</th>
+<th align="left">Content</th>
 <th align="left">長さ</th>
 <th align="left">説明</th>
 </tr>
@@ -471,7 +471,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <td align="left">11</td>
 <td align="left">0x01</td>
 <td align="left">1</td>
-<td align="left">通信事業者のフラグ:CPS = 1、 &quot;active&quot;</td>
+<td align="left">通信事業者のフラグ:CPS = 1、"active"</td>
 </tr>
 <tr class="odd">
 <td align="left">12</td>
@@ -528,7 +528,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <p>0x66 0x64 0x2E 0x6F</p>
 <p>0x6F 0x62</p></td>
 <td align="left">34</td>
-<td align="left">レコードの種類名: &#39;application/vnd.ms-windows.wfd.oob&#39;</td>
+<td align="left">Record Type Name: 'application/vnd.ms-windows.wfd.oob'</td>
 </tr>
 <tr class="odd">
 <td align="left">53</td>
@@ -693,7 +693,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <thead>
 <tr class="header">
 <th align="left">Offset</th>
-<th align="left">コンテンツ</th>
+<th align="left">Content</th>
 <th align="left">長さ</th>
 <th align="left">説明</th>
 </tr>
@@ -730,7 +730,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <p>0x77 0x70 0x72 0x69</p>
 <p>0x6e 0x74 0x69 0x6e</p>
 <p>0x67 0x2e 0x6f 0x6f</p>
-<p>数 0 x 62</p></td>
+<p>0x62</p></td>
 <td align="left">41</td>
 <td align="left">レコードの種類名:"application/vnd.ms-windows.nwprinting.oob"</td>
 </tr>
@@ -744,7 +744,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <p>0x72 0x4e 0x61 0x6d</p>
 <p>0x65</p></td>
 <td align="left">25</td>
-<td align="left">プリンター名:"\printServer\printerName&quot;</td>
+<td align="left">プリンター名:"\printServer\printerName"</td>
 </tr>
 </tbody>
 </table>
@@ -763,7 +763,7 @@ Windows デバイスのペアリング レコード NDEF 仕様に従ってい�
 <thead>
 <tr class="header">
 <th align="left">Offset</th>
-<th align="left">コンテンツ</th>
+<th align="left">Content</th>
 <th align="left">長さ</th>
 <th align="left">説明</th>
 </tr>

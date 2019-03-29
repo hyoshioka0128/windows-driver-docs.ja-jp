@@ -1,17 +1,17 @@
 ---
-title: Wi-fi ホット スポットのオフロード関数
-description: Wi-fi ホット スポットのオフロード関数
+title: Wi-Fi ホット スポット オフロード関数
+description: Wi-Fi ホット スポット オフロード関数
 ms.assetid: 114e1604-0d9a-418c-aee1-a9b615d13d21
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f82e7e8df683a33db6f0862a7e373482efeb1d45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f7aed1acdaae9c12ad6e7f7138df44f8b30dbcdf
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532622"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464338"
 ---
-# <a name="wi-fi-hotspot-offloading-functions"></a>Wi-fi ホット スポットのオフロード関数
+# <a name="wi-fi-hotspot-offloading-functions"></a>Wi-Fi ホット スポット オフロード関数
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
@@ -130,11 +130,11 @@ ms.locfileid: "56532622"
 </tr>
 <tr class="even">
 <td><p><a href="hs-host-send-keep-alive-completion.md" data-raw-source="[HS_HOST_SEND_KEEP_ALIVE_COMPLETION](hs-host-send-keep-alive-completion.md)">HS_HOST_SEND_KEEP_ALIVE_COMPLETION</a></p></td>
-<td><p>この関数は、成功または失敗を示す、&quot;送信キープ アライブ&quot;要求。</p></td>
+<td><p>この関数は、「送信キープ アライブ」要求の成否を示します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="hs-host-update-configuration-completion.md" data-raw-source="[HS_HOST_UPDATE_CONFIGURATION_COMPLETION](hs-host-update-configuration-completion.md)">HS_HOST_UPDATE_CONFIGURATION_COMPLETION</a></p></td>
-<td><p>この関数は、成功または失敗を示す、&quot;更新プログラムの確認&quot;要求。</p></td>
+<td><p>この関数は、「更新プログラムの確認」要求の成否を示します。</p></td>
 </tr>
 </tbody>
 </table>

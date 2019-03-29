@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8743d47bf6442d8c5a47e8f6383f69cd8aa5f288
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e3b8521ecccdda90791ae2660a3f45c3f1ae1947
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463800"
 ---
 # <a name="devpkeydeviceclassclassinstaller"></a>DEVPKEY_DeviceClass_ClassInstaller
 
@@ -42,7 +42,7 @@ DEVPKEY_DeviceClass_ClassInstaller デバイス プロパティがクラスの�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>データ形式</strong></p></td>
-<td align="left"><p>&quot;<em>クラス インストーラー</em>.dll、<em>クラス エントリ ポイント</em>&quot;</p></td>
+<td align="left"><p>"<em>クラス インストーラー</em>.dll、<em>クラス エントリ ポイント</em>"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
@@ -54,14 +54,14 @@ DEVPKEY_DeviceClass_ClassInstaller デバイス プロパティがクラスの�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 DEVPKEY_DeviceClass_ClassInstaller の値は、の値、 **Installer32**クラスのレジストリ キーの下のレジストリ値。 このエントリには、クラスのインストーラー DLL の名前と、デバイス セットアップ クラスのインストーラーのエントリ ポイントが含まれています。
@@ -72,7 +72,7 @@ DEVPKEY_DeviceClass_ClassInstaller の値は、の値、 **Installer32**クラ�
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassInstaller プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**Installer32**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

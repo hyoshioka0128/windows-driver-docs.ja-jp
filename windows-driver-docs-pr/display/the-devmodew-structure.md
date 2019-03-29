@@ -10,12 +10,12 @@ keywords:
 - 描画 WDK GDI、DEVMODEW 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5faef4206ec7b7dab9117af7ed9cc2501caf4acd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 57a77730819f0c24fd22ed745871f129594e2f15
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550764"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464320"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 構造体
 
@@ -138,7 +138,7 @@ DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dmDisplayFrequency</strong></p></td>
-<td align="left"><p>表示をヘルツで指定&#39;s リフレッシュ レート。</p></td>
+<td align="left"><p>ヘルツ、ディスプレイのリフレッシュ レートを指定します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -161,11 +161,11 @@ DEVMODEW 構造体のメンバーは、3 つのカテゴリに分類されます
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dmDeviceName</strong></p></td>
-<td align="left"><p>表示されたら、ディスプレイ ドライバーを指定します。&#39;s DLL。</p>
+<td align="left"><p>表示されたら、ディスプレイ ドライバーの DLL を指定します。</p>
 <div>
  
 </div>
-プリンターを指定します、&quot;フレンドリ名&quot;プリンターの。</td>
+プリンターのプリンターの「表示名」を指定します。</td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmFields</strong></p></td>

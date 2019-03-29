@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3ad4cce38d0ba70ff7fbd0164b4a0b5f2386b480
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 356308c97795b12aafb25229098a03c0a29c7027
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558184"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464032"
 ---
 # <a name="devpkeydevicedrivercoinstallers"></a>DEVPKEY_Device_DriverCoInstallers
 
@@ -42,7 +42,7 @@ DEVPKEY_Device_DriverCoInstallers デバイスのプロパティは、DLL の名
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>データ形式</strong></p></td>
-<td align="left"><p>&quot;AbcCoInstall.dll,AbcCoInstallEntryPoint\0...AbcCoInstall.dll、AbcCoInstallEntryPoin\0\0&quot;</p></td>
+<td align="left"><p>"AbcCoInstall.dll,AbcCoInstallEntryPoint\0...AbcCoInstall.dll AbcCoInstallEntryPoin\0\0"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
@@ -55,14 +55,14 @@ DEVPKEY_Device_DriverCoInstallers デバイスのプロパティは、DLL の名
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 DEVPKEY_Device_DriverCoInstallers の値がによって提供される、 [ **INF *DDInstall*します。Coinstallers** ](https://msdn.microsoft.com/library/windows/hardware/ff547321)デバイスをインストールする INF ファイルでセクション。
@@ -71,7 +71,7 @@ DEVPKEY_Device_DriverCoInstallers の値がによって提供される、 [ **IN
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DriverCoInstallers プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**CoInstallers32**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537732)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

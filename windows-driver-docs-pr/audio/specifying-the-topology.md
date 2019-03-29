@@ -1,6 +1,6 @@
 ---
-title: トポロジを指定します。
-description: トポロジを指定します。
+title: トポロジの指定
+description: トポロジの指定
 ms.assetid: 265cbd87-d40f-4ead-ba6e-a1cef51baf95
 keywords:
 - WDM オーディオ ドライバー WDK、トポロジ
@@ -25,14 +25,14 @@ keywords:
 - オーディオの WDK の混在
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7cb34602f513c401f34e776a39d3509b37f741d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e0645a9a1bebbcb6c520ea8e0fe69d1287eccd75
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537510"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350399"
 ---
-# <a name="specifying-the-topology"></a>トポロジを指定します。
+# <a name="specifying-the-topology"></a>トポロジの指定
 
 
 ハードウェア ベンダーでは、ミニポート ドライバー wave および MIDI デバイスの書き込みを決定したら後、次の手順では、これらのデバイス (KS) トポロジをストリーミングするカーネルを表します。 KS トポロジは、オーディオまたは MIDI ストリームに従って各デバイスを通じたデータのパスを記述するデータ構造のセットで構成されます。 このトポロジでは、ドライバーは、各パス上にあるコントロールのノード (たとえば、ボリューム コントロール) を公開します。 通常、アプリケーションが Windows のマルチ メディア ミキサーを使用*Xxx*各パスに沿ってノードのシーケンスを列挙することによって、トポロジを探索する関数。 たとえば、ボリューム レベルの制御ノードを検出したら、アプリケーション レベルを設定できます、ボリュームそのノード上。 Windows のマルチ メディアの詳細については、Microsoft Windows SDK のドキュメントを参照してください。 ミキサーで KS トポロジの表現の詳細については*Xxx*関数を参照してください[オーディオ Mixer API 翻訳にカーネル ストリーミング トポロジ](kernel-streaming-topology-to-audio-mixer-api-translation.md)します。
@@ -63,7 +63,7 @@ PortCls には、6 つのポートのドライバーが用意されています�
 </tr>
 <tr class="odd">
 <td align="left"><p>トポロジのフィルター</p></td>
-<td align="left"><p>アダプタを表す&#39;s ミキサー回路。</p></td>
+<td align="left"><p>アダプターのミキサー回路を表します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +88,7 @@ MIDI、Wave 間の接続の前の図では、最上位レベルでトポロジ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Label</th>
+<th align="left">group1</th>
 <th align="left">説明</th>
 <th align="left">KS ノード タイプの GUID</th>
 </tr>
@@ -100,7 +100,7 @@ MIDI、Wave 間の接続の前の図では、最上位レベルでトポロジ�
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537203" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537203)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
 </tr>
 <tr class="even">
-<td align="left"><p>DAC</p></td>
+<td align="left"><p>DAC (DAC)</p></td>
 <td align="left"><p>デジタル-オーディオ コンバーター ノード</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537158" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537158)"><strong>KSNODETYPE_DAC</strong></a></td>
 </tr>
@@ -120,7 +120,7 @@ MIDI、Wave 間の接続の前の図では、最上位レベルでトポロジ�
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537178" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537178)"><strong>KSNODETYPE_MUTE</strong></a></td>
 </tr>
 <tr class="even">
-<td align="left"><p>合計</p></td>
+<td align="left"><p>Sum</p></td>
 <td align="left"><p>ノードの合計</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537196" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537196)"><strong>KSNODETYPE_SUM</strong></a></td>
 </tr>

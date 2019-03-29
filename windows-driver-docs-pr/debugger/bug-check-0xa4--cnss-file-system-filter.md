@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 34edd603db40d03a9f6a31ce7e8e85b827796010
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2a70e2dddcc436f43097f360b2b9831bf93c879a
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529868"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464128"
 ---
-# <a name="bug-check-0xa4-cnssfilesystemfilter"></a>バグ チェック 0xA4 の。CNSS\_ファイル\_システム\_フィルター
+# <a name="bug-check-0xa4-cnssfilesystemfilter"></a>バグ チェック 0xA4:CNSS\_ファイル\_システム\_フィルター
 
 
 CNSS\_ファイル\_システム\_フィルターのバグ チェックが 0x000000A4 の値を持ちます。 このバグ チェックでは、CNSS ファイル システム フィルターで問題が発生したことを示します。
@@ -44,7 +44,7 @@ CNSS\_ファイル\_システム\_フィルターのバグ チェックが 0x000
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>ソース ファイルと行番号情報を指定します。 上位 16 ビット (後の最初の 4 つの 16 進、 &quot;0 x&quot;) 識別子番号でソース ファイルを識別します。 下位 16 ビットは、バグ チェックが発生したファイル内のソース行を特定します。</p></td>
+<td align="left"><p>ソース ファイルと行番号情報を指定します。 上位 16 ビット ("0 x"の後に最初の 4 つの 16 進数字) は、その識別子番号によってソース ファイルを特定します。 下位 16 ビットは、バグ チェックが発生したファイル内のソース行を特定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

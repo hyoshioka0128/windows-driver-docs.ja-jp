@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b00cc13896c99386df68b02fe76748f38e3f4c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 42817f2cfc7c0973970dc8d2bf42bab2a5862993
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553186"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464190"
 ---
-# <a name="bug-check-0x1a-memorymanagement"></a>0x1A チェックをバグします。メモリ\_管理
+# <a name="bug-check-0x1a-memorymanagement"></a>バグ チェック 0x1A:メモリ\_管理
 
 
 メモリ\_管理のバグ チェックが 0x0000001A の値を持ちます。 これは、重大なメモリ管理エラーが発生したことを示します。
@@ -79,7 +79,7 @@ ms.locfileid: "56553186"
 </tr>
 <tr class="even">
 <td align="left"><p>0x1000</p></td>
-<td align="left"><p>呼び出し元<strong>MmGetSystemAddressForMdl *</strong>非キャッシュとして完全にキャッシュされている物理ページをマップしようとしています。 この操作で競合しているハードウェア変換バッファー エントリを実行して、これは、オペレーティング システムによって拒否されました。 指定された呼び出し元から&quot;エラー発生時のチェックのバグ&quot;要求元の MDL でシステムがなかった選択肢がこのインスタンスでのバグ チェックを発行します。</p></td>
+<td align="left"><p>呼び出し元<strong>MmGetSystemAddressForMdl *</strong>非キャッシュとして完全にキャッシュされている物理ページをマップしようとしています。 この操作で競合しているハードウェア変換バッファー エントリを実行して、これは、オペレーティング システムによって拒否されました。 呼び出し元には、要求元の MDL で「エラー発生時のバグ チェック」が指定されているため、システムがなかったが処理するには、このインスタンスでのバグ チェックを発行します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1010</p></td>

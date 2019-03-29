@@ -4,12 +4,12 @@ description: キオスク アプリの割り当てのアクセスのベスト �
 ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 448d0031bad39aca6e6ae5e2d95bc15ee24d4502
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3d6e3f27183154851e6d7d84cf78200c995f7a0a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537412"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350338"
 ---
 # <a name="kiosk-apps-for-assigned-access-best-practices"></a>割り当てられたアクセスのキオスク アプリ:ベスト プラクティス
 
@@ -37,14 +37,14 @@ Windows 10 では、1 つのユニバーサル Windows アプリだけと対話�
 </colgroup>
 <thead>
 <tr class="header">
-<th>用語</th>
+<th>項目</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><span id="assigned_access"></span><span id="ASSIGNED_ACCESS"></span>割り当てられたアクセス</p></td>
-<td><p>により、システム管理者は、デバイスのユーザーに公開されているアプリケーションのエントリ ポイントを制限することで、ユーザーのエクスペリエンスを管理する機能です。 たとえば、キオスクのように、PC が機能するために 1 つのアプリを使用する、会社の顧客を制限できます。 だれかが指定されたアカウントでサインインするたびに、&#39;ll のみがその 1 つのアプリを使用できるようにします。 これらが勝利した&#39;アプリを切り替えるか、タッチ ジェスチャ、マウス、キーボード、またはハードウェア ボタンを使用してアプリケーションを終了することはできません。 これらもが勝利した&#39;t は、すべてのアプリ通知を参照してください。</p></td>
+<td><p>により、システム管理者は、デバイスのユーザーに公開されているアプリケーションのエントリ ポイントを制限することで、ユーザーのエクスペリエンスを管理する機能です。 たとえば、キオスクのように、PC が機能するために 1 つのアプリを使用する、会社の顧客を制限できます。 ユーザーが指定したアカウントでサインイン、ときにのみその 1 つのアプリを使用して開けなくなるします。 アプリを切り替えるか、タッチ ジェスチャ、マウス、キーボード、またはハードウェア ボタンを使用してアプリを閉じるにできません。 アプリの通知も表示されませんされます。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="lock_screen_app__or_lock_app_"></span><span id="LOCK_SCREEN_APP__OR_LOCK_APP_"></span>ロック画面アプリ (またはロック アプリ)</p></td>
@@ -298,7 +298,7 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 ## <a name="span-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanappendix-2-troubleshooting"></a><span id="Appendix_2__troubleshooting"></span><span id="appendix_2__troubleshooting"></span><span id="APPENDIX_2__TROUBLESHOOTING"></span>付録 2: のトラブルシューティング
 
 
-通常、キオスク アプリは、ロック画面のアプリ上のアクティブ化に失敗した場合、[ロックダウン] 画面で、アクティブ化エラー コードが表示されます。 エラー コードを使用して Windows を参照して、問題を見つけた[システム エラー コード](https://msdn.microsoft.com/library/windows/desktop/ms681381)します。 さらにイベント ビューアーには、ライセンス認証エラーの詳細が含まれています。 そのためには、次の操作を実行します。
+通常、キオスク アプリは、ロック画面のアプリ上のアクティブ化に失敗した場合、[ロックダウン] 画面で、アクティブ化エラー コードが表示されます。 エラー コードを使用して Windows を参照して、問題を見つけた[システム エラー コード](https://msdn.microsoft.com/library/windows/desktop/ms681381)します。 さらにイベント ビューアーには、ライセンス認証エラーの詳細が含まれています。 次の手順に従います。
 
 1.  **イベント ビューアー**を開きます。 アクティブ化エラーを検出する可能性が高い 2 つの場所があります。
 2.  **イベント ビューアー (ローカル)** ウィンドウで、展開**Windows ログ**、 をクリックし、**アプリケーション**します。

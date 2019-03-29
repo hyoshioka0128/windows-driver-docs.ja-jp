@@ -1,18 +1,17 @@
 ---
-title: MFPs でデバイスの機能を識別します。
-description: MFPs でデバイスの機能を識別します。
+title: MFP のデバイス機能を識別する
+description: MFP のデバイス機能を識別する
 ms.assetid: 14016c43-b93a-4009-848b-1bcf3f1d94b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 349e1eab7a73300db014a096e54e0b676108a717
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c040bfae10bdc7c27884a91e62902ea730b3e665
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535660"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419556"
 ---
-# <a name="identifying-device-functions-in-mfps"></a>MFPs でデバイスの機能を識別します。
-
+# <a name="identifying-device-functions-in-mfps"></a>MFP のデバイス機能を識別する
 
 デバイスとプリンターのユーザー インターフェイスは、MFP に属するプリンターとスキャナーの関数を識別するためにデバイス コンテナー id (ContainerID) を使用します。 ContainerID、機能のデバイスですべてのインスタンス (devnode)、MFP などの多機能デバイスが同じ多機能デバイスの一部として識別するために使用できる GUID です。 たとえば、プリンターの機能のデバイスのインスタンスと、MFP でスキャナー機能デバイス インスタンス ContainerID 値が同じである必要があります。
 
@@ -20,12 +19,4 @@ ms.locfileid: "56535660"
 
 1 つ以上のトランスポート経由で接続がデバイスの場合 (つまり、デバイスが接続と WSD の USB 経由)、デバイスが 1 つのデバイスとして表示する別のデバイスのインスタンスを作成、ContainerID をレポートすることをお勧めします。
 
-ContainerIDs の詳細については、次を参照してください。 [Windows デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=145535)します。
-
- 
-
- 
-
-
-
-
+ContainerIDs の詳細については、次を参照してください。[コンテナー ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)します。

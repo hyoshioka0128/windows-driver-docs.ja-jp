@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a214c3f42272136e66b45e9fc48bccbc94f8e838
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 961bcb465af3150829a5e9bee1ee28b2d42ac47e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548857"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464340"
 ---
 # <a name="irpmjfilesystemcontrol"></a>IRP\_MJ\_ファイル\_システム\_コントロール
 
@@ -57,7 +57,7 @@ IRP\_MJ\_ファイル\_システム\_コントロール要求がや他のカー�
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
 <td align="left"><p>Microsoft Win32 DeviceIoControl 関数と呼ばれる、ユーザー モード アプリケーションに代わって可能性がありますまたはカーネル モード コンポーネントと呼ばれるに代わって、FSCTL の要求を示します<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"> <strong>ZwDeviceIoControlFile</strong></a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff548318" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548318)"> <strong>IoBuildDeviceIoControlRequest</strong></a>します。</p>
-<p>FSCTL 要求の詳細については、次を参照してください。&quot;デバイスの入力と出力の制御コード&quot;、Microsoft Windows SDK ドキュメント。</p></td>
+<p>FSCTL 要求の詳細については、Microsoft Windows SDK ドキュメントの「デバイスの入力と出力コントロールのコード」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_VERIFY_VOLUME</p></td>

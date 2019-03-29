@@ -1,6 +1,6 @@
 ---
-title: 使用許諾契約書の XML 要素
-description: 使用許諾契約書の XML 要素
+title: eula XML 要素
+description: eula XML 要素
 ms.assetid: ab647583-b0e1-4f40-86af-9b7923f5535c
 keywords:
 - 使用許諾契約書 XML 要素のデバイスとドライバーのインストール
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09533b410f89ef9461e45f120373be7859b33cd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a68d948e02e536b78e5f5df9225134d20c8a497b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464148"
 ---
-# <a name="eula-xml-element"></a>使用許諾契約書の XML 要素
+# <a name="eula-xml-element"></a>eula XML 要素
 
 
 \[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
@@ -42,10 +42,10 @@ ms.locfileid: "56536294"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>型</strong></p></td>
-<td align="left"><p>ベンダーから提供された使用許諾契約書の種類。 この属性の値は、文字列に設定する必要があります&quot;txt&quot;、プレーン テキスト ファイルを示します。</p></td>
+<td align="left"><p>ベンダーから提供された使用許諾契約書の種類。 文字列"txt"は、プレーン テキスト ファイルには、この属性の値を設定する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>パス</strong></p></td>
+<td align="left"><p><strong>Path</strong></p></td>
 <td align="left"><p>DPInst EULA ページのテキストを含むファイルの名前を識別する文字列。 Utf-8 エンコーディングを使用して、使用許諾契約書のテキスト ファイルをエンコードする必要があります。 DPInst の実行可能ファイルを含むディレクトリである DPInst のルート ディレクトリに、EULA ファイルを配置する必要があります (<em>DPInst.exe</em>)、または DPInst のルート ディレクトリの下のサブディレクトリ。 使用許諾契約書のファイルがサブディレクトリ内にある場合は、DPInst のルート ディレクトリに対して相対的な完全修飾ファイル名を指定します。</p></td>
 </tr>
 </tbody>

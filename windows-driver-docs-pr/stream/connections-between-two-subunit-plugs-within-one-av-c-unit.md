@@ -1,5 +1,5 @@
 ---
-title: 1 つの AV/C ユニット内の 2 つのサブユニット プラグ間の接続
+title: 単一 AV/C ユニット内の 2 つのサブユニット プラグ間の接続
 description: 1 つの AV/C ユニット内の 2 つのサブユニット プラグ間の接続に関する情報を提供します。
 ms.assetid: 2acd5f23-89b6-40f9-9154-22f1bb51d08c
 keywords:
@@ -8,14 +8,14 @@ keywords:
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a8ceac7f40672316ad873625de0738bc436b55c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 186401f7636f93bb77fdc5fd090fad8749110425
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536384"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350357"
 ---
-# <a name="connections-between-two-subunit-plugs-within-one-avc-unit"></a>1 つの AV/C ユニット内の 2 つのサブユニット プラグ間の接続
+# <a name="connections-between-two-subunit-plugs-within-one-avc-unit"></a>単一 AV/C ユニット内の 2 つのサブユニット プラグ間の接続
 
 
 シナリオ 3 と 4 では、サブユニットと同じ単位内の別のサブユニットの間の接続を表します。
@@ -47,10 +47,10 @@ ms.locfileid: "56536384"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>使用されなくソース ユニット&#39;s デバイス識別子は、サブユニットを含むユニット</p></td>
+<td><p>ソース単位のデバイス識別子が、サブユニットを含む単位のために使用されません。</p></td>
 <td><p>サブユニット アドレス</p></td>
 <td><p>変換先のプラグ (0x1E に「0x0」、または 0 xff)</p></td>
-<td><p>なし</p></td>
+<td><p>N/A</p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +79,7 @@ ms.locfileid: "56536384"
 <td><p>このシナリオでは、別の単位は関与しませんので、使用されません。</p></td>
 <td><p>Self (自己)</p></td>
 <td><p>移行先プラグ (0 xff)</p></td>
-<td><p>なし</p></td>
+<td><p>N/A</p></td>
 </tr>
 </tbody>
 </table>
@@ -113,10 +113,10 @@ ms.locfileid: "56536384"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>使用されなくソース ユニット&#39;s デバイス識別子は、サブユニットを含むユニット</p></td>
+<td><p>ソース単位のデバイス識別子が、サブユニットを含む単位のために使用されません。</p></td>
 <td><p>Self (同じサブユニット)</p></td>
 <td><p>ソース プラグイン (0 xff)</p></td>
-<td><p>なし</p></td>
+<td><p>N/A</p></td>
 </tr>
 </tbody>
 </table>
@@ -145,7 +145,7 @@ ms.locfileid: "56536384"
 <td><p>このシナリオでは、別の単位は関与しませんので、使用されません。</p></td>
 <td><p>サブユニット アドレス</p></td>
 <td><p>変換先のプラグ (0x1E に「0x0」、または 0 xff)</p></td>
-<td><p>なし</p></td>
+<td><p>N/A</p></td>
 </tr>
 </tbody>
 </table>

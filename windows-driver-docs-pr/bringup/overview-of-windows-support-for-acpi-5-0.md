@@ -1,17 +1,17 @@
 ---
-title: ACPI 5.0 に対する Windows サポートの概要
+title: ACPI 5.0 に対する Windows のサポートの概要
 description: ACPI 5.0 仕様では、8 以降、Windows を実行する SoC ベースのモバイル プラットフォームのサポートを有効には、Windows の以前のバージョンで導入された多くの便利な機能をサポートするために続行されます。
 ms.assetid: BAFBA051-FEDA-469B-9B67-C74D252C84F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c44a09ba3320c491de3ac345a3899dd1e769283d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5a3447610232f31d1a61eb6ef5bbc8a8ceae79c6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549821"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464252"
 ---
-# <a name="overview-of-windows-support-for-acpi-50"></a>ACPI 5.0 に対する Windows サポートの概要
+# <a name="overview-of-windows-support-for-acpi-50"></a>ACPI 5.0 に対する Windows のサポートの概要
 
 
 [ACPI 5.0 仕様](https://www.uefi.org/specifications)で導入された多くの便利な機能をサポートするために引き続き有効以降を実行する Windows 8、SoC ベースのモバイル プラットフォームをサポートによって、Windows Server 2016 の以降のサポート以前のバージョンの Windows。 この設計のガイドは、具体的には、Windows Server 2016 用に設計されたシステムの場合ともプラットフォーム SoC ベースに適用される ACPI 5.0 の部分に実装を指揮してで Windows を実行する ACPI の SoC 固有の機能を実装するためのベスト プラクティスについて説明しますこれらのプラットフォームです。
@@ -57,7 +57,7 @@ Windows がファームウェアのリビジョンに基づくをサポートし
 </tr>
 <tr class="odd">
 <td><p><a href="acpi-namespace-hierarchy.md" data-raw-source="[ACPI namespace hierarchy](acpi-namespace-hierarchy.md)">ACPI 名前空間の階層</a></p></td>
-<td><p>ACPI 名前空間の階層は、プラットフォームを正確に反映する必要があります&#39;以降、プロセッサでは、s ハードウェア トポロジ&#39;s システム バス (&quot;_SB&quot;)。 一般に、バスまたはコント ローラーに接続するデバイスは、名前空間にそのバスまたはコント ローラーのデバイスの子として表示されます。</p></td>
+<td><p>ACPI 名前空間の階層をプラットフォームのハードウェア トポロジでは、モデル正確に、プロセッサのシステム バス ("_SB") で始まります。 一般に、バスまたはコント ローラーに接続するデバイスは、名前空間にそのバスまたはコント ローラーのデバイスの子として表示されます。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="microsoft-asl-compiler.md" data-raw-source="[Microsoft ASL compiler](microsoft-asl-compiler.md)">Microsoft ASL コンパイラ</a></p></td>

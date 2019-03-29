@@ -1,17 +1,17 @@
 ---
-title: Windows 10 Mobile の UEFI 要件
+title: Windows 10 Mobile に対する UEFI 要件
 description: UEFI 要件に加えて Windows のすべてのエディションに適用される、Windows 10 Mobile デバイスは、このトピックで説明する追加の要件を満たす必要があります。
 ms.assetid: 12a03f5b-1717-4daf-90ef-5e530f72b19e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5bac94d5be12ec499ca5638f6885de5cd55f7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e144aa50e4d664cc5766d9297410afcd8db7f22
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556672"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464261"
 ---
-# <a name="uefi-requirements-for-windows-10-mobile"></a>Windows 10 Mobile の UEFI 要件
+# <a name="uefi-requirements-for-windows-10-mobile"></a>Windows 10 Mobile に対する UEFI 要件
 
 
 UEFI 要件だけでなく[Windows のすべてのエディションに適用される UEFI 要件](uefi-requirements-that-apply-to-all-windows-platforms.md)、Windows 10 Mobile を実行しているデバイスは、このトピックで説明する追加の要件を満たすも必要があります。
@@ -53,7 +53,7 @@ UEFI 要件だけでなく[Windows のすべてのエディションに適用さ
 </tr>
 <tr class="even">
 <td>メモリのサービス</td>
-<td>GetMemoryMap() 関数は、物理メモリのセクション 6.2 で指定したとおり、プラットフォームの完全な範囲を返す必要があります&quot;メモリ サービス&quot;UEFI 仕様の。</td>
+<td>GetMemoryMap() 関数は、"メモリ Services"セクション 6.2 の UEFI 仕様で指定したとおり、プラットフォームの物理メモリの完全な範囲を返す必要があります。</td>
 </tr>
 <tr class="odd">
 <td>EFI ブロック I/O プロトコル</td>

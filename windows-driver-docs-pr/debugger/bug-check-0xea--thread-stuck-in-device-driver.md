@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 306b6df8574ae9baa4d5f52b5f806aa8e7d89f47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 66b8d4c4a82af3bb44a7ca11b249e0d65f4732f9
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536876"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463814"
 ---
-# <a name="bug-check-0xea-threadstuckindevicedriver"></a>0 xea チェックをバグします。スレッド\_STUCK\_IN\_デバイス\_ドライバー
+# <a name="bug-check-0xea-threadstuckindevicedriver"></a>バグ チェック 0xEA:スレッド\_STUCK\_IN\_デバイス\_ドライバー
 
 
 スレッド\_STUCK\_IN\_デバイス\_ドライバーのバグ チェックが 0x000000EA の値を持ちます。 これは、デバイス ドライバーのスレッドが際限なく回転していることを示します。
@@ -56,7 +56,7 @@ ms.locfileid: "56536876"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p><strong>カーネル デバッガー。</strong>時間数、&quot;インターセプト&quot;0 xea のバグ チェックがヒットしました</p>
+<td align="left"><p><strong>カーネル デバッガー。</strong>「傍受」バグ チェック 0 xea 回数がヒットしました</p>
 <p><strong>青い画面。</strong>1</p></td>
 </tr>
 </tbody>

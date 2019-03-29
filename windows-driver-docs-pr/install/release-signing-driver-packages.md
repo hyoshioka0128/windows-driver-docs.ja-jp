@@ -14,12 +14,12 @@ keywords:
 - リリースのリリースの署名について、WDK を署名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 783705c7896f1f4eb799e2387969bdfa206e0e34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: da5af0cfc1d32625baa6a14654a209fbde2ba8c1
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529432"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560615"
 ---
 # <a name="release-signing-driver-packages"></a>ドライバー パッケージのリリース署名
 
@@ -96,7 +96,7 @@ PnP デバイス インストールの署名要件を遵守するには、署名
 
 PnP デバイス インストールの署名の要件は、非 PnP ドライバーには適用されません。
 
-**注**  署名済みカタログ ファイルを使用して通常より簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)します。
+**注**  署名済みカタログ ファイルを使用して通常より簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)します。
 
  
 
