@@ -1,6 +1,6 @@
 ---
-title: ファイル システム ドライバーの INF ファイルを作成します。
-description: ファイル システム ドライバーの INF ファイルを作成します。
+title: ファイル システム ドライバー用の INF ファイルの作成
+description: ファイル システム ドライバー用の INF ファイルの作成
 ms.assetid: 4b67159f-a5a5-46da-9500-a9c6b6995da4
 keywords:
 - INF ファイル WDK ファイル システムを作成します。
@@ -15,14 +15,14 @@ keywords:
 - ファイル システムの WDK INF ファイルを作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2bfdb63c8482e885f28db46f0a71acb659ee77e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9c102c631960d0c73dcb48b37b4be679c890fcb
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537654"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464066"
 ---
-# <a name="creating-an-inf-file-for-a-file-system-driver"></a>ファイル システム ドライバーの INF ファイルを作成します。
+# <a name="creating-an-inf-file-for-a-file-system-driver"></a>ファイル システム ドライバー用の INF ファイルの作成
 
 
 ## <span id="ddk_creating_an_inf_file_for_a_file_system_filter_driver_if"></span><span id="DDK_CREATING_AN_INF_FILE_FOR_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
@@ -99,17 +99,17 @@ CatalogFile =
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">エントリ</th>
-<th align="left">Value</th>
+<th align="left">入力</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>署名</strong></p></td>
-<td align="left"><p>&quot;$WINDOWS NT $&quot;</p></td>
+<td align="left"><p>「$WINDOWS NT $」</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>プロバイダー</strong></p></td>
+<td align="left"><p><strong>Provider</strong></p></td>
 <td align="left"><p>INF ファイルでは、Microsoft 以外のプロバイダーを指定してください。</p></td>
 </tr>
 <tr class="odd">
@@ -129,7 +129,7 @@ CatalogFile =
 
 [ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクションでは、ファイル システム ドライバー ファイルのコピー先ディレクトリを指定します。
 
-このセクションで、 **ServiceInstall**  セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。 次のコード例では、「12」の値はドライバー ディレクトリを指します (%windir%\\system32\\ドライバー)。
+このセクションで、 **ServiceInstall** セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。 次のコード例では、「12」の値はドライバー ディレクトリを指します (%windir%\\system32\\ドライバー)。
 
 ```cpp
 [DestinationDirs]
@@ -161,7 +161,7 @@ examplefilesystem.sys = 1
 
 ### <a name="span-iddefaultinstallsectionrequiredspanspan-iddefaultinstallsectionrequiredspanspan-iddefaultinstallsectionrequiredspandefaultinstall-section-required"></a><span id="DefaultInstall_Section__required_"></span><span id="defaultinstall_section__required_"></span><span id="DEFAULTINSTALL_SECTION__REQUIRED_"></span>(必須) DefaultInstall セクション
 
-[ **DefaultInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547356) ] セクションで、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブは、先に、ファイル システム ドライバーのドライバー ファイルをコピーします。指定された、 [ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクション。
+[ **DefaultInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547356) セクションで、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブは、先に、ファイル システム ドライバーのドライバー ファイルをコピーします。指定された、 [ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクション。
 
 **注**   、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブが、カタログ ファイルまたは INF ファイル自体を参照する必要がありますSetupAPI では、これらのファイルが自動的にコピーします。
 
@@ -224,7 +224,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -261,7 +261,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -306,8 +306,8 @@ Windows Vista の x64 ベース システム以降、ブート開始ドライバ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">アクション</th>
+<th align="left">[値]</th>
+<th align="left">操作</th>
 </tr>
 </thead>
 <tbody>
@@ -321,11 +321,11 @@ Windows Vista の x64 ベース システム以降、ブート開始ドライバ
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000002</p></td>
-<td align="left"><p>SERVICE_ERROR_SEVERE (レジストリに切り替える&#39;s 前回正常起動時のセットの制御し、システムの起動を続行します)。</p></td>
+<td align="left"><p>SERVICE_ERROR_SEVERE (レジストリの前回正常起動時に切り替えコントロール セットと、システムの起動を続行します)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000003</p></td>
-<td align="left"><p>SERVICE_ERROR_CRITICAL (システムの起動時には、レジストリを使用していない場合&#39;s 前回正常起動時のコントロールの設定、前回正常起動時に切り替えるし、もう一度やり直してください。 起動が失敗した場合は、バグ チェック ルーチンを実行します。 システムが起動するために必要なドライバーのみがこの値を指定、INF ファイルにします。)</p></td>
+<td align="left"><p>SERVICE_ERROR_CRITICAL (場合、システムの起動時には、レジストリの前回正常起動時のコントロール セット、前回正常起動時をもう一度お試しくださいスイッチを使用していません。 起動が失敗した場合は、バグ チェック ルーチンを実行します。 システムが起動するために必要なドライバーのみがこの値を指定、INF ファイルにします。)</p></td>
 </tr>
 </tbody>
 </table>
@@ -336,7 +336,7 @@ Windows Vista の x64 ベース システム以降、ブート開始ドライバ
 
 [ **AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)ライター定義されている 1 つまたは複数の INF を指す**AddRegistry**のレジストリに格納される情報が含まれているセクションで、新しくサービスをインストールします。
 
-**注**   INF ファイルも使用する場合は、最初のインストールに含まれるエントリの後に、ドライバーをアップグレードするため、 **AddRegistry**セクションは、0x00000002 を指定する必要があります (FLG\_ADDREG\_NOCLOBBER) フラグ。 このフラグを指定するには、HKLM レジストリ エントリが保持されます。\\CurrentControlSet\\サービスの後続のファイルがインストールされている場合。 次に、例を示します。
+**注**   INF ファイルも使用する場合は、最初のインストールに含まれるエントリの後に、ドライバーをアップグレードするため、 **AddRegistry**セクションは、0x00000002 を指定する必要があります (FLG\_ADDREG\_NOCLOBBER) フラグ。 このフラグを指定するには、HKLM レジストリ エントリが保持されます。\\CurrentControlSet\\サービスの後続のファイルがインストールされている場合。 以下に例を示します。
 
  
 

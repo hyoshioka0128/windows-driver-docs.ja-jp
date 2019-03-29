@@ -1,17 +1,17 @@
 ---
-title: INF 検証エラーと警告
+title: INF の検証エラーと警告
 description: ドライバーのインストールのエラーと警告は、Microsoft Visual Studio で実行される自動 INF 検証の結果として表示できます。
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da761902b7f1db079da95490d1888077fb5be04b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ef7f22db5efb0c1af011841ca274b9e8ee9e69a2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556587"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464214"
 ---
-# <a name="inf-validation-errors-and-warnings"></a>INF 検証エラーと警告
+# <a name="inf-validation-errors-and-warnings"></a>INF の検証エラーと警告
 
 このトピックでは、ドライバーのインストール エラーを説明しますと、Microsoft Visual Studio 自動 INF 検証の結果として表示される警告の実行またはを実行すると、 [InfVerif](infverif.md)ツール。
 
@@ -74,7 +74,7 @@ Windows では、エラーが原因で、この範囲は、ドライバーのイ
 <tbody>
 <tr>
 <td><strong>1100:DriverStore Copyfile 名が一致しません</strong></td>
-<td>このエラーは、ファイルをコピーしたり、元のドライバー ストアの名前と場所から別の名前と、ドライバー ストア内の場所に名前を変更すると発生します。  次に、例を示します。
+<td>このエラーは、ファイルをコピーしたり、元のドライバー ストアの名前と場所から別の名前と、ドライバー ストア内の場所に名前を変更すると発生します。  以下に例を示します。
 <pre>
 [SourceDisksFiles]
 DriverFile.sys=1,x64  
@@ -152,7 +152,7 @@ AddReg = AddRegB
 ...
 </pre>
 </div>
-<p><strong>必要がある</strong>ディレクティブは、現在のインストール セクションで処理するのと同じインストール セクションを参照する必要があります。 たとえば、ニーズ ディレクティブ [InstallSectionA.Services] は] をポイントする必要があります、します。別のサービスでは、セクションをインストールします。 <strong>必要がある</strong>ディレクティブを使用して同じ INF の別の DDInstall セクションの動作を追加することも可能性があります。 使用して、<strong>必要がある</strong>望ましくない動作セクションの他の種類でのディレクティブがあります。</p></td>
+<p><strong>必要がある</strong>ディレクティブは、現在のインストール セクションで処理するのと同じインストール セクションを参照する必要があります。 たとえば、ニーズ ディレクティブ [InstallSectionA.Services] は をポイントする必要があります、します。別のサービスでは、セクションをインストールします。 <strong>必要がある</strong>ディレクティブを使用して同じ INF の別の DDInstall セクションの動作を追加することも可能性があります。 使用して、<strong>必要がある</strong>望ましくない動作セクションの他の種類でのディレクティブがあります。</p></td>
 </tr>
 <tr>
 <td><strong>1221:サービスのレジストリ キーを変更することはできません、HKR を使用する必要があります</strong></td>
@@ -160,7 +160,7 @@ AddReg = AddRegB
 <p>使用すると<strong>HKR</strong>レジストリ値は、デバイスがインストールされるまでには表示されません。</p></td>
 </tr>
 <tr>
-<td><strong>1230:不足しているファイル&#39;xxxx&#39; [SourceDisksFiles] セクションの下。</strong></td>
+<td><strong>1230:ファイル [SourceDisksFiles] セクションの下には、"xxxx"がありません。</strong></td>
 <td>これは、ファイルが、ドライバー パッケージの一部として指定されましたが、[SourceDisksFiles] セクションでは、INF、ファイルのソースの場所は指定されていないことを示します。
 <pre>
 [SourceDisksFiles]
@@ -179,12 +179,12 @@ CatalogFile=wudf.cat
 <tr>
 <td><strong>1235:[文字列] で定義されていない文字列トークン</strong></td>
 <td>[文字列] セクションでは、指定した文字列のトークンの定義がありません。 たとえば、INF ファイルを指定します<em>%reg_dword</em>で、<em>追加レジストリ セクション</em>で指定された、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff546320"> <strong>AddReg</strong> </a>ディレクティブがあります。対応するありません REG_DWORD = で 0x00010001、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547485">[文字列]</a>セクション。
-<p>このエラーは、INF ファイルを環境変数を含むレジストリ値を指定する場合に頻繁に発生します。 次に、例を示します。</p>
+<p>このエラーは、INF ファイルを環境変数を含むレジストリ値を指定する場合に頻繁に発生します。 以下に例を示します。</p>
 <pre>
 [MyAddReg]
 HKR,,DllPath,%SystemRoot%\System32\myDll.sys
 </pre>
-この行では、トークンを検索しようとする INF パーサー &quot;SystemRoot&quot;リテラルを格納する目的の動作ではなく、[文字列] セクションから&quot;%systemroot%&quot;レジストリにします。  文字列置換を実行するのではなく、リテラル値の %systemroot% を使用するには、エスケープ シーケンスを使用して %% です。
+この行は、"%systemroot%"レジストリ内のリテラル"%systemroot%"の保存の動作目的ではなく、[文字列] セクションからトークンを検索しようとする INF パーサーをによりします。  文字列置換を実行するのではなく、リテラル値の %systemroot% を使用するには、エスケープ シーケンスを使用して %% です。
 <pre>
 [MyAddReg]
 HKR,,DllPath,%%SystemRoot%%\System32\myDll.sys
@@ -233,7 +233,7 @@ INF 構成機能には、次のエラーと警告が関連します。
 </tr>
 <tr>
 <td><strong>1303:Co-installer を定義する従来の操作が見つかりません</strong></td>
-<td>エラー 1303 は AddReg 操作が、共同インストーラーを指定することを示します。 次に、例を示します。
+<td>エラー 1303 は AddReg 操作が、共同インストーラーを指定することを示します。 例:
 <pre>
 AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 </pre>
