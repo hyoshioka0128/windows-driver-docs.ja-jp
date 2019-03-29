@@ -1,6 +1,6 @@
 ---
-title: 処理フローの削除の吹き出し
-description: 処理フローの削除の吹き出し
+title: フロー削除コールアウトの処理
+description: フロー削除コールアウトの処理
 ms.assetid: e947b3b3-27c6-408f-aa02-6b20fa1b9748
 keywords:
 - Windows Filtering Platform コールアウト ドライバー WDK、フローの削除の吹き出し
@@ -9,19 +9,19 @@ keywords:
 - flowDeleteFn
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbc5ecb92c479723d6f39a3ae3df407c7d64becb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dc130d5246f663238fd1a65aa94811b1b190c159
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550994"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348592"
 ---
-# <a name="processing-flow-delete-callouts"></a>処理フローの削除の吹き出し
+# <a name="processing-flow-delete-callouts"></a>フロー削除コールアウトの処理
 
 
 フィルター エンジンは吹き出しの呼び出しますコールアウトで処理されているデータ フローが停止したら、 [ *flowDeleteFn* ](https://msdn.microsoft.com/library/windows/hardware/ff550025)コールアウト ドライバーでは、データにコンテキストを以前が関連付けられている場合、引き出し関数フロー。 吹き出しの*flowDeleteFn*コールアウト関数のコールアウト ドライバーに関連付けられているデータ フロー、データ フローが停止する前にコンテキストをクリーンアップするのに必要なを実行します。
 
-次に、例を示します。
+例:
 
 ```C++
 // Context structure to be associated with data flows
@@ -29,7 +29,7 @@ typedef struct FLOW_CONTEXT_ {
   ...
 } FLOW_CONTEXT, *PFLOW_CONTEXT;
 
-#define FLOW_CONTEXT_POOL_TAG &#39;fcpt&#39;
+#define FLOW_CONTEXT_POOL_TAG 'fcpt'
 
 // flowDeleteFn callout function
 VOID NTAPI

@@ -1,6 +1,6 @@
 ---
-title: インストール済みの INF ファイルの元のソース パスを取得します。
-description: インストール済みの INF ファイルの元のソース パスを取得します。
+title: インストール済みの INF ファイルの元のソース パスの取得
+description: インストール済みの INF ファイルの元のソース パスの取得
 ms.assetid: 7e086248-b11d-43ee-9afa-fad6f2136dc8
 keywords:
 - SetupAPI 関数 WDK、INF ファイル
@@ -11,14 +11,14 @@ keywords:
 - INF ファイルのパス情報を取得します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80dfb06f68c302192eac513f6d71153767738a2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9091d8630a507d9f92ac3f759adc08570397a5e1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535506"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349732"
 ---
-# <a name="obtaining-the-original-source-path-of-an-installed-inf-file"></a>インストール済みの INF ファイルの元のソース パスを取得します。
+# <a name="obtaining-the-original-source-path-of-an-installed-inf-file"></a>インストール済みの INF ファイルの元のソース パスの取得
 
 
 このトピックでは、システムの INF ディレクトリにインストールされている INF ファイルの元のソース パスを取得する方法について説明します。 ない[SetupAPI](setupapi.md)この検索を直接実行する関数を実行できましていない取得直接を取得する INF ファイルのエントリにアクセスする SetupAPI 関数を使用できるように、INF ファイルにエントリを含めることによってインストール済みの INF ファイルから元のソース パス情報。
@@ -46,7 +46,7 @@ OriginalInfSourcePath = %1%
 
 ```cpp
 // Since the INF is already in %SystemRoot%\Inf, we need to find out where it
-// originally came from.  There is no direct way to ascertain an INF&#39;s
+// originally came from.  There is no direct way to ascertain an INF's
 // path of origin, but we can indirectly determine it by retrieving a field
 // from our INF that uses a string substitution of %1% (DIRID_SRCPATH).
 //
@@ -65,7 +65,7 @@ hInf = SetupOpenInfFile(DriverInfoDetailData->InfFileName,
 //
 //     OriginalInfSourcePath = %1%
 //
-// If we retrieve the value (i.e., field 1) of this line, we&#39;ll get the
+// If we retrieve the value (i.e., field 1) of this line, we'll get the
 // full path where the INF originally came from.
 //
 if(!SetupFindFirstLine(hInf, L"ToastCoInfo", L"OriginalInfSourcePath", &InfContext)) {

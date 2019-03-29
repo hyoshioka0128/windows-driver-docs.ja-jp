@@ -1,17 +1,17 @@
 ---
-title: KMDF 周辺のドライバーをシリアル ポートに接続します。
+title: KMDF 周辺機器ドライバーをシリアル ポートに接続する
 description: SerCx2 で管理されたシリアル ポート周辺機器の KMDF ドライバーでは、デバイスを操作する特定のハードウェア リソースが必要です。 これらのリソースに含まれるは、ドライバーは、シリアル ポートへの論理接続を開く必要がある情報です。
 ms.assetid: EDE62C5E-3563-42EE-884E-DF473CD724A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a17827df5491e0f9f93e32d5c70a62fc10996e58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f57862d4c09e57d3c92c30ce9640b2a7b1dcfddc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550704"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349711"
 ---
-# <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>KMDF 周辺のドライバーをシリアル ポートに接続します。
+# <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>KMDF 周辺機器ドライバーをシリアル ポートに接続する
 
 
 SerCx2 で管理されたシリアル ポート周辺機器の KMDF ドライバーでは、デバイスを操作する特定のハードウェア リソースが必要です。 これらのリソースに含まれるは、ドライバーは、シリアル ポートへの論理接続を開く必要がある情報です。 その他のリソースは、割り込みを含めることができ、1 つまたは複数の GPIO 入力または出力ピンです。
@@ -85,7 +85,7 @@ for (ULONG ix = 0; ix < resourceCount; ix++)
         break;
 
     default:
-        // Don&#39;t care about other resource descriptors.
+        // Don't care about other resource descriptors.
         break;
     }
 }

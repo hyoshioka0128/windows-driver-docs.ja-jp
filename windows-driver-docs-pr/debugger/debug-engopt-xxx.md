@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4ac904c4a2498defac56e4fb0dd9985e3ffe3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 857b755c3a6291067096e381d16e093bbbff2b66
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549865"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350072"
 ---
 # <a name="debugengoptxxx"></a>デバッグ\_ENGOPT\_XXX
 
@@ -41,7 +41,7 @@ ms.locfileid: "56549865"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>バージョンの拡張機能を無効にします。  これにより、デバッガー エンジンが抑制&#39;CheckVersion の呼び出し。</p>
+<p>バージョンの拡張機能を無効にします。  これは、CheckVersion するデバッガー エンジンの呼び出しを抑制します。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -88,7 +88,7 @@ ms.locfileid: "56549865"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>ターゲットにデバッガーに割り込む&#39;s 最初のイベント。</p>
+<p>ターゲットの最初のイベントにデバッガーを中断します。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -106,7 +106,7 @@ ms.locfileid: "56549865"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>ターゲットにデバッガーに割り込む&#39;s の最終的なイベント。 ライブ ユーザー モードのターゲット プロセスが終了する場合です。 カーネル モードの影響を与えません。</p>
+<p>ターゲットの最後のイベントでデバッガーを中断します。 ライブ ユーザー モードのターゲット プロセスが終了する場合です。 カーネル モードの影響を与えません。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -135,7 +135,7 @@ ms.locfileid: "56549865"
 </td>
 <td align="left" width="60%">
 <p>メモリの読み取り専用のセクションではソフトウェアのブレークポイントの設定を許可する対象のページ保護を操作するデバッガー エンジンを使用できます。</p>
-<p>エンジンが、ターゲットの変更を透過的にソフトウェアのブレークポイントを設定するときに&#39;割り込み命令を挿入するメモリ。</p>
+<p>ソフトウェアのブレークポイントを設定するときに、エンジンは透過的に割り込み命令を挿入するターゲットのメモリを変更します。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -225,7 +225,7 @@ ms.locfileid: "56549865"
 </table>
 
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

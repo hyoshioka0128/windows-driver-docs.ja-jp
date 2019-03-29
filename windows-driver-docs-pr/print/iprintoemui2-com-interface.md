@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUI2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b063e79ca31f950dc7f31e525f085f7403e8a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 52b2742dd63513bf618703b495eac3e96c841965
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558852"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349173"
 ---
 # <a name="iprintoemui2-com-interface"></a>IPrintOemUI2 COM インターフェイス
 
@@ -39,7 +39,7 @@ ms.locfileid: "56558852"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554141" data-raw-source="[&lt;strong&gt;IPrintOemUI2::DocumentEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554141)"><strong>IPrintOemUI2::DocumentEvent</strong></a></p></td>
-<td><p>により、コア ドライバーの UI モジュールを交換する UI プラグイン&#39;s の既定の実装、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff548544" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548544)"> <strong>DrvDocumentEvent</strong> </a> DDI します。</p></td>
+<td><p>により、UI プラグインのコア ドライバー UI モジュールの既定の実装を置き換える、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff548544" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548544)"> <strong>DrvDocumentEvent</strong> </a> DDI します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554142" data-raw-source="[&lt;strong&gt;IPrintOemUI2::HideStandardUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554142)"><strong>IPrintOemUI2::HideStandardUI</strong></a></p></td>
@@ -47,7 +47,7 @@ ms.locfileid: "56558852"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554146" data-raw-source="[&lt;strong&gt;IPrintOemUI2::QueryJobAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554146)"><strong>IPrintOemUI2::QueryJobAttributes</strong></a></p></td>
-<td><p>により、処理後の中核となるドライバーに UI プラグイン&#39;s 結果への呼び出しの後、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff548581" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548581)"> <strong>DrvQueryJobAttributes</strong> </a> DDI します。</p></td>
+<td><p>により、処理後の呼び出しの後に、中核となるドライバーの結果を UI プラグイン、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff548581" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548581)"> <strong>DrvQueryJobAttributes</strong> </a> DDI します。</p></td>
 </tr>
 </tbody>
 </table>

@@ -8,12 +8,12 @@ keywords:
 - 色空間の変換が WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e48825a3262057b0ee189ea52f08fe451d0478a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 21e5d5d99cc5e8cc0c0f11bfe51b46a0d916d20f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559825"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349973"
 ---
 # <a name="gdi-color-space-conversions"></a>GDI 色空間の変換
 
@@ -54,7 +54,7 @@ GDI は、次の RGB 色空間を認識します。
 <tr class="odd">
 <td align="left"><p>5:5:5</p></td>
 <td align="left"><p>5:6:5</p></td>
-<td align="left"><p>ソースの最上位ビット (MSB)&#39;s 緑チャネルは、ターゲットの下位の末尾に追加されます&#39;s 緑チャネル。</p></td>
+<td align="left"><p>ソースの緑チャネルの最上位ビット (MSB) は、ターゲットの緑チャネルの下位の末尾に追加されます。</p></td>
 <td align="left"><p>(0x15、 <strong>0x19</strong>0x1D) になります</p>
 <div>
  
@@ -82,7 +82,7 @@ GDI は、次の RGB 色空間を認識します。
 <tr class="odd">
 <td align="left"><p>5:6:5</p></td>
 <td align="left"><p>5:5:5</p></td>
-<td align="left"><p>破棄、ソースの最下位ビット (lsb に向かって)&#39;s 緑チャネル。</p></td>
+<td align="left"><p>ソースの緑チャネルの最下位ビット (LSB) を破棄します。</p></td>
 <td align="left"><p>(0x15、 <strong>0x33</strong>0x1D) になります</p>
 <div>
  

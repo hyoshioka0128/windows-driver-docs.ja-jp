@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42a96a8929c45ccfeeca5a490aba238d9d2f771e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 652878d1ba1423eca72285f7f4651fc56e557b35
+ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539330"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203933"
 ---
 # <a name="searching-for-process-servers"></a>プロセス サーバーの検索
 
@@ -53,11 +53,5 @@ Debugger -QR \\Server
 
  
 
- 
 
  
-
-
-
-
-

@@ -1,15 +1,15 @@
 ---
-title: NVDIMM-N 識別 (関数インデックス 1) を取得します。
+title: NVDIMM-N ID の取得 (関数インデックス 1)
 description: この関数は、デバイスに固有の情報を返します。
 ms.assetid: 350E764D-634C-4C60-9C74-E26B01636C02
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb55269009335e2f505b6bf735a5d87efe70f236
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e3398aa1e52831e03496f7f850715362bba5a2ec
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559925"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349649"
 ---
 # <a name="span-idstoragegetnvdimm-nidentificationfunctionindex1spanget-nvdimm-n-identification-function-index-1"></a><span id="storage.get_nvdimm-n_identification__function_index_1_"></span>NVDIMM-N 識別 (関数インデックス 1) を取得します。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56559925"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
@@ -122,7 +122,7 @@ ms.locfileid: "56559925"
 <td align="left"><strong>サポートされているバックアップのトリガー</strong></td>
 <td align="left">1</td>
 <td align="left">17</td>
-<td align="left"><p>モジュール&#39;サポートは、トリガーを保存します。</p>
+<td align="left"><p>モジュールのサポートされているは、トリガーを保存します。</p>
 <p></em>バイト 0 – <em>CSAVE_TRIGGER_SUPPORT</em> (0, 0x16)</p></td>
 </tr>
 <tr class="even">

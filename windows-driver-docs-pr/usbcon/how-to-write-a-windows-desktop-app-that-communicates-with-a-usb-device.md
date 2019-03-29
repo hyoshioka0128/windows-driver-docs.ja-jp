@@ -1,16 +1,16 @@
 ---
-Description: The easiest way to write a Windows desktop app that communicates with a USB device, is by using the C/C++ WinUSB template.
-title: WinUSB テンプレートに基づく Windows デスクトップ アプリを作成します。
+Description: C と C++ WinUSB テンプレートを使用、USB デバイスと通信する Windows デスクトップ アプリを作成する最も簡単な方法です。
+title: WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5614379f76ade13fd4d09131edf15d04a034511c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fa5bbc2185d1e38b494f6e55315339480b7159af
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552142"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349049"
 ---
-# <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>WinUSB テンプレートに基づく Windows デスクトップ アプリを作成します。
+# <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 
 
 **重要な API**
@@ -40,7 +40,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
     ![visual studio で winusb テンプレート](images/winusb-template.png)
 
-    Visual Studio では、2 つのプロジェクトとソリューションを作成します。 ソリューション、2 つのプロジェクト内の各プロジェクトに属するファイルを確認できます、**ソリューション エクスプ ローラー**ウィンドウで、次のスクリーン ショットに示すようにします。 (場合、**ソリューション エクスプ ローラー**ウィンドウが表示されていない、選択**ソリューション エクスプ ローラー**から、**ビュー**メニュー)。ソリューションには、USB Application1 および USB Application1 パッケージをという名前のドライバー パッケージ プロジェクトをという名前の C++ アプリケーション プロジェクトが含まれています。 アプリケーション ソース コードを確認する場合は、下に表示されるファイルのいずれかを開くことができます**ソースファイル**します。
+    Visual Studio では、2 つのプロジェクトとソリューションを作成します。 ソリューション、2 つのプロジェクト内の各プロジェクトに属するファイルを確認できます、**ソリューション エクスプ ローラー**ウィンドウで、次のスクリーン ショットに示すようにします。 (**[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、**[表示]** メニューの **[ソリューション エクスプローラー]** を選びます)。ソリューションには、USB Application1 および USB Application1 パッケージをという名前のドライバー パッケージ プロジェクトをという名前の C++ アプリケーション プロジェクトが含まれています。 アプリケーション ソース コードを確認する場合は、下に表示されるファイルのいずれかを開くことができます**ソースファイル**します。
 
     ![winusb テンプレート ソリューション エクスプ ローラー](images/winusb-template1.png)
 
@@ -102,7 +102,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
     11. 選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウ。 (**[出力]** ウィンドウが表示されていない場合は、**[表示]** メニューの **[出力]** をクリックします)。この演習では、x-64 Windows 8.1 を実行しているシステムのプロジェクトをビルドしましたしました。
 
-ターゲット コンピューターで実行されているドライバーのインストール スクリプトが表示されます。 %Systemdrive% に、ドライバー ファイルがコピーされます\\drivertest\\ターゲット コンピューター上のドライバー フォルダー。 .Inf、.cat、テスト証明書と .sys ファイル、およびその他の必要なファイルが存在する %systemdrive% ことを確認\\drivertest\\ドライバー フォルダー。 デバイスは、エラーなしでデバイス マネージャーを表示する必要があります。
+ターゲット コンピューターで実行されているドライバーのインストール スクリプトが表示されます。 %Systemdrive% に、ドライバー ファイルがコピーされます\\drivertest\\ターゲット コンピューター上のドライバー フォルダー。 .inf、.cat、test cert、.sys など、必要なファイルがすべて %systemdrive%\\drivertest\\drivers フォルダーに存在することを確認します。 デバイスは、エラーなしでデバイス マネージャーを表示する必要があります。
 
 ホスト コンピューターでは、このメッセージが表示されます、**出力**ウィンドウ。
 
@@ -195,7 +195,7 @@ Arguments:
 
     DevicePath - On successful return, the path of the device (use with CreateFile).
 
-    BufLen - The size of DevicePath&#39;s buffer, in bytes
+    BufLen - The size of DevicePath's buffer, in bytes
 
     FailureDeviceNotFound - TRUE when failure is returned due to no devices
         found with the correct device interface (device not connected, driver
@@ -297,7 +297,7 @@ Return value:
     length = requiredLength;
 
     //
-    // Get the interface&#39;s path string
+    // Get the interface's path string
     //
     bResult = SetupDiGetDeviceInterfaceDetail(deviceInfo,
                                               &interfaceData,
@@ -482,7 +482,7 @@ Return value:
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 
 次に、デバイス情報を取得するを送信し、デバイスにデータ転送にこれらのトピックを参照してください。

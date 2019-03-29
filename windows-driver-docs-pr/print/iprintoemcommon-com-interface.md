@@ -4,12 +4,12 @@ description: IPrintOemCommon COM インターフェイス
 ms.assetid: 1d4b2f77-6682-4a4b-8d7f-34acd03523e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b912ca353754dd032cdea40ba349a33d45128dd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 498bb3ba233bc8ccaeda2b234a6ff90a5adb6222
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551199"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349893"
 ---
 # <a name="iprintoemcommon-com-interface"></a>IPrintOemCommon COM インターフェイス
 
@@ -36,7 +36,7 @@ ms.locfileid: "56551199"
 </tr>
 <tr class="even">
 <td><p><strong>IPrintOemCommon::GetInfo</strong></p></td>
-<td><p>プラグインを返します&#39;情報を識別します。</p></td>
+<td><p>プラグインの識別情報を返します。</p></td>
 </tr>
 </tbody>
 </table>

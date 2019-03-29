@@ -1,19 +1,19 @@
 ---
-title: メタデータ フィールドの識別子
+title: メタデータ フィールド識別子
 description: このセクションでは、Windows Filtering Platform コールアウト ドライバーのメタデータ フィールドの識別子について説明します。
 ms.assetid: 2157bace-9fae-41e8-a435-c4a412873ee1
 keywords:
 - ネットワーク ドライバーをメタデータ フィールドの識別子
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 911c694f055009a584c929cf1451d4e8a035f8b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3b7184bf3303cc236f1d78e4cbcc265d51b978a8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532377"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349881"
 ---
-# <a name="metadata-field-identifiers"></a>メタデータ フィールドの識別子
+# <a name="metadata-field-identifiers"></a>メタデータ フィールド識別子
 
 メタデータ フィールドの識別子は、各ビット フィールドで表されます。 これらの識別子の定義は次のとおりです。
 
@@ -165,7 +165,7 @@ ms.locfileid: "56532377"
 <p>FWPS_METADATA_FIELD_ORIGINAL_DESTINATION</p>
 </td>
 <td>
-<p>A <a href="https://msdn.microsoft.com/library/windows/hardware/ff570825"> <b>SOCKADDR_STORAGE</b> </a>パケットを示す構造&#39;s の元の送信先です。</p>
+<p>A <a href="https://msdn.microsoft.com/library/windows/hardware/ff570825"> <b>SOCKADDR_STORAGE</b> </a>パケットの元の送信先を指定する構造体。</p>
 <p>
 <div class="alert"><b>注</b>  Windows 7 以降ではサポートされています。</div>
 <div> </div>
@@ -197,7 +197,7 @@ ms.locfileid: "56532377"
 <p>FWPS_METADATA_FIELD_PARENT_ENDPOINT_HANDLE</p>
 </td>
 <td>
-<p>エンドポイントのハンドル&#39;s 親ソケット。</p>
+<p>エンドポイントの親のソケットのハンドル。</p>
 <p>
 <div class="alert"><b>注</b>  Windows 7 以降ではサポートされています。</div>
 <div> </div>

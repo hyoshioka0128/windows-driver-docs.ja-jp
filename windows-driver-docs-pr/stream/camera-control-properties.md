@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_VIDCAP_CAMERACONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7da3b0a86fe504a98c2f066d0d922610ccaae7be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2b658830552bfc68f31da8d31c624072257a1f51
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561081"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350079"
 ---
 # <a name="camera-control-properties"></a>カメラ コントロールのプロパティ
 
@@ -34,35 +34,35 @@ ms.locfileid: "56561081"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564401" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXPOSURE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564401)"><strong>KSPROPERTY_CAMERACONTROL_EXPOSURE</strong></a></p></td>
-<td><p>カメラの制御&#39;s のデジタル公開期間。</p></td>
+<td><p>カメラのデジタル公開期間を制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564410" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCUS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564410)"><strong>KSPROPERTY_CAMERACONTROL_FOCUS</strong></a></p></td>
-<td><p>カメラの制御&#39;s フォーカス設定します。</p></td>
+<td><p>カメラのフォーカスの設定を制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564415" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_IRIS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564415)"><strong>KSPROPERTY_CAMERACONTROL_IRIS</strong></a></p></td>
-<td><p>カメラの制御&#39;s aperture 設定します。</p></td>
+<td><p>カメラの絞り設定を制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564459" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ZOOM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564459)"><strong>KSPROPERTY_CAMERACONTROL_ZOOM</strong></a></p></td>
-<td><p>カメラの制御&#39;s のズーム設定します。</p></td>
+<td><p>カメラのズーム設定を制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564424" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PAN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564424)"><strong>KSPROPERTY_CAMERACONTROL_PAN</strong></a></p></td>
-<td><p>カメラの制御&#39;s パン設定します。</p></td>
+<td><p>カメラのコントロールはパン設定です。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564432" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ROLL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564432)"><strong>KSPROPERTY_CAMERACONTROL_ROLL</strong></a></p></td>
-<td><p>カメラの制御&#39;s ロール設定します。</p></td>
+<td><p>カメラのコントロールは、設定をロールバックします。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564454" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_TILT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564454)"><strong>KSPROPERTY_CAMERACONTROL_TILT</strong></a></p></td>
-<td><p>カメラの制御&#39;s 傾きの設定。</p></td>
+<td><p>カメラのコントロールは、設定を傾けます。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564452" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_SCANMODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564452)"><strong>KSPROPERTY_CAMERACONTROL_SCANMODE</strong></a></p></td>
-<td><p>カメラのスキャン モードを制御&#39;s センサー、インターリーブ、または非インターリーブドなど。</p></td>
+<td><p>インターリーブ、または非インターリーブドなどのカメラのセンサーのスキャン モードを制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564430" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PRIVACY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564430)"><strong>KSPROPERTY_CAMERACONTROL_PRIVACY</strong></a></p></td>
@@ -70,43 +70,43 @@ ms.locfileid: "56561081"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564425" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PANTILT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564425)"><strong>KSPROPERTY_CAMERACONTROL_PANTILT</strong></a></p></td>
-<td><p>カメラの制御&#39;絶対 s パンおよび傾きの設定。</p></td>
+<td><p>カメラの絶対パンおよび傾きの設定を制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564429" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PAN_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564429)"><strong>KSPROPERTY_CAMERACONTROL_PAN_RELATIVE</strong></a></p></td>
-<td><p>カメラの制御&#39;s 相対的な現在の値から、垂直軸回転。</p></td>
+<td><p>現在の値から垂直軸の周りのカメラの相対的な回転を制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564456" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_TILT_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564456)"><strong>KSPROPERTY_CAMERACONTROL_TILT_RELATIVE</strong></a></p></td>
-<td><p>カメラの制御&#39;s 相対の現在位置から水平軸回転。</p></td>
+<td><p>現在の位置から水平軸の周りでカメラの相対的な回転を制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564435" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ROLL_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564435)"><strong>KSPROPERTY_CAMERACONTROL_ROLL_RELATIVE</strong></a></p></td>
-<td><p>カメラの制御&#39;現在の値から軸を表示するイメージに関する s 相対回転します。</p></td>
+<td><p>現在の値からの軸を表示するイメージに関するカメラの相対的な回転を制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564460" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ZOOM_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564460)"><strong>KSPROPERTY_CAMERACONTROL_ZOOM_RELATIVE</strong></a></p></td>
-<td><p>カメラの制御&#39;現在の値からの相対のズーム設定します。</p></td>
+<td><p>カメラの相対的なズームが現在の値から設定を制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564404" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564404)"><strong>KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE</strong></a></p></td>
-<td><p>カメラの制御&#39;現在の値からの相対のシャッター スピードです。</p></td>
+<td><p>現在の値からのカメラの相対的なシャッター スピードを制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564417" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564417)"><strong>KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE</strong></a></p></td>
-<td><p>カメラを指定します&#39;現在の値からの相対 aperture 設定します。</p></td>
+<td><p>現在の値からのカメラの相対 aperture 設定を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564413" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564413)"><strong>KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE</strong></a></p></td>
-<td><p>カメラの制御&#39;現在の値からの相対的なフォーカスの設定。</p></td>
+<td><p>カメラの相対的なフォーカスを現在の値から設定を制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564427" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564427)"><strong>KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE</strong></a></p></td>
-<td><p>カメラを制御&#39;s 相対パンおよび傾きの現在の値を設定します。</p></td>
+<td><p>カメラの相対的なパンとその現在の値の設定の傾きを制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564406" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564406)"><strong>KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH</strong></a></p></td>
-<td><p>カメラを指定します&#39;s 焦点距離。</p></td>
+<td><p>カメラの焦点距離を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564399" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564399)"><strong>KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY</strong></a></p></td>

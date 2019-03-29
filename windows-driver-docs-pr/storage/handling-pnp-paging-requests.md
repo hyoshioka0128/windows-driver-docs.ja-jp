@@ -9,12 +9,12 @@ keywords:
 - PnP WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15721b5b747f14fbc7a606863f24f5294d811774
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7d622518f5cc3b080db2efdfc2428f08f2adf0a2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527501"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349825"
 ---
 # <a name="handling-pnp-paging-requests"></a>PnP ページング要求の処理
 
@@ -51,7 +51,7 @@ C. 最後のページングのデバイスを削除する場合 ((! **Parameters
 
     設定するのには安全では、**は\_POWER\_PAGABLE**フィルター ドライバーのデバイス、およびページングがなくなるため I/O のアクティブなページング ファイルがなくなったため、下位のスタックでは、ページング要求を転送する前に bitこれで発生します。 このページング ファイルを削除する要求が成功すると、フィルター ドライバーは行われます。 フィルター ドライバーが単にオフにすると、フラグの元の状態を復元できます要求に失敗した場合、**は\_POWER\_PAGABLE** IRP を完了する前にビットします。 ページング ファイルの要求がシリアル化されるため、他のスレッドが変更ことこのビット フィルター ドライバー最後変更されるため危険はありません。
 
-D。 同期的に下位のドライバーに IRP を転送します。
+D. 同期的に下位のドライバーに IRP を転送します。
 
 E を押します。 IRP が正常に完了し、場合
 
@@ -110,7 +110,7 @@ case DeviceUsageTypePaging: {
             // succeeded the addition of the paging 
             // file, it is illegal to fail the 
             // request. It is also the time to 
-            // clear the Filter DO&#39;s 
+            // clear the Filter DO's 
             //DO_POWER_PAGABLE flag.
  
             DeviceObject->Flags &= ~DO_POWER_PAGABLE; 

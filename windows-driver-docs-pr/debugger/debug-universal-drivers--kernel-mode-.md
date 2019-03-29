@@ -6,14 +6,14 @@ keywords:
 - ラボをデバッグします。
 - ステップ バイ ステップ
 - SYSVAD
-ms.date: 10/12/2018
+ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 44f6b059266b5ab638c6defa4ca760b001e8d04e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f080677e88433499d3a8ee3840d3810e8aa476b6
+ms.sourcegitcommit: a43a696c5b4d2f08ee77d507631b41ecfdea6742
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531093"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666736"
 ---
 # <a name="span-iddebuggerdebuguniversaldriverskernel-modespandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>ステップ バイ ステップのラボ (Sysvad カーネル モード) - ドライバのデバッグします。
 
@@ -254,7 +254,7 @@ DML versions of commands on by default
 
 **ターゲット システム上の Windows のバージョンの表示**
 
-5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg] ウィンドウでコマンド。
+5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: kd> vertarget
@@ -269,7 +269,7 @@ System Uptime: 0 days 01:31:58.931
 
 **読み込まれたモジュールを一覧表示します。**
 
-6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg] ウィンドウでコマンド。
+6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: Kd> lm
@@ -326,13 +326,13 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     Visual Studio で、次のようにクリックします**ファイル** &gt; **オープン** &gt; **プロジェクト/ソリューション.。** を抽出したファイルを含むフォルダーに移動します (たとえば、 *c:\\WDK\_サンプル\\Sysvad*)。 ダブルクリックして、 *Syvad*ソリューション ファイル。
 
-    Visual Studio では、ソリューション エクスプ ローラーを見つけます。 (これがまだ開いていない場合は、選択**ソリューション エクスプ ローラー**から、**ビュー**メニュー)。ソリューション エクスプ ローラーでは、4 つのプロジェクトを含む 1 つのソリューションを確認できます。 SwapAPO という名前のプロジェクトは、APO と PropPageExtensions の 2 つのプロジェクトを含むフォルダー実際にであることに注意してください。
-
+    Visual Studio では、ソリューション エクスプ ローラーを見つけます。 (これがまだ開いていない場合は、選択**ソリューション エクスプ ローラー**から、**ビュー**メニュー)。ソリューション エクスプ ローラーでは、さまざまなプロジェクトとサンプルの変更に時間の経過に含まれるものを含む 1 つのソリューションを確認できます。 
+        
     ![visual studio と sysvad プロジェクトから読み込まれた device.c ファイル](images/sysvad-lab-visual-studio-solution.png)
 
 3.  **サンプルの構成とプラットフォームを設定します。**
 
-    ソリューション エクスプ ローラーで右クリックして**ソリューション 'sysvad' (6 プロジェクト)**、選択**Configuration Manager**します。 構成とプラットフォームの設定は、4 つのプロジェクトの同じことを確認します。 既定では、構成が"Win10 Debug"に設定し、プラットフォームのすべてのプロジェクトの"Win64"に設定されています。 任意の構成または 1 つのプロジェクトのプラットフォームの変更を加えた場合は、残りの 3 つのプロジェクトに対しても同じ変更を行う必要があります。
+    ソリューション エクスプ ローラーで右クリックして**ソリューション 'sysvad' (7 プロジェクト)**、選択**Configuration Manager**します。 構成とプラットフォームの設定は、4 つのプロジェクトの同じことを確認します。 既定では、構成が"Win10 Debug"に設定し、プラットフォームのすべてのプロジェクトの"Win64"に設定されています。 任意の構成または 1 つのプロジェクトのプラットフォームの変更を加えた場合は、残りの 3 つのプロジェクトに対しても同じ変更を行う必要があります。
 
     **注**  このラボでは、64 ビット Windows が使用されている前提としています。 32 ビット Windows を使用している場合は、32 ビットのドライバーをビルドします。
 
@@ -354,7 +354,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     TabletAudioSample ドライバーのビルド済みのファイルを含むフォルダーに移動します。
 
-    *C:\\WDK\_サンプル\\Sysvad\\TabletAudioSample\\x64\\デバッグ*します。 フォルダー、TabletAudioSample が含まれます。Sys、シンボル ファイルの pdp および inf ファイル。 SwapAPO、PropPageExt および KeywordDetectorContosoAdapter dll とシンボル ファイルを検索する必要があります。
+    *C:\\WDK\_サンプル\\Sysvad\\TabletAudioSample\\x64\\デバッグ*します。 フォルダー、TabletAudioSample が含まれます。Sys、シンボル ファイルの pdp および inf ファイル。 SwapAPO を検索する必要がありますと KeywordDetectorContosoAdapter dll とシンボル ファイル。
 
     ドライバーをインストールするには、次のファイルが必要です。
 
@@ -367,8 +367,6 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     | KeywordDetectorContosoAdapter.pdb | キーワードの検出機能をサンプル シンボル ファイルです。                                          |
     | lSwapAPO.dll                      | パスワードを管理するための UI 用のサンプル ドライバー拡張します。                                |
     | lSwapAPO.pdb                      | APO UI シンボル ファイル。                                                           |
-    | PropPageExt.dll                   | プロパティ ページのサンプル ドライバー拡張します。                                    |
-    | PropPageExt.pdb                   | プロパティ ページのシンボル ファイル。                                                    |
     | TabletAudioSample.cer             | TabletAudioSample 証明書ファイル。                                           |
 
      
@@ -414,7 +412,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     WDK のインストールの Tools フォルダーに移動し、DevCon ツールを見つけます。 たとえば、次のフォルダーを探します。
 
-    *C:\\プログラム ファイル (x86)\\Windows キット\\10\\ツール\\x64\\devcon.exe*
+    *C:\\Program Files (x86)\\Windows Kits\\10\\Tools\\x64\\devcon.exe*
 
 3.  **-&gt; ターゲット システム**
 
@@ -919,7 +917,7 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -2120,9 +2118,9 @@ fffff803`bb757020 cc              int     3
 OSR  - <https://www.osr.com/>
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows デバッグの概要](getting-started-with-windows-debugging.md) 
+[Windows のデバッグの概要](getting-started-with-windows-debugging.md) 
 
  
 

@@ -4,12 +4,12 @@ description: Windows 8.1 では、UWP デバイス アプリは印刷ヘッド�
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33357edbdf1213c5fc4e18e046d7922326c4b4aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 20471a126d170cfbc779250a4d2dc6af3bf1d765
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558628"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349651"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>UWP アプリのデバイスのプリンターのメンテナンスを実行する方法
 
@@ -46,7 +46,7 @@ Windows 8.1 には、新しいデバイスのメンテナンスを実装する�
 
      
 
-## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>手順 1:双方向の要求を準備します。
+## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>手順 1: 双方向の要求を準備します。
 
 
 デバイスのメンテナンス インターフェイスは、双方向の要求は、文字列の形式で XML データである必要があります。 アプリで意味がある場所では、双方向の要求を構築できます。 たとえば、文字列定数として、双方向の要求を保存したり、ユーザー入力に基づいて動的に作成します。 [印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルの動作の既定の要求を構築する`OnNavigatedTo`メソッド。 双方向に関する詳細については、次を参照してください。[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)します。
@@ -56,13 +56,13 @@ Windows 8.1 には、新しいデバイスのメンテナンスを実装する�
 ```CSharp
 string defaultBidiQuery =
     "<bidi:Set xmlns:bidi=\"http://schemas.microsoft.com/windows/2005/03/printing/bidi\">\r\n" +
-    "    <Query schema=&#39;\\Printer.Maintenance:CleanHead&#39;>\r\n" +
+    "    <Query schema='\\Printer.Maintenance:CleanHead'>\r\n" +
     "        <BIDI_BOOL>false</BIDI_BOOL>\r\n" +
     "    </Query>\r\n" +
     "</bidi:Set>";
 ```
 
-## <a name="span-idstep2findprinterspanspan-idstep2findprinterspanspan-idstep2findprinterspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>手順 2:プリンターを検索します。
+## <a name="span-idstep2findprinterspanspan-idstep2findprinterspanspan-idstep2findprinterspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>手順 2: プリンターを検索します。
 
 
 アプリは、プリンターにコマンドを送信できる、これには、まず、プリンターを探します。 これを行う、[印刷ジョブの管理やプリンターの管理](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルには、という名前の便利なクラスが含まれています。 `PrinterEnumeration` (で、 **PrinterEnumeration.cs**ファイル)。 このクラスは、デバイスのメタデータを使用して、アプリに関連付けられているすべてのプリンターを検索しの一覧を返します`PrinterInfo`オブジェクトで、名前と各プリンターについては、デバイス Id が含まれています。
@@ -76,7 +76,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
     {
         rootPage.NotifyUser("Enumerating printers. Please wait", NotifyType.StatusMessage);
 
-        // Retrieve the running app&#39;s package family name, and enumerate associated printers.
+        // Retrieve the running app's package family name, and enumerate associated printers.
         string currentPackageFamilyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 
         // Enumerate associated printers.
@@ -106,7 +106,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 
  
 
-## <a name="span-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>手順 3:双方向の要求を送信します。
+## <a name="span-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>手順 3: 双方向の要求を送信します。
 
 
 Bidi 文字列およびコールバックを双方向の要求を送信するには、デバイスのメンテナンス インターフェイスが必要です。 `SendBidiRequest_Click`メソッド、サンプルの最初では、`PrinterInfo`という名前のプリンター拡張コンテキスト オブジェクトを作成するオブジェクト`context`します。 `PrinterBidiSetRequestCallback`オブジェクトが作成され、コールバックを処理するイベント ハンドラーを追加`OnBidiResponseReceived`イベント。 最後に、プリンター拡張コンテキストの`SendBidiSetRequestAsync`双方向の文字列とコールバックを送信するメソッドを使用します。
@@ -125,10 +125,10 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
         Object comComtext = Windows.Devices.Printers.Extensions.PrintExtensionContext.FromDeviceId(queue.DeviceId);
         PrinterExtensionContext context = new PrinterExtensionContext(comComtext);
 
-        // Create an instance of the callback object, and perform an asynchronous &#39;bidi set&#39; operation.
+        // Create an instance of the callback object, and perform an asynchronous 'bidi set' operation.
         PrinterBidiSetRequestCallback callback = new PrinterBidiSetRequestCallback();
 
-        // Add an event handler to the callback object&#39;s OnBidiResponseReceived event.
+        // Add an event handler to the callback object's OnBidiResponseReceived event.
         // The event handler will be invoked once the Bidi response is received.
         callback.OnBidiResponseReceived += OnBidiResponseReceived;
 
@@ -136,7 +136,7 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
         IPrinterExtensionAsyncOperation operationContext
             = context.Queue.SendBidiSetRequestAsync(BidiQueryInput.Text, callback);
 
-        // Note: The &#39;operationContext&#39; object can be used to cancel the operation if required.
+        // Note: The 'operationContext' object can be used to cancel the operation if required.
     }
     catch (Exception exception)
     {
@@ -145,7 +145,7 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="span-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>手順 4:双方向の応答を受信します。
+## <a name="span-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>手順 4: 双方向の応答を受信します。
 
 
 双方向「設定」操作が完了すると、コールバック オブジェクトの型の`PrinterBidiSetRequestCallback`が呼び出されます。 このコールバック エラー HRESULT 応答から処理を行います、し、トリガー、`OnBidiResponseReceived`イベント、イベント パラメーターを介して Bidi 応答を送信します。
@@ -177,7 +177,7 @@ internal class PrinterBidiSetRequestCallback : IPrinterBidiSetRequestCallback
     }
 
     /// <summary>
-    /// This event will be invoked when the Bidi &#39;set&#39; response is received.
+    /// This event will be invoked when the Bidi 'set' response is received.
     /// </summary>
     public event EventHandler<string> OnBidiResponseReceived;
 }

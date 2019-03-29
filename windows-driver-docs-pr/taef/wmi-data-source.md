@@ -4,12 +4,12 @@ description: WMI データ ソース
 ms.assetid: 1C9D0EEC-6542-4249-B7E0-CA3ED63FB120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e72d3a653f0b4235e954b00a607c9d05d7b789
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c76feb1074d623095c624082919d562056c2a496
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552135"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349721"
 ---
 # <a name="wmi-data-source"></a>WMI データ ソース
 
@@ -102,7 +102,7 @@ TAEF では、システムのプロパティを取得することはできませ
 11    public class CSharpWmiDataSourceExample
 12    {
 13        [TestMethod]
-14        [DataSource("WMI:SELECT Description, DesktopInteract, ProcessId FROM Win32_Service WHERE Name=&#39;Themes&#39;")]
+14        [DataSource("WMI:SELECT Description, DesktopInteract, ProcessId FROM Win32_Service WHERE Name='Themes'")]
 15        public void ThemesTest()
 16        {
 17            String description = (String)m_testContext.DataRow["Description"];
@@ -164,7 +164,7 @@ WMI のプロパティを取得するためのネイティブ コードでは、
 
 留意するパートは、WMI クエリによって null 以外のプロパティが常に返すしないようにします。 返される WMI プロパティの値が"null"場合があります。 探しているプロパティは、一部のシナリオで"null"にできることと思われる場合のを確認の検証または使用を試みる前に。
 
-管理対象のテスト コードなどの TestContext は DBNull 型のオブジェクトとして null 値を格納します。 することが予想されるオブジェクトの型に結果の値をキャストする前に DBNull 型の場合を確認する必要があります。 見てみましょう。
+管理対象のテスト コードなどの TestContext は DBNull 型のオブジェクトとして null 値を格納します。 することが予想されるオブジェクトの型に結果の値をキャストする前に DBNull 型の場合を確認する必要があります。 では、始めましょう。
 
 ```cpp
 1 namespace WEX.Examples
@@ -189,7 +189,7 @@ WMI のプロパティを取得するためのネイティブ コードでは、
 19            Log.Comment("DriveType is " + driveType.ToString());
 20
 21            object nullCheckCompressed = m_testContext.DataRow["Compressed"];
-22            Log.Comment("Compressed&#39;s type is: " + nullCheckCompressed.GetType().ToString());
+22            Log.Comment("Compressed's type is: " + nullCheckCompressed.GetType().ToString());
 23            if (nullCheckCompressed.GetType() == typeof(DBNull))
 24            {
 25                Log.Comment("Compressed is NULL");

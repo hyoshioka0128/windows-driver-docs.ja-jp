@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: a56e05c2fb0560a71313d502f8fcf4db09bc04ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 801f794c62a429485a550f72dd53ec9c9f86caa1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531411"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349251"
 ---
 # <a name="dbgdumpfieldxxx"></a>DBG\_ダンプ\_フィールド\_XXX
 
@@ -69,7 +69,7 @@ DBG\_ダンプ\_フィールド\_*XXX*ビット フラグを使って、**方法
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_FIELD_RETURN_ADDRESS</p></td>
-<td align="left"><p>コールバック中または<strong>Ioctl</strong> 、FIELD_INFO を返します<strong>。アドレス</strong>メンバーには、シンボルのアドレスが含まれています。&#39;s のメンバー。</p>
+<td align="left"><p>コールバック中または<strong>Ioctl</strong> 、FIELD_INFO を返します<strong>。アドレス</strong>メンバーには、シンボルのメンバーのアドレスが含まれています。</p>
 <p>場合は、型、FIELD_INFO のアドレスが指定されていません。<strong>アドレス</strong>型の先頭からメンバーの合計のオフセットが含まれています。</p></td>
 </tr>
 <tr class="even">
@@ -91,7 +91,7 @@ DBG\_ダンプ\_フィールド\_*XXX*ビット フラグを使って、**方法
 
 また、DBG マクロの結果\_ダンプ\_RECUR\_レベル (*レベル*) 構造体を再帰の深さを指定するビット セットに追加できます。 *レベル*0 ~ 15 の数値を指定できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

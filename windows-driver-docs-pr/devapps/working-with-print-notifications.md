@@ -4,12 +4,12 @@ description: このトピックでは、印刷の通知が導入されていて�
 ms.assetid: 39A06A8A-5603-44AB-8884-C12B8E2F1A45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f3bd9532cb6b4b43a5bcc96a57908e4f38d6345
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 468b48b01067b8387ec7f4be7a3850c37f789156
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532095"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350133"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>UWP デバイス アプリでの印刷通知の操作
 
@@ -58,7 +58,7 @@ DriverEvent が発生すると、UWP デバイス アプリのバック グラ�
 
      
 
-## <a name="span-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanstep-1-register-background-task"></a><span id="Step_1__Register_background_task"></span><span id="step_1__register_background_task"></span><span id="STEP_1__REGISTER_BACKGROUND_TASK"></span>手順 1:バック グラウンド タスクを登録します。
+## <a name="span-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanstep-1-register-background-task"></a><span id="Step_1__Register_background_task"></span><span id="step_1__register_background_task"></span><span id="STEP_1__REGISTER_BACKGROUND_TASK"></span>手順 1: バック グラウンド タスクを登録します。
 
 
 Windows アプリが印刷通知を処理できることを認識するためには、印刷通知のバック グラウンド タスクの拡張機能の登録にする必要があります。 この拡張機能が宣言されている、`Extension`要素で、`Category`属性に設定`windows.backgroundTasks`と`EntryPoint`属性に設定`BackgroundTask.PrintBackgroundTask`します。 拡張機能も含まれています、`Task`要素をサポートしていることを示す`systemEvent`タスクの種類。
@@ -104,14 +104,14 @@ Windows アプリが印刷通知を処理できることを認識するために
 </Package>
 ```
 
-## <a name="span-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanstep-2-configure-device-metadata"></a><span id="Step_2__Configure_device_metadata"></span><span id="step_2__configure_device_metadata"></span><span id="STEP_2__CONFIGURE_DEVICE_METADATA"></span>手順 2:デバイスのメタデータを構成します。
+## <a name="span-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanstep-2-configure-device-metadata"></a><span id="Step_2__Configure_device_metadata"></span><span id="step_2__configure_device_metadata"></span><span id="STEP_2__CONFIGURE_DEVICE_METADATA"></span>手順 2: デバイスのメタデータを構成します。
 
 
 使用している場合、**デバイス メタデータの作成ウィザード**にアプリをデバイスに関連付ける、完全なことを確認する、**通知ハンドラー**ボックスに、**指定 UWP デバイスのアプリ情報**ページ。 これにより、その印刷通知中に、アプリのバック グラウンド タスクが呼び出されることを確認できます。
 
 デバイスのメタデータを編集する方法の詳しい手順については、「、[テスト](#testing)セクション。
 
-## <a name="span-idstep3buildtheuispanspan-idstep3buildtheuispanspan-idstep3buildtheuispanstep-3-build-the-ui"></a><span id="Step_3__Build_the_UI"></span><span id="step_3__build_the_ui"></span><span id="STEP_3__BUILD_THE_UI"></span>手順 3:UI を構築します。
+## <a name="span-idstep3buildtheuispanspan-idstep3buildtheuispanspan-idstep3buildtheuispanstep-3-build-the-ui"></a><span id="Step_3__Build_the_UI"></span><span id="step_3__build_the_ui"></span><span id="STEP_3__BUILD_THE_UI"></span>手順 3: UI を構築します。
 
 
 アプリを構築する前に、デザイナーを使用する必要があり、ユーザーを設計するマーケティング チームが発生します。 ユーザー エクスペリエンスは、プロジェクトの自分の会社のブランド化の側面と、ユーザーとの接続を作成するため必要があります。
@@ -138,7 +138,7 @@ Windows アプリが印刷通知を処理できることを認識するために
 
 -   **アプリのコンテキスト内でユーザーを保持します。** 問題に関する情報を提供するときに、オンライン、またはその他のサポート資料はリンクしません。 アプリのコンテキストでユーザーを保持します。
 
-## <a name="span-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanstep-4-create-background-task"></a><span id="Step_4__Create_background_task"></span><span id="step_4__create_background_task"></span><span id="STEP_4__CREATE_BACKGROUND_TASK"></span>手順 4:バック グラウンド タスクを作成します。
+## <a name="span-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanstep-4-create-background-task"></a><span id="Step_4__Create_background_task"></span><span id="step_4__create_background_task"></span><span id="STEP_4__CREATE_BACKGROUND_TASK"></span>手順 4: バック グラウンド タスクを作成します。
 
 
 印刷通知のバック グラウンド タスクを登録すると、アプリの場合、バック グラウンド タスクのアクティブ化のハンドラーが必要です。 [設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプルでは、`PrintBackgroundTask`クラスは、印刷の通知を処理します。
@@ -261,7 +261,7 @@ void ShowToast(string title, string body)
 }
 ```
 
-## <a name="span-idstep5handleactivationspanspan-idstep5handleactivationspanspan-idstep5handleactivationspanstep-5-handle-activation"></a><span id="Step_5__Handle_activation"></span><span id="step_5__handle_activation"></span><span id="STEP_5__HANDLE_ACTIVATION"></span>手順 5:アクティブ化の処理
+## <a name="span-idstep5handleactivationspanspan-idstep5handleactivationspanspan-idstep5handleactivationspanstep-5-handle-activation"></a><span id="Step_5__Handle_activation"></span><span id="step_5__handle_activation"></span><span id="STEP_5__HANDLE_ACTIVATION"></span>手順 5: アクティブ化の処理
 
 
 印刷の通知には、バック グラウンド タスクがトリガーされた後は、トースト通知またはタイルをタップしてアプリを起動できます。 パラメーターを使用してアプリに渡されるいずれかから、アプリがアクティブになる場合`LaunchActivatedEventArgs.arguments`プロパティ。 ライセンス認証と Microsoft Store アプリのライフ サイクルについての詳細については、次を参照してください。[アプリケーションのライフ サイクル](https://go.microsoft.com/fwlink/p/?LinkId=317387)します。
@@ -303,7 +303,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
     }
     if (rootFrame.Content == null || !String.IsNullOrEmpty(args.Arguments))
     {
-        // When the navigation stack isn&#39;t restored or there are launch arguments
+        // When the navigation stack isn't restored or there are launch arguments
         // indicating an alternate launch (e.g.: via toast or secondary tile), 
         // navigate to the appropriate page, configuring the new page by passing required 
         // information as a navigation parameter
@@ -317,7 +317,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## <a name="span-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanstep-6-access-notification-details"></a><span id="Step_6__Access_notification_details"></span><span id="step_6__access_notification_details"></span><span id="STEP_6__ACCESS_NOTIFICATION_DETAILS"></span>手順 6:アクセス通知の詳細
+## <a name="span-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanstep-6-access-notification-details"></a><span id="Step_6__Access_notification_details"></span><span id="step_6__access_notification_details"></span><span id="STEP_6__ACCESS_NOTIFICATION_DETAILS"></span>手順 6: アクセス通知の詳細
 
 
 バック グラウンド タスクは、フォア グラウンド アプリを直接起動ことはできません、ために、印刷通知の詳細は、フォア グラウンド アプリがアクセスできるように、アプリの設定に保存する必要があります。 ローカル ストレージの使用方法の詳細については、次を参照してください。[クイック スタート: アプリのローカル データ](https://go.microsoft.com/fwlink/p/?LinkId=317216)します。

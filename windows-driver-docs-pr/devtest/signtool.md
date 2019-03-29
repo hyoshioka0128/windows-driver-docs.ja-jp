@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa3d4475c640b0ff2ed6086c6d1a68bfa40d5b8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f5a5f655d962d532da1c51025c15848cfa49a887
+ms.sourcegitcommit: 5bfb01d5aa52632b54182f3db87454df2d61cbe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560043"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56905511"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -277,7 +277,7 @@ SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertif
 SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertificate /t http://timestamp.verisign.com/scripts/timstamp.dll AbcDriverFile.sys
 ```
 
-署名する方法の例を次に、[ドライバー パッケージの](https://msdn.microsoft.com/library/windows/hardware/ff544840)カタログ ファイルを使用して、[コマーシャル リリースの証明書](https://msdn.microsoft.com/library/windows/hardware/ff539935)または[市販のテスト証明書](https://msdn.microsoft.com/library/windows/hardware/ff539940)します。 この例は、ドライバー パッケージに署名するために有効な 32 ビット バージョンの Windows Vistaand 以降のバージョンの Windows で、カーネル モードを適用しないコード署名ポリシー。 例では、ドライバー パッケージのカタログ ファイル CatalogFileName.cat を署名します。 カタログ ファイルの署名に、TestCertificateStore 証明書ストアにある、AbcTestCertificate テスト証明書を使用します。
+署名する方法の例を次に、[ドライバー パッケージの](https://msdn.microsoft.com/library/windows/hardware/ff544840)カタログ ファイルを使用して、[コマーシャル リリースの証明書](https://msdn.microsoft.com/library/windows/hardware/ff539935)または[市販のテスト証明書](https://msdn.microsoft.com/library/windows/hardware/ff539940)します。 この例は、Windows Vista の 32 ビット バージョン、以降のバージョンの Windows で、カーネル モード コード署名ポリシーを適用しないドライバー パッケージに署名するため無効です。 例では、ドライバー パッケージのカタログ ファイル CatalogFileName.cat を署名します。 カタログ ファイルの署名に、TestCertificateStore 証明書ストアにある、AbcTestCertificate テスト証明書を使用します。
 
 例は、カタログ ファイルの署名にも、パブリックに利用可能なタイムスタンプ サーバーを使用します。 タイムスタンプ サーバーは VeriSign によって提供され、その URL が http://timestamp.verisign.com/scripts/timstamp.dllします。
 

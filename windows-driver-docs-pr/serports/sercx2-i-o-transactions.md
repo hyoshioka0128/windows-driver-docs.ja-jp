@@ -1,17 +1,17 @@
 ---
-title: SerCx2 I/O トランザクション
+title: SerCx2 の I/O トランザクション
 description: SerCx2 には、読み取り (IRP_MJ_READ) と、コント ローラーのシリアル ドライバーの書き込み (IRP_MJ_WRITE) 要求の処理が簡略化します。
 ms.assetid: C1B3F059-A445-4224-8316-DBF194CE6A80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 373ff5f1ae7020b134695b6d0d67f535bb81bedb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0c6d54870ac9a93ece45d465619404cc88add825
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551450"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349203"
 ---
-# <a name="sercx2-io-transactions"></a>SerCx2 I/O トランザクション
+# <a name="sercx2-io-transactions"></a>SerCx2 の I/O トランザクション
 
 
 SerCx2 読み取りの処理を簡略化 ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) と書き込み ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) には、コント ローラーのシリアル ドライバーの要求。 読み取りまたは書き込み要求に応答して、SerCx2 シリアル コント ローラーのドライバーを 1 つまたは複数の I/O トランザクションを発行します。 ドライバーの観点からは、各トランザクションは、単純、完全な I/O 操作です。
@@ -37,11 +37,11 @@ SerCx2 読み取りの処理を簡略化 ([**IRP\_MJ\_読み取り**](https://ms
 </tr>
 <tr class="even">
 <td><p><a href="sercx2-pio-receive-transactions.md" data-raw-source="[SerCx2 PIO-Receive Transactions](sercx2-pio-receive-transactions.md)">SerCx2 PIO 受信トランザクション</a></p></td>
-<td><p>SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを受信します。 PIO 受信トランザクションを開始するには、SerCx2 はドライバーを呼び出します。&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/dn265214" data-raw-source="[&lt;em&gt;EvtSerCx2PioReceiveReadBuffer&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265214)"> <em>EvtSerCx2PioReceiveReadBuffer</em> </a>イベント コールバック関数と、読み取りバッファーのパラメーターとして提供します。</p></td>
+<td><p>SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを受信します。 SerCx2 PIO 受信トランザクションを開始するには、ドライバーが呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/dn265214" data-raw-source="[&lt;em&gt;EvtSerCx2PioReceiveReadBuffer&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265214)"> <em>EvtSerCx2PioReceiveReadBuffer</em> </a>イベント コールバック関数と、読み取りバッファーのパラメーターとして提供します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="sercx2-pio-transmit-transactions.md" data-raw-source="[SerCx2 PIO-Transmit Transactions](sercx2-pio-transmit-transactions.md)">SerCx2 PIO 送信トランザクション</a></p></td>
-<td><p>SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを送信します。 PIO 送信トランザクションを開始するには、SerCx2 はドライバーを呼び出します。&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/dn265223" data-raw-source="[&lt;em&gt;EvtSerCx2PioTransmitWriteBuffer&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265223)"> <em>EvtSerCx2PioTransmitWriteBuffer</em> </a>イベント コールバック関数と書き込みをバッファーをパラメーターとして提供します。</p></td>
+<td><p>SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを送信します。 SerCx2 PIO 送信トランザクションを開始するには、ドライバーが呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/dn265223" data-raw-source="[&lt;em&gt;EvtSerCx2PioTransmitWriteBuffer&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265223)"> <em>EvtSerCx2PioTransmitWriteBuffer</em> </a>イベント コールバック関数と書き込みをバッファーをパラメーターとして提供します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="sercx2-system-dma-receive-transactions.md" data-raw-source="[SerCx2 System-DMA-Receive Transactions](sercx2-system-dma-receive-transactions.md)">SerCx2 DMA 受信システム トランザクション</a></p></td>

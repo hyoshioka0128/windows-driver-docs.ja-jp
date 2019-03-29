@@ -4,12 +4,12 @@ description: このトピックでは、オーディオ処理オブジェクト 
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93789860ff98d2b4064b91eaba980641f4460465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fa596eeaa6d6962226863023402da5f75de61397
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553458"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349545"
 ---
 # <a name="implementing-audio-processing-objects"></a>オーディオ処理オブジェクトの実装
 
@@ -56,7 +56,7 @@ APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言さ
 
     • [IAudioSystemEffects](https://msdn.microsoft.com/library/windows/hardware/ff536514)します。 インターフェイスをオーディオ エンジンは、システムの影響 APO として DLL を認識します。
 
--   すべての APOs リアルタイム システムの互換性があります。 これは次のことを意味します。
+-   すべての APOs リアルタイム システムの互換性があります。 これによって、次のことが起こります。
 
     • リアルタイム インターフェイスのメンバーであるすべてのメソッドは、非ブロッキングのメンバーとして実装する必要があります。 する必要がありますいないのブロック、ページのメモリを使用して、または、ブロックしているシステム ルーチンを呼び出します。
 
@@ -109,7 +109,7 @@ SYSVAD サンプルでは、APO 開発者に特に重要となるはその 1 つ
 
 |                    |                                       |
 |--------------------|---------------------------------------|
-| **プロジェクト**        | **説明**                       |
+| **プロジェクト**        | **[説明]**                       |
 | SwapAPO            | たとえば APO サンプル コードです。       |
 
  
@@ -118,7 +118,7 @@ Sysvad サンプル内の他のプロジェクトは、次に示します。
 
 |                        |                                            |
 |------------------------|--------------------------------------------|
-| **プロジェクト**            | **説明**                            |
+| **プロジェクト**            | **[説明]**                            |
 | PhoneAudioSample       | モバイルのオーディオ ドライバーのサンプル コードです。     |
 | TabletAudioSample      | 代替オーディオ ドライバーのサンプル コードです。 |
 | KeywordDetectorAdapter | キーワード detector のアダプターのサンプル コード |
@@ -130,7 +130,7 @@ SwapAPO サンプルについては、プライマリ ヘッダー ファイル�
 
 |                      |                                                                   |
 |----------------------|-------------------------------------------------------------------|
-| **ファイル**             | **説明**                                                   |
+| **ファイル**             | **[説明]**                                                   |
 | Swap.cpp             | スワップ APO の実装が含まれている C++ コードです。        |
 | SwapAPOMFX.cpp       | CSwapAPOMFX の実装                                     |
 | SwapAPOSFX.cpp       | CSwapAPOSFX の実装                                     |
@@ -479,7 +479,7 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 ```inf
 ; wdmaudio.inf – this is where WmaLfxGfxDsp.dll is registered
 ...
-;; MsApoFxProxy.Registration section can be called by OEM&#39;s to install the discover-effects APO
+;; MsApoFxProxy.Registration section can be called by OEM's to install the discover-effects APO
 [MsApoFxProxy.Registration]
 AddReg = MsApoFxProxy.AddReg
 CopyFiles = MsApoFxProxy.CopyList

@@ -1,20 +1,20 @@
 ---
-title: スマート カードのドライバー ライブラリ
-description: スマート カードのドライバー ライブラリ
+title: スマート カード ドライバー ライブラリ
+description: スマート カード ドライバー ライブラリ
 ms.assetid: 12f67a8d-9281-4f79-88c0-e1c9dff5a05d
 keywords:
 - スマート カードのドライバー WDK、ライブラリ
 - ライブラリの WDK スマート カード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df49d8529c63e6a43236f2f444b431834f7283d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 682f9bbd6f6bcacd2c2722b4315b03a1730fcae9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551580"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349159"
 ---
-# <a name="smart-card-driver-library"></a>スマート カードのドライバー ライブラリ
+# <a name="smart-card-driver-library"></a>スマート カード ドライバー ライブラリ
 
 
 ## <span id="_ntovr_smart_card_driver_library"></span><span id="_NTOVR_SMART_CARD_DRIVER_LIBRARY"></span>
@@ -68,7 +68,7 @@ Microsoft では、ほとんどのスマート カード リーダーのドラ�
 </tr>
 <tr class="even">
 <td align="left"><p><em>Smclib.sys</em></p></td>
-<td align="left"><p>ライブラリ&#39;WDM ドライバーのバイナリ ファイル。</p></td>
+<td align="left"><p>WDM ドライバー ライブラリのバイナリ ファイル。</p></td>
 </tr>
 </tbody>
 </table>

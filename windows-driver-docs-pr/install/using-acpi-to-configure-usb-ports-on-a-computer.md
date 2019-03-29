@@ -1,17 +1,17 @@
 ---
-title: ACPI を使用してコンピューターに USB ポートを構成するには
-description: ACPI を使用してコンピューターに USB ポートを構成するには
+title: ACPI を使用したコンピューターへの USB ポートの構成
+description: ACPI を使用したコンピューターへの USB ポートの構成
 ms.assetid: 999f9fef-512c-415a-abc6-d64560c5c2f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 871efd4509c3e207e4099292131175e419c27537
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a1eaaee115eb76b3652dd335ecff7d56145bdbeb
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553989"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349303"
 ---
-# <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>ACPI を使用してコンピューターに USB ポートを構成するには
+# <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>ACPI を使用したコンピューターへの USB ポートの構成
 
 
 システムでは、USB ポートの構成を正確に反映するように、ACPI BIOS の変更が必要とする場合は、ポート、ポートを構成するときにデバイスを接続するユーザーの機能を検討してください。
@@ -43,7 +43,7 @@ ACPI を使用して、USB ポートの構成を指定する場合は、USB ポ�
 <td align="left"><p>ポートは、ユーザーに表示されているコンピューター上のパネルの表面に公開されます。</p></td>
 <td align="left"><p>(0 xff) の設定します。</p></td>
 <td align="left"><p>(1) の設定します。</p></td>
-<td align="left"><p>設定</p></td>
+<td align="left"><p>Set</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ポートが非表示か内部とユーザーの接続しデバイスを切断できません自由に。</p></td>
@@ -93,7 +93,7 @@ ACPI を使用して、USB ポートの構成を指定する場合は、USB ポ�
     ```cpp
     Name(_UPC, Package(){
         0xFF,         // Port is connectable
-        0x00,         // Connector type, Type &#39;A&#39; in this case
+        0x00,         // Connector type, Type 'A' in this case
         0x00000000,   // Reserved 0, must be zero
         0x00000000})  // Reserved 1, must be zero
 

@@ -9,12 +9,12 @@ keywords:
 - ハーフトーン WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33199f1bd27a1ae1880fd1e318fc13901664b2f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8832636c506c698e0576b0a8101915cad29f3c7f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528516"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349542"
 ---
 # <a name="gdi-halftone-services"></a>GDI ハーフトーン サービス
 
@@ -50,7 +50,7 @@ GDI ハーフトーン サポートには、次の表に示されているサー
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567308" data-raw-source="[&lt;strong&gt;HTUI_DeviceColorAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567308)"><strong>HTUI_DeviceColorAdjustment</strong></a></p></td>
-<td align="left"><p>デバイスを調整するユーザーを許可する ダイアログ ボックスが表示されます&#39;ハーフトーン プロパティ。</p></td>
+<td align="left"><p>デバイスのハーフトーン プロパティを調整するユーザーを許可する ダイアログ ボックスが表示されます。</p></td>
 </tr>
 </tbody>
 </table>

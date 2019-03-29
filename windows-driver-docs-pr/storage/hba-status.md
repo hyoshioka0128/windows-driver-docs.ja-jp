@@ -4,12 +4,12 @@ description: HBA\_状態
 ms.assetid: 2fabfa86-7f8a-4c90-8aa0-53e42bd5c075
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 47421b11a79fdd3433cca28230e55831b7911376
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2a7fcd25e206cc64fdfaa9ecfc9c89bd47d43c63
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529216"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349157"
 ---
 # <a name="hbastatus"></a>HBA\_状態
 
@@ -29,7 +29,7 @@ HBA\_状態 WMI クラスの修飾子を WMI プロバイダー HBA に作成し
 <thead>
 <tr class="header">
 <th align="left">修飾子</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -55,7 +55,7 @@ HBA\_状態 WMI クラスの修飾子を WMI プロバイダー HBA に作成し
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_ILLEGAL_WWN</p></td>
-<td align="left"><p>世界中の名前が認識されません。 世界中の名前をに関する情報は、T11 委員会を参照してください。&#39;s<em>ファイバー チャネル HBA API</em>仕様。</p></td>
+<td align="left"><p>世界中の名前が認識されません。 世界中の名前をに関する情報は、T11 委員会を参照してください。<em>ファイバー チャネル HBA API</em>仕様。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_ILLEGAL_INDEX</p></td>
@@ -99,7 +99,7 @@ HBA\_状態 WMI クラスの修飾子を WMI プロバイダー HBA に作成し
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_AMBIGUOUS_WWN</p></td>
-<td align="left"><p>複数のアダプターでは、一致するワールドワイド名 (WWN) があります。 これは、複数のアダプターの NodeWWN が同じ場合に発生する可能性があります。 一般に名前を世界中でに関する情報と NodeWWN 具体的には、T11 委員会を参照してください&#39;s<em>ファイバー チャネル HBA API</em>仕様。</p></td>
+<td align="left"><p>複数のアダプターでは、一致するワールドワイド名 (WWN) があります。 これは、複数のアダプターの NodeWWN が同じ場合に発生する可能性があります。 一般に名前を世界中でに関する情報と NodeWWN 具体的には、T11 委員会を参照してください<em>ファイバー チャネル HBA API</em>仕様。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_LOCAL_BUS</p></td>
@@ -119,7 +119,7 @@ HBA\_状態 WMI クラスの修飾子を WMI プロバイダー HBA に作成し
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_TARGET_FCID</p></td>
-<td align="left"><p>永続的なバインド要求には、無効な FCP ターゲット FCID が含まれています。 FCP ターゲット FCID の定義、T11 委員会を参照してください。&#39;s<em>ファイバー チャネル HBA API</em>仕様。</p></td>
+<td align="left"><p>永続的なバインド要求には、無効な FCP ターゲット FCID が含まれています。 FCP ターゲット FCID の定義、T11 委員会を参照してください。<em>ファイバー チャネル HBA API</em>仕様。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_TARGET_NODE_WWN</p></td>
@@ -143,11 +143,11 @@ HBA\_状態 WMI クラスの修飾子を WMI プロバイダー HBA に作成し
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_NOT_A_TARGET</p></td>
-<td align="left"><p>SCSI コマンドは、Nx_Port が SCSI ターゲット ポートに送信されました。 Nx_Port の定義、T11 委員会を参照してください。&#39;s<em>ファイバー チャネル HBA API</em>仕様。</p></td>
+<td align="left"><p>SCSI コマンドは、Nx_Port が SCSI ターゲット ポートに送信されました。 Nx_Port の定義、T11 委員会を参照してください。<em>ファイバー チャネル HBA API</em>仕様。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_UNSUPPORTED_FC4</p></td>
-<td align="left"><p>要求は、サポートされていない、FC 4 プロトコルに関するしました。 FC 4 プロトコルの詳細については、T11 委員会を参照してください。&#39;s<em>ファイバー チャネル HBA API</em>仕様。</p></td>
+<td align="left"><p>要求は、サポートされていない、FC 4 プロトコルに関するしました。 FC 4 プロトコルの詳細については、T11 委員会を参照してください。<em>ファイバー チャネル HBA API</em>仕様。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_INCAPABLE</p></td>

@@ -1,5 +1,5 @@
 ---
-title: DevCon リソース
+title: DevCon Resources
 description: 指定されたデバイスに割り当てられたリソースを一覧表示します。 リソースは、DMA チャネル、I/O ポート、IRQ、およびメモリ アドレスなどのバスの割り当てとアドレス指定可能なパスです。 ローカルおよびリモート コンピューターで有効です。
 ms.assetid: 06bf2a5a-07a1-42b4-90db-ed74ce84d075
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e924d4d9eb7587518eee8868ab7af09cc2af404b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 33efd060cd0e07eb4dc619afd6f26c9a539034e2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557720"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349443"
 ---
-# <a name="devcon-resources"></a>DevCon リソース
+# <a name="devcon-resources"></a>DevCon Resources
 
 
 指定されたデバイスに割り当てられたリソースを一覧表示します。 リソースは、DMA チャネル、I/O ポート、IRQ、およびメモリ アドレスなどのバスの割り当てとアドレス指定可能なパスです。 ローカルおよびリモート コンピューターで有効です。
@@ -67,9 +67,9 @@ ms.locfileid: "56557720"
 <td align="left"><p>たとえば、デバイス インスタンス ID を示します <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>&#39;</strong></p>
+<td align="left"><p><strong>'</strong></p>
 <p>(一重引用符)</p></td>
-<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に <strong>&#39;* PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
+<td align="left"><p>リテラル文字列と一致する (正確に表示される)。 示すアスタリスクは、ID 名の一部であるし、たとえば、ワイルドカード文字ではないは、単一引用符を含む文字列の前に<strong>' * PNP0600</strong>ここで、* PNP0600 ハードウェア ID (アスタリスクを含む) です。</p></td>
 </tr>
 </tbody>
 </table>

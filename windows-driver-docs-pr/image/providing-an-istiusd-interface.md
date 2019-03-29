@@ -1,17 +1,17 @@
 ---
-title: IStiUSD インターフェイスを提供します。
-description: IStiUSD インターフェイスを提供します。
+title: IStiUSD インターフェイスの提供
+description: IStiUSD インターフェイスの提供
 ms.assetid: ed15b56b-0b63-4983-a4ff-df379a2b9de9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4a10d6c07ecb3a20bf3a24f530c1d178e3b4df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 03af7c0b82ee5d37f7d1b0702cb2fa47f7ccddc0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560657"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350033"
 ---
-# <a name="providing-an-istiusd-interface"></a>IStiUSD インターフェイスを提供します。
+# <a name="providing-an-istiusd-interface"></a>IStiUSD インターフェイスの提供
 
 
 
@@ -51,7 +51,7 @@ WIA は STI に基づいています。 STI に WIA ミニドライバーの統�
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543817" data-raw-source="[&lt;strong&gt;IStiUSD::GetCapabilities&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543817)"><strong>IStiUSD::GetCapabilities</strong></a></p></td>
-<td><p>静止画像デバイスを返します&#39;機能します。</p></td>
+<td><p>デバイスの機能に静止画像を返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543820" data-raw-source="[&lt;strong&gt;IStiUSD::GetLastErrorInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543820)"><strong>IStiUSD::GetLastErrorInfo</strong></a></p></td>

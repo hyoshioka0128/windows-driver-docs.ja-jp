@@ -12,12 +12,12 @@ keywords:
 - される Srb WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e363ad5e03a9330bbf6497bb740deb75eeaca2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 61a1165316976e6a91e49f2ea2c23dc23773a42a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552813"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349385"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 ミニドライバーの操作
 
@@ -55,8 +55,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +74,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557605" data-raw-source="[&lt;em&gt;CamConfigureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557605)"> <em>CamConfigureEx</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557605" data-raw-source="[&lt;em&gt;CamConfigureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557605)"> <em>CamConfigureEx</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>カメラのミニドライバー</p></td>
@@ -86,7 +86,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557614" data-raw-source="[&lt;em&gt;CamInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557614)"> <em>CamInitialize</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557614" data-raw-source="[&lt;em&gt;CamInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557614)"> <em>CamInitialize</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -108,8 +108,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +119,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
-<td><p>デバイスのプロパティ セット内の配列へのポインターの塗りつぶし<em>stream.sys</em>クラス ドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559690" data-raw-source="[&lt;strong&gt;HW_STREAM_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559690)"> <strong>HW_STREAM_HEADER</strong> </a>構造体。</p></td>
+<td><p>デバイスのプロパティ セット内の配列へのポインターの塗りつぶし<em>stream.sys</em>クラス ドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff559690" data-raw-source="[&lt;strong&gt;HW_STREAM_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559690)"> <strong>HW_STREAM_HEADER</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td><p>カメラのミニドライバー</p></td>
@@ -153,8 +153,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -174,8 +174,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -195,8 +195,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -216,8 +216,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -241,8 +241,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -260,11 +260,11 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557600" data-raw-source="[&lt;em&gt;CamAllocateBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557600)"> <em>CamAllocateBandwidthEx</em> </a>ビデオ形式のデータに基づく帯域幅の割り当てし、ビデオ形式の最大バッファー サイズを取得するコールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557600" data-raw-source="[&lt;em&gt;CamAllocateBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557600)"> <em>CamAllocateBandwidthEx</em> </a>ビデオ形式のデータに基づく帯域幅の割り当てし、ビデオ形式の最大バッファー サイズを取得するコールバック関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>カメラのミニドライバー</p></td>
-<td><p>アイソクロナス チャネル計算&#39;s 最大パケット サイズを要求されたフレーム レートと出力の windows のサイズを満たします。</p></td>
+<td><p>要求されたフレーム レートと出力の windows のサイズに適合するアイソクロナス チャネルの最大パケット サイズを計算します。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -280,7 +280,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -302,8 +302,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -317,7 +317,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -325,7 +325,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>アイソクロナスを解放するコールバック関数バスの帯域幅、該当する場合。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>アイソクロナスを解放するコールバック関数バスの帯域幅、該当する場合。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -347,8 +347,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -358,11 +358,11 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>任意のストリームが開いている場合は、呼び出すようにミニドライバーして閉じます&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>各ストリームのコールバック関数。</p></td>
+<td><p>任意のストリームが開いている場合は、呼び出すようにミニドライバーのして閉じます<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>コールバック各ストリームの機能です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557646" data-raw-source="[&lt;em&gt;CamUnInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557646)"> <em>CamUnInitialize</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557646" data-raw-source="[&lt;em&gt;CamUnInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557646)"> <em>CamUnInitialize</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -380,8 +380,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -395,7 +395,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>すべての開いているストリームにコールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>すべての開いているストリームにコールバック関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
@@ -413,8 +413,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -442,8 +442,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -457,7 +457,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>カメラのミニドライバー</p></td>
@@ -475,8 +475,8 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
-<th>アクション</th>
+<th>コンポーネント</th>
+<th>操作</th>
 </tr>
 </thead>
 <tbody>
@@ -494,11 +494,11 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>コールバック関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>呼び出すようにミニドライバー&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>コールバック関数。</p></td>
+<td><p>呼び出すようにミニドライバーの<a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>コールバック関数。</p></td>
 </tr>
 </tbody>
 </table>

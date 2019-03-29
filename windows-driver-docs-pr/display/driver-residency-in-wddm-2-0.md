@@ -1,22 +1,22 @@
 ---
-title: WDDM 2.0 では、ドライバーの保存場所
+title: WDDM 2.0 でのドライバー常駐
 description: ここでは、Windows Display Driver Model (WDDM) 2.0 用に保存場所の変更をドライバーの詳細に説明します。 説明されている機能では、Windows 10 以降で使用できます。
 ms.assetid: 9BD0138A-E957-4675-8E08-2750825A5C87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23a20fdee48387ef9f04e3615a7b3221bdf08bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 86f179b00a5a0300b8354ccebaa25bc4013fbe5f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557614"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348629"
 ---
-# <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 では、ドライバーの保存場所
+# <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 でのドライバー常駐
 
 
 ここでは、Windows Display Driver Model (WDDM) 2.0 用に保存場所の変更をドライバーの詳細に説明します。 説明されている機能では、Windows 10 以降で使用できます。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -48,8 +48,8 @@ ms.locfileid: "56557614"
 <td align="left"><p>グラフィックス プロセッシング ユニット (GPU) への常駐ではない割り当ては無効であり、エラーを生成したアプリケーションの削除、デバイスになります。</p>
 <p>これには、エラーが発生したエンジンがかどうかを示す仮想 GPU をサポートするかどうかに依存するこのような無効なアクセスの処理の 2 つの異なるモデルがあります。</p>
 <ul>
-<li>エンジンの don&#39;不正なアクセスには、ユーザー モード ドライバーではない割り当てを参照する割り当てリストを送信するときに発生します t GPU 仮想アドレス指定のサポートと、メモリ参照の修正プログラムを割り当てと更新プログラムの場所のリストを使用すると、デバイスに常駐している (つまりユーザー モード ドライバーから&#39;t と呼ばれる<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResidentCb</em> </a>その割り当てに)。 これが発生したグラフィックスのカーネルに欠陥のあるコンテキストまたはデバイスがエラーで保存されます。</li>
-<li>GPU をサポートしてエンジンの仮想アドレス指定がへのアクセスが無効か、仮想アドレスの割り当てがないため、GPU 仮想アドレスか、有効な割り当てがいない&#39;t されて常駐行われると、GPU を想定させる、割り込みの形式で復旧不可能なページ フォールトします。 ページ フォールトの割り込みが発生したときに、カーネル モード ドライバーは新しいページ フォールト通知によるグラフィックス カーネルにエラーを転送する必要があります。 この通知を受信するとは、グラフィックス カーネルはリセット エラーが発生したエンジンのエンジンを開始し、欠陥のあるコンテキスト/デバイスをエラーにします。 エンジンのリセットが成功しなかった場合、グラフィックス カーネルは、フル アダプター全体のタイムアウト検出と復旧 (TDR) をすると、エラーを昇格します。</li>
+<li>アクセスが無効ですが、ユーザー モード ドライバーに存在することはない割り当てを参照する割り当てリストを送信するときに発生エンジンの GPU の仮想アドレス指定をサポートし、割り当てとメモリ参照の修正プログラムに修正プログラムの場所のリストを使用しない場合、デバイス (つまり、ユーザー モード ドライバーと呼ばれる<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResidentCb</em> </a>その割り当てに)。 これが発生したグラフィックスのカーネルに欠陥のあるコンテキストまたはデバイスがエラーで保存されます。</li>
+<li>エンジンの GPU 仮想アドレス指定をサポートせず、無効な GPU 仮想アドレスにアクセスする場合か、仮想アドレスの割り当てはありませんが、有効な割り当てはまたは常駐が作成されていないため、GPU は、発生が予想される、割り込みの形式で復旧不可能なページ フォールトします。 ページ フォールトの割り込みが発生したときに、カーネル モード ドライバーは新しいページ フォールト通知によるグラフィックス カーネルにエラーを転送する必要があります。 この通知を受信するとは、グラフィックス カーネルはリセット エラーが発生したエンジンのエンジンを開始し、欠陥のあるコンテキスト/デバイスをエラーにします。 エンジンのリセットが成功しなかった場合、グラフィックス カーネルは、フル アダプター全体のタイムアウト検出と復旧 (TDR) をすると、エラーを昇格します。</li>
 </ul></td>
 </tr>
 <tr class="odd">

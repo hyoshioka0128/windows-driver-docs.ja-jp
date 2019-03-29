@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_RECEIVE_FILTER_FIELD (0x65) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f49ff68eb1b443af8793f826e96b24fc39892d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 490317aa0447f931556460cdfa31347be2360250
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553680"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349627"
 ---
 # <a name="wditlvreceivefilterfield-0x65"></a>WDI\_TLV\_受信\_フィルター\_フィールド (0x65)
 
@@ -38,7 +38,7 @@ WDI\_TLV\_受信\_フィルター\_フィールドがフィールド ネット�
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -47,7 +47,7 @@ WDI\_TLV\_受信\_フィルター\_フィールドがフィールド ネット�
 <td>UINT32</td>
 <td>フラグのビットごとの OR を指定します。 可能なフラグ値は、WDI_RECEIVE_FILTER_FIELD_MAC_HEADER_VLAN_UNTAGGED_OR_ZERO です。 このフラグが設定されている場合、ネットワーク アダプターはのみ、次の条件に合格した受信パケット数を示す必要があります。
 <ul>
-<li>パケット&#39;MAC アドレスが MAC ヘッダー フィールドの指定したテストと一致します。</li>
+<li>パケットの MAC アドレスでは、MAC ヘッダー フィールドの指定したテストと一致します。</li>
 <li>パケットは、VLAN タグが含まれていないか、または id が 0 の VLAN タグがあります。</li>
 </ul></td>
 </tr>
@@ -76,7 +76,7 @@ WDI\_TLV\_受信\_フィルター\_フィールドがフィールド ネット�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

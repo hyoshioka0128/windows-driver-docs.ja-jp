@@ -1,6 +1,6 @@
 ---
-title: 中間のネットワーク フィルター ドライバーのインストール要件
-description: 中間のネットワーク フィルター ドライバーのインストール要件
+title: ネットワーク フィルター中間ドライバーのインストール要件
+description: ネットワーク フィルター中間ドライバーのインストール要件
 ms.assetid: 17eb9045-1466-4bd2-8805-964d339c4a9f
 keywords:
 - ネットワーク フィルター ドライバーの中間のインストール要件 WDK
@@ -8,14 +8,14 @@ keywords:
 - デバイス INF ファイル WDK ネットワー キング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eee0267881153bb7b24c0369da9c179dab7c0f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5d26d99d7228e4fe7acd045eac97671eb22d97cc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553922"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349339"
 ---
-# <a name="installation-requirements-for-network-filter-intermediate-drivers"></a>中間のネットワーク フィルター ドライバーのインストール要件
+# <a name="installation-requirements-for-network-filter-intermediate-drivers"></a>ネットワーク フィルター中間ドライバーのインストール要件
 
 
 
@@ -44,7 +44,7 @@ ms.locfileid: "56553922"
 <thead>
 <tr class="header">
 <th align="left">INF ファイルのセクション</th>
-<th align="left">状況</th>
+<th align="left">状態</th>
 <th align="left">コメント</th>
 </tr>
 </thead>
@@ -137,7 +137,7 @@ ms.locfileid: "56553922"
 <thead>
 <tr class="header">
 <th align="left">INF ファイルのセクション</th>
-<th align="left">状況</th>
+<th align="left">状態</th>
 <th align="left">コメント</th>
 </tr>
 </thead>
@@ -172,7 +172,7 @@ ms.locfileid: "56553922"
 <tr class="even">
 <td align="left"><p><a href="ddinstall-services-section-in-a-network-inf-file.md" data-raw-source="[DDInstall.Services Section](ddinstall-services-section-in-a-network-inf-file.md)">DDInstall.Services セクション</a></p></td>
 <td align="left"><p>必須</p></td>
-<td align="left"><p><em>ServiceName</em>の値、 <strong>AddService</strong>ディレクティブは、フィルター コンポーネントと一致する必要があります&#39;s サービスの値の下、 <strong>Ndi</strong>キー。</p></td>
+<td align="left"><p><em>ServiceName</em>の値、 <strong>AddService</strong>ディレクティブは、下のフィルター コンポーネントのサービスの値と一致する必要があります、 <strong>Ndi</strong>キー。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="add-registry-sections-in-a-network-inf-file.md" data-raw-source="[Add-registry-sections](add-registry-sections-in-a-network-inf-file.md)">Add-registry-sections</a></p></td>

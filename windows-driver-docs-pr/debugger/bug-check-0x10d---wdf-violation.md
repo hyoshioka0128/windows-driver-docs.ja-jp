@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 066ed6ba5e877d51fde3db7c84820e52b87a0f47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f0c3df21759278e491a429ebd510941362b4ac4c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529513"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349413"
 ---
-# <a name="bug-check-0x10d-wdfviolation"></a>バグ チェック 0x10D の。WDF\_違反
+# <a name="bug-check-0x10d-wdfviolation"></a>バグ チェック 0x10D:WDF\_違反
 
 
 WDF\_違反のバグ チェックが 0x0000010D の値を持ちます。 これは、カーネル モード ドライバー フレームワーク (KMDF) には Windows では、framework ベースのドライバーにエラーが見つかりましたが検出されたことを示します。
@@ -69,7 +69,7 @@ WDF\_違反のバグ チェックが 0x0000010D の値を持ちます。 これ�
 <tr class="even">
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>呼び出し元&#39;s アドレス</p></td>
+<td align="left"><p>呼び出し元のアドレス</p></td>
 <td align="left"><p>A <strong>NULL</strong>以外に必要な関数に渡されたパラメーター<strong>NULL</strong>値。</p></td>
 </tr>
 <tr class="odd">
@@ -124,7 +124,7 @@ WDF\_違反のバグ チェックが 0x0000010D の値を持ちます。 これ�
 <td align="left"><p>0 xd</p></td>
 <td align="left"><p>WDFDEVICE ハンドル</p></td>
 <td align="left"><p>電源 IRP へのポインター</p></td>
-<td align="left"><p>デバイス&#39;電源ポリシー所有者は電源要求しなかった IRP を受信します。 複数の電源ポリシーの所有者である可能性がありますが、1 つだけが許可されています。 KMDF ドライバーは、呼び出すことによって電源ポリシーの所有権を変更できる<strong>WdfDeviceInitSetPowerPolicyOwnership</strong>します。</p></td>
+<td align="left"><p>デバイスの電源ポリシー所有者は、電源要求しなかった IRP を受信しました。 複数の電源ポリシーの所有者である可能性がありますが、1 つだけが許可されています。 KMDF ドライバーは、呼び出すことによって電源ポリシーの所有権を変更できる<strong>WdfDeviceInitSetPowerPolicyOwnership</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xE</p></td>

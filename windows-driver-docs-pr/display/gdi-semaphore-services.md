@@ -9,12 +9,12 @@ keywords:
 - サービス WDK GDI をセマフォします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a399913fed70ed620a0fc18d6af0661b68621b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22bfacdab96dcf621e2bce474be77a41a4deb4b8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527449"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349099"
 ---
 # <a name="gdi-semaphore-services"></a>GDI セマフォ サービス
 
@@ -50,7 +50,7 @@ GDI は、セマフォや安全なセマフォに関連するサービスの選�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564819" data-raw-source="[&lt;strong&gt;EngDeleteSemaphore&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564819)"><strong>EngDeleteSemaphore</strong></a></p></td>
-<td align="left"><p>システム セマフォ オブジェクトを削除します。&#39;リソース の一覧。</p></td>
+<td align="left"><p>システムのリソースの一覧から、セマフォ オブジェクトを削除します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564959" data-raw-source="[&lt;strong&gt;EngInitializeSafeSemaphore&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564959)"><strong>EngInitializeSafeSemaphore</strong></a></p></td>

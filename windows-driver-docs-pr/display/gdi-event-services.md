@@ -9,12 +9,12 @@ keywords:
 - WDK GDI のイベント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25336d59aa1afab1f6f109346d2d897878621b40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ba788af90887e402d6692c612c6ec3d1f89427c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531315"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349612"
 ---
 # <a name="gdi-event-services"></a>GDI イベント サービス
 
@@ -58,7 +58,7 @@ GDI は、イベントに関連するいくつかのサービスを提供しま�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565013" data-raw-source="[&lt;strong&gt;EngSetEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565013)"><strong>EngSetEvent</strong></a></p></td>
-<td align="left"><p>指定したイベント オブジェクトをシグナル状態に設定し、イベント オブジェクトを返します&#39;s 以前の状態。</p></td>
+<td align="left"><p>シグナルの状態を指定したイベント オブジェクトを設定し、イベント オブジェクトの以前の状態を返します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565434" data-raw-source="[&lt;strong&gt;EngUnmapEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565434)"><strong>EngUnmapEvent</strong></a></p></td>

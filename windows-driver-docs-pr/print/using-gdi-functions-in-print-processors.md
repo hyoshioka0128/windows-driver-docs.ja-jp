@@ -1,6 +1,6 @@
 ---
-title: プリント プロセッサの GDI 関数の使用
-description: プリント プロセッサの GDI 関数の使用
+title: プリント プロセッサで GDI 関数を使用する
+description: プリント プロセッサで GDI 関数を使用する
 ms.assetid: 2ad62308-ab42-4475-ac42-f753d5091251
 keywords:
 - EMF レコード再生 WDK プリント プロセッサ
@@ -8,14 +8,14 @@ keywords:
 - NT EMF WDK のプリント プロセッサ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f147aa77f12922470cda1518bed95cf8762f24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d9d512cd7f12f6e3929f1994f00bb5a945c551b5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557444"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349419"
 ---
-# <a name="using-gdi-functions-in-print-processors"></a>プリント プロセッサの GDI 関数の使用
+# <a name="using-gdi-functions-in-print-processors"></a>プリント プロセッサで GDI 関数を使用する
 
 
 
@@ -49,11 +49,11 @@ ms.locfileid: "56557444"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549470" data-raw-source="[&lt;strong&gt;GdiGetDC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549470)"><strong>GdiGetDC</strong></a></p></td>
-<td><p>プリンターへのハンドルを返します&#39;s デバイス コンテキスト。</p></td>
+<td><p>プリンターのデバイス コンテキストへのハンドルを返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549478" data-raw-source="[&lt;strong&gt;GdiGetDevmodeForPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549478)"><strong>GdiGetDevmodeForPage</strong></a></p></td>
-<td><p>ドキュメントのページを返します&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
+<td><p>ドキュメントのページを返します<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549492" data-raw-source="[&lt;strong&gt;GdiGetPageCount&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549492)"><strong>GdiGetPageCount</strong></a></p></td>
@@ -73,7 +73,7 @@ ms.locfileid: "56557444"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549529" data-raw-source="[&lt;strong&gt;GdiResetDCEMF&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549529)"><strong>GdiResetDCEMF</strong></a></p></td>
-<td><p>プリンタをリセット&#39;s デバイス コンテキスト。</p></td>
+<td><p>プリンターのデバイス コンテキストをリセットします。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549534" data-raw-source="[&lt;strong&gt;GdiStartDocEMF&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549534)"><strong>GdiStartDocEMF</strong></a></p></td>

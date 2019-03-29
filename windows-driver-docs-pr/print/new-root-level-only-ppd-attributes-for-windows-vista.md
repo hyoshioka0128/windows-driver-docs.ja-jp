@@ -1,6 +1,6 @@
 ---
-title: Windows Vista の新しいルート レベルのみ PPD 属性
-description: Windows Vista の新しいルート レベルのみ PPD 属性
+title: Windows Vista の新しいルート レベル専用 PPD 属性
+description: Windows Vista の新しいルート レベル専用 PPD 属性
 ms.assetid: 49cdfb2f-e119-4960-9e79-67e1025b753f
 keywords:
 - ルート レベルのみ属性 WDK Unidrv
@@ -8,14 +8,14 @@ keywords:
 - PPD は、WDK Unidrv を属性します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b12e7f2254e46e752767e04491650ae00af96712
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 30235aae4772d555ad99a7109b534c2f6bb67721
+ms.sourcegitcommit: 5bfb01d5aa52632b54182f3db87454df2d61cbe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548905"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56905507"
 ---
-# <a name="new-root-level-only-ppd-attributes-for-windows-vista"></a>Windows Vista の新しいルート レベルのみ PPD 属性
+# <a name="new-root-level-only-ppd-attributes-for-windows-vista"></a>Windows Vista の新しいルート レベル専用 PPD 属性
 
 
 次の一覧には、Windows Vista と共に登場した新しい PPD 属性について説明します。 旧バージョンと Windows の以前の Windows Vista バージョンとの互換性を維持するには、これらの属性を次のコードを囲む必要があります。
@@ -156,9 +156,9 @@ N を 4 ページの文書を印刷できると想定 = 1、逆の印刷や両�
 
 -   形式 2:(3,4),(1,2)
 
-Windows Vista では、前に、プリント プロセッサが 2 の形式でページを印刷は\[(3,4),(1,2)\]します。 Windows Vistaand で後で、既定の形式が 1 の形式が\[(4,3),(2,1)\]します。 多くのプリンターがある 2; の形式で出力が正しくないために、この変更が発生しましたつまり、印刷されるページでは、適切な順序で順序がありません。
+Windows Vista では、前に、プリント プロセッサが 2 の形式でページを印刷は\[(3,4),(1,2)\]します。 Windows Vista 以降では、既定の形式には 1 の形式が\[(4,3),(2,1)\]します。 多くのプリンターがある 2; の形式で出力が正しくないために、この変更が発生しましたつまり、印刷されるページでは、適切な順序で順序がありません。
 
-プリンターが 1 の形式で正常に動作する場合は、Windows Vistaand の後で何も変更する必要はありません。 ただし、2 という形式に戻すには、プリンターで 1 形式に正しく動作する場合は、追加、 **MSPrintProcDuplexOptions**値 1 を持つ属性です。
+プリンターが 1 の形式で正常に動作する場合は、Windows Vista 以降のものを変更する必要はありません。 ただし、2 という形式に戻すには、プリンターで 1 形式に正しく動作する場合は、追加、 **MSPrintProcDuplexOptions**値 1 を持つ属性です。
 
 ```cpp
 *MSPrintProcDuplexOptions: "1"

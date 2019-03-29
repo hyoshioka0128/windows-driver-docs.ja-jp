@@ -1,20 +1,20 @@
 ---
-title: ピクセル形式の色値の処理
-description: ピクセル形式の色値の処理
+title: ピクセル形式の色の値の処理
+description: ピクセル形式の色の値の処理
 ms.assetid: 53ce6be1-14e1-4ee8-ba29-f198dcdacdaa
 keywords:
 - WDK DirectX 9.0 のピクセル形式の色の値
 - WDK DirectX 9.0 のピクセル形式のカラー値します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 137627b1007417821c4b600917f4bd8af5d3eef2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ddd4a844e8a7edcdd159d0425b5ae0e5300ebda3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553308"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349638"
 ---
-# <a name="handling-color-values-for-pixel-formats"></a>ピクセル形式の色値の処理
+# <a name="handling-color-values-for-pixel-formats"></a>ピクセル形式の色の値の処理
 
 
 ## <span id="ddk_handling_color_values_for_pixel_formats_gg"></span><span id="DDK_HANDLING_COLOR_VALUES_FOR_PIXEL_FORMATS_GG"></span>
@@ -146,13 +146,13 @@ DWORD CPixel::ConvertFromARGB(D3DCOLOR  InputColor,
                     (Red);
         break;
 
-    case MAKEFOURCC(&#39;A&#39;, &#39;Y&#39;, &#39;U&#39;, &#39;V&#39;):
-    case MAKEFOURCC(&#39;N&#39;, &#39;V&#39;, &#39;1&#39;, &#39;2&#39;):
-    case MAKEFOURCC(&#39;Y&#39;, &#39;V&#39;, &#39;1&#39;, &#39;2&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;1&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;2&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;3&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;4&#39;):
+    case MAKEFOURCC('A', 'Y', 'U', 'V'):
+    case MAKEFOURCC('N', 'V', '1', '2'):
+    case MAKEFOURCC('Y', 'V', '1', '2'):
+    case MAKEFOURCC('I', 'C', 'M', '1'):
+    case MAKEFOURCC('I', 'C', 'M', '2'):
+    case MAKEFOURCC('I', 'C', 'M', '3'):
+    case MAKEFOURCC('I', 'C', 'M', '4'):
         Output = InputColor;
         break;
     }

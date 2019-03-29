@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 712ece7781aba46488385ddcadbe043187e1c759
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 429a2f8164504b133bb7e02beb60fff5ff012413
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528719"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349695"
 ---
 # <a name="debugformatxxx"></a>デバッグ\_形式\_XXX
 
@@ -26,7 +26,7 @@ DEBUG_FORMAT_XXX のビット フラグは、クラッシュ ダンプ ファイ
 
 <table>
 <tr>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 <tr>
@@ -63,7 +63,7 @@ DEBUG_FORMAT_XXX のビット フラグは、クラッシュ ダンプ ファイ
 <p>次のビット フラグは、ユーザー モードのミニダンプを含めることもできます。</p>
 <table>
 <tr>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 <tr>
@@ -119,7 +119,7 @@ DEBUG_FORMAT_XXX のビット フラグは、クラッシュ ダンプ ファイ
 <p>DEBUG_FORMAT_USER_SMALL_FILTER_PATHS</p>
 </td>
 <td>
-<p>モジュール名のみを残して、モジュールのパスを削除します。  これは、ディレクトリ構造を非表示にしてプライバシーを保護するために役立ちます (ユーザーは含まれている可能性があります&#39;の名前)。</p>
+<p>モジュール名のみを残して、モジュールのパスを削除します。  これは (これは、ユーザーの名前を含めることができます)、ディレクトリ構造を非表示にしてプライバシーを保護するために役立ちます。</p>
 </td>
 </tr>
 <tr>
@@ -190,7 +190,7 @@ DEBUG_FORMAT_XXX のビット フラグは、クラッシュ ダンプ ファイ
 
 
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

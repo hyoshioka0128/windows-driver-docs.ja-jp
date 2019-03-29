@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8541a68cace7802b7e4afe75a9532106f1c759d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b417fb9910eb53b49458d24deec310af3557d802
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529721"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348653"
 ---
-# <a name="bug-check-0x12f-vhdbootinitializationfailed"></a>バグ チェック 0x12F の。VHD\_ブート\_初期化\_失敗
+# <a name="bug-check-0x12f-vhdbootinitializationfailed"></a>バグ チェック 0x12F:VHD\_ブート\_初期化\_失敗
 
 
 VHD\_ブート\_初期化\_失敗のバグ チェックが 0x0000012F の値を持ちます。 これは、VHD から起動を試みているときに初期化エラーが発生したことを示します。
@@ -45,7 +45,7 @@ VHD\_ブート\_初期化\_失敗のバグ チェックが 0x0000012F の値を�
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>アクションが失敗しました。</p>
-1 :でした&#39;t がブート デバイスからの VHD の情報を抽出します。
+1 :ブート デバイスからの VHD の情報を抽出できませんでした。
 2 :VHD 親デバイス画面の待機のタイムアウト。
 3 :VHD のパス文字列のメモリ割り当てエラーです。
 4 :VHD のパスの作成に失敗しました。

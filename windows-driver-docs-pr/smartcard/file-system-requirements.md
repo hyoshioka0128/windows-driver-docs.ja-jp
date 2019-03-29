@@ -4,12 +4,12 @@ description: ファイル システムの要件
 ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c5db11f4ea2d28c94b313d8b4b92ba093e3e66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bec3acad4a88463a2cc1c85cd2cd7f84a41579e1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538779"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349647"
 ---
 # <a name="file-system-requirements"></a>ファイル システムの要件
 
@@ -47,7 +47,7 @@ ms.locfileid: "56538779"
 <span id="Contents"></span><span id="contents"></span><span id="CONTENTS"></span>内容  
 ファイルは 16 バイトの配列として編成されます。 非透過のバイナリ データとして処理します。
 
-<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」  
+<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈  
 この値が割り当てられます Microsoft ソフトウェアによって確保するために、カードに対して一意の値が生成されます。 関連する可能性がありますまたは製造時に、カードに割り当てられませんが、シリアル番号はありません。
 
 ### <a name="span-idapplicationdirectoryspanspan-idapplicationdirectoryspanspan-idapplicationdirectoryspanapplication-directory"></a><span id="Application_Directory"></span><span id="application_directory"></span><span id="APPLICATION_DIRECTORY"></span>アプリケーション ディレクトリ
@@ -63,7 +63,7 @@ ms.locfileid: "56538779"
 <span id="Contents"></span><span id="contents"></span><span id="CONTENTS"></span>内容  
 ファイルは、一連の後に 0 で終わるアプリケーション名の文字列 (ANSI) バイトのインデックスを含むレコードとして編成されます。
 
-<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」  
+<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈  
 アプリケーションの実装では、カードの一意のディレクトリとアプリケーションのデータ カードのキャッシュ ファイルの一意のインデックスをアプリケーション名がマップが必要です。 カードのアプリケーション ディレクトリには、アプリケーション ディレクトリの名前を検索し、これが発生する位置のインデックスを注意してください。 キャッシュ ファイルのインデックス値を検索するのにアプリケーションができるようにします。 ファイルには、アプリケーションの名前を含む 8 バイト レコードの末尾にゼロが埋められます。 アプリケーション名は、すべての 8 バイトを使用して、結果の文字列は 0 で終了する必要がないようにできます。 したがって、「作成」カードのファイルの内容は、次の 8 バイトです。
 
 ``` syntax
@@ -96,7 +96,7 @@ typedef struct _CARD_CACHE_FILE_FORMAT
 } CARD_CACHE_FILE_FORMAT, *PCARD_CACHE_FILE_FORMAT;
 ```
 
-<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」  
+<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈  
 アプリケーションの内部にキャッシュ データのコピーには、カードから読み取ったファイルよりも関心のあるデータの別のバージョン番号が示されている場合、アプリケーションの内部キャッシュが更新されます。 キャッシュは一般に、カードと各トランザクションの先頭にチェックされます。
 
 アプリケーションのキャッシュ データ、キャッシュ アプリケーションごとに 1 つの Dword の配列は、アプリケーション ディレクトリのファイルからアプリケーションをインデックスによってインデックスが作成します。 アプリケーションが追加されると、ファイルは、4 バイトずつ大きくなります。
@@ -118,7 +118,7 @@ typedef struct _CARD_CACHE_FILE_FORMAT
 <span id="Contents"></span><span id="contents"></span><span id="CONTENTS"></span>内容  
 このファイルのアクセス条件は、E(R)、U(RW)、A(RW) です。
 
-<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」  
+<span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈  
 このファイルを作成し、そのコンテンツは、Base CSP または KSP を維持します。 このファイルの内部構造に関する情報は、参照のみ提供されます。 ファイル内のレコードには、次の形式があります。
 
 **CONTAINERMAPRECORD**
@@ -189,7 +189,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <tr class="header">
 <th align="left">ディレクトリ名</th>
 <th align="left">ファイル名</th>
-<th align="left">種類</th>
+<th align="left">型</th>
 <th align="left">アクセス条件</th>
 <th align="left">コメント</th>
 </tr>
@@ -215,7 +215,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <td align="left">ファイル</td>
 <td align="left">E(R) U(R) A(RW)</td>
 <td align="left"><p>アプリケーションの名前でディレクトリのインデックス。</p>
-<p>詳細については、次を参照してください。&#39;アプリケーション ディレクトリ&#39;します。</p></td>
+<p>詳細については、' アプリケーション ディレクトリ ' を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">mscp</td>
@@ -277,7 +277,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
 | 名前          | 説明                                                                                                                                                                                                                                                                                 | アクセラレータ キー | PIN\_ID マッピング    |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------|
-| すべてのユーザー      | 要求元、ユーザーが認証されていない (または匿名) を含むです。                                                                                                                                                                                                                              | E        | ロール\_EVERYONE (0) |
+| Everyone (Everyone)      | 要求元、ユーザーが認証されていない (または匿名) を含むです。                                                                                                                                                                                                                              | E        | ロール\_EVERYONE (0) |
 | ユーザー          | カードに、PIN の使用による自身の id を提示したユーザー、カードのクライアント。                                                                                                                                                                                                             | U        | ロール\_ユーザー (1)     |
 | 管理者 | カード発行者またはカードまたはカードのデータへの管理のリレーションシップを持つその他のパーティです。 特殊な暗証番号 (pin) またはキー (または可能性のあるカードまたはユーザーに一意でない可能性があります) を使用すると、暗証番号 (pin) のブロック解除など、このデータを使用せず、ユーザーが実行できない管理タスクを実行します。 | A        | ロール\_管理者 (2)    |
 
@@ -299,7 +299,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <thead>
 <tr class="header">
 <th align="left">ディレクトリ アクセスの状態</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -361,7 +361,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <tr class="odd">
 <td align="left">実行する</td>
 <td align="left"><p>ファイルの内容を使用して、操作を表すために使用されるデータを受信することができなくても、要求元の代わりに、カードによって行われるまたは現実的派生させます。</p></td>
-<td align="left">X</td>
+<td align="left">x</td>
 </tr>
 </tbody>
 </table>

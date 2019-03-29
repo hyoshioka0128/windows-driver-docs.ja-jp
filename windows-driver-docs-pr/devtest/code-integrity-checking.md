@@ -6,14 +6,14 @@ keywords:
 - Driver Verifier のコードの整合性チェック
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a1d3584df9d82f19f22716d405658c2340b011
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6a596e6e1e9e7adc71efa3e66ac582b7bedcd1de
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536947"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349311"
 ---
-# <a name="code-integrity-checking"></a>コードの整合性チェック
+# <a name="code-integrity-checking"></a>コード整合性チェック
 
 [Device Guard](https://blogs.msdn.microsoft.com/windows_hardware_certification/2015/05/22/driver-compatibility-with-device-guard-in-windows-10/) Windows オペレーティング システムの残りの部分からコードの整合性 (CI) の意思決定関数を分離するハードウェア テクノロジと仮想化を使用できます。 仮想化ベースのセキュリティを使用して、コードの整合性を分離する、カーネル メモリは、実行可能になることができますのみの方法は、コードの整合性の検証です。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックでは、これらのコードの整合性規則の互換性を確保し、次の違反を検出します。
 
@@ -25,7 +25,7 @@ ms.locfileid: "56536947"
   <tr>
     <td>0x2000:
         <ul>
-            <li>2 ドライバーでは、-アドレス&#39;コード、エラーが検出されました。</li>
+            <li>2 - エラーが検出されたドライバーのコード内のアドレス。</li>
             <li>3-プールの種類。</li>
             <li>4-プール タグ (存在する場合)。</li>
         </ul><br/>    </td>
@@ -33,15 +33,15 @@ ms.locfileid: "56536947"
   </tr>
   <tr>
     <td>0x2001:
-        <ul><li>2 ドライバーでは、-アドレス&#39;コード、エラーが検出されました。</li>
+        <ul><li>2 - エラーが検出されたドライバーのコード内のアドレス。</li>
         <li>3-ページ保護 (WIN32_PROTECTION_MASK)。
     </td>
     <td>呼び出し元は、実行可能ファイルのページ保護を指定します。 (Expected: cleared PAGE_EXECUTE* bits)</td>
   </tr>
   <tr>
     <td>0x2002 の場合:
-        <ul><li>2 ドライバーでは、-アドレス&#39;コード、エラーが検出されました。</li>
-            <li>3-ページ優先順位 (MM_PAGE_PRIORITY 論理的にまたは&#39;d MdlMapping *)。</li></ul>
+        <ul><li>2 - エラーが検出されたドライバーのコード内のアドレス。</li>
+            <li>3-ページ優先順位 (MM_PAGE_PRIORITY 論理的にまたはが MdlMapping *)。</li></ul>
     </td>
     <td>呼び出し元は、実行可能ファイルの MDL マッピングを指定します。 (想定します。MdlMappingNoExecute)。</td>
   </tr>
@@ -77,7 +77,7 @@ ms.locfileid: "56536947"
 
 * **コマンドラインで**
 
-    、コマンドラインでポート ミニポート インターフェイスのチェックで表される**0x02000000 (ビット 25)** します。 次に、例を示します。
+    、コマンドラインでポート ミニポート インターフェイスのチェックで表される**0x02000000 (ビット 25)** します。 例:
 
     `verifier /flags 0x02000000 /driver MyDriver.sys`
 

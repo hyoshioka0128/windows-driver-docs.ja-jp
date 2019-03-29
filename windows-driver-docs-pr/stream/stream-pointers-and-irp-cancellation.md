@@ -1,6 +1,6 @@
 ---
-title: Stream ポインターと IRP のキャンセル
-description: Stream ポインターと IRP のキャンセル
+title: ストリーム ポインターと IRP のキャンセル
+description: ストリーム ポインターと IRP のキャンセル
 ms.assetid: ce392496-ca07-497d-af8a-709239a7bd5e
 keywords:
 - ストリーム ポインター WDK AVStream、IRP の取り消し
@@ -9,14 +9,14 @@ keywords:
 - ロックされているストリーム ポインター WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 543f5592862d6da78d91307ca43143a8c1c4a4f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 97ca672a62a0ddaeb798ea3237881f4fe3d9244f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550654"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349707"
 ---
-# <a name="stream-pointers-and-irp-cancellation"></a>Stream ポインターと IRP のキャンセル
+# <a name="stream-pointers-and-irp-cancellation"></a>ストリーム ポインターと IRP のキャンセル
 
 
 
@@ -47,7 +47,7 @@ ms.locfileid: "56550654"
 </tr>
 <tr class="even">
 <td><p>無制限のアクセス時間の長さの取り消しのコールバック コンテキストにクレームを放棄することができますが、</p></td>
-<td><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff567129" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567129)"> <strong>KsStreamPointerClone</strong> </a>はロックされているストリーム ポインターを (通常のリーディング エッジ) を複製するには、ロックを解除、および対応を<em>CancelCallback</em>します。 キューにコールバックが発生した&#39;s スピン ロック保持、したがって DISPATCH_LEVEL にします。 したがって、ベンダーから提供された<em>CancelCallback</em>ルーチンは、ミュー テックスを取得するキューの操作や呼び出し関数を実行できません。 代わりに、コールバック ルーチンで、ミニドライバーことを検証、関連付けられているデータ、後ではアクセスされませんを呼び出して<a href="https://msdn.microsoft.com/library/windows/hardware/ff567130" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567130)"> <strong>KsStreamPointerDelete</strong></a>します。</p></td>
+<td><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff567129" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567129)"> <strong>KsStreamPointerClone</strong> </a>はロックされているストリーム ポインターを (通常のリーディング エッジ) を複製するには、ロックを解除、および対応を<em>CancelCallback</em>します。 キューのスピン ロックを保持、したがって DISPATCH_LEVEL にし、コールバックが発生します。 したがって、ベンダーから提供された<em>CancelCallback</em>ルーチンは、ミュー テックスを取得するキューの操作や呼び出し関数を実行できません。 代わりに、コールバック ルーチンで、ミニドライバーことを検証、関連付けられているデータ、後ではアクセスされませんを呼び出して<a href="https://msdn.microsoft.com/library/windows/hardware/ff567130" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567130)"> <strong>KsStreamPointerDelete</strong></a>します。</p></td>
 <td><p>実装するには困難になりますが、多くの場合、効率的にアクセスし、キャンセルに迅速な応答の最適なバランスを提供します。</p></td>
 </tr>
 <tr class="odd">

@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f93dbd99a069d73efbbfbc61796c8185f65468d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 63a86a03ac822220009c5feda6587d7ed225bfa8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528922"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349363"
 ---
-# <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>バグ チェック 0xF1 の。SCSI\_VERIFIER\_検出\_違反
+# <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>バグ チェック 0xF1:SCSI\_VERIFIER\_検出\_違反
 
 
 SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**SCSI 検証**違反。
@@ -67,14 +67,14 @@ SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持�
 <tr class="odd">
 <td align="left"><p>0x1002</p></td>
 <td align="left"><p>時間がかかりすぎましたルーチンのアドレス</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>ミニポートの HW_DEVICE_EXTENSION のアドレス</p></td>
 <td align="left"><p>(マイクロ秒)、そのルーチンの実行時間</p></td>
 <td align="left"><p>ポート ドライバーと呼ばれるミニポート ルーチンは、実行する 2 番目の 0.5 よりも長くかかります。</p>
 <p>(0.5 秒は、ほとんどのルーチンの上限であります。 ただし、 <strong>HwInitialize</strong>ルーチンは、5 秒間に許可し、 <strong>FindAdapter</strong>ルーチンは除外します)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1003</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>ミニポートの HW_DEVICE_EXTENSION のアドレス</p></td>
 <td align="left"><p>SRB のアドレス</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>ミニポート ドライバーでは、複数回要求を完了します。</p></td>
@@ -82,29 +82,29 @@ SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持�
 <tr class="odd">
 <td align="left"><p>0x1004</p></td>
 <td align="left"><p>SRB のアドレス</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>ミニポートの HW_DEVICE_EXTENSION のアドレス</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>ミニポート ドライバーでは、SRB 状態が無効な要求を完了します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1005</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>ミニポートの HW_DEVICE_EXTENSION のアドレス</p></td>
 <td align="left"><p>LOGICAL_UNIT_EXTENSION のアドレス</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>ミニポート ドライバーと呼ばれます<strong>ScsiPortNotification</strong>を求める<strong>NextLuRequest</strong>、タグなしの要求にアクティブなままですが。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1006</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>ミニポートの HW_DEVICE_EXTENSION のアドレス</p></td>
 <td align="left"><p>仮想アドレスが無効です。</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>ミニポート ドライバーに渡された無効な仮想アドレスを<strong>ScsiPortGetPhysicalAddress</strong>します。</p>
-<p>(つまり、指定されたアドレスが、通常&#39;一般的なバッファー領域にマップします)。</p></td>
+<p>(つまり、通常、一般的なバッファー領域に指定されたアドレスがマップされない。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1007</p></td>
 <td align="left"><p>ADAPTER_EXTENSION のアドレス</p></td>
-<td align="left"><p>ミニポートのアドレス&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>ミニポートの HW_DEVICE_EXTENSION のアドレス</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>リセットの保持期間が終了すると、バスが、ミニポート ドライバーにはまだ未処理の要求。</p></td>
 </tr>
@@ -120,7 +120,7 @@ SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持�
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567103" data-raw-source="[StorPortGetUncachedExtension](https://msdn.microsoft.com/library/windows/hardware/ff567103)">StorPortGetUncachedExtension</a></strong> ミニポート ドライバーからは呼び出されませんでした&#39;s <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[HwStorFindAdapter](https://msdn.microsoft.com/library/windows/hardware/ff557390)">HwStorFindAdapter</a></strong>ルーチン。 <strong>StorPortGetUncachedExtension</strong>ルーチンは、ミニポート ドライバーからのみ呼び出すことができます&#39;s <strong>HwStorFindAdapter</strong>ルーチンとバス マスター アダプターに対してのみです。 Storport ミニポート ドライバーを設定する必要があります、 <strong>SrbExtensionSize</strong>の<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557459" data-raw-source="[HW_INITIALIZATION_DATA](https://msdn.microsoft.com/library/windows/hardware/ff557459)">HW_INITIALIZATION_DATA</a></strong>呼び出す前に (Storport) 構造<strong>StorPortGetUncachedExtension</strong>します。</p></td>
+<td align="left"><p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567103" data-raw-source="[StorPortGetUncachedExtension](https://msdn.microsoft.com/library/windows/hardware/ff567103)">StorPortGetUncachedExtension</a></strong> ミニポート ドライバーからは呼び出されませんでした<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[HwStorFindAdapter](https://msdn.microsoft.com/library/windows/hardware/ff557390)">HwStorFindAdapter</a></strong>ルーチン。 <strong>StorPortGetUncachedExtension</strong>ルーチンは、ミニポート ドライバーからのみ呼び出すこと<strong>HwStorFindAdapter</strong>ルーチンとバス マスター アダプターに対してのみです。 Storport ミニポート ドライバーを設定する必要があります、 <strong>SrbExtensionSize</strong>の<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557459" data-raw-source="[HW_INITIALIZATION_DATA](https://msdn.microsoft.com/library/windows/hardware/ff557459)">HW_INITIALIZATION_DATA</a></strong>呼び出す前に (Storport) 構造<strong>StorPortGetUncachedExtension</strong>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2003</p></td>
@@ -141,7 +141,7 @@ SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持�
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>Storport ミニポート ドライバーでは、いずれかに無効な仮想アドレスが渡される、 <strong>StorPortRead</strong><em>xxx</em>または<strong>StorPortWrite</strong><em>xxx</em>ルーチン。 つまり、指定されたアドレスが、通常&#39;一般的なバッファー領域にマップします。 指定した<em>登録</em>または<em>ポート</em>によって返されるメモリ領域の割り当てられた範囲内で指定する必要があります<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>ルーチン。</p></td>
+<td align="left"><p>Storport ミニポート ドライバーでは、いずれかに無効な仮想アドレスが渡される、 <strong>StorPortRead</strong><em>xxx</em>または<strong>StorPortWrite</strong><em>xxx</em>ルーチン。 通常は、指定されたアドレスは、一般的なバッファー領域にマップされません。 指定した<em>登録</em>または<em>ポート</em>によって返されるメモリ領域の割り当てられた範囲内で指定する必要があります<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>ルーチン。</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,19 +1,19 @@
 ---
-title: SetupAPI ログ記録レベルの設定
-description: SetupAPI ログ記録レベルの設定
+title: SetupAPI のログ レベルの設定
+description: SetupAPI のログ レベルの設定
 ms.assetid: e6fa4c9c-e210-42c7-8bc7-d36463073c28
 keywords:
 - ログ記録レベル WDK SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 433da0c30fb3efca4564b5d2f128e2b456039b87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 10bfa0dec357cf349f4f1a4ccefb1e319664e722
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530493"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348945"
 ---
-# <a name="setting-setupapi-logging-levels"></a>SetupAPI ログ記録レベルの設定
+# <a name="setting-setupapi-logging-levels"></a>SetupAPI のログ レベルの設定
 
 
 
@@ -51,7 +51,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels
 <thead>
 <tr class="header">
 <th align="left">一般的なログ記録レベル</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels
 <thead>
 <tr class="header">
 <th align="left">デバイスのログ記録レベル</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -165,7 +165,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels
 <thead>
 <tr class="header">
 <th align="left">特殊なフラグ</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -175,7 +175,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels
 </tr>
 <tr class="even">
 <td align="left"><p>0x20000000</p></td>
-<td align="left"><p>(<em>Windows XP 以降</em>) Don&#39;t が各エントリが書き込まれた後に、ディスクにログ情報をフラッシュします。 (ログ記録時間は短くなりますが、システムがクラッシュした場合、情報が失われる可能性があります)。</p></td>
+<td align="left"><p>(<em>Windows XP 以降</em>) の各エントリが書き込まれた後に、ディスクにログ情報をフラッシュしません。 (ログ記録時間は短くなりますが、システムがクラッシュした場合、情報が失われる可能性があります)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x40000000</p></td>

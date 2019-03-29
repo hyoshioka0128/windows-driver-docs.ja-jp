@@ -1,6 +1,6 @@
 ---
-title: ビルドして、AV/C コマンドを送信
-description: ビルドして、AV/C コマンドを送信
+title: AV/C コマンドの構築と送信
+description: AV/C コマンドの構築と送信
 ms.assetid: 0f5bb205-7ffe-4007-bb66-a77889af2eed
 keywords:
 - Avc.sys 関数ドライバー WDK、コマンドのビルドと送信
@@ -11,14 +11,14 @@ keywords:
 - I/O WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb57f25be16697f8d6b65999e41c2d42cd4efad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ffa2ce45d64fbc8d50b6cbb4930f0b6b2f8401b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559815"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349349"
 ---
-# <a name="building-and-sending-an-avc-command"></a>ビルドして、AV/C コマンドを送信
+# <a name="building-and-sending-an-avc-command"></a>AV/C コマンドの構築と送信
 
 次の手順をビルドして、AV/C コマンドを送信するプロセスについて説明します。
 
@@ -114,14 +114,14 @@ ms.locfileid: "56559815"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>要求が行われ、AV/C 仕様の境界内で最後の応答を受け取りました&#39;秒のタイムアウトと再試行のパラメーター。 サブユニット&#39;応答コード (、 <strong>ResponseCode</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554140" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554140)"> <strong>AVC_COMMAND_IRB</strong> </a>構造) 調べての真の結果を確認する必要がありますはまだ、操作です。 STATUS_SUCCESS は、(既定のタイムアウト値が 100 ミリ秒から変更されていないと仮定)、100 ミリ秒未満でラウンドト リップの要求および応答のサイクルが完了したことを意味します。</p></td>
+<td><p>要求が行われ、AV/C 仕様のタイムアウトと再試行のパラメーターの範囲内で最後の応答を受け取りました。 サブユニットの応答コード (、 <strong>ResponseCode</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554140" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554140)"> <strong>AVC_COMMAND_IRB</strong> </a>構造) も true、操作の結果を確認する検証が必要です。 STATUS_SUCCESS は、(既定のタイムアウト値が 100 ミリ秒から変更されていないと仮定)、100 ミリ秒未満でラウンドト リップの要求および応答のサイクルが完了したことを意味します。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
@@ -129,7 +129,7 @@ ms.locfileid: "56559815"
 </tr>
 <tr class="odd">
 <td><p>STATUS_PENDING</p></td>
-<td><p>要求が行われ、暫定的な応答を受け取りました。 サブユニット ドライバーの役目です&#39;を最後の応答を処理し、IRP と IRB リソースを解放し、s I/O 完了ルーチン。</p></td>
+<td><p>要求が行われ、暫定的な応答を受け取りました。 最後の応答を処理し、IRP と IRB リソースを解放し、サブユニット ドライバーの I/O 完了ルーチンの役目です。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
@@ -142,7 +142,7 @@ ms.locfileid: "56559815"
 </tbody>
 </table>
 
-その他の戻り値から**保留**AV/C プロトコルの範囲を超えていたエラーが発生したことを示します。 次に、例を示します。
+その他の戻り値から**保留**AV/C プロトコルの範囲を超えていたエラーが発生したことを示します。 以下に例を示します。
 
 <table>
 <colgroup>
@@ -151,7 +151,7 @@ ms.locfileid: "56559815"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>

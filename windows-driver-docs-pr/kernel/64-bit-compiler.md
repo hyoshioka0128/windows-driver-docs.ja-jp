@@ -8,12 +8,12 @@ keywords:
 - WDK の 64 ビットのコンパイラ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ecf4810502fef9236e9041bc6e5a9b417c0754
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5ddf89ab2851c8681f91e88c8a57c61ff4e23aa9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559391"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349495"
 ---
 # <a name="64-bit-compiler"></a>64 ビット コンパイラ
 
@@ -26,7 +26,7 @@ ms.locfileid: "56559391"
 このような警告の例を次に示します。
 
 ```cpp
-warning C4311: &#39;type cast&#39; : pointer truncation from &#39;unsigned char *&#39; to &#39;unsigned long &#39;
+warning C4311: 'type cast' : pointer truncation from 'unsigned char *' to 'unsigned long '
 ```
 
 たとえば、次のコードでは、警告 C4311 を生成できます。
@@ -55,7 +55,7 @@ buffer = (PUCHAR)srbControl;
 <thead>
 <tr class="header">
 <th>マクロ</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +86,7 @@ buffer = (PUCHAR)srbControl;
 <thead>
 <tr class="header">
 <th>マクロ</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>

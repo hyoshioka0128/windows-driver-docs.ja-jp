@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cde5c3045657ecffcf66131e8b5693665ff6061b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 87869a9f37bb50b1ff3688ae0b92f946c7b0fb67
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553331"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349207"
 ---
 # <a name="wiaipaitemcategory"></a>WIA\_IPA\_項目\_カテゴリ
 
@@ -33,9 +33,9 @@ WIA\_IPA\_項目\_WIA 項目のグループ化されたカテゴリがカテゴ�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用かどうか
+アクセス権:読み取り専用です。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 WIA ミニドライバーは、作成し、このプロパティを保持します。
@@ -111,7 +111,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <td><p>WIA_CATEGORY_ENDORSER</p></td>
 <td><p>WiaItemTypeProgrammableDataSource</p>
 <p>WiaItemTypeImage</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeFile</p></td>
 </tr>
@@ -122,7 +122,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeFile</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeFolder</p>
 <p>(ADF は、WIA_CATEGORY_FEEDER_FRONT と WIA_CATEGORY_FEEDER_BACK 項目が存在する場合にのみ、項目をルート)</p></td>
 </tr>
@@ -133,7 +133,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeFile</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>なし</p></td>
 </tr>
 <tr class="odd">
@@ -143,7 +143,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeFile</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>なし</p></td>
 </tr>
 <tr class="even">
@@ -154,7 +154,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeFile</p>
 <p>WiaItemTypeFolder</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>なし</p></td>
 </tr>
 <tr class="odd">
@@ -162,7 +162,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <td><p><strong>必須</strong></p>
 <p>WiaItemTypeFile</p>
 <p>WiaItemTypeTransfer</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeAudio</p>
 <p>WiaItemTypeDeleted</p></td>
@@ -174,7 +174,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeFile</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeFolder</p>
 <p>(FB ルート項目のみにスキャン リージョンの項目を複数サポートされます)</p></td>
 </tr>
@@ -183,14 +183,14 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <td><p><strong>必須</strong></p>
 <p>WiaItemTypeStorage</p>
 <p>WiaItemTypeFolder</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeDeleted</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_CATEGORY_IMPRINTER</p></td>
 <td><p>WiaItemTypeProgrammableDataSource</p>
 <p>WiaItemTypeImage</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeFile</p></td>
 </tr>
@@ -213,7 +213,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <td><p><strong>必須</strong></p>
 <p>WiaItemTypeRoot</p>
 <p>WiaItemTypeFolder</p>
-<p><strong>省略可能</strong></p>
+<p><strong>省略可</strong></p>
 <p>WiaItemTypeDevice</p>
 <p>WiaItemTypeDisconnected</p></td>
 </tr>
@@ -224,8 +224,8 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <p>WiaItemTypeTransfer</p>
 <p>WiaItemTypeImage</p>
 <p>WiaItemTypeFile</p>
-<p><strong>省略可能</strong></p>
-<p><em>なし</em></p></td>
+<p><strong>省略可</strong></p>
+<p><em>None</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -282,7 +282,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <td><p>WIA_CATEGORY_FLATBED</p></td>
 <td><p>フラット ベッド スキャナー コントロールのプロパティも含まれます。</p>
 <p>イメージおよびドキュメントに固有のプロパティは、通常は含まれています。</p></td>
-<td><p>スキャナーでスキャンが実行されているリージョンを表す子項目を含む、WIA ベッド項目&#39;s ベッドからプラテン上。</p></td>
+<td><p>スキャナーのフラット ベッドからプラテン上でスキャンが実行されているリージョンを表す子項目を含む、WIA ベッド項目。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_CATEGORY_FOLDER</p></td>
@@ -297,14 +297,14 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 <tr class="odd">
 <td><p>WIA_CATEGORY_AUTO</p></td>
 <td><p>プロパティには、自動構成をスキャンするためのものが含まれます。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff552744" data-raw-source="[WIA Properties Supported by an Auto Item](https://msdn.microsoft.com/library/windows/hardware/ff552744)">WIA して自動アイテムのプロパティがサポートされている</a>します。</p></td>
-<td><p>スキャナーを表す WIA 自動項目&#39;s の自動構成設定をスキャンします。</p></td>
+<td><p>スキャナーのスキャン設定を自動構成を表す WIA 自動項目。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

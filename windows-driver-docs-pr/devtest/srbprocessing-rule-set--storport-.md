@@ -1,17 +1,17 @@
 ---
-title: SrbProcessing ルール セット (Storport)
+title: SrbProcessing の規則セット (Storport)
 description: ドライバーが正しく SRB の要求を処理することを確認するのにには、これらの規則を使用します。
 ms.assetid: A3BF2AA3-207F-4D74-94B0-6CA215341340
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1057403634f3b5b1cb25dcce7b62a53db87de6eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f9c895ca011b7c42cacaa232aa74867a1af618c5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531621"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349111"
 ---
-# <a name="srbprocessing-rule-set-storport"></a>SrbProcessing ルール セット (Storport)
+# <a name="srbprocessing-rule-set-storport"></a>SrbProcessing の規則セット (Storport)
 
 
 ドライバーが正しく SRB の要求を処理することを確認するのにには、これらの規則を使用します。
@@ -41,7 +41,7 @@ ms.locfileid: "56531621"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-spreturnvalue.md" data-raw-source="[&lt;strong&gt;SpReturnValue&lt;/strong&gt;](storport-spreturnvalue.md)"><strong>SpReturnValue</strong></a></p></td>
-<td align="left"><p>このルールを検証するドライバー&#39;の s 実装<a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557390)"> <strong>HwStorFindAdapter</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff568008" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568008)"> <strong>VirtualHwStorFindAdapter</strong> </a>有効な状態を返します。 有効な状態は、次のいずれか。<strong>SP_RETURN_FOUND</strong>、 <strong>SP_RETURN_ERROR</strong>、 <strong>SP_RETURN_BAD_CONFIG</strong>、または<strong>SP_RETURN_NOT_FOUND</strong>します。</p></td>
+<td align="left"><p>このルールを検証するドライバーの実装の<a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557390)"> <strong>HwStorFindAdapter</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff568008" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568008)"> <strong>VirtualHwStorFindAdapter</strong> </a>返す有効な状態です。 有効な状態は、次のいずれか。<strong>SP_RETURN_FOUND</strong>、 <strong>SP_RETURN_ERROR</strong>、 <strong>SP_RETURN_BAD_CONFIG</strong>、または<strong>SP_RETURN_NOT_FOUND</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storportallocatepool.md" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](storportallocatepool.md)"><strong>StorPortAllocatePool</strong></a></p></td>
@@ -53,7 +53,7 @@ ms.locfileid: "56531621"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a></p></td>
-<td align="left"><p>このルールが検証された場合、StorPort ミニポート&#39;s <a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"> <strong>StorPortBuildIo</strong> </a>ルーチンを返します<strong>FALSE</strong>、問題の SRB はに渡されません<strong>。StartIo</strong>します。 (このような場合は、ミニポート ドライバーは、呼び出すことによって、SRB を完了する必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff567433" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567433)"> <strong>StorPortNotification</strong> </a>の通知の種類と<strong>RequestComplete</strong>から<strong>StorPortBuildIo</strong>またはその他の場所)。</p></td>
+<td align="left"><p>このルールを検証する場合、StorPort ミニポートの<a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"> <strong>StorPortBuildIo</strong> </a>ルーチンを返します<strong>FALSE</strong>、問題の SRB はに渡されません<strong>StartIo</strong>。 (このような場合は、ミニポート ドライバーは、呼び出すことによって、SRB を完了する必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff567433" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567433)"> <strong>StorPortNotification</strong> </a>の通知の種類と<strong>RequestComplete</strong>から<strong>StorPortBuildIo</strong>またはその他の場所)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportcompleterequest.md" data-raw-source="[&lt;strong&gt;StorPortCompleteRequest&lt;/strong&gt;](storport-storportcompleterequest.md)"><strong>StorPortCompleteRequest</strong></a></p></td>
@@ -81,7 +81,7 @@ ms.locfileid: "56531621"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportstartio.md" data-raw-source="[&lt;strong&gt;StorPortStartIo&lt;/strong&gt;](storport-storportstartio.md)"><strong>StorPortStartIo</strong></a></p></td>
-<td align="left"><p>ミニポートで待機またはデータの割り当てを実行しない必要があります&#39;s <strong>StartIo</strong>ルーチン。 呼び出す場合、ドライバーは、ルールが失敗した<strong>StorPortStallExecution</strong>または時間のかかる操作を含む別の関数。 <strong>StartIo</strong>が同期されると、これらの呼び出しはほとんどの場合で行う<strong>BuildIo</strong>します。</p></td>
+<td align="left"><p>待機またはデータ割り当てする必要があります、ミニポートのでは実行しないで<strong>StartIo</strong>ルーチン。 呼び出す場合、ドライバーは、ルールが失敗した<strong>StorPortStallExecution</strong>または時間のかかる操作を含む別の関数。 <strong>StartIo</strong>が同期されると、これらの呼び出しはほとんどの場合で行う<strong>BuildIo</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storporttimer.md" data-raw-source="[&lt;strong&gt;StorPortTimer&lt;/strong&gt;](storport-storporttimer.md)"><strong>StorPortTimer</strong></a></p></td>
@@ -94,11 +94,11 @@ ms.locfileid: "56531621"
 
 **SrbProcessing ルールを選択するには、次のように設定します。**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています.**.
+1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
 
 2.  をクリックして、**ルール**タブ。**規則セット**、 **SrbProcessing**します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **SrbProcessing.sdv**で、 **/check**オプション。 次に、例を示します。
+    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **SrbProcessing.sdv**で、 **/check**オプション。 例:
 
     ```
     msbuild /t:sdv /p:Inputs="/check:SrbProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

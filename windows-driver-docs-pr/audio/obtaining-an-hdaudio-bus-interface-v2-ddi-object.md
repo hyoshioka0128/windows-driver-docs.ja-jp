@@ -1,15 +1,15 @@
 ---
-title: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトを取得します。
-description: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトを取得します。
+title: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトの取得
+description: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトの取得
 ms.assetid: 3aad8c7a-8c89-499a-bfe8-e3facdffcd15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8702bbf1c60f4d57e6d3991d3e56c5d0755cae7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a4710436e2fee9d4a827c03f4be372c214ed4d45
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558831"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349141"
 ---
 # <a name="obtaining-an-hdaudiobusinterfacev2-ddi-object"></a>取得、HDAUDIO\_BUS\_インターフェイス\_V2 DDI オブジェクト
 
@@ -24,7 +24,7 @@ ms.locfileid: "56558831"
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -64,8 +64,8 @@ Function ドライバーの記憶域の割り当て、 [ **HDAUDIO\_BUS\_イン�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -83,11 +83,11 @@ Function ドライバーの記憶域の割り当て、 [ **HDAUDIO\_BUS\_イン�
 </tr>
 <tr class="even">
 <td align="left"><p>PINTERFACE_REFERENCE <strong>InterfaceReference</strong></p></td>
-<td align="left"><p>コンテキスト オブジェクトをインクリメントするルーチンへのポインター&#39;s 参照カウントします。</p></td>
+<td align="left"><p>コンテキスト オブジェクトの参照カウントをインクリメントするルーチンへのポインター。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PINTERFACE_DEREFERENCE <strong>InterfaceDereference</strong></p></td>
-<td align="left"><p>ルーチンへのポインター値をデクリメントするコンテキスト オブジェクト&#39;s 参照カウントします。</p></td>
+<td align="left"><p>ルーチンへのポインターをコンテキスト オブジェクトの参照カウントをデクリメントします。</p></td>
 </tr>
 </tbody>
 </table>

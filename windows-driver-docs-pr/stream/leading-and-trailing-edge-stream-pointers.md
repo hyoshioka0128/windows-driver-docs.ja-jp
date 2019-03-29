@@ -1,6 +1,6 @@
 ---
-title: 先頭および末尾の Edge Stream ポインター
-description: 先頭および末尾の Edge Stream ポインター
+title: 先頭と末尾のエッジ ストリーム ポインター
+description: 先頭と末尾のエッジ ストリーム ポインター
 ms.assetid: 73ab974f-8034-421f-980a-2393d84ec54c
 keywords:
 - WDK AVStream、リードとトレーリング エッジのポインターをストリーム配信します。
@@ -8,14 +8,14 @@ keywords:
 - トレーリング エッジ ストリーム ポインター WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a0a7d763cee846ff8f005236d8af6447d84d9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cba66bb34a726076a97d47d52022cd0427f50ff7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528834"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348843"
 ---
-# <a name="leading-and-trailing-edge-stream-pointers"></a>先頭および末尾の Edge Stream ポインター
+# <a name="leading-and-trailing-edge-stream-pointers"></a>先頭と末尾のエッジ ストリーム ポインター
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56528834"
 <thead>
 <tr class="header">
 <th>状況</th>
-<th>AVStream&#39;の動作</th>
+<th>AVStream の動作</th>
 </tr>
 </thead>
 <tbody>

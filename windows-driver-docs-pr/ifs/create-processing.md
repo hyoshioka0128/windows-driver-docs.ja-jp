@@ -1,6 +1,6 @@
 ---
-title: 処理を作成します。
-description: 処理を作成します。
+title: 作成処理
+description: 作成処理
 ms.assetid: c15a56d2-47db-4124-8250-f25f69d2d4e3
 keywords:
 - WDK ファイル システムのセキュリティ、セマンティック モデルを確認します
@@ -10,14 +10,14 @@ keywords:
 - IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f5ed7a4bbf9de3ef852e25487b7bb6725ba2e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5dbd45a5fbb4860c61116ee37519f085f7cf634f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556991"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349945"
 ---
-# <a name="create-processing"></a>処理を作成します。
+# <a name="create-processing"></a>作成処理
 
 
 ## <span id="ddk_create_processing_if"></span><span id="DDK_CREATE_PROCESSING_IF"></span>
@@ -46,7 +46,7 @@ FAT ファイル システムの IRP の一部として行われたチェック�
 
         //
         //  Check the desired access for a read-only Dirent
-        // Don&#39;t allow 
+        // Don't allow 
         //  WRITE, FILE_APPEND_DATA, FILE_ADD_FILE,
         //  FILE_ADD_SUBDIRECTORY, and FILE_DELETE_CHILD
         //

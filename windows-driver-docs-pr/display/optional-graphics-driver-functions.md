@@ -1,6 +1,6 @@
 ---
-title: 省略可能なグラフィックス ドライバー関数
-description: 省略可能なグラフィックス ドライバー関数
+title: オプションのグラフィックス ドライバー関数
+description: オプションのグラフィックス ドライバー関数
 ms.assetid: 3cdef152-4bcc-426a-9aa7-fd94acf2331f
 keywords:
 - GDI WDK Windows 2000 の表示、関数、省略可能
@@ -12,14 +12,14 @@ keywords:
 - DDI WDK グラフィックス、省略可能な関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c2b1cc3c5bfd35dd9b1882f117470a02f13dbf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 410e473c099320d35ac371e7e5fa9f564bba6ac1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530290"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349411"
 ---
-# <a name="optional-graphics-driver-functions"></a>省略可能なグラフィックス ドライバー関数
+# <a name="optional-graphics-driver-functions"></a>オプションのグラフィックス ドライバー関数
 
 
 ## <span id="ddk_optional_graphics_driver_functions_gg"></span><span id="DDK_OPTIONAL_GRAPHICS_DRIVER_FUNCTIONS_GG"></span>
@@ -220,7 +220,7 @@ ms.locfileid: "56530290"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556250" data-raw-source="[&lt;strong&gt;DrvNextBand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556250)"><strong>DrvNextBand</strong></a></p></td>
-<td align="left"><p>サーフェスの内容の実現&#39;s だけ描画バンド。</p></td>
+<td align="left"><p>画面のだけ描画バンドの内容を認識しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556268" data-raw-source="[&lt;em&gt;DrvQueryPerBandInfo&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556268)"><em>DrvQueryPerBandInfo</em></a></p></td>

@@ -1,16 +1,16 @@
 ---
-Description: Supported Format Retrieval
-title: サポートされている形式の取得
+Description: サポートされているフォーマットの取得
+title: サポートされているフォーマットの取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe13842d484d0731683bd66972bcbdb7f8194ef7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8d66ee2d63beb61e30e36fa0c3a8b0c86ff91b76
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535473"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349153"
 ---
-# <a name="supported-format-retrieval"></a>サポートされている形式の取得
+# <a name="supported-format-retrieval"></a>サポートされているフォーマットの取得
 
 
 WPD アプリケーションを呼び出すと、 **IPortableDeviceCapabilities::GetSupportedFormats**メソッドでは、このメソッドは、さらへの呼び出しをトリガー、 **WpdCapabilities::OnGetSupportedFormats**メソッドで、ドライバーのサンプルです。 後者のメソッドを作成、 **IPortableDevicePropVariantCollection**にドライバーが特定のコンテンツ タイプでサポートされる形式を格納するオブジェクト。
@@ -50,7 +50,7 @@ HRESULT WpdCapabilities::OnGetSupportedFormats(
     {
         PROPVARIANT pv = {0};
         PropVariantInit(&pv);
-        // Don&#39;t call PropVariantClear, since we did not allocate the memory for these GUIDs
+        // Don't call PropVariantClear, since we did not allocate the memory for these GUIDs
 
         if ((guidContentType   == WPD_CONTENT_TYPE_DOCUMENT) ||
             ((guidContentType  == WPD_CONTENT_TYPE_ALL)))

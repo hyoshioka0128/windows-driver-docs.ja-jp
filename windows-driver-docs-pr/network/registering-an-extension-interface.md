@@ -1,6 +1,6 @@
 ---
-title: 拡張機能インターフェイスを登録します。
-description: 拡張機能インターフェイスを登録します。
+title: 拡張インターフェイスの登録
+description: 拡張インターフェイスの登録
 ms.assetid: 33dc32da-9bc1-40b4-8737-ec132ec36708
 keywords:
 - Winsock カーネル WDK がネットワーク接続、拡張機能インターフェイス
@@ -10,14 +10,14 @@ keywords:
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 286d3f3719dc6046442a703c92f5c34680b6320a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6c8c178bb02314640a9b9db5d0922ee27289c4a9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532017"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348635"
 ---
-# <a name="registering-an-extension-interface"></a>拡張機能インターフェイスを登録します。
+# <a name="registering-an-extension-interface"></a>拡張インターフェイスの登録
 
 
 1 つ以上のソケットを登録するは、Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、[拡張機能インターフェイス](winsock-kernel-extension-interfaces.md)WSK サブシステムでサポートされています。 WSK アプリケーションの決定を調べることで、WSK サブシステムによって拡張機能インターフェイスのセットがサポートされている、**バージョン**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ** ](https://msdn.microsoft.com/library/windows/hardware/ff571175) WSK サブシステムは、添付ファイルの中に、アプリケーションに返される構造体。
@@ -54,7 +54,7 @@ typedef struct _EXAMPLE_EXTIF_CLIENT_DISPATCH {
 // Client dispatch structure for the extension interface
 const EXAMPLE_EXTIF_CLIENT_DISPATCH ExtIfClientDispatch = {
   .
-  . // The WSK application&#39;s callback functions
+  . // The WSK application's callback functions
   . // for the extension interface
   .
 };
@@ -81,7 +81,7 @@ NTSTATUS
   WSK_EXTENSION_CONTROL_OUT ExtensionControlOut;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 

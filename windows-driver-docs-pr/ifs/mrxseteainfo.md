@@ -15,12 +15,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53955c73ab96fd37c1d41998e11fcaca831fd2c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cbadee5acb93cf4e00be28b4ef2ddcc1626bf3c8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532067"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348621"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo ルーチン
 
@@ -96,7 +96,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>オブジェクト名が見つかりませんでした。 ネットワークのミニ リダイレクターが、ファイルが、ファイルの拡張属性を設定するよう依頼された場合、このエラーを返すことが&#39;t が存在します。</p></td>
+<td align="left"><p>オブジェクト名が見つかりませんでした。 このエラーは、ネットワーク ミニ リダイレクターが、ファイルの拡張属性を設定するように要求されましたが、ファイルが存在しない場合に返されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
@@ -115,7 +115,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 RDBSS への呼び出しを発行する*MRxSetEaInfo*受信に応答する[ **IRP\_MJ\_設定\_EA** ](irp-mj-set-ea.md)要求。
@@ -126,7 +126,7 @@ RDBSS への呼び出しを発行する*MRxSetEaInfo*受信に応答する[ **IR
 
 **Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QueryEa.Length**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) では、ツール、およびドライバ
 ms.assetid: 9F585CA3-B863-408A-B785-2456460D6626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf72527e93fedd2f1865ea4dc246b34952e99e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: db5d836e8cadfa735432e6073f08e90c0792a72d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549810"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349913"
 ---
 # <a name="platform-toolset"></a>プラットフォーム ツールセット
 
@@ -18,7 +18,7 @@ Windows Driver Kit (WDK) では、ツール、およびドライバーの開発�
 
 Windows Driver Kit (WDK) 8.1 では、ドライバーの開発の次のプラットフォーム ツールセットを提供します。
 
-| **PlatformToolset** (WDK 8.1)       | 使用                                                                                                                                                                                                                                                                                                                                                                                         |
+| **PlatformToolset** (WDK 8.1)       | 新しく使用する機能                                                                                                                                                                                                                                                                                                                                                                                         |
 |-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **WindowsKernelModeDriver8.1**      | カーネル モード ドライバーとコンポーネント。                                                                                                                                                                                                                                                                                                                                                     |
 | **WindowsUserModeDriver8.1**        | ユーザー モード ドライバーとコンポーネント。                                                                                                                                                                                                                                                                                                                                                       |
@@ -29,7 +29,7 @@ Windows Driver Kit (WDK) 8.1 では、ドライバーの開発の次のプラッ
 
 Windows Driver Kit (WDK) 8 では、ドライバーの開発の次のプラットフォーム ツールセットが用意されています。 この情報は、参照のみ提供されます。
 
-| **PlatformToolset** (WDK 8)         | 使用                                                                                                                                                                                                                                           |
+| **PlatformToolset** (WDK 8)         | 新しく使用する機能                                                                                                                                                                                                                                           |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **WindowsKernelModeDriver8.0**      | カーネル モード ドライバーとコンポーネント。                                                                                                                                                                                                       |
 | **WindowsUserModeDriver8.0**        | ユーザー モード ドライバーとコンポーネント。                                                                                                                                                                                                         |
@@ -53,7 +53,7 @@ Windows Driver Kit (WDK) 8 では、ドライバーの開発の次のプラッ�
 次の例は、どのように**PlatformToolset**プロパティは、プロジェクト ファイルで設定します。
 
 ```XML
-<PropertyGroup Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Debug|Win32&#39;"
+<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"
       Label="Configuration">
   <ConfigurationType>Driver</ConfigurationType>
   <DriverType>KMDF</DriverType>

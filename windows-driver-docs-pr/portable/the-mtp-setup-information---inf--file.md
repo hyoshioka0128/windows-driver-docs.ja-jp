@@ -1,16 +1,16 @@
 ---
-Description: The MTP Setup Information (.inf) File
-title: MTP のセットアップ情報 (.inf) ファイル
+Description: MTP セットアップ情報 (.inf) ファイル
+title: MTP セットアップ情報 (.inf) ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f2d197923bf05af4a62df9318ec5e9f1b70939b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f76f42c17479d35ea63ae846708bbf3900f3d6f6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535483"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349185"
 ---
-# <a name="the-mtp-setup-information-inf-file"></a>MTP のセットアップ情報 (.inf) ファイル
+# <a name="the-mtp-setup-information-inf-file"></a>MTP セットアップ情報 (.inf) ファイル
 
 
 Microsoft では、メディア転送プロトコル (MTP) をサポートするクラスのドライバーのセットを提供します。 デバイスは、MTP をサポートする場合は、これらのドライバーのいずれかを使用できます。 Microsoft は、クラスのドライバーだけでなく、クラス ドライバーをインストールするセットアップ情報 (.inf) ファイルを提供します。 このファイルの名前は*WpdMtp.inf*します。
@@ -50,8 +50,8 @@ MTP デバイスに固有の要件がある場合は、作成する新しいセ�
 <ol>
 <li>カーネル モード ドライバーを登録します (など<em>WPDUSB.sys</em> Windows Vista または Windows XP でデバイスをインストールする場合は、下位のフィルター ドライバーとして)。</li>
 <li>既定の MTP 自動再生のサポートを有効にします。</li>
-<li>レガシ アプリケーションの互換性サポートを有効 (既定値が 0 xffffffff により、デバイスを照会する WPD クラス インストーラー&#39;機能)。</li>
-<li>トランスポート ドライバー設定&#39;s クラスの識別子。</li>
+<li>レガシ アプリケーションの互換性サポートを有効 (既定値 0 xffffffff は、デバイスの機能を照会する WPD クラスのインストーラーを使用)。</li>
+<li>トランスポート ドライバーのクラス id を設定します。</li>
 </ol>
 <pre space="preserve"><code>;;[DDInstall.hw]
 ;;Include = wpdmtp.inf

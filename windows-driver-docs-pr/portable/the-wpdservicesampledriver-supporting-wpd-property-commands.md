@@ -1,14 +1,14 @@
 ---
-Description: Support for property commands (WpdBasicHardwareDriverSample)
+Description: プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
 title: プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2299d2297c35570e43f8d8849106ad510cb5e711
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bd89ce3ce9653958bf77bc3c2c0d8d6f45c897ad
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549748"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349691"
 ---
 # <a name="support-for-property-commands-wpdbasichardwaredriversample"></a>プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
 
@@ -72,7 +72,7 @@ public:
     {
         ACCESS_SCOPE Scope = m_pDevice->GetAccessScope(pParams);
         hr = m_pDevice->GetSupportedProperties(Scope, wszObjectID, pKeys);
-        CHECK_HR(hr, "Failed to add supported property keys for object &#39;%ws&#39;", wszObjectID);
+        CHECK_HR(hr, "Failed to add supported property keys for object '%ws'", wszObjectID);
     }
 ```
 
@@ -96,12 +96,12 @@ HRESULT FakeDevice::GetSupportedProperties(
     }
 
     hr = GetContent(Scope, wszObjectID, &pContent);
-    CHECK_HR(hr, "Failed to get content &#39;%ws&#39;", wszObjectID);
+    CHECK_HR(hr, "Failed to get content '%ws'", wszObjectID);
 
     if (hr == S_OK)
     {
         hr = pContent->GetSupportedProperties(pKeys);
-        CHECK_HR(hr, "Failed to get supported properties for &#39;%ws&#39;", wszObjectID);
+        CHECK_HR(hr, "Failed to get supported properties for '%ws'", wszObjectID);
     }
 
     return hr;
@@ -125,7 +125,7 @@ HRESULT FakeContent::GetContent(
     else
     {
         hr = E_ACCESSDENIED;
-        CHECK_HR(hr, "GetContent: &#39;%ws&#39; was found but falls outside scope", wszObjectID);
+        CHECK_HR(hr, "GetContent: '%ws' was found but falls outside scope", wszObjectID);
     }
 
     return hr;

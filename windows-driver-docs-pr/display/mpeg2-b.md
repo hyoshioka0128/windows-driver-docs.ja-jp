@@ -6,12 +6,12 @@ keywords:
 - MPEG2_B プロファイル WDK DirectX VA を制限します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3980f104c81fb3d6e3fa88987e0574428700a6d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 95df63ab479eb2da8abd59ec991ba6ca8e0269b8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558737"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349819"
 ---
 # <a name="mpeg2b"></a>MPEG2\_B
 
@@ -37,7 +37,7 @@ MPEG2 に対する制限\_B が MPEG2 用に示された制限によって定義
 <thead>
 <tr class="header">
 <th align="left">構造体のメンバー</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -60,7 +60,7 @@ MPEG2 に対する制限\_B が MPEG2 用に示された制限によって定義
 <thead>
 <tr class="header">
 <th align="left">構造体のメンバー</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +70,7 @@ MPEG2 に対する制限\_B が MPEG2 用に示された制限によって定義
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigDataType</strong> (DXVA_ConfigAlphaLoad)</p></td>
-<td align="left"><p>0、1、または 3 (アクセラレータで&#39;裁量)</p></td>
+<td align="left"><p>0、1、または 3 (アクセラレータの裁量)</p></td>
 </tr>
 </tbody>
 </table>

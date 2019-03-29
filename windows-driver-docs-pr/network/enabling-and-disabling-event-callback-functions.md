@@ -1,6 +1,6 @@
 ---
-title: 有効にして、イベントのコールバック関数を無効化
-description: 有効にして、イベントのコールバック関数を無効化
+title: イベント コールバック関数の有効化と無効化
+description: イベント コールバック関数の有効化と無効化
 ms.assetid: 52654788-31e2-47c1-8154-f40c42168708
 keywords:
 - ネットワーク、WSK WDK イベント
@@ -11,14 +11,14 @@ keywords:
 - WSK_SET_STATIC_EVENT_CALLBACKS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e6172b873e1c36cdee44e880834923b88cf3cb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 093182ac87234a111f9268a78e33053c5e4beb14
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537347"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349619"
 ---
-# <a name="enabling-and-disabling-event-callback-functions"></a>有効にして、イベントのコールバック関数を無効化
+# <a name="enabling-and-disabling-event-callback-functions"></a>イベント コールバック関数の有効化と無効化
 
 
 Winsock カーネル (WSK) アプリケーションは、WSK サブシステムを呼び出すときに特定のアプリケーションに通知を非同期的にイベントのコールバック関数を実装できます[イベント](winsock-kernel-events.md)ソケットで発生します。 WSK アプリケーションがクライアントに提供できます[ディスパッチ テーブル](winsock-kernel-dispatch-tables.md)WSK サブシステムにソケットを作成またはリッスン ソケットのソケットを受け入れるたびに構造体。 このディスパッチ テーブルには、新しいソケットの WSK アプリケーションのイベントのコールバック関数へのポインターが含まれています。 WSK アプリケーションが特定のソケットのイベントのコールバック関数を実装しないかどうかは、クライアントを提供する必要はありません、ソケットの WSK サブシステムにテーブル構造をディスパッチします。
@@ -39,7 +39,7 @@ NTSTATUS
   WSK_EVENT_CALLBACK_CONTROL EventCallbackControl;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 
@@ -94,7 +94,7 @@ NTSTATUS
   WSK_EVENT_CALLBACK_CONTROL EventCallbackControl;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 

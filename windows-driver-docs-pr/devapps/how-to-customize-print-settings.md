@@ -4,12 +4,12 @@ description: このトピックでは、高度な印刷設定のフライアウ�
 ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecbfadf7f86741283051304699fcab2352668c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 653724ee75540e1bcff7b23853696cd43d53edd1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537538"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349247"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>印刷の設定 (UWP デバイス アプリ) をカスタマイズする方法
 
@@ -61,7 +61,7 @@ C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p
 
      
 
-## <a name="span-idstep1registertheextensionspanspan-idstep1registertheextensionspanspan-idstep1registertheextensionspanstep-1-register-the-extension"></a><span id="Step_1__Register_the_extension"></span><span id="step_1__register_the_extension"></span><span id="STEP_1__REGISTER_THE_EXTENSION"></span>手順 1:拡張機能を登録します。
+## <a name="span-idstep1registertheextensionspanspan-idstep1registertheextensionspanspan-idstep1registertheextensionspanstep-1-register-the-extension"></a><span id="Step_1__Register_the_extension"></span><span id="step_1__register_the_extension"></span><span id="STEP_1__REGISTER_THE_EXTENSION"></span>手順 1: 拡張機能を登録します。
 
 
 Windows アプリが高度な印刷設定のカスタムのフライアウトを供給できることを認識するためには、印刷タスク設定の拡張機能の登録にする必要があります。 この拡張機能が宣言されている、`Extension`要素で、`Category`属性の値に設定`windows.printTaskSettings`します。 C#と C++ のサンプル、`Executable`属性に設定されて`$targetnametoken$.exe`と`EntryPoint`属性に設定されて`DeviceAppForPrinters.App`します。
@@ -105,7 +105,7 @@ Windows アプリが高度な印刷設定のカスタムのフライアウトを
 </Package>
 ```
 
-## <a name="span-idstep2buildtheuispanspan-idstep2buildtheuispanspan-idstep2buildtheuispanstep-2-build-the-ui"></a><span id="Step_2__Build_the_UI"></span><span id="step_2__build_the_ui"></span><span id="STEP_2__BUILD_THE_UI"></span>手順 2:UI を構築します。
+## <a name="span-idstep2buildtheuispanspan-idstep2buildtheuispanspan-idstep2buildtheuispanstep-2-build-the-ui"></a><span id="Step_2__Build_the_UI"></span><span id="step_2__build_the_ui"></span><span id="STEP_2__BUILD_THE_UI"></span>手順 2: UI を構築します。
 
 
 アプリを構築する前に、デザイナーを使用する必要があり、ユーザーを設計するマーケティング チームが発生します。 ユーザー エクスペリエンスは、プロジェクトの自分の会社のブランド化の側面と、ユーザーとの接続を作成するため必要があります。
@@ -191,7 +191,7 @@ partial class App : Application
 }
 ```
 
-## <a name="span-idstep4displaysettingsspanspan-idstep4displaysettingsspanspan-idstep4displaysettingsspanstep-4-display-settings"></a><span id="Step_4__Display_settings"></span><span id="step_4__display_settings"></span><span id="STEP_4__DISPLAY_SETTINGS"></span>手順 4:ディスプレイの設定
+## <a name="span-idstep4displaysettingsspanspan-idstep4displaysettingsspanspan-idstep4displaysettingsspanstep-4-display-settings"></a><span id="Step_4__Display_settings"></span><span id="step_4__display_settings"></span><span id="STEP_4__DISPLAY_SETTINGS"></span>手順 4: ディスプレイの設定
 
 
 ときに、`LoadAdvancedPrintSettingsContext`メソッドが呼び出されると、印刷タスク構成のコンテキストは MainPage クラスの変数に割り当てられます。 これにより、印刷の設定へのアクセスの起動時にカスタムのポップアップが許可されます。
@@ -232,7 +232,7 @@ public sealed partial class Preferences : SDKTemplate.Common.LayoutAwarePage
     Object printerExtensionContext;
     PrintHelperClass printHelper;
 
-    // The features in this sample were chosen because they&#39;re available on a wide range of printer drivers.
+    // The features in this sample were chosen because they're available on a wide range of printer drivers.
     private string[] features = { "PageOrientation", "PageOutputColor", "PageMediaSize", "PageMediaType" };
     private string[] selections = { null, null, null, null };
 
@@ -282,7 +282,7 @@ private void DisplaySettings(bool constraints=false)
 
         string feature = features[i];
 
-        // Check whether the currently selected printer&#39;s capabilities include this feature.
+        // Check whether the currently selected printer's capabilities include this feature.
         if (!printHelper.FeatureExists(feature))
         {
             continue;
@@ -351,7 +351,7 @@ private void OnFeatureOptionsChanged(object sender, SelectionChangedEventArgs ar
 }
 ```
 
-## <a name="span-idstep5savesettingsspanspan-idstep5savesettingsspanspan-idstep5savesettingsspanstep-5-save-settings"></a><span id="Step_5__Save_settings"></span><span id="step_5__save_settings"></span><span id="STEP_5__SAVE_SETTINGS"></span>手順 5:設定を保存します。
+## <a name="span-idstep5savesettingsspanspan-idstep5savesettingsspanspan-idstep5savesettingsspanstep-5-save-settings"></a><span id="Step_5__Save_settings"></span><span id="step_5__save_settings"></span><span id="STEP_5__SAVE_SETTINGS"></span>手順 5: 設定を保存します。
 
 
 Microsoft Store のデバイス アプリをユーザーに戻る前に、変更を保存する必要があります、ユーザーは、高度な印刷設定が完了したら、**印刷**ウィンドウ。 そのためには、アプリは、ユーザーがタップすると、リッスンする必要があります、**戻る**(カスタム フライアウト ページ) からボタンをクリックします。 その場合、`SaveRequested`印刷タスク拡張コンテキストのイベント (、`configuration`オブジェクト) がトリガーされます。
@@ -421,7 +421,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
     // for each feature
     for (var i = 0; i < features.Length; i++)
     {
-        // Set the feature&#39;s selected option in the context&#39;s print ticket.
+        // Set the feature's selected option in the context's print ticket.
         // The printerExtensionContext object is updated with each iteration of this loop
         printHelper.SetFeatureOption(features[i], selections[i]);
     }
@@ -456,7 +456,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
         }
     }
 
-    // If ticket isn&#39;t saved, refresh UI and notify user
+    // If ticket isn't saved, refresh UI and notify user
     if (!ticketSaved)
     {
         await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>

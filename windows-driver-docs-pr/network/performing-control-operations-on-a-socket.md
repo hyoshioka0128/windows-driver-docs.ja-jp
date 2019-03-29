@@ -1,6 +1,6 @@
 ---
-title: ソケットでのコントロールの操作を実行します。
-description: ソケットでのコントロールの操作を実行します。
+title: ソケットの制御操作の実行
+description: ソケットの制御操作の実行
 ms.assetid: 5d6ff02a-dc50-4818-9d0d-ba741fe7dfd8
 keywords:
 - Winsock カーネル WDK がネットワーク接続、管理操作
@@ -8,14 +8,14 @@ keywords:
 - WDK Winsock Kernel の動作を制御します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4929b1084d4c1c3d388aec5a3f9c5dd7ed6e1d79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58433daf71a339c3bca4176d65a3c3a5d67371ae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553311"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349999"
 ---
-# <a name="performing-control-operations-on-a-socket"></a>ソケットでのコントロールの操作を実行します。
+# <a name="performing-control-operations-on-a-socket"></a>ソケットの制御操作の実行
 
 
 Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、ソケットでの管理操作を実行できます。 ソケットで実行できる管理操作には、設定しソケット オプションの取得とソケットの IOCTL 操作の実行が含まれます。
@@ -45,7 +45,7 @@ NTSTATUS
   ULONG SocketOptionState;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_DATAGRAM_DISPATCH)(Socket->Dispatch);
 
@@ -158,7 +158,7 @@ NTSTATUS
   PIRP Irp;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_DATAGRAM_DISPATCH)(Socket->Dispatch);
 

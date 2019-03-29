@@ -4,12 +4,12 @@ description: PackageIdentity
 ms.assetid: b5533962-ea42-416e-bbd8-ce9dce1a9a40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b80ae051a28483f6513bdd2c6b9ca49c8877fac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bb842736555a1b824dcefd98ee0bd1590179cba5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538878"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349447"
 ---
 # <a name="packageidentity"></a>PackageIdentity
 
@@ -37,7 +37,7 @@ PackageIdentity 要素には、ユーザーはデバイスをプラグインと�
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>種類</th>
+<th>型</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -46,14 +46,14 @@ PackageIdentity 要素には、ユーザーはデバイスをプラグインと�
 <tr class="odd">
 <td><p>名前</p></td>
 <td><p>tns:PackageNameType</p></td>
-<td><p>〇</p></td>
-<td><p>アプリ マニフェストの Name 属性からのこの要素のコピー&#39;s Id 要素では、「解説」で説明します。</p></td>
+<td><p>はい</p></td>
+<td><p>この要素は、「解説」で説明されている、アプリ マニフェストの Identity 要素の Name 属性からコピーします。</p></td>
 </tr>
 <tr class="even">
-<td><p>発行元</p></td>
+<td><p>パブリッシャー</p></td>
 <td><p>tns:PublisherType</p></td>
-<td><p>〇</p></td>
-<td><p>アプリ マニフェストの Publisher 属性からのこの要素のコピー&#39;s Id 要素では、「解説」で説明します。</p></td>
+<td><p>はい</p></td>
+<td><p>この要素は、「解説」で説明されている、アプリ マニフェストの Identity 要素の Publisher 属性からコピーします。</p></td>
 </tr>
 </tbody>
 </table>
@@ -114,7 +114,7 @@ PackageIdentity 要素には、ユーザーはデバイスをプラグインと�
   </xs:simpleType>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 アプリケーション マニフェストの名前とパブリッシャーの属性をコピー &lt;Identity&gt;要素の後、アプリを関連付けるプロセスは、アプリ マニフェストを更新するため、アプリは Microsoft Store に関連付けられた要素。

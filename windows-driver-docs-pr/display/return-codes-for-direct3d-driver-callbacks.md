@@ -1,6 +1,6 @@
 ---
-title: Direct3D のドライバーのコールバックのリターン コード
-description: Direct3D のドライバーのコールバックのリターン コード
+title: Direct3D ドライバー コールバックのリターン コード
+description: Direct3D ドライバー コールバックのリターン コード
 ms.assetid: 033beb6e-5872-4cb3-8f39-459e2fff82cd
 keywords:
 - Direct3D WDK Windows 2000 の表示、リターン コード
@@ -9,14 +9,14 @@ keywords:
 - WDK Direct3D のコールバック関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648b0b275ce799514cc34c7fd39d2bc7842f1e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecbec2faa083aefec43c830027915d2a5ddcbbdd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530410"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349539"
 ---
-# <a name="return-codes-for-direct3d-driver-callbacks"></a>Direct3D のドライバーのコールバックのリターン コード
+# <a name="return-codes-for-direct3d-driver-callbacks"></a>Direct3D ドライバー コールバックのリターン コード
 
 
 ## <span id="ddk_return_codes_for_direct3d_driver_callbacks_gg"></span><span id="DDK_RETURN_CODES_FOR_DIRECT3D_DRIVER_CALLBACKS_GG"></span>
@@ -35,8 +35,8 @@ Direct3D ドライバー内の関数は、2 つのリターン コードのい�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -50,11 +50,11 @@ Direct3D ドライバー内の関数は、2 つのリターン コードのい�
 </tr>
 <tr class="odd">
 <td align="left"><p>DDHAL_DRIVER_HANDLED</p></td>
-<td align="left"><p>ドライバーが操作を実行し、その操作に有効なリターン コードが返されます、 <strong>ddrval</strong> 、構造体のメンバーは、ドライバーに渡される&#39;s コールバック。 このコードが D3D_OK の場合は、Direct3D は、関数を実行します。 それ以外の場合、Direct3D は、ドライバーによって提供されるエラー コードを返し、関数を中止します。</p></td>
+<td align="left"><p>ドライバーが操作を実行し、その操作に有効なリターン コードが返されます、 <strong>ddrval</strong>構造体のメンバー、ドライバーのコールバックに渡されます。 このコードが D3D_OK の場合は、Direct3D は、関数を実行します。 それ以外の場合、Direct3D は、ドライバーによって提供されるエラー コードを返し、関数を中止します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DDHAL_DRIVER_NOTHANDLED</p></td>
-<td align="left"><p>要求された操作には、ドライバーのコメントはありません。 ドライバーは、特定のコールバックを実装する必要は、Direct3D は、エラー状態を報告します。 それ以外の場合、Direct3D では、Direct3D デバイスに依存しない実装を実行することによって、ドライバーのコールバックが定義されていなかった場合と同様に、操作が処理します。 Direct3D で返される値を通常は無視、 <strong>ddrval</strong>のコールバック メンバー&#39;s パラメーター構造体。</p></td>
+<td align="left"><p>要求された操作には、ドライバーのコメントはありません。 ドライバーは、特定のコールバックを実装する必要は、Direct3D は、エラー状態を報告します。 それ以外の場合、Direct3D では、Direct3D デバイスに依存しない実装を実行することによって、ドライバーのコールバックが定義されていなかった場合と同様に、操作が処理します。 Direct3D で返される値を通常は無視、 <strong>ddrval</strong>そのコールバックのパラメーター構造体のメンバー。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DHAL_OUTOFCONTEXTS</p></td>

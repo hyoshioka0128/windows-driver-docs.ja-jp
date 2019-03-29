@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 0886488bbb8b812a0507e6b83dc54204a23fbd82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 071d675430ac36829a6f7121d24ac02dcff836e9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537798"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349813"
 ---
 # <a name="debugoutctlxxx"></a>デバッグ\_OUTCTL\_XXX
 
@@ -38,14 +38,14 @@ ms.locfileid: "56537798"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_THIS_CLIENT</p></td>
-<td align="left"><p>このクライアントによって呼び出されるメソッドによって生成される出力は、このクライアントにのみ送信されます&#39;s<a href="https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks" data-raw-source="[output callbacks](https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks)">コールバックを出力</a>します。</p></td>
+<td align="left"><p>このクライアントによって呼び出されるメソッドによって生成される出力は、このクライアントにのみ送信されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks" data-raw-source="[output callbacks](https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks)">コールバックを出力</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_ALL_CLIENTS</p></td>
@@ -77,7 +77,7 @@ ms.locfileid: "56537798"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -88,7 +88,7 @@ ms.locfileid: "56537798"
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_OVERRIDE_MASK</p></td>
-<td align="left"><p>かどうかに関係なくクライアントに出力を送信します。 クライアント&#39;s 出力マスクになります。</p></td>
+<td align="left"><p>出力をクライアントの出力のマスクことを許可するかどうかに関係なくクライアントに送信します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_DML</p></td>
@@ -112,7 +112,7 @@ ms.locfileid: "56537798"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -134,7 +134,7 @@ ms.locfileid: "56537798"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

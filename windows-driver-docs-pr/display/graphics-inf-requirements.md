@@ -1,22 +1,22 @@
 ---
-title: WDDM 1.2 でグラフィックス INF 要件
+title: WDDM 1.2 でのグラフィックス INF 要件
 description: Windows 8 で Windows Display Driver Model (WDDM) ドライバーでは、グラフィックス ドライバーの INF 変更が必要です。
 ms.assetid: BB1E35B4-8691-4B0C-9D6C-9A7D1ADFAB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c575f54d91c91d80b9e9f317db6f456f9a4a9a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 37806f8c74e01be0133a54946e5616b64dfb6462
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536565"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349167"
 ---
-# <a name="graphics-inf-requirements-in-wddm-12"></a>WDDM 1.2 でグラフィックス INF 要件
+# <a name="graphics-inf-requirements-in-wddm-12"></a>WDDM 1.2 でのグラフィックス INF 要件
 
 
 Windows 8 で Windows Display Driver Model (WDDM) ドライバーでは、グラフィックス ドライバーの INF 変更が必要です。 最も注目すべき変更は、特徴のスコアです。 WDDM 1.2 ドライバーには、WDDM ドライバーを以前よりも高い特徴のスコアが必要です。 このセクションには、Windows 8 のグラフィック ドライバーのすべての関連する INF 要件がについて説明します
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -33,7 +33,7 @@ Windows 8 で Windows Display Driver Model (WDDM) ドライバーでは、グラ
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="updated-feature-score-directive.md" data-raw-source="[Updated feature score directive in Windows 8](updated-feature-score-directive.md)">Windows 8 の機能が更新されたスコア ディレクティブ</a></p></td>
-<td align="left"><p>更新された機能スコアのディレクティブが設定される一般的なインストール&#39;WDDM の後に続くすべての Windows 8 ドライバーに必要な s。</p></td>
+<td align="left"><p>更新された機能スコアのディレクティブは、WDDM の後に続くすべての Windows 8 ドライバーに必要なインストールに関する一般的な設定です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="driver-matching-criteria.md" data-raw-source="[Driver matching criteria](driver-matching-criteria.md)">ドライバーの一致条件</a></p></td>
@@ -57,7 +57,7 @@ Windows 8 で Windows Display Driver Model (WDDM) ドライバーでは、グラ
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="copy-flags-to-support-pnp-stop-directive.md" data-raw-source="[Copy flags to support PnP stop directive](copy-flags-to-support-pnp-stop-directive.md)">PnP 停止ディレクティブをサポートするためにフラグをコピーします。</a></p></td>
-<td align="left"><p>プラグ アンド プレイ (PnP) 停止ディレクティブ ファイルのセクションにフラグが必要ないドライバーのアップグレードをサポートする WDDM&#39;t に再起動が必要です。</p></td>
+<td align="left"><p>プラグ アンド プレイ (PnP) の停止ディレクティブ ファイルのセクションのフラグは、WDDM の再起動を必要としないドライバーをアップグレードをサポートする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="driver-services-start-type-directive.md" data-raw-source="[Driver\services start type directive](driver-services-start-type-directive.md)">Driver\services は、type ディレクティブを開始します。</a></p></td>

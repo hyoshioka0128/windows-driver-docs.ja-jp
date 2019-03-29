@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc1650deea5e79729cb315aa02f15719cbffec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4fe30fd94ac11480f6912fd0d91c6c3f3a704494
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550681"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349785"
 ---
-# <a name="bug-check-0x197-win32ksecurityfailure"></a>バグ チェック 0x197 の。WIN32K\_セキュリティ\_エラー
+# <a name="bug-check-0x197-win32ksecurityfailure"></a>バグ チェック 0x197:WIN32K\_セキュリティ\_エラー
 
 
 WIN32K\_セキュリティ\_エラーのバグ チェックが 0x00000197 の値を持ちます。 これを示します win32k でセキュリティ障害が検出されました。
@@ -45,7 +45,7 @@ WIN32K\_セキュリティ\_エラーのバグ チェックが 0x00000197 の値
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>エラーの種類</p>
-<p>0x1:オブジェクト ハンドル エントリでした&#39;t ポイントは、オブジェクトをバックアップします。</p>
+<p>0x1:オブジェクト ハンドル エントリは、オブジェクトにポイントしませんでした。</p>
 2 - オブジェクトが必要ですオブジェクト ハンドル エントリ - 4 に、種類 3 - ポインター オブジェクトへのポインター</td>
 </tr>
 <tr class="even">

@@ -9,12 +9,12 @@ keywords:
 - WDK UMDF のバージョン情報
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce09e41e3a19b5c6656fd49bcd865b404a2cf96f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6fe21a0fdad7986edf5857c33f488df6a9075a7c
+ms.sourcegitcommit: 5cbc8ac1db572e92abeefebb39f5e72834785bc3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560422"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56754463"
 ---
 # <a name="umdf-version-history"></a>UMDF バージョン履歴
 
@@ -25,18 +25,18 @@ ms.locfileid: "56560422"
 
 |UMDF バージョン|Release メソッド|このバージョンの Windows に含まれる|これを使用してドライバーを実行できます。|
 |--- |--- |--- |--- |
-|2.27|Windows 10、バージョンは 1809 WDK|Windows 10、バージョンは 1809 (2018 の年 10 月の更新、レッドス トーン 5)|Windows 10、バージョンは 1809|
-|2.25|Windows 10、バージョン 1803 WDK|Windows 10、バージョン 1803 (2018 年 4 月の更新、Redstone 4)|Windows 10、バージョン 1803|
-|2.23|Windows 10 バージョン 1709 WDK|Windows 10 バージョン 1709 (Fall Creators Update, レッドス トーン 3)|Windows 10 バージョン 1709|
-|2.21|Windows 10 バージョン 1703 WDK|Windows 10 バージョン 1703 (Creators Update, レッドス トーン 2)|Windows 10 バージョン 1703|
+|2.27|Windows 10、バージョンは 1809 WDK|Windows 10、バージョンは 1809 (2018 の年 10 月の更新、レッドス トーン 5)|Windows 10、1809 およびそれ以降のバージョン|
+|2.25|Windows 10、バージョン 1803 WDK|Windows 10、バージョン 1803 (2018 年 4 月の更新、Redstone 4)|Windows 10、バージョン 1803 以降|
+|2.23|Windows 10 バージョン 1709 WDK|Windows 10 バージョン 1709 (Fall Creators Update, レッドス トーン 3)|Windows 10 バージョン 1709 以降|
+|2.21|Windows 10 バージョン 1703 WDK|Windows 10 バージョン 1703 (Creators Update, レッドス トーン 2)|Windows 10 バージョン 1703 以降|
 |2.19|Windows 10 バージョン 1607 WDK|Windows 10 バージョン 1607 (Anniversary Update、Redstone 1)|Windows 10、バージョン 1607 を Windows Server 2016 以降|
 |2.17|Windows 10 バージョン 1511 WDK|Windows 10 バージョン 1511 (11 月の更新、しきい値 2)|Windows 10、バージョン 1511 では、Windows Server 2016 以降|
 |2.15|Windows 10 WDK|Windows 10 バージョン 1507 (しきい値 1)|Windows 10 バージョン 1507、Windows Server 2016 以降|
 |2.0|Windows Driver Kit (WDK) 8.1|Windows 8.1|Windows 8.1 以降|
-|1.11|Windows Driver Kit (WDK) 8|Windows 8|Windows Vista 以降|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 以降|
-|1.7|Windows Server 2008 の WDK|Windows Vista Service Pack 1 (SP1)、Windows Server 2008|Windows XP 以降|
-|1.5|Windows Vista WDK|Windows Vista|Windows XP 以降|
+|1.11|Windows Driver Kit (WDK) 8|Windows 8|Windows Vista 以降|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 以降|
+|1.7|Windows Server 2008 の WDK|Windows Vista Service Pack 1 (SP1)、Windows Server 2008|Windows XP 以降|
+|1.5|Windows Vista WDK|Windows Vista|Windows XP 以降|
 
 
 Microsoft Visual Studio 2017 で、Windows Driver Kit (WDK) を使用すると、Windows 7 以降を実行しているドライバーをビルドします。
@@ -45,11 +45,11 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 ## <a name="umdf-version-227"></a>UMDF バージョン 2.27
 
-* Added new API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring)
+* 新しい API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) が追加されました
 
 ## <a name="umdf-version-225"></a>UMDF バージョン 2.25
 
-* [複数のバージョンの Windows 用のドライバーを WDF の構築](building-a-wdf-driver-for-multiple-versions-of-windows.md)
+* [複数のバージョンの Windows の WDF ドライバーをビルドする](building-a-wdf-driver-for-multiple-versions-of-windows.md)
 * [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
 
 ## <a name="umdf-version-223"></a>UMDF バージョン 2.23
@@ -86,7 +86,7 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 -   UMDF ドライバーでは、基になるバス ドライバー再列挙することを要求できます。 参照してください[ **WdfDeviceSetFailed**](https://msdn.microsoft.com/library/windows/hardware/ff546890)します。
 
--   設定、 **UmdfDirectHardwareAccess**ディレクティブは常にリソースを接続するデバイスの必要なくなりました。 参照してください[WDF ディレクティブを指定する INF ファイルで](specifying-wdf-directives-in-inf-files.md)します。
+-   設定、 **UmdfDirectHardwareAccess**ディレクティブは常にリソースを接続するデバイスの必要なくなりました。 「[Specifying WDF Directives in INF Files](specifying-wdf-directives-in-inf-files.md)」 (INF ファイルに WDF ディレクティブを指定する) を参照してください。
 
 ## <a name="umdf-version-20"></a>UMDF Version 2.0
 

@@ -1,6 +1,6 @@
 ---
-title: 外部のトランスポートのプロパティ
-description: 外部のトランスポートのプロパティ
+title: 外部トランスポートのプロパティ
+description: 外部トランスポートのプロパティ
 ms.assetid: e57e6c13-dfa3-4bec-9136-0e2bb2ffdd56
 keywords:
 - 外部のトランスポートのプロパティ WDK ビデオのキャプチャします。
@@ -8,14 +8,14 @@ keywords:
 - PROPSETID_EXT_TRANSPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb48052c694e8e742f8d27133b450946e9e96b09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 44f083be8b3c6cb471780f897fd235981c0145ae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551109"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349079"
 ---
-# <a name="external-transport-properties"></a>外部のトランスポートのプロパティ
+# <a name="external-transport-properties"></a>外部トランスポートのプロパティ
 
 
 [PROPSETID\_EXT\_トランスポート](https://msdn.microsoft.com/library/windows/hardware/ff567797)プロパティ セットには検索するためと送信シグナルの種類など、外部ソースから、コントロールとデータの転送に関連するプロパティが含まれています、特定の場所またはソースのメディアのタイムコードします。 次の表に、プロパティ、PROPSETID の一部である\_EXT\_トランスポートのプロパティ セット。
@@ -34,7 +34,7 @@ ms.locfileid: "56551109"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565160" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565160)"><strong>KSPROPERTY_EXTXPORT_CAPABILITIES</strong></a></p></td>
-<td><p>かどうかなど、外部データ トランスポートの機能に関する情報を返しますデバイス&#39;s メディアを取り出すことができます、またはデバイスが後方に再生できます。</p></td>
+<td><p>など、外部データ トランスポートの機能に関する情報を返すかどうか、デバイスのメディアを取り出すことができます、またはデバイスが後方に再生できます。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565161" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565161)"><strong>KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE</strong></a></p></td>
@@ -50,15 +50,15 @@ ms.locfileid: "56551109"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565163" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_MEDIUM_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565163)"><strong>KSPROPERTY_EXTXPORT_MEDIUM_INFO</strong></a></p></td>
-<td><p>外部デバイスに関する情報を返します&#39;s のメディアでは、カセット テープまたはディスク、および書き込み保護が有効になっているかどうか。</p></td>
+<td><p>カセット テープまたはディスク、および書き込み保護が有効になっているかどうかなどの外部のデバイスのメディアに関する情報を返します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565168" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565168)"><strong>KSPROPERTY_EXTXPORT_STATE</strong></a></p></td>
-<td><p>外部のデバイスを制御&#39;s トランスポート モードと状態。</p></td>
+<td><p>外部のデバイスのトランスポート モードと状態を制御します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565169" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE_NOTIFY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565169)"><strong>KSPROPERTY_EXTXPORT_STATE_NOTIFY</strong></a></p></td>
-<td><p>外部デバイスの通知を制御&#39;トランスポート モードの変更またはその状態を変更します。</p></td>
+<td><p>外部のデバイスのトランスポート モードの変更、またはその状態の変更の通知を制御します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565170" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_TIMECODE_SEARCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565170)"><strong>KSPROPERTY_EXTXPORT_TIMECODE_SEARCH</strong></a></p></td>

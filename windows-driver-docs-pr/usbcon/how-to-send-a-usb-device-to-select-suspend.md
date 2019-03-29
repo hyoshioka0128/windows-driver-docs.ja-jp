@@ -1,16 +1,16 @@
 ---
-Description: This topic describes the USB client driver verifier feature of the USB 3.0 driver stack that enables the client driver to test certain failure cases.
-title: USB クライアント ドライバーの検証ツール
+Description: このトピックでは、により、特定のエラー ケースをテストするクライアント ドライバーを USB 3.0 ドライバー スタックの USB クライアント ドライバーの検証の機能について説明します。
+title: USB クライアント ドライバー検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da7649e1b6a7698b8b3e94f8fb4cb67ea0a4dbc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dbf1c830c2595c38976d1347dd4b7757a5107ef8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527578"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349067"
 ---
-# <a name="usb-client-driver-verifier"></a>USB クライアント ドライバーの検証ツール
+# <a name="usb-client-driver-verifier"></a>USB クライアント ドライバー検証ツール
 
 
 このトピックでは、により、特定のエラー ケースをテストするクライアント ドライバーを USB 3.0 ドライバー スタックの USB クライアント ドライバーの検証の機能について説明します。
@@ -72,7 +72,7 @@ HKEY_LOCAL_MACHINE
                   <USB client driver verifier setting> (DWORD)
 ```
 
- *&lt;USB クライアント ドライバーの検証設定&gt;* レジストリ エントリは、DWORD 値を受け取ります。
+*&lt;USB クライアント ドライバーの検証設定&gt;* レジストリ エントリは、DWORD 値を受け取ります。
 追加、変更、または任意の設定を削除する場合は、デバイス設定を適用するシステムを再列挙する必要があります。
 
 このテーブルは、可能な値を示しています。  *&lt;USB クライアント ドライバーの検証設定&gt;* します。 設定で指定されているクライアント ドライバーを適用する、**サービス**キー。
@@ -93,7 +93,7 @@ HKEY_LOCAL_MACHINE
 <tbody>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailRegistration</strong></p>
-<p>クライアント ドライバーが失敗した&#39;にこれらのルーチンの呼び出し。</p>
+<p>これらのルーチンへのクライアント ドライバーの呼び出しが失敗します。</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439428" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceCreateWithParameters&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439428)"><strong>WdfUsbTargetDeviceCreateWithParameters</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406241)"><strong>USBD_CreateHandle</strong></a></li>
@@ -105,7 +105,7 @@ HKEY_LOCAL_MACHINE
 </ul></td>
 <td><p><strong>クライアント ドライバーの登録に失敗しました。</strong></p>
 <p>基になるドライバー スタックの登録に、クライアント ドライバーの初期化タスクの 1 つです。 いくつかの後続の呼び出しで、登録が必要です。</p>
-<p>たとえば、クライアント ドライバーが呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406241)"> <strong>USBD_CreateHandle</strong> </a>登録します。 ように&#39;とドライバーには、ルーチンが常に STATUS_SUCCESS を返し、エラーを処理するコードを実装していないことが前提としています。 ルーチンがエラー NTSTATUS コードを返した場合、ドライバーできます誤ってエラーを無視して USBD 無効なハンドルを使用して、後続の呼び出しを続行します。</p>
+<p>たとえば、クライアント ドライバーが呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406241)"> <strong>USBD_CreateHandle</strong> </a>登録します。 たとえば、ドライバーには、ルーチンが常に STATUS_SUCCESS を返し、エラーを処理するコードを実装していないことが前提としていますのでご注意ください。 ルーチンがエラー NTSTATUS コードを返した場合、ドライバーできます誤ってエラーを無視して USBD 無効なハンドルを使用して、後続の呼び出しを続行します。</p>
 <p>設定を使用すると、コード パスの障害をテストすることができるため、呼び出しが失敗することができます。</p>
 <p>登録に失敗したときに、クライアント ドライバーの動作が必要です。</p>
 <ul>
@@ -115,7 +115,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierFailChainedMdlSupport</strong></p>
-<p>クライアント ドライバーが失敗した&#39;s、呼び出し元で GUID_USB_CAPABILITY_CHAINED_MDLS が成功したとき、これらのルーチンの呼び出し、 <em>CapabilityType</em>パラメーター。</p>
+<p>これらのルーチンへのクライアント ドライバーの呼び出しが失敗した呼び出し元で GUID_USB_CAPABILITY_CHAINED_MDLS が成功したとき、 <em>CapabilityType</em>パラメーター。</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh406230" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406230)"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439434" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439434)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -137,7 +137,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailStaticStreamsSupport</strong></p>
-<p>クライアント ドライバーが失敗した&#39;s、呼び出し元で GUID_USB_CAPABILITY_STATIC_STREAMS が成功したとき、これらのルーチンの呼び出し、 <em>CapabilityType</em>パラメーター。</p>
+<p>これらのルーチンへのクライアント ドライバーの呼び出しが失敗した呼び出し元で GUID_USB_CAPABILITY_STATIC_STREAMS が成功したとき、 <em>CapabilityType</em>パラメーター。</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh406230" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406230)"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439434" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439434)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -172,7 +172,7 @@ HKEY_LOCAL_MACHINE
 <p>場合<em>N</em>が最大数よりも大きい、ストリームの設定は無視されます。</p></li>
 </ul></td>
 <td><p><strong>ストリームの最大数の異なる値をサポートしており、さまざまなホスト コント ローラーとの通信をします。</strong></p>
-<p>この設定を使用して確認できますドライバー&#39;s のさまざまなホスト コント ローラーでサポートされているストリームの数に関係なくロジックはストリームです。</p>
+<p>この設定を使用するには、そのドライバーのさまざまなホスト コント ローラーでサポートされているストリームの数に関係なくロジックをストリームすることを確認の操作を行うことができます。</p>
 <p>I/O の転送に使用できるストリームの数は、ホスト コント ローラーをサポートするストリームの数によって制限されます。</p>
 <p>クライアント ドライバーで静的なストリームをサポートする方法については、次を参照してください。 <a href="how-to-open-streams-in-a-usb-endpoint.md" data-raw-source="[How to Open and Close Static Streams in a USB Bulk Endpoint](how-to-open-streams-in-a-usb-endpoint.md)">USB 一括エンドポイントで静的ストリームを開くおよび閉じる方法</a>します。</p>
 <p>ホスト コント ローラーは、エンドポイントよりも少ないストリームをサポートしている場合、クライアント ドライバーの動作が必要です。</p>
@@ -183,7 +183,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailEnableStaticStreams</strong></p>
-<p>クライアント ドライバーが失敗した&#39;s は、静的なストリーム要求 (URB_FUNCTION_OPEN_STATIC_STREAMS) を開きます。</p></td>
+<p>クライアント ドライバーの静的なストリームのオープン要求 (URB_FUNCTION_OPEN_STATIC_STREAMS) は失敗します。</p></td>
 <td><ul>
 <li>0:設定を無効にします。</li>
 <li>1:要求は常に失敗します。</li>

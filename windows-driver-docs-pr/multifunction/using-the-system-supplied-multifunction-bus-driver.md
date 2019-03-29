@@ -12,12 +12,12 @@ keywords:
 - Pdo WDK 多機能デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 536ff8162ef844eb4fe427309e883b1d36890937
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 94f9cbdb5f0fd1e6eed1785b5149344b804f0793
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536036"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349736"
 ---
 # <a name="using-the-system-supplied-multifunction-bus-driver"></a>システム提供の多機能バス ドライバーの使用
 
@@ -54,7 +54,7 @@ ClassGUID  = {4d36e971-e325-11ce-bfc1-08002be10318} ; GUID for MF
 ; ...
 ; ...
 [ControlFlags]
-ExcludeFromSelect = *   ; don&#39;t include PnP devices in a displayed list of 
+ExcludeFromSelect = *   ; don't include PnP devices in a displayed list of 
                         ; devices available for manual installation
 [Manufacturer]
 ; ...

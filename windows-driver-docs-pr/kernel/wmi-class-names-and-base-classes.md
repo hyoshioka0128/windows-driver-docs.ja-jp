@@ -9,12 +9,12 @@ keywords:
 - WMI の WDK カーネルでは、クラス
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b460d8661b94ab226fd1c8789ea8687e49666c85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6ff351f5606a65786c69fb4b635229e30dd5c581
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549766"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349105"
 ---
 # <a name="wmi-class-names-and-base-classes"></a>WMI クラス名と基本クラス
 
@@ -31,7 +31,7 @@ WMI クラス名は、WMI 名前空間内で一意である必要があります
 名前の競合を防ぐため、ドライバー ライターはドライバー固有の基本クラスを定義し、すべてのドライバーの WMI クラスを基本クラスから派生できます。 まとめて基底クラスの名前とクラス名、一意の名前を生成する可能性が高くなりますが。 たとえば、次に示しますシリアル ドライバーのデータ ブロックの抽象基本クラス。
 
 ```cpp
-// Serial driver&#39;s base class for data blocks
+// Serial driver's base class for data blocks
 [abstract]
 class MSSerial {
 }
@@ -46,7 +46,7 @@ class MSSerial_StandardSerialInformation : MSSerial
 }
 ```
 
-デバイスに固有のカスタム データ ブロックが基底クラス名では、製造元、モデル、およびドライバーまたはデバイスの種類を含める必要があります。 次に、例を示します。
+デバイスに固有のカスタム データ ブロックが基底クラス名では、製造元、モデル、およびドライバーまたはデバイスの種類を含める必要があります。 例:
 
 ```cpp
 [abstract]
@@ -62,10 +62,10 @@ class Adaptec1542_Speed : Adaptec1542 {
 }
 ```
 
-WMI は、特定のクラス階層内の 1 つだけの抽象基本クラスをできます。 イベント ブロックを定義するクラスがから派生する必要があります**WmiEvent**、抽象基本クラスであるため、**抽象**イベント ブロックのドライバーの定義の基本クラスで修飾子は使用できません。 代わりに、非抽象基本クラスから派生させる**WmiEvent**、基本クラスから個々 のイベント クラスを派生します。 次に、例を示します。
+WMI は、特定のクラス階層内の 1 つだけの抽象基本クラスをできます。 イベント ブロックを定義するクラスがから派生する必要があります**WmiEvent**、抽象基本クラスであるため、**抽象**イベント ブロックのドライバーの定義の基本クラスで修飾子は使用できません。 代わりに、非抽象基本クラスから派生させる**WmiEvent**、基本クラスから個々 のイベント クラスを派生します。 例:
 
 ```cpp
-//Serial driver&#39;s base class for event blocks
+//Serial driver's base class for event blocks
 class MSSerialEvent : WmiEvent 
 {
 }

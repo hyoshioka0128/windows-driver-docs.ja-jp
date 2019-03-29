@@ -1,6 +1,6 @@
 ---
-title: エラーからの回復に参加しています。
-description: エラーからの回復に参加しています。
+title: エラーからの回復への参加
+description: エラーからの回復への参加
 ms.assetid: 79f534b2-a5eb-4249-bfff-2f40c25805a6
 keywords:
 - Windows ハードウェア アーキテクチャ WDK のエラー、エラーからの回復
@@ -12,14 +12,14 @@ keywords:
 - WDK WHEA エラーの回復
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5f4888fde97b7c1911ed5580828637c6a20919
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 29aca46f4d488523e46fc0d387371c183c3b8389
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548979"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350161"
 ---
-# <a name="participating-in-error-recovery"></a>エラーからの回復に参加しています。
+# <a name="participating-in-error-recovery"></a>エラーからの回復への参加
 
 
 エラーからの回復に参加するにプラグインの PSHED を実装する必要があります、 [ *AttemptRecovery* ](https://msdn.microsoft.com/library/windows/hardware/ff559257)コールバック関数。
@@ -28,7 +28,7 @@ ms.locfileid: "56548979"
 
 ```cpp
 //
-// The PSHED plug-in&#39;s AttemptRecovery callback function
+// The PSHED plug-in's AttemptRecovery callback function
 //
 NTSTATUS
   AttemptRecovery(

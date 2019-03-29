@@ -1,6 +1,6 @@
 ---
-title: GDI フォントとテキスト サービス
-description: GDI フォントとテキスト サービス
+title: GDI フォント サービスおよびテキスト サービス
+description: GDI フォント サービスおよびテキスト サービス
 ms.assetid: c315f3ec-ddee-42d9-8bfb-7bb2e0d1d4b2
 keywords:
 - WDK GDI フォント
@@ -13,14 +13,14 @@ keywords:
 - テキスト出力 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f058562bb7ec4eaef5f5ec1ebc237d947853ee5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 795bd946590741eef79f6007e88cf4b4a8ea92df
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537040"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350083"
 ---
-# <a name="gdi-font-and-text-services"></a>GDI フォントとテキスト サービス
+# <a name="gdi-font-and-text-services"></a>GDI フォント サービスおよびテキスト サービス
 
 
 ## <span id="ddk_gdi_font_and_text_services_gg"></span><span id="DDK_GDI_FONT_AND_TEXT_SERVICES_GG"></span>
@@ -58,7 +58,7 @@ GDI は、フォントの管理とテキストの出力のサポートを提供�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564917" data-raw-source="[&lt;strong&gt;EngGetCurrentCodePage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564917)"><strong>EngGetCurrentCodePage</strong></a></p></td>
-<td align="left"><p>システムを返します&#39;s の既定の OEM および ANSI コード ページ。</p></td>
+<td align="left"><p>システムの既定の OEM および ANSI コード ページを返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564956" data-raw-source="[&lt;strong&gt;EngGetType1FontList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564956)"><strong>EngGetType1FontList</strong></a></p></td>
@@ -90,7 +90,7 @@ GDI は、フォントの管理とテキストの出力のサポートを提供�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565996" data-raw-source="[&lt;strong&gt;FONTOBJ_pQueryGlyphAttrs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565996)"><strong>FONTOBJ_pQueryGlyphAttrs</strong></a></p></td>
-<td align="left"><p>フォントに関する情報を返します&#39;s グリフ。</p></td>
+<td align="left"><p>フォントのグリフについての情報を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566001" data-raw-source="[&lt;strong&gt;FONTOBJ_pvTrueTypeFontFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566001)"><strong>FONTOBJ_pvTrueTypeFontFile</strong></a></p></td>

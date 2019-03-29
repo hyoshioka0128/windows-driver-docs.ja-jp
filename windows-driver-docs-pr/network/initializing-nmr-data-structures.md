@@ -1,6 +1,6 @@
 ---
-title: NMR データ構造体の初期化
-description: NMR データ構造体の初期化
+title: NMR データ構造の初期化
+description: NMR データ構造の初期化
 ms.assetid: 84241ff4-f6ae-4c71-a9e3-1a6615e41293
 keywords:
 - ネットワーク モジュール レジストラー WDK Winsock カーネル
@@ -8,14 +8,14 @@ keywords:
 - NMR データ構造体の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 122baf2c7a0fd8cc805be592a803fa9944c77478
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 372d3fc86532b667967298b51da9ceee76710940
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557351"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349621"
 ---
-# <a name="initializing-nmr-data-structures"></a>NMR データ構造体の初期化
+# <a name="initializing-nmr-data-structures"></a>NMR データ構造の初期化
 
 
 Winsock カーネル (WSK) する前にアプリケーションに登録することができます、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md)、最初、アプリケーションは、次の構造を初期化する可能性があります。
@@ -34,7 +34,7 @@ Winsock カーネル (WSK) する前にアプリケーションに登録する�
 // Include the WSK header file
 #include "wsk.h"
 
-// Structure for the WSK application&#39;s network module identification
+// Structure for the WSK application's network module identification
 const NPI_MODULEID ModuleId =
 {
   sizeof(NPI_MODULEID),
@@ -42,7 +42,7 @@ const NPI_MODULEID ModuleId =
   { ... }  // A GUID that uniquely identifies the WSK application
 };
 
-// Prototypes for the WSK application&#39;s NMR API callback functions
+// Prototypes for the WSK application's NMR API callback functions
 NTSTATUS
   ClientAttachProvider(
     IN HANDLE NmrBindingHandle,
@@ -60,7 +60,7 @@ VOID
     IN PVOID ClientBindingContext
     );
 
-// Structure for the WSK application&#39;s characteristics
+// Structure for the WSK application's characteristics
 const NPI_CLIENT_CHARACTERISTICS Characteristics =
 {
   0,
@@ -81,7 +81,7 @@ const NPI_CLIENT_CHARACTERISTICS Characteristics =
 
 WSK アプリケーションが呼び出す、 [ **NmrRegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568782) NMR にアプリケーションを登録する関数。
 
-次に、例を示します。
+以下に例を示します。
 
 ```C++
 // Variable to contain the handle for the registration with the NMR

@@ -1,20 +1,20 @@
 ---
-title: 印刷のプロバイダーによって定義されている関数
-description: 印刷のプロバイダーによって定義されている関数
+title: 印刷プロバイダーによって定義されている関数
+description: 印刷プロバイダーによって定義されている関数
 ms.assetid: 4fae4b69-ed4b-47b6-b6e8-41733aed51a5
 keywords:
 - プロバイダー WDK、関数を印刷します。
 - 関数の WDK 印刷プロバイダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b71b87bb3154aed5218375b4e62b0c3a47619e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8ec343fd5db0345044216287d0d559aa4c32d43f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537297"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349739"
 ---
-# <a name="functions-defined-by-print-providers"></a>印刷のプロバイダーによって定義されている関数
+# <a name="functions-defined-by-print-providers"></a>印刷プロバイダーによって定義されている関数
 
 
 
@@ -139,7 +139,7 @@ ms.locfileid: "56537297"
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>
-<td><p>印刷キューを変更します。&#39;s データ型または<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
+<td><p>印刷キューのデータ型を変更または<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>SetPrinter</strong> (必須)</p></td>
@@ -170,7 +170,7 @@ ms.locfileid: "56537297"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPrinterDriver</strong></p></td>
-<td><p>指定したプリンターを追加します。&#39;s ドライバー ファイルが指定されたサーバー。</p></td>
+<td><p>指定したサーバーには、指定したプリンターのドライバー ファイルを追加します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPrinterDriverEx</strong></p></td>
@@ -178,7 +178,7 @@ ms.locfileid: "56537297"
 </tr>
 <tr class="odd">
 <td><p><strong>DeletePrinterDriver</strong></p></td>
-<td><p>指定したプリンターへのアクセスを削除します。&#39;s ドライバー ファイル、指定したサーバー上。</p></td>
+<td><p>指定したサーバー上の指定したプリンターのドライバー ファイルへのアクセスを削除します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeletePrinterDriverEx</strong></p></td>
@@ -198,7 +198,7 @@ ms.locfileid: "56537297"
 </tr>
 <tr class="even">
 <td><p><strong>GetPrinterDriverDirectory</strong></p></td>
-<td><p>サーバーの名前を返します&#39;のプリンター ドライバーのディレクトリ。</p></td>
+<td><p>ドライバーのディレクトリ サーバーのプリンターの名前を返します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -259,7 +259,7 @@ ms.locfileid: "56537297"
 <tr class="odd">
 <td><p></p>
 <strong>WritePrinter</strong> (必須)</td>
-<td><p>印刷ジョブの一部を受け取ります&#39;s データ ストリーム。</p></td>
+<td><p>印刷ジョブのデータ ストリームの一部を受け取ります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -414,7 +414,7 @@ ms.locfileid: "56537297"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPort</strong></p></td>
-<td><p>指定されたポート モニタを呼び出すことで通常使用できる、一覧にプリンター ポートを追加&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff545026" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545026)"> <strong>AddPortUI</strong> </a>関数。</p></td>
+<td><p>通常、指定したポート モニターを呼び出すことによって利用可能なリストに、プリンター ポートを追加します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545026" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545026)"> <strong>AddPortUI</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPortEx</strong></p></td>
@@ -423,12 +423,12 @@ ms.locfileid: "56537297"
 <tr class="odd">
 <td><p></p>
 <strong>ConfigurePort</strong> (必須)</td>
-<td><p>指定されたポート モニタを呼び出すことによって通常、プリンター ポートを構成します&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff546290" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546290)"> <strong>ConfigurePortUI</strong> </a>関数。</p></td>
+<td><p>呼び出して、指定したポート モニターの通常、プリンター ポートを構成します<a href="https://msdn.microsoft.com/library/windows/hardware/ff546290" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546290)"> <strong>ConfigurePortUI</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
 <strong>DeletePort</strong> (必須)</td>
-<td><p>指定されたポート モニタを呼び出すことで通常使用できる、一覧からプリンター ポートを削除&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff547432" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547432)"> <strong>DeletePortUI</strong> </a>関数。</p></td>
+<td><p>通常、指定したポート モニターを呼び出すことによって利用可能な一覧からプリンター ポートを削除します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547432" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547432)"> <strong>DeletePortUI</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
@@ -460,7 +460,7 @@ ms.locfileid: "56537297"
 <tbody>
 <tr class="odd">
 <td><p><strong>DeletePrinterData</strong></p></td>
-<td><p>指定したプリンターの指定された値名に現在割り当てられている値を削除します&#39;s <strong>PrinterDriverData</strong>キー。</p></td>
+<td><p>指定したプリンターの下の指定された値名に現在割り当てられている値を削除します<strong>PrinterDriverData</strong>キー。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeletePrinterDataEx</strong></p></td>
@@ -468,11 +468,11 @@ ms.locfileid: "56537297"
 </tr>
 <tr class="odd">
 <td><p><strong>DeletePrinterKey</strong></p></td>
-<td><p>指定されたプリンターの下のレジストリに現在格納されている場合、指定したキーおよびそのサブキーを削除します&#39;s <strong>PrinterDriverData</strong>キー。</p></td>
+<td><p>指定したプリンターの下のレジストリに現在格納されている場合、指定したキーおよびそのサブキーを削除します<strong>PrinterDriverData</strong>キー。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EnumPrinterData</strong></p></td>
-<td><p>それぞれの値の名前であり、現在割り当てられている指定されたプリンターの下のレジストリに格納されている値を返します&#39;s <strong>PrinterDriverData</strong>キー。</p></td>
+<td><p>それぞれの値の名前であり、現在割り当てられている指定されたプリンターの下のレジストリに格納されている値を返します<strong>PrinterDriverData</strong>キー。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EnumPrinterDataEx</strong></p></td>
@@ -484,7 +484,7 @@ ms.locfileid: "56537297"
 </tr>
 <tr class="odd">
 <td><p><strong>GetPrinterData</strong></p></td>
-<td><p>指定されたプリンターの下のレジストリに格納されている指定された値の名前に現在割り当てられている値を返します&#39;s <strong>PrinterDriverData</strong>キー。</p></td>
+<td><p>指定したプリンターの下のレジストリに格納されている指定された値の名前に現在割り当てられている値を返します<strong>PrinterDriverData</strong>キー。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>GetPrinterDataEx</strong></p></td>
@@ -492,7 +492,7 @@ ms.locfileid: "56537297"
 </tr>
 <tr class="odd">
 <td><p><strong>SetPrinterData</strong></p></td>
-<td><p>指定されたプリンターの下のレジストリで指定された値の名前と値を格納&#39;s <strong>PrinterDriverData</strong>キー。</p></td>
+<td><p>指定された値の名前と値を指定したプリンターの 、レジストリに格納<strong>PrinterDriverData</strong>キー。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SetPrinterDataEx</strong></p></td>

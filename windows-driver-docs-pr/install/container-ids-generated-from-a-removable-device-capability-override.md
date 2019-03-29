@@ -1,17 +1,17 @@
 ---
 title: リムーバブル デバイスの機能から生成されたコンテナー Id をオーバーライドします。
-description: リムーバブル デバイス機能から生成されたコンテナー Id のオーバーライドします。
+description: リムーバブル デバイス機能のオーバーライドで生成されるコンテナー ID
 ms.assetid: 8b1bf9d4-1aea-4d82-b783-f6dc62b9f8f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9eb30a571422049762cc202a97c45e75d1b01a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9f76526d1a75834facd711b09636b5547b82fc5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535655"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349223"
 ---
-# <a name="container-ids-generated-from-a-removable-device-capability-override"></a>リムーバブル デバイス機能から生成されたコンテナー Id のオーバーライドします。
+# <a name="container-ids-generated-from-a-removable-device-capability-override"></a>リムーバブル デバイス機能のオーバーライドで生成されるコンテナー ID
 
 
 Windows 7 以降、新しいデバイスはバスに固有の一意の ID を提供する必要があります (」の説明に従って[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md))。
@@ -49,23 +49,23 @@ Windows 7 および Windows の以降のバージョンは、報告されたリ�
 <td align="left"><p>2</p></td>
 <td align="left"><p><a href="hardwareid-registry-subkey.md" data-raw-source="[HardwareID](hardwareid-registry-subkey.md)">HardwareID</a></p></td>
 <td align="left"><p>指定します、<a href="hardware-ids.md" data-raw-source="[hardware ID](hardware-ids.md)">ハードウェア ID</a>リムーバブル デバイスの機能をオーバーライドするデバイスが適用されます。</p>
-<p>このサブキーの名前は、実際のハードウェア ID、すべての円記号 (&#39;&#39;) 文字数に置き換えられます (&#39;#&#39;) 文字。</p></td>
+<p>このサブキーの名前は実際のハードウェア ID で、すべての円記号 (") 文字に置き換えられます ('#') の数文字。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
 <td align="left"><p><a href="compatibleid-registry-subkey.md" data-raw-source="[CompatibleID](compatibleid-registry-subkey.md)">CompatibleID</a></p></td>
 <td align="left"><p>指定します、<a href="compatible-ids.md" data-raw-source="[compatible ID](compatible-ids.md)">互換性 ID</a>リムーバブル デバイスの機能をオーバーライドするデバイスが適用されます。</p>
-<p>このサブキーの名前は、実際のハードウェア ID、すべての円記号 (&#39;&#39;) 文字数に置き換えられます (&#39;#&#39;) 文字。</p></td>
+<p>このサブキーの名前は実際のハードウェア ID で、すべての円記号 (") 文字に置き換えられます ('#') の数文字。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a></p></td>
-<td align="left"><p>デバイスの場所のパスのみを指定します&#39;親デバイス ノード (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-devnode" data-raw-source="&lt;em&gt;devnode&lt;/em&gt;"><em>devnode</em></a>)、リムーバブル デバイスの機能上書きを適用する必要があります。</p></td>
+<td align="left"><p>デバイスの親デバイス ノードの場所のパスのみを指定します (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-devnode" data-raw-source="&lt;em&gt;devnode&lt;/em&gt;"><em>devnode</em></a>)、リムーバブル デバイスの機能上書きを適用する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
 <td align="left"><p><a href="childlocationpaths-registry-subkey.md" data-raw-source="[ChildLocationPaths](childlocationpaths-registry-subkey.md)">ChildLocationPaths</a></p></td>
-<td align="left"><p>指定します、デバイスの場所のパス&#39;s 子 devnode、リムーバブル デバイス機能上書きの適用になります。</p>
+<td align="left"><p>デバイスの子 devnode の場所のパスが、リムーバブル デバイス機能上書きの適用を持つことを指定します。</p>
 <div class="alert">
 <strong>注</strong>、指定されたデバイスの親 devnode の影響を受けない、リムーバブル デバイス機能上書きしない限り、 <a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a>レジストリ サブキーが指定されても、または<strong>ChildLocationPaths</strong>親 devnode のレジストリ サブキーが指定されています。
 </div>

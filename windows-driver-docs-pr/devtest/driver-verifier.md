@@ -11,12 +11,12 @@ keywords:
 - ストレス テストを WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f91dca761d53253a8bcf301851ad2a5a7aa404d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5b42c6cdc01d3903c0f1bfd52174e92081ebaf9d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529797"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349769"
 ---
 # <a name="driver-verifier"></a>ドライバーの検証ツール
 
@@ -43,7 +43,7 @@ Driver Verifier は、Windows カーネル モード ドライバーと無効な
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>たく&#39;t は、Windows 2000、Windows 10 s. を除き後で Windows のすべてのバージョンに含まれる、Driver Verifier (Verifier.exe) をダウンロードする必要がありますありません&#39;t 個別のドライバーの検証ツールのダウンロード パッケージ %windir%\system32 ディレクトリ内にあります。 </p>
+<td align="left"><p>Windows 2000、Windows 10 s. を除き後で Windows のすべてのバージョンに含まれる、Driver Verifier (Verifier.exe) をダウンロードする必要はありません。個別のドライバーの検証ツールのダウンロード パッケージがない、%windir%\system32 ディレクトリ内にあります。 </p>
 <ul>
 <li>開く、<strong>コマンド プロンプト</strong>ウィンドウ (<strong>管理者として実行</strong>)。</li>
 <li>型<strong>verifier</strong>ドライバー検証ツール マネージャーを開くまたは型<strong>verifier/でしょうか。</strong> コマンド ライン オプションを表示します。 参照してください<a href="verifier-command-line.md" data-raw-source="[&lt;strong&gt;Driver Verifier Command Syntax&lt;/strong&gt;](verifier-command-line.md)"> <strong>Driver Verifier のコマンド構文</strong></a>詳細についてはします。</li>
@@ -60,7 +60,7 @@ Driver Verifier は、Windows カーネル モード ドライバーと無効な
 <div>
 
 </div>
-<p>ドライバーのバージョンの Windows 8.1 と Windows の以前のバージョンの変更については、次を参照してください<a href="driver-verifier--what-s-new.md" data-raw-source="[Driver Verifier: What&#39;s New](driver-verifier--what-s-new.md)">Driver Verifier:。どのような&#39;s 新しい</a>します。</p></td>
+<p>ドライバーのバージョンの Windows 8.1 と Windows の以前のバージョンの変更については、次を参照してください<a href="driver-verifier--what-s-new.md" data-raw-source="[Driver Verifier: What's New](driver-verifier--what-s-new.md)">Driver Verifier:。新機能については</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,14 +101,14 @@ Driver Verifier は、テスト コンピューター、またはテストとデ
    </colgroup>
    <thead>
    <tr class="header">
-   <th align="left">構成方法</th>
+   <th align="left">オプション</th>
    <th align="left">推奨される使用</th>
    </tr>
    </thead>
    <tbody>
    <tr class="odd">
    <td align="left"><strong>署名されていないドライバーを自動的に選択します</strong></td>
-   <td align="left"><p>Windows のバージョンを実行するコンピューターでテストするための便利なオプション&#39;t が署名されたドライバーが必要です。</p></td>
+   <td align="left"><p>署名されたドライバーを必要としない Windows のバージョンを実行するコンピューターでテストするための便利なオプションです。</p></td>
    </tr>
    <tr class="even">
    <td align="left"><strong>以前のバージョンの Windows 向けに構築されたドライバーを自動的に選択します。</strong></td>
@@ -221,13 +221,13 @@ kd> !analyze -v
     kd> !deadlock
     ```
 
--   [**! iovirp** ](https://msdn.microsoft.com/library/windows/hardware/ff563252) \[*アドレス*\] I/O の検証ツールによって追跡 IRP に関連する情報が表示されます。 次に、例を示します。
+-   [**! iovirp** ](https://msdn.microsoft.com/library/windows/hardware/ff563252) \[*アドレス*\] I/O の検証ツールによって追跡 IRP に関連する情報が表示されます。 以下に例を示します。
 
     ```
     kd> !iovirp 947cef68
     ```
 
--   [**! ruleinfo** ](https://msdn.microsoft.com/library/windows/hardware/dn265374) \[ *RuleID* \]に関連する情報が表示されます、 [DDI 準拠の検査](ddi-compliance-checking.md)に違反していたルール (*RuleID*バグ チェックの最初の引数は、常にします。 すべて DDI 準拠の検査*RuleID*フォーム 0x200nn に)。 次に、例を示します。
+-   [**! ruleinfo** ](https://msdn.microsoft.com/library/windows/hardware/dn265374) \[ *RuleID* \]に関連する情報が表示されます、 [DDI 準拠の検査](ddi-compliance-checking.md)に違反していたルール (*RuleID*バグ チェックの最初の引数は、常にします。 すべて DDI 準拠の検査*RuleID*フォーム 0x200nn に)。 例:
 
     ```
     kd> !ruleinfo 0x20005

@@ -1,6 +1,6 @@
 ---
-title: Timecode カテゴリ
-description: Timecode カテゴリ
+title: タイムコード カテゴリ
+description: タイムコード カテゴリ
 ms.assetid: 273e0233-357e-4e13-bf8e-77ca36834ee7
 keywords:
 - ストリームのカテゴリ WDK ビデオ キャプチャ、imecode
@@ -8,14 +8,14 @@ keywords:
 - PINNAME_VIDEO_TIMECODE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f396a781e8a1e4fe9dd11fc66c9c53c7227ffa45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 00abaa1cc92b55dffb86b151b56023303d65341e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531986"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350125"
 ---
-# <a name="timecode-category"></a>Timecode カテゴリ
+# <a name="timecode-category"></a>タイムコード カテゴリ
 
 
 次の GUID はタイムコード カテゴリに対応します。
@@ -34,7 +34,7 @@ ms.locfileid: "56531986"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
@@ -48,7 +48,7 @@ ms.locfileid: "56531986"
 </tr>
 <tr class="odd">
 <td><p><strong>主な形式の GUID</strong></p></td>
-<td><p>定義されていません。 GUID に直接表示を使用して定義&#39;s MEDIATYPE_Timecode します。</p></td>
+<td><p>定義されていません。 MEDIATYPE_Timecode の直接表示するを使用して GUID を定義します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>サブ GUID を書式設定します。</strong></p></td>

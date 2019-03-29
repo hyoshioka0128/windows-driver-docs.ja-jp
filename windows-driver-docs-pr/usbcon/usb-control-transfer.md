@@ -1,16 +1,16 @@
 ---
-Description: This topic explains the structure of a control transfer and how a client driver should send a control request to the device.
-title: USB 制御転送を送信する方法
+Description: このトピックでは、コントロールの転送とクライアント ドライバーがデバイスを制御要求を送信する必要がある方法の構造について説明します。
+title: USB コントロール転送の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ea3a901585e58750041da39a13b375727a32e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7c5c7310e1e6ddac12e13049916d1dac618098a4
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551536"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349143"
 ---
-# <a name="how-to-send-a-usb-control-transfer"></a>USB 制御転送を送信する方法
+# <a name="how-to-send-a-usb-control-transfer"></a>USB コントロール転送の送信方法
 
 
 このトピックでは、コントロールの転送とクライアント ドライバーがデバイスを制御要求を送信する必要がある方法の構造について説明します。
@@ -110,7 +110,7 @@ Beagle、Ellisys、LeCroy USB プロトコル アナライザーなどの任意�
     <tr class="header">
     <th>フィールド</th>
     <th>サイズ</th>
-    <th>Value</th>
+    <th>値</th>
     <th>説明</th>
     </tr>
     </thead>
@@ -193,7 +193,7 @@ Beagle、Ellisys、LeCroy USB プロトコル アナライザーなどの任意�
 
     デバイス記述子 (「表 9-8) の構造に統合されたデータ パケットをマップすることによって、これらのフィールドと値を表示します。
 
-    | フィールド                  | サイズ | Value  | 説明                                                                       |
+    | フィールド                  | サイズ | 値  | 説明                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | デバイス記述子は、これは 18 バイトの長さ。                               |
     | **bDescriptorType**    | 1    | 0x01   | 記述子の型は、デバイスです。                                                    |
@@ -494,7 +494,7 @@ Microsoft 提供の USB スタックは、上記のトレースで示すよう�
 <p>URB_FUNCTION_SELECT_INTERFACE</p></td>
 </tr>
 <tr class="odd">
-<td>SYNC_FRAME:Get およびエンドポイントの設定と&#39;s 同期のフレーム数。 USB 仕様の 9.4.10」セクションを参照してください。</td>
+<td>SYNC_FRAME:Get およびエンドポイントの同期の設定とはフレーム番号です。 USB 仕様の 9.4.10」セクションを参照してください。</td>
 <td>この要求は、USB ドライバー スタックによって処理されます。クライアント ドライバーでは、この操作を実行できません。</td>
 <td>この要求は、USB ドライバー スタックによって処理されます。クライアント ドライバーでは、この操作を実行できません。</td>
 <td>この要求は、USB ドライバー スタックによって処理されます。クライアント ドライバーでは、この操作を実行できません。</td>
@@ -800,7 +800,7 @@ CDevice::SendControlTransferSynchronously(
 }  
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 
 デバイスの機能のドライバーとして Winusb.sys を使用する場合は、アプリケーションからコントロールの転送を送信できます。 WinUSB でセットアップ パケットの書式を設定するには、UMDF ヘルパー マクロと、このトピックの表で説明されている構造体を使用します。 要求を送信する呼び出し[ **WinUsb\_ControlTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff540219)関数。

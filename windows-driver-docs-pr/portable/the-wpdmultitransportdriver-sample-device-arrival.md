@@ -1,14 +1,14 @@
 ---
-Description: MultiTransport Device Support
+Description: MultiTransport デバイスのサポート
 title: MultiTransport デバイスのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e43dc9336e483b82615e3f4251bc1a9a20b98f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c3f686c03b91ec7d64486ac475372590f015725f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537473"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349395"
 ---
 # <a name="multitransport-device-support"></a>MultiTransport デバイスのサポート
 
@@ -48,7 +48,7 @@ WpdMultiTransportDriver サンプルは、WpdHelloWorldDriver に基づいてお
                 // device (upon first-connect) by
                 // using CoCreateGUID and setting that value into non-volatile storage
                 // on the device. The same GUID value is then  reported by each
-                // of your device&#39;s transports. To avoid a provisioning race condition,
+                // of your device's transports. To avoid a provisioning race condition,
                 // always read the value from the device after provisioning. Only
                 // provision the GUID one time. Thereafter, always use the value that is provided
                 // by the device.

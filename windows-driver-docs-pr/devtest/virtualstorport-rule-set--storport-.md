@@ -1,17 +1,17 @@
 ---
-title: VirtualStorport ルール セット (Storport)
+title: VirtualStorport の規則セット (Storport)
 description: これらの規則を使用するには、ドライバーが Storport ミニポート (VMiniport) を仮想ドライバーへの特定の関心のある Ddi を正しく呼び出すことを確認します。
 ms.assetid: 7223AFF1-7EB7-4E25-BC50-8A7BF4E4BE59
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fbae0cfeb9a8cd01da05ea1ad8b8a2fa489335f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f9c493b16ac25e242b7640741547f14a7df08049
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536799"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349135"
 ---
-# <a name="virtualstorport-rule-set-storport"></a>VirtualStorport ルール セット (Storport)
+# <a name="virtualstorport-rule-set-storport"></a>VirtualStorport の規則セット (Storport)
 
 
 これらの規則を使用するには、ドライバーが Storport ミニポート (VMiniport) を仮想ドライバーへの特定の関心のある Ddi を正しく呼び出すことを確認します。
@@ -53,15 +53,15 @@ ms.locfileid: "56536799"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-withincriticalregion.md" data-raw-source="[&lt;strong&gt;WithinCriticalRegion&lt;/strong&gt;](storport-withincriticalregion.md)"><strong>WithinCriticalRegion</strong></a></p></td>
-<td align="left"><p>このルールを検証するドライバー&#39;s を呼び出す通常カーネル APC 配信が無効になっている場合にのみ、同期機能が加えられたに特定します。</p></td>
+<td align="left"><p>このルールは、通常カーネル APC 配信が無効になっている場合にのみ、特定の同期機能へのドライバーの呼び出しが行われることを確認します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-zwregistrycreate.md" data-raw-source="[&lt;strong&gt;ZwRegistryCreate&lt;/strong&gt;](storport-zwregistrycreate.md)"><strong>ZwRegistryCreate</strong></a></p></td>
-<td align="left"><p>このルールは、のレジストリ キーを識別するハンドルが作成されたことを確認します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566425" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566425)"> <strong>ZwCreateKey</strong> </a>他で正しく使用されて、その後<em>ZwXxx</em>ルーチン。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567014" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567014)"> <strong>ZwOpenKey</strong> </a>ルーチンは、既に開いているハンドルを呼び出さないでください。 ルーチン<a href="https://msdn.microsoft.com/library/windows/hardware/ff566447" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566447)"> <strong>ZwEnumerateKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566453" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566453)"> <strong>ZwEnumerateValueKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566457" data-raw-source="[&lt;strong&gt;ZwFlushKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566457)"> <strong>ZwFlushKey</strong> </a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567060" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567060)"> <strong>ZwQueryKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567069" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567069)"> <strong>ZwQueryValueKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567109" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567109)"> <strong>ZwSetValueKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566417" data-raw-source="[&lt;strong&gt;ZwClose&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566417)"> <strong>ZwClose</strong></a>、および<a href="https://msdn.microsoft.com/library/windows/hardware/ff566437" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566437)"> <strong>ZwDeleteKey</strong> </a>でないと呼ばれる必要があります、その処理&#39;t を開きます。 返す前にハンドルを閉じてもする必要があります。</p></td>
+<td align="left"><p>このルールは、のレジストリ キーを識別するハンドルが作成されたことを確認します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566425" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566425)"> <strong>ZwCreateKey</strong> </a>他で正しく使用されて、その後<em>ZwXxx</em>ルーチン。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567014" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567014)"> <strong>ZwOpenKey</strong> </a>ルーチンは、既に開いているハンドルを呼び出さないでください。 ルーチン<a href="https://msdn.microsoft.com/library/windows/hardware/ff566447" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566447)"> <strong>ZwEnumerateKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566453" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566453)"> <strong>ZwEnumerateValueKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566457" data-raw-source="[&lt;strong&gt;ZwFlushKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566457)"> <strong>ZwFlushKey</strong> </a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567060" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567060)"> <strong>ZwQueryKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567069" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567069)"> <strong>ZwQueryValueKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567109" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567109)"> <strong>ZwSetValueKey</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566417" data-raw-source="[&lt;strong&gt;ZwClose&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566417)"> <strong>ZwClose</strong></a>、および<a href="https://msdn.microsoft.com/library/windows/hardware/ff566437" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566437)"> <strong>ZwDeleteKey</strong> </a>でないと呼ばれる必要があります、開いていないハンドル。 返す前にハンドルを閉じてもする必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-zwregistryopen.md" data-raw-source="[&lt;strong&gt;ZwRegistryOpen&lt;/strong&gt;](storport-zwregistryopen.md)"><strong>ZwRegistryOpen</strong></a></p></td>
-<td align="left"><p>このルールを使用して、レジストリ キーを識別するハンドルを開いたことを確認します。 <strong>ZwOpenKey</strong>他 ZwXxx ルーチンで正しく使用されて、その後です。 ルーチン<strong>ZwEnumerateKey</strong>、 <strong>ZwEnumerateValueKey</strong>、 <strong>ZwFlushKey</strong>、 <strong>ZwQueryKey</strong>、 <strong>ZwQueryValueKey</strong>、 <strong>ZwSetValueKey</strong>、 <strong>ZwClose</strong>、および<strong>ZwDeleteKey</strong>呼び出さないでくださいハンドルでは&#39;t を開きます。 返す前にハンドルを閉じてもする必要があります。</p></td>
+<td align="left"><p>このルールを使用して、レジストリ キーを識別するハンドルを開いたことを確認します。 <strong>ZwOpenKey</strong>他 ZwXxx ルーチンで正しく使用されて、その後です。 ルーチン<strong>ZwEnumerateKey</strong>、 <strong>ZwEnumerateValueKey</strong>、 <strong>ZwFlushKey</strong>、 <strong>ZwQueryKey</strong>、 <strong>ZwQueryValueKey</strong>、 <strong>ZwSetValueKey</strong>、 <strong>ZwClose</strong>、および<strong>ZwDeleteKey</strong>が開いていないハンドルを呼び出さないする必要があります。 返す前にハンドルを閉じてもする必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,11 +70,11 @@ ms.locfileid: "56536799"
 
 **VirtualStorport ルールを選択するには、次のように設定します。**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています.**.
+1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
 
 2.  をクリックして、**ルール**タブ。**規則セット**、 **VirtualStorport**します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **VirtualStorport.sdv**で、 **/check**オプション。 次に、例を示します。
+    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **VirtualStorport.sdv**で、 **/check**オプション。 以下に例を示します。
 
     ```
     msbuild /t:sdv /p:Inputs="/check:VirtualStorport.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

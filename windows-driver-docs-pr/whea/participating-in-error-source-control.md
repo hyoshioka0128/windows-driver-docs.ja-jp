@@ -1,6 +1,6 @@
 ---
-title: エラーのソース管理に参加しています。
-description: エラーのソース管理に参加しています。
+title: エラー ソース管理への参加
+description: エラー ソース管理への参加
 ms.assetid: 4b2e3431-348f-48b1-924e-14b9fb5a48f0
 keywords:
 - Windows ハードウェア アーキテクチャ WDK のエラー、エラーのソース管理
@@ -12,14 +12,14 @@ keywords:
 - エラー ソース制御 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 027636931eaec685a9deb4188d3e8c13b9a86262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8eb11e83460f6f4719bb93fba01d4b2e9a233d7a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557249"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349287"
 ---
-# <a name="participating-in-error-source-control"></a>エラーのソース管理に参加しています。
+# <a name="participating-in-error-source-control"></a>エラー ソース管理への参加
 
 
 エラーのソース管理に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
@@ -34,7 +34,7 @@ ms.locfileid: "56557249"
 
 ```cpp
 //
-// The PSHED plug-in&#39;s SetErrorSourceInfo callback function
+// The PSHED plug-in's SetErrorSourceInfo callback function
 //
 NTSTATUS
   SetErrorSourceInfo(
@@ -74,7 +74,7 @@ NTSTATUS
 }
 
 //
-// The PSHED plug-in&#39;s EnableErrorSource callback function
+// The PSHED plug-in's EnableErrorSource callback function
 //
 NTSTATUS
   EnableErrorSource(
@@ -111,7 +111,7 @@ NTSTATUS
 }
 
 //
-// The PSHED plug-in&#39;s DisableErrorSource callback function
+// The PSHED plug-in's DisableErrorSource callback function
 //
 NTSTATUS
   DisableErrorSource(

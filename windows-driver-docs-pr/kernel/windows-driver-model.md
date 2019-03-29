@@ -6,12 +6,12 @@ keywords:
 - カーネル モード ドライバー WDK、WDM ドライバー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bb72dc333150f01e7fac6e0ce9fe614421c3ce8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8374c462e319a70ca92430cec01a41b310020238
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538990"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350003"
 ---
 # <a name="windows-driver-model-wdm"></a>Windows Driver Model (WDM)
 
@@ -46,7 +46,7 @@ ms.locfileid: "56538990"
 </tr>
 <tr class="odd">
 <td><p><a href="device-configurations-and-layered-drivers.md" data-raw-source="[Device Configurations and Layered Drivers](device-configurations-and-layered-drivers.md)">デバイスの構成と複数層のドライバー</a></p></td>
-<td><p>最も一般的な種類のデバイスでは、Windows Driver Kit (WDK) は完全に機能するシステムのドライバーのサンプル セットを提供します。 ような種類のデバイス用の新しいドライバーを開発するときに、個々 のサンプルのドライバーをモデルとして使用できます。 ただし、システム&#39;s ドライバーが、追加のデザイン要件: 新しいデバイス ドライバーを開発しやすくします。 その結果、多くのシステム&#39;s ドライバーは、類似するデバイスの新しいドライバーをサポートするために特定のドライバーを再利用できるように、階層型アーキテクチャを必要があります。</p></td>
+<td><p>最も一般的な種類のデバイスでは、Windows Driver Kit (WDK) は完全に機能するシステムのドライバーのサンプル セットを提供します。 ような種類のデバイス用の新しいドライバーを開発するときに、個々 のサンプルのドライバーをモデルとして使用できます。 ただし、システムのドライバーが、追加のデザイン要件必要がある。 新しいデバイス ドライバーを開発しやすくします。 その結果、多くのシステムのドライバーがある階層型アーキテクチャ類似するデバイスの新しいドライバーをサポートするために特定のドライバーを再利用できるようにします。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="wdm-versions.md" data-raw-source="[WDM Versions](wdm-versions.md)">WDM バージョン</a></p></td>

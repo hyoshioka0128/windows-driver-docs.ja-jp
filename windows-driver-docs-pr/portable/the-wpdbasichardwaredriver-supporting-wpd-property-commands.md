@@ -1,14 +1,14 @@
 ---
-Description: Support for property commands (WpdBasicHardwareDriverSample)
+Description: プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
 title: プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a315c469505b22171807de43c11a69f63a84b873
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f274fbb67066cc9a3e5937f13079b3d77c255d41
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528364"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349955"
 ---
 # <a name="supporting-wpd-property-commands-wpdbasichardwaredriversample"></a>WPD プロパティ コマンド (WpdBasicHardwareDriverSample) をサポート
 
@@ -50,7 +50,7 @@ HRESULT AddSupportedPropertyKeys(
 
     if (strObjectID.CompareNoCase(WPD_DEVICE_OBJECT_ID) == 0)
     {
-        // Add the PROPERTYKEYs for the &#39;DEVICE&#39; object
+        // Add the PROPERTYKEYs for the 'DEVICE' object
         AddDevicePropertyKeys(pKeys);
     }
 
@@ -141,7 +141,7 @@ HRESULT AddSupportedPropertyKeys(
 
                 if (hr == S_OK)
                 {
-                    // Preset the property value to &#39;error not supported&#39;.  The actual value
+                    // Preset the property value to 'error not supported'.  The actual value
                     // will replace this value, if read from the device.
                     pValues->SetErrorValue(Key, HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED));
                     if (IsEqualPropertyKey(Key, WPD_OBJECT_ID))
@@ -234,7 +234,7 @@ CHECK_HR(hr, "Failed to set WPD_OBJECT_CONTENT_TYPE");
 ```cpp
 LONGLONG WpdObjectProperties::GetSensorReading()
 {    
-    // Ensure that this value isn&#39;t currently being accessed by another thread
+    // Ensure that this value isn't currently being accessed by another thread
     CComCritSecLock<CComAutoCriticalSection> Lock(m_SensorReadingCriticalSection);
 
     return m_llSensorReading;

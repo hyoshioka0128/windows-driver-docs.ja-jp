@@ -1,17 +1,17 @@
 ---
-title: Usb ルール セット (KMDF)
+title: Usb の規則セット (KMDF)
 description: これらの規則を使用するには、ドライバーが USB デバイスの一部の特殊な KMDF メソッドを正しく処理することを確認します。
 ms.assetid: E07F4E18-CE93-43A8-AAB4-C3CF8CC790CC
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fea3eafe6dfe5e6c9a87683cd7440b83af6142e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 21b69d5dbafcde769b73472699cb020674b4bffe
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548938"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349895"
 ---
-# <a name="usb-rule-set-kmdf"></a>Usb ルール セット (KMDF)
+# <a name="usb-rule-set-kmdf"></a>Usb の規則セット (KMDF)
 
 
 これらの規則を使用するには、ドライバーが USB デバイスの一部の特殊な KMDF メソッドを正しく処理することを確認します。
@@ -37,7 +37,7 @@ ms.locfileid: "56548938"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="kmdf-usbcontreader.md" data-raw-source="[&lt;strong&gt;UsbContReader&lt;/strong&gt;](kmdf-usbcontreader.md)"><strong>UsbContReader</strong></a></p></td>
-<td align="left"><p><a href="kmdf-usbcontreader.md" data-raw-source="[&lt;strong&gt;UsbContReader&lt;/strong&gt;](kmdf-usbcontreader.md)"> <strong>UsbContReader</strong> </a>ルールでは、ドライバー内で、継続的なリーダーが正しく構成されているを指定します&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540880" data-raw-source="[&lt;em&gt;EvtDevicePrepareHardware&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540880)"> <em>EvtDevicePrepareHardware</em></a>ドライバーへの呼び出しは、場所、イベントのコールバック関数、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551130" data-raw-source="[&lt;strong&gt;WdfUsbTargetPipeConfigContinuousReader&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551130)"> <strong>WdfUsbTargetPipeConfigContinuousReader</strong> </a>メソッド。</p></td>
+<td align="left"><p><a href="kmdf-usbcontreader.md" data-raw-source="[&lt;strong&gt;UsbContReader&lt;/strong&gt;](kmdf-usbcontreader.md)"> <strong>UsbContReader</strong> </a>ルールでは、ドライバーの内、継続的なリーダーが正しく構成されているを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff540880" data-raw-source="[&lt;em&gt;EvtDevicePrepareHardware&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540880)"> <em>EvtDevicePrepareHardware</em> </a>ドライバーへの呼び出しは、場所、イベントのコールバック関数、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551130" data-raw-source="[&lt;strong&gt;WdfUsbTargetPipeConfigContinuousReader&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551130)"> <strong>WdfUsbTargetPipeConfigContinuousReader</strong> </a>メソッド。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="kmdf-usbdevicecreate.md" data-raw-source="[&lt;strong&gt;UsbDeviceCreate&lt;/strong&gt;](kmdf-usbdevicecreate.md)"><strong>UsbDeviceCreate</strong></a></p></td>
@@ -62,7 +62,7 @@ ms.locfileid: "56548938"
 
 2.  をクリックして、**ルール**タブ。**規則セット**、 **Usb**します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Usb.sdv**で、 **/check**オプション。 次に、例を示します。
+    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Usb.sdv**で、 **/check**オプション。 以下に例を示します。
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Usb.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

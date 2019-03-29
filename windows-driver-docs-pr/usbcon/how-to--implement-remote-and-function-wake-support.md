@@ -1,14 +1,14 @@
 ---
-Description: This topic provides an overview of function suspend and function remote wake-up features for Universal Serial Bus (USB) 3.0 multi-function devices (composite devices).
+Description: このトピックでは、関数の概要が中断し、関数リモート ウェイク アップ機能ユニバーサル シリアル バス (USB) の 3.0 の多機能デバイス (複合デバイス) を提供します。
 title: 複合のドライバーで中断する関数を実装する方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfa7d517aec6c957a903c245d8cdcedb8f2dad27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 41de7e83354c04c4ad8cacb874f5a83edf5a4595
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560756"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349118"
 ---
 # <a name="how-to-implement-function-suspend-in-a-composite-driver"></a>複合のドライバーで中断する関数を実装する方法
 
@@ -119,7 +119,7 @@ SendRequestForRemoteWakeNotification(
 
         nextStack->Parameters.Others.Argument1 = &remoteWake;
         
-        // Caller&#39;s completion routine will free the IRP when it completes.
+        // Caller's completion routine will free the IRP when it completes.
  
         SetCompletionRoutine(functionPdoExt->debugLog,
                              parentFdoExt->fdo,
@@ -215,7 +215,7 @@ VOID
     //  Attach the URB to the IRP.
     USBD_AssignUrbToIoStackLocation(nextStack, (PURB)urb);
 
-    // Caller&#39;s completion routine will free the IRP when it completes.
+    // Caller's completion routine will free the IRP when it completes.
     SetCompletionRoutine(functionPdoExt->debugLog,
         parentFdoExt->fdo,
         irp, 
@@ -241,7 +241,7 @@ Exit:
 
 複合のドライバーを送信し、 **D2** IRP USB ドライバー スタックにします。 その他のすべての関数がある場合は、中断状態、USB ドライバー スタックは、コント ローラー上の特定のポート レジスタを操作することで、ポートを中断します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 マウス関数の例で、リモートのウェイク アップ機能が有効になっているため、(手順 4 を参照)、マウス関数が、ユーザーがマウスを形跡ときに、ホスト コント ローラーにアップ ストリーム ネットワーク上で再開シグナルを生成します。 コント ローラーを関数に関する情報を含む通知パケットを送信することによって、USB ドライバー スタックを通知します。 関数のスリープ解除通知については、USB 3.0 仕様で図 8-17 を参照してください。

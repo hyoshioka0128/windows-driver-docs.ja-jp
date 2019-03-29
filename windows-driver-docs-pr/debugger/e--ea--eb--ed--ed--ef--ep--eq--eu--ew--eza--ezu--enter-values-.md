@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4a9ca1d637c68a62b1c9430829c4ab2312564e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9f6d3ea07a9370798d35c9099ac3837a7b917b23
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535314"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349535"
 ---
 # <a name="e-ea-eb-ed-ed-ef-ep-eq-eu-ew-eza-enter-values"></a>電子メール、ea、eb、ed、eD、ef、ep、eq、eu、新しい、eza (値を入力してください)
 
@@ -75,7 +75,7 @@ e Address [Values]
 
 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 このコマンドは、次の形式で存在します。 2 番目の文字、 **ed**と**eD**コマンドは大文字小文字を区別します。
@@ -118,7 +118,7 @@ e Address [Values]
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ep</strong></p></td>
-<td align="left"><p>ポインターのサイズの値。 このコマンドは<strong>ed</strong>または<strong>eq</strong>かどうかに応じて、ターゲット コンピューター&#39;s プロセッサ アーキテクチャは 32 ビットまたは 64 ビット、それぞれします。</p></td>
+<td align="left"><p>ポインターのサイズの値。 このコマンドは<strong>ed</strong>または<strong>eq</strong>かどうか、ターゲット コンピューターのプロセッサ アーキテクチャは 32 ビットまたは 64 ビット、それぞれ異なりますが、します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>eq</strong></p></td>
@@ -151,7 +151,7 @@ e Address [Values]
 
  
 
-バイト値を入力するときに、 **eb**コマンドを単一引用符を使用して文字を指定することができます。 複数の文字を含める場合は、各手順は、独自の引用符で囲む必要があります。 これにより、null 文字で終了しない、文字の文字列を入力することができます。 次に、例を示します。
+バイト値を入力するときに、 **eb**コマンドを単一引用符を使用して文字を指定することができます。 複数の文字を含める場合は、各手順は、独自の引用符で囲む必要があります。 これにより、null 文字で終了しない、文字の文字列を入力することができます。 例:
 
 ```dbgcmd
 eb 'h' 'e' 'l' 'l' 'o'

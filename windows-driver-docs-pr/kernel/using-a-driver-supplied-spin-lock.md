@@ -1,6 +1,6 @@
 ---
-title: ドライバーによって提供されるスピン ロックを使用します。
-description: ドライバーによって提供されるスピン ロックを使用します。
+title: ドライバーによって提供されるスピン ロックの使用
+description: ドライバーによって提供されるスピン ロックの使用
 ms.assetid: e81d5c93-47d6-407c-80a2-b2d55f9eb717
 keywords:
 - スピン ロック WDK カーネル
@@ -8,14 +8,14 @@ keywords:
 - グローバル キャンセル スピン ロック WDK カーネル
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e50c3cd59e785402dab067d3b648c8ad72d40f3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 04faab726c2c712184737fbc602030a3405d41ed
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560049"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349321"
 ---
-# <a name="using-a-driver-supplied-spin-lock"></a>ドライバーによって提供されるスピン ロックを使用します。
+# <a name="using-a-driver-supplied-spin-lock"></a>ドライバーによって提供されるスピン ロックの使用
 
 
 
@@ -131,7 +131,7 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
       // Get the next IRP off the queue.
       nextIrp = CONTAINING_RECORD(listEntry, IRP, Tail.Overlay.ListEntry);
 
-      // Clear the IRP&#39;s cancel routine.
+      // Clear the IRP's cancel routine.
       oldCancelRoutine = IoSetCancelRoutine(nextIrp, NULL);
 
       // IoCancelIrp() could have just been called on this IRP. What interests us
@@ -146,7 +146,7 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
          // called. The Cancel routine will complete this IRP as soon as we
          // drop the spin lock, so do not do anything with the IRP.
          // Also, the Cancel routine will try to dequeue the IRP, so make 
-         // the IRP&#39;s ListEntry point to itself.
+         // the IRP's ListEntry point to itself.
          ASSERT(nextIrp->Cancel);
          InitializeListHead(&nextIrp->Tail.Overlay.ListEntry);
          nextIrp = NULL;

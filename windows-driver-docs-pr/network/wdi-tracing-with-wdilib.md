@@ -1,17 +1,17 @@
 ---
-title: WDILib で WDI トレース
+title: WDILib による WDI トレース
 description: WDILib コンポーネントは現在、WPP を使用してトレースをサポートします。 トレース プロバイダーの GUID では、21ba7b61-05f8-41f1-9048-c09493dcfe38 です。 収集して、トレースの表示は、次の手順を使用できます。
 ms.assetid: 2F4FFF67-F88A-4CB0-9980-E3710D4F04EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c128582eaae578d33d3c8c567edb9c5f86d16293
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c467aa82abe582f3a25ef49c38211a12919aa4cd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557924"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349227"
 ---
-# <a name="wdi-tracing-with-wdilib"></a>WDILib で WDI トレース
+# <a name="wdi-tracing-with-wdilib"></a>WDILib による WDI トレース
 
 
 WDILib コンポーネントは現在、WPP を使用してトレースをサポートします。 トレース プロバイダーの GUID では、{21ba7b61-05f8-41f1-9048-c09493dcfe38} です。 収集して、トレースの表示は、次の手順を使用できます。
@@ -137,20 +137,20 @@ TShell を使用して、デバイスへの接続、ファイルをコピーお�
 open-device 127.0.0.1
 cmdd "mkdir \data\test\wlan"
 putd wdiguids.txt \data\test\wlan
-cmdd tracelog.exe &#39;-start wdiwpp -f \data\test\wlan\wdiwpp.etl -cir 256 -rt -ls -ft 1&#39;
-cmdd tracelog.exe &#39;-enable wdiwpp -guid \data\test\wlan\wdiguids.txt -level 0x7fffffff -flag 0x7fffffff&#39;
+cmdd tracelog.exe '-start wdiwpp -f \data\test\wlan\wdiwpp.etl -cir 256 -rt -ls -ft 1'
+cmdd tracelog.exe '-enable wdiwpp -guid \data\test\wlan\wdiguids.txt -level 0x7fffffff -flag 0x7fffffff'
 ```
 
 シナリオを実行します。 トレースを停止して、ログを収集に再接続 TShell (必要な) 場合、次のコマンドを実行します。
 
 ```PowerShell
-cmdd tracelog.exe &#39;-flush wdiwpp&#39;
-cmdd tracelog.exe &#39;-stop wdiwpp&#39;
+cmdd tracelog.exe '-flush wdiwpp'
+cmdd tracelog.exe '-stop wdiwpp'
 getd \data\test\wlan\wdiwpp.etl
-cmdd &#39;tracelog -flush WiFiDriver -f C:\data\systemdata\etw\wifidriver.etl&#39;
-getd &#39;C:\data\systemdata\etw\wifidriver.etl&#39;
-cmdd &#39;tracelog -flush WiFiSession&#39;
-getd &#39;C:\Data\SystemData\ETW\WiFi.etl.001&#39;
-getd &#39;C:\Data\SystemData\ETW\WiFi.etl.002&#39;
-getd &#39;C:\Data\SystemData\ETW\WiFi.etl.003&#39;
+cmdd 'tracelog -flush WiFiDriver -f C:\data\systemdata\etw\wifidriver.etl'
+getd 'C:\data\systemdata\etw\wifidriver.etl'
+cmdd 'tracelog -flush WiFiSession'
+getd 'C:\Data\SystemData\ETW\WiFi.etl.001'
+getd 'C:\Data\SystemData\ETW\WiFi.etl.002'
+getd 'C:\Data\SystemData\ETW\WiFi.etl.003'
 ```

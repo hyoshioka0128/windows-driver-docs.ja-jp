@@ -4,12 +4,12 @@ description: オーディオ (PortCls) ミニポート ドライバーの DDI �
 ms.assetid: 65078F78-B7F2-41A7-BD3B-A90A4A77750F
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f553a2646aa231db3ed31543b1a36197cdbcde5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d5fb5de9d6182bba07eb1bec0287714049c6728f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550599"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350112"
 ---
 # <a name="rules-for-audio-drivers"></a>オーディオ ドライバーの規則
 
@@ -80,7 +80,7 @@ ms.locfileid: "56550599"
 <td align="left"><p><a href="audio-pcunmapallocatedpages.md" data-raw-source="[&lt;strong&gt;PcUnmapAllocatedPages&lt;/strong&gt;](audio-pcunmapallocatedpages.md)"><strong>PcUnmapAllocatedPages</strong></a></p></td>
 <td align="left"><p>PcUnmapAllocatedPages ルールを使用することを指定します。</p>
 <ul>
-<li>PortCls ミニポート ドライバーではありません&#39;t 最初解除せずに現在割り当てられて、MDL にマップします。</li>
+<li>PortCls ミニポート ドライバーは、最初解除せずに現在割り当てられて、MDL にマップされません。</li>
 <li>PortCls ミニポート ドライバーを使用して解放する前にメモリの割り当てを解除、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff536738" data-raw-source="[IMiniportWaveRTStream](https://msdn.microsoft.com/library/windows/hardware/ff536738)">IMiniportWaveRTStream</a>インターフェイス。</li>
 </ul></td>
 </tr>

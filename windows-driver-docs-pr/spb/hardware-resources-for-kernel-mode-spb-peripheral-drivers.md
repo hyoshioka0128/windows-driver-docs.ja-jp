@@ -1,24 +1,24 @@
 ---
-title: カーネル モード SPB の周辺機器のドライバーのハードウェア リソース
+title: カーネルモード SPB 周辺機器ドライバーのハードウェア リソース
 description: KMDF ドライバー、SPB 上周辺機器のデバイス用のコード例と、ハードウェア リソースを取得します。
 ms.assetid: ABFFCBEC-16AB-44AF-BEF6-34AEE612EAF7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4dd3c73b8434a7d5adcf589d677b00a2145067e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53c5a28556e1d7e0682a8fc2305157c7c8c950a0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557595"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349937"
 ---
-# <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>カーネル モード SPB の周辺機器のドライバーのハードウェア リソース
+# <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>カーネルモード SPB 周辺機器ドライバーのハードウェア リソース
 
 
 コード例では、このトピックの「表示方法、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)上周辺機器のデバイス用の (KMDF) ドライバーを[シンプルな周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPB) ために必要なハードウェア リソースを取得しますデバイスを動作します。 これらのリソースに含まれるは、ドライバーがデバイスへの論理接続を確立するために使用する情報です。 その他のリソースは、割り込みと 1 つを含めることができます、または複数の GPIO 入力または出力ピンです。 (GPIO ピンは、詳細については、入力または出力として構成されている汎用的な I/O コント ローラー デバイスの暗証番号 (pin) を参照してください[汎用入出力 (GPIO) ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh439508))。メモリが割り当てられているデバイスとは異なり、SPB に接続されている周辺機器は、レジスタにマップするシステムのメモリ アドレスのブロックを必要としません。
 
 このドライバーは、一連のプラグ アンド プレイと電源管理イベントのコールバック関数を実装します。 これらを登録する関数、KMDF ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数の呼び出し、 [ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff546135)メソッド。 フレームワークは、周辺機器の電源状態の変更のドライバーに通知する電源管理イベントのコールバック関数を呼び出します。 これらの関数に含まれるが、 [ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)関数で、デバイスをドライバーにアクセスできるようにするために必要なすべての操作を実行します。
 
-周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 *EvtDevicePrepareHardware*関数を使用するためにこのデバイスを準備する必要があります SPB 周辺ドライバーに通知します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *ResourcesRaw*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*生リソース*](https://msdn.microsoft.com/library/windows/hardware/ff544561)、および*ResourcesTranslated*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*リソースを翻訳*](https://msdn.microsoft.com/library/windows/hardware/ff544561)します。 翻訳済みのリソースが含まれて、*接続 ID*周辺機器のデバイスへの論理接続を確立するために、ドライバーが必要です。 詳細については、次を参照してください。 [SPB-Connected 周辺機器の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)します。
+周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 *EvtDevicePrepareHardware*関数を使用するためにこのデバイスを準備する必要があります SPB 周辺ドライバーに通知します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *ResourcesRaw*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*生リソース*](https://msdn.microsoft.com/library/windows/hardware/ff544561)、および*ResourcesTranslated*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*リソースを翻訳*](https://msdn.microsoft.com/library/windows/hardware/ff544561)します。 翻訳済みのリソースが含まれて、*接続 ID*周辺機器のデバイスへの論理接続を確立するために、ドライバーが必要です。 詳細については、「[SPB 接続周辺機器の接続 ID](https://msdn.microsoft.com/library/windows/hardware/hh698216)」を参照してください。
 
 次のコード例に示す方法、 *EvtDevicePrepareHardware*関数からの接続 ID の取得、 *ResourcesTranslated*パラメーター。
 
@@ -85,7 +85,7 @@ for (ULONG ix = 0; ix < resourceCount; ix++)
         break;
 
     default:
-        // Don&#39;t care about other resource descriptors.
+        // Don't care about other resource descriptors.
         break;
     }
 }

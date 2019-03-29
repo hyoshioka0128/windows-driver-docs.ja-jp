@@ -1,6 +1,6 @@
 ---
-title: レジストリ キー オブジェクトを識別するハンドルを使用します。
-description: レジストリ キー オブジェクトを識別するハンドルを使用します。
+title: レジストリ キー オブジェクトのハンドルの使用
+description: レジストリ キー オブジェクトのハンドルの使用
 ms.assetid: 25982249-31dc-4542-9ebb-139991619b40
 keywords:
 - WDK カーネルのレジストリ キー オブジェクトへのハンドルします。
@@ -10,14 +10,14 @@ keywords:
 - レジストリ キー オブジェクトの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 558d905beb753e25bd380bbeb3d87aa672208370
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b67083cc8fae55895917b1805d0f5074255a4a9d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548743"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348637"
 ---
-# <a name="using-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトを識別するハンドルを使用します。
+# <a name="using-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルの使用
 
 
 
@@ -38,19 +38,19 @@ ms.locfileid: "56548743"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>キーを確認&#39;プロパティ、その名前またはそのサブキーの数などです。</p></td>
+<td><p>その名前またはそのサブキーの数などのキーのプロパティを調べます。</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567060" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567060)"><strong>ZwQueryKey</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p>キーを反復処理&#39;s サブキー、それぞれのプロパティを調べることです。</p></td>
+<td><p>それぞれのプロパティを調べて、キーのサブキーを反復処理します。</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566447" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566447)"><strong>ZwEnumerateKey</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>値を含む、キー値のプロパティを調べる&#39;s データ。</p></td>
+<td><p>値のデータを含む、キー値のプロパティを調べます。</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567069" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567069)"><strong>ZwQueryValueKey</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p>キーを反復処理&#39;s 値、それぞれのプロパティを調べることです。</p></td>
+<td><p>それぞれのプロパティを調べて、キーの値を反復処理します。</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566453" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566453)"><strong>ZwEnumerateValueKey</strong></a></p></td>
 </tr>
 <tr class="odd">

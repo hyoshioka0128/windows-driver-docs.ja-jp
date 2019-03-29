@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c6300eb3f5526dae84f60282a9e333826426a580
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53473c1af66f2309121b06e73ab3d276edbca3fd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549135"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349931"
 ---
-# <a name="bug-check-0x1-apcindexmismatch"></a>バグ チェック 0x1 の。APC\_インデックス\_が一致しません
+# <a name="bug-check-0x1-apcindexmismatch"></a>バグ チェック 0x1:APC\_インデックス\_が一致しません
 
 
 APC\_インデックス\_の不一致のバグ チェックが 0x00000001 の値を持ちます。 APC (非同期プロシージャ コール) の状態のインデックスで不一致が生じていますが、これを示します。
@@ -48,11 +48,11 @@ APC\_インデックス\_の不一致のバグ チェックが 0x00000001 の値
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left">現在のスレッドの値&#39;s <strong>ApcStateIndex</strong>フィールド。</td>
+<td align="left">現在のスレッドの値<strong>ApcStateIndex</strong>フィールド。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>現在のスレッドの値&#39;CombinedApcDisable フィールド。 このフィールドは、2 つの独立した 16 ビット フィールドで構成されます。(<em>スレッド</em>-&gt;<strong>SpecialApcDisable</strong> &lt; &lt; 16) |<em>スレッド</em>-&gt;<strong>KernelApcDisable</strong>します。</p></td>
+<td align="left"><p>現在のスレッドの CombinedApcDisable フィールドの値。 このフィールドは、2 つの独立した 16 ビット フィールドで構成されます。(<em>スレッド</em>-&gt;<strong>SpecialApcDisable</strong> &lt; &lt; 16) |<em>スレッド</em>-&gt;<strong>KernelApcDisable</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -91,7 +91,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 
 -   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 -------
 
 これは、カーネルの内部エラーです。 このエラーは、システムの呼び出しからの終了時に発生します。 このバグ チェックの考えられる原因は、ファイル システムまたはドライバーが一致しない、一連のシステム呼び出しを入力するか、保護された、または重要な領域のままにします。 に対する各呼び出しなど[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)に一致する呼び出しがあります。 [ **KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)します。 ドライバーを開発している場合を使用できます[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)、静的分析ツールが、ドライバーを出荷する前に、コード内の問題を検出するために、Windows ドライバー キットで使用できます。 Static Driver Verifier の実行、 [CriticalRegions](https://msdn.microsoft.com/library/windows/hardware/ff543603)ソース コードがこれらのシステムを使用することを確認するルールを正しい順序で呼び出します。

@@ -1,14 +1,14 @@
 ---
-Description: Learn about the source code for a UMDF-based USB client driver.
+Description: UMDF ベースの USB クライアント ドライバーのソース コードについて説明します。
 title: USB クライアント ドライバー コードの構造 (UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f612be7209ed0b12e50c826ce08f88af4af90dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 159efb50d5b561a413cff0767fc1c72c2aeb828b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559173"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348925"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>USB クライアント ドライバー コード構造 (UMDF) を理解します。
 
@@ -809,7 +809,7 @@ CMyIoQueue::OnDeviceIoControl(
     TraceEvents(TRACE_LEVEL_INFORMATION, TRACE_QUEUE, "%!FUNC! Entry");
 
     if (m_Device == NULL) {
-        // We don&#39;t have pointer to device object
+        // We don't have pointer to device object
         TraceEvents(TRACE_LEVEL_ERROR, 
                    TRACE_QUEUE, 
                    "%!FUNC!NULL pointer to device object.");
@@ -928,7 +928,7 @@ EXPORTS
         DllGetClassObject   PRIVATE
 ```
 
-ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760)エクスポート [します。 詳細については、次を参照してください。 [DEF ファイルを使用する DLL からエクスポート](https://msdn.microsoft.com/library/d91k01sh(VS.80).aspx)します。
+ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760)エクスポート します。 詳細については、次を参照してください。 [DEF ファイルを使用する DLL からエクスポート](https://msdn.microsoft.com/library/d91k01sh(VS.80).aspx)します。
 
 
 

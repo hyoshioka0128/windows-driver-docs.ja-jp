@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - SO_WSK_SECURITY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0306f14f84393c54ba1e25de502be8df2d9dac46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 49658a55beabad6539913604a6ccdc5a2f425d8f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558457"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349849"
 ---
 # <a name="sowsksecurity"></a>したがって\_WSK\_セキュリティ
 
@@ -32,7 +32,7 @@ WSK アプリケーションの呼び出しにソケットをセキュリティ�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
@@ -91,7 +91,7 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>Value</th>
+<th>[値]</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +121,7 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>PSECURITY_DESCRIPTOR に型指定された変数へのポインター。 この変数は、ソケットのキャッシュされたコピーへのポインターを受け取る&#39;s セキュリティ記述子。</p></td>
+<td><p>PSECURITY_DESCRIPTOR に型指定された変数へのポインター。 この変数は、ソケットのセキュリティ記述子のキャッシュされたコピーへのポインターを受け取ります。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -136,7 +136,7 @@ WSK アプリケーションを呼び出す必要があります、 [ **WskContr
 
 セキュリティの詳細については\_記述子構造体をセキュリティのリファレンス ページを参照してください\_Microsoft Windows SDK ドキュメントの記述子。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

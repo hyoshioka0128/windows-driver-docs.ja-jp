@@ -1,16 +1,16 @@
 ---
-Description: Winusb.dll exposes the WinUsb_GetPipePolicy function to retrieve the pipe's default policy.
-title: ポリシーの変更をパイプ WinUSB 関数
+Description: Winusb.dll では、パイプの既定のポリシーを取得する WinUsb_GetPipePolicy 関数を公開します。
+title: パイプ ポリシー修正のための WinUSB 関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 000da8a16a66a53411436f5a32b7adb1c43a2544
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: be882716dba12fa59631c16209c695a0d6a5f078
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531010"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349927"
 ---
-# <a name="winusb-functions-for-pipe-policy-modification"></a>ポリシーの変更をパイプ WinUSB 関数
+# <a name="winusb-functions-for-pipe-policy-modification"></a>パイプ ポリシー修正のための WinUSB 関数
 
 
 Winusb.dll を公開するアプリケーションを取得およびエンドポイント パイプの既定のポリシー パラメーターの設定を有効にする、 [ **WinUsb\_GetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540266)パイプの既定のポリシーを取得します。 [ **WinUsb\_SetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540304)関数により、アプリケーションでポリシー パラメーターを新しい値に設定します。
@@ -110,7 +110,7 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <tr class="odd">
 <td>0x09</td>
 <td>RESET_PIPE_ON_RESUME</td>
-<td>エンドポイントをリセット&#39;s パイプから再開した後は、新しい要求を受け入れる前に中断します。</td>
+<td>新しい要求を受け入れる前に中断から再開した後、エンドポイントのパイプをリセットします。</td>
 <td><p>一括 (IN)</p>
 <p>(OUT) 一括します。</p>
 <p>割り込み (IN)</p>
@@ -151,7 +151,7 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <li><p>有効になっている場合 (ポリシー パラメーターの値が<strong>TRUE</strong>または 0 以外の場合)、停止状態が自動的にクリアします。 このポリシーのパラメーターは、コントロールのパイプには影響しません。</p>
 <p>場合読み取りの要求が失敗し、ホスト コント ローラーに STATUS_CANCELLED または STATUS_DEVICE_NOT_CONNECTED 以外の状態が返されます、WinUSB は、失敗した要求を完了する前に、パイプをリセットします。 パイプをリセットするデータ フローを中断することがなく失速条件をクリアします。 データ転送の新しいデバイスから到着する限り、エンドポイントでフローし続けます。 新しい転送には、いずれかの停止が発生したときにキューにあったを含めることができます。</p>
 <p>このポリシーを有効にしても、パフォーマンスが大幅に影響はありません。</p></li>
-<li>無効になっている場合 (ポリシー パラメーターの値が<strong>FALSE</strong>または 0)、呼び出し元は、エンドポイントを手動でリセットされるまで、遅延の転送後、エンドポイントに到着するすべての転送が失敗する&#39;呼び出して s パイプ<a href="https://msdn.microsoft.com/library/windows/hardware/ff540300" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540300)"> <strong>WinUsb_ResetPipe</strong></a>します。</li>
+<li>無効になっている場合 (ポリシー パラメーターの値が<strong>FALSE</strong>または 0)、呼び出し元が呼び出すことによって、エンドポイントのパイプを手動でリセットされるまで、遅延の転送後、エンドポイントに到着するすべての転送が失敗する<a href="https://msdn.microsoft.com/library/windows/hardware/ff540300" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540300)"> <strong>WinUsb_ResetPipe</strong></a>します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -198,11 +198,11 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <td>AUTO_FLUSH</td>
 <td>ALLOW_PARTIAL _READS ポリシーを有効にします。
 <p>デバイスが要求しましたより多くのデータを送信し、アプリケーションがその他のデータを必要としません。 これは、要求、バッファーのサイズが最大のエンドポイントのパケット サイズの倍数である場合に可能です。</p></td>
-<td><p>AUTO_FLUSH 定義 WinUSB&#39;ALLOW_PARTIAL_READS が有効にした場合の動作。 ALLOW_PARTIAL_READS が無効になっている場合 WinUSB AUTO_FLUSH 値は無視されます。</p>
-<p>WinUSB する残りのデータを破棄するか、呼び出し元に送信&#39;s [次へ] の読み取り要求。</p>
+<td><p>AUTO_FLUSH は、ALLOW_PARTIAL_READS が有効にすると、WinUSB の動作を定義します。 ALLOW_PARTIAL_READS が無効になっている場合 WinUSB AUTO_FLUSH 値は無視されます。</p>
+<p>WinUSB する残りのデータを破棄するか、呼び出し元の次の読み取り要求を送信します。</p>
 <ul>
 <li>有効になっている場合 (ポリシー パラメーターの値が<strong>TRUE</strong>または 0 以外の場合)、WinUSB がエラー コードなしの追加のバイトを破棄します。</li>
-<li>無効になっている場合 (ポリシー パラメーターの値が<strong>FALSE</strong>または 0)、WinUSB の追加のバイトの保存、呼び出し元の先頭に追加します&#39;s は、次の読み取り要求、し、[次へ] の読み取り操作の呼び出し元に、データを送信します。</li>
+<li>無効になっている場合 (ポリシー パラメーターの値が<strong>FALSE</strong>または 0)、WinUSB は、追加のバイトを保存し、呼び出し元の次の読み取り要求の先頭に追加し、次の読み取り操作の呼び出し元に、データを送信します。</li>
 </ul></td>
 </tr>
 <tr class="odd">

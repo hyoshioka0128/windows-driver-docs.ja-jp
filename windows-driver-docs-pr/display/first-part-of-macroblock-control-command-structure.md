@@ -1,19 +1,19 @@
 ---
-title: マクロ ブロック コントロール コマンドの構造体の第 1 部
-description: マクロ ブロック コントロール コマンドの構造体の第 1 部
+title: マクロブロック制御コマンド構造の最初の部分
+description: マクロブロック制御コマンド構造の最初の部分
 ms.assetid: b282adac-3bf3-4477-a817-371d37b174a5
 keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad4893102e2bcbc00046ee9d2c2064fe13e20d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fec81249a353368adc8e6687ae81facbbdcbc76e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552859"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349877"
 ---
-# <a name="first-part-of-macroblock-control-command-structure"></a>マクロ ブロック コントロール コマンドの構造体の第 1 部
+# <a name="first-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の最初の部分
 
 
 ## <span id="ddk_first_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_FIRST_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
@@ -28,7 +28,7 @@ ms.locfileid: "56552859"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
+<th align="left">Member</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -233,7 +233,7 @@ ms.locfileid: "56552859"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1,0,0 (内)</p></td>
-<td align="left"><p>&#39;00&#39; (内)</p></td>
+<td align="left"><p>' 00' (内)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -245,7 +245,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,0 (モーションなし)</p></td>
-<td align="left"><p>&#39;10&#39; (モーションなし)</p></td>
+<td align="left"><p>' 10' (モーションなし)</p></td>
 <td align="left"><p>0</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -257,7 +257,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;10&#39; (MC フレーム)</p></td>
+<td align="left"><p>' 10' (フレーム MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -269,7 +269,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;10&#39; (MC フレーム)</p></td>
+<td align="left"><p>' 10' (フレーム MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -281,7 +281,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;10&#39; (MC フレーム)</p></td>
+<td align="left"><p>' 10' (フレーム MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -293,7 +293,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;01&#39; (MC フィールド)</p></td>
+<td align="left"><p>' 01' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -305,7 +305,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;01&#39; (MC フィールド)</p></td>
+<td align="left"><p>' 01' (フィールド MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -317,7 +317,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;01&#39; (MC フィールド)</p></td>
+<td align="left"><p>' 01' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -329,28 +329,28 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;11&#39; (デュアル素数)</p></td>
+<td align="left"><p>' 11' (デュアル素数)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <div>
  
 </div>
 <p>0 (上)</p></td>
-<td align="left"><p>ベクター&#39;[2] [0] [0]</p>
+<td align="left"><p>ベクター ' [2] [0] [0]</p>
 <div>
  
 </div>
-ベクター&#39;[2] [0] [1]&lt;&lt;1
+ベクター ' [2] [0] [1]&lt;&lt;1
 <p>1 (下)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <div>
  
 </div>
 <p>1</p></td>
-<td align="left"><p>ベクター&#39;[3] [0] [0]</p>
+<td align="left"><p>ベクター ' [3] [0] [0]</p>
 <div>
  
 </div>
-ベクター&#39;[3] [0] [1]&lt;&lt;1
+ベクター ' [3] [0] [1]&lt;&lt;1
 <p>0</p></td>
 </tr>
 </tbody>
@@ -384,7 +384,7 @@ ms.locfileid: "56552859"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1,0,0 (内)</p></td>
-<td align="left"><p>&#39;00&#39; (内)</p></td>
+<td align="left"><p>' 00' (内)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -396,7 +396,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,0 (モーションなし)</p></td>
-<td align="left"><p>&#39;01&#39; (モーションなし)</p></td>
+<td align="left"><p>' 01' (モーションなし)</p></td>
 <td align="left"><p>0</p>
 <p><em>PicCurrentField</em></p></td>
 <td align="left"><p>-</p>
@@ -408,7 +408,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;01&#39; (MC フィールド)</p></td>
+<td align="left"><p>' 01' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -420,7 +420,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;01&#39; (MC フィールド)</p></td>
+<td align="left"><p>' 01' (フィールド MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -432,7 +432,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;01&#39; (MC フィールド)</p></td>
+<td align="left"><p>' 01' (フィールド MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -444,7 +444,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;10&#39; (16 x 8 MC)</p></td>
+<td align="left"><p>' 10' (16 x 8 MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -456,7 +456,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;10&#39; (16 x 8 MC)</p></td>
+<td align="left"><p>' 10' (16 x 8 MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -468,7 +468,7 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;10&#39; (16 x 8 MC)</p></td>
+<td align="left"><p>' 10' (16 x 8 MC)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -480,10 +480,10 @@ ms.locfileid: "56552859"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;11&#39; (デュアル素数)</p></td>
+<td align="left"><p>' 11' (デュアル素数)</p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p><em>PicCurrentField</em></p></td>
-<td align="left"><p>ベクター&#39;[2] [0]</p>
+<td align="left"><p>ベクター ' [2] [0]</p>
 <p><em>PicCurrentField</em></p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>

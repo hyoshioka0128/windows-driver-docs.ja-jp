@@ -1,17 +1,17 @@
 ---
 title: チェックされているオペレーティング システムと HAL だけをインストールします。
-description: チェックされているオペレーティング システムと HAL (Windows Vista 以降) のみをインストールします。
+description: チェック済みのオペレーティング システムと HAL のみのインストール (Windows Vista 以降)
 ms.assetid: 1203b7cd-50b9-4174-8bec-112019444fac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df4643f4f4b151c15ea074b476635a4ecffeea7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 727cebe2bbe3f3a4f324428501c9d06f87c29ddf
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550976"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349214"
 ---
-# <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>チェックされているオペレーティング システムと HAL (Windows Vista 以降) のみをインストールします。
+# <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>チェック済みのオペレーティング システムと HAL のみのインストール (Windows Vista 以降)
 
 
 完了チェック ビルドは、コンピューターにインストールではなく、システムの無料のビルドをインストールし、チェックされているバージョンのオペレーティング システム イメージとハードウェア アブストラクション レイヤー (HAL) をインストールできます。 この手順を使用する場合は、2 つのブート オプションを提供するためにブート ローダーを構成できます。 無料のビルドでは、1 つのブート オプションで十分です。 2 番目のブート オプションは、チェックされているオペレーティング システム イメージと HAL を使用してシステムを起動が、その他のすべてのシステム コンポーネントの無料版を使用します。
@@ -39,11 +39,11 @@ Windows の 32 ビット バージョンを実行するコンピューターで�
 ```
 {FILE_QUEUE_COPY}
    CopyStyle      - 0x09180000
-   SourceRootPath - &#39;C:\Windows\System32\DriverStore\FileRepository\hal.inf_0c52392f&#39;
-   SourceFilename - &#39;halmacpi.dll&#39;
-   TargetDirectory- &#39;C:\Windows\system32&#39;
-   TargetFilename - &#39;hal.dll&#39;
-   SourceDesc     - &#39;windows cd&#39;
+   SourceRootPath - 'C:\Windows\System32\DriverStore\FileRepository\hal.inf_0c52392f'
+   SourceFilename - 'halmacpi.dll'
+   TargetDirectory- 'C:\Windows\system32'
+   TargetFilename - 'hal.dll'
+   SourceDesc     - 'windows cd'
 {FILE_QUEUE_COPY exit(0x00000000)}
 ```
 

@@ -4,12 +4,12 @@ description: DSM\_ロード\_残高\_ポリシー WMI クラス
 ms.assetid: 7de58fe6-7c95-412a-9135-3894c07137a7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 490305a6138c6110e995cf96bf773372e477fd74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dfd2e1d024a66aae0079b8649a643c76a11dbac6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559448"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349297"
 ---
 # <a name="dsmloadbalancepolicy-wmi-class"></a>DSM\_ロード\_残高\_ポリシー WMI クラス
 
@@ -73,7 +73,7 @@ class DSM_Load_Balance_Policy
     uint32 Reserved;
 
     //
-    // Paths&#39; array.
+    // Paths' array.
     //
     [WmiDataId(5),
      WmiSizeIs("DSMPathCount"),

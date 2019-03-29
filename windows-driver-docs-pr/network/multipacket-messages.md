@@ -1,17 +1,17 @@
 ---
-title: Multipacket メッセージ
-description: Multipacket メッセージ
+title: マルチパケット メッセージ
+description: マルチパケット メッセージ
 ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a301713e217006da4955015bb7345474b44dd00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72ab94c9d61fdb211e6591d16d083bb6e3a41a4b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530559"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349675"
 ---
-# <a name="multipacket-messages"></a>Multipacket メッセージ
+# <a name="multipacket-messages"></a>マルチパケット メッセージ
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56530559"
 <th align="left">Offset</th>
 <th align="left">サイズ</th>
 <th align="left">フィールド</th>
-<th align="left">Value</th>
+<th align="left">[値]</th>
 </tr>
 </thead>
 <tbody>
@@ -117,7 +117,7 @@ ms.locfileid: "56530559"
 <td align="left"><p>70</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>余白</p></td>
-<td align="left"><p>&#39;問題 - 未使用</p></td>
+<td align="left"><p>問題ではありません - 未使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>72</p></td>

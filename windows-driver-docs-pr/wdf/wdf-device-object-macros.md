@@ -1,17 +1,17 @@
 ---
-title: WDF デバイス オブジェクトに関するマクロ
+title: WDF デバイス オブジェクトのマクロ
 description: このセクションでは、WDF デバイス オブジェクトをサポートするマクロを説明します。
 ms.assetid: D91C16EB-5E31-4AB2-984E-A0B35C3B1BA1
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f19eae51ea42c047cd6b2b4eda125a33ed4e8200
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecd6e86ec04019aff7e1b56f01b1fc64ca479a6f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528378"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349331"
 ---
-# <a name="wdf-device-object-macros"></a>WDF デバイス オブジェクトに関するマクロ
+# <a name="wdf-device-object-macros"></a>WDF デバイス オブジェクトのマクロ
 
 
 このセクションでは、WDF デバイス オブジェクトをサポートするマクロを説明します。
@@ -39,7 +39,7 @@ ms.locfileid: "56528378"
 <div>
  
 </div>
-<p><a href="wdfdeviceresumeidlewithtag.md" data-raw-source="[&lt;strong&gt;WdfDeviceResumeIdleWithTag&lt;/strong&gt;](wdfdeviceresumeidlewithtag.md)"> <strong>WdfDeviceResumeIdleWithTag</strong> </a>フレームワークの指定したデバイスの電源参照カウントをデクリメントをマクロはオブジェクトし、ドライバーを割り当てます&#39;s 現在ファイル名と行番号を参照。 マクロは、参照にもタグ値を割り当てます。</p></td>
+<p><a href="wdfdeviceresumeidlewithtag.md" data-raw-source="[&lt;strong&gt;WdfDeviceResumeIdleWithTag&lt;/strong&gt;](wdfdeviceresumeidlewithtag.md)"> <strong>WdfDeviceResumeIdleWithTag</strong> </a>フレームワークの指定したデバイスの電源参照カウントをデクリメントをマクロはオブジェクトし、参照をドライバーの現在ファイル名と行番号を割り当てます。 マクロは、参照にもタグ値を割り当てます。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="wdfdevicestopidlewithtag.md" data-raw-source="[&lt;strong&gt;WdfDeviceStopIdleWithTag method&lt;/strong&gt;](wdfdevicestopidlewithtag.md)"><strong>WdfDeviceStopIdleWithTag メソッド</strong></a></p></td>
@@ -49,7 +49,7 @@ ms.locfileid: "56528378"
 <div>
  
 </div>
-<p><a href="wdfdevicestopidlewithtag.md" data-raw-source="[&lt;strong&gt;WdfDeviceStopIdleWithTag&lt;/strong&gt;](wdfdevicestopidlewithtag.md)"> <strong>WdfDeviceStopIdleWithTag</strong> </a>マクロは、指定のフレームワークのデバイス オブジェクトの電源の参照カウントをインクリメントし、ドライバー&#39;s 現在ファイル名と行番号への参照. マクロは、参照にもタグ値を割り当てます。</p></td>
+<p><a href="wdfdevicestopidlewithtag.md" data-raw-source="[&lt;strong&gt;WdfDeviceStopIdleWithTag&lt;/strong&gt;](wdfdevicestopidlewithtag.md)"> <strong>WdfDeviceStopIdleWithTag</strong> </a>マクロが指定のフレームワークのデバイス オブジェクトの電源の参照カウントをインクリメントし、参照に、ドライバーの現在ファイル名と行番号を割り当てます。 マクロは、参照にもタグ値を割り当てます。</p></td>
 </tr>
 </tbody>
 </table>

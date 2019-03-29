@@ -1,17 +1,17 @@
 ---
-title: (関数インデックス 13) の運用統計を取得します。
+title: 操作に関する統計情報の取得 (関数インデックス 13)
 description: この関数は、NVDIMM N. によって実行される操作を追跡するカウンターを返します。
 ms.assetid: D396F42E-9B11-46D7-8D9C-FE00B4998DEC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0b10feb825a656d6323e683e802f553d5117d626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64ea77f95e832d288c8f30a60b7c3ec31f11299f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538383"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350025"
 ---
-# <a name="get-operational-statistics-function-index-13"></a>(関数インデックス 13) の運用統計を取得します。
+# <a name="get-operational-statistics-function-index-13"></a>操作に関する統計情報の取得 (関数インデックス 13)
 
 
 この関数は、NVDIMM N. によって実行される操作を追跡するカウンターを返します。
@@ -47,7 +47,7 @@ ms.locfileid: "56538383"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
@@ -86,7 +86,7 @@ ms.locfileid: "56538383"
 <td align="left"><strong>保存操作の完了数</strong></td>
 <td align="left">4</td>
 <td align="left">16</td>
-<td align="left"><p>NVDIMM-N モジュール経由で保存操作の数が完了した&#39;有効期間。</p>
+<td align="left"><p>NVDIMM-N モジュールの有効期間、保存操作の数が完了しました。</p>
 <p><em>バイト 0 – <em>NUM_SAVE_OPS_COUNT0</em> (2, 0x0A)</p>
 <p></em>1 – バイト<em>NUM_SAVE_OPS_COUNT1</em> (2, 0x0B)</p>
 <p>2 – バイトに予約されています。</p>
@@ -96,7 +96,7 @@ ms.locfileid: "56538383"
 <td align="left"><strong>完了した復元操作の数</strong></td>
 <td align="left">4</td>
 <td align="left">20</td>
-<td align="left"><p>NVDIMM-N モジュール経由で完了した復元操作の数&#39;有効期間。</p>
+<td align="left"><p>NVDIMM-N モジュールの有効期間の完了した復元操作の数。</p>
 <p><em>バイト 0 – <em>NUM_RESTORE_OPS_COUNT0 0</em> (2, 0x0C)</p>
 <p></em>1 – バイト<em>NUM_RESTORE_OPS_COUNT1</em> (2, 0x0D)</p>
 <p>2 – バイトに予約されています。</p>
@@ -106,7 +106,7 @@ ms.locfileid: "56538383"
 <td align="left"><strong>完了した消去操作の数</strong></td>
 <td align="left">4</td>
 <td align="left">24</td>
-<td align="left"><p>NVDIMM-N モジュール経由での消去が完了した操作の数&#39;有効期間。</p>
+<td align="left"><p>NVDIMM-N モジュールの有効期間を通じての消去が完了した操作の数。</p>
 <p><em>バイト 0 – <em>NUM_ERASE_COUNTS0</em> (2, 0x0E)</p>
 <p></em>1 – バイト<em>NUM_ERASE_COUNTS1</em> (2, 0x0F)</p>
 <p>2 – バイトに予約されています。</p>
@@ -116,7 +116,7 @@ ms.locfileid: "56538383"
 <td align="left"><strong>モジュールの電源サイクルの数</strong></td>
 <td align="left">4</td>
 <td align="left">28</td>
-<td align="left"><p>電源の数が NVDIMM-N モジュール経由でサイクル&#39;有効期間。</p>
+<td align="left"><p>NVDIMM-N モジュールの有効期間を通じてのサイクルを電源の数です。</p>
 <p><em>バイト 0 – <em>NUM_MODULE_POWER_CYCLES0</em> (2, 0x10)</p>
 <p></em>1 – バイト<em>NUM_MODULE_POWER_CYCLES1</em> (2, パターン)</p>
 <p>2 – バイトに予約されています。</p>

@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: 719e76544d05b7e82178d3293f7e64646b1bce3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5542a3de5f333824c20d9f2588b5668b3861d66
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553472"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348661"
 ---
 # <a name="c30030"></a>C30030
 
@@ -108,13 +108,13 @@ pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority | MdlMappingNoExec
 次のコードでは、警告が生成されます。
 
 ```
-ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, &#39;xppn&#39;);
+ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, 'xppn');
 ```
 
 次のコードは、警告を回避できます。
 
 ```
-ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, &#39;xppn&#39;);
+ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 ```
 
 **その他の特殊なケース:**

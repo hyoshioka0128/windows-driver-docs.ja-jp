@@ -10,12 +10,12 @@ keywords:
 - WDK ネットワーク モジュールのレジストラーの参照をカウント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1544448663a1ddf7838a7f9174ca5e4882ac041a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 32430060bb81ec3526dbd0f3568abd828a1005da
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550110"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349607"
 ---
 # <a name="programming-considerations"></a>プログラミングに関する考慮事項
 
@@ -25,7 +25,7 @@ ms.locfileid: "56550110"
 たとえば、クライアント モジュールでは、プロバイダーが接続されているモジュールの NPI 関数の実行中の呼び出しの数を追跡するため、次のような実装を使用する可能性があります。
 
 ```C++
-// Context structure for the client&#39;s binding to a provider module
+// Context structure for the client's binding to a provider module
 typedef struct CLIENT_BINDING_CONTEXT_ {
   LIST_ENTRY Link;
   HANDLE NmrBindingHandle;
@@ -40,12 +40,12 @@ typedef struct CLIENT_BINDING_CONTEXT_ {
 } CLIENT_BINDING_CONTEXT, *PCLIENT_BINDING_CONTEXT;
 
 // Pool tag used for allocating the binding context
-#define BINDING_CONTEXT_POOL_TAG &#39;tpcb&#39;
+#define BINDING_CONTEXT_POOL_TAG 'tpcb'
 
-// Structure for the client&#39;s dispatch table
+// Structure for the client's dispatch table
 const EXNPI_CLIENT_DISPATCH Dispatch = {
   .
-  . // Function pointers to the client module&#39;s
+  . // Function pointers to the client module's
   . // NPI callback functions
   .
 };
@@ -56,7 +56,7 @@ LIST_ENTRY BindingContextList;
 // Spin lock for binding context list
 KSPIN_LOCK BindingContextListLock;
 
-// Prototype for the client module&#39;s unload function
+// Prototype for the client module's unload function
 VOID
   Unload(
     PDRIVER_OBJECT DriverObject
@@ -118,8 +118,8 @@ NTSTATUS
   KLOCK_QUEUE_HANDLE BindingContextListLockHandle;
   NTSTATUS Status;
 
-  // Get pointers to the provider module&#39;s identification structure
-  // and the provider module&#39;s NPI-specific characteristics structure
+  // Get pointers to the provider module's identification structure
+  // and the provider module's NPI-specific characteristics structure
   ProviderModuleId = ProviderRegistrationInstance->ModuleId;
   ProviderNpiSpecificCharacteristics =
     (PEXNPI_PROVIDER_CHARACTERISTICS)
@@ -141,7 +141,7 @@ NTSTATUS
     return STATUS_NOINTERFACE;
   }
 
-  // Allocate memory for the client&#39;s binding context structure
+  // Allocate memory for the client's binding context structure
   BindingContext =
     (PCLIENT_BINDING_CONTEXT)
       ExAllocatePoolWithTag(
@@ -208,7 +208,7 @@ NTSTATUS
   // Attachment did not succeed
   else
   {
-    // Free memory for client&#39;s binding context structure
+    // Free memory for client's binding context structure
     ExFreePoolWithTag(
       BindingContext,
       BINDING_CONTEXT_POOL_TAG

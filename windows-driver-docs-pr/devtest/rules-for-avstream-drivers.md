@@ -4,12 +4,12 @@ description: AVStream ミニポート ドライバーの DDI 準拠規則は、�
 ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2fd294c050f07af713a665f83125a51add4261
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c0f577f152b1744aa5199d83a98a8478a3e26fb6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536839"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350035"
 ---
 # <a name="rules-for-avstream-drivers"></a>AVStream ドライバーの規則
 
@@ -98,7 +98,7 @@ AVStream ミニポート ドライバーの DDI 準拠規則は、カーネル �
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-kstimedpinsetdevicestate.md" data-raw-source="[&lt;strong&gt;KsTimedPinSetDeviceState&lt;/strong&gt;](ks-kstimedpinsetdevicestate.md)"><strong>KsTimedPinSetDeviceState</strong></a></p></td>
-<td align="left"><p>KsTimedPinSetDeviceState ルールでは、AVStream (KS) ミニポート ドライバー、AVStream ミニドライバーを使用して、状態遷移することを指定します&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556359" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556359)"> <em>AVStrMiniPinSetDeviceState</em> </a>内で日常的な必要な時間。</p></td>
+<td align="left"><p>KsTimedPinSetDeviceState ルールでは、AVStream (KS) ミニポート ドライバー、AVStream ミニドライバーを使用して、状態遷移することを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff556359" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556359)"> <em>AVStrMiniPinSetDeviceState</em> </a>ルーチン内で、必要な時間。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-kstimedprocessingmutex.md" data-raw-source="[&lt;strong&gt;KsTimedProcessingMutex&lt;/strong&gt;](ks-kstimedprocessingmutex.md)"><strong>KsTimedProcessingMutex</strong></a></p></td>

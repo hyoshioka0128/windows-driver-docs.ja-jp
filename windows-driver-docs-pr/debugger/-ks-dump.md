@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f0d492cb70353f52d4a0112b442d021d1c9446
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 81b6db8685a6b6841febcbec68379362a2eab817
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558202"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349745"
 ---
 # <a name="ksdump"></a>!ks.dump
 
@@ -35,10 +35,10 @@ ms.locfileid: "56558202"
 AVStream 構造体、AVStream クラス オブジェクト、または PortCls オブジェクトへのポインターを指定します。 IRP またはファイル オブジェクトへのポインターを指定することもできます。
 
 <span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *レベル*   
-(省略可能)。 0 ~ 7 で表示する詳細のレベルを指定の値を大きく表示徐々 に詳細なスケールします。 使用可能なすべての詳細を表示するには、7 の値を指定します。 発行することによってレベルの詳細を確認できます、 **! ks.dump**引数なしでコマンド。
+任意。 0 ~ 7 で表示する詳細のレベルを指定の値を大きく表示徐々 に詳細なスケールします。 使用可能なすべての詳細を表示するには、7 の値を指定します。 発行することによってレベルの詳細を確認できます、 **! ks.dump**引数なしでコマンド。
 
 <span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-(省略可能)。 表示される情報の種類を指定します。 *フラグ*次のビットの組み合わせにすることができます。
+任意。 表示される情報の種類を指定します。 *フラグ*次のビットの組み合わせにすることができます。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
 すべてのキューに置かれた Irp を表示します。
@@ -77,7 +77,7 @@ AVStream 構造体、AVStream クラス オブジェクト、または PortCls �
 
 詳細については、次を参照してください。[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 **! Ks.dump**コマンドは、pin、フィルター、ファクトリ、デバイス、パイプ、およびストリーム ポインターを含む、ほとんどの AVStream オブジェクトを認識します。 このコマンドは、ストリーム オブジェクト、フィルター インスタンス、デバイスの拡張機能、およびされる Srb など、一部のストリーム クラス構造を認識します。
@@ -119,7 +119,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
 <td align="left"><p><strong>意味</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>deviceState</p></td>
+<td align="left"><p>DeviceState</p></td>
 <td align="left"><p>ピンの状態が入力を要求します。 ClientState から別にある場合、ミニドライバーは、[次へ] を移行する状態です。</p></td>
 </tr>
 <tr class="odd">
@@ -134,7 +134,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
 </tr>
 <tr class="odd">
 <td align="left"><p>状態</p></td>
-<td align="left"><p>Pin の内部状態&#39;AVStream 非フィルターに s トランスポート。</p></td>
+<td align="left"><p>非 AVStream フィルターに暗証番号 (pin) のトランスポートの内部状態。</p></td>
 </tr>
 </tbody>
 </table>
@@ -177,7 +177,7 @@ Device Extension 81a0a228:
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>サイズ</strong></p></td>
+<td align="left"><p><strong>Size</strong></p></td>
 <td align="left"><p><strong>説明</strong></p></td>
 </tr>
 <tr class="even">

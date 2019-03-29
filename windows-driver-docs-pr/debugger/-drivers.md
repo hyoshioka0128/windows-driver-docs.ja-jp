@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ffcdfc522437186cebe987efc26a8b44ee9c103d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 10b925d99cd29487ed4d3d1ce72a43861bf97213
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528753"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349215"
 ---
-# <a name="drivers"></a>! ドライバー
+# <a name="drivers"></a>!drivers
 
 Windows XP および Windows での以降のバージョンで、 **! ドライバー**拡張機能は廃止されています。 読み込まれているドライバーと他のモジュールに関する情報を表示するには、使用、 [ **lm** ](lm--list-loaded-modules-.md)コマンド。 コマンドの lm t n が非常に古いのような形式で情報を表示します **! ドライバー**拡張機能。 ただし、このコマンドには、ドライバーのメモリ使用量が表示されますされません、 **! ドライバー**拡張機能でした。 ドライバーの開始と終了アドレス、イメージの名前、およびタイムスタンプのみが表示されます。 [ **! Vm** ](-vm.md)と[ **! memusage** ](-memusage.md)拡張機能を使用して、メモリ使用量の統計情報を表示します。
 
@@ -67,7 +67,7 @@ Windows XP および Windows での以降のバージョンで、 **! ドライ�
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドのアプリケーション。 ドライバーと、メモリの使用については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 このコマンドの表示の詳細については、次の表で示されます。
@@ -79,8 +79,8 @@ Windows XP および Windows での以降のバージョンで、 **! ドライ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">列</th>
-<th align="left">意味</th>
+<th align="left">[列]</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,11 +102,11 @@ Windows XP および Windows での以降のバージョンで、 **! ドライ�
 </tr>
 <tr class="odd">
 <td align="left"><p>常駐</p></td>
-<td align="left"><p>(0x1 にフラグを付けるときにのみまたは 0x2 を使用)ドライバーの量&#39;物理メモリに実際に存在するメモリ。</p></td>
+<td align="left"><p>(0x1 にフラグを付けるときにのみまたは 0x2 を使用)実際に物理メモリに存在するドライバーのメモリの量。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>スタンバイ</p></td>
-<td align="left"><p>(0x1 にフラグを付けるときにのみまたは 0x2 を使用)ドライバーの量&#39;はスタンバイのメモリ。</p></td>
+<td align="left"><p>(0x1 にフラグを付けるときにのみまたは 0x2 を使用)スタンバイ状態では、ドライバーのメモリの量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ローダーのエントリ</p></td>

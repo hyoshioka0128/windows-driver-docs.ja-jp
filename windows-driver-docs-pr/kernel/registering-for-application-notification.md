@@ -1,6 +1,6 @@
 ---
-title: アプリケーション通知を登録します。
-description: アプリケーション通知を登録します。
+title: アプリケーションの通知登録
+description: アプリケーションの通知登録
 ms.assetid: e8f76014-6068-4012-96c6-88ea2bbd9bbf
 keywords:
 - 動的なハードウェアの WDK、アプリケーション通知をパーティション分割
@@ -11,14 +11,14 @@ keywords:
 - アプリケーション通知 WDK 動的ハードウェア パーティション分割の登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca5090ac42fd425954f185c1956b0ef29a0114be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: eccfca8f876d600dc789e4425a4665ec895b9e11
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550825"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349181"
 ---
-# <a name="registering-for-application-notification"></a>アプリケーション通知を登録します。
+# <a name="registering-for-application-notification"></a>アプリケーションの通知登録
 
 
 ユーザー モード アプリケーションを呼び出す、 [RegisterDeviceNotification](https://go.microsoft.com/fwlink/p/?linkid=97892)自体と、プロセッサやメモリのモジュールがハードウェアのパーティションに動的に追加されたときに通知を登録する関数。 アプリケーションを呼び出す、 **RegisterDeviceNotification**関数では、プロセッサのイベントの通知を登録する 1 つの時間とメモリ イベントの通知に登録する 2 番目の時間を 2 回です。 これらのイベントの通知を登録する際に、アプリケーションは次の Guid のいずれかを指定します。
@@ -77,7 +77,7 @@ MemoryFilter.dbcc_devicetype =
 MemoryFilter.dbcc_classguid =
   GUID_DEVICE_MEMORY;
 
-// Register the application&#39;s window to receive
+// Register the application's window to receive
 // WM_DEVICECHANGE messages for memory events.
 MemoryNotifyHandle =
   RegisterDeviceNotification(

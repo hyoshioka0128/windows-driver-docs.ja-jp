@@ -15,12 +15,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81eb4bece52af43e70c8249cfb1829c464db694a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ddbd534db0b801ba91190115e3bf010af23f8962
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557488"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349465"
 ---
 # <a name="mrxcreate-routine"></a>MRxCreate ルーチン
 
@@ -84,7 +84,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>オブジェクト名が見つかりませんでした。 ネットワークのミニ リダイレクターがファイルではありませんを求められた場合、このエラーを返すことが&#39;t が存在します。</p></td>
+<td align="left"><p>オブジェクト名が見つかりませんでした。 このエラーは、ネットワーク ミニリダイレクターが存在しないファイルを開くよう依頼された場合に返されることができます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
@@ -103,7 +103,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 *MRxCreate*はネットワークのミニ リダイレクターがネットワーク経由でファイル システム オブジェクトを開くことを要求する RDBSS によって呼び出されます。 この呼び出しが受信する応答 RDBSS によって発行された、 [ **IRP\_MJ\_作成**](irp-mj-create.md)要求。
@@ -122,7 +122,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 、戻る前に*MRxCreate*設定する必要があります、 **CurrentIrp -&gt;IoStatus.Information** 、RX のメンバー\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

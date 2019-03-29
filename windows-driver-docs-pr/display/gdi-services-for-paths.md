@@ -10,12 +10,12 @@ keywords:
 - WDK GDI のパスを入力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da0f3232f2c3401676b6c401afd961f46a62942
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8cb464f3a1b384e1aa6be90b0f7a1c45927b1f2d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528524"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349439"
 ---
 # <a name="gdi-services-for-paths"></a>パスの GDI サービス
 
@@ -39,7 +39,7 @@ ms.locfileid: "56528524"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564755" data-raw-source="[&lt;strong&gt;EngCreatePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564755)"><strong>EngCreatePath</strong></a></p></td>
-<td align="left"><p>ドライバーのパスを割り当てます&#39;s 一時的に使用します。 ドライバーは、その現在の描画呼び出しから GDI に戻る前にこのパスを削除する必要があります。</p></td>
+<td align="left"><p>ドライバーの一時使用するためのパスを割り当てます。 ドライバーは、その現在の描画呼び出しから GDI に戻る前にこのパスを削除する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564811" data-raw-source="[&lt;strong&gt;EngDeletePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564811)"><strong>EngDeletePath</strong></a></p></td>

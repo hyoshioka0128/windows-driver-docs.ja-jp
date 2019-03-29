@@ -1,6 +1,6 @@
 ---
-title: エラー ソースの検出に参加しています。
-description: エラー ソースの検出に参加しています。
+title: エラー ソース検出への参加
+description: エラー ソース検出への参加
 ms.assetid: 349c8f06-be79-4a40-8b9f-cbefc563f6de
 keywords:
 - Windows ハードウェア アーキテクチャ WDK のエラー、エラー ソースの検出
@@ -12,14 +12,14 @@ keywords:
 - WDK WHEA エラー ソースの検出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fe5ec63407ee9a780f4428896c4be0ce633e1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 55743724efa39befa3e190ff105f74ddb7915dee
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552694"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348961"
 ---
-# <a name="participating-in-error-source-discovery"></a>エラー ソースの検出に参加しています。
+# <a name="participating-in-error-source-discovery"></a>エラー ソース検出への参加
 
 
 エラー ソースの検出に参加するにプラグインの PSHED を実装する必要があります、 [ *GetAllErrorSources* ](https://msdn.microsoft.com/library/windows/hardware/ff559366)コールバック関数。 エラー ソースの検出に参加している PSHED プラグインは、省略可能な実装も[ *GetErrorSourceInfo* ](https://msdn.microsoft.com/library/windows/hardware/ff559368)コールバック関数。
@@ -28,7 +28,7 @@ ms.locfileid: "56552694"
 
 ```cpp
 //
-// The PSHED plug-in&#39;s GetAllErrorSources callback function
+// The PSHED plug-in's GetAllErrorSources callback function
 //
 NTSTATUS
   GetAllErrorSources(
@@ -77,7 +77,7 @@ NTSTATUS
 }
 
 //
-// The PSHED plug-in&#39;s GetErrorSourceInfo callback function
+// The PSHED plug-in's GetErrorSourceInfo callback function
 //
 NTSTATUS
   GetErrorSourceInfo(

@@ -1,17 +1,17 @@
 ---
-title: WDI 送信操作と負荷の軽減
+title: WDI 送信操作とオフロード
 description: WDI は、2 つの Tx モード ポート キューと PeerTID キューのいずれかで動作します。
 ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13dae8aca3530a35c8e6d099a05786686cc5e205
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 30d215fbc9906b339d82d4d734636fb0472eed49
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528831"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349543"
 ---
-# <a name="wdi-transmit-operations-and-offloads"></a>WDI 送信操作と負荷の軽減
+# <a name="wdi-transmit-operations-and-offloads"></a>WDI 送信操作とオフロード
 
 
 WDI は、2 つの Tx モードのいずれかで動作します。ポートのキューおよび PeerTID キューします。 ターゲット TargetPriorityQueueing 機能モードの設定 (WDI ポートのキューを = true、false = WDI PeerTID キュー)。
@@ -37,7 +37,7 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 <th align="left">処理手順</th>
 <th align="left">説明</th>
 <th align="left">所有者/該当の負荷を軽減します。</th>
-<th align="left">説明</th>
+<th align="left">メモ</th>
 </tr>
 </thead>
 <tbody>
@@ -95,25 +95,25 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 <tr class="odd">
 <td align="left"><p>WLAN のスケジュール設定</p></td>
 <td align="left"><p>次に転送するトラフィックを送信、および送信するフレームの数を入力受信者を決定します。</p></td>
-<td align="left"><p>対象</p></td>
+<td align="left"><p>移行先</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p>暗号化</p></td>
 <td align="left"><p>セキュリティの種類と受信者 (またはマルチキャストのフレームの送信者) の指定したセキュリティ キーを使用してフレームの内容を暗号化します。 該当する場合は、セキュリティのカプセル化を追加します。</p></td>
-<td align="left"><p>対象</p></td>
-<td align="left"><p>FIPS をサポートするシステム、暗号化は、ホスト ソフトウェア内で行われます。 ターゲット&#39;s 暗号化はバイパスされます。</p></td>
+<td align="left"><p>移行先</p></td>
+<td align="left"><p>FIPS をサポートするシステム、暗号化は、ホスト ソフトウェア内で行われます。 ターゲットの暗号化がバイパスされます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>A MPDU 集計</p></td>
 <td align="left"><p>A MPDU 集計にグループと、再送信中に変更できますにフレームを決定します。</p></td>
-<td align="left"><p>対象</p></td>
+<td align="left"><p>移行先</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p>再試行</p></td>
 <td align="left"><p>再送信の MPDUs nacked または受信者がいない確認済みであります。</p></td>
-<td align="left"><p>対象</p></td>
+<td align="left"><p>移行先</p></td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -137,24 +137,24 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 <tr><th>フィールド名</th><th>サブフィールドの名前</th><th colspan="2">ターゲット実装の暗号化モード</th><th colspan="2">FIPS モードのホスト実装</th>
 </tr>
     <tr><th></th><th></th><th>ホストにより設定します。</th><th>ターゲット設定します。</th><th>ホストにより設定します。</th><th>ターゲット設定します。</th></tr>
-    <tr><td>Frame コントロール</td><td>プロトコルのバージョン</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>種類</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>サブタイプ</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>DS に</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>DS から</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>複数のフラグメント</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>再試行</td><td></td><td>X</td><td></td><td>X</td></tr>
-    <tr><td>Frame コントロール</td><td>電源管理</td><td></td><td>X</td><td></td><td>X</td></tr>
-    <tr><td>Frame コントロール</td><td>多くのデータ</td><td></td><td>X</td><td></td><td>X</td></tr>
-    <tr><td>Frame コントロール</td><td>保護されたフレーム</td><td></td><td>X</td><td>X</td><td></td></tr>
-    <tr><td>Frame コントロール</td><td>[オーダー]</td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>実行時間と Id</td><td></td><td></td><td>X</td><td></td><td>X</td></tr>
-    <tr><td>住所 1</td><td></td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>住所 2</td><td></td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>住所 3</td><td></td><td>X</td><td></td><td>X</td><td></td></tr>
-    <tr><td>シーケンス コントロール</td><td>フラグメントの数</td><td>X</td><td></td><td></td><td>X</td></tr>
-    <tr><td>シーケンス コントロール</td><td>シーケンス番号</td><td></td><td>X</td><td></td><td>X</td></tr>
-    <tr><td>アドレス 4</td><td></td><td>X</td><td></td><td>X</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>プロトコルのバージョン</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>型</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>サブタイプ</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>DS に</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>DS から</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>複数のフラグメント</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>再試行</td><td></td><td>x</td><td></td><td>x</td></tr>
+    <tr><td>Frame コントロール</td><td>電源管理</td><td></td><td>x</td><td></td><td>x</td></tr>
+    <tr><td>Frame コントロール</td><td>多くのデータ</td><td></td><td>x</td><td></td><td>x</td></tr>
+    <tr><td>Frame コントロール</td><td>保護されたフレーム</td><td></td><td>x</td><td>x</td><td></td></tr>
+    <tr><td>Frame コントロール</td><td>[オーダー]</td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>実行時間と Id</td><td></td><td></td><td>x</td><td></td><td>x</td></tr>
+    <tr><td>住所 1</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>住所 2</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>住所 3</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
+    <tr><td>シーケンス コントロール</td><td>フラグメントの数</td><td>x</td><td></td><td></td><td>x</td></tr>
+    <tr><td>シーケンス コントロール</td><td>シーケンス番号</td><td></td><td>x</td><td></td><td>x</td></tr>
+    <tr><td>アドレス 4</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
     <tr><td>QoS 制御</td><td></td><td></td><td>/設定対象で入力追加します。</td><td></td><td>追加/によって設定されます 11n QoS 関連の場合のターゲット。</td></tr>
     <tr><td>HT コントロール</td><td></td><td></td><td>/設定対象で入力追加します。</td><td></td><td>/設定対象で入力追加します。</td></tr>
 </table>

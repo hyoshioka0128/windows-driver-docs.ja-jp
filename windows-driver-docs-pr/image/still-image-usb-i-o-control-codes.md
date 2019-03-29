@@ -1,17 +1,17 @@
 ---
-title: USB I/O コントロールのイメージがまだコードします。
-description: USB I/O コントロールのイメージがまだコードします。
+title: 静止画像 USB I/O 制御コード
+description: 静止画像 USB I/O 制御コード
 ms.assetid: 66a06a25-2fcb-4b14-85e2-485d2d4ac9d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4931d8aba4c280913e55b1a124743c1acc1805a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7af73ac8fd940d7222975b7d0d72225a8ecd9517
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537740"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348611"
 ---
-# <a name="still-image-usb-io-control-codes"></a>USB I/O コントロールのイメージがまだコードします。
+# <a name="still-image-usb-io-control-codes"></a>静止画像 USB I/O 制御コード
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56537740"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff542849" data-raw-source="[&lt;strong&gt;IOCTL_GET_CHANNEL_ALIGN_RQST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff542849)"><strong>IOCTL_GET_CHANNEL_ALIGN_RQST</strong></a></p></td>
-<td><p>USB デバイスを返します&#39;、読み取り用のパケットの最大サイズは、書き込み、およびパイプの転送を中断します。</p></td>
+<td><p>読み取り、書き込み、および割り込み転送パイプの USB デバイスの最大パケット サイズを返します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff542856" data-raw-source="[&lt;strong&gt;IOCTL_GET_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff542856)"><strong>IOCTL_GET_DEVICE_DESCRIPTOR</strong></a></p></td>

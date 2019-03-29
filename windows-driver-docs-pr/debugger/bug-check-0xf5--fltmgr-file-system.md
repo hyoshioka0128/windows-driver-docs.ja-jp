@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1721f8e18217cb4fd1765e391c7ed4c4ec3956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d858e5686ad0532c1b2df49a4032c32ae50a7588
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531231"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349267"
 ---
-# <a name="bug-check-0xf5-fltmgrfilesystem"></a>バグ チェック 0xF5 の。FLTMGR\_ファイル\_システム
+# <a name="bug-check-0xf5-fltmgrfilesystem"></a>バグ チェック 0xF5:FLTMGR\_ファイル\_システム
 
 
 FLTMGR\_ファイル\_システムのバグ チェックが 0x000000F5 の値を持ちます。 これは、フィルター マネージャーで、回復不可能なエラーが発生したことを示します。
@@ -94,14 +94,14 @@ FLTMGR\_ファイル\_システムのバグ チェックが 0x000000F5 の値を
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6D</p></td>
-<td align="left"><p>アドレス、ミニフィルターの&#39;のコンテキストの構造</p></td>
+<td align="left"><p>ミニフィルターのコンテキストの構造体のアドレス</p></td>
 <td align="left"><p>CONTEXT_NODE 構造体のアドレス</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Context 構造体には、回数が多すぎますが逆参照します。 つまり、フィルター マネージャーの参照カウント&#39;がまだ関連付けられているオブジェクトにアタッチされている間、0 に s CONTEXT_NODE 構造が発生しました。</p></td>
+<td align="left"><p>Context 構造体には、回数が多すぎますが逆参照します。 これがまだ関連付けられているオブジェクトにアタッチされている間に、フィルター マネージャーの CONTEXT_NODE 構造の参照カウントが 0 にしたことを意味します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x6E</p></td>
-<td align="left"><p>アドレス、ミニフィルターの&#39;のコンテキストの構造</p></td>
+<td align="left"><p>ミニフィルターのコンテキストの構造体のアドレス</p></td>
 <td align="left"><p>CONTEXT_NODE 構造体のアドレス</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Context 構造は、解放された後に参照されました。</p></td>

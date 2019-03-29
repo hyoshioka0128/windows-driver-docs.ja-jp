@@ -4,12 +4,12 @@ description: SPB、ドライバーは、シンプルな周辺機器バス、シ�
 ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44f21c66e456c0066fcb3bcd7c8b0ba43271928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 07e090668c678b8ad9b6f31822341acadef2b2c7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537116"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348651"
 ---
 # <a name="sample-driver-io-model"></a>I/O ドライバー モデルのサンプル
 
@@ -57,7 +57,7 @@ SoC の GPIO ピンのプラットフォームは、チップに分散だけで�
 
 | モジュール               | クラス/インターフェイス |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | なし             |
+| SpbAccelerometer.asl | N/A             |
 
  
 
@@ -130,7 +130,7 @@ Windows 8.1 には、すべてのデバイスおよびバス コント ローラ
 
 | モジュール               | クラス/インターフェイス |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | なし             |
+| SpbAccelerometer.asl | N/A             |
 
  
 
@@ -141,7 +141,7 @@ Name(RBUF, ResourceTemplate()
 {
    //
     // Sample I2C and GPIO resources. Modify to match your
-    // platform&#39;s underlying controllers and connections.
+    // platform's underlying controllers and connections.
     // \_SB.I2C and \_SB.GPIO are paths to predefined I2C
     // and GPIO controller instances.
     //

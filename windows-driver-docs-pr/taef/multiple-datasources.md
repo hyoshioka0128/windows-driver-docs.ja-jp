@@ -4,12 +4,12 @@ description: 複数のデータソース
 ms.assetid: FD0B252F-1D70-4840-986F-94FF80D42246
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c90c57183c588bd300631f5ecf5c7546119f4c44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bd2518c0b91964ed13e57d4ff3a1d7c410b27f08
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532145"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350131"
 ---
 # <a name="multiple-datasources"></a>複数のデータソース
 
@@ -58,7 +58,7 @@ ms.locfileid: "56532145"
 ```cpp
 [TestMethod]
 [DataSource(@"Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;
-    WMI:SELECT ProcessId FROM Win32_Service WHERE Name=&#39;Themes&#39;")]
+    WMI:SELECT ProcessId FROM Win32_Service WHERE Name='Themes'")]
 
 public void First()
 {
@@ -89,7 +89,7 @@ public void First()
 
 
 ```cpp
-[DataSource("Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;WMI:SELECT ProcessId FROM Win32_Service WHERE Name=&#39;Themes&#39;")]
+[DataSource("Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;WMI:SELECT ProcessId FROM Win32_Service WHERE Name='Themes'")]
 ```
 
 再反復処理するだけです:**テスト メソッドはそれぞれが、各個々 のデータ ソースによって生成されたデータ セットの組み合わせの拡張を n 方法の 1 回実行する**します。 たとえば、上の管理対象の例で安全に想定していますが 1 つだけのテーマ サービスを実行していることと、指定されたテーブルのデータ ソースで 3 つの行があることを知ること、テスト メソッドが 3 回呼び出されます (1 X 3)。 ネイティブの例の場合、SecondTable テスト メソッドでは、いくつか 2 つのテーブル データソースを指定します。 最初のテーブルに 3 つの行が含まれていて、2 番目のテーブルには、4 行が含まれています。 そのため、テスト メソッドが呼び出される 12 回 (3 X 4)。

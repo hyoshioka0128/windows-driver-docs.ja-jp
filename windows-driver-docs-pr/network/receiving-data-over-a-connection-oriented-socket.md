@@ -1,20 +1,20 @@
 ---
-title: 接続指向のソケット経由でデータを受信
-description: 接続指向のソケット経由でデータを受信
+title: 接続指向ソケット経由でのデータの受信
+description: 接続指向ソケット経由でのデータの受信
 ms.assetid: 189fa236-25d6-4eea-ad77-df76363576db
 keywords:
 - 接続指向のソケット WDK Winsock カーネル
 - WskReceive
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bca3dbc90a94471ba9e6c6018ae11e6292b5823f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 50d984c939ed015fb5e1638385257e3f07c7b9de
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527979"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349523"
 ---
-# <a name="receiving-data-over-a-connection-oriented-socket"></a>接続指向のソケット経由でデータを受信
+# <a name="receiving-data-over-a-connection-oriented-socket"></a>接続指向ソケット経由でのデータの受信
 
 
 Winsock カーネル (WSK) アプリケーションがリモートのトランスポート アドレスに接続指向のソケットを接続した後、ソケットを使ってデータを受信できます。 WSK アプリケーションでは、リッスン ソケットの受け入れ、接続指向のソケットでもデータを受信できます。 WSK アプリケーション接続指向のソケット経由で呼び出すことによってデータを受信する、 [ **WskReceive** ](https://msdn.microsoft.com/library/windows/hardware/ff571139)関数。
@@ -129,7 +129,7 @@ NTSTATUS
 次のコード例は、接続指向のソケットの呼び出す WSK サブシステムによって、WSK アプリケーションがデータを受信する方法を示しています。 *WskReceiveEvent*イベント コールバック関数。
 
 ```C++
-// A connection-oriented socket&#39;s WskReceiveEvent
+// A connection-oriented socket's WskReceiveEvent
 // event callback function
 NTSTATUS WSKAPI
   WskReceiveEvent(

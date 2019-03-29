@@ -1,6 +1,6 @@
 ---
-title: 条件付きで必須のグラフィックス ドライバー関数
-description: 条件付きで必須のグラフィックス ドライバー関数
+title: 条件的に必須のグラフィックス ドライバー関数
+description: 条件的に必須のグラフィックス ドライバー関数
 ms.assetid: db5816e2-83a1-491d-99f5-d693fefcf1fd
 keywords:
 - GDI WDK Windows 2000 の表示、関数、条件付きで必要です。
@@ -12,14 +12,14 @@ keywords:
 - DDI WDK グラフィックス、条件付きで必要な関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 480fdf8bd0481c05200dc676f1a42ebb28b11c6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1cca1fcf72c7d18e8658557ea9bd498de08f35d9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549210"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349189"
 ---
-# <a name="conditionally-required-graphics-driver-functions"></a>条件付きで必須のグラフィックス ドライバー関数
+# <a name="conditionally-required-graphics-driver-functions"></a>条件的に必須のグラフィックス ドライバー関数
 
 
 ## <span id="ddk_conditionally_required_graphics_driver_functions_gg"></span><span id="DDK_CONDITIONALLY_REQUIRED_GRAPHICS_DRIVER_FUNCTIONS_GG"></span>
@@ -51,7 +51,7 @@ ms.locfileid: "56549210"
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556190" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556190)"><strong>DrvDescribePixelFormat</strong></a></p></td>
 <td align="left"><p>1 つの画面上の別のピクセル形式の windows をサポートする表示します</p></td>
-<td align="left"><p>PDEV をについて説明します。&#39;s ピクセル形式。</p></td>
+<td align="left"><p>PDEV のピクセル形式をについて説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556235" data-raw-source="[&lt;strong&gt;DrvGetTrueTypeFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556235)"><strong>DrvGetTrueTypeFile</strong></a></p></td>
@@ -111,7 +111,7 @@ ms.locfileid: "56549210"
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556285" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556285)"><strong>DrvSetPixelFormat</strong></a></p></td>
 <td align="left"><p>1 つの画面上の別のピクセル形式の windows をサポートする表示します</p></td>
-<td align="left"><p>ウィンドウの設定&#39;s ピクセル形式。</p></td>
+<td align="left"><p>ウィンドウのピクセル形式を設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556316" data-raw-source="[&lt;strong&gt;DrvStrokePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556316)"><strong>DrvStrokePath</strong></a></p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "56549210"
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556322" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556322)"><strong>DrvSwapBuffers</strong></a></p></td>
 <td align="left"><p>ダブル バッファリングのピクセル形式をサポートするドライバー</p></td>
-<td align="left"><p>サーフェスの内容を表示します。&#39;s の非表示のバッファー。</p></td>
+<td align="left"><p>画面の非表示のバッファーの内容を表示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557277" data-raw-source="[&lt;strong&gt;DrvTextOut&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557277)"><strong>DrvTextOut</strong></a></p></td>

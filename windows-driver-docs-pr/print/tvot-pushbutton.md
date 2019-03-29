@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7dec2274fa8c14cd711161daafbed28d59f12f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 36ec2aa2eef0f29371e670ef7f06c7a40dd49478
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551249"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349217"
 ---
 # <a name="tvotpushbutton"></a>TVOT\_プッシュ ボタン
 
@@ -129,7 +129,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>ダイアログ リソース、または DLGTEMPLATE 構造体へのハンドルのリソース識別子 (Windows SDK のドキュメントを参照してください)。 OPTPARAM$ 構造で DPF_USE_HDLGTEMPLATE フラグによって異なります&#39;s<strong>フラグ</strong>メンバー。</p></td>
+<td><p>ダイアログ リソース、または DLGTEMPLATE 構造体へのハンドルのリソース識別子 (Windows SDK のドキュメントを参照してください)。 OPTPARAM$ 構造体の DPF_USE_HDLGTEMPLATE フラグによって異なります<strong>フラグ</strong>メンバー。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_HTCLRADJ</p></td>
@@ -151,22 +151,22 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 </colgroup>
 <thead>
 <tr class="header">
-<th>用語</th>
+<th>項目</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><span id="___________Style__________"></span><span id="___________style__________"></span><span id="___________STYLE__________"></span> スタイル</p></td>
-<td><p>ユーザーがプッシュ ボタンをクリックすると、CPSUI により実行される操作を指定します。 次の値のいずれかを指定できます。</p></td>
+<td><p>ユーザーがプッシュ ボタンをクリックすると、CPSUI により実行される操作を指定します。 次のいずれかの値になります。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_CALLBACK"></span><span id="pushbutton_type_callback"></span>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>CPSUI 呼び出しアプリケーション&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>-コールバック関数をボタンのイベントを処理するために型指定された、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>構造&#39;s<strong>理由</strong>メンバー CPSUICB_REASON_PUSHBUTTON に設定します。 (CPSUI コールバック関数を無視する&#39;戻り値の値)。</p></td>
+<td><p>CPSUI 呼び出し、アプリケーションの<a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>-コールバック関数をボタンのイベントを処理するために型指定された、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>構造体の<strong>理由</strong>メンバー CPSUICB_REASON_PUSHBUTTON に設定します。 (CPSUI は、コールバック関数の戻り値を無視します)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="PUSHBUTTON_TYPE_DLGPROC"></span><span id="pushbutton_type_dlgproc"></span>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>アプリケーション&#39;s のダイアログ ボックス プロシージャがボタンのイベントを処理します。 (詳細については、次を参照してください、<strong>解説</strong>セクション<a href="https://msdn.microsoft.com/library/windows/hardware/ff547607" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547607)"> <strong>DLGPAGE</strong></a>。)。</p>
+<td><p>アプリケーションのダイアログ ボックス プロシージャでは、ボタンのイベントを処理します。 (詳細については、次を参照してください、<strong>解説</strong>セクション<a href="https://msdn.microsoft.com/library/windows/hardware/ff547607" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547607)"> <strong>DLGPAGE</strong></a>。)。</p>
 <p>関数は、WM_INITDIALOG メッセージを受信するときにその<em>lParam</em>引数が指す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>構造体、<strong>理由</strong>メンバー CPSUICB_REASON_DLGPROC に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -254,7 +254,7 @@ TVOT\_プッシュ ボタン
 
 詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: HID の拡張機能
+title: HID 拡張機能
 description: このセクションでは、ヒューマン インターフェイス デバイス (HID) デバッガー拡張機能のコマンドについて説明します。
 ms.assetid: 796DB87B-1E04-40FA-90F9-699EE7032B3C
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0094d87d9e2a18f8c90768b44232b909f615f6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 60eee0bf524d43a6c5ee68dd7bc427fe916709b7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558375"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348631"
 ---
-# <a name="hid-extensions"></a>HID の拡張機能
+# <a name="hid-extensions"></a>HID 拡張機能
 
 
 このセクションでは、ヒューマン インターフェイス デバイス (HID) デバッガー拡張機能のコマンドについて説明します。
@@ -23,7 +23,7 @@ HID デバッガー拡張機能のコマンドは、Hidkd.dll で実装されま
 
 HID の問題のデバッグを開始するには、入力、 [ **! hidtree** ](-hidkd-hidtree.md)コマンド。 **! Hidtree**コマンドがコマンドの一覧を表示し、preparsed デバイス オブジェクトを調査するために使用できるアドレスが、データを非表示しレポート記述子を非表示にします。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -52,7 +52,7 @@ HID の問題のデバッグを開始するには、入力、 [ **! hidtree** ](
 </tr>
 <tr class="even">
 <td align="left"><p><strong><a href="-hidkd-hidtree.md" data-raw-source="[!hidkd.hidtree](-hidkd-hidtree.md)">!hidkd.hidtree</a></strong></p></td>
-<td align="left"><p><strong><a href="-hidkd-hidtree.md" data-raw-source="[!hidkd.hidtree](-hidkd-hidtree.md)">! Hidkd.hidtree</a></strong>コマンドは、その子ノードと共に HID 機能ドライバーを持つすべてのデバイス ノードの一覧を表示します。 子ノードが親ノードが作成された物理デバイス オブジェクト (PDO) を持つ&#39;s HID 関数ドライバー。</p></td>
+<td align="left"><p><strong><a href="-hidkd-hidtree.md" data-raw-source="[!hidkd.hidtree](-hidkd-hidtree.md)">! Hidkd.hidtree</a></strong>コマンドは、その子ノードと共に HID 機能ドライバーを持つすべてのデバイス ノードの一覧を表示します。 子ノードでは、親ノードの HID 関数ドライバーによって作成された、物理デバイス オブジェクト (PDO) が存在します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><a href="-hidkd-hidppd.md" data-raw-source="[!hidkd.hidppd](-hidkd-hidppd.md)">!hidkd.hidppd</a></strong></p></td>

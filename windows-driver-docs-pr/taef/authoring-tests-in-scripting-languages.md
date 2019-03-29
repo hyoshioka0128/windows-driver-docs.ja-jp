@@ -1,17 +1,17 @@
 ---
-title: スクリプト言語でのテストを作成
-description: スクリプト言語でのテストを作成
+title: スクリプト言語でテストを作成する
+description: スクリプト言語でテストを作成する
 ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5083b4788da27dccd2c741a9ea53ba9c26aedc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 989f1f25825050e7115933e57bd2bd82f5ab90ac
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558599"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349381"
 ---
-# <a name="authoring-tests-in-scripting-languages"></a>スクリプト言語でのテストを作成
+# <a name="authoring-tests-in-scripting-languages"></a>スクリプト言語でテストを作成する
 
 
 C++ だけでなく、 C#TAEF がサポートのスクリプト言語でのテストを作成します。
@@ -83,7 +83,7 @@ Microsoft COM スクリプト インターフェイスをサポートする任�
 52          <reference guid="e65ef678-a232-42a7-8a36-63108d719f31" version="1.0"/>
 53
 54          <public>
-55              <!-- Test setup and cleanup methods are declared using corresponding type = &#39;&#39; attributes -->
+55              <!-- Test setup and cleanup methods are declared using corresponding type = '' attributes -->
 56              <method name="ClassSetup" type="TestClassSetup"/>
 57              <method name="ClassCleanup" type="TestClassCleanup"/>
 58              <method name="MethodSetup"  type="TestMethodSetup"/>

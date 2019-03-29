@@ -8,12 +8,12 @@ keywords:
 - 描画の WDK GDI、サポートされているサービスの描画
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a99ff67b3900fa6d7f384462fe8c7262f8e9240f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 68d1918dc4e7805039d365019c2861e47222bcaf
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527855"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349709"
 ---
 # <a name="gdi-drawing-and-related-services"></a>GDI 描画と関連サービス
 
@@ -41,11 +41,11 @@ ms.locfileid: "56527855"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538263" data-raw-source="[&lt;strong&gt;BRUSHOBJ_pvAllocRbrush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538263)"><strong>BRUSHOBJ_pvAllocRbrush</strong></a></p></td>
-<td align="left"><p>ドライバーのメモリを割り当てます&#39;ブラシの s 実現します。</p></td>
+<td align="left"><p>ブラシのドライバーの実現のメモリを割り当てます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538264" data-raw-source="[&lt;strong&gt;BRUSHOBJ_pvGetRbrush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538264)"><strong>BRUSHOBJ_pvGetRbrush</strong></a></p></td>
-<td align="left"><p>ドライバーへのポインターを返します&#39;ブラシの s 実現します。 まだ実現されていない場合は、ブラシを認識しています。</p></td>
+<td align="left"><p>ブラシのドライバーの実現にポインターを返します。 まだ実現されていない場合は、ブラシを認識しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538265" data-raw-source="[&lt;strong&gt;BRUSHOBJ_ulGetBrushColor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538265)"><strong>BRUSHOBJ_ulGetBrushColor</strong></a></p></td>
@@ -57,7 +57,7 @@ ms.locfileid: "56527855"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff539421" data-raw-source="[&lt;strong&gt;CLIPOBJ_cEnumStart&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539421)"><strong>CLIPOBJ_cEnumStart</strong></a></p></td>
-<td align="left"><p>列挙には、すべての四角形またはクリップされる領域の一部のパラメーターを設定します。 (この関数を呼び出すことがなく、リージョンを 1 回列挙できますが、後続の列挙体は、この関数を必要と&#39;件)。</p></td>
+<td align="left"><p>列挙には、すべての四角形またはクリップされる領域の一部のパラメーターを設定します。 (この関数を呼び出すことがなく、リージョンを 1 回列挙できますが、後続の列挙体がこの関数の使用が必要です。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff539423" data-raw-source="[&lt;strong&gt;CLIPOBJ_ppoGetPath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539423)"><strong>CLIPOBJ_ppoGetPath</strong></a></p></td>
@@ -81,7 +81,7 @@ ms.locfileid: "56527855"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564202" data-raw-source="[&lt;strong&gt;EngCreateClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564202)"><strong>EngCreateClip</strong></a></p></td>
-<td align="left"><p>割り当て、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff539417" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539417)"> <strong>CLIPOBJ</strong> </a>ドライバーの&#39;s 一時的に使用します。 ドライバーを呼び出す必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff564786" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564786)"> <strong>EngDeleteClip</strong> </a>不要になったときに削除する関数。</p></td>
+<td align="left"><p>割り当て、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff539417" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539417)"> <strong>CLIPOBJ</strong> </a>ドライバーの一時的に使用します。 ドライバーを呼び出す必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff564786" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564786)"> <strong>EngDeleteClip</strong> </a>不要になったときに削除する関数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564786" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564786)"><strong>EngDeleteClip</strong></a></p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "56527855"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565018" data-raw-source="[&lt;strong&gt;EngSetPointerTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565018)"><strong>EngSetPointerTag</strong></a></p></td>
-<td align="left"><p>アプリケーションの論理和である図形を作成します。&#39;s ポインターの形で<a href="https://msdn.microsoft.com/library/windows/hardware/ff556289" data-raw-source="[&lt;strong&gt;DrvSetPointerShape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556289)"> <strong>DrvSetPointerShape</strong> </a>他の呼び出しでは、ミラー化されたシステムでドライバーが関連付けられています。</p>
+<td align="left"><p>アプリケーションのポインターの形で論理和を上にある図形を作成します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556289" data-raw-source="[&lt;strong&gt;DrvSetPointerShape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556289)"> <strong>DrvSetPointerShape</strong> </a>他の呼び出しでは、ミラー化されたシステムでドライバーが関連付けられています。</p>
 <div>
  
 </div>
