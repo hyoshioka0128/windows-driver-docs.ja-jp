@@ -1,0 +1,69 @@
+---
+title: GPIO のボタンおよびインジケーターの補足的なテスト
+description: このトピックでは、さまざまなフォーム ファクターに最適なユーザー エクスペリエンスを確保するための、ハードウェアのボタンとインジケーターに対する Windows 8.1 のテスト シナリオについて説明します。
+ms.assetid: 47E24D50-6007-4CD7-91C5-2D72788106B8
+ms.localizationpriority: medium
+ms.date: 10/17/2018
+ms.openlocfilehash: a42f6c4b07bf02d3a8889a50a3dde80db5c5ff25
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56572032"
+---
+# <a name="gpio-buttons-and-indicators-supplemental-testing"></a>GPIO のボタンおよびインジケーターの補足的なテスト
+
+
+このトピックでは、さまざまなフォーム ファクターに最適なユーザー エクスペリエンスを確保するための、ハードウェアのボタンとインジケーターに対する Windows 8.1 のテスト シナリオについて説明します。
+
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">トピック</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="test-automation-tools.md" data-raw-source="[Test automation tools](test-automation-tools.md)">自動テスト ツール</a></p></td>
+<td align="left"><p>GPIO テスト自動化はミット プラットフォームを使用します。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="integration-testing.md" data-raw-source="[Integration testing](integration-testing.md)">統合テスト</a></p></td>
+<td align="left"><p>統合テストを最適なエンド ツー エンド ユーザー エクスペリエンスを実行することが重要</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><a href="gpio-logging-and-investigations.md" data-raw-source="[GPIO logging and investigations](gpio-logging-and-investigations.md)">GPIO ログ記録と調査</a></p></td>
+<td align="left"><p>このトピックでは、ログ記録と GPIO をテストするための調査について説明します。</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+下のボタンをテストします。
+
+-   電源ボタン
+-   Windows ボタンをクリックします。
+-   音量ボタン
+-   回転ロック ボタン (省略可能)
+
+テスト インジケーター:
+
+-   インジケーターのドッキング
+-   ラップトップ/スレート モードのインジケーター
+
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[電源ボタンの動作](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)  
+[GPIO ボタンのミット プラットフォームでのテスト](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48735)  
+[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)  
+
+
+
