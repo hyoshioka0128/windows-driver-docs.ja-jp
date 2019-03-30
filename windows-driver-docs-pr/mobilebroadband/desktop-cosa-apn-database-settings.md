@@ -4,12 +4,12 @@ description: デスクトップ COSA/APN データベースの設定
 ms.assetid: 860B8587-1D70-466A-A6E7-836380AA4DFA
 ms.date: 01/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 01369870150c860b789dde51afc5d19a11bf7ba3
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
-ms.translationtype: HT
+ms.openlocfilehash: 35cd4a2c3c52ad09012a316ada8a1da7a35842c1
+ms.sourcegitcommit: bb4f9c8dab2f4cb7a57ebd30457f427d909c928f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58017033"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58624777"
 ---
 # <a name="desktop-cosaapn-database-settings"></a>デスクトップ COSA/APN データベースの設定
 
@@ -71,6 +71,7 @@ APN データベースに関する詳細については、次を参照してく�
 | SPN (SPN) | サービス プロバイダー名 (SPN) の識別子の文字列 | 省略可能 | 月/MVNO のネットワークを識別するのに役立ちます。 空白の場合は、既定値は空の文字列とは何も行いません。 | Windows 10 Version 1703 |
 | AlwaysOn | 接続が常にでかどうかについて説明します。 | 必須 | かどうか、空白が"true"にします既定値。 | Windows 10 Version 1703 |
 | PurposeGroups | 目的の値を表す Guid のコンマ区切りリストで、接続の目的を指定する文字列。 | 必須 | 次の目的の値を使用できます。 <ul><li>**インターネット**</li><li>**MMS**</li><li>**IMS**</li><li>**SUPL**</li><li>**購入**</li><li>**管理**</li><li>**アプリケーション**</li><li>**esim 状のプロビジョニング**</li></ul> <p> 「インターネット」場合、空白の既定値。</p> | Windows 10 Version 1703 |
+| | | 省略可能 | 次の省略可能な目的のグループ値提供されています。 <ul><li>**LTE をアタッチします。** </li></ul> LTE 接続を指定する COSA を通じて APN 通常必要はありません接続情報は、通常、基になるモデムのハードウェアで直接管理されるためです。 ただしでモデムのハードウェアには、APN の値をアタッチ、LTE はありませんし、ネットワークが、UE を 1 つの割り当ての対応がない場合、MO 必要に応じて指定できます LTE がユーザーに値を手動で入力することがなく、UE は LTE アタッチできるように、情報をアタッチします。 | Windows 10、バージョンが 1903 |
 | IPType | 接続のネットワーク プロトコルを指定する文字列。 | 省略可能 | 設定可能な値: <ul><li>IPv4</li><li>IPv6</li><li>IPv4v6</li></ul> <p>かどうかは空白、既定値は"IPv4"にします。</p> | Windows 10 Version 1703 |
 | BrandingName | 通常、モバイル ブロード バンド デバイスは、Windows、Windows 接続マネージャーを表示するオペレーター名を提供します。 この名前は、メタデータにカスタム名を指定することによってオーバーライドできます。 | 省略可能 | 空白の場合は、既定値は空の文字列とは何も行いません。 | Windows 10 バージョン 1709 |
 | BrandingIcon | ネットワーク エントリの横にある Windows 接続マネージャーに表示されるカスタム ロゴです。 | 省略可能 | 透明な背景と縁を滑らかにアイコンがあります。 ライトとダーク テーマにアイコンをテストすることをお勧めします。 次の形式とサイズ要件も満たす必要があります。 <ul><li>256 x 256:+ 32 ビットのアルファ</li><li>48 x 48:+ 32 ビットのアルファ</li><li>48 x 48:8 ビット 256 色</li><li>48 x 48:4 ビットの 16 色</li><li>32 x 32:+ 32 ビットのアルファ</li><li>32 x 32:8 ビット 256 色</li><li>32 x 32:4 ビットの 16 色</li><li>24 x 24:+ 32 ビットのアルファ</li><li>24 x 24:8 ビット 256 色</li><li>24 x 24:4 ビットの 16 色</li><li>16 x 16:+ 32 ビットのアルファ</li><li>16 x 16:8 ビット 256 色</li><li>16 x 16:4 ビットの 16 色</li></ul> | Windows 10 バージョン 1709 |
