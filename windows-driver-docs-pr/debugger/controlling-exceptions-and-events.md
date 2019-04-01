@@ -130,7 +130,7 @@ Microsoft Windows オペレーティング システムが例外を生成した�
 
 例外が期待しない場合、 **SX** \*を設定する対象のアプリケーションを 2 番目のチャンスにデバッガーを中断します。 イベントの既定の状態は、このトピックの次の「イベントの定義と既定値」セクションに表示されます。
 
-WinDbg のグラフィカル インターフェイスを使用して、中断状態を設定する[イベント フィルター](debug---event-filters.md)上、**デバッグ**] メニューの [イベントの一覧から使用する] をクリックして、**イベント フィルター**ダイアログボックスを選び**有効**、**無効**、**出力**、または**無視**します。
+WinDbg のグラフィカル インターフェイスを使用して、中断状態を設定する[イベント フィルター](debug---event-filters.md)上、**デバッグ** メニューの [イベントの一覧から使用する] をクリックして、**イベント フィルター**ダイアログボックスを選び**有効**、**無効**、**出力**、または**無視**します。
 
 ### <a name="span-idcontrollinghandlingstatusspanspan-idcontrollinghandlingstatusspancontrolling-handling-status"></a><span id="controlling_handling_status"></span><span id="CONTROLLING_HANDLING_STATUS"></span>状態の処理を制御します。
 
