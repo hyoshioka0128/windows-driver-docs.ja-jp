@@ -1,17 +1,17 @@
 ---
-title: PwrTest 情報シナリオ
+title: PwrTest の情報シナリオ
 description: PwrTest 情報シナリオは、キャプチャし、さまざまなカテゴリから現在のシステム電源の情報を記録します。
 ms.assetid: 1d13d1dd-eb8d-434a-b994-e747a86f3457
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e68e02fbcd2b4e005618b98b7b893d7d05bf92cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2ad34aa2d7ebb5e520be61fea1505fbe7a2fddfe
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538575"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349503"
 ---
-# <a name="pwrtest-info-scenario"></a>PwrTest 情報シナリオ
+# <a name="pwrtest-info-scenario"></a>PwrTest の情報シナリオ
 
 
 PwrTest 情報シナリオは、キャプチャし、さまざまなカテゴリから現在のシステム電源の情報を記録します。
@@ -248,11 +248,11 @@ pwrtest /info:all
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;DefaultAlert1&gt;</strong></td>
-<td align="left"><p>バッテリの製造元を示す&#39;s バッテリ警告が発生するときに容量をお勧めします。</p></td>
+<td align="left"><p>バッテリのアラートが発生するときは、バッテリの製造元の推奨される容量を示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;DefaultAlert2&gt;</strong></td>
-<td align="left"><p>バッテリの製造元を示す&#39;s バッテリ警告が発生するときに容量をお勧めします。</p></td>
+<td align="left"><p>バッテリ警告が発生するときは、バッテリの製造元の推奨される容量を示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;PROCESSOR_POWER_INFORMATION&gt;</strong></td>

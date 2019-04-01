@@ -1,17 +1,16 @@
 ---
-title: ファームウェア WEG よく寄せられる質問
+title: ファームウェア WEG に関する FAQ
 description: ファームウェア WEG - よく寄せられる質問 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 652b96b65f680f5bdf0176c353382879564205fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b6443d251b8ba31ce4c08a77893c7255b760881d
+ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530417"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58441929"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>ファームウェア WEG:よく寄せられる質問 (FAQ)
-
 
 次のよく寄せられる質問 Windows 7 を引き続き使用してマシンの数が原因の詳細についてだったのです。
 
@@ -31,7 +30,7 @@ ms.locfileid: "56530417"
 >
 > 従来のブート モードで起動してインストールを経由する場合 (diskpart.exe「一覧パーティション」と表示されている) と、2 つのパーティション通常があります。 アクティブおよび 'システム パーティション' として表示されている最初のパーティションにファイル システム タイプの NTFS を非表示にされている\\boot フォルダーです。 2 番目のパーティションが where\\もう 1 つの NTFS パーティションに Windows がインストールされています。
 >
-> インストールは Fat32 ファイル システムの種類、RAW として Microsoft 予約パーティション (MSR)、OS と EFI システム パーティション (ESP) を作成して Windows を UEFI モードでインストールすると場合、]、[データ パーティションを NTFS を使用します。 フォルダーを表示する必要がありますをマウントして、ESP を見て、 \\EFI ブート フォルダー (フォルダーが非表示することがあります)。 参照してください[システムを確認するメソッドが UEFI モードで起動した](#_Toc451181866)します。
+> インストールは Fat32 ファイル システムの種類、RAW として Microsoft 予約パーティション (MSR)、OS と EFI システム パーティション (ESP) を作成して Windows を UEFI モードでインストールすると場合、]、[データ パーティションを NTFS を使用します。 フォルダーを表示する必要がありますをマウントして、ESP を見て、 \\EFI ブート フォルダー (フォルダーが非表示することがあります)。
 >
 > Windows 7 のシステム ファームウェアで有効になっている CSM のままにする必要があります、ために、UEFI ブート モードで Windows 7 をインストールするには、インストール メディア (CD/DVD または USB) を起動するときに、UEFI ブート モードを具体的に選択する必要があります。
 > ブート オプションと BIOS 構成の詳細についての PC の製造元に問い合わせてください。
@@ -109,7 +108,7 @@ ms.locfileid: "56530417"
 
 **Q:** システムが起動、実行時にデータに影響を与えることがなく GPT ブートに従来の MBR ブートを使用して変換できますか。
 
-> **A:** いいえ。 Diskpart.exe などの Microsoft ツールを使用して、データの損失が発生します。 MBR ブートと GPT ブートは、2 つの異なるブート機構をこの変更を実装するために、ディスクからすべてのデータを削除するディスクに変更が必要なです。 この変更を試みる前にデータをバックアップします。
+> **A:** No. Diskpart.exe などの Microsoft ツールを使用して、データの損失が発生します。 MBR ブートと GPT ブートは、2 つの異なるブート機構をこの変更を実装するために、ディスクからすべてのデータを削除するディスクに変更が必要なです。 この変更を試みる前にデータをバックアップします。
 
 ## <a name="related-resources"></a>関連リソース
 
@@ -118,6 +117,3 @@ ms.locfileid: "56530417"
 [Windows 10 の仕様 - Microsoft](https://www.microsoft.com/windows/windows-10-specifications)
 
 [Windows 7 および Windows Server 2008 R2 での TPM 2.0 のサポートを追加する更新プログラム](https://support.microsoft.com/kb/2920188)
-
-
-

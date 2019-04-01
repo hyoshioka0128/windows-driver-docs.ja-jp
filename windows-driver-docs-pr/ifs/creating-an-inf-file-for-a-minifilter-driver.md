@@ -1,6 +1,6 @@
 ---
-title: ミニフィルター ドライバーの INF ファイルを作成します。
-description: ミニフィルター ドライバーの INF ファイルを作成します。
+title: ミニフィルター ドライバー用の INF ファイルの作成
+description: ミニフィルター ドライバー用の INF ファイルの作成
 ms.assetid: 2ae41287-e3c5-4df5-8dec-8575343d5319
 keywords:
 - INF ファイル WDK ファイル システム ミニフィルター ドライバー
@@ -13,14 +13,14 @@ keywords:
 - AddRegistry セクション WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ddc50d68efcab408f1f0e54ba47fddcd3f0ff5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 90713fedfef6f76bb2c6eeaa2910bf9447fb9756
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560423"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464310"
 ---
-# <a name="creating-an-inf-file-for-a-minifilter-driver"></a>ミニフィルター ドライバーの INF ファイルを作成します。
+# <a name="creating-an-inf-file-for-a-minifilter-driver"></a>ミニフィルター ドライバー用の INF ファイルの作成
 
 
 ## <span id="ddk_creating_an_inf_file_for_a_minifilter_driver_if"></span><span id="DDK_CREATING_AN_INF_FILE_FOR_A_MINIFILTER_DRIVER_IF"></span>
@@ -86,17 +86,17 @@ CatalogFile =
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">エントリ</th>
-<th align="left">Value</th>
+<th align="left">入力</th>
+<th align="left">[値]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>署名</strong></p></td>
-<td align="left"><p>&quot;$WINDOWS NT $&quot;</p></td>
+<td align="left"><p>「$WINDOWS NT $」</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>クラス</strong></p></td>
+<td align="left"><p><strong>Class</strong></p></td>
 <td align="left"><p>参照してください<a href="file-system-filter-driver-classes-and-class-guids.md" data-raw-source="[File System Filter Driver Classes and Class GUIDs](file-system-filter-driver-classes-and-class-guids.md)">ファイル システム フィルター ドライバーのクラスとクラス Guid</a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -104,7 +104,7 @@ CatalogFile =
 <td align="left"><p>参照してください<a href="file-system-filter-driver-classes-and-class-guids.md" data-raw-source="[File System Filter Driver Classes and Class GUIDs](file-system-filter-driver-classes-and-class-guids.md)">ファイル システム フィルター ドライバーのクラスとクラス Guid</a>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>プロバイダー</strong></p></td>
+<td align="left"><p><strong>Provider</strong></p></td>
 <td align="left"><p>INF ファイルでは、Microsoft 以外のプロバイダーを指定してください。</p></td>
 </tr>
 <tr class="odd">
@@ -188,7 +188,7 @@ Dependencies   = FltMgr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">説明</th>
 </tr>
 </thead>

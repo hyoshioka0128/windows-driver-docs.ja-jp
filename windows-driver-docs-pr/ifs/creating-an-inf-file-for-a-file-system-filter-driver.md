@@ -1,6 +1,6 @@
 ---
-title: ファイル システム フィルター ドライバーの INF ファイルを作成します。
-description: ファイル システム フィルター ドライバーの INF ファイルを作成します。
+title: ファイル システム フィルター ドライバー用の INF ファイルの作成
+description: ファイル システム フィルター ドライバー用の INF ファイルの作成
 ms.assetid: 1e8d0e59-eabd-4bdb-9675-e693a0b364ca
 keywords:
 - INF ファイル WDK ファイル システムを作成します。
@@ -14,14 +14,14 @@ keywords:
 - WDK のファイル システムのバージョン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73d45c4d091bb26839400d7dd54dbe615a0be7c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d6ea4d68725323566729b0eed0a28003b61e0107
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530768"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464330"
 ---
-# <a name="creating-an-inf-file-for-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバーの INF ファイルを作成します。
+# <a name="creating-an-inf-file-for-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバー用の INF ファイルの作成
 
 
 ## <span id="ddk_creating_an_inf_file_for_a_file_system_filter_driver_if"></span><span id="DDK_CREATING_AN_INF_FILE_FOR_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
@@ -100,17 +100,17 @@ CatalogFile =
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">エントリ</th>
-<th align="left">Value</th>
+<th align="left">入力</th>
+<th align="left">[値]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>署名</strong></p></td>
-<td align="left"><p>&quot;$WINDOWS NT $&quot;</p></td>
+<td align="left"><p>「$WINDOWS NT $」</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>クラス</strong></p></td>
+<td align="left"><p><strong>Class</strong></p></td>
 <td align="left"><p>参照してください<a href="file-system-filter-driver-classes-and-class-guids.md" data-raw-source="[File System Filter Driver Classes and Class GUIDs](file-system-filter-driver-classes-and-class-guids.md)">ファイル システム フィルター ドライバーのクラスとクラス Guid</a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -118,7 +118,7 @@ CatalogFile =
 <td align="left"><p>参照してください<a href="file-system-filter-driver-classes-and-class-guids.md" data-raw-source="[File System Filter Driver Classes and Class GUIDs](file-system-filter-driver-classes-and-class-guids.md)">ファイル システム フィルター ドライバーのクラスとクラス Guid</a>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>プロバイダー</strong></p></td>
+<td align="left"><p><strong>Provider</strong></p></td>
 <td align="left"><p>INF ファイルでは、Microsoft 以外のプロバイダーを指定してください。</p></td>
 </tr>
 <tr class="odd">
@@ -172,7 +172,7 @@ myLegacyFilter.sys = 1
 
 ### <a name="span-iddefaultinstallsectionrequiredspanspan-iddefaultinstallsectionrequiredspanspan-iddefaultinstallsectionrequiredspandefaultinstall-section-required"></a><span id="DefaultInstall_Section__required_"></span><span id="defaultinstall_section__required_"></span><span id="DEFAULTINSTALL_SECTION__REQUIRED_"></span>(必須) DefaultInstall セクション
 
-[ **DefaultInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547356) ] セクションで、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブは、ファイル システム フィルター ドライバーのドライバー ファイルをコピーし、ユーザー アプリケーション ファイルで指定されている変換先を[ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクション。
+[ **DefaultInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547356) セクションで、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブは、ファイル システム フィルター ドライバーのドライバー ファイルをコピーし、ユーザー アプリケーション ファイルで指定されている変換先を[ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクション。
 
 **注**  、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブが、カタログ ファイルまたは INF ファイル自体を参照する必要がありますSetupAPI では、これらのファイルが自動的にコピーします。
 
@@ -232,7 +232,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -269,7 +269,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -314,8 +314,8 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">アクション</th>
+<th align="left">値</th>
+<th align="left">操作</th>
 </tr>
 </thead>
 <tbody>
@@ -329,11 +329,11 @@ AddReg         = MyLegacyFilter.AddRegistry
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000002</p></td>
-<td align="left"><p>SERVICE_ERROR_SEVERE (レジストリに切り替える&#39;s 前回正常起動時のセットの制御し、システムの起動を続行します)。</p></td>
+<td align="left"><p>SERVICE_ERROR_SEVERE (レジストリの前回正常起動時に切り替えコントロール セットと、システムの起動を続行します)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000003</p></td>
-<td align="left"><p>SERVICE_ERROR_CRITICAL (システムの起動時には、レジストリを使用していない場合&#39;s 前回正常起動時のコントロールの設定、前回正常起動時に切り替えるし、もう一度やり直してください。 起動が失敗した場合は、バグ チェック ルーチンを実行します。 システムが起動するために必要なドライバーのみがこの値を指定、INF ファイルにします。)</p></td>
+<td align="left"><p>SERVICE_ERROR_CRITICAL (場合、システムの起動時には、レジストリの前回正常起動時のコントロール セット、前回正常起動時をもう一度お試しくださいスイッチを使用していません。 起動が失敗した場合は、バグ チェック ルーチンを実行します。 システムが起動するために必要なドライバーのみがこの値を指定、INF ファイルにします。)</p></td>
 </tr>
 </tbody>
 </table>
@@ -344,7 +344,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 
 [ **AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)ライター定義されている 1 つまたは複数の INF を指す**AddRegistry**のレジストリに格納される情報が含まれているセクションで、新しくサービスをインストールします。
 
-**注**   INF ファイルも使用する場合は、最初のインストールに含まれるエントリの後に、ドライバーをアップグレードするため、 **AddRegistry**セクションは、0x00000002 を指定する必要があります (FLG\_ADDREG\_NOCLOBBER) フラグ。 このフラグを指定するには、HKLM レジストリ エントリが保持されます。\\CurrentControlSet\\サービスの後続のファイルがインストールされている場合。 次に、例を示します。
+**注**   INF ファイルも使用する場合は、最初のインストールに含まれるエントリの後に、ドライバーをアップグレードするため、 **AddRegistry**セクションは、0x00000002 を指定する必要があります (FLG\_ADDREG\_NOCLOBBER) フラグ。 このフラグを指定するには、HKLM レジストリ エントリが保持されます。\\CurrentControlSet\\サービスの後続のファイルがインストールされている場合。 以下に例を示します。
 
  
 
