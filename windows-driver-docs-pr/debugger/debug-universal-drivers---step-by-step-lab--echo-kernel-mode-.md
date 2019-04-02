@@ -6,14 +6,14 @@ keywords:
 - ラボをデバッグします。
 - ステップ バイ ステップ
 - エコー
-ms.date: 10/11/2018
+ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cc8940c03d7b4c0357e689550364816de2f6fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8900b9f6098ccf2c560d21b4cf941c484ff089c3
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553658"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761859"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>ユニバーサル ドライバー - ステップ バイ ステップのラボ (エコー カーネル モード) のデバッグします。
 
@@ -175,7 +175,7 @@ Approximate round trip times in milli-seconds:
 **注:**  
 **ファイアウォールとデバッガー**
 
-ファイアウォールからポップアップ メッセージを受信して、デバッガーを使用する uand、デバッガーを使用する場合は確認**3 つすべて**ボックス。
+確認の場合は、ファイアウォールからポップアップ メッセージを受信して、デバッガーを使用する、 **3 つすべて**ボックス。
 
 ![windows セキュリティの警告 - windows ファイアウォールがこのアプリの一部の機能をブロックします。 ](images/debuglab-image-firewall-dialog-box.png)
 
@@ -274,7 +274,7 @@ DML versions of commands on by default
 
 **ターゲット システム上の Windows のバージョンの表示**
 
-5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg] ウィンドウでコマンド。
+5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: kd> vertarget
@@ -289,7 +289,7 @@ System Uptime: 0 days 01:31:58.931
 
 **読み込まれたモジュールを一覧表示します。**
 
-6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg] ウィンドウでコマンド。
+6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: Kd> lm
@@ -451,9 +451,9 @@ c. 高度な起動 で、次のようにクリックします。**今すぐ再�
 
 d. PC が再起動すると、選択**のスタートアップ オプション**します。 Windows 10 では、次のように選択します。**トラブルシューティング** > **詳細オプション** > **スタートアップ設定**、[再起動] ボタンをクリックします。 
 
-e.  キーを押してドライバー署名の強制を無効にするを選択して、 **F7**キー。
+e. キーを押してドライバー署名の強制を無効にするを選択して、 **F7**キー。
 
-f.  ターゲット コンピューターを再起動します。
+f. ターゲット コンピューターを再起動します。
 
 
 **&lt;ホスト システムで**
@@ -472,7 +472,7 @@ WDK のインストールの Tools フォルダーに移動し、DevCon ツー�
 
 次の手順では、インストールして、ドライバーのサンプルをテストする方法を示します。 ここで示しているのは、ドライバーのインストールに使う devcon ツールの一般的な構文です。
 
-*devcon インストール&lt;INF ファイル&gt;&lt;ハードウェア ID&gt;*
+*devcon install &lt;INF ファイル&gt; &lt;ハードウェア ID&gt;*
 
 このドライバーのインストールに必要な INF ファイル*echo.inf*します。 Inf ファイルにはインストールするためのハードウェア ID が含まれています、 *echo.sys*します。 ハードウェア ID は、echo サンプル**ルート\\エコー**します。
 
@@ -917,7 +917,7 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -1516,7 +1516,7 @@ OSR <https://www.osr.com/>
 
 [特殊なデバッグ手法](specialized-debugging-techniques.md)
 
-[Windows デバッグの概要](getting-started-with-windows-debugging.md)
+[Windows のデバッグの概要](getting-started-with-windows-debugging.md)
 
 
 
