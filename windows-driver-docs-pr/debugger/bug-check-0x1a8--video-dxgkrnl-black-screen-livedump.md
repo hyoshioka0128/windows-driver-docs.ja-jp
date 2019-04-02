@@ -12,19 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 015df308d6d2f30e2efbeb4b4b50521c8e0d419f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 7f0b7395093413bdbf0bb7b9a635bc14dc1414d9
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743592"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761835"
 ---
 # <a name="bug-check-0x1a8-videodxgkrnlblackscreenlivedump"></a>バグ チェック 0x1A8 の。ビデオ\_DXGKRNL\_黒い\_画面\_LIVEDUMP
 
 ビデオ\_DXGKRNL\_黒い\_画面\_LIVEDUMP バグ チェックが 0x000001A8 の値を持ちます。 黒い画面シナリオのユーザーが開始した DXGKRNL ライブ ダンプが発生したことを示します。
 
 **重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
-
 
 ## <a name="videodxgkrnlblackscreenlivedump-parameters"></a>ビデオ\_DXGKRNL\_黒い\_画面\_LIVEDUMP パラメーター
 
@@ -37,11 +36,14 @@ ms.locfileid: "56743592"
 
 **ソースの値**
 
-     0x1: Black screen hotkey generated DXGKRNL black screen live dump
-     0x2: Volume combo key generated DXGKRNL black screen live dump
-     0x4: Internal generated DXGKRNL black screen live dump
-     0x8: Long Power Button Hold (LPBH) generated DXGKRNL black screen live dump
 
+0x1:黒い画面ホットキー DXGKRNL 黒い画面のライブ ダンプの生成
+
+0x2:ボリュームの複合キー DXGKRNL 黒い画面のライブ ダンプの生成
+
+0x4:内部生成された DXGKRNL 黒い画面ライブ ダンプ
+
+0x8:長い電源ボタンを保持 (LPBH) DXGKRNL 黒い画面のライブ ダンプの生成
 
 ## <a name="cause"></a>原因
 -----
@@ -50,20 +52,7 @@ ms.locfileid: "56743592"
 
 (このコードは、実際のバグチェックには使用されません。 ライブ ダンプの識別に使用されます)。
 
-
 ## <a name="see-also"></a>関連項目
 ----------
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
-
-
-
-
-
-
-
- 
-
-
-
-

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06be642fd267715de8d712d81e9369d3d7f6d9e7
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 7875bf4fb6e58cce425c5f0dd4d943b26e554706
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743528"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761849"
 ---
 # <a name="bug-check-0x168-clustercsvstatetransitiontimeoutlivedump"></a>バグ チェック 0x168 の。クラスター\_CSV\_状態\_遷移\_タイムアウト\_LIVEDUMP
 
@@ -39,11 +39,15 @@ ms.locfileid: "56743528"
 
 **CSV 対象の状態 Id**
 
-     0  Waiting for volume to transition to the Init state. 
-     1  Waiting for volume to transition to the Paused state. 
-     2  Waiting for volume to transition to the Draining state. 
-     3  Waiting for volume to transition to the Set-Down-Level state. 
-     4  Waiting for volume to transition to the Active state.
+ボリュームの初期化状態に遷移するの 0 待機します。 
+
+一時停止状態に移行するボリュームの 1 待機します。 
+
+ドレイン中状態に移行するボリュームの 2 待機します。 
+
+ダウン レベルの設定状態に移行するボリュームの 3 つの待機します。 
+
+アクティブな状態に移行するボリュームの 4 待機します。
 
 
 ## <a name="cause"></a>原因

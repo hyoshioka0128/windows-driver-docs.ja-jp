@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 19174125c5e7b9682e4e5bce8b2f29a1fb88167d
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: ad83a5117a4c0b5b9abe11f3786c044f474a66fa
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743526"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761841"
 ---
 # <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>バグ チェック 0x1C9 の。ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP
 
@@ -37,7 +37,7 @@ ms.locfileid: "56743526"
 
 **ウォッチドッグのソースの値**
 
-```
+```text
         0  : WatchdogSourceDefault
               Source was not specified
         1  : WatchdogSourceRhsCleanup

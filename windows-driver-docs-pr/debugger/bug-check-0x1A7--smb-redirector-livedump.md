@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7393fd284cc792fbb295bc5b2c173c7c042924a3
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 0654caec76f79f2cbc56e1d65338f8b62fed1649
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743531"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761845"
 ---
 # <a name="bug-check-0x1a7-smbredirectorlivedump"></a>バグ チェック 0x1A7 の。SMB\_リダイレクター\_LIVEDUMP
 
@@ -40,7 +40,7 @@ SMB リダイレクターは、問題が検出されましたし、デバッグ�
 
 **理由コード**
 
-```
+```text
 0x1 : An I/O failed to complete in a reasonable amount of time.
     2 - Pointer to the connection object.
     3 - Reserved.
@@ -62,9 +62,7 @@ HKLM\System\CurrentControlSet\Services\Lanmanworkstation\Parameters [DWORD] Live
 
 (このコードは、実際のバグチェックには使用されません。 ライブ ダンプの識別に使用されます)。
 
-
 ## <a name="see-also"></a>関連項目
 ----------
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
-

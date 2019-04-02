@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 297342cf42182e2f006a1b3d2a51c62368c9409d
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 218ea202c8eab17a8268bc7e29c9ded222153c91
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743606"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761821"
 ---
 # <a name="bug-check-0x1dc-dmacommonbuffervectorerror"></a>バグ チェック 0x1DC の。DMA\_共通\_バッファー\_ベクター\_エラー
 
@@ -37,7 +37,7 @@ DMA\_共通\_バッファー\_ベクター\_エラーのバグ チェックが 0
 
 **エラーの種類**
 
-```
+```text
 0x01 : Wrong IRQL
     2 - Current IRQL.
 

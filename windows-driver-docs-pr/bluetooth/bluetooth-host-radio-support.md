@@ -4,14 +4,14 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: Windows で Bluetooth ホスト オプションのサポートに関する質問と回答の一覧を示します
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5839e1d6e57a2c47603bfb3dc9e02272910f4179
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e03f6b403d7dd73869326dc0d9fa2b69e3934c66
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556782"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761857"
 ---
-# <a name="bluetooth-host-radio-support"></a>ホストの Bluetooth 無線のサポート
+# <a name="bluetooth-host-radio-support"></a>Bluetooth ホストの無線のサポート
 
 次の一覧は、Bluetooth 無線サポート Q & a:
 
@@ -30,7 +30,7 @@ ms.locfileid: "56556782"
 
 ## <a name="bluetooth-host-controllers-supported-in-windows"></a>Bluetooth のホスト コント ローラーの Windows でサポートされています
 
-、Windows では、Bluetooth 無線を外付けドングルとしてパッケージ化またはコンピューター内に埋め込まれたできますが、その 1 つのコンピューターの USB ポートに接続する必要があります。 PC カード インターフェイスまたは Windows 7 および Windows Vista に含まれている Bluetooth スタックが Bluetooth 無線経由の接続、PCI、I2C、シリアル Secure Digital I/O (SDIO)、コンパクト フラッシュをサポートしていません。 Windows 8 および Windows 8.1 では、サード パーティ製のバス ドライバーを使用してラジオを代替のトランスポートを経由して接続を追加できます。 拡張可能なトランスポートのセクションを参照してください、 [Bluetooth デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536585)詳細についてはします。
+、Windows では、Bluetooth 無線を外付けドングルとしてパッケージ化またはコンピューター内に埋め込まれたできますが、その 1 つのコンピューターの USB ポートに接続する必要があります。 PC カード インターフェイスまたは Windows 7 および Windows Vista に含まれている Bluetooth スタックが Bluetooth 無線経由の接続、PCI、I2C、シリアル Secure Digital I/O (SDIO)、コンパクト フラッシュをサポートしていません。 Windows 8 および Windows 8.1 では、サード パーティ製のバス ドライバーを使用してラジオを代替のトランスポートを経由して接続を追加できます。 拡張可能なトランスポートのセクションを参照してください、 [Bluetooth デバイス参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_bltooth/)詳細についてはします。
 
 ## <a name="forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-windows-vista"></a>Windows がデバイス ID (Windows Vista) に一致しない場合は読み込みに Bluetooth スタックの強制
 
@@ -99,148 +99,38 @@ Windows 8.1、Windows 8、Windows 7、および Windows Vista は、ベンダー
 
 次の表は、Windows をサポートする Bth.inf でプロファイルを一覧表示します。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>サービス ID</p></td>
-<td align="left"><p>説明</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001101-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>SPP</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001103-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>DUN</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001124-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>HID</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001126-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>HCRP</p></td>
-</tr>
-</tbody>
-</table>
+|サービス ID|説明|
+|----|----|
+|{00001101-0000-1000-8000-00805f9b34fb}|SPP|
+|{00001103-0000-1000-8000-00805f9b34fb}|DUN
+|{00001124-0000-1000-8000-00805f9b34fb}|HID|
+|{00001126-0000-1000-8000-00805f9b34fb}|HCRP|
 
 ### <a name="windows-xp-bluetooth-profiles"></a>Windows XP の Bluetooth のプロファイル
 
 次の表には、サポートされていない Bluetooth のプロファイルとプロトコルが一覧表示します。 このコンテキストで「サポートされていない」ことである Windows の PDO または devnode 生成または新しいハードウェアの追加ウィザードを表示は自動的に注意してください。 そのため、一部のボックスでプロファイルとプロトコルはサポートされていないかのように処理されます。 たとえば、SDP、PDO は必要ありませんが、Bluetooth サービス ID をボックスでプロトコルです。 SDP プロトコルはための PDO 作成されないようにするでサポートされていない Bth.inf としてマークされています。
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>サービス ID</p></td>
-<td align="left"><p>インボックス</p></td>
-<td align="left"><p>説明</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000110a-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>オーディオ ソース</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{0000110c-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>AV リモート ターゲット</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001001-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>グループの参照サービス</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001111-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>Fax サービス</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000111f-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>ハンズフリー オーディオ ゲートウェイ</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001112-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>ヘッドセット オーディオ ゲートウェイ</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001104-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>赤外線モバイル通信 (IRMC) 同期サービス</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001107-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>IRMC 同期コマンド</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001106-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>Obex ファイル転送</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001105-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>オブジェクトのプッシュ</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001117-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>パン グループ アドホック ネットワーク (GN)</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001116-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>ネットワーク アクセス ポイント (NAP) にパンします。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001115-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>パン U</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{0000112e-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>クライアント機器 (外字エディター) サービスの電話帳</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000112f-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>サーバー機器 (PSE) サービスの電話帳</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001200-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>PnP サービス</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001002-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>パブリック グループの参照サービス</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001000-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>SDP</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000112d-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>Sim のアクセス</p></td>
-</tr>
-</tbody>
-</table>
+|サービス ID|インボックス|説明|
+|----|----|----|
+|{0000110a-0000-1000-8000-00805f9b34fb}|いいえ|オーディオ ソース|
+|{0000110c-0000-1000-8000-00805f9b34fb}|いいえ|AV リモート ターゲット|
+|{00001001-0000-1000-8000-00805f9b34fb}|いいえ|グループの参照サービス|
+|{00001111-0000-1000-8000-00805f9b34fb}|いいえ|Fax サービス|
+|{0000111f-0000-1000-8000-00805f9b34fb}|いいえ|ハンズフリー オーディオ ゲートウェイ|
+|{00001112-0000-1000-8000-00805f9b34fb}|いいえ|ヘッドセット オーディオ ゲートウェイ|
+|{00001104-0000-1000-8000-00805f9b34fb}|いいえ|赤外線モバイル通信 (IRMC) 同期サービス|
+|{00001107-0000-1000-8000-00805f9b34fb}|いいえ|IRMC 同期コマンド|
+|{00001106-0000-1000-8000-00805f9b34fb}|はい|Obex ファイル転送|
+|{00001105-0000-1000-8000-00805f9b34fb}|はい|オブジェクトのプッシュ|
+|{00001117-0000-1000-8000-00805f9b34fb}|いいえ|パン グループ アドホック ネットワーク (GN)|
+|{00001116-0000-1000-8000-00805f9b34fb}|いいえ|ネットワーク アクセス ポイント (NAP) にパンします。|
+|{00001115-0000-1000-8000-00805f9b34fb}|はい|パン U|
+|{0000112e-0000-1000-8000-00805f9b34fb}|いいえ|クライアント機器 (外字エディター) サービスの電話帳|
+|{0000112f-0000-1000-8000-00805f9b34fb}|いいえ|サーバー機器 (PSE) サービスの電話帳|
+|{00001200-0000-1000-8000-00805f9b34fb}|はい|PnP サービス|
+|{00001002-0000-1000-8000-00805f9b34fb}|いいえ|パブリック グループの参照サービス|
+|{00001000-0000-1000-8000-00805f9b34fb}|はい|SDP|
+|{0000112d-0000-1000-8000-00805f9b34fb}|いいえ|Sim のアクセス|
 
 Ihv が自分のデバイス用の PDO を自動的に生成する Windows をしない場合、サービスの GUID サポートされていないサービスの一覧に追加できます。 例については、Bth.inf を参照してください。
 
@@ -268,13 +158,15 @@ Windows 8 以降、Windows はリモートの Bluetooth デバイスに Windows 
 <col width="25%" />
 <col width="25%" />
 </colgroup>
-<tbody>
+<thead>
 <tr class="odd">
-<td align="left"><p>ValueName</p></td>
-<td align="left"><p>種類</p></td>
-<td align="left"><p>説明</p></td>
-<td align="left"><p>既定値</p></td>
+<th align="left"><p>ValueName</p></th>
+<th align="left"><p>型</p></th>
+<th align="left"><p>説明</p></th>
+<th align="left"><p>既定値</p></th>
 </tr>
+</thead>
+<tbody>
 <tr class="even">
 <td align="left"><p>DIDVendorIDSource</p></td>
 <td align="left"><p>DWORD</p></td>

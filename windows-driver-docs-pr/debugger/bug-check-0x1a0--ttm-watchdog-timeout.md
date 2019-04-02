@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: afe9cab920ff14f4c37b61eb4a2f75b2f39d4853
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: cefaa99841c08b8093f66b735750d291c4d5a91b
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743576"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761831"
 ---
 # <a name="bug-check-0x1a0-ttmwatchdogtimeout"></a>バグ チェック 0x1A0 の。TTM\_ウォッチドッグ\_タイムアウト
 
@@ -37,12 +37,17 @@ TTM\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001
 
 **エラーの種類**
 
-     0x1 : A device assignment to a terminal is not making progress.
-     0x2 : Device's close callback is not making progress.
-     0x3 : Device's set-input-mode callback is not making progress.
-     0x4 : Device's set-display-state callback is not making progress.
-     0x5 : Setting device's built-in panel state is not making progress.
-     0x6 : Updating device's primary display visible state is not making progress.
+0x1:ターミナルにデバイスの割り当てが進行をしていません。
+
+0x2:デバイスの閉じるコールバックが進行をしていません。
+
+0x3:デバイスの入力モードを設定のコールバックが進行をしていません。
+
+0x4:デバイスの表示状態の設定のコールバックが進行をしていません。
+
+0x5。デバイスの組み込みのパネルの状態を設定しても、進行状況が行われていません。
+
+0x6:デバイスのプライマリ ディスプレイの表示状態の更新が進行をしていません。
 
 ## <a name="cause"></a>原因
 -----

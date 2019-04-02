@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bdafef3629723d70a3aef3416f824d73c71a0484
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: b5395b7d46540462c646c3952ba2a8efe6e3e5cc
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743574"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761837"
 ---
 # <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>バグ チェック 0x166 の。クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP
 
@@ -37,20 +37,33 @@ ms.locfileid: "56743574"
 
 **リソースの呼び出しの種類**
 
-    1  OPEN
-    2  CLOSE
-    3  ONLINE
-    4  OFFLINE
-    5  TERMINATE
-    6  ARBITRATE
-    7  RELEASE
-    8  RESOURCE CONTROL
-    9  RESOURCE TYPE CONTROL
-    10 LOOKS ALIVE
-    11 IS ALIVE
-    12 FAILURE NOTIFICATION
-    13 SHUTDOWN PROCESS
-    14 CANCEL
+1 つのオープン
+
+2 を閉じる
+
+オンライン 3
+
+オフライン 4
+
+5 を終了します。
+
+6 を判別します。
+
+7 のリリース
+
+8 リソース コントロール
+
+9 のリソースの種類のコントロール
+
+10 がアライブが探す
+
+11 が有効
+
+12 のエラー通知
+
+13 のシャット ダウン プロセス
+
+14 のキャンセル
 
 
 ## <a name="cause"></a>原因

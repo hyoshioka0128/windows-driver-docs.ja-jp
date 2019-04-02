@@ -7,15 +7,14 @@ keywords:
 - 生体認証ドライバー WDK 生体認証を順位付け
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76f287e954c65e1d1205b0db3a80ed425816a64c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0fc9a56c5201890283c9bef44f27eb3531a925a5
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574746"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761853"
 ---
 # <a name="ranking-a-biometric-driver-on-windows-update"></a>Windows Update における生体認証ドライバーのランク付け
-
 
 両方のレガシ生体認証を提供するベンダーと WBDI ドライバーは、Windows Update からインストールされているドライバーを制御するのにドライバーの特徴のスコアを使用できます。
 
@@ -27,12 +26,12 @@ Windows 生体認証フレームワークで正しく動作するため、ドラ
 
 従来のスタックを有効にする、顧客が決定したら、顧客は WBDI ドライバー経由でより高いランクのレガシ ドライバーをインストールできます。
 
-### <a name="span-idhowfeaturescoreworksspanspan-idhowfeaturescoreworksspanhow-feature-score-works"></a><span id="how_feature_score_works"></span><span id="HOW_FEATURE_SCORE_WORKS"></span>どの機能のスコアのしくみ
+## <a name="how-feature-score-works"></a>どの機能のスコアのしくみ
 
 特徴のスコアは、全体的なドライバーのランクの 3 番目と 4 番目の桁で表されます。 たとえば、 *GG*特徴のスコア次のドライバーのランクからには。
 
 ```cpp
-0x00GG0000 
+0x00GG0000
 ```
 
 小さい番号の機能では、一致が高いことを示します。 既定の特徴のスコアは、0 xff は、ドライバーの機能に基づく基本設定がないことを示します。
@@ -49,13 +48,4 @@ Microsoft は、従来の生体認証ドライバー 0xa0 の特徴のスコア�
 FeatureScore=x20
 ```
 
-ドライバーの特徴のスコアを設定する方法の詳細については、次を参照してください。[特徴のスコア (Windows Vista)](https://go.microsoft.com/fwlink/p/?linkid=132806)します。
-
- 
-
- 
-
-
-
-
-
+ドライバーの特徴のスコアを設定する方法の詳細については、次を参照してください。[特徴スコア](https://docs.microsoft.com/windows-hardware/drivers/install/feature-score--windows-vista-and-later-)します。

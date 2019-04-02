@@ -4,27 +4,25 @@ description: この付録には、ベンダー提供の INF ファイルで、Bt
 ms.assetid: 37865571-D632-4A69-A2AB-D0B2570A6F9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9160982d3730df06cf0e30763eb4300dfff1e36a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e27e66ef8c3ba8ef6d16dc4b9993e18cd090014a
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549470"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761827"
 ---
-# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>付録 B:Windows Vista で使用するため、ベンダー提供の INF ファイルの例
-
+# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>付録 B:Windows Vista で使用するためのベンダー提供の INF ファイルの例
 
 この付録には、ベンダー提供の INF ファイルで、Bth.inf の参照を実装する方法の例が含まれています。 この例は、バージョン 2.0 と Windows XP または Windows Vista で Bluetooth の仕様の EDR と互換性があるオプションのインストールに実装されます。 その他の種類の Bluetooth デバイスの INF ファイルは似ています。
 
 次のバージョンの Windows デバイスをインストールするこの INF ファイルを使用できます。
 
--   Windows XP SP2 および以降の service pack の 32 ビット バージョンのすべての Sku。
--   Windows XP の 64 ビット バージョンのすべての Sku
--   Windows Vista のすべての Sku
+- Windows XP SP2 および以降の service pack の 32 ビット バージョンのすべての Sku。
+- Windows XP の 64 ビット バージョンのすべての Sku
+- Windows Vista のすべての Sku
 
-**注**  :Windows 2000、Windows Server 2003、または少なくともにアップグレードされていない Windows XP の任意のバージョンでは、この INF ファイルを使用できません SP2。 また、ベンダー提供の INF ファイルは Windows 7 の必要はありませんのでを USB を持つ任意の USB デバイス\\クラス\_E0 & サブクラスです\_01 & 保護\_01 のハードウェア ID としてインストールされます、**ジェネリックBluetooth アダプター** Windows 7 でします。
-
- 
+> [!NOTE]
+> Windows 2000、Windows Server 2003、または少なくともにアップグレードされていない Windows XP の任意のバージョンでは、この INF ファイルを使用できません SP2。 また、ベンダー提供の INF ファイルは Windows 7 の必要はありませんのでを USB を持つ任意の USB デバイス\\クラス\_E0 & サブクラスです\_01 & 保護\_01 のハードウェア ID としてインストールされます、**ジェネリックBluetooth アダプター** Windows 7 でします。
 
 強調表示されたセクションとディレクティブの詳細については、次の例の後に、番号付きのノートを参照してください。
 
@@ -94,21 +92,12 @@ SourceDisk       = "Windows Vista CD"
 
 **注:**
 
-1.  **バージョン**セクションがあります、 **CLASSGUID**と**DriverVer**ディレクティブは次のように設定します。
-    -   **CLASSGUID**:Microsoft クラス GUID を使用して、Bluetooth デバイス ({e0cbf06c cd8b-4647-bb8a-263b43f0f974})、サード パーティ製の GUID ではありません。
-    -   **DriverVer**:既定のインボックス ドライバーを置き換える場合は、Bth.inf であるものより高い順位付け一致を提供するドライバーのバージョンを設定する必要があります。 ボックスのドライバーの既定の設定を優先するためのドライバーを構成する方法の詳細については、次を参照してください。[インボックス ドライバーのプライベート ビルドをインストールする](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)します。
+1. **バージョン**セクションがあります、 **CLASSGUID**と**DriverVer**ディレクティブは次のように設定します。
+    - **CLASSGUID**:Microsoft クラス GUID を使用して、Bluetooth デバイス ({e0cbf06c cd8b-4647-bb8a-263b43f0f974})、サード パーティ製の GUID ではありません。
+    - **DriverVer**:既定のインボックス ドライバーを置き換える場合は、Bth.inf であるものより高い順位付け一致を提供するドライバーのバージョンを設定する必要があります。 ボックスのドライバーの既定の設定を優先するためのドライバーを構成する方法の詳細については、次を参照してください。[インボックス ドライバーのプライベート ビルドをインストールする](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)します。
 
-2.  ハードウェアの Id。 VID と PID の組み合わせは、製造元およびデバイスに一意である必要があります。 これにより、同じハードウェアの ID が複数のデバイスに対応していません。
-3.  **含める**と**必要がある**ディレクティブ。 **Include**これら 3 つのセクションにあるディレクティブが Bth.inf を参照します。 **必要がある**ディレクティブを示す Bth.inf からセクションは、デバイスのインストール中に処理する必要があります。
-4.  **して**ディレクティブで、参照、 **DeleteRegKeys**セクションで、レジストリ キーの削除または PDO または devnode デバイスの作成から Windows を防ぐための値。 たとえば、fax サービスのプロファイルは現在サポートされていないサービスは、一連の Windows Vista であるための値は、 **UnsupportedServices**レジストリ キー。 次の例から fax サービスのプロファイルの削除、 **UnsupportedServices**キーは、Windows デバイスの devnode を作成することができます。
+2. ハードウェアの Id。 VID と PID の組み合わせは、製造元およびデバイスに一意である必要があります。 これにより、同じハードウェアの ID が複数のデバイスに対応していません。
+3. **含める**と**必要がある**ディレクティブ。 **Include**これら 3 つのセクションにあるディレクティブが Bth.inf を参照します。 **必要がある**ディレクティブを示す Bth.inf からセクションは、デバイスのインストール中に処理する必要があります。
+4. **して**ディレクティブで、参照、 **DeleteRegKeys**セクションで、レジストリ キーの削除または PDO または devnode デバイスの作成から Windows を防ぐための値。 たとえば、fax サービスのプロファイルは現在サポートされていないサービスは、一連の Windows Vista であるための値は、 **UnsupportedServices**レジストリ キー。 次の例から fax サービスのプロファイルの削除、 **UnsupportedServices**キーは、Windows デバイスの devnode を作成することができます。
 
 デバイスと INF ファイルで最新の WHQL テストを実行し、Windows Update で INF ファイルのパッケージを発行ことを強くお勧めします。 これにより、自動的にからダウンロードできます INF ファイル、インターネット、Bluetooth 無線が新しいコンピューターに接続するときにします。
-
- 
-
- 
-
-
-
-
-

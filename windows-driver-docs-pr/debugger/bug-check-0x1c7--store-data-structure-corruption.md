@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 942580b0af0beef530fbc896cee2ec3663685b1f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 9fd80ca748b3293b2b4202fdf36e081966d1d140
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743591"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761825"
 ---
 # <a name="bug-check-0x1c7-storedatastructurecorruption"></a>バグ チェック 0x1C7 の。ストア\_データ\_構造\_破損
 
@@ -38,7 +38,7 @@ ms.locfileid: "56743591"
 
 **破損の ID**
 
-```
+```text
  0x0 : A chunk heap buffer's hash doesn't match.
     2 - Chunk heap buffer whose hash didn't match.
     3 - Expected buffer hash.
@@ -60,7 +60,6 @@ ms.locfileid: "56743591"
     4 - Reserved.
 ```
 
-
 ## <a name="cause"></a>原因
 -----
 
@@ -74,7 +73,6 @@ ms.locfileid: "56743591"
 
 Windows メモリ マネージャーの詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
 
-
 ## <a name="resolution"></a>解決方法
 -----
 
@@ -82,11 +80,9 @@ Windows メモリ マネージャーの詳細については、次を参照し�
 
 このバグ チェックが RAM ハードウェアの欠陥によって発生した場合、調査には、Windows メモリ診断ツールを実行します。 コントロール パネルの検索ボックスには、メモリを入力し、クリックして *、コンピューターのメモリの問題を診断*します。テストの実行後は、イベント ビューアーを使用して、システム ログで結果を表示します。 探して、 *MemoryDiagnostics 結果*結果を表示するエントリ。
 
-
 ## <a name="see-also"></a>関連項目
 ----------
 
 [バグチェック コード リファレンス](bug-check-code-reference2.md)
 
 [Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
-

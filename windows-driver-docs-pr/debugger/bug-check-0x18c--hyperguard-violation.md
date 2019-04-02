@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7350bf0b98669a96b18ed13b99e01c942da91b82
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 59b8e9b1d9eedd3d1bc8d68d9ad89c011a0a12dc
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743529"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761833"
 ---
 # <a name="bug-check-0x18c-hyperguardviolation"></a>バグ チェック 0x18C の。HYPERGUARD\_違反 
 
@@ -36,38 +36,57 @@ HYPERGUARD\_違反のバグ チェックが 0x0000018C の値を持ちます。 
 
 | パラメーター | 説明 |
 |-----------|-------------|
-| 1         | 破損した領域 - 以下に示す値の型。 |
-| 2         | エラーの種類の依存情報。 |
-| 3         | 予約済み。  |
-| 4         | 予約済み。  |
+| 1    | 破損した領域 - 以下に示す値の型。 |
+| 2    | エラーの種類の依存情報。 |
+| 3    | 予約済み。  |
+| 4    | 予約済み。  |
 
 
 **破損した領域の種類**
 
-     1001 : A generic data region
-     1002 : A page hash mismatch
-     1004 : A processor IDT
-     1005 : A processor GDT
-     1007 : Debug routine modification
-     1008 : A dynamic code region
-     1009 : A generic shareable data region
-     100a : A hypervisor overlay region
-     100b : A processor mode misconfiguration
-     100c : An extended processor control register
-     100d : A secure memory region
-     100e : A loaded module
-     100f : A processor state region
-     1010 : The kernel CFG bitmap
-     1011 : The virtual address 0 page
-     1012 : The alternate inverted function table
-     1013 : An on-demand page verification failed
-     1016 : A secure image region
-     1017 : Kernel virtual address protection inconsistency
-     1101 : Internal context corruption
-     1102 : IDTR modification
-     1103 : GDTR modification
+1001 :汎用的なデータのリージョン
 
+1002 :ページのハッシュが一致しません
 
+1004 :プロセッサ IDT
+
+1005 :プロセッサ GDT
+
+1007 :デバッグ ルーチンの変更
+
+1008 :コードの動的なリージョン
+
+1009 :汎用的な共有可能なデータのリージョン
+
+100 a:ハイパーバイザーのオーバーレイ リージョン
+
+力 +100:プロセッサ モード構成が正しくないです。
+
+100 の c:コントロールを拡張プロセッサを登録します。
+
+100 の d:セキュリティで保護されたメモリの領域
+
+100e:読み込まれたモジュール
+
+100 f:プロセッサの状態領域
+
+1010 :カーネル CFG のビットマップ
+
+1011 :仮想アドレス 0 ページ
+
+1012 :代替の逆関数のテーブル
+
+1013 :オンデマンドでのページ検証に失敗しました
+
+1016 :セキュリティで保護されたイメージのリージョン
+
+1017 :カーネルの仮想アドレスの保護の不整合
+
+1101 :内部のコンテキストの破損
+
+1102 :IDTR 変更
+
+1103 :GDTR 変更
 
 ## <a name="cause"></a>原因
 -----
