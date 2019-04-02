@@ -36,11 +36,11 @@ UWP モバイル ブロードバンド アプリに関する情報を探して�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="what-s-new.md" data-raw-source="[What&#39;s new](what-s-new.md)">新機能</a></p></td>
-<td align="left"><p>ここでは UWP デバイス アプリの新機能を簡単に説明します。</p></td>
+<td align="left"><p><a href="what-s-new.md" data-raw-source="[What's new](what-s-new.md)">新機能</a></p></td>
+<td align="left"><p>このセクションでは、UWP デバイス アプリの新機能を簡単に説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="getting-started.md" data-raw-source="[Getting started](getting-started.md)">概要</a></p></td>
+<td align="left"><p><a href="getting-started.md" data-raw-source="[Getting started](getting-started.md)">はじめに</a></p></td>
 <td align="left"><p>UWP デバイス アプリのビルドを開始するには、ここから始めます。</p></td>
 </tr>
 <tr class="odd">

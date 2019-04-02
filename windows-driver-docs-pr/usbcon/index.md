@@ -1,5 +1,5 @@
 ---
-Description: 'Universal Serial Bus (USB) provides an expandable, hot-pluggable Plug and Play serial interface that ensures a standard, low-cost connection for peripheral devices such as keyboards, mice, joysticks, printers, scanners, storage devices, modems, and video conferencing cameras. Migration to USB is recommended for all peripheral devices that use legacy ports such as PS/2, serial, and parallel ports. The USB-IF is a Special Interest Groups (SIGs) that maintains the Official USB Specification, test specifications and tools. Windows operating systems include native support for USB host controllers, hubs, and devices and systems that comply with the official USB specification. Windows also provides programming interfaces that you can use to develop device drivers and applications that communicate with a USB device.'
+Description: ユニバーサル シリアル バス (USB) は、ホットプラグ対応で拡張性のあるプラグ アンド プレイ シリアル インターフェイスを提供します。このインターフェイスによって、キーボード、マウス、ジョイスティック、プリンター、スキャナー、記憶装置、モデム、ビデオ会議用カメラなどの周辺機器を低コストの標準方式で接続できます。 PS/2、シリアル ポート、パラレル ポートなど、旧式ポートを使用する周辺機器については、すべて USB に移行することをお勧めします。 USB-IF は Special Interest Group (SIG) であり、公式の USB 仕様、テスト仕様、テスト ツールを保守しています。 Windows オペレーティング システムは、公式の USB 仕様に準拠する USB ホスト コントローラー、ハブ、デバイス、システムをネイティブ サポートしています。 Windows からはプログラミング インターフェイスも提供されます。これを使用し、USB デバイスと通信するデバイス ドライバーやアプリケーションを開発できます。
 title: ユニバーサル シリアル バス (USB)
 ms.date: 04/20/2017
 ms.topic: article
@@ -27,7 +27,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <tr class="odd">
 <td><strong>Windows の USB</strong>
 <p></p>
-<a href="windows-10--what-s-new-for-usb.md" data-raw-source="[Windows 10: What&#39;s new for USB](windows-10--what-s-new-for-usb.md)">Windows 10:USB の新機能</a>
+<a href="windows-10--what-s-new-for-usb.md" data-raw-source="[Windows 10: What's new for USB](windows-10--what-s-new-for-usb.md)">Windows 10:USB の新機能</a>
 <p>Windows 10 の USB 関連の新機能と機能強化の概要。</p>
 <a href="usb-faq--introductory-level.md" data-raw-source="[USB FAQ](usb-faq--introductory-level.md)">USB に関する FAQ</a>
 <p>USB スタックと USB でサポートされている機能についてドライバー開発者からよく寄せられている質問。</p>

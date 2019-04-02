@@ -34,7 +34,7 @@ ms.technology: windows-devices
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="what-s-new-in-hid.md" data-raw-source="[What&#39;s New in HID](what-s-new-in-hid.md)">HID の新機能</a></p></td>
+<td><p><a href="what-s-new-in-hid.md" data-raw-source="[What's New in HID](what-s-new-in-hid.md)">HID の新機能</a></p></td>
 <td></td>
 </tr>
 <tr class="even">

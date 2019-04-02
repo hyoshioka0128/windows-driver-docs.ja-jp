@@ -1,6 +1,6 @@
 ---
-title: Windows ハードウェア デベロッパー センター ダッシュボード
-description: Windows ハードウェア デベロッパー センター ダッシュボードは、ハードウェア認定、共同作業によるドライバー開発、Windows Update によるドライバーの配布など、ほとんどのハードウェアのタスクに使用する従来の (Sysdev) ダッシュボードに置き換わるものです。
+title: Windows ハードウェアのパートナー センター
+description: パートナー センターは、ハードウェア認定、共同作業によるドライバー開発、Windows Update によるドライバーの配布など、ほとんどのハードウェアのタスクに使用する従来の (Sysdev) ダッシュボードに置き換わるものです。
 layout: LandingPage
 ms.assetid: da6fe9f5-7495-4aec-b6c2-c53402cb8ea0
 ms.date: 05/17/2018
@@ -9,12 +9,12 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ---
 
-# <a name="windows-hardware-dev-center-dashboard"></a>Windows ハードウェア デベロッパー センター ダッシュボード
+# <a name="partner-center-for-windows-hardware"></a>Windows ハードウェアのパートナー センター
 
-Windows ハードウェア デベロッパー センター ダッシュボードを使用すると、システムおよびドライバーの申請を迅速かつ容易に作成して管理することができます。 ハードウェア認定、共同作業によるドライバー開発、Windows Update によるドライバーの配布など、ハードウェアのタスクに使用する従来の (Sysdev) ダッシュボードに置き換わるものです。 まず、入門[ビデオ シリーズ](https://go.microsoft.com/fwlink/?LinkID=828003)をご覧ください。登録の詳細については、「[ハードウェア プログラムの概要](get-started-with-the-hardware-dashboard.md)」を参照してください。
+Windows ハードウェアのパートナー センターを使用すると、システムおよびドライバーの申請を迅速かつ容易に作成して管理することができます。 ハードウェア認定、共同作業によるドライバー開発、Windows Update によるドライバーの配布など、ハードウェアのタスクに使用する従来の (Sysdev) ダッシュボードに置き換わるものです。 まず、入門[ビデオ シリーズ](https://go.microsoft.com/fwlink/?LinkID=828003)をご覧ください。登録の詳細については、「[ハードウェア プログラムの概要](get-started-with-the-hardware-dashboard.md)」を参照してください。
 
 > [!NOTE]
-> 従来の (Sysdev) ダッシュボードは廃止されました。 ハードウェア タスクには、Windows ハードウェア デベロッパー センター ダッシュボードを使用してください。
+> 従来の (Sysdev) ダッシュボードは廃止されました。 ハードウェア タスクには、パートナー センター ハードウェア ダッシュボードを使用してください。
 
 <ul class="cardsFTitle panelContent">
     <li><br/>        <div class="cardSize">
@@ -22,7 +22,7 @@ Windows ハードウェア デベロッパー センター ダッシュボード
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_upgrade.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_upgrade.svg" alt="icon for Hardware submissions: a circle, filled white over blue, with an arrow pointing up" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -43,7 +43,7 @@ Windows ハードウェア デベロッパー センター ダッシュボード
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_deploy.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_deploy.svg" alt="Icon for driver distribution: a rocket, ready to blast off" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -63,7 +63,7 @@ Windows ハードウェア デベロッパー センター ダッシュボード
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_dev-ops.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_dev-ops.svg" alt="Icon for Dashboard API: intermeshing gears within a wheel" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -83,7 +83,7 @@ Windows ハードウェア デベロッパー センター ダッシュボード
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_account-management.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_account-management.svg" alt="Dashboard administration icon: a line drawing of an anonymous user" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -103,7 +103,7 @@ Windows ハードウェア デベロッパー センター ダッシュボード
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_portal.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_portal.svg" alt="Dashboard information icon, an abstract web page with the top nav and side TOC highlighted" />
                         </div>
                     </div>
                     <div class="cardText">
