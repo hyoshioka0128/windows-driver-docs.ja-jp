@@ -19,13 +19,13 @@ ms.locfileid: "56557234"
 
 VMQ インターフェイスには、OID 要求と重なってドライバーとアプリケーションを基になる VMQ 構成に関する情報を取得できるようにする WMI の Guid が含まれています。
 
-[OID\_受信\_フィルター\_ENUM\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569788)ネットワーク アダプターに割り当てられているキューを列挙します。 キューを列挙する詳細については、次を参照してください。[割り当てられているキューを列挙する](enumerating-the-allocated-queues.md)します。
+[OID\_受信\_フィルター\_ENUM\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569788)ネットワーク アダプターに割り当てられているキューを列挙します。 キューを列挙する詳細については、[割り当てられているキューを列挙する](enumerating-the-allocated-queues.md)を参照してください。
 
-メソッドの OID 要求としてを使用してドライバーを後続ことができます、 [OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID を特定のキューのパラメーターの設定を取得します。 パラメーターのキューの設定を取得する方法の詳細については、次を参照してください。 [VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)します。
+メソッドの OID 要求としてを使用してドライバーを後続ことができます、 [OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID を特定のキューのパラメーターの設定を取得します。 パラメーターのキューの設定を取得する方法の詳細については、[VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)を参照してください。
 
-[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)特定のキューに割り当てられているフィルターを列挙します。 キューに設定されているフィルターの列挙の詳細については、次を参照してください。 [、VMQ を列挙するフィルター](enumerating-filters-on-a-vmq.md)します。
+[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)特定のキューに割り当てられているフィルターを列挙します。 キューに設定されているフィルターの列挙の詳細については、[、VMQ を列挙するフィルター](enumerating-filters-on-a-vmq.md)を参照してください。
 
-メソッドの OID 要求としてを使用してドライバーを後続ことができます、 [OID\_受信\_フィルター\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569792)フィルターのパラメーター設定を取得する OID。 フィルター パラメーターの設定を取得する方法の詳細については、次を参照してください。 [VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)します。
+メソッドの OID 要求としてを使用してドライバーを後続ことができます、 [OID\_受信\_フィルター\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569792)フィルターのパラメーター設定を取得する OID。 フィルター パラメーターの設定を取得する方法の詳細については、[VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)を参照してください。
 
 ドライバーとアプリケーションの関連機能で、VMQ 機能を取得する次の OID クエリ要求を発行できます。
 
@@ -35,7 +35,7 @@ VMQ インターフェイスには、OID 要求と重なってドライバーと
 
 [OID\_RECEIVE\_FILTER\_GLOBAL\_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff569790)
 
-VMQ 機能を取得する方法の詳細については、次を参照してください。[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)します。
+VMQ 機能を取得する方法の詳細については、[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)を参照してください。
 
  
 

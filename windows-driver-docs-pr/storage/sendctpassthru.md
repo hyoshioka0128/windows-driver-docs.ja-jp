@@ -46,7 +46,7 @@ void SendCTPassThru(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendCTPassThru\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565413)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendCTPassThru\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565413)構造体。
 
 *PortWWN*   
 ターゲットにアクセスする HBA の世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendCTPassThru\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565412)構造体。

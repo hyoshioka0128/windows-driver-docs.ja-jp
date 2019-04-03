@@ -30,7 +30,7 @@ ms.locfileid: "56573627"
 
 -   ドライバーの呼び出し、 [ **IWDFDeviceInitialize::SetFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff556985)メソッド フィルター デバイスとしてデバイスを有効にします。
 
-ドライバーは使用後[IWDFDeviceInitialize](https://msdn.microsoft.com/library/windows/hardware/ff556965)デバイスを初期化するために、ドライバーがへのポインターを渡す**IWDFDeviceInitialize**への呼び出しで、 [ **IWDFDriver:。CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff558899)を作成する方法、 [UMDF デバイス オブジェクト](framework-device-object.md)デバイス。 ドライバーへの呼び出しは、フレームワークのデバイス オブジェクトが作成された後、 [ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)メソッドを作成、読み取りと書き込みの I/O キュー。 これらの**IWDFDevice::CreateIoQueue** I/O キューからの要求の受信呼び出し、ドライバーを識別する必要があります。 詳細については、次を参照してください。 [I/O キューのディスパッチ モードを構成する](configuring-dispatch-mode-for-an-i-o-queue.md)します。
+ドライバーは使用後[IWDFDeviceInitialize](https://msdn.microsoft.com/library/windows/hardware/ff556965)デバイスを初期化するために、ドライバーがへのポインターを渡す**IWDFDeviceInitialize**への呼び出しで、 [ **IWDFDriver:。CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff558899)を作成する方法、 [UMDF デバイス オブジェクト](framework-device-object.md)デバイス。 ドライバーへの呼び出しは、フレームワークのデバイス オブジェクトが作成された後、 [ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)メソッドを作成、読み取りと書き込みの I/O キュー。 これらの**IWDFDevice::CreateIoQueue** I/O キューからの要求の受信呼び出し、ドライバーを識別する必要があります。 詳細については、[I/O キューのディスパッチ モードを構成する](configuring-dispatch-mode-for-an-i-o-queue.md)を参照してください。
 
  
 

@@ -24,7 +24,7 @@ ms.locfileid: "56580715"
 
 オペレーティング システムの呼び出し[ *Dot11ExtIhvAdapterReset* ](https://msdn.microsoft.com/library/windows/hardware/ff547434)たびにする必要が生じたワイヤレス LAN (WLAN) アダプターを初期化済み状態に復元します。 オペレーティング システムは、次のイベントのいずれかが発生するたびに、この関数を呼び出します。
 
--   WLAN アダプターは、切断操作を実行します。 この操作の詳細については、次を参照してください。[切断操作](disconnection-operations.md)します。
+-   WLAN アダプターは、切断操作を実行します。 この操作の詳細については、[切断操作](disconnection-operations.md)を参照してください。
 
 -   オペレーティング システムのセットに要求を介して、アダプターを管理するネイティブの 802.11 ミニポート ドライバーをリセットする[OID\_DOT11\_リセット\_要求](https://msdn.microsoft.com/library/windows/hardware/ff569409)します。
 
@@ -34,11 +34,11 @@ ms.locfileid: "56580715"
 
 -   IHV 拡張機能の DLL を呼び出すことによって開始された保留中の関連付け前操作がある場合、 [ *Dot11ExtIhvPerformPreAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547499) IHV ハンドラー関数の場合は、DLL を呼び出す必要があります[**Dot11ExtPreAssociateCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff547538)操作をキャンセルします。 このような状況では、DLL、設定、 *dwWin32Error*パラメーターの**Dot11ExtPreAssociateCompletion**エラー\_キャンセルします。
 
-    前の関連付け操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+    前の関連付け操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
 
 -   DLL を呼び出すことによって開始された保留中の後の関連付け操作がある場合、 [ *Dot11ExtIhvPerformPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547492) IHV ハンドラー関数の場合は、DLL を呼び出す必要があります[ **Dot11ExtPostAssociateCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff547530)操作をキャンセルします。 このような状況では、DLL、設定、 *dwWin32Error*パラメーターの**Dot11ExtPostAssociateCompletion**エラー\_キャンセルします。
 
-    詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
+    詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
 
  
 

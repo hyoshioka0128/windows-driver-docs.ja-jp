@@ -19,7 +19,7 @@ ms.locfileid: "56529978"
 
 
 
-次の表は、PaperSize 機能に関連付けられている属性を一覧表示します。 PaperSize 機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+次の表は、PaperSize 機能に関連付けられている属性を一覧表示します。 PaperSize 機能の詳細については、[標準機能](standard-features.md)を参照してください。
 
 **注**  ランドス ケープなどのさまざまな方向を記述する属性を使用している場合でも、縦向きを基準とした、次の属性のすべての用紙サイズの仕様を表現する必要があります。
 
@@ -139,7 +139,7 @@ ms.locfileid: "56529978"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
 ### <a href="" id="ddk-customsize-parameter-expressions-gg"></a>パラメーターの式を CUSTOMSIZE します。
 

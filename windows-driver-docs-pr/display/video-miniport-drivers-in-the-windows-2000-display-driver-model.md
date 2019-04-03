@@ -20,7 +20,7 @@ ms.locfileid: "56571109"
 
 このセクションでは、Microsoft Windows 2000 のディスプレイ ドライバー モデルの一部であるビデオのミニポート ドライバーの役割について説明します。 Windows Vista のディスプレイ ドライバー モデルの一部でないビデオのミニポート ドライバー。
 
-2 つのディスプレイ ドライバー モデルの違いの詳細については、次を参照してください。 [Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)します。
+2 つのディスプレイ ドライバー モデルの違いの詳細については、[Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)を参照してください。
 
  
 

@@ -59,7 +59,7 @@ typedef struct _HBAFCPBindingEntry
 
 データ入力と出力データを管理するときに、SRB の入力と出力バッファーにこの構造体宣言をキャストすることができます。
 
-、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されているデータの詳細については、次を参照してください。 [ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946)します。
+、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されているデータの詳細については、[ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946)を参照してください。
 
  
 
