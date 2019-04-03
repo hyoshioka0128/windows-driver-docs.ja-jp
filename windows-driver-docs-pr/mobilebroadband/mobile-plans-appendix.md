@@ -4,20 +4,16 @@ description: このトピックでは、Mobile プラン プログラムの付�
 ms.assetid: B3B478DB-78F4-4031-B041-DCBAACC15D6F
 keywords:
 - Windows Mobile プラン付録、Mobile のプランの付録モバイル演算子
-ms.date: 09/17/2018
-ms.topic: article
-ms.prod: windows-hardware
-ms.technology: windows-devices
-ms.openlocfilehash: f6a2edbb0ed48e11383401b0e35249263a49276f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.date: 03/25/2019
+ms.localizationpriority: medium
+ms.openlocfilehash: 0451a6ad8243ed59e7209edfcdf09d8c5d042471
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530377"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845538"
 ---
 # <a name="mobile-plans-appendix"></a>Mobile のプランの付録
-
-[!include[Mobile Plans Beta Prerelease](../mobile-plans-beta-prerelease.md)]
 
 ## <a name="web-portal-flow-and-reference-design"></a>Web ポータルのフローと参照設計
 
@@ -106,41 +102,37 @@ MO 直接ポータルと、ユーザーがクリックで新しいページを�
 
 <img src="images/dynamo_appendix_mo_direct_10_error.png" alt="MO Direct walkthrough: error example" title="MO 直接チュートリアル: エラーの例" width="600" />
 
-## <a name="mobile-plans-user-journey"></a>ユーザー体験のモバイルの計画
-
-次の図は、ユーザーがモバイル プラン プログラムに参加している携帯電話会社に eSIM 対応の Windows に接続されているデバイスをアタッチするときに、体験を示します。
-
-<img src="images/dynamo_appendix_user_journey.png" alt="Mobile Plans user journey" title="ユーザー体験のモバイルの計画" width="400" />
-
 ## <a name="high-level-integration-schedule"></a>高レベルの統合のスケジュール
 
-次の表では、プロジェクトの統合の Mobile 計画スケジュールの概要を示します。
+次の表の大まかな概要、 *Mobile プラン*プロジェクト スケジュールの統合。
 
 | フェーズ | アクティビティ | 所有者 | 推定所要時間 |
 | --- | --- | --- | --- |
-| 構成 | ICCID の範囲を定義します。 | 月 | なし |
-| 構成 | COSA データベースの更新を送信します。 <p>これは、Windows 上の APN 構成は、自動があり、ハード期限 Windows ビルドに含めることのことです。 これより前に、設定を構成および検証してする必要があります。</p> | 月 | 約 2 か月間 |
-| 構成 | デベロッパー センター アカウントを作成し、アプリの送信 | 月 | なし |
-| 構成 | 月のホワイト リストのアプリとアカウント | MS | 2 日間 |
-| 構成 | サービス構成のメールを入力します。 | 月 | なし |
-| 構成 | デベロッパー センターでメタデータ パッケージを発行します。 | 月 | なし |
-| 実装 | 通信事業者の Api を実装します。 | 月 | なし |
-| 実装 | 高い庭を有効にします。 | 月 | なし |
-| 実装 | 月の直接の web エクスペリエンスを構築します。 | 月 | なし |
-| ［確認］ | MO Api コードの完了 | 月 | なし |
-| ［確認］ | 月の API の実装を検証します。 | 月 | なし |
-| 統合 | 統合フェーズ中に使用するには、SIM と Esim の一覧を提供します。 | 月 | 1 day |
-| 統合 | 構成を検証するには、SIM と Esim | MS | 最大 1 週間 |
-| 統合 | DM PPE 環境で MO API ステージング エンドポイントを構成します。 | MS | 最大 1 週間 |
-| 統合 | アクティブな SIM (チェックポイント) のテストが完了したら、MO API | MS | 2 週間 |
-| 統合 | 月の API は、運用環境 (チェックポイント) | MO (&AMP; M) | なし |
-| Launch | DM に MO API エンドポイントを運用環境を送信します。 | 月 | なし |
-| Launch | DM PPE 環境で MO API 実稼働エンドポイントを構成します。 | MS | 最大 1 週間 |
-| Launch | ロード テスト | MO (&AMP; M) | 1 週間 |
-| Launch | 場所で監視とエスカレーション パス | MS | 1 週間 |
-| Launch | DM 運用環境で MO API 実稼働エンドポイントを持つ SIM 範囲を小さくするテストを構成します。 | MS | 最大 1 週間 |
-| Launch | エンド ツー エンドの検証 (チェックポイント) | 月 | なし |
-| Launch | 移動/いいえ (最後のチェックポイント) を参照してください。 | MO (&AMP; M) | なし |
-| Launch | DM 実稼働環境で実稼働エンドポイントを MO API と完全 SIM 範囲を構成します。 | MS | 最大 1 週間 |
-| Launch | リリースの対応準備の確認の起動 | MS | 2 日間 |
-| Launch | Launch | MO (&AMP; M) | なし |
+| 実装 | esim 状のプロファイルが Windows デバイスにインストール可能です。 使用して SMDP + ステージング環境と運用環境の使用をテストします。 | 月 |  |
+|                | ステージング環境のサービス構成を含め、オンボード チェックリスト ドキュメントを提供します。 | 月 |  |
+|                | 通信事業者のステージング環境を有効にするのに、 *Mobile プラン*ステージング環境 | MSFT | 構成の更新がすべての月の 1 番目と 3 番目の金曜日に発生します。 |
+|                | COSA データベースの更新を送信します。 | 月 | 約 3 か月 |
+|                | MO 直接ポータル開発の開始 |  |
+|                | `GetBalance` API の開発の開始 |  |
+| 統合 | 高い庭を有効にします。 | 月 |  |
+|             | 更新プログラムを COSA 検証します。 | 月 |  |
+|             | MO 直接ポータル開発の完了 | 月 |  |
+|             | `GetBalance` 完全な API の開発 | 月 |  |
+|             | 月の開発が完了 - コードの完了 (チェックポイント) | 月 |  |
+|             | 検証`GetBalance`API の機能 | 月 |  |
+|             | エンド ツー エンドのエクスペリエンスがステージング環境の月 (チェックポイント) の機能 | 月 |  |
+|             | 更新サービスの構成ドキュメントの運用環境の設定を反映するように (指定されていない場合以前) | 月 |  |
+|             | 提供するためにいる Iccid`GetBalance`ロード テスト | 月 |  |
+|             | 通信事業者で環境を運用環境を有効にする*Mobile プラン*ステージング環境 | MSFT | 構成の更新がすべての月の 1 番目と 3 番目の金曜日に発生します。 |
+|             | エンド ツー エンドのエクスペリエンスが運用環境の月 (チェックポイント) で機能 | 月 |  |
+| 検証 | 終了条件のテスト_ケースを完了します。 | 月 |  |
+|           | テスト_ケースの結果を確認します。 | MSFT |  |
+|           | サインオフ (チェックポイント) のテストします。 | MSFT |  |
+| ロールアウト | `GetBalance` API のロード テスト | MSFT と MO | 1 週間 |
+|         | 場所で監視とエスカレーション パス | MSFT | 1 週間 |
+|         | インプレース カスタマー サポート | MSFT と MO |  |
+|         | 商用の契約が完了しました | 月 |  |
+|         | Windows で利用可能な COSA 更新 | MSFT |  |
+|         | 続行/中止 (最後のチェックポイント) | MSFT と MO |  |
+|         | 月の実稼働環境環境構成*Mobile プラン*実稼働環境 | MSFT |  |
+|         | Launch | MSFT と MO | 起動の日付と時刻はローカル検証の動作を確実に合意する必要があります。 |

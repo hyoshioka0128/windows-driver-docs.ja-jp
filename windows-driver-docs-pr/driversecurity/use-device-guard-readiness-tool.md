@@ -4,12 +4,12 @@ description: デバイス ガード準備ツールを使用して、ドライバ
 ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89ff1d974c319a79a210a4652f2c8b533be8ee90
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 3d4a31a354f05f96623fc1bfc30e32e9f9c4f203
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464187"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845549"
 ---
 # <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
 
@@ -25,7 +25,7 @@ HVCI ドライバー Device Guard の互換性をテストするための OS と
 
 準備ツールを使用してセキュリティで保護のブートなど、追加の要件を評価するには、準備ツールのダウンロードに含まれる readme.txt ファイルを参照してください。
 
-関連するデバイスの基本テストに関する詳細については、次を参照してください。 [Device.DevFund.DeviceGuard](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-devfund#devicedevfunddeviceguard)します。
+関連するデバイスの基本テストに関する詳細については、次を参照してください。 [Device.DevFund テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)します。
 
 ## <a name="implement-device-guard-compatible-code"></a>Device Guard の互換性のあるコードを実装します。
 

@@ -7,12 +7,12 @@ keywords:
 - シリアル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc4a4c0ebaa7e6aaa93a611a3b143dee7d9f6772
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573037"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845548"
 ---
 # <a name="serial-irp-major-function-codes"></a>シリアル IRP の主要な関数コード
 ここでは、次のシリアル IRP 主な機能コード。
@@ -390,7 +390,6 @@ WMI のカーネル モード コンポーネントは、シリアルがシリ�
 ### <a name="io-status-block"></a>I/O ステータス ブロック
 WMI 要求の場合は、シリアルは、次の値の 1 つに状態フィールドを設定します。
 
-
 STATUS_SUCCESS 
 
 要求は正常に完了しました。
@@ -432,9 +431,7 @@ WMI の GUID を指定することはできません。
 | SERIAL_PORT_WMI_PERF_GUID | SERIAL_WMI_PERF_DATA |
 | SERIAL_PORT_WMI_PROPERTIES_GUID | WMI_SERIAL_PORT_PROPERTIES |
 
-
 シリアル デバイスの WMI 名前エントリの値の値である**PortName**デバイスのプラグ アンド プレイのレジストリ キーの下。
-
 
 ##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
 [IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)要求がクライアントからシリアル デバイスにデータを転送します。
@@ -485,5 +482,4 @@ STATUS_TIMEOUT
 
 [電源 Irp を処理するための規則](https://msdn.microsoft.com/library/windows/hardware/ff563629)
 
-[コント ローラーのシリアル ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/serports/index.md)
-
+[コント ローラーのシリアル ドライバーの設計ガイド](https://docs.microsoft.com/en-us/windows-hardware/drivers/serports/)

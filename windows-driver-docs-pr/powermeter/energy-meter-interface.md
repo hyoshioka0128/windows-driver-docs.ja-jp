@@ -7,12 +7,12 @@ keywords:
 - PMI WDK エネルギー メーター
 ms.date: 11/17/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 390e1473a11ab1350b3d31f090222b94cbc97d85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 563e23a23e6d6d61c9ce503cb856aa07376296a7
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553747"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845533"
 ---
 # <a name="energy-meter-interface"></a>エネルギー メーター インターフェイス
 
@@ -38,9 +38,9 @@ EMI デバイス インターフェイスの GUID は **{45BD8344-7ED6-49cf-A440
 
 3. 必要な呼び出しと EMI メタデータのサイズのバッファーを割り当てる[IOCTL_EMI_GET_METADATA](https://msdn.microsoft.com/library/windows/hardware/dn957436.aspx)します。 返される EMI_MEASUREMENT_UNIT が EmiMeasurementUnitPicowattHours であることを確認します。 Windows 10 の後のリリースでは、追加のユニットの種類を定義できます。 
 
-4. エネルギー総消費量を測定するには、呼び出す[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)します。 返される AbsoluteEnergy 値[EMI_MEASUREMENT_DATA](https://msdn.microsoft.com/library/windows/hardware/dn957426.aspx) picowatt 時間外の任意の 0 ポイントとの合計累積エネルギーは、します。 一般に、2 つの異なる時刻でサンプルを比較し、その間隔のエネルギー消費量のエネルギーの値を減算する必要があります。 
+4. エネルギー総消費量を測定するには、呼び出す[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)します。 返される AbsoluteEnergy 値[EMI_CHANNEL_MEASUREMENT_DATA 構造](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)picowatt 時間外の任意の 0 ポイントとの合計累積エネルギーは、します。 一般に、2 つの異なる時刻でサンプルを比較し、その間隔のエネルギー消費量のエネルギーの値を減算する必要があります。 
 
-5. 平均電力消費量を測定するには、呼び出す[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)先頭と必要な間隔の終了。 AbsoluteEnergy と AbsoluteTime 値を減算、 [EMI_MEASUREMENT_DATA](https://msdn.microsoft.com/library/windows/hardware/dn957426.aspx)以前のサンプルの後者のサンプルで返されます。 
+5. 平均電力消費量を測定するには、呼び出す[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)先頭と必要な間隔の終了。 AbsoluteEnergy と AbsoluteTime 値を減算、 [EMI_CHANNEL_MEASUREMENT_DATA 構造](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)から以前のサンプルの後者のサンプルで返されます。
 
 詳細については、これらのトピックを参照してください。
 

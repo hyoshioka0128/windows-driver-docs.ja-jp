@@ -7,12 +7,12 @@ keywords:
 - バッテリ クラス ドライバー WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfcd250b0a5ec2475cf5594673b7e52242d0f1d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0c8f35af8987f85a66fc647377dfa48ead17e5a5
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574357"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845524"
 ---
 # <a name="installing-a-battery-driver"></a>バッテリ ドライバーのインストール
 
@@ -60,7 +60,7 @@ DefaultDestDir = 12
 
 ### <a name="span-idmodelsspanspan-idmodelsspanspan-idmodelsspanmodels"></a><span id="Models"></span><span id="models"></span><span id="MODELS"></span>*モデル*
 
-[ **INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456) 、バッテリのプラグ アンド プレイ ハードウェア ID を指定します (として示す*pnpid*の例)。 このセクションが EISA スタイル ID を指定する必要がありますも ACPI を通じて、デバイスが列挙されている場合 (として示す*acpidevnum*)。 これらの Id を作成する方法の詳細については、次を参照してください。、 *Advanced Configuration and Power Interface Specification*、を通じて、 [ACPI/電源管理](https://go.microsoft.com/fwlink/p/?linkid=8760)web サイト。
+[ **INF*モデル*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456) 、バッテリのプラグ アンド プレイ ハードウェア ID を指定します (として示す*pnpid*の例)。 このセクションが EISA スタイル ID を指定する必要がありますも ACPI を通じて、デバイスが列挙されている場合 (として示す*acpidevnum*)。 これらの Id を作成する方法の詳細については、次を参照してください。、 *Advanced Configuration and Power Interface Specification*、を通じて、 [ACPI/電源管理](https://uefi.org/acpi/specs)web サイト。
 
 ``` syntax
 [MyCompany]

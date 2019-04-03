@@ -4,18 +4,16 @@ description: オーディオ ドライバーの構造体
 ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4f571f489db5b64795718c78cbe6a3082deb46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 76e3734729886afe5fb2f203381ab6f9cd88949f
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582352"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845543"
 ---
 # <a name="audio-drivers-structures"></a>オーディオ ドライバーの構造体
 
-
 ## <span id="ddk_audio_drivers_structures_ks"></span><span id="DDK_AUDIO_DRIVERS_STRUCTURES_KS"></span>
-
 
 このセクションでは、WDM オーディオ ミニポート ドライバーによって使用される構造について説明します。 構造体のリストは次のとおりです。
 
@@ -177,17 +175,8 @@ ms.locfileid: "56582352"
 
 [**SYSAUDIO\_選択\_グラフ**](https://msdn.microsoft.com/library/windows/hardware/ff538500)
 
-[**UNCOMPRESSEDAUDIOFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff538640)
+[**UNCOMPRESSEDAUDIOFORMAT**](https://docs.microsoft.com/windows/desktop/api/audiomediatype/ns-audiomediatype-uncompressedaudioformat)
 
 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799)
 
 [**WAVEFORMATEXTENSIBLE**](https://msdn.microsoft.com/library/windows/hardware/ff538802)
-
- 
-
- 
-
-
-
-
-

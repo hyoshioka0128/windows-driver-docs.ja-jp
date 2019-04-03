@@ -14,20 +14,18 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d0b83feeae4883469109c254cfcee06ffc8cde65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 12ec1ae5972e0290528bbea782e8cadc8f1699fe
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580875"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845545"
 ---
 # <a name="kspropertycameracontrolextendedfacedetection"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION
-
 
 KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION がオンとオフは、顔検出に使用するプロパティ ID。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
-
 
 <table>
 <colgroup>
@@ -51,11 +49,10 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION がオンとオフは、顔検�
 </tbody>
 </table>
 
- 
-
 次のフラグは、KSCAMERA に配置できる\_EXTENDEDPROP\_ヘッダー。フィールドは、ドライバー内の顔検出を制御するフラグを設定します。 既定では、ドライバーが FACEDETECTION\_OFF。
 
 ```cpp
+#define KSCAMERA_EXTENDEDPROP_FACEDETECTION_OFF             0x0000000000000000
 #define KSCAMERA_EXTENDEDPROP_FACEDETECTION_PREVIEW         0x0000000000000001
 #define KSCAMERA_EXTENDEDPROP_FACEDETECTION_VIDEO           0x0000000000000002
 #define KSCAMERA_EXTENDEDPROP_FACEDETECTION_PHOTO           0x0000000000000004
@@ -108,15 +105,9 @@ FACEDETECTION をサポートする必要があります、ドライバーは、
 </tbody>
 </table>
 
- 
-
-**注**  MFT0 ものと、MF と顔の情報をアタッチしてさらに\_キャプチャ\_メタデータ\_、MF としてタイムスタンプ、FACEROIS\_キャプチャ\_メタデータ\_FACEROITIMESTAMPS、や点滅や気に入った機能の情報を MF として\_キャプチャ\_メタデータ\_FACEROICHARACTERIZATIONS サンプルにします。
-
- 
-
-**注**  プレビュー、ビデオ、および写真の機能は省略可能です。 ただし、このコントロールがサポートされている場合、この機能のプレビュー、ビデオ、および写真を少なくとも 1 つをサポートする必要があります。
-
- 
+> [!NOTE]
+> MFT0 ものと、MF と顔の情報をアタッチしてさらに\_キャプチャ\_メタデータ\_、MF としてタイムスタンプ、FACEROIS\_キャプチャ\_メタデータ\_FACEROITIMESTAMPS、し、点滅やスマイルの情報として、MF\_キャプチャ\_メタデータ\_FACEROICHARACTERIZATIONS サンプルにします。
+> プレビュー、ビデオ、および写真機能は省略可能です。 ただし、このコントロールがサポートされている場合、この機能のプレビュー、ビデオ、および写真を少なくとも 1 つをサポートする必要があります。
 
 次の表には、説明と要件が含まれています、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)コントロールを使用する場合は、フィールドを構造体します。
 
@@ -159,8 +150,6 @@ FACEDETECTION をサポートする必要があります、ドライバーは、
 </tbody>
 </table>
 
- 
-
 次の表には、説明と、KSCAMERA の要件が含まれています\_EXTENDEDPROP\_VIDEOPROCSETTING 構造のフィールド、KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION プロパティです。 この構造体は、Ksmedia.h で定義されます。
 
 <table>
@@ -196,14 +185,11 @@ FACEDETECTION をサポートする必要があります、ドライバーは、
 </tbody>
 </table>
 
- 
-
-### <a name="remarks"></a>コメント
+## <a name="remarks"></a>コメント
 
 顔検出をオンにすると、必要に応じて、3 a の処理を支援するために、ドライバーによって直接興味 (Roi) の顔の領域を使用できます。 Roi が KSPROPERTY 経由で構成されているすべてのユーザーが指定されている場合\_CAMERACONTROL\_拡張\_ROI\_Roi は優先顔検出 Roi ISPCONTROL と同時に、ユーザーを指定します。 Roi をオフに指定されたユーザー、顔検出 Roi が有効になります。
 
-<a name="requirements"></a>必要条件
-------------
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>

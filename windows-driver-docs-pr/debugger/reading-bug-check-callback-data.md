@@ -14,12 +14,12 @@ keywords:
 - GetNextTagged dbgeng.h ヘッダー ファイル
 ms.date: 10/25/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: abef0e9bf286e913af4f77c979e05db2bff24796
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a6803969949d640b9ac5215ce6014d9d7ea9070f
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539432"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845521"
 ---
 # <a name="reading-bug-check-callback-data"></a>バグ チェック コールバック データの読み取り
 
@@ -29,7 +29,7 @@ ms.locfileid: "56539432"
 <span id="BugCheckCallback"></span><span id="bugcheckcallback"></span><span id="BUGCHECKCALLBACK"></span>[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)  
 このルーチンによって書き込まれたデータでは、コールバックのデータの一部になります。 クラッシュ ダンプ ファイルには、データが含まれていません。 
 
-<span id="BugCheckSecondaryDumpDataCallback"></span><span id="bugchecksecondarydumpdatacallback"></span><span id="BUGCHECKSECONDARYDUMPDATACALLBACK"></span>[BugCheckSecondaryDumpDataCallback](https://go.microsoft.com/fwlink/p/?LinkID=254481)  
+<span id="BugCheckSecondaryDumpDataCallback"></span><span id="bugchecksecondarydumpdatacallback"></span><span id="BUGCHECKSECONDARYDUMPDATACALLBACK"></span>[BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
 このルーチンによって書き込まれたデータでは、セカンダリのコールバック データの一部になります。 クラッシュ ダンプ ファイルには、データが含まれます。
 
 <span id="BugCheckAddPagesCallback"></span><span id="bugcheckaddpagescallback"></span><span id="BUGCHECKADDPAGESCALLBACK"></span>[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)  
@@ -39,7 +39,7 @@ ms.locfileid: "56539432"
 
 -   クラッシュしたシステムでは、によって既に書き込まれているコールバック データのライブ デバッグを実行している場合[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)またはで指定[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)使用できなくなります。 セカンダリ コールバック データはない固定メモリの任意の場所に格納されているため、できません。
 
--   コールバック データがで指定された完全メモリ ダンプまたはカーネル メモリ ダンプをデバッグする場合[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)によって書き込まれたデータをセカンダリのコールバックと[BugCheckSecondaryDumpDataCallback](https://go.microsoft.com/fwlink/p/?LinkID=254481)使用できます。 によって書き込まれたコールバック データ[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)は使用できません。 
+-   コールバック データがで指定された完全メモリ ダンプまたはカーネル メモリ ダンプをデバッグする場合[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)によって書き込まれたデータをセカンダリのコールバックと[BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)使用できます。 によって書き込まれたコールバック データ[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)は使用できません。 
 
 -   最小メモリ ダンプをデバッグする場合、コールバック データは利用できません。 セカンダリのコールバック データが提供されます。
 
@@ -61,7 +61,7 @@ ms.locfileid: "56539432"
 
 セカンダリのコールバック データを表示するための 2 つの方法はあります。 使用することができます、 **.enumtag**コマンドは、独自のデバッガー拡張機能を記述できます。
 
-セカンダリのコールバック データの各ブロックは、GUID タグによって識別されます。 このタグがで指定された、 **Guid**のフィールド、 **(KBUGCHECK\_セカンダリ\_ダンプ\_データ) ReasonSpecificData**に渡されるパラメーター [BugCheckSecondaryDumpDataCallback](https://go.microsoft.com/fwlink/p/?LinkID=254481)します。
+セカンダリのコールバック データの各ブロックは、GUID タグによって識別されます。 このタグがで指定された、 **Guid**のフィールド、 **(KBUGCHECK\_セカンダリ\_ダンプ\_データ) ReasonSpecificData**に渡されるパラメーター [BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)します。
 
 [ **.Enumtag (セカンダリ コールバック データを列挙する)** ](-enumtag--enumerate-secondary-callback-data-.md)コマンドは、非常に正確な方法ではありません。 タグを表示して、16 進形式と ASCII 形式でデータを表示し、各セカンダリ データ ブロックが表示されます。 一般に、どのようなタグが実際に使用されているセカンダリのデータ ブロックの特定にのみ便利です。
 
