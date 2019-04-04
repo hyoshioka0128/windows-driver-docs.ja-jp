@@ -18,7 +18,7 @@ ms.locfileid: "56553299"
 
 Windows に提供される情報を更新するには、いつでもプロビジョニング API を呼び出すこともできます。 モバイル ブロード バンド アプリ、オペレーターのサーバーから更新されたコストとプランの状態を取得しますが、実行することも Wi-fi ホット スポット ネットワークまたはモバイル ブロード バンド ネットワーク構成を更新する必要があります、これは通常に行われます。
 
-プロビジョニング API の詳細については、次を参照してください。 [ **ProvisioningAgent クラス**](https://msdn.microsoft.com/library/windows/apps/br207397)します。
+プロビジョニング API の詳細については、[ **ProvisioningAgent クラス**](https://msdn.microsoft.com/library/windows/apps/br207397)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

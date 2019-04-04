@@ -67,7 +67,7 @@ ms.locfileid: "56570763"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とこのパスを変更するには、他の方法では、次を参照してください。[ソース パス](source-path.md)します。 デバッガーからのリモート デバッグの実行中に使用できるコマンドの詳細については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
+詳細とこのパスを変更するには、他の方法では、[ソース パス](source-path.md)を参照してください。 デバッガーからのリモート デバッグの実行中に使用できるコマンドの詳細については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

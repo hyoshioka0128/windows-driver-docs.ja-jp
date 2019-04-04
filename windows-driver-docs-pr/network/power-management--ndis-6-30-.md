@@ -24,7 +24,7 @@ ms.locfileid: "56574593"
 
 [NDIS ウェイク理由状態インジケーター](ndis-wake-reason-status-indications.md)
 
-**注**  NDIS 6.30 電源管理のインターフェイスは、NDIS 6.20 電源管理のインターフェイスの拡張機能です。 NDIS 6.20 電源管理のインターフェイスの詳細については、次を参照してください。[電源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)します。
+**注**  NDIS 6.30 電源管理のインターフェイスは、NDIS 6.20 電源管理のインターフェイスの拡張機能です。 NDIS 6.20 電源管理のインターフェイスの詳細については、[電源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)を参照してください。
 
  
 

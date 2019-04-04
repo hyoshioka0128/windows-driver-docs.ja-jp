@@ -49,7 +49,7 @@ ms.locfileid: "56538535"
 
 イベントをサブスクライブして、場所データを使用するアプリケーション、センサーを設定してデータ更新イベントの最大の頻度を要求する\_プロパティ\_現在\_レポート\_INTERVAL プロパティ。 電源を節約するために、ドライバーは、要求された最下位のレポート間隔よりもしないより頻繁にデータ レポートを送信する必要があります。
 
-各アプリケーションの値を追跡する方法の詳細については、次を参照してください。[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)します。 レポート間隔での追跡の例を検索することもできます、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)WDK に含まれています。
+各アプリケーションの値を追跡する方法の詳細については、[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)を参照してください。 レポート間隔での追跡の例を検索することもできます、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)WDK に含まれています。
 
 ### <a name="tracking-desired-accuracy"></a>必要な正確性の追跡
 

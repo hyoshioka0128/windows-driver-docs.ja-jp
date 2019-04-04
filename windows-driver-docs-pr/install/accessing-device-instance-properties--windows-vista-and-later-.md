@@ -18,7 +18,7 @@ ms.locfileid: "56538818"
 
 -   [**SetupDiGetDevicePropertyKeys**](https://msdn.microsoft.com/library/windows/hardware/ff551965)
 
-    **SetupDiGetDevicePropertyKeys**関数は、デバイスのインスタンスの現在設定されているデバイスのプロパティを識別するデバイスのプロパティのキーの配列を取得します。 どのようなプロパティがデバイスの設定を決定する方法については、次を参照してください。[決定するプロパティが設定デバイス インスタンス](determining-which-properties-are-set-for-a-device-instance.md)します。
+    **SetupDiGetDevicePropertyKeys**関数は、デバイスのインスタンスの現在設定されているデバイスのプロパティを識別するデバイスのプロパティのキーの配列を取得します。 どのようなプロパティがデバイスの設定を決定する方法については、[決定するプロパティが設定デバイス インスタンス](determining-which-properties-are-set-for-a-device-instance.md)を参照してください。
 
 -   [**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56538818"
 
     **SetupDiSetDeviceProperty**関数[デバイス インスタンスのデバイス プロパティを設定](setting-a-device-instance-property-value.md)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 でのデバイス プロパティにアクセスする方法については、次を参照してください。 [SetupAPI を使用して、デバイス プロパティにアクセスする Configuration Manager](using-setupapi-and-configuration-manager-to-access-device-properties.md)します。
+Windows Server 2003、Windows XP、および Windows 2000 でのデバイス プロパティにアクセスする方法については、[SetupAPI を使用して、デバイス プロパティにアクセスする Configuration Manager](using-setupapi-and-configuration-manager-to-access-device-properties.md)を参照してください。
 
  
 

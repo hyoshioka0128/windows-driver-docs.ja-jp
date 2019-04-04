@@ -42,7 +42,7 @@ WMI データとイベント ブロックを定義する MOF ファイルをコ�
 
 Mofcomp を使用する方法についての詳細についてに、コマンド プロンプト ウィンドウを開き**mofcomp/でしょうか。** します。
 
-Mofcomp の詳細については、次を参照してください。 [MofComp](https://go.microsoft.com/fwlink/p/?linkid=51316)と Windows SDK の他のトピックです。
+Mofcomp の詳細については、[MofComp](https://go.microsoft.com/fwlink/p/?linkid=51316)と Windows SDK の他のトピックを参照してください。
 
 ドライバーのバイナリ イメージのリソースとしてコンパイル済みの MOF ファイルを含めるドライバーのリソース スクリプト (RC) のファイルに次の行を追加します。
 
@@ -56,7 +56,7 @@ Mofcomp の詳細については、次を参照してください。 [MofComp](h
 
 処理の詳細については**IRP\_MN\_REGINFO**と**IRP\_MN\_REGINFO\_EX**要求、確認[WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
 
-WMI iibrary ルーチンを使用して WMI Irp の処理の詳細については、次を参照してください。 [WMI 要求の処理](handling-wmi-requests.md)します。
+WMI iibrary ルーチンを使用して WMI Irp の処理の詳細については、[WMI 要求の処理](handling-wmi-requests.md)を参照してください。
 
 定義して、実行可能ファイルにリソースを含める方法の詳細については、Microsoft Windows SDK を参照してください。
 

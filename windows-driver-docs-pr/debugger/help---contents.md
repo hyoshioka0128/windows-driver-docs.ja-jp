@@ -26,7 +26,7 @@ ms.locfileid: "56552697"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-このヘルプ ファイルを使用する方法の詳細については、次を参照してください。 [、のヘルプ ファイルを使用して](using-the-help-documentation.md)します。
+このヘルプ ファイルを使用する方法の詳細については、[、のヘルプ ファイルを使用して](using-the-help-documentation.md)を参照してください。
 
  
 

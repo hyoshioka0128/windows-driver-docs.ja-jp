@@ -10,4 +10,4 @@ ms.lasthandoff: 01/31/2019
 ms.locfileid: "56570045"
 ---
 > [!IMPORTANT]
-> Windows 10、バージョン 1803、以降、MO UWP アプリによって、MBAE アプリ エクスペリエンスが置き換えられます。 月の UWP アプリの詳細については、次を参照してください。 [UWP モバイル ブロード バンド アプリ](uwp-mobile-broadband-apps.md)します。
+> Windows 10、バージョン 1803、以降、MO UWP アプリによって、MBAE アプリ エクスペリエンスが置き換えられます。 月の UWP アプリの詳細については、[UWP モバイル ブロード バンド アプリ](uwp-mobile-broadband-apps.md)を参照してください。

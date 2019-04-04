@@ -16,7 +16,7 @@ ms.locfileid: "56553696"
 
 このトピックでには、ドライバーがデバッガーをアタッチせず IFR ログをどのようにアクセスする方法を示すビデオ チュートリアルが含まれています。
 
-Inflight レコーダー (IFR) を使用するには、ドライバーを構成する方法については、次を参照してください。[ログ トレースの実行中のトレース レコーダー](https://msdn.microsoft.com/library/windows/hardware/dn914610)します。
+Inflight レコーダー (IFR) を使用するには、ドライバーを構成する方法については、[ログ トレースの実行中のトレース レコーダー](https://msdn.microsoft.com/library/windows/hardware/dn914610)を参照してください。
 
 ビデオで説明する GetIfr.ps1 スクリプトを見つけることができます、 [WDF の GitHub リポジトリ](https://github.com/Microsoft/Windows-Driver-Frameworks/tree/master/Tools)します。
 

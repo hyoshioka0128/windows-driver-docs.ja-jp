@@ -57,7 +57,7 @@ Driver Verifier では、このオプションがアクティブで、Driver Ver
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの NDIS/WIFI 検証の機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 NDIS/WIFI の確認オプションをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの NDIS/WIFI 検証の機能をアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 NDIS/WIFI の確認オプションをアクティブ化またはコンピューターを再起動する必要があります。
 
 -   **コマンドラインで**
 

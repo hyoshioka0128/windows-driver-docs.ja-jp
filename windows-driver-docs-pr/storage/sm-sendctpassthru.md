@@ -58,7 +58,7 @@ void SM_SendCTPassThru(
 一般的なトランスポート コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の RequestBuffer メンバー\_SendCTPassThru\_構造体。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendCTPassThru\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendCTPassThru\_構造体。
 
 *TotalResponseBufferSize*   
 結果の一般的なトランスポート コマンドのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalResponseBufferSize メンバー\_SendCTPassThru\_構造体。

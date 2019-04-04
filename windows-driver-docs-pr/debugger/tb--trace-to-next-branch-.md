@@ -37,7 +37,7 @@ tb [r] [= StartAddress] [Count]
 L os コマンドを使用して登録表示無効にすることもできます。 この設定は、その他の 4 つのコマンドとは別です。 コントロールのどのレジスタとフラグが表示される、使用する、 [ **rm (登録マスク)** ](rm--register-mask-.md)コマンド。
 
 <span id="_______StartAddress______"></span><span id="_______startaddress______"></span><span id="_______STARTADDRESS______"></span> *StartAddress*   
-デバッガーが実行を開始する位置のアドレスを指定します。 使用しない場合*StartAddress*命令を命令ポインターが指すから実行が開始します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+デバッガーが実行を開始する位置のアドレスを指定します。 使用しない場合*StartAddress*命令を命令ポインターが指すから実行が開始します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 <span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span> *カウント*   
 許可する分岐の数を指定します。 分岐が検出されるたびに、命令アドレスおよび命令が表示されます。 省略した場合*カウント*既定値は 1 です。
@@ -70,7 +70,7 @@ L os コマンドを使用して登録表示無効にすることもできます
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-関連するコマンドの詳細については、次を参照してください。[ターゲットを制御する](controlling-the-target.md)します。
+関連するコマンドの詳細については、[ターゲットを制御する](controlling-the-target.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

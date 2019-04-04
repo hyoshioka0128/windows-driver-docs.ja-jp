@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_プロパティ要求の待機時間のステータ
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、AEC のフィルターを 暗証番号 (pin) のストリームの待機時間をクエリに使用されます。 詳細については、次を参照してください。 [Exposing Hardware-Accelerated キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536379)します。
+このプロパティは、AEC のフィルターを 暗証番号 (pin) のストリームの待機時間をクエリに使用されます。 詳細については、[Exposing Hardware-Accelerated キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536379)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

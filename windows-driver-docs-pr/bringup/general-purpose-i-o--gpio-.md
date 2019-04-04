@@ -35,14 +35,14 @@ Windows には、GPIO コント ローラーがサポートされています。
 
 1.  ActiveBoth 割り込みをサポートする GPIO コント ローラーは、サポート レベル モードの割り込みをする必要があり、再実行時に動的に割り込みの極性のプログラミングをサポートする必要があります。
 2.  I/O エラーのリスクを最小限に抑えるには、Windows は、GPIO コント ローラー SPB 接続 GPIO コント ローラーではなくメモリ マップの使用を優先します。 実際には、ボタン配列の Windows デバイス (PNP0C40) の場合は必要な GPIO、メモリ マップト コント ローラーと SPB 接続の 1 つがこのデバイスの ActiveBoth GPIO 割り込みに接続します。 ボタンの割り込みを判断する必要があります ActiveBoth を参照してください、**ボタン デバイス**sectionin、[名前空間オブジェクトの他の ACPI](other-acpi-namespace-objects.md)トピック。
-3.  ActiveBoth 割り込みシグナルを確定的な初期状態を確立するために、Windows の GPIO デバイス スタックことが保証されます最初の割り込みシグナルの状態のドライバーでの割り込みの接続は必ず後に生成します。 さらに、スタックでは、ActiveBoth 割り込みのすべての行の状態が論理レベルである低 (ActiveLow edge) 既定では前提としています。 これはお使いのプラットフォームのケースではない場合、は、GPIO コント ローラー デバイス固有のメソッドを含めることで、既定値を上書きできます (\_DSM)、コント ローラーの名前空間。 この方法の詳細については、次を参照してください。 [GPIO コント ローラー デバイスに固有のメソッド (\_DSM)](gpio-controller-device-specific-method---dsm-.md)します。
+3.  ActiveBoth 割り込みシグナルを確定的な初期状態を確立するために、Windows の GPIO デバイス スタックことが保証されます最初の割り込みシグナルの状態のドライバーでの割り込みの接続は必ず後に生成します。 さらに、スタックでは、ActiveBoth 割り込みのすべての行の状態が論理レベルである低 (ActiveLow edge) 既定では前提としています。 これはお使いのプラットフォームのケースではない場合、は、GPIO コント ローラー デバイス固有のメソッドを含めることで、既定値を上書きできます (\_DSM)、コント ローラーの名前空間。 この方法の詳細については、[GPIO コント ローラー デバイスに固有のメソッド (\_DSM)](gpio-controller-device-specific-method---dsm-.md)を参照してください。
 
 > [!NOTE]
 > 上記の 3 番目の要件は ActiveBoth を使用するデバイスのドライバーがあります (への接続) を初期化した直後に、割り込みを受信することを意味 GPIO ピン信号がアサートされている状態にある場合にその時点では、割り込みです。 これは可能であり、一部のデバイス (たとえば、ヘッドホン) も可能性がありますし、ドライバーでサポートする必要があります。
 
  
 
-GPIO コント ローラーのドライバーをエミュレート ActiveBoth をサポートする ActiveBoth (「オプトインする」) を有効にする必要がありますエミュレーションを実装することによって、 [*クライアント\_ReconfigureInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)コールバック関数、および設定、 **EmulateActiveBoth**フラグで基本的な情報が構造体をドライバーの[*クライアント\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)にコールバック関数を提供する**GpioClx**します。 詳細については、次を参照してください。[汎用入出力 (GPIO) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/gpio)します。
+GPIO コント ローラーのドライバーをエミュレート ActiveBoth をサポートする ActiveBoth (「オプトインする」) を有効にする必要がありますエミュレーションを実装することによって、 [*クライアント\_ReconfigureInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)コールバック関数、および設定、 **EmulateActiveBoth**フラグで基本的な情報が構造体をドライバーの[*クライアント\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)にコールバック関数を提供する**GpioClx**します。 詳細については、[汎用入出力 (GPIO) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/gpio)を参照してください。
 
 ## <a name="gpio-namespace-objects"></a>GPIO 名前空間のオブジェクト
 
@@ -61,7 +61,7 @@ GPIO コント ローラーの\_CRS には、すべての GPIO コント ロー�
 
 **GPIO 接続リソース記述子**
 
-周辺機器と GPIO ピンが接続されている間のリレーションシップは、オペレーティング システムに GPIO 接続リソース記述子によって記述されます。 これらのリソースの記述子には、GPIO 接続の 2 つの種類を定義できます。GPIO は、GPIO I/O 接続からの接続を中断します。 周辺機器に GPIO 接続記述子を含む、 \_GPIO I/O および割り込みのピンをすべての CR が接続されています。 接続されている割り込みがスリープ解除できる場合 (低電力アイドル状態からシステムをスリープ解除できる、ExclusiveAndWake または SharedAndWake として構成する必要があります。 詳細については、次を参照してください。[デバイスの電源管理](device-power-management.md)します。
+周辺機器と GPIO ピンが接続されている間のリレーションシップは、オペレーティング システムに GPIO 接続リソース記述子によって記述されます。 これらのリソースの記述子には、GPIO 接続の 2 つの種類を定義できます。GPIO は、GPIO I/O 接続からの接続を中断します。 周辺機器に GPIO 接続記述子を含む、 \_GPIO I/O および割り込みのピンをすべての CR が接続されています。 接続されている割り込みがスリープ解除できる場合 (低電力アイドル状態からシステムをスリープ解除できる、ExclusiveAndWake または SharedAndWake として構成する必要があります。 詳細については、[デバイスの電源管理](device-power-management.md)を参照してください。
 
 6.4.3.8.1、「GPIO 接続記述子」仕様のセクションで、ACPI 5.0、記述子が定義されます。 これらの記述子の ASL リソース テンプレートのマクロは 19.5.53、"GpioInt (GPIO 割り込み接続リソース記述子マクロ)"仕様のセクションで、ACPI 5.0 について説明します。
 

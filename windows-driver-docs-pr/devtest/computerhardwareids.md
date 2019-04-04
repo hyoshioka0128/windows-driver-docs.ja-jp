@@ -24,7 +24,7 @@ ComputerHardwareIds ツールは、Windows 7 または Windows オペレーテ�
 
 [ComputerHardwareIds 出力](computerhardwareids-output.md)
 
-デバイス メタデータ パッケージの詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。
+デバイス メタデータ パッケージの詳細については、[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)を参照してください。
 
  
 

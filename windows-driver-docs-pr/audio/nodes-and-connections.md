@@ -23,7 +23,7 @@ ms.locfileid: "56558828"
 ## <span id="nodes_and_connections"></span><span id="NODES_AND_CONNECTIONS"></span>
 
 
-フィルター ノードの記述子の配列の形式では、そのトポロジ ノードの説明を提供します ([**PCNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537720)構造)。 配列内の各記述子が 1 つのノードについて説明し、ノードの種類を指定する GUID が含まれています (たとえば、 [ **KSNODETYPE\_リバーブ**](https://msdn.microsoft.com/library/windows/hardware/ff537189))。 オーディオ デバイスに対して定義されている標準的なノードの種類の一覧は、次を参照してください。[オーディオ トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)します。
+フィルター ノードの記述子の配列の形式では、そのトポロジ ノードの説明を提供します ([**PCNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537720)構造)。 配列内の各記述子が 1 つのノードについて説明し、ノードの種類を指定する GUID が含まれています (たとえば、 [ **KSNODETYPE\_リバーブ**](https://msdn.microsoft.com/library/windows/hardware/ff537189))。 オーディオ デバイスに対して定義されている標準的なノードの種類の一覧は、[オーディオ トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)を参照してください。
 
 フィルターは、記述子の配列内のノードのインデックスを使用してそのノードのそれぞれを識別します。 たとえばをフィルターまたはフィルターで特定のピンには、特定のノード プロパティの要求を送信するとき、クライアントにはによって、ターゲット ノードを識別するために、要求でノードの ID (配列のインデックス) が含まれます。
 

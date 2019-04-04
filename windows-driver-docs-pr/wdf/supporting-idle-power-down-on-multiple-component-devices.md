@@ -50,7 +50,7 @@ WDF が電源のすべての参照がリリースされた後すぐに低電力�
 
 代わりに、ドライバーがパッシブのレベルで実行しているし、はしないように保証するワーカー スレッドをブロックしている呼び出しを延期する必要があります、 [ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)電源管理対象のキューの I/O のコンテキストでを呼び出すルーチンをディスパッチします。
 
-ドライバーが呼び出されていた場合[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)ドライバーを呼び出すことができます (つまり、電源の遷移中にページング可能なデータにアクセスできる)、 [ **WdfWorkItemCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff551201)フレームワークの作業項目を作成します。 ドライバーが設定されていない電源ページング可能な場合、ドライバーは、独自のシステム スレッドを作成する必要があります。 詳細については、次を参照してください。 [ **PsCreateSystemThread**](https://msdn.microsoft.com/library/windows/hardware/ff559932)します。
+ドライバーが呼び出されていた場合[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)ドライバーを呼び出すことができます (つまり、電源の遷移中にページング可能なデータにアクセスできる)、 [ **WdfWorkItemCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff551201)フレームワークの作業項目を作成します。 ドライバーが設定されていない電源ページング可能な場合、ドライバーは、独自のシステム スレッドを作成する必要があります。 詳細については、[ **PsCreateSystemThread**](https://msdn.microsoft.com/library/windows/hardware/ff559932)を参照してください。
 
 後[ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッドでエラーが返されます場合でも、取得、ドライバーを呼び出す必要があります[ **PoFxReportDevicePoweredOn**](https://msdn.microsoft.com/library/windows/hardware/hh439526)します。
 

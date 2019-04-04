@@ -40,7 +40,7 @@ A **NetTrans**、 **NetClient**、または**NetService**コンポーネント�
 
  
 
-共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
+共同インストーラーの詳細については、[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)を参照してください。
 
 コンポーネントのかどうか、通知オブジェクトが、そのコンポーネントの INF ファイルを追加する必要があります (を通じて、*追加レジストリ セクション*) コンポーネントのための値を**Ndi**キー。
 

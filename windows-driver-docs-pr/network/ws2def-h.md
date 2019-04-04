@@ -22,7 +22,7 @@ Ws2def.h ヘッダーには、Winsock2 仕様の定義が含まれています�
 > [!IMPORTANT]
 > このセクションのトピックには、定義、マクロ、Oid、状態インジケーター、およびネットワーク ドライバー リファレンス (構造体、列挙型、関数、およびコールバック) の一部ではないその他のデータ構造のページが含まれています。 
 >
-> このヘッダーのネットワーク ドライバー リファレンスの詳細については、次を参照してください。 [Ws2def.h (リファレンス)](https://msdn.microsoft.com/library/windows/hardware/mt808757)します。
+> このヘッダーのネットワーク ドライバー リファレンスの詳細については、[Ws2def.h (リファレンス)](https://msdn.microsoft.com/library/windows/hardware/mt808757)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

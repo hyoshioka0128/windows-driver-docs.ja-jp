@@ -73,7 +73,7 @@ ms.locfileid: "56557515"
 
 使用できる値の詳細については、 *DesiredAccess*パラメーターを参照してください[ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)します。
 
-呼び出すこともできます[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)をこれらのレジストリ キーへのハンドルを開く特定のデバイスと、特定のデバイス インターフェイスをそれぞれです。 詳細については、次を参照してください。[プラグ アンド プレイ レジストリ ルーチン](plug-and-play-registry-routines.md)します。
+呼び出すこともできます[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)をこれらのレジストリ キーへのハンドルを開く特定のデバイスと、特定のデバイス インターフェイスをそれぞれです。 詳細については、[プラグ アンド プレイ レジストリ ルーチン](plug-and-play-registry-routines.md)を参照してください。
 
 **注**  への呼び出しに**ZwCreateKey**、 **ZwOpenKey**、 **IoOpenDeviceRegistryKey**、および**IoOpenDeviceInterfaceRegistryKey**、汎用的なアクセス権、ジェネリック\_読み取りとジェネリック\_記述では、キーのキーに固有のアクセス権を意味的に同等です\_読み取りとキー\_書き込み、それぞれ、および、これらのキーに固有のアクセス権の代替として使用できます。
 

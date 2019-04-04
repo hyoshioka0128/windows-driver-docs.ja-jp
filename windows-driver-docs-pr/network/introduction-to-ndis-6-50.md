@@ -15,7 +15,7 @@ ms.locfileid: "56557833"
 
 このトピックでは、Network Driver Interface Specification (NDIS) 6.50 を示し、その主要な設計の追加機能を説明します。 Windows 10 バージョン 1507 以降では、NDIS 6.50 が含まれます。
 
-NDIS 6.50 は、NDIS 6.40 にマイナー バージョン更新です。 NDIS 6.50 する NDIS 6.x ドライバーの移植の詳細については、次を参照してください。 [NDIS 6.50 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-50.md)します。
+NDIS 6.50 は、NDIS 6.40 にマイナー バージョン更新です。 NDIS 6.50 する NDIS 6.x ドライバーの移植の詳細については、[NDIS 6.50 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-50.md)を参照してください。
 
 ## <a name="feature-updates"></a>機能更新プログラム
 
@@ -31,7 +31,7 @@ NDIS 6.50、ドライバーがで定義されている要件に従う必要が�
    
    必要があります、メジャーおよびマイナー NDIS バージョン番号を更新 NDIS_Xxx_DRIVER_CHARACTERISTICS 構造で NDIS 6.50 をサポートするためにします。 MajorNdisVersion メンバーは、6 を含める必要があり、MinorNdisVersion メンバーは 50 を含める必要があります。 この要件は、ミニポート、プロトコル、およびフィルター ドライバーに適用されます。 コンパイラのバージョン情報を更新することも必要があります (を参照してください[NDIS 6.50、ドライバーをコンパイルする](#compiling-an-ndis-650-driver))。
 
-- Windows 10 用の NDIS 6.50 ミニポート ドライバー、バージョン 1507 以降は、データ構造の NDIS 6.50 バージョンを使用する必要があります。 詳細については、次を参照してください。[データ構造を使用する NDIS 6.50](#using-ndis-650-data-structures)します。
+- Windows 10 用の NDIS 6.50 ミニポート ドライバー、バージョン 1507 以降は、データ構造の NDIS 6.50 バージョンを使用する必要があります。 詳細については、[データ構造を使用する NDIS 6.50](#using-ndis-650-data-structures)を参照してください。
 
 ## <a name="compiling-an-ndis-650-driver"></a>NDIS 6.50、ドライバーのコンパイル
 

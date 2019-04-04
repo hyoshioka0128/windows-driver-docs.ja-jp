@@ -32,11 +32,11 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_作�
 
 1.  NDIS を呼び出すときは、NIC スイッチを作成しますが、PF ミニポート ドライバーでは、静的スイッチの作成と構成をサポートする場合[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 構成パラメーターを確認する必要があります、ドライバーは、この OID 要求を処理する場合、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451587)構造体。 パラメーターが呼び出し中に、スイッチを作成する、ドライバーによって使用されるものと同じにする必要があります*MiniportInitializeEx*します。 True でない場合、ドライバーは、OID 要求を失敗する必要があります。
 
-    詳細については、次を参照してください。 [NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)します。
+    詳細については、[NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)を参照してください。
 
 2.  ドライバーの構成値を検証する必要があります、PF ミニポート ドライバーでは、動的なスイッチの作成と構成をサポートする場合、 [ **NDIS\_NIC\_切り替える\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451587)構造体し、これらの値に基づいて、NIC のスイッチを作成します。
 
-    詳細については、次を参照してください。 [NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)です。
+    詳細については、[NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)を参照してください。
 
 3.  PF ミニポート ドライバーでは、NIC のスイッチの既定 VPort のために必要なハードウェアおよびソフトウェア リソースを割り当てる必要があります。
 
@@ -58,7 +58,7 @@ PF のミニポート ドライバーが OID の OID メソッド要求が正常
 
 -   既定以外の拡張を作成することができますの OID メソッド要求を通じて NIC スイッチ[OID\_NIC\_切り替える\_作成\_VPORT](oid-nic-switch-create-vport.md)します。
 
-この OID 要求を処理する方法の詳細については、次を参照してください。[処理 OID\_NIC\_スイッチ\_作成\_切り替え要求を](https://msdn.microsoft.com/library/windows/hardware/hh451370)します。
+この OID 要求を処理する方法の詳細については、[処理 OID\_NIC\_スイッチ\_作成\_切り替え要求を](https://msdn.microsoft.com/library/windows/hardware/hh451370)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

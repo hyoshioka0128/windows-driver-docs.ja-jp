@@ -35,7 +35,7 @@ ms.locfileid: "56553630"
 
 -   [HKLM\\システム\\CurrentControlSet\\HardwareProfiles レジストリ ツリー](hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md)
 
-WDF (KMDF または UMDF) ドライバーからレジストリ キーへのアクセス方法の詳細については、次を参照してください。[ドライバーのレジストリ キーの概要](../wdf/introduction-to-registry-keys-for-drivers.md)します。
+WDF (KMDF または UMDF) ドライバーからレジストリ キーへのアクセス方法の詳細については、[ドライバーのレジストリ キーの概要](../wdf/introduction-to-registry-keys-for-drivers.md)を参照してください。
 
 **注**  下キー **HKLM\\システム\\CurrentControlSet**システム hive でデータが格納されているため、ドライバーに重要なデータを保持するために、安全な場所は。 (たとえば、複数のコピーを維持する方法) のシステム ハイブを保護するのには追加の予防措置が取得されます。
 

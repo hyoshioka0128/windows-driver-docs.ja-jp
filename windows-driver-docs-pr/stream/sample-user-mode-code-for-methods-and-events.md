@@ -24,7 +24,7 @@ ms.locfileid: "56571842"
 
 このセクションのコードでは、メソッドおよびユーザー モードの KsProxy プラグインからイベントを使用する方法を示します。
 
-カーネル モード、ミニドライバーでプロパティ、メソッド、およびイベントをサポートする方法については、次を参照してください。 [Automation テーブルを定義する](defining-automation-tables.md)します。
+カーネル モード、ミニドライバーでプロパティ、メソッド、およびイベントをサポートする方法については、[Automation テーブルを定義する](defining-automation-tables.md)を参照してください。
 
 指定されたメソッドをサポートするミニドライバーを指定したら、呼び出すことによってそのメソッドを呼び出すことができます[ **IKsControl::KsMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff559785)からユーザー モードの次のコード例に示すようにプラグインします。
 
@@ -80,7 +80,7 @@ pIKsControl -> KsEvent (
 
 上記の例では、通知は、ミニドライバーは、イベントを無効にします。 までを続行します。 イベントを無効にします。 呼び出す[ **IKsControl::KsEvent**](https://msdn.microsoft.com/library/windows/hardware/ff559772)します。 最初にこのイベントが発生したときにのみ通知する場合は、設定 KSEVENT\_型\_で ONESHOT **Event.Flags**します。
 
-USB ビデオ クラスの拡張機能のユニット数を持つイベントをサポートしている場合は、次を参照してください。[単位の拡張機能で自動更新のイベントをサポートしている](supporting-autoupdate-events-with-extension-units.md)します。
+USB ビデオ クラスの拡張機能のユニット数を持つイベントをサポートしている場合は、[単位の拡張機能で自動更新のイベントをサポートしている](supporting-autoupdate-events-with-extension-units.md)を参照してください。
 
  
 

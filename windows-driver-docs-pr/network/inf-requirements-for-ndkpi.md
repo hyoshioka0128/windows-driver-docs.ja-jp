@@ -52,9 +52,9 @@ Network Direct カーネル (NDK) をサポートしているミニポート ド
     HKR, Ndi\Params\*NetworkDirectTechnology,        Optional,   0,  "0"
     ```
 
-    高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+    高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
-    詳細については、標準化された INF キーワードを使用して、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+    詳細については、標準化された INF キーワードを使用して、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

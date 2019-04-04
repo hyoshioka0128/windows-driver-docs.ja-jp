@@ -39,7 +39,7 @@ ms.locfileid: "56570630"
 
 -   通常、関数のドライバーは、各 I/O 要求の内容を調べます。 関数のドライバーが要求を処理できない場合は、要求を修正し、I/O をターゲットに転送するがあります。 または、1 つまたは複数の新しい要求を作成し、I/O のターゲットに送信があります。
 
-    フレームワークの I/O のターゲット オブジェクトは、他のドライバーに I/O 要求を送信するためのいくつかのメソッドを定義します。 たとえば、ドライバーを呼び出すことができます[ **WdfIoTargetFormatRequestForRead**](https://msdn.microsoft.com/library/windows/hardware/ff548612)、その後に[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、読み取り要求を送信する、I/O のターゲット。 I/O のターゲットの詳細については、次を参照してください。[を使用して I/O ターゲット](using-i-o-targets.md)します。
+    フレームワークの I/O のターゲット オブジェクトは、他のドライバーに I/O 要求を送信するためのいくつかのメソッドを定義します。 たとえば、ドライバーを呼び出すことができます[ **WdfIoTargetFormatRequestForRead**](https://msdn.microsoft.com/library/windows/hardware/ff548612)、その後に[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、読み取り要求を送信する、I/O のターゲット。 I/O のターゲットの詳細については、[を使用して I/O ターゲット](using-i-o-targets.md)を参照してください。
 
     まれには、ドライバー開発者が、要求の基になる WDM の内容を指定する場合。 [I/O スタックの場所](https://msdn.microsoft.com/library/windows/hardware/ff551821)I/O のターゲットに要求を送信する前にします。 ドライバーを呼び出せるような場合、 [ **WdfRequestWdmFormatUsingStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550036)を呼び出す前に[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)します。
 

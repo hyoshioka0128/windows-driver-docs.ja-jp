@@ -66,7 +66,7 @@ ms.locfileid: "56552345"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッガー コマンド ウィンドウのプロンプトの詳細については、次を参照してください。[デバッガー コマンドを使用して](using-debugger-commands.md)します。
+デバッガー コマンド ウィンドウのプロンプトの詳細については、[デバッガー コマンドを使用して](using-debugger-commands.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

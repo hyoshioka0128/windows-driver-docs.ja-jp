@@ -47,7 +47,7 @@ HKR,,EnumeratorClass, 0x00000001,02,00,00
 
 値を割り当てる必要がある**EnumeratorClass** INF ファイルで 16 進数の組によって表される 3 つの 1 バイトのバイナリ値から構成されます。02、00 および 00 です。 これら 3 つの数値は、USB Implementers Forum がそれぞれの CDC デバイス クラス、CDC デバイス サブクラスおよび CDC デバイス プロトコルに割り当てられている値に対応します。
 
-正しく WMCDC デバイスを列挙するためにレジストリを構成する方法の詳細については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
+正しく WMCDC デバイスを列挙するためにレジストリを構成する方法の詳細については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
 
 さらに、次のトピックには、WMCDC について説明します。
 

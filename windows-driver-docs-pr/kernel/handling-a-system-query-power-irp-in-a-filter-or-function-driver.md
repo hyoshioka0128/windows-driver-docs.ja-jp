@@ -27,7 +27,7 @@ ms.locfileid: "56561006"
 
     場合**IoAcquireRemoveLock** 、エラー状態が返されるドライバーは IRP の処理を続行しないでください。 代わりに、Windows Vista 以降、ドライバー、呼び出す必要があります[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP を完了して、エラー状態を返すにします。 ドライバーが呼び出すサーバーの Windows Server 2003、Windows XP、および Windows 2000、 [ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)、呼び出す**IoCompleteRequest** IRP の完了を返す、エラー状態です。
 
-2.  クエリが失敗にするかどうかを決定します。 ガイドラインについては、次を参照してください。[フィルターまたは関数のドライバーで、システム クエリ性能の IRP を失敗](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)し、そのセクションで説明した処理を完了します。
+2.  クエリが失敗にするかどうかを決定します。 ガイドラインについては、[フィルターまたは関数のドライバーで、システム クエリ性能の IRP を失敗](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)し、そのセクションで説明した処理を完了を参照してください。
 
 3.  呼び出す[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ)
 

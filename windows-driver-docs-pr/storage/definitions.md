@@ -29,7 +29,7 @@ ms.locfileid: "57464326"
 <tr class="odd">
 <td align="left"><p>IEEE 1667</p></td>
 <td align="left"><p>標準プロトコルのセキュリティで保護された認証とセキュリティで保護されたホストと、直接接続されている一時的な記憶域デバイス (TSD)、USB フラッシュ ドライブ、ポータブル ハード ドライブ、または携帯電話などの間の信頼の作成。"</p>
-<p>詳細については、次を参照してください。<a href="https://standards.ieee.org/standard/1667-2018.html">検出、認証、およびホストの添付ファイルの記憶域デバイスでの承認の IEEE 1667 2018-IEEE 標準</a>します。</p></td>
+<p>詳細については、<a href="https://standards.ieee.org/standard/1667-2018.html">検出、認証、およびホストの添付ファイルの記憶域デバイスでの承認の IEEE 1667 2018-IEEE 標準</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1667 認証サイロ</p></td>

@@ -17,7 +17,7 @@ ms.locfileid: "56557972"
 # <a name="boot-options-in-a-bootini-file"></a>Boot.ini ファイルでのブート オプション
 
 > [!IMPORTANT] 
-> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows 8、Windows Server 2012、Windows 7、Windows Server 2008、または Windows Vista のブート オプションを変更する場合は、次を参照してください。 [Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)します。\]
+> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows 8、Windows Server 2012、Windows 7、Windows Server 2008、または Windows Vista のブート オプションを変更する場合は、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。\]
 
 Boot.ini はシステム パーティション、通常は c: のルートにあるテキスト ファイル\\Boot.ini します。 Boot.ini ストア ブートは、これまでは、IA ベースおよび x64 ベース プロセッサを搭載したコンピューターの BIOS ファームウェアを使用してコンピューターをオプションします。 Windows Server 2003 および Windows NT ファミリのオペレーティング システムの以前のバージョンでは、コンピューターが起動するときに、Windows ブート ローダー、"ntldr"と呼ばれる、Boot.ini ファイルを読み取り、およびブート メニューに各オペレーティング システムのエントリが表示されます。 次に、ntldr が Boot.ini ファイル内の設定に従って、選択したオペレーティング システムを読み込みます。
 

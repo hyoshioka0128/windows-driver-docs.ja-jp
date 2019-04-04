@@ -30,12 +30,12 @@ ms.locfileid: "56556832"
 
 I/O 制御コードが含まれている**Parameters.DeviceIoControl.IoControlCode** I/O スタック IRP の場所。
 
-その他の入力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、次を参照してください。 [I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)します。
+その他の入力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、[I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)を参照してください。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-出力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、次を参照してください。 [I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)します。
+出力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、[I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)を参照してください。
 
 <a name="operation"></a>操作
 ---------

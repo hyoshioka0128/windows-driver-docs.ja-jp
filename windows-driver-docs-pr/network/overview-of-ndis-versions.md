@@ -20,7 +20,7 @@ ms.locfileid: "56548763"
 
 Microsoft Windows の複数のバージョンの NDIS ドライバーを記述する場合は使用している機能は、各 Windows バージョンではサポートします。 新機能が、各リリースでは、NDIS に追加されました。 その他の機能が使用できなくなったし、以降のバージョンの NDIS から削除されました。
 
-Windows Vista と以降のオペレーティング システムおよび NDIS 6.0 以降のドライバーは、この設計ガイド ドキュメントのセットを対象します。 Windows および NDIS の以前のバージョンのドキュメントは、ドキュメントの以前のリリースに含まれます。 Windows XP および NDIS 5.1 ドキュメントについては、次を参照してください。 [Windows 2000 および Windows XP のネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff565849)します。
+Windows Vista と以降のオペレーティング システムおよび NDIS 6.0 以降のドライバーは、この設計ガイド ドキュメントのセットを対象します。 Windows および NDIS の以前のバージョンのドキュメントは、ドキュメントの以前のリリースに含まれます。 Windows XP および NDIS 5.1 ドキュメントについては、[Windows 2000 および Windows XP のネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff565849)を参照してください。
 
 > [!NOTE]
 > ドライバーは呼び出すことで NDIS バージョンをクエリすることができます、 [**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)関数と、*キーワード*パラメーターに設定**NdisVersion**. 
@@ -50,27 +50,27 @@ Windows オペレーティング システム、Microsoft Windows Driver Kit (WD
 | Windows Vista | 参照してください[Windows ハードウェア開発キットのダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721) | 6.0 | X | X | X |
 |  |  | 次のように主要な機能強化は、クライアントとサーバーの両方のパフォーマンスが著しく向上を提供します。 <ul><li>ネットワーク データのパッケージ化</li><li>送信し、受信パス</li><li>実行時の再構成機能</li><li>DMA のスキャッター/ギャザー</li><li>フィルター ドライバー</li><li>受信したデータ処理のマルチプロセッサのスケーリング</li><li>Nic にオフロードすることの TCP タスク</li></ul> |
 |  |  | 次の機能強化は、ドライバーの開発を簡略化します。 <ul><li>簡素化されたドライバーの初期化</li><li>NDIS インターフェイスのバージョン管理サポート</li><li>簡略化されたリセット処理</li><li>管理情報を取得するための標準インターフェイス</li><li>中間のフィルター ドライバーを置換するフィルター ドライバー モデル</li></ul> |
-|  |  | NDIS 6.0 の機能の詳細については、次を参照してください。 [NDIS 6.0 の概要](introduction-to-ndis-6-0.md)します。 |
-|  |  | 下位互換性と NDIS 6.0 のドライバーでサポートされていない古い機能については、次を参照してください。 [NDIS 6.0 の下位互換性](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-6-0-backward-compatibility)します。 |
+|  |  | NDIS 6.0 の機能の詳細については、[NDIS 6.0 の概要](introduction-to-ndis-6-0.md)を参照してください。 |
+|  |  | 下位互換性と NDIS 6.0 のドライバーでサポートされていない古い機能については、[NDIS 6.0 の下位互換性](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-6-0-backward-compatibility)を参照してください。 |
 | Windows Vista Service Pack 1 (SP1) および Windows Server 2008 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.1 | X | X | X |
-|  |  | NDIS 6.1 機能については、次を参照してください。 [NDIS 6.1 概要](introduction-to-ndis-6-1.md)します。 |
+|  |  | NDIS 6.1 機能については、[NDIS 6.1 概要](introduction-to-ndis-6-1.md)を参照してください。 |
 | Windows 7 および Windows Server 2008 R2 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.20 | X | X | X |
-|  |  | NDIS 6.20 機能については、次を参照してください。 [NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)します。 |
-|  |  | 下位互換性と NDIS 6.20 ドライバーでサポートされていない古い機能については、次を参照してください。 [NDIS 6.20 が動作の下位互換性](ndis-6-20-backward-compatibility.md)します。 |
+|  |  | NDIS 6.20 機能については、[NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)を参照してください。 |
+|  |  | 下位互換性と NDIS 6.20 ドライバーでサポートされていない古い機能については、[NDIS 6.20 が動作の下位互換性](ndis-6-20-backward-compatibility.md)を参照してください。 |
 | Windows 8 および Windows Server 2012 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.30 | X | X | X |
-|  |  | NDIS 6.30 機能については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。 |
+|  |  | NDIS 6.30 機能については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。 |
 | Windows 8.1 および Windows Server 2012 R2 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.40 | X | X | X |
-|  |  | NDIS 6.40 機能については、次を参照してください。 [NDIS 6.40 概要](introduction-to-ndis-6-40.md)します。 |
+|  |  | NDIS 6.40 機能については、[NDIS 6.40 概要](introduction-to-ndis-6-40.md)を参照してください。 |
 | Windows 10 バージョン 1507 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.50 | X | X | X |
-|   |   | NDIS 6.50 機能の詳細については、次を参照してください。 [NDIS 6.50 概要](introduction-to-ndis-6-50.md)します。 | 
+|   |   | NDIS 6.50 機能の詳細については、[NDIS 6.50 概要](introduction-to-ndis-6-50.md)を参照してください。 | 
 | Windows 10 バージョン 1511 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.51 | X | X | X |
 | Windows 10、バージョン 1607 および Windows Server 2016 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.60 | X | X | X |
-|   |   | NDIS 6.60 機能の詳細については、次を参照してください。 [NDIS 6.60 概要](introduction-to-ndis-6-60.md)します。 | 
+|   |   | NDIS 6.60 機能の詳細については、[NDIS 6.60 概要](introduction-to-ndis-6-60.md)を参照してください。 | 
 | Windows 10 Version 1703 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.70 | X | X | X |
-|   |   | 別名: coincided ネットワーク アダプター WDF クラス拡張機能のプレビュー リリースで NDIS 6.70 [NetAdapterCx](../netcx/index.md)します。<p>NDIS 6.70 機能の詳細については、次を参照してください。 [NDIS 6.70 概要](introduction-to-ndis-6-70.md)します。</p> |
+|   |   | 別名: coincided ネットワーク アダプター WDF クラス拡張機能のプレビュー リリースで NDIS 6.70 [NetAdapterCx](../netcx/index.md)します。<p>NDIS 6.70 機能の詳細については、[NDIS 6.70 概要](introduction-to-ndis-6-70.md)を参照してください。</p> |
 | Windows 10 バージョン 1709 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.80 | X | X | X |
-|   |   | NDIS 6.80 機能の詳細については、次を参照してください。 [NDIS 6.80 概要](introduction-to-ndis-6-80.md)します。 | 
+|   |   | NDIS 6.80 機能の詳細については、[NDIS 6.80 概要](introduction-to-ndis-6-80.md)を参照してください。 | 
 | Windows 10 バージョン 1803 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.81 | X | X | X |
-|   |   | NDIS 6.81 機能の詳細については、次を参照してください。 [NDIS 6.81 概要](introduction-to-ndis-6-81.md)します。 |
+|   |   | NDIS 6.81 機能の詳細については、[NDIS 6.81 概要](introduction-to-ndis-6-81.md)を参照してください。 |
 | Windows 10 Version 1809 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.82 | X | X | X |
-|   |   | NDIS 6.82 機能の詳細については、次を参照してください。 [NDIS 6.82 概要](introduction-to-ndis-6-82.md)します。 |
+|   |   | NDIS 6.82 機能の詳細については、[NDIS 6.82 概要](introduction-to-ndis-6-82.md)を参照してください。 |

@@ -120,7 +120,7 @@ ceefb000 fffff680`00008000
 
 64 ビットの Windows ディレクトリ ベースは、ページ マップ レベル 4 (PML4) テーブルの物理アドレスです。 32 ビットの Windows では、PAE を有効に、ディレクトリ ベースは、ページ ディレクトリ ポインター (PDP) テーブルの物理アドレスです。 32 ビットの Windows で無効になっている PAE、ディレクトリの bas はページ ディレクトリ (PD) テーブルの物理アドレス。
 
-関連トピックについては、次を参照してください。 [ **! vtop** ](-vtop.md)と[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)します。 仮想アドレス変換の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+関連トピックについては、[ **! vtop** ](-vtop.md)と[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)を参照してください。 仮想アドレス変換の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

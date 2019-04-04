@@ -32,7 +32,7 @@ ms.locfileid: "56558221"
 
 
 <span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *expression*   
-評価する式を指定します。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+評価する式を指定します。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

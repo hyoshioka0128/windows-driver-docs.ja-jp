@@ -19,7 +19,7 @@ ms.locfileid: "56571990"
 ## <a name="download-the-driver-files"></a>ドライバー ファイルをダウンロードします。
 
 
-移動し、 [Microsoft]、[Windows のサンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples) 、github サイトし、ダウンロードしてセンサー ドライバーのサンプルをビルドするには、次のタスクを実行します。 このトピックの実習では、開発用コンピューターにインストールされている Microsoft Visual Studio 2015 を使用するいると仮定します。 そうでない場合は、次を参照してください。[このダウンロード サイト](https://www.visualstudio.com/downloads/visual-studio-2015-downloads-vs.aspx)Microsoft Visual Studio のコピーをダウンロードする方法についてはします。
+移動し、 [Microsoft]、[Windows のサンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples) 、github サイトし、ダウンロードしてセンサー ドライバーのサンプルをビルドするには、次のタスクを実行します。 このトピックの実習では、開発用コンピューターにインストールされている Microsoft Visual Studio 2015 を使用するいると仮定します。 そうでない場合は、[このダウンロード サイト](https://www.visualstudio.com/downloads/visual-studio-2015-downloads-vs.aspx)Microsoft Visual Studio のコピーをダウンロードする方法についてはを参照してください。
 
 1. ダウンロード サンプル センサー ドライバーのファイルの開発用コンピューター上のフォルダーを作成します。
 

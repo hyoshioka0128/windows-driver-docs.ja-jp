@@ -45,7 +45,7 @@ DEVICE : 1 : USB\VID_045E&PID_078E&REV_8011 : 28           :
 Return value: 1
 ```
 
-上記のコマンドは、システムに SuperMUTT (1) と接続された MUTT パック (0) があることを示します。 Microsoft 提供のカーネル モード ドライバー、Winusb.sys は、SuperMUTT デバイス関数ドライバーです。 Winusb.sys の詳細については、次を参照してください。 [WinUSB](winusb.md)します。
+上記のコマンドは、システムに SuperMUTT (1) と接続された MUTT パック (0) があることを示します。 Microsoft 提供のカーネル モード ドライバー、Winusb.sys は、SuperMUTT デバイス関数ドライバーです。 Winusb.sys の詳細については、[WinUSB](winusb.md)を参照してください。
 
 MUTT パック デバイスの問題のコードの 28 は、デバイスのドライバーが読み込まれていないことを示します。
 

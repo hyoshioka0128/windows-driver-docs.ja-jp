@@ -517,7 +517,7 @@ ms.locfileid: "57350427"
 <tr class="odd">
 <td align="left"><p>0x238</p></td>
 <td align="left"><p>警告</p></td>
-<td align="left"><p>呼び出し元<strong>IoInitializeIrp</strong>で割り当てられた IRP が渡される<strong>IoAllocateIrp</strong>します。 これは無効な不要なし、通常の用途でのパフォーマンスが低下します。 この IRP がリサイクルされている場合は、次を参照してください。 <strong>IoReuseIrp</strong> Windows Driver Kit でします。</p></td>
+<td align="left"><p>呼び出し元<strong>IoInitializeIrp</strong>で割り当てられた IRP が渡される<strong>IoAllocateIrp</strong>します。 これは無効な不要なし、通常の用途でのパフォーマンスが低下します。 この IRP がリサイクルされている場合は、<strong>IoReuseIrp</strong> Windows Driver Kit でを参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x239</p></td>

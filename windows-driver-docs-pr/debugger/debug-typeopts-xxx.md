@@ -66,7 +66,7 @@ ms.locfileid: "56551275"
 
 既定では、すべての型の書式設定オプションはになります。
 
-種類の詳細については、次を参照してください。[型](https://msdn.microsoft.com/library/windows/hardware/ff558931)します。
+種類の詳細については、[型](https://msdn.microsoft.com/library/windows/hardware/ff558931)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

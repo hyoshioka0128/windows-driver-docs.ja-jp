@@ -34,7 +34,7 @@ USB ビデオ クラス ドライバーは、USB ビデオ KS プロキシ フ�
 
 - IKsNodeControl という名前の拡張機能単位の API とインターフェイスを実装するヘッダーと cpp ファイル。 Vidcap.ax では、IKsNodeControl インターフェイスを使用して、プラグインの拡張機能ノードの識別子の通知を IKsControl のインスタンスを指定します。 サンプル コードでこれらのファイルが見つかります[サンプル拡張ユニット プラグイン DLL](sample-extension-unit-plug-in-dll.md)します。
 
-- *.Rgs* ノードのインターフェイスとクラス Id (Clsid) を登録するファイル、 **HKLM\\システム\\CCS\\コントロール\\NodeInterfaces\\**<em>プロパティ\_設定\_GUID</em>レジストリ サブキー。 このレジストリ サブキー内のエントリには、インターフェイス ID (IID) および CLSID のバイナリ値が含まれます。 詳細については、次を参照してください。 [UVC 拡張機能のユニットのレジストリ エントリをサンプル](sample-registry-entry-for-uvc-extension-units.md)します。
+- *.Rgs* ノードのインターフェイスとクラス Id (Clsid) を登録するファイル、 **HKLM\\システム\\CCS\\コントロール\\NodeInterfaces\\**<em>プロパティ\_設定\_GUID</em>レジストリ サブキー。 このレジストリ サブキー内のエントリには、インターフェイス ID (IID) および CLSID のバイナリ値が含まれます。 詳細については、[UVC 拡張機能のユニットのレジストリ エントリをサンプル](sample-registry-entry-for-uvc-extension-units.md)を参照してください。
 
 - このインターフェイスを起動するアプリケーション。 アプリケーションはまず、IKsTopologyInfo::CreateNodeInstance を使用して、適切なノード ID とノードのインスタンスを作成します。 その後、アプリケーションを呼び出す**QueryInterface**要求単位の拡張機能インターフェイスを取得するノードのインスタンスにします。 詳細については、次を参照してください[UVC 拡張機能の単位用のサンプル アプリケーション](sample-application-for-uvc-extension-units.md)と[単位の拡張機能での自動更新イベントのサポート。](supporting-autoupdate-events-with-extension-units.md)
 

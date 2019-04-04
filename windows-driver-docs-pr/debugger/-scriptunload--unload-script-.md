@@ -70,7 +70,7 @@ JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 
 スクリプト内のオブジェクトに未解決の参照がある場合は、スクリプトの内容がリンクされますが、スクリプトは、このようなすべての参照が解放されるまでメモリに残る可能性があります。
 
-JavaScript での操作の詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。 デバッガー オブジェクトに関する詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)します。
+JavaScript での操作の詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。 デバッガー オブジェクトに関する詳細については、[JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
 
 **必要条件**
 

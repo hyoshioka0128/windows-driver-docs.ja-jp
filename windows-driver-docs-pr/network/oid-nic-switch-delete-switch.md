@@ -34,11 +34,11 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削�
 
 1.  PF のミニポート ドライバーでは、静的な作成と NIC のスイッチの構成をサポートする場合は、指定した NIC スイッチに関連付けられているソフトウェア リソースを解放にする必要があります。 ただし、ドライバーのみを解放できますハードウェア リソースの NIC を切り替えるときに[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)が呼び出されます。
 
-    静的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)します。
+    静的な NIC スイッチの作成の詳細については、[NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)を参照してください。
 
 2.  PF ミニポート ドライバーでは、動的な作成と NIC のスイッチの構成をサポートする場合、指定した NIC スイッチに関連付けられているハードウェアおよびソフトウェア リソースを無料する必要があります。
 
-    動的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)です。
+    動的な NIC スイッチの作成の詳細については、[NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)を参照してください。
 
 3.  ドライバーが呼び出すことによってに、アダプターで仮想化を無効にする必要があります、PF ミニポート ドライバーでは、動的に作成し、NIC のスイッチが削除されているすべてをサポートする場合[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)します。 ネットワーク アダプターの設定を仮想化を無効にする必要があります、 *EnableVirtualization*パラメーターを FALSE と*NumVFs*パラメーターを 0 にします。
 
@@ -48,7 +48,7 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削�
 
      
 
-詳細については、次を参照してください。 [NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)します。
+詳細については、[NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

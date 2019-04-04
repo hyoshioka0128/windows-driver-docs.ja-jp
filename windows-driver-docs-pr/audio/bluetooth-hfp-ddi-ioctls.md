@@ -68,7 +68,7 @@ Windows 10 では、次の新しいサブスクリプションを追加して Io
 
 [**IOCTL\_BTHHFP\_DEVICE\_GET\_CODEC\_ID**](https://msdn.microsoft.com/library/windows/hardware/dn798965)
 
-これらの Ioctl で動作する構造については、次を参照してください。 [Bluetooth HFP DDI 構造](bluetooth-hfp-ddi-structures.md)します。
+これらの Ioctl で動作する構造については、[Bluetooth HFP DDI 構造](bluetooth-hfp-ddi-structures.md)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

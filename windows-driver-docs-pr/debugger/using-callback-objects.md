@@ -35,19 +35,19 @@ ms.locfileid: "56559794"
 
 [IDebugEventCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550550)インターフェイスは、デバッガーの拡張機能とのアプリケーションに通知する、エンジンによって使用[イベント](events.md#events)と、エンジンとターゲットを変更します。 実装**IDebugEventCallbacks**を使用してクライアントに登録できる[ *SetEventCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff556671)します。 使用して、クライアントに登録されている現在の実装を検出できる[ *GetEventCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff546601)します。 使用して検出できるすべてのクライアントで登録されたイベントのコールバック数[ *GetNumberEventCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff547896)します。
 
-エンジンがイベントを管理する方法について詳しくは、次を参照してください。[監視イベント](monitoring-events.md)します。
+エンジンがイベントを管理する方法について詳しくは、[監視イベント](monitoring-events.md)を参照してください。
 
 ### <a name="span-idinputcallbacksspanspan-idinputcallbacksspaninput-callback-objects"></a><span id="input_callbacks"></span><span id="INPUT_CALLBACKS"></span>コールバック オブジェクトを入力します。
 
 [IDebugInputCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550785)インターフェイスは、デバッガーの拡張機能とアプリケーションからの入力を要求する、エンジンによって使用されます。 実装**IDebugInputCallbacks**を使用してクライアントに登録できる[ *SetInputCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff556721)します。 使用して、クライアントに登録されている現在の実装を検出できる[ *GetInputCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff546892)します。 使用して検出できるすべてのクライアントで登録された入力のコールバック数[ *GetNumberInputCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff547923)します。
 
-エンジンが入力を管理する方法について詳しくは、次を参照してください。[入力と出力](using-input-and-output.md)します。
+エンジンが入力を管理する方法について詳しくは、[入力と出力](using-input-and-output.md)を参照してください。
 
 ### <a name="span-idoutputcallbacksspanspan-idoutputcallbacksspanoutput-callback-objects"></a><span id="output_callbacks"></span><span id="OUTPUT_CALLBACKS"></span>コールバック オブジェクトを出力します。
 
 **IDebugOutputCallbacks**インターフェイスは、デバッガーの拡張機能とアプリケーションに出力を送信する、エンジンによって使用されます。 実装**IDebugOutputCallbacks**を使用してクライアントに登録できる[ *SetOutputCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff556751)します。 使用して、クライアントに登録されている現在の実装を検出できる[ *GetOutputCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff548071)します。 使用して検出できるすべてのクライアントで登録されている出力コールバック数[ *GetNumberOutputCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff547931)します。
 
-エンジンが出力を管理する方法について詳しくは、次を参照してください。[入力と出力](using-input-and-output.md)します。
+エンジンが出力を管理する方法について詳しくは、[入力と出力](using-input-and-output.md)を参照してください。
 
 **注**   、エンジンを呼び出して、COM オブジェクトの一般的なものは、 **iunknown::addref**クライアント、登録されている場合、コールバック COM オブジェクトでと **:release**ときオブジェクトを交換するか、クライアントが削除されます。
 

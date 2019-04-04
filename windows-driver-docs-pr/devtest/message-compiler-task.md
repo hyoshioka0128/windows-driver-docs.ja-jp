@@ -14,7 +14,7 @@ ms.locfileid: "57464021"
 # <a name="message-compiler-task"></a>メッセージ コンパイラ タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、次を参照してください。 [**メッセージ コンパイラ (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)します。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、[**メッセージ コンパイラ (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)を参照してください。
 
 MSBuild では、MessageCompile 項目を使用して、MessageCompiler タスクのパラメーターを送信します。 MessageCompile 項目では、プロジェクト ファイルで mc.exe の項目メタデータにアクセスします。
 

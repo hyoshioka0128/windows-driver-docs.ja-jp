@@ -90,7 +90,7 @@ Windows を破棄すると、[デバイス情報設定されている](https://m
 
 共同インストーラーを使用する必要があります、 **ClassInstallReserved**フィールド。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

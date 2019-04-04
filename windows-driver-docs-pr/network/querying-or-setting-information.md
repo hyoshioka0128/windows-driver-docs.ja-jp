@@ -27,7 +27,7 @@ ms.locfileid: "56557045"
 
 接続指向のクライアントまたは呼び出し manager 渡します、有効な場合*NdisAfHandle* (を参照してください[アドレス ファミリ](address-families.md))、NDIS 呼び出し、 [ **ProtocolCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff570254)バインディングでは、各プロトコル ドライバーの機能です。
 
-NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含む、アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、次を参照してください。 [NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)します。
+NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含む、アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)を参照してください。
 
 ここでは、次のトピックについて説明します。
 

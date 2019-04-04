@@ -57,13 +57,13 @@ void SM_SetPersistentBinding(
 SMHBA 型の構造体の配列\_SCSIENTRY をオペレーティング システムと SAS の識別子の HBA のバインディングについて説明します。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、GetPersistentBinding の HBAStatus メンバー\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、GetPersistentBinding の HBAStatus メンバー\_構造体。
 
 *OutStatusCount*   
 SM によって取得される永続的なバインドの合計数\_GetPersistentBinding メソッド。 この値は、TotalEntryCount 以下になります。
 
 *EntryStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、GetPersistentBinding の HBAStatus メンバー\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、GetPersistentBinding の HBAStatus メンバー\_構造体。
 
 <a name="return-value"></a>戻り値
 ------------

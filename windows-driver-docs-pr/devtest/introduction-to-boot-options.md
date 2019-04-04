@@ -33,7 +33,7 @@ ms.locfileid: "56557716"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="______Windows_7__Windows_Server_2008__Windows_Vista"></span><span id="______windows_7__windows_server_2008__windows_vista"></span><span id="______WINDOWS_7__WINDOWS_SERVER_2008__WINDOWS_VISTA"></span>Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows Server 2008、Windows Vista</p></td>
-<td align="left"><p>Windows Vista、および以降のバージョンの Windows では、ファームウェアに依存しない記憶域の構成システムでブート オプションを格納します。 Windows Vista には、新しいブート マネージャーとシステムに固有のブート ローダーも導入されています。 詳細については、次を参照してください。 <a href="boot-options-in-windows-vista-and-later.md" data-raw-source="[Boot Options in Windows Vista and Later](boot-options-in-windows-vista-and-later.md)">Windows Vista 以降のブート オプション</a>します。</p></td>
+<td align="left"><p>Windows Vista、および以降のバージョンの Windows では、ファームウェアに依存しない記憶域の構成システムでブート オプションを格納します。 Windows Vista には、新しいブート マネージャーとシステムに固有のブート ローダーも導入されています。 詳細については、<a href="boot-options-in-windows-vista-and-later.md" data-raw-source="[Boot Options in Windows Vista and Later](boot-options-in-windows-vista-and-later.md)">Windows Vista 以降のブート オプション</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

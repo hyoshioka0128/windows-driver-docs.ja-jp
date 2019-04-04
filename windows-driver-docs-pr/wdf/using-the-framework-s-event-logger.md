@@ -91,7 +91,7 @@ SourceFile_LineNumber: FunctionName: ProcessID.ThreadID: SystemTime
 
 UMDF 以降 UMDF バージョン 2 では、UMDF のトレース ログを保存 (または UMDF *IFR*) 非ページ メモリのカーネルにします。 フレームワークは、ドライバーのホスト (Wudfhost) インスタンスごとの 1 つの IFR を割り当てます。
 
-デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
+デバッガーの拡張機能コマンドの詳細については、[Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)を参照してください。
 
  
 

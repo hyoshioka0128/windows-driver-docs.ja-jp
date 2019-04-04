@@ -30,7 +30,7 @@ ms.locfileid: "56578768"
 
 -   デバイスを表すアイコン。 この情報がで指定された、 [ **DeviceIconFile** ](https://msdn.microsoft.com/library/windows/hardware/ff541123) DeviceInfo XML ドキュメント内の XML 要素。
 
-    デバイス アイコンの詳細については、次を参照してください。[デバイス アイコン ファイル](device-icon-file.md)します。
+    デバイス アイコンの詳細については、[デバイス アイコン ファイル](device-icon-file.md)を参照してください。
 
 各デバイス メタデータ パッケージは、1 つだけの DeviceInfo XML ドキュメントを含める必要があります。 ドキュメントの名前は、DeviceInfo.xml である必要があります。
 

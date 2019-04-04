@@ -89,7 +89,7 @@ HKR,,CoInstallers32,0x00010000,WudfCoinstaller.dll
 
 ドライバーの INF ファイルは常に含める必要があります、 **DDInstall.Wdf**共同インストーラーがインストールされていた後を読み取っていることをセクションします。 ドライバーを指定できますディレクティブについては**DDInstall.Wdf**を参照してください[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
-INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
+INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、[INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)を参照してください。
 
  
 

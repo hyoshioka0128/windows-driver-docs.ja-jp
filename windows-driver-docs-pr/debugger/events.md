@@ -33,7 +33,7 @@ ms.locfileid: "56579858"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-イベントの監視の詳細については、次を参照してください。[監視イベント](monitoring-events.md)します。
+イベントの監視の詳細については、[監視イベント](monitoring-events.md)を参照してください。
 
  
 

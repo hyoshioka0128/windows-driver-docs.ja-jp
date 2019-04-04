@@ -21,9 +21,9 @@ ms.locfileid: "56558272"
 
 Windows Vista および以降のバージョンの Windows、 [SetupAPI](setupapi.md)次のログ コンポーネントが含まれています。
 
--   プラグ アンド プレイ (PnP) マネージャーと SetupAPI は、インストールのイベントに関する情報をログ デバイス インストールのテキスト ログ (*SetupAPI.dev.log*) とアプリケーション インストールのテキスト ログ (*SetupAPI.app.log*). デバイス インストールのテキスト ログは、デバイスやドライバーのインストールに関する情報を格納し、アプリケーション インストールのテキスト ログは、デバイス ドライバーのインストールに関連付けられているアプリケーションのソフトウェアのインストールに関する情報を格納します。 SetupAPI テキスト ログのコンテンツに関する詳細については、次を参照してください。 [SetupAPI テキスト ログ](setupapi-text-logs.md)、ログ記録を有効にする方法については、次を参照してください。 および[SetupAPI ログのレジストリ設定](setupapi-logging-registry-settings.md)します。
+-   プラグ アンド プレイ (PnP) マネージャーと SetupAPI は、インストールのイベントに関する情報をログ デバイス インストールのテキスト ログ (*SetupAPI.dev.log*) とアプリケーション インストールのテキスト ログ (*SetupAPI.app.log*). デバイス インストールのテキスト ログは、デバイスやドライバーのインストールに関する情報を格納し、アプリケーション インストールのテキスト ログは、デバイス ドライバーのインストールに関連付けられているアプリケーションのソフトウェアのインストールに関する情報を格納します。 SetupAPI テキスト ログのコンテンツに関する詳細については、[SetupAPI テキスト ログ](setupapi-text-logs.md)、ログ記録を有効にする方法については、次を参照してください。 および[SetupAPI ログのレジストリ設定](setupapi-logging-registry-settings.md)を参照してください。
 
--   [SetupAPI ログ関数で](https://msdn.microsoft.com/library/windows/hardware/ff550878)、SetupAPI テキスト ログにログ エントリを書き込む PnP デバイス インストールのアプリケーション、クラスのインストーラーと共同インストーラーを使用できます。 これらの関数を使用する方法については、次を参照してください。 [SetupAPI ログ記録関数を使用して](using-the-setupapi-logging-functions.md)します。
+-   [SetupAPI ログ関数で](https://msdn.microsoft.com/library/windows/hardware/ff550878)、SetupAPI テキスト ログにログ エントリを書き込む PnP デバイス インストールのアプリケーション、クラスのインストーラーと共同インストーラーを使用できます。 これらの関数を使用する方法については、[SetupAPI ログ記録関数を使用して](using-the-setupapi-logging-functions.md)を参照してください。
 
  
 

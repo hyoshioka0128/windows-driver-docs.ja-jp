@@ -38,7 +38,7 @@ ms.locfileid: "56538900"
 
 -   Windows には、4 番目と最悪の署名のスコアが割り当てられます (署名スコアの最高値) にドライバーが署名されていないか、署名の状態は不明です。
 
-ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
+ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
 
  
 

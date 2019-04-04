@@ -24,7 +24,7 @@ ms.locfileid: "56551284"
 
 **! Ndiskd.netrb**拡張機能に関する情報を表示する、 [NET\_リング\_バッファー](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)構造体。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
 
 ```console
 !ndiskd.netrb [-handle <x>] [-basic] [-dump] [-elementtype <str>] 

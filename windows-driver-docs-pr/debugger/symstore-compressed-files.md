@@ -27,7 +27,7 @@ SymStore は、2 つの方法で、圧縮ファイルで使用できます。
 
 シンボル サーバーは、適切な時にファイルを圧縮解除の責任になります。
 
-圧縮を行う必要があります SymSrv としてシンボル サーバーを使用している場合は compress.exe ツールを使用して[ここ](https://go.microsoft.com/fwlink/p/?linkid=239917)。 圧縮されたファイルでは、それらのファイル拡張子の最後の文字として、アンダー スコアが必要 (たとえば、module1.pd\_または module2.db\_)。 詳細については、次を参照してください。 [SymSrv](symsrv.md)します。
+圧縮を行う必要があります SymSrv としてシンボル サーバーを使用している場合は compress.exe ツールを使用して[ここ](https://go.microsoft.com/fwlink/p/?linkid=239917)。 圧縮されたファイルでは、それらのファイル拡張子の最後の文字として、アンダー スコアが必要 (たとえば、module1.pd\_または module2.db\_)。 詳細については、[SymSrv](symsrv.md)を参照してください。
 
  
 

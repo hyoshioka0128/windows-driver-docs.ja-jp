@@ -32,7 +32,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 10**
 
-使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
 ```
   verifier /standard /all
@@ -60,7 +60,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 8.1**
 
-使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
 ```
   verifier /standard /all
@@ -84,7 +84,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 8、Windows 7、Windows Vista の構文**
 
-使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile** 、/flags オプションを付けて[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、 [SCSI 検証](scsi-verification.md)または **/ディスク**します。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile** 、/flags オプションを付けて[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、 [SCSI 検証](scsi-verification.md)または **/ディスク**します。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
 ```
 verifier [/volatile] [/standard | /flags Options ] [ /all | /driver DriverList ]
@@ -432,7 +432,7 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 
 
 
-このメソッドを使用して、SCSI の検証または Storport 検証オプションをアクティブ化することはできません。 詳しくは、次を参照してください。 [SCSI 検証](scsi-verification.md)と[Storport 検証](dv-storport-verification.md)です。
+このメソッドを使用して、SCSI の検証または Storport 検証オプションをアクティブ化することはできません。 詳しくは、[SCSI 検証](scsi-verification.md)と[Storport 検証](dv-storport-verification.md)を参照してください。
 
 <span id="________flags________VolatileOptions______"></span><span id="________flags________volatileoptions______"></span><span id="________FLAGS________VOLATILEOPTIONS______"></span> **/flags** *VolatileOptions*   
 Windows 2000、Windows XP、および Windows Server 2003 を再起動しなくてもすぐに変更される Driver Verifier のオプションを指定します。 (Windows Vista で使用することができます、 **/volatile**パラメーターすべて **/flags**値)。
@@ -508,7 +508,7 @@ Windows 2000 では、10 進数形式で数値を入力します。 Windows XP �
 I/O の検証が有効でない場合 (を使用して **/flags 0x10**)、 **/iolevel**は無視されます。
 
 <span id="________log________LogFileName_______interval_Seconds_______"></span><span id="________log________logfilename_______interval_seconds_______"></span><span id="________LOG________LOGFILENAME_______INTERVAL_SECONDS_______"></span> **/log** *LogFileName* \[**/interval**|*Seconds*\]   
-名前のログ ファイルが作成*LogFileName*します。 Driver Verifier は、このファイルに、統計情報を定期的に書き込みます。 詳細については、次を参照してください。[ログ ファイルの作成](creating-log-files.md)です。
+名前のログ ファイルが作成*LogFileName*します。 Driver Verifier は、このファイルに、統計情報を定期的に書き込みます。 詳細については、[ログ ファイルの作成](creating-log-files.md)を参照してください。
 
 場合、 **verifier/log**コマンドラインでコマンドを入力すると、コマンド プロンプトは返されません。 ログ ファイルを閉じるし、プロンプトを返すするには、ctrl キーを押しながら C キーを使用します。 再起動後、ログを作成する必要がありますを送信する、 **verifier/log**コマンドを再実行します。
 
@@ -582,7 +582,7 @@ Windows Vista と Windows の以降のバージョンで使用することがで
 
 Windows Vista では、前に Windows のバージョンで、 **/volatile**パラメーターのオプションでのみ使用できます*VolatileOptions*開始または停止することがなく、ドライバーの検証するために使用することができますドライバーの検証ツールが既に実行されていると、コンピューターが再起動された場合にのみ再起動しています。
 
-詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
 <table>
 <colgroup>
@@ -615,7 +615,7 @@ Windows Vista では、前に Windows のバージョンで、 **/volatile**パ�
 すべてのドライバーの検証設定をクリアします。 [次へ] の起動後に、ドライバーが検証なし。
 
 <span id="________querysettings______"></span><span id="________QUERYSETTINGS______"></span> **/querysettings**   
-(Windows XP 以降)オプションが有効にして、[次へ] の起動後に確認されるドライバーの概要を表示します。 ドライバーとオプションを使用して追加、表示は含まれません、 **/volatile**パラメーター。 これらの設定を表示するその他の方法では、次を参照してください。[ドライバー検証ツールの設定を表示する](viewing-driver-verifier-settings.md)します。
+(Windows XP 以降)オプションが有効にして、[次へ] の起動後に確認されるドライバーの概要を表示します。 ドライバーとオプションを使用して追加、表示は含まれません、 **/volatile**パラメーター。 これらの設定を表示するその他の方法では、[ドライバー検証ツールの設定を表示する](viewing-driver-verifier-settings.md)を参照してください。
 
 <span id="________query______"></span><span id="________QUERY______"></span> **/query**   
 Driver Verifier の現在のアクティビティの概要を表示します。 **レベル**表示のフィールドはオプションと設定の 16 進数の値、 **/volatile**パラメーター。 参照してください[グローバル カウンターの監視](monitoring-global-counters.md)と[カウンターを個別に監視](monitoring-individual-counters.md)の各統計情報の説明。
@@ -690,12 +690,12 @@ Driver Verifier の現在のアクティビティの概要を表示します。 
 <span id="_______________"></span> **/?**   
 コマンドラインのヘルプを表示します。
 
-これらのコマンドの使用に関する詳細については、次を参照してください。 [Driver Verifier を制御する](controlling-driver-verifier.md)と[Driver Verifier の監視](monitoring-driver-verifier.md)します。
+これらのコマンドの使用に関する詳細については、[Driver Verifier を制御する](controlling-driver-verifier.md)と[Driver Verifier の監視](monitoring-driver-verifier.md)を参照してください。
 
 <span id="________help______"></span><span id="________HELP______"></span> **/help**   
 コマンドラインのヘルプを表示します。
 
-これらのコマンドの使用に関する詳細については、次を参照してください。 [Driver Verifier を制御する](controlling-driver-verifier.md)と[Driver Verifier の監視](monitoring-driver-verifier.md)します。
+これらのコマンドの使用に関する詳細については、[Driver Verifier を制御する](controlling-driver-verifier.md)と[Driver Verifier の監視](monitoring-driver-verifier.md)を参照してください。
 
 ## <a name="span-idreturncodesspanspan-idreturncodesspanspan-idreturncodesspanreturn-codes"></a><span id="Return_Codes"></span><span id="return_codes"></span><span id="RETURN_CODES"></span>リターン コード
 

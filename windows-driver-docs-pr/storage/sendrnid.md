@@ -50,7 +50,7 @@ RNID コマンドを送信するポートの世界中の名前。 この情報�
 使用しないでください。 使わないでください。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
 
 *ResponseBufferCount*   
 RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ResponseBufferCount**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。

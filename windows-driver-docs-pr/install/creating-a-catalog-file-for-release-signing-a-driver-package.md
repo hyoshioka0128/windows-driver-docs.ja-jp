@@ -14,7 +14,7 @@ ms.locfileid: "56570979"
 # <a name="creating-a-catalog-file-for-release-signing-a-driver-package"></a>ドライバー パッケージのリリース署名用のカタログ ファイルの作成
 
 
-作成するプロセスを[カタログ ファイル](catalog-files.md)はテスト署名とリリース署名も同じです、[ドライバー パッケージ](driver-packages.md)します。 このプロセスの詳細については、次を参照してください。[ドライバー パッケージのテスト署名カタログ ファイルを作成する](creating-a-catalog-file-for-test-signing-a-driver-package.md)します。
+作成するプロセスを[カタログ ファイル](catalog-files.md)はテスト署名とリリース署名も同じです、[ドライバー パッケージ](driver-packages.md)します。 このプロセスの詳細については、[ドライバー パッケージのテスト署名カタログ ファイルを作成する](creating-a-catalog-file-for-test-signing-a-driver-package.md)を参照してください。
 
  
 

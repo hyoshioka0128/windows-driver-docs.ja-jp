@@ -25,13 +25,13 @@ Synchronous Connection-Oriented (SCO) 接続を使用するプロファイルの
 
 SCO プロファイルのドライバーを発行したとき、 **BRB\_SCO\_オープン\_チャネル**BRB へのポインターを指定、 [ *SCO コールバック関数*](https://msdn.microsoft.com/library/windows/hardware/ff536772)で、**コールバック**、BRB のメンバーの対応する[  **\_BRB\_SCO\_オープン\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536870)構造体。 リモート デバイスが SCO 接続要求を受け入れる場合、Bluetooth ドライバー スタックし、通知を送信できますコールバック関数を使ってプロファイル ドライバー SCO 接続に変更されたとき。
 
-SCO 接続の作成の詳細については、次を参照してください。 [SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)します。
+SCO 接続の作成の詳細については、[SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)を参照してください。
 
 論理リンク コント ローラーと適応プロトコル (L2CAP) 接続を使用するプロファイルのドライバーを実装および登録、 [ *L2CAP コールバック関数*](https://msdn.microsoft.com/library/windows/hardware/ff536755)します。
 
 L2CAP プロファイルのドライバーを発行したとき、 **BRB\_L2CA\_オープン\_チャネル**BRB へのポインターを指定、 [ *L2CAP コールバック関数*](https://msdn.microsoft.com/library/windows/hardware/ff536755)で、**コールバック**、BRB のメンバーの対応する[  **\_BRB\_L2CA\_オープン\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536860)構造体。 リモート デバイスが L2CAP 接続要求を受け入れる場合、Bluetooth ドライバー スタックし、通知を送信できますコールバック関数を使ってプロファイル ドライバー L2CAP 接続に変更されたとき。
 
-L2CAP 接続の作成の詳細については、次を参照してください。 [L2CAP リモート デバイスにクライアント接続を作成する](creating-a-l2cap-client-connection-to-a-remote-device.md)します。
+L2CAP 接続の作成の詳細については、[L2CAP リモート デバイスにクライアント接続を作成する](creating-a-l2cap-client-connection-to-a-remote-device.md)を参照してください。
 
 同様に、ときにプロファイル ドライバー自身を登録 (L2CAP、SCO) の着信接続を受け入れることを要求するリモート デバイスが接続しようとしたときに通知を受け取るコールバック関数を登録する必要があります。
 

@@ -160,7 +160,7 @@ HRESULT ActivateAudioInterfaceCompletionHandler::ActivateCompleted( IActivateAud
 
 Oem 定義の効果がどのようになるか各モードで使用します。 Windows では、オーディオ効果の 17 種類の一覧を定義します。
 
-モードと APOs を関連付ける方法については、次を参照してください。[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)します。
+モードと APOs を関連付ける方法については、[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)を参照してください。
 
 どのような影響が要求するアプリケーションは RAW または RAW 以外の処理のいずれかの特定のストリームに適用します。 アプリケーションに問い合わせることもできるときに通知の効果または生の処理状態を変更します。 アプリケーションは、通信などの特定のストリーミング カテゴリがある場合、または使用されて、RAW モードだけの場合を判断するこの情報を使用することがあります。 RAW モードにしか使用できない場合、アプリケーションは、追加するための独自のオーディオの処理量を判断できます。
 
@@ -170,7 +170,7 @@ System.Devices.AudioDevice.RawProcessingSupported が true の場合は、アプ
 
 アプリケーションでは、処理、オーディオ ハードウェア構成に関係なく最適なオーディオ効果を要求する必要があります。 たとえば、通信と、Windows のバック グラウンド ミュージックの一時停止するようにストリームをタグ付けします。
 
-オーディオ ストリームの静的なカテゴリの詳細については、次を参照してください。 [AudioCategory 列挙](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.audiocategory.aspx)と[MediaElement.AudioCategory プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory.aspx)します。
+オーディオ ストリームの静的なカテゴリの詳細については、[AudioCategory 列挙](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.audiocategory.aspx)と[MediaElement.AudioCategory プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory.aspx)を参照してください。
 
 ## <a name="span-idclsidsforsystemeffectsspanspan-idclsidsforsystemeffectsspanspan-idclsidsforsystemeffectsspanclsids-for-system-effects"></a><span id="CLSIDs_for_System_Effects"></span><span id="clsids_for_system_effects"></span><span id="CLSIDS_FOR_SYSTEM_EFFECTS"></span>システムの効果の Clsid
 

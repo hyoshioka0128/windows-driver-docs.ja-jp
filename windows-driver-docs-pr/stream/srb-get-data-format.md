@@ -19,7 +19,7 @@ ms.locfileid: "56551805"
 
 クラスのドライバーでは、ストリームのデータ形式を照会するには、この要求を発行します。 ミニドライバーを設定する必要があります*pSrb*-&gt;**CommandData**ストリームの現在のデータ形式にします。
 
-データ形式の詳細については、次を参照してください。、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)します。
+データ形式の詳細については、、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)を参照してください。
 
  
 

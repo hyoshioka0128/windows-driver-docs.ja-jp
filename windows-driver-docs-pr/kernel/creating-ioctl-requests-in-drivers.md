@@ -25,7 +25,7 @@ ms.locfileid: "56560597"
 
 クラス ドライバーまたはその他の高度なドライバーは Irp をコントロールの I/O 要求を割り当てるし、次のように、次の下位ドライバーに送信。
 
-1.  割り当てまたは I/O 要求パケットを再利用 ([**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)) メジャーの関数コードで[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)または[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。 使用することができます、 [ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)ルーチンを具体的には、IOCTL IRP を割り当てます。 など、汎用的な IRP の作成と初期化ルーチンを使用することもできます[ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)、 [ **IoReuseIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549661)、または。[**IoInitializeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549315)します。 IRP の割り当ての詳細については、次を参照してください。[下位レベルのドライバーの作成の Irp](creating-irps-for-lower-level-drivers.md)します。
+1.  割り当てまたは I/O 要求パケットを再利用 ([**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)) メジャーの関数コードで[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)または[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。 使用することができます、 [ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)ルーチンを具体的には、IOCTL IRP を割り当てます。 など、汎用的な IRP の作成と初期化ルーチンを使用することもできます[ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)、 [ **IoReuseIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549661)、または。[**IoInitializeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549315)します。 IRP の割り当ての詳細については、[下位レベルのドライバーの作成の Irp](creating-irps-for-lower-level-drivers.md)を参照してください。
 
 2.  IOCTL で IRP の下位のドライバーの I/O スタックの場所を設定\_*XXX*パラメーターを適切なコードをしています。
 
@@ -35,7 +35,7 @@ ms.locfileid: "56560597"
 
     -   下位のドライバーが、特定の要求を処理する方法を決定します。
 
-    -   IRP 別の送信を要求または下位のドライバーが要求された操作が完了したら破棄 IRP がドライバーを作成、再利用します。 ドライバーは Irp を再利用できませんを[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)を作成します。 詳細については、次を参照してください。 [Irp の再利用](reusing-irps.md)します。
+    -   IRP 別の送信を要求または下位のドライバーが要求された操作が完了したら破棄 IRP がドライバーを作成、再利用します。 ドライバーは Irp を再利用できませんを[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)を作成します。 詳細については、[Irp の再利用](reusing-irps.md)を参照してください。
 
 5.  呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)から下位のドライバーに要求を渡します。
 

@@ -22,7 +22,7 @@ ms.locfileid: "56557831"
 
 このトピックでは、KMDF ドライバーは、そのイベントのコールバック関数や、登録する省略可能なイベント コールバック関数で提供する必要があるコードを説明しますシステム モード DMA のデバイスの I/O 要求を処理します。
 
-KMDF とバス マスター DMA については、次を参照してください。 [KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)します。
+KMDF とバス マスター DMA については、[KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)を参照してください。
 
 次の図は、イベントには、ドライバーはサポート システム モードの DMA を使用してコールバック関数を示します。
 

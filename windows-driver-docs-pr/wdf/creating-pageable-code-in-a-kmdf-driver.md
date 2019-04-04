@@ -23,7 +23,7 @@ ms.locfileid: "56556757"
 
 1.  ページング可能なセクションでは、ドライバーを特定します。
 
-    ページング可能なセクションでは必要になるまでメモリに読み込まれません。 ドライバーではページング可能なセクションを作成する方法については、次を参照してください。[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346)します。
+    ページング可能なセクションでは必要になるまでメモリに読み込まれません。 ドライバーではページング可能なセクションを作成する方法については、[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346)を参照してください。
 
 2.  ページングされたドライバーのコードが低電力状態からすばやくがスリープ解除するコンピューターの機能を阻害していないことを確認します。
 
@@ -39,7 +39,7 @@ ms.locfileid: "56556757"
 
     有効にして、電源の遷移中にページング可能なデータにアクセスするドライバーの機能を無効にする方法については、次を参照してください[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)と[  **。WdfDeviceInitSetPowerNotPageable**](https://msdn.microsoft.com/library/windows/hardware/ff546147)します。
 
-    ときに、ドライバーが非ページング状態を確認する方法については、次を参照してください。 [ **WdfDevStateIsNP**](https://msdn.microsoft.com/library/windows/hardware/ff546958)します。
+    ときに、ドライバーが非ページング状態を確認する方法については、[ **WdfDevStateIsNP**](https://msdn.microsoft.com/library/windows/hardware/ff546958)を参照してください。
 
  
 

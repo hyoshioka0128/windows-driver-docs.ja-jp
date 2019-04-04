@@ -39,7 +39,7 @@ ms.locfileid: "56569775"
 
 インターフェイス クラスのインスタンスを登録するには、このセクションで指定された GUID 値で参照する必要が、 [ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)で、 [ **INF *DDInstall*します。インターフェイス セクション**](inf-ddinstall-interfaces-section.md)、それ以外の場合、新しくインストールしたデバイスのドライバーを呼び出す必要がありますまたは[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)この GUID を持つ。
 
-GUID を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイス。
+GUID を作成する方法の詳細については、[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)を参照してください。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイス。
 
 <a href="" id="install-interface-section"></a>*インストール-section インターフェイス*  
 場合によってはシステム定義された拡張機能の他の場所でこの INF のいずれかでの INF ライター定義のセクションを参照します。
@@ -52,7 +52,7 @@ GUID を作成する方法の詳細については、次を参照してくださ
 
 指定したときに*InterfaceClassGUID*が既にインストールされていないシステムでは、対応するインターフェイスのクラスがインストールされている<em>DDInstall</em>**します。インターフェイス**セクションは、によって処理される、 [SetupAPI](setupapi.md)デバイスのインストールまたはときにそのデバイスのドライバーは、最初の呼び出し中に関数**IoRegisterDeviceInterface**.
 
-各*インストール-section インターフェイス*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*インストール-section インターフェイス*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 指定した任意*インストール-section インターフェイス*は次の一般的な形式があります。
 

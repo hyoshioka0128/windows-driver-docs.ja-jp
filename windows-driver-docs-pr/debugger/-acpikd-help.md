@@ -54,7 +54,7 @@ ms.locfileid: "56552403"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。 [ACPI デバッグ](acpi-debugging.md)します。
+詳細については、[ACPI デバッグ](acpi-debugging.md)を参照してください。
 
  
 

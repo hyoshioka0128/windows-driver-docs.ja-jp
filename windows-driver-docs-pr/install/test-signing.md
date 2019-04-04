@@ -199,7 +199,7 @@ BCDEdit を使用して、ユーザーは、システムの Administrators グ�
 
     -   テスト署名、 *tstamd64.cat*のカタログ ファイル、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)します。 詳細についてはこの[カタログ ファイル](catalog-files.md)が作成されるを参照してください[ドライバー パッケージのテスト署名カタログ ファイルを作成する](creating-a-catalog-file-for-test-signing-a-driver-package.md)します。
 
-    -   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
+    -   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、[テスト証明書を作成する](creating-test-certificates.md)を参照してください。
 
     -   タイム スタンプ機関 (TSA) 経由のデジタル署名のタイムスタンプ。
 

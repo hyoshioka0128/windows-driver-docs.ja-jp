@@ -37,7 +37,7 @@ ms.locfileid: "56556903"
 
 ツール バー ボタンには、さまざまな影響があります。 これらのほとんどは、メニュー コマンドと同じです。 ツール バー ボタンに関連付けられているコマンドを実行するには、ツール バー ボタンをクリックします。 ボタンを使用できない場合は、使用できない表示されます。
 
-各ボタンの詳細については、次を参照してください。[ツール バー ボタン](toolbar-buttons.md)します。
+各ボタンの詳細については、[ツール バー ボタン](toolbar-buttons.md)を参照してください。
 
 ### <a name="span-idusingthestatusbarspanspan-idusingthestatusbarspanusing-the-status-bar"></a><span id="using_the_status_bar"></span><span id="USING_THE_STATUS_BAR"></span>ステータス バーを使用します。
 

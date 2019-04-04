@@ -27,7 +27,7 @@ WDK には、WPD ドライバー開発者向けのいくつかのツールが含
 
 このオブジェクトは、10 個のプロパティをサポートします。 1 つに、センサー\_読み取りとセンサー\_UPDATE\_間隔は WpdBasicHardwareDriver、によって定義され、センサー ファームウェアによって発行されたデータを表現するカスタム プロパティ。 この例では、センサーで\_読み取りプロパティは、センサーを識別します (2 = Sensiron 気温・湿度センサー)、要素の数 (1)、要素のサイズ (バイト単位の 7)、現在の気温 (74.4 F) および相対湿度 (37.3%)。 センサー\_UPDATE\_INTERVAL プロパティは、デバイスがイベントを起動する頻度を指定します。 この値は、02000 は、2 秒の更新間隔を示します (ミリ秒単位) で指定されます。 ファームウェアでは、2 ~ 60 秒間の更新の間隔の構成をサポートします。
 
-WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造体は、2 つの部分で構成されています: GUID と DWORD。 グローバル一意識別子 (GUID) がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、次を参照してください。 [PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md) Windows Driver Kit (WDK) ドキュメントです。
+WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造体は、2 つの部分で構成されています: GUID と DWORD。 グローバル一意識別子 (GUID) がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、[PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md) Windows Driver Kit (WDK) ドキュメントを参照してください。
 
 DECLARE を使用して\_PROPERTYKEY のマクロには、ドライバーで新しいプロパティの PROPERTYKEY 構造体を宣言できます。 次の例は、センサー、PROPERTYKEY の宣言\_読み取りプロパティ。 この例が表示されます、 *WpdObjectProperties.cpp*ファイル。
 

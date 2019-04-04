@@ -22,7 +22,7 @@ ms.locfileid: "57349953"
 
 次の表には、ラスター データの圧縮コマンドが表示されます。 すべてのコマンドを指定する、[コマンド エントリ形式](command-entry-format.md)します。
 
-ラスター データ圧縮コマンドの詳細については、次を参照してください。[ラスター データの圧縮](compressing-raster-data.md)します。
+ラスター データ圧縮コマンドの詳細については、[ラスター データの圧縮](compressing-raster-data.md)を参照してください。
 
 <table>
 <colgroup>
@@ -68,7 +68,7 @@ ms.locfileid: "57349953"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
  
 

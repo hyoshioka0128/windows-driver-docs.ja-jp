@@ -51,7 +51,7 @@ void AddTarget(
 レポートを対象のイベントのスコープです。 このメンバーが 0 の場合は、WMI クライアントがで示されたポートに関連付けられたイベントを受け取ります*DiscoveredPortWWN*します。 このメンバーが 0 以外の場合は、WMI クライアントはすべての検出された現在のターゲットとして後で、検出されたターゲットに関連付けられているすべてのイベントを受信します。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **AddTarget\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff550138)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **AddTarget\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff550138)構造体。
 
 <a name="return-value"></a>戻り値
 ------------

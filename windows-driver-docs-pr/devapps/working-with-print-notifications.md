@@ -14,9 +14,9 @@ ms.locfileid: "57350133"
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>UWP デバイス アプリでの印刷通知の操作
 
 
-Windows 8.1 で UWP デバイス アプリは、v4 印刷ドライバーから送信される双方向通信 (Bidi) イベントに応答できます。 このトピックでは、印刷の通知が導入されていて、表示方法、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプルでは、バック グラウンド タスクを使用して、印刷通知に応答します。 バック グラウンド タスクでは、ローカルのアプリ データの詳細の保存、トーストを送信、タイルおよびバッジの更新の通知を保存する方法を示します。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+Windows 8.1 で UWP デバイス アプリは、v4 印刷ドライバーから送信される双方向通信 (Bidi) イベントに応答できます。 このトピックでは、印刷の通知が導入されていて、表示方法、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプルでは、バック グラウンド タスクを使用して、印刷通知に応答します。 バック グラウンド タスクでは、ローカルのアプリ データの詳細の保存、トーストを送信、タイルおよびバッジの更新の通知を保存する方法を示します。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
-C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプルでは、アプリのバック グラウンド部分 (*バック グラウンド タスク*) で、 **BackgroundTask**プロジェクト。 バック グラウンド タスクのコードは、 **PrintBackgroundTask.cs**ファイル。 *フォア グラウンド アプリ*、[スタート] から起動できる全画面表示アプリは、 **DeviceAppForPrinters**プロジェクト。 **InkLevel.xaml.cs**ファイルは、通知の詳細をフォア グラウンド アプリからアクセスできることという 1 つの方法を示します。 サンプルを印刷通知を使用するでプリンターの拡張機能ライブラリを使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、次を参照してください。、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
+C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプルでは、アプリのバック グラウンド部分 (*バック グラウンド タスク*) で、 **BackgroundTask**プロジェクト。 バック グラウンド タスクのコードは、 **PrintBackgroundTask.cs**ファイル。 *フォア グラウンド アプリ*、[スタート] から起動できる全画面表示アプリは、 **DeviceAppForPrinters**プロジェクト。 **InkLevel.xaml.cs**ファイルは、通知の詳細をフォア グラウンド アプリからアクセスできることという 1 つの方法を示します。 サンプルを印刷通知を使用するでプリンターの拡張機能ライブラリを使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)を参照してください。
 
 **注**  このトピックで示すコード例に基づいています、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプル。 このサンプルも JavaScript および C++ で使用できます。 C++ は COM を直接アクセスできるため、C++ のバージョン サンプルにはが含まれていないことコード ライブラリ プロジェクトに注意してください。 コードの最新バージョンを参照するサンプルをダウンロードします。
 
@@ -27,11 +27,11 @@ C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p
 
 印刷の通知は、紙詰まりなどの印刷、プリンターのドア、低のインク レベル、またはプリンターの紙不足エラーを開くときに重要なプリンター イベントをユーザーに通知 UWP デバイス アプリを使用できます。 プリンターには、通知がトリガーされた場合は、システム イベント ブローカーは、アプリのバック グラウンド タスクを実行します。 そこから、バック グラウンド タスクできます通知の詳細を保存、トーストを送信、タイルを更新、更新、バッジ、または何もしません。 通知の詳細を保存することによって、アプリがユーザーを把握し、そのプリンターの問題の解決に役立つ、エクスペリエンスを提供できます。
 
-**注**  プリンタの製造元は、UWP デバイス アプリを使用して印刷通知の使用は、v4 印刷ドライバーで Bidi と DriverEvent XML ファイルを実装する必要があります。 詳細については、次を参照してください。[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)します。
+**注**  プリンタの製造元は、UWP デバイス アプリを使用して印刷通知の使用は、v4 印刷ドライバーで Bidi と DriverEvent XML ファイルを実装する必要があります。 詳細については、[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)を参照してください。
 
  
 
-DriverEvent が発生すると、UWP デバイス アプリのバック グラウンド タスクを開始、アプリは、続行する方法に関していくつかのオプションが。 タスクの起動に潜在顧客のフローに関する詳細については、次を参照してください。 [UI のカスタマイズのドライバー サポート](https://msdn.microsoft.com/library/windows/hardware/jj659898)します。
+DriverEvent が発生すると、UWP デバイス アプリのバック グラウンド タスクを開始、アプリは、続行する方法に関していくつかのオプションが。 タスクの起動に潜在顧客のフローに関する詳細については、[UI のカスタマイズのドライバー サポート](https://msdn.microsoft.com/library/windows/hardware/jj659898)を参照してください。
 
 バック グラウンド タスクを選択できます。
 
@@ -48,7 +48,7 @@ DriverEvent が発生すると、UWP デバイス アプリのバック グラ�
 
 開始する前に。
 
-1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
+1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)を参照してください。
 2.  開発用 PC の設定を取得します。 参照してください[Getting started](getting-started.md)については、ツールをダウンロードして開発者アカウントを作成します。
 3.  アプリをストアに関連付けます。 参照してください[UWP デバイスのアプリを作成](step-1--create-a-uwp-device-app.md)についてです。
 4.  アプリに関連付けているプリンター用のデバイス メタデータを作成します。 参照してください[デバイス メタデータを作成する](step-2--create-device-metadata.md)の詳細についてはします。
@@ -149,7 +149,7 @@ Windows アプリが印刷通知を処理できることを認識するために
 
 ### <a name="span-idsavingnotificationdetailsspanspan-idsavingnotificationdetailsspanspan-idsavingnotificationdetailsspansaving-notification-details"></a><span id="Saving_notification_details"></span><span id="saving_notification_details"></span><span id="SAVING_NOTIFICATION_DETAILS"></span>通知の詳細を保存しています
 
-バック グラウンド タスクでは、フォア グラウンド アプリを直接起動することはできません、ユーザーのみができます: から、タイル、トースト、または開始します。 これを確実に印刷通知の詳細をフォア グラウンド アプリがアクセスできること、バック グラウンド タスクは、それらをローカル ストレージに保存します。 ローカル ストレージの使用方法の詳細については、次を参照してください。[クイック スタート: アプリのローカル データ](https://go.microsoft.com/fwlink/p/?LinkId=317216)します。
+バック グラウンド タスクでは、フォア グラウンド アプリを直接起動することはできません、ユーザーのみができます: から、タイル、トースト、または開始します。 これを確実に印刷通知の詳細をフォア グラウンド アプリがアクセスできること、バック グラウンド タスクは、それらをローカル ストレージに保存します。 ローカル ストレージの使用方法の詳細については、[クイック スタート: アプリのローカル データ](https://go.microsoft.com/fwlink/p/?LinkId=317216)を参照してください。
 
 Windows が呼び出すことによって、バック グラウンド タスクを実行する印刷通知がトリガーされたときにその`Run`メソッド。 通知のデータは、バック グラウンド タスクに Windows.Devices.Printers.Extensions.PrintNotificationEventDetails を型にキャストする必要がありますメソッド パラメーターで渡されます。 `PrinterName`と`EventData`そのオブジェクトのプロパティは、プリンター名と双方向のメッセージをそれぞれ実行します。
 
@@ -172,7 +172,7 @@ public void Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance task
 
 ### <a name="span-idupdatingatilespanspan-idupdatingatilespanspan-idupdatingatilespanupdating-a-tile"></a><span id="Updating_a_tile"></span><span id="updating_a_tile"></span><span id="UPDATING_A_TILE"></span>タイルの更新
 
-印刷通知の詳細に送信されると、`UpdateTile`メソッド、サンプルのバック グラウンド タスクは、タイルに表示する方法を示します。 タイルの詳細については、次を参照してください。[タイルとタイル通知の概要](https://go.microsoft.com/fwlink/p/?LinkId=317195)します。
+印刷通知の詳細に送信されると、`UpdateTile`メソッド、サンプルのバック グラウンド タスクは、タイルに表示する方法を示します。 タイルの詳細については、[タイルとタイル通知の概要](https://go.microsoft.com/fwlink/p/?LinkId=317195)を参照してください。
 
 この例は、バック グラウンド タスクの`UpdateTile`メソッドで、 **PrintBackgroundTask.cs**ファイル。
 ```CSharp
@@ -194,7 +194,7 @@ void UpdateTile(string printerName, string bidiMessage)
 
 ### <a name="span-idupdatingabadgespanspan-idupdatingabadgespanspan-idupdatingabadgespanupdating-a-badge"></a><span id="Updating_a_badge"></span><span id="updating_a_badge"></span><span id="UPDATING_A_BADGE"></span>バッジの更新
 
-`UpdateBadge`メソッド BadgeNotification クラスを使用して、バッジを更新する方法を示しています。 タイルの詳細については、次を参照してください。[バッジの概要](https://go.microsoft.com/fwlink/p/?LinkId=317196)します。
+`UpdateBadge`メソッド BadgeNotification クラスを使用して、バッジを更新する方法を示しています。 タイルの詳細については、[バッジの概要](https://go.microsoft.com/fwlink/p/?LinkId=317196)を参照してください。
 
 この例は、バック グラウンド タスクの`UpdateBadge`メソッドで、 **PrintBackgroundTask.cs**ファイル。
 
@@ -212,7 +212,7 @@ void UpdateBadge()
 
 ### <a name="span-idraisingatoastspanspan-idraisingatoastspanspan-idraisingatoastspanraising-a-toast"></a><span id="Raising_a_toast"></span><span id="raising_a_toast"></span><span id="RAISING_A_TOAST"></span>トーストを発生させる
 
-トースト通知は、関連する、時間を区別する情報を格納し、アプリに関連するコンテンツにすばやくアクセスできることをユーザーに一時的なメッセージです。 トースト通知は、徹底的に関心のある何か、アプリに戻るための招待としてユーザーに表示する必要があります。 詳細については、次を参照してください。[トースト通知の概要](https://go.microsoft.com/fwlink/p/?LinkId=317197)します。
+トースト通知は、関連する、時間を区別する情報を格納し、アプリに関連するコンテンツにすばやくアクセスできることをユーザーに一時的なメッセージです。 トースト通知は、徹底的に関心のある何か、アプリに戻るための招待としてユーザーに表示する必要があります。 詳細については、[トースト通知の概要](https://go.microsoft.com/fwlink/p/?LinkId=317197)を参照してください。
 
 トースト通知を有効にするには、アプリを登録するトースト対応のアプリのパッケージ マニフェストである必要があります。 `VisualElements`要素、設定、`ToastCapable`属性を true にします。
 
@@ -264,7 +264,7 @@ void ShowToast(string title, string body)
 ## <a name="span-idstep5handleactivationspanspan-idstep5handleactivationspanspan-idstep5handleactivationspanstep-5-handle-activation"></a><span id="Step_5__Handle_activation"></span><span id="step_5__handle_activation"></span><span id="STEP_5__HANDLE_ACTIVATION"></span>手順 5: アクティブ化の処理
 
 
-印刷の通知には、バック グラウンド タスクがトリガーされた後は、トースト通知またはタイルをタップしてアプリを起動できます。 パラメーターを使用してアプリに渡されるいずれかから、アプリがアクティブになる場合`LaunchActivatedEventArgs.arguments`プロパティ。 ライセンス認証と Microsoft Store アプリのライフ サイクルについての詳細については、次を参照してください。[アプリケーションのライフ サイクル](https://go.microsoft.com/fwlink/p/?LinkId=317387)します。
+印刷の通知には、バック グラウンド タスクがトリガーされた後は、トースト通知またはタイルをタップしてアプリを起動できます。 パラメーターを使用してアプリに渡されるいずれかから、アプリがアクティブになる場合`LaunchActivatedEventArgs.arguments`プロパティ。 ライセンス認証と Microsoft Store アプリのライフ サイクルについての詳細については、[アプリケーションのライフ サイクル](https://go.microsoft.com/fwlink/p/?LinkId=317387)を参照してください。
 
 かどうかは、アプリがいずれかの場合、これらのアクティブ化を確認するのには、処理、`OnLaunched`イベント、イベント ハンドラーに渡されるイベント引数を確認します。 イベント引数が null の場合、アプリが最初からユーザーによって有効化されました。 イベント引数が null でない場合は、アプリがトーストまたはタイルから起動されました。
 
@@ -320,7 +320,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
 ## <a name="span-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanstep-6-access-notification-details"></a><span id="Step_6__Access_notification_details"></span><span id="step_6__access_notification_details"></span><span id="STEP_6__ACCESS_NOTIFICATION_DETAILS"></span>手順 6: アクセス通知の詳細
 
 
-バック グラウンド タスクは、フォア グラウンド アプリを直接起動ことはできません、ために、印刷通知の詳細は、フォア グラウンド アプリがアクセスできるように、アプリの設定に保存する必要があります。 ローカル ストレージの使用方法の詳細については、次を参照してください。[クイック スタート: アプリのローカル データ](https://go.microsoft.com/fwlink/p/?LinkId=317216)します。
+バック グラウンド タスクは、フォア グラウンド アプリを直接起動ことはできません、ために、印刷通知の詳細は、フォア グラウンド アプリがアクセスできるように、アプリの設定に保存する必要があります。 ローカル ストレージの使用方法の詳細については、[クイック スタート: アプリのローカル データ](https://go.microsoft.com/fwlink/p/?LinkId=317216)を参照してください。
 
 この例では、プリンター名と双方向のメッセージがから取得する方法でアプリの設定では、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプル。 コードは、`DisplayBackgroundTaskTriggerDetails`のメソッド、 **InkLevel.xaml.cs**ファイル。 なおキー インデックスの値`keyPrinterName`と`keyAsyncUIXML`、バック グラウンド タスクで使用される同じ文字列の定数**PrintBackgroundTask.cs**します。
 ```CSharp
@@ -375,7 +375,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
 4.  接続を切断し、プリンターをアンインストールします。 Windows が次に、デバイスが検出されたときに更新済みのデバイス メタデータの読み取りができるように、この手順が必要です。
 5.  編集し、デバイスのメタデータを保存します。 デバイス アプリをデバイスにリンクするには、デバイスでデバイス アプリを関連付ける必要があります。
-    **注**  デバイスのメタデータをまだ作成していない場合は、次を参照してください。 [UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+    **注**  デバイスのメタデータをまだ作成していない場合は、[UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)を参照してください。
 
      
 
@@ -401,7 +401,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
 -   **考えられる原因:** ドメイン ポリシーには、トースト通知が無効にします。 ドメインのままにし、もう一度やり直してください。
 
--   **考えられる原因:** プリンターは DriverEvents を実装していません。 Bidi と DriverEvents v4 ドライバーをサポートしていることを確認します。 詳細については、次を参照してください。 [UI のカスタマイズのドライバー サポート](https://msdn.microsoft.com/library/windows/hardware/jj659898)します。
+-   **考えられる原因:** プリンターは DriverEvents を実装していません。 Bidi と DriverEvents v4 ドライバーをサポートしていることを確認します。 詳細については、[UI のカスタマイズのドライバー サポート](https://msdn.microsoft.com/library/windows/hardware/jj659898)を参照してください。
 
 -   **考えられる原因:** コンピューターには、プリンター キュー内の最近のジョブがありません。 プリンターのアイコンが画面の右下隅に表示されることを確認します。 ない場合は、別の印刷ジョブを送信します。
 

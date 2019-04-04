@@ -34,7 +34,7 @@ ms.locfileid: "56573547"
 
 -   *DispatchPower* IRQL で起動時に突入パワーが必要なドライバーのルーチンを呼び出すことができます = ディスパッチ\_レベル。
 
-詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
+詳細については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)を参照してください。
 
  
 

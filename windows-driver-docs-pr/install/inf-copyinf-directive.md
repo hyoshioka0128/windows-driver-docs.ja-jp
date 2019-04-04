@@ -60,7 +60,7 @@ Windows Vista 以降では、次の点にも適用されます、 **CopyINF**デ
 
 Windows 10、特定の状況では、バージョン 1511 以降では (たとえば、Windows Update または呼び出しをいくつか実行している[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710))、Inf でコピー **CopyINF**適用可能なデバイスにもインストールされます。
 
-INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](copying-inf-files.md)します。
+INF ファイルをコピーする方法の詳細については、[コピー Inf](copying-inf-files.md)を参照してください。
 
 <a name="examples"></a>使用例
 --------

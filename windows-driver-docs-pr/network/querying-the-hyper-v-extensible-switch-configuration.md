@@ -35,11 +35,11 @@ HYPER-V 拡張可能スイッチのインターフェイスには、拡張可能
 
  
 
-**注**  拡張機能は、独自の OID 要求を生成するときでは、この同じと同様の NDIS フィルター ドライバー。 これを行う方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)します。
+**注**  拡張機能は、独自の OID 要求を生成するときでは、この同じと同様の NDIS フィルター ドライバー。 これを行う方法の詳細については、[NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)を参照してください。
 
  
 
-拡張可能スイッチ OID 要求の管理パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)します。
+拡張可能スイッチ OID 要求の管理パスの詳細については、[Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)を参照してください。
 
  
 

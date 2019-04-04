@@ -73,7 +73,7 @@ ms.locfileid: "57463856"
 <p>詳細については、<strong>プロパティ ページ</strong>エントリを参照してください<a href="inf-files-for-still-image-devices.md" data-raw-source="[INF Files for Still Image Devices](inf-files-for-still-image-devices.md)">静止画像デバイスの INF ファイル</a>します。</p></td>
 <td><p>省略可能</p>
 <p>このエントリは STI ドライバーによってのみ使用するためは WIA ドライバーの廃止されています。</p>
-<p>WIA ドライバー開発者向けに関連するプロパティ ページについては、次を参照してください。、<strong>注</strong>プロパティ ページの次の表の後にします。</p></td>
+<p>WIA ドライバー開発者向けに関連するプロパティ ページについては、、<strong>注</strong>プロパティ ページの次の表の後にを参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DeviceData</strong></p></td>

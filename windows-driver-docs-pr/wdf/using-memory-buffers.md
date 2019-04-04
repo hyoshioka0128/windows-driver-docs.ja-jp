@@ -40,7 +40,7 @@ ms.locfileid: "56560420"
 
 -   [**WdfMemoryCreateFromLookaside**](https://msdn.microsoft.com/library/windows/hardware/ff548709)からのメモリ バッファーを作成し、[ルック アサイド リスト](#using-lookaside-lists)します。
 
-受信の I/O 要求を表すメモリ オブジェクトを取得するバッファー、ドライバーの呼び出し[ **WdfRequestRetrieveInputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff550015)と[ **WdfRequestRetrieveOutputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550019)します。 詳細については、I/O 要求のバッファーを取得する方法については、次を参照してください。 [Framework ベースのドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff540701)します。
+受信の I/O 要求を表すメモリ オブジェクトを取得するバッファー、ドライバーの呼び出し[ **WdfRequestRetrieveInputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff550015)と[ **WdfRequestRetrieveOutputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550019)します。 詳細については、I/O 要求のバッファーを取得する方法については、[Framework ベースのドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff540701)を参照してください。
 
 メモリ オブジェクトのバッファーのサイズとアドレスを取得するには、ドライバーが呼び出す[ **WdfMemoryGetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff548715)します。
 
@@ -50,7 +50,7 @@ ms.locfileid: "56560420"
 
 ドライバーが I/O 要求を送信すると、 [I/O ターゲット](using-i-o-targets.md)、通常への入力または出力バッファーを渡す、 [framework I/O ターゲット オブジェクトのメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265644)します。 ドライバーは、いずれかを渡すことによって、バッファーを指定します、 [ **WDF\_メモリ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff552392)バッファーを記述またはメモリ オブジェクトを渡すことによって処理される構造体。 (同期的に I/O 要求の送信 I/O ターゲット オブジェクトのメソッドが必要です、 **WDF\_メモリ\_記述子**構造、およびメソッドを非同期的に必要なメモリ オブジェクトのハンドルを I/O 要求を送信します)。
 
-メモリ バッファーが有効な場合については、次を参照してください。[メモリ バッファーのライフ サイクル](memory-buffer-life-cycle.md)します。
+メモリ バッファーが有効な場合については、[メモリ バッファーのライフ サイクル](memory-buffer-life-cycle.md)を参照してください。
 
 ### <a href="" id="using-lookaside-lists"></a> ルック アサイド リストの使用
 

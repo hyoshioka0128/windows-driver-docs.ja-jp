@@ -23,7 +23,7 @@ ms.locfileid: "56553574"
 
 [WIA Microdriver の構築](building-a-wia-microdriver.md)
 
-WDK の環境でのドライバーをビルドする方法の詳細については、次を参照してください。[構築ドライバー ツール](https://msdn.microsoft.com/library/windows/hardware/ff552950)します。
+WDK の環境でのドライバーをビルドする方法の詳細については、[構築ドライバー ツール](https://msdn.microsoft.com/library/windows/hardware/ff552950)を参照してください。
 
  
 

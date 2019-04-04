@@ -44,7 +44,7 @@ ms.locfileid: "56556719"
 使用して、出力が表示されます。[デバッガー マークアップ言語 (DML)](debugger-markup-language-commands.md)します。 出力では、表示されている各拡張機能は、拡張機能の詳細を取得するクリックできるリンクです。 すべての拡張機能モジュールでは、DML をサポートします。
 
 <span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *パターン*   
-拡張機能を含める必要があるパターンを指定します。 *パターン*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
+拡張機能を含める必要があるパターンを指定します。 *パターン*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

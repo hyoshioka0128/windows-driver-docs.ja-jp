@@ -33,7 +33,7 @@ Microdriver は、単純なフラット ベッド スキャナーをサポート
 
 -   Microdrivers は、3 回のスキャン (色のフィルターを使用してカラー イメージをキャプチャするは、古い色スキャナーで使用) をサポートしていません。
 
-Microdrivers の開発に関する詳細については、次を参照してください。[作成 WIA Microdriver](creating-a-wia-microdriver.md)します。
+Microdrivers の開発に関する詳細については、[作成 WIA Microdriver](creating-a-wia-microdriver.md)を参照してください。
 
 ### <a name="minidriver"></a>ミニドライバー
 

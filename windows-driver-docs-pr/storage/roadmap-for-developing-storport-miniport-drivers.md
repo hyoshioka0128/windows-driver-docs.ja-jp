@@ -46,11 +46,11 @@ ms.locfileid: "56570142"
 
 8.  **Storport ミニポート ドライバーのドライバー パッケージを作成します。**
 
-    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
+    詳細については、[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)を参照してください。
 
 9.  **署名し、配布、storport ミニポート****ドライバー。**
 
-    最後の手順では、(必要に応じて) にサインインし、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
+    最後の手順では、(必要に応じて) にサインインし、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)を参照してください。
 
 これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
 

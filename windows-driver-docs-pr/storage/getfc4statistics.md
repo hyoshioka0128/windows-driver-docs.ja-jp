@@ -43,7 +43,7 @@ void GetFC4Statistics(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)構造体。
 
 *PortWWN*   
 Nx 型のローカル ポートの世界中の名前\_がトラフィックの統計情報が報告されることをポート。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **GetFC4Statistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553958)構造体。

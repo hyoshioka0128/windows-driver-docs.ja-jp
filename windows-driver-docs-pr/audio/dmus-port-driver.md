@@ -55,7 +55,7 @@ DMU の種類の 1 つの構造の記憶域を含むメッセージ バッファ
 使用されません。
 Dmu のポートおよびミニポート ドライバー オブジェクトが、それぞれを互い通信**IPortDMus**と[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)インターフェイス。 さらに、ポート ドライバーと通信を介して、ミニポート ドライバーのストリーム オブジェクト、 [IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)インターフェイス、およびストリーム オブジェクトのミニポート ドライバーの通信ポート ドライバーのアロケーターをその**IAllocatorMXF**インターフェイス。
 
-DirectMusic のドライバー サポートについての詳細については、次を参照してください。[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)します。
+DirectMusic のドライバー サポートについての詳細については、[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)を参照してください。
 
 Windows XP 以降では、 **IPortDMus**と[IPortMidi](https://msdn.microsoft.com/library/windows/hardware/ff536891)インターフェイスはいずれも 1 つの内部ドライバー モジュールに実装します。 この統合は、これら 2 つのインターフェイスの類似性によって促進されます。 たとえば、同じメソッドは、両方のインターフェイスに対して定義されます。 Windows の以前のバージョンが表示されないの動作の変更用に記述されたアプリケーション、 **IPortMidi**と**IPortDMus**インターフェイス MIDI と Dmu ポート ドライバーの統合に起因します。
 

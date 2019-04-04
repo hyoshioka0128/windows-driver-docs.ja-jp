@@ -31,7 +31,7 @@ Common Log File System (CLFS) は、専用のログをアーカイブ末尾を�
 
 実際には、2 つの尾部短期間ではないログ: ベース LSN とアーカイブ末尾でマークされた 1 つで 1 つをマークします。 2 つの末尾が離れを配置するには、必要に応じて呼び出すことによって[ **ClfsAdvanceLogBase** ](https://msdn.microsoft.com/library/windows/hardware/ff540773) (または[ **ClfsWriteRestartArea**](https://msdn.microsoft.com/library/windows/hardware/ff541770))、および[ **ClfsSetArchiveTail**](https://msdn.microsoft.com/library/windows/hardware/ff541744)します。 通常、基本の LSN は、トランザクション ロールバックのために必要になりますもまたは回復、および対象のアーカイブが実行されていない最も古いレコードをアーカイブ末尾のポイントを再起動する最も古いレコードを指します。 アーカイブ末尾には、ベースの LSN よりも小さくすることがありますまたはベースの LSN よりも大きいことが考えられますことに注意してください。
 
-ベースの LSN とアーカイブ末尾が重要なを呼び出すと[ **ClfsReadNextLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541690)繰り返しを前の Lsn によってリンクされているレコードのチェーンを読み取るには、元に戻す next Lsn、またはユーザーの Lsn。 **ClfsReadNextLogRecord**はアーカイブ末尾とベースの LSN よりも小さい LSN を持つレコードを読み取れません。 ただし、アーカイブ末尾とベースの LSN 間の LSN がレコードを読み取ります。 次のレコードのチェーンの詳細については、次を参照してください。 [CLFS Stream からのデータ レコードの読み取り](reading-data-records-from-a-clfs-stream.md)します。
+ベースの LSN とアーカイブ末尾が重要なを呼び出すと[ **ClfsReadNextLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541690)繰り返しを前の Lsn によってリンクされているレコードのチェーンを読み取るには、元に戻す next Lsn、またはユーザーの Lsn。 **ClfsReadNextLogRecord**はアーカイブ末尾とベースの LSN よりも小さい LSN を持つレコードを読み取れません。 ただし、アーカイブ末尾とベースの LSN 間の LSN がレコードを読み取ります。 次のレコードのチェーンの詳細については、[CLFS Stream からのデータ レコードの読み取り](reading-data-records-from-a-clfs-stream.md)を参照してください。
 
  
 

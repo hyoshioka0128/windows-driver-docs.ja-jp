@@ -19,14 +19,14 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 <a href="" id="priority-level-and-flow-control"></a>優先度レベルとフロー制御  
 このポリシーは、エグレス トラフィックの IEEE 802.1p の優先度レベルと省略可能なフロー コントロール アルゴリズムを定義します。
 
-詳細については、次を参照してください。[優先度レベルとフロー制御](priority-levels-and-flow-control.md)します。
+詳細については、[優先度レベルとフロー制御](priority-levels-and-flow-control.md)を参照してください。
 
 <a href="" id="traffic-selection-algorithms--tsas-"></a>トラフィックの選択アルゴリズム (TSAs)  
 このポリシーは、ネットワーク アダプターがその送信キューからの配信のエグレス トラフィックがどのように選択する方法を指定します。 たとえば、アダプターでは、IEEE 802.1p の優先度またはトラフィック クラスごとに割り当てられているエグレス帯域幅の割合に基づく送信パケットを選択できます。
 
-詳細については、次を参照してください。[伝送選択アルゴリズム (TSAs)](transmission-selection-algorithms--tsas-.md)します。
+詳細については、[伝送選択アルゴリズム (TSAs)](transmission-selection-algorithms--tsas-.md)を参照してください。
 
-**注**  帯域幅の割り当てはの Enhanced Transmission Selection (ETS) TSA のみをサポートします。 詳細については、次を参照してください。 [Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)します。
+**注**  帯域幅の割り当てはの Enhanced Transmission Selection (ETS) TSA のみをサポートします。 詳細については、[Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)を参照してください。
 
  
 
@@ -44,7 +44,7 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 
 -   ETS TSA を使用するトラフィック クラスごとに割り当てられている送信帯域幅。
 
-OID メソッド要求[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)もトラフィックの分類を指定します。 これらの分類は、送信パケットと IEEE 802.1p の優先度のレベル間のリレーションシップを定義します。 詳細については、次を参照してください。 [NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)します。
+OID メソッド要求[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)もトラフィックの分類を指定します。 これらの分類は、送信パケットと IEEE 802.1p の優先度のレベル間のリレーションシップを定義します。 詳細については、[NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)を参照してください。
 
  
 

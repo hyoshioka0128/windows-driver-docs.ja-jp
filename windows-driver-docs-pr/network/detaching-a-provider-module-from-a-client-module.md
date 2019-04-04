@@ -29,7 +29,7 @@ ms.locfileid: "57350425"
 
 モジュールの NPI コールバック関数を 1 つ以上のクライアントの進行中の呼び出しがある場合と、プロバイダー モジュールの[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)コールバック関数が呼び出された、 *ProviderDetachClient*コールバック関数は、状態を返す必要があります\_保留します。 この場合、プロバイダー モジュールを呼び出す必要があります、 [ **NmrProviderDetachClientComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff568781)クライアント モジュールの NPI コールバック関数へのすべての実行中の呼び出しが完了した後も機能します。 呼び出し**NmrProviderDetachClientComplete** NMR プロバイダー モジュール クライアント モジュールからのデタッチが完了したことを通知します。
 
-クライアント モジュールの NPI コールバック関数の実行中の呼び出しの数を追跡する方法の詳細については、次を参照してください。[プログラミングに関する考慮事項](programming-considerations.md)します。
+クライアント モジュールの NPI コールバック関数の実行中の呼び出しの数を追跡する方法の詳細については、[プログラミングに関する考慮事項](programming-considerations.md)を参照してください。
 
 プロバイダーのモジュールを実装する場合、 [ *ProviderCleanupBindingContext* ](https://msdn.microsoft.com/library/windows/hardware/ff570396)コールバック関数、NMR 呼び出し、プロバイダー モジュールの*ProviderCleanupBindingContext*プロバイダー モジュールおよびクライアント モジュールの両方がお互いからのデタッチを完了してからのコールバック関数。 プロバイダー モジュールの*ProviderCleanupBindingContext*コールバック関数は、プロバイダー モジュールのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、プロバイダー モジュールは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
 

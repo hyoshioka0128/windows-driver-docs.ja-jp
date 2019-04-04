@@ -28,7 +28,7 @@ NDIS は、WMI クライアント クエリを実行し、接続指向ミニポ�
 
 スタンドアロンの呼び出しの後にマネージャーまたは接続指向のクライアント設定を開始します VC の呼び出すことによって、 [ **NdisCoCreateVC** ](https://msdn.microsoft.com/library/windows/hardware/ff561696)関数では、スタンドアロンのコール マネージャーまたはクライアントの接続指向のことができます名前と VC **NdisCoAssignInstanceName**します。 VC のインスタンスの名前を割り当てますの NDIS および WMI でインスタンス名を登録します。 WMI クライアントでは、VC とクエリを列挙し、または、VC を基準と Oid を設定できます。
 
-ミニポート コール マネージャー (MCM) は使用できません[ **NdisCoAssignInstanceName** ](https://msdn.microsoft.com/library/windows/hardware/ff561692)の VCs を名前にします。 代わりに、MCM は、VC のカスタム GUID と OID を作成し、NDIS を GUID の OID にマッピングを登録する必要があります。 カスタム Oid の登録の詳細については、次を参照してください。 [Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)します。
+ミニポート コール マネージャー (MCM) は使用できません[ **NdisCoAssignInstanceName** ](https://msdn.microsoft.com/library/windows/hardware/ff561692)の VCs を名前にします。 代わりに、MCM は、VC のカスタム GUID と OID を作成し、NDIS を GUID の OID にマッピングを登録する必要があります。 カスタム Oid の登録の詳細については、[Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)を参照してください。
 
  
 

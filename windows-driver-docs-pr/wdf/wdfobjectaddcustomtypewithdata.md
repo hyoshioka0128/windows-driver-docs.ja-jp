@@ -94,9 +94,9 @@ Framework のオブジェクトへのハンドル。
 
 ドライバーを呼び出す場合**WdfObjectAddCustomTypeWithData**データ バッファーへのポインター、ドライバーを提供できます、 [ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)または[ *EvtDestroyCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540841)オブジェクトが削除されたときに、メモリ バッファーの割り当てを解除するコールバック関数。
 
-オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのカスタム種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
 
-コード例では、次を参照してください。 [ **WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)します。
+コード例では、[ **WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

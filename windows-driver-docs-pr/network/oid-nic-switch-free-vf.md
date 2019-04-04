@@ -28,7 +28,7 @@ OID のオブジェクト識別子 (OID) セット要求を発行する上位の
 
 OID の OID セット要求を発行する上位のドライバー\_NIC\_スイッチ\_FREE\_VF を VF のリソースを解放します。 これらのリソースがの OID メソッド要求を通じて割り当てられた以前[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
 
-VF リソースを解放する方法の詳細については、次を参照してください。[仮想関数のリソースを解放](https://msdn.microsoft.com/library/windows/hardware/hh439570)します。
+VF リソースを解放する方法の詳細については、[仮想関数のリソースを解放](https://msdn.microsoft.com/library/windows/hardware/hh439570)を参照してください。
 
 **注**  そのドライバーは VF を同じリソースの解放が要求できる唯一のコンポーネントで上にある、ドライバーは VF のリソースの割り当てを要求するとします。 上にあるドライバーは、OID の OID セット要求を発行する必要があります\_NIC\_スイッチ\_FREE\_VF VF リソースを解放します。 ドライバーのによって割り当てられた各 VF のリソースを解放する必要があります上にあるドライバーを停止できますが、前に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)要求。
 

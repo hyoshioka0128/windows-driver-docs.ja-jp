@@ -33,12 +33,12 @@ Windows ドライバー キットは、作成、配置、および Windows ド�
 
 ### <a name="installing-the-wdtf-runtime-library-manually"></a>WDTF ランタイム ライブラリを手動でインストールします。
 
-WDK をインストールするときに、ドライバー テスト フレームワークの Windows ランタイムのインストール パッケージもインストールされます。 テスト コンピューターにインストール パッケージをコピーし、コマンドを実行する必要があります。 詳しくは、次を参照してください。[テスト コンピューター (代替方法) WDTF ランタイム ライブラリを手動でインストール](https://docs.microsoft.com/windows-hardware/drivers/wdtf/wdtf-runtime-library#manually-installing-wdtf-on-a-test-computer-alternative-method)で、 [WDTF ランタイム ライブラリ](wdtf-runtime-library.md)します。
+WDK をインストールするときに、ドライバー テスト フレームワークの Windows ランタイムのインストール パッケージもインストールされます。 テスト コンピューターにインストール パッケージをコピーし、コマンドを実行する必要があります。 詳しくは、[テスト コンピューター (代替方法) WDTF ランタイム ライブラリを手動でインストール](https://docs.microsoft.com/windows-hardware/drivers/wdtf/wdtf-runtime-library#manually-installing-wdtf-on-a-test-computer-alternative-method)で、 [WDTF ランタイム ライブラリ](wdtf-runtime-library.md)を参照してください。
 
 ## <a name="writing-tests-with-wdtf"></a>WDTF を使用したテストの記述
 
-WDK は、WDTF でテストを記述するためのテンプレートを提供します。 参照してください[ドライバー テスト テンプレートを使用してドライバーのテストを記述する方法](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-write-a-driver-test-)します。 ターゲット デバイスの WDTF 単純な I/O のプラグインを作成するのにテンプレートを使用することもできます。 詳しくは、次を参照してください。[デバイス用のプラグイン WDTF 単純な I/O の書き込み](writing-a-wdtf-simpleio-plug-in-for-your-device.md)します。
+WDK は、WDTF でテストを記述するためのテンプレートを提供します。 参照してください[ドライバー テスト テンプレートを使用してドライバーのテストを記述する方法](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-write-a-driver-test-)します。 ターゲット デバイスの WDTF 単純な I/O のプラグインを作成するのにテンプレートを使用することもできます。 詳しくは、[デバイス用のプラグイン WDTF 単純な I/O の書き込み](writing-a-wdtf-simpleio-plug-in-for-your-device.md)を参照してください。
 
 ## <a name="running-wdtf-tests"></a>WDTF テストの実行
 
-WDTF ドライバー テスト テンプレートを使用して Visual Studio で、ドライバーのテストをビルドすると、新しいテストはテスト コンピューターに配置が可能になります。 既定では、作成したテストはテスト カテゴリの **[My Test Category] (個人用テスト カテゴリ)** に表示されます。 テストの名前は選択したテスト ケースに基づいたもので、**My Plug and Play Surprise Remove Test** のような名前になります。 各テストのビルド中に、テストは上書きされ、簡単にテストの実行機能で実行可能になります。 詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers/develop/testing-a-driver-at-runtime)します。
+WDTF ドライバー テスト テンプレートを使用して Visual Studio で、ドライバーのテストをビルドすると、新しいテストはテスト コンピューターに配置が可能になります。 既定では、作成したテストはテスト カテゴリの **[My Test Category] (個人用テスト カテゴリ)** に表示されます。 テストの名前は選択したテスト ケースに基づいたもので、**My Plug and Play Surprise Remove Test** のような名前になります。 各テストのビルド中に、テストは上書きされ、簡単にテストの実行機能で実行可能になります。 詳細については、[Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers/develop/testing-a-driver-at-runtime)を参照してください。

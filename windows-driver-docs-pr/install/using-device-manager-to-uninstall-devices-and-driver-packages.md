@@ -20,7 +20,7 @@ ms.locfileid: "56557693"
 
  
 
-ドライバーとドライバー パッケージのアンインストールの詳細については、次を参照してください。[と、どのデバイスとドライバー パッケージがアンインストール](how-devices-and-driver-packages-are-uninstalled.md)します。
+ドライバーとドライバー パッケージのアンインストールの詳細については、[と、どのデバイスとドライバー パッケージがアンインストール](how-devices-and-driver-packages-are-uninstalled.md)を参照してください。
 
 ### <a href="" id="uninstalling-the-device"></a> デバイスのアンインストール
 

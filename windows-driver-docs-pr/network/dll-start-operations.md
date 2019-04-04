@@ -42,9 +42,9 @@ IHV 拡張機能の DLL が次のガイドラインに従う必要がありま�
 
 -   IHV 拡張機能の DLL から DLL を返します後に、その IHV ハンドラー関数を呼び出すのための準備の任意の内部の初期化とリソース割り当てを実行する必要があります[ *Dot11ExtIhvInitService*](https://msdn.microsoft.com/library/windows/hardware/ff547470)します。
 
-IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)します。
+IHV 拡張機能の詳細については、[802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)を参照してください。
 
-IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)します。
+IHV ハンドラー関数の詳細については、[802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)を参照してください。
 
  
 

@@ -29,7 +29,7 @@ ms.locfileid: "56557053"
 
 
 
-デバイスの電源ポリシー所有者は、デバイスを送信しますクエリ power IRP ([**IRP\_MN\_クエリ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551699)) の変更の下位のドライバーに対応できるかどうかを判断するには。デバイスの電源の状態とデバイスのセット電源 IRP ([**IRP\_MN\_設定\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744)) デバイスの電源状態を変更します。 (このドライバーでは、待機/ウェイク IRP がスリープ解除するには、そのデバイスを有効にするのには送信もできます外部からの信号に対して、次を参照してください。[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)詳細についてはします。)。
+デバイスの電源ポリシー所有者は、デバイスを送信しますクエリ power IRP ([**IRP\_MN\_クエリ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551699)) の変更の下位のドライバーに対応できるかどうかを判断するには。デバイスの電源の状態とデバイスのセット電源 IRP ([**IRP\_MN\_設定\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744)) デバイスの電源状態を変更します。 (このドライバーでは、待機/ウェイク IRP がスリープ解除するには、そのデバイスを有効にするのには送信もできます外部からの信号に対して、[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)詳細についてはを参照してください。)。
 
 ドライバーを送信する必要があります、 [ **IRP\_MN\_クエリ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)要求、次のいずれかが true の場合。
 
@@ -67,9 +67,9 @@ IRP がドライバーの呼び出しを送信する**PoRequestPowerIrp**、対�
 
 デバイスが送信する必要があります、その後、デバイスの電源ポリシー所有者は IRP デバイス電源クエリを送信するたびに、コールバック ルーチンからセット power IRP (*CompletionFunction*) への呼び出しで、指定されている**PoRequestPowerIrp**します。 クエリが成功した場合、セット power IRP は照会された電源の状態を指定します。 クエリが失敗した場合セット power IRP は現在のデバイスの電源状態を再アサートします。 ドライバーでは、I/O をキュー; クエリへの応答であるため、現在の状態を再アサートすることが重要です。ポリシー所有者は、セット power IRP がキューに登録された I/O 要求の処理を開始するには、そのデバイス スタックのドライバーに通知するを送信する必要があります。
 
-デバイスのポリシーの所有者だけでなくデバイスの電源 IRP を送信しますがデバイス スタックを渡される IRP の処理も留意してください。 このようなドライバーが多くの場合、設定、 *IoCompletion*ルーチン (で[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)) その IRP 処理コードの一部として、特に、デバイスがの場合電源を投入します。 *IoCompletion*での順序でルーチンを呼び出す*IoCompletion*ルーチンを設定して他のドライバーとの前に、 *CompletionFunction*します。 詳細については、次を参照してください。[デバイス電源 Irp の IoCompletion ルーチン](iocompletion-routines-for-device-power-irps.md)します。
+デバイスのポリシーの所有者だけでなくデバイスの電源 IRP を送信しますがデバイス スタックを渡される IRP の処理も留意してください。 このようなドライバーが多くの場合、設定、 *IoCompletion*ルーチン (で[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)) その IRP 処理コードの一部として、特に、デバイスがの場合電源を投入します。 *IoCompletion*での順序でルーチンを呼び出す*IoCompletion*ルーチンを設定して他のドライバーとの前に、 *CompletionFunction*します。 詳細については、[デバイス電源 Irp の IoCompletion ルーチン](iocompletion-routines-for-device-power-irps.md)を参照してください。
 
-すべてのドライバーが IRP が完了したため、ときに、 *CompletionFunction*が呼び出される、 *CompletionFunction*を呼び出してはならない**保留**、 **PoCallDriver**、または**PoStartNextPowerIrp**出所 IRP にします。 (呼び出すことが、ただし、これらのルーチンのさまざまな電源 IRP。)代わりに、このルーチンは IRP を発生させたドライバーで必要な追加の操作を実行します。 ドライバーは IRP、システムへの応答でデバイス IRP を送信する場合、 *CompletionFunction*システム IRP を完了することがあります。 詳細については、次を参照してください。[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)します。
+すべてのドライバーが IRP が完了したため、ときに、 *CompletionFunction*が呼び出される、 *CompletionFunction*を呼び出してはならない**保留**、 **PoCallDriver**、または**PoStartNextPowerIrp**出所 IRP にします。 (呼び出すことが、ただし、これらのルーチンのさまざまな電源 IRP。)代わりに、このルーチンは IRP を発生させたドライバーで必要な追加の操作を実行します。 ドライバーは IRP、システムへの応答でデバイス IRP を送信する場合、 *CompletionFunction*システム IRP を完了することがあります。 詳細については、[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)を参照してください。
 
 呼び出しに応答**PoRequestPowerIrp**、電源マネージャー能力 IRP を割り当て、およびデバイスのデバイス スタックの一番上に送信します。 電源マネージャーは、割り当てられた IRP へのポインターを返します。
 

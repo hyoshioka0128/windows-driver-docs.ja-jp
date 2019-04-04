@@ -24,7 +24,7 @@ ms.locfileid: "56573575"
 
 自分のデバイスを割り当ての Msi の最大数を指定するのにレジストリを使用することもできます。 **MessageNumberLimit**エントリの**管理の割り込み\\MessageSignaledInterruptProperties** 21\_に Msi の最大数を指定する DWORD 値割り当てます。 PCI の 2.2 **MessageNumberLimit** 1、2、4、8、または 16 にする必要があります。 PCI の 3.0 **MessageNumberLimit** 2,048 までの任意の数を指定できます。
 
-使用して、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)デバイスのハードウェア キーの下のレジストリ キーを設定するドライバーの INF ファイルでします。 詳細については、次を参照してください。 [ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)します。
+使用して、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)デバイスのハードウェア キーの下のレジストリ キーを設定するドライバーの INF ファイルでします。 詳細については、[ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)を参照してください。
 
 次のコード例は、設定する方法を示します、 **MSISupported**エントリ**管理の割り込み\\MessageSignaledInterruptProperties**デバイス。 作成する必要がありますに注意してください、**管理の割り込み**と**管理の割り込み\\MessageSignaledInterruptProperties**キーを設定する前に、 **MSISupported**エントリ。
 

@@ -16,9 +16,9 @@ ms.locfileid: "56553657"
 
 Windows デバッガー (WinDbg、CDB、NTSD) Windows アプリのデバッグに使用できます。 使用して、 [ **PLMDebug** ](plmdebug.md)中断、再開、およびデバッグ中に、Windows アプリを終了を制御するためのツール。
 
-マネージ コードの Windows アプリをデバッグするには、読み込み、 [SOS デバッガー拡張 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)およびデータ アクセス コンポーネント (mscordacwks.dll)。 詳細については、次を参照してください。 [Windows デバッガーを使用してマネージ コードのデバッグ](debugging-managed-code.md)します。
+マネージ コードの Windows アプリをデバッグするには、読み込み、 [SOS デバッガー拡張 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)およびデータ アクセス コンポーネント (mscordacwks.dll)。 詳細については、[Windows デバッガーを使用してマネージ コードのデバッグ](debugging-managed-code.md)を参照してください。
 
-Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、次を参照してください。 [Windows デバッグ](index.md)します。
+Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、[Windows デバッグ](index.md)を参照してください。
 
  
 

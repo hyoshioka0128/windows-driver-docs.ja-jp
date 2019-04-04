@@ -77,7 +77,7 @@ const PROPERTYKEY g_SettableAccelerometerProperties[] =
 
 ## <a name="setting-the-general-and-per-data-field-properties"></a>[全般] の設定およびごとのデータ フィールドのプロパティ
 
-ドライバーのサンプルは、[全般] を設定およびごとの初期化フェーズ中にデータ フィールドのプロパティ。 この作業を処理するコードがある、 **CAccelerometerDevice::SetDefaultProperties**メソッド。 これらのプロパティを設定する呼び出しのシーケンスについては、次を参照してください。[ドライバーの初期化](driver-initialization.md)します。
+ドライバーのサンプルは、[全般] を設定およびごとの初期化フェーズ中にデータ フィールドのプロパティ。 この作業を処理するコードがある、 **CAccelerometerDevice::SetDefaultProperties**メソッド。 これらのプロパティを設定する呼び出しのシーケンスについては、[ドライバーの初期化](driver-initialization.md)を参照してください。
 
 ## <a name="setting-the-writeable-properties"></a>書き込み可能なプロパティの設定
 

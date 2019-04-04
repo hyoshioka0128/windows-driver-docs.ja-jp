@@ -83,7 +83,7 @@ ms.locfileid: "56571760"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Memusage** ](-memusage.md)物理メモリ使用量を分析する拡張機能のコマンドを使用できます。 メモリ管理の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+[ **! Memusage** ](-memusage.md)物理メモリ使用量を分析する拡張機能のコマンドを使用できます。 メモリ管理の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

@@ -119,7 +119,7 @@ kdbgctrl -?
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-すべての KDbgCtrl 設定については、次を参照してください。[を使用して KDbgCtrl](using-kdbgctrl.md)します。
+すべての KDbgCtrl 設定については、[を使用して KDbgCtrl](using-kdbgctrl.md)を参照してください。
 
  
 

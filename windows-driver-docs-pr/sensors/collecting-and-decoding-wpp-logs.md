@@ -22,12 +22,12 @@ WPP は、トレース プロバイダーと呼ばれるソフトウェア コ�
 
 -   SensorsUtilsV2.pdb
 
-トレース ログ ツールを使用して、WPP ログを収集します。 詳細については、次を参照してください。 [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)します。 トレースのトレース Guid、トレース フラグ、トレース レベル、または PDB ファイルなどの概念の詳細については、次を参照してください。[トレース ツールの概念](https://msdn.microsoft.com/library/windows/hardware/ff553975.aspx)します。
+トレース ログ ツールを使用して、WPP ログを収集します。 詳細については、[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)を参照してください。 トレースのトレース Guid、トレース フラグ、トレース レベル、または PDB ファイルなどの概念の詳細については、[トレース ツールの概念](https://msdn.microsoft.com/library/windows/hardware/ff553975.aspx)を参照してください。
 
 ## <a name="tracing-guid"></a>トレース GUID
 
 
-次の GUID は、CX ドライバー センサー V2 スタックのトレース プロバイダーを識別します。 この GUID を使用してトレース ログの詳細については、次を参照してください。 [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)します。
+次の GUID は、CX ドライバー センサー V2 スタックのトレース プロバイダーを識別します。 この GUID を使用してトレース ログの詳細については、[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)を参照してください。
 
 ``` syntax
 c88b592b-6090-480f-a839-ca2434de5844
@@ -164,7 +164,7 @@ WPP マクロをその関連するトレース レベルとトレース フラ�
 ## <a name="decoding-etl-logs"></a>ログに記録 ETL のデコード
 
 
-Tracefmt ツールは、ETL ログのデコードに使用されます。 このツールの詳細については、次を参照してください。 [Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)します。
+Tracefmt ツールは、ETL ログのデコードに使用されます。 このツールの詳細については、[Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)を参照してください。
 
 参照してください、センサー ドライバーのより広範なテストを実行するかどうか [ユニバーサル センサー ドライバーをテストして] (テスト-、-汎用-センサー-driver.md します。
 

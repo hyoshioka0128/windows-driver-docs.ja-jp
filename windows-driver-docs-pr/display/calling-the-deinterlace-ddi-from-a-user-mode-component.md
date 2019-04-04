@@ -24,11 +24,11 @@ VMR などのユーザー モード コンポーネントは、デインター �
 
 VMR インター レースを解除して、ビデオ コンテンツのフレーム レートの変換を実行できる、ように、ディスプレイ ドライバーが実装する必要があります、[補正コールバック関数のモーション](motion-compensation-callbacks.md)のメンバーが定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。
 
-ドライバーの開発を簡素化するドライバー開発者は動き補正コード テンプレートを使用し、実装、[サンプル関数をデインター レース](sample-functions-for-deinterlacing.md)します。 動き補正テンプレートでは、ビデオ コンテンツ デインター レース、フレーム レートの変換を実行するデインター レース サンプル関数を呼び出します。 詳細については動き補正テンプレートを使用して、次を参照してください。 [DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)します。
+ドライバーの開発を簡素化するドライバー開発者は動き補正コード テンプレートを使用し、実装、[サンプル関数をデインター レース](sample-functions-for-deinterlacing.md)します。 動き補正テンプレートでは、ビデオ コンテンツ デインター レース、フレーム レートの変換を実行するデインター レース サンプル関数を呼び出します。 詳細については動き補正テンプレートを使用して、[DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)を参照してください。
 
 次の手順では、VMR インター DDI への呼び出しを開始する方法について説明します。
 
-1.  VMR はフィルターのグラフに追加するときに、ドライバーによって提供されるへの呼び出しを開始します。 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)ドライバーでサポートされているデバイスの一覧を取得するコールバック関数。 **GetMoCompGuids** 、DD のメンバー\_MOTIONCOMPCALLBACKS このコールバック関数へのポインターを構造体します。 フィルターのグラフの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)します。
+1.  VMR はフィルターのグラフに追加するときに、ドライバーによって提供されるへの呼び出しを開始します。 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)ドライバーでサポートされているデバイスの一覧を取得するコールバック関数。 **GetMoCompGuids** 、DD のメンバー\_MOTIONCOMPCALLBACKS このコールバック関数へのポインターを構造体します。 フィルターのグラフの詳細については、[KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)を参照してください。
 
 2.  VMR への呼び出しを開始するインター コンテナー デバイス GUID が存在する場合、 [ *DdMoCompCreate* ](https://msdn.microsoft.com/library/windows/hardware/ff549656)デバイスのインスタンスを作成するコールバック関数。 **CreateMoComp** DD のメンバー\_MOTIONCOMPCALLBACKS がコールバック関数を指します。 *DdMoCompCreate*呼び出すには、GUID がで指定されたコンテナーのデバイスへのポインター、 **lpGuid**のメンバー、 [ **DD\_CREATEMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff550529)構造体。 コンテナー デバイス GUID の定義は次のとおりです。
     ```cpp

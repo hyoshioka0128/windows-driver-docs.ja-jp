@@ -71,7 +71,7 @@ Windows Vista より前のオペレーティング システムでは、これ�
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの低リソース シミュレーション オプションをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの低リソース シミュレーション オプションをアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 -   **コマンドラインで**
 
@@ -95,7 +95,7 @@ Windows Vista より前のオペレーティング システムでは、これ�
     verifier /volatile /flags 0x4 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
     Windows vista では、使用することができます、**フォールト/** パラメーターを表すと低リソース シミュレーション、 **/volatile**を再起動しなくても有効な制限が設定を表すパラメーター。 設定の変更が表示されます。 次に、例を示します。
 
@@ -119,7 +119,7 @@ Windows Vista より前のオペレーティング システムでは、これ�
 
 ### <a name="span-idcustomizingthesettingswindowsvistaandlaterspanspan-idcustomizingthesettingswindowsvistaandlaterspancustomizing-the-settings-windows-vista-and-later"></a><span id="customizing_the_settings__windows_vista_and_later_"></span><span id="CUSTOMIZING_THE_SETTINGS__WINDOWS_VISTA_AND_LATER_"></span>設定のカスタマイズ (Windows Vista 以降)
 
-以降 Windows Vista では、遅延、確率、アプリケーションなどの既定の設定を変更して、プール タグ低リソース シミュレーション オプションのプロパティ。 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、これらの設定を変更することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+以降 Windows Vista では、遅延、確率、アプリケーションなどの既定の設定を変更して、プール タグ低リソース シミュレーション オプションのプロパティ。 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、これらの設定を変更することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 コマンドラインで、これらの設定の構文はとおりです。
 
@@ -178,7 +178,7 @@ verifier /faults "" "" "" 0xa
 
 Driver Verifier リソース割り当てがドライバーの検証ツールを表示することによって意図的に失敗した回数を監視する*フォールト挿入*グローバル カウンター。 このカウンターは、Driver Verifier は、最後の起動後意図的に失敗したリソース割り当ての合計数を表示します。
 
-このカウンターを表示するには、Driver Verifier のログ ファイルに (**/ログ**)、コマンドラインで (**クエリ/**) またはドライバー検証マネージャー。 Windows 2000 でグローバル カウンターを表示するには、選択、**グローバル カウンター**タブ。以降のバージョンの Windows では、次のように選択します。**現在検証済みのドライバーに関する情報を表示**タスク、およびキーを押します**次**2 回です。 詳細については、次を参照してください。[グローバル カウンターの監視](monitoring-global-counters.md)します。
+このカウンターを表示するには、Driver Verifier のログ ファイルに (**/ログ**)、コマンドラインで (**クエリ/**) またはドライバー検証マネージャー。 Windows 2000 でグローバル カウンターを表示するには、選択、**グローバル カウンター**タブ。以降のバージョンの Windows では、次のように選択します。**現在検証済みのドライバーに関する情報を表示**タスク、およびキーを押します**次**2 回です。 詳細については、[グローバル カウンターの監視](monitoring-global-counters.md)を参照してください。
 
 使用して、意図的に失敗した割り当ての数と (確率を計算) する割り当ての合計数を表示することも、 **! verifier**デバッガー拡張機能。 次の例のサンプルを示しています、 **! verifier**出力します。
 

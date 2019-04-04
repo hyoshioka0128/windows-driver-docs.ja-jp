@@ -28,7 +28,7 @@ ms.locfileid: "56581343"
 
 ## <a name="getting-started"></a>作業の開始
 
-まず、Visual Studio の最新バージョンをインストールし、UWP アプリ プロジェクトを作成します。  カスタム機能を使った UWP アプリをビルドするには、Windows SDK バージョン 10.0.15063 追加されたため (Windows 10 Creators Update) を必要がありますまたはそれ以降。 プロジェクト ファイルは、バージョン 10.0.15063 追加されたためを指定する必要がありますもまたはそれ以降。 構成の取得の詳細については、次を参照してください。[開発の UWP アプリの Visual Studio を使用して](/windows/uwp/develop/)します。
+まず、Visual Studio の最新バージョンをインストールし、UWP アプリ プロジェクトを作成します。  カスタム機能を使った UWP アプリをビルドするには、Windows SDK バージョン 10.0.15063 追加されたため (Windows 10 Creators Update) を必要がありますまたはそれ以降。 プロジェクト ファイルは、バージョン 10.0.15063 追加されたためを指定する必要がありますもまたはそれ以降。 構成の取得の詳細については、[開発の UWP アプリの Visual Studio を使用して](/windows/uwp/develop/)を参照してください。
 
 Windows 10 バージョン 1709 以降、特定のドライバーが存在する場合に、ユニバーサル Windows プラットフォーム (UWP) アプリがのみ読み込むことを指定できます。  学習する方法についてを参照してください[UWP アプリでのドライバーをペアリング](../install/pairing-app-and-driver-versions.md)します。
 
@@ -36,13 +36,13 @@ Windows 10 バージョン 1709 以降、特定のドライバーが存在する
 
 Microsoft Store での開発者アカウントが必要です。 ハードウェア パートナーには、そのハードウェア パートナーのアカウントとは異なる Microsoft Store のアカウントが必要です。 アプリケーション マニフェストと後の手順でデバイスのメタデータを作成するときに、発行元名が必要があります。 ストアのプロファイルを作成したら、アプリの名前を予約することもできます。
 
-Microsoft Store アカウントを作成するには、 [UWP アプリのサインアップ ページ](https://go.microsoft.com/fwlink/p/?LinkId=302197)します。 詳細については、次を参照してください。[開発者アカウントを開く](https://docs.microsoft.com/windows/uwp/publish/opening-a-developer-account)します。
+Microsoft Store アカウントを作成するには、 [UWP アプリのサインアップ ページ](https://go.microsoft.com/fwlink/p/?LinkId=302197)します。 詳細については、[開発者アカウントを開く](https://docs.microsoft.com/windows/uwp/publish/opening-a-developer-account)を参照してください。
 
 ## <a name="choosing-a-programming-language-for-the-app"></a>アプリのプログラミング言語の選択
 
 使用することができる場合、アプリは、ドライバーと通信、 [Windows.Devices.Custom](https://docs.microsoft.com/uwp/api/windows.devices.custom)、これは、WinRT API の一部であるため、JavaScript では、使用可能なC#、および C++。
 
-場合は、アプリは、NT サービスと通信、RPC Api を使用する必要があります。  RPC Api は、WinRT では使用できない Win32 Api であるため、C++ を使用するか、.NET interop (PInvoke) を使用して RPC 呼び出しをラップする必要があります。  詳細については、次を参照してください。[マネージ コードからネイティブ関数の呼び出し](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)します。
+場合は、アプリは、NT サービスと通信、RPC Api を使用する必要があります。  RPC Api は、WinRT では使用できない Win32 Api であるため、C++ を使用するか、.NET interop (PInvoke) を使用して RPC 呼び出しをラップする必要があります。  詳細については、[マネージ コードからネイティブ関数の呼び出し](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)を参照してください。
 
 ## <a name="contact-the-custom-capability-owner"></a>カスタムの機能の所有者にお問い合わせください。
 

@@ -28,7 +28,7 @@ ms.locfileid: "56572412"
 
  
 
-ミニポート ドライバーが、TCP/IP をトランスポート設定の NIC に 1 つ以上の SAs を追加することを要求する、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569812) OID。 ミニポート ドライバーが、受信、 [ **IPSEC\_オフロード\_V2\_追加\_SA** ](https://msdn.microsoft.com/library/windows/hardware/ff556977)構造体し、SA で処理を IPsecOV2 の NIC を構成します。 OID に正常に設定されている\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA、ミニポート ドライバーでオフロード SA を識別するハンドルを初期化します、IPSEC\_オフロード\_V2\_追加\_SA 構造体。 トランスポートは、ミニポート ドライバーに後続の要求でこのハンドルを使用して (つまり、または変更または削除、SA への呼び出しで、送信パス上)。 詳細については、送信パスで SA ハンドルを使用して、次を参照してください。 [IPsec オフロード バージョン 2 でのネットワーク データの送信](sending-network-data-with-ipsec-offload-version-2.md)します。
+ミニポート ドライバーが、TCP/IP をトランスポート設定の NIC に 1 つ以上の SAs を追加することを要求する、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569812) OID。 ミニポート ドライバーが、受信、 [ **IPSEC\_オフロード\_V2\_追加\_SA** ](https://msdn.microsoft.com/library/windows/hardware/ff556977)構造体し、SA で処理を IPsecOV2 の NIC を構成します。 OID に正常に設定されている\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA、ミニポート ドライバーでオフロード SA を識別するハンドルを初期化します、IPSEC\_オフロード\_V2\_追加\_SA 構造体。 トランスポートは、ミニポート ドライバーに後続の要求でこのハンドルを使用して (つまり、または変更または削除、SA への呼び出しで、送信パス上)。 詳細については、送信パスで SA ハンドルを使用して、[IPsec オフロード バージョン 2 でのネットワーク データの送信](sending-network-data-with-ipsec-offload-version-2.md)を参照してください。
 
 ミニポート ドライバーは、SAs でサポートできる NIC の数を報告、 **SaOffloadCapacity**のメンバー、 [ **NDIS\_IPSEC\_オフロード\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff565808)構造体。
 

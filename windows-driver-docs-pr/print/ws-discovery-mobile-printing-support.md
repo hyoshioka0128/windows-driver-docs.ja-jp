@@ -100,7 +100,7 @@ Windows 10 Mobile からの印刷をサポートするデバイスは次の例�
 
  
 
-WS 探索メタデータの交換にデバイス カテゴリを追加する方法の詳細については、次を参照してください。、 [Pnp-x 対応仕様](https://go.microsoft.com/fwlink/p/?linkid=509797)します。
+WS 探索メタデータの交換にデバイス カテゴリを追加する方法の詳細については、、 [Pnp-x 対応仕様](https://go.microsoft.com/fwlink/p/?linkid=509797)を参照してください。
 
  
 

@@ -29,9 +29,9 @@ ms.locfileid: "56556503"
 
 常駐、ドライバーによって割り当てられたメモリにコンテキストの領域がある必要があります。 通常、このコンテキストの領域は、デバイスの拡張機能が非ページ プールのこともできます。 ドライバーは、コント ローラー オブジェクトを使用して、コント ローラーの拡張機能にことができます。 コンテキストの領域の内容は、ドライバーが決定します。
 
-場合、 *CustomTimerDpc*ルーチンは、ドライバーの ISR とコンテキスト情報を共有、 *CustomTimerDpc*ルーチンを使用する必要があります[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出す、 *SynchCritSection*共有コンテキストにアクセスするルーチン。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+場合、 *CustomTimerDpc*ルーチンは、ドライバーの ISR とコンテキスト情報を共有、 *CustomTimerDpc*ルーチンを使用する必要があります[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出す、 *SynchCritSection*共有コンテキストにアクセスするルーチン。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
-場合、 *CustomTimerDpc*コンテキスト情報を他の ISR 以外のドライバー ルーチンにある領域を共有*DeferredContext* executive スピン ロックで保護する必要があります。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+場合、 *CustomTimerDpc*コンテキスト情報を他の ISR 以外のドライバー ルーチンにある領域を共有*DeferredContext* executive スピン ロックで保護する必要があります。 詳細については、[スピン ロック](spin-locks.md)を参照してください。
 
  
 

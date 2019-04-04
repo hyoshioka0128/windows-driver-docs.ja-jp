@@ -55,7 +55,7 @@ ms.locfileid: "56572399"
 
 ミニポート ドライバーを指定する場合にのみ、これらの操作を使用する必要があります**EnableDhcp**の INF ファイルでゼロにします。 つまり、ミニポート ドライバーでは、DHCP が実装されていません。
 
-IP アドレスの通知の処理に関する詳細については、次を参照してください。 [MB ミニポート ドライバー IP アドレスの通知のガイドライン](guidelines-for-mb-miniport-driver-ip-address-notifications.md)します。
+IP アドレスの通知の処理に関する詳細については、[MB ミニポート ドライバー IP アドレスの通知のガイドライン](guidelines-for-mb-miniport-driver-ip-address-notifications.md)を参照してください。
 
  
 

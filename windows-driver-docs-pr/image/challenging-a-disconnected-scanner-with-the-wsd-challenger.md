@@ -45,7 +45,7 @@ WIA ドライバー クライアントが使用する WSD 見据えてインタ�
 
 [ヘルパー メソッドを実装するためのコード例](code-example-for-implementing-helper-methods.md)
 
-定義とこれらの例で使用されている変数の詳細については、次を参照してください。[定義と変数は、この例で使用](definitions-and-variables-used-in-the-examples.md)します。
+定義とこれらの例で使用されている変数の詳細については、[定義と変数は、この例で使用](definitions-and-variables-used-in-the-examples.md)を参照してください。
 
  
 

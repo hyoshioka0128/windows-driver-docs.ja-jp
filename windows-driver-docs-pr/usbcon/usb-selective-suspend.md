@@ -352,7 +352,7 @@ Windows xp の場合、ドライバーは、アイドル状態の通知のコー
 ### <a name="arming-devices-for-wakeup-in-the-idle-notification-callback-routine"></a>デバイスをアイドル状態の通知コールバック ルーチンでウェイク アップ取り組ま
 
 
-アイドル状態の通知のコールバック ルーチンがそのデバイスがあるかどうかを決定する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)保留中の要求。 場合ありません IRP\_MN\_待機\_スリープ解除要求が保留中、コールバック ルーチンは IRP を送信する必要があります\_MN\_待機\_デバイスを中断する前にスリープ解除要求。 待機のスリープ解除メカニズムの詳細については、次を参照してください。[をサポートしているデバイスをあるウェイク アップ機能](https://msdn.microsoft.com/library/windows/hardware/ff563907)します。
+アイドル状態の通知のコールバック ルーチンがそのデバイスがあるかどうかを決定する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)保留中の要求。 場合ありません IRP\_MN\_待機\_スリープ解除要求が保留中、コールバック ルーチンは IRP を送信する必要があります\_MN\_待機\_デバイスを中断する前にスリープ解除要求。 待機のスリープ解除メカニズムの詳細については、[をサポートしているデバイスをあるウェイク アップ機能](https://msdn.microsoft.com/library/windows/hardware/ff563907)を参照してください。
 
 
 ## <a name="usb-global-suspend"></a>USB のグローバルの一時停止します。

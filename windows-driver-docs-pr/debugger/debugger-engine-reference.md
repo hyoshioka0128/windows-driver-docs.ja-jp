@@ -31,7 +31,7 @@ ms.locfileid: "56571006"
 
 [構造体と定数](https://msdn.microsoft.com/library/windows/hardware/ff558820)
 
-特定の一般的な方法は、Microsoft Windows 上のすべての COM インターフェイスでサポートされます。 これらのメソッドは、このリファレンス セクションでは個別に表示されません。 詳細については、次を参照してください。[クライアント オブジェクトを使用する](https://msdn.microsoft.com/library/windows/hardware/ff560088)します。
+特定の一般的な方法は、Microsoft Windows 上のすべての COM インターフェイスでサポートされます。 これらのメソッドは、このリファレンス セクションでは個別に表示されません。 詳細については、[クライアント オブジェクトを使用する](https://msdn.microsoft.com/library/windows/hardware/ff560088)を参照してください。
 
  
 

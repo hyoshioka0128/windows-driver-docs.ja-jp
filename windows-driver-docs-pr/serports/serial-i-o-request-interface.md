@@ -275,7 +275,7 @@ SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポ�
 
 2.  SerCx2 は特殊文字をサポートしていません。 SerCx2 が完了すると常に、 **IOCTL\_シリアル\_設定\_CHARS**状態が、要求\_成功の状態のコードはない特殊文字を設定またはその他の操作を実行この要求に応答します。 **IOCTL\_シリアル\_取得\_CHARS** SerCx2 のすべての文字値の設定を要求、 [**シリアル\_CHARS** ](https://msdn.microsoft.com/library/windows/hardware/jj673020)を null、構造体であり、状態が、要求が完了すると\_成功状態コード。
 
-3.  SerCx2 と SerCx に対して定義されているフラグのサブセットのみをサポート、 **FlowReplace**と**ControlHandShake**のメンバー、**シリアル\_HANDFLOW**構造体。 以下のようには、すべてのこれらのフラグがサポートしています。 詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
+3.  SerCx2 と SerCx に対して定義されているフラグのサブセットのみをサポート、 **FlowReplace**と**ControlHandShake**のメンバー、**シリアル\_HANDFLOW**構造体。 以下のようには、すべてのこれらのフラグがサポートしています。 詳細については、[**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)を参照してください。
 
 4.  **IOCTL\_シリアル\_取得\_モデム\_コントロール**と**IOCTL\_シリアル\_設定\_モデム\_コントロール**要求は、主に、ハードウェアのテストに使用します。 モデムの管理操作を登録する標準的なレイアウトが定義されていません。 モデム コントロール シリアル コント ローラーの特定のハードウェア機能に依存させること自体の Ioctl リスクを使用して、周辺機器のドライバーです。
 

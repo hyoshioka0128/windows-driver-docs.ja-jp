@@ -103,7 +103,7 @@ msiexec /i "Windows Driver Testing Framework (WDTF) Runtime Libraries-x64_en-us.
 
 設定すると展開については、テスト コンピューターを次の手順については、[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 10)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)、WDTF ランタイム ライブラリがターゲット コンピューターにインストールされています。
 
-WDTF ランタイム ライブラリを削除しますするには、対象のコンピュータからプロビジョニングの削除します。 詳細については、次を参照してください。[削除対象のコンピュータからプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/develop/what-happens-when-you-provision-a-computer--wdk-8-1-#span-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanremoving-provisioning-from-the-target-computer)します。
+WDTF ランタイム ライブラリを削除しますするには、対象のコンピュータからプロビジョニングの削除します。 詳細については、[削除対象のコンピュータからプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/develop/what-happens-when-you-provision-a-computer--wdk-8-1-#span-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanremoving-provisioning-from-the-target-computer)を参照してください。
 
 WDTF ランタイム ライブラリを手動でアンインストールできます。
 

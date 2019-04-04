@@ -34,11 +34,11 @@ XPSDrv プリンターのドライバーの 2 つの主要なコンポーネン�
 
 ### <a name="xpsdrv-document-events"></a>XPSDrv ドキュメント イベント
 
-XPSDrv ドライバーを通じて GDI ドキュメント イベントを受信できる、 [ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)関数には、印刷は Win32 ベースのアプリケーションとドライバーを XPS ドキュメントのイベントを受信できます。DrvDocumentEvent に WPF アプリケーションを印刷するとき。 XPSDrv ドキュメント イベントの詳細については、次を参照してください。 [XPSDrv ドライバーのドキュメント イベント](xps-driver-document-events.md)します。
+XPSDrv ドライバーを通じて GDI ドキュメント イベントを受信できる、 [ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)関数には、印刷は Win32 ベースのアプリケーションとドライバーを XPS ドキュメントのイベントを受信できます。DrvDocumentEvent に WPF アプリケーションを印刷するとき。 XPSDrv ドキュメント イベントの詳細については、[XPSDrv ドライバーのドキュメント イベント](xps-driver-document-events.md)を参照してください。
 
 ### <a name="xpsdrv-driver-installation"></a>XPSDrv ドライバーのインストール
 
-XPSDrv ドライバーでは、インストールの特定の要件があります。 XPSDrv ドライバーのインストールの詳細については、次を参照してください。 [XPSDrv インストール](xpsdrv-installation.md)します。
+XPSDrv ドライバーでは、インストールの特定の要件があります。 XPSDrv ドライバーのインストールの詳細については、[XPSDrv インストール](xpsdrv-installation.md)を参照してください。
 
  
 

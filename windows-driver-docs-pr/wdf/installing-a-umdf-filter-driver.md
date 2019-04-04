@@ -35,7 +35,7 @@ ms.locfileid: "56577740"
 
     ドライバーが記載されている順序でデバイス スタックに追加されます、 **UmdfServiceOrder**エントリ。 最初のパラメーターは、デバイス スタックの最下位の UMDF ドライバーを指定します。 下位のフィルター ドライバーをインストールするには、単純の引数を逆**UmdfServiceOrder**します。
 
-    これらおよびその他の UMDF 固有 INF ディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
+    これらおよびその他の UMDF 固有 INF ディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)を参照してください。
 
 3.  ドライバーのデバイスのスタックに UMDF ドライバーのみが含まれている場合は、この手順をスキップします。
 

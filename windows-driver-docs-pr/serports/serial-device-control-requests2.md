@@ -53,7 +53,7 @@ ms.locfileid: "56550277"
 
 高度な操作の詳細については[COM ポート](configuration-of-com-ports.md)、Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソースに関する情報を参照してください。
 
-シリアル I/O 要求の詳細については、次を参照してください。[シリアル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547476)します。
+シリアル I/O 要求の詳細については、[シリアル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547476)を参照してください。
 
  
 

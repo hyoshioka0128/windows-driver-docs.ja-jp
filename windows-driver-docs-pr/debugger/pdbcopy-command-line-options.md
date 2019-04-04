@@ -82,7 +82,7 @@ PDBCopy コマンドラインのヘルプを表示します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-PDBCopy ツールの詳細については、次を参照してください。[を使用して PDBCopy](using-pdbcopy.md)します。
+PDBCopy ツールの詳細については、[を使用して PDBCopy](using-pdbcopy.md)を参照してください。
 
  
 

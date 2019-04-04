@@ -602,7 +602,7 @@ SmartCardCardModule="msclmd.dll"
     -   Windows サービス パックの更新プログラムとの競合を防ぐために将来に十分である日付の値を指定します。
     -   4 桁のバージョン番号は省略可能ですが、受信トレイのドライバーの INF ファイルで指定されている現在のバージョンよりも大幅に高くなっているバージョンを指定する必要があります。
 
-INF ファイルと構文の詳細については、次を参照してください。[デバイスとドライバーのインストールの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+INF ファイルと構文の詳細については、[デバイスとドライバーのインストールの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
 
  
 

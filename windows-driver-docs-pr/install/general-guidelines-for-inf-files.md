@@ -28,7 +28,7 @@ INF ファイルには多くの共通部分があり、次の構文規則の 1 �
 
 -   INF ファイル用のツールを WDK です。
 
-    詳細については、次を参照してください。 [INF ファイル用のツール](https://msdn.microsoft.com/library/windows/hardware/ff552956)します。 これらのツールに含まれる、 \\WDK の Tools サブディレクトリ。
+    詳細については、[INF ファイル用のツール](https://msdn.microsoft.com/library/windows/hardware/ff552956)を参照してください。 これらのツールに含まれる、 \\WDK の Tools サブディレクトリ。
 
 -   サンプルの INF ファイルと類似したデバイスの INF ファイル。
 

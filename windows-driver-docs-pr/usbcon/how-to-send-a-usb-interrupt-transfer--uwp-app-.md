@@ -64,7 +64,7 @@ USB デバイスは、一定の間隔で、ホストからデータを受信す�
 ## <a name="writing-to-the-interrupt-out-endpoint"></a>外部エンドポイント割り込みへの書き込み
 
 
-転送要求を割り込みに一括転送のターゲットを除く、アウトと同じですが、アプリに送信する方法は、割り込みによって表される、パイプを[ **UsbInterruptOutPipe**](https://msdn.microsoft.com/library/windows/apps/dn278425)します。 詳細については、次を参照してください。 [USB 一括転送要求 (UWP アプリ) を送信する方法](how-to-send-a-usb-bulk-transfer--uwp-app-.md)します。
+転送要求を割り込みに一括転送のターゲットを除く、アウトと同じですが、アプリに送信する方法は、割り込みによって表される、パイプを[ **UsbInterruptOutPipe**](https://msdn.microsoft.com/library/windows/apps/dn278425)します。 詳細については、[USB 一括転送要求 (UWP アプリ) を送信する方法](how-to-send-a-usb-bulk-transfer--uwp-app-.md)を参照してください。
 
 ## <a name="step-1-implement-the-interrupt-event-handler-interrupt-in"></a>手順 1:(割り込みの) 割り込みイベント ハンドラーを実装します。
 

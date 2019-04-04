@@ -25,9 +25,9 @@ NDK 機能、NDIS 問題有効または無効にする[OID\_NDK\_設定\_状態]
 
 0 ("Disabled") に設定されている場合、NDK 機能を有効にすることはできません。
 
-ミニポート ドライバーがインストールされているときに、INF ファイルは、既定では 1 ("Enabled") にこのキーワードの値を設定します。 詳細については、次を参照してください。 [NDKPI の INF 要件](inf-requirements-for-ndkpi.md)します。
+ミニポート ドライバーがインストールされているときに、INF ファイルは、既定では 1 ("Enabled") にこのキーワードの値を設定します。 詳細については、[NDKPI の INF 要件](inf-requirements-for-ndkpi.md)を参照してください。
 
-管理者を更新できますミニポート ドライバーをインストールした後、  **\*NetworkDirect**キーワードの値で新しい値を設定して、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+管理者を更新できますミニポート ドライバーをインストールした後、  **\*NetworkDirect**キーワードの値で新しい値を設定して、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
 **注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 

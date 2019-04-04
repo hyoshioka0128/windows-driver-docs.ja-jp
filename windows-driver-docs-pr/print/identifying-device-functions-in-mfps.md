@@ -19,4 +19,4 @@ ms.locfileid: "58419556"
 
 1 つ以上のトランスポート経由で接続がデバイスの場合 (つまり、デバイスが接続と WSD の USB 経由)、デバイスが 1 つのデバイスとして表示する別のデバイスのインスタンスを作成、ContainerID をレポートすることをお勧めします。
 
-ContainerIDs の詳細については、次を参照してください。[コンテナー ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)します。
+ContainerIDs の詳細については、[コンテナー ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)を参照してください。

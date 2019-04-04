@@ -20,15 +20,15 @@ ms.locfileid: "56557603"
 
 
 
-スタンドアロンいる CoNDIS などその他のプロトコルのドライバー マネージャー、initialize を呼び出すしも追加いる CoNDIS エントリ ポイントを登録する必要があります。 プロトコル ドライバーの初期化の詳細については、次を参照してください。[プロトコル ドライバーの初期化](initializing-a-protocol-driver.md)します。
+スタンドアロンいる CoNDIS などその他のプロトコルのドライバー マネージャー、initialize を呼び出すしも追加いる CoNDIS エントリ ポイントを登録する必要があります。 プロトコル ドライバーの初期化の詳細については、[プロトコル ドライバーの初期化](initializing-a-protocol-driver.md)を参照してください。
 
 いる CoNDIS エントリ ポイントを登録する*ProtocolXxx*関数呼び出しマネージャー呼び出し、 [ **NdisSetOptionalHandlers** ](https://msdn.microsoft.com/library/windows/hardware/ff564550)関数を[ *ProtocolSetOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff570269)関数。 *ProtocolSetOptions*、いる CoNDIS プロトコルのすべてのドライバーが初期化、 [ **NDIS\_プロトコル\_CO\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566817)構造体し、渡すことで、 *OptionalHandlers*パラメーターの**NdisSetOptionalHandlers**します。
 
 プロトコル ドライバーの初期化をコール マネージャーのエントリ ポイントを指定する、 [ **NDIS\_CO\_呼び出す\_MANAGER\_(省略可能)\_ハンドラー** ](https://msdn.microsoft.com/library/windows/hardware/ff564883)を構造化し、これで、 *OptionalHandlers*パラメーターの**NdisSetOptionalHandlers**します。
 
-ミニポート マネージャー (MCMs) も登録呼び出し manager 呼び出し*ProtocolXxx*関数。 MCM ドライバーの登録の詳細については、次を参照してください。[いる CoNDIS MCM 登録](condis-mcm-registration.md)します。
+ミニポート マネージャー (MCMs) も登録呼び出し manager 呼び出し*ProtocolXxx*関数。 MCM ドライバーの登録の詳細については、[いる CoNDIS MCM 登録](condis-mcm-registration.md)を参照してください。
 
-省略可能なプロトコル ドライバー サービスを構成する方法の詳細については、次を参照してください。[省略可能なプロトコル ドライバー サービスを構成する](configuring-optional-protocol-driver-services.md)します。
+省略可能なプロトコル ドライバー サービスを構成する方法の詳細については、[省略可能なプロトコル ドライバー サービスを構成する](configuring-optional-protocol-driver-services.md)を参照してください。
 
  
 

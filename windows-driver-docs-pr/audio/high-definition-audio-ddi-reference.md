@@ -16,7 +16,7 @@ ms.locfileid: "56539427"
 
 このセクションでは、高精細画質 (HD) オーディオ デバイス ドライバー インターフェイス (DDI) の 3 つのバージョンのルーチンを記述するためのテクニカル リファレンスを[ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)と[ **HDAUDIO\_バス\_インターフェイス\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)構造体を定義します。 これらのルーチンをパラメーターとして使用する構造体の型についても説明します。
 
-DDI の詳細については、次を参照してください。[高定義オーディオ DDI](https://msdn.microsoft.com/library/windows/hardware/ff536442)します。
+DDI の詳細については、[高定義オーディオ DDI](https://msdn.microsoft.com/library/windows/hardware/ff536442)を参照してください。
 
 2 つのリファレンス ページのセットが表示されます。
 

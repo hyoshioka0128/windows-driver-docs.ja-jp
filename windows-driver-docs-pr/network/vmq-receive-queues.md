@@ -41,7 +41,7 @@ VMQ、受信キューには、次のプロパティ。
 
 -   [VMQ 受信バッファー (Windows Server 2012 およびそれ以降のバージョン) の共有メモリの割り当てください。](#windows8)
 
-VMQ が共有メモリの要件は、仮想マシン (Vm) の潜在的なセキュリティ問題に対処する設計されています。 VMQ セキュリティの問題に関する詳細については、次を参照してください。 [NDIS 仮想マシン (VM) の共有メモリのセキュリティ問題に](security-issues-with-ndis-virtual-machine--vm--shared-memory.md)します。
+VMQ が共有メモリの要件は、仮想マシン (Vm) の潜在的なセキュリティ問題に対処する設計されています。 VMQ セキュリティの問題に関する詳細については、[NDIS 仮想マシン (VM) の共有メモリのセキュリティ問題に](security-issues-with-ndis-virtual-machine--vm--shared-memory.md)を参照してください。
 
 ### <a href="" id="windows7"></a>(Windows Server 2008 R2) をバッファー VMQ の受信共有メモリの割り当て
 

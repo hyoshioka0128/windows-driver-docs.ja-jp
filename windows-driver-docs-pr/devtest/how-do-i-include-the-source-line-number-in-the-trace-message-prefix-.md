@@ -43,4 +43,4 @@ set TRACE\_FORMAT\_PREFIX="\[%9!d!\]%8!04X!.%3!04X!::%4!s! \[%1!s!\](**%!COMPNAM
 
 \[*CPUNumber*\]*ProcessID*.*ThreadID*::*SystemTime* \[ *MessageGUIDFriendlyName*\](*ComponentName*:*FunctionName*:*Filename*\_*LineNumber*)
 
-詳細の例では、次を参照してください。[例 7。トレース メッセージのプレフィックスをカスタマイズする](example-7--customizing-the-trace-message-prefix.md)します。 トレース メッセージのプレフィックスに含まれるすべての定義済み変数の一覧では、次を参照してください。[トレース メッセージのプレフィックス](trace-message-prefix.md)します。
+詳細の例では、次を参照してください。[例 7。トレース メッセージのプレフィックスをカスタマイズする](example-7--customizing-the-trace-message-prefix.md)します。 トレース メッセージのプレフィックスに含まれるすべての定義済み変数の一覧では、[トレース メッセージのプレフィックス](trace-message-prefix.md)を参照してください。

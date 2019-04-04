@@ -24,7 +24,7 @@ ms.locfileid: "56557345"
 
 [*MiniportInitializeEx* PF ミニポート ドライバーに関するガイドライン](miniportinitializeex-guidelines-for-pf-miniport-drivers.md)
 
-**注**  の PCIe 仮想機能 (VF)、SR-IOV ネットワーク アダプターのミニポート ドライバーの初期化方法の詳細については、次を参照してください。 [VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)します。
+**注**  の PCIe 仮想機能 (VF)、SR-IOV ネットワーク アダプターのミニポート ドライバーの初期化方法の詳細については、[VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)を参照してください。
 
  
 

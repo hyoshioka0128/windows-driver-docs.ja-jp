@@ -37,7 +37,7 @@ Traceview では、トレース セッションを開始する試行を取り消
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-Traceview でウィンドウを起動してトレース セッションを実行しているものだけが表示されます。 システムで実行されているすべてのトレース セッションの一覧、入力**traceview で-l**コマンド プロンプト ウィンドウでします。 Traceview では開始されませんでしたトレース セッションを停止する次のように入力します。 **traceview で-停止 * * * SessionName*コマンド プロンプト ウィンドウでします。 これらのコマンドの詳細については、次を参照してください。 [traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)します。
+Traceview でウィンドウを起動してトレース セッションを実行しているものだけが表示されます。 システムで実行されているすべてのトレース セッションの一覧、入力**traceview で-l**コマンド プロンプト ウィンドウでします。 Traceview では開始されませんでしたトレース セッションを停止する次のように入力します。 **traceview で-停止 * * * SessionName*コマンド プロンプト ウィンドウでします。 これらのコマンドの詳細については、[traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)を参照してください。
 
  
 

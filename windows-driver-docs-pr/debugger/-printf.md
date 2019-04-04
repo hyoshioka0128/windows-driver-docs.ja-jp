@@ -180,11 +180,11 @@ ms.locfileid: "57350333"
  
 
 <span id="_______Arguments______"></span><span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span> *引数*   
-書式指定文字列の引数を指定します。 **printf**します。 指定された引数の数が変換の文字の数に一致する必要があります*FormatString*します。 各引数は、(MASM または C++) の既定式エバリュエーターによって評価される式です。 詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+書式指定文字列の引数を指定します。 **printf**します。 指定された引数の数が変換の文字の数に一致する必要があります*FormatString*します。 各引数は、(MASM または C++) の既定式エバリュエーターによって評価される式です。 詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、次を参照してください。[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)します。
+その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

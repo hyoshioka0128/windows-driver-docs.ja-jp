@@ -71,7 +71,7 @@ ms.locfileid: "56559606"
 
 WSD スキャン サービスが正常に処理する場合、 **ValidateScanTicketRequest**でその検証情報が返されます、 [ **ValidateScanTicketResponse** ](validatescanticketresponse.md)操作。 それ以外の場合、スキャン サービスでは、適切なエラー コードを返す必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
 
 この操作は、次のエラー コードを返すも可能性があります。
 

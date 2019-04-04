@@ -58,19 +58,19 @@ RSS の機能を設定した後、システムは、ドライバーの電源投�
 
 呼び出してドライバーの RSS を有効に NetAdapterCx *[EvtNetAdapterReceiveScalingEnable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_enable)* コールバック。 このコールバックのコンテキストで一般的に、ハードウェアの制御ビットを有効します。 
 
-RSS を有効化のコード例では、次を参照してください。  *[EvtNetAdapterReceiveScalingEnable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_enable)* します。
+RSS を有効化のコード例では、 *[EvtNetAdapterReceiveScalingEnable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_enable)* を参照してください。
 
 ### <a name="disabling-rss"></a>RSS を無効にします。
 
 NetAdapterCx を呼び出してドライバーの RSS を無効にします*[EvtNetAdapterReceiveScalingDisable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_disable)* コールバック。 ここでは、通常で無効にする制御ビットで以前に設定したハードウェア*EvtNetAdapterReceiveScalingEnable*します。 
 
-RSS を無効化のコード例では、次を参照してください。  *[EvtNetAdapterReceiveScalingDisable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_disable)* します。
+RSS を無効化のコード例では、 *[EvtNetAdapterReceiveScalingDisable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_disable)* を参照してください。
 
 ## <a name="setting-the-hash-secret-key"></a>ハッシュの秘密キーを設定します。
 
 NetAdapterCx が呼び出す RSS が有効にすると、 *[EvtNetAdapterReceiveScalingSetHashSecretKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_hash_secret_key)* ハッシュの秘密キーを使用して、NIC には、ドライバーを提供するコールバックをハッシュの検証に使用する必要があります計算します。 このコールバックは、RSS を秘密キーをハッシュが変更された場合に実行するときにいつでも呼び出されることができます。 
 
-ハッシュの秘密キーの設定のコード例では、次を参照してください。  *[EvtNetAdapterReceiveScalingSetHashSecretKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_hash_secret_key)* します。
+ハッシュの秘密キーの設定のコード例では、 *[EvtNetAdapterReceiveScalingSetHashSecretKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_hash_secret_key)* を参照してください。
 
 ## <a name="moving-indirection-table-entries"></a>間接指定テーブル エントリの移動
 
@@ -78,4 +78,4 @@ RSS は、システムで実行中に、上位層プロトコル ドライバー
 
 このコールバックで、指定された受信キューに NIC の間接指定テーブル内の各エントリを移動します。 各[NET_ADAPTER_RECEIVE_SCALING_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/ns-netreceivescaling-_net_adapter_receive_scaling_indirection_entry)構造体、 **NET_ADAPTER_RECEIVE_SCALING_INDIRECTION_ENTRIES**配列には、表に、そのエントリのハッシュ インデックスが含まれています新しい。エントリとか、その個々 の移動が成功したかどうかを示す状態フィールドの割り当て先となるキューが表示されます。 
 
-ハードウェアにインデックス エントリを割り当てる方法が、受信キューが受信キューの数と、NIC の設計によって変わります。 詳細とコード例では、次を参照してください。  *[EvtNetAdapterReceiveScalingSetIndirectionEntries](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_indirection_entries)* します。
+ハードウェアにインデックス エントリを割り当てる方法が、受信キューが受信キューの数と、NIC の設計によって変わります。 詳細とコード例では、 *[EvtNetAdapterReceiveScalingSetIndirectionEntries](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netreceivescaling/nc-netreceivescaling-evt_net_adapter_receive_scaling_set_indirection_entries)* を参照してください。

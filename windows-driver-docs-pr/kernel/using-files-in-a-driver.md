@@ -32,17 +32,17 @@ ms.locfileid: "56574354"
 
 Microsoft Windows 役員でファイルを表します*ファイル オブジェクト*、これらは、オブジェクト マネージャーで管理されている executive オブジェクトです。 (ディレクトリもオブジェクトによって表されますファイルです。)
 
-カーネル モードのコンポーネントが、これはオブジェクト名、ファイルを参照して **\\\dosdevices\z**ファイルの完全なパスを連結します。 (Microsoft Windows 2000 と以降のバージョン、オペレーティング システムの**\\いますか。** 等価 **\\\dosdevices\z**)。たとえば、オブジェクト名を c: の\\WINDOWS\\example.txt ファイルが **\\\dosdevices\z\\c:\\WINDOWS\\example.txt**します。 オブジェクト名を使用して、ファイルを識別するハンドルを開きます。 オブジェクト名の詳細については、次を参照してください。[オブジェクト名](object-names.md)します。
+カーネル モードのコンポーネントが、これはオブジェクト名、ファイルを参照して **\\\dosdevices\z**ファイルの完全なパスを連結します。 (Microsoft Windows 2000 と以降のバージョン、オペレーティング システムの**\\いますか。** 等価 **\\\dosdevices\z**)。たとえば、オブジェクト名を c: の\\WINDOWS\\example.txt ファイルが **\\\dosdevices\z\\c:\\WINDOWS\\example.txt**します。 オブジェクト名を使用して、ファイルを識別するハンドルを開きます。 オブジェクト名の詳細については、[オブジェクト名](object-names.md)を参照してください。
 
 ### <a name="to-use-a-file"></a>ファイルを使用するには
 
 1.  ファイルを識別するハンドルを開きます。
 
-    詳細については、次を参照してください。[ファイル ハンドルを開く](opening-a-handle-to-a-file.md)します。
+    詳細については、[ファイル ハンドルを開く](opening-a-handle-to-a-file.md)を参照してください。
 
 2.  適切な呼び出し、目的の操作を実行**Zw*Xxx*ファイル**ルーチン。
 
-    詳細については、次を参照してください。[ファイル ハンドルを使用して](using-a-file-handle.md)します。
+    詳細については、[ファイル ハンドルを使用して](using-a-file-handle.md)を参照してください。
 
 3.  呼び出すことで、ハンドルを閉じる[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。
 

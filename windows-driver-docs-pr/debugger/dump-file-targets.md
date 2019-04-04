@@ -20,7 +20,7 @@ ms.locfileid: "56560468"
 ## <span id="ddk_dump_file_targets_dbx"></span><span id="DDK_DUMP_FILE_TARGETS_DBX"></span>
 
 
-概要とクラッシュ ダンプ ファイルの概要については、次を参照してください。[クラッシュ ダンプ ファイル](crash-dump-files.md)します。
+概要とクラッシュ ダンプ ファイルの概要については、[クラッシュ ダンプ ファイル](crash-dump-files.md)を参照してください。
 
 ### <a name="span-idopeningdumpfilesspanspan-idopeningdumpfilesspanspan-idopeningdumpfilesspanopening-dump-files"></a><span id="Opening_Dump_Files"></span><span id="opening_dump_files"></span><span id="OPENING_DUMP_FILES"></span>ダンプ ファイルを開く
 

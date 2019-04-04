@@ -81,7 +81,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、次を参照してください。、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>します。</p></td>
+<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>を参照してください。</p></td>
 <td><p>既定値は 0、値を計算する GDI の原因です。</p></td>
 </tr>
 <tr class="odd">

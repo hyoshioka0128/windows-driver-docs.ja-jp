@@ -68,7 +68,7 @@ ms.locfileid: "56557210"
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-リモート デバッグのこのトピックに示すもの以外の場合を確立するために多くの方法はあります。 デバッグ、WinDbg でサーバーをセットアップする詳細については[デバッガー コマンド ウィンドウ](debugger-command-window.md)を参照してください[ **.server (デバッグ サーバーの作成)**](-server--create-debugging-server-.md)します。 起動 WinDbg (および確立するリモート デバッグ)、コマンドラインでの詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+リモート デバッグのこのトピックに示すもの以外の場合を確立するために多くの方法はあります。 デバッグ、WinDbg でサーバーをセットアップする詳細については[デバッガー コマンド ウィンドウ](debugger-command-window.md)を参照してください[ **.server (デバッグ サーバーの作成)**](-server--create-debugging-server-.md)します。 起動 WinDbg (および確立するリモート デバッグ)、コマンドラインでの詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
 
  
 

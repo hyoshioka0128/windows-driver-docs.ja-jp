@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_I2C[デバイス インターフェイス クラス](https://m
 
 ディスプレイのミニポート ドライバーがこの直接呼出し I2C インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_I2C を指定します。
 
-I2C バスについては、次を参照してください。 [I2C バスとディスプレイ アダプターの子デバイス](https://msdn.microsoft.com/library/windows/hardware/ff567381)します。
+I2C バスについては、[I2C バスとディスプレイ アダプターの子デバイス](https://msdn.microsoft.com/library/windows/hardware/ff567381)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

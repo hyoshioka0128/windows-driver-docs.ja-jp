@@ -129,7 +129,7 @@ USB タイプ C ConnEx を使用して USB 型-C# の相互運用性のテスト
 
 
 
-その他のすべてのツールについては、次を参照してください。 [MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)します。
+その他のすべてのツールについては、[MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)を参照してください。
 
 ## <a name="get-started"></a>開始してください.
 

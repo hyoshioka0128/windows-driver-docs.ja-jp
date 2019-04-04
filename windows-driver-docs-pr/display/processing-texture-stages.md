@@ -23,7 +23,7 @@ ms.locfileid: "56580990"
 ## <span id="ddk_processing_texture_stages_gg"></span><span id="DDK_PROCESSING_TEXTURE_STAGES_GG"></span>
 
 
-ドライバーの使用、D3DDP2OP\_TEXTURESTAGESTATE 操作コードと[ **D3DHAL\_DP2TEXTURESTAGESTATE** ](https://msdn.microsoft.com/library/windows/hardware/ff545878)変更を処理するコマンド ストリーム内で次の構造テクスチャ ステージの状態にします。 ドライバー操作のコードを処理する方法については、次を参照してください。[コマンド Stream](command-stream.md)します。
+ドライバーの使用、D3DDP2OP\_TEXTURESTAGESTATE 操作コードと[ **D3DHAL\_DP2TEXTURESTAGESTATE** ](https://msdn.microsoft.com/library/windows/hardware/ff545878)変更を処理するコマンド ストリーム内で次の構造テクスチャ ステージの状態にします。 ドライバー操作のコードを処理する方法については、[コマンド Stream](command-stream.md)を参照してください。
 
 たとえば、操作コードが D3DDP2OP が場合\_TEXTURESTAGESTATE の値、 **wStateCount**のメンバー、 [ **D3DHAL\_DP2COMMAND** ](https://msdn.microsoft.com/library/windows/hardware/ff545454)構造体は、7、7 つ D3DHAL\_DP2TEXTURESTAGESTATE 構造が [次へ] D3DHAL 前に済まして\_DP2COMMAND 命令に到達します。 各 D3DHAL\_DP2TEXTURESTAGESTATE 構造に含まれる、 **dwStage**テクスチャのブレンド パイプラインのステージは、テクスチャ状態の変更する必要がありますを指定するメンバー。 **TSState**同じ構造体のメンバーを設定する D3DTEXTURESTAGESTATETYPE 列挙型の状態を指定して、 **dwValue** 、D3DHAL のメンバー\_DP2TEXTURESTAGESTATE構造体には、指定した状態を設定する必要があります、値が含まれています。
 

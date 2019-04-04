@@ -138,7 +138,7 @@ Control Valid Standby Dirty Shared Locked PageTables  name
 <a name="remarks"></a>注釈
 -------
 
-使用することができます、 [ **! vm** ](-vm.md)拡張機能コマンドで仮想メモリ使用量を分析します。 この拡張機能は通常より役に立つ **! memusage**します。 メモリ管理の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (この本できない場合がありますのいくつかの言語および国。)
+使用することができます、 [ **! vm** ](-vm.md)拡張機能コマンドで仮想メモリ使用量を分析します。 この拡張機能は通常より役に立つ **! memusage**します。 メモリ管理の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
 
 [ **! Pfn** ](-pfn.md) PFN データベース内の特定のページ フレームのエントリを表示する拡張機能のコマンドを使用できます。
 

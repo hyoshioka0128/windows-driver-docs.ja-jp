@@ -31,7 +31,7 @@ ms.locfileid: "56559962"
 
 -   統合ミニポート コール マネージャー (MCMs)
 
-いる CoNDIS ドライバーの詳細については、次を参照してください。 [Connection-Oriented NDIS](connection-oriented-ndis.md)します。
+いる CoNDIS ドライバーの詳細については、[Connection-Oriented NDIS](connection-oriented-ndis.md)を参照してください。
 
 コール マネージャーとミニポート ドライバー コンポーネントの分離では、コール マネージャーをそのままにしたまま、新しいハードウェアをサポートするために、ミニポート ドライバーを更新することができます。 多くの場合、コール マネージャーには欠陥を修正するだけのアップグレードが必要です。
 

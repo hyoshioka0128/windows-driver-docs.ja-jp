@@ -12,4 +12,4 @@ ms.locfileid: "56561244"
 > [!IMPORTANT]
 > Wi-fi ホット スポットのオフロード機能は、Windows 10 バージョン 1709 以降は非推奨し、は使用できません。 代わりに、UWP アプリを記述して、Wi-fi ホット スポット認証 API (Windows.Networking.NetworkOperators) を使用してお勧めします。
 >
-> コード サンプルと詳細については、次を参照してください。、 [Wi-fi ホット スポット認証サンプル](https://go.microsoft.com/fwlink/p/?linkid=854004)します。
+> コード サンプルと詳細については、、 [Wi-fi ホット スポット認証サンプル](https://go.microsoft.com/fwlink/p/?linkid=854004)を参照してください。

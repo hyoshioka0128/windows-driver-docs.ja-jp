@@ -40,7 +40,7 @@ ms.locfileid: "56553410"
 <td><p>DEVPKEY_Sensor_Type</p></td>
 <td><p>VT_CLSID</p></td>
 <td><p>必須</p></td>
-<td><p>センサーの種類を識別する GUID。 センサーの種類の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>します。</p></td>
+<td><p>センサーの種類を識別する GUID。 センサーの種類の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_Category</p></td>

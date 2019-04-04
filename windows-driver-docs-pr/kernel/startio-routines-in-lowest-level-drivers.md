@@ -53,7 +53,7 @@ ms.locfileid: "56550932"
 
 -   ドライバーは、リムーバブル メディア デバイスを制御する場合はメディアのチェック I/O のデバイスをプログラミングして、メディアが変更された場合、その上にあるファイル システムを通知する前に変更します。
 
-    詳細については、次を参照してください。[リムーバブル メディアをサポートしている](supporting-removable-media.md)します。
+    詳細については、[リムーバブル メディアをサポートしている](supporting-removable-media.md)を参照してください。
 
 -   デバイス DMA を使用する場合にチェックするかどうか、要求された**長さ**(転送されるバイト数の IRP のドライバーの I/O スタックの場所にある) で説明したように部分的な転送操作に分割する必要があります[入力/出力手法](i-o-programming-techniques.md)、密接に結合されたより高度なドライバーと仮定した場合も、デバイス ドライバーの大規模な転送が presplit されません。
 
@@ -83,7 +83,7 @@ ms.locfileid: "56550932"
 
 *StartIo*ルーチンの呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)し、要求を満たすために実行する必要があります操作を決定します。 これは、I/O 要求を実行する物理デバイスをプログラミングする前に必要な方法で IRP を前処理します。
 
-場合、物理へのアクセスとデバイス (またはデバイスの拡張機能) を同期する必要があります、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチン、 *StartIo*ルーチンは、を呼び出す必要があります[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンに必要なデバイスのプログラミングを実行します。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+場合、物理へのアクセスとデバイス (またはデバイスの拡張機能) を同期する必要があります、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチン、 *StartIo*ルーチンは、を呼び出す必要があります[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンに必要なデバイスのプログラミングを実行します。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
 バッファー内の I/O を使用する物理デバイス ドライバーをまたはに各 IRP のドライバーを検索する I/O マネージャーによって割り当てられた、システムの領域バッファーからデータを転送する**Irp -&gt;AssociatedIrp.SystemBuffer**します。
 
@@ -93,9 +93,9 @@ ms.locfileid: "56550932"
 
 *StartIo*ルーチンの呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)し、要求を満たすために実行する必要があります操作を決定します。 必要に応じて、部分的な転送の範囲に大きな DMA 転送要求を分割することについての状態の保存などの任意の方法で IRP を前処理、**長さ**の転送要求に分割する必要があります。 I/O 要求を実行する物理デバイスをプログラムします。
 
-場合に、物理的なアクセス デバイス (またはデバイスの拡張機能) は、ドライバーの ISR と同期する必要があります、 *StartIo*ドライバーによって提供されるルーチンを使用する必要があります*SynchCritSection*ルーチンを実行する、必要なプログラミングします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+場合に、物理的なアクセス デバイス (またはデバイスの拡張機能) は、ドライバーの ISR と同期する必要があります、 *StartIo*ドライバーによって提供されるルーチンを使用する必要があります*SynchCritSection*ルーチンを実行する、必要なプログラミングします。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
-ダイレクト I/O を使用するすべてのドライバーにデータを読み取るかの IRP である、ドライバーがによって検出されたメモリ記述子のリスト (MDL) で説明されている、ロックされたバッファーからデータを書き込みます**Irp -&gt;MdlAddress**します。 通常、このようなドライバーは、デバイス制御要求のバッファー内の I/O を使用します。 詳細については、次を参照してください。 [StartIo ルーチン内での I/O 制御要求の処理](#ddk-handling-i-o-control-requests-in-startio-routines-kg)します。
+ダイレクト I/O を使用するすべてのドライバーにデータを読み取るかの IRP である、ドライバーがによって検出されたメモリ記述子のリスト (MDL) で説明されている、ロックされたバッファーからデータを書き込みます**Irp -&gt;MdlAddress**します。 通常、このようなドライバーは、デバイス制御要求のバッファー内の I/O を使用します。 詳細については、[StartIo ルーチン内での I/O 制御要求の処理](#ddk-handling-i-o-control-requests-in-startio-routines-kg)を参照してください。
 
 MDL 型は、ドライバーに直接アクセスしないで不透明な型です。 代わりに、PIO を使用するドライバーは呼び出すことによってユーザー スペースのバッファーをマップし直す[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)で**Irp -&gt;MdlAddress**をパラメーターとして。 また DMA を使用するドライバーを渡す**Irp -&gt;MdlAddress**するバッファーのアドレスを自分のデバイスの論理範囲にマップし直され、転送操作中にルーチンをサポートするためにします。
 
@@ -119,7 +119,7 @@ MDL 型は、ドライバーに直接アクセスしないで不透明な型で�
 
 ### <a name="programming-the-device-for-io-operations"></a>デバイスの I/O 操作のプログラミング
 
-通常、 *StartIo* 、最下位レベルのデバイス ドライバーのルーチンはメモリへのアクセスを同期する必要がありますまたはデバイスに登録、共有、ドライバーの ISR を使用して[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチン。 ドライバーの*StartIo*ルーチン、 *SynchCritSection* DIRQL での I/O の物理デバイスを実際にプログラミング ルーチンです。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+通常、 *StartIo* 、最下位レベルのデバイス ドライバーのルーチンはメモリへのアクセスを同期する必要がありますまたはデバイスに登録、共有、ドライバーの ISR を使用して[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチン。 ドライバーの*StartIo*ルーチン、 *SynchCritSection* DIRQL での I/O の物理デバイスを実際にプログラミング ルーチンです。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
 呼び出しの前に**KeSynchronizeExecution**、 *StartIo*ルーチンは、要求に必要な処理を行う必要があります。 最初の部分転送範囲を計算し、その他のドライバーのルーチンの元の要求に関する状態情報を保存、前処理が含まれます。
 

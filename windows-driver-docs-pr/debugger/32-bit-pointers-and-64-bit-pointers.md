@@ -34,7 +34,7 @@ WdbgExts.h ヘッダー ファイルには、ポインターを 32 ビットお�
 ```cpp
 #include wdbgexts.h 
 ```
-64 ビット ポインターの操作の詳細については、次を参照してください。 [DECLARE_API マクロを使用して](using-the-declare-api-macro.md)と[WdbgExts 拡張機能コードの記述](writing-wdbgexts-extension-code.md)します。 さらに、WDK の一部として含まれているサンプル コードを確認します。
+64 ビット ポインターの操作の詳細については、[DECLARE_API マクロを使用して](using-the-declare-api-macro.md)と[WdbgExts 拡張機能コードの記述](writing-wdbgexts-extension-code.md)を参照してください。 さらに、WDK の一部として含まれているサンプル コードを確認します。
 
 
 

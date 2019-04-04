@@ -50,7 +50,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 この IRP に応答して、ドライバーは、コンピューターを中断することに、デバイスを削除できるかどうかを示します。
 
-この IRP の処理の詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_削除\_デバイス要求](https://msdn.microsoft.com/library/windows/hardware/ff546674)します。 デバイスの削除のサポートに関する概要については、次を参照してください。[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
+この IRP の処理の詳細については、[IRP の処理\_MN\_クエリ\_削除\_デバイス要求](https://msdn.microsoft.com/library/windows/hardware/ff546674)を参照してください。 デバイスの削除のサポートに関する概要については、[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)を参照してください。
 
 **この IRP を送信します。**
 

@@ -19,9 +19,9 @@ ms.locfileid: "56560020"
 
 
 
-InputBin 機能に関連付けられている属性はありません。 InputBin 機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+InputBin 機能に関連付けられている属性はありません。 InputBin 機能の詳細については、[標準機能](standard-features.md)を参照してください。
 
-追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
+追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
 
  
 

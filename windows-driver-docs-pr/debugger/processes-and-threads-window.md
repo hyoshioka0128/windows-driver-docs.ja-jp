@@ -54,7 +54,7 @@ ms.locfileid: "56553552"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメソッドを表示するか、システムを制御するのでは、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。 その他のメソッドを表示するか、プロセスとスレッドを制御するのでは、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+その他のメソッドを表示するか、システムを制御するのでは、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。 その他のメソッドを表示するか、プロセスとスレッドを制御するのでは、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
  
 

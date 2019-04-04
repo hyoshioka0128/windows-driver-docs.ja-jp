@@ -68,7 +68,7 @@ TLV リスト サイズが静的ににはは、いくつかのサイズを静的
 
  
 
-その他の TLVs が含まれている TLVs、TLV 参照トピックは、ある、*許可されている複数の TLV インスタンス*列。 この列がチェックされ、複数回出現する指定の TLV が許可されます。 これの例は、次を参照してください。 [ **WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266)します。
+その他の TLVs が含まれている TLVs、TLV 参照トピックは、ある、*許可されている複数の TLV インスタンス*列。 この列がチェックされ、複数回出現する指定の TLV が許可されます。 これの例は、[ **WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266)を参照してください。
 
  
 

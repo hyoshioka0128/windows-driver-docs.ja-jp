@@ -34,7 +34,7 @@ ms.locfileid: "56556541"
 
     **注**VFs が添付されていない場合、ネットワーク アダプター上の NIC スイッチに、 **NumElements**のメンバー、 [ **NDIS\_NIC\_切り替える\_VF\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/hh451592)構造を設定に 0 と no [ **NDIS\_NIC\_スイッチ\_VF\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451591)構造体が返されます。
 
-    NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
+    NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
 
 NDIS ハンドル、 [OID\_NIC\_スイッチ\_ENUM\_VFS](https://msdn.microsoft.com/library/windows/hardware/hh451820)ミニポート ドライバーに要求します。 NDIS は、次のソースを調べることから保持されているデータの内部キャッシュから情報を返します。
 

@@ -19,7 +19,7 @@ ms.locfileid: "56553251"
 
 プロトコル ドライバーをインストールするには、まず 1 つの INF ファイルを提供する必要があります。 Configuration manager では、プロトコル ドライバーに関する構成情報を INF ファイルから読み取るし、レジストリにコピーします。 
 
-プロトコル ドライバーの INF ファイルの詳細については、次を参照してください。[ネットワーク プロトコルのインストール要件](installation-requirements-for-network-protocols.md)します。 例プロトコル ドライバーの INF ファイルでは、次を参照してください。、 [ndisprot 630](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/ndisprot/6x/sys/630)サンプル ドライバー。
+プロトコル ドライバーの INF ファイルの詳細については、[ネットワーク プロトコルのインストール要件](installation-requirements-for-network-protocols.md)を参照してください。 例プロトコル ドライバーの INF ファイルでは、次を参照してください。、 [ndisprot 630](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/ndisprot/6x/sys/630)サンプル ドライバー。
 
 プロトコルには、ドライバーをインストールまたはアンインストールする必要がありますを使用するには、プロトコル ドライバーの INF ファイルを指定すると、`INetCfg`ファミリの[構成のネットワーク インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v%3dvs.85))します。 たとえば、ネットワークのコンポーネントをインストールまたは削除を呼び出す、 [INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709%28v%3dvs.85%29)インターフェイス。 プログラムによってこれらのインターフェイスを呼び出すことができますか、または直接いないで[netcfg.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/netcfg)、呼び出す`INetCfg`できます。 使用することはできません[SetupAPI](../install/setupapi.md)をインストールまたは NDIS プロトコル ドライバーをアンインストールします。
 

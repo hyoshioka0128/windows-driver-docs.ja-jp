@@ -26,7 +26,7 @@ TAEF ファイルを手動でインストールすることも参照してくだ
 
 TAEF では、ネイティブまたはマネージの関係を持つユーザーは制限されません。 ユーザーは、テストを作成する際に最も生産性の高い言語を選択できます。 TAEF は、C および C++ でのテストの記述をサポートしているC#、JScript および VBScript です。
 
-詳細については、次を参照してください。[オーサリング テスト](authoring-tests.md)します。
+詳細については、[オーサリング テスト](authoring-tests.md)を参照してください。
 
 ## <a name="executing-tests"></a>テストの実行
 
@@ -37,7 +37,7 @@ TAEF では、ネイティブまたはマネージの関係を持つユーザー
 TE.exe UnitTests\Wex.Common.Tests.dll
 ```
 
-詳細については、次を参照してください。[テストの実行](executing-tests.md)します。
+詳細については、[テストの実行](executing-tests.md)を参照してください。
 
 ## <a name="manually-installing-and-uninstalling-taef-on-a-test-computer"></a>手動でインストールして、テスト コンピューターでの TAEF のアンインストール
 

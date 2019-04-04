@@ -23,7 +23,7 @@ ms.locfileid: "56560537"
 <span id="GUID_ECP_OPLOCK_KEY"></span><span id="guid_ecp_oplock_key"></span>GUID\_ECP\_OPLOCK\_キー  
 識別する GUID、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551003)構造体であり、oplock のキーをファイルを開く要求にアタッチするために使用します。 Oplock キーには、アプリケーションのアプリケーションの oplock を損なうことがなく、同じストリームへの複数のハンドルを開くことができます。
 
-各 oplock と oplock のキーの詳細については、次を参照してください。 [Oplock セマンティクス概要](overview.md)します。
+各 oplock と oplock のキーの詳細については、[Oplock セマンティクス概要](overview.md)を参照してください。
 
 <span id="GUID_ECP_NETWORK_OPEN_CONTEXT"></span><span id="guid_ecp_network_open_context"></span>GUID\_ECP\_ネットワーク\_オープン\_コンテキスト  
 識別する GUID、 [**ネットワーク\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff550896)構造体し、ネットワーク リダイレクターの余分な情報をアタッチするために使用します。 この GUID も識別、 [**ネットワーク\_オープン\_ECP\_コンテキスト\_V0** ](https://msdn.microsoft.com/library/windows/hardware/ff550899)ドライバーが Windows 7 および以降のバージョンで動作するための構造Windows および Windows Vista に存在するファイルをネットワーク ECP コンテキストを解釈する必要があります。

@@ -32,7 +32,7 @@ ms.locfileid: "56571709"
 
 たとえば、各&lt;取得&gt;応答が元のクエリのセットを繰り返し、それぞれに、結果を追加します。 各&lt;設定&gt;応答は、「クエリ」の元のセットを繰り返しますが、何も提供しますが成功するクエリの詳細。 いずれかのクエリが失敗した場合、&lt;取得&gt;または&lt;設定&gt;結果は、エラー メッセージを要求します。
 
-要求の作成方法の詳細については、次を参照してください。[双方向通信のスキーマのクエリを構築する](constructing-a-bidi-communication-schema-query.md)します。
+要求の作成方法の詳細については、[双方向通信のスキーマのクエリを構築する](constructing-a-bidi-communication-schema-query.md)を参照してください。
 
 双方向通信のスキーマの詳細については、次を参照してください。、[双方向通信スキーマ階層](bidirectional-communication-schema-hierarchy.md)と[双方向通信のスキーマ リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff545175)トピック。
 

@@ -22,7 +22,7 @@ ms.locfileid: "56573393"
 ---
 # <a name="handling-pnp-events-and-power-management-events-in-a-protocol-driver"></a>プロトコル ドライバーの PnP イベントと電源管理イベントの処理
 
-オペレーティング システムでは、プラグ アンド プレイ (PnP) I/O 要求パケット (IRP) または電源管理 IRP がネットワーク インターフェイス カード (NIC) を表すターゲット デバイス オブジェクトを発行、NDIS は IRP をインターセプトします。 NDIS を呼び出してドライバーの各バインド プロトコル ドライバーとバインドされた各中間ドライバーにイベントを示します[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 呼び出しで*ProtocolNetPnPEvent*、NDIS へのポインターを渡す、 [ **NET\_PNP\_イベント\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff568752)を格納しています。NET\_PNP\_イベント構造体。 NET\_PNP\_PnP イベントまたは指定されている電源管理イベント、イベントの構造について説明します。 プロトコル ドライバーの PnP インターフェイスの詳細については、次を参照してください。[プロトコル ドライバーでの PnP イベント通知の処理](handling-pnp-event-notifications-in-a-protocol-driver.md)します。
+オペレーティング システムでは、プラグ アンド プレイ (PnP) I/O 要求パケット (IRP) または電源管理 IRP がネットワーク インターフェイス カード (NIC) を表すターゲット デバイス オブジェクトを発行、NDIS は IRP をインターセプトします。 NDIS を呼び出してドライバーの各バインド プロトコル ドライバーとバインドされた各中間ドライバーにイベントを示します[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 呼び出しで*ProtocolNetPnPEvent*、NDIS へのポインターを渡す、 [ **NET\_PNP\_イベント\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff568752)を格納しています。NET\_PNP\_イベント構造体。 NET\_PNP\_PnP イベントまたは指定されている電源管理イベント、イベントの構造について説明します。 プロトコル ドライバーの PnP インターフェイスの詳細については、[プロトコル ドライバーでの PnP イベント通知の処理](handling-pnp-event-notifications-in-a-protocol-driver.md)を参照してください。
 
 示されている、PnP や電源管理イベントの一覧を次の**NetEvent**ネット コード\_PNP\_イベントの構造。
 
@@ -30,7 +30,7 @@ ms.locfileid: "56573393"
 
     ミニポート アダプターが、特定の電源の状態に移行する必要があることを指定します、電源の設定の要求を示します。 電源管理に対応したプロトコルのドライバーが NDIS を返すことによってこのイベントを常に成功する必要があります\_状態\_成功します。 古いプロトコル ドライバーは、NDIS を返すことができます\_状態\_いない\_NDIS はミニポート アダプターからこれにバインドを示すには、サポートされています。
 
-    セットの電力の要求を発行した後は、NDIS はミニポート アダプターが低電力状態に遷移する場合に、ドライバー スタックを一時停止します。 NDIS は、ミニポート アダプターが (D0) の作業の状態に遷移する場合に、省電力要求の前に、ドライバー スタックを再起動します。 一時停止して再起動ドライバー スタックの詳細については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
+    セットの電力の要求を発行した後は、NDIS はミニポート アダプターが低電力状態に遷移する場合に、ドライバー スタックを一時停止します。 NDIS は、ミニポート アダプターが (D0) の作業の状態に遷移する場合に、省電力要求の前に、ドライバー スタックを再起動します。 一時停止して再起動ドライバー スタックの詳細については、[ドライバー スタックを一時停止](pausing-a-driver-stack.md)を参照してください。
 
     ミニポート アダプターが低電力状態にある場合、プロトコル ドライバーには、OID 要求を発行できません。 この要件は、ドライバー スタックが一時停止状態のときに適用されるその他の制限に追加される追加の電源管理の制限です。
 
@@ -38,7 +38,7 @@ ms.locfileid: "56573393"
 
     **注**NDIS 6.30、以降、このイベントの通知を送信プロトコル ドライバーは新しい I/O 要求の生成を停止する必要があり、保留中の I/O 要求への呼び出しのコンテキスト内での完了を待つ必要がありますいない[ *ProtocolNetPnPEvent*](https://msdn.microsoft.com/library/windows/hardware/ff570263)します。
 
-    セット電源イベントの詳細については、次を参照してください。 [PnP イベントを処理し、中間のドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)します。
+    セット電源イベントの詳細については、[PnP イベントを処理し、中間のドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)を参照してください。
 
 -   **NetEventQueryPower**
 
@@ -58,15 +58,15 @@ ms.locfileid: "56573393"
 
     ネットワーク コンポーネントの構成が変更されたことを示します。 たとえば、ユーザーは、TCP/IP の IP アドレスを変更する NDIS は このイベントを使用して、TCP/IP プロトコルを示します、 **NetEventReconfigure**コード。 プロトコル ドライバー、まれな状況は、エラー コードを返すことが示された構成の変更を適用できないと、使用可能な既定値がない場合。 メモリの割り当てに失敗した場合は、プロトコルにエラー コードが返されますの例に示します。 エラー コードを返すと、システムを再起動するように求めることができます。
 
-    プロトコルを検証する必要があります**NetEventReconfigure**-に関連するデータが渡されるその[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)します。
+    プロトコルを検証する必要があります**NetEventReconfigure**-に関連するデータが渡されるその[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 このようなデータの詳細については、[ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)を参照してください。
 
 -   **NetEventBindList**
 
     プロトコル ドライバーにそのバインドの一覧の処理順序が再構成されていることを示します。 この一覧では、たとえば、複数のバインドのいずれかにルーティングすることも、ユーザーの要求を処理する際、プロトコルのバインドに適用する相対順序を示します。 このイベントに渡されたバッファーには、デバイス名が NULL で終わる Unicode 文字列として書式設定の一覧が含まれています。 各デバイス名の形式と同じですが、 *DeviceName*への呼び出しに渡されるパラメーター [ *ProtocolBindAdapterEx*](https://msdn.microsoft.com/library/windows/hardware/ff570220)します。
 
-    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)します。
+    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、[ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)を参照してください。
 
-    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、次を参照してください。 [ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)します。
+    プロトコルを検証する必要があります**NetEventBindList**-に関連するデータが渡されるその*ProtocolNetPnPEvent*関数。 このようなデータの詳細については、[ **NET\_PNP\_イベント プロトコル ドライバーを**](https://msdn.microsoft.com/library/windows/hardware/ff568751)を参照してください。
 
 -   **NetEventBindsComplete**
 
@@ -78,19 +78,19 @@ ms.locfileid: "56573393"
 
 -   **NetEventPause**
 
-    指定したプロトコルのバインドが thePausing 状態を入力する必要がありますを示します。 NDIS は、すべてのバインディングの未処理の送信要求が完了した後、バインドは一時停止状態を入力します。 バインディングを一時停止の詳細については、次を参照してください。[バインディングを一時停止](pausing-a-binding.md)します。
+    指定したプロトコルのバインドが thePausing 状態を入力する必要がありますを示します。 NDIS は、すべてのバインディングの未処理の送信要求が完了した後、バインドは一時停止状態を入力します。 バインディングを一時停止の詳細については、[バインディングを一時停止](pausing-a-binding.md)を参照してください。
 
 -   **NetEventRestart**
 
-    指定したプロトコルのバインドが再開中の状態を入力したことを示します。 バインディングは、プロトコル ドライバーの送信を再開およびバインディングの操作を受信する準備が実行中の状態が入力されます。 バインディングを再開する方法の詳細については、次を参照してください。[バインディングを再起動する](restarting-a-binding.md)します。
+    指定したプロトコルのバインドが再開中の状態を入力したことを示します。 バインディングは、プロトコル ドライバーの送信を再開およびバインディングの操作を受信する準備が実行中の状態が入力されます。 バインディングを再開する方法の詳細については、[バインディングを再起動する](restarting-a-binding.md)を参照してください。
 
 -   **NetEventPortActivation**
 
-    指定したバインディングに関連付けられているポートの一覧のアクティブ化を示します。 バインディングを一時停止の詳細については、次を参照してください。[ポート アクティベーション PnP イベントを処理する](handling-the-port-activation-pnp-event.md)します。
+    指定したバインディングに関連付けられているポートの一覧のアクティブ化を示します。 バインディングを一時停止の詳細については、[ポート アクティベーション PnP イベントを処理する](handling-the-port-activation-pnp-event.md)を参照してください。
 
 -   **NetEventPortDeactivation**
 
-    指定したバインディングに関連付けられているポートの一覧の非アクティブ化を示します。 バインディングを一時停止の詳細については、次を参照してください。[ポート非アクティブ化の PnP イベントを処理する](handling-the-port-deactivation-pnp-event.md)します。
+    指定したバインディングに関連付けられているポートの一覧の非アクティブ化を示します。 バインディングを一時停止の詳細については、[ポート非アクティブ化の PnP イベントを処理する](handling-the-port-deactivation-pnp-event.md)を参照してください。
 
 -   **NetEventIMReEnableDevice**
 

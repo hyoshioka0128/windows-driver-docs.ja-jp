@@ -61,8 +61,8 @@ typedef union _FLT_PARAMETERS {
 
 | FILE_INFORMATION_CLASS 値 | 返される情報の種類 |
 | --- | --- |
-| FileStatInformation | A [ **FILE_STAT_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、次を参照してください。 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)します。 
-| FileStatLxInformation | A [ **FILE_STAT_LX_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_lx_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、次を参照してください。 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)します。 
+| FileStatInformation | A [ **FILE_STAT_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)を参照してください。 
+| FileStatLxInformation | A [ **FILE_STAT_LX_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_lx_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)を参照してください。 
 | FileCaseSensitiveInformation | A [FILE_CASE_SENSITIVE_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 |
 
 ## <a name="remarks"></a>コメント

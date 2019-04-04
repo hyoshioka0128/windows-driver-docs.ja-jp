@@ -84,7 +84,7 @@ DBH は、デバッガーが行うような方法でターゲット プロセス
 
 既定では、DBH は非装飾のシンボル名を表示すると、シンボルの検索を使用します。 無効にした場合、 [SYMOPT\_UNDNAME](symbol-options.md#symopt-undname)シンボルのオプション、または DBH コマンドラインで-d オプションを含める、装飾が含まれます。
 
-シンボルの装飾については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
+シンボルの装飾については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
 
 ### <a name="span-idexitingdbhspanspan-idexitingdbhspanexiting-dbh"></a><span id="exiting_dbh"></span><span id="EXITING_DBH"></span>DBH を終了します。
 

@@ -28,7 +28,7 @@ ms.locfileid: "56569940"
 -   状態
 -   設定
 
-デバッガー オブジェクトとの対話には、dx コマンドと LINQ を使用できます。 詳細については、次を参照してください。 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)と[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)します。
+デバッガー オブジェクトとの対話には、dx コマンドと LINQ を使用できます。 詳細については、[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)と[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)を参照してください。
 
 JavaScript を使用してデバッガー オブジェクトを操作することもできます。 詳細については、「その[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。
 

@@ -41,7 +41,7 @@ ms.locfileid: "56561136"
 
 [**AgpSetRate**](https://msdn.microsoft.com/library/windows/hardware/ff538226)
 
-呼び出すことで関数ポインターを取得する必要があります、ビデオのミニポート ドライバーでは、関数を呼び出す上記の一覧で、前に[ **VideoPortQueryServices**](https://msdn.microsoft.com/library/windows/hardware/ff570337)します。 AGP 関数へのポインターを取得する方法の詳細については、次を参照してください。 [AGP ビデオ ポート ドライバーによって関数が実装されている](https://msdn.microsoft.com/library/windows/hardware/ff538227)します。
+呼び出すことで関数ポインターを取得する必要があります、ビデオのミニポート ドライバーでは、関数を呼び出す上記の一覧で、前に[ **VideoPortQueryServices**](https://msdn.microsoft.com/library/windows/hardware/ff570337)します。 AGP 関数へのポインターを取得する方法の詳細については、[AGP ビデオ ポート ドライバーによって関数が実装されている](https://msdn.microsoft.com/library/windows/hardware/ff538227)を参照してください。
 
 ビデオのミニポート ドライバーでは、予約し、ディスプレイ アダプターがシステム メモリをアクセス AGP aperture の一部をコミットするには、次の手順を実行します。
 

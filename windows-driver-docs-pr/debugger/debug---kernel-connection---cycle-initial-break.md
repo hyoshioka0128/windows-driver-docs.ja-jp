@@ -38,7 +38,7 @@ ms.locfileid: "56560457"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、関連するコマンドおよび再起動プロセスがデバッガーに与える影響の詳細については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
+詳細については、関連するコマンドおよび再起動プロセスがデバッガーに与える影響の詳細については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
 
  
 

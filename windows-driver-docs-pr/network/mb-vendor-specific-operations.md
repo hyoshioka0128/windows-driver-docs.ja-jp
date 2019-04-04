@@ -16,7 +16,7 @@ ms.locfileid: "56551771"
 
 このトピックでは、インターフェイス ベンダー特定の操作 MB サービスにするための操作について説明します。
 
-ベンダーの特定の操作の詳細については、次を参照してください。 [OID\_WWAN\_ベンダー\_特定](https://msdn.microsoft.com/library/windows/hardware/ff569842)します。
+ベンダーの特定の操作の詳細については、[OID\_WWAN\_ベンダー\_特定](https://msdn.microsoft.com/library/windows/hardware/ff569842)を参照してください。
 
  
 

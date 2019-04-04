@@ -34,7 +34,7 @@ TA へのポインター\_ネットワーク アドレスを記述するアド�
 <a href="" id="devicename"></a>*デバイス名*  
 アドレスが関連付けられている NIC-トランスポートのバインドを識別する Unicode 文字列へのポインター。 TCP/IP が発生した場合、Unicode 文字列は、次の形式があります。\\デバイス\\Tcpip\_{NIC の GUID} NIC-GUID は、ネットワーク構成のサブシステムによって NIC に割り当てられたグローバル一意識別子
 
-上記の構造体の定義は、tdi.h ヘッダー ファイルで定義されます。 上記の登録とコールバック関数は、tdikrnl.h ヘッダー ファイルで定義されます。 これらのヘッダー ファイルは、Microsoft Windows ドライバー開発キット (DDK) と Windows Driver Kit (WDK) で使用できます。 TDI プラグ アンド プレイ (PnP) 通知の詳細については、次を参照してください。 [TDI クライアント コールバック](https://msdn.microsoft.com/library/windows/hardware/ff565081)と[TDI クライアント イベントと PnP 通知ハンドラー](https://msdn.microsoft.com/library/windows/hardware/ff565082)します。
+上記の構造体の定義は、tdi.h ヘッダー ファイルで定義されます。 上記の登録とコールバック関数は、tdikrnl.h ヘッダー ファイルで定義されます。 これらのヘッダー ファイルは、Microsoft Windows ドライバー開発キット (DDK) と Windows Driver Kit (WDK) で使用できます。 TDI プラグ アンド プレイ (PnP) 通知の詳細については、[TDI クライアント コールバック](https://msdn.microsoft.com/library/windows/hardware/ff565081)と[TDI クライアント イベントと PnP 通知ハンドラー](https://msdn.microsoft.com/library/windows/hardware/ff565082)を参照してください。
 
 システムの起動時に TDI は現在アクティブなすべての IP アドレスを示すために、プロキシ ドライバーのアドレス追加コールバックを呼び出します。 TDI は、TCP/IP トランスポート プロトコル TDI で新しい IP アドレスを登録するときにもこのコールバックを呼び出します。 プロキシのドライバーには IP アドレスの一覧に、プロキシ ドライバーの Nic に割り当てられているアドレスのみが含まれています。 ドライバーのアドレス追加コールバック コントロールすぐに、ドライバーでの NIC が認識されない場合*DeviceName*します。
 

@@ -16,7 +16,7 @@ ms.locfileid: "56560454"
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-UMDF バージョン 2.0 以降を使用している場合は、次を参照してください。[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)します。
+UMDF バージョン 2.0 以降を使用している場合は、[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)を参照してください。
 
 1.x UMDF ドライバー内のハードウェア リソースを受け取るその[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)コールバック メソッド。 ドライバーを使用して、 [ **IWDFCmResourceList** ](https://msdn.microsoft.com/library/windows/hardware/hh439762)インターフェイスを翻訳済みのリソースの一覧を確認し、メモリ マップト レジスタ、I/O ポート、および割り込みを特定します。
 
@@ -24,7 +24,7 @@ UMDF バージョン 2.0 以降を使用している場合は、次を参照し�
 
 ドライバーは、メモリ マップト レジスタを受信する場合、ドライバーを呼び出す必要があります[ **IWDFDevice3::MapIoSpace** ](https://msdn.microsoft.com/library/windows/hardware/hh451225)それらにアクセスできる前に、レジスタにマップします。 通常、ドライバーはマップでのレジスタの[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)メソッド。 ドライバーでのレジスタの割り当てを解除、 [ **IPnpCallbackHardware2::OnReleaseHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439739)呼び出すことによってコールバック[ **IWDFDevice3::UnmapIoSpace** ](https://msdn.microsoft.com/library/windows/hardware/hh451237). I/O ポートのマッピングは必要ないことに注意してください。
 
-例については、ドライバーを検索し、メモリ マップト マップ リソースを登録する方法を示しますが、次を参照してください。 [ **IWDFDevice3::MapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/hh451225)します。
+例については、ドライバーを検索し、メモリ マップト マップ リソースを登録する方法を示しますが、[ **IWDFDevice3::MapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/hh451225)を参照してください。
 
  
 

@@ -18,14 +18,14 @@ Windows 8.1 では、UWP アプリは、デバイス バックグラウンド �
 
 デバイスとの同期を実行し、更新操作、使用するデバイスのバック グラウンド タスクを作成、 [DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)と[DeviceServicingTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308965)、それぞれします。 これを行う方法については、[カスタム USB デバイス サンプル](https://go.microsoft.com/fwlink/p/?LinkId=301975 )と[ファームウェア更新の USB デバイス サンプル](https://go.microsoft.com/fwlink/p/?LinkId=309186)を参照してください[デバイスのバック グラウンド タスクを作成する](how-to-create-a-device-background-task.md)します。
 
-**注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、次を参照してください。[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)します。
+**注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)を参照してください。
 
  
 
 ## <a name="span-iddevicebackgroundtaskoverviewspanspan-iddevicebackgroundtaskoverviewspanspan-iddevicebackgroundtaskoverviewspandevice-background-task-overview"></a><span id="Device_background_task_overview_"></span><span id="device_background_task_overview_"></span><span id="DEVICE_BACKGROUND_TASK_OVERVIEW_"></span>デバイスのバック グラウンド タスクの概要
 
 
-ユーザーは、画面外の UWP アプリを移動するときに、Windows には、アプリでメモリが中断します。 これには、別のアプリがフォア グラウンドがあることができます。 アプリが中断されるは、メモリ内の常駐は、Windows が実行を停止しました。 この場合、デバイスのバック グラウンド タスクを使用しない限り、同期や更新などの任意の継続的なデバイス操作が中断されます。 Windows 8.1 には、アプリが中断されている場合でも、アプリがバック グラウンドで安全に周辺機器デバイスで実行時間の長い同期と更新の操作を実行する 2 つの新しいバック グラウンド タスク トリガーが用意されています。DeviceUseTrigger DeviceServicingTrigger. アプリの中断に関する詳細については、次を参照してください。 [Launching, resuming, とマルチタスク](https://go.microsoft.com/fwlink/p/?LinkId=309316)します。
+ユーザーは、画面外の UWP アプリを移動するときに、Windows には、アプリでメモリが中断します。 これには、別のアプリがフォア グラウンドがあることができます。 アプリが中断されるは、メモリ内の常駐は、Windows が実行を停止しました。 この場合、デバイスのバック グラウンド タスクを使用しない限り、同期や更新などの任意の継続的なデバイス操作が中断されます。 Windows 8.1 には、アプリが中断されている場合でも、アプリがバック グラウンドで安全に周辺機器デバイスで実行時間の長い同期と更新の操作を実行する 2 つの新しいバック グラウンド タスク トリガーが用意されています。DeviceUseTrigger DeviceServicingTrigger. アプリの中断に関する詳細については、[Launching, resuming, とマルチタスク](https://go.microsoft.com/fwlink/p/?LinkId=309316)を参照してください。
 
 <table>
 <colgroup>
@@ -107,7 +107,7 @@ DeviceUseTrigger と DeviceServicingTrigger を使用するデバイスのバッ
 ## <a name="span-idusingyourdevicewithdevicebackgroundtasksspanspan-idusingyourdevicewithdevicebackgroundtasksspanspan-idusingyourdevicewithdevicebackgroundtasksspanusing-your-device-with-device-background-tasks"></a><span id="Using_your_device_with_device_background_tasks"></span><span id="using_your_device_with_device_background_tasks"></span><span id="USING_YOUR_DEVICE_WITH_DEVICE_BACKGROUND_TASKS"></span>デバイスのバック グラウンド タスクでデバイスを使用します。
 
 
-DeviceUseTrigger と DeviceServicingTrigger バック グラウンド タスクに活用するためにアプリを開発するには、この基本的な一連の手順に従います。 バック グラウンド タスクの詳細については、次を参照してください。[バック グラウンド タスクを使用してアプリをサポートしている](https://go.microsoft.com/fwlink/p/?LinkID=254337)します。
+DeviceUseTrigger と DeviceServicingTrigger バック グラウンド タスクに活用するためにアプリを開発するには、この基本的な一連の手順に従います。 バック グラウンド タスクの詳細については、[バック グラウンド タスクを使用してアプリをサポートしている](https://go.microsoft.com/fwlink/p/?LinkID=254337)を参照してください。
 
 1.  アプリ マニフェストにバックグラウンド タスクを登録し、IBackgroundTask を実装する Windows ランタイム クラスまたは JavaScript アプリ専用の JavaScript ページにバックグラウンド タスク コードを埋め込みます。
 2.  アプリケーションの起動時に作成および DeviceUseTrigger または DeviceServicingTrigger のいずれか、適切な種類のデバイスのトリガー オブジェクトを構成し、将来使用するためのトリガーのインスタンスを格納します。

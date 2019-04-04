@@ -14,7 +14,7 @@ ms.locfileid: "56558643"
 # <a name="planning-your-desktop-cosaapn-database-submission"></a>デスクトップ、COSA/APN データベースの送信の計画
 
 > [!IMPORTANT]
-> APN データベースは Windows 10 バージョン 1703 以降 COSA と呼ばれる新しい形式に置換されます。 Windows 8、Windows 8.1、およびバージョンの Windows 10 バージョン 1703 を引き続き Windows 10 は APN データベースを使用する前に、バージョン 1703 以降は COSA を使用します。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。
+> APN データベースは Windows 10 バージョン 1703 以降 COSA と呼ばれる新しい形式に置換されます。 Windows 8、Windows 8.1、およびバージョンの Windows 10 バージョン 1703 を引き続き Windows 10 は APN データベースを使用する前に、バージョン 1703 以降は COSA を使用します。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。
 
 新しい APN を Windows デスクトップ デバイスに付属するベースライン COSA/APN データベースに追加しようとしているときにこのトピックのセクションを使用して、または、既存のものを更新します。
 
@@ -38,7 +38,7 @@ APN 更新スプレッドシートは、Microsoft 更新できるように、COS
 
 APN の最新の更新プログラム スプレッドシートをダウンロードするのにには、次のリンクを使用します。 <https://go.microsoft.com/fwlink/p/?linkid=851213>
 
-APN の更新プログラムのスプレッドシートの設定に関する詳細については、次を参照してください。[デスクトップ COSA/APN データベースの設定](desktop-cosa-apn-database-settings.md)します。
+APN の更新プログラムのスプレッドシートの設定に関する詳細については、[デスクトップ COSA/APN データベースの設定](desktop-cosa-apn-database-settings.md)を参照してください。
 
 ## <a name="considerations-when-completing-the-spreadsheet"></a>ワークシートの完了時の考慮事項
 

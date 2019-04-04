@@ -16,13 +16,13 @@ ms.locfileid: "56580379"
 
 Windows では、コンポーネントを管理するための一般的なメカニズムを提供します。 このシステムは、Windows Management Instrumentation (WMI) と呼ばれます。 Windows Driver Model (WDM) の要件を満たしてに、ドライバーは、システムによって管理できるように、ドライバーの WMI を実装する必要があります。
 
-WMI の詳細については、次を参照してください。 [Windows Management Instrumentation](implementing-wmi.md)します。
+WMI の詳細については、[Windows Management Instrumentation](implementing-wmi.md)を参照してください。
 
 WMI ライブラリへの直接のインターフェイスを提供するルーチンには、文字のプレフィックス"**Wmi**"WMI のルーチンの一覧を参照してください。 [Windows Management Instrumentation (WMI) ライブラリ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566359)します。
 
-WMI のコールバックの一覧は、次を参照してください。 [WMI ライブラリ コールバック ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566357)します。
+WMI のコールバックの一覧は、[WMI ライブラリ コールバック ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566357)を参照してください。
 
-WMI との通信は Irp で実行されます。 ドライバーは Irp を受信に使用できるルーチンの一覧は、次を参照してください。 [WMI IRP の処理ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566353)します。 ドライバーを使用して WMI Irp を送信するルーチンの一覧は、次を参照してください。 [WMI IRP を送信するルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566355)します。 WMI で使用される Irp の一覧は、次を参照してください。 [WMI マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff566361)します。
+WMI との通信は Irp で実行されます。 ドライバーは Irp を受信に使用できるルーチンの一覧は、[WMI IRP の処理ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566353)を参照してください。 ドライバーを使用して WMI Irp を送信するルーチンの一覧は、[WMI IRP を送信するルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566355)を参照してください。 WMI で使用される Irp の一覧は、[WMI マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff566361)を参照してください。
 
  
 

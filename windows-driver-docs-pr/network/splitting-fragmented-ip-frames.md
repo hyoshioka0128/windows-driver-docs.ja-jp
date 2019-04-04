@@ -26,7 +26,7 @@ NIC があるフレームを分割する必要があります断片化 IP フレ
 
 フラグメント化された IPv6 フレームにプロトコル レイヤー上のヘッダーが含まれていない場合、NIC は、フレームを分割する必要があります。
 
-上のレイヤー プロトコル ヘッダーの先頭のフレームの分割の詳細については、次を参照してください。[上のレイヤー プロトコル ヘッダーの先頭のフレームの分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。
+上のレイヤー プロトコル ヘッダーの先頭のフレームの分割の詳細については、[上のレイヤー プロトコル ヘッダーの先頭のフレームの分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)を参照してください。
 
  
 

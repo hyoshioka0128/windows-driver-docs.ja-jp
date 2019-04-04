@@ -17,7 +17,7 @@ ms.locfileid: "56570684"
 ---
 # <a name="map-the-procamp-control-ddi-to-directdraw-and-directx-va"></a>DirectDraw を DirectX VA DDI ProcAmp コントロールをマップします。
 
-ProcAmp コントロールの機能は、DirectDraw のを通じてアクセスする必要があります[補正コールバック関数のモーション](motion-compensation-callbacks.md)先、 [ProcAmp コントロール DDI](https://msdn.microsoft.com/library/windows/hardware/ff569186)マップすることができます。 DirectX の VA DDI を DirectDraw の動き補正コールバックにマップする方法の詳細については、次を参照してください。 [DirectDraw を DirectX VA インター レースを解除 DDI をマッピング](mapping-the-deinterlace-ddi-to-directdraw-and-directx-va.md)します。
+ProcAmp コントロールの機能は、DirectDraw のを通じてアクセスする必要があります[補正コールバック関数のモーション](motion-compensation-callbacks.md)先、 [ProcAmp コントロール DDI](https://msdn.microsoft.com/library/windows/hardware/ff569186)マップすることができます。 DirectX の VA DDI を DirectDraw の動き補正コールバックにマップする方法の詳細については、[DirectDraw を DirectX VA インター レースを解除 DDI をマッピング](mapping-the-deinterlace-ddi-to-directdraw-and-directx-va.md)を参照してください。
 
 次のトピックでは、モーションの補正コールバックに DDI ProcAmp コントロールをマップする方法について説明します。
 

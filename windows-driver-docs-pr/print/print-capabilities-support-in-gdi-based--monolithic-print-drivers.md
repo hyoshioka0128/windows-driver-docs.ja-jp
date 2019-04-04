@@ -20,7 +20,7 @@ ms.locfileid: "56539005"
 
 印刷チケットを完了して、印刷機能のサポートに提供する GDI ベース、モノリシックなプリンター ドライバーと[XPSDrv プリンター ドライバー](xpsdrv-printer-drivers.md) GPD プリンター インターフェイスが DLL を実装する必要がありますを使用することはできません、 [IPrintTicketProviderインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff554375)します。 モノリシック、GDI ベースのプリンター ドライバーは、この PrintCapabilities ドキュメントで公開され、PrintTicket ドキュメントでサポートされているプリンターの機能を制限する可能性がありますが、このインターフェイスをサポートする必要はありません。 ただし、XPSDrv プリンター ドライバーを実装する必要があります**IPrintTicketProvider**します。
 
-**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 [ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)します。
+**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、[ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)を参照してください。
 
  
 

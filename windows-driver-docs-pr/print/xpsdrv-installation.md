@@ -21,7 +21,7 @@ ms.locfileid: "56570543"
 
 -   [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ドライバーの INF ファイルのディレクティブが参照する必要があります、[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)します。
 
--   ニーズ ディレクティブは、Xpsdrv.oem を参照する必要があります。 ニーズ ディレクティブの詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[Inf のソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)します。
+-   ニーズ ディレクティブは、Xpsdrv.oem を参照する必要があります。 ニーズ ディレクティブの詳細については、[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[Inf のソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)を参照してください。
 
 -   構成のモジュールは、Unidrv に基づいている場合、Unidrv.oem と Xpsgpd.oem にニーズ ディレクティブが参照する必要があります。 同様に、XPSDrv ドライバーの構成のモジュールは、PScript5 に基づいている場合は、ニーズのディレクティブは Pscript.oem と Xpsppd.oem 参照する必要があります。
 

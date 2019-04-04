@@ -85,7 +85,7 @@ DrvPopulateFilterServices(
     );
 ```
 
-前の関数の詳細については、次を参照してください。 [ **DrvPopulateFilterServices**](https://msdn.microsoft.com/library/windows/hardware/hh768268)します。
+前の関数の詳細については、[ **DrvPopulateFilterServices**](https://msdn.microsoft.com/library/windows/hardware/hh768268)を参照してください。
 
 次のコード例の XML 構文を示しています、 **&lt;FilterServiceProvider&gt;** フィルター パイプライン構成ファイル内の要素。
 

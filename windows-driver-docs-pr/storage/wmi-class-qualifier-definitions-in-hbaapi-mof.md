@@ -29,7 +29,7 @@ ms.locfileid: "56574461"
 
 含めることで、ただし、 *Hbaapi.h*ドライバーまたはアプリケーションが定義されている WMI クラスの修飾子に関連付けられている各値に対して、覚えやすい名前を指定するために定義されているシンボリック定数のセットを使用できます*Hbaapi.mof*します。
 
-WMI クラスの修飾子の概要については、次を参照してください。 [WMI クラスの修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566348)します。
+WMI クラスの修飾子の概要については、[WMI クラスの修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566348)を参照してください。
 
  
 

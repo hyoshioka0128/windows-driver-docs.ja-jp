@@ -51,7 +51,7 @@ void SM_SetBindingSupport(
 永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示すビットマップ。 このパラメーターには値の一覧は、HBA の説明を参照してください。\_バインド\_型 WMI クラスの修飾子。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SetBindingSupport の HBAStatus メンバー\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SetBindingSupport の HBAStatus メンバー\_構造体。
 
 <a name="return-value"></a>戻り値
 ------------

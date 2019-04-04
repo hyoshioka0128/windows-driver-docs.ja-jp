@@ -39,7 +39,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス
 継続的な転送のキャンセルする必要があるエンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
+エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
 
 ## <a name="return-values"></a>戻り値
 

@@ -46,7 +46,7 @@ DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で動�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、DevCon (Devcon.exe) が含まれます。 キットのダウンロード方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>します。</p>
+<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、DevCon (Devcon.exe) が含まれます。 キットのダウンロード方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>を参照してください。</p>
 <p><strong>Windows Driver Kit (WDK) 8 と Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
 <p>%WindowsSdkDir%\tools\x64\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\devcon.exe</p>

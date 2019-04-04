@@ -22,7 +22,7 @@ ms.locfileid: "56551598"
 ## <span id="ddk_handling_vertex_elements_gg"></span><span id="DDK_HANDLING_VERTEX_ELEMENTS_GG"></span>
 
 
-DirectX 9.0 バージョンのドライバーが処理できるシェーダー宣言での頂点の要素の数は、ドライバーのデバイスが固定機能やプログラミング可能な頂点の処理をサポートするかどうかによって異なります。 頂点シェーダー宣言の要素の詳細については、次を参照してください。[宣言の分離と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)します。
+DirectX 9.0 バージョンのドライバーが処理できるシェーダー宣言での頂点の要素の数は、ドライバーのデバイスが固定機能やプログラミング可能な頂点の処理をサポートするかどうかによって異なります。 頂点シェーダー宣言の要素の詳細については、[宣言の分離と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)を参照してください。
 
 デバイスは、固定機能の頂点の処理をサポートする場合、ドライバーは、最大 17 頂点要素 (FVF コード) を処理する必要があります。
 

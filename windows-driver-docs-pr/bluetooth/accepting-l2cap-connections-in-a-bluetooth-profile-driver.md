@@ -52,7 +52,7 @@ L2CAP サーバー プロファイル ドライバーは、リモート デバ�
 
 リモート デバイス L2CAP 接続試行の通知の受信を停止するプロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_登録解除\_SERVER** ](https://msdn.microsoft.com/library/windows/hardware/ff536619)プロファイル ドライバーが処理するときに、サーバーの登録を解除する要求[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)プラグ アンド プレイが通知を削除します。
 
-通知とコールバック関数の詳細については、次を参照してください。 [Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)します。
+通知とコールバック関数の詳細については、[Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)を参照してください。
 
  
 

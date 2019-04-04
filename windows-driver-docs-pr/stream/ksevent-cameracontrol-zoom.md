@@ -62,7 +62,7 @@ ms.locfileid: "56538966"
 <a name="remarks"></a>注釈
 -------
 
-詳細については、次を参照してください。 [ **KSPROPERTY\_CAMERACONTROL\_S\_EX**](https://msdn.microsoft.com/library/windows/hardware/jj151593)します。
+詳細については、[ **KSPROPERTY\_CAMERACONTROL\_S\_EX**](https://msdn.microsoft.com/library/windows/hardware/jj151593)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

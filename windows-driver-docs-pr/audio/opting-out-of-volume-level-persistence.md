@@ -59,7 +59,7 @@ DeviceDescription = "My WDM device driver"
 
  
 
-**% MfgName CompanyName =** 内のエントリの行、**製造元**セクション参照、 **CompanyName**セクション where オーディオのアダプターのモデルとハードウェア ID (hw id)提供されます。 このセクションで、モデルとハードウェア id の情報が提供されている、INF ファイルと呼びます、*セクションをモデル化*します。 セクションの実際のタイトルでは、ユーザーが定義し、前の例では**CompanyName**します。 INF ファイルのモデルのセクションの詳細については、次を参照してください。 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)します。
+**% MfgName CompanyName =** 内のエントリの行、**製造元**セクション参照、 **CompanyName**セクション where オーディオのアダプターのモデルとハードウェア ID (hw id)提供されます。 このセクションで、モデルとハードウェア id の情報が提供されている、INF ファイルと呼びます、*セクションをモデル化*します。 セクションの実際のタイトルでは、ユーザーが定義し、前の例では**CompanyName**します。 INF ファイルのモデルのセクションの詳細については、[ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)を参照してください。
 
 モデルのセクションは、さらに、セットアップ プログラムをコピーする必要があるその他の INF ファイルに関する情報を提供する場所、デバイス ドライバー インストール (DDInstall) セクションを参照します。 このセクションの実際のタイトルでは、ユーザーが定義し、前の例では**HdAudModel**します。 **KS を = 必要があります。登録しています.** 行のエントリのインストールについては、セットアップ プログラムを取得する必要があります、INF ファイル内で特定のセクションでは、データを提供
 
@@ -69,7 +69,7 @@ DeviceDescription = "My WDM device driver"
 
 **HdAudModel**セクションがコメント アウトされた最初のものの 2 つの行エントリを示しています。コメント アウトされている行のエントリが「1」にデバイス プロパティの値を設定します。 コメント アウトされていない行のエントリは、セットアップ プログラムを読み取ります。 この行のエントリが「0」に設定するデバイスのプロパティの値 このデバイスのプロパティが「0」に設定されている場合、オーディオ デバイス ボリュームの永続化からオプトアウトします。
 
-AddProperty ディレクティブの詳細については、次を参照してください。 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)します。
+AddProperty ディレクティブの詳細については、[ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)を参照してください。
 
 上記の INF ファイルのコードでプロパティ カテゴリ GUID およびプロパティ ID に対応するプロパティ名が鍵\_AudioDevice\_DontPersistControls します。
 

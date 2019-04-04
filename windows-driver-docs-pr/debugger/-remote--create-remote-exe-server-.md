@@ -65,7 +65,7 @@ ms.locfileid: "56556479"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Remote.exe サーバーおよび Remote.exe クライアントを使用する方法の詳細については、次を参照してください。 [Remote.exe でリモート デバッグ](remote-debugging-through-remote-exe.md)します。
+Remote.exe サーバーおよび Remote.exe クライアントを使用する方法の詳細については、[Remote.exe でリモート デバッグ](remote-debugging-through-remote-exe.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

@@ -73,7 +73,7 @@ ms.locfileid: "57464058"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
 ### <a href="" id="note-on--lookaheadregion"></a>Note on \*LookAheadRegion
 

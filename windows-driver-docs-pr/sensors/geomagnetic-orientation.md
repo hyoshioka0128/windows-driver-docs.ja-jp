@@ -16,7 +16,7 @@ ms.locfileid: "56560716"
 
 このトピックでは、geomagnetic 方向センサーに固有のデータ フィールドに関する情報を提供します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
 
 <table>
 <colgroup>

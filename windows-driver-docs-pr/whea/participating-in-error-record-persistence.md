@@ -183,7 +183,7 @@ NTSTATUS
 
 エラー レコードの永続化に参加している PSHED プラグインを指定する必要があります、 **PshedFAErrorRecordPersistence**フラグを付けるときに、[登録](registering-a-pshed-plug-in.md)自体と、オペレーティング システムを使用します。
 
-エラー レコードの永続化の詳細については、次を参照してください。[エラー レコードの永続化メカニズム](error-record-persistence-mechanism.md)します。
+エラー レコードの永続化の詳細については、[エラー レコードの永続化メカニズム](error-record-persistence-mechanism.md)を参照してください。
 
  
 

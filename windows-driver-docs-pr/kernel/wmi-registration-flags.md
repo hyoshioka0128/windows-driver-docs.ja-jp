@@ -55,7 +55,7 @@ ms.locfileid: "56551163"
 
 ドライバーが WMIREG を設定して、イベント ブロックを示す\_フラグ\_イベント\_のみ\_GUID。 これは、ブロックができることを示します。 有効になっているまたはのみ、イベントとして無効になっているとできません照会または設定します。
 
-ドライバーに指示 WMIREG を設定して、以前に登録されたブロックを削除する WMI\_フラグ\_削除\_GUID。 このフラグは、登録情報を更新する要求に対する応答でのみ有効です ([**IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)または[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734) WMIUPDATE で)。 詳細については、次を参照してください。 [WMI 登録情報を更新する](updating-wmi-registration-information.md)します。
+ドライバーに指示 WMIREG を設定して、以前に登録されたブロックを削除する WMI\_フラグ\_削除\_GUID。 このフラグは、登録情報を更新する要求に対する応答でのみ有効です ([**IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)または[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734) WMIUPDATE で)。 詳細については、[WMI 登録情報を更新する](updating-wmi-registration-information.md)を参照してください。
 
  
 

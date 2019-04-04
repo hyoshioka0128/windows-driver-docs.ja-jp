@@ -45,7 +45,7 @@ ms.locfileid: "57350335"
 <td><p><strong></em>FontFormat</strong></p></td>
 <td><p></p>
 サポートされているダウンロードの種類を示す定数値。 次のいずれかを指定する必要があります。HPPCL HPPCL_RES HPPCL_OUTLINE OEM_CALLBACK</td>
-<td><p>ために必要なかどうかは、プリンターがフォントをダウンロードできます。 OEM_CALLBACK が指定されている場合は、フォントのコールバック関数を指定する必要があります。 これらのコールバックの詳細については、次を参照してください。<a href="customizing-microsoft-s-printer-drivers.md" data-raw-source="[Customizing Microsoft's Printer Drivers](customizing-microsoft-s-printer-drivers.md)">をカスタマイズする Microsoft のプリンター ドライバー</a>します。</p></td>
+<td><p>ために必要なかどうかは、プリンターがフォントをダウンロードできます。 OEM_CALLBACK が指定されている場合は、フォントのコールバック関数を指定する必要があります。 これらのコールバックの詳細については、<a href="customizing-microsoft-s-printer-drivers.md" data-raw-source="[Customizing Microsoft's Printer Drivers](customizing-microsoft-s-printer-drivers.md)">をカスタマイズする Microsoft のプリンター ドライバー</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MaxFontID</strong></p></td>
@@ -82,7 +82,7 @@ ms.locfileid: "57350335"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
  
 

@@ -21,7 +21,7 @@ Microsoft では、一部の種類が自分の USB デバイス クラスの指�
 
 -   USB 生体認証デバイス
 
-    マイクロソフトは、Windows 生体認証フレームワークを提供することで、USB 生体認証デバイス (指紋リーダー) をサポートします。 詳細については、次を参照してください。[生体認証フレームワークの概要](https://msdn.microsoft.com/library/windows/desktop/dd560897.aspx)します。
+    マイクロソフトは、Windows 生体認証フレームワークを提供することで、USB 生体認証デバイス (指紋リーダー) をサポートします。 詳細については、[生体認証フレームワークの概要](https://msdn.microsoft.com/library/windows/desktop/dd560897.aspx)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [Microsoft 提供の USB ドライバー](system-supplied-usb-drivers.md)  

@@ -23,7 +23,7 @@ ms.locfileid: "56551086"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、読み取りと書き込みのメモリは、次を参照してください。[メモリ アクセス](memory-access.md)します。
+詳細については、読み取りと書き込みのメモリは、[メモリ アクセス](memory-access.md)を参照してください。
 
  
 

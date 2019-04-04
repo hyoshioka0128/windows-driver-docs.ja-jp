@@ -68,7 +68,7 @@ KdPrint(( "EX: Pageable code called at IRQL %d\n", KeGetCurrentIrql() )); \
 
 通常、失敗した場合、テキストを調べることができます、ドライバーのアクションのアサートが発生したときに呼び出された機能を含むアサーション エラーの原因を特定するための式のコードします。 **KB (スタック トレースの表示)** デバッガー コマンドがこの分析に重要です。
 
-最も一般的なアサート呼び出しの一覧は、次を参照してください。[チェック ビルド アサート](checked-build-asserts.md)します。
+最も一般的なアサート呼び出しの一覧は、[チェック ビルド アサート](checked-build-asserts.md)を参照してください。
 
 ### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>ブレークポイント
 

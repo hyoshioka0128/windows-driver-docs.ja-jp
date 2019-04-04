@@ -31,7 +31,7 @@ IHV の拡張 DLL を実装する場合は、次のガイドラインを参照�
 
 -   IHV 拡張機能の DLL には、すべての IHV ハンドラー関数を実装する必要があります。 DLL がオペレーティング システムを呼び出すときに、これらの関数を関数ポインターの一覧を返します、 [ *Dot11ExtIhvInitService* ](https://msdn.microsoft.com/library/windows/hardware/ff547470)関数。
 
-    IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)します。
+    IHV ハンドラー関数の詳細については、[802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)を参照してください。
 
 -   Windows Vista では、IHV 拡張機能の DLL はゼロのインターフェイスのバージョンをサポートする必要があります。 ときに[ *Dot11ExtIhvGetVersionInfo* ](https://msdn.microsoft.com/library/windows/hardware/ff547464)が呼び出されると、DLL は、最小値を定義する必要がありする最大のサポートされているインターフェイス バージョンは 0。
 

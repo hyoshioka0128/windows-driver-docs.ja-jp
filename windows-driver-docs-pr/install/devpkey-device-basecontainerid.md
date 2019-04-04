@@ -74,7 +74,7 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 
     優先機構はリムーバブル デバイスの機能の値を変更していない、強制的に、PnP マネージャー デバイス用のコンテナーの Id を生成するときに、上書きの設定とリムーバブル デバイスの機能の値ではなくを使用する作成されます。
 
-これらのメソッドの詳細については、次を参照してください。[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)します。
+これらのメソッドの詳細については、[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)を参照してください。
 
 コンテナーの ID 値を取得する方法に関係なく、PnP マネージャーは devnode の DEVPKEY_Device_BaseContainerId プロパティに値を割り当てます。
 
@@ -88,7 +88,7 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 
  
 
-コンテナー Id の詳細については、次を参照してください。[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)します。
+コンテナー Id の詳細については、[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

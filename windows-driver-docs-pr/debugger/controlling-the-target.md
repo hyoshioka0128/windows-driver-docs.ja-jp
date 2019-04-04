@@ -26,7 +26,7 @@ ms.locfileid: "56570745"
 
 使用しない限り、デバッガーが実行されている、ターゲットを離れる、デバッガーは、カーネル モードのターゲットに接続するとき、 **-b** [コマンド ライン オプション](command-line-options.md)、ターゲット システムが応答を停止した (つまり、 *クラッシュ*)、または、ターゲット システムは、以前のカーネル デバッグ操作のため停止されます。
 
-使用しない限り、デバッガーがそのターゲットをすぐに停止、デバッガーが起動するか、ユーザー モードのターゲットに接続するときに、 **-g**コマンド ライン オプション。 詳細については、次を参照してください。[最初のブレークポイント](initial-breakpoint.md)します。
+使用しない限り、デバッガーがそのターゲットをすぐに停止、デバッガーが起動するか、ユーザー モードのターゲットに接続するときに、 **-g**コマンド ライン オプション。 詳細については、[最初のブレークポイント](initial-breakpoint.md)を参照してください。
 
 ### <a name="span-idwhenthetargetisrunningspanspan-idwhenthetargetisrunningspanwhen-the-target-is-running"></a><span id="when_the_target_is_running"></span><span id="WHEN_THE_TARGET_IS_RUNNING"></span>ターゲットが実行されています。
 
@@ -246,11 +246,11 @@ ms.locfileid: "56570745"
 
  
 
-ターゲット コンピューターを再起動する方法の詳細については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
+ターゲット コンピューターを再起動する方法の詳細については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
 
 ### <a name="span-idcommandlineoptionsspanspan-idcommandlineoptionsspancommand-line-options"></a><span id="command_line_options"></span><span id="COMMAND_LINE_OPTIONS"></span>コマンド ライン オプション
 
-アプリケーションを開始または読み込むときにすぐに停止したくない場合は、CDB またはと共に WinDbg を使用して、 **-g**コマンド ライン オプション。 このような状況の詳細については、次を参照してください。[最初のブレークポイント](initial-breakpoint.md)します。
+アプリケーションを開始または読み込むときにすぐに停止したくない場合は、CDB またはと共に WinDbg を使用して、 **-g**コマンド ライン オプション。 このような状況の詳細については、[最初のブレークポイント](initial-breakpoint.md)を参照してください。
 
 CDB および WinDbg もサポートして、 **-g** [コマンド ライン オプション](command-line-options.md)します。 このオプションでは、デバッグ セッションをアプリケーションが正しく完了した場合を終了します。
 

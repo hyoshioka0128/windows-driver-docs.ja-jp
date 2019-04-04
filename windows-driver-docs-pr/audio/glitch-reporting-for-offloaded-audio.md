@@ -34,9 +34,9 @@ typedef enum
 } EPcMiniportEngineEvent;
 ```
 
-この列挙型の詳細については、次を参照してください。 [ **EPcMiniportEngineEvent**](https://msdn.microsoft.com/library/windows/hardware/dn302036)します。
+この列挙型の詳細については、[ **EPcMiniportEngineEvent**](https://msdn.microsoft.com/library/windows/hardware/dn302036)を参照してください。
 
-によるハードウェア オフロードされたオーディオ ストリームを処理できるドライバーを開発する方法の詳細については、次を参照してください。 および[ドライバーの実装詳細](driver-implementation-details.md)します。
+によるハードウェア オフロードされたオーディオ ストリームを処理できるドライバーを開発する方法の詳細については、および[ドライバーの実装詳細](driver-implementation-details.md)を参照してください。
 
  
 

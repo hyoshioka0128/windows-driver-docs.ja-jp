@@ -37,7 +37,7 @@ ms.locfileid: "56559573"
 
 Sdv map.h ファイルがすべてのエントリ ポイント; は、ドライバーの一覧を表示する必要はありません。のみ IRP の主要な関数のコードまたは分析で使用される関数のロールの種類のエントリ ポイント。 ファイルに任意の IRP の主要な関数のコードまたは関数のロールの種類を追加することはできません。
 
-Sdv map.h ファイルの詳細については、次を参照してください。 [Sdv map.h](sdv-map-h.md)します。 形式については、「 [Sdv map.h ファイルの形式](format-of-the-sdv-map-h-file.md)します。 Sdv map.h ファイルに含まれるエラーについては、 [Sdv map.h ファイルを承認する](approving-the-sdv-map-h-file.md)します。
+Sdv map.h ファイルの詳細については、[Sdv map.h](sdv-map-h.md)を参照してください。 形式については、「 [Sdv map.h ファイルの形式](format-of-the-sdv-map-h-file.md)します。 Sdv map.h ファイルに含まれるエラーについては、 [Sdv map.h ファイルを承認する](approving-the-sdv-map-h-file.md)します。
 
 失敗から次の例は、Sdv map.h ファイルのコンテンツ\_driver1、ツールのサンプル WDM ドライバー\\sdv\\サンプル\\失敗\_ドライバー\\wdm ディレクトリ。
 

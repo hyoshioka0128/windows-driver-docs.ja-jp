@@ -17,7 +17,7 @@ ms.locfileid: "56571924"
 ## <a name="union-function-descriptors"></a>統合機能ディスクリプター
 
 
-Ufd を実装しているモバイル ブロード バンド デバイスはデバイス クラスを持つ/サブクラス プロトコル/2 の/0]、[CDC のデバイスに必要な 0 として。 これは Windows がデバイスで USBCCGP を読み込みすることを防ぎます。 Windows が複合デバイスで USBCCGP を読み込む方法については、次を参照してください。 [USB 汎用親ドライバー (Usbccgp.sys)](https://msdn.microsoft.com/library/windows/hardware/ff539234)します。
+Ufd を実装しているモバイル ブロード バンド デバイスはデバイス クラスを持つ/サブクラス プロトコル/2 の/0]、[CDC のデバイスに必要な 0 として。 これは Windows がデバイスで USBCCGP を読み込みすることを防ぎます。 Windows が複合デバイスで USBCCGP を読み込む方法については、[USB 汎用親ドライバー (Usbccgp.sys)](https://msdn.microsoft.com/library/windows/hardware/ff539234)を参照してください。
 
 Microsoft OS 互換性 ID を報告する Windows USBCCGP を読み込むには、デバイスに必要な"CDC\_WMC"デバイスが構成されていない場合。 互換性のある ID を検出した後は"CDC\_WMC"、USBCCGP と USBCCGP の Windows が読み込まれ、デバイス 1 に、構成を設定します。 USBCCGP は Microsoft OS の互換性のある id し、もう一度照会します。 今回は、ただし、する必要がありますを報告しないデバイスの Microsoft OS 互換性 ID"CDC\_WMC"。 デバイスによって、選択した構成内の関数の Microsoft OS 互換性 Id を報告する必要があります。
 

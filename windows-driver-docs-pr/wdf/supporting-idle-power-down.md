@@ -54,13 +54,13 @@ ms.locfileid: "56572780"
 -   ドライバーと呼ばれていた場合[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)、ドライバーは、その後、呼び出されて[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)します。
 -   電源ポリシーの所有者がバス ドライバーの場合は、D0 ではありません、バス ドライバーの子デバイスです。
 
-場合は、ドライバー (またはユーザー) には、アイドル状態に、デバイスの電源オフができますが、使用する必要があります、 [ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッド。 デバイスがその動作 (D0) 状態の場合は、このメソッドは、ドライバー呼び出されるまでアイドル状態から、デバイスを防ぎます[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)します。 ドライバーを呼び出すときに、デバイスが省電力状態がかどうか**WdfDeviceStopIdle**フレームワークがデバイスの作業 (D0) 状態を復元するバス ドライバーを要求、システムが作業 (S0) の状態である場合と。 すべての成功した呼び出し**WdfDeviceStopIdle**への呼び出しで一致する必要があります**WdfDeviceResumeIdle**します。 デバッガーで電源の参照カウントを表示する方法については、次を参照してください。 [WDF を使用した Power 参照リークのデバッグ](debugging-power-reference-leaks-in-wdf.md)します。
+場合は、ドライバー (またはユーザー) には、アイドル状態に、デバイスの電源オフができますが、使用する必要があります、 [ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッド。 デバイスがその動作 (D0) 状態の場合は、このメソッドは、ドライバー呼び出されるまでアイドル状態から、デバイスを防ぎます[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)します。 ドライバーを呼び出すときに、デバイスが省電力状態がかどうか**WdfDeviceStopIdle**フレームワークがデバイスの作業 (D0) 状態を復元するバス ドライバーを要求、システムが作業 (S0) の状態である場合と。 すべての成功した呼び出し**WdfDeviceStopIdle**への呼び出しで一致する必要があります**WdfDeviceResumeIdle**します。 デバッガーで電源の参照カウントを表示する方法については、[WDF を使用した Power 参照リークのデバッグ](debugging-power-reference-leaks-in-wdf.md)を参照してください。
 
 詳細については、ドライバーが呼び出す必要があります[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッドのリファレンス ページを参照してください。
 
 低電力状態からスリープ解除できるデバイスの場合、デバイスのバスのドライバーは、デバイスの起動時に参加します。 バス ドライバーは、通常は[ *EvtDeviceEnableWakeAtBus* ](https://msdn.microsoft.com/library/windows/hardware/ff540866)と[ *EvtDeviceDisableWakeAtBus* ](https://msdn.microsoft.com/library/windows/hardware/ff540858)コールバック関数。 これらの関数は、バス アダプターを有効にして、低電力状態から復帰するデバイスの機能を無効にするのに必要なことすべてを実行します。
 
-デバイスのアイドル状態の機能を制御するレジストリ エントリについては、次を参照してください。[ユーザー コントロールのデバイス アイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)します。
+デバイスのアイドル状態の機能を制御するレジストリ エントリについては、[ユーザー コントロールのデバイス アイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)を参照してください。
 
  
 

@@ -39,7 +39,7 @@ Windows は、インストーラーの 完了-インストール アクション
 
 2.  インストーラーは、完了-インストール アクションを提供する場合に応答 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグを設定、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)要求。 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグは設定されているすべてのインストーラーが DIF_NEWDEVICEWIZARD_FINISHINSTALL 要求を処理した後場合、デバイスが [完了] のインストール操作を実行するフラグが設定されます。
 
-    この操作の詳細については、次を参照してください。[実行完了-インストール アクションを持つものとして、デバイスをマークする](setting-the-configflag-finishinstall-action-device-configuration-flag.md)します。
+    この操作の詳細については、[実行完了-インストール アクションを持つものとして、デバイスをマークする](setting-the-configflag-finishinstall-action-device-configuration-flag.md)を参照してください。
 
 3.  Core デバイスのインストールが完了したら、デバイス、Windows は、完了-インストール アクションを実行するデバイスのフラグが設定されているかどうかを確認します。 場合は、Windows は、デバイスに固有の 完了-インストール アクションを実行する 完了-インストール プロセスをキューします。 ユーザーのコンテキストでプロセスを実行します。
 

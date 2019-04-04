@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、デバイスが KSCATEGORY_CAPTURE 
 
 INF ファイルでこの機能のカテゴリを登録する方法については、次を参照してください。、 *Ac97smpl.inf* INF ファイルに含まれている、 [AC'97 サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256075) WDK で提供されています。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

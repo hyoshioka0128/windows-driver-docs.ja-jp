@@ -33,7 +33,7 @@ Pin がサポートできるオーディオ ストリームのデータ形式が
 [**KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://msdn.microsoft.com/library/windows/hardware/ff565198)このプロパティは、データ範囲の一覧からデータ形式を選択します。 選択範囲は動的な機能に基づいており、形式は、ドライバーは、プロパティの要求時にサポートできる形式のサブセットから取得されます。 このプロパティを使用して、呼び出し元は、データ範囲の配列を提供します。 現在サポート可能であるデータの範囲が見つかるまで、配列の検索をプロパティ ハンドラー以降の最初の要素では、します。 かどうか成功すると、ハンドラーは出力データ形式は、そのデータの範囲から取得し、ステータスを返しますを\_成功します。 ハンドラーが状態を返しますそれ以外の場合、\_いいえ\_一致します。
 オーディオ システム コンポーネントの使用、KSPROPERTY\_暗証番号 (pin)\_DATARANGES と KSPROPERTY\_PIN\_DATAINTERSECTION プロパティ。 ミニポート ドライバーでは、これらのプロパティをサポートする必要があります。 KSPROPERTY サポート\_PIN\_CONSTRAINEDDATARANGES は省略可能です。
 
-詳細については、次を参照してください。[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)します。
+詳細については、[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)を参照してください。
 
 **注**   、KSPROPERTY\_PIN\_DATARANGES と KSPROPERTY\_暗証番号 (pin)\_各 CONSTRAINEDDATARANGES が 8 バイト固定アドレスで開始します。
 

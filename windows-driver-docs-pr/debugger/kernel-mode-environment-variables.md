@@ -43,7 +43,7 @@ ms.locfileid: "56581989"
 <tbody>
 <tr class="odd">
 <td align="left"><p>_NT_DEBUG_PORT = <em>comPort</em></p></td>
-<td align="left"><p>カーネルの接続で使用する COM ポートを指定します。 詳細については、次を参照してください。<a href="getting-set-up-for-debugging.md" data-raw-source="[Getting Set Up for Debugging](getting-set-up-for-debugging.md)">を取得する設定をデバッグ用</a>します。</p></td>
+<td align="left"><p>カーネルの接続で使用する COM ポートを指定します。 詳細については、<a href="getting-set-up-for-debugging.md" data-raw-source="[Getting Set Up for Debugging](getting-set-up-for-debugging.md)">を取得する設定をデバッグ用</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>_NT_DEBUG_BAUD_RATE = <em>BaudRate</em></p></td>

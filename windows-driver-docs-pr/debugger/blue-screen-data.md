@@ -63,9 +63,9 @@ Windows insider ビルドを使用している場合は、緑の背景にテキ�
 
 4 つの停止コード パラメーターを収集するために複数の方法はあります。
 
--   イベント ビューアーの Windows システム ログを調べます。 バグチェックのイベント プロパティは、4 つの停止コード パラメーターを一覧表示されます。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。
+-   イベント ビューアーの Windows システム ログを調べます。 バグチェックのイベント プロパティは、4 つの停止コード パラメーターを一覧表示されます。 詳細については、[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)を参照してください。
 
--   生成されたダンプ ファイルをロードして、 [ **! 分析**](-analyze.md)コマンドと、デバッガーをアタッチします。 詳細については、次を参照してください。 [WinDbg にカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)します。
+-   生成されたダンプ ファイルをロードして、 [ **! 分析**](-analyze.md)コマンドと、デバッガーをアタッチします。 詳細については、[WinDbg にカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)を参照してください。
 
 -   エラー状態の PC にカーネル デバッガーをアタッチします。 停止コードが発生したときにデバッガーの出力は停止コードの 16 進値の後に 4 つのパラメーターが含まれます。
 
@@ -112,7 +112,7 @@ Channel 9 のデフラグ ツールを表示します。 <https://channel9.msdn.
 
 ### <a name="span-idusingdriververifiertogatherinformationspanspan-idusingdriververifiertogatherinformationspanspan-idusingdriververifiertogatherinformationspanusing-driver-verifier-to-gather-information"></a><span id="Using_Driver_Verifier_to_Gather_Information"></span><span id="using_driver_verifier_to_gather_information"></span><span id="USING_DRIVER_VERIFIER_TO_GATHER_INFORMATION"></span>Driver Verifier を使用して情報を収集するには
 
-ブルー スクリーンの約 3 四半期が原因であるドライバーのエラーと推定されます。 Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 たとえば、Driver Verifier は、メモリ プールなどのメモリ リソースの使用を確認します。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifier*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
+ブルー スクリーンの約 3 四半期が原因であるドライバーのエラーと推定されます。 Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 たとえば、Driver Verifier は、メモリ プールなどのメモリ リソースの使用を確認します。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifier*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)を参照してください。
 
 ## <a name="span-idtipsforsoftwareengineersspanspan-idtipsforsoftwareengineersspanspan-idtipsforsoftwareengineersspantips-for-software-engineers"></a><span id="Tips_for_Software_Engineers"></span><span id="tips_for_software_engineers"></span><span id="TIPS_FOR_SOFTWARE_ENGINEERS"></span>ソフトウェア エンジニア向けのヒント
 
@@ -131,7 +131,7 @@ Windows のバグの一般的なトラブルシューティングのコードを
 
 -   検索対象**デバイス マネージャー**を任意のデバイスの感嘆符 (!) が付いてを参照してください。 任意のエラーが発生したドライバーのドライバーのプロパティに表示されるイベント ログを確認します。 関連するドライバーを更新してみてください。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)を参照してください。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
 
 -   システム製造元から提供されたハードウェア診断を実行して確認することができます。
 
@@ -148,7 +148,7 @@ Windows のバグの一般的なトラブルシューティングのコードを
     SFC /scannow
     ```
 
-    詳細については、次を参照してください。[システム ファイル チェッカー ツールを使用してシステム ファイルの欠落または破損の修復](https://support.microsoft.com/kb/929833)します。
+    詳細については、[システム ファイル チェッカー ツールを使用してシステム ファイルの欠落または破損の修復](https://support.microsoft.com/kb/929833)を参照してください。
 
 -   ハード ドライブに十分な空き領域があることを確認します。 オペレーティング システムと一部のアプリケーションは、スワップ ファイルを作成する十分な空き領域を必要とし、他の機能です。 システム構成に基づきと、正確な要件は異なりますが、通常は 10 ~ 15% 空き領域があることをお勧めします。
 

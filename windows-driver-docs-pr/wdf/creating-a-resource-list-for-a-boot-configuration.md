@@ -28,7 +28,7 @@ ms.locfileid: "56538845"
 
 ドライバーの後に*EvtDeviceResourcesQuery*コールバック関数が返す、フレームワーク、リソース リストを渡します PnP マネージャー。
 
-デバイスのインストーラーは、追加のリソースの一覧を指定できます。 その他のリソースの一覧の詳細については、次を参照してください。[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)します。
+デバイスのインストーラーは、追加のリソースの一覧を指定できます。 その他のリソースの一覧の詳細については、[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)を参照してください。
 
  
 

@@ -20,7 +20,7 @@ ms.locfileid: "56549427"
 
 Wdbgexts.h ヘッダー ファイルでルーチンは、DbgEng 拡張機能と WdbgExts 拡張機能の記述に使用されます。
 
-Wdbgexts.h ヘッダー ファイルとデバッガー拡張機能を記述する方法についての情報について詳しくは、次を参照してください。 [WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)です。
+Wdbgexts.h ヘッダー ファイルとデバッガー拡張機能を記述する方法についての情報について詳しくは、[WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)を参照してください。
 
  
 

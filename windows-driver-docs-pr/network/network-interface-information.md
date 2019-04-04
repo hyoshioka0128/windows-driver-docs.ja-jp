@@ -30,7 +30,7 @@ ms.locfileid: "56552106"
 
 NDIS インターフェイス プロバイダーを提供する[ **NDIS\_インターフェイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565736)のクエリに対する応答の構造、 [OID\_GEN\_インターフェイス\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569589)OID。
 
-その他の Oid を持つプロバイダーをクエリ NDIS こともできます。 NDIS プロバイダー Oid の詳細については、次を参照してください。 [OID マッピングをネットワーク インターフェイスの NDIS](mapping-of-ndis-network-interfaces-to-ndis-oids.md)します。 プロバイダーのインターフェイスで OID 要求の処理の詳細については、次を参照してください。 [OID クエリの処理および NDIS インターフェイス プロバイダーでの要求の設定](handling-oid-query-and-set-requests-in-an-ndis-interface-provider.md)します。
+その他の Oid を持つプロバイダーをクエリ NDIS こともできます。 NDIS プロバイダー Oid の詳細については、[OID マッピングをネットワーク インターフェイスの NDIS](mapping-of-ndis-network-interfaces-to-ndis-oids.md)を参照してください。 プロバイダーのインターフェイスで OID 要求の処理の詳細については、[OID クエリの処理および NDIS インターフェイス プロバイダーでの要求の設定](handling-oid-query-and-set-requests-in-an-ndis-interface-provider.md)を参照してください。
 
  
 

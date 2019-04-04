@@ -118,7 +118,7 @@ exts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-アプリケーション検証ツールとドキュメント、ダウンロードしてインストールする方法については、次を参照してください。 [Application Verifier](application-verifier.md)します。
+アプリケーション検証ツールとドキュメント、ダウンロードしてインストールする方法については、[Application Verifier](application-verifier.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

@@ -58,7 +58,7 @@ Windows Sockets スイッチ呼び出し SAN サービス プロバイダーの[
 Windows Sockets スイッチ呼び出し SAN サービス プロバイダーの[ **WSPIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff566296)関数およびパスの場合、その SAN サービス プロバイダーの情報を取得または設定するコード、次のコントロールのいずれか、SANサービス プロバイダーには、そのコントロールのコードがサポートされています。
 
 <a href="" id="sio-get-extension-function-pointer"></a>SIO\_取得\_拡張子\_関数\_ポインター  
-SAN サービス プロバイダーがサポートする拡張関数へのポインターを取得します。 拡張関数の詳細については、次を参照してください。 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。 入力バッファー、 **WSPIoctl**呼び出しには、値を持つ、指定された拡張子関数を識別する GUID が含まれています。 SAN サービス プロバイダーが要求された関数のポインターを返します**WSPIoctl**のバッファーを出力します。 次の表には、SAN サービス プロバイダーをサポートする拡張関数の Guid が含まれています。
+SAN サービス プロバイダーがサポートする拡張関数へのポインターを取得します。 拡張関数の詳細については、[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。 入力バッファー、 **WSPIoctl**呼び出しには、値を持つ、指定された拡張子関数を識別する GUID が含まれています。 SAN サービス プロバイダーが要求された関数のポインターを返します**WSPIoctl**のバッファーを出力します。 次の表には、SAN サービス プロバイダーをサポートする拡張関数の Guid が含まれています。
 
 <table>
 <colgroup>

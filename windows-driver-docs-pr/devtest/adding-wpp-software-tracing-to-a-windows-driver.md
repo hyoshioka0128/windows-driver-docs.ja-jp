@@ -491,10 +491,10 @@ WDK のサポートを提供する、 [WPP プリプロセッサ](wpp-preprocess
 1.  ソリューション エクスプ ローラーでドライバーのプロジェクトを右クリックし、をクリックして**プロパティ。**
 2.  プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**クリック**WPP トレース**。
 3.  **全般**設定、**実行 WPP**オプションを**はい**。
-4.  **コマンドライン**トレースの動作をカスタマイズするその他のオプションを追加します。 追加することについては、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
+4.  **コマンドライン**トレースの動作をカスタマイズするその他のオプションを追加します。 追加することについては、[WPP プリプロセッサ](wpp-preprocessor.md)を参照してください。
 5.  プロジェクトまたはターゲットの構成とプラットフォームのためのソリューションをビルドします。 参照してください[WDK でドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 
-ビルド プロセスの詳細については、次を参照してください。 [TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
+ビルド プロセスの詳細については、[TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)を参照してください。
 
 TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別のプリプロセッサを実行することもできます。 このツールは、WDK の bin/x86 および x64 bin サブディレクトリにあります。
 

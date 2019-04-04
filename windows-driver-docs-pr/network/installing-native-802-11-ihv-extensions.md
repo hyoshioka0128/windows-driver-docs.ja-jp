@@ -36,7 +36,7 @@ ms.locfileid: "56557358"
     IhvUIExt.dll,,,2
     ```
 
-    CopyFiles ディレクティブの詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)します。
+    CopyFiles ディレクティブの詳細については、[ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)を参照してください。
 
 -   DestinationDirs セクションがのコピー先を宣言することを確認、*ファイルのセクション一覧*CopyFiles ディレクティブで使用します。
 
@@ -48,9 +48,9 @@ ms.locfileid: "56557358"
     Sample-File-List-Section = 11
     ```
 
-    DestinationDirs セクションの詳細については、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。
+    DestinationDirs セクションの詳細については、[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)を参照してください。
 
--   確認します AddReg ディレクティブを関連付けられている*追加レジストリ セクション*、WLAN アダプターごとに INF ファイルに追加されます。 AddReg ディレクティブの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+-   確認します AddReg ディレクティブを関連付けられている*追加レジストリ セクション*、WLAN アダプターごとに INF ファイルに追加されます。 AddReg ディレクティブの詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
 
     内で、*追加レジストリ セクション*、次のキーを宣言する必要があります。
 
@@ -73,7 +73,7 @@ ms.locfileid: "56557358"
 
     WLAN アダプターの OUI がの値と一致していることを確認する AdapterOUI キーが使用される、 **OUI**の属性、 **IHV** XML 要素。 詳細については、 **IHV**要素と、ネイティブの 802.11 XML スキーマが、Microsoft Windows SDK のマニュアルを参照してください。
 
-INF ファイルとそのセクションの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)します。
+INF ファイルとそのセクションの詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)を参照してください。
 
  
 

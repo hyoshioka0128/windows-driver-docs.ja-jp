@@ -21,7 +21,7 @@ NDIS\_状態\_TAPI\_INDICATION 状態では、TAPI イベントが発生した�
 <a name="remarks"></a>注釈
 -------
 
-NDIS 4。*x*と以前の NDIS WAN ミニポート ドライバーは、この状態を示す値を使用します。 NDIS 5.0 およびそれ以降の WAN ミニポート ドライバーには、いる CoNDIS WAN インターフェイスを使用する必要があります。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[実装いる CoNDIS WAN ミニポート ドライバー (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546752)します。
+NDIS 4。*x*と以前の NDIS WAN ミニポート ドライバーは、この状態を示す値を使用します。 NDIS 5.0 およびそれ以降の WAN ミニポート ドライバーには、いる CoNDIS WAN インターフェイスを使用する必要があります。 いる CoNDIS WAN インターフェイスの詳細については、[実装いる CoNDIS WAN ミニポート ドライバー (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546752)を参照してください。
 
 *StatusBuffer*のパラメーター、 [ **NdisMIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff553538)関数にはへのポインターが含まれています、 [ **NDIS\_TAPI\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff558986)構造体。NDIS\_TAPI\_イベントの構造には、TAPI 行または呼び出しイベント (例では、行と呼び出しの状態を着信とリモート ノードで、既存のミニポート ドライバーまたは終了の到着の変更が発生したがについて説明します呼び出しまたは行)。
 

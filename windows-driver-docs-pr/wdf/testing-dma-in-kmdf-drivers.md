@@ -18,7 +18,7 @@ ms.locfileid: "56571298"
 
 次のツールは、DMA をサポートするフレームワーク ベースのドライバーをデバッグできます。
 
--   [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448) DMA のさまざまな操作の不適切な使用を検出する特定の検証テストが含まれています。 DMA 固有の検証の詳細については、次を参照してください。 [DMA の検証](https://msdn.microsoft.com/library/windows/hardware/ff544915)です。
+-   [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448) DMA のさまざまな操作の不適切な使用を検出する特定の検証テストが含まれています。 DMA 固有の検証の詳細については、[DMA の検証](https://msdn.microsoft.com/library/windows/hardware/ff544915)を参照してください。
 
 -   [ **! Dma** ](https://msdn.microsoft.com/library/windows/hardware/ff562369)カーネル デバッガー拡張機能は、DMA サブシステムとにより検証される DMA デバイス ドライバーに関する情報を表示[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
 

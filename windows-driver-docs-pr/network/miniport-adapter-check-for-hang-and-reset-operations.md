@@ -23,7 +23,7 @@ ms.locfileid: "56573817"
 ## <a name="overview"></a>概要
 
 > [!WARNING]
-> すべての NDIS 6.83 およびそれ以降のドライバーは、チェックのハング (CFH) とリセットの操作は推奨されません。 詳細については、次を参照してください。 [NDIS 6.83 以降のチェック-ハング用とリセット操作](#check-for-hang-and-reset-operations-in-ndis-683-and-later)します。
+> すべての NDIS 6.83 およびそれ以降のドライバーは、チェックのハング (CFH) とリセットの操作は推奨されません。 詳細については、[NDIS 6.83 以降のチェック-ハング用とリセット操作](#check-for-hang-and-reset-operations-in-ndis-683-and-later)を参照してください。
 
 NDIS 呼び出し NDIS ミニポート ドライバーの[ *MiniportCheckForHangEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559346)ネットワーク インターフェイス カード (NIC) を表す NDIS アダプターの操作の状態を確認する関数。 *MiniportCheckForHangEx*アダプターの内部状態をチェックし、返します**TRUE**アダプターが正しく動作しないことを検出した場合。
 
@@ -32,7 +32,7 @@ NDIS 呼び出し NDIS ミニポート ドライバーの[ *MiniportCheckForHang
 1.  設定、 **CheckForHangTimeInSeconds**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934) 0 以外の値構造体。
 2.  渡す、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)構造体、 *MiniportAttributes*のパラメーター、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数。
 
-ドライバー属性の設定の詳細については、次を参照してください。 [、アダプターの初期化](initializing-a-miniport-adapter.md)します。
+ドライバー属性の設定の詳細については、[、アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
 値**CheckForHangTimeInSeconds**ミニポート ドライバーの初期化時間よりも大きい必要があります。 ただし、ドライバーがより長くかかる場合**CheckForHangTimeInSeconds**秒を初期化するこのタイムアウトになるを呼び出してドライバーの ndis *MiniportCheckForHangEx*関数。 場合*MiniportCheckForHangEx*返します**TRUE**、NDIS を呼び出し、ドライバーの*MiniportResetEx*関数。 このため、ドライバーを同期する必要があります[ *MiniportCheckForHangEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559346)ドライバーの初期化で動作する*MiniportCheckForHangEx*されません返す**TRUE**ドライバーが初期化を完了していない場合。
 
 ミニポート ドライバーに 2 つの連続呼び出し内の OID 要求は、完了しない場合*MiniportCheckForHangEx*、NDIS ドライバーを呼び出すことができます*MiniportResetEx*関数。 一部の OID 要求では、NDIS 呼び出し*MiniportResetEx*ドライバーでは 4 つの連続呼び出し内での要求が完了しないかどうか*MiniportCheckForHangEx*します。

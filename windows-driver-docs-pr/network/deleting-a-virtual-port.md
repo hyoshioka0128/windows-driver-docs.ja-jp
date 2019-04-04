@@ -48,7 +48,7 @@ OID のセット要求を発行する前に[OID\_NIC\_スイッチ\_削除\_VPOR
 
 -   NDIS のセット要求を発行する前に[OID\_NIC\_切り替える\_削除\_切り替える](https://msdn.microsoft.com/library/windows/hardware/hh451817)ネットワーク アダプターで NIC スイッチを削除するのにはすべて既定以外の拡張が削除されたことを保証そのスイッチ。
 
--   既定の OID 要求を通じて、拡張を明示的に削除できる以外のみ[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、次を参照してください。 [NIC スイッチを削除する](deleting-a-nic-switch.md)します。
+-   既定の OID 要求を通じて、拡張を明示的に削除できる以外のみ[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、[NIC スイッチを削除する](deleting-a-nic-switch.md)を参照してください。
 
  
 

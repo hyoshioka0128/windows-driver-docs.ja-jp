@@ -61,7 +61,7 @@ Driver Verifier の他の確認オプションのドライバーをドライバ�
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの他の確認オプションをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの他の確認オプションをアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 -   **コマンドラインで**
 
@@ -79,7 +79,7 @@ Driver Verifier の他の確認オプションのドライバーをドライバ�
     verifier /volatile /flags 0x800 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
     その他のチェックのオプションは、標準の設定にも含まれます。 次に、例を示します。
 

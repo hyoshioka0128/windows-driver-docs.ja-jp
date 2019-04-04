@@ -32,7 +32,7 @@ ms.locfileid: "56557619"
 
 すべての非 GPIO ベースの実装は、レポートの同じスキームに従う必要があります。
 
-定義の順序は、Power、Windows、Volume Up、Volume Down、回転ロックは。 これらの HID 記述子を作成する方法の例については、次を参照してください。 [HID ボタンのレポート記述子](hid-button-report-descriptors.md)します。
+定義の順序は、Power、Windows、Volume Up、Volume Down、回転ロックは。 これらの HID 記述子を作成する方法の例については、[HID ボタンのレポート記述子](hid-button-report-descriptors.md)を参照してください。
 
 **注**  前の要件の使い方を説明した**Win + O**回転ロックします。 キーボード レイアウトの変更、あくまではいないこの組み合わせはまだ機能ですが、一方**Win + F14**レイアウトに依存しないのです。
 
@@ -97,9 +97,9 @@ ms.locfileid: "56557619"
  
 
 **注:**  
--   完全なガイダンスと、電源ボタンの実装では、次を参照してください。[電源ボタンの動作と実装](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)します。
--   ボタンのコネクト スタンバイのガイダンスについては、次を参照してください。[スタンバイ状態の接続されたソースのスリープ解除](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)します。
--   ACPI の実装の詳細については、次を参照してください。 [ACPI 設計ガイド](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)します。
+-   完全なガイダンスと、電源ボタンの実装では、[電源ボタンの動作と実装](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)を参照してください。
+-   ボタンのコネクト スタンバイのガイダンスについては、[スタンバイ状態の接続されたソースのスリープ解除](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)を参照してください。
+-   ACPI の実装の詳細については、[ACPI 設計ガイド](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)を参照してください。
 
  
 

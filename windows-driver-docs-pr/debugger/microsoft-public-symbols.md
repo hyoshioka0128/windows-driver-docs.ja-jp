@@ -46,7 +46,7 @@ Symbol search path is: srv*
 Expanded Symbol search path is: cache*c:\MyCache;SRV*https://msdl.microsoft.com/download/symbols
 ```
 
-シンボルの使用方法の詳細については、次を参照してください。、 [Windows デバッガーのシンボル パス](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)します。
+シンボルの使用方法の詳細については、、 [Windows デバッガーのシンボル パス](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)を参照してください。
 
 **シンボル ファイルの圧縮**
 

@@ -56,7 +56,7 @@ GUID_AVC_CLASS[デバイス インターフェイス クラス](https://msdn.mic
 
 システム提供[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556367) [Avc.sys](https://msdn.microsoft.com/library/windows/hardware/ff568667) 1394 バス上の外部の AV/C 単位を表す GUID_AVC_CLASS のインスタンスを登録します。
 
-AV/C の仮想デバイスのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_VIRTUAL_AVC_CLASS**](guid-virtual-avc-class.md)します。
+AV/C の仮想デバイスのデバイスのインターフェイス クラスについては、[ **GUID_VIRTUAL_AVC_CLASS**](guid-virtual-avc-class.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

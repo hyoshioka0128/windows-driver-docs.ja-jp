@@ -33,9 +33,9 @@ ms.locfileid: "56573875"
 
 -   オペレーティング システムを呼び出して関連付け前の操作を開始する、 [ *Dot11ExtIhvPerformPreAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547499)関数。 このような状況で IHV 拡張機能の DLL をする必要があります、接続およびセキュリティ設定が有効である確認します。 関数にエラーが返されます、設定が有効な場合は、\_成功と DLL は、関連付け前の操作を続行します。 それ以外の場合、関数は、Winerror.h で定義されている、該当するエラー コードを返します。
 
-    前の関連付け操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+    前の関連付け操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
 
-IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)します。
+IHV ハンドラー関数の詳細については、[802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)を参照してください。
 
  
 

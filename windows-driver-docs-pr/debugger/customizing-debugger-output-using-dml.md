@@ -480,7 +480,7 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 ## <a name="span-iddmladditionstothedbgenginterfacespanspan-iddmladditionstothedbgenginterfacespanspan-iddmladditionstothedbgenginterfacespandml-additions-to-the-dbgeng-interface"></a><span id="DML_Additions_to_the_dbgeng_Interface"></span><span id="dml_additions_to_the_dbgeng_interface"></span><span id="DML_ADDITIONS_TO_THE_DBGENG_INTERFACE"></span>DML dbgeng インターフェイスの追加
 
 
-[デバッガー エンジンと拡張機能 Api](debugger-engine-and-extension-apis.md)デバッガー エンジンを使用して、カスタム アプリケーションを作成するインターフェイスを提供します。 WinDbg、KD、CDB、NTSD で実行されるカスタムの拡張機能を記述することもできます。 詳細については、次を参照してください。 [DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)です。 このセクションでは、デバッガー エンジンのインターフェイスを使用できる DML 拡張機能について説明します。
+[デバッガー エンジンと拡張機能 Api](debugger-engine-and-extension-apis.md)デバッガー エンジンを使用して、カスタム アプリケーションを作成するインターフェイスを提供します。 WinDbg、KD、CDB、NTSD で実行されるカスタムの拡張機能を記述することもできます。 詳細については、[DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)を参照してください。 このセクションでは、デバッガー エンジンのインターフェイスを使用できる DML 拡張機能について説明します。
 
 一連のテキスト処理の入力メソッドとインターフェイスの出力に、dbgeng は既に、DML の使用には、入力と出力のテキストに含まれるコンテンツの種類の指定のみが必要です。
 

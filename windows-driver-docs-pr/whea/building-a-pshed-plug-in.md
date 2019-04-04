@@ -16,7 +16,7 @@ ms.locfileid: "56550616"
 
 プラグインの PSHED がカーネルとハードウェア アブストラクション レイヤー (HAL) にリンクするだけでなく、PSHED プラグインする必要がありますも明示的にリンクすることを除いて、他の Windows Driver Model (WDM) デバイス ドライバーなど、WDK を使用して構築された*Pshed.lib*.
 
-**注**  以降 Windows 7 では、さまざまな Windows ハードウェア エラー アーキテクチャ (WHEA) データ型は、WDK の以前のバージョンから変更されています。 これらの変更の詳細については、次を参照してください。 [WHEA データ型の名前を変更](renamed-whea-data-types.md)します。 既存の PSHED Windows 7 または以降のバージョンの WDK でプラグインを構築する場合は、WHEA データ型の名前は、前者を引き続き使用できます。 これを行うには、次の情報を追加、*ソース*プラグインをビルドするために使用するファイル。 `C_DEFINES = $(C_DEFINES) /DWHEA_DOWNLEVEL_TYPE_NAMES`
+**注**  以降 Windows 7 では、さまざまな Windows ハードウェア エラー アーキテクチャ (WHEA) データ型は、WDK の以前のバージョンから変更されています。 これらの変更の詳細については、[WHEA データ型の名前を変更](renamed-whea-data-types.md)を参照してください。 既存の PSHED Windows 7 または以降のバージョンの WDK でプラグインを構築する場合は、WHEA データ型の名前は、前者を引き続き使用できます。 これを行うには、次の情報を追加、*ソース*プラグインをビルドするために使用するファイル。 `C_DEFINES = $(C_DEFINES) /DWHEA_DOWNLEVEL_TYPE_NAMES`
 
  
 

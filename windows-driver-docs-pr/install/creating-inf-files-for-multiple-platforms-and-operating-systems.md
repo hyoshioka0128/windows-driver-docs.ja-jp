@@ -89,13 +89,13 @@ ms.locfileid: "56560870"
 -   [クロス プラットフォームの INF ファイル](cross-platform-inf-files.md)
 -   [その他のセクション名の拡張子を持つプラットフォーム拡張機能を組み合わせること](combining-platform-extensions-with-other-section-name-extensions.md)
 
-INF ファイル プラットフォーム拡張機能を使用して、クロス プラットフォームのインストールをサポートする方法の例は、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
+INF ファイル プラットフォーム拡張機能を使用して、クロス プラットフォームのインストールをサポートする方法の例は、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
 
-セクション名の拡張機能と組み合わせてプラットフォーム拡張機能を使用する方法については、次を参照してください。[結合プラットフォーム拡張機能とその他のセクション名の拡張機能](combining-platform-extensions-with-other-section-name-extensions.md)します。
+セクション名の拡張機能と組み合わせてプラットフォーム拡張機能を使用する方法については、[結合プラットフォーム拡張機能とその他のセクション名の拡張機能](combining-platform-extensions-with-other-section-name-extensions.md)を参照してください。
 
-プラットフォームの拡張機能を通じてターゲットのオペレーティング システムを指定する方法については、次を参照してください。[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)します。
+プラットフォームの拡張機能を通じてターゲットのオペレーティング システムを指定する方法については、[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)を参照してください。
 
-複数のオペレーティング システム バージョンでドライバーをインストールするのに使用できるサンプルの INF ファイルについては、次を参照してください。[複数バージョンの Windows デバイスのインストール用のサンプル INF ファイル](sample-inf-file-for-device-installation-on-multiple-versions-of-windows.md)します。
+複数のオペレーティング システム バージョンでドライバーをインストールするのに使用できるサンプルの INF ファイルについては、[複数バージョンの Windows デバイスのインストール用のサンプル INF ファイル](sample-inf-file-for-device-installation-on-multiple-versions-of-windows.md)を参照してください。
 
  
 

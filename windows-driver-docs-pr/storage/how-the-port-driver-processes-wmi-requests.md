@@ -21,7 +21,7 @@ ms.locfileid: "56570782"
 ## <span id="ddk_how_the_port_driver_processes_wmi_requests_kg"></span><span id="DDK_HOW_THE_PORT_DRIVER_PROCESSES_WMI_REQUESTS_KG"></span>
 
 
-Windows の種類の I/O 要求パケット (IRP) を送信することによって WMI 要求の記憶域ポート ドライバーに通知[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813) 」の説明に従って、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。 IRP のシステム コントロールは、WMI の操作を表す IRP のマイナー番号のいずれかを含めることができます。 詳細については、次を参照してください。 [WMI マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff566361)します。
+Windows の種類の I/O 要求パケット (IRP) を送信することによって WMI 要求の記憶域ポート ドライバーに通知[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813) 」の説明に従って、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。 IRP のシステム コントロールは、WMI の操作を表す IRP のマイナー番号のいずれかを含めることができます。 詳細については、[WMI マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff566361)を参照してください。
 
 使用する、 [SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)WMI される Srb を処理する、SCSI ミニポート ドライバーは、WMI マイナー IRP の番号を一連の対応するコールバック ルーチンを提供する必要があります。 次の表は、ミニポート ドライバーのコールバック ルーチンと対応する WMI マイナー IRP 番号間のリレーションシップを示しています。
 
@@ -96,7 +96,7 @@ SCSI ポート WMI ライブラリのディスパッチ ルーチンを呼び出
 
 3.  ポートのドライバーは IRP が WMI の種類の WMI SRB として[ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946) SRB の値が割り当てられます\_関数\_に WMISRB の**関数**メンバー。 WMI の IRP のマイナー番号を SRB に転送するポート ドライバー **WMISubFunction**メンバー。 呼び出す I/O マネージャー、ミニポート ドライバーの I/O ルーチンの開始を準備および[ **HwScsiStartIo** ](https://msdn.microsoft.com/library/windows/hardware/ff557323)への呼び出しによって[ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370).
 
-4.  ミニポート ドライバーは、SRB を処理するには、SCSI ポート WMI ライブラリ ディスパッチ ルーチンを呼び出します。 詳細については、次を参照してください。 [SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)します。
+4.  ミニポート ドライバーは、SRB を処理するには、SCSI ポート WMI ライブラリ ディスパッチ ルーチンを呼び出します。 詳細については、[SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)を参照してください。
 
  
 

@@ -27,7 +27,7 @@ ms.locfileid: "56572660"
 ##  <a name="inf-file-sections-for-the-co-installer"></a>共同インストーラーのセクションでは INF ファイル
 
 
-ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。CoInstallers**共同インストーラーがインストール セクション。 このセクションの名前など**MyDevice.ntx86.CoInstallers**します。 INF ファイルで共同インストーラーを指定する方法については、次を参照してください。 [ **INF DDInstall.CoInstallers セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547321)します。
+ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。CoInstallers**共同インストーラーがインストール セクション。 このセクションの名前など**MyDevice.ntx86.CoInstallers**します。 INF ファイルで共同インストーラーを指定する方法については、[ **INF DDInstall.CoInstallers セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547321)を参照してください。
 
 さらに、ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。Wdf**共同インストーラーがインストールされていた後を読み取っていることをセクションします。 このセクションの名前など、 **MyDevice.ntx86.Wdf**します。 フレームワークの共同インストーラーがインストールされた後は、ドライバーをインストールしているときに、このセクションを読み取ります。
 
@@ -52,7 +52,7 @@ KmdfService = Echo, Echo_wdfsect
 KmdfLibraryVersion = 1.0
 ```
 
-INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
+INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、[INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)を参照してください。
 
 ### <a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**サンプル INF** * **DDInstall *。共同インストーラーと** * **DDInstall *。Wdf のセクションでは**
 

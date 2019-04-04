@@ -22,7 +22,7 @@ ms.locfileid: "56559019"
 
 
 
-NDIS ミニポート ドライバーに割り当てる必要がありますデータ バックフィルの領域の量を指定する、 **BackfillSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、次を参照してください。[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)します。
+NDIS ミニポート ドライバーに割り当てる必要がありますデータ バックフィルの領域の量を指定する、 **BackfillSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)を参照してください。
 
 ミニポート ドライバーが、少なくとものバックフィル記憶域を割り当てる必要があります事前 NIC では、ヘッダーと受信したイーサネット フレーム内のデータを分割、ときにバイト数を**BackfillSize**前のデータ部分の開始アドレスに、を指定します、フレーム。 バックフィル ストレージがページ境界を越えないする必要があります。
 

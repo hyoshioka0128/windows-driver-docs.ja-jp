@@ -94,7 +94,7 @@ SourceDisk       = "Windows Vista CD"
 
 1. **バージョン**セクションがあります、 **CLASSGUID**と**DriverVer**ディレクティブは次のように設定します。
     - **CLASSGUID**:Microsoft クラス GUID を使用して、Bluetooth デバイス ({e0cbf06c cd8b-4647-bb8a-263b43f0f974})、サード パーティ製の GUID ではありません。
-    - **DriverVer**:既定のインボックス ドライバーを置き換える場合は、Bth.inf であるものより高い順位付け一致を提供するドライバーのバージョンを設定する必要があります。 ボックスのドライバーの既定の設定を優先するためのドライバーを構成する方法の詳細については、次を参照してください。[インボックス ドライバーのプライベート ビルドをインストールする](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)します。
+    - **DriverVer**:既定のインボックス ドライバーを置き換える場合は、Bth.inf であるものより高い順位付け一致を提供するドライバーのバージョンを設定する必要があります。 ボックスのドライバーの既定の設定を優先するためのドライバーを構成する方法の詳細については、[インボックス ドライバーのプライベート ビルドをインストールする](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)を参照してください。
 
 2. ハードウェアの Id。 VID と PID の組み合わせは、製造元およびデバイスに一意である必要があります。 これにより、同じハードウェアの ID が複数のデバイスに対応していません。
 3. **含める**と**必要がある**ディレクティブ。 **Include**これら 3 つのセクションにあるディレクティブが Bth.inf を参照します。 **必要がある**ディレクティブを示す Bth.inf からセクションは、デバイスのインストール中に処理する必要があります。

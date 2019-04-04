@@ -18,7 +18,7 @@ SDV は、お客様とマイクロソフトの SDV が発生する可能性の�
 
 ### <a name="span-idenablingdiagnosticsspanspan-idenablingdiagnosticsspanenabling-diagnostics"></a><span id="enabling_diagnostics"></span><span id="ENABLING_DIAGNOSTICS"></span>診断を有効にします。
 
-SDV (デバッグ モードとも呼ばれます) は現在の診断モードのみ有効にする、コマンドラインから実行する場合。  コマンドラインからの実行に関する詳細については、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
+SDV (デバッグ モードとも呼ばれます) は現在の診断モードのみ有効にする、コマンドラインから実行する場合。  コマンドラインからの実行に関する詳細については、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。
 
 診断を有効にするには、追加、 **/debug**フラグを設定した後、 **/check**コマンド。  以下に例を示します。
 

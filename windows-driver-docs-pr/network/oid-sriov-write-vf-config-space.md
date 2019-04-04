@@ -46,7 +46,7 @@ OID の OID メソッド要求を処理するときに\_SRIOV\_書き込み\_VF\
 
 PF のミニポート ドライバーでは、OID 要求を正常に完了する場合、ドライバーは要求された PCI 構成の領域データをによって参照されるバッファーにコピーする必要があります、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 ドライバーで指定されたオフセットからバッファーにデータをコピーする**BufferOffset**のメンバー、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451681)構造体。
 
-詳細については、次を参照してください。[仮想関数の PCI 構成データを設定](https://msdn.microsoft.com/library/windows/hardware/hh440229)します。
+詳細については、[仮想関数の PCI 構成データを設定](https://msdn.microsoft.com/library/windows/hardware/hh440229)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

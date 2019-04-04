@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_MUX\_ソース プロパティの要求がステー
 <a name="remarks"></a>注釈
 -------
 
-暗証番号 (pin) の ID は、MUX ノード上の論理ピンを識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
+暗証番号 (pin) の ID は、MUX ノード上の論理ピンを識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

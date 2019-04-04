@@ -178,7 +178,7 @@ WDDM 2.1 グラフィック ドライバーには、WDDM 2.0 または以前の�
 
 3. WDDM 2.1 グラフィックス ドライバーの INF は、"Store"がドライバーのインストールを変更します。
 
-詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
+詳細については、[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)を参照してください。
 
 ドライバー ファイル、32 ビットと 64 ビットに保持され、ドライバー ストアから読み込まれます。 WoW64 ファイル システムのリダイレクトは、ドライバー ストアには適用されません。 Ihv は、必要な場合は、一意のドライバー ストアのフォルダーの下の WoW64 フォルダーなどを作成する標準の INF 構文を使用して、サブフォルダーを指定できます。
 

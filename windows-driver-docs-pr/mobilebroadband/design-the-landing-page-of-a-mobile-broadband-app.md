@@ -52,7 +52,7 @@ ms.locfileid: "56572413"
 ## <a name="span-idopmsgspanspan-idopmsgspanoperator-messages--show-an-overview-or-link"></a><span id="opmsg"></span><span id="OPMSG"></span>演算子メッセージ – 概要またはリンクを表示します。
 
 
-ランディング ページは、テキスト メッセージの演算子の一覧を強調できます。 演算子のメッセージ数は、優先度の高いであるために、ユーザーはこれらを簡単にアクセスすることを選びます。 テキスト メッセージを組み込む必要がある機能の詳細については、次を参照してください。[モバイル ブロード バンド アプリでのメッセージを設計](design-messages-in-a-mobile-broadband-app.md)します。
+ランディング ページは、テキスト メッセージの演算子の一覧を強調できます。 演算子のメッセージ数は、優先度の高いであるために、ユーザーはこれらを簡単にアクセスすることを選びます。 テキスト メッセージを組み込む必要がある機能の詳細については、[モバイル ブロード バンド アプリでのメッセージを設計](design-messages-in-a-mobile-broadband-app.md)を参照してください。
 
 ## <a name="span-idkeylinksspanspan-idkeylinksspanlinks-to-other-key-pages"></a><span id="keylinks"></span><span id="KEYLINKS"></span>その他のキーのページへのリンク
 
@@ -64,7 +64,7 @@ ms.locfileid: "56572413"
 
 ランディング ページを記述する場合は、アプリ内のナビゲーションに注意してください。 アプリは、複数のページをさまざまな目的を持つ必要があります。 Windows 10 には、ナビゲーションに使用できる次のツールが用意されています。
 
--   **[戻る] ボタン**アプリでは、前のページに戻るには、[戻る] ボタンを使用できます。 戻るボタンのスタイル設定の詳細については、次を参照してください。[クイック スタート: コントロールのスタイル](https://msdn.microsoft.com/library/windows/apps/hh465498)します。
+-   **[戻る] ボタン**アプリでは、前のページに戻るには、[戻る] ボタンを使用できます。 戻るボタンのスタイル設定の詳細については、[クイック スタート: コントロールのスタイル](https://msdn.microsoft.com/library/windows/apps/hh465498)を参照してください。
 
 -   **ヘッダー テキストを含むドロップダウン アフォー ダンス**ヘッダー テキストは、アプリの複数のページ間のナビゲーションのドロップ ダウン アフォー ダンスとして使用できます。 クリックすると、前の図で**アカウントの概要**次の図に示すように移動できるアプリ内のページのドロップダウン リストになります。
 
@@ -75,7 +75,7 @@ ms.locfileid: "56572413"
 ## <a name="span-idopbrandspanspan-idopbrandspanoperator-branding"></a><span id="opbrand"></span><span id="OPBRAND"></span>ブランド化演算子
 
 
-個々 のブランド化スタイルに合ったモバイル ブロード バンド アプリをカスタマイズできます。 さまざまなカスタマイズを使用すると、一意でわかりやすいにアプリを行うことができます。 アプリをブランド化する方法の詳細については、次を参照してください。[モバイル ブロード バンド アプリでのブランド化の設計](design-branding-in-a-mobile-broadband-app.md)します。
+個々 のブランド化スタイルに合ったモバイル ブロード バンド アプリをカスタマイズできます。 さまざまなカスタマイズを使用すると、一意でわかりやすいにアプリを行うことができます。 アプリをブランド化する方法の詳細については、[モバイル ブロード バンド アプリでのブランド化の設計](design-branding-in-a-mobile-broadband-app.md)を参照してください。
 
 ## <a name="span-idsumspanspan-idsumspanquick-summary"></a><span id="sum"></span><span id="SUM"></span>簡単な概要
 

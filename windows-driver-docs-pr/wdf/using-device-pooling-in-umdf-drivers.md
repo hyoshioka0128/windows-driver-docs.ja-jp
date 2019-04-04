@@ -29,7 +29,7 @@ ms.locfileid: "56551995"
 
 ドライバーで使用する場合[ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413)を設定する必要があります**UmdfHostProcessSharing**に**ProcessSharingDisabled**します。 それ以外の場合、ドライバーは、開始ができません。 場合**WdfDeviceIoBufferedOrDirect**が選択されているデバイスがプールされている、フレームワークは、バッファーにアクセスする方法を変更し、 [I/O バッファー](https://msdn.microsoft.com/library/windows/hardware/ff554413)します。 場合**WdfDeviceIoBufferedOrDirect**が選択されていると、デバイスがプールされていない、フレームワークがダイレクト I/O をバッファーへのアクセス方法を変更します。
 
-バッファーへのアクセス方法を選択するには、ドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)メソッドからその[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554896)コールバック関数。 アクセス方法については、次を参照してください。 [UMDF-Based ドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff554413)します。
+バッファーへのアクセス方法を選択するには、ドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)メソッドからその[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554896)コールバック関数。 アクセス方法については、[UMDF-Based ドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff554413)を参照してください。
 
 ## <a name="umdf-versions-19-and-earlier"></a>UMDF バージョン 1.9 以降
 

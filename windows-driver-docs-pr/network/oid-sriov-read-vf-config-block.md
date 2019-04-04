@@ -50,7 +50,7 @@ OID の OID メソッド要求を処理するときに\_SRIOV\_読み取り\_VF\
 
 -   PF のミニポート ドライバーは、ことを確認する必要があります、 **BlockId**のメンバー、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_ブロック\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451680)構造体が有効な VF 構成ブロックを指定します。 それ以外の場合は、ドライバーは OID 要求に失敗する必要があります。
 
-シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)します。
+シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、[SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

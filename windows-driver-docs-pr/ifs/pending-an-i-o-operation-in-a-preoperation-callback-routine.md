@@ -28,7 +28,7 @@ ms.locfileid: "56572947"
 
 2.  返す FLT\_PREOP\_保留します。
 
-ミニフィルター ドライバーを保留する必要がありますすべて (またはほとんど) の受信 I/O 操作はなどのルーチンを使用しない**FltQueueDeferredIoWorkItem**保留中の操作をこのルーチンを呼び出すと、システムが作業キューに送信するためです。 代わりに、このようなミニフィルター ドライバーには、キャンセルの安全なキューを使用する必要があります。 キャンセルの安全なキューの使用に関する詳細については、次を参照してください。 [ *FltCbdqInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff541802)します。
+ミニフィルター ドライバーを保留する必要がありますすべて (またはほとんど) の受信 I/O 操作はなどのルーチンを使用しない**FltQueueDeferredIoWorkItem**保留中の操作をこのルーチンを呼び出すと、システムが作業キューに送信するためです。 代わりに、このようなミニフィルター ドライバーには、キャンセルの安全なキューを使用する必要があります。 キャンセルの安全なキューの使用に関する詳細については、[ *FltCbdqInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff541802)を参照してください。
 
 なおへの呼び出し**FltQueueDeferredIoWorkItem**次の条件のいずれかに該当する場合は失敗します。
 

@@ -25,7 +25,7 @@ ms.locfileid: "56539363"
 
 ときに、 *HwVidInitialize*します。 参照してください[ビデオの要求を処理する (Windows 2000 モデル)](processing-video-requests--windows-2000-model-.md)詳細についてはします。
 
-通常、ディスプレイ ドライバーは、NT ベースのオペレーティング システムを実行している x86 ベースのマシンに全画面表示の MS-DOS アプリケーションの実行時にときどきを除く、エンド ユーザーが表示される表示を制御します。 VGA と互換性のあるミニポート ドライバーでこの機能のサポートに関する詳細については、次を参照してください。 [VGA と互換性のあるビデオのミニポート ドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)します。
+通常、ディスプレイ ドライバーは、NT ベースのオペレーティング システムを実行している x86 ベースのマシンに全画面表示の MS-DOS アプリケーションの実行時にときどきを除く、エンド ユーザーが表示される表示を制御します。 VGA と互換性のあるミニポート ドライバーでこの機能のサポートに関する詳細については、[VGA と互換性のあるビデオのミニポート ドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)を参照してください。
 
 [ *HwVidInitialize* ](https://msdn.microsoft.com/library/windows/hardware/ff567345)関数を呼び出すことができます[ **VideoPortGetRegistryParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff570316)または[ **VideoPortSetRegistryParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff570365)を取得および構成情報をレジストリに設定します。 たとえば、 *HwVidInitialize*呼び出すことができます**VideoPortSetRegistryParameters**次回のブート レジストリの不揮発性の構成情報を設定します。 呼び出すことがあります**VideoPortGetRegistryParameters**インストール プログラムによってレジストリに書き込む、バス相対、アダプターに固有の構成パラメーターを取得します。
 

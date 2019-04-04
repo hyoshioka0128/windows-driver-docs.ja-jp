@@ -14,7 +14,7 @@ ms.locfileid: "56572071"
 # <a name="how-container-ids-are-generated-from-the-removable-device-capability"></a>リムーバブル デバイス機能でコンテナー ID を生成する方法
 
 
-バス ドライバーがデバイス ノードのコンテナー ID を提供できないかどうか (*devnode*) の列挙、プラグ アンド プレイ (PnP) マネージャーでは、リムーバブル デバイスの機能を使用して、デバイスの列挙されたすべての devnode のコンテナー ID を生成することです。 リムーバブル デバイスの機能の詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)します。
+バス ドライバーがデバイス ノードのコンテナー ID を提供できないかどうか (*devnode*) の列挙、プラグ アンド プレイ (PnP) マネージャーでは、リムーバブル デバイスの機能を使用して、デバイスの列挙されたすべての devnode のコンテナー ID を生成することです。 リムーバブル デバイスの機能の詳細については、[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)を参照してください。
 
 次のヒューリスティックでは、リムーバブル デバイスの機能からコンテナー Id を生成する方法について説明します。
 

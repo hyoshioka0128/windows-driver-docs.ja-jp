@@ -38,7 +38,7 @@ OID の OID のクエリ要求を処理した後、ミニポート ドライバ�
 
 -   NDIS ミニポート ドライバーの呼び出す[ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)関数を基になるネットワーク アダプターをリセットします。
 
-パケットの結合の詳細については、次を参照してください。 [NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh205393)します。
+パケットの結合の詳細については、[NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh205393)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

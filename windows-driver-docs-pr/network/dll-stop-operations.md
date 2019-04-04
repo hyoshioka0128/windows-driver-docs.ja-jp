@@ -31,7 +31,7 @@ ms.locfileid: "56551902"
 
 オペレーティング システムでは、このシーケンスを停止すると、IHV 拡張 DLL のアンロードに従います。
 
-1.  オペレーティング システムの最初の呼び出し、 [ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452) IHV 拡張機能の DLL によって管理されるすべての WLAN アダプターの IHV ハンドラー関数。 この操作の詳細については、次を参照してください。 [802.11 WLAN アダプター削除](802-11-wlan-adapter-removal.md)します。
+1.  オペレーティング システムの最初の呼び出し、 [ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452) IHV 拡張機能の DLL によって管理されるすべての WLAN アダプターの IHV ハンドラー関数。 この操作の詳細については、[802.11 WLAN アダプター削除](802-11-wlan-adapter-removal.md)を参照してください。
 
     呼び出し後*Dot11ExtIhvDeinitAdapter*、IHV 拡張機能の DLL などのアダプター固有の操作に関連するすべての IHV 拡張関数を呼び出してはならない[ **Dot11ExtNicSpecificExtension**](https://msdn.microsoft.com/library/windows/hardware/ff547526).
 
@@ -41,7 +41,7 @@ ms.locfileid: "56551902"
 
 3.  最後に、オペレーティング システムの呼び出し、 *DllMain*を IHV 拡張 DLL 内の関数、 *fdwReason* DLL にパラメーターが設定\_プロセス\_デタッチします。 詳細については*DllMain*と Dll は、Microsoft Windows SDK のドキュメント内のトピック「ダイナミック リンク ライブラリについて」を参照してください。
 
-IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)します。
+IHV 拡張機能の詳細については、[802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)を参照してください。
 
  
 

@@ -39,7 +39,7 @@ UMDF 2 で、ドライバーには構成構造でのドライバーが提供す�
 
 UMDF 1 を使用するドライバーは、参照オブジェクトを削除する安全なタイミングを決定するためにカウントを実装する必要があります。 フレームワークは、ドライバーの代わりに、オブジェクト参照を追跡しているために、2 の UMDF ドライバーでは、参照をカウントする必要はありません。
 
-UMDF 2 では、各フレームワーク オブジェクトは、既定の親オブジェクトを持ちます。 親オブジェクトが削除されたときに、フレームワークには、関連付けられている子オブジェクトが削除されます。 ときにオブジェクトの作成メソッドを呼び出すには、ドライバーなど[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)、既定の親を受け入れることができます、またはカスタムの親で指定できます、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。 Framework のオブジェクトとその既定の親オブジェクトの一覧は、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
+UMDF 2 では、各フレームワーク オブジェクトは、既定の親オブジェクトを持ちます。 親オブジェクトが削除されたときに、フレームワークには、関連付けられている子オブジェクトが削除されます。 ときにオブジェクトの作成メソッドを呼び出すには、ドライバーなど[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)、既定の親を受け入れることができます、またはカスタムの親で指定できます、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。 Framework のオブジェクトとその既定の親オブジェクトの一覧は、[Framework オブジェクトの概要](summary-of-framework-objects.md)を参照してください。
 
 ## <a name="driver-initialization"></a>ドライバーの初期化
 
@@ -56,7 +56,7 @@ UMDF 2 では、各フレームワーク オブジェクトは、既定の親オ
 その[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)関数の場合、ドライバーには、次のいくつか実行可能性があります。
 
 -   入力、 [WDFDEVICE\_INIT](https://msdn.microsoft.com/library/windows/hardware/ff546951)構造体は、デバイス オブジェクトを作成するために使用する情報を提供します。 WDFDEVICE の使用の詳細については\_INIT を参照してください[Framework デバイス オブジェクトを作成する](creating-a-framework-device-object.md)します。
--   デバイス オブジェクトの領域のコンテキストを設定します。 割り当てとフレームワーク オブジェクト コンテキストの領域にアクセスする方法については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
+-   デバイス オブジェクトの領域のコンテキストを設定します。 割り当てとフレームワーク オブジェクト コンテキストの領域にアクセスする方法については、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
 -   [デバイス オブジェクトを作成](creating-a-framework-device-object.md)です。
 -   指定[要求ハンドラー](request-handlers.md)デバイス オブジェクト。
 -   [I/O キューを作成する](creating-i-o-queues.md)します。
@@ -83,7 +83,7 @@ UMDF 2 では、フレームワークはに基づいて省略可能なコンテ�
 ## <a name="debugging-your-driver"></a>ドライバーのデバッグ
 
 
-2 の UMDF ドライバーをデバッグするには、Wudfext.dll ではなく Wdfkd.dll で拡張機能を使用します。 Wudfext.dll 拡張機能に関する詳細については、次を参照してください。 [Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)します。
+2 の UMDF ドライバーをデバッグするには、Wudfext.dll ではなく Wdfkd.dll で拡張機能を使用します。 Wudfext.dll 拡張機能に関する詳細については、[Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)を参照してください。
 
 UMDF 2 で取得することも追加のドライバーがデバッグ情報を転送トレース レコーダー (), 違います」の説明に従って[KMDF および UMDF 2 ドライバーで Inflight トレースの記録機能を使用して](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)します。 フレームワークの独自の使用も、*インフライト レコーダー* (IFR)。 参照してください[フレームワークのイベントのロガーを使用して](using-the-framework-s-event-logger.md)します。
 

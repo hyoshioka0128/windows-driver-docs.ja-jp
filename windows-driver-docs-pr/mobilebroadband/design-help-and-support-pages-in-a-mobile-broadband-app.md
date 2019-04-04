@@ -46,7 +46,7 @@ ms.locfileid: "56551986"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)します。
+-   組み込みのコントロールを使用する方法の詳細については、[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)を参照してください。
 
 -   [モバイル ブロード バンド WinRT API の概要](mobile-broadband-winrt-api-overview.md)
 

@@ -17,7 +17,7 @@ ms.locfileid: "56536650"
 > この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
 >
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)します。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)を参照してください。
 
 Visual Studio を使用してダンプ ファイルを開く。
 

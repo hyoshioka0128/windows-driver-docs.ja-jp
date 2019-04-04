@@ -25,8 +25,8 @@ NDIS フィルター ドライバーに関連付けられているドライバ�
 
 [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバー固有のリソースを解放する必要があります。 フィルター ドライバーを作成したすべてのデバイス オブジェクトを破棄する必要があります。 システムは、後にドライバー アンロード操作を完了できる*FilterDriverUnload*を返します。
 
-アンロード関数の機能は、ドライバー固有です。 一般的な規則として[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、次を参照してください。[フィルター ドライバーの初期化](initializing-a-filter-driver.md)します。
+アンロード関数の機能は、ドライバー固有です。 一般的な規則として[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、[フィルター ドライバーの初期化](initializing-a-filter-driver.md)を参照してください。
 
 フィルター ドライバーを呼び出す必要があります、 [ **NdisFDeregisterFilterDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff561800)関数[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)します。 **NdisFDeregisterFilterDriver**呼び出し[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)このフィルター ドライバーに関連付けられているすべてのフィルターが現在アタッチされているモジュールをデタッチします。
 
-アンロードのフィルター ドライバーの詳細については、次を参照してください。[ドライバー スタックを停止する](stopping-a-driver-stack.md)します。
+アンロードのフィルター ドライバーの詳細については、[ドライバー スタックを停止する](stopping-a-driver-stack.md)を参照してください。

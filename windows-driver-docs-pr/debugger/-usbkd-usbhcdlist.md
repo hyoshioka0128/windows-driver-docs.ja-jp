@@ -22,7 +22,7 @@ ms.locfileid: "56556586"
 # <a name="usbkdusbhcdlist"></a>!usbkd.usbhcdlist
 
 
-[ **! Usbkd.usbhcdlist** ](https://msdn.microsoft.com/library/windows/hardware/dn367074)コマンドは、USB ポート ドライバー (Usbport.sys) で表される、すべての USB ホスト コント ローラーに関する情報を表示します。 USB ポート ドライバーと関連付けられているミニポート ドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)します。
+[ **! Usbkd.usbhcdlist** ](https://msdn.microsoft.com/library/windows/hardware/dn367074)コマンドは、USB ポート ドライバー (Usbport.sys) で表される、すべての USB ホスト コント ローラーに関する情報を表示します。 USB ポート ドライバーと関連付けられているミニポート ドライバーについては、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)を参照してください。
 
 ```dbgcmd
 !usbkd.usbhcdlist

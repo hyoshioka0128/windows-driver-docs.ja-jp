@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_チャネル\_構成プロパティの要求がス�
 <a name="remarks"></a>コメント
 -------
 
-DAC のノードのプロパティとして使用する場合 ([**KSNODETYPE\_DAC**](ksnodetype-dac.md)) または 3D のノード ([**KSNODETYPE\_3D\_効果** ](ksnodetype-3d-effects.md))、KSPROPERTY\_オーディオ\_チャネル\_構成プロパティが DirectSound スピーカーの構成を指定します。 組み合わせてこのプロパティを使用、ステレオのスピーカーの構成の場合、 [ **KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY** ](ksproperty-audio-stereo-speaker-geometry.md)プロパティで、ヘッドフォンとステレオのスピーカー構成がいくつかを区別します。 スピーカーの構成の詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
+DAC のノードのプロパティとして使用する場合 ([**KSNODETYPE\_DAC**](ksnodetype-dac.md)) または 3D のノード ([**KSNODETYPE\_3D\_効果** ](ksnodetype-3d-effects.md))、KSPROPERTY\_オーディオ\_チャネル\_構成プロパティが DirectSound スピーカーの構成を指定します。 組み合わせてこのプロパティを使用、ステレオのスピーカーの構成の場合、 [ **KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY** ](ksproperty-audio-stereo-speaker-geometry.md)プロパティで、ヘッドフォンとステレオのスピーカー構成がいくつかを区別します。 スピーカーの構成の詳細については、[DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)を参照してください。
 
 DirectSound は、では、KSPROPERTY\_オーディオ\_チャネル\_チャネル構成に対して「パン」ノードを照会するプロパティを構成します。 パン ノードはボリュームの 2 番目のノード ([**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)) を満たすミキサー ピン、 [DirectSound ノード順序要件](https://msdn.microsoft.com/library/windows/hardware/ff536331)します。 DirectSound 実装の**IDirectSoundBuffer::SetPan**メソッド (Microsoft Windows SDK のドキュメントで説明) はパン ノードの[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](ksproperty-audio-volumelevel.md)パンを制御するプロパティ。
 

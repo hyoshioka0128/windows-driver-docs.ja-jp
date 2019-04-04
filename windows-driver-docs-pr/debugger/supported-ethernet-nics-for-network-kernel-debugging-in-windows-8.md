@@ -18,7 +18,7 @@ ms.locfileid: "56570755"
 
 カーネルのデバッグ中には、デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*ターゲット コンピューター*します。 行う[ネットワーク ケーブル経由でのカーネル デバッグ](setting-up-a-network-debugging-connection.md)、ターゲット コンピューターがサポートされているネットワーク アダプターをいる必要があります。 ターゲット コンピューターでは、Windows 8 を実行している、カーネルのデバッグ、ここで記載されているネットワーク アダプターがサポートされます。
 
-**注**  カーネル デバッグ for Windows 8.1 でサポートされるネットワーク アダプターの一覧は、次を参照してください。 [Windows 8.1 でのネットワーク カーネル デバッグのサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)します。
+**注**  カーネル デバッグ for Windows 8.1 でサポートされるネットワーク アダプターの一覧は、[Windows 8.1 でのネットワーク カーネル デバッグのサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)を参照してください。
 
  
 

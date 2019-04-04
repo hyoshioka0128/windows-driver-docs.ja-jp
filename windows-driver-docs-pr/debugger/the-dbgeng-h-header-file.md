@@ -22,7 +22,7 @@ Dbgeng.h ヘッダー ファイルでルーチンは、DbgEng 拡張を書き込
 
 Dbgeng.h ヘッダー ファイルとデバッガー拡張機能を記述する方法についての情報について詳しくは、次を参照してください。
 
-デバッガーの拡張機能を記述する方法については、次を参照してください。 [DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)と[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)します。
+デバッガーの拡張機能を記述する方法については、[DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)と[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)を参照してください。
 
  
 

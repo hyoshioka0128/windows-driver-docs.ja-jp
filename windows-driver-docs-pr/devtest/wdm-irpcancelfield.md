@@ -26,7 +26,7 @@ ms.locfileid: "56578812"
 
 Static Driver Verifier のドライバーの最後に、このルールを適用する[ **StartIo** ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンとドライバーのディスパッチ ルーチンの最後にします。
 
-ドライバーが IRP のキャンセルを処理する方法については、次を参照してください。 [**同期 IRP キャンセル**](https://msdn.microsoft.com/library/windows/hardware/ff564531)します。
+ドライバーが IRP のキャンセルを処理する方法については、[**同期 IRP キャンセル**](https://msdn.microsoft.com/library/windows/hardware/ff564531)を参照してください。
 
 |              |     |
 |--------------|-----|
@@ -53,7 +53,7 @@ Static Driver Verifier のドライバーの最後に、このルールを適用
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

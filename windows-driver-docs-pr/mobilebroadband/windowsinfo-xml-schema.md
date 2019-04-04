@@ -24,11 +24,11 @@ ms.locfileid: "56536110"
 
  
 
-WindowsInfo XML スキーマの完了の定義については、次を参照してください。 [WindowsInfo XML スキーマ定義](windowsinfo-xml-schema-definition.md)します。
+WindowsInfo XML スキーマの完了の定義については、[WindowsInfo XML スキーマ定義](windowsinfo-xml-schema-definition.md)を参照してください。
 
-WindowsInfo XML スキーマで定義されている要素については、次を参照してください。 [WindowsInfo XML 要素](windowsinfo-xml-elements.md)します。
+WindowsInfo XML スキーマで定義されている要素については、[WindowsInfo XML 要素](windowsinfo-xml-elements.md)を参照してください。
 
-WindowsInfo XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [WindowsInfo XML の例](windowsinfo-xml-example.md)します。
+WindowsInfo XML スキーマで定義されている形式で XML データの例は、[WindowsInfo XML の例](windowsinfo-xml-example.md)を参照してください。
 
  
 

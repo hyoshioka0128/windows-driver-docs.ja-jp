@@ -23,7 +23,7 @@ ms.locfileid: "56559004"
 
 **このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-VMR を各組み合わせデインター レース、サブストリームの複合操作の場合に、ドライバーによって提供されるへの呼び出しを開始します[ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)コールバック関数。 *DdMoCompRender*を呼び出すには、 **lpBufferInfo**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)へのポインターを構造体、宛先表面、および各入力ビデオ ソース サンプルの画面について説明するバッファーの配列。 *DdMoCompRender*関数を呼び出してドライバーの[ **DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563927)関数。 詳細については、次を参照してください。[ユーザー モード コンポーネントからインター レースを解除 DDI を呼び出す](calling-the-deinterlace-ddi-from-a-user-mode-component.md)します。
+VMR を各組み合わせデインター レース、サブストリームの複合操作の場合に、ドライバーによって提供されるへの呼び出しを開始します[ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)コールバック関数。 *DdMoCompRender*を呼び出すには、 **lpBufferInfo**のメンバー、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)へのポインターを構造体、宛先表面、および各入力ビデオ ソース サンプルの画面について説明するバッファーの配列。 *DdMoCompRender*関数を呼び出してドライバーの[ **DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563927)関数。 詳細については、[ユーザー モード コンポーネントからインター レースを解除 DDI を呼び出す](calling-the-deinterlace-ddi-from-a-user-mode-component.md)を参照してください。
 
 配列内の要素の順序[ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)内の構造体、**ソース**のメンバー、 [ **DXVA\_DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563915)と一致する構造体、 **lpBufferInfo**宛先表面が存在しないこと、例外を持つ配列です。
 

@@ -31,7 +31,7 @@ ms.locfileid: "56550517"
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの体系的な低リソース シミュレーション機能をアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 アクティブ化または体系的な低リソース シミュレーションのオプションを非アクティブ化するコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの体系的な低リソース シミュレーション機能をアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 アクティブ化または体系的な低リソース シミュレーションのオプションを非アクティブ化するコンピューターを再起動する必要があります。
 
 -   **コマンドラインで**
 

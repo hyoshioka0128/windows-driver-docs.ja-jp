@@ -57,7 +57,7 @@ UMDF 検証機能が有効になっているかどうかを確認するには、
 
 **!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
 
-デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
+デバッガーの拡張機能コマンドの詳細については、[Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)を参照してください。
 
 ## <a name="controlling-the-verifiers-behavior"></a>検証の動作を制御します。
 

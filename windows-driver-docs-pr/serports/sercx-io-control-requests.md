@@ -17,7 +17,7 @@ ms.locfileid: "56539348"
 
 いくつかの例外は、シリアル フレームワークの拡張機能 (SerCx) のバージョン 1 は、Ntddser.h ヘッダー ファイルで定義されている IOCTL_SERIAL_XXX I/O 制御コード (Ioctl) を使用する I/O 制御要求をサポートします。 SerCx がこれらの要求の一部を処理しますが、SerCx はハードウェアに固有の処理が必要なその他の多くの要求を処理するコント ローラーのシリアル ドライバーに依存する必要があります。 SerCx によって処理される要求の一部には、ハードウェア固有の処理も必要です。 SerCx はこれらの要求の完了に必要ですが、SerCx はこれらの要求をコント ローラーのシリアル ドライバーの処理の大部分をオフロードします。
 
-これらの Ioctl のほとんどは、システムが指定した際にドライバー Pc の名前付きのシリアル ポートの管理によってもサポートされます。 際に、Windows のサポートされているすべてのバージョンで使用できます。 シリアル Ioctl の詳細な説明については、次を参照してください。[シリアル デバイスに対する制御要求](serial-device-control-requests2.md)します。
+これらの Ioctl のほとんどは、システムが指定した際にドライバー Pc の名前付きのシリアル ポートの管理によってもサポートされます。 際に、Windows のサポートされているすべてのバージョンで使用できます。 シリアル Ioctl の詳細な説明については、[シリアル デバイスに対する制御要求](serial-device-control-requests2.md)を参照してください。
 
 SerCx は、すべての Ioctl Ntddser.h ヘッダー ファイルで定義されていることをサポートしません。 SerCx は古い形式の IOCTL_SERIAL_CONFIG_SIZE の IOCTL は周辺のクライアント ドライバーでは使用できませんをサポートしていません。 IOCTL_SERIAL_RESET_DEVICE IOCTL、STATUS_NOT_IMPLEMENTED エラー ステータス コードで常に SerCx を完了するにはもサポートされていません。 さらに、SerCx Ntddser.h で定義されている IOCTL_SERIAL_INTERNAL_XXX Ioctl のいずれもサポートしていません。
 

@@ -39,4 +39,4 @@ DMA トランザクションの 1 つの転送が必要である KMDF バージ�
 
 使用して、デバッグ時に、 [ **! wdfkd.wdfdmaenabler** ](https://msdn.microsoft.com/library/windows/hardware/ff565717)拡張機能を特定の DMA イネーブラー オブジェクトの 1 つの転送を設定するかどうかを判断します。
 
-WDF 関数を呼び出してドライバーの DMA イベント コールバックの順序の詳細については、次を参照してください。 [KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)します。
+WDF 関数を呼び出してドライバーの DMA イベント コールバックの順序の詳細については、[KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)を参照してください。

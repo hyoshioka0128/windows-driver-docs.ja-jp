@@ -25,7 +25,7 @@ A*グローバル ロガー トレース セッション*システムがデバ�
 
 グローバル ロガーのトレース セッションは、予約済みのセッション名を"GlobalLogger" [コントロール GUID](control-guid.md) 、定数で表される**GlobalLoggerGuid**します。 グローバル ロガー トレース セッションを作成し、トレース セッションを開始するコンピューターを再起動します。 1 つだけのグローバル ログ トレース セッションは、一度にコンピューターで実行できます。
 
-グローバル ロガー トレース セッションを作成するには使用[Tracelog](tracelog.md)します。 自動的に、レジストリ サブキーとトレース セッションのオプションを格納するエントリを作成します。 グローバルのロガーのトレース セッションは、コンピューターを再起動するときに起動します。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
+グローバル ロガー トレース セッションを作成するには使用[Tracelog](tracelog.md)します。 自動的に、レジストリ サブキーとトレース セッションのオプションを格納するエントリを作成します。 グローバルのロガーのトレース セッションは、コンピューターを再起動するときに起動します。 詳細については、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)を参照してください。
 
 グローバルのロガーのトレース セッションからのトレース メッセージの書式設定、使用[Tracefmt](tracefmt.md) system.tmf で、[トレース メッセージのフォーマット ファイル](trace-message-format-file.md)WDK に含まれます。
 
@@ -53,7 +53,7 @@ Windows ACPI ロガーは無期限にグローバル ロガー トレース セ�
 
 次の表では、グローバル ロガー セッションを構成するレジストリ エントリを示します。 これらのエントリは、 **HKLM\\システム\\CurrentControlSet\\コントロール\\WMI\\GlobalLogger**サブキー。 のみ、**開始**エントリが必要です。
 
-に加えて、このテーブルのレジストリ エントリを追加することも、 **ControlGUID**サブキーの下、 **GlobalLogger**を表すグローバル ロガーは、トレース ログに記録すると、ドライバーなどのトレース プロバイダーのサブキーセッションです。 詳しくは、次を参照してください。[ロガーのグローバルなセッションへのログ記録](logging-to-the-global-logger-session.md)します。
+に加えて、このテーブルのレジストリ エントリを追加することも、 **ControlGUID**サブキーの下、 **GlobalLogger**を表すグローバル ロガーは、トレース ログに記録すると、ドライバーなどのトレース プロバイダーのサブキーセッションです。 詳しくは、[ロガーのグローバルなセッションへのログ記録](logging-to-the-global-logger-session.md)を参照してください。
 
 <table>
 <colgroup>
@@ -93,7 +93,7 @@ Windows ACPI ロガーは無期限にグローバル ロガー トレース セ�
 <td align="left"><p><strong>EnableKernelFlags</strong></p></td>
 <td align="left"><p>REG_BINARY</p></td>
 <td align="left"><p>NT Kernel Logger のトレース セッションをグローバル ロガー セッションに変換し、カーネル トレースに含まれるイベントを指定します。</p>
-<p>詳しくは、次を参照してください。<a href="boot-time-global-logger-session.md" data-raw-source="[Boot-time Global Logger Session](boot-time-global-logger-session.md)">起動時のグローバルなロガー セッション</a>します。</p></td>
+<p>詳しくは、<a href="boot-time-global-logger-session.md" data-raw-source="[Boot-time Global Logger Session](boot-time-global-logger-session.md)">起動時のグローバルなロガー セッション</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileCounter</strong></p></td>

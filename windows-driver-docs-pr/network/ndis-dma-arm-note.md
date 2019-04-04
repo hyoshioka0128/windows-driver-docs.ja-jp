@@ -12,6 +12,6 @@ ms.locfileid: "56539865"
 > [!CAUTION]
 > ARM および ARM64 のプロセッサでは、NDIS ドライバー作成者が NDIS スキャッター/ギャザー DMA ではなく、WDF DMA または WDM DMA を使用することを強くお勧めします。 
 >
-> WDF DMA の詳細については、次を参照してください。 [KMDF ドライバーで DMA 操作を処理](../wdf/handling-dma-operations-in-kmdf-drivers.md)します。
+> WDF DMA の詳細については、[KMDF ドライバーで DMA 操作を処理](../wdf/handling-dma-operations-in-kmdf-drivers.md)を参照してください。
 >
 > WDM DMA の詳細については、の子の DMA に関連するトピックを参照して[ドライバーの入力/出力を管理する](../kernel/managing-input-output-for-drivers.md)します。

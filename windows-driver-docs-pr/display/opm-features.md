@@ -25,11 +25,11 @@ OPM は認定出力保護プロトコルの (COPP) をすべてサポート機�
 
     COPP アプリケーションでは、グラフィックス ドライバーから情報を要求、それによって、 [ **DXVA\_COPPStatusInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusinput)ドライバーに渡される構造体。
 
--   OPM には、高帯域幅デジタル コンテンツの保護 (HDCP) リピータがサポートされています。 HDCP リピータの詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。
+-   OPM には、高帯域幅デジタル コンテンツの保護 (HDCP) リピータがサポートされています。 HDCP リピータの詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。
 
--   アプリケーションは、OPM で HDCP をより簡単にサポートできます。 アプリケーションは、HDCP システム Renewability メッセージ (SRMs) を解析し、モニターが取り消されたかどうかを決定する必要はありません。 HDCP SRMs の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。
+-   アプリケーションは、OPM で HDCP をより簡単にサポートできます。 アプリケーションは、HDCP システム Renewability メッセージ (SRMs) を解析し、モニターが取り消されたかどうかを決定する必要はありません。 HDCP SRMs の詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。
 
--   OPM が X.509 証明書を使用し、COPP が独自の XML の証明書を使用します。 COPP 証明書の形式は、XML 署名の構文と処理の仕様での署名の形式に基づきます。 X.509 証明書については、次を参照してください。、 [X.509 証明書プロファイル](https://go.microsoft.com/fwlink/p/?linkid=70416)します。
+-   OPM が X.509 証明書を使用し、COPP が独自の XML の証明書を使用します。 COPP 証明書の形式は、XML 署名の構文と処理の仕様での署名の形式に基づきます。 X.509 証明書については、、 [X.509 証明書プロファイル](https://go.microsoft.com/fwlink/p/?linkid=70416)を参照してください。
 
 -   COPP アプリケーションの取得、COPP **IAMCertifiedOutputProtection**インターフェイス バージョン 7 または 9 のビデオの混在レンダラーを作成して ([*VMR*](https://docs.microsoft.com/windows/desktop/DirectShow/using-the-video-mixing-renderer)) IIDを渡します\_VMR フィルターの実装に IAMCertifiedOutputProtection **iunknown::queryinterface**します。 アプリケーションが OPM、 **IOPMVideoOutput** 、HMONITOR を渡すことによってインターフェイスまたは**IDirect3DDevice9**オブジェクトを**OPMGetVideoOutputsFromHMONITOR**または**OPMGetVideoOutputsFromIDirect3DDevice9Object**それぞれに機能します。 これらの関数とインターフェイスの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 

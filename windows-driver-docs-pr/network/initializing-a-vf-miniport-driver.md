@@ -17,9 +17,9 @@ ms.locfileid: "56572488"
 このトピックでは、書き込みのためのガイドラインを説明します、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)ミニポート ドライバーを PCI Express (PCIe) 仮想機能 (VF) の関数。 VF は、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターによって公開されます。
 
 > [!NOTE]
-> 次のガイドラインは、SR-IOV ネットワーク アダプターのミニポート ドライバーを VF にのみ適用されます。 PCIe 物理機能 (PF) アダプターのミニポート ドライバーの初期化ガイドラインについては、次を参照してください。 [PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)します。 
+> 次のガイドラインは、SR-IOV ネットワーク アダプターのミニポート ドライバーを VF にのみ適用されます。 PCIe 物理機能 (PF) アダプターのミニポート ドライバーの初期化ガイドラインについては、[PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)を参照してください。 
 
-VF のミニポート ドライバーが任意の NDIS ミニポート ドライバーと同じ手順に従うときにその[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数が呼び出されます。 次の手順の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
+VF のミニポート ドライバーが任意の NDIS ミニポート ドライバーと同じ手順に従うときにその[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数が呼び出されます。 次の手順の詳細については、[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)を参照してください。
 
 この手順に加えて、VF のミニポート ドライバーする必要があります追加の手順に従って NDIS ドライバーを呼び出すときに[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。
 
@@ -28,7 +28,7 @@ VF のミニポート ドライバーが任意の NDIS ミニポート ドライ
   > [!NOTE] 
   > パーティションの種類として報告される場合**NdisHypervisorPartitionMsHvParent**、ミニポート ドライバーが、アダプターの PF にアタッチされている、HYPER-V 親パーティションで実行されています。 この場合、ミニポート ドライバーは VF ドライバーとして初期化しないでください。 」の説明に従って、PF ドライバーとしてに初期化する必要があります、ドライバーの可能な場合は、 [PF ミニポート ドライバーの初期化シーケンス](initialization-sequence-for-pf-miniport-drivers.md)します。     
 
-- PF ミニポート ドライバーとは異なり、VF ミニポート ドライバー、SR-IOV が標準化されているキーワードと共にインストールする必要がある必要がありますしようし、これらのキーワードを読み取る。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+- PF ミニポート ドライバーとは異なり、VF ミニポート ドライバー、SR-IOV が標準化されているキーワードと共にインストールする必要がある必要がありますしようし、これらのキーワードを読み取る。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
 
 - VF のミニポート ドライバーを通じて基になる仮想ネットワーク アダプターの SR-IOV 対応のハードウェア機能の報告、 [ **NDIS\_SRIOV\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451677)構造体次のように初期化されます。
 
@@ -51,7 +51,7 @@ VF のミニポート ドライバーが任意の NDIS ミニポート ドライ
 
 - VF のミニポート ドライバーは、仮想マシン キュー (VMQ) 機能をアドバタイズしない必要があります。 ただし、ドライバーは、電源管理など、他の NDIS テクノロジのサポートを提供し、受信側 scaling (RSS)。
 
-  RSS の詳細については、次を参照してください。 [Receive Side Scaling](ndis-receive-side-scaling2.md)します。
+  RSS の詳細については、[Receive Side Scaling](ndis-receive-side-scaling2.md)を参照してください。
 
  
 

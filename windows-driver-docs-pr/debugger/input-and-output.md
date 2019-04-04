@@ -30,7 +30,7 @@ ms.locfileid: "56572051"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-入力と出力の使用に関する詳細については、次を参照してください。[を使用して入力と出力](using-input-and-output.md)します。 詳細および入力と出力のコールバック クライアント オブジェクトについては、次を参照してください。[クライアント オブジェクト](client-objects.md)します。
+入力と出力の使用に関する詳細については、[を使用して入力と出力](using-input-and-output.md)を参照してください。 詳細および入力と出力のコールバック クライアント オブジェクトについては、[クライアント オブジェクト](client-objects.md)を参照してください。
 
  
 

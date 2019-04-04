@@ -48,7 +48,7 @@ Windows オーディオ ドライバーに IoRegisterPlugPlayNotification が呼
 
 オーディオ ドライバーでは、HFP ドライバーからの静的な情報を取得できます。 たとえば、HFP ドライバーでは、ksnodetype、コンテナー id とペアになる HFP デバイスのフレンドリ名を提供できます。 オーディオ ドライバーでは、作成し、初期化 KS フィルターまたはフィルターを表すペアになる HFP デバイスをこの情報を使用できます。 オーディオ ドライバーを使用して[ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://msdn.microsoft.com/library/windows/hardware/dn265108)この情報を取得します。
 
-オーディオ ドライバーには、ペアになっている HFP デバイスの Bluetooth アドレスも取得できます。 各ペアになっている HFP デバイスが Bluetooth の一意のアドレスと、これは、一意の識別子の文字列として役立ちます。 詳細については、次を参照してください。 [HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)します。
+オーディオ ドライバーには、ペアになっている HFP デバイスの Bluetooth アドレスも取得できます。 各ペアになっている HFP デバイスが Bluetooth の一意のアドレスと、これは、一意の識別子の文字列として役立ちます。 詳細については、[HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)を参照してください。
 
 ## <a name="span-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspancreating-initializing-audio-specific-filter-factory-context"></a><span id="Creating__initializing_audio-specific_filter_factory_context"></span><span id="creating__initializing_audio-specific_filter_factory_context"></span><span id="CREATING__INITIALIZING_AUDIO-SPECIFIC_FILTER_FACTORY_CONTEXT"></span>作成すると、オーディオ固有のフィルターの工場出荷時のコンテキストを初期化しています
 

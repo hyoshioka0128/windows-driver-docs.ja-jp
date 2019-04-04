@@ -31,7 +31,7 @@ I/O 要求を表し、その処理を制御するために使用するデータ�
 
 暗黙的なスレッドを参照してください。
 
-詳細については、次を参照してください。[スレッドとプロセス](threads-and-processes.md)します。
+詳細については、[スレッドとプロセス](threads-and-processes.md)を参照してください。
 
 <span id="implicit_thread"></span><span id="IMPLICIT_THREAD"></span>**暗黙的なスレッド**  
 カーネル モードでデバッグするには、ターゲットのレジスタのいくつかの判断に使用されるスレッドなどのフレームのオフセットし、命令のオフセットします。 イベントの発生時に、暗黙的なスレッドは、イベントのスレッドに設定されます。
@@ -42,14 +42,14 @@ I/O 要求を表し、その処理を制御するために使用するデータ�
 <span id="initial_breakpoint"></span><span id="INITIAL_BREAKPOINT"></span>**最初のブレークポイント**  
 再起動後、または対象のアプリケーションが再起動した後、デバッグ セッションの先頭付近に自動的に発生するブレークポイントです。
 
-詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
+詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
 <span id="input_callback_objects"></span><span id="INPUT_CALLBACK_OBJECTS"></span>**入力のコールバック オブジェクト**  
 インスタンス、 [IDebugInputCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550785)クライアントに登録されているインターフェイス。 デバッガー エンジンが入力を必要とされるたびに、入力のコールバックを提供するよう要求されます。
 
 出力のコールバックを参照してください。
 
-詳細については、次を参照してください。 [AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)します。
+詳細については、[AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)を参照してください。
 
 <span id="input_callbacks"></span><span id="INPUT_CALLBACKS"></span>**入力のコールバック**  
 入力のコールバック オブジェクトを参照してください。

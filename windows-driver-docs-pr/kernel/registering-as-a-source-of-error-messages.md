@@ -30,7 +30,7 @@ ms.locfileid: "56574071"
 <a href="" id="typessupported--reg-dword-"></a>**TypesSupported** (REG\_DWORD)  
 ログに記録できる可能性の重大度レベルのビットマスクを指定します。 これは、ドライバーが通常設定から 7 を示すすべての重大度レベルを記録することがあります。
 
-ドライバーの INF ファイルからこれらのレジストリ キーを設定する方法については、次を参照してください。 [**登録イベントをログに記録**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+ドライバーの INF ファイルからこれらのレジストリ キーを設定する方法については、[**登録イベントをログに記録**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
 
  
 

@@ -19,4 +19,4 @@ ms.locfileid: "56572230"
 
 A *GUID をメッセージ*、または*GUID をデコード*は、特定のプロバイダーからメッセージをトレースに割り当てられた GUID です。 ファイル名として使用すると、同じ GUID、[トレース メッセージの形式 (TMF) ファイル](trace-message-format-file.md)(.tmf 拡張子) これらのメッセージの書式設定命令を格納します。
 
-Event Tracing for Windows (ETW) では、メッセージの GUID を使用して、トレース メッセージを関連付ける正しい TMF ファイル。 これを行う方法の詳細については、次を参照してください。 [Tracepdb](tracepdb.md)します。
+Event Tracing for Windows (ETW) では、メッセージの GUID を使用して、トレース メッセージを関連付ける正しい TMF ファイル。 これを行う方法の詳細については、[Tracepdb](tracepdb.md)を参照してください。

@@ -26,7 +26,7 @@ OID\_WWAN\_SMS\_送信 MB の別のデバイスに SMS テキスト メッセー
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)します。
+詳細については、この OID を使用して、[WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)を参照してください。
 
 この OID を処理するときに、ミニポート ドライバーは、プロバイダーのネットワークにアクセスできますが、Subscriber Identity Module (SIM カード) にアクセスしないでください。
 

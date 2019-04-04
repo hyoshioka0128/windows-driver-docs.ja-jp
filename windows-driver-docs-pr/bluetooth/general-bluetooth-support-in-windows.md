@@ -18,7 +18,7 @@ ms.locfileid: "56537628"
 
  
 
-**注**   Windows 10 以前 Bluetooth サポートについては、次を参照してください。[以前のバージョンの Windows での Bluetooth サポート](bluetooth-support-in-previous-windows-versions.md)します。
+**注**   Windows 10 以前 Bluetooth サポートについては、[以前のバージョンの Windows での Bluetooth サポート](bluetooth-support-in-previous-windows-versions.md)を参照してください。
 
  
 

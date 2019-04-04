@@ -50,7 +50,7 @@ ms.locfileid: "56553524"
 
 -   場合、**フラグ**メンバーが 0 に設定されている、すべての拡張が VF、PF にネットワーク アダプターの接続情報が返されます。 ここでの値、 **SwitchId**と**AttachedFunctionId**は無視されます。
 
-詳細については、次を参照してください。[ネットワーク アダプターの仮想ポートを列挙](https://msdn.microsoft.com/library/windows/hardware/hh406710)します。
+詳細については、[ネットワーク アダプターの仮想ポートを列挙](https://msdn.microsoft.com/library/windows/hardware/hh406710)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

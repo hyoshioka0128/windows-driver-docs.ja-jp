@@ -54,7 +54,7 @@ Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://msdn.microsoft.com/
 
 **ExDeleteTimer**ドライバー実装をスケジュール*ExTimerDeleteCallback*タイマー オブジェクトが削除された後に実行する日常的などの時点でこのオブジェクトへのポインターが無効になっています。 場合、*待機*パラメーターが**TRUE**で、 **ExDeleteTimer**へのコールバックを呼び出す、 *ExTimerDeleteCallback*ルーチンが完了します。前に**ExDeleteTimer**を返します。 場合*待機*は**FALSE**、 *ExTimerDeleteCallback*ルーチンが前に、または後に実行が**ExDeleteTimer**を返します。
 
-詳細については、次を参照してください。 [Ex*Xxx*タイマー ルーチンと EX\_タイマー オブジェクト](exxxxtimer-routines-and-ex-timer-objects.md)します。
+詳細については、[Ex*Xxx*タイマー ルーチンと EX\_タイマー オブジェクト](exxxxtimer-routines-and-ex-timer-objects.md)を参照してください。
 
  
 

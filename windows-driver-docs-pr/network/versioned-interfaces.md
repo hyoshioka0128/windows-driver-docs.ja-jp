@@ -27,7 +27,7 @@ NDIS 6.0 では、構造のキーのバージョン管理をサポートして�
 
 このバージョン管理は、旧バージョンとの互換性を簡略化し、NDIS 6.0 とそれ以降のドライバーの有効期限を延長します。 また、NDIS ドライバーでは、NDIS の 1 つ以上のバージョンをサポートできます。
 
-詳細については、次を参照してください。 [ **NDIS\_オブジェクト\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff566588)します。
+詳細については、[ **NDIS\_オブジェクト\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff566588)を参照してください。
 
  
 

@@ -24,7 +24,7 @@ ms.locfileid: "56572156"
 
 NDIS ドライバーでは、NDIS ポート OID 要求を関連付けることができます。 このような OID 要求で、 **PortNumber**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体は、ターゲット ポート番号に設定されます。 OID 要求が既定のポートの場合、ポート番号は 0 を使用します。 上にあるドライバーは、特定のポート番号を指定する任意の OID 要求を行う前に、ポートがアクティブであることを確認する必要があります。
 
-NDIS を呼び出すと、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)プロトコル ドライバー、NDIS の関数で現在アクティブなすべてのポートの一覧を提供する、 **ActivePorts** のメンバー[**NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)構造体、 *BindParameters*パラメーターを指します。 NDIS は、ポートがアクティブ化し、非アクティブ化されたときに、PnP イベントとプロトコル ドライバーにも通知します。 PnP ポートのアクティブ化と非アクティブ化の通知の詳細については、次を参照してください。 [NDIS ポート PnP 通知の処理](handling-ndis-ports-pnp-event-notifications.md)します。
+NDIS を呼び出すと、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)プロトコル ドライバー、NDIS の関数で現在アクティブなすべてのポートの一覧を提供する、 **ActivePorts** のメンバー[**NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)構造体、 *BindParameters*パラメーターを指します。 NDIS は、ポートがアクティブ化し、非アクティブ化されたときに、PnP イベントとプロトコル ドライバーにも通知します。 PnP ポートのアクティブ化と非アクティブ化の通知の詳細については、[NDIS ポート PnP 通知の処理](handling-ndis-ports-pnp-event-notifications.md)を参照してください。
 
 次の Oid、NDIS ポート インターフェイスに固有のとおりです。
 

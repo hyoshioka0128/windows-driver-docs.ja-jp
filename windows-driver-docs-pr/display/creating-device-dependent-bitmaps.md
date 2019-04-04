@@ -26,7 +26,7 @@ ms.locfileid: "56558923"
 ドライバーの作成し、管理、アプリケーションがビットマップの作成を要求すると、 [ *DDB* ](https://docs.microsoft.com/windows/desktop/gdi/device-dependent-bitmaps)サポートすることによって、 [ **DrvCreateDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)関数。 このようなドライバーは、ビットマップを作成するときは、任意の形式で、ビットマップを格納できます。 ドライバーは、渡されたパラメーターを調べ、少なくとも数だけビット ピクセルあたりの要求にビットマップを提供します。
 
 > [!NOTE]
-> グラフィック ドライバーは、のビットマップをサポートすることでパフォーマンスを向上させることができます[*オフスクリーン メモリ*](video-present-network-terminology.md#off_screen_memory)してハードウェアを使用してビットマップを描画します。 これの例は、次を参照してください。、 **Permedia**ドライバーのサンプルを表示します。
+> グラフィック ドライバーは、のビットマップをサポートすることでパフォーマンスを向上させることができます[*オフスクリーン メモリ*](video-present-network-terminology.md#off_screen_memory)してハードウェアを使用してビットマップを描画します。 これの例は、、 **Permedia**ドライバーのサンプルを表示を参照してください。
 
 
 > [!NOTE]

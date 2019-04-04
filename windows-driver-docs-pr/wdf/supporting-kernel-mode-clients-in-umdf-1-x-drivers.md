@@ -60,7 +60,7 @@ UMDF ドライバーは、UMDF ドライバーには、カーネル モードの
 
 -   ユーザー モード ドライバーには、ポインターが逆参照できませんので、I/O 要求のバッファーは追加の情報へのポインターを含めないでください。
 
--   I/O 要求が含まれている場合、 [I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff565406)「も」バッファーへのアクセス方法を指定する、カーネル モード ドライバーは、I/O 要求を作成したアプリケーションのプロセスのコンテキストで I/O 要求を送信する必要があります。 ベース UMDF ドライバーで「も」メソッドをサポートする方法の詳細については、次を参照してください。 [I/O を使用していないバッファーも UMDF ドライバーでのダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)します。
+-   I/O 要求が含まれている場合、 [I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff565406)「も」バッファーへのアクセス方法を指定する、カーネル モード ドライバーは、I/O 要求を作成したアプリケーションのプロセスのコンテキストで I/O 要求を送信する必要があります。 ベース UMDF ドライバーで「も」メソッドをサポートする方法の詳細については、[I/O を使用していないバッファーも UMDF ドライバーでのダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)を参照してください。
 
 -   UMDF ドライバーでは、ユーザー モードでの I/O 要求の出力データを変更可能性があります。 そのため、カーネル モード ドライバーでは、ユーザー モード ドライバーから受信したすべての出力データを検証する必要があります。
 

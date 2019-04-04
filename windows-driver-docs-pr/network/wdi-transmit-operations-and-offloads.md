@@ -46,7 +46,7 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 <td align="left"><p>チェックサムは、LSO します。</p></td>
 <td align="left"><p>チェックサムは、起動時の構成可能なオフロードです。 各フレームでは、適用可能なチェックサム演算を指定するフラグには。</p>
 <p>WDI は、該当する場合ですか?/ターゲットから透過的に LSO セグメント化を処理します。</p></td>
-<td align="left"><p>チェックサム。ターゲット WDI にそのチェックサム オフロード機能の一部として渡すデバイス キャップ bringup 中にします。 機能については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>します。</p>
+<td align="left"><p>チェックサム。ターゲット WDI にそのチェックサム オフロード機能の一部として渡すデバイス キャップ bringup 中にします。 機能については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>を参照してください。</p>
 <p>WDI は、該当する場合ですか?/ターゲットから透過的に LSO セグメント化を処理します。</p></td>
 </tr>
 <tr class="even">

@@ -85,7 +85,7 @@ L os コマンドを使用して登録表示無効にすることもできます
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-実行に影響するコマンドの詳細については、次を参照してください。[ターゲットを制御する](controlling-the-target.md)します。
+実行に影響するコマンドの詳細については、[ターゲットを制御する](controlling-the-target.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

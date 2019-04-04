@@ -72,11 +72,11 @@ USB タイプ-c コネクタは、元に戻すことと対称です。
 
 - USB 機能ドライバー bring アップは USB 機能モードをサポートするために必要な。 マイクロ B の USB コネクタ用に USB 機能ドライバーが既に実装されている場合について説明します、適切なコネクタ USB 型-C# で作業を続行する USB 機能ドライバーを ACPI テーブル。 
 
-    詳細については、次を参照してください。 [USB 機能ドライバーの作成について](developing-windows-drivers-for-usb-function-controllers.md)します。
+    詳細については、[USB 機能ドライバーの作成について](developing-windows-drivers-for-usb-function-controllers.md)を参照してください。
 
 - USB の役割の交代 bring ドライバー - アップはのみホストと関数の両方の役割を想定するロールのデュアル コント ローラーを持つデバイスに必要です。 ロールの切り替えの USB ドライバーの表示時に、Microsoft のインボックス USB 役割の交代ドライバーを有効にする ACPI テーブルを変更する必要があります。 
 
-    詳細については、次を参照してください。、[ロール切り替えの USB ドライバーを取り込むためのガイダンス](dual-role-controller-bringup-for-a-usb-type-c-system.md)します。
+    詳細については、、[ロール切り替えの USB ドライバーを取り込むためのガイダンス](dual-role-controller-bringup-for-a-usb-type-c-system.md)を参照してください。
 
 - USB コネクタ マネージャー ドライバーは、Windows システムの種類 C の USB ポートを管理する必要があります。 USB コネクタ マネージャー ドライバー用の bring アップ タスクは、型-C# の USB ポートの選択したドライバーによって異なります。Microsoft のインボックス UCSI (UcmUcsiCx.sys および UcmUcsiAcpiClient.sys) ドライバー、UcmCx クライアント ドライバーでは、または UcmTcpciCx クライアント ドライバー。 詳細については、C-USB 型システムに最適なソリューションを選択する方法を説明する前のセクションでリンクを参照してください。
 

@@ -17,7 +17,7 @@ ms.locfileid: "56557458"
 ## <span id="ddk_srb_surprise_removal_ks"></span><span id="DDK_SRB_SURPRISE_REMOVAL_KS"></span>
 
 
-デバイスがあったときに、クラス ドライバーはこの要求を送信します (突然の削除) が予期せずコンピューターから削除します。 詳細については、次を参照してください。[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
+デバイスがあったときに、クラス ドライバーはこの要求を送信します (突然の削除) が予期せずコンピューターから削除します。 詳細については、[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)を参照してください。
 
  
 

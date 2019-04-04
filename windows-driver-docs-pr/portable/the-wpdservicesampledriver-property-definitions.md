@@ -27,7 +27,7 @@ WDK には、WPD ドライバー開発者向けのいくつかのツールが含
 
 このオブジェクトは、14 個のプロパティをサポートします。 最初の 8 プロパティは、一般的な WPD オブジェクトのプロパティです。 過去 6 回のプロパティは、連絡先固有 (名前、携帯電話番号、電子メール アドレス、およびなど)。
 
-WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造は、2 つの部分で構成されます。 グローバル一意識別子 (GUID) と DWORD。 GUID がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、次を参照してください。 [PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md)します。
+WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造は、2 つの部分で構成されます。 グローバル一意識別子 (GUID) と DWORD。 GUID がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、[PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md)を参照してください。
 
 配列で、サンプル ドライバーでサポートされている連絡先のプロパティが定義されている**PropertyAttributeInfo**構造体。 この構造体には、次の形式があります。
 

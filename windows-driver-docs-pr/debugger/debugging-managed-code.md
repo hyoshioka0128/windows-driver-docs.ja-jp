@@ -17,7 +17,7 @@ ms.locfileid: "56538073"
 
 Windows デバッガー (WinDbg、CDB、NTSD) をマネージ コードを含む対象アプリケーションをデバッグするを使用することができます。 マネージ コードのデバッグに読み込む必要がある、 [SOS デバッガー拡張 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)およびデータ アクセス コンポーネント (mscordacwks.dll)。
 
-Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、次を参照してください。 [Windows デバッグ](index.md)します。
+Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、[Windows デバッグ](index.md)を参照してください。
 
 ## <a name="span-idintroduction-to-managed-codespanspan-idintroductiontomanagedcodespanintroduction-to-managed-code"></a><span id="introduction-to-managed-code"></span><span id="INTRODUCTION_TO_MANAGED_CODE"></span>マネージ コードの概要
 
@@ -194,7 +194,7 @@ SOS デバッガー拡張をテストするには、入力 **! sos.help**しま�
 
 ### <a name="span-idnotesspanspan-idnotesspanspan-idnotesspannotes"></a><span id="Notes"></span><span id="notes"></span><span id="NOTES"></span>ノート
 
-場合があります、マネージ コード アプリケーションでは、CLR の 1 つ以上のバージョンを読み込みます。 その場合は、読み込みに DAC のバージョンを指定する必要があります。 詳細については、次を参照してください。 [ **.cordll**](-cordll--control-clr-debugging-.md)します。
+場合があります、マネージ コード アプリケーションでは、CLR の 1 つ以上のバージョンを読み込みます。 その場合は、読み込みに DAC のバージョンを指定する必要があります。 詳細については、[ **.cordll**](-cordll--control-clr-debugging-.md)を参照してください。
 
  
 

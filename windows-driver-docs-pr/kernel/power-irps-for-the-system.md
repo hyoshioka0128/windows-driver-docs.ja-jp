@@ -67,9 +67,9 @@ A*システム電源 IRP* IRP の主要なコードを指定します[ **IRP\_MJ
 
 8.  IRP のデバイスが完了し、あらゆるデバイス IRP の完了ルーチンを実行した後、電源ポリシー所有者のコールバック ルーチンが呼び出されます。 コールバック ルーチンで、ドライバーは IRP のシステムに返される状態をコピーします。 コールバックの呼び出しでは、Windows Server 2003、Windows XP、および Windows 2000、 [ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776) IRP の [次へ] のパワーを開始します。 ただしで Windows 7 および Windows Vista では、呼び出す**PoStartNextPowerIrp**は必要ありませんし、このような呼び出しには電源管理操作は実行されません。 最後に、コールバックを呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)システム IRP を完了します。
 
-詳細については、次を参照してください。[システム電源の状態要求の処理](handling-system-power-state-requests.md)します。
+詳細については、[システム電源の状態要求の処理](handling-system-power-state-requests.md)を参照してください。
 
-一部のデバイスは、電源をオンにする突入電流の必要があるために、システム突入 power Irp は、システム全体で同期的に、順番が処理されます。 一度にアクティブにできるこのような IRP の 1 つだけです。 詳細については、次を参照してください。[保留を呼び出すとします。呼び出す PoCallDriver](calling-iocalldriver-versus-calling-pocalldriver.md)します。
+一部のデバイスは、電源をオンにする突入電流の必要があるために、システム突入 power Irp は、システム全体で同期的に、順番が処理されます。 一度にアクティブにできるこのような IRP の 1 つだけです。 詳細については、[保留を呼び出すとを参照してください。呼び出す PoCallDriver](calling-iocalldriver-versus-calling-pocalldriver.md)します。
 
  
 

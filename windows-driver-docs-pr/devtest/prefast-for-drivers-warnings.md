@@ -22,7 +22,7 @@ ms.locfileid: "57350193"
 
 コード Analysis for Drivers は、次の種類の警告を報告します。
 
--   **一般的な警告**(6000 6999)。C および C++ の構文と一般的なコーディングのプラクティスに潜在的なエラー。 これらの警告の説明は、次を参照してください。 [c/c++ の警告のコード分析](/visualstudio/code-quality/code-analysis-for-c-cpp-warnings)します。
+-   **一般的な警告**(6000 6999)。C および C++ の構文と一般的なコーディングのプラクティスに潜在的なエラー。 これらの警告の説明は、[c/c++ の警告のコード分析](/visualstudio/code-quality/code-analysis-for-c-cpp-warnings)を参照してください。
 
 -   **Windows の特定の警告**(28600 28799)。これらの警告は、Windows での使用の特定のパターンに固有のものが、ドライバーに固有ではありません。
 

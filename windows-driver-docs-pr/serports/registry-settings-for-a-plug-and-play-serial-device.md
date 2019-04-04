@@ -61,7 +61,7 @@ Fifo を使用するシリアルを強制するかどうかを示すブール �
 シリアル デバイスのハードウェア割り込み状態のレジスタの内容を反転するかどうかを示すブール フラグを指定します。 場合**MaskInverted** 0 以外の場合、割り込み状態のレジスタが反転されます。 それ以外の場合、割り込み状態レジスタではありませんが反転します。 既定値**MaskInverted** 0x00000000 します。
 
 <a href="" id="serialskipexternalnaming--reg-dword-"></a>**SerialSkipExternalNaming** (REG\_DWORD)  
-シリアルとしてデバイスを構成するかどうかを示すブール フラグを指定します、 [COM ポート](configuration-of-com-ports.md)します。 場合**SerialSkipExternalNaming**設定は、0x00000000 に、シリアルは COM ポートとして、デバイスを構成します。 それ以外の場合、シリアルがいないデバイスとして構成する COM ポート。 既定値**SerialSkipExternalNaming** 0x00000000 します。 COM ポートとして、シリアルがデバイスを構成する方法の詳細については、次を参照してください。[外部名前付けの COM ポート](external-naming-of-com-ports.md)します。
+シリアルとしてデバイスを構成するかどうかを示すブール フラグを指定します、 [COM ポート](configuration-of-com-ports.md)します。 場合**SerialSkipExternalNaming**設定は、0x00000000 に、シリアルは COM ポートとして、デバイスを構成します。 それ以外の場合、シリアルがいないデバイスとして構成する COM ポート。 既定値**SerialSkipExternalNaming** 0x00000000 します。 COM ポートとして、シリアルがデバイスを構成する方法の詳細については、[外部名前付けの COM ポート](external-naming-of-com-ports.md)を参照してください。
 
 <a href="" id="serialrelinquishpowerpolicy--reg-dword-"></a>**SerialRelinquishPowerPolicy** (REG\_DWORD)  
 シリアルがシリアル デバイス スタックの電源ポリシーの所有者であるかどうかを示すブール型のフラグを指定します。 場合**SerialRelinquishPowerPolicy**は 0、シリアル電源ポリシー所有者は、シリアルはいない電源ポリシーの所有者。 既定値**SerialRelinquishPowerPolicy** 0x00000000 します。

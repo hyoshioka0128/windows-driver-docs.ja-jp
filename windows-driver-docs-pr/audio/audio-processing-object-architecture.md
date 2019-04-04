@@ -33,7 +33,7 @@ Windows には、オーディオ ドライバーの付加価値機能の一部�
 
 あるその他の長所と短所、考慮すべきプロジェクトの目標に特定し、APO ベースのソフトウェアを実装する前に考慮する制約します。
 
-ソフトウェア ベースの効果は、ソフトウェア デバイス パイプ ストリームの初期化時に挿入されます。 これらのソリューションは、メインの CPU の処理のすべての効果を行い、外部のハードウェアに依存しません。 この種のソリューションは、生の処理のみをサポート、ドライバーとハードウェアと HDAudio、USB、Bluetooth デバイスなどの従来の Windows オーディオ ソリューションに最適。 生の処理の詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
+ソフトウェア ベースの効果は、ソフトウェア デバイス パイプ ストリームの初期化時に挿入されます。 これらのソリューションは、メインの CPU の処理のすべての効果を行い、外部のハードウェアに依存しません。 この種のソリューションは、生の処理のみをサポート、ドライバーとハードウェアと HDAudio、USB、Bluetooth デバイスなどの従来の Windows オーディオ ソリューションに最適。 生の処理の詳細については、[オーディオ信号の処理モード](audio-signal-processing-modes.md)を参照してください。
 
 **プロキシ APO ハードウェア DSP**
 
@@ -80,7 +80,7 @@ Microsoft HLK APOs で使用できるテストを提供します。 オーディ
 
 [SysFX Test](https://msdn.microsoft.com/library/windows/hardware/jj124017.aspx)
 
-APOs をサポートするためのオーディオ要件については、次を参照してください。 [Device.Audio 要件](https://msdn.microsoft.com/library/windows/hardware/jj134354.aspx)します。
+APOs をサポートするためのオーディオ要件については、[Device.Audio 要件](https://msdn.microsoft.com/library/windows/hardware/jj134354.aspx)を参照してください。
 
 **カスタム APO ツールとユーティリティ**
 
@@ -90,7 +90,7 @@ APOs をサポートするためのオーディオ要件については、次を
 
 **アプリケーションは、オーディオ効果の認識**
 
-アプリケーションでは、どのオーディオ効果は、システム上で現在アクティブかを判断する Api を呼び出す機能があります。 オーディオ エフェクト認識 Api の詳細については、次を参照してください。 [AudioRenderEffectsManager クラス](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.audiorendereffectsmanager.aspx)します。
+アプリケーションでは、どのオーディオ効果は、システム上で現在アクティブかを判断する Api を呼び出す機能があります。 オーディオ エフェクト認識 Api の詳細については、[AudioRenderEffectsManager クラス](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.audiorendereffectsmanager.aspx)を参照してください。
 
 ## <a name="span-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanspan-idaudioprocessingobjectsarchitecturespanaudio-processing-objects-architecture"></a><span id="Audio_Processing_Objects_Architecture"></span><span id="audio_processing_objects_architecture"></span><span id="AUDIO_PROCESSING_OBJECTS_ARCHITECTURE"></span>オーディオ処理オブジェクト アーキテクチャ
 

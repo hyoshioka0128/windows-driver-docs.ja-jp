@@ -240,7 +240,7 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
 ## <a name="device-model-id"></a>デバイスのモデル ID
 
 
-次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、次を参照してください。 [ModelID 要素](https://msdn.microsoft.com/library/windows/hardware/ff549295.aspx)します。
+次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、[ModelID 要素](https://msdn.microsoft.com/library/windows/hardware/ff549295.aspx)を参照してください。
 
 ```xml
     <xs:annotation>

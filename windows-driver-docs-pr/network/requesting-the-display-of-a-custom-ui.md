@@ -44,9 +44,9 @@ ms.locfileid: "56553046"
 
 ユーザーのセッション ID の WLAN 接続状態に応じて、カスタム UI 要求が、次のいずれかとして表示されます。
 
--   場合は、アダプターは、WLAN のネットワークに接続されているが、要求がクリック可能なバルーン通知を通じて UI が起動されるスタンドアロンとして表示されます。 このプロセスの詳細については、次を参照してください。[バルーン通知を表示する](displaying-custom-ui-pages-within-a-balloon-notification.md)します。
+-   場合は、アダプターは、WLAN のネットワークに接続されているが、要求がクリック可能なバルーン通知を通じて UI が起動されるスタンドアロンとして表示されます。 このプロセスの詳細については、[バルーン通知を表示する](displaying-custom-ui-pages-within-a-balloon-notification.md)を参照してください。
 
--   アダプターが WLAN ネットワークへの接続中にある場合は、要求が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、次を参照してください。[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)します。
+-   アダプターが WLAN ネットワークへの接続中にある場合は、要求が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)を参照してください。
 
  
 

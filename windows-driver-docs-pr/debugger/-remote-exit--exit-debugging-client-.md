@@ -65,7 +65,7 @@ ms.locfileid: "56550148"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スクリプト ファイルの詳細については、次を参照してください。[スクリプト ファイルを使用する](using-script-files.md)します。 クライアントをデバッグおよびサーバーのデバッグに関する詳細については、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
+スクリプト ファイルの詳細については、[スクリプト ファイルを使用する](using-script-files.md)を参照してください。 クライアントをデバッグおよびサーバーのデバッグに関する詳細については、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

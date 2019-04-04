@@ -29,9 +29,9 @@ NDIS 6.1 では、NDIS 6.0 に次のインターフェイスが追加されま�
 
 [NetDMA 1.1 および 2.0](netdma-updates-in-ndis-6-1.md)
 
-NDIS 6.1 の詳細については、次を参照してください。 [NDIS 6.1 概要](introduction-to-ndis-6-1.md)します。
+NDIS 6.1 の詳細については、[NDIS 6.1 概要](introduction-to-ndis-6-1.md)を参照してください。
 
-NDIS 6.1 は、MSI X 動的構成をサポートする更新プログラムも含まれています。 の受信側 scaling (RSS)。 RSS で NDIS 6.1 変更の詳細については、次を参照してください。 [NDIS Msi-x](ndis-msi-x.md)します。 RSS は、64 を超えるプロセッサのサポートを提供する NDIS 6.20 で更新されます。
+NDIS 6.1 は、MSI X 動的構成をサポートする更新プログラムも含まれています。 の受信側 scaling (RSS)。 RSS で NDIS 6.1 変更の詳細については、[NDIS Msi-x](ndis-msi-x.md)を参照してください。 RSS は、64 を超えるプロセッサのサポートを提供する NDIS 6.20 で更新されます。
 
 [OID 要求インターフェイスを直接](direct-oid-request-interface-in-ndis-6-1.md)NDIS 6.1 ドライバーが、これは必須です 6.20 の NDIS ミニポート ドライバーは、省略可能です。
 

@@ -78,7 +78,7 @@ PCM のミニポート ドライバーには、この追加の要件を満たし
 
 ### <a name="span-idaecnodepinassignmentsspanspan-idaecnodepinassignmentsspanspan-idaecnodepinassignmentsspanaec-node-pin-assignments"></a><span id="AEC_Node_Pin_Assignments"></span><span id="aec_node_pin_assignments"></span><span id="AEC_NODE_PIN_ASSIGNMENTS"></span>AEC ノード暗証番号 (pin) の割り当て
 
-アダプターのドライバーの配列を使用して[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)フィルター内の接続を指定する構造体。 配列の各要素には、1 つの接続は、ノード間、pin をノード、または暗証番号 (pin)-pin がについて説明します。 詳細については、次を参照してください。[ノードと接続](nodes-and-connections.md)します。
+アダプターのドライバーの配列を使用して[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)フィルター内の接続を指定する構造体。 配列の各要素には、1 つの接続は、ノード間、pin をノード、または暗証番号 (pin)-pin がについて説明します。 詳細については、[ノードと接続](nodes-and-connections.md)を参照してください。
 
 PCCONNECTION を使用する\_記述子構造体ドライバー ライターで、ノードに「論理」ピンが割り当てられます。 これらはノード自体が「ピン」であり、フィルター内の接続を指定するためだけに使用されます。 これは、他のフィルターへの接続に使用される外部 pin では、フィルターとは対照的です。
 

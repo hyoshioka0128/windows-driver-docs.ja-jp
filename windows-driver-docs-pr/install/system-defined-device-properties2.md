@@ -44,7 +44,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 -   プロパティのキーを表す[デバイス インターフェイスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541409)します。
 
-カスタムのデバイスのプロパティを作成する方法については、次を参照してください。[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)です。
+カスタムのデバイスのプロパティを作成する方法については、[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)を参照してください。
 
  
 

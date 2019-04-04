@@ -93,7 +93,7 @@ XYZ オーディオ デバイスのデバイス インストールのセクシ�
   HKR,,CLSID,,%Proxy.CLSID%
 ```
 
-この例では、キーワード HKR では、デバイスのシステム提供のレジストリ パスを表します。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+この例では、キーワード HKR では、デバイスのシステム提供のレジストリ パスを表します。 詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
 
 この例は、文字列のセクションを次に示します。
 

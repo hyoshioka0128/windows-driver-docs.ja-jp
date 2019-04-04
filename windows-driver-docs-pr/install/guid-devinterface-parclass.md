@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_PARCLASS[デバイス インターフェイス クラス](http
 
 パラレル ポートのシステム提供のバス ドライバーでは、パラレル ポートに接続されているハードウェア デバイスごとにこのデバイスのインターフェイス クラスのインスタンスを作成します。
 
-並列デバイスとドライバーについては、次を参照してください。[並列のデバイス デザイン ガイド](https://msdn.microsoft.com/library/windows/hardware/ff544263)します。
+並列デバイスとドライバーについては、[並列のデバイス デザイン ガイド](https://msdn.microsoft.com/library/windows/hardware/ff544263)を参照してください。
 
-パラレル ポート、デバイス インターフェイスのクラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)します。
+パラレル ポート、デバイス インターフェイスのクラスについては、[ **GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)を参照してください。
 
 [**GUID_PARCLASS_DEVICE** ](guid-parclass-device.md)このデバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_PARCLASS を代わりに使用します。
 

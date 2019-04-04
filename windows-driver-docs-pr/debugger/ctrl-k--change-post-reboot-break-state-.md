@@ -70,7 +70,7 @@ CTRL+ALT+K
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-関連するコマンドの概要と、再起動プロセスがデバッガーに与える影響の詳細については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
+関連するコマンドの概要と、再起動プロセスがデバッガーに与える影響の詳細については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

@@ -24,7 +24,7 @@ ms.locfileid: "56553293"
 
 ! Fxdevice 拡張機能には、デバイスが登録されているすべての電源管理フレームワーク (PoFx) に関する概要情報が表示されます。 このコマンドは、カーネル モードのデバッグ中にのみ使用できます。
 
-PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
+PoFX の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
 
 構文
 

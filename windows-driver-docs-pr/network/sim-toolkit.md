@@ -14,7 +14,7 @@ ms.locfileid: "56579208"
 # <a name="sim-toolkit"></a>SIM ツールキット
 
 
-SIM toolkit には、ネットワーク イベントまたはユーザーの操作によってアクティブにできる SIM 上のアプリケーションのセットです。 SIM toolkit アプリケーションは、3 gpp と ETSI 仕様で定義されている事前対応型のコマンドで表されます。 Windows 10 Mobile には、SIM toolkit コマンドのサブセットがサポートされています。 サポートされているコマンドの一覧は、次を参照してください。 [SIM toolkit コマンド](sim-toolkit-commands.md)します。
+SIM toolkit には、ネットワーク イベントまたはユーザーの操作によってアクティブにできる SIM 上のアプリケーションのセットです。 SIM toolkit アプリケーションは、3 gpp と ETSI 仕様で定義されている事前対応型のコマンドで表されます。 Windows 10 Mobile には、SIM toolkit コマンドのサブセットがサポートされています。 サポートされているコマンドの一覧は、[SIM toolkit コマンド](sim-toolkit-commands.md)を参照してください。
 
 ## <a name="sim-toolkit-components"></a>SIM のツールキット コンポーネント全般
 
@@ -61,7 +61,7 @@ Oem は、既定値は、携帯電話会社の要件を満たしていない場�
 
 -   GETINKEY:60 秒
 
-これらのカスタマイズについては、次を参照してください。[カスタマイズ SIM toolkit](https://msdn.microsoft.com/library/windows/hardware/mt629102)します。
+これらのカスタマイズについては、[カスタマイズ SIM toolkit](https://msdn.microsoft.com/library/windows/hardware/mt629102)を参照してください。
 
 ### <a name="example-of-processing-a-sim-toolkit-command"></a>SIM toolkit コマンドの処理の例
 
@@ -93,7 +93,7 @@ SIM toolkit UI アプリケーションが正常に開始されると、SIM tool
 ## <a name="launching-the-sim-toolkit-using-another-app"></a>別のアプリを使用して、SIM toolkit を起動します。
 
 
-SIM toolkit を発見しやすくするためには、パートナーは CPL SIM アプリケーションを起動するのに UWP アプリを有効にするのに予約済みの URI スキームを使用できます。 これを行う方法の詳細については、次を参照してください。 [SIM toolkit を起動する予約済み URI](reserved-uri-to-launch-sim-toolkit.md)します。
+SIM toolkit を発見しやすくするためには、パートナーは CPL SIM アプリケーションを起動するのに UWP アプリを有効にするのに予約済みの URI スキームを使用できます。 これを行う方法の詳細については、[SIM toolkit を起動する予約済み URI](reserved-uri-to-launch-sim-toolkit.md)を参照してください。
 
 ## <a name="sim-toolkit-ui-notifications"></a>SIM toolkit UI の通知
 

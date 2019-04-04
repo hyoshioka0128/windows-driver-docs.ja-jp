@@ -83,7 +83,7 @@ AdjustTokenPrivileges(procToken, FALSE, &tp, sizeof(TOKEN_PRIVILEGES), (PTOKEN_P
 
 プロファイル ドライバーの INF ファイルには、インストールのクライアント側の Bluetooth デバイスに関する情報が含まれています。 サーバー側インストールでは、INF ファイルには、サービスのインストール アプリケーションで作成された GUID に対応するデバイス ID を指定します。 Bluetooth デバイスのすべてのメンバーである、 **Bluetooth**クラス。 Bluetooth クラスのインストーラー ( *Bthci.dll*) プロファイルのドライバーのインストールに役立ちます。
 
-作成と INF ファイルを配布するドライバーのインストールの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+作成と INF ファイルを配布するドライバーのインストールの詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
 ### <a name="span-idplugandplayidsspanspan-idplugandplayidsspanplug-and-play-ids"></a><span id="plug_and_play_ids"></span><span id="PLUG_AND_PLAY_IDS"></span>**プラグ アンド プレイ Id**
 

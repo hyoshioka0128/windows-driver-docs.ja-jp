@@ -17,7 +17,7 @@ ms.locfileid: "56573073"
 # <a name="testing-biometric-drivers"></a>生体認証ドライバーのテスト
 
 
-すべてのドライバーが WDK で静的分析ツールを実行することをお勧めします。 詳細については、次を参照してください。[コード分析のツールを使用したドライバー品質の分析](https://msdn.microsoft.com/windows-drivers/develop/analyzing_driver_quality_by_using_code_analysis_tools)します。
+すべてのドライバーが WDK で静的分析ツールを実行することをお勧めします。 詳細については、[コード分析のツールを使用したドライバー品質の分析](https://msdn.microsoft.com/windows-drivers/develop/analyzing_driver_quality_by_using_code_analysis_tools)を参照してください。
 
 など、ランタイム ツールの使用も、 [WDF Verifier コントロール アプリケーション](https://msdn.microsoft.com/library/windows/hardware/ff556129)と[Application Verifier](https://msdn.microsoft.com/library/windows/hardware/ff541329)します。
 

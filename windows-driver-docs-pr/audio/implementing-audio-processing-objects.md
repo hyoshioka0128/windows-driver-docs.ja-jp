@@ -14,7 +14,7 @@ ms.locfileid: "57349545"
 # <a name="implementing-audio-processing-objects"></a>オーディオ処理オブジェクトの実装
 
 
-このトピックでは、オーディオ処理オブジェクト (APO) を実装する方法について説明します。 パスワードの詳細については、次を参照してください。[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)します。
+このトピックでは、オーディオ処理オブジェクト (APO) を実装する方法について説明します。 パスワードの詳細については、[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)を参照してください。
 
 ## <a name="span-idimplementingcustomaposspanspan-idimplementingcustomaposspanspan-idimplementingcustomaposspanimplementing-custom-apos"></a><span id="Implementing_Custom_APOs"></span><span id="implementing_custom_apos"></span><span id="IMPLEMENTING_CUSTOM_APOS"></span>カスタム APOs を実装します。
 
@@ -25,7 +25,7 @@ ms.locfileid: "57349545"
 -   モードの効果 (MFX)
 -   エンドポイントの効果 (EFX)
 
-各論理デバイスは、各型の 1 つ APO を関連付けることができます。 モードと影響の詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
+各論理デバイスは、各型の 1 つ APO を関連付けることができます。 モードと影響の詳細については、[オーディオ信号の処理モード](audio-signal-processing-modes.md)を参照してください。
 
 APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言されている CBaseAudioProcessingObject 基底クラスに基づいてカスタム クラスを作成します。 このアプローチでは、カスタマイズされた APO を作成する CBaseAudioProcessingObject の基本クラスに新しい機能を追加する必要があります。 CBaseAudioProcessingObject 基底クラスは、APO を必要とする機能の多くを実装します。 次の 3 つの必要なインターフェイスのメソッドのほとんどの既定の実装を提供します。 主な例外は、 [ **IAudioProcessingObjectRT::APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)メソッド。
 
@@ -35,7 +35,7 @@ APO を実装するには、Baseaudioprocessingobject.h ファイルで宣言さ
 2.  必要に応じてカスタム APOs を構成するためのユーザー インターフェイスを作成します。
 3.  インストールし、APOs とカスタム ユーザー インターフェイスを登録する INF ファイルを作成します。
 
-カスタム プロパティ ページの実装の詳細については、次を参照してください。 [APO 効果の構成 UI を実装する](implementing-a-ui-for-configuring-apo-effects.md)します。 以下のスクリーン ショットでは、SwapAPO プロパティを示します。
+カスタム プロパティ ページの実装の詳細については、[APO 効果の構成 UI を実装する](implementing-a-ui-for-configuring-apo-effects.md)を参照してください。 以下のスクリーン ショットでは、SwapAPO プロパティを示します。
 
 ![スピーカーのプロパティ システムの効果を示すサンプル システムの構成の効果を提供するタブ](images/audio-apo-speaker-properties.png)
 
@@ -204,7 +204,7 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 
  
 
-デスクトップ pc の場合は、カスタム APO に追加した機能を構成するためのユーザー インターフェイスを行うことができます。 詳細については、次を参照してください。 [APOs の構成の UI を実装する](implementing-a-ui-for-configuring-sapos.md)します。
+デスクトップ pc の場合は、カスタム APO に追加した機能を構成するためのユーザー インターフェイスを行うことができます。 詳細については、[APOs の構成の UI を実装する](implementing-a-ui-for-configuring-sapos.md)を参照してください。
 
 ## <a name="span-idreplacingsystem-suppliedaposspanspan-idreplacingsystem-suppliedaposspanspan-idreplacingsystem-suppliedaposspanreplacing-system-supplied-apos"></a><span id="Replacing_System-supplied_APOs"></span><span id="replacing_system-supplied_apos"></span><span id="REPLACING_SYSTEM-SUPPLIED_APOS"></span>システム提供の APOs を置き換える
 
@@ -251,7 +251,7 @@ Visual Studio でのパスワードを使用する場合は、APO プロジェ�
 
 ドライバーを Windows 10 を対象とは、universal CRT に対して動的にリンクする必要があります。
 
-Windows 8,1 をサポートする必要がある場合は、C/C++、コード生成で、プロジェクトのプロパティを設定して、静的リンクを有効にします。 「ランタイム ライブラリ」に設定 */MT*リリース ビルドまたは */MTd*デバッグ ビルドの場合。 ドライバーは難しい、MSVCRT の再配布するため、この変更が加えられた&lt;n&gt;.dll バイナリ。 ソリューションでは、libcmt.dll を静的にリンクします。 詳細については、次を参照してください。 [/MD、/MT、/LD (ランタイム ライブラリの使用)](https://msdn.microsoft.com/library/2kzt1wy3.aspx)します。
+Windows 8,1 をサポートする必要がある場合は、C/C++、コード生成で、プロジェクトのプロパティを設定して、静的リンクを有効にします。 「ランタイム ライブラリ」に設定 */MT*リリース ビルドまたは */MTd*デバッグ ビルドの場合。 ドライバーは難しい、MSVCRT の再配布するため、この変更が加えられた&lt;n&gt;.dll バイナリ。 ソリューションでは、libcmt.dll を静的にリンクします。 詳細については、[/MD、/MT、/LD (ランタイム ライブラリの使用)](https://msdn.microsoft.com/library/2kzt1wy3.aspx)を参照してください。
 
 **埋め込みマニフェストの使用を無効にします。**
 
@@ -271,7 +271,7 @@ Sysvad サンプルに含まれる tabletaudiosample.inf と phoneaudiosample.in
 ## <a name="span-idregisteringaposforprocessingmodesandeffectsintheinffilespanspan-idregisteringaposforprocessingmodesandeffectsintheinffilespanspan-idregisteringaposforprocessingmodesandeffectsintheinffilespan-registering-apos-for-processing-modes-and-effects-in-the-inf-file"></a><span id="_Registering_APOs_for_Processing_Modes_and_Effects_in_the_INF_File"></span><span id="_registering_apos_for_processing_modes_and_effects_in_the_inf_file"></span><span id="_REGISTERING_APOS_FOR_PROCESSING_MODES_AND_EFFECTS_IN_THE_INF_FILE"></span> 処理モードと INF ファイルで効果の APOs を登録します。
 
 
-レジストリ キーの特定の利用可能な組み合わせを使用した特定のモードは、APOs を登録できます。 詳細については効果は APOs について使用可能な一般的なは、次を参照してください。[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)します。
+レジストリ キーの特定の利用可能な組み合わせを使用した特定のモードは、APOs を登録できます。 詳細については効果は APOs について使用可能な一般的なは、[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)を参照してください。
 
 各 APO INF ファイルの設定の情報は次のリファレンス トピックを参照してください。
 
@@ -336,7 +336,7 @@ HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDI
 
 **コンポーネント化された APO インストール**
 
-Windows 10 では、以降では 1809 をリリース、APO オーディオ エンジンへの登録がコンポーネント化されたオーディオ ドライバー モデルを使用します。 オーディオのコンポーネント化を使用して、スムーズかつ信頼性の高いインストール エクスペリエンスを作成し、コンポーネント サービスを適切にサポートします。 詳細については、次を参照してください。[コンポーネント化されたオーディオ ドライバーのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)します。
+Windows 10 では、以降では 1809 をリリース、APO オーディオ エンジンへの登録がコンポーネント化されたオーディオ ドライバー モデルを使用します。 オーディオのコンポーネント化を使用して、スムーズかつ信頼性の高いインストール エクスペリエンスを作成し、コンポーネント サービスを適切にサポートします。 詳細については、[コンポーネント化されたオーディオ ドライバーのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)を参照してください。
 
 次のコード例は、パブリック ComponentizedAudioSampleExtension.inf と ComponentizedApoSample.inf から抽出されます。 ここでは GitHub で入手できる、SYSVAD オーディオ サンプルを参照してください:<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>します。
  

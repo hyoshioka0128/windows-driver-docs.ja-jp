@@ -16,7 +16,7 @@ ms.locfileid: "56553605"
 
 このサンプルの UMDF ドライバーでは、シンプルな周辺機器バス (SPB) に接続されている ADXL345 加速度計を制御します。ADXL345 は、各軸に沿った 16 g +/-最大を測定するのに対応している低電力、3 軸加速です。
 
-**注**  このセクションの情報は、Windows 8.1 および以前のオペレーティング システムに適用されます。 Windows 10 および以降のオペレーティング システム用センサー ドライバーのサンプルを評価するため、次を参照してください。[センサー サンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/sensors)します。 開発および Windows 10 および以降のオペレーティング システム用センサー ドライバーをビルドする方法については、次を参照してください。[作成および配置には、ユニバーサル センサー ドライバー](write-and-deploy-your-universal-sensor-driver.md)します。
+**注**  このセクションの情報は、Windows 8.1 および以前のオペレーティング システムに適用されます。 Windows 10 および以降のオペレーティング システム用センサー ドライバーのサンプルを評価するため、[センサー サンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/sensors)を参照してください。 開発および Windows 10 および以降のオペレーティング システム用センサー ドライバーをビルドする方法については、[作成および配置には、ユニバーサル センサー ドライバー](write-and-deploy-your-universal-sensor-driver.md)を参照してください。
 
  
 

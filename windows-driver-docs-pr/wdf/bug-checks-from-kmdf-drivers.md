@@ -22,7 +22,7 @@ ms.locfileid: "56573005"
 
 フレームワークはフレームワーク ベースのドライバーからのエラーのいくつかの型をチェックします。 これらのエラーが発生した場合、フレームワークを作成、WDF\_違反のバグ チェックします。
 
-フレームワークをチェックするドライバー エラーの種類については、次を参照してください。 [ **WDF\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff557235)します。
+フレームワークをチェックするドライバー エラーの種類については、[ **WDF\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff557235)を参照してください。
 
 ドライバーは、呼び出すことによってバグ チェックを作成できます[ **WdfVerifierKeBugCheck**](https://msdn.microsoft.com/library/windows/hardware/ff551166)します。
 

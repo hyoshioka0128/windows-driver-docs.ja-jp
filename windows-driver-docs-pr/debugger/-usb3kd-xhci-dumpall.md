@@ -69,7 +69,7 @@ Usb3kd.dll
 -   [**! xhci\_を登録します**](-usb3kd-xhci-registers.md)
 -   [**! xhci\_resourceusage**](-usb3kd-xhci-resourceusage.md)
 
-によって表示される情報、 **! xhci\_dumpall**コマンドのファミリは、USB 3.0 ホスト コント ローラー ドライバーによって管理されるデータ構造に基づいています。 USB 3.0 ホスト コント ローラーのドライバーと USB 3.0 スタック内の他のドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。 USB 3.0 スタック内のドライバーで使用されるデータ構造の詳細については、第 2 部を参照してください、 [Windows 8 の USB デバッグ イノベーション](https://go.microsoft.com/fwlink/p/?LinkID=249153)ビデオ。
+によって表示される情報、 **! xhci\_dumpall**コマンドのファミリは、USB 3.0 ホスト コント ローラー ドライバーによって管理されるデータ構造に基づいています。 USB 3.0 ホスト コント ローラーのドライバーと USB 3.0 スタック内の他のドライバーについては、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。 USB 3.0 スタック内のドライバーで使用されるデータ構造の詳細については、第 2 部を参照してください、 [Windows 8 の USB デバッグ イノベーション](https://go.microsoft.com/fwlink/p/?LinkID=249153)ビデオ。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

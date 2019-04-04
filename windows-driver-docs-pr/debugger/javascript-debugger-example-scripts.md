@@ -75,7 +75,7 @@ Debugger.State.Scripts.HelloWorld.Contents.sayHi()
 
 このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
 
-使用することができます、! devnode 0 1 コマンド、デバイス ツリーに関する情報を表示します。 詳細については、次を参照してください。 [ **! devnode**](-devnode.md)します。
+使用することができます、! devnode 0 1 コマンド、デバイス ツリーに関する情報を表示します。 詳細については、[ **! devnode**](-devnode.md)を参照してください。
 
 ```javascript
 // PlugAndPlayDeviceTree.js

@@ -36,7 +36,7 @@ Wdfkd.dll
 
 **! Wdfkd.help**拡張機能は、 [ **! wdfkd.wdfhelp** ](-wdfkd-wdfhelp.md)拡張機能。
 
-フレームワーク ベースのドライバーのデバッグの詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+フレームワーク ベースのドライバーのデバッグの詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
  
 

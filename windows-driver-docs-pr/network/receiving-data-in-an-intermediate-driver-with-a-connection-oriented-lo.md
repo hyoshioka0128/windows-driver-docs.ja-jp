@@ -24,7 +24,7 @@ NDIS を呼び出して、中間のドライバーの場合は、中間ドライ
 
 基になる接続指向のミニポート ドライバーを呼び出すことでネットワーク データを示します[ **NdisMCoIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563561)、1 つまたは複数のリンク リストを渡して[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
 
-接続指向の下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。 [Connection-Oriented 操作](connection-oriented-operations.md)します。
+接続指向の下端と中間のドライバーのデータの受信についての詳細については、[Connection-Oriented 操作](connection-oriented-operations.md)を参照してください。
 
  
 

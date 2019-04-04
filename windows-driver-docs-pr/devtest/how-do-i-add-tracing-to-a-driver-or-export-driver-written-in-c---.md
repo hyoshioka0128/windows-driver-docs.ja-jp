@@ -14,7 +14,7 @@ ms.locfileid: "56553864"
 # <a name="how-do-i-add-tracing-to-a-driver-or-export-driver-written-in-c"></a>トレース、ドライバーを追加または C++ で記述されたドライバーをエクスポートする方法
 
 
-ソフトウェア トレースをドライバーのソース コードを追加するためには、標準的な手順を使用します。 詳細については、次を参照してください。[カーネル モード ドライバーでは、WPP ソフトウェア トレースを初期化する方法でしょうか。](how-do-i-initialize-wpp-software-tracing-in-a-kernel-mode-driver-.md)します。
+ソフトウェア トレースをドライバーのソース コードを追加するためには、標準的な手順を使用します。 詳細については、[カーネル モード ドライバーでは、WPP ソフトウェア トレースを初期化する方法でしょうか。](how-do-i-initialize-wpp-software-tracing-in-a-kernel-mode-driver-.md)を参照してください。
 
  
 

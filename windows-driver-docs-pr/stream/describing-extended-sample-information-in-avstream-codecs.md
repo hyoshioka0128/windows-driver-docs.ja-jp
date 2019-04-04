@@ -22,7 +22,7 @@ ms.locfileid: "56557001"
 
 エンコーダーは、拡張 KSSTREAM で拡張のサンプル情報を含める必要があります\_ヘッダー構造、KS\_フレーム\_情報。 具体的には、エンコーダーは、メンバーを更新する必要があります**dwFrameFlags** KS を示す\_ビデオ\_フラグ\_は\_フレームと KS\_ビデオ\_フラグ\_P\_フレーム、該当するものです。
 
-Stride のサーフェスが KS で指定された\_フレーム\_情報の lSurfacePitch メンバー (を含む共用体**Reserved1**メンバー)。 Stride のサーフェスの詳細については、次を参照してください。 [AVStream コーデックで Stride 処理](handling-stride-in-avstream-codecs.md)します。
+Stride のサーフェスが KS で指定された\_フレーム\_情報の lSurfacePitch メンバー (を含む共用体**Reserved1**メンバー)。 Stride のサーフェスの詳細については、[AVStream コーデックで Stride 処理](handling-stride-in-avstream-codecs.md)を参照してください。
 
  
 

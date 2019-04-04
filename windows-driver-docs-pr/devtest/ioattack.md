@@ -44,7 +44,7 @@ ms.locfileid: "56582508"
 
 次の手順のいずれかが実行されている場合は、IoAttack を実行する前に、テスト システムを再起動する必要があります。
 
-ファジー テストを実行する方法の詳細については、次を参照してください。 [IoSpy IoAttack と実行のファジー テスト方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)します。
+ファジー テストを実行する方法の詳細については、[IoSpy IoAttack と実行のファジー テスト方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)を参照してください。
 
  
 

@@ -91,7 +91,7 @@ TrueType フォント置換の既定のテーブルは、ttfsub.gpd という名
 *Include: "ttfsub.gpd"
 ```
 
-さらに、このファイルをインストールする必要があります。 詳細については、次を参照してください。[プリンター INF ファイルのインストール セクション](printer-inf-file-install-sections.md)します。
+さらに、このファイルをインストールする必要があります。 詳細については、[プリンター INF ファイルのインストール セクション](printer-inf-file-install-sections.md)を参照してください。
 
  
 

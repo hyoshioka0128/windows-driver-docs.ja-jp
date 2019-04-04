@@ -41,7 +41,7 @@ NDIS は、NDIS 5 も変換します。*x* NDIS 6.0 とそれ以降のドライ�
 
 -   [ **NDIS\_状態\_リンク\_速度\_変更**](ndis-status-link-speed-change.md)状態を示す値、および[OID\_GEN\_リンク\_速度](https://msdn.microsoft.com/library/windows/hardware/ff569593)OID を使用して、リンク速度の状態を生成します。
 
-リンクのステータスの詳細については、次を参照してください。 [OID\_GEN\_リンク\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569595)します。
+リンクのステータスの詳細については、[OID\_GEN\_リンク\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569595)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

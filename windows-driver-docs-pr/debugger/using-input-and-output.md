@@ -21,7 +21,7 @@ ms.locfileid: "56578082"
 ## <span id="ddk_input_and_output_dbx"></span><span id="DDK_INPUT_AND_OUTPUT_DBX"></span>
 
 
-デバッガー エンジンの入力と出力ストリームの概要については、次を参照してください。[入力と出力](input-and-output.md)します。
+デバッガー エンジンの入力と出力ストリームの概要については、[入力と出力](input-and-output.md)を参照してください。
 
 ### <a name="span-idinputspanspan-idinputspaninput"></a><span id="input"></span><span id="INPUT"></span>入力
 

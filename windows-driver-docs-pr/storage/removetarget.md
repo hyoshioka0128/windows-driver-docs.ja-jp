@@ -51,7 +51,7 @@ void RemoveTarget(
 レポートを停止するイベントです。 このメンバーが 0 の場合は、WMI プロバイダーのクライアントはレポートで示されたポートに関連付けられたイベントに停止*DiscoveredPortWWN*します。 このメンバーが 0 以外の場合は、WMI プロバイダーは任意のターゲットがすべてのイベントに関連付けられているレポートを停止します。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveTarget\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564039)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveTarget\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564039)構造体。
 
 <a name="return-value"></a>戻り値
 ------------

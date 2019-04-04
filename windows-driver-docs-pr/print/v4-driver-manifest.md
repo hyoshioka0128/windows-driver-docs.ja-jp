@@ -141,7 +141,7 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <td><p>必須。</p></td>
 <td><p>DriverCategory =</p>
 <p>PrintFax.Printer</p>
-<p>その他のドライバー カテゴリの詳細については、次を参照してください。<a href="printer-inf-file-entries.md" data-raw-source="[Printer INF File Entries](printer-inf-file-entries.md)">プリンター INF ファイルのエントリ</a>します。</p></td>
+<p>その他のドライバー カテゴリの詳細については、<a href="printer-inf-file-entries.md" data-raw-source="[Printer INF File Entries](printer-inf-file-entries.md)">プリンター INF ファイルのエントリ</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>PrinterExtensionUrl</strong></p>

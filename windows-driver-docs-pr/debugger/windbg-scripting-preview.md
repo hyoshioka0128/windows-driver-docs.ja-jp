@@ -55,7 +55,7 @@ JavaScript の使用に関する詳細については、これらのトピック
 </AutoVisualizer>
 ```
 
-NatVis の使用方法の詳細については、次を参照してください。[に NatVis デバッガー オブジェクト](native-debugger-objects-in-natvis.md)します。
+NatVis の使用方法の詳細については、[に NatVis デバッガー オブジェクト](native-debugger-objects-in-natvis.md)を参照してください。
 
  
 ---

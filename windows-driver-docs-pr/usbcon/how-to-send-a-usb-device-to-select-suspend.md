@@ -30,7 +30,7 @@ ms.locfileid: "57349067"
 
  
 
-Windows ハードウェア認定キットには、シミュレートされたテスト_ケースを実行する自動テストが含まれています。 詳細については、次を参照してください。 [USB (USBDEX) Verifier テスト](https://msdn.microsoft.com/library/windows/hardware/hh998558.aspx)します。
+Windows ハードウェア認定キットには、シミュレートされたテスト_ケースを実行する自動テストが含まれています。 詳細については、[USB (USBDEX) Verifier テスト](https://msdn.microsoft.com/library/windows/hardware/hh998558.aspx)を参照してください。
 
 ## <a name="how-to-enable-the-usb-client-driver-verifier"></a>USB クライアント ドライバーの検証機能を有効にする方法
 
@@ -128,7 +128,7 @@ HKEY_LOCAL_MACHINE
 <td><p><strong>サポートされていないホスト コント ローラーとの通信には、MDLs がチェーンされています。</strong></p>
 <p>クライアント ドライバーに送信するチェーン MDLs (を参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/ff565421" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff565421)">MDL</a>)、USB ドライバー スタックとホスト コント ローラーはそれらでサポートする必要があります。</p>
 <p>この設定では、クライアント ドライバーがサポートしていないホスト コント ローラーに接続されているデバイスに連鎖 MDL 要求を送信するときに実行されるコードをテストできます。 ホスト コント ローラーが連鎖 MDLs をサポートするかどうかに関係なく、呼び出しが失敗します。</p>
-<p>USB ドライバー スタック内のチェーンの MDLs サポートの詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to Send Chained MDLs](how-to-send-chained-mdls.md)">チェーン MDLs の送信方法</a>します。</p>
+<p>USB ドライバー スタック内のチェーンの MDLs サポートの詳細については、<a href="how-to-send-chained-mdls.md" data-raw-source="[How to Send Chained MDLs](how-to-send-chained-mdls.md)">チェーン MDLs の送信方法</a>を参照してください。</p>
 <p>ホスト コント ローラーがサポートされていないときに必要なクライアント ドライバーの動作は、MDLs を連結します。</p>
 <ul>
 <li><p>I/O の転送を連鎖 MDLs を使用せず実行を継続、ドライバーが必要です。 これにより、ことを確認することも、これらのコント ローラーはサポートされないために、ドライバーが USB 2.0 ホスト コント ローラーで動作する MDLs をチェーンします。</p></li>
@@ -174,7 +174,7 @@ HKEY_LOCAL_MACHINE
 <td><p><strong>ストリームの最大数の異なる値をサポートしており、さまざまなホスト コント ローラーとの通信をします。</strong></p>
 <p>この設定を使用するには、そのドライバーのさまざまなホスト コント ローラーでサポートされているストリームの数に関係なくロジックをストリームすることを確認の操作を行うことができます。</p>
 <p>I/O の転送に使用できるストリームの数は、ホスト コント ローラーをサポートするストリームの数によって制限されます。</p>
-<p>クライアント ドライバーで静的なストリームをサポートする方法については、次を参照してください。 <a href="how-to-open-streams-in-a-usb-endpoint.md" data-raw-source="[How to Open and Close Static Streams in a USB Bulk Endpoint](how-to-open-streams-in-a-usb-endpoint.md)">USB 一括エンドポイントで静的ストリームを開くおよび閉じる方法</a>します。</p>
+<p>クライアント ドライバーで静的なストリームをサポートする方法については、<a href="how-to-open-streams-in-a-usb-endpoint.md" data-raw-source="[How to Open and Close Static Streams in a USB Bulk Endpoint](how-to-open-streams-in-a-usb-endpoint.md)">USB 一括エンドポイントで静的ストリームを開くおよび閉じる方法</a>を参照してください。</p>
 <p>ホスト コント ローラーは、エンドポイントよりも少ないストリームをサポートしている場合、クライアント ドライバーの動作が必要です。</p>
 <ul>
 <li><p>ストリーム数が少ないデータの転送を実行するクライアント ドライバーを選択できます。</p></li>

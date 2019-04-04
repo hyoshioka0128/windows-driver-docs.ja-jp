@@ -23,7 +23,7 @@ ms.locfileid: "56579456"
 
 既定では、NDIS で NDIS ポートの NDIS ネットワーク インターフェイスが作成されることはできません。 かどうか必要に応じて、NDIS ドライバーを呼び出して、 [ **NdisIfRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff562716) NDIS インターフェイス プロバイダーの呼び出しとして登録する関数、 [ **NdisIfRegisterInterface**](https://msdn.microsoft.com/library/windows/hardware/ff562715)ポートのインターフェイスを登録する関数。
 
-NDIS ネットワーク インターフェイスの詳細については、次を参照してください。 [NDIS 6.0 のネットワーク インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff566525)します。
+NDIS ネットワーク インターフェイスの詳細については、[NDIS 6.0 のネットワーク インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff566525)を参照してください。
 
  
 

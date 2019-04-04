@@ -38,7 +38,7 @@ logman stop -ets buttonTrace
 12: Indicator_UpdateRegistryValue - Indicator state update : DockMode_Indicator : new state : Docked
 ```
 
-インジケーターの注入を実装する方法の詳細については、次を参照してください。、 [Windows 8.1 の GPIO ボタンとインジケーター実装ガイド](gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md)します。
+インジケーターの注入を実装する方法の詳細については、、 [Windows 8.1 の GPIO ボタンとインジケーター実装ガイド](gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md)を参照してください。
 
  
 

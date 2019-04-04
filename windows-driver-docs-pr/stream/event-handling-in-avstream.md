@@ -21,7 +21,7 @@ ms.locfileid: "56572687"
 
 
 
-AVStream フィルターとピンは、プロパティ、イベント、および指定することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーである、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、次を参照してください。 [AVStream 記述子](avstream-descriptors.md)します。
+AVStream フィルターとピンは、プロパティ、イベント、および指定することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーである、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、[AVStream 記述子](avstream-descriptors.md)を参照してください。
 
 配列を提供する、AVStream ミニドライバー イベントをサポートする[ **KSEVENT\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff561867) automation テーブルの構造体。 各 KSEVENT\_セット構造体の配列を格納する[ **KSEVENT\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff561862)構造体。 各 KSEVENT\_項目の構造は、ミニドライバーが特定のイベントをサポートする方法について説明します。
 

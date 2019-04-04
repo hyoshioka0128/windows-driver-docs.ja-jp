@@ -72,7 +72,7 @@ ms.locfileid: "56557299"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメソッドのプロセスを表示するには、次を参照してください。[プロセス ID の検索](finding-the-process-id.md)します。
+その他のメソッドのプロセスを表示するには、[プロセス ID の検索](finding-the-process-id.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

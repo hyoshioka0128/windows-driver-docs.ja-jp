@@ -27,7 +27,7 @@ IRQL でこれらの追加の操作を実行できない場合、ドライバー
 
 フレームワークは、ドライバーの[ *EvtInterruptEnable* ](https://msdn.microsoft.com/library/windows/hardware/ff541730)と[ *EvtDeviceD0EntryPostInterruptsEnabled* ](https://msdn.microsoft.com/library/windows/hardware/ff540853)コールバック関数毎回デバイス状態にその作業 (D0)、フレームワークには、ドライバーが呼び出された後[ *EvtDeviceD0Entry* ](https://msdn.microsoft.com/library/windows/hardware/ff540848)コールバック関数。
 
-フレームワークは、ドライバーの[ *EvtDeviceD0ExitPreInterruptsDisabled* ](https://msdn.microsoft.com/library/windows/hardware/ff540856)と[ *EvtInterruptDisable* ](https://msdn.microsoft.com/library/windows/hardware/ff541714)コールバック関数フレームワークは、ドライバーの前に、デバイスが、作業の状態を離れるたび[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)コールバック関数。 詳細については、フレームワークがドライバーのコールバック関数を呼び出すと、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
+フレームワークは、ドライバーの[ *EvtDeviceD0ExitPreInterruptsDisabled* ](https://msdn.microsoft.com/library/windows/hardware/ff540856)と[ *EvtInterruptDisable* ](https://msdn.microsoft.com/library/windows/hardware/ff541714)コールバック関数フレームワークは、ドライバーの前に、デバイスが、作業の状態を離れるたび[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)コールバック関数。 詳細については、フレームワークがドライバーのコールバック関数を呼び出すと、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
 
 あるデバイスが同じリソースを使用割り込みたびに、フレームワーク、ドライバーを想定する必要があります[ *EvtInterruptEnable* ](https://msdn.microsoft.com/library/windows/hardware/ff541730)コールバック関数。 PnP マネージャーも[システム リソースを再分配します](the-pnp-manager-redistributes-system-resources.md)、し、デバイスに割り込みの新しいリソースに割り当てることができます。
 

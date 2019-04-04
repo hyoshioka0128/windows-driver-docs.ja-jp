@@ -20,7 +20,7 @@ ms.locfileid: "56575060"
 
 次の表では、共通のデータ フィールドを示します。
 
-型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
 
 |プロパティのキー|型|必須/オプション|説明|
 | --- | --- | --- | --- |

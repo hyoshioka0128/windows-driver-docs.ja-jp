@@ -89,7 +89,7 @@ ms.locfileid: "56571968"
         </tr>
         <tr>
             <td><b>印刷の向き</b></td>
-            <td>縦向き<br>LANDSCAPE_CC90<br>LANDSCAPE_CC270<br><br>後者の 2 つのオプションの詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/print/specifying-paper-orientation">用紙の向きを指定する</a>します。</td>
+            <td>縦向き<br>LANDSCAPE_CC90<br>LANDSCAPE_CC270<br><br>後者の 2 つのオプションの詳細については、<a href="https://docs.microsoft.com/windows-hardware/drivers/print/specifying-paper-orientation">用紙の向きを指定する</a>を参照してください。</td>
             <td>縦向き<br>横向き<br>ReverseLandscape</td>
             <td>いいえ</td>
         </tr>

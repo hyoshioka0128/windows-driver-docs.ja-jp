@@ -63,7 +63,7 @@ Msxpsinc.gpd と Msxpsinc.ppd ファイル、フィルター パイプライン�
 
 Core ドライバーの DEVMODE 構造体では、これらのカスタム GPD または PPD 機能の設定はオプションの配列に格納されます。
 
-**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 [ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)します。
+**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、[ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)を参照してください。
 
  
 

@@ -30,7 +30,7 @@ Bluetooth ドライバー スタックは、サービスの探索プロトコル
 
 使用して、SDP プロトコルとそのサービスをアドバタイズできます L2CAP サーバー プロファイル ドライバー レジスタに自体を L2CAP 接続要求を受け入れるように後、 [ **IOCTL\_両方\_SDP\_送信\_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff536693)または[ **IOCTL\_両方\_SDP\_送信\_レコード\_WITH\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536694)します。 各 SDP レコードは、ストリームとして送信されます。 プロファイルのドライバーは、IOCTL を使用している場合\_両方\_SDP\_送信\_レコード\_WITH\_については、プロファイルのドライバーの付加、 [**両方\_SDP\_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff536650)生のストリームは、SDP の一部ではない追加の属性を格納する構造体自体を記録します。 これらには、要求元のクライアントのセキュリティ要件、SDP レコード、クラスからのデバイス (CoD) は、レコードおよびレコード自体の長さのパブリケーション オプションが含まれます。
 
-プロファイルのドライバーはそのサービスをアドバタイズされた後、他の Bluetooth デバイスが検索またはこれらのサービスを参照できます。 SDP サービスの詳細については、次を参照してください。 [SDP サービスの情報へのアクセス](accessing-sdp-service-information.md)します。
+プロファイルのドライバーはそのサービスをアドバタイズされた後、他の Bluetooth デバイスが検索またはこれらのサービスを参照できます。 SDP サービスの詳細については、[SDP サービスの情報へのアクセス](accessing-sdp-service-information.md)を参照してください。
 
 プロファイルのドライバーが使用するには SDP をサービスのアドバタイズを停止するには、 [ **IOCTL\_両方\_SDP\_削除\_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff536690)します。
 

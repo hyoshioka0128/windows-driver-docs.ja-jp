@@ -30,7 +30,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 カスタムのデバイス プロパティのカテゴリは、論理的に関連するカスタム デバイスのプロパティのコレクションです。 プログラムによってカスタム デバイス プロパティのカテゴリを作成するには、使用、 [ **DEFINE_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)マクロを次のようにプロパティのカテゴリのプロパティを表すプロパティのキーを作成します。
 
--   プロパティのカテゴリを表す一意の GUID 値を作成し、各プロパティのキーの GUID 値をこの一意の GUID 値に設定します。 新しい GUID 値を作成する方法については、次を参照してください。[の定義およびエクスポートする新しい Guid](https://msdn.microsoft.com/library/windows/hardware/ff542998)します。
+-   プロパティのカテゴリを表す一意の GUID 値を作成し、各プロパティのキーの GUID 値をこの一意の GUID 値に設定します。 新しい GUID 値を作成する方法については、[の定義およびエクスポートする新しい Guid](https://msdn.microsoft.com/library/windows/hardware/ff542998)を参照してください。
 
     **注**  プロパティのシステム定義のカテゴリはオペレーティング システム専用として予約されています。
 
@@ -62,7 +62,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 使用して、 [ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)カスタム デバイス プロパティを削除します。
 
-これらのディレクティブを使用する方法の詳細については、次を参照してください。、 [INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
+これらのディレクティブを使用する方法の詳細については、、 [INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)を参照してください。
 
  
 

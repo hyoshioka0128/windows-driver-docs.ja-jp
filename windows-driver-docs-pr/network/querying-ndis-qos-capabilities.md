@@ -22,7 +22,7 @@ ms.locfileid: "56536251"
 
 NDIS は、ミニポート ドライバーのこれらの OID 要求を処理します。 登録すると、ミニポート ドライバー ハードウェアおよびネットワーク アダプターの NDIS QoS 機能が現在有効なネットワーク アダプターの初期化中に、NDIS は、この情報をキャッシュします。 NDIS は、上にある、ドライバーから OID の要求を処理する場合、このデータを返します。
 
-ミニポート ドライバーが NDIS QoS 機能を登録する方法の詳細については、次を参照してください。 [NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)します。
+ミニポート ドライバーが NDIS QoS 機能を登録する方法の詳細については、[NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)を参照してください。
 
  
 

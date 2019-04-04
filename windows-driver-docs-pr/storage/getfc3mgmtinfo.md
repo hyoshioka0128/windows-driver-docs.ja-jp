@@ -40,7 +40,7 @@ void GetFC3MgmtInfo(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553946)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553946)構造体。
 
 *MgmtInfo*   
 返された場合は、型の構造体が含まれています。 [ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)ファイバー チャネル アダプターに関連付けられている FC3 管理情報を保持します。

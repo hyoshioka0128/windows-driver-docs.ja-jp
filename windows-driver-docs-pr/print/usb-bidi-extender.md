@@ -34,7 +34,7 @@ Windows 8.1 では、v4 ドライバー モデルがホスト ベースのデバ
 
 ![getstatus メソッドを使用した usb bidi エクステンダーのアーキテクチャ](images/usbbidiext-arch.png)
 
-USB プリンターの使用方法の詳細については、次を参照してください。 [USB 印刷](usb-printing.md)します。
+USB プリンターの使用方法の詳細については、[USB 印刷](usb-printing.md)を参照してください。
 
 ## <a name="usb-bidi-extender-api-reference"></a>USB Bidi エクステンダー API リファレンス
 
@@ -55,7 +55,7 @@ USB Bidi エクステンダーの JavaScript コードは、印刷デバイス�
 
 -   **endPrintJob**
 
-これらの Api の詳細については、次を参照してください。 [JavaScript API リファレンス](javascript-api-reference-.md)します。
+これらの Api の詳細については、[JavaScript API リファレンス](javascript-api-reference-.md)を参照してください。
 
 ## <a name="usbmon-bidi-extension-xml-schema"></a>USBMon 双方向の拡張機能の XML スキーマ
 
@@ -80,11 +80,11 @@ USBMon 双方向の拡張機能ファイルは、SNMP Bidi 拡張ファイルと
 ## <a name="windows-driver-samples-on-github"></a>GitHub の Windows ドライバーのサンプル
 
 
-**USBMon 双方向の XML ファイルのサンプル**-この USBMon 双方向の拡張 XML ファイルのサンプルを提供します。 Bidi スキーマの標準プロパティ DeviceInfo、構成、およびメモリを使用しても、いくつかのカスタム拡張機能を定義します。 詳細については、次を参照してください。[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)します。
+**USBMon 双方向の XML ファイルのサンプル**-この USBMon 双方向の拡張 XML ファイルのサンプルを提供します。 Bidi スキーマの標準プロパティ DeviceInfo、構成、およびメモリを使用しても、いくつかのカスタム拡張機能を定義します。 詳細については、[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)を参照してください。
 
-Bibi 拡張ファイルの詳細については、次を参照してください。 および[双方向通信スキーマ](bidirectional-communication-schema.md)します。
+Bibi 拡張ファイルの詳細については、および[双方向通信スキーマ](bidirectional-communication-schema.md)を参照してください。
 
-**USBMon 双方向の JavaScript ファイルのサンプル**します。 このサンプルには、USBMon 双方向の Extender の JavaScript ファイルが含まれています。 双方向の設定と取得をサポートする方法を示します、操作とプリンターの印刷中にイベントをリッスンする方法。 詳細については、次を参照してください。[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)します。
+**USBMon 双方向の JavaScript ファイルのサンプル**します。 このサンプルには、USBMon 双方向の Extender の JavaScript ファイルが含まれています。 双方向の設定と取得をサポートする方法を示します、操作とプリンターの印刷中にイベントをリッスンする方法。 詳細については、[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)を参照してください。
 
 デバッグ
 

@@ -21,7 +21,7 @@ SCSI パススルー要求から成る型 IRP の IRP\_MJ\_デバイス\_の IOC
 
 Storport パススルー要求に埋め込まれている SCSI コマンドの有効性をチェックしません。
 
-ストレージ クラス ドライバーの観点から SCSI パススルーの要求の詳細については、次を参照してください。 [SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)します。
+ストレージ クラス ドライバーの観点から SCSI パススルーの要求の詳細については、[SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)を参照してください。
 
  
 

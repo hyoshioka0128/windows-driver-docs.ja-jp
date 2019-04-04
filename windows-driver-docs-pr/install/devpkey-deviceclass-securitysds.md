@@ -60,11 +60,11 @@ DEVPKEY_DeviceClass_SecuritySDS デバイス プロパティは、のセキュ�
 <a name="remarks"></a>注釈
 -------
 
-値を設定する DEVPKEY_DeviceClass_SecuritySDS 中またはインストール後のアプリケーションは、デバイス セットアップ クラスをインストールします。 このプロパティを設定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。
+値を設定する DEVPKEY_DeviceClass_SecuritySDS 中またはインストール後のアプリケーションは、デバイス セットアップ クラスをインストールします。 このプロパティを設定する方法の詳細については、[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)を参照してください。
 
 DEVPKEY_DeviceClass_SecuritySDS の値を取得するには呼び出すことによって[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090). 呼び出して DEVPKEY_DeviceClass_SecuritySDS を設定する[ **SetupDiSetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552128)または[ **SetupDiSetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff552132)します。
 
-Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_SecuritySDS プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_SECURITY_SDS 識別子を使用できます。 このプロパティの値にアクセスする方法については、次を参照してください。[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)と[デバイス セットアップ クラス SPCRP_Xxx プロパティの設定](https://msdn.microsoft.com/library/windows/hardware/ff550814)します。
+Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_SecuritySDS プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_SECURITY_SDS 識別子を使用できます。 このプロパティの値にアクセスする方法については、[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)と[デバイス セットアップ クラス SPCRP_Xxx プロパティの設定](https://msdn.microsoft.com/library/windows/hardware/ff550814)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

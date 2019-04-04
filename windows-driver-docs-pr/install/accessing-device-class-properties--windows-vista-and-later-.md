@@ -18,7 +18,7 @@ ms.locfileid: "56552598"
 
 -   [**SetupDiGetClassPropertyKeys** ](https://msdn.microsoft.com/library/windows/hardware/ff551091)と[ **SetupDiGetClassPropertyKeysEx**](https://msdn.microsoft.com/library/windows/hardware/ff551093)
 
-    **SetupDiGetClassPropertyKeys**関数は、ローカル コンピューター上のデバイス セットアップ クラスまたはデバイスのインターフェイス クラスを現在設定されているクラスのプロパティを識別するクラスのプロパティのキーの配列を取得します。 **SetupDiGetClassPropertyKeysEx**関数がローカル コンピューターまたはリモート コンピューターで同じ操作を実行します。 デバイス クラスのどのようなプロパティが設定を確認する方法については、次を参照してください。[を決定するプロパティ設定のデバイス クラスに対する](determining-which-properties-are-set-for-a-device-class.md)します。
+    **SetupDiGetClassPropertyKeys**関数は、ローカル コンピューター上のデバイス セットアップ クラスまたはデバイスのインターフェイス クラスを現在設定されているクラスのプロパティを識別するクラスのプロパティのキーの配列を取得します。 **SetupDiGetClassPropertyKeysEx**関数がローカル コンピューターまたはリモート コンピューターで同じ操作を実行します。 デバイス クラスのどのようなプロパティが設定を確認する方法については、[を決定するプロパティ設定のデバイス クラスに対する](determining-which-properties-are-set-for-a-device-class.md)を参照してください。
 
 -   [**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
 

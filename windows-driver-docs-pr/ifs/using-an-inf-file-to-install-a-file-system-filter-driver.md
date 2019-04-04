@@ -61,7 +61,7 @@ InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),
 
 -   アプリケーションをセットアップする必要があります Windows INF ファイルのディレクトリにドライバーの INF ファイルをコピーしない (*%windir%\\INF*)。 SetupAPI がファイルを自動的にコピーの一部として、 [ **InstallHinfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957)呼び出します。
 
-セットアップ アプリケーションの詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)します。
+セットアップ アプリケーションの詳細については、[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)を参照してください。
 
  
 

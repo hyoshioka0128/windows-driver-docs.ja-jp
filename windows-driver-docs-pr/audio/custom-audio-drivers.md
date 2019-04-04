@@ -32,7 +32,7 @@ UAA と互換性がないオーディオ デバイスでは、ベンダーから
 
 AVStream クラスのシステム ドライバー (Ks.sys) には、ほとんどの PortCls 内に存在するオーディオ固有のサポート機能が不足しています。
 
-PortCls の詳細については、次を参照してください。[ポート クラスの概要](introduction-to-port-class.md)します。 AVStream の詳細については、次を参照してください。 [AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)します。
+PortCls の詳細については、[ポート クラスの概要](introduction-to-port-class.md)を参照してください。 AVStream の詳細については、[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)を参照してください。
 
  
 

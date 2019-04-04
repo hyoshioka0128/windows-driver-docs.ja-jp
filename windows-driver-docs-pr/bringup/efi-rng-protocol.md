@@ -33,10 +33,10 @@ typedef struct _EFI_RNG_PROTOCOL {
 
 
 <a href="" id="getinfo"></a>**GetInfo**  
-ドライバー RNG アルゴリズムに関する情報を返しますをサポートしています。 詳細については、次を参照してください。 [EFI\_RNG\_プロトコル。GetInfo](efi-rng-protocol-getinfo.md)します。
+ドライバー RNG アルゴリズムに関する情報を返しますをサポートしています。 詳細については、[EFI\_RNG\_プロトコル。GetInfo](efi-rng-protocol-getinfo.md)を参照してください。
 
 <a href="" id="getrng"></a>**GetRNG**  
-省略可能な RNG アルゴリズムを使用して RNG 値を返します。 詳細については、次を参照してください。 [EFI\_RNG\_プロトコル。GetRNG](efi-rng-protocol-getrng.md)します。
+省略可能な RNG アルゴリズムを使用して RNG 値を返します。 詳細については、[EFI\_RNG\_プロトコル。GetRNG](efi-rng-protocol-getrng.md)を参照してください。
 
 ## <a name="requirements"></a>要件
 

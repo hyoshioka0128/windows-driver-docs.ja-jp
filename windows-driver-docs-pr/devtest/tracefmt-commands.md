@@ -116,7 +116,7 @@ CSV ファイルには、わかりやすい列の見出しの行を追加しま�
 <span id="_______-hires______"></span><span id="_______-HIRES______"></span> **-人材採用**   
 高解像度。 トレース メッセージのタイムスタンプでは、マイクロ秒およびナノ秒数を表示します。 既定ではミリ秒のみが表示されます。
 
-トレース メッセージ タイム スタンプ場合など、システム タイマーではなく、パフォーマンス カウンターのクロック値が使用される場合は、このオプションを使用、 **Tracelog UsePerfCounter**パラメーターを使用します。 Tracelog コマンドについては、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
+トレース メッセージ タイム スタンプ場合など、システム タイマーではなく、パフォーマンス カウンターのクロック値が使用される場合は、このオプションを使用、 **Tracelog UsePerfCounter**パラメーターを使用します。 Tracelog コマンドについては、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)を参照してください。
 
 <span id="_______-seq______"></span><span id="_______-SEQ______"></span> **-seq**   
 内のローカルまたはグローバルのシーケンス番号が表示されます、[トレース メッセージのプレフィックス](trace-message-prefix.md)します。 シーケンス番号がメッセージに記録されていない場合、フィールドが初期化されていない、または、ゼロまたは"f"の s で塗りつぶすこと。
@@ -170,7 +170,7 @@ Tracefmt はトレース メッセージのパラメーターに書式を設定�
 *****FormatMessage Header(Header) of EventTrace, parameter 23 raised an exception*****
 ```
 
-同様の例外を発生する場合は、任意のユーザーが指定した変数型に特に注意して、ソース コードのメッセージ定義を確認します。 詳細については、次を参照してください。 [ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)します。
+同様の例外を発生する場合は、任意のユーザーが指定した変数型に特に注意して、ソース コードのメッセージ定義を確認します。 詳細については、[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)を参照してください。
 
 **非 GUID ファイル名を持つ TMF ファイル**
 

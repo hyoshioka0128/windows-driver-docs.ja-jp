@@ -41,7 +41,7 @@ H. 263 の間の相互作用についての詳細*OBMC*、 *INTER4V*、 *B*、 *
 
 *MBdataLocation*変数は、マクロ ブロック コントロール コマンド バッファー内の最初のマクロ ブロックに 0 である必要があります。 *MBdataLocation*場合は、任意の値を含めることができます**wPatternCode**は 0 です。 ときに**wPatternCode** 0 の場合は、デコーダーはお勧めしますが、0 または次のマクロ ブロック コントロール コマンドのように同じ値のいずれかに、この値を設定する必要がありません。
 
-スキップされたマクロ ブロックを生成する詳細については、次を参照してください。[スキップ マクロ ブロックの生成](generating-skipped-macroblocks.md)します。
+スキップされたマクロ ブロックを生成する詳細については、[スキップ マクロ ブロックの生成](generating-skipped-macroblocks.md)を参照してください。
 
 ### <a name="span-idwpatterncodespanspan-idwpatterncodespanspan-idwpatterncodespanwpatterncode"></a><span id="wPatternCode"></span><span id="wpatterncode"></span><span id="WPATTERNCODE"></span>wPatternCode
 

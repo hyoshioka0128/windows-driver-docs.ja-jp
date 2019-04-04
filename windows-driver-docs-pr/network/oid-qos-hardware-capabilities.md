@@ -44,7 +44,7 @@ OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメ
 
  
 
-NDIS QoS 機能を登録する方法の詳細については、次を参照してください。 [NDIS QoS 機能の登録](https://msdn.microsoft.com/library/windows/hardware/hh440188)します。
+NDIS QoS 機能を登録する方法の詳細については、[NDIS QoS 機能の登録](https://msdn.microsoft.com/library/windows/hardware/hh440188)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

@@ -22,7 +22,7 @@ ms.locfileid: "56550239"
 
 
 
-NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含めるミニポート アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、次を参照してください。 [NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)します。
+NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含めるミニポート アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)を参照してください。
 
 NDIS 6.1 と以降のミニポート ドライバーでは、NDIS の提供、 [OID 要求インターフェイスを直接](direct-oid-request-interface-in-ndis-6-1.md)します。 *直接 OID 要求パス*クエリを実行したり、頻繁に設定されている OID 要求をサポートします。 直接 OID 要求インターフェイスでは、NDIS ドライバーの省略可能です。
 

@@ -65,7 +65,7 @@ ms.locfileid: "56553701"
 
 WDDM は Windows XP の代わりに Windows Vista で導入されたまたは[Windows 2000 Display Driver Model (XDDM)](windows-2000-display-driver-model-design-guide.md)します。 Windows Vista に導入されて以来、WDDM アーキテクチャがデスクトップ コンポジションなどの新機能を有効にする機能を提供する、フォールト トレランス、ビデオ メモリ マネージャー、GPU のスケジューラを強化、Direct3D サーフェスのプロセスの共有をクロスとします。 WDDM は、マイクロソフトの Direct3D 9 ピクセル シェーダー 2.0 以上でがあった WDDM 機能をサポートするために必要なハードウェア機能をすべて最新のグラフィックス デバイス用に設計されています。 Windows Vista の WDDM が"WDDM 1.0"として参照
 
-Windows 7 の Windows 7 の機能と機能をサポートするため、ドライバー モデルに増分の変更を加えてし、"WDDM 1.1"と呼ばれていました WDDM 1.1 は、WDDM 1.0 の厳密なスーパー セットです。 WDDM 1.1 には、Microsoft direct3d11 では、サポートが導入されました。 Windows グラフィックス デバイス インターフェイス (GDI) ハードウェア アクセラレーションにより、接続と構成が表示されたら、DirectX ビデオ アクセラレータ (VA) 高精細 (DXVA HD)、およびその他の多くの機能です。 これらの機能の詳細については、次を参照してください。、 [Windows 7 用グラフィックス ガイド](https://go.microsoft.com/fwlink/p/?linkid=327733)します。
+Windows 7 の Windows 7 の機能と機能をサポートするため、ドライバー モデルに増分の変更を加えてし、"WDDM 1.1"と呼ばれていました WDDM 1.1 は、WDDM 1.0 の厳密なスーパー セットです。 WDDM 1.1 には、Microsoft direct3d11 では、サポートが導入されました。 Windows グラフィックス デバイス インターフェイス (GDI) ハードウェア アクセラレーションにより、接続と構成が表示されたら、DirectX ビデオ アクセラレータ (VA) 高精細 (DXVA HD)、およびその他の多くの機能です。 これらの機能の詳細については、、 [Windows 7 用グラフィックス ガイド](https://go.microsoft.com/fwlink/p/?linkid=327733)を参照してください。
 
 Windows 8 には、配列の新機能とグラフィックス ドライバーの変更を必要とする機能が導入されています。 増分変更は、エンドユーザーと開発者のメリットし、システムの信頼性を向上させます。 これらの Windows 8 の機能を有効にする WDDM ドライバー モデルは"WDDM 1.2"と呼ばれます WDDM 1.2 では、WDDM 1.1 および WDDM 1.0 のスーパー セットです。 これらの変更は、この表に示すように、簡単な形式で表現できます。
 

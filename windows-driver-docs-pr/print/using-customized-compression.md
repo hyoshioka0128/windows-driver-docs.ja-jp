@@ -25,9 +25,9 @@ ms.locfileid: "56573663"
 
 カスタマイズされた圧縮アルゴリズムを指定する場合も、Unidrv でサポートされているアルゴリズムの使用を有効にできます。 各スキャン ライン Unidrv 各圧縮アルゴリズムを試行し、最も圧縮の結果を生成するアルゴリズムを選択します。 (Unidrv でサポートされているアルゴリズムについては、次を参照してください[Using Unidrv-Supported 圧縮](using-unidrv-supported-compression.md)。)。Unidrv には、最適なアルゴリズムが検出されると、スキャン ラインのデータを圧縮します。 その後、圧縮されたデータの後に、適切なコマンドの入力で指定されたコマンドをプリンターに送信します。
 
-CmdEnableOEMComp と CmdDisableCompression エントリの詳細については、次を参照してください。[ラスター データ圧縮コマンド](raster-data-compression-commands.md)します。
+CmdEnableOEMComp と CmdDisableCompression エントリの詳細については、[ラスター データ圧縮コマンド](raster-data-compression-commands.md)を参照してください。
 
-カスタマイズされた圧縮の詳細については、次を参照してください。[カスタマイズされたデータ Stream 圧縮](customized-data-stream-compression.md)します。
+カスタマイズされた圧縮の詳細については、[カスタマイズされたデータ Stream 圧縮](customized-data-stream-compression.md)を参照してください。
 
  
 

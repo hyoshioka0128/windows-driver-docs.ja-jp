@@ -30,7 +30,7 @@ ms.locfileid: "56550428"
 
 -   *拡張機能の WdbgExts*します。 これらは、wdbgexts.h ヘッダー ファイルのみでのプロトタイプに基づいています。
 
-デバッガーの拡張機能を記述する方法については、次を参照してください。 [DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)と[WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)です。
+デバッガーの拡張機能を記述する方法については、[DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)と[WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)を参照してください。
 
  
 

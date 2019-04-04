@@ -41,9 +41,9 @@ USB 固有 UMDF インターフェイスでは、一般的な USB モデルに�
 
 [IWDFUsbTargetDevice](https://msdn.microsoft.com/library/windows/hardware/ff560362)と[IWDFUsbTargetPipe](https://msdn.microsoft.com/library/windows/hardware/ff560391)インターフェイスから派生、 [IWDFIoTarget](https://msdn.microsoft.com/library/windows/hardware/ff559170)インターフェイスし、そのため、I/O のターゲット オブジェクトを公開します。 [IWDFUsbInterface](https://msdn.microsoft.com/library/windows/hardware/ff560312)インターフェイスが IWDFIoTarget から派生していません (から派生した IWDFUsbInterface、 [IWDFObject](https://msdn.microsoft.com/library/windows/hardware/ff560200)インターフェイス) と、したがって、I/O のターゲット オブジェクトは公開されません。 検出し、インターフェイスの詳細の操作に送信されるすべての I/O は、ターゲット デバイスに送信されます。
 
-単純な UMDF ベースの USB クライアント ドライバーの記述に関する詳細な手順は、次を参照してください。 [、最初の USB クライアント ドライバー (UMDF) を書き込む方法](https://msdn.microsoft.com/library/windows/hardware/hh706184)します。
+単純な UMDF ベースの USB クライアント ドライバーの記述に関する詳細な手順は、[、最初の USB クライアント ドライバー (UMDF) を書き込む方法](https://msdn.microsoft.com/library/windows/hardware/hh706184)を参照してください。
 
-UMDF ベースの USB クライアント ドライバーに必要なソース コードについては、次を参照してください。 [USB クライアント ドライバー コード構造 (UMDF) について](https://msdn.microsoft.com/library/windows/hardware/hh770893)します。
+UMDF ベースの USB クライアント ドライバーに必要なソース コードについては、[USB クライアント ドライバー コード構造 (UMDF) について](https://msdn.microsoft.com/library/windows/hardware/hh770893)を参照してください。
 
  
 

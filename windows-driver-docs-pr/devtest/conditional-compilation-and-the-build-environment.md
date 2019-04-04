@@ -36,7 +36,7 @@ Windows Driver Kit (WDK) 8 を使用する場合は、リリース (無料) ま�
 
  
 
-Visual Studio および MSBuild を使用して、リリース バージョンとデバッグのドライバーのバージョンを作成する方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
+Visual Studio および MSBuild を使用して、リリース バージョンとデバッグのドライバーのバージョンを作成する方法の詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)を参照してください。
 
  
 

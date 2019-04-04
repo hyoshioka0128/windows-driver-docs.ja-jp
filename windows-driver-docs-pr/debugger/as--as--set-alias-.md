@@ -77,7 +77,7 @@ Null で終わる Unicode 文字列で始まるエイリアスと等価の等値
 エイリアスと等価の等値、64 ビットの値に設定*式*します。
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-評価する式を指定します。 この値になります、エイリアスと同じです。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+評価する式を指定します。 この値になります、エイリアスと同じです。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 <span id="________f______"></span><span id="________F______"></span> **/f**   
 内容をエイリアスと等価の等値の設定、*ファイル*ファイル。 常に使用する必要があります、 **/f**スイッチと共に**として**ではなく**として**します。
@@ -118,7 +118,7 @@ Null で終わる Unicode 文字列で始まるエイリアスと等価の等値
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-エイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
+エイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -139,7 +139,7 @@ Null で終わる Unicode 文字列で始まるエイリアスと等価の等値
 myAlias
 ```
 
-スクリプトでエイリアスの使用に関する詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
+スクリプトでエイリアスの使用に関する詳細については、[Using エイリアス](using-aliases.md)を参照してください。
 
 使用する場合、 **/e**、 **/ma**、 **/mu**、 **/msa**、 **/msu**、または **/x**切り替えるには、**として**と**として**コマンドでは、同じ機能し、セミコロンが発生した場合に、コマンドが終了します。
 

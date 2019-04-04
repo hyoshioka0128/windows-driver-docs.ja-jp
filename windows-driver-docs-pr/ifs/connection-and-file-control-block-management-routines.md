@@ -141,7 +141,7 @@ RDBSS は、接続とネットワーク ミニ リダイレクター ドライ�
 
  
 
-多くのマクロも定義されてラッパーを提供する、 [ **RxReference** ](https://msdn.microsoft.com/library/windows/hardware/ff554688)と[ **RxDeference** ](https://msdn.microsoft.com/library/windows/hardware/ff554388)のルーチンデバッグします。 これらのマクロの詳細については、次を参照してください。[の診断およびデバッグ](diagnostics-and-debugging.md)します。
+多くのマクロも定義されてラッパーを提供する、 [ **RxReference** ](https://msdn.microsoft.com/library/windows/hardware/ff554688)と[ **RxDeference** ](https://msdn.microsoft.com/library/windows/hardware/ff554388)のルーチンデバッグします。 これらのマクロの詳細については、[の診断およびデバッグ](diagnostics-and-debugging.md)を参照してください。
 
  
 

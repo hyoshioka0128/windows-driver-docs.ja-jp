@@ -71,9 +71,9 @@ WDF では、ドライバーは、I/O 要求の書式設定を作成して使用
 
  
 
-を別のデバイス スタックを、要求を送信するには、は、WDF ドライバーは、リモートの I/O ターゲットを使用します。 リモートの I/O ターゲットを初期化する方法については、次を参照してください。[一般的な I/O のターゲットの初期化](initializing-a-general-i-o-target.md)します。
+を別のデバイス スタックを、要求を送信するには、は、WDF ドライバーは、リモートの I/O ターゲットを使用します。 リモートの I/O ターゲットを初期化する方法については、[一般的な I/O のターゲットの初期化](initializing-a-general-i-o-target.md)を参照してください。
 
-非同期要求のまたは呼び出すことによって送信されるすべての要求の完了ステータスを取得する[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、ドライバー呼び出し[ **WdfRequestGetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff549974). 同期の要求の状態をすぐに取得できます。 非同期の要求、ドライバーの I/O 完了コールバックは通常の状態を取得します。 同期または非同期要求を送信する方法の詳細については、次を参照してください。[一般的な I/O ターゲットへの I/O 要求の送信](sending-i-o-requests-to-general-i-o-targets.md)します。
+非同期要求のまたは呼び出すことによって送信されるすべての要求の完了ステータスを取得する[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、ドライバー呼び出し[ **WdfRequestGetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff549974). 同期の要求の状態をすぐに取得できます。 非同期の要求、ドライバーの I/O 完了コールバックは通常の状態を取得します。 同期または非同期要求を送信する方法の詳細については、[一般的な I/O ターゲットへの I/O 要求の送信](sending-i-o-requests-to-general-i-o-targets.md)を参照してください。
 
  
 

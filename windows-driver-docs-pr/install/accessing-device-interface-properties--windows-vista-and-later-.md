@@ -18,7 +18,7 @@ ms.locfileid: "56557372"
 
 -   [**SetupDiGetDeviceInterfacePropertyKeys**](https://msdn.microsoft.com/library/windows/hardware/ff551959)
 
-    **SetupDiGetDeviceInterfacePropertyKeys**関数は、デバイス インターフェイスのインスタンスの現在設定されているデバイスのインターフェイスのプロパティを識別するデバイスのインターフェイス プロパティのキーの配列を取得します。 どのようなプロパティが、デバイス インターフェイスの設定を決定する方法については、次を参照してください。[決定するプロパティが設定、デバイス インターフェイス](determining-which-properties-are-set-for-a-device-interface.md)します。
+    **SetupDiGetDeviceInterfacePropertyKeys**関数は、デバイス インターフェイスのインスタンスの現在設定されているデバイスのインターフェイスのプロパティを識別するデバイスのインターフェイス プロパティのキーの配列を取得します。 どのようなプロパティが、デバイス インターフェイスの設定を決定する方法については、[決定するプロパティが設定、デバイス インターフェイス](determining-which-properties-are-set-for-a-device-interface.md)を参照してください。
 
 -   [**SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)
 

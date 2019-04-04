@@ -16,7 +16,7 @@ ms.locfileid: "57349081"
 
 製造元は、印刷デバイスを USB 接続経由で双方向のサポートを提供する Bidi XML ファイルと組み合わせて、ここでは、表示、JavaScript API を使用できます。
 
-印刷デバイスとの USB の双方向通信の詳細については、次を参照してください。 [USB Bidi エクステンダー](usb-bidi-extender.md)します。
+印刷デバイスとの USB の双方向通信の詳細については、[USB Bidi エクステンダー](usb-bidi-extender.md)を参照してください。
 
 ## <a name="bidi-over-usb"></a>USB 経由での Bidi
 

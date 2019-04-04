@@ -167,9 +167,9 @@ pOutParameters->Release();
 
 1.  取得、WHEA\_エラー\_ソース\_特定のエラーのソースを記述する記述子構造体。
 
-    すべてに関する情報の取得の詳細については、[エラー ソース](hardware-errors-and-error-sources.md)システムでは、次を参照してください。[エラー ソースのすべてのエラー ソース情報を取得する](getting-error-source-information-for-all-error-sources.md)します。
+    すべてに関する情報の取得の詳細については、[エラー ソース](hardware-errors-and-error-sources.md)システムでは、[エラー ソースのすべてのエラー ソース情報を取得する](getting-error-source-information-for-all-error-sources.md)を参照してください。
 
-    システムで特定のエラーのソースに関する情報の取得の詳細については、次を参照してください。[特定のエラーの発生元のエラー ソース情報を取得する](getting-error-source-information-for-a-specific-error-source.md)します。
+    システムで特定のエラーのソースに関する情報の取得の詳細については、[特定のエラーの発生元のエラー ソース情報を取得する](getting-error-source-information-for-a-specific-error-source.md)を参照してください。
 
 2.  WHEA の内容を変更\_エラー\_ソース\_エラー ソースの構成を変更する記述子構造体。
 

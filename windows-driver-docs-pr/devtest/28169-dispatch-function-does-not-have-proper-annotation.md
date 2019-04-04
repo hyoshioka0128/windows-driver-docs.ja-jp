@@ -20,7 +20,7 @@ C28169 を警告します。ディスパッチ関数が含まれない**\_ディ
 
 コード分析ツールは、この警告を報告への代入の右側にある、 **MajorFunction**テーブルがあるない (有効) **\_ディスパッチ\_型\_** 注釈。 右側にあるが、キャストを削除する場合、警告は発生場合があります、 **\_ディスパッチ\_型\_** 注釈。 右側にあるドライバーの種類の関数である必要があります\_と適切なディスパッチ タイプ**\_ディスパッチ\_型\_** 注釈。
 
-詳細については、次を参照してください。[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。
+詳細については、[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)を参照してください。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
 

@@ -66,11 +66,11 @@ DEVPKEY_DeviceClass_ClassCoInstallers デバイス プロパティがインス�
 
 クラスの共同インストーラー リスト内の各クラス インストーラーは、その DLL とエントリ ポイントで識別されます。
 
-クラスの共同インストーラーをインストールする方法については、次を参照してください。[クラス共同インストーラーを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549801)します。
+クラスの共同インストーラーをインストールする方法については、[クラス共同インストーラーを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549801)を参照してください。
 
 DEVPKEY_DeviceClass_ClassCoInstallers の値を取得するには呼び出すことによって[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090). 呼び出して DEVPKEY_DeviceClass_ClassCoInstallers を設定する[ **SetupDiSetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552128)または[ **SetupDiSetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552132).
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassCoInstallers プロパティのキーをサポートしていません。 Windows の以前のバージョンに対応する情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスの共同インストーラー レジストリ エントリの値にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537754)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassCoInstallers プロパティのキーをサポートしていません。 Windows の以前のバージョンに対応する情報にアクセスする方法については、[デバイス セットアップ クラスの共同インストーラー レジストリ エントリの値にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537754)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

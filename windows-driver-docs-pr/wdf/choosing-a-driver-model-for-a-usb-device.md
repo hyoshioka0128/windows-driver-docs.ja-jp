@@ -22,7 +22,7 @@ ms.locfileid: "56573618"
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-USB デバイスの必要なドライバーの種類を確認する方法については、次を参照してください。 [USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff540215)します。
+USB デバイスの必要なドライバーの種類を確認する方法については、[USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff540215)を参照してください。
 
  
 

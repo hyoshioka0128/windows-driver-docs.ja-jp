@@ -28,7 +28,7 @@ ms.locfileid: "56539071"
 
 この OID 要求を処理する場合、PF ミニポート ドライバーする必要があります指定 VF に以前割り当てられたリソースを確認します。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
 
-詳細については、次を参照してください。[仮想関数、PCI ベンダーとデバイスのデバイス Id の照会](https://msdn.microsoft.com/library/windows/hardware/hh440185)します。
+詳細については、[仮想関数、PCI ベンダーとデバイスのデバイス Id の照会](https://msdn.microsoft.com/library/windows/hardware/hh440185)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

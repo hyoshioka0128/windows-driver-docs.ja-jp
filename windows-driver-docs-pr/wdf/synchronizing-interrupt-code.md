@@ -63,7 +63,7 @@ ms.locfileid: "56558581"
 
 -   ドライバーを同期する必要がある場合[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)と[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683)互いとコールバック関数その他のデバイスに関連付けられているコールバック関数には、ドライバーを設定できます、 **AutomaticSerialization**メンバー **TRUE**の割り込みの[ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)構造と DPC オブジェクトの[ **WDF\_DPC\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551296)構造体。 また、ドライバーを使用できる[framework スピン ロック](using-framework-locks.md#framework-spin-locks)します。 (設定、 **AutomaticSerialization**メンバー **TRUE**同期しません、 [ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735)でコールバック関数その他のコールバック関数。 使用[ **WdfInterruptSynchronize** ](https://msdn.microsoft.com/library/windows/hardware/ff547389)または[ **WdfInterruptAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/ff547340)を同期する、 *EvtInterruptIsr*コールバック関数は、このトピックで前述のようです)。
 
-ドライバーのルーチンの同期の詳細については、次を参照してください。 [Framework ベースのドライバーの同期手法](synchronization-techniques-for-wdf-drivers.md)します。
+ドライバーのルーチンの同期の詳細については、[Framework ベースのドライバーの同期手法](synchronization-techniques-for-wdf-drivers.md)を参照してください。
 
  
 

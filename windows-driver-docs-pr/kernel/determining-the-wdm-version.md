@@ -24,7 +24,7 @@ ms.locfileid: "56560978"
 
 システム間の WDM ドライバーを使用する必要があります、 [ **IoIsWdmVersionAvailable** ](https://msdn.microsoft.com/library/windows/hardware/ff549382)ルーチンが実行されているシステムによって WDM のバージョンがサポートされているかを判断します。 リファレンス ページ**IoIsWdmVersionAvailable** WDM バージョン番号の一覧を示します。
 
-WDM ドライバーを処理する必要がありますの違いについては、次を参照してください。 [WDM バージョン間の違い](differences-in-wdm-versions.md)します。
+WDM ドライバーを処理する必要がありますの違いについては、[WDM バージョン間の違い](differences-in-wdm-versions.md)を参照してください。
 
  
 

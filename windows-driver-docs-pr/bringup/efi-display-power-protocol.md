@@ -39,10 +39,10 @@ typedef struct _EFI_DISPLAY_POWER_PROTOCOL {
 現在のリビジョンは 0x00010000 です。 リビジョンに設定してください 0x00010000、ファームウェアによってこの場合のリビジョン、 **EFI\_バッテリ\_充電中\_プロトコル**ファームウェアでサポートされています。
 
 <a href="" id="setdisplaypowerstate"></a>**SetDisplayPowerState**  
-ディスプレイおよびバックライト電源の状態を変更します。 詳細については、次を参照してください。 [EFI\_表示\_POWER\_プロトコル。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)します。
+ディスプレイおよびバックライト電源の状態を変更します。 詳細については、[EFI\_表示\_POWER\_プロトコル。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)を参照してください。
 
 <a href="" id="getdisplaypowerstate"></a>**GetDisplayPowerState**  
-現在の電源状態の表示とバックライトを返します。 詳細については、次を参照してください。 [EFI\_表示\_POWER\_プロトコル。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)します。
+現在の電源状態の表示とバックライトを返します。 詳細については、[EFI\_表示\_POWER\_プロトコル。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)を参照してください。
 
 ## <a name="requirements"></a>要件
 

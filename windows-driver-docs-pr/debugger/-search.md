@@ -66,7 +66,7 @@ Kdexts.dll
 <a name="remarks"></a>注釈
 -------
 
-場合*StartPFN*と*EndPFN*は指定すると、これらが表示されます、先頭と範囲の最後のページ フレーム番号として物理メモリで検索します。 フレームのページ番号の詳細については、次を参照してください。[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)します。 場合*StartPFN*と*EndPFN*は省略すると、すべての物理メモリが検索されます。
+場合*StartPFN*と*EndPFN*は指定すると、これらが表示されます、先頭と範囲の最後のページ フレーム番号として物理メモリで検索します。 フレームのページ番号の詳細については、[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)を参照してください。 場合*StartPFN*と*EndPFN*は省略すると、すべての物理メモリが検索されます。
 
 すべてのヒットが表示されます。
 

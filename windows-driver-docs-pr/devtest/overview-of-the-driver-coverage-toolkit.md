@@ -25,7 +25,7 @@ ms.locfileid: "56537349"
 ドライバの対応のツールキットが収集され、3 つのメトリックに基づく IRP カバレッジ データを報告します。
 
 <span id="Major__MJ__IRP_Function_Codes"></span><span id="major__mj__irp_function_codes"></span><span id="MAJOR__MJ__IRP_FUNCTION_CODES"></span>メジャー (MJ) IRP の関数コード  
-デバイスのドライバー スタック内でアクティブだった Irp の MJ 関数のコードの数。 ドライバの対応 toolkit は、12 MJ 関数コードのデータを収集します。 これらの関数コードの詳細については、次を参照してください。 [IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)します。
+デバイスのドライバー スタック内でアクティブだった Irp の MJ 関数のコードの数。 ドライバの対応 toolkit は、12 MJ 関数コードのデータを収集します。 これらの関数コードの詳細については、[IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)を参照してください。
 
 <span id="Major__MJ__and_Minor__MN__IRP_Function_Codes"></span><span id="major__mj__and_minor__mn__irp_function_codes"></span><span id="MAJOR__MJ__AND_MINOR__MN__IRP_FUNCTION_CODES"></span>メジャー (MJ) と IRP 関数コードのマイナー (MN)  
 MJ IRP の関数コードで、その下位 MN 関数コードと共に、デバイスのドライバー スタック内でアクティブだった Irp の数。 ドライバの対応 toolkit は、52 MJ および mn の各関数のコードのデータを収集します。
@@ -33,7 +33,7 @@ MJ IRP の関数コードで、その下位 MN 関数コードと共に、デバ
 <span id="IRP_Pairs"></span><span id="irp_pairs"></span><span id="IRP_PAIRS"></span>IRP のペア  
 デバイスのドライバー スタック内で同時にアクティブだった MJ と MJ/MN IRP の関数コードの数。 この数には、個別の Irp が入力または同時に、ドライバー スタックのままの回数が反映されます。 ドライバの対応 toolkit は、1099 MJ および mn の各関数のコードのペアのデータを収集します。
 
-IRP の関数コードの詳細については、次を参照してください。 [IRP 関数コード](https://msdn.microsoft.com/library/windows/hardware/ff550706)します。
+IRP の関数コードの詳細については、[IRP 関数コード](https://msdn.microsoft.com/library/windows/hardware/ff550706)を参照してください。
 
 ### <a name="span-idirpcoveragedataspanspan-idirpcoveragedataspanirp-coverage-data"></a><span id="irp_coverage_data"></span><span id="IRP_COVERAGE_DATA"></span>IRP カバレッジ データ
 

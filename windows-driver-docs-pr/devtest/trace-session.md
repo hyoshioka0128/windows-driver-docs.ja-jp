@@ -50,11 +50,11 @@ A*トレース セッション*は、期間、[トレース プロバイダー](
 
 ソフトウェア トレース、一般に、非常にわずかなオーバーヘッドが発生した場合はバッファー内のトレース セッションはすべてのトレース セッションの種類の最小限のオーバーヘッドがあります。 長期間にトレースすることができ、次に、興味深い問題が発生した場合、デバッガーを使用して、現在のバッファーの内容を確認したり、トレース ログの現在のバッファーの内容を保存します。
 
-トレース バッファー内のトレース メッセージを表示する、 **! wmitrace**デバッガー拡張機能を特殊化します。 この拡張機能については、次を参照してください。*ツールを Windows のデバッグ*します。
+トレース バッファー内のトレース メッセージを表示する、 **! wmitrace**デバッガー拡張機能を特殊化します。 この拡張機能については、*ツールを Windows のデバッグ*を参照してください。
 
 コンテンツ バッファーのフラッシュ、[トレース ログ](trace-log.md)を使用して、 **-f**のパラメーター、 **tracelog-フラッシュ**コマンド。
 
-バッファー内のトレース セッションを開始するには、使用、 **-バッファリング**のパラメーター、 **tracelog-開始**コマンド。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
+バッファー内のトレース セッションを開始するには、使用、 **-バッファリング**のパラメーター、 **tracelog-開始**コマンド。 詳細については、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)を参照してください。
 
 ### <a name="span-idddkprivatetracesessionstoolsspanspan-idddkprivatetracesessionstoolsspanprivate-trace-sessions"></a><span id="ddk_private_trace_sessions_tools"></span><span id="DDK_PRIVATE_TRACE_SESSIONS_TOOLS"></span>プライベート トレース セッション
 

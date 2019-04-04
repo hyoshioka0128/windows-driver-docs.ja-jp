@@ -26,7 +26,7 @@ If (WPP_CHECK_INIT && (Level,Flag) is enabled) {
 POST macro // If defined
 ```
 
-例前/後のマクロを定義する方法については、次を参照してください。[がどのようにトレース-式が使用されている場合ですか?](how-are-trace-if-expressions-used-.md)します。
+例前/後のマクロを定義する方法については、[がどのようにトレース-式が使用されている場合ですか?](how-are-trace-if-expressions-used-.md)を参照してください。
 
  
 

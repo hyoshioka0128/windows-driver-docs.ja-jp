@@ -26,7 +26,7 @@ ms.locfileid: "56570272"
 
 **windbg -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
 
 ### <a name="span-iddebuggercommandwindowspanspan-iddebuggercommandwindowspanspan-iddebuggercommandwindowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>デバッガー コマンド ウィンドウ
 

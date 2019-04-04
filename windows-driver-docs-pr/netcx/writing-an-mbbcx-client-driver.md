@@ -22,7 +22,7 @@ ms.locfileid: "58136125"
 
 ## <a name="inf-files-for-mbbcx-client-drivers"></a>MBBCx クライアント ドライバーの INF ファイル
 
-MBBCx クライアント ドライバーの INF ファイルでは、その他の NetAdapterCx クライアント ドライバーと同じです。 詳細については、次を参照してください。 [NetAdapterCx クライアント ドライバーの INF ファイル](inf-files-for-netadaptercx-client-drivers.md)します。
+MBBCx クライアント ドライバーの INF ファイルでは、その他の NetAdapterCx クライアント ドライバーと同じです。 詳細については、[NetAdapterCx クライアント ドライバーの INF ファイル](inf-files-for-netadaptercx-client-drivers.md)を参照してください。
 
 ## <a name="initialize-the-device"></a>デバイスを初期化します。
 
@@ -172,7 +172,7 @@ MBBCx は、常にプライマリの PDP コンテキストと既定の EPS ベ�
     }
 ```
 
-データパス機能の設定のコード例では、次を参照してください。[ネットワーク データ バッファー管理](network-data-buffer-management.md)します。
+データパス機能の設定のコード例では、[ネットワーク データ バッファー管理](network-data-buffer-management.md)を参照してください。
 
 呼び出していることを保証 MBBCx *EvtMbbDeviceCreateAdapter*要求する前に**MBIM_CID_CONNECT**同じのセッション ID に置き換えます。 次のフロー図は、NETADAPTER オブジェクトを作成するクライアント ドライバーと、クラス拡張の間の相互作用を示しています。  
 

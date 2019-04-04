@@ -25,7 +25,7 @@ HVCI ドライバー Device Guard の互換性をテストするための OS と
 
 準備ツールを使用してセキュリティで保護のブートなど、追加の要件を評価するには、準備ツールのダウンロードに含まれる readme.txt ファイルを参照してください。
 
-関連するデバイスの基本テストに関する詳細については、次を参照してください。 [Device.DevFund テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)します。
+関連するデバイスの基本テストに関する詳細については、[Device.DevFund テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)を参照してください。
 
 ## <a name="implement-device-guard-compatible-code"></a>Device Guard の互換性のあるコードを実装します。
 
@@ -113,7 +113,7 @@ Device Guard の互換性のあるコードを実装するには、次のドラ�
     Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
     ```
 
-    表示される出力を中断する方法については、次を参照してください。[コードの整合性の仮想化ベースの保護を有効にする](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)します。
+    表示される出力を中断する方法については、[コードの整合性の仮想化ベースの保護を有効にする](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)を参照してください。
 
     *Device Guard を無効にする*-準備ツールを実行中に Device Guard する必要がありますを無効にする、テスト対象の PC で Device Guard は、読み込みからドライバーを妨げる可能性し、ドライバーはテスト用に準備ツールを使用できませんに注意してください。
 
@@ -127,7 +127,7 @@ Device Guard の互換性のあるコードを実装するには、次のドラ�
 
     ターゲット テスト PC には、目的のテスト ドライバーをインストールします。
 
-    **重要な**開発ドライバーをテストして、コードの問題に対処したら、最終的な運用環境のドライバーを再テストします。 さらに、ドライバーをテスト、HLK を使用します。 詳細については、次を参照してください。[ハイパーバイザー コードの整合性の準備のテスト](https://msdn.microsoft.com/library/windows/hardware/dn955152)します。
+    **重要な**開発ドライバーをテストして、コードの問題に対処したら、最終的な運用環境のドライバーを再テストします。 さらに、ドライバーをテスト、HLK を使用します。 詳細については、[ハイパーバイザー コードの整合性の準備のテスト](https://msdn.microsoft.com/library/windows/hardware/dn955152)を参照してください。
 
 
 

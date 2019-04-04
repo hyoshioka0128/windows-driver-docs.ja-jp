@@ -22,7 +22,7 @@ ms.locfileid: "56553084"
 
 -   ネットワーク アダプター上で現在有効なフィルター処理機能を受信パケットの結合します。
 
-**注**パケットの結合のミニポート ドライバーのサポートを有効または無効にできる、  **\*PacketCoalescing** INF キーワードの設定。 この設定が表示されます、**詳細**ネットワーク アダプターのプロパティ ページ。 パケット結合 INF ファイルの設定の詳細については、次を参照してください。[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)します。
+**注**パケットの結合のミニポート ドライバーのサポートを有効または無効にできる、  **\*PacketCoalescing** INF キーワードの設定。 この設定が表示されます、**詳細**ネットワーク アダプターのプロパティ ページ。 パケット結合 INF ファイルの設定の詳細については、[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)を参照してください。
 
 
 
@@ -156,6 +156,6 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 -   ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-結合して、基になるネットワーク アダプターの機能をフィルター処理、パケットを報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
+結合して、基になるネットワーク アダプターの機能をフィルター処理、パケットを報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
 
-アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。

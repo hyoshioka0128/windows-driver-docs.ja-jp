@@ -39,7 +39,7 @@ Windows 読み込み Windows Sockets では、アプリケーションのプロ�
 
 4.  Windows Sockets スイッチが使用するための Windows Sockets サービス プロバイダー インターフェイス (SPI) を拡張する SAN サービス プロバイダーのエントリ ポイント関数へのポインターを取得する必要がありますと San です。 Windows Sockets スイッチ、SAN サービス プロバイダーの呼び出しのこれらの関数の拡張を取得する[ **WSPIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff566296)関数を渡す、SIO\_取得\_拡張機能\_関数\_ポインター コマンド コード値を持つが次のいずれかを識別する GUID とは、関数を拡張します。
 
-    これらの関数の詳細については、次を参照してください。 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。
+    これらの関数の詳細については、[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。
 
 5.  スイッチを作成できます」の説明に従って、スレッドも非ブロッキング リスニング ソケットをサポートする接続要求、 [SAN 接続の設定](setting-up-a-san-connection.md)します。
 

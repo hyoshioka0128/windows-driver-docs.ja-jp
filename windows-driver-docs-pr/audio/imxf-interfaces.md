@@ -50,7 +50,7 @@ MIDI データはユーザー モードとカーネル モード パックされ
 
 [**IAllocatorMXF::PutBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536495)
 
-これらのインターフェイスの使用に関する詳細については、次を参照してください。[アロケーター](allocator.md)します。
+これらのインターフェイスの使用に関する詳細については、[アロケーター](allocator.md)を参照してください。
 
  
 

@@ -42,7 +42,7 @@ ms.locfileid: "56550543"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-**DevCon 更新**操作は、それらのドライバーが古いまたは最新のドライバーや別の INF ファイル内のドライバーよりも小さい適切な場合でも、指定した INF ファイルで最も適切なドライバーを更新を強制します。 詳細については、次を参照してください。[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)します。
+**DevCon 更新**操作は、それらのドライバーが古いまたは最新のドライバーや別の INF ファイル内のドライバーよりも小さい適切な場合でも、指定した INF ファイルで最も適切なドライバーを更新を強制します。 詳細については、[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)を参照してください。
 
 使用することはできません、 **DevCon 更新**存在デバイス用のドライバーを更新するコマンド。
 

@@ -35,7 +35,7 @@ ms.locfileid: "56572762"
 * セキュア ブートは、bios がオフです。
 * ドライバーは、サポートされているクロス署名 CA にチェーンされている年 7 月 29日 2015年より前に発行されたをエンド エンティティ証明書で署名されました。
 
-詳細については、次を参照してください。[ドライバー署名の変更では、Windows 10 バージョン 1607](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)します。
+詳細については、[ドライバー署名の変更では、Windows 10 バージョン 1607](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)を参照してください。
 
 ## <a name="signing-a-driver-for-client-versions-of-windows"></a>Windows のクライアントのバージョンのドライバーの署名
 
@@ -47,7 +47,7 @@ Windows 10 用のドライバーをサインインさせる次の手順に従い
 
 バージョン固有の詳細を確認してください、 [WHCP (Windows ハードウェア互換性プログラム) ポリシー](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-specifications-policies)の対象とする Windows バージョン。
 
-Windows 7、Windows 8、または Windows 8.1 ドライバーに署名するには、適切な HCK (ハードウェア認定キット) を使用します。  詳細については、次を参照してください。、 [Windows ハードウェア認定キット ユーザー ガイド](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85))します。
+Windows 7、Windows 8、または Windows 8.1 ドライバーに署名するには、適切な HCK (ハードウェア認定キット) を使用します。  詳細については、、 [Windows ハードウェア認定キット ユーザー ガイド](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85))を参照してください。
 
 ## <a name="signing-a-driver-for-earlier-versions-of-windows"></a>Windows の以前のバージョンのドライバーの署名
 
@@ -55,7 +55,7 @@ Windows 10 バージョン 1607 を所有する前に、次の種類のドライ
 
 * カーネル モード デバイス ドライバー
 * ユーザー モード デバイス ドライバー
-* 保護されたコンテンツをストリームするドライバー。 保護されているユーザー モード Audio (PUMA) と保護されたオーディオのパス (PAP) を使用するオーディオ ドライバーやビデオ デバイス ドライバーを処理するには、ビデオ パス出力保護の管理 (PVP OPM) コマンドが保護されています。 詳細については、次を参照してください。[メディアの保護されているコンポーネントのコード署名](https://go.microsoft.com/fwlink/p/?linkid=74262)します。
+* 保護されたコンテンツをストリームするドライバー。 保護されているユーザー モード Audio (PUMA) と保護されたオーディオのパス (PAP) を使用するオーディオ ドライバーやビデオ デバイス ドライバーを処理するには、ビデオ パス出力保護の管理 (PVP OPM) コマンドが保護されています。 詳細については、[メディアの保護されているコンポーネントのコード署名](https://go.microsoft.com/fwlink/p/?linkid=74262)を参照してください。
 
 ## <a name="signing-requirements-by-version"></a>バージョン、署名の要件
 
@@ -70,9 +70,9 @@ Windows 10 バージョン 1607 を所有する前に、次の種類のドライ
 |**署名アルゴリズム:**|SHA1|SHA1|SHA2 または SHA1|
 |**証明書:**|コードの整合性によって信頼されている標準のルート|コードの整合性によって信頼されている標準のルート|Microsoft ルート機関 2010、Microsoft ルート証明機関では、Microsoft ルート機関|
 
-ドライバー コードの署名、だけでなく、PnP デバイス インストールの署名のドライバーをインストールするための要件を満たす必要があります。  詳細については、次を参照してください。[プラグ アンド プレイ (PnP) デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)します。
+ドライバー コードの署名、だけでなく、PnP デバイス インストールの署名のドライバーをインストールするための要件を満たす必要があります。  詳細については、[プラグ アンド プレイ (PnP) デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)を参照してください。
 
-ELAM ドライバーの署名方法の詳細については、次を参照してください。[早期起動マルウェア対策](https://msdn.microsoft.com/library/windows/desktop/hh848061(v=vs.85).aspx)します。
+ELAM ドライバーの署名方法の詳細については、[早期起動マルウェア対策](https://msdn.microsoft.com/library/windows/desktop/hh848061(v=vs.85).aspx)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

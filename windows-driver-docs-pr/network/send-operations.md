@@ -20,9 +20,9 @@ ms.locfileid: "56548810"
 
  
 
-呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
+呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
 
-通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://msdn.microsoft.com/library/windows/hardware/ff547571)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://msdn.microsoft.com/library/windows/hardware/ff547571)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
 
 **注**  Windows Vista の IHV 拡張機能の DLL は、基本的なサービスのインフラストラクチャ (BSS) ネットワークの設定のみをサポートします。
 

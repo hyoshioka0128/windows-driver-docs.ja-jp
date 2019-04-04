@@ -22,7 +22,7 @@ ms.locfileid: "56574026"
 
 -   INF **AddReg**ディレクティブと INF**して**ディレクティブを設定またはカスタムのレジストリ エントリの値を削除します。
 
--   [**INF AddProperty ディレクティブ**](inf-addproperty-directive.md)と**INF DelProperty ディレクティブ**設定して、デバイスのプロパティを削除します。 これらのディレクティブを使用する方法の詳細については、次を参照してください。 [INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
+-   [**INF AddProperty ディレクティブ**](inf-addproperty-directive.md)と**INF DelProperty ディレクティブ**設定して、デバイスのプロパティを削除します。 これらのディレクティブを使用する方法の詳細については、[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)を参照してください。
 
 概要については、INF ファイルのセクションでは、デバイスのインスタンスをインストールする[デバイス セットアップ クラス](device-setup-classes.md)、[デバイス インターフェイス クラス](device-interface-classes.md)、し、デバイスのインターフェイスは、次のトピックを参照してください。
 

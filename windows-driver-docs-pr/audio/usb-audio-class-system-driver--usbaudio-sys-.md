@@ -19,7 +19,7 @@ USB オーディオ クラスのシステム ドライバー (Usbaudio.sys) で�
 ## <span id="usbaudio_class_system_driver"></span><span id="USBAUDIO_CLASS_SYSTEM_DRIVER"></span>
 
 
-オーディオ デバイス仕様 (リリース 1.0) の USB デバイス クラス定義は、 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780) web サイト。 Usbaudio.sys では、USB オーディオ仕様で説明されている機能のサブセットをサポートしています。 Usbaudio.sys、に加えていくつかその他のカーネル モード オーディオ コンポーネントが Windows Driver Model (WDM) で。 詳細については、次を参照してください。[カーネル モード WDM オーディオ コンポーネント](kernel-mode-wdm-audio-components.md)します。
+オーディオ デバイス仕様 (リリース 1.0) の USB デバイス クラス定義は、 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780) web サイト。 Usbaudio.sys では、USB オーディオ仕様で説明されている機能のサブセットをサポートしています。 Usbaudio.sys、に加えていくつかその他のカーネル モード オーディオ コンポーネントが Windows Driver Model (WDM) で。 詳細については、[カーネル モード WDM オーディオ コンポーネント](kernel-mode-wdm-audio-components.md)を参照してください。
 
 Windows 98 Usbaudio.sys のスピーカーおよびマイクなどの USB デバイスのサポートが導入されました。 Windows me で MIDI デバイスのサポートが追加されました
 

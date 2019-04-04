@@ -50,7 +50,7 @@ Dmu ポート ドライバーの波のシンクの Dmu のミニポート ドラ
 
 [**ISynthSinkDMus::SyncToMaster**](https://msdn.microsoft.com/library/windows/hardware/ff537019)
 
-**ISynthSinkDMus**継承、 **IMXF**インターフェイス。 詳細については、次を参照してください。 [ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)します。
+**ISynthSinkDMus**継承、 **IMXF**インターフェイス。 詳細については、[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)を参照してください。
 
 上記の図の Dmu ミニポート ドライバーでは、その DirectMusic 入力ピンと出力ピンを wave としては、次のように識別します。
 

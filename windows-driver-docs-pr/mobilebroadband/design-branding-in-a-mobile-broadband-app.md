@@ -58,7 +58,7 @@ UWP アプリでは、次の方法でブランド化がお勧めします。
 
     ![windows 接続マネージャー](images/mb-fig5-wcm.png)
 
-Windows 10 のガイダンスをブランド化に関する詳細については、次を参照してください。 [UWP アプリのガイドラインをマーケティング](https://msdn.microsoft.com/library/windows/apps/hh694084)します。
+Windows 10 のガイダンスをブランド化に関する詳細については、[UWP アプリのガイドラインをマーケティング](https://msdn.microsoft.com/library/windows/apps/hh694084)を参照してください。
 
 ## <a name="span-idquicksummaryspanspan-idquicksummaryspanspan-idquicksummaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>簡単な概要
 

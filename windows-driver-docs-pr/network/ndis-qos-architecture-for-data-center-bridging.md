@@ -18,9 +18,9 @@ ms.locfileid: "56579361"
 
 ![デバイスのインストール コンポーネント](images/dcb.png)
 
-図で影なしのボックスは、DCB をサポートするコンポーネントを含む、Windows オペレーティング システムが提供するコンポーネントを表します。 これらのコンポーネントの詳細については、次を参照してください。 [System-Provided DCB コンポーネント](system-provided-dcb-components.md)します。
+図で影なしのボックスは、DCB をサポートするコンポーネントを含む、Windows オペレーティング システムが提供するコンポーネントを表します。 これらのコンポーネントの詳細については、[System-Provided DCB コンポーネント](system-provided-dcb-components.md)を参照してください。
 
-相手先ブランド供給 (Oem) の提供し、する独立系ハードウェア ベンダー (Ihv) ダイアグラム表す DCB コンポーネントで、網掛けボックスします。 これらのコンポーネントの詳細については、次を参照してください。 [Vendor-Provided DCB コンポーネント](vendor-provided-dcb-components.md)します。
+相手先ブランド供給 (Oem) の提供し、する独立系ハードウェア ベンダー (Ihv) ダイアグラム表す DCB コンポーネントで、網掛けボックスします。 これらのコンポーネントの詳細については、[Vendor-Provided DCB コンポーネント](vendor-provided-dcb-components.md)を参照してください。
 
  
 

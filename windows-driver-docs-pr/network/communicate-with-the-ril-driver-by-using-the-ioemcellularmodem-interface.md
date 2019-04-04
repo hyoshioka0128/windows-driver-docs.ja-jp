@@ -20,7 +20,7 @@ ms.locfileid: "58136131"
 
 使用することができます、 [IOemCellularModem](https://msdn.microsoft.com/library/windows/hardware/dn946687) OEM RIL ドライバーと通信するインターフェイス。 パートナーが使用できる場合は、制限付きのプラットフォームで Api を使用して、モデムとの通信には、(RPAL) ボックスの一覧。
 
-携帯電話の COM Api の詳細については、次を参照してください。[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)します。
+携帯電話の COM Api の詳細については、[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)を参照してください。
 
 ## <a name="using-cellular-com-apis"></a>携帯電話の COM Api を使用します。
 

@@ -24,7 +24,7 @@ OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscr
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB デバイスの準備](https://msdn.microsoft.com/library/windows/hardware/ff557164)します。
+詳細については、この OID を使用して、[MB デバイスの準備](https://msdn.microsoft.com/library/windows/hardware/ff557164)を参照してください。
 
 ミニポート ドライバーがデバイスのメモリをアクセスまたは SIM カードの処理時にクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 

@@ -22,7 +22,7 @@ ms.locfileid: "56558194"
 
 [物理ネットワーク アダプター ハードウェア オフロード OID 要求の管理](managing-hardware-offload-oid-requests-to-physical-network-adapters.md)
 
-HYPER-V 拡張可能スイッチのコントロール パス経由で OID 要求を管理する方法の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)します。
+HYPER-V 拡張可能スイッチのコントロール パス経由で OID 要求を管理する方法の詳細については、[Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)を参照してください。
 
  
 

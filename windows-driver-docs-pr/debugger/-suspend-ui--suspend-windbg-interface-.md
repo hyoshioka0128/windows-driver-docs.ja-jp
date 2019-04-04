@@ -68,7 +68,7 @@ WinDbg のデバッグ情報の windows の更新を有効にします。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッグ情報のウィンドウについては、次を参照してください。[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)します。
+デバッグ情報のウィンドウについては、[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

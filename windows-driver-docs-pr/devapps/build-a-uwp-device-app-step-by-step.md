@@ -14,9 +14,9 @@ ms.locfileid: "57349307"
 # <a name="span-iddevappsbuildawindowsstoredeviceappstep-by-stepspanbuild-a-uwp-device-app-step-by-step"></a><span id="devapps.build_a_windows_store_device_app_step-by-step"></span>ステップ バイ ステップの UWP デバイスのアプリをビルドします。
 
 
-このステップ バイ ステップ ガイドでは、Microsoft Visual Studio とデバイス メタデータ作成ウィザードを使用して UWP デバイス アプリをビルドする方法を詳しく説明しています。 このプロセスに大まかな概要については、次を参照してください。[構築 UWP デバイス アプリ](the-workflow.md)します。
+このステップ バイ ステップ ガイドでは、Microsoft Visual Studio とデバイス メタデータ作成ウィザードを使用して UWP デバイス アプリをビルドする方法を詳しく説明しています。 このプロセスに大まかな概要については、[構築 UWP デバイス アプリ](the-workflow.md)を参照してください。
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
 ## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 

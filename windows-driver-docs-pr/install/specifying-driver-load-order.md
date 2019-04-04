@@ -103,7 +103,7 @@ Windows デバイスを構成するときに読み込むことができるよう
 -   Verifier ブートが有効になっているによるブート中にドライバーを昇格する場合は、指定**0x40** (CM_SERVICE_VERIFIER_BOOT_LOAD)。
 -   ドライバーを WinPE の起動時に昇格させる必要があります場合、指定**0x80** (CM_SERVICE_WINPE_BOOT_LOAD)。
 
-ドライバーの昇格の詳細については**StartType**ブートのシナリオに応じて、起動時に、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
+ドライバーの昇格の詳細については**StartType**ブートのシナリオに応じて、起動時に、[ **INF AddService ディレクティブ**](inf-addservice-directive.md)を参照してください。
 
  
 

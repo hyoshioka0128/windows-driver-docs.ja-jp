@@ -102,11 +102,11 @@ static KSDATARANGE_AUDIO PinDataRangesSpdifOut[] =
 
 このコード例では、最初と 2 番目のデータの範囲は、48 kHz と 44.1 kHz のサンプル レートで WMA Pro オーバー-S/PDIF データ形式を指定します。 これら 2 つのオプションでは、オーディオのアプリケーションはこれら 2 つのサンプル レートと仮定すると、外部のデコーダーの場合、サンプル速度も処理のいずれかで記録された WMA Pro オーディオ ストリームを再生できます。
 
-WMA Pro 同期フレーム サイズは、48 kHz と 44.1 kHz の両方で同じ両方のデータ範囲を使用して、同じ PCM パラメーター値: 2 つのチャネルとチャネルの 16 ビット/。 WMA Pro-オーバー-S/PDIF と AC-3-フェールオーバー-S/PDIF 形式のデータ範囲を指定する PCM パラメーターの使用については、次を参照してください。[非 PCM ストリームのパススルー送信を S/PDIF](s-pdif-pass-through-transmission-of-non-pcm-streams.md)します。
+WMA Pro 同期フレーム サイズは、48 kHz と 44.1 kHz の両方で同じ両方のデータ範囲を使用して、同じ PCM パラメーター値: 2 つのチャネルとチャネルの 16 ビット/。 WMA Pro-オーバー-S/PDIF と AC-3-フェールオーバー-S/PDIF 形式のデータ範囲を指定する PCM パラメーターの使用については、[非 PCM ストリームのパススルー送信を S/PDIF](s-pdif-pass-through-transmission-of-non-pcm-streams.md)を参照してください。
 
-3 番目のデータ範囲には、AC-3-フェールオーバー-S/PDIF のデータ形式を指定します。 詳細については、次を参照してください。 [ac-3 データ範囲を指定する](specifying-ac-3-data-ranges.md)します。
+3 番目のデータ範囲には、AC-3-フェールオーバー-S/PDIF のデータ形式を指定します。 詳細については、[ac-3 データ範囲を指定する](specifying-ac-3-data-ranges.md)を参照してください。
 
-前の例は、PCM 以外の WMA Pro-オーバー-S/PDIF と Microsoft Windows 2000 SP2 および Windows 98 SE + 修正プログラムの AC-3-フェールオーバー-S/PDIF 形式を処理するために、DirectSound を有効になりません。 この機能を有効にするサンプル コードが 3 つのデータ範囲の各 KSDATAFORMAT 指定子を使用するように変更する必要は\_指定子\_WAVEFORMATEX、2 番目のデータ範囲を含めることは以外と等しいKSDATAFORMAT 指定子を使用している\_指定子\_DSOUND 代わりにします。 例については、次を参照してください。 [ac-3 データ範囲を指定する](specifying-ac-3-data-ranges.md)します。
+前の例は、PCM 以外の WMA Pro-オーバー-S/PDIF と Microsoft Windows 2000 SP2 および Windows 98 SE + 修正プログラムの AC-3-フェールオーバー-S/PDIF 形式を処理するために、DirectSound を有効になりません。 この機能を有効にするサンプル コードが 3 つのデータ範囲の各 KSDATAFORMAT 指定子を使用するように変更する必要は\_指定子\_WAVEFORMATEX、2 番目のデータ範囲を含めることは以外と等しいKSDATAFORMAT 指定子を使用している\_指定子\_DSOUND 代わりにします。 例については、[ac-3 データ範囲を指定する](specifying-ac-3-data-ranges.md)を参照してください。
 
  
 

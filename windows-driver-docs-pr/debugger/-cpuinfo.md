@@ -42,7 +42,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-マルチプロセッサ コンピューターのデバッグの詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。
+マルチプロセッサ コンピューターのデバッグの詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

@@ -54,7 +54,7 @@ ms.locfileid: "56558054"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-」プロセス ブロックについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+」プロセス ブロックについては、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>注釈
 -------

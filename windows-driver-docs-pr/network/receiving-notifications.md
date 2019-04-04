@@ -20,7 +20,7 @@ ms.locfileid: "56553514"
 
  
 
-オペレーティング システムが呼び出すことによって、ネイティブの 802.11 ミニポート ドライバーから IHV 固有の問題を転送、 [ *Dot11ExtIhvReceiveIndication* ](https://msdn.microsoft.com/library/windows/hardware/ff547512)関数。 どのドライバーは、この種類を示す値の詳細については、次を参照してください。 [IHV 固有の兆候](ihv-specific-indications.md)します。
+オペレーティング システムが呼び出すことによって、ネイティブの 802.11 ミニポート ドライバーから IHV 固有の問題を転送、 [ *Dot11ExtIhvReceiveIndication* ](https://msdn.microsoft.com/library/windows/hardware/ff547512)関数。 どのドライバーは、この種類を示す値の詳細については、[IHV 固有の兆候](ihv-specific-indications.md)を参照してください。
 
 ときに、 [ *Dot11ExtIhvReceiveIndication* ](https://msdn.microsoft.com/library/windows/hardware/ff547512)関数が呼び出されると、 *pvBuffer*パラメーターには、IHV で定義された書式データが含まれているバッファーへのポインターは渡されます。
 

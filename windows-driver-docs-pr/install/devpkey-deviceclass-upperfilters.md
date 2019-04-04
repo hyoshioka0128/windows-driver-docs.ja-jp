@@ -68,11 +68,11 @@ DEVPKEY_DeviceClass_UpperFilters デバイス プロパティは、上位レベ�
 <a name="remarks"></a>コメント
 -------
 
-DEVPKEY_DeviceClass_UpperFilters の値は、クラス フィルター ドライバーのインストール時に設定されます。 クラスのフィルター ドライバーをインストールする方法の詳細については、次を参照してください。[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)と[ **INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)します。
+DEVPKEY_DeviceClass_UpperFilters の値は、クラス フィルター ドライバーのインストール時に設定されます。 クラスのフィルター ドライバーをインストールする方法の詳細については、[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)と[ **INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)を参照してください。
 
 呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するには再します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_UpperFilters プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**再**クラスのレジストリ キーの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_UpperFilters プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**再**クラスのレジストリ キーの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

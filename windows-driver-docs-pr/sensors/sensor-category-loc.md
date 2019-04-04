@@ -331,7 +331,7 @@ ms.locfileid: "57349471"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>ビュー内の各サテライト方位角を含む配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このデータ フィールドに実際には、IEEE 8 バイト実際の値としては、各値が含まれています (<strong>vt _ を付けます R8</strong>)。 空の値のプレース ホルダーとして-1 を使用します。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_ELEVATION"></span><span id="sensor_data_type_satellites_in_view_elevation"></span>
@@ -339,7 +339,7 @@ ms.locfileid: "57349471"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>ビュー内の各サテライトの昇格を含む配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このデータ フィールドに実際には、IEEE 8 バイト実際の値としては、各値が含まれています (<strong>VT_R8</strong>)。 空の値のプレース ホルダーとして-91 を使用します。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_ID"></span><span id="sensor_data_type_satellites_in_view_id"></span>
@@ -347,7 +347,7 @@ ms.locfileid: "57349471"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>ビュー内の各サテライトの ID を含む配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このデータ フィールドに実際には 4 バイト符号なし整数としての各値が含まれています (<strong>VT_UI4</strong>)。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_PRNS"></span><span id="sensor_data_type_satellites_in_view_prns"></span>
@@ -355,7 +355,7 @@ ms.locfileid: "57349471"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>サテライトの擬似ノイズ コードをビューに格納する配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このデータ フィールドに実際には 4 バイト符号なし整数としての各値が含まれています (<strong>VT_UI4</strong>)。 空の値のプレース ホルダーとしてゼロ (0) を使用します。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_USED_PRNS_AND_CONSTELLATIONS"></span><span id="sensor_data_type_satellites_used_prns_and_constellations"></span>
@@ -363,7 +363,7 @@ ms.locfileid: "57349471"
 <td><p><strong>VT_VECTOR|VT_UI2</strong></p>
 <p>ソリューションで使用されているサテライトの擬似ノイズ コードを含む配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI2</strong> (符号なし、2 バイト文字の配列)。 このデータ フィールドは 4 バイト符号なし整数としての各値を含める必要があります (<strong>VT_UI4</strong>)。 空の値のプレース ホルダーとしてゼロ (0) を使用します。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_IN_VIEW_STN_RATIO"></span><span id="sensor_data_type_satellites_in_view_stn_ratio"></span>
@@ -372,7 +372,7 @@ ms.locfileid: "57349471"
 <p>ビューで衛星の信号雑音比率を含む配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このデータ フィールドに実際には、IEEE 8 バイト実際の値としては、各値が含まれています (<strong>VT_R8</strong>)。 空の値のプレース ホルダーとしてゼロ (0) を使用します。</p>
 <p>このプロパティは、必要なすべての GPS デバイスでサポートする必要があります。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SATELLITES_USED_COUNT"></span><span id="sensor_data_type_satellites_used_count"></span>
@@ -386,7 +386,7 @@ ms.locfileid: "57349471"
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>ソリューションで使用されているサテライトの擬似ノイズ コードを含む配列をカウントします。</p>
 <p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このデータ フィールドは 4 バイト符号なし整数としての各値を含める必要があります (<strong>VT_UI4</strong>)。 空の値のプレース ホルダーとしてゼロ (0) を使用します。</p>
-<p>配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_DATA_TYPE_SPEED_KNOTS"></span><span id="sensor_data_type_speed_knots"></span>

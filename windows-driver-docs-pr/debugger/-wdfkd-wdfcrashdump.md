@@ -121,13 +121,13 @@ Listing all drivers loaded in this host process at the time of the failure:
   WUDFOsrUsbFilter
 ```
 
-上記の例では、出力には、WER レポートのイベントの種類であるエラーの種類が含まれます。 ここでは、できる**WUDFVerifierFailure**または**WUDFUnhandledException**します。 詳細については、次を参照してください。 [WER レポートでの UMDF メタデータにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff542975)します。 UMDF の出力には、イベントの種類がある場合、エラー コードが含まれます**WUDFVerifierFailure**します。
+上記の例では、出力には、WER レポートのイベントの種類であるエラーの種類が含まれます。 ここでは、できる**WUDFVerifierFailure**または**WUDFUnhandledException**します。 詳細については、[WER レポートでの UMDF メタデータにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff542975)を参照してください。 UMDF の出力には、イベントの種類がある場合、エラー コードが含まれます**WUDFVerifierFailure**します。
 
 フレームワークのエラー ログの記録を表示する、[完全メモリ ダンプ](complete-memory-dump.md)、[カーネル メモリ ダンプ](kernel-memory-dump.md)、または[ライブのカーネル モード ターゲット](live-kernel-mode-targets.md)、試すこともできます、 [**! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)拡張機能。
 
 **追加情報**
 
-実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+実行中のトレース レコーダーには、ドライバーを有効にする方法については、[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)を参照してください。 ドライバーを WDF のデバッグの詳細については、[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。 KMDF のデバッグ方法の詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

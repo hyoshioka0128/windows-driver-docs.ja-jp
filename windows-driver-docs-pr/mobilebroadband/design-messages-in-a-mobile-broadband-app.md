@@ -75,9 +75,9 @@ ms.locfileid: "57350233"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   使用[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br211837)メッセージを表示します。 詳細については、次を参照してください。[リスト ビューの追加、セマンティック ズーム、およびその他のデータ コントロール](https://msdn.microsoft.com/library/windows/apps/hh465409)します。
+-   使用[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br211837)メッセージを表示します。 詳細については、[リスト ビューの追加、セマンティック ズーム、およびその他のデータ コントロール](https://msdn.microsoft.com/library/windows/apps/hh465409)を参照してください。
 
--   表示し、メッセージを削除するには、アプリ バーのコントロールを使用します。 詳細については、次を参照してください。[アプリ バーのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465302)します。
+-   表示し、メッセージを削除するには、アプリ バーのコントロールを使用します。 詳細については、[アプリ バーのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465302)を参照してください。
 
 -   [その他の Windows コンポーネントと統合して、モバイル ブロード バンド アプリ](integrate-a-mobile-broadband-app-with-other-windows-components.md#tileandtoast)
 

@@ -23,7 +23,7 @@ ms.locfileid: "56538011"
 -   使用して、 **-x**、 **-xe**、 **-xd**、 **- xn**、または **-xi**オプション、 [ **CDB コマンドライン**](cdb-command-line-options.md)します。
 -   使用して、 **sxe**または**sxd** Tools.ini ファイル内のキーワード。
 
-例外とイベントの詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+例外とイベントの詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
  
 

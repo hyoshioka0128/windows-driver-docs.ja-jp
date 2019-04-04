@@ -51,7 +51,7 @@ ms.locfileid: "57349037"
   
 } EX_RUNDOWN_REF, *PEX_RUNDOWN_REF;</code></pre>
 <p>すべて run-down 保護ルーチンへのポインターの取得、 <strong>EX_RUNDOWN_REF</strong>最初のパラメーターとして構造体。 これらのルーチンは、このページの下部に一覧表示されます。</p>
-<p>詳細については、次を参照してください。<a href="run-down-protection.md" data-raw-source="[Run-Down Protection](run-down-protection.md)">紹介保護</a>します。</p>
+<p>詳細については、<a href="run-down-protection.md" data-raw-source="[Run-Down Protection](run-down-protection.md)">紹介保護</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 Wdm.h が含まれます。</p></td>
 </tr>
 <tr class="even">
@@ -66,27 +66,27 @@ ms.locfileid: "57349037"
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/dn265181" data-raw-source="[&lt;strong&gt;ExDeleteTimer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265181)"><strong>ExDeleteTimer</strong></a></li>
 </ul>
 <p><strong>EX_TIMER</strong>-ベースのタイマー オブジェクトは、オペレーティング システムによって作成されます。 タイマー オブジェクトをドライバーの呼び出しのようなを取得する、 <a href="https://msdn.microsoft.com/library/windows/hardware/dn265179" data-raw-source="[&lt;strong&gt;ExAllocateTimer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn265179)"> <strong>ExAllocateTimer</strong> </a>ルーチン。 呼び出すことによって、オブジェクトを削除するため、ドライバーはこのオブジェクトが不要<strong>ExDeleteTimer</strong>します。</p>
-<p>詳細については、次を参照してください。 <a href="exxxxtimer-routines-and-ex-timer-objects.md" data-raw-source="[Ex&lt;em&gt;Xxx&lt;/em&gt;Timer Routines and EX_TIMER Objects](exxxxtimer-routines-and-ex-timer-objects.md)">Ex<em>Xxx</em>タイマー ルーチンと EX_TIMER オブジェクト</a>します。</p>
+<p>詳細については、<a href="exxxxtimer-routines-and-ex-timer-objects.md" data-raw-source="[Ex&lt;em&gt;Xxx&lt;/em&gt;Timer Routines and EX_TIMER Objects](exxxxtimer-routines-and-ex-timer-objects.md)">Ex<em>Xxx</em>タイマー ルーチンと EX_TIMER オブジェクト</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>FAST_MUTEX</strong></td>
 <td><p>A <strong>FAST_MUTEX</strong>構造が高速なミュー テックスを表す非透過データ構造体。</p>
 <p>A <strong>FAST_MUTEX</strong>で構造体が初期化される、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545293" data-raw-source="[&lt;strong&gt;ExInitializeFastMutex&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545293)"> <strong>ExInitializeFastMutex</strong> </a>ルーチン。</p>
-<p>高速なミュー テックスの詳細については、次を参照してください。<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">高速なミュー テックスと保護されたミュー テックス</a>します。</p>
+<p>高速なミュー テックスの詳細については、<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">高速なミュー テックスと保護されたミュー テックス</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>IO_CSQ</strong></td>
 <td><p><strong>IO_CSQ</strong>構造体は、非透過構造体がドライバーのキャンセルの安全な IRP キュー ルーチンを指定するために使用します。 この構造体のメンバーを直接設定しないでください。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff549054" data-raw-source="[&lt;strong&gt;IoCsqInitialize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549054)"> <strong>IoCsqInitialize</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff549060" data-raw-source="[&lt;strong&gt;IoCsqInitializeEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549060)"> <strong>IoCsqInitializeEx</strong> </a>この構造体を初期化します。</p>
-<p>キャンセルの安全な IRP のキューを使用する方法の概要については、次を参照してください。<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセル セーフ IRP キュー</a>します。</p>
+<p>キャンセルの安全な IRP のキューを使用する方法の概要については、<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセル セーフ IRP キュー</a>を参照してください。</p>
 <p>Microsoft Windows XP および Windows オペレーティング システムの以降のバージョンで使用できます。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>IO_CSQ_IRP_CONTEXT</strong></td>
 <td><p><strong>IO_CSQ_IRP_CONTEXT</strong>構造体は、非透過的なデータ構造をドライバーのキャンセルの安全な IRP のキューに IRP の IRP コンテキストを指定するために使用します。 キーとして使用されて、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff549066" data-raw-source="[&lt;strong&gt;IoCsqInsertIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549066)"> <strong>IoCsqInsertIrp</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff549067" data-raw-source="[&lt;strong&gt;IoCsqInsertIrpEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549067)"> <strong>IoCsqInsertIrpEx</strong></a>、および<a href="https://msdn.microsoft.com/library/windows/hardware/ff549070" data-raw-source="[&lt;strong&gt;IoCsqRemoveIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549070)"> <strong>IoCsqRemoveIrp</strong> </a>ルーチンは、キュー内の特定の Irp を識別するためにします。</p>
-<p>キャンセルの安全な IRP のキューを使用する方法の概要については、次を参照してください。<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセル セーフ IRP キュー</a>します。</p>
+<p>キャンセルの安全な IRP のキューを使用する方法の概要については、<a href="cancel-safe-irp-queues.md" data-raw-source="[Cancel-Safe IRP Queues](cancel-safe-irp-queues.md)">キャンセル セーフ IRP キュー</a>を参照してください。</p>
 <p>Microsoft Windows XP および Windows オペレーティング システムの以降のバージョンで使用できます。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
@@ -95,7 +95,7 @@ ms.locfileid: "57349037"
 <td><p><strong>IO_WORKITEM</strong>構造は、システムのワーカー スレッドの作業項目を記述するための非透過構造体。</p>
 <p>ドライバーは、呼び出すことによって、作業項目を割り当てることができます<a href="https://msdn.microsoft.com/library/windows/hardware/ff548276" data-raw-source="[&lt;strong&gt;IoAllocateWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548276)"> <strong>IoAllocateWorkItem</strong></a>します。 または、ドライバーが、独自のバッファーを割り当てることができますを呼び出して<a href="https://msdn.microsoft.com/library/windows/hardware/ff549349" data-raw-source="[&lt;strong&gt;IoInitializeWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549349)"> <strong>IoInitializeWorkItem</strong> </a>を作業項目としては、そのバッファーを初期化します。</p>
 <p>任意の作業項目が割り当てられる<strong>IoAllocateWorkItem</strong>によって解放する必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff549133" data-raw-source="[&lt;strong&gt;IoFreeWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549133)"> <strong>IoFreeWorkItem</strong></a>します。 初期化されているメモリ<strong>IoInitializeWorkItem</strong>で初期化する必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff550392" data-raw-source="[&lt;strong&gt;IoUninitializeWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550392)"> <strong>IoUninitializeWorkItem</strong> </a>解放できる前にします。</p>
-<p>作業項目の詳細については、次を参照してください。<a href="system-worker-threads.md" data-raw-source="[System Worker Threads](system-worker-threads.md)">システム ワーカー スレッド</a>します。</p>
+<p>作業項目の詳細については、<a href="system-worker-threads.md" data-raw-source="[System Worker Threads](system-worker-threads.md)">システム ワーカー スレッド</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="odd">
@@ -129,7 +129,7 @@ ms.locfileid: "57349037"
 <td><p><strong>KGUARDED_MUTEX</strong>構造体は、保護されたミュー テックスを表す非透過構造体。</p>
 <p>使用<strong>KeInitializeGuardedMutex</strong>初期化するために、 <strong>KGUARDED_MUTEX</strong>として保護されたミュー テックス構造体。</p>
 <p>保護されたミュー テックスは、非ページ プールから割り当てる必要があります。</p>
-<p>保護されたミュー テックスの詳細については、次を参照してください。<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">ミュー テックスを高速と保護されたミュー テックス</a>します。</p>
+<p>保護されたミュー テックスの詳細については、<a href="fast-mutexes-and-guarded-mutexes.md" data-raw-source="[Fast Mutexes and Guarded Mutexes](fast-mutexes-and-guarded-mutexes.md)">ミュー テックスを高速と保護されたミュー テックス</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="even">
@@ -141,12 +141,12 @@ ms.locfileid: "57349037"
 <tr class="odd">
 <td><strong>KLOCK_QUEUE_HANDLE</strong></td>
 <td><p><strong>KLOCK_QUEUE_HANDLE</strong>構造体は、非透過構造体をキューに置かれたスピン ロックについて説明します。 ドライバーを割り当てます、 <strong>KLOCK_QUEUE_HANDLE</strong>構造体、およびそれを<a href="https://msdn.microsoft.com/library/windows/hardware/ff551899" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551899)"> <strong>KeAcquireInStackQueuedSpinLock</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff551908" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLockAtDpcLevel&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551908)"> <strong>KeAcquireInStackQueuedSpinLockAtDpcLevel</strong> </a>キューに置かれたスピン ロックを取得します。 これらのルーチンでは、キューに置かれたスピン ロックを表す構造体を初期化します。 ドライバーは、構造体を渡します<a href="https://msdn.microsoft.com/library/windows/hardware/ff553130" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553130)"> <strong>KeReleaseInStackQueuedSpinLock</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff553137" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLockFromDpcLevel&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553137)"> <strong>KeReleaseInStackQueuedSpinLockFromDpcLevel</strong> </a>ときに、スピン ロックを解放します。</p>
-<p>詳細については、次を参照してください。<a href="queued-spin-locks.md" data-raw-source="[Queued Spin Locks](queued-spin-locks.md)">スピン ロックをキューに置かれた</a>します。</p>
+<p>詳細については、<a href="queued-spin-locks.md" data-raw-source="[Queued Spin Locks](queued-spin-locks.md)">スピン ロックをキューに置かれた</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>KTIMER</strong></td>
-<td><p><strong>KTIMER</strong>構造体は、タイマー オブジェクトを表す非透過構造体。 この構造体のメンバーを直接設定しないでください。 詳細については、次を参照してください。<a href="timer-objects-and-dpcs.md" data-raw-source="[Timer Objects and DPCs](timer-objects-and-dpcs.md)">タイマー オブジェクトと Dpc</a>します。</p>
+<td><p><strong>KTIMER</strong>構造体は、タイマー オブジェクトを表す非透過構造体。 この構造体のメンバーを直接設定しないでください。 詳細については、<a href="timer-objects-and-dpcs.md" data-raw-source="[Timer Objects and DPCs](timer-objects-and-dpcs.md)">タイマー オブジェクトと Dpc</a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="odd">
@@ -158,7 +158,7 @@ ms.locfileid: "57349037"
 <p>ルック アサイド リストのシステム割り当てルーチンと、これによって、呼び出しの数を減らす、ドライバーがローカルで管理できる固定サイズ バッファー プールは、パフォーマンスが向上します。 バッファーが均一のサイズ、ルック アサイド リストのエントリとして格納されます。</p>
 <p>ドライバーを扱う必要があります、 <strong>LOOKASIDE_LIST_EX</strong>不透明として構造体します。 ドライバーまたは構造体のメンバーへのアクセスに、これらのメンバーの場所にある依存関係があることには、移植性とその他のドライバーと相互運用されない可能性があります。</p>
 <p>次の「参照」セクションにには、この構造を使用するルーチン一覧が含まれていますいます。</p>
-<p>ルック アサイド リストの詳細については、次を参照してください。<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>します。</p>
+<p>ルック アサイド リストの詳細については、<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>を参照してください。</p>
 <p>64 ビットのプラットフォームでは、16 バイトでアラインがこの構造体にあります。</p>
 <p>Windows Vista 以降でサポートされています。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
@@ -168,14 +168,14 @@ ms.locfileid: "57349037"
 <td><p><strong>NPAGED_LOOKASIDE_LIST</strong>構造は、非ページ プールから割り当てられる固定サイズ バッファーのルック アサイド リストを記述するための非透過構造体。 システムでは、新しいエントリを作成し、必要に応じて、一覧に含まれる未使用エントリを破棄します。 固定サイズ バッファー、ルック アサイド リストを使用しては直接メモリの割り当てよりも高速です。</p>
 <p>使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff545301" data-raw-source="[&lt;strong&gt;ExInitializeNPagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545301)"> <strong>ExInitializeNPagedLookasideList</strong> </a>ルック アサイド リストを初期化します。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff544388" data-raw-source="[&lt;strong&gt;ExAllocateFromNPagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544388)"> <strong>ExAllocateFromNPagedLookasideList</strong> </a>リストから、バッファーを割り当て、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544601" data-raw-source="[&lt;strong&gt;ExFreeToNPagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544601)"> <strong>ExFreeToNPagedLookasideList</strong> </a>を返す、一覧にバッファー。</p>
 <p>ドライバーでは、アンロードの前に作成する任意のルック アサイド リストを常に明示的に解放する必要があります。 それ以外の場合に実行する場合は、重大なプログラミング エラーになります。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff544566" data-raw-source="[&lt;strong&gt;ExDeleteNPagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544566)"> <strong>ExDeleteNPagedLookasideList</strong> </a>リストを解放します。</p>
-<p>ドライバーのページ プール ルック アサイド リストにも使用できます。 Windows 2000 以降、 <strong>PAGED_LOOKASIDE_LIST</strong>構造体には、ページ バッファを含むルック アサイド リストがについて説明します。 以降、Windows Vista では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、非ページや段組のバッファーを含むルック アサイド リストを記述できます。 詳細については、次を参照してください。<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>します。</p>
+<p>ドライバーのページ プール ルック アサイド リストにも使用できます。 Windows 2000 以降、 <strong>PAGED_LOOKASIDE_LIST</strong>構造体には、ページ バッファを含むルック アサイド リストがについて説明します。 以降、Windows Vista では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、非ページや段組のバッファーを含むルック アサイド リストを記述できます。 詳細については、<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>を参照してください。</p>
 <p>64 ビットのプラットフォームでは、16 バイトでアラインがこの構造体にあります。</p>
 <p>Windows 2000 以降をサポートします。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>OBJECT_TYPE</strong></td>
-<td><p><strong>OBJECT_TYPE</strong>はハンドルのオブジェクトの種類を指定するための非透過構造体。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff558679" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558679)"> <strong>ObReferenceObjectByHandle</strong></a>します。</p>
+<td><p><strong>OBJECT_TYPE</strong>はハンドルのオブジェクトの種類を指定するための非透過構造体。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff558679" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558679)"> <strong>ObReferenceObjectByHandle</strong></a>を参照してください。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>
 <tr class="even">
@@ -183,7 +183,7 @@ ms.locfileid: "57349037"
 <td><p><strong>PAGED_LOOKASIDE_LIST</strong>構造は、ページ プールから割り当てられる固定サイズ バッファーのルック アサイド リストを記述するための非透過構造体。 システムでは、新しいエントリを作成し、必要に応じて、一覧に含まれる未使用エントリを破棄します。 固定サイズ バッファー、ルック アサイド リストを使用しては直接メモリの割り当てよりも高速です。</p>
 <p>使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff545309" data-raw-source="[&lt;strong&gt;ExInitializePagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545309)"> <strong>ExInitializePagedLookasideList</strong> </a>ルック アサイド リストを初期化します。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff544393" data-raw-source="[&lt;strong&gt;ExAllocateFromPagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544393)"> <strong>ExAllocateFromPagedLookasideList</strong> </a>リストから、バッファーを割り当て、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544605" data-raw-source="[&lt;strong&gt;ExFreeToPagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544605)"> <strong>ExFreeToPagedLookasideList</strong> </a>を返す、一覧にバッファー。</p>
 <p>ドライバーでは、アンロードの前に作成する任意のルック アサイド リストを常に明示的に解放する必要があります。 それ以外の場合に実行する場合は、重大なプログラミング エラーになります。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff544570" data-raw-source="[&lt;strong&gt;ExDeletePagedLookasideList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544570)"> <strong>ExDeletePagedLookasideList</strong> </a>リストを解放します。</p>
-<p>ドライバーの非ページ プール ルック アサイド リストにも使用できます。 Windows 2000 以降、 <strong>NPAGED_LOOKASIDE_LIST</strong>構造体には、非ページのバッファーを含むルック アサイド リストがについて説明します。 以降、Windows Vista では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、非ページや段組のバッファーを含むルック アサイド リストを記述できます。 詳細については、次を参照してください。<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>します。</p>
+<p>ドライバーの非ページ プール ルック アサイド リストにも使用できます。 Windows 2000 以降、 <strong>NPAGED_LOOKASIDE_LIST</strong>構造体には、非ページのバッファーを含むルック アサイド リストがについて説明します。 以降、Windows Vista では、 <strong>LOOKASIDE_LIST_EX</strong>構造体は、非ページや段組のバッファーを含むルック アサイド リストを記述できます。 詳細については、<a href="using-lookaside-lists.md" data-raw-source="[Using Lookaside Lists](using-lookaside-lists.md)">ルック アサイド リストを使用した</a>を参照してください。</p>
 <p>64 ビットのプラットフォームでは、16 バイトでアラインがこの構造体にあります。</p>
 <p>Windows 2000 以降をサポートします。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
@@ -216,7 +216,7 @@ ms.locfileid: "57349037"
 </tr>
 <tr class="even">
 <td><strong>SLIST_HEADER</strong></td>
-<td><p><strong>SLIST_HEADER</strong>構造は、シーケンス処理されたシングル リンク リストのヘッダーとして機能するための非透過構造体。 詳細については、次を参照してください。<a href="singly-and-doubly-linked-lists.md" data-raw-source="[Singly and Doubly Linked Lists](singly-and-doubly-linked-lists.md)">リンクされたリストの片方向と双方向</a>します。</p>
+<td><p><strong>SLIST_HEADER</strong>構造は、シーケンス処理されたシングル リンク リストのヘッダーとして機能するための非透過構造体。 詳細については、<a href="singly-and-doubly-linked-lists.md" data-raw-source="[Singly and Doubly Linked Lists](singly-and-doubly-linked-lists.md)">リンクされたリストの片方向と双方向</a>を参照してください。</p>
 <p>64 ビットのプラットフォームで<strong>SLIST_HEADER</strong>構造体は 16 バイトでアラインである必要があります。</p>
 <p>ヘッダー:Wdm.h します。 次のとおりWdm.h、Ntddk.h、Ntifs.h します。</p></td>
 </tr>

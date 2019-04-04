@@ -290,7 +290,7 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 LogConfig=LogConfigSection
 ...
 </pre>
-ディレクティブは非推奨する INF の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547388">INF ディレクティブ</a>します。</td>
+ディレクティブは非推奨する INF の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff547388">INF ディレクティブ</a>を参照してください。</td>
 </tr>
 <tr>
 <td><strong>2223:セクションは、アーキテクチャの装飾である必要があります。</strong></td>

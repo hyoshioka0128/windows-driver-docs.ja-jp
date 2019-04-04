@@ -50,9 +50,9 @@ NTSTATUS
 
 Miniclass ドライバーでは、放電中極度に少なくなったバッテリを報告する必要があります (バッテリ\_重大] および [バッテリ\_DISCHARGING) まで、条件が変動は一時的なものだけでないしが他のすべての不足を確認には状況を解決の手段です。 Miniclass ドライバーがこれを行う場合、または別のバッテリを AC 電源への切り替えが、このような解決策になどがあります。
 
-Miniclass ドライバー報告すると、非常に少ない中、放電バッテリ電源マネージャーでは、バッテリ障害が近づいていること前提としています。 バッテリは、システムの電源を提供またはセカンダリ (充電) セルは、システムは、重要なバッテリの DC 電源ポリシーを実行します。 電源ポリシーの詳細では、ハードウェアの機能、アプリケーションの設定、およびユーザー設定によって、システムが異なります。 通常、システムがスリープ状態または電源オフ、コンピューターを入力しようとします。 詳細については、次を参照してください。[システム電源ポリシー](https://msdn.microsoft.com/library/windows/hardware/ff564559)します。
+Miniclass ドライバー報告すると、非常に少ない中、放電バッテリ電源マネージャーでは、バッテリ障害が近づいていること前提としています。 バッテリは、システムの電源を提供またはセカンダリ (充電) セルは、システムは、重要なバッテリの DC 電源ポリシーを実行します。 電源ポリシーの詳細では、ハードウェアの機能、アプリケーションの設定、およびユーザー設定によって、システムが異なります。 通常、システムがスリープ状態または電源オフ、コンピューターを入力しようとします。 詳細については、[システム電源ポリシー](https://msdn.microsoft.com/library/windows/hardware/ff564559)を参照してください。
 
-クラス ドライバーの[ **BatteryClassStatusNotify** ](https://msdn.microsoft.com/library/windows/hardware/ff536269)ルーチンと miniclass ドライバーの[ *BatteryMiniQueryStatus*](https://msdn.microsoft.com/library/windows/hardware/ff536274)、 [ *BatteryMiniSetStatusNotify*](https://msdn.microsoft.com/library/windows/hardware/ff536277)、および[ *BatteryMiniDisableStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536272)ルーチンは、2 つのドライバーでシーケンスで使用されますタイムリーなステータス情報を提供します。 詳細については、次を参照してください。[相互作用のバッテリの状態と通知ルーチン](interaction-of-battery-status-and-notification-routines.md)します。
+クラス ドライバーの[ **BatteryClassStatusNotify** ](https://msdn.microsoft.com/library/windows/hardware/ff536269)ルーチンと miniclass ドライバーの[ *BatteryMiniQueryStatus*](https://msdn.microsoft.com/library/windows/hardware/ff536274)、 [ *BatteryMiniSetStatusNotify*](https://msdn.microsoft.com/library/windows/hardware/ff536277)、および[ *BatteryMiniDisableStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536272)ルーチンは、2 つのドライバーでシーケンスで使用されますタイムリーなステータス情報を提供します。 詳細については、[相互作用のバッテリの状態と通知ルーチン](interaction-of-battery-status-and-notification-routines.md)を参照してください。
 
  
 

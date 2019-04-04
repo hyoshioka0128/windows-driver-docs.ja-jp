@@ -66,7 +66,7 @@ ObjectWWN で示されるポートの状態のクエリを実行するドメイ�
 応答バッファーの最大サイズ。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SendRPL の HBAStatus メンバー\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SendRPL の HBAStatus メンバー\_構造体。
 
 *TotalRespBufferSize*   
 RPS コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalRespBufferSize メンバー\_SendRPS\_構造体。

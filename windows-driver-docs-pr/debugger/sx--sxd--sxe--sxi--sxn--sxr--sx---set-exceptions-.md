@@ -50,10 +50,10 @@ sxr
 現在の基数でのコマンドの処理、例外番号を指定します。
 
 <span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span> *イベント*   
-コマンドが機能するイベントを指定します。 これらのイベントは、短い省略名によって識別されます。 イベントの一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+コマンドが機能するイベントを指定します。 これらのイベントは、短い省略名によって識別されます。 イベントの一覧は、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
 <span id="______________"></span> **\\***   
-それ以外の場合に明示的に名前のないのすべての例外の影響を与える**sx**します。 明示的に名前付きの例外の一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+それ以外の場合に明示的に名前のないのすべての例外の影響を与える**sx**します。 明示的に名前付きの例外の一覧は、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -82,7 +82,7 @@ sxr
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断状態と処理の状態、すべてのイベント コードの説明については、すべてのイベントの既定の状態の一覧と、この状態を制御するその他の方法の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+中断状態と処理の状態、すべてのイベント コードの説明については、すべてのイベントの既定の状態の一覧と、この状態を制御するその他の方法の詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

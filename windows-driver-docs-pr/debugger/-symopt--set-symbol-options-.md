@@ -69,7 +69,7 @@ ms.locfileid: "56559008"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リストと各シンボル オプションや、ビット フラグを設定してこれらのオプションをオフにすると、他の方法の説明では、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
+リストと各シンボル オプションや、ビット フラグを設定してこれらのオプションをオフにすると、他の方法の説明では、[シンボル オプションを設定](symbol-options.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

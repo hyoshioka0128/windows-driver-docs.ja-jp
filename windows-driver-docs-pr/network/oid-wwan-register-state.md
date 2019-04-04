@@ -24,7 +24,7 @@ OID\_WWAN\_登録\_状態を登録するネットワーク プロバイダーを
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 登録操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)します。
+詳細については、この OID を使用して、[WWAN 登録操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)を参照してください。
 
 ミニポート ドライバーは、処理するときに、プロバイダーのネットワークにアクセスできるクエリまたはの集合演算、Subscriber Identity Module (SIM カード) にアクセスしないでください。
 

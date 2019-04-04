@@ -29,7 +29,7 @@ ms.locfileid: "56561067"
 
 -   フレームワークは、バス ドライバーの[ *EvtDeviceResourcesQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540895)と[ *EvtDeviceResourceRequirementsQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540894)コールバックデバイスを必要とするシステムのハードウェア リソースを特定する関数。
 
-KMDF バス ドライバーの電源投入シーケンスの詳細については、次を参照してください。[バス ドライバーの電源投入シーケンス](power-up-sequence-for-a-bus-driver.md)します。
+KMDF バス ドライバーの電源投入シーケンスの詳細については、[バス ドライバーの電源投入シーケンス](power-up-sequence-for-a-bus-driver.md)を参照してください。
 
 次に、PnP マネージャーでは、デバイスが必要とする追加のドライバー (関数ドライバーおよびフィルター ドライバー) を決定します。 PnP マネージャーがそれらを読み込み、呼び出しをこれらのドライバーが既に読み込まれていない場合、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチン。 各関数またはフィルター ドライバーは、次の操作が行われます。
 

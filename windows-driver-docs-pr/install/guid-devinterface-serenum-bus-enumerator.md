@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR[デバイス インターフェイス �
 
 WDK には、シリアル列挙子のサンプルが含まれています。 [serenum](https://msdn.microsoft.com/library/windows/hardware/ff546505)します。 Serenum サンプルが古い形式の識別子を使用して[ **GUID_SERENUM_BUS_ENUMERATOR** ](guid-serenum-bus-enumerator.md)をこのデバイスのインターフェイス クラスのインスタンスを登録します。 Serenum サンプルが記載されています、 *src\\カーネル*WDK のディレクトリ。
 
-シリアル デバイスとドライバーについては、次を参照してください。[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
+シリアル デバイスとドライバーについては、[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)を参照してください。
 
-シリアル ポートのデバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)します。
+シリアル ポートのデバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

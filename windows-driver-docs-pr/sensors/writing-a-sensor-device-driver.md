@@ -14,7 +14,7 @@ ms.locfileid: "56550174"
 # <a name="writing-a-sensor-device-driver"></a>センサー デバイス ドライバーを作成
 
 
-ユーザー モード ドライバー フレームワーク (UMDF) のセンサー デバイス ドライバーをビルドするため、まずこのフレームワークについて理解しておく必要があります。 UMDF の詳細については、次を参照してください。 [UMDF 概要](https://msdn.microsoft.com/library/windows/hardware/ff554928)します。
+ユーザー モード ドライバー フレームワーク (UMDF) のセンサー デバイス ドライバーをビルドするため、まずこのフレームワークについて理解しておく必要があります。 UMDF の詳細については、[UMDF 概要](https://msdn.microsoft.com/library/windows/hardware/ff554928)を参照してください。
 
 このセクションの内容
 

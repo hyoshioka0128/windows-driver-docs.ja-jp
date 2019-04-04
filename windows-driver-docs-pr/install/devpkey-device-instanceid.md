@@ -60,7 +60,7 @@ DEVPKEY_Device_InstanceId の値が、デバイスのインスタンスのイン
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)デバイス インスタンスの DEVPKEY_Device_InstanceId の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_InstanceId プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインスタンス識別子を取得する方法については、次を参照してください。[デバイス インスタンス Id を取得する](https://msdn.microsoft.com/library/windows/hardware/ff549863)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_InstanceId プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインスタンス識別子を取得する方法については、[デバイス インスタンス Id を取得する](https://msdn.microsoft.com/library/windows/hardware/ff549863)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

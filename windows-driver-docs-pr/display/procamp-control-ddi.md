@@ -19,7 +19,7 @@ ms.locfileid: "56573747"
 
 ビデオの混在レンダラー (VMR) が ProcAmp コントロールの機能にアクセスできるように、ディスプレイ ドライバーが実装する必要があります、[補正コールバック関数のモーション](https://msdn.microsoft.com/library/windows/hardware/ff568441)します。
 
-ドライバーの開発を簡略化するのには、動き補正コード テンプレートを使用し、このセクションでは ProcAmp コントロール関数を実装します。 関数は、インター コンテナー デバイスまたはデバイスの ProcAmp コントロール クラスのメンバー関数です。 詳細については、次を参照してください。[インター レースを解除するコンテナー デバイス クラスを定義する](https://msdn.microsoft.com/library/windows/hardware/ff552682)と[ProcAmp コントロール デバイス クラスを定義する](https://msdn.microsoft.com/library/windows/hardware/ff552686)します。
+ドライバーの開発を簡略化するのには、動き補正コード テンプレートを使用し、このセクションでは ProcAmp コントロール関数を実装します。 関数は、インター コンテナー デバイスまたはデバイスの ProcAmp コントロール クラスのメンバー関数です。 詳細については、[インター レースを解除するコンテナー デバイス クラスを定義する](https://msdn.microsoft.com/library/windows/hardware/ff552682)と[ProcAmp コントロール デバイス クラスを定義する](https://msdn.microsoft.com/library/windows/hardware/ff552686)を参照してください。
 
  
 

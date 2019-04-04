@@ -52,7 +52,7 @@ ms.locfileid: "56552704"
 
 呼び出す**DiInstallDriver**または[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)デバイス用の新しいドライバーをインストールするインストール アプリケーションの最も簡単な方法です。 **DiInstallDriver**と**UpdateDriverForPlugAndPlayDevices**同じ基本的なインストール操作を実行します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
 
-既定では、 **DiInstallDriver**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。 Windows デバイスのドライバーを選択する方法については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
+既定では、 **DiInstallDriver**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。 Windows デバイスのドライバーを選択する方法については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
 
 呼び出し元が呼び出すことができますも**DiInstallDriver**以下を実行します。
 

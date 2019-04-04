@@ -18,11 +18,11 @@ MB のミニポート ドライバーを作成するには、次の手順を実�
 
 -   **手順 1**:Windows アーキテクチャとミニポート ドライバーについて説明します。
 
-    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基礎を知ることに役立つ適切な設計上の決定を行い、開発プロセスを効率化することができます。 ドライバーの基礎の詳細については、次を参照してください。[ドライバー開発者向けのすべての概念](https://msdn.microsoft.com/library/windows/hardware/ff554731)します。
+    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基礎を知ることに役立つ適切な設計上の決定を行い、開発プロセスを効率化することができます。 ドライバーの基礎の詳細については、[ドライバー開発者向けのすべての概念](https://msdn.microsoft.com/library/windows/hardware/ff554731)を参照してください。
 
 -   **手順 2**:MB のミニポート ドライバーの基礎について説明します。
 
-    MB のミニポート ドライバーが Windows 7 および Windows の以降のバージョンではサポートされているし、に準拠している、 *NDIS 6.20 が動作仕様*します。 行う必要があります、ミニポート ドライバー設計の決定については、次を参照してください。 [NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)します。
+    MB のミニポート ドライバーが Windows 7 および Windows の以降のバージョンではサポートされているし、に準拠している、 *NDIS 6.20 が動作仕様*します。 行う必要があります、ミニポート ドライバー設計の決定については、[NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)を参照してください。
 
 -   **手順 3**:その他の Windows ドライバー設計の決定を確認します。
 
@@ -34,19 +34,19 @@ MB のミニポート ドライバーを作成するには、次の手順を実�
 
 -   **手順 5**:MB ミニポート ドライバーに関する設計上の決定を行います。
 
-    詳細については、次を参照してください。 [MB インターフェイスの概要](mb-interface-overview.md)します。 説明を確認して、モバイル ブロード バンドのミニポート ドライバーを開発する方法についても、[モバイル ブロード バンド ドライバー開発](https://go.microsoft.com/fwlink/p/?linkid=144416)ホワイト ペーパー。
+    詳細については、[MB インターフェイスの概要](mb-interface-overview.md)を参照してください。 説明を確認して、モバイル ブロード バンドのミニポート ドライバーを開発する方法についても、[モバイル ブロード バンド ドライバー開発](https://go.microsoft.com/fwlink/p/?linkid=144416)ホワイト ペーパー。
 
 -   **手順 6**:開発、ビルド、テスト、および MB ミニポート ドライバーをデバッグします。
 
-    反復的なビルド、テスト、およびデバッグについては、次を参照してください。[概要のビルド、デバッグ、およびテスト プロセス](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)します。 このプロセスに役立つ、動作するミニポート ドライバーをビルドすることを確認します。
+    反復的なビルド、テスト、およびデバッグについては、[概要のビルド、デバッグ、およびテスト プロセス](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)を参照してください。 このプロセスに役立つ、動作するミニポート ドライバーをビルドすることを確認します。
 
 -   **手順 7**:MB ミニポート ドライバーのドライバー パッケージを作成します。
 
-    詳細については、次を参照してください。[ドライバー パッケージを提供する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
+    詳細については、[ドライバー パッケージを提供する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)を参照してください。
 
 -   **手順 8**:サインインし、MB、ミニポート ドライバーを配布します。
 
-    最後の手順では、(省略可能) 署名し、ミニポート ドライバーを配布します。 ミニポート ドライバーが定義されている品質基準を満たしているかどうか、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)、Microsoft Windows 更新プログラムを通じて配布できます。 ドライバーを配布する方法の詳細については、次を参照してください。[ドライバーを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
+    最後の手順では、(省略可能) 署名し、ミニポート ドライバーを配布します。 ミニポート ドライバーが定義されている品質基準を満たしているかどうか、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)、Microsoft Windows 更新プログラムを通じて配布できます。 ドライバーを配布する方法の詳細については、[ドライバーを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)を参照してください。
 
 これらは、基本的な手順です。 追加の手順は、個々 のミニポート ドライバーのニーズに基づいて、必要でにあります。
 

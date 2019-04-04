@@ -65,7 +65,7 @@ NDIS ミニポート ドライバーを呼び出すことも[ *MiniportCoOidRequ
 
 [*MiniportCoOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559362)は、NIC の現在のアドレスを決定するメディア固有の OID を照会することもできます。
 
-詳細については、次を参照してください。 [Connection-Oriented 呼び出す管理者とクライアントの Oid](https://msdn.microsoft.com/library/windows/hardware/ff569067)と[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。
+詳細については、[Connection-Oriented 呼び出す管理者とクライアントの Oid](https://msdn.microsoft.com/library/windows/hardware/ff569067)と[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)を参照してください。
 
  
 

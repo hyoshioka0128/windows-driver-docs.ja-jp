@@ -35,7 +35,7 @@ WSK アプリケーションが使用する IRP、WSK を呼び出すために�
 
 -   WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーに渡された IRP を使用する場合に設定する必要があります、 **IoCompletion**その必要がある場合にのみ、WSK 関数を呼び出す前に IRP の日常的な通知を受け取るときに、操作実行、WSK によって関数が完了します。 WSK アプリケーションが設定されていない場合、 **IoCompletion** IRP の日常的な IRP が完了したときに IRP が渡すことがより高いレベルのドライバーへのバックアップまたは IRP の完了の通常の処理に従って I/O マネージャーにします。 WSK アプリケーションが設定されている場合、 **IoCompletion** 、IRP の日常的な**IoCompletion**ルーチンが状態を返せるか\_成功または状態\_詳細\_処理\_必要な作業です。 場合、 **IoCompletion**ルーチンがステータスを返します\_成功すると、IRP の完了処理は、通常どおり続行されます。 場合、 **IoCompletion**ルーチンがステータスを返します\_詳細\_処理\_必要に応じて、WSK アプリケーションする必要があります、IRP 呼び出して完了[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) WSK 関数によって実行された操作の結果の処理が完了した後。 WSK アプリケーションより高いレベルのドライバーまたは I/O マネージャーに渡された IRP が解放しない必要があります。
 
-**注**  WSK アプリケーションが設定されている場合、 **IoCompletion**より高いレベルのドライバーをするか、I/O マネージャーをして渡された IRP の日常的な**IoCompletion**ルーチンを確認する必要があります、 **PendingReturned** IRP と呼び出しのメンバー、 [ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)関数の場合、 **PendingReturned**メンバーが**TRUE**します。 詳細については、次を参照してください。 [、IoCompletion ルーチンを実装する](https://msdn.microsoft.com/library/windows/hardware/ff547084)します。
+**注**  WSK アプリケーションが設定されている場合、 **IoCompletion**より高いレベルのドライバーをするか、I/O マネージャーをして渡された IRP の日常的な**IoCompletion**ルーチンを確認する必要があります、 **PendingReturned** IRP と呼び出しのメンバー、 [ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)関数の場合、 **PendingReturned**メンバーが**TRUE**します。 詳細については、[、IoCompletion ルーチンを実装する](https://msdn.microsoft.com/library/windows/hardware/ff547084)を参照してください。
 
  
 
@@ -238,7 +238,7 @@ NTSTATUS
 }
 ```
 
-Irp の使用に関する詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
+Irp の使用に関する詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)を参照してください。
 
  
 

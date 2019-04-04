@@ -49,7 +49,7 @@ var outputLines = ctl.ExecuteCommand("u");
 
 [デバッガーのデータ モデルの設計に関する考慮事項](#design-considerations)
 
-JavaScript の使用方法の概要については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。 デバッガー オブジェクトを使用する JavaScript の例を参照してください。 [JavaScript デバッガーの使用例のスクリプト](javascript-debugger-example-scripts.md)します。 設定オブジェクトの操作については、次を参照してください。 [ **.settings (デバッグ設定の設定)**](-settings--set-debug-settings-.md)します。
+JavaScript の使用方法の概要については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。 デバッガー オブジェクトを使用する JavaScript の例を参照してください。 [JavaScript デバッガーの使用例のスクリプト](javascript-debugger-example-scripts.md)します。 設定オブジェクトの操作については、[ **.settings (デバッグ設定の設定)**](-settings--set-debug-settings-.md)を参照してください。
 
 デバッガー セッションで使用できるオブジェクトを調べるを使用して、 [ **dx (表示 NatVis 式)** ](dx--display-visualizer-variables-.md)コマンド。 たとえば、この dx コマンドを使用して最上位レベル デバッガー オブジェクトの一部を表示できます。
 
@@ -1064,7 +1064,7 @@ class myNativeModel
 -   ntsd リモコン
 -   ntsd-d リモコン
 
-詳細については、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)と[**プロセス サーバーをアクティブ化する**](activating-a-process-server.md)します。
+詳細については、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)と[**プロセス サーバーをアクティブ化する**](activating-a-process-server.md)を参照してください。
 
 **回帰テスト**
 

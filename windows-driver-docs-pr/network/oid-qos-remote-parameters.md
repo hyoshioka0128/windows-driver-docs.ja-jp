@@ -34,7 +34,7 @@ NDIS を返します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.micro
 
 -   ミニポート ドライバーを発行していない場合、 [ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)状態の表示NDIS を返します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)すべてのメンバーを含む構造体 (例外として、**ヘッダー**メンバー) は、0 に設定します。
 
-リモートの NDIS QoS パラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)します。
+リモートの NDIS QoS パラメーターの詳細については、[NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

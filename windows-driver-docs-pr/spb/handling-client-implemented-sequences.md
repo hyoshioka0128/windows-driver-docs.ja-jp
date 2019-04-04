@@ -18,7 +18,7 @@ ms.locfileid: "56550607"
 
 クライアントは、一連の単純な転送要求としての I/O 転送シーケンスを実行できます (つまり、 [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)要求)。 シーケンスの最初の転送は続く必要があります、 **IOCTL\_SPB\_ロック\_コント ローラー**要求-この要求に指示 SPB のコント ローラー ドライバー、バスの I/O の中にロックをシーケンスを転送します。 最後の転送は続く必要があります、 **IOCTL\_SPB\_UNLOCK\_コント ローラー**要求は、ドライバー、バスのロックを解除するように指示します。 この種類の I/O 転送シーケンスが呼び出されます、[クライアントで実装されたシーケンス](https://msdn.microsoft.com/library/windows/hardware/hh450890#buses-client-implemented-sequences)から区別するために、[単一要求シーケンス](https://msdn.microsoft.com/library/windows/hardware/hh450890#buses-single-request-sequences)、使用、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求の代わりに**IOCTL\_SPB\_ロック\_コント ローラー**と**IOCTL\_SPB\_UNLOCK\_コント ローラー**要求。
 
-周辺機器のデバイスのドライバー、バスにロックをかけて、バス コント ローラー、バスのない他の周辺機器へのアクセスを使用できます。 バス ロック操作の詳細については、バスの種類によって異なります。 I²C コント ローラーでは、転送の方向 (読み取り後に、書き込み、またはその逆) に変更を I²C 再起動操作が必要です。 SPI コント ローラーでは、ターゲット デバイスにチップ選択する必要がありますままアサートされたコント ローラーのロックが有効になります。 詳細については、次を参照してください。 [Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)します。
+周辺機器のデバイスのドライバー、バスにロックをかけて、バス コント ローラー、バスのない他の周辺機器へのアクセスを使用できます。 バス ロック操作の詳細については、バスの種類によって異なります。 I²C コント ローラーでは、転送の方向 (読み取り後に、書き込み、またはその逆) に変更を I²C 再起動操作が必要です。 SPI コント ローラーでは、ターゲット デバイスにチップ選択する必要がありますままアサートされたコント ローラーのロックが有効になります。 詳細については、[Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)を参照してください。
 
 転送のクライアントで実装されたシーケンスのサポートは、省略可能です。 SPB コント ローラーのドライバーは、コント ローラーは、次の場合にのみ、それらをサポートするために要求する必要があります。
 

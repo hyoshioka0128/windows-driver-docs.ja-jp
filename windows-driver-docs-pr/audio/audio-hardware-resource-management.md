@@ -111,7 +111,7 @@ XML ファイルの次のセクションでは、2 つまたは複数のエン�
 
     &lt;PinId&gt; -リソース コンシューマーの暗証番号 (pin) の ID。
 
-    &lt;モード&gt;-関連付けられているモードの GUID。 詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
+    &lt;モード&gt;-関連付けられているモードの GUID。 詳細については、[オーディオ信号の処理モード](audio-signal-processing-modes.md)を参照してください。
 
     &lt;ConnectorType&gt; -リソース コンシューマーのコネクタの種類。 有効な値は次のとおりです。ホスト、Loopback、またはオフロードします。
 

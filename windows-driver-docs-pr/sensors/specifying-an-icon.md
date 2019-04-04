@@ -39,7 +39,7 @@ CopyFiles       = UMDriverCopy
 AddProperty     = DriverPropertiesSection
 ```
 
-INF ファイルでのデバイス プロパティの詳細については、次を参照してください。 [ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)します。
+INF ファイルでのデバイス プロパティの詳細については、[ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [**センサー アイコン定数**](sensor-icon-constants.md)

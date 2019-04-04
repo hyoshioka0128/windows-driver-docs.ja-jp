@@ -47,10 +47,10 @@ AddService=ServiceName,[flags],service-install-section
 <a href="" id="addservice-servicename--flags--service-install-section"></a>
 <a href="" id="------------------------------------------------event-log-install-section---eventlogtype---eventname-------"></a>
 **AddService =**<em>ServiceName</em>、\[*フラグ*\]**、**<em>サービス-インストール セクション</em>\[、*イベント ログ-インストール セクション*\[**、**\[*EventLogType* \] \[ **、**<em>EventName</em>\]\]\].\]  
-このディレクティブは、INF ライターの定義を参照*サービス-インストール セクション*と、おそらく、*イベント ログ-インストール セクション*別の場所、INF、デバイスのドライバーのファイルで覆われてこの*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
+このディレクティブは、INF ライターの定義を参照*サービス-インストール セクション*と、おそらく、*イベント ログ-インストール セクション*別の場所、INF、デバイスのドライバーのファイルで覆われてこの*DDInstall*セクション。 詳細については、[ **INF AddService ディレクティブ**](inf-addservice-directive.md)を参照してください。
 
 <a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**DelService =**<em>ServiceName</em>\[**、**\[*フラグ*\]\[**、**\[ *EventLogType*\]\[**、**<em>EventName</em> \] \] \]...  
-このディレクティブは、対象のコンピューターから、以前にインストールされたサービスを削除します。 このディレクティブが使用される非常にまれです。 詳細については、次を参照してください。 [ **INF DelService ディレクティブ**](inf-delservice-directive.md)します。
+このディレクティブは、対象のコンピューターから、以前にインストールされたサービスを削除します。 このディレクティブが使用される非常にまれです。 詳細については、[ **INF DelService ディレクティブ**](inf-delservice-directive.md)を参照してください。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。

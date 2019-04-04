@@ -68,7 +68,7 @@ ms.locfileid: "56573951"
 
 すべてのプロセスとスレッドの一覧を表示する、 [ **! プロセス**](-process.md)拡張機能。
 
-プロセスとスレッドがカーネル モードの詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。 プロセスとスレッドの分析に関する詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (この本できない場合がありますのいくつかの言語および国。)
+プロセスとスレッドがカーネル モードの詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。 プロセスとスレッドの分析に関する詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

@@ -23,7 +23,7 @@ ms.locfileid: "56556780"
 -   [APO 効果をオフロードするハードウェアを実装します。](implementing-hardware-offloaded-apo-effects.md)
 
  
-APOs は、Windows Vista で初めて導入され、APOs - sAPOs の以前のシステムへの参照を表示可能性があります。 詳細については、次を参照してください。 [Windows Vista でのカスタム オーディオ エフェクト](https://go.microsoft.com/fwlink/p/?linkid=106024)します。 このホワイト ペーパーでは古いを参照[COM](https://go.microsoft.com/fwlink/p/?linkid=106293)と[UI 開発](https://go.microsoft.com/fwlink/p/?linkid=106294)トピック。
+APOs は、Windows Vista で初めて導入され、APOs - sAPOs の以前のシステムへの参照を表示可能性があります。 詳細については、[Windows Vista でのカスタム オーディオ エフェクト](https://go.microsoft.com/fwlink/p/?linkid=106024)を参照してください。 このホワイト ペーパーでは古いを参照[COM](https://go.microsoft.com/fwlink/p/?linkid=106293)と[UI 開発](https://go.microsoft.com/fwlink/p/?linkid=106294)トピック。
 
  
 

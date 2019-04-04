@@ -56,9 +56,9 @@ KSCATEGORY_VBICODEC[デバイス インターフェイス クラス](https://msd
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_VBICODEC 機能カテゴリをサポートすることを示す KSCATEGORY_VBICODEC のインスタンスを登録します。
 
-概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
+概要ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)を参照してください。
 
-ビデオの非表示の詳細については、次を参照してください。[ビデオ キャプチャ デバイスからのデータのストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568268)と[VBI カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff568691)します。
+ビデオの非表示の詳細については、[ビデオ キャプチャ デバイスからのデータのストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568268)と[VBI カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff568691)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

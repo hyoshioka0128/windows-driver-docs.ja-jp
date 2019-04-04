@@ -52,7 +52,7 @@ ms.locfileid: "56578075"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ターゲットへのアタッチに関する詳細については、次を参照してください。[ターゲットへの接続](connecting-to-targets.md)します。
+ターゲットへのアタッチに関する詳細については、[ターゲットへの接続](connecting-to-targets.md)を参照してください。
 
  
 

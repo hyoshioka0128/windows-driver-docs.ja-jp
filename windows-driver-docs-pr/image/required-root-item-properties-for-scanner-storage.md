@@ -14,7 +14,7 @@ ms.locfileid: "56557417"
 # <a name="required-root-item-properties-for-scanner-storage"></a>スキャナーの記憶域の必要なルート項目のプロパティ
 
 
-スキャナーは、記憶域をサポートしているかどうか、WIA スキャナーのすべての項目のツリーのルート項目は、同じプロパティをサポートする必要があります。 必要なルート項目のプロパティの詳細については、次を参照してください。 [WIA スキャナーの必須のルート項目プロパティ](required-root-item-properties-for-wia-scanners.md)します。
+スキャナーは、記憶域をサポートしているかどうか、WIA スキャナーのすべての項目のツリーのルート項目は、同じプロパティをサポートする必要があります。 必要なルート項目のプロパティの詳細については、[WIA スキャナーの必須のルート項目プロパティ](required-root-item-properties-for-wia-scanners.md)を参照してください。
 
  
 

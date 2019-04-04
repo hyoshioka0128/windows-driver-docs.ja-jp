@@ -39,7 +39,7 @@ ms.locfileid: "56560569"
 
 -   確認**Srb**-&gt;**WMIFlags**要求が、アダプターまたは論理ユニットのかどうかを判断します。
 
--   SCSI ポート WMI ライブラリのディスパッチ ルーチンを呼び出す[ **ScsiPortWmiDispatchFunction**](https://msdn.microsoft.com/library/windows/hardware/ff564766)します。 このディスパッチ ルーチンを呼び出す方法の詳細については、次を参照してください。 [SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)します。
+-   SCSI ポート WMI ライブラリのディスパッチ ルーチンを呼び出す[ **ScsiPortWmiDispatchFunction**](https://msdn.microsoft.com/library/windows/hardware/ff564766)します。 このディスパッチ ルーチンを呼び出す方法の詳細については、[SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)を参照してください。
 
 -   呼び出す[ **ScsiPortWmiPostProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff564796)ドライバーによって保留された場合、要求を処理した後。 かどうか、ドライバーが保留されません、要求し**ScsiPortWmiPostProcess**ミニポート ドライバーの I/O ルーチンを開始するのではなく、ミニポート ドライバー コールバック ルーチンを呼び出す必要があります。
 

@@ -23,7 +23,7 @@ ms.locfileid: "56560228"
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_オフロード\_カプセル化**](https://msdn.microsoft.com/library/windows/hardware/ff566702)構造体。 NDIS\_オフロード\_カプセル化をカプセル化の設定を指定します。
 
-カプセル化設定の詳細については、次を参照してください。 [OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)します。
+カプセル化設定の詳細については、[OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

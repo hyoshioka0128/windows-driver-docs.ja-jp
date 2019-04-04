@@ -22,7 +22,7 @@ ms.locfileid: "56557701"
 
 使用を処理するコンポーネント、NDIS がない、 [ **NdisAllocateGenericObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561603)ジェネリック NDIS オブジェクトを割り当てる関数。 コンポーネントを呼び出す必要があります、 [ **NdisFreeGenericObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561850)関数が作成された汎用オブジェクトを解放する**NdisAllocateGenericObject**します。
 
-汎用オブジェクトの使用方法の詳細については、次を参照してください。[プール処理を取得する](obtaining-pool-handles.md)します。
+汎用オブジェクトの使用方法の詳細については、[プール処理を取得する](obtaining-pool-handles.md)を参照してください。
 
  
 

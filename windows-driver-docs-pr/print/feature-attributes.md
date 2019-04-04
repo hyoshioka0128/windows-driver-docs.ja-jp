@@ -81,13 +81,13 @@ ms.locfileid: "57350353"
 <tr class="even">
 <td><p><strong></em>インストール可能な場合でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>ことを示す、この機能はインストールが可能かどうか。 (<strong>FALSE</strong>常にインストールされていることを意味します)。</p>
-<p>詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
+<p>詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
 <td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、インストール可能な指定された最初のものを除くすべての機能のオプションもします。 場合<strong>FALSE</strong>機能のオプションの少なくとも 1 つは常にもインストールする必要があります。 (また、<a href="option-attributes.md" data-raw-source="[option attribute](option-attributes.md)">オプション属性</a>)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>InstallableFeatureName</strong></p></td>
 <td><p>インストール可能な機能が実際にインストールされているかどうかをユーザーに要求を表示するテキスト文字列。</p>
-<p>詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
+<p>詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
 <td><p>必要な場合 *<strong>インストール可能でしょうか。</strong>は<strong>TRUE</strong>と *<strong>rcInstallableFeatureNameID</strong>が指定されていません。 (また、<a href="option-attributes.md" data-raw-source="[option attribute](option-attributes.md)">オプション属性</a>)。</p></td>
 </tr>
 <tr class="even">
@@ -108,7 +108,7 @@ ms.locfileid: "57350353"
 <tr class="odd">
 <td><p><strong><em>rcInstallableFeatureNameID</strong></p></td>
 <td><p>インストール可能な機能が実際にインストールされているかどうかをユーザーに要求を表示するテキスト文字列のリソース ID。</p>
-<p>詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
+<p>詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
 <td><p>必要な場合 *<strong>インストール可能でしょうか。</strong>は<strong>TRUE</strong>と *<strong>InstallableFeatureName</strong>が指定されていません。 (また、<a href="option-attributes.md" data-raw-source="[option attribute](option-attributes.md)">オプション属性</a>)。</p></td>
 </tr>
 <tr class="even">
@@ -126,7 +126,7 @@ ms.locfileid: "57350353"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
  
 

@@ -29,7 +29,7 @@ ms.locfileid: "56571756"
 
 ### <a name="span-idinstallingsymbolfilesspanspan-idinstallingsymbolfilesspaninstalling-symbol-files"></a><span id="installing_symbol_files"></span><span id="INSTALLING_SYMBOL_FILES"></span>シンボル ファイルをインストールします。
 
-どのツールを使用するのに関係なくダンプ ファイルを生成した Windows のバージョンのシンボル ファイルをインストールする必要があります。 これらのファイルは、ダンプ ファイルの分析に使用するデバッガーによって使用されます。 シンボル ファイルの適切なインストールの詳細については、次を参照してください。 [Windows シンボル ファイルのインストール](installing-windows-symbol-files.md)します。
+どのツールを使用するのに関係なくダンプ ファイルを生成した Windows のバージョンのシンボル ファイルをインストールする必要があります。 これらのファイルは、ダンプ ファイルの分析に使用するデバッガーによって使用されます。 シンボル ファイルの適切なインストールの詳細については、[Windows シンボル ファイルのインストール](installing-windows-symbol-files.md)を参照してください。
 
 ### <a name="span-idddkdumpexamdbgspanspan-idddkdumpexamdbgspandumpexam"></a><span id="ddk_dumpexam_dbg"></span><span id="DDK_DUMPEXAM_DBG"></span>DumpExam
 

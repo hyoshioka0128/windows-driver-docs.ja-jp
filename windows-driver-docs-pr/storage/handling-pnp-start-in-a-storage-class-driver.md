@@ -24,7 +24,7 @@ ms.locfileid: "56549268"
 
 ストレージ クラス ドライバー、PnP マネージャーが、クラス ドライバーを呼び出すときに、デバイスに固有の初期化を実行します[ **DispatchPnP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)開始要求をルーチン (IRP\_MJ\_PNP[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749))。 記憶域クラス ドライバーの*DispatchPnP*日常的ないずれかを呼び出す内部*StartDevice*ルーチンまたは同じ機能のインラインを実装します。 FDO に送信された要求を開始する必要があるによって処理されるため最初に、最も低いドライバー スタックでは、記憶域クラス ドライバーの*DispatchPnP*ルーチンで、次の下位ドライバーに要求を転送する[ **保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)呼び出す前に*StartDevice*します。 場合は、要求は、PDO に送信されて、ドライバー必要がありますそれを処理する前に、要求を転送しません。
 
-ストレージ クラス ドライバーの内部*StartDevice*ルーチンは、デバイスの I/O 要求を管理するドライバーにより決定されたデータをその FDO のデバイスの拡張機能を設定します。 詳細については、次を参照してください。[デバイス拡張機能の設定を、記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)します。
+ストレージ クラス ドライバーの内部*StartDevice*ルーチンは、デバイスの I/O 要求を管理するドライバーにより決定されたデータをその FDO のデバイスの拡張機能を設定します。 詳細については、[デバイス拡張機能の設定を、記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)を参照してください。
 
 A *StartDevice*ルーチンは、ドライバーに登録されている任意のデバイスのインターフェイスを有効にする必要があります、 *AddDevice*ルーチン。 (を参照してください[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339))。そのデバイス オブジェクトのシンボリック リンクを作成することも可能性があります。
 
@@ -32,7 +32,7 @@ A *StartDevice*ルーチンは、ドライバーに登録されている任意�
 
 ファイルの種類のデバイスのドライバー\_デバイス\_ディスクまたはファイル\_デバイス\_大容量\_ストレージがアイドル状態検出の登録し、標準電源ポリシーのタイムアウトを指定してデバイス クラスの使用-1 の節約とパフォーマンスのタイムアウト値、 **PoRegisterDeviceforIdleDetection**呼び出します。
 
-記憶域クラス ドライバーの詳細については*DispatchPnP*ルーチンを参照してください[記憶域周辺機器への PnP の要求を処理](handling-pnp-requests-to-storage-peripherals.md)します。 PnP 開始要求の処理の詳細については、次を参照してください。[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)します。
+記憶域クラス ドライバーの詳細については*DispatchPnP*ルーチンを参照してください[記憶域周辺機器への PnP の要求を処理](handling-pnp-requests-to-storage-peripherals.md)します。 PnP 開始要求の処理の詳細については、[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)を参照してください。
 
  
 

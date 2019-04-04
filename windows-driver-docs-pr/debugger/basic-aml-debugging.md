@@ -59,7 +59,7 @@ AML デバッグを実行するときは、2 つの異なる種類のデバッ�
 
 -   AMLI デバッガーは、実行、ステップ、AML コードをトレースすることができます。 使用して、**実行**、 **p**、および**t**これらのアクションを実行するコマンド。
 
-拡張機能とコマンドの一覧については、次を参照してください。 [AMLI デバッガーの拡張機能を使用して](using-amli-debugger-extensions.md)と[AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)します。
+拡張機能とコマンドの一覧については、[AMLI デバッガーの拡張機能を使用して](using-amli-debugger-extensions.md)と[AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

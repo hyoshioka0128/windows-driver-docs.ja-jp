@@ -27,7 +27,7 @@ Power Framework 遅延ファジー テスト オプションを使用するド�
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に Power Framework 遅延ファジー テスト機能をアクティブ化できます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に Power Framework 遅延ファジー テスト機能をアクティブ化できます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
 
 **注**  The Power Framework 遅延ファジー テスト オプションには、さまざまな電源 API 関数呼び出しでランダムな遅延を挿入することで、実行時に表示される競合状態の確率が高くなります。 これら遅延をより有効にするには、その他のドライバーの検証オプションでは、このオプションを有効にすることができます。 導入できる遅延のためには、コンピューターが、応答が遅くできるが期待できます。
 

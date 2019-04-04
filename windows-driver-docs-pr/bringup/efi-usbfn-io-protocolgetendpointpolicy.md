@@ -42,16 +42,16 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 ポリシーで設定が必要のあるコントロール以外のエンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
+エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
 
 <a href="" id="policytype"></a>*PolicyType*  
-ポリシーの種類、ユーザーが指定されたコントロール以外のエンドポイントを取得しようとしています。 詳細については、次を参照してください。 [EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)します。
+ポリシーの種類、ユーザーが指定されたコントロール以外のエンドポイントを取得しようとしています。 詳細については、[EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)を参照してください。
 
 <a href="" id="buffersize"></a>*BufferSize*  
 入力のサイズ*バッファー* (バイト単位)。 出力に、によって返されるデータの量*バッファー* (バイト単位)。
 
 <a href="" id="buffer"></a>*バッファー*  
-要求されたエンドポイントのポリシー値を返すバッファーへのポインター。 ポリシーの種類のサイズ要件の詳細については、次を参照してください。 [EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)します。
+要求されたエンドポイントのポリシー値を返すバッファーへのポインター。 ポリシーの種類のサイズ要件の詳細については、[EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)を参照してください。
 
 ## <a name="return-values"></a>戻り値
 

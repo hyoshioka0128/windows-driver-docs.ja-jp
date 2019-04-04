@@ -54,7 +54,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
  
 
-拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)します。
+拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、[Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

@@ -36,7 +36,7 @@ ms.locfileid: "56553322"
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 対象のボリュームのファイル ハンドル**FSCTL\_取得\_取得\_ポインター\_基本**ベースを取得することです。 このパラメーターが必要とすることはできません**NULL**します。
 
-Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)します。
+Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)を参照してください。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode\[で\]*  
 操作の制御コード。 使用**FSCTL\_取得\_取得\_ポインター\_ベース**この操作にします。

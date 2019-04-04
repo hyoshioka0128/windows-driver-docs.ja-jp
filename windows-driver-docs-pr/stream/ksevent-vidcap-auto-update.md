@@ -64,7 +64,7 @@ KSEVENT\_しました\_自動\_プロパティ値が変更されたときに、�
 
 クライアントは、ユーザーからプロパティ値を変更するデバイスで、スイッチが反転する場合に通知するのには、このイベントの登録があります。 使用するには、このイベントのハードウェアの実装は、この機能のサポートを提供する必要があります。
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
+DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
 
  
 

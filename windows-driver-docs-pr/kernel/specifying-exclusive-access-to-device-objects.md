@@ -27,7 +27,7 @@ WDM デバイス スタックを両方 PDO を持つ、FDO 排他プロパティ
 
 ドライバーを持つデバイス オブジェクトが積み上げ縦棒グラフで、非 WDM ドライバーと raw モードで動作するデバイスなどを使用して、 [ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)ルーチンの名前付きの排他的なプロパティを設定するにはデバイス オブジェクト。
 
-I/O マネージャーは、排他的に末尾の名前に関係なく、名前付きのデバイス オブジェクトを名前ごとに実行を強制します。 たとえば、デバイス オブジェクトが名前"\\デバイス\\DeviceName"。 I/O マネージャーの排他性を開く要求を適用し、"\\デバイス\\DeviceName\\*Filename1*「の後に」\\デバイス\\DeviceName\\ *Filename2*"。 デバイス スタックの 2 つのオブジェクトは、(これは推奨されません) という名前は、I/O マネージャーが各オブジェクト用に開かれる単一のハンドル。 このような場合は、ドライバー適用する必要がある排他的自体内でその[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)コールバック関数。 また、I/O マネージャーでは、排他性を開くもう 1 つのファイル ハンドルを基準は適用されません。 デバイスの名前空間内のファイル オープン要求の詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](controlling-device-namespace-access.md)します。
+I/O マネージャーは、排他的に末尾の名前に関係なく、名前付きのデバイス オブジェクトを名前ごとに実行を強制します。 たとえば、デバイス オブジェクトが名前"\\デバイス\\DeviceName"。 I/O マネージャーの排他性を開く要求を適用し、"\\デバイス\\DeviceName\\*Filename1*「の後に」\\デバイス\\DeviceName\\ *Filename2*"。 デバイス スタックの 2 つのオブジェクトは、(これは推奨されません) という名前は、I/O マネージャーが各オブジェクト用に開かれる単一のハンドル。 このような場合は、ドライバー適用する必要がある排他的自体内でその[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)コールバック関数。 また、I/O マネージャーでは、排他性を開くもう 1 つのファイル ハンドルを基準は適用されません。 デバイスの名前空間内のファイル オープン要求の詳細については、[デバイス Namespace のアクセスを制御する](controlling-device-namespace-access.md)を参照してください。
 
  
 

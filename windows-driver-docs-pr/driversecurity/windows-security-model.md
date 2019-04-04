@@ -157,7 +157,7 @@ Legal (S-1-5-23...)拒否します。
 
 権限は、オブジェクトではなく、システム関連のタスクとリソースに適用されるため、およびオペレーティング システムではなく、システム管理者は、ユーザーまたはグループに割り当てられているため、アクセス権と異なります。
 
-各プロセスのアクセス トークンには、プロセスに与えられる権限の一覧が含まれています。 使用する前に、特権を具体的には有効にする必要があります。 特権の詳細については、次を参照してください。[特権](https://docs.microsoft.com/windows-hardware/drivers/kernel/privileges)カーネル ドライバーのドキュメントにします。
+各プロセスのアクセス トークンには、プロセスに与えられる権限の一覧が含まれています。 使用する前に、特権を具体的には有効にする必要があります。 特権の詳細については、[特権](https://docs.microsoft.com/windows-hardware/drivers/kernel/privileges)カーネル ドライバーのドキュメントにを参照してください。
 
  
 
@@ -175,11 +175,11 @@ Legal (S-1-5-23...)拒否します。
 2.  ユーザー モード Kernel32.dll は、Win32 名を Microsoft Windows NT のファイル名に変換する、Ntdll.dll に要求を渡します。
 3.  Ntdll.dll の呼び出し、 **NtCreateFile**関数を Windows ファイル名を指定します。 I/O マネージャーが処理 Ntoskrnl.exe 内**NtCreateFile**します。
 4.  I/O マネージャーは、オブジェクト マネージャー呼び出しに要求を再パッケージします。
-5.  オブジェクト マネージャーは、シンボリック リンクを解決し、ユーザーにファイルを作成するパスを走査権利があることを確認します。 詳細については、次を参照してください。[オブジェクト マネージャーでのセキュリティ チェックの](#omchecks)します。
+5.  オブジェクト マネージャーは、シンボリック リンクを解決し、ユーザーにファイルを作成するパスを走査権利があることを確認します。 詳細については、[オブジェクト マネージャーでのセキュリティ チェックの](#omchecks)を参照してください。
 6.  オブジェクト マネージャーは、要求に関連付けられている基になるオブジェクト型を所有するシステム コンポーネントを呼び出します。 ファイルの作成要求の場合は、このコンポーネントは、デバイス オブジェクトを所有する I/O マネージャーが。
-7.  I/O マネージャーは、ユーザーがデバイスに必要なアクセス権を持つようにするため、ユーザーのプロセスのアクセス トークンに対してデバイス オブジェクトのセキュリティ記述子を確認します。 詳細については、次を参照してください。 [I/O マネージャーでのセキュリティ チェックの](#iomanchecks)します。
+7.  I/O マネージャーは、ユーザーがデバイスに必要なアクセス権を持つようにするため、ユーザーのプロセスのアクセス トークンに対してデバイス オブジェクトのセキュリティ記述子を確認します。 詳細については、[I/O マネージャーでのセキュリティ チェックの](#iomanchecks)を参照してください。
 8.  I/O マネージャーがハンドルを作成し、IRP を送信します。 ユーザー プロセスに必要なアクセス権がある場合は、\_MJ\_デバイスまたはファイル システムのドライバーに要求を作成します。
-9.  ドライバーは、必要に応じて、追加のセキュリティ チェックを実行します。 たとえば、要求は、デバイスの名前空間でオブジェクトを指定する場合、ドライバーによってする必要があります、呼び出し元が必要なアクセス権を持つことを確認します。 詳細については、次を参照してください。[ドライバーのセキュリティ チェックが](#driver)します。
+9.  ドライバーは、必要に応じて、追加のセキュリティ チェックを実行します。 たとえば、要求は、デバイスの名前空間でオブジェクトを指定する場合、ドライバーによってする必要があります、呼び出し元が必要なアクセス権を持つことを確認します。 詳細については、[ドライバーのセキュリティ チェックが](#driver)を参照してください。
 
 ### <a name="span-idomchecksspanspan-idomchecksspansecurity-checks-in-the-object-manager"></a><span id="omchecks"></span><span id="OMCHECKS"></span>オブジェクト マネージャーでのセキュリティ チェック
 
@@ -207,15 +207,15 @@ I/O マネージャーは、オブジェクトを作成するときに、オブ�
 
 I/O マネージャーは、ファイル名を解析するときに走査権利を確認します。 ファイル名がシンボリック リンクの場合は、I/O マネージャーは、完全なパスに問題が解決し、ルートから始まる、トラバーサルの権限をチェックします。 たとえば、シンボリック リンク\\\dosdevices\z\\D は、Windows NT のデバイス名にマップ\\デバイス\\CDROM0 します。 プロセスのトラバーサル権限が必要、\\デバイスのディレクトリ。
 
-詳細については、次を参照してください。[オブジェクトは処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-handles)と[オブジェクト セキュリティ](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-security)します。
+詳細については、[オブジェクトは処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-handles)と[オブジェクト セキュリティ](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-security)を参照してください。
 
 ### <a name="span-iddriverspanspan-iddriverspansecurity-checks-in-the-driver"></a><span id="driver"></span><span id="DRIVER"></span>ドライバーのセキュリティを確認します
 
 オペレーティング システムのカーネルは、すべてのドライバーを実際には、独自の名前空間とファイル システムとして扱います。 その結果、呼び出し元がデバイスの名前空間でオブジェクトを作成しようとすると、I/O マネージャー プロセスでは、パスにディレクトリ走査権利がありますをチェックします。 
 
-WDM ドライバー、I/O マネージャーは、名前空間に対してセキュリティ チェックを実行しない FILE_DEVICE_SECURE_OPEN を指定する、デバイス オブジェクトが作成されている場合を除き、します。  FILE_DEVICE_SECURE_OPEN が設定されていない場合、ドライバーはその名前空間のセキュリティを確保する責任を負います。 詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)と[デバイス オブジェクトのセキュリティで保護する](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)します。
+WDM ドライバー、I/O マネージャーは、名前空間に対してセキュリティ チェックを実行しない FILE_DEVICE_SECURE_OPEN を指定する、デバイス オブジェクトが作成されている場合を除き、します。  FILE_DEVICE_SECURE_OPEN が設定されていない場合、ドライバーはその名前空間のセキュリティを確保する責任を負います。 詳細については、[デバイス Namespace のアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)と[デバイス オブジェクトのセキュリティで保護する](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)を参照してください。
 
-ドライバーは WDF、FILE_DEVICE_SECURE_OPEN フラグは常に、ように設定、デバイスの名前空間内で任意の名前にアクセスするアプリケーションを許可する前に、デバイスのセキュリティ記述子のチェックがあります。 詳細については、次を参照してください。 [KMDF ドライバーでのデバイス アクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)します。
+ドライバーは WDF、FILE_DEVICE_SECURE_OPEN フラグは常に、ように設定、デバイスの名前空間内で任意の名前にアクセスするアプリケーションを許可する前に、デバイスのセキュリティ記述子のチェックがあります。 詳細については、[KMDF ドライバーでのデバイス アクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)を参照してください。
 
 
 
@@ -225,7 +225,7 @@ WDM ドライバー、I/O マネージャーは、名前空間に対してセキ
 
 高いほど、面の相違点、特権レベルで詳細興味深い境界は、攻撃者が対象となるドライバーまたはプロセスに対して特権昇格攻撃などの攻撃を実行します。
 
-脅威モデルを作成するプロセスの一部が、セキュリティ境界を調べ、予期しないパスを探します。 詳細については、次を参照してください。[ドライバーの脅威のモデル化](threat-modeling-for-drivers.md)します。 
+脅威モデルを作成するプロセスの一部が、セキュリティ境界を調べ、予期しないパスを探します。 詳細については、[ドライバーの脅威のモデル化](threat-modeling-for-drivers.md)を参照してください。 
 
 信頼境界を越える任意のデータは、信頼されていないと、検証する必要があります。 
 
@@ -250,7 +250,7 @@ WDM ドライバー、I/O マネージャーは、名前空間に対してセキ
 -   ファイル設定\_デバイス\_SECURE\_デバイスの名前空間にデバイス オブジェクトのセキュリティ設定を適用する特性を開きます。
 -   ファイルが使用できる Ioctl を定義しない\_ANY\_アクセスしない限り、このようなアクセスを故意に悪用されることはできません。
 -   使用して、 **IoValidateDeviceIoControlAccess**ファイルを許可する既存の IOCTL でセキュリティを強化する目的でルーチン\_ANY\_アクセスします。
--   セキュリティ境界を確認し、予期しないパスを検索する脅威モデルを作成します。 詳細については、次を参照してください。[ドライバーの脅威のモデル化](threat-modeling-for-drivers.md)します。 
+-   セキュリティ境界を確認し、予期しないパスを検索する脅威モデルを作成します。 詳細については、[ドライバーの脅威のモデル化](threat-modeling-for-drivers.md)を参照してください。 
 -   参照してください[ドライバーのセキュリティ チェックリスト](driver-security-checklist.md)の追加のドライバーのセキュリティに関する推奨事項。
 
 

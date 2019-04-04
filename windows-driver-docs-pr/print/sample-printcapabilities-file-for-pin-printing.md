@@ -60,7 +60,7 @@ ms.locfileid: "56550534"
 </psf:PrintCapabilities>
 ```
 
-保護された印刷の詳細については、次を参照してください。[ドライバー サポートの保護された印刷](driver-support-for-protected-printing.md)します。
+保護された印刷の詳細については、[ドライバー サポートの保護された印刷](driver-support-for-protected-printing.md)を参照してください。
 
  
 

@@ -41,7 +41,7 @@ UWP アプリはタッチ用に最適化された、ユーザーの場所との 
 
 -   **タッチ最適化**タッチ操作のサポートが組み込まれています。 タッチ、用のモバイル ブロード バンド アプリを設計して、Windows キーボード、マウス、およびグラフィカルなスケーリングをサポートできます。
 
-UWP アプリの詳細については、次を参照してください。 [Windows 10 アプリの概要](https://docs.microsoft.com/windows/uwp/get-started/)します。
+UWP アプリの詳細については、[Windows 10 アプリの概要](https://docs.microsoft.com/windows/uwp/get-started/)を参照してください。
 
 ## <a name="uwp-mobile-broadband-apps"></a>UWP モバイル ブロードバンド アプリ
 
@@ -59,13 +59,13 @@ UWP のモバイル ブロード バンド アプリはモバイル通信事業�
 このアプリは、接続管理の機能は提供されませんが、代わりにアカウントのエクスペリエンスと、サービスのブランド化を提供します。
 
 > [!IMPORTANT]
-> アプリは、タッチ入力に合わせて最適化し、Windows 10 の UI デザインの原則に従う必要があります。 モバイル ブロード バンドのアプリのユーザー エクスペリエンスを設計する方法についての詳細については、次を参照してください。[モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計](designing-the-user-experience-of-a-mobile-broadband-app.md)します。
+> アプリは、タッチ入力に合わせて最適化し、Windows 10 の UI デザインの原則に従う必要があります。 モバイル ブロード バンドのアプリのユーザー エクスペリエンスを設計する方法についての詳細については、[モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計](designing-the-user-experience-of-a-mobile-broadband-app.md)を参照してください。
 
 ## <a name="uwp-mobile-broadband-apps-and-mbae"></a>UWP のモバイル ブロード バンド アプリと MBAE
 
 モバイル ブロード バンド アプリは、アプリ、または MBAE アプリ エクスペリエンス、Windows 10、バージョン 1803 以降で月の UWP アプリに置き換えられます。 月の UWP アプリでは、COSA の一部になったし、Windows デベロッパー センター ハードウェア ダッシュ ボード (Sysdev) のサービス メタデータを作成する必要はありません。 Windows 8、Windows 8.1、および 1803 はサービス メタデータを使用して MBAE apps を使用して続行する前に、Windows 10 のバージョンは、Sysdev に発行されます。 
 
-Windows 10、バージョン 1803、MBAE アプリは COSA に移行することがなく動作します。 ただし、携帯を月の UWP アプリと COSA を移行することを強くお勧めします。 COSA に関する詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 COSA 設定の詳細については、次を参照してください。[デスクトップ COSA/APN データベースの設定](desktop-cosa-apn-database-settings.md)します。
+Windows 10、バージョン 1803、MBAE アプリは COSA に移行することがなく動作します。 ただし、携帯を月の UWP アプリと COSA を移行することを強くお勧めします。 COSA に関する詳細については、[COSA 概要](cosa-overview.md)を参照してください。 COSA 設定の詳細については、[デスクトップ COSA/APN データベースの設定](desktop-cosa-apn-database-settings.md)を参照してください。
 
 場合、 **AppID**設定は、COSA で入力は、Windows は確認されません、アプリをダウンロードする一致する Sysdev メタデータ パッケージ。 場合**AppID**が入力されていない、Windows は、アプリをダウンロードする一致する Sysdev メタデータ パッケージを確認します。
 

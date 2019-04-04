@@ -81,7 +81,7 @@ Windows Vista と以降のバージョンの Windows で AllSignersEqual のグ�
 
 この構成の変更では、1 回に作成されており、AllSignersEqual を再構成するまで、コンピューターのすべての後続のドライバーのインストールに適用されます。
 
-ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)します。
+ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)を参照してください。
 
  
 

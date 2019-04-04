@@ -24,7 +24,7 @@ ms.locfileid: "56539177"
 ## <span id="ddk_display_inf_file_sections_gg"></span><span id="DDK_DISPLAY_INF_FILE_SECTIONS_GG"></span>
 
 
-このセクションでは、具体的には、グラフィックス アダプターのインストールに適用されます (INF) のセクションで、セットアップ情報ファイルを記述する方法を指示します。 INF ファイルの概要については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+このセクションでは、具体的には、グラフィックス アダプターのインストールに適用されます (INF) のセクションで、セットアップ情報ファイルを記述する方法を指示します。 INF ファイルの概要については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
 ### <a name="span-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanddinstallsoftwaresettings-section"></a><span id="DDInstall.SoftwareSettings_Section"></span><span id="ddinstall.softwaresettings_section"></span><span id="DDINSTALL.SOFTWARESETTINGS_SECTION"></span>DDInstall.SoftwareSettings セクション
 
@@ -50,7 +50,7 @@ HKR,, VideoDebugLevel, %REG_DWORD%, 2
 
 上記のコードは最初の値を設定、 **InstalledDisplayDrivers**ディスプレイ ドライバーの名前を入力します。 コードの値を設定し、 **OverRideMonitorPower**エントリを 0 に (つまり、 **FALSE**)。 このエントリは、OEM システム ベンダーによってのみ使用する必要があります (たとえば、LCD、CRT、またはテレビ) モニター デバイスの電源の動作を制御します。 1 に設定すると**OverRideMonitorPower** D0 を D3 モニターのデバイスの電力状態を制限します。
 
-3 番目に、コードがの値を設定、 **MultiFunctionSupported**エントリを 1 に (つまり、 **TRUE**)、これは、必要な値は複数の PCI 関数をサポートするアダプターの。 最後の値の設定、コード、 **VideoDebugLevel**エントリで、デバッグ メッセージのビルドの使用をチェックするグローバル デバッグ レベルを制御します。 この値の範囲は 0 (デバッグ メッセージはありません) 3 (最も詳細なメッセージ) ~ です。 グローバル デバッグ レベルの詳細については、次を参照してください。 [ **VideoDebugPrint**](https://msdn.microsoft.com/library/windows/hardware/ff570170)します。
+3 番目に、コードがの値を設定、 **MultiFunctionSupported**エントリを 1 に (つまり、 **TRUE**)、これは、必要な値は複数の PCI 関数をサポートするアダプターの。 最後の値の設定、コード、 **VideoDebugLevel**エントリで、デバッグ メッセージのビルドの使用をチェックするグローバル デバッグ レベルを制御します。 この値の範囲は 0 (デバッグ メッセージはありません) 3 (最も詳細なメッセージ) ~ です。 グローバル デバッグ レベルの詳細については、[ **VideoDebugPrint**](https://msdn.microsoft.com/library/windows/hardware/ff570170)を参照してください。
 
 ほとんどのビデオのミニポート ドライバー VGA と互換性がないと、no を必要と**VgaCompatible**レジストリのエントリ。 ビデオのミニポート ドライバーが VGA と互換性のある場合は追加、 **VgaCompatible**エントリをレジストリにその値を 1 に設定 (**TRUE**) 追加レジストリ セクションが表示され、次に示すように。
 
@@ -59,7 +59,7 @@ HKR,, VideoDebugLevel, %REG_DWORD%, 2
 HKR,, VgaCompatible, %REG_DWORD%, 1
 ```
 
-VGA と互換性のあるビデオのミニポート ドライバーの詳細については、次を参照してください。 [VGA と互換性のあるビデオのミニポート ドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)します。
+VGA と互換性のあるビデオのミニポート ドライバーの詳細については、[VGA と互換性のあるビデオのミニポート ドライバー (Windows 2000 モデル)](vga-compatible-video-miniport-drivers--windows-2000-model-.md)を参照してください。
 
 Delete レジストリの次のセクションでは、次の 3 つのレジストリ エントリを削除します。**GraphicsClocking**、 **MemClocking**、および**CapabilityOverride**します。
 

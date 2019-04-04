@@ -16,7 +16,7 @@ ms.locfileid: "57349223"
 
 Windows 7 以降、新しいデバイスはバスに固有の一意の ID を提供する必要があります (」の説明に従って[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md))。
 
-または、デバイスとバス ドライバーする必要がありますリムーバブル デバイスの機能が正しく設定 (」の説明に従って[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md))。 リムーバブル デバイスの機能の詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)します。
+または、デバイスとバス ドライバーする必要がありますリムーバブル デバイスの機能が正しく設定 (」の説明に従って[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md))。 リムーバブル デバイスの機能の詳細については、[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)を参照してください。
 
 Windows 7 および Windows の以降のバージョンは、報告されたリムーバブル デバイスの機能をオーバーライドするためのメカニズムもサポートします。 このメカニズムは、リムーバブル デバイスの機能の報告する従来のデバイスに適しています。
 

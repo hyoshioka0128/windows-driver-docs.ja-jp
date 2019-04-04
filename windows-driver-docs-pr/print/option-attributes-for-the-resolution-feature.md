@@ -19,7 +19,7 @@ ms.locfileid: "57349923"
 
 
 
-次の表は、解決の機能に関連付けられている属性を一覧表示します。 解決策機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+次の表は、解決の機能に関連付けられている属性を一覧表示します。 解決策機能の詳細については、[標準機能](standard-features.md)を参照してください。
 
 <table>
 <colgroup>
@@ -80,9 +80,9 @@ ms.locfileid: "57349923"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
-追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
+追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
 
 参照してください[画質を制御する](controlling-image-quality.md)します。
 

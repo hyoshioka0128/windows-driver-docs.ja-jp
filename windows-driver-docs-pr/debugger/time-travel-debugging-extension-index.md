@@ -65,7 +65,7 @@ ttdext.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
+この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、[時出張デバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
 
 
 ## <a name="see-also"></a>参照

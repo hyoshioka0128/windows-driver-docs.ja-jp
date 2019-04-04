@@ -14,7 +14,7 @@ ms.locfileid: "57464266"
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>カスタムの WPP 拡張書式指定文字列を作成する方法
 
 
-定義を使用してカスタム WPP 拡張形式仕様の文字列を作成する\_CPLX\_マクロ。 このマクロを使用する方法の詳細については、次を参照してください。[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)します。
+定義を使用してカスタム WPP 拡張形式仕様の文字列を作成する\_CPLX\_マクロ。 このマクロを使用する方法の詳細については、[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)を参照してください。
 
 このトピックでは、以下を行う方法を説明する例を示します。
 
@@ -22,7 +22,7 @@ ms.locfileid: "57464266"
 
 - [カスタム拡張 WPP 形式仕様の文字列を使用して可変長文字列をトレースします。](#trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings)
 
-これらの例の各定義の定義のカスタム WPP 構成ファイルの使用を示しています\_CPLX\_マクロ。 これらの例では、構成ファイルを LocalWpp.ini と呼びます。 カスタム WPP 構成ファイルを使用する方法の詳細については、次を参照してください。[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)します。
+これらの例の各定義の定義のカスタム WPP 構成ファイルの使用を示しています\_CPLX\_マクロ。 これらの例では、構成ファイルを LocalWpp.ini と呼びます。 カスタム WPP 構成ファイルを使用する方法の詳細については、[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)を参照してください。
 
 ## <a name="trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings"></a>仕様の文字列形式を拡張するカスタム WPP トレース固定長文字列
 

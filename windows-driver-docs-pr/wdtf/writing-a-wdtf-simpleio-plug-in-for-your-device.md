@@ -15,7 +15,7 @@ ms.locfileid: "56578059"
 
 [デバイスの基本テスト](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-select-and-configure-the-device-fundamental-tests)のメリットを最大限に引き出すには、デバイスへのシンプル I/O を実行できるシンプル I/O プラグインがデバイスに必要です。 これには、WDTF に付属する既定のいずれかのシンプル I/O プラグまたはユーザーが作成した I/O プラグを使用できます。 デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「[提供されている WDTF シンプル I/O プラグイン](provided-wdtf-simpleio-plug-ins.md)」をご覧ください。
 
-Visual Studio を使用したテストのテスト コンピューターを構成した場合、テスト コンピューター WDTF の単純な I/O をサポートしているデバイスの一覧を返しますのテストを実行できます。 デバイスがサポートされていない場合は、Visual Studio を使用して 1 つを作成、 **WDTF 単純な I/O 操作プラグイン**テンプレート。 詳しくは、次を参照してください。 [WDTF 単純な I/O 操作のプラグインを使用してデバイスの I/O をカスタマイズする方法](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)します。 テスト コンピューターの設定の詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 10)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
+Visual Studio を使用したテストのテスト コンピューターを構成した場合、テスト コンピューター WDTF の単純な I/O をサポートしているデバイスの一覧を返しますのテストを実行できます。 デバイスがサポートされていない場合は、Visual Studio を使用して 1 つを作成、 **WDTF 単純な I/O 操作プラグイン**テンプレート。 詳しくは、[WDTF 単純な I/O 操作のプラグインを使用してデバイスの I/O をカスタマイズする方法](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)を参照してください。 テスト コンピューターの設定の詳細については、[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 10)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

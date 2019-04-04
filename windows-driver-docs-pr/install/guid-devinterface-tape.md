@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_TAPE[デバイス インターフェイス クラス](https://
 
 システム提供[テープ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff567961)オペレーティング システムとテープの記憶域デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_TAPE のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

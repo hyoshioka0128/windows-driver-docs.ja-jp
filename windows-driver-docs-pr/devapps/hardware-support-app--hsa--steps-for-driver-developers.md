@@ -38,7 +38,7 @@ HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ド�
     * どのようなリソースにアクセスする機能が必要ですか。
     * セキュリティやプライバシー上の問題
     * データ機能をでへのアクセスを提供しますか。
-    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、次を参照してください。[の名前を予約することで、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。
+    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、[の名前を予約することで、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)を参照してください。
 
 2.  Microsoft の電子メール要求を承認すると場合、は、バックアップの形式でカスタム機能の一意の文字列名**CompanyName.capabilityName\_PublisherID**します。
 
@@ -94,7 +94,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 置換`zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz`を公開するインターフェイスの guid。  置換*CompanyName*を自分の会社名、 *myCustomCapabilityNameTBD* 、会社内で一意の名前を持つと*MyStorePubId*パブリッシャーとストア id。 
 
-上述のドライバー コードの例は、次を参照してください。、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)します。
+上述のドライバー コードの例は、、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)を参照してください。
 
 ## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>署名済みのカスタム機能記述子 (SCCD) ファイルの準備
 

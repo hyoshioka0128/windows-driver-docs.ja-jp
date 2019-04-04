@@ -27,5 +27,5 @@ ms.locfileid: "56538619"
 |アプリの自動取得  |周辺機器の使用                                  |すべてのハードウェアの利用可能          |
 |展開の依存関係    |WU:ドライバー パッケージ<br>ストア:App|WU:ドライバー パッケージ<br>ストア:App                  |
                                                                                                                                                                                                     
-Dca の詳細については、次を参照してください。[デバイス アプリを Microsoft Store の概要](https://msdn.microsoft.com/windows/hardware/drivers/devapps/getting-started)します。
+Dca の詳細については、[デバイス アプリを Microsoft Store の概要](https://msdn.microsoft.com/windows/hardware/drivers/devapps/getting-started)を参照してください。
 

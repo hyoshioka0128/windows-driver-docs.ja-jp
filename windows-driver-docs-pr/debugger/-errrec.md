@@ -67,7 +67,7 @@ ms.locfileid: "56560141"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Whea** ](-whea.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。 WHEA の詳細については、次を参照してください。 [Windows ハードウェア エラー アーキテクチャ (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) ドキュメントです。
+[ **! Whea** ](-whea.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。 WHEA の詳細については、[Windows ハードウェア エラー アーキテクチャ (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) ドキュメントを参照してください。
 
 <a name="remarks"></a>注釈
 -------
