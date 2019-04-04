@@ -26,7 +26,7 @@ NDIS フィルター ドライバーを呼び出す[ *FilterSetOptions* ](https:
 
 現在の Windows バージョンでは、オプションのフィルター ドライバーのサービスはありません。
 
-フィルター ドライバーを呼び出すことも**NdisSetOptionalHandlers** 、いくつか設定する*FilterXxx*関数の特定のフィルター モジュールのエントリ ポイント。 詳細については、次を参照してください。[データ バイパス モード](data-bypass-mode.md)します。
+フィルター ドライバーを呼び出すことも**NdisSetOptionalHandlers** 、いくつか設定する*FilterXxx*関数の特定のフィルター モジュールのエントリ ポイント。 詳細については、[データ バイパス モード](data-bypass-mode.md)を参照してください。
 
 フィルター ドライバーを呼び出す場合**NdisSetOptionalHandlers**から*FilterRestart*構成の変更では、NDIS を再起動するフィルター モジュールのみに影響します。 その他のフィルター モジュールの構成が影響を受けません。
 

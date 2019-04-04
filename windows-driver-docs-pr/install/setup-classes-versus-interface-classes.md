@@ -36,7 +36,7 @@ Windows クラスは、システムのファイルで定義されている*Devgu
 
 新しいセットアップ クラスまたはインターフェイスのクラスを定義するときに*セットアップ クラスとインターフェイス クラスの両方を識別するために単一の GUID を使用しないでください。*
 
-Guid の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。
+Guid の詳細については、[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)を参照してください。
 
  
 

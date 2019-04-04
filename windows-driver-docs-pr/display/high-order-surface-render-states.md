@@ -34,7 +34,7 @@ ms.locfileid: "56560945"
 
 ### <a name="span-idd3drsdeletertpatchspanspan-idd3drsdeletertpatchspan-d3drsdeletertpatch"></a><span id="d3drs_deletertpatch"></span><span id="D3DRS_DELETERTPATCH"></span> D3DRS\_DELETERTPATCH
 
-このレンダリング状態では、修正プログラムが削除するのには、ドライバーに通知します。 詳細については、次を参照してください。 [ **D3DRENDERSTATETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff549036)します。
+このレンダリング状態では、修正プログラムが削除するのには、ドライバーに通知します。 詳細については、[ **D3DRENDERSTATETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff549036)を参照してください。
 
  
 

@@ -209,7 +209,7 @@ Evaluate expression: 5 = 00000005
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-クリティカル セクションのタイムアウトをデバッグする方法については、次を参照してください。[クリティカル セクション タイムアウト](critical-section-time-outs.md)します。 重要なセクションについては、Microsoft Windows SDK、Windows Driver Kit (WDK) を参照してください。 または*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+クリティカル セクションのタイムアウトをデバッグする方法については、[クリティカル セクション タイムアウト](critical-section-time-outs.md)を参照してください。 重要なセクションについては、Microsoft Windows SDK、Windows Driver Kit (WDK) を参照してください。 または*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

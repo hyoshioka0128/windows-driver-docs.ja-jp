@@ -21,7 +21,7 @@ ms.locfileid: "56578080"
 
 グローバル変数などのローカル変数は、シンボル ファイルに格納されます。 され、グローバル変数と同様、デバッガーにはアドレスとして、名前が解釈されます。 これらは、読み取りし、グローバル変数と同じ方法で書き込みが可能です。 ただし、シンボルがローカル コマンドに示すために必要がある場合の前にドル記号 ($) とシンボル、感嘆符 (! )、うに`$!var`します。
 
-Visual Studio と WinDbg を表示およびローカル変数の編集 (コマンド) だけでなく使用できるユーザー インターフェイス要素を提供します。 詳細については、次を参照してください。[表示と編集のメモリと Visual Studio でのレジスタ](viewing-memory--variables--and-registers-in-visual-studio.md)と[表示し、WinDbg でローカル変数の編集](locals-window.md)します。
+Visual Studio と WinDbg を表示およびローカル変数の編集 (コマンド) だけでなく使用できるユーザー インターフェイス要素を提供します。 詳細については、[表示と編集のメモリと Visual Studio でのレジスタ](viewing-memory--variables--and-registers-in-visual-studio.md)と[表示し、WinDbg でローカル変数の編集](locals-window.md)を参照してください。
 
 表示、変更、およびローカル変数を使用して、次のメソッドを使用することもできます。
 

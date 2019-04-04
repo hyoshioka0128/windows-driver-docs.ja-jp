@@ -57,4 +57,4 @@ ms.locfileid: "56572623"
 - [ブート パラメーターを使用します。](using-boot-parameters.md)
 - [バイパスのブート オプション](bypassing-boot-options.md)
 
-Windows Vista 以降、Windows には、新しいブート ローダーのアーキテクチャ、新しいブート オプション、および新しいブート オプション エディターが含まれます。 詳しくは、次を参照してください。 [Windows Vista のブート オプション](boot-options-in-windows-vista-and-later.md)します。
+Windows Vista 以降、Windows には、新しいブート ローダーのアーキテクチャ、新しいブート オプション、および新しいブート オプション エディターが含まれます。 詳しくは、[Windows Vista のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。

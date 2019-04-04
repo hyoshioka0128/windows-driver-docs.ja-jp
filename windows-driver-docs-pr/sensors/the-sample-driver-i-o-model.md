@@ -27,7 +27,7 @@ Windows 8.1 では、開発と SPB コント ローラー ドライバーを簡�
 -   同時のターゲットとバスのロック要求を管理する implements 階層化キューの構造体
 -   ユーザー モードからカーネル モードのバッファーを変換します。
 
-詳細については、次を参照してください。[シンプルな周辺機器のバス](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)します。
+詳細については、[シンプルな周辺機器のバス](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)を参照してください。
 
 ### <a name="spb-component-and-the-sample-driver"></a>SPB コンポーネントとドライバーのサンプル
 

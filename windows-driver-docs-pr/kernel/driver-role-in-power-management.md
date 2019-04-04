@@ -36,7 +36,7 @@ ms.locfileid: "56538115"
 
 さらに、ドライバーが起動時にデバイスの電源を入れてまたは電源 IRP を受信せずに削除すると、デバイスを切るなど、特定の電源のタスクを実行する可能性があります。 これらは、暗黙的な電源要求と見なされます。
 
-詳細については、次を参照してください。[ドライバーの電源管理の責任](power-management-responsibilities-for-drivers.md)します。
+詳細については、[ドライバーの電源管理の責任](power-management-responsibilities-for-drivers.md)を参照してください。
 
  
 

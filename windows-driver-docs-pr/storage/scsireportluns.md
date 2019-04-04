@@ -48,7 +48,7 @@ void ScsiReportLuns(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiReportLuns\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564937)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiReportLuns\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564937)構造体。
 
 *Cdb*   
 SCSI レポート対象のデバイスに送信される Lun のコマンドを保持するコマンドの記述子ブロックします。 この情報は、ミニポート ドライバーに配信される、 **Cdb**のメンバー、 [ **ScsiReportLuns\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564932)構造体。

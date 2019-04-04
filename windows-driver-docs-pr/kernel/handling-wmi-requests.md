@@ -39,11 +39,11 @@ ms.locfileid: "56556852"
 
 WMI のカーネル モード コンポーネント送信 WMI Irp いつを以下に、ドライバーの登録に成功した WMI データ プロバイダーは、通常ユーザー モードのデータ コンシューマーには、ドライバーのデバイスの WMI 情報が要求されました。 かどうか、ドライバーが呼び出すことによって WMI データ プロバイダーとして登録します[ **IoWMIRegistrationControl**](https://msdn.microsoft.com/library/windows/hardware/ff550480)、次の方法のいずれかで後続の WMI 要求を処理にする必要があります。
 
--   カーネル モードの WMI ライブラリ ルーチンを呼び出す**WmiSystemControl** PDO の。 詳細については、次を参照してください。 [WMI Irp の処理を呼び出す WmiSystemControl](calling-wmisystemcontrol-to-handle-wmi-irps.md)します。
+-   カーネル モードの WMI ライブラリ ルーチンを呼び出す**WmiSystemControl** PDO の。 詳細については、[WMI Irp の処理を呼び出す WmiSystemControl](calling-wmisystemcontrol-to-handle-wmi-irps.md)を参照してください。
 
--   その[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが処理し、そのドライバーが呼び出しで渡されるデバイス オブジェクトへのポインターでタグ付けされた該当する要求を完了**IoWMIRegistrationControl**、およびその他の転送[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813) [次へ] の下のドライバーに要求します。 詳細については、次を参照してください。 [DispatchSystemControl ルーチンで WMI Irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)します。
+-   その[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが処理し、そのドライバーが呼び出しで渡されるデバイス オブジェクトへのポインターでタグ付けされた該当する要求を完了**IoWMIRegistrationControl**、およびその他の転送[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813) [次へ] の下のドライバーに要求します。 詳細については、[DispatchSystemControl ルーチンで WMI Irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)を参照してください。
 
-WMI のマイナー Irp の一覧は、次を参照してください。 [WMI マイナー Irp](wmi-minor-irps.md)します。 
+WMI のマイナー Irp の一覧は、[WMI マイナー Irp](wmi-minor-irps.md)を参照してください。 
 
  
 

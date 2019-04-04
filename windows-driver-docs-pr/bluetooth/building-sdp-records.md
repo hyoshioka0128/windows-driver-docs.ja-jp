@@ -74,7 +74,7 @@ ms.locfileid: "56582554"
 
 さらに、不要になった、プロファイル ドライバーには、SDP のレコードのツリー ベースのバージョンが必要とするときに呼び出す必要があります[ **SdpFreeTree** ](https://msdn.microsoft.com/library/windows/hardware/ff536839)関連付けられている SDP で割り当てられたメモリを解放する\_ツリー\_ルート\_ノード構造体。
 
-プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536636)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536635)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、次を参照してください。 [Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
+プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536636)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536635)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、[Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)を参照してください。
 
  
 

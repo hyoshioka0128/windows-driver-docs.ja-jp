@@ -37,7 +37,7 @@ Dmu ポート ドライバーでは、DirectMusic ユーザー モード コン�
 
 Wave pin KSPIN のデータ方向の公開 Dmu のミニポート ドライバーでは、ホストにその出力を提供できる場合、\_データフロー\_OUT (を参照してください[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483))、どの SysAudio認識して KMixer に接続します。
 
-Wave シンクの詳細については、次を参照してください。[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)します。
+Wave シンクの詳細については、[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)を参照してください。
 
 このセクションが含まれています。
 

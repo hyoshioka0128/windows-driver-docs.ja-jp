@@ -24,7 +24,7 @@ ms.locfileid: "56578319"
 
  
 
-特定の状況では、except*クラス インストーラー*と*co-installer*作成、変更、またはレジストリ キーを削除する、標準レジストリ関数を使用しないでください。 ほとんどの場合、レジストリ キー変更がのみに格納されるディレクティブを使用して[INF ファイル](inf-files.md)します。 これらのディレクティブの詳細については、次を参照してください。 [INF ディレクティブの概要](summary-of-inf-directives.md)します。
+特定の状況では、except*クラス インストーラー*と*co-installer*作成、変更、またはレジストリ キーを削除する、標準レジストリ関数を使用しないでください。 ほとんどの場合、レジストリ キー変更がのみに格納されるディレクティブを使用して[INF ファイル](inf-files.md)します。 これらのディレクティブの詳細については、[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
 
 次に、この規則の例外を示します。
 
@@ -40,9 +40,9 @@ ms.locfileid: "56578319"
 
 -   クラスのインストーラーと共同インストーラーを使用する必要がありますまず[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)または[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)へのハンドルを開く変更するレジストリ キーです。 ハンドルが開かれた後は、レジストリ キーを変更するのにクラスのインストーラーと共同インストーラーが標準レジストリ関数を使用できます。
 
--   クラスのインストーラーと共同インストーラーを使用する必要がありますいない**SetupDiDeleteDevRegKey**または*ハードウェア キー*デバイス。 詳細については、次を参照してください。[デバイスのレジストリ キーを削除する](deleting-the-registry-keys-of-a-device.md)します。
+-   クラスのインストーラーと共同インストーラーを使用する必要がありますいない**SetupDiDeleteDevRegKey**または*ハードウェア キー*デバイス。 詳細については、[デバイスのレジストリ キーを削除する](deleting-the-registry-keys-of-a-device.md)を参照してください。
 
-詳細については、標準レジストリ関数は、次を参照してください。[レジストリ関数](https://go.microsoft.com/fwlink/p/?linkid=194529)します。
+詳細については、標準レジストリ関数は、[レジストリ関数](https://go.microsoft.com/fwlink/p/?linkid=194529)を参照してください。
 
  
 

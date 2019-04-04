@@ -45,7 +45,7 @@ VF 構成ブロックは、PF と VF のミニポート ドライバーの間の
 
         NDIS 別問題も[ **IOCTL\_VPCI\_INVALIDATE\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/hh439301) VF 構成データの変更の連続する通知を処理するために要求します。
 
-    3.  VF ドライバーが処理するときに、 [OID\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック](https://msdn.microsoft.com/library/windows/hardware/hh451903)要求によって指定された、VF 構成要素からデータを読み取ることできます呼び出す[ **NdisMReadConfigBlock**](https://msdn.microsoft.com/library/windows/hardware/hh451523)します。 このプロセスの詳細については、次を参照してください。 [VF のミニポート ドライバーからのバック チャネル通信](backchannel-communication-from-a-vf-miniport-driver.md)します。
+    3.  VF ドライバーが処理するときに、 [OID\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック](https://msdn.microsoft.com/library/windows/hardware/hh451903)要求によって指定された、VF 構成要素からデータを読み取ることできます呼び出す[ **NdisMReadConfigBlock**](https://msdn.microsoft.com/library/windows/hardware/hh451523)します。 このプロセスの詳細については、[VF のミニポート ドライバーからのバック チャネル通信](backchannel-communication-from-a-vf-miniport-driver.md)を参照してください。
 
  
 

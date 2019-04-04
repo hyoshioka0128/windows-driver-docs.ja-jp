@@ -58,7 +58,7 @@ Usb3kd.dll
 -   usbport.sys (2 の USB ホスト コント ローラーのポート ドライバー)
 -   usbhub.sys (USB 2 hub ドライバー)
 
-これらのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p/?LinkId=251983)します。
+これらのドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p/?LinkId=251983)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

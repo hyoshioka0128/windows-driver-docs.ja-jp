@@ -24,7 +24,7 @@ ms.locfileid: "56581429"
 
 [転送拡張機能](forwarding-extensions.md)
 
-**注**  同じ種類の複数の拡張機能は、拡張可能スイッチ インスタンスにバインドする場合は、拡張可能スイッチのドライバー スタックに配置されます順序を変更できます。 詳細については、次を参照してください。[の並べ替えの Hyper-v 拡張可能スイッチの拡張](reordering-hyper-v-extensibility-switch-extensions.md)します。
+**注**  同じ種類の複数の拡張機能は、拡張可能スイッチ インスタンスにバインドする場合は、拡張可能スイッチのドライバー スタックに配置されます順序を変更できます。 詳細については、[の並べ替えの Hyper-v 拡張可能スイッチの拡張](reordering-hyper-v-extensibility-switch-extensions.md)を参照してください。
 
  
 

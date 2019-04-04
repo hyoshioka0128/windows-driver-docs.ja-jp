@@ -40,7 +40,7 @@ ms.locfileid: "56577897"
 
     配信元に関係なく、 **DataRanges** 、メンバーが重複する範囲で、それぞれの標準的な範囲を組み合わせる必要があります、 [ **AVCPRECONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554103)構造追加時 (で適切な指定子の Guid を使用して) 両方デバイスのコンピューターをサポートするために*と*デバイスからデバイスへの接続。 *Avc.sys*を通じて各ピンの AVCPRECONNECTINFO 構造体を指定することができます、 [ **AVC\_関数\_取得\_接続情報**](https://msdn.microsoft.com/library/windows/hardware/ff554154)要求。
 
-3.  **IntersectHandler**ルーチンを作成し、 **DataFormat**の一致するペアの構造**DataRanges**構造体。 積集合ルーチンがの結果で指定されたか、 **AVC\_関数\_取得\_暗証番号 (pin)\_記述子**サブユニット ドライバーによって提供されるか。 サブユニット ドライバーでは、独自の積集合のハンドラーを提供する場合は、次を参照してください。 [ **AV/C 交差ハンドラー**](https://msdn.microsoft.com/library/windows/hardware/ff556379)します。 データの交差部分の詳細については、次を参照してください。 [AVStream の交差部分を DataRange](data-range-intersections-in-avstream.md)します。
+3.  **IntersectHandler**ルーチンを作成し、 **DataFormat**の一致するペアの構造**DataRanges**構造体。 積集合ルーチンがの結果で指定されたか、 **AVC\_関数\_取得\_暗証番号 (pin)\_記述子**サブユニット ドライバーによって提供されるか。 サブユニット ドライバーでは、独自の積集合のハンドラーを提供する場合は、[ **AV/C 交差ハンドラー**](https://msdn.microsoft.com/library/windows/hardware/ff556379)を参照してください。 データの交差部分の詳細については、[AVStream の交差部分を DataRange](data-range-intersections-in-avstream.md)を参照してください。
 
     **DataFormat**が AVCPRECONNECTINFO 範囲に一致する構造体、 [ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)構造が追加されます。 この構造体をローカルの pin の AVCPRECONNECTINFO 構造体のコピーである、**フラグ**メンバーに置き換え、 **hPlug**メンバー。 **HPlug**メンバーである必要があります**NULL**場合、 **KSPIN\_フラグ\_AVC\_永続的な**ビットが設定されます。 場合、 **KSPIN\_フラグ\_AVC\_PCRONLY**または**KSPIN\_フラグ\_AVC\_FIXEDPCR** で設定されたビット**フラグ**、 **UnitPlugNumber**と**データフロー**取得に使用されるメンバー、 **hPlug**から処理*61883 します。sys*します。 ビット (またはないビット) の他の任意の組み合わせ。 つまり、 **hPlug**使用可能なプラグインの任意の数を取得することができます (を使用して、**データフロー**プラグの方向を判断するにはメンバー)。
 
@@ -48,7 +48,7 @@ ms.locfileid: "56577897"
 
 4.  最後に、(形式のネゴシエーションとデータの交点) した後、暗証番号 (pin) のデータ形式を設定すると、pin は AVCCONNECTINFO 構造体の形式を調べる必要があります。 この構造体が見つかると、pin からの IEEE 1394 bus との間、またはコンピューターに、データを移動されません。 代わりに、使用[ **AVC\_関数\_設定\_接続情報**](https://msdn.microsoft.com/library/windows/hardware/ff554171) AVCCONNECTINFO 内容を下位のドライバーに送信します。 場合によっては、両方、低いフィルター ドライバー (たとえば、 *Avcstrm.sys*) および*Avc.sys*ドライバー接続操作を実行するが、この時点では、AVCCONNECTINFO 内容のみがキャッシュされている (をする必要があります接続操作では実行されません)。 下位のドライバーを提供している AVCCONNECTINFO をキャッシュしません。 1 つだけの pin では、この方法で**hPlug**ユニット間の接続。 低いフィルター ドライバーがない場合は、サブユニット ドライバーは、AVCCONNECTINFO を下位のドライバーに配信するかどうかを決定する必要があります。 *Avc.sys*必要があるプラグの AVCCONNECTINFO 構造を表示するコントロールを登録しません (PCR) の接続のみです。
 
-    サブユニットは stream の形式を管理する低いフィルター ドライバーが使用していない場合、サブユニット ドライバーは、IEEE 1394 シリアル バス プラグの接続を設定します。 詳細については、次を参照してください。 [/C AV ストリーミングの概要](av-c-streaming-overview.md)します。
+    サブユニットは stream の形式を管理する低いフィルター ドライバーが使用していない場合、サブユニット ドライバーは、IEEE 1394 シリアル バス プラグの接続を設定します。 詳細については、[/C AV ストリーミングの概要](av-c-streaming-overview.md)を参照してください。
 
     サブユニット ドライバーをキャッシュする必要があります、 **hPlug**場合、ピア ツー ピア接続をセットアップする形式のメンバー。
 

@@ -14,7 +14,7 @@ ms.locfileid: "56579638"
 # <a name="modifying-a-packets-extensible-switch-source-port-data"></a>パケットの拡張可能スイッチの発信元ポート データの変更
 
 
-HYPER-V 拡張可能スイッチの発信元ポートが指定された、 **SourcePortId**内のメンバー、 [ **NDIS\_切り替える\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh598211)構造体。 この構造体の帯域外 (OOB) コンテキストのパケットの転送に含まれている[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 このコンテキストの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
+HYPER-V 拡張可能スイッチの発信元ポートが指定された、 **SourcePortId**内のメンバー、 [ **NDIS\_切り替える\_転送\_詳細\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh598211)構造体。 この構造体の帯域外 (OOB) コンテキストのパケットの転送に含まれている[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 このコンテキストの詳細については、[Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)を参照してください。
 
 拡張可能スイッチ拡張機能は、パケットの送信元ポートの識別子を変更するための次のガイドラインに従う必要があります。
 

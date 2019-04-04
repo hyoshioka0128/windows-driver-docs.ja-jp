@@ -25,7 +25,7 @@ ms.locfileid: "56581290"
 
 [カーネル モードの環境変数](kernel-mode-environment-variables.md)
 
-デバッグ用の環境変数の使用方法の詳細については、次を参照してください。[を取得する設定をデバッグ用](getting-set-up-for-debugging.md)します。
+デバッグ用の環境変数の使用方法の詳細については、[を取得する設定をデバッグ用](getting-set-up-for-debugging.md)を参照してください。
 
  
 

@@ -32,7 +32,7 @@ UmdfService=WudfBioUsbSample, WudfBioUsbSample_Install
 UmdfServiceOrder=WudfBioUsbSample
 ```
 
-UmdfDispatcher 詳細については、次を参照してください。 [UmdfDispatcher INF ディレクティブの指定](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 WDF レジストリ ディレクティブについては、次を参照してください。 [WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。
+UmdfDispatcher 詳細については、[UmdfDispatcher INF ディレクティブの指定](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。 WDF レジストリ ディレクティブについては、[WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。
 
 ### <a name="span-idpendingasynchronousreadrequestsspanspan-idpendingasynchronousreadrequestsspanpending-asynchronous-read-requests"></a><span id="pending_asynchronous_read_requests"></span><span id="PENDING_ASYNCHRONOUS_READ_REQUESTS"></span>保留中の非同期読み取り要求
 

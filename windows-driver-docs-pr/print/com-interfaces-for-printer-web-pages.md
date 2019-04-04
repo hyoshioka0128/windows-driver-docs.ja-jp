@@ -25,4 +25,4 @@ Oleprn.dll、によって実装される、次のオートメーション イン
 
 [IOleCvt オートメーション インターフェイス](iolecvt-automation-interface.md)
 
-Windows SDK のドキュメントでは、active Server Pages (ASP) テクノロジと自動化が説明します。 プリンター Web ページの詳細については、次を参照してください。[インターネット印刷](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)します。
+Windows SDK のドキュメントでは、active Server Pages (ASP) テクノロジと自動化が説明します。 プリンター Web ページの詳細については、[インターネット印刷](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)を参照してください。

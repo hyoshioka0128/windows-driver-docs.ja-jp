@@ -31,9 +31,9 @@ A*スレッド DPC* IRQL でシステムを実行する DPC はパッシブ =\_�
 
 システムとしてスレッド Dpc (および通常 Dpc) を表す[ **KDPC** ](https://msdn.microsoft.com/library/windows/hardware/ff551882)構造体。 初期化するために、 **KDPC**スレッド DPC、呼び出しの構造、 [ **KeInitializeThreadedDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552166)ルーチンを渡して、 [ *CustomThreadedDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542976) DPC の処理を実行するルーチン。
 
-*CustomThreadedDpc*ルーチンがパッシブのいずれかで実行できる\_レベルまたはディスパッチ\_レベル、することが必要、 *CustomThreadedDpc*ルーチン正しく両方の Irql で同期します。 これを行う方法の詳細については、次を参照してください。[同期とスレッド Dpc](synchronization-and-threaded-dpcs.md)します。
+*CustomThreadedDpc*ルーチンがパッシブのいずれかで実行できる\_レベルまたはディスパッチ\_レベル、することが必要、 *CustomThreadedDpc*ルーチン正しく両方の Irql で同期します。 これを行う方法の詳細については、[同期とスレッド Dpc](synchronization-and-threaded-dpcs.md)を参照してください。
 
-さらに、することが必要、 *CustomThreadedDpc*ルーチンのディスパッチのすべての制限に従う\_レベルのコード。 IRQL で実行スレッド Dpc が有効な場合、パッシブ =\_レベルが通常 Dpc と同じ制限される可能性があります。 すべてのスレッドの DPC で実行されるコード-によって呼び出されるすべての関数を含む、 *CustomThreadedDpc*ルーチン — DPC 環境の制限に準拠する必要があります。 たとえば、コード ブロックしないでパッシブ レベルの同期オブジェクトでなど[KEVENT オブジェクト](defining-and-using-an-event-object.md)します。 ネットワーク、ストレージ、および、USB などに、ほとんどの既存デバイス スタックは、スレッドの DPC の処理をサポートしていませんし、パッシブで呼び出されることを検出した場合にブロックを試みる可能性があります\_レベル。 同様の理由で、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)(KMDF) は、スレッドの DPC の処理をサポートしていませんし、KMDF ドライバーはスレッド Dpc を使用しようとはしないでください。 DPC 環境の詳細については、次を参照してください。[書き込み DPC ルーチン](writing-dpc-routines.md)します。
+さらに、することが必要、 *CustomThreadedDpc*ルーチンのディスパッチのすべての制限に従う\_レベルのコード。 IRQL で実行スレッド Dpc が有効な場合、パッシブ =\_レベルが通常 Dpc と同じ制限される可能性があります。 すべてのスレッドの DPC で実行されるコード-によって呼び出されるすべての関数を含む、 *CustomThreadedDpc*ルーチン — DPC 環境の制限に準拠する必要があります。 たとえば、コード ブロックしないでパッシブ レベルの同期オブジェクトでなど[KEVENT オブジェクト](defining-and-using-an-event-object.md)します。 ネットワーク、ストレージ、および、USB などに、ほとんどの既存デバイス スタックは、スレッドの DPC の処理をサポートしていませんし、パッシブで呼び出されることを検出した場合にブロックを試みる可能性があります\_レベル。 同様の理由で、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)(KMDF) は、スレッドの DPC の処理をサポートしていませんし、KMDF ドライバーはスレッド Dpc を使用しようとはしないでください。 DPC 環境の詳細については、[書き込み DPC ルーチン](writing-dpc-routines.md)を参照してください。
 
 スレッド DPC を DPC キューに追加するには、呼び出す[ **KeInsertQueueDpc**](https://msdn.microsoft.com/library/windows/hardware/ff552185)します。 実行前に、スレッド DPC をキューから削除するには、呼び出す[ **KeRemoveQueueDpc**](https://msdn.microsoft.com/library/windows/hardware/ff553169)します。
 

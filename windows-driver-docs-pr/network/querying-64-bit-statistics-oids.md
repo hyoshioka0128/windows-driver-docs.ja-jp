@@ -17,7 +17,7 @@ ms.locfileid: "56582689"
 # <a name="querying-64-bit-statistics-oids"></a>64 ビット統計情報 OID のクエリ
 
 
-カウンター特定の Oid の統計情報のすべてのミニポート ドライバーを/秒 (Gbps) の 1 ギガバイトは、高速化、64 ビットをサポートする必要があります。 すべての 100 メガバイト/秒 (Mbps) より高速のミニポート ドライバーでは、このような Oid の 64 ビットのカウンターをサポートする必要があります。 コネクションレスのミニポート ドライバーの統計の Oid の詳細については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。 接続指向のミニポート ドライバーには、このような Oid の詳細については、次を参照してください。 [Connection-Oriented ミニポート ドライバーの全般的な統計](https://msdn.microsoft.com/library/windows/hardware/ff552482)します。
+カウンター特定の Oid の統計情報のすべてのミニポート ドライバーを/秒 (Gbps) の 1 ギガバイトは、高速化、64 ビットをサポートする必要があります。 すべての 100 メガバイト/秒 (Mbps) より高速のミニポート ドライバーでは、このような Oid の 64 ビットのカウンターをサポートする必要があります。 コネクションレスのミニポート ドライバーの統計の Oid の詳細については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。 接続指向のミニポート ドライバーには、このような Oid の詳細については、[Connection-Oriented ミニポート ドライバーの全般的な統計](https://msdn.microsoft.com/library/windows/hardware/ff552482)を参照してください。
 
 OID の統計情報のクエリを実行する要求元の設定 NDIS\_OID\_要求**InformationBufferLength** 4 (バイト単位) を 32 ビットの統計情報要求を示すために、64 ビットの統計情報要求を示す 8 (バイト単位)。 応答に、ミニポート ドライバー設定 NDIS\_OID\_要求**BytesNeeded**ミニポート ドライバーでは、64 ビット (4 は、32 ビット) または 8 をサポートする統計値のサイズにします。 ミニポート ドライバー設定 NDIS\_OID\_要求**BytesWritten**小さい方の**InformationBufferLength**値と統計情報のサイズをミニポート ドライバーサポートされています。
 

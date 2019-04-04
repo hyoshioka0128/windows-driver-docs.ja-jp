@@ -25,7 +25,7 @@ GPIO ピンは、ハードウェアのシステムで管理されるリソース
 
 [KMDF ドライバーを GPIO I/O ピンに接続します。](https://msdn.microsoft.com/library/windows/hardware/hh406474)
 
-割り込みリソースを使用すると、割り込みの受信、周辺機器のデバイス ドライバーは割り込みサービス ルーチン (ISR) を割り込みに論理的に接続する必要があります。 カーネル モード ドライバーが呼び出すことによってこの接続を確立するなど、 [ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)メソッドまたは[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)ルーチン。 接続した後は、ドライバーの ISR は周辺機器、GPIO ピンまたは割り込みコント ローラーの入力に割り込み要求を通知するときに実行されます。 割り込みの詳細については、次を参照してください。 [Interrupt オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540757)します。
+割り込みリソースを使用すると、割り込みの受信、周辺機器のデバイス ドライバーは割り込みサービス ルーチン (ISR) を割り込みに論理的に接続する必要があります。 カーネル モード ドライバーが呼び出すことによってこの接続を確立するなど、 [ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)メソッドまたは[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)ルーチン。 接続した後は、ドライバーの ISR は周辺機器、GPIO ピンまたは割り込みコント ローラーの入力に割り込み要求を通知するときに実行されます。 割り込みの詳細については、[Interrupt オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540757)を参照してください。
 
 GPIO フレームワーク拡張機能 (GpioClx) は、I/O の接続と周辺機器のデバイス ドライバーはそのクライアントの割り込みの接続の両方を管理します。 PnP マネージャーでは、さまざまなクライアント ドライバーに GPIO ピン GPIO コント ローラー デバイス上の別のグループを割り当てることができます。 これらのピンの一部はデータ入力または出力として構成され、割り込み要求の入力として構成されているいくつか。
 

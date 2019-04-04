@@ -49,9 +49,9 @@ ms.locfileid: "56560647"
 
 使用して、エラー ログにエントリを書き込みますが、ドライバーは、割り当てられているエラーのログ エントリによって記入と[ **IoWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff550527)します。 **IoWriteErrorLogEntry**自動的にログ エントリに割り当てられたメモリを解放します。 ドライバーを使用できる[ **IoFreeErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff549107)をすべての未使用のログ エントリを解放します。
 
-定義済みのエラー コード (フォームの IO の\_ERR\_*XXX*) と Windows Driver Kit (WDK) に含まれている ntiologc.h ヘッダー ファイルで定義されます。 各エラー コードに関連付けられたエラー メッセージは、エラー コードの宣言の横にある、ntiologc.h のコメントにあります。 定義済みのエラー コードを使用するには、ドライバーは、関連するエラー メッセージのソースとして iologmsg.dll、システム ファイルを登録する必要があります。 詳細については、次を参照してください。[エラー メッセージのソースとして登録する](registering-as-a-source-of-error-messages.md)します。
+定義済みのエラー コード (フォームの IO の\_ERR\_*XXX*) と Windows Driver Kit (WDK) に含まれている ntiologc.h ヘッダー ファイルで定義されます。 各エラー コードに関連付けられたエラー メッセージは、エラー コードの宣言の横にある、ntiologc.h のコメントにあります。 定義済みのエラー コードを使用するには、ドライバーは、関連するエラー メッセージのソースとして iologmsg.dll、システム ファイルを登録する必要があります。 詳細については、[エラー メッセージのソースとして登録する](registering-as-a-source-of-error-messages.md)を参照してください。
 
-ドライバーは、独自のカスタム エラー型を定義することも、関連するエラー メッセージ。 詳細については、次を参照してください。[カスタム エラーの種類を定義する](defining-custom-error-types.md)します。
+ドライバーは、独自のカスタム エラー型を定義することも、関連するエラー メッセージ。 詳細については、[カスタム エラーの種類を定義する](defining-custom-error-types.md)を参照してください。
 
  
 

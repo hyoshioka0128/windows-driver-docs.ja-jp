@@ -18,13 +18,13 @@ ms.locfileid: "56539448"
 
 詳細については、ドライバーの PnP を参照してください[プラグ アンド プレイ](implementing-plug-and-play.md)します。
 
-PnP マネージャーは、実際には、I/O マネージャーのサブシステムです。 I/O マネージャーの詳細については、次を参照してください。 [Windows カーネル モードの I/O マネージャー](windows-kernel-mode-i-o-manager.md)します。
+PnP マネージャーは、実際には、I/O マネージャーのサブシステムです。 I/O マネージャーの詳細については、[Windows カーネル モードの I/O マネージャー](windows-kernel-mode-i-o-manager.md)を参照してください。
 
-PnP ルーチンの一覧は、次を参照してください。[プラグ アンド プレイ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558809)します。
+PnP ルーチンの一覧は、[プラグ アンド プレイ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558809)を参照してください。
 
 PnP マネージャーに直接インターフェイスを提供するルーチンがないことに注意してください。つまりはありません"**Pp**"ルーチン。
 
-Windows Driver Frameworks (WDF) は、一連の PnP 管理を容易になるようにライブラリを提供します。 WDF の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/ff544296)します。
+Windows Driver Frameworks (WDF) は、一連の PnP 管理を容易になるようにライブラリを提供します。 WDF の詳細については、[カーネル モード ドライバー フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/ff544296)を参照してください。
 
  
 

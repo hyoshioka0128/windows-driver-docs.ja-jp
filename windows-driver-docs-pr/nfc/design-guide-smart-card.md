@@ -37,7 +37,7 @@ GUID_DEVINTERFACE_SMARTCARD_READER
 -   IOCTL\_スマート カード\_飲み込む
 
 ## <a name="smart-card-attributes"></a>スマート カードの属性
-Windows スマート カード DDI には、Get と Set の属性の IOCTL 要求が含まれています。 NFC コンタクトレス リーダーをサポートする最小要件を満たすためにのみサポートされています、GET_ATTRIBUTE リーダーと ICC の状態の最小セット。 詳細については、次を参照してください。[でサポートされるスマート カード属性](smart-card-attributes.md)します。
+Windows スマート カード DDI には、Get と Set の属性の IOCTL 要求が含まれています。 NFC コンタクトレス リーダーをサポートする最小要件を満たすためにのみサポートされています、GET_ATTRIBUTE リーダーと ICC の状態の最小セット。 詳細については、[でサポートされるスマート カード属性](smart-card-attributes.md)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

@@ -75,7 +75,7 @@ VOID MyFreeMdl(PMDL Mdl)
 
 チェーンの MDL によって記述される物理的なページがロックされている場合、例関数は、 [ **MmUnlockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff556381)ルーチンを呼び出す前に、ページのロックを解除する[ **IoFreeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff549126) MDL を解放します。 ただし、例の関数は、ページを呼び出す前に明示的にマップ解除する必要はありません**IoFreeMdl**します。 代わりに、 **IoFreeMdl**自動的に MDL を解放する場合、ページの割り当てを解除します。
 
-割り当て、解放、および MDLs を管理するシステム ルーチンの概要については、次を参照してください。[アドレス マッピングと MDLs](https://msdn.microsoft.com/library/windows/hardware/ff540568)します。
+割り当て、解放、および MDLs を管理するシステム ルーチンの概要については、[アドレス マッピングと MDLs](https://msdn.microsoft.com/library/windows/hardware/ff540568)を参照してください。
 
  
 

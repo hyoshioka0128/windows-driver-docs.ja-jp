@@ -31,7 +31,7 @@ I/O マネージャーは、(通常ユーザー モード アプリケーショ�
 
 ドライバーと呼ばれる、そのデバイス オブジェクトの特殊な部分で、現在の I/O 操作に関する状態情報を維持できる、[デバイス拡張機能](device-extensions.md)します。
 
-詳細については、次を参照してください。 [Irp の処理](handling-irps.md)と[入力/出力手法](i-o-programming-techniques.md)します。
+詳細については、[Irp の処理](handling-irps.md)と[入力/出力手法](i-o-programming-techniques.md)を参照してください。
 
  
 

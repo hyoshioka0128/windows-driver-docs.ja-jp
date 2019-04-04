@@ -28,7 +28,7 @@ SMS API は、次のユース ケースをサポートしています。
 
 -   モバイル ブロード バンド デバイスのプロパティを取得 (アカウントの電話番号、モバイル通信用のグローバル システム\[GSM\]またはコード Division Multiple Access \[CDMA\]と同様の情報)。
 
-SMS API についての詳細については、次を参照してください。 [ **Windows.Devices.Sms 名前空間**](https://msdn.microsoft.com/library/windows/apps/br206567)します。
+SMS API についての詳細については、[ **Windows.Devices.Sms 名前空間**](https://msdn.microsoft.com/library/windows/apps/br206567)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

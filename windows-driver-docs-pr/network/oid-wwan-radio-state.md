@@ -24,7 +24,7 @@ MB デバイスの無線電源の状態を設定するように要求して呼�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN ラジオの電源状態の操作](https://msdn.microsoft.com/library/windows/hardware/ff559107)します。
+詳細については、この OID を使用して、[WWAN ラジオの電源状態の操作](https://msdn.microsoft.com/library/windows/hardware/ff559107)を参照してください。
 
 ミニポート ドライバー アクセスしないでください、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) とクエリの処理または操作を設定します。
 

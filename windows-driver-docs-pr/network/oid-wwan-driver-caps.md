@@ -24,7 +24,7 @@ OID\_WWAN\_ドライバー\_キャップは、ミニポート ドライバーで
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB ミニポート ドライバーの初期化](https://msdn.microsoft.com/library/windows/hardware/ff557186)します。
+詳細については、この OID を使用して、[MB ミニポート ドライバーの初期化](https://msdn.microsoft.com/library/windows/hardware/ff557186)を参照してください。
 
 ミニポート ドライバーが、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでくださいクエリ操作を処理するときにします。
 

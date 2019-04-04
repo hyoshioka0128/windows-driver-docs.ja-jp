@@ -67,7 +67,7 @@ ms.locfileid: "56571693"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソースのデバッグと関連するコマンドの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。
+ソースのデバッグと関連するコマンドの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------
@@ -76,7 +76,7 @@ ms.locfileid: "56571693"
 
 使用してソース行のサポートを有効にすることができます、 **.lines**コマンドまたは[-コマンド ライン オプションを行](command-line-options.md)します。 ソース行のサポートはまだ有効に、使用する場合、 **.lines**コマンドは、このサポートを無効にします。
 
-使用しない場合、既定で、 **.lines**コマンド、WinDbg をオンにソース行のサポート、およびコンソール デバッガー (KD、CDB、NTSD) が、サポートを無効にします。 この設定を変更する方法の詳細については、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
+使用しない場合、既定で、 **.lines**コマンド、WinDbg をオンにソース行のサポート、およびコンソール デバッガー (KD、CDB、NTSD) が、サポートを無効にします。 この設定を変更する方法の詳細については、[シンボル オプションを設定](symbol-options.md)を参照してください。
 
  
 

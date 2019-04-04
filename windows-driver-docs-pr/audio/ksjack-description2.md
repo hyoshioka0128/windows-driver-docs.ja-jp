@@ -69,7 +69,7 @@ typedef struct _tagKSJACK_DESCRIPTION2 {
 
  
 
-動的な形式の変更の詳細については、次を参照してください。[動的形式変更](https://msdn.microsoft.com/library/windows/hardware/ff536371)します。
+動的な形式の変更の詳細については、[動的形式変更](https://msdn.microsoft.com/library/windows/hardware/ff536371)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_CDCHANGER[デバイス インターフェイス クラス](htt
 
 システム提供の CD-ROM[チェンジャー ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff551455)オペレーティング システムとチェンジャーの CD-ROM デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_CDCHANGER のインスタンスを登録します。
 
-CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)します。
+CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)を参照してください。
 
-記憶域デバイスについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶域デバイスについては、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 [**CdChangerClassGuid** ](cdchangerclassguid.md) GUID_DEVINTERFACE_CDCHANGER デバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_CDCHANGER を代わりに使用します。
 

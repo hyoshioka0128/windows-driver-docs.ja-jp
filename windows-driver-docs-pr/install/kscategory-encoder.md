@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-エンコーダーの詳細については、次を参照してください。[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)と[エンコーダーのインストールと登録](https://msdn.microsoft.com/library/windows/hardware/ff559551)します。
+エンコーダーの詳細については、[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)と[エンコーダーのインストールと登録](https://msdn.microsoft.com/library/windows/hardware/ff559551)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

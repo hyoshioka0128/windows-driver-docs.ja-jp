@@ -32,7 +32,7 @@ ms.locfileid: "56575091"
    </psf:PrintTicket>
 ```
 
-保護された印刷の詳細については、次を参照してください。[の保護された印刷ドライバー サポート](driver-support-for-protected-printing.md)します。
+保護された印刷の詳細については、[の保護された印刷ドライバー サポート](driver-support-for-protected-printing.md)を参照してください。
 
  
 

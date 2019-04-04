@@ -48,7 +48,7 @@ NDIS WDM ミニポート ドライバーの USB ドライバー スタックと�
 [USB ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540046)と[I/O 要求](https://msdn.microsoft.com/library/windows/hardware/ff537421)USB クライアント ドライバーが使用できることを USB ドライバー スタックとのインターフェイス。
 
 <a href="" id="usb-driver-stack"></a>USB ドライバー スタック  
-USB デバイスのドライバー スタックです。 詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)します。
+USB デバイスのドライバー スタックです。 詳細については、[USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)を参照してください。
 
  
 

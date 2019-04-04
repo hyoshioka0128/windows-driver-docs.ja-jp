@@ -43,7 +43,7 @@ ms.locfileid: "56578105"
 <tbody>
 <tr class="odd">
 <td align="left"><p>_NT_DEBUGGER_EXTENSION_PATH = <em>Path</em></p></td>
-<td align="left"><p>デバッガーが最初に拡張 Dll の検索パスを指定します。 <em>パス</em>コロンの後にドライブ文字を含めることができます (<strong>:</strong>)。 複数のディレクトリをセミコロンで区切ります (<strong>;</strong>)。 詳細については、次を参照してください。<a href="loading-debugger-extension-dlls.md" data-raw-source="[Loading Debugger Extension DLLs](loading-debugger-extension-dlls.md)">デバッガー拡張 Dll の読み込み</a>します。</p></td>
+<td align="left"><p>デバッガーが最初に拡張 Dll の検索パスを指定します。 <em>パス</em>コロンの後にドライブ文字を含めることができます (<strong>:</strong>)。 複数のディレクトリをセミコロンで区切ります (<strong>;</strong>)。 詳細については、<a href="loading-debugger-extension-dlls.md" data-raw-source="[Loading Debugger Extension DLLs](loading-debugger-extension-dlls.md)">デバッガー拡張 Dll の読み込み</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>_NT_EXECUTABLE_IMAGE_PATH = <em>Path</em></p></td>
@@ -59,11 +59,11 @@ ms.locfileid: "56578105"
 </tr>
 <tr class="odd">
 <td align="left"><p>_NT_ALT_SYMBOL_PATH = <em>Path</em></p></td>
-<td align="left"><p>_NT_SYMBOL_PATH の前に検索、代替のシンボル パスを指定します。 これは、シンボル ファイルのプライベート バージョンを保持する場合に便利です。 <em>パス</em>コロンの後にドライブ文字を含めることができます (<strong>:</strong>)。 複数のディレクトリをセミコロンで区切ります (<strong>;</strong>)。 詳細については、次を参照してください。<a href="symbol-path.md" data-raw-source="[Symbol Path](symbol-path.md)">シンボル パス</a>します。</p></td>
+<td align="left"><p>_NT_SYMBOL_PATH の前に検索、代替のシンボル パスを指定します。 これは、シンボル ファイルのプライベート バージョンを保持する場合に便利です。 <em>パス</em>コロンの後にドライブ文字を含めることができます (<strong>:</strong>)。 複数のディレクトリをセミコロンで区切ります (<strong>;</strong>)。 詳細については、<a href="symbol-path.md" data-raw-source="[Symbol Path](symbol-path.md)">シンボル パス</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>_NT_SYMBOL_PROXY =<em>プロキシ</em><strong>:</strong><em>ポート</em></p></td>
-<td align="left"><p>SymSrv で使用するプロキシ サーバーを指定します。 詳細については、次を参照してください。<a href="firewalls-and-proxy-servers.md" data-raw-source="[Firewalls and Proxy Servers](firewalls-and-proxy-servers.md)">ファイアウォールとプロキシ サーバー</a>します。</p></td>
+<td align="left"><p>SymSrv で使用するプロキシ サーバーを指定します。 詳細については、<a href="firewalls-and-proxy-servers.md" data-raw-source="[Firewalls and Proxy Servers](firewalls-and-proxy-servers.md)">ファイアウォールとプロキシ サーバー</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>_NT_DEBUG_HISTORY_SIZE = <em>Number</em></p></td>

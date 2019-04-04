@@ -16,7 +16,7 @@ ms.locfileid: "56581247"
 
 INF ファイルを使用して、拡張 Display Identification Data (EDID) のいずれかのモニターを上書きできます。 Monsamp.inf、これを行う方法を示すサンプル INF ファイルから Windows 7 (WDK バージョン 7600) Windows Driver Kit (WDK) とが指定されています。 Monsamp.inf がここに再掲します。
 
-使用して、および Monsamp.inf を変更する方法については、次を参照してください。 [INF ファイルのセクションではモニター](monitor-inf-file-sections.md)します。
+使用して、および Monsamp.inf を変更する方法については、[INF ファイルのセクションではモニター](monitor-inf-file-sections.md)を参照してください。
 
 ## <a name="span-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanapproaches-to-correcting-edids"></a><span id="Approaches_to_correcting_EDIDs"></span><span id="approaches_to_correcting_edids"></span><span id="APPROACHES_TO_CORRECTING_EDIDS"></span>EDIDs を修正する方法
 

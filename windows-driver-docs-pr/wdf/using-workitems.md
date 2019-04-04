@@ -33,7 +33,7 @@ ms.locfileid: "56572220"
 
 2.  作業項目に関する情報を格納します。
 
-    通常、ドライバーを使用して作業項目オブジェクトのコンテキストのメモリ タスクに関する情報を格納する、 [ *OnWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh463909)コールバック関数を実行する必要があります。 ときに、 *OnWorkItem*コールバック関数が呼び出されると、このコンテキストのメモリにアクセスして、情報を取得できます。 割り当てるし、コンテキストのメモリにアクセスする方法については、次を参照してください。[**IWDFObject::AssignContext**](https://msdn.microsoft.com/library/windows/hardware/ff560208)します。
+    通常、ドライバーを使用して作業項目オブジェクトのコンテキストのメモリ タスクに関する情報を格納する、 [ *OnWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh463909)コールバック関数を実行する必要があります。 ときに、 *OnWorkItem*コールバック関数が呼び出されると、このコンテキストのメモリにアクセスして、情報を取得できます。 割り当てるし、コンテキストのメモリにアクセスする方法については、[**IWDFObject::AssignContext**](https://msdn.microsoft.com/library/windows/hardware/ff560208)を参照してください。
 
 3.  システムの作業項目のキューに作業項目を追加します。
 

@@ -86,7 +86,7 @@ ms.locfileid: "56570379"
 
 ### <a name="span-iddebuggingclientsandworkspacesspanspan-iddebuggingclientsandworkspacesspandebugging-clients-and-workspaces"></a><span id="debugging_clients_and_workspaces"></span><span id="DEBUGGING_CLIENTS_AND_WORKSPACES"></span>クライアントとワークスペースのデバッグ
 
-デバッグ クライアントとして WinDbg を使用すると、グラフィカル インターフェイスを使用して設定する値のみがそのワークスペースに保存します。 デバッガー コマンド ウィンドウで行った変更は保存されません。 (この制約は、ローカルのクライアントが行われた変更のみが反映されることのデバッガー コマンド ウィンドウはすべてのクライアントとデバッグ サーバーからの入力を受け入れるため。)詳細については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
+デバッグ クライアントとして WinDbg を使用すると、グラフィカル インターフェイスを使用して設定する値のみがそのワークスペースに保存します。 デバッガー コマンド ウィンドウで行った変更は保存されません。 (この制約は、ローカルのクライアントが行われた変更のみが反映されることのデバッガー コマンド ウィンドウはすべてのクライアントとデバッグ サーバーからの入力を受け入れるため。)詳細については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
 
 ### <a name="span-idbreakpointsinworkspacesspanspan-idbreakpointsinworkspacesspanbreakpoints-in-workspaces"></a><span id="breakpoints_in_workspaces"></span><span id="BREAKPOINTS_IN_WORKSPACES"></span>ワークスペース内のブレークポイント
 

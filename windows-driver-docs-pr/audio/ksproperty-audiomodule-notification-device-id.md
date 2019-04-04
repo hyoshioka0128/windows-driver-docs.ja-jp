@@ -71,7 +71,7 @@ ms.locfileid: "56581928"
 
 この KSPROPERTY を使用する例は、SYSVAD オーディオ ドライバーのサンプルを参照してください。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

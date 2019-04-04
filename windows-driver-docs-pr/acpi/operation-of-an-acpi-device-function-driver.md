@@ -30,11 +30,11 @@ ms.locfileid: "56557334"
 
 -   関数のドライバーと ACPI BIOS との間の通信インターフェイスは、デバイスの操作の領域をサポートしています。
 
-    詳細については、次を参照してください。[サポート、営業地域](supporting-an-operation-region.md)します。
+    詳細については、[サポート、営業地域](supporting-an-operation-region.md)を参照してください。
 
 -   ベンダー定義を必要に応じて、サポート*デバイス インターフェイス*と*Ioctl*デバイスを操作するその他のドライバーやユーザー モード アプリケーションが使用されます。
 
-    詳細については、次を参照してください。 [Vendor-Defined ACPI デバイス インターフェイスを提供する](providing-a-vendor-defined-acpi-device-interface.md)します。
+    詳細については、[Vendor-Defined ACPI デバイス インターフェイスを提供する](providing-a-vendor-defined-acpi-device-interface.md)を参照してください。
 
  
 

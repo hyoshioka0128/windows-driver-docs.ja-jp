@@ -78,7 +78,7 @@ NDIS_STATUS MiniportIdleNotification(
 }
 ```
 
-USB アイドル要求 IRP のコールバック ルーチンの実装のガイドラインについては、次を参照してください。 [USB のアイドル状態要求 IRP のコールバック ルーチンを実装する](implementing-a-usb-idle-request-irp-callback-routine.md)します。
+USB アイドル要求 IRP のコールバック ルーチンの実装のガイドラインについては、[USB のアイドル状態要求 IRP のコールバック ルーチンを実装する](implementing-a-usb-idle-request-irp-callback-routine.md)を参照してください。
 
  
 

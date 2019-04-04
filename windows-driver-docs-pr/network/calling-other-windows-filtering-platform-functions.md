@@ -28,7 +28,7 @@ Windows フィルタ リング プラットフォームの管理機能のほと�
 
 [フィルター エンジンへのセッションを閉じる](closing-a-session-to-the-filter-engine.md)
 
-コールアウト ドライバーから呼び出すことができる他の Windows フィルタ リング プラットフォーム関数の一覧は、次を参照してください。 [Windows フィルタ リング プラットフォーム関数のその他の](https://msdn.microsoft.com/library/windows/hardware/ff569961)します。 これらの関数を使用する方法の詳細については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
+コールアウト ドライバーから呼び出すことができる他の Windows フィルタ リング プラットフォーム関数の一覧は、[Windows フィルタ リング プラットフォーム関数のその他の](https://msdn.microsoft.com/library/windows/hardware/ff569961)を参照してください。 これらの関数を使用する方法の詳細については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
 
  
 

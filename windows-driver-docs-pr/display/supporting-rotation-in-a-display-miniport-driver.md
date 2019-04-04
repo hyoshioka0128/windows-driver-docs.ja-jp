@@ -19,7 +19,7 @@ ms.locfileid: "56581344"
 # <a name="supporting-rotation-in-a-display-miniport-driver"></a>ディスプレイ ミニポート ドライバーでの回転のサポート
 
 
-ディスプレイ ミニポート ドライバーの[ **DxgkDdiEnumVidPnCofuncModality** ](https://msdn.microsoft.com/library/windows/hardware/ff559649)関数呼び出し、 [ **pfnUpdatePathSupportInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562106)関数ビデオの表示 (VidPN) のネットワーク トポロジ内の各パスのレポートの回転のサポート。 レポートのローテーションのサポートの詳細については、次を参照してください。 [Cofunctional VidPN ソースを列挙し、ターゲット モード](enumerating-cofunctional-vidpn-source-and-target-modes.md)します。
+ディスプレイ ミニポート ドライバーの[ **DxgkDdiEnumVidPnCofuncModality** ](https://msdn.microsoft.com/library/windows/hardware/ff559649)関数呼び出し、 [ **pfnUpdatePathSupportInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562106)関数ビデオの表示 (VidPN) のネットワーク トポロジ内の各パスのレポートの回転のサポート。 レポートのローテーションのサポートの詳細については、[Cofunctional VidPN ソースを列挙し、ターゲット モード](enumerating-cofunctional-vidpn-source-and-target-modes.md)を参照してください。
 
 Microsoft DirectX グラフィックスのカーネル サブシステムは、共有のプライマリ画面を作成するのに画面ディメンションの非回転を使用します。 DirectX グラフィックスのカーネル サブシステムの指定、画面の回転をディスプレイ ミニポート ドライバーを通知する[ **D3DKMDT\_VIDPN\_存在\_パス\_回転** ](https://msdn.microsoft.com/library/windows/hardware/ff546700)-型指定された値で、**回転**のメンバー、 [ **D3DKMDT\_VIDPN\_存在\_パス\_変換**](https://msdn.microsoft.com/library/windows/hardware/ff546719)構造体で指定されている、 **ContentTransformation**のメンバー、 [ **D3DKMDT\_VIDPN\_存在する\_パス**](https://msdn.microsoft.com/library/windows/hardware/ff546647)ディスプレイ ミニポート ドライバーの呼び出しで構造[ **DxgkDdiCommitVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559597)と[ **DxgkDdiUpdateActiveVidPnPresentPath** ](https://msdn.microsoft.com/library/windows/hardware/ff560803)関数。
 
@@ -122,7 +122,7 @@ Windows 8.1 Update 以降では、ドライバーは、これらの要件を満�
 <span id="Portrait-first_example"></span><span id="portrait-first_example"></span><span id="PORTRAIT-FIRST_EXAMPLE"></span>**縦最初の例**  
 ソースの表示が縦最初のデバイスで、ランドス ケープ最初外部モニターに接続する場合、セカンダリの複製のパスにドライバーは設定**Offset270**または**Offset90**に**TRUE**します。
 
-詳細については、次を参照してください。[をサポートしているパスに依存しない回転](supporting-path-independent-rotation.md)します。
+詳細については、[をサポートしているパスに依存しない回転](supporting-path-independent-rotation.md)を参照してください。
 
  
 

@@ -29,7 +29,7 @@ ms.locfileid: "56553389"
 
 INF ベースのアプローチは、スマート カード ミニドライバーの登録に使用する必要があります。 ドライバー パッケージから適切なディレクトリにファイルのコピーと、必要なレジストリ エントリの作成、INF ファイルを使用できます。
 
-スマート カード INF ファイルの例は、次を参照してください。[スマート カードのプラグ アンド プレイ](smart-card-plug-and-play.md)します。
+スマート カード INF ファイルの例は、[スマート カードのプラグ アンド プレイ](smart-card-plug-and-play.md)を参照してください。
 
 ## <a name="span-idinffilerequirementsspanspan-idinffilerequirementsspanspan-idinffilerequirementsspaninf-file-requirements"></a><span id="INF_File_Requirements"></span><span id="inf_file_requirements"></span><span id="INF_FILE_REQUIREMENTS"></span>INF ファイルの要件
 

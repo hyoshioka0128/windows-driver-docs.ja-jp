@@ -47,7 +47,7 @@ Framework のオブジェクトへのハンドル。
 <a name="remarks"></a>注釈
 -------
 
-オブジェクトのドライバーの種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのドライバーの種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -37,7 +37,7 @@ OID、セットとして\_GEN\_RNDIS\_CONFIG\_デバイス固有のパラメー�
 <a name="remarks"></a>コメント
 -------
 
-OID\_GEN\_RNDIS\_CONFIG\_RNDIS デバイスとパラメーターを使用します。 デバイス固有のパラメーターを設定するのにホストを使用します。 ミニポート ドライバーでは使用されません。 この OID の詳細については、次を参照してください。[デバイスに固有のパラメーターの設定](https://msdn.microsoft.com/library/windows/hardware/ff570784)します。
+OID\_GEN\_RNDIS\_CONFIG\_RNDIS デバイスとパラメーターを使用します。 デバイス固有のパラメーターを設定するのにホストを使用します。 ミニポート ドライバーでは使用されません。 この OID の詳細については、[デバイスに固有のパラメーターの設定](https://msdn.microsoft.com/library/windows/hardware/ff570784)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

@@ -16,10 +16,10 @@ ms.locfileid: "56549742"
 
 このセクションでは、NDIS 6.30 する NDIS 6.x ドライバーをポートするための要件について説明します。
 
--   NDIS 6.20 が動作する NDIS 6.x ドライバーの移植方法の詳細については、次を参照してください。 [NDIS 6.20 が動作する移植 NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-20.md)します。
+-   NDIS 6.20 が動作する NDIS 6.x ドライバーの移植方法の詳細については、[NDIS 6.20 が動作する移植 NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-20.md)を参照してください。
 -   NDIS の移植について 5.x および NDIS を以前のドライバー 6.x を参照してください[NDIS 6.0 への移植の NDIS 5.x ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/porting-ndis-5-x-drivers-to-ndis-6-0)します。
 
-NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
+NDIS 6.30 機能の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
 
 次のトピックでは、ミニポート、プロトコル、および中間ドライバー NDIS 6.30 を移植する方法について説明します。
 

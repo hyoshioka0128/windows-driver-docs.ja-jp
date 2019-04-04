@@ -92,7 +92,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 
 次の要素を持つことができます、 **MustHonor**属性。[**ColorProcessing**](colorprocessing.md)、 [ **CompressionQualityFactor**](compressionqualityfactor.md)、 [ **ContentType**](contenttype.md)、 [**露出**](exposure.md)、 [ **FilmScanMode**](filmscanmode.md)、 [ **ImagesToTransfer** ](imagestotransfer.md)、 [ **InputSize**](inputsize.md)、 [**指定**](inputsource.md)、 [ **MediaSides** ](mediasides.md)、 [**解決**](resolution.md)、 [**回転**](rotation.md)、 [**スケーリング** ](scaling.md)、 [ **ScanRegionHeight**](scanregionheight.md)、 [ **ScanRegionWidth**](scanregionwidth.md)、 [**ScanRegionXOffset**](scanregionxoffset.md)、および[ **ScanRegionYOffset**](scanregionyoffset.md)します。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
 
 **CreateScanJobRequest**次のエラーを返すこともできます。
 

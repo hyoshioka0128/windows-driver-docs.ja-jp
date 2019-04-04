@@ -71,7 +71,7 @@ ms.locfileid: "56580403"
 
 Isr を特定および IDTs については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-Itanium のターゲット コンピューターでの割り込みのベクター テーブルを表示する方法の詳細については、次を参照してください。 [ **! ivt**](-ivt.md)します。
+Itanium のターゲット コンピューターでの割り込みのベクター テーブルを表示する方法の詳細については、[ **! ivt**](-ivt.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

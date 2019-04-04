@@ -52,7 +52,7 @@ WinDbg のプレビューは、最新のビジュアル、windows の高速化�
 
 - **ログ**-これは、WinDbg プレビューの内部構造の内部ではログの下。 トラブルシューティングや長時間実行されるモニターに表示できます。 
 
-詳細については、次を参照してください。 [WinDbg プレビューの表示 メニュー](windbg-view-preview.md)します。
+詳細については、[WinDbg プレビューの表示 メニュー](windbg-view-preview.md)を参照してください。
 
 - **コマンド ウィンドウ**-コマンド ウィンドウを使用して DML を切り替えるし、デバッガーのコマンド ウィンドウをクリアに簡単にアクセスを提供します。 現在のすべてのデバッガー コマンドを使用して、互換性があり、WinDbg プレビューで作業を続行します。
 
@@ -99,7 +99,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![Screen shot showing ctrl tab menu](images/windbgx-ttd.png)
 
-詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
+詳細については、[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
 
 
 ### <a name="debugging-app-packages"></a>アプリ パッケージのデバッグ
@@ -108,7 +108,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![検索ボックスに表示されている 3 つのアプリで cal を示すアプリ パッケージのアプリケーション タブを起動します。](images/windbgx-launch-app-package.png)
 
-詳細については、次を参照してください。[アプリ パッケージの起動](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)します。
+詳細については、[アプリ パッケージの起動](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)を参照してください。
 
 
 ### <a name="attach-to-a-process"></a>プロセスにアタッチします。
@@ -123,7 +123,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 - **ブレークポイントを有効または無効に**-[ブレークポイント] ウィンドウは、現在のすべてのブレークポイントを表示し、簡単にアクセスを提供可能にして無効にすることにします。 
 - **ヒット カウント**-、[ブレークポイント] ウィンドウは、実行中のブレークポイントがヒットするたびに現在の合計。
 
-詳細については、次を参照してください。[ブレークポイント](windbg-breakpoints-preview.md)します。
+詳細については、[ブレークポイント](windbg-breakpoints-preview.md)を参照してください。
 
 
 ### <a name="enhanced-data-model-support"></a>強化されたデータ モデルのサポート
@@ -131,7 +131,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 - **データ モデルのサポートで構築された**- 組み込まれているデータ モデルのサポートと WinDbg のプレビューが書き込まれ、データ モデルは、デバッガーを使用します。
 - **[モデル] ウィンドウ**- [モデル] ウィンドウでは、'dx' の拡張可能な参照可能なバージョンと 'dx-g' できるようにする強力なを作成するためのテーブル、NatVis、JavaScript、および LINQ クエリの上位にします。 
 
-詳細については、次を参照してください。 [WinDbg Preview - データ モデル](windbg-data-model-preview.md)します。
+詳細については、[WinDbg Preview - データ モデル](windbg-data-model-preview.md)を参照してください。
 
 ![デバッガーでのデータ モデル メニューのスクリーン ショット](images/windbgx-data-model-menu.png)
 
@@ -142,7 +142,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![スクリプト デバッガー メニューのスクリーン ショット](images/windbgx-scripting-intellisense.png)
 
-詳細については、次を参照してください。 [WinDbg Preview - Scripting](windbg-scripting-preview.md)します。
+詳細については、[WinDbg Preview - Scripting](windbg-scripting-preview.md)を参照してください。
 
 ### <a name="backwards-compatibility"></a>下位互換性 
 
@@ -160,7 +160,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ## <a name="next-steps"></a>次の手順
 
-新機能については、この最新リリースについては、次を参照してください。 [WinDbg Preview - 新](windbg-what-is-new-preview.md)します。
+新機能については、この最新リリースについては、[WinDbg Preview - 新](windbg-what-is-new-preview.md)を参照してください。
 
 これらのトピックをインストールし、WinDbg プレビューの構成を確認します。
 

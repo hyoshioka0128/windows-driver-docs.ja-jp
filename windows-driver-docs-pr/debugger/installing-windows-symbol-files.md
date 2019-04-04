@@ -18,7 +18,7 @@ ms.locfileid: "56572054"
 
 Windows カーネルやドライバー、アプリケーションをデバッグする前に適切なシンボル ファイルにアクセスする必要があります。 Windows シンボルを取得する正式な方法は、Microsoft シンボル サーバーを使用します。 シンボル サーバーは必要に応じてお使いのデバッグ ツールにシンボルをダウンロードします。 シンボル ファイルがシンボル サーバーからダウンロードされると、ローカル コンピューターにキャッシュされ、アクセスが速くなります。 
 
-1 つの簡単な使用の Microsoft シンボル サーバーに接続することができます、 [ **.symfix (シンボル ストア パスの設定)** ](-symfix--set-symbol-store-path-.md)コマンド。 完全な詳細については、次を参照してください。 [Microsoft パブリック シンボル](microsoft-public-symbols.md)します。
+1 つの簡単な使用の Microsoft シンボル サーバーに接続することができます、 [ **.symfix (シンボル ストア パスの設定)** ](-symfix--set-symbol-store-path-.md)コマンド。 完全な詳細については、[Microsoft パブリック シンボル](microsoft-public-symbols.md)を参照してください。
 
 > [!IMPORTANT]
 > Windows のされなくオフライン シンボル パッケージが公開されます。 高速の Windows では、Windows のデバッグ シンボルが迅速に行われた最新のリズム手段を更新します。 オンライン大幅に改善を行いました[Microsoft シンボル サーバー](microsoft-public-symbols.md)シンボルのすべての Windows バージョンと更新プログラムが利用できます。 これで、これについては見つかります[ブログ エントリ](https://blogs.msdn.microsoft.com/windbg/2017/10/18/update-on-microsofts-symbol-server/)します。 

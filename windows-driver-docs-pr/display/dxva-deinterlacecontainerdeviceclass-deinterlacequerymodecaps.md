@@ -61,7 +61,7 @@ HRESULT DeinterlaceQueryModeCaps(
 
 **DeinterlaceQueryModeCaps**関数で指定されたモードの機能の報告、 [ **DXVA\_DeinterlaceCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff563939)構造体。
 
-*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、次を参照してください。[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)します。
+*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)を参照してください。
 
 すべてのドライバーは、既存を使用して、bob のモードをサポートできる必要があります*ビット ブロック転送*ハードウェア。
 

@@ -21,7 +21,7 @@ ms.locfileid: "56551503"
 ## <span id="ddk_registering_fsfilter_callback_routines_if"></span><span id="DDK_REGISTERING_FSFILTER_CALLBACK_ROUTINES_IF"></span>
 
 
-FsFilter 通知コールバック ルーチンは、基になるファイル システムは、特定の操作を実行した後と前に呼び出されます。 FsFilter コールバック ルーチンの詳細については、次を参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)します。
+FsFilter 通知コールバック ルーチンは、基になるファイル システムは、特定の操作を実行した後と前に呼び出されます。 FsFilter コールバック ルーチンの詳細については、[ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)を参照してください。
 
 FsFilter 通知のコールバック ルーチンを登録するには必要がありますを割り当てるし、初期化、FS\_フィルター\_コールバックは、構造体、構造体で FsFilter コールバック ルーチンのエントリ ポイントを保存してのアドレスを渡す、構造体、*コールバック*パラメーターを**FsRtlRegisterFileSystemFilterCallbacks**します。
 

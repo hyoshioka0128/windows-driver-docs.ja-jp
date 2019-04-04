@@ -20,7 +20,7 @@ Microsoft Store デバイス アプリと特権を持つアプリケーション
 
 UWP デバイスのアプリがダウンロードされ、ユーザーが初めてデバイスを接続時にインストールします。 特権を持つアプリケーションでは、デバイスへのアクセスがあります。 それぞれ 1 つだけ指定できます。
 
-UWP デバイス アプリと特権を持つアプリケーションの詳細については、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)します。
+UWP デバイス アプリと特権を持つアプリケーションの詳細については、[Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)を参照してください。
 
 ## <a name="span-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>Microsoft Store デバイス アプリを指定するには
 
@@ -30,7 +30,7 @@ UWP デバイス アプリと特権を持つアプリケーションの詳細に
     -   **パッケージ名**します。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Name 属性の値を入力します。 パッケージ名入手してくださいに Microsoft Store アプリの提出を作成した後、Microsoft Store の送信プロセスにより、パッケージ名が変更されたため。 参照してください[UWP デバイス アプリのライフ サイクル](https://go.microsoft.com/fwlink/p/?linkid=246571)Microsoft Store アプリを関連付けるし、アプリ マニフェストに更新された値をコピーする方法の詳細についてはします。
     -   **発行元**。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Publisher 属性の値を入力します。 発行元名には、開発者の 1 つと同じである必要があります証明書が、パッケージと、メタデータの署名に使用します。
     -   **アプリ ID**します。 アプリケーション マニフェストの Application 要素内の ID 属性の値を入力します。
-    -   **通知ハンドラー**します。 通知ハンドラーについては、次を参照してください。[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)します。
+    -   **通知ハンドラー**します。 通知ハンドラーについては、[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)を参照してください。
 
 **パッケージ名**、**パブリッシャー**、および**アプリ ID**アプリ パッケージの .appxmanifest 情報に一致する必要があります。
 
@@ -76,7 +76,7 @@ UWP デバイス アプリと特権を持つアプリケーションの詳細に
 次のフィールドに入力して特権を持つアプリケーションを指定する**特権アプリケーション**:
 
 **注:**  
-特権のあるデバイスのインターフェイス プロパティのキーの詳細については、次を参照してください。 [DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)します。
+特権のあるデバイスのインターフェイス プロパティのキーの詳細については、[DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)を参照してください。
 
 
 

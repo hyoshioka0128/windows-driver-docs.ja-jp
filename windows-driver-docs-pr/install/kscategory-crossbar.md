@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src\\swtuner\\algtuner。* WDK のディレクトリ。
 
-オーディオとビデオに対するクロスバー デバイスについては、次を参照してください。[ビデオ キャプチャ デバイスでのフィルター使用](https://msdn.microsoft.com/library/windows/hardware/ff559598)と[アナログ ビデオ カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff554095)します。
+オーディオとビデオに対するクロスバー デバイスについては、[ビデオ キャプチャ デバイスでのフィルター使用](https://msdn.microsoft.com/library/windows/hardware/ff559598)と[アナログ ビデオ カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff554095)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

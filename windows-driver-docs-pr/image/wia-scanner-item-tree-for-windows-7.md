@@ -14,7 +14,7 @@ ms.locfileid: "56557499"
 # <a name="wia-scanner-item-tree-for-windows-7"></a>Windows 7 の WIA スキャナー項目ツリー
 
 
-このセクションには、Windows 7 および以降のバージョンの Windows イメージのスキャナー デバイス WIA 項目ツリーのアーキテクチャに関する情報が含まれています。 このセクションで説明されている機能では、Windows Vista を含む、Windows の以前のバージョンで使用できません。 Windows Vista で利用できる以降 (Windows 7) を含む WIA 項目ツリーのアーキテクチャの機能については、次を参照してください。 [WIA スキャナー項目ツリーの Windows Vista](wia-scanner-item-tree-for-windows-vista.md)します。
+このセクションには、Windows 7 および以降のバージョンの Windows イメージのスキャナー デバイス WIA 項目ツリーのアーキテクチャに関する情報が含まれています。 このセクションで説明されている機能では、Windows Vista を含む、Windows の以前のバージョンで使用できません。 Windows Vista で利用できる以降 (Windows 7) を含む WIA 項目ツリーのアーキテクチャの機能については、[WIA スキャナー項目ツリーの Windows Vista](wia-scanner-item-tree-for-windows-vista.md)を参照してください。
 
 このセクションには、次のトピックが含まれています。
 

@@ -49,7 +49,7 @@ void ScsiInquiry(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564604)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564604)構造体。
 
 *Cdb*   
 ターゲット デバイスに送信される SCSI 照会コマンドを保持するコマンドの記述子ブロックします。 この情報は、ミニポート ドライバーに配信される、 **Cdb**のメンバー、 [ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564598)構造体。

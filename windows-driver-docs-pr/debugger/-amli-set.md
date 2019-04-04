@@ -94,7 +94,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-関連するコマンドとその用途については、次を参照してください。 [AMLI デバッガー](the-amli-debugger.md)します。
+関連するコマンドとその用途については、[AMLI デバッガー](the-amli-debugger.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------
@@ -105,7 +105,7 @@ Kdexts.dll
 
 AML インタープリターは AMLI デバッガーを中断、この出力は自動的に有効になります。
 
-この出力のフィルター処理の詳細については、次を参照してください。 **DbgPrintEx**と**KdPrintEx** Windows Driver Kit (WDK) ドキュメントです。
+この出力のフィルター処理の詳細については、**DbgPrintEx**と**KdPrintEx** Windows Driver Kit (WDK) ドキュメントを参照してください。
 
  
 

@@ -28,7 +28,7 @@ typedef NTSTATUS
     );
 ```
 
-*FilterUnloadCallback*ルーチンが 1 つの入力パラメーター*フラグ*、される**NULL**または FLTFL\_フィルター\_アンロード\_必須。 フィルター マネージャーでは、このパラメーターを設定する FLTFL\_フィルター\_アンロード\_必須アンロード操作が必須であることを示します。 このパラメーターの詳細については、次を参照してください。 [ **PFLT\_フィルター\_アンロード\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551085)します。
+*FilterUnloadCallback*ルーチンが 1 つの入力パラメーター*フラグ*、される**NULL**または FLTFL\_フィルター\_アンロード\_必須。 フィルター マネージャーでは、このパラメーターを設定する FLTFL\_フィルター\_アンロード\_必須アンロード操作が必須であることを示します。 このパラメーターの詳細については、[ **PFLT\_フィルター\_アンロード\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551085)を参照してください。
 
 ミニフィルター ドライバーの*FilterUnloadCallback*ルーチンは、次の手順を実行する必要があります。
 

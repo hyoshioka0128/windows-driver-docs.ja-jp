@@ -31,7 +31,7 @@ VC では、接続指向の 2 つのエンティティ間の論理接続です�
 
 コール マネージャーに呼び出すことによって、VC できます非アクティブ化後の呼び出しが完了するか、VC、それ以外の場合は必要ありません、 [ **Ndis (M) CmDeactivateVc**](https://msdn.microsoft.com/library/windows/hardware/ff561657)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeactivateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559356)関数。 接続指向クライアントまたはコール マネージャーは、呼び出すことによって、VC の削除を開始できる[ **NdisCoDeleteVc**](https://msdn.microsoft.com/library/windows/hardware/ff561698)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559358)関数。
 
-Vc のミニポート ドライバー操作の詳細については、次を参照してください。 [VCs に対する操作](operations-on-vcs.md)します。
+Vc のミニポート ドライバー操作の詳細については、[VCs に対する操作](operations-on-vcs.md)を参照してください。
 
  
 

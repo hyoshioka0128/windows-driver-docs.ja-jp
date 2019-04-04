@@ -24,7 +24,7 @@ OID_WWAN_NETWORK_BLACKLIST を取得またはモバイル ブロード バンド
 
 各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [ **NDIS_WWAN_NETWORK_BLACKLIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist)ネットワーク ブラック リストの現在の情報に関する情報を含む構造体。
 
-この OID の使用状況に関する詳細については、次を参照してください。 [MBIM_CID_MS_NETWORK_BLACKLIST](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations#mbimcidmsnetworkblacklist)します。
+この OID の使用状況に関する詳細については、[MBIM_CID_MS_NETWORK_BLACKLIST](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations#mbimcidmsnetworkblacklist)を参照してください。
 
 ## <a name="requirements"></a>要件
 

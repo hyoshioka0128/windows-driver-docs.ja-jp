@@ -83,7 +83,7 @@ NO_MOVE AUTO_INCREMENT</td>
 <tr class="odd">
 <td><p></em><strong>PreAnalysisOptions</strong></p></td>
 <td><p>数値 0、1、2、4、または 8 のいずれかです。</p>
-<p>各属性のパラメーターの意味については、次を参照してください。 <a href="preanalysis-infrastructure.md" data-raw-source="[Preanalysis Infrastructure](preanalysis-infrastructure.md)">Preanalysis インフラストラクチャ</a>します。</p></td>
+<p>各属性のパラメーターの意味については、<a href="preanalysis-infrastructure.md" data-raw-source="[Preanalysis Infrastructure](preanalysis-infrastructure.md)">Preanalysis インフラストラクチャ</a>を参照してください。</p></td>
 <td><p>任意。 指定しない場合、既定値は 1 です。</p></td>
 </tr>
 <tr class="even">
@@ -112,9 +112,9 @@ NO_MOVE AUTO_INCREMENT</td>
 
  
 
-ラスターのデータの出力に関連付けられているコマンドについては、次を参照してください。[ラスター データ出力コマンド](raster-data-emission-commands.md)します。
+ラスターのデータの出力に関連付けられているコマンドについては、[ラスター データ出力コマンド](raster-data-emission-commands.md)を参照してください。
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
  
 

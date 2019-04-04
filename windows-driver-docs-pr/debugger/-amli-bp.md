@@ -45,7 +45,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-関連するコマンドとその用途については、次を参照してください。 [AMLI デバッガー](the-amli-debugger.md)します。
+関連するコマンドとその用途については、[AMLI デバッガー](the-amli-debugger.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

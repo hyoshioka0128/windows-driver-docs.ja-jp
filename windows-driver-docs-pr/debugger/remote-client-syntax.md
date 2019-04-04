@@ -64,7 +64,7 @@ remote /c Server SessionName [/L Lines] [/f] [/b] [/k ColorFile]
 
 *Server*と*SessionName*構文行に示されている順序でパラメーターを表示する必要があります。
 
-リモート セッションから切断して、次のように入力します。  <strong>@q</strong>します。 詳細については、次を参照してください。[リモート セッションのコマンド](remote-session-commands.md)します。
+リモート セッションから切断して、次のように入力します。  <strong>@q</strong>します。 詳細については、[リモート セッションのコマンド](remote-session-commands.md)を参照してください。
 
 **キーワードの色のファイルです。** キーワード ファイルの形式は次のとおりです。 キーワード インタープリターは大文字小文字が区別されません。
 

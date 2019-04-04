@@ -34,7 +34,7 @@ ms.locfileid: "56570450"
 
 4.  コントロールを返します。
 
-**ScsiPortNotification**ルーチンの呼び出し、 *HwScsiEnableInterruptsCallback*ルーチンと DPC ルーチン。 Dpc の詳細については、次を参照してください。 [DPC オブジェクトと Dpc](https://msdn.microsoft.com/library/windows/hardware/ff544084)します。
+**ScsiPortNotification**ルーチンの呼び出し、 *HwScsiEnableInterruptsCallback*ルーチンと DPC ルーチン。 Dpc の詳細については、[DPC オブジェクトと Dpc](https://msdn.microsoft.com/library/windows/hardware/ff544084)を参照してください。
 
 ミニポート ドライバーの場合、 *HwScsiInterrupt*ルーチンは、HBA の割り込みを無効にすることはできませんが、その割り込み駆動の転送で 50 を超える (マイクロ秒) を実行できる、 *HwScsiInterrupt*ルーチン、ドライバーライターは、転送を受け入れることのサイズを制限することによって、ミニポート ドライバーを調整する必要があります。 それ以外の場合、マウス ポインターが表示されます「過敏」や、ミニポート ドライバーでは、データを同時に転送が毎回シリアルおよびパラレルのスループットが著しく低下します。
 

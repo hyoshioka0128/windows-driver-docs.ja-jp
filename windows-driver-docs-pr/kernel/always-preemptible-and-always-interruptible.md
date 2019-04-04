@@ -56,7 +56,7 @@ Preemptible 割り込み可能なオペレーティング システムの設計�
 
 IRQL でいくつかのシステム サポート ルーチンが実行 = パッシブ\_レベル、ページング可能なコードやページング可能なデータにアクセスとして実装されるため、または一部のカーネル モード コンポーネントは、独自のスレッドを設定するためです。
 
-同様に、いくつか[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)IRQL で通常実行 = パッシブ\_レベル。 ただし、いくつかの標準のドライバーのルーチンを実行 IRQL でいずれかのディスパッチを =\_レベル、または、IRQL のデバイスの最下位レベルのドライバーの場合 (とも呼ばれる*DIRQL*)。 Irql の詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
+同様に、いくつか[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)IRQL で通常実行 = パッシブ\_レベル。 ただし、いくつかの標準のドライバーのルーチンを実行 IRQL でいずれかのディスパッチを =\_レベル、または、IRQL のデバイスの最下位レベルのドライバーの場合 (とも呼ばれる*DIRQL*)。 Irql の詳細については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)を参照してください。
 
 ドライバーのすべてのルーチンは、中断可能です。 これにより、パッシブよりも高い IRQL でを実行している任意のルーチンが含まれます。\_レベル。 特定の IRQL でを実行している任意のルーチンでは、そのルーチンの実行中に高い IRQL の割り込みが発生しない場合にのみ、プロセッサの制御が保持されます。
 

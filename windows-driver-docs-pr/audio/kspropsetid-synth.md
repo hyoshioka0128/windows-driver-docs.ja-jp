@@ -72,7 +72,7 @@ KSPROPERTY\_シンセサイザー\_CAPS プロパティは、シンセサイザ�
 
 -   効果のレンダリング
 
-詳細については、次を参照してください。 [ **SYNTHCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff538424)します。
+詳細については、[ **SYNTHCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff538424)を参照してください。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 

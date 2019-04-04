@@ -20,7 +20,7 @@ ETS、トラフィック クラスごとに 2 つの直接接続されている�
 
 NDIS のサービス品質 (QoS) パラメーターを使用して指定、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 **TcBandwidthAssignmentTable**メンバーには、ETS のアルゴリズムを使用するクラスをトラフィックの帯域幅の割り当てを指定する配列が含まれています。
 
-優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
+優先度レベルの詳細については、[IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)を参照してください。
 
  
 

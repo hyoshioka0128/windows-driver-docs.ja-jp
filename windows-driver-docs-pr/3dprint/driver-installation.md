@@ -26,9 +26,9 @@ ms.locfileid: "56581934"
 
 - 3D プリンターは試験段階の場合、または開発で、次の手順では、*ドライバーを手動でインストール*既存の COM ポートに出力する、G コードをファイルに印刷するのには、次のセクション。
 
-MS_COMP_3DPRINT については、次を参照してください。[入門ガイド - Microsoft 標準のドライバーの 3D プリンター](https://docs.microsoft.com/windows-hardware/drivers/3dprint/microsoft-standard-driver-for-3d-printers-)します。
+MS_COMP_3DPRINT については、[入門ガイド - Microsoft 標準のドライバーの 3D プリンター](https://docs.microsoft.com/windows-hardware/drivers/3dprint/microsoft-standard-driver-for-3d-printers-)を参照してください。
 
-OS の記述子の詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)します。
+OS の記述子の詳細については、[USB デバイスの Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)を参照してください。
 
 ### <a name="automatic-installation-of-the-driver-via-pnp"></a>PnP を使用して、ドライバーの自動インストール
 

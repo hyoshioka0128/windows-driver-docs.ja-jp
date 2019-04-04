@@ -34,7 +34,7 @@ ms.locfileid: "56552582"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-スレッドの凍結を指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
+スレッドの凍結を指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

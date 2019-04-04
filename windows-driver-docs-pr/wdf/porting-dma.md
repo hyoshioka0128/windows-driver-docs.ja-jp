@@ -22,7 +22,7 @@ KMDF ドライバーで DMA (Direct Memory Access) を実行すると、フレ�
 
 フレームワークは、転送に必要なマップのレジスタの数を決定、マップのレジスタを割り当て、スキャッター/ギャザー リスト (の場合、デバイスがサポート スキャッター/ギャザー DMA) をビルド、およびプロセッサのキャッシュと必要なときにバッファーをフラッシュを。
 
-実装の詳細については、次を参照してください。 [KMDF ドライバーで DMA 操作を処理](handling-dma-operations-in-kmdf-drivers.md)します。
+実装の詳細については、[KMDF ドライバーで DMA 操作を処理](handling-dma-operations-in-kmdf-drivers.md)を参照してください。
 
  
 

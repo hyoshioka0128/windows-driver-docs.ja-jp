@@ -36,7 +36,7 @@ Windows の以前のバージョンでプリンター ドライバーを常に�
 
 Windows 7 および Windows Server 2008 R2 では、管理者は、オプションとして、構成できますプリンター ドライバーを分離プロセス - は、スプーラーのプロセスから別のプロセスで実行します。 ドライバーを分離するには、管理者は、印刷サービスの停止からドライバー コンポーネントで障害を予防できます。
 
-スプーラー機能の詳細については、次を参照してください。[スプーラー コンポーネントの関数と構造体](https://msdn.microsoft.com/library/windows/hardware/ff562686)します。
+スプーラー機能の詳細については、[スプーラー コンポーネントの関数と構造体](https://msdn.microsoft.com/library/windows/hardware/ff562686)を参照してください。
 
 ### <a href="" id="driver-isolation-support-in-inf-files"></a> INF ファイルでのドライバーの分離のサポート
 

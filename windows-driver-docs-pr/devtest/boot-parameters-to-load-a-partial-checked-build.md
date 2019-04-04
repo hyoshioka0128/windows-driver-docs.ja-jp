@@ -22,7 +22,7 @@ ms.locfileid: "56570636"
 ## <span id="ddk_boot_parameters_to_load_a_partial_checked_build_tools"></span><span id="DDK_BOOT_PARAMETERS_TO_LOAD_A_PARTIAL_CHECKED_BUILD_TOOLS"></span>
 
 
-A*チェック済みビルドの部分的な*チェック ビルド バージョンのカーネルと HAL およびオペレーティング システムの残りの部分の無料のビルドが含まれています。 詳細については、次を参照してください。[オペレーティング システムのチェックと HAL (For Windows Vista 以降) のみをインストールする](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)します。
+A*チェック済みビルドの部分的な*チェック ビルド バージョンのカーネルと HAL およびオペレーティング システムの残りの部分の無料のビルドが含まれています。 詳細については、[オペレーティング システムのチェックと HAL (For Windows Vista 以降) のみをインストールする](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)を参照してください。
 
 ### <a name="span-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanspan-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanconfiguring-a-partial-checked-build-in-windows"></a><span id="configuring_a_partial_checked_build_in_windows_vista_and_later"></span><span id="CONFIGURING_A_PARTIAL_CHECKED_BUILD_IN_WINDOWS_VISTA_AND_LATER"></span>Windows での部分的なチェック ビルドの構成
 

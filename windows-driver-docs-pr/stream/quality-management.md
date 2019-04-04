@@ -33,7 +33,7 @@ ms.locfileid: "56574108"
 
 Pin では、パフォーマンス低下の戦略を許可している場合、ミニドライバーをサポートしています、 [ **KSPROPERTY\_ストリーム\_低下**](https://msdn.microsoft.com/library/windows/hardware/ff565690)プロパティ。
 
-詳細については、次を参照してください。 [ **KSDEGRADE** ](https://msdn.microsoft.com/library/windows/hardware/ff561671)と[ **KSDEGRADE\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff561673)します。
+詳細については、[ **KSDEGRADE** ](https://msdn.microsoft.com/library/windows/hardware/ff561671)と[ **KSDEGRADE\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff561673)を参照してください。
 
  
 

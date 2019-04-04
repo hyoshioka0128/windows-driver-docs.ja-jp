@@ -19,7 +19,7 @@ ms.locfileid: "57348663"
 
 
 
-次の表は、ハーフトーン機能に関連付けられている属性を一覧表示します。 ハーフトーン機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+次の表は、ハーフトーン機能に関連付けられている属性を一覧表示します。 ハーフトーン機能の詳細については、[標準機能](standard-features.md)を参照してください。
 
 <table>
 <colgroup>
@@ -61,9 +61,9 @@ ms.locfileid: "57348663"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
-これらの属性の使用に関する詳細については、次を参照してください。 [Unidrv のハーフトーン](halftoning-with-unidrv.md)します。 これらの属性を使用しない[ミニドライバーが指定したハーフトーン](minidriver-supplied-halftoning.md)します。
+これらの属性の使用に関する詳細については、[Unidrv のハーフトーン](halftoning-with-unidrv.md)を参照してください。 これらの属性を使用しない[ミニドライバーが指定したハーフトーン](minidriver-supplied-halftoning.md)します。
 
  
 

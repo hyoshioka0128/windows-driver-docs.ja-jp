@@ -60,25 +60,25 @@ SecurityContext-&gt;AccessState
 
 SecurityContext-&gt;DesiredAccess
 
-[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)ファイルに対して要求されたアクセス権を指定する構造体。 詳細については、次を参照してください。、 *DesiredAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)ファイルに対して要求されたアクセス権を指定する構造体。 詳細については、、 *DesiredAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
 
 **[オプション]**  
 作成またはファイルが既に存在する場合に実行されるアクションと同様に、ファイルを開くときに適用されるオプションを指定するフラグのビットマスク。 このメンバーの下位 24 ビットに対応しています、 *CreateOptions*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。 上位の 8 ビットに対応しています、 *CreateDisposition*パラメーターを**FltCreateFile**します。
 
 **FileAttributes**  
-属性の作成またはファイルを開く際に適用するビット マスク。 詳細については、次を参照してください。、 *FileAttributes*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+属性の作成またはファイルを開く際に適用するビット マスク。 詳細については、、 *FileAttributes*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
 
 **ShareAccess**  
-ファイルに、要求は共有アクセス権限のビットマスクです。 このパラメーターが 0 の場合は、排他的アクセスが要求されています。 詳細については、次を参照してください。、 *ShareAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+ファイルに、要求は共有アクセス権限のビットマスクです。 このパラメーターが 0 の場合は、排他的アクセスが要求されています。 詳細については、、 *ShareAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
 
 **EaLength**  
-バッファーのバイト単位の長さを**EaBuffer**へのポインターします。 詳細については、次を参照してください。、 *EaLength*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+バッファーのバイト単位の長さを**EaBuffer**へのポインターします。 詳細については、、 *EaLength*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
 
 **EaBuffer**  
-呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)-に適用される拡張属性 (EA) の情報を格納している構造化されたバッファーファイルです。 詳細については、次を参照してください。、 *EaBuffer*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)-に適用される拡張属性 (EA) の情報を格納している構造化されたバッファーファイルです。 詳細については、、 *EaBuffer*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
 
 **AllocationSize**  
-必要に応じて、ファイルのバイト単位で初期割り当てサイズを指定します。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。 詳細については、次を参照してください。、 *AllocationSize*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+必要に応じて、ファイルのバイト単位で初期割り当てサイズを指定します。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。 詳細については、、 *AllocationSize*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

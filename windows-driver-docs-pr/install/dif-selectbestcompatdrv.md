@@ -93,7 +93,7 @@ DIF_SELECTBESTCOMPATDRV 要求は、インストーラー、デバイス情報�
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+既定のハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -127,7 +127,7 @@ DIF_SELECTBESTCOMPATDRV 要求は、インストーラー、デバイス情報�
 
     共同インストーラーを選択すると、ドライバー場合、処理後の実行にする必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

@@ -32,7 +32,7 @@ ms.locfileid: "56582284"
 
 -   バッファーは、ドライバーは、それにアクセスする操作領域ハンドラーを登録する前に割り当てられているし、ハンドラーが登録されている限り、保持する必要があります。
 
-操作の領域の制約に関する詳細については、次を参照してください。、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=866846)します。
+操作の領域の制約に関する詳細については、、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=866846)を参照してください。
 
  
 

@@ -47,7 +47,7 @@ ms.locfileid: "56577827"
 
 -   取得する各デバイス インスタンス ハンドルには、最初に呼び出す**CM_Get_Device_ID**デバイス インスタンス ID を取得し、呼び出す**SetupDiOpenDeviceInfo** SP_DEVINFO_DATA の構造を取得する、デバイスです。
 
-デバイスの存在を操作する方法については、次を参照してください。 [Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)します。
+デバイスの存在を操作する方法については、[Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)を参照してください。
 
  
 

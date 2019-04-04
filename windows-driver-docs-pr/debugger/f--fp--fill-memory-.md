@@ -35,7 +35,7 @@ fp [MemoryType] PhysicalRange Pattern
 
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-仮想メモリを埋める範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+仮想メモリを埋める範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 <span id="_______PhysicalRange______"></span><span id="_______physicalrange______"></span><span id="_______PHYSICALRANGE______"></span> *PhysicalRange*   
 (カーネル モードのみ)入力の物理メモリの範囲を指定します。 構文*PhysicalRange*ですが、仮想メモリの範囲と同じシンボル名は許可されません。
@@ -83,7 +83,7 @@ fp [MemoryType] PhysicalRange Pattern
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

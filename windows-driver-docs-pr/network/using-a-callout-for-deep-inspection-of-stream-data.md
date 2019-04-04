@@ -136,7 +136,7 @@ VOID NTAPI
 
 値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://msdn.microsoft.com/library/windows/hardware/ff551215)構造体。
 
-パケットとストリームのデータ検査の詳細については、次を参照してください。[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)します。
+パケットとストリームのデータ検査の詳細については、[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)を参照してください。
 
  
 

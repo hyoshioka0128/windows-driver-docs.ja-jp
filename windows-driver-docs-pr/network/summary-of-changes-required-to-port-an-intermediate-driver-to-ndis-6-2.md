@@ -34,7 +34,7 @@ NDIS 6.20 が動作環境をサポートするために中間のドライバー�
 <a href="" id="general-porting-requirements-------"></a>**移植の一般的な要件**   
 -   プロトコル ドライバーおよびミニポート ドライバーの変更はない限りそれ以外の場合も中間ドライバーに適用されます。 これらのドライバーの移植の詳細については、プロトコル ドライバーに移植の概要を参照してください[概要の変更に必要なポートの NDIS 6.20 が動作するためのプロトコル ドライバー](summary-of-changes-required-to-port-a-protocol-driver-to-ndis-6-20.md)と移植のサマリー ミニポート ドライバー[の概要。ポートの NDIS 6.20 が動作するためのミニポート ドライバーに必要な変更](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-20.md)します。
 
--   Windows 7 の後に、Microsoft Windows のバージョンでこの NDIS 5.x の中間フィルター ドライバーはサポートされません。 すべてのフィルター ドライバー、NDIS フィルター ドライバー インターフェイスを使用する必要があります。 NDIS フィルター ドライバーの詳細については、次を参照してください。[概要の変更に必要なポートの NDIS 6.20 が動作するためのフィルター ドライバー](summary-of-changes-required-to-port-a-filter-driver-to-ndis-6-20.md)します。
+-   Windows 7 の後に、Microsoft Windows のバージョンでこの NDIS 5.x の中間フィルター ドライバーはサポートされません。 すべてのフィルター ドライバー、NDIS フィルター ドライバー インターフェイスを使用する必要があります。 NDIS フィルター ドライバーの詳細については、[概要の変更に必要なポートの NDIS 6.20 が動作するためのフィルター ドライバー](summary-of-changes-required-to-port-a-filter-driver-to-ndis-6-20.md)を参照してください。
 
  
 

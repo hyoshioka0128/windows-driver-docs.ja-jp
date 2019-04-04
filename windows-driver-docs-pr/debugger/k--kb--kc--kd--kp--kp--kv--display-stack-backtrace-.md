@@ -82,10 +82,10 @@ ms.locfileid: "56553121"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-スレッドのスタックが表示されることを指定します。 このパラメーターを省略した場合は、現在のスレッドのスタックが表示されます。 スレッドの構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。 スレッドは、ユーザー モードでのみ指定できます。
+スレッドのスタックが表示されることを指定します。 このパラメーターを省略した場合は、現在のスレッドのスタックが表示されます。 スレッドの構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。 スレッドは、ユーザー モードでのみ指定できます。
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-プロセッサのスタックが表示されることを指定します。 プロセッサの構文の詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。
+プロセッサのスタックが表示されることを指定します。 プロセッサの構文の詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。
 
 <span id="_______b"></span><span id="_______B"></span> b  
 スタック トレース内の各関数に渡される最初の 3 つのパラメーターが表示されます。
@@ -112,7 +112,7 @@ P パラメーターなど、スタック トレース内のすべての関数�
 表示のソース行を非表示にします。 L は大文字小文字を区別します。
 
 <span id="_______M"></span><span id="_______m"></span> M  
-出力を使用して表示[デバッガー Markup Language](debugger-markup-language-commands.md)します。 表示の場合は、各フレーム数は、リンク ローカルのコンテキストを設定し、ローカル変数を表示する をクリックしたことができますです。 ローカル コンテキストについては、次を参照してください。 [ **.frame**](-frame--set-local-context-.md)します。
+出力を使用して表示[デバッガー Markup Language](debugger-markup-language-commands.md)します。 表示の場合は、各フレーム数は、リンク ローカルのコンテキストを設定し、ローカル変数を表示する をクリックしたことができますです。 ローカル コンテキストについては、[ **.frame**](-frame--set-local-context-.md)を参照してください。
 
 <span id="_______FrameCount______"></span><span id="_______framecount______"></span><span id="_______FRAMECOUNT______"></span> *FrameCount*   
 表示するスタック フレームの数を指定します。 使用して、基数を変更していない限り、16 進数形式では、この数を指定する必要があります、 [ **n (設定数の基本)** ](n--set-number-base-.md)コマンド。 既定値は 20 (0x14) を使用して、既定値を変更していない限り、 [ **.kframes (スタックの長さを設定)** ](-kframes--set-stack-length-.md)コマンド。
@@ -156,7 +156,7 @@ DWORD の数を指定\_をダンプするスタック内の PTR の値。 既定
 
 ### <a name="span-idadditionalinformation1spanspan-idadditionalinformation1spanadditional-information"></a><span id="additional_information1"></span><span id="ADDITIONAL_INFORMATION1"></span>追加情報
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -220,13 +220,13 @@ X86 ベースのプロセッサでは、上、 **kv**コマンドでは、呼び
 
 使用する場合、 **k**不適切な結果を受信する (前に、関数プロローグが実行された) 関数の先頭にあるコマンドします。 デバッガーでは、フレームのレジスタを使用して、現在のバックを計算して、このレジスタ正しく設定されていない関数のプロローグが実行されるまでです。
 
-ユーザー モードでは、スタック トレースを現在のスレッドのスタックに基づきます。 スレッドの詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+ユーザー モードでは、スタック トレースを現在のスレッドのスタックに基づきます。 スレッドの詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
 カーネル モードでスタック トレースは、現在に基づいて[コンテキストを登録](changing-contexts.md#register-context)します。 特定のスレッド、コンテキストのレコードを一致するように登録するコンテキストを設定したり、フレームをトラップします。
 
 ### <a name="span-idadditionalinformation2spanspan-idadditionalinformation2spanadditional-information"></a><span id="additional_information2"></span><span id="ADDITIONAL_INFORMATION2"></span>追加情報
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
  
 

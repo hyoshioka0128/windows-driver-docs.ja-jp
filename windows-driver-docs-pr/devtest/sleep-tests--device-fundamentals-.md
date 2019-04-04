@@ -56,7 +56,7 @@ ms.locfileid: "56571519"
 <tr class="odd">
 <td align="left"><p><span id="Sleep_and_PNP__disable_and_enable__with_I_O_Before_and_After"></span><span id="sleep_and_pnp__disable_and_enable__with_i_o_before_and_after"></span><span id="SLEEP_AND_PNP__DISABLE_AND_ENABLE__WITH_I_O_BEFORE_AND_AFTER"></span>スリープと PNP (無効および有効にする) と後の I/O の前に</p></td>
 <td align="left"><p>このテストでは、さまざまなスリープ状態を使用してシステムをサイクルし、スリープ状態、各サイクルの前後に I/O と基本的な PnP (無効/有効にする) デバイスでを実行します。</p>
-<p>詳細については、次を参照してください。<a href="#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test" data-raw-source="[About the Sleep and PNP disable and enable with IO Before and After test](#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test)">について Sleep and PNP と無効にし、テストの前後に IO の前に有効にする</a>します。</p>
+<p>詳細については、<a href="#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test" data-raw-source="[About the Sleep and PNP disable and enable with IO Before and After test](#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test)">について Sleep and PNP と無効にし、テストの前後に IO の前に有効にする</a>を参照してください。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_Sleep_PNP_DisableEnable_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>メソッドをテストします。</strong>Sleep_PNP_DisableEnable_With_IO_Before_And_After</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -68,7 +68,7 @@ ms.locfileid: "56571519"
 <tr class="even">
 <td align="left"><p><span id="Sleep_with_I_O_Before_and_After"></span><span id="sleep_with_i_o_before_and_after"></span><span id="SLEEP_WITH_I_O_BEFORE_AND_AFTER"></span>前に、と後の I/O でスリープします。</p></td>
 <td align="left"><p>このテストでは、サイクルのさまざまなスリープ状態により、システム、スリープ状態、各サイクルの前後には、デバイスの I/O を実行します。</p>
-<p>詳細については、次を参照してください。<a href="#about-the-sleep-with-io-before-and-after-test" data-raw-source="[About the Sleep with IO Before And After test](#about-the-sleep-with-io-before-and-after-test)">について、スリープ状態で IO の前と後にテスト</a>します。</p>
+<p>詳細については、<a href="#about-the-sleep-with-io-before-and-after-test" data-raw-source="[About the Sleep with IO Before And After test](#about-the-sleep-with-io-before-and-after-test)">について、スリープ状態で IO の前と後にテスト</a>を参照してください。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_Sleep_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>メソッドをテストします。</strong>Sleep_With_Io_Before_And_After</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>

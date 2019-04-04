@@ -27,7 +27,7 @@ ms.locfileid: "56574495"
 
 たとえば、バス ドライバーは、その情報が、子デバイスのリソースの一覧で使用できない場合、子デバイスに関する情報を取得するより高度なドライバーが呼び出すことができる 1 つまたは複数のルーチンを提供する可能性があります。
 
-WDK で説明されているドライバーの定義済みのインターフェイスのセットの例は、次を参照してください。 [USB ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540046)します。 また、framework ベースのバージョンを参照してください、[トースター](sample-kmdf-drivers.md)サンプル。
+WDK で説明されているドライバーの定義済みのインターフェイスのセットの例は、[USB ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540046)を参照してください。 また、framework ベースのバージョンを参照してください、[トースター](sample-kmdf-drivers.md)サンプル。
 
 ### <a name="creating-an-interface"></a>インターフェイスの作成
 

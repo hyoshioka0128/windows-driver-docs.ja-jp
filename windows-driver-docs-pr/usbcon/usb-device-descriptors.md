@@ -33,7 +33,7 @@ KMDF ドライバーは、呼び出すことで、USB ターゲット デバイ�
 
 UMDF ドライバーの framework デバイス オブジェクトをクエリする必要があります、 [ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)ポインターと、呼び出し、 [ **IWDFUsbTargetDevice::RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)メソッド USB を指定して\_デバイス\_記述子\_記述子の型と型。
 
-ホストは、URB を送信することによってもデバイス記述子を取得できます。 このメソッドは、カーネル モード ドライバーにのみ適用されます。 ただし、クライアント ドライバーはドライバーが Windows Driver Model (WDM) に基づいていない限り、URB この種類の要求を送信することが必要です。 このようなドライバーを割り当てる必要があります、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体を呼び出して、 [ **UsbBuildGetDescriptorRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538943)マクロの形式を指定します要求の URB します。 ドライバーは、USB ドライバー スタックに URB を送信することで、要求を送信できます。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
+ホストは、URB を送信することによってもデバイス記述子を取得できます。 このメソッドは、カーネル モード ドライバーにのみ適用されます。 ただし、クライアント ドライバーはドライバーが Windows Driver Model (WDM) に基づいていない限り、URB この種類の要求を送信することが必要です。 このようなドライバーを割り当てる必要があります、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体を呼び出して、 [ **UsbBuildGetDescriptorRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538943)マクロの形式を指定します要求の URB します。 ドライバーは、USB ドライバー スタックに URB を送信することで、要求を送信できます。 詳細については、[、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)を参照してください。
 
 このコード例では、適切な URB で pURB によって指し示されるバッファーの形式を UsbBuildGetDescriptorRequest 呼び出しを示します。
 
@@ -75,7 +75,7 @@ iSerialNumber:        0x00
 bNumConfigurations:   0x01
 ```
 
-前の例では、デバイスは、USB 仕様、バージョン 2.0 に従って開発されて表示されます。 注、 **bDeviceClass**、 **bDeviceSubClass**、および**bDeviceProtocol**値。 これらの値は、1 つまたは複数の USB インターフェイスの関連付け記述子関数ごとの複数のインターフェイスをグループ化に使用できますが、デバイスに含まれているを示します。 詳細については、次を参照してください。 [USB インターフェイスの関連付けの記述子](usb-interface-association-descriptor.md)します。
+前の例では、デバイスは、USB 仕様、バージョン 2.0 に従って開発されて表示されます。 注、 **bDeviceClass**、 **bDeviceSubClass**、および**bDeviceProtocol**値。 これらの値は、1 つまたは複数の USB インターフェイスの関連付け記述子関数ごとの複数のインターフェイスをグループ化に使用できますが、デバイスに含まれているを示します。 詳細については、[USB インターフェイスの関連付けの記述子](usb-interface-association-descriptor.md)を参照してください。
 
 値を次に、確認**bMaxPacketSize0**します。 この値は、既定のエンドポイントの最大パケット サイズを示します。 このサンプルのデバイスは、その既定のエンドポイントを使用してデータを 64 バイトまでに転送できます。
 

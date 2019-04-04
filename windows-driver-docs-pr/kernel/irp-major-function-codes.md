@@ -59,7 +59,7 @@ ms.locfileid: "56556830"
 
 このセクションで説明されているパラメーターの入力と出力のパラメーターは、IRP の関数に固有のパラメーターです。
 
-Irp の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
+Irp の詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)を参照してください。
 
  
 

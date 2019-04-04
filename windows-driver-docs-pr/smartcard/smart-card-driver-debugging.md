@@ -68,7 +68,7 @@ SmartcardDebug(
 
 ドライバーの開発中に、スマート カードのドライバー ライブラリのチェック済みバージョンを使用し、デバッグ レベルを使用して、最大値に設定**SmartcardSetDebugLevel**(デバッグ\_すべて) で、 *DriverEntry*ルーチン。
 
-リモート デバッグ セッションの設定の詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+リモート デバッグ セッションの設定の詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
 
  
 

@@ -24,7 +24,7 @@ MUTT デバイスを使用する前に、テスト システムを準備する�
 -   Windows Driver Kit (WDK) に含まれているツールに慣れています。
 -   カーネル デバッグ ツールに慣れています。
 
-**注**  MUTT、MUTTPack、SuperMUTT および SuperMUTT パックにこの設定が適用されます。 これらのデバイスの詳細については、次を参照してください。 [MUTT デバイス](microsoft-usb-test-tool--mutt--devices.md)します。
+**注**  MUTT、MUTTPack、SuperMUTT および SuperMUTT パックにこの設定が適用されます。 これらのデバイスの詳細については、[MUTT デバイス](microsoft-usb-test-tool--mutt--devices.md)を参照してください。
 
  
 
@@ -35,7 +35,7 @@ MUTT デバイスを使用する前に、テスト システムを準備する�
 
 1.  カーネル デバッガーには、テスト システムを接続します。
 
-    詳細については、次を参照してください。[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=236405)と[Windows デバッグ](https://go.microsoft.com/fwlink/p/?linkid=242503)します。
+    詳細については、[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=236405)と[Windows デバッグ](https://go.microsoft.com/fwlink/p/?linkid=242503)を参照してください。
 
 2.  ホスト コント ローラーまたはテスト ハブの使用可能な各ポートには、MUTT デバイスを接続します。
 

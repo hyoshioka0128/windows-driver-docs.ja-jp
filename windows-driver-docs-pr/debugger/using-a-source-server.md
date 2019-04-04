@@ -68,7 +68,7 @@ Source search path is: c:\mySource;SRV*
 
 ### <a name="span-idusingagestoretoreducethecachesizespanspan-idusingagestoretoreducethecachesizespanusing-agestore-to-reduce-the-cache-size"></a><span id="using_agestore_to_reduce_the_cache_size"></span><span id="USING_AGESTORE_TO_REDUCE_THE_CACHE_SIZE"></span>AgeStore を使用して、キャッシュのサイズを小さくには
 
-ソースによってダウンロードされたファイル[SrcSrv](srcsrv.md)デバッグ セッションが完了したら、ハード ドライブに残ります。 ソースのキャッシュのサイズを制御するには、指定した日付よりも古いキャッシュ ファイルを削除するかを指定したサイズ以下のキャッシュの内容を減らす、AgeStore ツールを使用できます。 詳細については、次を参照してください。 [AgeStore](agestore.md)します。
+ソースによってダウンロードされたファイル[SrcSrv](srcsrv.md)デバッグ セッションが完了したら、ハード ドライブに残ります。 ソースのキャッシュのサイズを制御するには、指定した日付よりも古いキャッシュ ファイルを削除するかを指定したサイズ以下のキャッシュの内容を減らす、AgeStore ツールを使用できます。 詳細については、[AgeStore](agestore.md)を参照してください。
 
  
 

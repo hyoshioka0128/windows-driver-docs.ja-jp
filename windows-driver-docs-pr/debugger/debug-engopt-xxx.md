@@ -164,7 +164,7 @@ ms.locfileid: "57350072"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>Quiet モードを有効にします。 詳細については、次を参照してください。 <a href="sq--set-quiet-mode-.md"> <b>sq (非表示モードの設定)</b></a>します。 </p>
+<p>Quiet モードを有効にします。 詳細については、<a href="sq--set-quiet-mode-.md"> <b>sq (非表示モードの設定)</b></a>を参照してください。 </p>
 </td>
 </tr>
 <tr VALIGN="top">

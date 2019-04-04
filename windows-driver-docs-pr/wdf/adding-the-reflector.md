@@ -32,7 +32,7 @@ AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
 
 この例で、ドライバーは、0x2 を指定します (SPSVCINST\_ASSOCSERVICE) フラグ (に入れて、*フラグ*上記のパラメーター)、カーネル モード デバイス スタック内の関数のドライバーとして、reflector を割り当てる。
 
-**AddService**ディレクティブでは、既存のサービス構成が上書きされないように 0x000001f8 フラグもを設定します。 これらのフラグの詳細については、次を参照してください。、*フラグ*のパラメーター、 [ **AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+**AddService**ディレクティブでは、既存のサービス構成が上書きされないように 0x000001f8 フラグもを設定します。 これらのフラグの詳細については、、*フラグ*のパラメーター、 [ **AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
 
 WUDFVhidmini サンプルでは、次のコード例を示しています、 **AddService** UMDF フィルター ドライバーのディレクティブ。
 

@@ -14,7 +14,7 @@ ms.locfileid: "56580994"
 # <a name="span-iddevappsdrivermftsonmulti-pincamerasspanconsiderations-for-driver-mfts-on-multi-pin-cameras-uwp-device-apps"></a><span id="devapps.driver_mfts_on_multi-pin_cameras"></span>複数ピン カメラ (UWP デバイス アプリ) でドライバーの仕様に関する考慮事項
 
 
-Windows 8.1 は、Ihv および Oem のシステムにも、Media Foundation 変換 (MFT) のカメラ driver MFT と呼ばれる形式でビデオの処理にプラグインを作成する機能を提供します。 インストールされると、これらドライバーの仕様を特別なビデオ特殊効果を有効にする UWP デバイス アプリで使用できます。 一部のカメラは、プレビュー、キャプチャ、および静止画の別々 の pin を指定します。 これらの複数ピン カメラでは、開発者に固有の課題が伴います。 このトピックでは、複数ピン カメラのカメラ driver MFT を開発する際に考慮すべきいくつかの点について説明します。 Driver MFT の作成に関する詳細については、次を参照してください。[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)です。
+Windows 8.1 は、Ihv および Oem のシステムにも、Media Foundation 変換 (MFT) のカメラ driver MFT と呼ばれる形式でビデオの処理にプラグインを作成する機能を提供します。 インストールされると、これらドライバーの仕様を特別なビデオ特殊効果を有効にする UWP デバイス アプリで使用できます。 一部のカメラは、プレビュー、キャプチャ、および静止画の別々 の pin を指定します。 これらの複数ピン カメラでは、開発者に固有の課題が伴います。 このトピックでは、複数ピン カメラのカメラ driver MFT を開発する際に考慮すべきいくつかの点について説明します。 Driver MFT の作成に関する詳細については、[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)を参照してください。
 
 ## <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanintroduction"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>概要
 

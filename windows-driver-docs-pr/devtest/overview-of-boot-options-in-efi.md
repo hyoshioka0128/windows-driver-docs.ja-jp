@@ -110,7 +110,7 @@ Enterprise</code></pre></td>
 <tr class="even">
 <td align="left"><p><strong>OsLoadOptions</strong></p></td>
 <td align="left"><p>指定します、<em>ブート パラメーター</em>エントリ。 <em>起動パラメーター</em>有効化、無効化、およびオペレーティング システムの機能を構成するためのコマンドします。 EFI ブート マネージャは、起動可能なデバイスまたはシステムを解釈し、実装にこれらのパラメーターを渡します。</p>
-<p>ドライバーのデバッグとテストに関連するブート パラメーターの一覧は、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file" data-raw-source="[Boot Options in a Boot.ini File](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file)">Boot.ini ファイルでのブート オプション</a>します。</p></td>
+<p>ドライバーのデバッグとテストに関連するブート パラメーターの一覧は、<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file" data-raw-source="[Boot Options in a Boot.ini File](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file)">Boot.ini ファイルでのブート オプション</a>を参照してください。</p></td>
 <td align="left"><pre space="preserve"><code>OsLoadOptions: /debug
 /debugport=COM1 /baudrate=57600</code></pre></td>
 </tr>

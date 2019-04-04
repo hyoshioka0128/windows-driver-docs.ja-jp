@@ -36,7 +36,7 @@ ms.locfileid: "56558485"
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>その他のリソース
 
 
-オーディオ デバイスのドライバーの開発全般については、次を参照してください。[オーディオ デバイスの設計ガイド](https://go.microsoft.com/fwlink/p/?LinkID=822637)します。
+オーディオ デバイスのドライバーの開発全般については、[オーディオ デバイスの設計ガイド](https://go.microsoft.com/fwlink/p/?LinkID=822637)を参照してください。
 
  
 

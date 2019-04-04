@@ -34,7 +34,7 @@ Windows 2000 および Windows XP の IDE ドライバー モデルでは次の 
 
 5.  Microsoft では、CD-ROM (タイプ 5 SCSI) のすべてのデバイスを管理できる CD-ROM クラス ドライバーを提供します。
 
-前の図に、ドライバー スタックに対応するデバイス オブジェクトのスタックの図を表示するには、次を参照してください。 [PCI IDE コント ローラーのデバイス オブジェクトの例](device-object-example-for-a-pci-ide-controller.md)します。
+前の図に、ドライバー スタックに対応するデバイス オブジェクトのスタックの図を表示するには、[PCI IDE コント ローラーのデバイス オブジェクトの例](device-object-example-for-a-pci-ide-controller.md)を参照してください。
 
 Windows Vista およびそれ以降のバージョンのオペレーティング システムでは、IDE のスタックはによって管理、 [ATA ポート ドライバー](ata-port-driver.md)します。
 

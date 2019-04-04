@@ -18,7 +18,7 @@ ms.locfileid: "56556608"
 
 ミット テスト ツールの詳細については、次にお問い合わせください。MittSupport@microsoft.comします。
 
-最初に、次を参照してください。[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)します。 インストーラーをダウンロード、コンテンツを展開し、読み取り、 **ReadMe**ファイル ツールの概要。
+最初に、[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)を参照してください。 インストーラーをダウンロード、コンテンツを展開し、読み取り、 **ReadMe**ファイル ツールの概要。
 
 ## <a name="span-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanend-to-end-indicator-testing-for-convertibles"></a><span id="End-to-end_indicator_testing_for_convertibles"></span><span id="end-to-end_indicator_testing_for_convertibles"></span><span id="END-TO-END_INDICATOR_TESTING_FOR_CONVERTIBLES"></span>エンド ツー エンドのインジケーター コンバーチブルのテスト
 

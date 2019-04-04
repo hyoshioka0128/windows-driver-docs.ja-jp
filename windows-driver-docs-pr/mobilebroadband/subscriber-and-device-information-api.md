@@ -32,7 +32,7 @@ ms.locfileid: "56537286"
 
 -   **ファームウェアとハードウェア バージョン**ファームウェアとハードウェアのバージョン。
 
-サブスクライバーとデバイス情報 API の詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)します。
+サブスクライバーとデバイス情報 API の詳細については、[ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

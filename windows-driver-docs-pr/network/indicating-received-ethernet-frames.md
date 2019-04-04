@@ -35,7 +35,7 @@ Windows の TCP/IP プロトコル ドライバーには、一連のイーサネ
 
 -   特定の状況で NDIS 6.1 以降、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造は、受信したイーサネット フレームに対して複数のメモリ記述子リスト (MDLs) と関連付けることができます。 場合でも、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、1 つを含める必要があります**NET\_バッファー**複数 MDLs を使用して、構造体別のバッファーに受信したパケット データを分割するドライバーをできます。
 
-    たとえば、ヘッダー データの分割インターフェイスをサポートするイーサネットのドライバーは、1 つに関連付けられている複数の MDLs のリンク リストを使用して受信したイーサネット フレームを分割[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
+    たとえば、ヘッダー データの分割インターフェイスをサポートするイーサネットのドライバーは、1 つに関連付けられている複数の MDLs のリンク リストを使用して受信したイーサネット フレームを分割[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 詳細については、[ヘッダー データの分割](header-data-split.md)を参照してください。
 
     単純さとパフォーマンスの理由から、強くお勧めヘッダー データの分割をサポートしていないドライバーがそれぞれに 1 つだけ MDL を使用[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
 

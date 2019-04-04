@@ -27,7 +27,7 @@ typedef struct _TLV_CONTEXT
 typedef const TLV_CONTEXT * PCTLV_CONTEXT;
 ```
 
-**AllocationContext**解析および Api の生成によって変更されていない場合は、ミニポートで提供される演算子に渡すには引き続き`new`コールバック。 詳細については、次を参照してください。 [WDI TLV ジェネレーター/パーサー メモリ インターフェイス](wdi-tlv-generator-parser-memory-interface.md)します。
+**AllocationContext**解析および Api の生成によって変更されていない場合は、ミニポートで提供される演算子に渡すには引き続き`new`コールバック。 詳細については、[WDI TLV ジェネレーター/パーサー メモリ インターフェイス](wdi-tlv-generator-parser-memory-interface.md)を参照してください。
 
 ミニポートのジェネレーターを使用して、WDI に基づく単一バイナリ ドライバーは、WDI の以前のバージョンに対して実行する場合、 **PeerVersion**古いバイト ストリームを生成します。 逆に、パーサーがに基づいて、古いバイト ストリームを消費、 **PeerVersion**と、新しいデータ構造体に変換します。
 

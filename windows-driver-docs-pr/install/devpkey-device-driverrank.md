@@ -60,9 +60,9 @@ Windows では、DEVPKEY_Device_DriverRank の値を設定します。
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DriverRank の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DriverRank プロパティのキーをサポートしていません。 このプロパティは、Windows の以前のバージョンにアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537732)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DriverRank プロパティのキーをサポートしていません。 このプロパティは、Windows の以前のバージョンにアクセスする方法については、[デバイス ドライバーのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537732)を参照してください。
 
-ドライバーのランクについては、次を参照してください。[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff686700)します。
+ドライバーのランクについては、[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff686700)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

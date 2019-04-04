@@ -39,7 +39,7 @@ ms.locfileid: "56573538"
 
 4.  場合は、ドライバーは、自己管理型の I/O を使用して、フレームワークのドライバーの[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff556785)コールバック関数。
 
-次の手順を示す図を表示するには、次を参照してください。[デバイスで、ユーザーのプラグ](a-user-plugs-in-a-device.md)します。
+次の手順を示す図を表示するには、[デバイスで、ユーザーのプラグ](a-user-plugs-in-a-device.md)を参照してください。
 
  
 

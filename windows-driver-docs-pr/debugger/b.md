@@ -21,12 +21,12 @@ ms.locfileid: "56570645"
 <span id="breakpoint"></span><span id="BREAKPOINT"></span>**ブレークポイント**  
 ターゲットまたはターゲットの操作がトリガーされたときにイベントを発生する場所です。
 
-詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
+詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
 <span id="breakpoint_id"></span><span id="BREAKPOINT_ID"></span>**ブレークポイントの ID**  
 ブレークポイントの一意の識別子。
 
-詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
+詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
 <span id="breakpoint_type"></span><span id="BREAKPOINT_TYPE"></span>**ブレークポイントの種類**  
 ブレークポイントを実装するために使用するメソッド。 ブレークポイントの 2 種類があります。 プロセッサ ブレークポイントとブレークポイントのソフトウェア。

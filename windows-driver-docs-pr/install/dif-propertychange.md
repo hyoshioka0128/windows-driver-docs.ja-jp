@@ -89,7 +89,7 @@ DIF_PROPERTYCHANGE 要求は、デバイスのプロパティを変更するこ�
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+既定のハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -101,11 +101,11 @@ DIF_PROPERTYCHANGE 要求は、デバイスのプロパティを変更するこ�
 
 DIF_PROPERTYCHANGE 要求への応答では、インストーラーは、プロパティを変更する操作に参加できます。 クラスのインストール パラメーター (SP_PROPCHANGE_PARAMS) は、どの変更が行わを示します。
 
-プロパティの変更には、システムの再起動が必要です。 システムを再起動する方法については、次を参照してください。 [ **SetupDiCallClassInstaller**](https://msdn.microsoft.com/library/windows/hardware/ff550922)します。
+プロパティの変更には、システムの再起動が必要です。 システムを再起動する方法については、[ **SetupDiCallClassInstaller**](https://msdn.microsoft.com/library/windows/hardware/ff550922)を参照してください。
 
 Windows では、最初にデバイスをインストールする DIF_INSTALLDEVICE 要求を送信するときに、Windows はデバイスを開始されますが、インストールの一部として DIF_PROPERTYCHANGE 要求を送信しません。 インストーラーまたは共同インストーラーが最初にデバイスを起動する DIF_INSTALLDEVICE 要求を処理する必要がありますと、デバイスが、その後に再起動されるたびに、最初にデバイスが開始されると、カスタム インストール操作を実行する必要がある場合状態の変更操作は、デバイスが起動されていることが示す DIF_PROPERTYCHANGE 要求。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

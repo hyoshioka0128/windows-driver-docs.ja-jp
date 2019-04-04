@@ -24,13 +24,13 @@ ms.locfileid: "56582876"
 
 ![windows コンポーネントの概要を示す図](images/ntarch.png)
 
-図に示すように、Windows オペレーティング システムには、ユーザー モードとカーネル モードの両方のコンポーネントが含まれています。 Windows ユーザーおよびカーネル モードの詳細については、次を参照してください。[ユーザー モードとカーネル モード](https://msdn.microsoft.com/library/windows/hardware/ff554836)します。
+図に示すように、Windows オペレーティング システムには、ユーザー モードとカーネル モードの両方のコンポーネントが含まれています。 Windows ユーザーおよびカーネル モードの詳細については、[ユーザー モードとカーネル モード](https://msdn.microsoft.com/library/windows/hardware/ff554836)を参照してください。
 
-ドライバーは、さまざまなカーネル コンポーネントによってエクスポートされるルーチンを呼び出します。 たとえば、デバイス オブジェクトを作成するにを呼び出す、 [ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397) I/O マネージャーがエクスポートしたルーチン。 ドライバーを呼び出すことができるルーチンをカーネル モードの一覧は、次を参照してください。[ドライバー サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544200)します。
+ドライバーは、さまざまなカーネル コンポーネントによってエクスポートされるルーチンを呼び出します。 たとえば、デバイス オブジェクトを作成するにを呼び出す、 [ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397) I/O マネージャーがエクスポートしたルーチン。 ドライバーを呼び出すことができるルーチンをカーネル モードの一覧は、[ドライバー サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544200)を参照してください。
 
-さらに、ドライバーはオペレーティング システムからの特定の呼び出しに応答する必要があります、その他のシステム呼び出しに応答できます。 ドライバーがサポートする必要があるカーネル モードのルーチンの一覧は、次を参照してください。[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)します。
+さらに、ドライバーはオペレーティング システムからの特定の呼び出しに応答する必要があります、その他のシステム呼び出しに応答できます。 ドライバーがサポートする必要があるカーネル モードのルーチンの一覧は、[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)を参照してください。
 
-上の図では、すべてのカーネル モード コンポーネントが含まれています。 カーネル モード コンポーネントの一覧は、次を参照してください。[カーネル モードの管理者とライブラリ](kernel-mode-managers-and-libraries.md)します。
+上の図では、すべてのカーネル モード コンポーネントが含まれています。 カーネル モード コンポーネントの一覧は、[カーネル モードの管理者とライブラリ](kernel-mode-managers-and-libraries.md)を参照してください。
 
  
 

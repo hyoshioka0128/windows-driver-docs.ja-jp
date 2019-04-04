@@ -35,7 +35,7 @@ SDV の実施、*検証*動作が適切な動作を定義するルールに準�
 
 ### <a name="span-idcheckspanspan-idcheckspancheck"></a><span id="check"></span><span id="CHECK"></span>チェック
 
-中に、**確認**ステップ、SDV の準備および検証の選択した規則を使用して、ドライバーを確認します。 選択可能なルールの詳細については、次を参照してください。[静的ドライバー検証規則](https://msdn.microsoft.com/library/windows/hardware/ff551714)します。
+中に、**確認**ステップ、SDV の準備および検証の選択した規則を使用して、ドライバーを確認します。 選択可能なルールの詳細については、[静的ドライバー検証規則](https://msdn.microsoft.com/library/windows/hardware/ff551714)を参照してください。
 
 SDV は、オペレーティング システムのモデルの追加のコンポーネントを選択した規則が必要かどうかを開始します。 場合は、SDV は、ドライバーのソース ディレクトリに追加のオペレーティング システムのモデル ファイルをコピーします。
 
@@ -47,7 +47,7 @@ SDV 検証エンジンは、選択したすべてのルールを確認するま�
 
 ### <a name="span-idcommentspanspan-idcommentspancomment"></a><span id="comment"></span><span id="COMMENT"></span>コメント
 
-SDV は、検証プロセスでの手順を実行、中にステータス メッセージに書き込みますエラー メッセージと共にコマンド ラインで発生するエラーを報告する各ステップで。 ステータス メッセージについては、次を参照してください。[コマンド ライン出力](command-line-output.md)します。 エラー メッセージについては、次を参照してください。[静的ドライバー検証ツールのエラー メッセージ](static-driver-verifier-error-messages.md)します。 Microsoft の SDV に関する問題のトラブルシューティングと診断を有効にする方法については、次を参照してください。[静的ドライバー検証ツール診断](static-driver-verifier-diagnostics.md)します。
+SDV は、検証プロセスでの手順を実行、中にステータス メッセージに書き込みますエラー メッセージと共にコマンド ラインで発生するエラーを報告する各ステップで。 ステータス メッセージについては、[コマンド ライン出力](command-line-output.md)を参照してください。 エラー メッセージについては、[静的ドライバー検証ツールのエラー メッセージ](static-driver-verifier-error-messages.md)を参照してください。 Microsoft の SDV に関する問題のトラブルシューティングと診断を有効にする方法については、[静的ドライバー検証ツール診断](static-driver-verifier-diagnostics.md)を参照してください。
 
  
 

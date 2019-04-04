@@ -62,7 +62,7 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 2.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
 
 ## <a name="querying-sr-iov-capabilities-by-overlying-drivers"></a>上にあるドライバーが SR-IOV 機能の照会
 

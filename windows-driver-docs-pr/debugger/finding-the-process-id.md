@@ -44,7 +44,7 @@ TList (タスク リスト ビューアー、tlist.exe) は、タスク、また
 
 TList をコマンド プロンプトから実行すると、一意のプロセス id (PID) 番号によってメモリ内ですべてのユーザー モード プロセスの一覧表示されます。 PID、プロセス名、プロセスごとに表示し、プロセスのウィンドウで、そのウィンドウのタイトル。
 
-詳細については、次を参照してください。 [TList](tlist.md)します。
+詳細については、[TList](tlist.md)を参照してください。
 
 ### <a name="span-idthetlistdebuggercommandspanspan-idthetlistdebuggercommandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>.Tlist のデバッガー コマンド
 
@@ -52,7 +52,7 @@ TList をコマンド プロンプトから実行すると、一意のプロセ�
 
 ### <a name="span-idcsrssandusermodedriversspanspan-idcsrssandusermodedriversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS とユーザー モード ドライバー
 
-別のコンピューターで実行されているユーザー モード ドライバーをデバッグするには、クライアント サーバー ランタイム サブシステム (CSRSS) プロセスをデバッグします。 詳細については、次を参照してください。[デバッグ CSRSS](debugging-csrss.md)します。
+別のコンピューターで実行されているユーザー モード ドライバーをデバッグするには、クライアント サーバー ランタイム サブシステム (CSRSS) プロセスをデバッグします。 詳細については、[デバッグ CSRSS](debugging-csrss.md)を参照してください。
 
  
 

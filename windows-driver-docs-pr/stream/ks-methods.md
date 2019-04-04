@@ -30,7 +30,7 @@ ms.locfileid: "56548591"
 
 ドライバーが提供することで、特定のメソッドを要求する[ **KSMETHOD** ](https://msdn.microsoft.com/library/windows/hardware/ff563398)構造体、 *InBuffer*上の呼び出しのパラメーター。
 
-AVStream フィルターとピンが提供することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーいずれかを[ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、次を参照してください。 [Automation テーブルを定義する](defining-automation-tables.md)します。
+AVStream フィルターとピンが提供することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーいずれかを[ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、[Automation テーブルを定義する](defining-automation-tables.md)を参照してください。
 
  
 

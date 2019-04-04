@@ -25,7 +25,7 @@ Driver Verifier を発行するときに、このオプションがアクティ�
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して VM スイッチの検証機能の 1 つまたは複数のドライバーをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して VM スイッチの検証機能の 1 つまたは複数のドライバーをアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
 
 -   **コマンドラインで**
 

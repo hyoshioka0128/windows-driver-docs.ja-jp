@@ -69,7 +69,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 システム定義の拡張機能を追加することで OS 固有のインストール情報を指定する必要があります、INF、 *DDInstall*のセクションでは、かどうか、 *signature 名*は<strong>$Windows NT$</strong>または **$Chicago$** します。 (を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)これらの拡張機能の詳細についてはします)。
 
 <a href="" id="class-class-name"></a>**クラス =**<em>クラス名</em>  
-標準の種類のデバイスの名前を指定します、[デバイス セットアップ クラス](device-setup-classes.md)この INF ファイルを使用してインストールされているデバイスの種類。 この名前は通常のシステム定義のクラスの名前など**Net**または**表示、** にリストされています*Devguid.h*します。 詳細については、次を参照してください。 [System-Supplied デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)します。
+標準の種類のデバイスの名前を指定します、[デバイス セットアップ クラス](device-setup-classes.md)この INF ファイルを使用してインストールされているデバイスの種類。 この名前は通常のシステム定義のクラスの名前など**Net**または**表示、** にリストされています*Devguid.h*します。 詳細については、[System-Supplied デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)を参照してください。
 
 INF が指定されている場合、**クラス、** の対応するシステム定義の GUID 値を指定する必要がありますもその**ClassGUID**エントリ。 定義済みのデバイス セットアップ クラスが任意のデバイスの対応する GUID 値を指定することができますデバイスとドライバーのインストールの高速化、INF の検索を最適化するためにシステムのセットアップ コードは、このため。
 
@@ -86,13 +86,13 @@ INF が指定されている場合、**クラス、** の対応するシステ�
 
 この GUID 値は、レジストリのデバイス セットアップ クラスのサブキーを指定 **.\\クラス**この INF ファイルからインストールされているデバイスのドライバーのレジストリ情報の書き込み先の下のツリーです。 このクラスに固有の GUID 値は、存在する場合にもデバイスおよびクラスに固有のプロパティ ページのプロバイダーの種類のデバイス クラスのインストーラーを識別します。
 
-新しい[デバイス セットアップ クラス](device-setup-classes.md)、INF を新しく生成されたに指定する必要があります**ClassGUID**値。 Guid を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。 デバイス セットアップ クラスを参照してください。
+新しい[デバイス セットアップ クラス](device-setup-classes.md)、INF を新しく生成されたに指定する必要があります**ClassGUID**値。 Guid を作成する方法の詳細については、[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)を参照してください。 デバイス セットアップ クラスを参照してください。
 
 **注**  このエントリは、デバイス ドライバー、PnP マネージャーでインストールされたために必要です。
 
 **ExtensionId**拡張子 INF を作成するときに {xxxxxxxx xxxx-xxxx-。} を指定します、拡張機能 ID の GUID を = です。 GUID 値は、ここで、書式設定された各*x*は 16 進数。
 
-INF 拡張子の最初のバージョンを作成するときに、INF を新しく生成された指定する必要があります**ExtensionId**値。 ただし、INF、既存の拡張機能を更新するときに、 **ExtensionId**拡張子 INF の関連する複数のバージョンは独立した拡張子 Inf として扱われるのではなくどうしバージョン管理されるように、同じままする必要があります同じデバイス インスタンスで同時にインストールすることがあります。 拡張子 Inf を作成する方法の詳細については、次を参照してください。[拡張子 INF ファイルを使用して](using-an-extension-inf-file.md)します。
+INF 拡張子の最初のバージョンを作成するときに、INF を新しく生成された指定する必要があります**ExtensionId**値。 ただし、INF、既存の拡張機能を更新するときに、 **ExtensionId**拡張子 INF の関連する複数のバージョンは独立した拡張子 Inf として扱われるのではなくどうしバージョン管理されるように、同じままする必要があります同じデバイス インスタンスで同時にインストールすることがあります。 拡張子 Inf を作成する方法の詳細については、[拡張子 INF ファイルを使用して](using-an-extension-inf-file.md)を参照してください。
 
 **注**のみこのエントリは、INF、拡張機能を作成するときに指定することによって識別される必要な`Class = Extension`と`ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}`します。
  
@@ -111,7 +111,7 @@ INF ファイルのプロバイダーを識別します。 通常、として指
 <a href="" id="catalogfile-filename-cat"></a>**CatalogFile=**<em>filename</em>**.cat**  
 カタログを指定します (.*cat*) デバイス/ドライバーの配布メディアに含まれるファイル。
 
-ときに、[ドライバー パッケージ](driver-packages.md)が Microsoft に提出では、デジタル署名 WHQL を提供します、[カタログ ファイル](catalog-files.md)ドライバー パッケージをテストし、パッケージにデジタル署名を割り当て、WHQL 後。 テストおよび IHV および OEM のドライバー パッケージの署名の詳細については、次を参照してください。 [WHQL リリース署名](whql-release-signature.md)します。 カタログ ファイルは表示されていない、 [ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)セクションまたは[ **CopyFiles** ](inf-copyfiles-directive.md) INF のディレクティブ。 Windows では、INF ファイルと同じ場所に、カタログ ファイルが前提としています。
+ときに、[ドライバー パッケージ](driver-packages.md)が Microsoft に提出では、デジタル署名 WHQL を提供します、[カタログ ファイル](catalog-files.md)ドライバー パッケージをテストし、パッケージにデジタル署名を割り当て、WHQL 後。 テストおよび IHV および OEM のドライバー パッケージの署名の詳細については、[WHQL リリース署名](whql-release-signature.md)を参照してください。 カタログ ファイルは表示されていない、 [ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)セクションまたは[ **CopyFiles** ](inf-copyfiles-directive.md) INF のディレクティブ。 Windows では、INF ファイルと同じ場所に、カタログ ファイルが前提としています。
 
 システム提供の INF ファイルがあることはありません**CatalogFile =** エントリ、オペレーティング システムに対して、このような INF の署名を検証するため、すべてシステム提供*xxx.cat*ファイル。
 
@@ -143,7 +143,7 @@ INF ファイルのプロバイダーを識別します。 通常、として指
 <a href="" id="driverver-mm-dd-yyyy--w-x-y-z-"></a>**DriverVer =** **/mm/dd/yyyy**、**w.x.y.z**  
 このエントリには、この INF ファイルによってインストールされているドライバーのバージョン情報を指定します。 Windows 2000 以降、このエントリが必要です。
 
-このエントリを指定する方法については、次を参照してください。 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)します。
+このエントリを指定する方法については、[ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)を参照してください。
 
 
 <a href="" id="pnplockdown-0-1"></a>**PnpLockDown=0**|**1**  
@@ -158,10 +158,10 @@ Windows Vista 以降、ドライバー パッケージを設定する必要が�
  
 
 <a href="" id="driverpackagedisplayname--driver-package-description-"></a><strong>DriverPackageDisplayName=%</strong>driver-package-description<strong>%</strong>  
-使用しないでください。 Driver Install Frameworks (DIFx) によって使用されていた。 DIFx 廃止については、次を参照してください。 [DIFx ガイドライン](difx-guidelines.md)します。
+使用しないでください。 Driver Install Frameworks (DIFx) によって使用されていた。 DIFx 廃止については、[DIFx ガイドライン](difx-guidelines.md)を参照してください。
 
 <a href="" id="driverpackagetype-packagetype"></a>**DriverPackageType=** *PackageType*  
-使用しないでください。 Driver Install Frameworks (DIFx) によって使用されていた。 DIFx 廃止については、次を参照してください。 [DIFx ガイドライン](difx-guidelines.md)します。
+使用しないでください。 Driver Install Frameworks (DIFx) によって使用されていた。 DIFx 廃止については、[DIFx ガイドライン](difx-guidelines.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------
@@ -172,7 +172,7 @@ Windows Vista 以降、ドライバー パッケージを設定する必要が�
 
  
 
-詳細については、次を参照してください。[ドライバーの署名](signing-drivers-for-public-release--windows-vista-and-later-.md)します。
+詳細については、[ドライバーの署名](signing-drivers-for-public-release--windows-vista-and-later-.md)を参照してください。
 
 <a name="examples"></a>使用例
 --------

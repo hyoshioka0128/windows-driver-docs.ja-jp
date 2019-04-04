@@ -68,7 +68,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 -   **フォーム フィールドの検証エラー**をフォームに誤った情報が入力されたときに表示されます。 検証エラーはインライン表示するか、ユーザーが、エラーが関連付けられているフィールドを認識できるようにします。
 
-エラーが存在する方法のガイダンスについては、次を参照してください。 [、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)します。 次の例では、ページの上部にある通知バーが表示されます。
+エラーが存在する方法のガイダンスについては、[、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)を参照してください。 次の例では、ページの上部にある通知バーが表示されます。
 
 ![通知バーは、エラーを示しています。](images/mb-fig1-notificationbarerrors.png)
 
@@ -109,7 +109,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 ![別のアプリとサービス ページ](images/mb-fig3-snappedview-servicespage.png)
 
-アプリがアプリ ビュー、ハイ コントラスト モードとスクリーン リーダーの準備などからアクセスできることを確認します。 アプリにアクセスできるようにする方法の詳細については、次を参照してください。 [JavaScript を使用して UWP アプリのユーザー補助機能](https://msdn.microsoft.com/library/windows/apps/hh452681)します。
+アプリがアプリ ビュー、ハイ コントラスト モードとスクリーン リーダーの準備などからアクセスできることを確認します。 アプリにアクセスできるようにする方法の詳細については、[JavaScript を使用して UWP アプリのユーザー補助機能](https://msdn.microsoft.com/library/windows/apps/hh452681)を参照してください。
 
 ## <a name="span-idlaunchptsspanspan-idlaunchptsspanlaunch-points"></a><span id="launchpts"></span><span id="LAUNCHPTS"></span>起動ポイント
 
@@ -150,7 +150,7 @@ Windows 接続マネージャーを使用して、モバイル ブロード バ�
 
 ### <a name="span-idsplashspanspan-idsplashspansplash-screen"></a><span id="splash"></span><span id="SPLASH"></span>スプラッシュ スクリーン
 
-スプラッシュ スクリーンを使用すると、ブランド化を促進します。 スプラッシュ スクリーンの詳細については、次を参照してください。[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/hh465332)します。
+スプラッシュ スクリーンを使用すると、ブランド化を促進します。 スプラッシュ スクリーンの詳細については、[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/hh465332)を参照してください。
 
 ![スプラッシュ スクリーン](images/mb-fig4-splash-screen.png)
 

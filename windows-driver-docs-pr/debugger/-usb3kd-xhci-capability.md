@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>コメント
 -------
 
-出力、 [ **! xhci\_機能**](-usb3kd-device-info.md)コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)します。
+出力、 [ **! xhci\_機能**](-usb3kd-device-info.md)コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)を参照してください。
 
 <a name="examples"></a>使用例
 --------

@@ -44,9 +44,9 @@ Core 記述子とフラグメント記述子は、2 つの別のリング バッ
 
 ![複数のリングのレイアウト](images/multi-ring.png) 
 
-すべてのパケットのキューには、独自[NET_DATAPATH_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netdatapathdescriptor/ns-netdatapathdescriptor-_net_datapath_descriptor)構造、および、その結果、独自のパケット リング フラグメント リング、およびそれらのリング内の記述子。 そのため、各パケット キューのネットワーク データ転送操作では完全に独立してます。 パケット キューの詳細については、次を参照してください。[送信および受信キュー](transmit-and-receive-queues.md)します。
+すべてのパケットのキューには、独自[NET_DATAPATH_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netdatapathdescriptor/ns-netdatapathdescriptor-_net_datapath_descriptor)構造、および、その結果、独自のパケット リング フラグメント リング、およびそれらのリング内の記述子。 そのため、各パケット キューのネットワーク データ転送操作では完全に独立してます。 パケット キューの詳細については、[送信および受信キュー](transmit-and-receive-queues.md)を参照してください。
 
-クライアント ドライバーは定義済みの便利なマクロを使用してパケット リング、フラグメントのリングが含まれている記述子にアクセスすることをお勧めします。 これらのマクロの詳細については、次を参照してください。[リング バッファーを使用して](using-the-ring-buffer.md)します。
+クライアント ドライバーは定義済みの便利なマクロを使用してパケット リング、フラグメントのリングが含まれている記述子にアクセスすることをお勧めします。 これらのマクロの詳細については、[リング バッファーを使用して](using-the-ring-buffer.md)を参照してください。
 
 ## <a name="packet-descriptor-extensibility"></a>パケットの記述子の機能拡張
 

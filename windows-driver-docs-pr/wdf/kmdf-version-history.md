@@ -41,9 +41,9 @@ ms.locfileid: "56754462"
 
 Microsoft Visual Studio 2017 で、Windows Driver Kit (WDK) を使用すると、Windows 7 以降を実行しているドライバーをビルドします。
 
-コールバックの完全な一覧とメソッド、およびどのフレームワークとバージョンに適用される、次を参照してください。 [WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
+コールバックの完全な一覧とメソッド、およびどのフレームワークとバージョンに適用される、[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)を参照してください。
 
-KMDF ドライバーを Windows 10 の新機能については、次を参照してください。 [WDF ドライバーの新](index.md)します。
+KMDF ドライバーを Windows 10 の新機能については、[WDF ドライバーの新](index.md)を参照してください。
 
 ## <a name="kmdf-version-127"></a>KMDF バージョン 1.27
 
@@ -70,7 +70,7 @@ KMDF ドライバーを Windows 10 の新機能については、次を参照し
 * 追加**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**フラグ[ **WDF_DMA_ENABLER_CONFIG_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh439491)
 * 追加**STATUS_WDF_TOO_MANY_TRANSFERS**の値を返す[ **WdfDmaTransactionInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff547099)と[ **WdfDmaTransactionDmaCompleted**](https://msdn.microsoft.com/library/windows/hardware/ff547039)
 * 1 つの転送に出力するための出力メッセージを追加[ **! wdfkd.wdfdmatransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff565721)と[ **! wdfkd.wdfdmaenabler**](https://msdn.microsoft.com/library/windows/hardware/ff565717)
-* 1 つの転送 DMA に関する詳細については、次を参照してください。[転送 DMA の 1 つを使用して](using-single-transfer-dma.md)します。
+* 1 つの転送 DMA に関する詳細については、[転送 DMA の 1 つを使用して](using-single-transfer-dma.md)を参照してください。
 
 ## <a name="kmdf-version-115"></a>KMDF バージョン 1.15
 
@@ -81,9 +81,9 @@ KMDF ドライバーを Windows 10 の新機能については、次を参照し
 
 KMDF バージョン 1.13 は、次の機能を追加します。
 
--   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、次を参照してください。 [、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)します。
--   高解像度のタイマーをサポートします。 詳細については、次を参照してください。[を使用してタイマー](using-timers.md)します。
--   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、次を参照してください。[を使用してタイマー](using-timers.md)します。
+-   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、[、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)を参照してください。
+-   高解像度のタイマーをサポートします。 詳細については、[を使用してタイマー](using-timers.md)を参照してください。
+-   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、[を使用してタイマー](using-timers.md)を参照してください。
 -   説明した次の KMDF/UMDF メソッド[デバイス プロパティの統合モデルにアクセスする](accessing-the-unified-device-property-model.md):
     -   [**WdfDeviceAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265599)
     -   [**WdfDeviceAssignProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265601)
@@ -92,7 +92,7 @@ KMDF バージョン 1.13 は、次の機能を追加します。
     -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265612)
     -   [**WdfFdoInitQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265613)
 
-UMDF バージョンについては、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
+UMDF バージョンについては、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
 
 ## <a name="kmdf-version-111"></a>KMDF Version 1.11
 

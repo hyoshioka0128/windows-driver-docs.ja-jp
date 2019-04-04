@@ -53,7 +53,7 @@ Pvk2Pfx (Pvk2Pfx.exe) は、コマンド ライン ツールのコピーの公�
 
 場合、 **- pfx** *pfxfilename.pfx*スイッチが指定されていない、pvk2pfx 無視、 **po** *パスワード*スイッチと **-f**スイッチ、およびその対応するパスワードと .pfx ファイルの名前のユーザーに求めるウィザードが表示されます。
 
-使用するには、 [ **SignTool** ](signtool.md)に準拠している方法で、SPC を使用してドライバーに署名するためのツール、[カーネル モード コードの署名ポリシー](https://msdn.microsoft.com/library/windows/hardware/ff548231)、SPC 情報に追加する必要がありますドライバーに署名するローカル コンピューターの個人証明書ストア。 SPC 情報を個人証明書ストアに追加する方法については、次を参照してください。[ソフトウェア発行元証明書](https://msdn.microsoft.com/library/windows/hardware/ff552299)します。
+使用するには、 [ **SignTool** ](signtool.md)に準拠している方法で、SPC を使用してドライバーに署名するためのツール、[カーネル モード コードの署名ポリシー](https://msdn.microsoft.com/library/windows/hardware/ff548231)、SPC 情報に追加する必要がありますドライバーに署名するローカル コンピューターの個人証明書ストア。 SPC 情報を個人証明書ストアに追加する方法については、[ソフトウェア発行元証明書](https://msdn.microsoft.com/library/windows/hardware/ff552299)を参照してください。
 
 Pvk2Pfx ツールの 32 ビット バージョンが、箱にある\\x86 WDK のフォルダー。 ツールの 64 ビット バージョンが、箱にある\\WDK の x64。 たとえば、Windows 10 を実行している x64 ベースのコンピューター、パスは、c:\\Program Files (x86)\\Windows キット\\10\\bin\\x64。
 

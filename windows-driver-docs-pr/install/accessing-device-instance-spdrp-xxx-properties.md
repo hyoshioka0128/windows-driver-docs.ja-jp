@@ -18,9 +18,9 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 維持するために、デバイス インスタンス プロパティにアクセスする SPDRP_Xxx 識別子を使用してを以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性もサポートします。 ただし、Windows Vista および Windows の以降のバージョンでこれらのプロパティへのアクセスに対応するプロパティのキーを使用する必要があります。
 
-SPDRP_Xxx 識別子が対応するデバイスのシステム定義のインスタンスのプロパティの一覧は、次を参照してください。[デバイス プロパティをある対応する SPDRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff541469)します。 デバイス インスタンスのプロパティは、Windows Vista 以降のバージョンの Windows でのプロパティにアクセスするために使用するプロパティのキーを一覧表示されます。 各プロパティはキーに対応する SPDRP_ が含まれる示される情報*Xxx* Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる識別子。
+SPDRP_Xxx 識別子が対応するデバイスのシステム定義のインスタンスのプロパティの一覧は、[デバイス プロパティをある対応する SPDRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff541469)を参照してください。 デバイス インスタンスのプロパティは、Windows Vista 以降のバージョンの Windows でのプロパティにアクセスするために使用するプロパティのキーを一覧表示されます。 各プロパティはキーに対応する SPDRP_ が含まれる示される情報*Xxx* Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる識別子。
 
-プロパティのキーを使用して、Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
 
 ### <a name="accessing-a-device-property"></a>デバイスのプロパティにアクセスします。
 

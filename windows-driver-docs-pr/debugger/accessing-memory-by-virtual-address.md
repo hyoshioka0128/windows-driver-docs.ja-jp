@@ -19,7 +19,7 @@ ms.locfileid: "56581136"
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>
 
 
-メモリ アドレスまたはアドレス範囲にアクセスするには、いくつかのコマンドを使用することができます。 Visual Studio と WinDbg 用意してユーザー インターフェイス要素 (およびそのコマンド) を表示およびメモリの編集を行えます。 詳細については、次を参照してください。[表示と編集のメモリと Visual Studio でのレジスタ](viewing-memory--variables--and-registers-in-visual-studio.md)と[表示と編集のメモリ WinDbg で](memory-window.md)します。
+メモリ アドレスまたはアドレス範囲にアクセスするには、いくつかのコマンドを使用することができます。 Visual Studio と WinDbg 用意してユーザー インターフェイス要素 (およびそのコマンド) を表示およびメモリの編集を行えます。 詳細については、[表示と編集のメモリと Visual Studio でのレジスタ](viewing-memory--variables--and-registers-in-visual-studio.md)と[表示と編集のメモリ WinDbg で](memory-window.md)を参照してください。
 
 次のコマンドでは、読み取るしたり、さまざまな形式でメモリを記述することができます。 これらの形式には、16 進数のバイト数、単語 (単語、ダブル ワード、およびクアッド単語)、整数 (short、long、およびクアッド整数と符号なし整数)、浮動小数点数 (10 バイト、16 バイト、32 バイト、64 バイトおよび実数)、および ASCII 文字が含まれます。
 
@@ -55,7 +55,7 @@ ms.locfileid: "56581136"
 
 既定の基数を変更するには、使用、 [ **n (設定数の基本)** ](n--set-number-base-.md)コマンド。 簡単に数値を変換する 1 つのベースから間を使用して、 [**でしょうか。(式の評価)** ](---evaluate-expression-.md)コマンドまたは[ **(番号の形式の表示) .formats** ](-formats--show-number-formats-.md)コマンド。
 
-ユーザー モードのデバッグを実行している場合は、仮想アドレスの意味は、現在のプロセスによって決まります。 カーネル モードのデバッグを実行している場合は、仮想アドレスの意味は、デバッガーによって制御できます。 詳細については、次を参照してください。[プロセス コンテキスト](changing-contexts.md#process-context)します。
+ユーザー モードのデバッグを実行している場合は、仮想アドレスの意味は、現在のプロセスによって決まります。 カーネル モードのデバッグを実行している場合は、仮想アドレスの意味は、デバッガーによって制御できます。 詳細については、[プロセス コンテキスト](changing-contexts.md#process-context)を参照してください。
 
  
 

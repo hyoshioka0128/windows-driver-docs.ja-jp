@@ -22,13 +22,13 @@ ms.locfileid: "56573231"
 
     さらに、かどうか**SetupWriteTextLogInfLine** 、ログ エントリを書き込みますとテキスト ログ**SetupWriteTextLogInfLine**エントリを書き込む、ログのシステム定義のトークン値に依存します。
 
-    ログのトークンの詳細については、次を参照してください。[設定とスレッドのログのトークン取得](setting-and-getting-a-log-token-for-a-thread.md)します。
+    ログのトークンの詳細については、[設定とスレッドのログのトークン取得](setting-and-getting-a-log-token-for-a-thread.md)を参照してください。
 
 -   イベント レベル、インデントの深さ、およびタイムスタンプを含めるかどうかを指定する定数をシステム定義のビットごとの OR のフラグ値します。 イベント レベルが記載されて[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)します。
 
     テキスト ログは、エントリのイベント レベル以上のイベント レベルを設定する場合[ **SetupWriteTextLogInfLine** ](https://msdn.microsoft.com/library/windows/hardware/ff552236)テキスト ログでログ エントリを書き込みます。 それ以外の場合、 **SetupWriteTextLogInfLine**テキスト ログでログ エントリは書き込まれません。 インデントを使用すると、セクションで、情報を読み、理解しやすくにように書式設定されたメッセージを配置できます。
 
-    詳細については、次を参照してください。[インデントのログ エントリの書き込み](writing-indented-log-entries.md)します。
+    詳細については、[インデントのログ エントリの書き込み](writing-indented-log-entries.md)を参照してください。
 
 -   INF ファイルの行を格納している INF ファイルへのハンドル。
 

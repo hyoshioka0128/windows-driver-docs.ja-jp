@@ -21,7 +21,7 @@ ms.locfileid: "56570363"
 
 NIC は、TCP または UDP (たとえば、ICMP フレーム) 上のレイヤー プロトコル ヘッダーの先頭以外の上のレイヤーのプロトコルを持つ IP フレームに分割する必要があります。 または、このようなフレームを分割する必要があります。
 
-上のレイヤー プロトコル ヘッダーを分割の詳細については、次を参照してください。[上のレイヤー プロトコル ヘッダーの先頭のフレームの分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。
+上のレイヤー プロトコル ヘッダーを分割の詳細については、[上のレイヤー プロトコル ヘッダーの先頭のフレームの分割](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)を参照してください。
 
  
 

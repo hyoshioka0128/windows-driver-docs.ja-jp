@@ -61,7 +61,7 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_位置プロパティを 3D サウンド バッ
 
  
 
-プロパティの値 (データの操作) は、バッファーの位置を示す DS3DVECTOR 型の構造です。 位置ユニットについては、次を参照してください。 [ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)します。
+プロパティの値 (データの操作) は、バッファーの位置を示す DS3DVECTOR 型の構造です。 位置ユニットについては、[ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)を参照してください。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 

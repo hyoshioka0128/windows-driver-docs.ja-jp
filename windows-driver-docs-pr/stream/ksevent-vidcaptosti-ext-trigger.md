@@ -59,7 +59,7 @@ KSEVENT\_VIDCAPTOSTI\_EXT\_トリガー イベントのアクションを伝達�
 
  
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
+DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
 
  
 

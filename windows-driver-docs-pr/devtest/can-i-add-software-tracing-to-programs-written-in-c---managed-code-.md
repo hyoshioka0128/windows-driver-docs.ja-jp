@@ -14,7 +14,7 @@ ms.locfileid: "56573939"
 # <a name="can-i-add-software-tracing-to-programs-written-in-c-managed-code"></a>C++ のマネージド コードで記述されたプログラムにソフトウェア トレースを追加できますか?
 
 
-[はい]。 ソフトウェア トレースをドライバーのソース コードを追加するためには、標準的な手順を使用します。 詳細については、次を参照してください。[カーネル モード ドライバーでは、WPP ソフトウェア トレースを初期化する方法でしょうか。](how-do-i-initialize-wpp-software-tracing-in-a-kernel-mode-driver-.md)します。
+[はい]。 ソフトウェア トレースをドライバーのソース コードを追加するためには、標準的な手順を使用します。 詳細については、[カーネル モード ドライバーでは、WPP ソフトウェア トレースを初期化する方法でしょうか。](how-do-i-initialize-wpp-software-tracing-in-a-kernel-mode-driver-.md)を参照してください。
 
  
 

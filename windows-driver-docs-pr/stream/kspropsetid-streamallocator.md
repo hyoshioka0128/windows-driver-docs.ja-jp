@@ -17,7 +17,7 @@ ms.locfileid: "56557900"
 ## <span id="ddk_kspropsetid_streamallocator_ks"></span><span id="DDK_KSPROPSETID_STREAMALLOCATOR_KS"></span>
 
 
-KSPROPSETID\_StreamAllocator プロパティ セットを照会および操作できるストリーミング アロケーター特性を指定します。 すべてのプロパティは、アロケーター インスタンスによってサポートできます。 ストリームのアロケーターの詳細については、次を参照してください。 [KS アロケーター](https://msdn.microsoft.com/library/windows/hardware/ff567257)します。
+KSPROPSETID\_StreamAllocator プロパティ セットを照会および操作できるストリーミング アロケーター特性を指定します。 すべてのプロパティは、アロケーター インスタンスによってサポートできます。 ストリームのアロケーターの詳細については、[KS アロケーター](https://msdn.microsoft.com/library/windows/hardware/ff567257)を参照してください。
 
 KSPROPSETID\_StreamAllocator プロパティ セットが含まれます。
 

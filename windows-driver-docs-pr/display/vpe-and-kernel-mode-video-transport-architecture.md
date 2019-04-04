@@ -31,7 +31,7 @@ Windows 2000 以降では、次の図に示すように、DxApi コールバッ�
 
 ![windows 2000 カーネル モードのビデオ トランスポート アーキテクチャを示す図します。](images/ddfg011.png)
 
-DxApi コールバックの詳細については、次を参照してください。 [DxApi ミニポート ドライバーの機能の Windows 2000 以降](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)します。
+DxApi コールバックの詳細については、[DxApi ミニポート ドライバーの機能の Windows 2000 以降](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)を参照してください。
 
 上記の図は、その他のカーネル モードとユーザー モード コンポーネント (点線は、カーネル遷移を表します) との関連カーネル モードのビデオ トランスポート アーキテクチャを示します。 DirectShow (または別のユーザー モードのクライアント) を呼び出す、このアーキテクチャでは、 [IDirectDrawKernel](https://msdn.microsoft.com/library/windows/hardware/ff567398)と[IDirectDrawSurfaceKernel](https://msdn.microsoft.com/library/windows/hardware/ff567409) DirectDraw COM インターフェイスの DirectDraw オブジェクトへのハンドルを取得し、画面のオブジェクト。
 

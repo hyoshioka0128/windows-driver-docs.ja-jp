@@ -186,7 +186,7 @@ Unicode 文字の出力が許可されているかどうかを制御します。
 
 参照の Windows Vista 以降、ドライバー NDIS の設計の詳細については、[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)します。
 
-Windows Vista 以降の NDIS ドライバーへの参照の詳細については、次を参照してください。 [Windows Vista との参照を後でネットワーク](https://msdn.microsoft.com/library/windows/hardware/ff571081)します。
+Windows Vista 以降の NDIS ドライバーへの参照の詳細については、[Windows Vista との参照を後でネットワーク](https://msdn.microsoft.com/library/windows/hardware/ff571081)を参照してください。
 
 使用しての例については、!、ネットワーク スタックをデバッグする ndiskd デバッガー コマンドを参照してください[ネットワーク スタックをデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)します。
 

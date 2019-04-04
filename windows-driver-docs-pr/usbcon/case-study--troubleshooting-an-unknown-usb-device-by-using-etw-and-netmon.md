@@ -163,7 +163,7 @@ USB のエラー フィルターは、次の表に示すように条件を満た
 | (し、USBPort\_MicrosoftWindowsUSBUSBPORT と NetEvent.Header.Descriptor.Opcode 34 = =) | オペコード 34 の USB ポート イベントは、ポート エラーです。                                                                                                      |
 | (USBHub\_MicrosoftWindowsUSBUSBHUB と NetEvent.Header.Descriptor.Opcode 11 を = =)   | オペコード 11 USB ハブのイベントは、ハブ エラーです。                                                                                                        |
 | (NetEvent.Header.Descriptor.Level == 0x2)                                         | レベルが 0x2 イベントは、通常はエラーです。                                                                                                            |
-| (USBHub\_MicrosoftWindowsUSBUSBHUB と NetEvent.Header.Descriptor.Id 210 = =)      | USB ハブのイベント ID 210 では、イベントの「USB ハブの例外の記録」です。 詳細については、次を参照してください。[エラー イベントの概要と状態コード](#status-codes)します。 |
+| (USBHub\_MicrosoftWindowsUSBUSBHUB と NetEvent.Header.Descriptor.Id 210 = =)      | USB ハブのイベント ID 210 では、イベントの「USB ハブの例外の記録」です。 詳細については、[エラー イベントの概要と状態コード](#status-codes)を参照してください。 |
 
 
 
@@ -171,7 +171,7 @@ USB のエラー フィルターは、次の表に示すように条件を満た
 
 ![microsoft ネットワーク モニター](images/devicefailure-etl2.png)
 
-一連のエラーの概要を表示するには、各エラー イベントを簡単に表示できます。 観察する重要なフィールドを含める**fid\_NtStatus**、 **fid\_UsbdStatus**、および**fid\_DebugText**します。 詳細については、次を参照してください。[エラー イベントの概要と状態コード](#status-codes)します。 フィルターを無効にするには、をクリックして、**削除**ボタン、**ディスプレイ フィルター**ウィンドウ。
+一連のエラーの概要を表示するには、各エラー イベントを簡単に表示できます。 観察する重要なフィールドを含める**fid\_NtStatus**、 **fid\_UsbdStatus**、および**fid\_DebugText**します。 詳細については、[エラー イベントの概要と状態コード](#status-codes)を参照してください。 フィルターを無効にするには、をクリックして、**削除**ボタン、**ディスプレイ フィルター**ウィンドウ。
 
 **カスタム Netmon フィルター**
 

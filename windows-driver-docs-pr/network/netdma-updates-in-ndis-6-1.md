@@ -22,4 +22,4 @@ NetDMA DMA エンジンをサポートするダイレクト メモリ アクセ�
 
 NetDMA インターフェイスは、Nic とその他のドライバーに対して提供されている省略可能なサービスです。
 
-NetDMA の詳細については、次を参照してください。 [NetDMA ドライバー](netdma-drivers.md)します。
+NetDMA の詳細については、[NetDMA ドライバー](netdma-drivers.md)を参照してください。

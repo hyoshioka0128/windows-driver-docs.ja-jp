@@ -20,7 +20,7 @@ ms.locfileid: "56581925"
 
 
 
-いる CoNDIS WAN ミニポート ドライバーでは、WAN の操作をサポートするために追加された機能の例外では、その他のいる CoNDIS ドライバーと同じです。 接続指向の NDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](connection-oriented-ndis.md)します。 WAN の操作をサポートする機能の詳細については、次を参照してください。 [WAN に固有の機能のいる CoNDIS WAN ドライバー](wan-specific-capabilities-of-condis-wan-drivers.md)します。
+いる CoNDIS WAN ミニポート ドライバーでは、WAN の操作をサポートするために追加された機能の例外では、その他のいる CoNDIS ドライバーと同じです。 接続指向の NDIS の詳細については、[Connection-Oriented NDIS](connection-oriented-ndis.md)を参照してください。 WAN の操作をサポートする機能の詳細については、[WAN に固有の機能のいる CoNDIS WAN ドライバー](wan-specific-capabilities-of-condis-wan-drivers.md)を参照してください。
 
 次のトピックでは、いる CoNDIS WAN ミニポート ドライバーに固有の情報を提供します。
 

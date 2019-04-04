@@ -36,6 +36,6 @@ Windows では、2 つの主な印刷パスと 2 つの追加の変換パスを�
 
 ![xpsdrv サブシステムのさまざまな印刷パスと変換オプションを示す図](images/printpathoverview.png)
 
-フィルター パイプラインのサービスを構成する方法の詳細については、次を参照してください。[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)します。
+フィルター パイプラインのサービスを構成する方法の詳細については、[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)を参照してください。
 
-バージョン 3 印刷ドライバーを Windows Vista と Windows の以降のバージョンの構成に関する詳細については、次を参照してください。[バージョン 3 XPSDrv 印刷ドライバー コンポーネント](version-3-xpsdrv-print-driver-components.md)します。
+バージョン 3 印刷ドライバーを Windows Vista と Windows の以降のバージョンの構成に関する詳細については、[バージョン 3 XPSDrv 印刷ドライバー コンポーネント](version-3-xpsdrv-print-driver-components.md)を参照してください。

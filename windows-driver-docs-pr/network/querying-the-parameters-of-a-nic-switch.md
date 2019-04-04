@@ -26,7 +26,7 @@ ms.locfileid: "56536382"
 
 NDIS ハンドル、 [OID\_NIC\_スイッチ\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451823)ミニポート ドライバーに要求します。 NDIS は、次のソースから保持されているデータの内部キャッシュから情報を返します。
 
--   レジストリの標準化された設定の SR-IOV キーワード。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+-   レジストリの標準化された設定の SR-IOV キーワード。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
 
 -   OID 要求[OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)と[OID\_NIC\_スイッチ\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451823).
 

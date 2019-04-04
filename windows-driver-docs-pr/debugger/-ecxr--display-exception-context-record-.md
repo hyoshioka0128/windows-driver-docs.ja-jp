@@ -60,14 +60,14 @@ ms.locfileid: "56558578"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
 **.Ecxr**コマンドは、現在の例外のコンテキスト情報を検索し、指定したコンテキスト レコードの重要なレジスタを表示します。
 
-このコマンドでは、レジスタのコンテキストとして現在の例外に関連付けられているコンテキスト レコードを使用してデバッガーもように指示します。 実行した後 **.ecxr**、最も重要なレジスタとスタック トレースをこのスレッドをデバッガーにアクセスできます。 実行、現在のプロセスまたはスレッドを変更または別のレジスタ コンテキスト コマンドを使用してターゲットを有効にするまで、このレジスタのコンテキストが永続化 ([**.cxr** ](-cxr--display-context-record-.md)または **.ecxr**). レジスタのコンテキストの詳細については、次を参照してください。[登録コンテキスト](changing-contexts.md#register-context)します。
+このコマンドでは、レジスタのコンテキストとして現在の例外に関連付けられているコンテキスト レコードを使用してデバッガーもように指示します。 実行した後 **.ecxr**、最も重要なレジスタとスタック トレースをこのスレッドをデバッガーにアクセスできます。 実行、現在のプロセスまたはスレッドを変更または別のレジスタ コンテキスト コマンドを使用してターゲットを有効にするまで、このレジスタのコンテキストが永続化 ([**.cxr** ](-cxr--display-context-record-.md)または **.ecxr**). レジスタのコンテキストの詳細については、[登録コンテキスト](changing-contexts.md#register-context)を参照してください。
 
 [ **.Excr** ](-excr--display-exception-context-record-.md)コマンドは同一の機能が、シノニム コマンド。
 

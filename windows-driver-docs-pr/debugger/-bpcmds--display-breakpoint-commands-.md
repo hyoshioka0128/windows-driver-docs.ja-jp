@@ -55,7 +55,7 @@ ms.locfileid: "56559021"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とブレークポイント、他のコマンドのブレークポイントとブレークポイントを制御する方法を使用する方法の例については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
+詳細とブレークポイント、他のコマンドのブレークポイントとブレークポイントを制御する方法を使用する方法の例については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

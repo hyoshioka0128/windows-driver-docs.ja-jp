@@ -98,7 +98,7 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <p>読み取り/書き込みです。 センサー データの現在の経過時間 (ミリ秒単位) の生成を報告します。</p>
 <p>いずれかを返すことを通知する値を 0 に設定します。 既定のレポート間隔、または最小のレポート間隔。 1 つのみのクライアントが接続されている場合は、ドライバーは、既定のレポート間隔を返す必要があります。 複数のクライアントが接続されている場合、ドライバーは、これらのクライアントのいずれかによって要求された最短の間隔を返す必要があります。</p>
 <p>アプリケーションは、特定のレポート間隔を要求するには、この値を設定できますが、複数のアプリケーションが同じドライバーを使用します。 そのため、ドライバーは、内部ロジックに基づいて、実際のレポート間隔を決定します。 たとえば、ドライバーは呼び出し元で要求されている最短のレポート間隔を常に使用する場合があります。</p>
-<p>このプロパティを使用する方法の例は、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/dd319014" data-raw-source="[Using Sensor API Events](https://msdn.microsoft.com/library/windows/desktop/dd319014)">センサー API イベントを使用した</a>します。</p></td>
+<p>このプロパティを使用する方法の例は、<a href="https://msdn.microsoft.com/library/windows/desktop/dd319014" data-raw-source="[Using Sensor API Events](https://msdn.microsoft.com/library/windows/desktop/dd319014)">センサー API イベントを使用した</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_DESCRIPTION"></span><span id="sensor_property_description"></span>
@@ -124,7 +124,7 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <strong>SENSOR_PROPERTY_LIGHT_RESPONSE_CURVE</strong> (PID = 16)</td>
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>読み取り専用です。 アンビエント ライト レベルとオフセットの間のマッピングを指定する値のペアを含む counted 配列。 これらの値はパーセンテージとして表されます。 適応型輝度調整機能は、Windows では、ユーザーの現在のディスプレイの明るさ設定にこれらの値が適用されます。</p>
-<p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このプロパティに実際には 4 バイト符号なし整数としての各値が含まれています (<strong>VT_UI4)</strong>します。 配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このプロパティに実際には 4 バイト符号なし整数としての各値が含まれています (<strong>VT_UI4)</strong>します。 配列の操作については、<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY"></span><span id="sensor_property_location_desired_accuracy"></span>

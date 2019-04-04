@@ -39,7 +39,7 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
 
 サービス メタデータ パッケージは、.devicemetadata ms ファイル内で格納されている複数の XML ドキュメントで構成されます。 各ドキュメントには、サービスの属性のさまざまなコンポーネントを指定します。 これらの XML ドキュメントでは、ユーザーとネットワークの構成情報を表示のカスタマイズ内容を持つ Windows 接続マネージャーを提供します。
 
-サービス メタデータ パッケージの XML ドキュメントのリファレンスについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
+サービス メタデータ パッケージの XML ドキュメントのリファレンスについては、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
 
 ## <a name="span-idservmdconspanspan-idservmdconspanservice-metadata-contents"></a><span id="servmdcon"></span><span id="SERVMDCON"></span>サービス メタデータの内容
 
@@ -53,9 +53,9 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
   モバイル ブロード バンド サービス プロバイダーの一意の ID。 この GUID は、アカウントのプロビジョニングのメタデータを使用する場合、演算子を識別するためにも使用されます。 デバイス メタデータ パッケージを更新する場合、この GUID は、同じままする必要があります。 サービスの数を対応する、 [ServiceNumber](servicenumber.md)サービス メタデータ パッケージのスキーマ内の要素。
 
 - **演算子のロゴ**   
-  カスタム ロゴをネットワーク エントリの横にあるは、Windows 接続マネージャーが表示されます。 (ロゴはローミング ネットワーク上のユーザーが表示されません)。演算子のロゴに対応する、 [ServiceIconFile](serviceiconfile.md)サービス メタデータ パッケージのスキーマ内の要素。 ロゴの要件の詳細については、次を参照してください。[サービス アイコン要件](https://msdn.microsoft.com/library/windows/hardware/dn236416)します。  
+  カスタム ロゴをネットワーク エントリの横にあるは、Windows 接続マネージャーが表示されます。 (ロゴはローミング ネットワーク上のユーザーが表示されません)。演算子のロゴに対応する、 [ServiceIconFile](serviceiconfile.md)サービス メタデータ パッケージのスキーマ内の要素。 ロゴの要件の詳細については、[サービス アイコン要件](https://msdn.microsoft.com/library/windows/hardware/dn236416)を参照してください。  
   > [!IMPORTANT]
-  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
+  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
 
 - **モバイル ブロード バンド アプリ**  
   自動的にダウンロードされ、コンピューターに適用する UWP デバイス アプリ。 このアプリは、プランを購入、データの使用状況、およびヘルプとサポートなどのキーのエクスペリエンスを提供し、付加価値サービスを強調表示できます。
@@ -76,10 +76,10 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
 - **カスタム演算子名**  
   通常、モバイル ブロード バンド デバイスは、Windows では、Windows 接続マネージャーを表示するオペレーター名を提供します。 この名前は、メタデータにカスタム名を指定することによってオーバーライドできます。 この名前は、ユーザーがホーム ネットワーク上にあり、ローミングのネットワーク上にない場合にのみ表示されます。 表示されているローミング ネットワーク名は、デバイスから受信する情報に基づきます。 これに対応して、 [ServiceProvider](serviceprovider.md)サービス パッケージのメタデータ スキーマ内の要素。  
   > [!IMPORTANT]
-  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10、バージョン 1709 より前に、の Windows のバージョンを対象としている場合でも、このセクションで説明したメタデータ パッケージを作成します。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
+  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10、バージョン 1709 より前に、の Windows のバージョンを対象としている場合でも、このセクションで説明したメタデータ パッケージを作成します。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
 
 - **デバイスの通知ハンドラー**  
-  一般に、アプリが、ユーザーが作業項目をシステム イベント ブローカーに登録できる前に少なくとも 1 回実行してください。 ただし、モバイル ブロード バンド アプリは、ユーザーがアプリを実行する前に、重要なイベントを受信する必要があります。 指定することができます、 [DeviceNotificationHandler](devicenotificationhandler.md)いくつかの重要なイベントを登録する Windows を使用してサービス メタデータ内の要素。 SMS 通知の詳細については、次を参照してください。 [MVNOs のエクスペリエンスを提供する](delivering-experiences-for-mvnos.md)します。
+  一般に、アプリが、ユーザーが作業項目をシステム イベント ブローカーに登録できる前に少なくとも 1 回実行してください。 ただし、モバイル ブロード バンド アプリは、ユーザーがアプリを実行する前に、重要なイベントを受信する必要があります。 指定することができます、 [DeviceNotificationHandler](devicenotificationhandler.md)いくつかの重要なイベントを登録する Windows を使用してサービス メタデータ内の要素。 SMS 通知の詳細については、[MVNOs のエクスペリエンスを提供する](delivering-experiences-for-mvnos.md)を参照してください。
 
 - **モバイル ブロード バンドの制限されたインターフェイスへのアクセス権限を持つアプリの一覧**  
   モバイル ブロード バンド Api とインターフェイス (アカウントのプロビジョニングと SMS を含む) は、モバイル ブロード バンド アプリのみに制限と使用可能なです。 内のサービス メタデータ パッケージでこれらの特権を持つ Api へのアクセス権を持つ特権のあるアプリの一覧を指定できます、 [PrivilegedApplications](privilegedapplications.md)要素。 特権のあるアプリをデバッグまたはアプリをテストすることができます。Microsoft Store 経由で配布するのには必須ではありません。

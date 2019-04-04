@@ -34,7 +34,7 @@ ms.locfileid: "56582957"
 
  Get、 **KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION**を返します、 [INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)に関する追加情報を格納する構造体、ループバック オーディオとオーディオのストリームでのオーディオのキャプチャのインターリーブします。 
 
-Windows 10 以降 19 H 1、設定、KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION プロパティのキーが 1 つのストリームに、ハードウェア キーワード Spotter (HW KWS) その結合マイクとループバック オーディオをサポートするシステムの要件キーワードのバースト出力時に、AEC APO を使用するにはします。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
+Windows 10 以降 19 H 1、設定、KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION プロパティのキーが 1 つのストリームに、ハードウェア キーワード Spotter (HW KWS) その結合マイクとループバック オーディオをサポートするシステムの要件キーワードのバースト出力時に、AEC APO を使用するにはします。 詳細については、[音声をアクティブ化](voice-activation.md)を参照してください。
 
 
 <a name="remarks"></a>コメント

@@ -32,7 +32,7 @@ cv2http.cmd PDB Alias URL
 walk.cmd *.pdb cv2http.cmd HttpAlias https:///source
 ```
 
-上記のコマンドはエイリアスの HttpAlias を使用して、ツリー内のすべての .pdb ファイルで Cv2http.cmd を呼び出すと https://server/sourceurl。 チュートリアルの詳細については、次を参照してください。[ソース ファイルの抽出](extracting-source-files.md)します。
+上記のコマンドはエイリアスの HttpAlias を使用して、ツリー内のすべての .pdb ファイルで Cv2http.cmd を呼び出すと https://server/sourceurl。 チュートリアルの詳細については、[ソース ファイルの抽出](extracting-source-files.md)を参照してください。
 
 .Pdb ファイルのツリーにこのコマンドを実行した後、Web サイトまたは配置したい任意の場所にインストールする準備が整いました。 付けて SrcTool と PDBStr を使用、.pdb ファイルへの変更を確認することに注意してください。
 

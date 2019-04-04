@@ -40,7 +40,7 @@ ms.locfileid: "57254295"
 
 ドライバーはオブジェクト固有のデータを格納する必要があります[オブジェクト コンテキスト領域](framework-object-context-space.md)します。 ドライバーは、フレームワークで定義されたインターフェイスだけを使用している場合のみオブジェクトへのハンドルを受け取るコールバック関数はこのデータにアクセスできます。 フレームワークは、ドライバーのコールバック関数への呼び出しを同期している場合、一度に 1 つだけのコールバック関数が呼び出され、オブジェクトのコンテキストの空間は一度に 1 つだけのコールバック関数にアクセスします。
 
-ドライバーを実装しない限り、[パッシブ レベル割り込み処理](supporting-passive-level-interrupts.md)そのサービスの割り込みのコード、および割り込みデータにアクセスがデバイスの IRQL (DIRQL) でを実行する必要があるあり、追加の同期が必要です。 詳細については、次を参照してください。[の同期を中断コード](synchronizing-interrupt-code.md)します。
+ドライバーを実装しない限り、[パッシブ レベル割り込み処理](supporting-passive-level-interrupts.md)そのサービスの割り込みのコード、および割り込みデータにアクセスがデバイスの IRQL (DIRQL) でを実行する必要があるあり、追加の同期が必要です。 詳細については、[の同期を中断コード](synchronizing-interrupt-code.md)を参照してください。
 
 場合、ドライバーは、I/O 要求を処理するコールバック関数の自動同期を有効、フレームワークは、一度に 1 つずつ実行するようこれらのコールバック関数を同期します。 次の表には、フレームワークを同期するコールバック関数が一覧表示します。
 
@@ -119,7 +119,7 @@ ms.locfileid: "57254295"
 
 一般に、デバイス レベルの同期を使用してはお勧めできません。
 
-同期スコープの値の詳細については、次を参照してください。 [ **WDF\_同期\_スコープ**](https://msdn.microsoft.com/library/windows/hardware/ff552518)します。
+同期スコープの値の詳細については、[ **WDF\_同期\_スコープ**](https://msdn.microsoft.com/library/windows/hardware/ff552518)を参照してください。
 
 ドライバー オブジェクトの既定の同期のスコープは**WdfSynchronizationScopeNone**します。 デバイスとキューのオブジェクトの既定の同期のスコープは**WdfSynchronizationScopeInheritFromParent**します。
 
@@ -176,7 +176,7 @@ ms.locfileid: "57254295"
 
 ドライバー オブジェクトの既定の実行レベルは**WdfExecutionLevelDispatch**します。 その他のすべてのオブジェクトの既定の実行レベルは**WdfExecutionLevelInheritFromParent**します。
 
-実行レベル値の詳細については、次を参照してください。 [ **WDF\_実行\_レベル**](https://msdn.microsoft.com/library/windows/hardware/ff551310)します。
+実行レベル値の詳細については、[ **WDF\_実行\_レベル**](https://msdn.microsoft.com/library/windows/hardware/ff551310)を参照してください。
 
 次の表では、位置、フレームワークは、キュー オブジェクトとファイル オブジェクトのドライバーのコールバック関数を呼び出すことができます、IRQL レベルを示します。
 

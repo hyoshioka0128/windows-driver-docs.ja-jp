@@ -18,11 +18,11 @@ ms.locfileid: "56553637"
 
 このドライバーは、実装、 [ **IPnpCallbackHardware2** ](https://msdn.microsoft.com/library/windows/hardware/hh439727)インターフェイス、および、UMDF ドライバーの呼び出し中にこのインターフェイスに登録[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)メソッド。 フレームワークでメソッドを呼び出します、 **IPnpCallbackHardware2**インターフェイス、デバイスの電源状態の変化のドライバーに通知します。
 
-SPB に接続されている周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 [ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)このデバイスにする必要があるドライバーに通知するメソッド使用できるように準備します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://msdn.microsoft.com/library/windows/hardware/hh439762)オブジェクト。 翻訳済みのリソースが含まれて、*接続 ID* SPB 周辺ドライバーは、SPB に接続されている周辺機器への論理接続を確立する必要があります。 詳細については、次を参照してください。 [SPB の周辺機器の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)します。
+SPB に接続されている周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 [ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)このデバイスにする必要があるドライバーに通知するメソッド使用できるように準備します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://msdn.microsoft.com/library/windows/hardware/hh439762)オブジェクト。 翻訳済みのリソースが含まれて、*接続 ID* SPB 周辺ドライバーは、SPB に接続されている周辺機器への論理接続を確立する必要があります。 詳細については、[SPB の周辺機器の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)を参照してください。
 
 そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。
 
 次のコード例は、ドライバーの**OnPrepareHardware**メソッドからの接続 ID の取得、 *pWdfResourcesTranslated*パラメーター。
 
@@ -227,9 +227,9 @@ if (fSynchronous || FAILED(hres))
 5.  **送信**メソッドは、sp B に接続されている周辺機器に書式設定された書き込み要求を送信します。 `Flags`変数は、書き込み要求が同期的または非同期的に送信するかどうかを示します。
 6.  要求が同期的に送信される場合、 [ **IWDFIoRequest::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)メソッドによって示される、両方の I/O 要求オブジェクトを削除`pWdfIoRequest`によって示される子オブジェクトと`pInputMemory`. **IWDFIoRequest**インターフェイスからこのメソッドを継承する、 [ **IWDFObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560200)インターフェイス。 呼び出し、要求は、非同期的に送信されてかどうか、 **DeleteWdfObject**メソッドは、ドライバーので、後で発生する必要があります**OnCompletion**メソッド。
 
-上記のコード例の代替実装を作成**IWDFIoRequest**と**IWDFMemory**ドライバーの初期化中に、および繰り返しオブジェクトの代わりにこれらの同じオブジェクトを使用作成して、毎回新しいオブジェクトを削除するには、I/O 要求が送信されます。 詳細については、次を参照してください。 [ **IWDFIoRequest2::Reuse** ](https://msdn.microsoft.com/library/windows/hardware/ff559048)と[ **IWDFMemory::SetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff560162)します。
+上記のコード例の代替実装を作成**IWDFIoRequest**と**IWDFMemory**ドライバーの初期化中に、および繰り返しオブジェクトの代わりにこれらの同じオブジェクトを使用作成して、毎回新しいオブジェクトを削除するには、I/O 要求が送信されます。 詳細については、[ **IWDFIoRequest2::Reuse** ](https://msdn.microsoft.com/library/windows/hardware/ff559048)と[ **IWDFMemory::SetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff560162)を参照してください。
 
-さらに、代替実装が I/O 要求からの I/O のステータス コード存在検査、**送信**呼び出しが成功します。 詳細については、次を参照してください。 [ **IWDFIoRequest::GetCompletionParams**](https://msdn.microsoft.com/library/windows/hardware/ff559084)します。
+さらに、代替実装が I/O 要求からの I/O のステータス コード存在検査、**送信**呼び出しが成功します。 詳細については、[ **IWDFIoRequest::GetCompletionParams**](https://msdn.microsoft.com/library/windows/hardware/ff559084)を参照してください。
 
  
 

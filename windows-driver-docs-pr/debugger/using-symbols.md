@@ -20,13 +20,13 @@ ms.locfileid: "56581192"
 ## <span id="ddk_symbols_dbx"></span><span id="DDK_SYMBOLS_DBX"></span>
 
 
-シンボル、シンボル ファイルとシンボル サーバーの使用などの概要については、次を参照してください。[シンボル](symbols.md)します。
+シンボル、シンボル ファイルとシンボル サーバーの使用などの概要については、[シンボル](symbols.md)を参照してください。
 
 ### <a name="span-idsymbolnamesandlocationsspanspan-idsymbolnamesandlocationsspansymbol-names-and-locations"></a><span id="symbol_names_and_locations"></span><span id="SYMBOL_NAMES_AND_LOCATIONS"></span>シンボルの名前と場所
 
 指定した名前のシンボルの場所を検索する使用[ **GetOffsetByName**](https://msdn.microsoft.com/library/windows/hardware/ff548035)します。 シンボル名を指定するために使用する構文の詳細については、「[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
 
-シンボルの正確な名前が不明、または複数のシンボルが同じ名前を持つ場合[ **StartSymbolMatch** ](https://msdn.microsoft.com/library/windows/hardware/ff558815)名前を持つ指定したパターンに一致するシンボルの検索を開始します。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
+シンボルの正確な名前が不明、または複数のシンボルが同じ名前を持つ場合[ **StartSymbolMatch** ](https://msdn.microsoft.com/library/windows/hardware/ff558815)名前を持つ指定したパターンに一致するシンボルの検索を開始します。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
 
 その場所が指定されたシンボルの名前を確認する[ **GetNameByOffset**](https://msdn.microsoft.com/library/windows/hardware/ff547183)します。 特定の場所の近くのモジュールのシンボルの名前を検索するには使用[ **GetNearNamebyOffset**](https://msdn.microsoft.com/library/windows/hardware/ff547204)します。
 
@@ -44,7 +44,7 @@ ms.locfileid: "56581192"
 
 ### <a name="span-idsymboloptionsspanspan-idsymboloptionsspansymbol-options"></a><span id="symbol_options"></span><span id="SYMBOL_OPTIONS"></span>シンボルのオプション
 
-さまざまなオプションは、シンボルが読み込まれ、アンロードする方法を制御します。 これらのオプションの説明は、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
+さまざまなオプションは、シンボルが読み込まれ、アンロードする方法を制御します。 これらのオプションの説明は、[シンボル オプションを設定](symbol-options.md)を参照してください。
 
 使用してシンボル オプションを有効に[ **AddSymbolOptions**](https://msdn.microsoft.com/library/windows/hardware/ff537930)を使用してになっていると[ **RemoveSymbolOptions**](https://msdn.microsoft.com/library/windows/hardware/ff554535)します。
 

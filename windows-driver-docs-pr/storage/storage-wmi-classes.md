@@ -17,7 +17,7 @@ ms.locfileid: "56579098"
 ## <span id="ddk_storage_wmi_classes_kr"></span><span id="DDK_STORAGE_WMI_CLASSES_KR"></span>
 
 
-このセクションでは、Storage Management Initiative Specification (SMI-S) の要件と、Windows ストレージ アーキテクチャで使用されるシステム提供の Windows Management Instrumentation (WMI) クラスについて説明します。 ストレージ ミニポート ドライバーが WMI クラスを処理する方法の詳細については、次を参照してください。 [WMI される Srb ストレージ ミニポート ドライバーで処理](https://msdn.microsoft.com/library/windows/hardware/ff556028)します。
+このセクションでは、Storage Management Initiative Specification (SMI-S) の要件と、Windows ストレージ アーキテクチャで使用されるシステム提供の Windows Management Instrumentation (WMI) クラスについて説明します。 ストレージ ミニポート ドライバーが WMI クラスを処理する方法の詳細については、[WMI される Srb ストレージ ミニポート ドライバーで処理](https://msdn.microsoft.com/library/windows/hardware/ff556028)を参照してください。
 
 記憶域管理プロバイダーや SMI-S 要件、システムが指定した WMI クラスは、次のカテゴリには。
 

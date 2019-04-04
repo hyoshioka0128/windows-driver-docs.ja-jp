@@ -24,7 +24,7 @@ OID\_WWAN\_信号\_状態を返すか、現在のシグナルの状態を設定�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 信号強度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)します。
+詳細については、この OID を使用して、[WWAN 信号強度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)を参照してください。
 
 ミニポート ドライバー アクセスしないでください、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) とクエリの処理または操作を設定します。
 

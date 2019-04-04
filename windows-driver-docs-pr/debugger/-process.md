@@ -76,7 +76,7 @@ Kdexts.dll
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-カーネル モードでのプロセスについては、次を参照してください。[変更コンテキスト](changing-contexts.md)します。 プロセスとスレッドの分析に関する詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。
+カーネル モードでのプロセスについては、[変更コンテキスト](changing-contexts.md)を参照してください。 プロセスとスレッドの分析に関する詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。
 
 <a name="remarks"></a>注釈
 -------

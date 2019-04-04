@@ -24,7 +24,7 @@ ms.locfileid: "56556961"
 
 **! Ndiskd.netpacket**拡張機能に関する情報を表示する、 [NET\_パケット](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-packet)構造体。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
 
 ```console
 !ndiskd.netpacket [-handle <x>] [-basic] [-layout] [-checksum] [-data] 

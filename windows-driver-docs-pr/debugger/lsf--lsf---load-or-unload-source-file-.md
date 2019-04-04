@@ -69,7 +69,7 @@ lsf- Filename
 
 CDB または KD、内のソース ファイルを表示することができます、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。 ソース ファイルが新規として読み込まれる、WinDbg で[ソース windows](source-window.md)します。
 
-ソース ファイル、ソース パス、およびその他のソース ファイルを読み込む方法の詳細については、次を参照してください。[ソース パス](source-path.md)します。
+ソース ファイル、ソース パス、およびその他のソース ファイルを読み込む方法の詳細については、[ソース パス](source-path.md)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

@@ -37,7 +37,7 @@ ms.locfileid: "56570468"
 
 4.  設定、NET\_UPGRD\_INIT\_ファイル\_netupg.inf ファイルが含まれているディレクトリに DIR 環境変数。
 
-ネットワークのアップグレードの Winnt32 フェーズでは、NetSetup netupg.inf ファイルは内で検索、NETUPGRD で指定されたディレクトリ\_INIT\_ファイル\_DIR 環境変数。 NetSetup は、netupg.inf ファイルで指定したディレクトリごとに、netmap.inf ファイルのファイル サービスおよびネットワーク コンポーネントにアップグレードするには、その他の仕入先ファイルを検索します。 NetSetup では、これらのファイルをコンポーネントのアップグレードを処理します。 詳細については、次を参照してください。 [ネットワークのアップグレード処理](the-network-upgrade-process.md)します。
+ネットワークのアップグレードの Winnt32 フェーズでは、NetSetup netupg.inf ファイルは内で検索、NETUPGRD で指定されたディレクトリ\_INIT\_ファイル\_DIR 環境変数。 NetSetup は、netupg.inf ファイルで指定したディレクトリごとに、netmap.inf ファイルのファイル サービスおよびネットワーク コンポーネントにアップグレードするには、その他の仕入先ファイルを検索します。 NetSetup では、これらのファイルをコンポーネントのアップグレードを処理します。 詳細については、[ネットワークのアップグレード処理](the-network-upgrade-process.md)を参照してください。
 
  
 

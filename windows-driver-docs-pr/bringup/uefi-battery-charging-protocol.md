@@ -24,7 +24,7 @@ UEFI のバッテリ充電プロトコルは、UEFI のバッテリ充電ドラ�
 
  
 
-Microsoft UEFI バッテリが充電アプリケーションの詳細については、次を参照してください。[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)します。
+Microsoft UEFI バッテリが充電アプリケーションの詳細については、[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)を参照してください。
 
 ## <a name="protocol-interface"></a>プロトコル インターフェイス
 

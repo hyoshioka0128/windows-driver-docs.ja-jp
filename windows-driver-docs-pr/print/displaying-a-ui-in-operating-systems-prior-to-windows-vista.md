@@ -36,7 +36,7 @@ ms.locfileid: "56575105"
 
 -   状態の監視を記述することで、複雑なユーザー インターフェイス要素を表示します。
 
-    状態の監視は、IHV が開発していると、ユーザーがインストールされるアプリケーションです。 Status monitor は、ユーザーの資格情報で、ユーザーのコンテキストで実行される、ためには、いつでも UI 要素を表示する状態モニタのも安全です。 Status monitor は、双方向通信を使用して、または TCPMON Xcv インターフェイスを使用して、スプーラーと通信できます。 詳しくは、次を参照してください。[双方向通信の追加](adding-bidirectional-communication.md)と[TCPMON Xcv インターフェイス](tcpmon-xcv-interface.md)します。
+    状態の監視は、IHV が開発していると、ユーザーがインストールされるアプリケーションです。 Status monitor は、ユーザーの資格情報で、ユーザーのコンテキストで実行される、ためには、いつでも UI 要素を表示する状態モニタのも安全です。 Status monitor は、双方向通信を使用して、または TCPMON Xcv インターフェイスを使用して、スプーラーと通信できます。 詳しくは、[双方向通信の追加](adding-bidirectional-communication.md)と[TCPMON Xcv インターフェイス](tcpmon-xcv-interface.md)を参照してください。
 
  
 

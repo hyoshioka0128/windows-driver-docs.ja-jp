@@ -24,7 +24,7 @@ Windows 8.1 には、使用できる PrintTicket と PrintCapabilities ドキュ
 
 *http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11*
 
-PrintTicket ファイルで保護された印刷を指定する方法については、次を参照してください。[印刷暗証番号 (pin) のサンプル ファイルは PrintTicket](sample-printticket-file-for-pin-printing.md)します。 PrintCapabilities ファイルで保護された印刷を指定する方法を参照してくださいと[暗証番号 (pin) 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)します。
+PrintTicket ファイルで保護された印刷を指定する方法については、[印刷暗証番号 (pin) のサンプル ファイルは PrintTicket](sample-printticket-file-for-pin-printing.md)を参照してください。 PrintCapabilities ファイルで保護された印刷を指定する方法を参照してくださいと[暗証番号 (pin) 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)します。
 
 仕様は、ここでダウンロードできます。
 

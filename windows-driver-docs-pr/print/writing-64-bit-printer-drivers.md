@@ -71,7 +71,7 @@ PDrvOptItems.UserData ポインター フィールドなど、 [ **OEMCUIPPARAM*
 ulSlotPhysAddr
 ```
 
-64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)します。
+64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、[、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)を参照してください。
  
 
  

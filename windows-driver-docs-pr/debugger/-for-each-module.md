@@ -191,7 +191,7 @@ ms.locfileid: "56572674"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-定義および文字の文字列 ($ {} のトークンの使用を含む) を入力するためのショートカットとしてエイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
+定義および文字の文字列 ($ {} のトークンの使用を含む) を入力するためのショートカットとしてエイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

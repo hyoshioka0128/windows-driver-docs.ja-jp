@@ -18,7 +18,7 @@ ms.locfileid: "56580620"
 
 UWP デバイス アプリは Microsoft Store で配布し、アプリケーションをダウンロードする管理者がユーザーに自動的にインストールします。 Windows 上のすべてのプリンターには、プリンター用の UWP デバイス アプリを指定することがあります。
 
-V4 印刷ドライバーを使用してインストールされているプリンターには、基本設定が printTaskSettings コントラクトをサポートすることによって発生または backgroundTasks コントラクトをサポートすることによってプリンターの通知をサポートのカスタマイズされたプリンターを指定できます。 詳細については、次を参照してください。[印刷デバイス アプリを UWP を開発](https://msdn.microsoft.com/library/windows/hardware/br259129.aspx)します。
+V4 印刷ドライバーを使用してインストールされているプリンターには、基本設定が printTaskSettings コントラクトをサポートすることによって発生または backgroundTasks コントラクトをサポートすることによってプリンターの通知をサポートのカスタマイズされたプリンターを指定できます。 詳細については、[印刷デバイス アプリを UWP を開発](https://msdn.microsoft.com/library/windows/hardware/br259129.aspx)を参照してください。
 
  
 

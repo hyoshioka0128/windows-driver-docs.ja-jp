@@ -47,7 +47,7 @@ ms.locfileid: "56559564"
 
 [エイリアスの使用法](#aliased-usages)
 
-Windows コンポーネントにアクセスする使用法の具体的な例については、次を参照してください。[最上位のコレクションは、Windows システムの使用によって開かれた](top-level-collections-opened-by-windows-for-system-use.md)します。
+Windows コンポーネントにアクセスする使用法の具体的な例については、[最上位のコレクションは、Windows システムの使用によって開かれた](top-level-collections-opened-by-windows-for-system-use.md)を参照してください。
 
 HIDClass デバイスをサポートする使用状況を確認する方法の詳細についてを参照してください。
 
@@ -81,7 +81,7 @@ A*使用状況の範囲*の包括的な連続する範囲[Id の使用状況](#u
 
 1 つ以上の使用量を指定できます、 [**リンク コレクション**](link-collections.md)または HID コントロール。 このような使用法のグループ、特定のコレクションやコントロールは、別のエイリアスですと呼ばれます*エイリアスの使用法*します。 項目の区切り記号を使用すると、別名の使用法を指定します。 [使用状況の範囲](#usage-range)エイリアスにすることはできません。
 
-最上位のコレクションの機能の配列でエイリアスの使用法を指定する方法については、次を参照してください。[ボタン機能配列](button-capability-arrays.md)と[値機能配列](value-capability-arrays.md)します。
+最上位のコレクションの機能の配列でエイリアスの使用法を指定する方法については、[ボタン機能配列](button-capability-arrays.md)と[値機能配列](value-capability-arrays.md)を参照してください。
 
  
 

@@ -40,7 +40,7 @@ X86 システムは、浮動小数点計算への呼び出しの間での使用�
 ## <a name="x64-systems"></a>x64 システム
 
 
-64 ビット コンパイラでは、浮動小数点演算の/x87 MMX レジスタを使用しません。 代わりに、SSE レジスタを使用します。 x64/x87 MMX レジスタにアクセスするカーネル モード コードが許可されていません。 コンパイラも正しく保存の処理し、そのため、呼び出し、SSE 状態の復元[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553182) isr を特定の操作を使用できる、不要なおよび浮動小数点のポイントします。 AVX などその他のプロセッサの拡張機能の使用、拡張状態の保存と復元が必要です。 詳細については、次を参照してください。 [Windows ドライバーでプロセッサ機能を拡張を使用して](floating-point-support-for-64-bit-drivers.md)します。
+64 ビット コンパイラでは、浮動小数点演算の/x87 MMX レジスタを使用しません。 代わりに、SSE レジスタを使用します。 x64/x87 MMX レジスタにアクセスするカーネル モード コードが許可されていません。 コンパイラも正しく保存の処理し、そのため、呼び出し、SSE 状態の復元[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553182) isr を特定の操作を使用できる、不要なおよび浮動小数点のポイントします。 AVX などその他のプロセッサの拡張機能の使用、拡張状態の保存と復元が必要です。 詳細については、[Windows ドライバーでプロセッサ機能を拡張を使用して](floating-point-support-for-64-bit-drivers.md)を参照してください。
 
 ## <a name="example"></a>例
 

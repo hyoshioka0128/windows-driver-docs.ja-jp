@@ -55,7 +55,7 @@ ms.locfileid: "56551871"
 
 ## <a name="ndis-interface-to-the-modem"></a>モデムの NDIS インターフェイス
 
-状態と PCO 値演算子のネットワークから受信したモデムのペイロードのクエリを実行するには、次を参照してください。 [OID_WWAN_PCO](oid-wwan-pco.md)します。 **OID_WWAN_PCO**を使用して、 [ **NDIS_WWAN_PCO_STATUS** ](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)を格納する構造体、 [ **WWAN_PCO_VALUE** ](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E) ネットワークから PCO 情報のペイロードを表す構造体。
+状態と PCO 値演算子のネットワークから受信したモデムのペイロードのクエリを実行するには、[OID_WWAN_PCO](oid-wwan-pco.md)を参照してください。 **OID_WWAN_PCO**を使用して、 [ **NDIS_WWAN_PCO_STATUS** ](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)を格納する構造体、 [ **WWAN_PCO_VALUE** ](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E) ネットワークから PCO 情報のペイロードを表す構造体。
 
 モデムの現在の PCO 状態の OS を通知するために、モデムのミニポート ドライバーによって送信された状態の通知を参照してください。 [NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)します。
 
@@ -109,7 +109,7 @@ PCO は、次の Cid が定義されています。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | セッション Id | UINT32 | クエリで SessionId 示します IP PCO 値のデータ ストリームが、関数によって返されます。 |
 | 4 | 4 | PcoDataSize | UINT32 | 0 ~ 256 PcoData の長さ。 この値は、クエリで 0 になります。 |
-| 8 | 4 | PcoDataType | UINT32 | PCO データ型。 詳細については、次を参照してください。 [MBIM_PCO_TYPE](#mbimpcotype)します。 |
+| 8 | 4 | PcoDataType | UINT32 | PCO データ型。 詳細については、[MBIM_PCO_TYPE](#mbimpcotype)を参照してください。 |
 | 12 | | PcoDataBuffer | DATABUFFER | 3 gpp TS24.008 仕様から PCO 構造体。 |
 
 #### <a name="status-codes"></a>状態コード

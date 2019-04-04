@@ -73,7 +73,7 @@ TE.exe Examples\*
 ## <a name="span-idhelp-commandoptionsspanspan-idhelp-commandoptionsspanspan-idhelp-commandoptionsspanhelp---command-options"></a><span id="Help_-_Command_Options"></span><span id="help_-_command_options"></span><span id="HELP_-_COMMAND_OPTIONS"></span>ヘルプ/コマンド オプション
 
 
-指定することで利用できるすべてのコマンド オプションの explantions が見つかります、 **「/?」** TE.exe のオプションです。 拡張の説明については、次を参照してください。 [Te.exe コマンド オプション](te-exe-command-line-parameters.md)します。
+指定することで利用できるすべてのコマンド オプションの explantions が見つかります、 **「/?」** TE.exe のオプションです。 拡張の説明については、[Te.exe コマンド オプション](te-exe-command-line-parameters.md)を参照してください。
 
  
 

@@ -128,7 +128,7 @@ com:pipe,port=\\VMHost\pipe\PipeName[,resets=0][,reconnect]
 com:modem 
 ```
 
-これらのプロトコルについては、次を参照してください。[を取得する設定をデバッグ用](getting-set-up-for-debugging.md)します。 これらのプロトコルのパラメーターのいずれかを省略できますなど言えます**trans=@{com:}** --KdSrv が実行されているコンピューター上の環境変数で指定された値をデバッガーは既定の設定。
+これらのプロトコルについては、[を取得する設定をデバッグ用](getting-set-up-for-debugging.md)を参照してください。 これらのプロトコルのパラメーターのいずれかを省略できますなど言えます**trans=@{com:}** --KdSrv が実行されているコンピューター上の環境変数で指定された値をデバッガーは既定の設定。
 
 <span id="Options"></span><span id="options"></span><span id="OPTIONS"></span>*オプション*  
 ここに、追加のコマンド ライン パラメーターを配置することができます。 参照してください[コマンド ライン オプション](command-line-options.md)完全な一覧についてはします。

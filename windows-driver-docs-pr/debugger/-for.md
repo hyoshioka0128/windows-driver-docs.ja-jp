@@ -35,7 +35,7 @@ ms.locfileid: "56552438"
 ループを開始する前に実行されるコマンドを指定します。 最初のコマンドは 1 つのみが許可されます。
 
 <span id="_______Condition______"></span><span id="_______condition______"></span><span id="_______CONDITION______"></span> *条件*   
-条件を指定します。 これは、0 に評価されると、false; として扱われますそれ以外の場合は true です。 それを囲む*条件*かっこは省略可能です。 *条件*デバッガー コマンドではなく、式を指定する必要があります。 (MASM または C++) の既定式エバリュエーターによって評価されます。 詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+条件を指定します。 これは、0 に評価されると、false; として扱われますそれ以外の場合は true です。 それを囲む*条件*かっこは省略可能です。 *条件*デバッガー コマンドではなく、式を指定する必要があります。 (MASM または C++) の既定式エバリュエーターによって評価されます。 詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 <span id="_______IncrementCommands______"></span><span id="_______incrementcommands______"></span><span id="_______INCREMENTCOMMANDS______"></span> *IncrementCommands*   
 各ループの終了時に実行される 1 つまたは複数のコマンドを指定します。 複数の増分コマンドを使用する場合は、セミコロンで区切りますが、中かっこで囲むを表示できません。
@@ -45,7 +45,7 @@ ms.locfileid: "56552438"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、次を参照してください。[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)します。
+その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

@@ -21,7 +21,7 @@ WPD サンプルの 1 つを除くすべては、ハードウェアをエミュ�
 
 1 つの例外は、WpdBasicHardwareDriver サンプルです。 このドライバーは、実際のハードウェアをサポートするための 2 つの方法で動作するコードが含まれている、 **IPnpCallback**インターフェイス。 このサンプルでサポートされている 2 つのメソッドは[ **IPnpCallback::OnD0Entry** ](https://msdn.microsoft.com/library/windows/hardware/ff556799)と[ **IPnpCallback::OnD0Exit**](https://msdn.microsoft.com/library/windows/hardware/ff556803)します。 最初のメソッドは、カーネル モードの RS232 ドライバーへの I/O 要求を転送するように、ドライバーのサンプルを使用する I/O ターゲットへのポインターを取得します。 このポインターを取得した後、 **IPnpCallback::OnDOEntry**メソッドは、I/O ターゲットを開始します。 2 番目のメソッドでは、 **IPnpCallback::OnD0Exit** I/O ターゲットへのポインターを取得し、それを停止します。
 
-ドライバーは、ハードウェアをサポートする場合、またはこれらのインターフェイスの両方のサポートを追加します。 PnP の詳細な説明とユーザー モード デバイス ドライバーの電源管理では、次を参照してください。 [UMDF での PnP および電源管理のシナリオ](https://msdn.microsoft.com/library/windows/hardware/ff560452)します。
+ドライバーは、ハードウェアをサポートする場合、またはこれらのインターフェイスの両方のサポートを追加します。 PnP の詳細な説明とユーザー モード デバイス ドライバーの電源管理では、[UMDF での PnP および電源管理のシナリオ](https://msdn.microsoft.com/library/windows/hardware/ff560452)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

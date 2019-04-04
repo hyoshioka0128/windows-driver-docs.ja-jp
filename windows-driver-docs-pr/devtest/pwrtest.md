@@ -27,7 +27,7 @@ ms.locfileid: "56553697"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>PwrTest.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Driver Kit Downloads]( https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows Driver Kit のダウンロード</a>します。</p></td>
+<td align="left"><p>PwrTest.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Driver Kit Downloads]( https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows Driver Kit のダウンロード</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -39,11 +39,11 @@ ms.locfileid: "56553697"
 
 PwrTest (PwrTest.exe) は、堅牢なログ記録とコマンド ライン インターフェイスに機能します。 PwrTest は、Microsoft Windows テスト テクノロジ (WTL) と XML の両方のファイル形式のログ情報のことができます。
 
-PwrTest 機能は、シナリオに分割されます。 これらのシナリオについては、次を参照してください。 [PwrTest シナリオ](pwrtest-scenarios.md)します。
+PwrTest 機能は、シナリオに分割されます。 これらのシナリオについては、[PwrTest シナリオ](pwrtest-scenarios.md)を参照してください。
 
 **Pwrtest を実行するには**
 
-1.  PwrTest のすべてのシナリオを使用できるようにするには、まず Visual Studio と WDK を使用してテストするためのテスト コンピューターをプロビジョニングする必要があります。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)します。
+1.  PwrTest のすべてのシナリオを使用できるようにするには、まず Visual Studio と WDK を使用してテストするためのテスト コンピューターをプロビジョニングする必要があります。 詳細については、[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)を参照してください。
 
     一部のシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーが必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。
 
@@ -63,7 +63,7 @@ PwrTest 機能は、シナリオに分割されます。 これらのシナリ�
     pwrtest /battery /c:4 /i:1000
     ```
 
-    詳細については、次を参照してください。 [PwrTest 構文](pwrtest-syntax.md)と[PwrTest シナリオ](pwrtest-scenarios.md)します。
+    詳細については、[PwrTest 構文](pwrtest-syntax.md)と[PwrTest シナリオ](pwrtest-scenarios.md)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

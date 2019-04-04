@@ -49,7 +49,7 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 
 呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)します。
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
 
 このマクロを使用するためのコード例を参照してください。 [ **WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)します。
 

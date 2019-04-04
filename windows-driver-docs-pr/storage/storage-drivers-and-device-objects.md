@@ -28,7 +28,7 @@ PnP ドライバーや記憶域クラス、記憶域フィルター ドライバ
 
 記憶域ポート ドライバー ファイルの種類の物理デバイス オブジェクト (Pdo) を作成する\_デバイス\_大容量\_ストレージ。 クラスのディスク、CD-ROM クラス、tape クラスおよびチェンジャー クラス ドライバーは、作成ファイルの種類の Fdo\_デバイス\_ディスク、ファイル\_デバイス\_CD\_ROM]、[ファイル\_デバイス\_テープ、ファイルと\_デバイス\_チェンジャーそれぞれします。
 
-PnP ドライバーのデザイン方法の詳細については、次を参照してください。、 [PnP ドライバー設計のガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff559623)します。 PnP 関連について **Io * * * Xxx*ルーチンを参照してください、[プラグ アンド プレイ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558809)します。
+PnP ドライバーのデザイン方法の詳細については、、 [PnP ドライバー設計のガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff559623)を参照してください。 PnP 関連について **Io * * * Xxx*ルーチンを参照してください、[プラグ アンド プレイ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558809)します。
 
  
 

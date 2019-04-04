@@ -62,7 +62,7 @@ WMI クライアント アプリケーションは、ドライバーをテスト
 
 WMI WDM プロバイダー (Wmiprov.dll) によって処理される際に発生する WMI エラーは、WMI WDM プロバイダー、Wmiprov.log のログ ファイルに記録されます。 これは、テキスト ファイルを %windir% で見つかります\\system32\\wbem\\ログ\\wmiprov.log します。 ここで、ドライバーの正しくないか、不足している MOF リソースなどのエラーが記録されます。 場合は、次のように不適切な MOF リソース ファイル %windir%\\system32\\mofcomp.log がエラーに関連する追加の情報を必要があります。
 
-Windows Vista より前のバージョンの Windows では、Wmimgmt.msc アプリケーションを使用してすべての WMI プロバイダーのログ設定を変更できます。 (Windows 98/Wbemcntl を代わりに、使用します)。無効にする、ログ記録を再度有効にまたは、ディレクトリ、WMI のログ ファイルは、保持だけでなくこのようなファイルの最大サイズの設定を変更できます。 詳細については、次を参照してください。 [WMI ログファイル](https://msdn.microsoft.com/library/aa394564)します。
+Windows Vista より前のバージョンの Windows では、Wmimgmt.msc アプリケーションを使用してすべての WMI プロバイダーのログ設定を変更できます。 (Windows 98/Wbemcntl を代わりに、使用します)。無効にする、ログ記録を再度有効にまたは、ディレクトリ、WMI のログ ファイルは、保持だけでなくこのようなファイルの最大サイズの設定を変更できます。 詳細については、[WMI ログファイル](https://msdn.microsoft.com/library/aa394564)を参照してください。
 
  
 

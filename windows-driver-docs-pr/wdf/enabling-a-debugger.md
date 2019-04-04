@@ -48,14 +48,14 @@ ms.locfileid: "56536621"
 -   有効にする[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。 開く、**コマンド プロンプト**ウィンドウ (**管理者として実行**)。 ドライバー検証ツール マネージャーを開くことの検証方法を入力します。
 -   カーネル モードのデバッグ セッションを使用している場合は、設定**HostFailKdDebugBreak**リフレクターが、ドライバーのホスト プロセスを終了する前にカーネル モード デバッガーを中断できるようにします。 この設定は、UMDF バージョン 1.11 以降を既定で有効です。
 
--   設定してプールを無効に**UmdfHostProcessSharing**に**ProcessSharingDisabled**します。 については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
--   既定では、UMDF デバイスが失敗したときに、フレームワークの設定は最大 5 回再起動を試行します。 自動再起動をオフに設定して**DebugModeFlags** 0x01 にします。 詳細については、次を参照してください。[デバッグ WDF のドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
+-   設定してプールを無効に**UmdfHostProcessSharing**に**ProcessSharingDisabled**します。 については、[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)を参照してください。
+-   既定では、UMDF デバイスが失敗したときに、フレームワークの設定は最大 5 回再起動を試行します。 自動再起動をオフに設定して**DebugModeFlags** 0x01 にします。 詳細については、[デバッグ WDF のドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)を参照してください。
 -   お使いのコンピューターを再起動します。
 
 ## <a name="using-visual-studio-with-f5-to-attach-automatically-user-mode-debugging"></a>F5 キーを押して Visual Studio を使用して自動的にアタッチする (ユーザー モードのデバッグ)
 
 
-WDK で Visual Studio を使用して、テスト コンピューター上のドライバーをデバッグすることができます、最初を設定してテスト マシンを構成します。 これを行う方法については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)します。
+WDK で Visual Studio を使用して、テスト コンピューター上のドライバーをデバッグすることができます、最初を設定してテスト マシンを構成します。 これを行う方法については、[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)を参照してください。
 
 テスト用コンピューターを構成した後、ホスト コンピューターで Visual Studio を使用して、ドライバーにブレークポイントを設定します。 F5 キーを押すと、Visual Studio は、ドライバーをビルド、対象のコンピューターに展開しますされ、ユーザー モードのデバッグ セッションを開始します。
 
@@ -87,7 +87,7 @@ WDK で Visual Studio を使用して、テスト コンピューター上のド
 
 デバッグ モードを使用する、Visual Studio で f5 キーを押してオプションを使用するか設定、 **DebugModeFlags**と**DebugModeBinaries**レジストリの値。
 
-UMDF レジストリ値の詳細については、次を参照してください。[デバッグの WDF ドライバー (KMDF および UMDF) のレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
+UMDF レジストリ値の詳細については、[デバッグの WDF ドライバー (KMDF および UMDF) のレジストリ値](registry-values-for-debugging-kmdf-drivers.md)を参照してください。
 
 ## <a href="" id="kd"></a>WinDbg を使用して (カーネル モードのデバッグ) ホスト コンピューターからリモートでデバッグするには
 

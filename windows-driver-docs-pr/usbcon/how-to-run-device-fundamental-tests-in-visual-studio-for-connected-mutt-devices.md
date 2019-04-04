@@ -33,14 +33,14 @@ Devfund テストの実行を開始する前に、次の要件を満たしてい
 
     Visual Studio と WDK からダウンロードできます[Windows ハードウェア開発のダウンロード](https://go.microsoft.com/fwlink/p/?linkid=309780)します。
 
-    構成に関する手順については、次を参照してください。[ドライバーの展開、テスト、およびデバッグ用コンピューターの構成](https://go.microsoft.com/fwlink/p/?linkid=235504)します。
+    構成に関する手順については、[ドライバーの展開、テスト、およびデバッグ用コンピューターの構成](https://go.microsoft.com/fwlink/p/?linkid=235504)を参照してください。
 
 -   テスト コンピューターに、ホスト コンピューターを接続する前にするテスト コンピューターでファイルとプリンタの共有とネットワーク探索を有効にする必要があります。 コントロール パネル、または管理者特権でコマンド プロンプトで次のコマンドを使用して、これらのオプションを有効にできます。
 
     `netsh.exe advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes`
 
--   設定して、MUTT デバイスを構成し、ファームウェアをインストールします。 詳細については、次を参照してください。[テスト システムを準備する方法](mutt-testing-options.md)します。
--   テスト コンピューターをプロビジョニングします。 手順については、次を参照してください。[ドライバーの展開、テスト、およびデバッグ用コンピューターの構成](https://go.microsoft.com/fwlink/p/?linkid=235504)します。
+-   設定して、MUTT デバイスを構成し、ファームウェアをインストールします。 詳細については、[テスト システムを準備する方法](mutt-testing-options.md)を参照してください。
+-   テスト コンピューターをプロビジョニングします。 手順については、[ドライバーの展開、テスト、およびデバッグ用コンピューターの構成](https://go.microsoft.com/fwlink/p/?linkid=235504)を参照してください。
 
 ### <a name="scheduling-tests"></a>テストのスケジュール設定
 
@@ -61,7 +61,7 @@ Devfund テストの実行を開始する前に、次の要件を満たしてい
 -   (Basic) の中に IO をスリープ状態します。
 -   PNP (無効および有効にする) と後で IO の前に
 
-上記のテストの詳細については、次を参照してください。**について、基本的なデバイス テスト**で[を選択し、デバイスの基本的なテストを構成する方法](https://go.microsoft.com/fwlink/p/?linkid=316387)します。
+上記のテストの詳細については、**について、基本的なデバイス テスト**で[を選択し、デバイスの基本的なテストを構成する方法](https://go.microsoft.com/fwlink/p/?linkid=316387)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  

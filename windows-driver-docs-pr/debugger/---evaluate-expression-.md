@@ -64,7 +64,7 @@ ms.locfileid: "56572503"
 <a name="remarks"></a>コメント
 -------
 
-入力と出力の**でしょうか。** コマンドは、MASM 式の構文または C++ 式の構文を使用しているかどうかによって異なります。 この種の式の構文の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)します。
+入力と出力の**でしょうか。** コマンドは、MASM 式の構文または C++ 式の構文を使用しているかどうかによって異なります。 この種の式の構文の詳細については、[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 MASM の構文を使用している場合、入力と出力は現在の基数に依存します。 基数を変更するには、使用、 [ **n (設定数の基本)** ](n--set-number-base-.md)コマンド。
 

@@ -36,9 +36,9 @@ Net バッファー リストは、レイヤーの種類に応じて、パケッ
 
 または、引き出し線は、net バッファーの一覧から不要な net バッファーのリンクを解除し、変更の net バッファーの一覧を送信パスに挿入します。 ただし、この場合、コールアウト ドライバー取り消す必要があります net バッファーを複製されたリストには、この変更を呼び出す前に、 [ **FwpsFreeCloneNetBufferList0** ](https://msdn.microsoft.com/library/windows/hardware/ff551170)関数。 コールアウト ドライバーは、その状態データの一部として元の net バッファー リンケージ情報を保存もする必要があります。
 
-WFP によって使用されるデータのオフセットの詳細については、次を参照してください。[データ オフセット位置](https://msdn.microsoft.com/library/windows/hardware/ff546324)します。
+WFP によって使用されるデータのオフセットの詳細については、[データ オフセット位置](https://msdn.microsoft.com/library/windows/hardware/ff546324)を参照してください。
 
-**注**  復号化された IPSec ESP パケットを使用する引き出し線付きのデータ長を使用する必要があります、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造を決定する MDL データではなく、パケットの長さ。 データの長さを取得する、 [ **NET\_バッファー\_データ\_長さ**](https://msdn.microsoft.com/library/windows/hardware/ff568382)マクロ。 詳細については、次を参照してください。 [IPsec と互換性のあるコールアウト ドライバーの開発](developing-ipsec-compatible-callout-drivers.md)します。
+**注**  復号化された IPSec ESP パケットを使用する引き出し線付きのデータ長を使用する必要があります、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造を決定する MDL データではなく、パケットの長さ。 データの長さを取得する、 [ **NET\_バッファー\_データ\_長さ**](https://msdn.microsoft.com/library/windows/hardware/ff568382)マクロ。 詳細については、[IPsec と互換性のあるコールアウト ドライバーの開発](developing-ipsec-compatible-callout-drivers.md)を参照してください。
 
  
 

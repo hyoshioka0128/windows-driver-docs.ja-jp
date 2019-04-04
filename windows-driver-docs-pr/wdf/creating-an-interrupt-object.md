@@ -69,7 +69,7 @@ KMDF バージョン 1.15 以降、KMDF も割り込みをサポートして、�
 ## <a name="supporting-message-signaled-interrupts"></a>メッセージ シグナル割り込みをサポートしています。
 
 
-メッセージ シグナル割り込み (Msi) は、以降 Windows Vista でサポートされます。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、次を参照してください。 [Enabling Message-Signaled がレジストリへの割り込み](https://msdn.microsoft.com/library/windows/hardware/ff544246)します。
+メッセージ シグナル割り込み (Msi) は、以降 Windows Vista でサポートされます。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、[Enabling Message-Signaled がレジストリへの割り込み](https://msdn.microsoft.com/library/windows/hardware/ff544246)を参照してください。
 
 ドライバーは、割り込みベクトルまたはデバイスをサポートできる MSI メッセージごとに framework 割り込みオブジェクトを作成する必要があります。 PnP マネージャーでは付与されません、デバイスのすべてのデバイスをサポートする割り込みリソース、余分な割り込みオブジェクトは使用されませんし、これらのコールバック関数は呼び出されません。
 

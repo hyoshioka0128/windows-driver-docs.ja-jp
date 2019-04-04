@@ -32,7 +32,7 @@ ms.locfileid: "56558440"
 
 **Parameters.Create.ShareAccess**メンバーが共有へのアクセスの種類を記述する USHORT 値。 この値の値に対応、 *ShareAccess*パラメーターの**ZwCreateFile**します。
 
-**Parameters.Create.FileAttributes**と**Parameters.Create.EaLength**メンバーはファイル システムで使用するために予約されている、ファイル システム フィルター ドライバー。 詳細については、次を参照してください。、 [ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)インストール可能なファイル システム (IFS) ドキュメントのトピックです。
+**Parameters.Create.FileAttributes**と**Parameters.Create.EaLength**メンバーはファイル システムで使用するために予約されている、ファイル システム フィルター ドライバー。 詳細については、、 [ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)インストール可能なファイル システム (IFS) ドキュメントのトピックを参照してください。
 
 ## <a name="output-parameters"></a>出力パラメーター
 

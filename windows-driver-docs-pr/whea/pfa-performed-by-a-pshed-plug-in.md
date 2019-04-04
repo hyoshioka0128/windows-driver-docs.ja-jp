@@ -50,7 +50,7 @@ ECC メモリ エラーが発生したときに WHEA およびプラグインは
 
     それ以外の場合、プラグインの PSHED をオフにする必要があります、 **PlatformPfaControl**と**PlatformDirectedOffline**ビットで、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)のメンバー、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体。
 
-    **注**場合、 **PlatformPfaControl**ビットがクリアされて、そのように構成、およびオフライン ECC メモリ ページのエラーが発生する必要があるかどうかを決定する場合、WHEA が PFA を実行します。 このプロセスの詳細については、次を参照してください。 [PFA が WHEA によって実行される](pfa-performed-by-whea.md)します。
+    **注**場合、 **PlatformPfaControl**ビットがクリアされて、そのように構成、およびオフライン ECC メモリ ページのエラーが発生する必要があるかどうかを決定する場合、WHEA が PFA を実行します。 このプロセスの詳細については、[PFA が WHEA によって実行される](pfa-performed-by-whea.md)を参照してください。
 
 
 
@@ -63,7 +63,7 @@ ECC メモリ エラーが発生したときに WHEA およびプラグインは
 
 次に、WHEA は、システムのブート構成データ (BCD) ストアに、メモリ ページを追加します。 これは、メモリ ページが次のシステム再起動後に使用されていることを防ぎます。
 
-**注**WHEA になります、ECC メモリ ページなどのハードウェア コンポーネント オフライン場合、レジストリ値**DisableOffline** 0 以外の値に設定されています。 また、WHEA はページを追加できません、メモリ、BCD ストアを場合、レジストリ値**MemPersistOffline** 0 に設定されます。 レジストリ値の詳細については、次を参照してください。 [WHEA ポリシー設定](whea-pfa-registry-settings.md)します。
+**注**WHEA になります、ECC メモリ ページなどのハードウェア コンポーネント オフライン場合、レジストリ値**DisableOffline** 0 以外の値に設定されています。 また、WHEA はページを追加できません、メモリ、BCD ストアを場合、レジストリ値**MemPersistOffline** 0 に設定されます。 レジストリ値の詳細については、[WHEA ポリシー設定](whea-pfa-registry-settings.md)を参照してください。
 
 
 

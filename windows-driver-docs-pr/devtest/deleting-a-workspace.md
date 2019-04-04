@@ -18,7 +18,7 @@ ms.locfileid: "56577850"
 
 ワークスペースを削除すると、保存されているトレース セッションのプロパティと構成設定のすべてを traceview でから削除します。
 
-ワークスペースのセッションを停止または表示から削除する方法については、次を参照してください。[を停止すると、ワークスペースのセッションを削除する](stopping-and-removing-a-workspace-session.md)します。
+ワークスペースのセッションを停止または表示から削除する方法については、[を停止すると、ワークスペースのセッションを削除する](stopping-and-removing-a-workspace-session.md)を参照してください。
 
 ### <a name="span-idtodeleteaworkspacespanspan-idtodeleteaworkspacespanto-delete-a-workspace"></a><span id="to_delete_a_workspace"></span><span id="TO_DELETE_A_WORKSPACE"></span>ワークスペースを削除するには
 

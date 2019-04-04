@@ -35,7 +35,7 @@ UMDF ドライバーは、メソッド、プロパティを通じて、framework
 
 フレームワークの通信をドライバーの例は、デバイスの既定の I/O キューのオブジェクトについて考えてみます。 ドライバーはなどのメソッドを呼び出すことができます[ **IWDFIoQueue::GetState**](https://msdn.microsoft.com/library/windows/hardware/ff558959)I/O キューに関するステータス情報を取得する、または[ **IWDFIoQueue::RetrieveNextRequest**](https://msdn.microsoft.com/library/windows/hardware/ff558967) I/O キューからの要求を取得します。 呼び出すことによって、ドライバーは I/O キュー上の通知の要求もできる、 [ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)メソッドなど、コールバック インターフェイスを登録する[IQueueCallbackRead](https://msdn.microsoft.com/library/windows/hardware/ff556872)と[IQueueCallbackWrite](https://msdn.microsoft.com/library/windows/hardware/ff556882)します。 これらのインターフェイスのメソッドは、アプリケーションに送信される読み取りときに、その後、フレームワークによって呼び出されますおよび書き込み要求。
 
-フレームワークは、ドライバーのコールバック メソッドで必要なすべての同期を提供します。 既定では、フレームワークをデバイス オブジェクト レベルで同期します。つまり、フレームワークは同時に呼び出しませんイベント デバイス オブジェクトのレベル以下でコールバック メソッド。 ドライバーは、同期を要求しないによってこの既定をオーバーライドできます。 詳細については、次を参照してください。[コールバックの同期モードを指定する](specifying-a-callback-synchronization-mode.md)します。
+フレームワークは、ドライバーのコールバック メソッドで必要なすべての同期を提供します。 既定では、フレームワークをデバイス オブジェクト レベルで同期します。つまり、フレームワークは同時に呼び出しませんイベント デバイス オブジェクトのレベル以下でコールバック メソッド。 ドライバーは、同期を要求しないによってこの既定をオーバーライドできます。 詳細については、[コールバックの同期モードを指定する](specifying-a-callback-synchronization-mode.md)を参照してください。
 
  
 

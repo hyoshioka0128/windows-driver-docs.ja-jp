@@ -302,7 +302,7 @@ ms.locfileid: "56570490"
 
 -   テスト用の特別な要件はありません。
 
-    **注**web カメラ デバイス用のプラグイン単純な I/O では、依存関係を持つ MFPlat.dll ファイルでは、Media Player と関連テクノロジ、Windows 7 の N または Windows 7 KN などが含まれていない Windows のバージョンでは使用できません。 これらのバージョンの Windows で、Media Feature Pack をインストールする必要があります。 Media Feature Pack は、ダウンロードできます。 詳細については、次を参照してください。 [KB 記事 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)します。
+    **注**web カメラ デバイス用のプラグイン単純な I/O では、依存関係を持つ MFPlat.dll ファイルでは、Media Player と関連テクノロジ、Windows 7 の N または Windows 7 KN などが含まれていない Windows のバージョンでは使用できません。 これらのバージョンの Windows で、Media Feature Pack をインストールする必要があります。 Media Feature Pack は、ダウンロードできます。 詳細については、[KB 記事 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)を参照してください。
 
 
 

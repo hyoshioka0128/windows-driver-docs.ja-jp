@@ -21,7 +21,7 @@ Static Driver Verifier (SDV) は完全に WDM、KMDF、NDIS、および Storport
 
 ドライバーまたはライブラリは次の条件のいずれかを満たす場合は、SDV の分析ツールでルールの完全なセットを実行できます。
 
--   WDM ドライバーやライブラリがあるし、ドライバーまたはライブラリがクラスのフレームワーク (Microsoft 提供のライブラリ) にリンクされません。 詳細については、次を参照してください。[クラス フレームワーク ライブラリ](#class-framework-libraries)します。
+-   WDM ドライバーやライブラリがあるし、ドライバーまたはライブラリがクラスのフレームワーク (Microsoft 提供のライブラリ) にリンクされません。 詳細については、[クラス フレームワーク ライブラリ](#class-framework-libraries)を参照してください。
 -   ある、ドライバーやライブラリ WdfLdr.lib または WdfDriverEntry.lib にリンクします。
 -   ある、ドライバーやライブラリ NDIS.lib にリンクします。
 -   ある、ドライバーやライブラリ Storport.lib にリンクします。

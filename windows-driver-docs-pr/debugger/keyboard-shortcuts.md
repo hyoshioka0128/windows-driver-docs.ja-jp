@@ -21,7 +21,7 @@ ms.locfileid: "56580061"
 ## <span id="ddk_shortcut_keys_dbg"></span><span id="DDK_SHORTCUT_KEYS_DBG"></span>
 
 
-次のキーボード ショートカットを使用して、ウィンドウを切り替えることができます。 ウィンドウ間を移動する方法の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
+次のキーボード ショートカットを使用して、ウィンドウを切り替えることができます。 ウィンドウ間を移動する方法の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
 
 <table>
 <colgroup>

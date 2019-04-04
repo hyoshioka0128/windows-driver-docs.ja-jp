@@ -36,7 +36,7 @@ Windows をインストール、発行元の Authenticode 証明書が信頼さ�
 
 使用して Authenticode 証明書をコンピューターの信頼された発行元証明書ストアに手動でインストールすることができます、 [ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)ツール。
 
-**注**  ドライバーのプラグ アンド プレイによって使用される認証ポリシーの署名は、CA の Authenticode 証明書が信頼された発行元の証明書ストアのローカル コンピューターのバージョンで以前にインストールされている必要があります。 詳細については、次を参照してください。[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)します。
+**注**  ドライバーのプラグ アンド プレイによって使用される認証ポリシーの署名は、CA の Authenticode 証明書が信頼された発行元の証明書ストアのローカル コンピューターのバージョンで以前にインストールされている必要があります。 詳細については、[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)を参照してください。
 
  
 

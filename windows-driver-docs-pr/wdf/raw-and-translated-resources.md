@@ -35,7 +35,7 @@ Raw と翻訳されたリソースの詳細については、のメンバーの�
 -   ドライバーの[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数を呼び出す必要があります[ **MmMapIoSpace** ](https://msdn.microsoft.com/library/windows/hardware/ff554618)システムの物理アドレスにマップするにはシステムの仮想アドレス。
 -   ドライバーの[ *EvtDeviceReleaseHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540890)コールバック関数を呼び出す必要があります[ **MmUnmapIoSpace** ](https://msdn.microsoft.com/library/windows/hardware/ff556387)アドレスの割り当てを解除します。
 
-バスの相対アドレスのマッピングの詳細については、次を参照してください。[マッピング Bus 相対アドレスを仮想アドレス](https://msdn.microsoft.com/library/windows/hardware/ff554399)します。
+バスの相対アドレスのマッピングの詳細については、[マッピング Bus 相対アドレスを仮想アドレス](https://msdn.microsoft.com/library/windows/hardware/ff554399)を参照してください。
 
  
 

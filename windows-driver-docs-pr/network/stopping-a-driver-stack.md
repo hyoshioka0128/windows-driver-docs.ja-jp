@@ -22,7 +22,7 @@ ms.locfileid: "56574032"
 
 デバイスが削除されると、NDIS ドライバー スタックは停止します。 ドライバー スタックは、次のように操作を停止します。
 
-1.  NDIS は、ドライバー スタックを一時停止します。 ドライバー スタックを一時停止の詳細については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
+1.  NDIS は、ドライバー スタックを一時停止します。 ドライバー スタックを一時停止の詳細については、[ドライバー スタックを一時停止](pausing-a-driver-stack.md)を参照してください。
 
 2.  NDIS 呼び出しプロトコル ドライバーの[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)関数。
 

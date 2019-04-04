@@ -15,11 +15,11 @@ ms.locfileid: "58624777"
 
 このトピックでは、デスクトップ COSA で使用できる設定と APN データベース (apndatabase.xml) について説明します。
 
-デスクトップ COSA/APN データベースの送信処理に関する詳細については、次を参照してください。[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。
+デスクトップ COSA/APN データベースの送信処理に関する詳細については、[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)を参照してください。
 
-COSA に関する詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。
+COSA に関する詳細については、[COSA 概要](cosa-overview.md)を参照してください。
 
-APN データベースに関する詳細については、次を参照してください。 [APN データベースの概要](apn-database-overview.md)します。
+APN データベースに関する詳細については、[APN データベースの概要](apn-database-overview.md)を参照してください。
 
 ## <a name="apn-database-only-settings"></a>APN データベース専用の設定
 
@@ -81,5 +81,5 @@ APN データベースに関する詳細については、次を参照してく�
 | UIName | ターゲット条件の値 (SPN、MCC、mnc も、IMSI 範囲、ICCID 範囲など) は、一意のエントリを示すことはできない場合、COSA は手動で使用するどの月の接続値の選択を有効にするには、エンドユーザーにこの名前が表示されます。 | 省略可能 | たとえば、 **ContosoMVNO** MVNO です。 メインの MO ネットワークからそれ自体を区別するために使用できる一意の値がない**Contoso**します。 この場合、 **UIName**ことができ、手動で使用する設定をプロビジョニングする月を選択するユーザーを有効にすると、Windows の設定 UI に表示されます。 | Windows 10 バージョン 1709 |
 | UIOrder | コントロールのインデックス、 **UIName**値のドロップダウン リスト ピッカーの位置。 | 場合に、必ず**UIName**を指定します。それ以外の場合 (省略可能) | 指定しない場合、既定値は**0**します。 | Windows 10 バージョン 1709 |
 | ESIM_PROV | プロファイルがプロビジョニング プロファイル、eSIM と見なされるかどうかを示す true または false の文字列。 | **重要な**省略可能、MO サポートしていない限り、esim 状のプロビジョニング プロファイルの場合はの指定が必要です。 | <p>"False"というかどうか、空白の既定値</p> <p>プロビジョニング プロファイル、eSIM とは、単一目的のためのプロファイルです。 EUICC がインストールされていると、は、通常、運用の eSIM のプロファイルを購入するには高いガーデニングの月の限られた接続を確立するために、ユーザーの機器ができます。</p> | Windows 10 バージョン 1709 |
-| AppID | 通信事業者の UWP コンパニオン アプリのアプリケーション ID、パッケージ ファミリ名 (PFN) を記述する文字列。 | 省略可能 | Windows 10、バージョン 1803 以降で**AppID**それぞれのコンパニオン アプリと共に MOs の識別に使用します。 **AppID**形式で宣言する必要があります。 <p>**PFN!AppId**</p><p>**注**この形式は大文字小文字を区別します。</p><p>アプリの PFN とアプリ Id を取得するには、次の手順に従います。<ol><li>PFN を取得で指定した[ビュー アプリ Id の詳細](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)します。</li><li>開き、ソリューションの AppId を見つける*AppManifest.XML*ファイルとアプリケーション ID の appxmanifest ファイルの照会</li></ol> <p>UWP MOs のコンパニオン アプリに関する詳細については、次を参照してください。 [UWP モバイル ブロード バンド アプリ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/windows-store-mobile-broadband-apps)します。</p> | Windows 10 バージョン 1803 |
-| ホット スポット | 個人用のホット スポットとして、モバイル ブロード バンド接続を共有するユーザーを許可するかどうかを決定します。 | 省略可能 | 設定可能な値: <ul><li>しない</li><li>常に </li><li>EntitlementCheckRequired</li></ul> <p>常にします"場合、空白の既定値。</p> <p>*EntitlementCheckRequired*権利チェックは、Windows 通知イベントのハンドラーを必要とすると、ホット スポットを共有するユーザーを有効にします。 このオプションが選択されている場合は、権限チェックの要求を処理するために月 UWP コンパニオン アプリを開発する必要があります。</p> <p>UWP MOs のコンパニオン アプリに関する詳細については、次を参照してください。 [UWP モバイル ブロード バンド アプリ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/windows-store-mobile-broadband-apps)します。</p><p>EntitlementCheck API についての詳細については、次を参照してください。 その[UWP API のリファレンス ページ](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringentitlementchecktriggerdetails)します。</p> | Windows 10 バージョン 1803 |
+| AppID | 通信事業者の UWP コンパニオン アプリのアプリケーション ID、パッケージ ファミリ名 (PFN) を記述する文字列。 | 省略可能 | Windows 10、バージョン 1803 以降で**AppID**それぞれのコンパニオン アプリと共に MOs の識別に使用します。 **AppID**形式で宣言する必要があります。 <p>**PFN!AppId**</p><p>**注**この形式は大文字小文字を区別します。</p><p>アプリの PFN とアプリ Id を取得するには、次の手順に従います。<ol><li>PFN を取得で指定した[ビュー アプリ Id の詳細](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)します。</li><li>開き、ソリューションの AppId を見つける*AppManifest.XML*ファイルとアプリケーション ID の appxmanifest ファイルの照会</li></ol> <p>UWP MOs のコンパニオン アプリに関する詳細については、[UWP モバイル ブロード バンド アプリ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/windows-store-mobile-broadband-apps)を参照してください。</p> | Windows 10 バージョン 1803 |
+| ホット スポット | 個人用のホット スポットとして、モバイル ブロード バンド接続を共有するユーザーを許可するかどうかを決定します。 | 省略可能 | 設定可能な値: <ul><li>しない</li><li>常に </li><li>EntitlementCheckRequired</li></ul> <p>常にします"場合、空白の既定値。</p> <p>*EntitlementCheckRequired*権利チェックは、Windows 通知イベントのハンドラーを必要とすると、ホット スポットを共有するユーザーを有効にします。 このオプションが選択されている場合は、権限チェックの要求を処理するために月 UWP コンパニオン アプリを開発する必要があります。</p> <p>UWP MOs のコンパニオン アプリに関する詳細については、[UWP モバイル ブロード バンド アプリ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/windows-store-mobile-broadband-apps)を参照してください。</p><p>EntitlementCheck API についての詳細については、その[UWP API のリファレンス ページ](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringentitlementchecktriggerdetails)を参照してください。</p> | Windows 10 バージョン 1803 |

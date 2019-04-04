@@ -19,7 +19,7 @@ ms.locfileid: "56572286"
 ## <a name="span-idattachingtoarunningprocessspanspan-idattachingtoarunningprocessspanspan-idattachingtoarunningprocessspanattaching-to-a-running-process"></a><span id="Attaching_to_a_Running_Process"></span><span id="attaching_to_a_running_process"></span><span id="ATTACHING_TO_A_RUNNING_PROCESS"></span>実行中のプロセスへのアタッチ
 
 
-WinDbg を使用して、実行中のプロセスにアタッチするいくつかの方法はあります。 選択したメソッドに関係なく、プロセス ID またはプロセス名を必要があります。 プロセス ID は、オペレーティング システムによって割り当てられた番号です。 プロセス ID と、プロセス名を確認する方法の詳細については、次を参照してください。[プロセス ID の検索](finding-the-process-id.md)します。
+WinDbg を使用して、実行中のプロセスにアタッチするいくつかの方法はあります。 選択したメソッドに関係なく、プロセス ID またはプロセス名を必要があります。 プロセス ID は、オペレーティング システムによって割り当てられた番号です。 プロセス ID と、プロセス名を確認する方法の詳細については、[プロセス ID の検索](finding-the-process-id.md)を参照してください。
 
 ### <a name="span-idwindbgmenuspanspan-idwindbgmenuspanspan-idwindbgmenuspanwindbg-menu"></a><span id="WinDbg_Menu"></span><span id="windbg_menu"></span><span id="WINDBG_MENU"></span>WinDbg のメニュー
 
@@ -36,7 +36,7 @@ WinDbg を使用して、実行中のプロセスにアタッチするいくつ�
 
 場所*ProcessID*が実行中のプロセスのプロセス ID または*ProcessName*実行中のプロセスの名前を指定します。
 
-コマンドライン構文の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+コマンドライン構文の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
 
 ### <a name="span-iddebuggercommandwindow1spanspan-iddebuggercommandwindow1spandebugger-command-window"></a><span id="debugger_command_window1"></span><span id="DEBUGGER_COMMAND_WINDOW1"></span>デバッガー コマンド ウィンドウ
 
@@ -62,7 +62,7 @@ WinDbg を使用して、実行中のプロセスにアタッチするいくつ�
 コマンド プロンプト ウィンドウで割り当てることができます、実行中のプロセスに noninvasively WinDbg を起動するときにします。 次のコマンドのいずれかを使用します。
 
 **windbg の pv-p** *ProcessID*
-**windbg -pv-pn** *ProcessName*はいくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+**windbg -pv-pn** *ProcessName*はいくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
 
 ### <a name="span-iddebuggercommandwindow2spanspan-iddebuggercommandwindow2spandebugger-command-window"></a><span id="debugger_command_window2"></span><span id="DEBUGGER_COMMAND_WINDOW2"></span>デバッガー コマンド ウィンドウ
 
@@ -99,7 +99,7 @@ WinDbg を起動するときに、コマンド プロンプト ウィンドウ�
 
 **windbg \[-o\]**  *ProgramName* **\[**<em>引数</em>**\]**
 
-**-O**オプションにより、デバッガーの子プロセスにアタッチします。 いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+**-O**オプションにより、デバッガーの子プロセスにアタッチします。 いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
 
 ### <a name="span-iddebuggercommandwindow3spanspan-iddebuggercommandwindow3spandebugger-command-window"></a><span id="debugger_command_window3"></span><span id="DEBUGGER_COMMAND_WINDOW3"></span>デバッガー コマンド ウィンドウ
 
@@ -116,7 +116,7 @@ WinDbg を起動するときに、コマンド プロンプト ウィンドウ�
 ## <a name="span-idreattachingtoaprocessspanspan-idreattachingtoaprocessspanspan-idreattachingtoaprocessspanreattaching-to-a-process"></a><span id="Reattaching_to_a_Process"></span><span id="reattaching_to_a_process"></span><span id="REATTACHING_TO_A_PROCESS"></span>プロセスに再アタッチ
 
 
-デバッガーでは、応答を停止したり、フリーズする場合、は、ターゲット プロセスに新しいデバッガーを添付できます。 このような状況でデバッガーをアタッチする方法の詳細については、次を参照してください。[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)します。
+デバッガーでは、応答を停止したり、フリーズする場合、は、ターゲット プロセスに新しいデバッガーを添付できます。 このような状況でデバッガーをアタッチする方法の詳細については、[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)を参照してください。
 
  
 

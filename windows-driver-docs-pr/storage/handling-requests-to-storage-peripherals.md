@@ -24,7 +24,7 @@ ms.locfileid: "56579801"
 ## <span id="ddk_handling_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>
 
 
-基になるバス経由で要求を実行する記憶域ポート ドライバーを必要とするすべての要求、クラス ドライバーは IRP を SCSI 要求 SCSI コマンド記述子ブロック (CDB) を格納しているブロック (SRB) でする必要があります設定します。 その結果、ほとんどのストレージ クラス ドライバーがある 1 つまたは複数の内部*BuildRequest*される Srb を構築するためのルーチンです。 このようなルーチンの詳細については、次を参照してください。[記憶域クラス ドライバー BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md)します。
+基になるバス経由で要求を実行する記憶域ポート ドライバーを必要とするすべての要求、クラス ドライバーは IRP を SCSI 要求 SCSI コマンド記述子ブロック (CDB) を格納しているブロック (SRB) でする必要があります設定します。 その結果、ほとんどのストレージ クラス ドライバーがある 1 つまたは複数の内部*BuildRequest*される Srb を構築するためのルーチンです。 このようなルーチンの詳細については、[記憶域クラス ドライバー BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md)を参照してください。
 
 記憶域クラス ドライバーは IRP でも渡す\_MJ\_基になるストレージ ポート ドライバーに SCSI 要求。 このような要求から発生すること、[ストレージ フィルター ドライバー](storage-filter-drivers.md)。
 

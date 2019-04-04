@@ -34,7 +34,7 @@ ms.locfileid: "56558608"
 
 UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 UCX は、基になるホスト コント ローラー ドライバーに要求をキューにこれらのオブジェクトを使用します。
 
-WDF のオブジェクトの詳細については、次を参照してください。 [Framework オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff544249)します。
+WDF のオブジェクトの詳細については、[Framework オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff544249)を参照してください。
 
 ## <a name="host-controller-object"></a>ホスト コント ローラーのオブジェクト
 
@@ -82,7 +82,7 @@ USB ハブでは、機能の制御の要求を処理します。
 [*EVT\_UCX\_ROOTHUB\_INTERRUPT\_TX*](https://msdn.microsoft.com/library/windows/hardware/mt187837)  
 変更されたポートに関する情報を要求をハンドルします。
 
-詳細については、次を参照してください。[ホスト コント ローラーのドライバーのコールバック関数のハブ ルート](manage-the-root-hub-in-a-host-controller-driver.md)します。
+詳細については、[ホスト コント ローラーのドライバーのコールバック関数のハブ ルート](manage-the-root-hub-in-a-host-controller-driver.md)を参照してください。
 
 ## <a name="usb-device-object"></a>USB デバイス オブジェクト
 
@@ -153,7 +153,7 @@ Endpoint オブジェクトは、ドライバーは、エンドポイントに�
 エンドポイントのコント ローラーのプログラミングをリセットするドライバーに通知します。
 
 ホスト コント ローラーのドライバーでは、エンドポイントの USB 3.0 いいえ Ping 応答エラーを受信すると、ドライバーを呼び出す必要があります[ **UcxEndpointNoPingResponseError**](https://msdn.microsoft.com/library/windows/hardware/mt188043)します。 USB デバイス オブジェクトの受信で結果を呼び出す[ *EVT\_UCX\_USBDEVICE\_UPDATE*](https://msdn.microsoft.com/library/windows/hardware/mt187846)します。
-詳細については、次を参照してください。[ホスト コント ローラーのドライバーを構成する USB エンドポイント](configuring-usb-endpoints-in-a-host-controller-driver.md)します。
+詳細については、[ホスト コント ローラーのドライバーを構成する USB エンドポイント](configuring-usb-endpoints-in-a-host-controller-driver.md)を参照してください。
 
 ## <a name="stream-object"></a>Stream オブジェクト
 

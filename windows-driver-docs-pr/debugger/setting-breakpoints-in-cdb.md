@@ -14,7 +14,7 @@ ms.locfileid: "56579831"
 # <a name="setting-breakpoints-in-cdb"></a>CDB でのブレークポイントの設定
 
 
-設定、表示、およびコマンドを入力して、CDB 内のブレークポイントを操作することができます。 コマンドの一覧は、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
+設定、表示、およびコマンドを入力して、CDB 内のブレークポイントを操作することができます。 コマンドの一覧は、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
 
  
 

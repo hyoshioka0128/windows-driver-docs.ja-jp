@@ -26,7 +26,7 @@ ms.locfileid: "56578515"
 ## <span id="resource_list_objects"></span><span id="RESOURCE_LIST_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)ミニポート ドライバーのためのインターフェイス。 IResourceList オブジェクトは、デバイスのスタートアップ時にデバイスに、プラグ アンド プレイ マネージャを代入するシステムのハードウェア リソースの一覧は、構成リソースの一覧を表します。 スタートアップ時にリソース割り当ての詳細については、次を参照してください。[関数ドライバーでは、デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563856)します。
+PortCls システム ドライバーの実装、 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)ミニポート ドライバーのためのインターフェイス。 IResourceList オブジェクトは、デバイスのスタートアップ時にデバイスに、プラグ アンド プレイ マネージャを代入するシステムのハードウェア リソースの一覧は、構成リソースの一覧を表します。 スタートアップ時にリソース割り当ての詳細については、[関数ドライバーでは、デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563856)を参照してください。
 
 リソースの一覧には、次の種類リソースにはが含まれています。
 
@@ -38,7 +38,7 @@ PortCls システム ドライバーの実装、 [IResourceList](https://msdn.mi
 
 -   バスの相対メモリ アドレスのブロック
 
-リソースの種類については、次を参照してください。[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)します。
+リソースの種類については、[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)を参照してください。
 
 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)オブジェクトには、リソースの一覧の翻訳と無変換 (または「生」) のバージョンがカプセル化します。 変換し、リソースを翻訳しないについての詳細についてを参照してください。 [Bus 相対アドレスを仮想のアドレスにマッピング](https://msdn.microsoft.com/library/windows/hardware/ff554399)します。
 

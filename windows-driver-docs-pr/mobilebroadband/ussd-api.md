@@ -16,7 +16,7 @@ ms.locfileid: "56536111"
 
 Windows の USSD API とは、アプリの開発を簡略化の詳細のほとんどを非表示にする、基になる構造化されていない補助サービス データ (USSD) プロトコルの抽象化です。 この API は、新規または既存のセッションに USSD 文字列を送信するかを既存のセッションを取り消すモバイル ブロード バンドのアプリを使用できます。 この API は、応答を必要としないまたは可能性のあるネットワークからの通知をサポートします。 応答は、USSD ネットワークによる要求またはときにさらに情報が必要な mobile によって開始された操作の後に必要です。
 
-USSD API についての詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)します。
+USSD API についての詳細については、[ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

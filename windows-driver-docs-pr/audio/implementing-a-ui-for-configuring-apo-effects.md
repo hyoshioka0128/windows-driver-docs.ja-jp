@@ -14,7 +14,7 @@ ms.locfileid: "56550087"
 # <a name="implementing-a-ui-for-configuring-apo-effects"></a>APO 効果を構成するための UI を実装します。
 
 
-このトピックでは、ユーザーが、効果を構成できるユーザー インターフェイス (UI) を実装する方法について説明します。 パスワードの詳細については、次を参照してください。[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)します。
+このトピックでは、ユーザーが、効果を構成できるユーザー インターフェイス (UI) を実装する方法について説明します。 パスワードの詳細については、[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)を参照してください。
 
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
 
@@ -139,7 +139,7 @@ Windows で提供される効果を直接使用または、それらをラップ
 ## <a name="span-idsysvadswapapouisamplecodespanspan-idsysvadswapapouisamplecodespanspan-idsysvadswapapouisamplecodespansysvad-swapapo-ui-sample-code"></a><span id="SYSVAD_SwapAPO_UI_Sample_Code"></span><span id="sysvad_swapapo_ui_sample_code"></span><span id="SYSVAD_SWAPAPO_UI_SAMPLE_CODE"></span>SYSVAD SwapAPO UI のサンプル コード
 
 
-コード サンプルをテンプレートとしては、SYVAD スワップ APO を使用してカスタム APO 開発プロセスを推し進めることができます。 スワップ APO サンプルについては、次を参照してください。[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)します。
+コード サンプルをテンプレートとしては、SYVAD スワップ APO を使用してカスタム APO 開発プロセスを推し進めることができます。 スワップ APO サンプルについては、[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)を参照してください。
 
 **コード例**
 

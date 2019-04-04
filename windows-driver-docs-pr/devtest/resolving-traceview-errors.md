@@ -32,7 +32,7 @@ Traceview でが見つからない場合、 [PDB シンボル ファイル](pdb-
 
 コマンド プロンプト ウィンドウで、トレース セッションを停止する次のように入力します。 **traceview で-停止 * * * SessionName*します。
 
-これらのコマンドの詳細については、次を参照してください。 [ **traceview で管理コマンド**](traceview-control-commands.md)します。
+これらのコマンドの詳細については、[ **traceview で管理コマンド**](traceview-control-commands.md)を参照してください。
 
 ### <a name="span-idcannotopenlogfileforreadingspanspan-idcannotopenlogfileforreadingspancannot-open-logfile-for-reading"></a><span id="cannot_open_logfile_for_reading"></span><span id="CANNOT_OPEN_LOGFILE_FOR_READING"></span>読み取り用のログ ファイルを開くことができません。
 
@@ -46,4 +46,4 @@ Traceview でが見つからない場合、 [PDB シンボル ファイル](pdb-
 
 このエラーは、既に進行中である NT Kernel Logger トレース セッションに参加するときに発生します。 Traceview でを使用して、NT Kernel Logger のトレース セッションを作成することができますが、ツールまたは traceview で以外の方法によって開始される NT Kernel Logger トレース セッションに参加することはできません。
 
-詳細については、次を参照してください。[トレース セッションに参加する](joining-a-trace-session.md)と[NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)します。
+詳細については、[トレース セッションに参加する](joining-a-trace-session.md)と[NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)を参照してください。

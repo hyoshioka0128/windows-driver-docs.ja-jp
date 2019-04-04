@@ -38,7 +38,7 @@ ms.locfileid: "56572445"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ブレークポイントの使用方法の詳細については、次を参照してください。[を使用してブレークポイント](setting-breakpoints.md)します。
+ブレークポイントの使用方法の詳細については、[を使用してブレークポイント](setting-breakpoints.md)を参照してください。
 
  
 

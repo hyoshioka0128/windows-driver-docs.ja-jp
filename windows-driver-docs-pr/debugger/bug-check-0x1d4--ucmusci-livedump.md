@@ -25,7 +25,7 @@ ms.locfileid: "56743461"
 
 UCMUCSI_LIVEDUMP ライブ ダンプには、0x000001D4 の値があります。 
 
-UcmUcsi.sys ドライバー エラーが発生しました。 UcmUcsi.sys は、アドインのボックス USB コネクタ マネージャー UCSI クライアント ドライバーです。 詳細については、次を参照してください。 [USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/ucsi)します。
+UcmUcsi.sys ドライバー エラーが発生しました。 UcmUcsi.sys は、アドインのボックス USB コネクタ マネージャー UCSI クライアント ドライバーです。 詳細については、[USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/ucsi)を参照してください。
 
 
 ## <a name="ucmucsilivedump-parameters"></a>UCMUCSI\_LIVEDUMP パラメーター

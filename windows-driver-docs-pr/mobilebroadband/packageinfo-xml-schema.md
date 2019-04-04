@@ -23,13 +23,13 @@ ms.locfileid: "56581297"
 
  
 
-PackageInfo の XML スキーマの完了の定義については、次を参照してください。 [PackageInfo XML スキーマ定義](packageinfo-xml-schema-definition.md)します。
+PackageInfo の XML スキーマの完了の定義については、[PackageInfo XML スキーマ定義](packageinfo-xml-schema-definition.md)を参照してください。
 
-PackageInfo の XML スキーマで定義されている要素については、次を参照してください。 [PackageInfo XML 要素](packageinfo-xml-elements.md)します。
+PackageInfo の XML スキーマで定義されている要素については、[PackageInfo XML 要素](packageinfo-xml-elements.md)を参照してください。
 
-PackageInfo の XML スキーマで定義されているデータ型については、次を参照してください。 [PackageInfo XML データ型](packageinfo-xml-data-types.md)します。
+PackageInfo の XML スキーマで定義されているデータ型については、[PackageInfo XML データ型](packageinfo-xml-data-types.md)を参照してください。
 
-PackageInfo の XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [XML の例をの PackageInfo](packageinfo-xml-example.md)します。
+PackageInfo の XML スキーマで定義されている形式で XML データの例は、[XML の例をの PackageInfo](packageinfo-xml-example.md)を参照してください。
 
  
 

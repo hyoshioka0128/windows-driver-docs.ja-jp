@@ -48,7 +48,7 @@ Mysegfilter.dll=1
 
 COM **ThreadingModel**あります**両方**します。
 
-INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)します。
+INF ファイルの詳細については、[WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)を参照してください。
 
  
 

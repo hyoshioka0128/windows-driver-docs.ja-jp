@@ -21,5 +21,5 @@ NDIS 生成、 [NDIS_STATUS_OPER_STATUS](ndis-status-oper-status.md) NDIS のネ
 
 NDIS は、NDIS のネットワーク インターフェイスの現在の操作状態の変更を示します、NDIS WMI GUID_NDIS_STATUS_OPER_STATUS イベントを WMI クライアントの状態の表示も変換されます。
 
-GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_OPER_STATE](https://msdn.microsoft.com/library/windows/hardware/ff566737)構造体。 使用可能な値については、次を参照してください。 [NDIS_STATUS_OPER_STATUS](ndis-status-oper-status.md)します。
+GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_OPER_STATE](https://msdn.microsoft.com/library/windows/hardware/ff566737)構造体。 使用可能な値については、[NDIS_STATUS_OPER_STATUS](ndis-status-oper-status.md)を参照してください。
 

@@ -93,7 +93,7 @@ KSCATEGORY_WDMAUD = "{3E227E76-690D-11D2-8161-0000F8775BF1}"
 
     前に、*デバイス インストール アプリケーション*を作成、 **RunOnce**エントリ、システムの再起動後に管理者特権を持つユーザーがログオンする必要がありますが、現在のユーザーに通知します。
 
-    詳細については、次を参照してください。[ログオン時に Windows Vista で実行されるアプリケーションの開発](https://go.microsoft.com/fwlink/p/?linkid=133224)します。
+    詳細については、[ログオン時に Windows Vista で実行されるアプリケーションの開発](https://go.microsoft.com/fwlink/p/?linkid=133224)を参照してください。
 
  
 

@@ -19,7 +19,7 @@ ms.locfileid: "56553825"
 
 NetAdapterCx クライアント ドライバーの INF ファイルは、標準的なネットワーク INF ファイルでは、いくつかその他のキーワード NetAdapterCx に固有の上に構築します。 
 
-標準的なネットワーク INF ファイルの詳細については、次を参照してください。[ネットワーク INF ファイルの作成](../network/creating-network-inf-files.md)です。 基本の INF ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](../install/inf-file-sections-and-directives.md)します。
+標準的なネットワーク INF ファイルの詳細については、[ネットワーク INF ファイルの作成](../network/creating-network-inf-files.md)を参照してください。 基本の INF ファイルの詳細については、[INF ファイルのセクションとディレクティブ](../install/inf-file-sections-and-directives.md)を参照してください。
 
 次の表では、新しい NetAdapterCx INF キーワードについて説明します。
 

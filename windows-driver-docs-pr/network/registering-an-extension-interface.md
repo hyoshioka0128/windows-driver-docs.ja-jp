@@ -24,7 +24,7 @@ ms.locfileid: "57348635"
 
 各拡張機能インターフェイスは、WSK NPI から独立している、NPI によって定義されます。 ただし、拡張機能インターフェイスの NPIs が NPI 固有の特性をサポートしていないことに注意してください。
 
-WSK アプリケーションを実行することによって拡張機能インターフェイスの登録、 [ **SIO\_WSK\_登録\_拡張子**](https://msdn.microsoft.com/library/windows/hardware/ff570819)ソケット、ソケットの IOCTL 操作。 ソケットの IOCTL 操作を実行する方法の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
+WSK アプリケーションを実行することによって拡張機能インターフェイスの登録、 [ **SIO\_WSK\_登録\_拡張子**](https://msdn.microsoft.com/library/windows/hardware/ff570819)ソケット、ソケットの IOCTL 操作。 ソケットの IOCTL 操作を実行する方法の詳細については、[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)を参照してください。
 
 WSK アプリケーションが、SIO WSK サブシステムでサポートされていない拡張機能インターフェイスのソケットを登録しようとしたかどうかは\_WSK\_登録\_拡張子ソケットの IOCTL 操作の状態が返されます\_されません\_サポートされています。
 

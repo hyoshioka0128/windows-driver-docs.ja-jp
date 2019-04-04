@@ -27,7 +27,7 @@ HKR,, RemovableSources, %REG_DWORD%, 2
 ...
 ```
 
-ディスプレイ ドライバーのインストールの詳細については、次を参照してください。[ミニポートの表示と表示のユーザー モード ドライバーのインストール要件](installing-display-miniport-and-user-mode-display-drivers.md)します。
+ディスプレイ ドライバーのインストールの詳細については、[ミニポートの表示と表示のユーザー モード ドライバーのインストール要件](installing-display-miniport-and-user-mode-display-drivers.md)を参照してください。
 
  
 

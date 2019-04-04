@@ -38,7 +38,7 @@ Windows 8 以降では、システム上のミラー ドライバーはインス
 
 ただし、特別な GDI アクセシビリティ ドライバー モデルはミラー ドライバー機能を提供する開発者向けに Windows 8 以降より使用可能[*支援技術*](https://go.microsoft.com/fwlink/p/?linkid=248209)お客様向けに障害または障碍があります。 この特別なドライバー モデルの詳細についてにお問い合わせください<acc_driver@microsoft.com>します。
 
-A*リモート ディスプレイ ドライバー*ミラー ドライバーのアーキテクチャに基づいているモデルは、Windows 8 以降でも実行できます。 詳細については、次を参照してください。[リモート ディスプレイ ドライバー](remote-display-drivers.md)します。
+A*リモート ディスプレイ ドライバー*ミラー ドライバーのアーキテクチャに基づいているモデルは、Windows 8 以降でも実行できます。 詳細については、[リモート ディスプレイ ドライバー](remote-display-drivers.md)を参照してください。
 
 ## <a name="span-idddkmirrordriversggspanspan-idddkmirrordriversggspanmirror-driver-description"></a><span id="ddk_mirror_drivers_gg"></span><span id="DDK_MIRROR_DRIVERS_GG"></span>ミラー ドライバーの説明
 

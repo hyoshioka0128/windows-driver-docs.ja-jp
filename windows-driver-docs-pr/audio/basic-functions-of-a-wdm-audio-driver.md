@@ -26,7 +26,7 @@ Microsoft Windows Driver Model (WDM) ドライバーは、次の機能を提供�
 
 -   ドライバーは、1 つまたは複数のプロパティ セットをサポートします。 たとえば、すべてのオーディオ ドライバーがサポートする必要があります[KSPROPSETID\_オーディオ](https://msdn.microsoft.com/library/windows/hardware/ff537440)が、オーディオ ドライバーも追加のプロパティのセットをサポート可能性があります。 ドライバーのクライアントは、フィルターの機能を検出して、フィルターの構成可能な設定を変更するプロパティの要求を使用します。
 
--   必要に応じて、ドライバーには、ハードウェア クロックがサポートしています。 このクロックでは、ストリームは、同じまたは別のハードウェア上の他のストリームと同期できるように読み取りと書き込みをする必要があります。 詳細については、次を参照してください。 [KSPROPSETID\_クロック](https://msdn.microsoft.com/library/windows/hardware/ff566564)します。
+-   必要に応じて、ドライバーには、ハードウェア クロックがサポートしています。 このクロックでは、ストリームは、同じまたは別のハードウェア上の他のストリームと同期できるように読み取りと書き込みをする必要があります。 詳細については、[KSPROPSETID\_クロック](https://msdn.microsoft.com/library/windows/hardware/ff566564)を参照してください。
 
 -   ドライバーでメディアの他のインターフェイスをようサポート必要に応じて[ **KSINTERFACE\_標準\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563384)、 [ **KSINTERFACE\_メディア\_WAVE\_QUEUED**](https://msdn.microsoft.com/library/windows/hardware/ff563377)、または[ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381).
 

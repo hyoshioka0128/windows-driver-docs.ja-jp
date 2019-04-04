@@ -24,7 +24,7 @@ ms.locfileid: "56556733"
 
 さらに、リモート デバッグの他のメソッドがある: リモート ツールを使用して、KD 接続のサーバーを使用して、または repeater を使用します。 選択する必要がある方法は、問題のコンピューターと利用可能な接続の構成によって異なります。
 
-詳細については、次を参照してください。[リモート デバッグ](remote-debugging.md)します。
+詳細については、[リモート デバッグ](remote-debugging.md)を参照してください。
 
 <span id="register"></span><span id="REGISTER"></span>**登録**  
 CPU の非常に高速な一時メモリ位置。
@@ -32,7 +32,7 @@ CPU の非常に高速な一時メモリ位置。
 <span id="register_context"></span><span id="REGISTER_CONTEXT"></span>**コンテキストに登録します。**  
 すべてのプロセッサのレジスタを含む完全なプロセッサの状態。
 
-詳細については、次を参照してください。 [**登録コンテキスト**](-thread--set-register-context-.md)します。
+詳細については、[**登録コンテキスト**](-thread--set-register-context-.md)を参照してください。
 
 <span id="retail_build"></span><span id="RETAIL_BUILD"></span>**製品版ビルド**  
 無料のビルドを参照してください。

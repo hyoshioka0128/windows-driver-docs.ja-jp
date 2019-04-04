@@ -23,9 +23,9 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性は維持するために、デバイス インターフェイスに関する情報にアクセスするこれら 2 つの方法もサポートします。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-システム定義のデバイス ドライバーのプロパティの一覧は、次を参照してください。[デバイス ドライバーのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541205)します。 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するシステム定義のレジストリ エントリの値の名前が含まれます。
+システム定義のデバイス ドライバーのプロパティの一覧は、[デバイス ドライバーのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541205)を参照してください。 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するシステム定義のレジストリ エントリの値の名前が含まれます。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
 
 ### <a href="" id="accessing-device-driver-properties-that-have-corresponding-registry-en"></a> 対応するレジストリ エントリの値を持つデバイス ドライバーのプロパティにアクセスします。
 

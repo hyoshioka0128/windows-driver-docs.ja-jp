@@ -29,7 +29,7 @@ ms.locfileid: "56573720"
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-カーネル同期遅延がドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーの機能をファジー化を有効にすることができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
+カーネル同期遅延がドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーの機能をファジー化を有効にすることができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
 
 **注**  カーネル同期の遅延ファジー オプションには、さまざまなカーネル API 関数呼び出しでランダムな遅延を挿入することで、実行時に表示される競合状態の確率が高くなります。 これら遅延をより有効にするには、その他のドライバーの検証オプションでは、このオプションを有効にすることができます。 導入できる遅延のためには、コンピューターが、応答が遅くできるが期待できます。
 

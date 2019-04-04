@@ -43,7 +43,7 @@ Driver Install Frameworks (DIFx) をデバイス インストールのアプリ�
 
 [SetupAPI の使用に関するガイドライン](guidelines-for-using-setupapi.md)
 
-**注**  SetupAPI でセットアップの機能のサブセットのみを説明します。 この API の詳細については、次を参照してください。[セットアップ API](https://docs.microsoft.com/windows/desktop/SetupApi/setup-api-portal)します。
+**注**  SetupAPI でセットアップの機能のサブセットのみを説明します。 この API の詳細については、[セットアップ API](https://docs.microsoft.com/windows/desktop/SetupApi/setup-api-portal)を参照してください。
 
  
 

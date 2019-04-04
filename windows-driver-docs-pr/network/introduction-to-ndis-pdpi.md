@@ -46,7 +46,7 @@ Windows によって実装される PacketDirect プラットフォームは、�
 
 **PacketDirect プロバイダー インターフェイス (お)**
 
-おでは、高パフォーマンスの送信を公開し、受信機能、Windows OS に NIC ドライバーを許可します。 実装される関数は、完了ミニポート機能のサブセット、PD を実装するすべての Nic にジェネリック。 おのリファレンス ドキュメントについては、次を参照してください。 [PacketDirect プロバイダー インターフェイス (お) 参照](https://msdn.microsoft.com/library/windows/hardware/dn931858)します。
+おでは、高パフォーマンスの送信を公開し、受信機能、Windows OS に NIC ドライバーを許可します。 実装される関数は、完了ミニポート機能のサブセット、PD を実装するすべての Nic にジェネリック。 おのリファレンス ドキュメントについては、[PacketDirect プロバイダー インターフェイス (お) 参照](https://msdn.microsoft.com/library/windows/hardware/dn931858)を参照してください。
 
 **PacketDirect クライアント インターフェイス (PDCI)**
 

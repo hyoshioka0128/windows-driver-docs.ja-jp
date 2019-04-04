@@ -50,7 +50,7 @@ ms.locfileid: "56578101"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-このフラグには、最も基本的な検出機能のみができます。 ユーザー モード アプリケーションを確実にテストするには、Application Verifier (appverif.exe) を使用します。 詳細については、次を参照してください。 [Application Verifier](application-verifier.md)します。
+このフラグには、最も基本的な検出機能のみができます。 ユーザー モード アプリケーションを確実にテストするには、Application Verifier (appverif.exe) を使用します。 詳細については、[Application Verifier](application-verifier.md)を参照してください。
 
  
 

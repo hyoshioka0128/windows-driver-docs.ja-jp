@@ -20,7 +20,7 @@ Windows 10 以降 19 H 1、鍵を使用して\_デバイス\_AudioDevice\_マイ
 
 値 0 またはプロパティ キーがないのでは、音声アシスタントを使用するため、エンドポイントが優先しないが、マイクが相手側のフィールドをサポートしていないか、サポートが、不明なことを示します。
 
-プロパティは、INF、および可能であればオーディオ デバイスの基本の INF ではなく、OEM によって提供される、拡張子 INF を使用して設定する必要があります。 拡張子 INF ファイルの詳細については、次を参照してください。[コンポーネント化されたオーディオ ドライバーのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#-creating-a-componentized-audio-driver-installation)と[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)します。
+プロパティは、INF、および可能であればオーディオ デバイスの基本の INF ではなく、OEM によって提供される、拡張子 INF を使用して設定する必要があります。 拡張子 INF ファイルの詳細については、[コンポーネント化されたオーディオ ドライバーのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#-creating-a-componentized-audio-driver-installation)と[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)を参照してください。
 
 
 

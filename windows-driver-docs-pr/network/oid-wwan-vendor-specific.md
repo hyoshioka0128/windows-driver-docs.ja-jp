@@ -24,7 +24,7 @@ OID\_WWAN\_ベンダー\_により、特定のベンダー固有のオブジェ�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 仕入先の特定の操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)します。
+詳細については、この OID を使用して、[WWAN 仕入先の特定の操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)を参照してください。
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_ベンダー固有の操作をサポートしていない場合にサポートされています。
 

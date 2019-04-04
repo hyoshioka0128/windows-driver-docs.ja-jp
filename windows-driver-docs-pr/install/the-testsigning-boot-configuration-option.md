@@ -16,7 +16,7 @@ ms.locfileid: "56574165"
 
 TESTSIGNING ブートの構成オプションは、Windows Vista および Windows の以降のバージョンがあらゆる種類のテスト署名されたカーネル モード コードを読み込むかどうかを決定します。 既定で、既定で 64 ビット バージョンの Windows Vista と Windows の以降のバージョンはテスト署名されたカーネル モード ドライバーを読み込むことでは、このオプションは設定されていません。
 
-**注**  カーネル モードのすべてのコードにデジタル署名があることの 64 ビット バージョンの Windows Vista と以降のバージョンの Windows では、カーネル モード コード署名ポリシーに必要です。 ただし、ほとんどの場合、未署名のドライバをインストールして、Windows Vista の 32 ビット バージョンおよび以降のバージョンの Windows にロードすることができますが。 詳細については、次を参照してください。[カーネル モード コード署名ポリシー (Windows Vista 以降)](kernel-mode-code-signing-policy--windows-vista-and-later-.md)します。
+**注**  カーネル モードのすべてのコードにデジタル署名があることの 64 ビット バージョンの Windows Vista と以降のバージョンの Windows では、カーネル モード コード署名ポリシーに必要です。 ただし、ほとんどの場合、未署名のドライバをインストールして、Windows Vista の 32 ビット バージョンおよび以降のバージョンの Windows にロードすることができますが。 詳細については、[カーネル モード コード署名ポリシー (Windows Vista 以降)](kernel-mode-code-signing-policy--windows-vista-and-later-.md)を参照してください。
 
  
 

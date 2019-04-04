@@ -63,7 +63,7 @@ ms.locfileid: "56571317"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リモート デバッグの詳細については、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
+リモート デバッグの詳細については、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------
@@ -72,7 +72,7 @@ ms.locfileid: "56571317"
 
 デバッグ サーバーの ID を調べるには、 [ **.servers (デバッグ サーバーの一覧)** ](-servers--list-debugging-servers-.md)コマンド。
 
-**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、次を参照してください。[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)します。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://msdn.microsoft.com/library/windows/hardware/ff558810).)
+**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)を参照してください。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://msdn.microsoft.com/library/windows/hardware/ff558810).)
 
 デバッグ サーバーをキャンセルした場合、サーバーにアタッチ今後デバッグ クライアントを防ぐ。 ただし、デバッグ サーバーをキャンセルすると、サーバーから現在接続されているすべてのクライアントが切断できません。
 

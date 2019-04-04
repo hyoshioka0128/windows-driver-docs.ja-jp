@@ -72,7 +72,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 
 ディスパッチ テーブル構造体の内容は、拡張機能インターフェイスに固有です。
 
-拡張機能インターフェイスを登録の詳細については、次を参照してください。[拡張機能インターフェイスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff570461)します。
+拡張機能インターフェイスを登録の詳細については、[拡張機能インターフェイスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff570461)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

@@ -59,7 +59,7 @@ WMI クライアントがアクセスできるは、ドライバーの WMI デ�
 
     ドライバーを呼び出す場合[ **WdfWmiInstanceRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff551190)呼び出した後[ **WdfWmiInstanceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff551178)フレームワークは、インスタンスを登録します。後、デバイスがその作業 (D0) 状態です。
 
-フレームワークに自動的に登録を解除します各プロバイダーのインスタンス、インスタンスのデバイスが削除されると (し、呼び出す前に、 [ *EvtDeviceSelfManagedIoCleanup* ](https://msdn.microsoft.com/library/windows/hardware/ff540898)イベント コールバック関数)。 フレームワークがドライバーのコールバック関数を呼び出す順序については、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
+フレームワークに自動的に登録を解除します各プロバイダーのインスタンス、インスタンスのデバイスが削除されると (し、呼び出す前に、 [ *EvtDeviceSelfManagedIoCleanup* ](https://msdn.microsoft.com/library/windows/hardware/ff540898)イベント コールバック関数)。 フレームワークがドライバーのコールバック関数を呼び出す順序については、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
 
 ドライバーは呼び出すことによって、いつでもインスタンスを登録することができます[ **WdfWmiInstanceDeregister**](https://msdn.microsoft.com/library/windows/hardware/ff551179)します。
 

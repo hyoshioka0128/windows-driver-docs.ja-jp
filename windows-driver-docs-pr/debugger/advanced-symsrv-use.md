@@ -27,7 +27,7 @@ SymSrv を一元的なシンボル ストアからシンボル ファイルを�
 
 SymSrv が特殊なデバッグ タスクに適した小規模なサブセットに大規模なシンボル ストアを分離することもできます。
 
-最後に、SymSrv では、オペレーティング システムによって提供されるログオン情報を使用して、HTTP または HTTPS のソースからシンボル ファイルを取得することができます。 SymSrv には、スマート カード、証明書、および通常のログインおよびパスワードで保護されている HTTPS サイトがサポートしています。 詳細については、次を参照してください。 [HTTP シンボル ストア](http-symbol-stores.md)します。
+最後に、SymSrv では、オペレーティング システムによって提供されるログオン情報を使用して、HTTP または HTTPS のソースからシンボル ファイルを取得することができます。 SymSrv には、スマート カード、証明書、および通常のログインおよびパスワードで保護されている HTTPS サイトがサポートしています。 詳細については、[HTTP シンボル ストア](http-symbol-stores.md)を参照してください。
 
 ### <a name="span-idsettingthesymbolpathspanspan-idsettingthesymbolpathspansetting-the-symbol-path"></a><span id="setting_the_symbol_path"></span><span id="SETTING_THE_SYMBOL_PATH"></span>シンボル パスを設定します。
 
@@ -104,7 +104,7 @@ set _NT_SYMBOL_PATH=srv*\\localserver\myshare\mycache*https://www.company.com/ma
 
 ### <a name="span-idcompressedfilesspanspan-idcompressedfilesspancompressed-files"></a><span id="compressed_files"></span><span id="COMPRESSED_FILES"></span>圧縮されたファイル
 
-この圧縮が使用される compress.exe ツールを使用して行われている限り、SymSrv は圧縮されたファイルが含まれているシンボル ストアと互換性のある[ここ](https://go.microsoft.com/fwlink/p/?linkid=239917)します。 圧縮されたファイルでは、それらのファイル拡張子の最後の文字として、アンダー スコアが必要 (たとえば、module1.pd\_または module2.db\_)。 詳細については、次を参照してください。 [SymStore](symstore.md)します。
+この圧縮が使用される compress.exe ツールを使用して行われている限り、SymSrv は圧縮されたファイルが含まれているシンボル ストアと互換性のある[ここ](https://go.microsoft.com/fwlink/p/?linkid=239917)します。 圧縮されたファイルでは、それらのファイル拡張子の最後の文字として、アンダー スコアが必要 (たとえば、module1.pd\_または module2.db\_)。 詳細については、[SymStore](symstore.md)を参照してください。
 
 ストアのファイルが圧縮されている場合は、ダウン ストリームのストアを使用する必要があります。 SymSrv はダウン ストリームのストアにそれらをキャッシュする前にすべてのファイルを解凍します。
 
@@ -207,7 +207,7 @@ SymSrv は、必要なシンボル ファイルへの完全修飾 UNC パスを�
 
 ### <a name="span-idusingagestoretoreducethecachesizespanspan-idusingagestoretoreducethecachesizespanusing-agestore-to-reduce-the-cache-size"></a><span id="using_agestore_to_reduce_the_cache_size"></span><span id="USING_AGESTORE_TO_REDUCE_THE_CACHE_SIZE"></span>AgeStore を使用して、キャッシュのサイズを小さくには
 
-AgeStore ツールは、指定した日付より古いキャッシュ ファイルを削除するか、指定したサイズ以下のキャッシュの内容を削減することできます。 ダウン ストリーム ストアが大きすぎる場合に役立ちます。 ことができます。 詳細については、次を参照してください。 [AgeStore](agestore.md)します。
+AgeStore ツールは、指定した日付より古いキャッシュ ファイルを削除するか、指定したサイズ以下のキャッシュの内容を削減することできます。 ダウン ストリーム ストアが大きすぎる場合に役立ちます。 ことができます。 詳細については、[AgeStore](agestore.md)を参照してください。
 
  
 

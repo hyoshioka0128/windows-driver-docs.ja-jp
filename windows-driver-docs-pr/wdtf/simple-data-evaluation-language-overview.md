@@ -27,11 +27,11 @@ ms.locfileid: "56572905"
 # <a name="simple-data-evaluation-language-overview"></a>Simple Data Evaluation Language の概要
 
 
-WDTF には、属性またはリレーションシップに基づくターゲットを収集する場合のタスクを簡略化する単純なクエリ言語が含まれています。 単純なデータ評価言語 (SDEL) は、XPath と似ています。 XPath の詳細については、次を参照してください。 [XPath リファレンス](https://go.microsoft.com/fwlink/p/?linkid=33165)します。
+WDTF には、属性またはリレーションシップに基づくターゲットを収集する場合のタスクを簡略化する単純なクエリ言語が含まれています。 単純なデータ評価言語 (SDEL) は、XPath と似ています。 XPath の詳細については、[XPath リファレンス](https://go.microsoft.com/fwlink/p/?linkid=33165)を参照してください。
 
 このトピックでは、次のセクションでは、SDEL を使用する方法について説明します。
 
-**注**  名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、次を参照してください。 [SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)します。
+**注**  名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、[SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)を参照してください。
 
  
 
@@ -73,7 +73,7 @@ SDEL では、属性、トークンに従うさまざまな比較演算子を許
 
 ### <a name="understanding-attribute-namespaces"></a>属性の名前空間について
 
-SDEL 属性をグループ化の名前空間のトークンを使用します。 名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、次を参照してください。 [SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)します。
+SDEL 属性をグループ化の名前空間のトークンを使用します。 名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、[SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)を参照してください。
 
 ルート名前空間の外にあるすべての属性を使用するには、名前空間の名前とし、2 つのコロン (:) を持つ属性を付ける必要があります。 次の VBScript コード例では、Disk::IsRemovable 属性の値が表示されます。
 
@@ -89,7 +89,7 @@ WScript.Echo "Is Removable?: " & DeviceObj.GetValue("Disk::IsRemovable")
 WScript.Echo "FriendlyName: " & Device.GetValue("FriendlyName")
 ```
 
-トークンの属性の一覧については、次を参照してください。 [SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)します。
+トークンの属性の一覧については、[SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)を参照してください。
 
 使用することも、 [ **IWDTFTarget2::Eval** ](https://msdn.microsoft.com/library/windows/hardware/hh439396)ターゲットに対して、SDEL ステートメントを評価するメソッド。 **Eval**返します**バリアント\_TRUE**または**バリアント\_FALSE**します。 次の VBScript コード例では**Eval**デバイスを無効にするかどうかを判断します。
 

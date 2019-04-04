@@ -27,7 +27,7 @@ WIA ドライバーの STI 部分で使用される TWAIN ドライバーがあ�
 
 ためだけに有効な入力方向の値を検証する、ドライバーの記述と、データは、デバイスに送信されます。
 
-使用する場合は、適切な検証シーケンス**IStiUSD::Escape**を参照してください[IStiUSD エスケープ メソッドを使用して](using-the-istiusd-escape-method.md)します。 適切なロックに関する詳細については、次を参照してください。[ロックおよびロック解除のベスト プラクティス](locking-and-unlocking-best-practices.md)します。
+使用する場合は、適切な検証シーケンス**IStiUSD::Escape**を参照してください[IStiUSD エスケープ メソッドを使用して](using-the-istiusd-escape-method.md)します。 適切なロックに関する詳細については、[ロックおよびロック解除のベスト プラクティス](locking-and-unlocking-best-practices.md)を参照してください。
 
  
 

@@ -36,7 +36,7 @@ ms.locfileid: "56539114"
 
 **UMDF** A UMDF ドライバーはこの値を設定する必要があります**WdfDeviceFailedNoRestart**します。
 
-これらの引数値の詳細については、次を参照してください。 [ **WDF\_デバイス\_FAILED\_アクション**](https://msdn.microsoft.com/library/windows/hardware/ff551253)します。
+これらの引数値の詳細については、[ **WDF\_デバイス\_FAILED\_アクション**](https://msdn.microsoft.com/library/windows/hardware/ff551253)を参照してください。
 ドライバーのデバイスの前にオブジェクト コールバック関数が返す値を持つどの nt\_成功 (*状態*) と等しい**FALSE**、コールバック関数がを呼び出して再起動を防ぐことができます[ **WdfDeviceSetFailed** ](https://msdn.microsoft.com/library/windows/hardware/ff546890)の入力引数を持つ**WdfDeviceFailedNoRestart**します。 それ以外の場合、これらのコールバック関数を呼び出す必要はありません**WdfDeviceSetFailed**します。
 
 短時間で数回連続して再起動の試行が失敗するは、(再起動、ドライバーは、もう一度、エラーを報告) ため、フレームワークは、デバイスを再起動しようとしています。 停止します。

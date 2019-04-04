@@ -17,7 +17,7 @@ ms.locfileid: "56582016"
 
 ユニバーサル シリアル バス (USB) 仕様に準拠している USB デバイスの電源管理機能には、電源管理機能のリッチで複雑なセットがあります。 これらの機能が Windows Driver Model (WDM) とやり取りする方法を理解することが重要と、システム アーキテクチャのウェイク アップをサポートするために特に機能 Microsoft Windows が標準の USB を適応させる方法。
 
-カーネル モード ドライバー WDM 電源管理については、次を参照してください。[電源管理の実装](https://msdn.microsoft.com/library/windows/hardware/ff547131)します。
+カーネル モード ドライバー WDM 電源管理については、[電源管理の実装](https://msdn.microsoft.com/library/windows/hardware/ff547131)を参照してください。
 
 USB クライアント ドライバーは、カーネル モード ドライバー フレームワーク (KMDF) に基づいており、ユーザー モード ドライバー フレームワーク (UMDF) は、基本テクノロジや USB デバイスの電源を管理するためのそれぞれのフレームワークでサポートされているメカニズムを使用する必要があります。 KMDF ベースのクライアント ドライバーでの電源を管理する方法の詳細については、次を参照してください[PnP をサポートしていると、ドライバーでの電源管理](https://msdn.microsoft.com/library/windows/hardware/ff544686); UMDF ベースのクライアント ドライバーでは、を参照してください[UMDFベースのドライバーでのPnPと電源管理](https://msdn.microsoft.com/library/windows/hardware/ff560449)。
 

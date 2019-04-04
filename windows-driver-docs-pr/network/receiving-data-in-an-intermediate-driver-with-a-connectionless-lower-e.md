@@ -24,7 +24,7 @@ ms.locfileid: "56582470"
 
 コネクションレスのミニポート ドライバーの呼び出しを基になる、 **NdisMIndicateReceiveNetBufferLists**、1 つ以上のリンクされたリストを渡すこと[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体より高いレベルのドライバーに示された構造体の所有権を放棄します。 NET を返すより高いレベルのドライバーのデータを使用すると、\_バッファー\_ミニポート ドライバーに構造体 (および指定したリソース) を一覧表示します。
 
-コネクションレスの下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)します。
+コネクションレスの下端と中間のドライバーのデータの受信についての詳細については、[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)を参照してください。
 
  
 

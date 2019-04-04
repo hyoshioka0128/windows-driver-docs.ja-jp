@@ -144,7 +144,7 @@ Hello World!  We are in JavaScript!
 
 スクリプトによって行われたすべてのデバッガー オブジェクト モデルの操作は、スクリプトが読み込まれた後または別のコンテンツを再度実行するまで、場所に維持されます。
 
-詳細については、次を参照してください。 [ **.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)します。
+詳細については、[ **.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)を参照してください。
 
 ## <a name="span-idscriptunloadunloadscriptspanspan-idscriptunloadunloadscriptspanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>.scriptunload (アンロード スクリプト)
 
@@ -156,7 +156,7 @@ Hello World!  We are in JavaScript!
 JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、次を参照してください。 [ **.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)します。
+詳細については、[ **.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)を参照してください。
 
 ## <a name="span-idscriptlistlistloadedscriptsspanspan-idscriptlistlistloadedscriptsspanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>.scriptlist (読み込まれたスクリプトを一覧表示)
 
@@ -169,7 +169,7 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、次を参照してください。 [ **.scriptlist (読み込まれたスクリプトの一覧)**](-scriptlist--list-loaded-scripts-.md)します。
+詳細については、[ **.scriptlist (読み込まれたスクリプトの一覧)**](-scriptlist--list-loaded-scripts-.md)を参照してください。
 
 ## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>JavaScript デバッガーがスクリプトの概要します。
 
@@ -471,7 +471,7 @@ function main()
 ## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>JavaScript でデバッガー ビジュアライザーを作成します。
 
 
-カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)します。
+カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、[ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)を参照してください。
 
 **クラスの例 - Simple1DArray**
 
@@ -621,7 +621,7 @@ g_array1D.Select(@$myScript.multiplyBySeven),d
 
 ブレークポイントにヒットした後に、補足処理を行うには、JavaScript を使用できます。 たとえば、スクリプトは、その他の実行時の値を確認し、自動的にコードの実行を継続または停止して追加の手動デバッグを実行するかを使用できます。
 
-ブレークポイントの操作方法の概要については、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
+ブレークポイントの操作方法の概要については、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
 
 **ブレークポイントの処理のスクリプトを DebugHandler.js 例**
 

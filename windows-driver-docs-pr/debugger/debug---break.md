@@ -58,7 +58,7 @@ SYSRQ キーを無効にするには、レジストリを編集します。 HKEY
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-KD、CDB で対応するキーは[ **CTRL + C**](ctrl-c--break-.md)します。 プログラムの実行を制御する他の方法の詳細については、次を参照してください。[ターゲットを制御する](controlling-the-target.md)します。
+KD、CDB で対応するキーは[ **CTRL + C**](ctrl-c--break-.md)します。 プログラムの実行を制御する他の方法の詳細については、[ターゲットを制御する](controlling-the-target.md)を参照してください。
 
  
 

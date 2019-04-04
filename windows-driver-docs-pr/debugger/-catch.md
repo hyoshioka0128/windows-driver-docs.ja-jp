@@ -35,7 +35,7 @@ ms.locfileid: "56578411"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、次を参照してください。[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)します。
+その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

@@ -17,9 +17,9 @@ ms.locfileid: "56572889"
 
 このセクションには、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1.11 以降のみに適用される情報が含まれています。
 
-Windows 8.1 では、UMDF バージョン 2 を紹介します。 詳細については、次を参照してください。 [UMDF 入門](getting-started-with-umdf-version-2.md)します。
+Windows 8.1 では、UMDF バージョン 2 を紹介します。 詳細については、[UMDF 入門](getting-started-with-umdf-version-2.md)を参照してください。
 
-UMDF のバージョンの Windows の特定のバージョンで使用可能なについての詳細については、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
+UMDF のバージョンの Windows の特定のバージョンで使用可能なについての詳細については、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

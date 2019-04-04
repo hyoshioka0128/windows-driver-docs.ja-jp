@@ -43,7 +43,7 @@ typedef struct _HS_PLUGIN_PROFILE {
 **dwPluginCapabilities**  
 必須。
 
-使用可能なサブセット**HS\_フラグ\_機能\_ネットワーク\_\\*** 値。 ホット スポットのホスト機能の詳細については、次を参照してください。 [ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)します。
+使用可能なサブセット**HS\_フラグ\_機能\_ネットワーク\_\\*** 値。 ホット スポットのホスト機能の詳細については、[ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)を参照してください。
 
 **dwNumNetworksSupported**  
 必須。

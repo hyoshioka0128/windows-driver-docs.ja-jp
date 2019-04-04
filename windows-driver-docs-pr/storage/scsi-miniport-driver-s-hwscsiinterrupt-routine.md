@@ -28,7 +28,7 @@ ms.locfileid: "56573343"
 
 -   ポート ドライバーに通知 (呼び出して[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)または[ **ScsiPortCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff564608))、HBA が示す場合特定の SCSI エラー条件では、操作中に発生し、エラーを記録する可能性があります。
 
-    エラーのログ記録の詳細については、次を参照してください。 [SCSI ミニポート ドライバーのエラー処理](error-handling-in-scsi-miniport-drivers.md)します。
+    エラーのログ記録の詳細については、[SCSI ミニポート ドライバーのエラー処理](error-handling-in-scsi-miniport-drivers.md)を参照してください。
 
 -   呼び出しなど、割り込みの原因となった、要求された操作が完了すると[ **ScsiPortIoMapTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff564649) (を参照してください[SCSI ミニポート ドライバー HwScsiDmaStarted ルーチン](scsi-miniport-driver-s-hwscsidmastarted-routine.md)) 場合割り込み元以前に選択したターゲット TID と LU、データを転送する準備ができることを示します。
 

@@ -22,7 +22,7 @@ HYPER-V 拡張可能スイッチのインターフェイスには、拡張可能
 
 [カスタムのスイッチ機能の状態情報を管理します。](managing-custom-switch-feature-status-information.md)
 
-機能の状態情報の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ機能の状態情報](hyper-v-extensible-switch-feature-status-information.md)します。
+機能の状態情報の詳細については、[Hyper-v 拡張可能スイッチ機能の状態情報](hyper-v-extensible-switch-feature-status-information.md)を参照してください。
 
  
 

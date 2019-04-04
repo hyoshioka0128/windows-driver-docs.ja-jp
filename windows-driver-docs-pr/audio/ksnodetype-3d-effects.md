@@ -35,7 +35,7 @@ KSNODETYPE\_3D\_効果ノードは、次の省略可能なプロパティを使�
 
 [**KSPROPERTY\_AUDIO\_STEREO\_SPEAKER\_GEOMETRY**](ksproperty-audio-stereo-speaker-geometry.md)
 
-詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
+詳細については、[DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)を参照してください。
 
 さらに、DirectSound いる必要があります、KSNODETYPE\_3D\_効果ノードは、次の 3 D リスナーと 3D バッファー プロパティをサポートします。
 

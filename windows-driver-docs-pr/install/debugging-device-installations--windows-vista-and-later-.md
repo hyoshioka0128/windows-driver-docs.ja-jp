@@ -26,7 +26,7 @@ ms.locfileid: "56577810"
 
 [カーネル デバッガー (KD) を使用したデバイスのインストールのデバッグ](debugging-device-installations-with-the-kernel-debugger--kd-.md)
 
-共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
+共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
 
  
 

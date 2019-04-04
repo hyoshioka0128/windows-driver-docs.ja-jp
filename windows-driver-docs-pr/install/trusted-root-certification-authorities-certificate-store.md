@@ -34,11 +34,11 @@ Windows Vista 以降、プラグ アンド プレイ (PnP) マネージャーは
 
 信頼されたルート証明機関の証明書ストアの名前は*ルート。* 使用して、プライベート CA のルート証明書をコンピューターの信頼されたルート証明機関証明書ストアに手動でインストールすることができます、 [ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)ツール。
 
-**注**  ドライバーの PnP マネージャーによって使用される検証ポリシーの署名は、プライベート CA のルート証明書がローカル コンピューターのバージョンのルート証明機関で以前にインストールされている必要があります証明書ストア。 詳細については、次を参照してください。[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)します。
+**注**  ドライバーの PnP マネージャーによって使用される検証ポリシーの署名は、プライベート CA のルート証明書がローカル コンピューターのバージョンのルート証明機関で以前にインストールされている必要があります証明書ストア。 詳細については、[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)を参照してください。
 
  
 
-証明書ストアの詳細については、次を参照してください。[ドライバー署名の変更では、Windows 10 バージョン 1607](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)と[ドライバー署名ポリシー](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)します。
+証明書ストアの詳細については、[ドライバー署名の変更では、Windows 10 バージョン 1607](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)と[ドライバー署名ポリシー](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)を参照してください。
 
  
 

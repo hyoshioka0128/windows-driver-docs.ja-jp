@@ -34,7 +34,7 @@ NDIS は、NDIS ドライバーは、基になるまでこの OID 要求を送�
 
 生成 NDIS または基になるネットワーク アダプターに、オフロードが拒否された場合、 [ **NDIS\_状態\_PM\_オフロード\_REJECTED** ](https://msdn.microsoft.com/library/windows/hardware/ff567412)状態示します。 これは NDIS が返された後に発生\_状態\_OID の成功します。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体には ULONG プロトコル オフロード識別子が含まれています、プロトコルのオフロードが拒否されます。
 
-ネイティブの 802.11 ワイヤレス LAN のミニポート ドライバーでこの OID を使用する方法については、次を参照してください。[の追加および削除する低電力プロトコルをオフロード](https://msdn.microsoft.com/library/windows/hardware/ff543707)します。
+ネイティブの 802.11 ワイヤレス LAN のミニポート ドライバーでこの OID を使用する方法については、[の追加および削除する低電力プロトコルをオフロード](https://msdn.microsoft.com/library/windows/hardware/ff543707)を参照してください。
 
 ミニポート ドライバーでは、要求の状態コードの次のいずれかを返します。
 

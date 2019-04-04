@@ -38,7 +38,7 @@ ms.locfileid: "56578633"
 
 すべての標準的な Microsoft ファイル システムでは、ほとんどの I/O 処理バッファーもダイレクト I/O を使用します。
 
-バッファリング メソッドの詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)します。
+バッファリング メソッドの詳細については、[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)を参照してください。
 
 IRP ベースの I/O 操作では、バッファリングに使用されるメソッドは操作固有でありは、次の要因によって決まります。
 

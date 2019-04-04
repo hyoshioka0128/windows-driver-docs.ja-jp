@@ -43,7 +43,7 @@ DirectX のランタイムでは、保存し、Direct3D の次のコールバッ
 
 -   [D3DBuffer コールバック](https://msdn.microsoft.com/library/windows/hardware/ff542176)
 
-浮動小数点演算の詳細については、次を参照してください。[グラフィックス ドライバー関数での浮動小数点操作](floating-point-operations-in-graphics-driver-functions.md)します。
+浮動小数点演算の詳細については、[グラフィックス ドライバー関数での浮動小数点操作](floating-point-operations-in-graphics-driver-functions.md)を参照してください。
 
  
 

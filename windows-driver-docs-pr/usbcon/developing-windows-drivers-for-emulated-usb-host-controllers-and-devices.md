@@ -44,7 +44,7 @@ ms.locfileid: "56581277"
 <a href="usb-emulated-device--ude--architecture.md" data-raw-source="[Architecture: USB Device Emulation (UDE)](usb-emulated-device--ude--architecture.md)">アーキテクチャ:USB デバイスのエミュレーション (UDE)</a>
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers](usb-3-0-driver-stack-architecture.md)">ホスト側の USB ドライバー</a> Windows で
 <p><strong>エミュレートされたホスト コント ローラーとデバイスのドライバーの記述</strong></p>
-<p>UDE オブジェクトとハンドルの把握します。 詳細については、WDF オブジェクトは、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
+<p>UDE オブジェクトとハンドルの把握します。 詳細については、WDF オブジェクトは、<a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>を参照してください。</p>
 <p>動作を理解、UDE のクライアント ドライバーと、クライアント ドライバーである機能との対話方法を実装する必要があります。</p>
 <p><a href="writing-a-ude-client-driver.md" data-raw-source="[Write a UDE client driver](writing-a-ude-client-driver.md)">UDE クライアント ドライバーを作成します。</a></p>
 <p><strong>プログラミング リファレンスのセクション</strong></p>

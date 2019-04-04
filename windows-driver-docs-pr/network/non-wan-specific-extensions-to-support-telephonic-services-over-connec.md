@@ -23,7 +23,7 @@ ms.locfileid: "56536253"
 
 
 
-このトピックでは、接続指向の NDIS 経由での TAPI サポート WAN 特定されていない拡張機能について説明します。 これらの拡張機能は、NDIS/TAPI 翻訳 Oid です。 これらの拡張機能は、NDIS パラメーターまたは TAPI パラメーターを NDIS パラメーターに TAPI パラメーターを変換するには、WAN 特定されていない呼び出しマネージャーと統合ミニポート コール マネージャー (MCM) ドライバーを許可します。 これらの拡張機能は、コール マネージャーとの接続指向のメディアを介した TAPI アクセスを提供する ATM などをサポートする MCMs を許可します。 接続指向の NDIS 経由の TAPI サポートの WAN 固有の拡張機能については、次を参照してください。[いる CoNDIS WAN 操作サポートの電話サービスのその](condis-wan-operations-that-support-telephonic-services.md)します。
+このトピックでは、接続指向の NDIS 経由での TAPI サポート WAN 特定されていない拡張機能について説明します。 これらの拡張機能は、NDIS/TAPI 翻訳 Oid です。 これらの拡張機能は、NDIS パラメーターまたは TAPI パラメーターを NDIS パラメーターに TAPI パラメーターを変換するには、WAN 特定されていない呼び出しマネージャーと統合ミニポート コール マネージャー (MCM) ドライバーを許可します。 これらの拡張機能は、コール マネージャーとの接続指向のメディアを介した TAPI アクセスを提供する ATM などをサポートする MCMs を許可します。 接続指向の NDIS 経由の TAPI サポートの WAN 固有の拡張機能については、[いる CoNDIS WAN 操作サポートの電話サービスのその](condis-wan-operations-that-support-telephonic-services.md)を参照してください。
 
 呼び出しの管理者または共同をそれぞれ登録 MCMs NDIS/TAPI 翻訳 Oid を使用しない必要があります\_アドレス\_ファミリ\_TAPI\_プロキシを[ **NdisCmRegisterAddressFamilyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561685)または[ **NdisMCmRegisterAddressFamilyEx**](https://msdn.microsoft.com/library/windows/hardware/ff563554)します。 代わりに、マネージャーと MCMs、さらに、TAPI クライアントを呼び出すなど、」の説明に従って、接続指向の構造内に TAPI パラメーターをカプセル化する必要があります[いる CoNDIS WAN 操作電話サービスをサポートする](condis-wan-operations-that-support-telephonic-services.md)します。
 

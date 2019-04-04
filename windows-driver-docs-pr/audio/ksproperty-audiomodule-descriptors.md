@@ -65,7 +65,7 @@ ms.locfileid: "56556972"
 
 返します、ksmultiple、ドライバーは、このプロパティをサポート、オーディオのすべてのモジュールがない場合は、\_0 個の要素数を持つ項目。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

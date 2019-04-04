@@ -60,7 +60,7 @@ USB デバイス用のコンテナー ID は、いくつかの方法で生成さ
 
     -   ハブは、指定されたポートに接続されたデバイスがハブからリムーバブルいないことを示している場合は、このポートに接続されているデバイスは、多機能端末のサブ関数である PnP マネージャーが決定します。 この場合、devnode は親 devnode のコンテナーの ID を継承します。
 
-ACPI 3.0 インターフェイスの詳細については、次を参照してください。 [Advanced Configuration and Power インターフェイス仕様リビジョン 3.0b](https://go.microsoft.com/fwlink/p/?linkid=145427)します。
+ACPI 3.0 インターフェイスの詳細については、[Advanced Configuration and Power インターフェイス仕様リビジョン 3.0b](https://go.microsoft.com/fwlink/p/?linkid=145427)を参照してください。
 
  
 

@@ -83,7 +83,7 @@ DWORD dwFillColor = *(DWORD*)&clr;
 ドライバーでは、YUV サーフェイスの各平面に正しいピクセル値が書き込まれることを確認してください。
 
 <span id="Stretching_the_Destination_Surface"></span><span id="stretching_the_destination_surface"></span><span id="STRETCHING_THE_DESTINATION_SURFACE"></span>**宛先表面を拡大**  
-ドライバーでは、色空間変換と拡張操作を結合するビット ブロック転送のソースの画面として使用される宛先表面もサポートする必要があります。 詳細については、次を参照してください。 [Stretch Blit 操作のサポート](supporting-stretch-blit-operations.md)します。
+ドライバーでは、色空間変換と拡張操作を結合するビット ブロック転送のソースの画面として使用される宛先表面もサポートする必要があります。 詳細については、[Stretch Blit 操作のサポート](supporting-stretch-blit-operations.md)を参照してください。
 
 <span id="Copying_Contents_from_the_Destination_Surface"></span><span id="copying_contents_from_the_destination_surface"></span><span id="COPYING_CONTENTS_FROM_THE_DESTINATION_SURFACE"></span>**転送先のサーフェスからの内容のコピー**  
 ドライバーの*DdBlt*関数が同じ FOURCC 形式のサーフェイスに FOURCC 宛先表面のコピーをサポートする必要があります。 転送先のサーフェイスは、コピー操作でソース画面として使用されます。 ドライバーは、DDCAPS2 を設定して、コピーの FOURCC 形式をサポートしていることを示す必要があります\_COPYFOURCC フラグ。

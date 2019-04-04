@@ -26,7 +26,7 @@ ms.locfileid: "56580773"
 ## <span id="ddk_registry_entries_for_scsi_miniport_drivers_kg"></span><span id="DDK_REGISTRY_ENTRIES_FOR_SCSI_MINIPORT_DRIVERS_KG"></span>
 
 
-次のレジストリ エントリを使用すると、ポート ドライバー/SCSI ミニポート ドライバーのペアの動作を構成できます。 PnpInterface レジストリ エントリをすべてプラグ アンド プレイ (PnP) デバイスに必要な詳細については、次を参照してください。[プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ](registry-entries-for-plug-and-play-scsi-miniport-drivers.md)します。
+次のレジストリ エントリを使用すると、ポート ドライバー/SCSI ミニポート ドライバーのペアの動作を構成できます。 PnpInterface レジストリ エントリをすべてプラグ アンド プレイ (PnP) デバイスに必要な詳細については、[プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ](registry-entries-for-plug-and-play-scsi-miniport-drivers.md)を参照してください。
 
 -   **TimeoutValue**
     -   所在地:HKLM\\システム\\CurrentControlSet\\サービス\\ディスク\\TimeoutValue

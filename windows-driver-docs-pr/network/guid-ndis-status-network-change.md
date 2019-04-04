@@ -21,5 +21,5 @@ NDIS またはミニポート ドライバーが生成することができま�
 
 ミニポート ドライバーまたは NDIS は、ネットワークの状態の変化を示す、NDIS は WMI GUID_NDIS_STATUS_NETWORK_CHANGE イベントを WMI クライアントの状態表示を変換します。
 
-この GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900) NDIS_NETWORK_CHANGE_TYPE 型の値が続く構造体。 使用可能な値については、次を参照してください。 [NDIS_STATUS_NETWORK_CHANGE](ndis-status-network-change.md)します。
+この GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900) NDIS_NETWORK_CHANGE_TYPE 型の値が続く構造体。 使用可能な値については、[NDIS_STATUS_NETWORK_CHANGE](ndis-status-network-change.md)を参照してください。
 

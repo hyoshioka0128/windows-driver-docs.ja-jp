@@ -62,9 +62,9 @@ AEC のノードをその論理ピンが次の表に示されているヘッダ�
 
  
 
-上記の表のピンが、フィルターでは、他のフィルターへの接続に使用される外部のピンではなく、ノードで、フィルターに内部の接続を指定するためだけに使用される、論理ピンことに注意してください。 詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
+上記の表のピンが、フィルターでは、他のフィルターへの接続に使用される外部のピンではなく、ノードで、フィルターに内部の接続を指定するためだけに使用される、論理ピンことに注意してください。 詳細については、[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)を参照してください。
 
-AEC のノードを含むフィルターが全二重 DirectSound アプリケーションのサポートを提供する方法については、次を参照してください。 [DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)します。
+AEC のノードを含むフィルターが全二重 DirectSound アプリケーションのサポートを提供する方法については、[DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)を参照してください。
 
 AEC のノードを格納しているフィルターが作成されるか、ノードがリセットされた、ときに、ノードがパススルー モードで動作する初期構成されます。
 

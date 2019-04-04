@@ -32,7 +32,7 @@ ms.locfileid: "56549242"
 
 さらに、ドライバーを呼び出すことができます[framework ルーチンの電源を](https://msdn.microsoft.com/library/windows/hardware/hh450961)power control の要求を送信して、待機時間の指定に直接保存場所、およびウェイク要件。
 
-PoFx の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
+PoFx の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
 
  
 

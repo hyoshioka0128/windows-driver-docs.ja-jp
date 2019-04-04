@@ -85,7 +85,7 @@ USB デバイスは、オーディオ/ビデオ ストリーミングなど、�
 
 いることを確認してください、
 
--   デバイス ドライバーは、Microsoft 提供のドライバーを示します。WinUSB (Winusb.sys)。 そのドライバーが含まれて、 \\Windows\\System32\\フォルダー。 詳細については、次を参照してください。 [WinUSB (Winusb.sys) インストール](winusb-installation.md)します。
+-   デバイス ドライバーは、Microsoft 提供のドライバーを示します。WinUSB (Winusb.sys)。 そのドライバーが含まれて、 \\Windows\\System32\\フォルダー。 詳細については、[WinUSB (Winusb.sys) インストール](winusb-installation.md)を参照してください。
 
 -   呼び出すことによってデバイスに WinUSB インターフェイスのハンドルを取得する以前[ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277)します。 すべての操作は、そのハンドルを使用して実行されます。 読み取り[WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 

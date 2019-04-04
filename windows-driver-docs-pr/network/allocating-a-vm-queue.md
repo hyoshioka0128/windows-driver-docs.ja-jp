@@ -19,7 +19,7 @@ ms.locfileid: "56578104"
 
 上位のドライバーの問題、初期構成パラメーターのセットを持つキューを割り当てるには、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784)メソッド要求の OID。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体は、初期状態へのポインターを含む、 [**NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造体。 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 **NDIS\_OID\_要求**構造体にはへのポインターが含まれています、 **NDIS\_受信\_キュー\_パラメーター**新しいキューの id と、MSI X テーブルのエントリを持つ構造体。
 
-[ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)で構造が使用される、 [OID\_受信\_フィルター\_割り当てる\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID。 VM キュー パラメーターの詳細については、次を参照してください。 [VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)します。
+[ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)で構造が使用される、 [OID\_受信\_フィルター\_割り当てる\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID。 VM キュー パラメーターの詳細については、[VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)を参照してください。
 
 上にあるドライバーを初期化します、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)次のキュー構成パラメーターを含む構造体。
 
@@ -57,15 +57,15 @@ NDIS がキュー識別子を割り当てます NDIS ミニポート ドライ�
 
  
 
-プロトコル ドライバーの問題、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)メソッド OID 要求のキューの割り当てを完了します。 割り当てが完了すると、ミニポート ドライバーは共有メモリおよびその他のリソースを割り当てることができます。 共有メモリ リソース割り当ての詳細については、次を参照してください。[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)します。
+プロトコル ドライバーの問題、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)メソッド OID 要求のキューの割り当てを完了します。 割り当てが完了すると、ミニポート ドライバーは共有メモリおよびその他のリソースを割り当てることができます。 共有メモリ リソース割り当ての詳細については、[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)を参照してください。
 
-ミニポート後は、ドライバーは OID を受け取ります。\_受信\_フィルター\_キュー\_割り当て OID 要求とハンドルが正常にキュー内にある、 *Allocated*状態。 キューの状態の詳細については、次を参照してください。[キューの状態と操作](queue-states-and-operations.md)します。
+ミニポート後は、ドライバーは OID を受け取ります。\_受信\_フィルター\_キュー\_割り当て OID 要求とハンドルが正常にキュー内にある、 *Allocated*状態。 キューの状態の詳細については、[キューの状態と操作](queue-states-and-operations.md)を参照してください。
 
 これを発行する必要があります、上にあるドライバーを割り当てる後、1 つまたは複数のキューの受信 (および必要に応じて、最初のフィルターを設定) [OID\_受信\_フィルター\_キュー\_割り当て\_完全な](https://msdn.microsoft.com/library/windows/hardware/ff569793)割り当てが受信キューの現在のバッチの完了したミニポート ドライバーに通知する OID 要求を設定します。
 
 フィルターがそのキューに設定されていない場合、ミニポート ドライバーは受信キュー内のすべてのパケットを保持する必要があります。 キューのなかった、フィルターを設定またはすべてのフィルターをクリア、キューを空にする必要があり、すべてのパケットを破棄する必要があります。 ドライバー スタックを示されたまたは、キューに保持されますができません。
 
-後続のドライバーが使用、 [OID\_受信\_フィルター\_FREE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569789) OID を割り当て、キューを解放します。 キューを解放する方法の詳細については、次を参照してください。 [VM キューの解放](freeing-a-vm-queue.md)します。
+後続のドライバーが使用、 [OID\_受信\_フィルター\_FREE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569789) OID を割り当て、キューを解放します。 キューを解放する方法の詳細については、[VM キューの解放](freeing-a-vm-queue.md)を参照してください。
 
  
 

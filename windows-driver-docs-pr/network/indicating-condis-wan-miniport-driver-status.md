@@ -23,7 +23,7 @@ ms.locfileid: "56578536"
 
 
 
-いる CoNDIS WAN ミニポート ドライバーは呼び出し[ **NdisMCoIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563562)を最大に状態の変更を示すためにプロトコル ドライバーをバインドします。 いる CoNDIS ミニポート ドライバーまたは MCM から状態を示す詳細については、次を参照してください。[ミニポート ドライバーの状態を示す](indicating-miniport-driver-status.md)します。
+いる CoNDIS WAN ミニポート ドライバーは呼び出し[ **NdisMCoIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563562)を最大に状態の変更を示すためにプロトコル ドライバーをバインドします。 いる CoNDIS ミニポート ドライバーまたは MCM から状態を示す詳細については、[ミニポート ドライバーの状態を示す](indicating-miniport-driver-status.md)を参照してください。
 
 バインドされているプロトコル ドライバーには、これらの状態インジケーターを無視できます。 ただし、通常これらの指示の処理は、プロトコル ドライバーおよびミニポート ドライバー パフォーマンスの向上に発生します。
 

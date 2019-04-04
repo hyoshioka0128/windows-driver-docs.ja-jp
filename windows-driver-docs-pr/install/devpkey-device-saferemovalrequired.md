@@ -68,7 +68,7 @@ Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバ�
 
 -   デバイス インスタンスが開始されたか、または、システムによって自動的に取り出すことができます。
 
--   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、次を参照してください。 [ **SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)します。
+-   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、[ **SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)を参照してください。
 
 -   デバイス インスタンスが持っていない、 [ **DEVPKEY_Device_SafeRemovalRequiredOverride** ](devpkey-device-saferemovalrequiredoverride.md)デバイス プロパティ DEVPROP_FALSE に設定します。
 

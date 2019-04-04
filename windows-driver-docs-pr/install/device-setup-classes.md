@@ -26,7 +26,7 @@ ms.locfileid: "56578152"
 
 [新しいデバイス セットアップ クラスを作成します。](creating-a-new-device-setup-class.md)
 
-システム定義のデバイス セットアップ クラスの詳細については、次を参照してください。[ベンダーのデバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)します。
+システム定義のデバイス セットアップ クラスの詳細については、[ベンダーのデバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)を参照してください。
 
  
 

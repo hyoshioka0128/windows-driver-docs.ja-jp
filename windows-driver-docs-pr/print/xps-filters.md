@@ -53,15 +53,15 @@ Windows Vista では、フィルターのボックスは含まれませんで Wi
 
 -   基準値
 
-フィルター パイプライン マネージャーの詳細については、次を参照してください。 [XPSDrv レンダリング モジュール](xpsdrv-render-module.md)します。
+フィルター パイプライン マネージャーの詳細については、[XPSDrv レンダリング モジュール](xpsdrv-render-module.md)を参照してください。
 
-フィルターの実装の詳細については、次を参照してください。 [XPS フィルターを実装する](implementing-xps-filters.md)します。
+フィルターの実装の詳細については、[XPS フィルターを実装する](implementing-xps-filters.md)を参照してください。
 
-印刷フィルターで非同期通知の詳細については、次を参照してください。[印刷フィルターで非同期通知](asynchronous-notifications-in-print-filters.md)します。
+印刷フィルターで非同期通知の詳細については、[印刷フィルターで非同期通知](asynchronous-notifications-in-print-filters.md)を参照してください。
 
 使用してフィルターを構成する必要があります、[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)します。
 
-印刷フィルター パイプラインのサービスをデバッグする方法については、次を参照してください。[フィルター パイプラインの印刷サービスにデバッガーをアタッチ](attaching-a-debugger-to-the-print-filter-pipeline-service.md)します。
+印刷フィルター パイプラインのサービスをデバッグする方法については、[フィルター パイプラインの印刷サービスにデバッガーをアタッチ](attaching-a-debugger-to-the-print-filter-pipeline-service.md)を参照してください。
 
 Windows 7、XPS フィルターを使用できます、 [XPS ラスタライズ サービス](using-the-xps-rasterization-service.md)ビットマップに XPS ドキュメントのページを固定に変換します。
 

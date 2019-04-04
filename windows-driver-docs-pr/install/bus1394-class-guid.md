@@ -56,7 +56,7 @@ BUS1394_CLASS_GUID[デバイス インターフェイス クラス](https://msdn
 
 1394 のバスのバス ドライバーでは、オペレーティング システムと 1394 bus デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-1394 バスについては、次を参照してください。 [1394 バス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537209)します。
+1394 バスについては、[1394 バス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537209)を参照してください。
 
 WDK サンプルに含まれて、 [1394api サンプル](https://msdn.microsoft.com/library/windows/hardware/ff536887)アプリケーション。 このアプリケーションでは、BUS1394_CLASS_GUID を使用して、このデバイスのインターフェイス クラスのインスタンスの存在の通知に登録します。
 

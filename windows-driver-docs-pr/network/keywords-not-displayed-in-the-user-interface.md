@@ -26,13 +26,13 @@ NDIS 6.0 および以降のバージョンの NDIS ミニポート ドライバ�
 これらの一般的なキーワードは、次の一覧について説明します。 特定のキーワードの詳細については、WDK ドキュメントでのキーワードを検索してください。
 
 <a href="" id="-iftype"></a>**\*IfType**  
-デバイスの NDIS インターフェイスの型。 NDIS インターフェイスの種類の詳細については、次を参照してください。 [NDIS インターフェイス型](https://msdn.microsoft.com/library/windows/hardware/ff565767)します。
+デバイスの NDIS インターフェイスの型。 NDIS インターフェイスの種類の詳細については、[NDIS インターフェイス型](https://msdn.microsoft.com/library/windows/hardware/ff565767)を参照してください。
 
 <a href="" id="-mediatype"></a>**\*メディアの種類**  
-デバイスのメディアを種類します。 ミニポート アダプターのメディアの種類の詳細については、次を参照してください。 [OID\_GEN\_メディア\_サポートされている](https://msdn.microsoft.com/library/windows/hardware/ff569609)します。
+デバイスのメディアを種類します。 ミニポート アダプターのメディアの種類の詳細については、[OID\_GEN\_メディア\_サポートされている](https://msdn.microsoft.com/library/windows/hardware/ff569609)を参照してください。
 
 <a href="" id="-physicalmediatype"></a>**\*PhysicalMediaType**  
-デバイスの物理メディアを種類します。 ミニポート アダプタの物理メディアの種類の詳細については、次を参照してください。 [OID\_GEN\_物理\_MEDIUM](https://msdn.microsoft.com/library/windows/hardware/ff569621)します。
+デバイスの物理メディアを種類します。 ミニポート アダプタの物理メディアの種類の詳細については、[OID\_GEN\_物理\_MEDIUM](https://msdn.microsoft.com/library/windows/hardware/ff569621)を参照してください。
 
 <a href="" id="-ndisdevicetype-------"></a>**\*NdisDeviceType**   
 デバイスの種類。 既定値は、0 で、標準的なネットワーク デバイスをネットワークに接続することを示します。 設定 **\*NdisDeviceType** NDIS に\_デバイス\_型\_エンドポイント (1) 場合、このデバイスは、エンドポイント デバイスとは、ネットワークに接続する場合は true。 ネットワーク インターフェイスではありません。 たとえば、NDIS を指定する必要があります\_デバイス\_型\_ネットワーク インフラストラクチャを使用して、ローカル コンピューターのシステムとの通信が外部への接続を提供しないスマート フォンなどのデバイス用のエンドポイントネットワーク。 ただし、必要があります**\*いない\*** 外部ネットワークへの接続を提供するために VPN インタ フェースなどの仮想アダプター NDIS_DEVICE_TYPE_ENDPOINT にこのキーワードを設定します。

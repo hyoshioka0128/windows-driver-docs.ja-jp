@@ -14,7 +14,7 @@ ms.locfileid: "56575120"
 # <a name="user-defined-ecps"></a>ユーザー定義の ECP
 
 
-独自の ECP を定義するには、ECP をおよび、ECP を記述するコンテキスト構造体を識別する GUID を定義します。 Guid とドライバーのコードでそれらを使用して定義する方法については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。
+独自の ECP を定義するには、ECP をおよび、ECP を記述するコンテキスト構造体を識別する GUID を定義します。 Guid とドライバーのコードでそれらを使用して定義する方法については、[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)を参照してください。
 
  
 

@@ -40,7 +40,7 @@ A*通知オブジェクト*に代わって特定のネットワーク コンポ�
 
 [通知オブジェクトを作成します。](creating-a-notify-object.md)
 
-リファレンス情報については、インターフェイス メソッドのサポート オブジェクトに通知する、次を参照してください。[通知オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff559161)します。
+リファレンス情報については、インターフェイス メソッドのサポート オブジェクトに通知する、[通知オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff559161)を参照してください。
 
  
 

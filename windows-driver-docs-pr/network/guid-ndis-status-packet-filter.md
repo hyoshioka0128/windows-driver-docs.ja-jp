@@ -21,5 +21,5 @@ NDIS は、パケット フィルターの構成の変更が存在する可能�
 
 NDIS は、WMI GUID_NDIS_STATUS_PACKET_FILTER イベントを WMI クライアントの状態表示を変換します。
 
-GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900) ULONG 値が続く構造体。 パケット フィルターの状態と使用可能な値の詳細については、次を参照してください。 [OID_GEN_CURRENT_PACKET_FILTER](oid-gen-current-packet-filter.md)します。
+GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900) ULONG 値が続く構造体。 パケット フィルターの状態と使用可能な値の詳細については、[OID_GEN_CURRENT_PACKET_FILTER](oid-gen-current-packet-filter.md)を参照してください。
 

@@ -66,7 +66,7 @@ ms.locfileid: "56550636"
 
 ノードの一覧は、使用可能なノードの Guid の配列です。
 
-テンプレートのトポロジでの作成に使用できる BDA ノードの一覧は、次を参照してください。 [BDA ノード カテゴリ Guid](bda-node-category-guids.md)します。
+テンプレートのトポロジでの作成に使用できる BDA ノードの一覧は、[BDA ノード カテゴリ Guid](bda-node-category-guids.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

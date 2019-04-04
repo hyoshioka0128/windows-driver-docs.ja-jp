@@ -159,9 +159,9 @@ PPM ページ/分 CPS - 文字 1 秒あたりの線/分 IPM、LPM インチ/分�
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
-Windows Vista の新しいルート レベルのみの属性については、次を参照してください。 [Root-Level-Only GPD 属性を Windows Vista の新しい](new-root-level-only-gpd-attributes-for-windows-vista.md)と[Root-Level-Only PPD 属性を Windows Vista の新しい](new-root-level-only-ppd-attributes-for-windows-vista.md)します。
+Windows Vista の新しいルート レベルのみの属性については、[Root-Level-Only GPD 属性を Windows Vista の新しい](new-root-level-only-gpd-attributes-for-windows-vista.md)と[Root-Level-Only PPD 属性を Windows Vista の新しい](new-root-level-only-ppd-attributes-for-windows-vista.md)を参照してください。
 
  
 

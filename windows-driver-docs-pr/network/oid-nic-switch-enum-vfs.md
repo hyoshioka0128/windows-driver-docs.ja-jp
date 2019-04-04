@@ -46,7 +46,7 @@ ms.locfileid: "56560533"
 
  
 
-NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh439961)します。
+NIC のスイッチの詳細については、[NIC スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh439961)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

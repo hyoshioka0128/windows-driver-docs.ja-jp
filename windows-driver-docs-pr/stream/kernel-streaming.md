@@ -48,7 +48,7 @@ Windows XP SP2 以降では、Microsoft が提供、 [USB ビデオ クラス](u
 
 詳細については、 *stream.sys*ドライバーを参照してください[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)します。
 
-AVStream については、次を参照してください。、 [AVStream の概要](avstream-overview.md)します。
+AVStream については、、 [AVStream の概要](avstream-overview.md)を参照してください。
 
 [DVD デコーダー ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff558742)のクライアント*stream.sys*します。
 

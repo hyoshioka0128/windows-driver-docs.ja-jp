@@ -35,7 +35,7 @@ ms.locfileid: "56579692"
 
 
 <span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span> *プロセス*   
-設定または表示するプロセスを指定します。 構文の詳細については、次を参照してください。[プロセス構文](process-syntax.md)します。
+設定または表示するプロセスを指定します。 構文の詳細については、[プロセス構文](process-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -64,7 +64,7 @@ ms.locfileid: "56579692"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-表示するプロセスとスレッドを制御するための他の方法の詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+表示するプロセスとスレッドを制御するための他の方法の詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

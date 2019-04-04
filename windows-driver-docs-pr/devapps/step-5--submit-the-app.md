@@ -22,7 +22,7 @@ ms.locfileid: "56573759"
 
  
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイスのメタデータを使用すると、デバイス アプリがデバイスの更新など、特権操作を実行できます。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイスのメタデータを使用すると、デバイス アプリがデバイスの更新など、特権操作を実行できます。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
 ## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>始める前に
 

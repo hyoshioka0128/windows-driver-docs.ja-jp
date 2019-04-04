@@ -44,7 +44,7 @@ VOID OutputDebugString(
 
 [**による DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)ルーチンでは、デバッガー ウィンドウに出力が表示されます。 このルーチンには、basic がサポートしている**printf**パラメーターの書式を設定します。 カーネル モード ドライバーのみが呼び出せる**による DbgPrint**します。
 
-[ **DbgPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff543634)ルーチンはのような**による DbgPrint**に、メッセージの「タグ」ことができます。 デバッガーを実行するときに送信する特定のタグを持つメッセージのみを許可することができます。 これにより、興味のあるメッセージだけを表示することができます。 詳細については、次を参照してください。[読み取りとデバッグ メッセージをフィルター処理](reading-and-filtering-debugging-messages.md)します。
+[ **DbgPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff543634)ルーチンはのような**による DbgPrint**に、メッセージの「タグ」ことができます。 デバッガーを実行するときに送信する特定のタグを持つメッセージのみを許可することができます。 これにより、興味のあるメッセージだけを表示することができます。 詳細については、[読み取りとデバッグ メッセージをフィルター処理](reading-and-filtering-debugging-messages.md)を参照してください。
 
 **注**  で Windows Vista と以降のバージョンの Windows、**による DbgPrint**が生成されますがメッセージにもタグ付けします。 以前のバージョンの Windows、**による DbgPrint**タグなしのメッセージを生成します。
 

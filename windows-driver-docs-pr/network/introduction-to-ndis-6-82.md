@@ -15,7 +15,7 @@ ms.locfileid: "56539613"
 
 このトピックでは、Network Driver Interface Specification (NDIS) 6.82 を示し、その主要な設計の追加機能を説明します。 NDIS 6.82 は、Windows 10、バージョンは 1809 および Windows Server 2016 に含まれる以降です。
 
-NDIS 6.82 は、NDIS 6.81 にマイナー バージョン更新です。 NDIS 6.82 する NDIS 6.x ドライバーの移植の詳細については、次を参照してください。 [NDIS 6.82 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-82.md)します。
+NDIS 6.82 は、NDIS 6.81 にマイナー バージョン更新です。 NDIS 6.82 する NDIS 6.x ドライバーの移植の詳細については、[NDIS 6.82 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-82.md)を参照してください。
 
 ## <a name="feature-updates"></a>機能更新プログラム
 

@@ -38,7 +38,7 @@ WMI のカーネル モード コンポーネントに送信できる、 **IRP\_
 
 すべてのドライバーをサポートする必要があります**IRP\_MJ\_システム\_コントロール**要求を指定することによって、 [ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン.
 
-サポートするドライバー [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI) を処理する必要があります**IRP\_MJ\_システム\_コントロール**マイナー関数を処理することによって要求この主な機能のコードに関連付けられたコードです。 WMI のマイナー関数コードの詳細については、次を参照してください。 [WMI マイナー Irp](wmi-minor-irps.md)します。
+サポートするドライバー [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI) を処理する必要があります**IRP\_MJ\_システム\_コントロール**マイナー関数を処理することによって要求この主な機能のコードに関連付けられたコードです。 WMI のマイナー関数コードの詳細については、[WMI マイナー Irp](wmi-minor-irps.md)を参照してください。
 
 ドライバーで WMI をサポートしていない[WMI データ プロバイダーとして登録する](https://msdn.microsoft.com/library/windows/hardware/ff560870)渡す必要があります**IRP\_MJ\_システム\_コントロール**[次へ] の下のドライバーに要求します。
 

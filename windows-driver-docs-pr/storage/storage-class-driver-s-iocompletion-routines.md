@@ -25,11 +25,11 @@ ms.locfileid: "56581695"
 
 クラス ドライバーの*IoCompletion*状態の I/O ブロックが設定されていることを確認し、元の IRP を完了するために行うルーチンからです。 SRB のでは IRP の完了をエラーに変換を含めることができますが返される**ScsiStatus**メンバーまたは**SenseInfoBuffer** NTSTATUS 型の値や」の説明に従って、エラーをログにメンバー[ディスパッチ ルーチンに Irp の完了](https://msdn.microsoft.com/library/windows/hardware/ff542019)します。
 
-記憶域ポート ドライバーがターゲット論理ユニット (LU) の内部キューがフリーズして、SRB の設定要求の処理で特定の種類のエラーが発生すると、\_状態\_キュー\_要求の完了時に固定されています。 その結果、クラス ドライバーでは、通常、デバイスの I/O 要求のキューの状態を変更する内部のルーチンがあります。 詳細については、次を参照してください。[記憶域クラス ドライバー ReleaseQueue ルーチン](storage-class-driver-s-releasequeue-routine.md)します。
+記憶域ポート ドライバーがターゲット論理ユニット (LU) の内部キューがフリーズして、SRB の設定要求の処理で特定の種類のエラーが発生すると、\_状態\_キュー\_要求の完了時に固定されています。 その結果、クラス ドライバーでは、通常、デバイスの I/O 要求のキューの状態を変更する内部のルーチンがあります。 詳細については、[記憶域クラス ドライバー ReleaseQueue ルーチン](storage-class-driver-s-releasequeue-routine.md)を参照してください。
 
-場合、ドライバーの*BuildRequest*ルーチンのポートのドライバーが、要求の要求の意味が情報を返すことが要求されたその*IoCompletion*日常的ないずれかを呼び出す内部*InterpretRequestSense*ルーチンまたは同じ機能のインラインを実装します。 詳細については、次を参照してください。[記憶域クラス ドライバー InterpretRequestSense ルーチン](storage-class-driver-s-interpretrequestsense-routine.md)します。
+場合、ドライバーの*BuildRequest*ルーチンのポートのドライバーが、要求の要求の意味が情報を返すことが要求されたその*IoCompletion*日常的ないずれかを呼び出す内部*InterpretRequestSense*ルーチンまたは同じ機能のインラインを実装します。 詳細については、[記憶域クラス ドライバー InterpretRequestSense ルーチン](storage-class-driver-s-interpretrequestsense-routine.md)を参照してください。
 
-記憶域クラス ドライバーは、ターゲット コント ローラーのエラー、バスのリセット、または要求タイムアウトが原因で失敗した要求を再試行します。 ポートのドライバーが、特定の要求でを返す場合、 **SrbStatus**設定すると、このようなエラーを示す、クラス ドライバーが呼び出すことができます、 *RetryRequest*ルーチンからその*IoCompletion*ルーチンまたは場合によってからその*InterpretRequestSense*ルーチン。 詳細については、次を参照してください。[記憶域クラス ドライバー RetryRequest ルーチン](storage-class-driver-s-retryrequest-routine.md)します。
+記憶域クラス ドライバーは、ターゲット コント ローラーのエラー、バスのリセット、または要求タイムアウトが原因で失敗した要求を再試行します。 ポートのドライバーが、特定の要求でを返す場合、 **SrbStatus**設定すると、このようなエラーを示す、クラス ドライバーが呼び出すことができます、 *RetryRequest*ルーチンからその*IoCompletion*ルーチンまたは場合によってからその*InterpretRequestSense*ルーチン。 詳細については、[記憶域クラス ドライバー RetryRequest ルーチン](storage-class-driver-s-retryrequest-routine.md)を参照してください。
 
 に関する一般的な情報*IoCompletion*ルーチンを参照してください[Irp の完了](https://msdn.microsoft.com/library/windows/hardware/ff542018)します。
 

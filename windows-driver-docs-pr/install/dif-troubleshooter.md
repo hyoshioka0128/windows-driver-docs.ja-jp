@@ -104,7 +104,7 @@ DIF_TROUBLESHOOTER の既定のハンドラーはありませんが、オペレ�
 
 クラスのインストール パラメーターでは、1 つだけ含めることが**ChmFile**と**HtmlTroubleShooter**ペア。 1 つ以上のインストーラーは、これらの値を指定する場合、Windows は、差分の要求を処理した最後のインストーラーによって設定された値を使用します。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------
