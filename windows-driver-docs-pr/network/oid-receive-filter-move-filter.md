@@ -28,7 +28,7 @@ NDIS のメンバーの検証、 [ **NDIS\_受信\_フィルター\_移動\_フ�
 
 PF のミニポート ドライバーでは、アトミックにこの OID セット要求を処理する必要があります。 ドライバーは、同時に受信キューと VPort からフィルターを削除し、別の受信キューと VPort に設定するには、ネットワーク アダプターを構成できる必要があります。
 
-詳細については、次を参照してください。[仮想ポートに受信フィルターを移動](https://msdn.microsoft.com/library/windows/hardware/hh464102)します。
+詳細については、[仮想ポートに受信フィルターを移動](https://msdn.microsoft.com/library/windows/hardware/hh464102)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

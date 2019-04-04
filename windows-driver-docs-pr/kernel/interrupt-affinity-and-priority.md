@@ -31,7 +31,7 @@ Windows Vista 以降、管理者は、割り込みのアフィニティ ポリ�
 
 -   **AssignmentSetOverride** 21\_バイナリ値を指定する、 [ **KAFFINITY** ](#about-kaffinity)マスク。 場合**DevicePolicy** 0x04 です (**IrqPolicySpecifiedProcessors**)、このマスクを割り当てるデバイスの割り込みをプロセッサのセットを指定します。
 
-次の表、 [ **IRQ\_デバイス\_ポリシー** ](https://msdn.microsoft.com/library/windows/hardware/ff551783)値、および対応するレジストリの設定**DevicePolicy**します。 各値の意味の詳細については、次を参照してください。 [ **IRQ\_デバイス\_ポリシー**](https://msdn.microsoft.com/library/windows/hardware/ff551783)します。
+次の表、 [ **IRQ\_デバイス\_ポリシー** ](https://msdn.microsoft.com/library/windows/hardware/ff551783)値、および対応するレジストリの設定**DevicePolicy**します。 各値の意味の詳細については、[ **IRQ\_デバイス\_ポリシー**](https://msdn.microsoft.com/library/windows/hardware/ff551783)を参照してください。
 
 <table>
 <colgroup>
@@ -74,7 +74,7 @@ Windows Vista 以降、管理者は、割り込みのアフィニティ ポリ�
 
  
 
-ドライバーの INF ファイルには、レジストリ値の既定の設定を指定できます。 設定する方法の例を次に示します、 **DevicePolicy**値を**IrqPolicyOneCloseProcessor** INF ファイルにします。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+ドライバーの INF ファイルには、レジストリ値の既定の設定を指定できます。 設定する方法の例を次に示します、 **DevicePolicy**値を**IrqPolicyOneCloseProcessor** INF ファイルにします。 詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
 
 ```cpp
 [install-section-name.HW]

@@ -14,7 +14,7 @@ ms.locfileid: "56550548"
 # <a name="what-are-the-tracewpp-parameters"></a>TraceWPP パラメーターとは
 
 
-TraceWPP ツール (TraceWpp.exe) では、プリプロセッサ WPP です。 このツールのパラメーターに関する詳細については、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
+TraceWPP ツール (TraceWpp.exe) では、プリプロセッサ WPP です。 このツールのパラメーターに関する詳細については、[WPP プリプロセッサ](wpp-preprocessor.md)を参照してください。
 
 TraceWPP のすべてのパラメーターを一覧表示するには、次のコマンドを使用します。
 

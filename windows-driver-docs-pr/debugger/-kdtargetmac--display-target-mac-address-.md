@@ -78,7 +78,7 @@ dhcp                    Yes
 The operation completed successfully.
 ```
 
-詳細については、次を参照してください。 [KDNET ネットワーク カーネル デバッグ手作業でセットアップ](setting-up-a-network-debugging-connection.md)します。
+詳細については、[KDNET ネットワーク カーネル デバッグ手作業でセットアップ](setting-up-a-network-debugging-connection.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

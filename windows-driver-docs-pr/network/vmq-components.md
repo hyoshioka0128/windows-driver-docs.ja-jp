@@ -26,7 +26,7 @@ ms.locfileid: "56549888"
 <a href="" id="--------network-virtual-service-provider--netvsp-"></a> **ネットワークの仮想サービス プロバイダー (NetVSP)**  
 HYPER-V 親パーティションの管理オペレーティング システムで実行されている NDIS ドライバー。 このドライバーは、HYPER-V 子パーティションでネットワーク アクセスをサポートするためにサービスを提供します。
 
-**注**  以降 Windows Server 2008 では、HYPER-V 拡張可能スイッチのコンポーネントは、ゲスト オペレーティング システムで実行される NetVSC コンポーネント NetVSP サポートを提供します。 このコンポーネントの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)します。
+**注**  以降 Windows Server 2008 では、HYPER-V 拡張可能スイッチのコンポーネントは、ゲスト オペレーティング システムで実行される NetVSC コンポーネント NetVSP サポートを提供します。 このコンポーネントの詳細については、[Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)を参照してください。
 
  
 

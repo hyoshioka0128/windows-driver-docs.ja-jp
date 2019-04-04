@@ -48,9 +48,9 @@ VOID VERIFY_IS_IRQL_PASSIVE_LEVEL(void);
 -   **VerifierOn** 0 以外の値に設定されていると**DbgBreakOnError**が設定されていません。
 -   ドライバーの検証が有効になっている、ドライバーは、フレームワーク バージョン 1.9 以降でビルドされたあり**VerifierOn**も**DbgBreakOnError**設定されます。
 
-ドライバーをデバッグする際のレジストリ エントリの詳細については、次を参照してください。 [Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)します。
+ドライバーをデバッグする際のレジストリ エントリの詳細については、[Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)を参照してください。
 
-ドライバーのデバッグの詳細については、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
+ドライバーのデバッグの詳細については、[KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。
 
 <a name="examples"></a>例
 --------

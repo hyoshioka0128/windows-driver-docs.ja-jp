@@ -60,7 +60,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 Windows Vista およびそれ以降のオペレーティング システムでは、ことをお勧めドライバー保留常に、 **IRP\_MN\_開始\_デバイス**IRP 後でその処理を完了します。 この順序により、デバイスの再起動を非同期に処理するシステムです。 (Windows Vista より前に、のオペレーティング システムでは、ドライバーが状態を返すことができます\_PENDING からは、ディスパッチ ルーチンが PnP マネージャーには、他の操作と、デバイスの再起動が重複していない)。
 
-開始 IRP の処理の詳細については、次を参照してください。[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)します。
+開始 IRP の処理の詳細については、[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)を参照してください。
 
 **この IRP を送信します。**
 

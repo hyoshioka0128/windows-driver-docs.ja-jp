@@ -357,7 +357,7 @@ DispatchRoutine_5(
 
 ### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>シナリオ 6:IoBuildDeviceIoControlRequest を使用して同期デバイス制御要求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL) を送信します。
 
-次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)同期 IOCTL 要求に要求します。  詳細については、次を参照してください。 [IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)します。
+次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)同期 IOCTL 要求に要求します。  詳細については、[IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)を参照してください。
 
 ```cpp
 NTSTATUS

@@ -36,7 +36,7 @@ ms.locfileid: "56536858"
 - [NDIS_TASK_TCP_LARGE_SEND](https://msdn.microsoft.com/library/windows/hardware/ff559008)  
     大きな TCP パケットのセグメント化機能を指定します。
 - [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567873)  
-    TCP chimney オフロード機能を指定します。 NDIS_TASK_TCP_CONNECTION_OFFLOAD の詳細については、次を参照してください。 [TCP Chimney オフロード](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)します。
+    TCP chimney オフロード機能を指定します。 NDIS_TASK_TCP_CONNECTION_OFFLOAD の詳細については、[TCP Chimney オフロード](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)を参照してください。
 
 > [!NOTE]
 > 中間ドライバーが、状態の OID_TCP_TASK_OFFLOAD クエリに応答する必要があります、中間ドライバーでは、パケットに対して TCP オフロード機能を実行できませんされるように基になるミニポート ドライバーに転送するパケットの内容を変更する場合NDIS_STATUS_NOT_SUPPORTED OID を渡す代わりには、基になるミニポート ドライバーへの要求またはターゲットの負荷を軽減します。
@@ -56,7 +56,7 @@ NIC またはオフロード ターゲットを有効になっているオフロ
 - により、一時停止を示す値を呼び出すことによって、オフロード対象、 [NdisMIndicateStatusEx](https://msdn.microsoft.com/library/windows/hardware/ff563600) 、NDIS_STATUS_INDICATION で関数を ->**StatusCode**メンバー NDIS_STATUS_OFFLOAD_PAUSE に設定します。
 - により、再開を示す値を呼び出すことによって、オフロード対象、 **NdisMIndicateStatusEx** 、NDIS_STATUS_INDICATION で関数を ->**StatusCode**メンバー NDIS_STATUS_OFFLOAD_RESUME に設定します。
 
-オフロード対象が再開状態オブジェクトをオフロードするホストのスタックを要求した後、オフロード対象の TCP を取得するためにもう一度 OID_TCP_TASK_OFFLOAD ホスト スタック クエリは変更後の機能をオフロードします。 詳細については、次を参照してください。 [NDIS_STATUS_OFFLOAD_RESUME](https://msdn.microsoft.com/library/windows/hardware/ff567405)します。
+オフロード対象が再開状態オブジェクトをオフロードするホストのスタックを要求した後、オフロード対象の TCP を取得するためにもう一度 OID_TCP_TASK_OFFLOAD ホスト スタック クエリは変更後の機能をオフロードします。 詳細については、[NDIS_STATUS_OFFLOAD_RESUME](https://msdn.microsoft.com/library/windows/hardware/ff567405)を参照してください。
 
 ## <a name="disabling-offload-capabilities"></a>オフロード機能を無効にします。
 

@@ -39,7 +39,7 @@ ms.locfileid: "56548913"
 
 クエリでは、常にパケットの合計数現在キューに置かれます数が返されます。 この数は、NDIS ライブラリで要求がキューに未送信の送信を含めることができます。
 
-Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

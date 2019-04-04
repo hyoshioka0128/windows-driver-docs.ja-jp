@@ -23,7 +23,7 @@ ms.locfileid: "56536343"
 ## <span id="_ntovr_smart_card_driver_library_callback_routines"></span><span id="_NTOVR_SMART_CARD_DRIVER_LIBRARY_CALLBACK_ROUTINES"></span>
 
 
-スマート カードのアーキテクチャでは、一連の標準的なコールバックの日常的な型を定義します。 詳細については、これらのルーチンは、次を参照してください。[スマート カード ドライバー コールバック](https://msdn.microsoft.com/library/windows/hardware/ff548982)します。
+スマート カードのアーキテクチャでは、一連の標準的なコールバックの日常的な型を定義します。 詳細については、これらのルーチンは、[スマート カード ドライバー コールバック](https://msdn.microsoft.com/library/windows/hardware/ff548982)を参照してください。
 
 リーダー ドライバーする必要がありますこれらのコールバック ルーチンを使用できるようにドライバー ライブラリのルーチン、 [ **SmartcardDeviceControl (WDM)**](https://msdn.microsoft.com/library/windows/hardware/ff548939)を呼び出す、スマート カード デバイス拡張機能でそれらへのポインターを格納することで、型の[**スマート カード\_拡張子**](https://msdn.microsoft.com/library/windows/hardware/ff548974)します。 これらのポインターに配置されている配列に格納されます、 **ReaderFunction**スマート カードのメンバー\_拡張機能の構造体。 個々 のコールバック ルーチンは、一連の定数の値へのインデックスとして使用する必要がありますで識別できます、 **ReaderFunction**配列。
 

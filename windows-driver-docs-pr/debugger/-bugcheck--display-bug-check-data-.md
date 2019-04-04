@@ -58,7 +58,7 @@ ms.locfileid: "56551404"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-バグ チェックの詳細については、次を参照してください。[バグ チェック (ブルー スクリーン)](bug-checks--blue-screens-.md)します。 個々 のバグ チェックの説明は、次を参照してください。、[バグ チェック コード参照](bug-check-code-reference2.md)セクション。
+バグ チェックの詳細については、[バグ チェック (ブルー スクリーン)](bug-checks--blue-screens-.md)を参照してください。 個々 のバグ チェックの説明は、次を参照してください。、[バグ チェック コード参照](bug-check-code-reference2.md)セクション。
 
 <a name="remarks"></a>注釈
 -------

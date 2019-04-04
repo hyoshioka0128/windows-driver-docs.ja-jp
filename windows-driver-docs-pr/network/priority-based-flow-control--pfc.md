@@ -30,7 +30,7 @@ PFC は、802.3 PAUSE フレームを使用して、以下の PFC フィール�
 
 NDIS のサービス品質 (QoS) パラメーターを使用して指定、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 **PfcEnable**メンバーには、各ビットが PFC 802.1p の優先度レベルが有効かどうかを指定し、ビットマップが含まれています。
 
-優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
+優先度レベルの詳細については、[IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)を参照してください。
 
  
 

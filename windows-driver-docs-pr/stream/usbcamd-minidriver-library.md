@@ -47,9 +47,9 @@ Windows 2000 以降と Windows Millennium Edition と以降のオペレーティ
 
 開発者の内容を理解する必要があります[カーネル ストリーミング](kernel-streaming.md)、[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)と[ビデオ キャプチャ デバイス](video-capture-devices.md)します。
 
-USB の仕様を含むその他の開発者については、次を参照してください。 [USB-IF 開発者領域](https://go.microsoft.com/fwlink/p/?linkid=8781)します。
+USB の仕様を含むその他の開発者については、[USB-IF 開発者領域](https://go.microsoft.com/fwlink/p/?linkid=8781)を参照してください。
 
-[全般]、またはコンシューマーは、次を参照してください。 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780)します。
+[全般]、またはコンシューマーは、[USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780)を参照してください。
 
  
 

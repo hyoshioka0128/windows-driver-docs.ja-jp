@@ -16,7 +16,7 @@ ms.locfileid: "56536541"
 
 このトピックでは、すべてのセンサーの一般的なセンサー プロパティについて説明します。
 
-次の表では、一般的なプロパティを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+次の表では、一般的なプロパティを示します。 型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
 
 <table>
 <colgroup>
@@ -41,14 +41,14 @@ ms.locfileid: "56536541"
 <td><p>VT_CLSID</p></td>
 <td><p>R/O</p></td>
 <td><p>必須</p></td>
-<td><p>センサーの種類。 GUID は、Windows センサー (SENSOR_TYPE_ACCELEROMETER_3D など) と同じ形式で構成されます。 センサーの種類の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>します。</p></td>
+<td><p>センサーの種類。 GUID は、Windows センサー (SENSOR_TYPE_ACCELEROMETER_3D など) と同じ形式で構成されます。 センサーの種類の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_State</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必須</p></td>
-<td><p>センサーの状態。 センサーの状態の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/dn946703" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn946703)"> <strong>SENSOR_STATE</strong></a>します。</p></td>
+<td><p>センサーの状態。 センサーの状態の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/dn946703" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn946703)"> <strong>SENSOR_STATE</strong></a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_MinimumDataInterval_Ms</p></td>
@@ -137,7 +137,7 @@ ms.locfileid: "56536541"
 
 -   鍵\_センサー\_WakeCapable
 
-Windows 10、バージョン 1511 以降でサポートが HID センサー クラス ドライバーを使用してデータのバッチ処理を実装するために使用できます。 これについては、次を参照してください。[センサーのバッチ処理コントロール](sensor-batching-for-power-saving-.md)します。
+Windows 10、バージョン 1511 以降でサポートが HID センサー クラス ドライバーを使用してデータのバッチ処理を実装するために使用できます。 これについては、[センサーのバッチ処理コントロール](sensor-batching-for-power-saving-.md)を参照してください。
 
 参照してください[EvtSensorSetBatchLatency](https://msdn.microsoft.com/library/windows/hardware/mt219125)については、コールバック関数に関連するデータのバッチ処理します。
 

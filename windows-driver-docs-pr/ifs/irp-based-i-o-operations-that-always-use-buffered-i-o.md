@@ -31,7 +31,7 @@ ms.locfileid: "56549825"
 
 -   IRP\_MJ\_設定\_ボリューム\_情報
 
-注その IRP\_MJ\_クエリ\_情報は、高速の I/O 操作にもできます。 高速な I/O 操作であるバッファーも直接 I/O が使用されます。 IRP ベースまたは高速の I/O 操作は、I/O 操作の詳細については、次を参照してください。[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)します。
+注その IRP\_MJ\_クエリ\_情報は、高速の I/O 操作にもできます。 高速な I/O 操作であるバッファーも直接 I/O が使用されます。 IRP ベースまたは高速の I/O 操作は、I/O 操作の詳細については、[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)を参照してください。
 
  
 

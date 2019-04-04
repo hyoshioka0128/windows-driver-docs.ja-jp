@@ -20,7 +20,7 @@ ms.locfileid: "56550775"
 デバイスが有効になっているまたは VMQ 機能を無効になっているかどうかを示す値。
 
 <a href="" id="-vmqlookaheadsplit"></a>**\*VMQLookaheadSplit**  
-先読みアサーションにバッファーおよび post lookahead バッファーに、デバイスが有効になっているまたは分割する機能を無効になっているかどうかを示す値が表示されます。 ミニポート ドライバー、NDIS を使用してこの機能の報告\_受信\_フィルター\_先読み\_分割\_でサポートされているフラグ、 **SupportedQueueProperties**メンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。 この機能の詳細については、次を参照してください。[受信バッファー内の共有メモリ](shared-memory-in-receive-buffers.md)します。
+先読みアサーションにバッファーおよび post lookahead バッファーに、デバイスが有効になっているまたは分割する機能を無効になっているかどうかを示す値が表示されます。 ミニポート ドライバー、NDIS を使用してこの機能の報告\_受信\_フィルター\_先読み\_分割\_でサポートされているフラグ、 **SupportedQueueProperties**メンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。 この機能の詳細については、[受信バッファー内の共有メモリ](shared-memory-in-receive-buffers.md)を参照してください。
 
 **注**NDIS 6.30 以降、パケット データを別の lookahead バッファーに分割することは現在サポートされていません。 Windows Server 2012 以降では、この INF キーワードは、廃止されています。
 
@@ -32,7 +32,7 @@ ms.locfileid: "56550775"
 <a href="" id="-rssorvmqpreference"></a>**\*RssOrVmqPreference**  
 代わりに VMQ 機能を有効にするかどうかを定義する値は受信側のスケーリング (RSS) 機能です。
 
-これは、INF ファイルで指定する必要がありますいないに表示されていない非表示のキーワード値**詳細**ネットワーク アダプターのプロパティ ページ。 詳細については、次を参照してください。 [VMQ の処理と RSS INF キーワード](#vmq-rss)します。
+これは、INF ファイルで指定する必要がありますいないに表示されていない非表示のキーワード値**詳細**ネットワーク アダプターのプロパティ ページ。 詳細については、[VMQ の処理と RSS INF キーワード](#vmq-rss)を参照してください。
 
 VMQ に標準化された INF キーワードはキーワードを列挙します。 次の表では、VMQ に標準化された INF キーワードの可能な INF エントリについて説明します。
 
@@ -96,7 +96,7 @@ VMQ に標準化された INF キーワードはキーワードを列挙しま�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>RssOrVmqPreference</strong></p></td>
-<td align="left"><p>注:このサブキーの ParamDesc と EnumDesc のエントリは、INF ファイルやユーザー インターフェイスのいずれかで使用できません。 詳細については、次を参照してください。 <a href="#vmq-rss" data-raw-source="[Handling VMQ and RSS INF Keywords](#vmq-rss)">VMQ の処理と RSS INF キーワード</a>します。</p></td>
+<td align="left"><p>注:このサブキーの ParamDesc と EnumDesc のエントリは、INF ファイルやユーザー インターフェイスのいずれかで使用できません。 詳細については、<a href="#vmq-rss" data-raw-source="[Handling VMQ and RSS INF Keywords](#vmq-rss)">VMQ の処理と RSS INF キーワード</a>を参照してください。</p></td>
 <td align="left"><p>0 (既定)</p></td>
 <td align="left"><div class="alert">
 <strong>注</strong>RSS のレポート機能
@@ -139,7 +139,7 @@ SubkeyName INF エントリに関連付けられているテキスト。
 <a href="" id="enumdesc"></a>EnumDesc  
 表示テキストで表示される各値に関連付けられている、**詳細**プロパティ ページ。
 
-標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
 ### <a href="" id="vmq-rss"></a>VMQ および RSS INF キーワードの処理
 
@@ -149,7 +149,7 @@ SubkeyName INF エントリに関連付けられているテキスト。
 
 -   ネットワーク アダプターが HYPER-V 拡張可能スイッチのドライバー スタックにバインドされると、オペレーティング システム、VMQ 機能の使用を有効にします。
 
-    詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)します。
+    詳細については、[Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)を参照してください。
 
 いないネットワーク アダプターが無効になっているし、TCP/IP スタックからバインド解除され、HYPER-V ドライバー スタック (またはその逆) にバインドされているときに再有効化、ために VMQ および RSS の間で自動的に切り替えるには、このようなネットワーク アダプターのことはできません。
 
@@ -161,7 +161,7 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com
 
     場合の値、  **\*RssOrVmqPreference**キーワードは、0 またはキーワードが存在しない、RSS の基本設定が構成されているミニポート ドライバー。
 
-2.  それを読み取る必要があるかどうかミニポート ドライバーは VMQ の基本設定の構成で、  **\*VMQ**ネットワーク アダプターで VMQ が有効になっているかどうかを決定するキーワード。 キーワードが 1 に設定されている場合、ドライバーは VMQ 設定の現在対応を報告します。 ミニポート ドライバーで VMQ 設定を報告する方法の詳細については、次を参照してください。[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)します。
+2.  それを読み取る必要があるかどうかミニポート ドライバーは VMQ の基本設定の構成で、  **\*VMQ**ネットワーク アダプターで VMQ が有効になっているかどうかを決定するキーワード。 キーワードが 1 に設定されている場合、ドライバーは VMQ 設定の現在対応を報告します。 ミニポート ドライバーで VMQ 設定を報告する方法の詳細については、[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)を参照してください。
 
     VMQ キーワードの詳細については、VMQ の標準化された INF キーワードを参照してください。
 
@@ -169,9 +169,9 @@ NDIS を呼び出すと、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com
 
 
 
-3.  これを読み取る必要があるかどうかは、RSS の基本設定のミニポート ドライバーが構成されている、  **\*RSS**ネットワーク アダプターで RSS が有効になっているかどうかを決定するキーワード。 キーワードが 1 に設定されている場合、ドライバーは現在有効になっている RSS の設定を報告します。 ミニポート ドライバーが RSS の設定を報告する方法の詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
+3.  これを読み取る必要があるかどうかは、RSS の基本設定のミニポート ドライバーが構成されている、  **\*RSS**ネットワーク アダプターで RSS が有効になっているかどうかを決定するキーワード。 キーワードが 1 に設定されている場合、ドライバーは現在有効になっている RSS の設定を報告します。 ミニポート ドライバーが RSS の設定を報告する方法の詳細については、[RSS 構成](rss-configuration.md)を参照してください。
 
-    RSS キーワードの詳細については、次を参照してください。[の RSS の標準化された INF キーワード](standardized-inf-keywords-for-rss.md)します。
+    RSS キーワードの詳細については、[の RSS の標準化された INF キーワード](standardized-inf-keywords-for-rss.md)を参照してください。
 
     **注**キーワードを標準化、VMQ のいずれかを読み取り、ミニポート ドライバーでは RSS の基本設定が構成されていると場合、いない必要があります。
 

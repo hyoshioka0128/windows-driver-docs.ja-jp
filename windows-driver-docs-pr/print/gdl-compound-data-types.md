@@ -28,7 +28,7 @@ GDL 複合データ型が定義されている[GDL プリミティブ データ�
 
 [複数のパーソナリティ](multiple-personality-template-data-types.md)
 
-複合データ型に関連した問題の詳細については、次を参照してください。[テンプレート データ型の問題の GDL](compound-template-data-type-issues.md)します。
+複合データ型に関連した問題の詳細については、[テンプレート データ型の問題の GDL](compound-template-data-type-issues.md)を参照してください。
 
  
 

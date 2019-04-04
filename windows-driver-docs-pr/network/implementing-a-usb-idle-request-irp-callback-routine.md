@@ -24,7 +24,7 @@ USB ミニポート ドライバーでは、USB アイドル要求 IRP の IRP �
 
 呼び出すコールバック ルーチンがしか[ **NdisMIdleNotificationConfirm** ](https://msdn.microsoft.com/library/windows/hardware/hh451492)ネットワーク アダプターの省電力状態の遷移を続行できる NDIS を通知するためにします。 ドライバーを呼び出すと**NdisMIdleNotificationConfirm**、ネットワーク アダプターに移行できる、最も低いデバイスの電源状態も指定する必要があります。
 
-呼び出しのコンテキスト内で[ **NdisMIdleNotificationConfirm**](https://msdn.microsoft.com/library/windows/hardware/hh451492)NDIS 低電力状態にネットワーク アダプターに移行するために必要な手順を実行します。 詳細については、次を参照してください。 [、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)します。
+呼び出しのコンテキスト内で[ **NdisMIdleNotificationConfirm**](https://msdn.microsoft.com/library/windows/hardware/hh451492)NDIS 低電力状態にネットワーク アダプターに移行するために必要な手順を実行します。 詳細については、[、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
 
 次は、USB アイドル要求 IRP のコールバック ルーチンの例です。
 

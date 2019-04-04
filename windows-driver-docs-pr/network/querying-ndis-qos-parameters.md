@@ -24,7 +24,7 @@ ms.locfileid: "56536332"
 
  
 
-ローカル、リモート、および運用上の NDIS QoS パラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](overview-of-ndis-qos-parameters.md)します。
+ローカル、リモート、および運用上の NDIS QoS パラメーターの詳細については、[NDIS QoS パラメーターの概要](overview-of-ndis-qos-parameters.md)を参照してください。
 
 NDIS ミニポート ドライバーのこれらの OID 要求を処理し、内で要求された QoS パラメーターを返します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 NDIS は、次の方法でこれらの OID 要求を処理します。
 

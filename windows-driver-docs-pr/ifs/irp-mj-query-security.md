@@ -54,7 +54,7 @@ IRP\_MJ\_クエリ\_セキュリティ要求が I/O マネージャーによっ�
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
 
-Windows xp 以降、ファイル オブジェクトは名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、次を参照してください。 [**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)します。
+Windows xp 以降、ファイル オブジェクトは名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、[**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)を参照してください。
 
 *IrpSp -&gt;FileObject*パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_IRP の処理中にオブジェクトの構造が有効なない\_MJ\_クエリ\_セキュリティ、使用する必要があります。
 

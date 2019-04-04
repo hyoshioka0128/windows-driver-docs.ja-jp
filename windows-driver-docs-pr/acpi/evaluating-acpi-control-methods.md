@@ -39,7 +39,7 @@ Advanced Configuration and Power Interface (ACPI) の制御メソッドは、宣
 
     この要求は、デバイスまたはデバイスの子オブジェクトでサポートされているコントロールのメソッドを非同期的に評価する、要求が送信されます。 デバイスは、入力と出力のメソッド引数のバッファー、パスと、デバイスの ACPI 名前空間管理メソッドの名前を提供する場合は、この IOCTL では、ドライバーを使用して、 *IoCompletion* I/O マネージャーをすべて呼び出すルーチン下位レベルのドライバーは、要求が完了しました。
 
-ACPI の制御メソッドを同期的に評価する方法の詳細については、次を参照してください。 [ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)します。 ACPI の制御メソッドを非同期に評価する方法の詳細については、次を参照してください[ **IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff536145)と。[**IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536146)します。
+ACPI の制御メソッドを同期的に評価する方法の詳細については、[ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)を参照してください。 ACPI の制御メソッドを非同期に評価する方法の詳細については、次を参照してください[ **IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff536145)と。[**IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536146)します。
 
 デバイスの直接の子オブジェクトではないの制御方法を評価するデバイスのドライバーの場合、ドライバーは、デバイスの ACPI 名前空間内のメソッドの名前とパスを指定する必要があります。 デバイスの子オブジェクトの名前とパスを取得するには、Windows のサポート、 [ **IOCTL\_ACPI\_列挙\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)要求する場合に、このデバイスのドライバー次の列挙を使用できます。
 
@@ -49,8 +49,8 @@ ACPI の制御メソッドを同期的に評価する方法の詳細について
 
 -   デバイスなどの ACPI 名前空間に指定された名前の子オブジェクトは、具体的には、方法を制御します。
 
-デバイスとデバイスの名前空間のメソッドを列挙する方法については、次を参照してください。[列挙子のデバイスとコントロール メソッド](enumerating-child-devices-and-control-methods.md)します。
+デバイスとデバイスの名前空間のメソッドを列挙する方法については、[列挙子のデバイスとコントロール メソッド](enumerating-child-devices-and-control-methods.md)を参照してください。
 
-ドライバーは、コントロールのメソッドを評価するために使用できるシステム提供のマクロについては、次を参照してください。[コントロール メソッド マクロ](control-method-macros.md)します。
+ドライバーは、コントロールのメソッドを評価するために使用できるシステム提供のマクロについては、[コントロール メソッド マクロ](control-method-macros.md)を参照してください。
 
-ACPI デバイス、コントロールのメソッド、および名前空間の詳細については、次を参照してください。、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=866846)します。
+ACPI デバイス、コントロールのメソッド、および名前空間の詳細については、、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=866846)を参照してください。

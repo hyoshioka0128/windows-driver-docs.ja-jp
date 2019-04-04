@@ -100,7 +100,7 @@ D1 の場合と同じです。
 この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。 ネットワーク アダプターおよびミニポート ドライバー。
 
 <a href="" id="power-consumption"></a>電力消費量  
-電力量が少なくとスリープの状態。 電力量がゼロ以外 (D3hot) あります。 または、正確に 0 (D3cold) がある可能性があります。 D3hot と D3cold の詳細については、次を参照してください。[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。
+電力量が少なくとスリープの状態。 電力量がゼロ以外 (D3hot) あります。 または、正確に 0 (D3cold) がある可能性があります。 D3hot と D3cold の詳細については、[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)を参照してください。
 
 <a href="" id="device-context"></a>デバイス コンテキスト  
 D1 の場合と同じです。

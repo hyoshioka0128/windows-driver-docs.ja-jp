@@ -23,13 +23,13 @@ Windows Vista 以降のオペレーティング システム、ドライバー�
 
 -   *パラメーター * * *-&gt;MessageBased.PhysicalDeviceObject** デバイスの PDO を指定する ISR サービス。 デバイス オブジェクトは、デバイスのメッセージ シグナル割り込みを自動的に識別するために使用されます。
 
--   *パラメーター * * *-&gt;MessageBased.MessageServiceRoutine** を指す、 [ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)中に、日常的な*パラメーター * * *-&gt;MessageBased.ServiceContext** として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptMessageService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
+-   *パラメーター * * *-&gt;MessageBased.MessageServiceRoutine** を指す、 [ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)中に、日常的な*パラメーター * * *-&gt;MessageBased.ServiceContext** として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptMessageService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、[ISR コンテキスト情報の提供](providing-isr-context-information.md)を参照してください。
 
 -   ドライバーでは、フォールバックを指定できますも*InterruptMessageService*で日常的な*パラメーター ***-&gt;MessageBased.FallBackServiceRoutine**します。デバイスは、行ベースの割り込みがないメッセージ シグナル割り込みは、システムは登録代わりに、 *InterruptMessageService*行ベースの割り込みサービス ルーチン。この場合、システムに渡します*パラメーター * * *-&gt;MessageBased.ServiceContext** として、 *ServiceContext*パラメーターを[ *InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)します。 **IoConnectInterruptEx**更新*パラメーター * * *-&gt;バージョン** connect\_行\_ベースのフォールバックのルーチンが登録されている場合。
 
--   *パラメーター * * *-&gt;MessageBased.ConnectionContext** をいずれかへのポインターを受け取る変数を指す、 [ **IO\_INTERRUPT\_メッセージ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff550576) (の*InterruptMessageService*) 構造体または[ **KINTERRUPT** ](https://msdn.microsoft.com/library/windows/hardware/ff554237)構造 (の*InterruptService*). ドライバーは、受信したポインターを使用して ISR を削除することができます。 詳細については、次を参照してください。 [ISR を削除する](removing-an-isr.md)します。
+-   *パラメーター * * *-&gt;MessageBased.ConnectionContext** をいずれかへのポインターを受け取る変数を指す、 [ **IO\_INTERRUPT\_メッセージ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff550576) (の*InterruptMessageService*) 構造体または[ **KINTERRUPT** ](https://msdn.microsoft.com/library/windows/hardware/ff554237)構造 (の*InterruptService*). ドライバーは、受信したポインターを使用して ISR を削除することができます。 詳細については、[ISR を削除する](removing-an-isr.md)を参照してください。
 
--   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;MessageBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
+-   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;MessageBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)を参照してください。
 
 次のコード例は、登録する方法を示します、 *InterruptMessageService* CONNECT を使用して日常的な\_メッセージ\_ベース。
 

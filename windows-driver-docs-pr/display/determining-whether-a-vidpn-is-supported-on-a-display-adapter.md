@@ -42,7 +42,7 @@ VidPN は*ディスプレイ アダプターではサポートされて*次の�
 
 VidPN のトポロジが有効かどうかを VidPN がサポートされているかどうかを決定する部分の決定です。 ビデオに存在するソースは、トポロジによって指定されたビデオ存在するターゲットに言い換えると、接続できるでしょうか。 トポロジ内のすべてのビデオ存在するターゲットのモニターが接続されている要件ではないことに注意します。 トポロジを有効にして、モニターが接続されていない場合でも、VidPN をサポートできます。
 
-VidPN manager の呼び出しに、 [ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)ディスプレイのミニポート ドライバー ディスプレイ アダプターの特定の VidPN をサポートするかどうかを確認します。 渡される引数の 1 つ**DxgkDdiIsSupportedVidPn**という目的 VidPN VidPN オブジェクトへのハンドルします。 **DxgkDdiIsSupportedVidPn**目的 VidPN のトポロジを検査する必要があり、メモが存在するビデオのソースと目的の VidPN 既に内のターゲットがピン留めするモードを実行する必要があります。 (このトピックで前述下手定義) に従って目的の VidPN がサポートされているかどうかを示すブール値を返すにする必要があります。 トポロジ、ソース モードのセット、およびターゲット モード、VidPN 一連の検査については、次を参照してください。 [VidPN オブジェクトとインターフェイス](vidpn-objects-and-interfaces.md)します。
+VidPN manager の呼び出しに、 [ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)ディスプレイのミニポート ドライバー ディスプレイ アダプターの特定の VidPN をサポートするかどうかを確認します。 渡される引数の 1 つ**DxgkDdiIsSupportedVidPn**という目的 VidPN VidPN オブジェクトへのハンドルします。 **DxgkDdiIsSupportedVidPn**目的 VidPN のトポロジを検査する必要があり、メモが存在するビデオのソースと目的の VidPN 既に内のターゲットがピン留めするモードを実行する必要があります。 (このトピックで前述下手定義) に従って目的の VidPN がサポートされているかどうかを示すブール値を返すにする必要があります。 トポロジ、ソース モードのセット、およびターゲット モード、VidPN 一連の検査については、[VidPN オブジェクトとインターフェイス](vidpn-objects-and-interfaces.md)を参照してください。
 
  
 

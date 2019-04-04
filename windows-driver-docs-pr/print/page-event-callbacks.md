@@ -28,7 +28,7 @@ ms.locfileid: "56574385"
 
 -   使用して、ページが定義された場合、 [CPSUI が指定したページやテンプレート](cpsui-supplied-pages-and-templates.md)を指定できます、 [CPSUI メッセージ ハンドラー](cpsui-message-handler.md)。
 
--   アプリケーションがない CPSUI によって提供されるカスタマイズされたページを作成する場合は、ダイアログ ボックスのプロシージャを提供します。 詳細については、次を参照してください。 [ ダイアログ ボックス プロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)します。
+-   アプリケーションがない CPSUI によって提供されるカスタマイズされたページを作成する場合は、ダイアログ ボックスのプロシージャを提供します。 詳細については、[ ダイアログ ボックス プロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)を参照してください。
 
 呼び出すときにページ イベントのコールバックのアドレスを CPSUI CPSUI アプリケーション提供、 [ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)関数。
 

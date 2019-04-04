@@ -44,7 +44,7 @@ dt -h
 
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-必要な情報を格納しているプロセスを実行しているプロセッサを指定します。 詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。 プロセッサは、カーネル モードでのみ指定できます。
+必要な情報を格納しているプロセスを実行しているプロセッサを指定します。 詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。 プロセッサは、カーネル モードでのみ指定できます。
 
 <span id="_______DisplayOpts______"></span><span id="_______displayopts______"></span><span id="_______DISPLAYOPTS______"></span> *DisplayOpts*   
 次の表で指定したオプションの 1 つ以上を指定します。 これらのオプションには、ハイフンが付きます。
@@ -186,7 +186,7 @@ dt -h
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -222,7 +222,7 @@ typedef struct _MY_DATA {
     } MY_DATA, *PMY_DATA; 
 ```
 
-いずれの場合も、型情報は、すべてのプライベート シンボル情報が削除されているシンボル ファイルではなく、完全なシンボル ファイルにのみ含まれます。 詳細については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
+いずれの場合も、型情報は、すべてのプライベート シンボル情報が削除されているシンボル ファイルではなく、完全なシンボル ファイルにのみ含まれます。 詳細については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
 
 Unicode 文字列を表示する場合は、使用する必要があります、 [**リストア\_(Unicode 表示を有効にする) unicode** ](-enable-unicode--enable-unicode-display-.md)最初コマンドします。 長整数の表示を制御することができます、 [**リストア\_長い\_ステータス (有効にする Long 整数を表示する)** ](-enable-long-status--enable-long-integer-display-.md)コマンド。
 

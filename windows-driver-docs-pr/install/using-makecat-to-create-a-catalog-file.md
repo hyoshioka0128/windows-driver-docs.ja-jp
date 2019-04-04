@@ -16,9 +16,9 @@ ms.locfileid: "56538446"
 
 使用することができます、 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)を作成するツール、[カタログ ファイル](catalog-files.md)の[ドライバー パッケージ](driver-packages.md)します。
 
-INF ファイルを使用してインストールされていないドライバー パッケージのカタログ ファイルの作成にのみ、MakeCat ツールを使用する必要があります。 INF ファイルを使用して、ドライバー パッケージをインストールする場合は、使用、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)カタログ ファイルを作成するためのツール。 Inf2Cat には、パッケージの INF ファイル内で参照される、ドライバー パッケージ内のすべてのファイルに自動的に含まれています。 Inf2Cat ツールを使用する方法の詳細については、次を参照してください。[カタログ ファイルを作成するのを使用して Inf2Cat](using-inf2cat-to-create-a-catalog-file.md)します。
+INF ファイルを使用してインストールされていないドライバー パッケージのカタログ ファイルの作成にのみ、MakeCat ツールを使用する必要があります。 INF ファイルを使用して、ドライバー パッケージをインストールする場合は、使用、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)カタログ ファイルを作成するためのツール。 Inf2Cat には、パッケージの INF ファイル内で参照される、ドライバー パッケージ内のすべてのファイルに自動的に含まれています。 Inf2Cat ツールを使用する方法の詳細については、[カタログ ファイルを作成するのを使用して Inf2Cat](using-inf2cat-to-create-a-catalog-file.md)を参照してください。
 
-**注**  を作成し、カタログ ファイルへの署名、代わりに埋め込むことも、署名のカーネル モード バイナリの[ドライバー パッケージ](driver-packages.md)、ドライバー パッケージを提供するすべての .dll ファイルなどです。 この手順の詳細については、次を参照してください。[テスト署名ドライバーは、埋め込みの署名](test-signing-a-driver-through-an-embedded-signature.md)します。
+**注**  を作成し、カタログ ファイルへの署名、代わりに埋め込むことも、署名のカーネル モード バイナリの[ドライバー パッケージ](driver-packages.md)、ドライバー パッケージを提供するすべての .dll ファイルなどです。 この手順の詳細については、[テスト署名ドライバーは、埋め込みの署名](test-signing-a-driver-through-an-embedded-signature.md)を参照してください。
 
  
 
@@ -70,7 +70,7 @@ makecat -v tstamd64.cdf
 
 MakeCat ツールとコマンドライン引数の詳細については、次を参照してください。、[を使用して MakeCat](https://go.microsoft.com/fwlink/p/?linkid=70086) web サイト。
 
-MakeCat ツールを使用する方法の詳細については、次を参照してください。[非 PnP ドライバー パッケージのカタログ ファイルを作成する](creating-a-catalog-file-for-a-non-pnp-driver-package.md)します。
+MakeCat ツールを使用する方法の詳細については、[非 PnP ドライバー パッケージのカタログ ファイルを作成する](creating-a-catalog-file-for-a-non-pnp-driver-package.md)を参照してください。
 
  
 

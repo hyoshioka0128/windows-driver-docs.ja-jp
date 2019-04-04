@@ -16,7 +16,7 @@ ms.locfileid: "56537950"
 
 このトピックでは、方向センサーに固有のデータ フィールドの詳細についての情報を提供します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
+次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
 
 |プロパティのキー|種類|必須/オプション|説明/コメント|
 |---|---|---|---|
@@ -24,7 +24,7 @@ ms.locfileid: "56537950"
 |PKEY_SensorData_QuaternionX|VT_R4|必須|回転の軸のベクターの X 成分。|
 |PKEY_SensorData_QuaternionY|VT_R4|必須|回転の軸のベクターの Y 成分。|
 |PKEY_SensorData_QuaternionZ|VT_R4|必須|回転の軸のベクトルの Z 成分。|
-|PKEY_SensorData_MagnetometerAccuracy|VT_UI4|必須|磁力計センサーの精度。 有効な値の詳細については、次を参照してください。 [MAGNETOMETER_ACCURACY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-magnetometer_accuracy)します。|
+|PKEY_SensorData_MagnetometerAccuracy|VT_UI4|必須|磁力計センサーの精度。 有効な値の詳細については、[MAGNETOMETER_ACCURACY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-magnetometer_accuracy)を参照してください。|
 |PKEY_SensorData_DeclinationAngle_Degrees|VT_R4|省略可能|磁気拒否角度が地球の方位は磁北から真北を推測するために使用します。 サポートされていない場合、クラス拡張はこの値を計算します。|
 |PKEY_SensorData_LinearAccelerationX_Gs|VT_R4|省略可能|G's で線形の加速を x 軸|
 |PKEY_SensorData_LinearAccelerationY_Gs|VT_R4|省略可能|G's で線形の加速を y 軸|

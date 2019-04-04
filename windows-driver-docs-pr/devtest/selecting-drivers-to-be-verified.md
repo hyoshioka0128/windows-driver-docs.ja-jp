@@ -81,9 +81,9 @@ Windows XP とそれ以降のドライバー検証マネージャーでは、ド
 
 ### <a name="span-idrebootrequiredspanspan-idrebootrequiredspanreboot-required"></a><span id="reboot_required"></span><span id="REBOOT_REQUIRED"></span>再起動が必要です。
 
-Windows XP と Windows Server 2003 で開始し、(「再起動」) を再起動しなくてもドライバーの検証を停止、ドライバーが読み込まれていない場合にのみ、コンピューター。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+Windows XP と Windows Server 2003 で開始し、(「再起動」) を再起動しなくてもドライバーの検証を停止、ドライバーが読み込まれていない場合にのみ、コンピューター。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
-以降では、Windows Vista は、開始および、コンピューターを再起動しなくても読み込まれていないドライバーの検証を停止できます。 再起動しなくても既に読み込まれているドライバーの検証を開始することもできます。 ただし、システムを再起動するまでは既に読み込まれているドライバーの検証を停止することはできません。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+以降では、Windows Vista は、開始および、コンピューターを再起動しなくても読み込まれていないドライバーの検証を停止できます。 再起動しなくても既に読み込まれているドライバーの検証を開始することもできます。 ただし、システムを再起動するまでは既に読み込まれているドライバーの検証を停止することはできません。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
  
 

@@ -23,13 +23,13 @@ ms.locfileid: "57909199"
 
 -   %Windir% にコピーする必要があります SymProxy ファイル\\system32\\iis inetsrv フォルダー。 このタスクは以下で説明します。
 
--   レジストリは、SymProxy 用に構成する必要があります。 詳細については、次を参照してください。[レジストリを構成する](configuring-the-registry.md)します。
+-   レジストリは、SymProxy 用に構成する必要があります。 詳細については、[レジストリを構成する](configuring-the-registry.md)を参照してください。
 
 -   マニフェストは、パフォーマンス カウンターと ETW イベントとして登録する必要があるし、イベント ログを構成する必要があります。
 
--   IIS を構成する必要があります。 詳細については、次を参照してください。[ネットワーク セキュリティの資格情報を選択する](choosing-network-security-credentials.md)と[SymProxy の IIS を構成する](configuring-iis-for-symproxy.md)します。
+-   IIS を構成する必要があります。 詳細については、[ネットワーク セキュリティの資格情報を選択する](choosing-network-security-credentials.md)と[SymProxy の IIS を構成する](configuring-iis-for-symproxy.md)を参照してください。
 
-Install.cmd ファイルを使用して、次の手順を自動化できます。 詳細については、次を参照してください。 [SymProxy Automated Installation](symproxy-automated-installation.md)します。
+Install.cmd ファイルを使用して、次の手順を自動化できます。 詳細については、[SymProxy Automated Installation](symproxy-automated-installation.md)を参照してください。
 
 ## <a name="span-idcopythesymproxyfilestoiisspanspan-idcopythesymproxyfilestoiisspanspan-idcopythesymproxyfilestoiisspancopy-the-symproxy-files-to-iis"></a><span id="Copy_the_SymProxy_files_to_IIS"></span><span id="copy_the_symproxy_files_to_iis"></span><span id="COPY_THE_SYMPROXY_FILES_TO_IIS"></span>IIS に SymProxy ファイルをコピーします。
 
@@ -40,7 +40,7 @@ SymProxy をサーバーにインストールするには、%windir% symproxy.dl
 
 Microsoft のシンボル ストアにアクセス中に発生する問題を回避するには、%windir% と呼ばれる新しいファイルを作成\\system32\\inetsrv\\symsrv.yes します。 このファイルの内容は重要ではありません。 Symsrv.yes ファイルが存在する場合は、Microsoft パブリック シンボル ストアの使用許諾契約書が自動的に受け入れます。
 
-SymProxy のコンピューターになど、アップ ストリームのプロバイダーへの HTTPS/TLS 通信"Baltimore CyberTrust Root"が使用され、信頼されたルートに必要な IIS および Windows server で通常インストールされる証明書を格納することに注意してください。実行中です。 SSL の問題のトラブルシューティングに関する概要については、次を参照してください。[トラブルシューティング SSL 関連の問題 (サーバー証明書)](https://docs.microsoft.com/iis/troubleshoot/security-issues/troubleshooting-ssl-related-issues-server-certificate)します。
+SymProxy のコンピューターになど、アップ ストリームのプロバイダーへの HTTPS/TLS 通信"Baltimore CyberTrust Root"が使用され、信頼されたルートに必要な IIS および Windows server で通常インストールされる証明書を格納することに注意してください。実行中です。 SSL の問題のトラブルシューティングに関する概要については、[トラブルシューティング SSL 関連の問題 (サーバー証明書)](https://docs.microsoft.com/iis/troubleshoot/security-issues/troubleshooting-ssl-related-issues-server-certificate)を参照してください。
 
  
 

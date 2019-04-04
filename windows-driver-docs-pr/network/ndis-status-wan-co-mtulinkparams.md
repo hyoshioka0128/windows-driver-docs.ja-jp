@@ -23,7 +23,7 @@ NDIS\_状態\_WAN\_CO\_MTULINKPARAMS 状態では、リンクを高速化する�
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体にはへのポインターが含まれています、 [ **WAN\_CO\_MTULINKPARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff565821)構造体。 WAN\_CO\_MTULINKPARAMS 構造は、VC の新しいパラメーターをについて説明します。
 
-NDIS の詳細については\_状態\_WAN\_CO\_MTULINKPARAMS を参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)します。
+NDIS の詳細については\_状態\_WAN\_CO\_MTULINKPARAMS を参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

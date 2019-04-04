@@ -55,9 +55,9 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 
 -   *tstamd64.cat*デジタル署名されるカタログ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
+SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
 
-ドライバー パッケージのリリース署名の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)します。
+ドライバー パッケージのリリース署名の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)を参照してください。
 
  
 

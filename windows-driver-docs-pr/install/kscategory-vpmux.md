@@ -56,9 +56,9 @@ KSCATEGORY_VPMUX[デバイス インターフェイス クラス](https://msdn.m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_VPMUX 機能カテゴリをサポートすることを示す KSCATEGORY_VPMUX のインスタンスを登録します。
 
-概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
+概要ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)を参照してください。
 
-ビデオ デバイスのデバイスのインターフェイス クラスについては、次を参照してください。 [ **KSCATEGORY_VIDEO**](kscategory-video.md)します。
+ビデオ デバイスのデバイスのインターフェイス クラスについては、[ **KSCATEGORY_VIDEO**](kscategory-video.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

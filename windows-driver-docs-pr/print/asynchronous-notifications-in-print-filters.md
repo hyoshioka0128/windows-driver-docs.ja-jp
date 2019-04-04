@@ -107,7 +107,7 @@ if (SUCCEEDED(hr))
 
 変数、上記のコード例では`pIAsyncCallback`の呼び出し元の実装へのポインター、 [IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)インターフェイス。
 
-場合によってとそれが済んだら、双方向の通知チャネルをリリースする必要があります。 これを行うには、呼び出し、[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッド[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)します。 チャネルを解放する場合については、次を参照してください。[通知チャネル](notification-channel.md)します。
+場合によってとそれが済んだら、双方向の通知チャネルをリリースする必要があります。 これを行うには、呼び出し、[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッド[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)します。 チャネルを解放する場合については、[通知チャネル](notification-channel.md)を参照してください。
 
 ### <a name="impersonation-and-notification"></a>権限借用と通知
 

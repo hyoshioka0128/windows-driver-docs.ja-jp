@@ -29,7 +29,7 @@ ms.locfileid: "56556840"
 
 トポロジのミニポート ドライバーでは、アダプターのオーディオ ミキサー回路で、さまざまなハードウェア コントロール (たとえば、ボリュームおよびミュート) を管理します。 このドライバーとしてコントロールを列挙する*ノード*ミキサー トポロジでは、クライアントをできるように、ノード間の相互接続を検出してクエリを実行し、各ノードで制御するパラメーターを設定します。
 
-[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を構築するときに、アダプターのトポロジでは、[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 ミキサー API (Microsoft Windows sdk の Windows のマルチ メディア セクションで説明) は、ミキサー行の制御し、SndVol32 などのユーザー モード アプリケーションを許すことに、トポロジのノードを表します。 詳細については、次を参照してください。[システム トレイと SndVol32](systray-and-sndvol32.md)します。
+[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を構築するときに、アダプターのトポロジでは、[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 ミキサー API (Microsoft Windows sdk の Windows のマルチ メディア セクションで説明) は、ミキサー行の制御し、SndVol32 などのユーザー モード アプリケーションを許すことに、トポロジのノードを表します。 詳細については、[システム トレイと SndVol32](systray-and-sndvol32.md)を参照してください。
 
 トポロジのミニポート ドライバーには、ミニポート ドライバーを初期化するために、ポートのドライバーを使用する、トポロジのミニポート インターフェイスを実装する必要があります。 ミニポート インターフェイス[IMiniportTopology](https://msdn.microsoft.com/library/windows/hardware/ff536712)でメソッドを継承、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)インターフェイスです。 追加のメソッドを備えていません。 オーディオのアダプターのドライバー フォーム、[トポロジ フィルター](topology-filters.md)ミニポート オブジェクトの IMiniportTopology をバインドすることによって、ポート オブジェクトのインターフェイス[IPortTopology](https://msdn.microsoft.com/library/windows/hardware/ff536896)インターフェイス。
 

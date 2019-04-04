@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_PARALLEL[デバイス インターフェイス クラス](http
 
 パラレル ポートのシステムによって提供される関数のドライバーでは、パラレル ポートの場合は、このデバイス クラスのインスタンスを登録します。
 
-並列デバイスとドライバーについては、次を参照してください。[パラレル ポートやデバイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff543964)します。
+並列デバイスとドライバーについては、[パラレル ポートやデバイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff543964)を参照してください。
 
-パラレル ポートに接続されているデバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)します。
+パラレル ポートに接続されているデバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)を参照してください。
 
 [**GUID_PARALLEL_DEVICE** ](guid-parallel-device.md)このデバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_PARALLEL を代わりに使用します。
 

@@ -33,7 +33,7 @@ ms.locfileid: "56536064"
 
 WDFVERIFY と検証用コード\_IS\_IRQL\_パッシブ\_リリースまたはデバッグ構成では、ドライバーをビルドするときに、ドライバー レベルのマクロが含まれている (無料のビルド環境と呼ばれる、またはチェック ビルド環境で Windows 7 以降)。 アサートと ASSERTMSG マクロのコードは、デバッグ構成で、ドライバーをビルドする場合にのみ、ドライバーに含まれます。
 
-プロジェクト構成の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+プロジェクト構成の詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
 
  
 

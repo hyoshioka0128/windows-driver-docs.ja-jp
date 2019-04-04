@@ -54,7 +54,7 @@ BIOS ファームウェア、SPCR テーブルにはありませんがいるコ�
 
 このセクションで説明されているブート パラメーターでは、Windows のインストール後に、EMS のコンソールのリダイレクトが有効にします。 新規インストールまたは Windows のアップグレード中に、EMS を有効にする方法についてで「を有効にする緊急管理サービス」の検索、 [Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=10111) web サイト。
 
-詳細の例では、次を参照してください。 [EMS のリダイレクトを有効にするのにブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542282)します。
+詳細の例では、[EMS のリダイレクトを有効にするのにブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542282)を参照してください。
 
  
 

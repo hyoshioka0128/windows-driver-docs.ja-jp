@@ -38,7 +38,7 @@ Pvk2Pfx -pvk abc.pvk -pi pvkpassword -spc abc.spc -pfx abc.pfx -po pfxpassword -
 
 -   **-F**オプション構成を置き換える既存 Pvk2Pfx *.pfx*ファイルが存在する場合。
 
-SPCs とその管理の詳細については、次を参照してください。[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。
+SPCs とその管理の詳細については、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)を参照してください。
 
  
 

@@ -26,7 +26,7 @@ ms.locfileid: "56532719"
 
 [INF ディレクティブ](inf-directives.md)
 
-INF ファイルを作成および使用方法の詳細については、次を参照してください。 [INF ファイルの概要](overview-of-inf-files.md)します。 INF ファイルの例についてに含まれるデバイス ドライバーのサンプルを参照してください、 *src* Windows Driver Kit (WDK) のディレクトリ。
+INF ファイルを作成および使用方法の詳細については、[INF ファイルの概要](overview-of-inf-files.md)を参照してください。 INF ファイルの例についてに含まれるデバイス ドライバーのサンプルを参照してください、 *src* Windows Driver Kit (WDK) のディレクトリ。
 
  
 

@@ -24,11 +24,11 @@ ms.locfileid: "56550605"
 
 **このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**
 
-サンプルの COPP 関数は、COPP 処理機能を実装する方法を示します。 これらのサンプル関数にマップ、[補正コールバック関数のモーション](motion-compensation-callbacks.md)で定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 各関数のサンプルと、対応する COPP I/O 制御 (IOCTL) 要求を実装し、実装の完成に動き補正コード テンプレートとビデオのミニポート ドライバー テンプレートを使用できます。 詳細については、次を参照してください。 [DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)します。
+サンプルの COPP 関数は、COPP 処理機能を実装する方法を示します。 これらのサンプル関数にマップ、[補正コールバック関数のモーション](motion-compensation-callbacks.md)で定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 各関数のサンプルと、対応する COPP I/O 制御 (IOCTL) 要求を実装し、実装の完成に動き補正コード テンプレートとビデオのミニポート ドライバー テンプレートを使用できます。 詳細については、[DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)を参照してください。
 
 ### <a name="span-idcoppsamplefunctionsspanspan-idcoppsamplefunctionsspanspan-idcoppsamplefunctionsspancopp-sample-functions"></a><span id="COPP_Sample_Functions"></span><span id="copp_sample_functions"></span><span id="COPP_SAMPLE_FUNCTIONS"></span>COPP サンプル関数
 
-次の表にサンプル COPP 関数は、COPP デバイスを使用して呼び出されます。 COPP デバイスの詳細については、次を参照してください。 [COPP デバイス定義のテンプレート コード](copp-device-definition-template-code.md)と[COPP デバイス クラスを定義する](defining-the-copp-device-class.md)します。
+次の表にサンプル COPP 関数は、COPP デバイスを使用して呼び出されます。 COPP デバイスの詳細については、[COPP デバイス定義のテンプレート コード](copp-device-definition-template-code.md)と[COPP デバイス クラスを定義する](defining-the-copp-device-class.md)を参照してください。
 
 <table>
 <colgroup>

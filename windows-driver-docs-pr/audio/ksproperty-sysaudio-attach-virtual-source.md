@@ -70,7 +70,7 @@ KSPROPERTY\_SYSAUDIO\_アタッチ\_仮想\_ソース プロパティの要求�
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、仮想のソースを仮想のオーディオ デバイスの暗証番号 (pin) のインスタンスにアタッチします。 詳細については、次を参照してください。 [ **KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース**](ksproperty-sysaudio-create-virtual-source.md)します。
+このプロパティは、仮想のソースを仮想のオーディオ デバイスの暗証番号 (pin) のインスタンスにアタッチします。 詳細については、[ **KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース**](ksproperty-sysaudio-create-virtual-source.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

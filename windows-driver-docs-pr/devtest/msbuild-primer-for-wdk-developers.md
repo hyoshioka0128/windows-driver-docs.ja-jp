@@ -53,7 +53,7 @@ Build.exe と (WDK 8) の前に、WDK の以前のバージョンを使用する
 -   **ItemGroup**のコレクションである**項目。**
 -   **Itemgroup**一覧は、通常のすべてのコンパイルされるファイル。 ファイルのコレクションを使用してタスクに渡されます、 **@(itemname)** 表記します。 参照してください[MSBuild 項目](https://go.microsoft.com/fwlink/p/?linkid=236146)使用の詳細について**項目。**
 -   MSBuild はさまざまな[組み込みプロパティ](https://go.microsoft.com/fwlink/p/?linkid=236149)をプロジェクト ファイルで参照することもできます。
--   MSBuild とビルド タスクの詳細については、次を参照してください。 [MSBuild の概念](https://go.microsoft.com/fwlink/p/?linkid=236157)と[MSBuild リファレンス](https://go.microsoft.com/fwlink/p/?linkid=236161)します。
+-   MSBuild とビルド タスクの詳細については、[MSBuild の概念](https://go.microsoft.com/fwlink/p/?linkid=236157)と[MSBuild リファレンス](https://go.microsoft.com/fwlink/p/?linkid=236161)を参照してください。
 
  
 

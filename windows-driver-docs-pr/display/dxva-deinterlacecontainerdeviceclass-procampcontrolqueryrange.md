@@ -92,7 +92,7 @@ HRESULT ProcAmpControlQueryRange(
 
 ProcAmp の各プロパティの VMR は、最小、最大値、ステップのサイズ、および既定値を決定するドライバーを照会します。 ドライバーを返す必要があるかどうか、ハードウェアは、特定の ProcAmp コントロール プロパティをサポートしていません、E\_から NOTIMPL、 **ProcAmpControlQueryRange**関数。
 
-ProcAmp プロパティに関する詳細については、次を参照してください。 [ProcAmp プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff569189)します。
+ProcAmp プロパティに関する詳細については、[ProcAmp プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff569189)を参照してください。
 
 サンプル**ProcAmpControlQueryRange**関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 **RenderMoComp**メンバーがドライバーによって提供される指す[ **DdMoCompRender** ](https://msdn.microsoft.com/library/windows/hardware/ff550248)参照コールバック、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 

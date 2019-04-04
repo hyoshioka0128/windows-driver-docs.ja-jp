@@ -81,7 +81,7 @@ WIA\_DIP\_DEV\_型のプロパティには、デバイスの種類とデバイ�
 
  
 
-INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542770)します。 **StiDeviceType * * * Xxx*定数で定義されて*Sti.h*します。
+INF ファイルの詳細については、[WIA デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542770)を参照してください。 **StiDeviceType * * * Xxx*定数で定義されて*Sti.h*します。
 
 <a name="requirements"></a>要件
 ------------

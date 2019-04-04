@@ -82,7 +82,7 @@ Framework のオブジェクトへのハンドル。
 
 **WdfObjectAddCustomType**の簡易版です[ **WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)します。
 
-オブジェクトのドライバーの種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのドライバーの種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
 
 <a name="examples"></a>例
 --------

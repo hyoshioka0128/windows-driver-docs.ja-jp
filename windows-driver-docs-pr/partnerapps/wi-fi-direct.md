@@ -20,7 +20,7 @@ Windows 10 のすべての機能をする必要があります、Wi-Fi Direct Wi
 
 Wi-Fi Direct WinRT Api の一部を使用して、クラシック Windows アプリケーションでは、ただし。 たとえばクラシック Windows アプリケーションで WFDOpenHandle の代わりに Wi-Fi Direct WinRT Api と関連 Api を使用することができます。 WiFiDirectLegacySettings クラスは、それをサポートしているデバイスに接続して、Wi-Fi Direct デバイスによって提供されるサービスを使用する Wi-Fi Direct をサポートしないデバイスを使用できます。
 
-WiFiDirectLegacySettings は、SSID とパスワードを指定することができます。 クラシック Windows アプリケーションで WiFiDirectLegacySettings を使用する方法の例は、次を参照してください。、 [WiFiDirectLegacyAPDemo\_v1.0.zip](https://go.microsoft.com/fwlink/?LinkId=617905) Microsoft ダウンロード センターからダウンロードします。
+WiFiDirectLegacySettings は、SSID とパスワードを指定することができます。 クラシック Windows アプリケーションで WiFiDirectLegacySettings を使用する方法の例は、、 [WiFiDirectLegacyAPDemo\_v1.0.zip](https://go.microsoft.com/fwlink/?LinkId=617905) Microsoft ダウンロード センターからダウンロードを参照してください。
 
 モバイル ホット スポットは、Windows 10 バージョン 1607 以降はサポートされています。 モバイル ホット スポットは、モバイル ブロード バンド ケーブルの機能の強化されたバージョンです。 モバイル ホット スポットと Wi-Fi Direct グループ所有者のレガシ機能を同時に使用できないことに注意してください。 さらに、モバイル ホット スポットは、Wi-Fi Direct のすべてのシナリオに優先します。
 

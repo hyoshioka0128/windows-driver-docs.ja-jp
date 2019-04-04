@@ -34,7 +34,7 @@ ms.locfileid: "56536244"
 
 [プログラミングに関する考慮事項](programming-considerations.md)
 
-使用して、 [ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)と[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128)関数は、推奨される方法の登録と WSK を登録解除アプリケーション。 ネットワーク モジュールのレジストラーは、互換性のために使用可能なままです。 詳細については、次を参照してください。 [Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)します。
+使用して、 [ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)と[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128)関数は、推奨される方法の登録と WSK を登録解除アプリケーション。 ネットワーク モジュールのレジストラーは、互換性のために使用可能なままです。 詳細については、[Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)を参照してください。
 
  
 

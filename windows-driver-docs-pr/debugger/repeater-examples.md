@@ -59,7 +59,7 @@ C:\Misc> dbengprx -c tcp:clicon=127.0.0.10,port=1025 -s tcp:port=1033,clicon=127
 E:\Debugging Tools for Windows> dbgsrv -t tcp:port=1025,clicon=127.0.0.20 
 ```
 
-リピータを使用してより複雑な例は、次を参照してください。 [2 つのファイアウォール](two-firewalls.md)します。
+リピータを使用してより複雑な例は、[2 つのファイアウォール](two-firewalls.md)を参照してください。
 
  
 

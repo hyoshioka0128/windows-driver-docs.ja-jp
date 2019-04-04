@@ -20,11 +20,11 @@ APN の XML スキーマでは、APN データベースの内容を指定しま�
 
  
 
-APN の XML スキーマの完了の定義については、次を参照してください。 [APN スキーマ定義](apn-schema-definition.md)します。
+APN の XML スキーマの完了の定義については、[APN スキーマ定義](apn-schema-definition.md)を参照してください。
 
-APN の XML スキーマで定義されている要素については、次を参照してください。 [APN 要素](apn-elements.md)します。
+APN の XML スキーマで定義されている要素については、[APN 要素](apn-elements.md)を参照してください。
 
-APN の XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [APN 例](apn-example.md)します。
+APN の XML スキーマで定義されている形式で XML データの例は、[APN 例](apn-example.md)を参照してください。
 
  
 

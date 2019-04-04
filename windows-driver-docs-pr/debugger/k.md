@@ -20,7 +20,7 @@ ms.locfileid: "56538964"
 
 サーバーのデバッグも参照してください。
 
-詳細については、次を参照してください。 [KD 接続サーバー (カーネル モード)](kd-connection-servers--kernel-mode-.md)します。
+詳細については、[KD 接続サーバー (カーネル モード)](kd-connection-servers--kernel-mode-.md)を参照してください。
 
 <span id="kernel"></span><span id="KERNEL"></span>**カーネル**  
 カーネルは、管理し、ハードウェア リソースへのアクセスを制御する Windows オペレーティング システムの部分です。 スレッドのスケジューリングしディスパッチ、割り込みと例外処理、およびマルチプロセッサ同期を実行します。

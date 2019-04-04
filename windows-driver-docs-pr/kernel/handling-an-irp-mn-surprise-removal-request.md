@@ -60,7 +60,7 @@ PnP マネージャーでは、ユーザー モード アプリケーション�
 
 2.  (割り込み、I/O ポート、メモリのレジスタおよび DMA チャネル) のデバイスのハードウェア リソースを解放します。
 
-3.  親のバス ドライバー、バス スロット電源、ドライバーではこれを行う場合。 呼び出す[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)電源マネージャーに通知します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
+3.  親のバス ドライバー、バス スロット電源、ドライバーではこれを行う場合。 呼び出す[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)電源マネージャーに通知します。 詳細については、[電源管理](implementing-power-management.md)を参照してください。
 
 4.  デバイスで新しい I/O 操作を防止します。
 

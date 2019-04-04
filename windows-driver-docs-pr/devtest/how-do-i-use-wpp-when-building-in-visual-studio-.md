@@ -14,7 +14,7 @@ ms.locfileid: "56548577"
 # <a name="how-do-i-use-wpp-when-building-in-visual-studio"></a>Visual Studio でビルドする場合に WPP を使用する方法はか。
 
 
-Windows Driver Kit (WDK) 8.0 をインストールする場合は、Microsoft Visual Studio 環境内から WPP 設定を構成することができます。 ドライバー プロジェクトのプロパティ ページを開き、プロジェクト、WPP トレースのプロパティを構成します。 詳細については、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
+Windows Driver Kit (WDK) 8.0 をインストールする場合は、Microsoft Visual Studio 環境内から WPP 設定を構成することができます。 ドライバー プロジェクトのプロパティ ページを開き、プロジェクト、WPP トレースのプロパティを構成します。 詳細については、[WPP プリプロセッサ](wpp-preprocessor.md)を参照してください。
 
  
 

@@ -14,7 +14,7 @@ ms.locfileid: "56549245"
 # <a name="using-the-maptransferex-routine"></a>MapTransferEx ルーチンを使用してください。
 
 
-[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチンは、DMA の以前に割り当てられたリソースのセットを初期化し、DMA の転送を開始します。 このルーチンは、バージョン 3 の DMA 操作インターフェイスで使用できます。 このインターフェイスのバージョン 3 は、Windows 8 以降ではサポートされています。 DMA 操作のインターフェイスの詳細については、次を参照してください。 [ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)します。
+[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチンは、DMA の以前に割り当てられたリソースのセットを初期化し、DMA の転送を開始します。 このルーチンは、バージョン 3 の DMA 操作インターフェイスで使用できます。 このインターフェイスのバージョン 3 は、Windows 8 以降ではサポートされています。 DMA 操作のインターフェイスの詳細については、[ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)を参照してください。
 
 ## <a name="comparison-of-maptransferex-to-maptransfer"></a>MapTransfer に MapTransferEx の比較
 
@@ -37,7 +37,7 @@ ms.locfileid: "56549245"
 <tbody>
 <tr class="odd">
 <td><em>Mdl</em></td>
-<td><p>1 つまたは複数の MDLs のチェーン内の最初の MDL へのポインター。 MDL チェーンの詳細については、次を参照してください。<a href="using-mdls.md" data-raw-source="[Using MDLs](using-mdls.md)">を使用して MDLs</a>します。</p></td>
+<td><p>1 つまたは複数の MDLs のチェーン内の最初の MDL へのポインター。 MDL チェーンの詳細については、<a href="using-mdls.md" data-raw-source="[Using MDLs](using-mdls.md)">を使用して MDLs</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><em>オフセット</em></td>

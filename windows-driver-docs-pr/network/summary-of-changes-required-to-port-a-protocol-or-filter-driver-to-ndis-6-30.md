@@ -34,7 +34,7 @@ NDIS 6.30 をサポートする NDIS 6.x プロトコルまたはフィルター
 -   [NDIS 6.30 で電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
 -   [PnP イベントの処理とプロトコル ドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-a-protocol-driver.md)
 
-NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
+NDIS 6.30 機能の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
 
 ## <a name="general-porting-requirements-for-filter-drivers"></a>[全般] のフィルター ドライバーの要件の移植
 
@@ -46,7 +46,7 @@ NDIS 6.30 機能の詳細については、次を参照してください。 [ND
 -   [**NET\_PNP\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff568751)
 -   [OID\_PNP\_設定\_電源](https://msdn.microsoft.com/library/windows/hardware/ff569780)
 
-NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
+NDIS 6.30 機能の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
 
  
 

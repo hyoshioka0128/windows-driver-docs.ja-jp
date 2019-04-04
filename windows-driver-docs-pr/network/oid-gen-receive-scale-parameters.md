@@ -20,7 +20,7 @@ ms.locfileid: "56553848"
 セットとして NDIS と関連付けたドライバー使用 OID\_GEN\_受信\_スケール\_NIC の現在の RSS パラメーターを設定するパラメーターの OID ミニポート ドライバーが受信、NDIS\_受信\_スケール\_RSS パラメーターを定義するパラメーターの構造体。
 
 > [!NOTE]
-> RSSv2 でこの OID は、スケーリング、特定のエンティティの現在の RSS パラメーターをクエリにのみ使用します。 RSSv2 をサポートするミニポート ドライバーでは、次を参照してください。 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)間接指定テーブル以外の RSS パラメーターを設定します。
+> RSSv2 でこの OID は、スケーリング、特定のエンティティの現在の RSS パラメーターをクエリにのみ使用します。 RSSv2 をサポートするミニポート ドライバーでは、[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)間接指定テーブル以外の RSS パラメーターを設定を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -39,7 +39,7 @@ TCP/IP ドライバーは IPv4 を構成し、1 つの OID と IPv6 の OID 要�
 
  
 
-**注**  間接指定テーブルと秘密キーは後に追加された、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567228)構造体のメンバー。 間接指定テーブルと秘密キーの詳細については、次を参照してください。 **NDIS\_受信\_スケール\_パラメーター**します。
+**注**  間接指定テーブルと秘密キーは後に追加された、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567228)構造体のメンバー。 間接指定テーブルと秘密キーの詳細については、**NDIS\_受信\_スケール\_パラメーター**を参照してください。
 
  
 

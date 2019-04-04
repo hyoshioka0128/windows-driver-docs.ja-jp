@@ -49,7 +49,7 @@ bcdedit  /set [{ID}] datatype value
 システムの初期化ログを有効にします。 このログは、%WINDIR% ディレクトリで Ntbtlog.txt ファイルに格納されます。 テキスト形式で読み込まれ、アンロードされたドライバーの一覧が含まれています。
 
 **bootmenupolicy** \[ **レガシ** | **標準** \]  
-システムは、使用するブート メニューの種類を定義します。 既定では ForWindows 10、Windows 8.1、Windows 8 および Windows RT**標準**します。 Windows Server 2012 R2、Windows Server 2012 では、既定値は**レガシ**します。 ときに**レガシ**が選択されている、高度なオプション メニュー (**F8**) は使用できます。 ときに**標準**が選択されている特定の状況でのみ、ブート メニューが表示されます: たとえば、起動している場合の修復のディスクまたはインストール メディアから複数のブート エントリを構成している場合、起動時に障害がある場合、、または高度なスタートアップを使用するコンピューターを手動で構成した場合。 ときに**標準**が選択されている、 **F8**キーは、ブート時に無視されます。 Windows 8 Pc すばやく起動キーを押してに十分な時間がないように**F8**します。 詳細については、次を参照してください。 [(セーフ モードなど)、Windows スタートアップ設定](https://go.microsoft.com/fwlink/p/?linkid=313921)します。
+システムは、使用するブート メニューの種類を定義します。 既定では ForWindows 10、Windows 8.1、Windows 8 および Windows RT**標準**します。 Windows Server 2012 R2、Windows Server 2012 では、既定値は**レガシ**します。 ときに**レガシ**が選択されている、高度なオプション メニュー (**F8**) は使用できます。 ときに**標準**が選択されている特定の状況でのみ、ブート メニューが表示されます: たとえば、起動している場合の修復のディスクまたはインストール メディアから複数のブート エントリを構成している場合、起動時に障害がある場合、、または高度なスタートアップを使用するコンピューターを手動で構成した場合。 ときに**標準**が選択されている、 **F8**キーは、ブート時に無視されます。 Windows 8 Pc すばやく起動キーを押してに十分な時間がないように**F8**します。 詳細については、[(セーフ モードなど)、Windows スタートアップ設定](https://go.microsoft.com/fwlink/p/?linkid=313921)を参照してください。
 
 > [!NOTE]
 > オプションは、Windows 8 および Windows Server 2012 以降から使用できます。 使用することも、 **onetimeadvancedoptions**高度なオプションを使用する (**F8**) メニュー (**レガシ**) 次のブート時に 1 回です。
@@ -100,14 +100,14 @@ bcdedit  /set [{ID}] datatype value
 
 **サイズ** *maxsize* 、1 つのプロセッサ グループ内の論理プロセッサの最大数を設定、 *maxsize*は 1 ~ 64 の範囲での 2 の累乗します。 既定では、プロセッサ グループは、64 の論理プロセッサの最大サイズをあります。 このブート構成をテスト目的で、コンピューターのプロセッサ グループの構成とサイズをオーバーライドする設定を使用することができます。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)を 64 論理プロセッサを超えるコンピューターのサポートを提供します。 このブート オプションは、Windows 7 および Windows Server 2008 R2 の 64 ビット バージョンおよびそれ以降のバージョンで使用可能です。 このブート オプションには、Windows 7 の 32 ビット バージョンへの影響はありません。
 
-使用して、**サイズ**場合、複数のグループを強制して、コンピューターに 64 個以下のアクティブな論理プロセッサ オプションを選択します。 詳細については、このオプションを使用して、次を参照してください。[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542298)します。
+使用して、**サイズ**場合、複数のグループを強制して、コンピューターに 64 個以下のアクティブな論理プロセッサ オプションを選択します。 詳細については、このオプションを使用して、[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542298)を参照してください。
 
 **groupaware** \[ **on** | **off** \]  
 強制的にドライバーを使用して、複数のプロセッサ グループ環境で複数のグループに注意してください。 このオプションを使用して、ドライバーおよびコンポーネントでのグループ間の非互換性を公開します。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)を 64 論理プロセッサを超えるコンピューターのサポートを提供します。 このブート オプションは、Windows 7 および Windows Server 2008 R2 の 64 ビット バージョンおよびそれ以降のバージョンで使用可能です。 このブート オプションには、Windows 7 の 32 ビット バージョンへの影響はありません。 使用することができます、 **groupaware**オプションと**サイズ**コンピューターで 64 個以下のアクティブな論理プロセッサが関数に複数のグループのドライバーの互換性をテストするオプション。
 
 **で groupaware**設定グループ 0 以外のプロセスが開始されているようになります。 これにより、ドライバーとコンポーネント間のグループ間の相互作用の機会が増えます。 オプションでは、従来の関数の動作も変更されます**KeSetTargetProcessorDpc**、 **KeSetSystemAffinityThreadEx**、および**KeRevertToUserAffinityThreadEx**、常にアクティブな論理プロセッサを含む最上位の番号付きグループで動作できるようにします。 呼び出すグループ対応、対応する従来これらの関数のいずれかを呼び出すドライバーを変更する必要があります (**KeSetTargetProcessorDpcEx**、 **KeSetSystemGroupAffinityThread**、および**KeRevertToUserGroupAffinityThread**)。
 
-詳細については、このオプションを使用して、次を参照してください。[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542298)します。
+詳細については、このオプションを使用して、[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542298)を参照してください。
 
 **hal** *ファイル*オペレーティング システム ローダーで代替 HAL ファイルを読み込むように指示します。 指定したファイルは %systemroot% になければなりません\\system32 ディレクトリ。
 
@@ -134,7 +134,7 @@ bcdedit /set hypervisorlaunchtype auto
 **Net**  
 デバッグするためのイーサネット ネットワーク接続を指定します。 このオプションを使用する場合、 **hypervisorhostip**オプションが設定されていないこともあります。
 
-**hypervisorhostip** *IP アドレス*(使用される場合にのみ、 **hypervisordebugtype**は**Net**)。ハイパーバイザーをデバッグするには、ネットワーク接続経由で、ホストのデバッガーの IPv4 アドレスを指定します。 HYPER-V でのデバッグ方法の詳細については、次を参照してください。 [、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)です。
+**hypervisorhostip** *IP アドレス*(使用される場合にのみ、 **hypervisordebugtype**は**Net**)。ハイパーバイザーをデバッグするには、ネットワーク接続経由で、ホストのデバッガーの IPv4 アドレスを指定します。 HYPER-V でのデバッグ方法の詳細については、[、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)を参照してください。
 
 > [!NOTE]
 > オプションは、Windows 8 および Windows Server 2012 以降を使用します。
@@ -158,7 +158,7 @@ bcdedit /set hypervisorlaunchtype auto
 > オプションは、Windows 8 および Windows Server 2012 以降を使用します。
 
 **hypervisorlaunchtype** \[ **オフ** | **自動** \]  
-ハイパーバイザーの起動オプションを制御します。 ターゲット コンピューターで HYPER-V をデバッグするデバッガーを設定する場合は、このオプションを設定**自動**ターゲット コンピューターにします。 詳細については、次を参照してください。 [、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)です。
+ハイパーバイザーの起動オプションを制御します。 ターゲット コンピューターで HYPER-V をデバッグするデバッガーを設定する場合は、このオプションを設定**自動**ターゲット コンピューターにします。 詳細については、[、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)を参照してください。
 
 **hypervisorloadoptions NOFORCESNOOP** \[ **はい** | **なし** \]  
 ハイパーバイザーがシステム IOMMUs snoop 制御を適用する必要があるかどうかを指定します。
@@ -216,7 +216,7 @@ Windows の 32 ビット エディションで 4 ギガバイト (GB) の使用�
 
 [プロセッサ グループ](https://docs.microsoft.com/windows/desktop/ProcThread/processor-groups)を 64 論理プロセッサを超えるコンピューターのサポートを提供します。 このオプションは、Windows 7 および Windows Server 2008 R2 の 64 ビット バージョンおよびそれ以降のバージョンで利用できます。 このブート オプションには、Windows 7 の 32 ビット バージョンへの影響はありません。
 
-詳細については、このオプションを使用して、次を参照してください。[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](boot-parameters-to-test-drivers-for-multiple-processor-group-support.md)します。
+詳細については、このオプションを使用して、[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](boot-parameters-to-test-drivers-for-multiple-processor-group-support.md)を参照してください。
 
 **nointegritychecks** \[ **で** | **オフ**\]整合性チェックを無効にします。 セキュア ブートが有効な場合は設定できません。 この値は、Windows 7 と Windows 8 によって無視されます。
 
@@ -227,7 +227,7 @@ Windows の 32 ビット エディションで 4 ギガバイト (GB) の使用�
 **novga** \[ **で** | **オフ** \] OS の VGA モードの使用を無効にします。 オプションは、Windows 8 および Windows Server 2012 以降を使用します。
 
 **nx** \[**Optin |OptOut | AlwaysOn |AlwaysOff**\]  
-有効にし、無効化、データ実行防止 (DEP)、一連のハードウェアとソフトウェアのテクノロジを有害なコードが保護されたメモリの場所で実行されていることを防ぐために設計されていますを構成します。 DEP 設定については、次を参照してください。[データ実行防止](https://docs.microsoft.com/windows/desktop/Memory/data-execution-prevention)します。
+有効にし、無効化、データ実行防止 (DEP)、一連のハードウェアとソフトウェアのテクノロジを有害なコードが保護されたメモリの場所で実行されていることを防ぐために設計されていますを構成します。 DEP 設定については、[データ実行防止](https://docs.microsoft.com/windows/desktop/Memory/data-execution-prevention)を参照してください。
 
 **Optin**  
 DEP は、Windows カーネルやドライバーなど、オペレーティング システムのコンポーネントに対してのみ使用できます。 管理者は、Application Compatibility Toolkit (ACT) を使用して、選択した実行可能ファイルで DEP を有効にできます。
@@ -267,12 +267,12 @@ bcdedit /set {current} onetimeadvancedoptions on
 
 **Pae**パラメーターは、x86 ベースおよび x64 ベース プロセッサを搭載したコンピューターで実行される Windows の 32 ビット バージョンのブート エントリでのみ有効です。 (Windows 8) より前の Windows の 32 ビット バージョンでは、PAE は既定で無効になります。 ただし、Windows に自動的にコンピューターが構成されている場合、PAE を有効にホット アド メモリ デバイス 4 GB の領域を超えるメモリ範囲で静的リソース アフィニティ テーブル (SRAT) で定義されています。 *ホット アド メモリ*メモリ デバイスの再起動またはコンピューターをオフにすることがなく追加することができますをサポートします。 ここでは、システムの起動時に、PAE を有効にする必要があります、ため、それを有効に自動的にように、システムは、再起動の間で追加される拡張のメモリに迅速に対応できます。 ホット アド メモリが、Datacenter Edition、Windows Server 2008 でのみサポートされます。Windows Server 2008 for Itanium-based Systems;上のすべての以降のバージョンの Windows Server datacenter および enterprise エディションとします。 さらに、Windows Server 2008 より前の Windows のバージョンは、ホット アド メモリが、ACPI BIOS、x86 コンピューターでのみサポートされているプロセッサ、および特殊なハードウェア。 Windows Server 2008 と Windows Server の以降のバージョンでは、すべてのプロセッサ アーキテクチャのことができます。
 
-ハードウェアが有効なデータ実行防止 (DEP) をサポートし、DEP をサポートする Windows オペレーティング システムの 32 ビット バージョンを実行しているコンピューターで PAE は自動的にで有効に DEP が有効にすると、動作する Windows のすべての 32 ビット バージョンDEP. を無効にすると、Windows Server 2003 SP1、PAE を除く、システムが無効になっています DEP を無効にするには、PAE を有効にする、する必要があります有効にする PAE、明示的を使用して **/set nx AlwaysOff**と **/set pae ForceEnable**します。 DEP の詳細については、次を参照してください。 [DEP の構成と PAE のブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542275)します。
+ハードウェアが有効なデータ実行防止 (DEP) をサポートし、DEP をサポートする Windows オペレーティング システムの 32 ビット バージョンを実行しているコンピューターで PAE は自動的にで有効に DEP が有効にすると、動作する Windows のすべての 32 ビット バージョンDEP. を無効にすると、Windows Server 2003 SP1、PAE を除く、システムが無効になっています DEP を無効にするには、PAE を有効にする、する必要があります有効にする PAE、明示的を使用して **/set nx AlwaysOff**と **/set pae ForceEnable**します。 DEP の詳細については、[DEP の構成と PAE のブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542275)を参照してください。
 
 使用しての詳細については、 **pae**パラメーターと PAE の構成に影響する他のパラメーターを参照してください。 [DEP の構成と PAE のブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542275)します。
 
 **pciexpress** \[ **default** | **forcedisable**\]  
-有効または、PCI Express 機能を無効にします。 コンピューターのプラットフォームが、PCI Express 機能と、ACPI をサポートしているか\_OSC メソッドは、Windows により、高度な機能で (これは、既定値)、PCI Express のネイティブ コントロール機能という、オペレーティング システムへの機能の制御を許可します。 使用して、 **forcedisable**高度な PCI Express 機能を変更し、PCI Express の従来の動作を使用するオプション。 詳細については、次を参照してください。[を有効にする PCI Express 内のネイティブ コントロール Windows](https://msdn.microsoft.com/library/windows/hardware/gg487424.aspx)します。
+有効または、PCI Express 機能を無効にします。 コンピューターのプラットフォームが、PCI Express 機能と、ACPI をサポートしているか\_OSC メソッドは、Windows により、高度な機能で (これは、既定値)、PCI Express のネイティブ コントロール機能という、オペレーティング システムへの機能の制御を許可します。 使用して、 **forcedisable**高度な PCI Express 機能を変更し、PCI Express の従来の動作を使用するオプション。 詳細については、[を有効にする PCI Express 内のネイティブ コントロール Windows](https://msdn.microsoft.com/library/windows/hardware/gg487424.aspx)を参照してください。
 
 **quietboot** \[ **on** | **off** \]  
 Windows 起動画面の表示とアニメーションの代わりに高解像度ビットマップの表示を制御します。 Windows Vista では、以前のオペレーティング システムで、**選択する**と同様の機能を提供します。
@@ -292,7 +292,7 @@ bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} removememory 256
 ブート プロセス中に、読み込み時に、ドライバーの名前の表示を制御します。 使用**で sos**名を表示します。 使用**オフ sos**を表示しないようにします。
 
 **testsigning** \[ **on** | **off** \]  
-Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、または Windows Vista があらゆる種類のテスト署名されたカーネル モード コードを読み込むかどうかを制御します。 64 ビット バージョンの Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008 では、どの意味テスト署名されたカーネル モード ドライバーに、このオプションはない、既定で設定して、Windows Vista は、既定では読み込まれません。 BCDEdit のコマンドを実行した後は、変更を反映できるようにコンピューターを再起動します。 詳細については、次を参照してください。[テスト署名の概要](https://msdn.microsoft.com/library/windows/hardware/ff547660)します。
+Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、または Windows Vista があらゆる種類のテスト署名されたカーネル モード コードを読み込むかどうかを制御します。 64 ビット バージョンの Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008 では、どの意味テスト署名されたカーネル モード ドライバーに、このオプションはない、既定で設定して、Windows Vista は、既定では読み込まれません。 BCDEdit のコマンドを実行した後は、変更を反映できるようにコンピューターを再起動します。 詳細については、[テスト署名の概要](https://msdn.microsoft.com/library/windows/hardware/ff547660)を参照してください。
 
 > [!NOTE]
 > BCDEdit のオプションを設定する前に、無効にするか、またはコンピューターの BitLocker とセキュア ブートを中断する必要があります。
@@ -357,7 +357,7 @@ BCD の特定の要素とブート オプションの詳細については、コ
 bcdedit /deletevalue groupsize
 ```
 
-ブート オプションの変更には、再起動を有効にする必要があります。 一般的に使用される BCDEdit のコマンドについては、次を参照してください。[ブート構成データ エディターに関してよく寄せられる質問](https://go.microsoft.com/fwlink/p/?linkid=155086)します。
+ブート オプションの変更には、再起動を有効にする必要があります。 一般的に使用される BCDEdit のコマンドについては、[ブート構成データ エディターに関してよく寄せられる質問](https://go.microsoft.com/fwlink/p/?linkid=155086)を参照してください。
 
 ## <a name="requirements"></a>要件
 

@@ -23,7 +23,7 @@ ms.locfileid: "56573771"
 # <a name="overview-of-the-bootini-file"></a>Boot.ini ファイルの概要
 
 > [!IMPORTANT] 
-> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、次を参照してください。 [Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)します。
+> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
 
 Boot.ini ファイルは、BIOS ファームウェアを Windows Vista より前の NT ベースのオペレーティング システムを実行しているコンピューターのブート オプションを含むテキスト ファイルです。 通常は c: のシステム パーティションのルートにある\\Boot.ini します。 次の例では、一般的な Boot.ini ファイルの内容を示します。
 
@@ -74,6 +74,6 @@ Boot.ini では、2 つの主要なセクションがあります。
 
 -   *ブート エントリのパラメーター*とも呼ばれます*ブート パラメーター*または*ロード オプション*有効化、無効化、およびオペレーティング システムの機能を構成します。 ようなコマンド ライン パラメーター、フォワード スラッシュ (/) で始まるなどをブート パラメーター [ **/debug**](https://msdn.microsoft.com/library/windows/hardware/ff556253)します。 各ブート エントリには、0 個以上のブート パラメーターがあります。
 
-    ドライバーのテストとデバッグに関連するブート パラメーターの一覧は、次を参照してください。 [Boot.ini のブート パラメーター参照](https://msdn.microsoft.com/library/windows/hardware/ff542248)します。
+    ドライバーのテストとデバッグに関連するブート パラメーターの一覧は、[Boot.ini のブート パラメーター参照](https://msdn.microsoft.com/library/windows/hardware/ff542248)を参照してください。
 
 それぞれ異なる一連のブート パラメーターを持つ、同じオペレーティング システムの複数のブート エントリがあることができます。 Windows 標準のブートを作成するエントリ、オペレーティング システムをインストールして、その他を作成するときに、Boot.ini を編集してオペレーティング システムのエントリをカスタマイズします。

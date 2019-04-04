@@ -25,7 +25,7 @@ ms.locfileid: "56570513"
 
 プログラム id を**ISNMP**オブジェクトが OlePrn.OleSNMP します。
 
-ASP Web ページからプリンターへのアクセス方法の詳細については、次を参照してください。[インターネット印刷](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)します。
+ASP Web ページからプリンターへのアクセス方法の詳細については、[インターネット印刷](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)を参照してください。
 
 内のメソッド、 **ISNMP**インターフェイスは次のセクションで説明します。
 

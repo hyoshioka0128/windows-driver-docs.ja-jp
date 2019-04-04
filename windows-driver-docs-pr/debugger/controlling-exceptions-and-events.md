@@ -26,7 +26,7 @@ ms.locfileid: "57464354"
 
 キャッチして、さまざまな方法でユーザー モードとカーネル モードのアプリケーションで例外を処理することができます。 アクティブなデバッガー、事後分析のデバッガー、または内部のエラー処理ルーチンは、例外を処理するすべての一般的な方法です。
 
-これらのさまざまな例外ハンドラーの優先順位の詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
+これらのさまざまな例外ハンドラーの優先順位の詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
 
 Microsoft Windows オペレーティング システムが例外を生成したアプリケーション例外を処理するために、デバッガーで許可する*分割*デバッガー。 これは、アプリケーションが停止し、デバッガーは、アクティブのようになります。 デバッガーは、何らかの方法で例外を処理し、または状況を分析します。 デバッガーのプロセスを終了または、そのことができますし、実行を再開します。
 
@@ -481,13 +481,13 @@ WinDbg のグラフィカル インターフェイスを使用して状態の処
 <td align="left"><p>最初のブレークポイント</p>
 <p>(このイベントは対象のコンピュータを再起動した後と、デバッグ セッションの開始時に発生します。)</p></td>
 <td align="left"><p><strong>ユーザー モード。</strong>中断します。 この状態を"Ignore"に変更するにを使用して、 <strong>-g</strong><a href="command-line-options.md" data-raw-source="[command-line option](command-line-options.md)">コマンド ライン オプション</a>します。</p>
-<p><strong>カーネル モード。</strong>無視してください。 この状態は、さまざまな方法で"Enabled"に変更できます。 この状態を変更する方法の詳細については、次を参照してください。<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>します。</p></td>
+<p><strong>カーネル モード。</strong>無視してください。 この状態は、さまざまな方法で"Enabled"に変更できます。 この状態を変更する方法の詳細については、<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>iml</strong></p></td>
 <td align="left"><p>初期のモジュールの読み込み</p>
 <p>(カーネル モードのみ)</p></td>
-<td align="left"><p>無視してください。 この状態は、さまざまな方法で"Break"に変更できます。 この状態を変更する方法の詳細については、次を参照してください。<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>します。</p></td>
+<td align="left"><p>無視してください。 この状態は、さまざまな方法で"Break"に変更できます。 この状態を変更する方法の詳細については、<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

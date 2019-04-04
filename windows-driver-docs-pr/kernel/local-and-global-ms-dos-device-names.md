@@ -64,7 +64,7 @@ if (!NT_SUCCESS(status)) {
 
 ドライバーは、ローカルの MS-DOS デバイス名を作成できます **\\\dosdevices\z** IOCTL への応答にシンボリック リンクを作成してディレクトリ。 ときに特定のローカル スレッド**\dosdevices\z**コンテキストから送信される、IOCTL、ドライバーの*DispatchDeviceControl*から現在のスレッドのコンテキスト内で呼び出されます。
 
-標準のドライバーのルーチンが実行されるコンテキストに関する詳細については、次を参照してください。[ディスパッチ ルーチンは、Irql](dispatch-routines-and-irqls.md)します。
+標準のドライバーのルーチンが実行されるコンテキストに関する詳細については、[ディスパッチ ルーチンは、Irql](dispatch-routines-and-irqls.md)を参照してください。
 
 ローカル システムを区別 **\\\dosdevices\z**ディレクトリとして次のとおりです。
 

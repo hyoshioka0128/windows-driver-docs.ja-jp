@@ -58,7 +58,7 @@ DEVPKEY_Device_PowerRelations デバイス プロパティを表します、 [**
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_PowerRelations の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows でのデバイスのリレーションのプロパティを取得する方法については、次を参照してください。[デバイス関係の取得](https://msdn.microsoft.com/library/windows/hardware/ff550630)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows でのデバイスのリレーションのプロパティを取得する方法については、[デバイス関係の取得](https://msdn.microsoft.com/library/windows/hardware/ff550630)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

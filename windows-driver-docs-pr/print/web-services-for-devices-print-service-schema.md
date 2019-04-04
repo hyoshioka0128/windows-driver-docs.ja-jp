@@ -20,7 +20,7 @@ Web サービス テクノロジには、記述すると、情報を共有する
 
 印刷およびスキャン、デバイスの製造元を接続する、インストール、および Windows のデバイスを使用して強化されたカスタマー エクスペリエンスを活用する 4 つの Web サービス仕様が存在します。
 
-4 つの Web サービスの仕様の詳細については、次を参照してください。[を実装する Web Services on Devices 印刷およびスキャン用](https://msdn.microsoft.com/library/windows/hardware/gg463146.aspx)します。
+4 つの Web サービスの仕様の詳細については、[を実装する Web Services on Devices 印刷およびスキャン用](https://msdn.microsoft.com/library/windows/hardware/gg463146.aspx)を参照してください。
 
 WSD 印刷サービス スキーマでは、プリンター、ジョブ、およびドキュメントの要素の説明を提供します。 プリンターの操作グループ (PWG) Semantic Model の WSD サブセットに準拠しています。
 

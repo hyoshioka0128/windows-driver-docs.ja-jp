@@ -56,7 +56,7 @@ GUID_DEVICE_THERMAL_ZONE[デバイス インターフェイス クラス](https:
 
 システム提供[ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)オペレーティング システムとデバイスの温度のゾーンの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、次を参照してください。 [ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)します。
+WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、[ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

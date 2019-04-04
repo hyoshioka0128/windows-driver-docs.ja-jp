@@ -84,12 +84,12 @@ Microsoft MS-DOS のコマンドを実行するアプリケーションのコマ
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-コマンド シェルにアクセスするその他の方法では、次を参照してください。[シェル コマンドを使用して](using-shell-commands.md)します。
+コマンド シェルにアクセスするその他の方法では、[シェル コマンドを使用して](using-shell-commands.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-**.Shell**カーネル デバッガーに、ユーザー モード デバッガーの出力がリダイレクトされたときに、コマンドがサポートされていません。 カーネル デバッガー (KD 経由では NTSD と呼ばれることもあります) への出力のリダイレクトの詳細については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。
+**.Shell**カーネル デバッガーに、ユーザー モード デバッガーの出力がリダイレクトされたときに、コマンドがサポートされていません。 カーネル デバッガー (KD 経由では NTSD と呼ばれることもあります) への出力のリダイレクトの詳細については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。
 
 全体の行に、 **.shell** (セミコロンが含まれている) 場合でもにそのコマンドが Windows のコマンドとして解釈されます。 この行は、引用符で囲まれていない必要があります。 間にスペースがある **.shell**と*ShellCommand* (追加の先頭のスペースは無視されます)。
 

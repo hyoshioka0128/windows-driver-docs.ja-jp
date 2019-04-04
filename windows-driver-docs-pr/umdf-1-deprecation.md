@@ -12,4 +12,4 @@ ms.locfileid: "56539991"
 > [!WARNING]
 > UMDF 2 UMDF の最新バージョンであり UMDF 1 よりも優先されます。  すべての新しい UMDF ドライバーは、UMDF 2 を使用して作成する必要があります。  UMDF 1 の新機能を追加しないと、UMDF 1 の新しいバージョンの Windows 10 での制限付きサポートがあります。  ユニバーサル Windows ドライバーでは、UMDF 2 を使用する必要があります。
 >
-> 詳細については、次を参照してください。 [UMDF 入門](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)します。
+> 詳細については、[UMDF 入門](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)を参照してください。

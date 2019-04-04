@@ -46,7 +46,7 @@ ms.locfileid: "56570774"
 
 -   リソース DLL で暗号化されたハーフトーン パターンを配置するかどうかは、指定することも必要があります、 **IPrintOemUni::HalftonePattern**メソッド パターンをデコードし、さらに GDI に渡され、Unidrv に戻します。
 
-ハーフトーンの詳細については、次を参照してください。[カスタマイズ ハーフトーン](customized-halftoning.md)します。
+ハーフトーンの詳細については、[カスタマイズ ハーフトーン](customized-halftoning.md)を参照してください。
 
  
 

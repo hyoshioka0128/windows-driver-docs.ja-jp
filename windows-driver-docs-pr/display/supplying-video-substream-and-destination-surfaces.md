@@ -24,7 +24,7 @@ ms.locfileid: "56548737"
 
 **このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-VMR Windows Server 2003 SP1 以降および Windows XP SP2 と後でのみ提供ビデオ サブストリーム DXVA をサポートするサブストリーム画面形式を使用します。 つまり、VMR でのみ、次が提供*FOURCC*サブストリーム画面形式のアルファ ブレンドのコード。AI44、IA44 または AYUV します。 詳細については、次を参照してください。 [、AYUV アルファ ブレンドの画面を読み込み](loading-an-ayuv-alpha-blending-surface.md)します。 複数のビデオ サブストリームが指定したときに各サブストリームが別の形式に注意してください。 それぞれの面の完全な 16 色のパレットがで指定した指定されたビデオ サブストリームの形式は、パレットのサーフェスの形式であるため、**パレット**のそれぞれに所属[ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)で渡される配列内の構造、 *pDDSrcSurfaces*パラメーターと*DeinterlaceBltEx*が呼び出されます。 そのため、ドライバーでは、各ビデオ サブストリーム サーフェスのパレットの情報を保持する必要はありません。
+VMR Windows Server 2003 SP1 以降および Windows XP SP2 と後でのみ提供ビデオ サブストリーム DXVA をサポートするサブストリーム画面形式を使用します。 つまり、VMR でのみ、次が提供*FOURCC*サブストリーム画面形式のアルファ ブレンドのコード。AI44、IA44 または AYUV します。 詳細については、[、AYUV アルファ ブレンドの画面を読み込み](loading-an-ayuv-alpha-blending-surface.md)を参照してください。 複数のビデオ サブストリームが指定したときに各サブストリームが別の形式に注意してください。 それぞれの面の完全な 16 色のパレットがで指定した指定されたビデオ サブストリームの形式は、パレットのサーフェスの形式であるため、**パレット**のそれぞれに所属[ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)で渡される配列内の構造、 *pDDSrcSurfaces*パラメーターと*DeinterlaceBltEx*が呼び出されます。 そのため、ドライバーでは、各ビデオ サブストリーム サーフェスのパレットの情報を保持する必要はありません。
 
 VMR ものみでドライバーが指定した書式の宛先表面を提供、 **d3dOutputFormat**のメンバー、 [ **DXVA\_DeinterlaceCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff563939)構造体。 ドライバーは、DXVA にポインターを返します\_DeinterlaceCaps ときにその[ **DeinterlaceQueryModeCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff563946)関数が呼び出されます。
 

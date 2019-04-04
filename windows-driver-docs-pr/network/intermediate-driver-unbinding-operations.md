@@ -27,11 +27,11 @@ ms.locfileid: "56548880"
 
 終了バインドは、中間のドライバーによってエクスポートされたデバイスにマップされている場合、そのデバイスは、呼び出すことによって初期化された場合[ **NdisIMInitializeDeviceInstanceEx**](https://msdn.microsoft.com/library/windows/hardware/ff562727)、中間ドライバーを呼び出すことができます[ **NdisIMDeInitializeDeviceInstance** ](https://msdn.microsoft.com/library/windows/hardware/ff562721)デバイスを閉じます。 仮想ミニポートのドライバーの中間になりますまたはより高度なドライバーによって行われた要求の送信に使用できる不要になったことになります。
 
-場合は、NDIS 中間ドライバの呼び出し、 **NdisIMDeInitializeDeviceInstance**関数では、NDIS 呼び出し、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)の影響を受ける仮想ミニポート関数. 仮想ミニポートの停止操作を処理する方法の詳細については、次を参照してください。[仮想ミニポートを停止する](halting-a-virtual-miniport.md)します。
+場合は、NDIS 中間ドライバの呼び出し、 **NdisIMDeInitializeDeviceInstance**関数では、NDIS 呼び出し、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)の影響を受ける仮想ミニポート関数. 仮想ミニポートの停止操作を処理する方法の詳細については、[仮想ミニポートを停止する](halting-a-virtual-miniport.md)を参照してください。
 
 中間のドライバーを呼び出してから**NdisCloseAdapterEx**、そのバインドを適切なエラー状態のすべての送信要求が失敗する必要があります。
 
-中間ドライバーのバインド解除操作の詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
+中間ドライバーのバインド解除操作の詳細については、[アダプターからバインド解除](unbinding-from-an-adapter.md)を参照してください。
 
  
 

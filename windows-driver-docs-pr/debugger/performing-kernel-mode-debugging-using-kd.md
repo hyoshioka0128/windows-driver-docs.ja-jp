@@ -32,7 +32,7 @@ kd \[-y *SymbolPath* \] -kl
 
 kd \[-y *SymbolPath* \] -k
 
-詳細については、次を参照してください。 [ **KD コマンド ライン オプション**](kd-command-line-options.md)します。
+詳細については、[ **KD コマンド ライン オプション**](kd-command-line-options.md)を参照してください。
 
 ### <a name="span-idenvironmentvariablesspanspan-idenvironmentvariablesspanspan-idenvironmentvariablesspanenvironment-variables"></a><span id="Environment_Variables"></span><span id="environment_variables"></span><span id="ENVIRONMENT_VARIABLES"></span>環境変数
 
@@ -52,18 +52,18 @@ kd \[-y *SymbolPath* \] -k
 
 設定\_NT\_デバッグ\_1394\_シンボリック リンク = *1394Protocol*
 
-詳細については、次を参照してください。[カーネル モードの環境変数](kernel-mode-environment-variables.md)します。
+詳細については、[カーネル モードの環境変数](kernel-mode-environment-variables.md)を参照してください。
 
 ### <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
 
 <span id="_______SymbolPath______"></span><span id="_______symbolpath______"></span><span id="_______SYMBOLPATH______"></span> *SymbolPath*   
-シンボル ファイルが配置されているディレクトリの一覧。 ディレクトリの一覧では、セミコロンで区切られます。 詳細については、次を参照してください。[シンボル パス](symbol-path.md)します。
+シンボル ファイルが配置されているディレクトリの一覧。 ディレクトリの一覧では、セミコロンで区切られます。 詳細については、[シンボル パス](symbol-path.md)を参照してください。
 
 <span id="_______PortNumber______"></span><span id="_______portnumber______"></span><span id="_______PORTNUMBER______"></span> *PortNumber*   
-ネットワークのデバッグに使用するポート番号。 49152 ~ 65535 から任意の数を選択できます。 詳細については、次を参照してください。[設定を、ネットワーク接続を手動で](setting-up-a-network-debugging-connection.md)します。
+ネットワークのデバッグに使用するポート番号。 49152 ~ 65535 から任意の数を選択できます。 詳細については、[設定を、ネットワーク接続を手動で](setting-up-a-network-debugging-connection.md)を参照してください。
 
 <span id="_______Key______"></span><span id="_______key______"></span><span id="_______KEY______"></span> *キー*   
-ネットワークのデバッグに使用する暗号化キー。 対象のコンピュータを構成するときに、bcdedit によって提供される、自動的に生成されたキーを使用することをお勧めします。 詳細については、次を参照してください。[設定を、ネットワーク接続を手動で](setting-up-a-network-debugging-connection.md)します。
+ネットワークのデバッグに使用する暗号化キー。 対象のコンピュータを構成するときに、bcdedit によって提供される、自動的に生成されたキーを使用することをお勧めします。 詳細については、[設定を、ネットワーク接続を手動で](setting-up-a-network-debugging-connection.md)を参照してください。
 
 
 <span id="_______TargetIp______"></span><span id="_______targetip______"></span><span id="_______TARGETIP______"></span> *TargetIPAddress*   
@@ -73,29 +73,29 @@ kd \[-y *SymbolPath* \] -k
 
 ターゲットを指定する必要はありません、ターゲットがホストの IP アドレスで構成されているし、デバッガーが構成されているホストの IP アドレスを持つコンピューターで実行される、IP アドレス パラメーターを = です。 ホストの IP アドレスを持つターゲットを構成する場合にプランにパケットを送信ホスト 3 秒です。  プラン パケットがないターゲットのときに、ホストへの接続にデバッガーを許可する = IP アドレスを指定します。
 
-ターゲットのホストの IP アドレスを構成する方法の詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)と[KDNET ネットワーク カーネル デバッグ手作業でセットアップ](setting-up-a-network-debugging-connection.md)します。
+ターゲットのホストの IP アドレスを構成する方法の詳細については、[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)と[KDNET ネットワーク カーネル デバッグ手作業でセットアップ](setting-up-a-network-debugging-connection.md)を参照してください。
 
 
 <span id="_______TargetName______"></span><span id="_______targetname______"></span><span id="_______TARGETNAME______"></span> *TargetMachineName*   
 対象の PC のコンピューター名。 コンピューター名を使用するには、ネットワーク上の DNS システムにコンピューター名は対象のコンピューターの IP アドレスに関連付けられていることが必要です。
  
 <span id="_______1394Channel______"></span><span id="_______1394channel______"></span><span id="_______1394CHANNEL______"></span> *1394Channel*   
-1394 チャネルの数。 有効なチャネル番号は、0 ~ 62、包括的な整数です。 *1394Channel*対象のコンピューターで使用される数に一致する必要がありますが、アダプターで選択した物理 1394 ポートに依存しません。 詳細については、次を参照してください。[を 1394 接続を手動で設定](setting-up-a-1394-cable-connection.md)します。
+1394 チャネルの数。 有効なチャネル番号は、0 ~ 62、包括的な整数です。 *1394Channel*対象のコンピューターで使用される数に一致する必要がありますが、アダプターで選択した物理 1394 ポートに依存しません。 詳細については、[を 1394 接続を手動で設定](setting-up-a-1394-cable-connection.md)を参照してください。
 
 <span id="_______1394Protocol______"></span><span id="_______1394protocol______"></span><span id="_______1394PROTOCOL______"></span> *1394Protocol*   
 1394 カーネルの接続に使用する接続プロトコルです。 これは、ほぼ常に省略できます、デバッガーは自動的に適切なプロトコルを選択するためです。 これを手動で設定して、ターゲット コンピューターが Windows XP を実行している場合*1394Protocol* 「チャネル」を等しく設定する必要があります。 ターゲット コンピューターで Windows Server 2003 以降を実行している場合*1394Protocol* 「インスタンス」と等しく設定する必要があります。 省略した場合は、デバッガーが既定の現在のターゲット コンピューターの適切なプロトコルになります。 これは、コマンドラインまたは WinDbg のグラフィカル インターフェイスではなく、環境変数を介してのみ指定できます。
 
 <span id="_______USBString______"></span><span id="_______usbstring______"></span><span id="_______USBSTRING______"></span> *USBString*   
-USB 接続文字列。 これは、/targetname ブート オプションを使用して指定した文字列と一致する必要があります。 詳細については、次を参照してください。[設定を、USB 3.0 接続を手動で](setting-up-a-usb-3-0-debug-cable-connection.md)と[設定を、USB 2.0 接続を手動で](setting-up-a-usb-2-0-debug-cable-connection.md)します。
+USB 接続文字列。 これは、/targetname ブート オプションを使用して指定した文字列と一致する必要があります。 詳細については、[設定を、USB 3.0 接続を手動で](setting-up-a-usb-3-0-debug-cable-connection.md)と[設定を、USB 2.0 接続を手動で](setting-up-a-usb-2-0-debug-cable-connection.md)を参照してください。
 
 <span id="_______ComPort______"></span><span id="_______comport______"></span><span id="_______COMPORT______"></span> *ComPort*   
-COM ポートの名前。 "Com2"の形式で、または形式で指定できます"\\\\.\\com2"、数値を単純にすることはできませんが、します。 詳細については、次を参照してください。[設定を、シリアル接続を手動で](setting-up-a-null-modem-cable-connection.md)します。
+COM ポートの名前。 "Com2"の形式で、または形式で指定できます"\\\\.\\com2"、数値を単純にすることはできませんが、します。 詳細については、[設定を、シリアル接続を手動で](setting-up-a-null-modem-cable-connection.md)を参照してください。
 
 <span id="_______BaudRate______"></span><span id="_______baudrate______"></span><span id="_______BAUDRATE______"></span> *BaudRate*   
 ボー レート。 これは、9600、19200、38400、57600、または 115200 です。
 
 <span id="_______VMHost______"></span><span id="_______vmhost______"></span><span id="_______VMHOST______"></span> *VMHost*   
-仮想マシンをデバッグするときに*VMHost*仮想マシンが実行されている物理コンピューターの名前を指定します。 仮想マシンがカーネル デバッガー自体と同じコンピューターで実行している場合は、1 つのピリオド (.) を使用して、 *VMHost*します。 詳細については、次を参照してください。[接続を設定、仮想マシンに](attaching-to-a-virtual-machine--kernel-mode-.md)します。
+仮想マシンをデバッグするときに*VMHost*仮想マシンが実行されている物理コンピューターの名前を指定します。 仮想マシンがカーネル デバッガー自体と同じコンピューターで実行している場合は、1 つのピリオド (.) を使用して、 *VMHost*します。 詳細については、[接続を設定、仮想マシンに](attaching-to-a-virtual-machine--kernel-mode-.md)を参照してください。
 
 <span id="_______PipeName______"></span><span id="_______pipename______"></span><span id="_______PIPENAME______"></span> *PipeName*   
 デバッグ接続用の仮想マシンによって作成されたパイプの名前。
@@ -107,7 +107,7 @@ COM ポートの名前。 "Com2"の形式で、または形式で指定できま
 原因のデバッガーが自動的に切断し、読み取り/書き込みエラーが発生した場合は、パイプを再接続します。 さらに、デバッガーが開始されると、名前付きパイプが検出されなかった場合、再接続パラメーターと、表示するには、この名前のパイプを待機します。 このパラメーターは、特定の種類の仮想マシンをデバッグするときにのみ必要です。
 
 <span id="_______-kl"></span><span id="_______-KL"></span> -kl  
-ローカル カーネル モードのデバッグを実行するデバッガーをによりします。 詳細については、次を参照してください。[ローカル カーネル モード デバッグ](performing-local-kernel-debugging.md)します。
+ローカル カーネル モードのデバッグを実行するデバッガーをによりします。 詳細については、[ローカル カーネル モード デバッグ](performing-local-kernel-debugging.md)を参照してください。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
 

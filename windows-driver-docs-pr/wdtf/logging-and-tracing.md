@@ -57,7 +57,7 @@ WDTF_TARGETS    : INFO  :          Target: Generic volume
 
 呼び出すことによって、ログ ファイルにカスタム メッセージを書き込むオプションがある、 [ **IWDTFLog2::OutputInfo** ](https://msdn.microsoft.com/library/windows/hardware/hh451016)または[ **IWDTFLog2::OutputError** ](https://msdn.microsoft.com/library/windows/hardware/hh451014)メソッド。
 
-使用可能なオブジェクトの一覧は、次を参照してください。 [WDTF オブジェクト名のタグ](wdtf-object-name-tags.md)します。
+使用可能なオブジェクトの一覧は、[WDTF オブジェクト名のタグ](wdtf-object-name-tags.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [WDTF オブジェクト名のタグ](wdtf-object-name-tags.md)  

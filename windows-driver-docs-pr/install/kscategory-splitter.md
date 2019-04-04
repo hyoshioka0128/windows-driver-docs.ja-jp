@@ -58,7 +58,7 @@ KS オーディオ アダプター デバイス用のドライバーでは、オ
 
 KSCATEGORY_SPLITTER 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)機能別に分類します。
 
-分割ウィンドウについては、次を参照してください。 [AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)します。
+分割ウィンドウについては、[AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

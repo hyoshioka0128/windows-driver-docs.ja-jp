@@ -32,7 +32,7 @@ GpioClx には、DIRQL で発生した割り込み関連および O 関連のコ
 
 呼び出し中に、 [*クライアント\_QueryControllerBasicInformation* ](https://msdn.microsoft.com/library/windows/hardware/hh439399)コールバック ルーチンでは、GPIO コント ローラーのドライバーに報告 GpioClx コント ローラーのレジスタのメモリ マッピングがあるかどうか。 詳細については、の説明を参照して、 **MemoryMappedController**フラグ[**クライアント\_コント ローラー\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh439358).
 
-詳細については、割り込みのロックとロックの待機は、次を参照してください。[を使用して Framework ロック](https://msdn.microsoft.com/library/windows/hardware/ff545446)します。
+詳細については、割り込みのロックとロックの待機は、[を使用して Framework ロック](https://msdn.microsoft.com/library/windows/hardware/ff545446)を参照してください。
 
 次の表より詳細な情報については、どのコールバックは、関数はパッシブでの代わりに DIRQL で呼び出されます\_のメモリ マッピングが、レジスタの場合はレベルします。 次の表は、ノートでは、パッシブ レベルのコールバック関数が割り込みのロックを使用する場合について説明します。
 
@@ -240,7 +240,7 @@ I/O を実行し、操作を中断する GPIO コント ローラーを設定す
 
 -   重要な F 状態遷移します。保存/復元のコールバックは、保存し、GPIO 状態を復元する電源エンジン プラグイン (PEP) が呼び出されたときに呼び出されます。 質の高い保存/復元のコールバック関数を呼び出す\_ディープ アイドル状態の遷移のシーケンスのプラットフォームで遅延が発生したが、アイドル状態にして最後のプロセッサのコンテキストでレベル。 したがって、どちらのコールバック関数は、銀行の割り込みのロックの取得をください。
 
-F 状態の詳細については、次を参照してください。[コンポーネント レベルの電源管理](https://msdn.microsoft.com/library/windows/hardware/hh450935)します。 詳細については、PEP は、次を参照してください。 [ **PoFxPowerControl**](https://msdn.microsoft.com/library/windows/hardware/hh439518)します。
+F 状態の詳細については、[コンポーネント レベルの電源管理](https://msdn.microsoft.com/library/windows/hardware/hh450935)を参照してください。 詳細については、PEP は、[ **PoFxPowerControl**](https://msdn.microsoft.com/library/windows/hardware/hh439518)を参照してください。
 
 ## <a name="other-callback-functions"></a>その他のコールバック関数
 

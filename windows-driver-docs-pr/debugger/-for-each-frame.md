@@ -61,7 +61,7 @@ ms.locfileid: "56538822"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ローカル コンテキストの詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+ローカル コンテキストの詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

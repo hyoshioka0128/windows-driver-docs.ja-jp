@@ -32,7 +32,7 @@ ms.locfileid: "56535921"
 
 -   [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数は、プラグ アンド プレイ (PnP) マネージャーが、ハードウェアに一致するハードウェア識別子 (ID) を使用したデバイスの検出を報告したときにフレームワークドライバーがサポートする ID です。
 
-    ハードウェア、オペレーティング システムを使用して初めてコンピューターに接続しているデバイスのいずれかのドライバーをインストールする INF ファイルを提供することで、ドライバーをサポートする Id を指定します。 システムが INF ファイルとハードウェア Id を使用する方法の詳細については、次を参照してください。[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)します。
+    ハードウェア、オペレーティング システムを使用して初めてコンピューターに接続しているデバイスのいずれかのドライバーをインストールする INF ファイルを提供することで、ドライバーをサポートする Id を指定します。 システムが INF ファイルとハードウェア Id を使用する方法の詳細については、[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)を参照してください。
 
     ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数の呼び出し[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)の framework デバイス オブジェクトを作成しますデバイスが検出されました。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56535921"
 
     ドライバーは、ドライバーは、デバイスの I/O 要求を受信できるように、デバイスごとに少なくとも 1 つの I/O キューを作成する必要があります。 I/O キューをドライバーの呼び出しを作成する[ **WdfIoQueueCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547401)、framework キュー オブジェクトを作成して、デバイスの要求ハンドラーを登録します。
 
-フレームワーク ベースのドライバーの記述方法の詳細については、次を参照してください。[ドライバーを開発するフレームワークを使用して](using-the-framework-to-develop-a-driver.md)します。
+フレームワーク ベースのドライバーの記述方法の詳細については、[ドライバーを開発するフレームワークを使用して](using-the-framework-to-develop-a-driver.md)を参照してください。
 
  
 

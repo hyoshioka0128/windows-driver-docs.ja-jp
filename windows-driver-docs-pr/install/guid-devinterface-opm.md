@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://m
 
 ディスプレイのミニポート ドライバーがこの直接呼出し OPM インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_OPM を指定します。
 
-OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)します。
+OPM については、[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

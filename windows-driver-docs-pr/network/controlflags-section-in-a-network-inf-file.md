@@ -29,7 +29,7 @@ A **ControlFlags**ネットワーク INF ファイルのセクションは、ジ
 
 プラグ アンド プレイと互換性がないするアダプターがユーザーによって手動で追加する必要があります、ためには表示されません、 *ControlFlags*セクション。 たとえば、非 PnP ISA アダプター、および EISA アダプターする必要があります手動で追加するユーザー。 Windows XP およびそれ以降のオペレーティング システムはサポートされていないことおよび EISA アダプター非 PnP ISA アダプターに注意してください。
 
-**注**  、 **ExcludeFromSelect** 、NCF よりも、エントリは、別の関数を実行します\_の HIDDEN 値、**特性**、エントリ *。DDInstall*セクション。 詳細については、次を参照してください。 [DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)します。
+**注**  、 **ExcludeFromSelect** 、NCF よりも、エントリは、別の関数を実行します\_の HIDDEN 値、**特性**、エントリ *。DDInstall*セクション。 詳細については、[DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)を参照してください。
 
  
 

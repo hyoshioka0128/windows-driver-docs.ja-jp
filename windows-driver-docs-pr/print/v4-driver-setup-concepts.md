@@ -137,7 +137,7 @@ c. ソリューション\#2 – PnP devnode は余分な。セットアップ �
 
 **ドライバーのランク付け**します。 V4 印刷ドライバーの概要では、プラグ アンド プレイが順位付けの動作は変更されません。 デバイスが接続されている、最高スコアの使用可能なドライバーが選択されます。 選択したドライバーは、印刷クラス ドライバーより適切にランクがある場合は、照合し、ドライバー、Windows Update サイトで、選択したドライバーが自動的に置き換えられます、次回ユーザーが Windows の更新プログラムをダウンロードします。
 
-ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)します。
+ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)を参照してください。
 
 ## <a name="driver-setup-best-practices"></a>ドライバーの設定のベスト プラクティス
 

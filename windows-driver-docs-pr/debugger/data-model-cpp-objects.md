@@ -481,7 +481,7 @@ OverrideContextObject メソッド (IModelKeyReference2 にのみ存在する) �
 
 コンテキスト オブジェクトは、すべてのオブジェクトに関連付けます (データ モデルとの連携) でのデバッグ ホスト情報の非透過 blob です。 情報は、プロセスのコンテキストまたはアドレス空間などなどの可能性があります.コンテキスト オブジェクトは、IDebugHostContext、IModelObject 内にボックス化の実装です。 IDebugHostContext が定義されているホスト インターフェイスであることに注意してください。 クライアントは、このインターフェイスを実装しないされます。 
 
-コンテキスト オブジェクトの詳細については、次を参照してください。[デバッガー データ モデルの C++ ホスト インターフェイス](data-model-cpp-interfaces.md#hostinterface)デバッガー データ モデルの C++ インターフェイスにします。 
+コンテキスト オブジェクトの詳細については、[デバッガー データ モデルの C++ ホスト インターフェイス](data-model-cpp-interfaces.md#hostinterface)デバッガー データ モデルの C++ インターフェイスにを参照してください。 
 
 
 ## <a name="span-idmodelmanager-the-data-model-manager"></a><span id="modelmanager"> データ モデルのマネージャー  

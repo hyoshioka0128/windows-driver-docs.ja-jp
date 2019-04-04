@@ -91,7 +91,7 @@ ms.locfileid: "58761859"
 
 ![二重矢印で接続されている 2 台の pc](images/debuglab-image-targethostdrawing1.png)
 
-カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、次を参照してください。 [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)します。 ターゲット コンピューターの設定に関する詳細については、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、[WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)を参照してください。 ターゲット コンピューターの設定に関する詳細については、[手動ドライバーの展開のコンピューターを準備する](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
 
 ### <a name="span-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="Configure__kernel_mode_debugging_using_ethernet"></span><span id="configure__kernel_mode_debugging_using_ethernet"></span><span id="CONFIGURE__KERNEL_MODE_DEBUGGING_USING_ETHERNET"></span>イーサネットを使用してカーネル – モードのデバッグを構成します。
 
@@ -158,7 +158,7 @@ Approximate round trip times in milli-seconds:
     C:\> bcdedit /dbgsettings net hostip:192.168.1.1 port:50000 key:1.2.3.4
     ```
 
-**警告**接続のセキュリティを向上させ、ランダムなクライアントのデバッガーの接続要求のリスクを減らす、生成されたランダムなキーを自動の使用を検討してください。 詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+**警告**接続のセキュリティを向上させ、ランダムなクライアントのデバッガーの接続要求のリスクを減らす、生成されたランダムなキーを自動の使用を検討してください。 詳細については、[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
 
 4. Dbgsettings が正しく設定されていることを確認するには、このコマンドを入力します。
 
@@ -190,7 +190,7 @@ Approximate round trip times in milli-seconds:
     ```
 
 > [!NOTE]
-> このラボでは、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットが実行されている 32 ビット Windows では、ホスト上で 32 のバージョンのデバッガーを実行している場合です。 詳細については、次を参照してください。 [32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)します。
+> このラボでは、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットが実行されている 32 ビット Windows では、ホスト上で 32 のバージョンのデバッガーを実行している場合です。 詳細については、[32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)を参照してください。
 > 
 
 2. 次のコマンドを使用してデバッグするリモート ユーザーに、WinDbg を起動します。 キーとポートの値は、先ほど設定と一致でターゲット BCDEdit を使用します。
@@ -464,7 +464,7 @@ WDK のインストールの Tools フォルダーに移動し、DevCon ツー�
 
 ホスト システムに .cer 証明書を探し、組み込みのドライバー ファイルを含むフォルダー内のホスト コンピューター上の同じフォルダー内にあります。 対象のコンピューターに証明書ファイルを右クリックし、をクリックして**インストール**、テスト証明書をインストールする指示に従います。
 
-ターゲット コンピューターの設定の詳細な手順について必要がある場合は、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](../develop/preparing-a-computer-for-manual-driver-deployment.md)します。
+ターゲット コンピューターの設定の詳細な手順について必要がある場合は、[手動ドライバーの展開のコンピューターを準備する](../develop/preparing-a-computer-for-manual-driver-deployment.md)を参照してください。
 
 **-&gt; ターゲット システム**
 
@@ -559,7 +559,7 @@ Type “.hh dbgerr005” for details.
 **注:**  
 **シンボル サーバー**
 
-シンボルを使用するために使用する方法を数多くあります。 多くの状況では、必要なときに、Microsoft が提供するシンボル サーバーからアクセス シンボルに PC を構成できます。 このチュートリアルでは、このアプローチを使用することを前提としています。 環境内でシンボルが別の場所にいる場合は、その場所を使用する手順を変更します。 詳細については、次を参照してください。[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)します。
+シンボルを使用するために使用する方法を数多くあります。 多くの状況では、必要なときに、Microsoft が提供するシンボル サーバーからアクセス シンボルに PC を構成できます。 このチュートリアルでは、このアプローチを使用することを前提としています。 環境内でシンボルが別の場所にいる場合は、その場所を使用する手順を変更します。 詳細については、[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)を参照してください。
 
 
 
@@ -590,7 +590,7 @@ set ENABLE_OPTIMIZER=0
    ...  
    ```
 
-   詳しくは、次を参照してください。 [ **lm**](lm--list-loaded-modules-.md)します。
+   詳しくは、[ **lm**](lm--list-loaded-modules-.md)を参照してください。
 
 2. 設定するために必要に応じて\_dml = 1 前の出力の一部の要素は、ホット リンクをクリックすることができます。 をクリックして、*リンクのシンボル参照のすべてのグローバル*デバッグ、文字で始まる項目シンボルに関する情報を表示する出力の"a"です。
 
@@ -609,7 +609,7 @@ set ENABLE_OPTIMIZER=0
    ...
    ```
 
-   詳しくは、次を参照してください。 [ **(シンボルを調べる) x**](x--examine-symbols-.md)します。
+   詳しくは、[ **(シンボルを調べる) x**](x--examine-symbols-.md)を参照してください。
 
 4. **! Lmi**拡張機能には、モジュールに関する情報が表示されます。 型 **! lmi エコー**します。 出力は、下に表示されるテキストのようになります。
 
@@ -670,7 +670,7 @@ set ENABLE_OPTIMIZER=0
 
 プラグ アンド プレイ デバイス ツリーで、デバイス ドライバーに関する情報は、トラブルシューティングに役立ちます。 たとえば、デバイス ドライバーが、デバイス ツリーに常駐していない場合はデバイス ドライバーのインストールの問題。
 
-デバイス ノードのデバッグ拡張機能の詳細については、次を参照してください。 [ **! devnode**](-devnode.md)します。
+デバイス ノードのデバッグ拡張機能の詳細については、[ **! devnode**](-devnode.md)を参照してください。
 
 **&lt;ホスト システムで**
 
@@ -745,7 +745,7 @@ set ENABLE_OPTIMIZER=0
 
 ![約 20 のノードを持つデバイス ノード ツリー](images/debuglab-image-device-node-tree.png)
 
-**注**より複雑なドライバー スタックの詳細については、次を参照してください。[ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh439632)と[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)します。
+**注**より複雑なドライバー スタックの詳細については、[ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh439632)と[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)を参照してください。
 
 
 
@@ -830,7 +830,7 @@ set ENABLE_OPTIMIZER=0
     ```
 
     **注:**  
-    別の構文を使用するにはのような変数の設定と組み合わせて&lt;モジュール&gt;!&lt;シンボル&gt;、&lt;クラス&gt;::&lt;メソッド&gt;、'&lt;file.cpp&gt;:&lt;行番号&gt;'、または時間数をスキップ&lt;条件&gt; &lt; \#&gt;します。 詳細については、次を参照してください。 [WinDbg およびその他の Windows デバッガーでの条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
+    別の構文を使用するにはのような変数の設定と組み合わせて&lt;モジュール&gt;!&lt;シンボル&gt;、&lt;クラス&gt;::&lt;メソッド&gt;、'&lt;file.cpp&gt;:&lt;行番号&gt;'、または時間数をスキップ&lt;条件&gt; &lt; \#&gt;します。 詳細については、[WinDbg およびその他の Windows デバッガーでの条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
 
 
 
@@ -1146,7 +1146,7 @@ ba r 4 0x0003f7bf0
            THREAD ffffe00080e32080  Cid 03c4.0ec0  Teb: 00007ff7cfece000 Win32Thread: 0000000000000000 RUNNING on processor 1
    ```
 
-   プロセスがドライバーのイベントの書き込みで、ブレークポイントにヒットしたときに実行中だった echoapp.exe に関連付けられている出力を示しています。 詳細については、次を参照してください。 [ **! プロセス**](-process.md)します。
+   プロセスがドライバーのイベントの書き込みで、ブレークポイントにヒットしたときに実行中だった echoapp.exe に関連付けられている出力を示しています。 詳細については、[ **! プロセス**](-process.md)を参照してください。
 
 9. 使用して、 **! process 0 0**すべてのプロセスの概要情報を表示します。 出力には、CTRL キーを押しながら F キーを使用して、echoapp.exe 画像に関連付けられたプロセスの同じプロセスのアドレスを探します。 次に示す例では、プロセスのアドレスは、ffffe0007e6a7780 が。
 
@@ -1468,11 +1468,11 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-また、クリックして、レジスタの内容を表示できる**ビュー** &gt; **登録**します。 詳細については、次を参照してください。 [ **r (レジスタ)**](r--registers-.md)します。
+また、クリックして、レジスタの内容を表示できる**ビュー** &gt; **登録**します。 詳細については、[ **r (レジスタ)**](r--registers-.md)を参照してください。
 
-レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 アセンブリ言語の逆アセンブリの詳細については、次を参照してください。 [x86 注釈付き逆アセンブリ](annotated-x86-disassembly.md)と[x64 注釈付き逆アセンブリ](annotated-x64-disassembly.md)します。
+レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 アセンブリ言語の逆アセンブリの詳細については、[x86 注釈付き逆アセンブリ](annotated-x86-disassembly.md)と[x64 注釈付き逆アセンブリ](annotated-x64-disassembly.md)を参照してください。
 
-レジスタの内容については、次を参照してください。 [x86 アーキテクチャ](x86-architecture.md)と[x64 アーキテクチャ](x64-architecture.md)します。
+レジスタの内容については、[x86 アーキテクチャ](x86-architecture.md)と[x64 アーキテクチャ](x64-architecture.md)を参照してください。
 
 ### <a name="span-idendingthesessionspanspan-idendingthesessionspanspan-idendingthesessionspanending-the-windbg-session"></a><span id="EndingTheSession"></span><span id="endingthesession"></span><span id="ENDINGTHESESSION"></span>WinDbg のセッションを終了します。
 

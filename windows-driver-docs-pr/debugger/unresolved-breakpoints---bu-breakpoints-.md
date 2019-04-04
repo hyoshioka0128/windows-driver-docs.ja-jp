@@ -33,7 +33,7 @@ ms.locfileid: "56537287"
 
 ### <a name="span-idcontrollingaddressbreakpointsandunresolvedbreakpointsspanspan-idcontrollingaddressbreakpointsandunresolvedbreakpointsspancontrolling-address-breakpoints-and-unresolved-breakpoints"></a><span id="controlling_address_breakpoints_and_unresolved_breakpoints"></span><span id="CONTROLLING_ADDRESS_BREAKPOINTS_AND_UNRESOLVED_BREAKPOINTS"></span>アドレス ブレークポイントと未解決のブレークポイントを制御します。
 
-アドレスのブレークポイントを作成することができます、 [ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンド、または**bm (シンボルのブレークポイントの設定)** コマンドの場合に、 **/d**スイッチが含まれています。 未解決のブレークポイントを作成することができます、 **bu (未解決のブレークポイントの設定)** コマンド、または**bm**を **/d**スイッチは含まれません。 すべてのブレークポイントを無効化、有効にする、およびブレークポイントを変更するコマンドが適用されます。 ブレークポイントの一覧を表示するコマンドは、すべてのブレークポイントを含めるし、それぞれの種類を示します。 これらのコマンドの一覧については、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
+アドレスのブレークポイントを作成することができます、 [ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンド、または**bm (シンボルのブレークポイントの設定)** コマンドの場合に、 **/d**スイッチが含まれています。 未解決のブレークポイントを作成することができます、 **bu (未解決のブレークポイントの設定)** コマンド、または**bm**を **/d**スイッチは含まれません。 すべてのブレークポイントを無効化、有効にする、およびブレークポイントを変更するコマンドが適用されます。 ブレークポイントの一覧を表示するコマンドは、すべてのブレークポイントを含めるし、それぞれの種類を示します。 これらのコマンドの一覧については、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
 
 WinDbg**ブレークポイント** ダイアログ ボックスは、"u"表記法で未解決のブレークポイントを示す、すべてのブレークポイントを表示します。 このダイアログ ボックスを使用してをすべてのブレークポイントを変更できます。**コマンド**このダイアログ ボックスのテキスト ボックスは、任意の種類のブレークポイントを作成するために使用できます。 型を省略すると、未解決のブレークポイントが作成されます。 詳細については、次を参照してください[編集 |。ブレークポイント](edit---breakpoints.md)します。 WinDbg でマウスを使用してブレークポイントを設定すると[逆アセンブル ウィンドウ](disassembly-window.md)または[ソース ウィンドウ](source-window.md)デバッガーが未解決のブレークポイントを作成します。
 

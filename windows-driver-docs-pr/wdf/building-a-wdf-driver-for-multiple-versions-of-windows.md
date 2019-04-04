@@ -80,4 +80,4 @@ if (WDF_IS_FUNCTION_AVAILABLE(WdfSomeNewFeature)) {
 
 ドライバー クラッシュには、障害が発生したドライバー名、フレームワーク名、および失敗した API のインデックスが含まれています。 API の名前を取得するには、WDFFUNCENUM WdfFuncEnum.h 内の値を検索します。
 
-WDF の Visual Studio のプロパティの詳細については、次を参照してください。[ドライバー プロジェクトのモデルの設定のプロパティをドライバー](../develop/driver-model-settings-properties-for-driver-projects.md)します。
+WDF の Visual Studio のプロパティの詳細については、[ドライバー プロジェクトのモデルの設定のプロパティをドライバー](../develop/driver-model-settings-properties-for-driver-projects.md)を参照してください。

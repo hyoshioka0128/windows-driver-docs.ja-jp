@@ -31,7 +31,7 @@ ms.locfileid: "56550203"
 
 詳細については、「拡張 PIN のサポート」セクションを参照してください。[開発者ガイドライン](developer-guidelines.md)します。
 
-リファレンス情報は、次を参照してください。[カードのピン留め操作](card-pin-operations.md)します。
+リファレンス情報は、[カードのピン留め操作](card-pin-operations.md)を参照してください。
 
 このバージョンで追加された新しい Api は次のとおりです。
 
@@ -69,7 +69,7 @@ ms.locfileid: "56550203"
 
 必要に応じて、および特定の制限、ミニドライバーは、独自のユーザー インターフェイス (UI) をユーザーが PIN の収集の関係における特定のアクションを実行するように指示を表示する許可します。 はなく、外部から収集する際に PIN を待機している Windows ユーザーに指示するが、実際には、ユーザーから PIN を収集するために、このような UI を使用することには必要ありません。 ミニドライバーは、コンテキストがサイレント モードと UI 要素を作成する特定のウィンドウ ハンドルを使用すると予測はときに、UI を表示する許可されていません。 詳細についてを参照[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)、および[ **CardSetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468740)します。
 
-一時的なセッション PIN を返すことができるカードは、後続のキャッシングを Windows にこのような PIN を返す可能性があります。 このような場合では、Windows は、カードには、セッション PIN が無効にするまでにカードの認証以降のすべてのセッション PIN を紹介します。 詳細については、次を参照してください。 [ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)します。
+一時的なセッション PIN を返すことができるカードは、後続のキャッシングを Windows にこのような PIN を返す可能性があります。 このような場合では、Windows は、カードには、セッション PIN が無効にするまでにカードの認証以降のすべてのセッション PIN を紹介します。 詳細については、[ **CardAuthenticateEx**](https://msdn.microsoft.com/library/windows/hardware/dn468703)を参照してください。
 
  
 

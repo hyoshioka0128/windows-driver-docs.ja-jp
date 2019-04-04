@@ -33,7 +33,7 @@ ms.locfileid: "56571210"
 
 ![フラット ベッドと windows vista では、フィーダーの付いたスキャナーのスキャナーの項目のツリーを示す図](images/wia-feeder-tree4.png)
 
-この項目のツリーは、項目のツリー、フラット ベッドとフィーダーに別の項目として関数単位を表します。 スキャナーのこの種類の詳細については、次を参照してください。[非二重モード対応のドキュメント フィーダー](non-duplex-capable-document-feeder.md)します。
+この項目のツリーは、項目のツリー、フラット ベッドとフィーダーに別の項目として関数単位を表します。 スキャナーのこの種類の詳細については、[非二重モード対応のドキュメント フィーダー](non-duplex-capable-document-feeder.md)を参照してください。
 
 スキャナーが (つまり、ドキュメントの両方の側をスキャン) の二重化できる場合は、Windows Vista の項目のツリーは次の図のようになります。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56571210"
 
 両面印刷をスキャナーの項目のツリーおよびフィーダー スキャナーの項目のツリーは、データ転送は、常にフィーダー項目から発生します。 スキャン設定フィーダーと (前面と背面の両方) の子項目の両方に格納されます。
 
-同じ設定にフロント エンドとバックエンドの項目が設定される場所のスキャンが呼び出されます、*双方向の基本的な*をスキャンします。 フロント エンドとバックエンドの項目は互いに独立して設定されている場合、スキャンが呼び出されます、*双方向の高度な*をスキャンします。 これらの種類のスキャンの詳細については、次を参照してください。[単純な二重モード対応のドキュメント フィーダー](simple-duplex-capable-document-feeder.md)と[二重モード対応ドキュメント フィーダー付きの高度な](advanced-duplex-capable-document-feeder.md)します。
+同じ設定にフロント エンドとバックエンドの項目が設定される場所のスキャンが呼び出されます、*双方向の基本的な*をスキャンします。 フロント エンドとバックエンドの項目は互いに独立して設定されている場合、スキャンが呼び出されます、*双方向の高度な*をスキャンします。 これらの種類のスキャンの詳細については、[単純な二重モード対応のドキュメント フィーダー](simple-duplex-capable-document-feeder.md)と[二重モード対応ドキュメント フィーダー付きの高度な](advanced-duplex-capable-document-feeder.md)を参照してください。
 
 ### <a name="compatibility-support-in-windows-vista"></a>Windows Vista での互換性をサポート
 
@@ -57,7 +57,7 @@ Windows XP 用の Windows Vista のドライバーやアプリケーションの
 
 Windows Vista のドライバーを使用して、Windows XP コンピューター上の非常に制限付きサポートがあります。 フィーダー スキャナーでは、フラット ベッド スキャンもサポートしています、WIA フラット ベッド スキャナーの項目は、ルート項目の後に、スキャナーの項目のツリーの最初の WIA 子項目をある必要があります。 この項目のツリー ダイアグラムに示されています、[非二重モード対応のドキュメント フィーダー](non-duplex-capable-document-feeder.md)トピック。 Windows XP でのスキャン設定をすべてをツリー内で最初の項目を検索する必要がありますので、この構成は Windows Vista のドライバーと Windows XP のいくつかの互換性を許可します。
 
-互換レイヤーと Windows XP および Windows Me の互換性の詳細については、次を参照してください。 [WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)します。
+互換レイヤーと Windows XP および Windows Me の互換性の詳細については、[WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)を参照してください。
 
  
 

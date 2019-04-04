@@ -38,7 +38,7 @@ ms.locfileid: "56552881"
 </tr>
 <tr class="odd">
 <td><strong>ExAllocateFromZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExConvertExclusiveToShared</strong></td>
@@ -50,11 +50,11 @@ ms.locfileid: "56552881"
 </tr>
 <tr class="even">
 <td><strong>ExExtendZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>ExFreeToZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExInitializeResource</strong></td>
@@ -66,11 +66,11 @@ ms.locfileid: "56552881"
 </tr>
 <tr class="even">
 <td><strong>ExInitializeZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>ExInterlockedAllocateFromZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExInterlockedDecrementLong</strong></td>
@@ -78,7 +78,7 @@ ms.locfileid: "56552881"
 </tr>
 <tr class="odd">
 <td><strong>ExInterlockedExchangeAddLargeInteger</strong></td>
-<td><p>2 つの 64 ビットの数値をアトミックに追加する方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=71056" data-raw-source="[InterlockedExchangeAdd64](https://go.microsoft.com/fwlink/p/?linkid=71056)">InterlockedExchangeAdd64</a>します。</p></td>
+<td><p>2 つの 64 ビットの数値をアトミックに追加する方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=71056" data-raw-source="[InterlockedExchangeAdd64](https://go.microsoft.com/fwlink/p/?linkid=71056)">InterlockedExchangeAdd64</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExInterlockedExchangeUlong</strong></td>
@@ -86,11 +86,11 @@ ms.locfileid: "56552881"
 </tr>
 <tr class="odd">
 <td><strong>ExInterlockedExtendZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExInterlockedFreeToZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>ExInterlockedIncrementLong</strong></td>
@@ -98,11 +98,11 @@ ms.locfileid: "56552881"
 </tr>
 <tr class="even">
 <td><strong>ExIsFullZone</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>ExIsObjectInFirstZoneSegment</strong></td>
-<td><p>ルック アサイド リストを使用してください。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>します。</p></td>
+<td><p>ルック アサイド リストを使用してください。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff540667" data-raw-source="[Buffer Management](https://msdn.microsoft.com/library/windows/hardware/ff540667)">バッファー管理</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExIsResourceAcquired</strong></td>

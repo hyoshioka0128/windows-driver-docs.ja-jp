@@ -141,7 +141,7 @@ Windows 8 以降、Microsoft DirectX グラフィックスのカーネルのサ�
 
  
 
-PnP の要件についての詳細とその他の状態遷移は、次を参照してください。 [WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md)します。
+PnP の要件についての詳細とその他の状態遷移は、[WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md)を参照してください。
 
 ## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
 

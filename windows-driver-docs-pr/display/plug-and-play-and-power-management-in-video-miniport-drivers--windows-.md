@@ -38,7 +38,7 @@ ms.locfileid: "56529658"
 
 システムが実行されていることもレガシ ミニポート ドライバーは実行中のシステムに追加されたときに自動的に検出中に、システムからレガシ ミニポート ドライバーのグラフィックス アダプターを削除できません。
 
-参照してください[ディスプレイ アダプター (Windows 2000 モデル) の子デバイス](child-devices-of-the-display-adapter--windows-2000-model-.md)を検出して、アダプターの子デバイスと通信の詳細についてはします。 プラグ アンド プレイ ドライバーについては、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
+参照してください[ディスプレイ アダプター (Windows 2000 モデル) の子デバイス](child-devices-of-the-display-adapter--windows-2000-model-.md)を検出して、アダプターの子デバイスと通信の詳細についてはします。 プラグ アンド プレイ ドライバーについては、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
 
  
 

@@ -23,5 +23,5 @@ NDIS は、この GUID を処理し、ミニポート ドライバーが、OID �
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_PORT_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569624)構造体。
 
-ポートの状態の詳細については、次を参照してください。 [OID_GEN_PORT_STATE](oid-gen-port-state.md)します。
+ポートの状態の詳細については、[OID_GEN_PORT_STATE](oid-gen-port-state.md)を参照してください。
 

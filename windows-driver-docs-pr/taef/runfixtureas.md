@@ -71,7 +71,7 @@ TAEF '没入型ブローカー' プロセスで、フィクスチャを実行し
  
 
 <span id="UIAccess"></span><span id="uiaccess"></span><span id="UIACCESS"></span>**UIAccess**  
-TAEF は、UIAccess 実行レベル マーク アップのプロセスで、フィクスチャを実行します。 UI オートメーション アプリケーションの UIAccess については、次を参照してください。、 [Windows 整合性メカニズム デザイン](https://msdn.microsoft.com/library/bb625963)します。
+TAEF は、UIAccess 実行レベル マーク アップのプロセスで、フィクスチャを実行します。 UI オートメーション アプリケーションの UIAccess については、、 [Windows 整合性メカニズム デザイン](https://msdn.microsoft.com/library/bb625963)を参照してください。
 
 **注:**  
 -   UIAccess は、Vista 以降のオペレーティング システムでのみサポートされます。

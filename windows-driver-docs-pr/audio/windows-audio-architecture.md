@@ -67,8 +67,8 @@ ms.locfileid: "56556970"
 
 オーディオ エンジン:
 
--   混在し、オーディオ ストリームを処理します。 オーディオ エンジンでバッファーを使用して、オーディオを転送する方法の詳細については、次を参照してください。 [WaveRT ポート ドライバーについて](understanding-the-wavert-port-driver.md)します。
--   オーディオ処理オブジェクト (APOs) オーディオ信号の処理 H または W の特定のプラグインを読み込みます。 パスワードの詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)します。
+-   混在し、オーディオ ストリームを処理します。 オーディオ エンジンでバッファーを使用して、オーディオを転送する方法の詳細については、[WaveRT ポート ドライバーについて](understanding-the-wavert-port-driver.md)を参照してください。
+-   オーディオ処理オブジェクト (APOs) オーディオ信号の処理 H または W の特定のプラグインを読み込みます。 パスワードの詳細については、[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)を参照してください。
 
 ## <a name="span-idaudioserviceaudiosrvdllspanspan-idaudioserviceaudiosrvdllspanaudio-service-audiosrvdll"></a><span id="audio_service__audiosrv.dll_"></span><span id="AUDIO_SERVICE__AUDIOSRV.DLL_"></span>オーディオのサービス (audiosrv.dll)
 
@@ -83,17 +83,17 @@ ms.locfileid: "56556970"
 
 オーディオ エンドポイント ビルダー (audioendpointbuilder.exe):
 
--   新しいオーディオ デバイスを検出し、ソフトウェア オーディオ エンドポイントの作成に使用されます。 使用されるアルゴリズムの詳細については、次を参照してください。[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)します。
+-   新しいオーディオ デバイスを検出し、ソフトウェア オーディオ エンドポイントの作成に使用されます。 使用されるアルゴリズムの詳細については、[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)を参照してください。
 
 ## <a name="span-idaudiodriversspanspan-idaudiodriversspanspan-idaudiodriversspanaudio-drivers"></a><span id="Audio_Drivers"></span><span id="audio_drivers"></span><span id="AUDIO_DRIVERS"></span>オーディオ ドライバー
 
 
 オーディオ ドライバー:
 
--   ポート ミニポート モデルに従います。 詳細については、次を参照してください。 [WDM オーディオ用語](wdm-audio-terminology.md)と[WaveRT ミニポート ドライバーを開発](developing-a-wavert-miniport-driver.md)します。
+-   ポート ミニポート モデルに従います。 詳細については、[WDM オーディオ用語](wdm-audio-terminology.md)と[WaveRT ミニポート ドライバーを開発](developing-a-wavert-miniport-driver.md)を参照してください。
 -   オーディオを含む複数のオーディオ デバイスから、オーディオ スタックを表示し、キャプチャを許可する: 統合のスピーカーやヘッドセット/ヘッドホン、マイクの USB デバイス、Bluetooth デバイス、HDMI など。
 -   ポート ミニポート モデルは Linux のサウンドのアーキテクチャの高度な ALSA に対応します。
--   ドライバーのサンプル コードについては、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
+-   ドライバーのサンプル コードについては、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
 
 ## <a name="span-idhardwarespanspan-idhardwarespanspan-idhardwarespanhardware"></a><span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>ハードウェア
 

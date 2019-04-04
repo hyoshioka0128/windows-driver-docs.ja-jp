@@ -26,7 +26,7 @@ Driver Verifier は、ログ ファイルを作成できます。 これらの�
 
 各エントリはグローバル カウンターと、個々 のカウンターだけと同様、 **verifier/query**コマンド。
 
-これらの統計情報の詳細については、次を参照してください。[グローバル カウンターの監視](monitoring-global-counters.md)と[カウンターを個別に監視](monitoring-individual-counters.md)します。
+これらの統計情報の詳細については、[グローバル カウンターの監視](monitoring-global-counters.md)と[カウンターを個別に監視](monitoring-individual-counters.md)を参照してください。
 
  
 

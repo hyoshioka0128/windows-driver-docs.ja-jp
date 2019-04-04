@@ -101,7 +101,7 @@ DDI 準拠の検査オプションを選択すると、次の規則が含まれ�
 ## <a name="span-idactivatingtheddicompliancecheckingoptionspanspan-idactivatingtheddicompliancecheckingoptionspanspan-idactivatingtheddicompliancecheckingoptionspanactivating-the-ddi-compliance-checking-option"></a><span id="Activating_the_DDI_compliance_checking_option"></span><span id="activating_the_ddi_compliance_checking_option"></span><span id="ACTIVATING_THE_DDI_COMPLIANCE_CHECKING_OPTION"></span>DDI 準拠の検査オプションがアクティブ化します。
 
 
-機能の 1 つまたは複数のドライバーをドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してチェック DDI 準拠を有効にすることができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 DDI 準拠の検査オプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。 DDI 準拠チェック機能をアクティブにすると、標準の設定を使用する場合 (**標準/**)。
+機能の 1 つまたは複数のドライバーをドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してチェック DDI 準拠を有効にすることができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 DDI 準拠の検査オプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。 DDI 準拠チェック機能をアクティブにすると、標準の設定を使用する場合 (**標準/**)。
 
 -   **コマンドラインで**
 
@@ -139,7 +139,7 @@ Windows 8.1 では、以降、 **DDI 準拠の検査 (追加) オプション**�
 ## <a name="activating-the-ddi-compliance-checking-additional-option"></a>DDI 準拠の検査 (追加) オプションをアクティブ化します。
 
 
-アクティブ化することができます、 **DDI 準拠の確認 (追加)** ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバの規則。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 アクティブ化または非アクティブ化するコンピューターを再起動する必要があります、 **DDI 準拠の確認 (追加)** オプション。
+アクティブ化することができます、 **DDI 準拠の確認 (追加)** ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバの規則。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 アクティブ化または非アクティブ化するコンピューターを再起動する必要があります、 **DDI 準拠の確認 (追加)** オプション。
 
 -   **コマンドラインで**
 

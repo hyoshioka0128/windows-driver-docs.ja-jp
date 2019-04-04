@@ -36,7 +36,7 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
 <tr class="odd">
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"><strong>Flags_Irql</strong></a></p></td>
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"> <strong>Flags_Irql</strong> </a>ルールを指定する<strong>KeGetCurrentIrql</strong>しないを示すディスパッチ レベルのフラグ パラメーターを持つコールバック関数内で呼び出す必要があります、現在の IRQL します。</p>
-<p>ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff546448" data-raw-source="[Dispatch IRQL Tracking](https://msdn.microsoft.com/library/windows/hardware/ff546448)">ディスパッチ IRQL 追跡</a>します。</p></td>
+<p>ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff546448" data-raw-source="[Dispatch IRQL Tracking](https://msdn.microsoft.com/library/windows/hardware/ff546448)">ディスパッチ IRQL 追跡</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-irql-callmanager-function.md" data-raw-source="[&lt;strong&gt;Irql_CallManager_Function&lt;/strong&gt;](ndis-irql-callmanager-function.md)"><strong>Irql_CallManager_Function</strong></a></p></td>
@@ -131,7 +131,7 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
 
  
 

@@ -57,7 +57,7 @@ DriverObject->DriverUnload = DDUnload;
 DriverObject->DriverExtension->AddDevice = DDAddDevice; 
 ```
 
-A **DriverEntry**または省略可能な[*を再初期化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)ルーチンはまたドライバー オブジェクト内のフィールドを使用できます (に表示されていない、[ドライバー オブジェクトの図は](introduction-to-driver-objects.md#driver-object-illustration))情報を取得したり、configuration manager のレジストリのデータベースに情報を設定します。 詳細については、次を参照してください。[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)します。
+A **DriverEntry**または省略可能な[*を再初期化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)ルーチンはまたドライバー オブジェクト内のフィールドを使用できます (に表示されていない、[ドライバー オブジェクトの図は](introduction-to-driver-objects.md#driver-object-illustration))情報を取得したり、configuration manager のレジストリのデータベースに情報を設定します。 詳細については、[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)を参照してください。
 
 I/O マネージャーにはドライバー オブジェクトを操作するサポート ルーチン エクスポートしない[**ドライバー\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff544174)構造体。 ドライバー オブジェクトは、現在読み込まれているドライバーを追跡する I/O マネージャーによって使用されます。 ドライバー オブジェクトの一部のメンバーは、I/O マネージャーでのみ使用されます。 他のユーザーでもメンバーを使用するドライバーのライターです。たとえばを定義するには、特定のメンバー名を認識する必要があります*AddDevice*、*ディスパッチ*、 *StartIo*、および*アンロード*エントリ ポイント。 内のドキュメントに未記載のメンバーを使用する必要がありますとも、**ドライバー\_オブジェクト**構造体も、このドキュメントで名前がドライバー オブジェクトのメンバーの場所に関する前提条件を作成します。 それ以外の場合、1 つの Windows プラットフォームから別のドライバーの移植性を維持することはできません。
 

@@ -20,7 +20,7 @@ ms.locfileid: "56550026"
 このセクションでは、カーネル モードのデバッグを設定する方法について説明します。
 
 >[!TIP]
->ネットワーク (KDNET) デバッグを使用して kdnet ユーティリティを使用して自動的に構成することをお勧めします。 詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+>ネットワーク (KDNET) デバッグを使用して kdnet ユーティリティを使用して自動的に構成することをお勧めします。 詳細については、[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
    
 
 ## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは

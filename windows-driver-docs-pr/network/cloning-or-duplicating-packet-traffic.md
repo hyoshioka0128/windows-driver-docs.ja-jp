@@ -14,21 +14,21 @@ ms.locfileid: "56535947"
 # <a name="cloning-packet-traffic"></a>トラフィックのパケットの複製
 
 
-このトピックでは、拡張可能な HYPER-V の拡張機能の複製、または重複するパケットを切り替えるし、拡張可能スイッチのデータ パスに挿入するについて説明します。 パケットの複製の詳細については、次を参照してください。[複製 NET\_バッファー\_リスト構造](cloned-net-buffer-list-structures.md)します。
+このトピックでは、拡張可能な HYPER-V の拡張機能の複製、または重複するパケットを切り替えるし、拡張可能スイッチのデータ パスに挿入するについて説明します。 パケットの複製の詳細については、[複製 NET\_バッファー\_リスト構造](cloned-net-buffer-list-structures.md)を参照してください。
 
 **注**このページは、情報とでのダイアグラムに精通していることを前提としています。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)します。
 
-**注**、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*します。 拡張機能に関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)します。
+**注**、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*します。 拡張機能に関する詳細については、[Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)を参照してください。
 
 フィルター処理および転送拡張機能の拡張可能スイッチは、次のガイドラインに従って、拡張可能スイッチのイングレスまたはエグレス データ パスに複製されたパケットを挿入できます。
 
--   拡張機能に割り当てる必要があります最初、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568389)複製されたパケットの構造体。 拡張機能はパケット データを複製されたパケットに元のパケットをコピーしする必要があります。 パケットのクローンを作成する方法の詳細については、次を参照してください。[派生 NET\_バッファー\_リスト構造](derived-net-buffer-list-structures.md)します。
+-   拡張機能に割り当てる必要があります最初、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568389)複製されたパケットの構造体。 拡張機能はパケット データを複製されたパケットに元のパケットをコピーしする必要があります。 パケットのクローンを作成する方法の詳細については、[派生 NET\_バッファー\_リスト構造](derived-net-buffer-list-structures.md)を参照してください。
 
 -   拡張機能の割り当て後に、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568389)呼び出す必要があります、構造、 [ *AllocateNetBufferListForwardingContext* ](https://msdn.microsoft.com/library/windows/hardware/hh598134)ハンドラー関数にパケットを転送の拡張可能スイッチのコンテキストを割り当てられません。
 
     転送コンテキストは、パケットの帯域外の (OOB) データに存在します。 その発信元ポートと 1 つまたは複数の宛先ポートの配列など、パケットの転送情報が含まれています。
 
-    転送コンテキストに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
+    転送コンテキストに関する詳細については、[Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)を参照してください。
 
 -   拡張機能は、既存のソース ポート呼び出すことによって、複製されたパケットを元のパケットからをなど、OOB データをコピーする必要があります[ *CopyNetBufferListInfo*](https://msdn.microsoft.com/library/windows/hardware/hh598136)します。 拡張機能のイングレス データ パスにパケットを挿入する場合、これも元のパケットの OOB データから宛先ポートをコピーする必要があります。
 
@@ -38,9 +38,9 @@ ms.locfileid: "56535947"
 
     -   呼び出す必要がありますが、フィルター処理の拡張機能エグレス データのパスにパケットを挿入する場合、 [ *CopyNetBufferListInfo* ](https://msdn.microsoft.com/library/windows/hardware/hh598136) NDIS と\_スイッチ\_コピー\_NBL\_情報\_フラグ\_保持\_宛先フラグを指定します。 これにより、元のパケットの宛先は、複製されたパケットにコピーするポート。
 
--   呼び出された後、パケットの宛先ポートに変更が場合、フィルター処理の拡張機能を複製、またはエグレス データのパスから取得したパケットを複製する場合[ *CopyNetBufferListInfo* ](https://msdn.microsoft.com/library/windows/hardware/hh598136)でNDIS\_スイッチ\_コピー\_NBL\_情報\_フラグ\_保持\_宛先フラグを指定します。 この手順の詳細については、次を参照してください。[パケットの拡張可能スイッチ ソース ポート データを変更する](modifying-a-packet-s-extensible-switch-source-port-data.md)します。
+-   呼び出された後、パケットの宛先ポートに変更が場合、フィルター処理の拡張機能を複製、またはエグレス データのパスから取得したパケットを複製する場合[ *CopyNetBufferListInfo* ](https://msdn.microsoft.com/library/windows/hardware/hh598136)でNDIS\_スイッチ\_コピー\_NBL\_情報\_フラグ\_保持\_宛先フラグを指定します。 この手順の詳細については、[パケットの拡張可能スイッチ ソース ポート データを変更する](modifying-a-packet-s-extensible-switch-source-port-data.md)を参照してください。
 
--   転送拡張機能が複製またはイングレス データのパスから取得したパケットを複製する場合、パケットの受信データのパスに挿入する前に、パケットの宛先ポートを新しいを追加する必要があります。 この手順の詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
+-   転送拡張機能が複製またはイングレス データのパスから取得したパケットを複製する場合、パケットの受信データのパスに挿入する前に、パケットの宛先ポートを新しいを追加する必要があります。 この手順の詳細については、[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)を参照してください。
 
 -   拡張機能の呼び出し後[ *CopyNetBufferListInfo*](https://msdn.microsoft.com/library/windows/hardware/hh598136)、元のパケットに含まれていたのと同じソース ポート情報は、パケットに割り当てられます。
 
@@ -100,7 +100,7 @@ ms.locfileid: "56535947"
 
 たとえば、複数の宛先ポートでのパケットは、拡張可能スイッチのエグレス データ パスで取得したことを想定しています。 1 つの宛先ポートには、データのカプセル化などの特別な処理が必要な場合、転送先またはフィルター処理の拡張機能は次の手順でこれを処理します。
 
-1.  特別な処理が必要なポートへのパケット配信を除外します。 拡張機能は設定によって、 **IsExcluded**の宛先ポートのメンバー [ **NDIS\_スイッチ\_ポート\_先**](https://msdn.microsoft.com/library/windows/hardware/hh598224)いずれかの値構造体。 この手順の詳細については、次を参照してください。[拡張可能スイッチの宛先ポートへのパケット配送の除外](excluding-packet-delivery-to-extensible-switch-destination-ports.md)します。
+1.  特別な処理が必要なポートへのパケット配信を除外します。 拡張機能は設定によって、 **IsExcluded**の宛先ポートのメンバー [ **NDIS\_スイッチ\_ポート\_先**](https://msdn.microsoft.com/library/windows/hardware/hh598224)いずれかの値構造体。 この手順の詳細については、[拡張可能スイッチの宛先ポートへのパケット配送の除外](excluding-packet-delivery-to-extensible-switch-destination-ports.md)を参照してください。
 
 2.  元のパケットを複製し、パケット データの必要な処理を実行します。
 
@@ -110,9 +110,9 @@ ms.locfileid: "56535947"
 
 4.  イングレス データ パスの複製されたパケットを呼び出して、挿入[ **NdisFSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562616)します。
 
-拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
+拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
 
-**注**パケット トラフィックを複製できません拡張機能をキャプチャします。 ただし、パケットのトラフィックを発生することです。 詳細については、次を参照してください。[パケットの発信トラフィック](originating-packet-traffic.md)します。
+**注**パケット トラフィックを複製できません拡張機能をキャプチャします。 ただし、パケットのトラフィックを発生することです。 詳細については、[パケットの発信トラフィック](originating-packet-traffic.md)を参照してください。
 
 
 

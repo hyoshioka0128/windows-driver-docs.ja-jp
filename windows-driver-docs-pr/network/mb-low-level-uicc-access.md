@@ -435,7 +435,7 @@ MBIM_SET_MS_UICC_RESET 構造体には、ホストによって指定されたパ
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbimmsuiccpassthroughaction)します。 |
+| 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、[MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbimmsuiccpassthroughaction)を参照してください。 |
 
 #### <a name="mbimmsuiccpassthroughaction"></a>MBIM_MS_UICC_PASSTHROUGH_ACTION
 
@@ -454,7 +454,7 @@ MBIM_MS_UICC_RESET_INFO 構造体には、MBIM 関数のパススルー状態が
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbimmsuiccpassthroughstatus)します。 |
+| 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、[MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbimmsuiccpassthroughstatus)を参照してください。 |
 
 #### <a name="mbimmsuiccpassthroughstatus"></a>MBIM_MS_UICC_PASSTHROUGH_STATUS
 

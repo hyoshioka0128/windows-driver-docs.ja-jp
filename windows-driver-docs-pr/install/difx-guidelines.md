@@ -18,7 +18,7 @@ ms.locfileid: "56536293"
 とにかく DIFx を使用する場合は、ツールを含む古い WDK を使用する必要があり、いくつか注意すべき点に注意する必要があります。
 
 * ドライバー パッケージはのみに指定されている場合**TargetOSVersion** Windows 8.1 またはそれ以降の値では使用できません DIFxApp DIFxApp の依存関係のため[ **GetVersionEx**](https://msdn.microsoft.com/library/windows/desktop/ms724451)、APIWindows 8.1 以降を変更します。  **TargetOSVersion**で指定された、 [INF 製造元セクション](inf-manufacturer-section.md)します。 DIFxApp は、MSI MsiProcessDrivers、MsiInstallDrivers、MsiUninstallDrivers などのカスタム操作を公開します。  ドライバー パッケージが指定されている場合**TargetOSVersion**値または後で、Windows 8.1 の MSI でこれらのカスタム動作を使用することはできません。
-* Windows 8.1、リンクするアプリケーションで起動`Difxapi.dll`アプリケーションが実行しようとする OS バージョンを対象とするアプリケーション マニフェストを含める必要があります。  DIFxAPI の依存関係のためにこれは、 [ **GetVersionEx**](https://msdn.microsoft.com/library/windows/desktop/ms724451)API を Windows 8.1 以降に変更します。  詳細の変更を**GetVersionEx**で Windows 8.1 では、次を参照してください。 [Windows 用のアプリケーションを対象とする](https://msdn.microsoft.com/library/windows/desktop/dn481241)します。
+* Windows 8.1、リンクするアプリケーションで起動`Difxapi.dll`アプリケーションが実行しようとする OS バージョンを対象とするアプリケーション マニフェストを含める必要があります。  DIFxAPI の依存関係のためにこれは、 [ **GetVersionEx**](https://msdn.microsoft.com/library/windows/desktop/ms724451)API を Windows 8.1 以降に変更します。  詳細の変更を**GetVersionEx**で Windows 8.1 では、[Windows 用のアプリケーションを対象とする](https://msdn.microsoft.com/library/windows/desktop/dn481241)を参照してください。
 * ドライバー パッケージで使用する場合、 ***BuildNumber***一部分**TargetOSVersion** (Windows 10 version 1607 で導入された (ビルド 14310 およびそれ以降))、ドライバー パッケージに DIFx ツールを使用することはできません。  DIFx ツールでは、ビルド番号を対象とするが理解できません。
 * Windows 10 Version 1511 WDK から Windows 7 の WDK で提供されている DIFx は、バージョン 2.1 を使用します。  以前のバージョンの WDK で DIFx バージョン 2.1 の使用できた、Windows 7 以降のバージョンの Windows 互換性適切でした。
 

@@ -57,7 +57,7 @@ SoC ベースのプラットフォームでは、ACPI に USB ホスト コン�
 
 ### <a name="usb-device-specific-method-dsm"></a>USB デバイスに固有のメソッド (\_DSM)
 
-Windows デバイスに固有のメソッドを定義します (\_DSM) USB サブシステムのデバイス クラス固有の構成をサポートします。 詳細については、次を参照してください。 [USB デバイスに固有のメソッド](usb-device-specific-method---dsm-.md)します。
+Windows デバイスに固有のメソッドを定義します (\_DSM) USB サブシステムのデバイス クラス固有の構成をサポートします。 詳細については、[USB デバイスに固有のメソッド](usb-device-specific-method---dsm-.md)を参照してください。
 
 ### <a name="usb-integrated-transaction-translator-tt-support-hrv"></a>USB translator (TT) のトランザクションのサポートを統合する (\_HRV)
 
@@ -79,7 +79,7 @@ Windows デバイスに固有のメソッドを定義します (\_DSM) USB サ�
 
 ### <a name="usb-xhci-d3cold-support"></a>USB XHCI D3cold サポート
 
-選択的に加え、中断、内部の USB デバイスが XHCI コント ローラーに接続されているを D3cold 状態にし、電源オフ時が使用されていません。 詳細については、次を参照してください。[デバイスの電源管理](device-power-management.md)します。 すべての USB デバイス関数ドライバーする必要がありますにオプトイン D3cold します。
+選択的に加え、中断、内部の USB デバイスが XHCI コント ローラーに接続されているを D3cold 状態にし、電源オフ時が使用されていません。 詳細については、[デバイスの電源管理](device-power-management.md)を参照してください。 すべての USB デバイス関数ドライバーする必要がありますにオプトイン D3cold します。
 
 ### <a name="usb-port-specific-objects"></a>USB ポートに固有のオブジェクト
 
@@ -168,7 +168,7 @@ USB デバイスは、そのポートのアドレスを特定のポート共有�
 | --- | --- |
 | 複合 USB デバイスで USB 関数 | 複合デバイスが接続する、関数の最初のインターフェイスの数を足すポートのポート番号。 (加算)。 |
 
-詳細については、次を参照してください。[内蔵カメラの位置を識別する](https://go.microsoft.com/fwlink/p/?linkid=331060)します。
+詳細については、[内蔵カメラの位置を識別する](https://go.microsoft.com/fwlink/p/?linkid=331060)を参照してください。
 
 ### <a name="asl-code-examples"></a>ASL コードの例
 
@@ -252,7 +252,7 @@ Windows には、ヒューマン インターフェイス デバイス (HID) の
 - A\_と CRS:
   - デバイスにアクセスするため、I2CSerialBusConnection リソース
   - Interrupt(s) の GpioInt リソース
-- HIDI2C \_DSM デバイス記述子の登録を非表示にアドレスを返すメソッド。 詳細については、次を参照してください。 [HIDI2C デバイス固有のメソッド (\_DSM)](hidi2c-device-specific-method---dsm-.md)します。
+- HIDI2C \_DSM デバイス記述子の登録を非表示にアドレスを返すメソッド。 詳細については、[HIDI2C デバイス固有のメソッド (\_DSM)](hidi2c-device-specific-method---dsm-.md)を参照してください。
 
 ## <a name="button-devices"></a>ボタン デバイス
 
@@ -269,7 +269,7 @@ SoC のプラットフォームでは、Windows は、ACPI 定義コントロー
 - 電源ボタンの GPIO 割り込みのリソースを一覧表示、 \_AEI、GPIO コント ローラーのオブジェクトが接続されています。
 - GPIO コント ローラーのデバイスで関連付けられたイベント メソッド (Lxx/Exx/EVT) を提供します。 このイベント メソッドには、ボタンのイベントが発生したオペレーティング システムのコントロールのメソッドのボタン ドライバーに通知します。
 
-詳細については、次を参照してください。 [Windows 8 タブレットとコンバーチブル デバイス用のハードウェア ボタン](https://go.microsoft.com/fwlink/p/?linkid=331284)します。
+詳細については、[Windows 8 タブレットとコンバーチブル デバイス用のハードウェア ボタン](https://go.microsoft.com/fwlink/p/?linkid=331284)を参照してください。
 
 ### <a name="windows-compatible-button-array"></a>Windows と互換性のあるボタン配列
 
@@ -300,9 +300,9 @@ SoC のプラットフォームでは、Windows は、ACPI 定義コントロー
 
         [回転ロック] ボタンをウェイク アップに対応できないする必要があります (排他的に使用する必要があります)。
 
-詳細については、次を参照してください。 [Windows 8 タブレットとコンバーチブル デバイス用のハードウェア ボタン](https://go.microsoft.com/fwlink/p/?linkid=331284)します。
+詳細については、[Windows 8 タブレットとコンバーチブル デバイス用のハードウェア ボタン](https://go.microsoft.com/fwlink/p/?linkid=331284)を参照してください。
 
-Windows を Windows ボタン UI の進化をサポートするには、デバイス固有のメソッドを定義します (\_DSM) ボタン配列の Windows デバイス用です。 詳細については、次を参照してください。 [Windows ボタン配列のデバイスに固有のメソッド (\_DSM)](windows-button-array-device-specific-method---dsm-.md)します。
+Windows を Windows ボタン UI の進化をサポートするには、デバイス固有のメソッドを定義します (\_DSM) ボタン配列の Windows デバイス用です。 詳細については、[Windows ボタン配列のデバイスに固有のメソッド (\_DSM)](windows-button-array-device-specific-method---dsm-.md)を参照してください。
 
 ## <a name="dock-and-convertible-pc-sensing-devices"></a>ドッキング ステーションとコンバーチブル型の PC をデバイスの検出
 
@@ -313,7 +313,7 @@ Windows では、2 つの検出デバイスを ACPI 名前空間を使用して�
 - GPIO コント ローラーのドライバーによって提供される ActiveBoth エミュレーションを使用する必要があります、 [GPIO フレームワーク拡張](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-i-o-and-interrupt-interfaces)(**GpioClx**)。
 - アサートされている状態 (「ドッキング」または"Converted") がロジックのレベルの低い、GPIO コント ローラーがアサートされていない場合\_GPIO ドライバー スタックの既定の動作をオーバーライドする DSM メソッドが必要です。 詳細については、次を参照してください。、 **GPIO コント ローラー デバイス**セクション、[汎用入出力 (GPIO)](general-purpose-i-o--gpio-.md)トピック。
 
-詳細については、次を参照してください。 [Windows 8 タブレットとコンバーチブル デバイス用のハードウェア ボタン](https://go.microsoft.com/fwlink/p/?linkid=331284)します。
+詳細については、[Windows 8 タブレットとコンバーチブル デバイス用のハードウェア ボタン](https://go.microsoft.com/fwlink/p/?linkid=331284)を参照してください。
 
 ### <a name="dock-sensing-device"></a>デバイスのドック検知
 

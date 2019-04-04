@@ -33,7 +33,7 @@ ms.locfileid: "56536926"
 
 デバッグの開始時に、現在のプロセスに、デバッガーがアタッチされている、またはデバッガーに割り込んだ例外の原因となったものになります。 同様に、現在のスレッドが、デバッガーがプロセスにアタッチされているか、例外の原因となったときにアクティブだった 1 つです。 ただし、デバッガーを使用して、現在のプロセスとスレッドを変更および固定または個々 のスレッドの固定を解除することができます。
 
-カーネル モードで、デバッグのプロセスとスレッドによって制御されないこのセクションで説明されているメソッド。 カーネル モードでのプロセスとスレッドを操作する方法の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+カーネル モードで、デバッグのプロセスとスレッドによって制御されないこのセクションで説明されているメソッド。 カーネル モードでのプロセスとスレッドを操作する方法の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
 ### <a name="span-iddisplayingprocessesandthreadsspanspan-iddisplayingprocessesandthreadsspandisplaying-processes-and-threads"></a><span id="displaying_processes_and_threads"></span><span id="DISPLAYING_PROCESSES_AND_THREADS"></span>プロセスとスレッドを表示します。
 
@@ -97,7 +97,7 @@ ms.locfileid: "56536926"
 
 ### <a name="span-idmultiplesystemsspanspan-idmultiplesystemsspanmultiple-systems"></a><span id="multiple_systems"></span><span id="MULTIPLE_SYSTEMS"></span>複数のシステム
 
-デバッガーは、同時に複数のターゲットにアタッチできます。 これらのプロセスがダンプ ファイルを含める場合、または複数のコンピューター上のライブのターゲットを含めると、デバッガーは、システム、プロセス、およびアクションごとにスレッドを参照します。 この種のデバッグの詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
+デバッガーは、同時に複数のターゲットにアタッチできます。 これらのプロセスがダンプ ファイルを含める場合、または複数のコンピューター上のライブのターゲットを含めると、デバッガーは、システム、プロセス、およびアクションごとにスレッドを参照します。 この種のデバッグの詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
 
  
 

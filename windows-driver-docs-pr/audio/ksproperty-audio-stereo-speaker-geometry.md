@@ -94,7 +94,7 @@ KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY プロパ�
 
 DirectSound 扱います KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY で DAC のノードでは、filter プロパティと 3D のノードに暗証番号 (pin) のプロパティとして。
 
-詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
+詳細については、[DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

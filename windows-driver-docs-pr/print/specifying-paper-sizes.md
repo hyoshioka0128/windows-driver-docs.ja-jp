@@ -26,17 +26,17 @@ ms.locfileid: "56538788"
 
 ### <a name="standard-paper-sizes"></a>標準の用紙サイズ
 
-標準の用紙サイズでは、ほとんどのプリンターで一般的にサポートされているものです。 これらの用紙サイズの大きさが事前に定義されています。 詳細については、次を参照してください。[標準の用紙サイズをサポートしている](supporting-standard-paper-sizes.md)します。
+標準の用紙サイズでは、ほとんどのプリンターで一般的にサポートされているものです。 これらの用紙サイズの大きさが事前に定義されています。 詳細については、[標準の用紙サイズをサポートしている](supporting-standard-paper-sizes.md)を参照してください。
 
 ### <a name="vendor-defined-paper-sizes"></a>ベンダー定義用紙サイズ
 
-(非標準の用紙サイズとも呼ばれます) のベンダー定義用紙サイズは、プリンターの GPD ファイル内で、プリンタのベンダによって定義されます。 詳細については、次を参照してください。 [Supporting Vendor-Defined 用紙サイズ](supporting-vendor-defined-paper-sizes.md)します。
+(非標準の用紙サイズとも呼ばれます) のベンダー定義用紙サイズは、プリンターの GPD ファイル内で、プリンタのベンダによって定義されます。 詳細については、[Supporting Vendor-Defined 用紙サイズ](supporting-vendor-defined-paper-sizes.md)を参照してください。
 
 ### <a name="user-defined-paper-sizes"></a>ユーザー定義用紙サイズ
 
-(カスタマイズされた用紙サイズとも呼ばれます) のユーザー定義用紙サイズは、システム管理者が、システムの印刷のフォルダーを使用して定義され、システムに固有のそのため。 詳細については、次を参照してください。 [Supporting User-Defined 用紙サイズ](supporting-user-defined-paper-sizes.md)します。
+(カスタマイズされた用紙サイズとも呼ばれます) のユーザー定義用紙サイズは、システム管理者が、システムの印刷のフォルダーを使用して定義され、システムに固有のそのため。 詳細については、[Supporting User-Defined 用紙サイズ](supporting-user-defined-paper-sizes.md)を参照してください。
 
-システム ロケールを使用して、既定の用紙サイズを指定する方法については、次を参照してください。[を参照するロケール](referencing-locales.md)します。
+システム ロケールを使用して、既定の用紙サイズを指定する方法については、[を参照するロケール](referencing-locales.md)を参照してください。
 
  
 

@@ -63,9 +63,9 @@ ms.locfileid: "56550482"
 
  
 
-これらのキーワードの使用に関する詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+これらのキーワードの使用に関する詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
 
-デバイス インストールの機能を使用して、ユーザー モード コンポーネントによって、設定を設定することができます。 詳細については、次を参照してください。[設定デバイス オブジェクト レジストリ インストール後にプロパティ](setting-device-object-registry-properties-after-installation.md)します。
+デバイス インストールの機能を使用して、ユーザー モード コンポーネントによって、設定を設定することができます。 詳細については、[設定デバイス オブジェクト レジストリ インストール後にプロパティ](setting-device-object-registry-properties-after-installation.md)を参照してください。
 
  
 

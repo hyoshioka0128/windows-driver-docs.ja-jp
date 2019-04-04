@@ -63,7 +63,7 @@ DO\_POWER\_PAGABLE フラグ、 [**デバイス\_オブジェクト**](https://m
 
 ### <a name="wdm-differences-in-kernel-mode-driver-operation"></a>WDM カーネル モード ドライバー操作の違い
 
-Windows 98 のカーネル モード WDM ドライバー]、[浮動小数点演算、MMX、3 dnow を使用するための特定のガイドラインに従う必要があります Me!、または Intel の SSE 拡張機能。 詳細については、次を参照してください。[を使用する浮動小数点または WDM ドライバーで MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)します。
+Windows 98 のカーネル モード WDM ドライバー]、[浮動小数点演算、MMX、3 dnow を使用するための特定のガイドラインに従う必要があります Me!、または Intel の SSE 拡張機能。 詳細については、[を使用する浮動小数点または WDM ドライバーで MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)を参照してください。
 
 Windows 98/私の一部のドライバーに適切なことができない可能性があるワーカー スレッドの固定数を提供します。
 

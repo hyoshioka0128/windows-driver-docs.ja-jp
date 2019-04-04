@@ -66,7 +66,7 @@ I/O マネージャーは、複数層のドライバーのチェーンでは、�
 
 -   [**IRP\_MJ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff550784) -デバイスの電源操作を実行します。 **IRP\_MJ\_POWER** I/O マネージャーを通じて電源マネージャー要求を送信します。
 
-ドライバーが処理するために必要な主要な IRP の関数コードの詳細については、次を参照してください。 [IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)します。
+ドライバーが処理するために必要な主要な IRP の関数コードの詳細については、[IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)を参照してください。
 
 一般に、I/O マネージャーは、ファイル システムが他のドライバーの大容量記憶装置上に構築されたために、少なくとも 2 つの大容量記憶装置デバイス ドライバーへの I/O スタックの場所で Irp を送信します。 I/O マネージャーは、Irp をその上層の他のドライバーがない任意のドライバーを 1 つのスタックの場所に送信します。
 

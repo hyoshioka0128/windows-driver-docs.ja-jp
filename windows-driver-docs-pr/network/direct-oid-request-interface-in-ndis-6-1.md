@@ -28,7 +28,7 @@ NDIS は、NDIS 6.1 と以降のドライバーの直接の OID 要求インタ�
 
  
 
-NDIS 6.1、IPsecOV2 は直接の OID 要求インターフェイスを使用する唯一のインターフェイスです。 IPsecOV2 の詳細については、次を参照してください。 [IPsec タスク オフロード バージョン 2 で NDIS 6.1](ipsec-task-offload-version-2-in-ndis-6-1.md)します。
+NDIS 6.1、IPsecOV2 は直接の OID 要求インターフェイスを使用する唯一のインターフェイスです。 IPsecOV2 の詳細については、[IPsec タスク オフロード バージョン 2 で NDIS 6.1](ipsec-task-offload-version-2-in-ndis-6-1.md)を参照してください。
 
 Windows Server 2008 および Windows Vista Service Pack 1 (SP1) オペレーティング システムとドライバーを NDIS 6.1、OID 要求インターフェイスを直接、次のアルゴリズムのみを使用できます。
 

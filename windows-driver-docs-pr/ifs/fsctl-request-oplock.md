@@ -45,7 +45,7 @@ IRP の IRP へのポインター\_MJ\_ファイル\_システム\_コントロ�
 Oplock が関連する操作に対応するビットマスク。 ファイル システムまたはフィルター ドライバーの動作を指定するビットを設定する[ **FsRtlOplockFsctrlEx**](https://msdn.microsoft.com/library/windows/hardware/ff547113)します。 *フラグ*パラメーターには、次のオプション。
 
 <a href="" id="oplock-fsctrl-flag-all-keys-match--0x00000001-"></a>OPLOCK\_FSCTRL\_FLAG\_ALL\_KEYS\_MATCH (0x00000001)  
-便宜的ロックのすべてのキーが現在開かれているいずれかのハンドルに一致するファイル システムが検証することを指定します。 このフラグを指定すると、oplock のパッケージをファイルに 1 つ以上の開いているハンドルが存在する場合のレベルの RW または RWH oplock を与えることができます。 Oplock の種類の詳細については、次を参照してください。[概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)します。
+便宜的ロックのすべてのキーが現在開かれているいずれかのハンドルに一致するファイル システムが検証することを指定します。 このフラグを指定すると、oplock のパッケージをファイルに 1 つ以上の開いているハンドルが存在する場合のレベルの RW または RWH oplock を与えることができます。 Oplock の種類の詳細については、[概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)を参照してください。
 
 <a name="status-block"></a>ステータス ブロック
 ------------

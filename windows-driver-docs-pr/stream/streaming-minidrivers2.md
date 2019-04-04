@@ -27,7 +27,7 @@ ms.locfileid: "56580709"
 
 
 
-**注**  このセクションでは、古いについて*Stream.sys*クラス ドライバー。 Microsoft Windows XP のリリースでは、Microsoft サポートしている*Stream.sys*既存のドライバーに対してだけです。 このリリースの時点では、ベンダーは、クラスの AVStream ドライバー モデルを使用するビデオまたはオーディオ/ビデオ、マルチ メディア ドライバーの新規の開発を検討をお勧めします。 詳細を確認、 [AVStream の概要](avstream-overview.md)します。 オーディオのみのドライバーを開発する場合は、Microsoft の下で、オーディオ ミニポート ドライバーを記述する必要があります*Portcls.sys*クラス ドライバー。 詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)します。
+**注**  このセクションでは、古いについて*Stream.sys*クラス ドライバー。 Microsoft Windows XP のリリースでは、Microsoft サポートしている*Stream.sys*既存のドライバーに対してだけです。 このリリースの時点では、ベンダーは、クラスの AVStream ドライバー モデルを使用するビデオまたはオーディオ/ビデオ、マルチ メディア ドライバーの新規の開発を検討をお勧めします。 詳細を確認、 [AVStream の概要](avstream-overview.md)します。 オーディオのみのドライバーを開発する場合は、Microsoft の下で、オーディオ ミニポート ドライバーを記述する必要があります*Portcls.sys*クラス ドライバー。 詳細については、[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)を参照してください。
 
  
 

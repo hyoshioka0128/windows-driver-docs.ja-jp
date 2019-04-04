@@ -45,7 +45,7 @@ Exts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-アプリケーションとこのコマンドの例では、次を参照してください。[オブジェクトの ACL の決定](determining-the-acl-of-an-object.md)します。 セキュリティ記述子の詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 参照してください[ **! sid** ](-sid.md)と[ **! acl**](-acl.md)します。
+アプリケーションとこのコマンドの例では、[オブジェクトの ACL の決定](determining-the-acl-of-an-object.md)を参照してください。 セキュリティ記述子の詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 参照してください[ **! sid** ](-sid.md)と[ **! acl**](-acl.md)します。
 
 <a name="remarks"></a>注釈
 -------

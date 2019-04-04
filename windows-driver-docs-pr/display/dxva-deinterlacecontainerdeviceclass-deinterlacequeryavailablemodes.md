@@ -55,7 +55,7 @@ HRESULT DeinterlaceQueryAvailableModes(
 <a name="remarks"></a>注釈
 -------
 
-*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、次を参照してください。[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)します。
+*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)を参照してください。
 
 によって返される Guid、 *pGuidsDeinterlaceModes*パラメーターの品質を降順で返す (つまり、最高品質のモードに占める返される GUID の配列の最初の要素)。
 

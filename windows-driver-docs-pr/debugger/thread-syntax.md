@@ -81,9 +81,9 @@ ms.locfileid: "56551051"
 
 ### <a name="span-idcontrollingthreadsinkernelmodespanspan-idcontrollingthreadsinkernelmodespancontrolling-threads-in-kernel-mode"></a><span id="controlling_threads_in_kernel_mode"></span><span id="CONTROLLING_THREADS_IN_KERNEL_MODE"></span>カーネル モードでのスレッドを制御します。
 
-カーネル モードでは、スレッド識別子を使用してスレッドを制御できません。 カーネル モードでスレッド固有の情報にアクセスする方法の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+カーネル モードでは、スレッド識別子を使用してスレッドを制御できません。 カーネル モードでスレッド固有の情報にアクセスする方法の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
-**注**  チルダ (~) を使用して、ユーザー モードのデバッグ中にスレッドを指定することができます。 カーネル モードのデバッグは、プロセッサを指定するのにチルダを使用することができます。 プロセッサを指定する方法の詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。
+**注**  チルダ (~) を使用して、ユーザー モードのデバッグ中にスレッドを指定することができます。 カーネル モードのデバッグは、プロセッサを指定するのにチルダを使用することができます。 プロセッサを指定する方法の詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。
 
  
 

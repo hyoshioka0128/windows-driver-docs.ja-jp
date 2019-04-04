@@ -60,7 +60,7 @@ ms.locfileid: "56570104"
 
 2.  返す**KeepObject**します。
 
-詳細については、次を参照してください。[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)します。
+詳細については、[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)を参照してください。
 
 他のドライバー ルーチン (おそらく、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン) 呼び出す必要があります[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)各 DMA で操作を転送する場合完了しました。 このルーチンも呼び出す必要があります**MapTransfer**と**FlushAdapterBuffers**もう一度は現在 IRP の転送要求を満たすために複数回 DMA コント ローラーを設定するために必要なかどうか。
 

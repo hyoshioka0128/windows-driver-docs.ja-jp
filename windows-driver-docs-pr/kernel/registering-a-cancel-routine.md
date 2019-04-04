@@ -31,7 +31,7 @@ ms.locfileid: "56548741"
 
 3.  呼び出す[ **IoReleaseCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff549550)します。
 
-キャンセルのスピン ロックについては、次を参照してください。[システムのキャンセル スピン ロックを使用して](using-the-system-s-cancel-spin-lock.md)します。
+キャンセルのスピン ロックについては、[システムのキャンセル スピン ロックを使用して](using-the-system-s-cancel-spin-lock.md)を参照してください。
 
 I/O マネージャーが指定したデバイスのキューを使用するのではなく、Irp の独自のキューを管理するドライバーを呼び出すときに、キャンセル スピン ロックを取得する必要はありません**IoSetCancelRoutine**します。 ただし、これらのドライバーを確認する必要があります、*キャンセル*日常的なポインターを**IoSetCancelRoutine**判断を返すかどうか、*キャンセル*ルーチンが既に開始します。
 

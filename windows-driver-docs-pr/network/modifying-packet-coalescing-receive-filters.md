@@ -34,11 +34,11 @@ ms.locfileid: "56549140"
 
     メンバーを更新する必要があります、上にあるドライバーには、テスト条件への変更が完了したら、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)受信フィルターに加えられた変更を反映するように構造体。 たとえば、上にあるドライバーを更新する必要があります、 **FieldParametersArrayNumElements**メンバーを含む新しい配列の要素数。
 
-    詳細については、次を参照してください。[パケット結合受信フィルターを指定する](specifying-a-packet-coalescing-receive-filter.md)します。
+    詳細については、[パケット結合受信フィルターを指定する](specifying-a-packet-coalescing-receive-filter.md)を参照してください。
 
 4.  上にあるドライバーの OID メソッド要求を発行する[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)ミニポート ドライバーに変更された受信フィルターをダウンロードします。
 
-    詳細については、次を参照してください。[パケット結合受信フィルターを設定](setting-a-packet-coalescing-receive-filter.md)します。
+    詳細については、[パケット結合受信フィルターを設定](setting-a-packet-coalescing-receive-filter.md)を参照してください。
 
 
 

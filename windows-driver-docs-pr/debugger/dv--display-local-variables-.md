@@ -97,7 +97,7 @@ dv [Flags] [Pattern]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細の表示と変更のローカル変数とその他のメモリに関連するコマンドの説明については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+詳細の表示と変更のローカル変数とその他のメモリに関連するコマンドの説明については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -106,7 +106,7 @@ dv [Flags] [Pattern]
 
 データの構造体および未知のデータ型は、完全; には表示されません。代わりに、その型名が表示されます。 全体の構造を表示または構造体の特定のメンバーを表示を使用して、 [ **dt (型の表示)** ](dt--display-type-.md)コマンド。
 
-*ローカル コンテキスト*決定ローカル変数のセットが表示されます。 既定では、このコンテキストは、プログラムのカウンターの現在の位置と一致します。 これを変更する方法については、次を参照してください。[ローカル コンテキスト](changing-contexts.md#local-context)します。
+*ローカル コンテキスト*決定ローカル変数のセットが表示されます。 既定では、このコンテキストは、プログラムのカウンターの現在の位置と一致します。 これを変更する方法については、[ローカル コンテキスト](changing-contexts.md#local-context)を参照してください。
 
  
 

@@ -57,7 +57,7 @@ NDIS が PF ミニポート ドライバーを呼び出すときに[ *MiniportIn
 
 2.  ミニポート ドライバーの設定の他のメンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)受信フィルターの値の範囲に構造体現在有効になっている、インターフェイスの機能です。 たとえば、NDIS パケットの結合が有効になっている場合、ドライバーする必要がありますこのテクノロジに固有のメンバーを設定のみです。
 
-    インターフェイスを使用するがフィルター処理に受信は有効になっているか、標準化された INF キーワードによって無効になっています。 NDIS パケットの結合が有効にする方法の詳細については、次を参照してください。[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)します。 SR-IOV と VMQ が有効にする方法の詳細については、次を参照してください。[処理、SR-IOV、VMQ、および RSS の標準化された INF キーワード](handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md)します。
+    インターフェイスを使用するがフィルター処理に受信は有効になっているか、標準化された INF キーワードによって無効になっています。 NDIS パケットの結合が有効にする方法の詳細については、[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)を参照してください。 SR-IOV と VMQ が有効にする方法の詳細については、[処理、SR-IOV、VMQ、および RSS の標準化された INF キーワード](handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md)を参照してください。
 
 NDIS のミニポート ドライバーの呼び出したときに[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数の場合、ドライバーは、次の手順に従って、ネットワーク アダプターの機能をフィルター処理、受信を登録します。
 
@@ -81,7 +81,7 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 5.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
 
 ## <a name="querying-receive-filtering-capabilities-by-overlying-drivers"></a>ドライバーに関連してフィルター処理機能を受信するクエリを実行します。
 

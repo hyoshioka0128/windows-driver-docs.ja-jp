@@ -28,7 +28,7 @@ typedef PVOID PWSK_CLIENT;
 
 WSK アプリケーションを呼び出すと、 [WskCaptureProviderNPI](https://msdn.microsoft.com/library/windows/hardware/ff571122)関数で WSK サブシステムで、WSK_CLIENT 構造体の WSK アプリケーションへのポインターが返されます、 *WskProviderNpi*パラメーター。 WSK サブシステムは、WSK アプリケーションと WSK サブシステム間のバインドの状態を追跡するために、この構造体を使用します。 WSK アプリケーションは、内のすべての関数をパラメーターとしてこのポインターを渡して[WSK_PROVIDER_DISPATCH](https://msdn.microsoft.com/library/windows/hardware/ff571175) ([WskControlClient](https://msdn.microsoft.com/library/windows/hardware/ff571126)、 [WskSocket](https://msdn.microsoft.com/library/windows/hardware/ff571149)、および[WskSocketConnect](https://msdn.microsoft.com/library/windows/hardware/ff571150))。
 
-詳細については、次を参照してください。 [Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)します。
+詳細については、[Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)を参照してください。
 
 ## <a name="requirements"></a>要件
 

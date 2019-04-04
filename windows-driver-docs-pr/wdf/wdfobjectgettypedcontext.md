@@ -49,7 +49,7 @@ Framework のオブジェクトへのハンドル。
 
 使用することができます、 **WdfObjectGetTypedContext**マクロを任意のフレームワーク オブジェクト コンテキストの領域へのポインターを取得します。 このマクロを使用して、代わりに、オブジェクト固有のコンテキストのアクセサー メソッドを呼び出すことがによって作成された、 [ **WDF_DECLARE_CONTEXT_TYPE** ](wdf-declare-context-type.md)マクロまたは[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)マクロ。 使用する場合**WdfObjectGetTypedContext**、使用することも必要があります WDF_DECLARE_CONTEXT_TYPE または WDF_DECLARE_CONTEXT_TYPE_WITH_NAME、オブジェクト コンテキストを宣言します。
 
-これらのマクロの詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
+これらのマクロの詳細については、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
 
 <a name="examples"></a>例
 --------

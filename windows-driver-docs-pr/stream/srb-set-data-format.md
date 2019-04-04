@@ -39,7 +39,7 @@ ms.locfileid: "56536446"
 
 クラスのドライバーで新しいデータ形式を渡す、 **CommandData**.**OpenFormat**のメンバー、 *pSrb*ポインター。 (このポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造です)。
 
-データ形式の詳細については、次を参照してください。、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)します。 参照してください[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+データ形式の詳細については、、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)を参照してください。 参照してください[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
 
  
 

@@ -37,7 +37,7 @@ ms.locfileid: "56532340"
 
 **KeAcquireSpinLockForDpc**と**KeAcquireInStackQueuedSpinLockForDpc**ディスパッチで呼び出されたときに、IRQL をリセットしない\_レベルが高速に実行よりも**KeAcquireSpinLock**と**KeAcquireInStackQueuedSpinLock**、それぞれします。
 
-スピン ロックについての詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+スピン ロックについての詳細については、[スピン ロック](spin-locks.md)を参照してください。
 
  
 

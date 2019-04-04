@@ -16,7 +16,7 @@ ms.locfileid: "56538671"
 
 次の例は、アプリケーションが呼び出す可能性があります通常方法[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)でが information のエントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)が警告ではありませんメッセージまたはエラー メッセージ。
 
-呼び出しについては**SetupWriteTextLog** 、エラー メッセージを記録するには、次を参照してください。[エラーや警告のエントリを記録する呼び出し SetupWriteTextLog](writing-an-error-or-warning-log-entry.md)します。
+呼び出しについては**SetupWriteTextLog** 、エラー メッセージを記録するには、[エラーや警告のエントリを記録する呼び出し SetupWriteTextLog](writing-an-error-or-warning-log-entry.md)を参照してください。
 
 アプリケーション呼び出し[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)、次のパラメーター値を指定します。
 
@@ -24,7 +24,7 @@ ms.locfileid: "56538671"
 
 -   *カテゴリ*TXTLOG_VENDOR で、ログ エントリがベンダーから提供されたアプリケーションによって行われたことを示しますに設定されます。 イベント カテゴリについては、後述[テキスト ログのイベント カテゴリを有効にする](enabling-event-categories-for-a-text-log.md)します。
 
--   *フラグ*TXTLOG_TIMESTAMP とビットごとの TXTLOG_DETAILS またはに設定されます。 この例では、インデント深度が変更されていないとインデントの現在の深さは 5 つの固定幅テキスト スペースに設定されていました。 インデントの深さを変更する方法については、次を参照してください。[インデントのログ エントリの書き込み](writing-indented-log-entries.md)します。 イベント レベルが記載されて、[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)トピック。
+-   *フラグ*TXTLOG_TIMESTAMP とビットごとの TXTLOG_DETAILS またはに設定されます。 この例では、インデント深度が変更されていないとインデントの現在の深さは 5 つの固定幅テキスト スペースに設定されていました。 インデントの深さを変更する方法については、[インデントのログ エントリの書き込み](writing-indented-log-entries.md)を参照してください。 イベント レベルが記載されて、[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)トピック。
 
 -   *MessageStr*テキストに設定されている ("関心のある変数: %d を =")。
 

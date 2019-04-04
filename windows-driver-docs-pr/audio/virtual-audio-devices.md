@@ -23,7 +23,7 @@ ms.locfileid: "56537441"
 
 仮想のオーディオ デバイスは、レンダリング、オーディオ コンテンツをキャプチャするフィルター グラフを表しています。 システム オーディオ ドライバー (SysAudio) は、使用可能なハードウェアおよびソフトウェア コンポーネントを使用して、ビルドをフィルター グラフを決定します。
 
-システム オーディオ ドライバーの詳細については、次を参照してください。 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)します。
+システム オーディオ ドライバーの詳細については、[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を参照してください。
 
 ## <span id="virtual_audio_devices"></span><span id="VIRTUAL_AUDIO_DEVICES"></span>
 

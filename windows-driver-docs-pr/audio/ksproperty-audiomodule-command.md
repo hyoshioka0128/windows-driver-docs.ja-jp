@@ -69,7 +69,7 @@ ms.locfileid: "56551692"
 
 サポート、 **KSPROPERTY\_AUDIOMODULE\_コマンド**プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [ **KSAUDIOMODULE\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/mt808139) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 **KSAUDIOMODULE\_プロパティ**カスタム コマンドを送信する入力バッファーにします。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

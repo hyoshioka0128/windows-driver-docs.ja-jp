@@ -19,7 +19,7 @@ ms.locfileid: "58349271"
 
 ![xml ファイルの階層のプロビジョニング](images/mb-provisioningmetadata.jpg)
 
-プロビジョニングのスキーマの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
+プロビジョニングのスキーマの詳細については、[CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)を参照してください。
 
 ## <a name="updating-the-provisioning-metadata"></a>プロビジョニングのメタデータを更新します。
 
@@ -75,13 +75,13 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 - [許可されている組み合わせ](#permitted-combinations)
 
-これらのセクションの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
+これらのセクションの詳細については、[CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)を参照してください。
 
 ### <a name="global"></a>グローバル
 
 グローバル セクションは、プロビジョニングのすべてのファイルに必要です。 このセクションで必要な要素は次のとおりです。
 
-- [**CarrierId** ](https://msdn.microsoft.com/library/windows/apps/hh868288)ファイルを作成した組織を一意に識別する GUID。 モバイル ブロード バンドのアプリを構築する場合で指定した GUID を使用する必要があります、[サービス数](https://msdn.microsoft.com/library/windows/hardware/dn236413)フィールド**ServiceInfo.xml**サービス メタデータ パッケージにします。 サービス メタデータ パッケージのスキーマについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
+- [**CarrierId** ](https://msdn.microsoft.com/library/windows/apps/hh868288)ファイルを作成した組織を一意に識別する GUID。 モバイル ブロード バンドのアプリを構築する場合で指定した GUID を使用する必要があります、[サービス数](https://msdn.microsoft.com/library/windows/hardware/dn236413)フィールド**ServiceInfo.xml**サービス メタデータ パッケージにします。 サービス メタデータ パッケージのスキーマについては、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
 
   > [!NOTE]
   > これは、同じサービス数で指定した、**作成モバイル ブロード バンド エクスペリエンス ウィザード**Windows デベロッパー センターのダッシュ ボードでハードウェア。
@@ -153,7 +153,7 @@ Windows が、モバイル ブロード バンド ネットワークを表示す
 
 - 正規表現
 
-SMS 通知の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
+SMS 通知の詳細については、[mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)を参照してください。
 
 各ルールには、次の情報が含まれています。
 

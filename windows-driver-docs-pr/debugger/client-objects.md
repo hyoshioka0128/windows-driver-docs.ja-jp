@@ -42,7 +42,7 @@ A*プライマリ クライアント*は現在参加して、クライアント�
 
 ### <a name="span-idadditional-informationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-作成して、クライアント オブジェクトの使用に関する詳細については、次を参照してください。[コールバック オブジェクトを使用する](using-callback-objects.md)します。 コールバック オブジェクトの登録方法の詳細については、コールバック オブジェクトを使用するを参照してください。
+作成して、クライアント オブジェクトの使用に関する詳細については、[コールバック オブジェクトを使用する](using-callback-objects.md)を参照してください。 コールバック オブジェクトの登録方法の詳細については、コールバック オブジェクトを使用するを参照してください。
 
  
 

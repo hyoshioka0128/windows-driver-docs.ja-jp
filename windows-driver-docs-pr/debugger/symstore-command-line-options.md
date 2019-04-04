@@ -114,7 +114,7 @@ SymStore コマンドのヘルプを表示します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-SymStore の詳細については、次を参照してください。[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)します。
+SymStore の詳細については、[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)を参照してください。
 
 
 

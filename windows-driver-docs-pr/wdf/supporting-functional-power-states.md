@@ -55,14 +55,14 @@ KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoF
 <li>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545903" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545903)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>します。</li>
 </ul>
 <p>この場合は、KMDF、PoFx やり取りのほとんどを処理します。</p>
-<p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
+<p>サンプル コードでは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="supporting-multiple-functional-power-states-for-multiple-component-devices.md" data-raw-source="[Multiple components, single or multiple states](supporting-multiple-functional-power-states-for-multiple-component-devices.md)">複数のコンポーネント、1 つまたは複数の状態</a></p></td>
 <td align="left"><p>WDM インターフェイスを使用してサポートされています。</p></td>
 <td align="left"><p>サポートされない</p></td>
 <td align="left"><p>ドライバーは、複数のコンポーネントが場合。 この場合、PoFx インターフェイスを直接使用する必要があります。</p>
-<p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
+<p>サンプル コードでは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

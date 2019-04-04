@@ -61,7 +61,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomSwitchData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
+MOF コンパイラを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)を参照してください。
 
 次の例では、スイッチのデータを取得するカスタム スイッチ機能の状態の定義を使用する方法を示します。 この例では、Fabrikam\_CustomSwitchData MOF クラスを使用して"TestSwitch"という名前のスイッチからスイッチの状態を取得します。 Fabrikam, Inc. の拡張機能では、vSwitch"TestSwitch"が有効になり、123 の状態を返すことができます。
 

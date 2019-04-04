@@ -54,7 +54,7 @@ NTSD コマンドを使用して、プロセスをデバッグする**ntsd-d-p-1
 
 このフラグは、有効な場合にのみ、[最初のコマンドをデバッグ](debug-initial-command.md)フラグ (dic) または[デバッグ WinLogon](debug-winlogon.md)フラグ (dwl) も設定されます。
 
-NTSD について詳しくは、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
+NTSD について詳しくは、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
 
  
 

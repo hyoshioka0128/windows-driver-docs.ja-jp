@@ -20,7 +20,7 @@ ms.locfileid: "56548884"
 
 
 
-加え、 **WanEndpoints**値の場合は、ISDN アダプターを追加する必要があります、INF ファイル (を通じて、*追加レジストリ セクション*) 次のキーと、アダプターのインスタンス キーの値。 詳細については、次を参照してください。 [WAN アダプター用の WAN のエンドポイントを指定する](specifying-wan-endpoints-for-a-wan-adapter.md)します。
+加え、 **WanEndpoints**値の場合は、ISDN アダプターを追加する必要があります、INF ファイル (を通じて、*追加レジストリ セクション*) 次のキーと、アダプターのインスタンス キーの値。 詳細については、[WAN アダプター用の WAN のエンドポイントを指定する](specifying-wan-endpoints-for-a-wan-adapter.md)を参照してください。
 
 **注**ISDN ドライバーが Windows 8.1、Windows Server 2012 R2 で非推奨とそれ以降。
 

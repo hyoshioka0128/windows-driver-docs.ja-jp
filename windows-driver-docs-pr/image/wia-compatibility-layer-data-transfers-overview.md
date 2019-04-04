@@ -36,7 +36,7 @@ WIA がメモリ ビットマップ形式をサポートしていません**WiaI
 
 Windows Vista のドライバーでは、転送中にイメージ全体をキャッシュ、ドライバーではなく、バンド内のデータを転送する更新プログラムのメッセージを送信できます。 この形式の転送は、すぐに、スクロール フィード スキャナーによるスキャンなど、転送されるイメージのサイズを決定することはできませんのスキャン中にデータを転送する場合に便利です。 バンドに画像データを転送するために、ドライバーを呼び出す必要があります**IStream::Seek**内で渡されたストリームに[ **IWiaTransferCallback::GetNextStream**](https://msdn.microsoft.com/library/windows/hardware/ff545039)します。
 
-TYMED と転送のストリーム ベースの詳細については、次を参照してください。 [Data Transfers](data-transfers.md)します。
+TYMED と転送のストリーム ベースの詳細については、[Data Transfers](data-transfers.md)を参照してください。
 
 **IWiaDataTransfer**、 **IWiaTransfer**、および**IStream**インターフェイスについては、Microsoft Windows SDK ドキュメントで説明します。
 

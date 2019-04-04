@@ -29,7 +29,7 @@ Unidrv は標準の HT\_PATSIZE\_GPD ファイル ハーフトーン オプシ�
 
 ハーフトーンの GDI が指定した機能を使用するには、する場合は、指定[ハーフトーンのミニドライバーが指定したパターン](minidriver-supplied-halftone-patterns.md)します。
 
-色の形式の詳細については、次を参照してください。[色形式の処理](handling-color-formats.md)します。
+色の形式の詳細については、[色形式の処理](handling-color-formats.md)を参照してください。
 
  
 

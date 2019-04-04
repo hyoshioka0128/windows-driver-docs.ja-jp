@@ -20,7 +20,7 @@ ms.locfileid: "56536319"
 
  
 
-どのような UWP デバイス アプリは、1 つを作成する方法の詳細については、次を参照してください。[構築 UWP デバイス アプリ](the-workflow.md)します。
+どのような UWP デバイス アプリは、1 つを作成する方法の詳細については、[構築 UWP デバイス アプリ](the-workflow.md)を参照してください。
 
 ## <a name="span-iddeviceupdatespanspan-iddeviceupdatespanspan-iddeviceupdatespan-device-update"></a><span id="_Device_update"></span><span id="_device_update"></span><span id="_DEVICE_UPDATE"></span> デバイスの更新
 
@@ -29,7 +29,7 @@ ms.locfileid: "56536319"
 
 ![windows ストア デバイス アプリはバック グラウンドでファームウェアの更新プログラムなどのデバイスの更新プログラムを実行することができます。](images/deviceupdateuserconsent.png)
 
-デバイス (デバイスの更新プログラム) をサービスのバック グラウンド タスクを作成するには、使用、 [DeviceServicingTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308965)トリガーします。 ようなトリガーでは、 [DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)、すべての UWP アプリで利用できますが、信頼性の高いコンテンツの同期のことができます。 詳細については、次を参照してください。[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)します。
+デバイス (デバイスの更新プログラム) をサービスのバック グラウンド タスクを作成するには、使用、 [DeviceServicingTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308965)トリガーします。 ようなトリガーでは、 [DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)、すべての UWP アプリで利用できますが、信頼性の高いコンテンツの同期のことができます。 詳細については、[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)を参照してください。
 
 **注**  デバイスのバック グラウンド タスクは、アプリがバック グラウンドで実行できるし、不定の操作または無限の同期を許可するものではありません時間を制限します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56536319"
 
 ![デバイスの自動再生ダイアログ ボックスの例](images/autoplayfordeviceapps.png)
 
-自動再生と Windows 8.1 ではサポートされてデバイス クラスに関する詳細については、次を参照してください。 [UWP デバイス アプリの自動再生](autoplay-for-uwp-device-apps.md)します。
+自動再生と Windows 8.1 ではサポートされてデバイス クラスに関する詳細については、[UWP デバイス アプリの自動再生](autoplay-for-uwp-device-apps.md)を参照してください。
 
 ## <a name="span-iddeviceappsforprintersspanspan-iddeviceappsforprintersspanspan-iddeviceappsforprintersspandevice-apps-for-printers"></a><span id="Device_apps_for_printers"></span><span id="device_apps_for_printers"></span><span id="DEVICE_APPS_FOR_PRINTERS"></span>プリンター デバイス アプリ
 
@@ -73,7 +73,7 @@ UWP デバイス アプリは、カスタマイズされたカメラの設定お
 ## <a name="span-iddeviceappsforinternaldevicesspanspan-iddeviceappsforinternaldevicesspanspan-iddeviceappsforinternaldevicesspandevice-apps-for-internal-devices"></a><span id="Device_apps_for_internal_devices"></span><span id="device_apps_for_internal_devices"></span><span id="DEVICE_APPS_FOR_INTERNAL_DEVICES"></span>内部デバイス用のデバイス アプリ
 
 
-Oem およびコンポーネント サプライヤーは、PC の内部的なデバイス用の UWP デバイス アプリを開発できます。 システム コンテナーに関連付けられているデバイスにアクセスするには、デバイスのメタデータでの特権を持つアプリとしてアプリを指定してください。 内部デバイス用のアプリは通常、PC にプレインストールされているし、Microsoft Store からダウンロードできます。 詳細については、次を参照してください。[内部デバイス用の UWP デバイス アプリ](uwp-device-apps-for-specialized-devices.md)します。
+Oem およびコンポーネント サプライヤーは、PC の内部的なデバイス用の UWP デバイス アプリを開発できます。 システム コンテナーに関連付けられているデバイスにアクセスするには、デバイスのメタデータでの特権を持つアプリとしてアプリを指定してください。 内部デバイス用のアプリは通常、PC にプレインストールされているし、Microsoft Store からダウンロードできます。 詳細については、[内部デバイス用の UWP デバイス アプリ](uwp-device-apps-for-specialized-devices.md)を参照してください。
 
 ## <a name="span-idautomaticinstallationspanspan-idautomaticinstallationspanspan-idautomaticinstallationspanautomatic-installation"></a><span id="Automatic_installation"></span><span id="automatic_installation"></span><span id="AUTOMATIC_INSTALLATION"></span>自動インストール
 
@@ -86,7 +86,7 @@ UWP デバイス アプリは、ユーザーが各自の PC にデバイスを�
 
  
 
-自動インストールの詳細については、次を参照してください。[プリンターとカメラの自動インストール](auto-install-for-uwp-device-apps.md)します。
+自動インストールの詳細については、[プリンターとカメラの自動インストール](auto-install-for-uwp-device-apps.md)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

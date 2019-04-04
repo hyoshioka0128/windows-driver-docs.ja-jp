@@ -39,7 +39,7 @@ ACPI 固定ハードウェア インターフェイスを実装していない�
 
 Windows では、ACPI のハードウェアに削減または完全な ACPI を実装するかどうかに関係なく低電力アイドル状態の S0 機能を備えたプラットフォームをサポートします。 ただし、ACPI 5.0 仕様で必要に応じて Windows を使用しません従来スリープ/再開機能 ACPI 構成に関係なく、低電力アイドル状態の S0 機能を持つ複数のプラットフォームで。
 
-スタンバイ電源が接続されているモデルの詳細については、次を参照してください。[最新スタンバイ](https://msdn.microsoft.com/library/windows/hardware/dn915061)します。
+スタンバイ電源が接続されているモデルの詳細については、[最新スタンバイ](https://msdn.microsoft.com/library/windows/hardware/dn915061)を参照してください。
 
 ## <a name="acpi-events"></a>ACPI イベント
 

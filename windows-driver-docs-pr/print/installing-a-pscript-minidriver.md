@@ -37,7 +37,7 @@ Include=NTPRINT.INF         ; Include NTPRINT.INF.
 Needs=PSCRIPT.OEM           ; Install PSCRIPT.
 ```
 
-指定する場合、[プラグインのユーザー インターフェイス](user-interface-plug-ins.md)または[プラグインでレンダリング](rendering-plug-ins.md)、INF ファイル内でこれらのコンポーネントの名前を含める必要があります。 カスタマイズされたコードをインストールする方法の詳細については、次を参照してください。[カスタマイズされたドライバー コンポーネントをインストール](installing-customized-driver-components.md)します。
+指定する場合、[プラグインのユーザー インターフェイス](user-interface-plug-ins.md)または[プラグインでレンダリング](rendering-plug-ins.md)、INF ファイル内でこれらのコンポーネントの名前を含める必要があります。 カスタマイズされたコードをインストールする方法の詳細については、[カスタマイズされたドライバー コンポーネントをインストール](installing-customized-driver-components.md)を参照してください。
 
  
 

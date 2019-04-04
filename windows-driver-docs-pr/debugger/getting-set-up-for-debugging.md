@@ -23,7 +23,7 @@ ms.locfileid: "56550924"
 
 Windows デバッガーでのデバッグを設定できます 2 つの方法はあります。 Microsoft Visual Studio (Windows Driver Kit (WDK) との統合) を使用することも、セットアップを手動で行うことができます。 カーネル モードのデバッグを設定した後は、デバッグ セッションを確立するために Visual Studio や WinDbg、KD を使用することができます。 ユーザー モードのデバッグを設定した後は、デバッグ セッションを確立するために Visual Studio、WinDbg、CDB、NTSD またはを使用できます。
 
-**注**  ツールを Windows のデバッグに、Windows のデバッガーが含まれます。 次のデバッガーは、Visual Studio に含まれている Visual Studio デバッガーでは、異なるです。 詳細については、次を参照してください。 [Windows デバッグ](index.md)します。
+**注**  ツールを Windows のデバッグに、Windows のデバッガーが含まれます。 次のデバッガーは、Visual Studio に含まれている Visual Studio デバッガーでは、異なるです。 詳細については、[Windows デバッグ](index.md)を参照してください。
 
  
 

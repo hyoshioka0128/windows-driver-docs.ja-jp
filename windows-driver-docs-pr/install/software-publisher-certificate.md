@@ -23,7 +23,7 @@ ms.locfileid: "57560609"
 
 準拠する、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md) Windows の 64 ビット バージョンのソフトウェア発行元証明書 (SPC) を使用して、カーネル モード ドライバーに署名することができます。 SPC は、マイクロソフトがこのような証明書を発行する権限を持つサード パーティ証明機関 (CA) から取得されます。 この種類の SPC 生成された署名にも準拠して、 [PnP ドライバーの署名要件](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)の 64 ビットと 32 ビット バージョンの Windows。
 
-**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)します。
+**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、[Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)を参照してください。
 
  
 
@@ -33,7 +33,7 @@ SPC を入手すると、だけでなく、クロス証明書は Microsoft に�
 
 発行元をクロス証明書を配布する必要はありません、[ドライバー パッケージ](driver-packages.md)します。 クロス証明書は、ドライバー パッケージのデジタル署名に含まれている[カタログ ファイル](catalog-files.md)またはドライバーのファイルに埋め込まれている署名します。 ドライバー パッケージをインストールするユーザーは、クロス証明書の使用による追加の構成手順を実行する必要はありません。
 
-SPCs を提供する証明機関の一覧については、およびクロス証明書の詳細については、「[カーネル モード コード署名用クロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)します。 証明機関の web サイトを取得して、ドライバーに署名するコンピューターに、SPC と対応するクロス証明書をインストールする方法の手順に従います。 さらに、ドライバーに署名するローカル コンピューターの個人証明書ストアには、SPC 情報を追加する必要があります。 この要件については、次を参照してください。、 [SPC 情報を個人証明書ストアにインストール](#installing-spc-information-in-the-personal-certificate-store)します。
+SPCs を提供する証明機関の一覧については、およびクロス証明書の詳細については、「[カーネル モード コード署名用クロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)します。 証明機関の web サイトを取得して、ドライバーに署名するコンピューターに、SPC と対応するクロス証明書をインストールする方法の手順に従います。 さらに、ドライバーに署名するローカル コンピューターの個人証明書ストアには、SPC 情報を追加する必要があります。 この要件については、、 [SPC 情報を個人証明書ストアにインストール](#installing-spc-information-in-the-personal-certificate-store)を参照してください。
 
 ### <a name="installing-spc-information-in-the-personal-certificate-store"></a>個人証明書ストアに SPC 情報をインストールします。
 

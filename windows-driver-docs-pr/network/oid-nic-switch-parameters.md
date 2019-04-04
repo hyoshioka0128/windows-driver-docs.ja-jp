@@ -38,13 +38,13 @@ ms.locfileid: "56537987"
 
 上位のドライバーの問題の OID\_NIC\_スイッチ\_次のようにパラメーター要求。
 
--   上にあるドライバーは、OID の OID メソッド要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを取得します。 詳細については、次を参照してください。 [NIC スイッチのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440179)します。
+-   上にあるドライバーは、OID の OID メソッド要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを取得します。 詳細については、[NIC スイッチのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440179)を参照してください。
 
     **注**  OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_PF ミニポート ドライバーのパラメーター。
 
      
 
--   上にあるドライバーは、OID の OID セット要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを変更します。 詳細については、次を参照してください。 [NIC スイッチのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440227)します。
+-   上にあるドライバーは、OID の OID セット要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを変更します。 詳細については、[NIC スイッチのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440227)を参照してください。
 
     **注**  、PF ミニポート ドライバー OID の OID のセット要求を処理する\_NIC\_スイッチ\_パラメーター。
 

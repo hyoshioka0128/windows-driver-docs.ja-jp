@@ -21,13 +21,13 @@ ms.locfileid: "56550572"
 
 後は、Winsock カーネル (WSK) アプリケーションが正常に WSK サブシステムにアタッチと、ネットワーク I/O 操作に使用できるソケットを作成できます。 WSK アプリケーションが呼び出すことでソケットを作成、 [ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)関数。 **WskSocket**関数で指し示されます、 **WskSocket**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571175)添付ファイルの中に、WSK サブシステムによって返された構造体。
 
-WSK ソケットのカテゴリを作成している新しいソケットが作成されるたびに WSK アプリケーションが指定する必要があります。 WSK ソケットのカテゴリの詳細については、次を参照してください。 [Winsock カーネル ソケット カテゴリ](winsock-kernel-socket-categories.md)します。
+WSK ソケットのカテゴリを作成している新しいソケットが作成されるたびに WSK アプリケーションが指定する必要があります。 WSK ソケットのカテゴリの詳細については、[Winsock カーネル ソケット カテゴリ](winsock-kernel-socket-categories.md)を参照してください。
 
-WSK アプリケーションにはアドレス ファミリ、ソケットの種類、およびプロトコルもを指定する必要がありますが、新しいソケットが作成されるたび。 WSK でサポートされているアドレス ファミリの詳細については、次を参照してください。 [WSK アドレス ファミリ](https://msdn.microsoft.com/library/windows/hardware/ff571151)します。
+WSK アプリケーションにはアドレス ファミリ、ソケットの種類、およびプロトコルもを指定する必要がありますが、新しいソケットが作成されるたび。 WSK でサポートされているアドレス ファミリの詳細については、[WSK アドレス ファミリ](https://msdn.microsoft.com/library/windows/hardware/ff571151)を参照してください。
 
-新しいソケットを作成するときに WSK アプリケーションは必要場合は、アプリケーションに、ソケットでイベントのコールバック関数が有効にするソケット コンテキストの値と、クライアント ディスパッチ テーブル構造へのポインターと提供する必要があります。 ソケットでのイベントのコールバック関数を有効にする方法の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
+新しいソケットを作成するときに WSK アプリケーションは必要場合は、アプリケーションに、ソケットでイベントのコールバック関数が有効にするソケット コンテキストの値と、クライアント ディスパッチ テーブル構造へのポインターと提供する必要があります。 ソケットでのイベントのコールバック関数を有効にする方法の詳細については、[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)を参照してください。
 
-ソケットが正常に作成された場合、 **IoStatus.Information** IRP のフィールドには、ソケット オブジェクトの構造体へのポインターが含まれています ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182))新しいソケット。 Irp を WSK 関数を使用する方法の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)します。
+ソケットが正常に作成された場合、 **IoStatus.Information** IRP のフィールドには、ソケット オブジェクトの構造体へのポインターが含まれています ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182))新しいソケット。 Irp を WSK 関数を使用する方法の詳細については、[Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)を参照してください。
 
 次のコード例では、WSK アプリケーションがリスニング ソケットを作成する方法を示します。
 

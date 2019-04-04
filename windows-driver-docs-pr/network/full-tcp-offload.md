@@ -32,7 +32,7 @@ TCP chimney は、すべての TCP が 1 つまたは複数の TCP 接続の処�
 
  
 
-TCP chimney オフロード NDIS 6.0 以降では、次を参照してください。 [NDIS TCP Chimney オフロード](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)します。
+TCP chimney オフロード NDIS 6.0 以降では、[NDIS TCP Chimney オフロード](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)を参照してください。
 
  
 

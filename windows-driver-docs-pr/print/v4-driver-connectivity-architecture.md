@@ -83,7 +83,7 @@ V4 ドライバー モデル、または印刷クラス ドライバーで、サ
 
  
 
-詳細については、次を参照してください。[双方向通信スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545169.aspx)と[WSDMon ポート モニター](wsdmon-port-monitor.md)します。 Bidi スキーマを拡張するポート モニターをカスタマイズする方法について説明を参照してください[プリンター ポート モニターをカスタマイズする](https://msdn.microsoft.com/library/windows/hardware/ff547327.aspx)します。
+詳細については、[双方向通信スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545169.aspx)と[WSDMon ポート モニター](wsdmon-port-monitor.md)を参照してください。 Bidi スキーマを拡張するポート モニターをカスタマイズする方法について説明を参照してください[プリンター ポート モニターをカスタマイズする](https://msdn.microsoft.com/library/windows/hardware/ff547327.aspx)します。
 
 ## <a name="related-topics"></a>関連トピック
 [双方向通信のスキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545169.aspx)  

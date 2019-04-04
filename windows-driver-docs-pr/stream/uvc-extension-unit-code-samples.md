@@ -35,7 +35,7 @@ ms.locfileid: "56538667"
 
 [UVC INF ファイルを提供します。](providing-a-uvc-inf-file.md)
 
-Windows の UVC ドライバーの詳細については、次を参照してください。 [USB ビデオ クラス ドライバーの概要](usb-video-class-driver-overview.md)します。
+Windows の UVC ドライバーの詳細については、[USB ビデオ クラス ドライバーの概要](usb-video-class-driver-overview.md)を参照してください。
 
  
 

@@ -25,7 +25,7 @@ ms.locfileid: "56557787"
 
 これらのセットで定義されている Guid に対応して*ks.h*と*ksmedia.h*で指定することができます、 [ **KSPIN\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff563537)構造体。
 
-ミニドライバー インターフェイスを指定する方法については、次を参照してください。 [KS インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff567652)します。
+ミニドライバー インターフェイスを指定する方法については、[KS インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff567652)を参照してください。
 
  
 

@@ -130,7 +130,7 @@ Terminated.  Exit thread and process events will occur.
 
 **windbg -g -G -o Parent.exe**
 
-詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)と[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)します。
+詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)と[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

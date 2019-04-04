@@ -60,11 +60,11 @@ DEVPKEY_Device_UpperFilters デバイスのプロパティは、デバイスの�
 <a name="remarks"></a>注釈
 -------
 
-デバイスのデバイスの上位レベルのフィルター ドライバーがインストールされている場合、DEVPKEY_Device_UpperFilters プロパティの値が設定されます。 デバイス フィルター ドライバーをインストールする方法の詳細については、次を参照してください。[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)します。
+デバイスのデバイスの上位レベルのフィルター ドライバーがインストールされている場合、DEVPKEY_Device_UpperFilters プロパティの値が設定されます。 デバイス フィルター ドライバーをインストールする方法の詳細については、[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)を参照してください。
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)と**SetupDiGetDeviceProperty** DEVPKEY_Device_UpperFilters の値の設定を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UpperFilters プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UPPERFILTERS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UpperFilters プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UPPERFILTERS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

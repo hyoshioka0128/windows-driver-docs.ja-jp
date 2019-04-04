@@ -17,7 +17,7 @@ ms.locfileid: "56550264"
 ## <span id="ddk_hbafcpscsientry_wmi_class_kr"></span><span id="DDK_HBAFCPSCSIENTRY_WMI_CLASS_KR"></span>
 
 
-T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、HBAFCPScsiEntry クラスを使用して、SCSI 論理ユニットを一意に識別するオペレーティング システムによって生成される情報を格納し、そのアダプター。 このクラスは、論理ユニットのオペレーティング システムの情報と FCP 識別子間のバインディングを構築に使用されます。 このバインディングの詳細については、次を参照してください。 [ **HBAFCPBindingEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556034)します。 ファイバー チャネル プロトコルの詳細については、T11 委員会を参照してください。 *dpANS scsi、ファイバー チャネル プロトコル*仕様。
+T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、HBAFCPScsiEntry クラスを使用して、SCSI 論理ユニットを一意に識別するオペレーティング システムによって生成される情報を格納し、そのアダプター。 このクラスは、論理ユニットのオペレーティング システムの情報と FCP 識別子間のバインディングを構築に使用されます。 このバインディングの詳細については、[ **HBAFCPBindingEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556034)を参照してください。 ファイバー チャネル プロトコルの詳細については、T11 委員会を参照してください。 *dpANS scsi、ファイバー チャネル プロトコル*仕様。
 
 HBAFCPScsiEntry クラスは次のように定義されている*Hbaapi.mof*:
 

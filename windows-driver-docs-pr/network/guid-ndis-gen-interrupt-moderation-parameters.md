@@ -21,5 +21,5 @@ NDIS に変換するには、この GUID、 [OID_GEN_INTERRUPT_MODERATION](oid-g
 
 WMI の入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904)が続く構造体、 [NDIS_INTERRUPT_MODERATION_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff565793)構造体。
 
-ポート パラメーターの詳細については、次を参照してください。 [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)します。
+ポート パラメーターの詳細については、[OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)を参照してください。
 

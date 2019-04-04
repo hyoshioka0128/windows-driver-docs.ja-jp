@@ -26,7 +26,7 @@ ms.locfileid: "56531068"
 
  
 
-DEVPRIVATE_RANGE 構造体には、インスタンスのデバイスのデバイスに固有のプライベートなリソースの使用方法を説明するリソース要件の一覧を指定します。 リソース要件の一覧については、次を参照してください。[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)します。
+DEVPRIVATE_RANGE 構造体には、インスタンスのデバイスのデバイスに固有のプライベートなリソースの使用方法を説明するリソース要件の一覧を指定します。 リソース要件の一覧については、[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)を参照してください。
 
  
 

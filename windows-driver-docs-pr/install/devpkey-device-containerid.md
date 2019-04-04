@@ -74,7 +74,7 @@ DEVPKEY_Device_ContainerId は特定のデバイスのコンテナーのグル�
 
  
 
-ContainerIDs の詳細については、次を参照してください。[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)します。
+ContainerIDs の詳細については、[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_STORAGEPORT[デバイス インターフェイス クラス](h
 
 ポートのデバイスの記憶域用のシステムが指定したドライバーは、オペレーティング システムと記憶域デバイス アダプターの存在をアプリケーションに通知する GUID_DEVINTERFACE_STORAGEPORT のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 [**StoragePortClassGuid** ](storageportclassguid.md) GUID_DEVINTERFACE_STORAGEPORT デバイス インターフェイスのクラスの古い識別子です。 このクラスの新しいインスタンスは、代わりに GUID_DEVINTERFACE_STORAGEPORT を使用します。
 

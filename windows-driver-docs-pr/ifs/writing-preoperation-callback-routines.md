@@ -50,7 +50,7 @@ typedef FLT_PREOP_CALLBACK_STATUS
 
 ディスパッチ ルーチンのように、IRQL で preoperation コールバック ルーチンを呼び出すことができます = パッシブ\_レベル、または IRQL = APC\_レベル。 IRQL で呼び出された通常 = パッシブ\_I/O 要求を生成したスレッドのコンテキストでのレベル。 Preoperation コールバック ルーチンに常に IRQL でと呼ばれる高速な I/O とファイル システム フィルター (FsFilter) 操作では、パッシブ =\_レベル。 ただし、IRP ベースの操作では、ミニフィルター ドライバーの preoperation コールバック ルーチンを呼び出すシステム ワーカー スレッドのコンテキストで上位フィルターまたはミニフィルター ドライバー アプリケーションの場合、操作を処理するため、ワーカー スレッドが。
 
-IRQL で postoperation ルーチン内でコンテキスト オブジェクトを取得できない&gt;APC\_レベル。 代わりに、preoperation ルーチンの中に、コンテキスト オブジェクトを取得する postoperation ルーチンに渡すか IRQL で postoperation 処理を行う&lt;APC を =\_レベル。 コンテキストの詳細については、次を参照してください。[管理コンテキスト](managing-contexts.md)します。
+IRQL で postoperation ルーチン内でコンテキスト オブジェクトを取得できない&gt;APC\_レベル。 代わりに、preoperation ルーチンの中に、コンテキスト オブジェクトを取得する postoperation ルーチンに渡すか IRQL で postoperation 処理を行う&lt;APC を =\_レベル。 コンテキストの詳細については、[管理コンテキスト](managing-contexts.md)を参照してください。
 
 フィルター マネージャーは、指定した I/O 操作でミニフィルター ドライバーの preoperation コールバック ルーチンを呼び出す、ミニフィルター ドライバーは一時的に、I/O 操作を制御します。 ミニフィルター ドライバーでは、これは、次のいずれかになるまで、このコントロールが保持されます。
 

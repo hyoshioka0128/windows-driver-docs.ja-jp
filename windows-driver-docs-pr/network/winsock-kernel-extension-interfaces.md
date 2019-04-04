@@ -22,7 +22,7 @@ Winsock カーネル (WSK)[ネットワーク プログラミング インター
 
 使用して、WSK サブシステムでサポートされている拡張機能インターフェイスの WSK アプリケーションを登録できます、 [ **SIO\_WSK\_登録\_拡張子**](https://msdn.microsoft.com/library/windows/hardware/ff570819)ソケットIOCTL 操作です。 ソケットのソケットによってごとに拡張機能インターフェイス WSK アプリケーションを登録します。
 
-拡張機能インターフェイスを登録の詳細については、次を参照してください。[拡張機能インターフェイスを登録する](registering-an-extension-interface.md)します。
+拡張機能インターフェイスを登録の詳細については、[拡張機能インターフェイスを登録する](registering-an-extension-interface.md)を参照してください。
 
  
 

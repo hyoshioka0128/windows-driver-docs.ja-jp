@@ -31,21 +31,21 @@ Function ドライバー framework デバイス オブジェクトを作成す�
 
 -   PnP、パワー、および電源ポリシーのコールバック関数を登録しています。
 
-    ほとんどの関数のドライバー呼び出し[ **WdfDeviceInitSetPnpPowerEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff546135) PnP と電力のコールバック関数を登録します。 これらのコールバック関数の詳細については、次を参照してください。 [PnP をサポートしていると関数のドライバーでの電源管理](supporting-pnp-and-power-management-in-function-drivers.md)します。
+    ほとんどの関数のドライバー呼び出し[ **WdfDeviceInitSetPnpPowerEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff546135) PnP と電力のコールバック関数を登録します。 これらのコールバック関数の詳細については、[PnP をサポートしていると関数のドライバーでの電源管理](supporting-pnp-and-power-management-in-function-drivers.md)を参照してください。
 
-    デバイスは、低電力アイドル状態をサポートしていますまたは、ウェイク アップ機能を備えて、場合、関数のドライバーもは[ **WdfDeviceInitSetPowerPolicyEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff546774)電源ポリシーのコールバックを登録するには。関数。 これらのコールバック関数の詳細については、次を参照してください。[電源ポリシー所有権](power-policy-ownership.md)します。
+    デバイスは、低電力アイドル状態をサポートしていますまたは、ウェイク アップ機能を備えて、場合、関数のドライバーもは[ **WdfDeviceInitSetPowerPolicyEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff546774)電源ポリシーのコールバックを登録するには。関数。 これらのコールバック関数の詳細については、[電源ポリシー所有権](power-policy-ownership.md)を参照してください。
 
 -   ドライバー固有のコールバック関数の関数を登録しています。
 
-    一部の関数のドライバー呼び出し[ **WdfFdoInitSetEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547268)場合、それらのデバイスで必要なシステムのハードウェア リソースを指定するときに参加する必要があります。 ハードウェア リソースの詳細については、次を参照してください。 [Framework ベースのドライバーのハードウェア リソース](hardware-resources-for-kmdf-drivers.md)します。
+    一部の関数のドライバー呼び出し[ **WdfFdoInitSetEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547268)場合、それらのデバイスで必要なシステムのハードウェア リソースを指定するときに参加する必要があります。 ハードウェア リソースの詳細については、[Framework ベースのドライバーのハードウェア リソース](hardware-resources-for-kmdf-drivers.md)を参照してください。
 
 -   ファイルのイベントのコールバック関数を登録しています。
 
-    ドライバーを呼び出す必要があります、ドライバーは、アプリケーションを開くか、デバイス上のファイルを閉じたときに応答する必要がある場合、 [ **WdfDeviceInitSetFileObjectConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff546107) framework ファイル オブジェクトのコールバック関数を登録するには. 詳細については、次を参照してください。 [Framework ファイル オブジェクトを使用する](framework-file-objects.md)します。
+    ドライバーを呼び出す必要があります、ドライバーは、アプリケーションを開くか、デバイス上のファイルを閉じたときに応答する必要がある場合、 [ **WdfDeviceInitSetFileObjectConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff546107) framework ファイル オブジェクトのコールバック関数を登録するには. 詳細については、[Framework ファイル オブジェクトを使用する](framework-file-objects.md)を参照してください。
 
 -   I/O 要求の属性を設定します。
 
-    ドライバーを呼び出すことができる場合、ドライバーはフレームワークのキュー オブジェクトからの I/O 要求を受信、 [ **WdfDeviceInitSetRequestAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff546786)フレームワークがデバイスを割り当てることのコンテキストのメモリを設定するには要求オブジェクト。 詳細については、次を参照してください。[要求オブジェクトのコンテキストを使用して](using-request-object-context.md)します。
+    ドライバーを呼び出すことができる場合、ドライバーはフレームワークのキュー オブジェクトからの I/O 要求を受信、 [ **WdfDeviceInitSetRequestAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff546786)フレームワークがデバイスを割り当てることのコンテキストのメモリを設定するには要求オブジェクト。 詳細については、[要求オブジェクトのコンテキストを使用して](using-request-object-context.md)を参照してください。
 
 -   デバイスの特性を設定します。
 
@@ -66,11 +66,11 @@ Function ドライバー framework デバイス オブジェクトを作成す�
 
 -   デバイスのレジストリ キーへのアクセス。
 
-    関数のドライバーによっては、デバイスまたは別のドライバー、ユーザー、またはインストール パッケージが配置されている場合、レジストリのドライバーに関する情報を取得する必要があります。 ドライバーが呼び出せる[ **WdfFdoInitOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547249)デバイスまたはドライバーのレジストリ キーを開きます。 詳細については、次を参照してください。 [Framework ベースのドライバーのレジストリを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545562)します。
+    関数のドライバーによっては、デバイスまたは別のドライバー、ユーザー、またはインストール パッケージが配置されている場合、レジストリのドライバーに関する情報を取得する必要があります。 ドライバーが呼び出せる[ **WdfFdoInitOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547249)デバイスまたはドライバーのレジストリ キーを開きます。 詳細については、[Framework ベースのドライバーのレジストリを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545562)を参照してください。
 
 -   動的な列挙を使用する既定の子リスト構成を作成します。
 
-    かどうか、バスの機能のドライバーを記述して、ドライバーは、バスに接続されている子デバイスの動的な列挙を実行している場合、ドライバーを呼び出す必要があります[ **WdfFdoInitSetDefaultChildListConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff547258). 詳細については、次を参照してください。[バス上のデバイスを列挙する](enumerating-the-devices-on-a-bus.md)します。
+    かどうか、バスの機能のドライバーを記述して、ドライバーは、バスに接続されている子デバイスの動的な列挙を実行している場合、ドライバーを呼び出す必要があります[ **WdfFdoInitSetDefaultChildListConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff547258). 詳細については、[バス上のデバイスを列挙する](enumerating-the-devices-on-a-bus.md)を参照してください。
 
 -   デバイス オブジェクトを作成します。
 

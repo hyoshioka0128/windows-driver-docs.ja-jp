@@ -110,9 +110,9 @@ ms.locfileid: "56531935"
 
  
 
-従来の転送メッセージの詳細については、次を参照してください。、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)します。
+従来の転送メッセージの詳細については、、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)を参照してください。
 
-TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
+TYMED 定数の詳細については、[理解 TYMED](understanding-tymed.md)を参照してください。
 
 **IStream**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
 

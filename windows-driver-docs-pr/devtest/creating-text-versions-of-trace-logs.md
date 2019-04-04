@@ -51,9 +51,9 @@ ms.locfileid: "56538282"
 
 3.  **ログ ファイル名**ボックスで、既存のイベント トレース ログ (.etl) ファイルの名前を指定します。
 
-トレース ログを表示する場合、traceview では、リスティング ファイルを作成します。 詳細については、次を参照してください。[トレース ログ オプションの設定](setting-trace-log-options.md)します。
+トレース ログを表示する場合、traceview では、リスティング ファイルを作成します。 詳細については、[トレース ログ オプションの設定](setting-trace-log-options.md)を参照してください。
 
-詳細については、次を参照してください。 [ **traceview で-プロセス**](traceview--process.md)します。
+詳細については、[ **traceview で-プロセス**](traceview--process.md)を参照してください。
 
 ### <a name="span-idcopyingthetracemessagelistspanspan-idcopyingthetracemessagelistspan-copying-the-trace-message-list"></a><span id="copying_the_trace_message_list"></span><span id="COPYING_THE_TRACE_MESSAGE_LIST"></span> トレース メッセージの一覧をコピー
 

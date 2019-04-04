@@ -27,7 +27,7 @@ NDIS ミニポート ドライバーに関連付けられているドライバ�
 
 ミニポート ドライバーの*MiniportDriverUnload*関数は、個々 のドライバーのリソースを解放もする必要があります。 システムの後にドライバー アンロード操作が完了*MiniportDriverUnload*を返します。
 
-機能、 *MiniportDriverUnload*関数は、ドライバー固有です。 一般的な規則として*MiniportDriverUnload*ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
+機能、 *MiniportDriverUnload*関数は、ドライバー固有です。 一般的な規則として*MiniportDriverUnload*ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)を参照してください。
 
  
 

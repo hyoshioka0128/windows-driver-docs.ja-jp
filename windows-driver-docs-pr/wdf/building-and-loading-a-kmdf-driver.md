@@ -47,7 +47,7 @@ Windows Driver Kit (WDK) に付属する Windows 8.1 をビルド KMDF 1.9、1.1
 -   変更、**プロジェクト構成**での設定、 **Configuration Manager**に適切な値 (など**Win7 デバッグ**)。
 -   変更、KMDF\_バージョン\_わずかであるか UMDF\_バージョン\_マイナー値、[ドライバー モデルの設定](https://msdn.microsoft.com/windows-drivers/develop/driver_model_settings_properties_for_driver_projects)(11) などの適切な値にします。
 
-KMDF および UMDF バージョンに関する詳細については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)と[UMDF バージョン履歴](umdf-version-history.md)します。
+KMDF および UMDF バージョンに関する詳細については、[KMDF バージョン履歴](kmdf-version-history.md)と[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
 
 ## <a name="when-do-i-need-to-include-a-co-installer-or-msu-in-my-driver-package"></a>ときに共同インストーラーまたは .msu を ドライバー パッケージに含める必要があるのでしょうか。
 

@@ -24,7 +24,7 @@ ms.locfileid: "56550363"
 
 通常、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)より高度なドライバーのルーチンは、単に下位レベルの次のドライバーの I/O スタックの場所を設定し、上で、IRP を渡します[ **保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。 *DispatchDeviceControl*ルーチンは、基になるデバイス ドライバーは各デバイスの種類に固有の I/O 制御を処理する方法についてより詳細な情報があると見なされますので、ほとんど IRP の入力パラメーターの有効性をチェック要求。
 
-この一般的な規則をする可能性のある例外は、 *DispatchDeviceControl*クラス/ポート ドライバー 1 組のクラス ドライバーで日常的な。 クラス/ポートのペアになっているドライバーでのデバイス制御要求の処理の詳細については、次を参照してください。[クラス/ポート ドライバーにディスパッチ (内部) デバイス](dispatch-internal-devicecontrol-in-class-port-drivers.md)します。
+この一般的な規則をする可能性のある例外は、 *DispatchDeviceControl*クラス/ポート ドライバー 1 組のクラス ドライバーで日常的な。 クラス/ポートのペアになっているドライバーでのデバイス制御要求の処理の詳細については、[クラス/ポート ドライバーにディスパッチ (内部) デバイス](dispatch-internal-devicecontrol-in-class-port-drivers.md)を参照してください。
 
 特定のデバイス ドライバーに密接に関連付けられていない任意の新しい高度なドライバーを設定する必要があります、 [I/O スタックの場所](i-o-stack-locations.md)、下位レベルの次のドライバーとパス、 [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)さらに処理するために要求します。
 

@@ -59,7 +59,7 @@ ms.locfileid: "56570451"
   ```cpp
   -scan:"$(KMDF_INC_PATH)\$(KMDF_VER_PATH)\wdftraceenums.h"
   ```
-  トレース メッセージをドライバーを追加する方法の詳細については、次を参照してください。[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)します。
+  トレース メッセージをドライバーを追加する方法の詳細については、[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)を参照してください。
 
 ### <a name="sample-drivers-that-use-wpp-software-tracing"></a>WPP ソフトウェア トレースを使用しているサンプル ドライバー
 

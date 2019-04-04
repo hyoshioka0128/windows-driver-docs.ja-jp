@@ -45,9 +45,9 @@ WDFVERIFY をテストする論理式。
 
 コードを**WDFVERIFY**リリース構成またはデバッグ構成で、ドライバーをビルドするときに、ドライバーのバイナリにマクロが含まれます。 場合は、ドライバーのバイナリが含まれています。 **WDFVERIFY**コード、コードはチェック ビルドまたは Microsoft Windows オペレーティング システムのビルドでは、ドライバーが実行される場合に実行されます。
 
-**WDFVERIFY**場合のみカーネル デバッガーにコードでは、 **VerifyOn**レジストリの値を設定します。 ドライバーをデバッグする際のレジストリ エントリの詳細については、次を参照してください。 [Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)します。
+**WDFVERIFY**場合のみカーネル デバッガーにコードでは、 **VerifyOn**レジストリの値を設定します。 ドライバーをデバッグする際のレジストリ エントリの詳細については、[Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)を参照してください。
 
-ドライバーのデバッグの詳細については、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
+ドライバーのデバッグの詳細については、[KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。
 
 <a name="examples"></a>例
 --------

@@ -29,11 +29,11 @@ Windows Vista 以降のオペレーティング システム、ドライバー�
 
 -   *パラメーター*-&gt;**LineBased.PhysicalDeviceObject**デバイスの物理デバイス オブジェクト (PDO) を指定する ISR サービス。 デバイス オブジェクトは、行ベースのデバイスの割り込みを自動的に識別するために使用されます。
 
--   *パラメーター*-&gt;**LineBased.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター*- &gt; **LineBased**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
+-   *パラメーター*-&gt;**LineBased.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター*- &gt; **LineBased**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、[ISR コンテキスト情報の提供](providing-isr-context-information.md)を参照してください。
 
--   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター ***-&gt;LineBased.InterruptObject**します。 **IoConnectInterruptEx** ISR を削除するときに使用できると、割り込みの割り込みのオブジェクト をポイントするには、この変数を設定 詳細については、次を参照してください。 [ISR を削除する](removing-an-isr.md)します。
+-   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター ***-&gt;LineBased.InterruptObject**します。 **IoConnectInterruptEx** ISR を削除するときに使用できると、割り込みの割り込みのオブジェクト をポイントするには、この変数を設定 詳細については、[ISR を削除する](removing-an-isr.md)を参照してください。
 
--   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;LineBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
+-   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;LineBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)を参照してください。
 
 次のコード例は、登録する方法を示します、 *InterruptService* CONNECT を使用してルーチン\_行\_ベース。
 

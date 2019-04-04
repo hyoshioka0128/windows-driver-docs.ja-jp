@@ -75,7 +75,7 @@ ms.locfileid: "56549863"
 
 ### <a name="adding-devices-to-a-dynamic-child-list"></a>動的な子の一覧にデバイスを追加
 
-ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)バス アダプターは、通常、親デバイスの FDO を作成します。 FDO の作成の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)です。 ドライバーは、親デバイスの子を列挙する必要がありますし、子を子リストに追加します。
+ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)バス アダプターは、通常、親デバイスの FDO を作成します。 FDO の作成の詳細については、[Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)を参照してください。 ドライバーは、親デバイスの子を列挙する必要がありますし、子を子リストに追加します。
 
 ドライバーを呼び出すことができます必要に応じて、 [ **WdfDeviceSetBusInformationForChildren** ](https://msdn.microsoft.com/library/windows/hardware/ff546868)バスについての情報をフレームワークを提供します。 子デバイスと、バスを識別するためにアプリを簡単になりますので、これをお勧めします。
 

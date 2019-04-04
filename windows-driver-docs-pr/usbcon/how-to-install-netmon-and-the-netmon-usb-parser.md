@@ -58,7 +58,7 @@ Netmon、Microsoft ダウンロード センターからインストールして
 
     3. **[OK]** をクリックします。
 
-Netmon が USB ETW トレース ファイルを使用するために構成されました。 詳細については、次を参照してください。 [Netmon で USB の ETW トレースを表示する方法](how-to-examining-a-trace-file-by-using-netmon.md)します。
+Netmon が USB ETW トレース ファイルを使用するために構成されました。 詳細については、[Netmon で USB の ETW トレースを表示する方法](how-to-examining-a-trace-file-by-using-netmon.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

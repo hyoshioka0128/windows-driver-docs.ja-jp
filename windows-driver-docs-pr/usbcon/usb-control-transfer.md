@@ -246,7 +246,7 @@ Beagle、Ellisys、LeCroy USB プロトコル アナライザーなどの任意�
 
     * * クライアント ドライバーの UMDF: * *
 
-    UMDF クライアント ドライバーを入手する必要があります、 [ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)フレームワーク ターゲットのデバイス オブジェクトのクエリを実行してポインター。 詳細については、次を参照してください。"[**IPnpCallbackHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF) について](understanding-the-umdf-template-code-for-usb.md)します。
+    UMDF クライアント ドライバーを入手する必要があります、 [ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)フレームワーク ターゲットのデバイス オブジェクトのクエリを実行してポインター。 詳細については、"[**IPnpCallbackHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF) について](understanding-the-umdf-template-code-for-usb.md)を参照してください。
 
 -   コントロールの転送の最も重要な側面では、セットアップ トークンを適切に書式設定します。 要求を送信する前に、この一連の情報を収集します。
 
@@ -357,7 +357,7 @@ Microsoft 提供の USB スタックは、上記のトレースで示すよう�
 </tr>
 <tr class="odd">
 <td>GET_DESCRIPTOR:デバイス、構成、インターフェイス、およびエンドポイントの記述子を取得します。 USB 仕様の 9.4.3」セクションを参照してください。
-<p>詳細については、次を参照してください。<a href="usb-descriptors.md" data-raw-source="[USB Descriptors](usb-descriptors.md)">の USB ディスクリプター</a>します。</p></td>
+<p>詳細については、<a href="usb-descriptors.md" data-raw-source="[USB Descriptors](usb-descriptors.md)">の USB ディスクリプター</a>を参照してください。</p></td>
 <td><p>これらのメソッドを呼び出します。</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/ff550090" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceGetDeviceDescriptor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550090)"><strong>WdfUsbTargetDeviceGetDeviceDescriptor</strong></a></li>
@@ -424,7 +424,7 @@ Microsoft 提供の USB スタックは、上記のトレースで示すよう�
 </tr>
 <tr class="odd">
 <td>SET_CONFIGURATION:構成を設定します。 USB 仕様の 9.4.7」セクションを参照してください。
-<p>詳細については、次を参照してください。 <a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>します。</p></td>
+<p>詳細については、<a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>を参照してください。</p></td>
 <td>既定では、KMDF は、各インターフェイスの既定の構成と代替の最初の設定を選択します。 クライアント ドライバーは呼び出すことで、既定の構成を変更することができます<a href="https://msdn.microsoft.com/library/windows/hardware/ff550102" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSelectConfigType&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550102)"> <strong>WdfUsbTargetDeviceSelectConfigType</strong> </a>メソッドを指定する<strong>WdfUsbTargetDeviceSelectConfigTypeUrb</strong>要求オプションとして。 この要求に対して、URB の書式を設定し、USB ドライバー スタックに送信する必要があります。</td>
 <td>既定では、UMDF は、各インターフェイスの既定の構成と代替の最初の設定を選択します。 クライアント ドライバーでは、構成を変更できません。</td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff540422" data-raw-source="[&lt;strong&gt;_URB_SELECT_CONFIGURATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540422)"><strong>_URB_SELECT_CONFIGURATION</strong></a></p>
@@ -478,7 +478,7 @@ Microsoft 提供の USB スタックは、上記のトレースで示すよう�
 </tr>
 <tr class="even">
 <td>SET_INTERFACE:インターフェイス内で別の設定を変更します。 USB 仕様の 9.4.9」セクションを参照してください。
-<p>詳細については、次を参照してください。 <a href="select-a-usb-alternate-setting.md" data-raw-source="[How to select an alternate setting in a USB interface](select-a-usb-alternate-setting.md)">USB インターフェイスで代替の設定を選択する方法</a>します。</p></td>
+<p>詳細については、<a href="select-a-usb-alternate-setting.md" data-raw-source="[How to select an alternate setting in a USB interface](select-a-usb-alternate-setting.md)">USB インターフェイスで代替の設定を選択する方法</a>を参照してください。</p></td>
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/ff550101" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceSelectConfig&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550101)"><strong>WdfUsbTargetDeviceSelectConfig</strong></a>
 <p></p>
 <ol>

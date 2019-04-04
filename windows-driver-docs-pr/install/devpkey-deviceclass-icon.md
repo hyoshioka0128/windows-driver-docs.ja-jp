@@ -62,7 +62,7 @@ DEVPKEY_DeviceClass_Icon の値によって設定されます、 [ **INF AddReg 
 
 呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_Icon の値を取得するには.
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_Icon プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスに対する小さいアイコンへのアクセス方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_Icon プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスに対する小さいアイコンへのアクセス方法については、[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

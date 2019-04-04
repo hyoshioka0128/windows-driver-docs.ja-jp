@@ -58,9 +58,9 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-Multiplexers については、次を参照してください。[トポロジ フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538552)します。
+Multiplexers については、[トポロジ フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538552)を参照してください。
 
-KSCATEGORY_MULTIPLEXER 機能のカテゴリの詳細については、次を参照してください。[エンコーダーのインストールと登録](https://msdn.microsoft.com/library/windows/hardware/ff559551)します。
+KSCATEGORY_MULTIPLEXER 機能のカテゴリの詳細については、[エンコーダーのインストールと登録](https://msdn.microsoft.com/library/windows/hardware/ff559551)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -66,7 +66,7 @@ ms.locfileid: "56535818"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とこのパスを変更するには、他の方法では、次を参照してください。[シンボル パス](symbol-path.md)します。
+詳細とこのパスを変更するには、他の方法では、[シンボル パス](symbol-path.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

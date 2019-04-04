@@ -35,7 +35,7 @@ ms.locfileid: "57350383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>Noninvasively ターゲットに接続します。  待合室デバッグの詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-)">待合室 (ユーザー モード) のデバッグ</a>します。</p>
+<p>Noninvasively ターゲットに接続します。  待合室デバッグの詳細については、<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-)">待合室 (ユーザー モード) のデバッグ</a>を参照してください。</p>
 <p>このフラグを設定すると、DEBUG_ATTACH_EXISTING、DEBUG_ATTACH_INVASIVE_NO_INITIAL_BREAK、および DEBUG_ATTACH_INVASIVE_RESUME_PROCESS フラグを設定しない必要があります。 場合、</p>
 </td>
 </tr>
@@ -45,7 +45,7 @@ ms.locfileid: "57350383"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>アプリケーションをデバッガーが既にアタッチされている (および破棄された可能性があります) に再アタッチします。  ターゲットに再アタッチの詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-)">.attach (プロセスにアタッチ)</a>します。</p>
+<p>アプリケーションをデバッガーが既にアタッチされている (および破棄された可能性があります) に再アタッチします。  ターゲットに再アタッチの詳細については、<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-)">.attach (プロセスにアタッチ)</a>を参照してください。</p>
 <p>このフラグがセットを他の DEBUG_ATTACH_ 場合<i>XXX</i>フラグを設定する必要があります。</p>
 </td>
 </tr>

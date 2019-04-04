@@ -83,7 +83,7 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 
 
 
-PnPUtil ツールを使用する方法の例については、次を参照してください。 [PnPUtil 例](pnputil-examples.md)します。
+PnPUtil ツールを使用する方法の例については、[PnPUtil 例](pnputil-examples.md)を参照してください。
 
  
 

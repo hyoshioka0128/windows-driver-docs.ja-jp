@@ -16,11 +16,11 @@ ms.locfileid: "56552194"
 
 カーネル モード ドライバーを使用する必要があります[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819) HID コレクションにレポート出力を継続的に送信する要求の主なアプローチとして。 ドライバーは、IOCTL を使用できますも\_HID\_設定\_*Xxx*出力レポートを送信し、機能のコレクションにレポートを要求します。 ただし、ドライバーでは、コレクションの現在の状態を設定するのにこれらの I/O 要求が使用する必要がありますのみ。 一部のデバイスをサポートしていない[ **IOCTL\_HID\_設定\_出力\_レポート**](https://msdn.microsoft.com/library/windows/hardware/ff541196)され、この要求を使用する場合に応答しなくなります。
 
-詳細については、次を参照してください。[を使用して IRP\_MJ\_書き込み要求](#using-irp-mj-write-requests)と[を使用して IOCTL\_HID\_設定\_Xxx 要求](#using-ioctl-hid-set-xxx-requests)します。
+詳細については、[を使用して IRP\_MJ\_書き込み要求](#using-irp-mj-write-requests)と[を使用して IOCTL\_HID\_設定\_Xxx 要求](#using-ioctl-hid-set-xxx-requests)を参照してください。
 
 ### <a href="" id="using-irp-mj-write-requests"></a>IRP を使用して\_MJ\_書き込み要求
 
-Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、コレクションに送信されたすべての書き込み要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、書き込み要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)と[Irp の再利用](https://msdn.microsoft.com/library/windows/hardware/ff561107)します。
+Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、コレクションに送信されたすべての書き込み要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、書き込み要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法の詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)と[Irp の再利用](https://msdn.microsoft.com/library/windows/hardware/ff561107)を参照してください。
 
 ドライバーを書き込み、IRP IRP の再利用かどうか[ **IoCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンは、状態の状態で要求を完了する必要があります\_詳細\_処理\_REQUIRED (および IRP を解放)。 ドライバーは IRP が不要になった必要がある場合、完了して IRP を呼び出すことによって解放[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)と[ **IoFreeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549113)します。 たとえば、ドライバー可能性があります通常完了し、解放で IRP その[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン、以降のデバイスを削除します。
 

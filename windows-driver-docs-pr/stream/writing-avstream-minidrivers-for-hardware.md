@@ -28,7 +28,7 @@ ms.locfileid: "56551767"
 
 ベンダーから提供されたで[ *AVStrMiniDeviceStart*](https://msdn.microsoft.com/library/windows/hardware/ff556297)、AVStream ミニドライバー ハードウェアをサポートする必要があります最初に、リソースの一覧を解析し、呼び出す[ **IoConnectInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff548371)割り込みサービス ルーチン (ISR) を登録します。
 
-ドライバーは、ダイレクト メモリ アクセス (DMA) をサポートしている場合、追加の手順が必要です。 ドライバーは、DMA を実装する場合は、次を参照してください。 [AVStream DMA サービス](avstream-dma-services.md)します。
+ドライバーは、ダイレクト メモリ アクセス (DMA) をサポートしている場合、追加の手順が必要です。 ドライバーは、DMA を実装する場合は、[AVStream DMA サービス](avstream-dma-services.md)を参照してください。
 
 1 つ以上のアプリケーションでは、デバイスを同時に使用するフィルター グラフをビルド可能性がある場合、は、グラフ間の干渉を防ぐために考慮する必要があります。 具体的には、デバイスを使用してアプリケーションにグラフを作成している場合をする必要がありますに干渉しない非停止状態で、デバイスを使用するアプリケーション。
 

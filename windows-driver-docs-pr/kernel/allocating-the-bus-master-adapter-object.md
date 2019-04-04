@@ -60,7 +60,7 @@ ms.locfileid: "56578913"
 
 4.  値を返します**DeallocateObjectKeepRegisters**します。
 
-詳細については、次を参照してください。[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)します。
+詳細については、[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)を参照してください。
 
 バス マスター DMA を実行するドライバーが使用することができます、 [ **GetScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff546531)と[ **PutScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff559967)ルーチン自分のデバイスをサポートするかどうかに関係なくスキャッター/ギャザー DMA します。 これらのルーチンを使用して、ドライバーの要件を変更*AdapterControl*ルーチン; を参照してください[を使用してスキャッター/ギャザー DMA](using-scatter-gather-dma.md)詳細についてはします。
 

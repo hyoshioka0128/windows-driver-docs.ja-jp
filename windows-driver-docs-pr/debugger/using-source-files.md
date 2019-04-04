@@ -18,7 +18,7 @@ ms.locfileid: "56550699"
 
 [デバッガー エンジン](introduction.md#debugger-engine)保持、*ソース パス*ディレクトリと現在のターゲットに関連付けられているソース コード ファイルが含まれている移行元サーバーの一覧します。 デバッガー エンジンには、これらのディレクトリとソース ファイルをソース サーバーを検索できます。 シンボル ファイルを利用して、デバッガー エンジンは、ターゲットのメモリ内の場所でソース ファイル内の行を照合できます。
 
-デバッガーでソース ファイルの使用の概要については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。 ソース パスの概要については、次を参照してください。[ソース パス](source-path.md)します。 デバッガー エンジンからの移行元サーバーを使用しての概要については、次を参照してください。[移行元サーバーを使用して](using-a-source-server.md)します。
+デバッガーでソース ファイルの使用の概要については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。 ソース パスの概要については、[ソース パス](source-path.md)を参照してください。 デバッガー エンジンからの移行元サーバーを使用しての概要については、[移行元サーバーを使用して](using-a-source-server.md)を参照してください。
 
 ### <a name="span-idsourcepathspanspan-idsourcepathspansource-path"></a><span id="source_path"></span><span id="SOURCE_PATH"></span>ソース パス
 

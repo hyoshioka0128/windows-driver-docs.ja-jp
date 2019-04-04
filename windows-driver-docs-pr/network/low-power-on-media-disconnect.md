@@ -39,7 +39,7 @@ D3 に切断注記を使用できるは、動作状態 (S0) でコンピュー�
 
 ミニポート ドライバー レポート D3 には、初期化中に機能を切断します。 詳細については D3 のレポートの機能を切断時を参照してください[電源管理機能の報告](reporting-power-management-capabilities.md)します。
 
- **\*DeviceSleepOnDisconnect** INF ファイルの標準のキーワードは、切断のデバイスが有効になっているまたはで D3 のサポートを無効になっているかどうかを指定します。 この INF キーワードの詳細については、次を参照してください。[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)します。
+ **\*DeviceSleepOnDisconnect** INF ファイルの標準のキーワードは、切断のデバイスが有効になっているまたはで D3 のサポートを無効になっているかどうかを指定します。 この INF キーワードの詳細については、[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)を参照してください。
 
 初期化中には、D3 の切断をサポートしていますがメディアのオペレーティング システムに通知する機能をサポートできる最下位の電源レベルを報告する必要がありますミニポート ドライバーは、イベントを接続します。 ミニポート ドライバーでの電源のレベルを報告する、 **MinLinkChangeWakeUp**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 たとえば、ミニポート ドライバーをレポートできます**NdisDeviceStateD3**します。
 
@@ -79,7 +79,7 @@ D3 に切断注記を使用できるは、動作状態 (S0) でコンピュー�
 
 ミニポート ドライバーがサポートしている場合は、NDIS 6.30、以降[ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態のインジケーターにする必要があります発行これ場合は、ネットワーク アダプターがシステムをスリープ状態の通知。 OID は、それが処理中にこの状態の通知を設定するドライバーの問題の要求の[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780) (D0) の電力状態に遷移します。
 
-詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
+詳細については、[NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)を参照してください。
 
 **注**  ミニポート ドライバーが発行された場合、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態の表示発行前に行うする必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)状態を示す値。
 

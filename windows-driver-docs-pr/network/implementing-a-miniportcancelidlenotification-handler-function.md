@@ -43,7 +43,7 @@ VOID MiniportCancelIdleNotification(
 }
 ```
 
-USB アイドル要求 IRP の完了ルーチンの実装のガイドラインについては、次を参照してください。 [USB のアイドル状態要求 IRP の完了ルーチンを実装する](implementing-a-usb-idle-request-irp-completion-routine.md)します。
+USB アイドル要求 IRP の完了ルーチンの実装のガイドラインについては、[USB のアイドル状態要求 IRP の完了ルーチンを実装する](implementing-a-usb-idle-request-irp-completion-routine.md)を参照してください。
 
  
 

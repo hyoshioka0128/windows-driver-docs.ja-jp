@@ -19,7 +19,7 @@ ms.locfileid: "57464342"
 
 
 
-次の表は、メモリの機能に関連付けられている属性を一覧表示します。 メモリ機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+次の表は、メモリの機能に関連付けられている属性を一覧表示します。 メモリ機能の詳細については、[標準機能](standard-features.md)を参照してください。
 
 <table>
 <colgroup>
@@ -55,11 +55,11 @@ ms.locfileid: "57464342"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
-例については、と共に、これらの属性を使用の詳細については、次を参照してください。[プリンター メモリの構成を記述する](describing-printer-memory-configurations.md)します。
+例については、と共に、これらの属性を使用の詳細については、[プリンター メモリの構成を記述する](describing-printer-memory-configurations.md)を参照してください。
 
-追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
+追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
 
  
 

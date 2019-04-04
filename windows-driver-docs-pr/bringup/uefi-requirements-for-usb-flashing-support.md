@@ -21,7 +21,7 @@ Microsoft は、エンジニア リングと、製造環境で使用するため
 
 | プロトコル | 要件の詳細 |
 | --- | --- |
-| USB 関数プロトコル | ファームウェアの USB 3.0 を経由して、usb、UEFI USB 関数プロトコル改訂 0x00010002 またはより高いサポート実装する必要があります、 [EFI\_USBFN\_IO\_プロトコル。ConfigureEnableEndpointsEx](efi-usbfn-io-protocol-configureenableendpointsex.md)関数。 詳細については、次を参照してください。 [UEFI USB 関数プロトコル](uefi-usb-function-protocol.md)します。 |
+| USB 関数プロトコル | ファームウェアの USB 3.0 を経由して、usb、UEFI USB 関数プロトコル改訂 0x00010002 またはより高いサポート実装する必要があります、 [EFI\_USBFN\_IO\_プロトコル。ConfigureEnableEndpointsEx](efi-usbfn-io-protocol-configureenableendpointsex.md)関数。 詳細については、[UEFI USB 関数プロトコル](uefi-usb-function-protocol.md)を参照してください。 |
 | Blockio の相対的 | Microsoft 提供の USB 点滅ソリューションでは、点滅の非ゼロ I/O サイズのブロック ストレージ デバイスに最初に返されたポインターを選択します。 デバイスは、固定またはリムーバブル記憶域を指定できます。                                                                                                                                                             |
 ## <a name="uefi-desync-event-optional"></a>UEFI desync イベント (省略可能)
 

@@ -27,7 +27,7 @@ ms.locfileid: "56538722"
 
 1 つの画面が 1 つ以上のコンテキストに関連付けられている可能性があるためサーフェスがコンテキストを指すポインターを維持することがないお勧めします。
 
-概念*失わ*サーフェスは、DirectDraw SDK ドキュメントで導入されました。 失われたサーフェスでは、DirectX 7.0 DDI モデルでいくつかに影響を与えます。 詳細については、次を参照してください。[データが失われると DirectDraw サーフェスの復元](losing-and-restoring-directdraw-surfaces.md)します。
+概念*失わ*サーフェスは、DirectDraw SDK ドキュメントで導入されました。 失われたサーフェスでは、DirectX 7.0 DDI モデルでいくつかに影響を与えます。 詳細については、[データが失われると DirectDraw サーフェスの復元](losing-and-restoring-directdraw-surfaces.md)を参照してください。
 
  
 

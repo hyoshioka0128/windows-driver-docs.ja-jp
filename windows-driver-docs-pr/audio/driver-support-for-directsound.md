@@ -23,7 +23,7 @@ ms.locfileid: "56532130"
 ## <span id="driver_support_for_directsound"></span><span id="DRIVER_SUPPORT_FOR_DIRECTSOUND"></span>
 
 
-WDM のオーディオ システムでは、オーディオ デバイスを Microsoft DirectSound API を通じてアクセスされるアプリケーション プログラムのドライバーのサポートを提供します。 DirectSound ドライバーのサポートを提供するシステム コンポーネントの説明は、次を参照してください。 [WDM オーディオ コンポーネント](wdm-audio-components.md)します。
+WDM のオーディオ システムでは、オーディオ デバイスを Microsoft DirectSound API を通じてアクセスされるアプリケーション プログラムのドライバーのサポートを提供します。 DirectSound ドライバーのサポートを提供するシステム コンポーネントの説明は、[WDM オーディオ コンポーネント](wdm-audio-components.md)を参照してください。
 
 次のセクションでは、オーディオのミニポート ドライバーを実装できるサポートを強化するアプリケーションのプログラム、DirectSound の API を公開するオーディオ機能機能について説明します。 これらの機能は、2 D および 3D サウンド効果、さまざまなスピーカーの構成のサポートのハードウェア アクセラレータを含めるし、アコースティック エコー キャンセルの全二重電話会議などの効果をキャプチャします。
 

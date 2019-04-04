@@ -60,7 +60,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride デバイス プロパティは、デ
 
 -   DEVPROP_TRUE に DEVPKEY_Device_SafeRemovalRequiredOverride デバイスのプロパティを設定し、デバイス インスタンスが取り外し可能またはリムーバブル先祖、PnP セット DEVPROP_TRUE DEVPKEY_Device_SafeRemovalRequired デバイス プロパティを持つし、使用しない場合、ヒューリスティックです。
 
-    **注**  デバイス インスタンスは、リムーバブル デバイスの機能が設定されている場合は、リムーバブルと見なされます。 詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](https://msdn.microsoft.com/library/windows/hardware/ff549564)します。
+    **注**  デバイス インスタンスは、リムーバブル デバイスの機能が設定されている場合は、リムーバブルと見なされます。 詳細については、[リムーバブル デバイスの機能の概要](https://msdn.microsoft.com/library/windows/hardware/ff549564)を参照してください。
 
      
 

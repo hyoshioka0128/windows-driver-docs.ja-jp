@@ -16,7 +16,7 @@ ms.locfileid: "56551532"
 
 Bluetooth バイパス デバイス ドライバー インターフェイス (DDI) リファレンスには、構造体とハンズフリー プロファイル (HFP) ドライバーのサポートを提供する Windows 8.1 で導入された Ioctl を説明するトピックのセットです。
 
-DDI メンバーの詳細については、次を参照してください。 [Bluetooth HFP DDI 参照](https://msdn.microsoft.com/library/windows/hardware/dn302028)します。
+DDI メンバーの詳細については、[Bluetooth HFP DDI 参照](https://msdn.microsoft.com/library/windows/hardware/dn302028)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [操作の理論を概説します。](theory-of-operation.md)  

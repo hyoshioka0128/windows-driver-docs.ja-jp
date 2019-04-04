@@ -27,7 +27,7 @@ ms.locfileid: "56553143"
 
  
 
-これらの拡張機能を使用する方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+これらの拡張機能を使用する方法の詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
  
 

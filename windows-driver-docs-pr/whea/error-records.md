@@ -50,7 +50,7 @@ WHEA で使用されるエラー レコードの形式がに基づいて、*共�
 ![プロセッサのエラー データ](images/wheaxpfsection.gif)
 
 <a href="" id="itanium-processor-error"></a>Itanium プロセッサのエラー  
-このエラー レコード セクションには、Itanium プロセッサ アーキテクチャに固有のプロセッサのエラー データが含まれています。 このエラーの記録セクションに含まれているエラー データの書式設定に関する詳細については、次を参照してください。、 [Intel Itanium プロセッサ ファミリのシステムの抽象化層の仕様](https://go.microsoft.com/fwlink/p/?linkid=72212)します。
+このエラー レコード セクションには、Itanium プロセッサ アーキテクチャに固有のプロセッサのエラー データが含まれています。 このエラーの記録セクションに含まれているエラー データの書式設定に関する詳細については、、 [Intel Itanium プロセッサ ファミリのシステムの抽象化層の仕様](https://go.microsoft.com/fwlink/p/?linkid=72212)を参照してください。
 
 <a href="" id="itanium-processor-firmware-error-record-reference"></a>Itanium プロセッサ ファームウェア エラー レコードのリファレンス  
 このエラー レコード セクションには、Itanium プロセッサ アーキテクチャに固有のファームウェア エラー レコードへの参照が含まれています。 によってこのエラーの記録セクションが説明されている、 [ **WHEA\_ファームウェア\_エラー\_レコード\_参照**](https://msdn.microsoft.com/library/windows/hardware/ff560520)構造体。

@@ -31,7 +31,7 @@ ms.locfileid: "56536487"
 
 [チェンジャー クラス ドライバーのバージョンの違い](differences-in-changer-class-driver-versions.md)
 
-チェンジャーのベンダーから提供されたドライバーの詳細については、次を参照してください。 [Vendor-Supplied チェンジャー ドライバー](vendor-supplied-changer-drivers.md)します。
+チェンジャーのベンダーから提供されたドライバーの詳細については、[Vendor-Supplied チェンジャー ドライバー](vendor-supplied-changer-drivers.md)を参照してください。
 
  
 

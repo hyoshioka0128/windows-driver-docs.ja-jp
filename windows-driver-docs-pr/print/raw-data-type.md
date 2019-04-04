@@ -25,7 +25,7 @@ ms.locfileid: "56548970"
 
 ターゲットのプリンタは、Postscript をサポートしている場合により、postscript コマンドに生データを検討できます。 その一方で、Sfmpsprt.dll プリント プロセッサは Postscript を入力し、非 Postscript プリンターを解釈します。 そのためその場合は、Postscript が生データ
 
-生データの種類に関する詳細については、次を参照してください。、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+生データの種類に関する詳細については、、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

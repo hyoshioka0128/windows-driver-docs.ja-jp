@@ -13,7 +13,7 @@ ms.locfileid: "56549763"
 ---
 # <a name="reg2inf"></a>Reg2inf
  
-ドライバー パッケージ INF レジストリ変換ツール (`reg2inf.exe`) ツールは、レジストリ キーとその値、または実装する COM .dll に変換します、 [ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)を一連の定期的な[。INF AddReg ディレクティブ](../install/inf-addreg-directive.md)ドライバー パッケージ INF ファイルに組み込むことです。  このツールは、既存の変換する際に特に役立ちます[INF RegisterDlls ディレクティブ](../install/inf-registerdlls-directive.md)ように、INF ファイル ユニバーサル INF AddReg ディレクティブにします。  ユニバーサル INF ファイルに関する詳細については、次を参照してください。[ユニバーサル INF ファイルを使用して](../install/using-a-universal-inf-file.md)します。
+ドライバー パッケージ INF レジストリ変換ツール (`reg2inf.exe`) ツールは、レジストリ キーとその値、または実装する COM .dll に変換します、 [ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)を一連の定期的な[。INF AddReg ディレクティブ](../install/inf-addreg-directive.md)ドライバー パッケージ INF ファイルに組み込むことです。  このツールは、既存の変換する際に特に役立ちます[INF RegisterDlls ディレクティブ](../install/inf-registerdlls-directive.md)ように、INF ファイル ユニバーサル INF AddReg ディレクティブにします。  ユニバーサル INF ファイルに関する詳細については、[ユニバーサル INF ファイルを使用して](../install/using-a-universal-inf-file.md)を参照してください。
  
 このツールは Windows 10 バージョン 1709 以降、WDK 10 のインストールの一部として同梱されています。 検索、これを WDK 10 のインストールの \tools サブディレクトリにたとえば`c:\Program Files(x86)\Windows Kits\10\tools\`します。 
 

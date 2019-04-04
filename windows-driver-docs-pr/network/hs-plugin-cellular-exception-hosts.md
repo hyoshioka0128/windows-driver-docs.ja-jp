@@ -19,7 +19,7 @@ ms.locfileid: "56573481"
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_プラグイン\_移動体通信\_例外\_ホスト**構造体には、プラグインが中にのみ移動体通信ベアラーを介した接続を必要とするホストの一覧が含まれています、認証プロセスです。 これは、プラグインが要求できるオプションの機能です。 詳細については、次を参照してください。 [ **HS\_プラグイン\_クエリ\_移動体通信\_例外\_ホスト**](hs-plugin-query-cellular-exception-hosts.md)します。
+**HS\_プラグイン\_移動体通信\_例外\_ホスト**構造体には、プラグインが中にのみ移動体通信ベアラーを介した接続を必要とするホストの一覧が含まれています、認証プロセスです。 これは、プラグインが要求できるオプションの機能です。 詳細については、[ **HS\_プラグイン\_クエリ\_移動体通信\_例外\_ホスト**](hs-plugin-query-cellular-exception-hosts.md)を参照してください。
 
 <a name="syntax"></a>構文
 ------

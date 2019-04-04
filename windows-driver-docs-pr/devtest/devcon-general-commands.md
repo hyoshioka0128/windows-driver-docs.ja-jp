@@ -46,7 +46,7 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 <span id="________r______"></span><span id="________R______"></span> **/r**条件付き再起動します。 再起動が必要な変更を有効にする場合にのみ操作を完了した後、システムを再起動します。
 
-このパラメーターとは異なります、 [ **DevCon 再起動**](devcon-reboot.md)操作で、強制的にシステムを再起動します。 代わりに、 **/r**かどうか、再起動が必要、付随する操作からのリターン コードに基づくパラメーターを決定します。詳細については、次を参照してください。[再起動と再起動](#ddk-rebooting-and-restarting-tools)します。
+このパラメーターとは異なります、 [ **DevCon 再起動**](devcon-reboot.md)操作で、強制的にシステムを再起動します。 代わりに、 **/r**かどうか、再起動が必要、付随する操作からのリターン コードに基づくパラメーターを決定します。詳細については、[再起動と再起動](#ddk-rebooting-and-restarting-tools)を参照してください。
 
 <span id="_______command______"></span><span id="_______COMMAND______"></span> *コマンド*DevCon コマンドを指定します。 使用可能な DevCon コマンドとコマンド引数の詳細については、次の一覧を使用します。
 
@@ -114,7 +114,7 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 DevCon の後続の操作で使用するためのコンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するで始まる、 [ **DevCon HwIDs** ](devcon-hwids.md)コマンド。 詳細については、次を参照してください。[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
+多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 DevCon の後続の操作で使用するためのコンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するで始まる、 [ **DevCon HwIDs** ](devcon-hwids.md)コマンド。 詳細については、[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を参照してください。
 
 ### <a name="span-idddkdevconsearchlogictoolsspanspan-idddkdevconsearchlogictoolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon でデバイスを検索する方法
 

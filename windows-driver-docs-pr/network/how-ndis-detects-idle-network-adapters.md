@@ -24,17 +24,17 @@ ms.locfileid: "56551025"
 
      
 
-NDIS は、ネットワーク アダプターがアイドルの場合は、アイドル状態のタイムアウト期間のアダプターのすべてのアクティビティが検出されないことを判断します。 このタイムアウト期間がの値で指定された、  **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードの詳細については、次を参照してください。 [NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)します。
+NDIS は、ネットワーク アダプターがアイドルの場合は、アイドル状態のタイムアウト期間のアダプターのすべてのアクティビティが検出されないことを判断します。 このタイムアウト期間がの値で指定された、  **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードの詳細については、[NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)を参照してください。
 
 ネットワーク アダプターがアイドル状態になると後、選択的 NDIS 開始は操作を中断します。 この操作で低電力状態に遷移することによって、ネットワーク アダプターが中断されます。
 
-NDIS 開始この選択的ミニポート ドライバーにアイドル状態の通知を発行して、操作を中断します。 NDIS は、ドライバーの呼び出しによって[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。 ミニポート ドライバーはこの通知を処理する方法の詳細については、次を参照してください。 [、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)します。
+NDIS 開始この選択的ミニポート ドライバーにアイドル状態の通知を発行して、操作を中断します。 NDIS は、ドライバーの呼び出しによって[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。 ミニポート ドライバーはこの通知を処理する方法の詳細については、[、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
 
 NDIS ドライバーをオーバーレイからネットワーク アダプターへの I/O 要求が発行されることを検出した場合、またはアダプターをウェイク アップ イベントを通知する場合は、NDIS はアイドル状態の通知をキャンセルします。 NDIS ミニポート ドライバーを呼び出すことによっては[ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)ハンドラー関数。
 
-NDIS がアイドル状態の通知をキャンセルする方法の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド アイドル状態通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)します。
+NDIS がアイドル状態の通知をキャンセルする方法の詳細については、[NDIS セレクティブ サスペンド アイドル状態通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
 
-ミニポート ドライバーがアイドル状態の通知を完了する方法の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド アイドル状態通知の完了](completing-the-ndis-selective-suspend-idle-notification.md)します。
+ミニポート ドライバーがアイドル状態の通知を完了する方法の詳細については、[NDIS セレクティブ サスペンド アイドル状態通知の完了](completing-the-ndis-selective-suspend-idle-notification.md)を参照してください。
 
  
 

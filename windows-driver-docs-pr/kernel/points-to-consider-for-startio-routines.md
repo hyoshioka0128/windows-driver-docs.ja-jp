@@ -23,9 +23,9 @@ ms.locfileid: "56578959"
 
 -   A *StartIo*ルーチンは、物理デバイスへのアクセスを同期する必要があり、状態情報を共有するのにはいずれかまたはドライバーを使用したデバイスの拡張機能で、ドライバーを保持するリソースの同じデバイス、メモリにアクセスするその他のルーチン場所、またはリソースします。
 
-    場合、 *StartIo*ルーチン ISR と、デバイスや状態を共有する、それを使用する必要があります[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンまたは共有の状態にアクセスするデバイスをプログラミングします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+    場合、 *StartIo*ルーチン ISR と、デバイスや状態を共有する、それを使用する必要があります[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンまたは共有の状態にアクセスするデバイスをプログラミングします。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
-    場合、 *StartIo*日常的な共有状態または ISR 以外のルーチンでリソースの場合は、共有状態またはドライバーが、記憶域を提供するドライバー初期化 executive スピン ロックでのリソースを保護にする必要があります。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+    場合、 *StartIo*日常的な共有状態または ISR 以外のルーチンでリソースの場合は、共有状態またはドライバーが、記憶域を提供するドライバー初期化 executive スピン ロックでのリソースを保護にする必要があります。 詳細については、[スピン ロック](spin-locks.md)を参照してください。
 
 -   WDM 以外のモノリシックなデバイス ドライバーが、コント ローラー オブジェクトを設定する場合、 *StartIo*ルーチンは、コント ローラー オブジェクトを使用して、接続されている (と同様) デバイスと共有の物理デバイスで操作を同期します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "56578959"
 
     参照してください[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)詳細についてはします。
 
--   キャンセル可能な状態で、ドライバーが Irp を保持している場合、 *StartIo*ルーチンが入力の IRP はデバイス上でその要求の処理を開始する前に既にキャンセルされているかどうかを確認する必要があります。 詳細については、次を参照してください。[キャンセル Irp](canceling-irps.md)します。
+-   キャンセル可能な状態で、ドライバーが Irp を保持している場合、 *StartIo*ルーチンが入力の IRP はデバイス上でその要求の処理を開始する前に既にキャンセルされているかどうかを確認する必要があります。 詳細については、[キャンセル Irp](canceling-irps.md)を参照してください。
 
  
 

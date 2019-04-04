@@ -34,7 +34,7 @@ AddSoftware=SoftwareName,[flags],software-install-section
 
 **AddSoftware**=*SoftwareName,[flags],software-install-section*
 
-このディレクティブは、INF ライターの定義を参照*ソフトウェアのインストール-セクション*ソフトウェア コンポーネントの INF ファイルに別の場所。  詳細については、次を参照してください。 [ **INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md)します。
+このディレクティブは、INF ライターの定義を参照*ソフトウェアのインストール-セクション*ソフトウェア コンポーネントの INF ファイルに別の場所。  詳細については、[ **INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md)を参照してください。
 
 ## <a name="remarks"></a>注釈
 

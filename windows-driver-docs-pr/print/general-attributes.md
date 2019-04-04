@@ -50,7 +50,7 @@ ms.locfileid: "56570327"
 
  
 
-構成の依存関係を指定する方法については、次を参照してください。[条件付きステートメント](conditional-statements.md)します。
+構成の依存関係を指定する方法については、[条件付きステートメント](conditional-statements.md)を参照してください。
 
  
 

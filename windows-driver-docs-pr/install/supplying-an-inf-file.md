@@ -33,7 +33,7 @@ ms.locfileid: "56549875"
 
 [ChkINF](https://msdn.microsoft.com/library/windows/hardware/ff543461)で提供されており、ツール、 *\\ツール*ディレクトリ Microsoft Windows Driver Kit (WDK) の構文とすべてのクロス クラス INF セクションと、ディレクティブの構造を確認します。と共にプリンターを除くすべてのセットアップ クラスのクラスに固有の拡張機能。
 
-Windows 2000 以降、すべてのバージョンの Windows オペレーティング システムにインストールするための 1 つの INF ファイルを使用できます。 詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。 デバイスは、国際市場で販売が場合は、[国際 INF ファイルを作成する](creating-international-inf-files.md)します。 関係のローカリティによっては、国際対応の INF ファイルを ASCII ではなく Unicode ファイルである必要があります。
+Windows 2000 以降、すべてのバージョンの Windows オペレーティング システムにインストールするための 1 つの INF ファイルを使用できます。 詳細については、[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)を参照してください。 デバイスは、国際市場で販売が場合は、[国際 INF ファイルを作成する](creating-international-inf-files.md)します。 関係のローカリティによっては、国際対応の INF ファイルを ASCII ではなく Unicode ファイルである必要があります。
 
 ドライバーの INF ファイルを作成する優れた方法では、変更、WDK を提供するサンプルの 1 つです。 大部分の WDK サンプル ドライバーでは、ドライバーのサンプルと同じディレクトリの INF ファイルを含めます。
 

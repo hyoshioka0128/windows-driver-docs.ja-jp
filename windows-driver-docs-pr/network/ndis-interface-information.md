@@ -23,9 +23,9 @@ ms.locfileid: "56551082"
 
 NDIS 管理情報ベース (Mib) を照会するためのインターフェイスが標準化によって、重なってドライバーとネットワーク インターフェイスに関する情報を照会ユーザー モード アプリケーションを簡単にできます。 MIB クライアントは、基になる NDIS インターフェイス プロバイダーから情報を要求する NDIS が指定した関数を呼び出します。 これにより、情報を取得する OID 要求を発行する NDIS です。 クライアントに情報を指定するには、NDIS は、NDIS を使用して、クライアントが登録されているコールバック関数を呼び出します。
 
-NDIS ネットワーク インターフェイスのサービスの詳細については、次を参照してください。[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566525)します。
+NDIS ネットワーク インターフェイスのサービスの詳細については、[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566525)を参照してください。
 
-NDIS は、強化されたサポートの Management Instrumentation (WMI) を提供します。 WMI の NDIS 6.0 のサポートの詳細については、次を参照してください。 [NDIS が WMI のサポート](ndis-support-for-wmi.md)します。
+NDIS は、強化されたサポートの Management Instrumentation (WMI) を提供します。 WMI の NDIS 6.0 のサポートの詳細については、[NDIS が WMI のサポート](ndis-support-for-wmi.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

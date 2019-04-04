@@ -61,7 +61,7 @@ ms.locfileid: "56538768"
 
  
 
-これらのレジストリ エントリを指定する方法については、次を参照してください。 [ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+これらのレジストリ エントリを指定する方法については、[ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
 
  
 

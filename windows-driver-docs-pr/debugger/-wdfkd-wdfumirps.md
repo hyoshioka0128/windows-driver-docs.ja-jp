@@ -53,7 +53,7 @@ UMDF 2
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -62,7 +62,7 @@ UMDF 2
 
 このコマンドは、ユーザー モードのコマンドと同じ情報を表示します[ **! wudfext.umirps**](-wudfext-umirps.md)します。
 
-使用することができます[ **! プロセス**](-process.md)すべて UMDF ホスト プロセスとしての一覧を取得することができますを使用[ **.process** ](-process--set-process-context-.md)のいずれかに、暗黙的なプロセスを設定するのにはホスト プロセスの UMDF です。 詳細の例では、次を参照してください。 [ **! wdfkd.wdfumdevstacks**](-wdfkd-wdfumdevstacks.md)します。
+使用することができます[ **! プロセス**](-process.md)すべて UMDF ホスト プロセスとしての一覧を取得することができますを使用[ **.process** ](-process--set-process-context-.md)のいずれかに、暗黙的なプロセスを設定するのにはホスト プロセスの UMDF です。 詳細の例では、[ **! wdfkd.wdfumdevstacks**](-wdfkd-wdfumdevstacks.md)を参照してください。
 
 出力の例を次に示します **! wdfkd.wdfumirps**します。
 

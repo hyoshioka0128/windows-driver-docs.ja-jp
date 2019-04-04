@@ -61,7 +61,7 @@ ms.locfileid: "56551262"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-プロセッサによって制御されるブレークポイントの詳細については、次を参照してください。[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)します。 レジスタのコンテキスト (スレッド コンテキスト) に関する詳細については、次を参照してください。[登録コンテキスト](changing-contexts.md#register-context)します。
+プロセッサによって制御されるブレークポイントの詳細については、[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)を参照してください。 レジスタのコンテキスト (スレッド コンテキスト) に関する詳細については、[登録コンテキスト](changing-contexts.md#register-context)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

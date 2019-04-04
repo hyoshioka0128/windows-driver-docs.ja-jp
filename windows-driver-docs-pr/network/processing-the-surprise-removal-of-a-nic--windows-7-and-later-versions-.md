@@ -23,7 +23,7 @@ Windows 7 および Windows Server 2008 R2 で後で、NDIS 参加してはな�
 -   オペレーティング システムが Windows 7、および KB2471472 の修正プログラムがインストールされています。
 -   オペレーティング システムが Windows 7、およびネットワーク アダプターはモバイル ブロード バンド (MBB) デバイス。
 
-いずれの条件が満たされた場合、NDIS は、Windows の以前のバージョンと同様、突然の削除プロセスに参加します。 この手順の詳細については、次を参照してください。[処理 (Windows Vista) の NIC の突然の取り外し](processing-the-surprise-removal-of-a-nic--windows-vista-.md)します。
+いずれの条件が満たされた場合、NDIS は、Windows の以前のバージョンと同様、突然の削除プロセスに参加します。 この手順の詳細については、[処理 (Windows Vista) の NIC の突然の取り外し](processing-the-surprise-removal-of-a-nic--windows-vista-.md)を参照してください。
 
 次の手順は、NIC が突然削除 NDIS が参加する改訂された方法を説明します。
 

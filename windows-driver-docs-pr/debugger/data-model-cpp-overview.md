@@ -64,7 +64,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 論理的にモ ノの間隔と、特定のオブジェクトに対する拡張名は、デバッガーの拡張機能の検出できます。  
 
-データ モデルは、方法を新しい[WinDbg プレビュー](debugging-using-windbg-preview.md)デバッガー、ほとんどの機能が表示されます。 新しい UI の多くの要素のクエリを実行、拡張、またはデータ モデルで電源が入っているため、スクリプト化します。 詳細については、次を参照してください。 [WinDbg Preview - データ モデル](windbg-data-model-preview.md)します。
+データ モデルは、方法を新しい[WinDbg プレビュー](debugging-using-windbg-preview.md)デバッガー、ほとんどの機能が表示されます。 新しい UI の多くの要素のクエリを実行、拡張、またはデータ モデルで電源が入っているため、スクリプト化します。 詳細については、[WinDbg Preview - データ モデル](windbg-data-model-preview.md)を参照してください。
 
 ![データ モデルの詳細 ウィンドウが表示されたプロセスとスレッド](images/windbgx-data-model-process-threads.png)
 

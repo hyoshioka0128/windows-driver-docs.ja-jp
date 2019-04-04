@@ -26,7 +26,7 @@ ms.locfileid: "57464196"
 
  
 
-**注**  Wi-fi alliance の Wi-fi P2P 通信事業者の構成レコードを Wi-Fi Direct の静的な接続に移行する Windows 10 が NFC にもサポートしています。 詳細については、次を参照してください。 [Wi-fi Alliance](http://www.wi-fi.org)します。
+**注**  Wi-fi alliance の Wi-fi P2P 通信事業者の構成レコードを Wi-Fi Direct の静的な接続に移行する Windows 10 が NFC にもサポートしています。 詳細については、[Wi-fi Alliance](http://www.wi-fi.org)を参照してください。
 
  
 

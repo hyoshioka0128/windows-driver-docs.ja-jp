@@ -37,7 +37,7 @@ Bluetooth ドライバー スタックに関する情報を収集するいくつ
 
 プロファイルのドライバーを使用して[ **IOCTL\_内部\_BTHENUM\_取得\_ENUMINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff536750)基になるデバイスとサービスに関する情報を取得するにはPnP マネージャー プロファイルのドライバーの読み込みを原因となったとします。 IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーにはへのポインターが含まれています、 [**両方\_列挙子\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536643)構造体ポート番号、デバイスのフラグ、仕入先 ID、および製品 ID など、デバイスに関するベンダー提供の情報を格納します。
 
-Bluetooth の Ioctl および BRBs の使用に関する詳細については、次を参照してください。[のビルドと送信を BRB](building-and-sending-a-brb.md)します。
+Bluetooth の Ioctl および BRBs の使用に関する詳細については、[のビルドと送信を BRB](building-and-sending-a-brb.md)を参照してください。
 
  
 

@@ -14,7 +14,7 @@ ms.locfileid: "56537842"
 # <a name="authoring-a-firmware-update-package"></a>ファームウェアの更新プログラム パッケージの作成
 
 
-各ファームウェアの更新プログラム パッケージには、全体のファームウェア ペイロード (たとえば firmware.bin) を含む単一のバイナリ ファイルと Windows を使用して firmware.bin を検証するセキュリティのカタログが含まれています。 セキュリティ カタログとドライバーの詳細については、次を参照してください。[カタログ ファイルとデジタル署名](https://msdn.microsoft.com/library/windows/hardware/ff537872)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540161)します。
+各ファームウェアの更新プログラム パッケージには、全体のファームウェア ペイロード (たとえば firmware.bin) を含む単一のバイナリ ファイルと Windows を使用して firmware.bin を検証するセキュリティのカタログが含まれています。 セキュリティ カタログとドライバーの詳細については、[カタログ ファイルとデジタル署名](https://msdn.microsoft.com/library/windows/hardware/ff537872)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540161)を参照してください。
 
 ファームウェアの更新プログラム パッケージは、1 つ以上の次の種類のファームウェアを更新できる必要があります。
 

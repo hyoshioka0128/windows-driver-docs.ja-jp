@@ -28,7 +28,7 @@ MB ドライバー モデルには、次の USSD 操作がサポートされて�
 
 -   USSD セッションを終了しています
 
-デバイスが開始した操作の詳細については、次を参照してください。 [OID\_WWAN\_USSD](https://msdn.microsoft.com/library/windows/hardware/hh440100)します。
+デバイスが開始した操作の詳細については、[OID\_WWAN\_USSD](https://msdn.microsoft.com/library/windows/hardware/hh440100)を参照してください。
 
 開始された操作をネットワークします。
 
@@ -38,7 +38,7 @@ MB ドライバー モデルには、次の USSD 操作がサポートされて�
 
 -   USSD セッションの終了
 
-ネットワークが開始した操作の詳細については、次を参照してください。 [ **NDIS\_状態\_WWAN\_USSD**](https://msdn.microsoft.com/library/windows/hardware/hh439822)します。
+ネットワークが開始した操作の詳細については、[ **NDIS\_状態\_WWAN\_USSD**](https://msdn.microsoft.com/library/windows/hardware/hh439822)を参照してください。
 
 USSD プロトコルは、いつでも 1 つの USSD セッションのみを許可します。 デバイスの操作を開始、 **RequestType**のメンバー、 [ **WWAN\_USSD\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh464138)構造の目的を示す、OID の要求:
 

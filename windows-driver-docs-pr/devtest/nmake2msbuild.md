@@ -20,7 +20,7 @@ ms.locfileid: "57349425"
 
 Nmake2MsBuild ユーティリティとドライバーのソース コード ファイルから以前のバージョンの WDK を使用して構築されたドライバー用の Visual Studio プロジェクトの生成、*ソース*、*ディレクトリ*、および*makefile.inc*ファイル。 ユーティリティでは、Visual Studio のプロジェクト ファイルを作成、既存のと同じディレクトリに*ソース*ファイル。 このユーティリティは、ソース コードや、以前のビルド ファイルには変更されません。
 
-ユーティリティの使用方法の詳細については、次を参照してください。 [、WDK を変換するファイルを Visual Studio プロジェクトをソース](converting-a-wdk-sources-file-to-a-visual-studio-project.md)します。
+ユーティリティの使用方法の詳細については、[、WDK を変換するファイルを Visual Studio プロジェクトをソース](converting-a-wdk-sources-file-to-a-visual-studio-project.md)を参照してください。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
 

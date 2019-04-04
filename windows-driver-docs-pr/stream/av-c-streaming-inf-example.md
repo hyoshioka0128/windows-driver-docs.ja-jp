@@ -45,7 +45,7 @@ ServiceBinary = %12%\subunit.sys
 Dependencies  = AVCSTRM   ; loaded before subunit.sys
 ```
 
-デバイスのインストール ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+デバイスのインストール ファイルの詳細については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
  
 

@@ -33,11 +33,11 @@ PnP デバイスのインストールによって署名されたと見なされ�
 
 また、64 ビット バージョンの Windows Vista と Windows の以降のバージョンでは、署名ポリシーをさらに、カーネル モード コードが必要であるか、WHQL SPC をカーネル モード ドライバーに署名します。
 
-リリース署名の詳細については、次を参照してください。[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release--windows-vista-and-later-.md)します。
+リリース署名の詳細については、[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release--windows-vista-and-later-.md)を参照してください。
 
 ### <a href="" id="pnp-signing-requirements-for-development-and-test-of-a-driver"></a> 署名の要件の開発とテスト ドライバーの PnP します。
 
-64 ビット バージョンの Windows Vista および以降のバージョンの Windows でドライバーが必要、 [WHQL テスト署名](whql-test-signature-program.md)によって署名する必要がありますか、[テスト証明書](test-certificates.md)します。 テスト署名ドライバーの詳細については、次を参照してください。[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)します。
+64 ビット バージョンの Windows Vista および以降のバージョンの Windows でドライバーが必要、 [WHQL テスト署名](whql-test-signature-program.md)によって署名する必要がありますか、[テスト証明書](test-certificates.md)します。 テスト署名ドライバーの詳細については、[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)を参照してください。
 
  
 

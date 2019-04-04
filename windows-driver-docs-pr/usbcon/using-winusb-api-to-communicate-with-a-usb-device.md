@@ -38,7 +38,7 @@ Microsoft Visual Studio 2013 を使用している場合は、WinUSB テンプ�
 このチュートリアルに、次のものが適用されます。
 
 -   この情報は、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、Windows Vista のバージョンの Windows に適用されます。
--   デバイスの機能のドライバーとして Winusb.sys をインストールしておきます。 このプロセスの詳細については、次を参照してください。 [WinUSB (Winusb.sys) インストール](winusb-installation.md)します。
+-   デバイスの機能のドライバーとして Winusb.sys をインストールしておきます。 このプロセスの詳細については、[WinUSB (Winusb.sys) インストール](winusb-installation.md)を参照してください。
 -   このトピックの例がに基づいて、 [OSR USB FX2 Learning Kit デバイス](http://www.osronline.com/)します。 これらの例を使用すると、他の USB デバイスにプロシージャを拡張するのにことができます。
 
 ## <a href="" id="setup"></a>手順 1:WinUSB テンプレートに基づくスケルトン アプリを作成します。
@@ -433,7 +433,7 @@ done:
 
 デバイスは、アイソクロナス エンドポイントをサポートする場合は使用できます[WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)転送を送信します。 この機能は、Windows 8.1 でのみサポートされます。
 
-詳細については、次を参照してください。 [WinUSB デスクトップ アプリから送信 USB アイソクロナス転送](getting-set-up-to-use-windows-devices-usb.md)します。
+詳細については、[WinUSB デスクトップ アプリから送信 USB アイソクロナス転送](getting-set-up-to-use-windows-devices-usb.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [WinUSB](winusb.md)  

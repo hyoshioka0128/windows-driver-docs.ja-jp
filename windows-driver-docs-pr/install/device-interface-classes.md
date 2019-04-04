@@ -29,7 +29,7 @@ ms.locfileid: "56532563"
 
 [デバイスのインターフェイスを使用します。](using-a-device-interface.md)
 
-デバイスのシステム定義のインターフェイス クラスの詳細については、次を参照してください。[ベンダーのデバイスのインターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff553412)します。
+デバイスのシステム定義のインターフェイス クラスの詳細については、[ベンダーのデバイスのインターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff553412)を参照してください。
 
  
 

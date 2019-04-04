@@ -34,7 +34,7 @@ PMI には、電力のしきい値または予算に達したか超えました�
 
 使用状況測定情報 PMI からアクセスされる電源は通常読み取り専用です。 ただし、電力メーターの機能、によってその予算構成でしたが読み取り専用または読み取り/書き込みアクセス許可。
 
-PMI IOCTL インターフェイスの詳細については、次を参照してください。 [PMI Ioctl](https://msdn.microsoft.com/library/windows/hardware/ff543884)します。
+PMI IOCTL インターフェイスの詳細については、[PMI Ioctl](https://msdn.microsoft.com/library/windows/hardware/ff543884)を参照してください。
 
  
 **注**   PMB インフラストラクチャは、Windows 7、Windows Server 2008 R2、および以降のバージョンの Windows オペレーティング システムでサポートされています。

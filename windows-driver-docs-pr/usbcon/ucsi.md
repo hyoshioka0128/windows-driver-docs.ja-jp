@@ -49,13 +49,13 @@ Microsoft では、ACPI トランスポートの USB 型 C コネクタ シス�
 
 -   **デバイス側の USB ドライバー**
 
-    [デバイス側の USB ドライバー](usb-device-side-drivers-in-windows.md)関数デバイス/周辺機器のサービスを提供します。 USB 関数コント ローラー クラスの拡張サポート MTP (Media Transfer Protocol) と充電 BC 1.2 を使用しています。 Microsoft では、Synopsys USB 3.0、および ChipIdea USB 2.0 コント ローラーの組み込みのクライアント ドライバーを提供します。 使用して、関数のコント ローラーのカスタム クライアント ドライバーを記述する[USB 関数コント ローラー クライアント ドライバーのプログラミング インターフェイス](https://msdn.microsoft.com/library/windows/hardware/mt188010)します。 詳細については、次を参照してください。 [usb ドライバーを Windows の開発機能のコント ローラー](developing-windows-drivers-for-usb-function-controllers.md)します。
+    [デバイス側の USB ドライバー](usb-device-side-drivers-in-windows.md)関数デバイス/周辺機器のサービスを提供します。 USB 関数コント ローラー クラスの拡張サポート MTP (Media Transfer Protocol) と充電 BC 1.2 を使用しています。 Microsoft では、Synopsys USB 3.0、および ChipIdea USB 2.0 コント ローラーの組み込みのクライアント ドライバーを提供します。 使用して、関数のコント ローラーのカスタム クライアント ドライバーを記述する[USB 関数コント ローラー クライアント ドライバーのプログラミング インターフェイス](https://msdn.microsoft.com/library/windows/hardware/mt188010)します。 詳細については、[usb ドライバーを Windows の開発機能のコント ローラー](developing-windows-drivers-for-usb-function-controllers.md)を参照してください。
 
     SoC ベンダー可能性があります関数下位の USB フィルター ドライバーとの提供充電器の検出。 インボックス Synopsys USB 3.0 または ChipIdea USB 2.0 のクライアント ドライバーを使用している場合は、独自のフィルター ドライバーを実装できます。
 
 -   **ホスト側の USB ドライバー**
 
-    ホスト側の USB ドライバーでは、EHCI または XHCI 準拠の USB ホスト コント ローラーを使用するドライバーのセットです。 役割の交代ドライバー ホスト ロールを列挙する場合は、ドライバーが読み込まれます。 ホスト コント ローラーが仕様に準拠していないかどうかは、使用してカスタム ドライバーを記述する[USB ホスト コント ローラーの拡張機能 (UCX) プログラミング インターフェイス](https://msdn.microsoft.com/library/windows/hardware/mt188009)します。 詳しくは、次を参照してください。[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)します。
+    ホスト側の USB ドライバーでは、EHCI または XHCI 準拠の USB ホスト コント ローラーを使用するドライバーのセットです。 役割の交代ドライバー ホスト ロールを列挙する場合は、ドライバーが読み込まれます。 ホスト コント ローラーが仕様に準拠していないかどうかは、使用してカスタム ドライバーを記述する[USB ホスト コント ローラーの拡張機能 (UCX) プログラミング インターフェイス](https://msdn.microsoft.com/library/windows/hardware/mt188009)します。 詳しくは、[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)を参照してください。
 
     **注**  いない[USB デバイスのすべてのクラス](supported-usb-classes.md)Windows 10 Mobile でサポートされます。
 
@@ -84,7 +84,7 @@ Microsoft では、ACPI トランスポートの USB 型 C コネクタ シス�
     -   サポートされているプロバイダーの機能の変更
     -   ネゴシエートされた電源レベルの変更
 
-BIOS で UCSI を実装するために必要なタスクについては、次を参照してください。 [Intel BIOS UCSI 実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)します。
+BIOS で UCSI を実装するために必要なタスクについては、[Intel BIOS UCSI 実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)を参照してください。
 
 ## <a name="example-flow-for-ucsi"></a>UCSI のフローの例
 

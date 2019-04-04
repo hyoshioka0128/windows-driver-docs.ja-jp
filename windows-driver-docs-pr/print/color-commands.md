@@ -97,7 +97,7 @@ ms.locfileid: "56537039"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
 ### <a href="" id="ddk-commands-for-controlling-printer-palettes-gg"></a>プリンターのパレットを制御するためのコマンド
 
@@ -159,7 +159,7 @@ ms.locfileid: "56537039"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
 ### <a href="" id="ddk-commands-for-selecting-pattern-brushes-gg"></a>パターンのブラシを選択するためのコマンド
 

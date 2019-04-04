@@ -43,9 +43,9 @@ HYPER-V 拡張可能スイッチのインターフェイスは、拡張可能ス
 
 -   呼び出す必要がありますが、拡張機能が拡張可能スイッチのカスタム プロパティを管理しない場合は[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張可能スイッチのドライバー スタック ダウン OID 要求を転送します。
 
-    OID 要求を転送する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
+    OID 要求を転送する方法の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)を参照してください。
 
-詳細を定義し、ポート機能の状態情報を登録する方法については、次を参照してください。[カスタム ポート機能の状態](custom-port-feature-status.md)します。
+詳細を定義し、ポート機能の状態情報を登録する方法については、[カスタム ポート機能の状態](custom-port-feature-status.md)を参照してください。
 
  
 

@@ -27,7 +27,7 @@ A [ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747
 
 **NetLuidIndex** net メンバー\_LUID 共用体は、24 ビット NET\_インターフェイスをプロバイダーの呼び出し時に割り当て、NDIS LUID インデックス、 [ **NdisIfAllocateNetLuidIndex**](https://msdn.microsoft.com/library/windows/hardware/ff562695)関数。 NDIS とインターフェイスのプロバイダーは、同じインターフェイスの型を持つ複数のインターフェイスを区別する、このインデックスを使用します。 そのため、このインデックスは、ローカル コンピューター内で一意です。
 
-**IfType**のメンバー、 [ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747)共用体は、Internet Assigned Numbers Authority の IANA で定義されているインターフェイスの種類を含む 16 ビット値。 有効なインターフェイスの種類の一覧は、次を参照してください。 [NDIS インターフェイス型](https://msdn.microsoft.com/library/windows/hardware/ff565767)します。
+**IfType**のメンバー、 [ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747)共用体は、Internet Assigned Numbers Authority の IANA で定義されているインターフェイスの種類を含む 16 ビット値。 有効なインターフェイスの種類の一覧は、[NDIS インターフェイス型](https://msdn.microsoft.com/library/windows/hardware/ff565767)を参照してください。
 
 NET\_LUID データ型は等しく、*もし Name*オブジェクト RFC 2863、NDIS 派生するので、*もし Name* 、NET から文字列\_LUID 値。
 

@@ -54,4 +54,4 @@ HKR,"ENUM\[DeviceName]",pnpid,,"[string]"
 
 すべての AVStream ミニドライバーの INF ファイルでフィルターに固有の参照文字列が一致する必要があります、 **ReferenceGuid**のメンバー、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造体。
 
-記述子の詳細については、次を参照してください。 [AVStream 記述子](avstream-descriptors.md)します。
+記述子の詳細については、[AVStream 記述子](avstream-descriptors.md)を参照してください。

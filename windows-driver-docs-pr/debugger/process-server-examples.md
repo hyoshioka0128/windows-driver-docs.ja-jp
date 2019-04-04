@@ -62,7 +62,7 @@ Remote Process Server - npipe:Pipe=AnotherPipe
 G:\Debugging Tools> cdb -premote npipe:server=BOX17,pipe=AnotherPipe -v sol.exe 
 ```
 
-複雑な例では、プロセス サーバーを使用して、次を参照してください。[途中でシンボル](symbols-in-the-middle.md)します。
+複雑な例では、プロセス サーバーを使用して、[途中でシンボル](symbols-in-the-middle.md)を参照してください。
 
  
 

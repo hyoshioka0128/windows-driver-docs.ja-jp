@@ -27,7 +27,7 @@ XR\_バイアスは、Windows 7 にのみ、Direct3D のバージョン 9 をサ
 
 ドライバーが返された場合、 [ **FORMATOP** ](https://msdn.microsoft.com/library/windows/hardware/ff566438)エントリ、D3DDDIFMT\_A2B10G10R10\_XR\_バイアス形式、その後、ドライバーはそのへの呼び出しを受信します。[**CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688) 、D3DDDIFMT のリソースを作成する関数\_A2B10G10R10\_XR\_バイアス形式の設定、**形式**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://msdn.microsoft.com/library/windows/hardware/ff542963)構造体。
 
-ドライバーのみ、D3DDDIFMT のリソースを作成する要求を受信する\_A2B10G10R10\_XR\_フリッピング チェーンの全画面表示のバイアス形式。 Windows デスクトップ マネージャー (DWM) XR のウィンドウのプレゼンテーションを処理する\_シェーダー コードのバイアス。 ドライバーが D3DDDIFMT を扱う必要があります\_A2B10G10R10\_XR\_バイアス形式のリソースとして、D3DDDIFMT\_A2B10G10R10 がスキャンを除くすべての操作で書式設定、ドライバーが D3DDDIFMT を扱うことができます、\_A2B10G10R10\_XR\_バイアス形式のリソースとして、D3DDDIFMT\_ブレンド、フィルター、および形式変換の操作の A2B10G10R10 形式。 唯一の違いはどのように XR\_バイアス スキャン アウトに影響を与えます。スキャン アウトの詳細については、次を参照してください。 [BGRA スキャン アウト サポート](bgra-scan-out-support.md)します。
+ドライバーのみ、D3DDDIFMT のリソースを作成する要求を受信する\_A2B10G10R10\_XR\_フリッピング チェーンの全画面表示のバイアス形式。 Windows デスクトップ マネージャー (DWM) XR のウィンドウのプレゼンテーションを処理する\_シェーダー コードのバイアス。 ドライバーが D3DDDIFMT を扱う必要があります\_A2B10G10R10\_XR\_バイアス形式のリソースとして、D3DDDIFMT\_A2B10G10R10 がスキャンを除くすべての操作で書式設定、ドライバーが D3DDDIFMT を扱うことができます、\_A2B10G10R10\_XR\_バイアス形式のリソースとして、D3DDDIFMT\_ブレンド、フィルター、および形式変換の操作の A2B10G10R10 形式。 唯一の違いはどのように XR\_バイアス スキャン アウトに影響を与えます。スキャン アウトの詳細については、[BGRA スキャン アウト サポート](bgra-scan-out-support.md)を参照してください。
 
  
 

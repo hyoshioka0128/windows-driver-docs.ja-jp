@@ -41,15 +41,15 @@ NDIS 呼び出し、PF ミニポート ドライバーの前に[ *MiniportHaltEx
 
 3.  ドライバーの OID セット要求を発行する必要があります[OID\_NIC\_スイッチ\_FREE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451822)どの PCIe 仮想機能 (Vf) NIC で以前割り当てられているリソースを解放するにはスイッチです。 ドライバーは、の OID メソッド要求を発行して、VF のリソースを割り当てます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814) PF ミニポート ドライバーにします。
 
-    詳細については、次を参照してください。[仮想関数のリソースを解放](freeing-resources-for-a-virtual-function.md)します。
+    詳細については、[仮想関数のリソースを解放](freeing-resources-for-a-virtual-function.md)を参照してください。
 
-    **注**  VF 用のリソースが解放されると、NDIS を呼び出す、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388) VF ミニポート ドライバーの機能です。 詳細については、次を参照してください。 [VF のミニポート ドライバーを停止する](halting-a-vf-miniport-driver.md)します。
+    **注**  VF 用のリソースが解放されると、NDIS を呼び出す、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388) VF ミニポート ドライバーの機能です。 詳細については、[VF のミニポート ドライバーを停止する](halting-a-vf-miniport-driver.md)を参照してください。
 
      
 
 すべてのフィルター、拡張、既定以外の受信し VFs はから削除されている NIC の切り替え、NDIS が次の手順に従います。
 
--   NDIS の OID のセット要求を発行してすべての NIC スイッチを削除します[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)PF ミニポート ドライバーにします。 NIC のスイッチを削除する方法の詳細については、次を参照してください。 [NIC スイッチを削除する](deleting-a-nic-switch.md)します。
+-   NDIS の OID のセット要求を発行してすべての NIC スイッチを削除します[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)PF ミニポート ドライバーにします。 NIC のスイッチを削除する方法の詳細については、[NIC スイッチを削除する](deleting-a-nic-switch.md)を参照してください。
 
     **注**  以降 Windows Server 2012 では、SR-IOV インターフェイスに対してのみサポートして既定の NIC のスイッチ、ネットワーク アダプター。
 
@@ -70,7 +70,7 @@ NDIS を呼び出すと*MiniportHaltEx*、PF ミニポート ドライバーが�
 
      
 
-2.  PF のミニポート ドライバーでは、ミニポート停止の操作に関連するその他のタスクを実行します。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
+2.  PF のミニポート ドライバーでは、ミニポート停止の操作に関連するその他のタスクを実行します。 詳細については、[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)を参照してください。
 
  
 

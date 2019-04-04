@@ -27,7 +27,7 @@ ms.locfileid: "56538828"
 
 マイクロソフトの Direct3D ランタイムが呼び出す、ドライバーのときに、ユーザー モードのディスプレイ ドライバーは頂点とピクセル シェーダーのコードを受信[ **CreateVertexShaderFunc** ](https://msdn.microsoft.com/library/windows/hardware/ff540717)と[ **CreatePixelShader** ](https://msdn.microsoft.com/library/windows/hardware/ff540668)関数、それぞれします。 ランタイムが呼び出す、ドライバーの場合、ユーザー モードのディスプレイ ドライバーが頂点宣言を受け取る[ **CreateVertexShaderDecl** ](https://msdn.microsoft.com/library/windows/hardware/ff540714)関数。 頂点宣言の配列から成る[ **D3DDDIVERTEXELEMENT** ](https://msdn.microsoft.com/library/windows/hardware/ff544344)構造体。 ユーザー モードのディスプレイ ドライバーは、シェーダー コードと頂点シェーダーの宣言をハードウェアに固有の書式に変換し、シェーダー コードおよび宣言シェーダーと宣言のハンドルに関連付けます。 ランタイムの呼び出しで作成されたハンドルを使用して、 [ **SetVertexShaderDecl**](https://msdn.microsoft.com/library/windows/hardware/ff569692)、 [ **SetVertexShaderFunc**](https://msdn.microsoft.com/library/windows/hardware/ff569693)、および[**SetPixelShader** ](https://msdn.microsoft.com/library/windows/hardware/ff569543)後続のすべての描画操作で使用できるように、宣言と頂点とピクセル シェーダー頂点シェーダーを設定する関数。
 
-個々 のシェーダー コードと各シェーダー コードを構成するトークン形式の詳細については、次を参照してください。 [Direct3D のシェーダー コード](https://msdn.microsoft.com/library/windows/hardware/ff552891)します。
+個々 のシェーダー コードと各シェーダー コードを構成するトークン形式の詳細については、[Direct3D のシェーダー コード](https://msdn.microsoft.com/library/windows/hardware/ff552891)を参照してください。
 
 **注**  でシェーダー コードとそれぞれの宣言が終了アプリケーションでは、頂点シェーダー、ピクセル シェーダーおよび頂点宣言を作成するとき、[トークンの終了](https://msdn.microsoft.com/library/windows/hardware/ff564170)します。 終了トークンを使用したときに、Direct3D ランタイムがさらに、頂点を渡すし、ピクセル シェーダーの作成要求をユーザー モードには、要求に付属しているドライバー、頂点とピクセル シェーダーのコードを表示を終了します。 ただし、ランタイムは、作成要求を頂点宣言に渡す、ときに、要求に付随する頂点宣言で終わらない終了トークンです。
 

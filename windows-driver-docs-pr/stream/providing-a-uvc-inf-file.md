@@ -158,7 +158,7 @@ UVC ドライバーでは、Windows Server 2003 と Windows Vista またはそ�
 
 低フレーム レートの条件で EOF ビットは、次のフレームの FID ビットよりも高速完了を報告場合があります。 EOF ビットは、mpeg-2 フレームの配信の待機時間を短縮できます。
 
-AddReg ディレクティブの位置指定の構文の詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+AddReg ディレクティブの位置指定の構文の詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
 
 ```INF
 [MyDevice.NT.Services]

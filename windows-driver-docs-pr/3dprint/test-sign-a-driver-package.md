@@ -48,6 +48,6 @@ ms.locfileid: "56539598"
 
 4.  手順 2. で作成した pfx ファイル「FabrikamPrintDriverV4 パッケージ」に署名します。 他のプロジェクトは、としては、この手順で署名されたドライバーはどのようなパッケージを作成する必要はありません。
 
-詳細については、次を参照してください。[テスト署名ドライバー パッケージ方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-to-test-sign-a-driver-package)します。
+詳細については、[テスト署名ドライバー パッケージ方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-to-test-sign-a-driver-package)を参照してください。
 
 

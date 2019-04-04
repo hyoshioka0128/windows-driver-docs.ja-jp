@@ -27,7 +27,7 @@ Storport のバージョンのミニポート ドライバーは、一連のキ�
 
 Storport ドライバーによって提供されるサポート ルーチンの詳細については、[Storport ドライバー ルーチンをサポートする] を参照してください。
 
-Storport ドライバーの詳細については、次を参照してください。[ストレージ ポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-port-drivers)します。 
+Storport ドライバーの詳細については、[ストレージ ポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-port-drivers)を参照してください。 
 
 次に、Storport ドライバー サポート ルーチンを示します。
 

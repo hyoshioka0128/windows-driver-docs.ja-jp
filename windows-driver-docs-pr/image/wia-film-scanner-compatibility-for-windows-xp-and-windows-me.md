@@ -25,7 +25,7 @@ ms.locfileid: "56553593"
 
  
 
-Windows XP および Windows Me の互換性の詳細については、次を参照してください。 [WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)します。
+Windows XP および Windows Me の互換性の詳細については、[WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)を参照してください。
 
  
 

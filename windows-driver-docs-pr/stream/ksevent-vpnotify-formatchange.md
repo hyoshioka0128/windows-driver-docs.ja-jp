@@ -67,7 +67,7 @@ KsProxy の VPE フィルターは、イベントのハンドルを保存する�
 
 KsProxy VPE フィルターは、IOCTL を送信することによって、イベント通知を無効にします\_KS\_を無効にする\_同じイベント ハンドルを持つイベント I/O 制御コード。 VPE フィルターによってイベント ハンドルが閉じられます。 ミニドライバーは、イベント ハンドルを終了しないで必要があります。
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。 ビデオの解像度の変更などのストリームの変更の処理の詳細については、次を参照してください。 [Stream 変更](https://msdn.microsoft.com/library/windows/hardware/ff568284)します。
+DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。 ビデオの解像度の変更などのストリームの変更の処理の詳細については、[Stream 変更](https://msdn.microsoft.com/library/windows/hardware/ff568284)を参照してください。
 
  
 

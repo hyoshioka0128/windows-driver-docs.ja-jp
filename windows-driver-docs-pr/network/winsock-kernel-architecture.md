@@ -30,7 +30,7 @@ WSK にアタッチされているサブシステムは、WSK アプリケーシ
 
 WSK アプリケーションを検出してのセットを使用して、WSK サブシステムにアタッチ[WSK 登録関数](https://msdn.microsoft.com/library/windows/hardware/ff571179)します。 アプリケーションは、WSK サブシステムが使用可能な場合に動的に検出するために、プロバイダーと WSK NPI のクライアント側の実装を構成するディスパッチ テーブルを交換して、これらの関数を使用できます。
 
-使用して、WSK アプリケーションを WSK サブシステムをアタッチできますまたは、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md)します。 詳細については、次を参照してください。 [WSK の登録と登録解除を使用して NMR](using-nmr-for-wsk-registration-and-unregistration.md)します。
+使用して、WSK アプリケーションを WSK サブシステムをアタッチできますまたは、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md)します。 詳細については、[WSK の登録と登録解除を使用して NMR](using-nmr-for-wsk-registration-and-unregistration.md)を参照してください。
 
  
 

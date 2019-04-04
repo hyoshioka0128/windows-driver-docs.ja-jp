@@ -67,7 +67,7 @@ ms.locfileid: "56535994"
 
 各 SCSI ミニポート ドライバーでは、内部構造とそのデバイスの拡張機能、論理ユニットの拡張機能 (ある場合)、および SRB の拡張機能 (ある場合) の内容を定義します。 HBA に固有のデバイスの拡張機能へのポインターを除くすべてのシステム定義のミニポート ドライバー ルーチンへの入力引数は、 **DriverEntry**します。 多く **ScsiPort * * * Xxx*ルーチンは、引数としてこのポインターを必要とします。
 
-**ScsiPortInitialize**ミニポート ドライバーからのみ呼び出すことができます**DriverEntry**ルーチン。 詳細については、次を参照してください。 [ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)と[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)します。
+**ScsiPortInitialize**ミニポート ドライバーからのみ呼び出すことができます**DriverEntry**ルーチン。 詳細については、[ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)と[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)を参照してください。
 
  
 

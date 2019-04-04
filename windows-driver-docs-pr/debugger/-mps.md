@@ -59,7 +59,7 @@ BIOS では、MP テーブルの 16 進数のアドレスを指定します。 �
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-BIOS のデバッグの詳細については、次を参照してください。 [BIOS コードのデバッグ](debugging-bios-code.md)します。 MP の詳細については、適切なバージョンの Intel マルチプロセッサ仕様を参照してください。
+BIOS のデバッグの詳細については、[BIOS コードのデバッグ](debugging-bios-code.md)を参照してください。 MP の詳細については、適切なバージョンの Intel マルチプロセッサ仕様を参照してください。
 
  
 

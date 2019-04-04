@@ -69,7 +69,7 @@ CCD Api は、次のタスクを処理できません。 さらに、CCD Api で
 
 [CCD Api](ccd-apis.md)
 
-**注**  に加えて CCD Api を使用して、デスクトップでの表示を設定する、ハードウェア ベンダーが、Windows 7 を変更する必要があります [Windows 表示 Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)サポート CCD ミニポート ドライバーを表示します。 ディスプレイのミニポート ドライバーで CCD のサポートに関する詳細については、次を参照してください。 [CCD Ddi](ccd-ddis.md)します。
+**注**  に加えて CCD Api を使用して、デスクトップでの表示を設定する、ハードウェア ベンダーが、Windows 7 を変更する必要があります [Windows 表示 Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)サポート CCD ミニポート ドライバーを表示します。 ディスプレイのミニポート ドライバーで CCD のサポートに関する詳細については、[CCD Ddi](ccd-ddis.md)を参照してください。
 
  
 

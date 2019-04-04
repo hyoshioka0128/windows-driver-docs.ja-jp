@@ -59,7 +59,7 @@ PortCls システム ドライバーの実装、 [IRegistryKey](https://msdn.mic
 
  
 
-既存のレジストリ キーを開くか、新しいレジストリ キーの作成、アダプタのドライバを呼び出すことができます、 [ **PcNewRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff537716)関数、およびミニポート ドライバーには、ポート ドライバーを呼び出すことができます[ **IPort::NewRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff536945)メソッド。 2 つの呼び出しは似ていますが、 **PcNewRegistryKey**関数には、2 つのパラメーターの追加が必要な*デバイス オブジェクト*と*サブデバイス*。 詳細については、次を参照してください。 **PcNewRegistryKey**します。
+既存のレジストリ キーを開くか、新しいレジストリ キーの作成、アダプタのドライバを呼び出すことができます、 [ **PcNewRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff537716)関数、およびミニポート ドライバーには、ポート ドライバーを呼び出すことができます[ **IPort::NewRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff536945)メソッド。 2 つの呼び出しは似ていますが、 **PcNewRegistryKey**関数には、2 つのパラメーターの追加が必要な*デバイス オブジェクト*と*サブデバイス*。 詳細については、**PcNewRegistryKey**を参照してください。
 
 ミニポート ドライバーが新しいを作成します[IRegistryKey](https://msdn.microsoft.com/library/windows/hardware/ff536965)オブジェクト、オブジェクトは、既存のサブキーを開きますかが存在しない場合は、新しいレジストリ サブキーを作成します。 どちらの場合は、レジストリ キー オブジェクトは、キーを識別するハンドルを格納します。 そのオブジェクトが後で解放されるときに、その参照カウントをデクリメントを 0 に、オブジェクトは、キーへのハンドルを自動的に閉じます。
 

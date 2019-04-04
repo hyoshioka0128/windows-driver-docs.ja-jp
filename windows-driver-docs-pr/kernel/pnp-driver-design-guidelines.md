@@ -36,7 +36,7 @@ PnP をサポートするには、ドライバーは次のガイドラインに�
 
 -   含める必要があります、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)ルーチン。
 
-    このディスパッチ ルーチンを処理する必要があります[ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)要求と関連付けられているマイナー機能コード。 詳細については、次を参照してください。 [DispatchPnP ルーチン](dispatchpnp-routines.md)します。
+    このディスパッチ ルーチンを処理する必要があります[ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)要求と関連付けられているマイナー機能コード。 詳細については、[DispatchPnP ルーチン](dispatchpnp-routines.md)を参照してください。
 
 -   ハードウェアは、検索する必要があります。
 

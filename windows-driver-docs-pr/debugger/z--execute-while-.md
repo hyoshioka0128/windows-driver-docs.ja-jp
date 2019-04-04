@@ -43,10 +43,10 @@ Command ; [Processor] z( Expression )
 実行するコマンドを指定します。 中に、*式*条件の評価が 0 以外の値。 このコマンドは常に少なくとも 1 回に実行します。
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-テストに適用されるプロセッサを指定します。 構文の詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。 プロセッサは、カーネル モードでのみ指定できます。
+テストに適用されるプロセッサを指定します。 構文の詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。 プロセッサは、カーネル モードでのみ指定できます。
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-テストする条件を指定します。 この条件は、0 以外の値に評価された場合、*コマンド*コマンドをもう一度実行し、*式*をもう一度テストします。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+テストする条件を指定します。 この条件は、0 以外の値に評価された場合、*コマンド*コマンドをもう一度実行し、*式*をもう一度テストします。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

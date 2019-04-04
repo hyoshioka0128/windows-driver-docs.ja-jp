@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_NET[デバイス インターフェイス クラス](https://m
 
 NDIS は、NDIS ミニポート ドライバーの場合は、このインターフェイス クラスのインスタンスを登録します。
 
-ネットワーク デバイスとドライバーについては、次を参照してください。[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)します。
+ネットワーク デバイスとドライバーについては、[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

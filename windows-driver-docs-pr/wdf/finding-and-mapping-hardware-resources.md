@@ -16,7 +16,7 @@ ms.locfileid: "56536557"
 
 このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) ドライバーのバージョン 2 での翻訳済みのメモリ リソースをマップする方法について説明します (**CmResourceTypeMemory**) そので受信した[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。
 
-1.x UMDF ドライバーでは、この種類のリソースを受け取ることもその[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)メソッド。 詳細については、次を参照してください。 [UMDF 1.x ドライバー内のハードウェア リソースのマッピングの検索と](finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md)します。
+1.x UMDF ドライバーでは、この種類のリソースを受け取ることもその[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)メソッド。 詳細については、[UMDF 1.x ドライバー内のハードウェア リソースのマッピングの検索と](finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md)を参照してください。
 
 ドライバーを受け取る[生、翻訳した](raw-and-translated-resources.md)のバージョンで、デバイスのリソースのリスト内のハードウェア リソースの[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。 ドライバーがドライバーのフレームワークになるまでの有効なリソースの一覧を保存できます[ *EvtDeviceReleaseHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540890)コールバック関数。
 
@@ -34,7 +34,7 @@ I/O 領域内のリソースをマップする必要はありません (**CmReso
 
 UMDF ドライバーを呼び出す場合[ **WdfDeviceMapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/dn265605)を設定する必要があります、 **UmdfDirectHardwareAccess** INF ディレクティブを**AllowDirectHardwareAccess**.
 
-例については、ドライバーを検索し、メモリ マップト マップ リソースを登録する方法を示しますが、次を参照してください。[読み取りと書き込みをデバイスの登録](reading-and-writing-to-device-registers.md)します。
+例については、ドライバーを検索し、メモリ マップト マップ リソースを登録する方法を示しますが、[読み取りと書き込みをデバイスの登録](reading-and-writing-to-device-registers.md)を参照してください。
 
  
 

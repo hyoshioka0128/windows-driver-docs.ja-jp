@@ -22,7 +22,7 @@ ms.locfileid: "56551026"
 
  
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
 **注**  このトピックはステップ バイ ステップの一連の一部です。 参照してください[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)導入します。
 
@@ -49,7 +49,7 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 3.  プロジェクトに追加された後、StoreManifest.xml ファイルのプロパティを確認します。 右クリックし、 **StoreManifest.xml**ファイルおよび選択**プロパティ**します。 これを強調表示、**プロパティ**ウィンドウ。
 4.  **プロパティ**ウィンドウで、いることを確認、**ビルド アクション**プロパティと等しい**コンテンツ**と**出力ディレクトリにコピー**プロパティ等しい**コピーしない**します。
 
-StoreManifest.xml ファイルに関する詳細については、次を参照してください。 [StoreManifest スキーマ リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=307124)します。
+StoreManifest.xml ファイルに関する詳細については、[StoreManifest スキーマ リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=307124)を参照してください。
 
 ## <a name="span-idnextstepspanspan-idnextstepspanspan-idnextstepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>次の手順
 

@@ -74,7 +74,7 @@ Windows ソフトウェア トレース プリプロセッサ (WPP) ソフトウ
 
 この拡張機能はのような[ **! wmitrace.eventlogdump** ](-wmitrace-eventlogdump.md)点を除いて、拡張機能の出力 **! wmitrace.logdump** WPP スタイル、およびの出力で書式設定 **! wmitrace.eventlogdump**イベント ログ スタイルで書式設定されます。 その形式は、データを表示するのに適切な拡張機能を選択する必要があります。
 
-UMDF トレース ログを表示する方法については、次を参照してください。 [UMDF ベースのドライバーで WPP ソフトウェア トレースを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561391#viewing-the-umdf-trace-log)します。
+UMDF トレース ログを表示する方法については、[UMDF ベースのドライバーで WPP ソフトウェア トレースを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561391#viewing-the-umdf-trace-log)を参照してください。
 
  
 

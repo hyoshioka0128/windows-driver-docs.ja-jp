@@ -73,7 +73,7 @@ A*デバイスの電源 IRP* IRP の主要なコードを指定します[ **IRP\
 
 5.  I/O マネージャー呼び出し*IoCompletion* IRP が渡されるときに、ドライバーによって設定されたルーチンがスタックをダウンします。 結局、 *IoCompletion*ルーチンが呼び出された、コールバック ルーチンを実行します。
 
-デバイスの電源 Irp の詳細については、次を参照してください。[個々 のデバイスを管理する Power](managing-power-for-individual-devices.md)と[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)します。 電源シーケンス IRP の詳細については、「 [ **IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644)します。
+デバイスの電源 Irp の詳細については、[個々 のデバイスを管理する Power](managing-power-for-individual-devices.md)と[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)を参照してください。 電源シーケンス IRP の詳細については、「 [ **IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644)します。
 
  
 

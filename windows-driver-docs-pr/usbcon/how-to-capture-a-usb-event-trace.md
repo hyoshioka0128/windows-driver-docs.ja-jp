@@ -115,7 +115,7 @@ ETW のキーワードをなどに注意してください**既定**と**Partial
 </tr>
 <tr class="even">
 <td><p><strong>FullDataBusTrace</strong></p></td>
-<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540414" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540414)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>します。</p></td>
+<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540414" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540414)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyHost</strong></p></td>

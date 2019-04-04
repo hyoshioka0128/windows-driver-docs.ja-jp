@@ -22,7 +22,7 @@ INF ファイルで、null のハードウェア ID を挿入するには、イ�
 "Objectworld Fax Printer"=OWFAX,,Objectworld_Fax_Printer
 ```
 
-INF ファイルでの仮想プリンターの詳細については、次を参照してください。 **DriverCategory**で[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)します。
+INF ファイルでの仮想プリンターの詳細については、**DriverCategory**で[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)を参照してください。
 
  
 

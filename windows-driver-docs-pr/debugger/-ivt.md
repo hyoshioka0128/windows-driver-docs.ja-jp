@@ -74,7 +74,7 @@ ms.locfileid: "56556641"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-X64 または x86 のターゲット コンピューター上の割り込みのディスパッチ テーブルを表示する方法の詳細については、次を参照してください。 [ **! idt**](-idt.md)します。
+X64 または x86 のターゲット コンピューター上の割り込みのディスパッチ テーブルを表示する方法の詳細については、[ **! idt**](-idt.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

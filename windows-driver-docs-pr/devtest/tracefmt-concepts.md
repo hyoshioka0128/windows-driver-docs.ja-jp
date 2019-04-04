@@ -17,7 +17,7 @@ ms.locfileid: "56558550"
 ## <span id="ddk_tracefmt_concepts_tools"></span><span id="DDK_TRACEFMT_CONCEPTS_TOOLS"></span>
 
 
-このトピックでは、Tracefmt を基になる概念を説明します。 すべての Windows トレース ツールに共通の概念については、次を参照してください。[トレース ツールの概念](tracing-tool-concepts.md)します。
+このトピックでは、Tracefmt を基になる概念を説明します。 すべての Windows トレース ツールに共通の概念については、[トレース ツールの概念](tracing-tool-concepts.md)を参照してください。
 
 このトピックには次が含まれます。
 

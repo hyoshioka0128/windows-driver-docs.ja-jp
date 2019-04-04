@@ -44,9 +44,9 @@ ms.locfileid: "57350173"
 
 
 <a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg=**<em>add-registry-section</em>\[**,**<em>add-registry-section</em>\]...  
-1 つを参照またはより INF ライター-定義*追加レジストリ セクション*この対象となるデバイスの INF ファイルの他の場所で<em>DDInstall</em>**します。HW**セクション。 *追加レジストリ セクション*通常フィルターのインストールや、レジストリにデバイスごとの情報を格納します。 **HKR**などの仕様、*追加レジストリ セクション*デバイスの指定*ハードウェア キー*、デバイス固有のレジストリ サブキーに関する情報を格納します。デバイスです。 ハードウェア キーは、デバイス キーとも呼ばれます。 詳細については、次を参照してください。[レジストリ ツリーとデバイスとドライバーのキー](https://docs.microsoft.com/windows-hardware/drivers/install/registry-trees-and-keys)します。 ドライバー パッケージを使用して、INF を使用して設定を追加することができます、 **HKR**仕様によって参照の追加-レジストリのセクションでは、 **DDInstall.HW セクション**します。 
+1 つを参照またはより INF ライター-定義*追加レジストリ セクション*この対象となるデバイスの INF ファイルの他の場所で<em>DDInstall</em>**します。HW**セクション。 *追加レジストリ セクション*通常フィルターのインストールや、レジストリにデバイスごとの情報を格納します。 **HKR**などの仕様、*追加レジストリ セクション*デバイスの指定*ハードウェア キー*、デバイス固有のレジストリ サブキーに関する情報を格納します。デバイスです。 ハードウェア キーは、デバイス キーとも呼ばれます。 詳細については、[レジストリ ツリーとデバイスとドライバーのキー](https://docs.microsoft.com/windows-hardware/drivers/install/registry-trees-and-keys)を参照してください。 ドライバー パッケージを使用して、INF を使用して設定を追加することができます、 **HKR**仕様によって参照の追加-レジストリのセクションでは、 **DDInstall.HW セクション**します。 
 
-詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)します。
+詳細については、[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)を参照してください。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。
@@ -61,10 +61,10 @@ ms.locfileid: "57350173"
 <a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg=**<em>del-registry-section</em>\[**,**<em>del-registry-section</em>\]...  
 1 つを参照またはより INF ライター-定義*delete-section レジストリ*これで、デバイスのドライバーの INF ファイルで別の場所がカバー *DDInstall*セクション。 このような削除レジストリ セクションでは、対象のコンピューターから以前にインストールしたデバイス/ドライバーの古いレジストリ情報を削除します。 **HKR**仕様 delete レジストリのセクションで指定の場合と同様に、同じサブキー **AddReg**します。
 
-このディレクティブはあまり使われない点を除いて、INF ファイルあたりの製造元ごとに表示されている同じデバイス/モデルの以前のインストールをアップグレード-*モデル*これの名前を定義するセクション*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF してディレクティブ**](inf-delreg-directive.md)します。
+このディレクティブはあまり使われない点を除いて、INF ファイルあたりの製造元ごとに表示されている同じデバイス/モデルの以前のインストールをアップグレード-*モデル*これの名前を定義するセクション*DDInstall*セクション。 詳細については、[ **INF してディレクティブ**](inf-delreg-directive.md)を参照してください。
 
 <a href="" id="bitreg-bit-registry-section--bit-registry-section-----"></a>**BitReg=**<em>bit-registry-section</em>\[**,**<em>bit-registry-section</em>\] ...  
-このセクションで有効ですが、ほとんどない使用です。 **HKR**仕様が参照されているビット レジストリ セクションでは指定の場合と同様に、同じサブキー **AddReg**します。 詳細については、次を参照してください。 [ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)します。
+このセクションで有効ですが、ほとんどない使用です。 **HKR**仕様が参照されているビット レジストリ セクションでは指定の場合と同様に、同じサブキー **AddReg**します。 詳細については、[ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------
@@ -78,9 +78,9 @@ ms.locfileid: "57350173"
 
 各ディレクティブを<em>DDInstall</em>**します。HW**セクションは、1 つ以上の INF ライター定義のセクションを参照できます。 ただし、各追加の名前付きセクションは、コンマ (,) で区切る必要があります。
 
-このような各セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+このような各セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
-多機能デバイスをインストールする方法の詳細については、次を参照してください。[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)します。
+多機能デバイスをインストールする方法の詳細については、[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)を参照してください。
 
 <a name="examples"></a>使用例
 --------

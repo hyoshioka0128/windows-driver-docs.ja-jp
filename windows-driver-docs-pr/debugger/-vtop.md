@@ -52,7 +52,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-これらの結果を実現するための他のメソッドでは、次を参照してください。[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)します。 参照してください[ **! ptov**](-ptov.md)します。 ページのテーブルとページのディレクトリについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。
+これらの結果を実現するための他のメソッドでは、[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)を参照してください。 参照してください[ **! ptov**](-ptov.md)します。 ページのテーブルとページのディレクトリについては、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。
 
 <a name="remarks"></a>注釈
 -------

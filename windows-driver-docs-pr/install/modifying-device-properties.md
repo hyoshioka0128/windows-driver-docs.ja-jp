@@ -58,7 +58,7 @@ ms.locfileid: "56556756"
 
 -   [**DEVPKEY_Device_Manufacturer**](https://msdn.microsoft.com/library/windows/hardware/ff542558)
 
-**注**  *クラス インストーラー*と*共同インストーラー*フレンドリ名以外のデバイス プロパティを変更する必要があります ([**DEVPKEY_Device_FriendlyName**](https://msdn.microsoft.com/library/windows/hardware/ff542502)) とデバイスの上限と下限のフィルター ドライバー ([**DEVPKEY_Device_UpperFilters** ](https://msdn.microsoft.com/library/windows/hardware/ff542667)と[ **DEVPKEY_Device_LowerFilters**](https://msdn.microsoft.com/library/windows/hardware/ff542554)). 詳細については、次を参照してください。[デバイス インスタンスのプロパティへのアクセス](accessing-device-instance-properties--windows-vista-and-later-.md)します。
+**注**  *クラス インストーラー*と*共同インストーラー*フレンドリ名以外のデバイス プロパティを変更する必要があります ([**DEVPKEY_Device_FriendlyName**](https://msdn.microsoft.com/library/windows/hardware/ff542502)) とデバイスの上限と下限のフィルター ドライバー ([**DEVPKEY_Device_UpperFilters** ](https://msdn.microsoft.com/library/windows/hardware/ff542667)と[ **DEVPKEY_Device_LowerFilters**](https://msdn.microsoft.com/library/windows/hardware/ff542554)). 詳細については、[デバイス インスタンスのプロパティへのアクセス](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
 
  
 

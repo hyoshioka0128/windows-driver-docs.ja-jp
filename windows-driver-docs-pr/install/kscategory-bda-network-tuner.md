@@ -58,7 +58,7 @@ BDA デバイス用のドライバーでは、オペレーティング システ
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、INF ファイルを参照してください。 *BDASwTunerATSC.inf*します。 *BDASwTunerATSC.inf*で BDA サンプルの汎用的なチューナーに含まれている、 *src\\swtuner\\BDAtuner\\gentuner* WDK のサブディレクトリ。
 
-ネットワークのチューナー フィルター KS 機能のカテゴリの詳細については、次を参照してください。[一般的なコントロールのノードとフィルター](https://msdn.microsoft.com/library/windows/hardware/ff557718)と[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+ネットワークのチューナー フィルター KS 機能のカテゴリの詳細については、[一般的なコントロールのノードとフィルター](https://msdn.microsoft.com/library/windows/hardware/ff557718)と[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

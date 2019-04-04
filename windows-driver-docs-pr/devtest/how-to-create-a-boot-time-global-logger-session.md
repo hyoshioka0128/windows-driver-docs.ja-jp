@@ -26,7 +26,7 @@ ms.locfileid: "56536958"
     tracelog -start GlobalLogger
     ```
 
-    手順と詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)と[ロガー トレース セッションのグローバル](global-logger-trace-session.md)します。 例については、次を参照してください。[例 13。ロガーがグローバル セッションを作成する](example-13--creating-a-global-logger-session.md)します。
+    手順と詳細については、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)と[ロガー トレース セッションのグローバル](global-logger-trace-session.md)を参照してください。 例については、次を参照してください。[例 13。ロガーがグローバル セッションを作成する](example-13--creating-a-global-logger-session.md)します。
 
 2.  追加、REG\_という名前のバイナリ エントリ**EnableKernelFlags**を**HKLM\\システム\\CurrentControlSet\\コントロール\\WMI\\GlobalLogger**サブキー。 トレース ログを作成、 **GlobalLogger**レジストリ サブキーを使用する場合、 **tracelog-開始**コマンド。 使用できる値**EnableKernelFlags**の値から取得されますが、 **EnableFlags**のメンバー、**イベント\_トレース\_プロパティ**構造体。 説明については、 **EnableFlags**値を参照してください[**イベント\_トレース\_プロパティ**](https://msdn.microsoft.com/library/windows/desktop/aa363784)します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "56536958"
 
 システムが完全に動作する前に、構成値が使用可能な必要があるので、グローバル ロガー トレース セッションを構成するレジストリ エントリを使用します。
 
-グローバルのロガーのトレース セッションを構成するには、レジストリを編集するかを使用して[Tracelog](tracelog.md)、Windows Driver Kit (WDK) で含まれているツールです。 グローバル ロガーのトレース セッションを構成するレジストリ エントリの詳細については、次を参照してください。[グローバル ロガー トレース セッション](global-logger-trace-session.md)します。
+グローバルのロガーのトレース セッションを構成するには、レジストリを編集するかを使用して[Tracelog](tracelog.md)、Windows Driver Kit (WDK) で含まれているツールです。 グローバル ロガーのトレース セッションを構成するレジストリ エントリの詳細については、[グローバル ロガー トレース セッション](global-logger-trace-session.md)を参照してください。
 
 このトレース セッションを実行すると、使用、 **tracelog-削除**の値を設定するコマンド、**開始**エントリを追加したレジストリ サブキーを削除するには 0。 そうでない場合は、セッションは、システムを起動するたびに実行され、ログは非常に大きくなる可能性があります。
 

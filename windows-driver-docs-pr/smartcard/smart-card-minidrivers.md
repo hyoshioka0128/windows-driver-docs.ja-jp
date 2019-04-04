@@ -16,7 +16,7 @@ ms.locfileid: "56530926"
 
 スマート カード ミニドライバーは、カードのミニドライバーの開発者から複雑な暗号化操作の大部分をカプセル化して、従来の暗号化サービス プロバイダー (CSP) を開発する代わりに単純なを提供します。
 
-スマート カード ミニドライバーの仕様については、次を参照してください。[スマート カード ミニドライバーの仕様](https://msdn.microsoft.com/library/windows/hardware/dn631754)します。
+スマート カード ミニドライバーの仕様については、[スマート カード ミニドライバーの仕様](https://msdn.microsoft.com/library/windows/hardware/dn631754)を参照してください。
 
 Windows Vista 以降、アプリケーションは、Microsoft Cryptography API を使用できます。[次へ] Generation (CNG) のスマート カード ベースの暗号化サービス。 Windows Vista で導入された楕円曲線暗号 (ECC) の取り組みの一環として、ECC スマート カードは、新しい暗号化フレームワークでサポートされます。 アプリケーションとレガシ CAPI サブシステムを既存の Rivest-Shamir-Adleman (RSA) カードのミニドライバーと対話するインターフェイスを加えなくても動作し続けます。
 

@@ -14,7 +14,7 @@ ms.locfileid: "56551415"
 # <a name="stampinf-task"></a>Stampinf タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、stampinf.exe ツールを実行できるようにの StampInf タスクが用意されています。 Stampinf.exe ツールについては、次を参照してください。 [Stampinf](stampinf.md)します。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、stampinf.exe ツールを実行できるようにの StampInf タスクが用意されています。 Stampinf.exe ツールについては、[Stampinf](stampinf.md)を参照してください。
 
 Inf 項目は、StampInf タスクのパラメーターを送信します。 Stampinf の項目メタデータは、プロジェクト ファイルの Inf を使用してアクセスされます。
 

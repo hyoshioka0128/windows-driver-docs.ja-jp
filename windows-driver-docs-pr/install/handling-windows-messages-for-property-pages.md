@@ -49,7 +49,7 @@ if (SetupDiLoadClassIcon(
 
 ClassIcon で返されたハンドルは、SendDlgItemMessage 関数で必要とされる WPARAM にキャストすることができます。 例では、IDC_TEST_ICON は STM_SETICON メッセージを受信する ダイアログ ボックス コントロールを識別します。 IDC_TEST_ICON の値は、プロバイダーで定義する必要があります。 アイコンとビットマップを操作するその他の関数を参照してください[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)します。 詳細については**SendDlgItemMessage**、 **DestroyIcon**、およびアイコンを使用して、ダイアログ ボックスで、Windows SDK のドキュメントを参照してください。
 
-だけでなく、デバイスを表すアイコン、一般的なデバイスのプロパティ ページは、説明またはデバイスの「表示名」が含まれています、デバイスのプロパティの現在の設定を示しています。 プラグ アンド プレイ (PnP) マネージャーでは、レジストリ内の各デバイスの PnP のプロパティを格納します。 プロパティ ページのプロバイダーを呼び出すことができます[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967)このような任意のプロパティの値を取得します。 デバイスまたはクラス固有の構成情報が、インストール プロセスの一部として、レジストリに格納されているもの場合、プロパティ ページ プロバイダーを使用して他の**SetupDiXxx**表示用には、その情報を抽出する関数。 詳細については、次を参照してください。[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)します。
+だけでなく、デバイスを表すアイコン、一般的なデバイスのプロパティ ページは、説明またはデバイスの「表示名」が含まれています、デバイスのプロパティの現在の設定を示しています。 プラグ アンド プレイ (PnP) マネージャーでは、レジストリ内の各デバイスの PnP のプロパティを格納します。 プロパティ ページのプロバイダーを呼び出すことができます[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967)このような任意のプロパティの値を取得します。 デバイスまたはクラス固有の構成情報が、インストール プロセスの一部として、レジストリに格納されているもの場合、プロパティ ページ プロバイダーを使用して他の**SetupDiXxx**表示用には、その情報を抽出する関数。 詳細については、[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)を参照してください。
 
 ページで特定の種類の変更が発生すると、プロパティ シートの送信、 [WM_NOTIFY](https://go.microsoft.com/fwlink/p/?linkid=181554)メッセージ、ダイアログ ボックス プロシージャをします。 メッセージ パラメーターから通知コードを抽出し、適切に応答するには、ダイアログ ボックス プロシージャを準備する必要があります。
 

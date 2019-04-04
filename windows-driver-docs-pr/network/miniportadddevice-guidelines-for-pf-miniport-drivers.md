@@ -16,7 +16,7 @@ ms.locfileid: "56538552"
 
 このトピックでは、書き込みのためのガイドラインを説明します、 [ *MiniportAddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff559332)ミニポート ドライバーの PCI Express (PCIe) 物理機能 (PF) の関数。 PF は、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターのコンポーネントです。
 
-**注**  次のガイドラインは、PF ミニポート ドライバーにのみ適用されます。 PCIe 仮想機能 (VF) アダプターのミニポート ドライバーの初期化ガイドラインについては、次を参照してください。 [VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)します。
+**注**  次のガイドラインは、PF ミニポート ドライバーにのみ適用されます。 PCIe 仮想機能 (VF) アダプターのミニポート ドライバーの初期化ガイドラインについては、[VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)を参照してください。
 
  
 
@@ -26,7 +26,7 @@ ms.locfileid: "56538552"
 
 ドライバーがへの呼び出しのコンテキスト内で、次の操作を行います[ *MiniportAddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff559332):
 
--   PF のミニポート ドライバーを呼び出すことができます[**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)を読み取る、SR-IOV と NIC は、レジストリから構成設定を切り替えます。 これらの構成設定は、標準化された SR-IOV キーワードによって定義されます。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+-   PF のミニポート ドライバーを呼び出すことができます[**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)を読み取る、SR-IOV と NIC は、レジストリから構成設定を切り替えます。 これらの構成設定は、標準化された SR-IOV キーワードによって定義されます。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
 
 -   これらの構成設定に基づき、PF ミニポート ドライバーは、SR-IOV ネットワーク アダプターの追加のソフトウェアのリソースを割り当てます。
 

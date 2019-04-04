@@ -1055,7 +1055,7 @@ SimpleMediaSource::GetSourceAttributes(
 
 Windows こんにちは顔認識をサポートするためには、カスタム メディア ソースがデザインされている場合は顔認証プロファイルを発行する必要があます。 顔認証プロファイルの要件は次のとおりです。
 
--   1 つの IR ストリームでは、顔認証 DDI コントロールをサポートする必要があります。 詳細については、次を参照してください。 [KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)します。
+-   1 つの IR ストリームでは、顔認証 DDI コントロールをサポートする必要があります。 詳細については、[KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)を参照してください。
 
 -   IR ストリームは、少なくとも 340 x 340 15 fps である必要があります。 L8、NV12 または MJPG L8 圧縮とマークされているか、フォーマットを使用する必要があります。
 
@@ -1069,4 +1069,4 @@ Windows こんにちは顔認識をサポートするためには、カスタム
 
 ストリームのいずれかをマークすることで、独立系のフォト ストリームが公開されているかどうか[MF\_DEVICESTREAM\_ストリーム\_カテゴリ](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category)として**PINNAME\_イメージ**、ストリームのカテゴリでストリームし**PINNAME\_ビデオ\_キャプチャ**が必要です (など、1 つのストリームを公開するだけで**PINNAME\_イメージ**有効なメディア ソースがありません)。
 
-を通じて**IKsControl**、 **PROPSETID\_しました\_VIDEOCONTROL**プロパティ セットをサポートする必要があります。 詳細については、次を参照してください。[ビデオ コントロールのプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/video-control-properties)します。
+を通じて**IKsControl**、 **PROPSETID\_しました\_VIDEOCONTROL**プロパティ セットをサポートする必要があります。 詳細については、[ビデオ コントロールのプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/video-control-properties)を参照してください。

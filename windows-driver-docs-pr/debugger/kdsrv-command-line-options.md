@@ -36,7 +36,7 @@ kdsrv -t ServerTransport
 
 入力した場合**kdsrv**パラメーターなしのヘルプ テキストを含むメッセージ ボックスが表示されます。
 
-KdSrv の使用方法の詳細については、次を参照してください。 [KD 接続サーバー (カーネル モード)](kd-connection-servers--kernel-mode-.md)します。
+KdSrv の使用方法の詳細については、[KD 接続サーバー (カーネル モード)](kd-connection-servers--kernel-mode-.md)を参照してください。
 
  
 

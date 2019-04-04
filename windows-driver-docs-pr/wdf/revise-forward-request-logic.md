@@ -16,7 +16,7 @@ ms.locfileid: "56549199"
 
 ドライバーは、単独で要求を完了することはできません、[次へ] の下のドライバーに下位のスタックの要求が渡されます。 WDF のドライバーの場合、[次へ] の下のドライバーと見なされ、既定の I/O ターゲット WDFIOTARGET オブジェクトによって表されます。 ドライバーの呼び出しは、このオブジェクトを識別するハンドルを取得する[ **WdfDeviceGetIoTarget**](https://msdn.microsoft.com/library/windows/hardware/ff546017)します。
 
-WDF のドライバーがスタックで、[次へ] の下のドライバーに要求を渡す方法については、次を参照してください。 [I/O 要求の転送](forwarding-i-o-requests.md)します。
+WDF のドライバーがスタックで、[次へ] の下のドライバーに要求を渡す方法については、[I/O 要求の転送](forwarding-i-o-requests.md)を参照してください。
 
  
 

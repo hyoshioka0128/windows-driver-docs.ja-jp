@@ -25,7 +25,7 @@ ms.locfileid: "56535728"
 
 -   特殊な INF ファイルのエントリのサポート (を参照してください[静止画像デバイスの INF ファイル](inf-files-for-still-image-devices.md))。
 
--   共同インストーラーのベンダーから提供された拡張機能のサポート。 詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
+-   共同インストーラーのベンダーから提供された拡張機能のサポート。 詳細については、[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)を参照してください。
 
 必要に応じて、ベンダーは Microsoft が提供するクラスのインストーラーの代わりに使用できるカスタマイズされたインストール プログラムを提供できます。
 

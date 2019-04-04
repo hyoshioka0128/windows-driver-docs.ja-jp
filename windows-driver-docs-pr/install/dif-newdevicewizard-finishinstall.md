@@ -89,7 +89,7 @@ Windows デバイスをインストールした後 (が正常に完了[ **DIF_IN
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

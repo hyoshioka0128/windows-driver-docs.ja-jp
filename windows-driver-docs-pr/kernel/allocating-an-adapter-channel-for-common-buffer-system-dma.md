@@ -38,7 +38,7 @@ ms.locfileid: "56532771"
 
 3.  値を返します**KeepObject**します。
 
-詳細については、次を参照してください。[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)します。
+詳細については、[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)を参照してください。
 
 システム DMA コント ローラーの自動初期化モードを使用するドライバーに対して、 *AdapterControl*ルーチンは、値を返す必要があります**KeepObject**します。 これにより、システムの DMA コント ローラーの「所有者」を保持するドライバーとマップ register(s) を割り当てられているすべてのデータを転送するまでです。
 

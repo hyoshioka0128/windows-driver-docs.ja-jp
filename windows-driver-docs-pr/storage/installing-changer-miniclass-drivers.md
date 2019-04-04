@@ -36,7 +36,7 @@ ClassGuid={CE5939AE-EBDE-11d0-B181-0000F8753EC4}
 
 インストールの詳細については、Windows Driver Kit (WDK) で含まれているメディア チェンジャー サンプルに付属している INF ファイルを参照してください。
 
-Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
 
  
 

@@ -53,11 +53,11 @@ ms.locfileid: "56550727"
 
  
 
-詳細については、WPP は、次を参照してください。 [WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)します。
+詳細については、WPP は、[WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)を参照してください。
 
-Driver Verifier についての詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)します。
+Driver Verifier についての詳細については、[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)を参照してください。
 
-WMI のトレースの詳細については、次を参照してください。 [WMI トレース拡張機能 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)します。
+WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)を参照してください。
 
 ```console
 !ndiskd.dbglevel [-level <str>] 

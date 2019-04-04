@@ -25,7 +25,7 @@ ms.locfileid: "56558463"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-このアクションの影響の詳細については、このコマンドでは、およびプログラムの実行を制御する他の方法の他のメソッドを参照してください[ターゲットを制御する](controlling-the-target.md)します。 例外とその他のイベントの詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+このアクションの影響の詳細については、このコマンドでは、およびプログラムの実行を制御する他の方法の他のメソッドを参照してください[ターゲットを制御する](controlling-the-target.md)します。 例外とその他のイベントの詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
  
 

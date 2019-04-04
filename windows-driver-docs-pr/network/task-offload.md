@@ -37,7 +37,7 @@ TCP/IP トランスポートは、計算と ip アドレスと TCP チェック�
 
 TCP/IP トランスポートは、計算とセキュリティ ペイロード (ESP)、またはその両方をカプセル化する、認証ヘッダー (AH) の暗号化チェックサムの検証をオフロードできます。 TCP/IP トランスポートも、暗号化と ESP ペイロードの暗号化解除と暗号化とユーザー データグラム プロトコル (UDP) の復号化をオフロードできます-ESP データ パケットをカプセル化します。
 
-IPsecOV1 の詳細については、次を参照してください。 [IPsec オフロード バージョン 1](ipsec-offload-version-1.md)します。
+IPsecOV1 の詳細については、[IPsec オフロード バージョン 1](ipsec-offload-version-1.md)を参照してください。
 
 ### <a name="internet-protocol-security-ipsec-offload-version-2-ipsecov2"></a>インターネット プロトコル セキュリティ (IPsec) の負荷を軽減バージョン 2 (IPsecOV2)
 
@@ -45,7 +45,7 @@ IPsecOV1 の詳細については、次を参照してください。 [IPsec オ
 
 TCP/IP トランスポートは、計算とセキュリティ ペイロード (ESP)、またはその両方をカプセル化する、認証ヘッダー (AH) の暗号化チェックサムの検証をオフロードできます。 TCP/IP トランスポートも、暗号化と ESP ペイロードの暗号化解除と暗号化とユーザー データグラム プロトコル (UDP) の復号化をオフロードできます-ESP データ パケットをカプセル化します。 IPsecOV2 は NDIS 6.1 以降でサポートされています。
 
-IPsecOV2 の詳細については、次を参照してください。 [IPsec オフロード バージョン 2](ipsec-offload-version-2.md)します。
+IPsecOV2 の詳細については、[IPsec オフロード バージョン 2](ipsec-offload-version-2.md)を参照してください。
 
 ### <a name="large-send-offload-version-1-lsov1"></a>大量送信オフロード バージョン 1 (LSOV1)
 
@@ -53,7 +53,7 @@ TCP/IP トランスポートは、大量送信オフロード バージョン 1 
 
 ### <a name="large-send-offload-version-2-lsov2"></a>大量送信オフロード バージョン 2 (LSOV2)
 
-大量の送信は、バージョン 2 (LSOV2) インターフェイスが LSOV1 の拡張のバージョンをオフロードします。 LSOV2 は 64 K より大きな TCP パケットの IPv6、IPv4、およびセグメント化をサポートします。 大きなパケットのセグメント化オフロードの詳細については、次を参照してください。 [、セグメント化の大きな TCP パケットのオフロード](offloading-the-segmentation-of-large-tcp-packets.md)します。
+大量の送信は、バージョン 2 (LSOV2) インターフェイスが LSOV1 の拡張のバージョンをオフロードします。 LSOV2 は 64 K より大きな TCP パケットの IPv6、IPv4、およびセグメント化をサポートします。 大きなパケットのセグメント化オフロードの詳細については、[、セグメント化の大きな TCP パケットのオフロード](offloading-the-segmentation-of-large-tcp-packets.md)を参照してください。
 
 Windows 8 および Windows Server 2012 以降、Windows オペレーティング システムには、次の追加のタスクのオーバー ロードのサービスがサポートされています。
 

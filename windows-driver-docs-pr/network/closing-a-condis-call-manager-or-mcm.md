@@ -29,7 +29,7 @@ MCM を管理している CoNDIS ミニポート アダプターが停止する�
 
 スタンドアロンのコール マネージャーまたは MCM を呼び出す場合**NdisCmNotifyCloseAddressFamily**または**NdisMCmNotifyCloseAddressFamily**、それぞれ、NDIS 呼び出し、 [ **ProtocolClNotifyCloseAf** ](https://msdn.microsoft.com/library/windows/hardware/ff570234)のハンドルに関連付けられているいる CoNDIS クライアントの機能、 *NdisAfHandle*パラメーターの**NdisCmNotifyCloseAddressFamily**または**NdisMCmNotifyCloseAddressFamily**します。 この呼び出しは、クライアントを閉じる、AF を通知します。 場合**NdisCmNotifyCloseAddressFamily**または**NdisMCmNotifyCloseAddressFamily**返します NDIS\_状態\_保留中、NDIS は呼び出しをマネージャーの[**ProtocolCmNotifyCloseAfComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff570248)通知の閉じる操作の完了時に機能します。
 
-閉じている CoNDIS クライアントで、アドレス ファミリの詳細については、次を参照してください。[いる CoNDIS クライアントで、アドレス ファミリを閉じる](closing-an-address-family-in-a-condis-client.md)します。
+閉じている CoNDIS クライアントで、アドレス ファミリの詳細については、[いる CoNDIS クライアントで、アドレス ファミリを閉じる](closing-an-address-family-in-a-condis-client.md)を参照してください。
 
  
 

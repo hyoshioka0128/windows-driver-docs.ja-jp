@@ -71,7 +71,7 @@ EXtensible Markup Language (XML) 形式で XPS 分析レポートです。
 <span id="update_sqlserver.sql_______"></span><span id="UPDATE_SQLSERVER.SQL_______"></span>**Update\_SqlServer.sql**   
 このファイルには、設定を使用して作成した SQL database に XPS 分析の結果を挿入するスクリプトが含まれています。\_SqlServer.sql スクリプト。
 
-XPS の分析レポートの例は、次を参照してください。 [XpsAnalyzer 出力](xpsanalyzer-output.md)します。
+XPS の分析レポートの例は、[XpsAnalyzer 出力](xpsanalyzer-output.md)を参照してください。
 
 
 

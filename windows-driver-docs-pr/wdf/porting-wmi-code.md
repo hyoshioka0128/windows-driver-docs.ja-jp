@@ -20,7 +20,7 @@ ms.locfileid: "56557952"
 
 KMDF ドライバーでは、フレームワークには、既定の処理が用意されて[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)します。 WMI データを提供しないドライバーは、WMI に関連するコードを含める必要はありません。 代わりに、フレームワークは、ドライバーの代わり、[次へ] の下のドライバーに要求を渡します。
 
-実装の詳細については、次を参照してください。 [KMDF ドライバーでサポートしている WMI](supporting-wmi-in-kmdf-drivers.md)します。
+実装の詳細については、[KMDF ドライバーでサポートしている WMI](supporting-wmi-in-kmdf-drivers.md)を参照してください。
 
  
 

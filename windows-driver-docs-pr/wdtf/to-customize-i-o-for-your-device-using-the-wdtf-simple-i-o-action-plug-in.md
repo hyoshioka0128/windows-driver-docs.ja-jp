@@ -137,14 +137,14 @@ ms.locfileid: "56536811"
 
 ### <a href="" id="build-and-install-the-simple-i-o-action-plugin-"></a>手順 6:ビルドし、単純な I/O 操作プラグインのインストール
 
-されていない場合は、テスト用コンピューターを構成する必要があります。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+されていない場合は、テスト用コンピューターを構成する必要があります。 詳細については、[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/dn745909)を参照してください。
 
 1. ソリューションをビルドします。
 
    プラグインの単純な I/O 操作をビルドすると、2 つのテストが作成されます。 これらのテストでは、インストールし、テスト コンピューターでプラグインをアンインストールします。 既定では、単純な I/O 操作のプラグイン ファイルの表示で**テスト グループ エクスプ ローラー**、テスト カテゴリ**マイ テスト カテゴリ**。
 
 2. 単純な I/O 操作のプラグインをインストールするには、という名前のテストを実行**登録 WDTF**<em>&lt;プロジェクト&gt;</em>**SimpleIOAction.DLL**テスト コンピューター. 選択し、実行に関する情報のテストは、「の[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。
-3. 単純な I/O 操作のプラグインがインストールされていることを確認するには、実行、 **WDTF 単純な I/O プラグインのデバイスを表示**テスト コンピューターでテストします。 プラグインし、デバイスは、結果に表示する必要があります。 詳細については、次を参照してください。[カスタム WDTF 単純な I/O 操作プラグインをが、デバイスに必要な場合を判断する方法を](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)します。
+3. 単純な I/O 操作のプラグインがインストールされていることを確認するには、実行、 **WDTF 単純な I/O プラグインのデバイスを表示**テスト コンピューターでテストします。 プラグインし、デバイスは、結果に表示する必要があります。 詳細については、[カスタム WDTF 単純な I/O 操作プラグインをが、デバイスに必要な場合を判断する方法を](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)を参照してください。
 4. 単純な I/O 操作のプラグインをアンインストールするには、という名前のテストを実行**の登録を解除 WDTF**<em>&lt;プロジェクト&gt;</em>**SimpleIOAction.DLL**のテストコンピューター。 実行して、プラグインをアンインストールすることを確認することができます、 **WDTF 単純な I/O プラグインのデバイスを表示**をテストします。
 
 ## <a name="related-topics"></a>関連トピック

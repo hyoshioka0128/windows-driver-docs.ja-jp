@@ -25,6 +25,6 @@ A*登録済みのプロバイダー*は、[トレース プロバイダー](trac
 
 開始するときに、ETW を使用したトレース プロバイダーを登録する必要がありますを呼び出すか**EventRegister**マクロまたはなど、トレース フレームワークによって提供される関数の登録を使用して、または、 [WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)WPP によって提供されるマクロです。 か、呼び出すことによって、停止する前に、登録を解除**EventUnregister**またはフレームワークを使用して、マクロ、または関数を登録解除します。 自体にも登録しないでトレース プロバイダーを有効にすることはできません、そこからイベントが収集されなくなります。
 
-登録済みのプロバイダーからのイベントを表示する使用[traceview で](traceview.md)します。 手順については、次を参照してください。[登録済みのプロバイダーのトレース セッションを作成する](creating-a-trace-session-for-a-registered-provider.md)します。
+登録済みのプロバイダーからのイベントを表示する使用[traceview で](traceview.md)します。 手順については、[登録済みのプロバイダーのトレース セッションを作成する](creating-a-trace-session-for-a-registered-provider.md)を参照してください。
 
 登録されているプロバイダーの詳細については、次を参照してください。[イベント トレーシング](https://msdn.microsoft.com/library/windows/desktop/bb968803)、Microsoft Windows sdk。

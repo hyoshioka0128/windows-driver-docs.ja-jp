@@ -27,7 +27,7 @@ ms.locfileid: "56553561"
 
 プラグ アンド プレイ Manager 送信 IRP\_MJ\_PNP 要求、システムでプラグ アンド プレイのアクティビティが発生するたびにします。 その他のオペレーティング システムのコンポーネントとその他のカーネル モード ドライバーでは、送信することも特定の IRP\_MJ\_マイナー関数コードによって、PNP 要求。
 
-ドライバーのプラグ アンド プレイ IRP の処理要件の詳細については、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
+ドライバーのプラグ アンド プレイ IRP の処理要件の詳細については、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
 
 IRP の参照情報について\_MJ\_PNP マイナー関数のコードは、「[プラグ アンド プレイ マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)します。
 

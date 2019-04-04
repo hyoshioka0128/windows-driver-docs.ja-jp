@@ -32,7 +32,7 @@ Microsoft Visual Studio でドライバーのプロジェクトを作成する�
    ClassGuid   = {5175D334-C371-4806-B3BA-71FD53C9258D}
    ```
 
-デバイスのクラスが「センサー」と適切な GUID に設定されているので注意が提供されます。 デバイス クラス GUID の Windows の詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)します。
+デバイスのクラスが「センサー」と適切な GUID に設定されているので注意が提供されます。 デバイス クラス GUID の Windows の詳細については、[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)を参照してください。
 
 2. 検索、 \[ADXL345Acc\_Device.NT$ARCH$\]セクション。
    ```cpp

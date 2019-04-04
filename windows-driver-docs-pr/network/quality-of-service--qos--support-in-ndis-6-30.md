@@ -28,7 +28,7 @@ DCB の NDIS QoS のサポートには、ポリシーのセットを指定する
 <a href="" id="traffic-selection-algorithms--tsas-"></a>トラフィックの選択アルゴリズム (TSAs)  
 このポリシーは、ネットワーク アダプターがその送信キューからの配信のエグレス トラフィックがどのように選択する方法を指定します。 たとえば、アダプターでは、IEEE 802.1p の優先度またはトラフィック クラスごとに割り当てられているエグレス帯域幅の割合に基づく送信パケットを選択できます。
 
-DCB の NDIS QoS のサポートの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS](ndis-qos-for-data-center-bridging.md)します。
+DCB の NDIS QoS のサポートの詳細については、[データ センター ブリッジングの NDIS QoS](ndis-qos-for-data-center-bridging.md)を参照してください。
 
  
 

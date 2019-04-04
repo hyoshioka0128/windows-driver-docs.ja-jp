@@ -80,9 +80,9 @@ UMDF バージョン 2 では、KMDF ドライバーにのみ使用可能だっ�
 
  
 
-ドライバーが、上記のいずれにも不要な場合は、KMDF を使用する代わりに 2 の UMDF ドライバーを記述できます。 2 つのフレームワークでは、多くのインターフェイスを共有するために変換できます、ドライバー KMDF 後で必要になった場合。 UMDF を選択する理由については、次を参照してください。[書き込み UMDF ドライバーの利点](advantages-of-writing-umdf-drivers.md)します。
+ドライバーが、上記のいずれにも不要な場合は、KMDF を使用する代わりに 2 の UMDF ドライバーを記述できます。 2 つのフレームワークでは、多くのインターフェイスを共有するために変換できます、ドライバー KMDF 後で必要になった場合。 UMDF を選択する理由については、[書き込み UMDF ドライバーの利点](advantages-of-writing-umdf-drivers.md)を参照してください。
 
-Framework のオブジェクトおよび KMDF して UMDF サポートの詳細については、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
+Framework のオブジェクトおよび KMDF して UMDF サポートの詳細については、[Framework オブジェクトの概要](summary-of-framework-objects.md)を参照してください。
 
 Windows Driver Frameworks (WDF) のすべてのコールバック メソッドと、フレームワークの適用性を示す表を参照してください[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
 

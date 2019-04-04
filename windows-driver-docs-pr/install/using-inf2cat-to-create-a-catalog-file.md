@@ -14,7 +14,7 @@ ms.locfileid: "56530843"
 # <a name="using-inf2cat-to-create-a-catalog-file"></a>Inf2Cat を使ったカタログ ファイルの作成
 
 
-Inf2Cat ツールは、いずれかのカタログ ファイルを作成するために使用できます[ドライバー パッケージ](driver-packages.md)INF ファイルを持ちます。 Inf2Cat とコマンドライン引数の詳細については、次を参照してください。 [ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)します。
+Inf2Cat ツールは、いずれかのカタログ ファイルを作成するために使用できます[ドライバー パッケージ](driver-packages.md)INF ファイルを持ちます。 Inf2Cat とコマンドライン引数の詳細については、[ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)を参照してください。
 
 **注**  する前に、Windows Server 2008 Windows Driver Kit (WDK)、Inf2Cat ツールは、WDK ツールの一部であったされません。 ただし、このツールは Winqual Submission ツールと共にインストールされます。 Winqual Submission ツールをダウンロードするには Microsoft [Inf2Cat FAQ](https://go.microsoft.com/fwlink/p/?linkid=79443) web サイト。 Winqual Submission ツール パッケージがインストールされると、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089) Program Files (x86) に配置されます\\システム ドライブ上の Microsoft Winqual Submission Tool フォルダー。
 
@@ -60,7 +60,7 @@ Inf2cat.exe /driver:src\general\toaster\toastpkg\toastcd\ /os:Vista_x64
 
 各項目の意味は次のとおりです。
 
-- **/Driver**オプションは、1 つまたは複数の INF ファイルを含むディレクトリを指定します。 このディレクトリ内でそれらの INF ファイルを 1 つまたは複数の CatalogFile ディレクティブを含むカタログ ファイルが作成されます。 CatalogFile ディレクティブの詳細については、次を参照してください。 [ **INF バージョン セクション**](inf-version-section.md)します。
+- **/Driver**オプションは、1 つまたは複数の INF ファイルを含むディレクトリを指定します。 このディレクトリ内でそれらの INF ファイルを 1 つまたは複数の CatalogFile ディレクティブを含むカタログ ファイルが作成されます。 CatalogFile ディレクティブの詳細については、[ **INF バージョン セクション**](inf-version-section.md)を参照してください。
 
   のみ、この例では、 *toastpkg*.inf INF ファイルが指定した内にある*src\\全般\\トースター\\toastpkg\\toastcd*ディレクトリ。
 
@@ -68,7 +68,7 @@ Inf2cat.exe /driver:src\general\toaster\toastpkg\toastcd\ /os:Vista_x64
 
   1 つまたは複数の Windows バージョンを指定することがあります、 **/os:** オプション。 たとえば場合、 **/os:**<em>Vista_x64、Vistax32</em>指定すると、Inf2Cat を作成、 *tstamd64.cat*と*tstx86.cat*ためにファイルINF CatalogFile ディレクティブの*toastpkg*.inf INF ファイル。
 
-ツールのコマンドライン引数の詳細については、次を参照してください。 [ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)します。
+ツールのコマンドライン引数の詳細については、[ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)を参照してください。
 
  
 

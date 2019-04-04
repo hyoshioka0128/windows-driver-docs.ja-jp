@@ -26,9 +26,9 @@ ms.locfileid: "56551686"
 
 -   A *DpcForIsr*または*CustomDpc*ルーチンは、物理デバイスへのアクセスを同期する必要があり、共有状態の情報やリソースにドライバーを使用したドライバーでが維持されるのでその他のルーチンを同じデバイスまたはメモリの場所にアクセスします。
 
-    場合、 *DpcForIsr*または*CustomDpc*ルーチン ISR と、デバイスや状態を共有する、呼び出す必要があります[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)、提供ドライバーによって提供されるアドレス[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンをデバイスのプログラムや、共有状態にアクセスします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+    場合、 *DpcForIsr*または*CustomDpc*ルーチン ISR と、デバイスや状態を共有する、呼び出す必要があります[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)、提供ドライバーによって提供されるアドレス[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンをデバイスのプログラムや、共有状態にアクセスします。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
-    場合、 *DpcForIsr*または*CustomDpc*共有状態またはを使用したリソースのどちらを保護する必要があります日常的な共有状態や、インター ロックされたキューまたは ISR、以外のルーチンのタイマー オブジェクトなどのリソースをドライバー初期化 executive スピン ロックします。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
+    場合、 *DpcForIsr*または*CustomDpc*共有状態またはを使用したリソースのどちらを保護する必要があります日常的な共有状態や、インター ロックされたキューまたは ISR、以外のルーチンのタイマー オブジェクトなどのリソースをドライバー初期化 executive スピン ロックします。 詳細については、[スピン ロック](spin-locks.md)を参照してください。
 
 -   *DpcForIsr*と*CustomDpc* IRQL でルーチンの実行のディスパッチを =\_レベルで、呼び出すことができますサポート ルーチンのセットを制限します。
 

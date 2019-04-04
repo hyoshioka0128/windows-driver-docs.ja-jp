@@ -16,7 +16,7 @@ ms.locfileid: "56551270"
 
 同期のプログラミングは単に呼び出しが戻るまで待機します。 高速で、プログラマの観点からすると効率的になりますが、多くのプログラムが同時実行されている Windows のような環境では問題が発生します。 可能であればを使用して、 [I/O の非同期プログラミングの技法](asynchronous-i-o-programming.md)します。
 
-**注**  ドライバー開発者は Microsoft Vista を使用して、これはほど深刻な問題になりません。 Vista での同期のプログラミングの詳細については、次を参照してください。 [Vista での待機を制限する](restricting-waits-in-vista.md)します。
+**注**  ドライバー開発者は Microsoft Vista を使用して、これはほど深刻な問題になりません。 Vista での同期のプログラミングの詳細については、[Vista での待機を制限する](restricting-waits-in-vista.md)を参照してください。
 
  
 

@@ -28,7 +28,7 @@ ms.locfileid: "56549232"
     HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\StillImage\Registered Applications",Imaging,,"%25%\KodakImg.Exe /StiDevice:%%1 /StiEvent:%%2"
     ```
 
-    2 つの INF ファイルのエントリは、プッシュ モデル対応のアプリケーションをサポートするデバイスの必要があります。**DeviceData**と**イベント**します。 詳細については、次を参照してください。[静止画像デバイスの INF ファイル](inf-files-for-still-image-devices.md)します。
+    2 つの INF ファイルのエントリは、プッシュ モデル対応のアプリケーションをサポートするデバイスの必要があります。**DeviceData**と**イベント**します。 詳細については、[静止画像デバイスの INF ファイル](inf-files-for-still-image-devices.md)を参照してください。
 
 これらのメソッドのいずれかの原因に登録するアプリケーション、[イメージ イベント モニターではまだ](overview-of-sti-components.md#ddk-still-image-event-monitor-si)します。
 

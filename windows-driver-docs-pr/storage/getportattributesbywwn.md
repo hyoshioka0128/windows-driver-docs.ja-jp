@@ -45,7 +45,7 @@ void GetPortAttributesByWWN(
 属性を持つがクエリを実行するには、ポートの名前。 この情報は、ミニポート ドライバーに配信される、 **wwn**のメンバー、 [ **GetPortAttributesByWWN\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554967)構造体。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetPortAttributesByWWN\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554969)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetPortAttributesByWWN\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554969)構造体。
 
 *PortAttributes*   
 型の構造体[ **MSFC\_HBAPortAttributesResults** ](https://msdn.microsoft.com/library/windows/hardware/ff562510)で検出された fc 属性\_ポートを返すことができます。 ミニポート ドライバーには、この情報が返されます、 **PortAttributes**のメンバー、 [ **GetDiscoveredPortAttributes\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553930)構造体。

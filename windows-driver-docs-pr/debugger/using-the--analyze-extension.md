@@ -23,7 +23,7 @@ ms.locfileid: "56538627"
 
 この拡張機能は、膨大な自動分析を実行します。 この分析の結果は、デバッガー コマンド ウィンドウに表示されます。
 
-使用する必要があります、 **-v**データの完全な詳細の表示のオプション。 その他のオプションについて詳しくは、次を参照してください。、 [ **! 分析**](-analyze.md)リファレンス ページです。
+使用する必要があります、 **-v**データの完全な詳細の表示のオプション。 その他のオプションについて詳しくは、、 [ **! 分析**](-analyze.md)リファレンス ページを参照してください。
 
 このトピックの内容は次のとおりです。
 
@@ -329,7 +329,7 @@ Followup: usbtri
 
 Triage.ini ファイルには、エラーの可能性がありますすべてのモジュールの所有者を識別する必要があります。 実際の所有者ではなく、情報の文字列を使用できますが、この文字列は、スペースを含めることはできません。 モジュールがエラーがない場合は、このモジュールを省略するか、スキップするかを示すことができます。 トリアージ プロセス、さらに細かい粒度を与える個々 の関数の所有者を指定することもできます。
 
-Triage.ini ファイルの構文について詳しくは、次を参照してください。[モジュールを指定すると、関数の所有者](specifying-module-and-function-owners.md)します。
+Triage.ini ファイルの構文について詳しくは、[モジュールを指定すると、関数の所有者](specifying-module-and-function-owners.md)を参照してください。
 
 ### <a name="span-idddkadditionalanalyzetechniquesdbgspanspan-idddkadditionalanalyzetechniquesdbgspanadditional-analyze-techniques"></a><span id="ddk_additional_analyze_techniques_dbg"></span><span id="DDK_ADDITIONAL_ANALYZE_TECHNIQUES_DBG"></span>追加! 手法の分析
 

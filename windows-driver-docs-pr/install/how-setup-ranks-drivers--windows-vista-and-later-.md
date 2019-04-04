@@ -28,13 +28,13 @@ Windows では、デバイスに一致するドライバーにランクを割り
 
 -   [署名スコア](signature-score--windows-vista-and-later-.md)ドライバーの署名が信頼されているかどうかに基づいて順位付けされます。 署名のスコアがの値のみに依存、 *SS*フィールド。 指定されていない署名のスコア付けは、0 x として表されます。*SS*0000000 します。
 
-    Windows Vista と以降のバージョンの Windows の使用方法、ドライバーの署名、ドライバーをインストールする方法を決定するの概要については、次を参照してください。[署名カテゴリとドライバーのインストール](signature-categories-and-driver-installation.md)します。
+    Windows Vista と以降のバージョンの Windows の使用方法、ドライバーの署名、ドライバーをインストールする方法を決定するの概要については、[署名カテゴリとドライバーのインストール](signature-categories-and-driver-installation.md)を参照してください。
 
 -   [特徴スコア](feature-score--windows-vista-and-later-.md)ドライバーがサポートする機能に基づいたドライバーのランク付けします。 特徴のスコアがの値のみに依存、 *GG*フィールド。 指定されていない機能のスコア付けは、0x00 として表されます。*GG*0000 です。
 
 -   [識別子スコア](identifier-score--windows-vista-and-later-.md)間の一致の種類に基づいたドライバーのランクを付け、[デバイス識別文字列](device-identification-strings.md)デバイスと、INF のエントリに記載されているデバイスの識別文字列によって報告されました。*モデル*ドライバーの INF ファイルのセクション。 識別子のスコアがの値のみに依存、 *THHH*フィールド。 指定されていない識別子のスコア付けは、0x0000 として表されます。*THHH*します。
 
-ドライバーとドライバーの署名の種類のランクを示す SetupAPI ログのエントリについては、次を参照してください。 [SetupAPI ログ ドライバーのランク情報](driver-rank-information-in-the-setupapi-log.md)します。
+ドライバーとドライバーの署名の種類のランクを示す SetupAPI ログのエントリについては、[SetupAPI ログ ドライバーのランク情報](driver-rank-information-in-the-setupapi-log.md)を参照してください。
 
  
 

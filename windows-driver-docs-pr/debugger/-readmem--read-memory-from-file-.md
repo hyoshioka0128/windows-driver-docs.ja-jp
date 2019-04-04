@@ -35,7 +35,7 @@ ms.locfileid: "56549619"
 読み取るファイルの名前を指定します。 完全なパスまたはファイル名のみを指定することができます。 ファイル名にスペースが含まれている場合は、囲む*FileName*引用符で囲んで指定します。 パスを指定しない場合、デバッガーには、現在のディレクトリが使用されます。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-メモリ内のデータを格納するためのアドレス範囲を指定します。 このパラメーターは、開始と終了アドレスまたは開始アドレスと、オブジェクトの数に含めることができます。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+メモリ内のデータを格納するためのアドレス範囲を指定します。 このパラメーターは、開始と終了アドレスまたは開始アドレスと、オブジェクトの数に含めることができます。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

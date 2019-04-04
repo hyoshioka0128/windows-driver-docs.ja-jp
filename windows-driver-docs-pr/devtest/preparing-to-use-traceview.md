@@ -30,7 +30,7 @@ Traceview でを使用する前に約およびイベント トレース情報を
 
 ### <a name="span-idunderstandeventtracingspanspan-idunderstandeventtracingspanunderstand-event-tracing"></a><span id="understand_event_tracing"></span><span id="UNDERSTAND_EVENT_TRACING"></span>イベントのトレースを理解します。
 
-理解しておく必要があります traceview でを使用する前に*イベント トレース*します。 詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)と"[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=60384)"Microsoft Windows SDK のトピックです。
+理解しておく必要があります traceview でを使用する前に*イベント トレース*します。 詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)と"[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=60384)"Microsoft Windows SDK のトピックを参照してください。
 
 また、Tracedrv (Tracedrv.c)、WPP ソフトウェア トレースとインストルメント化されたドライバーのサンプルを確認します。 [Tracedrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)サンプルは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507 )GitHub リポジトリにあります。 Tracedrv ドライバーとそのエンジン、Tracectl (Tracectl.c) をビルドし、traceview でみたりする場合、ドライバーとエンジンを使用します。
 

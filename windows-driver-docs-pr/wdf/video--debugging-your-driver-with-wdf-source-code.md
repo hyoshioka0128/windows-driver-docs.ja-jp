@@ -17,7 +17,7 @@ ms.locfileid: "56551242"
 
 このトピックでには、WDF のソース コードへのフル アクセスで、Windows Driver Frameworks (WDF) ドライバーをデバッグする方法のビデオ チュートリアルが含まれています。
 
-その後に、ビデオの手順を検索するには、次を参照してください。[ソース レベルの Windows 10 の WDF コードのデバッグのサポートを新しい](https://go.microsoft.com/fwlink/p/?LinkId=626463)します。
+その後に、ビデオの手順を検索するには、[ソース レベルの Windows 10 の WDF コードのデバッグのサポートを新しい](https://go.microsoft.com/fwlink/p/?LinkId=626463)を参照してください。
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/2568bc8a-3f0b-4900-b659-aa5b22159f04]
 

@@ -71,7 +71,7 @@ HKEY レジストリの場所を指定します\_ローカル\_マシン。
 
 場合、 **/r**と共にスイッチが指定されていない、 **/s**切り替えるには、 *currentUser*既定値です。
 
-これらの証明書ストアの詳細については、次を参照してください。[証明書ストア](https://msdn.microsoft.com/library/windows/hardware/ff537890)します。
+これらの証明書ストアの詳細については、[証明書ストア](https://msdn.microsoft.com/library/windows/hardware/ff537890)を参照してください。
 
 <span id="_v"></span><span id="_V"></span>**/v**  
 CertMgr の証明書、Ctl、および Crl に関する詳細情報を表示するよう構成します。 このスイッチが指定されていない場合、CertMgr には簡単な情報のみが表示されます。

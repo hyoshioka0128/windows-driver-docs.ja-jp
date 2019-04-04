@@ -86,7 +86,7 @@ Windows 8、Windows 8.1、および Windows 10 UWP アプリにモバイル ネ�
 
 SMS へのアクセスは、サービスのメタデータやデバイスのメタデータで指定されます。 デバイス メタデータ パッケージは、特定のデバイスとその UWP デバイスのアプリ間のリンクを作成する XML ファイルのセットです。 リンクは、モバイル ブロード バンドのアダプターが埋め込まれているコンピューターを構築する oem 向けの HardwareId の IHV モバイル ブロード バンド アダプター、またはコンピューターのハードウェア コンピューター デバイスのコンテナーの Id に基づいています。
 
-サービス メタデータの詳細については、次を参照してください。[サービス メタデータ](service-metadata.md)します。
+サービス メタデータの詳細については、[サービス メタデータ](service-metadata.md)を参照してください。
 
 モバイル ネットワーク オペレーターと Ihv、Windows 8、Windows 8.1、および Windows 10 モバイル ブロード バンドのアダプターを自動的にダウンロードして、ユーザーが初めてデバイスを接続すると、Microsoft Store からモバイル ブロード バンドのアプリをインストールします。 Windows 8.1 および Windows 10 では、モバイル ブロード バンド アプリに追加されます、**すべてのアプリ**ビュー。
 
@@ -109,7 +109,7 @@ Windows 8 を実行しているユーザー、設定チャームを使用して�
 
 MNOs は、Windows のプロビジョニングし、プラットフォームに SMS 通知の管理用のカスタムのフィルタ リング規則を指定します。 メッセージのフィルタ リング規則が指定されていない場合、SMS プラットフォームはすべてのアプリに使用できる一般的な SMS メッセージとしてすべての SMS メッセージを分類します。
 
-通知フィルターの詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
+通知フィルターの詳細については、[mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)を参照してください。
 
 ## <a name="span-iddevelopsmsappspanspan-iddevelopsmsappspanspan-iddevelopsmsappspandeveloping-your-sms-app"></a><span id="DevelopSMSApp"></span><span id="developsmsapp"></span><span id="DEVELOPSMSAPP"></span>SMS アプリの開発
 

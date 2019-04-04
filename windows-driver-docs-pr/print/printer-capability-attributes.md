@@ -42,7 +42,7 @@ ms.locfileid: "57349029"
 <td><p></p>
 プリンターのメモリに格納されているデータの種類を示す定数のリスト。 1 つ以上を指定できます。フォントのラスター ベクター
 <p>データ型が表示されているが、プリンターでサポートされていない、する場合は無視されます。</p></td>
-<td><p>任意。 指定しない場合、既定値は (フォント、ラスター、ベクトル) の一覧にします。 詳細については、次を参照してください。<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">プリンター メモリの構成を記述する</a>します。</p></td>
+<td><p>任意。 指定しない場合、既定値は (フォント、ラスター、ベクトル) の一覧にします。 詳細については、<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">プリンター メモリの構成を記述する</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>OEMCustomData</strong></p></td>
@@ -97,7 +97,7 @@ AFTER_FF - CmdFF コマンドの後にします。</td>
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
 ### <a href="" id="additional-information-about--reversebandorderforevenpages-"></a>に関する追加情報\*ReverseBandOrderForEvenPages でしょうか。
 

@@ -21,7 +21,7 @@ ms.locfileid: "56531159"
 
 ビデオでは、以前のバージョンの Windows バージョン 1 UMDF ドライバーのデバッグを示すため、中に、同じ手法を使用する現在のバージョンの Windows で実行されている UMDF バージョン 2 のドライバーを使用したことができます。
 
-**注**  このビデオが Wudfext.dll、UMDF バージョン 1 のドライバーのみをデバッグするために使用できるデバッガー拡張機能のコマンドについて説明します。 UMDF バージョン 2.0 以降 UMDF ドライバーをデバッグするには、Wdfkd.dll デバッガー拡張ライブラリを使用すると、代わりに使用する必要があります。 Wudfext.dll で拡張機能のすべての Wdfkd.dll には、対応があります。 詳細については、次を参照してください。 [Wudfext.dll でデバッガー拡張の概要](using-umdf-debugger-extensions.md)と[Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)します。
+**注**  このビデオが Wudfext.dll、UMDF バージョン 1 のドライバーのみをデバッグするために使用できるデバッガー拡張機能のコマンドについて説明します。 UMDF バージョン 2.0 以降 UMDF ドライバーをデバッグするには、Wdfkd.dll デバッガー拡張ライブラリを使用すると、代わりに使用する必要があります。 Wudfext.dll で拡張機能のすべての Wdfkd.dll には、対応があります。 詳細については、[Wudfext.dll でデバッガー拡張の概要](using-umdf-debugger-extensions.md)と[Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)を参照してください。
 
  
 
@@ -52,7 +52,7 @@ WDK サンプルと、OSR usb-fx2 Learning Kit の使用について説明しま
 -   [**!wudfext.wudfdevice**](https://msdn.microsoft.com/library/windows/hardware/ff566199)
 -   [**!wudfext.wudfdevicequeues**](https://msdn.microsoft.com/library/windows/hardware/ff566203)
 
-UMDF 2 では、次を参照してください。 [Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)、たとえば[ **! wdfkd.wdfumdevstacks**](https://msdn.microsoft.com/library/windows/hardware/dn265380)します。
+UMDF 2 では、[Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)、たとえば[ **! wdfkd.wdfumdevstacks**](https://msdn.microsoft.com/library/windows/hardware/dn265380)を参照してください。
 
 ## <a name="accessing-framework-usb-objects"></a>Framework USB オブジェクトへのアクセス
 

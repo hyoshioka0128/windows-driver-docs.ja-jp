@@ -64,7 +64,7 @@ ms.locfileid: "56539562"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-プロセスのコンテキスト、レジスタのコンテキストとローカル コンテキストの詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+プロセスのコンテキスト、レジスタのコンテキストとローカル コンテキストの詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
  
 

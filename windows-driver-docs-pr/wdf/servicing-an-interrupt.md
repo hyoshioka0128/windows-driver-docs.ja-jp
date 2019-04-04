@@ -21,7 +21,7 @@ ms.locfileid: "56537450"
 # <a name="servicing-an-interrupt"></a>割り込みを処理します。
 
 
-このトピックでは、DIRQL 割り込みを処理する方法を説明します。 パッシブ レベル割り込みを処理する方法の詳細については、次を参照してください。[パッシブ レベルをサポートしている中断](supporting-passive-level-interrupts.md#servicing)します。
+このトピックでは、DIRQL 割り込みを処理する方法を説明します。 パッシブ レベル割り込みを処理する方法の詳細については、[パッシブ レベルをサポートしている中断](supporting-passive-level-interrupts.md#servicing)を参照してください。
 
 割り込みをサービスは、2 つ、および場合によって 3 つの手順で構成されます。
 

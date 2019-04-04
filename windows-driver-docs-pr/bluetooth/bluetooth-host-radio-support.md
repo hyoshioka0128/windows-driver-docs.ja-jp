@@ -52,7 +52,7 @@ ms.locfileid: "58761857"
 
 Ihv は、Windows で box サポートに、Bluetooth 無線があることを確認するには、次の手順を実行する必要があります。
 
-- 無線拡張互換性 ID の OS の機能の記述子をサポートしていることを確認します。 詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
+- 無線拡張互換性 ID の OS の機能の記述子をサポートしていることを確認します。 詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)を参照してください。
 - Windows 認定プログラムの承認、Bluetooth 無線ハードウェアと関連付けられている INF ファイルを取得します。 Bluetooth 無線のベンダー固有の INF ファイルの例は、次を参照してください[付録 b:。Windows Vista で使用するため、ベンダー提供の INF ファイルの例](bluetooth-faq--appendix-b.md)します。
 - パートナー センターを使用して、INF ファイルを Windows Update を通じて使用できるようにするには
 

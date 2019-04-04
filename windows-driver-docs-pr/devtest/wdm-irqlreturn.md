@@ -22,7 +22,7 @@ ms.locfileid: "56552242"
 # <a name="irqlreturn-rule-wdm"></a>IrqlReturn ルール (wdm)
 
 
-**IrqlReturn**ルールでは、ドライバーのディスパッチ ルーチンが呼び出される位置同じ IRQL で返すことを指定します。 ルーチンは正しくするディスパッチで呼び出される Irql の詳細については、次を参照してください。 [**ディスパッチ ルーチンは、Irql します。**](https://msdn.microsoft.com/library/windows/hardware/ff544039)
+**IrqlReturn**ルールでは、ドライバーのディスパッチ ルーチンが呼び出される位置同じ IRQL で返すことを指定します。 ルーチンは正しくするディスパッチで呼び出される Irql の詳細については、[**ディスパッチ ルーチンは、Irql を参照してください。**](https://msdn.microsoft.com/library/windows/hardware/ff544039)
 
 |              |     |
 |--------------|-----|
@@ -49,7 +49,7 @@ ms.locfileid: "56552242"
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

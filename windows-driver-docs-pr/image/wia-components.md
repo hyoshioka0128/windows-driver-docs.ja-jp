@@ -114,7 +114,7 @@ WIA ミニドライバーは、カーネル モード静止イメージ ドラ�
 
 静止画像のカーネル モード ドライバーは、静止画像デバイスへの配信、および静止画像デバイスからの転送データをパッケージ化するシステム提供または IHV 提供のコンポーネントです。 カーネル モードの静止イメージ ドライバーでは、bus 固有です。
 
-Microsoft では Microsoft Windows Driver Model WDM ベースのカーネル モードもイメージのドライバー、SCSI、USB シリアル ポート、および IEEE 1394 バス。 これらのドライバーの詳細については、次を参照してください。[静止画像デバイスへのアクセスのカーネル モードのドライバー](accessing-kernel-mode-drivers-for-still-image-devices.md)します。
+Microsoft では Microsoft Windows Driver Model WDM ベースのカーネル モードもイメージのドライバー、SCSI、USB シリアル ポート、および IEEE 1394 バス。 これらのドライバーの詳細については、[静止画像デバイスへのアクセスのカーネル モードのドライバー](accessing-kernel-mode-drivers-for-still-image-devices.md)を参照してください。
 
 仕入先は、イメージング デバイスが I/O の Microsoft 提供のカーネル モード ドライバーと互換性がない場合にのみ、カーネル モード静止イメージ ドライバーを提供する必要があります。
 

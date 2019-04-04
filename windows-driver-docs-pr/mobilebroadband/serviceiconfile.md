@@ -16,7 +16,7 @@ ms.locfileid: "56535890"
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
-> Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10、バージョン 1709 より前に、の Windows のバージョンを対象としている場合でも、このセクションで説明したメタデータ パッケージを作成します。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
+> Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10、バージョン 1709 より前に、の Windows のバージョンを対象としている場合でも、このセクションで説明したメタデータ パッケージを作成します。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
 
 ServiceIconFile 要素は、サービス メタデータ パッケージで、サービスのアイコン ファイルの名前を指定します。 Windows 接続マネージャーで、モバイル ネットワーク オペレーター (MNO) またはモバイルの仮想ネットワーク オペレーター (MVNO) のロゴを表示するサービスのアイコン ファイルが使用されます。
 

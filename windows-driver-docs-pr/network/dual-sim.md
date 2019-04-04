@@ -35,7 +35,7 @@ Windows Phone 8.1 GDR1 には、C + G. サポートが追加されます。
 
 C + G を入力するオプションがあるデバイスの場合は、CDMA UICC が常に含まれるスロットは、executor 0 を使用します。 2 つの GSM UICCs がある場合は、データ行の選択 UICC は executor 0 に関連付けられます。
 
-C + G を構成する方法の詳細については、次を参照してください。[デュアル SIM 設定の構成 C + G](https://msdn.microsoft.com/library/windows/hardware/dn757414)します。
+C + G を構成する方法の詳細については、[デュアル SIM 設定の構成 C + G](https://msdn.microsoft.com/library/windows/hardware/dn757414)を参照してください。
 
 ## <a name="uicc-swapping"></a>UICC スワップ
 

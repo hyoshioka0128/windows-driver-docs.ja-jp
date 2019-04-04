@@ -24,9 +24,9 @@ NDIS 6.30、以降[NDIS 受信フィルター](https://msdn.microsoft.com/librar
 
      
 
-ドライバーは、プロトコルとフィルター ドライバーなどの後続パケット結合ダウンロード受信ミニポート ドライバーにフィルターのオブジェクト識別子 (OID) のセット要求を発行して[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)します。 詳細については、次を参照してください。[パケット結合受信フィルターの設定](setting-packet-coalescing-receive-filters.md)します。
+ドライバーは、プロトコルとフィルター ドライバーなどの後続パケット結合ダウンロード受信ミニポート ドライバーにフィルターのオブジェクト識別子 (OID) のセット要求を発行して[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)します。 詳細については、[パケット結合受信フィルターの設定](setting-packet-coalescing-receive-filters.md)を参照してください。
 
-ドライバーの後続パケット結合クエリを受け取ることもフィルター ミニポート ドライバーをダウンロードします。 上にあるドライバーでは、これを行うの OID メソッド要求を発行して[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)ミニポート ドライバーにします。 詳細については、次を参照してください。[クエリを実行するパケット結合受信フィルター](querying-packet-coalescing-receive-filters.md)します。
+ドライバーの後続パケット結合クエリを受け取ることもフィルター ミニポート ドライバーをダウンロードします。 上にあるドライバーでは、これを行うの OID メソッド要求を発行して[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)ミニポート ドライバーにします。 詳細については、[クエリを実行するパケット結合受信フィルター](querying-packet-coalescing-receive-filters.md)を参照してください。
 
  
 

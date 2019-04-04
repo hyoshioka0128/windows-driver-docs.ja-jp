@@ -58,11 +58,11 @@ HID コレクション用のドライバーでは、オペレーティング シ
 
 システム提供[HID クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/jj126193) HID コレクションにこのデバイスのインターフェイス クラスのインスタンスを登録します。 たとえば、HID クラス ドライバーは、USB キーボードまたはマウス デバイスのインターフェイスを登録します。 HID クラス ドライバーでサポートされている I/O インターフェイスを使用して、HID コレクションへのアクセスします。
 
-HID デバイスとドライバーについては、次を参照してください。 [HIDClass デバイス](../hid/binding-minidrivers-to-the-hid-class.md)します。
+HID デバイスとドライバーについては、[HIDClass デバイス](../hid/binding-minidrivers-to-the-hid-class.md)を参照してください。
 
-キーボード デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)します。
+キーボード デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)を参照してください。
 
-マウス デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)します。
+マウス デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)を参照してください。
 
 [ **GUID_CLASS_INPUT** ](guid-class-input.md)このデバイスの古い形式の識別子は、インターフェイス クラス。 GUID_DEVINTERFACE_HID を代わりに使用します。
 

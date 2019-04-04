@@ -25,7 +25,7 @@ NDIS ドライバーを使用できます、 [ **NET\_バッファー\_一覧\_�
 
 ミニポート ドライバーの設定、NDIS\_送信\_完了\_フラグ\_単一\_ビットにキュー、 *SendCompleteFlags*のパラメーター、 [ **NdisMSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563668)関数をすべて NET ことを示す\_バッファー\_呼び出しリストが同じ送信キューに送信されました。
 
-フィルターの条件の詳細については、次を参照してください。 [VMQ フィルター操作](vmq-filter-operations.md)します。
+フィルターの条件の詳細については、[VMQ フィルター操作](vmq-filter-operations.md)を参照してください。
 
 **注**  ときに、VMQ は (たとえば、VM のライブ マイグレーション) 中に削除すると、ミニポート ドライバーを含む無効な NBL を受信する可能性があります**QueueId**値。 この場合、ミニポートする必要があります無効なキューの ID を無視して、0 (既定のキュー) を使用して、代わりにします。 **QueueId**は、 **NetBufferListFilteringInfo** 、NBL の部分の OOB のデータとを使用して取得されて、 [ **NET\_バッファー\_一覧\_受信\_キュー\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff568407)マクロ。
 

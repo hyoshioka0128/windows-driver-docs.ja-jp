@@ -33,7 +33,7 @@ NDIS 6.20 が動作には、Microsoft、HYPER-V ネットワーク パフォー�
 
 Microsoft、HYPER-V ネットワーク パフォーマンスの強化も chimney をサポートして、HYPER-V 子ドライバーを変更せずにパーティション。
 
-VMQ の詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
+VMQ の詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。
 
  
 

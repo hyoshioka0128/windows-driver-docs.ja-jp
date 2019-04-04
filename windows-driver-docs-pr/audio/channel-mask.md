@@ -42,7 +42,7 @@ Windows、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windo
 
 チャネル マスク内の各ビットは、特定のスピーカー位置を表します。 その位置を表すマスクのビットが 1; に設定されている場合は、マスクは、特定のスピーカー位置にチャネルを割り当てます、未割り当てのスピーカー位置のすべてのマスク ビットが 0 に設定されます。 WAVEFORMATEXTENSIBLE 構造上の図に示されていないチャネル マスクのビット数を定義しますが、これらのビット ディスカッションのホーム シアターのスピーカー構成の影響はありません。 してわかりやすくするため省略しています。
 
-スピーカー位置を前の図に、チャネル マスク内のエンコーディングは、プロパティの値に使用するときと同様、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ要求。 詳細については、次を参照してください。 [ **KSAUDIO\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537083)します。
+スピーカー位置を前の図に、チャネル マスク内のエンコーディングは、プロパティの値に使用するときと同様、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ要求。 詳細については、[ **KSAUDIO\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537083)を参照してください。
 
 次の表は、前の図に、マスクのビットごとの意味を示します。
 

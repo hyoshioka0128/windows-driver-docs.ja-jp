@@ -199,7 +199,7 @@ Driver Verifier に違反が検出される場合は、コンピューターを�
 -   [**バグのチェックように。ドライバー\_ページ\_フォールト\_を超えて\_エンド\_の\_割り当て**](https://msdn.microsoft.com/library/windows/hardware/ff560267)
 -   [**バグ チェック 0xE6 の。ドライバー\_VERIFIER\_DMA\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560341)
 
-詳細については、次を参照してください。[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](https://msdn.microsoft.com/library/windows/hardware/hh450984)します。 バグ チェック 0xC4 のデバッグに関するヒントについては、次を参照してください[デバッグ バグ チェック 0xC4:。ドライバー\_VERIFIER\_検出\_違反](debugging-bug-check-0xc4--driver-verifier-detected-violation.md)します。
+詳細については、[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](https://msdn.microsoft.com/library/windows/hardware/hh450984)を参照してください。 バグ チェック 0xC4 のデバッグに関するヒントについては、次を参照してください[デバッグ バグ チェック 0xC4:。ドライバー\_VERIFIER\_検出\_違反](debugging-bug-check-0xc4--driver-verifier-detected-violation.md)します。
 
 新しいデバッグ セッションを開始するときに、デバッガーの拡張機能のコマンドを使用して[ **! 分析**](https://msdn.microsoft.com/library/windows/hardware/ff562112)します。 カーネル モードで、 **! 分析**コマンドは、最新のバグ チェックに関する情報を表示します。 **! 分析-v**コマンドは、追加情報が表示され、エラーが発生したドライバーを特定しようとしています。
 

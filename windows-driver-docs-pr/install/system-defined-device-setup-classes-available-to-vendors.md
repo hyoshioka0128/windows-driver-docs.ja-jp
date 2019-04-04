@@ -54,7 +54,7 @@ ClassGuid = {4d36e968-e325-11ce-bfc1-08002be10318}
 **拡張子 INF**  
 クラスの拡張機能を =  
 ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}  
-(Windows 10 および Windows の以降のバージョン)このクラスには、カスタマイズを必要とするすべてのデバイスが含まれています。 詳細については、次を参照してください。[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)します。  
+(Windows 10 および Windows の以降のバージョン)このクラスには、カスタマイズを必要とするすべてのデバイスが含まれています。 詳細については、[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)を参照してください。  
   
 <a href="" id="floppy-disk-controllers-"></a>**フロッピー ディスク コント ローラー**  
 クラス FDC を =  
@@ -74,7 +74,7 @@ ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}
 **ヒューマン インターフェイス デバイス (HID)**  
 クラス HIDClass を =  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
-このクラスには、システムが提供することによって運用される対話型の入力デバイスが含まれています。 [HID クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/jj126193)します。 これは、に準拠している USB デバイスが含まれています、 [USB HID 標準](../hid/hid-over-usb.md)と HID ミニドライバーを使用するデバイスを USB 以外。 詳細については、次を参照してください。 [HIDClass デバイス セットアップ クラス](../hid/minidriver-operations.md)します。 (この一覧の後半で、キーボードまたはマウス クラスも参照)。  
+このクラスには、システムが提供することによって運用される対話型の入力デバイスが含まれています。 [HID クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/jj126193)します。 これは、に準拠している USB デバイスが含まれています、 [USB HID 標準](../hid/hid-over-usb.md)と HID ミニドライバーを使用するデバイスを USB 以外。 詳細については、[HIDClass デバイス セットアップ クラス](../hid/minidriver-operations.md)を参照してください。 (この一覧の後半で、キーボードまたはマウス クラスも参照)。  
   
 **IEEE 1284.4 デバイス**  
 クラス Dot4 を =  
@@ -136,7 +136,7 @@ ClassGuid = {4d36e970-e325-11ce-bfc1-08002be10318}
 <a href="" id="modem-"></a>**モデム**  
 クラス モデムを =  
 ClassGuid = {4d36e96d-e325-11ce-bfc1-08002be10318}  
-このクラスには、モデム デバイスが含まれています。 または、*ソフトウェア モデム*します。 これらのデバイスでは、モデム デバイスとデバイス ドライバーの機能を分割します。 モデムの INF ファイル、および Microsoft Windows Driver Model (WDM) モデム デバイスの詳細については、次を参照してください。[モデム INF ファイルの概要](https://msdn.microsoft.com/library/windows/hardware/ff542559)と[WDM モデム サポートの追加](https://msdn.microsoft.com/library/windows/hardware/ff541218)します。  
+このクラスには、モデム デバイスが含まれています。 または、*ソフトウェア モデム*します。 これらのデバイスでは、モデム デバイスとデバイス ドライバーの機能を分割します。 モデムの INF ファイル、および Microsoft Windows Driver Model (WDM) モデム デバイスの詳細については、[モデム INF ファイルの概要](https://msdn.microsoft.com/library/windows/hardware/ff542559)と[WDM モデム サポートの追加](https://msdn.microsoft.com/library/windows/hardware/ff541218)を参照してください。  
   
 <a href="" id="monitor-"></a>**モニター**  
 クラス モニターを =  
@@ -235,7 +235,7 @@ ClassGuid = {50dd5230-ba8a-11d1-bf5d-0000f805f530}
 **ソフトウェアのコンポーネント**  
 クラス SoftwareComponent を =  
 ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}  
-(Windows 10 バージョン 1703 および以降のバージョンの Windows)このクラスには、ソフトウェア コンポーネントをカプセル化するデバイス仮想の子にはが含まれています。 詳細については、次を参照してください。 [INF ファイルを使用したソフトウェア コンポーネントを追加する](https://docs.microsoft.com/windows-hardware/drivers/install/adding-software-components-with-an-inf-file)します。  
+(Windows 10 バージョン 1703 および以降のバージョンの Windows)このクラスには、ソフトウェア コンポーネントをカプセル化するデバイス仮想の子にはが含まれています。 詳細については、[INF ファイルを使用したソフトウェア コンポーネントを追加する](https://docs.microsoft.com/windows-hardware/drivers/install/adding-software-components-with-an-inf-file)を参照してください。  
   
 <a href="" id="storage-volumes-"></a>**記憶域ボリューム**  
 クラスのボリュームを =  

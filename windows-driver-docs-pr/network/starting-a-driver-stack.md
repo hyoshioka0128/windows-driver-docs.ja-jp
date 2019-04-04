@@ -52,7 +52,7 @@ ms.locfileid: "56537023"
 
 7.  プロトコル ドライバーの呼び出し、バインド操作を完了する、 [ **NdisCompleteBindAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561702)関数。
 
-8.  NDIS は、ドライバー スタックを再起動します。 ドライバー スタックの再起動に関する詳細については、次を参照してください。[ドライバー スタックの再起動](restarting-a-driver-stack.md)します。
+8.  NDIS は、ドライバー スタックを再起動します。 ドライバー スタックの再起動に関する詳細については、[ドライバー スタックの再起動](restarting-a-driver-stack.md)を参照してください。
 
  
 

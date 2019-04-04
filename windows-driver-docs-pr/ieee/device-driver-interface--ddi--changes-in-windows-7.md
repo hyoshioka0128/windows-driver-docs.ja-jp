@@ -110,7 +110,7 @@ Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレ�
 
 クライアント ドライバーを設定する必要があります、raw モードのアドレス指定を使用する場合、 **nBlockSize**メンバー接続の速度でのデバイスでサポートされている非同期ペイロードの最大サイズにします。
 
-Raw モードのアドレス指定の詳細については、次を参照してください。[を送信する非同期 I/O 要求パケットの IEEE 1394 バス](https://msdn.microsoft.com/library/windows/hardware/ff538087)します。
+Raw モードのアドレス指定の詳細については、[を送信する非同期 I/O 要求パケットの IEEE 1394 バス](https://msdn.microsoft.com/library/windows/hardware/ff538087)を参照してください。
 
 <a href="" id="request-async-write"></a>[**要求\_ASYNC\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff537636)  
 **u.AsyncRead.nBlockSize**

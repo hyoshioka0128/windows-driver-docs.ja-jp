@@ -22,9 +22,9 @@ PrintTicket オブジェクトで検証済みの設定は、XPSDrv プリンタ�
 
 XPSDrv プリンター ドライバーでは、印刷ドライバーの印刷処理フィルターでこの処理を実行します。
 
-GDI ベースの印刷ドライバーが引き続き使用する、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)設定、Windows Vista に組み込まれた互換性サポートのため印刷サブシステムを構造体します。 このサポートの詳細については、次を参照してください。 [Win 32 アプリケーション互換性の印刷チケット](print-ticket-compatibility-with-win-32-applications.md)します。
+GDI ベースの印刷ドライバーが引き続き使用する、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)設定、Windows Vista に組み込まれた互換性サポートのため印刷サブシステムを構造体します。 このサポートの詳細については、[Win 32 アプリケーション互換性の印刷チケット](print-ticket-compatibility-with-win-32-applications.md)を参照してください。
 
-印刷チケットの印刷ドライバーの処理を実装する方法の詳細については、次を参照してください。 [XPSDrv 表示モジュールでの印刷チケット サポート](print-ticket-support-in-the-xpsdrv-render-module.md)します。
+印刷チケットの印刷ドライバーの処理を実装する方法の詳細については、[XPSDrv 表示モジュールでの印刷チケット サポート](print-ticket-support-in-the-xpsdrv-render-module.md)を参照してください。
 
  
 

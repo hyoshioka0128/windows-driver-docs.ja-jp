@@ -27,7 +27,7 @@ NDIS 6.1 と MSI X をサポートする以降のミニポート ドライバー
 
 **NdisMConfigMSIXTableEntry**のラッパーです、 [GUID\_MSIX\_テーブル\_CONFIG\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff546563)クエリ。 ミニポート ドライバーを呼び出すことができます**NdisMConfigMSIXTableEntry** NDIS 呼び出した後、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数、および、からドライバーを返す前に[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数。
 
-RSS キューごとに、MSI X テーブルのエントリを割り当てるし、RSS プロセッサの数がで MSI X メッセージ リソースを追加できるよりも少ないキューがミニポート ドライバー、 [ *MiniportFilterResourceRequirements* ](https://msdn.microsoft.com/library/windows/hardware/ff559384)関数。 デバイスに割り当てられたリソースを変更する方法の詳細については、次を参照してください。 [MSI X リソース フィルター](msi-x-resource-filtering.md)します。
+RSS キューごとに、MSI X テーブルのエントリを割り当てるし、RSS プロセッサの数がで MSI X メッセージ リソースを追加できるよりも少ないキューがミニポート ドライバー、 [ *MiniportFilterResourceRequirements* ](https://msdn.microsoft.com/library/windows/hardware/ff559384)関数。 デバイスに割り当てられたリソースを変更する方法の詳細については、[MSI X リソース フィルター](msi-x-resource-filtering.md)を参照してください。
 
 ミニポート ドライバーは、デバイスがある RSS プロセッサごとに少なくとも 1 つの MSI X メッセージを持つように MSI X 割り込みリソースの CPU 関係を設定できます。 PCI バス ドライバーを最初にマップするメモ、 *n* MSI X テーブル エントリ (場所*n*は NIC ハードウェアは、バスを報告した MSI X テーブル エントリの数です)、最初に*n*変更されたリソースに MSI X メッセージ。 NDIS 後*MiniportInitializeEx*ミニポート ドライバーには、特定の MSI X テーブル エントリ、ドライバーの呼び出しのターゲットのプロセッサが変更されたとき、 **NdisMConfigMSIXTableEntry**そのテーブルのエントリをマップするには既に MSI X メッセージに、アフィニティは、必要なプロセッサを設定します。
 

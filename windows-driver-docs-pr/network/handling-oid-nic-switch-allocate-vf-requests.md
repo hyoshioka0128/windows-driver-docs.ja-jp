@@ -20,7 +20,7 @@ PCI Express (PCIe) 物理機能 (PF) ネットワーク アダプターのミニ
 
 -   PF のミニポート ドライバーでは、ネットワーク アダプター上の NIC スイッチに、VF を割り当てます。 NIC のスイッチがで識別される、 **SwitchId**のメンバー、 [ **NDIS\_NIC\_切り替える\_VF\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451593)構造体。
 
-    NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
+    NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
 
 -   PF ミニポート ドライバーの更新プログラム、 **VFId** VF 識別子を持つメンバー。 この識別子は割り当てられているすべての VFs で一意である必要があります、0 から始まるインデックス、PF ミニポート ドライバーによって NIC スイッチ。
 
@@ -36,7 +36,7 @@ PCI Express (PCIe) 物理機能 (PF) ネットワーク アダプターのミニ
 
 ドライバーで NDIS OID 要求が完了すると、PF ミニポート ドライバーが正常に必要なソフトウェア リソースを割り当てるおよび VF を初期化できる場合、\_状態\_成功します。 PF のミニポート ドライバーでは、割り当てられた各 VF の VF Id を保持する必要があります。 NDIS および上にあるドライバーは、PF ミニポート ドライバーに連続する OID 要求で VF 識別子を使用してリセットや、VF の解放などのさまざまなアクション。
 
-**注**  VF は接続されていない状態で、VF 用のリソースが割り当てられると、仮想ポート (VPort) が、VF にアタッチされていないためです。 上にあるドライバーの OID 要求を発行できる[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)を作成して、VPort を VF にアタッチします。 詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
+**注**  VF は接続されていない状態で、VF 用のリソースが割り当てられると、仮想ポート (VPort) が、VF にアタッチされていないためです。 上にあるドライバーの OID 要求を発行できる[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)を作成して、VPort を VF にアタッチします。 詳細については、[仮想ポートを作成する](creating-a-virtual-port.md)を参照してください。
 
  
 

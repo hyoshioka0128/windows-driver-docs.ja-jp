@@ -62,7 +62,7 @@ ms.locfileid: "56535624"
 
 ファイル ハンドルを開いた場合\_追加\_データ アクセス、すべてのデータは、ファイルの末尾に記述された、 *ByteOffset*パラメーターは無視されます。
 
-特定の条件下では、I/O マネージャーは、ファイルの現在のファイル位置ポインターを保持します。 読み取りを開始したり、その位置にある操作を指定することで書き込み**NULL**の*ByteOffset*します。 詳細については、現在のファイル位置のポインターが存在するときに、次を参照してください。[ファイルの現在位置を使用して](using-the-current-file-position.md)このセクションで後述します。
+特定の条件下では、I/O マネージャーは、ファイルの現在のファイル位置ポインターを保持します。 読み取りを開始したり、その位置にある操作を指定することで書き込み**NULL**の*ByteOffset*します。 詳細については、現在のファイル位置のポインターが存在するときに、[ファイルの現在位置を使用して](using-the-current-file-position.md)このセクションで後述を参照してください。
 
 調査または変更されたファイルに関する情報、呼び出す[ **ZwQueryInformationFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567052)または[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)、それぞれします。 特定の種類の情報を指定する、 *FileInformationClass*各ルーチンへのパラメーター。 たとえば、設定*FileInformationClass*に**FileBasicInformation**を調査または変更することができます、 [**ファイル\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545762)構造体は、ファイル作成時刻と他のユーザーの間で最終アクセス日時のメンバーが含まれています。 すべての可能な値については*FileInformationClass*を参照してください[**ファイル\_情報\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff728840)します。
 

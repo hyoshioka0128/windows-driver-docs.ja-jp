@@ -38,7 +38,7 @@ ms.locfileid: "56538511"
 
     手動で設定して、ドライバーが MDL のチェーンの構築、**次**ポインター。
 
-    前の例では、プロトコル ドライバーには、MDL として、パケットを送信します。 中間のドライバーを作成[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)ヘッダー データを使用してメモリのブロックを参照します。 チェーンを作成する中間のドライバーがヘッダー MDL をポイントできます**次**プロトコル ドライバーから受信した MDL へのポインター。 中間のドライバーは、ミニポート ドライバーで要求の URB 連鎖 MDL への参照を提供し、USB ドライバー スタックに要求を送信する 2 つの MDLs のチェーンを転送できます。 詳細については、次を参照してください。[を使用して MDLs](https://msdn.microsoft.com/library/windows/hardware/ff565421)します。
+    前の例では、プロトコル ドライバーには、MDL として、パケットを送信します。 中間のドライバーを作成[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)ヘッダー データを使用してメモリのブロックを参照します。 チェーンを作成する中間のドライバーがヘッダー MDL をポイントできます**次**プロトコル ドライバーから受信した MDL へのポインター。 中間のドライバーは、ミニポート ドライバーで要求の URB 連鎖 MDL への参照を提供し、USB ドライバー スタックに要求を送信する 2 つの MDLs のチェーンを転送できます。 詳細については、[を使用して MDLs](https://msdn.microsoft.com/library/windows/hardware/ff565421)を参照してください。
 
 4.  設定を使用する I/O 要求チェーン MDLs 向け、URB の作成に、中に、 **TransferBufferMDL** 、関連付けられているメンバー [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造 (など[ **\_URB\_一括\_OR\_INTERRUPT\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540352)または[  **\_URB\_アイソクロナス\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540414)) にチェーン、およびセットの最初の MDL、 **TransferBufferLength**に転送するバイトの合計数。 データは、MDL チェーン内の 1 つ以上の MDL エントリにまたがる可能性があります。
 
@@ -47,12 +47,12 @@ ms.locfileid: "56538511"
     -   URB\_関数\_一括\_または\_INTERRUPT\_転送\_USING\_連結された\_MDL
     -   URB\_関数\_アイソクロナス\_転送\_USING\_連結された\_MDL
 
-    これらの URB 関数については、次を参照してください。 [  **\_URB\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff540409)します。
+    これらの URB 関数については、[  **\_URB\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff540409)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバー スタックが連鎖 MDLs を受け入れるかどうかを判断する基礎となる USB ドライバー スタックのクエリを実行するコード例では、次を参照してください。 [ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)します。
+ドライバー スタックが連鎖 MDLs を受け入れるかどうかを判断する基礎となる USB ドライバー スタックのクエリを実行するコード例では、[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [USB I/O 操作](usb-device-i-o.md)  

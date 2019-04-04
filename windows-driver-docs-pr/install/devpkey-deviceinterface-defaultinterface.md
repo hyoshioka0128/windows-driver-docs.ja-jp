@@ -60,7 +60,7 @@ DEVPKEY_DeviceInterfaceClass_DefaultInterface デバイス プロパティは、
 
 DEVPKEY_DeviceInterfaceClass_DefaultInterface の値を取得するには呼び出すことによって[ **SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)します。 呼び出して DEVPKEY_DeviceInterfaceClass_DefaultInterface を設定する[ **SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterfaceClass_DefaultInterface プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインターフェイス クラスの既定のインターフェイスにアクセスする方法については、次を参照してください。[インターフェイス クラス プロパティのデバイスへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537739)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterfaceClass_DefaultInterface プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインターフェイス クラスの既定のインターフェイスにアクセスする方法については、[インターフェイス クラス プロパティのデバイスへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537739)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

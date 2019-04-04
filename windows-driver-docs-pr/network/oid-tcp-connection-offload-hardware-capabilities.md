@@ -21,11 +21,11 @@ ms.locfileid: "56537330"
 
 ## <a name="remarks"></a>注釈
 
-NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーはレポートには、NDIS ミニポート アダプター接続オフロード ハードウェア機能です。 接続オフロード ハードウェア機能に渡す NDIS ミニポート ドライバーおよび NDIS から上にあるドライバーについては、次を参照してください。 [NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)します。
+NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーはレポートには、NDIS ミニポート アダプター接続オフロード ハードウェア機能です。 接続オフロード ハードウェア機能に渡す NDIS ミニポート ドライバーおよび NDIS から上にあるドライバーについては、[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)を参照してください。
 
 **InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)構造体。
 
-OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES への応答、**カプセル化**NDIS_TCP_CONNECTION_OFFLOAD のメンバーがミニポート アダプターの現在のパケット カプセル化ハードウェアの機能を定義します。 NDIS に用意されているフラグのビットごとの OR の提供、**カプセル化**メンバー。 NDIS_TCP_CONNECTION_OFFLOAD の他のメンバーには、さまざまな接続のオフロード サービスの設定が含まれます。 カプセル化およびその他の機能の詳細については、次を参照してください。 [NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)と[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)します。
+OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES への応答、**カプセル化**NDIS_TCP_CONNECTION_OFFLOAD のメンバーがミニポート アダプターの現在のパケット カプセル化ハードウェアの機能を定義します。 NDIS に用意されているフラグのビットごとの OR の提供、**カプセル化**メンバー。 NDIS_TCP_CONNECTION_OFFLOAD の他のメンバーには、さまざまな接続のオフロード サービスの設定が含まれます。 カプセル化およびその他の機能の詳細については、[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)と[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)を参照してください。
 
 
 ### <a name="see-also"></a>関連項目

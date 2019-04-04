@@ -67,7 +67,7 @@ Storport ドライバーは、次の機能を提供します。
 
 Storport では、Storport のライブラリ ルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
 
--   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)します。
+-   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、[Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)を参照してください。
 
 -   非 PnP デバイスの Storport ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **StorPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567108)します。
 

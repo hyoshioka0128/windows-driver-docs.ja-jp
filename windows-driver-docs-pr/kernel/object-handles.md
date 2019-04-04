@@ -95,7 +95,7 @@ ms.locfileid: "56537524"
 
 使用して、 [ **InitializeObjectAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff547804)これらの属性を設定するルーチンを**オブジェクト\_属性**構造体。
 
-オブジェクト ハンドルを検証する方法の詳細については、次を参照してください。[オブジェクト ハンドルの検証に失敗した](failure-to-validate-object-handles.md)します。
+オブジェクト ハンドルを検証する方法の詳細については、[オブジェクト ハンドルの検証に失敗した](failure-to-validate-object-handles.md)を参照してください。
 
 ### <a name="private-object-handles"></a>プライベート オブジェクト ハンドル
 

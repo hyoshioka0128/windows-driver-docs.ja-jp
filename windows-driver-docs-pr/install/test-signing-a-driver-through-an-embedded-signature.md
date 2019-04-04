@@ -26,7 +26,7 @@ ms.locfileid: "56535588"
 
 -   テスト署名 Toastpkg サンプルの 64 ビット バージョンのバイナリ ファイル、toaster.sys します。 WDK のインストール ディレクトリ内でこのファイルにある、 *src\\全般\\トースター\\toastpkg\\toastcd\\amd64*ディレクトリ。
 
--   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
+-   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、[テスト証明書を作成する](creating-test-certificates.md)を参照してください。
 
 -   タイムスタンプ時刻スタンプ機関 (TSA) 経由のデジタル署名。
 
@@ -53,9 +53,9 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 
 -   *amd64\\toaster.sys*埋め込まれた署名されるカーネル モード バイナリ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
+SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
 
-埋め込みの署名を使用して、ドライバーのテスト署名する方法の詳細については、次を参照してください。[テスト署名ドライバー ファイルを](test-signing-a-driver-file.md)します。
+埋め込みの署名を使用して、ドライバーのテスト署名する方法の詳細については、[テスト署名ドライバー ファイルを](test-signing-a-driver-file.md)を参照してください。
 
  
 

@@ -26,7 +26,7 @@ ms.locfileid: "56551356"
 
 KSPROPERTY\_AUDIOMODULE 列挙型は、オーディオ ドライバーによって通信パートナーに関する情報は、オーディオのモジュールを定義するために使用される定数を定義します。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
 
 <a name="syntax"></a>構文
 ------

@@ -64,7 +64,7 @@ DEVPKEY_DeviceClass_Exclusive デバイス プロパティがかどうかのデ�
 
 呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するには排他。
 
-Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_Exclusive プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_EXCLUSIVE 識別子を使用できます。 このプロパティの値にアクセスする方法については、次を参照してください。[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)します。
+Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_Exclusive プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_EXCLUSIVE 識別子を使用できます。 このプロパティの値にアクセスする方法については、[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

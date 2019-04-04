@@ -21,7 +21,7 @@ ms.locfileid: "56537557"
 
 ドライバーの I/O ディスパッチ コールバック関数では、複数のフレームワークに、受信要求の結果として I/O 要求を作成可能性があります。 ドライバーが元の要求アクティビティ ID を取得し、新しい要求で呼び出すことによって設定[ **WdfRequestRetrieveActivityId** ](https://msdn.microsoft.com/library/windows/hardware/dn265621)と[ **WdfRequestSetActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265622)します。
 
-コード例では、次を参照してください。 [ **WdfRequestRetrieveActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265621)します。
+コード例では、[ **WdfRequestRetrieveActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265621)を参照してください。
 
 ## <a name="associating-new-requests-with-an-existing-thread"></a>新しい要求を既存のスレッドに関連付ける
 

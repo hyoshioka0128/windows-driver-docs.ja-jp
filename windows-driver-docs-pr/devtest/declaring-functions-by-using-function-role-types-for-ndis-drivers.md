@@ -16,7 +16,7 @@ ms.locfileid: "56581305"
 
 SDV NDIS ドライバーの分析を有効にするには、NDIS の関数の役割の型宣言を使用して関数を宣言する必要があります。 関数のロールの種類は、Ndis.h で定義されます。
 
-関数のロールの種類とその対応するイベントのコールバック関数の一覧で、次を参照してください。、[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)します。
+関数のロールの種類とその対応するイベントのコールバック関数の一覧で、、[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)を参照してください。
 
 対応するロールの種類を指定することで、NDIS ドライバー内の各コールバック関数を宣言する必要があります。
 

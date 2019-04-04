@@ -25,9 +25,9 @@ Microsoft インターフェイス定義言語 (MIDL) の 2 つのファイル�
 - cellularapi_oem.idl
 - rilapitypes.idl
 
-ヘッダー ファイルを生成するのにには、MIDL コンパイラを使用します。 詳細については、次を参照してください。 [Microsoft インターフェイス定義言語](https://msdn.microsoft.com/library/windows/desktop/aa367091)、Windows デベロッパー センターでします。
+ヘッダー ファイルを生成するのにには、MIDL コンパイラを使用します。 詳細については、[Microsoft インターフェイス定義言語](https://msdn.microsoft.com/library/windows/desktop/aa367091)、Windows デベロッパー センターでを参照してください。
 
-携帯電話アプリケーションを含むパッケージ内の適切な機能を宣言する必要があります。 詳細については、次を参照してください。[携帯電話の COM API 機能](cellular-com-api-capabilities.md)します。
+携帯電話アプリケーションを含むパッケージ内の適切な機能を宣言する必要があります。 詳細については、[携帯電話の COM API 機能](cellular-com-api-capabilities.md)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

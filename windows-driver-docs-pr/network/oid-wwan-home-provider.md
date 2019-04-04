@@ -36,7 +36,7 @@ A*設定*操作では、現在の SIM またはターゲット SIM がロック�
 
  
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)します。
+詳細については、この OID を使用して、[WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)を参照してください。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできる処理がクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 

@@ -47,7 +47,7 @@ AV、フィルターでは、コンテナーのシステム ボリューム上�
 ## <a name="span-idrecommendedapproachspanspan-idrecommendedapproachspanspan-idrecommendedapproachspanrecommended-approach"></a><span id="Recommended_approach"></span><span id="recommended_approach"></span><span id="RECOMMENDED_APPROACH"></span>推奨されるアプローチ
 
 
-コンテナーの冗長なスキャンを回避するためには、ウイルス対策製品が以下に示すように、その動作を変更することをお勧めします。 このアプローチの顧客のリスク/reward メリットを判断するウイルス対策製品の責任です。 詳細については、次を参照してください。[メリットとリスク](#benefits-risks)します。
+コンテナーの冗長なスキャンを回避するためには、ウイルス対策製品が以下に示すように、その動作を変更することをお勧めします。 このアプローチの顧客のリスク/reward メリットを判断するウイルス対策製品の責任です。 詳細については、[メリットとリスク](#benefits-risks)を参照してください。
 
 ### <a name="span-id1packageinstallspanspan-id1packageinstallspanspan-id1packageinstallspan1-package-install"></a><span id="1._Package_install"></span><span id="1._package_install"></span><span id="1._PACKAGE_INSTALL"></span>1.パッケージのインストール
 

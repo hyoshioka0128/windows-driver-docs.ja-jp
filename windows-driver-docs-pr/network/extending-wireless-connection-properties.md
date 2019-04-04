@@ -23,13 +23,13 @@ ms.locfileid: "56538142"
 
 このトピックでは、ネイティブの 802.11 IHV UI の拡張 DLL がでプロパティを拡張する方法について説明します、**接続**ネットワーク構成ユーザー インターフェイス (UI) を通じて表示されるタブ。 802.11 IHV UI 拡張機能のネイティブ DLL では、このような状況では、プロパティの追加、**接続**の独自の接続設定 タブ。
 
-ネットワークの構成 UI やその他のネイティブの 802.11 コンポーネントに関する詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
+ネットワークの構成 UI やその他のネイティブの 802.11 コンポーネントに関する詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
 
 表示にする前に、**接続** タブで、オペレーティング システムは次の処理します。
 
 1.  クエリをネイティブ 802.11 IHV UI 拡張機能の DLL をその接続のプロパティを呼び出すことによって、 [ **IDot11ExtUI::GetDot11ExtUIProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff553776)メソッド。 オペレーティング システムの値を渡す**DOT11\_EXT\_UI\_接続**メソッドの*ExtType*パラメーター。
 
-    802.11 IHV UI 拡張機能のネイティブ DLL が型のプロパティをサポートしているか**DOT11\_EXT\_UI\_接続**、DLL を返します (メソッドのを通じて*ppDot11ExtUIProperty*パラメーター) のアドレス、 [IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)、接続プロパティの拡張機能を実装します。 接続のプロパティの拡張に使用される COM インターフェイスの詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の COM インターフェイス](native-802-11-ihv-ui-extensions-com-interfaces.md)します。
+    802.11 IHV UI 拡張機能のネイティブ DLL が型のプロパティをサポートしているか**DOT11\_EXT\_UI\_接続**、DLL を返します (メソッドのを通じて*ppDot11ExtUIProperty*パラメーター) のアドレス、 [IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)、接続プロパティの拡張機能を実装します。 接続のプロパティの拡張に使用される COM インターフェイスの詳細については、[ネイティブ 802.11 IHV UI 拡張機能の COM インターフェイス](native-802-11-ihv-ui-extensions-com-interfaces.md)を参照してください。
 
     **注**  For Windows Vista 802.11 IHV UI 拡張機能のネイティブ DLL 返す必要がありますいない 1 つ以上[IDot11ExtUI COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553769)接続プロパティの拡張機能。
 

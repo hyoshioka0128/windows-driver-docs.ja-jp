@@ -67,7 +67,7 @@ ms.locfileid: "56556677"
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>電源イベントを処理中に内部エラーが発生しました。 詳細については、次を参照してください。<a href="#parameter-1-equals-0x2" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x2](#parameter-1-equals-0x2)">デバッグ 0xA0 パラメーター 1 が 0x2 の場合のバグ チェック</a>します。</p></td>
+<td align="left"><p>電源イベントを処理中に内部エラーが発生しました。 詳細については、<a href="#parameter-1-equals-0x2" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x2](#parameter-1-equals-0x2)">デバッグ 0xA0 パラメーター 1 が 0x2 の場合のバグ チェック</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
@@ -95,7 +95,7 @@ ms.locfileid: "56556677"
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ハンドルされない例外が発生しました。 詳細については、次を参照してください。<a href="#parameter-1-equals-0x7" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x7](#parameter-1-equals-0x7)">デバッグ バグ チェックとパラメーター 1 に等しい 0x7 0xA0</a>します。</p></td>
+<td align="left"><p>ハンドルされない例外が発生しました。 詳細については、<a href="#parameter-1-equals-0x7" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x7](#parameter-1-equals-0x7)">デバッグ バグ チェックとパラメーター 1 に等しい 0x7 0xA0</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
@@ -146,7 +146,7 @@ ms.locfileid: "56556677"
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>例外のポインター。</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>システム電源イベントの処理中にハンドルされない例外が発生しました。 詳細については、次を参照してください。<a href="#parameter-1-equals-0x101" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x101](#parameter-1-equals-0x101)">デバッグ バグ チェックとパラメーター 1 に等しい 0x101 0xA0</a>します。</p></td>
+<td align="left"><p>システム電源イベントの処理中にハンドルされない例外が発生しました。 詳細については、<a href="#parameter-1-equals-0x101" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x101](#parameter-1-equals-0x101)">デバッグ バグ チェックとパラメーター 1 に等しい 0x101 0xA0</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x102</p></td>

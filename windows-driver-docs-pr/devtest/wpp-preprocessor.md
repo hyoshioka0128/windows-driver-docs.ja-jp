@@ -44,7 +44,7 @@ Visual Studio と MSBuild 環境を使用してプリプロセッサ WPP を呼�
     -scan:"$(KMDF_INC_PATH)\$(KMDF_VER_PATH)\WdfTraceEnums.h"
     ```
 
-ビルド プロセスに関する詳細については、次を参照してください。 [TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
+ビルド プロセスに関する詳細については、[TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)を参照してください。
 
 TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別のプリプロセッサを実行することもできます。 このツールは、WDK の x86 bin サブディレクトリにあります。
 

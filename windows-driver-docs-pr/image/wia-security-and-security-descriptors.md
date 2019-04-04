@@ -87,7 +87,7 @@ HKLM,"SOFTWARE\MyCompany\MySpecialKey\"
 "D:(A;CIOI;GA;;;BA)(A;CIOI;GA;;;LS)"
 ```
 
-INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)します。
+INF ファイルの詳細については、[WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)を参照してください。
 
 詳細については、Windows セキュリティ モデルは Windows セキュリティのドキュメントを参照してください。 ドライバーの作成者は、破壊的なユーザーが、ドライバーの脆弱性を悪用の可能性を低減する一般的なセキュリティのベスト プラクティスの対応もあります。 "*Writing Secure Code*"(ISBN 0-7356-1588-8) マイクロソフト プレスがいくつかの有用なリソースの利用可能です。
 

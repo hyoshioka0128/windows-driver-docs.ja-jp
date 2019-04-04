@@ -33,7 +33,7 @@ Windows 10 での作業 3 D プリンターを取得する一般的なプロセ�
 
 次のセクションでの具体的な例を使用して各手順を表していますが。
 
-詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)します。
+詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)を参照してください。
 
 ## <a name="compatible-id"></a>互換性 ID
 

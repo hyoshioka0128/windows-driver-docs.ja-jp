@@ -50,4 +50,4 @@ traceview -parsepdb tracedrv.pdb -p d:\tracing
 
 Traceview でも作成、[トレース メッセージのコントロール (.tmc) ファイル](trace-message-control-file.md)ごと[トレース プロバイダー](trace-provider.md)ソース コードにします。 TMC ファイルが含まれています、[コントロール GUID](control-guid.md)と PDB ファイルで表される各トレース プロバイダーのトレース レベル。 TMC ファイルの名前は、コントロールのトレース プロバイダーの GUID です。
 
-Traceview で応答する場合、 **- parsepdb**コマンドを表示するだけで、**を終了する任意のキーを押して**メッセージ、必要な DLL がディレクトリに移動されていないこと可能性があります、traceview でtraceview.exe を実行可能ファイルが配置されています。 詳細については、次を参照してください。 [traceview での使用の準備](preparing-to-use-traceview.md)します。 これも可能性が PDB ファイルには、トレースの必要なコンポーネントがありません。 PDB ファイルの作成元のソース コードがソフトウェア トレースに対してインストルメント化されていることを確認します。
+Traceview で応答する場合、 **- parsepdb**コマンドを表示するだけで、**を終了する任意のキーを押して**メッセージ、必要な DLL がディレクトリに移動されていないこと可能性があります、traceview でtraceview.exe を実行可能ファイルが配置されています。 詳細については、[traceview での使用の準備](preparing-to-use-traceview.md)を参照してください。 これも可能性が PDB ファイルには、トレースの必要なコンポーネントがありません。 PDB ファイルの作成元のソース コードがソフトウェア トレースに対してインストルメント化されていることを確認します。

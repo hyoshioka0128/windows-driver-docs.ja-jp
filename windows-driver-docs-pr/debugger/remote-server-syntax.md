@@ -59,18 +59,18 @@ remote /s Command SessionName [/f Color] [/b] [/u User [/u User...]] [/ud User [
 ユーザーまたはグループの名前を示す\[*ドメイン* | *コンピューター*\]\\{*ユーザー*  | *グループ*} の形式。 ローカル コンピューターのユーザーまたはグループを指定する場合は、コンピューター名を省略します。
 
 <span id="________v______"></span><span id="________V______"></span> **/v**   
-セッションは、表示します。 詳細については、次を参照してください。[表示セッション](remote-tool-concepts.md#visible-session)します。
+セッションは、表示します。 詳細については、[表示セッション](remote-tool-concepts.md#visible-session)を参照してください。
 
 既定では、デバッガー セッションのみが表示され、セッションは、の値、*コマンド*パラメーターに含める単語**kd**、 **dbg**、 **remoteds**、 **ntsd**、または**cdb**。 そうしないと、セッションは表示されません。
 
 <span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-リモート デバッガー セッションは、見えなくなります。 詳細については、次を参照してください。[表示セッション](remote-tool-concepts.md#visible-session)します。
+リモート デバッガー セッションは、見えなくなります。 詳細については、[表示セッション](remote-tool-concepts.md#visible-session)を参照してください。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
 *コマンド*と*SessionName*構文行に示されている順序でパラメーターを表示する必要があります。
 
-リモート セッションを終了するには、次のように入力します。  <strong>@k</strong>します。 詳細については、次を参照してください。[リモート セッションのコマンド](remote-session-commands.md)します。
+リモート セッションを終了するには、次のように入力します。  <strong>@k</strong>します。 詳細については、[リモート セッションのコマンド](remote-session-commands.md)を参照してください。
 
 リモート ツールでは、現在のユーザーには、参加するアクセス許可はありません。 セッションは作成されません。
 

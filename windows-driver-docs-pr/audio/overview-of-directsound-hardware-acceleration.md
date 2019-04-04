@@ -37,7 +37,7 @@ DirectSound ハードウェア アクセラレーションを使ったデバイ�
 
 詳細については、音声の管理、Microsoft Windows SDK ドキュメントの説明を参照してください。
 
-DirectSound は、ハードウェア ミキサー ピンの 2 つの種類を使用できます。2D および 3D です。 SRC、減衰の混在しますが、いない 3D 配置 2D 暗証番号 (pin) を実行します。 DirectSound は、ソフトウェアの減衰と頻度のために必要な計算を実行する、2D の暗証番号 (pin) の適切なノードに結果を適用して 3D 配置を行う 2D 暗証番号 (pin) を使用できます。 これに対し、3D の pin には、これを行うには DirectSound で使用する代わりに 3D バッファーと 3D リスナーのプロパティから直接、独自の 3D 効果を計算することである 3D ノードが含まれています。 3D のノードのプロパティの一覧では、次を参照してください。 [ **KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)します。 2D と 3D の pin の詳細については、次を参照してください。 [WDM オーディオでは 2D DirectSound アクセラレーションをサポートしている](supporting-2d-directsound-acceleration-in-wdm-audio.md)と[WDM オーディオでは 3D DirectSound アクセラレーションをサポートしている](supporting-3d-directsound-acceleration-in-wdm-audio.md)します。
+DirectSound は、ハードウェア ミキサー ピンの 2 つの種類を使用できます。2D および 3D です。 SRC、減衰の混在しますが、いない 3D 配置 2D 暗証番号 (pin) を実行します。 DirectSound は、ソフトウェアの減衰と頻度のために必要な計算を実行する、2D の暗証番号 (pin) の適切なノードに結果を適用して 3D 配置を行う 2D 暗証番号 (pin) を使用できます。 これに対し、3D の pin には、これを行うには DirectSound で使用する代わりに 3D バッファーと 3D リスナーのプロパティから直接、独自の 3D 効果を計算することである 3D ノードが含まれています。 3D のノードのプロパティの一覧では、[ **KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)を参照してください。 2D と 3D の pin の詳細については、[WDM オーディオでは 2D DirectSound アクセラレーションをサポートしている](supporting-2d-directsound-acceleration-in-wdm-audio.md)と[WDM オーディオでは 3D DirectSound アクセラレーションをサポートしている](supporting-3d-directsound-acceleration-in-wdm-audio.md)を参照してください。
 
  
 

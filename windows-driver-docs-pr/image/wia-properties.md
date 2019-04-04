@@ -66,7 +66,7 @@ Unicode 文字 (ワイド文字の文字列) の文字列。
 <span id="Read_write"></span><span id="read_write"></span><span id="READ_WRITE"></span>読み取り/書き込み  
 ドライバーはどちらも読み取りおよび書き込みアクセス。
 
-上記のリストには、ここでは、WIA プロパティで使用されている型のみがについて説明します。 これらおよびその他のプロパティの型の詳細については、次を参照してください。 [ **WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)します。
+上記のリストには、ここでは、WIA プロパティで使用されている型のみがについて説明します。 これらおよびその他のプロパティの型の詳細については、[ **WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)を参照してください。
 
 Windows SDK にはに関する情報が含まれて、 [WIA\_RAW\_ヘッダー](https://go.microsoft.com/fwlink/p/?linkid=153316)構造体。 WIA に関する情報も含まれています。\_イベント\_XXX と WIA\_CMD\_XXX 定数、で説明した、 [WIA イベント識別子](https://go.microsoft.com/fwlink/p/?linkid=153318)トピック。
 

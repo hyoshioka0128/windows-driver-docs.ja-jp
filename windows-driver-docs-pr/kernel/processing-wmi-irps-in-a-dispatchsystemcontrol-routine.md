@@ -58,7 +58,7 @@ GUID を確認してください**Parameters.WMI.DataPath** 、ドライバー�
 
 呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP を完了します。
 
-詳細については、次を参照してください。 [WMI れた WNODE\_*XXX*構造](wmi-wnode-xxx-structures.md)します。
+詳細については、[WMI れた WNODE\_*XXX*構造](wmi-wnode-xxx-structures.md)を参照してください。
 
  
 

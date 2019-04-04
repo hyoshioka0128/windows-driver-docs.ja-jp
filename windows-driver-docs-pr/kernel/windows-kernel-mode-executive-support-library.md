@@ -26,7 +26,7 @@ Windows オペレーティング システムの使用、用語*executive レイ
 
 -   構成管理
 
-上記のマネージャーは、いくつかのライブラリと同様、個々 のテクノロジに直接インターフェイスを提供します。 ただし、Executive ライブラリにジェネリック インターフェイスとして一緒にグループ化されているルーチンが、通常は付いて"**Ex**"、たとえば、 **ExGetCurrentResourceThread**します。 Executive ライブラリ ルーチンの一覧は、次を参照してください。 [Executive ライブラリ サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544582)します。
+上記のマネージャーは、いくつかのライブラリと同様、個々 のテクノロジに直接インターフェイスを提供します。 ただし、Executive ライブラリにジェネリック インターフェイスとして一緒にグループ化されているルーチンが、通常は付いて"**Ex**"、たとえば、 **ExGetCurrentResourceThread**します。 Executive ライブラリ ルーチンの一覧は、[Executive ライブラリ サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544582)を参照してください。
 
 ドライバーと HAL 含まれていないこと、経営層の経営層のコンポーネント、Ntoskrnl.exe の一部であることに注意してください。
 

@@ -19,7 +19,7 @@ ms.locfileid: "56558114"
 
 Microsoft Visual studio では、実行中のプロセスにアタッチまたはを生成し、新しいプロセスにアタッチする Windows ユーザー モードのデバッガーを使用できます。 プロセスをデバッガーを実行している同じコンピューターで実行できる、または別のコンピューターで実行できます。
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)します。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)を参照してください。
 
 ## <a name="span-idattachingtoarunningprocessonthesamecomputerspanspan-idattachingtoarunningprocessonthesamecomputerspanspan-idattachingtoarunningprocessonthesamecomputerspanattaching-to-a-running-process-on-the-same-computer"></a><span id="Attaching_to_a_running_process_on_the_same_computer"></span><span id="attaching_to_a_running_process_on_the_same_computer"></span><span id="ATTACHING_TO_A_RUNNING_PROCESS_ON_THE_SAME_COMPUTER"></span>同じコンピューターで実行中のプロセスにアタッチします。
 

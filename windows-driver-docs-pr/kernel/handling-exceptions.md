@@ -84,7 +84,7 @@ try {
 
 -   [**ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)
 
-メモリ アクセスをユーザー モードのバッファーにもアクセス違反があります。 詳細については、次を参照してください。[ユーザー スペースのアドレスを参照するエラー](errors-in-referencing-user-space-addresses.md)します。
+メモリ アクセスをユーザー モードのバッファーにもアクセス違反があります。 詳細については、[ユーザー スペースのアドレスを参照するエラー](errors-in-referencing-user-space-addresses.md)を参照してください。
 
 構造化例外処理が C++ 例外から個別であることに注意してください。 カーネルは、C++ 例外処理をサポートしていません。
 

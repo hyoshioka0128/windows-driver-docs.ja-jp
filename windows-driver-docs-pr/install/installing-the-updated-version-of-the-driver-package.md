@@ -30,7 +30,7 @@ ms.locfileid: "56536685"
 
     システムの再起動後にデバイスを再インストール時に、新しいドライバーが自動的に読み込まれます。 DevCon システムを自動的に再起動するのには、再起動の条件付きパラメーターを追加します (**/r**) を削除 コマンド。
 
-    **注**  、 [DevCon](https://msdn.microsoft.com/library/windows/hardware/ff544707) WDK でツールが用意されています。 そのコマンドの詳細については、次を参照してください。 [DevCon コマンド](https://msdn.microsoft.com/library/windows/hardware/ff544766)します。
+    **注**  、 [DevCon](https://msdn.microsoft.com/library/windows/hardware/ff544707) WDK でツールが用意されています。 そのコマンドの詳細については、[DevCon コマンド](https://msdn.microsoft.com/library/windows/hardware/ff544766)を参照してください。
 
      
 
@@ -40,7 +40,7 @@ DevCon 削除コマンドの代替では、更新、[ドライバー パッケ�
 
     デバイス マネージャーのウィンドウ内で、デバイスの名前またはアイコンを右クリックし、**プロパティ**します。 **プロパティ**ウィンドウがドライバー タブをクリックし、クリックして、**ドライバーの更新**ボタンをクリックします。
 
--   更新プログラムの DevCon コマンド。 このコマンドの詳細については、次を参照してください。 [ **DevCon コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff544766)します。
+-   更新プログラムの DevCon コマンド。 このコマンドの詳細については、[ **DevCon コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff544766)を参照してください。
 
  
 

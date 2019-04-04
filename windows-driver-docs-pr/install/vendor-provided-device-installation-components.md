@@ -19,18 +19,18 @@ ms.locfileid: "56550527"
 <a href="" id="driver-package"></a>ドライバー パッケージ  
 A[ドライバー パッケージ](driver-packages.md)の Windows でサポートされるデバイスを指定する必要がありますが、すべてのソフトウェア コンポーネントで構成されます。 これらのコンポーネントを以下に示します。
 
--   [INF ファイル](inf-files.md)デバイスとドライバーのインストールに関する情報を提供します。 詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff538378)します。
+-   [INF ファイル](inf-files.md)デバイスとドライバーのインストールに関する情報を提供します。 詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff538378)を参照してください。
 
--   A[カタログ ファイル](catalog-files.md)のデジタル署名を含む、[ドライバー パッケージ](driver-packages.md)します。 詳細については、次を参照してください。[デジタル署名](digital-signatures.md)します。
+-   A[カタログ ファイル](catalog-files.md)のデジタル署名を含む、[ドライバー パッケージ](driver-packages.md)します。 詳細については、[デジタル署名](digital-signatures.md)を参照してください。
 
 -   デバイスのドライバーです。
 
 <a href="" id="drivers"></a>ドライバー  
 ドライバーにより、ハードウェア デバイスと対話します。 Windows では、ドライバーのバイナリ ファイル (.sys) をコピー、%systemroot% を\\system32\\ドライバー ディレクトリ、デバイスがインストールされている場合。 ドライバーは、ほとんどのデバイスの必要があります。
 
-詳細については、次を参照してください。[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)します。
+詳細については、[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)を参照してください。
 
-Windows のドライバーの詳細については、次を参照してください。 [Windows ドライバーの概要](https://msdn.microsoft.com/library/windows/hardware/ff554690)します。
+Windows のドライバーの詳細については、[Windows ドライバーの概要](https://msdn.microsoft.com/library/windows/hardware/ff554690)を参照してください。
 
  
 

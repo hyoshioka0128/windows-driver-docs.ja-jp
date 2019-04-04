@@ -24,7 +24,7 @@ OID_WWAN_SAR_TRANSMISSION_STATUS を有効または特定吸収レート (SAR) �
 
 各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [ **NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info)内で行政区の通知転送状態であるかどうかを記述する構造体が有効になっています。モデム。
 
-この OID の使用状況に関する詳細については、次を参照してください。 [MBIM_CID_MS_TRANSMISSION_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmstransmissionstatus)します。
+この OID の使用状況に関する詳細については、[MBIM_CID_MS_TRANSMISSION_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmstransmissionstatus)を参照してください。
 
 ## <a name="requirements"></a>要件
 

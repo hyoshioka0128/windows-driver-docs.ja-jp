@@ -14,7 +14,7 @@ ms.locfileid: "57349737"
 # <a name="building-uwp-device-apps"></a>UWP デバイス アプリを構築する
 
 
-デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 このトピックでは、UWP デバイスのアプリ、1 つは、構築するための基本的な手順を送信する必要あります、Microsoft Store のダッシュ ボードと、Windows デベロッパー センター ハードウェア ダッシュ ボードには、アプリとデバイスのメタデータそれぞれ順のコンポーネントについて説明します。 各手順の詳細については、次を参照してください。[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)します。
+デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 このトピックでは、UWP デバイスのアプリ、1 つは、構築するための基本的な手順を送信する必要あります、Microsoft Store のダッシュ ボードと、Windows デベロッパー センター ハードウェア ダッシュ ボードには、アプリとデバイスのメタデータそれぞれ順のコンポーネントについて説明します。 各手順の詳細については、[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)を参照してください。
 
 ## <a name="span-idthebuildingblocksspanspan-idthebuildingblocksspanspan-idthebuildingblocksspanthe-building-blocks"></a><span id="The_building_blocks"></span><span id="the_building_blocks"></span><span id="THE_BUILDING_BLOCKS"></span>構成要素
 
@@ -43,7 +43,7 @@ ms.locfileid: "57349737"
 <td align="left"><strong>ドライバー</strong></td>
 <td align="left">すべての UWP デバイス アプリは、デバイスにアクセスするドライバーを直接に使用します。 たとえば、Windows ランタイムのデバイス プロトコル Api、Windows 8.1 で導入されたは使用インボックス ドライバーを使用、アプリが USB、HID、および Bluetooth 経由で通信できるようにします。 これらの Api で使用されるドライバーに関する詳細については、次を参照してください。<a href="step-1--create-a-uwp-device-app.md" data-raw-source="[Step 1: Create a UWP device app](step-1--create-a-uwp-device-app.md)">手順 1。UWP デバイスのアプリ作成</a>です。
 <div class="alert">
-<strong>重要な</strong>カスタム ドライバーを使用してデバイスのアクセスには、Microsoft からの承認が必要です。 詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=306693" data-raw-source="[UWP device app Design Guide for Specialized Devices Internal to the PC](https://go.microsoft.com/fwlink/p/?LinkId=306693)">UWP デバイス アプリ、PC にデバイスの内部の特殊化の設計ガイド</a>します。
+<strong>重要な</strong>カスタム ドライバーを使用してデバイスのアクセスには、Microsoft からの承認が必要です。 詳細については、<a href="https://go.microsoft.com/fwlink/p/?LinkId=306693" data-raw-source="[UWP device app Design Guide for Specialized Devices Internal to the PC](https://go.microsoft.com/fwlink/p/?LinkId=306693)">UWP デバイス アプリ、PC にデバイスの内部の特殊化の設計ガイド</a>を参照してください。
 </div>
 <div>
  
@@ -75,7 +75,7 @@ ms.locfileid: "57349737"
 
 [手順 5:Microsoft Store のダッシュ ボードにアプリを送信](step-5--submit-the-app.md)します。 販売の詳細を確認し、アプリがある UWP デバイスのアプリのテスト担当者にことを示すダッシュ ボードを使用します。
 
-**注**  アプリ特権のあるアプリは、自動インストールが構成されていない場合は、手順 6 の後に Microsoft Store のダッシュ ボードにアプリを送信することができます。 詳細については、次を参照してください。[アプリ送信のシーケンスを特権](#priv-sequence)します。
+**注**  アプリ特権のあるアプリは、自動インストールが構成されていない場合は、手順 6 の後に Microsoft Store のダッシュ ボードにアプリを送信することができます。 詳細については、[アプリ送信のシーケンスを特権](#priv-sequence)を参照してください。
 
  
 

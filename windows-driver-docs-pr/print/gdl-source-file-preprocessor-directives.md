@@ -37,9 +37,9 @@ ms.locfileid: "56536574"
 
 プリプロセッサ ディレクティブを使用して、特定の[GDL プリプロセッサ構文](gdl-preprocessor-syntax.md)と[GDL プリプロセッサ キーワード](gdl-preprocessor-keywords.md)します。
 
-GDL プリプロセッサ ディレクティブは、GPD プリプロセッサ ディレクティブの拡張機能です。 GDL および GPD のプリプロセッサ ディレクティブの違いの詳細については、次を参照してください。 [GDL 間の相違点と GPD 前処理](differences-between-gdl-and-gpd-preprocessing.md)します。
+GDL プリプロセッサ ディレクティブは、GPD プリプロセッサ ディレクティブの拡張機能です。 GDL および GPD のプリプロセッサ ディレクティブの違いの詳細については、[GDL 間の相違点と GPD 前処理](differences-between-gdl-and-gpd-preprocessing.md)を参照してください。
 
-GDL プリプロセッサ ディレクティブは、1 つだけな GDL ディレクティブです。 GDL ディレクティブの他の種類の詳細については、次を参照してください。 [GDL ディレクティブ](gdl-directives.md)します。
+GDL プリプロセッサ ディレクティブは、1 つだけな GDL ディレクティブです。 GDL ディレクティブの他の種類の詳細については、[GDL ディレクティブ](gdl-directives.md)を参照してください。
 
 次に、GDL プリプロセッサのキーワードの概要を示します。
 

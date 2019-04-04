@@ -33,7 +33,7 @@ ms.locfileid: "56531293"
 
 
 > [!IMPORTANT] 
-> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、次を参照してください。 [Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)します。
+> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
 
 Windows Vista では、前に、Windows を実行している BIOS ベースのコンピューターは、Boot.ini テキスト ファイルのブート オプションを格納します。 Bootcfg を使用して Boot.ini を編集することができます (`bootcfg.exe`)、Windows XP および Windows Server 2003 に含まれるか、メモ帳などのテキスト エディターを使用して、ツール。 Bootcfg は、Windows ヘルプとサポートで記載されています。 表示またシステム コントロール パネルの ブート オプションを変更します。 システムのプロパティ ダイアログ ボックスの 詳細設定 タブで、の設定をクリックします。**起動と回復**します。 この機能が限られているために、このセクションでは説明しません。 については、**起動と回復** ダイアログ ボックスで、ヘルプとサポート センターを参照してください。
 

@@ -36,7 +36,7 @@ ms.locfileid: "56571305"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-デバッガーを実行するスレッドを指定します*クラスヒント*の。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
+デバッガーを実行するスレッドを指定します*クラスヒント*の。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
 
 <span id="_______CommandString______"></span><span id="_______commandstring______"></span><span id="_______COMMANDSTRING______"></span> *CommandString*   
 実行する 1 つまたは複数のコマンドを指定します。 セミコロンを使用して、複数のコマンドを分離する必要があります。 *クラスヒント*入力行の残りの部分が含まれています。 すべての文字"e"に続くテキストは、この文字列の一部として解釈されます。 囲まないで*クラスヒント*引用符で囲んで指定します。
@@ -68,7 +68,7 @@ ms.locfileid: "56571305"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドを制御する他のコマンドの詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+スレッドを制御する他のコマンドの詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

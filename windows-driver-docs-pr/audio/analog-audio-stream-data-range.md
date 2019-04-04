@@ -31,7 +31,7 @@ ms.locfileid: "56532208"
   DataRange.Specifier   = STATICGUIDOF(KSDATAFORMAT_SPECIFIER_NONE);
 ```
 
-通常、ミニポート ドライバーが通過アナログ信号を記述するこの種類のデータ範囲を使用、*ブリッジ pin*、オーディオのアダプター カードに有線接続を表します。 ブリッジの pin の詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 またでのコード例を参照してください[フィルター トポロジを公開する](exposing-filter-topology.md)します。
+通常、ミニポート ドライバーが通過アナログ信号を記述するこの種類のデータ範囲を使用、*ブリッジ pin*、オーディオのアダプター カードに有線接続を表します。 ブリッジの pin の詳細については、[オーディオ フィルター グラフ](audio-filter-graphs.md)を参照してください。 またでのコード例を参照してください[フィルター トポロジを公開する](exposing-filter-topology.md)します。
 
  
 

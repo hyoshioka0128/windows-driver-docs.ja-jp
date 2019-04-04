@@ -36,11 +36,11 @@ ms.locfileid: "56538433"
 
 -   非 PnP ドライバーが署名付き[カタログ ファイル](catalog-files.md)埋め込みの署名ではなく、ドライバーをインストールするインストール アプリケーションがカタログ ファイル システム カタログのルート ディレクトリでの説明に従ってインストール[非 PnP ドライバーのテスト署名済みカタログ ファイルをインストールする](installing-a-test-signed-catalog-file-for-a-non-pnp-driver.md)します。
 
--   テスト コンピューターで、テスト署名を有効になっています。 詳細については、次を参照してください。 [TESTSIGNING ブートの構成オプション](the-testsigning-boot-configuration-option.md)します。
+-   テスト コンピューターで、テスト署名を有効になっています。 詳細については、[TESTSIGNING ブートの構成オプション](the-testsigning-boot-configuration-option.md)を参照してください。
 
-テスト署名されたドライバー パッケージをインストールする方法の概要については、次を参照してください。 [Test-Signed ドライバー パッケージをテスト コンピューターにインストールする](installing-a-test-signed-driver-package-on-the-test-computer.md)します。
+テスト署名されたドライバー パッケージをインストールする方法の概要については、[Test-Signed ドライバー パッケージをテスト コンピューターにインストールする](installing-a-test-signed-driver-package-on-the-test-computer.md)を参照してください。
 
-インストールに関する問題のトラブルシューティングを行う方法の詳細については、次を参照してください。[インストールのトラブルシューティングと負荷の問題のドライバー パッケージの署名に](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)します。
+インストールに関する問題のトラブルシューティングを行う方法の詳細については、[インストールのトラブルシューティングと負荷の問題のドライバー パッケージの署名に](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)を参照してください。
 
  
 

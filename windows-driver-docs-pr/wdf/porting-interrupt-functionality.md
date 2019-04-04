@@ -21,7 +21,7 @@ ms.locfileid: "56553980"
 
 [ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735) WDF ドライバーでのコールバック WDM ドライバーのと同じタスクを実行する[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチン。 *EvtInterruptIsr*コールバック呼び出し[ **WdfInterruptQueueDpcForIsr** ](https://msdn.microsoft.com/library/windows/hardware/ff547371)キューに、 [ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)ディスパッチに後で処理するためのコールバック\_レベル。 応答では、フレームワークは、このコールバックを実行しているシステム キューに DPC オブジェクトを追加します。
 
-フレームワークの割り込みのオブジェクトの詳細については、次を参照してください。[ハードウェアの割り込み処理](handling-hardware-interrupts.md)します。
+フレームワークの割り込みのオブジェクトの詳細については、[ハードウェアの割り込み処理](handling-hardware-interrupts.md)を参照してください。
 
  
 

@@ -34,7 +34,7 @@ Windows Server 2008 以降では、プロセッサおよびメモリ モジュ�
 
 ユーザー モード アプリケーションが呼び出すことによって、ハードウェアのパーティションでは物理メモリの量を取得できます、 [GlobalMemoryStatusEx](https://go.microsoft.com/fwlink/p/?linkid=97891)関数。 詳細については、 **GlobalMemoryStatusEx**関数を Microsoft Windows SDK のマニュアルを参照してください。
 
-ユーザー モード アプリケーションは、アプリケーション通知を受信するオペレーティング システムを自体を登録する必要があります。 詳細については、次を参照してください。[アプリケーション通知を登録する](registering-for-application-notification.md)します。
+ユーザー モード アプリケーションは、アプリケーション通知を受信するオペレーティング システムを自体を登録する必要があります。 詳細については、[アプリケーション通知を登録する](registering-for-application-notification.md)を参照してください。
 
  
 

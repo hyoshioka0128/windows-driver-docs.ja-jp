@@ -64,7 +64,7 @@ DEVPKEY_DeviceClass_IconPath デバイス プロパティがのアイコンが�
 
 DEVPKEY_DeviceClass_IconPath 値は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)-Windows シェルによって使用される形式で、アイコン リソースの指定子の型指定されたリスト。 アイコン リソースの指定子の形式は"*ファイル パスの実行可能ファイル*、*リソース識別子*、"ここ*ファイル パスの実行可能ファイル*の完全修飾パスを含む、アイコン リソースを含むコンピューター上のファイルと*リソース識別子*リソースを識別する整数を指定します。 アイコン リソース指定子は、"%systemroot%\\system32\\DLL1.dll、-12"実行可能ファイルのパスが含まれています"%systemroot%\\system32\\DLL1.dll"と「-12」リソース識別子。
 
-Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。 これらのバージョンの Windows のデバイス セットアップ クラスのアイコンの情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)します。
+Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。 これらのバージョンの Windows のデバイス セットアップ クラスのアイコンの情報にアクセスする方法については、[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

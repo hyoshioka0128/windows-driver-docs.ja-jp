@@ -115,7 +115,7 @@ D3cold 内にあるデバイスのままに substate D0 を入力することに
 -   [D3hot 下位状態](#d3hot)
 -   [D3cold 下位状態](#d3cold)
 
-詳細については、次を参照してください。[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)します。
+詳細については、[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)を参照してください。
 
 ### <a href="" id="d3hot"></a>D3hot 下位状態
 
@@ -169,7 +169,7 @@ Windows 8 以降、D3cold 下位状態内のデバイスは S0 システム電�
 
 デバイスの一部のクラスは、下位 D3cold 状態を定義します。
 
-詳細については、次を参照してください。[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)します。
+詳細については、[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)を参照してください。
 
  
 

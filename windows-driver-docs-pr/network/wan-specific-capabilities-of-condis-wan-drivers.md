@@ -26,11 +26,11 @@ ms.locfileid: "56538790"
 
 -   いる CoNDIS WAN ドライバーでは、WAN に固有の Oid をサポートします。[OID\_WAN\_永続的な\_アドレス](https://msdn.microsoft.com/library/windows/hardware/ff561220)、 [OID\_WAN\_現在\_アドレス](https://msdn.microsoft.com/library/windows/hardware/ff561200)、および[OID\_WAN\_MEDIUM\_サブタイプ](https://msdn.microsoft.com/library/windows/hardware/ff561216)します。
 
--   セットおよびクエリの特性を操作するには、いる CoNDIS WAN Oid のセットをサポートしている CoNDIS WAN ミニポート ドライバー。 いる CoNDIS WAN Oid の詳細については、次を参照してください。[いる CoNDIS WAN オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff545146)します。
+-   セットおよびクエリの特性を操作するには、いる CoNDIS WAN Oid のセットをサポートしている CoNDIS WAN ミニポート ドライバー。 いる CoNDIS WAN Oid の詳細については、[いる CoNDIS WAN オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff545146)を参照してください。
 
--   TAPI サービスを提供している CoNDIS WAN ミニポート ドライバーでは、セットおよびクエリの特性を操作している CoNDIS TAPI Oid のセットをサポートします。 いる CoNDIS TAPI Oid の詳細については、次を参照してください。 [Connection-Oriented NDIS の TAPI 拡張](https://msdn.microsoft.com/library/windows/hardware/ff570924)します。
+-   TAPI サービスを提供している CoNDIS WAN ミニポート ドライバーでは、セットおよびクエリの特性を操作している CoNDIS TAPI Oid のセットをサポートします。 いる CoNDIS TAPI Oid の詳細については、[Connection-Oriented NDIS の TAPI 拡張](https://msdn.microsoft.com/library/windows/hardware/ff570924)を参照してください。
 
--   いる CoNDIS WAN ミニポート ドライバーでは、リンクの状態の変化を示す WAN に固有の状態インジケーターのセットをサポートします。 いる CoNDIS WAN ミニポート ドライバーの状態インジケーターの詳細については、次を参照してください。[を示すいる CoNDIS WAN ミニポート ドライバー ステータス](indicating-condis-wan-miniport-driver-status.md)します。
+-   いる CoNDIS WAN ミニポート ドライバーでは、リンクの状態の変化を示す WAN に固有の状態インジケーターのセットをサポートします。 いる CoNDIS WAN ミニポート ドライバーの状態インジケーターの詳細については、[を示すいる CoNDIS WAN ミニポート ドライバー ステータス](indicating-condis-wan-miniport-driver-status.md)を参照してください。
 
 -   いる CoNDIS WAN ミニポート ドライバーでは、WAN に固有の一連の統計を保持します。 [OID\_WAN\_CO\_取得\_STATS\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569820)OID は、統計情報を返す、ミニポート ドライバーを要求します。
 

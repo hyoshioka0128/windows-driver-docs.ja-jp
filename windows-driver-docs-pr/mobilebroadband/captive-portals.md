@@ -55,7 +55,7 @@ False の正の値または false ネガティブ テスト結果を避けるた
 ## <a name="span-idtouchfrspanspan-idtouchfrspantouch-friendly-web-pages"></a><span id="touchfr"></span><span id="TOUCHFR"></span>タッチ操作に適した web ページ
 
 
-Windows 8、Windows 8.1、および Windows 10 エクスペリエンスはタッチ ファーストに設計されています。 これは、web ページに拡張されます。 タッチ ユーザーより大規模でターゲットへのコントロールと、web ページをレイアウトするために検討してください。 過剰なにスクロールすると、対話を必要としないようにし必要に応じて、複数のページにフローを中断するレイアウトを使用します。 タッチ操作に適した web デザインの詳細については、次を参照してください。[タッチ入力のための設計](https://msdn.microsoft.com/library/windows/apps/hh465415.aspx)します。
+Windows 8、Windows 8.1、および Windows 10 エクスペリエンスはタッチ ファーストに設計されています。 これは、web ページに拡張されます。 タッチ ユーザーより大規模でターゲットへのコントロールと、web ページをレイアウトするために検討してください。 過剰なにスクロールすると、対話を必要としないようにし必要に応じて、複数のページにフローを中断するレイアウトを使用します。 タッチ操作に適した web デザインの詳細については、[タッチ入力のための設計](https://msdn.microsoft.com/library/windows/apps/hh465415.aspx)を参照してください。
 
 ## <a name="span-idpapspanspan-idpapspanprovision-after-purchase"></a><span id="pap"></span><span id="PAP"></span>購入後にプロビジョニングします。
 

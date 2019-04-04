@@ -74,7 +74,7 @@ ms.locfileid: "56551880"
 
 ### <a name="span-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanspan-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanspan-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanwindows8-windows81-or-windows10-certified-mobile-broadband-devices"></a><span id="Windows_8__Windows_8.1__or_Windows_10_certified_mobile_broadband_devices"></span><span id="windows_8__windows_8.1__or_windows_10_certified_mobile_broadband_devices"></span><span id="WINDOWS_8__WINDOWS_8.1__OR_WINDOWS_10_CERTIFIED_MOBILE_BROADBAND_DEVICES"></span>Windows 8、Windows 8.1、または Windows 10 モバイル ブロード バンド デバイスを認定
 
-Windows モバイル ブロード バンド プラットフォームを最大限に活用するには、モバイル ブロード バンド デバイスは、Windows 8、Windows 8.1、または Windows 10 のハードウェア認定要件を満たす必要があります。 ハードウェア認定の要件の包括的な説明は、次を参照してください。 [Windows ハードウェア認定要件](https://msdn.microsoft.com/library/windows/hardware/hh748188)します。
+Windows モバイル ブロード バンド プラットフォームを最大限に活用するには、モバイル ブロード バンド デバイスは、Windows 8、Windows 8.1、または Windows 10 のハードウェア認定要件を満たす必要があります。 ハードウェア認定の要件の包括的な説明は、[Windows ハードウェア認定要件](https://msdn.microsoft.com/library/windows/hardware/hh748188)を参照してください。
 
 エンドユーザーの最も単純な接続エクスペリエンスは USB ベースのモバイル ブロード バンド デバイスに配信されます。 ハードウェア認定の要件の一部として、USB デバイスとしてマニフェストのすべてのモバイル ブロード バンド デバイスが準拠する必要があります、[モバイル ブロード バンド インターフェイス モデル (MBIM) 仕様](https://msdn.microsoft.com/library/windows/hardware/dn265427)MBIM v1.0 の正誤表とします。 これには、外部 USB ドングルと USB インターフェイスを提供する組み込みのモジュールの両方が含まれます。 このクラス デバイスでは、には Windows 8、Windows 8.1、または Windows 10 には、IHV から追加のドライバーが不要し、ユーザーの接続エクスペリエンスを簡略化モバイル ブロード バンド クラス ドライバーが含まれます。 USB ドライバー モデルではないその他のハードウェアが Windows 8、Windows 8.1、および Windows 10 の証明書を受信できるし、Microsoft Store モバイル ブロード バンド アプリ エクスペリエンスを提供しますが、モバイル ブロード バンド クラス ドライバーではサポートされていません。
 
@@ -88,7 +88,7 @@ Windows モバイル ブロード バンド プラットフォームを最大限
 
 WinRT デバイスのサービス API を使用してモバイル ブロード バンド アプリに直接公開されるカスタムのデバイス サービス拡張機能を使用して、追加のデバイスの機能を実装できます。
 
-モバイル ブロード バンド クラス ドライバーの詳細については、次を参照してください。[モバイル ブロード バンド (MB) の参照を](https://msdn.microsoft.com/library/windows/hardware/ff560545)します。
+モバイル ブロード バンド クラス ドライバーの詳細については、[モバイル ブロード バンド (MB) の参照を](https://msdn.microsoft.com/library/windows/hardware/ff560545)を参照してください。
 
 ### <a name="span-iddeviceserviceextensionapispanspan-iddeviceserviceextensionapispanspan-iddeviceserviceextensionapispandevice-service-extension-api"></a><span id="Device_service_extension_API"></span><span id="device_service_extension_api"></span><span id="DEVICE_SERVICE_EXTENSION_API"></span>デバイス サービス拡張機能 API
 
@@ -118,7 +118,7 @@ Windows のワイヤレス プラットフォームには、アプリで使用�
 
 -   特定のデバイスからイベントを要請していないデバイスの登録します。
 
-詳細については、次を参照してください。 [ **IMbnDeviceService インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/hh780509)します。
+詳細については、[ **IMbnDeviceService インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/hh780509)を参照してください。
 
 ### <a name="span-idlegacysupportandidentitymorphingspanspan-idlegacysupportandidentitymorphingspanspan-idlegacysupportandidentitymorphingspanlegacy-support-and-identity-morphing"></a><span id="Legacy_support_and_identity_morphing"></span><span id="legacy_support_and_identity_morphing"></span><span id="LEGACY_SUPPORT_AND_IDENTITY_MORPHING"></span>レガシ サポートし、id モーフィング
 
@@ -148,11 +148,11 @@ Windows 8 および Windows 8.1 の認定デバイスが古いプラットフォ
 
 ネイティブの Windows 8、Windows 8.1、および Windows 10 のクラス ドライバーをドライバーのインストールは必要ありませんので、大容量記憶装置のデバイスとして最初に公開自体の外部の USB デバイスの必要はありません。 Windows 8、Windows 8.1、および Windows 10 デバイスの id モーフィング、すぐにモバイル ブロード バンド デバイスとして表示するデバイスをトリガーする機能が含まれます。
 
-Id モーフィング ソリューションを開発する方法については、次を参照してください。 [ **IMbnDeviceService インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/hh780509)します。\]
+Id モーフィング ソリューションを開発する方法については、[ **IMbnDeviceService インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/hh780509)を参照してください。\]
 
 ### <a name="span-idfirmwareupdatesupportspanspan-idfirmwareupdatesupportspanspan-idfirmwareupdatesupportspanfirmware-update-support"></a><span id="Firmware_update_support"></span><span id="firmware_update_support"></span><span id="FIRMWARE_UPDATE_SUPPORT"></span>ファームウェア更新プログラムのサポート
 
-Windows Update を使用して、モバイル ブロード バンド デバイス ファームウェアを更新する必要があります。 これを実行する方法については、次を参照してください。[モバイル ブロード バンド デバイス ファームウェアの更新を Windows 8 で](https://msdn.microsoft.com/library/windows/hardware/dn423926)します。 お客様のエクスペリエンスに固有の構成は、モバイル ブロード バンド アプリを使用してプロビジョニングできます。
+Windows Update を使用して、モバイル ブロード バンド デバイス ファームウェアを更新する必要があります。 これを実行する方法については、[モバイル ブロード バンド デバイス ファームウェアの更新を Windows 8 で](https://msdn.microsoft.com/library/windows/hardware/dn423926)を参照してください。 お客様のエクスペリエンスに固有の構成は、モバイル ブロード バンド アプリを使用してプロビジョニングできます。
 
 ### <a name="span-idoma-dmclientsupportspanspan-idoma-dmclientsupportspanspan-idoma-dmclientsupportspanoma-dm-client-support"></a><span id="OMA-DM_client_support"></span><span id="oma-dm_client_support"></span><span id="OMA-DM_CLIENT_SUPPORT"></span>OMA DM クライアントのサポート
 
@@ -192,7 +192,7 @@ Windows では、enterprise が BYOD のサポートからのモバイルのネ�
 
  
 
-APN データベースに関する詳細については、次を参照してください。 [APN データベースの概要](apn-database-overview.md)します。
+APN データベースに関する詳細については、[APN データベースの概要](apn-database-overview.md)を参照してください。
 
 ### <a name="span-idnetworkpersonalizationspanspan-idnetworkpersonalizationspanspan-idnetworkpersonalizationspannetwork-personalization"></a><span id="Network_personalization"></span><span id="network_personalization"></span><span id="NETWORK_PERSONALIZATION"></span>ネットワークのパーソナル化
 

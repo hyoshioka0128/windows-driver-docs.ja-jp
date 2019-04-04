@@ -35,7 +35,7 @@ ms.locfileid: "56536052"
 
 プログラム id を**IOleCvt**オブジェクトが OlePrn.OleCvt します。
 
-ASP Web ページからプリンターへのアクセス方法の詳細については、次を参照してください。[インターネット印刷](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)します。
+ASP Web ページからプリンターへのアクセス方法の詳細については、[インターネット印刷](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)を参照してください。
 
 「プロパティの取得」操作、 **IOleCvt**インターフェイスは次のセクションで説明します。
 

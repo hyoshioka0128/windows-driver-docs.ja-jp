@@ -27,7 +27,7 @@ ms.locfileid: "56556995"
 
 各ストリームでサポートするデータ範囲の詳細、 **StreamFormatsArray**のメンバー、 [ **HW\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff559692)構造体。
 
-形式と範囲の交差部分の詳細については、次を参照してください。 [AVStream のデータ範囲の交差部分](data-range-intersections-in-avstream.md)します。
+形式と範囲の交差部分の詳細については、[AVStream のデータ範囲の交差部分](data-range-intersections-in-avstream.md)を参照してください。
 
  
 

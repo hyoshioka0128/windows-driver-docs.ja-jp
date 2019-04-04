@@ -42,7 +42,7 @@ Windows Driver Kit (WDK) または Windows オペレーティング システム
 
     TraceWPP では、ドライバーまたは WDK と Visual Studio を使用してアプリケーションをビルドするときに、WPP オプションを設定する代わりに提供します。 このツールのプロセスでは、ソース ファイル内のマクロをトレースし、WPP トレースを有効にするヘッダー ファイルを作成します。
 
-    際に使用されるものと同じ TraceWPP のコマンド ライン オプションは、 [TraceWPP タスク](tracewpp-task.md)は MSBuild に渡されます。 これらのオプションの詳細については、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
+    際に使用されるものと同じ TraceWPP のコマンド ライン オプションは、 [TraceWPP タスク](tracewpp-task.md)は MSBuild に渡されます。 これらのオプションの詳細については、[WPP プリプロセッサ](wpp-preprocessor.md)を参照してください。
 
     TraceWPP が、箱にある\\&lt;*プラットフォーム*&gt; WDK のディレクトリ。
 
@@ -60,7 +60,7 @@ Windows Driver Kit (WDK) または Windows オペレーティング システム
 
 -   Logman (Logman.exe) が完全に機能を GUI ベース[トレース コント ローラー](trace-controller.md)はパフォーマンス カウンターおよびイベント トレースのログ記録を制御するために特に設計されています。
 
-    Windows XP および Windows の以降のバージョンので Logman が含まれます。 このツールを使用する方法の詳細については、次を参照してください。、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=179385) TechNet web サイトのトピックです。
+    Windows XP および Windows の以降のバージョンので Logman が含まれます。 このツールを使用する方法の詳細については、、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=179385) TechNet web サイトのトピックを参照してください。
 
 ### <a name="span-idcreatingtmffilesspanspan-idcreatingtmffilesspancreating-tmf-files"></a><span id="creating_tmf_files"></span><span id="CREATING_TMF_FILES"></span>TMF ファイルを作成します。
 
@@ -78,7 +78,7 @@ Windows Driver Kit (WDK) または Windows オペレーティング システム
 
 -   Tracerpt (Tracerpt.exe) は、コマンド ライン[トレース コンシューマー](trace-consumer.md)に書式設定*トレース イベント*(**TraceEvent**) パフォーマンス カウンターし、CSV または XML ファイルに書き込むとします。 また、イベントを分析し、概要レポートを生成します。
 
-    Tracerpt は、Windows XP および Windows の以降のバージョンに含まれます。 このツールを使用する方法の詳細については、次を参照してください。 [Tracerpt](https://go.microsoft.com/fwlink/p/?linkid=179389) TechNet web サイトのトピックです。
+    Tracerpt は、Windows XP および Windows の以降のバージョンに含まれます。 このツールを使用する方法の詳細については、[Tracerpt](https://go.microsoft.com/fwlink/p/?linkid=179389) TechNet web サイトのトピックを参照してください。
 
 -   [Traceview で](traceview.md)、GUI ツール、つまりトレース コント ローラーとトレース コンシューマーも書式設定し、トレース メッセージが表示されます (**TraceMessage**) からのリアルタイムのトレース セッションまたはトレース ログ。 フィルター処理しを参照しやすく、表形式で、トレース メッセージを表示します。
 

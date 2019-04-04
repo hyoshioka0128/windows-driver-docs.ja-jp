@@ -23,9 +23,9 @@ ms.locfileid: "56538500"
 
 使用して、 *Mirror.inf*サンプル ミラー ドライバーの INF ファイルをテンプレートとしてミラー ドライバーの INF ファイルを構築します。
 
-詳細については、次を参照してください。[ブート ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547570)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+詳細については、[ブート ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547570)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
-**注**  以降 Windows 8 では、ミラー ドライバーがインストールされないシステムにします。 詳細については、次を参照してください。[ミラー ドライバー](mirror-drivers.md)します。
+**注**  以降 Windows 8 では、ミラー ドライバーがインストールされないシステムにします。 詳細については、[ミラー ドライバー](mirror-drivers.md)を参照してください。
 
  
 

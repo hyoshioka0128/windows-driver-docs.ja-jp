@@ -78,7 +78,7 @@ ms.locfileid: "56578765"
 
 12. IRP の処理時に\_MN\_停止\_NDIS は NIC 用に作成する機能のデバイス オブジェクト (FDO) を破棄していないデバイスで要求時に、 *AddDevice*ルーチンが呼び出されました。 NDIS は、受信した後にのみデバイス オブジェクトを破棄する[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738) nic 要求
 
-    PnP マネージャー IRP が発行された場合\_MN\_開始\_NDIS、NIC を再起動するデバイスが NIC に既に作成されている FDO を再利用 NDIS は NIC を再起動し、 この手順の詳細については、次を参照してください。[開始 NIC](starting-a-nic.md)します。
+    PnP マネージャー IRP が発行された場合\_MN\_開始\_NDIS、NIC を再起動するデバイスが NIC に既に作成されている FDO を再利用 NDIS は NIC を再起動し、 この手順の詳細については、[開始 NIC](starting-a-nic.md)を参照してください。
 
  
 

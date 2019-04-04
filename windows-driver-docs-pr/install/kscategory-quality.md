@@ -56,7 +56,7 @@ KSCATEGORY_QUALITY[デバイス インターフェイス クラス](https://msdn
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_QUALITY 機能カテゴリをサポートすることを示す KSCATEGORY_QUALITY のインスタンスを登録します。
 
-詳細については、次を参照してください。[品質管理](https://msdn.microsoft.com/library/windows/hardware/ff568124)します。
+詳細については、[品質管理](https://msdn.microsoft.com/library/windows/hardware/ff568124)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

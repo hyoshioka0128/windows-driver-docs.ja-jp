@@ -53,7 +53,7 @@ Storport の確認オプションをアクティブ化するための手順は�
 
 **Storport の検証をアクティブ化するには**
 
-1.  ドライバー検証マネージャーを使用して、または*Verifier.exe*コマンドライン、ミニポート ドライバーの検証を開始します。 Storport の検証はオプションとして利用できない、ために、少なくとも 1 つを選択する必要があります*他*Driver Verifier のオプション。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)と[検証するドライバーを選択すると](selecting-drivers-to-be-verified.md)します。
+1.  ドライバー検証マネージャーを使用して、または*Verifier.exe*コマンドライン、ミニポート ドライバーの検証を開始します。 Storport の検証はオプションとして利用できない、ために、少なくとも 1 つを選択する必要があります*他*Driver Verifier のオプション。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)と[検証するドライバーを選択すると](selecting-drivers-to-be-verified.md)を参照してください。
 
 2.  使用して、レジストリを開く*regedit.exe*します。 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\StorPort**キーを追加するという名前のサブキー**検証ツール**. 場合、 **StorPort**キーが存在しないか、それを作成する必要があります。 内で、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\STORPort\\Verifier**キーの追加、 **REG\_DWORD**という名前のエントリ**VerifyLevel**します。 Storport の検証テストをアクティブになるこのエントリに割り当てられた値が決定されます。 0x1 の値では、最大の検証を提供します。
 

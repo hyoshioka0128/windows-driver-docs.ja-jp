@@ -23,7 +23,7 @@ ms.locfileid: "56548863"
 
 基になるワイヤレス LAN (WLAN) アダプターには、スキャン操作が完了すると、オペレーティング システムに検出された基本的なサービスのセット (BSS) ネットワークの一覧を返します。 オペレーティング システムの呼び出し、 [ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://msdn.microsoft.com/library/windows/hardware/ff547445)関数をユーザーがいない作成ネットワーク プロファイルをすべて BSS ネットワーク。 この関数が呼び出されると、IHV 拡張機能の DLL は一時的な接続と BSS ネットワークへの接続に使用できるセキュリティ プロファイルのフラグメントを返すことができます。
 
-スキャン操作の詳細については、次を参照してください。[ネイティブ 802.11 スキャン操作](native-802-11-scan-operations.md)します。
+スキャン操作の詳細については、[ネイティブ 802.11 スキャン操作](native-802-11-scan-operations.md)を参照してください。
 
 ときに[ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://msdn.microsoft.com/library/windows/hardware/ff547445)が呼び出されると、IHV 拡張機能の DLL は次のガイドラインを従う必要があります。
 

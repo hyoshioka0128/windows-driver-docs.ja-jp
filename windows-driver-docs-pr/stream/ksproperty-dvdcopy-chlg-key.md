@@ -68,7 +68,7 @@ KSPROPERTY\_DVDCOPY\_CHLG\_キー プロパティは、DVD デコーダーと DV
 
 **取得**要求すると、DVD デコーダーがそのバス チャレンジのキーを提供します。 **設定**要求すると、DVD デコーダーが DVD ドライブから bus チャレンジのキーを提供します。
 
-バスの課題のキーの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+バスの課題のキーの詳細については、[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

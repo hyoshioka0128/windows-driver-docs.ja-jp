@@ -24,7 +24,7 @@ ms.locfileid: "56558417"
 
 記憶域フィルター ドライバー (SFD) がデバイスに固有の初期化を実行し、PnP マネージャーを呼び出すときにそのデバイスの拡張機能を設定、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)開始要求をルーチン ([ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)で[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749))。 SFD は、ストレージ クラス ドライバーのように開始要求と同じ方法を処理します。
 
-ストレージ クラス ドライバーの開始要求を処理してそのデバイスの拡張機能を設定する方法については、次を参照してください。[ストレージ クラス ドライバー](storage-class-drivers.md)します。 PnP 開始要求の処理の詳細については、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
+ストレージ クラス ドライバーの開始要求を処理してそのデバイスの拡張機能を設定する方法については、[ストレージ クラス ドライバー](storage-class-drivers.md)を参照してください。 PnP 開始要求の処理の詳細については、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
 
  
 

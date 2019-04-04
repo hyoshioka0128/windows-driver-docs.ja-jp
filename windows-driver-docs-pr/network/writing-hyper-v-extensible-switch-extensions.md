@@ -30,7 +30,7 @@ ms.locfileid: "56551678"
 
 [物理ネットワーク アダプターを管理します。](managing-physical-network-adapters.md)
 
-**注**  拡張可能スイッチの拡張機能は、NDIS フィルター ドライバーのアーキテクチャに基づいています。 詳細については、次を参照してください。 [NDIS フィルター ドライバー](ndis-filter-drivers.md)します。
+**注**  拡張可能スイッチの拡張機能は、NDIS フィルター ドライバーのアーキテクチャに基づいています。 詳細については、[NDIS フィルター ドライバー](ndis-filter-drivers.md)を参照してください。
 
  
 

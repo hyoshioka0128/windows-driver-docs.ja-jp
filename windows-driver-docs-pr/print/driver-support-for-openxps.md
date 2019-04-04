@@ -16,9 +16,9 @@ ms.locfileid: "56548686"
 
 OpenXPS とは、ドキュメントの Open XML Paper Specification 形式と Ecma International 標準仕様に基づきます。
 
-この仕様に関する最新情報のほとんどで、次を参照してください。 [Open XML Paper Specification](http://www.ecma-international.org/publications/standards/Ecma-388.htm)します。
+この仕様に関する最新情報のほとんどで、[Open XML Paper Specification](http://www.ecma-international.org/publications/standards/Ecma-388.htm)を参照してください。
 
-Windows 8 では、OpenXPS では、既存の Microsoft XPS 形式の継続的なサポートと並行して完全にサポートを提供します。 このトピックでは、v4 ドライバー モデルを使用して OpenXPS サポートについて説明します。 Windows アプリケーション開発者に関連する OpenXPS サポートについては、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)します。
+Windows 8 では、OpenXPS では、既存の Microsoft XPS 形式の継続的なサポートと並行して完全にサポートを提供します。 このトピックでは、v4 ドライバー モデルを使用して OpenXPS サポートについて説明します。 Windows アプリケーション開発者に関連する OpenXPS サポートについては、[OpenXPS を印刷するためのアプリのサポート](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)を参照してください。
 
 ## <a name="supported-openxps-scenarios"></a>サポートされている OpenXPS シナリオ
 
@@ -52,7 +52,7 @@ Windows 印刷パスでは、送信された XPS 形式、対象となる印刷�
 ## <a name="impact-on-app-developers"></a>アプリ開発者への影響
 
 
-OpenXPS for Windows 8 のサポートに関して、アプリ開発者の影響の詳細については、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)します。
+OpenXPS for Windows 8 のサポートに関して、アプリ開発者の影響の詳細については、[OpenXPS を印刷するためのアプリのサポート](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)を参照してください。
 
 ## <a name="impact-on-driver-developers"></a>ドライバー開発者への影響
 
@@ -134,7 +134,7 @@ XpsFormat=XPS,OpenXPS
 
 これにより、ユーザーは、このドライバーでは、印刷ジョブを送信ポートが PORTPROMPT に設定されている場合:、**ファイルの保存の**ダイアログが表示されます XPS と OpenXPS ファイルとしては、ダイアログ ボックスで、オプションを入力し、.xps または .oxps をそれぞれ、ファイルに適用拡張機能。
 
-マニフェストのファイルの保存のセクションの他のオプションの詳細については、次を参照してください。 [V4 ドライバー マニフェスト](v4-driver-manifest.md)します。
+マニフェストのファイルの保存のセクションの他のオプションの詳細については、[V4 ドライバー マニフェスト](v4-driver-manifest.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

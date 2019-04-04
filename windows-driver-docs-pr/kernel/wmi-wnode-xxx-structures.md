@@ -63,7 +63,7 @@ WMI と呼ばれる標準的なデータ構造体のセットを使用して**�
 
  
 
-2 つ追加**れた WNODE\_* XXX*** 構造体、 [**れた WNODE\_イベント\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff566373)と[ **れた WNODE\_イベント\_参照**](https://msdn.microsoft.com/library/windows/hardware/ff566374)、有効なイベントの通知を送信するために使用します。 イベント ブロックを登録するドライバー、イベントが有効になっているし、イベントが発生した場合に通知を送信、イベントの WMI 呼び出しによって[ **IoWMIWriteEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff550520)を渡して、**れた WNODE\_イベント\_* XXX*** 構造体。 WMI イベントを送信する方法については、次を参照してください。 [WMI イベントの送信](sending-wmi-events.md)します。
+2 つ追加**れた WNODE\_* XXX*** 構造体、 [**れた WNODE\_イベント\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff566373)と[ **れた WNODE\_イベント\_参照**](https://msdn.microsoft.com/library/windows/hardware/ff566374)、有効なイベントの通知を送信するために使用します。 イベント ブロックを登録するドライバー、イベントが有効になっているし、イベントが発生した場合に通知を送信、イベントの WMI 呼び出しによって[ **IoWMIWriteEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff550520)を渡して、**れた WNODE\_イベント\_* XXX*** 構造体。 WMI イベントを送信する方法については、[WMI イベントの送信](sending-wmi-events.md)を参照してください。
 
 各**れた WNODE\_* XXX***、次の構造で構成されます。
 

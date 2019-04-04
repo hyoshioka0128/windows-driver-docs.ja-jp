@@ -63,7 +63,7 @@ TAPI サービス (Tapisrv.exe) のプロセスはテレフォニー サービ�
 
 KMDDSP (Kmddsp.tsp) は、サービス プロバイダー、TAPI サービス プロセスのコンテキストで実行されている DLL です。 KMDDSP TAPI サービスに提示する TSPI インターフェイスを提供する[TAPI 対応アプリケーション](#ddk-tapi-aware-applications-ng)ように[NDISTAPI](#ddk-ndistapi-ng)ユーザー モード アプリケーションと通信できます。
 
-ユーザー モードの要求を対応する TAPI Oid に変換する NDISTAPI 連携 KMDDSP (OID\_TAPI\_*Xxx*)。 TAPI Oid の詳細については、次を参照してください。 [TAPI オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff564235)します。
+ユーザー モードの要求を対応する TAPI Oid に変換する NDISTAPI 連携 KMDDSP (OID\_TAPI\_*Xxx*)。 TAPI Oid の詳細については、[TAPI オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff564235)を参照してください。
 
 ### <a href="" id="ddk-ndptsp-ng"></a>NDPTSP
 
@@ -73,13 +73,13 @@ TAPI 接続指向の Oid をユーザー モードの要求を変換する NDPRO
 
 ### <a href="" id="ddk-ndistapi-ng"></a>NDISTAPI
 
-NDISTAPI (Ndistapi.sys) から発行される TAPI 要求を受信する[KMDDSP](#ddk-kmddsp-ng)号餧ェヒェマル[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710) NDIS WAN ミニポート ドライバーに対応する TAPI Oid をルーティングします。 NDISTAPI の詳細については、次を参照してください。 [NDISTAPI 概要](ndistapi-overview.md)します。
+NDISTAPI (Ndistapi.sys) から発行される TAPI 要求を受信する[KMDDSP](#ddk-kmddsp-ng)号餧ェヒェマル[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710) NDIS WAN ミニポート ドライバーに対応する TAPI Oid をルーティングします。 NDISTAPI の詳細については、[NDISTAPI 概要](ndistapi-overview.md)を参照してください。
 
 ### <a href="" id="ddk-ndproxy-ng"></a>NDPROXY
 
 NDPROXY (Ndproxy.sys) と通信、TSPI を通じて TAPI インターフェイス[NDPTSP](#ddk-ndptsp-ng)を提供します。 NDPROXY は、NDIS を通じて NDISWAN いる CoNDIS WAN ミニポート ドライバー、MCMs、コール マネージャーと通信します。
 
-NDPROXY の詳細については、次を参照してください。 [NDPROXY 概要](ndproxy-overview.md)します。
+NDPROXY の詳細については、[NDPROXY 概要](ndproxy-overview.md)を参照してください。
 
 ### <a name="driver-stack"></a>ドライバー スタック
 
@@ -93,7 +93,7 @@ NDISWAN (Ndiswan.sys) は、NDIS intermediate ドライバーです。 上端で
 
 NDISWAN は、PPP フレームのプロトコル/リンク、圧縮/圧縮解除、および暗号化/暗号化解除を提供します。 NDISWAN は、NDIS WAN といる CoNDIS WAN ミニポート ドライバーと連動します。
 
-NDISWAN の詳細については、次を参照してください。 [NDISWAN 概要](ndiswan-overview.md)します。
+NDISWAN の詳細については、[NDISWAN 概要](ndiswan-overview.md)を参照してください。
 
 ### <a href="" id="ddk-serial-driver-ng"></a>シリアル ドライバー
 
@@ -108,7 +108,7 @@ X.25 カードのシリアル ドライバーのエミュレーターを実装�
 
 WAN ミニポート ドライバーの間のインターフェイスを提供する[NDISWAN](#ddk-ndiswan-ng)と WAN Nic です。
 
-WAN ミニポート ドライバーは、NDIS WAN ミニポート ドライバーまたはいる CoNDIS WAN ミニポート ドライバーとして実装できます。 詳細については、アプリケーションに最も適したミニポート ドライバー モデルの選択は、次を参照してください。 [WAN ドライバー モデルを選択する](choosing-a-wan-driver-model.md)します。
+WAN ミニポート ドライバーは、NDIS WAN ミニポート ドライバーまたはいる CoNDIS WAN ミニポート ドライバーとして実装できます。 詳細については、アプリケーションに最も適したミニポート ドライバー モデルの選択は、[WAN ドライバー モデルを選択する](choosing-a-wan-driver-model.md)を参照してください。
 
  
 

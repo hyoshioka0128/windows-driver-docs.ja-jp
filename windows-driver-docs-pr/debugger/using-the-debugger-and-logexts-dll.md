@@ -30,7 +30,7 @@ ms.locfileid: "56531779"
 
 ### <a name="span-idattachingtothetargetapplicationspanspan-idattachingtothetargetapplicationspanattaching-to-the-target-application"></a><span id="attaching_to_the_target_application"></span><span id="ATTACHING_TO_THE_TARGET_APPLICATION"></span>ターゲット アプリケーションへのアタッチ
 
-ターゲット アプリケーションにデバッガーをアタッチする方法については、次を参照してください。[ユーザー モード プロセスを使用して WinDbg をデバッグ](debugging-a-user-mode-process-using-windbg.md)または[デバッグ ユーザー モード プロセスを使用して CDB](debugging-a-user-mode-process-using-cdb.md)します。
+ターゲット アプリケーションにデバッガーをアタッチする方法については、[ユーザー モード プロセスを使用して WinDbg をデバッグ](debugging-a-user-mode-process-using-windbg.md)または[デバッグ ユーザー モード プロセスを使用して CDB](debugging-a-user-mode-process-using-cdb.md)を参照してください。
 
 ### <a name="span-idusingtheloggerextensioncommandsspanspan-idusingtheloggerextensioncommandsspanusing-the-logger-extension-commands"></a><span id="using_the_logger_extension_commands"></span><span id="USING_THE_LOGGER_EXTENSION_COMMANDS"></span>ロガー拡張機能のコマンドを使用します。
 

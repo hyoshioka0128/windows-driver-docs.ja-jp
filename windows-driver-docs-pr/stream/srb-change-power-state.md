@@ -44,7 +44,7 @@ ms.locfileid: "56573322"
 
 ミニドライバーは、保存またはデバイスに固有のデータを復元する必要がある場合に行ってください、SRB を処理するときに\_変更\_POWER\_状態要求。
 
-電源状態の詳細については、次を参照してください。[個々 のデバイスを管理する Power](https://msdn.microsoft.com/library/windows/hardware/ff554397)します。
+電源状態の詳細については、[個々 のデバイスを管理する Power](https://msdn.microsoft.com/library/windows/hardware/ff554397)を参照してください。
 
  
 

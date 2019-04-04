@@ -124,7 +124,7 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-ユーザー モード アプリケーションを再度有効にする[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559525)メソッド。 エラーのソースを有効にする方法の詳細については、次を参照してください。 [、エラーの発生元を有効にする](enabling-an-error-source.md)します。
+ユーザー モード アプリケーションを再度有効にする[エラー ソース](hardware-errors-and-error-sources.md)呼び出すことによって、 [ **WHEAErrorSourceMethods::EnableErrorSourceRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559525)メソッド。 エラーのソースを有効にする方法の詳細については、[、エラーの発生元を有効にする](enabling-an-error-source.md)を参照してください。
 
  
 

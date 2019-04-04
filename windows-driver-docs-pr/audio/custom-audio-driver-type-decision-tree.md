@@ -30,7 +30,7 @@ PortCls と AVStream のオーディオ ドライバーの概要を説明し、�
 <span id="AVStream_Overview"></span><span id="avstream_overview"></span><span id="AVSTREAM_OVERVIEW"></span>[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)  
 AVStream ベースのドライバーのアーキテクチャの概要を提供し、この種類のドライバーが最適な選択肢をケースを強調表示します。
 
-について、オーディオ ドライバーを使用するデータ形式と、さまざまな形式をサポートする必要もあります。 データ形式と範囲の詳細については、次を参照してください。[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)します。
+について、オーディオ ドライバーを使用するデータ形式と、さまざまな形式をサポートする必要もあります。 データ形式と範囲の詳細については、[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)を参照してください。
 
 オーディオ ドライバーの開発のための手順を完了するを参照してください。 [WDM オーディオ ドライバーの開発のためのロードマップ](roadmap-for-developing-wdm-audio-drivers.md)します。
 

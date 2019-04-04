@@ -25,5 +25,5 @@ Windows Server 2003、Windows XP、および Windows 2000、ACPI BIOS が 1999 �
 
 デバイス マネージャーは、個々 のコンピューターが ACPI をサポートしているかどうかを示します。 ドライバー情報の確認、**コンピューター**デバイス カテゴリ。
 
-ACPI の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+ACPI の詳細については、、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)を参照してください。
 

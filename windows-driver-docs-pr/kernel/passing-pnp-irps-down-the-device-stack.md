@@ -24,9 +24,9 @@ ms.locfileid: "56570584"
 
 
 
-PnP マネージャーは、開始、停止、およびデバイスを削除するドライバーを直接を自分のデバイスのドライバーをクエリする Irp を使用します。 コードが主な機能であるすべての PnP Irp [ **IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772)、およびすべての PnP ドライバーが提供する必要があります、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンをこの関数のコードにサービスを提供します。 PnP マネージャーを初期化します**Irp の&gt;IoStatus.Status**ステータス\_されません\_IRP を送信するときにサポートされています。 詳細については、次を参照してください。 [DispatchPnP ルーチン](dispatchpnp-routines.md)します。
+PnP マネージャーは、開始、停止、およびデバイスを削除するドライバーを直接を自分のデバイスのドライバーをクエリする Irp を使用します。 コードが主な機能であるすべての PnP Irp [ **IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772)、およびすべての PnP ドライバーが提供する必要があります、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンをこの関数のコードにサービスを提供します。 PnP マネージャーを初期化します**Irp の&gt;IoStatus.Status**ステータス\_されません\_IRP を送信するときにサポートされています。 詳細については、[DispatchPnP ルーチン](dispatchpnp-routines.md)を参照してください。
 
-PnP マイナー Irp の一覧は、次を参照してください。[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+PnP マイナー Irp の一覧は、[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)を参照してください。
 
 デバイスのすべてのドライバーには、スタック内のドライバーが IRP が失敗した場合を除き、PnP IRP に応答する機会が必要です。 (詳しくは、次の図を参照してください)。
 

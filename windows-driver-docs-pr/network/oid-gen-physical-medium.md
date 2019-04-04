@@ -48,7 +48,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 
 **NdisPhysicalMediumWirelessWan**ワイヤレス WAN リンク経由でパケットが転送されます。 たとえば、CDPD、CDMA、および GPRS に含まれています。
 
-<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**ネイティブ 802.11 インターフェイスに準拠のミニポート ドライバーを介してワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)します。
+<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**ネイティブ 802.11 インターフェイスに準拠のミニポート ドライバーを介してワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細については、[802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)を参照してください。
 
 **注**  NDIS 6.0 以降およびそれ以降、およびそれ以降のバージョンで、ネイティブの 802.11 インターフェイスがサポートされています。
 

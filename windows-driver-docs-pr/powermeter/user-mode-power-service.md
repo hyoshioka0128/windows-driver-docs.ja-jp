@@ -20,7 +20,7 @@ ms.locfileid: "56548911"
 
 ユーザー モード Power サービス (UMPS) 以降では、Windows 7 および Windows Server 2008 R2 は、ユーザー モード サービスおよびアプリケーションに電源管理のすべての側面のインターフェイスを提供します。 このインターフェイスには、電力使用状況測定と電源関連の情報の予算 (PMB) インフラストラクチャのサポートが含まれています。 この情報は、電源管理とレポートの Windows パフォーマンス モニター (PerfMon) などのアプリケーションによって使用されます。
 
-UMPS は、PMB WMI クラスのセットを使用して PMB 情報へのアクセスを提供します。 これらの WMI クラスは、Distributed Management Task Force (DMTF) の電源プロファイルのバージョン 1.1.0 に準拠します。 詳細については、次を参照してください。、 [DMTF の電源を提供するプロファイル](https://go.microsoft.com/fwlink/p/?linkid=145048)します。
+UMPS は、PMB WMI クラスのセットを使用して PMB 情報へのアクセスを提供します。 これらの WMI クラスは、Distributed Management Task Force (DMTF) の電源プロファイルのバージョン 1.1.0 に準拠します。 詳細については、、 [DMTF の電源を提供するプロファイル](https://go.microsoft.com/fwlink/p/?linkid=145048)を参照してください。
 
 PMB WMI クラスは、次のサポートを提供します。
 
@@ -28,7 +28,7 @@ PMB WMI クラスは、次のサポートを提供します。
 
 -   メーターの電力のしきい値や予算を超えたときに、コールバック通知を登録します。
 
-UPMS PMB WMI 要求にサービスを PMI でサポートされている I/O 要求パケット (Irp) を通じて電源メーター インターフェイス (PMI) を呼び出します。 PMI の詳細については、次を参照してください。[電力メーター インターフェイス](power-meter-interface.md)します。
+UPMS PMB WMI 要求にサービスを PMI でサポートされている I/O 要求パケット (Irp) を通じて電源メーター インターフェイス (PMI) を呼び出します。 PMI の詳細については、[電力メーター インターフェイス](power-meter-interface.md)を参照してください。
 
 PMB WMI クラスに関する詳細については、Windows SDK のドキュメントを参照してください。
 

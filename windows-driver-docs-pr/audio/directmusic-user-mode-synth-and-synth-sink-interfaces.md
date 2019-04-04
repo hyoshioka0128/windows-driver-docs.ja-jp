@@ -17,7 +17,7 @@ ms.locfileid: "56538043"
 ## <span id="ddk_directmusic_user_mode_synth_and_synth_sink_interfaces_ks"></span><span id="DDK_DIRECTMUSIC_USER_MODE_SYNTH_AND_SYNTH_SINK_INTERFACES_KS"></span>
 
 
-このセクションでは、ユーザー モードおよびインターフェイスをシンセサイザー シンセサイザー シンク DirectMusic について説明します。 」の説明に従って[ユーザー モードとカーネル モード](https://msdn.microsoft.com/library/windows/hardware/ff538679)、これらのインターフェイスは、カーネル モードに後で移植できるユーザー モードでのドライバー コードの開発に役立ちます。 詳しくは、次を参照してください。[シンセサイザーと Wave シンク](https://msdn.microsoft.com/library/windows/hardware/ff538434)します。
+このセクションでは、ユーザー モードおよびインターフェイスをシンセサイザー シンセサイザー シンク DirectMusic について説明します。 」の説明に従って[ユーザー モードとカーネル モード](https://msdn.microsoft.com/library/windows/hardware/ff538679)、これらのインターフェイスは、カーネル モードに後で移植できるユーザー モードでのドライバー コードの開発に役立ちます。 詳しくは、[シンセサイザーと Wave シンク](https://msdn.microsoft.com/library/windows/hardware/ff538434)を参照してください。
 
 このセクションでは、次の 2 つのユーザー モード インターフェイスが表示されます。
 

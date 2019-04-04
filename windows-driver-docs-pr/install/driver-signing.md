@@ -20,7 +20,7 @@ ms.locfileid: "56548790"
 
 Windows デバイスのインストールを使用して[デジタル署名](digital-signatures.md)とベンダー (ソフトウェア発行元) の id を検証するドライバー パッケージの整合性を検証するドライバー パッケージを提供します。 さらに、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 64 ビット バージョンの Windows Vista と Windows の以降のバージョンのドライバーの読み込みをカーネル モード ドライバーを署名する必要がありますを指定します。
 
-**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は EV 証明書が必要です。 Windows ハードウェア デベロッパー センター ダッシュによって署名されている必要があります。 詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)します。
+**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は EV 証明書が必要です。 Windows ハードウェア デベロッパー センター ダッシュによって署名されている必要があります。 詳細については、[Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)を参照してください。
 
  
 

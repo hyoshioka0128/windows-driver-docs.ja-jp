@@ -24,7 +24,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
 
 -   統合開発環境を設定するに最初に Microsoft Visual Studio Ultimate 2012 または Microsoft Visual Studio Professional 2012 をインストールし、WDK をインストールし。 Visual Studio と WDK の入手方法について詳しくは、[こちら](https://go.microsoft.com/fwlink/p/?linkid=239721)をご覧ください。
--   WDK をインストールするときに、デバッグ ツールの Windows が含まれます。 詳細については、次を参照してください。[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)します。
+-   WDK をインストールするときに、デバッグ ツールの Windows が含まれます。 詳細については、[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)を参照してください。
 
 ## <a name="creating-a-winusb-application"></a>WinUSB アプリケーションを作成します。
 

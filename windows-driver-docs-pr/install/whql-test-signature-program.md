@@ -25,11 +25,11 @@ Windows Hardware Quality Labs (WHQL) テスト署名プログラム サポート
 
 ユーザーが WHQL テスト署名されたドライバー パッケージからドライバーをインストールする前に、次の手順に従ってテスト コンピューターを構成する必要があります。
 
-1.  WHQL テスト証明書を正しくインストールするのには、ユーザー アカウント制御 (UAC) を無効にする必要があります。 詳細については、次を参照してください。 [UAC を無効にすると](#disabling-uac)します。
+1.  WHQL テスト証明書を正しくインストールするのには、ユーザー アカウント制御 (UAC) を無効にする必要があります。 詳細については、[UAC を無効にすると](#disabling-uac)を参照してください。
 
-2.  WHQL テスト ルート証明書 (*返送が必要*)、テスト コンピューターの信頼されたルート証明機関の証明書ストアのローカル コンピューターのフォルダーにインストールする必要があります。 詳細については、次を参照してください。[ルート証明書をテストするインストール、WHQL](#installing-the-whql-test-root-certificate)します。
+2.  WHQL テスト ルート証明書 (*返送が必要*)、テスト コンピューターの信頼されたルート証明機関の証明書ストアのローカル コンピューターのフォルダーにインストールする必要があります。 詳細については、[ルート証明書をテストするインストール、WHQL](#installing-the-whql-test-root-certificate)を参照してください。
 
-3.  [TESTSIGNING ブート構成オプション](the-testsigning-boot-configuration-option.md)テスト コンピューターで設定する必要があります。 詳細については、次を参照してください。 [TESTSIGNING ブート構成オプションを使用すると、設定](#setting-the-testsigning-boot-configuration-option)します。
+3.  [TESTSIGNING ブート構成オプション](the-testsigning-boot-configuration-option.md)テスト コンピューターで設定する必要があります。 詳細については、[TESTSIGNING ブート構成オプションを使用すると、設定](#setting-the-testsigning-boot-configuration-option)を参照してください。
 
 WHQL テスト署名を取得する方法については、電子メール<winqual@microsoft.com>され、件名に「テスト署名」が含まれます。
 

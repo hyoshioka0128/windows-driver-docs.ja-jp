@@ -31,11 +31,11 @@ NDIS は、WMI でのデータ プロバイダーとしてミニポート アダ
 
 NDIS ミニポート ドライバーを呼び出す前に[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数、NDIS 自動的に登録を解除しますミニポート アダプターの WMI と WMI、ミニポート ドライバーに WMI 要求を送信できなくようにします。
 
-WMI に登録 NDIS ミニポート アダプターごとには、NDIS は、特定の Oid または状態インジケーターに対応する Guid を登録します。 NDIS は、ミニポート アダプターのサポートされている一連の標準の Oid と状態インジケーターの Guid を登録します。 これらの標準的な Guid の詳細については、次を参照してください。[標準ミニポート ドライバー Oid に登録されている WMI](standard-miniport-driver-oids-registered-with-wmi.md)と[標準ミニポート ドライバーの状態に登録されている WMI](standard-miniport-driver-status-indications-registered-with-wmi.md)します。
+WMI に登録 NDIS ミニポート アダプターごとには、NDIS は、特定の Oid または状態インジケーターに対応する Guid を登録します。 NDIS は、ミニポート アダプターのサポートされている一連の標準の Oid と状態インジケーターの Guid を登録します。 これらの標準的な Guid の詳細については、[標準ミニポート ドライバー Oid に登録されている WMI](standard-miniport-driver-oids-registered-with-wmi.md)と[標準ミニポート ドライバーの状態に登録されている WMI](standard-miniport-driver-status-indications-registered-with-wmi.md)を参照してください。
 
-NDIS は、カスタム Oid と状態インジケーターのカスタム Guid を登録することもできます。 ミニポート ドライバーでは、カスタム Oid をサポートする場合は、関連付けられたカスタム Guid を提供します。 カスタマイズされた Oid と状態インジケーターの詳細については、次を参照してください。[カスタマイズされた Oid と状態インジケーター](customized-oids-and-status-indications.md)します。
+NDIS は、カスタム Oid と状態インジケーターのカスタム Guid を登録することもできます。 ミニポート ドライバーでは、カスタム Oid をサポートする場合は、関連付けられたカスタム Guid を提供します。 カスタマイズされた Oid と状態インジケーターの詳細については、[カスタマイズされた Oid と状態インジケーター](customized-oids-and-status-indications.md)を参照してください。
 
-接続指向のミニポート ドライバーでは、NDIS はまた、名前付き接続 (VCs) を登録します。 WMI クライアントは、スタンドアロンのコール マネージャー、またはクライアントの接続指向がという VCs のみを操作できます、 [ **NdisCoAssignInstanceName** ](https://msdn.microsoft.com/library/windows/hardware/ff561692)関数。 名前付きの VCs の NDIS WMI サポートの詳細については、次を参照してください。[という名前の VCs のサポート](support-for-named-vcs.md)します。
+接続指向のミニポート ドライバーでは、NDIS はまた、名前付き接続 (VCs) を登録します。 WMI クライアントは、スタンドアロンのコール マネージャー、またはクライアントの接続指向がという VCs のみを操作できます、 [ **NdisCoAssignInstanceName** ](https://msdn.microsoft.com/library/windows/hardware/ff561692)関数。 名前付きの VCs の NDIS WMI サポートの詳細については、[という名前の VCs のサポート](support-for-named-vcs.md)を参照してください。
 
  
 

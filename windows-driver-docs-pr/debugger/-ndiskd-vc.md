@@ -41,9 +41,9 @@ Ndiskd.dll
 <a name="remarks"></a>コメント
 -------
 
-いる CoNDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)します。
+いる CoNDIS の詳細については、[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)を参照してください。
 
-いる CoNDIS 仮想接続の詳細については、次を参照してください。[仮想接続](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)します。
+いる CoNDIS 仮想接続の詳細については、[仮想接続](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)を参照してください。
 
 <a name="examples"></a>使用例
 --------

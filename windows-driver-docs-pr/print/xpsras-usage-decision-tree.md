@@ -18,7 +18,7 @@ ms.locfileid: "56552185"
 
 ![xpsras gpu 利用デシジョン ツリー](images/xpsras-tree.png)
 
-XPS ラスタライズの詳細については、次を参照してください。 [XPS ラスタライズ サービスを使用して](using-the-xps-rasterization-service.md)します。
+XPS ラスタライズの詳細については、[XPS ラスタライズ サービスを使用して](using-the-xps-rasterization-service.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [XPS フィルター](xps-filters.md)  

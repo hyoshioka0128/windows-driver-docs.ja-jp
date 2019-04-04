@@ -23,12 +23,12 @@ ms.locfileid: "56558148"
 [**\*SSIdleTimeoutScreenOff** INF キーワード](#ssidletimeoutscreenoff-keyword)
 
 
-標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
 ## <a name="selectivesuspend-inf-keyword"></a>\*SelectiveSuspend INF キーワード
 
 
-NDIS 選択的な中断をサポートする必要があります指定ミニポート ドライバーの INF ファイル、  **\*SelectiveSuspend** INF キーワードを標準化します。 管理者を更新できます、ドライバーがインストールされた後、  **\*SelectiveSuspend**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+NDIS 選択的な中断をサポートする必要があります指定ミニポート ドライバーの INF ファイル、  **\*SelectiveSuspend** INF キーワードを標準化します。 管理者を更新できます、ドライバーがインストールされた後、  **\*SelectiveSuspend**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
 **注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 
@@ -85,14 +85,14 @@ SubkeyName に関連付けられているテキスト。
 
  
 
-ミニポート ドライバーを確認する必要があります、  **\*SelectiveSuspend** NDIS 選択的な中断のサポートをアドバタイズする前に、レジストリ内のキーワード値。 場合、  **\*SelectiveSuspend**キーワードが 0 の値を持つ、ミニポートがいずれかのサポートをアドバタイズする必要があります選択的な機能を中断します。 詳細については、次を参照してください。 [Reporting NDIS セレクティブ サスペンド機能](reporting-ndis-selective-suspend-capabilities.md)します。
+ミニポート ドライバーを確認する必要があります、  **\*SelectiveSuspend** NDIS 選択的な中断のサポートをアドバタイズする前に、レジストリ内のキーワード値。 場合、  **\*SelectiveSuspend**キーワードが 0 の値を持つ、ミニポートがいずれかのサポートをアドバタイズする必要があります選択的な機能を中断します。 詳細については、[Reporting NDIS セレクティブ サスペンド機能](reporting-ndis-selective-suspend-capabilities.md)を参照してください。
 
 ## <a name="ssidletimeout-inf-keyword"></a>\*SSIdleTimeout INF キーワード
 
 
 NDIS 選択的な中断をサポートしていますが、省略可能な指定する必要がありますミニポート ドライバーのファイル、INF  **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードは、秒単位でアイドル状態のタイムアウト期間を指定します。 超える期間の NDIS にネットワーク アダプター上の任意のアクティビティが検出されない場合、  **\*SSIdleTimeout**値、NDIS 開始をセレクティブ サスペンド操作を呼び出して、ミニポート ドライバーの[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。
 
-管理者を更新できます、ドライバーがインストールされた後、  **\*SSIdleTimeout**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+管理者を更新できます、ドライバーがインストールされた後、  **\*SSIdleTimeout**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
 **注**  アダプターの高度なプロパティ ページで、変更を行った後、ミニポート ドライバーが自動的に再起動します。
 
@@ -161,7 +161,7 @@ NDIS の 30% の精度はタイマーを使用して、アイドル タイムア
 
 NDIS 選択的な中断をサポートしていますが、省略可能な指定する必要がありますミニポート ドライバーのファイル、INF  **\*SSIdleTimeoutScreenOff** INF キーワードを標準化します。 このキーワードは、アイドル状態のタイムアウト期間を秒単位で指定しは、画面がオフの場合にのみ適用されます。 超える期間の NDIS にネットワーク アダプター上の任意のアクティビティが検出されない場合、  **\*SSIdleTimeoutScreenOff**値、画面がオフにした後、NDIS 開始をセレクティブ サスペンド操作ミニポートを呼び出すことによってドライバーの[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。
 
-管理者を更新できます、ドライバーがインストールされた後、  **\*SSIdleTimeoutScreenOff**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+管理者を更新できます、ドライバーがインストールされた後、  **\*SSIdleTimeoutScreenOff**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
 **注**アダプターの高度なプロパティ ページで、変更を行った後、ミニポート ドライバーが自動的に再起動します。
 

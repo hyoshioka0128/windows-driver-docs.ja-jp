@@ -48,7 +48,7 @@ iInterface:           0x02
 0x0409: "Microsoft LifeCam VX-5000"
 ```
 
-前の例では、次に注意してください。 **bInterfaceNumber**と**bAlternateSetting**フィールドの値。 これらのフィールドには、クライアント ドライバーは、インターフェイスとその代替の設定のいずれかのアクティブ化を使用してインデックスの値が含まれます。 アクティブにするため、ドライバーは USB ドライバー スタックに選択インターフェイス要求を送信します。 ドライバー スタックは、標準のコントロール要求 (インターフェイスの設定) を作成し、デバイスに送信します。 注、 **bInterfaceClass**フィールド。 インターフェイスの記述子または代替の設定のいずれかの記述子は、クラスのコード、サブクラスでは、およびプロトコルを指定します。 0x0E の値は、ビデオ デバイス クラスのインターフェイスであることを示します。 また、 **iInterface**フィールド。 その値は、インターフェイスの記述子に追加する 2 つの文字列記述子があることを示します。 文字列記述子には、デバイスの列挙中に、機能を識別するために使用される Unicode の説明が含まれています。 文字列記述子の詳細については、次を参照してください。 [USB 文字列記述子](usb-string-descriptors.md)します。
+前の例では、次に注意してください。 **bInterfaceNumber**と**bAlternateSetting**フィールドの値。 これらのフィールドには、クライアント ドライバーは、インターフェイスとその代替の設定のいずれかのアクティブ化を使用してインデックスの値が含まれます。 アクティブにするため、ドライバーは USB ドライバー スタックに選択インターフェイス要求を送信します。 ドライバー スタックは、標準のコントロール要求 (インターフェイスの設定) を作成し、デバイスに送信します。 注、 **bInterfaceClass**フィールド。 インターフェイスの記述子または代替の設定のいずれかの記述子は、クラスのコード、サブクラスでは、およびプロトコルを指定します。 0x0E の値は、ビデオ デバイス クラスのインターフェイスであることを示します。 また、 **iInterface**フィールド。 その値は、インターフェイスの記述子に追加する 2 つの文字列記述子があることを示します。 文字列記述子には、デバイスの列挙中に、機能を識別するために使用される Unicode の説明が含まれています。 文字列記述子の詳細については、[USB 文字列記述子](usb-string-descriptors.md)を参照してください。
 
 インターフェイスで各エンドポイントには、入力またはデバイスの出力の 1 つのストリームがについて説明します。 関数のさまざまな種類のストリームをサポートするデバイスには、複数のインターフェイスがあります。 関数に関連する複数のストリームをサポートするデバイスは、1 つのインターフェイスで、複数のエンドポイントをサポートできます。
 
@@ -80,7 +80,7 @@ bInterval:          0x01
 
   URB を送信するには、クライアント ドライバーは WDF 要求オブジェクトを使用する必要があります。 USB ドライバー スタックに要求オブジェクトを非同期的に送信するドライバーを呼び出す必要があります、 [ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド。 同期的に送信する呼び出し、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)メソッド。
 
-  <strong>WDM ドライバー: * * A Windows Driver Model (WDM) クライアント ドライバーでは構成記述子を URB を送信することでのみ取得できます。URB を割り当てることで、ドライバーを呼び出す必要があります、 [ </strong>USBD\_UrbAllocate<strong> ](<https://msdn.microsoft.com/library/windows/hardware/hh406250>)ルーチン。URB の書式を設定するドライバーを呼び出す必要があります、 [ </strong>UsbBuildGetDescriptorRequest * *](<https://msdn.microsoft.com/library/windows/hardware/ff538943>)マクロ。 URB を送信するには、ドライバーは IRP、URB を関連付けるし、USB ドライバー スタックに IRP を送信する必要があります。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
+  <strong>WDM ドライバー: * * A Windows Driver Model (WDM) クライアント ドライバーでは構成記述子を URB を送信することでのみ取得できます。URB を割り当てることで、ドライバーを呼び出す必要があります、 [ </strong>USBD\_UrbAllocate<strong> ](<https://msdn.microsoft.com/library/windows/hardware/hh406250>)ルーチン。URB の書式を設定するドライバーを呼び出す必要があります、 [ </strong>UsbBuildGetDescriptorRequest * *](<https://msdn.microsoft.com/library/windows/hardware/ff538943>)マクロ。 URB を送信するには、ドライバーは IRP、URB を関連付けるし、USB ドライバー スタックに IRP を送信する必要があります。 詳細については、[、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)を参照してください。
 
 USB 構成では、変数はインターフェイスとその代替の設定の数です。 そのため、これは構成記述子を保持するために必要なバッファーのサイズを予測する困難です。 クライアント ドライバーでは、2 つの手順でそのすべての情報を収集する必要があります。 まず、どのようなサイズを決定バッファー構成記述子のすべてを保持し、全体の記述子を取得する要求を発行するために必要です。 クライアント ドライバーでは、次の方法のいずれかで、サイズを取得できます。
 

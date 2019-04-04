@@ -103,7 +103,7 @@ VOID CsqReleaseLock(PIO_CSQ IoCsq, KIRQL Irql)
 
 システムが IRQL 変数へのポインターを渡します*CsqAcquireLock*と*CsqReleaseLock*します。 ドライバーは、キューのロックを実装するために、スピン ロックを使用している場合、ドライバーは、キューがロックされているときに、現在の IRQL を格納するこの変数を使用できます。
 
-ドライバーは、スピン ロックを使用する必要はありません。 たとえば、ドライバーは、キューをロックするのにミュー テックスを使用できます。 ドライバーを利用できる同期手法については、次を参照してください。[同期手法](synchronization-techniques.md)します。
+ドライバーは、スピン ロックを使用する必要はありません。 たとえば、ドライバーは、キューをロックするのにミュー テックスを使用できます。 ドライバーを利用できる同期手法については、[同期手法](synchronization-techniques.md)を参照してください。
 
 ### <a href="" id="ddk-using-the-cancel-safe-irp-queue-kg"></a>キャンセルの安全な IRP のキューを使用します。
 

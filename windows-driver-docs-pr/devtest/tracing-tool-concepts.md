@@ -56,7 +56,7 @@ ms.locfileid: "56551634"
 
 [登録済みのプロバイダー](registered-provider.md)
 
-イベントのトレースの概要については、Microsoft Windows SDK のドキュメントを参照してください。 Windows ソフトウェア トレース プリプロセッサ (WPP) の詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)します。
+イベントのトレースの概要については、Microsoft Windows SDK のドキュメントを参照してください。 Windows ソフトウェア トレース プリプロセッサ (WPP) の詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)を参照してください。
 
  
 

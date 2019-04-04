@@ -18,7 +18,7 @@ ms.locfileid: "56535371"
 >
 
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)します。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)を参照してください。
 
 Visual Studio を使用してリモート デバッグを実行するには。
 

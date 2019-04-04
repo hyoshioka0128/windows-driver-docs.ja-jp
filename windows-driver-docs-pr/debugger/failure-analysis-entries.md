@@ -14,7 +14,7 @@ ms.locfileid: "56580145"
 # <a name="failure-analysis-entries"></a>エラー分析エントリ
 
 
-A [ **DebugFailureAnalysis** ](https://msdn.microsoft.com/library/windows/hardware/jj983405)オブジェクトがエラーの分析のエントリのコレクション。 詳細については、次を参照してください。[エラー分析のエントリ、タグ、およびデータ型](writing-an-analysis-extension-to-extend--analyze.md#failure-analysis-entries-tags-and-data-types)します。
+A [ **DebugFailureAnalysis** ](https://msdn.microsoft.com/library/windows/hardware/jj983405)オブジェクトがエラーの分析のエントリのコレクション。 詳細については、[エラー分析のエントリ、タグ、およびデータ型](writing-an-analysis-extension-to-extend--analyze.md#failure-analysis-entries-tags-and-data-types)を参照してください。
 
 A*エラー分析のエントリ*(とも呼ばれる、 *FA エントリ*) は、次のいずれか。
 

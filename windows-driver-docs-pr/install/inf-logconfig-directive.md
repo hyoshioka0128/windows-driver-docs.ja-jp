@@ -336,13 +336,13 @@ PnP デバイスの場合は、PnP マネージャーは、一連の論理ハー
 
 結果として、 **LogConfig** ディレクティブを*DDInstall* PnP デバイスは、セクションは無視されます。 PnP デバイスのバスによって報告されたリソースをオーバーライドするには、 **LogConfig** ディレクティブを[ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクション。 ここで指定のリソース、*ログの構成 セクションで*バスによって報告された代わりに使用されます。
 
-プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
+プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、[INF ファイルを作成する](overview-of-inf-files.md)を参照してください。
 
-指定された*ログの構成 セクションで*名は、INF ファイルに固有である必要がありますが、それを参照できます**LogConfig**他 INF でディレクティブ*DDInstall*セクションに、同じデバイス. 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+指定された*ログの構成 セクションで*名は、INF ファイルに固有である必要がありますが、それを参照できます**LogConfig**他 INF でディレクティブ*DDInstall*セクションに、同じデバイス. 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 1 つだけ**ConfigPriority**エントリは、それぞれで使用できる*ログの構成 セクションで*します。 ありますの各デバイスのハードウェア リソース要件に応じて、その他のエントリの 1 つ以上。
 
-1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em>**.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、次を参照してください。[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)します。
+1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em>**.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)を参照してください。
 
 ### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig 参照セクションのエントリと値
 

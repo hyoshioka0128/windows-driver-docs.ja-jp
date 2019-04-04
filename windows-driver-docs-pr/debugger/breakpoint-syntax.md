@@ -30,7 +30,7 @@ ms.locfileid: "56550808"
 0:000> bp `source.c:31`
 ```
 
-この構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)、[ソース行構文](source-line-syntax.md)、および個々 のコマンドのトピックです。
+この構文の詳細については、[数値式の構文](numerical-expression-syntax.md)、[ソース行構文](source-line-syntax.md)、および個々 のコマンドのトピックを参照してください。
 
 ### <a name="span-idbreakpointsonmethodsspanspan-idbreakpointsonmethodsspanbreakpoints-on-methods"></a><span id="breakpoints_on_methods"></span><span id="BREAKPOINTS_ON_METHODS"></span>メソッドのブレークポイント
 
@@ -49,7 +49,7 @@ ms.locfileid: "56550808"
     0:000> bp @@( MyClass::MyMethod ) 
     ```
 
-複雑なブレークポイント コマンドを使用する場合は、MASM 式の構文を使用する必要があります。 式の構文の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
+複雑なブレークポイント コマンドを使用する場合は、MASM 式の構文を使用する必要があります。 式の構文の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
 
 ### <a name="span-idbreakpointsusingcomplicatedtextspanspan-idbreakpointsusingcomplicatedtextspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>複雑な文字を使用してブレークポイント
 

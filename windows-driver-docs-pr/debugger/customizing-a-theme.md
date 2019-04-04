@@ -57,7 +57,7 @@ WinDbg でソース ウィンドウを開くことから始めます。 タブ�
 
 タブのドッキングするプレース ホルダーの必要なウィンドウの上のすべてのウィンドウ型。
 
-WinDbg のウィンドウの位置の調整に関する詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
+WinDbg のウィンドウの位置の調整に関する詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
 
  
 

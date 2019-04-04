@@ -24,7 +24,7 @@ OID_WWAN_LTE_ATTACH_CONFIG により、オペレーティング システムは�
 
 各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG](ndis-status-wwan-lte-attach-config.md) LTE を示す通知が構成をアタッチします。
 
-詳細については、この OID を使用して、次を参照してください。 [MBIM_CID_MS_LTE_ATTACH_CONFIG](mb-lte-attach-operations.md)します。
+詳細については、この OID を使用して、[MBIM_CID_MS_LTE_ATTACH_CONFIG](mb-lte-attach-operations.md)を参照してください。
 
 ## <a name="requirements"></a>要件
 

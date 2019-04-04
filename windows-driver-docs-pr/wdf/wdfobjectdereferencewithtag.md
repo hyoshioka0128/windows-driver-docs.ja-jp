@@ -53,9 +53,9 @@ Framework のオブジェクトへのハンドル。
 
 呼び出す[ **WdfObjectDereferenceActual** ](https://msdn.microsoft.com/library/windows/hardware/ff548743)または**WdfObjectDereferenceWithTag**の代わりに[ **WdfObjectDereference** ](wdfobjectdereference.md) Microsoft デバッガーに追加の情報 (タグ文字列、行番号、およびファイル名) を提供します。 **WdfObjectDereferenceActual**中に、行番号とファイル名を指定するには、ドライバーは、 **WdfObjectDereferenceWithTag**ドライバーの現在の行番号とファイル名を使用します。
 
-使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
+使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、[KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。
 
-オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)します。
+オブジェクトの参照カウントの詳細については、[Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)を参照してください。
 
 <a name="examples"></a>例
 --------

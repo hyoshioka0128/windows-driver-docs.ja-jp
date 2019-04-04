@@ -37,7 +37,7 @@ ms.locfileid: "58419546"
 
 AV/C Stream フィルター ドライバーに依存、 *61883.sys*プロトコル ドライバー。 *Avcstrm.sys*使用によって提供される Ddi *61883.sys*アイソクロナス接続とアイソクロナス データがストリーミングとそれを実行するために*Avc.sys*外部デバイスの制御 AV/C コマンドを発行するには.
 
-AV/C ストリーミング フィルター ドライバーの構築、AV/C プロトコルの詳細については、次を参照してください。 [AV/C 概要](av-c-overview.md)します。 61883 プロトコルの詳細については、次を参照してください。 [IEC 61883 クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537188)します。
+AV/C ストリーミング フィルター ドライバーの構築、AV/C プロトコルの詳細については、[AV/C 概要](av-c-overview.md)を参照してください。 61883 プロトコルの詳細については、[IEC 61883 クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537188)を参照してください。
 
 詳細情報とリソースは、次のリンクを参照してください。
 

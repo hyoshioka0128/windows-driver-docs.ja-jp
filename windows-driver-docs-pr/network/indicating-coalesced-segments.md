@@ -32,9 +32,9 @@ NIC またはミニポート ドライバーする必要があります値を再
 
 NIC とミニポート ドライバーが常に設定する必要があります、 **IpChecksumSucceeded**と**TcpChecksumSucceeded**のフラグ、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567877)まとめられたセグメントを示す前に構造体。
 
-結合規則の詳細については、次を参照してください。 [TCP/IP セグメントの結合規則](rules-for-coalescing-tcp-ip-packets.md)します。
+結合規則の詳細については、[TCP/IP セグメントの結合規則](rules-for-coalescing-tcp-ip-packets.md)を参照してください。
 
-例外の詳細については、次を参照してください。[例外条件がその終了結合](exception-conditions-that-terminate-coalescing.md)します。
+例外の詳細については、[例外条件がその終了結合](exception-conditions-that-terminate-coalescing.md)を参照してください。
 
 ベスト エフォートで実行する結合が必要です。 ハードウェアが、coalesce では、場合によっては、たとえばによりリソースの不足ができません。 要件は、ここでは、主に coalesce をしない場合と結合する方法を指定すると述べています。
 

@@ -23,7 +23,7 @@ DBH プロンプトで実行できるコマンドの他の例を示します。
 
 ### <a name="span-iddisplayingprivatesymbolsandpublicsymbolsspanspan-iddisplayingprivatesymbolsandpublicsymbolsspandisplaying-private-symbols-and-public-symbols"></a><span id="displaying_private_symbols_and_public_symbols"></span><span id="DISPLAYING_PRIVATE_SYMBOLS_AND_PUBLIC_SYMBOLS"></span>プライベート シンボルとパブリック シンボルを表示します。
 
-かどうか、ターゲットは、完全なシンボル ファイル、ファイルに 2 回各パブリック シンボルが表示されます。 パブリック シンボルの表で、プライベート シンボル データにします。 多くの場合、パブリック シンボル テーブル内のコピーには、さまざまな文字の装飾 (プレフィックス/サフィックス) が含まれています。 詳細については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
+かどうか、ターゲットは、完全なシンボル ファイル、ファイルに 2 回各パブリック シンボルが表示されます。 パブリック シンボルの表で、プライベート シンボル データにします。 多くの場合、パブリック シンボル テーブル内のコピーには、さまざまな文字の装飾 (プレフィックス/サフィックス) が含まれています。 詳細については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
 
 DBH には、プライベート シンボル データに、装飾なしのパブリック シンボル テーブルおよびデコレーションでパブリック シンボル テーブルは、このシンボルに関する情報を表示できます。 これはすべて次の 3 種類が表示されます、コマンドを使用して、 **addr 414fe0**たび。
 

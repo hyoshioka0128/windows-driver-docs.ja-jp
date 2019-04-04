@@ -30,7 +30,7 @@ kd> !devnode 0 1
 
 いずれかを調べて、ドライバーまたはバスに公開されるは、次の検索は、devnode を識別します。
 
-Devnode 状態フラグには、デバイスの状態について説明します。 詳細については、次を参照してください。[デバイス ノードの状態フラグ](device-node-status-flags.md)します。
+Devnode 状態フラグには、デバイスの状態について説明します。 詳細については、[デバイス ノードの状態フラグ](device-node-status-flags.md)を参照してください。
 
 例では、 **! devnode**コマンド、[デバッグ プラグ アンド プレイ ドライバーの拡張機能](extensions-for-debugging-plug-and-play-drivers.md)セクション swenum デバイスによって作成された、PnP マネージャーでは、そのため、DNF\_作り上げられた (0x00000001)フラグが設定されています。
 

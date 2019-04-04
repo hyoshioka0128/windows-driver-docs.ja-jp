@@ -42,6 +42,6 @@ DirectX 9.0 バージョンのドライバーをサポートする必要があ�
 
 -   設定、D3DFORMAT\_OP\_BUMPMAP フラグ、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)すべてサーフェスの形式の構造固定関数またはピクセル プログラミング可能なのか、パイプのバンプ マッピングをサポートすることができます。
 
--   Reporting[非同期クエリ操作のサポート](supporting-asynchronous-query-operations.md)場合でも、クエリの種類がサポートされていないことを示すことにより、ドライバーは応答のみです。 詳細については、次を参照してください。[クエリ型のサポートを確認する](verifying-support-of-query-types.md)します。<br/><br/>2 つの新しい要件を課す非同期的にクエリを実行する、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI します。 詳細については、次を参照してください。 [D3dDrawPrimitives2 DDI の要件を課す](imposing-requirements-on-the-d3ddrawprimitives2-ddi.md)します。
+-   Reporting[非同期クエリ操作のサポート](supporting-asynchronous-query-operations.md)場合でも、クエリの種類がサポートされていないことを示すことにより、ドライバーは応答のみです。 詳細については、[クエリ型のサポートを確認する](verifying-support-of-query-types.md)を参照してください。<br/><br/>2 つの新しい要件を課す非同期的にクエリを実行する、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI します。 詳細については、[D3dDrawPrimitives2 DDI の要件を課す](imposing-requirements-on-the-d3ddrawprimitives2-ddi.md)を参照してください。
 
 -   アプリケーションの実行ができるように[処理でビジー状態の存在するキュー](processing-with-busy-present-queues.md)します。

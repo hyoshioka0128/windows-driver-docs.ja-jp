@@ -67,7 +67,7 @@ ss [a|w|n]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-一致するシンボルの詳細については、次を参照してください。[シンボルの構文と照合シンボル](symbol-syntax-and-symbol-matching.md)します。
+一致するシンボルの詳細については、[シンボルの構文と照合シンボル](symbol-syntax-and-symbol-matching.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

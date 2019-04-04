@@ -32,7 +32,7 @@ ms.locfileid: "56537446"
 
 ドライバーは、デバイスの機能のデバイス オブジェクト (FDO) を表す framework デバイス オブジェクトを作成するたびに、フレームワークに、デバイスの一覧を空の静的な子を作成します。
 
-ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)FDO 親デバイスを作成します。 FDO の作成の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)です。
+ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)FDO 親デバイスを作成します。 FDO の作成の詳細については、[Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)を参照してください。
 
 ドライバーする必要があります親デバイスの子の列挙、子の Pdo を作成し、子リストに、子を追加します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "56537446"
 
 3.  呼び出す[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926) PDO を表す framework デバイス オブジェクトを作成します。
 
-PDO の作成の詳細については、次を参照してください。[バス ドライバーのデバイス オブジェクトを作成する](creating-device-objects-in-a-bus-driver.md)します。
+PDO の作成の詳細については、[バス ドライバーのデバイス オブジェクトを作成する](creating-device-objects-in-a-bus-driver.md)を参照してください。
 
 呼び出した後**WdfDeviceCreate**、ドライバーを呼び出す必要があります[ **WdfFdoAddStaticChild** ](https://msdn.microsoft.com/library/windows/hardware/ff547225)子デバイスを子リストに追加します。
 

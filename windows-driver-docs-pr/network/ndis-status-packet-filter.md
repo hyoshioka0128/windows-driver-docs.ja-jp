@@ -25,7 +25,7 @@ NDIS は NDIS は、NDIS を生成するときに、パケット フィルター
 
 NDIS フィルター ドライバーでは、NDIS を生成できますも\_状態\_パケット\_フィルター状態を示す値。
 
-NDIS フィルター型フラグのビットごとの OR を提供する、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575) OID。 パケット フィルターの詳細については、次を参照してください。 [OID\_GEN\_サポートされている\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569643)します。
+NDIS フィルター型フラグのビットごとの OR を提供する、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575) OID。 パケット フィルターの詳細については、[OID\_GEN\_サポートされている\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569643)を参照してください。
 
 **StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373) sizeof(ULONG) に構造体が設定されています。
 

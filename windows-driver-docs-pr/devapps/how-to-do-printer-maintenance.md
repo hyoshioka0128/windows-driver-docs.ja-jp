@@ -14,9 +14,9 @@ ms.locfileid: "57349651"
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>UWP アプリのデバイスのプリンターのメンテナンスを実行する方法
 
 
-Windows 8.1 では、UWP デバイス アプリは印刷ヘッドのアラインメントとノズルをクリーニングなどのプリンターのメンテナンスを実行できます。 このトピックでは、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)双方向通信 (Bidi) を使用して、このようなデバイスのメンテナンスを実行する方法を示すサンプル。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+Windows 8.1 では、UWP デバイス アプリは印刷ヘッドのアラインメントとノズルをクリーニングなどのプリンターのメンテナンスを実行できます。 このトピックでは、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)双方向通信 (Bidi) を使用して、このようなデバイスのメンテナンスを実行する方法を示すサンプル。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
-C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルではプリンターでのメンテナンス、 **DeviceMaintenance.xaml.cs**ファイル、 **DeviceAppForPrinters2**プロジェクト。 サンプルを Bidi を使用するでプリンターの拡張機能ライブラリを使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、次を参照してください。、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
+C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルではプリンターでのメンテナンス、 **DeviceMaintenance.xaml.cs**ファイル、 **DeviceAppForPrinters2**プロジェクト。 サンプルを Bidi を使用するでプリンターの拡張機能ライブラリを使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)を参照してください。
 
 **注**  このトピックで示すコード例に基づいています、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプル。 このサンプルも JavaScript および C++ で使用できます。 C++ は COM を直接アクセスできるため、C++ のバージョン サンプルにはが含まれていないことコード ライブラリ プロジェクトに注意してください。 コードの最新バージョンを参照するサンプルをダウンロードします。
 
@@ -25,7 +25,7 @@ C#のバージョン、[印刷ジョブの管理とプリンターの保守](htt
 ## <a name="span-idprintermaintenancespanspan-idprintermaintenancespanspan-idprintermaintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>プリンターのメンテナンス
 
 
-Windows 8.1 には、新しいデバイスのメンテナンスを実装するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterBidiSetRequestCallback**](https://msdn.microsoft.com/library/windows/hardware/dn265385)、 [ **IPrinterExtensionAsyncOperation** ](https://msdn.microsoft.com/library/windows/hardware/dn265387) 、および[ **IPrinterQueue2** ](https://msdn.microsoft.com/library/windows/hardware/dn265389). これらのインターフェイスを使用すれば、デバイスとプロトコルに固有のコマンドに変換してから、プリンターに送信できるように、ポート モニターを双方向の要求を非同期的に送信できます。 詳細については、次を参照してください。[デバイスのメンテナンス (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265274)します。
+Windows 8.1 には、新しいデバイスのメンテナンスを実装するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterBidiSetRequestCallback**](https://msdn.microsoft.com/library/windows/hardware/dn265385)、 [ **IPrinterExtensionAsyncOperation** ](https://msdn.microsoft.com/library/windows/hardware/dn265387) 、および[ **IPrinterQueue2** ](https://msdn.microsoft.com/library/windows/hardware/dn265389). これらのインターフェイスを使用すれば、デバイスとプロトコルに固有のコマンドに変換してから、プリンターに送信できるように、ポート モニターを双方向の要求を非同期的に送信できます。 詳細については、[デバイスのメンテナンス (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265274)を参照してください。
 
 **ヒント:**    C# JavaScript アプリは COM Api と直接動作できません。 作成する場合、C#または JavaScript UWP デバイス アプリ、プリンターの拡張機能ライブラリを使用して、これらのインターフェイス (このトピックで示す) にアクセスします。
 
@@ -36,7 +36,7 @@ Windows 8.1 には、新しいデバイスのメンテナンスを実装する�
 
 開始する前に。
 
-1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
+1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)を参照してください。
 2.  開発用 PC の設定を取得します。 参照してください[Getting started](getting-started.md)については、ツールをダウンロードして開発者アカウントを作成します。
 3.  アプリをストアに関連付けます。 参照してください[UWP デバイスのアプリを作成](step-1--create-a-uwp-device-app.md)についてです。
 4.  アプリに関連付けているプリンター用のデバイス メタデータを作成します。 参照してください[デバイス メタデータを作成する](step-2--create-device-metadata.md)の詳細についてはします。
@@ -49,7 +49,7 @@ Windows 8.1 には、新しいデバイスのメンテナンスを実装する�
 ## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>手順 1: 双方向の要求を準備します。
 
 
-デバイスのメンテナンス インターフェイスは、双方向の要求は、文字列の形式で XML データである必要があります。 アプリで意味がある場所では、双方向の要求を構築できます。 たとえば、文字列定数として、双方向の要求を保存したり、ユーザー入力に基づいて動的に作成します。 [印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルの動作の既定の要求を構築する`OnNavigatedTo`メソッド。 双方向に関する詳細については、次を参照してください。[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)します。
+デバイスのメンテナンス インターフェイスは、双方向の要求は、文字列の形式で XML データである必要があります。 アプリで意味がある場所では、双方向の要求を構築できます。 たとえば、文字列定数として、双方向の要求を保存したり、ユーザー入力に基づいて動的に作成します。 [印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルの動作の既定の要求を構築する`OnNavigatedTo`メソッド。 双方向に関する詳細については、[双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)を参照してください。
 
 この例は、`OnNavigatedTo`のメソッド、 **DeviceMaintenance.xaml.cs**ファイル。
 
@@ -219,7 +219,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
 4.  接続を切断し、プリンターをアンインストールします。 Windows が次に、デバイスが検出されたときに更新済みのデバイス メタデータの読み取りができるように、この手順が必要です。
 5.  編集し、デバイスのメタデータを保存します。 デバイス アプリをデバイスにリンクするには、デバイスでデバイス アプリを関連付ける必要があります。
-    **注**  デバイスのメタデータをまだ作成していない場合は、次を参照してください。 [UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+    **注**  デバイスのメタデータをまだ作成していない場合は、[UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)を参照してください。
 
      
 

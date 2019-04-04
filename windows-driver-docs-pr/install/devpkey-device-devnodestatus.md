@@ -60,7 +60,7 @@ DEVPKEY_Device_DevNodeStatus の値は、DN_ のビットごとの OR*Xxx* Cfg.h
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DevNodeStatus の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの状態にアクセスする方法については、次を参照してください。[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの状態にアクセスする方法については、[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

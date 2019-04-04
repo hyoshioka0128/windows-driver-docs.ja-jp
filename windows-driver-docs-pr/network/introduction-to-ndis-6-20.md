@@ -25,9 +25,9 @@ ms.locfileid: "56548878"
 
 よく理解する NDIS 6.0 および 6.1 の NDIS NDIS 6.20 が動作の詳細について学習する前に。
 
--   NDIS 6.0 の詳細については、次を参照してください。 [NDIS 6.0 の概要](introduction-to-ndis-6-0.md)します。
+-   NDIS 6.0 の詳細については、[NDIS 6.0 の概要](introduction-to-ndis-6-0.md)を参照してください。
 
--   NDIS 6.1 の詳細については、次を参照してください。 [NDIS 6.1 概要](introduction-to-ndis-6-1.md)します。
+-   NDIS 6.1 の詳細については、[NDIS 6.1 概要](introduction-to-ndis-6-1.md)を参照してください。
 
 NDIS 6.20 が動作し、以前のバージョンの違いの説明、および NDIS 6.20 が動作するドライバーの移植の詳細については、「 [NDIS 6.20 が動作する移植 NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-20.md)します。
 

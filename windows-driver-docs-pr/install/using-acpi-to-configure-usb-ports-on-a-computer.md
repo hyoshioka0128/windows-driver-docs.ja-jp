@@ -113,7 +113,7 @@ USB 型-C# のコネクタを記述する必要が正しく ACPI に渡すため
         0x00000000})                // Reserved1 – must be zero
 ```
 
-ACPI 6.0 インターフェイスの詳細については、次を参照してください。 [Advanced Configuration and Power インターフェイス仕様 Revision 6.0](https://go.microsoft.com/fwlink/?LinkId=827852)します。
+ACPI 6.0 インターフェイスの詳細については、[Advanced Configuration and Power インターフェイス仕様 Revision 6.0](https://go.microsoft.com/fwlink/?LinkId=827852)を参照してください。
 
  
 

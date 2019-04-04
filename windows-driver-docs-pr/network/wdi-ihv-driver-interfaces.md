@@ -59,7 +59,7 @@ WDI IHV ミニポート ドライバーの DriverEntry プロセスの一般的�
 
 ![wdi driverentry フロー](images/wdi-driverentry-flow.png)
 
-DriverEntry の詳細については、次を参照してください。 [ **NDIS ミニポート ドライバーの DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff548818)します。
+DriverEntry の詳細については、[ **NDIS ミニポート ドライバーの DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff548818)を参照してください。
 
 ## <a name="miniportsetoptions"></a>MiniportSetOptions
 

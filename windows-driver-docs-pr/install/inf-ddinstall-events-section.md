@@ -43,7 +43,7 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 ## <a name="entries"></a>エントリ
 
 <a href="" id="addeventprovider--providerguid--event-provider-install-section"></a>**AddEventProvider=**{*ProviderGUID*},*event-provider-install-section*  
-このディレクティブは、INF ライターの定義を参照*イベント プロバイダーのインストール セクション*この対象となるデバイスのドライバーの INF ファイルの他の場所で*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)します。
+このディレクティブは、INF ライターの定義を参照*イベント プロバイダーのインストール セクション*この対象となるデバイスのドライバーの INF ファイルの他の場所で*DDInstall*セクション。 詳細については、[ **INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)を参照してください。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 このエントリが指定されている場合、**必要がある**エントリも通常は必要です。

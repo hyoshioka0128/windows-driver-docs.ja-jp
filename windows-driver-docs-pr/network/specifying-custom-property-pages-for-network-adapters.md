@@ -35,7 +35,7 @@ ms.locfileid: "56549596"
 
 3.  アダプターの INF ファイルに含める、 **CopyFiles**プロパティ シートの拡張 DLL を Windows にコピーするセクション\\System32 ディレクトリ。 詳細については、 **CopyFiles**セクションを参照してください[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
 
-4.  **DDInstall** NCF の指定、アダプターのセクション\_HAS\_UI の 1 つとして、**特性**アダプターがユーザー インターフェイスをサポートしていることを示す値。 詳細については、次を参照してください。 [DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)します。
+4.  **DDInstall** NCF の指定、アダプターのセクション\_HAS\_UI の 1 つとして、**特性**アダプターがユーザー インターフェイスをサポートしていることを示す値。 詳細については、[DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)を参照してください。
 
 5.  プロパティ ページに変更を適用すると後、プロパティ シートの拡張 DLL が必要です。
     -   呼び出す**SetupDiGetDeviceInstallParams**

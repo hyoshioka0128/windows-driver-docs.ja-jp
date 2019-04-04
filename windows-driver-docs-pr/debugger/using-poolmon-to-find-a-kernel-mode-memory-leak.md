@@ -24,7 +24,7 @@ PoolMon (Poolmon.exe) のモニターは、プール タグ名でメモリ使用
 
 ### <a name="span-idenablepooltaggingwindows2000andwindowsxpspanspan-idenablepooltaggingwindows2000andwindowsxpspanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>プール (Windows 2000 および Windows XP) のタグ付けを有効にします。
 
-Windows 2000 および Windows XP では、GFlags を使用してプールのタグ付けを有効にする必要があります。 Windows ツールをデバッグには GFlags が含まれます。 開始 GFlags、選択、**システム レジストリ** タブで、チェック、**プールのタグ付けを有効にする**ボックスをクリックして**適用**します。 この設定を有効にする Windows を再起動する必要があります。 詳細については、次を参照してください。 [GFlags](gflags.md)します。
+Windows 2000 および Windows XP では、GFlags を使用してプールのタグ付けを有効にする必要があります。 Windows ツールをデバッグには GFlags が含まれます。 開始 GFlags、選択、**システム レジストリ** タブで、チェック、**プールのタグ付けを有効にする**ボックスをクリックして**適用**します。 この設定を有効にする Windows を再起動する必要があります。 詳細については、[GFlags](gflags.md)を参照してください。
 
 Windows Server 2003 および Windows の以降のバージョンでは、プールのタグ付けは常に有効です。
 

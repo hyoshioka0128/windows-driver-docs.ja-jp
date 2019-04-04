@@ -30,7 +30,7 @@ ms.locfileid: "56552827"
   ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
 ```
 
-すべてのデバイス クラスの追加のバージョン要件およびオプションの説明は、次を参照してください。 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
+すべてのデバイス クラスの追加のバージョン要件およびオプションの説明は、[ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)を参照してください。
 
  
 

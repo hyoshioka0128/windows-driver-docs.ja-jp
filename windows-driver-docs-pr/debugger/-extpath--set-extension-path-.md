@@ -64,7 +64,7 @@ ms.locfileid: "56573267"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-拡張 Dll の読み込みと拡張機能の検索パスの詳細については、次を参照してください。[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。
+拡張 Dll の読み込みと拡張機能の検索パスの詳細については、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

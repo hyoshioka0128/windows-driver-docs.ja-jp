@@ -20,7 +20,7 @@ Windows HLK で USB テストの一般的なエラー。
 
 -   エラーの状態:状態を確認するデバイスは、MUTT デバイスが存在しないことを示すエラーで失敗します。
 
-    1.  SuperMUTT が Winusb.sys または Usbtcd.sys ドライバーとして実行されています。 取得できます、ドライバーとドライバーのインストール パッケージ ファイルをインストールして、 [MUTT ソフトウェア パッケージ](https://msdn.microsoft.com/windows/hardware/jj590752)します。 詳細については、次を参照してください。 [MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)します。
+    1.  SuperMUTT が Winusb.sys または Usbtcd.sys ドライバーとして実行されています。 取得できます、ドライバーとドライバーのインストール パッケージ ファイルをインストールして、 [MUTT ソフトウェア パッケージ](https://msdn.microsoft.com/windows/hardware/jj590752)します。 詳細については、[MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)を参照してください。
     2.  デバイス マネージャーとして SuperMUTT のハードウェア ID が表示されることを確認"USB\\VID\_045E & PID\_078F"。 **注**  PID\_078E が正しくありません。
     3.  デバイス マネージャーがいることを確認 (**ビュー&gt;接続によってデバイス**) 列挙 SuperMUTT を示しています。 xHCI コント ローラーのダウン ストリーム。
     4.  USBView で SuperMUTT デバイスが SuperSpeed で動作していることを確認します。 **注**  から USBView をインストールすることができます、**デバッグ ツールの Windows にインストール パッケージ**Microsoft Windows ソフトウェア開発キット (SDK) にします。 または、USBView は、Windows Driver Kit (WDK) でデバッガー フォルダーにインストールされます。

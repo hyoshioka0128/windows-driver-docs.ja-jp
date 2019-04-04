@@ -21,7 +21,7 @@ ms.locfileid: "57464195"
 
 - [ユーザー モード ダンプ ファイルを作成します。](#creating)
 
-ダンプ ファイルの分析方法の詳細については、次を参照してください。[ユーザー モード ダンプ ファイルの分析](analyzing-a-user-mode-dump-file.md)します。
+ダンプ ファイルの分析方法の詳細については、[ユーザー モード ダンプ ファイルの分析](analyzing-a-user-mode-dump-file.md)を参照してください。
 
 
 ## <a name="span-idvarietiesspanspan-idvarietiesspan-varieties-of-user-mode-dump-files"></a><span id="varieties"></span><span id="VARIETIES"></span> さまざまなユーザー モードのダンプ ファイル
@@ -134,16 +134,16 @@ A*フル ユーザー モード ダンプ*は、基本的なユーザー モー�
 </table>
 
 
-これらのオプションを組み合わせることができます。 たとえば、次のコマンド **.dump/mfiu**非常に大きなミニダンプ、または、コマンドを作成するために使用できる **.dump/mrR**ユーザーのプライバシーを保持するミニダンプの作成に使用できます。 完全な構文の詳細については、次を参照してください。 [ **.dump (ダンプ ファイルの作成)**](-dump--create-dump-file-.md)します。
+これらのオプションを組み合わせることができます。 たとえば、次のコマンド **.dump/mfiu**非常に大きなミニダンプ、または、コマンドを作成するために使用できる **.dump/mrR**ユーザーのプライバシーを保持するミニダンプの作成に使用できます。 完全な構文の詳細については、[ **.dump (ダンプ ファイルの作成)**](-dump--create-dump-file-.md)を参照してください。
 
 
 ## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>ユーザー モード ダンプ ファイルを作成します。
 
 ユーザー モード ダンプ ファイルを作成するために使用できるさまざまなツールがいくつかあります。CDB、WinDbg、Windows のエラー報告 (WER)、UserDump、および ADPlus します。
 
-ADPlus をユーザー モード ダンプ ファイルを作成する方法の詳細については、次を参照してください。 [ADPlus](adplus.md)します。
+ADPlus をユーザー モード ダンプ ファイルを作成する方法の詳細については、[ADPlus](adplus.md)を参照してください。
 
-WER を通じてユーザー モード ダンプ ファイルを作成する方法の詳細については、次を参照してください。 [Windows エラー報告](windows-error-reporting.md)します。
+WER を通じてユーザー モード ダンプ ファイルを作成する方法の詳細については、[Windows エラー報告](windows-error-reporting.md)を参照してください。
 
 
 ## <a name="span-idddkchoosingthebesttooldbgspanspan-idddkchoosingthebesttooldbgspanchoosing-the-best-tool"></a><span id="ddk_choosing_the_best_tool_dbg"></span><span id="DDK_CHOOSING_THE_BEST_TOOL_DBG"></span>最適なツールを選択します。
@@ -223,7 +223,7 @@ CDB と WinDbg できますユーザー モード ダンプ ファイル作成�
 
 ### <a name="span-idcreatingadumpfileautomaticallyspanspan-idcreatingadumpfileautomaticallyspancreating-a-dump-file-automatically"></a><span id="creating_a_dump_file_automatically"></span><span id="CREATING_A_DUMP_FILE_AUTOMATICALLY"></span>ダンプ ファイルを自動的に作成します。
 
-アプリケーション エラーが発生する場合は、Windows が事後分析のデバッグ設定に応じて、いくつかの異なる方法で対応できます。 これらの設定は、デバッグ ダンプ ファイルを作成するツールを指示する、ユーザー モードのメモリ ダンプ ファイルが作成されます。 詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
+アプリケーション エラーが発生する場合は、Windows が事後分析のデバッグ設定に応じて、いくつかの異なる方法で対応できます。 これらの設定は、デバッグ ダンプ ファイルを作成するツールを指示する、ユーザー モードのメモリ ダンプ ファイルが作成されます。 詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
 
 ### <a name="span-idcreatingdumpfileswhiledebuggingspanspan-idcreatingdumpfileswhiledebuggingspancreating-dump-files-while-debugging"></a><span id="creating_dump_files_while_debugging"></span><span id="CREATING_DUMP_FILES_WHILE_DEBUGGING"></span>デバッグ中にダンプ ファイルの作成
 

@@ -83,9 +83,9 @@ Error: Unable to execute JavaScript script 'C:\WinDbg\Scripts\TestScript.js'
 
 実行 .scriptload コマンド intializeScript 関数やスクリプトのルート コードを使用して、スクリプトが読み込まれるときに、デバッガー (dx デバッガー) のルート名前空間には、スクリプト内に存在する名前がブリッジされるされ、スクリプトは常に常駐しています。メモリがアンロードされるまで、そのオブジェクトに対するすべての参照が解放されます。
 
-スクリプトは、新しい機能を提供できる、デバッガーの式エバリュエーターでは、デバッガーでのオブジェクト モデルを変更または同様の NatVis ビジュアライザーはほとんどのビジュアライザーとして動作できます。 NavVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)します。
+スクリプトは、新しい機能を提供できる、デバッガーの式エバリュエーターでは、デバッガーでのオブジェクト モデルを変更または同様の NatVis ビジュアライザーはほとんどのビジュアライザーとして動作できます。 NavVis とデバッガーの詳細については、[ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)を参照してください。
 
-JavaScript での操作の詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。 デバッガー オブジェクトに関する詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)します。
+JavaScript での操作の詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。 デバッガー オブジェクトに関する詳細については、[JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
 
 **要件**
 

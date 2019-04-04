@@ -167,7 +167,7 @@ static PKSDATARANGE PinDataRangePointersBridge[] =
 
 PinDataRangePointersBridge 配列では、アナログのオーディオ信号を伝送するブリッジ pin のデータ範囲を定義します。 詳細については、ブリッジの pin での説明を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。
 
-複雑なトポロジの例は、次を参照してください。[トポロジ フィルター](topology-filters.md)します。
+複雑なトポロジの例は、[トポロジ フィルター](topology-filters.md)を参照してください。
 
  
 

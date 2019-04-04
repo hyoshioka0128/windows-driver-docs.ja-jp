@@ -130,7 +130,7 @@ ms.locfileid: "57463787"
 <td align="left"><p>高度なプロトコル (タスク) の負荷を軽減します。</p></td>
 <td align="left"><p>チェックサム</p></td>
 <td align="left"><p>チェックサム。起動時に必要な場合にオフロードを構成できます。</p></td>
-<td align="left"><p>チェックサム。ターゲットそのチェックサム オフロード機能の一部として渡すデバイス キャップ WDI に持ち込むアップ時にします。 機能の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>します。</p></td>
+<td align="left"><p>チェックサム。ターゲットそのチェックサム オフロード機能の一部として渡すデバイス キャップ WDI に持ち込むアップ時にします。 機能の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

@@ -21,7 +21,7 @@ ms.locfileid: "56549994"
 ## <span id="ddk_direct3d_texture_management_gg"></span><span id="DDK_DIRECT3D_TEXTURE_MANAGEMENT_GG"></span>
 
 
-テクスチャのサポートはオプションですが、今日のドライバーの大部分はそれをサポートできます。 テクスチャのマッピングをサポートするドライバーは、すべてのテクスチャに関連する操作コードでは、マイクロソフトの Direct3D DDI に応答する必要があります。 テクスチャに関連する操作のコードの詳細については、次を参照してください。 [ **D3DHAL\_DP2OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff545678)します。
+テクスチャのサポートはオプションですが、今日のドライバーの大部分はそれをサポートできます。 テクスチャのマッピングをサポートするドライバーは、すべてのテクスチャに関連する操作コードでは、マイクロソフトの Direct3D DDI に応答する必要があります。 テクスチャに関連する操作のコードの詳細については、[ **D3DHAL\_DP2OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff545678)を参照してください。
 
 ドライバーもでテクスチャ ステージの状態を検証する必要があります、 [ **D3dValidateTextureStageState** ](https://msdn.microsoft.com/library/windows/hardware/ff549064)コールバック。
 

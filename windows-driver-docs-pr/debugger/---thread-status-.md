@@ -32,7 +32,7 @@ ms.locfileid: "56535487"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-表示するスレッドを指定します。 このパラメーターを省略した場合は、すべてのスレッドが表示されます。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
+表示するスレッドを指定します。 このパラメーターを省略した場合は、すべてのスレッドが表示されます。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -60,7 +60,7 @@ ms.locfileid: "56535487"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-表示するためのプロセスとスレッドを制御するには、他の方法と詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+表示するためのプロセスとスレッドを制御するには、他の方法と詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

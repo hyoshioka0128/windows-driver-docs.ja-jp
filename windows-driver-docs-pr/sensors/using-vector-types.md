@@ -16,7 +16,7 @@ ms.locfileid: "56557081"
 
 いくつかのプロパティとデータ フィールドには、情報の配列が含まれます。 センサーなど\_プロパティ\_LIGHT\_応答\_曲線プロパティには 4 バイト符号なし整数の配列が含まれています。 ただし、アプリケーションでは、センサー API を介してこのような配列を受け取る、ときに常に表される VT の種類として\_ベクター |UI1、1 バイト文字の配列。
 
-対象のプロパティとデータのフィールドは配列を含むについては、次を参照してください。[定数](about-sensor-constants.md)します。
+対象のプロパティとデータのフィールドは配列を含むについては、[定数](about-sensor-constants.md)を参照してください。
 
 次のコード例を作成する方法を示しています、 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)センサーの値を格納しているオブジェクト\_プロパティ\_LIGHT\_応答\_曲線。 M という名前の変数\_pSensorProperties はへのポインター、 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)インターフェイス。
 

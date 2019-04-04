@@ -18,7 +18,7 @@ ms.locfileid: "56550907"
 
 使用して、中断状態または処理のステータスを構成することができます、 [ **SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN**、または**SXI**コマンド。
 
-例外とイベントの詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+例外とイベントの詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
  
 

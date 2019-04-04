@@ -29,13 +29,13 @@ ms.locfileid: "56558275"
 
 2.  呼び出す[RegCreateKeyEx](https://go.microsoft.com/fwlink/p/?linkid=106454)を作成し、HKLM を識別するハンドルを受信\\システム\\CurrentControlSet\\コントロール\\MediaInterfaces キー。
 
-3.  使用[RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=106447) HKLM 下の値を設定する\\システム\\CurrentControlSet\\コントロール\\MediaInterfaces キー、プロパティをマップする、インターフェイスのハンドラーに設定します。 インターフェイスのハンドラーの詳細については、次を参照してください。[インターフェイス ハンドラー プラグイン](interface-handler-plug-in.md)します。
+3.  使用[RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=106447) HKLM 下の値を設定する\\システム\\CurrentControlSet\\コントロール\\MediaInterfaces キー、プロパティをマップする、インターフェイスのハンドラーに設定します。 インターフェイスのハンドラーの詳細については、[インターフェイス ハンドラー プラグイン](interface-handler-plug-in.md)を参照してください。
 
 4.  キーは、定義済みのレジストリ キーのいずれかではありません、ために、呼び出す[RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=106444)キーを識別するハンドルを閉じます。
 
 5.  呼び出す**RegCreateKeyEx**します。
 
-6.  使用**RegSetValueEx** HKLM 下の値を設定する\\システム\\CurrentControlSet\\コントロール\\MediaSets\\プロパティ ページに、プロパティをマップするキーを設定します。 プロパティ ページのプラグインの詳細については、次を参照してください。[プロパティ ページのプラグイン](property-page-plug-in.md)します。
+6.  使用**RegSetValueEx** HKLM 下の値を設定する\\システム\\CurrentControlSet\\コントロール\\MediaSets\\プロパティ ページに、プロパティをマップするキーを設定します。 プロパティ ページのプラグインの詳細については、[プロパティ ページのプラグイン](property-page-plug-in.md)を参照してください。
 
 7.  キーは、定義済みのレジストリ キーのいずれかではありません、ために、呼び出す**RegCloseKey**キーを識別するハンドルを閉じます。
 

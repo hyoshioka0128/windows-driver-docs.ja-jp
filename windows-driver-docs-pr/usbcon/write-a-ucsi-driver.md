@@ -20,7 +20,7 @@ USB タイプ C コネクタ システム ソフトウェア インターフェ�
 
 - USB、PCI、I2C UART などの非 ACPI トランスポートでは、コント ローラーのクライアント ドライバーを記述する必要があります。
 
-> USB タイプ-c ハードウェアが電力 (PD) の配信のステート マシンを処理する機能を持たない場合は、型-C# の USB ポートのコント ローラー ドライバーの作成を検討してください。 詳細については、次を参照してください。[型-C# の USB ポート コント ローラー ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)します。
+> USB タイプ-c ハードウェアが電力 (PD) の配信のステート マシンを処理する機能を持たない場合は、型-C# の USB ポートのコント ローラー ドライバーの作成を検討してください。 詳細については、[型-C# の USB ポート コント ローラー ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)を参照してください。
 
 以降では、Windows 10、バージョンは 1809、UCSI (UcmUcsiCx.sys) の新しいクラスの拡張機能が追加されました、UCSI 仕様を実装するトランスポートに依存しない方法です。 最小限のコードで、UcmUcsiCx へのクライアントであるドライバーが非 ACPI トランスポート経由で USB Type-C ハードウェアと通信できます。 このトピックでは、UCSI クラス拡張機能で提供されるサービスと、クライアント ドライバーの想定される動作について説明します。
 
@@ -94,7 +94,7 @@ UcmUcsiCx は OPM から PPM ファームウェアに UCSI コマンドを送信
 
 -   によって、ハードウェアまたはファームウェア PD ステート マシン、およびトランスポートを実装するかどうかを記述する必要があるドライバーの種類を決定します。
 
-    ![適切なクラスの拡張機能を選択するための意思決定](images/drivers-c.png)詳細については、次を参照してください。[型-C# の USB コネクタ用の開発の Windows ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)します。  
+    ![適切なクラスの拡張機能を選択するための意思決定](images/drivers-c.png)詳細については、[型-C# の USB コネクタ用の開発の Windows ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)を参照してください。  
 
 -   デスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の場合は、Windows 10 をインストールします。
 

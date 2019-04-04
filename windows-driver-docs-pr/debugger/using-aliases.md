@@ -120,7 +120,7 @@ ms.locfileid: "57349767"
 
  
 
-ただし、使用することができます、 **$ {}** その他のテキストの横にある場合でも、という名前のユーザーのエイリアスを展開するためのトークン。 エイリアスが拡張されることを防ぐために、または特定のエイリアスに関連する値を表示する特定のスイッチと共にこのトークンを使用することもできます。 このような状況の詳細については、次を参照してください。 [ **$ {} (別名インタープリター)**](-------alias-interpreter-.md)します。
+ただし、使用することができます、 **$ {}** その他のテキストの横にある場合でも、という名前のユーザーのエイリアスを展開するためのトークン。 エイリアスが拡張されることを防ぐために、または特定のエイリアスに関連する値を表示する特定のスイッチと共にこのトークンを使用することもできます。 このような状況の詳細については、[ **$ {} (別名インタープリター)**](-------alias-interpreter-.md)を参照してください。
 
 固定名のエイリアスは、行のテキスト内で埋め込む方法に関係なく、行内の任意の時点から正しく展開します。
 
@@ -174,7 +174,7 @@ ad myAlias
 0000ffff 0x10000
 ```
 
-詳細については、次を参照してください。 [ **.block** ](-block.md)と[ **$ {} (別名インタープリター)**](-------alias-interpreter-.md)します。
+詳細については、[ **.block** ](-block.md)と[ **$ {} (別名インタープリター)**](-------alias-interpreter-.md)を参照してください。
 
 ### <a name="span-idusingaforeachtokeninanaliasspanspan-idusingaforeachtokeninanaliasspanspan-idusingaforeachtokeninanaliasspanusing-a-foreach-token-in-an-alias"></a><span id="Using_a_.foreach_Token_in_an_Alias"></span><span id="using_a_.foreach_token_in_an_alias"></span><span id="USING_A_.FOREACH_TOKEN_IN_AN_ALIAS"></span>エイリアスに .foreach トークンを使用します。
 

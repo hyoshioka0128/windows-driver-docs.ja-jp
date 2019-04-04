@@ -24,11 +24,11 @@ ms.locfileid: "56552464"
 
 -   [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181) NDIS のパラメーターを指定する構造体は、フィルターを受信します。
 
-    この構造体を初期化する方法の詳細については、次を参照してください。[受信フィルターを指定する](#specifying-receive-filter)します。
+    この構造体を初期化する方法の詳細については、[受信フィルターを指定する](#specifying-receive-filter)を参照してください。
 
 -   配列の[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)フィルターを指定する構造体のフィールドの条件をテストします。ネットワーク パケットのヘッダー。
 
-    これらの構造体を初期化する方法の詳細については、次を参照してください。[ヘッダー フィールドのテストを指定する](#specifying-header-field-test)します。
+    これらの構造体を初期化する方法の詳細については、[ヘッダー フィールドのテストを指定する](#specifying-header-field-test)を参照してください。
 
 ## <a name="specifying-a-receive-filter"></a>受信フィルターを指定します。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56552464"
 
     **注**  NDIS では、フィルターの一意の識別子 (ID) の生成、受信フィルターの OID メソッド要求を転送する前に[OID\_受信\_フィルター\_セット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)ミニポート ドライバーにします。     
 
--  上にあるドライバーは、既存の受信フィルターを変更することは場合に、設定する必要があります、 **FilterId**受信フィルターの 0 以外のフィルター ID にメンバー。 上にあるドライバーの OID メソッド要求を発行するときに受信フィルターのフィルター ID を取得します[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 受信フィルターを変更する方法の詳細については、次を参照してください。[変更パケット結合受信フィルター](modifying-packet-coalescing-receive-filters.md)します。
+-  上にあるドライバーは、既存の受信フィルターを変更することは場合に、設定する必要があります、 **FilterId**受信フィルターの 0 以外のフィルター ID にメンバー。 上にあるドライバーの OID メソッド要求を発行するときに受信フィルターのフィルター ID を取得します[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 受信フィルターを変更する方法の詳細については、[変更パケット結合受信フィルター](modifying-packet-coalescing-receive-filters.md)を参照してください。
 
 -   **FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**、および**FieldParametersArrayElementSize**のメンバー、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)フィールド パラメーターの配列を定義する構造体を設定する必要があります。 配列内の各要素は、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)ヘッダーのパラメーターを指定する構造体受信フィルターのフィールドのテスト。
 

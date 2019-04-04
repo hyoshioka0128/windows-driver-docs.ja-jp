@@ -25,7 +25,7 @@ ms.locfileid: "56552548"
 ## <span id="ddk_dividing_a_memory_space_segment_into_banks_gg"></span><span id="DDK_DIVIDING_A_MEMORY_SPACE_SEGMENT_INTO_BANKS_GG"></span>
 
 
-ディスプレイのミニポート ドライバーはビデオ メモリ マネージャー内でのビデオのリソースの割り当ての最適な配置にきめ細かなヒントを提供することができます、[セグメントの線形のメモリ領域](linear-memory-space-segments.md)バンク メモリ (セグメントに分割して銀行)。 ドライバーは、銀行に線形のメモリ領域のセグメントを分割する場合、ドライバーを設定する必要があります、 **UseBanking**でフラグをビット フィールド、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)セグメントの構造体。 ドライバーはバンク メモリについてのヒントを返します、 **HintedBank**のメンバー [ **DXGK\_ALLOCATIONINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff560960)割り当ての構造とビデオ メモリマネージャーは、ドライバーの[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)関数。 詳細については、次を参照してください。[割り当てを作成するときにセグメントを指定する](specifying-segments-when-creating-allocations.md)します。
+ディスプレイのミニポート ドライバーはビデオ メモリ マネージャー内でのビデオのリソースの割り当ての最適な配置にきめ細かなヒントを提供することができます、[セグメントの線形のメモリ領域](linear-memory-space-segments.md)バンク メモリ (セグメントに分割して銀行)。 ドライバーは、銀行に線形のメモリ領域のセグメントを分割する場合、ドライバーを設定する必要があります、 **UseBanking**でフラグをビット フィールド、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)セグメントの構造体。 ドライバーはバンク メモリについてのヒントを返します、 **HintedBank**のメンバー [ **DXGK\_ALLOCATIONINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff560960)割り当ての構造とビデオ メモリマネージャーは、ドライバーの[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)関数。 詳細については、[割り当てを作成するときにセグメントを指定する](specifying-segments-when-creating-allocations.md)を参照してください。
 
 割り当ては、セグメント内で完全に含まれる必要があります、中に、割り当ては、銀行、セグメント内の境界を越えることができます。
 

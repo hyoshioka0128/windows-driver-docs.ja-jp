@@ -23,11 +23,11 @@ ms.locfileid: "56552644"
 
  
 
-SoftwareInfo XML スキーマの完了の定義については、次を参照してください。 [SoftwareInfo XML スキーマ定義](softwareinfo-xml-schema-definition.md)します。
+SoftwareInfo XML スキーマの完了の定義については、[SoftwareInfo XML スキーマ定義](softwareinfo-xml-schema-definition.md)を参照してください。
 
-SoftwareInfo XML スキーマで定義されている要素については、次を参照してください。 [SoftwareInfo XML スキーマ定義](softwareinfo-xml-schema-definition.md)します。
+SoftwareInfo XML スキーマで定義されている要素については、[SoftwareInfo XML スキーマ定義](softwareinfo-xml-schema-definition.md)を参照してください。
 
-SoftwareInfo XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [SoftwareInfo XML の例](softwareinfo-xml-example.md)します。
+SoftwareInfo XML スキーマで定義されている形式で XML データの例は、[SoftwareInfo XML の例](softwareinfo-xml-example.md)を参照してください。
 
  
 

@@ -30,7 +30,7 @@ ms.locfileid: "56538334"
 
 -   TapeMiniGetPosition TapeMiniGetMediaTypes などのデバイス制御要求のデバイスに固有の処理を実装するルーチン。
 
-    テープのクラス ドライバーは、そのデバイス制御ディスパッチ ルーチンからこのようなルーチンを呼び出します。 詳細については、次を参照してください。[テープ デバイス制御要求の処理](processing-tape-device-control-requests.md)します。
+    テープのクラス ドライバーは、そのデバイス制御ディスパッチ ルーチンからこのようなルーチンを呼び出します。 詳細については、[テープ デバイス制御要求の処理](processing-tape-device-control-requests.md)を参照してください。
 
 テープの miniclass ドライバーには、次の省略可能なルーチンがあります。
 

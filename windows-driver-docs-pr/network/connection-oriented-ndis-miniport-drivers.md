@@ -21,9 +21,9 @@ ms.locfileid: "56532576"
 
 
 
-A*接続指向のミニポート ドライバー*接続指向のメディアの 1 つまたは複数のミニポート アダプターを制御します。 接続指向のミニポート ドライバーを逆シリアル化する必要があります。 逆シリアル化されたドライバーの詳細については、次を参照してください。 [NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)します。
+A*接続指向のミニポート ドライバー*接続指向のメディアの 1 つまたは複数のミニポート アダプターを制御します。 接続指向のミニポート ドライバーを逆シリアル化する必要があります。 逆シリアル化されたドライバーの詳細については、[NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)を参照してください。
 
-接続指向のミニポート ドライバーでは、接続指向プロトコル ドライバー (クライアントの接続指向とコール マネージャー) と NIC のハードウェア (物理ミニポート アダプターなど) 間のインターフェイスを提供します。 接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、次を参照してください。 [Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)します。
+接続指向のミニポート ドライバーでは、接続指向プロトコル ドライバー (クライアントの接続指向とコール マネージャー) と NIC のハードウェア (物理ミニポート アダプターなど) 間のインターフェイスを提供します。 接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、[Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)を参照してください。
 
 接続指向のミニポート ドライバーは、次を登録する必要があります*MiniportXxx*接続指向の操作に固有の機能。
 
@@ -39,7 +39,7 @@ A*接続指向のミニポート ドライバー*接続指向のメディアの 
 
 -   [**MiniportCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff559362)
 
-これらの関数の登録の詳細については、次を参照してください。 [ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)します。
+これらの関数の登録の詳細については、[ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)を参照してください。
 
  
 

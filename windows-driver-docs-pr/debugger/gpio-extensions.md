@@ -14,7 +14,7 @@ ms.locfileid: "56556870"
 # <a name="gpio-extensions"></a>GPIO 拡張機能
 
 
-一般的な目的の入出力 (GPIO) の拡張機能コマンドでは、GPIO コント ローラーのソフトウェアの状態を表示します。 これらのコマンドは、GPIO フレームワークの拡張機能ドライバー (Msgpioclx.sys) によって管理されるデータ構造から情報を表示します。 GPIO フレームワークの拡張機能については、次を参照してください。[汎用入出力 (GPIO) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=299823)します。
+一般的な目的の入出力 (GPIO) の拡張機能コマンドでは、GPIO コント ローラーのソフトウェアの状態を表示します。 これらのコマンドは、GPIO フレームワークの拡張機能ドライバー (Msgpioclx.sys) によって管理されるデータ構造から情報を表示します。 GPIO フレームワークの拡張機能については、[汎用入出力 (GPIO) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=299823)を参照してください。
 
 GPIO デバッガー拡張機能のコマンドは、gpiokd.dll で実装されます。 GPIO コマンドを読み込むには、次のように入力します。 **.load gpiokd.dll**デバッガーでします。
 

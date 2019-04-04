@@ -22,7 +22,7 @@ ms.locfileid: "56537610"
 ## <span id="wdm_audio_architecture_basic_concepts"></span><span id="WDM_AUDIO_ARCHITECTURE_BASIC_CONCEPTS"></span>
 
 
-このセクションでの基本的なアーキテクチャの概念は[Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) オーディオ ドライバー。 WDM オーディオ アーキテクチャは、ベース カーネル ストリーミング (KS) サービスし、は、Microsoft Windows 2000 ではサポートされている以降および Windows Me/98 です。 KS サービスについては、次を参照してください。[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)します。
+このセクションでの基本的なアーキテクチャの概念は[Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) オーディオ ドライバー。 WDM オーディオ アーキテクチャは、ベース カーネル ストリーミング (KS) サービスし、は、Microsoft Windows 2000 ではサポートされている以降および Windows Me/98 です。 KS サービスについては、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)を参照してください。
 
 このセクションでは、次のトピックについて説明します。
 

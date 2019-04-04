@@ -19,7 +19,7 @@ ms.locfileid: "56551285"
 ## <span id="ddk_kspropsetid_drmaudiostream_ks"></span><span id="DDK_KSPROPSETID_DRMAUDIOSTREAM_KS"></span>
 
 
-`KSPROPSETID_DrmAudioStream`プロパティ セットは、DRM コンテンツ ID と DRM コンテンツ KS オーディオ ストリームに対する権限を指定します。 DRM コンテンツ Id の背景については、次を参照してください。[デジタル著作権管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)します。
+`KSPROPSETID_DrmAudioStream`プロパティ セットは、DRM コンテンツ ID と DRM コンテンツ KS オーディオ ストリームに対する権限を指定します。 DRM コンテンツ Id の背景については、[デジタル著作権管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)を参照してください。
 
 `KSPROPSETID_DrmAudioStream`プロパティ セットに項目 1 つのプロパティのみにはが含まれています。
 

@@ -26,7 +26,7 @@ ms.locfileid: "56557688"
 
 
 
-ドライバーの*ディスパッチ*ルーチン[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)と[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)要求可能性があります何もしない複数の完全な入力の状態が IRP\_成功します。 詳細については、次を参照してください。 [Irp の完了](completing-irps.md)します。
+ドライバーの*ディスパッチ*ルーチン[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)と[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)要求可能性があります何もしない複数の完全な入力の状態が IRP\_成功します。 詳細については、[Irp の完了](completing-irps.md)を参照してください。
 
 別のドライバーの*ディスパッチ*ルーチン**IRP\_MJ\_作成**と**IRP\_MJ\_閉じる**要求基になるデバイス ドライバーによって、または基になるデバイスに複数の作業を行う可能性があります。 次に、例をいくつか示します。
 

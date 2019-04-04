@@ -98,7 +98,7 @@ WPT は、2 つの方法で、WDF の I/O 要求の完了のスループット�
 
 ![umdf i/o 要求のパフォーマンスのグラフ](images/WpaUMDFIoCapture-Narrow.PNG)
 
-[概要テーブル](https://msdn.microsoft.com/library/windows/hardware/hh448109.aspx)、ほとんどの列は文字どおりがある点に注意してください。 WdfDevice 列には、I/O 要求に関連付けられた WDFDEVICE ハンドルが含まれています。 ActivityID には、I/O 要求の一意の識別子が含まれています。 フレームワークは、I/O 要求をドライバーに配信するときに、この識別子を作成します。 アクティビティの識別子が既に対応する IRP に関連付けられている場合、フレームワークは、その識別子を使用します。 詳細については、次を参照してください。[アクティビティ識別子を使用して](using-activity-identifiers.md)します。
+[概要テーブル](https://msdn.microsoft.com/library/windows/hardware/hh448109.aspx)、ほとんどの列は文字どおりがある点に注意してください。 WdfDevice 列には、I/O 要求に関連付けられた WDFDEVICE ハンドルが含まれています。 ActivityID には、I/O 要求の一意の識別子が含まれています。 フレームワークは、I/O 要求をドライバーに配信するときに、この識別子を作成します。 アクティビティの識別子が既に対応する IRP に関連付けられている場合、フレームワークは、その識別子を使用します。 詳細については、[アクティビティ識別子を使用して](using-activity-identifiers.md)を参照してください。
 
 フレームワークは、ドライバーに要求を配信し、ドライバーが呼び出されたときに、終了時刻は、タイムスタンプ、エントリの時刻がトレース タイムスタンプ[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)または完了に関連するメソッド、要求。
 
@@ -170,7 +170,7 @@ I/O 要求完了したときを確認するのには、フレームワークは�
     ----------------------------------
     ```
 
--   開発とテストのみを目的の場合は、ドライバーのコード署名ポリシーの適用を一時的に無効にできます。 詳細については、次を参照してください。[開発およびテスト中に、符号なしのドライバー パッケージをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547565)します。
+-   開発とテストのみを目的の場合は、ドライバーのコード署名ポリシーの適用を一時的に無効にできます。 詳細については、[開発およびテスト中に、符号なしのドライバー パッケージをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547565)を参照してください。
 -   Windows 10 Mobile でトレースをキャプチャした場合は、ターゲット デバイスから MyPerfTrace.etl を Wpa.exe をされているコンピューターにコピーする必要があります。 使用することができます、 [TShell ツール](https://sysdev.microsoft.com/Hardware/oem/docs/Phone_Testing/TShell)これを行う。
 
 ## <a name="related-topics"></a>関連トピック

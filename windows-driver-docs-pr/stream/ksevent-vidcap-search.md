@@ -64,7 +64,7 @@ KSEVENT\_しました\_自動\_検索が完了したときに、更新イベン�
 
 クライアントは、検索が完了したときに通知するために、特定トラックを検索するときは、このイベントの登録があります。
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
+DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
 
  
 

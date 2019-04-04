@@ -53,7 +53,7 @@ ms.locfileid: "56550090"
 
     ドライバーは、動的なインスタンスの名前を使用するデータ ブロックの Irp を処理するために WMI ライブラリ ルーチンを使用できません。
 
-ドライバーは、ブロックが静的または動的なインスタンス名を使用し、静的インスタンスの型、名前、設定や WMIREG をクリアするかどうかを示します\_フラグ\_*XXX*で、 [ **WMIREGGUID** ](https://msdn.microsoft.com/library/windows/hardware/ff565827)または[ **WMIGUIDREGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff565811)構成ブロックを登録するときを WMI に渡されます。 詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
+ドライバーは、ブロックが静的または動的なインスタンス名を使用し、静的インスタンスの型、名前、設定や WMIREG をクリアするかどうかを示します\_フラグ\_*XXX*で、 [ **WMIREGGUID** ](https://msdn.microsoft.com/library/windows/hardware/ff565827)または[ **WMIGUIDREGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff565811)構成ブロックを登録するときを WMI に渡されます。 詳細については、[WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)を参照してください。
 
  
 

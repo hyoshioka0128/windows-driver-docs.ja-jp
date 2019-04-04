@@ -25,7 +25,7 @@ ms.locfileid: "56550779"
 
 
 
-NDIS ミニポート ドライバーは、ウェイク アップのイベントをサポートする、送信ドライバー、 [OID\_PNP\_を有効にする\_WAKE\_を](https://msdn.microsoft.com/library/windows/hardware/ff569775)要求を送信する前に、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)要求。 詳細については、次を参照してください。[ウェイク アップのイベントを有効にする](enabling-wake-up-events.md)します。 ミニポート ドライバーに OID が失敗する必要がありますいない\_PNP\_設定\_POWER 要求。
+NDIS ミニポート ドライバーは、ウェイク アップのイベントをサポートする、送信ドライバー、 [OID\_PNP\_を有効にする\_WAKE\_を](https://msdn.microsoft.com/library/windows/hardware/ff569775)要求を送信する前に、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)要求。 詳細については、[ウェイク アップのイベントを有効にする](enabling-wake-up-events.md)を参照してください。 ミニポート ドライバーに OID が失敗する必要がありますいない\_PNP\_設定\_POWER 要求。
 
 NDIS を返す前に\_状態\_OID への応答の成功\_PNP\_設定\_POWER 要求、ミニポート ドライバーにする必要があります。
 

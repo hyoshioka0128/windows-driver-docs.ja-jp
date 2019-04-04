@@ -14,7 +14,7 @@ ms.locfileid: "57464344"
 # <a name="ctrpp-task"></a>Ctrpp タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、ctrpp.exe ツールを実行できるようにの Ctrpp タスクが用意されています。 Ctrpp.exe の使用方法の詳細については、次を参照してください。 [ **CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)します。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、ctrpp.exe ツールを実行できるようにの Ctrpp タスクが用意されています。 Ctrpp.exe の使用方法の詳細については、[ **CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)を参照してください。
 
 MSBuild では、Ctrpp 項目を使用して、ctrpp.exe に Ctrpp タスクのパラメーターを送信します。 プロジェクト ファイルで Ctrpp 項目では、ctrpp.exe の項目メタデータにアクセスします。
 

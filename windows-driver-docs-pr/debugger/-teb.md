@@ -40,7 +40,7 @@ Exts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッド環境ブロックについては、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。
+スレッド環境ブロックについては、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。
 
 <a name="remarks"></a>注釈
 -------

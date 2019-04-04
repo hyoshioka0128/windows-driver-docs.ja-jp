@@ -19,7 +19,7 @@ ms.locfileid: "56556500"
 ## <a name="span-iddebuggercommandwindowspanspan-iddebuggercommandwindowspanspan-iddebuggercommandwindowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>デバッガー コマンド ウィンドウ
 
 
-設定、表示、およびデバッガー コマンド ウィンドウでコマンドを入力して、ブレークポイントを操作することができます。 コマンドの一覧は、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
+設定、表示、およびデバッガー コマンド ウィンドウでコマンドを入力して、ブレークポイントを操作することができます。 コマンドの一覧は、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
 
 ## <a name="span-idwindbgmenuspanspan-idwindbgmenuspanspan-idwindbgmenuspanwindbg-menu"></a><span id="WinDbg_Menu"></span><span id="windbg_menu"></span><span id="WINDBG_MENU"></span>WinDbg のメニュー
 

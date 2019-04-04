@@ -26,7 +26,7 @@ ms.locfileid: "56551565"
 
 -   *カテゴリ*TXTLOG_VENDOR で、ログ エントリがベンダーから提供されたアプリケーションによって行われたことを示しますに設定されます。 イベント カテゴリについては、後述[テキスト ログのイベント カテゴリを有効にする](enabling-event-categories-for-a-text-log.md)します。
 
--   *フラグ*TXTLOG_TIMESTAMP とビットごとの TXTLOG_ERROR またはに設定されます。 この例では、インデント深度が変更されていないとインデントの現在の深さは 5 つの固定幅テキスト スペースに設定されていました。 インデントの深さを変更する方法については、次を参照してください。[インデントのログ エントリの書き込み](writing-indented-log-entries.md)します。 イベント レベルが記載されて、[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)トピック。
+-   *フラグ*TXTLOG_TIMESTAMP とビットごとの TXTLOG_ERROR またはに設定されます。 この例では、インデント深度が変更されていないとインデントの現在の深さは 5 つの固定幅テキスト スペースに設定されていました。 インデントの深さを変更する方法については、[インデントのログ エントリの書き込み](writing-indented-log-entries.md)を参照してください。 イベント レベルが記載されて、[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)トピック。
 
 -   *MessageStr*テキスト (「アプリケーション エラー (%d)」) に設定されます。
 

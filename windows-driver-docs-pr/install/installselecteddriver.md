@@ -82,7 +82,7 @@ DWORD 型の変数へのポインターを**InstallSelectedDriver**をインス�
 </tr>
 <tr class="even">
 <td align="left"><strong>ERROR_IN_WOW64</strong></td>
-<td align="left"><p>呼び出し元のアプリケーションとは、これは許可されていない 64 ビット環境で実行しようとする 32 ビット アプリケーションです。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541255" data-raw-source="[Installing Devices on 64-Bit Systems](https://msdn.microsoft.com/library/windows/hardware/ff541255)">64 ビット システムでのデバイスのインストール</a>します。</p></td>
+<td align="left"><p>呼び出し元のアプリケーションとは、これは許可されていない 64 ビット環境で実行しようとする 32 ビット アプリケーションです。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff541255" data-raw-source="[Installing Devices on 64-Bit Systems](https://msdn.microsoft.com/library/windows/hardware/ff541255)">64 ビット システムでのデバイスのインストール</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +100,7 @@ DWORD 型の変数へのポインターを**InstallSelectedDriver**をインス�
 
  
 
-特定のデバイスで特定のドライバーのインストールを必要とする特別なアプリケーション、以外、インストール アプリケーションはデバイスに最適なものであるドライバーをインストールする必要があります。 デバイスに最適なものであるドライバーをインストールするには、呼び出す[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)または[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)します。 これらのデバイス ドライバーをインストールするために呼び出す関数の詳細については、次を参照してください。 [SetupAPI 関数を ドライバーのインストールの簡略化](https://msdn.microsoft.com/library/windows/hardware/ff550867)します。
+特定のデバイスで特定のドライバーのインストールを必要とする特別なアプリケーション、以外、インストール アプリケーションはデバイスに最適なものであるドライバーをインストールする必要があります。 デバイスに最適なものであるドライバーをインストールするには、呼び出す[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)または[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)します。 これらのデバイス ドライバーをインストールするために呼び出す関数の詳細については、[SetupAPI 関数を ドライバーのインストールの簡略化](https://msdn.microsoft.com/library/windows/hardware/ff550867)を参照してください。
 
 呼び出しの前に**InstallSelectedDriver**デバイスを含むデバイス情報のセットを取得、セットでデバイスを選択およびデバイスのドライバーを選択する必要があります、呼び出し元。
 

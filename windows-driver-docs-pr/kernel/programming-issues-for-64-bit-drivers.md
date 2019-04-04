@@ -30,7 +30,7 @@ ms.locfileid: "56556493"
 
 [X64 ドライバの制限](driver-x64-restrictions.md)
 
-64 ビット コンパイラを使用したプログラミングについては、次を参照してください。 [64 ビットの Visual c を使用したプログラミング](https://go.microsoft.com/fwlink/p/?linkid=165521)します。
+64 ビット コンパイラを使用したプログラミングについては、[64 ビットの Visual c を使用したプログラミング](https://go.microsoft.com/fwlink/p/?linkid=165521)を参照してください。
 
  
 

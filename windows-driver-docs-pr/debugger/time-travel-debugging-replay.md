@@ -26,7 +26,7 @@ ms.locfileid: "56537754"
 | t-(さかのぼって)| 
 | g: (戻る)   |
 
-詳細については、次を参照してください。[タイム トラベルのデバッグ - ナビゲーション コマンド](time-travel-debugging-navigation-commands.md)します。 
+詳細については、[タイム トラベルのデバッグ - ナビゲーション コマンド](time-travel-debugging-navigation-commands.md)を参照してください。 
 
 ## <a name="ribbon-button-time-travel-navigation"></a>リボン ボタン タイム トラベル ナビゲーション
 
@@ -129,12 +129,12 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 - {0} 位置} が # である場合: #, # は、16 進数、送信するときにその位置にします。 たとえば、 `!tt 1A0:12F` 1A0:12F をトレースに位置に移動します。
 
-詳細については、次を参照してください。[時のデバッグ出張 -! tt (タイム トラベル)](time-travel-debugging-extension-tt.md)します。
+詳細については、[時のデバッグ出張 -! tt (タイム トラベル)](time-travel-debugging-extension-tt.md)を参照してください。
 
 
 ## <a name="positions"></a>! 位置
 
-使用`!positions`アクティブなすべてのスレッドをトレース内の位置を含むを表示します。 詳細については、次を参照してください。[時のデバッグ出張 -! 位置 (タイム トラベル)](time-travel-debugging-extension-positions.md)します。
+使用`!positions`アクティブなすべてのスレッドをトレース内の位置を含むを表示します。 詳細については、[時のデバッグ出張 -! 位置 (タイム トラベル)](time-travel-debugging-extension-positions.md)を参照してください。
 
 ```dbgcmd
 0:000> !positions

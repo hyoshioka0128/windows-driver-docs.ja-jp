@@ -102,7 +102,7 @@ Build succeeded.
 Time Elapsed 00:01:37.93
 ```
 
-どのルールに違反しましたを表示する結果の概要を表示した後を指定できます、 **/ビュー**静的ドライバー検証ツールのレポートを表示する MSBuild コマンドのオプション。 コマンド オプションについては、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。 については、**スキャン**、**ビルド**と**確認**出力では、手順を参照してください[検証プロセス](verification-process.md)します。
+どのルールに違反しましたを表示する結果の概要を表示した後を指定できます、 **/ビュー**静的ドライバー検証ツールのレポートを表示する MSBuild コマンドのオプション。 コマンド オプションについては、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。 については、**スキャン**、**ビルド**と**確認**出力では、手順を参照してください[検証プロセス](verification-process.md)します。
 
 次の表では、結果の概要に表示される結果について説明します。
 

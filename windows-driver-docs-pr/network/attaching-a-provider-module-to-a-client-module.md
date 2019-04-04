@@ -22,7 +22,7 @@ ms.locfileid: "57349577"
 # <a name="attaching-a-provider-module-to-a-client-module"></a>クライアント モジュールへのプロバイダー モジュールのアタッチ
 
 
-クライアント モジュールを呼び出す、 [ **NmrClientAttachProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568770)プロバイダー モジュールに接続する関数。 クライアント モジュールをプロバイダー モジュールに接続する方法の詳細については、次を参照してください。[プロバイダー モジュールへのクライアント モジュール](attaching-a-client-module-to-a-provider-module.md)します。
+クライアント モジュールを呼び出す、 [ **NmrClientAttachProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568770)プロバイダー モジュールに接続する関数。 クライアント モジュールをプロバイダー モジュールに接続する方法の詳細については、[プロバイダー モジュールへのクライアント モジュール](attaching-a-client-module-to-a-provider-module.md)を参照してください。
 
 クライアント モジュールを呼び出すと[ **NmrClientAttachProvider**](https://msdn.microsoft.com/library/windows/hardware/ff568770)、NMR 呼び出し、プロバイダー モジュールの[ *ProviderAttachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570395)コールバック関数。 NMR がプロバイダーのモジュールを呼び出したときに*ProviderAttachClient*コールバック関数では、合格したで、 *ClientRegistrationInstance*パラメーターへのポインター、 [ **NPI\_登録\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff568815)を呼び出したクライアント モジュールに関連付けられている構造**NmrClientAttachProvider**します。 プロバイダー モジュールの*ProviderAttachClient*コールバック関数は、データを使用して、クライアントのモジュールで**NPI\_登録\_インスタンス**データを構成します。[**NPI\_MODULEID** ](https://msdn.microsoft.com/library/windows/hardware/ff568813)構造と[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)-特定のクライアントの特性構造が、が指す**ModuleId**と**NpiSpecificCharacteristics**クライアントのモジュールのメンバー **NPI\_登録\_インスタンス**構造体かどうかは、クライアント モジュールに接続を確認します。
 

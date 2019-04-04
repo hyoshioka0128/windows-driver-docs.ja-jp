@@ -27,7 +27,7 @@ SMS を使用する UWP アプリでは、Visual Studio でパッケージ マ�
   </Capabilities>
 ```
 
-詳細については、次を参照してください。[アプリ機能の宣言 (UWP アプリ)](https://go.microsoft.com/fwlink/p/?linkid=317125)します。
+詳細については、[アプリ機能の宣言 (UWP アプリ)](https://go.microsoft.com/fwlink/p/?linkid=317125)を参照してください。
 
 ## <a name="span-idsmsappdeclarationindevicemetadataspanspan-idsmsappdeclarationindevicemetadataspanspan-idsmsappdeclarationindevicemetadataspansms-app-declaration-in-device-metadata"></a><span id="SMS_app_declaration_in_device_metadata"></span><span id="sms_app_declaration_in_device_metadata"></span><span id="SMS_APP_DECLARATION_IN_DEVICE_METADATA"></span>デバイスのメタデータで SMS アプリの宣言
 

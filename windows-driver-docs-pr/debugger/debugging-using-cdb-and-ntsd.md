@@ -16,7 +16,7 @@ ms.locfileid: "56549223"
 
 このセクションでは、Microsoft Console Debugger (CDB) と Microsoft NT ・ Symbolic Debugger (NTSD) を使用して、基本的なデバッグ タスクを実行する方法について説明します。
 
-NTSD の CDB が呼び出されたコマンド プロンプト ウィンドウを継承する一方に開始されると、新しいテキスト ウィンドウが生成する点を除いて、CDB、NTSD はすべての方法でと同じです。 CDB でのこのセクションの指示が与えられますが、同様に機能する NTSD に適しています。 CDB、NTSD またはを使用する場合の詳細については、次を参照してください。[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)します。
+NTSD の CDB が呼び出されたコマンド プロンプト ウィンドウを継承する一方に開始されると、新しいテキスト ウィンドウが生成する点を除いて、CDB、NTSD はすべての方法でと同じです。 CDB でのこのセクションの指示が与えられますが、同様に機能する NTSD に適しています。 CDB、NTSD またはを使用する場合の詳細については、[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)を参照してください。
 
 詳細については、次のトピックで与えられます。
 

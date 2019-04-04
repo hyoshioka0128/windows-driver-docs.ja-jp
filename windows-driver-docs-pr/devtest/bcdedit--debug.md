@@ -80,7 +80,7 @@ ms.locfileid: "56556556"
 
  
 
-Windows デバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。 設定して、カーネル モードの構成についてはデバッグ セッションを参照してください[カーネル モード デバッグ手作業でセットアップ](https://msdn.microsoft.com/library/windows/hardware/hh439378)します。
+Windows デバッグ ツールの詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。 設定して、カーネル モードの構成についてはデバッグ セッションを参照してください[カーネル モード デバッグ手作業でセットアップ](https://msdn.microsoft.com/library/windows/hardware/hh439378)します。
 
 次の例は、カーネルが 49916baf-0e08-11db-9af4-000bdbd316a0 の GUID を持つブート エントリのデバッグを有効にします。
 

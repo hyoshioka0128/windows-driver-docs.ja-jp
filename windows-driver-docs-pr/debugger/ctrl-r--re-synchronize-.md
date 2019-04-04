@@ -70,7 +70,7 @@ CTRL+ALT+R
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメソッドの再ターゲットとの接続を確立するには、次を参照してください。[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)します。
+その他のメソッドの再ターゲットとの接続を確立するには、[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

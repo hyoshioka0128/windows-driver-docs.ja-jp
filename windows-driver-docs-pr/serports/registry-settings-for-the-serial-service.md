@@ -26,7 +26,7 @@ ms.locfileid: "56549751"
 シリアルが下にある次のサービスのエントリの値を使用して、 **.\\サービス\\シリアル**レジストリ キー。
 
 <a href="" id="forcefifoenable--reg-dword-"></a>**ForceFifoEnable** (REG\_DWORD)  
-Fifo を使用するシリアルを強制するかどうかを示すブール フラグを指定します。 場合**ForceFifofEnable**が 0 以外の場合、Fifo を使用するシリアルが Fifo の存在を検出するかどうかに関係なく。 それ以外の場合、Fifo は、シリアルが検出できる場合にのみ使用されます。 既定値は、0 以外の値です。 シリアルの設定、エントリの値が存在しない場合、 **ForceFifoEnable**エントリの値を既定値。 検出の詳細については、メソッドは、次を参照してください。、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でします。
+Fifo を使用するシリアルを強制するかどうかを示すブール フラグを指定します。 場合**ForceFifofEnable**が 0 以外の場合、Fifo を使用するシリアルが Fifo の存在を検出するかどうかに関係なく。 それ以外の場合、Fifo は、シリアルが検出できる場合にのみ使用されます。 既定値は、0 以外の値です。 シリアルの設定、エントリの値が存在しない場合、 **ForceFifoEnable**エントリの値を既定値。 検出の詳細については、メソッドは、、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でを参照してください。
 
 <a href="" id="rxfifo--reg-dword-"></a>**RxFIFO** (REG\_DWORD)  
 受信ポートの割り込みをトリガーする FIFO のバイト数を指定します。 有効な値は、Serial.h ヘッダー ファイルで定義されている定数を参照してください、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でします。 既定値**RxFIFO**は 8 バイトです。 シリアルの設定、エントリの値が存在しない場合、 **RxFIFO**エントリの値を既定値。

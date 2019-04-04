@@ -79,7 +79,7 @@ GDI は、イベントの種類のサポートを提供します[カーネルの
 
 ビデオ ポート ドライバーには、ビデオのミニポート ドライバーへのイベントのサポートも提供します。 参照してください[ビデオのミニポート ドライバー (Windows 2000 モデル) 内のイベント](events-in-video-miniport-drivers--windows-2000-model-.md)詳細についてはします。
 
-イベントに関するより広範なパースペクティブは、次を参照してください。[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)します。
+イベントに関するより広範なパースペクティブは、[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)を参照してください。
 
  
 

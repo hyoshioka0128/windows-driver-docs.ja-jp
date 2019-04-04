@@ -62,7 +62,7 @@ NatVis ファイルの名前またはアンロードするモジュール名を�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
+詳細については、[.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

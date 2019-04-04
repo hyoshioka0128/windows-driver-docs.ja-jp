@@ -54,7 +54,7 @@ ms.locfileid: "56548612"
 
     ミニポート ドライバーでポート ドライバーによって提供される相対バスへのアクセス範囲値をマップする必要があります[ **ScsiPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff564629)論理アドレスが割り当てられた値を使用してを決定するかどうか、対応する HBA は、ドライバーをサポートしています。 *決して*マップし、バス上の HBA へのアクセス ポート ドライバー、ポート範囲要素に塗りつぶされたアクセスを提供する場合に、ミニポート ドライバーが指定した範囲を使用して\_構成\_に渡す情報、 *HwScsiFindAdapter*ルーチン。 ポート ドライバーには、範囲の構成情報が提供されているときに、ミニポート ドライバーが指定したアドレスを使用して、機能しなくなるので、既に構成されている HBA をリセットしたり、システムのブート プロセスが失敗するおそれもできます。
 
-    詳細については、マップされた論理アクセスの範囲を使用して、次を参照してください。 [HwScsiFindAdapter で ConfigInfo セットアップ](setting-up-configinfo-in-hwscsifindadapter.md)します。
+    詳細については、マップされた論理アクセスの範囲を使用して、[HwScsiFindAdapter で ConfigInfo セットアップ](setting-up-configinfo-in-hwscsifindadapter.md)を参照してください。
 
 -   **BusInterruptLevel**または**BusInterruptVector**
 

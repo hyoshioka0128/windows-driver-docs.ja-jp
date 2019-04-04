@@ -23,7 +23,7 @@ ms.locfileid: "56539291"
 # <a name="bug-check-0x1c4-driververifierdetectedviolationlivedump"></a>バグ チェック 0x1C4 の。ドライバー\_VERIFIER\_検出\_違反\_LIVEDUMP
 
 
-ドライバー\_VERIFIER\_検出\_違反\_LIVEDUMP バグ チェックが 0x000001C4 の値を持ちます。 これは、システムを破壊しようとしてデバイス ドライバーが検出されたことを示します。 これは、ドライバーは、(管理者) によって問題ありとカーネルが有効になっているこのドライバーの詳細なチェック、レジストリで指定されたためにです。 詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
+ドライバー\_VERIFIER\_検出\_違反\_LIVEDUMP バグ チェックが 0x000001C4 の値を持ちます。 これは、システムを破壊しようとしてデバイス ドライバーが検出されたことを示します。 これは、ドライバーは、(管理者) によって問題ありとカーネルが有効になっているこのドライバーの詳細なチェック、レジストリで指定されたためにです。 詳細については、[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)を参照してください。
 
 **重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
 

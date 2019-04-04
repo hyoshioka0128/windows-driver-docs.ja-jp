@@ -65,7 +65,7 @@ Usb3kd.dll
 -   [**! デバイス\_情報\_から\_pdo**](-usb3kd-device-info-from-pdo.md)
 -   [**! ポート\_情報**](-usb3kd-port-info.md)
 
-によって表示される情報、 [ **! usb\_ツリー** ](-usb3kd-device-info.md)コマンド ファミリは、USB 3.0 ハブ ドライバーによって維持されるデータ構造に基づきます。 USB 3.0 ハブのドライバーと USB 3.0 スタック内の他のドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。 USB 3.0 スタック内のドライバーで使用されるデータ構造の詳細については、第 2 部を参照してください、 [Windows 8 の USB デバッグ イノベーション](https://go.microsoft.com/fwlink/p/?LinkID=249153)ビデオ。
+によって表示される情報、 [ **! usb\_ツリー** ](-usb3kd-device-info.md)コマンド ファミリは、USB 3.0 ハブ ドライバーによって維持されるデータ構造に基づきます。 USB 3.0 ハブのドライバーと USB 3.0 スタック内の他のドライバーについては、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。 USB 3.0 スタック内のドライバーで使用されるデータ構造の詳細については、第 2 部を参照してください、 [Windows 8 の USB デバッグ イノベーション](https://go.microsoft.com/fwlink/p/?LinkID=249153)ビデオ。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

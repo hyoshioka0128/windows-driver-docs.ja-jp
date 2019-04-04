@@ -19,7 +19,7 @@ ms.locfileid: "56529671"
 ## <a name="install-windows-on-the-sharks-cove-board"></a>サメ Cove ボード上の Windows をインストールします。
 
 
-サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、次を参照してください。[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)します。
+サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)を参照してください。
 
 ## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>サメ Cove を使用する ADXL345 を変更します。
 

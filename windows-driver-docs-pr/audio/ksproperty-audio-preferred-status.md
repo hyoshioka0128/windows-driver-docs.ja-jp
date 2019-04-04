@@ -72,7 +72,7 @@ KSPROPERTY\_オーディオ\_優先\_プロパティの状態要求のステー�
 
 [SysAudio システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver) wave レコード、MIDI、またはミキサーのデバイスを優先する新しいデバイスを選択したとき、または以前に選択したときに優先するデバイスの選択を解除ウェーブの再生を通知するためにこのプロパティを使用します。
 
-任意のデバイスについては、次を参照してください。 [ **SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)します。
+任意のデバイスについては、[ **SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

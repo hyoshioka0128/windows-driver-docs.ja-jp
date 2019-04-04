@@ -41,13 +41,13 @@ ms.locfileid: "56552221"
     ntsd -server ServerTransport -ddefer [-y UserSymbolPath] ApplicationName 
     ```
 
-    これをインストールする事後分析をデバッガーとして場合、は、次の構文を使用します。 含む事後デバッガーにインストールするレジストリを手動で編集する必要がありますに注意してくださいは、server パラメーター。詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
+    これをインストールする事後分析をデバッガーとして場合、は、次の構文を使用します。 含む事後デバッガーにインストールするレジストリを手動で編集する必要がありますに注意してくださいは、server パラメーター。詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
 
     ```console
     ntsd -server ServerTransport -ddefer [-y UserSymbolPath] 
     ```
 
-    使用可能なトランスポートのオプションについては、次を参照してください。 [**デバッグ サーバー アクティブ化する**](activating-a-debugging-server.md)します。
+    使用可能なトランスポートのオプションについては、[**デバッグ サーバー アクティブ化する**](activating-a-debugging-server.md)を参照してください。
 
 2.  まるで、対象のコンピューターをデバッグしようとしていたが、実際に損なわれないターゲット コンピューターに、ホスト コンピューターでは、WinDbg または KD を起動します。 WinDbg を使用するには、次の構文を使用します。
 
@@ -65,7 +65,7 @@ ms.locfileid: "56552221"
     cdb -remote ClientTransport 
     ```
 
-    この手順の詳細については、次を参照してください。 [**デバッグ クライアントをアクティブ化する**](activating-a-debugging-client.md)します。
+    この手順の詳細については、[**デバッグ クライアントをアクティブ化する**](activating-a-debugging-client.md)を参照してください。
 
 4.  デバッガーが実行されたら、`Input>`プロンプトが表示されたら、カーネル デバッガーを使用して、 [ **.sleep (デバッガーを一時停止)** ](-sleep--pause-debugger-.md)デバッガーを一時停止し、いくつかの実行対象のコンピュータを使用するコマンド秒数。 これにより、ユーザー モードのリモート サーバーとリモート クライアント間の接続を確立する、リモートのトランスポート プロトコルを処理するターゲット コンピューターの時刻です。
 

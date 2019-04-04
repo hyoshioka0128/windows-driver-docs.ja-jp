@@ -17,11 +17,11 @@ ms.locfileid: "56532454"
 ## <span id="ddk_scsi_port_s_interface_with_scsi_port_miniport_drivers_kg"></span><span id="DDK_SCSI_PORT_S_INTERFACE_WITH_SCSI_PORT_MINIPORT_DRIVERS_KG"></span>
 
 
-SCSI ポート ドライバーと SCSI ポート ミニポート ドライバー間の通信が行わによって SCSI 要求のブロック (される Srb) およびミニポート ドライバー コールバック ルーチン。 SCSI ポート ミニポート ドライバー コールバック ルーチンの詳細については、次を参照してください。 [SCSI ミニポート ドライバー](scsi-miniport-drivers.md)します。
+SCSI ポート ドライバーと SCSI ポート ミニポート ドライバー間の通信が行わによって SCSI 要求のブロック (される Srb) およびミニポート ドライバー コールバック ルーチン。 SCSI ポート ミニポート ドライバー コールバック ルーチンの詳細については、[SCSI ミニポート ドライバー](scsi-miniport-drivers.md)を参照してください。
 
-概要と SRB の個々 の関数、SRB フラグ、および SRB 状態の値の定義については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)します。
+概要と SRB の個々 の関数、SRB フラグ、および SRB 状態の値の定義については、[ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)を参照してください。
 
-ミニポート ドライバーが SRB 関数に対応する方法に関する話題は、次を参照してください。 [SCSI ミニポート ドライバー HwScsiStartIo ルーチン](scsi-miniport-driver-s-hwscsistartio-routine.md)します。
+ミニポート ドライバーが SRB 関数に対応する方法に関する話題は、[SCSI ミニポート ドライバー HwScsiStartIo ルーチン](scsi-miniport-driver-s-hwscsistartio-routine.md)を参照してください。
 
 SCSI ポートは、同期的に、アダプターがタグ付けされたキューがサポートする場合を除くされる Srb を SCSI ポート ミニポート ドライバーに転送します。 タグが付けられたキューをサポートするホスト バス アダプターでは、内部要求キューに配置でき、それらを SCSI ポートを各要求に割り当てることのタグで示される順序で処理することができます。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393) (SRB) 構造体には、SCSI ポート ドライバーを使用してホスト アダプターの内部キューでされる Srb を順序付けする方法を指定する 2 つのメンバーが含まれています。:**QueuedTag**と**QueueAction**します。 SCSI ポート割り当ての数、または *「タグ」* 値に、 **QueuedTag**アダプターが、パケットを処理する順序を示す各 SRB のメンバー。 タグの値では、SCSI ポートされる Srb が正常に完了してされる Srb がタイムアウトしたかを追跡することもできます。
 

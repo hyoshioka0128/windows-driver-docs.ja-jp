@@ -62,7 +62,7 @@ ms.locfileid: "56539123"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ターゲットとの接続を再確立の詳細については、次を参照してください。[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)します。
+ターゲットとの接続を再確立の詳細については、[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

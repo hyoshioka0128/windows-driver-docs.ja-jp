@@ -25,5 +25,5 @@ ms.locfileid: "56535563"
 
 [中間レベルのドライバーは Irp の処理](processing-irps-in-an-intermediate-level-driver.md)
 
-作成および詳細について Irp の送信については、次を参照してください。 [Irp – チート シートの処理のさまざまな方法](https://go.microsoft.com/fwlink/?linkid=834615)します。
+作成および詳細について Irp の送信については、[Irp – チート シートの処理のさまざまな方法](https://go.microsoft.com/fwlink/?linkid=834615)を参照してください。
 
