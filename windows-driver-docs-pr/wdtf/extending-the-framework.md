@@ -33,7 +33,7 @@ WDTF は拡張性が構築されています。 性は、次の図に示すよ�
 
 -   **既存の実装** [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)**と同様に、** SimpleIO します。 このメソッドは、黄色が上記の図に表示されます。 インターフェイスが機能する対象の種類を拡張する既存のアクション インターフェイスを実装できます。 デバイスの種類に、SimpleIO を実装する場合、デバイスの I/O の検証を実行する WDTF ベースの既存のシナリオのすべてを自動的に開始されます。
 
-    WDTF は、SimpleIO の実装で支援するために Microsoft Visual Studio テンプレートを提供します。 詳細については、次を参照してください。 [WDTF SimpleIO がデバイスのプラグインを記述](writing-a-wdtf-simpleio-plug-in-for-your-device.md)します。
+    WDTF は、SimpleIO の実装で支援するために Microsoft Visual Studio テンプレートを提供します。 詳細については、[WDTF SimpleIO がデバイスのプラグインを記述](writing-a-wdtf-simpleio-plug-in-for-your-device.md)を参照してください。
 
 -   **作成 (および実装し)、新しい** [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)します。 このメソッドは、上記の図で赤色で表示されます。 WDTF を提供する機能が、コンポーネント ベースのシナリオを構築するのに十分でない場合は、新しいコンポーネントを作成する WDTF を使用できます。
 

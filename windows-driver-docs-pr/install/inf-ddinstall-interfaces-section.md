@@ -42,13 +42,13 @@ AddInterface={InterfaceClassGUID} [, [reference string] [,[add-interface-section
 
 デバイス インターフェイスの新しいクラスをエクスポートするクラス ドライバーなど、コンポーネントをインストールする、INF が必要もあります、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。
 
-デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイス クラス](device-interface-classes.md)します。
+デバイス インターフェイスの詳細については、[デバイス インターフェイス クラス](device-interface-classes.md)を参照してください。
 
 ## <a name="entries"></a>エントリ
 
 
 <a href="" id="addinterface--interfaceclassguid------reference-string-----add-interface-section----flags-------"></a>**AddInterface = {**<em>InterfaceClassGUID</em>**}** \[ **、** \[*文字列参照*\] \[ **、**\[*追加インターフェイス セクション*\] \[ **、** <em>フラグ</em>\] \] \] .  
-このディレクティブの指定で指定された、デバイスのインターフェイス クラスのサポートをインストールする*InterfaceClassGUID*上位コンポーネントにドライバーをエクスポートする値。 通常も参照して、INF-ライター定義*追加インターフェイス セクション*INF ファイルで別の場所。 このディレクティブを指定する方法の詳細については、次を参照してください。 [ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)します。
+このディレクティブの指定で指定された、デバイスのインターフェイス クラスのサポートをインストールする*InterfaceClassGUID*上位コンポーネントにドライバーをエクスポートする値。 通常も参照して、INF-ライター定義*追加インターフェイス セクション*INF ファイルで別の場所。 このディレクティブを指定する方法の詳細については、[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)を参照してください。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイス/ドライバーでサポートされているインターフェイス クラスを登録するために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。
@@ -67,7 +67,7 @@ AddInterface={InterfaceClassGUID} [, [reference string] [,[add-interface-section
 
 指定した場合 **{**<em>InterfaceClassGUID</em>**}** がインストールされていない既に、オペレーティング システムのセットアップ コードがシステムでそのデバイスのインターフェイス クラスをインストールします。 INF ファイルでは、1 つまたは複数の新しいデバイス インターフェイス クラスをインストールする場合、 **\[InterfaceInstall32\]** セクションの新しいクラスの GUID を特定する.
 
-GUID を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。 システム定義のインターフェイス クラスの Guid など、システム提供の適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイスをクラスの GUID。
+GUID を作成する方法の詳細については、[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)を参照してください。 システム定義のインターフェイス クラスの Guid など、システム提供の適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイスをクラスの GUID。
 
 ドライバーが読み込まれるときに呼び出す必要があります[ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)ごとに 1 回 **{**<em>InterfaceClassGUID</em>**}** INF ので指定された値<em>DDInstall</em>**します。インターフェイス**より高いレベルのコンポーネントによって実行時用のインターフェイスを有効にする、基になるデバイスのドライバーをサポートしているセクション。 デバイス ドライバーを呼び出すことができます、INF デバイス インターフェイスのサポートを登録するではなく[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)その最初の呼び出しを行う前に**IoSetDeviceInterfaceState**. PnP 関数またはフィルター ドライバーからのこの呼び出しは、通常は、その[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。
 

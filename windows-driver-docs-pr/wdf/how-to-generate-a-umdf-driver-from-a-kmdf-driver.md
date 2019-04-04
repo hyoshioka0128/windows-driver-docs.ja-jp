@@ -53,7 +53,7 @@ ms.locfileid: "56538393"
         ```
 
     -   KMDF ドライバーなど WDM ルーチンの呼び出しを変換するかどうか[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)など、WDF の対応するメソッドを置き換える[ **WdfMemoryCreate**](https://msdn.microsoft.com/library/windows/hardware/ff548706)します。 同様に、ユーザー モード関数を呼び出す UMDF ドライバーを変換する場合は、これらのカーネル モードのと同じルーチンを置き換えます。
-    -   いくつかのメソッドは、UMDF でのみサポートされていますが、他のユーザー、KMDF でのみサポートされます。 Windows Driver Frameworks (WDF) のすべてのメソッドと、フレームワークの適用性の一覧は、次を参照してください。 [WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
+    -   いくつかのメソッドは、UMDF でのみサポートされていますが、他のユーザー、KMDF でのみサポートされます。 Windows Driver Frameworks (WDF) のすべてのメソッドと、フレームワークの適用性の一覧は、[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)を参照してください。
 
  
 

@@ -126,7 +126,7 @@ TVOT\_トラック バー
 
  
 
-詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
+詳細については、[Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

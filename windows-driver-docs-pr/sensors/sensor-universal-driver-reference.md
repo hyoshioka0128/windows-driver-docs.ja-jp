@@ -28,7 +28,7 @@ ms.locfileid: "56527425"
 -   [センサーのプロパティ](sensor-properties2.md)
  
 
-センサー DDI 参照では、次を参照してください。 https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_sensors/します。
+センサー DDI 参照では、 https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_sensors/を参照してください。
 
 
 

@@ -31,7 +31,7 @@ ms.locfileid: "56528620"
 HKR, Ndi, RequiredAll, 0, "component id"
 ```
 
-*コンポーネント ID*は、 *hw id*の必要なネットワーク コンポーネント。 詳細については、次を参照してください。 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)します。 ネットワーク コンポーネントには、その他の 1 つ以上のネットワーク コンポーネントのインストールが必要とする場合は、1 つを使用して、 **RequiredAll**エントリ ネットワーク コンポーネントのごとに次の例に示すようにインストールする必要があります。
+*コンポーネント ID*は、 *hw id*の必要なネットワーク コンポーネント。 詳細については、[ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)を参照してください。 ネットワーク コンポーネントには、その他の 1 つ以上のネットワーク コンポーネントのインストールが必要とする場合は、1 つを使用して、 **RequiredAll**エントリ ネットワーク コンポーネントのごとに次の例に示すようにインストールする必要があります。
 
 ```INF
 HKR, Ndi, RequiredAll, 0, "component1 id, component2 id"
@@ -43,7 +43,7 @@ HKR, Ndi, RequiredAll, 0, "component1 id, component2 id"
 
 たとえば場合は、INF ファイルをコンポーネント A を指定します、を通じて**RequiredAll**コンポーネント A が削除されるまで、コンポーネントのコンポーネント B B への依存関係を削除できません。 **RequiredAll**そのため、別のネットワーク コンポーネントの操作のために絶対に必要なネットワーク コンポーネントのみをインストールする必要があります。 たとえば、Net のコンポーネントに対して、INF ファイルの場合 (アダプター) が使用されます。 **RequiredAll** TCP/IP をインストールする必要がありますを指定する、ユーザーはできませんをそのアダプターが削除されるまでは、TCP/IP を削除します。 アダプターの INF を使用する必要があります、アダプターは TCP/IP 動作を必要としないため、 **RequiredAll** TCP/IP で依存関係を指定します。
 
-INF ファイルを指定する、 **RequiredAll**依存関係が必要なネットワーク コンポーネントの INF ファイルが inf ディレクトリに存在することを確認する必要があります。 通常、これを実行、 **CopyINF**ディレクティブ。 詳細については、 **CopyINF**ディレクティブを参照してください[ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)します。 INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](https://msdn.microsoft.com/library/windows/hardware/ff540117)します。
+INF ファイルを指定する、 **RequiredAll**依存関係が必要なネットワーク コンポーネントの INF ファイルが inf ディレクトリに存在することを確認する必要があります。 通常、これを実行、 **CopyINF**ディレクティブ。 詳細については、 **CopyINF**ディレクティブを参照してください[ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)します。 INF ファイルをコピーする方法の詳細については、[コピー Inf](https://msdn.microsoft.com/library/windows/hardware/ff540117)を参照してください。
 
 ネットワーク コンポーネントのインストールがで指定された場合、 **RequiredAll**エントリが失敗した場合は、指定したコンポーネントがも失敗したが必要なネットワーク コンポーネントのインストール。
 

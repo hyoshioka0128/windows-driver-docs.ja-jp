@@ -28,9 +28,9 @@ ms.locfileid: "56531703"
 
 I/O マネージャーは、I/O 操作がダイレクト I/O を次のように使用することを決定します。
 
--   [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)操作を要求します。\_直接\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+-   [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)操作を要求します。\_直接\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 詳細については、[デバイス オブジェクトを初期化して](initializing-a-device-object.md)を参照してください。
 
--   [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)要求、IOCTL コードの値には、メソッドが含まれています\_IN\_ダイレクトまたはメソッド\_アウト\_、として直接 *。TransferType* IOCTL 値の値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+-   [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)要求、IOCTL コードの値には、メソッドが含まれています\_IN\_ダイレクトまたはメソッド\_アウト\_、として直接 *。TransferType* IOCTL 値の値。 詳細については、[I/O 制御コードを定義する](defining-i-o-control-codes.md)を参照してください。
 
 ダイレクト I/O を使用するドライバーでは、一部の Irp の処理にバッファー内の I/O を使用することもあります。 具体的には、ドライバー通常を使用して、バッファー内の I/O のいくつか I/O 制御コードの**IRP\_MJ\_デバイス\_コントロール**ドライバーを使用するかどうかに関係なく、データ転送を必要とする要求ダイレクト I/O による読み取りおよび書き込み操作。
 
@@ -40,7 +40,7 @@ I/O を直接転送の設定は、DMA または PIO を使用するかどうか�
 
 [ダイレクト I/O PIO の併用](using-direct-i-o-with-pio.md)
 
-ドライバーは、DMA および PIO 転送中にキャッシュの一貫性を維持するために手順を実行する必要があります。 詳細については、次を参照してください。[キャッシュの一貫性を維持](maintaining-cache-coherency.md)します。
+ドライバーは、DMA および PIO 転送中にキャッシュの一貫性を維持するために手順を実行する必要があります。 詳細については、[キャッシュの一貫性を維持](maintaining-cache-coherency.md)を参照してください。
 
  
 

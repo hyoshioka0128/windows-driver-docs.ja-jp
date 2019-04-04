@@ -48,7 +48,7 @@ GpioClx は、GPIO ピンに物理的に接続するための周辺機器のド�
 
 GpioClx は、GPIO コント ローラーのデバイスからのハードウェアによって生成された、プライマリの割り込みを処理する ISR を実装します。 周辺機器の GPIO ピンでは、割り込みをアサートし、上、この pin が有効になっているし、マスクが解除されたプロセッサに対して割り込みを GPIO コント ローラー。 応答をカーネル トラップ ハンドラーを実行する GpioClx ISR をスケジュールします。 GpioClx ISR を呼び出して、割り込みの原因となった GPIO ピンを識別するために、 [*クライアント\_QueryActiveInterrupts* ](https://msdn.microsoft.com/library/windows/hardware/hh439395) GPIO コント ローラーによって実装されているイベントのコールバック関数ドライバー。 この pin に割り当てられているし、ハードウェア アブストラクション レイヤー (HAL) にこの GSI を渡します GSI し GpioClx ISR を検索します。 HAL は、この GSI に対して登録されている ISR を呼び出すことによって、セカンダリの割り込みを生成します。 この ISR は、最初に、割り込みをアサートする周辺機器のデバイスのドライバーに属しています。
 
-プライマリとセカンダリの割り込みの詳細については、次を参照してください。 [GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)します。
+プライマリとセカンダリの割り込みの詳細については、[GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)を参照してください。
 
 ## <a name="drivers-for-peripheral-devices-that-use-gpio-pins"></a>GPIO ピンを使用している周辺機器のデバイスのドライバー
 

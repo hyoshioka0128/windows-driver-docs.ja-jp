@@ -16,7 +16,7 @@ ms.locfileid: "56528956"
 
 次の COM インターフェイスは、WDK に含まれているヘッダーで定義されます。
 
-**重要な**  SDK ヘッダーで提供される従来の COM の使用をお勧め可能であれば、します。 詳細については、次を参照してください。 [COM Fundamentals](https://msdn.microsoft.com/library/windows/desktop/ms694505)します。
+**重要な**  SDK ヘッダーで提供される従来の COM の使用をお勧め可能であれば、します。 詳細については、[COM Fundamentals](https://msdn.microsoft.com/library/windows/desktop/ms694505)を参照してください。
 
  
 

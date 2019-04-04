@@ -49,7 +49,7 @@ NVGRE と非 NVGRE パケットは、次のように扱われます。
 -   転送拡張機能は、NVGRE パケットを転送できませんが、フィルター拡張機能の追加または変換先のポートを除くやパケットを破棄してもなどのフィルター処理操作を実行できます。
 -   転送拡張機能がない場合は、HYPER-V 拡張可能スイッチは、すべてのパケットを転送します。
 
-詳細については、次を参照してください。[パケットがスイッチの拡張のデータ パスを通過](packet-flow-through-the-extensible-switch-data-path.md)します。
+詳細については、[パケットがスイッチの拡張のデータ パスを通過](packet-flow-through-the-extensible-switch-data-path.md)を参照してください。
 
 ## <a name="support-for-third-party-network-virtualization"></a>サードパーティ製のネットワーク仮想化のサポート
 

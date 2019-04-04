@@ -21,7 +21,7 @@ ms.locfileid: "56537053"
 ## <span id="ddk_command_and_vertex_buffers_gg"></span><span id="DDK_COMMAND_AND_VERTEX_BUFFERS_GG"></span>
 
 
-[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI は、2 種類のバッファーを使用: コマンド バッファーと頂点バッファー。 コマンド バッファーには、手順後に、execute バッファーと同じ構造内のデータにはが含まれています。 コマンド バッファーには、インデックスとインデックスなしのプリミティブと、場合によっては、インラインの頂点のデータが含まれます。 コマンド バッファーは、どちらの API レベルは、バッファーまたは Direct3D 内部コマンド バッファーを実行できます。 主な入力構造については、次を参照してください。 [ **D3DHAL\_DRAWPRIMITIVES2DATA**](https://msdn.microsoft.com/library/windows/hardware/ff545957)します。
+[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI は、2 種類のバッファーを使用: コマンド バッファーと頂点バッファー。 コマンド バッファーには、手順後に、execute バッファーと同じ構造内のデータにはが含まれています。 コマンド バッファーには、インデックスとインデックスなしのプリミティブと、場合によっては、インラインの頂点のデータが含まれます。 コマンド バッファーは、どちらの API レベルは、バッファーまたは Direct3D 内部コマンド バッファーを実行できます。 主な入力構造については、[ **D3DHAL\_DRAWPRIMITIVES2DATA**](https://msdn.microsoft.com/library/windows/hardware/ff545957)を参照してください。
 
 内部コマンド バッファーと、ドライバーは、メモリを割り当てるし、multibuffering を行うことができます。 内部コマンド バッファーは、書き込み専用です。 命令の形式で確認できます[ **D3DHAL\_DP2COMMAND**](https://msdn.microsoft.com/library/windows/hardware/ff545454)します。
 

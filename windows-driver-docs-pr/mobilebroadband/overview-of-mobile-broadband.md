@@ -175,7 +175,7 @@ SMS、USSD またはメッセージの受信、時に、モバイル ブロー�
 
  
 
-モバイル ブロード バンド アプリ、モバイル ネットワーク オペレーターに特権アクセスが与えられている UWP アプリ、UWP アプリ (モバイル ブロード バンド デバイスは、PC に組み込まれています) 場合は、PC OEM が特権アクセスが与えられている使用可能な SMS 機能またはモバイル ブロード バンドデバイス IHV (リムーバブル モバイル ブロード バンド デバイスの場合)。 モバイル ネットワーク オペレーターと PC の OEM (または、モバイル ブロード バンド デバイス IHV) は、サービス メタデータからの特権を持つアプリを指定します。 サービス メタデータの詳細については、次を参照してください。[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。
+モバイル ブロード バンド アプリ、モバイル ネットワーク オペレーターに特権アクセスが与えられている UWP アプリ、UWP アプリ (モバイル ブロード バンド デバイスは、PC に組み込まれています) 場合は、PC OEM が特権アクセスが与えられている使用可能な SMS 機能またはモバイル ブロード バンドデバイス IHV (リムーバブル モバイル ブロード バンド デバイスの場合)。 モバイル ネットワーク オペレーターと PC の OEM (または、モバイル ブロード バンド デバイス IHV) は、サービス メタデータからの特権を持つアプリを指定します。 サービス メタデータの詳細については、[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)を参照してください。
 
 ### <a name="providing-accurate-usage-and-plan-data"></a>使用状況とプランの正確なデータを提供します。
 
@@ -219,7 +219,7 @@ Windows はこれらの Api を使用して、ユーザーが設定されてい�
 
 5.  更新のローカル データの使用状況 Api を使用して、お客様のモバイル ブロード バンド接続を共有する他のデバイスによって使用されたデータの量を表示する場合は、モバイル ブロード バンド アプリでエクスペリエンスを作成できます。
 
-インターネットの共有の詳細については、次を参照してください。[の作成とインターネットの共有エクスペリエンスを構成する](creating-and-configuring-internet-sharing-experiences.md)します。
+インターネットの共有の詳細については、[の作成とインターネットの共有エクスペリエンスを構成する](creating-and-configuring-internet-sharing-experiences.md)を参照してください。
 
 ### <a name="wi-fi-hotspot-authentication"></a>Wi-fi ホット スポット認証
 
@@ -291,7 +291,7 @@ Windows 8、Windows 8.1、および Windows 10 開発ツールおよびできる
 
 ### <a name="span-idmultiplepdpcontextsspanspan-idmultiplepdpcontextsspanspan-idmultiplepdpcontextsspanmultiple-pdp-contexts"></a><span id="Multiple_PDP_contexts"></span><span id="multiple_pdp_contexts"></span><span id="MULTIPLE_PDP_CONTEXTS"></span>複数の PDP コンテキスト
 
-Windows 8.1 および Windows 10 は、同時にアクティブ化する複数の PDP コンテキストをサポートします。 これにより、携帯を顧客に差別化されたシナリオを提供します。 複数の PDP コンテキストを使用して有効になっているシナリオの詳細については、次を参照してください。[複数の PDP コンテキストを使用してアプリの開発](developing-apps-using-multiple-pdp-contexts.md)します。
+Windows 8.1 および Windows 10 は、同時にアクティブ化する複数の PDP コンテキストをサポートします。 これにより、携帯を顧客に差別化されたシナリオを提供します。 複数の PDP コンテキストを使用して有効になっているシナリオの詳細については、[複数の PDP コンテキストを使用してアプリの開発](developing-apps-using-multiple-pdp-contexts.md)を参照してください。
 
 ### <a name="span-idwirelineoperatorsspanspan-idwirelineoperatorsspanspan-idwirelineoperatorsspanwireline-operators"></a><span id="Wireline_operators"></span><span id="wireline_operators"></span><span id="WIRELINE_OPERATORS"></span>有線演算子
 
@@ -338,7 +338,7 @@ Windows 8、Windows 8.1、および Windows 10 の一部を次のコンポーネ
 
 -   XML ファイル (符号付きまたは符号なしか) がするアプリによって提供される、 [ **Windows.Networking.NetworkOperators.ProvisioningAgent.ProvisionFromXmlDocumentAsync** ](https://msdn.microsoft.com/library/windows/apps/br207400)関数。
 
-形式とプロビジョニング ファイルの内容に関する詳細については、次を参照してください。[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。
+形式とプロビジョニング ファイルの内容に関する詳細については、[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)を参照してください。
 
 ### <a name="data-usage-and-subscription-manager"></a>データ使用量とサブスクリプション マネージャー
 
@@ -350,7 +350,7 @@ Windows 8、Windows 8.1、および Windows 10 の一部を次のコンポーネ
 
 Windows 接続マネージャーは、Wi-fi、モバイル ブロード バンド、およびイーサネットで使用可能なネットワークを監視します。 これは、自動接続し、使用可能なネットワークに基づいた決定を切断します。 プロビジョニング エージェントでは、自分が所有するネットワーク間の相対的な優先順位を定義することができます。 ただし、ユーザーはどのネットワークに手動で接続できます。 Windows 接続マネージャーでは、将来の自動接続の選択に影響を与えるユーザーの手動アクションを使用します。
 
-Windows 接続マネージャーも管理 WISPr 1.0 をサポートする、Wi-fi ホット スポットでの認証の接続後に実行します。 静的な資格情報は、Wi-fi ホット スポットに格納されている、Windows 接続マネージャーが自動的に認証されます。 動的な資格情報が必要な場合は、Windows 接続マネージャーは、システム イベント ブローカーを使用してバック グラウンド イベントをトリガーします。 モバイル ブロード バンド アプリは適切な資格情報を生成する必要がありますし、認証プロセスを完了するために Windows 接続マネージャーを提供します。 詳細については、次を参照してください。[ワイヤレス ホット スポットで統合 Windows](integrating-windows-with-wireless-hotspots.md)します。
+Windows 接続マネージャーも管理 WISPr 1.0 をサポートする、Wi-fi ホット スポットでの認証の接続後に実行します。 静的な資格情報は、Wi-fi ホット スポットに格納されている、Windows 接続マネージャーが自動的に認証されます。 動的な資格情報が必要な場合は、Windows 接続マネージャーは、システム イベント ブローカーを使用してバック グラウンド イベントをトリガーします。 モバイル ブロード バンド アプリは適切な資格情報を生成する必要がありますし、認証プロセスを完了するために Windows 接続マネージャーを提供します。 詳細については、[ワイヤレス ホット スポットで統合 Windows](integrating-windows-with-wireless-hotspots.md)を参照してください。
 
 ### <a name="local-data-counters"></a>ローカル データのカウンター
 
@@ -378,7 +378,7 @@ Windows 接続マネージャーも管理 WISPr 1.0 をサポートする、Wi-f
 
 モバイル ブロード バンド クラス ドライバーは、その特定のモバイル ブロード バンド デバイス用のカスタム ドライバーを提供するデバイスの製造元の負担を軽減できです。 USB デバイスとしてマニフェストで、USB Implementers Forum に準拠する任意のモバイル ブロード バンド インターフェイス (USB の場合) ネットワーク コントロール モデル (NCM) 2.0 仕様がモバイル ブロード バンド クラス ドライバーによって管理され、追加のドライバーには必要ありませんダウンロードまたはインストールします。
 
-モバイル ブロード バンド クラス ドライバーは、Windows モバイル ブロード バンド ドライバー モデルに適合し、モバイル ブロード バンド サービスへの完全な機能を提供します。 モバイル ブロード バンド アプリに直接公開されるカスタムの拡張機能もサポートしています。 詳細については、次を参照してください。[通信事業者ハードウェア概要](mobile-operator-hardware-overview.md)します。
+モバイル ブロード バンド クラス ドライバーは、Windows モバイル ブロード バンド ドライバー モデルに適合し、モバイル ブロード バンド サービスへの完全な機能を提供します。 モバイル ブロード バンド アプリに直接公開されるカスタムの拡張機能もサポートしています。 詳細については、[通信事業者ハードウェア概要](mobile-operator-hardware-overview.md)を参照してください。
 
 ### <a name="system-event-broker"></a>システム イベント ブローカー
 
@@ -396,7 +396,7 @@ Windows 接続マネージャーも管理 WISPr 1.0 をサポートする、Wi-f
 
 -   **着信 USSD** – オペレーターが定義した解析規則に一致しない USSD メッセージを受信します。
 
-開発者は、対応の厳密な制限がアクティブでないときに、アプリが消費される CPU 時間の上に配置される必要があります。 一部のイベントは、これらの制限が緩やかであり、アプリにする必要があります常に、システムが低電力状態の間、または別のアプリの実行中に使用するリソースが最小化します。 Windows 8 および Windows 10 でのバック グラウンド イベントの詳細については、次を参照してください。[バック グラウンド タスクの概要](https://go.microsoft.com/fwlink/?linkid=227329)します。
+開発者は、対応の厳密な制限がアクティブでないときに、アプリが消費される CPU 時間の上に配置される必要があります。 一部のイベントは、これらの制限が緩やかであり、アプリにする必要があります常に、システムが低電力状態の間、または別のアプリの実行中に使用するリソースが最小化します。 Windows 8 および Windows 10 でのバック グラウンド イベントの詳細については、[バック グラウンド タスクの概要](https://go.microsoft.com/fwlink/?linkid=227329)を参照してください。
 
 ### <a name="windows-metadata-and-internet-services"></a>Windows メタデータとインターネット サービス
 
@@ -406,7 +406,7 @@ Windows メタデータとインターネット サービス (WMIS) は、Window
 
 Microsoft Store は、UWP アプリは、Windows 8、Windows 8.1、および Windows 10 Pc に配信される主な方法です。 モバイル ブロード バンド アプリでは、アプリ パッケージは、デバイスが接続された後、インターネット接続が使用可能な場合に Microsoft Store から取得されます。 アプリ パッケージはその時点で自動的にインストールされていると、ユーザーが使用可能です。 Windows 8.1 および Windows 10 では、アプリがで使用できる**すべてのアプリ**がスタート画面に自動的にピン留めできません。
 
-UWP デバイス アプリの詳細については、次を参照してください。 [UWP デバイス アプリ](https://msdn.microsoft.com/library/windows/hardware/dn265154)します。
+UWP デバイス アプリの詳細については、[UWP デバイス アプリ](https://msdn.microsoft.com/library/windows/hardware/dn265154)を参照してください。
 
 **注**  企業が特定の条件下で UWP アプリの負荷を側はこれらはいないこのドキュメントで説明します。
 
@@ -416,7 +416,7 @@ UWP デバイス アプリの詳細については、次を参照してくださ
 
 演算子に関するメタデータは、以下に示すよう、Windows 8 および Windows 10 の 3 つの方法で提供されます。 各メタデータ オプションは、さまざまな顧客を対象とします。 3 つの種類のメタデータの配信方法と、それぞれどのような情報が使用されるを理解するお客様に対処する際に役立ちます。
 
-演算子のメタデータの詳細については、次を参照してください。[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。
+演算子のメタデータの詳細については、[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)を参照してください。
 
 ### <a name="span-idwindowsapndatabasespanspan-idwindowsapndatabasespanspan-idwindowsapndatabasespanwindows-apn-database"></a><span id="Windows_APN_database"></span><span id="windows_apn_database"></span><span id="WINDOWS_APN_DATABASE"></span>Windows APN データベース
 
@@ -424,7 +424,7 @@ Windows APN データベースは、すべての Windows 8、Windows 8.1、お�
 
 この情報は、モバイル ブロード バンド デバイスの接続の秒以内にオンライン顧客を取得します。 Web ブラウザーを使用してサービスをすぐに購入またはサービスが既に購入した場合にすぐにオンラインが有効にする必要があります。
 
-Windows APN データベースへの更新を送信する方法の詳細については、次を参照してください。 [COSA/APN データベース送信](cosa-apn-database-submission.md)します。
+Windows APN データベースへの更新を送信する方法の詳細については、[COSA/APN データベース送信](cosa-apn-database-submission.md)を参照してください。
 
 ### <a name="span-idservicemetadataspanspan-idservicemetadataspanspan-idservicemetadataspanservice-metadata"></a><span id="Service_metadata"></span><span id="service_metadata"></span><span id="SERVICE_METADATA"></span>サービス メタデータ
 
@@ -432,9 +432,9 @@ Windows APN データベースへの更新を送信する方法の詳細につ�
 
 この情報により、お客様は、Windows 接続マネージャーのブランド化要素を追加することができ、Microsoft Store から自動的に取得したモバイル ブロード バンド アプリを参照している最新のモバイルでより豊富なエクスペリエンスを実現するにはオンラインで購入またはインターネット接続を取得するためのブロード バンド設定します。 Windows は、WMIS から最新のサービス メタデータ パッケージがあることを定期的に確認します。
 
-サービス メタデータ パッケージは、PC で、指定したオペレーターの場合は、モバイル ブロード バンド デバイスが検出された場合にのみ、お客様に配信されます。 存在するときに、このパッケージ内の情報は、APN データベースの内容を上書きします。 サービス メタデータ パッケージ スキーマ リファレンスの詳細については、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
+サービス メタデータ パッケージは、PC で、指定したオペレーターの場合は、モバイル ブロード バンド デバイスが検出された場合にのみ、お客様に配信されます。 存在するときに、このパッケージ内の情報は、APN データベースの内容を上書きします。 サービス メタデータ パッケージ スキーマ リファレンスの詳細については、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
 
-サービス メタデータ パッケージを作成する方法の詳細については、次を参照してください。[サービス メタデータを作成するための開発者ガイド](developer-guide-for-creating-service-metadata.md)します。
+サービス メタデータ パッケージを作成する方法の詳細については、[サービス メタデータを作成するための開発者ガイド](developer-guide-for-creating-service-metadata.md)を参照してください。
 
 ### <a name="span-idprovisioningmetadataspanspan-idprovisioningmetadataspanspan-idprovisioningmetadataspanprovisioning-metadata"></a><span id="Provisioning_metadata"></span><span id="provisioning_metadata"></span><span id="PROVISIONING_METADATA"></span>プロビジョニングのメタデータ
 

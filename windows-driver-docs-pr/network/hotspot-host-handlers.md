@@ -41,32 +41,32 @@ typedef struct _HOTSPOT_HOST_HANDLERS {
 **HSHostAllocateMemory**  
 省略可能なメモリ管理のハンドラー。
 
-プラグインは、プラグインによって必要なメモリを割り当てることによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)します。
+プラグインは、プラグインによって必要なメモリを割り当てることによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)を参照してください。
 
 **HSHostFreeMemory**  
 省略可能なメモリ管理のハンドラー。
 
-割り当てられているすべてのメモリを解放するプラグインによって呼び出される関数へのハンドルへの呼び出しによって以前[ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)します。 詳細については、次を参照してください。 [ **HS\_ホスト\_FREE\_メモリ**](hs-host-free-memory.md)します。
+割り当てられているすべてのメモリを解放するプラグインによって呼び出される関数へのハンドルへの呼び出しによって以前[ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)します。 詳細については、[ **HS\_ホスト\_FREE\_メモリ**](hs-host-free-memory.md)を参照してください。
 
 **HSHostPostConnectAuthCompletion**  
 接続処理のハンドラーが必要です。
 
-次の Wi-fi 接続のセットアップを層 2 では、認証の試行の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_プラグイン\_開始\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md)します。
+次の Wi-fi 接続のセットアップを層 2 では、認証の試行の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_プラグイン\_開始\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md)を参照してください。
 
 **HSHostSendKeepAliveCompletion**  
 省略可能な定期的な要求。
 
-Keep Alive の送信要求の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_プラグイン\_送信\_保持\_ALIVE**](hs-plugin-send-keep-alive.md)します。
+Keep Alive の送信要求の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_プラグイン\_送信\_保持\_ALIVE**](hs-plugin-send-keep-alive.md)を参照してください。
 
 **HSHostUpdateConfigurationCompletion**  
 省略可能な定期的な要求。
 
-成功した場合または更新プログラムの確認の呼び出しの失敗を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_プラグイン\_確認\_の\_更新**](hs-plugin-check-for-updates.md)します。
+成功した場合または更新プログラムの確認の呼び出しの失敗を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_プラグイン\_確認\_の\_更新**](hs-plugin-check-for-updates.md)を参照してください。
 
 **HSHostSendUserMessage**  
 省略可能な定期的な要求。
 
-ユーザーとの通信のために呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_ホスト\_送信\_ユーザー\_メッセージ**](hs-host-send-user-message.md)します。
+ユーザーとの通信のために呼び出される関数へのハンドルします。 詳細については、[ **HS\_ホスト\_送信\_ユーザー\_メッセージ**](hs-host-send-user-message.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

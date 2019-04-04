@@ -20,7 +20,7 @@ ms.locfileid: "56530132"
 
     -   **デバイス**
 
-        このメンバーには、NDIS 内での電源管理機能が含まれていますの NDIS 6.0 および 6.1 の NDIS ドライバーを中間、\_PNP\_機能の構造体。 この構造体の詳細については、次を参照してください。 [OID\_PNP\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569774)します。
+        このメンバーには、NDIS 内での電源管理機能が含まれていますの NDIS 6.0 および 6.1 の NDIS ドライバーを中間、\_PNP\_機能の構造体。 この構造体の詳細については、[OID\_PNP\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569774)を参照してください。
 
         **注**の NDIS 6.20 が動作し、後で中間ドライバー、**デバイス**に設定されているメンバー **NULL** に電源管理機能が報告される**PowerManagementCapabilitiesEx**メンバー。
 
@@ -52,7 +52,7 @@ ms.locfileid: "56530132"
 
     2.  中間のドライバーは、NDIS を設定する必要があります\_ミニポート\_属性\_いいえ\_HALT\_ON\_で SUSPEND フラグ、 **AttributeFlags**のメンバー、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)構造体。 ドライバーとしてこの構造体のアドレスを渡す必要があります、 *MiniportAttributes*への呼び出しでパラメーター [ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。
 
-    NDIS 中間ドライバの初期化要件の詳細については、次を参照してください。[初期化仮想ミニポート](initializing-virtual-miniports.md)します。
+    NDIS 中間ドライバの初期化要件の詳細については、[初期化仮想ミニポート](initializing-virtual-miniports.md)を参照してください。
 
 
 

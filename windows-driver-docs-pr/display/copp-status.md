@@ -56,7 +56,7 @@ ms.locfileid: "56537137"
 
     ドライバーでは、COPP を組み合わせることができますも\_ConnectorType\_グラフィックス アダプターとディスプレイ モニター間の接続が永続的であることを示す前述のコネクタの種類の値のいずれかの内部 (0x80000000) 値および notユーザーによるエンクロージャの外部からアクセスできます。
 
--   DXVA の\_COPPQueryLocalProtectionLevel または DXVA\_COPPQueryGlobalProtectionLevel 設定**guidStatusRequestID**で保護の種類を設定および**StatusData**、保護レベル値を返します、**指定**の DXVA メンバー\_COPPStatusData します。 可能な保護レベルは、次を参照してください。 [COPP コマンド](copp-commands.md)します。 DXVA\_COPPQueryLocalProtectionLevel 要求を現在設定されている返しますビデオ セッションの保護レベル。 DXVA\_COPPQueryGlobalProtectionLevel 要求を現在設定されている返します物理コネクタの保護レベル。
+-   DXVA の\_COPPQueryLocalProtectionLevel または DXVA\_COPPQueryGlobalProtectionLevel 設定**guidStatusRequestID**で保護の種類を設定および**StatusData**、保護レベル値を返します、**指定**の DXVA メンバー\_COPPStatusData します。 可能な保護レベルは、[COPP コマンド](copp-commands.md)を参照してください。 DXVA\_COPPQueryLocalProtectionLevel 要求を現在設定されている返しますビデオ セッションの保護レベル。 DXVA\_COPPQueryGlobalProtectionLevel 要求を現在設定されている返します物理コネクタの保護レベル。
 
     COPP 状態のクエリがビデオのミニポート ドライバーが一部を取得を要求しても情報を拡張します。
 

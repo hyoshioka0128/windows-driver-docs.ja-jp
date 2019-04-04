@@ -23,5 +23,5 @@ GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE イベント GUID では、NDIS ポ
 
 GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。
 
-タスクのオフロード機能の詳細については、次を参照してください。 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)と[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)します。
+タスクのオフロード機能の詳細については、[NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)と[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)を参照してください。
 

@@ -35,7 +35,7 @@ ms.locfileid: "56528916"
 作成するファイルの名前を指定します。 完全なパスとファイル名、またはファイル名だけを指定することができます。 ファイル名にスペースが含まれている場合*FileName*引用符で囲む必要があります。 パスを指定しない場合、現在のディレクトリが使われます。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-ファイルに書き込まれるメモリの範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+ファイルに書き込まれるメモリの範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

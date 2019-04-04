@@ -24,7 +24,7 @@ ms.locfileid: "56531271"
 詳細については、共通の WDF 動作は、次のページを参照してください。
 
 *  」の説明に従って、クライアントは省略可能な電源の遷移の通知を受け取る WDF イベントのコールバックを登録します。 [PnP をサポートしていると関数のドライバーでの電源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)します。
-*  WDF のクライアントでの PnP と電力のコールバック関数の登録方法の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](../wdf/creating-device-objects-in-a-function-driver.md)です。
+*  WDF のクライアントでの PnP と電力のコールバック関数の登録方法の詳細については、[Function ドライバーのデバイス オブジェクトの作成](../wdf/creating-device-objects-in-a-function-driver.md)を参照してください。
 *  デバイスがシステム全体の低電力状態からシステムをスリープ解除する方法の詳細については、「[システムのウェイク アップをサポートしている](../wdf/supporting-system-wake-up.md)します。
 
 ## <a name="setting-power-capabilities-of-the-network-adapter"></a>ネットワーク アダプターの設定の 電源機能

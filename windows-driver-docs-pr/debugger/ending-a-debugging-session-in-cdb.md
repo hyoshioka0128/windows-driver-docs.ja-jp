@@ -36,7 +36,7 @@ CDB を終了するには、入力、 [ **q (終了)** ](q--qq--quit-.md)コマ�
 
 -   入力、 [ **.abandon (破棄プロセス)** ](-abandon--abandon-process-.md)コマンド。
 
-ターゲットに再アタッチの詳細については、次を参照してください。[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)します。
+ターゲットに再アタッチの詳細については、[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)を参照してください。
 
  
 

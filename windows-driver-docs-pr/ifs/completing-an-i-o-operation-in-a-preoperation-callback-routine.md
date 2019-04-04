@@ -52,7 +52,7 @@ I/O 操作の完了は、成功または失敗した NTSTATUS 値に応じて、
 
 -   *失敗*、I/O 操作の状態など、エラーまたは警告 NTSTATUS 値で完了することを意味\_無効な\_デバイス\_要求または状態\_バッファー\_オーバーフローしました。
 
-NTSTATUS の値は ntstatus.h に定義されます。 これらの値は 4 つのカテゴリに分類されます。 成功すると、情報、警告、およびエラー。 これらの値の詳細については、次を参照してください。 [NTSTATUS 値を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565436)します。
+NTSTATUS の値は ntstatus.h に定義されます。 これらの値は 4 つのカテゴリに分類されます。 成功すると、情報、警告、およびエラー。 これらの値の詳細については、[NTSTATUS 値を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565436)を参照してください。
 
  
 

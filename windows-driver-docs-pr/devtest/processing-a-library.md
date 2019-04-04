@@ -27,7 +27,7 @@ ms.locfileid: "56536104"
 
 Static Driver Verifier は、追加したライブラリのキャッシュを保持します。 検証のため、ドライバーが必要なと、キャッシュに存在するライブラリのみが使用されます。 ライブラリは、ドライバーを使用する同じ構成とプラットフォームの設定で処理されます。
 
-使用して Visual Studio コマンド プロンプト ウィンドウからのライブラリを処理することも、 **msbuild t: sdv/p:「/=/lib の入力」** *libraryproject.vcxproj*オプション。 コマンド オプションについては、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
+使用して Visual Studio コマンド プロンプト ウィンドウからのライブラリを処理することも、 **msbuild t: sdv/p:「/=/lib の入力」** *libraryproject.vcxproj*オプション。 コマンド オプションについては、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。
 
 必要なライブラリを何らかの理由で処理されない場合は、それを使用するドライバーでも確認できます。 ただし、結果は、信頼性は低くなります。
 

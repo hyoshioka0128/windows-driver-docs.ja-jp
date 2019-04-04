@@ -54,7 +54,7 @@ HYPER-V 拡張可能スイッチのアーキテクチャでは、基になる物
 
     ![拡張可能なを示すフローチャートは、ndis 6.30 のチームを切り替える](images/vswitchteam.png)
 
-MUX ドライバーの詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)します。
+MUX ドライバーの詳細については、[NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)を参照してください。
 
  
 

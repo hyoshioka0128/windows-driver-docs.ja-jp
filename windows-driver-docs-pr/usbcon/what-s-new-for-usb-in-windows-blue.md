@@ -79,7 +79,7 @@ MS OS 2.0 記述子の仕様では、これらの機能強化を提供します�
 -   により、デバイスを複数の記述子のセットを返す各セットが特定の範囲の Windows バージョンに適用されます。 これにより、デバイスが接続されているシステム上の Windows のバージョンに応じて異なる方法で列挙できます。
 -   再開時間を短縮:デバイスは、時間が短縮される再開時間を識別できますから状態を中断します。
 
-仕様の詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)します。
+仕様の詳細については、[USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)を参照してください。
 
 ## <a name="isochronous-support-for-winusb"></a>WinUSB アイソクロナスのサポート
 

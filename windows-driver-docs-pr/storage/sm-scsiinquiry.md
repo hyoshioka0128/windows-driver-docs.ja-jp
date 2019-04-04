@@ -72,7 +72,7 @@ void SM_ScsiInquiry(
 応答に意味がバッファーのバイト単位で最大サイズ。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返しますの HBAStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返しますの HBAStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
 
 *ScsiStatus*   
 SCSI 問い合わせコマンドの状態。 ミニポート ドライバーでは、この情報を返しますの ScsiStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。

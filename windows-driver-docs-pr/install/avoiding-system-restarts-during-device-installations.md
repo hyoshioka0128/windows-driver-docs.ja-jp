@@ -53,7 +53,7 @@ INF ファイルを使用している場合は、次の手順に従います。
     MyDriver.sys,,,0x00004000  ; COPYFLG_IN_USE_RENAME
     ```
 
-    このフラグを使用する場合、Windows はディスク上のドライバー ファイルを置換しようとします。 詳細については、次を参照してください。 [INF CopyFiles ディレクティブ](inf-copyfiles-directive.md)します。
+    このフラグを使用する場合、Windows はディスク上のドライバー ファイルを置換しようとします。 詳細については、[INF CopyFiles ディレクティブ](inf-copyfiles-directive.md)を参照してください。
 
 2.  PnP ドライバーに対して、INF の場合は、デバイスのインストール中に、Windows が実行中のドライバーをアンロードして、新しいバージョンのドライバーを取得するために使用するデバイスを再起動するしようとします。 失敗した場合、デバイスのインストールはシステムを再起動することを示します。
 3.  PnP ドライバーに対して、INF でない場合など、メソッドを使用している[ **InstallHInfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957) INF を処理し、手動で停止して、ドライバーを再起動します。
@@ -62,7 +62,7 @@ INF ファイルを使用している場合は、次の手順に従います。
         -   **sc.exe stop** *&lt;mydriver&gt;*
         -   **ControlService(SERVICE_CONTROL_STOP)**
 
-        詳細については、次を参照してください。 [ **ControlService 関数**](https://msdn.microsoft.com/library/windows/desktop/ms682108)します。
+        詳細については、[ **ControlService 関数**](https://msdn.microsoft.com/library/windows/desktop/ms682108)を参照してください。
 
 INF ファイルを使用していない場合は、次の手順を使用します。
 

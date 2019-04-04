@@ -3,13 +3,18 @@ title: スマート カード リーダー デバイス設計ガイド
 description: スマート カード リーダー デバイスのドライバーを開発するための設計ガイドです。
 ms.assetid: e0827569-6c76-42a1-b94f-29235646519f
 keywords:
-  - スマート カード ドライバー WDK
+- スマート カード ドライバー WDK
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: fb0808241c9ace43d8a6ae19b19d75013cc47154
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465776"
 ---
-
 # <a name="smart-card-reader-devices-design-guide"></a>スマート カード リーダー デバイス設計ガイド
 
 

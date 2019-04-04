@@ -45,7 +45,7 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 
 システム定義の大文字と拡張機能を挿入できる、 <em>DDInstall</em>**します。イベント**を含むセクション、 **AddEventProvider**クロス オペレーティング システムやクロス プラットフォーム INF ファイルでプラットフォーム固有または OS 固有のインストールを指定するディレクティブ。
 
-各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 **AddEventProvider**ディレクティブは名前付き参照する必要があります*イベント プロバイダーのインストール セクション*INF ファイルで別の場所。 このような各セクションでは、次の形式があります。
 
@@ -87,7 +87,7 @@ Exe または %dirid%\filename で表される、プロバイダーのメタデ�
 
 ### <a name="specifying-a-channel-list"></a>チャネルの一覧を指定します。
 
-チャネルの一覧を指定するには、プロバイダー内の*イベント プロバイダーのインストール セクション*します。 チャネルをインポートしたり、チャネルを一覧に追加され、これらのチャネルの順序が保持されます。 詳細については、次を参照してください。[定義チャネル](https://msdn.microsoft.com/library/windows/desktop/dd996911)します。
+チャネルの一覧を指定するには、プロバイダー内の*イベント プロバイダーのインストール セクション*します。 チャネルをインポートしたり、チャネルを一覧に追加され、これらのチャネルの順序が保持されます。 詳細については、[定義チャネル](https://msdn.microsoft.com/library/windows/desktop/dd996911)を参照してください。
 
 *チャネル名*プロバイダーで使用されるチャネルのリスト内で一意である必要があります。 *チャネル名*255 文字未満にする必要があり、次の文字を含めることはできません: ' >'、' <'、'&'、'"'、' | '、'\'、':'、' '、'?'、' *'、値より小さい 31 の ascii 文字またはします。
 
@@ -119,7 +119,7 @@ Exe または %dirid%\filename で表される、プロバイダーのメタデ�
 [LoggingAutoBackup=0|1]
 ```
 
-チャネルの属性の詳細については、次を参照してください。[チャネル](https://msdn.microsoft.com/library/windows/desktop/aa382741)内で定義された[EventManifest スキーマ](https://msdn.microsoft.com/library/windows/desktop/aa384043)します。
+チャネルの属性の詳細については、[チャネル](https://msdn.microsoft.com/library/windows/desktop/aa382741)内で定義された[EventManifest スキーマ](https://msdn.microsoft.com/library/windows/desktop/aa384043)を参照してください。
 
 ### <a name="channel-install-section-entries-and-values"></a>チャネル インストール セクションのエントリと値
 

@@ -38,7 +38,7 @@ KTM では、リソース マネージャーからの受信またはクライア
 
 初期化コードで各リソース マネージャーを呼び出す必要があります[ **ClfsCreateLogFile** ](https://msdn.microsoft.com/library/windows/hardware/ff540792)独自のログ ストリームを作成します。 各リソース マネージャーは、そのストリームを使用して、コミット、ロールバック、またはトランザクションのデータを回復するために必要なトランザクションのすべての情報を記録する必要があります。
 
-KTM と、TP のすべてのリソース マネージャーは、単一のログ ファイルを使用できますが、各 TP コンポーネントは、ログ ファイル内で別のストリームを使用する必要があります。 ログ ファイル内の個々 のストリームを指定する方法については、次を参照してください。 [ **ClfsCreateLogFile**](https://msdn.microsoft.com/library/windows/hardware/ff540792)します。
+KTM と、TP のすべてのリソース マネージャーは、単一のログ ファイルを使用できますが、各 TP コンポーネントは、ログ ファイル内で別のストリームを使用する必要があります。 ログ ファイル内の個々 のストリームを指定する方法については、[ **ClfsCreateLogFile**](https://msdn.microsoft.com/library/windows/hardware/ff540792)を参照してください。
 
 KTM を定期的に、作成、[再開領域](reading-restart-records-from-a-clfs-stream.md)トランザクション マネージャーのログ ストリームにします。 KTM では、復旧操作を実行する場合は、システムのシャット ダウンする前に開いていたオブジェクトの状態を回復するのには、最後の再開領域を読み取ります。 同様に、リソース マネージャーがそのログ ストリームの再開領域を定期的に作成する必要があります。 たとえば、resource manager 作成再開領域トランザクション操作が完了するたびにします。
 
@@ -48,7 +48,7 @@ CLFS 内の再開領域の詳細についてはログ ストリームを参照�
 
 Resource manager の呼び出し後**ZwCreateTransactionManager**、呼び出す必要があります[ **ZwRecoverTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff567079)します。 **ZwRecoverTransactionManager**ルーチンは、トランザクション マネージャーに最適なポイント TP の状態を回復するオブジェクトのログのストリームを読み取ります。 コンピューターが正常にシャット ダウンしている場合、またはシャット ダウンしませんでした: ログ ストリームには後、リソース マネージャーは、最後に読み込まれた、最小限の情報が含まれています。 システムのクラッシュが発生した場合、ログのストリームには、すべてのトランザクションを既知の状態に復元するための十分な回復情報が含まれています。
 
-Resource manager の呼び出し後[ **ZwCreateResourceManager**](https://msdn.microsoft.com/library/windows/hardware/ff566427)、呼び出す必要があります[ **ZwRecoverResourceManager**](https://msdn.microsoft.com/library/windows/hardware/ff567078)します。 **ZwRecoverResourceManager**ルーチンは、リソース マネージャーの参加リストのそれぞれに関連付けられているトランザクションを回復しようとしています。 リソース マネージャーのトランザクションを復旧する方法の詳細については、次を参照してください。[回復操作の処理](handling-recovery-operations.md)します。
+Resource manager の呼び出し後[ **ZwCreateResourceManager**](https://msdn.microsoft.com/library/windows/hardware/ff566427)、呼び出す必要があります[ **ZwRecoverResourceManager**](https://msdn.microsoft.com/library/windows/hardware/ff567078)します。 **ZwRecoverResourceManager**ルーチンは、リソース マネージャーの参加リストのそれぞれに関連付けられているトランザクションを回復しようとしています。 リソース マネージャーのトランザクションを復旧する方法の詳細については、[回復操作の処理](handling-recovery-operations.md)を参照してください。
 
 ### <a name="storing-transaction-data"></a>トランザクション データを格納します。
 

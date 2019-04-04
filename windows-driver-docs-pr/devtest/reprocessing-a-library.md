@@ -41,7 +41,7 @@ ms.locfileid: "56531959"
 4.  ライブラリ ディレクトリに移動し、ライブラリのプロジェクト ファイルを選択します。
 5.  手順を追加して、ドライバーを使用して、各ライブラリのプロジェクト ファイルを選択します。
 
-使用して、/clean/lib パラメーターのオプションから、MSBuild コマンドのライブラリ再処理することもできます。 詳細については、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
+使用して、/clean/lib パラメーターのオプションから、MSBuild コマンドのライブラリ再処理することもできます。 詳細については、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。
 
  
 

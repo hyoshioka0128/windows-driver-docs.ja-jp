@@ -18,9 +18,9 @@ Microsoft Windows の以前の日、アプリケーションとオペレーテ�
 
 Windows カーネル モードの構成マネージャーでは、レジストリを管理します。 ドライバーは、レジストリの変更について知っておく必要がある場合、によって、特定のレジストリ データに対してコールバックを登録する configuration manager のルーチンを使用できます。 次に、レジストリ内のデータが変更されたときに、コールバックがトリガーされ、コールバック情報は、ドライバーを処理するコードを実行することができます。
 
-Configuration manager への直接インターフェイスを提供するルーチンの文字が付いて"**Cm**"。 たとえば、 **CmRegisterCallback**します。 Configuration manager のルーチンの一覧は、次を参照してください。 [Configuration Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff542038)します。
+Configuration manager への直接インターフェイスを提供するルーチンの文字が付いて"**Cm**"。 たとえば、 **CmRegisterCallback**します。 Configuration manager のルーチンの一覧は、[Configuration Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff542038)を参照してください。
 
-直接、構成マネージャーを呼び出し、その他の方法は、ドライバーのレジストリを操作することがあります。 詳細については、ドライバーのレジストリを使用して、次を参照してください。 [、ドライバーのレジストリを使用して](using-the-registry-in-a-driver.md)と[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)します。
+直接、構成マネージャーを呼び出し、その他の方法は、ドライバーのレジストリを操作することがあります。 詳細については、ドライバーのレジストリを使用して、[、ドライバーのレジストリを使用して](using-the-registry-in-a-driver.md)と[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)を参照してください。
 
  
 

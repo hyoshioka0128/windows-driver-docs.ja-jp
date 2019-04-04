@@ -111,7 +111,7 @@ TCP/IP、IPX、接続指向のクライアントでは、接続指向のコー�
 
 ### <a name="pnplockdown"></a>PnpLockDown
 
-**PnpLockDown**エントリは、アプリケーションがドライバー パッケージの INF ファイルを指定するファイルを直接変更するを防ぐに 1 に設定する必要があります。 このエントリの詳細については、次を参照してください。 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
+**PnpLockDown**エントリは、アプリケーションがドライバー パッケージの INF ファイルを指定するファイルを直接変更するを防ぐに 1 に設定する必要があります。 このエントリの詳細については、[ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)を参照してください。
 
 ### <a name="catalogfile"></a>CatalogFile
 

@@ -89,7 +89,7 @@ ms.locfileid: "56529911"
 
 **は**(i/o) のオプションは、Windows XP または Windows の以降のバージョンを実行している x86 ベースのプロセッサを対象コンピューターに、カーネル モードのデバッグ中にのみ使用します。
 
-すべてのデータ サイズは、すべてのプロセッサ ブレークポイント タイプで使用できます。 使用可能なサイズは、ターゲット コンピューターのプロセッサに依存します。 詳細については、次を参照してください。 [ **ba (アクセスの切断)**](ba--break-on-access-.md)します。
+すべてのデータ サイズは、すべてのプロセッサ ブレークポイント タイプで使用できます。 使用可能なサイズは、ターゲット コンピューターのプロセッサに依存します。 詳細については、[ **ba (アクセスの切断)**](ba--break-on-access-.md)を参照してください。
 
 ### <a name="span-idlimitationsofsoftwarebreakpointsandprocessorbreakpointsspanspan-idlimitationsofsoftwarebreakpointsandprocessorbreakpointsspanlimitations-of-software-breakpoints-and-processor-breakpoints"></a><span id="limitations_of_software_breakpoints_and_processor_breakpoints"></span><span id="LIMITATIONS_OF_SOFTWARE_BREAKPOINTS_AND_PROCESSOR_BREAKPOINTS"></span>ソフトウェアのブレークポイントとブレークポイントのプロセッサの制限事項
 
@@ -105,7 +105,7 @@ ms.locfileid: "56529911"
 
 ### <a name="span-idcontrollingsoftwarebreakpointsandprocessorbreakpointsspanspan-idcontrollingsoftwarebreakpointsandprocessorbreakpointsspancontrolling-software-breakpoints-and-processor-breakpoints"></a><span id="controlling_software_breakpoints_and_processor_breakpoints"></span><span id="CONTROLLING_SOFTWARE_BREAKPOINTS_AND_PROCESSOR_BREAKPOINTS"></span>ソフトウェアのブレークポイントとプロセッサのブレークポイントを制御します。
 
-ソフトウェアのブレークポイントを作成できる、 [ **bp (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)、 **bm (シンボルのブレークポイントの設定)**、および**bu (未解決のブレークポイントの設定)** コマンド。 プロセッサのブレークポイントを作成することができます、 [ **ba (アクセスの切断)** ](ba--break-on-access-.md)コマンド。 すべてのブレークポイントを無効化、有効にする、およびブレークポイントを変更するコマンドが適用されます。 ブレークポイントの一覧を表示するコマンドは、すべてのブレークポイントを含めるし、それぞれの種類を示します。 これらのコマンドの一覧については、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
+ソフトウェアのブレークポイントを作成できる、 [ **bp (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)、 **bm (シンボルのブレークポイントの設定)**、および**bu (未解決のブレークポイントの設定)** コマンド。 プロセッサのブレークポイントを作成することができます、 [ **ba (アクセスの切断)** ](ba--break-on-access-.md)コマンド。 すべてのブレークポイントを無効化、有効にする、およびブレークポイントを変更するコマンドが適用されます。 ブレークポイントの一覧を表示するコマンドは、すべてのブレークポイントを含めるし、それぞれの種類を示します。 これらのコマンドの一覧については、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
 
 WinDbg**ブレークポイント**表記"e"、"r"、"w"でプロセッサのブレークポイントを示すすべてのブレークポイントを表示 ダイアログ ボックスまたは"は ' 後に、ブロックのサイズ。 このダイアログ ボックスを使用してをすべてのブレークポイントを変更できます。 **コマンド**このダイアログ ボックスのテキスト ボックスは、任意の種類のブレークポイントを作成するために使用できます。プロセッサのブレークポイントを使用する場合は、"ba"の入力を開始します。 詳細については、次を参照してください[編集 |。ブレークポイント](edit---breakpoints.md)します。 WinDbg でマウスを使用してブレークポイントを設定すると[逆アセンブル ウィンドウ](disassembly-window.md)または[ソース ウィンドウ](source-window.md)デバッガーが未解決のソフトウェアのブレークポイントを作成します。
 

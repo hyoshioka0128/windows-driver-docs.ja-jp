@@ -3,15 +3,20 @@ title: ストリーミング メディア デバイス ドライバー設計ガ�
 description: ストリーミング メディア デバイス ドライバー設計ガイド
 ms.assetid: 321edd72-4f6a-4eaf-85bf-3b36680a522c
 keywords:
-  - ストリーミング メディア WDK
-  - メディア ストリーミング WDK
-  - データ ストリーミング WDK
+- ストリーミング メディア WDK
+- メディア ストリーミング WDK
+- データ ストリーミング WDK
 ms.date: 11/15/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 55354358cd234df8ef9cf2b66ef1d432a018ac7d
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465733"
 ---
-
 # <a name="streaming-media-device-driver-design-guide"></a>ストリーミング メディア デバイス ドライバー設計ガイド
 
 このセクションのガイダンスを使用して、ビデオとオーディオをストリーミングするデバイス (Web カメラ、デジタル カムコーダーなど) 用のドライバーを設計および実装します。

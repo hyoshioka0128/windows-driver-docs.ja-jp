@@ -28,7 +28,7 @@ BinPlace は主に 3 つのアクションを実行します。 ファイル、�
 
 コンパイラとリンカーが作成されるシンボルは、2 つのカテゴリに分類できます。 パブリック シンボルとプライベート シンボル。 シンボル ファイルを削除、プライベート シンボル情報を削除し、パブリック シンボル情報だけが残ります。
 
-詳細については、次を参照してください。[パブリック シンボルとプライベート シンボルの](public-symbols-and-private-symbols.md)します。
+詳細については、[パブリック シンボルとプライベート シンボルの](public-symbols-and-private-symbols.md)を参照してください。
 
 ### <a name="span-idsplittingfilesspanspan-idsplittingfilesspansplitting-files"></a><span id="splitting_files"></span><span id="SPLITTING_FILES"></span>ファイルの分割
 
@@ -38,7 +38,7 @@ BinPlace は主に 3 つのアクションを実行します。 ファイル、�
 
 -   シンボル情報のない実行可能ファイル
 
-詳細については、次を参照してください。[シンボル ファイル システム](symbol-file-systems.md)します。
+詳細については、[シンボル ファイル システム](symbol-file-systems.md)を参照してください。
 
 ### <a name="span-idmovingfilesspanspan-idmovingfilesspanmoving-files"></a><span id="moving_files"></span><span id="MOVING_FILES"></span>ファイルの移動
 
@@ -48,7 +48,7 @@ BinPlace は、実行可能ファイルで使用すると、同じディレク�
 
 大規模なプロジェクトの場合は、適切なプロジェクト ディレクトリに多数のファイルを整理する BinPlace を使用できます。 大規模な一連のバイナリ ファイルを作成する別のパッケージ ファイルのさまざまなサブセットを収集する場合は、BinPlace はこのプロセスを管理できます。
 
-詳細については、次を参照してください。 [BinPlace コピー先のディレクトリ](binplace-destination-directories.md)します。
+詳細については、[BinPlace コピー先のディレクトリ](binplace-destination-directories.md)を参照してください。
 
  
 

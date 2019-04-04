@@ -23,9 +23,9 @@ ms.locfileid: "56536769"
 
 802.11 IHV UI 拡張機能のネイティブ DLL でサポートされているカスタム ユーザー インターフェイス (UI) は、UI の要求がいずれかで行われたときに、オペレーティング システムのネットワーク接続ウィザード内で表示できます。
 
--   呼び出し[ **Dot11ExtSendUIRequest**](https://msdn.microsoft.com/library/windows/hardware/ff547567)、ネイティブの 802.11 IHV 拡張機能の DLL によって行われました。 このプロセスの詳細については、次を参照してください。[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)します。
+-   呼び出し[ **Dot11ExtSendUIRequest**](https://msdn.microsoft.com/library/windows/hardware/ff547567)、ネイティブの 802.11 IHV 拡張機能の DLL によって行われました。 このプロセスの詳細については、[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)を参照してください。
 
--   ネイティブ 802.11 IHV 拡張 DLL の呼び出し**Dot11ExtQueryUIRequest**オペレーティング システムによって行われた、IHV ハンドラー関数。 このプロセスの詳細については、次を参照してください。[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)します。
+-   ネイティブ 802.11 IHV 拡張 DLL の呼び出し**Dot11ExtQueryUIRequest**オペレーティング システムによって行われた、IHV ハンドラー関数。 このプロセスの詳細については、[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)を参照してください。
 
 オペレーティング システムでは、ワイヤレス ネットワークに接続しようとして、ワイヤレス LAN (WLAN) アダプター場合に、ネットワーク接続ウィザード内でカスタムの UI が表示されます。 このような状況では、カスタム UI の要求が期間内のバルーン通知として表示されます。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56536769"
 
     詳細については、 **IWizardExtension** COM インターフェイスを参照してください[IWizardExtension COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56607)します。
 
-3.  を介してネイティブ 802.11 IHV UI 拡張 DLL で制御される UI ページ間を移動、 **IWizardSite** COM インターフェイスです。 このインターフェイスの詳細については、次を参照してください。 [IWizardSite COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56608)します。
+3.  を介してネイティブ 802.11 IHV UI 拡張 DLL で制御される UI ページ間を移動、 **IWizardSite** COM インターフェイスです。 このインターフェイスの詳細については、[IWizardSite COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56608)を参照してください。
 
-802.11 IHV UI 拡張機能のネイティブ DLL の読み取りまたは書き込みをコンテキストに固有のデータ、カスタム UI が表示されている間、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)します。 このプロセスの詳細については、次を参照してください。[へのアクセス プロファイルとコンテキスト データ](accessing-profile-and-context-data.md)します。
+802.11 IHV UI 拡張機能のネイティブ DLL の読み取りまたは書き込みをコンテキストに固有のデータ、カスタム UI が表示されている間、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)します。 このプロセスの詳細については、[へのアクセス プロファイルとコンテキスト データ](accessing-profile-and-context-data.md)を参照してください。
 
 802.11 IHV UI 拡張機能のネイティブ DLL が呼び出すことによって、802.11 IHV 拡張機能のネイティブ DLL にユーザーが入力した応答データを返すことができます、カスタム UI が表示されたら、 **WlanSendUIResponse**します。 DLL では、応答データを格納するバッファーへのポインターと同様に、UI 要求の GUID に渡します。
 

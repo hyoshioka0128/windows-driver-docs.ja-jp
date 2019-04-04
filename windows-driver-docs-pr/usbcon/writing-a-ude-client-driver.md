@@ -580,7 +580,7 @@ exit:
 
 UDE クラスの拡張機能は、低電力状態または動作状態に戻して、デバイスの送信要求を受信したときに、クライアント ドライバーのコールバック関数を呼び出します。 これらのコールバック関数は、USB デバイスのスリープ解除をサポートする必要があります。 クライアント ドライバーでは、以前の呼び出しにによってその実装が登録されている[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://msdn.microsoft.com/library/windows/hardware/mt627972)します。
 
-詳細については、次を参照してください。 [USB デバイスの電源状態](comparing-usb-device-states-to-wdm-device-states.md)します。
+詳細については、[USB デバイスの電源状態](comparing-usb-device-states-to-wdm-device-states.md)を参照してください。
 
 [*EVT\_UDECX\_USB\_デバイス\_D0\_エントリ*](https://msdn.microsoft.com/library/windows/hardware/mt595910)  
 クライアント ドライバーでは、Dx 状態から d0 へのデバイスを移行します。

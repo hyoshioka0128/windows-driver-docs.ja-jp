@@ -24,9 +24,9 @@ ms.locfileid: "56529043"
 
 PSHED では、Windows カーネルが、テストと検証が発生するハードウェアのエラー イベントを発生オペレーティング システムへのインターフェイスを公開します。 エラーの挿入に参加しているプラグイン PSHED が実装されている場合、エラーの挿入操作を実行するよう PSHED によって呼び出されます。
 
-エラーの挿入に参加している PSHED プラグインを実装する方法の詳細については、次を参照してください。[エラー インジェクションに参加している](participating-in-error-injection.md)します。
+エラーの挿入に参加している PSHED プラグインを実装する方法の詳細については、[エラー インジェクションに参加している](participating-in-error-injection.md)を参照してください。
 
-ユーザー モードの管理アプリケーションは呼び出すことによって、ハードウェア プラットフォームにエラーを挿入することができます、 [WHEA 管理 API](https://msdn.microsoft.com/library/windows/hardware/ff560556)します。 WHEA 管理アプリケーションを実装する方法の詳細については、次を参照してください。 [WHEA 管理アプリケーション](whea-management-applications.md)します。
+ユーザー モードの管理アプリケーションは呼び出すことによって、ハードウェア プラットフォームにエラーを挿入することができます、 [WHEA 管理 API](https://msdn.microsoft.com/library/windows/hardware/ff560556)します。 WHEA 管理アプリケーションを実装する方法の詳細については、[WHEA 管理アプリケーション](whea-management-applications.md)を参照してください。
 
  
 

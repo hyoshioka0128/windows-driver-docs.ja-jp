@@ -33,7 +33,7 @@ ms.locfileid: "56531531"
 
 
 <span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *モジュール*   
-ターゲット モジュールがインポートがデバッガーの修正を指定します。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。 内のスペースを含める場合*モジュール*パラメーターを引用符で囲む必要があります。
+ターゲット モジュールがインポートがデバッガーの修正を指定します。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。 内のスペースを含める場合*モジュール*パラメーターを引用符で囲む必要があります。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

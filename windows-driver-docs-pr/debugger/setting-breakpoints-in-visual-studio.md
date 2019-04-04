@@ -18,9 +18,9 @@ ms.locfileid: "56537136"
 >
 
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)します。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)を参照してください。
 
-設定、表示、およびデバッガーのイミディ エイト ウィンドウでコマンドを入力して、ブレークポイントを操作することができます。 コマンドの一覧は、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。 デバッガーのイミディ エイト ウィンドウが開いてからない場合、**デバッグ**] メニューの [選択**Windows&gt;イミディ エイト**します。
+設定、表示、およびデバッガーのイミディ エイト ウィンドウでコマンドを入力して、ブレークポイントを操作することができます。 コマンドの一覧は、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。 デバッガーのイミディ エイト ウィンドウが開いてからない場合、**デバッグ**] メニューの [選択**Windows&gt;イミディ エイト**します。
 
  
 

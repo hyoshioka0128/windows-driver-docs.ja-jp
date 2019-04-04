@@ -27,11 +27,11 @@ ms.locfileid: "56527732"
 
 クライアントの Windows Management Instrumentation (WMI) を取得し、その NDIS および NDIS は、情報を設定する NDIS、を通じてサービス ドライバー。 WMI クライアントも、状態の更新プログラムを受信登録できます。
 
-NDIS は、ミニポート アダプターが、WMI では、各ミニポート アダプターの仮想接続 (VCs) と一連のグローバル一意識別子 (Guid) をという名前が自動的に登録します。 これらの Guid の詳細については、次を参照してください。[標準ミニポート ドライバー Oid に登録されている WMI](standard-miniport-driver-oids-registered-with-wmi.md)します。 ミニポート ドライバーもなサポートを提供カスタム オブジェクト識別子 (Oid) とカスタム状態のインジケーターとして、 [Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)トピックについて説明します。
+NDIS は、ミニポート アダプターが、WMI では、各ミニポート アダプターの仮想接続 (VCs) と一連のグローバル一意識別子 (Guid) をという名前が自動的に登録します。 これらの Guid の詳細については、[標準ミニポート ドライバー Oid に登録されている WMI](standard-miniport-driver-oids-registered-with-wmi.md)を参照してください。 ミニポート ドライバーもなサポートを提供カスタム オブジェクト識別子 (Oid) とカスタム状態のインジケーターとして、 [Oid のカスタマイズと状態インジケーター](customized-oids-and-status-indications.md)トピックについて説明します。
 
-NDIS では、プロトコルのドライバーの WMI のサポートは提供されません。 プロトコル ドライバー、または、中間のドライバーは自身のデバイス オブジェクトを作成し、WMI を直接登録できます。 WMI を直接登録の詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](https://msdn.microsoft.com/library/windows/hardware/ff560870)します。
+NDIS では、プロトコルのドライバーの WMI のサポートは提供されません。 プロトコル ドライバー、または、中間のドライバーは自身のデバイス オブジェクトを作成し、WMI を直接登録できます。 WMI を直接登録の詳細については、[WMI データ プロバイダーとして登録する](https://msdn.microsoft.com/library/windows/hardware/ff560870)を参照してください。
 
-WMI アーキテクチャの詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。
+WMI アーキテクチャの詳細については、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)を参照してください。
 
 このセクションの内容:
 

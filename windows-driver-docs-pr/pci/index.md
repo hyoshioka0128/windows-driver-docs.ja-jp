@@ -3,22 +3,27 @@ title: PCI ドライバー プログラミング ガイド
 description: PCI ドライバー プログラミング ガイド
 ms.assetid: 014f6243-6166-42e1-9f0f-1a438c77fd78
 keywords:
-  - PCI WDK バス
-  - 'バス WDK, PCI'
-  - Peripheral Component Interconnect WDK バス
-  - PCI ローカル バス仕様 WDK
-  - 構成領域 WDK PCI
-  - デバイス固有の構成領域 WDK PCI
-  - 構成領域情報の要求 WDK PCI
-  - 電源管理 WDK PCI
-  - 電源管理機能データのクエリ
-  - ヘッダー WDK PCI
+- PCI WDK バス
+- バス WDK, PCI
+- Peripheral Component Interconnect WDK バス
+- PCI ローカル バス仕様 WDK
+- 構成領域 WDK PCI
+- デバイス固有の構成領域 WDK PCI
+- 構成領域情報の要求 WDK PCI
+- 電源管理 WDK PCI
+- 電源管理機能データのクエリ
+- ヘッダー WDK PCI
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 180cb4ad234242d536f7124b6f84f6dcbe21c89a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465758"
 ---
-
 # <a name="pci-driver-programming-guide"></a>PCI ドライバー プログラミング ガイド
 
 

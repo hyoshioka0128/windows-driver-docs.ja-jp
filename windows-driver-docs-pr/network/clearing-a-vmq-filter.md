@@ -19,7 +19,7 @@ ms.locfileid: "56549907"
 
 上にある、ドライバーの問題を受信キューにフィルターを解放する、 [OID\_受信\_フィルター\_クリア\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569785) OID 要求のセット。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_クリア\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567166)構造体。
 
-プロトコル ドライバーでは、フィルターの識別子を取得、以前から[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)メソッド要求の OID。 フィルターの設定の詳細については、次を参照してください。 [VMQ フィルター設定](setting-a-vmq-filter.md)します。
+プロトコル ドライバーでは、フィルターの識別子を取得、以前から[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)メソッド要求の OID。 フィルターの設定の詳細については、[VMQ フィルター設定](setting-a-vmq-filter.md)を参照してください。
 
 プロトコル ドライバーには、設定されると、キューを解放する前に、キューのすべてのフィルターをクリアする必要があります。 プロトコル ドライバーも設定されると、ネットワーク アダプターには、そのバインドが閉じる前に、既定のキューのすべてのフィルターをオフにする必要があります。
 

@@ -79,7 +79,7 @@ ms.locfileid: "56536833"
 
 説明したように例では、ColorFormat1 と ColorFormat2 返さの両方のオプションが Unidrv を処理できる、色の形式を表す[色形式の処理](handling-color-formats.md)します。 ColorFormat2、用、 \* **IPCallbackID**属性が指定されています。 Unidrv にプリンターの呼び出し、プリンターのユーザーは、色の書式として ColorFormat2 を選択した場合[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)ハーフトーン処理するために COM メソッド。 メソッドのパラメーターの 1 つは、現在選択されているハーフトーン メソッドを表す文字列名へのポインターです。
 
-ハーフトーンの詳細については、次を参照してください。[カスタマイズ ハーフトーン](customized-halftoning.md)します。
+ハーフトーンの詳細については、[カスタマイズ ハーフトーン](customized-halftoning.md)を参照してください。
 
  
 

@@ -35,7 +35,7 @@ Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPE
 
 サイズ、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) NULL で終わる Unicode 文字列の一覧は、最終版を含むリストのサイズ**NULL**リストを終了します。
 
-固定長データ値の配列を表すデータ型のプロパティの識別子を作成する方法については、次を参照してください。 [ **DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md)します。
+固定長データ値の配列を表すデータ型のプロパティの識別子を作成する方法については、[ **DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

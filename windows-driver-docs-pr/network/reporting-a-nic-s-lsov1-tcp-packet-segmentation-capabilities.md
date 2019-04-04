@@ -28,7 +28,7 @@ NDIS ミニポート ドライバーが現在の大量送信オフロード バ�
 
 クエリに対する応答で[OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)、NDIS には、NDIS が含まれています\_TCP\_LARGE\_送信\_オフロード\_V1 構造、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599) NDIS を表す構造体、 **InformationBuffer**のメンバー[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 NDIS は、ミニポート ドライバーが提供される情報を使用します。
 
-NDIS サポートする多数の送信は、LSO の拡張のバージョンは、バージョン 2 (LSOV2) をオフロードします。 LSOV2 機能に関する詳細については、次を参照してください。[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
+NDIS サポートする多数の送信は、LSO の拡張のバージョンは、バージョン 2 (LSOV2) をオフロードします。 LSOV2 機能に関する詳細については、[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)を参照してください。
 
 ミニポート ドライバーは、NDIS で、次の情報を指定する必要があります\_TCP\_LARGE\_送信\_オフロード\_V1 構造体。
 

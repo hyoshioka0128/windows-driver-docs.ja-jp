@@ -54,7 +54,7 @@ ms.locfileid: "56527678"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-強力なメモリ アクセス API を次を参照してください。[メモリ アクセス](memory-access.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
+強力なメモリ アクセス API を[メモリ アクセス](memory-access.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
 
  
 

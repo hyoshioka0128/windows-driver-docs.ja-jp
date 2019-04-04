@@ -31,7 +31,7 @@ ms.locfileid: "56527690"
 
 ミニドライバーは AVStream インターフェイスを使用している場合、プロパティおよびプロパティ セットをサポートする方法の詳細については、次を参照してください、 [AVStream フィルターを中心としたシミュレートされたキャプチャ ドライバー (Avssamp)](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/avssamp)と[AVStream のシミュレート。ハードウェア サンプル ドライバー (AVSHwS)](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/avshws)ミニドライバーで GitHub の Windows ドライバーのサンプル リポジトリのサンプルです。
 
-ミニドライバーは、Stream クラス インターフェイスを使用している場合、プロパティおよびプロパティ セットをサポートする方法の詳細については、次を参照してください。[プロパティの設定をサポートしている](supporting-property-sets.md)します。
+ミニドライバーは、Stream クラス インターフェイスを使用している場合、プロパティおよびプロパティ セットをサポートする方法の詳細については、[プロパティの設定をサポートしている](supporting-property-sets.md)を参照してください。
 
 ### <a name="hardware-and-stream-property-sets"></a>ハードウェアと Stream プロパティ セット
 

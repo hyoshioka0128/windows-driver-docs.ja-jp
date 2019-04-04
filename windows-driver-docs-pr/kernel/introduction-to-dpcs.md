@@ -32,7 +32,7 @@ ms.locfileid: "56531419"
 
 A *DpcForIsr*または*CustomDpc*ルーチンは、IRQL のディスパッチに任意の DPC コンテキストで呼び出される\_レベル。 ディスパッチで実行されている\_レベル サポート ルーチンのセットを制限する、 *DpcForIsr*または*CustomDpc*ルーチンを呼び出すことができます。 参照してください[を管理するハードウェアの優先順位](managing-hardware-priorities.md)詳細についてはします。
 
-DPC オブジェクトと Dpc は、タイマーにも使用できます。 詳細については、次を参照してください。[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)します。
+DPC オブジェクトと Dpc は、タイマーにも使用できます。 詳細については、[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)を参照してください。
 
  
 

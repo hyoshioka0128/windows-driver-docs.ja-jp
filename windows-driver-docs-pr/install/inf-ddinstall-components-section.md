@@ -32,7 +32,7 @@ AddComponent=ComponentName,[flags],component-install-section
 
 **AddComponent**=*ComponentName を [flags] コンポーネントのインストール-セクション*
 
-このディレクティブは、INF ライター定義コンポーネントのインストール-セクションこの対象となるデバイスのドライバーの INF ファイルで別の場所を参照*DDInstall*セクション。  詳細については、次を参照してください。 [ **INF AddComponent ディレクティブ**](inf-addcomponent-directive.md)します。
+このディレクティブは、INF ライター定義コンポーネントのインストール-セクションこの対象となるデバイスのドライバーの INF ファイルで別の場所を参照*DDInstall*セクション。  詳細については、[ **INF AddComponent ディレクティブ**](inf-addcomponent-directive.md)を参照してください。
 
 ## <a name="remarks"></a>注釈
 

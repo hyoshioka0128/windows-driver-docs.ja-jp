@@ -36,11 +36,11 @@ ms.locfileid: "56530051"
 
 [既定以外の仮想ポートおよび VMQ](nondefault-virtual-ports-and-vmq.md)
 
-拡張の詳細については、次を参照してください。[仮想ポート (拡張)](virtual-ports--vports-.md)します。
+拡張の詳細については、[仮想ポート (拡張)](virtual-ports--vports-.md)を参照してください。
 
-NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
+NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
 
-**注**  だけで、ミニポート ドライバーを PCI Express (PCIe) 物理機能 (PF) は、拡張などのネットワーク アダプターのハードウェア リソースを構成できます。 ミニポート ドライバー PCIe 仮想機能 (VF) には、SR-IOV 対応のアダプターのハードウェア リソースのほとんどに直接アクセスできません。 詳細については、次を参照してください。[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)します。
+**注**  だけで、ミニポート ドライバーを PCI Express (PCIe) 物理機能 (PF) は、拡張などのネットワーク アダプターのハードウェア リソースを構成できます。 ミニポート ドライバー PCIe 仮想機能 (VF) には、SR-IOV 対応のアダプターのハードウェア リソースのほとんどに直接アクセスできません。 詳細については、[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)を参照してください。
 
  
 

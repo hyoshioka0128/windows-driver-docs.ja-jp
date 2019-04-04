@@ -48,7 +48,7 @@ ms.locfileid: "56527559"
 
 ### <a href="" id="specifying-a-preferred-buffer-access-method"></a> 優先バッファーへのアクセス方法を指定します。
 
-UMDF バージョン 1.9 以降では、バッファーとダイレクトの両方の I/O アクセス方式をサポートします。 ドライバーが呼び出すことによって、すべてのデバイスの読み取り、書き込み、およびデバイス I/O 制御要求に使用する場合、アクセスする方法を指定できます[ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)呼び出す前に[ **IWDFDriver::CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff558899)デバイス オブジェクトを作成します。 たとえば、ドライバーの基本設定を指定する場合のバッファー内の I/O メソッドのみ読み取りおよび書き込み要求、そのデバイスのいずれかの[UMDF ドライバーのホスト プロセス](umdf-driver-host-process.md)使用に配信するとき、バッファー内の I/O メソッドの読み取りし、書き込みを要求しますそのデバイスのドライバーです。 ドライバーは、ダイレクト I/O の優先順位を指定する場合 UMDF できます (はない可能性があります) を使用して、ダイレクト I/O。 UMDF がダイレクト I/O を使用する場合の詳細については、次を参照してください。 [UMDF がバッファーへのアクセス メソッドを選択、I/O 要求の](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)します。
+UMDF バージョン 1.9 以降では、バッファーとダイレクトの両方の I/O アクセス方式をサポートします。 ドライバーが呼び出すことによって、すべてのデバイスの読み取り、書き込み、およびデバイス I/O 制御要求に使用する場合、アクセスする方法を指定できます[ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)呼び出す前に[ **IWDFDriver::CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff558899)デバイス オブジェクトを作成します。 たとえば、ドライバーの基本設定を指定する場合のバッファー内の I/O メソッドのみ読み取りおよび書き込み要求、そのデバイスのいずれかの[UMDF ドライバーのホスト プロセス](umdf-driver-host-process.md)使用に配信するとき、バッファー内の I/O メソッドの読み取りし、書き込みを要求しますそのデバイスのドライバーです。 ドライバーは、ダイレクト I/O の優先順位を指定する場合 UMDF できます (はない可能性があります) を使用して、ダイレクト I/O。 UMDF がダイレクト I/O を使用する場合の詳細については、[UMDF がバッファーへのアクセス メソッドを選択、I/O 要求の](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)を参照してください。
 
 ドライバーをサポートするデバイスごとに、ドライバーは、バッファー内の I/O、ダイレクト I/O、またはいずれかのバッファーの基本設定を指定またはデバイスのダイレクト I/O。 ドライバーでは、読み取りのアクセス方法の 1 つのタイプを指定でき、要求とデバイスの I/O 制御要求のためのアクセス方法の別の型を記述することができます。 ドライバーではアクセス メソッドの基本設定を指定しない場合、UMDF には、バッファー内のメソッドが使用されます。
 
@@ -56,7 +56,7 @@ UMDF バージョン 1.9 以降では、バッファーとダイレクトの両�
 
 -   前のバージョン 1.9 UMDF バージョンでは、UMDF は常にすべての I/O 制御要求をバッファー内のアクセス方法を使用します。
 
--   UMDF バージョン 1.9 以降では、IOCTL がバッファー内の I/O を指定する場合、バッファー内の I/O アクセス メソッドを使用します。 IOCTL がダイレクト I/O を指定する場合と、ドライバーを呼び出す場合[ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)ダイレクト I/O ダイレクト I/O、UMDF の基本設定を使用または使用してのことを示すバッファーI/O、」の説明に従って[UMDF がバッファーへのアクセス メソッドを選択、I/O 要求の](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)します。 UMDF が Ioctl「バッファー内の I/O もダイレクト I/O でもない」メソッドの指定をサポートする方法については、次を参照してください。 [I/O を使用していないバッファーも UMDF ドライバーでのダイレクト I/O](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)します。
+-   UMDF バージョン 1.9 以降では、IOCTL がバッファー内の I/O を指定する場合、バッファー内の I/O アクセス メソッドを使用します。 IOCTL がダイレクト I/O を指定する場合と、ドライバーを呼び出す場合[ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)ダイレクト I/O ダイレクト I/O、UMDF の基本設定を使用または使用してのことを示すバッファーI/O、」の説明に従って[UMDF がバッファーへのアクセス メソッドを選択、I/O 要求の](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)します。 UMDF が Ioctl「バッファー内の I/O もダイレクト I/O でもない」メソッドの指定をサポートする方法については、[I/O を使用していないバッファーも UMDF ドライバーでのダイレクト I/O](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)を参照してください。
 
 ### <a href="" id="specifying-a-buffer-retrieval-mode"></a> バッファー取得モードを指定します。
 
@@ -118,7 +118,7 @@ UMDF バージョン 1.9 以降は、両方の即時の取得をサポートし�
 
 選択するタイミングに関するガイドラインは、I/O バッファーを参照してください[ **WDF\_デバイス\_IO\_型**](https://msdn.microsoft.com/library/windows/hardware/ff561404)します。
 
-UMDF バージョン 1.9 以降では、要求のバッファーの即時と遅延のいずれかの取得をサポートできます。 詳細については、次を参照してください。 [ **WDF\_デバイス\_IO\_バッファー\_取得**](https://msdn.microsoft.com/library/windows/hardware/ff561399)します。
+UMDF バージョン 1.9 以降では、要求のバッファーの即時と遅延のいずれかの取得をサポートできます。 詳細については、[ **WDF\_デバイス\_IO\_バッファー\_取得**](https://msdn.microsoft.com/library/windows/hardware/ff561399)を参照してください。
 
 イミディ エイト バッファー取得モードを使用するドライバーを使用する必要があります[ **IWDFIoRequest::GetInputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff559100)と[ **IWDFIoRequest::GetOutputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff559112) 、バッファーにアクセスします。
 

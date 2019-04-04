@@ -22,13 +22,13 @@ PNP-X 対応デバイスでは、そのデバイスのメタデータ内の XML 
 
     DPWS の詳細についてを参照してください、 [DPWS 仕様。](https://go.microsoft.com/fwlink/p/?linkid=142400)
 
-    DPWS を通じてコンテナー Id のサポートに関する詳細については、次を参照してください。 [DPWS デバイス用のコンテナー Id](container-ids-for-dpws-devices.md)します。
+    DPWS を通じてコンテナー Id のサポートに関する詳細については、[DPWS デバイス用のコンテナー Id](container-ids-for-dpws-devices.md)を参照してください。
 
 -   ユニバーサル PnP (UPnP)。
 
     詳細についてを参照してください、 [UPnP デバイスのアーキテクチャの仕様。](https://go.microsoft.com/fwlink/p/?linkid=142402)
 
-    UPnP を通じてコンテナー Id のサポートに関する詳細については、次を参照してください。 [UPnP デバイス用のコンテナー Id](container-ids-for-upnp-devices.md)します。
+    UPnP を通じてコンテナー Id のサポートに関する詳細については、[UPnP デバイス用のコンテナー Id](container-ids-for-upnp-devices.md)を参照してください。
 
 PNP-X 対応デバイスがデバイスの DPWS メタデータまたは UPnP デバイスの説明ドキュメントでコンテナー ID を指定しない場合、PnP マネージャーには、デバイスがサポートされるプロトコルに固有のアルゴリズムを使用して、デバイスのコンテナー ID が生成されます。
 

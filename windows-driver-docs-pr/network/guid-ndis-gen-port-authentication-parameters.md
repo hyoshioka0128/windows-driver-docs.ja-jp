@@ -21,5 +21,5 @@ NDIS に変換するには、この GUID、 [OID_GEN_PORT_AUTHENTICATION_PARAMET
 
 WMI の入力バッファーを指定します、 [NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904) NDIS_PORT_AUTHENTICATION_PARAMETERS 構造体が続く構造体。
 
-ポート パラメーターの詳細については、次を参照してください。 [OID_GEN_PORT_AUTHENTICATION_PARAMETERS](oid-gen-port-authentication-parameters.md)します。
+ポート パラメーターの詳細については、[OID_GEN_PORT_AUTHENTICATION_PARAMETERS](oid-gen-port-authentication-parameters.md)を参照してください。
 

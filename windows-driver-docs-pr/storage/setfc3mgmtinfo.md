@@ -40,7 +40,7 @@ void SetFC3MgmtInfo(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565667)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565667)構造体。
 
 *MgmtInfo*   
 型の構造体[ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)ファイバー チャネル アダプターを構成するために使用する FC3 管理情報を保持します。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SetFC3MgmtInfo\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565661)構造体。

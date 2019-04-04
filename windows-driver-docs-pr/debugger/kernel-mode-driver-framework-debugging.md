@@ -21,7 +21,7 @@ ms.locfileid: "56531657"
 
 KMDF を使用するデバッグ ドライバーに Wdfkd.dll の拡張機能ライブラリを含む拡張機能のコマンドを使用することができます。
 
-Wdfkd.dll で拡張機能コマンドの説明は、次を参照してください。[カーネル モード ドライバー フレームワークの拡張機能 (Wdfkd.dll)](kernel-mode-driver-framework-extensions--wdfkd-dll-.md)します。
+Wdfkd.dll で拡張機能コマンドの説明は、[カーネル モード ドライバー フレームワークの拡張機能 (Wdfkd.dll)](kernel-mode-driver-framework-extensions--wdfkd-dll-.md)を参照してください。
 
 これらの拡張機能は、Microsoft Windows XP 以降のオペレーティング システムで使用できます。 一部の拡張機能がある追加の制限これらの制限は、個々 のリファレンス ページに記載されています。
 
@@ -29,7 +29,7 @@ Wdfkd.dll で拡張機能コマンドの説明は、次を参照してくださ�
 
  
 
-この拡張機能ライブラリを使用するには、デバッガーに、ライブラリを読み込む必要があります。 デバッガーに拡張機能ライブラリを読み込む方法については、次を参照してください。[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。
+この拡張機能ライブラリを使用するには、デバッガーに、ライブラリを読み込む必要があります。 デバッガーに拡張機能ライブラリを読み込む方法については、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)を参照してください。
 
  
 

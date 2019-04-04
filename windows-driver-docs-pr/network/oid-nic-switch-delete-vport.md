@@ -28,9 +28,9 @@ ms.locfileid: "56531686"
 
 PF のミニポート ドライバーが OID の OID 要求を受信すると\_NIC\_スイッチ\_削除\_VPORT、ドライバーは、指定した VPort に割り当てられたハードウェアとソフトウェア リソースを解放する必要があります。
 
-詳細については、次を参照してください。[仮想ポートを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439418)します。
+詳細については、[仮想ポートを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439418)を参照してください。
 
-**注**  OID の OID 要求を通じて、拡張を明示的に削除できる以外のみ\_NIC\_スイッチ\_削除\_VPORT します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、次を参照してください。 [NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)します。
+**注**  OID の OID 要求を通じて、拡張を明示的に削除できる以外のみ\_NIC\_スイッチ\_削除\_VPORT します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、[NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)を参照してください。
 
  
 

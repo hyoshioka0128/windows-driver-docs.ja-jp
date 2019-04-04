@@ -56,7 +56,7 @@ KSCATEGORY_ACOUSTIC_ECHO_CANCEL[デバイス インターフェイス クラス]
 
 KS オーディオ デバイス用のドライバーでは、オペレーティング システムに、デバイスがアコースティック エコー キャンセルを実行する KS 機能のカテゴリをサポートすることを示す KSCATEGORY_ACOUSTIC_ECHO_CANCEL のインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

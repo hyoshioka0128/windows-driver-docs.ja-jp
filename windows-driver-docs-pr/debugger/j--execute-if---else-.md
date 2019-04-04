@@ -33,7 +33,7 @@ j Expression 'Command1' ; 'Command2'
 
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-評価する式。 この式が 0 以外の値に評価される場合*Command1*を実行します。 この式が 0 に評価される場合*Command2*を実行します。 この式の構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+評価する式。 この式が 0 以外の値に評価される場合*Command1*を実行します。 この式が 0 に評価される場合*Command2*を実行します。 この式の構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 <span id="_______Command1______"></span><span id="_______command1______"></span><span id="_______COMMAND1______"></span> *Command1*   
 場合に実行されるコマンド文字列内の式*式*0 以外の値 (TRUE) に評価されます。 コマンド文字列に単一引用符で囲むと、複数のコマンドを組み合わせることができます ( **'** ) し、セミコロンで区切ってコマンドを分離します。 コマンド文字列が 1 つのコマンドである場合は、単一引用符は省略可能です。
@@ -90,7 +90,7 @@ j Expression 'Command1' ; 'Command2'
 0:000> bp `mysource.cpp:143` "j (poi(MyVar)>0n20) ''; 'gc' "
 ```
 
-条件付きブレークポイントの構文の詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
+条件付きブレークポイントの構文の詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

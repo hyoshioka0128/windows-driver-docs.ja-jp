@@ -40,7 +40,7 @@ void SM_GetRNIDMgmtInfo(
 ----------
 
 *HBAStatus*   
-操作の状態を示す WMI 修飾子の値。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_GetRNIDMgmtInfo\_構造体。
+操作の状態を示す WMI 修飾子の値。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_GetRNIDMgmtInfo\_構造体。
 
 *MgmtInfo*   
 HBAFC3MgmtInfo、ファイバー チャネル アダプターに関連付けられている FC3 管理情報を保持する型の構造体。

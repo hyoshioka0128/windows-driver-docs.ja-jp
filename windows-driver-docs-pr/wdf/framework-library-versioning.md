@@ -33,7 +33,7 @@ KMDF ライブラリの各バージョンには、メジャー バージョン�
 
 メジャー バージョン番号は、2 つの文字を使用します。 たとえば、ライブラリのバージョン 1.0 のファイル名は*Wdf01000.sys*します。 バージョン 1.9 や 1.11 がという名前でも*Wdf01000.sys*、ライブラリ ファイルの新しいマイナー バージョンは、ファイルの以前のバージョンを上書きします。
 
-システム上にある framework のバージョンよりも新しい KMDF ライブラリのバージョンを使用して、ドライバーをビルドした場合は、後者更新しなければなりません。 フレームワーク ライブラリの更新方法の詳細については、次を参照してください。[再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)します。
+システム上にある framework のバージョンよりも新しい KMDF ライブラリのバージョンを使用して、ドライバーをビルドした場合は、後者更新しなければなりません。 フレームワーク ライブラリの更新方法の詳細については、[再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)を参照してください。
 
 (フレームワーク co-インストーラーのファイル名が、両方のメジャーおよびマイナー バージョン番号が含まれることに注意してください。 共同インストーラーのファイル名の詳細については、次を参照してください[KMDF 共同インストーラーを使用して](installing-the-framework-s-co-installer.md)。)。
 
@@ -41,7 +41,7 @@ KMDF ライブラリの各バージョンには、メジャー バージョン�
 
 ドライバーを呼び出すことができます、ドライバーを実行しているライブラリのバージョンを調べるに[ **WdfDriverIsVersionAvailable** ](https://msdn.microsoft.com/library/windows/hardware/ff547190)または[ **WdfDriverRetrieveVersionString**](https://msdn.microsoft.com/library/windows/hardware/ff547211).
 
-KMDF ライブラリのリリース履歴については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)します。
+KMDF ライブラリのリリース履歴については、[KMDF バージョン履歴](kmdf-version-history.md)を参照してください。
 
 ## <a name="umdf"></a>UMDF
 
@@ -52,7 +52,7 @@ UMDF バージョン 2.0 では、UMDF ライブラリのファイル名は*Wudf
 
 UMDF バージョン 1。*x*、UMDF ライブラリのファイル名は*Wudfx.dll*します。
 
-KMDF ライブラリのリリース履歴については、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
+KMDF ライブラリのリリース履歴については、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
 
 
  

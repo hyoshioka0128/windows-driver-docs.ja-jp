@@ -32,7 +32,7 @@ ms.locfileid: "56535462"
 
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-C++ の式を評価するを指定します。 構文の詳細については、次を参照してください。 [C++ 数字と演算子](c---numbers-and-operators.md)します。
+C++ の式を評価するを指定します。 構文の詳細については、[C++ 数字と演算子](c---numbers-and-operators.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -64,7 +64,7 @@ C++ の式を評価するを指定します。 構文の詳細については、
 
 **??** コマンドは、現在のスレッドとプロセスのコンテキストで式内のシンボルを評価します。
 
-一部を評価する場合、**式**MASM 式の規則に従って式がその一部をかっこで囲むし、追加の 2 つのアット ( **@@** ) する前にします。 MASM の式と C++ の式の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)します。
+一部を評価する場合、**式**MASM 式の規則に従って式がその一部をかっこで囲むし、追加の 2 つのアット ( **@@** ) する前にします。 MASM の式と C++ の式の詳細については、[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

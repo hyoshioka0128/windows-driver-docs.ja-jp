@@ -23,7 +23,7 @@ ms.locfileid: "56535876"
 
 オペレーティング システムが呼び出すことによって、後の関連付け操作を終了、 [ *Dot11ExtIhvStopPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547521)次のいずれかが発生するたびに、IHV ハンドラー関数。
 
--   ワイヤレス LAN (WLAN) アダプターは、AP との関連付け解除操作を完了します。 このような状況で、アダプターを管理するには、ネイティブの 802.11 ステーションは、メディア固有[NDIS\_状態\_DOT11\_戻せません](https://msdn.microsoft.com/library/windows/hardware/ff567334)を示す値。 関連付け解除操作の詳細については、次を参照してください。[関連付け解除操作](disassociation-operations.md)します。
+-   ワイヤレス LAN (WLAN) アダプターは、AP との関連付け解除操作を完了します。 このような状況で、アダプターを管理するには、ネイティブの 802.11 ステーションは、メディア固有[NDIS\_状態\_DOT11\_戻せません](https://msdn.microsoft.com/library/windows/hardware/ff567334)を示す値。 関連付け解除操作の詳細については、[関連付け解除操作](disassociation-operations.md)を参照してください。
 
 -   WLAN アダプターが無効にしたり、削除します。 このような状況でオペレーティング システムの呼び出し、 [ *Dot11ExtIhvStopPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547521)関数を呼び出す前に、 [ *Dot11ExtIhvDeinitAdapter*](https://msdn.microsoft.com/library/windows/hardware/ff547452)関数。
 

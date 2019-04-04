@@ -128,7 +128,7 @@ SuperMUTT パックは、いずれかで 2 つのデバイスです。 USB 3.0 �
 ## <a name="usb-type-c-connex"></a>USB タイプ C ConnEx
 
 
-USB タイプ C 接続 Exerciser (USB 型 C ConnEx) では、USB 型-C# の相互運用性シナリオを自動化する 4 対 1 のスイッチのあるカスタム シールドです。 Arduino マイクロ コント ローラーとして使用するシールドは設計されています。 詳細については、次を参照してください。 [USB 型 C ConnEx でシステムをテスト USB 型-c](test-usb-type-c-systems-with-mutt-connex-c.md)します。
+USB タイプ C 接続 Exerciser (USB 型 C ConnEx) では、USB 型-C# の相互運用性シナリオを自動化する 4 対 1 のスイッチのあるカスタム シールドです。 Arduino マイクロ コント ローラーとして使用するシールドは設計されています。 詳細については、[USB 型 C ConnEx でシステムをテスト USB 型-c](test-usb-type-c-systems-with-mutt-connex-c.md)を参照してください。
 
 ![USB タイプ C ConnEx](images/connexc-side.jpg)
 

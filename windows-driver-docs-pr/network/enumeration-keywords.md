@@ -90,18 +90,18 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 -   ミニポート フィルターは、802.1 q を考慮する必要があります OOB 内の情報 (と任意のタグは挿入できません)。
 -   ミニポート フィルターが適切なにアドバタイズする必要がありますしない**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923).
 
-**注**  読み取る必要がありますもミニポート ドライバーでは、NDIS サービスの品質 (QoS) をサポートする場合、  **\*QOS**キーワード値。 に基づいて、  **\*QOS**キーワードの値、  **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
+**注**  読み取る必要がありますもミニポート ドライバーでは、NDIS サービスの品質 (QoS) をサポートする場合、  **\*QOS**キーワード値。 に基づいて、  **\*QOS**キーワードの値、  **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)を参照してください。
 
  
 
 <a href="" id="-interruptmoderation"></a>**\*InterruptModeration**  
-デバイスが有効になっていること、または割り込み節度を無効になっているかどうかを示す値。 割り込み節度アルゴリズムは、デバイスに依存します。 デバイスの製造元は、アルゴリズムの設定をサポートするために、非標準化されたキーワードを使用できます。 割り込み調整の詳細については、次を参照してください。[割り込み節度](interrupt-moderation.md)します。
+デバイスが有効になっていること、または割り込み節度を無効になっているかどうかを示す値。 割り込み節度アルゴリズムは、デバイスに依存します。 デバイスの製造元は、アルゴリズムの設定をサポートするために、非標準化されたキーワードを使用できます。 割り込み調整の詳細については、[割り込み節度](interrupt-moderation.md)を参照してください。
 
 <a href="" id="-rss"></a>**\*RSS**  
-デバイスが有効または無効になっているかどうかを示す値を受信側 scaling (RSS)。 RSS の詳細については、次を参照してください。 [Receive Side Scaling](ndis-receive-side-scaling2.md)します。
+デバイスが有効または無効になっているかどうかを示す値を受信側 scaling (RSS)。 RSS の詳細については、[Receive Side Scaling](ndis-receive-side-scaling2.md)を参照してください。
 
 <a href="" id="-headerdatasplit"></a>**\*HeaderDataSplit**  
-デバイスが有効になっていること、またはヘッダー データの分割を無効になっているかどうかを示す値。 ヘッダー データの分割の詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
+デバイスが有効になっていること、またはヘッダー データの分割を無効になっているかどうかを示す値。 ヘッダー データの分割の詳細については、[ヘッダー データの分割](header-data-split.md)を参照してください。
 
 次のキーワードは、接続のオフロード サービスに関連付けられました。
 
@@ -109,7 +109,7 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 
 **\*TCPConnectionOffloadIPv6**
 
-接続のオフロード キーワードの詳細については、次を参照してください。[接続オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-connection-offloading.md)します。
+接続のオフロード キーワードの詳細については、[接続オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-connection-offloading.md)を参照してください。
 
 次のキーワードは、タスクのオフロード サービスに関連付けられました。
 
@@ -143,7 +143,7 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 
 **\*TCPUDPChecksumOffloadIPv6**
 
-TCP/IP のオフロード キーワードの詳細については、次を参照してください。[タスク オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-task-offloading.md)します。
+TCP/IP のオフロード キーワードの詳細については、[タスク オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-task-offloading.md)を参照してください。
 
 このトピックの最後にテーブルの列には、列挙型のキーワードは次の属性について説明します。
 

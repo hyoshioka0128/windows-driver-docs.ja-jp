@@ -24,9 +24,9 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性は維持するために、デバイス インターフェイスに関する情報にアクセスするこれら 2 つの方法もサポートします。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、次を参照してください。[デバイス インターフェイスのクラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)します。 [デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子ごとに表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
+デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、[デバイス インターフェイスのクラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)を参照してください。 [デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子ごとに表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)を参照してください。
 
 ### <a href="" id="accessing-the-default-interface-for-a-device-interface-class"></a> デバイスのインターフェイス クラスの既定のインターフェイスにアクセスします。
 
@@ -66,7 +66,7 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 3.  呼び出す、 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543)キーへのアクセスは必要なくなりました後に、クラスのレジストリ キーを閉じます。
 
-インストールして、デバイス インターフェイスを使用する方法については、次を参照してください。[デバイス インターフェイス クラス](device-interface-classes.md)と[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)します。
+インストールして、デバイス インターフェイスを使用する方法については、[デバイス インターフェイス クラス](device-interface-classes.md)と[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)を参照してください。
 
  
 

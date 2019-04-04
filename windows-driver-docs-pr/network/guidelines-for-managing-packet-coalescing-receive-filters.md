@@ -36,9 +36,9 @@ ms.locfileid: "56527403"
 
 -   パケットが破棄する必要があります、ミニポート ドライバーは、ネイティブ 802.11 の拡張可能な局 (ExtSTA) モードで動作が場合の OID メソッド要求を処理する場合、フィルターが表示される結合[OID\_DOT11\_リセット\_要求](https://msdn.microsoft.com/library/windows/hardware/ff569409)します。 ネットワーク アダプターを構成する必要があります、ミニポート ドライバーが 802.11 のリセット操作を実行した後、パケットの結合フィルターを受信します。 また、ドライバー*オフにする必要があります*まとめられたパケット カウンター。
 
-    ネイティブの 802.11 の拡張可能なステーション モードの詳細については、次を参照してください。[ステーションの操作モードは拡張可能な](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-station-operation-mode)します。
+    ネイティブの 802.11 の拡張可能なステーション モードの詳細については、[ステーションの操作モードは拡張可能な](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-station-operation-mode)を参照してください。
 
-    **注**  NDIS サポートしていないパケット結合拡張可能なアクセスで動作するネイティブの 802.11 ミニポート ドライバー (ExtAP) モードをポイントします。 ExtAP 操作モードの詳細については、次を参照してください。[拡張可能なアクセス ポイントの操作モード](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-access-point-operation-mode)します。
+    **注**  NDIS サポートしていないパケット結合拡張可能なアクセスで動作するネイティブの 802.11 ミニポート ドライバー (ExtAP) モードをポイントします。 ExtAP 操作モードの詳細については、[拡張可能なアクセス ポイントの操作モード](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-access-point-operation-mode)を参照してください。
 
      
 

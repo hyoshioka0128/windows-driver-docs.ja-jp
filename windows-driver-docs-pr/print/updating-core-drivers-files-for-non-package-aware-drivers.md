@@ -20,7 +20,7 @@ ms.locfileid: "56536456"
 
 Windows vista の場合、コアのドライバー パッケージに分割することを回避し、コアのドライバー ファイルをドライバー パッケージの一部として直接参照しないでください。 それ以外の場合、パッケージが Windows Vista で正常にインストールすることがありますが、印刷システムが不安定になると回帰の機能を結果として使用することがあります。 このような問題を回避するには、Windows Vista と Windows XP の両方で正しくインストールされることを確認するには、広範なドライバー更新プログラム パッケージをテストします。
 
-詳細については、次を参照してください。[単一ドライバー パッケージの Windows XP と Windows Vista を作成する](creating-a-single-driver-package-for-windows-xp-and-windows-vista.md)します。
+詳細については、[単一ドライバー パッケージの Windows XP と Windows Vista を作成する](creating-a-single-driver-package-for-windows-xp-and-windows-vista.md)を参照してください。
 
  
 

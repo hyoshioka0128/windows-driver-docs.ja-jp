@@ -25,7 +25,7 @@ ms.locfileid: "56530001"
 
 WMI クラス定義内のデータ フィールドに、上記の修飾子のいずれかを適用する場合は、対応する構造体のメンバーに修飾子の定義に示される整数値のいずれかを割り当てることができますを示します。
 
-WMI プロパティ修飾子の概要については、次を参照してください。 [WMI プロパティ修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566365)します。
+WMI プロパティ修飾子の概要については、[WMI プロパティ修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566365)を参照してください。
 
  
 

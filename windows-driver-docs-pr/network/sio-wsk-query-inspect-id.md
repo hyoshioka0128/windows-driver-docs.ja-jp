@@ -73,7 +73,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの検査�
 
 WSK アプリケーションから呼び出す場合、 **WskControlSocket**関数を持つ条件付きリッスン ソケットの受け入れられた接続指向のソケット以外の任意のソケットの検査識別データを照会するには、モードがそのまま使用有効になって、 **WskControlSocket**ステータスを返します\_無効な\_デバイス\_要求。
 
-条件付きで接続の受け入れの詳細については、次を参照してください。[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)します。
+条件付きで接続の受け入れの詳細については、[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

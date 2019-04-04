@@ -18,7 +18,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 Windows Server 2003、Windows XP、および Windows 2000、統一されたプロパティのモデルのプロパティのキーをサポートしても、これらのプロパティを表す対応するレジストリ エントリの値をサポートしています。 ただし、プラグ アンド プレイ (PnP) configuration manager の関数を呼び出すことによって、対応する情報を取得することができます。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポート デバイス関係のプロパティを取得する PnP 構成マネージャーの関数の呼び出し。 ただし、デバイスのリレーションシップのプロパティにアクセスするのに、統一されたデバイス プロパティのモデルのプロパティのキーを使用する必要があります。
 
-プロパティのキーを使用して、デバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、デバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
 
 Windows Server 2003、Windows XP、および Windows 2000 でデバイスの関係のプロパティにアクセスする方法については、次のトピックを参照してください。
 

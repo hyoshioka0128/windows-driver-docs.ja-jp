@@ -3,16 +3,21 @@ title: SD バス ドライバー設計ガイド
 description: SD バス ドライバー設計ガイド
 ms.assetid: c082d86c-8f81-41ef-afac-bd9fd76696fd
 keywords:
-  - SD WDK バス
-  - 'バス WDK, SD'
-  - セキュア デジタル WDK バス
-  - メモリ カード WDK SD バス
+- SD WDK バス
+- バス WDK, SD
+- セキュア デジタル WDK バス
+- メモリ カード WDK SD バス
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: f13493efc0b787f87da7a6742fee306bc0aa9007
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465760"
 ---
-
 # <a name="sd-bus-driver-design-guide"></a>SD バス ドライバー設計ガイド
 
 

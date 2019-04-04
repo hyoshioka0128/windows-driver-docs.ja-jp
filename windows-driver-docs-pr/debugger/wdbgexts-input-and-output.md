@@ -23,7 +23,7 @@ ms.locfileid: "56529372"
 
 ユーザーによる割り込みを確認するには、使用[ **CheckControlC**](https://msdn.microsoft.com/library/windows/hardware/ff539072)します。 この関数は、ユーザーが拡張機能の実行をキャンセルしようとしたかどうかを判断するループ内で使用する必要があります。
 
-強力な入力と出力の API では、次を参照してください。[を使用して入力と出力](using-input-and-output.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
+強力な入力と出力の API では、[を使用して入力と出力](using-input-and-output.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
 
  
 

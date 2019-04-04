@@ -119,11 +119,11 @@ XPS ラスタライズ サービスを使用するには、キャンバスと固
 
 高さ = (11 インチ) x(600 DPI) 6600 ドットを =
 
-固定ページの四角形領域のビットマップ イメージを作成するには XPSDrv フィルターを呼び出し XPS ラスタライザー オブジェクトの呼び出し[ **IXpsRasterizer::RasterizeRect** ](https://msdn.microsoft.com/library/windows/hardware/ff556365)メソッド。 このメソッドは、常に 32 ビットのピクセル サイズのビットマップを生成します。 ピクセル形式が GUID 値で指定された**GUID\_WICPixelFormat32bppPBGRA**、ヘッダー ファイル Wincodec.h で定義されています。 形式には、8 ビットの赤、緑、および青のコンポーネントが含まれています。 とは、標準 (sRGB) の色領域。 さらに、形式には、8 ビットのアルファ コンポーネントが含まれています。 アルファ コンポーネントによってピクセルの各値の色要素が事前乗算されます。 この形式の詳細については、次を参照してください。[ピクセルのネイティブ形式の概要](https://msdn.microsoft.com/library/windows/desktop/ee719797.aspx)します。
+固定ページの四角形領域のビットマップ イメージを作成するには XPSDrv フィルターを呼び出し XPS ラスタライザー オブジェクトの呼び出し[ **IXpsRasterizer::RasterizeRect** ](https://msdn.microsoft.com/library/windows/hardware/ff556365)メソッド。 このメソッドは、常に 32 ビットのピクセル サイズのビットマップを生成します。 ピクセル形式が GUID 値で指定された**GUID\_WICPixelFormat32bppPBGRA**、ヘッダー ファイル Wincodec.h で定義されています。 形式には、8 ビットの赤、緑、および青のコンポーネントが含まれています。 とは、標準 (sRGB) の色領域。 さらに、形式には、8 ビットのアルファ コンポーネントが含まれています。 アルファ コンポーネントによってピクセルの各値の色要素が事前乗算されます。 この形式の詳細については、[ピクセルのネイティブ形式の概要](https://msdn.microsoft.com/library/windows/desktop/ee719797.aspx)を参照してください。
 
 XPSDrv フィルターによっては、XPS ラスタライザー オブジェクトによって生成されるビットマップの追加の処理を実行します。 たとえば、カラー プリンター用のフィルターは、ビットマップをプリンターのページ記述言語で、ビットマップをラップし、プリンターに送信する前に CMYK ピクセル形式に変換可能性があります。
 
-XPS ラスタライズ サービスを XPSDrv フィルターとの通信に使用するインターフェイスの詳細については、次を参照してください。 [XPS ラスタライズ サービス参照](https://msdn.microsoft.com/library/windows/hardware/ff564306)します。
+XPS ラスタライズ サービスを XPSDrv フィルターとの通信に使用するインターフェイスの詳細については、[XPS ラスタライズ サービス参照](https://msdn.microsoft.com/library/windows/hardware/ff564306)を参照してください。
 
 ### <a name="xpsras-and-high-precision-pixel-formats"></a>XPSRas と高精度のピクセル形式
 

@@ -14,7 +14,7 @@ ms.locfileid: "56538524"
 # <a name="wdffitester-overview"></a>WdfFiTester の概要
 
 
-WdfFiTester、KMDF デバイス ドライバー インターフェイス (DDI) 関数の呼び出しを返す、NTSTATUS コードが失敗するを構成することができます。 関数は、190 システム提供 KMDF version 1.11 を NTSTATUS コードを返します。 これらの関数の一覧は、次を参照してください。 [KMDF 関数そののリターン送らコード](wdftester-functions-that-return-nstatus-codes.md)します。
+WdfFiTester、KMDF デバイス ドライバー インターフェイス (DDI) 関数の呼び出しを返す、NTSTATUS コードが失敗するを構成することができます。 関数は、190 システム提供 KMDF version 1.11 を NTSTATUS コードを返します。 これらの関数の一覧は、[KMDF 関数そののリターン送らコード](wdftester-functions-that-return-nstatus-codes.md)を参照してください。
 
 通常、KMDF 関数呼び出しを処理するコードでは、次のコード例に示すようにパターンがあります。
 

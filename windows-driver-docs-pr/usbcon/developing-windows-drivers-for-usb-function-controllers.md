@@ -50,7 +50,7 @@ ms.locfileid: "56537111"
 <p>Microsoft 提供の USB ドライバー スタックを理解します。</p>
 <a href="usb-device-side-drivers-in-windows.md" data-raw-source="[USB device-side drivers in Windows](usb-device-side-drivers-in-windows.md)">Windows での USB デバイス側のドライバー</a>
 <p><strong>UFX オブジェクトおよびハンドルと理解します。</strong></p>
-<p>UFX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
+<p>UFX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>を参照してください。</p>
 <p>要求をキュー、UFX USB に固有のオブジェクトを使用します。 詳細については、 <a href="ufx-objects-and-handles-used-by-a-usb-function-controller.md" data-raw-source="[UFX objects and handles used by a USB function client driver](ufx-objects-and-handles-used-by-a-usb-function-controller.md)">UFX オブジェクトし、処理関数の USB クライアント ドライバーによって使用</a>します。</p>
 <p><strong>関数のコント ローラーのクライアント ドライバーの作成</strong></p>
 <p>動作を理解、UFX のクライアント ドライバーと、クライアント ドライバーである機能との対話方法を実装する必要があります。</p>

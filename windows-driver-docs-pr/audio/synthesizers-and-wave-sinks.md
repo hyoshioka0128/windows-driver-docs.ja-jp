@@ -51,11 +51,11 @@ Wave シンクし、次の図が DirectMusic アーキテクチャがユーザ�
 
 上記の図では、アプリケーションは、データを wave データに、ノートを表示するためにソフトウェア シンセサイザー (既定で dmsynth.dll) までのデータ (MIDI または DLS) を通過するユーザー モード DirectMusic ポートに送信します。 Wave シンクでは、タイミングを管理し、シンセサイザー大量のデータを受信する準備ができた場合にバッファーを渡します。 シンセサイザーのバッファーがいっぱい (、 **IDirectSoundBuffer**既定ではオブジェクト) データのため、it は DirectSound に渡すことができます。 DirectSound は、データを再生するか、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver) DirectSound ハードウェア アクセラレータによるレンダリング pin を通じて上で再生、オーディオ デバイスを 1 つが使用可能な場合または (を参照してください[DirectSound ハードウェアの概要高速化](overview-of-directsound-hardware-acceleration.md))。
 
-この同じ基本アーキテクチャは、例外、KMixer システム ドライバーやハードウェアに直接 wave シンクがデータ バッファーを渡すことで、カーネル モードの実装にも適用されます。 Dmu ポート ドライバーでは、カーネル モード ソフトウェアのシンセサイザーのウェーブ シンクを実装します。 詳細については、次を参照してください。 [A Wave シンクがカーネル モードのソフトウェアのシンセサイザーの](a-wave-sink-for-kernel-mode-software-synthesizers.md)します。
+この同じ基本アーキテクチャは、例外、KMixer システム ドライバーやハードウェアに直接 wave シンクがデータ バッファーを渡すことで、カーネル モードの実装にも適用されます。 Dmu ポート ドライバーでは、カーネル モード ソフトウェアのシンセサイザーのウェーブ シンクを実装します。 詳細については、[A Wave シンクがカーネル モードのソフトウェアのシンセサイザーの](a-wave-sink-for-kernel-mode-software-synthesizers.md)を参照してください。
 
 次の手順が完了したら、ユーザー モード DirectMusic ポートはオープンで使用するためにアクティブ化します。 このドライバー コードの多くは動作するいるとすぐに機能の実装を開始できます。 ユーザー モードの Microsoft ソフトウェアのシンセサイザーのソース コードをテンプレートとして使用し、新しい機能の追加を開始します。
 
-シンセサイザーのユーザー モード ソフトウェアをオブジェクトとして実装できる、 [IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)インターフェイス。 ユーザー モードのウェーブ シンクを持つオブジェクトとして実装できる、 [IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)インターフェイス。 詳細については、次を参照してください。 [IDirectMusicSynth と IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)します。
+シンセサイザーのユーザー モード ソフトウェアをオブジェクトとして実装できる、 [IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)インターフェイス。 ユーザー モードのウェーブ シンクを持つオブジェクトとして実装できる、 [IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)インターフェイス。 詳細については、[IDirectMusicSynth と IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)を参照してください。
 
  
 

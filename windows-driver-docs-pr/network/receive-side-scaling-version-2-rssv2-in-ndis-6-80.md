@@ -18,7 +18,7 @@ ms.locfileid: "56538005"
 
 [Receive Side Scaling](ndis-receive-side-scaling2.md)マルチプロセッサ システムのネットワーク データの処理に関連するシステムのパフォーマンスが向上します。 NDIS 6.80 およびそれ以降はサポート RSS バージョン 2 (RSSv2) キューの VPort ごとの拡散を提供することで RSS を拡張するものです。
 
-RSSv2 の Oid のいずれかの NDIS 6.80 同期 OID 要求インターフェイスを使用します。 OID の同期呼び出しに関する詳細については、次を参照してください。 [NDIS 6.80 で同期 OID 要求インターフェイス](synchronous-oid-request-interface-in-ndis-6-80.md)します。
+RSSv2 の Oid のいずれかの NDIS 6.80 同期 OID 要求インターフェイスを使用します。 OID の同期呼び出しに関する詳細については、[NDIS 6.80 で同期 OID 要求インターフェイス](synchronous-oid-request-interface-in-ndis-6-80.md)を参照してください。
 
-RSSv2 に関する詳細については、次を参照してください。[受信側のスケーリングのバージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)します。
+RSSv2 に関する詳細については、[受信側のスケーリングのバージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)を参照してください。
 

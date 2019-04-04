@@ -52,7 +52,7 @@ ms.locfileid: "56532288"
 
 -   *デバイス オブジェクト*デバイスの物理デバイス オブジェクト (PDO) へのポインターに設定されます。
 
--   *InputBuffer*コントロール メソッドに渡される入力引数の型に依存する入力バッファーの構造体へのポインターに設定されます。 ACPI ドライバーには、引数を受け取らない入力、1 つの整数を取るを ASCII 文字列を受け取るまたはカスタムの入力引数の配列を受け取るメソッドがサポートしています。 入力バッファーがサポートされている構造体の詳細については、次を参照してください。[制御メソッドの入力バッファーの構造](control-method-input-buffer-structures.md)します。
+-   *InputBuffer*コントロール メソッドに渡される入力引数の型に依存する入力バッファーの構造体へのポインターに設定されます。 ACPI ドライバーには、引数を受け取らない入力、1 つの整数を取るを ASCII 文字列を受け取るまたはカスタムの入力引数の配列を受け取るメソッドがサポートしています。 入力バッファーがサポートされている構造体の詳細については、[制御メソッドの入力バッファーの構造](control-method-input-buffer-structures.md)を参照してください。
 
 -   *InputBufferLength*によって提供される入力バッファーのバイト単位のサイズに設定されている*InputBuffer*します。
 
@@ -66,6 +66,6 @@ ms.locfileid: "56532288"
 
 -   *IoStatusBlock*に設定されている、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)構造体。 下位レベルのドライバーによって設定された要求の状態が返されます。
 
-入力引数を受け取らないコントロールのメソッドを評価する方法のコード例では、次を参照してください。[コントロール メソッドなし入力引数を評価する](evaluating-a-control-method-without-input-arguments.md)します。
+入力引数を受け取らないコントロールのメソッドを評価する方法のコード例では、[コントロール メソッドなし入力引数を評価する](evaluating-a-control-method-without-input-arguments.md)を参照してください。
 
-入力引数を受け取るコントロール メソッドを評価する方法のコード例では、次を参照してください。[コントロール メソッドは、その入力引数を評価する](evaluating-a-control-method-that-takes-input-arguments.md)します。
+入力引数を受け取るコントロール メソッドを評価する方法のコード例では、[コントロール メソッドは、その入力引数を評価する](evaluating-a-control-method-that-takes-input-arguments.md)を参照してください。

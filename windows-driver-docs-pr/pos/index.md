@@ -7,8 +7,13 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
+ms.openlocfilehash: 10201f72f1a3da6b415b79da6b020584e3a3558a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465664"
 ---
-
 # <a name="pos-device-driver-design-guide"></a>POS デバイス ドライバー設計ガイド
 
 このセクションでは、Point-of-Service (POS) デバイスを構築するためのドライバー設計ガイダンスを提供しています。

@@ -88,7 +88,7 @@ ms.locfileid: "56530111"
 <span id="GUID_D3DParseUnknownCommandCallback"></span><span id="guid_d3dparseunknowncommandcallback"></span><span id="GUID_D3DPARSEUNKNOWNCOMMANDCALLBACK"></span>GUID\_D3DParseUnknownCommandCallback  
 ドライバーは、Direct3D ランタイムへのポインターを格納する必要があります**D3DParseUnknownCommand**コールバック。 ポインターがドライバーに渡される、 **lpvData** 、DD のメンバー\_GETDRIVERINFODATA 構造体。 ドライバーの[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)コールバックの呼び出し、 **D3DParseUnknownCommand**ドライバーが認識されないコマンドを解析するコールバック。
 
-詳細については、次を参照してください。 [DirectDraw ドライバーの初期化](directdraw-driver-initialization.md)します。
+詳細については、[DirectDraw ドライバーの初期化](directdraw-driver-initialization.md)を参照してください。
 
  
 

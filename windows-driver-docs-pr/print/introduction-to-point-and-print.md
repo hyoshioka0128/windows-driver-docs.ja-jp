@@ -27,7 +27,7 @@ ms.locfileid: "56549583"
 
 -   ファイルは、個々 の印刷キューを関連付けることができます。
 
-詳細については、次を参照してください。[サポート ポイントとプリンターのインストール中に印刷](supporting-point-and-print-during-printer-installations.md)します。
+詳細については、[サポート ポイントとプリンターのインストール中に印刷](supporting-point-and-print-during-printer-installations.md)を参照してください。
 
 ユーザーのアプリケーションを呼び出すと、 **AddPrinterConnection**関数 (Microsoft Windows SDK のドキュメントで説明) プリンター接続を確立するには、次の操作が実行されます。
 
@@ -35,7 +35,7 @@ ms.locfileid: "56549583"
 
 -   プリンターのキーの下で、サーバーのレジストリに保存されている、プリンターの構成パラメーターの現在の値は、クライアントにダウンロードされます。
 
-詳細については、次を参照してください。[サポート ポイント アンド プリントの実装中にプリンター接続](supporting-point-and-print-during-printer-connections.md)します。
+詳細については、[サポート ポイント アンド プリントの実装中にプリンター接続](supporting-point-and-print-during-printer-connections.md)を参照してください。
 
  
 

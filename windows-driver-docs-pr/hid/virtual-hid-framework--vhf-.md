@@ -119,7 +119,7 @@ VHF は、これらの Ioctl の HID ソース ドライバー実装イベント
 
 -   [**IOCTL\_HID\_読み取り\_レポート**](https://msdn.microsoft.com/library/windows/hardware/ff541172)
 
-    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、次を参照してください。[入力の HID レポートを提出](#submit)します。
+    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、[入力の HID レポートを提出](#submit)を参照してください。
 
 -   [**IOCTL\_HID\_取得\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541103)または[ **IOCTL\_HID\_設定\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541184)
 
@@ -135,7 +135,7 @@ VHF は、これらの Ioctl の HID ソース ドライバー実装イベント
 
 その他の[HID ミニドライバー IOCTL](https://msdn.microsoft.com/library/windows/hardware/ff539926)、VHF 状態要求が完了すると\_いない\_サポートされています。
 
-呼び出すことによって仮想 HID デバイスが削除された、 [ **VhfDelete**](https://msdn.microsoft.com/library/windows/hardware/dn925038)します。 [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)ドライバーでは、仮想の HID デバイスのリソースが割り当てられている場合は、callback は必須です。 ドライバーを実装する必要があります、 *EvtVhfCleanup*関数し、その関数へのポインターを指定、 **EvtVhfCleanup**のメンバー [ **VHF\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn925044). *EvtVhfCleanup*する前に呼び出される、 **VhfDelete**呼び出しが完了します。 詳細については、次を参照してください。[仮想 HID デバイスを削除](#delete-the-virtual-hid-device)します。
+呼び出すことによって仮想 HID デバイスが削除された、 [ **VhfDelete**](https://msdn.microsoft.com/library/windows/hardware/dn925038)します。 [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)ドライバーでは、仮想の HID デバイスのリソースが割り当てられている場合は、callback は必須です。 ドライバーを実装する必要があります、 *EvtVhfCleanup*関数し、その関数へのポインターを指定、 **EvtVhfCleanup**のメンバー [ **VHF\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn925044). *EvtVhfCleanup*する前に呼び出される、 **VhfDelete**呼び出しが完了します。 詳細については、[仮想 HID デバイスを削除](#delete-the-virtual-hid-device)を参照してください。
 
 **注**  非同期の操作の完了後、ドライバーを呼び出す必要があります[ **VhfAsyncOperationComplete** ](https://msdn.microsoft.com/library/windows/hardware/dn925060)操作の結果を設定します。 または、コールバックから戻った後に後で、イベント コールバックからメソッドを呼び出すことができます。
 

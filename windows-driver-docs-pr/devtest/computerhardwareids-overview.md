@@ -35,11 +35,11 @@ ComputerHardwareIds を実行するには、コマンド プロンプトでコ�
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-ComputerHardwareIds ツールでは、コンピューターの System Management BIOS (SMBIOS) のフィールドからの情報に基づいて、コンピューターのハードウェア Id を作成します。 フィールドの一覧は、次を参照してください。[のコンピューターのハードウェア Id を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552325)します。
+ComputerHardwareIds ツールでは、コンピューターの System Management BIOS (SMBIOS) のフィールドからの情報に基づいて、コンピューターのハードウェア Id を作成します。 フィールドの一覧は、[のコンピューターのハードウェア Id を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552325)を参照してください。
 
 ハードウェア ID の選択の詳細については、デバイス メタデータ パッケージについても増えるは、コンピューターの値を参照してください。[のコンピューターのハードウェア Id を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552325)します。
 
-Windows の開発キットの詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=846744)します。
+Windows の開発キットの詳細については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=846744)を参照してください。
 
 
 

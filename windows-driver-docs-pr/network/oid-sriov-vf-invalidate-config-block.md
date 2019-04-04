@@ -59,7 +59,7 @@ NDIS ミニポート ドライバーおよび無効な VF 構成データの通�
 
     3.  VF ドライバーが、OID を処理するときに\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロックの要求、指定した VF 構成要素からデータを読み取ることです。
 
-シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)します。
+シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、[SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

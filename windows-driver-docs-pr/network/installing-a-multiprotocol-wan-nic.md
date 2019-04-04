@@ -30,7 +30,7 @@ ms.locfileid: "56529007"
 
 マルチ プロトコルの WAN NIC の仕入先には、ウィザードのページをインストールする共同インストーラーを提供する必要があります。 (共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011))。 ウィザードのページには、WAN のプロトコルを選択するユーザーが表示されます。
 
--   ユーザーは、ISDN を選択する場合は、ISDN ウィザードが表示されます。 ISDN ウィザードでは、ISDN スイッチの種類と、選択したスイッチの種類、その他の ISDN パラメーターの値に応じてユーザーを入力します。 詳細については、次を参照してください。 [ISDN キーを指定すると、ISDN アダプターの値](specifying-isdn-keys-and-values-for-an-isdn-adapter.md)します。
+-   ユーザーは、ISDN を選択する場合は、ISDN ウィザードが表示されます。 ISDN ウィザードでは、ISDN スイッチの種類と、選択したスイッチの種類、その他の ISDN パラメーターの値に応じてユーザーを入力します。 詳細については、[ISDN キーを指定すると、ISDN アダプターの値](specifying-isdn-keys-and-values-for-an-isdn-adapter.md)を参照してください。
 
 -   ウィザードの追加のかどうか、ユーザーは、ISDN 以外 WAN のプロトコルを選択する、 **ShowIsdnPages**レジストリ値を WAN の NIC のインスタンスのキー。 この場合、ウィザードが設定**ShowIsdnPages** ISDN ウィザードを表示しないようにする 0 にします。 限り**ShowIsdnPages** 0 の場合は、ISDN ウィザードは表示されません。
 
@@ -40,7 +40,7 @@ WAN の NIC がインストールされた後、ユーザーは、NIC のプロ�
 
 -   ユーザーには、ISDN、プロトコルが変更された場合、WAN の NIC のプロパティ ページには、変更を適用するユーザーに求めるダイアログ ボックスが表示されます。 プロパティ ページの設定、ユーザーは、変更を適用する場合**ShowIsdnPages**を 1 にします。 ユーザーは、NIC のプロパティ ページをもう一度が開いたら、ISDN ウィザードが表示されます。
 
-なお、 **LowerRange**に ISDN をサポートするマルチ プロトコルの WAN NIC のバインド インターフェイスを設定する必要があります**isdn**します。 詳細については、次を参照してください。[バインド インターフェイスを指定する](specifying-binding-interfaces.md)します。 場合、 **ShowIsdnPages**レジストリ値が存在しない場合は、NIC の**LowerRange**に設定されている**isdn**のインストールと構成の中に、ISDN ウィザードが表示されますNIC 場合**ShowIsdnPages**設定は 0、ISDN ウィザードは表示されません。 場合**ShowIsdnPages**設定されている NIC の構成中に 1 に ISDN ウィザードが表示されます
+なお、 **LowerRange**に ISDN をサポートするマルチ プロトコルの WAN NIC のバインド インターフェイスを設定する必要があります**isdn**します。 詳細については、[バインド インターフェイスを指定する](specifying-binding-interfaces.md)を参照してください。 場合、 **ShowIsdnPages**レジストリ値が存在しない場合は、NIC の**LowerRange**に設定されている**isdn**のインストールと構成の中に、ISDN ウィザードが表示されますNIC 場合**ShowIsdnPages**設定は 0、ISDN ウィザードは表示されません。 場合**ShowIsdnPages**設定されている NIC の構成中に 1 に ISDN ウィザードが表示されます
 
  
 

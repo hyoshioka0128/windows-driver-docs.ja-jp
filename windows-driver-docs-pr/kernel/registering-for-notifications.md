@@ -25,7 +25,7 @@ ms.locfileid: "56531702"
 
 ドライバーが登録した後、 *RegistryCallback* 、日常的な configuration manager によってルーチンを呼び出すスレッドは、レジストリの操作を実行しようとするたびにします。 レジストリの操作を実行するスレッドがユーザー モードのレジストリのルーチンを呼び出すユーザー モード アプリケーションから指定できます (**RegCreateKeyEx**、 **RegOpenKeyEx**など) からドライバーを呼び出すと、カーネル モードのレジストリ ルーチン ([**ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)、 [ **ZwOpenKey**](https://msdn.microsoft.com/library/windows/hardware/ff567014)など)。
 
-大部分の操作には、ドライバー通知を受信できる、configuration manager は、レジストリの操作を処理する前に (、*事前通知*) またはすぐに、操作の完了後 (ただし、構成する前にマネージャーが、呼び出し元に戻ります:、*通知後*)。 ドライバーが受信可能な通知の種類の一覧は、次を参照してください。 [ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)します。
+大部分の操作には、ドライバー通知を受信できる、configuration manager は、レジストリの操作を処理する前に (、*事前通知*) またはすぐに、操作の完了後 (ただし、構成する前にマネージャーが、呼び出し元に戻ります:、*通知後*)。 ドライバーが受信可能な通知の種類の一覧は、[ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)を参照してください。
 
 ドライバーが呼び出された後**CmRegisterCallback**または**CmRegisterCallbackEx**、ドライバーは、それを呼び出すまで、通知を受け取る[ **CmUnRegisterCallback**](https://msdn.microsoft.com/library/windows/hardware/ff541928)またはアンロードされています。
 

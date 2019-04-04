@@ -88,7 +88,7 @@ ACPI 5.0 の定義、 \_SUB、 \_HRV、および\_CLS オブジェクトと共�
 
 名前空間で識別されるデバイスごとに、デバイスによって消費されるシステム リソース (メモリ アドレス、割り込み、) も報告する必要が現在のリソースの設定によって (\_CRS) オブジェクト。 複数の可能なリソース構成のレポート (\_PR) とデバイスのリソースの構成を変更するためのコントロール (\_SRS) はサポートされているが、省略可能。
 
-新しい SoC プラットフォームは、GPIO、デバイスが使用できるシンプルな周辺機器バス (SPB) リソースです。 詳細については、次を参照してください。[一般的な目的 I/O (GPIO)](general-purpose-i-o--gpio-.md)と[単純な周辺機器バス (SPB)](simple-peripheral-bus--spb-.md)します。
+新しい SoC プラットフォームは、GPIO、デバイスが使用できるシンプルな周辺機器バス (SPB) リソースです。 詳細については、[一般的な目的 I/O (GPIO)](general-purpose-i-o--gpio-.md)と[単純な周辺機器バス (SPB)](simple-peripheral-bus--spb-.md)を参照してください。
 
 また新しい SoC プラットフォームでは、汎用的な固定 DMA 記述子です。 FixedDMA 記述子は、多数のシステム デバイスによって、DMA コント ローラーのハードウェアの共有をサポートします。 FixedDMA 記述子には、特定のシステム デバイスに静的に割り当てられている DMA リソース (要求行とチャネル レジスタ) が一覧表示します。 詳細については、セクション、19.5.49"FixedDMA (DMA リソース記述子マクロ)"を参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
 
@@ -123,7 +123,7 @@ SoC のデバイスでは、SoC チップが統合され、削除することは
 
 デバイス ドライバーの間はソフトウェアの依存関係はできますがあります。 これらの依存関係も記載されている必要があります。 詳しくは、次のリソースをご覧ください。
 
--   ドライバーの読み込み順序の依存関係は、次を参照してください。[ドライバーの読み込み順序を指定する](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)します。
+-   ドライバーの読み込み順序の依存関係は、[ドライバーの読み込み順序を指定する](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)を参照してください。
 -   電源関係の依存関係を参照してください。
 
     -   [**IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチン (電源関係を確立することをトリガーする呼び出し、 **IoInvalidateDeviceRelations**ルーチン、**デバイス\_の関係\_入力**列挙型値**PowerRelations**)。

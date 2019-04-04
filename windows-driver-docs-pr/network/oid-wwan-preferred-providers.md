@@ -22,7 +22,7 @@ OID\_WWAN\_優先\_プロバイダーが優先 GSM ベースのデバイス プ�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)します。
+詳細については、この OID を使用して、[WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)を参照してください。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできると処理クエリの要求が、プロバイダーのネットワークにアクセスしないでください。
 

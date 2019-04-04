@@ -52,7 +52,7 @@ ms.locfileid: "56529646"
 
 プロセスをデバッグする NTSD (コマンドを使用して**ntsd-d**)、コントロールは、カーネル デバッガーにリダイレクトされますが、します。
 
-NTSD について詳しくは、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
+NTSD について詳しくは、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
 
 ### <a name="span-idseealsospanspan-idseealsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>参照してください。
 

@@ -133,7 +133,7 @@ NTSTATUS
 }
 ```
 
-各ソケットがサポートされているオプションの詳細については、次を参照してください。 [ **WSK ソケット オプション**](https://msdn.microsoft.com/library/windows/hardware/ff571186)します。
+各ソケットがサポートされているオプションの詳細については、[ **WSK ソケット オプション**](https://msdn.microsoft.com/library/windows/hardware/ff571186)を参照してください。
 
 次のコード例は、WSK アプリケーションが実行できる方法を示しています、 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)ソケットの IOCTL の操作をデータグラム ソケット。
 
@@ -243,7 +243,7 @@ NTSTATUS
 }
 ```
 
-各サポートされているソケットの IOCTL 操作の詳細については、次を参照してください。 [WSK ソケットの IOCTL 操作](https://msdn.microsoft.com/library/windows/hardware/ff571183)します。
+各サポートされているソケットの IOCTL 操作の詳細については、[WSK ソケットの IOCTL 操作](https://msdn.microsoft.com/library/windows/hardware/ff571183)を参照してください。
 
  
 

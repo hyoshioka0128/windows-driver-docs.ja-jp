@@ -56,7 +56,7 @@ GUID_DEVICE_BATTERY[デバイス インターフェイス クラス](https://msd
 
 システム提供[バッテリ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536278)バッテリ デバイスのバッテリ miniclass ドライバーに代わってこのデバイス インターフェイス クラスのインスタンスを登録します。
 
-バッテリのデバイスとドライバーについては、次を参照してください。[システム バッテリ管理の概要](https://msdn.microsoft.com/library/windows/hardware/ff536300)します。
+バッテリのデバイスとドライバーについては、[システム バッテリ管理の概要](https://msdn.microsoft.com/library/windows/hardware/ff536300)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

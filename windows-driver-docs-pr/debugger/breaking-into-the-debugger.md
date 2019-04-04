@@ -39,7 +39,7 @@ Break ルーチンでは、呼び出し元のスレッドが呼び出し元の�
 
 2.  ユーザー モード デバッガーがアタッチされていない、起動時にカーネル モードのデバッグが有効になっている場合は、コンピューター全体がカーネル デバッガーに中断されます。 カーネル デバッガーがアタッチされていない場合、コンピューターが固定し、カーネル デバッガーを待機します。
 
-3.  ユーザー モードのデバッガーがアタッチされていない、カーネル モードのデバッグが有効になっていない場合は、未処理の例外で、プログラムが終了し、事後 (だけの時間) のデバッガーをアクティブになります。 詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
+3.  ユーザー モードのデバッガーがアタッチされていない、カーネル モードのデバッグが有効になっていない場合は、未処理の例外で、プログラムが終了し、事後 (だけの時間) のデバッガーをアクティブになります。 詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
 
 ### <a name="span-idkernelmodebreakroutinesspanspan-idkernelmodebreakroutinesspankernel-mode-break-routines"></a><span id="kernel_mode_break_routines"></span><span id="KERNEL_MODE_BREAK_ROUTINES"></span>カーネル モード Break ルーチン
 

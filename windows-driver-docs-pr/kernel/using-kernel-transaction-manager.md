@@ -29,7 +29,7 @@ ms.locfileid: "56529954"
 
 [KTM を使用します。](using-ktm.md)
 
-ルーチン、構造、および KTM をサポートする列挙体については、次を参照してください。、[カーネル トランザクション マネージャ参照](https://msdn.microsoft.com/library/windows/hardware/ff553232)します。
+ルーチン、構造、および KTM をサポートする列挙体については、、[カーネル トランザクション マネージャ参照](https://msdn.microsoft.com/library/windows/hardware/ff553232)を参照してください。
 
  
 

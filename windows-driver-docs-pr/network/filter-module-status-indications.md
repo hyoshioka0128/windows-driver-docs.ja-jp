@@ -28,7 +28,7 @@ ms.locfileid: "56537408"
 
 ![フィルター選択された状態を示す値を示す図](images/statusfilter.png)
 
-NDIS フィルター ドライバーを呼び出す[ *FilterStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff549973)関数は、状態を示す値の関数を呼び出して、基になるドライバーから ([**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)または[ **NdisFIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff561824))。 ミニポート ドライバーからの状態を示す方法の詳細については、次を参照してください。[アダプター状態のインジケーター](miniport-adapter-status-indications.md)します。
+NDIS フィルター ドライバーを呼び出す[ *FilterStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff549973)関数は、状態を示す値の関数を呼び出して、基になるドライバーから ([**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)または[ **NdisFIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff561824))。 ミニポート ドライバーからの状態を示す方法の詳細については、[アダプター状態のインジケーター](miniport-adapter-status-indications.md)を参照してください。
 
 フィルター ドライバーは呼び出し**NdisFIndicateStatus**でその[ *FilterStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff549973)ドライバーに関連する、フィルター選択された状態を示す値を渡すの関数。 フィルター ドライバーは、状態インジケーターをフィルター処理できます (呼び出さなかったことで[ **NdisFIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff561824)) を呼び出す前に、指定されたステータスを変更または**NdisFIndicateStatus**します。
 

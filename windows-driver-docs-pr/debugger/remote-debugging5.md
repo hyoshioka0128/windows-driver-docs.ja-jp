@@ -32,7 +32,7 @@ ms.locfileid: "56552279"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リモート デバッグを実行する方法の詳細については、次を参照してください。[リモート ターゲット](remote-targets.md)します。
+リモート デバッグを実行する方法の詳細については、[リモート ターゲット](remote-targets.md)を参照してください。
 
  
 

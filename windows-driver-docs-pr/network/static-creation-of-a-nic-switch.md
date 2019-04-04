@@ -22,7 +22,7 @@ ms.locfileid: "56535507"
 
  
 
-既定の NIC のスイッチ パラメーターは、レジストリに標準化されたキーワードの設定を使用して定義されます。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+既定の NIC のスイッチ パラメーターは、レジストリに標準化されたキーワードの設定を使用して定義されます。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
 
 PF のミニポート ドライバーは、NDIS ドライバーを呼び出すときに静的に NIC スイッチを作成[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 通常、ドライバーは、作成し、ネットワーク アダプターで SR-IOV を有効にする前に初期化シーケンスの一部として、NIC のスイッチを構成します。
 
@@ -44,7 +44,7 @@ PF のミニポート ドライバーは、NDIS ドライバーを呼び出す�
 
 詳細を処理する方法について、 [OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)要求を参照してください[OID 処理\_NIC\_スイッチ\_作成\_スイッチ要求](handling-the-oid-nic-switch-create-switch-request.md)します。
 
-PF のミニポート ドライバーの要件と初期化の順序の詳細については、次を参照してください。 [PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)します。
+PF のミニポート ドライバーの要件と初期化の順序の詳細については、[PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)を参照してください。
 
  
 

@@ -24,15 +24,15 @@ ms.locfileid: "56532066"
 
 NDIS フィルター ドライバーの呼び出しを一時停止中のフィルター モジュールを開始する[ *FilterSetModuleOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff549970)関数、存在する場合の後に呼び出して、 [ *FilterRestart*](https://msdn.microsoft.com/library/windows/hardware/ff549962)関数。 フィルター モジュールが入力、*再起動*状態での実行の開始時、 *FilterRestart*関数。
 
-ドライバーのエントリ ポイントが指定されている場合[ *FilterSetModuleOptions*](https://msdn.microsoft.com/library/windows/hardware/ff549970)ドライバーは、フィルター モジュールの部分的な特性を変更できます。 詳細については、次を参照してください。[データ バイパス モード](data-bypass-mode.md)します。
+ドライバーのエントリ ポイントが指定されている場合[ *FilterSetModuleOptions*](https://msdn.microsoft.com/library/windows/hardware/ff549970)ドライバーは、フィルター モジュールの部分的な特性を変更できます。 詳細については、[データ バイパス モード](data-bypass-mode.md)を参照してください。
 
-フィルター ドライバーの呼び出し時に[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff549962)関数、NDIS 渡しますへのポインター、 [ **NDIS\_再起動\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff567255)構造体でのフィルター ドライバーを**RestartAttributes**のメンバー、 [ **NDIS\_フィルター\_再起動\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565572)構造体。 フィルター ドライバーは、基になるドライバーで指定されている再起動属性を変更できます。 再起動の属性を変更する方法の詳細については、次を参照してください。 *FilterRestart*します。
+フィルター ドライバーの呼び出し時に[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff549962)関数、NDIS 渡しますへのポインター、 [ **NDIS\_再起動\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff567255)構造体でのフィルター ドライバーを**RestartAttributes**のメンバー、 [ **NDIS\_フィルター\_再起動\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565572)構造体。 フィルター ドライバーは、基になるドライバーで指定されている再起動属性を変更できます。 再起動の属性を変更する方法の詳細については、*FilterRestart*を参照してください。
 
 **注**  NDIS 呼び出し[ *FilterSetModuleOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff549970)すべて NDIS 呼び出される前に、スタック内のモジュールのフィルター、 [ *FilterRestart*](https://msdn.microsoft.com/library/windows/hardware/ff549962)スタック内の任意のフィルター モジュールの関数。
 
  
 
-NDIS は、ドライバー スタックを再起動するプラグ アンド プレイ操作の一部としてフィルター モジュールを開始します。 ドライバー スタックの再起動の概要については、次を参照してください。[ドライバー スタックの再起動](restarting-a-driver-stack.md)します。
+NDIS は、ドライバー スタックを再起動するプラグ アンド プレイ操作の一部としてフィルター モジュールを開始します。 ドライバー スタックの再起動の概要については、[ドライバー スタックの再起動](restarting-a-driver-stack.md)を参照してください。
 
 内にあるフィルター モジュールの代わり、*再起動*状態では、フィルター ドライバー。
 
@@ -50,11 +50,11 @@ NDIS は、ドライバー スタックを再起動するプラグ アンド プ
 
 -   状態インジケーターを提供することができます、 [ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)関数。
 
-    状態インジケーターの詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](filter-module-status-indications.md)します。
+    状態インジケーターの詳細については、[フィルター モジュールの状態インジケーター](filter-module-status-indications.md)を参照してください。
 
 -   OID の要求を処理する必要があります、 [ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)関数。
 
-    OID 要求の詳細については、次を参照してください。[フィルター モジュールの OID 要求](filter-module-oid-requests.md)します。
+    OID 要求の詳細については、[フィルター モジュールの OID 要求](filter-module-oid-requests.md)を参照してください。
 
 -   新しい送信要求を開始する必要があります。
 
@@ -72,7 +72,7 @@ NDIS は、ドライバー スタックを再起動するプラグ アンド プ
 
 再起動操作が完了した後に、フィルター モジュールが、*を実行している*状態。 通常のドライバーの再開は、処理を送受信します。
 
-NDIS が他のプラグ アンド プレイ操作を開始していないなどのアタッチ、デタッチ、またはフィルター ドライバーの中に、要求を一時停止、*再起動*状態。 フィルター ドライバーが、NDIS は一時停止要求を開始できる、*を実行している*状態。 フィルター モジュールを一時停止の詳細については、次を参照してください。[フィルター モジュールを一時停止](pausing-a-filter-module.md)します。
+NDIS が他のプラグ アンド プレイ操作を開始していないなどのアタッチ、デタッチ、またはフィルター ドライバーの中に、要求を一時停止、*再起動*状態。 フィルター ドライバーが、NDIS は一時停止要求を開始できる、*を実行している*状態。 フィルター モジュールを一時停止の詳細については、[フィルター モジュールを一時停止](pausing-a-filter-module.md)を参照してください。
 
  
 

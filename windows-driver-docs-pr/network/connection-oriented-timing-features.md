@@ -45,7 +45,7 @@ ms.locfileid: "56527644"
 
 NIC のローカル時刻を取得する接続指向プロトコルを呼び出すことができます**NdisCoOidRequest**接続指向のミニポート ドライバーまたは MCM のドライバーの照会に[OID\_GEN\_CO\_取得\_ネットワーク カード\_時間](https://msdn.microsoft.com/library/windows/hardware/ff569450)します。 接続指向のミニポート ドライバーまたは MCM ドライバーは同期的にパケットの転送をスケジュールする接続指向プロトコルを使用できますし、ローカル時刻を取得するを返します。
 
-タイミング情報を送信または受信パケットが、パケットのアウト オブ バンド (OOB) データに含まれています。 詳細については、次を参照してください。 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。
+タイミング情報を送信または受信パケットが、パケットのアウト オブ バンド (OOB) データに含まれています。 詳細については、[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)を参照してください。
 
  
 

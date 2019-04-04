@@ -51,7 +51,7 @@ WinDbg を終了するを選択して**終了**から、**ファイル**メニ�
 
 -   入力、 [ **.abandon (破棄プロセス)** ](-abandon--abandon-process-.md)コマンド。
 
-ターゲットに再アタッチ方法の詳細については、次を参照してください。[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)します。
+ターゲットに再アタッチ方法の詳細については、[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)を参照してください。
 
 ## <a name="span-idendingakernel-modesessionwithoutexitingspanspan-idendingakernel-modesessionwithoutexitingspanspan-idendingakernel-modesessionwithoutexitingspanending-a-kernel-mode-session-without-exiting"></a><span id="Ending_a_Kernel-Mode_Session_Without_Exiting"></span><span id="ending_a_kernel-mode_session_without_exiting"></span><span id="ENDING_A_KERNEL-MODE_SESSION_WITHOUT_EXITING"></span>カーネル モードのセッションを終了する前に終了
 

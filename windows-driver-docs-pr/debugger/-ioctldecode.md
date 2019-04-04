@@ -22,7 +22,7 @@ ms.locfileid: "56529647"
 # <a name="ioctldecode"></a>! ioctldecode
 
 
-**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。
+**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)を参照してください。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
@@ -116,7 +116,7 @@ IOCTL が識別されないが、IOCTL フィールドに関する情報が表�
 
 パブリックに定義された Ioctl のサブセットのみがで識別できることに注意してください、 **! ioctldecode**コマンド。
 
-Ioctl の詳細については、次を参照してください。 [I/O 制御コードの概要](https://msdn.microsoft.com/library/windows/hardware/ff548059)します。
+Ioctl の詳細については、[I/O 制御コードの概要](https://msdn.microsoft.com/library/windows/hardware/ff548059)を参照してください。
 
 Irp と Ioctl の概要についてを参照してください*Windows Internals* E. のある Mark Russinovich、David A. Solomon Alex Ionescu しています。
 

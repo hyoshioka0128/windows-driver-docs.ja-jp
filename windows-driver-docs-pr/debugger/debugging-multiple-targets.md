@@ -73,7 +73,7 @@ ms.locfileid: "56548906"
 windbg -z c:\notepad.dmp -z c:\paint.dmp -z c:\calc.dmp
 ```
 
-詳細については、次を参照してください。 [WinDbg コマンド ライン オプション](windbg-command-line-options.md)します。 使用することもできます、 [.opendump](-opendump--open-dump-file-.md)と[ **g (移動)** ](g--go-.md)コマンドを追加で読み込むが、デバッガー内のファイルをダンプします。 
+詳細については、[WinDbg コマンド ライン オプション](windbg-command-line-options.md)を参照してください。 使用することもできます、 [.opendump](-opendump--open-dump-file-.md)と[ **g (移動)** ](g--go-.md)コマンドを追加で読み込むが、デバッガー内のファイルをダンプします。 
 
 使用して、 [| |(システム状態)](----system-status-.md)コマンドを 3 つすべてのシステムが存在することを確認します。
 

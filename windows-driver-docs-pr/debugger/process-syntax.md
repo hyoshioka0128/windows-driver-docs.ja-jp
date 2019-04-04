@@ -82,7 +82,7 @@ ms.locfileid: "56537390"
 
 ### <a name="span-idcontrollingprocessesinkernelmodespanspan-idcontrollingprocessesinkernelmodespancontrolling-processes-in-kernel-mode"></a><span id="controlling_processes_in_kernel_mode"></span><span id="CONTROLLING_PROCESSES_IN_KERNEL_MODE"></span>カーネル モードでプロセスを制御します。
 
-カーネル モードでは、プロセスの識別子を使用してプロセスを制御できません。 カーネル モードでプロセスに固有の情報にアクセスする方法の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+カーネル モードでは、プロセスの識別子を使用してプロセスを制御できません。 カーネル モードでプロセスに固有の情報にアクセスする方法の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
  
 

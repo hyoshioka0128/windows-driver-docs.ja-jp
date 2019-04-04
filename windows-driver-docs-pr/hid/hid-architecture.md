@@ -63,16 +63,16 @@ USB 経由で HID キーボードとマウスのコレクションを示す別�
 
  
 
-詳細については、次を参照してください。[コレクションの開始の HID](opening-hid-collections.md)します。
+詳細については、[コレクションの開始の HID](opening-hid-collections.md)を参照してください。
 
-サポートされているすべての非表示にクライアントの一覧は、次を参照してください。[を非表示に、Windows でサポートされるクライアント](hid-clients-supported-in-windows.md)します。
+サポートされているすべての非表示にクライアントの一覧は、[を非表示に、Windows でサポートされるクライアント](hid-clients-supported-in-windows.md)を参照してください。
 
 ## <a name="the-hid-transport-driver"></a>HID トランスポート ドライバー
 
 
 HID クラス ドライバーは、ハードウェアの入力デバイスにアクセスする HID ミニドライバーを使用して設計されています。 HID ミニドライバーは、サポートされている入力デバイスのデバイス固有の操作を抽象化します。 HID ミニドライバーは、HID クラス ドライバーに登録すると、HID クラス ドライバーにその操作をバインドします。 HID クラス ドライバーは、ミニドライバーのサポート ルーチンを呼び出すことによって、HID ミニドライバーと通信します。 さらに、HID ミニドライバーは、基になるバスまたはポート ドライバーにダウン ドライバー スタックの通信を送信します。
 
-Windows で提供される HID トランスポートの一覧は、次を参照してください。[を非表示に、Windows でサポートされるトランスポート](hid-transports-supported-in-windows.md)します。
+Windows で提供される HID トランスポートの一覧は、[を非表示に、Windows でサポートされるトランスポート](hid-transports-supported-in-windows.md)を参照してください。
 
  
 

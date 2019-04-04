@@ -23,7 +23,7 @@ ms.locfileid: "56536649"
 
 Verifier ユーティリティには、検証されているドライバーとドライバーの検証のアクションを監視するいくつかの方法があります。
 
-カーネル デバッガー拡張機能 **! verifier** Driver Verifier のアクティビティに関連する統計データの監視およびレポートにも使用できます。 グラフィック ドライバーを検証するときに、 **! gdikdx.verifier**拡張機能を代わりに使用する必要があります。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+カーネル デバッガー拡張機能 **! verifier** Driver Verifier のアクティビティに関連する統計データの監視およびレポートにも使用できます。 グラフィック ドライバーを検証するときに、 **! gdikdx.verifier**拡張機能を代わりに使用する必要があります。 デバッガーの拡張機能については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
 
 このセクションの内容:
 

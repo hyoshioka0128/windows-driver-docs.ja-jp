@@ -35,7 +35,7 @@ ms.locfileid: "56530766"
 
 ラベルのトークンの形式と同じ、[ソース パラメーター トークン](source-parameter-token.md)レジスタ数と種類フィールドのみが使用される点が異なります。
 
-ビット 28、29、30、11、および 12 フォーム register 型を示す 5 ビット値です。 登録の種類については、次を参照してください。[シェーダー登録型](https://msdn.microsoft.com/library/windows/hardware/ff569707)します。 D3DSPR としてラベル トークンを register 型を指定する必要があります\_ラベル。
+ビット 28、29、30、11、および 12 フォーム register 型を示す 5 ビット値です。 登録の種類については、[シェーダー登録型](https://msdn.microsoft.com/library/windows/hardware/ff569707)を参照してください。 D3DSPR としてラベル トークンを register 型を指定する必要があります\_ラベル。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要件
 

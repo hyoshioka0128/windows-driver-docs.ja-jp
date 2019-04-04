@@ -36,7 +36,7 @@ Network Direct カーネル (NDK) をサポートしているミニポート ド
 
     -   必須の NDIS ミニポート ドライバーは、一般の Oid。
 
-        **注**  これらの必須の Oid の一覧は、次を参照してください。[ミニポート ドライバーに必須の Oid](https://msdn.microsoft.com/library/windows/hardware/ff557139)します。
+        **注**  これらの必須の Oid の一覧は、[ミニポート ドライバーに必須の Oid](https://msdn.microsoft.com/library/windows/hardware/ff557139)を参照してください。
 
          
 

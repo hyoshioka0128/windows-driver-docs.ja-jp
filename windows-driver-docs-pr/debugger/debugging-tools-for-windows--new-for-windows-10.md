@@ -15,7 +15,7 @@ ms.locfileid: "56549238"
 
 ## <a name="span-idwindbgpreviewspanspan-idwindbgpreviewspanspan-idwindbgpreviewspanwindbg-preview"></a><span id="Windbg_Preview"></span><span id="windbg_preview"></span><span id="WINDBG_PREVIEW"></span>Windbg のプレビュー
 
-Windows デバッグ ツールの最新ニュースについては、次を参照してください。 [WinDbg Preview - 新](windbg-what-is-new-preview.md)します。
+Windows デバッグ ツールの最新ニュースについては、[WinDbg Preview - 新](windbg-what-is-new-preview.md)を参照してください。
 
 
 ## <a name="span-idwindows10version1703spanspan-idwindows10version1703spanspan-idwindows10version1703spanwindows10-version-1703"></a><span id="Windows_10__version_1703"></span><span id="windows_10__version_1703"></span><span id="WINDOWS_10__VERSION_1703"></span>Windows 10 バージョン 1703
@@ -68,7 +68,7 @@ Windows デバッグ ツールの最新ニュースについては、次を参�
  
 ## <a name="looking-to-download-the-debugging-tools"></a>デバッグ ツールをダウンロードしようとしていますか。
 
-デバッグ ツールをダウンロードする方法の詳細については、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。
+デバッグ ツールをダウンロードする方法の詳細については、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。
 
 
 

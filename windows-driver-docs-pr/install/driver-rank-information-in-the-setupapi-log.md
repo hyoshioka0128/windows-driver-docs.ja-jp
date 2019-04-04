@@ -61,7 +61,7 @@ Windows は、署名の種類ごとに SetupAPI デバイス ログに記録さ�
 <a href="" id="unsigned-driver"></a>署名されていないドライバー  
 「署名者スコア - デジタル署名されていない」
 
-ドライバーのランク付けの詳細については、次を参照してください。[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
+ドライバーのランク付けの詳細については、[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
 
  
 

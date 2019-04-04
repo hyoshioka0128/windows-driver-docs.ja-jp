@@ -35,7 +35,7 @@ Devproxy METransformHaveOutput が発生したときに、DTM は Devproxy で P
 
 デバイス MFT は、の合計の出力ストリームの数を受け取る**MFT\_出力\_データ\_バッファー**配列内の構造体。 構造体のメンバーを適切な値を入力すると想定されます。 応答のサンプルを取得するデバイス MFT に DTM 呼び出される前に、 **METransformHaveOutput**メッセージ、別のサンプルが、別のストリーム可能になる場合デバイス MFT はさあ、これで、サンプルを送信ProcessOutput 呼び出し。 DTM は ProcessOutput をもう一度、呼び出しが、その時点でデバイス MFT でしたのみを返す、呼び出しでは、サンプルはありませんが利用できない場合。
 
-詳細については、次を参照してください。 [ **IMFDeviceTransform::ProcessOutput**](https://msdn.microsoft.com/library/windows/hardware/mt797682)します。
+詳細については、[ **IMFDeviceTransform::ProcessOutput**](https://msdn.microsoft.com/library/windows/hardware/mt797682)を参照してください。
 
  
 

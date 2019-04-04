@@ -44,7 +44,7 @@ Microsoft のプリンター INF ファイル、Ntprint.inf では、次のデ�
 
     値を割り当てます、 **DriverFile**、 **ConfigFile**、 **HelpFile**、および**LanguageMonitor** Microsoft Universal のエントリ双方向のプリンターのプリンター ドライバー。
 
-これらのデータ セクションは、ベンダーから提供された INF ファイル内から参照する必要があります。 例については、次を参照してください。 [Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)と[Pscript ミニドライバーをインストールする](installing-a-pscript-minidriver.md)します。
+これらのデータ セクションは、ベンダーから提供された INF ファイル内から参照する必要があります。 例については、[Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)と[Pscript ミニドライバーをインストールする](installing-a-pscript-minidriver.md)を参照してください。
 
 **注**  されている、IHV プリンター INF ファイル、**必要があります**エントリまたは**Include** Ntprint.inf を参照するエントリは、INF と同じであるデータ セクション名を含めることはできませんセクション名 Ntprint.inf 内に存在します。 プリンターのベンダーから提供された INF ファイルのデータ セクションの名前を付け、前に、セクション名が Ntprint.inf 内 (任意の型) のセクション名として存在しないことを必ず %windir%/inf/Ntprint.inf を検索します。
 

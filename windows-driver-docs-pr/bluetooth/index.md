@@ -3,18 +3,23 @@ title: Bluetooth プロファイル ドライバー
 description: Bluetooth プロファイル ドライバー
 ms.assetid: 6fdd760b-6b6c-43d4-9ce2-515718eb46d9
 keywords:
-  - Bluetooth WDK
-  - プロファイル ドライバー WDK Bluetooth
-  - ワイヤレス接続 WDK Bluetooth
-  - 接続 WDK Bluetooth
-  - プロトコル WDK Bluetooth
-  - カスタム ドライバー WDK Bluetooth
+- Bluetooth WDK
+- プロファイル ドライバー WDK Bluetooth
+- ワイヤレス接続 WDK Bluetooth
+- 接続 WDK Bluetooth
+- プロトコル WDK Bluetooth
+- カスタム ドライバー WDK Bluetooth
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 54bf09933189190772870e19657e289b30185408
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465715"
 ---
-
 # <a name="bluetooth-profile-drivers"></a>Bluetooth プロファイル ドライバー
 
 

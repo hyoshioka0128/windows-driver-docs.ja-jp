@@ -51,7 +51,7 @@ Windows 7 および Windows オペレーティング システムの以降のバ
 
 メモリ プールの割り当ての統計情報は、検証されているドライバーごとに個別に監視できます。 ドライバー検証ツール マネージャーによって、Verifier.exe コマンドライン、またはログ ファイルで、これらの統計情報を表示できます。 参照してください[カウンターを個別に監視](monitoring-individual-counters.md)詳細についてはします。
 
-カーネル デバッガー拡張機能 **! verifier 0x3**ドライバーが読み込まれるまたはドライバーの中に現在の割り当てを追跡するために実行した後は、未処理のメモリ割り当てを検索するために使用できます。 この拡張機能は、プール タグ、プールのサイズと、各割り当てのアロケーターのアドレスにも表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+カーネル デバッガー拡張機能 **! verifier 0x3**ドライバーが読み込まれるまたはドライバーの中に現在の割り当てを追跡するために実行した後は、未処理のメモリ割り当てを検索するために使用できます。 この拡張機能は、プール タグ、プールのサイズと、各割り当てのアロケーターのアドレスにも表示されます。 デバッガーの拡張機能については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
 
 ### <a name="span-idpoolquotachargesfromdpcroutinespanspan-idpoolquotachargesfromdpcroutinespanspan-idpoolquotachargesfromdpcroutinespanpool-quota-charges-from-dpc-routine"></a><span id="Pool_Quota_Charges_from_DPC_Routine"></span><span id="pool_quota_charges_from_dpc_routine"></span><span id="POOL_QUOTA_CHARGES_FROM_DPC_ROUTINE"></span>DPC ルーチンからプール クォータの料金
 
@@ -63,7 +63,7 @@ Windows 7 以降、Driver Verifier を検出した[ **ExAllocatePoolWithQuotaTag
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー プールの追跡機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー プールの追跡機能をアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 -   **コマンドラインで**
 
@@ -81,7 +81,7 @@ Windows 7 以降、Driver Verifier を検出した[ **ExAllocatePoolWithQuotaTag
     verifier /volatile /flags 0x8 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
     プールの追跡機能は、標準の設定にも含まれます。 次に、例を示します。
 

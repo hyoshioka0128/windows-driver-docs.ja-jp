@@ -21,7 +21,7 @@ ms.locfileid: "56535737"
 
 ## <a name="remarks"></a>注釈
 
-NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーでは、NDIS ミニポート アダプター ハードウェア機能を報告します。 レポート タスク オフロードのハードウェア機能を NDIS ミニポート ドライバーおよび NDIS から上にあるドライバーについては、次を参照してください。 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)します。
+NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーでは、NDIS ミニポート アダプター ハードウェア機能を報告します。 レポート タスク オフロードのハードウェア機能を NDIS ミニポート ドライバーおよび NDIS から上にあるドライバーについては、[NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)を参照してください。
 
 **InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。 NDIS は、バッファーの大きさがない場合、NDIS_STATUS_BUFFER_TOO_SHORT を返します。
 

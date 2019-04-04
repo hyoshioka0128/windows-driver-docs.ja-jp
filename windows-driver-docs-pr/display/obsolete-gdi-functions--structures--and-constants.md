@@ -23,7 +23,7 @@ ms.locfileid: "56531420"
 
 次の関数、構造、および定数が表示されます、 *winddi.h*ヘッダー、ただしは Windows 2000 では古い以降。
 
-不使用のディスプレイ ドライバーの関数の一覧は、次を参照してください。[古いグラフィックス DDI 関数](obsolete-graphics-ddi-functions.md)します。
+不使用のディスプレイ ドライバーの関数の一覧は、[古いグラフィックス DDI 関数](obsolete-graphics-ddi-functions.md)を参照してください。
 
 ### <a name="span-idobsoletegdifunctionsspanspan-idobsoletegdifunctionsspanobsolete-gdi-functions"></a><span id="obsolete_gdi_functions"></span><span id="OBSOLETE_GDI_FUNCTIONS"></span>古い形式の GDI 関数
 

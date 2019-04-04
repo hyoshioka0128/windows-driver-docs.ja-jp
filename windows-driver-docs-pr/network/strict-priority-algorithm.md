@@ -20,7 +20,7 @@ ms.locfileid: "56535495"
 
 ミニポート ドライバー NDIS を設定して、優先 TSA のサポートを指定する\_QOS\_機能\_STRICT\_TSA\_でサポートされている、**フラグ**メンバー[ **NDIS\_QOS\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)構造体。 ドライバーでは、この構造体を使用して、呼び出しの NDIS QoS と DCB の機能を登録します[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。
 
-優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
+優先度レベルの詳細については、[IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)を参照してください。
 
 **注**  NDIS 6.30、以降、DCB の NDIS サービスの品質 (QoS) をサポートしているミニポート ドライバー インターフェイスは優先順位の厳密な TSA のサポートを提供する必要があります。
 

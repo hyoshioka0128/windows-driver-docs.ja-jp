@@ -23,7 +23,7 @@ ms.locfileid: "56530218"
 
 呼び出した後、いつでも[ *Dot11ExtIhvInitAdapter*](https://msdn.microsoft.com/library/windows/hardware/ff547469)、IHV 拡張機能の DLL は呼び出すことによって、ユーザーとの対話を要求することができます、 [ **Dot11ExtSendUIRequest**](https://msdn.microsoft.com/library/windows/hardware/ff547567)関数。 オペレーティング システムでは、IHV UI 拡張 DLL は、要求を処理し、ユーザーに適切なユーザー インターフェイス (UI) のページを表示するにすべてのユーザーの操作要求を転送します。
 
-要求が完了したとき、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvProcessUIResponse* ](https://msdn.microsoft.com/library/windows/hardware/ff547504)ユーザーとの対話の IHV UI 拡張機能の DLL からの結果を転送する関数。 IHV UI 拡張機能の DLL の詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)します。
+要求が完了したとき、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvProcessUIResponse* ](https://msdn.microsoft.com/library/windows/hardware/ff547504)ユーザーとの対話の IHV UI 拡張機能の DLL からの結果を転送する関数。 IHV UI 拡張機能の DLL の詳細については、[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)を参照してください。
 
 たとえば、IHV 拡張機能の DLL は、次のいずれかのユーザーの操作を要求できます。
 

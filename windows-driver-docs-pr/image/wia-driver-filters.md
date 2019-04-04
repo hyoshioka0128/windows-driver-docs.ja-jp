@@ -14,7 +14,7 @@ ms.locfileid: "56529564"
 # <a name="wia-driver-filters"></a>WIA ドライバーのフィルター
 
 
-次のセクションでは、WIA イメージが Windows Vista およびそれ以降のオペレーティング システムのフィルターと WIA セグメント化フィルターを処理に関する情報を格納します。 Microsoft Windows Me、Windows XP でイメージ処理については、次を参照してください。[イメージ処理](image-processing.md)します。
+次のセクションでは、WIA イメージが Windows Vista およびそれ以降のオペレーティング システムのフィルターと WIA セグメント化フィルターを処理に関する情報を格納します。 Microsoft Windows Me、Windows XP でイメージ処理については、[イメージ処理](image-processing.md)を参照してください。
 
 このセクションの内容:
 

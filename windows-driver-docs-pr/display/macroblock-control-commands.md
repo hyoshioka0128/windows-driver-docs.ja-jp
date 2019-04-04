@@ -33,7 +33,7 @@ ms.locfileid: "56538034"
 
 [**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563997)
 
-構造体で明示的に定義されている*dxva.h*マクロ ブロック コントロールのコマンドの DirectX 問い合わせください使用される汎用的なデザインの特殊なケース。 この汎用的な設計については、次を参照してください。[マクロ ブロック コントロール コマンド構造の汎用フォーム](generic-form-of-macroblock-control-command-structures.md)します。
+構造体で明示的に定義されている*dxva.h*マクロ ブロック コントロールのコマンドの DirectX 問い合わせください使用される汎用的なデザインの特殊なケース。 この汎用的な設計については、[マクロ ブロック コントロール コマンド構造の汎用フォーム](generic-form-of-macroblock-control-command-structures.md)を参照してください。
 
 使用できるマクロ ブロック コントロール コマンド構造体の選択はデコードする画像の種類とデコードする方法に基づいています。 次の構造体のメンバーとフラグ オプション、および 4 つの DirectX VA マクロ ブロックの制御構造のどちらを使用するデコードを画像の種類に決定します。
 

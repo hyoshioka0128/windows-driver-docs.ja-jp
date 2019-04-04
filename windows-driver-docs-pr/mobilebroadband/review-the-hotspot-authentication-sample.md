@@ -16,7 +16,7 @@ ms.locfileid: "56528853"
 
 [ホット スポット認証サンプル](https://go.microsoft.com/fwlink/p/?linkid=313215)アプリケーションのプロビジョニング ファイルと、ホット スポット認証イベントを処理する方法について説明します。 このサンプルは、特権を持つ Api では実行されません。署名済みのプロビジョニングのメタデータのアプリケーションを示します。
 
-特権 Api と共にプロビジョニング符号なしのメタデータを使用する方法の例は、次を参照してください。、[モバイル ブロード バンド プロビジョニング サンプル](https://go.microsoft.com/fwlink/p/?linkid=256401)します。
+特権 Api と共にプロビジョニング符号なしのメタデータを使用する方法の例は、、[モバイル ブロード バンド プロビジョニング サンプル](https://go.microsoft.com/fwlink/p/?linkid=256401)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

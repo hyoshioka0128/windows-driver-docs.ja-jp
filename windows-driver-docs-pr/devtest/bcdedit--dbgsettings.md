@@ -43,10 +43,10 @@ bcdedit /dbgsettings NET HOSTIP:ip PORT:port [KEY:key] [nodhcp] [newkey] [/start
 ----------
 
 **シリアル**   
-ターゲット マシンとホスト マシンが使用するシリアル接続のデバッグを指定します。 このオプションを使用する場合、 **DEBUGPORT**と**BAUDRATE**パラメーターに指定できますも。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](https://msdn.microsoft.com/library/windows/hardware/ff556867)します。
+ターゲット マシンとホスト マシンが使用するシリアル接続のデバッグを指定します。 このオプションを使用する場合、 **DEBUGPORT**と**BAUDRATE**パラメーターに指定できますも。 詳細については、[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](https://msdn.microsoft.com/library/windows/hardware/ff556867)を参照してください。
 
 **1394**   
-ターゲット マシンとホスト マシンが使用する IEEE 1394 (FireWire) 接続のデバッグを指定します。 このオプションを使用する場合、**チャネル**パラメーターに指定できますも。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](https://msdn.microsoft.com/library/windows/hardware/ff556866)します。
+ターゲット マシンとホスト マシンが使用する IEEE 1394 (FireWire) 接続のデバッグを指定します。 このオプションを使用する場合、**チャネル**パラメーターに指定できますも。 詳細については、[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](https://msdn.microsoft.com/library/windows/hardware/ff556866)を参照してください。
 
 **USB**   
 ターゲット マシンとホスト マシンは接続を使用、USB 2.0 接続または USB 3.0 のデバッグを指定します。 このオプションを使用する場合、 **TARGETNAME**パラメーターを含めることは同様です。 詳しくは、次のトピックをご覧ください。
@@ -169,30 +169,30 @@ bcdedit /dbgsettings NET HOSTIP:ip PORT:port [KEY:key] [nodhcp] [newkey] [/start
 
  
 
-Windows デバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。 設定して、カーネル モードの構成についてはデバッグ セッションを参照してください[カーネル モード デバッグ手作業でセットアップ](https://msdn.microsoft.com/library/windows/hardware/hh439378)します。
+Windows デバッグ ツールの詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。 設定して、カーネル モードの構成についてはデバッグ セッションを参照してください[カーネル モード デバッグ手作業でセットアップ](https://msdn.microsoft.com/library/windows/hardware/hh439378)します。
 
 <a name="examples"></a>例
 --------
 
-次のコマンドは、デバッグに、イーサネット接続を使用するターゲット コンピューターを構成し、ホスト コンピューターの IP アドレスを指定します。 コマンドには、ホスト コンピューターを使用して、ターゲット コンピューターに接続するポート番号も指定します。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動でのネットワーク ケーブル](https://msdn.microsoft.com/library/windows/hardware/hh439346)します。
+次のコマンドは、デバッグに、イーサネット接続を使用するターゲット コンピューターを構成し、ホスト コンピューターの IP アドレスを指定します。 コマンドには、ホスト コンピューターを使用して、ターゲット コンピューターに接続するポート番号も指定します。 詳細については、[カーネル モード デバッグのセットアップを手動でのネットワーク ケーブル](https://msdn.microsoft.com/library/windows/hardware/hh439346)を参照してください。
 
 ``` syntax
 bcdedit /dbgsettings net hostip:10.125.5.10 port:50000
 ```
 
-次のコマンドは、デバッグに 1394 接続を使用する対象のコンピュータを構成します。 コマンドには、ホスト コンピューターがターゲット コンピューターへの接続に使用できるチャネル数も指定します。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](https://msdn.microsoft.com/library/windows/hardware/ff556866)します。
+次のコマンドは、デバッグに 1394 接続を使用する対象のコンピュータを構成します。 コマンドには、ホスト コンピューターがターゲット コンピューターへの接続に使用できるチャネル数も指定します。 詳細については、[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](https://msdn.microsoft.com/library/windows/hardware/ff556866)を参照してください。
 
 ``` syntax
 bcdedit /dbgsettings 1394 channel:1
 ```
 
-次のコマンドは、デバッグに USB 接続を使用する対象のコンピュータを構成します。 コマンドには、ホスト コンピューターがターゲット コンピューターへの接続に使用できるターゲットの名前も指定します。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動で USB 3.0 ケーブル](https://msdn.microsoft.com/library/windows/hardware/hh439372)と[カーネル モード デバッグのセットアップを手動で USB 2.0 ケーブル](https://msdn.microsoft.com/library/windows/hardware/ff556869)します。
+次のコマンドは、デバッグに USB 接続を使用する対象のコンピュータを構成します。 コマンドには、ホスト コンピューターがターゲット コンピューターへの接続に使用できるターゲットの名前も指定します。 詳細については、[カーネル モード デバッグのセットアップを手動で USB 3.0 ケーブル](https://msdn.microsoft.com/library/windows/hardware/hh439372)と[カーネル モード デバッグのセットアップを手動で USB 2.0 ケーブル](https://msdn.microsoft.com/library/windows/hardware/ff556869)を参照してください。
 
 ``` syntax
 bcdedit /dbgsettings usb targetname:myTarget
 ```
 
-次のコマンドは、シリアル接続を使用して、デバッグの対象となるコンピューターを構成します。 コマンドでは、COM2、および、115,200 ボー レートに、デバッグの接続が使用するも指定します。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](https://msdn.microsoft.com/library/windows/hardware/ff556867)します。
+次のコマンドは、シリアル接続を使用して、デバッグの対象となるコンピューターを構成します。 コマンドでは、COM2、および、115,200 ボー レートに、デバッグの接続が使用するも指定します。 詳細については、[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](https://msdn.microsoft.com/library/windows/hardware/ff556867)を参照してください。
 
 ``` syntax
 bcdedit /dbgsettings serial debugport:2 baudrate:115200

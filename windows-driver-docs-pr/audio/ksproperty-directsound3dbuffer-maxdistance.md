@@ -61,7 +61,7 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_MAXDISTANCE プロパティは 3D サウンド 
 
  
 
-プロパティ値 (データの操作) は FLOAT 型の最大距離を指定します。 距離単位については、次を参照してください。 [ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)します。
+プロパティ値 (データの操作) は FLOAT 型の最大距離を指定します。 距離単位については、[ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)を参照してください。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 

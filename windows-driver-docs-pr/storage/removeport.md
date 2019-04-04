@@ -43,7 +43,7 @@ void RemovePort(
 イベントは、WMI クライアントに報告するポートの一覧から削除するポートを示す世界中の名前。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemovePort\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564017)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemovePort\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564017)構造体。
 
 <a name="return-value"></a>戻り値
 ------------

@@ -25,23 +25,23 @@ Microsoft Windows ベースのオペレーティング システムでは、複�
 
 -   NDIS 6.40: Windows 8.1、Windows Server 2012 R2、および以降のバージョンの Windows ではサポートされています。 NDIS 6.30 のネットワーク直接カーネル プロバイダー インターフェイス (NDKPI) 1.12 をサポートしています。
 
-    NDIS 6.30 の詳細については、次を参照してください。 [NDIS 6.40 概要](introduction-to-ndis-6-40.md)します。
+    NDIS 6.30 の詳細については、[NDIS 6.40 概要](introduction-to-ndis-6-40.md)を参照してください。
 
 -   NDIS 6.30: Windows 8、Windows Server 2012、および以降のバージョンの Windows ではサポートされています。 NDIS 6.30 には、1 つのルート/入出力仮想化 (SR-IOV)、HYPER-V 拡張可能スイッチ、ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI) 1.1、およびその他のサービスのサポートが含まれています。
 
-    NDIS 6.30 の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
+    NDIS 6.30 の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
 
 -   NDIS 6.20: Windows 7、Windows Server 2008 R2、および以降のバージョンの Windows ではサポートされています。 受信側のスロットル、およびその他のサービス、NDIS 6.20 が動作には仮想マシン キュー (VMQ) のサポートが含まれます。
 
-    NDIS 6.20 が動作の詳細については、次を参照してください。 [NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)します。
+    NDIS 6.20 が動作の詳細については、[NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)を参照してください。
 
 -   NDIS 6.1 には、Windows Vista Service Pack 1 (SP1)、Windows Server 2008、および以降のバージョンの Windows ではサポートされています。 NDIS 6.1 には、ヘッダー データの分割、直接 OID 要求、およびその他のサービスのサポートが含まれています。
 
-    NDIS 6.1 の詳細については、次を参照してください。 [NDIS 6.1 概要](introduction-to-ndis-6-1.md)します。
+    NDIS 6.1 の詳細については、[NDIS 6.1 概要](introduction-to-ndis-6-1.md)を参照してください。
 
--   NDIS 6.0 には、Windows Vista および Windows の以降のバージョンでサポートされます。 NDIS 6.0 には、フィルター ドライバーのサポートおよびが以前のバージョンの NDIS で指定されていない多くの追加サービスが含まれます。 NDIS 6.0 には、ドライバーの初期化とネットワーク データの管理に必要なドライバーの再構成時のサポートなどの主要な更新プログラムが含まれていますと[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)ネットワーク パケット データを処理するためのアーキテクチャです。 ランタイムの再構成のサポートに関する詳細については、次を参照してください。[ドライバー スタック管理](driver-stack-management.md)します。 NDIS 6.0 でのネットワーク パケット データを処理する方法の詳細を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
+-   NDIS 6.0 には、Windows Vista および Windows の以降のバージョンでサポートされます。 NDIS 6.0 には、フィルター ドライバーのサポートおよびが以前のバージョンの NDIS で指定されていない多くの追加サービスが含まれます。 NDIS 6.0 には、ドライバーの初期化とネットワーク データの管理に必要なドライバーの再構成時のサポートなどの主要な更新プログラムが含まれていますと[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)ネットワーク パケット データを処理するためのアーキテクチャです。 ランタイムの再構成のサポートに関する詳細については、[ドライバー スタック管理](driver-stack-management.md)を参照してください。 NDIS 6.0 でのネットワーク パケット データを処理する方法の詳細を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
 
-    NDIS 6.0 の詳細については、次を参照してください。 [NDIS 6.0 の概要](introduction-to-ndis-6-0.md)します。
+    NDIS 6.0 の詳細については、[NDIS 6.0 の概要](introduction-to-ndis-6-0.md)を参照してください。
 
 Windows Vista およびそれ以降のオペレーティング システム バージョンは、NDIS ベースのネットワークのカーネル モード ドライバーの次の種類をサポートします。
 
@@ -65,7 +65,7 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 
 詳細については、Windows ネットワーク アーキテクチャおよびプログラミングの考慮事項を参照してください[カーネル モード ドライバー用のネットワーク アーキテクチャ](network-architecture-for-kernel-mode-drivers.md)と[ネットワーク ドライバーのプログラミングに関する考慮事項](network-driver-programming-considerations.md)します。
 
-使用して、ネットワーク コンポーネントをインストール、ネットワーク INF ファイルの詳細については、次を参照してください。[ネットワーク コンポーネントをインストール](installing-network-components.md)します。 ネットワーク ドライバーには、通知オブジェクト - が必要な場合などのバインディング - を制御するもを参照してください[ネットワーク コンポーネントの通知オブジェクト](notify-objects-for-network-components.md)します。
+使用して、ネットワーク コンポーネントをインストール、ネットワーク INF ファイルの詳細については、[ネットワーク コンポーネントをインストール](installing-network-components.md)を参照してください。 ネットワーク ドライバーには、通知オブジェクト - が必要な場合などのバインディング - を制御するもを参照してください[ネットワーク コンポーネントの通知オブジェクト](notify-objects-for-network-components.md)します。
 
 次の追加のドライバー モデルは、特定のハードウェア テクノロジとアーキテクチャを使用して利用できます。
 

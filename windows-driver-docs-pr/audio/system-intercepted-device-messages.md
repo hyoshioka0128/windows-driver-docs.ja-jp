@@ -43,11 +43,11 @@ ms.locfileid: "56528349"
 
 -   **デバイスのインターフェイス名**
 
-    デバイス インターフェイス名については、次を参照してください。[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)します。
+    デバイス インターフェイス名については、[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)を参照してください。
 
 -   **デバイスのプラグ アンド プレイ devnode 番号**
 
-    Devnode については、次を参照してください。[デバイス ツリー](https://msdn.microsoft.com/library/windows/hardware/ff543194)します。
+    Devnode については、[デバイス ツリー](https://msdn.microsoft.com/library/windows/hardware/ff543194)を参照してください。
 
 -   **デバイスを使用して、マッパーによってかどうか**
 
@@ -80,11 +80,11 @@ DWORD XxxMessage(
 
 [**DRV\_QUERYDEVICEINTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff536363)
 
-詳細については、次を参照してください。[デバイス インターフェイスの名前を取得する](obtaining-a-device-interface-name.md)します。
+詳細については、[デバイス インターフェイスの名前を取得する](obtaining-a-device-interface-name.md)を参照してください。
 
 [**DRV\_QUERYDEVICEINTERFACESIZE**](https://msdn.microsoft.com/library/windows/hardware/ff536364)
 
-詳細については、次を参照してください。**デバイス インターフェイスの名前を取得する**します。
+詳細については、**デバイス インターフェイスの名前を取得する**を参照してください。
 
 [**DRV\_QUERYDEVNODE**](https://msdn.microsoft.com/library/windows/hardware/ff536365)
 
@@ -96,11 +96,11 @@ DWORD XxxMessage(
 
 [**DRVM\_MAPPER\_CONSOLEVOICECOM\_GET**](https://msdn.microsoft.com/library/windows/hardware/ff536361)
 
-詳細については、次を参照してください。[音声通信デバイス ID の優先](preferred-voice-communications-device-id.md)します。
+詳細については、[音声通信デバイス ID の優先](preferred-voice-communications-device-id.md)を参照してください。
 
 [**DRVM\_マッパー\_優先\_取得**](https://msdn.microsoft.com/library/windows/hardware/ff536362)
 
-詳細については、次を参照してください。[優先デバイス ID にアクセスする](accessing-the-preferred-device-id.md)します。
+詳細については、[優先デバイス ID にアクセスする](accessing-the-preferred-device-id.md)を参照してください。
 
  
 

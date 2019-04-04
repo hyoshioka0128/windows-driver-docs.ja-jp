@@ -20,7 +20,7 @@ ms.locfileid: "56529184"
 ## <span id="ddk_designing_a_miniport_driver_callback_routine_that_handles_wmi_clas"></span><span id="DDK_DESIGNING_A_MINIPORT_DRIVER_CALLBACK_ROUTINE_THAT_HANDLES_WMI_CLAS"></span>
 
 
-このセクションでは、WMI メソッドが含まれている例の WMI クラスを使用し、対応するミニポート ドライバー コールバック ルーチンがどのようにについて説明します。 WMI メソッドを実行するミニポート ドライバー コールバック ルーチンの詳細については、次を参照してください。 [ **HwScsiWmiExecuteMethod**](https://msdn.microsoft.com/library/windows/hardware/ff557332)します。
+このセクションでは、WMI メソッドが含まれている例の WMI クラスを使用し、対応するミニポート ドライバー コールバック ルーチンがどのようにについて説明します。 WMI メソッドを実行するミニポート ドライバー コールバック ルーチンの詳細については、[ **HwScsiWmiExecuteMethod**](https://msdn.microsoft.com/library/windows/hardware/ff557332)を参照してください。
 
 次の例の WMI クラスには、WMI メソッドが含まれます。
 
@@ -128,7 +128,7 @@ HwScsiWmiExecuteMethod (
     }
 ```
 
-WMI ツールのスイート (**mofcomp**と**wmimofck**) のバイナリのタイプ ライブラリと各 WMI のシンボリック定数を定義するヘッダー ファイルを自動的に生成することによってこのルーチンを記述するタスクを簡略化クラス GUID のインデックスと各メソッドの識別子。 これらのツールを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)と[wmimofck.exe を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
+WMI ツールのスイート (**mofcomp**と**wmimofck**) のバイナリのタイプ ライブラリと各 WMI のシンボリック定数を定義するヘッダー ファイルを自動的に生成することによってこのルーチンを記述するタスクを簡略化クラス GUID のインデックスと各メソッドの識別子。 これらのツールを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)と[wmimofck.exe を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565588)を参照してください。
 
 **Wmimofck**ツールによって生成された .bmf バイナリ ファイルから .h ファイルを生成する**mofcomp**します。 WMI クラスの名前に"GuidIndex"のサフィックスを連結して、クラスのインデックスのシンボリック定数の名前を形成します。 たとえば、 **MSFC\_FibrePortHBAMethods**クラス、ツールと呼ばれるシンボリック定数が作成されます**MSFC\_FibrePortHBAMethodsGuidIndex**を表す、そのクラスの GUID のインデックス。 同様の方法で、ツールはメソッド名のサフィックスを追加することがなくフォーム メソッドを表す記号定数を使用します。 メソッドのシンボリック定数の名前は、メソッドの名前だけです。 例では、switch ステートメントは、メソッドの識別子の値をテストします。 Switch ステートメント内の各ケースでは、メソッド名に対応します。
 
@@ -163,7 +163,7 @@ case MSFC_HBAPortMethodsGuidIndex:
     }
 ```
 
-、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されている情報の詳細については、次を参照してください。 [ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946)します。
+、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されている情報の詳細については、[ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946)を参照してください。
 
  
 

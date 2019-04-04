@@ -18,7 +18,7 @@ ms.locfileid: "56532314"
 # <a name="supporting-layered-registry-filtering-drivers"></a>階層型のレジストリのドライバーをフィルター処理をサポートしています。
 
 
-Windows Vista およびそれ以降のオペレーティング システム バージョンは、レジストリのドライバーをフィルター処理の階層化のスタックをサポートします。 各ドライバー スタックでは、レジストリの操作を登録することでフィルター処理に参加できる、 [ *RegistryCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff560903)ルーチン。 各レジストリのドライバーをフィルタ リングが割り当てられている、*高度*、ドライバーが 1 つだけを登録および*RegistryCallback*ごとの高度の日常的な。 ドライバーを呼び出すと[ **CmRegisterCallbackEx**](https://msdn.microsoft.com/library/windows/hardware/ff541921)ドライバーがその高度を指定します。 高度の詳細については、次を参照してください。[ロード順序グループとミニフィルター ドライバーの高度](https://msdn.microsoft.com/library/windows/hardware/ff549689)します。
+Windows Vista およびそれ以降のオペレーティング システム バージョンは、レジストリのドライバーをフィルター処理の階層化のスタックをサポートします。 各ドライバー スタックでは、レジストリの操作を登録することでフィルター処理に参加できる、 [ *RegistryCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff560903)ルーチン。 各レジストリのドライバーをフィルタ リングが割り当てられている、*高度*、ドライバーが 1 つだけを登録および*RegistryCallback*ごとの高度の日常的な。 ドライバーを呼び出すと[ **CmRegisterCallbackEx**](https://msdn.microsoft.com/library/windows/hardware/ff541921)ドライバーがその高度を指定します。 高度の詳細については、[ロード順序グループとミニフィルター ドライバーの高度](https://msdn.microsoft.com/library/windows/hardware/ff549689)を参照してください。
 
 スレッドを呼び出すレジストリと、configuration manager を呼び出し各*RegistryCallback*ルーチン低いものまで、最高の高度からの順序で、すべてのドライバーが呼び出されるまで、 *RegistryCallback*ルーチンは、対象の状態値を返します[NT\_成功](using-ntstatus-values.md)(*状態*) と等しい**FALSE**します。 そのためより高度なドライバーは、ブロックか、レジストリの操作を変更する場合は、下位レベルのドライバーは呼び出されません。 (ドライバーは、異なるレジストリ関数を呼び出すことによって、操作を変更する場合、configuration manager を再起動しませんフィルター スタックの上部にある。)
 

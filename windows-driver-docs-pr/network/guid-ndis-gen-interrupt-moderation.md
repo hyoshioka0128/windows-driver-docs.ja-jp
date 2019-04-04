@@ -23,5 +23,5 @@ NDIS に変換するには、この GUID を[OID_GEN_INTERRUPT_MODERATION](oid-g
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_INTERRUPT_MODERATION_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff565793)構造体。
 
-ポートの状態の詳細については、次を参照してください。 [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)します。
+ポートの状態の詳細については、[OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)を参照してください。
 

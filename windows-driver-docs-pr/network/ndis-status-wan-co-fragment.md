@@ -23,7 +23,7 @@ NDIS\_状態\_WAN\_CO\_-FRAGMENT status はいる CoNDIS WAN ミニポート ド
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体にはへのポインターが含まれています、 [ **NDIS\_WAN\_CO\_フラグメント**](https://msdn.microsoft.com/library/windows/hardware/ff559030)構造体。 NDIS\_WAN\_CO\_フラグメントの構造が理由を部分的なパケットが受信されたことを説明します。
 
-NDIS の詳細については\_状態\_WAN\_CO\_フラグメントを参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)します。
+NDIS の詳細については\_状態\_WAN\_CO\_フラグメントを参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

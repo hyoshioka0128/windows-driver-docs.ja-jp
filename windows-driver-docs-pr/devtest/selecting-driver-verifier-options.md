@@ -61,9 +61,9 @@ Windows XP 以降では、ドライバー検証マネージャーは、さまざ
 
 ### <a name="span-idrebootrequiredspanspan-idrebootrequiredspanreboot-required"></a><span id="reboot_required"></span><span id="REBOOT_REQUIRED"></span>再起動が必要です。
 
-Windows vista 以降では、アクティブ化し、(「再起動」) を再起動しなくても、すべてのオプションを非アクティブ化以外のコンピューター [DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+Windows vista 以降では、アクティブ化し、(「再起動」) を再起動しなくても、すべてのオプションを非アクティブ化以外のコンピューター [DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
-Windows Vista より前のシステムでは、アクティブ化しを再起動しなくても、特定のオプションを非アクティブ化することができますが、少なくとも 1 つのドライバーが、コンピューターを再起動してドライバーの検証を有効にした後にのみです。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+Windows Vista より前のシステムでは、アクティブ化しを再起動しなくても、特定のオプションを非アクティブ化することができますが、少なくとも 1 つのドライバーが、コンピューターを再起動してドライバーの検証を有効にした後にのみです。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
  
 

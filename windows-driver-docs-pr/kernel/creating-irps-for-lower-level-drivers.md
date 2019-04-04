@@ -41,7 +41,7 @@ IRP を低いドライバーによって任意のスレッド コンテキスト
 
     ドライバーのほとんどの設定、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)が関連付けられている IRP のルーチンです。 最上位レベルのドライバーを呼び出す場合[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)が作成されますが関連付けられている IRP の I/O マネージャーが完了しないマスター IRP、ドライバーは、状態を返す場合\_複数\_処理\_から必要なその*IoCompletion*ルーチン。 このような場合、ドライバーの*IoCompletion*ルーチンがでマスター IRP を明示的に完了する必要があります[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
 
-ディスパッチ ルーチンを呼び出す必要があります、ドライバーが IRP を新しい独自の I/O スタックの場所を割り当てた場合[ **IoSetNextIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550321)を呼び出す前に[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)の I/O スタックの場所、独自のコンテキストを設定する、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。 詳細については、次を参照してください。 [、中間レベルのドライバーでの処理の Irp](processing-irps-in-an-intermediate-level-driver.md)します。
+ディスパッチ ルーチンを呼び出す必要があります、ドライバーが IRP を新しい独自の I/O スタックの場所を割り当てた場合[ **IoSetNextIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550321)を呼び出す前に[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)の I/O スタックの場所、独自のコンテキストを設定する、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。 詳細については、[、中間レベルのドライバーでの処理の Irp](processing-irps-in-an-intermediate-level-driver.md)を参照してください。
 
 ディスパッチ ルーチンを呼び出す必要があります[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)元の IRP がいずれかではなくため Irp のドライバーに割り当てられた、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンが解放されます。
 

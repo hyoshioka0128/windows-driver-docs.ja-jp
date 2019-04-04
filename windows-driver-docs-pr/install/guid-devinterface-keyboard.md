@@ -58,11 +58,11 @@ GUID_DEVINTERFACE_KEYBOARD[デバイス インターフェイス クラス](http
 
 システム提供[キーボード クラス ドライバー](../hid/keyboard-and-mouse-class-drivers.md)キーボード デバイスに対するこのデバイスのインターフェイス クラスのインスタンスを登録します。 キーボード クラス ドライバーでサポートされている I/O インターフェイスを使用してこのデバイスのインターフェイス クラスのインスタンスにアクセスします。
 
-キーボード デバイスのサポートについては、次を参照してください。 [HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)と[Kbdclass と Mouclass ドライバーの機能](../hid/keyboard-and-mouse-class-drivers.md)します。
+キーボード デバイスのサポートについては、[HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)と[Kbdclass と Mouclass ドライバーの機能](../hid/keyboard-and-mouse-class-drivers.md)を参照してください。
 
 WDK には、システム提供のキーボード クラス ドライバーのサンプル コードが含まれています。 キーボード クラス ドライバーが古い形式の識別子を使用して[ **GUID_CLASS_KEYBOARD** ](guid-class-keyboard.md)のこのインスタンスを登録する[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
 
-マウス デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)します。
+マウス デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

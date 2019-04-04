@@ -34,7 +34,7 @@ ms.locfileid: "56535989"
 
 
 <span id="_______System______"></span><span id="_______system______"></span><span id="_______SYSTEM______"></span> *システム*   
-表示するシステムを指定します。 このパラメーターを省略した場合は、デバッグしているすべてのシステムが表示されます。 構文の詳細については、次を参照してください。[システム構文](system-syntax.md)します。
+表示するシステムを指定します。 このパラメーターを省略した場合は、デバッグしているすべてのシステムが表示されます。 構文の詳細については、[システム構文](system-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -64,7 +64,7 @@ ms.locfileid: "56535989"
 <a name="remarks"></a>注釈
 -------
 
-**||** コマンドは、複数のターゲットをデバッグする際にのみ役立ちます。 すべてではなく、多くの複数ターゲットのデバッグ セッションには、複数のシステムが含まれます。 これらのセッションに関する詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
+**||** コマンドは、複数のターゲットをデバッグする際にのみ役立ちます。 すべてではなく、多くの複数ターゲットのデバッグ セッションには、複数のシステムが含まれます。 これらのセッションに関する詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
 
 各システムの一覧には、サーバー名およびプロトコルの詳細が含まれています。 デバッガーが実行されているシステムとして識別**&lt;ローカル&gt;** します。
 

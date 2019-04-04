@@ -38,7 +38,7 @@ Traceview では、コマンド プロンプト ウィンドウで、次のコ�
 traceview -disable SessionName -guid {#GUID | GUIDFile}
 ```
 
-ただし、このコマンドは、トレース セッションを停止する traceview でを実行します。 続けるを使用して、**traceview で-スタート * * * SessionName*トレース セッションを再起動するコマンド。 詳細については、次を参照してください。 [ **traceview で管理コマンド**](traceview-control-commands.md)します。
+ただし、このコマンドは、トレース セッションを停止する traceview でを実行します。 続けるを使用して、**traceview で-スタート * * * SessionName*トレース セッションを再起動するコマンド。 詳細については、[ **traceview で管理コマンド**](traceview-control-commands.md)を参照してください。
 
  
 

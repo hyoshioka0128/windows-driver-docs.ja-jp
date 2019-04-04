@@ -20,7 +20,7 @@ ms.locfileid: "56529862"
 
 Windows 7 以降、バス ドライバーする必要がありますもの要求を処理 BusQueryContainerID その子の Pdo をします。
 
-これらの識別子 (Id) の詳細については、次を参照してください。[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
+これらの識別子 (Id) の詳細については、[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を参照してください。
 
 **注**  関数およびフィルター ドライバーでこの IRP を処理しません。
 
@@ -110,11 +110,11 @@ BusQueryDeviceID と BusQueryInstanceID バス ドライバーを提供する値
 
 **BusQueryContainerIDs を指定します。**
 
-Windows 7 以降、バス ドライバーが文字列を指定を含む BusQueryContainerID の[コンテナー ID](https://msdn.microsoft.com/library/windows/hardware/ff540024)デバイス。 コンテナー ID には、単一の物理リムーバブル デバイスの機能すべてのデバイスをグループ化するオペレーティング システムができるようにします。 たとえば、リムーバブル多機能デバイスからすべての機能のデバイスにある同じコンテナー ID 複数のコンテナー内の複数のディスクにまたがる可能性がありますが、任意のコンテナーに属さないボリューム デバイスなどの特殊なケースでコンテナー Id をレポートの詳細については、次を参照してください。[コンテナー Id の概要](https://msdn.microsoft.com/library/windows/hardware/ff549447)します。
+Windows 7 以降、バス ドライバーが文字列を指定を含む BusQueryContainerID の[コンテナー ID](https://msdn.microsoft.com/library/windows/hardware/ff540024)デバイス。 コンテナー ID には、単一の物理リムーバブル デバイスの機能すべてのデバイスをグループ化するオペレーティング システムができるようにします。 たとえば、リムーバブル多機能デバイスからすべての機能のデバイスにある同じコンテナー ID 複数のコンテナー内の複数のディスクにまたがる可能性がありますが、任意のコンテナーに属さないボリューム デバイスなどの特殊なケースでコンテナー Id をレポートの詳細については、[コンテナー Id の概要](https://msdn.microsoft.com/library/windows/hardware/ff549447)を参照してください。
 
 物理リムーバブル デバイスが、バス ドライバーを指定する子デバイスとして定義されている、**リムーバブル**の機能**TRUE**への応答、 [ **IRP\_MN\_クエリ\_機能**](irp-mn-query-capabilities.md)要求。 詳細については、**リムーバブル**値を参照してください[**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)します。
 
-バス ドライバーでは、デバイスは、バスに固有の一意の ID に基づくコンテナー ID を作成します。 詳細については、次を参照してください。[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)します。
+バス ドライバーでは、デバイスは、バスに固有の一意の ID に基づくコンテナー ID を作成します。 詳細については、[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)を参照してください。
 
 ドライバーは IRP の要求は失敗し、設定する必要があります**IoStatus.Status**ステータス\_いない\_次のいずれかに当てはまる場合にサポートされます。
 

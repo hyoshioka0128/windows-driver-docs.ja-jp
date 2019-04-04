@@ -30,7 +30,7 @@ IKsTopologyInfo、ISelector および IKsNodeControl は、Vidcap.h で定義さ
 
 Windows Vista およびそれ以降のリリースでは、Vidcap.h は、Microsoft Windows SDK の一部として含まれています。
 
-Microsoft DirectShow のドキュメントには、対応するリファレンス ページが含まれています。 グローバル一意識別子 (GUID) の型とその他の USB ビデオに関連する定数は、Ksmedia.h で定義されます。 詳細については、次を参照してください。 [USB ビデオ クラス プロパティ](usb-video-class-properties.md)と[カーネル ストリーミング トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff560886)します。
+Microsoft DirectShow のドキュメントには、対応するリファレンス ページが含まれています。 グローバル一意識別子 (GUID) の型とその他の USB ビデオに関連する定数は、Ksmedia.h で定義されます。 詳細については、[USB ビデオ クラス プロパティ](usb-video-class-properties.md)と[カーネル ストリーミング トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff560886)を参照してください。
 
  
 

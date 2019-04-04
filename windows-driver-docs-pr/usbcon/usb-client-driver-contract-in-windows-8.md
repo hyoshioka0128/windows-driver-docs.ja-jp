@@ -48,7 +48,7 @@ Windows 8 は、割り当て、作成、および USB 要求のブロック (翻
 -   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
 -   [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
 
-上記のルーチンは、追跡と処理を向上させるために割り当てられた URB を非透過の URB コンテキストをアタッチ可能性があります。 クライアント ドライバーでは、表示または URB コンテキストの内容を変更できません。 Windows 8 で URB 割り当ての詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
+上記のルーチンは、追跡と処理を向上させるために割り当てられた URB を非透過の URB コンテキストをアタッチ可能性があります。 クライアント ドライバーでは、表示または URB コンテキストの内容を変更できません。 Windows 8 で URB 割り当ての詳細については、[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)を参照してください。
 
 場合 USBD とそのバージョンを識別する Windows Driver Framework (WDF) クライアント ドライバー\_クライアント\_コントラクト\_バージョン\_602 の登録時に (を参照してください**WdfUsbTargetDeviceCreateWithParameters**)、USB ドライバー スタックを呼び出して、新しい URB のメモリを割り当て、クライアント ドライバーが必要ですが**WdfUsbTargetDeviceCreateUrb**します。
 

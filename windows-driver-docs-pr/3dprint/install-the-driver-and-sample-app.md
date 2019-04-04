@@ -126,7 +126,7 @@ IPv6 をサポートする必要がある場合は、IPv6 のため、ASP.NET �
 
 ポート 3702 で検出イベントをリッスンする UDP サーバーを実装することによって、アドホック探索を実行できます。
 
-Exchange のシーケンスの詳細については、次を参照してください。[検出し、メタデータ交換のメッセージ パターン](https://msdn.microsoft.com/library/windows/desktop/bb513677.aspx)します。
+Exchange のシーケンスの詳細については、[検出し、メタデータ交換のメッセージ パターン](https://msdn.microsoft.com/library/windows/desktop/bb513677.aspx)を参照してください。
 
  
 

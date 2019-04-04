@@ -89,9 +89,9 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
 
 ChecksumInfo.Transmit.NdisPacketTcpChecksum 場合**TRUE**、TCP 送信の操作がオフロードされます。 ChecksumInfo.Transmit.NdisPacketUdpChecksum 場合**TRUE**UDP の送信操作がオフロードします。
 
-Service Pack 1 (SP1) および Windows Server 2008、Windows Vista で場合 inMetaValues-&gt;headerIncludeHeaderLength が 0 より大きい、パケットの送信は、IP ヘッダーを含む生送信 reinjection します。 Windows Vista SP1 および Windows Server 2008 用の IP ヘッダーを含む生送信 reinjections を実行するのには、inMetaValues-の量で、複製されたパケットを退却&gt;headerIncludeHeaderLength inMetaValues - コピーと&gt;新しく拡張された領域を headerIncludeHeader します。 次に、net バッファーの一覧で、パケットの FwpsInjectTransportSendAsync0 を使用し、FWPS のままに\_トランスポート\_送信\_PARAMS0 パラメーターを設定**NULL**します。 Net のバッファーのリストに撤退操作の詳細については、次を参照してください。[撤退と高度な操作](retreat-and-advance-operations.md)します。
+Service Pack 1 (SP1) および Windows Server 2008、Windows Vista で場合 inMetaValues-&gt;headerIncludeHeaderLength が 0 より大きい、パケットの送信は、IP ヘッダーを含む生送信 reinjection します。 Windows Vista SP1 および Windows Server 2008 用の IP ヘッダーを含む生送信 reinjections を実行するのには、inMetaValues-の量で、複製されたパケットを退却&gt;headerIncludeHeaderLength inMetaValues - コピーと&gt;新しく拡張された領域を headerIncludeHeader します。 次に、net バッファーの一覧で、パケットの FwpsInjectTransportSendAsync0 を使用し、FWPS のままに\_トランスポート\_送信\_PARAMS0 パラメーターを設定**NULL**します。 Net のバッファーのリストに撤退操作の詳細については、[撤退と高度な操作](retreat-and-advance-operations.md)を参照してください。
 
-**注**  net バッファーの一覧の生の送信操作では、1 つのネット バッファーのみを含める必要があります。 Net バッファー一覧に 1 つ以上のネットワーク バッファーが含まれている場合、net のバッファーの一覧を一連の net バッファーのリストに変換する必要が、各シリーズの 1 つのネットワーク バッファーを含める必要があります。 Net バッファー リストの管理についての詳細については、次を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
+**注**  net バッファーの一覧の生の送信操作では、1 つのネット バッファーのみを含める必要があります。 Net バッファー一覧に 1 つ以上のネットワーク バッファーが含まれている場合、net のバッファーの一覧を一連の net バッファーのリストに変換する必要が、各シリーズの 1 つのネットワーク バッファーを含める必要があります。 Net バッファー リストの管理についての詳細については、[NET\_バッファー アーキテクチャ](net-buffer-architecture.md)を参照してください。
 
  
 

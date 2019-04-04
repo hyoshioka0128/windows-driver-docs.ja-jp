@@ -29,7 +29,7 @@ WIA ベッド項目がルート項目から直接配置されていることに�
 
 ![自動ドキュメント フィーダーのフラット ベッド スキャナーを示す図](images/art-flatbed2.png)
 
-WIA 項目のツリーの最初のルート項目は、他のスキャン データ ソースが実装されている場合、WIA ベッド項目にすることがあります。 この配置では、Microsoft Windows XP および Windows Me のアプリケーションをサポートするやすくなります。 これらのオペレーティング システムとの互換性の詳細については、次を参照してください。 [WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)します。
+WIA 項目のツリーの最初のルート項目は、他のスキャン データ ソースが実装されている場合、WIA ベッド項目にすることがあります。 この配置では、Microsoft Windows XP および Windows Me のアプリケーションをサポートするやすくなります。 これらのオペレーティング システムとの互換性の詳細については、[WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)を参照してください。
 
  
 

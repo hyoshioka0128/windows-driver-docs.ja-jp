@@ -31,7 +31,7 @@ ms.locfileid: "56532857"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソース モードのデバッグの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。 モードのアセンブリのデバッグの詳細については、次を参照してください。[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
+ソース モードのデバッグの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。 モードのアセンブリのデバッグの詳細については、[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)を参照してください。
 
  
 

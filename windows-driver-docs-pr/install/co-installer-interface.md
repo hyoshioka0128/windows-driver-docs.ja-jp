@@ -34,7 +34,7 @@ typedef DWORD
 ```
 
 <a href="" id="installfunction"></a>*InstallFunction*  
-共同インストーラーが参加しているのオプションを含むで処理されているデバイスのインストール要求を指定します。 これらの要求は DIF_INSTALLDEVICE などの差分のコードを使用して指定します。 詳細については、次を参照してください。[デバイス インストールの関数コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)します。
+共同インストーラーが参加しているのオプションを含むで処理されているデバイスのインストール要求を指定します。 これらの要求は DIF_INSTALLDEVICE などの差分のコードを使用して指定します。 詳細については、[デバイス インストールの関数コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)を参照してください。
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
 識別するハンドルを提供する[デバイス情報設定されている](device-information-sets.md)します。

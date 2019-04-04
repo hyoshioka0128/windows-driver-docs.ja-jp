@@ -23,7 +23,7 @@ ms.locfileid: "56550093"
 
 -   KS 暗証番号 (pin) をサポートするストリーム形式の範囲が KS データ範囲の配列で指定されました。配列の各要素は、KSDATARANGE 構造で始まる範囲記述子です。
 
-これら 2 つの構造の詳細については、次を参照してください。 [KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)します。 KS データ範囲の詳細については、次を参照してください。 [AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+これら 2 つの構造の詳細については、[KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)を参照してください。 KS データ範囲の詳細については、[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)を参照してください。
 
 このセクションの残りの部分では、次のトピックについて説明します。
 

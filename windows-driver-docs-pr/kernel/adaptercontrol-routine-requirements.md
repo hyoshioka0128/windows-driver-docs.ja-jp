@@ -48,7 +48,7 @@ ms.locfileid: "56550419"
 
 5.  呼び出す**MapTransfer**システム DMA コント ローラーを設定するか、バス マスター デバイスの物理-論理アドレス マッピングを取得します。
 
-6.  転送操作では、ドライバーのデバイスを使用して、プログラム、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンの呼び出しによって呼び出される[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302). 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+6.  転送操作では、ドライバーのデバイスを使用して、プログラム、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンの呼び出しによって呼び出される[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302). 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
 譲渡要求が、ドライバーを現在、ドライバーの IRP を満たすために部分的な転送操作のシーケンスを実行する必要があるかどうか[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)または[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)ルーチンは通常、後続の転送操作のデバイスを再プログラミング責任を負います。 *AdapterControl* IRP の各着信転送のルーチンを 1 回だけ呼び出されます。
 

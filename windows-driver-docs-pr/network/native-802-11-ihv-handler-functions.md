@@ -18,7 +18,7 @@ ms.locfileid: "56528507"
 # <a name="native-80211-ihv-handler-functions"></a>ネイティブの 802.11 IHV ハンドラー関数
 
 >[!IMPORTANT]
-> [ネイティブ 802.11 ワイヤレス LAN](native-802-11-wireless-lan4.md)インターフェイスが Windows 10 以降非推奨とされます。 代わりに、WLAN デバイス ドライバー インターフェイス (WDI) を使用してください。 WDI の詳細については、次を参照してください。 [WLAN のユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)します。
+> [ネイティブ 802.11 ワイヤレス LAN](native-802-11-wireless-lan4.md)インターフェイスが Windows 10 以降非推奨とされます。 代わりに、WLAN デバイス ドライバー インターフェイス (WDI) を使用してください。 WDI の詳細については、[WLAN のユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)を参照してください。
 
 ネイティブの 802.11 IHV ハンドラー関数は、IHV 拡張機能の DLL によって提供されには、次のオペレーティング システムによって呼び出されます。
 
@@ -28,7 +28,7 @@ ms.locfileid: "56528507"
 - IHV の WLAN のアダプターを構成するには、独自の認証と暗号アルゴリズムのさまざまなセキュリティ設定。
 - IHV UI 拡張 dll (インストールされている) 場合イベント通知を処理するインターフェイスします。 たとえば、IHV 拡張機能の DLL は、基本的なサービスのセット (BSS) ネットワーク接続に関連するさまざまな段階について UI 拡張機能の DLL を通知できます。 
 
-IHV UI 拡張機能の DLL の詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)します。
+IHV UI 拡張機能の DLL の詳細については、[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)を参照してください。
 
 > [!NOTE]
 > 例外として[Dot11ExtIhvGetVersionInfo](https://msdn.microsoft.com/library/windows/hardware/ff547464)と[Dot11ExtIhvInitService](https://msdn.microsoft.com/library/windows/hardware/ff547470)、オペレーティング システムは、のメンバーに関連付けられている、関数ポインターを通じてIHVハンドラー関数を呼び出します。[DOT11EXT_IHV_HANDLERS](https://msdn.microsoft.com/library/windows/hardware/ff547625)構造体。 オペレーティング システムを呼び出すと、 *Dot11ExtIhvInitService* IHV ハンドラー関数で IHV 拡張機能の DLL を使用して、IHV ハンドラー関数をポインターのリストが返されます、 *pDot11IHVHandlers*パラメーター。

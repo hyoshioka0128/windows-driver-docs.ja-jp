@@ -98,7 +98,7 @@ PROCESS_NAME:  TiWorker.exe
 CURRENT_IRQL:  9
 ```
 
-上記の出力で、ルールの説明と名前を表示できます**IrqlExApcLte1**に違反していた、およびルールを説明するリファレンス ページへのリンクをクリックすることができます:<https://go.microsoft.com/fwlink/p/?linkid=216022>します。 デバッガー コマンド リンクをクリックすることもできます。 **! ruleinfo 0x20005**、ルールに関する情報を取得します。 この場合、ルールの状態を呼び出すことができません[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)割り込み要求レベル (IRQL) が APC より大きいかどうか\_レベル。 出力は、現在の IRQL は 9、および wdm.h で確認できますを示しています。 その APC\_レベルが 1 の値を持ちます。 Irql の詳細については、次を参照してください。[を管理するハードウェアの優先順位](https://go.microsoft.com/fwlink/p?LinkID=268625)します。
+上記の出力で、ルールの説明と名前を表示できます**IrqlExApcLte1**に違反していた、およびルールを説明するリファレンス ページへのリンクをクリックすることができます:<https://go.microsoft.com/fwlink/p/?linkid=216022>します。 デバッガー コマンド リンクをクリックすることもできます。 **! ruleinfo 0x20005**、ルールに関する情報を取得します。 この場合、ルールの状態を呼び出すことができません[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)割り込み要求レベル (IRQL) が APC より大きいかどうか\_レベル。 出力は、現在の IRQL は 9、および wdm.h で確認できますを示しています。 その APC\_レベルが 1 の値を持ちます。 Irql の詳細については、[を管理するハードウェアの優先順位](https://go.microsoft.com/fwlink/p?LinkID=268625)を参照してください。
 
 出力[ **! 分析-v** ](-analyze.md)はスタック トレースとエラーの原因となったコードに関する情報を使って続行されます。 次の出力を表示できます、 **OnInterrupt**と呼ばれる MyDriver.sys で日常的な[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)します。 **OnInterrupt** APC より大きい IRQL で実行される割り込みサービス ルーチンは、\_レベルに、このルーチンを呼び出すの違反が発生するように[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)します。
 

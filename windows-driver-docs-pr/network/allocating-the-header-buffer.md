@@ -21,7 +21,7 @@ ms.locfileid: "56531483"
 
 
 
-NDIS ミニポート ドライバーに割り当てる必要がありますヘッダーの最大サイズを指定する、 **MaxHeaderSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、次を参照してください。[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)します。
+NDIS ミニポート ドライバーに割り当てる必要がありますヘッダーの最大サイズを指定する、 **MaxHeaderSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)を参照してください。
 
 指定したイーサネット フレームのヘッダー部分のサイズを超えない NIC では、ヘッダーと受信したイーサネット フレーム内のデータを分割、ときに、 **MaxHeaderSize**値。
 

@@ -211,7 +211,7 @@ Windows 8 の印刷ダイアログ ボックスと印刷設定のエクスペリ
 
 ドライバーが JavaScript の制約を使用しない場合、ファイルが用意されている必要はありません。 場合は、ドライバーは、エントリ ポイント (たとえば、validatePrintTicket) のサブセットのみを JavaScript の制約を使用して、JavaScript ファイルから他のエントリ ポイントを完全省略必要があります。
 
-JavaScript の制約を使用する方法の詳細については、次を参照してください。、[印刷ドライバー制約サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617946)します。
+JavaScript の制約を使用する方法の詳細については、、[印刷ドライバー制約サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617946)を参照してください。
 
  
 

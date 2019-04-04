@@ -36,7 +36,7 @@ PF のミニポート ドライバーには、OID 要求が発行される、ド
 
 -   中に受信操作、PF ミニポート ドライバーを指定します、 **VPortId**パケットが転送される値。 この値は、OOB 内も指定[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566567)データ、の[NET\_バッファー\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff568412)構造体。
 
-詳細については、次を参照してください。[仮想ポートを作成する](https://msdn.microsoft.com/library/windows/hardware/hh439412)します。
+詳細については、[仮想ポートを作成する](https://msdn.microsoft.com/library/windows/hardware/hh439412)を参照してください。
 
 **注**  VPort は常に存在し、ない既定値は OID の OID 要求を作成した\_NIC\_スイッチ\_作成\_VPORT します。 既定 VPort NDIS の識別子を持つ\_既定\_VPORT\_id。 PF のミニポート ドライバーでは、NIC のスイッチを作成するとき、ドライバーは自動的に既定 VPort をネットワーク アダプターの PF アタッチします。
 

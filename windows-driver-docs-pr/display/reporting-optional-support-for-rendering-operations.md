@@ -19,7 +19,7 @@ ms.locfileid: "56528679"
 
 Windows 7 以降、ディスプレイのミニポート ドライバーで設定できる追加のメンバー、 [ **DXGK\_PRESENTATIONCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff562004)をドライバーができる特定の表示操作を示すために構造体またはサポートできません。
 
-使用可能な表示機能の設定の詳細については、次を参照してください。 [ **DXGK\_PRESENTATIONCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562004)します。
+使用可能な表示機能の設定の詳細については、[ **DXGK\_PRESENTATIONCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562004)を参照してください。
 
  
 

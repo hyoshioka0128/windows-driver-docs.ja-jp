@@ -36,7 +36,7 @@ Windows Vista より前にシステムでは、mspdb70.dll と msvcr70.dll Trace
 
 Windows Vista より前にシステムでは、箱から Dbghelp.dll ファイルをコピーする必要があります\\&lt;*プラットフォーム*&gt; Windows Driver Kit (WDK) のサブディレクトリ (ここ&lt; *プラットフォーム*&gt;は x86、amd64、または ia64) Tracefmt.exe が配置されているディレクトリにします。
 
-イベントのトレースの詳細については、Windows SDK のドキュメントを参照してください。 カーネル モード ドライバーとユーザー モード アプリケーションでのイベント トレーシングの使用方法の詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)します。
+イベントのトレースの詳細については、Windows SDK のドキュメントを参照してください。 カーネル モード ドライバーとユーザー モード アプリケーションでのイベント トレーシングの使用方法の詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)を参照してください。
 
  
 

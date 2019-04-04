@@ -21,11 +21,11 @@ ms.locfileid: "56528616"
 
 
 
-ミニポート ドライバーでの NIC のインターネット プロトコル セキュリティ (IPsec) 機能を指定します、 [ **NDIS\_IPSEC\_オフロード\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff565796)構造体。 詳細については、次を参照してください。 [NIC の IPsec 機能を Reporting](reporting-a-nic-s-ipsec-capabilities.md)します。
+ミニポート ドライバーでの NIC のインターネット プロトコル セキュリティ (IPsec) 機能を指定します、 [ **NDIS\_IPSEC\_オフロード\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff565796)構造体。 詳細については、[NIC の IPsec 機能を Reporting](reporting-a-nic-s-ipsec-capabilities.md)を参照してください。
 
 ミニポート 1 つまたは複数のフラグを設定して受信 ESP の UDP カプセル化パケットを解析する NIC の機能の報告、**サポートされている**します。 **予約済み**の NDIS メンバー\_IPSEC\_オフロード\_V1 構造体。 ミニポート ドライバーが記載されている 4 つの UDP ESP カプセル化のサブタイプの一部またはすべてを指定できます[UDP ESP カプセル化型](udp-esp-encapsulation-types.md)します。
 
-有効化と disableing UDP ESP の解析機能については、次を参照してください。[の有効化と無効にすると TCP/IP のオフロード サービス](enabling-and-disabling-task-offload-services.md)します。
+有効化と disableing UDP ESP の解析機能については、[の有効化と無効にすると TCP/IP のオフロード サービス](enabling-and-disabling-task-offload-services.md)を参照してください。
 
  
 

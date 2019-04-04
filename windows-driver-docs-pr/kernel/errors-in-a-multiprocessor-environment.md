@@ -44,7 +44,7 @@ NT ベースのオペレーティング システムのドライバーは、マ�
                                      arg->PortName.Length);
 ```
 
-複数のスレッドが、IOCTL 呼び出しの結果としてこのコードを入力するように、ポインターが上書きされますメモリ リークが発生可能性があります。 この問題を回避するために、ドライバーを使用する必要があります、 **ExInterlocked * Xxx*** ルーチンまたは何らかの種類のグローバル データを変更するときにロックします。 ドライバーの要件は、許容可能なロックの種類を決定します。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)、[カーネルのディスパッチャー オブジェクト](kernel-dispatcher-objects.md)、および[ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)します。
+複数のスレッドが、IOCTL 呼び出しの結果としてこのコードを入力するように、ポインターが上書きされますメモリ リークが発生可能性があります。 この問題を回避するために、ドライバーを使用する必要があります、 **ExInterlocked * Xxx*** ルーチンまたは何らかの種類のグローバル データを変更するときにロックします。 ドライバーの要件は、許容可能なロックの種類を決定します。 詳細については、[スピン ロック](spin-locks.md)、[カーネルのディスパッチャー オブジェクト](kernel-dispatcher-objects.md)、および[ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)を参照してください。
 
 次の例では、特定のファイルのバッファーを再配置しようとしました。 (**エンドポイント -&gt;LocalAddress**) エンドポイント アドレスを保持するために。
 

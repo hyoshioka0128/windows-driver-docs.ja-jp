@@ -35,4 +35,4 @@ USB モデム デバイスでコールド D3 を有効にする方法につい�
 * [USB デバイスの D3Cold をサポートしている](https://blogs.msdn.microsoft.com/usbcoreblog/2013/02/18/supporting-d3cold-for-usb-devices)します。
 * [ドライバーで D3cold のサポート](https://msdn.microsoft.com/library/windows/hardware/hh967717)
 
-ピン留め操作の詳細については、次を参照してください。 [OID\_WWAN\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)します。
+ピン留め操作の詳細については、[OID\_WWAN\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)を参照してください。

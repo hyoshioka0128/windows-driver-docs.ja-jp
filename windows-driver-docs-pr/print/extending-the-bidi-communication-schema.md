@@ -23,7 +23,7 @@ Bidi 拡張機能は、新しいスキーマを定義する XML ファイルを�
 
 双方向の拡張機能フレームワークの正確な定義は、Windows Driver Kit (WDK) で提供される tcpbidi.xsd ファイルで確認できます。
 
-スキーマの拡張の詳細については、次を参照してください。[プリンター ポート モニターをカスタマイズする](customizing-the-printer-port-monitors.md)します。
+スキーマの拡張の詳細については、[プリンター ポート モニターをカスタマイズする](customizing-the-printer-port-monitors.md)を参照してください。
 
  
 

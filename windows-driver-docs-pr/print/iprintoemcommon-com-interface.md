@@ -43,7 +43,7 @@ ms.locfileid: "57349893"
 
  
 
-UI プラグインのこれらのメソッドを実装する方法については、次を参照してください。 [IPrintOemUI COM インターフェイス](iprintoemui-com-interface.md)します。
+UI プラグインのこれらのメソッドを実装する方法については、[IPrintOemUI COM インターフェイス](iprintoemui-com-interface.md)を参照してください。
 
  
 

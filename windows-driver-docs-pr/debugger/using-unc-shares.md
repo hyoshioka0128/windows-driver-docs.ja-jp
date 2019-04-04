@@ -28,7 +28,7 @@ Cv2http.cmd、Cv2http.pl、およびウォーク (Walk.cmd) 単純な UNC 共有
 walk.cmd *.pdb cv2http.cmd SourceRoot \\server\share
 ```
 
-上記のコマンドはエイリアスのソース ルートを使用して、ツリー内のすべての .pdb ファイルで Cv2http.cmd を呼び出すと\\ \\server\\UNC 共有の共有します。 チュートリアルの詳細については、次を参照してください。[ソース ファイルの抽出](extracting-source-files.md)します。
+上記のコマンドはエイリアスのソース ルートを使用して、ツリー内のすべての .pdb ファイルで Cv2http.cmd を呼び出すと\\ \\server\\UNC 共有の共有します。 チュートリアルの詳細については、[ソース ファイルの抽出](extracting-source-files.md)を参照してください。
 
 .Pdb ファイルのツリーにこのコマンドを実行した後、Web サイトまたは配置したい任意の場所にインストールする準備が整いました。 付けて SrcTool と PDBStr を使用、.pdb ファイルへの変更を確認することに注意してください。
 

@@ -30,7 +30,7 @@ ms.locfileid: "56539059"
 -   [デバイスは、作業の状態に戻ります](a-device-returns-to-its-working-state-umdf.md)
 -   [PnP マネージャーでシステム リソースを再配布します。](the-pnp-manager-redistributes-system-resources-umdf.md)
 
-KMDF ドライバーの電源管理のコールバック シーケンスと PnP については、次を参照してください。 [PnP、電源管理のコールバック シーケンス](pnp-and-power-management-callback-sequences.md)します。
+KMDF ドライバーの電源管理のコールバック シーケンスと PnP については、[PnP、電源管理のコールバック シーケンス](pnp-and-power-management-callback-sequences.md)を参照してください。
 
  
 

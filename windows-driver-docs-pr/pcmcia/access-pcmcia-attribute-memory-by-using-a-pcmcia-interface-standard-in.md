@@ -26,7 +26,7 @@ ms.locfileid: "56531434"
 
 ドライバーを使用できる、 [ **PCMCIA\_変更\_メモリ\_ウィンドウ**](https://msdn.microsoft.com/library/windows/hardware/ff537610) PCMCIA でサポートされているルーチンをインターフェイス\_インターフェイス\_標準的なインターフェイスです。 PCMCIA\_変更\_メモリ\_ウィンドウ PCMCIA のメモリ カードのメモリ ウィンドウの属性を設定します。 [メモリ] ウィンドウは、PCMCIA バス ドライバーによってマップされます。 このルーチンは永続的なウィンドウを提供していないのみ既存のウィンドウの現在の設定を変更しことに注意してください。 さらに、設定が永続的なシステム電源の状態では、変化です。
 
-詳細については、次を参照してください。 [PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537606)します。
+詳細については、[PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537606)を参照してください。
 
  
 

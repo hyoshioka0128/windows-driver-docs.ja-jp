@@ -23,13 +23,13 @@ ms.locfileid: "56529253"
 
 Windows Vista 以降、 **IoConnectInterruptEx** ISR. を登録するためのいくつかの異なるメソッドを提供します 指定された値*パラメーター*-&gt;**バージョン**メソッドを次のように決定します。
 
--   接続を使用して、\_行\_登録ベース、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)行ベースのデバイスの割り込みのすべてのルーチン。 (デバイス、通常、ある 1 つの行に基づく割り込み多くて)。システムは、デバイスに割り当てられている任意の行ベースの割り込みを自動的に検出します。 詳細については、次を参照してください。 [、CONNECT を使用して\_行\_IoConnectInterruptEx のバージョンのベース](using-the-connect-line-based-version-of-ioconnectinterruptex.md)します。
+-   接続を使用して、\_行\_登録ベース、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)行ベースのデバイスの割り込みのすべてのルーチン。 (デバイス、通常、ある 1 つの行に基づく割り込み多くて)。システムは、デバイスに割り当てられている任意の行ベースの割り込みを自動的に検出します。 詳細については、[、CONNECT を使用して\_行\_IoConnectInterruptEx のバージョンのベース](using-the-connect-line-based-version-of-ioconnectinterruptex.md)を参照してください。
 
--   接続を使用して、\_メッセージ\_登録ベース、 [ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)すべてのデバイスのメッセージ シグナル割り込みの日常的な。 フォールバックを指定することもできます[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチン — のみの場合、デバイス、割り込みの行に基づく**IoConnectInterruptEx**登録、  *。InterruptService*ルーチン代わりにします。 システムは、デバイスに割り当てられているすべてのメッセージ シグナル割り込みを自動的に検出します。 詳細については、次を参照してください。 [、CONNECT を使用して\_メッセージ\_IoConnectInterruptEx のバージョンのベース](using-the-connect-message-based-version-of-ioconnectinterruptex.md)します。
+-   接続を使用して、\_メッセージ\_登録ベース、 [ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)すべてのデバイスのメッセージ シグナル割り込みの日常的な。 フォールバックを指定することもできます[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチン — のみの場合、デバイス、割り込みの行に基づく**IoConnectInterruptEx**登録、  *。InterruptService*ルーチン代わりにします。 システムは、デバイスに割り当てられているすべてのメッセージ シグナル割り込みを自動的に検出します。 詳細については、[、CONNECT を使用して\_メッセージ\_IoConnectInterruptEx のバージョンのベース](using-the-connect-message-based-version-of-ioconnectinterruptex.md)を参照してください。
 
--   接続を使用して、\_完全\_を登録する指定された、 *InterruptService*の各ルーチンを個別に中断します。 これを使用して、 *InterruptService*か、行ベースまたは、メッセージ シグナル割り込みなどがルーチンは PnP マネージャーによって渡された情報を使用して、割り込みを手動で指定する必要があります。 詳細については、次を参照してください。 [、CONNECT を使用して\_完全\_IoConnectInterruptEx のバージョンを指定した](using-the-connect-fully-specified-version-of-ioconnectinterruptex.md)します。
+-   接続を使用して、\_完全\_を登録する指定された、 *InterruptService*の各ルーチンを個別に中断します。 これを使用して、 *InterruptService*か、行ベースまたは、メッセージ シグナル割り込みなどがルーチンは PnP マネージャーによって渡された情報を使用して、割り込みを手動で指定する必要があります。 詳細については、[、CONNECT を使用して\_完全\_IoConnectInterruptEx のバージョンを指定した](using-the-connect-fully-specified-version-of-ioconnectinterruptex.md)を参照してください。
 
-Windows Vista より前のオペレーティング システムで、接続を使用することができますのみ\_完全\_に指定します。 接続を指定する場合\_行\_ベースまたは CONNECT\_メッセージ\_、 **IoConnectInterruptEx**はエラーを返します。 この動作を使用すると、Windows Vista または以前のシステムで実行しているかどうかを判断します。 詳細については、次を参照してください。[を使用して IoConnectInterruptEx する前に Windows Vista](using-ioconnectinterruptex-prior-to-windows-vista.md)します。
+Windows Vista より前のオペレーティング システムで、接続を使用することができますのみ\_完全\_に指定します。 接続を指定する場合\_行\_ベースまたは CONNECT\_メッセージ\_、 **IoConnectInterruptEx**はエラーを返します。 この動作を使用すると、Windows Vista または以前のシステムで実行しているかどうかを判断します。 詳細については、[を使用して IoConnectInterruptEx する前に Windows Vista](using-ioconnectinterruptex-prior-to-windows-vista.md)を参照してください。
 
  
 

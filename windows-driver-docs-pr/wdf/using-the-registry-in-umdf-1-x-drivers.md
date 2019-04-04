@@ -69,7 +69,7 @@ UMDF ベースのドライバーは、4 種類のレジストリ キーにアク
 
 いずれかのドライバーが呼び出された後、 **RetrieveDevicePropertyStore**ドライバーのレジストリ サブキーを開くメソッドによって公開されるメソッドを使用できます[ **IWDFNamedPropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/ff560164)、 [ **IWDFNamedPropertyStore2**](https://msdn.microsoft.com/library/windows/hardware/ff560168)、または[ **IWDFUnifiedPropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/hh451399)作成、読み取り、および下の値を書き込むにはサブキー。 **IWDFNamedPropertyStore2**インターフェイスは、値を削除するドライバーもできます。
 
-ドライバーのレジストリ キーの詳細については、次を参照してください。[レジストリ ツリーの概要とキー](https://msdn.microsoft.com/library/windows/hardware/ff549538)します。
+ドライバーのレジストリ キーの詳細については、[レジストリ ツリーの概要とキー](https://msdn.microsoft.com/library/windows/hardware/ff549538)を参照してください。
 
  
 

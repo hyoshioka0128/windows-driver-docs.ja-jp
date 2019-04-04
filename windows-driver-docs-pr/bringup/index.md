@@ -1,13 +1,18 @@
 ---
 title: 立ち上げ
-description: "パートナー ドキュメントのこのセクションは、Windows\_10 でハードウェアを起動する方法を理解する必要のあるハードウェア エンジニアおよび開発者向けに作成されています。"
+description: パートナー ドキュメントのこのセクションは、Windows 10 でハードウェアを起動する方法を理解する必要のあるハードウェア エンジニアおよび開発者向けに作成されています。
 ms.assetid: 019ABD43-601C-4C1B-A0D9-30A3A402650C
 ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 9d891f71c09c066030be98387068a706ddb49c19
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465762"
 ---
-
 # <a name="bring-up-guide"></a>起動ガイド
 
 > [!NOTE] 

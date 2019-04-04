@@ -16,7 +16,7 @@ ms.locfileid: "56527651"
 
 Windows Driver Kit (WDK) には、MSBuild を使用して、ドライバーをビルドするときに、wmimofck.exe ツールを実行できるようにの Wmimofck タスクが用意されています。
 
-Wmimofck ツールの使用方法の詳細については、次を参照してください。[を使用して Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
+Wmimofck ツールの使用方法の詳細については、[を使用して Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)を参照してください。
 
 MSBuild では、Wmimofck 項目を使用して、Wmimofck タスクのパラメーターを送信します。 Wmimofck の項目メタデータは、プロジェクト ファイルで Wmimofck 項目を使用してアクセスします。
 

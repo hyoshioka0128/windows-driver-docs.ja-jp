@@ -47,7 +47,7 @@ Windows 7 および Windows Vista で、前の図に示すよう、ドライバ�
 
 前の図に示すよう、ドライバー、次の操作する必要があります。
 
-1.  によって、ドライバーの種類を呼び出す可能性[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)します。 詳細については、次を参照してください。[呼び出す PoStartNextPowerIrp](calling-postartnextpowerirp.md)します。
+1.  によって、ドライバーの種類を呼び出す可能性[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)します。 詳細については、[呼び出す PoStartNextPowerIrp](calling-postartnextpowerirp.md)を参照してください。
 
 2.  呼び出す[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387)を設定する場合、 *IoCompletion*ルーチンまたは[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)を設定しない場合、 *IoCompletion*ルーチン。
 
@@ -57,7 +57,7 @@ Windows 7 および Windows Vista で、前の図に示すよう、ドライバ�
 
 4.  呼び出す[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) IRP をスタック内の次の下位ドライバーに渡す。
 
-    ドライバーを使用する必要があります**PoCallDriver**、なく**保留**(とその他の Irp) に、システムが電源 Irp を正しく同期するようにします。 詳細については、次を参照してください。[保留を呼び出すとします。呼び出す PoCallDriver](calling-iocalldriver-versus-calling-pocalldriver.md)します。
+    ドライバーを使用する必要があります**PoCallDriver**、なく**保留**(とその他の Irp) に、システムが電源 Irp を正しく同期するようにします。 詳細については、[保留を呼び出すとを参照してください。呼び出す PoCallDriver](calling-iocalldriver-versus-calling-pocalldriver.md)します。
 
 注意して*IoCompletion* IRQL でルーチンを呼び出すことができます = ディスパッチ\_レベル。 そのため、ドライバーは IRQL で追加の処理を必要とする場合は、= パッシブ\_レベルより低いレベルのドライバーはドライバーの IRP では、使用が完了した後完了ルーチンが作業項目のキューし、状態を返します\_詳細\_処理\_必要な作業です。 ワーカー スレッドは IRP を完了する必要があります。
 
@@ -81,9 +81,9 @@ IRP の電源を渡して、ドライバーから返す必要があります、 
 
 *IoCompletion*ルーチンを呼び出す**PoRequestPowerIrp**デバイスの電源のポインターを要求にコールバック ルーチンに渡す IRP を送信します。 *IoCompletion*ルーチンは、状態を返す必要があります\_詳細\_処理\_必要な作業です。
 
-最後に、ドライバーは IRP のシステムをコールバック ルーチンから渡します。 ドライバーでのカーネル イベントを待つ必要がありますいないその*DispatchPower*ルーチンおよびのシグナル、 *IoCompletion* IRP の日常的なことは、現在処理; システム デッドロックが発生する可能性があります。 詳細については、次を参照してください。[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)します。
+最後に、ドライバーは IRP のシステムをコールバック ルーチンから渡します。 ドライバーでのカーネル イベントを待つ必要がありますいないその*DispatchPower*ルーチンおよびのシグナル、 *IoCompletion* IRP の日常的なことは、現在処理; システム デッドロックが発生する可能性があります。 詳細については、[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)を参照してください。
 
-同様の状況では、システムがスリープ状態にするときに電源ポリシーの所有者が IRP のデバイスのデバイスの電源を送信するには、I/O の保留中の一部を完了する必要があります。 I/O が完了するときにイベントをシグナル通知とで待機しているのではなく、 *DispatchPower* 、日常的なドライバーする必要があります、作業項目をキューし、状態を返す\_から PENDING、 *DispatchPower*ルーチンです。 ワーカー スレッドでは、I/O の完了を待機して、IRP のデバイスの電源を送ります。 詳細については、次を参照してください。 [ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)します。
+同様の状況では、システムがスリープ状態にするときに電源ポリシーの所有者が IRP のデバイスのデバイスの電源を送信するには、I/O の保留中の一部を完了する必要があります。 I/O が完了するときにイベントをシグナル通知とで待機しているのではなく、 *DispatchPower* 、日常的なドライバーする必要があります、作業項目をキューし、状態を返す\_から PENDING、 *DispatchPower*ルーチンです。 ワーカー スレッドでは、I/O の完了を待機して、IRP のデバイスの電源を送ります。 詳細については、[ **IoAllocateWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff548276)を参照してください。
 
  
 

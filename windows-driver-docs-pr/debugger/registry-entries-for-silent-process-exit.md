@@ -30,7 +30,7 @@ Windows 7 以降、使える、**サイレント プロセスを終了**GFlags �
 
 **HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\File Execution Options をイメージ\\*ProcessName* \\GlobalFlag**
 
-このフラグの詳細については、次を参照してください。[サイレント プロセス終了の監視を有効にする](enable-silent-process-exit-monitoring.md)します。
+このフラグの詳細については、[サイレント プロセス終了の監視を有効にする](enable-silent-process-exit-monitoring.md)を参照してください。
 
 使用しての詳細については、**サイレント プロセスの終了**GFlags でタブを参照してください[サイレント プロセス終了の監視を構成する](setting-and-clearing-flags-for-silent-process-exit.md)します。
 

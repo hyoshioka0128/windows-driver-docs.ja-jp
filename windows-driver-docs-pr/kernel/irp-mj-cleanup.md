@@ -42,7 +42,7 @@ ms.locfileid: "56531802"
 
 それ以外の場合、ドライバーはキャンセルし、リリースされる、ファイル オブジェクトのハンドルに関連付けられている現在キューに置かれた Irp の完了する必要があります。 (ファイル オブジェクトへのポインターにある、 **FileObject**のドライバーのメンバー [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659) IRP の)。ドライバーが IRP のクリーンアップが完了して状態を設定後、これらをキャンセルするには、Irp をキューに置かれた、\_I/O の状態のブロックで成功します。
 
-この要求の処理の詳細については、次を参照してください。 [DispatchCleanup ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543242)します。
+この要求の処理の詳細については、[DispatchCleanup ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543242)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

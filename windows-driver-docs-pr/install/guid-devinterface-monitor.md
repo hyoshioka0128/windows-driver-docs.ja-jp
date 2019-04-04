@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_MONITOR[デバイス インターフェイス クラス](https
 
 Windows では、オペレーティング システムで構成されている各モニターのデバイスのインターフェイスを登録します。
 
-ディスプレイ アダプターとモニターについては、次を参照してください。[表示デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff554044)と[モニター ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568428)します。
+ディスプレイ アダプターとモニターについては、[表示デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff554044)と[モニター ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568428)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

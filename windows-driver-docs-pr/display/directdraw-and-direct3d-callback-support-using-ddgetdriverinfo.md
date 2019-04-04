@@ -25,7 +25,7 @@ ms.locfileid: "56528410"
 
 - ドライバーは、GUID を受け取る場合\_ColorControlCallbacks の GUID へのポインターを返します、 [ **DD\_COLORCONTROLCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff550521)構造体。 サポートしている場合[コントロールの色](color-control-initialization.md)、ドライバーの塗りつぶし、 **ColorControl** DD のメンバー\_COLORCONTROLCALLBACKS を指定するその[ *DdControlColor*](https://msdn.microsoft.com/library/windows/hardware/ff549244)コールバック関数。
 
-- ドライバーは、GUID を受け取る場合\_D3DCallbacks、GUID\_D3DCallbacks3、または GUID\_Miscellaneous2Callbacks の GUID へのポインターを返します、 [ **D3DHAL\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff544716)、 [ **D3DHAL\_CALLBACKS3**](https://msdn.microsoft.com/library/windows/hardware/ff544723)、または[ **DD\_MISCELLANEOUS2CALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551645)構造体。 ドライバーを示すためにこれらの構造を使用してその[Direct3D のコールバック サポート](driver-functions-to-support-direct3d.md)します。 詳細については、次を参照してください。 [Direct3D DDI](direct3d.md)します。
+- ドライバーは、GUID を受け取る場合\_D3DCallbacks、GUID\_D3DCallbacks3、または GUID\_Miscellaneous2Callbacks の GUID へのポインターを返します、 [ **D3DHAL\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff544716)、 [ **D3DHAL\_CALLBACKS3**](https://msdn.microsoft.com/library/windows/hardware/ff544723)、または[ **DD\_MISCELLANEOUS2CALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551645)構造体。 ドライバーを示すためにこれらの構造を使用してその[Direct3D のコールバック サポート](driver-functions-to-support-direct3d.md)します。 詳細については、[Direct3D DDI](direct3d.md)を参照してください。
 
 - ドライバーは、GUID を受け取る場合\_KernelCallbacks の GUID へのポインターを返します、 [ **DD\_KERNELCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551633)構造体。 ドライバーが DD のメンバー\_KERNELCALLBACKS を次のコールバック関数をサポートしていることを示します。
 
@@ -54,7 +54,7 @@ ms.locfileid: "56528410"
 
 - ドライバーは、GUID を受け取る場合\_MiscellaneousCallbacks の GUID へのポインターを返します、 [ **DD\_MISCELLANEOUSCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551657)構造体。 サポートしている場合、 [ *DdGetAvailDriverMemory* ](https://msdn.microsoft.com/library/windows/hardware/ff549377)コールバック関数では、ドライバーの塗りつぶし、 *DdGetAvailDriverMemory* DD のメンバー\_指定する MISCELLANEOUSCALLBACKS *DdGetAvailDriverMemory*します。
 
-- ドライバーは、GUID を受け取る場合\_MotionCompCallbacks の GUID へのポインターを返します、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660) のサポートを示す構造[補正コールバックのモーション](motion-compensation-callbacks.md)します。 詳細については、次を参照してください。[圧縮されたビデオのデコード](compressed-video-decoding.md)します。
+- ドライバーは、GUID を受け取る場合\_MotionCompCallbacks の GUID へのポインターを返します、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660) のサポートを示す構造[補正コールバックのモーション](motion-compensation-callbacks.md)します。 詳細については、[圧縮されたビデオのデコード](compressed-video-decoding.md)を参照してください。
 
 - ドライバーは、GUID を受け取る場合\_NTCallbacks の GUID へのポインターを返します、 [ **DD\_NTCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551673)構造体。 ドライバーが DD のメンバー\_NTCALLBACKS を次のコールバック関数をサポートしていることを示します。
 
@@ -89,7 +89,7 @@ ms.locfileid: "56528410"
 
 <!-- -->
 
--   ドライバーは、GUID を受け取る場合\_VideoPortCallbacks の GUID へのポインターを返します、 [ **DD\_VIDEOPORTCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551758) のサポートを示す構造[VPE コールバック関数](vpe-callback-functions.md)します。 詳細については、次を参照してください。 [DirectX の拡張機能のビデオ ポート](video-port-extensions-to-directx.md)します。
+-   ドライバーは、GUID を受け取る場合\_VideoPortCallbacks の GUID へのポインターを返します、 [ **DD\_VIDEOPORTCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551758) のサポートを示す構造[VPE コールバック関数](vpe-callback-functions.md)します。 詳細については、[DirectX の拡張機能のビデオ ポート](video-port-extensions-to-directx.md)を参照してください。
 
  
 

@@ -19,7 +19,7 @@ ms.locfileid: "56529420"
 ## <span id="ddk_threads_and_processes_dbx"></span><span id="DDK_THREADS_AND_PROCESSES_DBX"></span>
 
 
-スレッドと、デバッガーのエンジン プロセスの概要については、次を参照してください。[スレッドとプロセス](threads-and-processes.md)します。
+スレッドと、デバッガーのエンジン プロセスの概要については、[スレッドとプロセス](threads-and-processes.md)を参照してください。
 
 イベントの発生時にイベント スレッドとプロセスのイベントは、スレッドとプロセスに設定されます (オペレーティング システムまたは仮想) で、イベントが発生しました。 使用して検出できます[ **GetEventThread** ](https://msdn.microsoft.com/library/windows/hardware/ff546646)と[ **GetEventProcess**](https://msdn.microsoft.com/library/windows/hardware/ff546640)、それぞれします。
 
@@ -93,7 +93,7 @@ ms.locfileid: "56529420"
 
 プロセスが作成されるたびに、ライブ ユーザー モードのデバッグまたはターゲットの終了では、作成プロセスと終了プロセスのデバッグ イベントが生成されます。 これらのイベントが発生するへの呼び出し、 [ **IDebugEventCallbacks::CreateProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff550697)と[ **IDebugEventCallbacks::ExitProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff550728)コールバック メソッド。
 
-イベントの詳細については、次を参照してください。[監視イベント](monitoring-events.md)します。
+イベントの詳細については、[監視イベント](monitoring-events.md)を参照してください。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 

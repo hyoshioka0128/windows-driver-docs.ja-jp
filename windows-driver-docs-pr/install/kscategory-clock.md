@@ -56,7 +56,7 @@ KSCATEGORY_CLOCK[デバイス インターフェイス クラス](https://msdn.m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_CLOCK 機能カテゴリをサポートすることを示す KSCATEGORY_CLOCK のインスタンスを登録します。
 
-カーネルのクロックのストリームの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)、 [KS クロック](https://msdn.microsoft.com/library/windows/hardware/ff567307)、および[AVStream クロック](https://msdn.microsoft.com/library/windows/hardware/ff554208)します。
+カーネルのクロックのストリームの詳細については、[KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)、 [KS クロック](https://msdn.microsoft.com/library/windows/hardware/ff567307)、および[AVStream クロック](https://msdn.microsoft.com/library/windows/hardware/ff554208)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

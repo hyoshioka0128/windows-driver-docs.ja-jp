@@ -29,7 +29,7 @@ Sp B に接続されている周辺機器デバイスのドライバーでは、
 
 そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例は、次を参照してください。、 [SpbAccelerometer](https://go.microsoft.com/fwlink/p/?LinkId=618052)ドライバー サンプル。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例は、次を参照してください。、 [SpbAccelerometer](https://go.microsoft.com/fwlink/p/?LinkId=618052)ドライバー サンプル。
 
 ドライバーをリソースとして受信する接続 ID は、64 ビットの整数ですが、ドライバーを使用して、この ID をリソース ハブからの接続パラメーターを取得するために使用するデバイスのパス名に組み込む必要があります。 デバイス パス名は、ドライバーの呼び出しを作成する、**リソース\_ハブ\_作成\_パス\_FROM\_ID** Reshub.h ヘッダー ファイルで宣言されている関数。
 

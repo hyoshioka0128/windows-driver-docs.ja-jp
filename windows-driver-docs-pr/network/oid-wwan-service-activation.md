@@ -24,7 +24,7 @@ OID\_WWAN\_サービス\_ライセンス認証プロバイダーのネットワ�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB サービスの検出とアクティブ化](https://msdn.microsoft.com/library/windows/hardware/ff559122)します。
+詳細については、この OID を使用して、[MB サービスの検出とアクティブ化](https://msdn.microsoft.com/library/windows/hardware/ff559122)を参照してください。
 
 処理するときに、プロバイダーのネットワークは、クエリまたは要求を設定またはミニポート ドライバーが Subscriber Identity Module (SIM カード) にアクセスできます。
 

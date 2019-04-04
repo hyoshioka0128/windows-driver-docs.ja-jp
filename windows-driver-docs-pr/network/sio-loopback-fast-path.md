@@ -106,7 +106,7 @@ TCP/IP ソケット オプションのサブセットのみがサポートされ
 
 呼び出すときに、WSK アプリケーションは IRP の完了のルーチンへのポインターを指定する必要があります、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)の要求のこの型の関数。 WSK サブシステムが IRP を完了するまで、アプリケーションはバッファーを解放する必要があります。 IRP が完了すると、サブシステムは、完了ルーチンを呼び出します。 完了ルーチンで、アプリケーションが IRP の状態を確認し、いた以前の要求の割り当てられているすべてのリソースを解放する必要があります。
 
-WSK IRP の処理の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)します。
+WSK IRP の処理の詳細については、[Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)を参照してください。
 
 IRP を完了すると、サブシステムは設定*Irp -&gt;IoStatus.Status*に**状態\_成功**要求が成功した場合。 それ以外の場合、 *Irp -&gt;IoStatus.Status*に設定されます**状態\_無効な\_バッファー\_サイズ**または**状態\_いない\_サポートされている**呼び出しが成功しなかった場合。
 

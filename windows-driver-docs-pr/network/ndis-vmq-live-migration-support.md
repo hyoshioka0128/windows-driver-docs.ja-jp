@@ -41,7 +41,7 @@ NDIS ミニポート ドライバー、VMQ を解放するための要求の受�
 
 5.  ミニポート ドライバーが完了すると、 [OID\_受信\_フィルター\_FREE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569789) OID 要求を受信キューを解放します。
 
-キューの状態の詳細については、次を参照してください。 [NDIS VM キュー状態](ndis-virtual-machine-queue-states.md)します。
+キューの状態の詳細については、[NDIS VM キュー状態](ndis-virtual-machine-queue-states.md)を参照してください。
 
  
 

@@ -46,7 +46,7 @@ ms.locfileid: "56528117"
 
     -   数回のクリックとフィールドの数を最小限に抑えます。
 
-4.  ユーザーの情報を入力すると、購入を完了する前に、注文を確認することを許可します。 注文、アクティブ化が簡単な場合は、アクティブ化を続行し、アプリのランディング ページにリダイレクトします。 アクティブ化の時間がかかるが予想される場合は、アクティブ化の進行状況のプレース ホルダー ページが含まれますをアクティブ化が行われていることを表示する進行状況コントロールを使用することができます。 プログレス コントロールの概要の詳細については、次を参照してください。[クイック スタート: 進行状況コントロールを追加する](https://msdn.microsoft.com/library/windows/apps/hh465487)します。
+4.  ユーザーの情報を入力すると、購入を完了する前に、注文を確認することを許可します。 注文、アクティブ化が簡単な場合は、アクティブ化を続行し、アプリのランディング ページにリダイレクトします。 アクティブ化の時間がかかるが予想される場合は、アクティブ化の進行状況のプレース ホルダー ページが含まれますをアクティブ化が行われていることを表示する進行状況コントロールを使用することができます。 プログレス コントロールの概要の詳細については、[クイック スタート: 進行状況コントロールを追加する](https://msdn.microsoft.com/library/windows/apps/hh465487)を参照してください。
 
 ## <a name="span-idquicksummaryspanspan-idquicksummaryspanspan-idquicksummaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>簡単な概要
 
@@ -82,11 +82,11 @@ ms.locfileid: "56528117"
 
 -   Listview の詳細については、次を参照してください。[クイック スタート。ListView を追加する](https://msdn.microsoft.com/library/windows/apps/hh465496)します。
 
--   エラー処理の設計ガイダンスについては、次を参照してください。 [、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)します。
+-   エラー処理の設計ガイダンスについては、[、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)を参照してください。
 
--   ユーザー補助のガイダンスについては、次を参照してください。 [、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)します。
+-   ユーザー補助のガイダンスについては、[、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)を参照してください。
 
--   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)します。
+-   組み込みのコントロールを使用する方法の詳細については、[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)を参照してください。
 
 -   タッチ入力のガイドラインについては、次を参照してください。[クイック スタート。タッチ入力](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)します。
 

@@ -49,7 +49,7 @@ ms.locfileid: "56527568"
 
 -   使用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)と[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)標準またはカスタム プロパティを取得および設定します。
 
-    詳細については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](accessing-device-driver-properties.md)します。
+    詳細については、[デバイス ドライバーのプロパティへのアクセス](accessing-device-driver-properties.md)を参照してください。
 
 -   オペレーティング システムに予約されていないデバイス プロパティのみを設定します。
 

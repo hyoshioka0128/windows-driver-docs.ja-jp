@@ -31,7 +31,7 @@ ms.locfileid: "56531154"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-選択する方法の詳細については、コピー、切り取り、およびテキストを貼り付けるし、についてどのようにこれらの操作は異なるウィンドウを次を参照してください。[切り取りと貼り付けのテキスト](cutting-and-pasting-text.md)します。
+選択する方法の詳細については、コピー、切り取り、およびテキストを貼り付けるし、についてどのようにこれらの操作は異なるウィンドウを[切り取りと貼り付けのテキスト](cutting-and-pasting-text.md)を参照してください。
 
  
 

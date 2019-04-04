@@ -276,7 +276,7 @@ D3DSTENCILCAPS\_TWOSIDED
 設定、D3DFVFCAPS\_PSIZE 機能をデバイスで頂点ごとのポイント サイズをサポートすることを示します。
 
 <span id="TextureCaps"></span><span id="texturecaps"></span><span id="TEXTURECAPS"></span>**TextureCaps**  
-デバイスが完全にサポートまたは条件付き nonpow-2 のテクスチャのサポートをサポートしていることを示します。 詳細については、次を参照してください。[シェーダー 2 のサポートの機能を Reporting](reporting-capabilities-for-shader-2-support.md)します。
+デバイスが完全にサポートまたは条件付き nonpow-2 のテクスチャのサポートをサポートしていることを示します。 詳細については、[シェーダー 2 のサポートの機能を Reporting](reporting-capabilities-for-shader-2-support.md)を参照してください。
 
 必要があります**いない**設定、D3DPTEXTURECAPS\_SQUAREONLY ビット。 デバイスは、正方形のテクスチャのみに制限することはできません。
 

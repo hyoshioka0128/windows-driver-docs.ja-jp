@@ -87,7 +87,7 @@ IRP\_同期\_API
 
 <a href="" id="irp--overlay-allocationsize"></a>*Irp -&gt;Overlay.AllocationSize*最初のファイルのバイト単位での割り当てサイズ。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp -&gt;FileObject* I/O マネージャーを作成または開かれたファイルを表す作成されたファイル オブジェクトへのポインター。 ファイル システムが IRP を処理するときに\_MJ\_作成要求、設定、 **FsContext**や**FsContext2**した値には、このファイル オブジェクトのフィールドファイル-システムに固有です。 値ではそのため、 **FsContext**と**FsContext2**フィールドできません有効と見なされるまで、ファイル システムの作成要求が処理した後。 詳細については、次を参照してください。[ファイル ストリーム、Stream のコンテキストや Stream あたり](https://msdn.microsoft.com/library/windows/hardware/ff540359)します。
+<a href="" id="irpsp--fileobject"></a>*IrpSp -&gt;FileObject* I/O マネージャーを作成または開かれたファイルを表す作成されたファイル オブジェクトへのポインター。 ファイル システムが IRP を処理するときに\_MJ\_作成要求、設定、 **FsContext**や**FsContext2**した値には、このファイル オブジェクトのフィールドファイル-システムに固有です。 値ではそのため、 **FsContext**と**FsContext2**フィールドできません有効と見なされるまで、ファイル システムの作成要求が処理した後。 詳細については、[ファイル ストリーム、Stream のコンテキストや Stream あたり](https://msdn.microsoft.com/library/windows/hardware/ff540359)を参照してください。
 
 [**FltCancelFileOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff541784)と[ **IoCancelFileOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff548246)設定、FO\_ファイル\_オープン\_ファイル オブジェクトの取り消し済みフラグ**フラグ**フィールド。 このフラグを設定することを示します IRP\_MJ\_作成要求が取り消され、および[ **IRP\_MJ\_閉じる**](irp-mj-close.md)の要求が発行されますこのファイル オブジェクト。 作成要求が取り消されとを再発行することはできません。
 

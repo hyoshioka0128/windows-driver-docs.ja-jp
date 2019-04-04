@@ -58,7 +58,7 @@ ms.locfileid: "56537730"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、出力のコールバックは、次を参照してください。[入力と出力](using-input-and-output.md)します。
+詳細については、出力のコールバックは、[入力と出力](using-input-and-output.md)を参照してください。
 
  
 

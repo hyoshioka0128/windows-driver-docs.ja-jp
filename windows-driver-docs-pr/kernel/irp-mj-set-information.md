@@ -26,7 +26,7 @@ ms.locfileid: "56550163"
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.SetFile.FileInformationClass**メンバーは、**ファイル\_情報\_クラス**定数を設定するメタデータの型を指定します。 メタデータの種類の詳細については、次を参照してください。、 *FileInformationClass*パラメーターの[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)します。
+**Parameters.SetFile.FileInformationClass**メンバーは、**ファイル\_情報\_クラス**定数を設定するメタデータの型を指定します。 メタデータの種類の詳細については、、 *FileInformationClass*パラメーターの[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)を参照してください。
 
 **Parameters.SetFile.Length**メンバーは、バッファーの長さを指定する、 **AssociatedIrp.SystemBuffer**へのポインターします。
 

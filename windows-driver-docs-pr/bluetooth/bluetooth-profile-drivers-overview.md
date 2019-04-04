@@ -42,7 +42,7 @@ Bluetooth ドライバー スタックは、プロファイル ドライバー S
 
 SCO カーネル モード Ddi を提供する、Windows Vista の Bluetooth ドライバー スタックが強化されました。 これらのインターフェイスを使用すると、プロファイルのドライバーは、開く、更新、および、SCO 接続を閉じるだけでなく読み取りを実行および SCO に対して開いている接続経由での書き込み操作を SCO Ddi を使用できます。
 
-SCO の詳細については、次を参照してください。 [SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)と[、Bluetooth プロファイル ドライバー SCO 接続を受け入れる](accepting-sco-connections-in-a-bluetooth-profile-driver.md)します。
+SCO の詳細については、[SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)と[、Bluetooth プロファイル ドライバー SCO 接続を受け入れる](accepting-sco-connections-in-a-bluetooth-profile-driver.md)を参照してください。
 
 ### <a name="span-idl2capandsdpspanspan-idl2capandsdpspanl2cap-and-sdp"></a><span id="l2cap_and_sdp"></span><span id="L2CAP_AND_SDP"></span>**L2CAP と SDP**
 
@@ -54,7 +54,7 @@ SDP レコードは、複雑なバイト ストリームにアドバタイズさ
 
 L2CAP と SDP の詳細については、次を参照してください[L2CAP リモート デバイスにクライアント接続を作成する](creating-a-l2cap-client-connection-to-a-remote-device.md)、 [、Bluetooth プロファイル ドライバー L2CAP 接続を受け入れる](accepting-l2cap-connections-in-a-bluetooth-profile-driver.md)と[との通信。SDP サーバー](communicating-with-sdp-servers.md)します。
 
-Bluetooth ドライバー スタックの詳細については、次を参照してください。 [Bluetooth ドライバー スタック](bluetooth-driver-stack.md)します。
+Bluetooth ドライバー スタックの詳細については、[Bluetooth ドライバー スタック](bluetooth-driver-stack.md)を参照してください。
 
  
 

@@ -96,9 +96,9 @@ Windows 8、Windows Server 2012 年以降に受信セグメント coalescing (RS
 
  
 
-標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
-列挙型のキーワードの使用に関する詳細については、次を参照してください。[列挙キーワード](enumeration-keywords.md)します。
+列挙型のキーワードの使用に関する詳細については、[列挙キーワード](enumeration-keywords.md)を参照してください。
 
  
 

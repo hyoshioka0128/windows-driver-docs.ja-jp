@@ -27,9 +27,9 @@ Windows ハードウェア エラー アーキテクチャ (WHEA) は、WHEA 管
 <a href="" id="wheaerrorinjectionmethods"></a>[WHEAErrorInjectionMethods](https://msdn.microsoft.com/library/windows/hardware/ff559513)  
 このクラスは、ハードウェア プラットフォームにハードウェア エラーを挿入するためのメソッドを実装します。
 
-ユーザー モード アプリケーション メソッドを呼び出しましていないこれらのクラスで直接呼び出すことによって、 **iwbemservices::execmethod**メソッド。 WMI プロバイダー クラスでメソッドを呼び出す方法の詳細については、次を参照してください。、[プロバイダーのメソッドを呼び出す](https://go.microsoft.com/fwlink/p/?linkid=80945)、Microsoft Windows SDK ドキュメントのトピックです。
+ユーザー モード アプリケーション メソッドを呼び出しましていないこれらのクラスで直接呼び出すことによって、 **iwbemservices::execmethod**メソッド。 WMI プロバイダー クラスでメソッドを呼び出す方法の詳細については、、[プロバイダーのメソッドを呼び出す](https://go.microsoft.com/fwlink/p/?linkid=80945)、Microsoft Windows SDK ドキュメントのトピックを参照してください。
 
-WMI の詳細については、次を参照してください。、 [Windows Management Instrumentation](https://go.microsoft.com/fwlink/p/?linkid=80947) Windows SDK ドキュメントの「します。
+WMI の詳細については、、 [Windows Management Instrumentation](https://go.microsoft.com/fwlink/p/?linkid=80947) Windows SDK ドキュメントの「を参照してください。
 
 **注**  WHEA WMI プロバイダー クラスは、Windows Server 2008、Windows Vista SP1 と以降のバージョンの Windows でサポートされています。
 

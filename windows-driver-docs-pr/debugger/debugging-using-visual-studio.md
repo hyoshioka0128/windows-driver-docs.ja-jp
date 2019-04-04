@@ -19,7 +19,7 @@ Windows Driver Kit (WDK) 8、ドライバーの開発環境および Windows の
 > この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
 >
  
-統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)します。
+統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)を参照してください。
 
 通常カーネル モードのデバッグには、2 台のコンピューターが必要です。 デバッガーは*ホスト コンピューター*上で実行され、デバッグ対象のコードは*ターゲット コンピューター*上で実行されます。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 場合によっては別のターゲット コンピューターで実行されているユーザー モード プロセスをデバッグする場合がありますが、1 台のコンピューターでユーザー モードのデバッグを行うことができます。
 

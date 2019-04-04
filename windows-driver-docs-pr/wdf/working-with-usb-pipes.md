@@ -66,7 +66,7 @@ USB エンドポイントは入力エンドポイントであるかどうかを�
 <a href="" id="---------wdf-usb-pipe-direction-out--------"></a>[**WDF\_USB\_パイプ\_方向\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553032)  
 USB エンドポイントが、出力エンドポイントであるかどうかを判断します。
 
-関連情報については、次を参照してください。 [USB パイプを列挙する方法](https://msdn.microsoft.com/library/windows/hardware/hh968306)します。
+関連情報については、[USB パイプを列挙する方法](https://msdn.microsoft.com/library/windows/hardware/hh968306)を参照してください。
 
 ### <a href="" id="reading-from-a-pipe"></a> パイプからの読み取り
 
@@ -114,7 +114,7 @@ USB 出力パイプにデータを記述するには、ドライバーは、次�
 
     USB 入力パイプにデータを非同期的に書き込みするには、ドライバーを呼び出すことができます、 [ **WdfUsbTargetPipeFormatRequestForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff551141)書き込み要求を構築するメソッド。 ドライバーを呼び出すことができますし、 [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)要求を非同期的に送信します。
 
-関連情報については、次を参照してください。 [USB 一括転送要求を送信する方法](https://msdn.microsoft.com/library/windows/hardware/ff539199)します。
+関連情報については、[USB 一括転送要求を送信する方法](https://msdn.microsoft.com/library/windows/hardware/ff539199)を参照してください。
 
 ### <a href="" id="stopping-and-resetting-a-pipe"></a> 停止して、パイプのリセット
 
@@ -168,7 +168,7 @@ USB パイプをリセットする要求を書式設定します。 ドライバ
 
 4.  失敗した最後の I/O 要求と失敗した要求の後にすべての I/O 要求を再送信します。
 
-関連情報については、次を参照してください。 [USB パイプ エラーから回復する方法](https://msdn.microsoft.com/library/windows/hardware/hh968307)します。
+関連情報については、[USB パイプ エラーから回復する方法](https://msdn.microsoft.com/library/windows/hardware/hh968307)を参照してください。
 
 ### <a href="" id="sending-a-urb-to-a-pipe"></a> パイプを URB を送信します。
 

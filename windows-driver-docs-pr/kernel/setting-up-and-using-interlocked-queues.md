@@ -55,7 +55,7 @@ ms.locfileid: "56531637"
 
 I/O 操作を再試行しないドライバーを使用できます[ **ExInterlockedPushEntrySList** ](https://msdn.microsoft.com/library/windows/hardware/ff545422)と[ **ExInterlockedPopEntrySList** ](https://msdn.microsoft.com/library/windows/hardware/ff545414)にそのキュー Irp の内部シーケンスをシングル リンク インタロックされたキューでを管理します。 インタロックされたキューのこの型を使用する任意のドライバーには型の ListHead の常駐記憶域を提供する必要がありますもできます。 **SLIST\_ヘッダー** 、のように、ExecutiveSpinLock、[前図](#ddk-using-an-interlocked-queue-kg)します。 スピン ロックを初期化し、呼び出す前にそのキューを設定する必要があります、 **ExInterlockedPushEntrySList**そのキューに初期のエントリを挿入します。
 
-詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)します。 特定のサポート ルーチンの IRQL 要件、ルーチンのリファレンス ページを参照してください。
+詳細については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)を参照してください。 特定のサポート ルーチンの IRQL 要件、ルーチンのリファレンス ページを参照してください。
 
  
 

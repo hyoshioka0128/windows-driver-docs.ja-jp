@@ -3,19 +3,24 @@ title: Windows Hardware Error Architecture (WHEA) 設計ガイド
 description: Windows Hardware Error Architecture (WHEA) 設計ガイド
 ms.assetid: 7a42bacd-cafe-48e0-8568-402738fd6e7c
 keywords:
-  - Windows Hardware Error Architecture WDK
-  - WHEA WDK
-  - ハードウェア エラー WDK WHEA
-  - エラー WDK WHEA
-  - ハードウェア エラー WDK の検出
-  - ハードウェア エラー WDK のレポート
-  - ハードウェア エラー WDK WHEA からの回復
+- Windows Hardware Error Architecture WDK
+- WHEA WDK
+- ハードウェア エラー WDK WHEA
+- エラー WDK WHEA
+- ハードウェア エラー WDK の検出
+- ハードウェア エラー WDK のレポート
+- ハードウェア エラー WDK WHEA からの回復
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 4e40115732291ff40d95066ad500a3f0f5e5448d
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465685"
 ---
-
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows Hardware Error Architecture (WHEA) 設計ガイド
 
 

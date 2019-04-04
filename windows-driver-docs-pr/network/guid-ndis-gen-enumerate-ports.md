@@ -23,5 +23,5 @@ GUID_NDIS_GEN_ENUMERATE_PORTS には、ポートを列挙する WMI メソッド
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_PORT_ARRAY](https://msdn.microsoft.com/library/windows/hardware/ff566786)構造体。 **NumberOfPorts** NDIS_PORT_ARRAY のメンバーには、ミニポート アダプターに関連付けられているアクティブなポートの数が含まれています。 **ポート**NDIS_PORT_ARRAY のメンバーにはへのポインターのリストが含まれています[NDIS_PORT_CHARACTERISTICS](https://msdn.microsoft.com/library/windows/hardware/ff566791)構造体。 各 NDIS_PORT_CHARACTERISTICS 構造体は、1 つの NDIS ポートの特性を定義します。
 
-ポートの列挙の詳細については、次を参照してください。 [OID_GEN_ENUMERATE_PORTS](oid-gen-enumerate-ports.md)します。
+ポートの列挙の詳細については、[OID_GEN_ENUMERATE_PORTS](oid-gen-enumerate-ports.md)を参照してください。
 

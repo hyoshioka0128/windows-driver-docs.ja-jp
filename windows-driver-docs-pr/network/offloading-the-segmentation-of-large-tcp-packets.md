@@ -37,7 +37,7 @@ TCP/IP トランスポートは、次の条件を満たす大きな TCP パケ�
 
 -   パケットは、TCP パケットです。 TCP/IP トランスポートは、セグメント化の大きな UDP パケットをオフロードできません。
 
--   パケットで割り切れる以上でなければなりません、ミニポート ドライバーで指定されたセグメントの最小数。 詳細については、次を参照してください。[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
+-   パケットで割り切れる以上でなければなりません、ミニポート ドライバーで指定されたセグメントの最小数。 詳細については、[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)を参照してください。
 
 -   パケットはループバック パケットではありません。
 

@@ -16,7 +16,7 @@ ms.locfileid: "56531750"
 # <a name="irpmjdevicecontrol"></a>IRP\_MJ\_デバイス\_コントロール
 
 
-デバイス オブジェクトが特定のデバイスの種類に属するすべてのドライバー (を参照してください[デバイスの種類の指定](https://msdn.microsoft.com/library/windows/hardware/ff563821)) では、この要求をサポートするために必要な[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)型の一連のシステム定義の I/O 制御コード (Ioctl) 場合、ルーチンが存在します。 Ioctl に関する詳細については、次を参照してください。 [I/O 制御コードの概要](introduction-to-i-o-control-codes.md)します。
+デバイス オブジェクトが特定のデバイスの種類に属するすべてのドライバー (を参照してください[デバイスの種類の指定](https://msdn.microsoft.com/library/windows/hardware/ff563821)) では、この要求をサポートするために必要な[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)型の一連のシステム定義の I/O 制御コード (Ioctl) 場合、ルーチンが存在します。 Ioctl に関する詳細については、[I/O 制御コードの概要](introduction-to-i-o-control-codes.md)を参照してください。
 
 高度なドライバーは、通常は、基になるデバイス ドライバーにこれらの要求を渡します。 ドライバー スタックでは、各デバイス ドライバーは、一連のデバイスの種類に固有でパブリックまたはプライベートの Ioctl と共に、この要求をサポートすると見なされます。 特定のデバイスの種類の Ioctl の詳細については、Microsoft Windows Driver Kit (WDK) でデバイスの型固有のドキュメントを参照してください。
 
@@ -30,12 +30,12 @@ ms.locfileid: "56531750"
 
 I/O 制御コードが含まれている**Parameters.DeviceIoControl.IoControlCode**ドライバーの I/O の IRP の場所をスタックします。
 
-その他の入力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、次を参照してください。 [I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)します。
+その他の入力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、[I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)を参照してください。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-出力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、次を参照してください。 [I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)します。
+出力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、[I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)を参照してください。
 
 <a name="operation"></a>操作
 ---------

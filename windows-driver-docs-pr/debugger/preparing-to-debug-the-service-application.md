@@ -14,7 +14,7 @@ ms.locfileid: "56535986"
 # <a name="preparing-to-debug-the-service-application"></a>サービス アプリケーションのデバッグの準備
 
 
-このトピックでは、サービス アプリケーションをデバッグする前に必要な可能性のあるすべての準備手順を使用します。 自分のシナリオでどの手順が必要に依存オプションを選択し、選択したデバッグ構成をアタッチします。 これらの選択肢の一覧は、次を参照してください。[最適な方法を選択する](choosing-the-best-method.md)します。
+このトピックでは、サービス アプリケーションをデバッグする前に必要な可能性のあるすべての準備手順を使用します。 自分のシナリオでどの手順が必要に依存オプションを選択し、選択したデバッグ構成をアタッチします。 これらの選択肢の一覧は、[最適な方法を選択する](choosing-the-best-method.md)を参照してください。
 
 このトピックで説明されている準備手順のそれぞれには、必要がある条件を指定します。 任意の順序では、次の手順を実行できます。
 
@@ -60,7 +60,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
     c:\Debuggers\ntsd.exe -server ServerTransport -ddefer -y SymbolPath 
     ```
 
-    詳細については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。
+    詳細については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。
 
 このレジストリ編集が完了した後、この名前のサービスを開始または再起動されるたびに、デバッガーが起動します。
 
@@ -82,7 +82,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 
     Windows Vista または Windows の以降のバージョンを実行している場合は、このオプションを選択しないでください。
 
--   リモート デバッグを使用する場合は、NTSD - noio オプションを使用して指定します。 これにより、独自の任意のコンソールなしで実行する NTSD をリモート接続を介してのみアクセスできます。 含む事後デバッガーにインストールするサーバー パラメータを手動でレジストリを編集する必要があります詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。 たとえば、**デバッガー**の値、 **AeDebug**キーには、次が可能性があります。
+-   リモート デバッグを使用する場合は、NTSD - noio オプションを使用して指定します。 これにより、独自の任意のコンソールなしで実行する NTSD をリモート接続を介してのみアクセスできます。 含む事後デバッガーにインストールするサーバー パラメータを手動でレジストリを編集する必要があります詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。 たとえば、**デバッガー**の値、 **AeDebug**キーには、次が可能性があります。
 
     ```console
     ntsd -server npipe:pipe=myproc%x -noio -p %ld -e %ld -g -y SymbolPath 
@@ -96,13 +96,13 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
     ntsd -iaec -d -y SymbolPath 
     ```
 
-    このメソッドを選択してユーザー モードのシンボルをシンボル サーバーからアクセスする場合は、リモート デバッグでこのメソッドを組み合わせる必要があります。 この場合、- ddefer オプションを使用して NTSD を指定します。 TCP または NPIPE などのユーザー モード サービスとのやり取りせず、Windows カーネルによって実装されているトランスポート プロトコルを選択します。 含む事後デバッガーにインストールするサーバー パラメータを手動でレジストリを編集する必要があります詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。 たとえば、**デバッガー**の値、 **AeDebug**キーには、次が可能性があります。
+    このメソッドを選択してユーザー モードのシンボルをシンボル サーバーからアクセスする場合は、リモート デバッグでこのメソッドを組み合わせる必要があります。 この場合、- ddefer オプションを使用して NTSD を指定します。 TCP または NPIPE などのユーザー モード サービスとのやり取りせず、Windows カーネルによって実装されているトランスポート プロトコルを選択します。 含む事後デバッガーにインストールするサーバー パラメータを手動でレジストリを編集する必要があります詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。 たとえば、**デバッガー**の値、 **AeDebug**キーには、次が可能性があります。
 
     ```console
     ntsd -server npipe:pipe=myproc%x -ddefer -p %ld -e %ld -g -y SymbolPath 
     ```
 
-    詳細については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。
+    詳細については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。
 
 これらのコマンドを実行する事後分析のデバッガーが登録されます。 このデバッガーを起動するにはサービス アプリケーションを含む、任意のユーザー モード プログラムが例外を検出または実行されるたびに、 **DebugBreak**関数。
 

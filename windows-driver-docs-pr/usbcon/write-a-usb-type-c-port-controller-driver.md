@@ -52,7 +52,7 @@ UcmTcpciCx クラスの拡張機能自体は、UcmCx のクライアント ド�
 
 ## <a name="before-you-begin"></a>開始する前にしています.
 
--   によって、ハードウェアまたはファームウェアの PD ステート マシンを実装するかどうかを記述する必要があるドライバーの種類を決定します。 詳細については、次を参照してください。[種類 C の USB コネクタ用の Windows の開発ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)します。  
+-   によって、ハードウェアまたはファームウェアの PD ステート マシンを実装するかどうかを記述する必要があるドライバーの種類を決定します。 詳細については、[種類 C の USB コネクタ用の Windows の開発ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)を参照してください。  
 
 -   ターゲット コンピューターまたは Windows 10 Mobile にデスクトップのエディション (Home、Pro、Enterprise、および Education) が型-C# の USB コネクタの使用には、Windows 10 をインストールします。
 -   [インストール](https://go.microsoft.com/fwlink/p/?LinkID=845980)開発用コンピューターに最新 Windows Driver Kit (WDK)。 このキットが必要なヘッダー ファイルとライブラリを具体的には、クライアント ドライバーを記述するため、必要があります。

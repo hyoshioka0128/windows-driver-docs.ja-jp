@@ -57,7 +57,7 @@ Windows では、同じデバイスに対して複数のドライバーを検出
 
 特徴のスコアは、ドライバー作成者より簡単かつ正確には明確に定義された条件に基づいているデバイスのさまざまなドライバーを区別することができます識別子スコアを補足します。
 
-ドライバーが順位付けされる方法の詳細については、次を参照してください。[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
+ドライバーが順位付けされる方法の詳細については、[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

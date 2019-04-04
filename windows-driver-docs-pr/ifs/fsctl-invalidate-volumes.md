@@ -59,7 +59,7 @@ ms.locfileid: "56532230"
 <a name="remarks"></a>注釈
 -------
 
-FSCTL\_INVALIDATE\_ボリュームが (という名前)、ファイル システムのコントロールに送信されたデバイス オブジェクトは、ボリューム デバイス オブジェクトにありません。 コントロールのデバイス オブジェクトの詳細については、次を参照してください。[制御デバイス オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540060)します。
+FSCTL\_INVALIDATE\_ボリュームが (という名前)、ファイル システムのコントロールに送信されたデバイス オブジェクトは、ボリューム デバイス オブジェクトにありません。 コントロールのデバイス オブジェクトの詳細については、[制御デバイス オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540060)を参照してください。
 
 FAT と NTFS ファイル システムが突然削除を処理 IRP に応答して\_MJ\_PNP IRP/\_MN\_突然\_削除します。
 

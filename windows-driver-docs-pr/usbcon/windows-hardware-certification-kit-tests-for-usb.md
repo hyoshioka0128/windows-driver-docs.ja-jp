@@ -25,7 +25,7 @@ Windows ハードウェア ラボ キット (HLK) テストは、システム、
 -   テスト クライアントでは、EHCI と xHCI コント ローラー、統合や、アドインのカードをいる必要があります。 コント ローラーには、ユーザーがアクセスできるルート ポート (統合されたハブ) を公開する必要があります。
 -   テスト サーバーに Windows HLK をダウンロード[Windows ハードウェア ラボ キット ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=285647)します。
 
-    インストールして Windows HLK の使用方法の詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
+    インストールして Windows HLK の使用方法の詳細については、[Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)を参照してください。
 
 ## <a name="hardware-requirements-for-running-usb-tests-in-the-hlk"></a>HLK で USB テストを実行するためのハードウェア要件
 

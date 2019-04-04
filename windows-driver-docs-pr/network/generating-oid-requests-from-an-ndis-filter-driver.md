@@ -25,11 +25,11 @@ ms.locfileid: "56549585"
 
 ![フィルター ドライバーで発生した、oid 要求を示す図](images/filterrequest.png)
 
-フィルター ドライバーを呼び出してから、 [ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)関数、NDIS は、[次へ] の基になるドライバーの要求関数を呼び出します。 ミニポート ドライバーが OID 要求を処理する方法の詳細については、次を参照してください。[アダプターの OID 要求](miniport-adapter-oid-requests.md)します。
+フィルター ドライバーを呼び出してから、 [ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)関数、NDIS は、[次へ] の基になるドライバーの要求関数を呼び出します。 ミニポート ドライバーが OID 要求を処理する方法の詳細については、[アダプターの OID 要求](miniport-adapter-oid-requests.md)を参照してください。
 
 同期的に完了する[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)返します NDIS\_状態\_成功またはエラー状態です。 非同期的に完了する**NdisFOidRequest**返します NDIS\_状態\_保留します。
 
-どのような情報が正常に処理を基になるドライバーでは、OID を発行するフィルター ドライバーを決定する要求は、値を確認する必要があります、 **SupportedRevision** NDIS でメンバー\_OID\_要求OID 要求が返された後に構造体。 NDIS バージョン情報の詳細については、次を参照してください。 [NDIS バージョン情報を指定する](specifying-ndis-version-information.md)します。
+どのような情報が正常に処理を基になるドライバーでは、OID を発行するフィルター ドライバーを決定する要求は、値を確認する必要があります、 **SupportedRevision** NDIS でメンバー\_OID\_要求OID 要求が返された後に構造体。 NDIS バージョン情報の詳細については、[NDIS バージョン情報を指定する](specifying-ndis-version-information.md)を参照してください。
 
 場合[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)返します NDIS\_状態\_保留中、NDIS 呼び出し、 [ *FilterOidRequestComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff549956)基になるドライバー OID 要求の完了後も機能します。 ここでは、NDIS がで要求の結果を渡す、 *OidRequest*パラメーターの*FilterOidRequestComplete*します。 NDIS 渡しますで要求の最終的な状態、*状態*パラメーターの*FilterOidRequestComplete*します。
 

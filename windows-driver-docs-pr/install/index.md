@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 8057fb224e47c5ec71b81953f83ca62e3465e723
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465754"
 ---
-
 # <a name="device-and-driver-installation"></a>デバイスとドライバーのインストール
 
 

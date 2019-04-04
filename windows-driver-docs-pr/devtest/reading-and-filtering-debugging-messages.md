@@ -205,7 +205,7 @@ DbgPrint( "Fourth message.\n");
 
 ときに、**による DbgPrint**、 **DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、 **KdPrint**、または**KdPrintEx**ルーチンでは、デバッガーに、メッセージを送信、書式設定された文字列を送信する、**による DbgPrint**バッファー。 このバッファーの内容に直ちに反映されますデバッガー コマンド ウィンドウを使用してこの表示を無効にしない限り、**バッファーによる DbgPrint 出力**GFlags のオプション。
 
-使用してのみによる DbgPrint バッファーの内容を表示するにはこの表示を無効にした場合、 **! による dbgprint**拡張機能コマンド。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+使用してのみによる DbgPrint バッファーの内容を表示するにはこの表示を無効にした場合、 **! による dbgprint**拡張機能コマンド。 デバッガーの拡張機能については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
 
 任意の 1 への呼び出し**による DbgPrint**、 **DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、 **KdPrint**、または**KdPrintEx** 512 バイトのみの情報を送信します。 すべての出力 512 バイトを超えるは失われます。 による DbgPrint バッファー自体は、Windows の無料のビルドで最大 4 KB のデータを保持しを 32 KB のデータをチェックするビルドの Windows できます。 Windows Server 2003 および以降のバージョンの Windows で KDbgCtrl ツールを使用してによる DbgPrint バッファーのサイズを変更することができます。 このツールは、Windows のツールのデバッグの一部です。
 

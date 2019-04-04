@@ -23,7 +23,7 @@ ms.locfileid: "56530412"
 ExcludeFromSelect=*
 ```
 
-ドライバーの制御フラグの詳細については、次を参照してください。 [ **INF ControlFlags セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546342)します。
+ドライバーの制御フラグの詳細については、[ **INF ControlFlags セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546342)を参照してください。
 
  
 

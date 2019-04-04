@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 7d692151730b6ed21bb3f67ae309594c1b47a04b
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465797"
 ---
-
 # <a name="test-authoring-and-execution-framework-taef"></a>Test Authoring and Execution Framework (TAEF)
 
 

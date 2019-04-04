@@ -19,9 +19,9 @@ ms.locfileid: "56535920"
 ## <span id="ddk_kspropsetid_topologynode_ks"></span><span id="DDK_KSPROPSETID_TOPOLOGYNODE_KS"></span>
 
 
-`KSPROPSETID_TopologyNode`プロパティ セットは、さまざまなトポロジのノードに汎用的な制御を提供します。 トポロジ ノードの種類の一覧は、次を参照してください。[オーディオ トポロジ ノード](audio-topology-nodes.md)します。 このセット内のプロパティは、有効化、無効にするには、トポロジのノードをリセットするために使用します。
+`KSPROPSETID_TopologyNode`プロパティ セットは、さまざまなトポロジのノードに汎用的な制御を提供します。 トポロジ ノードの種類の一覧は、[オーディオ トポロジ ノード](audio-topology-nodes.md)を参照してください。 このセット内のプロパティは、有効化、無効にするには、トポロジのノードをリセットするために使用します。
 
-システムに、AEC (アコースティック エコー キャンセル) ハードウェア アクセラレータを公開する、オーディオ ドライバーが AEC とノイズ抑制ノードを実装する必要があります ([**KSNODETYPE\_音響\_エコー\_キャンセル** ](ksnodetype-acoustic-echo-cancel.md)と[ **KSNODETYPE\_ノイズ\_抑制**](ksnodetype-noise-suppress.md)) を有効にして、を通じてこれらのノードの無効化をサポートする必要があります`KSPROPSETID_TopologyNode`プロパティ。 詳細については、次を参照してください。 [Exposing Hardware-Accelerated キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536379)します。
+システムに、AEC (アコースティック エコー キャンセル) ハードウェア アクセラレータを公開する、オーディオ ドライバーが AEC とノイズ抑制ノードを実装する必要があります ([**KSNODETYPE\_音響\_エコー\_キャンセル** ](ksnodetype-acoustic-echo-cancel.md)と[ **KSNODETYPE\_ノイズ\_抑制**](ksnodetype-noise-suppress.md)) を有効にして、を通じてこれらのノードの無効化をサポートする必要があります`KSPROPSETID_TopologyNode`プロパティ。 詳細については、[Exposing Hardware-Accelerated キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536379)を参照してください。
 
 A [ **KSNODETYPE\_PROLOGIC\_エンコーダー** ](ksnodetype-prologic-encoder.md)ノードをサポートする必要がありますも、`KSPROPSETID_TopologyNode`プロパティ。
 

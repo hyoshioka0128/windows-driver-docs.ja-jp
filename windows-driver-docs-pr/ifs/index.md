@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 018a4787252d6c76dd96e3883b467c9c808c5470
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465707"
 ---
-
 # <a name="installable-file-systems-driver-design-guide"></a>インストール可能ファイル システム ドライバー設計ガイド
 
 

@@ -57,11 +57,11 @@ NDIS がドライバーを呼び出すときに[ *MiniportInitializeEx* ](https:
 
 3.  ミニポート ドライバーの呼び出し、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)の電源管理機能を登録する関数。 ミニポート ドライバーでは、この関数を呼び出しとき、に、設定、 *MiniportAttributes*パラメーターのアドレスを[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体。
 
-ウェイク アップの理由のステータスを示す値機能を報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
+ウェイク アップの理由のステータスを示す値機能を報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
 
-アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
 
-電源管理機能のレポート方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
+電源管理機能のレポート方法の詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
 
  
 

@@ -26,7 +26,7 @@ HBA がサポートしている場合[Windows Management Instrumentation](https:
 
 ミニポート ドライバーのライターは、次のように WMI 要求を処理するミニポートを準備します。
 
--   ミニポートは、カスタム データのブロックまたはブロックのイベントを公開する場合は、MOF ファイルにこのようなブロックを定義する必要があり、ミニポートのバイナリの画像のバイナリ リソースとしてコンパイルします。 詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。
+-   ミニポートは、カスタム データのブロックまたはブロックのイベントを公開する場合は、MOF ファイルにこのようなブロックを定義する必要があり、ミニポートのバイナリの画像のバイナリ リソースとしてコンパイルします。 詳細については、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)を参照してください。
 
 -   必須および省略可能な実装*HwScsiWmiXxx* 」の説明に従って、コールバック ルーチン[SCSI ミニポート ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff565312)します。
 
@@ -66,7 +66,7 @@ SCSI を割り当てる必要があります、ミニポート ドライバー�
 
 -   呼び出し[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)で**RequestComplete**ときのこ**NextRequest**または (**NextLuRequest**).
 
-WMI の詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。
+WMI の詳細については、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)を参照してください。
 
  
 

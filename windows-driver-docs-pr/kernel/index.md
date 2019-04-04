@@ -3,14 +3,19 @@ title: カーネルモード ドライバー アーキテクチャ設計ガイ�
 description: カーネルモード ドライバー アーキテクチャ設計ガイド
 ms.assetid: 21c199f3-abc3-4607-a674-eb84b6c3c25a
 keywords:
-  - 'カーネルモード ドライバー WDK, アーキテクチャ'
-  - カーネルモード ドライバー WDK
+- カーネルモード ドライバー WDK, アーキテクチャ
+- カーネルモード ドライバー WDK
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 52ace0933e55268e11cb82acccd1e4b06bcc20f1
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465780"
 ---
-
 # <a name="kernel-mode-driver-architecture-design-guide"></a>カーネルモード ドライバー アーキテクチャ設計ガイド
 
 

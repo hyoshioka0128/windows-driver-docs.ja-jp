@@ -31,7 +31,7 @@ Windows vista では、新しい種類の転送を提供されています。**I
 
 [IStream データ転送](istream-data-transfers.md)
 
-データ転送の詳細については、次を参照してください。 [WIA アプリケーションにデータを転送する](transferring-data-to-a-wia-application.md)します。
+データ転送の詳細については、[WIA アプリケーションにデータを転送する](transferring-data-to-a-wia-application.md)を参照してください。
 
  
 

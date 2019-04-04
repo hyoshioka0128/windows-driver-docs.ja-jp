@@ -32,7 +32,7 @@ ms.locfileid: "56530658"
 
 [プラグインのプロパティ ページ](property-page-plug-in.md)
 
-KS プロキシ COM インターフェイス、エクスポートされたヘルパー関数、およびアプリケーションとプラグインで使用される構造に関する詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
+KS プロキシ COM インターフェイス、エクスポートされたヘルパー関数、およびアプリケーションとプラグインで使用される構造に関する詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
 
  
 

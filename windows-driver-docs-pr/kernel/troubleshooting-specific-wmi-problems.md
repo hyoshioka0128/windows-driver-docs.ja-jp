@@ -44,9 +44,9 @@ ms.locfileid: "56529441"
 
 ### <a name="drivers-wmi-properties-or-methods-cannot-be-accessed"></a>ドライバーの WMI のプロパティまたはメソッドにアクセスすることはできません。
 
-1. 使用**wmimofck driver.bmf**バイナリの MOF ファイルの形式が正しいかどうかを確認します。 詳細については、次を参照してください。 [wmimofck.exe を使用して](using-wmimofck-exe.md)します。
+1. 使用**wmimofck driver.bmf**バイナリの MOF ファイルの形式が正しいかどうかを確認します。 詳細については、[wmimofck.exe を使用して](using-wmimofck-exe.md)を参照してください。
 
-2. システム イベント ログのエラーを確認します。 詳細については、次を参照してください。[とシステム イベント ログの WMI Irp](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-irps-and-the-system-event-log-kg)します。
+2. システム イベント ログのエラーを確認します。 詳細については、[とシステム イベント ログの WMI Irp](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-irps-and-the-system-event-log-kg)を参照してください。
 
 3. チェック、 [WMI WDM プロバイダー ログ](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-wdm-provider-log-kg)エラー。
 

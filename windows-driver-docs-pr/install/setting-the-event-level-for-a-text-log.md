@@ -114,7 +114,7 @@ ms.locfileid: "56538652"
 
  
 
-これらのテキスト ログ ファイルの詳細については、次を参照してください。 [SetupAPI テキスト ログ](setupapi-text-logs.md)します。
+これらのテキスト ログ ファイルの詳細については、[SetupAPI テキスト ログ](setupapi-text-logs.md)を参照してください。
 
 **LogLevel**レジストリ値は 0 x として書式設定*UUUUGHVW、* 場所。
 

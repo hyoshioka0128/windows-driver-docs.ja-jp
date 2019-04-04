@@ -45,7 +45,7 @@ ms.locfileid: "56528879"
 
 呼び出す必要があります、バス ドライバーでは、デバイスがウェイク信号をトリガーしたことを判断、 [ **WdfDeviceIndicateWakeStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff546025)デバイスの電源を復元することをフレームワークに通知するためにします。 フレームワークは、この情報をドライバー、ドライバー スタック内の残りの部分に渡します。
 
-デバイスのウェイク アップ機能を制御するレジストリ エントリについては、次を参照してください。[ユーザー コントロールのデバイスがアイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)します。
+デバイスのウェイク アップ機能を制御するレジストリ エントリについては、[ユーザー コントロールのデバイスがアイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)を参照してください。
 
  
 

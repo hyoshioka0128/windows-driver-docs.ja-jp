@@ -52,7 +52,7 @@ ms.locfileid: "56535787"
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-起動 KD (および確立するリモート デバッグ)、コマンドラインでの詳細については、次を参照してください。 [ **KD コマンド ライン オプション**](kd-command-line-options.md)します。
+起動 KD (および確立するリモート デバッグ)、コマンドラインでの詳細については、[ **KD コマンド ライン オプション**](kd-command-line-options.md)を参照してください。
 
  
 

@@ -68,7 +68,7 @@ Windows では、いくつかの条件下でブルー スクリーンの最初�
 
 ### <a name="span-idreadingbugcheckinformationfromthedebuggerspanspan-idreadingbugcheckinformationfromthedebuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>デバッガーからのバグ チェック情報の読み取り
 
-デバッガーがアタッチされているバグ チェックが、デバッガーを中断する対象のコンピュータに発生します。 ブルー スクリーンが表示されない、またはで以下のテキストが表示されるこの場合、このクラッシュの完全な詳細情報は、デバッガーに送信され、デバッガー ウィンドウに表示されます。 詳細については、次を参照してください。[デバッガーを使用して](using-a-debugger.md)します。
+デバッガーがアタッチされているバグ チェックが、デバッガーを中断する対象のコンピュータに発生します。 ブルー スクリーンが表示されない、またはで以下のテキストが表示されるこの場合、このクラッシュの完全な詳細情報は、デバッガーに送信され、デバッガー ウィンドウに表示されます。 詳細については、[デバッガーを使用して](using-a-debugger.md)を参照してください。
 
 バグ チェックのコードの場合は、このリファレンス セクションの一部として存在[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。 参照してください[バグ チェック コード参照](https://msdn.microsoft.com/library/windows/hardware/hh994433)のバグ チェックおよびパラメーターの説明。 各リファレンス ページには、バグ チェックのコード、文字列、および 4 つの追加のパラメーターに表示される各バグ チェックが一覧表示します。 バグ チェック、およびエラーを処理する方法を引き起こしたエラーを診断する方法も説明します。
 

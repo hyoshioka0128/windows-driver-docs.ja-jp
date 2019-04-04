@@ -92,7 +92,7 @@ ini-file,ini-section,profile-name[,old-field][,new-field][,flags]
 
 **UpdateIniFields**配布メディアに INI ファイルが存在するために必要ないため、Windows 上のインストール用の INF ファイルにディレクティブが指定されてほとんどありません。 ただし、 **UpdateIniFields**および INF ライター定義のセクションで参照されている正式な構文のステートメントで次のセクションのいずれかのディレクティブが正しく、 [ **AddInterface**](inf-addinterface-directive.md)ディレクティブまたはで参照されている、 [ **InterfaceInstall32** ](inf-interfaceinstall32-section.md)セクション。
 
-各*update-section inifields*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*update-section inifields*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 によって参照されるセクションとは異なり、 [ **UpdateInis** ](inf-updateinis-directive.md)ディレクティブによって参照されるセクション、 **UpdateIniFields**置換、追加、または既存の INI ファイル内の行の部分を削除します。特定の行の値全体に影響を与えるのではなく行です。 少なくとも 1 つの*old-field*や*新しいフィールド*値は、各セクションのエントリで指定する必要があります。
 

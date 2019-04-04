@@ -62,7 +62,7 @@ WPD デバイスを使用するクライアントは、このデバイスのイ�
 
 クライアントが呼び出すことによってこのインターフェイスを登録する WPD デバイスを列挙できる**IPortableDeviceManager::GetDevices** (Windows SDK に記載されている)。
 
-プライベート WPD デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)します。
+プライベート WPD デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

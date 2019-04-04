@@ -3,18 +3,23 @@ title: Debugging Tools for Windows (WinDbg、KD、CDB、NTSD)
 description: ここでは、Debugging Tools for Windows の概要について説明します。 このツール セットには、WinDbg および他のデバッガーが含まれます。
 ms.assetid: 938ef180-84de-442f-9b6c-1138c2fc8d5a
 keywords:
-  - Debugging Tools for Windows
-  - Windows のデバッグ
-  - Windows デバッガー
-  - カーネル デバッグ
-  - カーネル デバッガー
-  - WinDbg
+- Debugging Tools for Windows
+- Windows のデバッグ
+- Windows デバッガー
+- カーネル デバッグ
+- カーネル デバッガー
+- WinDbg
 ms.date: 02/22/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 418e8ca690b1d41046faa8cdba9f62d252725c05
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465675"
 ---
-
 # <a name="debugging-tools-for-windows-windbg-kd-cdb-ntsd"></a>Debugging Tools for Windows (WinDbg、KD、CDB、NTSD)
 
 

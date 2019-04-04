@@ -42,7 +42,7 @@ Windows Vista では、次の追加レジストリ フィルタ リング機能�
 
 -   ドライバーは、追加のレジストリの操作の通知を受信します。
 
-ドライバーは、Windows の各バージョンでフィルター処理できるレジストリの操作の一覧は、次を参照してください。 [ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)します。
+ドライバーは、Windows の各バージョンでフィルター処理できるレジストリの操作の一覧は、[ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)を参照してください。
 
 レジストリの呼び出しをフィルター処理の詳細については、次のトピックを参照してください。
 

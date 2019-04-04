@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[デバイス インターフェイス ク
 
 この Windows オペレーティング システムでは、このデバイスのインターフェイス クラスを使用しません。
 
-ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)します。
+ディスプレイ デバイスについては、[Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)を参照してください。
 
-ディスプレイ アダプターのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)します。
+ディスプレイ アダプターのデバイスのインターフェイス クラスについては、[ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

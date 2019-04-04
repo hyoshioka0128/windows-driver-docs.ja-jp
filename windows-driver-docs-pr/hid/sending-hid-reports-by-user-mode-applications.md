@@ -16,7 +16,7 @@ ms.locfileid: "56527506"
 
 ユーザー モード アプリケーションが WriteFile (に従って使用、Microsoft Windows SDK) の主なアプローチとして HID コレクションに出力レポートを継続的に送信します。 アプリケーションでも使用できます **HidD\_設定 * * * Xxx*出力レポートを送信し、機能のコレクションにレポートするためのルーチンです。 ただし、アプリケーションでは、コレクションの現在の状態を設定するのにこれらのルーチンが使用するだけです。 一部のデバイスをサポートしていない**HidD\_SetOutputReport**され、このルーチンを使用する場合に応答しなくなります。
 
-詳細については、次を参照してください。[を使用して WriteFile](#using-writefile)と[を使用して HidD\_SetXxx ルーチン](#using-hidd-setxxx-routines)します。
+詳細については、[を使用して WriteFile](#using-writefile)と[を使用して HidD\_SetXxx ルーチン](#using-hidd-setxxx-routines)を参照してください。
 
 ### <a name="using-writefile"></a>WriteFile を使用します。
 

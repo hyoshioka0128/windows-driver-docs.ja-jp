@@ -34,7 +34,7 @@ ms.locfileid: "56528097"
 
 ## <a name="spanspan-idadditionalinformationspanadditional-information"></a></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-旅行ナビゲーション コマンドは、時間でのみ動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
+旅行ナビゲーション コマンドは、時間でのみ動作時間は、トレースを移動します。 タイム トラベルの詳細については、[時出張デバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

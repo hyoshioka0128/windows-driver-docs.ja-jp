@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[デバイス インターフェイス クラス]
 
 システム提供中[チェンジャー ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff551455)オペレーティング システムとメディア チェンジャー デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_MEDIUMCHANGER のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

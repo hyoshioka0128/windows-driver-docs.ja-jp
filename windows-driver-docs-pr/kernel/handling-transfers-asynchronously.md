@@ -42,7 +42,7 @@ ms.locfileid: "56529369"
 
 また、DMA または PIO を使用する他のデバイス ドライバーは自体の大きな転送要求を分割する必要があります。
 
-DMA および PIO の使用に関する詳細については、次を参照してください。[入力/出力手法](i-o-programming-techniques.md)します。
+DMA および PIO の使用に関する詳細については、[入力/出力手法](i-o-programming-techniques.md)を参照してください。
 
  
 

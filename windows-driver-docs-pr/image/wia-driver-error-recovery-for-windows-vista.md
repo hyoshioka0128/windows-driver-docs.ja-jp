@@ -33,7 +33,7 @@ ms.locfileid: "56529559"
 
 [WIA エラー処理の例](wia-error-handling-example.md)
 
-Windows Vista のエラー マクロについては、次を参照してください。 [WIA 診断ログ マクロ](wia-diagnostic-log-macros.md)します。
+Windows Vista のエラー マクロについては、[WIA 診断ログ マクロ](wia-diagnostic-log-macros.md)を参照してください。
 
  
 

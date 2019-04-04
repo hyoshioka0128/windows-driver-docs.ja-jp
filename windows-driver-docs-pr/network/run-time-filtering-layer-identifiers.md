@@ -75,5 +75,5 @@ ms.locfileid: "56530402"
 | FWPS_LAYER_RPC_PROXY_IF | このフィルター処理レイヤーは、RpcProxy 接続に使用されるインターフェイスを検査できます。 これは、ユーザー モードのフィルタ リング層です。 |
 | FWPS_LAYER_KM_AUTHORIZATION | このフィルター処理レイヤー承認セキュリティ アソシエーションを確立できます。 |
 
-各レイヤーのランタイム識別子には、定数値のセットを表す関連付けられている実行時のデータ フィールド識別子があります。 これらのデータ フィールドの識別子は、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されます。 詳細については、次を参照してください。[データ フィールドの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546312)します。
+各レイヤーのランタイム識別子には、定数値のセットを表す関連付けられている実行時のデータ フィールド識別子があります。 これらのデータ フィールドの識別子は、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されます。 詳細については、[データ フィールドの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546312)を参照してください。
 

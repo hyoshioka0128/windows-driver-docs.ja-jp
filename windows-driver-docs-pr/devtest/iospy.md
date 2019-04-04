@@ -38,7 +38,7 @@ IoSpy は、デバイスのカーネル モード ドライバーに対して行
 
 インストールして IoSpy を使用して削除する、[侵入テスト (デバイスの基本)](coverage-tests--device-fundamentals-.md)テスト、 **I/O スパイを有効にする**と**I/O スパイを無効にする**します。 *DQ*パラメーターは、IoSpy フィルター ドライバーがインストールされているデバイスを制御します。 IoSpy IOCTL および WMI 要求内で詳細を記録する、 [IoSpy データ ファイル](#iospy-data-file)が使用する[IoAttack](ioattack.md)ファジーを実行するには、テストします。
 
-**重要な**  IoSpy を以前実行が必要があるあり、テスト システムから削除された IoAttack を実行する前にします。 詳細については、次を参照してください。 [IoSpy IoAttack と実行のファジー テスト方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)します。
+**重要な**  IoSpy を以前実行が必要があるあり、テスト システムから削除された IoAttack を実行する前にします。 詳細については、[IoSpy IoAttack と実行のファジー テスト方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)を参照してください。
 
  
 

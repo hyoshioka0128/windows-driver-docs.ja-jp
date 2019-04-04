@@ -25,7 +25,7 @@ ms.locfileid: "56528695"
 
  
 
-[**OpenAdapter10\_2** ](https://msdn.microsoft.com/library/windows/hardware/ff568603)ドライバーの初期化をより効率的に設計されました。 実装する必要があります**OpenAdapter10\_2** Direct3D のバージョン 11 ドライバー。 実装することも**OpenAdapter10\_2** (なくまたはに加えて[ **OpenAdapter10**](https://msdn.microsoft.com/library/windows/hardware/ff568602)) を増やす、Direct3D のバージョン 10.1 ドライバーで、これらのドライバーの効率を初期化します。 実装の詳細については**OpenAdapter10\_2** 、Direct3D バージョン 10.1 ドライバーには、次を参照してください。[バージョンの検出サポート](version-discovery-support.md)します。 **OpenAdapter10\_2**バージョン管理と、ランタイムとドライバーの間には、その他の情報の交換を処理します。
+[**OpenAdapter10\_2** ](https://msdn.microsoft.com/library/windows/hardware/ff568603)ドライバーの初期化をより効率的に設計されました。 実装する必要があります**OpenAdapter10\_2** Direct3D のバージョン 11 ドライバー。 実装することも**OpenAdapter10\_2** (なくまたはに加えて[ **OpenAdapter10**](https://msdn.microsoft.com/library/windows/hardware/ff568602)) を増やす、Direct3D のバージョン 10.1 ドライバーで、これらのドライバーの効率を初期化します。 実装の詳細については**OpenAdapter10\_2** 、Direct3D バージョン 10.1 ドライバーには、[バージョンの検出サポート](version-discovery-support.md)を参照してください。 **OpenAdapter10\_2**バージョン管理と、ランタイムとドライバーの間には、その他の情報の交換を処理します。
 
 ### <a name="span-idversioningspanspan-idversioningspanversioning"></a><span id="versioning"></span><span id="VERSIONING"></span>バージョン管理
 

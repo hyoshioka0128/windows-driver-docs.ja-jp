@@ -34,7 +34,7 @@ ms.locfileid: "56529391"
 %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataStore\JA
 ```
 
-詳細については、次を参照してください。[デバイス メタデータ ストア](device-metadata-store.md)します。
+詳細については、[デバイス メタデータ ストア](device-metadata-store.md)を参照してください。
 
  
 

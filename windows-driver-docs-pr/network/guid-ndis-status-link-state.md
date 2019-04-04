@@ -23,5 +23,5 @@ GUID_NDIS_STATUS_LINK_STATE イベント GUID では、ミニポート アダプ
 
 GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_LINK_STATE](https://msdn.microsoft.com/library/windows/hardware/hh205390)構造体。 **NDIS_LINK_STATE**構造がメディアの物理的な状態を指定します。
 
-リンクのステータスの詳細については、次を参照してください。 [OID_GEN_LINK_STATE](oid-gen-link-state.md)と[NDIS_STATUS_LINK_STATE](ndis-status-link-state.md)します。
+リンクのステータスの詳細については、[OID_GEN_LINK_STATE](oid-gen-link-state.md)と[NDIS_STATUS_LINK_STATE](ndis-status-link-state.md)を参照してください。
 

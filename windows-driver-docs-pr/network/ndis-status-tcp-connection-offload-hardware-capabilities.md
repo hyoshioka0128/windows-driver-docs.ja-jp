@@ -25,7 +25,7 @@ MUX 中間ドライバーを使用して、NDIS\_状態\_TCP\_接続\_オフロ�
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_TCP\_接続\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567875)構造体。 NDIS\_TCP\_接続\_オフロードは、タスクのオフロード ハードウェア機能を指定します。
 
-タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569803)します。
+タスクのオフロード ハードウェア機能の詳細については、[OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569803)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

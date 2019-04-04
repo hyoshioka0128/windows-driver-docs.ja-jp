@@ -64,7 +64,7 @@ Windows では、DEVPKEY_Device_LocationPaths の値を設定します。
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_LocationPaths の値を取得します。
 
-Windows Server 2003 は、このプロパティをサポートしますが、DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 代わりに、Windows Server 2003 でプロパティの値へのアクセスに対応する SPDRP_LOCATION_PATHS 識別子を使用することができます。 Windows Server 2003 でこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003 は、このプロパティをサポートしますが、DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 代わりに、Windows Server 2003 でプロパティの値へのアクセスに対応する SPDRP_LOCATION_PATHS 識別子を使用することができます。 Windows Server 2003 でこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

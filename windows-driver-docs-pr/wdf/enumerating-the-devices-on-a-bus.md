@@ -31,7 +31,7 @@ ms.locfileid: "56527498"
 
 バス ドライバーには、バスの列挙体のいずれかまたは両方の型を使用できます。
 
-KMDF バス ドライバーの記述方法の詳細については、次を参照してください。[バス ドライバー開発に基づいて KMDF](https://msdn.microsoft.com/windows/hardware/gg463281)します。
+KMDF バス ドライバーの記述方法の詳細については、[バス ドライバー開発に基づいて KMDF](https://msdn.microsoft.com/windows/hardware/gg463281)を参照してください。
 
  
 

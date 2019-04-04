@@ -19,7 +19,7 @@ ms.locfileid: "56537561"
 
 Wake on LAN (WOL) 機能は、ネットワーク アダプターが、WOL イベントを検出すると、コンピューターの省電力状態を解除します。
 
-ミニポート ドライバーでは、初期化中にネットワーク アダプターの WOL 機能を報告します。 WOL 機能をレポートの詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
+ミニポート ドライバーでは、初期化中にネットワーク アダプターの WOL 機能を報告します。 WOL 機能をレポートの詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
 
 メディアの下の電源の切断に注意してください (D3 の切断) リンクの状態が循環した外部; ときにコンピューターのスリープ解除を回避するには、コンピューターがスリープ状態に入ったときに機能が取り消されましたつまり、ときに、スイッチが有効または無効にします。 詳細については D3 切断時は、「[メディア切断の低電力](low-power-on-media-disconnect.md)します。
 
@@ -57,7 +57,7 @@ NDIS は、ネットワーク アダプターを低電力状態に、次のシ�
 
 ミニポート ドライバーがサポートしている場合は、NDIS 6.30、以降[ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態のインジケーターにする必要があります発行これ場合は、ネットワーク アダプターがシステムをスリープ状態の通知。 OID は、それが処理中にこの状態の通知を設定するドライバーの問題の要求の[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780) (D0) の電力状態に遷移します。
 
-詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
+詳細については、[NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)を参照してください。
 
  
 

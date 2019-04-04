@@ -65,7 +65,7 @@ WSK アプリケーション、WSK を使用している場合\_TDI\_DEVICENAME\
 </tbody>
 </table>
 
-TDI トランスポートの使用に関する詳細については、次を参照してください。 [TDI トランスポートを使用して](https://msdn.microsoft.com/library/windows/hardware/ff571015)します。
+TDI トランスポートの使用に関する詳細については、[TDI トランスポートを使用して](https://msdn.microsoft.com/library/windows/hardware/ff571015)を参照してください。
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 

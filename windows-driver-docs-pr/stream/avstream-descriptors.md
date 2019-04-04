@@ -38,7 +38,7 @@ AVStream、ミニドライバーは、それ自体について説明し、フィ
 
 KSFILTER\_記述子では、pin の数、フィルターがサポートされるフィルターは、登録するには、KS カテゴリ、フィルターのトポロジの種類を示します。 各フィルター記述子内で、ミニドライバーの配列へのポインターを提供します[ **KSPIN\_記述子\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 これらのピン留めする記述子のそれぞれには、このフィルターをインスタンス化できる暗証番号 (pin) の種類について説明します。 追加の pin のファクトリを作成するには呼び出すことによって[ **KsFilterCreatePinFactory**](https://msdn.microsoft.com/library/windows/hardware/ff562529)します。
 
-通常、AVStream ミニドライバー レイアウト、ソースと呼び出しの静的な記述子テーブル[ **KsInitializeDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff562683)セットアップ作業を実行します。 ドライバーを初期化する方法についての詳細については、次を参照してください。 [、AVStream ミニドライバーの初期化](initializing-an-avstream-minidriver.md)します。
+通常、AVStream ミニドライバー レイアウト、ソースと呼び出しの静的な記述子テーブル[ **KsInitializeDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff562683)セットアップ作業を実行します。 ドライバーを初期化する方法についての詳細については、[、AVStream ミニドライバーの初期化](initializing-an-avstream-minidriver.md)を参照してください。
 
 ノードの記述子などがある他の種類も、記述子の[ **KSNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563473)、特定のトポロジのノードについて説明します。
 

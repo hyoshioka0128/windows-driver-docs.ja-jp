@@ -60,7 +60,7 @@ DEVPKEY_DeviceClass_ClassName の値によって設定されます、**クラス
 
 呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するにはクラス名。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassName プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスの名前にアクセスする方法については、次を参照してください。[フレンドリ名と、デバイス セットアップ クラスのクラス名にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537755)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassName プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスの名前にアクセスする方法については、[フレンドリ名と、デバイス セットアップ クラスのクラス名にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537755)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

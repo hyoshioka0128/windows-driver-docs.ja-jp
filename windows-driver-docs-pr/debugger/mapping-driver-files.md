@@ -128,7 +128,7 @@ map
 bcdedit -bootdebug on
 ```
 
-詳細については、次を参照してください。[オプションの参照を BCDEdit](https://msdn.microsoft.com/library/windows/hardware/ff542205)します。
+詳細については、[オプションの参照を BCDEdit](https://msdn.microsoft.com/library/windows/hardware/ff542205)を参照してください。
 
 カーネル デバッガーが終了した場合は複数のドライバーの置き換えなしに発生します。 ただし、既に置き換えられているすべてのドライバーに戻りません、古いバイナリでは、ドライバー ファイルが実際に上書きされるためです。
 

@@ -226,7 +226,7 @@ NTSTATUS DeviceControlIrpWorker(_In_ PIRP Irp,
 
 この潜在的な違反を修正するのには、いることを確認、ドライバーが AlphaLock の取得を試みると、そのチェック BravoLock が保持されないようにを正しい操作ですがあります。 最も簡単な修正プログラムは、単に BravoLock を解放し、再度 AlphaLock が取得されるとすぐに取得できます。 より重要なコード変更 AlphaLock と BravoLock の再取得を待機中に、BravoLock を保護する任意のデータが変更されないことが重要である場合に必要な場合があります。
 
-スピン ロックやその他の同期方法の詳細については、次を参照してください。[スピン ロック](https://msdn.microsoft.com/library/windows/hardware/ff563830)します。
+スピン ロックやその他の同期方法の詳細については、[スピン ロック](https://msdn.microsoft.com/library/windows/hardware/ff563830)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

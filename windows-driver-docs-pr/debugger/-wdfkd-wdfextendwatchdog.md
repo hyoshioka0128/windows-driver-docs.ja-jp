@@ -47,14 +47,14 @@ KMDF 1
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
 それを呼び出すたびに、電源ポリシーまたは電源イベントのコールバック関数の電源がオフのドライバーに対してページング可能なフレームワークが、内部ウォッチドッグ タイマーを開始 (操作は、\_POWER\_ページング可能なビットがクリアされて)。 コールバック関数がページング i/o、ためブロックされた場合は、要求の処理を使用可能なページングのデバイスがないため、オペレーティング システムがハングします。
 
-タイムアウト期間が経過すると、フレームワークのバグ チェック 0x10D 問題 (WDF\_違反)。 詳細については、次を参照してください。 [**バグ チェック 0x10D**](bug-check-0x10d---wdf-violation.md)します。
+タイムアウト期間が経過すると、フレームワークのバグ チェック 0x10D 問題 (WDF\_違反)。 詳細については、[**バグ チェック 0x10D**](bug-check-0x10d---wdf-violation.md)を参照してください。
 
  
 

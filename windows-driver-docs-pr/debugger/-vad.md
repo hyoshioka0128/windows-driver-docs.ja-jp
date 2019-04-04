@@ -77,14 +77,14 @@ VAD ツリー全体に基づいて*VAD ルート*が表示されます。 (こ�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-仮想アドレス記述子の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (この本できない場合がありますのいくつかの言語および国。)
+仮想アドレス記述子の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>注釈
 -------
 
 使用して任意のプロセス VAD のルートのアドレスが見つかりません、 [ **! プロセス**](-process.md)コマンド。
 
-**! Vad**ページングされたメモリ不足がユーザー モードのモジュールのシンボルを読み込む必要がある場合、コマンドが役に立ちます。 詳細については、次を参照してください。[マッピング シンボルときに、PEB がページ アウトが](mapping-symbols-when-the-peb-is-paged-out.md)します。
+**! Vad**ページングされたメモリ不足がユーザー モードのモジュールのシンボルを読み込む必要がある場合、コマンドが役に立ちます。 詳細については、[マッピング シンボルときに、PEB がページ アウトが](mapping-symbols-when-the-peb-is-paged-out.md)を参照してください。
 
 次の例に示します、 **! vad**拡張機能。
 

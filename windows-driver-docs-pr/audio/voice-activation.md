@@ -61,7 +61,7 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 
 音声とアクティブ化は「自分の音声をについて説明します」と組み合わせて、2 つのアルゴリズムが協力して、ライセンス認証の場合は false を削減します。 これは、貴重なミーティングの部屋シナリオでは、1 人のユーザーが」「コルタナさんいっぱいの部屋でデバイスを表示します。
 
-音声をアクティブ化のキー フレーズが検出された場合に反応するキーワード spotter (KWS) で電源が。 低電源状態からデバイスをウェイクするための KWS の場合は、ソリューションは、Wake on 音声 (WoV) と呼ばれます。 詳細については、次を参照してください。 [Wake on 音声](#wake_on_voice)します。
+音声をアクティブ化のキー フレーズが検出された場合に反応するキーワード spotter (KWS) で電源が。 低電源状態からデバイスをウェイクするための KWS の場合は、ソリューションは、Wake on 音声 (WoV) と呼ばれます。 詳細については、[Wake on 音声](#wake_on_voice)を参照してください。
 
 
 ## <a name="span-idglossaryoftermsspanspan-idglossaryoftermsspanglossary-of-terms"></a><span id="glossary_of_terms"></span><span id="Glossary_Of_Terms"></span>用語集
@@ -107,7 +107,7 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 -   APO MFX として形式変換を実行できます。   
 -   APO には、次の形式を出力する必要があります。 
     -   16 kHz、mono、浮動小数点数。
--   必要に応じてオーディオ キャプチャ プロセスを強化するために、カスタム画像をデザインします。 詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)します。
+-   必要に応じてオーディオ キャプチャ プロセスを強化するために、カスタム画像をデザインします。 詳細については、[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)を参照してください。
 
 キーワードのハードウェア オフロード spotter (HW KWS) WoV 要件
 - HW KWS WoV は、S0 の操作の状態と S0 スリープ状態とも呼ばれる最新スタンバイ中にサポートされます。  
@@ -131,7 +131,7 @@ HW KWS の AEC の要件
 
 <https://github.com/Microsoft/Windows-driver-samples/blob/master/audio/sysvad/>
 
-SYSVAD サンプル オーディオ ドライバーの詳細については、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
+SYSVAD サンプル オーディオ ドライバーの詳細については、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
 
 ## <a name="span-idkeywordrecognitionsysteminformationspankeyword-recognition-system-information"></a><span id="keyword_recognition_system_information"></span>キーワード認識システム情報
 

@@ -50,7 +50,7 @@ ms.locfileid: "56537110"
 
  
 
-このインターフェイスの詳細については、次を参照してください。 [IWiaLog インターフェイスおよび診断ログ マクロ](https://msdn.microsoft.com/library/windows/hardware/ff543937)します。
+このインターフェイスの詳細については、[IWiaLog インターフェイスおよび診断ログ マクロ](https://msdn.microsoft.com/library/windows/hardware/ff543937)を参照してください。
 
  
 

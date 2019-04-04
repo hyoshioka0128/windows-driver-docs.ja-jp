@@ -71,7 +71,7 @@ GUID_DEVINTERFACE_MODEM *Ntddmodm.h*のインクルードする前に、正し�
 ...
 ```
 
-モデム デバイスについては、次を参照してください。[モデム デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff542476)します。
+モデム デバイスについては、[モデム デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff542476)を参照してください。
 
 このデバイスのインターフェイス クラスを使用しての例は、次を参照してください。、 [FakeModem - ユニモデム コント ローラーのないモデム サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256110) WDK で提供されるサンプル。
 

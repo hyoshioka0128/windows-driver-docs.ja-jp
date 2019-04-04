@@ -53,4 +53,4 @@ ACPI 操作リージョン経由の通信、によって関数ドライバー直
 
 システム提供についてサポートを参照してください、ACPI デバイス関数のドライバーをサポートするルーチン[ACPI 操作リージョン ハンドラーの参照](https://msdn.microsoft.com/library/windows/hardware/ff536132)します。
 
-ACPI のデバイスと名前空間の詳細については、次を参照してください。、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)します。
+ACPI のデバイスと名前空間の詳細については、、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)を参照してください。

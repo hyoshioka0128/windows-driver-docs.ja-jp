@@ -35,7 +35,7 @@ ld ModuleName [/f FileName]
 シンボルが読み込まれるモジュールの名前を指定します。 *ModuleName*さまざまなワイルドカード文字と指定子を含めることができます。
 
 <span id="________f_______FileName______"></span><span id="________f_______filename______"></span><span id="________F_______FILENAME______"></span> **/f** *FileName*   
-一致の選択された名前を変更します。 既定では、モジュール名が一致するしますが、 **/f**されるモジュール名の代わりに、ファイル名が一致します。 *ファイル名*さまざまなワイルドカード文字と指定子を含めることができます。 ワイルドカード文字と指定子の構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
+一致の選択された名前を変更します。 既定では、モジュール名が一致するしますが、 **/f**されるモジュール名の代わりに、ファイル名が一致します。 *ファイル名*さまざまなワイルドカード文字と指定子を含めることができます。 ワイルドカード文字と指定子の構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -71,7 +71,7 @@ ld ModuleName [/f FileName]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-遅延 (遅延) シンボルの読み込みの詳細については、次を参照してください。[シンボルの遅延読み込み](deferred-symbol-loading.md)します。 その他のシンボルのオプションの詳細については、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
+遅延 (遅延) シンボルの読み込みの詳細については、[シンボルの遅延読み込み](deferred-symbol-loading.md)を参照してください。 その他のシンボルのオプションの詳細については、[シンボル オプションを設定](symbol-options.md)を参照してください。
 
  
 

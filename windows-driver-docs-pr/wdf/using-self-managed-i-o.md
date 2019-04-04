@@ -72,7 +72,7 @@ ms.locfileid: "56529261"
 
     (ドライバーにも登録できます、 [ *EvtDeviceSurpriseRemoval* ](https://msdn.microsoft.com/library/windows/hardware/ff540913)コールバック関数。 削除されたときの作業 (D0) 状態で、デバイスであった場合、フレームワーク*EvtDeviceSurpriseRemoval*自己管理型の I/O のコールバック関数を呼び出す前にします。 デバイスが削除されると、低電力状態だった場合*EvtDeviceSurpriseRemoval*が呼び出された後[ *EvtDeviceSelfManagedIoSuspend*](https://msdn.microsoft.com/library/windows/hardware/ff540907))
 
-これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
+これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
 
 ゚は必要ありません、ただし、フレームワークにより、ドライバーにアクセスして、デバイスの PnP、電源の状態をより詳細に制御を有効にして、[フレームワーク内のマシンの状態](state-machines-in-the-framework.md)します。
 

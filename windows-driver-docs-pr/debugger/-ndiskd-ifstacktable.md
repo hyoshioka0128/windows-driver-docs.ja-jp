@@ -24,7 +24,7 @@ ms.locfileid: "56527886"
 
 **! Ndiskd.ifstacktable**拡張機能には、ネットワーク インターフェイスの履歴テーブル (ifStackTable) が表示されます。
 
-インターフェイスの履歴テーブルの詳細については、次を参照してください。[ネットワーク インターフェイスのスタックを維持](https://msdn.microsoft.com/windows/hardware/drivers/network/maintaining-a-network-interface-stack)します。
+インターフェイスの履歴テーブルの詳細については、[ネットワーク インターフェイスのスタックを維持](https://msdn.microsoft.com/windows/hardware/drivers/network/maintaining-a-network-interface-stack)を参照してください。
 
 ```console
 !ndiskd.ifstacktable 

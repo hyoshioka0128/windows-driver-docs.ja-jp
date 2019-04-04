@@ -31,7 +31,7 @@ IRP の有効期間全体を通じて、書き込み要求の不変のバッフ�
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のスタック機能の 1 つまたは複数のドライバーをアクティブにできます。 不変な Mdl スタック用検査オプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のスタック機能の 1 つまたは複数のドライバーをアクティブにできます。 不変な Mdl スタック用検査オプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 不変な Mdl スタック用検査オプションをアクティブ化する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。
 

@@ -16,7 +16,7 @@ ms.locfileid: "56529654"
 
 有効またはパケットの結合、ミニポート ドライバーでのサポートを無効にするには、標準化された INF キーワードが定義されます。
 
-パケットの結合をサポートするアダプターのミニポート ドライバーの INF ファイルを指定する必要があります、  **\*PacketCoalescing** INF キーワードを標準化します。 ドライバーがインストールされると、管理者を更新できる、  **\*PacketCoalescing**でキーワード値、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+パケットの結合をサポートするアダプターのミニポート ドライバーの INF ファイルを指定する必要があります、  **\*PacketCoalescing** INF キーワードを標準化します。 ドライバーがインストールされると、管理者を更新できる、  **\*PacketCoalescing**でキーワード値、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
 **注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 
@@ -73,9 +73,9 @@ SubkeyName に関連付けられているテキスト。
 
  
 
-ミニポート ドライバーを確認する必要があります、  **\*PacketCoalescing**パケットの結合のサポートをアドバタイズする前に、レジストリ内のキーワード値。 場合、  **\*PacketCoalescing**キーワードが 0 の値を持つ、ミニポートは、パケットの結合機能のサポートをアドバタイズする必要があります。 詳細については、次を参照してください。[パケット結合機能の報告](reporting-packet-coalescing-capabilities.md)します。
+ミニポート ドライバーを確認する必要があります、  **\*PacketCoalescing**パケットの結合のサポートをアドバタイズする前に、レジストリ内のキーワード値。 場合、  **\*PacketCoalescing**キーワードが 0 の値を持つ、ミニポートは、パケットの結合機能のサポートをアドバタイズする必要があります。 詳細については、[パケット結合機能の報告](reporting-packet-coalescing-capabilities.md)を参照してください。
 
-標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
  
 

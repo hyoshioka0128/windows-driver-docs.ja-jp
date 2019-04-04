@@ -65,7 +65,7 @@ ms.locfileid: "56538054"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-読み込みの詳細については、アンロード、および拡張機能を制御するを参照してください[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。 拡張機能コマンド、および既定の検索順序の説明を実行する方法の詳細については、次を参照してください。[デバッガー拡張機能コマンドの使用](using-debugger-extension-commands.md)します。
+読み込みの詳細については、アンロード、および拡張機能を制御するを参照してください[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。 拡張機能コマンド、および既定の検索順序の説明を実行する方法の詳細については、[デバッガー拡張機能コマンドの使用](using-debugger-extension-commands.md)を参照してください。
 
  
 

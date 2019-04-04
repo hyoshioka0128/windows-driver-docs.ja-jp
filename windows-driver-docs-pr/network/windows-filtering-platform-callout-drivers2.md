@@ -34,9 +34,9 @@ ms.locfileid: "56529431"
 -   [Windows Filtering Platform 定数](windows-filtering-platform-constants.md)
 -   [その他の Windows フィルタ リング プラットフォーム機能](other-windows-filtering-platform-functions.md)
 
-WFP の概要については、次を参照してください。 [Windows フィルタ リング プラットフォーム](https://msdn.microsoft.com/library/windows/desktop/aa366510)します。
+WFP の概要については、[Windows フィルタ リング プラットフォーム](https://msdn.microsoft.com/library/windows/desktop/aa366510)を参照してください。
 
-WFP リファレンス情報は、次を参照してください。 [Windows フィルタ リング プラットフォーム コールアウト ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff571067)します。
+WFP リファレンス情報は、[Windows フィルタ リング プラットフォーム コールアウト ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff571067)を参照してください。
 
  
 

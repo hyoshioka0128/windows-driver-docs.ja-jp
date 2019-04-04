@@ -91,7 +91,7 @@ Windows Server 2012 以降、VSP は割り当てられません共有メモリ�
 
     -   ミニポート ドライバーを設定する必要があります、 **MinLookaheadSplitSize**と**MinLookaheadSplitSize**メンバーをゼロにします。
 
-    VMQ 機能を登録する方法の詳細については、次を参照してください。[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)します。
+    VMQ 機能を登録する方法の詳細については、[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)を参照してください。
 
  
 

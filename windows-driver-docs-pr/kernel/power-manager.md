@@ -42,7 +42,7 @@ ms.locfileid: "56535559"
 
 -   コントロール パネルの設定
 
-詳細については、次を参照してください。 [Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)します。
+詳細については、[Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)を参照してください。
 
  
 

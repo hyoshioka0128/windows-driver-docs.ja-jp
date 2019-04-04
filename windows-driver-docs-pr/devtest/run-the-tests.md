@@ -146,7 +146,7 @@ SysFund のデータ ドリブン テストには、0 (正常に動作) の問�
 ```
     te.exe Utility_DeviceStatusCheck_DataDriven.dll
 ```
-このユーティリティでは、WDTFTest.xml で定義されている SDEL クエリを使用して、一連のテスト対象のデバイスを検索し、すべてがあることを確認**問題コード 0**します。  「成功」の結果は、一連のクエリを実行するデバイスは、すべての操作が正しくを意味します。 レビュー **TestTextLog.log**エラーを調査します。  デバイス マネージャーの問題のコードの詳細については、次を参照してください。[デバイス マネージャーのエラー メッセージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)します。
+このユーティリティでは、WDTFTest.xml で定義されている SDEL クエリを使用して、一連のテスト対象のデバイスを検索し、すべてがあることを確認**問題コード 0**します。  「成功」の結果は、一連のクエリを実行するデバイスは、すべての操作が正しくを意味します。 レビュー **TestTextLog.log**エラーを調査します。  デバイス マネージャーの問題のコードの詳細については、[デバイス マネージャーのエラー メッセージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)を参照してください。
 
 ### <a name="launch-a-test"></a>テストを起動します。
 SysFund のデータ ドリブン テストのいずれかを起動するには、次のコマンドを使用します。
@@ -216,4 +216,4 @@ HRESULT '0x80070057' 意味"E_INVALIDARG:1 つまたは複数の引数が無効�
 ```
 
 ### <a name="other-issues"></a>その他の問題
-この一覧にないその他の問題のトラブルシューティングについては、次を参照してください。 [Device.DevFund その他のドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-additional-documentation)します。
+この一覧にないその他の問題のトラブルシューティングについては、[Device.DevFund その他のドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-additional-documentation)を参照してください。

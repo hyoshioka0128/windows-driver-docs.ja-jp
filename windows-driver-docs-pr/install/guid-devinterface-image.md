@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_IMAGE[デバイス インターフェイス クラス](https:/
 
 WIA デバイス用のシステム提供のカーネル モード ドライバーでは、オペレーティング システムと WIA デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-WIA ドライバーと STI ドライバーについては、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)します。
+WIA ドライバーと STI ドライバーについては、[Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -3,15 +3,20 @@ title: プリンター ドライバー設計ガイド
 description: このセクションでは、プリンター ドライバーの設計、テスト、およびデバッグに関する情報を示します。
 ms.assetid: ff6b9c2e-920a-4cfc-8872-38976ed872f9
 keywords:
-  - 印刷デバイス WDK
-  - 印刷 WDK プリンター ドライバーを参照
-  - 印刷 WDK 印刷を参照
+- 印刷デバイス WDK
+- 印刷 WDK プリンター ドライバーを参照
+- 印刷 WDK 印刷を参照
 ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 92dca283e818d323511c8c71a6465f8443ace60a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465717"
 ---
-
 # <a name="printer-driver-design-guide"></a>プリンター ドライバー設計ガイド
 
 

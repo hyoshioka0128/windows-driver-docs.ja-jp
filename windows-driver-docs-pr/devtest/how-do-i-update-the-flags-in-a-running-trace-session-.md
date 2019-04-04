@@ -14,7 +14,7 @@ ms.locfileid: "56536659"
 # <a name="how-do-i-update-the-flags-in-a-running-trace-session"></a>実行中のトレース セッションで、フラグを更新する方法
 
 
-変更する、[トレース フラグ](trace-flags.md)または[トレース レベル](trace-level.md)実行中のトレース セッションで使用して、 **tracelog-有効にする**コマンドが、 **tracelog-を更新**コマンド。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
+変更する、[トレース フラグ](trace-flags.md)または[トレース レベル](trace-level.md)実行中のトレース セッションで使用して、 **tracelog-有効にする**コマンドが、 **tracelog-を更新**コマンド。 詳細については、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)を参照してください。
 
 フラグとレベルのプロパティを[トレース プロバイダー](trace-provider.md)のではありません、[トレース セッション](trace-session.md)します。 そのため、 **tracelog-更新**、トレース セッションを更新するコマンドを使用してプロバイダーのプロパティを変更することはできません。 代わりに、使用、 **tracelog-有効にする**新しいプロパティを使用してプロバイダーを再度有効にするコマンド。
 

@@ -30,7 +30,7 @@ DPC ルーチンを設計するのにには、次のベスト プラクティス
 
 -   DPC ルーチンの実行時間を評価する WDK で説明されているパフォーマンス分析ツールを使用します。
 
-パフォーマンス分析ツールの詳細については、次を参照してください。 [Windows Vista でのシステム再開パフォーマンスの測定](https://go.microsoft.com/fwlink/p/?linkid=69964)します。
+パフォーマンス分析ツールの詳細については、[Windows Vista でのシステム再開パフォーマンスの測定](https://go.microsoft.com/fwlink/p/?linkid=69964)を参照してください。
 
  
 

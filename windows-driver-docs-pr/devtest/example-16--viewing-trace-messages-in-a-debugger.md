@@ -44,7 +44,7 @@ tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 
 応答では、トレース ログは、セッションが開始されたことを報告します。 トレース プロバイダーは、メッセージを生成するときは、デバッガーで、メッセージが表示されます。
 
-デバッガーでのメッセージを表示するには、WMI のトレース拡張機能を使用します。 詳しくは、次を参照してください。[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)します。
+デバッガーでのメッセージを表示するには、WMI のトレース拡張機能を使用します。 詳しくは、[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)を参照してください。
 
  
 

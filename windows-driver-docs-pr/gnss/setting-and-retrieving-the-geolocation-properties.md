@@ -20,7 +20,7 @@ ms.locfileid: "56530599"
 
 アプリケーションの場合に書き込み、または (感度の変更や必要な正確性) プロパティを更新します。 サンプル ドライバーに対応するプロパティの書き込みメソッドが呼び出されます。 シミュレートされたセンサー、について**CGeolocation::UpdateGeolocationPropertyValues**します。 このメソッドが宣言され、センサー オブジェクトで定義されているファイル (Geolocation.h と Geolocation.cpp) のし、は、SensorDDI.cpp モジュールで呼び出されます。
 
-センサーのプロパティを定義する方法については、次を参照してください。[地理的位置情報のプロパティをサポートしている](supporting-the-geolocation-properties.md)します。
+センサーのプロパティを定義する方法については、[地理的位置情報のプロパティをサポートしている](supporting-the-geolocation-properties.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [地理的位置情報オブジェクトを定義します。](defining-the-geolocation-object.md)  

@@ -16,7 +16,7 @@ ms.locfileid: "56529193"
 
 このトピックでは、UWP デバイス アプリが社内デバイスをアクセスできる方法について説明します。 *社内デバイス*デバイス内に存在または PC のエンクロージャは統合です。
 
-**注**  すぎる外部デバイスへのアクセスに、このトピックに記載されている一部の Api を使用できます。 このトピックでは、内部のデバイスへのアクセスを具体的には重点を置いています。 各 API に関する詳細については、次を参照してください。、 [Windows API リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=250938)します。
+**注**  すぎる外部デバイスへのアクセスに、このトピックに記載されている一部の Api を使用できます。 このトピックでは、内部のデバイスへのアクセスを具体的には重点を置いています。 各 API に関する詳細については、、 [Windows API リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=250938)を参照してください。
 
  
 
@@ -36,7 +36,7 @@ ms.locfileid: "56529193"
 ## <a name="span-iddevicescenarioapisspanspan-iddevicescenarioapisspanspan-iddevicescenarioapisspandevice-scenario-apis"></a><span id="Device_scenario_APIs"></span><span id="device_scenario_apis"></span><span id="DEVICE_SCENARIO_APIS"></span>デバイス Api のシナリオ
 
 
-Windows ランタイムは、組み込みまたはイメージのキャプチャ、モーション センサーのスキャン、印刷、および使用するための Api など、PC に接続されているが一般的なデバイスにアクセスするためのいくつかの Api を提供します。 これらの Api は特定のシナリオを考慮して設計されている、ためにそれらとして*デバイス シナリオ Api*します。 すべての開発者がデバイスのシナリオの Api を使用することができ、それらを使用するデバイスのメタデータは必要ありません。 Api のシナリオの詳細については、次を参照してください。[デバイス統合]( https://go.microsoft.com/fwlink/p/?LinkId=306557)します。
+Windows ランタイムは、組み込みまたはイメージのキャプチャ、モーション センサーのスキャン、印刷、および使用するための Api など、PC に接続されているが一般的なデバイスにアクセスするためのいくつかの Api を提供します。 これらの Api は特定のシナリオを考慮して設計されている、ためにそれらとして*デバイス シナリオ Api*します。 すべての開発者がデバイスのシナリオの Api を使用することができ、それらを使用するデバイスのメタデータは必要ありません。 Api のシナリオの詳細については、[デバイス統合]( https://go.microsoft.com/fwlink/p/?LinkId=306557)を参照してください。
 
 Api では、どのようなデバイス シナリオ以外のすべてのアクセスは、Oem (または、コンポーネント サプライヤーの Oem と連携して作業) に制限されており、システム コンテナーのデバイスのメタデータが必要です。
 
@@ -67,7 +67,7 @@ For more info, see:
 
 Oem や Ihv いない (内部または周辺機器) デバイスにアクセスするデバイスのプロトコルの Api を使用することは、Microsoft Windows エコシステム チームとそのシナリオについて説明しますが最初に接続する必要があります。 場合によっては、Microsoft 承認されると、UWP デバイスのアプリは、カスタム ドライバーを直接アクセスできます。
 
-カスタム ドライバー アクセスには、デバイスのメタデータが必要です。 カスタム ドライバーにアクセスするには、アプリを周辺機器のデバイスまたはシステム コンテナーの特権を持つアプリとしてのデバイスのメタデータで指定してください。 カスタム ドライバー アクセスに関する詳細については、次を参照してください。 [UWP デバイス アプリ設計のガイドを特殊なデバイス、PC に内部](https://go.microsoft.com/fwlink/p/?LinkId=306693)します。
+カスタム ドライバー アクセスには、デバイスのメタデータが必要です。 カスタム ドライバーにアクセスするには、アプリを周辺機器のデバイスまたはシステム コンテナーの特権を持つアプリとしてのデバイスのメタデータで指定してください。 カスタム ドライバー アクセスに関する詳細については、[UWP デバイス アプリ設計のガイドを特殊なデバイス、PC に内部](https://go.microsoft.com/fwlink/p/?LinkId=306693)を参照してください。
 
 ## <a name="span-idcomponentsuppliersspanspan-idcomponentsuppliersspanspan-idcomponentsuppliersspancomponent-suppliers"></a><span id="Component_suppliers"></span><span id="component_suppliers"></span><span id="COMPONENT_SUPPLIERS"></span>コンポーネント サプライヤー
 
@@ -78,7 +78,7 @@ Oem や Ihv いない (内部または周辺機器) デバイスにアクセス�
 
 -   **OEM を策定し、アプリを配布**:ここでは、OEM は、開発し、さまざまなコンポーネント サプライヤーの 1 つまたは複数の社内のデバイスにアクセスするアプリを配布します。 最終的には、OEM は、アプリの開発、アプリの配布、およびデバイス メタデータのメンテナンスを所有します。 コンポーネント サプライヤーは、ドライバーを所有しています。
 
-これらのワークフローの詳細については、次を参照してください。 [UWP デバイス アプリ設計のガイドを特殊なデバイス、PC に内部](https://go.microsoft.com/fwlink/p/?LinkId=306693)します。
+これらのワークフローの詳細については、[UWP デバイス アプリ設計のガイドを特殊なデバイス、PC に内部](https://go.microsoft.com/fwlink/p/?LinkId=306693)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

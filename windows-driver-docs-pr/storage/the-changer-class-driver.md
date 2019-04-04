@@ -21,7 +21,7 @@ ms.locfileid: "56539093"
 ## <span id="ddk_the_changer_class_driver_kg"></span><span id="DDK_THE_CHANGER_CLASS_DRIVER_KG"></span>
 
 
-チェンジャー クラス ドライバーは、ハードウェア ベンダーによって提供されるチェンジャー miniclass ドライバーの特定のオペレーティング システム、デバイスに依存しないサービスを実行します。 チェンジャー miniclass ドライバーの詳細については、次を参照してください。 [Vendor-Supplied チェンジャー ドライバー](vendor-supplied-changer-drivers.md)します。
+チェンジャー クラス ドライバーは、ハードウェア ベンダーによって提供されるチェンジャー miniclass ドライバーの特定のオペレーティング システム、デバイスに依存しないサービスを実行します。 チェンジャー miniclass ドライバーの詳細については、[Vendor-Supplied チェンジャー ドライバー](vendor-supplied-changer-drivers.md)を参照してください。
 
 チェンジャー クラス ドライバー:
 

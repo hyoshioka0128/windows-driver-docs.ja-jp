@@ -25,7 +25,7 @@ Network Direct カーネル (NDK) ミニポート アダプターは、他のミ
     - ミニポート ドライバーのセット、**有効**メンバー **TRUE** NDK 機能が有効になっている場合または**FALSE**それ以外の場合。
 
         > [!NOTE]
-        > クエリを実行して、ミニポート ドライバーの NDK 機能の現在の状態の設定の詳細については、次を参照してください。 [NDK 機能の無効化の有効化と](enabling-and-disabling-ndk-functionality.md)します。         
+        > クエリを実行して、ミニポート ドライバーの NDK 機能の現在の状態の設定の詳細については、[NDK 機能の無効化の有効化と](enabling-and-disabling-ndk-functionality.md)を参照してください。         
 
     - **NdkCapabilities**メンバーへのポインターを格納するミニポート ドライバー、 [ **NDIS\_NDK\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451560)構造体を指定します。アダプターの機能です。
 

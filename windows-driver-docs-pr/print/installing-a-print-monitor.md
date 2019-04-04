@@ -27,7 +27,7 @@ ms.locfileid: "56527620"
 
 ### <a href="" id="ddk-installing-a-language-monitor-gg"></a>言語モニターをインストールします。
 
-言語モニターをインストールするには、LanguageMonitor エントリを追加、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)の INF ファイル。 LanguageMonitor エントリでは、言語モニターの表示名と INF の次の例のように、その DLL の名前の一覧を表示します。 LanguageMonitor エントリは、プリンター言語モニターを使用することを制御するすべてのプリンター ドライバーを含める必要があります。 詳細については、次を参照してください。[プリンター INF ファイル](printer-inf-files.md)します。
+言語モニターをインストールするには、LanguageMonitor エントリを追加、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)の INF ファイル。 LanguageMonitor エントリでは、言語モニターの表示名と INF の次の例のように、その DLL の名前の一覧を表示します。 LanguageMonitor エントリは、プリンター言語モニターを使用することを制御するすべてのプリンター ドライバーを含める必要があります。 詳細については、[プリンター INF ファイル](printer-inf-files.md)を参照してください。
 
 ```cpp
 [AcmeInst]

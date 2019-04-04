@@ -143,7 +143,7 @@ KMDF ドライバーでは、次のレジストリ値は下に存在できる、
 
 指定する**HostProcessDbgBreakOnStart**または**HostProcessDbgBreakOnDriverLoad**とその他の UMDF タイムアウト (たとえば、プラグ アンド プレイ操作) を無効にするフレームワークです。 つまりには、ドライバーでは、過剰にタイムアウトが発生する場合は、これらの値を使用して可能性があります、ターゲット上で致命的なクラッシュの原因は、ドライバー。
 
-WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用して、これらのレジストリ値を設定することもできます。 UMDF ドライバーでこのツールの使用方法の詳細については、次を参照してください。 [WDF Verifier による UMDF 検証設定の管理](https://msdn.microsoft.com/library/windows/hardware/ff548422)します。
+WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用して、これらのレジストリ値を設定することもできます。 UMDF ドライバーでこのツールの使用方法の詳細については、[WDF Verifier による UMDF 検証設定の管理](https://msdn.microsoft.com/library/windows/hardware/ff548422)を参照してください。
 
 次の値にある**HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\DebugMode**:
 
@@ -166,7 +166,7 @@ WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用し�
 </tr>
 <tr class="even">
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>デバイスのプールを無効にします。 デバイスのプールに関する詳細については、次を参照してください。<a href="using-device-pooling-in-umdf-drivers.md" data-raw-source="[Using Device Pooling in UMDF Drivers](using-device-pooling-in-umdf-drivers.md)">デバイスの UMDF ドライバーでプールを使用して</a>します。</p></td>
+<td align="left"><p>デバイスのプールを無効にします。 デバイスのプールに関する詳細については、<a href="using-device-pooling-in-umdf-drivers.md" data-raw-source="[Using Device Pooling in UMDF Drivers](using-device-pooling-in-umdf-drivers.md)">デバイスの UMDF ドライバーでプールを使用して</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x04</p></td>

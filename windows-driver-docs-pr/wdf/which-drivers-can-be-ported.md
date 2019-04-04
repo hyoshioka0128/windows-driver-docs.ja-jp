@@ -31,7 +31,7 @@ ms.locfileid: "56535332"
 
 KMDF を使用して、Windows 2000 以降を実行しているドライバーを作成することができます。 ターゲットの Windows 8.1 以降には、UMDF バージョン 1 と後で、Windows XP で実行されるドライバーを作成および UMDF バージョン 2 を使用できます。
 
-UMDF および KMDF をサポートするデバイスとドライバーの種類については、次を参照してください。[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)します。
+UMDF および KMDF をサポートするデバイスとドライバーの種類については、[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)を参照してください。
 
 ## <a name="which-framework-should-i-port-my-wdm-driver-to-kmdf-or-umdf-2"></a>どのフレームワーク、KMDF または UMDF 2 には、WDM ドライバーを移植する必要がありますか。
 

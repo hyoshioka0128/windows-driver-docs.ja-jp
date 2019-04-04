@@ -16,7 +16,7 @@ ms.locfileid: "56528156"
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
-> Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
+> Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
 
 ServiceProvider 要素には、サービス プロバイダーの名前を指定します。 ホーム プロバイダー ネットワークの名前を表示する Windows 接続マネージャー で表示されます。 ユーザーがローミング ネットワーク上にある場合は、ローミングのネットワーク名が表示されます。
 

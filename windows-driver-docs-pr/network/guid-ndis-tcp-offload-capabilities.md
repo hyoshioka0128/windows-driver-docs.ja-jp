@@ -23,5 +23,5 @@ NDIS は、この GUID を処理し、ミニポート ドライバーが、OID �
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。
 
-ポートの状態の詳細については、次を参照してください。 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)します。
+ポートの状態の詳細については、[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)を参照してください。
 

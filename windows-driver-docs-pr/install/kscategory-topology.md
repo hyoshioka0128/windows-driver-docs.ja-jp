@@ -56,7 +56,7 @@ KSCATEGORY_TOPOLOGY[デバイス インターフェイス クラス](https://msd
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_TOPOLOGY 機能カテゴリをサポートすることを示す KSCATEGORY_TOPOLOGY のインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 [AC'97 サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256075)で提供されている、WDK KSCATEGORY_TOPOLOGY デバイス インターフェイス クラスのインスタンスを列挙します。
 

@@ -31,13 +31,13 @@ Windows Vista 以降、オペレーティング システムでは、サービ�
          
 
     -   手動のキューからの I/O 要求を取得するドライバーは、キューをポーリングする定期的なタイマーを作成する場合があります。 たとえば、 [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)サンプルでは、呼び出すことにより、タイマー コールバック ルーチンを登録します[ **CreateThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms682466)、を呼び出すことによって定期的なタイマーを設定および[。 **SetThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms686271)します。
-        **注**  バージョン 1.11 以降、UMDF では、作業項目。 詳細については、次を参照してください。[を使用して作業項目](using-workitems.md)します。
+        **注**  バージョン 1.11 以降、UMDF では、作業項目。 詳細については、[を使用して作業項目](using-workitems.md)を参照してください。
 
          
 
 Orwick の 14 (「以外のフレームワーク」) の章を参照してください、フレームワーク外でシステム サービスの使用に関する追加情報は、小額と Guy Smith。 *Windows Driver Foundation でのドライバーの開発*します。 Redmond、WA:Microsoft Press、2007 年。
 
-Session 0 分離の詳細については、次を参照してください。[サービスと Windows でドライバーの影響の Session 0 分離](https://go.microsoft.com/fwlink/p/?linkid=240132)します。
+Session 0 分離の詳細については、[サービスと Windows でドライバーの影響の Session 0 分離](https://go.microsoft.com/fwlink/p/?linkid=240132)を参照してください。
 
  
 

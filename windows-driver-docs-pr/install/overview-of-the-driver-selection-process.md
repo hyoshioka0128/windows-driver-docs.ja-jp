@@ -28,13 +28,13 @@ Windows デバイスと一致するドライバーの特定の場所を検索し
 
     詳細については、 *TargetOSVersion*の装飾を参照してください[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)します。
 
-Windows のドライバーの一致を検索する場所の詳細については、次を参照してください。[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)します。
+Windows のドライバーの一致を検索する場所の詳細については、[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)を参照してください。
 
 ### <a href="" id="how-setup-ranks-drivers"></a> Windows ドライバーをランク付けする方法
 
 Windows では、一致するすべてのドライバーの一覧を作成し、各ドライバーのランクを割り当てます。 Windows より大きいまたは 0 以下である整数値を持つ各ドライバーのランクを表します。
 
-順位付けのプロセスの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)します。
+順位付けのプロセスの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)を参照してください。
 
 Windows Vista 以降、Windows をランク付けしてドライバーをドライバーがデジタル署名されているかどうかに基づいています。 Windows には、次のようにデジタル署名に基づいたドライバーが順位付けされます。
 

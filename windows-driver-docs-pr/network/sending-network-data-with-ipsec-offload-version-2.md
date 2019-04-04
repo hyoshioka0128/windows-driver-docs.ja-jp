@@ -33,9 +33,9 @@ TCP/IP トランスポートでは、次のヘッダー情報を提供する、 
 
 -   結合の大量送信オフロード (LSO) と IPsec オフロードを使用する埋め込み長さです。
 
-また、送信パケットが、トンネルを通じて送信される、TCP/IP トランスポートは提供、 [ **NDIS\_IPSEC\_オフロード\_V2\_トンネル\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565843)構造体。 この構造体には、トンネル部分では、送信パケットの送信、SA のオフロード ハンドルを指定します。 OOB の情報にアクセスする方法の詳細については、次を参照してください。[にアクセスする NET\_バッファー\_一覧については、IPsec オフロード バージョン 2 で](accessing-net-buffer-list-information-in-ipsec-offload-version-2.md)します。
+また、送信パケットが、トンネルを通じて送信される、TCP/IP トランスポートは提供、 [ **NDIS\_IPSEC\_オフロード\_V2\_トンネル\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565843)構造体。 この構造体には、トンネル部分では、送信パケットの送信、SA のオフロード ハンドルを指定します。 OOB の情報にアクセスする方法の詳細については、[にアクセスする NET\_バッファー\_一覧については、IPsec オフロード バージョン 2 で](accessing-net-buffer-list-information-in-ipsec-offload-version-2.md)を参照してください。
 
-ミニポート ドライバー提供の OID セット要求への応答でオフロード ハンドル[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569812). SAs の詳細については、次を参照してください。 [IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)します。
+ミニポート ドライバー提供の OID セット要求への応答でオフロード ハンドル[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569812). SAs の詳細については、[IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)を参照してください。
 
 ミニポート ドライバーでの送信要求を処理するときに、 [ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)関数では、ミニポート ドライバー。
 

@@ -66,7 +66,7 @@ OS の使用、 **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**ドライバーが指定�
 
 **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**型の構造体が含まれています[ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff561656)、
 
-プロパティはサポートされている唯一の属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード*を使用して指定されていると、 [ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**](https://msdn.microsoft.com/library/windows/hardware/mt727947)構造体。 なお、 **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**構造体の始まりを[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)メンバー。 詳細については、次を参照してください。[オーディオ信号の処理モード](https://msdn.microsoft.com/library/windows/hardware/mt186386)します。
+プロパティはサポートされている唯一の属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード*を使用して指定されていると、 [ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**](https://msdn.microsoft.com/library/windows/hardware/mt727947)構造体。 なお、 **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**構造体の始まりを[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)メンバー。 詳細については、[オーディオ信号の処理モード](https://msdn.microsoft.com/library/windows/hardware/mt186386)を参照してください。
 
 [**KSPROPERTY\_型\_取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)暗証番号 (pin) の形式が提示した場合にのみサポートします。 この関数は、指定した属性が指定された pin での既定のデータ形式に関する情報を提供するオーディオ ドライバーをできます。
 

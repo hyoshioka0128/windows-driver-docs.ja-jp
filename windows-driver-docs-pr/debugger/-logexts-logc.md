@@ -72,7 +72,7 @@ Api が表示されるカテゴリを指定します。 1 つだけのカテゴ�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。 [Logger と LogViewer](logger-and-logviewer.md)します。
+詳細については、[Logger と LogViewer](logger-and-logviewer.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

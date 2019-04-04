@@ -33,7 +33,7 @@ A *DDInstall*.**サービス**Net コンポーネント (アダプター) をイ
 
 **AddService**ディレクティブで、 *DDInstall*.**サービス**セクションを参照できます、*エラー ログ-インストール セクション*コンポーネントのエラー ログをインストールします。 エラー ログでは、すべてのネットワーク コンポーネントの省略可能です。
 
-詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
+詳細については、[ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
 
 例を次に、 *DDInstall*.**サービス** セクションで、*サービス-インストール セクション*、*エラー ログ-インストール セクション*、および*追加レジストリ セクション*によって参照されます。**AddReg**ディレクティブで、*エラー ログ-インストール セクション*:
 
@@ -57,7 +57,7 @@ HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\netevent.dll"
 HKR,,TypesSupported,0x00010001,7
 ```
 
-*ServiceName*のパラメーター、 **AddService**ディレクティブであり、上記の例では**a1**(最初の**AddService**パラメーター)、コンポーネントに一致する必要があります**Ndi\\サービス**値。 詳細については、次を参照してください。 [Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)します。
+*ServiceName*のパラメーター、 **AddService**ディレクティブであり、上記の例では**a1**(最初の**AddService**パラメーター)、コンポーネントに一致する必要があります**Ndi\\サービス**値。 詳細については、[Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)を参照してください。
 
  
 

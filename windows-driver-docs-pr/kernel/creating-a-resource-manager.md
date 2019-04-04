@@ -47,7 +47,7 @@ ms.locfileid: "56530502"
 
 5.  リソース マネージャーの状態を回復します。
 
-    呼び出し[ **ZwRecoverResourceManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567078) KTM トランザクション リソース マネージャーを送信すると、\_通知\_トランザクションが進行中の回復の通知最後に、リソース マネージャーがシャット ダウンします。 リソース マネージャーがこれらの通知に応答する方法については、次を参照してください。[回復操作の処理](handling-recovery-operations.md)します。
+    呼び出し[ **ZwRecoverResourceManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567078) KTM トランザクション リソース マネージャーを送信すると、\_通知\_トランザクションが進行中の回復の通知最後に、リソース マネージャーがシャット ダウンします。 リソース マネージャーがこれらの通知に応答する方法については、[回復操作の処理](handling-recovery-operations.md)を参照してください。
 
 6.  クライアントからトランザクションを受信します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "56530502"
 
 10. コミットまたはクライアントの操作をロールバックします。
 
-    リソース マネージャーが開始する通知を受け取る最終的には、コミットや、クライアントが実行される操作をロールバックします。 応答では、resource manager は必要があります、永続的なクライアント操作を行うまたはいずれかして破棄します。 コミットとロールバック通知を処理する方法の詳細については、次を参照してください。[トランザクション操作の処理](handling-transaction-operations.md)します。
+    リソース マネージャーが開始する通知を受け取る最終的には、コミットや、クライアントが実行される操作をロールバックします。 応答では、resource manager は必要があります、永続的なクライアント操作を行うまたはいずれかして破棄します。 コミットとロールバック通知を処理する方法の詳細については、[トランザクション操作の処理](handling-transaction-operations.md)を参照してください。
 
     場合によっては、リソース マネージャーは、迅速に、リソース マネージャーがデバイスでは、突然削除されたことを確認するため、commit または rollback の通知をおそらく提供 KTM を強制しようとする必要があります。 このような場合は、resource manager を呼び出すことができます[ **TmRequestOutcomeEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff564727)します。
 

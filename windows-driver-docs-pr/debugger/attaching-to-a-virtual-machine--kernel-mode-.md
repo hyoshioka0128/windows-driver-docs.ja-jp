@@ -19,7 +19,7 @@ ms.locfileid: "56531302"
 
 デバッグ ツールの Windows 仮想マシンのカーネルのデバッグをサポートします。 仮想マシンは、デバッガーと同じ物理コンピューターまたは同じネットワークに接続されている別のコンピューターに配置できます。 このトピックでは、KDCOM を介して仮想 COM ポートを使用して手動で仮想マシンのデバッグを設定する方法について説明します。
 
-KDNET を使用して仮想ネットワークを高速なオプションはお勧めします。 詳細については、次を参照してください。[ネットワーク デバッグのセットアップ KDNET で仮想マシンの](setting-up-network-debugging-of-a-virtual-machine-host.md)します。
+KDNET を使用して仮想ネットワークを高速なオプションはお勧めします。 詳細については、[ネットワーク デバッグのセットアップ KDNET で仮想マシンの](setting-up-network-debugging-of-a-virtual-machine-host.md)を参照してください。
 
 
 ## <a name="span-idsettingupthetargetvirtualmachinespanspan-idsettingupthetargetvirtualmachinespanspan-idsettingupthetargetvirtualmachinespansetting-up-the-target-virtual-machine"></a><span id="Setting_Up_the_Target_Virtual_Machine"></span><span id="setting_up_the_target_virtual_machine"></span><span id="SETTING_UP_THE_TARGET_VIRTUAL_MACHINE"></span>ターゲットの仮想マシンの設定
@@ -119,7 +119,7 @@ COM ポートを使用して、第 2 世代仮想マシンでのカーネル デ
 
 4. 再度有効にするセキュリティで保護された boot が完了したら、構成の変更を更新します。
 
-第 2 世代 Vm の詳細については、次を参照してください。[第 2 世代仮想マシン概要](https://go.microsoft.com/fwlink/p/?Linkid=331326)します。
+第 2 世代 Vm の詳細については、[第 2 世代仮想マシン概要](https://go.microsoft.com/fwlink/p/?Linkid=331326)を参照してください。
 
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」

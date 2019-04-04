@@ -39,7 +39,7 @@ ms.locfileid: "56535779"
 
 1 回だけは、有効期限が切れるか、繰り返し一定期間切れになるよう、タイマーを設定できます。 [**KeSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553286)常に 1 回だけの有効期限をタイマーを設定します。 [**KeSetTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff553292)受け取る省略可能な*期間*パラメーターで、定期的なタイマーの間隔を指定します。
 
-省略可能な[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの種類) と関連付けができる通知タイマーまたは同期タイマーのいずれか。 このルーチンは、指定した期間、有効期限が切れるときに実行されます。 詳細については、次を参照してください。[タイマー オブジェクトを使用する](using-timer-objects.md)します。
+省略可能な[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの種類) と関連付けができる通知タイマーまたは同期タイマーのいずれか。 このルーチンは、指定した期間、有効期限が切れるときに実行されます。 詳細については、[タイマー オブジェクトを使用する](using-timer-objects.md)を参照してください。
 
 タイマーを*通知タイマー*または*同期タイマー*します。
 

@@ -25,11 +25,11 @@ ms.locfileid: "56531077"
 
 -   ほとんどのドライバーなどのカーネル モード コンポーネントは、I/O マネージャー ルーチンを呼び出すことができます。 このトピックでは、これらのルーチンを使用する方法について説明します。
 
--   ユーザー モード*デバイス インストール アプリケーション*呼び出す **SetupDi * * * Xxx*関数。 これらの関数の詳細については、次を参照してください。 [SetupDi デバイス インターフェイス関数](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg)します。
+-   ユーザー モード*デバイス インストール アプリケーション*呼び出す **SetupDi * * * Xxx*関数。 これらの関数の詳細については、[SetupDi デバイス インターフェイス関数](using-device-installation-functions.md#ddk-setupdi-device-interface-functions-dg)を参照してください。
 
 -   INF ファイルに含めることができます[ **INF DDInstall.Interfaces セクション**](inf-ddinstall-interfaces-section.md)します。
 
-WDM ドライバーでは、そのデバイス オブジェクトを指定しない場合。 代わりに、ドライバーを呼び出すと[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)デバイス オブジェクトを作成するには、デバイス名は null 文字列を指定にする必要があります。 詳細については、次を参照してください。[デバイス オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff542862)します。
+WDM ドライバーでは、そのデバイス オブジェクトを指定しない場合。 代わりに、ドライバーを呼び出すと[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)デバイス オブジェクトを作成するには、デバイス名は null 文字列を指定にする必要があります。 詳細については、[デバイス オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff542862)を参照してください。
 
 デバイス オブジェクトを作成し、デバイス スタックに接続し後、1 つのドライバーを呼び出して[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)デバイス インターフェイス クラスを登録して、インターフェイスのインスタンスを作成します。 関数のドライバーからのこの呼び出しは、通常、その[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンが、フィルター ドライバーは、インターフェイスを登録します。
 

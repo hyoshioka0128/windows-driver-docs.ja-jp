@@ -24,7 +24,7 @@ Windows Vista および以降のバージョンの Windows では、デバイス
 
 [デバイス インターフェイスのプロパティにアクセスします。](accessing-device-interface-properties--windows-vista-and-later-.md)
 
-Windows Server 2003、Windows XP、および Windows 2000 でのデバイス プロパティにアクセスする方法については、次を参照してください。 [SetupAPI を使用して、デバイス プロパティにアクセスする Configuration Manager](using-setupapi-and-configuration-manager-to-access-device-properties.md)します。
+Windows Server 2003、Windows XP、および Windows 2000 でのデバイス プロパティにアクセスする方法については、[SetupAPI を使用して、デバイス プロパティにアクセスする Configuration Manager](using-setupapi-and-configuration-manager-to-access-device-properties.md)を参照してください。
 
  
 

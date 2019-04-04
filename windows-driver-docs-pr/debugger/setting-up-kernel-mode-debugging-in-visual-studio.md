@@ -21,10 +21,10 @@ ms.locfileid: "56528870"
 >
 
 
-Microsoft Visual Studio を使用して、設定し、Windows のカーネル モードのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
+Microsoft Visual Studio を使用して、設定し、Windows のカーネル モードのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
  
 
-Visual Studio を使ってカーネル モード デバッグをセットアップするのではなく、手動でセットアップすることができます。 詳細については、次を参照してください。[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)します。
+Visual Studio を使ってカーネル モード デバッグをセットアップするのではなく、手動でセットアップすることができます。 詳細については、[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)を参照してください。
 
 カーネル モードのデバッグでは、2 台のコンピューター通常必要があります。 デバッガーを実行する、*ホスト コンピューター、* での実行をデバッグ対象のコードと、*ターゲット コンピューター*します。
 

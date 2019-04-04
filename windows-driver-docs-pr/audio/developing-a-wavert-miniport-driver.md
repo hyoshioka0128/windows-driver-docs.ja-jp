@@ -24,7 +24,7 @@ WaveRT ミニポート ドライバーを開発するために、最初、サン
 
 ### <a name="span-idthesampleadapterdriverspanspan-idthesampleadapterdriverspanthe-sample-adapter-driver"></a><span id="the_sample_adapter_driver"></span><span id="THE_SAMPLE_ADAPTER_DRIVER"></span>サンプル アダプターのドライバー
 
-ドライバーのサンプルについては、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
+ドライバーのサンプルについては、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
 
 ### <a name="span-idthewavertfriendlyfeaturesspanspan-idthewavertfriendlyfeaturesspanthe-wavert-friendly-features"></a><span id="the_wavert_friendly_features"></span><span id="THE_WAVERT_FRIENDLY_FEATURES"></span>WaveRT フレンドリな機能
 

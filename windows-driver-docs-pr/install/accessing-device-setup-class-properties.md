@@ -20,7 +20,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 -   SPCRP_ を持たないプロパティ*Xxx*識別子が、対応するシステム定義のレジストリ エントリの値。
 
-Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラス プロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
+Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラス プロパティにアクセスする方法については、[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)を参照してください。
 
 Windows Server 2003、Windows XP、Windows 2000 に対応するデバイス セットアップ クラス プロパティにアクセスする方法については、次のトピックを参照してください。
 

@@ -22,7 +22,7 @@ ms.locfileid: "56549217"
 
 このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。
 
-ビデオのミニポート ドライバーは、物理的なコネクタでサポートされているすべての保護の種類が現在使用されている表示モードに関係なく、DirectX VA COPP デバイスに関連付けられているレポートする必要があります。 呼び出しを受信すると、ビデオのミニポート ドライバーがサポートされている保護の種類を報告、 [ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652) 、DXVA で関数を\_COPPQueryProtectionType 設定、 **guidStatusRequestID**のメンバー、 [ **DXVA\_COPPStatusInput** ](https://msdn.microsoft.com/library/windows/hardware/ff563899)構造体。 詳細については、次を参照してください。 [COPP 状態](copp-status.md)します。
+ビデオのミニポート ドライバーは、物理的なコネクタでサポートされているすべての保護の種類が現在使用されている表示モードに関係なく、DirectX VA COPP デバイスに関連付けられているレポートする必要があります。 呼び出しを受信すると、ビデオのミニポート ドライバーがサポートされている保護の種類を報告、 [ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652) 、DXVA で関数を\_COPPQueryProtectionType 設定、 **guidStatusRequestID**のメンバー、 [ **DXVA\_COPPStatusInput** ](https://msdn.microsoft.com/library/windows/hardware/ff563899)構造体。 詳細については、[COPP 状態](copp-status.md)を参照してください。
 
 特定の保護の種類では、現在の解像度が大きすぎる場合は、その後、ビデオのミニポート ドライバーの[ *COPPCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff539642)関数が呼び出され、その保護の種類の保護レベルを設定、ドライバーはエラーを返す必要があります。 場合の例を次のシナリオに与えるドライバーの*COPPCommand*関数は、成功またはエラーを返す必要があります。
 

@@ -57,11 +57,11 @@ I/O の検証の強化によってキャッチ ドライバー エラーによ�
 
 カーネル デバッガー (KD または WinDbg) でこれらのエラーは、メッセージによって記録されます**WDM ドライバー エラー**と説明のテキスト文字列。 カーネル デバッガーがアクティブな場合は、レベル 2 のエラーを無視し、システムの操作を再開することです。 (これが、その他のバグ チェックで可能です)
 
-ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 すべての I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)します。
+ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 すべての I/O の検証レベル 2 のエラー メッセージの詳細については、[**バグ チェック 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)を参照してください。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバの I/O の検証の強化された機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバの I/O の検証の強化された機能をアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 **注**  Windows 7 および Windows オペレーティング システムの以降のバージョンでは、強化された I/O の検証は自動的にアクティブ化を選択すると[I/O の検証](i-o-verification.md)です。 それが利用できないか個別のオプションとして選択するために必要です。
 
@@ -83,7 +83,7 @@ I/O の検証の強化によってキャッチ ドライバー エラーによ�
     verifier /volatile /flags 0x40 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
 -   **ドライバー検証マネージャーを使用します。**
 

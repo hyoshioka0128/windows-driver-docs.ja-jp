@@ -26,7 +26,7 @@ ms.locfileid: "56527685"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-このアクションの影響の詳細については、このコマンドでは、およびプログラムの実行を制御する他の方法の他のメソッドを参照してください[ターゲットを制御する](controlling-the-target.md)します。 WinDbg または最後に、デバッグ セッションを終了する方法の詳細については、次を参照してください。 [WinDbg でデバッグ セッションを終了する](ending-a-debugging-session-in-windbg.md)します。
+このアクションの影響の詳細については、このコマンドでは、およびプログラムの実行を制御する他の方法の他のメソッドを参照してください[ターゲットを制御する](controlling-the-target.md)します。 WinDbg または最後に、デバッグ セッションを終了する方法の詳細については、[WinDbg でデバッグ セッションを終了する](ending-a-debugging-session-in-windbg.md)を参照してください。
 
  
 

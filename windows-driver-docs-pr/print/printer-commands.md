@@ -30,7 +30,7 @@ ms.locfileid: "56527714"
 
 -   GPD ファイルには、デバイス固有のコマンド文字列を配置できます。 Unidrv では、適切なタイミングで印刷スプーラーにコマンド文字列を送信します。
 
--   実装することができます、 [ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216) COM メソッドは、コマンド文字列を動的に生成されます。 Unidrv は、スプーラーにコマンドを送信する必要があるたびに、メソッドを呼び出します。 詳細については、次を参照してください。[プリンター コマンドを動的に生成された](dynamically-generated-printer-commands.md)で[をカスタマイズする Microsoft のプリンター ドライバー](customizing-microsoft-s-printer-drivers.md)します。
+-   実装することができます、 [ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216) COM メソッドは、コマンド文字列を動的に生成されます。 Unidrv は、スプーラーにコマンドを送信する必要があるたびに、メソッドを呼び出します。 詳細については、[プリンター コマンドを動的に生成された](dynamically-generated-printer-commands.md)で[をカスタマイズする Microsoft のプリンター ドライバー](customizing-microsoft-s-printer-drivers.md)を参照してください。
 
 次のトピックでは、GPD ファイルでプリンターのコマンドを指定する方法について説明します。
 

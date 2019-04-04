@@ -18,7 +18,7 @@ ms.locfileid: "56531645"
 
 たとえば、外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX driver は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドされます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。
 
-この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
+この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)を参照してください。
 
 次の図は、NDIS 6.40 (Windows Server 2012 R2) と後で拡張可能スイッチ チームの例を示します。
 
@@ -45,11 +45,11 @@ OID 要求、ハードウェアの要求の負荷を軽減などを次のいず�
 
 拡張可能スイッチで、これらの OID 要求を受信したときにカプセル化されていて、拡張可能スイッチ コントロール パス経由で転送します。 転送拡張機能は、カプセル化された OID 要求を受け取る要求を基になる物理アダプターに転送できます。 この機能は、ハードウェア オフロードの拡張可能スイッチ チームを構成するために特に便利です。
 
-たとえば、MUX driver は、全体の拡張可能スイッチ チームの一般的な機能をアドバタイズします。 ただし、転送拡張機能では、クエリまたはアダプター チーム内の個々 の機能を設定する OID 要求を発行できます。 次に、転送拡張機能では、チーム全体に適用される機能の詳細の上にあるドライバーに通知する外部ネットワーク アダプターから NDIS 状態を示す値を取得できます。 この手順の詳細については、次を参照してください。 [NDIS 状態インジケーターの元の物理ネットワーク アダプターから](originating-ndis-status-indications-from-physical-network-adapters.md)します。
+たとえば、MUX driver は、全体の拡張可能スイッチ チームの一般的な機能をアドバタイズします。 ただし、転送拡張機能では、クエリまたはアダプター チーム内の個々 の機能を設定する OID 要求を発行できます。 次に、転送拡張機能では、チーム全体に適用される機能の詳細の上にあるドライバーに通知する外部ネットワーク アダプターから NDIS 状態を示す値を取得できます。 この手順の詳細については、[NDIS 状態インジケーターの元の物理ネットワーク アダプターから](originating-ndis-status-indications-from-physical-network-adapters.md)を参照してください。
 
 転送拡張機能は、コントロールのパス経由で OID 要求を転送するとき、外部のネットワーク アダプターで受信します。 この時点で、OID 要求では、カプセル化解除されたがあり、指定した物理ネットワーク アダプターに転送します。
 
-**注**  ハードウェア オフロード OID のみ、Windows Server 2012 以降の要求をカプセル化し、この方法で転送します。 たとえば、仮想マシン キュー (VMQ) の OID 要求の負荷を軽減またはインターネット プロトコル セキュリティ (IPsec) をカプセル化され、拡張可能スイッチ コントロール パス経由で転送します。 詳細については、次を参照してください。[を管理するハードウェア オフロード OID 要求を物理ネットワーク アダプター](managing-hardware-offload-oid-requests-to-physical-network-adapters.md)します。
+**注**  ハードウェア オフロード OID のみ、Windows Server 2012 以降の要求をカプセル化し、この方法で転送します。 たとえば、仮想マシン キュー (VMQ) の OID 要求の負荷を軽減またはインターネット プロトコル セキュリティ (IPsec) をカプセル化され、拡張可能スイッチ コントロール パス経由で転送します。 詳細については、[を管理するハードウェア オフロード OID 要求を物理ネットワーク アダプター](managing-hardware-offload-oid-requests-to-physical-network-adapters.md)を参照してください。
 
  
 
@@ -81,7 +81,7 @@ OID 要求、ハードウェアの要求の負荷を軽減などを次のいず�
 
     -   **DestinationNicIndex**メンバーは、基になる物理ネットワーク アダプターの 0 以外のインデックス値に設定する必要があります。
 
-        これらのインデックス値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)します。
+        これらのインデックス値の詳細については、[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)を参照してください。
 
     -   転送拡張機能が HYPER-V 子パーティションでは、ハードウェアのオフロード OID 要求を発信する場合、 **SourcePortId**メンバーは、パーティションによって使用されるポートの識別子を設定する必要があります。 また、 **SourceNicIndex**メンバーは、そのポートへのネットワーク接続のネットワーク アダプターのインデックスを設定する必要があります。
 
@@ -119,7 +119,7 @@ OID 要求、ハードウェアの要求の負荷を軽減などを次のいず�
 
 6.  拡張機能の呼び出し[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)カプセル化された OID 要求を指定したコピー先の拡張可能スイッチ ポートとネットワーク アダプターに転送するようにします。
 
-    **注**  呼び出す必要がありますが、拡張機能では、フィルター選択された OID 要求の転送する場合[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)への呼び出しのコンテキスト内でその[ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)関数。 場合、拡張機能が生成された OID 要求、転送呼び出し[ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)になっている、*を実行している*、 *を再開しています*、 *Paused*、および*一時停止中*状態。 これらの状態の詳細については、次を参照してください。[フィルター モジュールの状態と操作](filter-module-states-and-operations.md)します。
+    **注**  呼び出す必要がありますが、拡張機能では、フィルター選択された OID 要求の転送する場合[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)への呼び出しのコンテキスト内でその[ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)関数。 場合、拡張機能が生成された OID 要求、転送呼び出し[ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)になっている、*を実行している*、 *を再開しています*、 *Paused*、および*一時停止中*状態。 これらの状態の詳細については、[フィルター モジュールの状態と操作](filter-module-states-and-operations.md)を参照してください。
 
      
 
@@ -129,9 +129,9 @@ OID 要求、ハードウェアの要求の負荷を軽減などを次のいず�
 
     どちらの場合で、拡張機能の設定、 *SwitchPortId*と*SwitchNicIndex*を同じパラメーター値への呼び出しで使用されるその it [ *ReferenceSwitchNic*](https://msdn.microsoft.com/library/windows/hardware/hh598294).
 
-拡張機能が OID 要求を発行する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)します。
+拡張機能が OID 要求を発行する方法の詳細については、[NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)を参照してください。
 
-MUX ドライバーの詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)します。
+MUX ドライバーの詳細については、[NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)を参照してください。
 
  
 

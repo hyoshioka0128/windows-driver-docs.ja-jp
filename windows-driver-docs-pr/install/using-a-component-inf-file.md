@@ -178,9 +178,9 @@ CONTOSO = "Contoso"
 ContosoCtrlPnl.DeviceDesc = "Contoso Control Panel" 
 ```
 
-ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)します。
+ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、[Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)を参照してください。
 
-セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://msdn.microsoft.com/library/windows/hardware/ff553426)します。
+セットアップ クラスの詳細については、[ベンダー デバイス セットアップ クラスできるベンダー](https://msdn.microsoft.com/library/windows/hardware/ff553426)を参照してください。
 
 ## <a name="see-also"></a>参照
 

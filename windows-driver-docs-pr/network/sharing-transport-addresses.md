@@ -19,7 +19,7 @@ ms.locfileid: "56529273"
 # <a name="sharing-transport-addresses"></a>トランスポート アドレスを共有
 
 
-ほとんどの場合は、Winsock カーネル (WSK) アプリケーションは既に別のソケットが使用されているローカル トランスポート アドレスにソケットをバインドできません。 WSK アプリケーションで使用できます、[ように\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/hardware/ff570830)と[ように\_REUSEADDR](https://msdn.microsoft.com/library/windows/hardware/ff570833)ソケットをバインドするローカル トランスポートの共有を制御するソケット オプションに対応します。 どちらのソケット オプションは、既定では、ソケットに対して設定されます。 ソケット オプションの設定の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
+ほとんどの場合は、Winsock カーネル (WSK) アプリケーションは既に別のソケットが使用されているローカル トランスポート アドレスにソケットをバインドできません。 WSK アプリケーションで使用できます、[ように\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/hardware/ff570830)と[ように\_REUSEADDR](https://msdn.microsoft.com/library/windows/hardware/ff570833)ソケットをバインドするローカル トランスポートの共有を制御するソケット オプションに対応します。 どちらのソケット オプションは、既定では、ソケットに対して設定されます。 ソケット オプションの設定の詳細については、[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)を参照してください。
 
 次の表では、既に別のソケットが使用されているローカル トランスポート アドレスを 2 つ目のソケットをバインドした結果を示します。 *ワイルドカード*と*特定*の場合は、ワイルドカードのローカル トランスポート アドレスまたは特定のローカル トランスポート アドレスに、ソケットがバインドされているかどうかを指定します。
 

@@ -14,7 +14,7 @@ ms.locfileid: "56530990"
 # <a name="wdi-and-wlan-selective-suspend-capability"></a>WDI および WLAN セレクティブ サスペンドの機能
 
 
-USB のセレクティブ サスペンドのサポートを有効にするには、LE は、機能をレポートする必要があります。 NDIS は、この機能のキーワードを定義します。 詳細については、次を参照してください。 [NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)します。
+USB のセレクティブ サスペンドのサポートを有効にするには、LE は、機能をレポートする必要があります。 NDIS は、この機能のキーワードを定義します。 詳細については、[NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)を参照してください。
 
 -   \*SelectiveSuspend: {有効にする、無効にする}
 

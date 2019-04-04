@@ -18,7 +18,7 @@ ms.locfileid: "56539368"
 
 -   オブジェクト識別子 (OID) メソッド要求を通じて[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)データ センター ブリッジング (DCB) コンポーネント (Msdcb.sys) によって発行されました。 この OID 要求に含まれる、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)をローカルの NDIS QoS パラメーターを指定します。
 
-    DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
+    DCB のコンポーネントの詳細については、[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)を参照してください。
 
     **注**  以降 Windows Server 2012 では、DCB コンポーネントはインストールされ、Microsoft データ センター ブリッジング (DCB) server の機能を有効にします。 既定では、この機能がインストールされていません。
 
@@ -34,7 +34,7 @@ DCB のコンポーネントがの OID メソッド要求を発行したとき[O
 
     ミニポート ドライバーでは、IHV によって定義されている独自の QoS 設定に基づいて、運用の QoS パラメーターを解決することもできます。 QoS パラメーターまたはローカル ピアが、オペレーティング システムによってリモートで構成されていないこのドライバーにはのみことができます。
 
-    この手順の詳細については、次を参照してください。[リモートの NDIS QoS パラメーターを受け取る](receiving-remote-ndis-qos-parameters.md)します。
+    この手順の詳細については、[リモートの NDIS QoS パラメーターを受け取る](receiving-remote-ndis-qos-parameters.md)を参照してください。
 
 -   場合、 **NDIS\_QOS\_パラメーター\_WILLING**フラグが設定されていない、ミニポート ドライバーがローカルの DCBX しようとして状態を無効にする必要があります。 これにより、リモートの QoS パラメーターではなく、ローカルの QoS パラメーターから、運用の QoS パラメーターを解決するのには、ドライバーができます。
 
@@ -54,7 +54,7 @@ DCB のコンポーネントがの OID メソッド要求を発行したとき[O
 
 -   ミニポート ドライバーにする必要があります*適用*ローカル QoS パラメーターに含まれている、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体ときに、その運用上の NDIS QoS パラメーターを解決します。 ドライバーは、これらのローカル QoS パラメーターを適用するリモート ピアから受信したリモートの QoS パラメーターを使用する必要があります。
 
-    この手順の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
+    この手順の詳細については、[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)を参照してください。
 
 ローカル DCBX の詳細については、状態のような場面を参照してください[DCBX 許容状態のローカル管理](managing-the-local-dcbx-willing-state.md)します。
 

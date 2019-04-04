@@ -20,7 +20,7 @@ Windows Driver Frameworks (WDF) は、I/O 要求を完了する 3 つのメソ�
 -   [**WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549948)
 -   [**WdfRequestCompleteWithPriorityBoost** ](https://msdn.microsoft.com/library/windows/hardware/ff549949) (KMDF のみ)
 
-これらのメソッドの使用方法の詳細については、次を参照してください。 [I/O 要求の完了](completing-i-o-requests.md)します。
+これらのメソッドの使用方法の詳細については、[I/O 要求の完了](completing-i-o-requests.md)を参照してください。
 
  
 

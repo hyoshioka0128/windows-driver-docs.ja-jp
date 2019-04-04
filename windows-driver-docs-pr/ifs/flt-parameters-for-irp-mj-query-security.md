@@ -100,7 +100,7 @@ typedef union _FLT_PARAMETERS {
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の構造体[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)操作にコールバック データによって表される IRP ベースのセキュリティ情報の照会操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620))構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
 
-Windows xp 以降、オブジェクトを**TargetFileObject** 、FLT のメンバー\_IO\_パラメーター\_ブロック構造のポイントには、名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、次を参照してください。 [**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)します。
+Windows xp 以降、オブジェクトを**TargetFileObject** 、FLT のメンバー\_IO\_パラメーター\_ブロック構造のポイントには、名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、[**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)を参照してください。
 
 IRP\_MJ\_クエリ\_セキュリティは IRP ベースの操作。
 

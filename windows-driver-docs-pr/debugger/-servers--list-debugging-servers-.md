@@ -60,7 +60,7 @@ ms.locfileid: "56528037"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-サーバーのデバッグに関する詳細は、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
+サーバーのデバッグに関する詳細は、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

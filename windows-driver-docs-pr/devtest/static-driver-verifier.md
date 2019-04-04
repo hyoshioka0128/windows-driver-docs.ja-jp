@@ -70,8 +70,8 @@ ms.locfileid: "57464212"
 </ul>
 <p>SDV は、すべての可能なドライバーのコード パスを検証します。 徹底的なテストにも可能性があるないあいまいなパスで重大なエラーを見つけるために設計されています。</p>
 <p><strong>リソース</strong></p>
-<p>SDV を検証するドライバーの詳細については、次を参照してください。<a href="supported-drivers.md" data-raw-source="[Supported Drivers](supported-drivers.md)">ドライバーのサポートされている</a>します。</p>
-<p>詳細および Static Driver Verifier の使用に関するヒントについては、次を参照してください。、<a href="https://go.microsoft.com/fwlink/p/?linkid=154232" data-raw-source="[Static Driver Tools blog](https://go.microsoft.com/fwlink/p/?linkid=154232)">ドライバーの静的ツールのブログ</a>します。</p></td>
+<p>SDV を検証するドライバーの詳細については、<a href="supported-drivers.md" data-raw-source="[Supported Drivers](supported-drivers.md)">ドライバーのサポートされている</a>を参照してください。</p>
+<p>詳細および Static Driver Verifier の使用に関するヒントについては、、<a href="https://go.microsoft.com/fwlink/p/?linkid=154232" data-raw-source="[Static Driver Tools blog](https://go.microsoft.com/fwlink/p/?linkid=154232)">ドライバーの静的ツールのブログ</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

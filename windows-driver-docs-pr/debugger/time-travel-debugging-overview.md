@@ -45,7 +45,7 @@ TTD には、LINQ を使用してトレースをクエリできるようにデ�
 
 ## <a name="ttd-availability"></a>TTD 可用性 
 
-TTD は WinDbg プレビュー アプリをストアからインストール後に Windows 10 で使用できます。  WinDbg プレビューでの最新のビジュアル、windows の高速化、本格的なスクリプトの操作性と WinDbg の新しいバージョンであり、拡張可能なデバッガーのデータ モデルのサポートに組み込まれています。 ストアから WinDbg プレビューのダウンロードの詳細については、次を参照してください。 [WinDbg を使用してプレビューのデバッグ](debugging-using-windbg-preview.md)します。
+TTD は WinDbg プレビュー アプリをストアからインストール後に Windows 10 で使用できます。  WinDbg プレビューでの最新のビジュアル、windows の高速化、本格的なスクリプトの操作性と WinDbg の新しいバージョンであり、拡張可能なデバッガーのデータ モデルのサポートに組み込まれています。 ストアから WinDbg プレビューのダウンロードの詳細については、[WinDbg を使用してプレビューのデバッグ](debugging-using-windbg-preview.md)を参照してください。
 
 
 ## <a name="trace-file-basics"></a>トレース ファイルの基本 
@@ -77,7 +77,7 @@ Successfully created the index in 10ms.
 C:\Users\User1\Documents
 ```
 
-トレース ファイルを操作する方法の詳細については、次を参照してください。[タイム トラベルのデバッグ - トレース ファイルの操作](time-travel-debugging-trace-file-information.md)します。
+トレース ファイルを操作する方法の詳細については、[タイム トラベルのデバッグ - トレース ファイルの操作](time-travel-debugging-trace-file-information.md)を参照してください。
 
 ## <a name="getting-started-with-ttd"></a>TTD の概要
 
@@ -101,7 +101,7 @@ C:\Users\User1\Documents
 
 TTD を記録するプロセスにフックする方法のための非互換性が発生する可能性があります。 通常、ウイルス対策ソフトウェアまたはその他のシステム ソフトウェアを追跡し、システム メモリの呼び出しをシャドウしようとすると問題が生じます。 記録の問題に遭遇した場合、十分なアクセス許可メッセージしようとするなど、ウイルス対策ソフトウェアを一時的に無効にします。  
 
-他のユーティリティのメモリ アクセスをブロックしようとしています。、問題があることができますなど、Microsoft Enhanced 軽減策エクスペリエンス ツールキット。 EMET の詳細については、次を参照してください。 [、強化された軽減策エクスペリエンス Toolkit](https://support.microsoft.com/help/2458544/the-enhanced-mitigation-experience-toolkit)します。
+他のユーティリティのメモリ アクセスをブロックしようとしています。、問題があることができますなど、Microsoft Enhanced 軽減策エクスペリエンス ツールキット。 EMET の詳細については、[、強化された軽減策エクスペリエンス Toolkit](https://support.microsoft.com/help/2458544/the-enhanced-mitigation-experience-toolkit)を参照してください。
 
 TTD と競合している環境の別の例は、電子アプリケーション フレームワークになります。 ここでは、トレースを記録可能性がありますが、デッドロックや記録されているプロセスのクラッシュも可能です。
 
@@ -119,7 +119,7 @@ TTD と競合している環境の別の例は、電子アプリケーション 
 
 ### <a name="trace-file-errors"></a>トレース ファイルのエラー
 
-トレース ファイルのエラーが発生することがいくつかのケースがあります。 詳細については、次を参照してください。[デバッグ - トラブルシューティング、タイム トラベル](time-travel-debugging-troubleshooting.md)します。
+トレース ファイルのエラーが発生することがいくつかのケースがあります。 詳細については、[デバッグ - トラブルシューティング、タイム トラベル](time-travel-debugging-troubleshooting.md)を参照してください。
 
 
 ## <a name="advanced-features-of-time-travel-debugging"></a>デバッグ時の高度な機能の移動
@@ -130,13 +130,13 @@ TTD と競合している環境の別の例は、電子アプリケーション 
 
 - **データ モデルのサポートで構築された**-TTD にはデータ モデルのサポートが含まれています。 LINQ クエリを使用して、アプリケーションのエラーを分析すると、強力なツールを指定できます。 WinDbg のプレビューで、データ モデルのウィンドウを使用すると、NatVis、JavaScript、および LINQ クエリを使用してテーブルを作成することができます 'dx' と 'dx-g' の展開で参照可能なバージョンでは機能します。 
 
-デバッガーのデータ モデルについては、次を参照してください。 [WinDbg Preview - データ モデル](windbg-data-model-preview.md)します。 TTD デバッガー オブジェクト モデルを操作する方法については、次を参照してください。[タイム トラベルのデバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)します。
+デバッガーのデータ モデルについては、[WinDbg Preview - データ モデル](windbg-data-model-preview.md)を参照してください。 TTD デバッガー オブジェクト モデルを操作する方法については、[タイム トラベルのデバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)を参照してください。
 
 ### <a name="scripting-support"></a>スクリプトのサポート  
 
-- **Automation スクリプト**-問題の調査の自動化スクリプトの NatVis、JavaScript をサポートできます。 詳細については、次を参照してください。[タイム トラベルのデバッグ - JavaScript Automation](time-travel-debugging-javascript-automation.md)します。
+- **Automation スクリプト**-問題の調査の自動化スクリプトの NatVis、JavaScript をサポートできます。 詳細については、[タイム トラベルのデバッグ - JavaScript Automation](time-travel-debugging-javascript-automation.md)を参照してください。
 
-JavaScript および NatVis の使用に関する概要については、次を参照してください。 [WinDbg Preview - Scripting](windbg-scripting-preview.md)します。
+JavaScript および NatVis の使用に関する概要については、[WinDbg Preview - Scripting](windbg-scripting-preview.md)を参照してください。
 
 
 ## <a name="span-idprovidingfeedbackspanproviding-feedback"></a><span id="providingfeedback"></span>フィードバックの送信

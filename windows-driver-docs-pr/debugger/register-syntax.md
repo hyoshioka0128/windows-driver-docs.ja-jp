@@ -37,17 +37,17 @@ C++ の式の構文を使用している場合、アット マークは必須で
 0:000> r eax = @ebx
 ```
 
-レジスタと各プロセッサに固有の手順の詳細については、次を参照してください。[プロセッサ アーキテクチャ](processor-architecture.md)します。
+レジスタと各プロセッサに固有の手順の詳細については、[プロセッサ アーキテクチャ](processor-architecture.md)を参照してください。
 
 ### <a name="span-idflagsonanx86basedprocessorspanspan-idflagsonanx86basedprocessorspanflags-on-an-x86-based-processor"></a><span id="flags_on_an_x86_based_processor"></span><span id="FLAGS_ON_AN_X86_BASED_PROCESSOR"></span>X86 ベースのプロセッサのフラグ
 
-x86 ベースのプロセッサが使用してもいくつかの 1 ビット レジスタと呼ばれる*フラグ*します。 これらのフラグとを表示または変更に使用できる構文の詳細については、次を参照してください。 [x86 フラグ](x86-architecture.md#x86-flags)します。
+x86 ベースのプロセッサが使用してもいくつかの 1 ビット レジスタと呼ばれる*フラグ*します。 これらのフラグとを表示または変更に使用できる構文の詳細については、[x86 フラグ](x86-architecture.md#x86-flags)を参照してください。
 
 ### <a name="span-idregistersandthreadsspanspan-idregistersandthreadsspanregisters-and-threads"></a><span id="registers_and_threads"></span><span id="REGISTERS_AND_THREADS"></span>レジスタとスレッド
 
 各スレッドは、独自のレジスタの値を持っています。 これらの値は、別のスレッドを実行するときにメモリ内と、スレッドを実行するときに、CPU レジスタに格納されます。
 
-ユーザー モードでは、レジスタへの参照は、現在のスレッドに関連付けられている登録として解釈されます。 現在のスレッドの詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+ユーザー モードでは、レジスタへの参照は、現在のスレッドに関連付けられている登録として解釈されます。 現在のスレッドの詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
 カーネル モードでは、レジスタへの参照が現在のレジスタのコンテキストに関連付けられている登録として解釈されます。 特定のスレッド、コンテキストのレコードを一致するように登録するコンテキストを設定したり、フレームをトラップします。 指定したコンテキストを登録すると、その値を変更することはできません、最も重要なレジスタのみを表示できます。
 

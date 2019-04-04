@@ -34,7 +34,7 @@ GDL パーサーのインターフェイスは、ルート GDL ファイル事�
 
  
 
-論理演算子は GDL プリプロセッサ ディレクティブではサポートされていません。 このような状況を解決する方法については、次を参照してください。 [GDL プリプロセスでの論理演算子を含む問題](problems-with-logical-operators-in-gdl-preprocessing.md)します。
+論理演算子は GDL プリプロセッサ ディレクティブではサポートされていません。 このような状況を解決する方法については、[GDL プリプロセスでの論理演算子を含む問題](problems-with-logical-operators-in-gdl-preprocessing.md)を参照してください。
 
  
 

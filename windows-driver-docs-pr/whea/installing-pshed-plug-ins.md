@@ -18,7 +18,7 @@ ms.locfileid: "56551575"
 # <a name="installing-pshed-plug-ins"></a>PSHED プラグインをインストールします。
 
 
-その他の任意の Windows のような PSHED のプラグインがインストールされている[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)します。 ドライバー パッケージをインストールする方法の詳細については、次を参照してください。[デバイスのインストール](https://msdn.microsoft.com/library/windows/hardware/ff541156)します。
+その他の任意の Windows のような PSHED のプラグインがインストールされている[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)します。 ドライバー パッケージをインストールする方法の詳細については、[デバイスのインストール](https://msdn.microsoft.com/library/windows/hardware/ff541156)を参照してください。
 
  
 

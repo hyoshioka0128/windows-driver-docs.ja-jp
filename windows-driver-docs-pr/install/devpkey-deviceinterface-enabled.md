@@ -62,7 +62,7 @@ DEVPKEY_DeviceInterface_Enabled の値が DEVPROP_TRUE の場合は、インタ�
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_Enabled プロパティのキーをサポートしていません。 以前のバージョンの Windows 上のデバイス インターフェイスのアクティビティの状態を取得する方法については、使用する方法に関する情報を参照してください[ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)つまり。提供される[デバイス インターフェイスのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537740)します。
 
-デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+デバイス インターフェイスの詳細については、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -56,7 +56,7 @@ SerCx2 がコント ローラーのシリアル ドライバーを呼び出す�
 
 ドライバーが実装されている場合、 [ *EvtSerCx2SystemDmaTransmitCleanupTransaction* ](https://msdn.microsoft.com/library/windows/hardware/dn265234)イベント コールバック関数では、SerCx2 が最終的な DMA 転送の終了後にハードウェアの状態をクリーンアップするには、この関数を呼び出すトランザクション。 実装されている場合、 *EvtSerCx2SystemDmaTransmitInitializeTransaction*関数を呼び出す必要があります、 [ **SerCx2SystemDmaTransmitCleanupTransactionComplete** ](https://msdn.microsoft.com/library/windows/hardware/dn265286)メソッドドライバーでは、シリアル コント ローラーのクリーンアップが完了すると、SerCx2 を通知します。
 
-システムの DMA コント ローラー システム DMA 送信トランザクションの開始時の特別な構成を行う必要があるシリアル コント ローラー ドライバーが実装する必要があります、 [ *EvtSerCx2SystemDmaTransmitConfigureDmaChannel*](https://msdn.microsoft.com/library/windows/hardware/dn265235)イベント コールバック関数。 この関数を呼び出すことができます、 [ **SerCx2SystemDmaTransmitGetDmaEnabler** ](https://msdn.microsoft.com/library/windows/hardware/dn265305)トランザクションに使用されるシステム DMA アダプターの DMA イネーブラーを取得します。 SerCx2 は、トランザクションの最初の DMA 転送を開始する前に、この関数を呼び出します。 DMA イネーブラーに関する詳細については、次を参照してください。 [DMA のトランザクションを有効にする](https://msdn.microsoft.com/library/windows/hardware/ff540818)します。
+システムの DMA コント ローラー システム DMA 送信トランザクションの開始時の特別な構成を行う必要があるシリアル コント ローラー ドライバーが実装する必要があります、 [ *EvtSerCx2SystemDmaTransmitConfigureDmaChannel*](https://msdn.microsoft.com/library/windows/hardware/dn265235)イベント コールバック関数。 この関数を呼び出すことができます、 [ **SerCx2SystemDmaTransmitGetDmaEnabler** ](https://msdn.microsoft.com/library/windows/hardware/dn265305)トランザクションに使用されるシステム DMA アダプターの DMA イネーブラーを取得します。 SerCx2 は、トランザクションの最初の DMA 転送を開始する前に、この関数を呼び出します。 DMA イネーブラーに関する詳細については、[DMA のトランザクションを有効にする](https://msdn.microsoft.com/library/windows/hardware/ff540818)を参照してください。
 
 ## <a name="draining-and-purging-the-transmit-fifo"></a>ドレインと送信の FIFO の削除
 

@@ -16,7 +16,7 @@ ms.locfileid: "56530666"
 
 SIM の暗証番号 (pin) API を使用すると、モバイル ブロード バンド アプリは、SIM PIN や Pin ロック解除キー (PUK) に関連する操作をサポートできます。
 
-SIM の暗証番号 (pin) API の詳細については、次を参照してください。[モバイル ブロード バンド API インターフェイス](https://msdn.microsoft.com/library/windows/desktop/dd323268)します。
+SIM の暗証番号 (pin) API の詳細については、[モバイル ブロード バンド API インターフェイス](https://msdn.microsoft.com/library/windows/desktop/dd323268)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

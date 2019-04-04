@@ -44,7 +44,7 @@ DEVMODEW 構造体のメンバーが設定された後は、Win32 への呼び�
 
 に関する詳細については、Microsoft Windows SDK ドキュメントを参照してください、 **ChangeDisplaySettings**と**ChangeDisplaySettingsEx**関数、および変更デスクトップの通知を表示します。
 
-**注**  以降 Windows 8 では、ミラー ドライバーがインストールされないシステムにします。 詳細については、次を参照してください。[ミラー ドライバー](mirror-drivers.md)します。
+**注**  以降 Windows 8 では、ミラー ドライバーがインストールされないシステムにします。 詳細については、[ミラー ドライバー](mirror-drivers.md)を参照してください。
 
  
 

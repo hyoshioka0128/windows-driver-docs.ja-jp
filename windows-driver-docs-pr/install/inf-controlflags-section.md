@@ -127,7 +127,7 @@ INF ライターを使用する必要があります、 **InteractiveInstall**�
 
  
 
-PnP デバイスを排他的にインストールする INF ファイルを持つことができます、 **ControlFlags**セクションが設定されていない限り、 **NoInstallClass** 、それぞれのエントリの値*SetupClassGUID*レジストリ キーを押して**TRUE**します。 これらのレジストリ キーの詳細については、次を参照してください。 [ **INF ClassInstall32 セクション**](inf-classinstall32-section.md)します。
+PnP デバイスを排他的にインストールする INF ファイルを持つことができます、 **ControlFlags**セクションが設定されていない限り、 **NoInstallClass** 、それぞれのエントリの値*SetupClassGUID*レジストリ キーを押して**TRUE**します。 これらのレジストリ キーの詳細については、[ **INF ClassInstall32 セクション**](inf-classinstall32-section.md)を参照してください。
 
 <a name="examples"></a>例
 --------

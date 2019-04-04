@@ -29,9 +29,9 @@ KDEXT を定義する必要があります wdbgexts.h から関数を使用す�
 #include dbgeng.h 
 ```
 
-拡張機能コマンドで使用できる dbgeng.h でインターフェイスの一覧については、次を参照してください。[デバッガー エンジンのリファレンス](https://msdn.microsoft.com/library/windows/hardware/ff540540)します。
+拡張機能コマンドで使用できる dbgeng.h でインターフェイスの一覧については、[デバッガー エンジンのリファレンス](https://msdn.microsoft.com/library/windows/hardware/ff540540)を参照してください。
 
-拡張機能コマンドで使用できる wdbgexts.h 内の関数の一覧については、次を参照してください。 [WdbgExts 関数](https://msdn.microsoft.com/library/windows/hardware/ff561258)します。 32 ビット版と 64 ビット バージョンにこれらの関数の数が表示されます。 通常、「64」32 ビット バージョンで 64 ビット版の終了があるない数値終了--など**ReadIoSpace64**と**ReadIoSpace**します。 DbgEng 拡張機能から wdbgexts.h 関数を呼び出すときに、常に関数名の拡張子が「64」を使用する必要があります。 これは、ため、[デバッガー エンジン](introduction.md#debugger-engine)64 ビットのポインターは、ターゲット プラットフォームに関係なく内部的には、常に使用します。
+拡張機能コマンドで使用できる wdbgexts.h 内の関数の一覧については、[WdbgExts 関数](https://msdn.microsoft.com/library/windows/hardware/ff561258)を参照してください。 32 ビット版と 64 ビット バージョンにこれらの関数の数が表示されます。 通常、「64」32 ビット バージョンで 64 ビット版の終了があるない数値終了--など**ReadIoSpace64**と**ReadIoSpace**します。 DbgEng 拡張機能から wdbgexts.h 関数を呼び出すときに、常に関数名の拡張子が「64」を使用する必要があります。 これは、ため、[デバッガー エンジン](introduction.md#debugger-engine)64 ビットのポインターは、ターゲット プラットフォームに関係なく内部的には、常に使用します。
 
 呼び出す必要があります wdbgexts.h を DbgEng 拡張機能に含める場合[ **GetWindbgExtensionApis64** ](https://msdn.microsoft.com/library/windows/hardware/ff549510)拡張 DLL の初期化中に (を参照してください[ *DebugExtensionInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff540476))。
 

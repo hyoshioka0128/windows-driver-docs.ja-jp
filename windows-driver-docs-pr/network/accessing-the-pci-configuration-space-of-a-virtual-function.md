@@ -22,9 +22,9 @@ ms.locfileid: "56538341"
 
 [仮想関数の PCI 構成データの設定](allocating-resources-for-a-virtual-function.md)
 
-SR-IOV 対応ネットワーク アダプターの VFs の詳細については、次を参照してください。 [SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)します。
+SR-IOV 対応ネットワーク アダプターの VFs の詳細については、[SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)を参照してください。
 
-**注**  だけで、PF ミニポート ドライバーは VF の PCI 構成領域を構成できます。 VF のミニポート ドライバーは、ほとんどの構成領域の PCI などの SR-IOV 対応のアダプターのハードウェア リソースに直接アクセスできません。 詳細については、次を参照してください。[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)します。
+**注**  だけで、PF ミニポート ドライバーは VF の PCI 構成領域を構成できます。 VF のミニポート ドライバーは、ほとんどの構成領域の PCI などの SR-IOV 対応のアダプターのハードウェア リソースに直接アクセスできません。 詳細については、[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)を参照してください。
 
  
 

@@ -32,7 +32,7 @@ ms.locfileid: "56535395"
 -   実行[Driver Verifier](driver-verifier.md)コンピューターをテストするために予約されています。
 -   テスト コンピューターでのカーネル デバッグを有効にします。
 
-詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)と[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](https://msdn.microsoft.com/library/windows/hardware/hh450984)します。
+詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)と[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](https://msdn.microsoft.com/library/windows/hardware/hh450984)を参照してください。
 
  
 

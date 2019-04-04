@@ -20,7 +20,7 @@ ms.locfileid: "56537475"
 
  
 
-**注**  、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*拡張可能スイッチ ドライバー スタック*. 拡張機能に関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)します。
+**注**  、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*拡張可能スイッチ ドライバー スタック*. 拡張機能に関する詳細については、[Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)を参照してください。
 
  
 
@@ -32,7 +32,7 @@ ms.locfileid: "56537475"
 
     転送コンテキストは、パケットの帯域外の (OOB) データに存在します。 その発信元ポートと 1 つまたは複数の宛先ポートの配列など、パケットの転送情報が含まれています。
 
-    転送コンテキストに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
+    転送コンテキストに関する詳細については、[Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)を参照してください。
 
 -   拡張機能の呼び出し後[ *AllocateNetBufferListForwardingContext*](https://msdn.microsoft.com/library/windows/hardware/hh598134)、パケットの発信元ポートに設定する**NDIS\_スイッチ\_既定\_ポート\_ID**します。 パケットの送信元ポートの識別子を**NDIS\_切り替える\_既定\_ポート\_ID**が信頼されており、アクセス制御リスト (Acl など、拡張可能スイッチ ポートのポリシーをバイパスします。) とサービスの品質 (QoS)。
 
@@ -40,7 +40,7 @@ ms.locfileid: "56537475"
 
     ただし、ある可能性があります、拡張機能にパケットの送信元ポートの識別子を割り当てる必要のある状況**NDIS\_スイッチ\_既定\_ポート\_ID**します。 など、拡張機能に設定するソース ポート識別子**NDIS\_スイッチ\_既定\_ポート\_ID**でデバイスに送信されるパケットの独自のコントロール、外部ネットワークです。
 
--   転送拡張機能がイングレス データ パスが新しいパケットを送信する場合、パケットの宛先ポートそれを判断する必要があります。 この手順の詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
+-   転送拡張機能がイングレス データ パスが新しいパケットを送信する場合、パケットの宛先ポートそれを判断する必要があります。 この手順の詳細については、[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)を参照してください。
 
     **注**  キャプチャまたは拡張機能をフィルター処理は、新しいパケットを新しい変換先のポートを追加できません。
 
@@ -54,7 +54,7 @@ ms.locfileid: "56537475"
 
 -   NDIS が、拡張機能を呼び出すときに[ *FilterSendNetBufferListsComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff549967)新しいパケットの送信要求を完了する関数を拡張機能を呼び出す必要があります[ *FreeNetBufferListForwardingContext* ](https://msdn.microsoft.com/library/windows/hardware/hh598153)を割り当てられた転送のコンテキストを解放します。 拡張機能を解放または再利用する前にこれにする必要があります、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568389)パケットの構造体。
 
-拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
+拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
 
  
 

@@ -58,9 +58,9 @@ ms.locfileid: "56535448"
 ! Powertriage 拡張機能には、次の情報が表示されます。
 
 1. 電源の状態と共に、[デバイス] ノードの! podev デバイスのすべてのオブジェクト。
-2. リンク[ **! rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)ドライバーが、IFR を有効にした場合。 IFR の詳細については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。
+2. リンク[ **! rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)ドライバーが、IFR を有効にした場合。 IFR の詳細については、[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)を参照してください。
 3. リンク[ **! wdfkd.wdfdriverinfo** ](-wdfkd-wdfdriverinfo.md)と[ **! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md) WDF ドライバー。
-4. リンクします。 fxdevice PoFx デバイス。 PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
+4. リンクします。 fxdevice PoFx デバイス。 PoFX の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
 出力例を次に示します、! powertriage コマンド。
 
 ```dbgcmd

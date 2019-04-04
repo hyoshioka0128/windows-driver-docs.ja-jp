@@ -19,9 +19,9 @@ ms.locfileid: "56528016"
 
 
 
-含めることは珍しくはありませんが、具体的には、OutputBin 機能に関連付けられている属性がない、\*OutputOrderReversed でしょうか。 特定の出力ビンのエントリ。 OutputBin 機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
+含めることは珍しくはありませんが、具体的には、OutputBin 機能に関連付けられている属性がない、\*OutputOrderReversed でしょうか。 特定の出力ビンのエントリ。 OutputBin 機能の詳細については、[標準機能](standard-features.md)を参照してください。
 
-追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
+追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
 
  
 

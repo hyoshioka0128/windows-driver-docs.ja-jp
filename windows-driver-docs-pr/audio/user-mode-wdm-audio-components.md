@@ -50,7 +50,7 @@ WinMM システム コンポーネント (Winmm.dll と 16 ビットの対応す
 
 ### <a name="span-iddirectsoundsystemcomponentspanspan-iddirectsoundsystemcomponentspandirectsound-system-component"></a><span id="directsound_system_component"></span><span id="DIRECTSOUND_SYSTEM_COMPONENT"></span>DirectSound システム コンポーネント
 
-DirectSound システム コンポーネント (Dsound.dll) サポート、DirectSound API (Microsoft Windows SDK のドキュメントを参照してください)。 DirectSound コンポーネントは、SysAudio ドライバーのクライアントです。 ハードウェアの混在が使用可能な場合は、SysAudio ドライバーは、レンダリング デバイスに直接 DirectSound ハードウェア バッファーを接続します。 それ以外の場合、SysAudio ドライバーは DirectSound ソフトウェア バッファーを KMixer システムのドライバーに接続します。 詳細については、次を参照してください。[レンダリング Wave コンテンツを使用して DirectSound ソフトウェアおよびハードウェア バッファー](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)します。
+DirectSound システム コンポーネント (Dsound.dll) サポート、DirectSound API (Microsoft Windows SDK のドキュメントを参照してください)。 DirectSound コンポーネントは、SysAudio ドライバーのクライアントです。 ハードウェアの混在が使用可能な場合は、SysAudio ドライバーは、レンダリング デバイスに直接 DirectSound ハードウェア バッファーを接続します。 それ以外の場合、SysAudio ドライバーは DirectSound ソフトウェア バッファーを KMixer システムのドライバーに接続します。 詳細については、[レンダリング Wave コンテンツを使用して DirectSound ソフトウェアおよびハードウェア バッファー](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)を参照してください。
 
 ### <a name="span-iddirectmusicsystemcomponentspanspan-iddirectmusicsystemcomponentspandirectmusic-system-component"></a><span id="directmusic_system_component"></span><span id="DIRECTMUSIC_SYSTEM_COMPONENT"></span>DirectMusic システム コンポーネント
 

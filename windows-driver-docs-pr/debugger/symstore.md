@@ -21,7 +21,7 @@ ms.locfileid: "56535517"
 ## <span id="ddk_using_symstore_dbg"></span><span id="DDK_USING_SYMSTORE_DBG"></span>
 
 
-SymStore (symstore.exe) は、シンボル ストアを作成するためのツールです。 これは、デバッグ ツールの Windows に含まれます。 詳細については、次を参照してください。[デバッグ ツールの Windows にダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)します。
+SymStore (symstore.exe) は、シンボル ストアを作成するためのツールです。 これは、デバッグ ツールの Windows に含まれます。 詳細については、[デバッグ ツールの Windows にダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)を参照してください。
 
 SymStore シンボル (.dbg または実行可能ファイル)、用のイメージまたは署名と有効期間 (.pdb ファイル) 用のサイズとタイムスタンプに基づくようにデバッガーにできるようにする形式でシンボルを格納します。 従来のシンボルのストレージ形式をシンボル ストアの利点は、すべてのシンボルの保存または同じサーバーで参照されているおよび事前知識がなくても、デバッガーによって取得されたをできることの製品、対応するシンボルが含まれています。
 

@@ -19,9 +19,9 @@ ms.locfileid: "56528869"
 
 [サメ Cove 開発ボード](https://go.microsoft.com/fwlink/p?linkid=403168)USB ケーブルを介してシリアル デバッグをサポートしています。
 
-カーネル モード デバッグの Microsoft Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=301383)します。
+カーネル モード デバッグの Microsoft Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
 
-Visual Studio を使用して、USB ケーブルを介してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動で USB シリアルを使用して](setting-up-kernel-mode-debugging-using-serial-over-usb-manually-.md)します。
+Visual Studio を使用して、USB ケーブルを介してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、[カーネル モード デバッグのセットアップを手動で USB シリアルを使用して](setting-up-kernel-mode-debugging-using-serial-over-usb-manually-.md)を参照してください。
 
 デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。 このトピックでは、サメ Cove ボードは、ターゲット コンピューターです。
 

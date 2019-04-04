@@ -49,7 +49,7 @@ CODECAPI\_変更リスト イベントは、プロパティの結果として変
 
  
 
-DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
+DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
 
 ドライバーの使用、AVStream [ **KsGenerateEvents** ](https://msdn.microsoft.com/library/windows/hardware/ff562597)変更 Guid のリストを投稿します。
 

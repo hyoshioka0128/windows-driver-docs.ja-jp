@@ -18,7 +18,7 @@ ms.locfileid: "56535847"
 
  
 
-**注**   Windows 10 での Bluetooth のサポートについては、次を参照してください。 [Windows 10 での Bluetooth サポート](general-bluetooth-support-in-windows.md)します。
+**注**   Windows 10 での Bluetooth のサポートについては、[Windows 10 での Bluetooth サポート](general-bluetooth-support-in-windows.md)を参照してください。
 
  
 
@@ -417,19 +417,19 @@ Windows 8.1 にアクセスするための新しい Windows ランタイム Api 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows8spanspan-idwhatprogramminginterfaceswereintroducedinwindows8spanspan-idwhatprogramminginterfaceswereintroducedinwindows8spanwhat-programming-interfaces-were-introduced-in-windows8"></a><span id="What_programming_interfaces_were_introduced_in_Windows_8_"></span><span id="what_programming_interfaces_were_introduced_in_windows_8_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_8_"></span>どのようなプログラミング インターフェイスは、Windows 8 で導入されたでしょうか。
 
 
-Windows 8 には、拡張可能なトランスポートのモデルを使用して USB 以外の Bluetooth コント ローラーのバス ドライバーの作成、Bluetooth 低エネルギーを使用して Bluetooth Smart 周辺機器にアクセスするための新しい Api が導入されていて、強化された L2CAP チャネルを作成します。 これらの Api の詳細については、次を参照してください。 [Bluetooth デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536585)します。
+Windows 8 には、拡張可能なトランスポートのモデルを使用して USB 以外の Bluetooth コント ローラーのバス ドライバーの作成、Bluetooth 低エネルギーを使用して Bluetooth Smart 周辺機器にアクセスするための新しい Api が導入されていて、強化された L2CAP チャネルを作成します。 これらの Api の詳細については、[Bluetooth デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536585)を参照してください。
 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows7spanspan-idwhatprogramminginterfaceswereintroducedinwindows7spanspan-idwhatprogramminginterfaceswereintroducedinwindows7spanwhat-programming-interfaces-were-introduced-in-windows7"></a><span id="What_programming_interfaces_were_introduced_in_Windows_7_"></span><span id="what_programming_interfaces_were_introduced_in_windows_7_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_7_"></span>どのようなプログラミング インターフェイスは、Windows 7 で導入されたでしょうか。
 
 
-Windows 7 が Ex バージョンの以前の Api 拡張機能を提供する新しい導入されました。 たとえば、BluetoothAuthenticateDeviceEx 関数では、帯域外のデータが認証されるデバイスの関数呼び出しに渡されることができます。 同様に、 [ **BluetoothRegisterForAuthenticationEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766820)関数には、pin の要求と数値比較の機能が含まれています。 また、 [ **BluetoothSendAuthenticationResponseEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766821)数値比較の応答を送信する認証要求を受信したときに呼び出されます。 新しいバージョンをこれらの Api の例の詳細については、次を参照してください。[の Bluetooth 機能](https://msdn.microsoft.com/library/windows/desktop/aa362927)します。
+Windows 7 が Ex バージョンの以前の Api 拡張機能を提供する新しい導入されました。 たとえば、BluetoothAuthenticateDeviceEx 関数では、帯域外のデータが認証されるデバイスの関数呼び出しに渡されることができます。 同様に、 [ **BluetoothRegisterForAuthenticationEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766820)関数には、pin の要求と数値比較の機能が含まれています。 また、 [ **BluetoothSendAuthenticationResponseEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766821)数値比較の応答を送信する認証要求を受信したときに呼び出されます。 新しいバージョンをこれらの Api の例の詳細については、[の Bluetooth 機能](https://msdn.microsoft.com/library/windows/desktop/aa362927)を参照してください。
 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanspan-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanspan-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanwhat-programming-interfaces-were-introduced-in-windowsvista"></a><span id="What_programming_interfaces_were_introduced_in_Windows_Vista_"></span><span id="what_programming_interfaces_were_introduced_in_windows_vista_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_VISTA_"></span>どのようなプログラミング インターフェイスは、Windows Vista で導入されたでしょうか。
 
 
 Windows Vista では、カーネル モード DDI SCO、SDP、および L2CAP へのアクセスを提供する Bluetooth ワイヤレス テクノロジが導入されました。 DDI では、Windows Driver Kit (WDK) が、WDK のビルドで、Windows Vista 以降のすべてとにリリースされたビルド 6000、含まれています。 予定のない以前のバージョンの Windows のカーネル モード DDI を使用できるようにします。 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613) Bluetooth のカーネル モード ドライバーが標準のドライバーの開発プラクティスに従っている DDI を正しく使用することを確認するために使用できます。
 
-Windows Vista SP2、Windows 7 では、ユーザー モード RFComm と Bluetooth Api もサポートします。 詳細については、次を参照してください。、 [Bluetooth 設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/)します。 WDK には、新しいカーネル モード DDI のドキュメントが含まれています。 WDK をダウンロードする方法の詳細については、次を参照してください。 [WDK のその他のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/other-wdk-downloads)HCK には、Driver Test Manager (DTM) のドキュメントが含まれています。 HCK をダウンロードする方法の詳細については、次を参照してください。、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)ドキュメント。
+Windows Vista SP2、Windows 7 では、ユーザー モード RFComm と Bluetooth Api もサポートします。 詳細については、、 [Bluetooth 設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/)を参照してください。 WDK には、新しいカーネル モード DDI のドキュメントが含まれています。 WDK をダウンロードする方法の詳細については、次を参照してください。 [WDK のその他のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/other-wdk-downloads)HCK には、Driver Test Manager (DTM) のドキュメントが含まれています。 HCK をダウンロードする方法の詳細については、次を参照してください。、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)ドキュメント。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

@@ -36,9 +36,9 @@ ms.locfileid: "56531318"
 
 -   そのメモリの読み取りまたは書き込みをするときにトリガーされる、非実行可能ファイルのメモリ内の指定されたアドレスをご覧ください。
 
-詳細設定をブレークポイントを制御する方法については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
+詳細設定をブレークポイントを制御する方法については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
-指定した状態に達するまでを実行するより複雑な方法は、使用する、*条件付きブレークポイント*します。 この種のブレークポイントは、特定のアドレスに設定されていますが、指定した条件が保持している場合にのみトリガーされます。 詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
+指定した状態に達するまでを実行するより複雑な方法は、使用する、*条件付きブレークポイント*します。 この種のブレークポイントは、特定のアドレスに設定されていますが、指定した条件が保持している場合にのみトリガーされます。 詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
 
 ### <a name="span-idbreakpointsandpseudoregistersspanspan-idbreakpointsandpseudoregistersspanbreakpoints-and-pseudo-registers"></a><span id="breakpoints_and_pseudo_registers"></span><span id="BREAKPOINTS_AND_PSEUDO_REGISTERS"></span>ブレークポイントと擬似レジスタ
 
@@ -52,7 +52,7 @@ kd> bp /t @$thread nt!ntopenfile
 
 他のスレッドを呼び出すと、このブレークポイントはトリガーされません**NtOpenFile**します。
 
-自動の擬似レジスタの一覧は、次を参照してください。[擬似レジスタ構文](pseudo-register-syntax.md)します。
+自動の擬似レジスタの一覧は、[擬似レジスタ構文](pseudo-register-syntax.md)を参照してください。
 
 ### <a name="span-idusingascriptfiletocontrolexecutionspanspan-idusingascriptfiletocontrolexecutionspanusing-a-script-file-to-control-execution"></a><span id="using_a_script_file_to_control_execution"></span><span id="USING_A_SCRIPT_FILE_TO_CONTROL_EXECUTION"></span>スクリプト ファイルを使用して、実行を制御するには
 

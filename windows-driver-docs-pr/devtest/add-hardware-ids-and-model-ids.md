@@ -40,7 +40,7 @@ ms.locfileid: "56530817"
 3.  表示されるボックスで、モデル ID の GUID 値を入力します。
 4.  **[OK]** をクリックします。
 
-各デバイスのスタイルのハードウェア ID の詳細については、次を参照してください。、[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)します。
+各デバイスのスタイルのハードウェア ID の詳細については、、[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)を参照してください。
 
  
 

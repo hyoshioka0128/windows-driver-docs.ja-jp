@@ -23,7 +23,7 @@ ms.locfileid: "56550598"
 # <a name="bug-check-0xc4-driververifierdetectedviolation"></a>バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反
 
 
-ドライバー\_VERIFIER\_検出\_違反のバグ チェックが 0x000000C4 の値を持ちます。 これは、Driver Verifier で見つかった致命的なエラーの一般的なバグ チェック コードです。 詳細については、次を参照してください。[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](handling-a-bug-check-when-driver-verifier-is-enabled.md)します。
+ドライバー\_VERIFIER\_検出\_違反のバグ チェックが 0x000000C4 の値を持ちます。 これは、Driver Verifier で見つかった致命的なエラーの一般的なバグ チェック コードです。 詳細については、[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](handling-a-bug-check-when-driver-verifier-is-enabled.md)を参照してください。
 
 **重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
 

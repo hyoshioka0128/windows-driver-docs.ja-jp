@@ -40,7 +40,7 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VPORT\_�
 
 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。 この構造体には、指定されたスイッチの構成パラメーターが含まれています。
 
-詳細については、次を参照してください。[仮想ポートのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440181)します。
+詳細については、[仮想ポートのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440181)を参照してください。
 
 ### <a href="" id="oid-set-requests"></a>OID の要求を設定する処理 OID\_NIC\_スイッチ\_VPORT\_パラメーター
 
@@ -56,7 +56,7 @@ VPort の構成パラメーターの一部のサブセットのみを変更す�
 
 OID の OID セット要求を受信するミニポート ドライバー、PF 後\_NIC\_スイッチ\_VPORT\_パラメーター、ドライバーで、構成パラメーターを使用してハードウェアが構成されます。 ドライバーでは、NDIS で識別されるこれらの構成パラメーターを変更できるだけ\_NIC\_スイッチ\_VPORT\_パラメーター\_*Xxx*\_CHANGEDフラグ、**フラグ**のメンバー、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。
 
-詳細については、次を参照してください。[仮想ポートのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440228)します。
+詳細については、[仮想ポートのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440228)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

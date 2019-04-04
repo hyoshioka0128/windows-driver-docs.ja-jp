@@ -55,7 +55,7 @@ void SM_RemovePersistentBinding(
 一連の MS\_SMHBA\_BINDINGENTRY 型永続的なバインディング。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、GetPersistentBinding の HBAStatus メンバー\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、GetPersistentBinding の HBAStatus メンバー\_構造体。
 
 <a name="return-value"></a>戻り値
 ------------

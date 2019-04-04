@@ -41,7 +41,7 @@ ms.locfileid: "56527607"
 
 [プロファイルとコンテキスト データにアクセスします。](accessing-profile-and-context-data.md)
 
-ネイティブの 802.11 IHV 拡張 DLL の詳細については、次を参照してください。 [802.11 IHV 拡張機能のネイティブの DLL](native-802-11-ihv-extensions-dll4.md)します。
+ネイティブの 802.11 IHV 拡張 DLL の詳細については、[802.11 IHV 拡張機能のネイティブの DLL](native-802-11-ihv-extensions-dll4.md)を参照してください。
 
  
 

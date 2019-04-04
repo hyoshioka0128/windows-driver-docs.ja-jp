@@ -33,7 +33,7 @@ ms.locfileid: "56536539"
 
 2.  要求された I/O 操作に対して、ハードウェアをプログラムします。
 
-    デバイスまたはコント ローラーの拡張機能は、ISR からアクセスできる場合、 *ControllerControl*ルーチンを使用する必要があります、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)呼び出すことによって呼び出されるルーチン[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)します。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+    デバイスまたはコント ローラーの拡張機能は、ISR からアクセスできる場合、 *ControllerControl*ルーチンを使用する必要があります、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)呼び出すことによって呼び出されるルーチン[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)します。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
 
 ドライバーがある場合、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)ルーチンでは、その*ControllerControl*ルーチンも確認する必要があります、 **Irp -&gt;キャンセル**フィールド現在の IRP が取り消す必要があるし、次のいずれかの操作を行うかどうかを判断するには。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56536539"
 
 2.  プログラムで、要求された I/O 操作のハードウェアを使用して、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンの呼び出しによって呼び出される[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302). 詳細については、次を参照してください[クリティカル セクションを使用する。](using-critical-sections.md)
 
-キャンセル可能な Irp の処理の詳細については、次を参照してください。[キャンセル Irp](canceling-irps.md)します。
+キャンセル可能な Irp の処理の詳細については、[キャンセル Irp](canceling-irps.md)を参照してください。
 
 オーバー ラップ処理を物理コント ローラー/アダプターにアタッチされているさまざまなデバイスでの I/O 操作を除く最も割り込み駆動、 *ControllerControl*ルーチンを返す必要があります**KeepObject**[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)または[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)ルーチンでは、操作と IRP が完了するとします。
 

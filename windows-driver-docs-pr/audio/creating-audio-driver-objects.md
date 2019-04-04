@@ -65,7 +65,7 @@ NTSTATUS NewMyObject(
 
 NewMyObject 関数は、作成しオブジェクトを初期化しにインターフェイス ポインターを渡します。 新規のプロトタイプは、初期化パラメーターは、クラスに固有であるため*Xxx*関数。 新しい*Xxx*関数オブジェクトのコンス トラクターに簡単にアクセスを提供します。
 
-新規の例については*Xxx*関数のこの種類は、次を参照してください。 [ **PcNewDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff537712)します。
+新規の例については*Xxx*関数のこの種類は、[ **PcNewDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff537712)を参照してください。
 
  
 

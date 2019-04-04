@@ -39,7 +39,7 @@ A *BuildRequest*ルーチンが、SRB のペアを設定する責任を共有*Se
 
 ほとんどされる Srb 設定クラス ドライバーが読み込まれた後、**関数**メンバー SRB に設定\_関数\_EXECUTE\_SCSI バス経由で送信するデバイスの I/O 要求を示します。
 
-システム定義の SRB メンバーとその値の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)します。
+システム定義の SRB メンバーとその値の詳細については、[ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)を参照してください。
 
 ### <a name="span-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespansetting-up-srbs-for-request-sense"></a><span id="Setting_Up_SRBs_for_Request_Sense"></span><span id="setting_up_srbs_for_request_sense"></span><span id="SETTING_UP_SRBS_FOR_REQUEST_SENSE"></span>要求の意味のされる Srb の設定
 

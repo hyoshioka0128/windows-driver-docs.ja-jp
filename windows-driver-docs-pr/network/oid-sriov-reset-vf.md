@@ -30,7 +30,7 @@ VF にを通じて、PCI Express (PCIe) 関数レベルのリセット (FLR) を
 
 -   リセット操作には、指定 VF のみ影響する必要があります。 操作では、その他の VFs または同じネットワーク アダプターの PF には影響する必要があります。
 
-詳細については、次を参照してください。[仮想関数をリセットする](https://msdn.microsoft.com/library/windows/hardware/hh440219)します。
+詳細については、[仮想関数をリセットする](https://msdn.microsoft.com/library/windows/hardware/hh440219)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

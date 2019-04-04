@@ -43,7 +43,7 @@ ms.locfileid: "56532341"
 
 -   トースト通知の表示、バック グラウンド イベントへの応答でのタイルを更新してください。 モバイル ブロード バンド アプリでは、バック グラウンド イベントのペイロードを処理できます。
 
-バック グラウンド タスクの詳細については、次を参照してください。[バック グラウンド タスクの概要](https://go.microsoft.com/fwlink/p/?linkid=313924)します。
+バック グラウンド タスクの詳細については、[バック グラウンド タスクの概要](https://go.microsoft.com/fwlink/p/?linkid=313924)を参照してください。
 
 ## <a name="span-idsteponespanspan-idsteponespanstep-1-background-task-contract-declaration"></a><span id="stepone"></span><span id="STEPONE"></span>手順 1:バック グラウンド タスク コントラクトの宣言
 
@@ -476,7 +476,7 @@ Windows がイベント ビューアーで SmsRouter イベントをチェック
 
 ### <a name="span-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanspan-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanspan-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanreceived-sms-messages-are-not-detected-as-operator-notifications"></a><span id="Received_SMS_messages_are_not_detected_as_operator_notifications"></span><span id="received_sms_messages_are_not_detected_as_operator_notifications"></span><span id="RECEIVED_SMS_MESSAGES_ARE_NOT_DETECTED_AS_OPERATOR_NOTIFICATIONS"></span>オペレーターへの通知として受信した SMS メッセージが検出されません。
 
-オペレーターへの通知として受信した SMS が検出されない場合、アカウントのプロビジョニングのメタデータの管理用の SMS 通知のカスタム フィルター規則を確認します。 プロビジョニングのメタデータに関する詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
+オペレーターへの通知として受信した SMS が検出されない場合、アカウントのプロビジョニングのメタデータの管理用の SMS 通知のカスタム フィルター規則を確認します。 プロビジョニングのメタデータに関する詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
 
 具体的には、アカウント プロビジョニングのメタデータは、送信者の電話番号を指定する場合は、数値の書式指定と一致することを受信したメッセージで SMS Api を使用して確認します。 これが正しく一致することを確認するためにパターンを一時的に変更**\[ ^ \] \\*** この送信者からのすべてのメッセージを照合します。
 

@@ -80,13 +80,13 @@ HRESULT DeinterlaceBltEx(
 
 渡される配列内の参照のビデオ サンプルについては、 *pDDSrcSurfaces*パラメーター、 **rtStart**と**rtEnd** 、DXVA のメンバー\_VideoSample2 の構造体のサンプルについては、サンプルの一時的な場所を示します。 配列で、各ビデオ サブストリーム サンプルについては、 **rtStart**と**rtEnd** 、DXVA のメンバー\_VideoSample2 構造の各サンプルは、0 にクリアされます。
 
-ビデオ サブストリームのみ AI44、IA44、AYUV と*FOURCC*ドライバーするピクセル形式を指定することができます。 詳細については、次を参照してください。 [Supplying ビデオ サブストリームと宛先表面](https://msdn.microsoft.com/library/windows/hardware/ff569751)します。
+ビデオ サブストリームのみ AI44、IA44、AYUV と*FOURCC*ドライバーするピクセル形式を指定することができます。 詳細については、[Supplying ビデオ サブストリームと宛先表面](https://msdn.microsoft.com/library/windows/hardware/ff569751)を参照してください。
 
 パレット ピクセル形式のビデオ サブストリーム、用、**パレット**のメンバー、 [ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)構造に各ビデオ サブストリームが含まれています、ドライバーがときに使用する 16 のパレット エントリの配列合成サブストリーム サンプル。 Nonpalletized ピクセル形式の場合、パレット エントリは 0 がクリアされ、無視することができます。
 
 **SampleFlags**のメンバー、 [ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)構造に各入力のサンプルには、変更を示すフラグのコレクションが含まれています、前のサンプルから現在のサンプルです。 フラグには、パレット、色データ、元の四角形、およびサンプルのコピー先の四角形に変更が反映されます。 これらのフラグは、ドライバーのコードを最適化するために使用できます。 つまり、コードでは、前のサンプルのフレームからの変更が発生していない場合は、サンプルの現在のフレームの操作を実行する必要はありません。
 
-*DwNumSurfaces*パラメーター内の要素の数を示す、 *lpDDSrcSurface*配列。 ビデオのリファレンス サンプルは、配列内の順に Z オーダーでビデオ サブストリームをします。 詳細については、次を参照してください。[入力バッファー順序](https://msdn.microsoft.com/library/windows/hardware/ff567695)します。 ドライバーを受信するビデオのサブストリームの数の範囲は 0 から 15 です。 ときに**DeinterlaceBltEx**が呼び出されると、ドライバーは通常受信ビデオ サブストリームを 0 または 1。 ただし、ドライバーは、複数のビデオ サブストリームを処理できるように実装する必要があります。
+*DwNumSurfaces*パラメーター内の要素の数を示す、 *lpDDSrcSurface*配列。 ビデオのリファレンス サンプルは、配列内の順に Z オーダーでビデオ サブストリームをします。 詳細については、[入力バッファー順序](https://msdn.microsoft.com/library/windows/hardware/ff567695)を参照してください。 ドライバーを受信するビデオのサブストリームの数の範囲は 0 から 15 です。 ときに**DeinterlaceBltEx**が呼び出されると、ドライバーは通常受信ビデオ サブストリームを 0 または 1。 ただし、ドライバーは、複数のビデオ サブストリームを処理できるように実装する必要があります。
 
 **DeinterlaceBltEx**関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 **RenderMoComp**メンバーが参照するディスプレイ ドライバーによって提供される関数を指す、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 

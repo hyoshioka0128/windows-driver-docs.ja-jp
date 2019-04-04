@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_DEC\_KEY2 プロパティは、DVD 著作権保護の認証
 <a name="remarks"></a>注釈
 -------
 
-バスの 2 番目のキーの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+バスの 2 番目のキーの詳細については、[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

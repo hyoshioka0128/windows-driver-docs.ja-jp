@@ -44,7 +44,7 @@ Unidrv は GDI や、プリンター デバイスを使ってハーフトーン�
 
 実装する場合、 **IPrintOemUni::HalftonePattern**ファイルを含める必要があります、\*各ハーフトーン HTCallbackID 属性\*なカスタマイズされたパターンのハーフトーン メソッドを指定したエントリのオプションこのオプションを使用するとします。
 
-この属性の詳細については、次を参照してください。[ハーフトーン機能のオプション属性](option-attributes-for-the-halftone-feature.md)します。
+この属性の詳細については、[ハーフトーン機能のオプション属性](option-attributes-for-the-halftone-feature.md)を参照してください。
 
 ### <a href="" id="ddk-customized-halftoning-methods-gg"></a>カスタマイズされたハーフトーン メソッド
 
@@ -58,7 +58,7 @@ Unidrv を使用するプリンター、カスタマイズしたハーフトー�
 
 レンダリングのプラグインを実装する場合[ **IPrintOemUni::ImageProcessing**](https://msdn.microsoft.com/library/windows/hardware/ff554261)も実装できます、 [ **IPrintOemUni::MemoryUsage** ](https://msdn.microsoft.com/library/windows/hardware/ff554264).
 
-ハーフトーンの詳細については、次を参照してください。 [Unidrv のハーフトーン](halftoning-with-unidrv.md)します。
+ハーフトーンの詳細については、[Unidrv のハーフトーン](halftoning-with-unidrv.md)を参照してください。
 
  
 

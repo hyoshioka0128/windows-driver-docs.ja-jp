@@ -28,11 +28,11 @@ ms.locfileid: "56532009"
 
 Microsoft では、ベンダーがエミュレーション ドライバーを実装するために使用する仮想デバイスのメカニズムを提供します。
 
-仮想デバイスを作成する方法については、次を参照してください。[仮想デバイスの作成の IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537065)します。
+仮想デバイスを作成する方法については、[仮想デバイスの作成の IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537065)を参照してください。
 
-仮想デバイスを削除する方法については、次を参照してください。[仮想デバイスを削除する IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537630)します。
+仮想デバイスを削除する方法については、[仮想デバイスを削除する IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537630)を参照してください。
 
-少数の例外を除き、エミュレーション ドライバーは、実際のデバイスの機能のドライバーと同じ方法で完全な 1394 DDI を使用できます。 実数部と仮想デバイスを使用して、1394 DDI 方法の違いの詳細については、次を参照してください。[仮想デバイス ドライバーの IEEE 1394 をサポートしている要求](https://msdn.microsoft.com/library/windows/hardware/ff538825)します。
+少数の例外を除き、エミュレーション ドライバーは、実際のデバイスの機能のドライバーと同じ方法で完全な 1394 DDI を使用できます。 実数部と仮想デバイスを使用して、1394 DDI 方法の違いの詳細については、[仮想デバイス ドライバーの IEEE 1394 をサポートしている要求](https://msdn.microsoft.com/library/windows/hardware/ff538825)を参照してください。
 
  
 

@@ -13,7 +13,7 @@ ms.locfileid: "56531938"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-680"></a>NDIS 6.80 する NDIS 6.x ドライバーの移植
 
-NDIS ミニポート、プロトコル、フィルター、および中間ドライバー、NDIS 6.80 は大幅に NDIS 6.70 と同じです。 NIC ドライバーでは、NetAdapter クラス拡張 (NetAdapterCx) バージョン 1.1 で NDIS 6.80 に NDIS 6.70 でバージョン 1.0 からに更新されましたが。 NetAdapterCx する NDIS 6.x ミニポート ドライバーを移植するには、次を参照してください。 [NetAdapterCx に移植する NDIS ミニポート ドライバー](../netcx/porting-ndis-miniport-drivers-to-netadaptercx.md)します。
+NDIS ミニポート、プロトコル、フィルター、および中間ドライバー、NDIS 6.80 は大幅に NDIS 6.70 と同じです。 NIC ドライバーでは、NetAdapter クラス拡張 (NetAdapterCx) バージョン 1.1 で NDIS 6.80 に NDIS 6.70 でバージョン 1.0 からに更新されましたが。 NetAdapterCx する NDIS 6.x ミニポート ドライバーを移植するには、[NetAdapterCx に移植する NDIS ミニポート ドライバー](../netcx/porting-ndis-miniport-drivers-to-netadaptercx.md)を参照してください。
 
 NDIS 6.80 の新機能に関する詳細についてなどの実装とコンパイルに固有の詳細、NDIS のこのバージョンを参照してください[NDIS 6.80 概要](introduction-to-ndis-6-80.md)します。
 

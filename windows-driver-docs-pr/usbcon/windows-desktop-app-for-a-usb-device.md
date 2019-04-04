@@ -68,34 +68,34 @@ WinUSB 関数を使用してドライバーを実装するよりも、デバイ�
 <td><p><strong>手順 3</strong>-デバイスを識別するハンドルを取得するスケルトン アプリを作成します。</p></td>
 <td><p>最初のアプリは、2 つの方法のいずれかで記述できます。</p>
 <ul>
-<li><p>Visual Studio に含まれている WinUSB テンプレートに基づいてアプリを作成します。 詳細については、次を参照してください。 <a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB テンプレートに基づく Windows デスクトップ アプリを記述</a>します。</p></li>
-<li><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff550855" data-raw-source="[SetupAPI](https://msdn.microsoft.com/library/windows/hardware/ff550855)">SetupAPI</a>ルーチンをデバイスを識別するハンドルを取得して呼び出すことによって開きます<a href="https://msdn.microsoft.com/library/windows/hardware/ff540277" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540277)"> <strong>WinUsb_Initialize</strong></a>します。 詳細については、次を参照してください。 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">WinUSB 関数を使用して、USB デバイスへのアクセス方法</a>します。</p></li>
+<li><p>Visual Studio に含まれている WinUSB テンプレートに基づいてアプリを作成します。 詳細については、<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB テンプレートに基づく Windows デスクトップ アプリを記述</a>を参照してください。</p></li>
+<li><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff550855" data-raw-source="[SetupAPI](https://msdn.microsoft.com/library/windows/hardware/ff550855)">SetupAPI</a>ルーチンをデバイスを識別するハンドルを取得して呼び出すことによって開きます<a href="https://msdn.microsoft.com/library/windows/hardware/ff540277" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540277)"> <strong>WinUsb_Initialize</strong></a>します。 詳細については、<a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">WinUSB 関数を使用して、USB デバイスへのアクセス方法</a>を参照してください。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td><p><strong>手順 6</strong>— Winusb.sys のデバイスにインストールします。</p></td>
 <td><p>デバイスの Winusb.sys をインストールします。</p>
 <ul>
-<li>Visual Studio を使用している場合は、Visual Studio の配置を使用して、ターゲット コンピューターでドライバー パッケージをインストールします。 手順については、次を参照してください。 <a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB テンプレートに基づく Windows デスクトップ アプリを記述</a>します。</li>
-<li>それ以外の場合、手動でドライバーをインストール、デバイス マネージャーにカスタム INF を記述することで。 詳細については、次を参照してください。 <a href="winusb-installation.md" data-raw-source="[WinUSB (Winusb.sys) Installation](winusb-installation.md)">WinUSB (Winusb.sys) インストール</a>します。</li>
+<li>Visual Studio を使用している場合は、Visual Studio の配置を使用して、ターゲット コンピューターでドライバー パッケージをインストールします。 手順については、<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB テンプレートに基づく Windows デスクトップ アプリを記述</a>を参照してください。</li>
+<li>それ以外の場合、手動でドライバーをインストール、デバイス マネージャーにカスタム INF を記述することで。 詳細については、<a href="winusb-installation.md" data-raw-source="[WinUSB (Winusb.sys) Installation](winusb-installation.md)">WinUSB (Winusb.sys) インストール</a>を参照してください。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td><p><strong>手順 4</strong>— デバイスに関する情報を取得し、その記述子を表示します。 概念については、次を参照してください。<a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">すべて USB 開発者の概念</a>します。</p></td>
+<td><p><strong>手順 4</strong>— デバイスに関する情報を取得し、その記述子を表示します。 概念については、<a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">すべて USB 開発者の概念</a>を参照してください。</p></td>
 <td><p>構成記述子、インターフェイスの記述子のサポートされている各代替設定、およびそのエンドポイント記述子を読み取ることによって、デバイスの機能に関する情報を取得します。</p>
-<p>詳しくは、次を参照してください。<a href="using-winusb-api-to-communicate-with-a-usb-device.md#query" data-raw-source="[Query the Device for USB Descriptors](using-winusb-api-to-communicate-with-a-usb-device.md#query)">記述子の USB デバイスを照会</a>します。</p></td>
+<p>詳しくは、<a href="using-winusb-api-to-communicate-with-a-usb-device.md#query" data-raw-source="[Query the Device for USB Descriptors](using-winusb-api-to-communicate-with-a-usb-device.md#query)">記述子の USB デバイスを照会</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>手順 5</strong>-USB 制御転送をアプリから送信します。</td>
-<td><p>標準のコントロール要求、仕入先のコマンドをデバイスに送信します。 詳細については、次を参照してください。<a href="using-winusb-api-to-communicate-with-a-usb-device.md#control" data-raw-source="[Send Control Transfer to the Default Endpoint](using-winusb-api-to-communicate-with-a-usb-device.md#control)">コントロールは、既定のエンドポイントに転送送信</a>します。</p></td>
+<td><p>標準のコントロール要求、仕入先のコマンドをデバイスに送信します。 詳細については、<a href="using-winusb-api-to-communicate-with-a-usb-device.md#control" data-raw-source="[Send Control Transfer to the Default Endpoint](using-winusb-api-to-communicate-with-a-usb-device.md#control)">コントロールは、既定のエンドポイントに転送送信</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>手順 6</strong>-アプリから送信一括または割り込みを転送します。</p></td>
-<td><p>読み取りを実行し、一括、割り込み、およびデバイスでサポートされているアイソクロナス エンドポイントとの間に操作を記述します。 詳細については、次を参照してください。<a href="using-winusb-api-to-communicate-with-a-usb-device.md#io" data-raw-source="[Issue I/O Requests](using-winusb-api-to-communicate-with-a-usb-device.md#io)">問題 I/O 要求</a>します。</p></td>
+<td><p>読み取りを実行し、一括、割り込み、およびデバイスでサポートされているアイソクロナス エンドポイントとの間に操作を記述します。 詳細については、<a href="using-winusb-api-to-communicate-with-a-usb-device.md#io" data-raw-source="[Issue I/O Requests](using-winusb-api-to-communicate-with-a-usb-device.md#io)">問題 I/O 要求</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>手順 7</strong>— アイソクロナス転送をアプリから送信します。</p></td>
-<td><p>アイソクロナス読み取りを送信し、データのストリーミングに使用されるほとんどの場合、要求を記述します。 この機能は、Windows 8.1 で利用可能なだけです。 詳細については、次を参照してください。 <a href="getting-set-up-to-use-windows-devices-usb.md" data-raw-source="[Sending USB isochronous transfers from a WinUSB desktop app](getting-set-up-to-use-windows-devices-usb.md)">WinUSB デスクトップ アプリから送信する USB アイソクロナス転送</a>します。</p></td>
+<td><p>アイソクロナス読み取りを送信し、データのストリーミングに使用されるほとんどの場合、要求を記述します。 この機能は、Windows 8.1 で利用可能なだけです。 詳細については、<a href="getting-set-up-to-use-windows-devices-usb.md" data-raw-source="[Sending USB isochronous transfers from a WinUSB desktop app](getting-set-up-to-use-windows-devices-usb.md)">WinUSB デスクトップ アプリから送信する USB アイソクロナス転送</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

@@ -18,9 +18,9 @@ ms.locfileid: "56528008"
 # <a name="additional-resources"></a>その他の資料
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
+\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、[Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)を参照してください。 \]
 
-Windows 8 デバイス エクスペリエンスの詳細については、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)と[デバイス メタデータ パッケージのパイプラインのホワイト ペーパー](https://go.microsoft.com/fwlink/p/?LinkId=242246)します。
+Windows 8 デバイス エクスペリエンスの詳細については、[Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)と[デバイス メタデータ パッケージのパイプラインのホワイト ペーパー](https://go.microsoft.com/fwlink/p/?LinkId=242246)を参照してください。
 
 UWP デバイス アプリの詳細についてを参照してください。
 

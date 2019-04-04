@@ -79,7 +79,7 @@ Kext.dll Kdextx86.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-物理メモリを読み取り、使用、 [ **! d\\**  * ](-db---dc---dd---dp---dq---du---dw.md)拡張機能。 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+物理メモリを読み取り、使用、 [ **! d\\**  * ](-db---dc---dd---dp---dq---du---dw.md)拡張機能。 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
 
  
 

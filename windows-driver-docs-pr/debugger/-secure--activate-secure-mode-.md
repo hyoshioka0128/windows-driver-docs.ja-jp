@@ -61,7 +61,7 @@ ms.locfileid: "56537029"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。[保護モード](secure-mode.md)します。
+詳細については、[保護モード](secure-mode.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

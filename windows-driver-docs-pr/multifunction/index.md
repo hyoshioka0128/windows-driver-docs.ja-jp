@@ -3,21 +3,26 @@ title: 多機能デバイス ドライバー設計ガイド
 description: 多機能デバイス ドライバー設計ガイド
 ms.assetid: 110c0b9b-4870-4853-8fbf-a9faf0c5f2ca
 keywords:
-  - 多機能デバイス WDK
-  - '多機能デバイス WDK, 多機能デバイスについて'
-  - 結合機能デバイス WDK
-  - 多機能デバイス WDK
-  - プリンターの多機能 WDK
-  - DVD/CD-ROM 多機能 WDK
-  - '多機能デバイス WDK , インストール'
-  - 親バス WDK 多機能デバイス
-  - INF ファイル WDK 多機能デバイス
+- 多機能デバイス WDK
+- 多機能デバイス WDK, 多機能デバイスについて
+- 結合機能デバイス WDK
+- 多機能デバイス WDK
+- プリンターの多機能 WDK
+- DVD/CD-ROM 多機能 WDK
+- 多機能デバイス WDK , インストール
+- 親バス WDK 多機能デバイス
+- INF ファイル WDK 多機能デバイス
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: e621c90ee1e8929f6333d60064d73ec2240b77f9
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465705"
 ---
-
 # <a name="multifunction-device-driver-design-guide"></a>多機能デバイス ドライバー設計ガイド
 
 

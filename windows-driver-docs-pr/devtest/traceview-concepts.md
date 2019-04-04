@@ -29,7 +29,7 @@ ms.locfileid: "56549405"
 
 このトピックでは、traceview で使用される概念を説明します。
 
-WDK のトレース ツールに共通する概念については、次を参照してください。[トレース ツールの概念](tracing-tool-concepts.md)します。
+WDK のトレース ツールに共通する概念については、[トレース ツールの概念](tracing-tool-concepts.md)を参照してください。
 
 ### <a name="span-idtracesessiongroupspanspan-idtracesessiongroupspanspan-idtracesessiongroupspantrace-session-group"></a><span id="Trace_Session_Group"></span><span id="trace_session_group"></span><span id="TRACE_SESSION_GROUP"></span>トレース セッションのグループ
 
@@ -37,7 +37,7 @@ Traceview で結合できます。[トレース ログ](trace-log.md)表示ま�
 
 既定では、各トレース セッションは、そのトレース セッションのみで構成されるトレース セッションのグループのメンバーです。
 
-トレース セッションのグループを作成する方法の詳細については、次を参照してください。[トレース セッションをグループ化](grouping-trace-sessions.md)します。
+トレース セッションのグループを作成する方法の詳細については、[トレース セッションをグループ化](grouping-trace-sessions.md)を参照してください。
 
 ### <a name="span-idworkspacespanspan-idworkspacespanspan-idworkspacespanworkspace"></a><span id="Workspace"></span><span id="workspace"></span><span id="WORKSPACE"></span>ワークスペース
 
@@ -55,7 +55,7 @@ Traceview で、*ワークスペース*一連のトレース セッションの�
 
 リアルタイムのトレース セッションのワークスペースを開くと、traceview では、保存されているプロパティおよび構成設定の新しいトレース セッションを開始します。 トレース ログの表示のためのワークスペースを開くと、それを構成したとおり、ログが表示されます。
 
-詳細については、次を参照してください。 [traceview でワークスペースを使用して](using-traceview-workspaces.md)します。
+詳細については、[traceview でワークスペースを使用して](using-traceview-workspaces.md)を参照してください。
 
 ### <a name="span-idspecifyingtraceprovidersspanspan-idspecifyingtraceprovidersspanspan-idspecifyingtraceprovidersspanspecifying-trace-providers"></a><span id="Specifying_Trace_Providers"></span><span id="specifying_trace_providers"></span><span id="SPECIFYING_TRACE_PROVIDERS"></span>トレース プロバイダーを指定します。
 

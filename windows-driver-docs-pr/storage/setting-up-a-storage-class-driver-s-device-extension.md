@@ -37,7 +37,7 @@ ms.locfileid: "56528536"
 
 -   センス データ用のドライバーに割り当てられたバッファーへのポインター
 
-    クラス ドライバーは、キャッシュで固定された、非ページ プールから返される検出データのメモリを割り当てる必要があります。 ドライバーのバッファーのメモリの割り当ての詳細については、次を参照してください。[システム容量のメモリを割り当てる](https://msdn.microsoft.com/library/windows/hardware/ff540588)します。
+    クラス ドライバーは、キャッシュで固定された、非ページ プールから返される検出データのメモリを割り当てる必要があります。 ドライバーのバッファーのメモリの割り当ての詳細については、[システム容量のメモリを割り当てる](https://msdn.microsoft.com/library/windows/hardware/ff540588)を参照してください。
 
 -   ドライバーにより決定された既定値を**SrbFlags**される Srb のクラス ドライバーを設定します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "56528536"
 
 -   ポインター、 [**ストレージ\_アダプター\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566346)と[**ストレージ\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566971)ポート ドライバーは HBA から収集されたデータ
 
-    クラス ドライバーが取得してこのデータを使用する方法については、次を参照してください。[記憶域クラス ドライバーいる出力ルーチン](storage-class-driver-s-getdescriptor-routine.md)します。
+    クラス ドライバーが取得してこのデータを使用する方法については、[記憶域クラス ドライバーいる出力ルーチン](storage-class-driver-s-getdescriptor-routine.md)を参照してください。
 
 -   フラグの状態を示す、以前と現在 PnP、デバイスの状態間の遷移を管理するには
 

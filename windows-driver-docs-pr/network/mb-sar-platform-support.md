@@ -25,7 +25,7 @@ Windows を Windows 10 バージョン 1703 以降、行政区の構成とモデ
 この機能は、新しい 2 つの Oid と Cid を追加してサポートされます。 MBIM を実装するための IHV パートナー、CID バージョンのみをサポートする必要があります。
 
 > [!NOTE]
-> このトピックでは、モデム デバイス ドライバーに SAR プラットフォームのサポートを実装するために、IHV パートナーのインターフェイスを定義します。 デバイスの行政区マッピング テーブルのカスタマイズに関する情報を探している場合は、次を参照してください。[特定吸収レート (SAR) のマッピング テーブルをカスタマイズ](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-sar-mapping-table)します。
+> このトピックでは、モデム デバイス ドライバーに SAR プラットフォームのサポートを実装するために、IHV パートナーのインターフェイスを定義します。 デバイスの行政区マッピング テーブルのカスタマイズに関する情報を探している場合は、[特定吸収レート (SAR) のマッピング テーブルをカスタマイズ](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-sar-mapping-table)を参照してください。
 
 ## <a name="mb-interface-update-for-sar-platform-support"></a>MB インターフェイスの更新プログラム SAR プラットフォームのサポート
 

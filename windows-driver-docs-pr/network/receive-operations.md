@@ -20,11 +20,11 @@ ms.locfileid: "56529307"
 
  
 
-呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513) HV 拡張機能の DLL にパケットを転送する関数は、ワイヤレス LAN (WLAN) アダプターを介して受信します。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
+呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513) HV 拡張機能の DLL にパケットを転送する関数は、ワイヤレス LAN (WLAN) アダプターを介して受信します。 詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
 
 パケットを受信するには、IHV 拡張機能の DLL を呼び出す必要があります[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587)を 1 つまたは複数の IEEE EtherTypes の一覧を登録します。 このリスト内のエントリに一致する、EtherType でパケットが受信されると、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513)関数し、関数のを通じてパケット バッファーを渡します*pvInBuffer*パラメーター。
 
-**注**  IHV 拡張 DLL を呼び出す必要があります[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL は、関連付け前の操作を完了する前にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+**注**  IHV 拡張 DLL を呼び出す必要があります[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL は、関連付け前の操作を完了する前にします。 この操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
 
  
 

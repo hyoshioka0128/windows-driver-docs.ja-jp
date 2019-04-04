@@ -47,7 +47,7 @@ ECC メモリ エラーが発生したときに、WHEA は、次の手順を実�
 
      
 
-8.  PFA が有効になっている場合、WHEA は ECC メモリ ページで PFA を実行します。 このプロセスの詳細については、次を参照してください。[方法 WHEA 実行 PFA ECC メモリ](how-whea-performs-pfa-on-ecc-memory.md)します。
+8.  PFA が有効になっている場合、WHEA は ECC メモリ ページで PFA を実行します。 このプロセスの詳細については、[方法 WHEA 実行 PFA ECC メモリ](how-whea-performs-pfa-on-ecc-memory.md)を参照してください。
 
 9.  Windows カーネルでは、ETW イベントを生成し、システム イベント ログにエラー情報を記録します。
 

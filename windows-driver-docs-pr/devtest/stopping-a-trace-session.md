@@ -28,7 +28,7 @@ ms.locfileid: "56529757"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-Traceview では、起動してトレース セッションのみを停止できます。 他のトレース セッションを停止する、**traceview で-停止 * * * SessionName*コマンド。 このコマンドの詳細については、次を参照してください。 [ **traceview で管理コマンド**](traceview-control-commands.md)します。
+Traceview では、起動してトレース セッションのみを停止できます。 他のトレース セッションを停止する、**traceview で-停止 * * * SessionName*コマンド。 このコマンドの詳細については、[ **traceview で管理コマンド**](traceview-control-commands.md)を参照してください。
 
 トレース セッションを停止する、表示から、セッションを削除したりしないすべてのトレース ログを削除します。
 

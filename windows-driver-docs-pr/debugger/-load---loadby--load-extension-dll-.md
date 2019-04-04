@@ -70,7 +70,7 @@ ms.locfileid: "56531568"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-読み込み、アンロード、およびコントロール拡張機能する方法の詳細については、次を参照してください。[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。
+読み込み、アンロード、およびコントロール拡張機能する方法の詳細については、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

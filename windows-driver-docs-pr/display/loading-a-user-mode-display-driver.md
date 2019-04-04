@@ -26,7 +26,7 @@ ms.locfileid: "56549230"
 HKR,, UserModeDriverName,    %REG_MULTI_SZ%, Xxx.dll
 ```
 
-INF ファイルは、オペレーティング システム、システムの %systemroot% に、ユーザー モードのディスプレイ ドライバーのコピーを特定する情報を含める必要があります\\system32 ディレクトリ。 詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)と[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。
+INF ファイルは、オペレーティング システム、システムの %systemroot% に、ユーザー モードのディスプレイ ドライバーのコピーを特定する情報を含める必要があります\\system32 ディレクトリ。 詳細については、[ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)と[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)を参照してください。
 
 Direct3D のランタイムは、ランタイムのプロセス空間内でユーザー モードのディスプレイ ドライバーを読み込むために、レジストリからユーザー モードのディスプレイ ドライバーの DLL の名前を取得します。
 

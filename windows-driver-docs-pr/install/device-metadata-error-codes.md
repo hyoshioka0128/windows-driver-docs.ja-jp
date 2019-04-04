@@ -14,7 +14,7 @@ ms.locfileid: "56549841"
 # <a name="device-metadata-error-codes"></a>デバイス メタデータのエラー コード
 
 
-以降、Windows 7 オペレーティング システムでは、次のエラー コードのダウンロードに関連するイベント内のログと、デバイス メタデータ パッケージの処理します。 これらのイベントは Event Tracing for Windows (ETW) サービスによって管理され、イベント ビューアーを使用して表示することができます。 これらのイベントに関する詳細については、次を参照してください。[デバッグ デバイス メタデータ パッケージを使用してイベント ビューアー](debugging-device-metadata-packages-by-using-event-viewer.md)します。
+以降、Windows 7 オペレーティング システムでは、次のエラー コードのダウンロードに関連するイベント内のログと、デバイス メタデータ パッケージの処理します。 これらのイベントは Event Tracing for Windows (ETW) サービスによって管理され、イベント ビューアーを使用して表示することができます。 これらのイベントに関する詳細については、[デバッグ デバイス メタデータ パッケージを使用してイベント ビューアー](debugging-device-metadata-packages-by-using-event-viewer.md)を参照してください。
 
 <a href="" id="windows-metadata-and-internet-services--wmis--errors--200000xx-"></a>Windows メタデータとインターネット サービス (WMIS) エラー (200000xx)  
 <table>

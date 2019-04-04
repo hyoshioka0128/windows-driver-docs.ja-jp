@@ -62,11 +62,11 @@ WDTF には一連インターフェイスと実装にはが含まれています
 
 ![target::getinterface メソッドを示す図](images/wdtf-getinterface.gif)
 
-これらのインターフェイスの詳細については、次を参照してください。[を制御するターゲット](controlling-targets.md)します。
+これらのインターフェイスの詳細については、[を制御するターゲット](controlling-targets.md)を参照してください。
 
 ### <a name="simple-data-evaluation-language-sdel"></a>単純なデータ評価言語 (SDEL)
 
-WDTF には、単純なクエリ言語では、単純なデータ評価言語 (SDEL)、XPath と同様、属性またはリレーションシップに基づくターゲットを収集する場合のタスクを簡素化が含まれています。 SDEL では、各ターゲットとそれらの間のリレーションシップの両方の属性に基づく選択範囲の制約を定義するフォームの簡単なクエリ ステートメントにできます。 SDEL の詳細については、次を参照してください。[単純なデータ評価言語の概要](simple-data-evaluation-language-overview.md)します。
+WDTF には、単純なクエリ言語では、単純なデータ評価言語 (SDEL)、XPath と同様、属性またはリレーションシップに基づくターゲットを収集する場合のタスクを簡素化が含まれています。 SDEL では、各ターゲットとそれらの間のリレーションシップの両方の属性に基づく選択範囲の制約を定義するフォームの簡単なクエリ ステートメントにできます。 SDEL の詳細については、[単純なデータ評価言語の概要](simple-data-evaluation-language-overview.md)を参照してください。
 
  
 

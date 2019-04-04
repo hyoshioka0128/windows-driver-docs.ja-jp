@@ -101,7 +101,7 @@ DIF_ALLOW_INSTALL 要求への応答では、インストーラーは、Windows 
 
 インストーラーには、この差分要求が失敗した DI_QUIETINSTALL がデバイスのインストール パラメーターで設定されていない場合は、インストーラーはデバイスがないインストールされている理由を説明するメッセージとダイアログ ボックスを表示する必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

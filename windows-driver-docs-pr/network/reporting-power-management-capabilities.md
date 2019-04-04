@@ -23,7 +23,7 @@ ms.locfileid: "56531937"
 
 NDIS 6.1 または以前のミニポート ドライバーは、NDIS 6.20 プロトコル ドライバーにバインドする場合、NDIS は、NDIS 6.20 プロトコル ドライバーでサポートされている形式に電源管理機能を変換します。 NDIS は、NDIS 6.20 が動作のミニポート ドライバーは、NDIS 6.1 と前の上位のドライバーでサポートされている形式にレポートを電源管理機能にも変換します。
 
-ミニポート ドライバーを報告するハードウェアの機能を有効になっているまたは INF ファイルの設定で無効になっていることができます。 電源管理 INF ファイルの設定の詳細については、次を参照してください。[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)します。
+ミニポート ドライバーを報告するハードウェアの機能を有効になっているまたは INF ファイルの設定で無効になっていることができます。 電源管理 INF ファイルの設定の詳細については、[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)を参照してください。
 
 ミニポートの初期化中に、ミニポート ドライバーを初期化します、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)基になるの電源管理機能を含む構造体ハードウェア。 ミニポート ドライバーのセット、 **PowerManagementCapabilitiesEx**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性** ](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体を指す、 **NDIS\_PM\_機能**構造体。
 
@@ -37,12 +37,12 @@ NDIS 6.30 以降では、次のフラグが定義されます。
 <a href="" id="ndis-pm-wake-packet-indication-supported"></a>NDIS\_PM\_WAKE\_パケット\_INDICATION\_サポートされています。  
 このフラグが設定されている場合、ネットワーク アダプターは、アダプターが、ウェイク アップのイベントを生成する原因となった受信パケットを保存できます。
 
-この電源管理機能の詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
+この電源管理機能の詳細については、[NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)を参照してください。
 
 <a href="" id="ndis-pm-selective-suspend-supported"></a>NDIS\_PM\_セレクティブ\_SUSPEND\_サポートされています。  
 このフラグが設定されている場合、選択的 NDIS の中断のミニポート ドライバーではネットワーク アダプターを使用します。
 
-この電源管理機能の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド](ndis-selective-suspend.md)します。
+この電源管理機能の詳細については、[NDIS セレクティブ サスペンド](ndis-selective-suspend.md)を参照してください。
 
 <a href="" id="supportedwolpacketpatterns"></a>**SupportedWoLPacketPatterns**  
 ネットワーク アダプターをサポートする wake on LAN (WOL) パケットのパターンを指定するフラグが含まれています。 たとえば、ネットワーク アダプターでは、ビットマップ、WOL マジック パケットの場合、または EAP over LAN (EAPOL) 要求の識別子のメッセージを受信すると、ウェイク アップ イベントを生成できます。 現在のオペレーティング システムでサポートされているパターンの完全な一覧を参照してください、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)リファレンス ページです。
@@ -56,7 +56,7 @@ A **ULONG**ネットワーク アダプターをサポートする WOL パター
 
  
 
-WOL プロトコル パターンの詳細については、次を参照してください。 [ **NDIS\_PM\_WOL\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566768)します。
+WOL プロトコル パターンの詳細については、[ **NDIS\_PM\_WOL\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566768)を参照してください。
 
 <a href="" id="maxwolpatternsize"></a>**MaxWoLPatternSize**  
 パターンと比較できるバイトの最大数が含まれています。

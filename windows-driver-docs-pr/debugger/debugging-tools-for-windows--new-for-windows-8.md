@@ -28,7 +28,7 @@ Windows 8 以降では、開発できます、構築、Microsoft Visual Studio �
 
 だけでなく、Visual Studio は、sse、Windows のデバッガー Windows アプリをデバッグすることができます。 Windows のツールをデバッグ パッケージが含まれている[ **PLMDebug.exe**](plmdebug.md)、中断、再開、デバッグ、および Windows アプリを終了して手動で制御を実行することができます。
 
-Sos.dll は、マネージ コードのデバッグに使用されるコンポーネントです。 Windows 8 のデバッグ ツールの Windows パッケージでは、sos.dll は含まれません。 Sos.dll を取得する方法については、次を参照してください。 [SOS デバッガー拡張 (sos.dll) を取得する](debugging-managed-code.md#getting-the-sos-debugging-extension)します。
+Sos.dll は、マネージ コードのデバッグに使用されるコンポーネントです。 Windows 8 のデバッグ ツールの Windows パッケージでは、sos.dll は含まれません。 Sos.dll を取得する方法については、[SOS デバッガー拡張 (sos.dll) を取得する](debugging-managed-code.md#getting-the-sos-debugging-extension)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

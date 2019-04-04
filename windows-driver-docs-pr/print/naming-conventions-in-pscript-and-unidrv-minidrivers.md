@@ -48,7 +48,7 @@ ms.locfileid: "56528263"
 
 補助的なプリンターの記述ファイルには、双方向または自動構成情報が含まれています。
 
-自動構成を有効にする Pscript5 ドライバーを含める必要があります&lt;printerModelName&gt;します。GDL と ps\_schm します。その依存ファイルの一覧で GDL します。 依存ファイルについては、次を参照してください。[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)します。
+自動構成を有効にする Pscript5 ドライバーを含める必要があります&lt;printerModelName&gt;します。GDL と ps\_schm します。その依存ファイルの一覧で GDL します。 依存ファイルについては、[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)を参照してください。
 
 ### <a href="" id="unidrv-minidrivers"></a> Unidrv ミニドライバー
 

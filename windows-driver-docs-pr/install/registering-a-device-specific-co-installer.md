@@ -44,7 +44,7 @@ HKR,,CoInstallers32,0x00010000,"XxxCoInstall.dll, \
 
 内のエントリ、 **DestinationDirs**セクションでは、ファイルで表示されていることを指定します、 *Xxx*CopyFilesSection はシステム ディレクトリにコピーされます。 *Xxx*プレフィックスは、ドライバー、デバイスまたはデバイス (たとえば、cdrom_CopyFilesSection) のグループを識別します。 *Xxx*プレフィックスは一意である必要があります。
 
-*インストール セクション名*共同インストーラーのエントリは省略可能な OS/アーキテクチャの拡張機能 (たとえば、cdrom_install で修飾することができます。NTx86.CoInstallers)。 詳細については、次を参照してください。 [ **INF *DDInstall*セクション**](inf-ddinstall-section.md)します。
+*インストール セクション名*共同インストーラーのエントリは省略可能な OS/アーキテクチャの拡張機能 (たとえば、cdrom_install で修飾することができます。NTx86.CoInstallers)。 詳細については、[ **INF *DDInstall*セクション**](inf-ddinstall-section.md)を参照してください。
 
 内のエントリ、 <em>Xxx</em>**_AddReg**セクションを作成し、 **CoInstallers32**デバイスのエントリの値*ドライバー キー*します。 エントリには、共同インストーラー DLL と、必要に応じて、特定のエントリ ポイントが含まれています。 エントリ ポイントを省略すると、既定では CoDeviceInstall です。 16 進数のフラグ パラメーター (0x00010000) は、これを指定します、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)エントリの値します。
 

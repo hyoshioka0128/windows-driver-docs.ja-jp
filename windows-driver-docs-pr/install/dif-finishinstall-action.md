@@ -30,7 +30,7 @@ DIF_FINISHINSTALL_ACTION 要求、インストーラーを実行する完了イ�
 
 Windows 8 およびそれ以降のバージョンには、デバイスのインストールの一部として自動的に実行アクションの実行を完了インストールします。 デバイスのインストールが完了操作を完了するには、は、ユーザーは必要がありますインストールの完了にアクション センターの [デバイスのソフトウェアのインストールの完了] をクリックします。
 
-詳細については、次を参照してください。 [- インストールが完了操作を実行している](https://msdn.microsoft.com/library/windows/hardware/ff550700)します。
+詳細については、[- インストールが完了操作を実行している](https://msdn.microsoft.com/library/windows/hardware/ff550700)を参照してください。
 
 Windows 7、完了-インストール プロセスは、以下のいずれかの管理者の資格情報を持つユーザーのコンテキストでのみ実行します。
 
@@ -129,9 +129,9 @@ Windows 7 では、 [ **SetupDiFinishInstallAction**](https://msdn.microsoft.com
 
 デバイスのインストールが ERROR_DI_DO_DEFAULT のリターン コードを判別することはできませんか、完了-インストール アクションが実際に成功したかどうかを NO_ERROR リターン コード、インストーラーのインストーラーが完了操作の状態をユーザーに通知する必要があります。
 
-完了-インストール アクションの詳細については、次を参照してください。[インストール プロセスをデバイス方法-インストールが完了アクション](https://msdn.microsoft.com/library/windows/hardware/ff546216)と[完了インストール アクションの実装](https://msdn.microsoft.com/library/windows/hardware/ff546302)します。
+完了-インストール アクションの詳細については、[インストール プロセスをデバイス方法-インストールが完了アクション](https://msdn.microsoft.com/library/windows/hardware/ff546216)と[完了インストール アクションの実装](https://msdn.microsoft.com/library/windows/hardware/ff546302)を参照してください。
 
-差分コードについては、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)と[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+差分コードについては、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)と[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

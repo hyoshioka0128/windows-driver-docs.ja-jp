@@ -66,7 +66,7 @@ bcdedit /debug  {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 使用することができます、 **bcdedit/enum**各エントリに関連付けられている GUID を識別するために、現在のブート エントリと、その設定を表示するコマンド。
 
-詳細については、次を参照してください。 [ **BCDEdit/debug**](https://msdn.microsoft.com/library/windows/hardware/ff542191)します。
+詳細については、[ **BCDEdit/debug**](https://msdn.microsoft.com/library/windows/hardware/ff542191)を参照してください。
 
 ### <a name="span-idbootoptionstodebugwithanullmodemcableinwindowsvistaandlatspanspan-idbootoptionstodebugwithanullmodemcableinwindowsvistaandlatspanboot-options-to-debug-with-a-null-modem-cable-in-windows"></a><span id="boot_options_to_debug_with_a_null_modem_cable_in_windows_vista_and_lat"></span><span id="BOOT_OPTIONS_TO_DEBUG_WITH_A_NULL_MODEM_CABLE_IN_WINDOWS_VISTA_AND_LAT"></span>Windows でヌル モデム ケーブルを使用してデバッグするブート オプション
 
@@ -126,7 +126,7 @@ bcdedit /debug {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 使用することができます、 **bcdedit/enum**を現在のブート エントリとその設定を表示するコマンド。
 
-詳細については、次を参照してください。 [ **BCDEdit/debug** ](https://msdn.microsoft.com/library/windows/hardware/ff542191)と[ **BCDEdit/dbgsettings**](https://msdn.microsoft.com/library/windows/hardware/ff542187)します。
+詳細については、[ **BCDEdit/debug** ](https://msdn.microsoft.com/library/windows/hardware/ff542191)と[ **BCDEdit/dbgsettings**](https://msdn.microsoft.com/library/windows/hardware/ff542187)を参照してください。
 
 ### <a name="span-idbootparameterstodebugwitha1394cableinwindowsvistaandlaterspanspan-idbootparameterstodebugwitha1394cableinwindowsvistaandlaterspanboot-parameters-to-debug-with-a-1394-cable-in-windows"></a><span id="boot_parameters_to_debug_with_a_1394_cable_in_windows_vista_and_later"></span><span id="BOOT_PARAMETERS_TO_DEBUG_WITH_A_1394_CABLE_IN_WINDOWS_VISTA_AND_LATER"></span>Windows で 1394 ケーブルを使用してデバッグするブート パラメーター
 
@@ -168,7 +168,7 @@ bcdedit /debug {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 使用することができます、 **bcdedit/enum**を現在のブート エントリとその設定を表示するコマンド。
 
-詳細については、次を参照してください。 [ **BCDEdit/debug** ](https://msdn.microsoft.com/library/windows/hardware/ff542191)と[ **BCDEdit/dbgsettings**](https://msdn.microsoft.com/library/windows/hardware/ff542187)します。
+詳細については、[ **BCDEdit/debug** ](https://msdn.microsoft.com/library/windows/hardware/ff542191)と[ **BCDEdit/dbgsettings**](https://msdn.microsoft.com/library/windows/hardware/ff542187)を参照してください。
 
 ### <a name="span-idbootparameterstodebugwithausb20debuggingcableinwindowsvisspanspan-idbootparameterstodebugwithausb20debuggingcableinwindowsvisspanboot-parameters-to-debug-with-a-usb-20-debugging-cable-in-windows"></a><span id="boot_parameters_to_debug_with_a_usb_2_0_debugging_cable_in_windows_vis"></span><span id="BOOT_PARAMETERS_TO_DEBUG_WITH_A_USB_2_0_DEBUGGING_CABLE_IN_WINDOWS_VIS"></span>Windows での USB 2.0 デバッグ ケーブルでデバッグするブート パラメーター
 
@@ -210,7 +210,7 @@ bcdedit /debug {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 使用することができます、 **bcdedit/enum**を現在のブート エントリとその設定を表示するコマンド。
 
-詳細については、次を参照してください。 [ **BCDEdit/debug** ](https://msdn.microsoft.com/library/windows/hardware/ff542191)と[ **BCDEdit/dbgsettings**](https://msdn.microsoft.com/library/windows/hardware/ff542187)します。
+詳細については、[ **BCDEdit/debug** ](https://msdn.microsoft.com/library/windows/hardware/ff542191)と[ **BCDEdit/dbgsettings**](https://msdn.microsoft.com/library/windows/hardware/ff542187)を参照してください。
 
 ### <a name="span-idbootparameterstodebugthebootprocessinwindowsvistaandlaterspanspan-idbootparameterstodebugthebootprocessinwindowsvistaandlaterspanboot-parameters-to-debug-the-boot-process-in-windows"></a><span id="boot_parameters_to_debug_the_boot_process_in_windows_vista_and_later"></span><span id="BOOT_PARAMETERS_TO_DEBUG_THE_BOOT_PROCESS_IN_WINDOWS_VISTA_AND_LATER"></span>Windows のブート プロセスをデバッグするブート パラメーター
 
@@ -218,7 +218,7 @@ bcdedit /debug {18b123cd-2bf6-11db-bfae-00e018e2b8db} on
 
 デバッグ接続を選択することも必要があります (、serial、1394、または USB 2.0)。 いずれかで表示できます、 [ **BCDEdit/dbgsettings** ](https://msdn.microsoft.com/library/windows/hardware/ff542187)または[ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンドを通常のカーネル デバッグと同じようにします。
 
-詳細については、次を参照してください。 [ **BCDEdit/bootdebug**](https://msdn.microsoft.com/library/windows/hardware/ff542183)します。
+詳細については、[ **BCDEdit/bootdebug**](https://msdn.microsoft.com/library/windows/hardware/ff542183)を参照してください。
 
  
 

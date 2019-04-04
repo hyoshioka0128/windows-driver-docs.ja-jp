@@ -70,7 +70,7 @@ Microsoft OS ディスクリプターをサポートするデバイスは、0 xe
 
 そのキーの下のレジストリ エントリを参照してください。 [USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)します。
 
-詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
+詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)を参照してください。
 
 ## <a name="what-types-of-os-feature-descriptors-are-supported-by-windows"></a>Windows では、どのような種類の OS 機能の記述子がサポートされているでしょうか。
 

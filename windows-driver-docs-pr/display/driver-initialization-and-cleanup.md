@@ -57,7 +57,7 @@ ms.locfileid: "56528553"
 
      
 
-これらの定数の使用方法の詳細については、次を参照してください。 [ **DRVENABLEDATA**](https://msdn.microsoft.com/library/windows/hardware/ff556206)します。
+これらの定数の使用方法の詳細については、[ **DRVENABLEDATA**](https://msdn.microsoft.com/library/windows/hardware/ff556206)を参照してください。
 
 -   **C**メンバーには、配列内の DRVFN 構造体の数が含まれています。
 

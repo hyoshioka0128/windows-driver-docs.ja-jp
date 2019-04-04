@@ -82,7 +82,7 @@ ms.locfileid: "56531567"
 -   インストール メディアを使用して、復元またはお使いの PC をリセットします。
 -   インストール メディアを使用して、Windows を再インストールします。
 
-詳細については、次を参照してください。 [Windows 10 での回復オプション](https://windows.microsoft.com/windows-10/windows-10-recovery-options#)します。
+詳細については、[Windows 10 での回復オプション](https://windows.microsoft.com/windows-10/windows-10-recovery-options#)を参照してください。
 
  
 

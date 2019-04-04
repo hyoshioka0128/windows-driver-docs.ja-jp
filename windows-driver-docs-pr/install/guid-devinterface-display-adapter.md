@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[デバイス インターフェイス クラ�
 
 システム提供のディスプレイ ドライバーは、オペレーティング システムと表示ビューの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)します。
+ディスプレイ デバイスについては、[Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)を参照してください。
 
-ディスプレイ アダプターのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)します。
+ディスプレイ アダプターのデバイスのインターフェイス クラスについては、[ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

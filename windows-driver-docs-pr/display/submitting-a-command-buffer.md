@@ -38,7 +38,7 @@ ms.locfileid: "56536669"
 
      
 
-4.  ビデオ メモリ マネージャーには、ディスプレイのミニポート ドライバーの[ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587) DMA バッファー、指定された割り当てを移動するページング バッファーと呼ばれる特殊な目的を作成する関数DMA バッファーと GPU からアクセス可能なメモリの間に付属している割り当てリストします。 詳細については、次を参照してください。[ビデオ メモリ リソースのページング](paging-video-memory-resources.md)します。
+4.  ビデオ メモリ マネージャーには、ディスプレイのミニポート ドライバーの[ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587) DMA バッファー、指定された割り当てを移動するページング バッファーと呼ばれる特殊な目的を作成する関数DMA バッファーと GPU からアクセス可能なメモリの間に付属している割り当てリストします。 詳細については、[ビデオ メモリ リソースのページング](paging-video-memory-resources.md)を参照してください。
 
 5.  GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiPatch** ](https://msdn.microsoft.com/library/windows/hardware/ff559737) DMA バッファー内のリソースへの物理アドレスを割り当てる関数。 ただし、スケジューラを呼び出す必要はありません**DxgkDdiPatch**ページング バッファーの物理アドレスが渡され、中に割り当てられているため、ページング バッファーへの物理アドレスを割り当てる、 [ *DxgkDdiBuildPagingBuffer* ](https://msdn.microsoft.com/library/windows/hardware/ff559587)呼び出します。
 

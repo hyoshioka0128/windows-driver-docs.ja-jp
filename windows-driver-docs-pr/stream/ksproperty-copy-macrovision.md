@@ -66,7 +66,7 @@ KSPROPERTY\_コピー\_MACROVISION プロパティは、データ ストリー�
 <a name="remarks"></a>注釈
 -------
 
-Macrovision レベルの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+Macrovision レベルの詳細については、[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

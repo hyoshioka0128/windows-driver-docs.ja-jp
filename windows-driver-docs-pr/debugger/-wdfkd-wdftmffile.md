@@ -44,7 +44,7 @@ KMDF 1、UMDF 2
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -61,7 +61,7 @@ kd> !wdftmffile tools\tracing\<platform>\wdf1005.tmf
 
 別のバージョンで使用している Windows Driver Kit (WDK) のパスである可能性がありますに注意してください。 また、.tmf ファイルの名前が使用している KMDF のバージョンを表すことに注意してください。 たとえば、Wdf1005.tmf、kmdf バージョン 1.5 .tmf ファイルです。
 
-デバッグ セッション中に、KMDF ログを表示する方法については、次を参照してください。[フレームワークのイベントのロガーを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545531)します。
+デバッグ セッション中に、KMDF ログを表示する方法については、[フレームワークのイベントのロガーを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545531)を参照してください。
 
  
 

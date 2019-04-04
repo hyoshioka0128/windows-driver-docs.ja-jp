@@ -33,7 +33,7 @@ ms.locfileid: "56527831"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-クラッシュ ダンプ ファイルの分析に関する詳細については、次を参照してください。[ユーザー モード ダンプ ファイルの分析](analyzing-a-user-mode-dump-file.md)または[WinDbg にカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)します。
+クラッシュ ダンプ ファイルの分析に関する詳細については、[ユーザー モード ダンプ ファイルの分析](analyzing-a-user-mode-dump-file.md)または[WinDbg にカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)を参照してください。
 
  
 

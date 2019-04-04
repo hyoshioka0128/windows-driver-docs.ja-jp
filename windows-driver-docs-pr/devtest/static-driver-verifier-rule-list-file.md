@@ -28,7 +28,7 @@ SDV ルールの一覧ファイルは、1 つまたは複数を一覧表示す�
 
 SDV にはで便利なルールの一覧ファイルのセットが含まれています、\\ツール\\sdv\\サンプル\\ルール\_設定\\WDK の wdm サブディレクトリが独自作成できます。
 
-コマンドで、ルールの一覧ファイルを使用する、次を参照してください。、 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
+コマンドで、ルールの一覧ファイルを使用する、、 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。
 
 通常、ルールの一覧のファイルは使用してルール名のパターンで指定することはできません SDV 検証のための複数のルールを指定します。 バッチおよび回帰テストに便利です。
 

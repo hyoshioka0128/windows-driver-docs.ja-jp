@@ -21,7 +21,7 @@ ms.locfileid: "56527962"
 
 ### <a name="span-idenablingfile-handletargetsspanspan-idenablingfile-handletargetsspanspan-idenablingfile-handletargetsspanenabling-file-handle-targets"></a><span id="Enabling_File-Handle_Targets"></span><span id="enabling_file-handle_targets"></span><span id="ENABLING_FILE-HANDLE_TARGETS"></span>ファイル ハンドルのターゲットを有効にします。
 
-下に次のエントリが追加\[*基本的な\_Install.Wdf* \]ファイル ハンドル ベース UMDF I/O ターゲットを有効にします。 これらの I/O ターゲットは、rs-232 ポートを使用して、デバイスとのデータの交換に使用されます。 I/O のターゲットの詳細については、次を参照してください。[をサポートしている I/O](the-wpdbasichardwaredriver-supporting-io.md)します。
+下に次のエントリが追加\[*基本的な\_Install.Wdf* \]ファイル ハンドル ベース UMDF I/O ターゲットを有効にします。 これらの I/O ターゲットは、rs-232 ポートを使用して、デバイスとのデータの交換に使用されます。 I/O のターゲットの詳細については、[をサポートしている I/O](the-wpdbasichardwaredriver-supporting-io.md)を参照してください。
 
 ```cpp
 UmdfDispatcher = FileHandle

@@ -21,7 +21,7 @@ ms.locfileid: "56528780"
 
 キューの現在の構成パラメーターを変更するを使用してドライバーを重なってことができます、 [OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID 要求のセット。 上にあるドライバーへのポインターを提供する、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造体、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。
 
-NDIS\_受信\_キュー\_パラメーター構造体がで使用される、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID。 キューの割り当てに関する詳細については、次を参照してください。 [VM キューを割り当てる](allocating-a-vm-queue.md)します。
+NDIS\_受信\_キュー\_パラメーター構造体がで使用される、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID。 キューの割り当てに関する詳細については、[VM キューを割り当てる](allocating-a-vm-queue.md)を参照してください。
 
 現在の構成を取得するキュー、ドライバーを後続のパラメーターが、OID を使用できます\_受信\_フィルター\_キュー\_パラメーター メソッド OID を要求します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体は、初期状態へのポインターを含む、 [**NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211) NDIS の種類のキューの id を使用した構造\_受信\_キュー\_Id。 OID メソッドの要求から正常に戻った後、 **InformationBuffer**の NDIS メンバー\_OID\_要求の構造体にはへのポインターが含まれています、 **NDIS\_受信\_キュー\_パラメーター**構造体。
 

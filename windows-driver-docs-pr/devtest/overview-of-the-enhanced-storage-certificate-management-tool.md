@@ -22,7 +22,7 @@ Windows 7 以降のオペレーティング システムが提供、*拡張記�
 
     証明書を追加または (ASCm 証明書) を除く標準的な IEEE 1667 に対応している任意の USB 記憶装置の ASC ストア内で置換できます。
 
-    詳細については、次を参照してください。[拡張記憶域証明書の管理ツールを使って証明書をインポートする](importing-certificates-by-using-the-enhanced-storage-certificate-manag.md)します。
+    詳細については、[拡張記憶域証明書の管理ツールを使って証明書をインポートする](importing-certificates-by-using-the-enhanced-storage-certificate-manag.md)を参照してください。
 
 -   ASC ストアから証明書をファイルにエクスポートします。
 
@@ -52,7 +52,7 @@ Windows 7 以降のオペレーティング システムが提供、*拡張記�
 
 各項目の意味は次のとおりです。
 
--   *USB\_ハードウェア\_ID*されているハードウェアや、USB ストレージ デバイスの互換性のある識別子 (ID)。 これらの Id の詳細については、次を参照してください。 [USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)します。
+-   *USB\_ハードウェア\_ID*されているハードウェアや、USB ストレージ デバイスの互換性のある識別子 (ID)。 これらの Id の詳細については、[USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)を参照してください。
 
 -   デバイス インスタンスを表す GUID。
 

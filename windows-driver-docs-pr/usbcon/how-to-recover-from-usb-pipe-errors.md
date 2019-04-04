@@ -59,7 +59,7 @@ USB クライアント ドライバーは、コントロールの転送を既定
 
     KMDF クライアント ドライバーは、呼び出すことによって WDFUSBDEVICE ハンドルを取得する必要があります、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh439428)メソッド。 詳細については、「デバイスのソース コード」を参照してください[USB クライアント ドライバー コード構造 (KMDF) について](understanding-the-kmdf-template-code-for-usb.md)します。
 
--   クライアント ドライバーでは、フレームワーク ターゲットのパイプ オブジェクトを識別するハンドルが必要です。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
+-   クライアント ドライバーでは、フレームワーク ターゲットのパイプ オブジェクトを識別するハンドルが必要です。 詳細については、[USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)を参照してください。
 
 <a name="instructions"></a>手順
 ------------
@@ -69,7 +69,7 @@ USB クライアント ドライバーは、コントロールの転送を既定
 クライアント ドライバーでは、USB 要求ブロック (URB) を使用して、データ転送を開始します。 要求が完了すると、USB ドライバー スタックは、転送が成功したか、失敗したかどうかを示す USBD ステータス コードを返します。 発生するでは、USBD コードは、失敗の理由を示します。
 
 -   呼び出して URB を送信した場合、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)メソッド、チェック、 **Hdr.Status**のメンバー、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)メソッドが返された後構造体します。
--   呼び出すことによって、URB を非同期的に送信した場合、 [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド、URB 状態を確認、 [ *EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://msdn.microsoft.com/library/windows/hardware/ff540745). *Params*パラメーターが指す、 [ **WDF\_要求\_完了\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552454)構造体。 USBD ステータス コードを確認するには、検査、 **Usb -&gt;UsbdStatus**メンバー。 コードについては、次を参照してください。 [USBD\_状態](https://msdn.microsoft.com/library/windows/hardware/ff539136)します。
+-   呼び出すことによって、URB を非同期的に送信した場合、 [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド、URB 状態を確認、 [ *EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://msdn.microsoft.com/library/windows/hardware/ff540745). *Params*パラメーターが指す、 [ **WDF\_要求\_完了\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552454)構造体。 USBD ステータス コードを確認するには、検査、 **Usb -&gt;UsbdStatus**メンバー。 コードについては、[USBD\_状態](https://msdn.microsoft.com/library/windows/hardware/ff539136)を参照してください。
 
 USBD など、デバイスのエラーからの転送エラーが発生\_状態\_失速\_PID または USBD\_状態\_BABBLE\_が検出されました。 ホスト コント ローラーの USBD などによって報告されたエラーのため発生する可能性も\_状態\_XACT\_エラー。
 

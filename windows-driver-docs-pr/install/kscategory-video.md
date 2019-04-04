@@ -58,9 +58,9 @@ KS ビデオ デバイスのドライバーでは、オペレーティング シ
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-この機能のカテゴリの詳細については、次を参照してください。 [UVC INF ファイルを提供する](https://msdn.microsoft.com/library/windows/hardware/ff568123)します。
+この機能のカテゴリの詳細については、[UVC INF ファイルを提供する](https://msdn.microsoft.com/library/windows/hardware/ff568123)を参照してください。
 
-概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
+概要ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)を参照してください。
 
 ビデオ デバイスの他のデバイスのインターフェイス クラスについては、次を参照してください[ **KSCATEGORY_TVAUDIO** ](kscategory-tvaudio.md)と[ **KSCATEGORY_TVTUNER** ](kscategory-tvtuner.md) .
 

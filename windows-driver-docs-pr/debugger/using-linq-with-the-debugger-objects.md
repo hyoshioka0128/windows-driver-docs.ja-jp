@@ -34,7 +34,7 @@ LINQ 構文は、データを検索および操作デバッガー オブジェ�
 -   状態
 -   設定
 
-NatVis デバッガー オブジェクトを使用することができます。 詳細については、次を参照してください。 [NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)します。 JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください[JavaScript 拡張機能のネイティブ デバッガー オブジェクト。](native-objects-in-javascript-extensions.md)
+NatVis デバッガー オブジェクトを使用することができます。 詳細については、[NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)を参照してください。 JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください[JavaScript 拡張機能のネイティブ デバッガー オブジェクト。](native-objects-in-javascript-extensions.md)
 
 ## <a name="dx-command"></a>Dx コマンド
 
@@ -204,7 +204,7 @@ kd> dx -r2 @$mySessionVar
 
 **ユーザー定義変数、匿名型**
 
-この動的オブジェクトの作成の完了を使用して、C#匿名型の構文 (新しい {...})。 詳細については、匿名型について詳細は、次を参照してください。[匿名型 (C#プログラミング ガイド)](https://msdn.microsoft.com/library/bb397696.aspx)します。 この例では、整数、文字列値を持つ匿名型を作成します。
+この動的オブジェクトの作成の完了を使用して、C#匿名型の構文 (新しい {...})。 詳細については、匿名型について詳細は、[匿名型 (C#プログラミング ガイド)](https://msdn.microsoft.com/library/bb397696.aspx)を参照してください。 この例では、整数、文字列値を持つ匿名型を作成します。
 
 ```dbgcmd
 kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }

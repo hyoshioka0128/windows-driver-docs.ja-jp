@@ -334,7 +334,7 @@ STDMETHODIMP CWIADevice::GetNotificationData( LPSTINOTIFY pBuffer )
 
  
 
-WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド作成して送信し、WIA\_イベント\_POWER\_中断イベント、システムがスリープ状態に配置するとします。 この呼び出しが発生した場合、デバイスが、待機状態からに既に可能性があります。 スリープ状態は、このシャット ダウン状態にシステムを許可する任意の待機状態を終了するカーネル モード ドライバーを自動的にトリガーします。 システムのスリープ状態から再開 WIA サービスが送信、WIA\_イベント\_POWER\_再開イベント。 この時点で、WIA ミニドライバーは、割り込みイベントの待機状態を再確立する必要があります。 スリープ状態の詳細については、次を参照してください。[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)と[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)します。
+WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド作成して送信し、WIA\_イベント\_POWER\_中断イベント、システムがスリープ状態に配置するとします。 この呼び出しが発生した場合、デバイスが、待機状態からに既に可能性があります。 スリープ状態は、このシャット ダウン状態にシステムを許可する任意の待機状態を終了するカーネル モード ドライバーを自動的にトリガーします。 システムのスリープ状態から再開 WIA サービスが送信、WIA\_イベント\_POWER\_再開イベント。 この時点で、WIA ミニドライバーは、割り込みイベントの待機状態を再確立する必要があります。 スリープ状態の詳細については、[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)と[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)を参照してください。
 
 WIA ミニドライバー キャッシュ イベント ハンドル最初に渡されることをお勧めしますが、 [ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840)システムをスリープ状態から再開したときにその it を再利用できるようにメソッドまたは休止状態。
 

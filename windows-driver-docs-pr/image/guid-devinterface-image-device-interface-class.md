@@ -47,7 +47,7 @@ ms.locfileid: "56527213"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-静止画像デバイス用のシステム提供のカーネル モード ドライバーでは、静止画像デバイスに対するこのデバイスのインターフェイス クラスのインスタンスを登録します。 このデバイスのインターフェイス クラスのインスタンスは、I/O インターフェイスのドライバー サポートを静止画像を使用してアクセスできます。 まだイメージのデバイスとドライバーの詳細については、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)します。
+静止画像デバイス用のシステム提供のカーネル モード ドライバーでは、静止画像デバイスに対するこのデバイスのインターフェイス クラスのインスタンスを登録します。 このデバイスのインターフェイス クラスのインスタンスは、I/O インターフェイスのドライバー サポートを静止画像を使用してアクセスできます。 まだイメージのデバイスとドライバーの詳細については、[Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)を参照してください。
 
 このインターフェイスは、まだイメージのドライバーと WIA ドライバーに適用されますは、Microsoft Windows XP および Windows の以降のバージョンを使用できます。
 

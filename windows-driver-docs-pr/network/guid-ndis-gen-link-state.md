@@ -27,5 +27,5 @@ WMI のメソッド識別子は NDIS_WMI_DEFAULT_METHOD_ID、する必要があ�
 
 ミニポート ドライバーでは、初期化中に、リンクの状態を指定し、状態インジケーターの更新プログラムを提供します。 WMI クライアントでは、リンクの状態が変更されたときに、更新プログラムを受信するのに GUID_NDIS_GEN_LINK_STATE GUID を使用できます。
 
-リンクのステータスの詳細については、次を参照してください。 [OID_GEN_LINK_STATE](oid-gen-link-state.md)と[NDIS_STATUS_LINK_STATE](ndis-status-link-state.md)します。
+リンクのステータスの詳細については、[OID_GEN_LINK_STATE](oid-gen-link-state.md)と[NDIS_STATUS_LINK_STATE](ndis-status-link-state.md)を参照してください。
 

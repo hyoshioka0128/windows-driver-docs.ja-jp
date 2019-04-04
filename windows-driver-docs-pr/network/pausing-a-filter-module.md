@@ -24,7 +24,7 @@ ms.locfileid: "56549228"
 
 NDIS フィルター ドライバーの呼び出しを実行中のフィルター モジュールを一時停止する[ *FilterPause* ](https://msdn.microsoft.com/library/windows/hardware/ff549957)関数。 フィルター モジュールが入力、*一時停止中*状態での実行の開始時、 *FilterPause*関数。
 
-NDIS は、ドライバー スタックを一時停止するプラグ アンド プレイ操作の一部としてフィルター モジュールを一時停止します。 ドライバー スタックを一時停止の概要については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
+NDIS は、ドライバー スタックを一時停止するプラグ アンド プレイ操作の一部としてフィルター モジュールを一時停止します。 ドライバー スタックを一時停止の概要については、[ドライバー スタックを一時停止](pausing-a-driver-stack.md)を参照してください。
 
 内にあるフィルター モジュールの代わり、*一時停止中*状態では、フィルター ドライバー。
 
@@ -50,13 +50,13 @@ NDIS は、ドライバー スタックを一時停止するプラグ アンド 
 
 -   状態インジケーターを提供することができます、 [ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)関数。
 
-    状態インジケーターの詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](filter-module-status-indications.md)します。
+    状態インジケーターの詳細については、[フィルター モジュールの状態インジケーター](filter-module-status-indications.md)を参照してください。
 
 -   状態インジケーターを処理する必要があります、 [ *FilterStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff549973)関数。
 
 -   OID の要求を処理する必要があります、 [ *FilterOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff549954)関数。
 
-    OID 要求の詳細については、次を参照してください。[フィルター モジュールの OID 要求](filter-module-oid-requests.md)します。
+    OID 要求の詳細については、[フィルター モジュールの OID 要求](filter-module-oid-requests.md)を参照してください。
 
 -   OID の要求を開始できます。
 
@@ -64,7 +64,7 @@ NDIS は、ドライバー スタックを一時停止するプラグ アンド 
 
 -   送信を停止し、受信操作に必要な場合、タイマーをキャンセルする必要があります。
 
-    タイマーの詳細については、次を参照してください。 [NDIS 6.0 タイマー サービス](https://msdn.microsoft.com/library/windows/hardware/ff567890)します。
+    タイマーの詳細については、[NDIS 6.0 タイマー サービス](https://msdn.microsoft.com/library/windows/hardware/ff567890)を参照してください。
 
 フィルター ドライバーは正常に送信を一時停止し、受信操作で後、一時停止操作を完了する必要があります。 フィルター ドライバー操作を完了できる一時停止同期または非同期で NDIS を返すことによって\_状態\_成功または NDIS\_状態\_からそれぞれ PENDING [ *FilterPause*](https://msdn.microsoft.com/library/windows/hardware/ff549957)します。
 
@@ -88,7 +88,7 @@ NDIS は、ドライバー スタックを一時停止するプラグ アンド 
 
 -   OID の要求を開始できます。
 
-NDIS が他のプラグ アンド プレイ操作を開始していないなどのアタッチ、デタッチ、または再起動を要求するときに、フィルター ドライバーは、*一時停止中*状態。 NDIS を開始できるデタッチまたはフィルター ドライバーが、後の再起動要求、 *Paused*状態。 フィルター モジュールを切断する方法の詳細については、次を参照してください。[フィルター モジュールをデタッチ](detaching-a-filter-module.md)します。 フィルター モジュールを再起動する方法の詳細については、次を参照してください。[フィルター モジュールの開始](starting-a-filter-module.md)します。
+NDIS が他のプラグ アンド プレイ操作を開始していないなどのアタッチ、デタッチ、または再起動を要求するときに、フィルター ドライバーは、*一時停止中*状態。 NDIS を開始できるデタッチまたはフィルター ドライバーが、後の再起動要求、 *Paused*状態。 フィルター モジュールを切断する方法の詳細については、[フィルター モジュールをデタッチ](detaching-a-filter-module.md)を参照してください。 フィルター モジュールを再起動する方法の詳細については、[フィルター モジュールの開始](starting-a-filter-module.md)を参照してください。
 
  
 

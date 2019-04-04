@@ -68,7 +68,7 @@ A **SourceDisksFiles**セクションは、任意の数の配布のディスク�
 
 インストール中に、SetupAPI 関数の参照アーキテクチャに固有の**SourceDisksFiles**セクションでは、汎用のセクションを使用する前にします。 たとえばかどうかは、x86 ベースのプラットフォームでのインストール時に Windows がファイルをコピーするという*ルート*、ファイルの説明で検索されます **[SourceDisksFiles.x86]** で検索する前に **[SourceDisksFiles]**。
 
-**重要な**  使用しないでください、 **SourceDisksFiles** INF ファイルをコピーするセクション。 INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](copying-inf-files.md)します。
+**重要な**  使用しないでください、 **SourceDisksFiles** INF ファイルをコピーするセクション。 INF ファイルをコピーする方法の詳細については、[コピー Inf](copying-inf-files.md)を参照してください。
 
  
 

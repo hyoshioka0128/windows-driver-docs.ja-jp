@@ -3,13 +3,18 @@ title: ネットワーク アダプターの WDF クラス拡張機能 (NetAdapt
 description: ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
 ms.assetid: 74719A80-AE66-410F-85B7-31B6F455A818
 keywords:
-  - ネットワーク アダプターのクラス拡張機能、ネットワーク アダプターの WDF クラス拡張機能、NetAdapterCx、NetCx
+- ネットワーク アダプターのクラス拡張機能、ネットワーク アダプターの WDF クラス拡張機能、NetAdapterCx、NetCx
 ms.date: 06/05/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 01d760d2e2f24a0029347f81db20f3e1f50197de
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465699"
 ---
-
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]

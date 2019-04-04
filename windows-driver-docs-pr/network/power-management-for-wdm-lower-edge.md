@@ -22,7 +22,7 @@ ms.locfileid: "56530159"
 
 
 
-NDIS は、すべてのプラグ アンド プレイ (PnP) および NDIS WDM ミニポート ドライバーの電源管理 Irp を処理します。 そのため、NDIS WDM ミニポート ドライバーは PnP および電源管理に Oid、」の説明に従って、デバイスの機能に基づく応答する必要があります[NDIS ミニポート ドライバーの電源管理](https://msdn.microsoft.com/library/windows/hardware/hh205399)します。 これらの Oid の詳細については、次を参照してください。 [(NDIS 6.0 以降) の電源管理](https://msdn.microsoft.com/library/windows/hardware/hh205399)します。
+NDIS は、すべてのプラグ アンド プレイ (PnP) および NDIS WDM ミニポート ドライバーの電源管理 Irp を処理します。 そのため、NDIS WDM ミニポート ドライバーは PnP および電源管理に Oid、」の説明に従って、デバイスの機能に基づく応答する必要があります[NDIS ミニポート ドライバーの電源管理](https://msdn.microsoft.com/library/windows/hardware/hh205399)します。 これらの Oid の詳細については、[(NDIS 6.0 以降) の電源管理](https://msdn.microsoft.com/library/windows/hardware/hh205399)を参照してください。
 
  
 

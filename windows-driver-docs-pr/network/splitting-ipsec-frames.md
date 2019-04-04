@@ -23,7 +23,7 @@ ms.locfileid: "56537064"
 
 NIC で IPsec フレームに分割できます、[上のレイヤー プロトコル ヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)、 [TCP ペイロードの先頭](splitting-frames-at-the-tcp-payload.md)、または[UDP ペイロードの先頭](splitting-frames-at-the-udp-payload.md)します。 NIC が IPsec 情報と同様に処理オプションの IPv4 または IPv6 拡張ヘッダー。
 
-NIC はできない場合、結果のヘッダーのバッファーがある最大ヘッダー サイズより大きい長さフレームを分割することがあります。 ヘッダーの最大サイズの詳細については、次を参照してください。[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)します。
+NIC はできない場合、結果のヘッダーのバッファーがある最大ヘッダー サイズより大きい長さフレームを分割することがあります。 ヘッダーの最大サイズの詳細については、[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)を参照してください。
 
  
 

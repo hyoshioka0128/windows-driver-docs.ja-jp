@@ -92,7 +92,7 @@ DIF_POWERMESSAGEWAKE 要求は、Windows がデバイスの電源のプロパテ
 
 共同インストーラー power プロパティのテキストを提供する場合、処理後のフェーズで実行にする必要があります。 共同インストーラー共同インストーラーの前に要求を処理するインストーラーによって提供される power プロパティ テキストを上書きする場合は注意があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

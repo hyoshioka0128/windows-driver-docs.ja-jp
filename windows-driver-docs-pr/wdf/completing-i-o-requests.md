@@ -86,7 +86,7 @@ I/O 操作があった場合[キャンセル](canceling-i-o-requests.md)、ド�
 
 ドライバーは、同期的に、I/O 要求を送信する場合、通常呼び出し[ **WdfRequestGetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff549974)、 [ **WdfRequestGetCompletionParams** ](https://msdn.microsoft.com/library/windows/hardware/ff549961)、および[ **WdfRequestGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549965)同期呼び出しが返された後にします。 通常内からこれらのメソッドを呼び出し、ドライバーは、非同期的に、I/O 要求を送信する場合、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数。
 
-I/O 要求を完了する詳細については、次を参照してください。[の同期をキャンセルし完了コード](synchronizing-cancel-and-completion-code.md)します。
+I/O 要求を完了する詳細については、[の同期をキャンセルし完了コード](synchronizing-cancel-and-completion-code.md)を参照してください。
 
  
 

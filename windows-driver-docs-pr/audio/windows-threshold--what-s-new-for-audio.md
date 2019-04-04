@@ -66,7 +66,7 @@ Windows 10 では、作業は OS で待機時間を減らす行われました�
 1. \[必須\]各モードでサポートされている最小バッファー サイズを宣言します。
 2. \[省略可、ただし推奨\]ドライバーと OS の間のデータ フローの連携を強化します。
 3. \[省略可、ただし推奨\]ドライバー リソース (割り込み、スレッド) を登録し、低待機時間シナリオでの OS で保護するようにします。
-詳細については、次を参照してください。[低待機時間のオーディオ](low-latency-audio.md)します。
+詳細については、[低待機時間のオーディオ](low-latency-audio.md)を参照してください。
 
 ## <a name="span-idsignalprocessingspanspan-idsignalprocessingspanspan-idsignalprocessingspansignal-processing-modes-and-audio-categories"></a><span id="SignalProcessing"></span><span id="signalprocessing"></span><span id="SIGNALPROCESSING"></span>信号処理モードとオーディオのカテゴリ
 
@@ -158,18 +158,18 @@ Windows 10 では、作業は OS で待機時間を減らす行われました�
 
 \* Windows 10 の新機能です。
 
-詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)と[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)します。
+詳細については、[オーディオ信号の処理モード](audio-signal-processing-modes.md)と[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)を参照してください。
 
 ## <a name="span-idhardwareoffloadedspanspan-idhardwareoffloadedspanspan-idhardwareoffloadedspanhardware-offloaded-apo-effects"></a><span id="HardwareOffloaded"></span><span id="hardwareoffloaded"></span><span id="HARDWAREOFFLOADED"></span>ハードウェア オフロード APO 効果
 
 
 Windows 10 には、ハードウェアのオフロード APO 効果がサポートされています。 APOs は、オフロードの暗証番号 (pin) の上に読み込むことができます。 これにより、ソフトウェアとハードウェアの両方で行われるオーディオの処理。 さらに、処理を動的に変更できます。 一部またはすべての処理を十分なハードウェア リソースがある場合に、ソフトウェア APO から DSP に移動してに戻すソフトウェア APO DSP に負荷が増えたときにすることができます。
 
-詳細については、次を参照してください。[ハードウェア オフロード APO 効果の実装](implementing-hardware-offloaded-apo-effects.md)します。
+詳細については、[ハードウェア オフロード APO 効果の実装](implementing-hardware-offloaded-apo-effects.md)を参照してください。
 
 ## <a name="span-idcortanavoicespanspan-idcortanavoicespanspan-idcortanavoicespancortana-voice-activation---wake-on-voice"></a><span id="CortanaVoice"></span><span id="cortanavoice"></span><span id="CORTANAVOICE"></span>Cortana 音声のアクティブ化 - 音声でウェイク アップ
 
-Cortana、パーソナル アシスタントのテクノロジは、2013 Microsoft BUILD Developer Conference での最初の demonstarted をしました。 音声をアクティブ化は、コルタナさん」- 特定の語句を言うことにより、さまざまなデバイスの電源の状態からの音声認識エンジンを起動できる機能です。 コルタナさん」音声アクティベーション (VA) 機能では、自分の音声を使用して、自分のアクティブなコンテキストを使用して、(つまり、現在にあるものの画面) の外部でエクスペリエンス (Cortana など) を迅速に情報交換することができます。 機能はシナリオの対象となる画面がオフ、アイドル状態、または完全に有効になります。 ハードウェアでは、バッファリングをサポートする場合のユーザー、連結できます、キー フレーズとコマンドの語句。 これにより、ユーザーのボイス エクスペリエンスでエンド ツー エンドのスリープ解除が向上します。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
+Cortana、パーソナル アシスタントのテクノロジは、2013 Microsoft BUILD Developer Conference での最初の demonstarted をしました。 音声をアクティブ化は、コルタナさん」- 特定の語句を言うことにより、さまざまなデバイスの電源の状態からの音声認識エンジンを起動できる機能です。 コルタナさん」音声アクティベーション (VA) 機能では、自分の音声を使用して、自分のアクティブなコンテキストを使用して、(つまり、現在にあるものの画面) の外部でエクスペリエンス (Cortana など) を迅速に情報交換することができます。 機能はシナリオの対象となる画面がオフ、アイドル状態、または完全に有効になります。 ハードウェアでは、バッファリングをサポートする場合のユーザー、連結できます、キー フレーズとコマンドの語句。 これにより、ユーザーのボイス エクスペリエンスでエンド ツー エンドのスリープ解除が向上します。 詳細については、[音声をアクティブ化](voice-activation.md)を参照してください。
 
 ## <a name="span-idwindowsuniversalspanspan-idwindowsuniversalspanspan-idwindowsuniversalspanwindows-universal-drivers-for-audio"></a><span id="WindowsUniversal"></span><span id="windowsuniversal"></span><span id="WINDOWSUNIVERSAL"></span>オーディオの Windows ユニバーサル ドライバー
 
@@ -181,7 +181,7 @@ Windows 10 では、スマート フォンやタブレットの小さな画面�
 1. Visual Studio 2015:新しいドライバーの設定は、マルチプラット フォームのドライバーを作成する"Universal"に設定する「ターゲット プラットフォーム」を許可します。
 2. APIValidator:これは、ドライバーがユニバーサルおよび更新する必要がある呼び出しを強調表示かどうかをチェックする WDK ツールです。
 3. GitHub でのオーディオ サンプル:Sysvad と SwapAPO ユニバーサル ドライバーに変換されました。
-詳細と GitHub のサンプル コードへのポインターは、次を参照してください。[オーディオのユニバーサル Windows ドライバー](audio-universal-drivers.md)します。
+詳細と GitHub のサンプル コードへのポインターは、[オーディオのユニバーサル Windows ドライバー](audio-universal-drivers.md)を参照してください。
 
 ## <a name="span-idresourcemanagementspanspan-idresourcemanagementspanspan-idresourcemanagementspanresource-management-for-audio-drivers"></a><span id="ResourceManagement"></span><span id="resourcemanagement"></span><span id="RESOURCEMANAGEMENT"></span>オーディオ ドライバーのリソースの管理
 
@@ -190,7 +190,7 @@ Windows 10 では、スマート フォンやタブレットの小さな画面�
 
 Windows 10 には、優先度の高いオーディオ ストリームと携帯電話の呼び出しができるを再生することを保証する同時実行の制約を表現するためのメカニズムが含まれています。 システムが十分なリソースを持たない場合は、低優先度のストリームが終了します。 このメカニズムでは、携帯電話とタブレットではなくデスクトップやラップトップで使用できるのみです。
 
-詳細については、次を参照してください。[オーディオ ハードウェア リソースの管理](audio-hardware-resource-management.md)します。
+詳細については、[オーディオ ハードウェア リソースの管理](audio-hardware-resource-management.md)を参照してください。
 
 ## <a name="span-idpnprebalancespanspan-idpnprebalancespanspan-idpnprebalancespanpnp-rebalance-for-audio-drivers"></a><span id="PNPRebalance"></span><span id="pnprebalance"></span><span id="PNPREBALANCE"></span>オーディオ ドライバーの PNP のバランス調整
 
@@ -199,7 +199,7 @@ PNP 再調整はシナリオで使用特定 PCI を再割り当てするメモ�
 
 1. PCI ホットプラグ:ユーザーはデバイスをプラグインし、PCI バスには、新しいデバイスのドライバーの読み込みには、十分なリソースはありません。 このカテゴリに分類されるデバイスのいくつかの例には、Thunderbolt、USB C および NVME ストレージが含まれます。 このシナリオでメモリ リソースを再配置し、統合 (rebalanced) サポートする必要があるされる追加のデバイス。
 2. PCI サイズ バー:デバイスのドライバーのメモリに読み込みが成功した後、その他のリソースを要求します。 デバイスのいくつかの例には、ハイエンドなグラフィックス カードと記憶装置が含まれます。
-詳細については、次を参照してください。[実装 PortCls オーディオ ドライバーの PnP 再調整](implement-pnp-rebalance-for-portcls-audio-drivers.md)します。
+詳細については、[実装 PortCls オーディオ ドライバーの PnP 再調整](implement-pnp-rebalance-for-portcls-audio-drivers.md)を参照してください。
 
  
 

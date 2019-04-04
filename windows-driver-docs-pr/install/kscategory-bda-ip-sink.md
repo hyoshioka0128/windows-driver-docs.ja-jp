@@ -56,7 +56,7 @@ KSCATEGORY_BDA_IP_SINK[デバイス インターフェイス クラス](https://
 
 BDA デバイス用のドライバーでは、デバイスがシンク BDA IP フィルターをサポートすることを示す KSCATEGORY_BDA_IP_SINK のインスタンスを登録します。
 
-詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+詳細については、[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

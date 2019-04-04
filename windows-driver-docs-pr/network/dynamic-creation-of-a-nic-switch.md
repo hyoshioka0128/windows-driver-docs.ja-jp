@@ -28,7 +28,7 @@ PF のミニポート ドライバーが動的にサポートする場合は、N
 
 1.  PF のミニポート ドライバーでは、これらのパラメーターに基づいて、NIC のスイッチに必要なハードウェアおよびソフトウェア リソースを割り当てます。 ドライバーは、これらのパラメーターでも、ネットワーク アダプターを構成します。
 
-    **注**  動的 NIC スイッチの作成をサポートする PF ミニポート ドライバーには、レジストリで標準化された SR-IOV キーワード設定を使用してスイッチ パラメーターを読み取る必要はありません。 NDIS は初期化するためにこれらのキーワードを読み取り、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451587)発行前に構造体、 [OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)要求。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
+    **注**  動的 NIC スイッチの作成をサポートする PF ミニポート ドライバーには、レジストリで標準化された SR-IOV キーワード設定を使用してスイッチ パラメーターを読み取る必要はありません。 NDIS は初期化するためにこれらのキーワードを読み取り、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451587)発行前に構造体、 [OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)要求。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
 
      
 

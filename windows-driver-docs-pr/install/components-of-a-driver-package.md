@@ -57,13 +57,13 @@ ms.locfileid: "56538811"
 
     INF ファイルに情報が含まれていますが、[システム指定のデバイスのインストール コンポーネント](system-provided-device-installation-components.md)を使用して、デバイスのサポートをインストールします。 Windows では、このファイルをコピー、%*SystemRoot*%\\*inf*ディレクトリ、デバイスをインストールするとき。 すべてのデバイス、INF ファイルが必要です。
 
-    詳細については、次を参照してください。 [、INF ファイルを指定して](supplying-an-inf-file.md)します。
+    詳細については、[、INF ファイルを指定して](supplying-an-inf-file.md)を参照してください。
 
 -   ドライバー[カタログ (.cat) ファイル](catalog-files.md)
 
     ドライバー カタログのファイルには、ドライバー パッケージ内の各ファイルの暗号化ハッシュが含まれています。 Windows では、これらのハッシュを使用して、パブリッシュされた後、パッケージが変更しないことを確認します。 ように、カタログ ファイルが変更されていない必要がある[デジタル署名された](digital-signatures.md)します。
 
-    ドライバーに署名する方法については、次を参照してください。[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)と[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)します。
+    ドライバーに署名する方法については、[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)と[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)を参照してください。
 
 ### <a name="other-files"></a>その他のファイル
 

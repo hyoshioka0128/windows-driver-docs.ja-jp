@@ -99,7 +99,7 @@ ms.locfileid: "56529870"
 
 11. Windows XP または Windows の以降のバージョンを実行する x64 ベース システム用に必要な追加のデバイス固有のセクションが含まれます。 含める、 **.ntamd64**これらセクション名で拡張機能。
 
-INF ファイルのセクションとディレクティブの詳細については、次を参照してください。 [INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)します。
+INF ファイルのセクションとディレクティブの詳細については、[INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
 
  
 

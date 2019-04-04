@@ -24,7 +24,7 @@ ms.locfileid: "56531376"
 ## <span id="ddk_supporting_vertex_elements_sharing_offset_in_a_stream_gg"></span><span id="DDK_SUPPORTING_VERTEX_ELEMENTS_SHARING_OFFSET_IN_A_STREAM_GG"></span>
 
 
-DirectX 9.0 バージョンのドライバーでは、そのデバイスが、D3DDEVCAPS2 を設定して、ストリーム内の同一オフセットを共有する複数の頂点要素を使用することを示します\_VERTEXELEMENTSCANSHARESTREAMOFFSET 機能ビット、 **DevCaps2**D3DCAPS9 構造体のメンバーです。 頂点シェーダーの宣言は、頂点の要素の配列で構成されます。 詳細については、次を参照してください。[宣言の分離と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)します。
+DirectX 9.0 バージョンのドライバーでは、そのデバイスが、D3DDEVCAPS2 を設定して、ストリーム内の同一オフセットを共有する複数の頂点要素を使用することを示します\_VERTEXELEMENTSCANSHARESTREAMOFFSET 機能ビット、 **DevCaps2**D3DCAPS9 構造体のメンバーです。 頂点シェーダーの宣言は、頂点の要素の配列で構成されます。 詳細については、[宣言の分離と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)を参照してください。
 
 ピクセル シェーダー (PS) バージョン 3.0 以前をサポートしているデバイスの DirectX 9.0 ドライバー設定 D3DDEVCAPS2 場合\_VERTEXELEMENTSCANSHARESTREAMOFFSET、ドライバーが処理できる、D3DDECLUSAGE を指定する要素を持つほとんどの頂点宣言\_POSITIONT (0) の使用法の種類。 D3DDECLUSAGE でこの事前 PS 3.0 ドライバーに変換します頂点宣言\_POSITIONT (0) に柔軟な頂点の有効な形式 (FVF)。 ただし、この事前 PS 3.0 のドライバーが、D3DDECLUSAGE を指定する要素を持つ頂点宣言を処理できない\_POSITIONT (0) の使用法の種類宣言では、テクスチャ座標のギャップがある場合。 たとえば、この事前 PS 3.0 のドライバーでは、頂点の次の宣言を処理できません。
 

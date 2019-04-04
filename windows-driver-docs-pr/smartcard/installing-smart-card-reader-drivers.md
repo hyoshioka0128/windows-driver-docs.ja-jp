@@ -47,7 +47,7 @@ UmdfKernelModeClientPolicy=AllowKernelModeClients
 
 スマート カード リーダーのドライバーのインストールに関連付けられているその他の特別な要件はありません。
 
-Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
 
 
 

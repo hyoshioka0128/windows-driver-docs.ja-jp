@@ -30,7 +30,7 @@ Windows 8 以降、デバイス メタデータのキャッシュは、次のデ
 %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataCache\
 ```
 
-ときに、[デバイス メタデータの取得クライアント](device-metadata-retrieval-client.md)(DMRC)、Windows メタデータ and Services (WMIS) web サイトからデバイス メタデータ パッケージをダウンロードして、デバイスのメタデータ キャッシュ内に保存します。 このプロセスの詳細については、次を参照してください。 [WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)します。
+ときに、[デバイス メタデータの取得クライアント](device-metadata-retrieval-client.md)(DMRC)、Windows メタデータ and Services (WMIS) web サイトからデバイス メタデータ パッケージをダウンロードして、デバイスのメタデータ キャッシュ内に保存します。 このプロセスの詳細については、[WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)を参照してください。
 
 **注**  デバイス メタデータのキャッシュは使用するオペレーティング システムのみに予約されています。 インストールされていない DMRC などは、OEM によって提供されるアプリケーションを通じてデバイス メタデータ パッケージをコピーする必要があります、[デバイス メタデータ ストア](device-metadata-store.md)代わりにします。
 

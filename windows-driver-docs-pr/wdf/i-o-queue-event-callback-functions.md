@@ -21,7 +21,7 @@ ms.locfileid: "56532628"
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ドライバーは、の I/O キューを作成または既定の I/O キューの構成、フレームワークは、インターフェイスに関連するイベントが発生したときに、--インターフェイスに関連付けられているメソッドを呼び出すことによって、ドライバーを通知するため、次のインターフェイスを登録することができます。 I/O キューの作成と構成の I/O キューの詳細については、次を参照してください。 [Framework I/O キュー オブジェクト](framework-i-o-queue-object.md)します。
+ドライバーは、の I/O キューを作成または既定の I/O キューの構成、フレームワークは、インターフェイスに関連するイベントが発生したときに、--インターフェイスに関連付けられているメソッドを呼び出すことによって、ドライバーを通知するため、次のインターフェイスを登録することができます。 I/O キューの作成と構成の I/O キューの詳細については、[Framework I/O キュー オブジェクト](framework-i-o-queue-object.md)を参照してください。
 
 [IQueueCallbackCreate](https://msdn.microsoft.com/library/windows/hardware/ff556837)
 

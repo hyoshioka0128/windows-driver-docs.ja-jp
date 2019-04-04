@@ -81,7 +81,7 @@ KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディ
 
 KSPROPERTY の既定値を指定することをお勧めします。\_AUDDECOUT\_CUR\_、ミニドライバーの MODE プロパティ プロパティ、レジストリの設定をシリアル化します。
 
-詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)します。
+詳細については、[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

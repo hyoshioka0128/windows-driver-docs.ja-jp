@@ -3,17 +3,22 @@ title: ドライバー開発ツール
 description: ドライバー開発ツール
 ms.assetid: 1d384d73-d1d2-445f-8077-40eed1f99a8c
 keywords:
-  - ツール WDK
-  - ドライバー開発ツール WDK
-  - WsdCodeGen ツール WDK
-  - 'ツール WDK , ドライバーの開発'
-  - 'Web Services for Devices WDK WIA , ツール'
+- ツール WDK
+- ドライバー開発ツール WDK
+- WsdCodeGen ツール WDK
+- ツール WDK , ドライバーの開発
+- Web Services for Devices WDK WIA , ツール
 ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 07e076c9e410d035cf564d2a64ba4c253041a17a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465697"
 ---
-
 # <a name="driver-development-tools"></a>ドライバー開発ツール
 
 

@@ -54,11 +54,11 @@ ms.locfileid: "56529803"
 
 12. をクリックしてパッケージを送信する準備ができたら、**起動 Windows デベロッパー センター - ハードウェア ダッシュ ボード**します。
 
-パッケージを送信する方法の詳細については、次を参照してください。[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)します。
+パッケージを送信する方法の詳細については、[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)を参照してください。
 
-Devicemanifest ファイルに関する詳細については、次を参照してください。[モバイル ブロード バンドの UWP アプリを送信](https://go.microsoft.com/fwlink/p/?linkid=248426)します。
+Devicemanifest ファイルに関する詳細については、[モバイル ブロード バンドの UWP アプリを送信](https://go.microsoft.com/fwlink/p/?linkid=248426)を参照してください。
 
-Bulkmetadata ファイルに関する詳細については、次を参照してください。[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)します。
+Bulkmetadata ファイルに関する詳細については、[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)を参照してください。
 
  
 

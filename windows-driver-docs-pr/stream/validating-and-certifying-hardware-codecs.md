@@ -64,6 +64,6 @@ typedef enum
 } KSMETHOD_OPMVIDEOOUTPUT;           
 ```
 
-ユーザー モード コンポーネント アクセス KSPROPSETID\_を通じて OPMVideoOutput、 **IKsControl** AVStream プロキシ MFT 上のインターフェイス。 ハンドラー ルーチン OPMVideoOutput メソッドの実装を示すコード例では、次を参照してください。[コーデック Merit 検証](codec-merit-validation.md)です。
+ユーザー モード コンポーネント アクセス KSPROPSETID\_を通じて OPMVideoOutput、 **IKsControl** AVStream プロキシ MFT 上のインターフェイス。 ハンドラー ルーチン OPMVideoOutput メソッドの実装を示すコード例では、[コーデック Merit 検証](codec-merit-validation.md)を参照してください。
 
-ドライバー固有 OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)します。 OPM の特定のアプリケーションについては、次を参照してください。[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)します。
+ドライバー固有 OPM については、[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)を参照してください。 OPM の特定のアプリケーションについては、[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)を参照してください。

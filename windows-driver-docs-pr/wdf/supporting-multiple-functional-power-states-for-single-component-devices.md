@@ -16,7 +16,7 @@ ms.locfileid: "56531835"
 
 単一コンポーネントのデバイスの KMDF ドライバーは、コンポーネントの 1 つまたは複数の機能の電源状態を定義および電源管理フレームワーク (PoFx) がコンポーネントの [fx] 状態が変更されたときに呼び出すコールバック機能またはのアクティブまたはアイドル状態を登録できます。変更します。 単一コンポーネントのデバイスの UMDF ドライバーは、UMDF バージョン 2.0 以降、機能の 1 つの電源の状態 (F0) を定義できます。
 
-PoFx の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
+PoFx の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
 
 単一コンポーネントのデバイスの [fx] 状態のサポートを実装する前に注文では、次を行う必要があります。 または最初の期間中にデバイスが起動します。
 
@@ -41,7 +41,7 @@ PoFx の詳細については、次を参照してください。 [、電源管�
 3.  [*EvtInterruptEnable*](https://msdn.microsoft.com/library/windows/hardware/ff541730)
 4.  [*EvtDeviceWdmPostPoFxRegisterDevice* ](https://msdn.microsoft.com/library/windows/hardware/hh406408) /PoFx ハンドルが使用可能な/
 
-ドライバーの提供、 [ *EvtDeviceWdmPostPoFxRegisterDevice* ](https://msdn.microsoft.com/library/windows/hardware/hh406408)コールバックの場合は、POHANDLE を使用して power framework 登録の追加の操作を実行する必要があります。 待機時間を指定、たとえば、保存場所、およびウェイク要件。 POHANDLE を使用するルーチンの詳細については、次を参照してください。[デバイスの電源管理ルーチン](https://msdn.microsoft.com/library/windows/hardware/hh450961)します。
+ドライバーの提供、 [ *EvtDeviceWdmPostPoFxRegisterDevice* ](https://msdn.microsoft.com/library/windows/hardware/hh406408)コールバックの場合は、POHANDLE を使用して power framework 登録の追加の操作を実行する必要があります。 待機時間を指定、たとえば、保存場所、およびウェイク要件。 POHANDLE を使用するルーチンの詳細については、[デバイスの電源管理ルーチン](https://msdn.microsoft.com/library/windows/hardware/hh450961)を参照してください。
 
 ドライバーは、POHANDLE を使用しても PoFx で電源制御要求の交換します。
 

@@ -23,7 +23,7 @@ ms.locfileid: "56531838"
 Microsoft Visual Studio でのカーネル モード デバッグを実行するには。
 
 1.  Visual Studio で、ホスト コンピューター上の**ツール**] メニューの [選択**プロセスにアタッチ**。
-2.  **プロセスにアタッチ**ダイアログ ボックスで、セット**トランスポート**に**Windows カーネル モードのデバッガー**、設定と**修飾子**の名前に、以前の構成済みの対象のコンピュータ。 ターゲット コンピューターの構成方法の詳細については、次を参照してください。[カーネル モード デバッグのセットアップでは、Visual Studio](setting-up-kernel-mode-debugging-in-visual-studio.md)または[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)します。
+2.  **プロセスにアタッチ**ダイアログ ボックスで、セット**トランスポート**に**Windows カーネル モードのデバッガー**、設定と**修飾子**の名前に、以前の構成済みの対象のコンピュータ。 ターゲット コンピューターの構成方法の詳細については、[カーネル モード デバッグのセットアップでは、Visual Studio](setting-up-kernel-mode-debugging-in-visual-studio.md)または[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)を参照してください。
 3.  クリックして**アタッチします。**
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック

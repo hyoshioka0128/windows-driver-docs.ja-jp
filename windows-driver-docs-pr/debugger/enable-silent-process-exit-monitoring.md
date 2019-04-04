@@ -44,7 +44,7 @@ ms.locfileid: "56531701"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-サイレント終了のプロセスを監視する方法の詳細については、次を参照してください。[サイレント プロセス終了の監視](registry-entries-for-silent-process-exit.md)します。
+サイレント終了のプロセスを監視する方法の詳細については、[サイレント プロセス終了の監視](registry-entries-for-silent-process-exit.md)を参照してください。
 
  
 

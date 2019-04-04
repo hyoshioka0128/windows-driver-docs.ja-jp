@@ -56,7 +56,7 @@ KSCATEGORY_BDA_TRANSPORT_INFORMATION[デバイス インターフェイス ク�
 
 BDA デバイス用のドライバーでは、オペレーティング システムに、デバイスが BDA トランスポートについてフィルターをサポートすることを示す KSCATEGORY_BDA_TRANSPORT_INFORMATION のインスタンスを登録します。
 
-BDA トランスポート情報のフィルターの KS 機能のカテゴリの詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+BDA トランスポート情報のフィルターの KS 機能のカテゴリの詳細については、[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -58,7 +58,7 @@ ms.locfileid: "56527872"
 
 制約は、キューのコールバック関数にのみ、プラグ アンド プレイ (PnP) と電源管理のコールバック関数が適用されます。 キューのコールバック関数を以下に示します。
 
--   自動のディスパッチのコールバック関数を次のように、 [ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556875)と[ **IQueueCallbackWrite::OnWrite**](https://msdn.microsoft.com/library/windows/hardware/ff556885)します。 詳細については、次を参照してください。 [I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)します。
+-   自動のディスパッチのコールバック関数を次のように、 [ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556875)と[ **IQueueCallbackWrite::OnWrite**](https://msdn.microsoft.com/library/windows/hardware/ff556885)します。 詳細については、[I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)を参照してください。
 
 -   キューの状態を変更するなど、コールバック関数、 [ **IQueueCallbackStateChange::OnStateChange**](https://msdn.microsoft.com/library/windows/hardware/ff556880)します。
 

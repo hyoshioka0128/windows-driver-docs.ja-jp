@@ -36,7 +36,7 @@ MASM または C++ の式を評価する関数を使用して[ **GetExpression**
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-強力なシンボル API では、次を参照してください。[を使用してシンボル](using-symbols.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
+強力なシンボル API では、[を使用してシンボル](using-symbols.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
 
  
 

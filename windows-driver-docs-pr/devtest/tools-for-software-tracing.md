@@ -81,11 +81,11 @@ Microsoft Windows Driver Kit (WDK) には、アプリケーションとソフト
 </tbody>
 </table> 
 
-Windows ソフトウェア トレース プリプロセッサ (WPP) マクロを使用して、ソフトウェア トレース ドライバーまたはアプリケーションを追加する方法については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)します。
+Windows ソフトウェア トレース プリプロセッサ (WPP) マクロを使用して、ソフトウェア トレース ドライバーまたはアプリケーションを追加する方法については、[WPP ソフトウェア トレース](wpp-software-tracing.md)を参照してください。
 
-ドライバーの使用、カーネル モードの ETW API については、次を参照してください。 [Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)します。
+ドライバーの使用、カーネル モードの ETW API については、[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)を参照してください。
 
-Windows Driver Model (WDM) に Windows Management Instrumentation (WMI) の拡張機能を使用して、ソフトウェア トレースのドライバーを追加する方法については、次を参照してください。 [WMI Event Tracing](https://msdn.microsoft.com/library/windows/hardware/ff566350)します。
+Windows Driver Model (WDM) に Windows Management Instrumentation (WMI) の拡張機能を使用して、ソフトウェア トレースのドライバーを追加する方法については、[WMI Event Tracing](https://msdn.microsoft.com/library/windows/hardware/ff566350)を参照してください。
 
 **注**   ETW と WPP カーネル モード ドライバーとユーザー モード アプリケーションのほとんどの種類をサポートします。 ただし、ETW と WPP は、ドライバー、ミニポート ドライバーなどの特定の種類では使用する型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断する基本的な WPP にマクロを追加、ドライバーなど[WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)と[WPP\_クリーンアップ](https://msdn.microsoft.com/library/windows/hardware/ff556179)します。 使用される型が定義されていないため、コードがコンパイルできない場合は、ETW と WPP がドライバーの種類をサポートできません。 
 

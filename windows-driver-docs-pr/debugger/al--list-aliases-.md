@@ -58,7 +58,7 @@ al
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-エイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
+エイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

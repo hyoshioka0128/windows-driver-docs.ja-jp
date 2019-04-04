@@ -61,7 +61,7 @@ ms.locfileid: "56535455"
 
 ## <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>追加情報
 
-JavaScript のデバッグの概要については、次を参照してください。 [JavaScript デバッガーのスクリプティング - JavaScript のデバッグ](javascript-debugger-scripting.md#DEBUGGING)します。
+JavaScript のデバッグの概要については、[JavaScript デバッガーのスクリプティング - JavaScript のデバッグ](javascript-debugger-scripting.md#DEBUGGING)を参照してください。
 
 >[!NOTE] 
 > WinDbg のプレビューでは、JavaScript のデバッグを使用するには、管理者として、デバッガーを実行します。

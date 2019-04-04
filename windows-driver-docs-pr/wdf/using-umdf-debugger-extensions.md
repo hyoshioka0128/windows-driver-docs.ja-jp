@@ -22,7 +22,7 @@ ms.locfileid: "56537563"
 
 Windows Driver Kit (WDK) には、という名前のデバッガー拡張機能ライブラリが含まれています。 *WudfExt.dll*、DDKROOT % である\\bin サブディレクトリ。 このトピックでは、デバッガー拡張機能のコマンドを説明します*WudfExt.dll*、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のデバッグに使用することができます。 *。x*ドライバー。
 
-UMDF バージョン 2.0 以降 UMDF ドライバーをデバッグする必要があります代わりに使用する、 *Wdfkd.dll*デバッガー拡張機能ライブラリ。 詳細については、次を参照してください。 [ **Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)**](https://msdn.microsoft.com/library/windows/hardware/ff551876)します。
+UMDF バージョン 2.0 以降 UMDF ドライバーをデバッグする必要があります代わりに使用する、 *Wdfkd.dll*デバッガー拡張機能ライブラリ。 詳細については、[ **Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)**](https://msdn.microsoft.com/library/windows/hardware/ff551876)を参照してください。
 
 内の各コマンドの詳細については*WudfExt.dll*を参照してください[ユーザー モード ドライバー フレームワークの拡張機能 (Wudfext.dll)](https://msdn.microsoft.com/library/windows/hardware/ff560030)します。 すべての利用可能なデバッガー拡張機能ライブラリの詳細についてで提供されるドキュメントを参照して、 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)パッケージ。
 

@@ -157,7 +157,7 @@ USBView デバッグできるポート (この例ではポート 2) に接続さ
 
 ### <a name="span-idsoftware-setupspanspan-idsoftwaresetupspanadditional-support"></a><span id="software-setup"></span><span id="SOFTWARE_SETUP"></span>その他のサポート
 
-トラブルシューティングのヒントとカーネルが USB 経由でデバッグの設定の詳細については、次を参照してください。[カーネル デバッグのセットアップと USB 2.0](https://go.microsoft.com/fwlink/p?linkid=389435)します。
+トラブルシューティングのヒントとカーネルが USB 経由でデバッグの設定の詳細については、[カーネル デバッグのセットアップと USB 2.0](https://go.microsoft.com/fwlink/p?linkid=389435)を参照してください。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 

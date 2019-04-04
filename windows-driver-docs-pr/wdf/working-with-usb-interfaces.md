@@ -67,7 +67,7 @@ USB インターフェイスの現在選択されている別の設定を識別�
 
 デバイスの代替設定は、0 から始まる連続して番号する必要があります。
 
-関連情報については、次を参照してください。 [USB インターフェイスで代替の設定を選択する方法](https://msdn.microsoft.com/library/windows/hardware/hh968309)します。
+関連情報については、[USB インターフェイスで代替の設定を選択する方法](https://msdn.microsoft.com/library/windows/hardware/hh968309)を参照してください。
 
  
 

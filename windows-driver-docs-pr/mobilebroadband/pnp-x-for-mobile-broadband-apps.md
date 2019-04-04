@@ -21,7 +21,7 @@ ms.locfileid: "56530623"
 
 モバイル ブロード バンド ユーザー用自動インストール済みである同じアプリまたはデバイスの製造元と演算子が一緒に作成したブランド化されたアプリを使用できます。 アプリは、標準的なモバイル ブロード バンド アプリと同じ機能の多くを含める必要があります。 参照してください[モバイル ブロード バンドのアプリのユーザー エクスペリエンスの設計](designing-the-user-experience-of-a-mobile-broadband-app.md)のためモバイル ブロード バンド アプリで標準的なエクスペリエンスの推奨事項。
 
-ネットワーク デバイスの特定のクラスが自動的に組み合わされ、;詳細については、次を参照してください。[内部デバイス用の UWP デバイス アプリ](https://msdn.microsoft.com/library/windows/hardware/dn265152)します。 その他のデバイス クラスは自動的にアプリをインストールできませんまでユーザーの組み合わせ、デバイスとコンピューター設定を使用しています。
+ネットワーク デバイスの特定のクラスが自動的に組み合わされ、;詳細については、[内部デバイス用の UWP デバイス アプリ](https://msdn.microsoft.com/library/windows/hardware/dn265152)を参照してください。 その他のデバイス クラスは自動的にアプリをインストールできませんまでユーザーの組み合わせ、デバイスとコンピューター設定を使用しています。
 
 ## <a name="span-idappprivilegesspanspan-idappprivilegesspanspan-idappprivilegesspanapp-privileges"></a><span id="App_privileges"></span><span id="app_privileges"></span><span id="APP_PRIVILEGES"></span>アプリの権限
 

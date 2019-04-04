@@ -52,7 +52,7 @@ ms.locfileid: "56536496"
 
 -   **常に浮動**によって、ウィンドウをドッキング場所にドラッグされる場合でも、ドッキングされていないままにします。
 
--   **フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
+-   **フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
 
 -   **ヘルプ**ツールを Windows のデバッグ ドキュメントのこのトピックを開きます。
 
@@ -60,7 +60,7 @@ ms.locfileid: "56536496"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。 デバッグ情報のウィンドウのコントロールに使用できるすべての手法の詳細については、次を参照してください。[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)します。
+Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。 デバッグ情報のウィンドウのコントロールに使用できるすべての手法の詳細については、[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)を参照してください。
 
  
 

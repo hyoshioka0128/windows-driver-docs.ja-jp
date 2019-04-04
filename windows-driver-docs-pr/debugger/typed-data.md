@@ -18,7 +18,7 @@ EngExtCpp の拡張機能フレームワークでは、ターゲットのメモ�
 
 キーを使用して場所を空ける Windows リストを反復処理できる[ **ExtRemoteList** ](https://msdn.microsoft.com/library/windows/hardware/ff544114)と、リスト内のオブジェクトの種類がわかっている場合は[ **ExtRemoteTypedList** ](https://msdn.microsoft.com/library/windows/hardware/ff544173).
 
-**注**  などのクライアント オブジェクトで[ **ExtExtension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)、これらのクラスのインスタンスは、拡張ライブラリは、拡張機能のコマンドを実行するために使用中にのみ有効ですか形式の出力構造体。 具体的には、これらはキャッシュされません。 クライアント オブジェクトが有効な場合の詳細については、次を参照してください。[クライアント オブジェクトと、エンジン](client-objects-and-the-engine.md)、します。
+**注**  などのクライアント オブジェクトで[ **ExtExtension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)、これらのクラスのインスタンスは、拡張ライブラリは、拡張機能のコマンドを実行するために使用中にのみ有効ですか形式の出力構造体。 具体的には、これらはキャッシュされません。 クライアント オブジェクトが有効な場合の詳細については、[クライアント オブジェクトと、エンジン](client-objects-and-the-engine.md)、を参照してください。
 
  
 

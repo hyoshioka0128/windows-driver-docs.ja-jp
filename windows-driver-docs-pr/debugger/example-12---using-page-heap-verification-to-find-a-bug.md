@@ -19,7 +19,7 @@ ms.locfileid: "56529756"
 
 次の一連のコマンドでは、GFlags と NTSD デバッガーのページ ヒープの検証機能を使用して、ヒープ メモリの使用エラーを検出する方法を示します。 この例で、プログラマは疑わする架空のアプリケーション、pheap buggy.exe、ヒープ エラーが発生し、一連のエラーを識別するためのテストを実行します。
 
-NTSD について詳しくは、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
+NTSD について詳しくは、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
 
 ### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>手順 1:標準的なページ ヒープの検証を有効にします。
 

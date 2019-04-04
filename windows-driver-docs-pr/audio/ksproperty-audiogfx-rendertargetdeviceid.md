@@ -74,7 +74,7 @@ KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID プロパティ要求がステータ�
 
 プロパティ値を保持するために必要なバッファーのサイズを確認するのを参照してください。[オーディオのプロパティの基本的なクエリがサポート](https://msdn.microsoft.com/library/windows/hardware/ff536225)します。
 
-デバイス Id の詳細については、次を参照してください。[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
+デバイス Id の詳細については、[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

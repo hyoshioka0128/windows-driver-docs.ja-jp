@@ -63,7 +63,7 @@ ms.locfileid: "56535589"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドの概要については、次を参照してください。[スレッドとプロセス](controlling-threads-and-processes.md)します。 操作またはスレッドに関する情報の取得の詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
+スレッドの概要については、[スレッドとプロセス](controlling-threads-and-processes.md)を参照してください。 操作またはスレッドに関する情報の取得の詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

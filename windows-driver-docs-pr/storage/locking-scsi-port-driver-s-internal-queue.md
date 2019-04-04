@@ -27,7 +27,7 @@ ms.locfileid: "56527361"
 
 そのキューのロックが解除されると SCSI ポートは、キューに置かれたされる Srb の処理を再開します。 クラス ドライバーは、別のドライバーによってロックされたキューをバイパスしないようにします。
 
-クラスのドライバーの観点からロックを解除するキューの詳細については、次を参照してください。[記憶域クラス ドライバー ReleaseQueue ルーチン](storage-class-driver-s-releasequeue-routine.md)します。
+クラスのドライバーの観点からロックを解除するキューの詳細については、[記憶域クラス ドライバー ReleaseQueue ルーチン](storage-class-driver-s-releasequeue-routine.md)を参照してください。
 
  
 

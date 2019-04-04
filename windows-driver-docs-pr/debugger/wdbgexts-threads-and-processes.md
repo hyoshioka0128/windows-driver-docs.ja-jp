@@ -37,7 +37,7 @@ ms.locfileid: "56532886"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-強力なスレッドの操作とプロセス操作 API では、次を参照してください。[を制御するスレッドとプロセス](controlling-threads-and-processes.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
+強力なスレッドの操作とプロセス操作 API では、[を制御するスレッドとプロセス](controlling-threads-and-processes.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
 
  
 

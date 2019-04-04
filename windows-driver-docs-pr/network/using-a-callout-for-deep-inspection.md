@@ -114,11 +114,11 @@ VOID NTAPI
 
 値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://msdn.microsoft.com/library/windows/hardware/ff551215)構造体。
 
-コールアウトは、外側のパケット データの追加の処理を実行する必要がある場合その[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数、データの許可またはブロックする必要があります、かどうかにする必要があります保留パケット データの処理までを決定できる前に、データが完了するとします。 パケット データを保留する方法については、次を参照してください。[型のコールアウト](types-of-callouts.md)と[ **FwpsPendOperation0**](https://msdn.microsoft.com/library/windows/hardware/ff551199)します。
+コールアウトは、外側のパケット データの追加の処理を実行する必要がある場合その[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数、データの許可またはブロックする必要があります、かどうかにする必要があります保留パケット データの処理までを決定できる前に、データが完了するとします。 パケット データを保留する方法については、[型のコールアウト](types-of-callouts.md)と[ **FwpsPendOperation0**](https://msdn.microsoft.com/library/windows/hardware/ff551199)を参照してください。
 
 いくつかのレイヤーをフィルター処理、*データ*吹き出しのフィルター エンジンによって渡されるパラメーター [classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数は**NULL**します。
 
-ストリーム データの詳細な検査を実行する方法については、次を参照してください。[コールアウトを使用して、Stream データの詳細な検査](using-a-callout-for-deep-inspection-of-stream-data.md)します。
+ストリーム データの詳細な検査を実行する方法については、[コールアウトを使用して、Stream データの詳細な検査](using-a-callout-for-deep-inspection-of-stream-data.md)を参照してください。
 
  
 

@@ -25,7 +25,7 @@ ms.locfileid: "56531346"
 
 
 
-Windows ソケットは、SAN サービス プロバイダーの拡張は、メッセージを送受信するため、および rdma システム エリア ネットワーク上のすべてのデータ バッファーを登録する関数の呼び出しを切り替えます。 これらの拡張関数では、リモート ピアに接続されている特定の SAN ソケットで使用するための物理メモリの領域にバッファーを登録します。 これらの拡張関数の説明は、次を参照してください。、 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。
+Windows ソケットは、SAN サービス プロバイダーの拡張は、メッセージを送受信するため、および rdma システム エリア ネットワーク上のすべてのデータ バッファーを登録する関数の呼び出しを切り替えます。 これらの拡張関数では、リモート ピアに接続されている特定の SAN ソケットで使用するための物理メモリの領域にバッファーを登録します。 これらの拡張関数の説明は、、 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。
 
 ### <a name="registering-data-buffers"></a>データ バッファーを登録します。
 

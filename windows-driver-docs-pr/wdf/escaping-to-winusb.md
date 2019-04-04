@@ -22,7 +22,7 @@ ms.locfileid: "56532529"
 
 UMDF ドライバーを呼び出すことができます[WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)直接場合、ドライバーは、USB 固有 UMDF インターフェイスを使用して、特定の操作を実行することはできません。 WinUSB 関数を呼び出すには、ドライバーする必要があります最初 WinUSB インターフェイスのハンドルを呼び出すことによって取得[ **IWDFUsbTargetDevice::GetWinUsbHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff560369)または[ **IWDFUsbInterface:。GetWinUsbHandle**](https://msdn.microsoft.com/library/windows/hardware/ff560337)します。 WinUSB インターフェイスのハンドルを使用して、選択した構成では、最初のインターフェイスを定義します。
 
-詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](https://msdn.microsoft.com/library/windows/hardware/ff540174)します。
+詳細については、[WinUSB 関数を使用して、USB デバイスへのアクセス方法](https://msdn.microsoft.com/library/windows/hardware/ff540174)を参照してください。
 
  
 

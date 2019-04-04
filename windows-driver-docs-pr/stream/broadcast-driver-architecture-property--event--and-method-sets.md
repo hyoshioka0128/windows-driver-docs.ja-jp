@@ -17,7 +17,7 @@ ms.locfileid: "56529283"
 ## <span id="ddk_broadcast_driver_architecture_property_event_and_method_sets_ks"></span><span id="DDK_BROADCAST_DRIVER_ARCHITECTURE_PROPERTY_EVENT_AND_METHOD_SETS_KS"></span>
 
 
-このセクションでは、BDA ミニドライバーを実装するプロパティ、イベント、およびメソッドのセットを説明します。 これらのセットが定義されている*bdamedia.h*します。 BDA ミニドライバーは、いくつかのプロパティと BDA サポート ライブラリ内の既定の実装にこれらのセット内のメソッドをディスパッチできます。 詳細については、次を参照してください。[ドライバー アーキテクチャ ミニドライバーのブロードキャスト](https://msdn.microsoft.com/library/windows/hardware/ff556588)、ミニドライバーが関数の BDA サポート ライブラリを使用して、これらのセットの既定の処理を提供する方法にします。
+このセクションでは、BDA ミニドライバーを実装するプロパティ、イベント、およびメソッドのセットを説明します。 これらのセットが定義されている*bdamedia.h*します。 BDA ミニドライバーは、いくつかのプロパティと BDA サポート ライブラリ内の既定の実装にこれらのセット内のメソッドをディスパッチできます。 詳細については、[ドライバー アーキテクチャ ミニドライバーのブロードキャスト](https://msdn.microsoft.com/library/windows/hardware/ff556588)、ミニドライバーが関数の BDA サポート ライブラリを使用して、これらのセットの既定の処理を提供する方法にを参照してください。
 
 次のセクションでは、BDA プロパティ、イベント、およびメソッドのセットの詳細についてを提供します。
 

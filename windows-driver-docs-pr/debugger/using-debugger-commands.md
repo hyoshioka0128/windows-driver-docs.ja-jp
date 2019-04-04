@@ -72,7 +72,7 @@ WinDbg、KD、CDB、さまざまなコマンドをサポートします。 い�
 
 いくつかのコマンドは、ユーザー モードのデバッグ中にのみ使用し、その他のコマンドは、カーネル モードのデバッグ中にのみ使用します。
 
-いくつかのコマンドは、特定のプロセッサで、ターゲットが実行されている場合にのみ使用できます。 すべてのコマンドとその制限に関する詳細については、次を参照してください。[デバッガー コマンド](debugger-commands.md)します。
+いくつかのコマンドは、特定のプロセッサで、ターゲットが実行されている場合にのみ使用できます。 すべてのコマンドとその制限に関する詳細については、[デバッガー コマンド](debugger-commands.md)を参照してください。
 
 ### <a name="span-ideditingrepeatingandcancelingcommandsspanspan-ideditingrepeatingandcancelingcommandsspanediting-repeating-and-canceling-commands"></a><span id="editing__repeating__and_canceling_commands"></span><span id="EDITING__REPEATING__AND_CANCELING_COMMANDS"></span>編集、繰り返し、およびコマンドのキャンセル
 
@@ -92,7 +92,7 @@ WinDbg、KD、CDB、さまざまなコマンドをサポートします。 い�
 
 コマンドの最大長は、4096 文字です。 ただし場合、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)行の最大長は 512 文字です。
 
-CDB および KD には、ENTER キーを押して自体と、前のコマンドを繰り返します。 、WinDbg では、有効または、この動作を無効にできます。 この動作の詳細については、次を参照してください。 [ **」と入力 (最後のコマンドを繰り返します)**](enter--repeat-last-command-.md)します。
+CDB および KD には、ENTER キーを押して自体と、前のコマンドを繰り返します。 、WinDbg では、有効または、この動作を無効にできます。 この動作の詳細については、[ **」と入力 (最後のコマンドを繰り返します)**](enter--repeat-last-command-.md)を参照してください。
 
 発行した最後のコマンドは、長い表示を表示します。 カットが、使用する場合、 [ **CTRL + C** ](ctrl-c--break-.md) KD、CDB、またはキー。 WinDbg を使用して[デバッグ |中断](debug---break.md)または ctrl キーを押しながら BREAK キーを押します。
 
@@ -102,11 +102,11 @@ CDB および KD には、ENTER キーを押して自体と、前のコマンド
 
 ### <a name="span-idexpressionsyntaxspanspan-idexpressionsyntaxspanexpression-syntax"></a><span id="expression_syntax"></span><span id="EXPRESSION_SYNTAX"></span>式の構文
 
-多くのコマンドおよび拡張機能のコマンドを受け入れる*式*が引数として。 デバッガーは、コマンドを実行する前に、これらの式を評価します。 式の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
+多くのコマンドおよび拡張機能のコマンドを受け入れる*式*が引数として。 デバッガーは、コマンドを実行する前に、これらの式を評価します。 式の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
 
 ### <a name="span-idaliasesspanspan-idaliasesspanaliases"></a><span id="aliases"></span><span id="ALIASES"></span>エイリアス
 
-*エイリアス*は複雑なフレーズを再入力しなくてもすむようにするために使用できるテキスト マクロです。 エイリアスの 2 種類があります。 エイリアスの詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
+*エイリアス*は複雑なフレーズを再入力しなくてもすむようにするために使用できるテキスト マクロです。 エイリアスの 2 種類があります。 エイリアスの詳細については、[Using エイリアス](using-aliases.md)を参照してください。
 
 ### <a name="span-idselfrepeatingcommandsspanspan-idselfrepeatingcommandsspanself-repeating-commands"></a><span id="self_repeating_commands"></span><span id="SELF_REPEATING_COMMANDS"></span>自己繰り返しコマンド
 
@@ -140,7 +140,7 @@ KD、CDB、またはを使用しているときに任意のキー入力は、下
 
 -   テキストと、デバッガー コマンド ウィンドウの背景に使用される色をカスタマイズすることができます。 さまざまな種類のテキストを別の色を指定することができます。 別の色でな 1 つの色で出力の自動登録、エラー メッセージを表示するなど、**による DbgPrint**内のメッセージの 3 つ目の色します。 このカスタマイズの詳細については、次を参照してください[ビュー |。オプション](view---options.md)します。
 
--   フォントのカスタマイズや、特別な編集コマンドを使用してなどの WinDbg のデバッグ情報ウィンドウには、すべての一般的な機能を使用できます。 これらの機能に関する詳細については、次を参照してください。[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)します。
+-   フォントのカスタマイズや、特別な編集コマンドを使用してなどの WinDbg のデバッグ情報ウィンドウには、すべての一般的な機能を使用できます。 これらの機能に関する詳細については、[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)を参照してください。
 
 ### <a name="span-idremotedebuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote_debugging"></span><span id="REMOTE_DEBUGGING"></span>リモート デバッグ
 

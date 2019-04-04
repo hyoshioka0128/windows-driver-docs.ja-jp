@@ -34,7 +34,7 @@ Windows 8 以降、高速スタートアップ モードは、従来のコール
 
 **TargetSystemState**ビット フィールドは、ドライバーがコンピューターをシャット ダウンまたは休止状態を入力する前にシステムの電源 IRP を受け取ったの最後のシステム電源状態遷移を指定します。 **EffectiveSystemState**ユーザーによって認識されたビット フィールドをデバイスの以前システム電源の有効な状態を示します。 **TargetSystemState**と**EffectiveSystemState**場合、ドライバーが休止状態が、ハイブリッドへの切り替えを保留中のシステムの通知を受信するなど、値が一致しないがありますその後、シャット ダウンが発生しました。
 
-詳細については、次を参照してください。 [**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)します。
+詳細については、[**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)を参照してください。
 
  
 

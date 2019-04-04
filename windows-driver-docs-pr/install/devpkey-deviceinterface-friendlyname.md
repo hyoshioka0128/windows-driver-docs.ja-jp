@@ -66,9 +66,9 @@ Windows 設定の値、 [ **DEVPKEY_NAME** ](devpkey-name--device-interface-.md)
 
 呼び出すことによって、DEVPKEY_DeviceInterface_FriendlyName の値を取得する[ **SetupDiGetDeviceInterfaceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122)し、呼び出すことによって設定[ **SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_FriendlyName プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**FriendlyName**デバイス インターフェイスのレジストリ エントリの値。 デバイスのインターフェイスのレジストリ エントリの値にアクセスする方法については、次を参照してください。[デバイス インターフェイスのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537740)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_FriendlyName プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**FriendlyName**デバイス インターフェイスのレジストリ エントリの値。 デバイスのインターフェイスのレジストリ エントリの値にアクセスする方法については、[デバイス インターフェイスのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537740)を参照してください。
 
-デバイスのインターフェイスについては、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+デバイスのインターフェイスについては、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

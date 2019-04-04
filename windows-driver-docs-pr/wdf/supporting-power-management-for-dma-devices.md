@@ -46,7 +46,7 @@ DMA デバイスの自己管理型の I/O 操作を停止します。
 <a href="" id="---------evtdmaenablerflush--------"></a>[*EvtDmaEnablerFlush*](https://msdn.microsoft.com/library/windows/hardware/ff541655)  
 デバイスの DMA バッファーの割り当てを解除します。
 
-これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
+これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
 
  
 

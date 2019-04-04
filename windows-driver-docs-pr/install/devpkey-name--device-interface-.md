@@ -62,7 +62,7 @@ DEVPKEY_NAME の値の値と同じ、 [ **DEVPKEY_DeviceInterface_FriendlyName**
 
 DEVPKEY_NAME の値を取得するには呼び出すことによって[ **SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)します。
 
-デバイスのインターフェイスについては、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+デバイスのインターフェイスについては、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
 
 Windows Server 2003、Windows XP、および Windows 2000 は、対応する名前プロパティを直接サポートされません。 ただし、Windows の以前のバージョンは、DEVPKEY_DeviceInterface_FriendlyName に対応するプロパティをサポートする操作を行います。
 

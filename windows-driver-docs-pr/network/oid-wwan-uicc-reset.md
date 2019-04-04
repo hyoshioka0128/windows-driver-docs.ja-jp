@@ -23,7 +23,7 @@ OID_WWAN_UICC_RESET を使用して、一連の要求について、 [NDIS_WWAN_
 
 要請されていないイベントは適用されません。
 
-パススルー操作とパススルー状態に関する詳細については、次を参照してください。 [MB 低レベル UICC アクセス](mb-low-level-uicc-access.md)します。
+パススルー操作とパススルー状態に関する詳細については、[MB 低レベル UICC アクセス](mb-low-level-uicc-access.md)を参照してください。
 
 ## <a name="requirements"></a>要件
 

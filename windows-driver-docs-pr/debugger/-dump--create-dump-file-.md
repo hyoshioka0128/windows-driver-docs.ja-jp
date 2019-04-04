@@ -43,7 +43,7 @@ ms.locfileid: "56530405"
 <span id="_f_FullOptions_"></span><span id="_f_fulloptions_"></span><span id="_F_FULLOPTIONS_"></span>**/f\[**<em>FullOptions</em>**\]**  
 (カーネル モード:)作成、[完全メモリ ダンプ](complete-memory-dump.md)します。
 
-(ユーザー モード:)作成、*フル ユーザー モード ダンプ*します。 詳細については、次を参照してください。[さまざまなユーザー モード ダンプ ファイルの](user-mode-dump-files.md#varieties)します。 最大のミニダンプ ファイルには名前に関係なくフル ユーザー モード ダンプより多くの情報には実際が含まれています。 たとえば、 **.dump/mf**または **.dump/ma**よりも大きいとより完全なファイルを作成します。 **.dump/f**します。 ユーザー モードで **.dump** **/m\[**<em>MiniOptions</em> **\]** ことをお勧めは常に**します。/f をダンプ**します。
+(ユーザー モード:)作成、*フル ユーザー モード ダンプ*します。 詳細については、[さまざまなユーザー モード ダンプ ファイルの](user-mode-dump-files.md#varieties)を参照してください。 最大のミニダンプ ファイルには名前に関係なくフル ユーザー モード ダンプより多くの情報には実際が含まれています。 たとえば、 **.dump/mf**または **.dump/ma**よりも大きいとより完全なファイルを作成します。 **.dump/f**します。 ユーザー モードで **.dump** **/m\[**<em>MiniOptions</em> **\]** ことをお勧めは常に**します。/f をダンプ**します。
 
 次を追加する*FullOptions*はダンプ ファイルの内容を変更するオプションは大文字小文字を区別します。
 
@@ -80,7 +80,7 @@ ms.locfileid: "56530405"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-カーネル モードのダンプ ファイルの説明とその使用の詳細については、次を参照してください。[カーネル モードのダンプ ファイル](kernel-mode-dump-files.md)します。 ユーザー モード ダンプ ファイルの説明とその使用の詳細については、次を参照してください。[ユーザー モード ダンプ ファイル](user-mode-dump-files.md)します。
+カーネル モードのダンプ ファイルの説明とその使用の詳細については、[カーネル モードのダンプ ファイル](kernel-mode-dump-files.md)を参照してください。 ユーザー モード ダンプ ファイルの説明とその使用の詳細については、[ユーザー モード ダンプ ファイル](user-mode-dump-files.md)を参照してください。
 
 ## <a name="remarks"></a>注釈
 -------

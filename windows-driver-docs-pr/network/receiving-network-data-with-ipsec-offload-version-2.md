@@ -23,7 +23,7 @@ ms.locfileid: "56531407"
 
 NIC は、IPsec オフロード バージョン 2 (IPsecOV2)、トランスポートからオフロードされたセキュリティ アソシエーション (SA) で指定された受信パケットの処理を実行します。
 
-ミニポート ドライバーでは、上にあるドライバーを受信したデータを示す前に、IPsecOV2 帯域外の (OOB) 情報を設定します。 OOB の情報にアクセスする方法の詳細については、次を参照してください。[にアクセスする NET\_バッファー\_一覧については、IPsec オフロード バージョン 2 で](accessing-net-buffer-list-information-in-ipsec-offload-version-2.md)します。
+ミニポート ドライバーでは、上にあるドライバーを受信したデータを示す前に、IPsecOV2 帯域外の (OOB) 情報を設定します。 OOB の情報にアクセスする方法の詳細については、[にアクセスする NET\_バッファー\_一覧については、IPsec オフロード バージョン 2 で](accessing-net-buffer-list-information-in-ipsec-offload-version-2.md)を参照してください。
 
 **注**  ミニポート ドライバーは、NIC で IPsec データの処理中にエラーが発生した場合でも、ドライバーを関連するすべての受信パケットを示す必要があります ドライバーは、パケットを監視し、ネットワーク トラフィックのトラブルシューティングを行うドライバー スタックを有効にエラーを示す必要があります。
 
@@ -45,7 +45,7 @@ NIC は、IPsec オフロード バージョン 2 (IPsecOV2)、トランスポ�
 
 ミニポート ドライバーが両方をクリアして、NIC でオフロードが着信パケットの処理が実行されなかった場合、 **CryptoDone**と**NextCryptoDone**フラグ。 ミニポート ドライバーのクリア、NIC 解読されません、パケットは、AH または ESP で保護されているかどうかに関係なくパケットの受信のすべてのこれらのフラグ。
 
-ミニポート ドライバーを設定できます**SaDeleteReq**の[ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565818)受信構造[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。 TCP/IP トランスポートは発行後[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_削除\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569813)を削除する 1 回、受信パケットの受信に使用された SA とに 1 回もう一度削除済みに対応する送信の SA を削除するのには、SA を受信します。 追加と削除の SAs の詳細については、次を参照してください。 [IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)します。
+ミニポート ドライバーを設定できます**SaDeleteReq**の[ **NDIS\_IPSEC\_オフロード\_V2\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565818)受信構造[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。 TCP/IP トランスポートは発行後[OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_削除\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569813)を削除する 1 回、受信パケットの受信に使用された SA とに 1 回もう一度削除済みに対応する送信の SA を削除するのには、SA を受信します。 追加と削除の SAs の詳細については、[IPsec オフロード バージョン 2 のセキュリティ アソシエーションを管理する](managing-security-associations-in-ipsec-offload-version-2.md)を参照してください。
 
 ミニポート後は、ドライバーは、NET を示します\_バッファー\_リスト構造を TCP/IP トランスポートに TCP/IP トランスポートは、パケットの場合、シーケンス番号のチェック、NIC が、パケットに対して IPsec チェックの結果を調べます。チェックサムまたはテストをシーケンス処理に失敗したパケットの処理を決定します。
 
