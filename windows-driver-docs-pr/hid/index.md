@@ -3,20 +3,25 @@ title: HID ドライバー
 description: このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 通常、これらは、人間がコンピューター システムの操作を直接制御するために使用するデバイスです。
 ms.assetid: 19aefe5f-d82a-411f-86ab-5d1d53191524
 keywords:
-  - ポインティング デバイス WDK
-  - 入力デバイス WDK
-  - ヒューマン インターフェイス デバイス WDK
-  - HID WDK
+- ポインティング デバイス WDK
+- 入力デバイス WDK
+- ヒューマン インターフェイス デバイス WDK
+- HID WDK
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: d6f8184fada8c5b4982a205d3f2d4541c6468061
+ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58898057"
 ---
-
 # <a name="hid-drivers"></a>HID ドライバー
 
 
-このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 HID の概念の詳細については、公式の [HID の仕様](http://www.usb.org/developers/hidpage/HID1_11.pdf)をご覧ください。 
+このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 HID の概念の詳細については、公式の [HID の仕様](https://www.usb.org/hid)をご覧ください。 
 
 ## <a name="in-this-section"></a>このセクションの内容
 

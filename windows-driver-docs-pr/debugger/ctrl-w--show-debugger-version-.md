@@ -1,5 +1,5 @@
 ---
-title: CTRL + W (表示のデバッガー バージョン)
+title: Ctrl + W (デバッガーのバージョンの表示)
 description: CTRL + W キーには、デバッガーと読み込まれたすべての拡張 Dll のバージョン情報が表示されます。
 ms.assetid: 9651965e-fbf5-4084-adcd-63de60998b8b
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c1d4703ecb181a0479cc9b803c21bafa72fd9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6d70f693c518b594259c9d4cb1d15ffd50091977
+ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559547"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58898059"
 ---
-# <a name="ctrlw-show-debugger-version"></a>CTRL + W (表示のデバッガー バージョン)
+# <a name="ctrlw-show-debugger-version"></a>Ctrl + W (デバッガーのバージョンの表示)
 
 
 CTRL + W キーには、デバッガーと読み込まれたすべての拡張 Dll のバージョン情報が表示されます。
@@ -36,10 +36,8 @@ WinDbg の構文
 CTRL+ALT+W 
 ```
 
-## <span id="ddk_meta_ctrl_w_dbg"></span><span id="DDK_META_CTRL_W_DBG"></span>
 
-
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+## <a name="environment"></a>環境
 
 <table>
 <colgroup>
@@ -78,7 +76,7 @@ WinDbg では、このことができますもすることで実現選択[ビュ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**バージョン (デバッガーのバージョンの表示)**](version--show-debugger-version-.md)
+[**version (デバッガー バージョンの表示)**](version--show-debugger-version-.md)
 
 [**vertarget (ターゲット コンピューター バージョンの表示)**](vertarget--show-target-computer-version-.md)
 
