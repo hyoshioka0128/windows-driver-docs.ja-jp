@@ -21,5 +21,5 @@ NDIS に変換するには、この GUID、 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp
 
 WMI の入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904)が続く構造体、 [NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)構造体。
 
-ポート パラメーターの詳細については、次を参照してください。 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)します。
+ポート パラメーターの詳細については、[OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)を参照してください。
 

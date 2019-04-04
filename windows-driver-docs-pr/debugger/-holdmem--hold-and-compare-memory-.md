@@ -38,10 +38,10 @@ ms.locfileid: "56571463"
 
 
 <span id="_______-a_Range_____________"></span><span id="_______-a_range_____________"></span><span id="_______-A_RANGE_____________"></span> **-** **** *範囲*   
-保存するメモリの範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+保存するメモリの範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 <span id="_______-d___Range___Address__"></span><span id="_______-d___range___address__"></span><span id="_______-D___RANGE___ADDRESS__"></span> **-d** **** { *Range* | *Address* }  
-削除するメモリの範囲を指定します。 指定した場合*アドレス*デバッガーがそのアドレスを含む保存済みの範囲を削除します。 指定した場合*範囲*、デバッガーと重複する保存済みの範囲を削除します*範囲*します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+削除するメモリの範囲を指定します。 指定した場合*アドレス*デバッガーがそのアドレスを含む保存済みの範囲を削除します。 指定した場合*範囲*、デバッガーと重複する保存済みの範囲を削除します*範囲*します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 <span id="_______-D______"></span><span id="_______-d______"></span> **-D**   
 すべての保存されたメモリ範囲を削除します。
@@ -50,7 +50,7 @@ ms.locfileid: "56571463"
 すべての保存されたメモリ範囲を表示します。
 
 <span id="_______-c_______Range______"></span><span id="_______-c_______range______"></span><span id="_______-C_______RANGE______"></span> **-c** *範囲*   
-すべての保存されたメモリ範囲を指定した範囲を比較します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+すべての保存されたメモリ範囲を指定した範囲を比較します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -79,7 +79,7 @@ ms.locfileid: "56571463"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-メモリおよびその他のメモリに関連するコマンドの説明を操作する方法の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+メモリおよびその他のメモリに関連するコマンドの説明を操作する方法の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

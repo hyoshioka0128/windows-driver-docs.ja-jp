@@ -48,7 +48,7 @@ ms.locfileid: "56573975"
 
  
 
-詳細については、次を参照してください。[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)します。
+詳細については、[プリンター ドライバーの COM インターフェイスを実装する](implementing-printer-driver-com-interfaces.md)を参照してください。
 
  
 

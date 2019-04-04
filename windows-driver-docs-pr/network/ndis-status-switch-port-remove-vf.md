@@ -33,7 +33,7 @@ PCIe VF が作成され、SR-IOV 対応インターフェイスをサポート�
 
 転送拡張機能は、ときに、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態の表示を拡張可能スイッチのポートを指定しますVM のネットワーク アダプターが接続されています。
 
-拡張可能スイッチの転送拡張機能の詳細については、次を参照してください。[転送拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh598148)します。
+拡張可能スイッチの転送拡張機能の詳細については、[転送拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh598148)を参照してください。
 
 ### <a href="" id="issuing"></a>NDIS を発行するためのガイドライン\_状態\_スイッチ\_ポート\_削除\_VF 状態表示
 
@@ -81,7 +81,7 @@ PCIe VF が作成され、SR-IOV 対応インターフェイスをサポート�
 
  
 
-転送拡張機能で状態インジケーターを転送する方法の詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](https://msdn.microsoft.com/library/windows/hardware/ff550020)します。
+転送拡張機能で状態インジケーターを転送する方法の詳細については、[フィルター モジュールの状態インジケーター](https://msdn.microsoft.com/library/windows/hardware/ff550020)を参照してください。
 
 ### <a name="guidelines-for-determining-vf-assignments"></a>VF の割り当てを決定するためのガイドライン
 

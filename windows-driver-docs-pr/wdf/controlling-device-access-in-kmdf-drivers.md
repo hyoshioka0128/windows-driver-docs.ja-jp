@@ -54,11 +54,11 @@ Fdo と DOs のフィルターの名前を付けではなく WDM ドライバー
 
 ドライバー パッケージとデバイスのセキュリティ記述子を指定する INF ファイルを提供できます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)内、 [ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330).
 
-INF ファイルでのセキュリティ記述子の指定に関する詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。
+INF ファイルでのセキュリティ記述子の指定に関する詳細については、[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)を参照してください。
 
 かどうか、ドライバーは、raw モードで動作するデバイスの Pdo を作成するドライバーを指定する必要があります、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)呼び出し時に[ **WdfPdoInitAssignRawDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548802)します。 さらに、ドライバーは、デバイスの制御を作成する場合は、呼び出すことができます[ **WdfDeviceInitSetDeviceClass** ](https://msdn.microsoft.com/library/windows/hardware/ff546084)デバイス セットアップ クラスを指定します。 どちらのこのような場合、システム管理者は、デバイスのセキュリティ記述子を格納するのに、指定したセットアップ クラスのレジストリ キーを使用できます。
 
-オペレーティング システムがデバイスを使用するセキュリティ記述子を決定する方法については、次を参照してください。[デバイスへのアクセスを制御する](https://msdn.microsoft.com/library/windows/hardware/ff542063)します。
+オペレーティング システムがデバイスを使用するセキュリティ記述子を決定する方法については、[デバイスへのアクセスを制御する](https://msdn.microsoft.com/library/windows/hardware/ff542063)を参照してください。
 
 常に、ファイルを設定、フレームワークは、デバイス オブジェクトを作成するとき\_デバイス\_SECURE\_オープン オペレーティング システムは、任意の名前にアクセスするアプリケーションを許可する前に、デバイスのセキュリティ記述子を確認するためのフラグデバイスの名前空間。 ファイルの詳細については\_デバイス\_SECURE\_フラグとデバイスの名前空間を開きを参照してください[デバイス Namespace のアクセスを制御する](https://msdn.microsoft.com/library/windows/hardware/ff542068)します。
 

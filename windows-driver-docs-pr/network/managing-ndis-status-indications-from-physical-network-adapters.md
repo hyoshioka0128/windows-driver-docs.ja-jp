@@ -22,7 +22,7 @@ ms.locfileid: "56580182"
 
 [物理ネットワーク アダプターからの発信元の NDIS 状態インジケーター](originating-ndis-status-indications-from-physical-network-adapters.md)
 
-HYPER-V 拡張可能スイッチのコントロール パス経由で NDIS 状態インジケーターを管理する方法の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パス NDIS 状態インジケーターの](hyper-v-extensible-switch-control-path-for-ndis-status-indications.md)します。
+HYPER-V 拡張可能スイッチのコントロール パス経由で NDIS 状態インジケーターを管理する方法の詳細については、[Hyper-v 拡張可能スイッチ コントロール パス NDIS 状態インジケーターの](hyper-v-extensible-switch-control-path-for-ndis-status-indications.md)を参照してください。
 
  
 

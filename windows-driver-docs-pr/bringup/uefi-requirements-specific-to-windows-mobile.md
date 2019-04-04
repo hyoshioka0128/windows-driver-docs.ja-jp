@@ -87,11 +87,11 @@ UEFI 要件だけでなく[Windows のすべてのエディションに適用さ
 </tr>
 <tr class="even">
 <td>USB 関数プロトコル</td>
-<td>UEFI ファームウェアでは、UEFI USB 関数のプロトコルに準拠したドライバーを含める必要があります。 詳細については、次を参照してください。 <a href="uefi-usb-function-protocol.md" data-raw-source="[UEFI USB function protocol](uefi-usb-function-protocol.md)">UEFI USB 関数プロトコル</a>します。 UEFI で USB 列挙は、Microsoft コードによってのみ処理されるものとします。</td>
+<td>UEFI ファームウェアでは、UEFI USB 関数のプロトコルに準拠したドライバーを含める必要があります。 詳細については、<a href="uefi-usb-function-protocol.md" data-raw-source="[UEFI USB function protocol](uefi-usb-function-protocol.md)">UEFI USB 関数プロトコル</a>を参照してください。 UEFI で USB 列挙は、Microsoft コードによってのみ処理されるものとします。</td>
 </tr>
 <tr class="odd">
 <td>バッテリの充電プロトコル</td>
-<td><p>デバイスで Microsoft UEFI バッテリの充電中のアプリケーションを使用する場合、UEFI ファームウェアは、UEFI バッテリを充電プロトコルを実装するドライバーを含める必要があります。 デバイスが準拠する必要があります、デバイスは、Microsoft UEFI バッテリが充電ソフトウェアに渡し、前に、 <em>USB バッテリの充電 v1.2 仕様</em>します。 詳細については、次を参照してください。 <a href="uefi-battery-charging-protocol.md" data-raw-source="[UEFI battery charging protocol](uefi-battery-charging-protocol.md)">UEFI バッテリの充電プロトコル</a>と<a href="battery-charging-in-the-boot-environment.md" data-raw-source="[Battery charging in the boot environment](battery-charging-in-the-boot-environment.md)">ブート環境でバッテリが充電中</a>します。</p>
+<td><p>デバイスで Microsoft UEFI バッテリの充電中のアプリケーションを使用する場合、UEFI ファームウェアは、UEFI バッテリを充電プロトコルを実装するドライバーを含める必要があります。 デバイスが準拠する必要があります、デバイスは、Microsoft UEFI バッテリが充電ソフトウェアに渡し、前に、 <em>USB バッテリの充電 v1.2 仕様</em>します。 詳細については、<a href="uefi-battery-charging-protocol.md" data-raw-source="[UEFI battery charging protocol](uefi-battery-charging-protocol.md)">UEFI バッテリの充電プロトコル</a>と<a href="battery-charging-in-the-boot-environment.md" data-raw-source="[Battery charging in the boot environment](battery-charging-in-the-boot-environment.md)">ブート環境でバッテリが充電中</a>を参照してください。</p>
 <div class="alert">
 <strong>重要な</strong>この要件は、デバイスが Microsoft UEFI バッテリが充電アプリケーションを使用している場合にのみ適用されます。 デバイスは、Microsoft から提供されたアプリケーションではなくカスタム UEFI バッテリの充電アプリケーションを使用している場合、UEFI バッテリの充電ドライバーする必要があります、UEFI バッテリを充電プロトコルを実装していません。
 </div>
@@ -101,7 +101,7 @@ UEFI 要件だけでなく[Windows のすべてのエディションに適用さ
 </tr>
 <tr class="even">
 <td>電源状態のプロトコルを表示します。</td>
-<td><p>デバイスで Microsoft UEFI バッテリが充電アプリケーションを使用する場合、UEFI ファームウェアは、UEFI ディスプレイの電源状態のプロトコルを実装するドライバーを含める必要があります。 画面をオンにし、もう一度 UEFI 環境での充電中にバックライトをオフにして、このプロトコルが使用されます。 このプロトコルの詳細については、次を参照してください。 <a href="uefi-display-power-state-protocol.md" data-raw-source="[UEFI display power state protocol](uefi-display-power-state-protocol.md)">UEFI 電源状態のプロトコルを表示する</a>します。 UEFI バッテリが充電アプリケーションでこのプロトコルの使用方法の詳細については、次を参照してください。 <a href="architecture-of-the-uefi-battery-charging-application.md" data-raw-source="[Architecture of the UEFI battery charging application](architecture-of-the-uefi-battery-charging-application.md)">UEFI バッテリが充電アプリケーションのアーキテクチャ</a>します。</p>
+<td><p>デバイスで Microsoft UEFI バッテリが充電アプリケーションを使用する場合、UEFI ファームウェアは、UEFI ディスプレイの電源状態のプロトコルを実装するドライバーを含める必要があります。 画面をオンにし、もう一度 UEFI 環境での充電中にバックライトをオフにして、このプロトコルが使用されます。 このプロトコルの詳細については、<a href="uefi-display-power-state-protocol.md" data-raw-source="[UEFI display power state protocol](uefi-display-power-state-protocol.md)">UEFI 電源状態のプロトコルを表示する</a>を参照してください。 UEFI バッテリが充電アプリケーションでこのプロトコルの使用方法の詳細については、<a href="architecture-of-the-uefi-battery-charging-application.md" data-raw-source="[Architecture of the UEFI battery charging application](architecture-of-the-uefi-battery-charging-application.md)">UEFI バッテリが充電アプリケーションのアーキテクチャ</a>を参照してください。</p>
 <div class="alert">
 <strong>重要な</strong>この要件は、デバイスが Microsoft UEFI バッテリが充電アプリケーションを使用している場合にのみ適用されます。 デバイスは、カスタム UEFI バッテリが充電、Microsoft が提供するアプリケーションではなくアプリケーションを使用している場合、UEFI バッテリの充電ドライバーする必要があります UEFI ディスプレイの電源状態プロトコルを実装していません。
 </div>

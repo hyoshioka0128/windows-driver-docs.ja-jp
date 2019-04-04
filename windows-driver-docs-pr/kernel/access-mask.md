@@ -135,7 +135,7 @@ typedef ULONG  ACCESS_MASK;
 
  
 
-オブジェクトの種類ごとに独自の追加のアクセス権をことができます。 ファイル、ディレクトリ、またはデバイスに適用されるアクセス権については、次を参照してください。 [ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)します。 オブジェクト マネージャーのディレクトリに適用されるアクセス権については、次を参照してください。 [ **ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)します。 レジストリ キーに適用されるアクセス権については、次を参照してください。 [ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)します。 セクション オブジェクトに適用されるアクセス権については、次を参照してください。 [ **ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)します。 WMI データのブロックに適用されるアクセス権については、次を参照してください。 [ **IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)します。
+オブジェクトの種類ごとに独自の追加のアクセス権をことができます。 ファイル、ディレクトリ、またはデバイスに適用されるアクセス権については、[ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)を参照してください。 オブジェクト マネージャーのディレクトリに適用されるアクセス権については、[ **ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)を参照してください。 レジストリ キーに適用されるアクセス権については、[ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)を参照してください。 セクション オブジェクトに適用されるアクセス権については、[ **ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)を参照してください。 WMI データのブロックに適用されるアクセス権については、[ **IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)を参照してください。
 
 アクセス権の詳細については、Microsoft Windows SDK のドキュメントでは、次のトピックを参照してください。
 

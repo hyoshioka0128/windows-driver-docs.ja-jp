@@ -23,11 +23,11 @@ ms.locfileid: "56578550"
 
  
 
-MobileBroadbandInfo XML スキーマの完了の定義については、次を参照してください。 [MobileBroadbandInfo XML スキーマ定義](mobilebroadbandinfo-xml-schema-definition.md)します。
+MobileBroadbandInfo XML スキーマの完了の定義については、[MobileBroadbandInfo XML スキーマ定義](mobilebroadbandinfo-xml-schema-definition.md)を参照してください。
 
-MobileBroadbandInfo XML スキーマで定義されている要素については、次を参照してください。 [MobileBroadbandInfo XML 要素](mobilebroadbandinfo-xml-elements.md)します。
+MobileBroadbandInfo XML スキーマで定義されている要素については、[MobileBroadbandInfo XML 要素](mobilebroadbandinfo-xml-elements.md)を参照してください。
 
-MobileBroadbandInfo XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [MobileBroadbandInfo XML の例](mobilebroadbandinfo-xml-example.md)します。
+MobileBroadbandInfo XML スキーマで定義されている形式で XML データの例は、[MobileBroadbandInfo XML の例](mobilebroadbandinfo-xml-example.md)を参照してください。
 
  
 

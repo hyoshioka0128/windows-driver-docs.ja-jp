@@ -74,7 +74,7 @@ ms.locfileid: "56582402"
 
 ### <a name="span-idaboutthecoveragetestsspanspan-idaboutthecoveragetestsspanspan-idaboutthecoveragetestsspanabout-the-coverage-tests"></a><span id="About_the_Coverage_tests"></span><span id="about_the_coverage_tests"></span><span id="ABOUT_THE_COVERAGE_TESTS"></span>カバレッジのテストについて
 
-デバイス基本カバレッジのテストは、以前は、WDK でスタンドアロン ツールとして使用するが、ドライバーのカバレッジ Toolkit に基づいています。 カバレッジのテストを実装する方法については、次を参照してください。[ドライバー カバレッジ Toolkit](driver-coverage-toolkit.md)します。
+デバイス基本カバレッジのテストは、以前は、WDK でスタンドアロン ツールとして使用するが、ドライバーのカバレッジ Toolkit に基づいています。 カバレッジのテストを実装する方法については、[ドライバー カバレッジ Toolkit](driver-coverage-toolkit.md)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

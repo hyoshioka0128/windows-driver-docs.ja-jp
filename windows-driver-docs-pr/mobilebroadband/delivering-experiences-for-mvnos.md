@@ -25,11 +25,11 @@ ms.locfileid: "56574887"
 
 -   [CDMA ネットワーク上に一致します。](#matching-on-cdma-networks)
 
-正しく MNO と MVNO にサービス メタデータと一致するために必要なハードウェアについては、次を参照してください。[通信事業者ハードウェア概要](mobile-operator-hardware-overview.md)します。
+正しく MNO と MVNO にサービス メタデータと一致するために必要なハードウェアについては、[通信事業者ハードウェア概要](mobile-operator-hardware-overview.md)を参照してください。
 
-サービスのメタデータについては、次を参照してください。[サービス メタデータ](service-metadata.md)します。
+サービスのメタデータについては、[サービス メタデータ](service-metadata.md)を参照してください。
 
-サービス メタデータ パッケージのスキーマについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
+サービス メタデータ パッケージのスキーマについては、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
 
 ## <a name="matching-on-gsm-networks"></a>GSM ネットワーク上に一致します。
 
@@ -214,7 +214,7 @@ MNO のネットワークのかどうかこれらの機能 (たとえば、MNO �
 
 ユーザーのモバイル ブロード バンド データ プランへの関連付けが決定されますと、モバイル ブロード バンド アプリでは、Windows 接続マネージャーに表示されるロゴとネットワークの名前を変更できます。 これは、アカウントのプロビジョニングにより、Windows に関連する特定のサブスクライバーのプランの情報を XML ベースの情報を送信する事業者アプリのメタデータを使用して行います。
 
-アカウント プロビジョニングについての詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
+アカウント プロビジョニングについての詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
 
 **サービス メタデータの更新**
 
@@ -355,7 +355,7 @@ MVNOs に割り当てられているモバイル ブロード バンド デバ�
 
 -   IMSI や ICCID または CDMA のプロバイダーの名前または SID 値が対象となるパッケージに一致します。
 
-モバイル ブロード バンド メタデータの詳細については、次を参照してください。[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。
+モバイル ブロード バンド メタデータの詳細については、[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)を参照してください。
 
  
 

@@ -22,11 +22,11 @@ ms.locfileid: "56581862"
 
 
 
-ミニポート ドライバーでは、電源管理をサポートしている必要があります電源管理のオブジェクト識別子 (Oid) をサポートしています。 ミニポート ドライバーでのクエリと Oid にセットの処理方法の詳細については、次を参照してください。[取得と SettingMiniport ドライバー情報と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
+ミニポート ドライバーでは、電源管理をサポートしている必要があります電源管理のオブジェクト識別子 (Oid) をサポートしています。 ミニポート ドライバーでのクエリと Oid にセットの処理方法の詳細については、[取得と SettingMiniport ドライバー情報と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)を参照してください。
 
 ミニポート ドライバーの電源管理のサポートのレベルは 2 つです。
 
-1.  ミニポート ドライバーでは、電源の状態の間の遷移を行うネットワーク アダプターをサポートできます。 このサポートは、電源管理のサポートの最小レベルです。 ネットワーク アダプターのデバイスの電源状態の説明は、次を参照してください。[ネットワーク アダプターのデバイスの電源状態](device-power-states-for-network-adapters.md)します。
+1.  ミニポート ドライバーでは、電源の状態の間の遷移を行うネットワーク アダプターをサポートできます。 このサポートは、電源管理のサポートの最小レベルです。 ネットワーク アダプターのデバイスの電源状態の説明は、[ネットワーク アダプターのデバイスの電源状態](device-power-states-for-network-adapters.md)を参照してください。
 
 2.  1 つまたは複数のミニポート ドライバーもサポート[ネットワーク ウェイク アップ イベント](network-wake-up-events.md)します。
 
@@ -36,7 +36,7 @@ ms.locfileid: "56581862"
 
 -   [OID\_PNP\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569774)
 
-    中間ドライバーは、この OID クエリに応答する必要があります。 NDIS に応答する OID\_PNP\_機能の物理ネットワーク アダプターの代わりに要求します。 中間のドライバーでは、この OID に応答する方法の詳細については、次を参照してください。 [PnP イベントを処理し、中間のドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)します。
+    中間ドライバーは、この OID クエリに応答する必要があります。 NDIS に応答する OID\_PNP\_機能の物理ネットワーク アダプターの代わりに要求します。 中間のドライバーでは、この OID に応答する方法の詳細については、[PnP イベントを処理し、中間のドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)を参照してください。
 
 -   [OID\_PNP\_クエリ\_電源](https://msdn.microsoft.com/library/windows/hardware/ff569778)
 
@@ -46,7 +46,7 @@ ms.locfileid: "56581862"
 
     この OID は、ネットワーク アダプターが、指定されたデバイスの電源状態に移行する必要があることを示します。 ミニポート ドライバーは、ドライバーは、NDIS を返す前に、指定の状態へのネットワーク アダプターを設定する必要があります\_状態\_成功します。 ミニポート ドライバーは、NDIS を返す必要があります常に\_状態\_この OID への応答に成功します。 場合 OID\_PNP\_設定\_POWER ネットワーク アダプターを作業の電源の状態と設定、ミニポート ドライバー失敗がこの OID、NDIS は、デバイスが回復不能な状態であることを想定しています。
 
-ネットワークのウェイク アップのイベントをサポートするために、ミニポート ドライバーをサポートする必要がありますも、 [OID\_PNP\_を有効にする\_WAKE\_を](https://msdn.microsoft.com/library/windows/hardware/ff569775)OID。 プロトコル ドライバーおよび NDIS の両方は、この OID を使用して、ネットワーク アダプターのウェイク アップ機能を有効にします。 詳細については、次を参照してください。[ウェイク アップのイベントを有効にする](enabling-wake-up-events.md)します。
+ネットワークのウェイク アップのイベントをサポートするために、ミニポート ドライバーをサポートする必要がありますも、 [OID\_PNP\_を有効にする\_WAKE\_を](https://msdn.microsoft.com/library/windows/hardware/ff569775)OID。 プロトコル ドライバーおよび NDIS の両方は、この OID を使用して、ネットワーク アダプターのウェイク アップ機能を有効にします。 詳細については、[ウェイク アップのイベントを有効にする](enabling-wake-up-events.md)を参照してください。
 
 ネットワークのウェイク アップのフレームをサポートするために (を参照してください[ネットワーク ウェイク アップ イベント](network-wake-up-events.md))、ミニポート ドライバーは、ウェイク アップのイベントに関連する次の Oid もサポートする必要があります。
 

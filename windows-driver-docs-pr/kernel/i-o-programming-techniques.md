@@ -35,7 +35,7 @@ ms.locfileid: "56558467"
 
 [従来の入出力のプログラミング](legacy-i-o-programming.md)
 
-I/O マネージャーのアーキテクチャについては、次を参照してください。 [Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)します。 I/O マネージャーの参照については、次を参照してください。 [I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)します。
+I/O マネージャーのアーキテクチャについては、[Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)を参照してください。 I/O マネージャーの参照については、[I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)を参照してください。
 
  
 

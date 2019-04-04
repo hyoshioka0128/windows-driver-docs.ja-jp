@@ -141,7 +141,7 @@ DirectX 10 (またはそれ以上)-対応のグラフィックス ハードウ�
 
 この要件によって、ステレオのアプリケーションが mono のモードでの障害を必要はありません。 例: ケースの場合でもステレオが、システムで有効になっていないときにアプリケーション ステレオ スワップ チェーンを作成できる必要がありますまたはバッファーのレンダー ターゲットを呼び出して、配列化された**存在**します。 ここでは、左側のビューのみが表示されます (または、*右を好む* Microsoft DirectX Graphics Infrastructure (DXGI) 存在するフラグを設定すると、右側のビューのみ)。
 
-したがって、WDDM 1.2 ドライバー (完全なグラフィックスおよびレンダリング デバイス) では、クロス テクスチャ配列のプロセスが共有のサポートを追加することで direct3d11 の Api をサポートする必要があります。 以前のバージョンでは、プロセス間の共有リソースにのみ単一レイヤー サーフェス可能性があります。 Windows 8 では、共有配列の最大サイズは 2 つの要素 (これは、ステレオ用だけで十分です) です。 この要件の詳細については、次を参照してください。 **Device.Graphics... Stereoscopic3DArraySupport**で[Windows ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=324537)します。 関連するその他の Microsoft WindowsWindowsWindows HCK 要件は**Device.Graphics... ProcessingStereoscopicVideoContent**と**Device.Display.Monitor.Stereoscopic3DModes**します。
+したがって、WDDM 1.2 ドライバー (完全なグラフィックスおよびレンダリング デバイス) では、クロス テクスチャ配列のプロセスが共有のサポートを追加することで direct3d11 の Api をサポートする必要があります。 以前のバージョンでは、プロセス間の共有リソースにのみ単一レイヤー サーフェス可能性があります。 Windows 8 では、共有配列の最大サイズは 2 つの要素 (これは、ステレオ用だけで十分です) です。 この要件の詳細については、**Device.Graphics... Stereoscopic3DArraySupport**で[Windows ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=324537)を参照してください。 関連するその他の Microsoft WindowsWindowsWindows HCK 要件は**Device.Graphics... ProcessingStereoscopicVideoContent**と**Device.Display.Monitor.Stereoscopic3DModes**します。
 
 ## <a name="span-idunorderedspanspan-idunorderedspanuavs-with-multi-sample-anti-alias-sample-access"></a><span id="unordered"></span><span id="UNORDERED"></span>アンチ エイリアス サンプルのマルチ サンプルのアクセス権を持つ UAVs
 

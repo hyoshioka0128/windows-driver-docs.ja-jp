@@ -69,13 +69,13 @@ I/O 要求を非同期的に送信するには、ドライバーが必要です�
 
 2.  登録、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数。
 
-    要求を非同期的に送信する場合は、別のドライバーが各要求を完了すると、ドライバーに通知するためにフレームワーク通常します。 ドライバーを定義する必要があります、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数を呼び出すことによって登録[ **WdfRequestSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff550030). 詳細については、次を参照してください。 [I/O 要求の完了](completing-i-o-requests.md)します。
+    要求を非同期的に送信する場合は、別のドライバーが各要求を完了すると、ドライバーに通知するためにフレームワーク通常します。 ドライバーを定義する必要があります、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数を呼び出すことによって登録[ **WdfRequestSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff550030). 詳細については、[I/O 要求の完了](completing-i-o-requests.md)を参照してください。
 
 3.  要求を送信します。
 
-    ドライバーの後に要求をフォーマットし、登録、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数には、ドライバーが呼び出す必要があります[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027). このメソッド設定されているフラグによって同期的または非同期的に要求を送信することができます、 *RequestOptions*パラメーター。 I/O 要求を同期的に送信する簡単な方法は、次を参照してください。[同期に I/O 要求を送信する](sending-i-o-requests-synchronously.md)します。 非同期要求のまたは呼び出すことによって送信されるすべての要求の完了ステータスを取得する方法については**WdfRequestSend**を参照してください[I/O 要求の完了](completing-i-o-requests.md)します。
+    ドライバーの後に要求をフォーマットし、登録、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数には、ドライバーが呼び出す必要があります[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027). このメソッド設定されているフラグによって同期的または非同期的に要求を送信することができます、 *RequestOptions*パラメーター。 I/O 要求を同期的に送信する簡単な方法は、[同期に I/O 要求を送信する](sending-i-o-requests-synchronously.md)を参照してください。 非同期要求のまたは呼び出すことによって送信されるすべての要求の完了ステータスを取得する方法については**WdfRequestSend**を参照してください[I/O 要求の完了](completing-i-o-requests.md)します。
 
-呼び出すドライバー [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027) I/O を送信する要求は後で要求の取り消しを試行できます。 詳細については、次を参照してください。 [I/O 要求のキャンセル](canceling-i-o-requests.md)します。
+呼び出すドライバー [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027) I/O を送信する要求は後で要求の取り消しを試行できます。 詳細については、[I/O 要求のキャンセル](canceling-i-o-requests.md)を参照してください。
 
 一部のドライバーは、複数のデバイスを 1 つの I/O 要求を送信する可能性があり、複数の I/O が対象とそのため、呼び出すことによって[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)要求ごとに 2 回以上。 これらのドライバーを呼び出す必要があります[ **WdfRequestChangeTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff549943)への各呼び出しの前に**WdfRequestSend** I/O ターゲットを次に、要求を送信できることを確認する 1 つ目の後にします。
 

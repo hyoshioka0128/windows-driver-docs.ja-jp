@@ -63,7 +63,7 @@ ms.locfileid: "56560682"
 
  
 
-取得またはセキュリティ記述子を設定する 2 つの方法は提供されることに注意してください。 SPDRP を指定する\_セキュリティの値として、セキュリティ記述子を扱う、**セキュリティ\_記述子**構造体、または SPDRP\_セキュリティ\_SDS、セキュリティを処理するにはSDDL 文字列としての記述子。 SDDL 文字列の詳細については、次を参照してください。[デバイス オブジェクトの SDDL](sddl-for-device-objects.md)します。
+取得またはセキュリティ記述子を設定する 2 つの方法は提供されることに注意してください。 SPDRP を指定する\_セキュリティの値として、セキュリティ記述子を扱う、**セキュリティ\_記述子**構造体、または SPDRP\_セキュリティ\_SDS、セキュリティを処理するにはSDDL 文字列としての記述子。 SDDL 文字列の詳細については、[デバイス オブジェクトの SDDL](sddl-for-device-objects.md)を参照してください。
 
 Windows XP と以降のオペレーティング システムでは、プログラムも取得し、デバイス セットアップ クラスのプロパティ値を設定できます。 使用して、 [ **SetupDiGetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551097)と[ **SetupDiSetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552135)関数、プロパティを取得および設定デバイス セットアップ クラスの値。
 

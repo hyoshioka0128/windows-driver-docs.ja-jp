@@ -35,7 +35,7 @@ ms.locfileid: "56574432"
 
 5.  WMI を両方への応答で選択したバイナリ データを返す、 [ **IRP\_MN\_クエリ\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff551650)または[ **IRP\_MN\_クエリ\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff551718) MSWmi 要求\_MofData\_GUID。
 
-Wmimofck ユーティリティの詳細については、次を参照してください。 [wmimofck.exe を使用して](using-wmimofck-exe.md)します。
+Wmimofck ユーティリティの詳細については、[wmimofck.exe を使用して](using-wmimofck-exe.md)を参照してください。
 
  
 

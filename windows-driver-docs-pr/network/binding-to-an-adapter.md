@@ -49,7 +49,7 @@ NDIS NDIS を返す場合\_状態\_から PENDING **NdisOpenAdapterEx**、NDIS �
 
 プロトコル ドライバーに呼び出し、 [ **NdisCloseAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561640)アダプターを閉じます。 ドライバーが呼び出せる**NdisCloseAdapterEx**から、 *ProtocolBindAdapterEx*関数または[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)関数。
 
-場合、アダプターを起動して、バインド要求を完了する前に*ProtocolBindAdapterEx* 、エラーが発生し、バインドを閉じる必要があります、アダプターを呼び出すことができます**NdisCloseAdapterEx**します。 アダプターの終了についての詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
+場合、アダプターを起動して、バインド要求を完了する前に*ProtocolBindAdapterEx* 、エラーが発生し、バインドを閉じる必要があります、アダプターを呼び出すことができます**NdisCloseAdapterEx**します。 アダプターの終了についての詳細については、[アダプターからバインド解除](unbinding-from-an-adapter.md)を参照してください。
 
  
 

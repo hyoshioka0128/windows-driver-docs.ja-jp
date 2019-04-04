@@ -37,9 +37,9 @@ NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性の構
 
 NDIS は、NDIS\_HD\_分割\_を有効にする\_ヘッダー\_データ\_ヘッダー データ ミニポート アダプターの分割を有効にするフラグを分割します。 NDIS は NDIS 設定されていない\_HD\_分割\_を有効にする\_ヘッダー\_データ\_ミニポート ドライバーでは、NDIS を設定しなかった場合、分割\_HD\_分割\_CAP\_サポート\_ヘッダー\_データ\_分割フラグ、 **CurrentCapabilities**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ミニポート ドライバーには、ヘッダー データ NDIS NDIS を設定する場合は、NIC で分割が有効にする必要があります\_HD\_分割\_を有効にする\_ヘッダー\_データ\_分割フラグ。
 
-ミニポート ドライバーを設定する必要があります、 **BackfillSize**の NDIS メンバー\_HD\_分割\_属性の構造体を呼び出す前にゼロに[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。 NDIS セット、 **BackfillSize**メンバーの場合、ミニポート ドライバーは、分割フレームのデータ バッファー内のバックフィル記憶域を割り当てる事前する必要があります。 後**NdisMSetMiniportAttributes**正常に返されます、ミニポート ドライバーを使用する必要があります、 **BackfillSize**値の指定されたその NDIS と事前にデータ バッファーを割り当てています。 データ バッファーのバックフィル サイズの詳細については、次を参照してください。[データ バッファーの割り当てのバックフィル](allocating-backfill-for-the-data-buffer.md)します。
+ミニポート ドライバーを設定する必要があります、 **BackfillSize**の NDIS メンバー\_HD\_分割\_属性の構造体を呼び出す前にゼロに[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。 NDIS セット、 **BackfillSize**メンバーの場合、ミニポート ドライバーは、分割フレームのデータ バッファー内のバックフィル記憶域を割り当てる事前する必要があります。 後**NdisMSetMiniportAttributes**正常に返されます、ミニポート ドライバーを使用する必要があります、 **BackfillSize**値の指定されたその NDIS と事前にデータ バッファーを割り当てています。 データ バッファーのバックフィル サイズの詳細については、[データ バッファーの割り当てのバックフィル](allocating-backfill-for-the-data-buffer.md)を参照してください。
 
-ミニポート ドライバーを設定する必要があります、 **MaxHeaderSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体を呼び出しの前に 0 **NdisMSetMiniportAttributes**します。 NDIS は、このメンバーを分割フレームのヘッダーのバッファーで許可される最大サイズに設定します。 後**NdisMSetMiniportAttributes**正常に返されます、ミニポート ドライバーを使用する必要があります、 **MaxHeaderSize**その NDIS が指定された値します。 ヘッダーの最大サイズの詳細については、次を参照してください。[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)します。
+ミニポート ドライバーを設定する必要があります、 **MaxHeaderSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体を呼び出しの前に 0 **NdisMSetMiniportAttributes**します。 NDIS は、このメンバーを分割フレームのヘッダーのバッファーで許可される最大サイズに設定します。 後**NdisMSetMiniportAttributes**正常に返されます、ミニポート ドライバーを使用する必要があります、 **MaxHeaderSize**その NDIS が指定された値します。 ヘッダーの最大サイズの詳細については、[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)を参照してください。
 
  
 

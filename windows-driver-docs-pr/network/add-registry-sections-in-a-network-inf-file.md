@@ -31,19 +31,19 @@ INF ファイルを含む 1 つまたは複数*追加レジストリ セクシ�
 
 1 つまたは複数*追加レジストリ セクション*キーと値を次のいずれかを実行するコンポーネントのインスタンス キーに追加できます。
 
--   ユーザー インターフェイスを通じて変更できない構成パラメーターは、コンポーネント--の静的パラメーターを設定します。 詳細については、次を参照してください。[静的パラメーターを設定](setting-static-parameters.md)します。
+-   ユーザー インターフェイスを通じて変更できない構成パラメーターは、コンポーネント--の静的パラメーターを設定します。 詳細については、[静的パラメーターを設定](setting-static-parameters.md)を参照してください。
 
--   WAN アダプターのエンドポイント (チャネル、回線またはベアラー チャネルとも呼ばれます) の数を指定します。 詳細については、次を参照してください。 [WAN アダプター用の WAN のエンドポイントを指定する](specifying-wan-endpoints-for-a-wan-adapter.md)します。
+-   WAN アダプターのエンドポイント (チャネル、回線またはベアラー チャネルとも呼ばれます) の数を指定します。 詳細については、[WAN アダプター用の WAN のエンドポイントを指定する](specifying-wan-endpoints-for-a-wan-adapter.md)を参照してください。
 
--   キーおよび ISDN アダプターの値を指定します。 詳細については、次を参照してください。 [ISDN キーを指定すると、ISDN アダプターの値](specifying-isdn-keys-and-values-for-an-isdn-adapter.md)します。
+-   キーおよび ISDN アダプターの値を指定します。 詳細については、[ISDN キーを指定すると、ISDN アダプターの値](specifying-isdn-keys-and-values-for-an-isdn-adapter.md)を参照してください。
 
--   別のネットワーク コンポーネントのインストールが必要です。 詳細については、次を参照してください。[インストールのもう 1 つのネットワーク コンポーネントを必要とする](requiring-the-installation-of-another-network-component.md)します。
+-   別のネットワーク コンポーネントのインストールが必要です。 詳細については、[インストールのもう 1 つのネットワーク コンポーネントを必要とする](requiring-the-installation-of-another-network-component.md)を参照してください。
 
--   ネットワーク アダプターのカスタム プロパティ シートをサポートする値を指定します。 詳細については、次を参照してください。[ネットワーク アダプターのカスタム プロパティ ページを指定する](specifying-custom-property-pages-for-network-adapters.md)します。
+-   ネットワーク アダプターのカスタム プロパティ シートをサポートする値を指定します。 詳細については、[ネットワーク アダプターのカスタム プロパティ ページを指定する](specifying-custom-property-pages-for-network-adapters.md)を参照してください。
 
 ### <a name="adding-keys-and-values-to-a-netclient-component"></a>ネットワーク クライアント コンポーネントへのキーと値の追加
 
-*追加レジストリ セクション*の INF ファイルで、 **NetClient**コンポーネントを追加する必要があります、 **NetworkProvider**キーを*サービス*をキーコンポーネント。 **NetworkProvider**キーが 2 つの値:**名前**、ネットワーク プロバイダーの名前を指定して、 **ProviderPath**ネットワークへの完全パスを指定します。プロバイダー DLL です。 詳細については、次を参照してください。 [NetClient コンポーネントのプロバイダーのパスと名前を指定する](specifying-the-name-and-provider-path-for-a-netclient-component.md)します。
+*追加レジストリ セクション*の INF ファイルで、 **NetClient**コンポーネントを追加する必要があります、 **NetworkProvider**キーを*サービス*をキーコンポーネント。 **NetworkProvider**キーが 2 つの値:**名前**、ネットワーク プロバイダーの名前を指定して、 **ProviderPath**ネットワークへの完全パスを指定します。プロバイダー DLL です。 詳細については、[NetClient コンポーネントのプロバイダーのパスと名前を指定する](specifying-the-name-and-provider-path-for-a-netclient-component.md)を参照してください。
 
 **注**  **NetClient**コンポーネントは Windows 8.1、Windows Server 2012 R2 で非推奨以降。
 
@@ -53,17 +53,17 @@ INF ファイルを含む 1 つまたは複数*追加レジストリ セクシ�
 
 各ネットワーク INF ファイルには、少なくとも 1 つ含める必要があります*追加レジストリ セクション*を追加する、 **Ndi**ファイルによってインストールされているコンポーネントのキー。 **Ndi**キーは、コンポーネントのインスタンス キーに追加される特定のネットワークのキー。 キーと値に追加されますが、 **Ndi**キーは、インストールされているネットワーク コンポーネントとその機能の種類によって異なります。 **Ndi**キーは、次を指定します。
 
--   **HelpText**の値を**NetTrans**、 **NetClient**、または**NetService**コンポーネント。 詳細については、次を参照してください。 [HelpText 値を追加する](adding-a-helptext-value.md)します。
+-   **HelpText**の値を**NetTrans**、 **NetClient**、または**NetService**コンポーネント。 詳細については、[HelpText 値を追加する](adding-a-helptext-value.md)を参照してください。
 
--   通知オブジェクトの値。 詳細については、次を参照してください。[通知オブジェクトのレジストリ値を追加する](adding-registry-values-for-a-notify-object.md)します。
+-   通知オブジェクトの値。 詳細については、[通知オブジェクトのレジストリ値を追加する](adding-registry-values-for-a-notify-object.md)を参照してください。
 
--   サービスに関連する値。 詳細については、次を参照してください。 [Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)します。
+-   サービスに関連する値。 詳細については、[Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)を参照してください。
 
--   バインド インターフェイス。 詳細については、次を参照してください。[バインド インターフェイスを指定する](specifying-binding-interfaces.md)します。
+-   バインド インターフェイス。 詳細については、[バインド インターフェイスを指定する](specifying-binding-interfaces.md)を参照してください。
 
--   アダプターの構成パラメーターを**詳細**ページ。 詳細については、次を参照してください。[プロパティの詳細設定 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
+-   アダプターの構成パラメーターを**詳細**ページ。 詳細については、[プロパティの詳細設定 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
 
--   バンドルのメンバーシップ。 詳細については、次を参照してください。[バンドルのメンバーシップを指定する](specifying-bundle-membership.md)します。
+-   バンドルのメンバーシップ。 詳細については、[バンドルのメンバーシップを指定する](specifying-bundle-membership.md)を参照してください。
 
 一覧については**Ndi**レジストリ キーと Windows 95/98/Me で使用できますが、Windows 2000 以降のバージョンでは使用されない値を参照してください。 [Ndi 値とキーが Windows 2000 以降のバージョンで使用されません](ndi-values-and-keys-not-used-in-windows-2000-and-later-versions.md)します。
 

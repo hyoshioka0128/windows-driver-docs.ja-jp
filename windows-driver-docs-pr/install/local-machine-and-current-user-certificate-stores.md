@@ -33,7 +33,7 @@ ms.locfileid: "56582945"
 
  
 
-追加またはシステムの証明書ストアから証明書を削除する方法の詳細については、次を参照してください。 [ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)します。
+追加またはシステムの証明書ストアから証明書を削除する方法の詳細については、[ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)を参照してください。
 
  
 

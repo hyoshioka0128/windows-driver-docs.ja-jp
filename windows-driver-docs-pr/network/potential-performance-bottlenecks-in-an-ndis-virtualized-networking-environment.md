@@ -49,7 +49,7 @@ ms.locfileid: "56572350"
 
  
 
-VMQ インターフェイスの詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
+VMQ インターフェイスの詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。
 
 ### <a name="overcoming-performance-bottlenecks-with-sr-iov"></a>SR-IOV とパフォーマンスのボトルネックを解消
 
@@ -65,7 +65,7 @@ VMQ インターフェイスの詳細については、次を参照してくだ�
 
 -   スケーラビリティが向上します。
 
-SR-IOV インターフェイスの詳細については、次を参照してください。 [Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)します。
+SR-IOV インターフェイスの詳細については、[Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)を参照してください。
 
  
 

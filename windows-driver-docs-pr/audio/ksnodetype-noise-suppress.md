@@ -29,7 +29,7 @@ KSNODETYPE\_ノイズ\_を抑制するノードは、ノイズの抑制 (NS) コ
 
 NS ノードを格納しているフィルターが作成されるか、ノードがリセットされた、ときに、ノードがパススルー モードで動作する初期構成されます。
 
-NS ノードは、全二重 DirectSound アプリケーションをサポートするために、AEC (アコースティック エコー キャンセル) フィルターに組み込むことができます。 詳細については、次を参照してください。 [DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)します。
+NS ノードは、全二重 DirectSound アプリケーションをサポートするために、AEC (アコースティック エコー キャンセル) フィルターに組み込むことができます。 詳細については、[DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)を参照してください。
 
 KSNODETYPE\_ノイズ\_AEC フィルター ノードを抑制するハードウェア アクセラレータを有効にするには、次のプロパティをサポートする必要があります。
 

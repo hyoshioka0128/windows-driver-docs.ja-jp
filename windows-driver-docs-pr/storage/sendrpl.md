@@ -47,7 +47,7 @@ void SendRPL(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565503)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565503)構造体。
 
 *PortWWN*   
 世界中の名前読み取りのポートを使用するには、(RPL) コマンドを一覧表示、ローカル ポートに送信されます。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRPL\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565496)構造体。

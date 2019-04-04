@@ -39,7 +39,7 @@ WinDbg ステップにより、ブレークポイントの設定のソース コ
 -   Windows 10 用 Windows Driver Kit (WDK)
 -   Windows 10 用サンプル Sysvad オーディオ ドライバー
 
-ダウンロードして、WDK をインストールする方法については、次を参照してください。 [Windows Driver Kit (WDK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-driver-kit)します。
+ダウンロードして、WDK をインストールする方法については、[Windows Driver Kit (WDK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-driver-kit)を参照してください。
 
 ## <a name="span-idsysvaddebuggingwalkthroughoverviewspansysvad-debugging-walkthrough"></a><span id="sysvad_debugging_walkthrough_overview"></span>Sysvad デバッグ チュートリアル
 
@@ -79,7 +79,7 @@ WinDbg ステップにより、ブレークポイントの設定のソース コ
 
 ![二重矢印で接続されている 2 台の pc](images/debuglab-image-targethostdrawing1.png)
 
-カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、次を参照してください。 [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)します。 ターゲット コンピューターの設定に関する詳細については、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、[WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)を参照してください。 ターゲット コンピューターの設定に関する詳細については、[手動ドライバーの展開のコンピューターを準備する](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
 
 ### <a name="span-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="configure__kernel_mode_debugging_using_ethernet"></span>イーサネットを使用してカーネル – モードのデバッグを構成します。
 
@@ -134,7 +134,7 @@ Approximate round trip times in milli-seconds:
    C:\Program Files (x86)\Windows Kits\10\Debuggers\x64
 
 > [!NOTE]
-> このラボでは、両方の Pc が実行されていること、64 ビット バージョンは、参照のターゲットとホストの両方を前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットが実行されている 32 ビット Windows では、ホスト上で 32 のバージョンのデバッガーを実行している場合です。 詳細については、次を参照してください。 [32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)します。
+> このラボでは、両方の Pc が実行されていること、64 ビット バージョンは、参照のターゲットとホストの両方を前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットが実行されている 32 ビット Windows では、ホスト上で 32 のバージョンのデバッガーを実行している場合です。 詳細については、[32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)を参照してください。
 > 
 
 2. これら 2 つのファイルし、ネットワーク共有にコピーまたはつまみのドライブでは、ターゲット コンピューター上で使用できるようにします。
@@ -513,7 +513,7 @@ Type “.hh dbgerr005” for details.
 **注**  
 **シンボル サーバー**
 
-シンボルを使用するために使用する方法を数多くあります。 多くの状況では、必要なときに、Microsoft が提供するシンボル サーバーからアクセス シンボルに PC を構成できます。 このチュートリアルでは、このアプローチを使用することを前提としています。 環境内でシンボルが別の場所にいる場合は、その場所を使用する手順を変更します。 詳細については、次を参照してください。[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)します。
+シンボルを使用するために使用する方法を数多くあります。 多くの状況では、必要なときに、Microsoft が提供するシンボル サーバーからアクセス シンボルに PC を構成できます。 このチュートリアルでは、このアプローチを使用することを前提としています。 環境内でシンボルが別の場所にいる場合は、その場所を使用する手順を変更します。 詳細については、[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)を参照してください。
 
  
 
@@ -546,7 +546,7 @@ ENABLE_OPTIMIZER 設定 = 0
     ...  
     ```
 
-    詳細については、次を参照してください。 [ **lm**](lm--list-loaded-modules-.md)します。
+    詳細については、[ **lm**](lm--list-loaded-modules-.md)を参照してください。
 
 2.  をクリックして、**グローバル シンボルのすべての参照**デバッグ、文字で始まる項目シンボルに関する情報を表示する出力のリンクをします。
 3.  DML が有効になっているため、出力の一部の要素をクリックして、ホット リンクです。 をクリックして、*データ*デバッグ、文字で始まる項目シンボルに関する情報を表示する出力のリンクをします。
@@ -558,7 +558,7 @@ ENABLE_OPTIMIZER 設定 = 0
     fffff806`9adb1000 tabletaudiosample!AddDevice (struct _DRIVER_OBJECT *, struct _DEVICE_OBJECT *)
     ```
 
-    詳しくは、次を参照してください。 [ **(シンボルを調べる) x**](x--examine-symbols-.md)します。
+    詳しくは、[ **(シンボルを調べる) x**](x--examine-symbols-.md)を参照してください。
 
 4.  **! Lmi**拡張機能には、モジュールに関する情報が表示されます。 型 **! lmi tabletaudiosample**します。 出力は、下に表示されるテキストのようになります。
 
@@ -612,7 +612,7 @@ ENABLE_OPTIMIZER 設定 = 0
 
 プラグ アンド プレイ デバイス ツリーで、デバイス ドライバーに関する情報は、トラブルシューティングに役立ちます。 たとえば、デバイス ドライバーが、デバイス ツリーに常駐していない場合はデバイス ドライバーのインストールの問題。
 
-デバイス ノードのデバッグ拡張機能の詳細については、次を参照してください。 [ **! devnode**](-devnode.md)します。
+デバイス ノードのデバッグ拡張機能の詳細については、[ **! devnode**](-devnode.md)を参照してください。
 
 **&lt;ホスト システムで**
 
@@ -769,7 +769,7 @@ ENABLE_OPTIMIZER 設定 = 0
 
 ![約 20 のノードを持つデバイス ノード ツリー](images/debuglab-image-device-node-tree.png)
 
-**注**  より複雑なドライバー スタックの詳細については、次を参照してください。[ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh439632)と[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)します。
+**注**  より複雑なドライバー スタックの詳細については、[ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh439632)と[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)を参照してください。
 
  
 
@@ -837,7 +837,7 @@ ENABLE_OPTIMIZER 設定 = 0
       1: fffff801`14b5f000 @!"tabletaudiosample!AddDevice"
     ```
 
-    別の構文を使用するにはのような変数の設定と組み合わせて&lt;モジュール&gt;!&lt;シンボル&gt;、&lt;クラス&gt;::&lt;メソッド&gt;、'&lt;file.cpp&gt;:&lt;行番号&gt;'、または時間数をスキップ&lt;条件&gt; &lt; \#&gt;します。 詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
+    別の構文を使用するにはのような変数の設定と組み合わせて&lt;モジュール&gt;!&lt;シンボル&gt;、&lt;クラス&gt;::&lt;メソッド&gt;、'&lt;file.cpp&gt;:&lt;行番号&gt;'、または時間数をスキップ&lt;条件&gt; &lt; \#&gt;します。 詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
 6.  」と入力して、ブレークポイントが設定されたことを確認する現在のブレークポイントを一覧表示、 **bl**コマンド。
 
@@ -1800,9 +1800,9 @@ fffff803`bb757020 cc              int     3
 
 ![windbg は約 12 レジスタが表示されたウィンドウを登録します。](images/sysvad-lab-audio-display-registers.png)
 
-レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 詳細については、次を参照してください。 [ **r (レジスタ)**](r--registers-.md)します。
+レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 詳細については、[ **r (レジスタ)**](r--registers-.md)を参照してください。
 
-レジスタの内容については、次を参照してください。 [x86 アーキテクチャ](x86-architecture.md)と[x64 アーキテクチャ](x64-architecture.md)します。
+レジスタの内容については、[x86 アーキテクチャ](x86-architecture.md)と[x64 アーキテクチャ](x64-architecture.md)を参照してください。
 
 **逆アセンブリ**
 
@@ -1810,7 +1810,7 @@ fffff803`bb757020 cc              int     3
 
 ![windbg の逆アセンブル ウィンドウ](images/sysvad-lab-audio-disassembly-window.png)
 
-アセンブリ言語の逆アセンブリの詳細については、次を参照してください。 [x86 注釈付き逆アセンブリ](annotated-x86-disassembly.md)と[x64 注釈付き逆アセンブリ](annotated-x64-disassembly.md)します。
+アセンブリ言語の逆アセンブリの詳細については、[x86 注釈付き逆アセンブリ](annotated-x86-disassembly.md)と[x64 注釈付き逆アセンブリ](annotated-x64-disassembly.md)を参照してください。
 
 ## <a name="span-idworkingwithmemoryspansection-12-work-with-memory"></a><span id="workingwithmemory"></span>セクション 12:メモリを使用します。
 

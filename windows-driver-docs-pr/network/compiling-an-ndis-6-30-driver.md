@@ -22,9 +22,9 @@ Windows 8 の WDK には、ヘッダー バージョン管理がサポートし�
 
 -   フィルターまたはプロトコル ドライバーでは、追加 NDIS630 = 1。
 
-WDK の Windows 8 のリリースでは、ドライバーをビルドする方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+WDK の Windows 8 のリリースでは、ドライバーをビルドする方法の詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
 
-ドライバーのビルド ファイルを Visual Studio プロジェクトに変換する方法の詳細については、次を参照してください。 [、ドライバーから既存のソース ファイルを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)します。
+ドライバーのビルド ファイルを Visual Studio プロジェクトに変換する方法の詳細については、[、ドライバーから既存のソース ファイルを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)を参照してください。
 
  
 

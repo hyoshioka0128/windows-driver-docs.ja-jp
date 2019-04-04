@@ -75,9 +75,9 @@ DisableDecoratedModelsRequirement:REG_DWORD
    ...
    ```
 
-5. 例では、デバイスのインストールに必要なその他のデバイス固有セクションが含まれて、 **.ntamd64**プラットフォーム拡張機能は、これらのセクションの名前。 INF ファイルのセクションとディレクティブの詳細については、次を参照してください。 [INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)します。
+5. 例では、デバイスのインストールに必要なその他のデバイス固有セクションが含まれて、 **.ntamd64**プラットフォーム拡張機能は、これらのセクションの名前。 INF ファイルのセクションとディレクティブの詳細については、[INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
 
-すべてのプラットフォームの種類の 1 つのオペレーティング システム INF を作成する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
+すべてのプラットフォームの種類の 1 つのオペレーティング システム INF を作成する方法については、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
 
  
 

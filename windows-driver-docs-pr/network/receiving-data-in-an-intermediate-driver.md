@@ -21,7 +21,7 @@ ms.locfileid: "56570792"
 
 中間ドライバーでは、プロトコルのドライバーと同様で、プロトコルの下端にあるデータを受信します。
 
-受信した管理の詳細については、ネットワーク ドライバーの中間データを参照してください[中間ドライバー ネットワーク データ管理](intermediate-driver-network-data-management.md)します。 NDIS プロトコル ドライバーにデータの受信についての詳細については、次を参照してください。[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)します。
+受信した管理の詳細については、ネットワーク ドライバーの中間データを参照してください[中間ドライバー ネットワーク データ管理](intermediate-driver-network-data-management.md)します。 NDIS プロトコル ドライバーにデータの受信についての詳細については、[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)を参照してください。
 
 中間ドライバーでデータの受信の詳細については、次のセクションも提供します。
 

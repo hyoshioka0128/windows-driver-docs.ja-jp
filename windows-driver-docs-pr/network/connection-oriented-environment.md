@@ -49,13 +49,13 @@ NDIS は、次の接続指向のドライバーをサポートしています。
 
 A*接続指向のミニポート ドライバー* 1 つまたは複数のネットワーク インターフェイス カード (Nic) を制御し、接続指向プロトコル ドライバー (クライアントの接続指向とコール マネージャー) と、NIC 間のインターフェイスを提供します。ハードウェア。
 
-接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、次を参照してください。 [Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)します。
+接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、[Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)を参照してください。
 
 A*コール マネージャー*通話のセットアップとクライアントの接続指向の廃棄サービスを提供する NDIS プロトコル ドライバーします。 コール マネージャー:
 
 -   送信を使用し、ネットワーク スイッチ、リモート ピアなどのネットワークのエンティティとシグナリング メッセージを交換する接続指向のミニポート ドライバーの機能を利用します。
 
--   1 つまたは複数のシグナリング プロトコル ドライバーをサポートしています。 コール マネージャーによって実行される、接続指向の操作の概要については、次を参照してください。 [Connection-Oriented 操作は、マネージャーの呼び出しによって実行される](connection-oriented-operations-performed-by-call-managers.md)します。
+-   1 つまたは複数のシグナリング プロトコル ドライバーをサポートしています。 コール マネージャーによって実行される、接続指向の操作の概要については、[Connection-Oriented 操作は、マネージャーの呼び出しによって実行される](connection-oriented-operations-performed-by-call-managers.md)を参照してください。
 
 *MCM の統合されたドライバー*もクライアントの接続指向にコール マネージャー サービスを提供する接続指向のミニポート ドライバーします。 MCM にドライバーでは、次の特徴があります。
 
@@ -85,7 +85,7 @@ A*クライアントの接続指向*:
 
  
 
-接続指向のクライアントによって実行される、接続指向の操作の概要については、次を参照してください。 [Connection-Oriented 操作は、クライアントによって実行される](connection-oriented-operations-performed-by-clients.md)します。
+接続指向のクライアントによって実行される、接続指向の操作の概要については、[Connection-Oriented 操作は、クライアントによって実行される](connection-oriented-operations-performed-by-clients.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

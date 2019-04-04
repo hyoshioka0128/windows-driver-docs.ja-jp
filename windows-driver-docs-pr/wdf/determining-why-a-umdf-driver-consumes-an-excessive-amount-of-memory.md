@@ -21,7 +21,7 @@ ms.locfileid: "56578827"
 
 このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のドライバーと組み合わせて Wudfext.dll デバッガー拡張機能を使用して UMDF ドライバーが大量のメモリを消費する理由を判断する方法について説明します。
 
-以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、次を参照してください。 [Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)します。
+以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、[Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)を参照してください。
 
 メモリ使用量を調査するには、次の手順を使用します。
 

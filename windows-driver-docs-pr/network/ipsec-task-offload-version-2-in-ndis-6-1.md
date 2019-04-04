@@ -23,9 +23,9 @@ ms.locfileid: "56531375"
 
 IPsec タスク オフロードでは、IPsec のオフロード サービス ネットワーク IPsec オフロードに対応したネットワーク インターフェイス カード (Nic) にデータの処理を提供します。 NDIS 6.1 と以降で IPsec オフロードをバージョン 2 (IPsecOV2) です。 IPsecOV2 では、追加の暗号化アルゴリズム、IPv6、および大量送信オフロード (LSO) との共存のサポートを拡張します。
 
-IPsecOV2 は、NDIS 6.1 direct OID 要求インターフェイスを使用します。 直接の OID 要求インターフェイスの詳細については、次を参照してください。 [NDIS 6.1 で OID 要求インターフェイスを直接](direct-oid-request-interface-in-ndis-6-1.md)します。
+IPsecOV2 は、NDIS 6.1 direct OID 要求インターフェイスを使用します。 直接の OID 要求インターフェイスの詳細については、[NDIS 6.1 で OID 要求インターフェイスを直接](direct-oid-request-interface-in-ndis-6-1.md)を参照してください。
 
-IPsecOV2 の詳細については、次を参照してください。 [IPsec オフロード バージョン 2](ipsec-offload-version-2.md)します。
+IPsecOV2 の詳細については、[IPsec オフロード バージョン 2](ipsec-offload-version-2.md)を参照してください。
 
  
 

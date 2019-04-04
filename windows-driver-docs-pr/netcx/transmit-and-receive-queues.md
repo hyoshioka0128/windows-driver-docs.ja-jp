@@ -58,7 +58,7 @@ MyEvtAdapterCreateTxQueue(
 }
 ```
 
-受信キューを作成する[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)、同じパターンを使用して呼び出す[ **NetRxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuecreate)します。 例については、次を参照してください。 [ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)します。
+受信キューを作成する[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)、同じパターンを使用して呼び出す[ **NetRxQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netrxqueue/nf-netrxqueue-netrxqueuecreate)します。 例については、[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)を参照してください。
 
 フレームワークは、低電力状態に遷移する前にキューを空にし、アダプターを削除する前にそれらを削除します。
 
@@ -83,7 +83,7 @@ NetAdapter データ パスは、ポーリング モデル、および 1 つの�
 
 ![ポーリングのフロー](images/polling.png)
 
-コード例については、次を参照してください。 [ *EVT_PACKET_QUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)します。
+コード例については、[ *EVT_PACKET_QUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)を参照してください。
 
 ポーリング操作のシーケンスは次のとおりです。
 

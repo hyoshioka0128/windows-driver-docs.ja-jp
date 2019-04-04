@@ -18,13 +18,13 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティもサポートします。 ただし、Windows の以前のバージョンには、統一されたデバイス プロパティのモデルのプロパティのキーはできません。 代わりに、これらのバージョンの Windows では、対応するシステム定義のレジストリ エントリの値を使用して、このプロパティを表します。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもこの値はサポート システム定義のレジストリ エントリ。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)を参照してください。
 
 Windows Server 2003、Windows XP、および Windows 2000 で設定またはデバイス セットアップ クラスに対する次のレジストリ エントリの値にアクセスする Windows レジストリの関数を使用して、このプロパティを取得できます。
 
 **HLM\\システム\\CurrentControlSet\\コントロール\\CoDeviceInstallers\\{**<em>デバイス セットアップ クラス guid</em>**}**.
 
-クラスの共同インストーラーを登録する方法の詳細については、次を参照してください。[クラス共同インストーラーを登録する](registering-a-class-co-installer.md)します。
+クラスの共同インストーラーを登録する方法の詳細については、[クラス共同インストーラーを登録する](registering-a-class-co-installer.md)を参照してください。
 
  
 

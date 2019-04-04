@@ -20,7 +20,7 @@ UWP デバイス アプリのビルドを開始するには、ここから始め
 
 デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 UWP デバイス アプリには、通常の UWP アプリより多くの機能を備え、ファームウェアの更新などの特権操作を実行できます。 また、UWP デバイス アプリことができます (他のアプリよりも多くのデバイス) で自動再生の開始、自動的にインストール、デバイスが接続されている場合、最初にして Windows に組み込まれているプリンター、カメラ エクスペリエンスを拡張します。
 
-**注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、次を参照してください。[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)します。
+**注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)を参照してください。
 
  
 
@@ -74,7 +74,7 @@ UWP デバイスのアプリと 1 つのビルドに使用して実行できる�
 ## <a name="span-id4buildyourownwindowsstoredeviceappspanspan-id4buildyourownwindowsstoredeviceappspan4-build-your-own-uwp-device-app"></a><span id="4._build_your_own_windows_store_device_app"></span><span id="4._BUILD_YOUR_OWN_WINDOWS_STORE_DEVICE_APP"></span>4.UWP デバイス アプリをビルドします。
 
 
-まず、次を参照してください。[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)します。
+まず、[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)を参照してください。
 
  
 

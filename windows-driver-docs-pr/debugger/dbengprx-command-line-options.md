@@ -37,15 +37,15 @@ dbengprx -?
 既存のすべての接続を削除した後も引き続き DbEngPrx をによりします。
 
 <span id="_______-c_______ClientTransport______"></span><span id="_______-c_______clienttransport______"></span><span id="_______-C_______CLIENTTRANSPORT______"></span> **-c** *ClientTransport*   
-サーバーへの接続に使用するプロトコル設定を指定します。 プロトコルは、サーバーの作成時に使用と一致する必要があります。 詳細については、次を参照してください。 [ **Repeater をアクティブ化する**](activating-a-repeater.md)します。
+サーバーへの接続に使用するプロトコル設定を指定します。 プロトコルは、サーバーの作成時に使用と一致する必要があります。 詳細については、[ **Repeater をアクティブ化する**](activating-a-repeater.md)を参照してください。
 
 <span id="_______-s_______ServerTransport______"></span><span id="_______-s_______servertransport______"></span><span id="_______-S_______SERVERTRANSPORT______"></span> **-s** *サーバトランスポート*   
-クライアントは、repeater に接続するときに使用されるプロトコルの設定を指定します。 詳細については、次を参照してください。 [ **Repeater をアクティブ化する**](activating-a-repeater.md)します。
+クライアントは、repeater に接続するときに使用されるプロトコルの設定を指定します。 詳細については、[ **Repeater をアクティブ化する**](activating-a-repeater.md)を参照してください。
 
 <span id="_______-_______"></span> **-?**   
 DbEngPrx コマンドラインのヘルプ テキストを含むメッセージ ボックスが表示されます。
 
-DbEngPrx の使用方法の詳細については、次を参照してください。[リピータ](repeaters.md)します。
+DbEngPrx の使用方法の詳細については、[リピータ](repeaters.md)を参照してください。
 
  
 

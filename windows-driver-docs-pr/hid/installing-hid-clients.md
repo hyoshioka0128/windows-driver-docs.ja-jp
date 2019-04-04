@@ -22,7 +22,7 @@ ms.locfileid: "56572107"
 
 -   Windows Vista および Windows の以降のバージョンでは、ベンダーは USB HID デバイスをセレクティブ サスペンドの機能を有効にできます。 この機能はバージョン 2.0 で定義されている、*ユニバーサル シリアル バス仕様。* Windows で USB のセレクティブをサポートする方法の詳細については、機能を中断しを参照してください[USB のセレクティブ サスペンド](../usbcon/usb-selective-suspend.md)します。
 
-HIDClass デバイスをインストールするには、その他の HIDClass 固有要件はありません。 デバイスをインストールする方法の詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+HIDClass デバイスをインストールするには、その他の HIDClass 固有要件はありません。 デバイスをインストールする方法の詳細については、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
 
  
 

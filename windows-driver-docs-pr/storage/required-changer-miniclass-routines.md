@@ -41,7 +41,7 @@ ms.locfileid: "56580812"
 
 状態が返されるように、そのドライバーが、ルーチンを実装する必要がありますチェンジャーが指定したルーチンが含まれる機能をサポートしていない場合\_無効な\_デバイス\_を要求します。
 
-必須の詳細については **チェンジャー * * * Xxx*チェンジャー miniclass ドライバーでは、ルーチンを参照してください[チェンジャー Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551472)します。 デバイスに対する制御要求のチェンジャーに固有の I/O 制御コードの詳細については、次を参照してください。[チェンジャー I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff551469)します。
+必須の詳細については **チェンジャー * * * Xxx*チェンジャー miniclass ドライバーでは、ルーチンを参照してください[チェンジャー Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551472)します。 デバイスに対する制御要求のチェンジャーに固有の I/O 制御コードの詳細については、[チェンジャー I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff551469)を参照してください。
 
  
 

@@ -556,21 +556,21 @@ InstantGo では、次のシナリオがサポートされています。
 
 -   バック グラウンド オーディオおよび音楽の再生
 
-InstantGo の詳細については、次を参照してください。 [InstantGo 概要](https://msdn.microsoft.com/library/windows/hardware/mt282515)します。
+InstantGo の詳細については、[InstantGo 概要](https://msdn.microsoft.com/library/windows/hardware/mt282515)を参照してください。
 
 モバイル ブロード バンド アプリは、これら InstantGo シナリオをいくつかの操作を有効にするための特別な PDP コンテキストを使用できます。 次のロジックを使用して範囲外であるため、切断されている場合は、特別な PDP コンテキストに再接続する必要があります。 デバイスがコネクト スタンバイ電源状態になったとき、Windows は 10 分後に特別な PDP コンテキストへのすべての接続を切断し、アプリをもう一度接続を要求する必要があります。
 
-バック グラウンドのモバイル ブロード バンド アプリでのネットワークを有効にする方法の詳細については、次を参照してください。[バック グラウンド タスクの概要](http://www.microsoft.com/download/details.aspx?id=27411)と[バック グラウンド ネットワーク](http://www.microsoft.com/download/details.aspx?id=28999)します。
+バック グラウンドのモバイル ブロード バンド アプリでのネットワークを有効にする方法の詳細については、[バック グラウンド タスクの概要](http://www.microsoft.com/download/details.aspx?id=27411)と[バック グラウンド ネットワーク](http://www.microsoft.com/download/details.aspx?id=28999)を参照してください。
 
 ![instantgo with pdp context](images/mb-pdp-fig5.jpg)
 
 ### <a name="span-idaudiostreaminginbackgroundspanspan-idaudiostreaminginbackgroundspanspan-idaudiostreaminginbackgroundspanaudio-streaming-in-background"></a><span id="Audio_streaming_in_background"></span><span id="audio_streaming_in_background"></span><span id="AUDIO_STREAMING_IN_BACKGROUND"></span>バック グラウンドでストリーミング オーディオ
 
-オーディオのストリーミング アプリケーションでは、特別な PDP コンテキストを使用してバック グラウンドでと、コネクト スタンバイ電源状態でのオーディオことができます。 バック グラウンドでオーディオを再生する方法の詳細については、次を参照してください。[バック グラウンドでオーディオを再生する方法を](https://msdn.microsoft.com/library/windows/apps/hh700367)します。
+オーディオのストリーミング アプリケーションでは、特別な PDP コンテキストを使用してバック グラウンドでと、コネクト スタンバイ電源状態でのオーディオことができます。 バック グラウンドでオーディオを再生する方法の詳細については、[バック グラウンドでオーディオを再生する方法を](https://msdn.microsoft.com/library/windows/apps/hh700367)を参照してください。
 
 ### <a name="span-idreal-timecommunicationappsspanspan-idreal-timecommunicationappsspanspan-idreal-timecommunicationappsspanreal-time-communication-apps"></a><span id="Real-time_communication_apps"></span><span id="real-time_communication_apps"></span><span id="REAL-TIME_COMMUNICATION_APPS"></span>リアルタイム通信アプリ
 
-VoIP またはチャット アプリなどのリアルタイム通信アプリでは、特別な PDP コンテキストのトリガーをウェイク アップを受信できます。 ウェイク アップ トリガーには、時間、システムがコネクト スタンバイ電源状態の場合も含むすべてのトリガーされるように、アプリができます。 ウェイク アップ トリガーを有効にする方法の詳細については、次を参照してください。[バック グラウンド ネットワーク](http://www.microsoft.com/download/details.aspx?id=28999)します。
+VoIP またはチャット アプリなどのリアルタイム通信アプリでは、特別な PDP コンテキストのトリガーをウェイク アップを受信できます。 ウェイク アップ トリガーには、時間、システムがコネクト スタンバイ電源状態の場合も含むすべてのトリガーされるように、アプリができます。 ウェイク アップ トリガーを有効にする方法の詳細については、[バック グラウンド ネットワーク](http://www.microsoft.com/download/details.aspx?id=28999)を参照してください。
 
 このシナリオを有効にするモバイル ブロード バンド デバイス必要があります wake on をサポートするフィルター PDP コンテキストが特別なで説明したように、[モバイル ブロード バンド インターフェイス モデル (MBIM) 仕様](https://msdn.microsoft.com/library/windows/hardware/dn265427)します。
 

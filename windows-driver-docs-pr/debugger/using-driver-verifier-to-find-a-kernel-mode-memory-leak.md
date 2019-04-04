@@ -22,7 +22,7 @@ Driver Verifier のプールの追跡機能は、指定したドライバーに�
 
 ドライバーは、ダイレクト メモリ アクセス (DMA) を使用して、Driver Verifier の DMA の検証機能がメモリ リークを見つけるに役立つもします。 さまざまな DMA ルーチン、一般的なバッファーとメモリ リークにつながる可能性があるその他のエラーを解放するための障害などの一般的なコーポレーションの DMA の検証をテストします。 カーネル デバッガーがこのオプションがアクティブな間を接続されている場合は、使用、 [ **! dma** ](-dma.md)割り当ての統計情報を表示する拡張機能。
 
-Driver Verifier については、次を参照してください。 [Driver Verifier](https://go.microsoft.com/fwlink/p/?linkid=120480) Windows Driver Kit (WDK) ドキュメントです。
+Driver Verifier については、[Driver Verifier](https://go.microsoft.com/fwlink/p/?linkid=120480) Windows Driver Kit (WDK) ドキュメントを参照してください。
 
  
 

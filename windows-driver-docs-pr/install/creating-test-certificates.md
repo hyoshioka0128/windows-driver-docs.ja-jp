@@ -14,9 +14,9 @@ ms.locfileid: "56580890"
 # <a name="creating-test-certificates"></a>テスト証明書の作成
 
 
-テスト署名テスト証明書が必要です。 できるテスト証明書が生成されると、複数のドライバーをテストするために使用または[ドライバー パッケージ](driver-packages.md)します。 詳細については、次を参照してください。[テスト証明書](test-certificates.md)します。
+テスト署名テスト証明書が必要です。 できるテスト証明書が生成されると、複数のドライバーをテストするために使用または[ドライバー パッケージ](driver-packages.md)します。 詳細については、[テスト証明書](test-certificates.md)を参照してください。
 
-このトピックでは、使用する方法を説明します、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)テスト証明書を作成するためのツール。 ほとんどの開発環境では、MakeCert を使用して生成テスト証明書をインストールおよびテスト署名されたドライバーまたはドライバー パッケージの読み込みをテストするための十分な必要があります。 この種類のテスト証明書の詳細については、次を参照してください。[テスト証明書の MakeCert](makecert-test-certificate.md)します。
+このトピックでは、使用する方法を説明します、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)テスト証明書を作成するためのツール。 ほとんどの開発環境では、MakeCert を使用して生成テスト証明書をインストールおよびテスト署名されたドライバーまたはドライバー パッケージの読み込みをテストするための十分な必要があります。 この種類のテスト証明書の詳細については、[テスト証明書の MakeCert](makecert-test-certificate.md)を参照してください。
 
 次のコマンドラインの例では、MakeCert を使用して、次のタスクを完了します。
 
@@ -50,7 +50,7 @@ makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.
 
 すべての署名に 1 つだけの MakeCert テスト証明書を作成する開発者がある[ドライバー パッケージ](driver-packages.md)開発用コンピューター。
 
-MakeCert ツールとコマンドライン引数の詳細については、次を参照してください。 [ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)します。
+MakeCert ツールとコマンドライン引数の詳細については、[ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)を参照してください。
 
 Readme ファイルも参照してください*Selfsign_readme.htm*で、 *bin\\selfsign* Windows Driver Kit (WDK) のディレクトリ。
 

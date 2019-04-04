@@ -21,9 +21,9 @@ ms.locfileid: "56579832"
 > この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
 >
 
-Microsoft Visual Studio を使用して、設定し、イーサネット ネットワーク経由でのカーネル モードのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
+Microsoft Visual Studio を使用して、設定し、イーサネット ネットワーク経由でのカーネル モードのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
 
-Visual Studio を使用して、イーサネットのデバッグを設定する代わりに、自動的にセットアップを実行できます。 詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+Visual Studio を使用して、イーサネットのデバッグを設定する代わりに、自動的にセットアップを実行できます。 詳細については、[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
 
 イーサネット ネットワーク経由でのデバッグと、その他の種類のケーブル経由でのデバッグと比較して次の利点があります。
 
@@ -37,7 +37,7 @@ Visual Studio を使用して、イーサネットのデバッグを設定する
 ## <a name="span-idsupportednetworkadaptersspanspan-idsupportednetworkadaptersspanspan-idsupportednetworkadaptersspansupported-network-adapters"></a><span id="Supported_network_adapters"></span><span id="supported_network_adapters"></span><span id="SUPPORTED_NETWORK_ADAPTERS"></span>サポートされているネットワーク アダプター
 
 
-ホスト コンピューターは、任意のワイヤード (有線) またはワイヤレス ネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、次を参照してください。[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)と[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)します。
+ホスト コンピューターは、任意のワイヤード (有線) またはワイヤレス ネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)と[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)を参照してください。
 
 ## <a name="span-idconfiguringthehostandtargetcomputerspanspan-idconfiguringthehostandtargetcomputerspanspan-idconfiguringthehostandtargetcomputerspanconfiguring-the-host-and-target-computer"></a><span id="Configuring_the_host_and_target_computer"></span><span id="configuring_the_host_and_target_computer"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTER"></span>ホストおよびターゲット コンピューターの構成
 
@@ -53,7 +53,7 @@ Visual Studio を使用して、イーサネットのデバッグを設定する
 
     **注**  ネットワーク デバッグに使用できるポート番号の範囲は、会社のネットワーク ポリシーによって制限される可能性があります。 制限とは何か、ホスト コンピューターから区別する方法はありません。 会社のポリシーがネットワークのデバッグに使用できるポートの範囲を制限するかどうかを判断するには、ネットワーク管理者に確認します。
 
-    **キー**、自動的に生成された既定値を使用することを強くお勧めします。 ただし、使用する場合は、独自のキーを入力できます。 詳細については、次を参照してください。[独自のキーを作成する](#creating-your-own-key)このトピックで後述します。 **ホスト IP**既定値をそのまま使用します。 これは、ホスト コンピューターの IP アドレスです。
+    **キー**、自動的に生成された既定値を使用することを強くお勧めします。 ただし、使用する場合は、独自のキーを入力できます。 詳細については、[独自のキーを作成する](#creating-your-own-key)このトピックで後述を参照してください。 **ホスト IP**既定値をそのまま使用します。 これは、ホスト コンピューターの IP アドレスです。
 
     対象のコンピューターに 1 つだけのネットワーク アダプターがある場合は、おくことができます**Bus パラメーター**空です。 ターゲット コンピューターに 1 つ以上のネットワーク アダプターがある場合は、対象のコンピューター デバイス マネージャーを使用して、PCI バス、デバイス、およびデバッグに使用するアダプターの関数の番号を確認します。 **Bus パラメーター**、入力*b*.*d*.*f*場所*b*、 *d*、および*f*はバス番号、デバイスの数、およびアダプターの関数の数。
 

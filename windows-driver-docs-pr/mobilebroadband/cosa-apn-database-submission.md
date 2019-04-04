@@ -21,5 +21,5 @@ ms.locfileid: "56573535"
 
 -   [デスクトップの COSA/APN データベースの更新を送信します。](submitting-the-desktop-cosa-apn-database-update.md)
 
-COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 APN データベースの詳細については、次を参照してください。 [APN データベースの概要](apn-database-overview.md)します。 
+COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 APN データベースの詳細については、[APN データベースの概要](apn-database-overview.md)を参照してください。 
 

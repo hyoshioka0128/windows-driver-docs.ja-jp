@@ -25,9 +25,9 @@ Storport ミニポート ドライバーのルーチンは、対応する SCSI �
 
 Storport のバージョンのミニポート ドライバーは、一連のキューの管理機能、SCSI ポートのバージョンには使用できませんが、送信される時に要求を処理できない場合、オーバー ロードを扱うことができます。 SCSI ポート版と同様のミニポート ドライバー、Storport のバージョンを使用して要求が完了すると**SRB_STATUS_BUSY**、SCSI ポート バージョンとは異なり、ビジー状態を使用してデバイスのキューをマークことできますもが、 [StorPortDeviceBusy](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy)ルーチン。 ような関数は、一時停止と再開のアダプター全体で処理するには、ミニポート ドライバーを使用します。
 
-Storport ドライバーによって提供されるサポート ルーチンの詳細については、次を参照してください。 [Storport ドライバー サポート ルーチン](storport-driver-support-routines.md)します。
+Storport ドライバーによって提供されるサポート ルーチンの詳細については、[Storport ドライバー サポート ルーチン](storport-driver-support-routines.md)を参照してください。
 
-Storport ドライバーの詳細については、次を参照してください。[ストレージ ポート ドライバー](storage-port-drivers.md)します。
+Storport ドライバーの詳細については、[ストレージ ポート ドライバー](storage-port-drivers.md)を参照してください。
 
 次に、ミニポート ドライバー ルーチンを示します。
 

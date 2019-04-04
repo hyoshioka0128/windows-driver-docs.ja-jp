@@ -20,7 +20,7 @@ ms.locfileid: "56579392"
 
 参照してください[SCSI ミニポート拡張 (Scsikd.dll および Minipkd.dll)](scsi-miniport-extensions--scsikd-dll-and-minipkd-dll-.md) Windows 7 と以前のバージョンの OS のターゲットのニーズをデバッグします。
 
-**重要な**  特殊記号この拡張機能を使用する必要があります。 詳細については、次を参照してください。[ツールを Windows のデバッグ](index.md)します。
+**重要な**  特殊記号この拡張機能を使用する必要があります。 詳細については、[ツールを Windows のデバッグ](index.md)を参照してください。
 
  
 

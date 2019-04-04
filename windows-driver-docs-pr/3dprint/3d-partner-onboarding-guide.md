@@ -59,7 +59,7 @@ Windows 10 でプラグ アンド プレイの 3D プリンターは、Windows U
 
 3. USB ドライバーを実装します。
 
-    - 製造元は、パートナーの DLL を作成して、自社の 3D プリンター用 Microsoft USB ドライバーを使用できます。 詳細については、次を参照してください。[カスタム USB インターフェイスのサポートの 3D プリンター](3d-printer-custom-usb-interface.md)します。
+    - 製造元は、パートナーの DLL を作成して、自社の 3D プリンター用 Microsoft USB ドライバーを使用できます。 詳細については、[カスタム USB インターフェイスのサポートの 3D プリンター](3d-printer-custom-usb-interface.md)を参照してください。
 
     - プリンターは、Microsoft のスライサーで使用されている場合、作成したハードウェア ID がある必要があります**Enum\\3DPrint\\MS3DPrint**
 

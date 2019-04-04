@@ -27,7 +27,7 @@ JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポー
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>JSConstraintsDebug.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=808351" data-raw-source="[Windows Driver Kit downloads](https://go.microsoft.com/fwlink/p/?LinkId=808351)">Windows Driver Kit のダウンロード</a>します。</p></td>
+<td align="left"><p>JSConstraintsDebug.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?LinkId=808351" data-raw-source="[Windows Driver Kit downloads](https://go.microsoft.com/fwlink/p/?LinkId=808351)">Windows Driver Kit のダウンロード</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

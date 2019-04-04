@@ -26,7 +26,7 @@ Windows Server 2003 および Windows の以降のバージョンでは、プー
 
 ### <a name="span-iddeterminingthepooltagoftheleakspanspan-iddeterminingthepooltagoftheleakspandetermining-the-pool-tag-of-the-leak"></a><span id="determining_the_pool_tag_of_the_leak"></span><span id="DETERMINING_THE_POOL_TAG_OF_THE_LEAK"></span>リークのプール タグを決定します。
 
-どのプール タグはをリークに関連付けを確認するのには、通常 PoolMon ツールを使用して、この手順を最も簡単なは。 詳細については、次を参照してください。[カーネル モード メモリ リークの検出に使用する PoolMon](using-poolmon-to-find-a-kernel-mode-memory-leak.md)します。
+どのプール タグはをリークに関連付けを確認するのには、通常 PoolMon ツールを使用して、この手順を最も簡単なは。 詳細については、[カーネル モード メモリ リークの検出に使用する PoolMon](using-poolmon-to-find-a-kernel-mode-memory-leak.md)を参照してください。
 
 また、カーネル デバッガーを使用すると、大規模なプールの割り当てに関連付けられているタグを探します。 これを行うには、次の手順を実行します。
 

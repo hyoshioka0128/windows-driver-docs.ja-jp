@@ -31,7 +31,7 @@ ms.locfileid: "56561107"
 
 ### <a name="image-acquisition"></a>Image Acquisition
 
-標準の取得とフォルダーの取得、WIA フィーダー項目プロパティの設定は、フロント エンドとバックエンドの両方のページに使用されます。 標準の取得とフォルダーの取得の詳細については、次を参照してください。[二重モード対応ドキュメント フィーダー付きの高度な](advanced-duplex-capable-document-feeder.md)します。
+標準の取得とフォルダーの取得、WIA フィーダー項目プロパティの設定は、フロント エンドとバックエンドの両方のページに使用されます。 標準の取得とフォルダーの取得の詳細については、[二重モード対応ドキュメント フィーダー付きの高度な](advanced-duplex-capable-document-feeder.md)を参照してください。
 
  
 

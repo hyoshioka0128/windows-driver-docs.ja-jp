@@ -58,7 +58,7 @@ ms.locfileid: "57349025"
 ## <a name="building-a-sample"></a>サンプルの構築
 
 
-サンプルのドライバーを構築する方法の詳細については、次を参照してください。[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)します。
+サンプルのドライバーを構築する方法の詳細については、[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  

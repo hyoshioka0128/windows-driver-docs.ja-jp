@@ -28,7 +28,7 @@ ms.locfileid: "56570460"
 
 ![図に示す認証とキーの交換](images/coppkey.png)
 
-Mac コンピューターの詳細については、次を参照してください。 [COPP で使用される暗号化プリミティブ](cryptographic-primitives-used-by-copp.md)します。
+Mac コンピューターの詳細については、[COPP で使用される暗号化プリミティブ](cryptographic-primitives-used-by-copp.md)を参照してください。
 
 次の表では、上記の図の値について説明します。
 

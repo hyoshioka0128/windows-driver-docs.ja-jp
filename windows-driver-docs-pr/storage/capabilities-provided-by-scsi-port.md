@@ -68,7 +68,7 @@ SCSI ポート ドライバーは、次の機能を提供します。
 
 SCSI ポートは、SCSI ポート ライブラリのルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
 
--   SCSI ポート ミニポート ドライバーは、SCSI ポートの多くの OS に依存する初期化操作を委任できます[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645)ライブラリ ルーチン。 これにより、オペレーティング システムのバージョンが異なって SCSI ポート ミニポート ドライバーが移植性にします。 SCSI ポート ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [SCSI ミニポート ドライバー DriverEntry ルーチン](scsi-miniport-driver-s-driverentry-routine.md)します。
+-   SCSI ポート ミニポート ドライバーは、SCSI ポートの多くの OS に依存する初期化操作を委任できます[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645)ライブラリ ルーチン。 これにより、オペレーティング システムのバージョンが異なって SCSI ポート ミニポート ドライバーが移植性にします。 SCSI ポート ミニポート ドライバーの初期化作業の詳細については、[SCSI ミニポート ドライバー DriverEntry ルーチン](scsi-miniport-driver-s-driverentry-routine.md)を参照してください。
 
 -   非 PnP デバイスの SCSI ポート ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)します。
 

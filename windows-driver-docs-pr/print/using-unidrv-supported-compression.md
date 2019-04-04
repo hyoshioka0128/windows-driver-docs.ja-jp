@@ -38,7 +38,7 @@ CmdDisableCompression コマンドの入力を指定する場合、使用可能�
 
 CmdEnableTIFF4、CmdEnableDRC、CmdEnableFE の詳細については\_RLE、CmdDisableCompression のエントリを参照してくださいと[ラスター データ圧縮コマンド](raster-data-compression-commands.md)します。
 
-CmdSendBlockData の詳細については、次を参照してください。[ラスター データ出力コマンド](raster-data-emission-commands.md)します。
+CmdSendBlockData の詳細については、[ラスター データ出力コマンド](raster-data-emission-commands.md)を参照してください。
 
  
 

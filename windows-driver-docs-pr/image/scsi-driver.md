@@ -17,7 +17,7 @@ ms.locfileid: "56572092"
 
 
 
-SCSI の静止画像カーネル モード ドライバー サポートのバス**ReadFile** SCSI を含むコマンド記述子ブロック (CDB) を作成して**読み取り**コマンド。 サポート**WriteFile** SCSI を含む CDB を作成して**書き込み**コマンド。 ユーザー モードのミニドライバーは、呼び出すことによってカスタマイズされた Cdb を指定できます[ **DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)します。 詳細については、次を参照してください。 [SCSI まだイメージ I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff548003)します。 Microsoft Windows SDK ドキュメントの説明を参照して**ReadFile**と**WriteFile**します。
+SCSI の静止画像カーネル モード ドライバー サポートのバス**ReadFile** SCSI を含むコマンド記述子ブロック (CDB) を作成して**読み取り**コマンド。 サポート**WriteFile** SCSI を含む CDB を作成して**書き込み**コマンド。 ユーザー モードのミニドライバーは、呼び出すことによってカスタマイズされた Cdb を指定できます[ **DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)します。 詳細については、[SCSI まだイメージ I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff548003)を参照してください。 Microsoft Windows SDK ドキュメントの説明を参照して**ReadFile**と**WriteFile**します。
 
  
 

@@ -18,13 +18,13 @@ IEEE 802.1 データ センター ブリッジング (DCB) インターフェイ
 
 -   ドライバーの運用上の NDIS QoS パラメーターは最初に解決されますか、または後で変更します。
 
-    この種類の NDIS 状態を示す値を発行する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを示す変更](indicating-changes-to-the-operational-ndis-qos-parameters.md)します。
+    この種類の NDIS 状態を示す値を発行する方法の詳細については、[運用上の NDIS QoS パラメーターを示す変更](indicating-changes-to-the-operational-ndis-qos-parameters.md)を参照してください。
 
 -   ドライバーのリモートの NDIS QoS パラメーターは、初めてデータ リンクのピアから受信したか、または後で変更します。
 
-    この種類の NDIS 状態を示す値を発行する方法の詳細については、次を参照してください。[リモートの NDIS QoS パラメーターを示す変更](indicating-changes-to-the-remote-ndis-qos-parameters.md)します。
+    この種類の NDIS 状態を示す値を発行する方法の詳細については、[リモートの NDIS QoS パラメーターを示す変更](indicating-changes-to-the-remote-ndis-qos-parameters.md)を参照してください。
 
-運用上およびリモートの NDIS QoS パラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](overview-of-ndis-qos-parameters.md)します。
+運用上およびリモートの NDIS QoS パラメーターの詳細については、[NDIS QoS パラメーターの概要](overview-of-ndis-qos-parameters.md)を参照してください。
 
  
 

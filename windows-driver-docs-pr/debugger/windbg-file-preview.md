@@ -50,7 +50,7 @@ C:\Users\*UserName*\AppData\Local\DBG\targets
 
 ### <a name="open-script"></a>スクリプトを開く
 
-使用*スクリプトを開きます*を既存の Javascript または NatVis スクリプトを開きます。 スクリプトの操作の詳細については、次を参照してください。 [WinDbg Preview - Scripting メニュー](windbg-scripting-preview.md)します。
+使用*スクリプトを開きます*を既存の Javascript または NatVis スクリプトを開きます。 スクリプトの操作の詳細については、[WinDbg Preview - Scripting メニュー](windbg-scripting-preview.md)を参照してください。
 
 ### <a name="settings"></a>設定
 

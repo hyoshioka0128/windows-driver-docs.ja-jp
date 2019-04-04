@@ -34,7 +34,7 @@ ms.locfileid: "56572084"
 
 ## <a name="symbol-resources-and-feedback"></a>シンボルのリソースとフィードバック
 
-シンボルを使用して、デバッグの詳細については、次を参照してください。[シンボルとシンボル ファイル](symbols-and-symbol-files.md)します。
+シンボルを使用して、デバッグの詳細については、[シンボルとシンボル ファイル](symbols-and-symbol-files.md)を参照してください。
 
 デバッグについてヘルプが必要な場合は、[デバッグ用のリソースに関するページ](debugging-resources.md)をご覧ください。 
 

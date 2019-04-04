@@ -18,15 +18,15 @@ ms.locfileid: "56535837"
 
 -   1 つの PCI Express、(PCIe) 物理機能 (PF)。 PF は常にネットワーク アダプターに存在し、HYPER-V 親パーティションにアタッチされます。
 
-    このハードウェア コンポーネントの詳細については、次を参照してください。 [SR-IOV 物理機能 (PF)](sr-iov-physical-function--pf-.md)します。
+    このハードウェア コンポーネントの詳細については、[SR-IOV 物理機能 (PF)](sr-iov-physical-function--pf-.md)を参照してください。
 
 -   1 つまたは複数 PCIe 仮想機能 (VF)。 各 VF は初期化され、ゲスト オペレーティング システムのネットワーク コンポーネントを送信したり、VF 経由のパケットの受信前に、HYPER-V 子パーティションに接続されている必要があります。
 
-    このハードウェア コンポーネントの詳細については、次を参照してください。 [SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)します。
+    このハードウェア コンポーネントの詳細については、[SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)を参照してください。
 
 HYPER-V 親パーティションの管理オペレーティング システムで実行され、PF ミニポート ドライバーでは、PF と各 VF、SR-IOV ネットワーク アダプター上のリソースを割り当てます。 このドライバーでは、任意のネットワーク アダプターの場合と同様に、PF のリソースを割り当てます。 ただし、ドライバーは、次のように各 VF のリソースを割り当てます。
 
--   PF のミニポート ドライバーは、ドライバーは、ネットワーク アダプターのネットワーク インターフェイス カード (NIC) を作成するときに、各 VF のハードウェア リソースを割り当てます。 ドライバーは、呼び出すことにより、VFs のハードウェア リソースの割り当てを完了[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)します。 このプロセスの詳細については、次を参照してください。 [NIC スイッチの作成](creating-a-nic-switch.md)です。
+-   PF のミニポート ドライバーは、ドライバーは、ネットワーク アダプターのネットワーク インターフェイス カード (NIC) を作成するときに、各 VF のハードウェア リソースを割り当てます。 ドライバーは、呼び出すことにより、VFs のハードウェア リソースの割り当てを完了[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)します。 このプロセスの詳細については、[NIC スイッチの作成](creating-a-nic-switch.md)を参照してください。
 
 -   PF のミニポート ドライバーでは、ドライバーのオブジェクト識別子 (OID) メソッド要求を処理する際に VF のソフトウェア リソースを割り当てます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)します。 場合でも、ハードウェア リソースを VF に対して割り当てられていると見なされる操作不可状態 PF ミニポート ドライバーでは、OID が正常に完了するまで\_NIC\_スイッチ\_ALLOCATE\_VF します。
 

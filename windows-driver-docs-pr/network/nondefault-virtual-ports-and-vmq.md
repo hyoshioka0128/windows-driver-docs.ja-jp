@@ -14,7 +14,7 @@ ms.locfileid: "56580070"
 # <a name="nondefault-virtual-ports-and-vmq"></a>既定以外の仮想ポートおよび VMQ
 
 
-既定の NIC の切り替えは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートするネットワーク アダプターのコンポーネントです。 スイッチに、PCI Express (PCIe) 物理機能 (PF) 既定の仮想ポート (VPort) が常にアタッチします。 スイッチは、PF. に 1 つまたは複数の既定以外拡張をアタッチすることができます。 詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
+既定の NIC の切り替えは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートするネットワーク アダプターのコンポーネントです。 スイッチに、PCI Express (PCIe) 物理機能 (PF) 既定の仮想ポート (VPort) が常にアタッチします。 スイッチは、PF. に 1 つまたは複数の既定以外拡張をアタッチすることができます。 詳細については、[仮想ポートを作成する](creating-a-virtual-port.md)を参照してください。
 
 仮想化スタックは、HYPER-V 親パーティションの管理オペレーティング システムで実行されます。 このスタックは、オブジェクト識別子 (OID) をメソッド要求を発行して拡張を作成します。 [OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。 ただし、スタックの OID メソッド要求を使用するリソースが割り当て済みのアクティブな PCIe 仮想機能 (Vf) の数よりも多くの拡張を作成できます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)します。
 
@@ -30,9 +30,9 @@ ms.locfileid: "56580070"
 
     使用して、パケットの OOB データから VPort 識別子を取得できます、 [ **NET\_バッファー\_一覧\_受信\_フィルター\_VPORT\_ID**](https://msdn.microsoft.com/library/windows/hardware/hh439946)マクロ。
 
-    このプロセスの詳細については、次を参照してください。[仮想ポート経由でのパケット フロー](packet-flow-over-a-virtual-port.md)します。
+    このプロセスの詳細については、[仮想ポート経由でのパケット フロー](packet-flow-over-a-virtual-port.md)を参照してください。
 
-    受信側のフィルター処理、SR-IOV ネットワーク アダプターの要件の詳細については、次を参照してください。[受信フィルタ リング機能を決定する](determining-receive-filtering-capabilities.md)します。
+    受信側のフィルター処理、SR-IOV ネットワーク アダプターの要件の詳細については、[受信フィルタ リング機能を決定する](determining-receive-filtering-capabilities.md)を参照してください。
 
 -   VMQ は、割り込みと DPC の同時実行制御を提供します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "56580070"
 
     など、SR-IOV ネットワーク アダプターでは、特定の CPU 関係が構成されている VPort 上のパケットを受信すると、アダプターは、指定した CPU の割り込みを生成します。 ミニポート ドライバーでは、その CPU の NDIS と仮想化スタックにパケットを受信したことを示します。
 
-PF のミニポート ドライバーへの呼び出しのコンテキスト内でその SR-IOV 機能をアドバタイズする[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 ドライバーの初期化、 [ **NDIS\_SRIOV\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451677)その機能と呼び出しを使用した構造[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)その機能を登録します。 詳細については、次を参照してください。 [SR-IOV 機能を決定する](determining-sr-iov-capabilities.md)します。
+PF のミニポート ドライバーへの呼び出しのコンテキスト内でその SR-IOV 機能をアドバタイズする[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 ドライバーの初期化、 [ **NDIS\_SRIOV\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451677)その機能と呼び出しを使用した構造[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)その機能を登録します。 詳細については、[SR-IOV 機能を決定する](determining-sr-iov-capabilities.md)を参照してください。
 
 次のメンバー、 [ **NDIS_NIC_SWITCH_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造が割り当てられている拡張方法に影響します。
 
@@ -57,4 +57,4 @@ NDIS 6.30 以降、ときに、ミニポート ドライバーを初期化しま
 
 場合は、NDIS\_NIC\_スイッチ\_CAP\_単一\_VPORT\_プール フラグがセットの作成と割り当ての既定以外の拡張は VF の割り当てのため予約されています。 既定以外を追加作成し、PF に割り当てられているおよび VM 用に使用できる拡張の最大数の受信キューが (**MaxNumVPorts**–**MaxNumVFs**)。
 
-VMQ の詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
+VMQ の詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。

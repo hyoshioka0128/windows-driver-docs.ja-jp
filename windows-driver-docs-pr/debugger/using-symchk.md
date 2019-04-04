@@ -26,11 +26,11 @@ symchk [/r] FileNames /s SymbolPath
 
 *ファイル名*のシンボルが必要な 1 つまたは複数のプログラム ファイルを指定します。 場合*ファイル名*ディレクトリと **/r**フラグが使用される、このディレクトリは再帰的に探索、および SymChk はすべてのプログラム ファイルがこのディレクトリ ツリー内のシンボルを検索しようとしています。 *SymbolPath* SymChk のシンボルの検索場所を指定します。
 
-多くのコマンド ライン オプションがあります。 完全な一覧については、次を参照してください。 [SymChk コマンド ライン オプション](symchk-command-line-options.md)します。
+多くのコマンド ライン オプションがあります。 完全な一覧については、[SymChk コマンド ライン オプション](symchk-command-line-options.md)を参照してください。
 
 ### <a name="obtaining-symchk"></a>Symchk を取得します。
 
-Symchk、他のデバッグ ツールなどには、デバッガーの一部として出荷されます。 詳細については、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。
+Symchk、他のデバッグ ツールなどには、デバッガーの一部として出荷されます。 詳細については、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。
 
 デバッグ ツールがインストールされると、symchk は 64 ビット Windows の場合は、このディレクトリで使用できます。
 
@@ -54,7 +54,7 @@ srv*DownstreamStore*\\Server\Share
 srv*\\Server\Share
 ```
 
-これは、シンボル サーバーを使用して、デバッガーのシンボル パスによく似ています。 詳細については、次を参照してください。[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)します。
+これは、シンボル サーバーを使用して、デバッガーのシンボル パスによく似ています。 詳細については、[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)を参照してください。
 
 ダウン ストリームのストアを指定すると、SymChk がシンボル サーバーを検出、ダウン ストリームのストアに配置して、すべての有効なシンボル ファイルのコピーになります。 完全一致のみのシンボル ファイルは、ダウン ストリームにコピーされます。
 
@@ -101,7 +101,7 @@ SYMCHK: PASSED + IGNORED files = 1
 symchk /v c:\\sym\\MyApp.exe /ss c:\\sym
 ```
 
-詳細については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
+詳細については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 

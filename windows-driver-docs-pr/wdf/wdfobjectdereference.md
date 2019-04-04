@@ -51,7 +51,7 @@ Framework のオブジェクトへのハンドル。
 
 呼び出す代わりに**WdfObjectDereference**、ドライバーが呼び出せる[ **WdfObjectDereferenceWithTag** ](wdfobjectdereferencewithtag.md)または[ **WdfObjectDereferenceActual**](https://msdn.microsoft.com/library/windows/hardware/ff548743)します。
 
-オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)します。
+オブジェクトの参照カウントの詳細については、[Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)を参照してください。
 
 <a name="examples"></a>使用例
 --------

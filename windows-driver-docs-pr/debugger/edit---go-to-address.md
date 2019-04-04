@@ -39,7 +39,7 @@ ms.locfileid: "56550914"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のデバッグ情報のウィンドウでテキストの検索方法の詳細については、次を参照してください。[ウィンドウの移動](moving-through-a-window.md)します。
+その他のデバッグ情報のウィンドウでテキストの検索方法の詳細については、[ウィンドウの移動](moving-through-a-window.md)を参照してください。
 
  
 

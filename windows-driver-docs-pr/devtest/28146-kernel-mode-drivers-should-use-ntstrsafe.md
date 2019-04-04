@@ -36,7 +36,7 @@ C28146 を警告します。カーネル モード ドライバーでは、strsa
 
  
 
-カーネル モード ドライバーには、Ntstrsafe.h ではなく、Strsafe.h が含まれています。 Ntstrsafe.h と Strsafe.h については、次を参照してください。[安全な文字列関数を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565508)します。
+カーネル モード ドライバーには、Ntstrsafe.h ではなく、Strsafe.h が含まれています。 Ntstrsafe.h と Strsafe.h については、[安全な文字列関数を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565508)を参照してください。
 
  
 

@@ -56,7 +56,7 @@ SCSIWMIGUIDREGINFO GuidList[] =
 };
 ```
 
-配列には、2 つの WMI クラスの Guid に関する情報が含まれています。 **HBAStatistics**と**HBAAttributes**します。 Guid のシンボリック定数は、WMI ツール スイートでは、2 つのクラスを定義する MOF ファイルのコンパイルによって生成されたヘッダー ファイルから取得されました (、 **mofcomp**と**wmimofck**ツール)。 これらのツールを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)と[wmimofck.exe を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
+配列には、2 つの WMI クラスの Guid に関する情報が含まれています。 **HBAStatistics**と**HBAAttributes**します。 Guid のシンボリック定数は、WMI ツール スイートでは、2 つのクラスを定義する MOF ファイルのコンパイルによって生成されたヘッダー ファイルから取得されました (、 **mofcomp**と**wmimofck**ツール)。 これらのツールを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)と[wmimofck.exe を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565588)を参照してください。
 
 WMI ツールのスイートでは、WMI クラスの名前に"GUID"のサフィックスを連結して、GUID のシンボリック定数の名前を生成します。 クラスのインスタンス、 **HBAStatistics、** と呼ばれるシンボリック定数は、ツールで作成**HBAStatisticsGUID**そのクラスの GUID を表します。
 

@@ -28,7 +28,7 @@ CDB を使用して、実行中のプロセスにアタッチするまたは生�
 
 場所*ProcessID*が実行中のプロセスのプロセス ID または*ProcessName*実行中のプロセスの名前を指定します。
 
-コマンドライン構文の詳細については、次を参照してください。 [ **CDB コマンド ライン オプション**](cdb-command-line-options.md)します。
+コマンドライン構文の詳細については、[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)を参照してください。
 
 ### <a name="span-idcdbcommandwindow1spanspan-idcdbcommandwindow1spancdb-command-window"></a><span id="cdb_command_window1"></span><span id="CDB_COMMAND_WINDOW1"></span>CDB コマンド ウィンドウ
 
@@ -53,7 +53,7 @@ Noninvasively CDB コマンドラインから実行中のプロセスをデバ�
 
 **cdb -pv -pn** *ProcessName*
 
-いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、次を参照してください。 [ **CDB コマンド ライン オプション**](cdb-command-line-options.md)します。
+いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)を参照してください。
 
 ### <a name="span-idcdbcommandwindow2spanspan-idcdbcommandwindow2spancdb-command-window"></a><span id="cdb_command_window2"></span><span id="CDB_COMMAND_WINDOW2"></span>CDB コマンド ウィンドウ
 
@@ -78,7 +78,7 @@ CDB では、ユーザー モード アプリケーションを起動でき、�
 
 **cdb \[-o\]**  *ProgramName* **\[**<em>引数</em>**\]**
 
-**-O**オプションにより、デバッガーの子プロセスにアタッチします。 いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、次を参照してください。 [ **CDB コマンド ライン オプション**](cdb-command-line-options.md)します。
+**-O**オプションにより、デバッガーの子プロセスにアタッチします。 いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)を参照してください。
 
 入力して、新しいプロセスを作成するには、デバッガーは 1 つまたは複数のプロセスをデバッグして既に場合、 [ **(プロセスの作成) に関する**](-create--create-process-.md)コマンド。
 
@@ -93,7 +93,7 @@ CDB では、ユーザー モード アプリケーションを起動でき、�
 ## <a name="span-idreattachingtoaprocessspanspan-idreattachingtoaprocessspanspan-idreattachingtoaprocessspanreattaching-to-a-process"></a><span id="Reattaching_to_a_Process"></span><span id="reattaching_to_a_process"></span><span id="REATTACHING_TO_A_PROCESS"></span>プロセスに再アタッチ
 
 
-デバッガーでは、応答を停止したり、フリーズする場合、は、ターゲット プロセスに新しいデバッガーを添付できます。 このような状況でデバッガーをアタッチする方法の詳細については、次を参照してください。[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)します。
+デバッガーでは、応答を停止したり、フリーズする場合、は、ターゲット プロセスに新しいデバッガーを添付できます。 このような状況でデバッガーをアタッチする方法の詳細については、[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)を参照してください。
 
  
 

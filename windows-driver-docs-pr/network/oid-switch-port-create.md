@@ -34,7 +34,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
     場合は、拡張機能が、OID 要求を拒否しては、要求が完了したときに、状態を監視する必要があります。 拡張機能は、拡張可能スイッチ コントロール パスの拡張機能を基になるか、拡張可能スイッチのインターフェイスに OID 要求が拒否されたかどうかを決定するこれを行う必要があります。
 
-    ポートのポリシーの詳細については、次を参照してください。[管理の Hyper-v 拡張可能なスイッチのポリシー](https://msdn.microsoft.com/library/windows/hardware/hh598195)します。
+    ポートのポリシーの詳細については、[管理の Hyper-v 拡張可能なスイッチのポリシー](https://msdn.microsoft.com/library/windows/hardware/hh598195)を参照してください。
 
 -   拡張機能を呼び出す場合[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)この OID セット要求を転送するように、拡張機能がこの OID 要求の完了状態を監視する必要があります。 拡張機能は、拡張可能スイッチ ドライバー スタック内の基になる拡張機能があるポートの作成の通知を拒否したかどうかを検出するためにします。
 
@@ -46,7 +46,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
  
 
-拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)します。
+拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、[Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

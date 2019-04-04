@@ -33,7 +33,7 @@ ms.locfileid: "56573398"
 
 基になるデバイスは、プラグ アンド プレイ (PnP) をサポートしている場合にのみ、ミニポート ドライバーでは、フレームワークを使用できます。 ミニポート ドライバーでは、フレームワークのコントロールのデバイス オブジェクトを使用できません。
 
-デバイス オブジェクトに制限が適用される、 [ **WdfDeviceMiniportCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff546802)メソッドを作成します。 これらの制限事項の一覧は、次を参照してください。 [ **WdfDeviceMiniportCreate**](https://msdn.microsoft.com/library/windows/hardware/ff546802)します。
+デバイス オブジェクトに制限が適用される、 [ **WdfDeviceMiniportCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff546802)メソッドを作成します。 これらの制限事項の一覧は、[ **WdfDeviceMiniportCreate**](https://msdn.microsoft.com/library/windows/hardware/ff546802)を参照してください。
 
  
 

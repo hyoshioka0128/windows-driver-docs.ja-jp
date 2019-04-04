@@ -25,7 +25,7 @@ NDIS プロトコル ドライバーに送信します (NS) として要求を�
 
  
 
-**注**  、一部の Windows ハードウェア認定要件など**Device.Network.LAN.PM.PowMgmtNDIS**と**Device.Network.WLAN.WoWLAN.ImplementWakeOnWLAN**、ミニポート アダプターが少なくとも 2 つの NS オフロード要求をサポートする必要がありますを指定します。 (つまり、他の値、これらの要件に合わせて**NumNSOffloadIPv6Addresses** 2 以上にする必要があります)。詳細については、次を参照してください。、 [Windows 8 ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=268621)します。
+**注**  、一部の Windows ハードウェア認定要件など**Device.Network.LAN.PM.PowMgmtNDIS**と**Device.Network.WLAN.WoWLAN.ImplementWakeOnWLAN**、ミニポート アダプターが少なくとも 2 つの NS オフロード要求をサポートする必要がありますを指定します。 (つまり、他の値、これらの要件に合わせて**NumNSOffloadIPv6Addresses** 2 以上にする必要があります)。詳細については、、 [Windows 8 ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=268621)を参照してください。
 
  
 

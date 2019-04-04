@@ -96,7 +96,7 @@ PnP デバイス インストールの署名要件を遵守するには、署名
 
 PnP デバイス インストールの署名の要件は、非 PnP ドライバーには適用されません。
 
-**注**  署名済みカタログ ファイルを使用して通常より簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)します。
+**注**  署名済みカタログ ファイルを使用して通常より簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、[テスト署名ドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)を参照してください。
 
  
 
@@ -114,7 +114,7 @@ PnP デバイス インストールの署名の要件は、非 PnP ドライバ�
 
 3.  [カタログ ファイルの SPC 署名を検証](verifying-the-spc-signature-of-a-catalog-file.md)です。
 
-この種類のドライバーが署名付き[カタログ ファイル](catalog-files.md)埋め込みの署名ではなく、ドライバーをインストールするインストール アプリケーションは、システム コンポーネントおよびドライバー データベースでカタログ ファイルをインストールする必要があります。 詳細については、次を参照してください。 [Release-Signed カタログ ファイルを非 PnP ドライバーのインストール](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)します。
+この種類のドライバーが署名付き[カタログ ファイル](catalog-files.md)埋め込みの署名ではなく、ドライバーをインストールするインストール アプリケーションは、システム コンポーネントおよびドライバー データベースでカタログ ファイルをインストールする必要があります。 詳細については、[Release-Signed カタログ ファイルを非 PnP ドライバーのインストール](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)を参照してください。
 
  
 

@@ -38,7 +38,7 @@ VF データ パスの使用の利点は、次のとおりです。
 
      
 
-SR-IOV インターフェイスの詳細については、次を参照してください。 [Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)します。
+SR-IOV インターフェイスの詳細については、[Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)を参照してください。
 
  
 

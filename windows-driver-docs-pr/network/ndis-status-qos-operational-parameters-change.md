@@ -39,7 +39,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
     ミニポート ドライバーに通知を発行して、ローカルの NDIS QoS パラメーターをオーバーライドする意向上にあるドライバーの NDIS および、 **NDIS\_状態\_QOS\_OPERATIONAL\_パラメーター\_変更**状態を示す値。
 
-    詳細については、次を参照してください。 [NDIS QoS パラメーターを管理する](https://msdn.microsoft.com/library/windows/hardware/hh464015)します。
+    詳細については、[NDIS QoS パラメーターを管理する](https://msdn.microsoft.com/library/windows/hardware/hh464015)を参照してください。
 
 **注**  重なってドライバーを使用できます、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**に状態を示す値運用上の NDIS QoS パラメーターを決定します。 または、これらのドライバーにはの OID クエリ要求が発行できますも[OID\_QOS\_運用\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451832)をいつでも運用の NDIS QoS パラメーターを取得します。
 
@@ -47,7 +47,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
 ミニポート ドライバーの問題については、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**状態を示す値を参照してください[運用上の NDIS QoS パラメーターへの変更を示す](https://msdn.microsoft.com/library/windows/hardware/hh451447)します。
 
-NDIS QoS パラメーターのさまざまな種類の詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)します。
+NDIS QoS パラメーターのさまざまな種類の詳細については、[NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

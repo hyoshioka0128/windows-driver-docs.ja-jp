@@ -61,14 +61,14 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 
 クラスに固有の共同インストーラーを適切な内容を変更することによって新しい co-installer を登録 **.CoDeviceInstallers\\**<em>SetupClassGUID</em>サブキー。 適切なレジストリのパス*SetupClassGUID*セクションでは、参照先の追加-レジストリのサブキーを明示的に指定する必要があります。
 
-詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)します。
+詳細については、[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)を参照してください。
 
 <a href="" id="copyfiles--filename---file-list-section--file-list-section----"></a>**CopyFiles=@**<em>filename</em> | *file-list-section*\[**,**<em>file-list-section</em>\]...  
 ソース共同インストーラー ファイル転送先に対象のコンピューターに通常 1 つを参照することでより INF ライターの定義または*ファイルのセクション一覧*INF ファイルで別の場所。 このようなファイル リスト セクションでは、ソース メディアから、ターゲットのインストール先ディレクトリにコピーする共同インストーラー ファイルを指定します。
 
 ただし、共同インストーラーをインストールするシステム INF ファイルは、このディレクティブを決してを使用する<em>DDInstall</em>**します。CoInstallers**セクション。
 
-詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)します。
+詳細については、[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)を参照してください。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 1 つまたは複数追加システムが指定した INF ファイルをこのデバイスの共同インストーラーをインストールするために必要なセクションが含まれているを指定しますまたは[デバイス セットアップ クラス](device-setup-classes.md)します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。 (の詳細については、 **Include**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md))。
@@ -81,37 +81,37 @@ CopyFiles=@filename | file-list-section[,file-list-section]...
 <a href="" id="delfiles-file-list-section--file-list-section----"></a>**DelFiles =**<em>ファイルのセクション一覧</em>\[**、**<em>ファイルのセクション一覧</em>\].  
 ターゲットから削除するファイルを指定するファイル リスト セクションを参照します。 このディレクティブはほとんど使用されません。
 
-詳細については、次を参照してください。 [ **INF DelFiles ディレクティブ**](inf-delfiles-directive.md)します。
+詳細については、[ **INF DelFiles ディレクティブ**](inf-delfiles-directive.md)を参照してください。
 
 <a href="" id="renfiles-file-list-section--file-list-section----"></a>**RenFiles=**<em>file-list-section</em>\[**,**<em>file-list-section</em>\]...  
 共同インストーラーのソース ファイルがターゲットにコピーされる前に名前を変更する変換先のファイルを指定するファイル リスト セクションを参照します。 このディレクティブもほとんど使用しません。
 
-詳細については、次を参照してください。 [ **INF RenFiles ディレクティブ**](inf-renfiles-directive.md)します。
+詳細については、[ **INF RenFiles ディレクティブ**](inf-renfiles-directive.md)を参照してください。
 
 <a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg=**<em>del-registry-section</em>\[**,**<em>del-registry-section</em>\]...  
 1 つまたは複数 INF-ライターの定義を参照して*delete-section レジストリ*秒。 このようなセクションでは、レジストリから削除する必要がある同じデバイスの以前のインストールの共同インストーラーに関する古いレジストリ情報を指定します。 **HKR**指定にすでに説明した同じレジストリ サブキーを削除レジストリ セクションなどで指定された、 **AddReg**エントリ。 このディレクティブは使用が非常にまれな<em>DDInstall</em>**します。CoInstallers**セクション。
 
-詳細については、次を参照してください。 [ **INF してディレクティブ**](inf-delreg-directive.md)します。
+詳細については、[ **INF してディレクティブ**](inf-delreg-directive.md)を参照してください。
 
 <a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg =**<em>ビットのレジストリ セクション</em>\[**、**<em>ビットのレジストリ セクション</em>\].  
 このエントリでは、このセクションでは有効ですが、ほとんど使用されません。 **HKR**などで指定されたビット レジストリ セクション指定と同じレジストリ サブキーの既に説明したとおり、 **AddReg**エントリ。
 
-詳細については、次を参照してください。 [ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)します。
+詳細については、[ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)を参照してください。
 
 <a href="" id="updateinis-update-ini-section--update-ini-section----"></a>**UpdateInis =**<em>update-section ini</em>\[**、**<em>update-section ini</em>\].  
 このエントリでは、このセクションでは有効ですが、ほとんど使用されません。
 
-詳細については、次を参照してください。 [ **INF UpdateInis ディレクティブ**](inf-updateinis-directive.md)します。
+詳細については、[ **INF UpdateInis ディレクティブ**](inf-updateinis-directive.md)を参照してください。
 
 <a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =**<em>update-section inifields</em>\[**、**<em>update-section inifields</em>\].  
 このエントリでは、このセクションでは有効ですが、ほとんど使用されません。
 
-詳細については、次を参照してください。 [ **INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)します。
+詳細については、[ **INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)を参照してください。
 
 <a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =**<em>セクション レジストリ ini</em>\[**、**<em>セクション レジストリ ini</em>\].  
 このエントリでは、このセクションでは有効ですが、ほとんど使用されません。
 
-詳細については、次を参照してください。 [ **INF Ini2Reg ディレクティブ**](inf-ini2reg-directive.md)します。
+詳細については、[ **INF Ini2Reg ディレクティブ**](inf-ini2reg-directive.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -122,11 +122,11 @@ INF が含まれている場合、 <em>DDInstall</em>**します。Coinstallers*
 
 各ディレクティブを<em>DDInstall</em>**します。CoInstallers**セクションは、1 つ以上の INF ライター定義セクション名を参照できます。 ただし、各追加の名前付きセクションは、コンマ (,) で区切る必要があります。
 
-各セクションのディレクティブが作成した名前は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各セクションのディレクティブが作成した名前は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 共同インストーラーは、する通常のレジストリに追加の構成情報を書き込むか、つまり使用できない、INF の作成時に動的に生成された、システム固有の情報を必要とするその他のインストール タスクを実行する Win32 DLL です。 デバイスに固有の共同インストーラーは、そのデバイスがインストールされている場合に、OS のデバイスのインストーラーのか、適切なクラスのインストーラーのインストールの操作を補足します。
 
-書き込みと共同インストーラーを使用する方法の詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
+書き込みと共同インストーラーを使用する方法の詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
 
 ### <a name="installing-co-installer-images"></a>共同インストーラー イメージのインストール
 
@@ -148,7 +148,7 @@ HKR,,CoInstallers32,0x00010000,"DevSpecificCoInstall.dll
 
 場合、省略可能な*DevSpecificEntryPoint*を省略すると、既定の**CoDeviceInstall**ルーチンの名前は、共同インストーラー DLL のエントリ ポイントとして使用されます。
 
-詳細については、次を参照してください。[登録デバイスに固有の共同インストーラー](registering-a-device-specific-co-installer.md)します。
+詳細については、[登録デバイスに固有の共同インストーラー](registering-a-device-specific-co-installer.md)を参照してください。
 
 ### <a name="registering-device-class-co-installers"></a>デバイス クラス co-installer を登録します。
 

@@ -58,9 +58,9 @@ Windows Server 2012 の 1 つだけの既定以外の NDIS 6.30 以降 VPort は
 
     キュー ペアは、ネットワーク アダプターの限られたリソースです。 NIC スイッチの作成時に、既定と既定以外の拡張で使用するために予約されているキュー ペアの合計数が指定します。 これにより、既定以外の拡張とは異なるに VPort の既定値に割り当てられているキュー ペアの数。
 
-    各既定以外の VPort を構成して、キュー ペアの数が異なるすることができます。 これと呼ばれます*非対称割り当て*キュー ペアの。 NIC がこのような非対称割り当てを許可しない場合は、各既定以外の VPort を構成するキューのペアの数が等しい。 これと呼ばれます*対称割り当て*キュー ペアの。 詳細については、次を参照してください。[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)します。
+    各既定以外の VPort を構成して、キュー ペアの数が異なるすることができます。 これと呼ばれます*非対称割り当て*キュー ペアの。 NIC がこのような非対称割り当てを許可しない場合は、各既定以外の VPort を構成するキューのペアの数が等しい。 これと呼ばれます*対称割り当て*キュー ペアの。 詳細については、[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)を参照してください。
 
-    **注**、PF ミニポート ドライバーの中にキュー ペアの非対称の割り当てをサポートするかどうかを報告[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 詳細については、次を参照してください。 [PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)します。
+    **注**、PF ミニポート ドライバーの中にキュー ペアの非対称の割り当てをサポートするかどうかを報告[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 詳細については、[PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)を参照してください。
 
 
 

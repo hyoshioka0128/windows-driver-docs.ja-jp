@@ -58,9 +58,9 @@ CD-ROM の記憶域デバイスのシステム指定のクラス ドライバー
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、 [CDROM クラス ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256093)サンプルと[Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)。 CD-ROM クラス ドライバーのサンプルが古い形式の識別子を使用して[ **CdRomClassGuid** ](cdromclassguid.md) GUID_DEVINTERFACE_CDROM デバイス インターフェイスのクラスのインスタンスを登録します。 サンプルの Addfilter アプリケーションでは、CdRomClassGuid を使用して、GUID_DEVINTERFACE_CDROM デバイス インターフェイスのクラスのインスタンスを列挙します。
 
-チェンジャーの CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)します。
+チェンジャーの CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)を参照してください。
 
-記憶域デバイスについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶域デバイスについては、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

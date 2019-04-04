@@ -20,9 +20,9 @@ ms.locfileid: "56581660"
 
 -   XPSDrv プリンター ドライバーでは、バージョン 3 の印刷ドライバーの構成モジュールを実装する必要があります。
 
--   構成のモジュールには、すべての PrintTicket と PrintCapabilities 機能をサポートする必要があります。 Unidrv と Pscript5 プリンター ドライバーの Windows Vista のバージョンでは、自動的にこのサポートを提供します。 モノリシック、GDI ベースのバージョン 3 のプリンター ドライバーをこのサポートを追加する方法の詳細については、次を参照してください。[モノリシック印刷ドライバーに印刷チケット サポートを追加する](adding-print-ticket-support-to-monolithic-print-drivers.md)します。
+-   構成のモジュールには、すべての PrintTicket と PrintCapabilities 機能をサポートする必要があります。 Unidrv と Pscript5 プリンター ドライバーの Windows Vista のバージョンでは、自動的にこのサポートを提供します。 モノリシック、GDI ベースのバージョン 3 のプリンター ドライバーをこのサポートを追加する方法の詳細については、[モノリシック印刷ドライバーに印刷チケット サポートを追加する](adding-print-ticket-support-to-monolithic-print-drivers.md)を参照してください。
 
-モジュールの構成要件の完全な一覧で、次を参照してください。 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)します。
+モジュールの構成要件の完全な一覧で、[Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)を参照してください。
 
  
 

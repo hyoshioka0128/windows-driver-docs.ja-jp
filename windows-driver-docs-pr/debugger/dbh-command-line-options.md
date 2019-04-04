@@ -61,7 +61,7 @@ dbh -??
 オン*ノイズの多いシンボルの読み込み*します。 シンボルの検索に関する詳細情報が表示されます。 読み込まれると、各シンボル ファイルの名前が表示されます。 デバッガー シンボル ファイルを読み込むことができません、エラー メッセージが表示されます。 テキストには、.pdb ファイルのエラー メッセージが表示されます。 .Dbg ファイルのエラー メッセージ、エラー コードは、winerror.h ファイルで説明したの形式です。 便利な場合は、これらのメッセージの一部しますが、一部のシンボル ファイルが見つからないか照合できない理由を分析するのに役立ちます。 シンボル ヘッダー情報を回復するためだけにイメージ ファイルが読み込まれる場合にも表示されます。
 
 <span id="_______Command______"></span><span id="_______command______"></span><span id="_______COMMAND______"></span> *コマンド*   
-原因 DBH を実行するには、指定された実行*コマンド*、し、終了します。 可能なコマンドの一覧は、次を参照してください。 [DBH コマンド](dbh-commands.md)します。
+原因 DBH を実行するには、指定された実行*コマンド*、し、終了します。 可能なコマンドの一覧は、[DBH コマンド](dbh-commands.md)を参照してください。
 
 <span id="_______-_______"></span> **-?**   
 DBH コマンドラインのヘルプを表示します。
@@ -71,7 +71,7 @@ DBH コマンドラインのヘルプ テキストを表示し、すべて DBH �
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-DBH ツールの詳細については、次を参照してください。[を使用して DBH](using-dbh.md)します。
+DBH ツールの詳細については、[を使用して DBH](using-dbh.md)を参照してください。
 
  
 

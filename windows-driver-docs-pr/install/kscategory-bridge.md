@@ -56,7 +56,7 @@ KSCATEGORY_BRIDGE[デバイス インターフェイス クラス](https://msdn.
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_BRIDGE 機能カテゴリをサポートすることを示す KSCATEGORY_BRIDGE のインスタンスを登録します。
 
-KSCATEGORY_BRIDGE 機能のカテゴリの詳細については、次を参照してください。 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)します。
+KSCATEGORY_BRIDGE 機能のカテゴリの詳細については、[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

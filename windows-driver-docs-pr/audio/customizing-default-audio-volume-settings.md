@@ -64,7 +64,7 @@ KS DB ステップ実行値は次のように定義されます infinity デシ�
 
 + 2147483647 までは +32767.99998474 デシベル (向上)
 
-(1/65536 db) を使用する測定単位の詳細については、次を参照してください。 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)します。
+(1/65536 db) を使用する測定単位の詳細については、[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)を参照してください。
 
 Wdmudio.inf ファイルを上書きするには、Include およびニーズ ディレクティブ使用からこのコード セグメントで示すように、 *Microsoft 仮想のオーディオ デバイス ドライバー サンプル*として使用できるの一部、 [Windows Driver Kit (WDK) 8.1 サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052).
 
@@ -78,7 +78,7 @@ Needs=KS.Registration, WDMAUDIO.Registration
 ...
 ```
 
-Include およびニーズ ディレクティブの詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[INF ファイルのソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)します。
+Include およびニーズ ディレクティブの詳細については、[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[INF ファイルのソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)を参照してください。
 
 オーディオ クラス ドライバーの INF ファイルをラップするサンプル INF ラッパーを次に示します。
 
@@ -149,7 +149,7 @@ HKR,DefaultVolumeLevels\18,Boost,1,00,00,0A,00 ; Set to 0x000A0000 to set to 10d
 HdAudModel_DefaultVolume_DeviceDesc = "High Definition Audio Device"
 ```
 
-HKR の相対パスが指定されてために使用される特定の INF ファイルのセクションに基づく正確なドライバーのレジストリ パスが決定されます。 HKR の相対パスの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。 次の 2 つのレジストリ パスは、例、レジストリのパスを異なる可能性が高い。
+HKR の相対パスが指定されてために使用される特定の INF ファイルのセクションに基づく正確なドライバーのレジストリ パスが決定されます。 HKR の相対パスの詳細については、[ **INF AddReg ディレクティブ (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。 次の 2 つのレジストリ パスは、例、レジストリのパスを異なる可能性が高い。
 
 HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-11ce-bfc1-08002be10318}\\0002
 

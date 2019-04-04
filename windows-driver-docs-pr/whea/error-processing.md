@@ -27,9 +27,9 @@ ms.locfileid: "56581080"
 # <a name="error-processing"></a>エラー処理
 
 
-Windows ハードウェア エラー アーキテクチャ (WHEA) は、エラー状態の分類に応じて異なる方法でハードウェア エラーを処理します。 ハードウェア エラーのさまざまな分類の詳細については、次を参照してください。[ハードウェア エラーとエラーのソース](hardware-errors-and-error-sources.md)します。
+Windows ハードウェア エラー アーキテクチャ (WHEA) は、エラー状態の分類に応じて異なる方法でハードウェア エラーを処理します。 ハードウェア エラーのさまざまな分類の詳細については、[ハードウェア エラーとエラーのソース](hardware-errors-and-error-sources.md)を参照してください。
 
-ハードウェア エラー条件の種類ごとに応答 WHEA によって実行されたアクションのシーケンスを次に示します。 これらのアクションで参照される WHEA コンポーネントの詳細については、次を参照してください。[コンポーネント、Windows Hardware Error Architecture の](components-of-the-windows-hardware-error-architecture.md)します。
+ハードウェア エラー条件の種類ごとに応答 WHEA によって実行されたアクションのシーケンスを次に示します。 これらのアクションで参照される WHEA コンポーネントの詳細については、[コンポーネント、Windows Hardware Error Architecture の](components-of-the-windows-hardware-error-architecture.md)を参照してください。
 
 ### <a name="corrected-hardware-error"></a>**修正されたハードウェア エラー**
 

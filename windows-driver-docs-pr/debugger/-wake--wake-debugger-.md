@@ -63,7 +63,7 @@ ms.locfileid: "56581999"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。 デバッガーのプロセス ID を検索する方法については、次を参照してください。[プロセス ID の検索](finding-the-process-id.md)します。
+詳細については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。 デバッガーのプロセス ID を検索する方法については、[プロセス ID の検索](finding-the-process-id.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

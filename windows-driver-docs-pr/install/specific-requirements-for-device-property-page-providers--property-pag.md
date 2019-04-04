@@ -22,7 +22,7 @@ ms.locfileid: "56571871"
 
 この要求に応答してで、DLL は各カスタム プロパティ ページの情報を提供します、ページを作成し、デバイスの動的プロパティ ページの一覧に、作成したページを追加します。
 
-プロパティ ページの拡張 DLL でカスタム デバイスのプロパティ ページを作成する方法については、次を参照してください。[デバイスのプロパティ ページのプロバイダーの一般的な要件](general-requirements-for-device-property-page-providers.md)します。
+プロパティ ページの拡張 DLL でカスタム デバイスのプロパティ ページを作成する方法については、[デバイスのプロパティ ページのプロバイダーの一般的な要件](general-requirements-for-device-property-page-providers.md)を参照してください。
 
 ### <a name="installing-a-device-property-page"></a>デバイスのプロパティ ページのインストール
 
@@ -47,7 +47,7 @@ ms.locfileid: "56571871"
 
 3.  デバイスがネットワーク アダプターの場合は、いずれかとして NCF_HAS_UI を指定する必要があります、**特性**値、 [ **INF DDInstall セクション**](inf-ddinstall-section.md)します。 この値は、アダプターがユーザー インターフェイスをサポートしていることを示します。
 
-    詳細については、次を参照してください。[ネットワーク アダプターのカスタム プロパティ ページを指定する](https://msdn.microsoft.com/library/windows/hardware/ff570843)します。
+    詳細については、[ネットワーク アダプターのカスタム プロパティ ページを指定する](https://msdn.microsoft.com/library/windows/hardware/ff570843)を参照してください。
 
  
 

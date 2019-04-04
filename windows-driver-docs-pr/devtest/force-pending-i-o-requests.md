@@ -69,7 +69,7 @@ Windows 7 以降、Force 保留中の I/O 要求オプションを効率的に�
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-Force 保留中の I/O 要求をアクティブ化する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーの保留中の I/O 要求を Force オプションをアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+Force 保留中の I/O 要求をアクティブ化する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。 ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーの保留中の I/O 要求を Force オプションをアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 保留中の I/O 要求を Force オプションは、Windows Vista および Windows の以降のバージョンでのみサポートされます。
 
@@ -93,7 +93,7 @@ Force 保留中の I/O 要求をアクティブ化する必要がありますも
     verifier /volatile /flags 0x210 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
 
 -   **ドライバー検証マネージャーを使用します。**
 

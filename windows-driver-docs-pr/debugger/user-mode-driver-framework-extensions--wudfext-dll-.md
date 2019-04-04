@@ -27,7 +27,7 @@ ms.locfileid: "56552307"
 
  
 
-これらの拡張機能を使用する方法は、次を参照してください。[ユーザー モード ドライバー フレームワークのデバッグ](user-mode-driver-framework-debugging.md)します。
+これらの拡張機能を使用する方法は、[ユーザー モード ドライバー フレームワークのデバッグ](user-mode-driver-framework-debugging.md)を参照してください。
 
  
 

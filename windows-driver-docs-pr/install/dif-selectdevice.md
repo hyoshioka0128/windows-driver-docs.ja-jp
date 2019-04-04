@@ -95,7 +95,7 @@ DIF_SELECTDEVICE 要求は、インストーラーへの参加のデバイス �
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+既定のハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -153,7 +153,7 @@ DIF_SELECTDEVICE 要求に応答してでは、インストーラーは、その
 
 デバイスのインストール パラメーターで DI_ENUMSINGLEINF フラグが設定されている場合、 **DriverPath**はディレクトリのパスではなく 1 つの INF ファイルのパスです。 インストーラーは、その 1 つの INF のみを使用して、ドライバーの一覧を作成する必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

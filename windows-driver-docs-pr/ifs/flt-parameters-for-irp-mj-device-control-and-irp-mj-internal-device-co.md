@@ -93,31 +93,31 @@ typedef union _FLT_PARAMETERS {
 IOCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://msdn.microsoft.com/library/windows/hardware/ff565406)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **どちらも**  
-共用体のコンポーネントがバッファー メソッドがメソッドである場合に使用\_NEITHER します。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*します。
+共用体のコンポーネントがバッファー メソッドがメソッドである場合に使用\_NEITHER します。 バッファリング メソッドの詳細については、[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。
 
 **InputBuffer**  
-操作の元の要求者が提供される入力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff565432)と[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が提供される入力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、[を使用していないバッファー Nor ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff565432)と[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputBuffer**  
-操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[を使用していないバッファー Nor ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff565432)と[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*します。
+操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、[を使用していないバッファー Nor ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff565432)と[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。
 
 **OutputMdlAddress**  
 バッファーを記述したメモリ記述子一覧 (MDL) のアドレスを*Neither.OutputBuffer*へのポインターします。 このメンバーは省略可能とは、 **NULL**します。
 
 **バッファー**  
-共用体のコンポーネントがバッファー メソッドがメソッドである場合に使用\_バッファーに格納されました。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+共用体のコンポーネントがバッファー メソッドがメソッドである場合に使用\_バッファーに格納されました。 バッファリング メソッドの詳細については、[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **SystemBuffer**  
-操作のシステムによって割り当てられたバッファーのアドレス。 メソッドで\_バッファー I/O、このバッファーが使用されるの入力し、出力の両方。 詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作のシステムによって割り当てられたバッファーのアドレス。 メソッドで\_バッファー I/O、このバッファーが使用されるの入力し、出力の両方。 詳細については、[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **ダイレクト**  
-共用体のコンポーネントがバッファー メソッドがメソッドである場合に使用\_IN\_ダイレクトまたはメソッド\_アウト\_ダイレクトします。 バッファリング メソッドの詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+共用体のコンポーネントがバッファー メソッドがメソッドである場合に使用\_IN\_ダイレクトまたはメソッド\_アウト\_ダイレクトします。 バッファリング メソッドの詳細については、[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **InputSystemBuffer**  
-操作の入力バッファーのアドレス。 このバッファーに安全にカーネル モードからアクセスできるように、オペレーティング システムによってダウン ロックされています。 詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の入力バッファーのアドレス。 このバッファーに安全にカーネル モードからアクセスできるように、オペレーティング システムによってダウン ロックされています。 詳細については、[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputBuffer**  
-操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 メソッドとは異なり、直接 i/o\_I/O のどちらも、オペレーティング システムがロック ダウンこのバッファーはカーネル モードからにアクセスする安全なミニフィルターが I/O 操作の元の要求者と同じプロセス コンテキストである限りようにします。 (それ以外の場合に呼び出す必要があります[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)にメモリの記述子のリスト (MDL) からシステムのアドレスを取得、 **OutputMdlAddress**へのポインター.)詳細については、次を参照してください。[を使用して直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff565372)と[ダイレクト I/O エラー](https://msdn.microsoft.com/library/windows/hardware/ff544300)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 メソッドとは異なり、直接 i/o\_I/O のどちらも、オペレーティング システムがロック ダウンこのバッファーはカーネル モードからにアクセスする安全なミニフィルターが I/O 操作の元の要求者と同じプロセス コンテキストである限りようにします。 (それ以外の場合に呼び出す必要があります[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)にメモリの記述子のリスト (MDL) からシステムのアドレスを取得、 **OutputMdlAddress**へのポインター.)詳細については、[を使用して直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff565372)と[ダイレクト I/O エラー](https://msdn.microsoft.com/library/windows/hardware/ff544300)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputMdlAddress**  
 MDL バッファーを記述するアドレスを**Direct.OutputBuffer**へのポインターします。 このメンバーが必要とすることはできません**NULL**します。
@@ -126,10 +126,10 @@ MDL バッファーを記述するアドレスを**Direct.OutputBuffer**への�
 共用体のコンポーネントで使用されるときに、 [ **FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)構造が高速な I/O IRP を表す\_MJ\_デバイス\_コントロール操作です。
 
 **InputBuffer**  
-操作の元の要求者が提供される入力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が提供される入力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 **OutputBuffer**  
-操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、次を参照してください。[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*します。 (このリソースできない場合がありますのいくつかの言語および国。)
+操作の元の要求者が指定された出力バッファーのユーザー モード仮想アドレス。 I/O マネージャーとフィルター マネージャーでは、これらのアドレスは検証されません。 ユーザー領域のアドレスは有効なは、ミニフィルターなどでルーチンを使用する必要があります、 [ **ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)、 [ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)と[ **FltLockUserBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff543371)、内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。 詳細については、[ユーザー スペースのアドレスを参照するエラー](https://msdn.microsoft.com/library/windows/hardware/ff544308)で、*カーネル モードのアーキテクチャ ガイド*を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

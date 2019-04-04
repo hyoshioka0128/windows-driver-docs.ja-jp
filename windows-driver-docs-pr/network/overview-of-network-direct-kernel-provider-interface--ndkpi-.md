@@ -28,13 +28,13 @@ RDMA の Windows 実装には、ネットワーク ダイレクト (ND) が呼�
 
 NDK プロバイダーは、NDK 対応のミニポート アダプターに割り当てられた IPv4 と IPv6 の両方のアドレスを使用して直接ネットワーク接続をサポートする必要があります。
 
-RDMA の詳細については、次を参照してください。 [RDMA でバック グラウンド読み込み](background-reading-on-rdma.md)します。
+RDMA の詳細については、[RDMA でバック グラウンド読み込み](background-reading-on-rdma.md)を参照してください。
 
 ### <a name="the-ndk-provider"></a>NDK プロバイダー
 
 NDK プロバイダーは、NDKPI インターフェイスを実装するミニポート ドライバーです。
 
-NDK プロバイダーが読み込まれ、PnP マネージャーによって初期化されます。 詳細については、次を参照してください。 [NDK 対応のミニポート ドライバーの初期化](initializing-an-ndk-capable-miniport-driver.md)と[NDK ミニポート アダプターの初期化](initializing-an-ndk-miniport-adapter.md)します。
+NDK プロバイダーが読み込まれ、PnP マネージャーによって初期化されます。 詳細については、[NDK 対応のミニポート ドライバーの初期化](initializing-an-ndk-capable-miniport-driver.md)と[NDK ミニポート アダプターの初期化](initializing-an-ndk-miniport-adapter.md)を参照してください。
 
 NDK プロバイダーがロードされ、初期化、NDK コンシューマーから要求を処理する準備ができてです。 プロバイダーの機能への呼び出しとしてこれらの要求が到着します。
 

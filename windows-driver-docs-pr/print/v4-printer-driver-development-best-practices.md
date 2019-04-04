@@ -24,7 +24,7 @@ V4 プリンター ドライバーがドライバー ストアから直接呼び
 
 [V4 プリンター ドライバーのセキュリティに関する考慮事項](v4-printer-driver-security-considerations.md)
 
-プリンター ドライバーの開発に関するベスト プラクティスの詳細については、次を参照してください。[プリンター ドライバーの開発のベスト プラクティス ガイド](https://msdn.microsoft.com/library/windows/hardware/gg463348.aspx)します。
+プリンター ドライバーの開発に関するベスト プラクティスの詳細については、[プリンター ドライバーの開発のベスト プラクティス ガイド](https://msdn.microsoft.com/library/windows/hardware/gg463348.aspx)を参照してください。
 
  
 

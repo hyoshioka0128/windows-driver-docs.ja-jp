@@ -82,7 +82,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.2.4
 
@@ -90,7 +90,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.2.5
 
@@ -98,7 +98,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.2.6
 
@@ -148,7 +148,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.3.5
 
@@ -156,7 +156,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.3.6
 
@@ -164,7 +164,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.3.7
 
@@ -260,7 +260,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.5.3
 
@@ -268,7 +268,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
 1.5.4
 
@@ -276,7 +276,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
 
  
 

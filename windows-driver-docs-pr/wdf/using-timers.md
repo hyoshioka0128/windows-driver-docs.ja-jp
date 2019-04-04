@@ -54,7 +54,7 @@ UMDF バージョン 2.0 以降、フレームワークの実装、タイマー 
 
 なしのウェイク アップ タイマーを作成するには、設定、 **TolerableDelay**のメンバー [ **WDF\_タイマー\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552519)に**TolerableDelayUnlimited**します。
 
-ウェイク アップ タイマーの詳細については、次を参照してください。[いいえウェイク アップ タイマー](https://msdn.microsoft.com/library/windows/hardware/dn265414)します。
+ウェイク アップ タイマーの詳細については、[いいえウェイク アップ タイマー](https://msdn.microsoft.com/library/windows/hardware/dn265414)を参照してください。
 
 ## <a name="high-resolution-timers"></a>高分解能タイマー
 
@@ -96,9 +96,9 @@ UMDF バージョン 2.0 以降、フレームワークの実装、タイマー 
 
  
 
-高分解能タイマーの詳細については、次を参照してください。[高分解能タイマー](https://msdn.microsoft.com/library/windows/hardware/dn265247)します。
+高分解能タイマーの詳細については、[高分解能タイマー](https://msdn.microsoft.com/library/windows/hardware/dn265247)を参照してください。
 
-タイマー精度が、システム クロックの粒度に関連する方法の詳細については、次を参照してください。[タイマー精度](https://msdn.microsoft.com/library/windows/hardware/jj602805)します。
+タイマー精度が、システム クロックの粒度に関連する方法の詳細については、[タイマー精度](https://msdn.microsoft.com/library/windows/hardware/jj602805)を参照してください。
 
  
 

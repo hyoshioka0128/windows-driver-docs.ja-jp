@@ -40,7 +40,7 @@ WHEA の管理操作には、有効化またはエラーのソースを無効に
 
 シングル ユーザー モード アプリケーションでは、イベントの処理および管理メカニズムの任意の組み合わせを使用できます。
 
-WHEA ハードウェア エラーのイベント処理アプリケーションは、以降 Windows Vista でサポートされます。 WHEA のハードウェア エラーのイベントを処理するユーザー モード アプリケーションを実装する方法の詳細については、次を参照してください。 [WHEA ハードウェア エラー イベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)します。
+WHEA ハードウェア エラーのイベント処理アプリケーションは、以降 Windows Vista でサポートされます。 WHEA のハードウェア エラーのイベントを処理するユーザー モード アプリケーションを実装する方法の詳細については、[WHEA ハードウェア エラー イベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)を参照してください。
 
 Windows Server 2008 では、WHEA 管理アプリケーションがサポートされている、Windows Vista SP1 と以降のバージョンの Windows WHEA の管理操作を実行するユーザー モード アプリケーションを実装する方法の詳細について参照[WHEA の管理アプリケーション](whea-management-applications.md)します。
 

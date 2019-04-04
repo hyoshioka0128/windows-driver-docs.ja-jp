@@ -73,7 +73,7 @@ USB の割り当ての場合はこれらの id とデバイスの製造元する
 
     **HKEY\_ローカル\_マシン\\システム\\ControlSet001\\Enum\\USB\\&lt;ハードウェア id&gt;**
 
-    詳細については、次を参照してください。 [USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)します。
+    詳細については、[USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)を参照してください。
 
 -   アプリ マニフェストによってハードウェア ID を使用して、デバイスを識別します。
 
@@ -130,7 +130,7 @@ UWP アプリでは、クラス、サブクラスでは、およびプロトコ�
 ## <a name="finding-the-devicethe-basic-way"></a>デバイスの検索-基本的な方法
 
 
-これは、USB デバイスを検索する最も簡単な方法です。 詳細については、次を参照してください。[クイック スタート: デバイスを使用する一般的な列挙](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)します。
+これは、USB デバイスを検索する最も簡単な方法です。 詳細については、[クイック スタート: デバイスを使用する一般的な列挙](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)を参照してください。
 
 1.  取得した AQS 文字列を渡す[ **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)します。 呼び出しを取得、 [ **DeviceInformationCollection** ](https://msdn.microsoft.com/library/windows/apps/br225395)オブジェクト。
 2.  コレクションをループします。 各イテレーションの取得、 [ **DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/br225393)オブジェクト。
@@ -169,7 +169,7 @@ UWP アプリでは、クラス、サブクラスでは、およびプロトコ�
 ## <a name="find-the-deviceusing-devicewatcher"></a>デバイスの検出-DeviceWatcher を使用します。
 
 
-デバイスを動的に列挙することができます。 次に、アプリは、デバイスが追加または削除される場合、またはデバイスのプロパティを変更する場合、通知を受信できます。 詳細については、次を参照してください。[デバイスを追加する場合に通知を取得する方法は、削除、または変更](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)します。
+デバイスを動的に列挙することができます。 次に、アプリは、デバイスが追加または削除される場合、またはデバイスのプロパティを変更する場合、通知を受信できます。 詳細については、[デバイスを追加する場合に通知を取得する方法は、削除、または変更](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)を参照してください。
 
 A [ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)オブジェクトが動的にデバイスを検出するように、追加、システムから削除するアプリを使用できます。
 

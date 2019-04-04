@@ -22,7 +22,7 @@ ms.locfileid: "58845524"
 
 バッテリ ドライバーの INF ファイルでは、ドライバーとデバイスの制御に関する情報を指定します。 バッテリ クラスのメンバーであるすべてのデバイスのバッテリおよびバッテリ クラスのインストーラーには、ドライバーがインストールされます。
 
-このセクションでは、INF ファイルでバッテリに固有のエントリについて説明します。 作成と INF ファイルを配布するドライバーのインストールの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+このセクションでは、INF ファイルでバッテリに固有のエントリについて説明します。 作成と INF ファイルを配布するドライバーのインストールの詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
 バッテリ ドライバーの INF ファイルには、以下に示すセクションが含まれます。
 

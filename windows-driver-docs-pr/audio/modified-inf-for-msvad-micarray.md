@@ -157,7 +157,7 @@ Simple.NameGuid="{946A7B1A-EBBC-422a-A81F-F07C8D40D3B4}"
 Simple.Name="MSVAD (Simple)"
 ```
 
-前の例で示すように、ファイルを変更した後は、元の場所に保存します。 ドライバーのマイク配列サンプルをビルドする方法の詳細については、次を参照してください。[マイク配列 Geometry プロパティ](microphone-array-geometry-property.md)します。
+前の例で示すように、ファイルを変更した後は、元の場所に保存します。 ドライバーのマイク配列サンプルをビルドする方法の詳細については、[マイク配列 Geometry プロパティ](microphone-array-geometry-property.md)を参照してください。
 
  
 

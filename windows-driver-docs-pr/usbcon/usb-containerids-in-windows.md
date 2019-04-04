@@ -19,9 +19,9 @@ Windows 7 以降、ユーザーを利用できますの自分のコンピュー�
 
 すべての種類の異なるバスの種類を使用して、コンピューターに接続するデバイスのデバイスのコンテナーをサポートできます。 ただし、すべてのバスの種類が同じメカニズムを使用を生成するため、 **ContainerID**します。 USB デバイス、デバイスのベンダーを使用できます、 **ContainerID**を記述する記述子、 **ContainerID**物理デバイス。 A **ContainerID**記述子は、USB デバイスのファームウェアに格納できる Microsoft OS 機能記述子。 USB デバイス製造元で正しく実装これらする必要があります**ContainerID** Windows 7 で利用できる新しいデバイス機能を活用するために自分のデバイス内の記述子。 USB デバイス製造元が 1 つだけを実装する必要があります**ContainerID**デバイスがサポートする数のデバイス関数に関係なく、物理デバイスごとにします。
 
-デバイス コンテナーに 1 つのデバイスのすべての機能の統合についての詳細については、次を参照してください。[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)します。
+デバイス コンテナーに 1 つのデバイスのすべての機能の統合についての詳細については、[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)を参照してください。
 
-USB デバイスの Microsoft OS ディスクリプターの詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)します。
+USB デバイスの Microsoft OS ディスクリプターの詳細については、[USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)を参照してください。
 
 ## <a name="how-a-usb-containerid-is-generated"></a>USB ContainerID を生成する方法
 
@@ -34,7 +34,7 @@ USB デバイスの Microsoft OS ディスクリプターの詳細について�
 ## <a name="usb-containerid-contents"></a>USB ContainerID 内容
 
 
-USB **ContainerID**汎用一意識別子 (UUID) 文字列の形式で、オペレーティング システムが表示されます。 **ContainerID** UUID が内に含まれる、 **ContainerID**記述子。 A **ContainerID**記述子は、デバイス レベルの Microsoft OS 機能記述子。 オペレーティング システムが USB を要求したときにそのため、 **ContainerID**記述子の要求の wValue フィールドは、0 に常に設定する必要があります。 Microsoft OS 機能ディスクリプターと記述子の要求の詳細については、次を参照してください。 [Microsoft OS 1.0 記述子仕様](https://go.microsoft.com/fwlink/p/?linkid=617519)します。
+USB **ContainerID**汎用一意識別子 (UUID) 文字列の形式で、オペレーティング システムが表示されます。 **ContainerID** UUID が内に含まれる、 **ContainerID**記述子。 A **ContainerID**記述子は、デバイス レベルの Microsoft OS 機能記述子。 オペレーティング システムが USB を要求したときにそのため、 **ContainerID**記述子の要求の wValue フィールドは、0 に常に設定する必要があります。 Microsoft OS 機能ディスクリプターと記述子の要求の詳細については、[Microsoft OS 1.0 記述子仕様](https://go.microsoft.com/fwlink/p/?linkid=617519)を参照してください。
 
 A **ContainerID**記述子は、ヘッダーのセクションで構成されています。
 

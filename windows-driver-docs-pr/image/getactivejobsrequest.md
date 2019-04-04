@@ -53,7 +53,7 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 
 クライアントが呼び出す**GetActiveJobsRequest**現在アクティブなスキャンのすべてのジョブのジョブに関連する変数の要約を含む一覧を取得します。 WSD スキャン サービスの応答でなければなりません、 [ **GetActiveJobsResponse** ](getactivejobsresponse.md)のよく寄せられるクライアント情報を格納する要素または適切なエラー コード。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
 
 <a name="examples"></a>使用例
 --------

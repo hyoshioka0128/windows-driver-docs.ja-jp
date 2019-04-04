@@ -36,11 +36,11 @@ ms.locfileid: "56573573"
 <tbody>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>デバイスのインストール プロセスは、ユーザー モード デバッガーを使用してデバッグされます。 詳細については、次を参照してください。<a href="debugging-device-installations-with-a-user-mode-debugger.md" data-raw-source="[Debugging Device Installations with a User-mode Debugger](debugging-device-installations-with-a-user-mode-debugger.md)">ユーザー モード デバッガーでのデバイス インストールのデバッグ</a>します。</p></td>
+<td align="left"><p>デバイスのインストール プロセスは、ユーザー モード デバッガーを使用してデバッグされます。 詳細については、<a href="debugging-device-installations-with-a-user-mode-debugger.md" data-raw-source="[Debugging Device Installations with a User-mode Debugger](debugging-device-installations-with-a-user-mode-debugger.md)">ユーザー モード デバッガーでのデバイス インストールのデバッグ</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>デバイスのインストール プロセスは、カーネル デバッガー (KD) を使用してデバッグされます。 詳細については、次を参照してください。 <a href="debugging-device-installations-with-the-kernel-debugger--kd-.md" data-raw-source="[Debugging Device Installations with the Kernel Debugger (KD)](debugging-device-installations-with-the-kernel-debugger--kd-.md)">Kernel Debugger (KD) でのデバイス インストールのデバッグ</a>します。</p></td>
+<td align="left"><p>デバイスのインストール プロセスは、カーネル デバッガー (KD) を使用してデバッグされます。 詳細については、<a href="debugging-device-installations-with-the-kernel-debugger--kd-.md" data-raw-source="[Debugging Device Installations with the Kernel Debugger (KD)](debugging-device-installations-with-the-kernel-debugger--kd-.md)">Kernel Debugger (KD) でのデバイス インストールのデバッグ</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0</p></td>

@@ -24,7 +24,7 @@ ms.locfileid: "56579235"
 ## <a name="span-idstartinglocalkerneldebuggingspanspan-idstartinglocalkerneldebuggingspansetting-up-local-kernel-mode-debugging"></a><span id="starting_local_kernel_debugging"></span><span id="STARTING_LOCAL_KERNEL_DEBUGGING"></span>ローカル カーネル モード デバッグの設定
 
 
-ローカル カーネル モードのデバッグをセットアップする方法については、次を参照してください。[ローカル カーネル モード デバッグのセットアップの 1 つのコンピューターを手動で](setting-up-local-kernel-debugging-of-a-single-computer-manually.md)します。
+ローカル カーネル モードのデバッグをセットアップする方法については、[ローカル カーネル モード デバッグのセットアップの 1 つのコンピューターを手動で](setting-up-local-kernel-debugging-of-a-single-computer-manually.md)を参照してください。
 
 ## <a name="span-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグ セッションの開始
 

@@ -17,9 +17,9 @@ ms.locfileid: "56581712"
 
 
 
-Microsoft Windows Me、Windows XP でスキャナー項目のツリーについては、次を参照してください。 [WIA スキャナー項目ツリー レイアウトの Windows と Windows XP](wia-scanner-item-tree-layout-for-windows-me-and-windows-xp.md)します。
+Microsoft Windows Me、Windows XP でスキャナー項目のツリーについては、[WIA スキャナー項目ツリー レイアウトの Windows と Windows XP](wia-scanner-item-tree-layout-for-windows-me-and-windows-xp.md)を参照してください。
 
-スキャナー項目ツリー Windows Vista および Windows Me、Windows XP、および Windows Vista 以降と互換性のある WIA ドライバーを開発する方法については、次を参照してください。 [WIA スキャナー項目ツリーの Windows Vista](wia-scanner-item-tree-for-windows-vista.md)します。
+スキャナー項目ツリー Windows Vista および Windows Me、Windows XP、および Windows Vista 以降と互換性のある WIA ドライバーを開発する方法については、[WIA スキャナー項目ツリーの Windows Vista](wia-scanner-item-tree-for-windows-vista.md)を参照してください。
 
  
 

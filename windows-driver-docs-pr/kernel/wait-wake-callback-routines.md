@@ -31,7 +31,7 @@ IRP で発生したドライバーの代わりにこのコールバック ルー
 
 2.  ウェイク アップのシグナルを発生させたイベントのサービスを提供します。
 
-3.  呼び出すことで、d0 でウェイク アップの通知デバイスを設定[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)を送信する、 **PowerDeviceD0**要求。 ドライバーは呼び出す必要がありますも[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)新しいデバイスの電源状態の電源マネージャーに通知します。 詳細については、次を参照してください。[送信 IRP\_MN\_クエリ\_電源や IRP\_MN\_設定\_デバイスの電源状態のための電力](sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md)します。
+3.  呼び出すことで、d0 でウェイク アップの通知デバイスを設定[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)を送信する、 **PowerDeviceD0**要求。 ドライバーは呼び出す必要がありますも[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)新しいデバイスの電源状態の電源マネージャーに通知します。 詳細については、[送信 IRP\_MN\_クエリ\_電源や IRP\_MN\_設定\_デバイスの電源状態のための電力](sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md)を参照してください。
 
 4.  ドライバーを設定する場合、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) IRP、呼び出しの日常的な[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)をリセットする、 *キャンセル*ルーチンを**NULL**します。
 

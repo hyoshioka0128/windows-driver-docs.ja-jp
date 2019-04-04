@@ -20,7 +20,7 @@ Windows では、セットアップ情報 (INF) ファイルを使用して、�
 
 -   デバイス固有の構成またはデバイスをオンラインに設定します。
 
-使用することができます、 *INX* INF ファイルを自動的に作成するファイル。 INX ファイルでは、バージョン情報を表す文字列変数を含む INF ファイルです。 ビルド ユーティリティと[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツールは、特定のハードウェア アーキテクチャやフレームワークのバージョンを表すテキスト文字列で INX ファイル内の文字列変数を置き換えます。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)します。
+使用することができます、 *INX* INF ファイルを自動的に作成するファイル。 INX ファイルでは、バージョン情報を表す文字列変数を含む INF ファイルです。 ビルド ユーティリティと[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツールは、特定のハードウェア アーキテクチャやフレームワークのバージョンを表すテキスト文字列で INX ファイル内の文字列変数を置き換えます。 INX ファイルの詳細については、[INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)を参照してください。
 
 ここでは、次のトピックについて説明します。
 

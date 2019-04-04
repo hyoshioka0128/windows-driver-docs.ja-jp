@@ -55,7 +55,7 @@ ms.locfileid: "56579678"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-トークンの構造については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 この本は、いくつかの言語と国でできない場合があります。(Microsoft Windows SDK のドキュメントで説明されているユーザー モードのトークン構造は、若干異なる)。
+トークンの構造については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 この本は、いくつかの言語と国でできない場合があります。(Microsoft Windows SDK のドキュメントで説明されているユーザー モードのトークン構造は、若干異なる)。
 
 <a name="remarks"></a>コメント
 -------

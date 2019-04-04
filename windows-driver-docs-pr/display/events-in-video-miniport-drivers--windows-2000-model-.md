@@ -71,7 +71,7 @@ ms.locfileid: "57348921"
 
 GDI では、ドライバーを表示するイベントのサポートも提供します。 参照してください[イベントを使用したディスプレイ ドライバーで](using-events-in-display-drivers.md)詳細についてはします。
 
-イベントに関するより広範なパースペクティブは、次を参照してください。[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)で、*カーネル モード ドライバーの設計ガイド*します。
+イベントに関するより広範なパースペクティブは、[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)で、*カーネル モード ドライバーの設計ガイド*を参照してください。
 
  
 

@@ -23,7 +23,7 @@ ms.locfileid: "56558129"
 
 このコマンドは、ALT + 9 を押すことと同等かをクリックして、 **Processes and Threads (Alt + 9)** ボタン (![プロセスとスレッドのボタンのスクリーン ショット](images/window-processes-threads.png))、ツールバーの。
 
-このウィンドウとその使用方法の詳細については、次を参照してください。[プロセスとスレッド ウィンドウ](processes-and-threads-window.md)します。
+このウィンドウとその使用方法の詳細については、[プロセスとスレッド ウィンドウ](processes-and-threads-window.md)を参照してください。
 
  
 

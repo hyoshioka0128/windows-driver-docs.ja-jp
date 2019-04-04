@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_DISK[デバイス インターフェイス クラス](https://
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、[ディスク クラス ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256103)サンプルと[Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)。 ディスクのクラス ドライバーのサンプルが古い形式の識別子を使用して[ **DiskClassGuid** ](diskclassguid.md) GUID_DEVINTERFACE_DISK デバイス インターフェイスのクラスのインスタンスを登録します。 サンプルの Addfilter アプリケーションでは、DiskClassGuid を使用して、GUID_DEVINTERFACE_DISK デバイス インターフェイス クラスのインスタンスを列挙します。
 
-ストレージ ドライバーについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+ストレージ ドライバーについては、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

@@ -37,7 +37,7 @@ ms.locfileid: "56573814"
 <a name="remarks"></a>コメント
 -------
 
-値、 [OID\_GEN\_受信\_破棄](oid-gen-rcv-discards.md)OID には CRC エラーが含まれています。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+値、 [OID\_GEN\_受信\_破棄](oid-gen-rcv-discards.md)OID には CRC エラーが含まれています。 Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

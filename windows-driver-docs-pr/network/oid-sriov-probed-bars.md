@@ -48,9 +48,9 @@ OID\_SRIOV\_PROBED\_バー クエリ要求に含まれる、 [ **NDIS\_SRIOV\_PR
 
 同じ値は、管理オペレーティング システムで実行されている PCI ドライバによって実行される PCI バーのクエリを次に各棒、ドライバーによって返される値があります。 PF のミニポート ドライバーを呼び出すことができます[ **NdisMQueryProbedBars** ](https://msdn.microsoft.com/library/windows/hardware/hh451520)にこの情報を確認します。
 
-PCI デバイスの横棒の詳細については、次を参照してください。、 *PCI ローカル バス仕様*します。
+PCI デバイスの横棒の詳細については、、 *PCI ローカル バス仕様*を参照してください。
 
-VF PCI バー レジスタを照会する方法の詳細については、次を参照してください。、 [、PCI ベース アドレスを登録仮想関数のクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440182)します。
+VF PCI バー レジスタを照会する方法の詳細については、、 [、PCI ベース アドレスを登録仮想関数のクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440182)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

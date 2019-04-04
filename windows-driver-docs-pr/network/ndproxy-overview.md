@@ -55,9 +55,9 @@ NDPROXY と WAN いる CoNDIS ドライバー スタックの他のコンポー�
 
 -   いる CoNDIS WAN ミニポート ドライバーと MCMs は、NDISWAN にいる CoNDIS ミニポート ドライバー インターフェイスを提供します。
 
-クライアントの接続指向、コール マネージャー、ミニポート ドライバー、および MCMs の詳細については、次を参照してください。 [Connection-Oriented 環境](connection-oriented-environment.md)します。
+クライアントの接続指向、コール マネージャー、ミニポート ドライバー、および MCMs の詳細については、[Connection-Oriented 環境](connection-oriented-environment.md)を参照してください。
 
-NDPROXY 呼び出し、 [ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)接続指向の TAPI Oid いる CoNDIS WAN ミニポート ドライバーの機能を決定する関数。 NDPROXY も TAPI に固有のアドレス ファミリを登録、仮想接続 (VCs) を作成します、によりし、呼び出しを受け入れますおよびデータを送信して、それらの VCs で受信したように、VCs をアクティブにします。 いる CoNDIS WAN ミニポート ドライバーで OID 要求の処理の詳細については、次を参照してください。[いる CoNDIS WAN ミニポート ドライバーで処理クエリ](handling-queries-in-a-condis-wan-miniport-driver.md)と[設定いる CoNDIS WAN ミニポート ドライバー情報](setting-condis-wan-miniport-driver-information.md)します。
+NDPROXY 呼び出し、 [ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)接続指向の TAPI Oid いる CoNDIS WAN ミニポート ドライバーの機能を決定する関数。 NDPROXY も TAPI に固有のアドレス ファミリを登録、仮想接続 (VCs) を作成します、によりし、呼び出しを受け入れますおよびデータを送信して、それらの VCs で受信したように、VCs をアクティブにします。 いる CoNDIS WAN ミニポート ドライバーで OID 要求の処理の詳細については、[いる CoNDIS WAN ミニポート ドライバーで処理クエリ](handling-queries-in-a-condis-wan-miniport-driver.md)と[設定いる CoNDIS WAN ミニポート ドライバー情報](setting-condis-wan-miniport-driver-information.md)を参照してください。
 
  
 

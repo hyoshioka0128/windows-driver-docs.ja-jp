@@ -149,7 +149,7 @@ I8042prt には、キーボード デバイスのパラメーターを設定し�
 
 [**IOCTL\_キーボード\_設定\_キーボード**](https://msdn.microsoft.com/library/windows/hardware/ff542070)
 
-キーボード デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt キーボード内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539973)します。
+キーボード デバイス コントロールのすべての要求に関する詳細については、[I8042prt キーボード内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539973)を参照してください。
 
 ## <a name="scan-code-mapper-for-keyboards"></a>コードのマッパーのキーボードをスキャンします。
 
@@ -257,7 +257,7 @@ I8042prt には、マウス デバイスに関する情報を照会は、次の�
 
 [**IOCTL\_マウス\_クエリ\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff542085)
 
-マウス デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt マウス内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539982)します。
+マウス デバイス コントロールのすべての要求に関する詳細については、[I8042prt マウス内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539982)を参照してください。
 
 ## <a name="registry-settings-associated-with-mouse-class-driver"></a>マウスのクラス ドライバーに関連するレジストリ設定
 

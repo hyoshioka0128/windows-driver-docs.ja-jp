@@ -61,7 +61,7 @@ LUN の物理デバイス オブジェクト (PDO) を指定します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。 [SCSI ミニポート デバッグ](scsi-miniport-debugging.md)します。
+詳細については、[SCSI ミニポート デバッグ](scsi-miniport-debugging.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

@@ -43,14 +43,14 @@ ms.locfileid: "56571562"
 -   [**カード\_ENCRYPTED\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468749)
 -   [**カード\_インポート\_キー ペア**](https://msdn.microsoft.com/library/windows/hardware/dn468750)
 
-セキュリティで保護されたキーの挿入の次のカード プロパティは、この仕様のバージョン 7 で定義されます。 これらのプロパティの詳細については、次を参照してください。 [ **CardGetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468729)します。
+セキュリティで保護されたキーの挿入の次のカード プロパティは、この仕様のバージョン 7 で定義されます。 これらのプロパティの詳細については、[ **CardGetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468729)を参照してください。
 
 -   CP\_キー\_インポート\_サポート
 -   CP\_ENUM\_アルゴリズム
 -   CP\_PADDING\_スキーム
 -   CP\_チェーン\_モード
 
-この仕様のバージョン 7 でセキュリティで保護されたキー挿入の次の Api が追加されました。 詳細については、次を参照してください。[セキュリティで保護されたキーの挿入](secure-key-injection.md)します。
+この仕様のバージョン 7 でセキュリティで保護されたキー挿入の次の Api が追加されました。 詳細については、[セキュリティで保護されたキーの挿入](secure-key-injection.md)を参照してください。
 
 サーバーの機能:
 
@@ -84,14 +84,14 @@ ms.locfileid: "56571562"
 
 Windows 7 コンピューターに接続されているカード リーダーにロゴ認定スマート カードが最初に挿入されると、プラグ アンド プレイ framework は Windows Update でパブリッシュされている互換性のあるミニドライバーを検索します。 ミニドライバーが見つかると、プラグ アンド プレイは自動的に Windows Update から、ミニドライバーをダウンロードして、そのコンピューターにインストールします。
 
-詳細については、次を参照してください。[スマート カードのプラグ アンド プレイ](smart-card-plug-and-play.md)します。
+詳細については、[スマート カードのプラグ アンド プレイ](smart-card-plug-and-play.md)を参照してください。
 
 ## <a name="span-idcardcreatecontainerexspanspan-idcardcreatecontainerexspanspan-idcardcreatecontainerexspan-cardcreatecontainerex"></a><span id="_CardCreateContainerEx"></span><span id="_cardcreatecontainerex"></span><span id="_CARDCREATECONTAINEREX"></span> CardCreateContainerEx
 
 
 この新しい API では、機能を拡張、 [ **CardCreateContainer** ](https://msdn.microsoft.com/library/windows/hardware/dn468708) API。 キー コンテナーを作成するだけでなく、コンテナーが作成されると、この関数は暗証番号 (pin) のアソシエーションを確立します。
 
-詳細については、次を参照してください。 [ **CardCreateContainerEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468709)この仕様で後述します。
+詳細については、[ **CardCreateContainerEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468709)この仕様で後述を参照してください。
 
 ## <a name="span-idnewcardcontainerpropertyforecdsaecdhkeyassociationspanspan-idnewcardcontainerpropertyforecdsaecdhkeyassociationspanspan-idnewcardcontainerpropertyforecdsaecdhkeyassociationspannew-card-container-property-for-ecdsaecdh-key-association"></a><span id="New_Card_Container_Property_for_ECDSA_ECDH_Key_Association"></span><span id="new_card_container_property_for_ecdsa_ecdh_key_association"></span><span id="NEW_CARD_CONTAINER_PROPERTY_FOR_ECDSA_ECDH_KEY_ASSOCIATION"></span>ECDSA と ECDH キーの関連付けの新しいカード コンテナーのプロパティ
 
@@ -109,7 +109,7 @@ Windows 7 以降、オペレーティング システムには、Personal Identi
 
 PIV の詳細については、「について個人アイデンティティ検証 (PIV) の連邦従業員および請負業者」の Web ページを参照してください。
 
-Windows を特定し、受信トレイのドライバーを使用した PIV カードをペアに依存しているプロセスに関する詳細については、次を参照してください。 [Windows 受信トレイのスマート カード ミニドライバー](windows-inbox-smart-card-minidriver.md)します。
+Windows を特定し、受信トレイのドライバーを使用した PIV カードをペアに依存しているプロセスに関する詳細については、[Windows 受信トレイのスマート カード ミニドライバー](windows-inbox-smart-card-minidriver.md)を参照してください。
 
  
 

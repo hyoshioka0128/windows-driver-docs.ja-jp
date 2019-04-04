@@ -41,9 +41,9 @@ Ndiskd.dll
 <a name="remarks"></a>注釈
 -------
 
-いる CoNDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)します。
+いる CoNDIS の詳細については、[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)を参照してください。
 
-いる CoNDIS アドレス ファミリの詳細については、次を参照してください。[アドレス ファミリ](https://msdn.microsoft.com/windows/hardware/drivers/network/address-families)します。
+いる CoNDIS アドレス ファミリの詳細については、[アドレス ファミリ](https://msdn.microsoft.com/windows/hardware/drivers/network/address-families)を参照してください。
 
 <a name="examples"></a>例
 --------

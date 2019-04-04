@@ -88,9 +88,9 @@ Visual Studio でバイナリをビルドする場合は、いずれかの完全
 
 BinPlace ツールを使用して、完全なシンボル ファイルから削除されたシンボル ファイルを作成できます。 最も一般的な BinPlace オプションを使用する場合 (**--x-s n**)、削除されたシンボル ファイルは、後に表示されているディレクトリに、 **-s**スイッチ、および完全なシンボル ファイルがディレクトリに配置後に記載されている、 **-n**スイッチします。 BinPlace では、シンボル ファイルを削除、削除された、完全なバージョンのファイルは、同じシグネチャとその他の識別情報提供されます。 これにより、デバッグにいずれかのバージョンを使用することができます。
 
-PDBCopy ツールを使用してファイルを作成、削除されたシンボル完全なシンボル ファイルからプライベート シンボル データを削除することで。 PDBCopy はパブリック シンボル テーブルの指定したサブセットを削除することもできます。 詳細については、次を参照してください。 [PDBCopy](pdbcopy.md)します。
+PDBCopy ツールを使用してファイルを作成、削除されたシンボル完全なシンボル ファイルからプライベート シンボル データを削除することで。 PDBCopy はパブリック シンボル テーブルの指定したサブセットを削除することもできます。 詳細については、[PDBCopy](pdbcopy.md)を参照してください。
 
-SymChk ツールを使用して、シンボル ファイルがプライベート シンボルを含むかどうかを判断できます。 詳細については、次を参照してください。 [SymChk](symchk.md)します。
+SymChk ツールを使用して、シンボル ファイルがプライベート シンボルを含むかどうかを判断できます。 詳細については、[SymChk](symchk.md)を参照してください。
 
 ### <a name="span-idviewingpublicandprivatesymbolsinthedebuggerspanspan-idviewingpublicandprivatesymbolsinthedebuggerspanviewing-public-and-private-symbols-in-the-debugger"></a><span id="viewing_public_and_private_symbols_in_the_debugger"></span><span id="VIEWING_PUBLIC_AND_PRIVATE_SYMBOLS_IN_THE_DEBUGGER"></span>デバッガーでパブリックおよびプライベート シンボルの表示
 

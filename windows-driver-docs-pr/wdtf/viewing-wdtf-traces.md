@@ -39,7 +39,7 @@ WDTF*トレース*WDTF オブジェクト内で内部的に発生するイベン
 
 2.  コンピューターを再起動します。
 
-参照してください[Logman](https://go.microsoft.com/fwlink/p/?linkid=136332) (Logman.exe) その他のオプションについてはします。 トレースのシーズンを作成する方法の詳細については、次を参照してください。[構成し、自動ロガー セッションを開始する](https://msdn.microsoft.com/library/windows/desktop/aa363687)します。
+参照してください[Logman](https://go.microsoft.com/fwlink/p/?linkid=136332) (Logman.exe) その他のオプションについてはします。 トレースのシーズンを作成する方法の詳細については、[構成し、自動ロガー セッションを開始する](https://msdn.microsoft.com/library/windows/desktop/aa363687)を参照してください。
 
 **WDTF トレースの収集を停止し、ログ ファイルを保存するには**
 
@@ -82,7 +82,7 @@ WDTF トレースを表示するには、ETL ファイルは、書式設定す�
 
 WDTF の構成可能なセットを提供する[ **TTraceLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff539616)レベル。 設定する方法については、 **TTraceLevel** 、実行時に特定のオブジェクトのインスタンスの次を参照してください。、 [ **ITracing::SetTraceLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff539522)メソッド。
 
-既定値を設定する方法については[ **TTraceLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff539616)インターフェイスについては、次を参照してください。、 [Windows デバイスのテスト フレームワーク参照](https://msdn.microsoft.com/library/windows/hardware/ff539647)します。
+既定値を設定する方法については[ **TTraceLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff539616)インターフェイスについては、、 [Windows デバイスのテスト フレームワーク参照](https://msdn.microsoft.com/library/windows/hardware/ff539647)を参照してください。
 
 詳細については、それぞれに含まれるトレースの種類の[ **TTraceLevel**](https://msdn.microsoft.com/library/windows/hardware/ff539616)を参照してください、 [ **ITracer** ](https://msdn.microsoft.com/library/windows/hardware/ff539512)インターフェイス。 グローバルにお客様が構成できるこれらのレベルを使用して、 **ITracer**のレジストリ TraceLevel パス。
 

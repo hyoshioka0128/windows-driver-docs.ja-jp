@@ -21,13 +21,13 @@ ms.locfileid: "56560003"
 
 
 > [!IMPORTANT] 
-> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、次を参照してください。 [Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)します。
+> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
 
 拡張ファームウェア インターフェイス (EFI) のファームウェア、Intel Itanium 2 プロセッサなどのコンピューターでは、NVRAM、編集できますが、コンピューターをオフにする場合でも、その状態を保持するストレージ メディアでブート オプションを格納します。 EFI ファームウェアが BIOS ファームウェア、として同じ目的を果たしますが、従来の BIOS の多くの制限を克服します。 X86 ベースのシステムで BIOS およびブート マネージャー (NTLDR) で実装されるスタートアップ関数は、EFI コンポーネント、つまり、EFI の BIOS と EFI ブート マネージャによって処理されます。
 
 ドライバーのデバッグと Windows XP、Windows Server 2003、およびその先行タスクを実行している (EFI) ベースのシステム テストに関連する機能を構成するには、NVRAM にブート オプションを編集する必要があります。 次のセクションでは、簡単な EFI NVRAM にブート オプションについて説明し、ブート オプションは、このテクノロジを使用するシステムに固有の側面について説明します。
 
-Windows Vista および Windows の以降のバージョンでは、BIOS および EFI ベースのコンピューター上のブート オプションが格納されている*ブート構成データ*(BCD)、ブート オプションのファームウェアに依存しない構成と記憶域システム。 詳細については、次を参照してください。 [Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)します。
+Windows Vista および Windows の以降のバージョンでは、BIOS および EFI ベースのコンピューター上のブート オプションが格納されている*ブート構成データ*(BCD)、ブート オプションのファームウェアに依存しない構成と記憶域システム。 詳細については、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
 
 Itanium ベース システムのブート オプションの詳細については、拡張ファームウェア インターフェイスの仕様を参照してください。 更新された仕様のコピーをダウンロードすることができます、 [Intel Extensible Firmware Interface](https://go.microsoft.com/fwlink/p/?linkid=10596) web サイト。
 

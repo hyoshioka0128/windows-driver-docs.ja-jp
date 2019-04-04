@@ -87,7 +87,7 @@ KMDF 1、UMDF 2
 
 **追加情報**
 
-実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+実行中のトレース レコーダーには、ドライバーを有効にする方法については、[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)を参照してください。 ドライバーを WDF のデバッグの詳細については、[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。 KMDF のデバッグ方法の詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

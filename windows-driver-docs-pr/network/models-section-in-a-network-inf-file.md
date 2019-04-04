@@ -27,7 +27,7 @@ ms.locfileid: "56559208"
 
 \[*device-description*= *install-section.name*, *hw-id*\[, *compatible-id*...\]
 
-このエントリの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)します。
+このエントリの詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)を参照してください。
 
 *Hw id* (とも呼ばれる、デバイス、ハードウェア、またはコンポーネント ID) アダプターのネットワーク アダプターによって、PnP マネージャーに指定されたハードウェア ID に一致する必要があります。
 

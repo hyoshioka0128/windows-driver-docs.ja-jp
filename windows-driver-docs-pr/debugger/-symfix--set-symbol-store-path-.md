@@ -66,7 +66,7 @@ ms.locfileid: "56570685"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、次を参照してください。[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)します。
+詳細については、[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

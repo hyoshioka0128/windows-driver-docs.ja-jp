@@ -38,7 +38,7 @@ ms.locfileid: "56571517"
 
 -   コンピューターには、Windows 8.1 のバージョンのオペレーティング システムを実行する必要があります。
 -   コンピューターには、ミット ソフトウェア パッケージがインストールされている必要があります。
--   別のコンピューターで実行されているカーネル デバッガーをターゲットとして、コンピューターを接続する必要があります。 Windbg を取得する方法の詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063.aspx)します。
+-   別のコンピューターで実行されているカーネル デバッガーをターゲットとして、コンピューターを接続する必要があります。 Windbg を取得する方法の詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063.aspx)を参照してください。
     **注**  Windbg をスタンドアロン ツールのセットとしてインストールできます。
 
      
@@ -58,7 +58,7 @@ ms.locfileid: "56571517"
 
 ランタイムがインストールされているここでは %programfiles (x86) %\\Windows キット\\8.1\\テスト\\ランタイム\\TAEF
 
-テスト対象のシステムは、カーネル デバッガーに接続する必要があります。 デバッグ ツールは、WDK と共にインストールされます。 詳細については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://msdn.microsoft.com/library/windows/hardware/ff551063)と[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff558823)します。
+テスト対象のシステムは、カーネル デバッガーに接続する必要があります。 デバッグ ツールは、WDK と共にインストールされます。 詳細については、[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://msdn.microsoft.com/library/windows/hardware/ff551063)と[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff558823)を参照してください。
 
 ## <a name="install-mitt-firmware"></a>ミット ファームウェアをインストールします。
 

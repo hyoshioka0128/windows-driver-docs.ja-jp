@@ -168,7 +168,7 @@ USB 転送サイズは、次の制限が適用されます。
 -   変更、 **MaximumPacketSize**のメンバー、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。 値に設定する値の小さい**wMaxPacketSize**デバイス ファームウェアの現在のインターフェイスの設定で定義されています。
 -   設定、USBD\_PF\_変更\_最大\_パケット フラグ、 **PipeFlags**メンバー [ **USBD\_パイプ\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。
 
-インターフェイスの設定を選択する方法の詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
+インターフェイスの設定を選択する方法の詳細については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)を参照してください。
 
 ### <a name="maximum-packet-size-restriction-on-read-transfer-buffers"></a>読み取り転送バッファーの最大パケット サイズの制限
 

@@ -88,7 +88,7 @@ Windows Hardware Quality Labs (WHQL) テスト署名から要求を送信でき�
 
 PnP デバイス インストールの署名の要件は、非 PnP ドライバーには適用されません。
 
-**注**  一般的により簡単かつ署名済みカタログ ファイルを使用するよりも効率的には埋め込みの署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)します。
+**注**  一般的により簡単かつ署名済みカタログ ファイルを使用するよりも効率的には埋め込みの署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)を参照してください。
 
  
 

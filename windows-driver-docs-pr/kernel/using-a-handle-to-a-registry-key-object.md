@@ -176,7 +176,7 @@ if (NULL != handleRegKey)
 
 システムでは、メモリ内のキーの変更をキャッシュし、数秒ごとのディスクに書き込みます。 ディスクに、キーの変更を強制的に[ **ZwFlushKey**](https://msdn.microsoft.com/library/windows/hardware/ff566457)します。
 
-シンプルなインターフェイス経由でのレジストリを操作するドライバーを呼び出すことも、 **Rtl*Xxx*レジストリ * Xxx*** ルーチン。 詳細については、次を参照してください。[レジストリ ランタイム ライブラリ ルーチン](registry-run-time-library-routines.md)します。
+シンプルなインターフェイス経由でのレジストリを操作するドライバーを呼び出すことも、 **Rtl*Xxx*レジストリ * Xxx*** ルーチン。 詳細については、[レジストリ ランタイム ライブラリ ルーチン](registry-run-time-library-routines.md)を参照してください。
 
  
 

@@ -54,7 +54,7 @@ feature score = (featurescore * 0x10000)
 FeatureScore=xFD
 ```
 
-ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
+ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
 
  
 

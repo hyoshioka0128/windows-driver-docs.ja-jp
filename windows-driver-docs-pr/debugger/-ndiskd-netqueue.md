@@ -24,7 +24,7 @@ ms.locfileid: "56558068"
 
 **! Ndiskd.netqueue**拡張機能が NETTXQUEUE または NETRXQUEUE オブジェクトに関する情報を表示します。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
 
 ```console
 !ndiskd.netqueue [-handle <x>] [-basic] 

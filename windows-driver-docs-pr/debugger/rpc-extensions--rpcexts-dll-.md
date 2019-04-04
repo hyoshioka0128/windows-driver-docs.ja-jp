@@ -24,7 +24,7 @@ Microsoft リモート プロシージャ コール (RPC) のデバッグに役�
 
 この拡張機能の Windows 2000 バージョン w2kfre と w2kchk ディレクトリに DLL が表示されます。 Windows XP およびそれ以降のバージョンのこの拡張機能は、winxp ディレクトリに DLL が表示されます。
 
-これらの拡張機能を使用する方法の詳細については、次を参照してください。 [RPC デバッガー拡張機能を使用して](using-the-rpc-debugger-extensions.md)します。
+これらの拡張機能を使用する方法の詳細については、[RPC デバッガー拡張機能を使用して](using-the-rpc-debugger-extensions.md)を参照してください。
 
  
 

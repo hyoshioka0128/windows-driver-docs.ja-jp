@@ -30,7 +30,7 @@ ms.locfileid: "56560641"
 
 -   呼び出す[ **IoAllocateErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff548245)を設定するレポート デバイス I/O エラー、および呼び出しのエラー ログ パケット[ **IoWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff550527)します。
 
-    I/O エラーの処理の詳細については、次を参照してください。[ログ エラー](logging-errors.md)します。
+    I/O エラーの処理の詳細については、[ログ エラー](logging-errors.md)を参照してください。
 
 -   ドライバーで使用する場合[I/O バッファー](methods-for-accessing-data-buffers.md)、IRP では、デバイスの管理操作を指定する場合にシステムのバッファーに、デバイスから読み取ったデータの転送または**Irp -&gt;AssociatedIrp.SystemBuffer**IRP の完了前に
 
@@ -42,13 +42,13 @@ ms.locfileid: "56560641"
 
     要求された転送が 1 つの DMA 操作によって部分的にのみ満たされている場合、 *DpcForIsr*または*CustomDpc*ルーチンは、通常は IRP の指定したまでを設定する 1 つ以上の DMA 操作バイト数は、完全に転送されました。
 
-    詳細については、DMA を使用して、次を参照してください。[アダプター オブジェクトと DMA](adapter-objects-and-dma.md)します。
+    詳細については、DMA を使用して、[アダプター オブジェクトと DMA](adapter-objects-and-dma.md)を参照してください。
 
 -   ドライバー下手順 I/O (PIO) を使用する場合は、呼び出す[ **KeFlushIoBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff552041) IRP が現在読み取りを要求する場合は、各転送操作の最後にします。
 
     要求された転送が、1 つの PIO 操作によって部分的にのみ満たされている場合、 *DpcForIsr*または*CustomDpc*ルーチンは、通常の IRP まで 1 つまたは複数の転送操作の設定指定したバイト数は、完全に転送されました。
 
-    PIO の使用に関する詳細については、次を参照してください。[を使用して直接 I/O](using-direct-i-o.md)します。
+    PIO の使用に関する詳細については、[を使用して直接 I/O](using-direct-i-o.md)を参照してください。
 
 -   非 WDM ドライバーがある場合、 [ *ControllerControl* ](https://msdn.microsoft.com/library/windows/hardware/ff542049) 、ルーチンの呼び出し[ **IoFreeController** ](https://msdn.microsoft.com/library/windows/hardware/ff549104)要求された操作が完了するとします。
 

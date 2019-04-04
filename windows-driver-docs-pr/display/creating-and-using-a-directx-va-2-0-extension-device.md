@@ -21,7 +21,7 @@ ms.locfileid: "56560875"
 
 マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateExtensionDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540644) DirectX VA 2.0、拡張機能のデバイスを作成する関数。 ユーザー モードのディスプレイ ドライバーの呼び出し、デバイスで Direct3D ランタイムが終了したら、 [ **DestroyExtensionDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552774)関数。
 
-Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **DecodeExtensionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff551811)非標準のビデオをデコードする関数がデバイスとの間、開始フレームとフレームの終了時間帯をデコードします。特定のレンダー ターゲットのサーフェイス。 ビデオのデコードについての概要については、次を参照してください。[ビデオのデコード](decoding-video.md)します。
+Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **DecodeExtensionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff551811)非標準のビデオをデコードする関数がデバイスとの間、開始フレームとフレームの終了時間帯をデコードします。特定のレンダー ターゲットのサーフェイス。 ビデオのデコードについての概要については、[ビデオのデコード](decoding-video.md)を参照してください。
 
 Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **ExtensionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff565604)拡張機能のデバイスでの非標準の DirectX VA 2.0 操作を実行する関数。
 

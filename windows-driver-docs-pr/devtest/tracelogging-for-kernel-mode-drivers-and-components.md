@@ -120,8 +120,8 @@ TraceLoggingWrite(
 );
 ```
 
-カーネル モード ドライバー (C) で、インストルメント化する場合は、TraceLoggingProvider.h へのリンクを使用することができます、 **TraceLoggingWrite**、 **TraceLoggingWriteActivity**、または**TraceLoggingActivityMarker**マクロ。 トレース ログの例については、次を参照してください。 [TraceLogging 例](tracelogging-examples.md)します。
+カーネル モード ドライバー (C) で、インストルメント化する場合は、TraceLoggingProvider.h へのリンクを使用することができます、 **TraceLoggingWrite**、 **TraceLoggingWriteActivity**、または**TraceLoggingActivityMarker**マクロ。 トレース ログの例については、[TraceLogging 例](tracelogging-examples.md)を参照してください。
 
 TraceLoggingProvider.h と TraceLoggingActivity.h にリンクする場合は、ドライバーまたは C++ で記述されたコンポーネントをインストルメント化は。 イベント ログに記録できる C++ ヘッダーにリンクすると、 **TraceLoggingWriteStart**、 **TraceLoggingWriteStop**、および**TraceLoggingWriteTagged**マクロ。
 
-キャプチャして TraceLogging データを表示する方法の例については、次を参照してください。[キャプチャとビュー TraceLogging データ](capture-and-view-tracelogging-data.md)します。
+キャプチャして TraceLogging データを表示する方法の例については、[キャプチャとビュー TraceLogging データ](capture-and-view-tracelogging-data.md)を参照してください。

@@ -22,7 +22,7 @@ ms.locfileid: "56553640"
 
 次の手順は、ドライバーのカバレッジ ツールを使用して I/O 要求パケット (Irp) のカバレッジ データを収集する方法を説明し、[ドライバー カバレッジ フィルター ドライバー](driver-coverage-filter-driver.md)します。 ツールはの一部、[デバイス基礎テスト](device-fundamentals-tests.md)カバレッジのカテゴリの下。
 
-WDK と Visual Studio のテスト環境の設定の詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。 選択して、テストとツールのパラメーターの構成については、次を参照してください。[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)と[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+WDK と Visual Studio のテスト環境の設定の詳細については、[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)を参照してください。 選択して、テストとツールのパラメーターの構成については、[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)と[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)を参照してください。
 
 1.  インストール、[ドライバー カバレッジ フィルター ドライバー](driver-coverage-filter-driver.md)テスト コンピューター。
 
@@ -32,7 +32,7 @@ WDK と Visual Studio のテスト環境の設定の詳細については、次�
 
     -   デバイスを使用、上位フィルター ドライバーまたは低いフィルター ドライバーとドライバー カバレッジ フィルター ドライバーをインストールする、 *UpperFilter*パラメーター。 カバレッジ フィルター ドライバーに関する情報と、ドライバーをインストールする方法についてのガイドラインでは、次を参照してください[ドライバー カバレッジ フィルター ドライバー。](driver-coverage-filter-driver.md)
 
-    については、ツールを実行して、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)と[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+    については、ツールを実行して、[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)と[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)を参照してください。
 
 2.  現在の IRP カバレッジ データを消去します。
 
@@ -68,7 +68,7 @@ WDK と Visual Studio のテスト環境の設定の詳細については、次�
 
     デバイスの IRP カバレッジ データを収集する準備が整いました。 まず、テスト コンピューターで、コード カバレッジのテストを実行します。 コード カバレッジのテストの実行が完了したら、IRP カバレッジ レポートを表示できます。 これを行うには、実行、**表示 IRP カバレッジ データを収集する**テスト コンピューター上のツール。
 
-    IRP のカバレッジ データを分析する方法については、次を参照してください。 [IRP カバレッジ データを分析する方法](how-to-analyze-irp-coverage-data.md)します。
+    IRP のカバレッジ データを分析する方法については、[IRP カバレッジ データを分析する方法](how-to-analyze-irp-coverage-data.md)を参照してください。
 
 6.  IRP のカバレッジを無効にして、アンインストール、[ドライバー カバレッジ フィルター ドライバー](driver-coverage-filter-driver.md)します。
 

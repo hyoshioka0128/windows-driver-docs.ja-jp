@@ -44,7 +44,7 @@ NDIS は、次の 2 つのネットワークのウェイク アップ イベン�
 
 プロトコル ドライバーを使用して[OID\_PNP\_追加\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569773)着信パケットのデータの量を示すマスクと共に、ウェイク アップのパターンを指定するにはパターンと比較する必要があります。 プロトコル ドライバーにウェイク アップのパターンを削除できます[OID\_PNP\_削除\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569779)します。
 
-ネットワークのウェイク アップのフレームの詳細については、次を参照してください。[ネットワーク デバイスの電源管理](https://go.microsoft.com/fwlink/p/?linkid=9945)します。
+ネットワークのウェイク アップのフレームの詳細については、[ネットワーク デバイスの電源管理](https://go.microsoft.com/fwlink/p/?linkid=9945)を参照してください。
 
 ### <a name="magic-packet-wake-up"></a>マジック パケットのウェイク アップ
 

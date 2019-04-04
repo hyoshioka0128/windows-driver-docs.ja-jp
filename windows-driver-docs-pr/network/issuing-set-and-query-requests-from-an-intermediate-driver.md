@@ -24,7 +24,7 @@ ms.locfileid: "56556657"
 
 OID、要求をキャンセルする、 [ **NdisCancelOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561622)関数。
 
-設定し、クエリ要求の応答の詳細については、次を参照してください。[セットと、中間ドライバーでのクエリに対応する](responding-to-sets-and-queries-in-an-intermediate-driver.md)します。 OID の要求を発行の詳細については、次を参照してください。[プロトコル ドライバーに OID 要求操作](oid-request-operations-in-a-protocol-driver.md)します。
+設定し、クエリ要求の応答の詳細については、[セットと、中間ドライバーでのクエリに対応する](responding-to-sets-and-queries-in-an-intermediate-driver.md)を参照してください。 OID の要求を発行の詳細については、[プロトコル ドライバーに OID 要求操作](oid-request-operations-in-a-protocol-driver.md)を参照してください。
 
  
 

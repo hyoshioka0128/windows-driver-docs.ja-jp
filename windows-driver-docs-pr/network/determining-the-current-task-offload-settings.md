@@ -22,7 +22,7 @@ ms.locfileid: "56553656"
 
 
 
-OID 要求を発行の詳細については、次を参照してください。 [NDIS プロトコル ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-protocol-driver.md)します。
+OID 要求を発行の詳細については、[NDIS プロトコル ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-protocol-driver.md)を参照してください。
 
  
 

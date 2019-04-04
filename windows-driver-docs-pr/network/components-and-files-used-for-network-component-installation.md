@@ -46,9 +46,9 @@ ms.locfileid: "56557611"
 
 ## <a name="inf-files"></a>INF ファイル
 
-各ネットワーク コンポーネント、コンポーネントをインストールするネットワーク クラスのインストーラーを使用する情報 (INF) ファイルが必要です。 ネットワークの INF ファイルは、共通の INF ファイル形式に基づいています。 INF ファイルの形式に関する詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+各ネットワーク コンポーネント、コンポーネントをインストールするネットワーク クラスのインストーラーを使用する情報 (INF) ファイルが必要です。 ネットワークの INF ファイルは、共通の INF ファイル形式に基づいています。 INF ファイルの形式に関する詳細については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
-ネットワーク コンポーネントの INF ファイルの作成の詳細については、次を参照してください。[ネットワーク INF ファイルの作成](creating-network-inf-files.md)です。
+ネットワーク コンポーネントの INF ファイルの作成の詳細については、[ネットワーク INF ファイルの作成](creating-network-inf-files.md)を参照してください。
 
 ## <a name="inetcfg"></a>INetCfg
 
@@ -56,15 +56,15 @@ ms.locfileid: "56557611"
 
 ドライバー作成者がこのインターフェイスのいずれかの呼び出しをプログラムでできますか、使用できる[netcfg.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/netcfg)、呼び出す`INetCfg`代わりにします。
 
-プロトコル ドライバーのインストールの詳細については、次を参照してください。 [NDIS ドライバーのインストールのプロトコル](ndis-protocol-driver-installation.md)します。
+プロトコル ドライバーのインストールの詳細については、[NDIS ドライバーのインストールのプロトコル](ndis-protocol-driver-installation.md)を参照してください。
 
-フィルター ドライバーのインストールの詳細については、次を参照してください。 [NDIS フィルター ドライバーのインストール](ndis-filter-driver-installation.md)します。
+フィルター ドライバーのインストールの詳細については、[NDIS フィルター ドライバーのインストール](ndis-filter-driver-installation.md)を参照してください。
 
 ## <a name="notify-object"></a>オブジェクトへの通知します。
 
 ネットワーク プロトコル、クライアント、またはサービスなどのソフトウェア コンポーネントを持つことができます、*通知オブジェクト*します。 通知オブジェクトは、ユーザー インターフェイスを表示、イベントをバインドできるように、コンポーネント、バインディング プロセスをいくつかの制御し条件付きでインストールまたは削除できるソフトウェア コンポーネントのコンポーネントに通知できます。 詳細については、オブジェクトに通知を参照してください[ネットワーク コンポーネントの通知オブジェクト](notify-objects-for-network-components.md)します。
 
-ネットワーク アダプターには、通知オブジェクトを含めることはできません。 共同インストーラーことができます。 共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
+ネットワーク アダプターには、通知オブジェクトを含めることはできません。 共同インストーラーことができます。 共同インストーラーの詳細については、[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)を参照してください。
 
 ## <a name="vendor-supplied-files"></a>ベンダーから提供されたファイル
 

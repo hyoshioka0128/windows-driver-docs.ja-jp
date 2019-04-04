@@ -35,7 +35,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
     #define FLT_FILE_NAME_DO_NOT_CACHE                  0x02000000
 ```
 
-ビット 0 ~ 7 を使用してクエリできるファイル形式を示すため、 [ **FltGetFileNameFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff543030)マクロ。 これらの形式の詳細については、次を参照してください。 [ **FLT\_ファイル\_名前\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff544633)します。 現在、次の値が定義されています。
+ビット 0 ~ 7 を使用してクエリできるファイル形式を示すため、 [ **FltGetFileNameFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff543030)マクロ。 これらの形式の詳細については、[ **FLT\_ファイル\_名前\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff544633)を参照してください。 現在、次の値が定義されています。
 
 <table>
 <colgroup>
@@ -66,7 +66,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 
  
 
-8 ~ 15 のビットを使用してクエリできるフィルター マネージャーによって使用されるファイル名のクエリ メソッドを指定する、 [ **FltGetFileNameQueryMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff543040)マクロ。 これらの値の詳細については、次を参照してください。 [ **FltGetFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543032)します。 現在、次の値が定義されています。
+8 ~ 15 のビットを使用してクエリできるフィルター マネージャーによって使用されるファイル名のクエリ メソッドを指定する、 [ **FltGetFileNameQueryMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff543040)マクロ。 これらの値の詳細については、[ **FltGetFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543032)を参照してください。 現在、次の値が定義されています。
 
 <table>
 <colgroup>

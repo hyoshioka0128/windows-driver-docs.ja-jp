@@ -32,7 +32,7 @@ Netmon で他のプロバイダーから結合されたイベントのトレー�
 ## <a name="how-to-add-an-activity-id-guid-in-an-application"></a>アプリケーションでアクティビティ ID の GUID を追加する方法
 
 
-アプリケーションが呼び出すことによってアクティビティ ID の Guid を含めることができます[ **EventActivityIdControl**](https://msdn.microsoft.com/library/windows/desktop/aa363720)します。 詳細については、次を参照してください。[イベント トレース関数](https://msdn.microsoft.com/library/windows/desktop/aa363795)します。
+アプリケーションが呼び出すことによってアクティビティ ID の Guid を含めることができます[ **EventActivityIdControl**](https://msdn.microsoft.com/library/windows/desktop/aa363720)します。 詳細については、[イベント トレース関数](https://msdn.microsoft.com/library/windows/desktop/aa363795)を参照してください。
 
 このコード例は、アプリケーションでアクティビティ ID の GUID を設定し、ETW プロバイダー UMDF ドライバーに送信方法を示します。
 
@@ -76,7 +76,7 @@ if(success == 0)
 ## <a name="how-to-set-the-activity-id-guid-in-a-umdf-driver"></a>UMDF ドライバーでアクティビティ ID の GUID を設定する方法
 
 
-ユーザー モード ドライバーを作成し、呼び出すことによってアクティビティ ID の Guid を設定[ **EventActivityIdControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363720)呼び出しに似ていますが、アプリケーションを呼び出す方法は、前のセクションで説明されているとします。 これらの呼び出しでは、スレッド、イベント ログに記録されるたびに、現在のスレッドをそのアクティビティ ID の GUID ID の GUID が使用されるアクティビティを追加します。 詳細については、次を参照してください。[アクティビティ識別子を使用して](https://msdn.microsoft.com/library/windows/hardware/hh706287)します。
+ユーザー モード ドライバーを作成し、呼び出すことによってアクティビティ ID の Guid を設定[ **EventActivityIdControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363720)呼び出しに似ていますが、アプリケーションを呼び出す方法は、前のセクションで説明されているとします。 これらの呼び出しでは、スレッド、イベント ログに記録されるたびに、現在のスレッドをそのアクティビティ ID の GUID ID の GUID が使用されるアクティビティを追加します。 詳細については、[アクティビティ識別子を使用して](https://msdn.microsoft.com/library/windows/hardware/hh706287)を参照してください。
 
 このコード例では、UMDF ドライバーが、アクティビティが作成され、IOCTL 経由でアプリケーションによって指定された ID の GUID を設定する方法を示します。
 
@@ -206,7 +206,7 @@ CMyReadWriteQueue::ForwardFormattedRequest(
 
 カーネル モード ドライバーはユーザー モードで生成されたスレッドまたはドライバーを作成したスレッドでメッセージをトレースできます。 これら両方の場合は、ドライバーには、アクティビティのスレッドの ID の GUID が必要です。
 
-トレースのメッセージに、ドライバーは、イベント プロバイダーとして登録ハンドルを取得する必要があります (を参照してください[ **EtwRegister**](https://msdn.microsoft.com/library/windows/hardware/ff545603)) を呼び出して[ **EtwWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff545627)GUID と、イベント メッセージを指定しています。 詳細については、次を参照してください。[カーネル モード ドライバーへのイベント トレースの追加](https://msdn.microsoft.com/library/windows/hardware/ff541236)します。
+トレースのメッセージに、ドライバーは、イベント プロバイダーとして登録ハンドルを取得する必要があります (を参照してください[ **EtwRegister**](https://msdn.microsoft.com/library/windows/hardware/ff545603)) を呼び出して[ **EtwWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff545627)GUID と、イベント メッセージを指定しています。 詳細については、[カーネル モード ドライバーへのイベント トレースの追加](https://msdn.microsoft.com/library/windows/hardware/ff541236)を参照してください。
 
 カーネル モード ドライバーでは、アプリケーションまたはユーザー モード ドライバーによって作成された要求を処理する場合、カーネル モード ドライバーはいないを作成し、アクティビティ ID の GUID を設定します。 代わりに、I/O マネージャーは、アクティビティ ID の伝達のほとんどを処理します。 ユーザー モード スレッドを開始すると、要求を I/O マネージャーは要求の IRP を作成し、自動的に新しい IRP に現在のスレッドのアクティビティ ID の GUID をコピーします。 呼び出すことで、GUID を取得する必要があります、カーネル モード ドライバーは、そのスレッドでイベントをトレースする場合、 [ **IoGetActivityIdIrp**](https://msdn.microsoft.com/library/windows/hardware/hh439309)を呼び出して[ **EtwWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff545627).
 

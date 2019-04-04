@@ -75,7 +75,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
 
 スキャン サービスを検証する必要があります、 [ **JobId** ](jobid.md)と[ **JobToken** ](jobtoken.md)ジョブが有効であることを確認するクライアントを提供する要素と取得を要求しているクライアントによって作成されました。 スキャン サービスが応答する必要があります、要求が有効な場合、 [ **RetrieveImageResponse** ](retrieveimageresponse.md)操作の要素。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
 
 この操作は、次のエラーを返すも可能性があります。
 

@@ -27,7 +27,7 @@ ms.locfileid: "56558429"
 
 ドライバーが[作成され、DMA トランザクションを初期化](creating-and-initializing-a-dma-transaction.md)、ドライバーを呼び出すことができます、 [ **WdfDmaTransactionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff547062)トランザクションを開始する方法。 このメソッドは、最初のスキャッター/ギャザー リストを構築[DMA 転送](dma-transactions-and-dma-transfers.md)トランザクションに関連付けられています。 次に、メソッドを呼び出して、 [ *EvtProgramDma* ](https://msdn.microsoft.com/library/windows/hardware/ff541816)トランザクションのドライバーが登録されているコールバック関数。 コールバック関数[プログラム DMA ハードウェア](programming-dma-hardware.md)転送を開始します。
 
-ドライバーの呼び出しの前に**WdfDmaTransactionExecute**ドライバーはドライバーには、トランザクションに関連付けられている各 DMA 転送が完了すると後で取得することができるように、DMA のトランザクション ハンドルを格納する必要があります。 Framework のオブジェクトでは、通常、デバイスの framework デバイス オブジェクトのコンテキストのメモリはトランザクション ハンドルを格納する適切な場所。 オブジェクト コンテキストのメモリの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
+ドライバーの呼び出しの前に**WdfDmaTransactionExecute**ドライバーはドライバーには、トランザクションに関連付けられている各 DMA 転送が完了すると後で取得することができるように、DMA のトランザクション ハンドルを格納する必要があります。 Framework のオブジェクトでは、通常、デバイスの framework デバイス オブジェクトのコンテキストのメモリはトランザクション ハンドルを格納する適切な場所。 オブジェクト コンテキストのメモリの使用に関する詳細については、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
 
 次のコード例から、 [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)サンプルを初期化し、DMA トランザクションを実行する方法を示しています。 このコードは、 *Read.c*ファイル。
 

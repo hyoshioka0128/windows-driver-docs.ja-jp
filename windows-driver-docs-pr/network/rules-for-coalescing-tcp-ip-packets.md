@@ -156,7 +156,7 @@ SCU を追跡する場合は**H.LEN** &gt; 0 (つまり、まとめられたセ�
 
 ### <a name="duplicate-ack-exemption"></a>ACK の除外対象が重複しています
 
-ミニポート ドライバーは、純粋な ACK に相当重複 ACK セグメントを扱うし、合体しません可能性があります。 この場合は、現在 SCU (あれば) の表示を完了し、個々 のセグメントとして重複 ACK セグメントを示しますにする必要があります。 Windows クライアントは、既定では、SACK を使用するため、重複した ACK セグメントは例外を生成可能性があります。 例については、次を参照してください。[例の受信 Segment Coalescing](examples-of-receive-segment-coalescing.md)します。 この除外は、ウィンドウの更新プログラムのセグメントには適用されません。
+ミニポート ドライバーは、純粋な ACK に相当重複 ACK セグメントを扱うし、合体しません可能性があります。 この場合は、現在 SCU (あれば) の表示を完了し、個々 のセグメントとして重複 ACK セグメントを示しますにする必要があります。 Windows クライアントは、既定では、SACK を使用するため、重複した ACK セグメントは例外を生成可能性があります。 例については、[例の受信 Segment Coalescing](examples-of-receive-segment-coalescing.md)を参照してください。 この除外は、ウィンドウの更新プログラムのセグメントには適用されません。
 
 ## <a name="coalescing-segments-with-the-timestamp-option"></a>タイムスタンプ オプションを使用してセグメントを結合
 

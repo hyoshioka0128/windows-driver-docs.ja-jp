@@ -110,9 +110,9 @@ Windows には、[ドライバ] ページの 1 つ、1 つのリソース ペー
 
 インストーラーでは、Windows を削除し、デバイスの再起動が必要なプロパティを設定するユーザーを許可している場合、インストーラーする必要がありますフラグを設定、DI_FLAGSEX_PROPCHANGE_PENDING デバイスからのインストール パラメーター、 **DialogProc**ルーチン.
 
-デバイスのプロパティ ページを提供する方法の詳細については、次を参照してください。[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)します。
+デバイスのプロパティ ページを提供する方法の詳細については、[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)を参照してください。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

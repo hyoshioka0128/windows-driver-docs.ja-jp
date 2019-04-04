@@ -39,7 +39,7 @@ ms.locfileid: "56570276"
 
 ドライバーがへの呼び出しを行うときに、 **ExInterlocked * Xxx*** その ISR からルーチンまたは[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンでは使用できませんのいずれか、 **Ke * Xxx*** ディスパッチより大きい IRQL で取得および解放するルーチンがスピンロック\_レベル。 その結果、呼び出しの間スピン ロックを再利用するドライバー、 **Ke*Xxx*スピンロック**と**ExInterlocked * Xxx*** ルーチンは、IRQL での実行中にすべての呼び出しを行う必要があります&lt;= ディスパッチ\_レベル。
 
-ドライバーに同じスピン ロックを渡すことができます**ExInterlockedInsertHeadList**間は**ExInterlocked * Xxx*** でに 2 つのルーチンは、同じ IRQL でスピン ロックを使用して日常的な。 スピン ロックの使用率がパフォーマンスに与える影響の詳細については、次を参照してください。[スピン ロックを使用します。たとえば](using-spin-locks--an-example.md)します。
+ドライバーに同じスピン ロックを渡すことができます**ExInterlockedInsertHeadList**間は**ExInterlocked * Xxx*** でに 2 つのルーチンは、同じ IRQL でスピン ロックを使用して日常的な。 スピン ロックの使用率がパフォーマンスに与える影響の詳細については、[スピン ロックを使用を参照してください。たとえば](using-spin-locks--an-example.md)します。
 
 Executive スピン ロックをストレージに加え、デバイス ドライバーが multivector ISR または 1 つ以上の ISR. がある場合に、その割り込みオブジェクトに関連するもう 1 つのスピンロックの記憶域を提供する必要があります。
 

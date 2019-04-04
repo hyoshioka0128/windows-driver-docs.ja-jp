@@ -27,7 +27,7 @@ ms.locfileid: "56551586"
 
 Miniclass ドライバーは、サポート、バッテリの状態を監視し、変更が発生した重要なクラス ドライバーを通知する責任を負います。
 
-加え、 [ *BatteryMiniQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff536274) 、日常的な miniclass ドライバーも提供、 [ *BatteryMiniSetStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536277)[ *BatteryMiniDisableStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536272)ルーチン。 クラスのドライバーを使用して、 *BatteryMiniSetStatusNotify*と*BatteryMiniDisableStatusNotify*ルーチンを要求し、特定のバッテリの状態の通知をキャンセルします。 これらのルーチンは、クラスおよび miniclass のドライバーの状態ルーチンは次のセクションで説明したと対話します。 これらの 2 つの miniclass ルーチンの詳細については、次を参照してください。[設定とバッテリの通知をキャンセル](setting-and-canceling-battery-notification.md)します。
+加え、 [ *BatteryMiniQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff536274) 、日常的な miniclass ドライバーも提供、 [ *BatteryMiniSetStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536277)[ *BatteryMiniDisableStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536272)ルーチン。 クラスのドライバーを使用して、 *BatteryMiniSetStatusNotify*と*BatteryMiniDisableStatusNotify*ルーチンを要求し、特定のバッテリの状態の通知をキャンセルします。 これらのルーチンは、クラスおよび miniclass のドライバーの状態ルーチンは次のセクションで説明したと対話します。 これらの 2 つの miniclass ルーチンの詳細については、[設定とバッテリの通知をキャンセル](setting-and-canceling-battery-notification.md)を参照してください。
 
  
 

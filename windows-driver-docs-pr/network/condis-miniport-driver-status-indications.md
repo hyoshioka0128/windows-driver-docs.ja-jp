@@ -24,7 +24,7 @@ ms.locfileid: "56553949"
 
 状態の表示には、状態と状態の変更の理由の種類を識別する情報が含まれます。
 
-ミニポート ドライバーを設定する必要があります、 **SourceHandle**の NDIS メンバー\_状態\_に渡される NDIS ハンドルを示す値構造体、 *MiniportAdapterHandle*パラメーター、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 状態の表示が OID 要求に関連付けられている場合は、ミニポート ドライバーを設定できます、 **DestinationHandle**と**RequestId** NDIS のメンバー\_状態\_INDICATION ようにその NDIS は、特定のプロトコル バインドを状態を示す値を提供できます。 OID 要求の詳細については、次を参照してください。[いる CoNDIS ミニポート ドライバーの OID 要求](condis-miniport-driver-oid-requests.md)します。
+ミニポート ドライバーを設定する必要があります、 **SourceHandle**の NDIS メンバー\_状態\_に渡される NDIS ハンドルを示す値構造体、 *MiniportAdapterHandle*パラメーター、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 状態の表示が OID 要求に関連付けられている場合は、ミニポート ドライバーを設定できます、 **DestinationHandle**と**RequestId** NDIS のメンバー\_状態\_INDICATION ようにその NDIS は、特定のプロトコル バインドを状態を示す値を提供できます。 OID 要求の詳細については、[いる CoNDIS ミニポート ドライバーの OID 要求](condis-miniport-driver-oid-requests.md)を参照してください。
 
  
 

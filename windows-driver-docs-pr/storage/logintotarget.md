@@ -69,7 +69,7 @@ ms.locfileid: "56580764"
 
 **LoginToTarget** WMI メソッドが属する、 [MSiSCSI\_操作 WMI クラス](msiscsi-operations-wmi-class.md)します。
 
-ログを確立するために iSCSI ユーザー モードのライブラリを使用するアルゴリズムの詳細については、次を参照してください。 **LoginIScsiTarget**します。
+ログを確立するために iSCSI ユーザー モードのライブラリを使用するアルゴリズムの詳細については、**LoginIScsiTarget**を参照してください。
 
  
 

@@ -20,7 +20,7 @@ ms.locfileid: "56560635"
 
 SDV は、次の一般的な制限事項があります。
 
--   SDV は、一度に 1 つだけのドライバーを確認し、ドライバーが完全に検証するには、これらドライバー モデルのいずれかに従う必要があります。WDM、KMDF、NDIS、または Storport します。 サポートされているドライバーに関する詳細については、次を参照してください。 [Static Driver Verifier に、ドライバーまたはライブラリがサポートしているかを決定する](determining-if-static-driver-verifier-supports-your-driver-or-library.md)します。
+-   SDV は、一度に 1 つだけのドライバーを確認し、ドライバーが完全に検証するには、これらドライバー モデルのいずれかに従う必要があります。WDM、KMDF、NDIS、または Storport します。 サポートされているドライバーに関する詳細については、[Static Driver Verifier に、ドライバーまたはライブラリがサポートしているかを決定する](determining-if-static-driver-verifier-supports-your-driver-or-library.md)を参照してください。
 
 -   上記のカテゴリのいずれかに分類されないドライバーは、確認することができますし、分析中に失敗する可能性が高い規則で深刻な制限されます。
 

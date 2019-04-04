@@ -35,7 +35,7 @@ ms.locfileid: "56573735"
 <td><code>PBOOLEAN Mm64BitPhysicalAddress</code>
 <p>Wdm.h で宣言されています。</p></td>
 <td><p>ハードウェアとオペレーティング システムが 64 ビットの物理アドレスをサポートするかどうかを指定します。 値が指す<strong>TRUE</strong> 64 ビットの物理アドレスをサポートして、ハードウェアとオペレーティング システムが場合<strong>FALSE</strong>それ以外の場合。</p>
-<p>この変数には、ドライバーで使用する方法の詳細については、次を参照してください。 <a href="performing-dma-in-64-bit-windows.md" data-raw-source="[Performing DMA in 64-Bit Windows](performing-dma-in-64-bit-windows.md)">64 ビット Windows で DMA を実行する</a>します。</p></td>
+<p>この変数には、ドライバーで使用する方法の詳細については、<a href="performing-dma-in-64-bit-windows.md" data-raw-source="[Performing DMA in 64-Bit Windows](performing-dma-in-64-bit-windows.md)">64 ビット Windows で DMA を実行する</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td><strong>MmBadPointer</strong></td>

@@ -111,7 +111,7 @@ ms.locfileid: "56561135"
 <a name="remarks"></a>注釈
 -------
 
-スキャンの地域のパラメーターの詳細については、次を参照してください。 [ **ScanRegion**](scanregion.md)します。
+スキャンの地域のパラメーターの詳細については、[ **ScanRegion**](scanregion.md)を参照してください。
 
 クライアントは、省略可能な指定できます**MustHonor**属性の場合にのみ、 **ScanRegionHeight**要素に含まれる、 **CreateScanJobRequest**階層。 詳細については**MustHonor**と使用状況を参照してください[ **CreateScanJobRequest**](createscanjobrequest.md)します。
 

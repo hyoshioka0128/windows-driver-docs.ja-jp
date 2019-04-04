@@ -37,7 +37,7 @@ Server プロファイルのドライバーでは、リモートの Bluetooth �
 
 SCO 接続のリモート デバイスの通知の受信を停止すると、プロファイルのドライバーが[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_登録解除\_サーバー** ](https://msdn.microsoft.com/library/windows/hardware/ff536630)プロファイル ドライバーが処理するときに、サーバーの登録を解除する要求[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)プラグ アンド プレイでは、通知を削除します。
 
-通知とコールバック関数の詳細については、次を参照してください。 [Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)します。
+通知とコールバック関数の詳細については、[Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)を参照してください。
 
  
 

@@ -41,7 +41,7 @@ WMI クラス定義内のデータ フィールドに、上記の修飾子のい
 
 そのため、WMI プロパティ修飾子では、修飾子は、一連の整数値を表すために列挙体が似ています。 WMI ツールのスイートで列挙型の宣言を生成しませんが、 *Iscsimgt.h*で修飾子に対応する*Mgmt.mof*、シンボリック定数の定義のセットはどちらも、生成します。修飾子の値に対応します。
 
-WMI プロパティ修飾子の概要については、次を参照してください。 [WMI プロパティ修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566365)します。
+WMI プロパティ修飾子の概要については、[WMI プロパティ修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566365)を参照してください。
 
  
 

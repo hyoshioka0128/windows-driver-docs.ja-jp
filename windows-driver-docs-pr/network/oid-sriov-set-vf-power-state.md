@@ -28,7 +28,7 @@ PF ミニポート ドライバーには、この OID セットの要求が発�
 
 -   電源状態の操作は、指定 VF のみに影響する必要があります。 操作では、その他の VFs または同じネットワーク アダプターの PF には影響する必要があります。
 
-詳細については、次を参照してください。[仮想関数の状態の電源設定](https://msdn.microsoft.com/library/windows/hardware/hh440230)します。
+詳細については、[仮想関数の状態の電源設定](https://msdn.microsoft.com/library/windows/hardware/hh440230)を参照してください。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

@@ -58,7 +58,7 @@ Stampinf -f filename
 -   場合、STAMPINF\_環境変数の日付が指定されていない、Stampinf が現在の日付を使用します。
 
 <span id="_______-a_________architecture______________"></span><span id="_______-A_________ARCHITECTURE______________"></span> **-a \[** *architecture* **\]**   
-INX ファイルで使われている $ARCH$ 変数を置き換える "*アーキテクチャ*" 文字列を指定します。 $ARCH$ 変数の使用をカスタマイズする、 **TargetOSVersion**で装飾、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)と、特定のプラットフォームをそれぞれのセクション名。 $ARCH$ 変数の詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)します。
+INX ファイルで使われている $ARCH$ 変数を置き換える "*アーキテクチャ*" 文字列を指定します。 $ARCH$ 変数の使用をカスタマイズする、 **TargetOSVersion**で装飾、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)と、特定のプラットフォームをそれぞれのセクション名。 $ARCH$ 変数の詳細については、[INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)を参照してください。
 
 値、*アーキテクチャ*文字列は**x86**、 **64** (Itanium ベースのプラットフォーム用)、および**x64** (amd64 プラットフォーム) のです。
 

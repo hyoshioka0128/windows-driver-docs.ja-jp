@@ -71,7 +71,7 @@ ms.locfileid: "56574857"
 0:000> bp `:143` "j (poi(MyVar)>5) '.echo MyVar Too Big'; '.echo MyVar Acceptable; gc' " 
 ```
 
-**.Echo**コマンド サーバーをデバッグ出力およびデバッグで互いと通信するクライアントのユーザーの簡単な方法も提供します。 このような状況の詳細については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
+**.Echo**コマンド サーバーをデバッグ出力およびデバッグで互いと通信するクライアントのユーザーの簡単な方法も提供します。 このような状況の詳細については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
 
 **.Echo**コマンドとは異なります、 [ **$$ (コメント指定子)** ](-----comment-specifier-.md)トークンと[  **\* (コメント行指定子)**](----comment-line-specifier-.md)トークン、これらのトークンが、デバッガーを表示せずに、入力テキストを無視するためです。
 

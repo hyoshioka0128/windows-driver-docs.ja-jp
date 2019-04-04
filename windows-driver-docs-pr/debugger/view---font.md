@@ -31,7 +31,7 @@ ms.locfileid: "56577649"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッグ情報のウィンドウの文字表示を変更する方法の詳細については、次を参照してください。[テキストのプロパティを変更する](changing-text-properties.md)します。
+デバッグ情報のウィンドウの文字表示を変更する方法の詳細については、[テキストのプロパティを変更する](changing-text-properties.md)を参照してください。
 
  
 

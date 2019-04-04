@@ -18,7 +18,7 @@ ms.locfileid: "56578919"
 
 カードのミニドライバーは、この仕様で定義されている特定の Api のセットをエクスポートする DLL です。 カードのミニドライバーを呼び出すたびにへのポインターが含まれています、 [**カード\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468748)コンテキスト情報を提供する構造体。 このコンテキスト情報は、上位レイヤーとカードのミニドライバー間の通信を容易にするために使用される関数ポインターのいくつかの状態情報だけでなく、テーブルを提供します。
 
-このコンテキストの構造体の詳細については、次を参照してください。 [ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)します。
+このコンテキストの構造体の詳細については、[ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)を参照してください。
 
 ## <a name="span-idrelateddocumentspanspan-idrelateddocumentspanspan-idrelateddocumentspanrelated-document"></a><span id="Related_Document"></span><span id="related_document"></span><span id="RELATED_DOCUMENT"></span>関連ドキュメント
 
@@ -96,7 +96,7 @@ S カードを返す\_E\_ファイル\_いない\_が見つかったは、この
 ## <a name="span-idauthenticationandauthorizationspanspan-idauthenticationandauthorizationspanspan-idauthenticationandauthorizationspanauthentication-and-authorization"></a><span id="Authentication_and_Authorization"></span><span id="authentication_and_authorization"></span><span id="AUTHENTICATION_AND_AUTHORIZATION"></span>認証と承認
 
 
-バージョン 6 以降、ミニドライバー インターフェイスは、従来の英数字文字列だけを超えるにピン留めの概念を拡張します。 詳細については、次を参照してください。"シークレット\_型 (列挙)"この仕様で後述します。
+バージョン 6 以降、ミニドライバー インターフェイスは、従来の英数字文字列だけを超えるにピン留めの概念を拡張します。 詳細については、"シークレット\_型 (列挙)"この仕様で後述を参照してください。
 
 ## <a name="span-idhandlingmemoryallocationsspanspan-idhandlingmemoryallocationsspanspan-idhandlingmemoryallocationsspanhandling-memory-allocations"></a><span id="Handling_Memory_Allocations"></span><span id="handling_memory_allocations"></span><span id="HANDLING_MEMORY_ALLOCATIONS"></span>メモリ割り当ての処理
 

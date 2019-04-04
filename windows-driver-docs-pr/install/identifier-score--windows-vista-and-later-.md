@@ -66,7 +66,7 @@ device-description=install-section-name,hw-id,[compatible-id,...] ...
 
     この種類の一致、0x00003000 値はハイスコア識別子で、値 0x00003FFF は最悪の識別子スコアです。
 
-ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
+ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
 
  
 

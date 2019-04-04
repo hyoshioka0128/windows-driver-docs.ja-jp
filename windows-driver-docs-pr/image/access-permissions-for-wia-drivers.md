@@ -17,5 +17,5 @@ ms.locfileid: "56573518"
 
 これを行う簡単な方法では、セキュリティ記述子定義言語 (SDDL) 関数を使用します。 SDDL は Windows セキュリティ記述子、または SD. の単純な文字列表現であります。 SDDL 文字列を SD を変換できるし、SDs を 2 つのセキュリティ記述子を比較するために役立つ SDDL 文字列に変換できます。
 
-SDDL を使用して、イベント オブジェクトのアクセス許可を設定する例は、次を参照してください。 [WIA セキュリティおよびセキュリティ記述子](wia-security-and-security-descriptors.md)します。
+SDDL を使用して、イベント オブジェクトのアクセス許可を設定する例は、[WIA セキュリティおよびセキュリティ記述子](wia-security-and-security-descriptors.md)を参照してください。
 

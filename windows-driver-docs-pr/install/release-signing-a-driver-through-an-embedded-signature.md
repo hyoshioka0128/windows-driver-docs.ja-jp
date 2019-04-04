@@ -58,9 +58,9 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 
 -   *amd64\\toaster.sys*埋め込まれた署名されるカーネル モード バイナリ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
+SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
 
-埋め込みの署名でのドライバーをリリース署名の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[ドライバー ファイルをリリース署名](release-signing-a-driver-file.md)します。
+埋め込みの署名でのドライバーをリリース署名の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[ドライバー ファイルをリリース署名](release-signing-a-driver-file.md)を参照してください。
 
  
 

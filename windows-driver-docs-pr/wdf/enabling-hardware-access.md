@@ -17,7 +17,7 @@ ms.locfileid: "56574555"
 
 ハードウェアへのアクセスを有効にする UMDF ドライバーを設定する必要があります、 **UmdfDirectHardwareAccess** INF ディレクティブを**AllowDirectHardwareAccess**します。
 
-UMDF INF ディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
+UMDF INF ディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)を参照してください。
 
  
 

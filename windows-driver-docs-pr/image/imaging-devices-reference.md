@@ -25,7 +25,7 @@ ms.locfileid: "56560698"
 
 ## <a name="wia-and-sti-driver-reference-table"></a>WIA と STI ドライバーの参照テーブル
 
-次の表には、Windows Image Acquisition (WIA) ドライバーとまだイメージング (STI) ドライバーの参照情報が含まれています。 これらのドライバーでは、スキャナー、静止画像をキャプチャするには、カメラなどのデバイスを制御します。 これらのドライバーの詳細については、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)と[イメージ ドライバーも](https://msdn.microsoft.com/library/windows/hardware/ff548278)します。
+次の表には、Windows Image Acquisition (WIA) ドライバーとまだイメージング (STI) ドライバーの参照情報が含まれています。 これらのドライバーでは、スキャナー、静止画像をキャプチャするには、カメラなどのデバイスを制御します。 これらのドライバーの詳細については、[Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)と[イメージ ドライバーも](https://msdn.microsoft.com/library/windows/hardware/ff548278)を参照してください。
 
 次のセクションでは、インターフェイス、関数、構造、および WIA と STI ドライバーによって使用されるプロパティについて説明します。
 

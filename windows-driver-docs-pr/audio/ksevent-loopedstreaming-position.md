@@ -69,7 +69,7 @@ WavePci と WaveCyclic ポート ドライバーには、Windows Server 2003、W
 
 ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381)します。 Play またはカーソルの記録がループのバッファーの末尾に達すると、カーソルは、バッファーの先頭にラップします。
 
-ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、次を参照してください。[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)します。
+ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

@@ -39,7 +39,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-書き込みの制限については、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
+書き込みの制限については、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 
 
 その他のキャッシュ管理拡張機能については、使用、 [ **! cchelp** ](-cchelp.md)拡張機能。
 

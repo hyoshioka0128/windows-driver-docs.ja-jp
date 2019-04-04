@@ -20,13 +20,13 @@ ms.locfileid: "56578413"
 
 SetupAPI には、次のように、SetupAPI テキスト ログでログ エントリを記述するアプリケーションのインストール、クラスのインストーラー、および共同インストーラーを使用できる関数がサポートされています。
 
--   ログ エントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)、インストール アプリケーションを呼び出す[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)、 [ **SetupWriteTextLogError**](https://msdn.microsoft.com/library/windows/hardware/ff552232)、または[ **SetupWriteTextLogInfLine**](https://msdn.microsoft.com/library/windows/hardware/ff552236)します。 テキスト ログのエントリを記述する方法の詳細については、次を参照してください。[テキスト ログのログ エントリの書き込み](writing-log-entries-in-a-text-log.md)します。
+-   ログ エントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)、インストール アプリケーションを呼び出す[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)、 [ **SetupWriteTextLogError**](https://msdn.microsoft.com/library/windows/hardware/ff552232)、または[ **SetupWriteTextLogInfLine**](https://msdn.microsoft.com/library/windows/hardware/ff552236)します。 テキスト ログのエントリを記述する方法の詳細については、[テキスト ログのログ エントリの書き込み](writing-log-entries-in-a-text-log.md)を参照してください。
 
 -   SetupAPI ログ スレッドのコンテキストを確立するためのメカニズムをサポートしています。 スレッドのログのトークンを設定してスレッドのログのコンテキストが確立されます。 スレッドのログのトークンを設定するには、インストール アプリケーションを呼び出す[ **SetupSetThreadLogToken**](https://msdn.microsoft.com/library/windows/hardware/ff552216)します。 インストール アプリケーションを呼び出すスレッドのログのトークンを取得する[ **SetupGetThreadLogToken**](https://msdn.microsoft.com/library/windows/hardware/ff552211)します。
 
-    ログのトークンの詳細については、次を参照してください。[ログ トークン](log-tokens.md)します。
+    ログのトークンの詳細については、[ログ トークン](log-tokens.md)を参照してください。
 
-    ログのトークンを使用する方法の詳細については、次を参照してください。[設定とスレッドのログのトークン取得](setting-and-getting-a-log-token-for-a-thread.md)します。
+    ログのトークンを使用する方法の詳細については、[設定とスレッドのログのトークン取得](setting-and-getting-a-log-token-for-a-thread.md)を参照してください。
 
  
 

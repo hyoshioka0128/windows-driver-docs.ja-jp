@@ -38,11 +38,11 @@ NDIS 6.1 または以降のバージョンのミニポート ドライバーは�
 
 リスト内の各メッセージ割り込みリソースには、一覧の表示順序をメッセージ番号を後で対応するが割り当てられます。 たとえば、最初のメッセージ割り込みリソースの一覧では、0 をメッセージに割り当てられている、して、メッセージ 1、2 つ目が割り当てられます。
 
-実行時に、CPU に MSI X テーブル エントリを割り当てる、ミニポート ドライバーを呼び出すことができます、 [ **NdisMConfigMSIXTableEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff563566)関数で、テーブル エントリに関係セットが既にいる MSI X メッセージ マップCPU。 MSI X テーブル エントリの構成操作の詳細については、次を参照してください。 [MSI X テーブル エントリの CPU 関係を変更する](changing-the-cpu-affinity-of-msi-x-table-entries.md)します。
+実行時に、CPU に MSI X テーブル エントリを割り当てる、ミニポート ドライバーを呼び出すことができます、 [ **NdisMConfigMSIXTableEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff563566)関数で、テーブル エントリに関係セットが既にいる MSI X メッセージ マップCPU。 MSI X テーブル エントリの構成操作の詳細については、[MSI X テーブル エントリの CPU 関係を変更する](changing-the-cpu-affinity-of-msi-x-table-entries.md)を参照してください。
 
 新しいリソース要件の一覧については、メモリを割り当て、使用、 [ **NdisAllocateMemoryWithTagPriority** ](https://msdn.microsoft.com/library/windows/hardware/ff561606)関数。 古いリソース要件の一覧については、メモリを解放することができます、 [ **NdisFreeMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff562577)関数。
 
 ミニポート ドライバーがなどその他のリソースを変更しない必要があります**CmResourceTypeMemory**と**CmResourceTypePort**リソース。 ミニポート ドライバーでは、リソースの一覧に新しいリソースを追加することを避ける必要があります。 ただし、NDIS 6.1 と以降のミニポート ドライバーでは、メッセージの割り込みの他のリソースを追加できます。 ミニポート ドライバーでは、メッセージの割り込みの他のリソースを追加する場合、削除しないでから、 [ *MiniportStartDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff559452)関数。
 
-追加して、リソースの削除の詳細については、次を参照してください。 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://msdn.microsoft.com/library/windows/hardware/ff550874)します。
+追加して、リソースの削除の詳細については、[ **IRP\_MN\_フィルター\_リソース\_要件**](https://msdn.microsoft.com/library/windows/hardware/ff550874)を参照してください。
 

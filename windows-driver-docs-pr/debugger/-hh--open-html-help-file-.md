@@ -63,7 +63,7 @@ ms.locfileid: "56551418"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ヘルプ ドキュメントの詳細については、次を参照してください。 [、のヘルプ ファイルを使用して](using-the-help-documentation.md)します。
+ヘルプ ドキュメントの詳細については、[、のヘルプ ファイルを使用して](using-the-help-documentation.md)を参照してください。
 
 <a name="remarks"></a>注釈
 -------

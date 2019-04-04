@@ -41,9 +41,9 @@ DO\_バッファーに格納された\_IO、および操作を行います\_直�
 
 -   どちらのフラグが設定されている場合、操作には、バッファーも直接 I/O が使用されます。
 
-デバイス オブジェクトのフラグの詳細については、次を参照してください。 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)と[デバイス オブジェクトを初期化して](https://msdn.microsoft.com/library/windows/hardware/ff547807)します。
+デバイス オブジェクトのフラグの詳細については、[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)と[デバイス オブジェクトを初期化して](https://msdn.microsoft.com/library/windows/hardware/ff547807)を参照してください。
 
-注その IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込みは IRP ベースまたは高速の I/O 操作を指定できます。 IRP ベースできたら、バッファリングのメソッドは上記で説明したようにデバイス オブジェクトのフラグによって決まります。 これらの操作が高速の I/O の場合、バッファーのどちらを使用して、常にもダイレクト I/O。 IRP ベースまたは高速の I/O 操作は、I/O 操作の詳細については、次を参照してください。[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)します。
+注その IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込みは IRP ベースまたは高速の I/O 操作を指定できます。 IRP ベースできたら、バッファリングのメソッドは上記で説明したようにデバイス オブジェクトのフラグによって決まります。 これらの操作が高速の I/O の場合、バッファーのどちらを使用して、常にもダイレクト I/O。 IRP ベースまたは高速の I/O 操作は、I/O 操作の詳細については、[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)を参照してください。
 
  
 

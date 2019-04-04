@@ -240,7 +240,7 @@ UUID の次の Cid を定義する具体的には、\_および MULTICARRIER デ
 
 要請されていないイベント =**サポートされていません。**
 
-ホストで指定された国コードは Windows で使用可能な地理的場所 GEOID に基づいて構築します。 詳細については、次を参照してください。[テーブルの地理的な場所 (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd374073)します。
+ホストで指定された国コードは Windows で使用可能な地理的場所 GEOID に基づいて構築します。 詳細については、[テーブルの地理的な場所 (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd374073)を参照してください。
 
 <table>
 <colgroup>

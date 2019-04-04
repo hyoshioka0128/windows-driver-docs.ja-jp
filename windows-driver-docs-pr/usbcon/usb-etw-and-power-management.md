@@ -23,7 +23,7 @@ USB の ETW を使用して、USB デバイスを確認し、選択的に正常�
 
 PowerCfg では、さまざまなエネルギー効率が USB デバイス、過剰なプロセッサ使用率、増加のタイマー精度、非効率な電源ポリシーの設定、およびバッテリ容量低下して選択的の非効率的な使用を含む、問題を中断を検出します。 PowerCfg では、さまざまなレベルのサーバーの問題 (エラー)、軽微な問題 (警告) などの問題を識別します。
 
-詳細については、Windows 電源管理と、PowerCfg ツールは、次を参照してください。 [Powercfg のコマンドライン オプション](https://technet.microsoft.com/library/cc748940(WS.10).aspx)と[システムのエネルギー効率の評価に PowerCfg を使用して](https://msdn.microsoft.com/library/windows/hardware/gg463250.aspx)します。
+詳細については、Windows 電源管理と、PowerCfg ツールは、[Powercfg のコマンドライン オプション](https://technet.microsoft.com/library/cc748940(WS.10).aspx)と[システムのエネルギー効率の評価に PowerCfg を使用して](https://msdn.microsoft.com/library/windows/hardware/gg463250.aspx)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  

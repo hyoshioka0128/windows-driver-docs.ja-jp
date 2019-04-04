@@ -39,7 +39,7 @@ ms.locfileid: "56551113"
 
 次のセクションでは、ドライバーがこれらのタスクを実行する方法について説明します。
 
-Irp の電源管理の一覧は、次を参照してください。[電源管理のマイナー Irp](power-management-minor-irps.md)します。
+Irp の電源管理の一覧は、[電源管理のマイナー Irp](power-management-minor-irps.md)を参照してください。
 
  
 

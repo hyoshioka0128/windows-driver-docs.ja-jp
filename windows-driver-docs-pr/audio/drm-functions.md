@@ -17,7 +17,7 @@ ms.locfileid: "56573130"
 ## <span id="ddk_drm_functions_ks"></span><span id="DDK_DRM_FUNCTIONS_KS"></span>
 
 
-このセクションでは、ドライバーが Windows でのカーネル ストリーミングのオーディオ コンテンツのデジタル著作権管理を使用して、DRM 関数について説明します。 システム ドライバー コンポーネント Drmk.sys には、これらの関数のエントリ ポイントが含まれています。 ヘッダー ファイル drmk.h でこれらの関数の定義が表示されます。 詳細については、次を参照してください。[デジタル著作権管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)します。
+このセクションでは、ドライバーが Windows でのカーネル ストリーミングのオーディオ コンテンツのデジタル著作権管理を使用して、DRM 関数について説明します。 システム ドライバー コンポーネント Drmk.sys には、これらの関数のエントリ ポイントが含まれています。 ヘッダー ファイル drmk.h でこれらの関数の定義が表示されます。 詳細については、[デジタル著作権管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)を参照してください。
 
 このセクションでは、次の DRM 関数について説明します。
 

@@ -16,7 +16,7 @@ ms.locfileid: "56570270"
 # <a name="overview-of-ndis-debugging"></a>NDIS のデバッグの概要
 
 
-ネットワーク ドライバーをデバッグするための 2 つの主要ツールとは、デバッグ トレースと Network Driver Interface Specification (NDIS) 拡張機能です。 デバッグ トレースの詳細については、次を参照してください。 [NDIS デバッグ トレースを有効にする](enabling-ndis-debug-tracing.md)します。 NDIS の拡張機能のデバッグの詳細については、次を参照してください。 [NDIS 拡張](ndis-extensions--ndiskd-dll-.md)、Ndiskd.dll 拡張モジュールの拡張機能コマンドの完全な一覧を提供します。 Winxp ディレクトリで拡張モジュールが表示されます。
+ネットワーク ドライバーをデバッグするための 2 つの主要ツールとは、デバッグ トレースと Network Driver Interface Specification (NDIS) 拡張機能です。 デバッグ トレースの詳細については、[NDIS デバッグ トレースを有効にする](enabling-ndis-debug-tracing.md)を参照してください。 NDIS の拡張機能のデバッグの詳細については、[NDIS 拡張](ndis-extensions--ndiskd-dll-.md)、Ndiskd.dll 拡張モジュールの拡張機能コマンドの完全な一覧を提供を参照してください。 Winxp ディレクトリで拡張モジュールが表示されます。
 
 ネットワークのドライバーをデバッグするための別のツールは、デバッグ情報を取得するために便利ですが通常のデバッグの拡張のコレクションです。 たとえば、入力[**スタックの 2 つの ndis!。**](-stacks.md) スタックの以降のすべてのスレッドを表示します**ndis!** します。 この情報は、ハング、失速のデバッグに役立ちます。
 

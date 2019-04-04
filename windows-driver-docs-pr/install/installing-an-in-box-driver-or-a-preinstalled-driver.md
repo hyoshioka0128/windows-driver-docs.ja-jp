@@ -22,7 +22,7 @@ ms.locfileid: "56570541"
 
 ドライバー パッケージが実行中に検索する方法の詳細については、[ハードウェア最初インストール](hardware-first-installation.md)を参照してください[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)します。
 
-Windows デバイスに最適な一致のあるドライバーを選択する方法については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
+Windows デバイスに最適な一致のあるドライバーを選択する方法については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
 
  
 

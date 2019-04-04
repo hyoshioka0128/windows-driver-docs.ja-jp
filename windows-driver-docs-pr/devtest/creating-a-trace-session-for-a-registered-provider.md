@@ -57,7 +57,7 @@ TMF ファイルを指定する方法の詳細については、TMF ファイル
 
 TMF ファイルを Windows カーネル トレースで、system.tmf が WDK に含まれています。 をクリックして**TMF ファイルの選択**、 をクリックして**追加**に移動し、\\ツール\\トレース\\i386 サブディレクトリ、し system.tmf を選択します。
 
-詳細については、次を参照してください。 [NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)します。
+詳細については、[NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)を参照してください。
 
  
 

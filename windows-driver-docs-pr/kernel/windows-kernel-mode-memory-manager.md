@@ -24,9 +24,9 @@ Windows カーネル モードのメモリ マネージャー コンポーネン
 
 ドライバーのメモリ管理についての詳細を参照してください。 [Windows ドライバーのメモリ管理](managing-memory-for-drivers.md)します。
 
-メモリ マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Mm**"。 たとえば、 **MmGetPhysicalAddress**します。 メモリ マネージャー ルーチンの一覧は、次を参照してください。 [Memory Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff554435)します。
+メモリ マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Mm**"。 たとえば、 **MmGetPhysicalAddress**します。 メモリ マネージャー ルーチンの一覧は、[Memory Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff554435)を参照してください。
 
-機能によって並べ替えられた、メモリ マネージャー ルーチンのリストは、次を参照してください。[メモリの割り当てとバッファー管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)します。
+機能によって並べ替えられた、メモリ マネージャー ルーチンのリストは、[メモリの割り当てとバッファー管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)を参照してください。
 
  
 

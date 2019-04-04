@@ -29,7 +29,7 @@ ms.locfileid: "56558722"
 
 COM ポートのシステム提供のプロパティ ページと既定のダイアログ ボックスをインストールするには、次の操作を行います。
 
-1.  Microsoft Win32 プロパティ ページのプロバイダーを実装します。 プロパティ シートのダイアログ ボックスのインストールの概要については、次を参照してください。[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)します。
+1.  Microsoft Win32 プロパティ ページのプロバイダーを実装します。 プロパティ シートのダイアログ ボックスのインストールの概要については、[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)を参照してください。
 
     プロパティ ページのプロバイダーを呼び出して、システムが提供[ **SerialDisplayAdvancedSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff547447)ルーチンで、既定のシステム提供のダイアログ ボックスが表示されます。
 

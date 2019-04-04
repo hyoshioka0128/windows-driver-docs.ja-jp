@@ -34,7 +34,7 @@ DirectX VA を使用して、 **IAMVideoAcceleratorNotify**と**IAMVideoAccelera
 
 DDI 動き補正は、ハードウェア アクセラレーション機能にアクセスでき、ユーザー モード ソフトウェア アプリケーションとの高速化の機能の間、ベンダー間の互換性に共通のインターフェイスを確立します。 DDI ビデオ アクセラレータ オブジェクトが使用されているが開始され、フレーム バッファーのデコードを停止するデコーダーを通知しますハードウェアでサポートされる、画像の圧縮されていない形式を示すし、通知する必要があるマクロ ブロックのディスプレイ ドライバーレンダリングされます。 DDI は動き補正、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。
 
-詳細については、 **IAMVideoAccelerator**と**IAMVideoAcceleratorNotify**インターフェイス、Windows SDK のドキュメントを参照してください。 DDI 動き補正の詳細については、次を参照してください。[動き補正](motion-compensation.md)と[動き補正コールバック](motion-compensation-callbacks.md)します。
+詳細については、 **IAMVideoAccelerator**と**IAMVideoAcceleratorNotify**インターフェイス、Windows SDK のドキュメントを参照してください。 DDI 動き補正の詳細については、[動き補正](motion-compensation.md)と[動き補正コールバック](motion-compensation-callbacks.md)を参照してください。
 
  
 

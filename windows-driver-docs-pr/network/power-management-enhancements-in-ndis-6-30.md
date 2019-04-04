@@ -20,13 +20,13 @@ NDIS 6.20 が動作には、電源管理の新機能とコンピューターの�
 
 NDIS パケット結合 NDIS 6.30 以降では、ネットワーク アダプターをサポートできます。 この機能は、処理を軽減ランダム ブロードキャストまたはマルチキャスト パケットの受信のためのホスト システム上のオーバーヘッドと電力の消費量。
 
-詳細については、次を参照してください。 [NDIS パケット結合](ndis-packet-coalescing.md)します。
+詳細については、[NDIS パケット結合](ndis-packet-coalescing.md)を参照してください。
 
 ### <a name="ndis-selective-suspend"></a>選択的 NDIS 中断します。
 
 NDIS 6.30 以降では、選択的 NDIS 中断インターフェイスでは、アダプターを低電力状態に遷移することによって、アイドル状態のネットワーク アダプターを中断する NDIS できます。 これにより、CPU とネットワーク アダプターのオーバーヘッドが電力を減らすため、システムができます。
 
-詳細については、次を参照してください。 [NDIS セレクティブ サスペンド](ndis-selective-suspend.md)します。
+詳細については、[NDIS セレクティブ サスペンド](ndis-selective-suspend.md)を参照してください。
 
 ### <a name="ndis-wake-reason-status-indications"></a>NDIS ウェイク理由状態インジケーター
 
@@ -36,7 +36,7 @@ NDIS 6.30 以降、ミニポート ドライバーで NDIS ウェイク アッ�
 
  
 
-詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
+詳細については、[NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)を参照してください。
 
 ### <a name="ndis-no-pause-on-suspend"></a>一時停止オンが中断しない NDIS
 
@@ -44,7 +44,7 @@ NDIS 6.30 以降、ミニポート ドライバーは、属性のフラグを指
 
 ミニポートが設定されている場合、 **NDIS\_ミニポート\_属性\_いいえ\_一時停止\_ON\_SUSPEND**属性フラグ、NDIS はミニポート呼び出しませんドライバーの[ *MiniportPause* ](https://msdn.microsoft.com/library/windows/hardware/ff559418)関数のオブジェクト識別子 (OID) を要求する前に[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)ドライバーに発行します。 ミニポート ドライバーでは、OID 要求を処理するときにそれが以前一時停止されたことを低電力状態に遷移のミニポート アダプターを準備するときに、必要がありますわけです。
 
-詳細については、次を参照してください。 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)します。
+詳細については、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)を参照してください。
 
  
 

@@ -48,7 +48,7 @@ COPP DDI E を返すことができます\_、および失敗および DDERR\_�
 
 各 COPP 関数は「解説」の指定、DDERR\_ COPP 関数を報告するエラー コード。 返す他の任意の DDERR COPP DDI は要求されません\_エラー コード。
 
-戻り値を使用する必要がある、ディスプレイ ドライバー、ビデオのミニポート ドライバーで COPP DDI からエラー情報を反映するときに、 [ **EngDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff564838)関数は、ため、Windowsカーネルに IOCTL から返されるエラー値を操作する**EngDeviceIoControl**します。 代わりに、エラー情報を渡す必要があります、 *lpInBuffer*パラメーターの**EngDeviceIoControl**します。 詳細については、次を参照してください。 [COPP DDI をディスプレイ ドライバーから呼び出す](calling-the-copp-ddi-from-the-display-driver.md)とコード例で[COPP ビデオのミニポート ドライバー テンプレート](copp-video-miniport-driver-template.md)と[COPP 操作の実行](performing-copp-operations-example.md)します。
+戻り値を使用する必要がある、ディスプレイ ドライバー、ビデオのミニポート ドライバーで COPP DDI からエラー情報を反映するときに、 [ **EngDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff564838)関数は、ため、Windowsカーネルに IOCTL から返されるエラー値を操作する**EngDeviceIoControl**します。 代わりに、エラー情報を渡す必要があります、 *lpInBuffer*パラメーターの**EngDeviceIoControl**します。 詳細については、[COPP DDI をディスプレイ ドライバーから呼び出す](calling-the-copp-ddi-from-the-display-driver.md)とコード例で[COPP ビデオのミニポート ドライバー テンプレート](copp-video-miniport-driver-template.md)と[COPP 操作の実行](performing-copp-operations-example.md)を参照してください。
 
  
 

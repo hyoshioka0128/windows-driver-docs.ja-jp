@@ -43,7 +43,7 @@ ms.locfileid: "56574557"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断状態と状態、イベントのすべてのコード、すべてのイベント、およびこの状態を制御するための他のメソッドの既定の状態の処理の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
+中断状態と状態、イベントのすべてのコード、すべてのイベント、およびこの状態を制御するための他のメソッドの既定の状態の処理の詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
 
  
 

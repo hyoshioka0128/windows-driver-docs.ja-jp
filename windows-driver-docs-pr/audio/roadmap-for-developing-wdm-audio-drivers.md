@@ -24,11 +24,11 @@ WDM オーディオ ドライバーを作成するには、次の手順を実行
 
 2.  **WDM オーディオ ドライバーの基礎について説明します。**
 
-    Windows XP から Windows Vista への Windows オペレーティング システムのバージョンでのオーディオ ドライバーでは、WDM に準拠しており、カーネルのストリーミングのコンポーネントを使用します。 必要なドライバーの設計に関する決定については、次を参照してください。[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)、 [WDM オーディオ ドライバーの概要](getting-started-with-wdm-audio-drivers.md)と[WDM オーディオ ドライバーの概要](introduction-to-wdm-audio-drivers.md)します。
+    Windows XP から Windows Vista への Windows オペレーティング システムのバージョンでのオーディオ ドライバーでは、WDM に準拠しており、カーネルのストリーミングのコンポーネントを使用します。 必要なドライバーの設計に関する決定については、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)、 [WDM オーディオ ドライバーの概要](getting-started-with-wdm-audio-drivers.md)と[WDM オーディオ ドライバーの概要](introduction-to-wdm-audio-drivers.md)を参照してください。
 
 3.  **追加 WDM オーディオ ドライバーの設計上の決定を確認します。**
 
-    設計上の決定を行う方法については、次を参照してください。[カスタム オーディオ ドライバー](custom-audio-drivers.md)、[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)します。 ヘルプの詳細を参照してください、オーディオ ドライバーの種類を決定する必要がある場合[カスタム オーディオ ドライバーの種類のデシジョン ツリー](custom-audio-driver-type-decision-tree.md)します。
+    設計上の決定を行う方法については、[カスタム オーディオ ドライバー](custom-audio-drivers.md)、[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)を参照してください。 ヘルプの詳細を参照してください、オーディオ ドライバーの種類を決定する必要がある場合[カスタム オーディオ ドライバーの種類のデシジョン ツリー](custom-audio-driver-type-decision-tree.md)します。
 
 4.  **オーディオ処理オブジェクトについて説明します。**
 
@@ -40,7 +40,7 @@ WDM オーディオ ドライバーを作成するには、次の手順を実行
 
 6.  **オーディオ ドライバー WDK サンプルを確認します。**
 
-    アクセスして、WDK のオーディオ ドライバーのサンプルを確認して、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
+    アクセスして、WDK のオーディオ ドライバーのサンプルを確認して、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
 
 7.  **WDM、オーディオ ドライバーに関する設計上の決定を行います。**
 
@@ -48,15 +48,15 @@ WDM オーディオ ドライバーを作成するには、次の手順を実行
 
 8.  **開発、ビルド、テスト、および WDM、オーディオ ドライバーをデバッグします。**
 
-    特定のオーディオ アダプターのオーディオ ドライバーを開発する方法については、次を参照してください。[アダプター ドライバー構築](adapter-driver-construction.md)します。 参照してください[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
+    特定のオーディオ アダプターのオーディオ ドライバーを開発する方法については、[アダプター ドライバー構築](adapter-driver-construction.md)を参照してください。 参照してください[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
 
 9.  **WDM、オーディオ ドライバーのドライバー パッケージを作成します。**
 
-    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。 オーディオのアダプターをインストールする方法については、次を参照してください。[ポート クラス オーディオ アダプターをインストールする](installing-a-port-class-audio-adapter.md)します。
+    詳細については、[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)を参照してください。 オーディオのアダプターをインストールする方法については、[ポート クラス オーディオ アダプターをインストールする](installing-a-port-class-audio-adapter.md)を参照してください。
 
 10. **署名し、WDM、オーディオ ドライバーを配布します。**
 
-    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーが Windows 認定プログラムに対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
+    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーが Windows 認定プログラムに対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)を参照してください。
 
 これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
 

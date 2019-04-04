@@ -23,7 +23,7 @@ ms.locfileid: "56552629"
 
 
 
-INF ファイル、ディレクトリ識別子内のターゲット ディレクトリを指定するときに (`dirids`) 使用する必要があります。 詳細については、次を参照してください。[を使用して Dirids](https://msdn.microsoft.com/library/windows/hardware/ff553598)します。
+INF ファイル、ディレクトリ識別子内のターゲット ディレクトリを指定するときに (`dirids`) 使用する必要があります。 詳細については、[を使用して Dirids](https://msdn.microsoft.com/library/windows/hardware/ff553598)を参照してください。
 
 次の表に、プリンター固有`dirids`とそれぞれの目的です。
 

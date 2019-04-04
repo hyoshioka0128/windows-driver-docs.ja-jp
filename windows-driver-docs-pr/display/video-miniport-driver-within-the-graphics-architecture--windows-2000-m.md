@@ -29,7 +29,7 @@ ms.locfileid: "56559450"
 
 ビデオ ポート ドライバーは、ビデオのミニポート ドライバーをサポートするために提供されるシステム提供のモジュールです。 ディスプレイ ドライバーとビデオのミニポート ドライバーの仲介役として機能します
 
-NT ベースのオペレーティング システムのディスプレイ ドライバーの詳細については、次を参照してください。[表示 (Windows 2000 モデル) の概要](introduction-to-display--windows-2000-model-.md)と[表示ドライバー (Windows 2000 モデル)](display-drivers--windows-2000-model-.md)します。
+NT ベースのオペレーティング システムのディスプレイ ドライバーの詳細については、[表示 (Windows 2000 モデル) の概要](introduction-to-display--windows-2000-model-.md)と[表示ドライバー (Windows 2000 モデル)](display-drivers--windows-2000-model-.md)を参照してください。
 
  
 

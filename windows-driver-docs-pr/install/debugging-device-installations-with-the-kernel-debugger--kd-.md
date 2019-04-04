@@ -24,9 +24,9 @@ ms.locfileid: "56577820"
 
 -   KD 拡張機能を使用して複数のデバッガーを管理することがなく他のユーザー モード プロセスを監視します。 プロセスまたは .process/p です。
 
-KD と他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+KD と他のデバッグ ツールの詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
 
-**DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、次を参照してください。[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)します。
+**DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)を参照してください。
 
 ときに、 **DebugInstall**レジストリ値が 1 に設定*DrvInst.exe*最初は、カーネル デバッガーが有効になっているおよびデバッガーに中断されるまでに現在接続されているを確認します。 この中断が行われた後は、現在のプロセスのユーザー モードのモジュールでブレークポイントを設定できます。 例:
 

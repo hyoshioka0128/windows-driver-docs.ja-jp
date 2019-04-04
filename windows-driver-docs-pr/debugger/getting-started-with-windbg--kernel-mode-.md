@@ -16,7 +16,7 @@ ms.locfileid: "56552528"
 
 WinDbg では、Windows のツールのデバッグに含まれるカーネル モードとユーザー モード デバッガーです。 ここで、カーネル モード デバッガーとして WinDbg を使用するのに役立つ実践的な演習を開始する提供されています。
 
-Windows のツールのデバッグを取得する方法については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](index.md)します。 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 次に、例を示します。
+Windows のツールのデバッグを取得する方法については、[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](index.md)を参照してください。 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 次に、例を示します。
 
 -   C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\デバッガー\\x64
 -   C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\デバッガー\\x86
@@ -42,7 +42,7 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
 
 ![ホストとデバッグ ケーブルで対象のダイアグラム](images/configfortest02.png)
 
-詳細については、ホストとターゲット コンピューターを設定する方法は、次を参照してください。[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)します。
+詳細については、ホストとターゲット コンピューターを設定する方法は、[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)を参照してください。
 
 ## <a name="span-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanestablish-a-kernel-mode-debugging-session"></a><span id="Establish_a_kernel-mode_debugging_session"></span><span id="establish_a_kernel-mode_debugging_session"></span><span id="ESTABLISH_A_KERNEL-MODE_DEBUGGING_SESSION"></span>カーネル モードのデバッグ セッションを確立します。
 

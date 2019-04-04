@@ -32,7 +32,7 @@ SVC に対する呼び出しの発信元を指定できます*サービスの品
 
 両方の共同\_呼び出す\_MANAGER\_パラメーターと CO\_メディア\_パラメーター、パラメーターを使用するすべてのドライバーに適用されるジェネリック パラメーター (フラグ) に含まれます。 各構造体も指す、 [ **CO\_特定\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff545396)コール マネージャー固有のパラメーターを指定する構造体 (COを指すとき\_呼び出す\_MANAGER\_パラメーター構造体) またはメディア固有のパラメーター (CO によって示されるときに\_メディア\_パラメーター構造体)。
 
-QoS の操作の詳細については、次を参照してください。 [Client-Initiated を呼び出すパラメーターの変更を要求](client-initiated-request-to-change-call-parameters.md)と[呼び出しパラメーターの変更を受信した要求](incoming-request-to-change-call-parameters.md)します。
+QoS の操作の詳細については、[Client-Initiated を呼び出すパラメーターの変更を要求](client-initiated-request-to-change-call-parameters.md)と[呼び出しパラメーターの変更を受信した要求](incoming-request-to-change-call-parameters.md)を参照してください。
 
  
 

@@ -22,7 +22,7 @@ NDIS サービスの品質 (QoS) の IEEE 802.1 データ センター ブリッ
 
 -   ミニポート ドライバーとネットワーク アダプター、3 つの NDIS QoS トラフィック クラスの最小値をサポートし、ETS ベースのトラフィックの 2 つのクラスの最小値をサポートする必要があります。 これらの 2 つの少なくとも 1 つの ETS ベースのトラフィック クラスは、PFC をサポートする必要があります。
 
-    トラフィック クラスの詳細については、次を参照してください。 [NDIS QoS トラフィック クラス](ndis-qos-traffic-classes.md)します。
+    トラフィック クラスの詳細については、[NDIS QoS トラフィック クラス](ndis-qos-traffic-classes.md)を参照してください。
 
 -   ミニポート ドライバーとネットワーク アダプターは、IEEE 802.1 q で指定された転送の選択範囲の優先アルゴリズムをサポートする必要があります-2005 standard。
 
@@ -32,17 +32,17 @@ NDIS QoS、ミニポート ドライバーとネットワーク アダプター�
 
 -   NDIS 6.30 または以降のバージョンの NDIS ミニポート ドライバーをサポートする必要があります。
 
--   ミニポート ドライバーでのオブジェクト識別子 (OID) メソッドの要求をサポートする必要があります[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)の NDIS QoS パラメーターを設定します。 詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
+-   ミニポート ドライバーでのオブジェクト識別子 (OID) メソッドの要求をサポートする必要があります[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)の NDIS QoS パラメーターを設定します。 詳細については、[NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)を参照してください。
 
     **注**  NDIS ミニポート ドライバーは例外ですの NDIS QoS OID 要求のほとんどを処理する[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)します。
 
      
 
--   ミニポート ドライバーでは、リモート ピアから送信された DCBX フレーム経由で受信した NDIS QoS パラメーター設定の競合を解決できる必要があります。 ドライバーは、優先順位付きパケット転送のネットワーク アダプターを使用する運用上の NDIS QoS パラメーターを確認して、ローカルおよびリモートの NDIS QoS パラメーター間の競合を解決します。 このプロセスの詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
+-   ミニポート ドライバーでは、リモート ピアから送信された DCBX フレーム経由で受信した NDIS QoS パラメーター設定の競合を解決できる必要があります。 ドライバーは、優先順位付きパケット転送のネットワーク アダプターを使用する運用上の NDIS QoS パラメーターを確認して、ローカルおよびリモートの NDIS QoS パラメーター間の競合を解決します。 このプロセスの詳細については、[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)を参照してください。
 
--   ミニポート ドライバーでは、その運用上の NDIS QoS パラメーターを変更するときに、NDIS 状態インジケーターを発行できる必要があります。 このプロセスの詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを示す変更](indicating-changes-to-the-operational-ndis-qos-parameters.md)します。
+-   ミニポート ドライバーでは、その運用上の NDIS QoS パラメーターを変更するときに、NDIS 状態インジケーターを発行できる必要があります。 このプロセスの詳細については、[運用上の NDIS QoS パラメーターを示す変更](indicating-changes-to-the-operational-ndis-qos-parameters.md)を参照してください。
 
--   ミニポート ドライバーでは、リモート ピアの NDIS QoS パラメーターで変更を検出した場合に、NDIS 状態インジケーターを発行できる必要があります。 このプロセスの詳細については、次を参照してください。[リモートの NDIS QoS パラメーターを示す変更](indicating-changes-to-the-remote-ndis-qos-parameters.md)します。
+-   ミニポート ドライバーでは、リモート ピアの NDIS QoS パラメーターで変更を検出した場合に、NDIS 状態インジケーターを発行できる必要があります。 このプロセスの詳細については、[リモートの NDIS QoS パラメーターを示す変更](indicating-changes-to-the-remote-ndis-qos-parameters.md)を参照してください。
 
  
 

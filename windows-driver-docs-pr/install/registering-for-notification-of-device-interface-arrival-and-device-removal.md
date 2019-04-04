@@ -70,7 +70,7 @@ ms.locfileid: "56558284"
 
 6. デバイスが完了したら後で呼び出す[ **CM_Unregister_Notification** ](https://msdn.microsoft.com/library/windows/hardware/hh780228)手順 1. で登録されているインターフェイス通知コールバックの登録を解除します。
 
-2 の UMDF ドライバーでは、この手順に従っている場合は、次を参照してください。[を使用してデバイスのインターフェイス](https://msdn.microsoft.com/windows/hardware/drivers/wdf/using-device-interfaces)コード例についてはします。 2 の UMDF ドライバーはドライバーの手順 1 ~ 4 を実行する場合があります[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック ルーチン、および手順 6 での 1 つ、ドライバーのデバイスの削除コールバック ルーチン。
+2 の UMDF ドライバーでは、この手順に従っている場合は、[を使用してデバイスのインターフェイス](https://msdn.microsoft.com/windows/hardware/drivers/wdf/using-device-interfaces)コード例についてはを参照してください。 2 の UMDF ドライバーはドライバーの手順 1 ~ 4 を実行する場合があります[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック ルーチン、および手順 6 での 1 つ、ドライバーのデバイスの削除コールバック ルーチン。
 
 ## <a name="related-topics"></a>関連トピック
 

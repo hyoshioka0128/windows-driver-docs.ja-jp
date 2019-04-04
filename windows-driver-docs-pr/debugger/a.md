@@ -23,14 +23,14 @@ ms.locfileid: "56579651"
 
 プロセッサの種類を実行して、有効なプロセッサの種類を参照してください。
 
-詳細については、次を参照してください。[ターゲット情報](target-information.md)します。
+詳細については、[ターゲット情報](target-information.md)を参照してください。
 
 <span id="arbitrary_exception_filter"></span><span id="ARBITRARY_EXCEPTION_FILTER"></span>**任意の例外フィルター**  
 イベント フィルターのエンジンの一覧を手動で追加されている例外フィルターを指定します。
 
 参照してください[特定の例外フィルター](https://msdn.microsoft.com/library/windows/hardware/ff558784)します。
 
-詳細については、次を参照してください。[イベント フィルター](event-filters.md)します。
+詳細については、[イベント フィルター](event-filters.md)を参照してください。
 
  
 

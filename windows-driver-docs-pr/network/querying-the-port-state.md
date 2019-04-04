@@ -27,7 +27,7 @@ ms.locfileid: "56571426"
 
 OID\_GEN\_ポート\_状態 OID が NDIS 6.0 以降でサポートされています。
 
-OID を使用しないようにドライバーを重なって\_GEN\_ポート\_可能な場合の状態にあり、代わりに依存する必要があります、 [ **NDIS\_状態\_ポート\_状態** ](https://msdn.microsoft.com/library/windows/hardware/ff567415)状態を示す値。 ポートに関連する状態インジケーターの詳細については、次を参照してください。 [NDIS ポートの状態インジケーターの処理](handling-ndis-ports-status-indications.md)します。
+OID を使用しないようにドライバーを重なって\_GEN\_ポート\_可能な場合の状態にあり、代わりに依存する必要があります、 [ **NDIS\_状態\_ポート\_状態** ](https://msdn.microsoft.com/library/windows/hardware/ff567415)状態を示す値。 ポートに関連する状態インジケーターの詳細については、[NDIS ポートの状態インジケーターの処理](handling-ndis-ports-status-indications.md)を参照してください。
 
 場合、OID\_GEN\_ポート\_状態クエリが成功すると、NDIS には、ポートの状態情報が返されます、 [ **NDIS\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566800)構造体。
 

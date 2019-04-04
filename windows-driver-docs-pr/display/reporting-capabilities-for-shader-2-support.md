@@ -27,7 +27,7 @@ ms.locfileid: "56573161"
 
 -   設定、 **MaxStreams**をデバイスが 8 または多くの同時実行データ ストリームを処理できることを示すために、少なくとも 8 にするメンバー。
 
--   設定、D3DDTCAPS\_UBYTE4 ビット、 **DeclTypes** UBYTE4 頂点要素型のサポートを示すためのメンバーを 1 にします。 詳細については、次を参照してください。 [Reporting サポートの UBYTE4 頂点要素](reporting-support-of-ubyte4-vertex-element.md)します。
+-   設定、D3DDTCAPS\_UBYTE4 ビット、 **DeclTypes** UBYTE4 頂点要素型のサポートを示すためのメンバーを 1 にします。 詳細については、[Reporting サポートの UBYTE4 頂点要素](reporting-support-of-ubyte4-vertex-element.md)を参照してください。
 
 デバイスは、ピクセル シェーダー 2.0 をサポートし、後でそのドライバーが内の以下のビットを構成する必要がある場合、 **TextureCaps**ドライバーがまたは無条件で条件付きでとして nonpowers-2 の 2 次元テクスチャのマッピングをサポートしているかどうかを示すメンバー. 詳細については、これらのビットでの説明を参照して、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)リファレンス ページです。
 

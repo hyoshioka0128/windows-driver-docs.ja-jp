@@ -28,7 +28,7 @@ ms.locfileid: "56573387"
 
 -   MB サービスは電源を節約するために、または、環境でのラジオ干渉を避けるためには、低電力状態に無線ミニポート ドライバーにコマンドを送信することがあります (など、飛行機に)。
 
-ラジオ電源の状態の操作の詳細については、次を参照してください。 [OID\_WWAN\_ラジオ\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569832)します。
+ラジオ電源の状態の操作の詳細については、[OID\_WWAN\_ラジオ\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569832)を参照してください。
 
  
 

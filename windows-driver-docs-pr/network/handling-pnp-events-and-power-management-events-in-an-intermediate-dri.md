@@ -24,7 +24,7 @@ ms.locfileid: "56557740"
 
 中間のドライバーは、プラグ アンド プレイ (PnP) イベントおよび電源管理イベントを処理できる必要があります。 具体的には、次のとおりです。
 
--   中間のドライバーは、NDIS を設定する必要があります\_ミニポート\_属性\_いいえ\_HALT\_ON\_で SUSPEND フラグ、 **AttributeFlags**のメンバー、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)に渡される構造[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。 詳細については、次を参照してください。[ミニポートとして初期化](initializing-virtual-miniports.md)します。
+-   中間のドライバーは、NDIS を設定する必要があります\_ミニポート\_属性\_いいえ\_HALT\_ON\_で SUSPEND フラグ、 **AttributeFlags**のメンバー、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)に渡される構造[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。 詳細については、[ミニポートとして初期化](initializing-virtual-miniports.md)を参照してください。
 
 -   中間のドライバーの仮想ミニポート OID を処理する必要があります\_PNP\_*Xxx*要求。
 

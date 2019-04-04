@@ -38,7 +38,7 @@ Set Action = Device.GetInterface("PNP")
 
 [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355) 、WDTF で識別されます*ProgId*します。 WDTF を指定する必要があります*ProgId*を呼び出すと、 [ **HasInterface**](https://msdn.microsoft.com/library/windows/hardware/hh439447)、 [ **GetInterface**](https://msdn.microsoft.com/library/windows/hardware/hh439398)、[ **GetInterfaces**](https://msdn.microsoft.com/library/windows/hardware/hh439475)、および[ **GetInterfacesIfExist** ](https://msdn.microsoft.com/library/windows/hardware/hh439478)メソッド。 WDTF について*ProgId*を参照してください、**アクション インターフェイス**します。
 
-WDTF をインターフェイスおよびインターフェイスの実装を追加するにはプラグイン モデルを使用します。 このモデルの詳細については、次を参照してください。[フレームワークを拡張する](extending-the-framework.md)します。
+WDTF をインターフェイスおよびインターフェイスの実装を追加するにはプラグイン モデルを使用します。 このモデルの詳細については、[フレームワークを拡張する](extending-the-framework.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [**アクションのインターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)  

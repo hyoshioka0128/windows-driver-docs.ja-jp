@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_REGION プロパティは、言語の制限に従って DVD
 <a name="remarks"></a>コメント
 -------
 
-言語の制限の詳細については、次を参照してください。 [DVD 加入](https://msdn.microsoft.com/library/windows/hardware/ff559512)と[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+言語の制限の詳細については、[DVD 加入](https://msdn.microsoft.com/library/windows/hardware/ff559512)と[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

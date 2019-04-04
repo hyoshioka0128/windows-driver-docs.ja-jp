@@ -66,7 +66,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 転送を行う必要が送信と受信のエンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
+エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
 
 <a href="" id="buffersize"></a>*BufferSize*  
 方向が場合**EfiUsbEndpointDirectionDeviceRx**:入力バッファーのバイト単位のサイズ。 出力では、データの量は、バッファーのバイト単位で返されます。 方向が場合**EfiUsbEndpointDirectionDeviceTx**:入力バッファーのバイト単位のサイズ。 出力で、実際に転送されるデータ量 (バイト単位)。

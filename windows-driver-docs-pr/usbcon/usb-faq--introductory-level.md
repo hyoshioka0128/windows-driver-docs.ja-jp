@@ -125,7 +125,7 @@ USB 3.0 ポートが xHCI コント ローラーに正しくルーティング�
 
 USB 2.0 ポートが USB 2.0 ハブを介して EHCI コント ローラーに接続されている場合は、トラフィックは EHCI コント ローラーを移動され、USB 2.0 ドライバー スタックが読み込まれます。
 
-USB ドライバー スタックのドライバーの詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](https://go.microsoft.com/fwlink/p/?linkid=320134)します。
+USB ドライバー スタックのドライバーの詳細については、[Windows での USB ホスト側ドライバー](https://go.microsoft.com/fwlink/p/?linkid=320134)を参照してください。
 
 PC の USB 2.0 ポートがコンパニオン コント ローラーを使用する場合、ポートがルーティング ホスト コント ローラーは、デバイスの速度によって異なります。 たとえば、低速デバイスは UHCI または OHCI コント ローラーを経由して接続し、USBUHCI または USBOHCI ドライバーを使用します。 PC 高速デバイスを EHCI コント ローラーにルーティングする、そのため、Windows は USBEHCI ドライバーを使用します。
 
@@ -592,7 +592,7 @@ Windows XP Service Pack 1 および Windows の以前のバージョン。
 
 Windows XP Service Pack 2 および以降のバージョンの Windows では、インターフェイスの番号は増加、連続しないにのみ必要です。
 
-インターフェイス番号の詳細については、次を参照してください。[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/kb/814560)します。
+インターフェイス番号の詳細については、[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/kb/814560)を参照してください。
 
 インターフェイスの代替設定は、すべてのバージョンの Windows には、次のように割り当てる必要があります。
 
@@ -637,7 +637,7 @@ Needs = Composite.Dev
 
 に関するブログの投稿を参照してください。[を含めると、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](http://blogs.msdn.com/b/usbcoreblog/archive/2013/06/29/wpp-blog-post.aspx)します。
 
-USB core スタックのデバッグに関する詳細については、次を参照してください。[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/kb/314743)します。
+USB core スタックのデバッグに関する詳細については、[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/kb/314743)を参照してください。
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows は、インターフェイスの関連付けの記述子をサポートしますか。
 

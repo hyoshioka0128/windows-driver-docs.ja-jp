@@ -25,9 +25,9 @@ ms.locfileid: "56552511"
 
 -   いる CoNDIS ミニポート ドライバーでは、受信パケットを示します、ときに、バインドされているプロトコルは、パケットの処理を延期できます。 NDIS WAN ミニポート ドライバーでは、受信パケットを示します、ときにバインドされているプロトコルではすぐにデータをコピーする必要があります。
 
--   いる CoNDIS WAN multipoint 呼び出しをサポートしています。 Multipoint の呼び出しを作成する方法についての詳細については、次を参照してください。[呼び出しを行う](making-a-call.md)します。
+-   いる CoNDIS WAN multipoint 呼び出しをサポートしています。 Multipoint の呼び出しを作成する方法についての詳細については、[呼び出しを行う](making-a-call.md)を参照してください。
 
--   いる CoNDIS WAN は、サービスの品質 (QoS) をサポートしています。 いる CoNDIS WAN のドライバーを使用して、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 いる CoNDIS QoS の詳細については、次を参照してください。[呼び出しパラメーターの変更を要求する Client-Initiated](client-initiated-request-to-change-call-parameters.md)します。
+-   いる CoNDIS WAN は、サービスの品質 (QoS) をサポートしています。 いる CoNDIS WAN のドライバーを使用して、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 いる CoNDIS QoS の詳細については、[呼び出しパラメーターの変更を要求する Client-Initiated](client-initiated-request-to-change-call-parameters.md)を参照してください。
 
 -   いる CoNDIS WAN のみ、WAN のドライバーに適用される今後の NDIS 拡張機能をサポートします。
 

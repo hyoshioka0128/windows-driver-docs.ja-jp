@@ -59,7 +59,7 @@ dbgsrv -?
 <span id="_______-_______"></span> **-?**   
 DbgSrv コマンドラインのヘルプ テキストを含むメッセージ ボックスが表示されます。
 
-DbgSrv の使用方法の詳細については、次を参照してください。[プロセス サーバー (ユーザー モード)](process-servers--user-mode-.md)します。
+DbgSrv の使用方法の詳細については、[プロセス サーバー (ユーザー モード)](process-servers--user-mode-.md)を参照してください。
 
  
 

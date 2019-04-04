@@ -67,7 +67,7 @@ INF <em>DDInstall</em>**します。WMI**セクションは、Microsoft Windows 
 
 既定の記述子を使用して、含めるたくない場合と、ドライバーには、WMI クラスが定義されている場合、 <em>DDInstall</em>**します。WMI**セクションは、レジストリに格納され、システムの既定の記述子をオーバーライドするセキュリティ記述子を指定します。
 
-INF ファイルのセキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
+INF ファイルのセキュリティ記述子を指定する方法の詳細については、[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)を参照してください。
 
 <a name="examples"></a>使用例
 --------

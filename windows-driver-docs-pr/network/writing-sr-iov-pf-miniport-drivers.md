@@ -30,7 +30,7 @@ ms.locfileid: "56561012"
 
 [PF のミニポート ドライバーの INF 要件](inf-requirements-for-pf-miniport-drivers.md)
 
-**注**  の PCIe 仮想機能 (VF)、SR-IOV ネットワーク アダプターのミニポート ドライバーを記述する方法については、次を参照してください。[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)します。
+**注**  の PCIe 仮想機能 (VF)、SR-IOV ネットワーク アダプターのミニポート ドライバーを記述する方法については、[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)を参照してください。
 
  
 

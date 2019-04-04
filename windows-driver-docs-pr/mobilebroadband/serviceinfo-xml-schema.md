@@ -23,13 +23,13 @@ ms.locfileid: "56571441"
 
  
 
-ServiceInfo XML スキーマの完了の定義については、次を参照してください。 [ServiceInfo XML スキーマ定義](serviceinfo-xml-schema-definition.md)します。
+ServiceInfo XML スキーマの完了の定義については、[ServiceInfo XML スキーマ定義](serviceinfo-xml-schema-definition.md)を参照してください。
 
-ServiceInfo XML スキーマで定義されている要素については、次を参照してください。 [ServiceInfo XML 要素](serviceinfo-xml-elements.md)します。
+ServiceInfo XML スキーマで定義されている要素については、[ServiceInfo XML 要素](serviceinfo-xml-elements.md)を参照してください。
 
-ServiceInfo XML スキーマで定義されているデータ型については、次を参照してください。 [ServiceInfo XML データ型](serviceinfo-xml-data-types.md)します。
+ServiceInfo XML スキーマで定義されているデータ型については、[ServiceInfo XML データ型](serviceinfo-xml-data-types.md)を参照してください。
 
-ServiceInfo XML スキーマで定義されている形式で XML データの例は、次を参照してください。 [ServiceInfo XML の例](serviceinfo-xml-example.md)します。
+ServiceInfo XML スキーマで定義されている形式で XML データの例は、[ServiceInfo XML の例](serviceinfo-xml-example.md)を参照してください。
 
  
 

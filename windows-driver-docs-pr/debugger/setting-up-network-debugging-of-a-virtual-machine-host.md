@@ -22,11 +22,11 @@ ms.locfileid: "56570362"
 
 **1.Windows がインストールされた VM を作成します。**
 
-VM を作成する方法については、次を参照してください。 [、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)です。
+VM を作成する方法については、[、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)を参照してください。
 
 **2.外部仮想スイッチを定義します。** 
 
-VM と仮想外部ネットワーク スイッチの通信に使用できます。 外部ネットワーク スイッチを作成する方法については、次を参照してください。[仮想ネットワークの作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network)です。
+VM と仮想外部ネットワーク スイッチの通信に使用できます。 外部ネットワーク スイッチを作成する方法については、[仮想ネットワークの作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network)を参照してください。
 
 外部ネットワーク スイッチが構成されている場合、次のオプションを設定する必要があります。
 
@@ -54,7 +54,7 @@ BCDEdit ブート設定を更新する kdnet ユーティリティは、一時�
 
 **4.Windows 用デバッグ ツールをインストールします。**
 
-デバッグ ツールでは、デバッガーと kdnet ユーティリティが使用され、インストールする必要があります。 ダウンロードして、デバッグ ツールをインストールする方法については、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。 
+デバッグ ツールでは、デバッガーと kdnet ユーティリティが使用され、インストールする必要があります。 ダウンロードして、デバッグ ツールをインストールする方法については、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。 
 
 
 ## <a name="setting-up-network-debugging-of-a-virtual-machine---kdnet"></a>ネットワークが仮想マシン - KDNET のデバッグの設定
@@ -100,7 +100,7 @@ C:\Program Files (x86)\Windows Kits\10\Debuggers\x64
 ```
 
 > [!NOTE]
-> 次の手順では、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットは、32 ビット Windows を実行している、ホスト上の 32 のバージョンのデバッガーを実行します。 詳細については、次を参照してください。 [32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)します。
+> 次の手順では、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットは、32 ビット Windows を実行している、ホスト上の 32 のバージョンのデバッガーを実行します。 詳細については、[32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)を参照してください。
 > 
 
 4. 切り取りし、貼り付けをするに使用される長いキーを許可するのには、拡張セッションのサポートを有効にします。 [VM] ウィンドウから、**ビュー**のプルダウン メニューを有効にする*拡張セッション*。 

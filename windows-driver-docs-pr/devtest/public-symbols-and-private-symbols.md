@@ -57,7 +57,7 @@ BinPlace では、シンボル ファイルを削除、削除された、完全�
 
 使用できるシンボル ファイルにプライベート シンボルが含まれているかどうかを確認する必要がある場合、 [SymChk](https://msdn.microsoft.com/library/windows/hardware/ff558844)ツール。 SymChk は、Windows のツールをデバッグ パッケージの一部です。 SymChk を参照してくださいと[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)詳細についてはします。
 
-ドライバーに送信する場合、 [Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)Microsoft と、プライベート シンボルを共有しないようにする場合、削除されたシンボル ファイルを送信できます。 BinPlace によって削除されたシンボル ファイルは、通常と思われる機密情報、ドライバーのアーキテクチャの任意の部分を公開していません。 詳細については、次を参照してください。、 [Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)します。
+ドライバーに送信する場合、 [Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)Microsoft と、プライベート シンボルを共有しないようにする場合、削除されたシンボル ファイルを送信できます。 BinPlace によって削除されたシンボル ファイルは、通常と思われる機密情報、ドライバーのアーキテクチャの任意の部分を公開していません。 詳細については、、 [Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)を参照してください。
 
  
 

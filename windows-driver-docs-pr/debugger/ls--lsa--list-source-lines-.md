@@ -38,7 +38,7 @@ lsa [.] address [, first [, count]]
 <span id="_______address______"></span><span id="_______ADDRESS______"></span> *address*   
 ソースの表示の開始アドレスを指定します。
 
-構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
+構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
 
 <span id="_______first______"></span><span id="_______FIRST______"></span> *first*   
 表示する最初の行を指定します。 既定値は、現在の行です。

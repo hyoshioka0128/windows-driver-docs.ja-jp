@@ -26,7 +26,7 @@ ms.locfileid: "56572619"
 
 [受信仮想ポートのフィルターの列挙](enumerating-receive-filters-on-a-virtual-port.md)
 
-拡張を作成する方法については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
+拡張を作成する方法については、[仮想ポートを作成する](creating-a-virtual-port.md)を参照してください。
 
  
 

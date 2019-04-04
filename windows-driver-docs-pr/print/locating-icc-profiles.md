@@ -28,7 +28,7 @@ ms.locfileid: "56579268"
 
 3.  色のディレクトリに指定された DEVMODE 内容に一致する指定されたプリンターの種類のプロファイルが含まれていない場合、GDI は、システムの既定の sRGB プロファイルを使用します。
 
-詳細については、次を参照してください。 [ICC プロファイルのインストール](installing-icc-profiles.md)します。 Microsoft Windows sdk で ICC プロファイルに関する追加情報が見つかります。
+詳細については、[ICC プロファイルのインストール](installing-icc-profiles.md)を参照してください。 Microsoft Windows sdk で ICC プロファイルに関する追加情報が見つかります。
 
  
 

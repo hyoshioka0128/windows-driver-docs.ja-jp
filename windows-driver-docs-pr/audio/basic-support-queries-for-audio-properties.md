@@ -60,7 +60,7 @@ ms.locfileid: "56553315"
 
 上記の一覧で示されている順序で、バッファー内の隣接する場所には、次の 3 つの構造がまとめられます。 ミニポート ドライバー書き込みますに最小値と最大のボリューム レベルで要求を処理する際、**境界**、KSPROPERTY のメンバー\_ステッピング\_時間構造体します。
 
-範囲の記述子の配列で basic サポート要求の例で図を参照してください。[マルチ チャネルのノードを公開する](exposing-multichannel-nodes.md)します。 Basic サポート プロパティ要求の詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。 コード例については、プロパティ ハンドラーの実装を参照してください、[オーディオ ドライバーのサンプル](sample-audio-drivers.md)Microsoft Windows Driver Kit (WDK)。
+範囲の記述子の配列で basic サポート要求の例で図を参照してください。[マルチ チャネルのノードを公開する](exposing-multichannel-nodes.md)します。 Basic サポート プロパティ要求の詳細については、[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)を参照してください。 コード例については、プロパティ ハンドラーの実装を参照してください、[オーディオ ドライバーのサンプル](sample-audio-drivers.md)Microsoft Windows Driver Kit (WDK)。
 
  
 

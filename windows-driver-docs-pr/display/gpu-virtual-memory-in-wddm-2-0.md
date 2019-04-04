@@ -27,7 +27,7 @@ Windows Display Driver Model (WDDM) v1.x、グラフィックス処理ユニッ�
 
 GPU の個々 のエンジンは、物理または仮想モードで動作できます。 物理のモードで、スケジューリング モデルは変わりません WDDM v1.x を使用します。 物理モード、ユーザー モード ドライバーは、割り当てを生成し、場所のリストを更新プログラムが続行されます。 コマンド バッファーに送信され、エンジンに送信する前に、実際の物理アドレスへのパッチ コマンド バッファーに提供されます。
 
-仮想モードでは、エンジンは、GPU の仮想アドレスによってメモリを参照します。 このモードでは、ユーザー モード ドライバーは、ユーザー モードから直接コマンド バッファーを生成し、新しいサービスを使用して、カーネルにこれらのコマンドを送信します。 このモードでは、ユーザー モード ドライバーは割り当てを生成またはがまだ割り当ての保存場所を管理する場所のリスト、修正プログラムを適用します。 ドライバーの保存場所の詳細については、次を参照してください。 [WDDM 2.0 でのドライバーの常駐](driver-residency-in-wddm-2-0.md)します。
+仮想モードでは、エンジンは、GPU の仮想アドレスによってメモリを参照します。 このモードでは、ユーザー モード ドライバーは、ユーザー モードから直接コマンド バッファーを生成し、新しいサービスを使用して、カーネルにこれらのコマンドを送信します。 このモードでは、ユーザー モード ドライバーは割り当てを生成またはがまだ割り当ての保存場所を管理する場所のリスト、修正プログラムを適用します。 ドライバーの保存場所の詳細については、[WDDM 2.0 でのドライバーの常駐](driver-residency-in-wddm-2-0.md)を参照してください。
 
 ## <a name="span-idgpumemorymodelsspanspan-idgpumemorymodelsspanspan-idgpumemorymodelsspangpu-memory-models"></a><span id="GPU_memory_models"></span><span id="gpu_memory_models"></span><span id="GPU_MEMORY_MODELS"></span>GPU メモリ モデル
 
@@ -37,12 +37,12 @@ WDDM v2 は、GPU 仮想アドレス指定するための 2 つの異なるモ�
 <span id="GpuMmu_model"></span><span id="gpummu_model"></span><span id="GPUMMU_MODEL"></span>GpuMmu モデル  
 *GpuMmu* GPU メモリ管理ユニットと基になるページにビデオ メモリ マネージャーが管理モデル、テーブル、および割り当てに GPU 仮想アドレスのマッピングを管理できるようにするには、ユーザー モード ドライバー サービスを公開します。
 
-詳細については、次を参照してください。 [GpuMmu モデル](gpummu-model.md)します。
+詳細については、[GpuMmu モデル](gpummu-model.md)を参照してください。
 
 <span id="IoMmu_model"></span><span id="iommu_model"></span><span id="IOMMU_MODEL"></span>IoMmu モデル  
 *IoMmu*モデル、CPU と GPU は、一般的なアドレス空間とページ テーブルを共有します。
 
-詳細については、次を参照してください。 [IoMmu モデル](iommu-model.md)します。
+詳細については、[IoMmu モデル](iommu-model.md)を参照してください。
 
  
 

@@ -21,7 +21,7 @@ ms.locfileid: "56572044"
 
 **kd -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、次を参照してください。 [ **KD コマンド ライン オプション**](kd-command-line-options.md)します。
+**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、[ **KD コマンド ライン オプション**](kd-command-line-options.md)を参照してください。
 
 ## <a name="span-idkdcommandlinespanspan-idkdcommandlinespanspan-idkdcommandlinespankd-command-line"></a><span id="KD_Command_Line"></span><span id="kd_command_line"></span><span id="KD_COMMAND_LINE"></span>KD コマンドライン
 

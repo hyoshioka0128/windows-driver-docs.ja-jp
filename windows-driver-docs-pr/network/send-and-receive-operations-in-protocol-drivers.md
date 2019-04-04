@@ -24,11 +24,11 @@ ms.locfileid: "56575092"
 
 
 
-2 つの異なるインターフェイスの送信し、NDIS プロトコル ドライバーで受信操作があります。 コネクションレスの低い edge 呼び出しでドライバーをプロトコル、 [ **NdisSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564535)ネットワーク データを送信する関数。 コネクションレスのプロトコルのドライバーを指定する必要があります、 [ **ProtocolReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570267)関数。 NDIS 呼び出し*ProtocolReceiveNetBufferLists*基になるコネクションレス ミニポート ドライバーを呼び出すと、 [ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)関数受信したネットワーク データを示します。 コネクションレスのプロトコルのドライバーでのデータの送受信の詳細については、次を参照してください。[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)します。
+2 つの異なるインターフェイスの送信し、NDIS プロトコル ドライバーで受信操作があります。 コネクションレスの低い edge 呼び出しでドライバーをプロトコル、 [ **NdisSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564535)ネットワーク データを送信する関数。 コネクションレスのプロトコルのドライバーを指定する必要があります、 [ **ProtocolReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570267)関数。 NDIS 呼び出し*ProtocolReceiveNetBufferLists*基になるコネクションレス ミニポート ドライバーを呼び出すと、 [ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)関数受信したネットワーク データを示します。 コネクションレスのプロトコルのドライバーでのデータの送受信の詳細については、[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)を参照してください。
 
-接続指向の NDIS (いる CoNDIS) プロトコルのドライバーの呼び出し、 [ **NdisCoSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff561728)ネットワーク データを送信する関数。 いる CoNDIS プロトコルのドライバーを指定する必要があります、 [ **ProtocolCoReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570256)関数。 NDIS 呼び出し*ProtocolCoReceiveNetBufferLists*を基になるいる CoNDIS ミニポート ドライバーを呼び出すと、 [ **NdisMCoIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563561)を示すために関数受信したネットワーク データ。 送信と、接続指向プロトコル ドライバーには操作の詳細については、次を参照してください。 [Connection-Oriented 操作](connection-oriented-operations.md)します。
+接続指向の NDIS (いる CoNDIS) プロトコルのドライバーの呼び出し、 [ **NdisCoSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff561728)ネットワーク データを送信する関数。 いる CoNDIS プロトコルのドライバーを指定する必要があります、 [ **ProtocolCoReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570256)関数。 NDIS 呼び出し*ProtocolCoReceiveNetBufferLists*を基になるいる CoNDIS ミニポート ドライバーを呼び出すと、 [ **NdisMCoIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563561)を示すために関数受信したネットワーク データ。 送信と、接続指向プロトコル ドライバーには操作の詳細については、[Connection-Oriented 操作](connection-oriented-operations.md)を参照してください。
 
-送信し、受信操作の概要については、次を参照してください。[送信および受信操作](send-and-receive-operations.md)します。
+送信し、受信操作の概要については、[送信および受信操作](send-and-receive-operations.md)を参照してください。
 
  
 

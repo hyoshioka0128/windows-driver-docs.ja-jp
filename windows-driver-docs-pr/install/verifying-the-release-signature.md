@@ -78,7 +78,7 @@ Windows エクスプ ローラーで、カタログ ファイル自体のデジ�
 
 -   デジタル署名されたファイルの場合、ファイルの**プロパティ** ダイアログ ボックスが追加**デジタル署名**を タブ、署名、タイムスタンプ、およびファイルの署名に使用された証明書の詳細表示されます。
 
-ドライバー パッケージをリリース署名する方法の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[カタログ ファイルの署名の SPC 検証](verifying-the-spc-signature-of-a-catalog-file.md)です。
+ドライバー パッケージをリリース署名する方法の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[カタログ ファイルの署名の SPC 検証](verifying-the-spc-signature-of-a-catalog-file.md)を参照してください。
 
  
 

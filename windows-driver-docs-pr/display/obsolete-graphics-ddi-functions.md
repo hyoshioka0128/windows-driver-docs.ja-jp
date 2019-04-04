@@ -23,7 +23,7 @@ ms.locfileid: "56556901"
 
 次の図に DDI 関数が表示されます、 *winddi.h*ヘッダーは Windows 2000 の廃止され、それ以降。
 
-古い形式の GDI 関数と構造体の一覧は、次を参照してください。[廃止された GDI 関数、構造、および定数](obsolete-gdi-functions--structures--and-constants.md)します。
+古い形式の GDI 関数と構造体の一覧は、[廃止された GDI 関数、構造、および定数](obsolete-gdi-functions--structures--and-constants.md)を参照してください。
 
 -   **DrvMovePanning**
 

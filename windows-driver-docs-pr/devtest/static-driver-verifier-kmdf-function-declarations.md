@@ -24,7 +24,7 @@ SDV には、KMDF ドライバーを確認するを有効にするにはロー�
 EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 ```
 
-コールバック関数に関数のプロトタイプ宣言がある場合とロールの種類の関数の宣言、関数プロトタイプを置き換える必要があります。 関数の役割の種類の宣言に関する詳細については、次を参照してください。[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。
+コールバック関数に関数のプロトタイプ宣言がある場合とロールの種類の関数の宣言、関数プロトタイプを置き換える必要があります。 関数の役割の種類の宣言に関する詳細については、[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)を参照してください。
 
 次の表は、コールバック関数の型と関連付けられているイベントのコールバック関数を示します。
 
@@ -427,7 +427,7 @@ EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 
 ### <a name="span-idfunctionroletypesthatallowmultiplecallbackfunctionsspanspan-idfunctionroletypesthatallowmultiplecallbackfunctionsspanfunction-role-types-that-allow-multiple-callback-functions"></a><span id="function_role_types_that_allow_multiple_callback_functions"></span><span id="FUNCTION_ROLE_TYPES_THAT_ALLOW_MULTIPLE_CALLBACK_FUNCTIONS"></span>複数のコールバック関数を許可する関数のロールの種類
 
-複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、ドライバーが複数をある[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)または[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683)コールバック関数。 次の表では、機能ロールの種類ごとの SDV をサポートするためのコールバックの最大数を示します。 コールバック関数のテーブルの一覧の最大数よりも多くするためのドライバーに対して正しくない場合は、中には、SDV を使用する場合に、検証プロセスが複雑には。 Sdv map.h ファイルに追加のコールバック関数に対応するために必要な場合があります変更については、次を参照してください。[関数ロールの種類のエントリ ポイントが重複しています](duplicate-entry-points-for-a-function-role-type.md)します。
+複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、ドライバーが複数をある[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)または[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683)コールバック関数。 次の表では、機能ロールの種類ごとの SDV をサポートするためのコールバックの最大数を示します。 コールバック関数のテーブルの一覧の最大数よりも多くするためのドライバーに対して正しくない場合は、中には、SDV を使用する場合に、検証プロセスが複雑には。 Sdv map.h ファイルに追加のコールバック関数に対応するために必要な場合があります変更については、[関数ロールの種類のエントリ ポイントが重複しています](duplicate-entry-points-for-a-function-role-type.md)を参照してください。
 
 <table>
 <colgroup>
@@ -478,7 +478,7 @@ EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 
 宣言するときに次の関数のロールの種類を使用して、[要求ハンドラーの](https://go.microsoft.com/fwlink/p/?linkid=153345)と (順次または並列ディスパッチ) 用ドライバーを I/O 要求を配信するため、KMDF フレームワークに依存するコールバック関数。 手動で、既定のキューからの要求を (手動ディスパッチ) 他のキューに転送する関数をこれらの関数の役割の種類を使用しないでください。 SDV は、1 つのキューからの要求を追跡することを許可するメモリ モデルをサポートしていません。
 
-I/O キューの詳細については、次を参照してください。 [I/O キューの作成](https://go.microsoft.com/fwlink/p/?linkid=153346)です。
+I/O キューの詳細については、[I/O キューの作成](https://go.microsoft.com/fwlink/p/?linkid=153346)を参照してください。
 
 <table>
 <colgroup>

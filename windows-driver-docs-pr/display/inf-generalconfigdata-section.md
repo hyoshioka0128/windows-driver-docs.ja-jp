@@ -37,7 +37,7 @@ ms.locfileid: "56557287"
 <span id="MaximumNumberOfDevices_n"></span><span id="maximumnumberofdevices_n"></span><span id="MAXIMUMNUMBEROFDEVICES_N"></span>**MaximumNumberOfDevices**=*n*  
 (PCI で列挙され、ミニポート ドライバーで駆動型) としてビデオ デバイスの数が、システムに存在する必要がありますを指定します。 かどうかにこのエントリを指定する必要がありますも指定する、 **MaximumDeviceMemoryConfiguration**エントリ。 このエントリを有効にするには、再起動が必要な場合があります。 デバイス マネージャーで、デバイスの状態をチェックして再起動する必要があるかどうかを指定できます。
 
-1 つ以上のモニターをサポートする方法の詳細については、次を参照してください。[デュアル ビュー (Windows 2000 モデル) をサポートしている](supporting-dualview--windows-2000-model-.md)と[、ディスプレイ ドライバーでのマルチ モニター サポート](multiple-monitor-support-in-the-display-driver.md)します。
+1 つ以上のモニターをサポートする方法の詳細については、[デュアル ビュー (Windows 2000 モデル) をサポートしている](supporting-dualview--windows-2000-model-.md)と[、ディスプレイ ドライバーでのマルチ モニター サポート](multiple-monitor-support-in-the-display-driver.md)を参照してください。
 
 
 

@@ -60,7 +60,7 @@ ms.locfileid: "56578076"
 
 [マルチプロセッサの構文](multiprocessor-syntax.md)
 
-また、構文は、シンボルを使用して重要な役割を果たします。 詳細については、次を参照してください。[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
+また、構文は、シンボルを使用して重要な役割を果たします。 詳細については、[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)を参照してください。
 
  
 

@@ -28,9 +28,9 @@ ms.locfileid: "56570269"
 
 I/O マネージャーは、I/O 操作がバッファー内の I/O を次のように使用しているかを決定します。
 
--   [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)操作を要求します。\_バッファーに格納された\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+-   [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)操作を要求します。\_バッファーに格納された\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 詳細については、[デバイス オブジェクトを初期化して](initializing-a-device-object.md)を参照してください。
 
--   [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)要求、IOCTL コードの値には、メソッドが含まれています。\_としてバッファリングされている、 *TransferType* IOCTL 値の値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+-   [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)要求、IOCTL コードの値には、メソッドが含まれています。\_としてバッファリングされている、 *TransferType* IOCTL 値の値。 詳細については、[I/O 制御コードを定義する](defining-i-o-control-codes.md)を参照してください。
 
 次の図は、I/O マネージャーの設定方法を示しています、 **IRP\_MJ\_読み取り**バッファリングされる I/O を使用する転送操作の要求。
 
@@ -58,7 +58,7 @@ I/O マネージャーがドライバーのシステム領域バッファーを�
 
 通常、ドライバーを使用してバッファー内の I/O 一部の種類の Irp でなど[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)も使用している場合でも、要求[ダイレクト I/O](methods-for-accessing-data-buffers.md)します。 通常、ダイレクト I/O を使用するドライバーだけでこれを行う[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)を要求して、場合によってドライバー定義[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)ことを要求大量のデータ転送が必要です。
 
-すべて**IRP\_MJ\_デバイス\_コントロール**と**IRP\_MJ\_内部\_デバイス\_コントロール**要求には、I/O 制御コードが含まれます。 I/O 制御コードは、バッファー内の I/O を使用して、IRP をサポートする必要が示されている場合、I/O マネージャーは、ユーザー アプリケーションの入力を表し、出力バッファーに 1 つのシステムのバッファーを使用します。 ドライバー サポート、そのような I/O 制御コードする必要がありますバッファーから入力データを読み取る (ある場合) を指定し、出力データ (該当する場合)、入力データを上書きすることで。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+すべて**IRP\_MJ\_デバイス\_コントロール**と**IRP\_MJ\_内部\_デバイス\_コントロール**要求には、I/O 制御コードが含まれます。 I/O 制御コードは、バッファー内の I/O を使用して、IRP をサポートする必要が示されている場合、I/O マネージャーは、ユーザー アプリケーションの入力を表し、出力バッファーに 1 つのシステムのバッファーを使用します。 ドライバー サポート、そのような I/O 制御コードする必要がありますバッファーから入力データを読み取る (ある場合) を指定し、出力データ (該当する場合)、入力データを上書きすることで。 詳細については、[I/O 制御コードを定義する](defining-i-o-control-codes.md)を参照してください。
 
  
 

@@ -44,7 +44,7 @@ DCB のコンポーネントを指定します、*既定*トラフィックの�
 
 -   配列で定義されている最初のトラフィックの分類が[ **NDIS\_QOS\_分類\_要素**](https://msdn.microsoft.com/library/windows/hardware/hh451631)構造体。
 
-DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
+DCB のコンポーネントの詳細については、[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)を参照してください。
 
  
 

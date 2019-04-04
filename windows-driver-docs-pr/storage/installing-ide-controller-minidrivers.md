@@ -35,7 +35,7 @@ IDE コント ローラーのミニドライバーをインストールに関連
 
 インストールの詳細については、Windows 2000 以降のオペレーティング システムでサポートされているコント ローラーのハードウェアの一覧を含むハード ディスク コント ローラーのシステム提供の INF ファイルを参照*ある*します。
 
-Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。 [Vendor-Supplied IDE コント ローラーのミニドライバーの要件](requirements-for-vendor-supplied-ide-controller-minidrivers.md)と[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、[Vendor-Supplied IDE コント ローラーのミニドライバーの要件](requirements-for-vendor-supplied-ide-controller-minidrivers.md)と[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
 
  
 

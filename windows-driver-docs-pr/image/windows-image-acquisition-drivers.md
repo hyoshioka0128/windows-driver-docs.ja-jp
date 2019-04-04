@@ -17,7 +17,7 @@ Microsoft Windows Image Acquisition (WIA) がプログラミング インター�
 
 WIA は、Windows STI モデルから進化してきたフル装備のイメージング アーキテクチャです。 WIA は、業界標準のプロトコルなど、画像転送プロトコル (PTP) カメラの堅牢性、信頼性、一貫性のあるユーザー エクスペリエンス、および組み込みのドライバー サポートを提供します。
 
-イメージング アプリケーションのプログラミング方法の詳細については、次を参照してください。、 [WIA アプリケーション プログラミング インターフェイス](https://docs.microsoft.com/windows/desktop/wia/-wia-wia-application-programming-interface)します。
+イメージング アプリケーションのプログラミング方法の詳細については、、 [WIA アプリケーション プログラミング インターフェイス](https://docs.microsoft.com/windows/desktop/wia/-wia-wia-application-programming-interface)を参照してください。
 
 このセクションには、次のトピックが含まれています。
 

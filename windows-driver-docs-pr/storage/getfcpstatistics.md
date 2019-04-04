@@ -42,7 +42,7 @@ void GetFCPStatistics(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFCPStatistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554944)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFCPStatistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554944)構造体。
 
 *ScsiId*   
 返された場合は、型の構造体が含まれています。 [ **HBAScsiID** ](https://msdn.microsoft.com/library/windows/hardware/ff556042)デバイスを識別する情報を保持します。 この情報は、ミニポート ドライバーに配信される、 **ScsiId**のメンバー、 [ **GetFCPStatistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554942)構造体。

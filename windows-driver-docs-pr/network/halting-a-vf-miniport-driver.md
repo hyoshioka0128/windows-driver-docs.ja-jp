@@ -14,7 +14,7 @@ ms.locfileid: "56573729"
 # <a name="halting-a-vf-miniport-driver"></a>VF ミニポート ドライバーの停止
 
 
-VF のミニポート ドライバーが任意の NDIS ミニポート ドライバーと同じ手順に従うときにその[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数が呼び出されます。 次の手順の詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
+VF のミニポート ドライバーが任意の NDIS ミニポート ドライバーと同じ手順に従うときにその[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数が呼び出されます。 次の手順の詳細については、[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)を参照してください。
 
  
 

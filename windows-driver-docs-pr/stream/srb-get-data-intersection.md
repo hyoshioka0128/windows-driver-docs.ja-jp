@@ -40,7 +40,7 @@ ms.locfileid: "56570997"
 
 クラスのドライバーを満たすためにこの要求を使用して[ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](ksproperty-pin-dataintersection.md)プロパティ要求。 フィードのいずれかのクラス ドライバー [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)ようにミニドライバーに要求が戻るまでミニドライバーに一度に、 *pSrb* - &gt;**状態**STATUS の値\_成功します。 ミニドライバーは、DataRange.Specifier 値内の一致を確認します。
 
-一般に、その形式でストリームを開く、結果として得られるデータ形式をすぐに使用します。 データ形式とデータの範囲の詳細については、次を参照してください。 [AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+一般に、その形式でストリームを開く、結果として得られるデータ形式をすぐに使用します。 データ形式とデータの範囲の詳細については、[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)を参照してください。
 
  
 

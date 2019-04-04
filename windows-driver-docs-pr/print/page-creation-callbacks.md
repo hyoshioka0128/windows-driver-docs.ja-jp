@@ -30,7 +30,7 @@ CPSUI の**CommonPropertySheetUI**関数がすぐに PFNPROPSHEETUI に型指定
 
 ![アプリケーション cpsui 通信を示す図](images/comprop.png)
 
-詳細については、次を参照してください。[メソッドを指定するページの](methods-for-specifying-pages.md)します。
+詳細については、[メソッドを指定するページの](methods-for-specifying-pages.md)を参照してください。
 
  
 

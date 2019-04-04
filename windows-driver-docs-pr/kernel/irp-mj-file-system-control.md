@@ -16,7 +16,7 @@ ms.locfileid: "56560305"
 # <a name="irpmjfilesystemcontrol"></a>IRP\_MJ\_ファイル\_システム\_コントロール
 
 
-ファイル システム ドライバー プロセスのみ**IRP\_MJ\_ファイル\_システム\_コントロール**要求。 ファイル システム ドライバーによってこの IRP の主な機能コードの使用に関する詳細については、次を参照してください。 [ **IRP\_MJ\_ファイル\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548670)します。 ファイル システム ドライバーの詳細については、次を参照してください。[ファイル システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540376)します。
+ファイル システム ドライバー プロセスのみ**IRP\_MJ\_ファイル\_システム\_コントロール**要求。 ファイル システム ドライバーによってこの IRP の主な機能コードの使用に関する詳細については、[ **IRP\_MJ\_ファイル\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548670)を参照してください。 ファイル システム ドライバーの詳細については、[ファイル システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540376)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

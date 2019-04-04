@@ -26,7 +26,7 @@ OID\_WWAN\_デバイス\_CAP 返します方式のサポートを含む、MB デ
 
 Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更新されましたがします。 Windows 8 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_2**の*クエリ*要求。 Windows 7 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 **NDIS\_WWAN\_デバイス\_CAP**構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_1**の*クエリ*要求。
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN ドライバーの初期化プロシージャ](https://msdn.microsoft.com/library/windows/hardware/ff557186)します。
+詳細については、この OID を使用して、[WWAN ドライバーの初期化プロシージャ](https://msdn.microsoft.com/library/windows/hardware/ff557186)を参照してください。
 
 処理クエリ、操作が、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでください、ミニポート ドライバーはデバイスのメモリにアクセスできます。
 

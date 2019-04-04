@@ -21,9 +21,9 @@ ms.locfileid: "56572885"
 ## <a name="span-idddksourcepathdbgspanspan-idddksourcepathdbgspansource-path"></a><span id="ddk_source_path_dbg"></span><span id="DDK_SOURCE_PATH_DBG"></span>ソース パス
 
 
-ソース パスは、C および C++ ソース ファイルが配置されるディレクトリを指定します。 デバッガーでソース コードを表示する方法の詳細については、次を参照してください。[ソース コード](source-code.md)します。
+ソース パスは、C および C++ ソース ファイルが配置されるディレクトリを指定します。 デバッガーでソース コードを表示する方法の詳細については、[ソース コード](source-code.md)を参照してください。
 
-**注**  ソース サーバーを使用するソース ファイルにアクセスする最も効率的な方法は、企業ネットワークに接続している場合。 移行元サーバーを使用するには、srv を使用して\*ソース パス内の文字列。 移行元サーバーの詳細については、次を参照してください。[移行元サーバーを使用して](using-a-source-server.md)します。
+**注**  ソース サーバーを使用するソース ファイルにアクセスする最も効率的な方法は、企業ネットワークに接続している場合。 移行元サーバーを使用するには、srv を使用して\*ソース パス内の文字列。 移行元サーバーの詳細については、[移行元サーバーを使用して](using-a-source-server.md)を参照してください。
 
  
 
@@ -73,7 +73,7 @@ WinDbg でソース パスを制御するには、次のいずれかの操作を
 
 ### <a name="span-idusingthesourcewindowspanspan-idusingthesourcewindowspanusing-the-source-window"></a><span id="using_the_source_window"></span><span id="USING_THE_SOURCE_WINDOW"></span>ソース ウィンドウを使用します。
 
-各ソース ウィンドウには、1 つのソース ファイルのテキストが表示されます。 デバッガーでのソース ファイルを編集することはできません。 フォントとタブの設定を変更する方法についての詳細については、次を参照してください。[テキストのプロパティを変更する](changing-text-properties.md)します。
+各ソース ウィンドウには、1 つのソース ファイルのテキストが表示されます。 デバッガーでのソース ファイルを編集することはできません。 フォントとタブの設定を変更する方法についての詳細については、[テキストのプロパティを変更する](changing-text-properties.md)を参照してください。
 
 各ソース ウィンドウには、その他のコマンドをショートカット メニューがあります。 メニューにアクセスするタイトル バーを右クリックするか、ウィンドウ (右上隅近くに表示されるアイコンをクリックします。![ソース ウィンドウのツールバーのショートカット メニューを表示するボタンのスクリーン ショット](images/window-source-icon.png)). 次の一覧では、メニュー コマンドの一部について説明します。
 
@@ -117,7 +117,7 @@ WinDbg でソース パスを制御するには、次のいずれかの操作を
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソースのデバッグと関連するコマンドの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。
+ソースのデバッグと関連するコマンドの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
 
  
 

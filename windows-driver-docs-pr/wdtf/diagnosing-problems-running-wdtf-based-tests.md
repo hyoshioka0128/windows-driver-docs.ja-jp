@@ -20,7 +20,7 @@ WDTF ベースのテストを実行している問題をトラブルシューテ
 
 
 1.  構成し、カーネル デバッガーを WDTF ベースのテストを実行しているコンピューターに接続します。 参照してください[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
-2.  Te.exe プロセスとスイッチを検索するには、そのプロセスのコンテキスト。 Te.exe については、次を参照してください。[テストの作成および実行フレームワーク (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)します。
+2.  Te.exe プロセスとスイッチを検索するには、そのプロセスのコンテキスト。 Te.exe については、[テストの作成および実行フレームワーク (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)を参照してください。
 
     ``` syntax
     !process 0 0 Te.exe 

@@ -58,9 +58,9 @@ KS オーディオ アダプター デバイス用のドライバーでは、オ
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください、 *Ddksynth.inf* INF ファイルでのソフトウェアのシンセサイザー サンプルに含まれている、 *src\\オーディオ\\ddksynth。* WDK のディレクトリ。
 
-シンセサイザーの詳細については、次を参照してください。 [MIDI と DirectMusic フィルター](https://msdn.microsoft.com/library/windows/hardware/ff537520)します。
+シンセサイザーの詳細については、[MIDI と DirectMusic フィルター](https://msdn.microsoft.com/library/windows/hardware/ff537520)を参照してください。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

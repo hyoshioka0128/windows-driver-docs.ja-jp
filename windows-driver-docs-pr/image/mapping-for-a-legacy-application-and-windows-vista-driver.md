@@ -123,7 +123,7 @@ ms.locfileid: "56550304"
 
 詳細については、従来の転送でメッセージを参照してください、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)します。
 
-TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
+TYMED 定数の詳細については、[理解 TYMED](understanding-tymed.md)を参照してください。
 
 **IStream**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
 

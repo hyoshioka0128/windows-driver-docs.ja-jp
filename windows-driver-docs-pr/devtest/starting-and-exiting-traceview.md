@@ -41,7 +41,7 @@ Traceview で終了するなど、他の方法で開始されたトレース セ
 
 コマンドラインで traceview でを起動するには、コマンド プロンプト ウィンドウを開きに移動します、\\ツール\\トレース\\の WDK、およびなど、traceview でコマンドを入力し、i386 ディレクトリ**traceview で/でしょうか。** します。 (入力した場合**traceview で**パラメーターなしで traceview でウィンドウが表示されます)。
 
-Traceview でコマンドについては、次を参照してください。 [traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)します。
+Traceview でコマンドについては、[traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)を参照してください。
 
  
 

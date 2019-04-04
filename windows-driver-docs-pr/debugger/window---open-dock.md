@@ -20,11 +20,11 @@ ms.locfileid: "56572162"
 ## <span id="ddk_window_open_dock_dbg"></span><span id="DDK_WINDOW_OPEN_DOCK_DBG"></span>
 
 
-クリックして**開いてドッキング**上、**ウィンドウ**新しいドッキング ステーションを作成するメニュー。 A*ドッキング*独立したウィンドウで、デバッグ情報のウィンドウにドラッグすることができます。 ドッキングの詳細については、次を参照してください。[を作成する新しいドッキング](creating-a-new-dock.md)します。
+クリックして**開いてドッキング**上、**ウィンドウ**新しいドッキング ステーションを作成するメニュー。 A*ドッキング*独立したウィンドウで、デバッグ情報のウィンドウにドラッグすることができます。 ドッキングの詳細については、[を作成する新しいドッキング](creating-a-new-dock.md)を参照してください。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
+Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
 
  
 

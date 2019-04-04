@@ -18,9 +18,9 @@ ms.locfileid: "56579258"
 
 ドライバーによってフレームワークの割り込みオブジェクトが公開されている、 [ **IWDFInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/hh451283)インターフェイス。 これは、ハードウェア割り込みを表します。 割り込みオブジェクトの子である[UMDF デバイス オブジェクト](framework-device-object.md)します。 ドライバーを呼び出すことができます、 [ **IWDFDevice3::CreateInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/hh451208)割り込みオブジェクトを作成するメソッド。
 
-ドライバーは、割り込みを作成するときに、インターフェイスに関連するイベントが発生した場合、ドライバーに通知するフレームワークから呼び出されるコールバック関数のインターフェイスを提供できます。 詳細については、次を参照してください。 [UMDF 割り込みオブジェクト イベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/hh463979)します。
+ドライバーは、割り込みを作成するときに、インターフェイスに関連するイベントが発生した場合、ドライバーに通知するフレームワークから呼び出されるコールバック関数のインターフェイスを提供できます。 詳細については、[UMDF 割り込みオブジェクト イベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/hh463979)を参照してください。
 
-割り込みオブジェクトの詳細については、次を参照してください。[処理割り込み](handling-interrupts.md)します。
+割り込みオブジェクトの詳細については、[処理割り込み](handling-interrupts.md)を参照してください。
 
  
 

@@ -34,7 +34,7 @@ I/O マネージャーは、マルチタス キング、マルチ スレッド �
 
 -   A [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858) 、日常的な I/O マネージャーが Irp の I/O 操作を開始するドライバーを呼び出しますがキューに登録するシステム提供の IRP キュー (を参照してください[ **IoStartPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550370)).
 
--   内部 IRP のキューおよびデキューのメカニズムは、それよりも高速には Irp を管理するドライバーを使用して満たすことが。 ドライバーは、デバイスのキュー、インタロックされたキュー、またはキャンセルの安全なキューを使用できます。 詳細については、次を参照してください。 [Driver-Managed IRP キュー](driver-managed-irp-queues.md)します。
+-   内部 IRP のキューおよびデキューのメカニズムは、それよりも高速には Irp を管理するドライバーを使用して満たすことが。 ドライバーは、デバイスのキュー、インタロックされたキュー、またはキャンセルの安全なキューを使用できます。 詳細については、[Driver-Managed IRP キュー](driver-managed-irp-queues.md)を参照してください。
 
 最下位レベルのデバイス ドライバを満たすことができます、ディスパッチ ルーチンですべての可能な IRP の完了を必要なしのみ*StartIo*ルーチンと Irp のドライバー管理キューがありません。
 
@@ -54,7 +54,7 @@ I/O マネージャーは、マルチタス キング、マルチ スレッド �
 
 いくつかの基になるデバイスのドライバーに要求を送信するより高度なドライバーが Irp の内部キューを維持することがありますもできます。 たとえば、ファイル システム ドライバーは、Irp の内部キューをほぼ常にあります。
 
-詳細については、次を参照してください。 [Driver-Managed IRP キュー](driver-managed-irp-queues.md)します。
+詳細については、[Driver-Managed IRP キュー](driver-managed-irp-queues.md)を参照してください。
 
 ### <a name="internal-queue-synchronization"></a>内部キューの同期
 

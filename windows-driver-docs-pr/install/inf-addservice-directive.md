@@ -105,7 +105,7 @@ AddService = ,2.
 
 システム定義の大文字と拡張機能を挿入できる、 <em>DDInstall</em>**します。サービス**を含むセクション、 **AddService**クロス オペレーティング システムやクロス プラットフォーム INF ファイルでプラットフォーム固有または OS 固有のインストールを指定するディレクティブ。
 
-各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 **AddService**ディレクティブは名前付き参照する必要があります*サービス-インストール セクション*INF ファイルで別の場所。 このような各セクションでは、次の形式があります。
 
@@ -208,12 +208,12 @@ SERVICE_xxxx 定数で定義されて*Wdm.h*と*Ntddk.h*します。
 この省略可能なエントリでは、このデバイスを表すドライバー オブジェクトの名前を指定します。 場合*型コード*指定**1** (SERVICE_KERNEL_DRIVER) または**2** (SERVICE_FILE_SYSTEM_DRIVER) この名前は I/O マネージャーが読み込みに使用するドライバー オブジェクト名、ドライバー。
 
 <a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*add-registry-section*\[**,**<em>add-registry-section</em>\]...  
-1 つを参照またはより INF ライター-定義*追加レジストリ セクション*で新しくインストールしたサービスに関連するすべてのレジストリ情報が設定されています。 **HKR**などの仕様、*追加レジストリ セクション*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)します。
+1 つを参照またはより INF ライター-定義*追加レジストリ セクション*で新しくインストールしたサービスに関連するすべてのレジストリ情報が設定されています。 **HKR**などの仕様、*追加レジストリ セクション*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。 詳細については、[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)を参照してください。
 
 サービス インストール セクションには、このディレクティブを使用ことはほとんどありません。
 
 <a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=*del-registry-section*\[**,**<em>del-registry-section</em>\]...  
-1 つを参照またはより INF ライター-定義*del のセクション レジストリ*関連レジストリで、既にインストールされているサービスの情報が削除されます。 **HKR**などの仕様、 *del-section レジストリ*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。 詳細については、次を参照してください。 [ **INF してディレクティブ**](inf-delreg-directive.md)します。
+1 つを参照またはより INF ライター-定義*del のセクション レジストリ*関連レジストリで、既にインストールされているサービスの情報が削除されます。 **HKR**などの仕様、 *del-section レジストリ*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。 詳細については、[ **INF してディレクティブ**](inf-delreg-directive.md)を参照してください。
 
 このディレクティブは使用がほとんどない、*サービス-インストール セクション*が、同じデバイス ドライバー/サービスの以前のインストール用にレジストリを「更新」する INF で使用する場合があります。
 
@@ -237,9 +237,9 @@ A*依存、上の項目の名前*このデバイス/ドライバーが依存し�
 <a href="" id="security--security-descriptor-string-"></a>**セキュリティ**="*セキュリティ記述子の文字列*"  
 サービスに適用する、セキュリティ記述子を指定します。 このセキュリティ記述子には、開始、停止、およびサービスの構成などの操作を実行するために必要なアクセス許可を指定します。 *セキュリティ記述子の文字列*値を DACL を示すためにトークンを使用する文字列です (**d:**) セキュリティ コンポーネント。
 
-セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
+セキュリティ記述子文字列については、[セキュリティ記述子定義言語 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)を参照してください。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
 
-セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
+セキュリティ記述子を指定する方法の詳細については、[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)を参照してください。
 
 ### <a name="specifying-driver-load-order"></a>ドライバーの読み込み順序の指定
 

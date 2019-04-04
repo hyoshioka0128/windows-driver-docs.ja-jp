@@ -23,7 +23,7 @@ ms.locfileid: "56571795"
 
 このセクションでは、Network Driver Interface Specification (NDIS) 6.1 を紹介し、その主要な設計の追加機能について説明します。 NDIS 6.1 は、Service Pack 1 (SP1) オペレーティング システムと Windows Server 2008 および Windows Vista に含まれます。
 
-知っておくべき NDIS 6.0 NDIS 6.1 について学習する前にします。 NDIS 6.0 の詳細については、次を参照してください。 [NDIS 6.0 の概要](introduction-to-ndis-6-0.md)します。
+知っておくべき NDIS 6.0 NDIS 6.1 について学習する前にします。 NDIS 6.0 の詳細については、[NDIS 6.0 の概要](introduction-to-ndis-6-0.md)を参照してください。
 
 ここでは、次のトピックについて説明します。
 

@@ -45,7 +45,7 @@ ms.locfileid: "56577802"
 
 デバッガー エンジン API は、ヘッダー ファイルの dbgeng.h でプロトタイプによって指定されます。
 
-詳細については、次を参照してください。[デバッガー エンジンの概要](debugger-engine-overview.md)と[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)します。
+詳細については、[デバッガー エンジンの概要](debugger-engine-overview.md)と[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)を参照してください。
 
 .
 
@@ -57,11 +57,11 @@ ms.locfileid: "56577802"
 
 -   *DbgEng 拡張 Dll*します。 これらは、dbgeng.h ヘッダー ファイルでのプロトタイプに基づいています。 この型の各 DLL には、DbgEng 拡張機能のコマンドをエクスポートできます。 これらの拡張機能コマンドでは、デバッガー エンジン API を使用し、WdbgExts API を使用することもできます。
 
-    詳細については、次を参照してください。 [DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)です。
+    詳細については、[DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)を参照してください。
 
 -   *EngExtCpp 拡張 Dll*します。 これらは、engextcpp.h と dbgeng.h ヘッダー ファイルでのプロトタイプに基づいています。 この型の各 DLL には、DbgEng 拡張機能のコマンドをエクスポートできます。 これらの拡張機能コマンドでは、デバッガー エンジン API と、EngExtCpp 拡張フレームワークの両方を使用し、WdbgExts API を使用することもできます。
 
--   *WdbgExts 拡張 Dll*します。 これらは、wdbgexts.h ヘッダー ファイルでのプロトタイプに基づいています。 この型の各 DLL は、1 つまたは複数の WdbgExts 拡張機能のコマンドをエクスポートします。 これらの拡張機能コマンドでは、排他的 WdbgExts API を使用します。 詳細については、次を参照してください。 [WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)です。
+-   *WdbgExts 拡張 Dll*します。 これらは、wdbgexts.h ヘッダー ファイルでのプロトタイプに基づいています。 この型の各 DLL は、1 つまたは複数の WdbgExts 拡張機能のコマンドをエクスポートします。 これらの拡張機能コマンドでは、排他的 WdbgExts API を使用します。 詳細については、[WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)を参照してください。
 
 拡張機能またはスタンドアロンのアプリケーションを作成する DbgEng API を使用できます。 WdbgExts API では、デバッガー エンジン API の機能のサブセットが含まれており、拡張機能でのみ使用できます。
 
@@ -79,12 +79,12 @@ ms.locfileid: "56577802"
 ## <a name="span-iddmlspanspan-iddmlspancustomizing-debugger-output-using-dml"></a><span id="DML"></span><span id="dml"></span>DML を使用して出力をデバッガーのカスタマイズ
 
 
-DML を使用して出力をデバッガーをカスタマイズすることができます。 詳細については、次を参照してください。 [DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)します。
+DML を使用して出力をデバッガーをカスタマイズすることができます。 詳細については、[DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)を参照してください。
 
 ## <a name="span-idjavascriptspanspan-idjavascriptspanspan-idjavascriptspanusing-javascript-to-extend-the-capabilities-of-the-debugger"></a><span id="JavaScript"></span><span id="javascript"></span><span id="JAVASCRIPT"></span>JavaScript を使用して、デバッガーの機能を拡張するには
 
 
-デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成するのにには、JavaScript を使用します。 JavaScript のプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。 詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。
+デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成するのにには、JavaScript を使用します。 JavaScript のプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。 詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。
 
  
 

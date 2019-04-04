@@ -23,7 +23,7 @@ ms.locfileid: "56571209"
 
 -   互いに通信するポートおよびミニポートのドライバーを使用するインターフェイスです。
 
-さまざまな PortCls 関数およびインターフェイスが、オペレーティング システムのバージョンがサポートについては、次を参照してください。[オペレーティング システムによって PortCls サポート](https://msdn.microsoft.com/library/windows/hardware/ff537762)します。
+さまざまな PortCls 関数およびインターフェイスが、オペレーティング システムのバージョンがサポートについては、[オペレーティング システムによって PortCls サポート](https://msdn.microsoft.com/library/windows/hardware/ff537762)を参照してください。
 
 このセクションでは、次のトピックが表示されます。
 

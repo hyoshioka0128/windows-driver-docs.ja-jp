@@ -58,7 +58,7 @@ ms.locfileid: "56574302"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-システム障害の後で使用できるオプションの説明と関連するコマンドの概要については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
+システム障害の後で使用できるオプションの説明と関連するコマンドの概要については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

@@ -30,7 +30,7 @@ Windows 2000 以降、COM ポートは、次の要件に準拠するシリアル
 
 既定でポートのクラスのインストーラーの結合操作[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)シリアル関数ドライバーは、COM ポートとしてデバイスを構成するとします。
 
-ポート クラスのインストーラーとシリアルの COM ポートの COM ポート デバイス インターフェイスを作成する方法については、次を参照してください。[外部名前付けの COM ポート](external-naming-of-com-ports.md)します。
+ポート クラスのインストーラーとシリアルの COM ポートの COM ポート デバイス インターフェイスを作成する方法については、[外部名前付けの COM ポート](external-naming-of-com-ports.md)を参照してください。
 
  
 

@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](ht
 
 ディスプレイのミニポート ドライバーは、この直接呼出しの明るさコントロールのインターフェイスをサポートしている場合[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_BRIGHTNESS を指定します。
 
-明るさのデバイスについては、次を参照してください。[統合表示パネルの明るさコントロールをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569755)と[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)します。
+明るさのデバイスについては、[統合表示パネルの明るさコントロールをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569755)と[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

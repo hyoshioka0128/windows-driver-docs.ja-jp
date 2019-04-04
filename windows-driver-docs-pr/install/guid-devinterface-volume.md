@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_VOLUME[デバイス インターフェイス クラス](https:
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、 [Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)古い形式の識別子を使用する[ **VolumeClassGuid** ](volumeclassguid.md)GUID_DEVINTERFACE_VOLUME デバイス インターフェイス クラスのインスタンスを列挙します。
 
-記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)と[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff567603)します。
+記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)と[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff567603)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

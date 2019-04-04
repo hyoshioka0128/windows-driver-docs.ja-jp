@@ -21,7 +21,7 @@ ms.locfileid: "56553693"
 
 このトピックでは、Wudfext.dll デバッガー拡張機能を使用して、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のドライバーによって使用されるオブジェクトに関する情報を表示する方法について説明します。
 
-以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、次を参照してください。 [Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)します。
+以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、[Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)を参照してください。
 
 UMDF バージョン 1 のオブジェクトに関する情報を表示するのには、次の手順を実行できます。
 

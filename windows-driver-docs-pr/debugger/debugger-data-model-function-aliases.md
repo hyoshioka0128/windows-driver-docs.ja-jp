@@ -16,7 +16,7 @@ ms.locfileid: "56572351"
 
 関数のエイリアスは、一意の短い名前 (C++ または JavaScript などのいくつかのスクリプト環境で記述された) かどうかは、デバッガーの拡張機能で定義されている機能をデバッガーのユーザーからアクセスできます。 データ モデルの関数オブジェクト (IModelMethod を実装するオブジェクト) に関連付けられたこの短い名前を取得します。 その関数は、任意の数の引数を受け取り、1 つの値を返します。 関数のエイリアスとを呼び出すことの効果の値は、関数のエイリアスを呼び出す方法とどのようなホスト デバッガーによって異なります内で呼び出されます。 
 
-このトピックでは、リーダーがデバッガー オブジェクト モデル ファイルと JavaScript に精通する前提としています。 JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。
+このトピックでは、リーダーがデバッガー オブジェクト モデル ファイルと JavaScript に精通する前提としています。 JavaScript でデバッガー オブジェクトの使用方法の詳細については、[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
 
 いくつかの例を使用して次のとおり、dx コマンドの使用に関する詳細については、dx コマンドを参照してください[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)します。 さらに、LINQ を使用して説明されている[デバッガー オブジェクトで LINQ を使用して](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-linq-with-the-debugger-objects)します。
 
@@ -164,7 +164,7 @@ function initializeScript()
 ```
 
 
-次のように LINQ コマンドは、関数型エイリアス - で使用できます。すべての。存在する。カウントします。まずは。、フラット化します。GroupBy、します。前の。OrderBy、します。OrderByDescending、します。選択するとします。どこ。 これらのメソッドが (可能な限り) に従って、 C# LINQ メソッド フォーム。 詳細については、次を参照してください。[デバッガー オブジェクトで LINQ を使用して](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-linq-with-the-debugger-objects)します。
+次のように LINQ コマンドは、関数型エイリアス - で使用できます。すべての。存在する。カウントします。まずは。、フラット化します。GroupBy、します。前の。OrderBy、します。OrderByDescending、します。選択するとします。どこ。 これらのメソッドが (可能な限り) に従って、 C# LINQ メソッド フォーム。 詳細については、[デバッガー オブジェクトで LINQ を使用して](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-linq-with-the-debugger-objects)を参照してください。
 
 
 

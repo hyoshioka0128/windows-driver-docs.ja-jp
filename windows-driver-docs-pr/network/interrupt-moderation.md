@@ -31,7 +31,7 @@ ms.locfileid: "56573782"
 
 NDIS 6.0 とそれ以降のミニポート ドライバーをサポートする必要があります、 [OID\_GEN\_INTERRUPT\_モデレート](https://msdn.microsoft.com/library/windows/hardware/ff569590)OID が設定され、要求のクエリを実行します。 セットの要求を有効にまたは割り込み節度を無効にするミニポート ドライバーに指示し、クエリ要求は、割り込み節度の現在の状態を報告します。
 
-サポートの割り込み節度ミニポート ドライバーはこの機能既定でオンにしない限り、 **InterruptModeration**レジストリの標準のキーワードを無効にします。 標準のキーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+サポートの割り込み節度ミニポート ドライバーはこの機能既定でオンにしない限り、 **InterruptModeration**レジストリの標準のキーワードを無効にします。 標準のキーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
  
 

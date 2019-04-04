@@ -24,7 +24,7 @@ OID\_WWAN\_PIN\_リストが MB デバイスでサポートされている個人
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)します。
+詳細については、この OID を使用して、[WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)を参照してください。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできる処理がクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 

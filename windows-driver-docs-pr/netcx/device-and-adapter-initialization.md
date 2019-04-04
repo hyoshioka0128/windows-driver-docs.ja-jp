@@ -17,7 +17,7 @@ ms.locfileid: "56582446"
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-このトピックでは、NetAdapterCx クライアント ドライバーを初期化して WDFDEVICE および NETADAPTER オブジェクトを開始する手順について説明します。 これらのオブジェクトとの関係に関する詳細については、次を参照してください。[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)します。
+このトピックでは、NetAdapterCx クライアント ドライバーを初期化して WDFDEVICE および NETADAPTER オブジェクトを開始する手順について説明します。 これらのオブジェクトとの関係に関する詳細については、[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)を参照してください。
 
 ## <a name="evtwdfdriverdeviceadd"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
@@ -102,7 +102,7 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     ...
     ```
 
-必要に応じて、NETADAPTER オブジェクトにコンテキストの領域を追加できます。 WDF のオブジェクトに対するコンテキストを設定することができますので、WDFDEVICE と NETADAPTER オブジェクトに対して別のコンテキストの領域を追加できます。 手順 3 での例で、クライアントの追加`MY_ADAPTER_CONTEXT`NETADAPTER オブジェクトにします。 詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](../wdf/framework-object-context-space.md)します。
+必要に応じて、NETADAPTER オブジェクトにコンテキストの領域を追加できます。 WDF のオブジェクトに対するコンテキストを設定することができますので、WDFDEVICE と NETADAPTER オブジェクトに対して別のコンテキストの領域を追加できます。 手順 3 での例で、クライアントの追加`MY_ADAPTER_CONTEXT`NETADAPTER オブジェクトにします。 詳細については、[フレームワーク オブジェクト コンテキストの空間](../wdf/framework-object-context-space.md)を参照してください。
 
 WDFDEVICE のコンテキストでのデバイス関連データを配置し、リンク層などのネットワーク関連のデータは、NETADAPTER コンテキストに対処することをお勧めします。 既存の NDIS 6.x ドライバーを移植する場合はネットワーク関連およびデバイス関連データを 1 つのデータ構造に結合する 1 つ MiniportAdapterContext 可能性があります。 移植プロセスを簡素化するには、WDFDEVICE コンテキストにその全体の構造を変換し、NETADAPTER のコンテキストに WDFDEVICE のコンテキストを指している小規模な構造を作成します。
 

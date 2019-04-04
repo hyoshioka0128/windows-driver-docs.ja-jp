@@ -109,7 +109,7 @@ Inf2Cat を使用するには、システムの Administrators グループの�
 
 Inf2Cat を生成、[カタログ ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)カタログ ファイルは、ドライバー パッケージの INF ファイルで指定し、カタログ ファイルが 1 つ以上の指定された Windows バージョンに適用している場合にのみです。 場合、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)の INF ファイルでのみは、 **CatalogFile =**<em>filename.cat</em>にディレクティブをそのカタログ ファイルを適用全体のドライバー パッケージです。 サポートするために[クロスプラット フォームのインストール](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)、INF ファイルを含める必要があります**CatalogFile** 。<em>PlatformExtension</em>**=**<em>一意 filename.cat</em>ディレクティブ。
 
-ドライバー パッケージに署名に関する詳細については、次を参照してください。[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)と[デバイスとドライバーのインストールの基本的なトピック](https://msdn.microsoft.com/library/windows/hardware/ff541165)します。
+ドライバー パッケージに署名に関する詳細については、[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)と[デバイスとドライバーのインストールの基本的なトピック](https://msdn.microsoft.com/library/windows/hardware/ff541165)を参照してください。
 
 ## <a name="examples"></a>使用例
 
@@ -144,4 +144,4 @@ CatalogFile.ntamd64=MyCatalogFileX64.cat
 Inf2Cat /driver:C:\MyDriver /os:2000,XP_X86,XP_X64,Server2003_X86,Server2003_X64,Vista_X86,Vista_X64
 ```
 
-Inf2Cat を使用して、カタログ ファイルを作成する方法の詳細については、次を参照してください。 [PnP ドライバー パッケージのカタログ ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-a-catalog-file-for-a-pnp-driver-package)します。
+Inf2Cat を使用して、カタログ ファイルを作成する方法の詳細については、[PnP ドライバー パッケージのカタログ ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-a-catalog-file-for-a-pnp-driver-package)を参照してください。

@@ -39,7 +39,7 @@ USBPRINT\Company_NameModelNam1234
 
 ![usb プリンターのプラグ アンド プレイ](images/pnpusb01.png)
 
-次の例では、エントリ、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454) USB またはその他のバスの種類のプリンター ドライバーをインストールに使用できます。 最初の行は、USB バスでプリンターがインストールされている場合に、ランク 0 のハードウェア ID の一致を保証します。 2 行目は、別のバス上のプリンターがインストールされている場合、ランク 0 のハードウェア ID の一致を保証します。 詳細については、次を参照してください。[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)します。
+次の例では、エントリ、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454) USB またはその他のバスの種類のプリンター ドライバーをインストールに使用できます。 最初の行は、USB バスでプリンターがインストールされている場合に、ランク 0 のハードウェア ID の一致を保証します。 2 行目は、別のバス上のプリンターがインストールされている場合、ランク 0 のハードウェア ID の一致を保証します。 詳細については、[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)を参照してください。
 
 ```cpp
  "Model Name XYZ" = Install_Section_XYZ, USBPRINT\Company_NameModelNam1234, Company_NameModelNam1234 ; plus any other compatible IDs  

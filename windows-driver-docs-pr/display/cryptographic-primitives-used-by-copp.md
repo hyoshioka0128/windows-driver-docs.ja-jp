@@ -35,7 +35,7 @@ COPP では、公開キーの暗号化と復号化キーを 2,048 ビット RSA 
 COPP eXtensible rights Markup Language (XrML) デジタル証明書を使用します。
 
 <span id="Message_authentication_code__MAC_"></span><span id="message_authentication_code__mac_"></span><span id="MESSAGE_AUTHENTICATION_CODE__MAC_"></span>メッセージ認証コード (MAC)  
-COPP を 1 つのキー暗号化ブロック チェーン (CBC) を使用して-メッセージの信頼性の MAC (OMAC) のモード。 OMAC は、Advanced Encryption Standard (AES) に基づいています。 AES の詳細については、次を参照してください。、 [RSA Laboratories](https://go.microsoft.com/fwlink/p/?linkid=70411) web サイト。 OMAC の詳細については、次を参照してください。、 [OMAC 1 アルゴリズム](https://go.microsoft.com/fwlink/p/?linkid=70417)します。
+COPP を 1 つのキー暗号化ブロック チェーン (CBC) を使用して-メッセージの信頼性の MAC (OMAC) のモード。 OMAC は、Advanced Encryption Standard (AES) に基づいています。 AES の詳細については、次を参照してください。、 [RSA Laboratories](https://go.microsoft.com/fwlink/p/?linkid=70411) web サイト。 OMAC の詳細については、、 [OMAC 1 アルゴリズム](https://go.microsoft.com/fwlink/p/?linkid=70417)を参照してください。
 
  
 

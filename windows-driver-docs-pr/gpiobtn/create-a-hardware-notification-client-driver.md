@@ -38,7 +38,7 @@ ms.locfileid: "56581995"
 
     -   呼び出す[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)クライアント ドライバーのフレームワーク ドライバー オブジェクトを作成します。
 
-    -   内容を定義する、 [ **HWN\_クライアント\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/mt843560)クラスの拡張機能で使用するためのコールバック関数のポインターを含むです。 必要なコールバック関数の詳細については、次を参照してください。[ハードウェア通知参照](https://msdn.microsoft.com/library/windows/hardware/dn789336)します。
+    -   内容を定義する、 [ **HWN\_クライアント\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/mt843560)クラスの拡張機能で使用するためのコールバック関数のポインターを含むです。 必要なコールバック関数の詳細については、[ハードウェア通知参照](https://msdn.microsoft.com/library/windows/hardware/dn789336)を参照してください。
 
     -   呼び出す[HwNRegisterClient](https://msdn.microsoft.com/library/windows/hardware/mt843550)クライアント ドライバーをクラス拡張を登録します。
 

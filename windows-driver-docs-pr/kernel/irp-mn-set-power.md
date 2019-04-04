@@ -45,9 +45,9 @@ ms.locfileid: "56582385"
 
 -   場合**Parameters.Power.Type**は**DevicePowerState**、値の列挙子は、 [**デバイス\_POWER\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff543160)型。
 
-**Parameters.Power.ShutdownType**メンバーが要求された移行に関する追加情報を指定します。 このメンバーの値には**POWER\_アクション**列挙値。 詳細については、次を参照してください。[システム電源操作](https://msdn.microsoft.com/library/windows/hardware/ff564553)します。
+**Parameters.Power.ShutdownType**メンバーが要求された移行に関する追加情報を指定します。 このメンバーの値には**POWER\_アクション**列挙値。 詳細については、[システム電源操作](https://msdn.microsoft.com/library/windows/hardware/ff564553)を参照してください。
 
-以降、Windows Vista では、 **Parameters.Power.SystemPowerStateContext**メンバーは読み取り専用で、部分的に非透過的な[**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)コンピューターの前のシステム電源の状態に関する情報を含む構造体。 場合**Parameters.Power.Type**は**SystemPowerState**と**Parameters.Power.State**は**PowerSystemWorking**、2 つのフラグでは、このビット構造体は、高速スタートアップまたは休止からのスリープ解除、S0 を入力するコンピューターの原因となったかどうかを示す (作業) システムの状態。 詳細については、次を参照してください。[区別高速スタートアップ ウェイク-から-休止状態から](https://msdn.microsoft.com/library/windows/hardware/jj835779)します。
+以降、Windows Vista では、 **Parameters.Power.SystemPowerStateContext**メンバーは読み取り専用で、部分的に非透過的な[**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)コンピューターの前のシステム電源の状態に関する情報を含む構造体。 場合**Parameters.Power.Type**は**SystemPowerState**と**Parameters.Power.State**は**PowerSystemWorking**、2 つのフラグでは、このビット構造体は、高速スタートアップまたは休止からのスリープ解除、S0 を入力するコンピューターの原因となったかどうかを示す (作業) システムの状態。 詳細については、[区別高速スタートアップ ウェイク-から-休止状態から](https://msdn.microsoft.com/library/windows/hardware/jj835779)を参照してください。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -92,7 +92,7 @@ ms.locfileid: "56582385"
 
 フィルター ドライバーがシステムで動作する必要はない通常セット power IRP 渡す以外の場合。
 
-ただし、デバイスの電源ポリシー所有者を設定、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) IRP を渡す前に日常的な。 *IoCompletion*日常的な送信、 **IRP\_MN\_設定\_POWER** IRP のデバイスの電源を要求します。 詳細については、次を参照してください。[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](https://msdn.microsoft.com/library/windows/hardware/ff546749)します。
+ただし、デバイスの電源ポリシー所有者を設定、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) IRP を渡す前に日常的な。 *IoCompletion*日常的な送信、 **IRP\_MN\_設定\_POWER** IRP のデバイスの電源を要求します。 詳細については、[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](https://msdn.microsoft.com/library/windows/hardware/ff546749)を参照してください。
 
 システム設定 power IRP は、システムの電源状態の変更が近づいていることと、ドライバーの準備する必要がありますにドライバーを通知します。 ただし、ドライバーを変更しないでください、デバイスの電源状態を受信するまで、 **IRP\_MN\_設定\_POWER**の*デバイス*電源の状態。
 
@@ -118,7 +118,7 @@ IRP では、低電力状態への遷移を要求するときに、ドライバ�
 
 -   デバイスの電源 IRP を完了します。
 
-ドライバーは、適切なタイミングで、この IRP を完了する必要があります。 一般に、ドライバーは、低下一般的なユーザーを検索する遅延を避ける必要があります。 たとえば、ドライバーでは、キャッシュされたディスクまたはネットワークのデータのフラッシュが必要がありますいないネットワーク接続状態を維持またはテープをフォーマットにシステム状態の変更を遅れる可能性があります。 詳細については、次を参照してください。 [Power Irp を渡して](https://msdn.microsoft.com/library/windows/hardware/ff558785)します。
+ドライバーは、適切なタイミングで、この IRP を完了する必要があります。 一般に、ドライバーは、低下一般的なユーザーを検索する遅延を避ける必要があります。 たとえば、ドライバーでは、キャッシュされたディスクまたはネットワークのデータのフラッシュが必要がありますいないネットワーク接続状態を維持またはテープをフォーマットにシステム状態の変更を遅れる可能性があります。 詳細については、[Power Irp を渡して](https://msdn.microsoft.com/library/windows/hardware/ff558785)を参照してください。
 
 Windows 2000 以降のバージョンの IRP が指定されている場合、オペレーティング システムで**PowerDeviceD1**、 **PowerDeviceD2**、または**PowerDeviceD3**であり、システム設定 power IRP がアクティブ、ある値**Parameters.Power.ShutdownType** IRP システムに関する情報を提供します。
 
@@ -138,7 +138,7 @@ IRP では、バス ドライバーに達すると、そのドライバーを適
 
 関数とフィルター ドライバーの IRP の処理、バス ドライバーには、電源アップ IRP が完了すると、その*IoCompletion*デバイス スタックをバックアップとして、ルーチンが送信されます。 *IoCompletion* 、日常的な各ドライバー復元またはそのデバイス コンテキストを再初期化し、他の必要なスタートアップ タスクを実行します。
 
-詳細については、次を参照してください。 [IRP の処理\_MN\_設定\_デバイスの電源状態のための電力](https://msdn.microsoft.com/library/windows/hardware/ff546885)します。
+詳細については、[IRP の処理\_MN\_設定\_デバイスの電源状態のための電力](https://msdn.microsoft.com/library/windows/hardware/ff546885)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

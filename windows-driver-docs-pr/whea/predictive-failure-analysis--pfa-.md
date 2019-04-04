@@ -26,13 +26,13 @@ Windows ハードウェア エラー アーキテクチャ (WHEA) は、ECC メ�
 
 コンピューター システム、特に server システムの場合は、通常、メモリ エラーの特定の種類を自動的に修正できるエラー修正コード (ECC) メモリは装備されています。 ECC メモリ システムで修正されたエラーとその頻度に関する情報は、オペレーティング システムで使用できると壊滅的な原因となる予定外のダウンタイムにできる修正不可能なエラーなどの兆候の不具合を予測に使用できます.
 
-レジストリ設定を使用して、WHEA を PFA エラーのしきい値、時間間隔、およびその他のパラメーターを構成できます。 これを行う方法の詳細については、次を参照してください。 [WHEA ポリシー設定](whea-pfa-registry-settings.md)します。
+レジストリ設定を使用して、WHEA を PFA エラーのしきい値、時間間隔、およびその他のパラメーターを構成できます。 これを行う方法の詳細については、[WHEA ポリシー設定](whea-pfa-registry-settings.md)を参照してください。
 
-WHEA PFA を実行する方法の概要については、次を参照してください。 [PFA が WHEA によって実行される](pfa-performed-by-whea.md)します。
+WHEA PFA を実行する方法の概要については、[PFA が WHEA によって実行される](pfa-performed-by-whea.md)を参照してください。
 
-A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン ドライバー](platform-specific-hardware-error-driver-plug-ins2.md) ECC メモリ PFA も実行できます。 これにより、プラグイン (WHEA ではありません) は、ECC メモリ ページを監視する必要があります。 PSHED プラグインが PFA を実行する方法の詳細については、次を参照してください。 [PFA 実行プラグイン PSHED](pfa-performed-by-a-pshed-plug-in.md)します。
+A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン ドライバー](platform-specific-hardware-error-driver-plug-ins2.md) ECC メモリ PFA も実行できます。 これにより、プラグイン (WHEA ではありません) は、ECC メモリ ページを監視する必要があります。 PSHED プラグインが PFA を実行する方法の詳細については、[PFA 実行プラグイン PSHED](pfa-performed-by-a-pshed-plug-in.md)を参照してください。
 
-PFA、ECC メモリ ページは失敗、予測が保存 (または*が解決しない*)、ブート構成データ (BCD) のシステム ストアの結果。 このプロセスの詳細については、次を参照してください。 [PFA 結果の永続化](persistence-of-pfa-results.md)します。
+PFA、ECC メモリ ページは失敗、予測が保存 (または*が解決しない*)、ブート構成データ (BCD) のシステム ストアの結果。 このプロセスの詳細については、[PFA 結果の永続化](persistence-of-pfa-results.md)を参照してください。
 
 WHEA では、Windows 7 および Windows の以降のバージョンで PFA をサポートしています。
 

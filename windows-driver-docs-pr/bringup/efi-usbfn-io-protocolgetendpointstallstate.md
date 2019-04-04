@@ -40,7 +40,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 エンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
+エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
 
 <a href="" id="state"></a>*状態*  
 ブール値。**TRUE**値では、停止した状態で、エンドポイントがあることを示します**FALSE**それ以外の場合。

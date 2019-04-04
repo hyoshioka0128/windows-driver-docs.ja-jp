@@ -26,7 +26,7 @@ ms.locfileid: "56579771"
 
 **.Jdinfo**コマンドは、JIT を使用して\_デバッグ\_例外とジャスト イン タイム (JIT) デバッグのコンテキストのソースとして情報構造体。 構造体へのアドレスに渡される、 **.jdinfo** AeDebug レジストリ エントリで指定されている %p パラメーターを使用してコマンドします。
 
-使用するレジストリ キーの詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。 レジスタのコンテキストの詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
+使用するレジストリ キーの詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。 レジスタのコンテキストの詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
 
 ```dbgcmd
 .jdinfo Address 
@@ -115,7 +115,7 @@ CrashAV_x64!wmain+0x14:
 <a name="remarks"></a>コメント
 -------
 
-**.Jdinfo**コマンドでは、 **AeDebug**レジストリ情報が Windows Vista で導入されました。 使用するレジストリ キーの詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。 **.Jdinfo**コマンドは、JIT のアドレスを受け取ります\_デバッグ\_情報用に、システム設定を**AeDebug**し、クラッシュの原因となった例外に、コンテキストを設定します。
+**.Jdinfo**コマンドでは、 **AeDebug**レジストリ情報が Windows Vista で導入されました。 使用するレジストリ キーの詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。 **.Jdinfo**コマンドは、JIT のアドレスを受け取ります\_デバッグ\_情報用に、システム設定を**AeDebug**し、クラッシュの原因となった例外に、コンテキストを設定します。
 
 使用することができます、 **.jdinfo**コマンドの代わりに **-g**で**AeDebug**のデバッガーに設定して、 **AeDebug**を必要とせずに state実行します。
 

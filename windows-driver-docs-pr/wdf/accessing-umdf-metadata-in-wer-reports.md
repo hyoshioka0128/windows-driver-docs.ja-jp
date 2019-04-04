@@ -213,7 +213,7 @@ WdfComponentMax</code>
 <tr class="odd">
 <td align="left">2</td>
 <td align="left">ExceptionCode</td>
-<td align="left"><p>理由、例外が発生しました。 値の一覧は、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363082" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363082)"> <strong>EXCEPTION_RECORD</strong></a>します。</p></td>
+<td align="left"><p>理由、例外が発生しました。 値の一覧は、<a href="https://msdn.microsoft.com/library/windows/desktop/aa363082" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363082)"> <strong>EXCEPTION_RECORD</strong></a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">3</td>

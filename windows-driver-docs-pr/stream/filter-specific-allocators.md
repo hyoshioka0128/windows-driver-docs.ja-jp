@@ -20,7 +20,7 @@ ms.locfileid: "56573160"
 
 
 
-オンボード メモリやその他のデバイスの依存するストレージ メソッドのアロケーターを必要とするフィルターは、アロケーターをサポートすることで特定のアロケーターを提供できます[プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff566592)と[メソッド](https://msdn.microsoft.com/library/windows/hardware/ff563406)します。 詳細については、次を参照してください。 [ **KSPROPERTY\_ストリーム\_アロケーター**](https://msdn.microsoft.com/library/windows/hardware/ff565684)します。
+オンボード メモリやその他のデバイスの依存するストレージ メソッドのアロケーターを必要とするフィルターは、アロケーターをサポートすることで特定のアロケーターを提供できます[プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff566592)と[メソッド](https://msdn.microsoft.com/library/windows/hardware/ff563406)します。 詳細については、[ **KSPROPERTY\_ストリーム\_アロケーター**](https://msdn.microsoft.com/library/windows/hardware/ff565684)を参照してください。
 
 フィルターは IRP を受信\_MJ\_KSCREATE の種類の作成\_要求\_アロケーターは、アロケーターのフレームのオプションを指定します。 ミニドライバーのアロケーター作成ルーチンを呼び出して、要求の作成を検証する[ **KsValidateAllocatorCreateRequest**](https://msdn.microsoft.com/library/windows/hardware/ff567219)します。 このルーチンが、関連するへのポインターを返します、呼び出しが成功した場合[ **KSALLOCATOR\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/ff560979)構造体。
 

@@ -18,9 +18,9 @@ ms.locfileid: "56582043"
 
 ライブラリ ルーチンの安全な文字列の文字が付いて"**Rtl**"は、カーネルのすべての安全な文字列ライブラリ ルーチンの一覧を参照してください[Unicode と ANSI 文字の文字列関数を安全な](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#safe-string-functions-for-unicode-and-ansi-characters)と[。UNICODE_STRING 構造体の安全な文字列関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#safe-string-functions-for-unicodestring-structures)します。
 
-詳細については safe の文字列を使用して、次を参照してください。[安全な文字列関数を使用して](using-safe-string-functions.md)します。
+詳細については safe の文字列を使用して、[安全な文字列関数を使用して](using-safe-string-functions.md)を参照してください。
 
-文字列の同様の機能のあるカーネルの一般的な C プログラミングの個別のランタイム ライブラリも注意してください。 ランタイム ライブラリ (RTL) の詳細については、次を参照してください。 [Windows カーネル モードのランタイム ライブラリ](windows-kernel-mode-run-time-library.md)します。 両方のライブラリが付いている場合でもなお"**Rtl**"同じライブラリではありません。
+文字列の同様の機能のあるカーネルの一般的な C プログラミングの個別のランタイム ライブラリも注意してください。 ランタイム ライブラリ (RTL) の詳細については、[Windows カーネル モードのランタイム ライブラリ](windows-kernel-mode-run-time-library.md)を参照してください。 両方のライブラリが付いている場合でもなお"**Rtl**"同じライブラリではありません。
 
  
 

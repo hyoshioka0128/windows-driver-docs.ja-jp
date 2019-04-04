@@ -32,7 +32,7 @@ ms.locfileid: "56559761"
 
  
 
-現在のタスク オフロードの構成の詳細については、次を参照してください。 [OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)します。
+現在のタスク オフロードの構成の詳細については、[OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

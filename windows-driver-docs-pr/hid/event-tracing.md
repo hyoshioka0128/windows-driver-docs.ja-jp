@@ -14,7 +14,7 @@ ms.locfileid: "56557636"
 # <a name="event-tracing"></a>イベントのトレース
 
 
-I²C デバイス ドライバー、HID で、操作をトレースするのには、Event Tracing for Windows (ETW) または Windows ソフトウェア トレース プリプロセッサ (WPP) を使用できます。 ETW の詳細については、次を参照してください。、[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=256040)、Windows 開発のリファレンス トピック。 WPP の詳細については、次を参照してください。 [WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)と[ログ トレースのように、転送トレース レコーダー (IFR)](https://msdn.microsoft.com/library/windows/hardware/dn914610)します。
+I²C デバイス ドライバー、HID で、操作をトレースするのには、Event Tracing for Windows (ETW) または Windows ソフトウェア トレース プリプロセッサ (WPP) を使用できます。 ETW の詳細については、次を参照してください。、[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=256040)、Windows 開発のリファレンス トピック。 WPP の詳細については、[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)と[ログ トレースのように、転送トレース レコーダー (IFR)](https://msdn.microsoft.com/library/windows/hardware/dn914610)を参照してください。
 
 ## <a name="using-the-inflight-trace-recorder-ifr"></a>転送トレース レコーダー (IFR) を使用します。
 

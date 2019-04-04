@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_DVD\_KEY1 プロパティをデコーダーに DVD 著作�
 <a name="remarks"></a>コメント
 -------
 
-最初のバス キーの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+最初のバス キーの詳細については、[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

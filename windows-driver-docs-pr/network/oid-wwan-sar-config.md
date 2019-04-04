@@ -24,7 +24,7 @@ OID_WWAN_SAR_CONFIG を取得または情報について、モバイル ブロ�
 
 各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [ **NDIS_WWAN_SAR_CONFIG_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_config_info)モバイル ブロード バンドに関連付けられているデバイス上のすべてのアンテナの情報を含む構造体.
 
-この OID の使用状況に関する詳細については、次を参照してください。 [MBIM_CID_MS_SAR_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmssarconfig)します。
+この OID の使用状況に関する詳細については、[MBIM_CID_MS_SAR_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmssarconfig)を参照してください。
 
 ## <a name="requirements"></a>要件
 

@@ -113,7 +113,7 @@ CLR モジュールの読み込みの詳細モードをオフにします。
 .cordll -I clr -lp c:\dacFolder
 ```
 
-Sos.dll は、マネージ コードのデバッグに使用されるコンポーネントです。 Windows のツールのデバッグの現在のバージョンでは、任意のバージョンの sos.dll は含まれません。 Sos.dll を取得する方法については、次を参照してください。 [SOS デバッガー拡張 (sos.dll) を取得する](debugging-managed-code.md#getting-the-sos-debugging-extension)します。
+Sos.dll は、マネージ コードのデバッグに使用されるコンポーネントです。 Windows のツールのデバッグの現在のバージョンでは、任意のバージョンの sos.dll は含まれません。 Sos.dll を取得する方法については、[SOS デバッガー拡張 (sos.dll) を取得する](debugging-managed-code.md#getting-the-sos-debugging-extension)を参照してください。
 
 **.Cordll**コマンドがカーネル モードのデバッグでサポートされています。 ただし、必要なメモリがページインしない限り、このコマンドが機能しません。
 

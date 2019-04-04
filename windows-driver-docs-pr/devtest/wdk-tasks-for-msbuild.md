@@ -72,7 +72,7 @@ WDK のコマンド ライン ツールでは、多数のオプションをサ�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="stampinf-task.md" data-raw-source="[Stampinf task](stampinf-task.md)">Stampinf タスク</a></p></td>
-<td align="left"><p>WDK には、MSBuild を使用してドライバーをビルドするときに、stampinf.exe ツールを実行できるようにの StampInf タスクが用意されています。 Stampinf.exe ツールについては、次を参照してください。 <a href="stampinf.md" data-raw-source="[Stampinf](stampinf.md)">Stampinf</a>します。</p></td>
+<td align="left"><p>WDK には、MSBuild を使用してドライバーをビルドするときに、stampinf.exe ツールを実行できるようにの StampInf タスクが用意されています。 Stampinf.exe ツールについては、<a href="stampinf.md" data-raw-source="[Stampinf](stampinf.md)">Stampinf</a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="wmimofck-task.md" data-raw-source="[Wmimofck task](wmimofck-task.md)">Wmimofck タスク</a></p></td>
@@ -84,7 +84,7 @@ WDK のコマンド ライン ツールでは、多数のオプションをサ�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="message-compiler-task.md" data-raw-source="[Message compiler task](message-compiler-task.md)">メッセージ コンパイラ タスク</a></p></td>
-<td align="left"><p>WDK には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/desktop/aa385638" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa385638)"><strong>メッセージ コンパイラ (MC.exe)</strong></a>します。</p></td>
+<td align="left"><p>WDK には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、<a href="https://msdn.microsoft.com/library/windows/desktop/aa385638" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa385638)"><strong>メッセージ コンパイラ (MC.exe)</strong></a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ctrpp-task.md" data-raw-source="[Ctrpp task](ctrpp-task.md)">Ctrpp タスク</a></p></td>

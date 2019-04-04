@@ -53,7 +53,7 @@ NDIS 6.30 と以降のバージョンの NDIS をサポートしているミニ�
 
 -   保留中の完了の呼び出しを通じてインジケーターを受信するを待ちませんその[ *MiniportReturnNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559437)関数。 また、ミニポート ドライバーを変更する必要がありますいない、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体または完了を待機しているすべてのパケットのデータ。
 
--   OID の処理\_PNP\_設定\_電源要求の一時停止または実行中のいずれかのアダプター状態から低電力状態にします。 これらの状態の詳細については、次を参照してください。[ミニポート アダプターの状態と操作](https://msdn.microsoft.com/library/windows/hardware/ff560490)します。
+-   OID の処理\_PNP\_設定\_電源要求の一時停止または実行中のいずれかのアダプター状態から低電力状態にします。 これらの状態の詳細については、[ミニポート アダプターの状態と操作](https://msdn.microsoft.com/library/windows/hardware/ff560490)を参照してください。
 
 D3 の状態に遷移する場合、ネットワーク アダプター、前に、次のタスクを実行することによって、ミニポート ドライバーが、ミニポート ドライバーの管理下にあるすべてをオフにする必要があります。
 

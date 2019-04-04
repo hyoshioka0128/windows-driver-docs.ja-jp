@@ -42,7 +42,7 @@ Rcdrkd.dll
 <a name="remarks"></a>コメント
 -------
 
-レコーダー ログ内の各メッセージには、トレース メッセージのプレフィックス文字列を指定することで制御できる接頭辞が付きます。 詳細については、次を参照してください。[トレース メッセージのプレフィックス](https://msdn.microsoft.com/library/windows/hardware/ff553941)します。
+レコーダー ログ内の各メッセージには、トレース メッセージのプレフィックス文字列を指定することで制御できる接頭辞が付きます。 詳細については、[トレース メッセージのプレフィックス](https://msdn.microsoft.com/library/windows/hardware/ff553941)を参照してください。
 
 <a name="examples"></a>使用例
 --------

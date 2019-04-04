@@ -45,7 +45,7 @@ KMDF 検証機能が有効にすると、フレームワークは、60 秒間の
 
 **!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
 
-デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
+デバッガーの拡張機能コマンドの詳細については、[Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)を参照してください。
 
 ## <a name="controlling-the-verifiers-behavior"></a>検証の動作を制御します。
 
@@ -79,7 +79,7 @@ KMDF 検証機能が有効にすると、フレームワークは、60 秒間の
 
 一般的な規則として、上記のレジストリ値を設定すると、削除不要になったとき。
 
-これらのレジストリ値の完全な説明については、次を参照してください。[デバッグ フレームワーク ベースのドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
+これらのレジストリ値の完全な説明については、[デバッグ フレームワーク ベースのドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)を参照してください。
 
  
 

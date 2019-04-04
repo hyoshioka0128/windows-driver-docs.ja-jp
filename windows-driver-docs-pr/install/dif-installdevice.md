@@ -82,7 +82,7 @@ DIF_INSTALLDEVICE 要求は、デバイスをインストールした後また�
 
 クラスのインストーラーが正常に既定のハンドラーを直接呼び出しなど、この要求を処理する場合、クラスのインストーラーは NO_ERROR を返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しはもう一度です。
 
-**注**  クラスのインストーラーは、既定のハンドラーを直接呼び出すことができますが、既定のハンドラーの操作を優先するクラスのインストーラーはいけません。 既定の差分コード ハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+**注**  クラスのインストーラーは、既定のハンドラーを直接呼び出すことができますが、既定のハンドラーの操作を優先するクラスのインストーラーはいけません。 既定の差分コード ハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
 
  
 
@@ -110,7 +110,7 @@ DI_NOFILECOPY フラグがオフ、DI_NOVCP フラグが設定されている場
 
 この試行が失敗した場合は、Windows の送信 DIF_INSTALLDEVICE もう一度、DI_FLAGSEX_SETFAILEDINSTALL フラグでは、この時点で設定、 [ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造体。 ここでは、既定のハンドラーだけ FAILEDINSTALL 内フラグを設定、デバイスの**ConfigFlags**レジストリ値。 DI_FLAGSEX_SETFAILEDINSTALL フラグが設定されている場合は、クラスのインストーラーは NO_ERROR を返す必要があります。 または ERROR_DI_DO_DEFAULT と共同インストーラーには NO_ERROR を返す必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 ### <a name="calling-the-default-handler-setupdiinstalldevice"></a>**既定のハンドラー SetupDiInstallDevice を呼び出す**
 

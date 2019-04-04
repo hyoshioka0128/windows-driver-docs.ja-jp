@@ -34,15 +34,15 @@ ms.locfileid: "56580708"
 
 -   IHV 拡張機能の DLL を呼び出すことによって開始された保留中の関連付け前操作がある場合、 [ *Dot11ExtIhvPerformPreAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547499) IHV ハンドラー関数では、オペレーティング システムにおいて、操作を呼び出して取り消し対象として、 [ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452)関数。 呼び出し内で、DLL は内部的には、関連付け前の操作を取り消す必要がありますを呼び出してはならない[ **Dot11ExtPreAssociateCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff547538)関連付け前に操作を完了します。
 
-    前の関連付け操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+    前の関連付け操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
 
 -   IHV 拡張機能の DLL を呼び出すことによって開始された保留中の後の関連付け操作がある場合、 [ *Dot11ExtIhvPerformPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547492) IHV ハンドラー関数をオペレーティング システムを取り消します。呼び出して、操作、 [ *Dot11ExtIhvStopPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547521)関数を呼び出す前に[ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452).
 
-    詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
+    詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
 
 -   オペレーティング システムの呼び出し、 [ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452) IHV 拡張機能の DLL によって管理されるオペレーティング システムは、DLL をアンロードする前にすべてのアダプターの関数。 このような状況でオペレーティング システムの呼び出し、 [ *Dot11ExtIhvDeinitService* ](https://msdn.microsoft.com/library/windows/hardware/ff547457) IHV ハンドラー関数を呼び出すことによって、最後の WLAN のアダプターが停止した後に*Dot11ExtIhvDeinitAdapter*します。
 
-    この操作の詳細については、次を参照してください。 [DLL 停止操作](dll-stop-operations.md)します。
+    この操作の詳細については、[DLL 停止操作](dll-stop-operations.md)を参照してください。
 
  
 

@@ -36,7 +36,7 @@ Windows 10 バージョン 1703 以降では、このプロセスを使用しま
 
 TAM に、APN 情報を含む、完成したスプレッドシートを送信すると後、Microsoft がプロビジョニング パッケージ (.ppkg) ファイルを作成してをインストールして、APN をテストできるようにした後に返送します。 
 
-プロビジョニング パッケージ ファイルをインストールする方法の詳細については、次を参照してください。[プロビジョニング パッケージの適用](https://technet.microsoft.com/itpro/windows/deploy/provisioning-apply-package)します。
+プロビジョニング パッケージ ファイルをインストールする方法の詳細については、[プロビジョニング パッケージの適用](https://technet.microsoft.com/itpro/windows/deploy/provisioning-apply-package)を参照してください。
 
 ### <a name="modify-the-local-cosa-database-desktop-cosa"></a>ローカル COSA データベース (デスクトップ COSA) の変更します。
 
@@ -112,7 +112,7 @@ APN の更新を送信する前に、ローカルの APN データベースの�
 
 2. **パブリッシュされた APN スキーマに従った XML ファイル内の値を変更**– APN エントリは、次のことを確認、 [APN データベースのスキーマ リファレンス](apn-database-schema-reference.md)します。
 
-3. **ハードウェア Id を生成**-いずれかを指定するハードウェア Id または複数のハードウェア id 文字列をデータベース内の APN エントリに SIM 特性に一致します。 各文字列がで指定された、 [HardwareId](hardwareid-apnxml.md)要素。 Mbidgenerator.exe を使用して、ハードウェア Id を生成することをお勧めします。 詳細については、次を参照してください。 [mbidgenerator.exe を使用して、ハードウェア Id を生成する](using-mbidgeneratorexe-to-generate-hardware-ids.md)します。
+3. **ハードウェア Id を生成**-いずれかを指定するハードウェア Id または複数のハードウェア id 文字列をデータベース内の APN エントリに SIM 特性に一致します。 各文字列がで指定された、 [HardwareId](hardwareid-apnxml.md)要素。 Mbidgenerator.exe を使用して、ハードウェア Id を生成することをお勧めします。 詳細については、[mbidgenerator.exe を使用して、ハードウェア Id を生成する](using-mbidgeneratorexe-to-generate-hardware-ids.md)を参照してください。
 
 4. **生成したファイルが公開されている APN データベース スキーマに準拠していることを検証**-スキーマの確認を生成したファイルが準拠していることを確認して、常に実行、 [APN データベースのスキーマ リファレンス](apn-database-schema-reference.md)します。
 

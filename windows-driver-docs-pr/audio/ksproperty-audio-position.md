@@ -74,7 +74,7 @@ DirectSound は、KSPROPERTY\_オーディオ\_POSITION プロパティを実装
 
 WaveCyclic と WavePci のミニポート ドライバーは KSPROPERTY のプロパティのハンドラーを実装する必要はありません\_オーディオ\_WaveCyclic と WavePci ポート ドライバー ミニポート ドライバーの代わりにこのプロパティを処理するために配置します。 ポート ドライバー プロパティ ハンドラーが、ミニポート ドライバーを呼び出すレンダリング ストリームの再生位置またはキャプチャ ストリーム内のレコードの位置を取得する[ **IMiniportWaveCyclicStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536716)または[ **IMiniportWavePciStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536727)メソッド。
 
-詳細については、次を参照してください。[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)します。
+詳細については、[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

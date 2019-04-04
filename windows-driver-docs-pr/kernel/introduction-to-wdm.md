@@ -52,7 +52,7 @@ Windows Driver Kit (WDK) には、カーネル モードの WDM ドライバー�
 
  
 
-クロス プラットフォームの問題、考慮すべきは WDM または非 WDM ドライバーを開発しているかどうか。 詳細については、次を参照してください。[さまざまなバージョンの Windows のドライバーを書き込み](https://msdn.microsoft.com/library/windows/hardware/ff554887)します。
+クロス プラットフォームの問題、考慮すべきは WDM または非 WDM ドライバーを開発しているかどうか。 詳細については、[さまざまなバージョンの Windows のドライバーを書き込み](https://msdn.microsoft.com/library/windows/hardware/ff554887)を参照してください。
 
 使用を検討する新しい WDM ドライバーを作成する場合もする必要があります、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/dn265580)(KMDF)。 KMDF は、WDM インターフェイスよりも簡単に使用されるインターフェイスを提供します。
 

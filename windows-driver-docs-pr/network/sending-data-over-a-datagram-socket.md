@@ -131,7 +131,7 @@ NTSTATUS
 
 WSK アプリケーションがリモートの固定のトランスポート アドレスまたはデータグラム ソケットの固定の送信先のトランスポート アドレスのいずれかを設定する場合、 *RemoteAddress*に渡されるパラメーター、 [ **WskSendTo**](https://msdn.microsoft.com/library/windows/hardware/ff571148)関数は省略可能でありできる**NULL**します。 場合**NULL**データグラムをリモートの固定のトランスポート アドレスまたは固定の送信先のトランスポート アドレスに送信します。 場合以外**NULL**データグラムをリモートの指定したトランスポート アドレスに送信します。
 
-データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する方法についての詳細については、次を参照してください。 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)します。
+データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する方法についての詳細については、[ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)を参照してください。
 
 データグラム ソケットに対して固定の送信先のトランスポート アドレスを設定する方法についての詳細については、次を参照してください[ **SIO\_WSK\_設定\_SENDTO\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570821).
 

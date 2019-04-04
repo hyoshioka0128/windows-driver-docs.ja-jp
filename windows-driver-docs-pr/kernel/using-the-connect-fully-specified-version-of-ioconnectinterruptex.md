@@ -21,17 +21,17 @@ ms.locfileid: "57349253"
 # <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>接続を使用して\_完全\_IoConnectInterruptEx の指定されたバージョン
 
 
-ドライバーの接続を使用できる\_完全\_の指定されたバージョン[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)を登録する、 [ *InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチンの割り込みを特定します。 ドライバーの接続を使用できる\_完全\_指定されたバージョンの Windows Vista 以降します。 Iointex.lib ライブラリにリンクすると、ドライバーが接続を使用できます\_完全\_Windows 2000、Windows XP、および Windows Server 2003 で指定されたバージョン。 詳細については、次を参照してください。[を使用して IoConnectInterruptEx する前に Windows Vista](using-ioconnectinterruptex-prior-to-windows-vista.md)します。
+ドライバーの接続を使用できる\_完全\_の指定されたバージョン[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)を登録する、 [ *InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチンの割り込みを特定します。 ドライバーの接続を使用できる\_完全\_指定されたバージョンの Windows Vista 以降します。 Iointex.lib ライブラリにリンクすると、ドライバーが接続を使用できます\_完全\_Windows 2000、Windows XP、および Windows Server 2003 で指定されたバージョン。 詳細については、[を使用して IoConnectInterruptEx する前に Windows Vista](using-ioconnectinterruptex-prior-to-windows-vista.md)を参照してください。
 
 ドライバーの接続の値を指定する\_完全\_に指定された*パラメーター * * *-&gt;バージョン** のメンバーを使用して*パラメーター * * *-&gt;FullySpecified** 操作の他のパラメーターを指定します。
 
 -   *パラメーター * * *-&gt;FullySpecified.PhysicalDeviceObject** デバイスの PDO を指定する ISR サービス。
 
--   *パラメーター*-&gt;**FullySpecified.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター* - &gt; **FullySpecified**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
+-   *パラメーター*-&gt;**FullySpecified.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター* - &gt; **FullySpecified**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、[ISR コンテキスト情報の提供](providing-isr-context-information.md)を参照してください。
 
 -   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター ***-&gt;FullySpecified.InterruptObject**します。 **IoConnectInterruptEx**ルーチンはできる割り込みの割り込みのオブジェクトをポイントするには、この変数を設定する際に使う[ISR を削除する](removing-an-isr.md)します。
 
--   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;FullySpecified.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
+-   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;FullySpecified.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)を参照してください。
 
 ドライバーは、他のメンバーで、割り込みのキー プロパティを指定する必要があります * パラメーター ***-&gt;FullySpecified**します。 システムの配列に必要な情報を提供する[ **CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)構造体に送信するとき、 [**IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP がドライバーにします。
 

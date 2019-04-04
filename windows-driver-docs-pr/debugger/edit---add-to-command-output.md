@@ -28,7 +28,7 @@ ms.locfileid: "56578789"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッガー コマンド ウィンドウの他の機能の詳細については、次を参照してください。[デバッガー コマンドを使用して](using-debugger-commands.md)します。
+デバッガー コマンド ウィンドウの他の機能の詳細については、[デバッガー コマンドを使用して](using-debugger-commands.md)を参照してください。
 
  
 

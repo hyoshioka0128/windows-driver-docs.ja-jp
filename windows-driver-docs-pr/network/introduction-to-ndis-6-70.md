@@ -15,7 +15,7 @@ ms.locfileid: "56532316"
 
 このトピックでは、Network Driver Interface Specification (NDIS) 6.70 を示し、その主要な設計の追加機能を説明します。 Windows 10 バージョン 1703 では、NDIS 6.70 が含まれます。
 
-NDIS 6.70 は、NDIS 6.60 にミニポート、プロトコル、フィルター、および中間ドライバーのマイナー バージョン更新です。 NDIS 6.70 する NDIS 6.x ドライバーの移植の詳細については、次を参照してください。 [NDIS 6.70 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-70.md)します。
+NDIS 6.70 は、NDIS 6.60 にミニポート、プロトコル、フィルター、および中間ドライバーのマイナー バージョン更新です。 NDIS 6.70 する NDIS 6.x ドライバーの移植の詳細については、[NDIS 6.70 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-70.md)を参照してください。
 
 ## <a name="feature-updates"></a>機能更新プログラム
 
@@ -38,7 +38,7 @@ NDIS 6.70 のリリースと共に、次のネットワーク ドライバー機
 
 ### <a name="nic-drivers"></a>NIC ドライバー
 
-NetAdapterCx NIC ドライバーの実装の詳細については、次を参照してください。 [NetAdapterCx](../netcx/index.md)します。
+NetAdapterCx NIC ドライバーの実装の詳細については、[NetAdapterCx](../netcx/index.md)を参照してください。
 
 ### <a name="miniport-protocol-filter-and-intermediate-drivers"></a>ミニポート、プロトコル、フィルター、および中間ドライバー
 
@@ -54,7 +54,7 @@ NDIS 6.70、ドライバーがで定義されている要件に従う必要が�
 
 ### <a name="nic-drivers"></a>NIC ドライバー
 
-コンパイル、NetAdapterCx で NIC ドライバーの詳細については、次を参照してください。 [NetAdapterCx (コンパイルの設定) に移植する NDIS ミニポート ドライバー](../netcx/porting-ndis-miniport-drivers-to-netadaptercx.md#compilation-settings)します。
+コンパイル、NetAdapterCx で NIC ドライバーの詳細については、[NetAdapterCx (コンパイルの設定) に移植する NDIS ミニポート ドライバー](../netcx/porting-ndis-miniport-drivers-to-netadaptercx.md#compilation-settings)を参照してください。
 
 ### <a name="miniport-protocol-and-filter-drivers"></a>ミニポート、プロトコル、およびフィルター ドライバー
 
@@ -71,7 +71,7 @@ Windows 10 バージョン 1703 リリース、WDK のドライバーを構築�
 
 ### <a name="nic-drivers"></a>NIC ドライバー
 
-NetAdapterCx データ構造の詳細については、次を参照してください。 [NetAdapterCx](../netcx/index.md)します。
+NetAdapterCx データ構造の詳細については、[NetAdapterCx](../netcx/index.md)を参照してください。
 
 ### <a name="miniport-protocol-filter-and-intermediate-drivers"></a>ミニポート、プロトコル、フィルター、および中間ドライバー
 

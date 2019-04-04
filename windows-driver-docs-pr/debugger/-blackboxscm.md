@@ -70,7 +70,7 @@ Ext.dll
 
 複数のサービスが一覧表示されますが表示されている最初のサービスのみ失敗の分析用の通常です。  これは、これらの要求を最初のサービスが実際には、制御要求を受信しただけの SCM (サービス コントロール マネージャー) が連続的に待機するためです。
 
-SCM の詳細については、次を参照してください。[サービス コントロール マネージャー](https://docs.microsoft.com/en-us/windows/desktop/Services/service-control-manager)します。
+SCM の詳細については、[サービス コントロール マネージャー](https://docs.microsoft.com/en-us/windows/desktop/Services/service-control-manager)を参照してください。
 
 
 ### <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>追加情報

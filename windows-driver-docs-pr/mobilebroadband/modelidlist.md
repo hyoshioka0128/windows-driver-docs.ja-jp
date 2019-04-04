@@ -111,7 +111,7 @@ ModelIDList 要素は必要な場合にのみ、 [HardwareIDList](hardwareidlist
 
 PackageInfo の XML データには、両方が含まれている場合、 [HardwareIDList](hardwareidlist.md) ModelIDList 要素では、オペレーティング システムを使用して、次の規則のデバイスがデバイス メタデータ パッケージで指定されたかどうかを決定する場合。
 
--   デバイスにモデル ID がある場合は、オペレーティング システムが内の一致を検索しません、 [HardwareIDList](hardwareidlist.md)要素。 モデル Id の詳細については、次を参照してください。 [ModelID](modelid.md)します。
+-   デバイスにモデル ID がある場合は、オペレーティング システムが内の一致を検索しません、 [HardwareIDList](hardwareidlist.md)要素。 モデル Id の詳細については、[ModelID](modelid.md)を参照してください。
 
 -   オペレーティング システムをそれ以外の場合、検索、 [HardwareIDList](hardwareidlist.md)デバイスのハードウェア ID と一致する要素
 

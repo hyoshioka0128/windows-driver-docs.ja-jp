@@ -45,7 +45,7 @@ Endpoint name: OLE18
 
 ### <a name="span-iddbgrpccommandlinespanspan-iddbgrpccommandlinespandbgrpc-command-line"></a><span id="dbgrpc_command_line"></span><span id="DBGRPC_COMMAND_LINE"></span>させるためのコマンドライン
 
-完全なコマンド構文については、次を参照してください。 [**させるためのコマンド ライン オプション**](dbgrpc-command-line-options.md)します。
+完全なコマンド構文については、[**させるためのコマンド ライン オプション**](dbgrpc-command-line-options.md)を参照してください。
 
  
 

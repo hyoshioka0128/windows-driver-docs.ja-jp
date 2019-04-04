@@ -24,7 +24,7 @@ ms.locfileid: "56577798"
 
 X86 ベースのプロセッサでは、BIOS は、16 ビットのコードを使用します。 このコードを逆アセンブルするには、使用、 [ **ux (Unassemble x86 BIOS)** ](ux--unassemble-x86-bios-.md)コマンド。 Intel マルチプロセッサ仕様 (MP) についての情報を表示するには、使用、 [ **! mp** ](-mps.md)拡張機能。
 
-ACPI BIOS コードをデバッグする場合、上記のコマンドは機能しません、ACPI BIOS は ACPI 機械語 (AML) に書き込まれるため。 このコードを逆アセンブルを使用する必要があります[ **! amli u**](-amli-u.md)します。 この種のデバッグの詳細については、次を参照してください。 [ACPI デバッグ](acpi-debugging.md)します。
+ACPI BIOS コードをデバッグする場合、上記のコマンドは機能しません、ACPI BIOS は ACPI 機械語 (AML) に書き込まれるため。 このコードを逆アセンブルを使用する必要があります[ **! amli u**](-amli-u.md)します。 この種のデバッグの詳細については、[ACPI デバッグ](acpi-debugging.md)を参照してください。
 
  
 

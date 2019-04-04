@@ -31,7 +31,7 @@ ms.locfileid: "56573418"
 
 このモードでキャプチャ ドライバーがシステム メモリ バッファーを受信、 [ *AVStrMiniPinProcess* ](https://msdn.microsoft.com/library/windows/hardware/ff556351)出力ピンのコールバック関数。
 
-暗証番号 (pin) プロセス コールバックで DMA を実装する方法については、次を参照してください。 [AVStream で DMA をパケットに基づく](packet-based-dma-in-avstream.md)します。
+暗証番号 (pin) プロセス コールバックで DMA を実装する方法については、[AVStream で DMA をパケットに基づく](packet-based-dma-in-avstream.md)を参照してください。
 
 (たとえば、別のビデオ、オーディオ、および VBI ピン) の複数の出力ピンをキャプチャするには、各ピンする必要があります、VRAM プロパティや処理のサポート前述のようです。 プロキシは、各ピンに別のスレッドを生成します。
 

@@ -47,7 +47,7 @@ C 言語ルーチンの名前。 マクロは、オブジェクトのコンテ�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、このマクロを使用して、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
+詳細については、このマクロを使用して、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
 
 <a name="examples"></a>使用例
 --------

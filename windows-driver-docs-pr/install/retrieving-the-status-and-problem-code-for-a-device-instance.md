@@ -20,7 +20,7 @@ Windows Server 2003、Windows XP、および Windows 2000、統一されたプ�
 
 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンでデバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンでデバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
 
 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス インスタンスの状態および問題のコードにアクセスするには、呼び出す**CM_Get_DevNode_Status**し、次のパラメーターを指定します。
 

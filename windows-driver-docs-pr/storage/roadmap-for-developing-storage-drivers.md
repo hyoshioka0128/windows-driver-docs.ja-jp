@@ -22,7 +22,7 @@ ms.locfileid: "56570179"
 
 2.  **記憶装置ドライバーの基礎について説明します。**
 
-    ストレージ ドライバーの基礎については、次を参照してください。 [Windows ストレージ ドライバーのアーキテクチャ](storage-driver-architecture.md)します。
+    ストレージ ドライバーの基礎については、[Windows ストレージ ドライバーのアーキテクチャ](storage-driver-architecture.md)を参照してください。
 
 3.  **追加のストレージ ドライバーの設計に関する決定事項を確認します。**
 
@@ -46,11 +46,11 @@ ms.locfileid: "56570179"
 
 8.  **ストレージ ドライバーのドライバー パッケージを作成します。**
 
-    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
+    詳細については、[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)を参照してください。
 
 9.  **署名し、配布、ストレージ****ドライバー。**
 
-    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
+    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)を参照してください。
 
 これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
 

@@ -48,7 +48,7 @@ ms.locfileid: "56571875"
     -   [**DiInstallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff544717)、事前にインストールされるドライバーとドライバーがサポートするシステムに存在するデバイスのドライバーをインストールします。
     -   [**DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)システムに存在する指定されたデバイスのドライバー ストアから、指定したドライバーをインストールします。
 
-    詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](writing-a-device-installation-application.md)します。
+    詳細については、[デバイス インストール アプリケーションを記述して](writing-a-device-installation-application.md)を参照してください。
 
 -   クラスのインストーラーと共同インストーラーする必要があります - インストールが [完了] ページへの応答をれなかったドライバーをアップグレードするときに[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)しない限り、絶対に必要です。 可能であれば、以前のインストールの設定から完了インストール情報を取得します。
 
@@ -66,7 +66,7 @@ ms.locfileid: "56571875"
 
 -   クラスのインストーラー、共同インストーラーをクラス、またはサービスの DLL を更新する場合は、新しいバージョンに新しいファイル名を付ける必要があります。
 
-INF ファイルの詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)と[INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)します。
+INF ファイルの詳細については、[INF ファイルを作成する](overview-of-inf-files.md)と[INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)を参照してください。
 
  
 

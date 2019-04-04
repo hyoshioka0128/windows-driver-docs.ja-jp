@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO[デバイス インターフェイス クラス](https://msdn.m
 
 KS オーディオ デバイス用のドライバーは、デバイスが KSCATEGORY_AUDIO 機能カテゴリをサポートするオペレーティング システムに示すためにこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 INF ファイルでこの機能のカテゴリを登録する方法については、ヘルプ ファイルを参照してください*INFViewer.html*と*ac97smpl.inf*、付属している、 [AC'97 サンプル ドライバー。](https://go.microsoft.com/fwlink/p/?linkid=256075) WDK に含まれています。
 

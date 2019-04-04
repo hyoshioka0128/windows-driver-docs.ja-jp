@@ -16,7 +16,7 @@ ms.locfileid: "56571623"
 > [!IMPORTANT]
 > このトピックでは非推奨とされました。 参照してください、[デバイス MFT 設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/stream/dmft-design)のガイダンスを更新します。
 
-UWP デバイス アプリでは、デバイス メーカーがカメラ driver MFT (メディア ファンデーション変換) でのカメラのビデオ ストリームのカスタム設定と特殊効果を適用することができます。 このトピックでは、ドライバーの仕様を紹介しを使用して、 [Driver MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)サンプルを作成する方法について説明します。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+UWP デバイス アプリでは、デバイス メーカーがカメラ driver MFT (メディア ファンデーション変換) でのカメラのビデオ ストリームのカスタム設定と特殊効果を適用することができます。 このトピックでは、ドライバーの仕様を紹介しを使用して、 [Driver MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)サンプルを作成する方法について説明します。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
 ## <a name="the-driver-mft"></a>Driver MFT
 
@@ -42,13 +42,13 @@ Driver MFT は UWP アプリのデバイスは必要ありません。 デバイ
 
 ### <a name="avstream-driver-model-requirement"></a>AvStream ドライバー モデルの要件
 
-カメラのドライバーは AvStream ドライバー モデルを使用する必要があります。 AVStream ドライバー モデルに関する詳細については、次を参照してください。 [AVStream ミニドライバー設計ガイド](https://go.microsoft.com/fwlink/p/?LinkID=228585)します。
+カメラのドライバーは AvStream ドライバー モデルを使用する必要があります。 AVStream ドライバー モデルに関する詳細については、[AVStream ミニドライバー設計ガイド](https://go.microsoft.com/fwlink/p/?LinkID=228585)を参照してください。
 
 ### <a name="how-the-driver-mft-is-exposed-to-apps"></a>Driver MFT をアプリに公開する方法
 
 MFT として登録されて Windows COM インターフェイスを実装して変換できるようにドライバーは、カメラなどの特定のデバイスからメディア ストリームに適用できます。
 
-**注**MFT を使用して登録するべきではないドライバー、`MFTRegister`関数がある特定のデバイスと汎用 MFT しないためです。 レジストリ キーについては、次を参照してください。、[のインストールと登録 driver MFT](#installing)このトピックで後述します。
+**注**MFT を使用して登録するべきではないドライバー、`MFTRegister`関数がある特定のデバイスと汎用 MFT しないためです。 レジストリ キーについては、、[のインストールと登録 driver MFT](#installing)このトピックで後述を参照してください。
 
 アプリでは、ビデオのキャプチャを開始するときに、ビデオ ストリームを提供する Media Foundation のソースのリーダーがインスタンス化されます。 このメディア ソースは、デバイスのレジストリ キーからレジストリ値を読み取ります。 Driver MFT の COM クラスの CLSID のレジストリ値が見つかった場合、ソース リーダーは、driver MFT をインスタンス化して、メディア パイプラインに挿入します。
 
@@ -301,11 +301,11 @@ KSCATEGORY_CAPTURE:
 
 ### <a name="multiple-cameras"></a>複数のカメラ
 
-複数のカメラ モデルは、同じデバイスで UWP アプリ、デバイス メタデータを宣言できます。 システムに 1 つ以上の埋め込みを内部的にカメラがある場合、カメラは、同じ UWP デバイス アプリを共有する必要があります。 アプリには、どのカメラが使用中であり、各カメラでさまざまな UI を表示することができますを決定するためのロジックが含まれています。 その**より多くのオプション**が発生します。 そのエクスペリエンスをカスタマイズする方法の詳細については、次を参照してください。[カメラ オプションをカスタマイズする方法について](how-to-customize-camera-options.md)します。
+複数のカメラ モデルは、同じデバイスで UWP アプリ、デバイス メタデータを宣言できます。 システムに 1 つ以上の埋め込みを内部的にカメラがある場合、カメラは、同じ UWP デバイス アプリを共有する必要があります。 アプリには、どのカメラが使用中であり、各カメラでさまざまな UI を表示することができますを決定するためのロジックが含まれています。 その**より多くのオプション**が発生します。 そのエクスペリエンスをカスタマイズする方法の詳細については、[カメラ オプションをカスタマイズする方法について](how-to-customize-camera-options.md)を参照してください。
 
 ### <a name="internal-cameras"></a>内蔵カメラ
 
-内蔵カメラ用の UWP デバイス アプリは、の対象[自動インストール](auto-install-for-uwp-device-apps.md)から Microsoft Store が、最もシームレスなユーザー エクスペリエンスの事前インストールされていることをお勧めします。 内蔵カメラのサポートし、UWP デバイスのアプリに関連付けるに必要な追加手順があります。 詳細については、次を参照してください。[内蔵カメラの位置を識別する](identifying-the-location-of-internal-cameras.md)します。
+内蔵カメラ用の UWP デバイス アプリは、の対象[自動インストール](auto-install-for-uwp-device-apps.md)から Microsoft Store が、最もシームレスなユーザー エクスペリエンスの事前インストールされていることをお勧めします。 内蔵カメラのサポートし、UWP デバイスのアプリに関連付けるに必要な追加手順があります。 詳細については、[内蔵カメラの位置を識別する](identifying-the-location-of-internal-cameras.md)を参照してください。
 
 ### <a name="creating-the-device-metadata-package"></a>デバイス メタデータ パッケージを作成します。
 
@@ -316,7 +316,7 @@ KSCATEGORY_CAPTURE:
 - アプリケーションの要素の識別子
 - デバイス エクスペリエンスの識別子
 
-デバイスのメタデータを使用してアプリをデバイスに関連付ける方法の詳細については、次を参照してください。[構築 UWP デバイス アプリ](the-workflow.md)します。
+デバイスのメタデータを使用してアプリをデバイスに関連付ける方法の詳細については、[構築 UWP デバイス アプリ](the-workflow.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

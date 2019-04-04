@@ -12,7 +12,7 @@ ms.locfileid: "56579352"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware ディレクティブ
 
-各**AddSoftware**ディレクティブがスタンドアロンのソフトウェアのインストールについて説明します。  INF ファイルでこのディレクティブを使用して、 **SoftwareComponent**クラスをセットアップします。 ソフトウェア コンポーネントの詳細については、次を参照してください。[コンポーネントの INF ファイルを使用して](using-a-component-inf-file.md)します。  Windows 10 バージョン 1703 以降では、このディレクティブはサポートされます。
+各**AddSoftware**ディレクティブがスタンドアロンのソフトウェアのインストールについて説明します。  INF ファイルでこのディレクティブを使用して、 **SoftwareComponent**クラスをセットアップします。 ソフトウェア コンポーネントの詳細については、[コンポーネントの INF ファイルを使用して](using-a-component-inf-file.md)を参照してください。  Windows 10 バージョン 1703 以降では、このディレクティブはサポートされます。
 
 有効なインストールの種類によって異なります、[ターゲット プラットフォーム](../develop/windows-10-editions-for-universal-drivers.md)します。 たとえば、デスクトップには、インストーラーの MSI と Exe のセットアップがサポートしています。  **注意**:種類 2 がユニバーサル ドライバーでサポートされている、種類 1 がデスクトップ専用です。
 
@@ -48,7 +48,7 @@ AddSoftware=SoftwareName,[flags],software-install-section
     
 ## <a name="remarks"></a>コメント
 
-各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。  これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。  これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 **AddSoftware**ディレクティブは名前付き参照する必要があります*ソフトウェアのインストール-セクション*INF ファイルで別の場所。  このような各セクションでは、次の形式があります。
 
@@ -85,8 +85,8 @@ SoftwareType=type-code
 デバイスに関連付けられていないソフトウェアを配布するのに AddSoftware を使用しないでください。 たとえば、AddSoftware で PC の OEM 固有のユーティリティ プログラムをインストールする必要がありますされません。
 代わりに、次のオプションのいずれかを使用し、Windows 10 の OEM イメージにアプリをプレインストールします。
 
-* Win32 アプリをプレインストールするには、監査モードと、アプリのインストールを起動します。 詳細については、次を参照してください。[監査モードの概要](https://docs.microsoft.com/windows-hardware/manufacture/desktop/audit-mode-overview)します。
-* Microsoft Store (UWP) アプリをプレインストールするには、次を参照してください。[デスクトップ デバイス用アプリの Preinstallable](https://docs.microsoft.com/windows-hardware/customize/preinstall/preinstallable-apps-for-windows-10-desktop)します。
+* Win32 アプリをプレインストールするには、監査モードと、アプリのインストールを起動します。 詳細については、[監査モードの概要](https://docs.microsoft.com/windows-hardware/manufacture/desktop/audit-mode-overview)を参照してください。
+* Microsoft Store (UWP) アプリをプレインストールするには、[デスクトップ デバイス用アプリの Preinstallable](https://docs.microsoft.com/windows-hardware/customize/preinstall/preinstallable-apps-for-windows-10-desktop)を参照してください。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリとドライバーのペアリングの詳細については、次を参照してください。[ユニバーサル Windows プラットフォーム (UWP) アプリでのドライバーをペアリング](pairing-app-and-driver-versions.md)と[ハードウェア サポート アプリ (HSA)。Steps for Driver Developers (ハードウェア サポート アプリ (HSA): ドライバー開発者向け手順)](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)」をご覧ください。
 

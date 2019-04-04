@@ -28,7 +28,7 @@ A [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows
 
 ![net のフィールドを示す図\-バッファー\-構造体を一覧表示](images/netbufferlist.png)
 
-NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッファー\_一覧\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff568400)構造体、 **NetBufferListHeader**メンバー。 NET\_バッファー\_一覧\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_一覧\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568393)構造体**NetBufferListData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー\_構造体メンバーの一覧。 これらのマクロの詳細については、次を参照してください。、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造のリファレンス ページです。
+NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッファー\_一覧\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff568400)構造体、 **NetBufferListHeader**メンバー。 NET\_バッファー\_一覧\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_一覧\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568393)構造体**NetBufferListData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー\_構造体メンバーの一覧。 これらのマクロの詳細については、、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造のリファレンス ページを参照してください。
 
 一部のメンバーは NDIS でのみ使用されます。 ドライバーが最もよく使用するメンバーは、次の一覧で定義されます。
 

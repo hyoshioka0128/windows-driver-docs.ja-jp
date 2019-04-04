@@ -19,7 +19,7 @@ ms.locfileid: "56579745"
 
 WFP リダイレクト レコードは、WFP が送信プロキシ接続を設定する必要があり、リダイレクトされた接続と、元の接続が論理的に関連する非透過データのバッファーです。
 
-リダイレクトの詳細については、次を参照してください。 [Bind を使用して、または接続のリダイレクト](https://msdn.microsoft.com/library/windows/hardware/ff571005)します。
+リダイレクトの詳細については、[Bind を使用して、または接続のリダイレクト](https://msdn.microsoft.com/library/windows/hardware/ff571005)を参照してください。
 
 Winsock クライアントの呼び出しを最終的な宛先に接続するために使用される新しい TCP ソケットにリダイレクト レコードを設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
 
@@ -84,7 +84,7 @@ Winsock クライアントが呼び出すときに IRP の完了のルーチン�
 
  
 
-WSK IRP の処理の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)します。
+WSK IRP の処理の詳細については、[Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)を参照してください。
 
 チェックして、クライアントが IRP の状態を取得できます*Irp -&gt;IoStatus.Status*します。 *Irp -&gt;IoStatus.Status*に設定されます**状態\_成功**要求が成功した場合。 それが含まれます**状態\_整数\_OVERFLOW**、または**状態\_アクセス\_DENIED**呼び出しが成功しなかった場合。
 

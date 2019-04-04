@@ -57,12 +57,12 @@ ms.locfileid: "56570671"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Microsoft リモート プロシージャ コール (RPC) のデバッグの詳細については、次を参照してください。 [RPC デバッグ](rpc-debugging.md)します。
+Microsoft リモート プロシージャ コール (RPC) のデバッグの詳細については、[RPC デバッグ](rpc-debugging.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------
 
-この拡張機能の一般的な用途は、次を参照してください。[呼び出しスタックしている問題を分析](analyzing-a-stuck-call-problem.md)します。
+この拡張機能の一般的な用途は、[呼び出しスタックしている問題を分析](analyzing-a-stuck-call-problem.md)を参照してください。
 
 以下に例を示します。
 

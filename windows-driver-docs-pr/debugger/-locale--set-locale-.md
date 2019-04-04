@@ -61,7 +61,7 @@ ms.locfileid: "56578249"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ロケールの詳細については、次を参照してください。、 **setlocale**日常的なリファレンス ページです。
+ロケールの詳細については、、 **setlocale**日常的なリファレンス ページを参照してください。
 
 <a name="remarks"></a>コメント
 -------

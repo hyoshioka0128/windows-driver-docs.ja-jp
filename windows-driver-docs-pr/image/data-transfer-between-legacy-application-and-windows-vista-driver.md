@@ -32,7 +32,7 @@ WIA COM プロキシ内での従来のコールバック オブジェクトは�
 
 ドライバーを呼び出すによって公開されるメソッドのいずれかと、 **IStream**インターフェイスから受信した、 [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/jj151551)メソッド (注、ドライバーはのみ呼び出す必要があります**IStream::Write**、 **IStream::Seek**、および**IStream::SetSize**)。 互換レイヤーがカスタムを作成するために、 **IStream**を単純にラップする実装、 **IStream** WIA COM プロキシを提供するインターフェイス。
 
-従来のファイル転送は簡単です。 このような転送の例は、レガシ アプリケーションを呼び出すと**IWiaDataTransfer::idtGetData**します。 互換性レイヤーでは、アプリケーションを STGMEDIUM 構造体で指定するファイルにデータ ストリームを作成します。 このストリームはフィルターに渡される、ドライバーまたはイメージ処理を呼び出すときに[ **IWiaTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/ff545039)し、すべての転送メッセージは従来の転送メッセージを簡単にマップします。 メッセージにマップする方法の詳細については、次を参照してください。 [WIA 互換性レイヤーのデータ転送実装](wia-compatibility-layer-message-mapping.md)します。
+従来のファイル転送は簡単です。 このような転送の例は、レガシ アプリケーションを呼び出すと**IWiaDataTransfer::idtGetData**します。 互換性レイヤーでは、アプリケーションを STGMEDIUM 構造体で指定するファイルにデータ ストリームを作成します。 このストリームはフィルターに渡される、ドライバーまたはイメージ処理を呼び出すときに[ **IWiaTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/ff545039)し、すべての転送メッセージは従来の転送メッセージを簡単にマップします。 メッセージにマップする方法の詳細については、[WIA 互換性レイヤーのデータ転送実装](wia-compatibility-layer-message-mapping.md)を参照してください。
 
 呼び出すときに、 **IWiaDataTransfer::dtGetData メソッド**、互換性レイヤーでは、いくつかのより厳密なパラメーター チェックします。 互換レイヤーが呼び出し元を許可しないなど、 **IWiaDataTrasnfer::idtGetData**メソッド[TYMED\_ファイル](understanding-tymed.md)とするデータの転送し、上位のページ数がないです。呼び出すことが互換性レイヤーを利用、 **IWiaDataTrasnfer::idtGetData** TYMED メソッド\_ファイル カウントより大きなページがあると、1 つ。
 

@@ -45,7 +45,7 @@ void WDF_DECLARE_CUSTOM_TYPE(
 
 呼び出すときに**WDF_DECLARE_CUSTOM_TYPE**ドライバーは、独自のカスタム型の名前を定義します。 カスタム型の名前を選択する場合は、ドライバーのドメインに固有の名前を選択します。 通常、始めないでください、カスタムの型名のプレフィックスを持つ*Wdf*します。
 
-オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのカスタム種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
 
 <a name="examples"></a>例
 --------

@@ -177,22 +177,22 @@ ms.locfileid: "56580658"
 プライマリ フィルター ドライバーのイベントの定義は次のとおりです。
 
 <a href="" id="--------filter-attach--------"></a> フィルターをアタッチします。   
-NDIS というドライバーの[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)ドライバー スタックにフィルター モジュールにアタッチします。 フィルター モジュールのインポートに関する詳細については、次を参照してください。[フィルター モジュールのアタッチ](attaching-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)ドライバー スタックにフィルター モジュールにアタッチします。 フィルター モジュールのインポートに関する詳細については、[フィルター モジュールのアタッチ](attaching-a-filter-module.md)を参照してください。
 
 <a href="" id="attach-is-complete"></a>アタッチが完了しました  
 フィルター モジュールの場合、*アタッチ*状態と、フィルター ドライバーは、フィルター モジュールに必要なリソース フィルター モジュールが入力したすべての初期化が完了すると、 *Paused*状態。
 
 <a href="" id="--------filter-detach--------"></a> フィルターをデタッチします。   
-NDIS というドライバーの[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)ドライバー スタックからフィルター モジュールをデタッチする関数。 詳細については、次を参照してください。[フィルター モジュールをデタッチ](detaching-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)ドライバー スタックからフィルター モジュールをデタッチする関数。 詳細については、[フィルター モジュールをデタッチ](detaching-a-filter-module.md)を参照してください。
 
 <a href="" id="--------filter-restart--------"></a> 再起動をフィルター処理します。   
-NDIS というドライバーの[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数を一時停止中のフィルター モジュールを再起動します。 詳細については、次を参照してください。[フィルター モジュールの開始](starting-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数を一時停止中のフィルター モジュールを再起動します。 詳細については、[フィルター モジュールの開始](starting-a-filter-module.md)を参照してください。
 
 <a href="" id="restart-is-complete"></a>再起動が完了  
 フィルター モジュールの場合、*再起動*状態と、ドライバーは、送信を実行し、操作を受信する準備が、フィルター モジュールが入力、*を実行している*状態。
 
 <a href="" id="--------filter-pause--------"></a> 一時停止をフィルター処理します。   
-NDIS というドライバーの[ *FilterPause* ](https://msdn.microsoft.com/library/windows/hardware/ff549957)フィルター モジュールを一時停止する関数。 詳細については、次を参照してください。[フィルター モジュールを一時停止](pausing-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterPause* ](https://msdn.microsoft.com/library/windows/hardware/ff549957)フィルター モジュールを一時停止する関数。 詳細については、[フィルター モジュールを一時停止](pausing-a-filter-module.md)を参照してください。
 
 <a href="" id="pause-is-complete"></a>一時停止が完了  
 ドライバーの送信を停止し、受信操作に必要なすべての操作が完了した、一時停止操作が完了し、フィルター モジュールが、 *Paused*状態。
@@ -207,7 +207,7 @@ NDIS ドライバーの場合[ *FilterRestart* ](https://msdn.microsoft.com/libr
 ドライバーが送信を処理しでの操作を受け取ることができます、*を実行している*と*一時停止中*状態。 送信し、受信操作についての詳細についてを参照してください。[フィルター モジュールの送信と受信操作](filter-module-send-and-receive-operations.md)します。
 
 <a href="" id="oid-requests"></a>OID 要求  
-ドライバーは OID の要求を処理できる、*を実行している*、*再開中*、 *Paused*、および*一時停止中*状態。 OID 要求の詳細については、次を参照してください。[フィルター モジュールの OID 要求](filter-module-oid-requests.md)します。
+ドライバーは OID の要求を処理できる、*を実行している*、*再開中*、 *Paused*、および*一時停止中*状態。 OID 要求の詳細については、[フィルター モジュールの OID 要求](filter-module-oid-requests.md)を参照してください。
 
  
 

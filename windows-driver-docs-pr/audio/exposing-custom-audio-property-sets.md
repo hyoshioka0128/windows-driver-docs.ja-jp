@@ -22,7 +22,7 @@ ms.locfileid: "56573142"
 
 DirectSound がサウンド カードのカスタム プロパティの使用をサポートし、提供、 **IKsPropertySet**この目的のためのインターフェイス。
 
-**注**   Dsound.h と Ksproxy.h ヘッダー ファイルは似ていますが、互換性のないバージョンを定義、 **IKsPropertySet**インターフェイス。 DirectSound アプリケーションでは、Dsound.h で定義されているバージョンを使用する必要があります。 DirectSound 版**IKsPropertySet** DirectSound リファレンスのページで、Microsoft Windows SDK ドキュメントで定義されます。 KSProxy バージョンでは、次を参照してください。 [IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)します。
+**注**   Dsound.h と Ksproxy.h ヘッダー ファイルは似ていますが、互換性のないバージョンを定義、 **IKsPropertySet**インターフェイス。 DirectSound アプリケーションでは、Dsound.h で定義されているバージョンを使用する必要があります。 DirectSound 版**IKsPropertySet** DirectSound リファレンスのページで、Microsoft Windows SDK ドキュメントで定義されます。 KSProxy バージョンでは、[IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)を参照してください。
 
  
 
@@ -52,7 +52,7 @@ DirectSound は、ドライバーにカスタム プロパティのセットを�
 
 -   **完全です**
 
-カスタム プロパティのセットが、スライダーに設定されている場合にのみ有効になって**完全**します。 詳細については、次を参照してください。 [DirectSound ハードウェア高速化と SRC スライダー](directsound-hardware-acceleration-and-src-sliders.md)します。
+カスタム プロパティのセットが、スライダーに設定されている場合にのみ有効になって**完全**します。 詳細については、[DirectSound ハードウェア高速化と SRC スライダー](directsound-hardware-acceleration-and-src-sliders.md)を参照してください。
 
  
 

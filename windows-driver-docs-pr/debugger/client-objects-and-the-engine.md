@@ -161,7 +161,7 @@ EngExtCpp 拡張機能の対話、[デバッガー エンジン](introduction.md
 
 拡張ライブラリは、独自のクライアントのメソッドを使用してオブジェクトを作成もできる[ **IDebugClient::CreateClient** ](https://msdn.microsoft.com/library/windows/hardware/ff539320)または関数[ **DebugCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff540469)または[ **DebugConnect**](https://msdn.microsoft.com/library/windows/hardware/ff540465)します。
 
-クライアント オブジェクトの概要については、次を参照してください。[クライアント オブジェクト](client-objects.md)します。
+クライアント オブジェクトの概要については、[クライアント オブジェクト](client-objects.md)を参照してください。
 
  
 

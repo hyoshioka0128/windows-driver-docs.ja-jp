@@ -41,7 +41,7 @@ ms.locfileid: "56571969"
 <p>FWPM_CONDITION_ARRIVAL_INTERFACE_TYPE</p>
 </td>
 <td>
-<p>インターネット割り当て番号機関 (IANA) によって定義されている、到着ネットワーク インターフェイスの型。 詳細については、次を参照してください。 <a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>します。</p>
+<p>インターネット割り当て番号機関 (IANA) によって定義されている、到着ネットワーク インターフェイスの型。 詳細については、<a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>を参照してください。</p>
 <p>WFP は到着インターフェイスを使用して、この条件に一致します。 到着インターフェイスは、弱いホストまたは転送を実行する前に、ネットワークからの受信が IP スタックに入る前に、パケットに表示される最初のインターフェイスです。</p>
 <p>この条件は、受信の条件では本質的に再認証のために、非対称です。 これは、応答の送信パケットの受信接続を再するときに、WFP がこの条件で空の値を使用することを意味します。</p>
 <p>2 番目のフィルターを再認証を処理するために使用する必要があります。 この 2 番目のフィルターを許可または空の値をブロックするかをこのような状況の有効な値を持つ別の条件を使用します。 到着インターフェイスの条件の場合は、送信パケットに有効なインターフェイスがインターフェイスの条件の次ホップ クラスになります。</p>
@@ -97,7 +97,7 @@ ms.locfileid: "56571969"
 <p>FWPM_CONDITION_NEXTHOP_INTERFACE_TYPE</p>
 </td>
 <td>
-<p>インターネット割り当て番号機関 (IANA) によって定義されている、到着ネットワーク インターフェイスの型。 詳細については、次を参照してください。 <a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>します。</p>
+<p>インターネット割り当て番号機関 (IANA) によって定義されている、到着ネットワーク インターフェイスの型。 詳細については、<a href="http://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib">IANAifType MIB 定義</a>を参照してください。</p>
 <p>WFP は、この条件と一致するのに次ホップ インターフェイスを使用します。 次ホップ インターフェイスには、弱いホストまたは転送を実行した後、IP スタックのネットワークに対する送信を終了する前に、パケットが表示される最後のインターフェイスです。</p>
 <p>この条件は、送信の条件では本質的に再認証のために、非対称です。 これは、応答の受信パケットの送信接続を再するときに、WFP がこの条件で空の値を使用することを意味します。</p>
 <p>2 番目のフィルターを再認証を処理するために使用する必要があります。 この 2 番目のフィルターを許可または空の値をブロックするかをこのような状況の有効な値を持つ別の条件を使用します。 次のホップ インターフェイス条件の場合は、受信パケットの有効なインターフェイスがインターフェイスの条件の到着クラスになります。</p>
@@ -352,7 +352,7 @@ NlatBroadcast
 <p>FWPM_CONDITION_FLAGS</p>
 </td>
 <td>
-<p>フィルター条件のフラグの組み合わせのビット演算 OR。 可能なフラグについては、次を参照してください。<a href="filtering-condition-flags.md">フィルタ リング条件フラグ</a>します。</p>
+<p>フィルター条件のフラグの組み合わせのビット演算 OR。 可能なフラグについては、<a href="filtering-condition-flags.md">フィルタ リング条件フラグ</a>を参照してください。</p>
 </td>
 </tr>
 <tr>
@@ -582,7 +582,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_AUTH_TYPE</p>
 </td>
 <td>
-<p>認証サービスの種類。 認証サービスの種類に関する詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
+<p>認証サービスの種類。 認証サービスの種類に関する詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでを参照してください。</p>
 </td>
 </tr>
 <tr>
@@ -590,7 +590,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_AUTH_LEVEL</p>
 </td>
 <td>
-<p>認証サービスのレベル。 認証サービス レベルの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/aa373553"><b>認証レベルの定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
+<p>認証サービスのレベル。 認証サービス レベルの詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/aa373553"><b>認証レベルの定数</b></a> Windows SDK のドキュメントの RPC のセクションでを参照してください。</p>
 </td>
 </tr>
 <tr>
@@ -702,7 +702,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_RPC_PROXY_AUTH_TYPE</p>
 </td>
 <td>
-<p>RPC プロキシ認証サービスの種類。 認証サービスの種類に関する詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでします。</p>
+<p>RPC プロキシ認証サービスの種類。 認証サービスの種類に関する詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/aa373556"><b>認証サービス定数</b></a> Windows SDK のドキュメントの RPC のセクションでを参照してください。</p>
 </td>
 </tr>
 <tr>
@@ -822,7 +822,7 @@ RPC_PROTSEQ_NMP
 <p>FWPM_CONDITION_L2_FLAGS</p>
 </td>
 <td>
-<p>MAC のレイヤーを条件フラグをフィルター処理の組み合わせのビット演算 OR。 可能なフラグについては、次を参照してください。<a href="filtering-condition-l2-flags.md">フィルタ リング条件 L2 フラグ</a>します。</p>
+<p>MAC のレイヤーを条件フラグをフィルター処理の組み合わせのビット演算 OR。 可能なフラグについては、<a href="filtering-condition-l2-flags.md">フィルタ リング条件 L2 フラグ</a>を参照してください。</p>
 <div class="alert"><b>注</b>Windows 8、Windows Server 2012、および以降のバージョンの Windows でサポートされています。</div>
 <div> </div>
 </td>

@@ -27,7 +27,7 @@ XPS Converter (XpsConverter.exe) から Microsoft XPS (MSXPS) に標準化の Op
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>XpsConverter.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Driver Kit Downloads]( https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows Driver Kit のダウンロード</a>します。</p></td>
+<td align="left"><p>XpsConverter.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Driver Kit Downloads]( https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows Driver Kit のダウンロード</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

@@ -45,7 +45,7 @@ ms.locfileid: "57464162"
 
 MASM の式では、任意のシンボルの数値は、そのメモリ アドレスです。 シンボルが参照する対象、によっては、このアドレスは、グローバル変数、ローカル変数、関数、セグメント、モジュール、またはその他の任意の認識されているラベルのアドレスです。
 
-アドレスが関連付けられているモジュールを指定するには、モジュール名とシンボルの名前の前に感嘆符 (!) を含めます。 シンボルは、16 進数として解釈される可能性を場合は、モジュール名や感嘆符シンボル名の前に、感嘆符だけが含まれます。 シンボルの認識の詳細については、次を参照してください。[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
+アドレスが関連付けられているモジュールを指定するには、モジュール名とシンボルの名前の前に感嘆符 (!) を含めます。 シンボルは、16 進数として解釈される可能性を場合は、モジュール名や感嘆符シンボル名の前に、感嘆符だけが含まれます。 シンボルの認識の詳細については、[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)を参照してください。
 
 2 つのコロン (:) を使用して、または 2 つのアンダー スコア (\_\_) をクラスのメンバーを示します。
 
@@ -249,7 +249,7 @@ MASM の式で、次の演算子を使用することもできます。
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$spat("</strong><em>String</em><strong>", "</strong><em>Pattern</em><strong>")</strong></p></td>
-<td align="left"><p>評価される<strong>TRUE</strong>または<strong>FALSE</strong>かどうかに応じて<em>文字列</em>と一致する<em>パターン</em>します。 大文字と小文字が一致します。 <em>パターン</em>さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。<a href="string-wildcard-syntax.md" data-raw-source="[String Wildcard Syntax](string-wildcard-syntax.md)">文字列のワイルドカード構文</a>します。</p></td>
+<td align="left"><p>評価される<strong>TRUE</strong>または<strong>FALSE</strong>かどうかに応じて<em>文字列</em>と一致する<em>パターン</em>します。 大文字と小文字が一致します。 <em>パターン</em>さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、<a href="string-wildcard-syntax.md" data-raw-source="[String Wildcard Syntax](string-wildcard-syntax.md)">文字列のワイルドカード構文</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>$vvalid(</strong><em>Address</em><strong>,</strong> <em>Length</em><strong>)</strong></p></td>
@@ -266,11 +266,11 @@ MASM の式で、次の演算子を使用することもできます。
 
 現在の命令ポインターを示すために、ピリオド (.) を使用することもできます。 追加しないでください、アット マークして、その期間の最初のパラメーターとしてピリオドを使用できない前に、 [ **r コマンド**](r--registers-.md)します。 この期間と同じ意味、 **$ip**擬似レジスタ。
 
-レジスタおよび擬似レジスタの詳細については、次を参照してください。[登録構文](register-syntax.md)と[擬似レジスタ構文](pseudo-register-syntax.md)します。
+レジスタおよび擬似レジスタの詳細については、[登録構文](register-syntax.md)と[擬似レジスタ構文](pseudo-register-syntax.md)を参照してください。
 
 ### <a name="span-idsourcelinenumbersinmasmexpressionsspanspan-idsourcelinenumbersinmasmexpressionsspansource-line-numbers-in-masm-expressions"></a><span id="source_line_numbers_in_masm_expressions"></span><span id="SOURCE_LINE_NUMBERS_IN_MASM_EXPRESSIONS"></span>ソース行番号の MASM 式
 
-ソース ファイルと行番号の式内での MASM 式を使用することができます。 グレーブ アクセント記号を使用してこれらの式を囲む必要があります (\`)。 構文の詳細については、次を参照してください。[ソース行構文](source-line-syntax.md)します。
+ソース ファイルと行番号の式内での MASM 式を使用することができます。 グレーブ アクセント記号を使用してこれらの式を囲む必要があります (\`)。 構文の詳細については、[ソース行構文](source-line-syntax.md)を参照してください。
 
  
 

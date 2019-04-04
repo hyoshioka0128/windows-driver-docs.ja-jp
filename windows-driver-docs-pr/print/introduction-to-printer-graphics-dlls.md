@@ -39,13 +39,13 @@ ms.locfileid: "56558428"
 
 たとえば、 [Microsoft ユニバーサル プリンター ドライバー](microsoft-universal-printer-driver.md) (Unidrv) は GDI 管理画面を使用したり、一部のグラフィックス DDI を提供中に関数を描画するには、 [Microsoft PostScript プリンター ドライバー](microsoft-postscript-printer-driver.md)を使用して、画面のデバイスが管理します。
 
-グラフィック ドライバーのレンダリングについての支援を提供する詳細については、次を参照してください。[画面型](https://msdn.microsoft.com/library/windows/hardware/ff569900)と[グラフィックス DDI を使用して](https://msdn.microsoft.com/library/windows/hardware/ff570139)します。
+グラフィック ドライバーのレンダリングについての支援を提供する詳細については、[画面型](https://msdn.microsoft.com/library/windows/hardware/ff569900)と[グラフィックス DDI を使用して](https://msdn.microsoft.com/library/windows/hardware/ff570139)を参照してください。
 
 次の 2 つの図は、アプリケーションは、GDI を使用して印刷ジョブを作成するときに発生するデータ フローを示しています。 EMF の記録と再生は、これらの図に結合されます。
 
 最初の図は、ユーザー モードのプリンター グラフィックス DLL を示します。
 
-**注**   Windows Vista でプリンター グラフィックス Dll は、ユーザー モードでのみ実行できます。 詳細については、次を参照してください。[選択ユーザー モードまたはカーネル モード](choosing-user-mode-or-kernel-mode.md)します。
+**注**   Windows Vista でプリンター グラフィックス Dll は、ユーザー モードでのみ実行できます。 詳細については、[選択ユーザー モードまたはカーネル モード](choosing-user-mode-or-kernel-mode.md)を参照してください。
 
  
 

@@ -106,7 +106,7 @@ SSL または SPIPE プロトコルを使用すると場合、 *Cert*証明書�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッグ サーバーを起動する方法の完全な詳細については、次を参照してください。 [**デバッグ サーバー アクティブ化する**](activating-a-debugging-server.md)します。 例については、次を参照してください。[クライアントとサーバーの例](client-and-server-examples.md)します。
+デバッグ サーバーを起動する方法の完全な詳細については、[**デバッグ サーバー アクティブ化する**](activating-a-debugging-server.md)を参照してください。 例については、[クライアントとサーバーの例](client-and-server-examples.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

@@ -21,7 +21,7 @@ ms.locfileid: "56572778"
 
 ![新しいフィードバックの追加 ボタンを含むフィードバックのオプションを示すフィードバック ハブのスクリーン ショット](images/windbgx-settings-menu.png)
 
-パスの設定の詳細については、次を参照してください。[へのアクセスのデバッグ シンボル](accessing-symbols-for-debugging.md)と[WinDbg でソース コードをデバッグ](source-window.md)します。
+パスの設定の詳細については、[へのアクセスのデバッグ シンボル](accessing-symbols-for-debugging.md)と[WinDbg でソース コードをデバッグ](source-window.md)を参照してください。
 
 ## <a name="workspaces"></a>ワークスペース
 
@@ -49,7 +49,7 @@ Verbose | false  | 詳細モードをオンにすると (登録のダンプ) な
 再開可能 | - |  WinDbg - によって内部的に使用は変更しないでください。
 UseImplicitCommandLine | false | 使用して暗黙的なコマンド ライン (-cimp コマンド ライン オプション)。 これは、明示的のプロセスを実行するのではなく暗黙的なコマンドラインを使用したデバッガーを開始します。
 
-コマンド ライン オプションの詳細については、次を参照してください。 [WinDbg コマンド ライン オプション](windbg-command-line-options.md)します。
+コマンド ライン オプションの詳細については、[WinDbg コマンド ライン オプション](windbg-command-line-options.md)を参照してください。
 
 
 #### <a name="symbol-settings"></a>シンボルの設定 
@@ -67,7 +67,7 @@ SymOptNoUnqualifiedLoads | false | このシンボルのオプションには、
 SymOptAutoPublics | false | このシンボルのオプションは、最後の手段としての .pdb ファイルに、パブリック シンボル テーブルを検索する DbgHelp とします。 プライベート シンボル データを検索するときに、一致が見つかった場合、パブリック シンボルは検索されません。 これにより、シンボルの検索の速度が向上します。 
 SymOptDebug | false | このシンボルのオプションは、ノイズの多いシンボルの読み込みをオンにします。 これには、デバッガーのシンボルの検索についての情報を表示するように指示します。
 
-シンボルのオプションの詳細については、次を参照してください。[シンボル オプション](symbol-options.md)します。
+シンボルのオプションの詳細については、[シンボル オプション](symbol-options.md)を参照してください。
 
 
 #### <a name="window-layout-settings"></a>ウィンドウ レイアウトの設定

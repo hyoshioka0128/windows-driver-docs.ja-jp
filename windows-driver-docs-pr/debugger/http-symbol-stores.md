@@ -37,7 +37,7 @@ HTTP のシンボル サーバーは、その読み取り専用の性質によ�
 
 シンボル ストアとして使用するディレクトリを選択して開始します。 この例でこのディレクトリの c: を呼び出して\\symstore、ネットワーク上のサーバーの名前が\\SymMachineName します。
 
-シンボル ストアを設定する方法の詳細については、次を参照してください。 [SymStore](symstore.md)と[シンボルを格納フォルダー ツリー](symbol-store-folder-tree.md)します。
+シンボル ストアを設定する方法の詳細については、[SymStore](symstore.md)と[シンボルを格納フォルダー ツリー](symbol-store-folder-tree.md)を参照してください。
 
 ### <a name="span-idconfiguringiisspanspan-idconfiguringiisspanconfiguring-iis"></a><span id="configuring_iis"></span><span id="CONFIGURING_IIS"></span>IIS の構成
 
@@ -194,7 +194,7 @@ SymSrv では、認証要求を受信するとデバッガーする認証 ダイ
 !sym prompts
 ```
 
-詳細については、次を参照してください。 [ **! sym** ](-sym.md)と[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)します。
+詳細については、[ **! sym** ](-sym.md)と[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)を参照してください。
 
  
 

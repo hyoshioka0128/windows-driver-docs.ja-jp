@@ -14,7 +14,7 @@ ms.locfileid: "56531133"
 # <a name="required-root-item-properties-for-feeder-scanners"></a>フィーダー スキャナーの必要なルート項目のプロパティ
 
 
-WIA スキャナーのすべての項目ツリーのルート項目が同じプロパティをサポートするために必要です。 必要なルート項目のプロパティの詳細については、次を参照してください。 [WIA スキャナーの必須のルート項目プロパティ](required-root-item-properties-for-wia-scanners.md)します。
+WIA スキャナーのすべての項目ツリーのルート項目が同じプロパティをサポートするために必要です。 必要なルート項目のプロパティの詳細については、[WIA スキャナーの必須のルート項目プロパティ](required-root-item-properties-for-wia-scanners.md)を参照してください。
 
  
 

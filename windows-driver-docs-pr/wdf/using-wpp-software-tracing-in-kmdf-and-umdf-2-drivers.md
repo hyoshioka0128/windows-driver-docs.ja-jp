@@ -142,7 +142,7 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
 
    ミニダンプに格納されたログ情報が入力した名前が一致しない場合は、ミニダンプには、ドライバーのログが含まれていません。
 
-トレース メッセージをドライバーを追加する方法の詳細については、次を参照してください。[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)します。
+トレース メッセージをドライバーを追加する方法の詳細については、[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

@@ -70,7 +70,7 @@ KD フィルター モードを有効にします。 メッセージは、カー
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のパラメーターの詳細については、次を参照してください。 [StartTrace 関数](https://go.microsoft.com/fwlink/p/?linkid=139652)と[イベント\_トレース\_プロパティ](https://go.microsoft.com/fwlink/p/?linkid=139653)します。 イベントのトレースの概念的な概要については、Microsoft Windows SDK を参照してください。 トレース ツールについては、Windows Driver Kit (WDK) を参照してください。
+この拡張機能のパラメーターの詳細については、[StartTrace 関数](https://go.microsoft.com/fwlink/p/?linkid=139652)と[イベント\_トレース\_プロパティ](https://go.microsoft.com/fwlink/p/?linkid=139653)を参照してください。 イベントのトレースの概念的な概要については、Microsoft Windows SDK を参照してください。 トレース ツールについては、Windows Driver Kit (WDK) を参照してください。
 
 <a name="remarks"></a>注釈
 -------

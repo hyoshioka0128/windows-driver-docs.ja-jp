@@ -17,7 +17,7 @@ ms.locfileid: "56580489"
 
 ProvisioningEngine 要素には、信頼された証明書を指定します。 これにより、信頼された証明書で署名されているパッケージを使用した PC をプロビジョニングします。
 
-プロビジョニングの詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
+プロビジョニングの詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用状況
 

@@ -23,7 +23,7 @@ SCSI ミニポート ドライバーのデバッグに役立つ拡張機能の�
 
 Scsikd.dll 拡張機能のコマンドは、任意のバージョンの Windows で使用できます。 ただし、Minipkd.dll 拡張機能のコマンドは、Windows XP 以降のバージョンの Windows でのみ使用できます。 Minipkd.dll でのコマンドでは、SCSIport ベース ミニポートに適用できるのみです。
 
-詳細については、次を参照してください。 [SCSI ミニポート デバッグ](scsi-miniport-debugging.md)します。
+詳細については、[SCSI ミニポート デバッグ](scsi-miniport-debugging.md)を参照してください。
 
  
 

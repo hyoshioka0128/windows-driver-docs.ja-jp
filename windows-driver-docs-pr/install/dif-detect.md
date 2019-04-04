@@ -109,7 +109,7 @@ DIF_DETECT 要求に応答インストーラーは、セットアップ クラ�
 
 フル インストール モードのセットアップ時に非 PnP デバイスを検出するために、インストーラーを処理する必要があります、 [ **DIF_FIRSTTIMESETUP** ](dif-firsttimesetup.md)要求。 フル インストール モードのセットアップでは、インストーラーに DIF_DETECT 要求を送信しません。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

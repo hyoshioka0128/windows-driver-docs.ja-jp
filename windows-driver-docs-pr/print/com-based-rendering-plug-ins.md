@@ -22,7 +22,7 @@ ms.locfileid: "56579689"
 
 カスタマイズしたフック関数を提供するを実装する必要があります、COM ベースのレンダリング プラグイン、 [ **IPrintOemUni::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554248)または[ **IPrintOemPS::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff553212)を満たすメソッドを[ **DRVENABLEDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff556206)各フック関数のアドレスを持つ構造体。
 
-Unidrv または Pscript5 ドライバーには、関数が定義されている場合にのみ、COM ベースのレンダリング プラグインできるグラフィックス DDI 関数をフックします。 このような関数の一覧は、次を参照してください。 [ **IPrintOemUni::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554248)または[ **IPrintOemPS::EnableDriver**](https://msdn.microsoft.com/library/windows/hardware/ff553212)します。
+Unidrv または Pscript5 ドライバーには、関数が定義されている場合にのみ、COM ベースのレンダリング プラグインできるグラフィックス DDI 関数をフックします。 このような関数の一覧は、[ **IPrintOemUni::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554248)または[ **IPrintOemPS::EnableDriver**](https://msdn.microsoft.com/library/windows/hardware/ff553212)を参照してください。
 
 特定のカスタマイズのフック関数を指定すると、その関数は、ドライバーのと同じグラフィックス DDI 関数を横取りします。 カスタマイズされたフック関数を設計するときは、次のオプションがあります。
 

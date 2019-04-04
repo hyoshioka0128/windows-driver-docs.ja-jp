@@ -31,7 +31,7 @@ KSEVENT\_クロック\_位置\_マークのイベント、時計の特定の日�
 <a name="remarks"></a>コメント
 -------
 
-イベントを登録する方法については、次を参照してください。 [KS イベント](https://msdn.microsoft.com/library/windows/hardware/ff567643)します。
+イベントを登録する方法については、[KS イベント](https://msdn.microsoft.com/library/windows/hardware/ff567643)を参照してください。
 
  
 

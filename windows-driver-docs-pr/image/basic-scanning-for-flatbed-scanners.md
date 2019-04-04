@@ -27,7 +27,7 @@ Windows Vista でのフラット ベッド項目のプログラミングとス�
 
 -   有効な値を読み取り、 [ **WIA\_IPA\_TYMED** ](https://msdn.microsoft.com/library/windows/hardware/ff551656)と[ **WIA\_IPA\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)プロパティ。
 
--   いずれか、メモリ転送またはファイル転送の種類を選択、WIA を設定して\_IPA\_TYMED プロパティ。 転送の使用可能な種類の詳細については、次を参照してください。 [Data Transfers](data-transfers.md)します。 **IStream**-ベースの転送では、WIA\_IPA\_TYMED に既定では、フラグを設定してください。\_ファイルと、変更しないでください。
+-   いずれか、メモリ転送またはファイル転送の種類を選択、WIA を設定して\_IPA\_TYMED プロパティ。 転送の使用可能な種類の詳細については、[Data Transfers](data-transfers.md)を参照してください。 **IStream**-ベースの転送では、WIA\_IPA\_TYMED に既定では、フラグを設定してください。\_ファイルと、変更しないでください。
 
 -   データの最終的な形式を選択して、WIA を設定して\_IPA\_FORMAT プロパティ。
 

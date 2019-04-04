@@ -77,7 +77,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 最小 TAEF テストを実行するときに使用する分離レベルを指定します。 参照してください[テストの分離](test-isolation.md)の詳細。
 
 <span id="_Parallel_"></span><span id="_parallel_"></span><span id="_PARALLEL_"></span>["Parallel"](parallel.md)  
-複数のプロセッサ全体には、並列でテストを実行します。 詳細については、次を参照してください。[並列](parallel.md)します。
+複数のプロセッサ全体には、並列でテストを実行します。 詳細については、[並列](parallel.md)を参照してください。
 
 <span id="_Priority_"></span><span id="_priority_"></span><span id="_PRIORITY_"></span>"Priority"  
 小さい整数として、テストの優先順位は、優先度の高いです。

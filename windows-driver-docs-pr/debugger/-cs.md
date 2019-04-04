@@ -56,7 +56,7 @@ Exts.dll
 
 ### <a name="additional-information"></a>追加情報
 
-その他のコマンドとクリティカル セクションの情報を表示できる拡張機能では、次を参照してください。[クリティカル セクションを表示する](displaying-a-critical-section.md)します。 クリティカル セクションの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
+その他のコマンドとクリティカル セクションの情報を表示できる拡張機能では、[クリティカル セクションを表示する](displaying-a-critical-section.md)を参照してください。 クリティカル セクションの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
 #### <a name="remarks"></a>コメント
 

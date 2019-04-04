@@ -22,7 +22,7 @@ OID\_WWAN\_プロビジョニング済み\_コンテキストの読み取りや 
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN パケット コンテキスト管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)します。
+詳細については、この OID を使用して、[WWAN パケット コンテキスト管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)を参照してください。
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_サポート MB デバイスがプロビジョニングされているコンテキストの取得をサポートしていない場合にサポートされます。
 
@@ -50,7 +50,7 @@ SimpleIP、WWAN でのレポートが構成されている CDMA デバイス\_CT
 
 プロビジョニングのコンテキストの一覧はセット OID によって更新、デバイスの事前プロビジョニングする必要があります\_WWAN\_プロビジョニング済み\_コンテキスト操作、または SMS または OTA デバイス/演算子によって更新します。 更新してはいけない OID で提供されるコンテキスト情報に基づいて動的に\_WWAN\_MB サービスで接続操作です。
 
-MB デバイスの一覧でプロビジョニングされた各コンテキストから AccessString、UserName、およびパスワードにアクセスする方法の詳細については、次を参照してください。 [ **WWAN\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff571201)します。
+MB デバイスの一覧でプロビジョニングされた各コンテキストから AccessString、UserName、およびパスワードにアクセスする方法の詳細については、[ **WWAN\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff571201)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

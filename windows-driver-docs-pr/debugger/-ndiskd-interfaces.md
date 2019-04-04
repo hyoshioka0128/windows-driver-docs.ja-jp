@@ -24,7 +24,7 @@ ms.locfileid: "56558026"
 
 **! Ndiskd.interfaces**拡張機能は、ネットワーク インターフェイスに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべてのネットワーク インターフェイスの一覧が表示されます。
 
-ネットワーク インターフェイスの詳細については、次を参照してください。[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)します。
+ネットワーク インターフェイスの詳細については、[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)を参照してください。
 
 ```console
 !ndiskd.interfaces [-handle <x>] [-luid <x>] 

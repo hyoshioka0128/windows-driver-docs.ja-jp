@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_WPD_PRIVATE は、カスタムの WPD アプリケーション
 
 カスタム アプリケーションが呼び出すことによってこのインターフェイスを登録するプライベートのデバイスを列挙できる**IPortableDeviceManager::GetPrivateDevices** (Windows SDK に記載されている)。
 
-汎用 WPD デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)します。
+汎用 WPD デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

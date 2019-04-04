@@ -14,7 +14,7 @@ ms.locfileid: "56559572"
 # <a name="mofcomp-task"></a>Mofcomp タスク
 
 
-Windows Driver Kit (WDK) には、MSBuld を使用してドライバーをビルドするときに、Mofcomp.exe ツールを実行できるようにの Mofcomp にタスクが用意されています。 ツールの詳細については、次を参照してください。 [ **mofcomp**](https://msdn.microsoft.com/library/aa392389)します。
+Windows Driver Kit (WDK) には、MSBuld を使用してドライバーをビルドするときに、Mofcomp.exe ツールを実行できるようにの Mofcomp にタスクが用意されています。 ツールの詳細については、[ **mofcomp**](https://msdn.microsoft.com/library/aa392389)を参照してください。
 
 MSBuild では、Mofcomp 項目を使用して、Mofcomp.exe を Mofcomp タスクのパラメーターを送信します。 Mofcomp の項目メタデータは、プロジェクト ファイルの Mofcomp を使用してアクセスします。
 

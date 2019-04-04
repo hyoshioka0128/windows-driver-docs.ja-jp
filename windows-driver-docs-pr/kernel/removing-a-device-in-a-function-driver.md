@@ -48,7 +48,7 @@ ms.locfileid: "56560702"
 
 5. 電源オフ操作を実行します。
 
-   各デバイス ドライバーの受信したときに存在する場合、電源オフ操作を実行します、 **IRP\_MN\_削除\_デバイス**要求。 関数ドライバー、通常、デバイスの電源ポリシーの所有者が、個別に送信しません[ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスの電源を設定する要求D3 状態です。 親のバス ドライバーは、通常、スロットを補強しで電源マネージャーに通知[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)バス ドライバーが IRP の削除を取得します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
+   各デバイス ドライバーの受信したときに存在する場合、電源オフ操作を実行します、 **IRP\_MN\_削除\_デバイス**要求。 関数ドライバー、通常、デバイスの電源ポリシーの所有者が、個別に送信しません[ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスの電源を設定する要求D3 状態です。 親のバス ドライバーは、通常、スロットを補強しで電源マネージャーに通知[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)バス ドライバーが IRP の削除を取得します。 詳細については、[電源管理](implementing-power-management.md)を参照してください。
 
 6. 呼び出すことによって、デバイス インターフェイスを無効にする[ **IoSetDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff549700)します。
 

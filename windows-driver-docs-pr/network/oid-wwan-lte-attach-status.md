@@ -22,7 +22,7 @@ OID_WWAN_LTE_ATTACH_STATUS は LTE 接続コンテキストを最後に使用さ
 
 ## <a name="remarks"></a>コメント
 
-詳細については、この OID を使用して、次を参照してください。 [MBIM_CID_MS_LTE_ATTACH_STATUS](mb-lte-attach-operations.md)します。
+詳細については、この OID を使用して、[MBIM_CID_MS_LTE_ATTACH_STATUS](mb-lte-attach-operations.md)を参照してください。
 
 ## <a name="requirements"></a>必要条件
 

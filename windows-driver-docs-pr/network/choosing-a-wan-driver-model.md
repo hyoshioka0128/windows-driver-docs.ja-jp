@@ -37,7 +37,7 @@ NDIS WAN ミニポート ドライバーは、コネクションレス ミニポ
 
 -   WAN に固有の追加機能を提供します。
 
-いる CoNDIS ドライバーの詳細については、次を参照してください。 [Connection-Oriented NDIS](connection-oriented-ndis.md)します。
+いる CoNDIS ドライバーの詳細については、[Connection-Oriented NDIS](connection-oriented-ndis.md)を参照してください。
 
 新しい WAN ドライバーを作成する場合は、WAN いる CoNDIS モデルを使用することをお勧めします。
 

@@ -25,7 +25,7 @@ Windows で Me/98、Windows 2000 以降のアダプター ドライバーが IRQ
 
 Windows 2000 以降では、PCI ドライバー スタックのエクスポート、 [ **BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707) IRQL ディスパッチで PCI 構成領域へのアクセスを提供するインターフェイス\_レベル。
 
-詳細については、次を参照してください。[へのアクセスのデバイス構成領域](https://msdn.microsoft.com/library/windows/hardware/ff540450)します。
+詳細については、[へのアクセスのデバイス構成領域](https://msdn.microsoft.com/library/windows/hardware/ff540450)を参照してください。
 
  
 

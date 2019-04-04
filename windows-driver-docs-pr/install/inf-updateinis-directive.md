@@ -127,7 +127,7 @@ ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 <a name="remarks"></a>コメント
 -------
 
-指定された*update-section ini*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+指定された*update-section ini*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
 
 完全なパスを提供する、INF、指定された*ini ファイル*配布メディアの次のいずれかの。
 

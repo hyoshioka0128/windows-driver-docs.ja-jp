@@ -34,7 +34,7 @@ ms.locfileid: "56556850"
 <a name="remarks"></a>注釈
 -------
 
-イベントを登録する方法については、次を参照してください。 [KS イベント](https://msdn.microsoft.com/library/windows/hardware/ff567643)します。
+イベントを登録する方法については、[KS イベント](https://msdn.microsoft.com/library/windows/hardware/ff567643)を参照してください。
 
  
 

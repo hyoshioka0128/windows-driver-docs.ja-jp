@@ -44,7 +44,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 
 各*w*、 *x*、 *y*、および*z* 0 以上 65535 未満である整数にする必要があります。
 
-Windows XP SP1、Windows Server 2003 と以降のバージョンの Windows では、この値はまた、*使用*ドライバーのランクとデバイスのドライバーを選択する、日付の組み合わせで、セットアップでします。 詳細については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
+Windows XP SP1、Windows Server 2003 と以降のバージョンの Windows では、この値はまた、*使用*ドライバーのランクとデバイスのドライバーを選択する、日付の組み合わせで、セットアップでします。 詳細については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
 
 次の点は、Windows 2000、および Windows XP には、この値に適用されます。
 

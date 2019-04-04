@@ -356,7 +356,7 @@ ms.locfileid: "58624779"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-メモリの表示と検索する方法の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。 メモリのプロパティを表示する追加の拡張機能を参照してください。 [ **! vm** ](-vm.md) (カーネル モード) と[ **! vprot** ](-vprot.md) (ユーザー モード)。
+メモリの表示と検索する方法の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。 メモリのプロパティを表示する追加の拡張機能を参照してください。 [ **! vm** ](-vm.md) (カーネル モード) と[ **! vprot** ](-vprot.md) (ユーザー モード)。
 
 <a name="remarks"></a>コメント
 -------

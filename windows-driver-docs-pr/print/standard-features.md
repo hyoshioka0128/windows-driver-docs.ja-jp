@@ -108,7 +108,7 @@ ms.locfileid: "57348917"
 <td><p>参照してください<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">標準オプション</a>します。</p>
 <p>カスタマイズされたオプションを指定することはできません。</p></td>
 <td><p>任意。 指定しない場合、既定の方向は縦にします。</p>
-<p>Windows 7 では、 <strong>MxdcGetPDEVAdjustment</strong>関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff557558" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557558)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>します。</p></td>
+<p>Windows 7 では、 <strong>MxdcGetPDEVAdjustment</strong>関数には、横置きに回転の新しいパラメーター。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff557558" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557558)"> <strong>MxdcXDCGetPDEVAdjustment</strong></a>を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>OutputBin</strong></p></td>
@@ -162,7 +162,7 @@ ms.locfileid: "57348917"
 
  
 
-例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
+例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [サンプル GPD ファイル](sample-gpd-files.md)  

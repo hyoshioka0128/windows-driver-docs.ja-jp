@@ -55,7 +55,7 @@ ms.locfileid: "56581199"
 4.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)の DPC キューごとに機能します。 特定の CPU で DPC:
     1.  ビルドでは、そのキュー内のすべての受信バッファー記述子を受信し、ドライバー スタック上のデータを示します。
 
-        詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
+        詳細については、[RSS の受信データのことを示す](indicating-rss-receive-data.md)を参照してください。
 
     2.  完了する最後の DPC にある場合は、割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 ドライバーは、分割不可能な操作を完了するのに最後の DPC を識別するために使用する必要があります。 たとえば、ドライバーを使用できます、 [ **NdisInterlockedDecrement** ](https://msdn.microsoft.com/library/windows/hardware/ff562751)アトミックのカウンターを実装する関数。
 

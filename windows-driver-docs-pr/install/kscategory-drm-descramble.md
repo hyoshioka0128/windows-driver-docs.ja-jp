@@ -56,7 +56,7 @@ KSCATEGORY_DRM_DESCRAMBLE[デバイス インターフェイス クラス](https
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_DRM_DESCRAMBLE 機能カテゴリをサポートすることを示す KSCATEGORY_DRM_DESCRAMBLE のインスタンスを登録します。
 
-この機能のカテゴリの詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+この機能のカテゴリの詳細については、[オーディオ アダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

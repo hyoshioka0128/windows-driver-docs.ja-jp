@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 KSCATEGORY_DATACOMPRESSOR 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)します。
 
-データ ストリームを圧縮解除 KS 機能のカテゴリに対して定義されているデバイスのインターフェイス クラスについては、次を参照してください。 [ **KSCATEGORY_DATADECOMPRESSOR**](kscategory-datadecompressor.md)します。
+データ ストリームを圧縮解除 KS 機能のカテゴリに対して定義されているデバイスのインターフェイス クラスについては、[ **KSCATEGORY_DATADECOMPRESSOR**](kscategory-datadecompressor.md)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

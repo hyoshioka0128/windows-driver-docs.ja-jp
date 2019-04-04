@@ -67,7 +67,7 @@ NDIS を呼び出すと*MiniportCoOidRequest*、NDIS へのポインターを渡
 
  
 
-いる CoNDIS WAN ミニポート ドライバーは、NDIS のすべてをサポートできる[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、次を参照してください。[クエリの実行または情報を設定する](querying-or-setting-information.md)します。
+いる CoNDIS WAN ミニポート ドライバーは、NDIS のすべてをサポートできる[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、[クエリの実行または情報を設定する](querying-or-setting-information.md)を参照してください。
 
  
 

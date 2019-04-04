@@ -23,7 +23,7 @@ ms.locfileid: "56578142"
 ## <span id="ddk_the_checked_build_and_the_debugger_tools"></span><span id="DDK_THE_CHECKED_BUILD_AND_THE_DEBUGGER_TOOLS"></span>
 
 
-Windows オペレーティング システムのカーネル モード ドライバーをデバッグするための一般的なセットアップは、ネットワーク、USB、シリアル、または 1394 接続を使用して接続されている 2 台のコンピューターで構成されます。 カーネル モードのデバッグの設定の詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+Windows オペレーティング システムのカーネル モード ドライバーをデバッグするための一般的なセットアップは、ネットワーク、USB、シリアル、または 1394 接続を使用して接続されている 2 台のコンピューターで構成されます。 カーネル モードのデバッグの設定の詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
 
 *ホスト コンピューター*はデバッガーを実行するシステムです。 安定したシステムし、オペレーティング システムの無料のビルドを常に実行する必要があります。
 

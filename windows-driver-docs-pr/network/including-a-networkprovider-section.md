@@ -35,7 +35,7 @@ A **NetworkProvider**セクションのいずれか、代替デバイス名を�
 
 ### <a name="specifying-a-device-name"></a>デバイス名を指定します。
 
-ネットワーク クラスのインストーラーは、コピーして、ネットワーク プロバイダー、デバイス名を作成する通常の**Ndi\\サービス**NetworkProvider キー コンポーネントのコンポーネントの値**サービス**キー。 詳細については、次を参照してください。 [Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)します。 コンポーネントの別のデバイス名を指定する、 **DeviceName**内のエントリ、 **NetworkProvider**の次の例に示すように、コンポーネントのセクションします。
+ネットワーク クラスのインストーラーは、コピーして、ネットワーク プロバイダー、デバイス名を作成する通常の**Ndi\\サービス**NetworkProvider キー コンポーネントのコンポーネントの値**サービス**キー。 詳細については、[Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)を参照してください。 コンポーネントの別のデバイス名を指定する、 **DeviceName**内のエントリ、 **NetworkProvider**の次の例に示すように、コンポーネントのセクションします。
 
 ```INF
 [DDInstall-section.NetworkProvider]

@@ -20,7 +20,7 @@ ms.locfileid: "56581558"
 
 ディスプレイ ドライバー Windows 表示 Driver Model (WDDM) に準拠していることを確認するまたは[Windows 2000 display driver model (XDDM)](windows-2000-display-driver-model-design-guide.md) Microsoft Windows で Microsoft DirectX の特定のバージョンで実行する を適用する必要がある、ドライバーを適切なバージョン番号です。 任意の DirectX アプリケーションをインストールするときに、ベンダーは、正しくない形式を使用するバージョン番号または不適切なバージョン番号にディスプレイ ドライバーを配布する場合に、エンドユーザーで問題が発生します。
 
-**注**   、 **DriverVer**ディレクティブは、ドライバー パッケージをドライバー ファイル、INF ファイル自体には、INF ファイルなどのバージョン情報を追加する方法を提供します。 使用して、 **DriverVer**ディレクティブ、安全かつ明確を置換できますドライバー パッケージを同じパッケージの将来のバージョン。 このディレクティブの詳細については、次を参照してください。 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)します。
+**注**   、 **DriverVer**ディレクティブは、ドライバー パッケージをドライバー ファイル、INF ファイル自体には、INF ファイルなどのバージョン情報を追加する方法を提供します。 使用して、 **DriverVer**ディレクティブ、安全かつ明確を置換できますドライバー パッケージを同じパッケージの将来のバージョン。 このディレクティブの詳細については、[ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)を参照してください。
 
  
 
@@ -74,7 +74,7 @@ ms.locfileid: "56581558"
 
  
 
-ディスプレイ ドライバーのバージョン管理の詳細については、次を参照してください。[表示ドライバーのバージョン番号](version-numbers-for-display-drivers.md)と[ドライバーのバージョン管理](wddm-2-1-features.md#driver-versioning)します。
+ディスプレイ ドライバーのバージョン管理の詳細については、[表示ドライバーのバージョン番号](version-numbers-for-display-drivers.md)と[ドライバーのバージョン管理](wddm-2-1-features.md#driver-versioning)を参照してください。
 
  
 

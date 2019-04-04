@@ -24,7 +24,7 @@ ms.locfileid: "56577743"
 # <a name="handling-protection-levels-with-opm"></a>OPM での保護レベルの処理
 
 
-各出力保護の種類 (たとえば、アナログ コピー防止 (ACP)、[コンテンツ生成管理システム アナログ (CGMS A)](cgms-a-standards.md)、高帯域幅デジタル コンテンツの保護 (HDCP)、およびディスプレイ ポート等コンテンツ保護 (DPCP)) が保護レベルが関連付けられています。 ACP の詳細については、次を参照してください。、 [Rovi (旧称 Macrovision)](https://go.microsoft.com/fwlink/p/?linkid=71273) web サイト。 HDCP の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。 ディスプレイ ポート等の詳細については、次を参照してください。、[ディスプレイ ポート等](https://go.microsoft.com/fwlink/p/?linkid=71382)Web 記事。
+各出力保護の種類 (たとえば、アナログ コピー防止 (ACP)、[コンテンツ生成管理システム アナログ (CGMS A)](cgms-a-standards.md)、高帯域幅デジタル コンテンツの保護 (HDCP)、およびディスプレイ ポート等コンテンツ保護 (DPCP)) が保護レベルが関連付けられています。 ACP の詳細については、次を参照してください。、 [Rovi (旧称 Macrovision)](https://go.microsoft.com/fwlink/p/?linkid=71273) web サイト。 HDCP の詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。 ディスプレイ ポート等の詳細については、次を参照してください。、[ディスプレイ ポート等](https://go.microsoft.com/fwlink/p/?linkid=71382)Web 記事。
 
 グラフィックス アダプターは、任意の出力保護の種類をサポートする必要はありません。 ただし、グラフィックス アダプターをする必要があります、グラフィックス アダプターの出力は、現在設定されている各のサポートされる保護の種類正確にレポートの各出力の保護レベル。
 

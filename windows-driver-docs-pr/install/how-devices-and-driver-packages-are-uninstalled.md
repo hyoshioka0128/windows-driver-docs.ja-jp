@@ -36,11 +36,11 @@ ms.locfileid: "56579017"
 
 [デバイス] ノードをアクションを削除しますこのアンインストール (*devnode*) システムで、デバイスの物理インスタンスを表します。 次のメソッドのいずれかを使用して Devnode は削除されます。
 
--   デバイス マネージャー。 詳細については、次を参照してください。[デバイス マネージャーを使用して](using-device-manager.md)します。
+-   デバイス マネージャー。 詳細については、[デバイス マネージャーを使用して](using-device-manager.md)を参照してください。
 
--   デバイスのインストール アプリケーションを呼び出す、 [SetupAPI](setupapi.md) [**SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)関数の要求で[ **DIF_削除**](https://msdn.microsoft.com/library/windows/hardware/ff543717)します。 詳細については、次を参照してください。[セットアップ関数の一般的な使用](using-general-setup-functions.md)します。
+-   デバイスのインストール アプリケーションを呼び出す、 [SetupAPI](setupapi.md) [**SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)関数の要求で[ **DIF_削除**](https://msdn.microsoft.com/library/windows/hardware/ff543717)します。 詳細については、[セットアップ関数の一般的な使用](using-general-setup-functions.md)を参照してください。
 
--   デバイスのインストール アプリケーションを呼び出す、SetupAPI [ **DiUninstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544754)関数 (Windows 7 および Windows の以降のバージョン)。 詳細については、次を参照してください。[デバイス インストールの機能を使用して](using-device-installation-functions.md)します。
+-   デバイスのインストール アプリケーションを呼び出す、SetupAPI [ **DiUninstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544754)関数 (Windows 7 および Windows の以降のバージョン)。 詳細については、[デバイス インストールの機能を使用して](using-device-installation-functions.md)を参照してください。
 
 これらのメソッドのいずれかを使用して、デバイスがアンインストールされると、プラグ アンド プレイ (PnP) マネージャーは、デバイスのインストール中に作成されたシステム状態のサブセットを削除します。 たとえば、ドライバーのバイナリ ファイルとデバイス間の関連付けを削除します。 この関連付けは、サービス コントロール マネージャー (SCM) によってをデバイスの適切なドライバーの読み込みに使用されます。
 

@@ -68,7 +68,7 @@ ms.locfileid: "56580334"
     ulSlotPhysAddr[0] = PtrToUlong(pulPhysDmaBuffer) + DMA_BUFFER_SIZE;  // correct
 ```
 
-これは、方法が望ましい場合でも`ulSlotPhysAddr`32 のみであるハードウェア レジスタの値を表すことができます 64 ビット長ではなく。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)します。
+これは、方法が望ましい場合でも`ulSlotPhysAddr`32 のみであるハードウェア レジスタの値を表すことができます 64 ビット長ではなく。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、[、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)を参照してください。
 
  
 

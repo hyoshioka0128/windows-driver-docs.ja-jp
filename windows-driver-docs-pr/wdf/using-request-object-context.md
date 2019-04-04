@@ -28,7 +28,7 @@ ms.locfileid: "56560397"
 
 -   ドライバーは、呼び出すことによって追加の要求オブジェクトを作成する場合[ **WdfRequestCreate**](https://msdn.microsoft.com/library/windows/hardware/ff549951)、コンテキストのサイズを指定するには、WDF を提供することで\_オブジェクト\_属性の構造体。
 
-詳細については、framework のオブジェクトのコンテキストの領域へのアクセスの割り当てとは、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
+詳細については、framework のオブジェクトのコンテキストの領域へのアクセスの割り当てとは、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
 
  
 

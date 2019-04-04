@@ -17,9 +17,9 @@ APN データベース、または apndatabase.xml は、自社のネットワ�
 
 APN データベースは Windows 10 バージョン 1703 以降 COSA と呼ばれる新しい形式に置換されます。 Windows 8、Windows 8.1、およびバージョンの Windows 10 バージョン 1703 を引き続き Windows 10 は APN データベースを使用する前に、バージョン 1703 以降は COSA を使用します。 
 
-COSA に関する詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。
+COSA に関する詳細については、[COSA 概要](cosa-overview.md)を参照してください。
 
-MOs が APN データベースで構成できる使用可能な設定の一覧を表示するには、次を参照してください。[デスクトップ COSA/APN データベースの設定](desktop-cosa-apn-database-settings.md)します。
+MOs が APN データベースで構成できる使用可能な設定の一覧を表示するには、[デスクトップ COSA/APN データベースの設定](desktop-cosa-apn-database-settings.md)を参照してください。
 
 ## <a name="span-idapndbconspanspan-idapndbconspanapn-database-contents"></a><span id="apndbcon"></span><span id="APNDBCON"></span>APN データベースの内容
 
@@ -58,7 +58,7 @@ MOs が APN データベースで構成できる使用可能な設定の一覧�
 
 -   **証明書のデータ**証明書のメタデータをプロビジョニングするアカウントの情報。 これにより、証明書の発行者名とサブジェクト名が含まれていて、アカウント プロビジョニングを購入して web サイトにはユーザーの提供されている web サービスの承認されていることを確認するために使用します。
 
-APN データベースの XML スキーマの詳細については、次を参照してください。 [APN データベースのスキーマ リファレンス](apn-database-schema-reference.md)します。
+APN データベースの XML スキーマの詳細については、[APN データベースのスキーマ リファレンス](apn-database-schema-reference.md)を参照してください。
 
 ## <a name="span-idabndbsubspanspan-idabndbsubspanapn-database-submission-and-maintenance"></a><span id="abndbsub"></span><span id="ABNDBSUB"></span>APN データベースの送信とメンテナンス
 

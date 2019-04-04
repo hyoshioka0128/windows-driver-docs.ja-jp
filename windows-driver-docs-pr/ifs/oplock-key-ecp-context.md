@@ -49,9 +49,9 @@ Oplock キーの GUID です。 この GUID は、別のハンドルの間で共
 <a name="remarks"></a>注釈
 -------
 
-ECPs を使用して、ファイルが作成されると、ファイルと追加情報を関連付ける方法については、次を参照してください。 [IRP の余分な作成のパラメーターを使用して\_MJ\_作成操作](https://msdn.microsoft.com/library/windows/hardware/ff557261)します。
+ECPs を使用して、ファイルが作成されると、ファイルと追加情報を関連付ける方法については、[IRP の余分な作成のパラメーターを使用して\_MJ\_作成操作](https://msdn.microsoft.com/library/windows/hardware/ff557261)を参照してください。
 
-OPLOCK\_キー\_ECP\_CONTEXT 構造は読み取り専用です。 これを使用して、oplock キー ECP をのみに関する情報を取得する必要があります。 この問題の詳細については、次を参照してください。[ベンダー ECPs](https://msdn.microsoft.com/library/windows/hardware/ff556779)します。
+OPLOCK\_キー\_ECP\_CONTEXT 構造は読み取り専用です。 これを使用して、oplock キー ECP をのみに関する情報を取得する必要があります。 この問題の詳細については、[ベンダー ECPs](https://msdn.microsoft.com/library/windows/hardware/ff556779)を参照してください。
 
 Oplock キーにより、アプリケーションの oplock を損なうことがなく、同じストリームに複数のハンドルを開くためのアプリケーションです。 アプリケーション受信共有違反が発生した後にのみ、oplock が発生した (ステータス\_共有\_違反)。
 
@@ -59,7 +59,7 @@ Oplock キーにより、アプリケーションの oplock を損なうこと�
 
 ハンドルが作成されたときに、Oplock のキーがハンドルに関連付けられます。 各 oplock が付与されていない場合でも、oplock のキーを持つハンドルを関連付けることができます。
 
-各 oplock と oplock のキーの詳細については、次を参照してください。 [Oplock セマンティクス概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)します。
+各 oplock と oplock のキーの詳細については、[Oplock セマンティクス概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

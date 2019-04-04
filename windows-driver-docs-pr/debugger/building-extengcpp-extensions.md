@@ -19,7 +19,7 @@ ms.locfileid: "56578296"
 ## <span id="ddk_building_dbgeng_extensions_dbx"></span><span id="DDK_BUILDING_DBGENG_EXTENSIONS_DBX"></span>
 
 
-EngExtCpp 拡張ライブラリは、DbgEng の拡張機能ライブラリとほぼ同じ方法で構築されます。 詳細については、次を参照してください。 [DbgEng 拡張機能の作成](building-dbgeng-extensions.md)です。
+EngExtCpp 拡張ライブラリは、DbgEng の拡張機能ライブラリとほぼ同じ方法で構築されます。 詳細については、[DbgEng 拡張機能の作成](building-dbgeng-extensions.md)を参照してください。
 
 EngExtCpp 実装コード (engextcpp.cpp) は、スタティック ライブラリとリンクの代わりに使用されます。
 

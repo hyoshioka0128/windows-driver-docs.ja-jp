@@ -52,7 +52,7 @@ Windows Server 2003 以降から使用できますが、保護されたミュー
 
 Windows 8 以降、保護されたミュー テックスと高速なミュー テックス実装されます同じです。
 
-Windows 8 の前に Windows のバージョンでは、保護されたミュー テックスは、高速なミュー テックスを異なる方法で実装されます。 APC を現在の IRQL を発生させる、高速なミュー テックスを獲得\_レベルをすばやく処理、保護された領域を入力して、保護されたミュー テックスを取得します。 保護された領域の詳細については、次を参照してください。[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)します。
+Windows 8 の前に Windows のバージョンでは、保護されたミュー テックスは、高速なミュー テックスを異なる方法で実装されます。 APC を現在の IRQL を発生させる、高速なミュー テックスを獲得\_レベルをすばやく処理、保護された領域を入力して、保護されたミュー テックスを取得します。 保護された領域の詳細については、[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)を参照してください。
 
 保護されたミュー テックスがによって表される、 [ **KGUARDED\_ミュー テックス**](https://msdn.microsoft.com/library/windows/hardware/ff554235)構造体。 ドライバーの独自のストレージを割り当て、 **KGUARDED\_ミュー テックス**構造体に呼び出し、 [ **KeInitializeGuardedMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff552144)ルーチンを初期化するために、構造体。
 

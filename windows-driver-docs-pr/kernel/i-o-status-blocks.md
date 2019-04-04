@@ -32,7 +32,7 @@ ms.locfileid: "56572668"
 
 、、の IRP の完了時に、**状態**フィールドは、ドライバーが IRP の処理が実際には、要求を満たすか、IRP がエラー状態が失敗したかを示します。 **情報**フィールドは、呼び出し元に実際に発生した内容についての詳細情報を提供します。 たとえば、読み取りまたは書き込み操作の後に実際に転送されたバイト数が含まれています。
 
-詳細については、次を参照してください。 [IRP の状態の I/O ブロックを設定](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)します。
+詳細については、[IRP の状態の I/O ブロックを設定](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)を参照してください。
 
  
 

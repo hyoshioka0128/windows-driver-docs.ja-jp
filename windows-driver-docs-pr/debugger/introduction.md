@@ -61,12 +61,12 @@ ms.locfileid: "56560735"
 ## <a name="span-idcustomizingdebuggeroutputusingdmlspanspan-idcustomizingdebuggeroutputusingdmlspanspan-idcustomizingdebuggeroutputusingdmlspancustomizing-debugger-output-using-dml"></a><span id="Customizing_Debugger_Output_Using_DML"></span><span id="customizing_debugger_output_using_dml"></span><span id="CUSTOMIZING_DEBUGGER_OUTPUT_USING_DML"></span>DML を使用して出力をデバッガーのカスタマイズ
 
 
-DML を使用して出力をデバッガーをカスタマイズすることができます。 詳細については、次を参照してください。 [DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)します。
+DML を使用して出力をデバッガーをカスタマイズすることができます。 詳細については、[DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)を参照してください。
 
 ## <a name="span-idjavascriptspanspan-idjavascriptspanspan-idjavascriptspanusing-javascript-to-extend-the-capabilities-of-the-debugger"></a><span id="JavaScript"></span><span id="javascript"></span><span id="JAVASCRIPT"></span>JavaScript を使用して、デバッガーの機能を拡張するには
 
 
-デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成するのにには、JavaScript を使用します。 JavaScript のプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。 詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。
+デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成するのにには、JavaScript を使用します。 JavaScript のプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。 詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。
 
  
 

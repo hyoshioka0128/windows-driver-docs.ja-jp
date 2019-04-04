@@ -35,7 +35,7 @@ ms.locfileid: "56570717"
 
 
 <span id="_______System______"></span><span id="_______system______"></span><span id="_______SYSTEM______"></span> *システム*   
-アクティブ化するシステムの番号を指定します。 構文の詳細については、次を参照してください。[システム構文](system-syntax.md)します。
+アクティブ化するシステムの番号を指定します。 構文の詳細については、[システム構文](system-syntax.md)を参照してください。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -65,7 +65,7 @@ ms.locfileid: "56570717"
 <a name="remarks"></a>コメント
 -------
 
-**| |s**コマンドは、複数のターゲットをデバッグまたは複数のダンプ ファイルを操作するときに便利です。  この種のセッションの詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
+**| |s**コマンドは、複数のターゲットをデバッグまたは複数のダンプ ファイルを操作するときに便利です。  この種のセッションの詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
 
 使用する場合、 **| |s**構文、デバッガーには、現在のシステムに関する情報が表示されます。
 

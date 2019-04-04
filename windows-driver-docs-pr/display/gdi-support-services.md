@@ -62,7 +62,7 @@ ms.locfileid: "56551331"
 
 [ハーフトーン サービス](gdi-halftone-services.md)
 
-[グラフィックス DDI を使用して](using-the-graphics-ddi.md)グラフィックス DDI のエントリ ポイントを説明し、これらのサービス ルーチンの多くを使用して、ドライバーのエントリ ポイントを実装する場所についても説明します。 各サービスの機能の詳細な説明については、次を参照してください。 [GDI 関数は、プリンターおよびディスプレイ ドライバーによって呼び出されます](https://msdn.microsoft.com/library/windows/hardware/ff566544)します。
+[グラフィックス DDI を使用して](using-the-graphics-ddi.md)グラフィックス DDI のエントリ ポイントを説明し、これらのサービス ルーチンの多くを使用して、ドライバーのエントリ ポイントを実装する場所についても説明します。 各サービスの機能の詳細な説明については、[GDI 関数は、プリンターおよびディスプレイ ドライバーによって呼び出されます](https://msdn.microsoft.com/library/windows/hardware/ff566544)を参照してください。
 
  
 

@@ -65,7 +65,7 @@ ms.locfileid: "56560092"
 
 Framework の呼び出し後に[ **OnCloseFile**](https://msdn.microsoft.com/library/windows/hardware/ff554910)、破棄、 [IWDFFile](https://msdn.microsoft.com/library/windows/hardware/ff558912)ファイル オブジェクトを表すインターフェイスです。
 
-ドライバーに作成されたファイル オブジェクトが、ドライバーのデバイスの削除メソッドの後に残っている場合 (たとえば[ **IPnpCallbackHardware::OnReleaseHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556768)と[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup**](https://msdn.microsoft.com/library/windows/hardware/ff556780)) 戻り、ドライバーの停止はフレームワークに生成されます。 この問題をトラブルシューティングする方法の詳細については、次を参照してください。[を決定する理由 UMDF 示します未処理のファイルがデバイスの削除時に](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)します。
+ドライバーに作成されたファイル オブジェクトが、ドライバーのデバイスの削除メソッドの後に残っている場合 (たとえば[ **IPnpCallbackHardware::OnReleaseHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556768)と[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup**](https://msdn.microsoft.com/library/windows/hardware/ff556780)) 戻り、ドライバーの停止はフレームワークに生成されます。 この問題をトラブルシューティングする方法の詳細については、[を決定する理由 UMDF 示します未処理のファイルがデバイスの削除時に](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)を参照してください。
 
  
 

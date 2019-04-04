@@ -14,12 +14,12 @@ ms.locfileid: "56570340"
 # <a name="basic-calling-pattern-for-version-3-dma-routines"></a>バージョン 3 の DMA ルーチンの基本的な呼び出しパターン
 
 
-DMA 操作のインターフェイスのバージョン 3 で、ルーチンを使用する DMA 転送を実行するには、ドライバーは、次の一覧で説明されている手順に従う必要があります。 次の手順では、下位のデバイスとバス マスターのデバイスの両方に共通です。 このインターフェイスのバージョン 3 では、Windows 8 以降で使用できます。 このインターフェイスでルーチンの詳細については、次を参照してください。 [ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)します。
+DMA 操作のインターフェイスのバージョン 3 で、ルーチンを使用する DMA 転送を実行するには、ドライバーは、次の一覧で説明されている手順に従う必要があります。 次の手順では、下位のデバイスとバス マスターのデバイスの両方に共通です。 このインターフェイスのバージョン 3 では、Windows 8 以降で使用できます。 このインターフェイスでルーチンの詳細については、[ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)を参照してください。
 
 ## <a name="step-1-obtain-a-dma-adapter-object"></a>手順 1:DMA アダプター オブジェクトを取得します。
 
 
-DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)ルーチン DMA アダプター オブジェクトを取得します。 DMA のアダプター オブジェクトは、バス マスター デバイス、またはシステム DMA コント ローラーの要求行のいずれかを表すソフトウェア オブジェクトです。 このオブジェクトには、デバイス間でデータを転送するために使用するバスの DMA 操作のインターフェイスが含まれています。 さらに、このオブジェクトは、転送を実行するために必要な共有リソースへのドライバーのアクセスを同期します。 詳細については、次を参照してください。[アダプター オブジェクトの概要](introduction-to-adapter-objects.md)します。
+DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)ルーチン DMA アダプター オブジェクトを取得します。 DMA のアダプター オブジェクトは、バス マスター デバイス、またはシステム DMA コント ローラーの要求行のいずれかを表すソフトウェア オブジェクトです。 このオブジェクトには、デバイス間でデータを転送するために使用するバスの DMA 操作のインターフェイスが含まれています。 さらに、このオブジェクトは、転送を実行するために必要な共有リソースへのドライバーのアクセスを同期します。 詳細については、[アダプター オブジェクトの概要](introduction-to-adapter-objects.md)を参照してください。
 
 ## <a name="step-2-obtain-a-description-of-the-required-dma-resources"></a>手順 2:DMA の必要なリソースの説明を取得します。
 
@@ -67,7 +67,7 @@ DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAda
 
 ドライバー呼び出し[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521) DMA 転送を開始して DMA のリソースを初期化します。 この呼び出しを呼び出すのと同じドライバー スレッドで発生した**AllocateAdapterChannelEx**に、ドライバーが提供する実行ルーチンで発生した、または**AllocateAdapterChannelEx**します。 1 つ以上の場合**MapTransferEx** DMA データ バッファー全体を転送する呼び出しが必要です、後で**MapTransferEx**以前完了ルーチンで発生した呼び出し**MapTransferEx**呼び出します。
 
-**MapTransferEx**サポートには、入力パラメーターとして MDLs がチェーンされています。 各 MDL では、仮想メモリ内で連続している DMA バッファーの領域について説明します。 ときに**MapTransferEx**スキャッター/ギャザー リストで、ドライバーの介入なしに仮想的に連続するバッファーの 1 つのリージョンからの移行を自動的に処理します。 詳細については、次を参照してください。 [MapTransferEx ルーチンを使用して](using-the-maptransferex-routine.md)します。
+**MapTransferEx**サポートには、入力パラメーターとして MDLs がチェーンされています。 各 MDL では、仮想メモリ内で連続している DMA バッファーの領域について説明します。 ときに**MapTransferEx**スキャッター/ギャザー リストで、ドライバーの介入なしに仮想的に連続するバッファーの 1 つのリージョンからの移行を自動的に処理します。 詳細については、[MapTransferEx ルーチンを使用して](using-the-maptransferex-routine.md)を参照してください。
 
 DMA 転送システムの場合に、DMA 完了ルーチンへのポインターを渡すことが**MapTransferEx** 、省略可能な*DmaCompletionRoutine*パラメーター。 このルーチンは、DMA 転送が完了したことを示すシステム DMA コント ローラーから、割り込みに応答でディスパッチで実行する予定です。
 

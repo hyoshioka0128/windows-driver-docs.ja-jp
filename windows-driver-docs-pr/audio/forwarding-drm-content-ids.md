@@ -82,7 +82,7 @@ DRMK は転送をセキュリティで保護されたデータのパスのアッ
 
 [**IDrmPort2::AddContentHandlers**](https://msdn.microsoft.com/library/windows/hardware/ff536575)
 
-詳細については、次を参照してください。 [DRM 関数](https://msdn.microsoft.com/library/windows/hardware/ff536356)します。
+詳細については、[DRM 関数](https://msdn.microsoft.com/library/windows/hardware/ff536356)を参照してください。
 
 わかりやすくするため、これまでの説明には、データ パス内の各モジュールが 1 つのソースからのストリームを受け入れるし、ダウン ストリーム モジュールは 1 つには、そのストリームの転送が想定しています。 実際には、モジュールは、2 つ以上の下位モジュールにストリーム転送できますが、各ダウン ストリームのモジュール 3 の転送関数のいずれかを呼び出すことによって最初に認証する必要があります。 同様に、モジュールがまとめて複数の入力ストリームで混在できますが、適切なレベルの混在の出力ストリームの保護を提供することで、入力ストリームのコンテンツの権利を尊重にする必要があります。 詳細については、の説明を参照してください、 [ **DrmCreateContentMixed** ](https://msdn.microsoft.com/library/windows/hardware/ff536348)関数[コンテンツの Id とコンテンツの権利](content-ids-and-content-rights.md)します。
 

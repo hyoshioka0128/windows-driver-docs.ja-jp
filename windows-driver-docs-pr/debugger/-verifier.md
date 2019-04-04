@@ -25,7 +25,7 @@ ms.locfileid: "56574177"
 
 **! Verifier**拡張機能は、Driver Verifier とそのアクションの状態を表示します。
 
-Driver Verifier は、Windows に含まれます。 オンで、無料のビルドで動作します。 Driver Verifier については、次を参照してください。、 [Driver Verifier](https://go.microsoft.com/fwlink/p/?linkid=120480) Windows Driver Kit (WDK) ドキュメントのトピックです。
+Driver Verifier は、Windows に含まれます。 オンで、無料のビルドで動作します。 Driver Verifier については、、 [Driver Verifier](https://go.microsoft.com/fwlink/p/?linkid=120480) Windows Driver Kit (WDK) ドキュメントのトピックを参照してください。
 
 構文
 

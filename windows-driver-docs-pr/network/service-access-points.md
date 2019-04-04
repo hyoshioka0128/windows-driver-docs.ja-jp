@@ -27,7 +27,7 @@ A*サービス アクセス ポイント*(SAP) は、関心のある接続指向
 
 クライアントは常に登録されません、SAP では、たとえば、着信呼び出しが処理しない場合。 クライアントは、コール マネージャーまたは MCM のドライバーを複数の SAPs を登録できます。
 
-SAPs の詳細については、次を参照してください。[登録 SAP](registering-a-sap.md)と[SAP の登録を解除](deregistering-a-sap.md)します。
+SAPs の詳細については、[登録 SAP](registering-a-sap.md)と[SAP の登録を解除](deregistering-a-sap.md)を参照してください。
 
  
 

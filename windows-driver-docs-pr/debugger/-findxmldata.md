@@ -79,7 +79,7 @@ XML ファイルのチェックサムが表示されます。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-CAB ファイルにダンプ ファイルを配置する方法の詳細については、次を参照してください。 [ **.dumpcab (ダンプ ファイル CAB の作成)**](-dumpcab--create-dump-file-cab-.md)します。 CAB ファイルに保存されているダンプ ファイルを含む、カーネル モードのダンプ ファイルをデバッグする方法の詳細については、次を参照してください。[カーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file.md)します。
+CAB ファイルにダンプ ファイルを配置する方法の詳細については、[ **.dumpcab (ダンプ ファイル CAB の作成)**](-dumpcab--create-dump-file-cab-.md)を参照してください。 CAB ファイルに保存されているダンプ ファイルを含む、カーネル モードのダンプ ファイルをデバッグする方法の詳細については、[カーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

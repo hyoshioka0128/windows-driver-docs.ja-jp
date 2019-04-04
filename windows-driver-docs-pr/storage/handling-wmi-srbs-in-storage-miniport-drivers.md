@@ -29,7 +29,7 @@ WMI される Srb を処理するために、記憶域ミニポート ドライ�
 
 1.  デザインし、システム提供の MOF ファイルで定義されていない WMI スキーマの部分を説明する管理オブジェクト フォーマット (MOF) ファイルをコンパイルします。
 
-    MOF 構文については、次を参照してください。 [WMI データとイベント ブロックの MOF 構文](https://msdn.microsoft.com/library/windows/hardware/ff556400)します。
+    MOF 構文については、[WMI データとイベント ブロックの MOF 構文](https://msdn.microsoft.com/library/windows/hardware/ff556400)を参照してください。
 
 2.  ミニポート ドライバー コールバック ルーチンを実装します。
 

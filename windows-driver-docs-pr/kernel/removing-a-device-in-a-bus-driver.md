@@ -34,7 +34,7 @@ ms.locfileid: "56579770"
 
 3.  バス ドライバーでは、これを行う場合、デバイスからの電源を削除し、呼び出すことによって電源マネージャーに通知[ **PoSetPowerState**](https://msdn.microsoft.com/library/windows/hardware/ff559765)します。
 
-    バス ドライバー子デバイス電源可能であれば、およびデバイスの電源状態の変更の電源マネージャーに通知します。 バス ドライバーへの応答では、 [ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)要求は、デバイスの電源ポリシー所有者は送信しません、 [**IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスが削除されるときに要求します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
+    バス ドライバー子デバイス電源可能であれば、およびデバイスの電源状態の変更の電源マネージャーに通知します。 バス ドライバーへの応答では、 [ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)要求は、デバイスの電源ポリシー所有者は送信しません、 [**IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスが削除されるときに要求します。 詳細については、[電源管理](implementing-power-management.md)を参照してください。
 
 4.  バス ドライバーへの応答に、最新では、このデバイスが報告されたかどうか、 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670) の要求**BusRelations**デバイスがコンピューターにまだ物理的に存在します。 この場合は、バス ドライバー。
 

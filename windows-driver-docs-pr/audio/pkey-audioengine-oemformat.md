@@ -40,7 +40,7 @@ PKEY_AudioEndpoint_Association          = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E
 PKEY_AudioEngine_OEMFormat              = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04},3"
 ```
 
-前の例では、OEMSettingsOverride.AddReg の追加レジストリ セクションの名前が定義されている、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320) Sysfx.inf でインターフェイスのインストール セクション ディレクティブ。 前の例はエンドポイント数が 0 のいくつかのプロパティを追加します (文字列で識別される"EP\\\\0")、デバイス インターフェイスのレジストリ エントリにします。 (デバイスのインターフェイスを表している場合、 [wave フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538862)追加のエンドポイントは番号付き 1、2、およびでは、複数のエンドポイントを使用します)。インターフェイスのセクションではインストールの詳細については、次を参照してください。 [ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+前の例では、OEMSettingsOverride.AddReg の追加レジストリ セクションの名前が定義されている、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320) Sysfx.inf でインターフェイスのインストール セクション ディレクティブ。 前の例はエンドポイント数が 0 のいくつかのプロパティを追加します (文字列で識別される"EP\\\\0")、デバイス インターフェイスのレジストリ エントリにします。 (デバイスのインターフェイスを表している場合、 [wave フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538862)追加のエンドポイントは番号付き 1、2、およびでは、複数のエンドポイントを使用します)。インターフェイスのセクションではインストールの詳細については、[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
 
 アプリケーションが取得することで、プロパティにアクセスできます INF ファイルは、3 つのプロパティのキーを作成し、関連する値をレジストリに読み込まれるが後、 [IPropertyStore](https://msdn.microsoft.com/library/windows/hardware/ff536954)エンドポイント デバイスのインターフェイス。 ヘッダー ファイル、Windows sdk Mmdeviceapi.h には、次の 3 つのプロパティのキーの C と C++ の定義が含まれています。 IPropertyStore インターフェイスを取得する方法の詳細については、の説明を参照して、 [ **IMMDevice::OpenPropertyStore** ](https://msdn.microsoft.com/library/windows/desktop/dd371412) Windows SDK のドキュメント内のメソッド。
 

@@ -19,7 +19,7 @@ ms.locfileid: "56579127"
 
 WIA ミニドライバーは、いつでも、WIA 項目のツリー構造を変更する権限を持ちます。 ミニドライバーが WIA 項目のツリーに変更するとき、ミニドライバーは、サービスに WIA を通知する必要があります。 WIA サービスは、接続されたすべての WIA アプリケーションを通知します。 通知が受信した後、WIA アプリケーションは、変更の結果を判定 WIA 項目ツリーを列挙する必要があります。
 
-ミニドライバーは、WIA サービス ユーティリティ関数を使用して[ **wiasQueueEvent**](https://msdn.microsoft.com/library/windows/hardware/ff549296)、WIA サービスにツリー構造での変更が通知されます。 WIA ミニドライバーがで報告されているイベントのみをキュー [ **IWiaMiniDrv::drvGetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff543977)します。 WIA イベントをレポートの詳細については、次を参照してください。[イベントの報告](event-reporting.md)します。
+ミニドライバーは、WIA サービス ユーティリティ関数を使用して[ **wiasQueueEvent**](https://msdn.microsoft.com/library/windows/hardware/ff549296)、WIA サービスにツリー構造での変更が通知されます。 WIA ミニドライバーがで報告されているイベントのみをキュー [ **IWiaMiniDrv::drvGetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff543977)します。 WIA イベントをレポートの詳細については、[イベントの報告](event-reporting.md)を参照してください。
 
 ### <a name="explanation-of-the-iwiaminidrvdrvdeleteitem-implementation"></a>IWiaMiniDrv::drvDeleteItem 実装の説明
 

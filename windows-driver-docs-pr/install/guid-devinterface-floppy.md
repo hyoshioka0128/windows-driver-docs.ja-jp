@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_FLOPPY[デバイス インターフェイス クラス](https:
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK に含める、[フロッピー ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256192)古い形式の識別子を使用するサンプル[ **FloppyClassGuid** ](floppyclassguid.md)にGUID_DEVINTERFACE_FLOPPY デバイス インターフェイスのクラスのインスタンスを登録します。
 
-ストレージ ドライバーについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+ストレージ ドライバーについては、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

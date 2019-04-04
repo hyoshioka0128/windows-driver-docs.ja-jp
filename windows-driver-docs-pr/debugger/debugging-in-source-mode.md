@@ -36,7 +36,7 @@ WinDbg、KD、CDB は、ソース言語が C#、C++、またはアセンブリ�
 
 ### <a name="span-idlocatingthesymbolfilesandsourcefilesspanspan-idlocatingthesymbolfilesandsourcefilesspanlocating-the-symbol-files-and-source-files"></a><span id="locating_the_symbol_files_and_source_files"></span><span id="LOCATING_THE_SYMBOL_FILES_AND_SOURCE_FILES"></span>シンボル ファイルおよびソース ファイルを検索します。
 
-を元のモードでデバッグするには、デバッガーは、ソース ファイルとシンボル ファイルを検索できる必要があります。 詳細については、次を参照してください。[ソース コード](source-code.md)します。
+を元のモードでデバッグするには、デバッガーは、ソース ファイルとシンボル ファイルを検索できる必要があります。 詳細については、[ソース コード](source-code.md)を参照してください。
 
 ### <a name="span-idbeginningsourcedebuggingspanspan-idbeginningsourcedebuggingspanbeginning-source-debugging"></a><span id="beginning_source_debugging"></span><span id="BEGINNING_SOURCE_DEBUGGING"></span>ソースのデバッグを開始
 
@@ -61,19 +61,19 @@ g
 
 WinDbg を使用している場合は、プログラム カウンターは、デバッガーからの情報をソース コードがすぐにソース ウィンドウが表示されます。
 
-WinDbg では、開かれた WinDbg またはするソース ファイルごとに 1 つのソース ウィンドウが表示されます。 このウィンドウのテキスト プロパティの詳細については、次を参照してください。[ソース Windows](source-window.md)します。
+WinDbg では、開かれた WinDbg またはするソース ファイルごとに 1 つのソース ウィンドウが表示されます。 このウィンドウのテキスト プロパティの詳細については、[ソース Windows](source-window.md)を参照してください。
 
-アプリケーションのステップ、または、ブレークポイントまたはカーソルを実行することができます。 ステップ実行とトレース コマンドの詳細については、次を参照してください。[ターゲットを制御する](controlling-the-target.md)します。
+アプリケーションのステップ、または、ブレークポイントまたはカーソルを実行することができます。 ステップ実行とトレース コマンドの詳細については、[ターゲットを制御する](controlling-the-target.md)を参照してください。
 
 ソース モードでは、アプリケーションをステップ実行するように適切なソース ウィンドウがフォア グラウンドに移動します。 デバッガーを移動する可能性がありますも、アプリケーションの実行中に呼び出されるルーチンを Microsoft Windows はであるため、[逆アセンブル ウィンドウ](disassembly-window.md)フォア グラウンド (デバッガーがあるないために、この種類の呼び出しが発生したときにアクセスをこれらの関数のソースに)。 既知のソース ファイルに戻ると、プログラム カウンターが、適切なソース ウィンドウがアクティブになります。
 
-アプリケーションの間を移動し、WinDbg には、ソース ウィンドウと [逆アセンブル] ウィンドウ内の場所が強調表示されます。 ブレークポイントが設定される行も強調表示されます。 ソース コードは、言語の解析に合わせて色付けされます。 ソース ウィンドウが選択されている場合、シンボルを評価するには、マウスを合わせることができます。 これらの機能とそれらを制御する方法の詳細については、次を参照してください。[ソース Windows](source-window.md)します。
+アプリケーションの間を移動し、WinDbg には、ソース ウィンドウと [逆アセンブル] ウィンドウ内の場所が強調表示されます。 ブレークポイントが設定される行も強調表示されます。 ソース コードは、言語の解析に合わせて色付けされます。 ソース ウィンドウが選択されている場合、シンボルを評価するには、マウスを合わせることができます。 これらの機能とそれらを制御する方法の詳細については、[ソース Windows](source-window.md)を参照してください。
 
 WinDbg でソース モードを有効にするには、使用、 [ **l + t** ](l---l---set-source-options-.md)コマンドで、をクリックして**ソース モード**上、**デバッグ** メニューの [または] をクリックして、 **ソース モード**ボタン (![ボタンをソース モードのスクリーン ショット](images/tbsrc.png)) ツールバー。
 
 ソース モードがアクティブの場合、 **ASM**ステータス バーで使用できなくなったインジケーターが表示されます。
 
-表示したり、元のモードでの関数をステップ実行するように、任意のローカル変数の値を変更することができます。 詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
+表示したり、元のモードでの関数をステップ実行するように、任意のローカル変数の値を変更することができます。 詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
 
 ### <a name="span-idsourcedebugginginthedebuggercommandwindowspanspan-idsourcedebugginginthedebuggercommandwindowspansource-debugging-in-the-debugger-command-window"></a><span id="source_debugging_in_the_debugger_command_window"></span><span id="SOURCE_DEBUGGING_IN_THE_DEBUGGER_COMMAND_WINDOW"></span>ソースのデバッガー コマンド ウィンドウでデバッグ
 
@@ -103,7 +103,7 @@ p             execute one source line
 
 [ **」と入力**](enter--repeat-last-command-.md)繰り返します最後のコマンドを今すぐ、ENTER キーを使用してアプリケーションをステップことができます。 各手順では、ソース行、メモリのオフセット、およびアセンブリのコードを表示します。
 
-逆アセンブリの表示を解釈する方法の詳細については、次を参照してください。[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
+逆アセンブリの表示を解釈する方法の詳細については、[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)を参照してください。
 
 アセンブリ コードが表示されたら、行の右端にアクセスされているメモリの任意の場所が表示されます。 使用することができます、 [ **d\* (表示メモリ)** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)と[ **e\* (値を入力してください)** ](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md)コマンドを表示または変更しますこれらの場所の値。
 
@@ -133,7 +133,7 @@ p             execute one source line
 bp `source.c:31` 
 ```
 
-詳細については、次を参照してください。[ソース行構文](source-line-syntax.md)と[を使用してブレークポイント](using-breakpoints.md)します。
+詳細については、[ソース行構文](source-line-syntax.md)と[を使用してブレークポイント](using-breakpoints.md)を参照してください。
 
 ### <a name="span-idsteppingandtracinginsourcemodespanspan-idsteppingandtracinginsourcemodespanstepping-and-tracing-in-source-mode"></a><span id="stepping_and_tracing_in_source_mode"></span><span id="STEPPING_AND_TRACING_IN_SOURCE_MODE"></span>ステップ実行し、元のモードでのトレース
 

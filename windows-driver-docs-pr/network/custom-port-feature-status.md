@@ -60,7 +60,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomPortData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
+MOF コンパイラを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)を参照してください。
 
 次の例では、ポートのデータを取得するカスタム ポート機能の状態の定義を使用する方法を示します。 この例では、Fabrikam\_CustomPortData MOF クラスを使用して"TestVm"という名前の HYPER-V パーティションからポートの状態を取得します。 Fabrikam, Inc. の拡張機能では、vSwitch"TestSwitch"が有効になり、123 の状態を返すことができます。
 

@@ -82,7 +82,7 @@ ms.locfileid: "56581127"
 
  
 
-Windows デバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。 設定して、カーネル モードの構成についてはデバッグ セッションを参照してください[カーネル モード デバッグ手作業でセットアップ](https://msdn.microsoft.com/library/windows/hardware/hh439378)します。
+Windows デバッグ ツールの詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。 設定して、カーネル モードの構成についてはデバッグ セッションを参照してください[カーネル モード デバッグ手作業でセットアップ](https://msdn.microsoft.com/library/windows/hardware/hh439378)します。
 
 次のコマンドは、ブートの Windows ブート マネージャー (Bootmgr.exe) のデバッグを無効にします。 オペレーティング システムが起動し、次に、Windows ブート ローダーを読み込みます Windows ブート マネージャーを選択します。
 

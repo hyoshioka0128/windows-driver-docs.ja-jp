@@ -27,7 +27,7 @@ INF ファイルのキーワードの一覧[INF ファイルのセクション�
 
 [**SetupPreferredAudioDevices**](https://msdn.microsoft.com/library/windows/hardware/ff537899)
 
-**SetupPreferredAudioDevices**キーワードは、Windows 2000 以降をサポートします。 詳細については、次を参照してください。 [Media クラス INF 拡張子](https://msdn.microsoft.com/library/windows/hardware/ff537513)します。
+**SetupPreferredAudioDevices**キーワードは、Windows 2000 以降をサポートします。 詳細については、[Media クラス INF 拡張子](https://msdn.microsoft.com/library/windows/hardware/ff537513)を参照してください。
 
  
 

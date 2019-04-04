@@ -46,7 +46,7 @@ status = WdfDmaEnablerCreate( DevExt->Device,
                               &DevExt->DmaEnabler );
 ```
 
-かどうか、ドライバー共通のバッファーが必要、ドライバーの*EvtDriverDeviceAdd*コールバック関数通常それらを設定します。 これらのバッファーの詳細については、次を参照してください。[を使用して一般的なバッファー](using-common-buffers.md)します。
+かどうか、ドライバー共通のバッファーが必要、ドライバーの*EvtDriverDeviceAdd*コールバック関数通常それらを設定します。 これらのバッファーの詳細については、[を使用して一般的なバッファー](using-common-buffers.md)を参照してください。
 
 ドライバーが呼び出された後**WdfDmaEnablerCreate**、呼び出すことができます[ **WdfDmaEnablerWdmGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff547020) WDM へのポインターを取得する[ **DMA\_アダプター** ](https://msdn.microsoft.com/library/windows/hardware/ff544062)デバイスの入力と出力方向のフレームワークを作成する構造体。 ただし、ほとんどのフレームワーク ベースのドライバーでは、これらの構造体にアクセスする必要はありません。
 

@@ -60,7 +60,7 @@ DEVPKEY_Device_ModelId のデバイス プロパティでは、同じ製造元�
 
 DEVPKEY_Device_ModelId のデバイス プロパティの値を格納、 [ **ModelID** ](https://msdn.microsoft.com/library/windows/hardware/ff549295)デバイスのメタデータ パッケージの XML 要素。 デバイスがインストールされている場合、デバイスによって報告された ModelID GUID 値を持つこの鍵が設定されます。
 
-詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。
+詳細については、[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

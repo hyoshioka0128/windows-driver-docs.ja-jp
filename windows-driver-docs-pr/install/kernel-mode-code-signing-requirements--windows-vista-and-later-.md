@@ -25,7 +25,7 @@ Windows Vista では、カーネル モード コード署名では、カーネ�
 
 仮想ドライバーでは、実際のハードウェア ドライバーと同じ要件があります。 つまり、ターゲットが OS のバージョンの要件に準拠する必要があります。
 
-署名とダッシュ ボードの送信については、次を参照してください。[複数の Windows バージョンの Microsoft によって署名されたドライバーを入手](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions)します。
+署名とダッシュ ボードの送信については、[複数の Windows バージョンの Microsoft によって署名されたドライバーを入手](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions)を参照してください。
 
 ### <a href="" id="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a> カーネル モード コード署名のドライバーのリリースを公開するための要件
 

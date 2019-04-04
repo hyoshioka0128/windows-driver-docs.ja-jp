@@ -15,7 +15,7 @@ ms.locfileid: "56571966"
 
 このトピックでは使用し、 **USB カーネル モード ドライバー** Microsoft Visual Studio の Professional 2012 書き込む単純なカーネル モード ドライバー フレームワーク (KMDF) に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
 
-テンプレートによって生成されたソース コードに関する詳細については、次を参照してください。 [USB クライアント ドライバーの KMDF テンプレート コードを理解する](understanding-the-kmdf-template-code-for-usb.md)します。
+テンプレートによって生成されたソース コードに関する詳細については、[USB クライアント ドライバーの KMDF テンプレート コードを理解する](understanding-the-kmdf-template-code-for-usb.md)を参照してください。
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -29,10 +29,10 @@ ms.locfileid: "56571966"
 **ソフトウェア要件**
 
 -   ホスト コンピューターでは、開発環境をホストし、Visual Studio Professional 2012 を持ちます。
--   ホスト コンピューターでは、Windows 8 の最新 Windows Driver Kit (WDK) を持ちます。 キットは、ヘッダー、ライブラリ、ツール、ドキュメントについては、デバッグ ツールを開発するために必要なビルド、デバッグと KMDF ドライバー。 WDK の最新バージョンを取得するには、次を参照してください。 [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)します。
+-   ホスト コンピューターでは、Windows 8 の最新 Windows Driver Kit (WDK) を持ちます。 キットは、ヘッダー、ライブラリ、ツール、ドキュメントについては、デバッグ ツールを開発するために必要なビルド、デバッグと KMDF ドライバー。 WDK の最新バージョンを取得するには、[Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)を参照してください。
 -   ホスト コンピューターでは、Windows 用デバッグ ツールの最新バージョンがあります。 WDK から最新バージョンを取得することもできますを[ダウンロードとデバッグ ツールの Windows にインストール](https://msdn.microsoft.com/windows/hardware/gg463009.aspx)します。
 -   Windows Vista または Windows の以降のバージョン、ターゲット コンピューターが実行されています。
--   カーネルのデバッグと、ホストとターゲット コンピューターが構成されます。 詳細については、次を参照してください。[設定、ネットワーク接続のセットアップでは、Visual Studio](https://msdn.microsoft.com/library/windows/hardware/hh439353)します。
+-   カーネルのデバッグと、ホストとターゲット コンピューターが構成されます。 詳細については、[設定、ネットワーク接続のセットアップでは、Visual Studio](https://msdn.microsoft.com/library/windows/hardware/hh439353)を参照してください。
 
 **ハードウェア要件**
 
@@ -48,7 +48,7 @@ Microsoft USB Test Tool (MUTT) デバイスを取得することもできます�
 -   [デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)
 -   [Windows ドライバーの概要](https://msdn.microsoft.com/library/windows/hardware/ff554690)
 -   [カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
--   *Windows Driver Foundation でのドライバーの開発*少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 [WDF のドライバーが開発](https://msdn.microsoft.com/windows/hardware/gg463318)します。
+-   *Windows Driver Foundation でのドライバーの開発*少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、[WDF のドライバーが開発](https://msdn.microsoft.com/windows/hardware/gg463318)を参照してください。
 
 <a name="instructions"></a>手順
 ------------
@@ -108,7 +108,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 3.  **Configuration Manager**を選択、**アクティブ ソリューション構成**(たとえば、 **Windows 8 のデバッグ**または**Windows 8 Release**) および**アクティブ ソリューション プラットフォーム**(たとえば、Win32) に関心があるビルドの種類に対応しています。
 4.  **ビルド** メニューのをクリックして**ソリューションのビルド**します。
 
-詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>手順 4:テストとデバッグ用のコンピューターを構成します。
 
@@ -126,7 +126,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
-   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、次を参照してください。 [ **Tracepdb コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff553043)します。
+   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、[ **Tracepdb コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff553043)を参照してください。
 
    指定した位置には、3 つのファイル (.c ファイルで、プロジェクトごとに 1 つ) を確認します。 GUID ファイル名が表示されます。
 
@@ -149,7 +149,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
 **WPP トレースの対象のコンピューターを構成するには**
 
-1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\*&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
+1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\*&lt;arch&gt;*  WDK のフォルダー。 詳細については、[ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)を参照してください。
 2. 開く、**コマンド ウィンドウ**管理者として実行します。
 3. 次のコマンドを入力します。
 
@@ -179,7 +179,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
  
 
-Visual Studio Professional 2012 で、ターゲット システムにドライバーを展開する方法の詳細については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)します。
+Visual Studio Professional 2012 で、ターゲット システムにドライバーを展開する方法の詳細については、[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)を参照してください。
 
 デバイス マネージャーを使用して、ターゲット コンピューターでドライバーを手動でインストールできます。 コマンド プロンプトからドライバーをインストールする場合は、これらのユーティリティを使用できます。
 
@@ -196,7 +196,7 @@ Visual Studio Professional 2012 で、ターゲット システムにドライ�
     Published name : oem22.inf
     ```
 
-    詳細については、次を参照してください。 [PnPUtil 例](https://msdn.microsoft.com/library/windows/hardware/ff550428)します。
+    詳細については、[PnPUtil 例](https://msdn.microsoft.com/library/windows/hardware/ff550428)を参照してください。
 
 -   [**DevCon Update**](https://msdn.microsoft.com/library/windows/hardware/ff544832)
 

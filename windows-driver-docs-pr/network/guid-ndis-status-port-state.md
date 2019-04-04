@@ -23,5 +23,5 @@ NDIS ポートの使用をサポートするミニポート ドライバー、 [
 
 この GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_PORT_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569624)構造体。
 
-ポートの状態の詳細については、次を参照してください。 [OID_GEN_PORT_STATE](oid-gen-port-state.md)します。
+ポートの状態の詳細については、[OID_GEN_PORT_STATE](oid-gen-port-state.md)を参照してください。
 

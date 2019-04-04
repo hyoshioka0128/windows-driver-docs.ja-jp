@@ -70,7 +70,7 @@ Uext.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドがユーザー モードについては、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。 プロセスとスレッドの分析に関する詳細については、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (この本できない場合がありますのいくつかの言語および国。)
+スレッドがユーザー モードについては、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。 プロセスとスレッドの分析に関する詳細については、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

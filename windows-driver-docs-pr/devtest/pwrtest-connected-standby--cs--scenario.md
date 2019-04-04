@@ -18,7 +18,7 @@ PwrTest 接続スタンバイ シナリオ (**/cs**) コネクテッド スタ�
 
 PwrTest では、PDC フェーズで進行状況をログ記録、システムでサポートされている場合、プラットフォームのアイドル状態の遷移の数をログインしようとします。 これは、システムが、アイドル状態の詳細なプラットフォームを入力する場合と、すべてのソフトウェア コンポーネントは、移行をブロックしている場合の診断に役立ちます。
 
-このシナリオがテスト システムをサポートする必要があります、*常に常時接続されている*(SoC および ARM のほとんどのシステムは、これをサポート) (AoAc) 電源機能。 このシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーも必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)します。 WDTF については、次を参照してください。 [ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff539547)します。
+このシナリオがテスト システムをサポートする必要があります、*常に常時接続されている*(SoC および ARM のほとんどのシステムは、これをサポート) (AoAc) 電源機能。 このシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーも必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 詳細については、[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)を参照してください。 WDTF については、[ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff539547)を参照してください。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
 

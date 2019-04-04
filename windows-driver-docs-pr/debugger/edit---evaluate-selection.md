@@ -27,7 +27,7 @@ ms.locfileid: "56559947"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソース ウィンドウの他の機能の詳細については、次を参照してください。[ソース ウィンドウ](source-window.md)します。
+ソース ウィンドウの他の機能の詳細については、[ソース ウィンドウ](source-window.md)を参照してください。
 
  
 

@@ -33,13 +33,13 @@ ms.locfileid: "56553999"
 
     Devnode の機能の値の一覧に CM_DEVCAP_REMOVABLE フラグが含まれている場合、devnode はリムーバブルとマークされます。 プラグ アンド プレイ (PnP) manager devnode と削除できない子用に新しいデバイス コンテナーが作成されます。
 
-    リムーバブル デバイスの機能の詳細については、次を参照してください。[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)します。
+    リムーバブル デバイスの機能の詳細については、[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)を参照してください。
 
-    デバイス マネージャーの詳細については、次を参照してください。[デバイス マネージャーを使用して](using-device-manager.md)します。
+    デバイス マネージャーの詳細については、[デバイス マネージャーを使用して](using-device-manager.md)を参照してください。
 
 -   デバイスには、コンテナー ID またはハードウェアの他の一意識別子が含まれてでしょうか。
 
-    コンテナー ID またはハードウェアの一意の識別子の形式が指定したバスの形式の要件に準拠していることを確認します。 詳細については、次を参照してください。[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)します。
+    コンテナー ID またはハードウェアの一意の識別子の形式が指定したバスの形式の要件に準拠していることを確認します。 詳細については、[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)を参照してください。
 
     デバイスの devnode は、カスタム バス ドライバーによって列挙されますが場合、は、バス ドライバーに正しく応答することを確認、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)要求**BusQueryContainerID**.
 

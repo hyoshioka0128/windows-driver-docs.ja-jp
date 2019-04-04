@@ -210,25 +210,25 @@ ms.locfileid: "56580697"
 プライマリのミニポート ドライバーのイベントの定義は次のとおりです。
 
 <a href="" id="miniportinitializeex"></a>MiniportInitializeEx  
-NDIS というドライバーの[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)アダプターを初期化します。 アダプターの初期化の詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
+NDIS というドライバーの[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)アダプターを初期化します。 アダプターの初期化の詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
 
 <a href="" id="initialize-is-complete"></a>初期化が完了しました  
 後[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)初期化操作が完了し、アダプターが一時停止状態に正常に返されます。
 
 <a href="" id="miniportshutdownex"></a>MiniportShutdownEx  
-NDIS というドライバーの[ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)アダプターをシャット ダウンする関数。 詳細については、次を参照してください。[ミニポート アダプターのシャット ダウン](miniport-adapter-shutdown.md)します。
+NDIS というドライバーの[ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)アダプターをシャット ダウンする関数。 詳細については、[ミニポート アダプターのシャット ダウン](miniport-adapter-shutdown.md)を参照してください。
 
 <a href="" id="miniporthaltex"></a>MiniportHaltEx  
-NDIS というドライバーの[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)アダプターを停止する関数。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
+NDIS というドライバーの[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)アダプターを停止する関数。 詳細については、[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)を参照してください。
 
 <a href="" id="miniportrestart"></a>MiniportRestart  
-NDIS というドライバーの[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数を一時停止中のアダプターを再起動します。 アダプターは、初期化後に、一時停止状態ではであるために、このイベントはアダプターの初期化が完了した後、アダプターを開始するも必要です。 詳細については、次を参照してください。[アダプター開始](starting-an-adapter.md)します。
+NDIS というドライバーの[ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数を一時停止中のアダプターを再起動します。 アダプターは、初期化後に、一時停止状態ではであるために、このイベントはアダプターの初期化が完了した後、アダプターを開始するも必要です。 詳細については、[アダプター開始](starting-an-adapter.md)を参照してください。
 
 <a href="" id="restart-is-complete"></a>再起動が完了  
 ドライバー準備ができたら送信を処理し、受信操作を再開する操作が完了し、アダプターが実行中の状態。
 
 <a href="" id="miniportpause"></a>MiniportPause  
-NDIS というドライバーの[ *MiniportPause* ](https://msdn.microsoft.com/library/windows/hardware/ff559418)アダプターを一時停止する関数。 詳細については、次を参照してください。[アダプターを一時停止](pausing-an-adapter.md)します。
+NDIS というドライバーの[ *MiniportPause* ](https://msdn.microsoft.com/library/windows/hardware/ff559418)アダプターを一時停止する関数。 詳細については、[アダプターを一時停止](pausing-an-adapter.md)を参照してください。
 
 <a href="" id="pause-is-complete"></a>一時停止が完了  
 ドライバーに必要なすべての操作が完了した後操作の送受信を停止、一時停止操作が完了および、アダプターが一時停止状態にします。
@@ -247,7 +247,7 @@ NDIS ドライバーの場合[ **MiniportRestart** ](https://msdn.microsoft.com/
 ドライバーが送信を処理する必要があり、受信操作の実行では、および、一時停止中の状態します。 送信し、受信操作についての詳細についてを参照してください。[ミニポート ドライバーの送信と受信操作](miniport-driver-send-and-receive-operations.md)します。
 
 <a href="" id="oid-requests"></a>OID 要求  
-ドライバーは、実行中、再起動、一時停止、OID 要求を処理する必要があり、一時停止中の状態します。 OID 要求の詳細については、次を参照してください。[アダプターの OID 要求](miniport-adapter-oid-requests.md)します。
+ドライバーは、実行中、再起動、一時停止、OID 要求を処理する必要があり、一時停止中の状態します。 OID 要求の詳細については、[アダプターの OID 要求](miniport-adapter-oid-requests.md)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

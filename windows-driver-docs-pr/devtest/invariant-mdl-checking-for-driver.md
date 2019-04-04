@@ -29,7 +29,7 @@ IRP で新しい不変の MDL バッファーを表示するたびに Driver Ver
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のドライバーの機能の 1 つまたは複数のドライバーをアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 不変な Mdl のドライバーのオプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のドライバーの機能の 1 つまたは複数のドライバーをアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 不変な Mdl のドライバーのオプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。
 
 アクティブ化する、[不変な Mdl のスタック](invariant-mdl-checking-for-stack.md)オプション、する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。
 

@@ -18,7 +18,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティもサポートします。 ただし、以前の Windows バージョンには、統一されたデバイス プロパティのモデルのプロパティのキーはできません。 呼び出すことによって、以前のバージョンの Windows でのデバイス インスタンス id を取得する代わりに、 [ **SetupDiGetDeviceInstanceId**](https://msdn.microsoft.com/library/windows/hardware/ff551106)します。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポート**SetupDiGetDeviceInstanceId**します。 ただし、Windows Vista では、このプロパティにアクセスするキーおよびそれ以降は、対応するプロパティを使用する必要があります。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
 
 Windows Server 2003、Windows XP、および Windows 2000 でデバイス インスタンス id を取得するには、次の手順に従います。
 

@@ -22,7 +22,7 @@ ms.locfileid: "56579448"
 TE <test_binaries> [/select:<selection criteria>]
 ```
 
-このセクションの説明、TE.exe**選択/:**<em>選択基準</em>オプション。 TE.exe の詳細については、次を参照してください。 [TE.exe コマンド オプション](te-exe-command-line-parameters.md)します。
+このセクションの説明、TE.exe**選択/:**<em>選択基準</em>オプション。 TE.exe の詳細については、[TE.exe コマンド オプション](te-exe-command-line-parameters.md)を参照してください。
 
 選択基準は、コマンド プロンプトで説明したすべてのテスト バイナリをグローバルに適用されます。 2 つのテストについて考えてみましょう\_バイナリ。**例\\CPP します。SelectionCriteria1.Example.dll**と**例\\CPP します。SelectionCriteria2.Example.dll**します。 次の例は、プロパティ、またはこれらのテストでさまざまなレベルで指定されたメタデータ\_バイナリ。 指定することで取得することもできます、 **/listproperties**コマンド プロンプト ウィンドウでオプションです。
 

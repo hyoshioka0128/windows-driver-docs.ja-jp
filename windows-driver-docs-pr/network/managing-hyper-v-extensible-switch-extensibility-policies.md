@@ -20,7 +20,7 @@ ms.locfileid: "56574160"
 
 [スイッチのポリシーの管理](managing-switch-policies.md)
 
-ポリシーの拡張可能スイッチの詳細については、次を参照してください。[概要の Hyper-v 拡張可能なスイッチ ポリシー](overview-of-hyper-v-extensible-switch-policies.md)します。
+ポリシーの拡張可能スイッチの詳細については、[概要の Hyper-v 拡張可能なスイッチ ポリシー](overview-of-hyper-v-extensible-switch-policies.md)を参照してください。
 
  
 

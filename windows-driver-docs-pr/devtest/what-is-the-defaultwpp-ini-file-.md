@@ -34,4 +34,4 @@ Defaultwpp.ini ファイルには、次の項目が含まれます。
 
 -   Irql、pnpmn、sysctrl などのカスタム型。
 
-Defaultwpp.ini ファイルで、データ型を使用し、単純または複雑なデータ型を持つ独自のカスタム構成ファイルを作成できます。 詳細については、次を参照してください。[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)と[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)します。
+Defaultwpp.ini ファイルで、データ型を使用し、単純または複雑なデータ型を持つ独自のカスタム構成ファイルを作成できます。 詳細については、[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)と[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)を参照してください。

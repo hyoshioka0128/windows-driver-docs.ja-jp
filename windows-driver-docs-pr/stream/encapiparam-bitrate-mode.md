@@ -53,7 +53,7 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスの
 
 ### <a name="comments"></a>コメント
 
-このプロパティを使用する方法のサンプルでは、次を参照してください。[エンコーダーのコード例](https://msdn.microsoft.com/library/windows/hardware/ff559532)します。
+このプロパティを使用する方法のサンプルでは、[エンコーダーのコード例](https://msdn.microsoft.com/library/windows/hardware/ff559532)を参照してください。
 
 ミニドライバーは、静的なを指定するかに必要な**PropertyItem.Values**プロパティ項目またはハンドルの基本的な説明がクエリをサポートし、値を入力します。 ミニドライバーは、このプロパティの既定値も指定する必要があります。
 

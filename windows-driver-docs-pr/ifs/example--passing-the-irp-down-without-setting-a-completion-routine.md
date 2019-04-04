@@ -50,7 +50,7 @@ return status;
 
 ### <a name="span-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspandisadvantages-of-this-approach"></a><span id="Disadvantages_of_This_Approach"></span><span id="disadvantages_of_this_approach"></span><span id="DISADVANTAGES_OF_THIS_APPROACH"></span>このアプローチの欠点
 
-後[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)を呼び出すに渡された IRP ポインター**保留**が無効にして、安全に逆参照することはできません。 を、ドライバーが IRP がドライバーの下位レベルで処理された後に、さらに処理するか、クリーンアップを実行する必要がある場合は、ドライバー スタック ダウン IRP を送信する前に完了ルーチンを設定があります。 書き込みと設定完了ルーチンの詳細については、次を参照してください。[完了ルーチンを使用して](using-irp-completion-routines.md)します。
+後[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)を呼び出すに渡された IRP ポインター**保留**が無効にして、安全に逆参照することはできません。 を、ドライバーが IRP がドライバーの下位レベルで処理された後に、さらに処理するか、クリーンアップを実行する必要がある場合は、ドライバー スタック ダウン IRP を送信する前に完了ルーチンを設定があります。 書き込みと設定完了ルーチンの詳細については、[完了ルーチンを使用して](using-irp-completion-routines.md)を参照してください。
 
 呼び出す場合[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)の IRP では、その完了ルーチンを設定することはできません。
 

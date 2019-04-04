@@ -26,7 +26,7 @@ ms.locfileid: "56552164"
 
 スプールが前に、スキャン ラインのデータ ストリームのカスタマイズされた処理の後を指定する場合は、これを行う実装することによって、 [ **IPrintOemUni::FilterGraphics** ](https://msdn.microsoft.com/library/windows/hardware/ff554252)メソッドで、 [プラグインのレンダリング](rendering-plug-ins.md)します。 この Unidrv 機能に関連付けられている GPD ファイルのエントリがありません。
 
-詳細については、次を参照してください。[データ Stream のフィルター処理をカスタマイズ](customized-data-stream-filtering.md)します。
+詳細については、[データ Stream のフィルター処理をカスタマイズ](customized-data-stream-filtering.md)を参照してください。
 
  
 

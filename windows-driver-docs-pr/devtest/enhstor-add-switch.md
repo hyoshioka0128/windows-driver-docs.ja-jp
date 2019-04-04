@@ -40,7 +40,7 @@ ms.locfileid: "56573641"
 
 
 <span id="_______-Volume______"></span><span id="_______-volume______"></span><span id="_______-VOLUME______"></span> **-ボリューム**   
-ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、次を参照してください。[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)します。
+ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)を参照してください。
 
 **注**IEEE 1667 準拠 USB ストレージ デバイスをコンピューターに現在接続されているボリューム名の一覧を生成する入力**EhStorCertMgrCmd/List**でコマンド プロンプトを押してから **」と入力**.
 
@@ -130,17 +130,17 @@ ms.locfileid: "56573641"
 <span id="_______-Store______"></span><span id="_______-store______"></span><span id="_______-STORE______"></span> **ストア**   
 ホスト上の証明書ストアに証明書の名前。 証明書ストアに証明書が見つかった場合は、それがターゲット デバイスに追加されます。
 
-詳細については、次を参照してください。 [Windows 証明書ストアから証明書をインポートする](importing-certificates-from-a-windows-certificate-store.md)します。
+詳細については、[Windows 証明書ストアから証明書をインポートする](importing-certificates-from-a-windows-certificate-store.md)を参照してください。
 
 <span id="_______-File______"></span><span id="_______-file______"></span><span id="_______-FILE______"></span> **-ファイル**   
 パスと証明書を含むファイルの名前。 証明書ファイルが見つかると、ツールにより、ターゲット デバイスに追加します。 この証明書で作成された可能性があります、 [ **MakeCert** ](makecert.md)ツールまたは経由でインポート、 [ **/Export スイッチ**](-export-switch.md) Enhanced の記憶域証明書の管理ツールです。
 
-詳細については、次を参照してください。[ファイルから証明書をインポートする](importing-certificates-from-a-file.md)します。
+詳細については、[ファイルから証明書をインポートする](importing-certificates-from-a-file.md)を参照してください。
 
 <span id="_______-New______"></span><span id="_______-new______"></span><span id="_______-NEW______"></span> **-新しい**   
 パスと、自己署名証明書の作成に使用される仕様を含むファイルの名前。 ファイルが検出された、仕様は有効な場合は、ツール、証明書を作成、デジタル署名、およびターゲット デバイスに証明書を追加します。
 
-詳細については、次を参照してください。 [ **USB ストレージ デバイス用の証明書を作成する**](creating-certificates-for-usb-storage-devices.md)します。
+詳細については、[ **USB ストレージ デバイス用の証明書を作成する**](creating-certificates-for-usb-storage-devices.md)を参照してください。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 

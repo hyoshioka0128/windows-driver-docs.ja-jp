@@ -34,7 +34,7 @@ ms.locfileid: "56579372"
 
 -   これらの場所のいずれかで、分割できない場合は、フレームを分割しない: 上のレイヤー プロトコル ヘッダーの先頭、TCP ペイロードの先頭または UDP ペイロードの先頭にあります。
 
--   ヘッダーに分割できる場合を除き、構成されているヘッダーの最大サイズを超えるフレームに分割しない、[上のレイヤー プロトコル ヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。 ヘッダーの最大サイズの詳細については、次を参照してください。[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)します。
+-   ヘッダーに分割できる場合を除き、構成されているヘッダーの最大サイズを超えるフレームに分割しない、[上のレイヤー プロトコル ヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。 ヘッダーの最大サイズの詳細については、[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)を参照してください。
 
 -   NIC が認識されない IPv4 オプションを含むフレームに分割しません。
 

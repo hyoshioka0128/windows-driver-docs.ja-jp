@@ -16,9 +16,9 @@ ms.locfileid: "56556796"
 
 パフォーマンスを向上させるため、デバイスが中央処理装置 (CPU) をバイパスする方法でメモリに直接アクセスする必要があります。 このテクノロジは、ダイレクト メモリ アクセス (DMA) と呼ばれます。 Windows では、デバイス ドライバー開発者向けの DMA ライブラリを提供します。
 
-ドライバーの DMA の詳細については、次を参照してください。 [DMA](https://msdn.microsoft.com/library/windows/hardware/ff544058)します。
+ドライバーの DMA の詳細については、[DMA](https://msdn.microsoft.com/library/windows/hardware/ff544058)を参照してください。
 
-DMA ルーチンの一覧については、次を参照してください。[ダイレクト メモリ アクセス (DMA) ライブラリ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544068)します。
+DMA ルーチンの一覧については、[ダイレクト メモリ アクセス (DMA) ライブラリ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544068)を参照してください。
 
 DMA をデバイスとメモリの間で直接通信するためのテクノロジと同じではありませんを[デバイス メモリ アクセス](https://msdn.microsoft.com/library/windows/hardware/ff543138)、読み取りと書き込みの I/O ポートと CPU レジスタに用意されているマクロのセットです。
 

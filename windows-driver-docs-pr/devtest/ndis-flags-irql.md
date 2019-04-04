@@ -24,7 +24,7 @@ ms.locfileid: "56553798"
 
 **フラグ\_Irql**ルールを指定する**KeGetCurrentIrql**ディスパッチ レベルのフラグ パラメーターが現在の IRQL を示すコールバック関数の中でないと呼ばれる必要があります。
 
-ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、次を参照してください。[ディスパッチ IRQL 追跡](https://msdn.microsoft.com/library/windows/hardware/ff546448)します。
+ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、[ディスパッチ IRQL 追跡](https://msdn.microsoft.com/library/windows/hardware/ff546448)を参照してください。
 
 |              |      |
 |--------------|------|
@@ -51,7 +51,7 @@ ms.locfileid: "56553798"
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

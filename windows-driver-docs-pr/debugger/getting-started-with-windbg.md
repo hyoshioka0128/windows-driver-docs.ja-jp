@@ -15,7 +15,7 @@ ms.locfileid: "56578928"
 
 WinDbg では、Windows のツールのデバッグに含まれるカーネル モードとユーザー モード デバッガーです。 ここでユーザー モード デバッガーとして WinDbg を使用するのに役立つ実践的な演習を開始する提供されています。
 
-Windows のツールのデバッグを取得する方法については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)します。 
+Windows のツールのデバッグを取得する方法については、[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)を参照してください。 
 
 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 以下に例を示します。
 

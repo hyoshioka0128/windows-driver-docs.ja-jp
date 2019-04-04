@@ -24,9 +24,9 @@ ms.locfileid: "56570836"
 
 **! Ndiskd.wdiadapter**拡張機能が、WDIWiFi に関する情報を表示します。CAdapter 構造体。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべて WDIWiFi の一覧が表示されます。CAdapter 構造体。
 
-WDI ミニポート ドライバーの詳細については、次を参照してください。、 [WDI ミニポート ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)します。
+WDI ミニポート ドライバーの詳細については、、 [WDI ミニポート ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)を参照してください。
 
-WDI ミニポート ドライバー リファレンスの詳細については、次を参照してください。 [WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)します。
+WDI ミニポート ドライバー リファレンスの詳細については、[WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)を参照してください。
 
 ```console
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 

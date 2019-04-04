@@ -29,7 +29,7 @@ ms.locfileid: "56557920"
 <a name="remarks"></a>注釈
 -------
 
-AVStream ハードウェア コーデック ドライバー生成 KSEVENT\_動的\_形式\_変更します。 詳細については、次を参照してください。 [AVStream コーデックで動的形式の変更をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff568483)します。
+AVStream ハードウェア コーデック ドライバー生成 KSEVENT\_動的\_形式\_変更します。 詳細については、[AVStream コーデックで動的形式の変更をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff568483)を参照してください。
 
 <a name="requirements"></a>要件
 ------------

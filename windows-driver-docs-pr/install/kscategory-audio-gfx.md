@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO_GFX[デバイス インターフェイス クラス](https://ms
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_AUDIO_GFX 機能カテゴリをサポートすることを示す KSCATEGORY_AUDIO_GFX のインスタンスを登録します。
 
-オーディオのアダプターの他のデバイスのインターフェイス クラスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターの他のデバイスのインターフェイス クラスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

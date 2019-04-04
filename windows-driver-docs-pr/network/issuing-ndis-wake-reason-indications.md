@@ -85,7 +85,7 @@ WOL パターンを使用して指定、 **EnabledWoLPacketPatterns**のメン�
 
         -   **SavedPacketSize**を通じて報告されるパケットの長さにメンバーを設定する必要があります、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態を示す値。
 
-            **注**このメンバーの値がミニポート ドライバーに設定した値より大きくはできません、 **MaxWoLPacketSaveBuffer**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 ドライバーは、ウェイク アップ パケットを示す値機能を報告する場合に、この構造体を返します。 詳細については、次を参照してください。 [Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)します。
+            **注**このメンバーの値がミニポート ドライバーに設定した値より大きくはできません、 **MaxWoLPacketSaveBuffer**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 ドライバーは、ウェイク アップ パケットを示す値機能を報告する場合に、この構造体を返します。 詳細については、[Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)を参照してください。
 
         -   **SavedPacketOffset**に続くウェイク アップ パケットをバイト単位のオフセットにメンバーを設定する必要があります、 [ **NDIS\_PM\_WAKE\_パケット**](https://msdn.microsoft.com/library/windows/hardware/hh451603)構造体。
 

@@ -24,11 +24,11 @@ ms.locfileid: "56578283"
 
 
 
-*メモリ マネージャー*は Windows でのメモリ管理操作を実行するカーネル コンポーネントです。 詳細については、次を参照してください。 [Windows カーネル モードのメモリ マネージャー](windows-kernel-mode-memory-manager.md)します。
+*メモリ マネージャー*は Windows でのメモリ管理操作を実行するカーネル コンポーネントです。 詳細については、[Windows カーネル モードのメモリ マネージャー](windows-kernel-mode-memory-manager.md)を参照してください。
 
-メモリ マネージャーは、さまざまなカーネル モードのサポート ルーチンの割り当てし、メモリを管理するドライバーを呼び出すことを実装します。 詳細については、次を参照してください。[メモリの割り当てとバッファー管理](https://msdn.microsoft.com/library/windows/hardware/ff554422)します。
+メモリ マネージャーは、さまざまなカーネル モードのサポート ルーチンの割り当てし、メモリを管理するドライバーを呼び出すことを実装します。 詳細については、[メモリの割り当てとバッファー管理](https://msdn.microsoft.com/library/windows/hardware/ff554422)を参照してください。
 
-カーネル モード ドライバーのメモリ管理機能がユーザー モード アプリケーションの異なるです。 アプリケーションのメモリ管理の詳細については、次を参照してください。[メモリ管理](https://msdn.microsoft.com/library/windows/desktop/aa366779)します。
+カーネル モード ドライバーのメモリ管理機能がユーザー モード アプリケーションの異なるです。 アプリケーションのメモリ管理の詳細については、[メモリ管理](https://msdn.microsoft.com/library/windows/desktop/aa366779)を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

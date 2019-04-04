@@ -41,7 +41,7 @@ ms.locfileid: "56754463"
 
 Microsoft Visual Studio 2017 で、Windows Driver Kit (WDK) を使用すると、Windows 7 以降を実行しているドライバーをビルドします。
 
-Windows 10 で UMDF ドライバーの新機能については、次を参照してください。 [WDF ドライバーの新](index.md)します。
+Windows 10 で UMDF ドライバーの新機能については、[WDF ドライバーの新](index.md)を参照してください。
 
 ## <a name="umdf-version-227"></a>UMDF バージョン 2.27
 
@@ -74,7 +74,7 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 -   [**WdfDeviceWdmDispatchIrp**](https://msdn.microsoft.com/library/windows/hardware/hh451100)
 -   [**WdfDeviceWdmDispatchIrpToIoQueue**](https://msdn.microsoft.com/library/windows/hardware/hh451105)
 
-詳細については、次を参照してください。 [I/O キューへのディスパッチ Irp](dispatching-irps-to-i-o-queues.md)します。
+詳細については、[I/O キューへのディスパッチ Irp](dispatching-irps-to-i-o-queues.md)を参照してください。
 
 ## <a name="umdf-version-215"></a>UMDF バージョン 2.15
 
@@ -93,9 +93,9 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
 
 説明されている共有機能だけでなく[UMDF 入門](getting-started-with-umdf-version-2.md)、UMDF version 2.0 で追加します。
 
--   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、次を参照してください。[を使用してタイマー](using-timers.md)します。
--   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、次を参照してください。 [、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)します。
--   単一コンポーネントの 1 つの状態 (F0) の電源管理 UMDF ドライバー。 詳細については、次を参照してください。 [ **WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)します。
+-   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、[を使用してタイマー](using-timers.md)を参照してください。
+-   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、[、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)を参照してください。
+-   単一コンポーネントの 1 つの状態 (F0) の電源管理 UMDF ドライバー。 詳細については、[ **WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)を参照してください。
 
 -   Wdfkd.dll でいくつかのデバッガー拡張機能のコマンドは、2.0 の UMDF ドライバーも今すぐに使用できます。 拡張機能ライブラリには、UMDF 2.0 ドライバーのデバッグ専用に設計された次の新しい拡張機能コマンドも含まれています。
 
@@ -107,7 +107,7 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
     -   [**!wdfkd.wdfumirps**](https://msdn.microsoft.com/library/windows/hardware/dn265384)
     -   [**!wdfkd.wdfdeviceinterrupts**](https://msdn.microsoft.com/library/windows/hardware/dn265378)
 
-    拡張機能のコマンドとフレームワークの適用性の一覧は、次を参照してください。[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)します。
+    拡張機能のコマンドとフレームワークの適用性の一覧は、[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)を参照してください。
 
 -   [フレームワークのイベント ロガー](using-the-framework-s-event-logger.md)、または*インフライト レコーダー* (IFR) が 2.0 の UMDF ドライバーの動作に更新されました。
 -   2.0 の UMDF ドライバーを使用するその他の WDF デバッガー拡張が更新されました。 情報についての フレームワークに適用されますを参照してくださいものなど、拡張機能のコマンドの完全な一覧については[デバッガーの拡張機能ドライバーを WDF](debugger-extensions-for-kmdf-drivers.md)します。
@@ -143,7 +143,7 @@ Windows 10 で UMDF ドライバーの新機能については、次を参照し
     -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265612)
     -   [**WdfFdoInitQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265613)
 
-    詳細については、次を参照してください。[デバイス プロパティの統合モデルにアクセスする](accessing-the-unified-device-property-model.md)します。
+    詳細については、[デバイス プロパティの統合モデルにアクセスする](accessing-the-unified-device-property-model.md)を参照してください。
 
 -   次の USB 構成タイプのサポート[ **WdfUsbTargetDeviceSelectConfigType**](https://msdn.microsoft.com/library/windows/hardware/ff550102):
     -   **WdfUsbTargetDeviceSelectConfigTypeSingleInterface**

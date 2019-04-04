@@ -32,9 +32,9 @@ ms.locfileid: "56573233"
 
 -   IHV 拡張 DLL の後に呼び出す[ **Dot11ExtPreAssociateCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff547538)関連付け前の操作を完了するには、接続のセッションのハンドルは無効になりました。 オペレーティング システムを使ってこのハンドルを渡す、 *hConnectSession*パラメーターの[ *Dot11ExtIhvPerformPreAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547499)します。 宣言をすべての IHV 拡張関数を呼び出すときに、DLL がこのハンドル値を使用する必要があります、 *hConnectSession*パラメーター。
 
-    IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)します。
+    IHV 拡張機能の詳細については、[802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)を参照してください。
 
--   場合、 [ *Dot11ExtIhvAdapterReset* ](https://msdn.microsoft.com/library/windows/hardware/ff547434)関数が呼び出されると、IHV 拡張機能の DLL が呼び出すことによって、関連付け前の操作を取り消す必要があります[ **Dot11ExtPreAssociateCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff547538)します。 リセット操作の詳細については、次を参照してください。 [802.11 WLAN アダプターはリセット](802-11-wlan-adapter-reset.md)します。
+-   場合、 [ *Dot11ExtIhvAdapterReset* ](https://msdn.microsoft.com/library/windows/hardware/ff547434)関数が呼び出されると、IHV 拡張機能の DLL が呼び出すことによって、関連付け前の操作を取り消す必要があります[ **Dot11ExtPreAssociateCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff547538)します。 リセット操作の詳細については、[802.11 WLAN アダプターはリセット](802-11-wlan-adapter-reset.md)を参照してください。
 
 -   場合、 [ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452)関数が呼び出されると、IHV 拡張機能の DLL が内部的には、関連付け前の操作を取り消す必要があります。 ただし、これを呼び出してはならないアダプターの初期化後にのみ呼び出すことができる IHV 拡張関数のいずれかを含む[ **Dot11ExtPreAssociateCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff547538)します。
 

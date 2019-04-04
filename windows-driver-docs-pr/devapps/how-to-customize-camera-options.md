@@ -13,12 +13,12 @@ ms.locfileid: "58419586"
 ---
 # <a name="how-to-customize-camera-options-with-a-uwp-device-app"></a>UWP デバイス アプリでカメラ オプションをカスタマイズする方法
 
-Windows 8.1、UWP デバイス アプリはデバイスの製造元が一部のカメラ アプリでカメラの他のオプションを表示するポップアップのカスタマイズを使用できます。 このトピックでは、**より多くのオプション**フライアウトを表示する、CameraCatureUI API をし、表示方法、C#のバージョン、[カメラ用の UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkID=227865)サンプルでは、既定のフライアウトで、カスタムのフライアウトです。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+Windows 8.1、UWP デバイス アプリはデバイスの製造元が一部のカメラ アプリでカメラの他のオプションを表示するポップアップのカスタマイズを使用できます。 このトピックでは、**より多くのオプション**フライアウトを表示する、CameraCatureUI API をし、表示方法、C#のバージョン、[カメラ用の UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkID=227865)サンプルでは、既定のフライアウトで、カスタムのフライアウトです。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
 
 > [!NOTE]
 > Windows 8.1、組み込みのカメラ アプリが表示されませんが、**より多くのオプション**ボタンをクリックし、そのため、カメラの他のオプションを表示する UWP デバイス アプリを表示することはできません。 ただし、 [CameraCaptureUI クラス](https://go.microsoft.com/fwlink/p/?LinkId=317985)、すべての UWP アプリで使用できるは、**より多くのオプション**ボタンをクリックし、そこから UWP デバイス アプリを表示することができます。
 
-C#のバージョン、[カメラ用の UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkID=227865)使用して、 **DeviceAppPage.xaml**カメラ オプションの詳細についてカスタム ポップアップの UI を示すためにページ。 このサンプルでは、カメラ driver MFT (メディア ファンデーション変換) を使用してカメラの効果も適用されます。 詳細については、次を参照してください。[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)です。
+C#のバージョン、[カメラ用の UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkID=227865)使用して、 **DeviceAppPage.xaml**カメラ オプションの詳細についてカスタム ポップアップの UI を示すためにページ。 このサンプルでは、カメラ driver MFT (メディア ファンデーション変換) を使用してカメラの効果も適用されます。 詳細については、[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)を参照してください。
 
 > [!NOTE]
 > このトピックで示すコード例に基づいています、C#のバージョン、[カメラ用の UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkID=227865)サンプル。 このサンプルも JavaScript および C++ で使用できます。 コードの最新バージョンを参照するサンプルをダウンロードします。
@@ -165,7 +165,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 ときに、`Initialize`カスタム ポップアップのメソッド (**DeviceAppPage.xaml.cs**) が呼び出され、ビデオ デバイスがイベント引数を使用、フライアウトに渡されます。 これらの引数は、カメラを制御するためのプロパティを公開します。
 
 - **引数。VideoDeviceController** Windows.Media.Devices.VideoDeviceController 型のオブジェクトのプロパティを提供します。 このオブジェクトは、標準の設定を調整するためのメソッドを提供します。
-- **引数。VideoDeviceExtension**プロパティはカメラ driver MFT へのポインター。 このプロパティは、Driver MFT インターフェイスは公開されない場合は null になります。 カメラ ドライバーの仕様に関する詳細については、次を参照してください。[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)です。
+- **引数。VideoDeviceExtension**プロパティはカメラ driver MFT へのポインター。 このプロパティは、Driver MFT インターフェイスは公開されない場合は null になります。 カメラ ドライバーの仕様に関する詳細については、[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)を参照してください。
 
 この例の一部を示しています、`Initialize`ほどのメソッドに表示されます、 **DeviceAppPage.xaml.cs**ファイル。 ここでは、ビデオ デバイスのコント ローラー (videoDevController オブジェクト) とカメラ driver MFT (lcWrapper オブジェクト) が作成され、現在のカメラ設定フライアウトが表示されます。
 
@@ -223,7 +223,7 @@ public void Initialize(CameraSettingsActivatedEventArgs args)
     // . . .
 ```
 
-MFT 方法については、カメラ ドライバー、 [Driver MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)サンプル。 カメラ ドライバーの仕様に関する詳細については、次を参照してください。[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)です。
+MFT 方法については、カメラ ドライバー、 [Driver MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)サンプル。 カメラ ドライバーの仕様に関する詳細については、[カメラ driver MFT 作成](creating-a-camera-driver-mft.md)を参照してください。
 
 ## <a name="step-5-apply-changes"></a>手順 5:変更を適用します。
 
@@ -318,7 +318,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 4. 接続を切断し、プリンターをアンインストールします。 Windows が次に、デバイスが検出されたときに更新済みのデバイス メタデータの読み取りができるように、この手順が必要です。
 5. 編集し、デバイスのメタデータを保存します。 デバイス アプリをデバイスにリンクするには、デバイスでデバイス アプリを関連付ける必要があります。
     > [!NOTE]
-    > デバイスのメタデータをまだ作成していない場合は、次を参照してください。 [UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+    > デバイスのメタデータをまだ作成していない場合は、[UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)を参照してください。
 
     1. 場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %*\\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
     2. クリックして**デバイス メタデータの編集**します。 これからは、既存のデバイス メタデータ パッケージを編集できます。

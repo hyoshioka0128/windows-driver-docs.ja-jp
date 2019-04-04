@@ -24,7 +24,7 @@ ms.locfileid: "56572345"
 
 PSCRIPT1 データは、非 Postscript プリンターで印刷を対象となる Postscript データです。 プリント プロセッサは、Postscript コマンドを解釈し、結果の RAW 形式の出力をファイルに書き込みます。
 
-PSCRIPT1 のデータ型の詳細については、次を参照してください。、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+PSCRIPT1 のデータ型の詳細については、、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

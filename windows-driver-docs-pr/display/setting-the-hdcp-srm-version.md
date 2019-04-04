@@ -14,7 +14,7 @@ ms.locfileid: "56577909"
 # <a name="setting-the-hdcp-srm-version"></a>HDCP SRM バージョンの設定
 
 
-OPM 構成では、バージョンの高帯域幅デジタル コンテンツの保護 (HDCP) システム Renewability メッセージ (SRM) の保護された出力を設定できます。 バージョンを設定する、ディスプレイのミニポート ドライバーの[ **DxgkDdiOPMConfigureProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559701)関数へのポインターを受け取る、 [ **DXGKMDT\_OPM\_構成\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff560849)構造体、 **guidSetting**メンバー設定、DXGKMDT\_OPM\_設定\_HDCP\_SRM GUID と**abParameters**メンバーへのポインターに設定する[ **DXGKMDT\_OPM\_設定\_HDCP\_SRM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff560915)構造体。 DXGKMDT\_OPM\_設定\_HDCP\_SRM\_パラメーター構造体には、バージョン番号を指定する ULONG が含まれています。 最下位ビット (ビット 0 ~ 15) には、リトル エンディアン形式で SRM のバージョン番号が含まれます。 SRM バージョン番号の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。
+OPM 構成では、バージョンの高帯域幅デジタル コンテンツの保護 (HDCP) システム Renewability メッセージ (SRM) の保護された出力を設定できます。 バージョンを設定する、ディスプレイのミニポート ドライバーの[ **DxgkDdiOPMConfigureProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559701)関数へのポインターを受け取る、 [ **DXGKMDT\_OPM\_構成\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff560849)構造体、 **guidSetting**メンバー設定、DXGKMDT\_OPM\_設定\_HDCP\_SRM GUID と**abParameters**メンバーへのポインターに設定する[ **DXGKMDT\_OPM\_設定\_HDCP\_SRM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff560915)構造体。 DXGKMDT\_OPM\_設定\_HDCP\_SRM\_パラメーター構造体には、バージョン番号を指定する ULONG が含まれています。 最下位ビット (ビット 0 ~ 15) には、リトル エンディアン形式で SRM のバージョン番号が含まれます。 SRM バージョン番号の詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。
 
  
 

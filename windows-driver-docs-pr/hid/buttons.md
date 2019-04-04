@@ -96,7 +96,7 @@ GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します
 
 Windows 10 以降、HID ドライバーのプログラミング インターフェイスは、Windows OneCoreUAP ベース エディションの一部です。 使用して、ボタン ドライバーを記述するその共通のインターフェイスのセットを使用すると、[仮想 HID Framework](https://msdn.microsoft.com/library/windows/hardware/dn925048)または[トランスポート ミニドライバー](transport-minidrivers.md)インターフェイス。 これらのドライバーは、バージョンに両方のデスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の Windows 10 および Windows 10 Mobile、だけでなく他の Windows 10 で実行されます。
 
-ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。
+ステップ バイ ステップ ガイダンスについては、[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 [ヒューマン インターフェイス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff543301)  

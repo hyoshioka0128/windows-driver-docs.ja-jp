@@ -24,7 +24,7 @@ ms.locfileid: "56560993"
 
 オーディオ ドライバーをサポートしている場合、 **KSPROPERTY\_ジャック\_CONTAINERID**プロパティ、オーディオ システムに、ドライバーからこのプロパティの値がによって読み取られ、ストアのコンテナーとしての値の ID、オーディオエンドポイント。
 
-コンテナー Id と、前のセクションで説明されているアルゴリズムについての詳細については、次を参照してください。[コンテナー ID](https://msdn.microsoft.com/library/windows/hardware/ff540024.aspx)と[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)します。
+コンテナー Id と、前のセクションで説明されているアルゴリズムについての詳細については、[コンテナー ID](https://msdn.microsoft.com/library/windows/hardware/ff540024.aspx)と[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [操作の理論を概説します。](theory-of-operation.md)  

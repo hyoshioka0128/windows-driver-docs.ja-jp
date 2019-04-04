@@ -59,7 +59,7 @@ X86 ベースの BIOS コード内のメモリのオフセットを指定しま�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-BIOS のコードをデバッグする方法の詳細については、次を参照してください。 [BIOS コードのデバッグ](debugging-bios-code.md)します。
+BIOS のコードをデバッグする方法の詳細については、[BIOS コードのデバッグ](debugging-bios-code.md)を参照してください。
 
 <a name="remarks"></a>コメント
 -------

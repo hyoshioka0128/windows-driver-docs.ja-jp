@@ -35,7 +35,7 @@ OID、要求をキャンセルする、 [ **NdisCancelOidRequest** ](https://msd
 
  
 
-セットと、中間ドライバーでのクエリに応答する方法の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
+セットと、中間ドライバーでのクエリに応答する方法の詳細については、[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)を参照してください。
 
  
 

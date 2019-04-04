@@ -43,7 +43,7 @@ IRP が指定されている場合**PowerDeviceD3**、関数ドライバーで�
 
     デバイスが稼働状態に戻ったまで、ドライバーはすべての I/O 要求をキューする必要があります。
 
--   場合によっての値を確認**Parameters.Power.ShutdownType**します。 システム設定 power IRP はアクティブである場合、 **ShutdownType** IRP システムに関する情報を提供します。 この値の詳細については、次を参照してください。[システム電源操作](system-power-actions.md)します。
+-   場合によっての値を確認**Parameters.Power.ShutdownType**します。 システム設定 power IRP はアクティブである場合、 **ShutdownType** IRP システムに関する情報を提供します。 この値の詳細については、[システム電源操作](system-power-actions.md)を参照してください。
 
     休止パス上のデバイスのドライバーでは、この値を検査する必要があります。 場合、 **ShutdownType**は**PowerActionHibernate**ドライバーは、デバイスを復元するために必要な任意のコンテキストを保存する必要がありますが、デバイスの電源する必要があります。
 

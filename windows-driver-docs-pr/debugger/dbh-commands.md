@@ -45,7 +45,7 @@ DBH オプションを制御して他の基本的なタスクを実行するコ�
 <p><strong>symopt +</strong><em>オプション</em></p>
 <p><strong>symopt -</strong><em>オプション</em></p>
 <p><strong>symopt</strong></p></td>
-<td align="left"><p>シンボル オプションを設定します。 ない<strong>+</strong>または<strong>-</strong>の値<em>オプション</em>現在のシンボルのオプションが置き換えられます。 場合<strong>+</strong>または<strong>-</strong>を使用する<em>オプション</em>追加または削除するオプションを指定する前にスペースが必要があります、 <strong> +</strong>または<strong>-</strong>が、その後に領域がありません。 パラメーターなしでは、現在のシンボルのオプションが表示されます。 DBH が起動され、すべてのシンボルのオプションの既定値は 0x10C13 が。 使用可能なオプションの一覧は、次を参照してください。<a href="symbol-options.md" data-raw-source="[Setting Symbol Options](symbol-options.md)">シンボル オプションを設定</a>します。</p></td>
+<td align="left"><p>シンボル オプションを設定します。 ない<strong>+</strong>または<strong>-</strong>の値<em>オプション</em>現在のシンボルのオプションが置き換えられます。 場合<strong>+</strong>または<strong>-</strong>を使用する<em>オプション</em>追加または削除するオプションを指定する前にスペースが必要があります、 <strong> +</strong>または<strong>-</strong>が、その後に領域がありません。 パラメーターなしでは、現在のシンボルのオプションが表示されます。 DBH が起動され、すべてのシンボルのオプションの既定値は 0x10C13 が。 使用可能なオプションの一覧は、<a href="symbol-options.md" data-raw-source="[Setting Symbol Options](symbol-options.md)">シンボル オプションを設定</a>を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>help</strong></p></td>

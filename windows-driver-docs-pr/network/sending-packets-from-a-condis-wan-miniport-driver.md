@@ -34,7 +34,7 @@ NDISWAN 中間ドライバー呼び出し、新しい NET を転送するよう�
 
 いる CoNDIS WAN ミニポート ドライバーで VC あたりが保持できる未処理のパケットの数を指定する、 **MaxSendWindow**の NDIS メンバー\_WAN\_CO\_情報構造体。 ミニポート ドライバーに応答するときに、ミニポート ドライバーがこの構造体を提供します、 [OID\_WAN\_CO\_取得\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569818)プロトコル ドライバーからの要求。 ただし、ミニポート ドライバーと調整できますこの数に動的に VC あたりごとを使用して、 **SendWindow**内のメンバー、 [ **WAN\_CO\_LINKPARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff565819)構造体。 ミニポート ドライバーがこの構造体を渡す、 [ **NdisMCoIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563562)関数。 使用して、現在の NDISWAN **SendWindow**として未処理の送信の制限値。 ミニポート ドライバーの値を設定できる、 **SendWindow**未処理のパケットを処理できないことを指定する 0 にメンバー。 つまり場合、 **SendWindow**メンバーが 0 に設定されている、送信ウィンドウをシャット ダウンおよび NDISWAN が特定の VC のパケットの送信を停止します。
 
-WAN ミニポート ドライバーに送信されるパケットは、単純な HDLC PPP フレームを含めることが PPP フレームが設定されている場合。 明細または RAS フレームでは、パケットには一切フレームと共にデータ部分のみが含まれません。 WAN のパケットのフレーミングの詳細については、次を参照してください。 [WAN パケットのフレーミング](wan-packet-framing.md)します。
+WAN ミニポート ドライバーに送信されるパケットは、単純な HDLC PPP フレームを含めることが PPP フレームが設定されている場合。 明細または RAS フレームでは、パケットには一切フレームと共にデータ部分のみが含まれません。 WAN のパケットのフレーミングの詳細については、[WAN パケットのフレーミング](wan-packet-framing.md)を参照してください。
 
 WAN ミニポート ドライバーは、ソフトウェア ループバックまたは無作為検出モード ループバック提供を試みませんする必要があります。 両方のループバック型は完全に NDISWAN ドライバーがサポートされます。
 

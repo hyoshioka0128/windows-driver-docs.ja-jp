@@ -33,7 +33,7 @@ ms.locfileid: "56574775"
 
 デバイスのインストールについては、次を参照してください。、[デバイス インストールの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff541156)セクション。
 
-シリアル デバイスに関する詳細については、次を参照してください。[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
+シリアル デバイスに関する詳細については、[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)を参照してください。
 
  
 

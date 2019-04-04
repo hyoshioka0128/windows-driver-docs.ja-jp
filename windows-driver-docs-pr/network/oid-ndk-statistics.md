@@ -19,7 +19,7 @@ ms.locfileid: "56581799"
 
 NDIS 6.30 と以降のミニポート ドライバー NDK サービスを提供するには、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
 
-**注**  NDIS OID 要求インターフェイスを直接この OID をサポートしています。 直接の OID 要求インターフェイスの詳細については、次を参照してください。 [NDIS 6.1 Direct OID 要求インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff564736)します。
+**注**  NDIS OID 要求インターフェイスを直接この OID をサポートしています。 直接の OID 要求インターフェイスの詳細については、[NDIS 6.1 Direct OID 要求インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff564736)を参照してください。
 
  
 
@@ -30,7 +30,7 @@ NDIS 問題では、この OID、 **InformationBuffer**のメンバー、 [ **ND
 
 NDK 対応のミニポート ドライバーを提供する必要があります、 **CounterSet**は、メンバー、 [ **NDIS\_NDK\_パフォーマンス\_カウンター** ](https://msdn.microsoft.com/library/windows/hardware/hh451565)構造体。
 
-カウンターがなどのツールに発行される[perfmon](https://technet.microsoft.com/library/cc731067.aspx) (を参照してください、 [NetworkDirect アクティビティ](https://technet.microsoft.com/library/hh997022.aspx)パフォーマンス カウンター) され、パフォーマンス データ ヘルパー (PDH) とパフォーマンスのプログラムで利用できますライブラリ (PERFLIB) プログラミング インターフェイスです。 これらのインターフェイスの詳細については、次を参照してください。[パフォーマンス カウンター](https://msdn.microsoft.com/library/windows/desktop/aa373083)します。
+カウンターがなどのツールに発行される[perfmon](https://technet.microsoft.com/library/cc731067.aspx) (を参照してください、 [NetworkDirect アクティビティ](https://technet.microsoft.com/library/hh997022.aspx)パフォーマンス カウンター) され、パフォーマンス データ ヘルパー (PDH) とパフォーマンスのプログラムで利用できますライブラリ (PERFLIB) プログラミング インターフェイスです。 これらのインターフェイスの詳細については、[パフォーマンス カウンター](https://msdn.microsoft.com/library/windows/desktop/aa373083)を参照してください。
 
 これらのカウンターは、呼び出すことによっても使用可能な[Get NetAdapterStatistics](https://technet.microsoft.com/library/jj130889) PowerShell コマンドレットを**RdmaStatistics**属性。 詳細については、 **RdmaStatistics**属性は、「 [ **MSFT\_NetAdapterStatisticsSettingData**](https://msdn.microsoft.com/library/hh872390)します。
 

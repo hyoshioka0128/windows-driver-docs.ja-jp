@@ -30,7 +30,7 @@ ms.locfileid: "56580143"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ワークスペースとその使用方法のさまざまなレベルの詳細については、次を参照してください。[を使用してワークスペース](using-workspaces.md)します。
+ワークスペースとその使用方法のさまざまなレベルの詳細については、[を使用してワークスペース](using-workspaces.md)を参照してください。
 
  
 

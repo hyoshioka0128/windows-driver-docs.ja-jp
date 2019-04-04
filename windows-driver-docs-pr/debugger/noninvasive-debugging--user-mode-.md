@@ -32,7 +32,7 @@ ms.locfileid: "56559470"
 
 名前で、アプリケーションを指定する場合は、ファイル名拡張子を含む、プロセスの完全な名前を使用する必要があります。 2 つのプロセスの同じ名前である場合は、代わりにプロセス ID を使用する必要があります。
 
-プロセス ID と、プロセス名を確認する方法の詳細については、次を参照してください。[プロセス ID の検索](finding-the-process-id.md)します。
+プロセス ID と、プロセス名を確認する方法の詳細については、[プロセス ID の検索](finding-the-process-id.md)を参照してください。
 
 開始と待合室デバッグ セッションを停止する方法については、次のトピックを参照してください。
 
@@ -50,7 +50,7 @@ Noninvasively CDB コマンドラインから実行中のプロセスをデバ�
 
 **cdb -pv -pn** *ProcessName*
 
-いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、次を参照してください。 [ **CDB コマンド ライン オプション**](cdb-command-line-options.md)します。
+いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)を参照してください。
 
 ### <a name="span-idwindbgcommandlinespanspan-idwindbgcommandlinespanwindbg-command-line"></a><span id="windbg_command_line"></span><span id="WINDBG_COMMAND_LINE"></span>WinDbg コマンド ライン
 
@@ -62,7 +62,7 @@ Noninvasively WinDbg のコマンドラインから実行中のプロセスを�
 
 **windbg -pv -pn** *ProcessName*
 
-いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
+いくつかその他の便利なコマンド ライン オプションがあります。 コマンドライン構文の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
 
 ### <a name="span-idwindbgmenuspanspan-idwindbgmenuspanwindbg-menu"></a><span id="windbg_menu"></span><span id="WINDBG_MENU"></span>WinDbg のメニュー
 
@@ -80,7 +80,7 @@ Noninvasively を使用して実行中のプロセスをデバッグすること
 
 ### <a name="span-idbeginningthedebuggingsessionspanspan-idbeginningthedebuggingsessionspanbeginning-the-debugging-session"></a><span id="beginning_the_debugging_session"></span><span id="BEGINNING_THE_DEBUGGING_SESSION"></span>デバッグ セッションを開始
 
-デバッグ セッションを開始する方法の詳細については、次を参照してください。[デバッガー操作](debugger-operation-win8.md)します。
+デバッグ セッションを開始する方法の詳細については、[デバッガー操作](debugger-operation-win8.md)を参照してください。
 
  
 

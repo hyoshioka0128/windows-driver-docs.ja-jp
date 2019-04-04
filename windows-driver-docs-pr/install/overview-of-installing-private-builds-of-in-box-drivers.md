@@ -46,13 +46,13 @@ Microsoft 署名の種類を以下に示します。
 
 -   受信トレイのドライバーのプライベート バージョンをビルドします。 署名が均等に扱われた場合に、プライベート ビルドで、Microsoft によって署名されたバージョンを outranks することを確認する必要があります。 WDK で提供されるツールを使用してプライベートのビルドはデジタル署名もする必要があります。
 
-    詳細については、次を参照してください。[受信トレイのドライバーのプライベート ビルドを作成する](creating-a-private-build-of-an-in-box-driver.md)します。
+    詳細については、[受信トレイのドライバーのプライベート ビルドを作成する](creating-a-private-build-of-an-in-box-driver.md)を参照してください。
 
 -   有効にする、 [AllSignersEqual グループ ポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)ターゲット システムにようにドライバーを選択するとすべての Microsoft 署名の種類とサード パーティの署名とランクが等しいとしてをオペレーティング システムがビューであることをデバイスに最適なものです。
 
-    詳細については、次を参照してください。[に均等にドライバー署名を順位を構成する Windows](configuring-windows-to-rank-driver-signatures-equally.md)します。
+    詳細については、[に均等にドライバー署名を順位を構成する Windows](configuring-windows-to-rank-driver-signatures-equally.md)を参照してください。
 
-Windows ドライバーをランク付けする方法の詳細については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
+Windows ドライバーをランク付けする方法の詳細については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
 
  
 

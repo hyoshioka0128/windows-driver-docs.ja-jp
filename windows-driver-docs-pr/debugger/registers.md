@@ -22,7 +22,7 @@ ms.locfileid: "56578832"
 
 [デバッガー エンジン](introduction.md#debugger-engine)を調べて、ターゲットのレジスタを変更するために使用できます。
 
-ターゲットで使用可能なレジスタは、そのプロセッサ アーキテクチャに依存します。 X86、Itanium プロセッサのレジスタの説明は、次を参照してください。[プロセッサ アーキテクチャ](processor-architecture.md)します。 プロセッサの使用可能なレジスタの詳細については、そのプロセッサのマニュアルを参照してください。
+ターゲットで使用可能なレジスタは、そのプロセッサ アーキテクチャに依存します。 X86、Itanium プロセッサのレジスタの説明は、[プロセッサ アーキテクチャ](processor-architecture.md)を参照してください。 プロセッサの使用可能なレジスタの詳細については、そのプロセッサのマニュアルを参照してください。
 
 ### <a name="span-idtheregistersetspanspan-idtheregistersetspanthe-register-set"></a><span id="the_register_set"></span><span id="THE_REGISTER_SET"></span>登録セット
 
@@ -52,7 +52,7 @@ A *subregister*が別のレジスタ内に含まれる登録します。 Subregi
 
 ### <a name="span-idpseudoregistersspanspan-idpseudoregistersspan-pseudo-registers"></a><span id="pseudo_registers"></span><span id="PSEUDO_REGISTERS"></span> 擬似レジスタ
 
-*擬似レジスタ*デバッガー エンジンによって管理される、たとえば、特定の値を保持する変数 **$teb**擬似レジスタの値が現在のスレッドのスレッドの環境のアドレスの名前を指定しますブロック終了します。 詳細についてと擬似レジスタの一覧は、次を参照してください。[擬似レジスタ構文](pseudo-register-syntax.md)します。
+*擬似レジスタ*デバッガー エンジンによって管理される、たとえば、特定の値を保持する変数 **$teb**擬似レジスタの値が現在のスレッドのスレッドの環境のアドレスの名前を指定しますブロック終了します。 詳細についてと擬似レジスタの一覧は、[擬似レジスタ構文](pseudo-register-syntax.md)を参照してください。
 
 各擬似レジスタには、インデックスがあります。 インデックスが 0 ~ 擬似レジスタの数の数値 (によって返される[ **GetNumberPseudoRegisters**](https://msdn.microsoft.com/library/windows/hardware/ff547957)) から 1 を引いたします。 その名前で擬似レジスタのインデックスを確認する[ **GetPseudoIndexByName**](https://msdn.microsoft.com/library/windows/hardware/ff548206)します。 使用して擬似レジスタの値を読み取ることができます[ **GetPseudoValues**](https://msdn.microsoft.com/library/windows/hardware/ff548215)を使用して擬似レジスタに値を記述できますと[ **SetPseudoValues** ](https://msdn.microsoft.com/library/windows/hardware/ff556767). については、その型を含む、擬似レジスタを使用して、 [ **GetPseudoDescription**](https://msdn.microsoft.com/library/windows/hardware/ff548189)します。
 

@@ -36,7 +36,7 @@ CPSUI には、ユーザーに一貫性のあるインターフェイスを提�
 
 -   チェック ボックス
 
-このウィンドウのコントロールのセットは、指定するときに常に使用する必要があります[プロパティ シート オプション](property-sheet-options.md)します。 ウィンドウ コントロールを使用して指定[CPSUI オプションの種類](https://msdn.microsoft.com/library/windows/hardware/ff547142)します。 通常は必要なときに、これらのコントロールの外観をカスタマイズできます。 詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](customizing-cpsui-supported-window-controls.md)します。
+このウィンドウのコントロールのセットは、指定するときに常に使用する必要があります[プロパティ シート オプション](property-sheet-options.md)します。 ウィンドウ コントロールを使用して指定[CPSUI オプションの種類](https://msdn.microsoft.com/library/windows/hardware/ff547142)します。 通常は必要なときに、これらのコントロールの外観をカスタマイズできます。 詳細については、[Customizing CPSUI-Supported ウィンドウ コントロール](customizing-cpsui-supported-window-controls.md)を参照してください。
 
 CPSUI には、拡張のチェック ボックスと拡張のプッシュ ボタンと呼ばれる、2 つの特殊なコントロールも定義します。 使用して、これらのコントロールでは、標準のチェック ボックスとプッシュ ボタンのもの以外の機能を提供するを指定することができます、 [ **EXTCHKBOX** ](https://msdn.microsoft.com/library/windows/hardware/ff548781)と[ **EXTPUSH**](https://msdn.microsoft.com/library/windows/hardware/ff548795)構造体に、それぞれします。
 

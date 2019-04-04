@@ -63,7 +63,7 @@ ms.locfileid: "56574770"
 
 [HYPER-V 拡張可能なスイッチ ポートにパケットを転送](forwarding-packets-to-hyper-v-extensible-switch-ports.md)
 
-拡張可能スイッチのデータ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
+拡張可能スイッチのデータ パスの詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
 
  
 

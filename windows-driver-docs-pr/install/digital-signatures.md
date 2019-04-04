@@ -58,7 +58,7 @@ Windows では、有効なデジタル署名を使用して、次のことを確
 
 プラグ アンド プレイ (PnP) デバイスのインストールでのデジタル署名の使用方法の詳細については、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)を参照してください[デジタル署名と PnP デバイスインストール](digital-signatures-and-pnp-device-installation.md)します。
 
-Microsoft 公開キー基盤テクノロジ、コード署名、およびデジタル署名の詳細については、次を参照してください。[コード署名の概要](https://go.microsoft.com/fwlink/p/?linkid=104071)と[コード署名のベスト プラクティス](https://go.microsoft.com/fwlink/p/?linkid=68250)します。
+Microsoft 公開キー基盤テクノロジ、コード署名、およびデジタル署名の詳細については、[コード署名の概要](https://go.microsoft.com/fwlink/p/?linkid=104071)と[コード署名のベスト プラクティス](https://go.microsoft.com/fwlink/p/?linkid=68250)を参照してください。
 
  
 

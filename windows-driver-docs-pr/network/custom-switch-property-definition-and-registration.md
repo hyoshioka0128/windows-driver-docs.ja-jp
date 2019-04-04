@@ -68,7 +68,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_SwitchCustomSettingData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
+MOF コンパイラを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)を参照してください。
 
 次の例では、サンプルの機能を構成する方法を示します。 この例では、Fabrikam\_SwitchCustomSettingData MOF クラスは、"TestSwitch"という名前のスイッチを構成するために使用します。
 

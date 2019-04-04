@@ -18,7 +18,7 @@ ms.locfileid: "56572637"
 
 自動ロガー セッションは、Windows Vista および Windows の以降のバージョンでのみサポートされます。 これらのシステムにログインできますグローバル ロガー トレース セッションでは、」の説明に従って[ブート中にトレース](tracing-during-boot.md)autologgers が推奨される方法です。
 
-Autologgers とメソッドの以前のバージョンの Windows ブート トレースの詳細については、次を参照してください。[ブート中にトレース](tracing-during-boot.md)します。
+Autologgers とメソッドの以前のバージョンの Windows ブート トレースの詳細については、[ブート中にトレース](tracing-during-boot.md)を参照してください。
 
  
 

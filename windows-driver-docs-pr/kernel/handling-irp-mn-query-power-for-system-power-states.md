@@ -25,7 +25,7 @@ ms.locfileid: "56581284"
 
 電源マネージャーが送信する前にクエリ可能であれば、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)低 (小さい電源) 状態を要求します。 ただし、バッテリの故障の場合、または停電が迫っていないか、電源マネージャー セット power IRP せず送信まずクエリを実行します。 電源マネージャー システムを動作状態 (S0) に設定するのには IRP を送信する前にクエリを送信します。
 
-デバイスの電源ポリシーの所有者がシステム クエリ性能の要求を処理する方法については、次を参照してください。[電源ポリシー所有者のデバイスでのシステム クエリ Power IRP の処理](handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)します。
+デバイスの電源ポリシーの所有者がシステム クエリ性能の要求を処理する方法については、[電源ポリシー所有者のデバイスでのシステム クエリ Power IRP の処理](handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)を参照してください。
 
 (デバイスの電源ポリシー所有者ではない) ドライバーがシステム クエリ性能の要求を処理する方法については、次を参照してください。
 

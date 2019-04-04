@@ -48,7 +48,7 @@ Driver Verifier は、監視を開始 Windows とそのドライバーが読み�
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、ディスクの整合性チェック オプションをアクティブ化することができます。 ドライバー検証マネージャーを使用して、どのディスクが検証を指定できます。 コマンドラインを使用する場合は、すべてのディスクが検証されます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、ディスクの整合性チェック オプションをアクティブ化することができます。 ドライバー検証マネージャーを使用して、どのディスクが検証を指定できます。 コマンドラインを使用する場合は、すべてのディスクが検証されます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
 
 -   **コマンドラインで**
 

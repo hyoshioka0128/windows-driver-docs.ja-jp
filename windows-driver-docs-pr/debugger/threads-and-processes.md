@@ -40,7 +40,7 @@ ms.locfileid: "56558342"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドおよびプロセスの使用に関する詳細については、次を参照してください。[を制御するスレッドとプロセス](controlling-threads-and-processes.md)します。
+スレッドおよびプロセスの使用に関する詳細については、[を制御するスレッドとプロセス](controlling-threads-and-processes.md)を参照してください。
 
  
 

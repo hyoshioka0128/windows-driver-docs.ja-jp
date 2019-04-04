@@ -118,7 +118,7 @@ ms.locfileid: "56581395"
 
 注: 破損は、シングル ビット エラーによって発生したし、のバグ チェックが生成することがなく、この条件を自動的に修正がある場合、圧縮されたストア マネージャーを検出できます。 このバグチェックは、単一ビット エラーによって破損の原因がない場合、圧縮されたストア マネージャーによって報告されます。
 
-Windows メモリ マネージャーとメモリの圧縮の詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
+Windows メモリ マネージャーとメモリの圧縮の詳細については、[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でを参照してください。
 
 
 ## <a name="resolution"></a>解決方法

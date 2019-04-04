@@ -23,7 +23,7 @@ ms.locfileid: "56579104"
 
 ドライバー スタックの完了後、USB URB を処理するには、ドライバー スタックを使用して、**状態**のメンバー、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923) USB に固有の状態コードを返す構造体。
 
-**注**  KMDF および UMDF ドライバー開発者は、USB デバイスと通信するため各フレームワーク インターフェイスを使用する必要があります。 詳細については、次を参照してください。 [USB デバイスを使用して](https://msdn.microsoft.com/library/windows/hardware/ff553101)KMDF ドライバーおよび[UMDF で USB インターフェイスの操作](https://msdn.microsoft.com/library/windows/hardware/ff561478)します。 これらのトピックでは、USB デバイスの通信に使用される基になる WDM ドライバー インターフェイスについて説明します。
+**注**  KMDF および UMDF ドライバー開発者は、USB デバイスと通信するため各フレームワーク インターフェイスを使用する必要があります。 詳細については、[USB デバイスを使用して](https://msdn.microsoft.com/library/windows/hardware/ff553101)KMDF ドライバーおよび[UMDF で USB インターフェイスの操作](https://msdn.microsoft.com/library/windows/hardware/ff561478)を参照してください。 これらのトピックでは、USB デバイスの通信に使用される基になる WDM ドライバー インターフェイスについて説明します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

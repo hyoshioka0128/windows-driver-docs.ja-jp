@@ -70,7 +70,7 @@ Comment UniqueID IDnumber
 
 場所*id 番号:* フォント ベンダーによって発行されたフォントの一意の識別子を表します。
 
-Makentf.txt には、いくつかの追加の .map とするのと同じディレクトリ内に存在する必要があります .ps ファイルが必要です東アジア フォントの .afm ファイルを処理しているときに **-o** PSFamily.dat とします。 追加の .map と (PSFamily.dat) と WDK で提供される、.ps ファイルは、フォントの Unicode コードから CID へのマッピング テーブルを作成するために必要なは。 詳細については、次を参照してください。[東アジア言語 AFM ファイルの変換を NTF ファイル](converting-east-asian-afm-files-to-ntf-files.md)します。
+Makentf.txt には、いくつかの追加の .map とするのと同じディレクトリ内に存在する必要があります .ps ファイルが必要です東アジア フォントの .afm ファイルを処理しているときに **-o** PSFamily.dat とします。 追加の .map と (PSFamily.dat) と WDK で提供される、.ps ファイルは、フォントの Unicode コードから CID へのマッピング テーブルを作成するために必要なは。 詳細については、[東アジア言語 AFM ファイルの変換を NTF ファイル](converting-east-asian-afm-files-to-ntf-files.md)を参照してください。
 
 .Ntf ファイルに変換される .afm ファイルに含めることができます、 **FontBBox2**キーワード。 このキーワードの引数がの場合と同様**FontBBox** (を参照してください、 *Adobe フォント メトリック ファイル形式の仕様*、Adobe Systems, Inc. から) ことを除いて、 **FontBBox2**引数を指定する設定 (約) などの特定の文字で使用されるグリフの境界ボックス中**FontBBox**引数が .afm ファイルで説明されているすべての文字の和集合の境界ボックスについて説明します。 場合**FontBBox2**が検出されなければ、指定された値**FontBBox**境界ボックスのために使用します。
 

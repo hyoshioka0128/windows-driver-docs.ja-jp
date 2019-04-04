@@ -16,7 +16,7 @@ ms.locfileid: "56557673"
 
 ドライバー パッケージを符号なしのカタログ ファイルを作成するには、次の手順を実行します。
 
-1. 追加の必要な INF **CatalogFile**=<em>FileName</em>**します。Cat**エントリまたは INF **CatalogFile** 。<em>PlatformExtension</em>=<em>一意のファイル名</em>**します。Cat**エントリを[ **INF バージョン セクション**](inf-version-section.md)の[ドライバー パッケージの](driver-packages.md)INF ファイル。 プラットフォームの拡張機能を使用する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
+1. 追加の必要な INF **CatalogFile**=<em>FileName</em>**します。Cat**エントリまたは INF **CatalogFile** 。<em>PlatformExtension</em>=<em>一意のファイル名</em>**します。Cat**エントリを[ **INF バージョン セクション**](inf-version-section.md)の[ドライバー パッケージの](driver-packages.md)INF ファイル。 プラットフォームの拡張機能を使用する方法については、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
 
 2. 使用して、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)ツールをターゲット プラットフォームのドライバー パッケージを署名できることを確認し、符号なしの生成を[カタログ ファイル](catalog-files.md)(*.cat*ファイル) のターゲット プラットフォームに適用されています。
 

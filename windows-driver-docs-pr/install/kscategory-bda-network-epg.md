@@ -56,7 +56,7 @@ KSCATEGORY_BDA_NETWORK_EPG[デバイス インターフェイス クラス](http
 
 BDA デバイス用のドライバーでは、デバイスが BDA EPG フィルターをサポートしているオペレーティング システムに示すために KSCATEGORY_BDA_NETWORK_EPG のインスタンスを登録します。
 
-詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+詳細については、[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------

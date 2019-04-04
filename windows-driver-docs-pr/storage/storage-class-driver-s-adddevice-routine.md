@@ -37,7 +37,7 @@ PnP マネージャーには、記憶域クラス ドライバーの[ **AddDevic
 
 ストレージ クラス ドライバーによって返されたポインターを格納する**IoAttachDeviceToDeviceStack**新しく要求されたデバイスを表す独自デバイス オブジェクト (FDO) の拡張機能でデバイスと*すべてでこのポインターを使用する必要がありますクラス ドライバーは、次の下位ドライバーに送信する後続の要求*します。 ドライバーは、デバイス拡張機能の後に入力 PDO へのポインターを格納するも**IoAttachDeviceToDeviceStack** 、ドライバーは PnP への呼び出しでのみ入力 PDO へのポインターを使用する必要がありますを返します **Io * * * Xxx*パラメーターとしてこのようなポインターを使用するルーチン。
 
-詳細については、次を参照してください。 [、AddDevice ルーチンを記述](https://msdn.microsoft.com/library/windows/hardware/ff566398)します。
+詳細については、[、AddDevice ルーチンを記述](https://msdn.microsoft.com/library/windows/hardware/ff566398)を参照してください。
 
  
 

@@ -28,7 +28,7 @@ WindowsInformation WindowsInfo.xml
 
 -   DeviceInformation サブディレクトリが含まれています、 [DeviceInfo XML ドキュメント](deviceinfo-xml-document.md)と省略可能なデバイスのアイコン ファイル。 XML ドキュメントの名前は、DeviceInfo.xml である必要があります。
 
-    任意の名前を持つことができますのサフィックスで終わる必要がありますが、デバイス メタデータ パッケージには、デバイスのアイコン ファイルが含まれている場合 *.ico*します。 詳細については、次を参照してください。[デバイス アイコン ファイル](device-icon-file.md)します。
+    任意の名前を持つことができますのサフィックスで終わる必要がありますが、デバイス メタデータ パッケージには、デバイスのアイコン ファイルが含まれている場合 *.ico*します。 詳細については、[デバイス アイコン ファイル](device-icon-file.md)を参照してください。
 
 -   WindowsInformation サブディレクトリが含まれています、 [WindowsInfo XML ドキュメント](windowsinfo-xml-document.md)します。 XML ドキュメントの名前は、WindowsInfo.xml である必要があります。
 

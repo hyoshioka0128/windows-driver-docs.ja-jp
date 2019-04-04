@@ -18,9 +18,9 @@ ms.locfileid: "56572352"
 > この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
 >
 
-Microsoft Visual Studio を使用して、設定し、カーネル モードの 1394 (Firewire) ケーブル経由でのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
+Microsoft Visual Studio を使用して、設定し、カーネル モードの 1394 (Firewire) ケーブル経由でのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
 
-1394 デバッグを設定する Visual Studio を使用する代わりに、セットアップを手動で行うことができます。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](setting-up-a-1394-cable-connection.md)します。
+1394 デバッグを設定する Visual Studio を使用する代わりに、セットアップを手動で行うことができます。 詳細については、[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](setting-up-a-1394-cable-connection.md)を参照してください。
 
 デバッガーを実行しているコンピューターと呼ばれる、*ホスト コンピューター*とは、デバッグ中のコンピューターと呼びます、*対象のコンピュータ*します。 ホストおよびターゲット コンピューターが、それぞれあります 1394 アダプターであります。
 

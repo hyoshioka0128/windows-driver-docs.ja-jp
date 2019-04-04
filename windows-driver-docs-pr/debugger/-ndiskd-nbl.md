@@ -76,7 +76,7 @@ Ndiskd.dll
 <a name="examples"></a>使用例
 --------
 
-次の例では、NBL の追跡が有効になって、NBL NBL ログからのハンドルを抽出します。 NBL の追跡と NBL ログの詳細については、次を参照してください。 [ **! ndiskd.nbllog**](-ndiskd-nbllog.md)します。
+次の例では、NBL の追跡が有効になって、NBL NBL ログからのハンドルを抽出します。 NBL の追跡と NBL ログの詳細については、[ **! ndiskd.nbllog**](-ndiskd-nbllog.md)を参照してください。
 
 ログの収集時に、この例では NBL が WFP ネイティブ Mac レイヤー ライトウェイト フィルターに TCPIP6 プロトコルによって返されました。
 

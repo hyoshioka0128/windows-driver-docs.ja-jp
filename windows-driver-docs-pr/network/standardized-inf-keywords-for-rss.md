@@ -278,7 +278,7 @@ SubkeyName に関連付けられているテキスト。
 場合、  **\*NumaNodeId**キーワードが存在し、NDIS ACPI からヒントに基づいて、最も近いノードを自動的に選択します。
 
 
-標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
+標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
 
  
 

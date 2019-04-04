@@ -36,11 +36,11 @@ A **NetClient**コンポーネントは、ネットワーク プロバイダー�
 
 -   別のデバイス名はコンポーネントを指定します。
 
--   使用するため、コンポーネントの短い名前が指定されて、 **「net view**コマンド。 詳細については、次を参照してください。 [、NetworkProvider セクションを含む](including-a-networkprovider-section.md)します。
+-   使用するため、コンポーネントの短い名前が指定されて、 **「net view**コマンド。 詳細については、[、NetworkProvider セクションを含む](including-a-networkprovider-section.md)を参照してください。
 
-インストールする、INF、 **NetClient**印刷プロバイダーであるコンポーネントを含める必要があります、**した PrintProvider**そのコンポーネントのセクション。 詳細については、次を参照してください。 [、した PrintProvider セクションを含む](including-a-printprovider-section.md)します。
+インストールする、INF、 **NetClient**印刷プロバイダーであるコンポーネントを含める必要があります、**した PrintProvider**そのコンポーネントのセクション。 詳細については、[、した PrintProvider セクションを含む](including-a-printprovider-section.md)を参照してください。
 
-インストールする INF ファイル、 **NetClient**コンポーネントも含める必要があります、*追加レジストリ セクション*(によって参照される、 **AddReg**ディレクティブで、 *サービスのインストール-セクション*コンポーネント) を追加する、 **NetworkProvider**をコンポーネントのキー**サービス**キー。 詳細については、次を参照してください。 [NetClient コンポーネントのプロバイダーのパスと名前を指定する](specifying-the-name-and-provider-path-for-a-netclient-component.md)します。
+インストールする INF ファイル、 **NetClient**コンポーネントも含める必要があります、*追加レジストリ セクション*(によって参照される、 **AddReg**ディレクティブで、 *サービスのインストール-セクション*コンポーネント) を追加する、 **NetworkProvider**をコンポーネントのキー**サービス**キー。 詳細については、[NetClient コンポーネントのプロバイダーのパスと名前を指定する](specifying-the-name-and-provider-path-for-a-netclient-component.md)を参照してください。
 
  
 

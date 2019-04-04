@@ -25,7 +25,7 @@ ms.locfileid: "56560075"
 
 [Windows XP と Windows ドキュメント フィーダー サポートを追加します。](adding-document-feeder-support-for-windows-me-and-windows-xp.md)
 
-Windows Vista 以降のスキャナー項目ツリーについては、次を参照してください。 [WIA スキャナー項目ツリーの Windows Vista](wia-scanner-item-tree-for-windows-vista.md)します。 このトピックでは、Windows XP と Windows Me と互換性のある Windows Vista WIA ミニドライバーを開発する方法についての情報も含まれます。
+Windows Vista 以降のスキャナー項目ツリーについては、[WIA スキャナー項目ツリーの Windows Vista](wia-scanner-item-tree-for-windows-vista.md)を参照してください。 このトピックでは、Windows XP と Windows Me と互換性のある Windows Vista WIA ミニドライバーを開発する方法についての情報も含まれます。
 
  
 

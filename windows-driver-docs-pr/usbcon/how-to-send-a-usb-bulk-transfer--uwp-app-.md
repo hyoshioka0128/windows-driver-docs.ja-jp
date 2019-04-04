@@ -33,7 +33,7 @@ USB フル_スピード、高速および SuperSpeed デバイスは、一括の
 
 一括転送要求を開始するには、アプリはへの参照が必要、*パイプ*を表すエンドポイント。 パイプは、デバイスが構成されている場合、デバイス ドライバーによって開かれた通信チャネルです。 アプリでは、パイプは、エンドポイントの論理表現です。 エンドポイントからデータを読み取るには、アプリは、関連付けられている一括 IN パイプからデータを取得します。 エンドポイントにデータを書き込むには、アプリは、データをパイプを一括に送信します。 一括読み、パイプの書き込みは、使用[ **UsbBulkInPipe** ](https://msdn.microsoft.com/library/windows/apps/dn297573)と[ **UsbBulkOutPipe** ](https://msdn.microsoft.com/library/windows/apps/dn297647)クラス。
 
-アプリは、特定のポリシーのフラグを設定して、パイプの動作を変更することができますも。 たとえば、読み取り要求をパイプで停止状態を自動的にクリアするフラグを設定できます。 これらのフラグについては、次を参照してください。 [ **UsbReadOptions** ](https://msdn.microsoft.com/library/windows/apps/dn278430)と[ **UsbWriteOptions**](https://msdn.microsoft.com/library/windows/apps/dn278464)します。
+アプリは、特定のポリシーのフラグを設定して、パイプの動作を変更することができますも。 たとえば、読み取り要求をパイプで停止状態を自動的にクリアするフラグを設定できます。 これらのフラグについては、[ **UsbReadOptions** ](https://msdn.microsoft.com/library/windows/apps/dn278430)と[ **UsbWriteOptions**](https://msdn.microsoft.com/library/windows/apps/dn278464)を参照してください。
 
 ## <a name="before-you-start"></a>はじめに...
 
@@ -81,7 +81,7 @@ USB フル_スピード、高速および SuperSpeed デバイスは、一括の
 <tr class="odd">
 <td><p>データ フローを停止することがなく、エンドポイント上の任意のエラー条件を自動的にクリアします。</p></td>
 <td><strong>AutoClearStall</strong>
-<p>詳細については、次を参照してください。<a href="#stall" data-raw-source="[Clearing stall conditions](#stall)">消去しています区画条件</a>します。 このフラグは、転送の読み書きの両方に適用されます。</p></td>
+<p>詳細については、<a href="#stall" data-raw-source="[Clearing stall conditions](#stall)">消去しています区画条件</a>を参照してください。 このフラグは、転送の読み書きの両方に適用されます。</p></td>
 </tr>
 <tr class="even">
 <td><p>効率を最大限に複数の読み取り要求を送信します。 パフォーマンスを向上するには、エラー チェックをバイパスします。</p></td>

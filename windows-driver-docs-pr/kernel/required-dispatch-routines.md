@@ -54,7 +54,7 @@ ms.locfileid: "56580964"
 
 -   [*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-    [**IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)ドライバーへの WMI 要求を指定するために使用します。 WMI の詳細については、次を参照してください。 [Windows Management Instrumentation](implementing-wmi.md)します。
+    [**IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)ドライバーへの WMI 要求を指定するために使用します。 WMI の詳細については、[Windows Management Instrumentation](implementing-wmi.md)を参照してください。
 
 ドライバーを提供する必要があるディスパッチ ルーチンは、型および基になる物理デバイスの機能によって異なります。 デバイス固有の種類のドライバーを処理する必要があります IRP 主な機能のコードについては、デバイスの種類の特定のドキュメントで Windows Driver Kit (WDK) を参照してください。
 

@@ -31,7 +31,7 @@ ms.locfileid: "56580726"
 
 -   バス ドライバーを実行する場合[静的 bus 列挙](static-enumeration.md)、呼び出す必要があります[ **WdfPdoInitAllocate** ](https://msdn.microsoft.com/library/windows/hardware/ff548786) 、WDFDEVICE を識別するハンドルを取得する\_INIT 構造体。
 
-バスの列挙体の詳細については、次を参照してください。[バス上のデバイスを列挙する](enumerating-the-devices-on-a-bus.md)します。
+バスの列挙体の詳細については、[バス上のデバイスを列挙する](enumerating-the-devices-on-a-bus.md)を参照してください。
 
 バス ドライバーのセットを呼び出すことができます[framework デバイス オブジェクトの初期化メソッド](https://msdn.microsoft.com/library/windows/hardware/dn265631#device-init-methods)、情報を格納する、 [ **WDFDEVICE\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff546951)構造体。 さらに、バス ドライバーが呼び出せる[framework PDO 初期化メソッド](https://msdn.microsoft.com/library/windows/hardware/dn265631#pdo-init-methods)します。
 
@@ -39,7 +39,7 @@ ms.locfileid: "56580726"
 
 -   バス ドライバー固有のコールバック関数を登録しています。
 
-    バス ドライバーの呼び出しのほとんど[ **WdfPdoInitSetEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff548805)デバイスで必要なシステムのハードウェア リソースを指定する必要があります。 ハードウェア リソースを指定する方法については、次を参照してください。 [Framework ベースのドライバーのハードウェア リソース](hardware-resources-for-kmdf-drivers.md)します。 デバイスとドライバーの取り出しをサポートする場合、追加のコールバック関数を登録できます。
+    バス ドライバーの呼び出しのほとんど[ **WdfPdoInitSetEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff548805)デバイスで必要なシステムのハードウェア リソースを指定する必要があります。 ハードウェア リソースを指定する方法については、[Framework ベースのドライバーのハードウェア リソース](hardware-resources-for-kmdf-drivers.md)を参照してください。 デバイスとドライバーの取り出しをサポートする場合、追加のコールバック関数を登録できます。
 
 -   Reporting[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
 
@@ -61,7 +61,7 @@ ms.locfileid: "56580726"
 
 通常、呼び出す、バス ドライバーには、デバイス オブジェクトが作成、 [ **WdfDeviceSetPnpCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff546898)と[ **WdfDeviceSetPowerCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff546901)デバイスのプラグ アンド プレイと電源機能レポートします。
 
-各バス ドライバーは、関数のドライバー、バス アダプターもです。 そのため、ドライバーが提供する必要がありますも、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。 このコールバック関数では、システム上の各バス アダプターの機能のデバイス オブジェクト (FDO) を作成します。 Fdo の作成の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)です。
+各バス ドライバーは、関数のドライバー、バス アダプターもです。 そのため、ドライバーが提供する必要がありますも、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。 このコールバック関数では、システム上の各バス アダプターの機能のデバイス オブジェクト (FDO) を作成します。 Fdo の作成の詳細については、[Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)を参照してください。
 
  
 
