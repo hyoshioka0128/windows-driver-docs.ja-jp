@@ -4,12 +4,12 @@ title: ユニバーサル Windows ドライバーの検証
 description: ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 045d6911386f407d87c7f22910e017e91cb74216
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 78b5827d01525464f5660e863bf48c7a3e66ae21
+ms.sourcegitcommit: 282e17efc5ff5bc4541e277d67567d37aa2d957b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518801"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58563985"
 ---
 # <a name="validating-universal-windows-drivers"></a>ユニバーサル Windows ドライバーの検証
 
@@ -65,7 +65,8 @@ Apivalidator.exe をコマンド プロンプトで実行することもでき�
 
 使用する構文は以下のとおりです。
 
-**Apivalidator.exe** **-DriverPackagePath:***&lt;ドライバーのフォルダーのパス&gt;* **-SupportedApiXmlFiles:***&lt;ユニバーサル ドライバーのサポートされる API を含む XML ファイルのパス&gt;*
+**Apivalidator.exe** **-DriverPackagePath:**_&lt;ドライバー フォルダーのバス&gt;_  
+ **-SupportedApiXmlFiles:**_&lt;サポートされるユニバーサル ドライバー用の API を含む XML ファイルのパス&gt;_
 
 たとえば、WDK のアクティビティ サンプルから呼び出される API を検証するには、まず Visual Studio でサンプルをビルドします。 次に、コマンド プロンプトを開き、ツールが存在するディレクトリ (例: C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x64) に移動します。 次のコマンドを入力します。
 

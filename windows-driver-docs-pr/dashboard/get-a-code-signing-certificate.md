@@ -5,132 +5,26 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d18cf99238bc70da613e6f83496e962eeadba6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fe34a75d166e8e03999c93c9588233e94fb9801c
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518810"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909203"
 ---
 # <a name="get-a-code-signing-certificate"></a>コード署名証明書の取得
 
 パートナー センター アカウントを設定するには、デジタル情報を保護するためのコード署名証明書をあらかじめ取得しておく必要があります。 この証明書は、提出するコードに対する会社の所有権を確立するための公認されている標準です。 .exe、.cab、.dll、.ocx、.msi、.xpi、.xap ファイルなどの PE バイナリにデジタル署名できます。
 
-## <a name="step-1-determine-which-type-of-code-signing-certificate-you-need"></a>手順 1:必要なコード署名証明書の種類を判断する
+## <a name="step-1-obtain-an-ev-certificate"></a>手順 1:EV 証明書を取得する
 
-- Microsoft では、Microsoft の信頼されたルート証明書プログラムの一部としてカーネル モード コード署名に登録して承認されたパートナーから標準的なコード署名および拡張された検証 (EV) コード署名証明書を受け入れます。 これらの機関のいずれかからの承認された標準証明書または EV 証明書を既に持っている場合は、その証明書を使ってパートナー センター アカウントを設定できます。 証明書を持っていない場合は、新しい証明書を購入する必要があります。
-
-- 次の表に、各ダッシュ ボード サービスの証明書の要件の詳細を示します。
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ダッシュボード サービス/アクセス許可</th>
-<th>コード署名証明書の要件</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>バグ管理</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="even">
-<td><p>DDC – Driver Distribution Center</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>デバイス メタデータ</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="even">
-<td><p>レポート データ</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>提出</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="even">
-<td><p>WRD – Windows リモート デバッグ</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>LSA</p></td>
-<td><p>EV</p></td>
-</tr>
-<tr class="even">
-<td><p>UEFI</p></td>
-<td><p>EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>Windows リファレンス デザイン</p></td>
-<td><p>標準または EV</p></td>
-</tr>
-<tr class="even">
-<td><p>構成証明のドライバー署名</p></td>
-<td><p>EV</p></td>
-</tr>
-</tbody>
-</table>
-
-> [!NOTE] 
-> パートナー センターでは年内に、申請用 EV 証明書が必須になります。
-
-### <a name="code-signing-certificates-for-partner-center"></a>パートナー センターのコード署名証明書
-
-現在利用可能なコード署名証明書は 2 種類あります。
-
-#### <a name="standard-code-signing"></a>標準的なコード署名
-
-- 標準レベルの ID 検証を提供します。
-
-- 処理時間が短く、低コストで済みます。
-
-- LSA を除くすべてのパートナー センター サービスと UEFI ファイル署名サービスで使うことができます。
-
-- デスクトップ エディション (Home、Pro、Enterprise、Education の各エディション) 用 Windows 10 では、標準的なコード署名をカーネル モード ドライバーに使うことはできません。 これらの変更について詳しくは、「[コード署名 FAQ](#code-signing-faq)」をご覧ください。
-
-#### <a name="extended-validation-ev-code-signing"></a>拡張検証 (EV) コード署名
-
-- 最高レベルの ID 検証を提供します。
-
-- 高度な検証プロセスのため、処理に時間がかかり、コストが高くなります。
-
-- すべてのパートナー センター サービスで使うことができ、LSA と UEFI のファイル署名サービスに必要です
-
-- デスクトップ エディション用 Windows 10 では、すべてのカーネル モード ドライバーに、パートナー センターによる署名が必要であり、パートナー センターには、EV 証明書が必要です。 これらの変更について詳しくは、「[コード署名 FAQ](#code-signing-faq)」をご覧ください。
+- Microsoft では、Microsoft の信頼されたルート証明書プログラムの一環として、カーネル モード コード署名に登録して承認されたパートナーからの拡張された検証 (EV) コード署名証明書を求めています。 これらの機関のいずれかからの承認された EV 証明書を既に持っている場合は、その証明書を使ってパートナー センター アカウントを設定できます。 証明書を持っていない場合は、新しい証明書を購入する必要があります。
 
 ## <a name="step-2-buy-a-new-code-signing-certificate"></a>手順 2:新しいコード署名証明書を購入する
 
-承認された標準的なコード署名証明書または EV コード署名証明書がない場合は、次のいずれかの証明機関から証明書を購入できます。
+承認された EV コード署名証明書がない場合は、次のいずれかの証明機関から証明書を購入できます。
 
-### <a name="standard-code-signing-certificates"></a>標準的なコード署名証明書
-
-- [Symantec の標準的なコード署名証明書を購入する](https://go.microsoft.com/fwlink/?LinkId=393247)
-
-- [Certum の標準的なコード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=843062) (パートナー センターのみでサポート)
-
-- [Entrust の標準的なコード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=843067)
-
-- [GlobalSign の標準的なコード署名証明書を購入する](https://go.microsoft.com/fwlink/p/?LinkId=620887)
-
-- [Comodo の標準的なコード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=863206)
-
-- [DigiCert の標準的なコード署名証明書を購入する](https://go.microsoft.com/fwlink/?LinkId=393249)
-
-  1. **[DigiCert Code Signing Certificates for Sysdevs]** (Sysdevs 用 DigiCert コード署名証明書) ページで **[開始]** をクリックします。
-
-  2. **[DigiCert Order Form]** (DigiCert 注文フォーム) ページ (手順 1.) の **[コード署名]** セクションで、**[Code Signing Certificate]** (コード署名証明書) をクリックします。
-
-  3. 引き続き手順 1. で下へスクロールし、**[Platform]** (プラットフォーム) セクションのドロップダウン リストから **[Microsoft Authenticode]** を選択して、**[Continue]** (次へ) をクリックします。
-
-  4. DigiCert によって提示されている証明書の購入手順に従います。
-
-### <a name="extended-validation-code-signing-certificatesrequired-for-uefi-kernel-mode-drivers-and-lsa-certifications"></a>拡張検証コード署名証明書 (UEFI、カーネル モード ドライバー、および LSA の認定では必須)
+### <a name="extended-validation-code-signing-certificates"></a>拡張検証コード署名証明書
 
 - [Symantec の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/?LinkId=393248)
 
@@ -140,7 +34,7 @@ ms.locfileid: "56518810"
 
 - [GlobalSign の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/p/?LinkId=620888)
 
-- [Comodo の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=863208)
+- [Sectigo (旧 Comodo) の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/?linkid=863208)
 
 - [DigiCert の EV コード署名証明書を購入する](https://go.microsoft.com/fwlink/?LinkId=393249)
 
@@ -161,7 +55,7 @@ ms.locfileid: "56518810"
 
 - 新しいパートナー センター アカウントを設定する場合は、「[ハードウェア プログラムの登録](register-for-the-hardware-program.md)」の手順を実行します。
 
-- パートナー センター アカウントを既に設定しており、証明書を更新する必要がある場合は、「[コード署名証明書の更新](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)」の手順を実行します。
+- パートナー センター アカウントを既に設定しており、証明書を更新する必要がある場合は、「[コード署名証明書の追加または更新](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)」の手順を実行します。
 
 ## <a name="code-signing-faq"></a>コード署名 FAQ
 
@@ -177,11 +71,12 @@ ms.locfileid: "56518810"
 ### <a name="windows-10-desktop-attestation-signing"></a>Windows 10 デスクトップの構成証明署名
 
 - 構成証明署名を使ってダッシュボードで署名されたドライバーは、Windows 10 デスクトップ以降のバージョンの Windows でのみ動作します。
-- 構成証明署名されたドライバーは、Windows 10 デスクトップのみで動作し、Windows Server 2016、Windows 8.1、Windows 7 などのその他のバージョンの Windows では動作しません。
-- 構成証明署名は、Windows 10 デスクトップのカーネル モード ドライバーとユーザー モード ドライバーをサポートしています。 Windows 10 では、ユーザー モード ドライバーは Microsoft による署名を必要としませんが、ユーザー モード ドライバーとカーネル モード ドライバーの両方で同じ構成証明プロセスを使うことができます。
+- 構成証明署名されたドライバーは、Windows 10 デスクトップのみで動作し、Windows 7、Windows 8.1、Windows Server 2016 などのその他のバージョンの Windows では動作しません。
+- 構成証明署名は、Windows 10 デスクトップのカーネル モード ドライバーとユーザー モード ドライバーをサポートしています。
 
 ### <a name="windows-10-earlier-certificate-transition-signing"></a>Windows 10 以前での証明書移行署名
 
+- 以下は、Windows 10 1803 以前にのみ適用されます。  Windows 10 1809 以降では、これらは動作しません。 
 - Windows 10 では、2015 年 7 月 29 日より後に発行されたいずれかの証明書を使って署名されたタイムスタンプ付きのドライバーは推奨されません。
 - 2015 年 7 月 29 日より後に有効期限が切れるいずれかの証明書を使って署名されたタイムスタンプなしのドライバーは、証明書の有効期限が切れるまで Windows 10 で機能します。
 
@@ -204,15 +99,14 @@ ms.locfileid: "56518810"
 
 ### <a name="windows-server"></a>Windows Server
 
-- ダッシュボードは、Windows Server 2016 の構成証明されたデバイスおよびフィルター ドライバーの署名申請は受理しません。
+- Windows Server 2016 以降では、構成証明されたデバイスおよびフィルター ドライバーの署名申請は受け入れません。
 - ダッシュボードでは、HLK テストに合格したデバイスおよびフィルター ドライバーのみに署名します。
-- Windows Server 2016 では、HLK テストに合格し、ダッシュボードで署名されたドライバーのみを読み込みます。
+- Windows Server 2016 以降では、HLK テストに合格したダッシュボード署名済みドライバーのみを読み込みます。
 
 ### <a name="ev-certs"></a>EV 証明書
 
-- 2015 年 10 月 31 日の時点で Sysdev ダッシュボード アカウントには、構成証明署名のためのバイナリまたは HLK 認定のためのバイナリを提出する目的で、少なくとも 1 つの EV 証明書が関連付けられている必要があります。
-- 2016 月 5 月 1 日までは、EV 証明書または既存の標準的な証明書のどちらかを使って署名できます。 2016 月 5 月 1 日以降は、提出された cab ファイルに署名するために、EV 証明書を使う必要があります。
-- 提出されたバイナリそのものに署名する必要はありません。 EV 証明書を使って署名する必要があるのは、申請 cab ファイルのみです。
+- 2015 年 10 月 31 日の時点でハードウェア デベロッパー センター ダッシュボード アカウントには、構成証明署名のためのバイナリまたは HLK 認定のためのバイナリを提出する目的で、少なくとも 1 つの EV 証明書が関連付けられている必要があります。
+- 提出されたバイナリそのものが署名されている必要があります。
 
 ### <a name="os-support-summary"></a>OS のサポートの概要
 
@@ -224,12 +118,12 @@ ms.locfileid: "56518810"
 | Windows Vista                      | X                             | 〇                                | 〇                                                                            |
 | Windows 7                          | X                             | 〇                                | 〇                                                                            |
 | Windows 8 / 8.1                    | X                             | 〇                                | 〇                                                                            |
-| Windows 10                         | 〇                            | 〇                                | 〇                                                                            |
+| Windows 10                         | 〇                            | 〇                                | X (Windows 10 1809 以降)                                                                            |
 | Windows 10 - DG 有効            | \*構成による      | \*構成による          | \*構成による                                                      |
 | Windows Server 2008 R2             | X                             | 〇                                | 〇                                                                            |
 | Windows Server 2012 R2             | X                             | 〇                                | 〇                                                                            |
-| Windows Server 2016                | X                             | 〇                                | 〇                                                                            |
-| Windows Server 2016 – DG 有効   | \*構成による      | \*構成による          | \*構成による                                                      |
+| Windows Server 2016 以降             | X                             | 〇                                | 〇                                                                            |
+| Windows Server 2016 以降 – DG 有効| \*構成による      | \*構成による          | \*構成による                                                      |
 | Windows IoT Enterprise             | 〇                            | 〇                                | 〇                                                                            |
 | Windows IoT Enterprise - DG 有効 | \*構成による      | \*構成による          | \*構成による                                                      |
 | Windows IoT Core(1)                | 要 (必須ではない)             | 要 (必須ではない)                 | 要 (2015 年 7 月 29 日以降後に発行された証明書ではクロス署名も機能します) |

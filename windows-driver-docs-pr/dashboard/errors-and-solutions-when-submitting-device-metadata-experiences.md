@@ -5,12 +5,12 @@ ms.assetid: 793b4c92-96e8-4b3e-a7de-d00e953c983a
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b719008edbcbd7e6975cb3932631e7f2248e8b7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 83b8d0122497f7c429d922cd0f58b604e7799244
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518717"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348959"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法
 
@@ -50,7 +50,7 @@ ms.locfileid: "56518717"
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>[FolderName] folder name is required in &lt;PackageStructure&gt; element in PackageInfo.xml. (PackageInfo.xml の PackageStructure 要素に [フォルダー名] フォルダー名が必要です。)</p></td>
+<td><p>[FolderName] folder name is required in &lt;PackageStructure&gt; element in PackageInfo.xml. (PackageInfo.xml の &lt;PackageStructure&gt; 要素に [フォルダー名] フォルダー名が必要です。)</p></td>
 <td><p>PackageInfo.xml には、正しいフォルダー名参照を含める必要があります。</p>
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
@@ -96,7 +96,7 @@ ms.locfileid: "56518717"
 </tr>
 <tr class="even">
 <td><p>A Hardware ID in this. cab is in use by another company and the .cab cannot be uploaded. (この .cab 内のハードウェア ID は別の会社によって使われているため、.cab をアップロードできません。)  Please verify this Hardware ID. (このハードウェア ID を確認してください。)</p></td>
-<td><p>パッケージに追加したハードウェア ID が、別の会社によって使われています。 別の会社のハードウェア ID を申請することはできません。 ハードウェア ID のスペルに誤りがないか確認してください。 それでもエラー メッセージが表示される場合は、ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。</p></td>
+<td><p>パッケージに追加したハードウェア ID が、別の会社によって使われています。 別の会社のハードウェア ID を提出することはできません。 ハードウェア ID のスペルに誤りがないか確認してください。 それでもエラー メッセージが表示される場合は、ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。</p></td>
 </tr>
 <tr class="odd">
 <td><p>A live submission already exists for this locale in this experience. (このエクスペリエンスには、このロケールのライブ提出が既に存在します。)</p></td>
@@ -109,7 +109,7 @@ ms.locfileid: "56518717"
 </tr>
 <tr class="odd">
 <td><p>A logo submission for a MultiPurpose device does not match the submission category. (MultiPurpose デバイスのロゴ提出が、提出カテゴリと一致しません。)</p></td>
-<td><p>ロゴ申請にリストされているデバイス カテゴリが、デバイス メタデータ パッケージのプライマリ デバイス カテゴリと一致しません。 この問題を解決するには、次の手順を実行します。</p>
+<td><p>ロゴ提出にリストされているデバイス カテゴリが、デバイス メタデータ パッケージのプライマリ デバイス カテゴリと一致しません。 この問題を解決するには、次の手順を実行します。</p>
 <ul>
 <li><p>ロゴ提出のデバイス カテゴリを修正します。</p></li>
 <li><p>新しいエクスペリエンスを作成し、正しいロゴ提出にバインドします。</p></li>
@@ -122,7 +122,7 @@ ms.locfileid: "56518717"
 </tr>
 <tr class="odd">
 <td><p>A Model ID in this cab is in use by another company and the cab cannot be uploaded. (この cab 内のモデル ID は別の会社によって使われているため、cab をアップロードできません。)  Please verify this Model ID. (このモデル ID を確認してください。)</p></td>
-<td><p>パッケージに追加したモデル ID が、別の会社によって使われています。 別の会社のモデル ID を申請することはできません。 モデル ID のスペルに誤りがないか確認してください。 それでもエラー メッセージが表示される場合は、ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。</p></td>
+<td><p>パッケージに追加したモデル ID が、別の会社によって使われています。 別の会社のモデル ID を提出することはできません。 モデル ID のスペルに誤りがないか確認してください。 それでもエラー メッセージが表示される場合は、ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。</p></td>
 </tr>
 <tr class="even">
 <td><p>A non-preview live package cannot be promoted to live. (プレビュー以外のライブ パッケージをライブに昇格することはできません。)</p></td>
@@ -155,12 +155,12 @@ ms.locfileid: "56518717"
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>An unexpected file was found:&#39;[ExtraFile]&#39;. (予期しないファイルが見つかりました:&#39;[想定外のファイル]&#39;。) Please ensure you follow the architecture or reference all root files in PackageInfo.xml. (アーキテクチャに従うか、PackageInfo.xml 内のすべてのルート ファイルを参照してください。)</p></td>
+<td><p>An unexpected file was found:'[ExtraFile]'. (予期しないファイルが見つかりました:'[想定外のファイル]'。) Please ensure you follow the architecture or reference all root files in PackageInfo.xml. (アーキテクチャに従うか、PackageInfo.xml 内のすべてのルート ファイルを参照してください。)</p></td>
 <td><p>パッケージのルートに余分なファイルが存在します。</p>
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td><p>An unexpected folder was found: ‘[ExtraFolder]&#39;. (予期しないフォルダーが見つかりました: &#39;[ExtraFolder]&#39;。) Please ensure you follow the architecture or reference all root folders in PackageInfo.xml. (アーキテクチャに従うか、PackageInfo.xml 内のすべてのルート フォルダーを参照してください。)</p></td>
+<td><p>An unexpected folder was found: ‘[ExtraFolder]'. (予期しないフォルダーが見つかりました: ‘[ExtraFolder]'。) Please ensure you follow the architecture or reference all root folders in PackageInfo.xml. (アーキテクチャに従うか、PackageInfo.xml 内のすべてのルート フォルダーを参照してください。)</p></td>
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
@@ -248,12 +248,12 @@ ms.locfileid: "56518717"
 </ul></td>
 </tr>
 <tr class="odd">
-<td><p>File Name PackageInfo.xml is expected in &lt;PackageStructure&gt; element in PackageInfo.xml. (PackageInfo.xml の PackageStructure 要素には、ファイル名 PackageInfo.xml が必要です。)</p></td>
+<td><p>File Name PackageInfo.xml is expected in &lt;PackageStructure&gt; element in PackageInfo.xml. (PackageInfo.xml の &lt;PackageStructure&gt; 要素には、ファイル名 PackageInfo.xml が必要です。)</p></td>
 <td><p>対象パッケージの PackageInfo.xml ファイルが正しく作成されていません。 パッケージ内の各ルート オブジェクトは、PackageInfo.xml ファイルで &lt;PackageStructure&gt; ノードを使って参照されている必要があります。</p>
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>Filename [FileReference] is incorrect in &lt;PackageStructure&gt; element in PackageInfo.xml. (PackageInfo.xml の PackageStructure 要素のファイル名 [ファイル参照] が正しくありません。)  正しいファイル名: PackageInfo.xml</p></td>
+<td><p>Filename [FileReference] is incorrect in &lt;PackageStructure&gt; element in PackageInfo.xml. (PackageInfo.xml の &lt;PackageStructure&gt; 要素のファイル名 [ファイル参照] が正しくありません。) 正しいファイル名: PackageInfo.xml</p></td>
 <td><p>PackageInfo.xml ファイル内で &lt;PackageStructure&gt; ノードを使って参照されたファイル名のスペルに誤りがあります。 エラーを修正して、もう一度パッケージを提出してください。</p>
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
@@ -295,7 +295,7 @@ ms.locfileid: "56518717"
 </tr>
 <tr class="even">
 <td><p>Model IDs are not allowed for [Device Class] submissions. ([デバイス クラス] の提出では、モデル ID は許可されません。)</p></td>
-<td><p>このタイプのデバイス クラスでは、デバイス メタデータを申請するときに、モデル ID を使うことはできません。 必ずデバイスのハードウェア ID を使うようにしてください。 コンピューター デバイスのハードウェア ID を検索するには、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
+<td><p>このタイプのデバイス クラスでは、デバイス メタデータを提出するときに、モデル ID を使うことはできません。 必ずデバイスのハードウェア ID を使うようにしてください。 コンピューター デバイスのハードウェア ID を検索するには、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Model Name not found in DeviceInfo.xml (DeviceInfo.xml にモデル名が見つかりません)</p></td>
@@ -359,7 +359,7 @@ ms.locfileid: "56518717"
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>The device category reported in your Device Metadata package and Logo Submission don't match. (デバイス メタデータ パッケージとロゴ申請とで、報告されたデバイス カテゴリが一致しません。) パッケージ内のデバイス カテゴリに誤りがある場合は、修正してからもう一度アップロードしてください。 If the device category in Logo Submission is incorrect, please fix in Submission Manager and try uploading your package again: [list of links per offending logo submission to SubmissionManager] (ロゴ提出のデバイス カテゴリに誤りがある場合は、Submission Manager で修正し、もう一度パッケージをアップロードしてください: [問題が生じているロゴ提出ごとの SubmissionManager へのリンク])</p></td>
+<td><p>The device category reported in your Device Metadata package and Logo Submission don't match. (デバイス メタデータ パッケージとロゴ提出とで、報告されたデバイス カテゴリが一致しません。) パッケージ内のデバイス カテゴリに誤りがある場合は、修正してからもう一度アップロードしてください。 If the device category in Logo Submission is incorrect, please fix in Submission Manager and try uploading your package again: [list of links per offending logo submission to SubmissionManager] (ロゴ提出のデバイス カテゴリに誤りがある場合は、Submission Manager で修正し、もう一度パッケージをアップロードしてください: [問題が生じているロゴ提出ごとの SubmissionManager へのリンク])</p></td>
 <td><p>申請が受理されるためには、バインドされているロゴ提出とデバイス メタデータ間でデバイス カテゴリが一致している必要があります。 すべてのロゴ提出のデバイス カテゴリが一致していることと、そのデバイス カテゴリが、パッケージのデバイス カテゴリと一致していることを確認してください。</p>
 <p>提示されているリンクは Submission Manager へのリンクです。カテゴリに誤りがある場合は、このリンクをたどってロゴ提出のデバイス カテゴリを変更することができます。</p>
 <p>問題がすべて解決されたら、もう一度パッケージを提出します。</p></td>
@@ -393,7 +393,7 @@ ms.locfileid: "56518717"
 </tr>
 <tr class="odd">
 <td><p>The submission contains [list of Hardware ID(s) and/or Model ID(s)] that are not covered via a logo submission. (ロゴ提出ではカバーされない [ハードウェア ID またはモデル ID のリスト] が提出に含まれています。)</p></td>
-<td><p>ロゴ申請でカバーされないハードウェア ID またはモデル ID がパッケージに含まれています。</p>
+<td><p>ロゴ提出でカバーされないハードウェア ID またはモデル ID がパッケージに含まれています。</p>
 <p>次のいずれかの解決策を試してください。</p>
 <ul>
 <li><p>デバイス メタデータ パッケージ内のハードウェア ID またはモデル ID を修正します。</p></li>
@@ -402,7 +402,7 @@ ms.locfileid: "56518717"
 </tr>
 <tr class="even">
 <td><p>The system manufacturer for this computer submission does not match the organization of the submitting user. (このコンピューター提出のシステム製造元は、提出ユーザーの組織と一致しません。)</p></td>
-<td><p>申請した SMBIOSFields.xml ファイルのシステム製造元が、Microsoft の記録にある製造元と一致しません。</p>
+<td><p>提出した SMBIOSFields.xml ファイルのシステム製造元が、Microsoft の記録にある製造元と一致しません。</p>
 <p>次のいずれかの解決策を試してください。</p>
 <ul>
 <li><p>システム製造元の名前を修正し、もう一度パッケージを提出します。</p></li>

@@ -4,12 +4,12 @@ description: ドライバーの配布を変更するために、ドライバー�
 ms.topic: article
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 36e8c9a520de06afb60d2cdb7c63497652c6897c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9aefdc332cc17d2f5775a02bb5bfe49b8142ceae
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518985"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560601"
 ---
 # <a name="limiting-driver-distribution-by-windows-versions"></a>Windows のバージョンによってドライバーの配布を制限する
 
@@ -21,7 +21,7 @@ IHV、OEM、ODM では、Windows Update でのドライバーの配布対象を�
 
 * ドライバーの配布対象を、以前または最新バージョンの Windows、あるいはより新しいバージョンの Windows に拡張する。
 
-こうした配布の範囲は、**下限**と**上限**によって定義されます。 下限はドライバーが配布される最も古い Windows バージョンを示し、上限は最新バージョンを示します。 下限と上限を追加することによって、ドライバーの配布を制限できます。 下限と上限は、以下のドライバー申請の形式について、ハードウェア デベロッパー センター ダッシュボードの[出荷ラベル](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)で指定します。
+こうした配布の範囲は、**下限**と**上限**によって定義されます。 下限はドライバーが配布される最も古い Windows バージョンを示し、上限は最新バージョンを示します。 下限と上限を追加することによって、ドライバーの配布を制限できます。 下限と上限は、以下のドライバー申請の形式について、パートナー センターの[出荷ラベル](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)で指定します。
 
 * .HLKX
 * .HCKX
@@ -69,19 +69,19 @@ HDC ダッシュボードでサポートされている下限と上限には、�
 
 最小 OS レベルは、製品の認定 OS レベル、つまり構成証明された OS レベルによって決まります。  これよりも下位のレベルを指定する必要がある場合は、後で説明する、ドライバーの拡張を使用します。
 
-
 ## <a name="driver-expansion"></a>ドライバーの拡張
 
 > [!IMPORTANT]
 > ドライバーの配布を拡張する場合は、以下の点に注意してください。
-> * 自分が申請したドライバーのみを拡張できます。 共有された申請の受信者は、ドライバーを拡張できません。
+> * 共有された申請は拡張できません。 自分が申請したドライバーのみを拡張できます。
 > * 拡張は、申請ごとに一度だけ実行することができ、元に戻すことはできません。 どうしても必要な場合にのみ、ドライバーの配布を拡張してください。
+> * 拡張は、[**INF Manufacturer セクション**](../install/inf-manufacturer-section.md) で [BuildNumber] *TargetOSVersion* 装飾が使用されているドライバーのみに実行されます。
 > * 拡張された申請に関連付けられているすべての出荷ラベルには、**Windows 10 クライアント バージョン 1506 および 1511 (TH1)** をターゲットとして使用できる新しい PNP HWID の一覧が表示されます。 
 > * これらの新しく作成された項目の認定レベルは、"拡張" と表示されます。
 > * Windows 10 システムをターゲットとして上位拡張できるのは Windows 8.1 ドライバーのみです。  
 > * 拡張によって、ドライバーを再署名することや、ドライバーの認定のレベルを変更することはできません。
 
-ドライバー申請の拡張プロセスにより、製品の認定レベルまたは構成証明された OS レベルより下位のオペレーティング システムをターゲットにすることができます。 Windows 8.1 ドライバーを Windows 10 システムに提供することもできます。 
+ドライバー申請の拡張プロセスにより、製品の認定レベルまたは構成証明された OS レベルより下位のオペレーティング システムをターゲットにすることができます。 Windows 8.1 ドライバーを Windows 10 システムに提供することもできます。  Windows 10 では、[**INF Manufacturer セクション**](../install/inf-manufacturer-section.md)で [BuildNumber] *TargetOSVersion* 装飾 (NTamd64.10.0...**14393** など) が使用されている場合、**拡張**は実行されません。
 
 たとえば、Windows 10 RS3 (1709) ドライバーを Windows 10 RS1 (1607) に提供できるようにしたい場合は、**[拡張]** をクリックします。 これにより、すべての INF にリストさているすべての HWID に対し、新しいベースライン オペレーティング システムの選択肢が作成されます。  このベースラインは、**Windows 10 クライアント バージョン 1506 および 1511 (TH1)** として表示され、[認定済み] セクションに "**拡張**" と表示されます。  これ以降、ベースライン OS は常に Windows 10 1506 (TH1) となり、これが初期の OS ターゲット ポイントとなります。
 
@@ -104,4 +104,8 @@ OS の下限を RS1 に引き上げるには、上記で示した Floor 機能�
 
 **ドライバーの認定よりも古い Windows バージョンをターゲットにするにはどうすればよいですか?**
 
-*上記の例を参照してください。*
+*上記の「ドライバーの拡張」セクションの例を参照してください。*
+
+**申請全体を拡張できないのはなぜですか?**
+
+*申請内の各 INF は、拡張について個別に評価されます。一部またはすべての INF の **INF Manufacturer セクション** で [BuildNumber] TargetOSVersion 装飾が使用されている場合、その INF を拡張する処理は失敗します。申請を拡張する必要がある場合は、まず INF を編集して [BuildNumber] を削除する必要があります。[BuildNumber] が含まれない INF は正常に処理されます。*

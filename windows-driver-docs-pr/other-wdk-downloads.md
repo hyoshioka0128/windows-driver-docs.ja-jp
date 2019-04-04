@@ -8,199 +8,119 @@ keywords:
 - WDK
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0515bb2812a30a27c8f6a5c5d0a2c69a10777c3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5c8606d350c16f66d35cc7bb9bb84886a396b07c
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518952"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136121"
 ---
 # <a name="other-wdk-downloads"></a>その他の WDK のダウンロード
 
-ドライバーの開発には、[Windows Driver Kit (WDK) と各ツールの最新の公開バージョン](download-the-wdk.md)を使用してください。 このトピックは、WDK の以前のバージョンと追加のダウンロードに関する情報を、サポート目的に提供するものです。
+このトピックでは、以前のバージョンの Windows Driver Kit (WDK)、Enterprise WDK (EWDK)、および追加のダウンロードに関する情報をサポート目的で提供します。 ドライバーを開発するには、最新の公開バージョンの Windows Driver Kit (WDK) とツールを使用します (「[Windows Driver Kit (WDK) のダウンロード](download-the-wdk.md)」からダウンロード可能)。
 
+Windows Driver Kit (WDK) は、Windows ドライバーの開発、テスト、展開に使用します。 ドライバーを開発するには、最新の公開バージョンの Windows Driver Kit (WDK) とツールを使用します (「[Windows Driver Kit (WDK) のダウンロード](download-the-wdk.md)」からダウンロード可能)。
 
-## <a name="wdk-for-windows-10-version-1803"></a>WDK for Windows 10 Version 1803
+このトピックでは、以前のバージョンの WDK、Enterprise WDK (EWDK)、および追加のダウンロードに関する情報をサポート目的で提供します。 以前のバージョンを使用するには、*まず*対象プラットフォームに適した Visual Studio のバージョンをインストールする必要があります。
 
-### <a name="download-iconimagesdownload-installpng-step-1-install-visual-studio-2017"></a>![ダウンロード アイコン](images/download-install.png) 手順 1:Visual Studio 2017 のインストール 
-Visual Studio 2017 の次のエディションでドライバー開発がサポートされています。 
+## <a name="step-1-install-visual-studio"></a>手順 1:Visual Studio をインストールする
 
-* [Visual Studio Community 2017 のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
-* [Visual Studio Professional 2017 のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) 
-* [Visual Studio Enterprise 2017 のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15)
+ドライバーの開発は、Visual Studio の特定のバージョンでサポートされています。 Windows の特定バージョン用のドライバーを開発するには、次の表で指定されて (ダウンロード用にリンクされて) いるいずれかのバージョンの Visual Studio を使用する必要があります。
 
-Visual Studio のインストール時に、**[C++ によるデスクトップ開発]** ワークロードを選びます。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。 
+| Windows の対象バージョン      | Visual Studio のエディション            |
+|--------------------------|----------------------------------------|
+| Windows 10 バージョン 1803 <br/>Windows 10 バージョン 1709 | [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
+| Windows 10 Version 1703 <br/>Windows 10 Version 1607 | [Visual Studio Express 2015 for Desktop](https://go.microsoft.com/fwlink/?linkid=875331) <br/>[Visual Studio Community 2015](https://go.microsoft.com/fwlink/p/?LinkId=534599) <br/>[Visual Studio Professional 2015](https://go.microsoft.com/fwlink/p/?LinkId=619628) <br/>[Visual Studio Enterprise 2015](https://go.microsoft.com/fwlink/p/?LinkId=619629) |
+| Windows 8.1 Update <br/>Windows 8.1 | [Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=875331) |
+| Windows 8                | [Visual Studio Professional 2012](https://go.microsoft.com/fwlink/p/?LinkID=255976) <br/>[Visual Studio Ultimate 2012](https://go.microsoft.com/fwlink/p/?LinkID=255982) |
 
-ARM/ARM64 ドライバーを開発するには、**[個別のコンポーネント]** を選び、**[コンパイラ、ビルド ツール、およびランタイム]** の下で **[ARM 用 Visual Studio C++ コンパイラとライブラリ] または [ARM 64用 Visual Studio C++ コンパイラとライブラリ]** を選びます。
+### <a name="configure-visual-studio-for-windows-10-versions-1709-and-1803"></a>Windows 10 バージョン 1709 および 1803 用の Visual Studio を構成する
 
+Visual Studio のインストール時に、**[C++ によるデスクトップ開発]** ワークロードを選びます。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。
 
-### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1803"></a>![ダウンロード アイコン](images/download-install.png) 手順 2:WDK for Windows 10 Version 1803 のインストール
+ARM/ARM64 用のドライバーを開発するには、**[個別のコンポーネント]** を選択し、**[コンパイラ、ビルド ツール、およびランタイム]** の下で **[ARM 用 Visual Studio C++ コンパイラとライブラリ] または [ARM 64用 Visual Studio C++ コンパイラとライブラリ]** を選択します。
 
-* [WDK for Windows 10 Version 1803 のダウンロード](https://go.microsoft.com/fwlink/?linkid=873060) 
+### <a name="install-the-windows-sdk-to-target-windows-10-versions-1607-and-1703"></a>Windows 10 バージョン 1607 および 1703 を対象とする Windows SDK をインストールする
 
-1709 リリースの新機能:WDK をインストールすると、既定で、WDK Visual Studio 拡張機能がインストールされます。 WDK VS 統合が機能するためには、この拡張機能をインストールする必要があります。 
+Windows 10 バージョン 1607 または Windows 10 バージョン 1703 を実行するシステムを対象に開発する場合は、Visual Studio 2015 をインストールしてから、 次の表に指定されている対象の Windows 10 バージョン用の Windows SDK のバージョンをダウンロードしてインストールする必要があります。
 
-## <a name="enterprise-wdk-for-windows-10-version-1803-ewdk"></a>Enterprise WDK for Windows 10 Version 1803 (EWDK) 
+| Windows の対象バージョン      | Windows SDK のバージョン            |
+|--------------------------|----------------------------------------|
+| Windows 10 Version 1703 | [Windows SDK for Windows 10.0.15063.468](https://go.microsoft.com/fwlink/p/?LinkID=845298) |
+| Windows 10 Version 1607 | [Windows SDK for Windows 10.0.14393.795](https://go.microsoft.com/fwlink/p/?LinkId=838916) |
+| Windows 8.1              | [Windows 8.1 向け Windows SDK](https://go.microsoft.com/fwlink/p/?LinkId=323507) |
+| Windows 8                | [Windows SDK for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226658) |
 
-EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。 これには、Visual Studio Build Tools、SDK、WDK が含まれています。  EWDK の最新の公開バージョンには、Visual Studio Build Tools 15.7 が含まれています。 まず、ISO をマウントし、**LaunchBuildEnv** を実行してください。 
+Visual Studio 2015 には Windows SDK が含まれていないため、SDK を個別にインストールする必要があります。 新しいバージョンの Visual Studio には Windows SDK が含まれています。
 
-### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools-157"></a>![ダウンロード アイコン](images/download-install.png) EWDK with Visual Studio Build Tools 15.7
+## <a name="step-2-install-the-wdk"></a>手順 2:WDK をインストールする
 
-* [EWDK for Windows 10 Version 1803 のダウンロード](https://developer.microsoft.com/windows/hardware/license-terms-EWDK)
+WDK は Visual Studio および Debugging Tools for Windows (WinDbg) と統合されています。 この統合された環境には、ドライバーの開発、構築、パッケージ、デプロイ、テスト、デバッグのために必要なツールが用意されています。
 
-## <a name="additional-information"></a>追加情報
+> [!Note]
+> Windows 10 バージョン 1709 以降では、WDK をインストールすると Visual Studio の WDK 拡張機能が既定でインストールされます。 この拡張機能は、WDK と Visual Studio の統合のために必要です。
 
-### <a name="release-notes-and-run-time-requirements"></a>リリース ノートと実行時の要件
+| Windows のバージョン      | WDK と関連するダウンロード                       |
+|--------------------------|-------------------------------------------------|
+| Windows 10 バージョン 1803 | [WDK for Windows 10 Version 1803](https://go.microsoft.com/fwlink/?linkid=873060) |
+| Windows 10 バージョン 1709 | [WDK for Windows 10 Version 1709](https://go.microsoft.com/fwlink/p/?linkid=859232) |
+| Windows 10 Version 1703 | [WDK for Windows 10 Version 1703](https://go.microsoft.com/fwlink/p/?LinkID=845980) |
+| Windows 10 Version 1607 | [WDK for Windows 10 Version 1607](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
+| Windows 8.1 Update       | [WDK 8.1 Update](https://go.microsoft.com/fwlink/p/?LinkId=393659) (英語のみ) <br/>[WDK 8.1 Update Test Pack](https://go.microsoft.com/fwlink/p/?LinkID=393660) (英語のみ) <br/>[WDK 8.1 サンプル](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-81-cf35e953) |
+| Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284) (英語のみ) <br/>[WDK 8 再頒布可能コンポーネント](https://go.microsoft.com/fwlink/p/?LinkID=253170) (英語のみ) <br/>[WDK 8 サンプル](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-80-e3161626) |
+| Windows XP <br/>Windows Server 2003 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
 
-WDK には Visual Studio が必要です。Visual Studio に関するシステム要件について詳しくは、[Visual Studio 2017 のシステム要件](https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs)に関する記事をご覧ください。 
-
-EWDK では、さらに .NET 4.6.1 も必要になります .NET を実行するための要件について詳しくは、[.NET Framework のシステム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)に関する記事をご覧ください。 
-
-HAL 拡張機能を操作するには、開発用の環境を準備した後に、更新された [Windows OEM HAL Extension Test Cert 2017 (テストのみ)](https://go.microsoft.com/fwlink/?linkid=872294) の証明書をダウンロードしてインストールします。  [詳細情報](https://support.microsoft.com/help/4131991)
-
-
-## <a name="wdk-for-windows-10-version-1709"></a>WDK for Windows 10 Version 1709
-
-### <a name="download-iconimagesdownload-installpng-step-1-install-visual-studio-2017"></a>![ダウンロード アイコン](images/download-install.png) 手順 1:Visual Studio 2017 のインストール 
-Visual Studio 2017 の次のエディションでドライバー開発がサポートされています。 
-
-* [Visual Studio Community 2017 のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
-* [Visual Studio Professional 2017 のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) 
-* [Visual Studio Enterprise 2017 のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15)
-
-Visual Studio のインストール時に、**[C++ によるデスクトップ開発]** ワークロードを選びます。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。 
-
-ARM/ARM64 ドライバーを開発するには、**[個別のコンポーネント]** を選び、**[コンパイラ、ビルド ツール、およびランタイム]** の下で **[ARM 用 Visual Studio C++ コンパイラとライブラリ] または [ARM 64用 Visual Studio C++ コンパイラとライブラリ]** を選びます。
-
-
-### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1709"></a>![ダウンロード アイコン](images/download-install.png) 手順 2:WDK for Windows 10 Version 1709 のインストール
-
-* [WDK for Windows 10 Version 1709 のダウンロード](https://go.microsoft.com/fwlink/p/?linkid=859232) 
-
-このリリースの新機能:WDK をインストールすると、既定で、WDK Visual Studio 拡張機能がインストールされます。 WDK VS 統合が機能するためには、この拡張機能をインストールする必要があります。 
-
-## <a name="enterprise-wdk-for-windows-10-version-1709-ewdk"></a>Enterprise WDK for Windows 10 Version 1709 (EWDK) 
-
-EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。 これには、Visual Studio Build Tools、SDK、WDK が含まれています。  EWDK の最新の公開バージョンには、Visual Studio Build Tools 15.6 が含まれています。 
-
-### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools-156-recommended"></a>![ダウンロード アイコン](images/download-install.png) EWDK with Visual Studio Build Tools 15.6 (推奨)
-
-* [EWDK for Windows 10 Version 1709 のダウンロード](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-6)
-
-### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools-154"></a>![ダウンロード アイコン](images/download-install.png) EWDK with Visual Studio Build Tools 15.4
-
-* [EWDK for Windows 10 Version 1709 のダウンロード](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-4)
-
-### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools-152"></a>![ダウンロード アイコン](images/download-install.png) EWDK with Visual Studio Build Tools 15.2
-
-* [EWDK for Windows 10 Version 1709 のダウンロード](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709)
-
-まず、ISO をマウントし、**LaunchBuildEnv** を実行してください。
-
-## <a name="wdk-for-windows-10-version-1703"></a>WDK for Windows 10 Version 1703 
-
-### <a name="download-iconimagesdownload-installpng-install-visual-studio-2015"></a>![ダウンロード アイコン](images/download-install.png) Visual Studio 2015 のインストール
 
 > [!IMPORTANT]
-> WDK for Windows 10 Version 1703 は、まだ Visual Studio 2017 と互換性がありません。 このバージョンの WDK を使ってドライバーを開発する場合は、Visual Studio 2015 を使用してください。 
+> WDK for Windows 10 Version 1607 をインストール済みのシステムに、WDK for Windows 10 Version 1703 をインストールした場合、以前のバージョンの WDK の一部のファイルが削除される可能性があります。 これらのファイルを復元するには、次を行います。
+> 1. スタート メニューで、検索ボックスに「**アプリと機能**」と入力し、検索結果から **[アプリと機能]** を選択します。
+> 2. **[アプリと機能]** の一覧で、"**Windows Driver Kit - Windows 10.0.15063.0**" を探し、そのプログラムを選びます。
+> 3. **[変更]**、**[修復]** の順に選び、画面の指示に従います。
+> 4. ファイルが復元されます。
 
-ドライバー開発は、Visual Studio 2015 の以下のエディションでサポートされます。 
+## <a name="optional-install-the-ewdk"></a>省略可能: EWDK のインストール
 
-* [Visual Studio Express 2015 for Desktop のダウンロード](https://go.microsoft.com/fwlink/?linkid=875331)
-* [Visual Studio Community 2015 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=534599)
-* [Visual Studio Professional 2015 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=619628)
-* [Visual Studio Enterprise 2015 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=619629)
+Enterprise WDK (EWDK) は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境であり、基本的な Win32 テスト アプリケーションです。 これには、Visual Studio Build Tools、SDK、WDK が含まれています。 この環境には、統合開発環境 (IDE) など、Visual Studio で利用可能な一部の機能が含まれていません。
 
-### <a name="download-iconimagesdownload-installpng-install-windows-sdk-for-windows-10-version-1703"></a>![ダウンロード アイコン](images/download-install.png) Windows SDK for Windows 10 Version 1703 のインストール 
+EWDK を使用するには、.NET Framework 4.6.1 が必要です。 このバージョンのフレームワークを実行するシステムの詳細については、「[.NET Framework のシステム要件](https://docs.microsoft.com/en-us/dotnet/framework/get-started/system-requirements)」を参照してください。 .NET Framework のダウンロード用リンクについては、「[開発者向けの .NET Framework のインストール](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers)」を参照してください。
 
-* [Windows SDK for Windows 10 Version 1703 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkID=845298)
+EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/using-the-enterprise-wdk)」を参照してください。
 
-### <a name="download-iconimagesdownload-installpng-install-wdk-for-windows-10-version-1703"></a>![ダウンロード アイコン](images/download-install.png) WDK for Windows 10 Version 1703 のインストール 
+| Windows のバージョン               | EWDK                              |
+|-----------------------------------|-----------------------------------|
+| Windows 10 バージョン 1803          | [EWDK for Windows 10 Version 1803](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
+| Windows 10 バージョン 1709          | [EWDK for Visual Studio with Build Tools 15.6](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-6) (推奨) <br/>[EWDK for Visual Studio with Build Tools 15.4](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-4) <br/>[EWDK for Visual Studio with Build Tools 15.2](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709) |
+| Windows 10 Version 1703          | [EWDK for Windows 10 Version 1703](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1703) |
 
-* [WDK for Windows 10 Version 1703 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkID=845980)
+> [!Note]
+> Windows 10 バージョン 1709 以降、EWDK は ISO ベースです。ased. まず、ISO をダウンロードしてマウントした後、**LaunchBuildEnv** を実行します。
 
-> [!IMPORTANT]
-> WDK をインストールすると、モダン アプリケーションを開発することができなくなります。 
+## <a name="optional-install-updated-test-certificates-for-hal-extensions"></a>省略可能: HAL 拡張機能の更新されたテスト証明書をインストールする
 
-> [!IMPORTANT]
-> WDK for Windows 10 Version 1607 がインストールされている場合に、WDK for Windows 10 Version 1703 を WDK for Windows 10 Version 1607 に上書きインストールすると、一部の WDK ファイルが削除されます。 これらのファイルを復元するには、次を行います。 
-> 1. スタート メニューで、検索ボックスに「**アプリと機能**」と入力し、検索結果から **[アプリと機能]** を選択します。 
-> 2. **[アプリと機能]** の一覧で、"**Windows Driver Kit - Windows 10.0.15063.0**" を探し、そのプログラムを選びます。 
-> 3. **[変更]**、**[修復]** の順に選び、画面の指示に従います。 
-> 4. ファイルが復元されます。 
+HAL 拡張機能を使用するには、Windows 10 バージョン 1709 または新しいバージョンの Windows 10 を実行している開発システムの準備を行います。 また、WDK または EWDK をインストールしてから、**Windows OEM HAL Extension Test Cert 2017 (テストのみ)** の更新されたバージョンをインストールします。これは、ZIP ファイルでダウンロードできます ([HAL_Extension_Test_Cert_2017.zip](https://go.microsoft.com/fwlink/?linkid=872294))。
 
-## <a name="download-iconimagesdownload-installpng-ewdk-for-windows-10-version-1703"></a>![ダウンロード アイコン](images/download-install.png) EWDK for Windows 10 Version 1703 
+この更新された証明書の使用に関する詳細については、Windows サポートの「[Update for "Windows OEM HAL Extension Test Cert 2017 (TEST ONLY)" test certificate](https://support.microsoft.com/help/4131991)」("Windows OEM HAL Extension Test Cert 2017 (テストのみ)" のテスト証明書の更新) を参照してください。
 
-EWDK をインストールして、コマンド ライン ビルド環境で、ドライバーや基本的な Win32 テスト アプリケーションを構築することもできます。 ただしこの環境には、統合開発環境 (IDE) など、Visual Studio で利用可能なすべての機能が用意されているわけではないため、任意のコード エディターを使用する必要があります。 
+## <a name="optional-install-windbg-preview"></a>省略可能: WinDbg Preview をインストールする
 
-* [EWDK について詳しく知る](https://go.microsoft.com/fwlink/p/?LinkId=846040)
-* [EWDK for Windows 10 Version 1703 のダウンロード](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1703)
+WinDbg Preview は、最新の外観、高速なウィンドウ、本格的なスクリプトの操作性を備え、拡張可能なデバッガー データモデルを中心に構築された WinDbg の新しいバージョンです。 WinDbg Preview では、Windows 10 の各バージョンのデバッグがサポートされています。
 
+WinDbg Preview のダウンロード リンクと詳細については、[WinDbg Preview のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools#small-windbg-preview-logo-download-windbg-preview)に関するページを参照してください。
 
-## <a name="download-iconimagesdownload-installpng-wdk-for-windows-10-version-1607"></a>![ダウンロード アイコン](images/download-install.png) EWDK for Windows 10 Version 1607 のダウンロード
+## <a name="standalone-tools-for-debugging-windows-xp-and-windows-vista"></a>Windows XP と Windows Vista のデバッグ用のスタンドアロン ツール
 
-1. Windows Update を実行します。 
-2. 開発ニーズに最適なバージョンの Visual Studio 2015 をインストールします。 
-
-    * [Visual Studio Express 2015 for Desktop のダウンロード](https://go.microsoft.com/fwlink/?linkid=875331)
-    * [Visual Studio Community 2015 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=534599)
-    * [Visual Studio Professional 2015 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=619628)
-    * [Visual Studio Enterprise 2015 のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=619629)
-
-3. インストール時には、**[Windows 10 開発者の標準]** オプションを選択してください。 
-4. 画面に表示される指示に従って、インストールを完了します。 
-5. [Windows 10 バージョン 1607 用 WDK をインストール](https://go.microsoft.com/fwlink/p/?LinkId=526733) 
-**するか、**
-[EWDK 1607 をインストール](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk)します
-
-## <a name="download-iconimagesdownload-installpng-wdk-81-update-for-windows-81-8-and-7-drivers"></a>![ダウンロード アイコン](images/download-install.png) WDK 8.1 Update (Windows 8.1、8、7 ドライバー用)
-
-WDK 8.1 Update には、Windows 8.1 Update、Windows 8.1、Windows 8、Windows 7 向けのドライバーを構築、テスト、デバッグ、展開するためのツールが含まれています。 WDK をイントールしたら、WDK 8.1 Update Test Pack をインストールすることをお勧めします。 このパッケージには、デバイスの基本機能、グラフィックス、イメージング、モバイル ブロードバンド (CDMA、GSM、WLAN)、センサー、その他のユーティリティに対するテストが用意されています。 
+Windows XP、Windows Server 2003、Windows Vista、または Windows Server 2008 をデバッグしている場合 (またはこれらのオペレーティング システムのいずれかを使って Debugging Tools for Windows を実行している場合) は、デバッグ ツールの Windows 7 リリースを使う必要があります。 これは、Windows 7 と .NET Framework 4.0 用 SDK に含まれています。
 
 > [!IMPORTANT]
-> WDK 8.1 Update をインストールする前に Visual Studio 2013 をインストールする必要があります。 
+> SDK for Windows 7 をインストールする際に、新しいバージョンの Visual C++ 2010 再頒布可能パッケージによって問題が発生することがあります。 詳細については、Microsoft サポートの「[Windows SDK Fails to Install with Return Code 5100](https://support.microsoft.com/en-us/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)」 (Windows SDK のインストールがリターン コード 5100 で失敗する) を参照してください。
 
-1. [Visual Studio 2013 のダウンロード](https://go.microsoft.com/fwlink/?linkid=875331)
-2. [WDK 8.1 Update のダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=393659) (英語のみ) 
-3. [WDK 8.1 Update Test Pack のダウンロード](https://go.microsoft.com/fwlink/p/?LinkID=393660) (英語のみ) 
-4. [Windows 8.1 向けのドライバー サンプルを入手する](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-81-cf35e953) 
+まず Windows 7 SDK ([Microsoft Windows SDK for Windows 7 および .NET Framework 4](https://www.microsoft.com/download/confirmation.aspx?id=8279)) をダウンロードして、スタンドアロンのデバッグ ツールを取得します。
 
-## <a name="download-iconimagesdownload-installpng-windbg-for-windows-81"></a>![ダウンロード アイコン](images/download-install.png) Windows 8.1 向け WinDbg
-Windows 向けデバッグ ツール (WinDbg) は WDK 8.1 Update に含まれていますが、スタンドアロン コンポーネントとして Windows 8.1 SDK からインストールすることもできます。 インストール ウィザードで、Windows 向けデバッグ ツールを選び、それ以外のすべてのコンポーネントの選択を解除します。 
+Debugging Tools for Windows をスタンドアロン コンポーネントとしてインストールするには、SDK インストーラーを起動し、インストール ウィザードで **Debugging Tools for Windows** を選択し、他のすべてのコンポーネントを選択解除します。
 
-* [Windows 8.1 SDK の一部として (WinDbg) を入手](https://go.microsoft.com/fwlink/p/?LinkId=323507) (英語のみ)
-
-## <a name="download-iconimagesdownload-installpng-remote-debugging-client-for-windows-81"></a>![ダウンロード アイコン](images/download-install.png) Windows 8.1 向けリモート デバッグ クライアント
-Windows リモート デバッグ クライアントを使うと、Microsoft の開発者とインターネットを介してリモートで連携し、カーネル モードの問題をカーネル デバッガーを使ってデバッグすることができます。 
-* [リモート デバッグの詳細と準備については、こちらをご覧ください](https://docs.microsoft.com/windows-hardware/drivers/debugger/remote-debugging)。
-* [リモート デバッグ クライアントをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkId=316921) (英語のみ)  
-
-## <a name="download-iconimagesdownload-installpng-wdk-8"></a>![ダウンロード アイコン](images/download-install.png) WDK 8
-WDK 8 を使用すると、以前のドライバーを WDK 8.1 Update と Visual Studio 2013 に移行できます。 WDK 8 はサポートされないため、このキットの更新プログラムは提供されません。 WDK と Visual Studio の最新バージョンを使って Windows 用ドライバーをビルドしてください。 
-
-> [!IMPORTANT]
-> WDK 8 をインストールする前に、[Visual Studio Professional 2012](https://go.microsoft.com/fwlink/p/?LinkID=255976) または [Visual Studio Ultimate 2012](https://go.microsoft.com/fwlink/p/?LinkID=255982) をインストールする必要があります。 
-
-1. [WDK 8 のダウンロード (英語のみ)](https://go.microsoft.com/fwlink/p/?LinkID=324284)
-2. [WDK 8 再頒布可能コンポーネントのダウンロード](https://go.microsoft.com/fwlink/p/?LinkID=253170) (英語のみ) 
-3. [Windows 8 向けのドライバー サンプルを入手](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-80-e3161626) 
-
-## <a name="download-iconimagesdownload-installpng-wdk-710-for-windows-xp-drivers"></a>![ダウンロード アイコン](images/download-install.png) WDK 7.1.0 (Windows XP ドライバー用)
-Windows XP または Windows Server 2003 向けドライバーの開発 WDK 7.1.0 には、これらのオペレーティング システム用のドライバーを作るために使うことができるツール、コード サンプル、ドキュメント、コンパイラ、ヘッダー、ライブラリがあります。 
-
-* [WDK 7.1.0 のダウンロード](https://www.microsoft.com/download/confirmation.aspx?id=11800) (英語のみ) 
-
-## <a name="download-iconimagesdownload-installpng-standalone-debugging-tools-for-debugging-windows-xp-and-windows-vista"></a>![ダウンロード アイコン](images/download-install.png) スタンドアロンのデバッグ ツール (Windows XP と Windows Vista のデバッグ用)
-Windows XP、Windows Server 2003、Windows Vista、または Windows Server 2008 をデバッグしている場合 (またはこれらのオペレーティング システムのいずれかを使って Debugging Tools for Windows を実行している場合) は、デバッグ ツールの Windows 7 リリースを使う必要があります。 これは、Windows 7 と .NET Framework 4.0 用 SDK に含まれています。 Windows 向けデバッグ ツールをスタンドアロン コンポーネントとしてインストールするには、SDK インストール ウィザードで Windows 向けデバッグ ツールを選び、他のすべてのコンポーネントを選択解除します。 
-
-> [!IMPORTANT]
-> SDK for Windows 7 をインストールする際に、新しいバージョンの Visual C++ 2010 再頒布可能パッケージによって問題が発生することがあります。 詳しくは、[Windows SDK のサポートのページ](https://support.microsoft.com/kb/2717426)をご覧ください。 
-
-* [スタンドアロンの Windows XP 用デバッグ ツールを Windows 7 SDK の一部として入手する](https://www.microsoft.com/download/confirmation.aspx?id=8279) 
-
-## <a name="related-downloads"></a>関連するダウンロード
+### <a name="related-downloads"></a>関連するダウンロード
 * [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
-* [Windows HLK、HCK、Logo Kit のダウンロード](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit) 
-* [Windows 向けデバッグ ツール (WinDbg) のダウンロード](https://developer.microsoft.com/windows/hardware/download-windbg) 
-* [Windows シンボル パッケージのダウンロード](https://developer.microsoft.com/windows/hardware/download-symbols) 
-* [WDK Insider Preview のダウンロード](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK) 
+* [Windows HLK、HCK、Logo Kit のダウンロード](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
+* [Windows 向けデバッグ ツール (WinDbg) のダウンロード](https://developer.microsoft.com/windows/hardware/download-windbg)
+* [Windows シンボル パッケージのダウンロード](https://developer.microsoft.com/windows/hardware/download-symbols)
+* [WDK Insider Preview のダウンロード](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)

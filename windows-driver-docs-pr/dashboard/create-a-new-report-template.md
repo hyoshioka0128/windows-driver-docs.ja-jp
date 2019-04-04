@@ -5,12 +5,12 @@ ms.author: shganesh
 ms.topic: article
 ms.date: 09/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 853efe8c8d2282c7cec0d95f043401b2f96b9fc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a928f221eef74eaec6a869729b8b0d930cc17e18
+ms.sourcegitcommit: 91db84a97ce13a851f500acd4af67aa0b0a05aa8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518741"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319236"
 ---
 # <a name="create-a-new-report-template"></a>新しいレポート テンプレートを作成する
 
@@ -180,26 +180,28 @@ ms.locfileid: "56518741"
         <td>応答コード</td>
         <td>201/500/400</td>
       </tr>
-        <tr>
+      <tr>
       <td>応答ペイロード</td>
           <td><pre>{
-    &quot;data&quot;: {
-        &quot;templateId&quot;: templateId
+    "data": {
+        "templateId": templateId
   },
-  &quot;errors&quot;: null  }`</td>
+  "errors": null  }</pre></td>
       </tr>
      </tbody>
 </table>
 
-## 応答パラメーター
+## <a name="response-parameters"></a>応答パラメーター
 
 次のテーブルでは、応答のパラメーターについて説明します。
 
-|パラメーター|説明| |----|----| |templateId|これは、作成されたレポート テンプレートのテンプレート ID です。 これは、Schedule Report API に対する入力として使用されます。 詳しくは、「[新しいレポートをスケジュールする](schedule-a-new-report.md)」をご覧ください。
+|パラメーター|説明|
+|----|----|
+|templateId|これは、作成されたレポート テンプレートのテンプレート ID です。 これは、Schedule Report API に対する入力として使用されます。 詳しくは、「[新しいレポートをスケジュールする](schedule-a-new-report.md)」をご覧ください。
 
 既存のレポートは、「[レポート テンプレートとスケジュールされたレポートを管理する](manage-report-templates-and-scheduled-reports.md)」で説明されているメソッドを使って管理できます。 サンプル レポート テンプレートの一覧については、「[サンプル レポート テンプレート](sample-report-templates.md)」をご覧ください。
 
-## プロジェクションに使用できる列 (IHV および OEM ビュー)
+## <a name="columns-available-for-projection-ihv-and-oem-view"></a>プロジェクションに使用できる列 (IHV および OEM ビュー)
 
 IHV または ISV 向けの Windows 10、Windows 8.x、Windows 7 のドライバー レポートでは、次の列から選択できます。
 
@@ -345,13 +347,13 @@ IHV または ISV 向けの Windows 10、Windows 8.x、Windows 7 のドライバ
 
 既存のレポートは、「[レポート テンプレートとスケジュールされたレポートを管理する](manage-report-templates-and-scheduled-reports.md)」で説明されているメソッドを使って管理できます。 サンプル レポート テンプレートの一覧については、「[サンプル レポート テンプレート](sample-report-templates.md)」をご覧ください。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 - [分析レポート API (Swagger)](https://apidocs.microsoft.com/services/analyticsreportingapis)
 
 - [新しいレポートをスケジュールする](schedule-a-new-report.md)
 
-- [レポート テンプレートを管理する](manage-report-templates-and-scheduled-reports.md)
+- [レポート テンプレートの管理](manage-report-templates-and-scheduled-reports.md)
 
 - [サンプル レポート テンプレート](sample-report-templates.md)
 

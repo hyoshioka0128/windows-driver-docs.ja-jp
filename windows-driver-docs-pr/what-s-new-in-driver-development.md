@@ -4,12 +4,12 @@ description: このセクションでは、Windows 10 でのドライバー開�
 ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a5c1a46b469df46774bf69c62ab37c0ba477e32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1d6f287fbabe4e33430b376885b96972544193a3
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56589769"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58017035"
 ---
 # <a name="top"></a>ドライバー開発に関する最新情報 
 

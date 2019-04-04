@@ -10,12 +10,12 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 305e5ac725f1ca5c11c68d528f8b8c9909fd3c48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c034286186c88f231f032c2de031c2780ff04eb3
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518720"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743463"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>プレビュー バージョンの Windows Driver Kit (WDK) のインストール
 
@@ -27,8 +27,8 @@ ms.locfileid: "56518720"
 
 ### <a name="1-install-visual-studio"></a>1. Visual Studio をインストールする
 
-- WDK では、Visual Studio 2017 がサポートされるようになっています。  すべてのエディションがサポートされます。  WDK では、Visual Studio 2015 はサポートされなくなりました。 
-- [https://www.visualstudio.com/downloads/](https://www.visualstudio.com/downloads/) からダウンロードします。 
+- WDK では、Visual Studio 2019 がサポートされるようになっています。  すべてのエディションがサポートされます。  WDK では、Visual Studio 2017 はサポートされなくなりました。 
+- [https://visualstudio.microsoft.com/vs/preview/](https://visualstudio.microsoft.com/vs/preview/) からダウンロードします。 
 - ワークロードを選択します: C++ による開発。 
 - ARM: ARM ドライバーをビルドするには、さらにコンポーネントをインストールする必要があります: [個別のコンポーネント] -> [コンパイラ、ビルド ツール、およびランタイム] -> [ARM 用 Visual Studio C++ コンパイラとライブラリ]。 
 - ARM64: 現在サポートされていません。 
@@ -56,7 +56,7 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 ## <a name="install-enterprise-wdk-ewdk-insider-preview"></a>Enterprise WDK (EWDK) Insider Preview をインストールする
 
-EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。  Build Tools for Visual Studio 2017、SDK、WDK、および ARM64 ドライバー開発のサポートが含まれています。 詳しくは、[Installing the Enterprise WDK (Enterprise WDK のインストール)](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk) に関する記事をご覧ください。 
+EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。  Build Tools for Visual Studio 2019、SDK、WDK、および ARM64 ドライバー開発のサポートが含まれています。 詳しくは、[Installing the Enterprise WDK (Enterprise WDK のインストール)](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk) に関する記事をご覧ください。 
 
 [Enterprise Windows Driver Kit (EWDK) Insider Preview を入手する](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 
@@ -64,13 +64,13 @@ EWDK は、ドライバーを構築するためのスタンドアロン自己完
 
 ## <a name="run-time-requirements-for-the-wdk-and-the-ewdk"></a>WDK と EWDK の実行時の要件
 
-WDK には Visual Studio が必要です。 Visual Studio のシステム要件について詳しくは、「[Visual Studio 2017 製品ファミリのシステム要件](https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs)」をご覧ください。
+WDK には Visual Studio が必要です。 Visual Studio のシステム要件について詳しくは、「[Visual Studio 2019 System Requirements](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)」 (Visual Studio 2019 製品ファミリのシステム要件) をご覧ください。
 
-さらに、EWDK には .NET 4.6.1 が必要です。 .NET の動作環境について詳しくは、「[.NET Framework のシステム要件](https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs)」をご覧ください。
+さらに、EWDK には .NET 4.7.2 が必要です。 .NET の動作環境について詳しくは、「[.NET Framework のシステム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)」をご覧ください。
 
 WDK Insider Preview と EWDK Insider Preview を使用すると、次のオペレーティング システムで動作するドライバーを開発できます。 
 
-|クライアントの OS|サーバー OS|
+|クライアントの OS|サーバーの OS|
 |---|---|
 |Windows 10|Windows Server 2016|
 |Windows 8.1|Windows Server 2012 R2|

@@ -7,12 +7,12 @@ ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 5f74125b140b08a9873c897c2b426ca81b90db7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af801bca7a6732555e4c3327eb8b97d0ed6742aa
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518582"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57830243"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静的ドライバー検証ツールの既知の問題
 
@@ -116,7 +116,7 @@ TAEF パッケージが配置されていること、または RoMetadata.dll �
 
 インストールされている Server GUI のアーキテクチャおよび Windows バージョンが ServerCore のインストールと同じ場合は、Server GUI から ServerCore に RoMetadata.dll ファイルをコピーします。  DLL は System32 フォルダー (たとえば `C:\Windows\System32`) にあり、ServerCore マシン上の同じフォルダーに配置する必要があります。  これにより、ServerCore でテストを実行できるようになるはずです。  問題が引き続き発生する場合は、次の回避策を参照してください。
 
-2 つ目の回避策は、Server GUI で実行してから、パッケージを、Server Core の結果が含まれるパッケージとマージします。 パッケージのマージについては、「[Merge packages (パッケージをマージする)](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)」をご覧ください。
+2 つ目の回避策は、Server GUI で実行してから、パッケージを、Server Core の結果が含まれるパッケージとマージします。 パッケージのマージについては、「[Merge packages](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)」 (パッケージをマージする) をご覧ください。
 
 ## <a name="static-driver-verifier-fails-with-exiting-libexeiwrapexe-with-0xc0000142-error"></a>既存の lib.exe/iwrap.exe を使用すると静的ドライバー検証ツールが 0xc0000142 エラーで失敗する
 

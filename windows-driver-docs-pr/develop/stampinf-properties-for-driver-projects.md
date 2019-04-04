@@ -4,12 +4,12 @@ title: ドライバー プロジェクトの Stampinf プロパティ
 description: Stampinf ツール用のプロパティを設定します。 ドライバーをビルドするときに、Stampinf を使って共通の INF ファイル ディレクティブと INX ファイル ディレクティブを更新できます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0954396fd97c54b2a856596eae678e68f05303a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d6632940446faca6eca437376214f902fad7dbf2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518829"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463901"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>ドライバー プロジェクトの Stampinf プロパティ
 
@@ -38,7 +38,7 @@ ms.locfileid: "56518829"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Enable_Architecture"></span><span id="enable_architecture"></span><span id="ENABLE_ARCHITECTURE"></span><strong>Enable Architecture (アーキテクチャを有効にする)</strong></p></td>
-<td align="left"><p>INX ファイルで使われている $ARCH$ 変数の置換を有効にします。 有効にした場合は、<strong>[Architecture (アーキテクチャ)]</strong> に指定した値が使われます。 <strong>[いいえ]</strong> を指定した場合は、$ARCH$ 変数が削除されます。 たとえば、&quot;Standard.NT$ARCH$&quot; は &quot;Standard.NT&quot; となります。</p></td>
+<td align="left"><p>INX ファイルで使われている $ARCH$ 変数の置換を有効にします。 有効にした場合は、<strong>[Architecture (アーキテクチャ)]</strong> に指定した値が使われます。 <strong>[いいえ]</strong> を指定した場合は、$ARCH$ 変数が削除されます。 たとえば、"Standard.NT$ARCH$" は "Standard.NT" になります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span><strong>Architecture (アーキテクチャ)</strong></p></td>

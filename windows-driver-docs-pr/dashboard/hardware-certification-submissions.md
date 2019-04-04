@@ -5,16 +5,16 @@ ms.assetid: 7EFA9617-CF1D-4259-B0C4-A9DDCF5C3A1F
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de0e5001ab9a9efcd022b7fc1e7d503b379c4d56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a1920cbd7bbec599f6d50679a8d994af5bd64bb1
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518722"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560619"
 ---
 # <a name="hardware-submissions"></a>ハードウェアの提出
 
-Windows ハードウェア互換性プログラム (Windows 10 の場合) と Windows ハードウェア認定プログラム (Windows 8 または 8.1 と以前のオペレーティング システムの場合) では、事前にハードウェアとドライバーを設計、作成、テストしたうえで、最終バージョンを Windows ハードウェア デベロッパー センター ダッシュボードで提出できます。 詳しくは、「[Windows ハードウェア認定](https://go.microsoft.com/fwlink/p/?LinkId=224782)」ページをご覧ください。 Windows 用のハードウェア デバイス、システム、ドライバーが認定されると、互換性リスト、信頼性リスト、ロゴ アートワーク、プロモーション パートナーシップなどの Microsoft マーケティング リソースのサポートが受けられるようになります。
+Windows ハードウェア互換性プログラム (Windows 10 の場合) と Windows ハードウェア認定プログラム (Windows 8 または 8.1 と以前のオペレーティング システムの場合) では、事前にハードウェアとドライバーを設計、作成、テストしたうえで、最終バージョンをパートナー センターで提出できます。 詳しくは、「[Windows ハードウェア認定](https://go.microsoft.com/fwlink/p/?LinkId=224782)」ページをご覧ください。 Windows 用のハードウェア デバイス、システム、ドライバーが認定されると、互換性リスト、信頼性リスト、ロゴ アートワーク、プロモーション パートナーシップなどの Microsoft マーケティング リソースのサポートが受けられるようになります。
 
 デバイスを開発するには、[Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) をダウンロードします。
 
@@ -84,8 +84,8 @@ Windows ハードウェア互換性プログラム (Windows 10 の場合) と Wi
 <td><p>提出のためのアクセス許可。 設定可能な値は、次のとおりです。</p>
 <ul>
 <li>作成者:ドライバーの作成者。 すべてのタスクを完了し、パートナーとドライバーを共有することができます。</li>
-<li>発行元:ドライバーはお客様と共有されています。 ドライバーをダウンロードし、Windows Update の出荷ラベルを作成して、DUA パッケージを作成できます。 さらに別の会社とドライバーを共有することはできません。</li>
-<li>Read-only (読み取り専用): ドライバーはお客様に代わって Windows Update に申請されました。 ドライバーの詳細を表示し、ドライバーをダウンロードし、お客様に代わって提出された出荷ラベルを表示できます。 配送先住所ラベルの作成や DUA パッケージの作成を行うことはできません。</li>
+<li>発行元:ドライバーはお客様と共有されています。 ドライバーをダウンロードし、Windows Update の出荷ラベルを作成して、DUA パッケージを作成できます。 他の会社とドライバーを共有することはできません。</li>
+<li>Read-only (読み取り専用): ドライバーはお客様に代わって Windows Update に申請されました。 ドライバーの詳細を表示し、ドライバーをダウンロードし、お客様に代わって提出された出荷ラベルを表示できます。 出荷ラベルの作成や DUA パッケージの作成を行うことはできません。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -155,7 +155,7 @@ DUA シェル パッケージをダウンロードするには、**[Download DUA
 </tr>
 <tr class="even">
 <td><p>Announcement date (発表日)</p></td>
-<td><p>Windows Server Catalog、Windows Certified Product List、ユニバーサル ドライバーの一覧に製品を含める日付。 既定の設定は **[今日]** です。</p></td>
+<td><p>Windows Server Catalog、Windows Certified Product List、ユニバーサル ドライバーの一覧に製品を含める日付。 既定の設定は <strong>[今日]</strong> です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Marketing names (マーケティング名)</p></td>
@@ -202,7 +202,7 @@ DUA シェル パッケージをダウンロードするには、**[Download DUA
 </tr>
 <tr class="odd">
 <td><p>宛先</p></td>
-<td><p>Windows Update 出荷ラベルの場合、配布先は &quot;Windows Update&quot; です。</p>
+<td><p>Windows Update 出荷ラベルの場合、配布先は "Windows Update" です。</p>
 <p>共有ドライバーの場合、配布先は出荷ラベルの作成時に <strong>[Who is publishing?]</strong> (公開元はだれですか?) で選んだ会社の<strong>発行者の表示名</strong>です。 これにより、ドライバーを共有したすべての会社を簡単に表示できます。</p></td>
 </tr>
 <tr class="even">

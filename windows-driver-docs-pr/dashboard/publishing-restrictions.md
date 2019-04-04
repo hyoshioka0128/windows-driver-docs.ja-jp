@@ -5,19 +5,18 @@ ms.assetid: 30D23457-6BE1-4A4C-B69A-3C8C0A8E093A
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dc3157fb4aed77367bde364bc5a2c15362fd630
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 83ed716cdc15cfabf29d78a815ed220fa657ba4e
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518759"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560585"
 ---
 # <a name="publishing-restrictions"></a>公開の制限
 
-
 次の項目は、公開中に制限されます。 これらの項目の出荷ラベルを作成することもできますが、要求には Microsoft による確認が必要です。
 
-Windows ハードウェア デベロッパー センター ダッシュ ボードでは、これらの公開の制限が適用されます。 公開の制限によって、パートナーは、Microsoft クラス ドライバーや汎用バス HWID 文字列を上書きするドライバーを公開できません。 また、公開の制限によって、汎用のサード パーティ HWID や再利用された HWID による不適切なドライバーを、デバイスが受け取らないようにすることもできます。
+パートナー センターでは、これらの公開の制限が適用されます。 公開の制限によって、パートナーは、Microsoft クラス ドライバーや汎用バス HWID 文字列を上書きするドライバーを公開できません。 また、公開の制限によって、汎用のサード パーティ HWID や再利用された HWID による不適切なドライバーを、デバイスが受け取らないようにすることもできます。
 
 これらの制限には、次の表に示す例が含まれますが、これらに限定されるわけではありません。
 
@@ -111,15 +110,4 @@ Windows ハードウェア デベロッパー センター ダッシュ ボー�
 </tbody>
 </table>
 
- 
-
 ドライバーの公開のワークフローについて詳しくは、[Windows 10 ドライバー公開のワークフローに関するドキュメント](https://go.microsoft.com/fwlink/p/?LinkId=617374)をご覧ください。
-
- 
-
- 
-
-
-
-
-
