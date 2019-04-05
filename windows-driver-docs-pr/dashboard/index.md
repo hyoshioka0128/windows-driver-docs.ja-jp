@@ -7,8 +7,13 @@ ms.date: 05/17/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 4bb342daec85f651954135ebbc76f4c8c20e3619
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419548"
 ---
-
 # <a name="partner-center-for-windows-hardware"></a>Windows ハードウェアのパートナー センター
 
 Windows ハードウェアのパートナー センターを使用すると、システムおよびドライバーの申請を迅速かつ容易に作成して管理することができます。 ハードウェア認定、共同作業によるドライバー開発、Windows Update によるドライバーの配布など、ハードウェアのタスクに使用する従来の (Sysdev) ダッシュボードに置き換わるものです。 まず、入門[ビデオ シリーズ](https://go.microsoft.com/fwlink/?LinkID=828003)をご覧ください。登録の詳細については、「[ハードウェア プログラムの概要](get-started-with-the-hardware-dashboard.md)」を参照してください。
