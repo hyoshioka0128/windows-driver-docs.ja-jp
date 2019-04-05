@@ -278,7 +278,7 @@ STRIDE の頭字語では、ソフトウェアに対する脅威の 6 つのカ�
 
 Microsoft SDL プロセスでは、さまざまな組織の 1 人の開発者などの任意のサイズに合わせて変更できることをお勧めのソフトウェア開発プロセスを提供します。 ソフトウェア開発プロセスに SDL の推奨事項のコンポーネントの追加を検討してください。
 
-詳細については、次を参照してください。 [Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://msdn.microsoft.com/library/84aed186-1d75-4366-8e61-8d258746bopq.aspx)します。
+詳細については、[Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://msdn.microsoft.com/library/84aed186-1d75-4366-8e61-8d258746bopq.aspx)を参照してください。
 
 **トレーニングと組織の機能**-トレーニングを認識し、ソフトウェアの脆弱性の修復機能を拡張するソフトウェア開発のセキュリティを推進します。
 

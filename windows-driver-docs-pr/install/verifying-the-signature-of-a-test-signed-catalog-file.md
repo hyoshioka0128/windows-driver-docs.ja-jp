@@ -47,7 +47,7 @@ SignTool verify /v /pa /c CatalogFileName.cat DriverFileName
 
 -   *DriverFileName*カタログ ファイルにエントリがあるファイルの名前は、 *CatalogFileName.cat*します。
 
-注意してくださいを SignTool**確認**コマンドがサインインに使用されたテスト証明書を明示的に指定していない、[カタログ ファイル](catalog-files.md)。 検証操作が成功するには、テスト証明書をインストールする必要があります最初、[信頼されたルート証明機関証明書ストア](trusted-root-certification-authorities-certificate-store.md)署名の検証に使用するローカル コンピューターの。 テスト証明書をローカル コンピューターの信頼されたルート証明機関の証明書ストアにインストールする方法の詳細については、次を参照してください。[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)します。 インストール手順は、署名のコンピューターとテスト用のコンピューターの両方で同じです。
+注意してくださいを SignTool**確認**コマンドがサインインに使用されたテスト証明書を明示的に指定していない、[カタログ ファイル](catalog-files.md)。 検証操作が成功するには、テスト証明書をインストールする必要があります最初、[信頼されたルート証明機関証明書ストア](trusted-root-certification-authorities-certificate-store.md)署名の検証に使用するローカル コンピューターの。 テスト証明書をローカル コンピューターの信頼されたルート証明機関の証明書ストアにインストールする方法の詳細については、[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)を参照してください。 インストール手順は、署名のコンピューターとテスト用のコンピューターの両方で同じです。
 
 次のコマンドことを確認するなど、 *Tstamd64.cat*署名 Windows Vista の要件と以降のバージョンの Windows PnP デバイスのインストールに準拠しているテスト署名があります。 この例で*Tstam64.cat*コマンドが実行される同じディレクトリにします。
 

@@ -26,7 +26,7 @@ ms.locfileid: "56550848"
 
 モニターは、INF ファイルを使用して NT ベースのオペレーティング システムにインストールする必要があります。 INF ファイル、サンプルの監視を提供する Windows Driver Kit (WDK) *monsamp.inf*モニターの INF ファイルを生成するテンプレートとして使用する必要があります。 使用することはできません、 *geninf.exe*で説明されているツール[グラフィックス INF ファイルの作成](creating-graphics-inf-files.md)モニター INF を生成します。
 
-このトピックの残りの部分のコメントのセクションの一部を*monsamp.inf*モニター INF ライターに特定の関心のあります。 INF ファイルの概要については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+このトピックの残りの部分のコメントのセクションの一部を*monsamp.inf*モニター INF ライターに特定の関心のあります。 INF ファイルの概要については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
 
 Extended Display Identification Data (EDID) のモニターを上書きするのに、INF ファイルを使用することもできます。 参照してください[オーバーライド、INF でモニター EDIDs](overriding-monitor-edids.md)します。
 
@@ -39,7 +39,7 @@ Extended Display Identification Data (EDID) のモニターを上書きするの
 profile1.icm=1
 ```
 
-詳細については、次を参照してください。 [ **INF SourceDisksFiles セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547472)します。 参照してください[プロファイルを監視する](monitor-profiles.md)色の管理とプロファイルの詳細についてはします。
+詳細については、[ **INF SourceDisksFiles セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547472)を参照してください。 参照してください[プロファイルを監視する](monitor-profiles.md)色の管理とプロファイルの詳細についてはします。
 
 ### <a name="span-idmodelssectionspanspan-idmodelssectionspanspan-idmodelssectionspanmodels-section"></a><span id="Models_Section"></span><span id="models_section"></span><span id="MODELS_SECTION"></span>モデルのセクション
 
@@ -59,7 +59,7 @@ profile1.icm=1
 
 -   ハードウェア id - たとえば、式**モニター\\MON12AB**デバイスのようにデバイス クラス (モニター) とデバイスの識別 (MON12AB) を組み合わせた*EDID*.
 
-詳細については、次を参照してください。 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)します。
+詳細については、[ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)を参照してください。
 
 ### <a name="span-idddinstallsectionspanspan-idddinstallsectionspanspan-idddinstallsectionspanddinstall-section"></a><span id="DDInstall_Section"></span><span id="ddinstall_section"></span><span id="DDINSTALL_SECTION"></span>DDInstall セクション
 
@@ -78,7 +78,7 @@ CopyFiles=ACME-1234.CopyFiles
 
 -   [**CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブ--へのリンクを提供する、 **ACME 1234 します。CopyFiles**セクションで、配布のディスクまたはディスクからコピーされるファイルを指定します。
 
-詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。
+詳細については、[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)を参照してください。
 
 ### <a name="span-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspaninf-writer-defined-sections"></a><span id="INF_Writer-Defined_Sections"></span><span id="inf_writer-defined_sections"></span><span id="INF_WRITER-DEFINED_SECTIONS"></span>ライター定義のセクションでは INF
 
