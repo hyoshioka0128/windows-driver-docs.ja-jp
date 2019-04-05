@@ -32,7 +32,7 @@ AudioEndpointBuilder によって使用されるアルゴリズムのしくみ�
 
 3.  エンドポイントの既定のプロパティを設定します。 たとえば、名前、アイコン、およびフォーム ファクター AudioEndpointBuilder を設定します。
 
-4.  エンドポイントからパルス符号変調 (PCM) をサポートするホスト pin へのパスがあるかどうかを決定するオーディオ コーデック 3 (AC3) または Windows media ビデオ (WMV)。 ホストの pin が KSPIN に設定、通信のメンバーを持つ KSPIN 構造体\_通信\_シンクまたは KSPIN\_通信\_両方。 KSPIN 構造の詳細については、次を参照してください。 [ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)します。
+4.  エンドポイントからパルス符号変調 (PCM) をサポートするホスト pin へのパスがあるかどうかを決定するオーディオ コーデック 3 (AC3) または Windows media ビデオ (WMV)。 ホストの pin が KSPIN に設定、通信のメンバーを持つ KSPIN 構造体\_通信\_シンクまたは KSPIN\_通信\_両方。 KSPIN 構造の詳細については、[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)を参照してください。
 
 5.  エンドポイントのプロパティ ストアは、オーディオ デバイス インターフェイスのレジストリ キーのプロパティ情報を設定します。
 
