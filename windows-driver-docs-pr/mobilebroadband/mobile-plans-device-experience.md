@@ -6,12 +6,12 @@ keywords:
 - デバイス エクスペリエンスの Windows Mobile の計画、携帯電話会社のモバイルの計画
 ms.date: 03/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bc34176a2626e104e047490877fc68bd27fc964b
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.openlocfilehash: 1f54fcbcdefaf32e22ed359c16acf1b74a571f81
+ms.sourcegitcommit: 624427449978a8a82e77a3a31b9e22e3263793ae
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845570"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055723"
 ---
 # <a name="mobile-plans-windows-10-device-experience"></a>プランの Windows 10 のモバイル デバイス エクスペリエンス
 
@@ -92,16 +92,16 @@ MOs を提供するネットワーク ポップアップで、適切な情報を
 > [!NOTE]
 > SIM リソースは現在サポートされていません「作成」、「読み取り」、"update"または「削除」操作。
 
-| JSON のプロパティ | 型 | 説明 |
+| JSON のプロパティ | 種類 | 説明 |
 | --- | --- | --- |
 | Iccid | String | 作成されたプロファイルの ICCID します。 |
 
 #### <a name="balance-resource"></a>分散リソース
 
-| JSON のプロパティ | 型 | 説明 |
+| JSON のプロパティ | 種類 | 説明 |
 | --- | --- | --- |
 |id |String| トランザクションを追跡するために、携帯電話会社の内部 id |
-型 | 列挙型 | 設定可能な値: <ul><li>MODIRECT:ユーザーの残高が直接 MO かどうかを示します。</li><li>MODIRECTPAYG:ユーザーの残高が直接 PAYG の月を示します。</li><li>NONE:ユーザーには、残高がないことを示します。 残高が 0、プランの有効期限が切れていない場合は、ユーザーがデータ プランを購入できるように、"NONE"を受信する予定です。</li><li>NOTSUPPORTED:SIM は、モバイルのプランでサポートされていないことを示しますが発生します。 SIM にされない場合、"NOTSUPPORTED"が使用される、* Mobile プラン、サポートされている範囲です。 ネットワーク ポップアップでプランのモバイル エクスペリエンスをオフにされ、この型を受信すると、プランのモバイル アプリで一般的なエラー メッセージを返すことが。</li></ul> |
+種類 | 列挙型 | 設定可能な値: <ul><li>MODIRECT:ユーザーの残高が直接 MO かどうかを示します。</li><li>MODIRECTPAYG:ユーザーの残高が直接 PAYG の月を示します。</li><li>NONE:ユーザーには、残高がないことを示します。 残高が 0、プランの有効期限が切れていない場合は、ユーザーがデータ プランを購入できるように、"NONE"を受信する予定です。</li><li>NOTSUPPORTED:SIM は、モバイルのプランでサポートされていないことを示しますが発生します。 SIM にされない場合、"NOTSUPPORTED"が使用される、* Mobile プラン、サポートされている範囲です。 ネットワーク ポップアップでプランのモバイル エクスペリエンスをオフにされ、この型を受信すると、プランのモバイル アプリで一般的なエラー メッセージを返すことが。</li></ul> |
 | dataRemainingInMB | Double | MB で、現在のユーザー プランでは残りのデータ。 |
 | TimeRemaining | String | 指定した期間[ISO 8601](https://go.microsoft.com/fwlink/p/?linkid=866182)します。 |
 
@@ -109,7 +109,7 @@ MOs を提供するネットワーク ポップアップで、適切な情報を
 
 モバイル プロバイダのエンドポイントに対するプランのモバイル サービスからのすべての要求では、次のヘッダーを含めることができます。
 
-| ヘッダー名 | [値] | 説明 |
+| ヘッダー名 | Value | 説明 |
 | --- | --- | --- |
 | X-MS-DM-TransactionId | String | プランのモバイル サービスと月のサービスの間には、この要求/応答操作を一意に識別する TransactionId します。 |
 | (省略可能) の承認 | String | 必要に応じて、売り上げによって提供される基本認証文字列 |
@@ -142,10 +142,10 @@ GET https://{moBaseUrl}/sims/{sim id}/balances?fieldsTemplate=basic&limit=1&loca
 
 クエリ パラメーター:
 
-| クエリ パラメーター名 | 値 | 説明 |
+| クエリ パラメーター名 | Value | 説明 |
 | --- | --- | --- |
-| location | String | 任意。 ユーザーの残高が照会されている場所です。 指定しない場合、すべてのアクティブな残高が必要です。 **注**location パラメーターは大文字小文字を区別します。 |
-| limit | 整数型 |任意。 返される残高の最大数。 指定しない場合、すべての残高が返されます。 |
+| location | String | (省略可能)。 ユーザーの残高が照会されている場所です。 指定しない場合、すべてのアクティブな残高が必要です。 **注**location パラメーターは大文字小文字を区別します。 |
+| limit | 整数型 |(省略可能)。 返される残高の最大数。 指定しない場合、すべての残高が返されます。 |
 | fieldsTemplate | 列挙型 |リソースで返す必要があるフィールドの一覧を指定します。 <p>設定可能な値:</p><ul><li>Basic:*型*、 *dataRemainingInMB*、および*timeRemaining*残高にリソースを返す必要があります。</li><li>完全な。分散リソースのすべてのプロパティは返される必要があります。</li></ul> |
 
 次の一連の例の通話フローを表示する、 `GetBalance` API。
@@ -180,7 +180,7 @@ X-MS-DM-TransactionId: “12345”
 
 JSON の応答:
 
-| データ | 型 | 説明 |
+| データ | 種類 | 説明 |
 | --- | --- | --- |
 | 残高 | コレクション | 残高のコレクション。 |
 
@@ -245,7 +245,7 @@ COSA/APN の更新プログラムのスプレッドシートをダウンロー�
 
 エンドユーザーがアクセス可能な常に必要なエンドポイントの数が少ないがあります。 次の表では、Walled Garden の必要なエンドポイントを定義します。
 
-| [URL] | HTTP/HTTPS |
+| URL | HTTP/HTTPS |
 | --- | --- |
 | service.datamart.windows<span></span>.com | https |
 | dogfood.datamart.windows<span></span>.com | https |
@@ -257,7 +257,7 @@ COSA/APN の更新プログラムのスプレッドシートをダウンロー�
 | vassg142.crl.omniroot<span></span>.com | http |
 | mscrl.microsoft<span></span>.com | http |
 | crl.microsoft<span></span>.com | http |
-| msftconnecttest<span></span>.com | http |
+| www.msftconnecttest<span></span>.com | http |
 | crl3.digicert<span></span>.com | http |
 | Ocsp.digicert<span></span>.com | http |
 | login.live<span></span>.com | http と https |
