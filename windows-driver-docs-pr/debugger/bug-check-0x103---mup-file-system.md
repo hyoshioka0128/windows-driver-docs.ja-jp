@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff129b1c6e5fb934a97608bf4af915f62ce4d72e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 401323a98dc77ae35c925ab56f031ea24f7904af
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548986"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239691"
 ---
-# <a name="bug-check-0x103-mupfilesystem"></a>バグ チェック 0x103 の。MUP\_ファイル\_システム
+# <a name="bug-check-0x103-mupfilesystem"></a>バグ チェック 0x103:MUP\_ファイル\_システム
 
 
 MUP\_ファイル\_システムのバグ チェックが 0x00000103 の値を持ちます。 このバグ チェックでは、複数 UNC プロバイダー (MUP) が無効または予期しないデータを発生したことを示します。 結果として、MUP はネットワーク リダイレクター、汎用名前付け規則 (UNC) プロバイダーをリモート ファイル システムの要求をチャネルすることはできません。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="mupfilesystem-parameters"></a>MUP\_ファイル\_システム パラメーター
 

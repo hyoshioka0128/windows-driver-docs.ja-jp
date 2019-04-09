@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: edcc2faed1635bf794f1c7bc4f98dcfd4c1583b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2090bfd15037a1c8c06c66f0cbcd8b5fd5ab7de9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549747"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238291"
 ---
-# <a name="bug-check-0x82-dfsfilesystem"></a>バグ チェック 0x82 の。DFS\_ファイル\_システム
+# <a name="bug-check-0x82-dfsfilesystem"></a>バグ チェック 0x82:DFS\_ファイル\_システム
 
 
 DFS\_ファイル\_システムのバグ チェックが 0x00000082 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

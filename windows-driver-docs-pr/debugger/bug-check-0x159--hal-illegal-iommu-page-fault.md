@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9702819bdf5e0d2b1ca3cf8bdabc9ec468a99c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a25bfa5be48b27fbba9bb5fae958e8f00c5deec1
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553717"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238815"
 ---
-# <a name="bug-check-0x159-halillegaliommupagefault"></a>バグ チェック 0x159 の。HAL\_不正な\_IOMMU\_ページ\_エラー
+# <a name="bug-check-0x159-halillegaliommupagefault"></a>バグ チェック 0x159:HAL\_不正な\_IOMMU\_ページ\_エラー
 
 
 HAL\_不正な\_IOMMU\_ページ\_フォールトのバグ チェックが 0x00000159 の値を持ちます。 これは、IOMMU が解放中にあった、ASID に対してページ フォールトを配信されたことを示します。 ドライバーは、実行中の要求を完了する前に、時間とこのバグチェックのこの時点では、システム内のドライバーでは、実行していないことを示します担当しました。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="halillegaliommupagefault-parameters"></a>HAL\_不正な\_IOMMU\_ページ\_フォールト パラメーター
 

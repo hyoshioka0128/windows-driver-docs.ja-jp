@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eccca0754bac8439fbf73a3bdd25bf1e8bb97176
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: daa0c1724167364690a7a64e51e8d3bab58c925c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535300"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239141"
 ---
-# <a name="bug-check-0x57-xnsinternalerror"></a>バグ チェック 0x57 の。XNS\_内部\_エラー
+# <a name="bug-check-0x57-xnsinternalerror"></a>バグ チェック 0x57:XNS\_内部\_エラー
 
 
 XNS\_内部\_エラーのバグ チェックが 0x00000057 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

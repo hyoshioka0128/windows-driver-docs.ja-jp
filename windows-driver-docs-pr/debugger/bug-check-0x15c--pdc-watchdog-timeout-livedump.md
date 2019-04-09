@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0eb4631fc106d01f203939df3cce068744e72e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5d8452e308dad73bb3c99d57224302a1623be8cb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582440"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238617"
 ---
 # <a name="bug-check-0x15c-pdcwatchdogtimeoutlivedump"></a>バグ チェック 0x15C:PDC\_ウォッチドッグ\_タイムアウト\_LIVEDUMP
 
 
 PDC\_ウォッチドッグ\_タイムアウト\_LIVEDUMP バグ チェックが 0x0000015C の値を持ちます。 これは、システム コンポーネントが原因でシステムが開始または終了コネクト スタンバイから割り当てられた期間内に応答する失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="pdcwatchdogtimeoutlivedump-parameters"></a>PDC\_ウォッチドッグ\_タイムアウト\_LIVEDUMP パラメーター
 

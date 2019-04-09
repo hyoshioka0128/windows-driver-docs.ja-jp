@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 271f3e9b9b93385eb674ffa4a0cee2d3c10d303f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 5673f471ef724eceb443499403747dc7774cb389
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743555"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238975"
 ---
-# <a name="bug-check-0x174-coremsginternalerror"></a>バグ チェック 0x174 の。COREMSG\_内部\_エラー
+# <a name="bug-check-0x174-coremsginternalerror"></a>バグ チェック 0x174:COREMSG\_内部\_エラー
 
 COREMSG_INTERNAL_ERROR のバグ チェックでは、0x00000174 の値を持ちます。 これは、CoreMessaging に回復不能なエラーが検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 ## <a name="coremsginternalerror-parameters"></a>COREMSG\_内部\_エラー パラメーター
@@ -45,6 +47,6 @@ CoreMessaging には、回復不可能なエラーが検出されました。
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 

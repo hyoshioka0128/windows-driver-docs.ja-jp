@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 815f62e273240f9e72d371c197cf1109d9c7b30c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2b361b4e7c5c9c384c7310cba599acde22419e52
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532262"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238527"
 ---
-# <a name="vprot"></a>! vprot
+# <a name="vprot"></a>!vprot
 
 
 **! Vprot**拡張機能には、仮想メモリの保護の情報が表示されます。
@@ -59,7 +59,7 @@ Uext.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ターゲット プロセスが所有するすべてのメモリの範囲のメモリ保護情報を表示する使用[ **! vadump**](-vadump.md)します。 メモリ保護については、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+ターゲット プロセスが所有するすべてのメモリの範囲のメモリ保護情報を表示する使用[ **! vadump**](-vadump.md)します。 メモリ保護については、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------

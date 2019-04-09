@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e4b621d134d4086c8d511f4c1cd853f0b69b98e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d3d5e7c6ce2792f36683281425346f54e38edbd5
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559693"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239555"
 ---
-# <a name="bug-check-0xe4-workerinvalid"></a>バグ チェック 0xE4 の。ワーカー\_が無効です
+# <a name="bug-check-0xe4-workerinvalid"></a>バグ チェック 0xE4:ワーカー\_が無効です
 
 
 ワーカー\_の無効なバグ チェックが 0x000000E4 の値を持ちます。 これは、そのメモリを含めることはできません、executive の作業項目は、このような項目は含ままたは現在アクティブな作業項目がキューに入れられたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="workerinvalid-parameters"></a>ワーカー\_パラメーターが無効です
 

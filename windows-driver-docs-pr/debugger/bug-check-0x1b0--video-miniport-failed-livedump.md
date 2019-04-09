@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0966bef520c1b939799a1e842a6f393da364ea8
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 4c1c4e47caa8d9bf393f914a15c04e707e66e189
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743569"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239049"
 ---
-# <a name="bug-check-0x1b0-videominiportfailedlivedump"></a>バグ チェック 0x1B0 の。ビデオ\_ミニポート\_FAILED\_LIVEDUMP
+# <a name="bug-check-0x1b0-videominiportfailedlivedump"></a>バグ チェック 0x1B0:ビデオ\_ミニポート\_FAILED\_LIVEDUMP
 
 ビデオ\_ミニポート\_FAILED\_LIVEDUMP バグ チェックが 0x000001B0 の値を持ちます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="videominiportfailedlivedump-parameters"></a>ビデオ\_ミニポート\_FAILED\_LIVEDUMP パラメーター
 
@@ -45,7 +47,7 @@ DXGKRNL では、問題を検出しましたしがデバッグ情報を収集す
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
  
 

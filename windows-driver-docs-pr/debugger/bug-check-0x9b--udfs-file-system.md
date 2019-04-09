@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca07c45a24f5a30267b1b09cc82ee3d57e4aeb3
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: b9f2eb385945e0ab36d552543cf005121a0c8bb4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463992"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238439"
 ---
 # <a name="bug-check-0x9b-udfsfilesystem"></a>バグ チェック 0x9B:UDF\_ファイル\_システム
 
 
 UDF\_ファイル\_システムのバグ チェックが 0x0000009B の値を持ちます。 このバグ チェックでは、UDF ファイル システムで問題が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="udfsfilesystem-parameters"></a>UDF\_ファイル\_システム パラメーター
 

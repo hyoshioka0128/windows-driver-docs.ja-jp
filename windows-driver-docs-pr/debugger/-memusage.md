@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b97b825af8dffed4c1d624228e4240a340be28ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ef8468f84e63c62f9ee54280adf8f755f8a4d5e7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560846"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238917"
 ---
-# <a name="memusage"></a>! memusage
+# <a name="memusage"></a>!memusage
 
 
 **! Memusage**拡張機能には、物理メモリの使用に関する概要統計が表示されます。
@@ -138,7 +138,7 @@ Control Valid Standby Dirty Shared Locked PageTables  name
 <a name="remarks"></a>注釈
 -------
 
-使用することができます、 [ **! vm** ](-vm.md)拡張機能コマンドで仮想メモリ使用量を分析します。 この拡張機能は通常より役に立つ **! memusage**します。 メモリ管理の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+使用することができます、 [ **! vm** ](-vm.md)拡張機能コマンドで仮想メモリ使用量を分析します。 この拡張機能は通常より役に立つ **! memusage**します。 メモリ管理の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
 [ **! Pfn** ](-pfn.md) PFN データベース内の特定のページ フレームのエントリを表示する拡張機能のコマンドを使用できます。
 

@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a78c43a0f2e0897a8f3c726a3a383e6e2e041015
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 128926b3edcb69fa6f144d00220eaa3bed711156
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553149"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238379"
 ---
-# <a name="bug-check-0x1f-sharedresourceconverror"></a>バグの確認は 0x1F:共有\_リソース\_CONV\_エラー
+# <a name="bug-check-0x1f-sharedresourceconverror"></a>バグ チェック 0x1F:共有\_リソース\_CONV\_エラー
 
 
 SHARED\_リソース\_CONV\_エラーのバグ チェックが 0x0000001F の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

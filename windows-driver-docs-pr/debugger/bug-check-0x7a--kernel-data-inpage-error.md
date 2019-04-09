@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f7e02d217269a434afed1a7804a0ee8de38f766
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c18f0ba0bdbb37f7649681218f521949eb371afd
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550173"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238799"
 ---
-# <a name="bug-check-0x7a-kerneldatainpageerror"></a>バグ チェック 0x7A の。カーネル\_データ\_インページ\_エラー
+# <a name="bug-check-0x7a-kerneldatainpageerror"></a>バグ チェック 0x7A:カーネル\_データ\_インページ\_エラー
 
 
 カーネル\_データ\_インページ\_エラーのバグ チェックが 0x0000007A の値を持ちます。 このバグ チェックでは、メモリにカーネル データ ページング ファイルからの要求されたページを読み取れなかったことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="kerneldatainpageerror-parameters"></a>カーネル\_データ\_インページ\_エラー パラメーター
 

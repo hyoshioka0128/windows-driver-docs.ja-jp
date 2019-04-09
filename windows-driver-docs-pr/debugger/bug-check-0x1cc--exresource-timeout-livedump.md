@@ -12,16 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ddef61a91b4965bd7e4ecf301e10cbb9c11344
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 1231e2732924fa118b67ec0c90d25cc8ae941926
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743459"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238971"
 ---
 # <a name="bug-check-bug-check-0x1cc-exresourcetimeoutlivedump"></a>チェックのバグ チェック 0x1CC をバグします。EXRESOURCE\_タイムアウト\_LIVEDUMP
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 EXRESOURCE_TIMEOUT_LIVEDUMP のバグ チェックでは、0x000001CC の値を持ちます。
 
@@ -43,5 +45,5 @@ EXRESOURCE_TIMEOUT_LIVEDUMP のバグ チェックでは、0x000001CC の値を�
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

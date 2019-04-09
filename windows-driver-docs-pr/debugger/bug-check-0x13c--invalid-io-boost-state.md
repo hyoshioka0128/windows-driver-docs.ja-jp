@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3cc2bc74ddb90d7e3e62324e26668c151daafd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9cbbe5a27df8f4c09ae27f44ee7ac16c5fb616f9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537000"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239361"
 ---
-# <a name="bug-check-0x13c-invalidiobooststate"></a>バグ チェック 0x13C の。無効な\_IO\_BOOST\_状態
+# <a name="bug-check-0x13c-invalidiobooststate"></a>バグ チェック 0x13C:無効な\_IO\_BOOST\_状態
 
 
 無効な\_IO\_BOOST\_状態のバグ チェックが 0x0000013C の値を持ちます。 これは、無効な I/O boost 状態、スレッドが終了していることを示します。 スレッドの終了時にゼロがあります。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="invalidiobooststate-parameters"></a>無効な\_IO\_BOOST\_状態パラメーター
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fecaaf6ca798764e3710631719dd3d34ded236e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8643e04580b7c5077bf5457c47d4b6f6ac8af6ed
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573951"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239175"
 ---
 # <a name="zombies"></a>!zombies
 
@@ -68,9 +68,9 @@ ms.locfileid: "56573951"
 
 すべてのプロセスとスレッドの一覧を表示する、 [ **! プロセス**](-process.md)拡張機能。
 
-プロセスとスレッドがカーネル モードの詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。 プロセスとスレッドの分析に関する詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+プロセスとスレッドがカーネル モードの詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。 プロセスとスレッドの分析に関する詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ゾンビのプロセスとは、プロセスの一覧から削除されていない終了のプロセスです。 ゾンビのスレッドは似ています。

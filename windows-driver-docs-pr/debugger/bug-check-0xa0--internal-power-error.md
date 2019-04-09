@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9fa7b8c565af865c0d51b1252d4c99dbafe57d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 043c2a2ab16f79247f451ecfe0340d2b8ac1bcc3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239853"
 ---
-# <a name="bug-check-0xa0-internalpowererror"></a>バグ チェック 0xA0 の。内部\_POWER\_エラー
+# <a name="bug-check-0xa0-internalpowererror"></a>バグ チェック 0xA0:内部\_POWER\_エラー
 
 
 内部\_POWER\_エラーのバグ チェックが 0x000000A0 の値を持ちます。 このバグ チェックでは、電源ポリシー マネージャーに致命的なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="internalpowererror-parameters"></a>内部\_POWER\_エラー パラメーター
 
@@ -67,7 +69,7 @@ ms.locfileid: "56556677"
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>電源イベントを処理中に内部エラーが発生しました。 詳細については、<a href="#parameter-1-equals-0x2" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x2](#parameter-1-equals-0x2)">デバッグ 0xA0 パラメーター 1 が 0x2 の場合のバグ チェック</a>を参照してください。</p></td>
+<td align="left"><p>電源イベントを処理中に内部エラーが発生しました。 詳細については、次を参照してください。<a href="#parameter-1-equals-0x2" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x2](#parameter-1-equals-0x2)">デバッグ 0xA0 パラメーター 1 が 0x2 の場合のバグ チェック</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
@@ -95,7 +97,7 @@ ms.locfileid: "56556677"
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ハンドルされない例外が発生しました。 詳細については、<a href="#parameter-1-equals-0x7" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x7](#parameter-1-equals-0x7)">デバッグ バグ チェックとパラメーター 1 に等しい 0x7 0xA0</a>を参照してください。</p></td>
+<td align="left"><p>ハンドルされない例外が発生しました。 詳細については、次を参照してください。<a href="#parameter-1-equals-0x7" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x7](#parameter-1-equals-0x7)">デバッグ バグ チェックとパラメーター 1 に等しい 0x7 0xA0</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
@@ -146,7 +148,7 @@ ms.locfileid: "56556677"
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>例外のポインター。</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>システム電源イベントの処理中にハンドルされない例外が発生しました。 詳細については、<a href="#parameter-1-equals-0x101" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x101](#parameter-1-equals-0x101)">デバッグ バグ チェックとパラメーター 1 に等しい 0x101 0xA0</a>を参照してください。</p></td>
+<td align="left"><p>システム電源イベントの処理中にハンドルされない例外が発生しました。 詳細については、次を参照してください。<a href="#parameter-1-equals-0x101" data-raw-source="[Debugging bug check 0xA0 when parameter 1 equals 0x101](#parameter-1-equals-0x101)">デバッグ バグ チェックとパラメーター 1 に等しい 0x101 0xA0</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x102</p></td>

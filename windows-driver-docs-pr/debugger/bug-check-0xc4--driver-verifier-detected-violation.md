@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e58136d56e0d21c287f506a4a3ec5b4d53191b2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dc331c1266defef14cdbe656f0f040339c0fca6d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550598"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238589"
 ---
-# <a name="bug-check-0xc4-driververifierdetectedviolation"></a>バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反
+# <a name="bug-check-0xc4-driververifierdetectedviolation"></a>バグ チェック 0xC4:ドライバー\_VERIFIER\_検出\_違反
 
 
-ドライバー\_VERIFIER\_検出\_違反のバグ チェックが 0x000000C4 の値を持ちます。 これは、Driver Verifier で見つかった致命的なエラーの一般的なバグ チェック コードです。 詳細については、[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](handling-a-bug-check-when-driver-verifier-is-enabled.md)を参照してください。
+ドライバー\_VERIFIER\_検出\_違反のバグ チェックが 0x000000C4 の値を持ちます。 これは、Driver Verifier で見つかった致命的なエラーの一般的なバグ チェック コードです。 詳細については、次を参照してください。[をバグ チェック時にドライバーの検証ツールの処理が有効になっている](handling-a-bug-check-when-driver-verifier-is-enabled.md)します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driververifierdetectedviolation-parameters"></a>ドライバー\_VERIFIER\_検出\_違反パラメーター
 
@@ -69,7 +71,7 @@ ms.locfileid: "56550598"
 |0x53、0x54、または 0x59|ベース アドレスの割り当て|予約済み|予約済み|ドライバーは、割り当ての末尾を越えて書き込みが行われた後にメモリを解放しようとしています。 このパラメーターでのバグ チェックでは、Driver Verifier のプールの追跡オプションがアクティブな場合にのみ発生します。|
 |0x60 です。|ページ プールから割り当てられたバイト数|非ページ プールから割り当てられたバイト数|解放されていない割り当ての合計数|アンロード最初に割り当てられたプールを解放せずに、ドライバーを作成しています。 このパラメーターでのバグ チェックでは、Driver Verifier のプールの追跡オプションがアクティブな場合にのみ発生します。|
 |0x61|ページ プールから割り当てられたバイト数|非ページ プールから割り当てられたバイト数|解放されていない割り当ての合計数|ドライバーのスレッドが、ドライバーをアンロード中に、プールのメモリを割り当てるしようとしています。 このパラメーターでのバグ チェックでは、Driver Verifier のプールの追跡オプションがアクティブな場合にのみ発生します。|
-|数 0 x 62|ドライバーの名前|予約済み|解放されず、ページおよび非ページの両方のプールを含む割り当ての合計数|アンロード最初に割り当てられたプールを解放せずに、ドライバーを作成しています。 このパラメーターでのバグ チェックでは、Driver Verifier のプールの追跡オプションがアクティブな場合にのみ発生します。|
+|0x62|ドライバーの名前|予約済み|解放されず、ページおよび非ページの両方のプールを含む割り当ての合計数|アンロード最初に割り当てられたプールを解放せずに、ドライバーを作成しています。 このパラメーターでのバグ チェックでは、Driver Verifier のプールの追跡オプションがアクティブな場合にのみ発生します。|
 |0x70|現在の IRQL|MDL アドレス|アクセス モード|ドライバーと呼ばれる[MmProbeAndLockPages](https://msdn.microsoft.com/library/windows/hardware/ff554664) IRQL で > DISPATCH_LEVEL します。|
 |0x71|現在の IRQL|MDL アドレス|プロセスのアドレス|IRQL で MmProbeAndLockProcessPages と呼ばれるドライバー > DISPATCH_LEVEL します。|
 |0x72|現在の IRQL|MDL アドレス|プロセスのアドレス|IRQL で MmProbeAndLockSelectedPages と呼ばれるドライバー > DISPATCH_LEVEL します。|
@@ -262,7 +264,7 @@ ms.locfileid: "56550598"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[バグ チェック時にドライバー検証機能を処理が有効になっています。](handling-a-bug-check-when-driver-verifier-is-enabled.md)
+[ドライバーの検証ツールが有効な場合のバグ チェックの処理](handling-a-bug-check-when-driver-verifier-is-enabled.md)
 
  
 

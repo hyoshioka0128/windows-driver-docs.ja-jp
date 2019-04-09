@@ -12,16 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ac1d86d3047757948da0fcb2f657ded86231e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8f052a2e43b9596894b5dc63cba7a24603e8d3fa
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582282"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238373"
 ---
 # <a name="bug-check-bug-check-0x1ce-invalidkernelstackaddress"></a>チェックのバグ チェック 0x1CE をバグします。無効な\_カーネル\_スタック\_アドレス
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 INVALID_KERNEL_STACK_ADDRESS のバグ チェックでは、0x000001CE の値を持ちます。 無効な初期カーネル スタック アドレスは、コンテキストの切り替え中に発生しました。
 

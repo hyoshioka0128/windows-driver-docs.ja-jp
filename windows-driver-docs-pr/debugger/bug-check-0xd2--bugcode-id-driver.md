@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5827981537496860abf8e254f1ef8f40c24660
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 3e10195a2a799df88bb46967355a0b4a373a3948
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350387"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239351"
 ---
 # <a name="bug-check-0xd2-bugcodeiddriver"></a>バグ チェック 0xD2:BUGCODE\_ID\_ドライバー
 
 
 BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ちます。 これは、NDIS ドライバーで問題が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bugcodeiddriver-parameters"></a>BUGCODE\_ID\_ドライバーのパラメーター
 
@@ -155,7 +157,7 @@ BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ち
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このバグ チェック コードは、Windows 2000 および Windows XP でのみ行われます。 対応するコードは、Windows Server 2003 以降では、 [**バグ チェック 0x7C** ](bug-check-0x7c--bugcode-ndis-driver.md) (BUGCODE\_NDIS\_ドライバー)。

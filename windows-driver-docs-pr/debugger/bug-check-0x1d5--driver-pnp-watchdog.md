@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d34ebffd3c810ed5a098525ee0aea64974a067
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 598714b117833f765b2d74a9cd0ad30e5df223a6
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743577"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238991"
 ---
-# <a name="bug-check-0x1d5-driverpnpwatchdog"></a>バグ チェック 0x1D5 の。ドライバー\_PNP\_ウォッチドッグ
+# <a name="bug-check-0x1d5-driverpnpwatchdog"></a>バグ チェック 0x1D5:ドライバー\_PNP\_ウォッチドッグ
 
 ドライバー\_PNP\_ウォッチドッグのバグ チェックが 0x000001D5 の値を持ちます。 これは、特定の時間内での PnP 操作を完了するドライバーが失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="driverpnpwatchdog-parameters"></a>ドライバー\_PNP\_ウォッチドッグ パラメーター
@@ -45,5 +47,5 @@ ms.locfileid: "56743577"
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

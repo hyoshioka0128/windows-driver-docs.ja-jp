@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b570272f29bf2878e4dde15d28da6e64f2c1ae27
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: aa6ed66a0f3def21454639270783f7b0c8940c82
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743538"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238521"
 ---
-# <a name="bug-check-0x1db-ipiwatchdogtimeout"></a>バグ チェック 0x1DB の。IPI\_ウォッチドッグ\_タイムアウト
+# <a name="bug-check-0x1db-ipiwatchdogtimeout"></a>バグ チェック 0x1DB:IPI\_ウォッチドッグ\_タイムアウト
 
 IPI\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001DB の値を持ちます。 これは、プロセッサが許可されている時間より IPI ループになってされていることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="ipiwatchdogtimeout-parameters"></a>IPI\_ウォッチドッグ\_タイムアウト パラメーター
@@ -45,5 +47,5 @@ IPI\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

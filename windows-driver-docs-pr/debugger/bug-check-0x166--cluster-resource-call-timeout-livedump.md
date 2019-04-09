@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b5395b7d46540462c646c3952ba2a8efe6e3e5cc
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 0103223a4cc14431db4a0d6aa3714063c4c49467
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238649"
 ---
-# <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>バグ チェック 0x166 の。クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP
+# <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>バグ チェック 0x166:クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP
 
 クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP バグ チェックが 0x00000166 の値を持ちます。 これは、クラスター リソースの呼び出しが構成されたタイムアウトより長くかかったことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 
 ## <a name="clusterresourcecalltimeoutlivedump-parameters"></a>クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP パラメーター
@@ -82,7 +84,7 @@ ms.locfileid: "58761837"
 
 [使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

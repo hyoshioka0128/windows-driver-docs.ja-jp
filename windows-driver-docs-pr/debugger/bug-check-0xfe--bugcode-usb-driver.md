@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9de39da25e032029669d7c3fc2dc6f713cd459
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 84234eeda018bf369dfcb9beb2841ae3c8d6ca51
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536877"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238443"
 ---
-# <a name="bug-check-0xfe-bugcodeusbdriver"></a>0 xfe チェックをバグします。BUGCODE\_USB\_ドライバー
+# <a name="bug-check-0xfe-bugcodeusbdriver"></a>バグ チェック 0xFE:BUGCODE\_USB\_ドライバー
 
 
 BUGCODE\_USB\_ドライバーのバグ チェックが 0x000000FE の値を持ちます。 これは、ユニバーサル シリアル バス (USB) ドライバーでエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bugcodeusbdriver-parameters"></a>BUGCODE\_USB\_ドライバーのパラメーター
 
@@ -164,7 +166,7 @@ PDO パラメーター 3 が NULL でない場合。 コンテキスト パラ�
 <thead>
 <tr class="header">
 <th align="left">タイムアウト コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

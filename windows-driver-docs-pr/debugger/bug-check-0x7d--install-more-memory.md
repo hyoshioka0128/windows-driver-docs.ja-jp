@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d64e99fb4675f31279bb422555ae83818ee2e39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ac142192bcb73fc4cb39f01e1cc9d31fe5fdfb7e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537285"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238923"
 ---
-# <a name="bug-check-0x7d-installmorememory"></a>バグ チェック 0x7D の。インストール\_詳細\_メモリ
+# <a name="bug-check-0x7d-installmorememory"></a>バグ チェック 0x7D:インストール\_詳細\_メモリ
 
 
 インストール\_詳細\_メモリのバグ チェックが 0x0000007D の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムを起動するには、十分なメモリはないことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="installmorememory-parameters"></a>インストール\_詳細\_メモリ パラメーター
 

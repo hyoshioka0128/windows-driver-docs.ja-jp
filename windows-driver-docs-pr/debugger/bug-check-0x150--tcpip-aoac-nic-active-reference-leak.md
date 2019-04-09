@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e268f7ad5864247ffc4b6e86fde72d5f6d72e6c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 486346b70f0a4dfb0115443d979151f7897830ee
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528625"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239742"
 ---
-# <a name="bug-check-0x150-tcpipaoacnicactivereferenceleak"></a>バグ チェック 0x150 の。TCPIP\_AOAC\_NIC\_ACTIVE\_参照\_リーク
+# <a name="bug-check-0x150-tcpipaoacnicactivereferenceleak"></a>バグ チェック 0x150:TCPIP\_AOAC\_NIC\_ACTIVE\_参照\_リーク
 
 
 TCPIP\_AOAC\_NIC\_ACTIVE\_参照\_リークのバグ チェックが 0x00000150 の値を持ちます。 これは、NIC のアクティブな参照する必要がありますが解放されていることと、送信キューが完全にドレインされますを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="tcpipaoacnicactivereferenceleak-parameters"></a>TCPIP\_AOAC\_NIC\_ACTIVE\_参照\_リーク パラメーター
 

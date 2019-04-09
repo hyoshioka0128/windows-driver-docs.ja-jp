@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0340ff9a2d9a258901c3f08e3d3af70304957020
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4aa3c35cc49d2024aea922cdb3b62042f1e7b18c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538567"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239657"
 ---
-# <a name="bug-check-0x55-datacoherencyexception"></a>バグ チェック 0x55 の。データ\_コヒレンシー\_例外
+# <a name="bug-check-0x55-datacoherencyexception"></a>バグ チェック 0x55:データ\_コヒレンシー\_例外
 
 
 データ\_コヒレンシー\_例外のバグ チェックが 0x00000055 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

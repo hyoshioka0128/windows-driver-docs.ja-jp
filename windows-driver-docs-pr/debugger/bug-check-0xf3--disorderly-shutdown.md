@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b05faff409c4bd632593353cd2e76b1ca457847
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 670a60f3a91c281eafd80048ca845853fcf2c39b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538867"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239747"
 ---
-# <a name="bug-check-0xf3-disorderlyshutdown"></a>バグ チェック 0xF3 の。無秩序\_シャット ダウン
+# <a name="bug-check-0xf3-disorderlyshutdown"></a>バグ チェック 0xF3:無秩序\_シャット ダウン
 
 
 DISORDERLY\_シャット ダウンのバグ チェックが 0x000000F3 の値を持ちます。 これは、Windows がメモリ不足のためにシャット ダウンにできなかったことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="disorderlyshutdown-parameters"></a>無秩序\_-SHUTDOWN パラメーター
 

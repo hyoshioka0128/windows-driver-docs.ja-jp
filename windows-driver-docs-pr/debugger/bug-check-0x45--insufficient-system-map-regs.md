@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e1e64c20d1ccddfb4c41c238d904feddb5471c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5c4c91d7799b1bd5c7d8358f46327b3cacac58c3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550594"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239611"
 ---
-# <a name="bug-check-0x45-insufficientsystemmapregs"></a>バグ チェック 0x45 の。不足している\_システム\_マップ\_REGS
+# <a name="bug-check-0x45-insufficientsystemmapregs"></a>バグ チェック 0x45:不足している\_システム\_マップ\_REGS
 
 
 不十分\_システム\_マップ\_REGS バグ チェックが 0x00000045 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

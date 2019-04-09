@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a7728f06be35b0055ff22e1145af7f5ee6796c50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: de3bccab64d3a52c6ad3220b183aa5c3012f90b0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582226"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239465"
 ---
 # <a name="bug-check-0xcc-pagefaultinfreedspecialpool"></a>バグ チェック 0xCC:ページ\_フォールト\_IN\_FREED\_特殊\_プール
 
 
 ページ\_フォールト\_IN\_FREED\_特殊\_プールのバグ チェックが 0x000000CC の値を持ちます。 これは、システムが既に解放されているメモリを参照することを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="pagefaultinfreedspecialpool-parameters"></a>ページ\_フォールト\_IN\_FREED\_特殊\_プールのパラメーター
 
@@ -73,7 +75,7 @@ Driver Verifier の特別なプール オプションには、これは、以前
 
 特別なプールについては、Windows ドライバー キットの Driver Verifier のセクションを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 これで保護することはできません、 **- お試しくださいを除く**ハンドラー--プローブによってのみ保護できます。

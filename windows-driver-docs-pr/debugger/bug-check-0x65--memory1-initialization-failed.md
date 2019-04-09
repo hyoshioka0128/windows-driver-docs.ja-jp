@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9849f82b5365b3a632bb2d5fd8dee488ae2d83f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9d27dbf396c4ca8746c7a0cf3c36fc05952e8272
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537294"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239201"
 ---
-# <a name="bug-check-0x65-memory1initializationfailed"></a>バグ チェック 0x65 の。MEMORY1\_初期化\_失敗
+# <a name="bug-check-0x65-memory1initializationfailed"></a>バグ チェック 0x65:MEMORY1\_初期化\_失敗
 
 
 MEMORY1\_初期化\_失敗のバグ チェックが 0x00000065 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

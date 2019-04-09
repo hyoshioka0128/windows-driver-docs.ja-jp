@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 91229266d64c82e2f860a21a1e1e782bb7d448b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 62e2a1e2a83b5cd034e822cbcebcf0399cb66579
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537292"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239047"
 ---
-# <a name="bug-check-0xf7-driveroverranstackbuffer"></a>バグ チェック 0xF7 の。ドライバー\_OVERRAN\_スタック\_バッファー
+# <a name="bug-check-0xf7-driveroverranstackbuffer"></a>バグ チェック 0xF7:ドライバー\_OVERRAN\_スタック\_バッファー
 
 
 ドライバー\_OVERRAN\_スタック\_バッファーのバグ チェックが 0x000000F7 の値を持ちます。 これは、ドライバーがスタック ベースのバッファー オーバーランが発生することを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driveroverranstackbuffer-parameters"></a>ドライバー\_OVERRAN\_スタック\_バッファー パラメーター
 

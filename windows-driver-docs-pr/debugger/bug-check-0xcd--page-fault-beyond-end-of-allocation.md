@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4905e034c7c74d03270198c0a5978e300f91aa12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 893035d0996e242808cceda57c62d813257c375a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558326"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239571"
 ---
-# <a name="bug-check-0xcd-pagefaultbeyondendofallocation"></a>0 xcd チェックをバグします。ページ\_フォールト\_を超えて\_エンド\_の\_割り当て
+# <a name="bug-check-0xcd-pagefaultbeyondendofallocation"></a>バグ チェック 0xCD:ページ\_フォールト\_を超えて\_エンド\_の\_割り当て
 
 
 ページ\_フォールト\_を超えて\_エンド\_の\_割り当てのバグ チェックが 0x000000CD の値を持ちます。 これは、システムがいくつかのドライバーのプールの割り当ての末尾を超えるメモリをアクセスすることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="pagefaultbeyondendofallocation-parameters"></a>ページ\_フォールト\_を超えて\_エンド\_の\_割り当てパラメーター
 

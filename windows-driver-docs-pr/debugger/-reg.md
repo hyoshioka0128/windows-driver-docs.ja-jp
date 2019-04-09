@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ea9ddbccb5853d11dfe56c01592b23e49c685b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 15f071d84fa553899823c22d463db4ad51cd984d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558158"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239491"
 ---
-# <a name="reg"></a>! reg
+# <a name="reg"></a>!reg
 
 
 **! Reg**拡張機能が表示され、レジストリ データを検索します。
@@ -92,7 +92,7 @@ Hive のセキュリティのキャッシュを表示します。 *HiveAddress*�
 <span id="_______hashindex_______HiveAddress_HashKey______"></span><span id="_______hashindex_______hiveaddress_hashkey______"></span><span id="_______HASHINDEX_______HIVEADDRESS_HASHKEY______"></span> **hashindex** **** \[*HiveAddress*\] **** *HashKey*   
 ハッシュ キーのハッシュ インデックスのエントリを計算します。 *HiveAddress*ハイブのアドレスを指定します。 *HashKey*キーを指定します。
 
-**注***HiveAddress* 7 以降、ターゲット コンピューターは Windows を実行している場合は必須です。  
+**注***HiveAddress* 7 以降、ターゲット コンピューターは Windows を実行している場合は必須です。
 
 
 
@@ -153,7 +153,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-レジストリとそのコンポーネントについては、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+レジストリとそのコンポーネントについては、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------

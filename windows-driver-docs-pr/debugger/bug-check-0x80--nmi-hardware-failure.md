@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a55dbebcc53e18aa328985079a034da07c358c9c
-ms.sourcegitcommit: fac288eb2cceb6a7a8248ae0f8086553d1659b23
+ms.openlocfilehash: 6ec7d120a6d7dbf777554869e3cacf739368d388
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56588957"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238475"
 ---
 # <a name="bug-check-0x80-nmihardwarefailure"></a>バグ チェック 0x80:NMI\_ハードウェア\_エラー
 
 
 NMI\_ハードウェア\_エラーのバグ チェックが 0x00000080 の値を持ちます。 このバグ チェックでは、ハードウェアの故障が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="nmihardwarefailure-parameters"></a>NMI\_ハードウェア\_エラー パラメーター
 
@@ -40,7 +42,7 @@ NMI\_ハードウェア\_エラーのバグ チェックが 0x00000080 の値を
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。 すべてのハードウェアや最近インストールされたドライバーを削除します。 メモリのすべてのモジュールは、同じ型のことを確認します。
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 すべてのハードウェアや最近インストールされたドライバーを削除します。 メモリのすべてのモジュールは、同じ型のことを確認します。
 
  
 

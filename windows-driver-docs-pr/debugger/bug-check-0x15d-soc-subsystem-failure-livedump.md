@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b237f8ab15a6c03d2e06e3cf4fedc72ef40148f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1af822a5b3cd92ebfb9b5bdb8ccb4000ebbec66c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581084"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239815"
 ---
 # <a name="bug-check-0x15d-socsubsystemfailurelivedump"></a>バグ チェック 0x15D:SOC\_サブシステム\_エラー\_LIVEDUMP
 
 
 SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムが重大な障害が発生したし、ライブ カーネル ダンプをキャプチャしたことを示します。 SoC のサブシステムでは、このような状況でのバグ チェックは生成されません。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター
 
@@ -56,7 +58,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>任意。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
+<td align="left"><p>(省略可能)。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +68,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 指定された nt を使用します。SOC\_サブシステム\_エラー\_dt コマンドと Arg1 によって提供されるアドレスを使用して、エラー データをダンプする詳細の構造体。
 
@@ -87,7 +89,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 

@@ -12,17 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e79c19cfd0f29908c66f735d0dfec21087f9d7b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 715bc8cde74b247e4fec4f6b44c27eb395434af3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538711"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239115"
 ---
 # <a name="bug-check-bug-check-0x1d0-acpifirmwarewatchdogtimeout"></a>チェックのバグ チェック 0x1D0 をバグします。ACPI\_ファームウェア\_ウォッチドッグ\_タイムアウト 
 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ACPI_FIRMWARE_WATCHDOG_TIMEOUT のバグ チェックでは、0x000001D0 の値を持ちます。 
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b1db5ab3bc6a2f0d25c549d4da433680de593d41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c357bdf19c4a98dc537f53db349c8b66c7cf9c57
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550625"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238733"
 ---
-# <a name="bug-check-0x129-workerthreadreturnedwithbadpagingiopriority"></a>バグ チェック 0x129 の。ワーカー\_スレッド\_から返された\_WITH\_不良\_ページング\_IO\_優先順位
+# <a name="bug-check-0x129-workerthreadreturnedwithbadpagingiopriority"></a>バグ チェック 0x129:ワーカー\_スレッド\_から返された\_WITH\_不良\_ページング\_IO\_優先順位
 
 
 ワーカー\_スレッド\_から返された\_WITH\_不良\_ページング\_IO\_優先度のバグ チェックが 0x00000129 の値を持ちます。 これは、ワーカー スレッド IOPriority のページングが呼び出されるワーカー ルーチンによって誤って変更されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="workerthreadreturnedwithbadpagingiopriority-parameters"></a>ワーカー\_スレッド\_から返された\_WITH\_不良\_ページング\_IO\_優先度パラメーター
 

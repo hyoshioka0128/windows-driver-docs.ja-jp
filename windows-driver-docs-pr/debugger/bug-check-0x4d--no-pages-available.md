@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64676cf11f5a95fa3eb734112fcc74321044999c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 062a3525bce8a9a3de5ccbb385760a2b9fc0ccf8
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539579"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239003"
 ---
-# <a name="bug-check-0x4d-nopagesavailable"></a>バグ チェック 0x4D の。いいえ\_ページ\_利用可能
+# <a name="bug-check-0x4d-nopagesavailable"></a>バグ チェック 0x4D:いいえ\_ページ\_利用可能
 
 
 いいえ、\_ページ\_使用可能なバグ チェックが 0x0000004D の値を持ちます。 これは、空きページが継続的に使用しないことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="nopagesavailable-parameters"></a>いいえ\_ページ\_使用可能なパラメーター
 

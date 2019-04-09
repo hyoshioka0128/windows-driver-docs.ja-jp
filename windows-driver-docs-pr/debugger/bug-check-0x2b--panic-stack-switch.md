@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c444000ae1f760ac982cc8b3f00e109957f97a2
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.openlocfilehash: 0572fd89535adc906ed8f16cc9bcaec1017d73b7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582917"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239617"
 ---
 # <a name="bug-check-0x2b-panicstackswitch"></a>バグ チェック 0x2B:パニック\_スタック\_スイッチ
 
 
 パニック\_スタック\_スイッチのバグ チェックが 0x0000002B の値を持ちます。 これは、カーネル モード スタックがオーバーランすることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="panicstackswitch-parameters"></a>パニック\_スタック\_スイッチ パラメーター
 
@@ -70,7 +72,7 @@ ms.locfileid: "56582917"
 
 
 ## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
  
 
  

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 73de05572cf85f133d5bd108d194fac384142d03
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.openlocfilehash: 3cbd94e081b19f34fda6e198b6d80beabb0a16de
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582916"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239787"
 ---
 # <a name="bug-check-0x6b-process1initializationfailed"></a>バグ チェック 0x6B:PROCESS1\_初期化\_失敗
 
 
 PROCESS1\_初期化\_失敗のバグ チェックが 0x0000006B の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="process1initializationfailed-parameters"></a>PROCESS1\_初期化\_FAILED パラメーター
 
@@ -74,7 +76,7 @@ PROCESS1\_初期化\_失敗のバグ チェックが 0x0000006B の値を持ち�
 
  
 ## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。 
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
 
 
 

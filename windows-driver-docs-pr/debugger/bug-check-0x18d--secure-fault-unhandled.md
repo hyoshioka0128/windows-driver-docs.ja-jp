@@ -12,20 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d29faa1bde3e2db63adba5d3f2dd783517b3f3a
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: ea629f806fcf4316d9a790344160447baedef213
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761851"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238727"
 ---
-# <a name="bug-check-0x18d-securefaultunhandled"></a>バグ チェック 0x18D の。セキュリティで保護された\_フォールト\_未処理
+# <a name="bug-check-0x18d-securefaultunhandled"></a>バグ チェック 0x18D:セキュリティで保護された\_フォールト\_未処理
 
 SECURE\_フォールト\_未処理のバグ チェックが 0x0000018D の値を持ちます。
 
 このセキュリティで保護されたカーネルによって、セキュリティで保護されたエラーが発生したバグ チェック indidates を処理できませんでした。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  ## <a name="securefaultunhandled-parameters"></a>セキュリティで保護された\_フォールト\_ハンドルされていないパラメーター
 
@@ -59,4 +61,4 @@ SECURE\_フォールト\_未処理のバグ チェックが 0x0000018D の値を
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)

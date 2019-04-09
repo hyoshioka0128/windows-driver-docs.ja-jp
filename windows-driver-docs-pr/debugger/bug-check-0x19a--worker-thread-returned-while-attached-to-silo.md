@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 95d07e8849980405f7794680fe33a576aef11693
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1b99892a9d0f5daedbf77209d2fb9917c1008c77
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238285"
 ---
-# <a name="bug-check-0x19a-workerthreadreturnedwhileattachedtosilo"></a>バグ チェック 0x19A の。ワーカー\_スレッド\_から返された\_中\_ATTACHED\_TO\_サイロ
+# <a name="bug-check-0x19a-workerthreadreturnedwhileattachedtosilo"></a>バグ チェック 0x19A:ワーカー\_スレッド\_から返された\_中\_ATTACHED\_TO\_サイロ
 
 
 ワーカー\_スレッド\_から返された\_中\_ATTACHED\_TO\_サイロのバグ チェックが 0x0000019A の値を持ちます。 これは、ワーカー スレッドが、サイロにアタッチし、戻る前にデタッチできませんでしたを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="workerthreadreturnedwhileattachedtosilo-parameters"></a>ワーカー\_スレッド\_から返された\_中\_ATTACHED\_TO\_サイロ パラメーター
 

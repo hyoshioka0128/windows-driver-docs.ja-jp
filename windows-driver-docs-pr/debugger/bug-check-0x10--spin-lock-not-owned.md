@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a629f986f7cd9ad4424127a71ef95b171aab97ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 26d4ec2f80b48166957f6fa7c4892f82dc54d21e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550633"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239151"
 ---
-# <a name="bug-check-0x10-spinlocknotowned"></a>0x10 チェックをバグします。スピン\_ロック\_いない\_所有されています。
+# <a name="bug-check-0x10-spinlocknotowned"></a>バグ チェック 0x10:スピン\_ロック\_いない\_所有されています。
 
 
 スピン\_ロック\_いない\_所有されているバグ チェックが 0x00000010 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

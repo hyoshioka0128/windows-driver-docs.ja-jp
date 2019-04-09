@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cefaa99841c08b8093f66b735750d291c4d5a91b
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 4beaf0a9caf92ce20943d837841f60b1a5873068
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761831"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239145"
 ---
-# <a name="bug-check-0x1a0-ttmwatchdogtimeout"></a>バグ チェック 0x1A0 の。TTM\_ウォッチドッグ\_タイムアウト
+# <a name="bug-check-0x1a0-ttmwatchdogtimeout"></a>バグ チェック 0x1A0:TTM\_ウォッチドッグ\_タイムアウト
 
 TTM\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001A0 の値を持ちます。 これは、ターミナル トポロジ manager に構成されているタイムアウトの特定のデバイス操作完了しなかったことが検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="ttmwatchdogtimeout-parameters"></a>TTM\_ウォッチドッグ\_タイムアウト パラメーター
@@ -58,5 +60,5 @@ TTM\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

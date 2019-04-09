@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec00eea7781d4327480194c0ebdbba9091a7235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e20697409442c844c388f6865ca304b5a0d0855f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529487"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239271"
 ---
-# <a name="bug-check-0x12e-invalidmdlrange"></a>バグ チェック 0x12E の。無効な\_MDL\_範囲
+# <a name="bug-check-0x12e-invalidmdlrange"></a>バグ チェック 0x12E:無効な\_MDL\_範囲
 
 
 無効な\_MDL\_範囲のバグ チェックが 0x0000012E の値を持ちます。 これは、指定された仮想アドレスの範囲はソース MDL の範囲がドライバーが IoBuildPartialMdl() 関数を呼び出すし、MDL MDL、ソースの一部をマップする、渡されたことを示します。 これは、通常、ドライバーのバグです。
@@ -35,7 +35,9 @@ IoBuildPartialMdl(
         IN ULONG Length
 ```
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="invalidmdlrange-parameters"></a>無効な\_MDL\_範囲パラメーター
 

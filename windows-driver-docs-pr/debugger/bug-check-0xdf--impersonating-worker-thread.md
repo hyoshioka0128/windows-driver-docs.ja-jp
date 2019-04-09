@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5564fd68a94c0b0f823cf9e4c2da98feac133f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 451058389cdf553c7cd55e3722c36b18f1209ce6
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552192"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238407"
 ---
-# <a name="bug-check-0xdf-impersonatingworkerthread"></a>チェック 0 xdf をバグします。権限を借用\_ワーカー\_スレッド
+# <a name="bug-check-0xdf-impersonatingworkerthread"></a>バグ チェック 0xDF:権限を借用\_ワーカー\_スレッド
 
 
 偽装\_ワーカー\_スレッドのバグ チェックが 0x000000DF の値を持ちます。 これは、作業項目が無効にしないこと偽装完了前にことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="impersonatingworkerthread-parameters"></a>権限を借用\_ワーカー\_スレッド パラメーター
 

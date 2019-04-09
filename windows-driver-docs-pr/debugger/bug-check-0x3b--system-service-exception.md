@@ -5,7 +5,7 @@ ms.assetid: 0e2c230e-d942-4f32-ae8e-7a54aceb4c19
 keywords:
 - バグ チェック 0x3B SYSTEM_SERVICE_EXCEPTION
 - SYSTEM_SERVICE_EXCEPTION
-ms.date: 09/12/2018
+ms.date: 03/24/2019
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 022950eb69951b70c4b514b961385d3c90a92e61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 562064e1ce3ad47671f1e7956287a049818ee1ca
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572295"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239029"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>バグ チェック 0x3B:システム\_サービス\_例外
 
 
 システム\_サービス\_例外のバグ チェックが 0x0000003B の値を持ちます。 これは、特権のないコードから特権を持つコードに遷移するルーチンを実行中に例外が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="systemserviceexception-parameters"></a>システム\_サービス\_例外パラメーター
 
@@ -68,41 +70,81 @@ ms.locfileid: "56572295"
 
 停止コードでは、例外が発生し、その下にあったスレッドがあったコードを実行することを示すシステム スレッドです。
 
-パラメーター 1 で返される例外情報が記載[NTSTATUS 値](https://msdn.microsoft.com/library/cc704588.aspx)は、Windows Driver Kit の inc ディレクトリにある ntstatus.h ファイルでも。 
+パラメーター 1 で返される例外情報が記載[NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)は、Windows Driver Kit の inc ディレクトリにある ntstatus.h ファイルでも。 
 
 可能性のある例外の 1 つの値は、0xC0000005 を示します。ステータス\_アクセス\_違反 
 
 これは、メモリ アクセス違反が発生したことを意味します。 
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
-
-詳細については、以下のトピックを参照してください。
-
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
-
-[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
-
-[使用して、! 拡張機能を分析](using-the--analyze-extension.md)と[! 分析](-analyze.md)
-
-
-以前は、このエラーは、ページ プールの過剰な使用状況にリンクされているし、カーネル コード ユーザー モード グラフィックス ドライバー クロス オーバーを渡して不適切なデータことにより行われる可能性があります。 これは、大文字と小文字が疑われる場合は、追加情報を収集するドライバーの検証ツールのプール オプションを使用します。
-
 <a name="resolution"></a>解決方法
 ----------
 
-**この問題をデバッグします。** 使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。
+**この問題をデバッグします。** 
+
+使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。 使用して、 [u、ub、uu (Unassemble)]()コマンドをアセンブリのプログラム コードを参照してください。
+
+
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+
+```
+SYSTEM_SERVICE_EXCEPTION (3b)
+An exception happened while executing a system service routine.
+Arguments:
+Arg1: 00000000c0000005, Exception code that caused the bugcheck
+Arg2: fffff802328375b0, Address of the instruction which caused the bugcheck
+Arg3: ffff9c0a746c2330, Address of the context record for the exception that caused the bugcheck
+Arg4: 0000000000000000, zero.
+...
+```
+
+詳細については、以下のトピックを参照してください。
+
+[!analyze 拡張機能の使用](using-the--analyze-extension.md) 
+
+[WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+
+その名前がブルー スクリーンに印刷し、場所のメモリに格納されている場合は、エラーのドライバーを識別できます (PUNICODE\_文字列) **KiBugCheckDriver**します。 Dx のデバッガー コマンドを使用するには、これを表示する`dx KiBugCheckDriver`します。
+
+使用して、 [! エラー](-error.md)パラメーター 1 で、例外コードに関する情報を表示する拡張機能。
+
+```
+2: kd> !error 00000000c0000005
+Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+```
+
+障害が発生したときに実行されていたものでスタック テキスト手がかりを確認します。 複数のダンプ ファイルが使用可能な場合は、情報を探す、スタックに共通のコードを比較します。 使用率などのデバッガー コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)エラーが発生したコードを調査します。
+
+使用して、`lm t n`メモリに読み込まれたモジュールを一覧表示します。 
+
+使用`!memusage`と、システム メモリの [全般] の状態を確認します。 `!pte`と`!pool`コマンドがメモリの特定の領域を確認することも可能性があります。 
+
+以前は、このエラーは、ページ プールの過剰な使用状況にリンクされているし、カーネル コード ユーザー モード グラフィックス ドライバー クロス オーバーを渡して不適切なデータことにより行われる可能性があります。 これは、大文字と小文字が疑われる場合は、追加情報を収集するドライバーの検証ツールのプール オプションを使用します。
+
+**ドライバーの検証ツール**
+
+Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 たとえば、Driver Verifier は、メモリ プールなどのメモリ リソースの使用を確認します。 ドライバー コードの実行でエラーが表示される、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
+
+
+**旅行時間のトレース**
+
+バグ チェックはオンデマンドで再現できる場合は、WinDbg のプレビューを使用してタイム トラベル トレースを取ることの可能性を調査します。 詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
+
+
+<a name="remarks"></a>注釈
+----------
 
 Windows のバグの一般的なトラブルシューティングのコードを確認、これらの推奨事項に従ってください。
-
--   最近削除または置換することをお試し、システムにハードウェアを追加した場合 または、更新プログラムが利用可能な製造元に確認します。
 
 -   新しいデバイス ドライバまたはシステム サービスを最近では、追加されている場合を削除するか、それらを更新してみてください。 表示する新しいチェック コードをバグの原因となったシステムで変更内容を調べてください。
 
 -   検索対象**デバイス マネージャー**を任意のデバイスの感嘆符 (!) が付いてを参照してください。 任意のエラーが発生したドライバーのドライバーのプロパティに表示されるイベント ログを確認します。 関連するドライバーを更新してみてください。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)を参照してください。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+
+-   最近削除または置換することをお試し、システムにハードウェアを追加した場合 または、更新プログラムが利用可能な製造元に確認します。
 
 -   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
+
 
  
 

@@ -4,7 +4,7 @@ description: DATA_BUS_ERRO のバグ チェックでは、0x0000002E の値を�
 ms.assetid: 117adb1b-49aa-4c4e-ae01-730d1d653c02
 keywords:
 - バグ チェック 0x2E DATA_BUS_ERRO
-- DATA_BUS_ERRO
+- DATA_BUS_ERROR
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e62c67eb8840eb2f0eea7b559c7f88845ec43ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22b7f40eff415e705d3044fe13a13ee9182a3678
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535372"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239399"
 ---
-# <a name="bug-check-0x2e-databuserror"></a>バグ チェック 0x2E の。データ\_BUS\_エラー
+# <a name="bug-check-0x2e-databuserror"></a>バグ チェック 0x2E:データ\_BUS\_エラー
 
 
 データ\_BUS\_エラーのバグ チェックが 0x0000002E の値を持ちます。 これは、通常、システム メモリ内でパリティ エラーが検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="databuserror-parameters"></a>データ\_BUS\_エラー パラメーター
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea813936047fb886388c4bf56f2472eac19471ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 38deede965ff4eca12381d2b3f36f8c5a9c61ad4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556711"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239539"
 ---
-# <a name="bug-check-0xd6-driverpagefaultbeyondendofallocation"></a>バグのチェックように。ドライバー\_ページ\_フォールト\_を超えて\_エンド\_の\_割り当て
+# <a name="bug-check-0xd6-driverpagefaultbeyondendofallocation"></a>バグ チェック 0xD6:ドライバー\_ページ\_フォールト\_を超えて\_エンド\_の\_割り当て
 
 
 ドライバー\_ページ\_フォールト\_を超えて\_エンド\_の\_割り当てのバグ チェックが 0x000000D6 の値を持ちます。 これは、そのプールの割り当ての末尾を越えるアクセス ドライバーのメモリを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverpagefaultbeyondendofallocation-parameters"></a>ドライバー\_ページ\_フォールト\_を超えて\_エンド\_の\_割り当てパラメーター
 

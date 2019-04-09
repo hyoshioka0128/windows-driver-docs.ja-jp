@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 49eec8d28733577b7ce756ce75ef9a9411c52a41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cf08a862a95b1f9578ac9d3582e227bf07da3f27
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552512"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238669"
 ---
-# <a name="bug-check-0xde-poolcorruptioninfilearea"></a>バグ チェック 0xDE の。プール\_破損\_IN\_ファイル\_領域
+# <a name="bug-check-0xde-poolcorruptioninfilearea"></a>バグ チェック 0xDE:プール\_破損\_IN\_ファイル\_領域
 
 
 プール\_破損\_IN\_ファイル\_領域のバグ チェックが 0x000000DE の値を持ちます。 これは、ドライバーによってページ宛てのディスクを保持するために使用されているプール メモリが破損していることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="poolcorruptioninfilearea-parameters"></a>プール\_破損\_IN\_ファイル\_領域のパラメーター
 

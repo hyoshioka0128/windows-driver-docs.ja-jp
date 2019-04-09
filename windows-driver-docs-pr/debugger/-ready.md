@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7807c11e3c397543c5810490d79a31e3c045f018
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 096c3cf2b89b08b56345c245f888bb35e8a3b507
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527885"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239527"
 ---
-# <a name="ready"></a>! 準備完了
+# <a name="ready"></a>!ready
 
 
 **! 準備**拡張機能が準備完了状態でシステムの各スレッドについての概要情報を表示します。
@@ -70,7 +70,7 @@ ms.locfileid: "56527885"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドのスケジューリングと準備完了の状態については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+スレッドのスケジューリングと準備完了の状態については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------

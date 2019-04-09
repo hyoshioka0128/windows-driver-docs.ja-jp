@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: af398289213475aafea20cda58c526865f6b81ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d9989f43fa9311f9bb695335f587075de2f8076a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572460"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238385"
 ---
 # <a name="bug-check-0x135-registryfilterdriverexception"></a>バグ チェック 0x135:レジストリ\_フィルター\_ドライバー\_例外
 
 
 レジストリ\_フィルター\_ドライバー\_例外のバグ チェックが 0x00000135 の値を持ちます。 このバグチェックはレジストリ フィルタ リング ドライバーで未処理の例外によって発生します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="registryfilterdriverexception-parameters"></a>レジストリ\_フィルター\_ドライバー\_例外パラメーター
 

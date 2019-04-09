@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c24c6fddd20265f13efc4b9b051c80ea846352c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b1062a3418c4e1790a06c7255684df6b294af4fb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553818"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238899"
 ---
-# <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>バグ チェック 0xD3 の。ドライバー\_部分\_する必要があります\_BE\_非ページ
+# <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>バグ チェック 0xD3:ドライバー\_部分\_する必要があります\_BE\_非ページ
 
 
 ドライバー\_部分\_する必要があります\_BE\_NONPAGED バグ チェックが 0x000000D3 の値を持ちます。 これは、システムがプロセスが高すぎる IRQL でページング可能なメモリへのアクセスを試行したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverportionmustbenonpaged-parameters"></a>ドライバー\_部分\_する必要があります\_BE\_NONPAGED パラメーター
 

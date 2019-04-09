@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9afc207e4a93859334bb95cca5703222ef9f46cf
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: ffea1e52291cf7484157ab29d003a25801549d99
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348675"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238369"
 ---
 # <a name="bug-check-0x5-invalidprocessattachattempt"></a>バグ チェック 0x5:無効な\_プロセス\_アタッチ\_試行
 
@@ -27,7 +27,9 @@ ms.locfileid: "57348675"
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="invalidprocessattachattempt-parameters"></a>無効な\_プロセス\_アタッチ\_試行パラメーター
 
@@ -65,7 +67,7 @@ ms.locfileid: "57348675"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このバグ チェックは、ドライバーを呼び出す場合に発生することができます、 **KeAttachProcess**関数と、スレッドは既に別のプロセスにアタッチされています。 使用することをお勧め、 **KeStackAttachProcess**関数。 現在のスレッドが既に別のプロセスにアタッチされている場合、 **KeStackAttachProcess**新しいプロセスに現在のスレッドをアタッチする前に、関数が現在の APC 状態を保存します。

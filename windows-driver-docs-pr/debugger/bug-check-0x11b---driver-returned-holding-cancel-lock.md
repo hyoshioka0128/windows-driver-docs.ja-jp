@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a5d53c3651d3ecd49f5ca4aa2063c71d1bd8ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 645ff1f64e4ca9637f93b8493170db1724351021
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557136"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238433"
 ---
-# <a name="bug-check-0x11b-driverreturnedholdingcancellock"></a>バグ チェック 0x11B の。ドライバー\_から返された\_を保持している\_キャンセル\_ロック
+# <a name="bug-check-0x11b-driverreturnedholdingcancellock"></a>バグ チェック 0x11B:ドライバー\_から返された\_を保持している\_キャンセル\_ロック
 
 
 ドライバー\_から返された\_を保持している\_キャンセル\_ロックのバグ チェックが 0x0000011B の値を持ちます。 このバグ チェックでは、ドライバーがから返されることを示します、*キャンセル*グローバルを保持するルーチンがロックをキャンセルします。 以降のすべてのキャンセル呼び出しが失敗の原因し、いずれかの結果、デッドロックや別のバグを確認します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverreturnedholdingcancellock-parameters"></a>ドライバー\_から返された\_を保持している\_キャンセル\_ロック パラメーター
 

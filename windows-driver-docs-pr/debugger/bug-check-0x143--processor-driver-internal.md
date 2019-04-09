@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d514e1e76a7328d1595d82012b0824fb219cd1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1766f98e3ba794c439ab187d494a7719e8525ea7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532881"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238477"
 ---
-# <a name="bug-check-0x143-processordriverinternal"></a>バグ チェック 0x143 の。プロセッサ\_ドライバー\_内部
+# <a name="bug-check-0x143-processordriverinternal"></a>バグ チェック 0x143:プロセッサ\_ドライバー\_内部
 
 
 プロセッサ\_ドライバー\_内部バグ チェックが 0x00000143 の値を持ちます。 これは、プロセッサの電源管理 (PPM) ドライバーに致命的なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="processordriverinternal-parameters"></a>プロセッサ\_ドライバー\_内部パラメーター
 

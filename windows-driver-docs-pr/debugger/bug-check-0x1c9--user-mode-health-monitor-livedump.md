@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad83a5117a4c0b5b9abe11f3786c044f474a66fa
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 890058b3e990d1a96312070fe7fe3e55f8416c08
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761841"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239709"
 ---
-# <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>バグ チェック 0x1C9 の。ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP
+# <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>バグ チェック 0x1C9:ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP
 
 ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP バグ チェックが 0x000001C9 の値を持ちます。 1 つまたは複数の重要なユーザー モード コンポーネントが正常性チェックを満たすために失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="usermodehealthmonitorlivedump-parameters"></a>ユーザー\_モード\_ヘルス\_モニター\_LIVEDUMP パラメーター
@@ -118,5 +120,5 @@ ms.locfileid: "58761841"
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

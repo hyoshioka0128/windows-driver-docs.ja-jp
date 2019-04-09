@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dceba8d19fb18bb6c9f06970d6cde3272d3c374
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 97a048d99b5a4a6ceb5d33184773f6b432237865
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348929"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239825"
 ---
 # <a name="bug-check-0x10e-videomemorymanagementinternal"></a>バグ チェック 0x10E:ビデオ\_メモリ\_管理\_内部
 
 
 ビデオ\_メモリ\_管理\_内部バグ チェックが 0x0000010E の値を持ちます。 これは、ビデオ メモリ マネージャーがないから回復できるように条件を発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="videomemorymanagementinternal-parameters"></a>ビデオ\_メモリ\_管理\_内部パラメーター
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 744c7534175befda69c188356d04228790ad57f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d261bbcfd77c797b073b56df65556de82d9f80a7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552197"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238915"
 ---
-# <a name="bug-check-0xbff-bcbthminiverifierfault"></a>バグ チェック 0xBFF の。BC\_BTHMINI\_VERIFIER\_エラー
+# <a name="bug-check-0xbff-bcbthminiverifierfault"></a>バグ チェック 0xBFF:BC\_BTHMINI\_VERIFIER\_エラー
 
 
 ビジネス継続性\_BTHMINI\_VERIFIER\_フォールトのバグ チェックが 0x00000BFF の値を持ちます。 これは、Bluetooth ミニポート拡張可能なドライバーの検証ツールが違反をキャッチすることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bcbthminiverifierfault-parameters"></a>BC\_BTHMINI\_VERIFIER\_フォールト パラメーター
 

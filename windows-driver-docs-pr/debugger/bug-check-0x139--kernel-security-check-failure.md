@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd0cf7948966e7c8c5cf410361a6e42bdf2ab23
-ms.sourcegitcommit: 598259684cbfcf39b16dcc91bd8d341b43fb8876
+ms.openlocfilehash: a4ec4a3fcabe13dede1109d22ebffe4d1efcd801
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56582860"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239665"
 ---
 # <a name="bug-check-0x139-kernelsecuritycheckfailure"></a>バグ チェック 0x139:カーネル\_セキュリティ\_確認\_エラー
 
 
 カーネル\_セキュリティ\_確認\_エラーのバグ チェックが 0x00000139 の値を持ちます。 このバグ チェックでは、カーネルの重要なデータ構造体の破損が検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bug-check-0x139-kernelsecuritycheckfailure-parameters"></a>バグ チェック 0x139 カーネル\_セキュリティ\_確認\_エラー パラメーター
 
@@ -99,7 +101,7 @@ ms.locfileid: "56582860"
 
 この問題の原因は通常問題を判断するには、追加情報を収集するためにデバッガーを使用する必要があります。 複数のダンプ ファイルは、この停止コードが停止コードが表示されるときに実行されているコードなど、類似した特性を調べる必要があります。
 
-詳細については、[Windows デバッガー (WinDbg) を使用してクラッシュ ダンプ分析](crash-dump-files.md)、[を使用して、! 拡張機能を分析](using-the--analyze-extension.md)と[! 分析](-analyze.md)を参照してください。
+詳細については、次を参照してください。 [Windows デバッガー (WinDbg) を使用してクラッシュ ダンプ分析](crash-dump-files.md)、[を使用して、! 拡張機能を分析](using-the--analyze-extension.md)と[! 分析](-analyze.md)します。
 
 イベント ログを使用して、発生するより高いレベルのイベントが先頭までこの停止コードを参照してください。
 
@@ -109,7 +111,7 @@ ms.locfileid: "56582860"
 
 -   新しいデバイス ドライバまたはシステム サービスを最近では、追加されている場合を削除するか、それらを更新してみてください。 表示する新しいチェック コードをバグの原因となったシステムで変更内容を調べてください。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)を参照してください。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
 
 -   検索対象**デバイス マネージャー**を任意のデバイスの感嘆符 (!) が付いてを参照してください。 任意のエラーが発生したドライバーのドライバーのプロパティに表示されるイベント ログを確認します。 関連するドライバーを更新してみてください。
 
@@ -120,9 +122,9 @@ ms.locfileid: "56582860"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
-[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
  
 

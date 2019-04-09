@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a70e2dddcc436f43097f360b2b9831bf93c879a
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 576648c2109492a229570a127fbe8cf4e190423e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464128"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238675"
 ---
 # <a name="bug-check-0xa4-cnssfilesystemfilter"></a>バグ チェック 0xA4:CNSS\_ファイル\_システム\_フィルター
 
 
 CNSS\_ファイル\_システム\_フィルターのバグ チェックが 0x000000A4 の値を持ちます。 このバグ チェックでは、CNSS ファイル システム フィルターで問題が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="cnssfilesystemfilter-parameters"></a>CNSS\_ファイル\_システム\_フィルター パラメーター
 

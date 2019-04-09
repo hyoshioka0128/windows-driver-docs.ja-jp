@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ccde555cee1569001d053652d654a43284fd12e5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 4a52f0d0464959a6b8943d88ee38e49d154865a5
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464372"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239447"
 ---
 # <a name="bug-check-0x164-win32kcriticalfailure"></a>バグ チェック 0x164:WIN32K\_重大\_エラー
 
 
 WIN32K\_重大\_エラーのバグ チェックが 0x00000164 の値を持ちます。 これは、Win32k の重大なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="win32kcriticalfailure-parameters"></a>WIN32K\_重大\_エラー パラメーター
 

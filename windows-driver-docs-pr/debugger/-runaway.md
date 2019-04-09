@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe8f7959412c2fa413f9ad1f448029d13823ad8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: db1da6ce2bf3c95e0ea15f50dcb51ea38a7e9afa
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578081"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238907"
 ---
 # <a name="runaway"></a>!runaway
 
@@ -70,9 +70,9 @@ Uext.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドがユーザー モードについては、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。 プロセスとスレッドの分析に関する詳細については、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+スレッドがユーザー モードについては、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。 プロセスとスレッドの分析に関する詳細については、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能は、どのスレッドをスピン コントロールからまたは CPU 時間がかかりすぎるの消費を確認する簡単な方法を示します。

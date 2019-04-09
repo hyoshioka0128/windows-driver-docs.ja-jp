@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fb8b1627b224e8188e753bd39dddf814578480
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 4b0d20546b3e6d4a9c118ee5d0765c401f4d1443
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464132"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239757"
 ---
 # <a name="bug-check-0x23-fatfilesystem"></a>バグ チェック 0x23:FAT\_ファイル\_システム
 
 
 FAT\_ファイル\_システムのバグ チェックが 0x00000023 の値を持ちます。 これは、FAT ファイル システムで問題が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="fatfilesystem-parameters"></a>FAT\_ファイル\_システム パラメーター
 

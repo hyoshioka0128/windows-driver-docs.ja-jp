@@ -5,7 +5,7 @@ ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - バグ チェック 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
-ms.date: 09/12/2018
+ms.date: 03/29/2019
 topic_type:
 - apiref
 api_name:
@@ -13,24 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42817f2cfc7c0973970dc8d2bf42bab2a5862993
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 06cf3dc1e16b8549aea68bea3566f783512b6117
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464190"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238673"
 ---
 # <a name="bug-check-0x1a-memorymanagement"></a>バグ チェック 0x1A:メモリ\_管理
 
 
 メモリ\_管理のバグ チェックが 0x0000001A の値を持ちます。 これは、重大なメモリ管理エラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="memorymanagement-parameters"></a>メモリ\_管理パラメーター
 
-
-パラメーター 1 が; 関心のある唯一のパラメーターこれは、正確な違反を識別します。
+パラメーター 1 では、正確な違反を識別します。
 
 <table>
 <colgroup>
@@ -105,6 +106,10 @@ ms.locfileid: "57464190"
 <td align="left"><p>0x3451</p></td>
 <td align="left"><p>スワップ アウトされている、カーネル スレッド スタックの Pte が破損しています。</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>0x3453</p></td>
+<td align="left"><p>終了したプロセスのすべてのページ テーブル ページが未解決の参照のため削除できませんでした。  これは通常、プロセスのページ テーブル構造内の破損を示します。</p></td>
+</tr>
 <tr class="odd">
 <td align="left"><p>0x4477</p></td>
 <td align="left"><p>ドライバーは、システム プロセスのユーザー領域で、未割り当てのアドレスに書き込もうとしました。 2 番目のパラメーターには、書き込みの試行のアドレスが含まれています。</p></td>
@@ -133,6 +138,14 @@ ms.locfileid: "57464190"
 <tr class="even">
 <td align="left"><p>0x888A</p></td>
 <td align="left"><p>(PTE 可能性がありますまたは PFN) の内部メモリの管理構造が破損しています。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x9696</p></td>
+<td align="left"><p>その最上位レベルのプロセスに接続が解除されて、破損したリンケージを持つ PFN (パラメーター 2) が発生しました。  これは、PFN 構造内の破損を示します。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x15001</p></td>
+<td align="left"><p>以前に保護されたメモリは保護されていない処理中にエラーが発生しました。  これは、呼び出し元が誤って不適切なプロセスのコンテキストで MmUnsecureVirtualMemory を呼び出した場合に発生します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
@@ -183,10 +196,14 @@ ms.locfileid: "57464190"
 <td align="left"><p>IoPageFrameNode が null です。 2 番目のパラメーターは、PageFrameIndex です。</p></td>
 </tr>
 <tr class="odd">
+<td align="left"><p>0x6194A</p></td>
+<td align="left"><p>マップ解除されているは I/O 領域物理ページ上のデクリメント、参照カウント エラーが発生しました。 現在参照されていませんエントリを逆参照されているがします。  パラメーター 2 と 3 は、マップを解除されている呼び出し元の I/O 容量範囲を説明し、パラメーター 4 を参照するのには予定されている I/O 領域物理ページですがありません。 </p></td>
+</tr>
+<tr class="even">
 <td align="left"><p>0x03030303</p></td>
 <td align="left"><p>ブート ローダーが壊れています。 (この値は、Intel Itanium のコンピューターにのみ適用されます)。</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><p>0x03030308</p></td>
 <td align="left"><p>削除 (または truncate) の範囲で使用されて、ローダーに安全に削除することはできませんので、システムが停止コードを発行する必要があります。  2 番目のパラメーターは、HighestPhysicalPage です。</p></td>
 </tr>
@@ -197,13 +214,6 @@ ms.locfileid: "57464190"
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。 実行している、 [ **Windows Memory Diagnostic** ](https://social.technet.microsoft.com/wiki/contents/articles/29343.windows-10-technical-preview-running-windows-memory-diagnostics-tool.aspx)ツールは、任意の種類の物理メモリ モジュールに影響を与える問題を除外するにも役立つ可能性があります。
- 
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
 
- 
-
- 
-
-
-
-
+実行している、 [ **Windows Memory Diagnostic** ](https://social.technet.microsoft.com/wiki/contents/articles/29343.windows-10-technical-preview-running-windows-memory-diagnostics-tool.aspx)ツールは、任意の種類の物理メモリ モジュールに影響を与える問題を除外するにも役立つ可能性があります。

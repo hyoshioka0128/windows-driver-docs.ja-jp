@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1524ad16479a5fd65ae03dc64742e375c5710a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 62fec6bacc2e4df5a66413ddfcca513d1bb868b1
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552589"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239033"
 ---
-# <a name="bug-check-0x5b-setenvvarfailed"></a>データ 0x5B チェックをバグします。設定\_ENV\_VAR\_失敗
+# <a name="bug-check-0x5b-setenvvarfailed"></a>バグ チェック 0x5B:設定\_ENV\_VAR\_失敗
 
 
 セット\_ENV\_VAR\_失敗のバグ チェックが 0x0000005B の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

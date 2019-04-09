@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 262e4dd5cb7fb99df372c6448d1424b67addbd44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b8a939289ca411adaa3e5ca6a7a06be1b669c256
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558110"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238424"
 ---
-# <a name="bug-check-0xd5-driverpagefaultinfreedspecialpool"></a>バグ チェック 0xD5 の。ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プール
+# <a name="bug-check-0xd5-driverpagefaultinfreedspecialpool"></a>バグ チェック 0xD5:ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プール
 
 
 ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プールのバグ チェックが 0x000000D5 の値を持ちます。 これは、ドライバーが既に解放されているメモリを参照することを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverpagefaultinfreedspecialpool-parameters"></a>ドライバー\_ページ\_フォールト\_IN\_FREED\_特殊\_プールのパラメーター
 

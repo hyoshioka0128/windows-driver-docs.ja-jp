@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d567902adcc548e04d258e7feebf9f0a1b0bfb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: abc5ee90d151b5c37dbc9d4053a4e92c105ef162
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579690"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239739"
 ---
 # <a name="bug-check-0x9c-machinecheckexception"></a>バグ チェック 0x9C:マシン\_確認\_例外
 
 
 マシン\_確認\_例外のバグ チェックが 0x0000009c の解説の値を持ちます。 このバグ チェックでは、致命的なマシン チェック例外が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="machinecheckexception-parameters"></a>マシン\_確認\_例外パラメーター
 
@@ -198,7 +200,7 @@ Itanium ベースのプロセッサでは、パラメーターは、次の意味
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Windows Vista およびそれ以降のオペレーティング システムでは、このバグ チェックは、次の状況でのみ発生します。

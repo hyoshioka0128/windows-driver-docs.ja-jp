@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e1f134aa4e2fd07875605ebdebf962b09e2fb666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 44ebf74d7c9f495ebe035da08e01476c4c833f8e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581024"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239016"
 ---
 # <a name="bug-check-0x4e-pfnlistcorrupt"></a>バグ チェック 0x4E:PFN\_一覧\_が壊れています
 
 
 PFN\_一覧\_破損バグ チェックが 0x0000004E の値を持ちます。 これは、ページのフレーム数 (PFN) の一覧が破損していることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="pfnlistcorrupt-parameters"></a>PFN\_一覧\_破損しているパラメーター
 
@@ -109,7 +111,7 @@ PFN\_一覧\_破損バグ チェックが 0x0000004E の値を持ちます。 �
 
 このエラーは通常、不良メモリ記述子のリストを渡してドライバーで発生します。 たとえば、ドライバーを呼び出したことがある**MmUnlockPages**同じリストに 2 回です。
 
-カーネル デバッガーを使用できる場合は、スタック トレースを調べる: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッグ拡張機能を根本原因を突き止めるに非常に役立ちのいずれかを入力できるとバグ チェックに関する情報が表示されます[ **k (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)呼び出し履歴を表示するコマンド。
+カーネル デバッガーを使用できる場合は、スタック トレースを調べる: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッグ拡張機能を根本原因を突き止めるに役立ち、入力のいずれかのことができますとバグ チェックに関する情報が表示されます、[ **k (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)呼び出し履歴を表示するコマンド。
 
  
 

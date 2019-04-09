@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fec71d67eabeb87eb9c13f860be93e28ec95a6c8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 9e7f31d1f9c4dcf46b51cd462a5432d015334b4e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350427"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238559"
 ---
 # <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>バグ チェック 0xC9:ドライバー\_VERIFIER\_IOMANAGER\_違反
 
 
 ドライバー\_VERIFIER\_IOMANAGER\_違反のバグ チェックが 0x000000C9 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**I/O の検証**違反。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driververifieriomanagerviolation-parameters"></a>ドライバー\_VERIFIER\_IOMANAGER\_違反パラメーター
 
@@ -517,7 +519,7 @@ ms.locfileid: "57350427"
 <tr class="odd">
 <td align="left"><p>0x238</p></td>
 <td align="left"><p>警告</p></td>
-<td align="left"><p>呼び出し元<strong>IoInitializeIrp</strong>で割り当てられた IRP が渡される<strong>IoAllocateIrp</strong>します。 これは無効な不要なし、通常の用途でのパフォーマンスが低下します。 この IRP がリサイクルされている場合は、<strong>IoReuseIrp</strong> Windows Driver Kit でを参照してください。</p></td>
+<td align="left"><p>呼び出し元<strong>IoInitializeIrp</strong>で割り当てられた IRP が渡される<strong>IoAllocateIrp</strong>します。 これは無効な不要なし、通常の用途でのパフォーマンスが低下します。 この IRP がリサイクルされている場合は、次を参照してください。 <strong>IoReuseIrp</strong> Windows Driver Kit でします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x239</p></td>

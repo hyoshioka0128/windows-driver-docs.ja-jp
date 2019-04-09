@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 962aa3e285f9899b78fd34dcfdcd861ecb7ce804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e56ce477e184f0fb631d8a9ed4910842803fb878
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570808"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238599"
 ---
 # <a name="bug-check-0xfc-attemptedexecuteofnoexecutememory"></a>バグ チェック 0xFC:試行\_EXECUTE\_の\_NOEXECUTE\_メモリ
 
 
 試行\_EXECUTE\_の\_NOEXECUTE\_メモリのバグ チェックが 0x000000FC の値を持ちます。 これは、非実行可能メモリを実行しようとすることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="attemptedexecuteofnoexecutememory-parameters"></a>試行\_EXECUTE\_の\_NOEXECUTE\_メモリ パラメーター
 
@@ -66,7 +68,7 @@ ms.locfileid: "56570808"
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 非実行可能メモリを実行しようとするドライバー名の Unicode 文字列がバグの確認画面で印刷されはでも保存可能であれば、 **KiBugCheckDriver**します。 それ以外の場合、ドライバーの問題は、多くの場合、スタック トレースを実行し、現在の命令ポインターをレビューして確認できます。
 
  

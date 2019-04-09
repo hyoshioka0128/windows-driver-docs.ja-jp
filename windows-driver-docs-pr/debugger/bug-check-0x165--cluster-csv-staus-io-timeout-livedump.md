@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f0aa1e27a6a613ad480c0720e509cb13b662e3f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: ea0567ae1faa6321fdec5f3e72e5d7771a61223f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743552"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239795"
 ---
-# <a name="bug-check-0x165-clustercsvstatusiotimeoutlivedump"></a>バグ チェック 0x165 の。クラスター\_CSV\_状態\_IO\_タイムアウト\_LIVEDUMP
+# <a name="bug-check-0x165-clustercsvstatusiotimeoutlivedump"></a>バグ チェック 0x165:クラスター\_CSV\_状態\_IO\_タイムアウト\_LIVEDUMP
 
 クラスター\_CSV\_状態\_IO\_タイムアウト\_LIVEDUMP バグ チェックが 0x00000165 の値を持ちます。 これは、非調整ノード上の SMB クライアントがという苦情調整のノードで IO が時間がかかりすぎると、STATUS_IO_TIMEOUT ですべての IOs が失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="clustercsvstatusiotimeoutlivedump-parameters"></a>クラスター\_CSV\_状態\_IO\_タイムアウト\_LIVEDUMP パラメーター
 
@@ -53,7 +55,7 @@ ms.locfileid: "56743552"
 
 [使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

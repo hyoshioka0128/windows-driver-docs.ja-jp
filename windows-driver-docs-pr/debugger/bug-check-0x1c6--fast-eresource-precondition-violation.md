@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a51f1d883995da59f501da9f4221da1778f918f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e37240bf8b0339b69aad892f395b007fa0a3ef58
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743533"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238597"
 ---
-# <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>バグ チェック 0x1C6 の。高速\_÷ リソース\_PRECONDITION\_違反
+# <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>バグ チェック 0x1C6:高速\_÷ リソース\_PRECONDITION\_違反
 
 高速\_÷ リソース\_PRECONDITION\_違反のバグ チェックが 0x000001C6 の値を持ちます。 これは、現在のスレッドがリソースの高速ルーチンに無効な呼び出しを実行することを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="fasteresourcepreconditionviolation-parameters"></a>高速\_÷ リソース\_PRECONDITION\_違反パラメーター
@@ -130,5 +132,5 @@ ms.locfileid: "56743533"
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

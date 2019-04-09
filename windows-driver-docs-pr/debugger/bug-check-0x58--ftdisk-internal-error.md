@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a4d35301dc43436653c73f298b8b10495df9d7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0bc8c9bd495d6780aac4dc5a65bfe512ffbc486c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530606"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239428"
 ---
-# <a name="bug-check-0x58-ftdiskinternalerror"></a>バグ チェック 0x58 の。FTDISK\_内部\_エラー
+# <a name="bug-check-0x58-ftdiskinternalerror"></a>バグ チェック 0x58:FTDISK\_内部\_エラー
 
 
 FTDISK\_内部\_エラーのバグ チェックが 0x00000058 の値を持ちます。 ミラー化されたパーティションの間違ったコピーから、システムが起動された場合に発行されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="ftdiskinternalerror-parameters"></a>FTDISK\_内部\_エラー パラメーター
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab244ec9ef038e9725542420e750a0a1bc3b8a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f26da490409da83cd46827353569bbdfe112b977
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553058"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239251"
 ---
-# <a name="bug-check-0xa3-acpidriverinternal"></a>バグ チェック 0xA3 の。ACPI\_ドライバー\_内部
+# <a name="bug-check-0xa3-acpidriverinternal"></a>バグ チェック 0xA3:ACPI\_ドライバー\_内部
 
 
 ACPI\_ドライバー\_内部バグ チェックが 0x000000A3 の値を持ちます。 このバグ チェックでは、ACPI ドライバーに内部に矛盾が検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="acpidriverinternal-parameters"></a>ACPI\_ドライバー\_内部パラメーター
 

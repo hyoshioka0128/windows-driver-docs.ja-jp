@@ -12,16 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c45f39760f278e31966d8569e3befb2ae63fccd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 89416fb269fc99c3843cf45d963136baca8d437e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557941"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239411"
 ---
 # <a name="bug-check-bug-check-0x1d2-workerthreadinvalidstate"></a>チェックのバグ チェック 0x1D2 をバグします。ワーカー\_スレッド\_無効な\_状態 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ワーカー\_スレッド\_無効な\_状態のバグ チェックが 0x000001D2 の値を持ちます。 
 

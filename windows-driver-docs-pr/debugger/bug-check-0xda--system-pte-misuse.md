@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: afa23a3cd8303b832b9b101640f0ab340fadc932
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 16ae75a5de50453400e8463990805b1c82d98118
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464098"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239245"
 ---
 # <a name="bug-check-0xda-systemptemisuse"></a>バグ チェック 0xDA:システム\_PTE\_誤用
 
 
 システム\_PTE\_誤用のバグ チェックが 0x000000DA の値を持ちます。 これは、不適切な方法でページ テーブル エントリ (PTE) ルーチンが使用されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="systemptemisuse-parameters"></a>システム\_PTE\_誤用パラメーター
 

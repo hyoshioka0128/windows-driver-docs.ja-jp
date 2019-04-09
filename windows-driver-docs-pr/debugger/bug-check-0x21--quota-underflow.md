@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5db672f6895f09485bdf23a646c95d8e5a1dea25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d05dfa7ef85435f6ae06c9c1e625404c3628d2f0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572347"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238367"
 ---
 # <a name="bug-check-0x21-quotaunderflow"></a>バグ チェック 0x21:クォータ\_アンダー フロー
 
 
 クォータ\_アンダー フローのバグ チェックが 0x00000021 の値を持ちます。 これは、クォータの料金を課金が以前よりも多くのクォータ、特定のブロックを返すことによって誤りがあることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="quotaunderflow-parameters"></a>クォータ\_アンダー フローのパラメーター
 

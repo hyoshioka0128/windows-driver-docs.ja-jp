@@ -13,18 +13,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f36a31a1a9cf252cf110cbe5cdc6f82e246ba79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 02cd8f6a04923fb0da6d64e7f2bb8e77fee732fd
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581395"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238615"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>バグ チェック 0x12B:障害のある\_ハードウェア\_破損した\_ページ
 
 不良\_ハードウェア\_破損した\_ページのバグ チェックが 0x0000012B の値を持ちます。 このバグ チェックでは、Windows メモリ マネージャーには、破損が検出されたことと、破損でしたのみが原因である物理アドレス指定を使用してメモリにアクセスするコンポーネントを示します。  
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="faultyhardwarecorruptedpage-parameters"></a>障害のある\_ハードウェア\_破損した\_ページ パラメーター
 
@@ -61,11 +63,11 @@ ms.locfileid: "56581395"
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +120,7 @@ ms.locfileid: "56581395"
 
 注: 破損は、シングル ビット エラーによって発生したし、のバグ チェックが生成することがなく、この条件を自動的に修正がある場合、圧縮されたストア マネージャーを検出できます。 このバグチェックは、単一ビット エラーによって破損の原因がない場合、圧縮されたストア マネージャーによって報告されます。
 
-Windows メモリ マネージャーとメモリの圧縮の詳細については、[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でを参照してください。
+Windows メモリ マネージャーとメモリの圧縮の詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
 
 
 ## <a name="resolution"></a>解決方法
@@ -132,9 +134,9 @@ Windows メモリ マネージャーとメモリの圧縮の詳細について�
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
-[Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows カーネルモード メモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
 
 [Channel 9 ビデオ メモリ圧縮](https://channel9.msdn.com/Blogs/Seth-Juarez/Memory-Compression-in-Windows-10-RTM)
 

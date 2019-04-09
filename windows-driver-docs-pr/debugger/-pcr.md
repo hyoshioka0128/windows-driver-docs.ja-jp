@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ec532c33beaeae8619a1de8914610ae2eb9925
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 018741ae2a8f28b7b29c55ca10b00f6564a5c5f5
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531397"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239213"
 ---
-# <a name="pcr"></a>! pcr
+# <a name="pcr"></a>!pcr
 
 
 **! Pcr**拡張機能は、特定のプロセッサのプロセッサ コントロール リージョン (PCR) の現在の状態を表示します。
@@ -58,7 +58,7 @@ PCR 情報を取得するプロセッサを指定します。 場合*プロセ�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-PCR、および、PRCB については、次を参照してください*Microsoft Windows internals 』*、Mark Russinovich と David Solomon。 (。この本できない場合がありますのいくつかの言語および国。)
+PCR、および、PRCB については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。
 
 <a name="remarks"></a>注釈
 -------

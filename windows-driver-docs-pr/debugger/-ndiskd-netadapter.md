@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c693ace3df2b1f1be9d9b39e4cab34fef6ca870
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5ac59f214f94532ef01f65859d4e0e0f1bb962a7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573154"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238735"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
 
@@ -46,7 +46,7 @@ NDIS ミニポートのハンドル。
 <span id="_______-diag______"></span><span id="_______-DIAG______"></span> *-診断*   
 自動診断アラートが表示されます (ある場合)。
 
-<span id="_______-state______"></span><span id="_______-STATE______"></span> *-state*   
+<span id="_______-state______"></span><span id="_______-STATE______"></span> *-状態*   
 ミニポートの現在の状態を表示します。
 
 <span id="_______-bindings______"></span><span id="_______-BINDINGS______"></span> *-バインド*   
@@ -76,7 +76,7 @@ NDIS ポートの一覧が表示されます。
 <span id="_______-aoac______"></span><span id="_______-AOAC______"></span> *-aoac*   
 AOAC (コネクト スタンバイ) の状態を示しています。
 
-<span id="_______-wol______"></span><span id="_______-WOL______"></span> *-wol*   
+<span id="_______-wol______"></span><span id="_______-WOL______"></span> *wol-*   
 Wake on LAN (WoL) の構成を示します。
 
 <span id="_______-protocoloffloads______"></span><span id="_______-PROTOCOLOFFLOADS______"></span> *-protocoloffloads*   
@@ -88,7 +88,7 @@ Receive Side Scaling のパラメーターを示します。
 <span id="_______-hw______"></span><span id="_______-HW______"></span> *-hw*   
 ハードウェア リソースが表示されます。
 
-<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-device*   
+<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-デバイス*   
 基になる NT デバイス オブジェクトに関する情報が表示されます。
 
 <span id="_______-wmi______"></span><span id="_______-WMI______"></span> *-wmi*   
@@ -106,7 +106,7 @@ NDIS で提供される WMI の Guid を示しています。
 <span id="_______-log______"></span><span id="_______-LOG______"></span> *-log*   
 PnP と電力のイベント ログを表示します。
 
-<span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-grovel*   
+<span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-もの grovel されます*   
 メモリ内を検索するミニポートのブロックを強制的にします。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-findname*   
@@ -124,7 +124,7 @@ NIC のスイッチ機能を示しています。
 <span id="_______-nicswitches______"></span><span id="_______-NICSWITCHES______"></span> *-nicswitches*   
 NIC のスイッチを示します。
 
-<span id="_______-iov______"></span><span id="_______-IOV______"></span> *-iov*   
+<span id="_______-iov______"></span><span id="_______-IOV______"></span> *対応*   
 SR-IOV (Single Root I/O Virtualization) 機能を示しています。
 
 <span id="_______-vfs______"></span><span id="_______-VFS______"></span> *-vfs*   
@@ -143,7 +143,7 @@ SR-IOV Vf (仮想フィルター) を示しています。
 
 Ndiskd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 実行して **! ndiskd.netadapter**パラメーターなしで、関連付けられているミニポート ドライバーと共にシステム上ですべてのネットワーク アダプターの一覧を取得することができます。 この出力の例では、Microsoft カーネル デバッグ ネットワーク アダプターが、そのハンドルは ffffdf80140c71a0 を探します。 カーネル デバッグ ネットワーク アダプターに関する詳細については、次を参照してください。[ネットワーク経由でのカーネル デバッグ](https://go.microsoft.com/fwlink/p/?linkid=845868)NDIS ブログ。
@@ -155,7 +155,7 @@ Ndiskd.dll
     ffffdf801418d650   ffffdf80140c71a0    Microsoft Kernel Debug Network Adapter
 ```
 
-ミニポート ドライバーのハンドルをクリックするか入力して、 **! ndiskd.netadapter-処理**、そのデバイスで参照すべて NDIS の状態のようになりました。 トラブルシューティングのネットワーク ドライバーまたはネットワーク スタックに問題がある場合を把握するための出発点として非常に便利なことができます。 たとえば、ドライバーのデータパス状態を確認でき、か接続されているかどうかを参照してください。
+ミニポート ドライバーのハンドルをクリックするか入力して、 **! ndiskd.netadapter-処理**、そのデバイスで参照すべて NDIS の状態のようになりました。 これは、トラブルシューティングのネットワーク ドライバーまたはネットワーク スタックに問題がある場合を把握するための出発点として非常に役立ちます。 たとえば、ドライバーのデータパス状態を確認でき、か接続されているかどうかを参照してください。
 
 このネット アダプターのレポートの下部にある、他のリンクが多数など、保留中の Oid の詳細情報を調べたりをクリックすることができ、タスクの状態の負荷を軽減します。 これらのリンクは、多くのパラメーターの対応 **! ndiskd.netadapter**します。
 
@@ -271,7 +271,7 @@ HANDLERS
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
 
 [Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
 

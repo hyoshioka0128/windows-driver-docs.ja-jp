@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 40c82654cf44d8a3f637acd034bdda06970a93c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64388ae3a95bb6aa67b225545637290bbf023457
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532882"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239377"
 ---
-# <a name="bug-check-0x14b-socsubsystemfailure"></a>バグ チェック 0x14B の。SOC\_サブシステム\_エラー
+# <a name="bug-check-0x14b-socsubsystemfailure"></a>バグ チェック 0x14B:SOC\_サブシステム\_エラー
 
 
 SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムに回復不能なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター
 
@@ -66,7 +68,7 @@ SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 ```dbgcmd
 2: kd> !analyze -v
@@ -104,7 +106,7 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 

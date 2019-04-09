@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0c41387f4e796b774b103995523355d83895cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2f2fe3f647e69f03cbce14c0d0e3376d22e939d9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535298"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238388"
 ---
-# <a name="bug-check-0x51-registryerror"></a>バグ チェック 0x51 の。レジストリ\_エラー
+# <a name="bug-check-0x51-registryerror"></a>バグ チェック 0x51:レジストリ\_エラー
 
 
 レジストリ\_エラーのバグ チェックが 0x00000051 の値を持ちます。 これは、レジストリの重大なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="registryerror-parameters"></a>レジストリ\_エラー パラメーター
 

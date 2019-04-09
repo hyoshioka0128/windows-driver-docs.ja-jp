@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c5547d041da43f91f116996ccc4e3860e4e91e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5da4bdadf296005f496d0957899df646e755e489
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550658"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238537"
 ---
-# <a name="bug-check-0x117-videotdrtimeoutdetected"></a>バグ チェック 0x117 の。ビデオ\_TDR\_タイムアウト\_検出
+# <a name="bug-check-0x117-videotdrtimeoutdetected"></a>バグ チェック 0x117:ビデオ\_TDR\_タイムアウト\_検出
 
 
 ビデオ\_TDR\_タイムアウト\_検出されたバグ チェックが 0x00000117 の値を持ちます。 これは、ディスプレイ ドライバーが適切な時間内に応答が失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="videotdrtimeoutdetected-parameters"></a>ビデオ\_TDR\_タイムアウト\_検出パラメーター
 
@@ -88,7 +90,7 @@ GPU には、モニターにグラフィックスを表示する許可より多�
     -   欠陥のある部分 (メモリ モジュール、マザーボードなど。)
 -   視覚効果、またはバック グラウンドで実行されているプログラムが多すぎる遅らせることができる PC できるように、必要に応じて、ビデオ カードが応答しないことができます。
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 ```dbgcmd
 3: kd> !analyze -v
@@ -185,7 +187,7 @@ BUGCHECK_P2: ffffffff9a02381e
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 
@@ -211,7 +213,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 <a name="remarks"></a>注釈
 -------
 
-**ハードウェア認定要件**
+**ハードウェア認定の要件**
 
 TDR を実装するときにハードウェア デバイスが満たす必要のある要件については、ドキュメントを参照して、WHCK の*Device.Graphics.TDRResiliency*します。
 

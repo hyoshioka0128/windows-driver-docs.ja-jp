@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ffea7416fc30165647522f46136a8c67870ddb99
-ms.sourcegitcommit: 598259684cbfcf39b16dcc91bd8d341b43fb8876
+ms.openlocfilehash: cd7af6b126c658078e1f6c723a3854b5d0f43fa9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56582871"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239567"
 ---
 # <a name="bug-check-0x126-netioinvalidpoolcaller"></a>バグ チェック 0x126:NETIO\_無効な\_プール\_呼び出し元
 
 
 NETIO\_無効な\_プール\_呼び出し元のバグ チェックが 0x00000126 の値を持ちます。 これは、無効なプールの要求を FSB や MDL など、マネージ netio メモリ プールにしたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="netioinvalidpoolcaller-parameters"></a>NETIO\_無効な\_プール\_呼び出し元のパラメーター
 

@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f9f9104b5e1d34899172e6aec2137ea3834e23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8b18636e872b7dbe9e4a7687cf6d2077fa56d836
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552588"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239163"
 ---
-# <a name="bug-check-0x6a-lpcinitializationfailed"></a>バグ チェック 0x6A の。LPC\_初期化\_失敗
+# <a name="bug-check-0x6a-lpcinitializationfailed"></a>バグ チェック 0x6A:LPC\_初期化\_失敗
 
 
 LPC\_初期化\_失敗のバグ チェックが 0x0000006A の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

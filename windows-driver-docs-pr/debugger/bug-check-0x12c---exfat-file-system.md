@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 02e5850c4f86c44f5dba539ec2938a48d1a199fb
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 970ff41f2970e11104da3bc45da8cde050659524
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464328"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239553"
 ---
 # <a name="bug-check-0x12c-exfatfilesystem"></a>バグ チェック 0x12C:EXFAT\_ファイル\_システム
 
 
 EXFAT\_ファイル\_システムのバグ チェックでは 0x0000012C の値を持ちます。 このバグ チェックでは、拡張ファイル アロケーション テーブル (exFAT) のファイル システムで問題が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="exfatfilesystem-parameters"></a>EXFAT\_ファイル\_システム パラメーター
 

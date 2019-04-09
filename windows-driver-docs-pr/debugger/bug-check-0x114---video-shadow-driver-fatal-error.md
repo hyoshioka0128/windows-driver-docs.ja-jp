@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0534c48dfc5aa450b40729853b420bfea72d13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cf655b1e11eb0b790d9bbbfe7faa1b06a2f434fc
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559719"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239307"
 ---
-# <a name="bug-check-0x114-videoshadowdriverfatalerror"></a>バグ チェック 0x114 の。ビデオ\_シャドウ\_ドライバー\_FATAL\_エラー
+# <a name="bug-check-0x114-videoshadowdriverfatalerror"></a>バグ チェック 0x114:ビデオ\_シャドウ\_ドライバー\_FATAL\_エラー
 
 
 ビデオ\_シャドウ\_ドライバー\_FATAL\_エラーのバグ チェックが 0x00000114 の値を持ちます。 これは、シャドウ ドライバーの違反が検出されたことを示します。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

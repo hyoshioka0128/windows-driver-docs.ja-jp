@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b0d9046aa564a00f6b33ff4b27abf1a23c6a52
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: bc18ba456481541387fad7d89252866eae24cd5a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463944"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239855"
 ---
 # <a name="bug-check-0x7c-bugcodendisdriver"></a>バグ チェック 0x7C:BUGCODE\_NDIS\_ドライバー
 
 
 BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持ちます。 このバグ チェックでは、オペレーティング システムに、ネットワークのドライバーでエラーが検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_ドライバーのパラメーター
 
@@ -457,7 +459,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 
 パラメーター 1 が、BUGCODE の具体的な原因を示す\_NDIS\_ドライバーのバグ チェックします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 BUGCODE\_NDIS\_ネットワーク ドライバーのドライバーのバグチェック indendifies 問題。 多くの場合、問題は、NDIS ミニポート ドライバーで発生します。 使用して、NDIS ミニポート ドライバーの完全な一覧を取得する[ **! ndiskd.netadapter**](-ndiskd-netadapter.md)します。 ネットワーク スタックとの大きな画像概要を取得できます[ **! ndiskd.netreport**](-ndiskd-netreport.md)します。

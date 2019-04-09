@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ec32f20958089c4a68410dcf49b5847a1c3d2d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: e98fcf1099ed5daaf66c261fd9f27a899dabb74e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463846"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238661"
 ---
 # <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>バグ チェック 0x15E:BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ
 
 
 BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E の値を持ちます。 このバグのコードでは、NDIS がライブ カーネル ダンプをキャプチャしたことを示します。 NDIS には、このような状況でのバグ チェックが生成されません。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_ドライバーのパラメーター
 
@@ -146,7 +148,7 @@ BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E �
 
 パラメーター 1 が、BUGCODE の具体的な原因を示す\_NDIS\_ドライバー\_LIVE\_バグチェックをダンプします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS が検出され、別のネットワーク ドライバーで重大な問題から回復しました。 システムは停止しませんが、この問題が接続の問題や致命的なバグチェックにより後で可能性があります。

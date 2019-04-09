@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe30fd94ac11480f6912fd0d91c6c3f3a704494
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 0d40d44466e9f0a357476a945e09bacfaed20840
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349785"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239061"
 ---
 # <a name="bug-check-0x197-win32ksecurityfailure"></a>バグ チェック 0x197:WIN32K\_セキュリティ\_エラー
 
 
 WIN32K\_セキュリティ\_エラーのバグ チェックが 0x00000197 の値を持ちます。 これを示します win32k でセキュリティ障害が検出されました。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="win32ksecurityfailure-parameters"></a>WIN32K\_セキュリティ\_エラー パラメーター
 

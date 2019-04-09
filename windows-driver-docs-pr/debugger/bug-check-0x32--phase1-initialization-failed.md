@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d5b0b015b367c1714f4737b16e9c6babf0694c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 85a7cbdf2c069fde8842ce39877e3ae85362dded
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531342"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238909"
 ---
-# <a name="bug-check-0x32-phase1initializationfailed"></a>バグ チェック 0x32 の。フェーズ 1\_初期化\_失敗
+# <a name="bug-check-0x32-phase1initializationfailed"></a>バグ チェック 0x32:フェーズ 1\_初期化\_失敗
 
 
 フェーズ 1\_初期化\_失敗のバグ チェックが 0x00000032 の値を持ちます。 これは、そのシステムの初期化の失敗を示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="phase1initializationfailed-parameters"></a>フェーズ 1\_初期化\_FAILED パラメーター
 

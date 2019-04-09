@@ -12,20 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ce6e92d3f07011eda0bed7df95d62e7985afd037
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 6bf1f58a0623e2f18ce079f411893546108e9a25
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743530"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239311"
 ---
-# <a name="bug-check-0x179-clusterclusportstatusiotimeoutlivedump"></a>バグ チェック 0x179 の。クラスター\_CLUSPORT\_状態\_IO\_タイムアウト\_LIVEDUMP
+# <a name="bug-check-0x179-clusterclusportstatusiotimeoutlivedump"></a>バグ チェック 0x179:クラスター\_CLUSPORT\_状態\_IO\_タイムアウト\_LIVEDUMP
 
 クラスター\_CLUSPORT\_状態\_IO\_タイムアウト\_LIVEDUMP バグ チェックが 0x00000179 の値を持ちます。 これは、イニシエーターのノード上の SMB クライアントがターゲット ノードに IO は時間がかかりすぎると、STATUS_IO_TIMEOUT ですべての IOs が失敗したという苦情することを示します。
 
 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 
 ## <a name="clusterclusportstatusiotimeoutlivedump-parameters"></a>クラスター\_CLUSPORT\_状態\_IO\_タイムアウト\_LIVEDUMP パラメーター
@@ -59,7 +61,7 @@ ms.locfileid: "56743530"
 
 [使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

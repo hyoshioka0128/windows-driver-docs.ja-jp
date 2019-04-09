@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: daf6b3ee15c15b02a52b4009f74ec1be343f0fef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4d13728dd646a86dd7bd32073a0886142beb6c77
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528006"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238593"
 ---
-# <a name="ndiskdoid"></a>! ndiskd.oid
+# <a name="ndiskdoid"></a>!ndiskd.oid
 
 
 **! Ndiskd.oid**拡張機能には、NDIS OID 要求に関する情報が表示されます。 パラメーターなしで、この拡張機能を実行する場合です。 すべてのミニポートおよびフィルターに ndiskd で OID 要求の保留中のすべての一覧が表示されます。 各ミニポートまたはフィルターは、最大で 1 つ保留 OID 要求と任意の数のキューに置かれた OID 要求を持っています。
@@ -42,7 +42,7 @@ ms.locfileid: "56528006"
 <span id="_______-nolimit______"></span><span id="_______-NOLIMIT______"></span> *-nolimit*   
 表示されている Oid 保留中の数は制限されません。
 
-<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-miniport*   
+<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-ミニポート*   
 保留中のこのミニポートのスタックに OID 要求を検索します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -52,7 +52,7 @@ Ndiskd.dll
 <a name="remarks"></a>注釈
 -------
 
-**! ndiskd.oid**リストが表示保留中のすべての Oid のシステムに、時に、システム ハングのデバッグで非常に役に立ちますようにまたは[0x9F バグ チェック](https://msdn.microsoft.com/library/windows/hardware/ff559329)状況 (ドライバー\_POWER\_の状態\_失敗)。 たとえば、架空の 0x9F バグ チェックが明らかに、システムが IRP のハング状態にして、NDIS を待機していたことを分析します。 は、NDIS、OS から Irp が電源切り替え効果も含めて、Oid に変換を実行してその **! ndiskd.oid** 、この例で、スタックの一番下にあるデバイス可能性がありますがされて音を参照してくださいでした、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)スタックの残りの部分がハングしたとします。 問題を解決するため、そのデバイスが長時間保留中の OID を保持する理由を調査する可能性がありますし、NDIS ドライバーは 1 秒間に複数の OID を保留しないを必要があります。
+**! ndiskd.oid**リストが表示保留中のすべての Oid のシステムで一度にシステム ハングのデバッグできるようにまたは[0x9F バグ チェック](https://msdn.microsoft.com/library/windows/hardware/ff559329)状況 (ドライバー\_POWER\_状態\_エラー)。 たとえば、架空の 0x9F バグ チェックが明らかに、システムが IRP のハング状態にして、NDIS を待機していたことを分析します。 は、NDIS、OS から Irp が電源切り替え効果も含めて、Oid に変換を実行してその **! ndiskd.oid** 、この例で、スタックの一番下にあるデバイス可能性がありますがされて音を参照してくださいでした、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)スタックの残りの部分がハングしたとします。 問題を解決するため、そのデバイスが長時間保留中の OID を保持する理由を調査する可能性がありますし、NDIS ドライバーは 1 秒間に複数の OID を保留しないを必要があります。
 
 <a name="examples"></a>例
 --------
@@ -126,7 +126,7 @@ ALL PENDING OIDs
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
 
 [Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
 

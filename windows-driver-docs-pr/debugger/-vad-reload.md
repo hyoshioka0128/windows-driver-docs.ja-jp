@@ -15,12 +15,12 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: be367b22f5f80dbfcb90299884972d350deeb009
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a613455ad75bd32ac60561ae7f4005fc8b45df18
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535940"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238419"
 ---
 # <a name="vadreload"></a>! vad\_を再読み込み
 
@@ -39,7 +39,7 @@ ms.locfileid: "56535940"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Vad については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+Vad については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------
@@ -76,9 +76,9 @@ Kdexts.dll
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**! プロセス**](-process.md)
+[**!process**](-process.md)
 
-[**! vad**](-vad.md)
+[**!vad**](-vad.md)
 
  
 

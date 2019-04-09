@@ -5,7 +5,7 @@ ms.assetid: d46e2948-ff18-49e0-a738-7b90ab54d333
 keywords:
 - バグ チェック 0xC000021A STATUS_SYSTEM_PROCESS_TERMINATED
 - STATUS_SYSTEM_PROCESS_TERMINATED
-ms.date: 05/23/2017
+ms.date: 03/15/2019
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d3aab36b1e048949db804d5ae807f18bbd414e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b19f8db5152c9fdb7a8265216ce8148c7e73330d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529416"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239171"
 ---
-# <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>バグ チェック 0xC000021A の。ステータス\_システム\_プロセス\_終了
+# <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>バグ チェック 0xC000021A:ステータス\_システム\_プロセス\_終了
 
 
 ステータス\_システム\_プロセス\_TERMINATED バグ チェックが 0xC000021A の値を持ちます。 これは、ユーザー モードの重要なサブシステムでエラーが発生したことを意味します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="statussystemprocessterminated-parameters"></a>ステータス\_システム\_プロセス\_終了パラメーター
 
@@ -73,7 +75,7 @@ ms.locfileid: "56529416"
 <a name="resolution"></a>解決方法
 ----------
 
-ユーザー モード プロセスで、実際のエラーが発生したため、カーネル デバッガーを実行しているこのような状況で役に立ちますはありません。
+カーネル デバッガーを実行している可能性がありますできませんこのような状況で役に立ちますユーザー モード プロセスで、実際のエラーが発生しました。
 
 **ユーザー モード デバイス ドライバー、システム サービス、またはサード パーティ製アプリケーションでエラーを解決するには。** ユーザー モード プロセスで 0xC000021A のバグ チェックが発生したため、最も一般的な問題の原因は、サード パーティ製アプリケーションです。 新しいまたは更新されたデバイス ドライバー、システム サービス、またはサード パーティ製アプリケーションのインストール後に、エラーが発生した場合、新しいソフトウェアを削除または原因を特定するため無効にする必要があります。 有効な更新についてソフトウェアの製造元に問い合わせてください。
 
@@ -83,7 +85,10 @@ ms.locfileid: "56529416"
 
 -   最後にインストールされたアプリケーションを参照してください。 実行するこの移動を「アンインストールまたは変更するプログラム」がインストールされているアプリケーションをコントロール パネルと並べ替えには、インストールの日付。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)を参照してください。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+
+<a name="remarks"></a>注釈
+----------
 
 次の手順は、この問題の解決に役立つ可能性があります。
 
@@ -93,7 +98,7 @@ ms.locfileid: "56529416"
     SFC /scannow
     ```
 
-    詳細については、[システム ファイル チェッカー ツールを使用してシステム ファイルの欠落または破損の修復](https://support.microsoft.com/kb/929833)を参照してください。
+    詳細については、次を参照してください。[システム ファイル チェッカー ツールを使用してシステム ファイルの欠落または破損の修復](https://support.microsoft.com/kb/929833)します。
 
 -   ウイルス検出プログラムを実行します。 ウイルスに感染する可能性、Windows 用にフォーマットされたハード_ディスクのすべての種類と、結果として得られるディスクの破損は、システムのバグ チェックのコードを生成できます。 ウイルス検出プログラムへの感染マスター ブート レコードのチェックを確認します。
 

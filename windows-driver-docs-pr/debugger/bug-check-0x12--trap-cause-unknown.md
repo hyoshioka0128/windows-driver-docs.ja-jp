@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d2e1392ed37c1454bde68a3f0ac3105cca56f44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2262c46d340fc92e602618d00844eb03b43e01d4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573882"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239211"
 ---
 # <a name="bug-check-0x12-trapcauseunknown"></a>バグ チェック 0x12:トラップ\_原因\_不明
 
 
 トラップ\_原因\_不明なバグ チェックが 0x00000012 の値を持ちます。 これは、不明な例外が発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="trapcauseunknown-parameters"></a>トラップ\_原因\_不明なパラメーター
 
@@ -45,7 +47,7 @@ ms.locfileid: "56573882"
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>TRAP_CAUSE_UNKNOWN の種類</p>
-<p><B>VALUES</B></p>
+<p><B>値</B></p>
 <p>1-予期しない中断します。 (パラメーター 2 – 割り込みベクター)</p>
 <p>2-不明な浮動小数点例外。 </p>
 <p>3 - (プロセッサの定義を参照してください) が有効なとアサートされたステータス ビットです。</p>
@@ -69,7 +71,7 @@ ms.locfileid: "56573882"
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 開始するには、スタック トレースを使用してを調べる、 [ **k、kb、kc、kd、kp、kP、kv (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンド。 すべてのプロセッサでスタックを確認するプロセッサ数を指定できます。 
 
@@ -79,7 +81,7 @@ ms.locfileid: "56573882"
 
 説明する手法のいくつか[デバッグ中断の Storm](debugging-an-interrupt-storm.md)予期しない割り込みで使用できます。
 
-クラッシュ ダンプの使用方法の概要については、[Windows デバッガー (WinDbg) を使用してクラッシュ ダンプ分析](crash-dump-files.md)を参照してください。
+クラッシュ ダンプの使用方法の概要については、次を参照してください。 [Windows デバッガー (WinDbg) を使用してクラッシュ ダンプ分析](crash-dump-files.md)します。
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 

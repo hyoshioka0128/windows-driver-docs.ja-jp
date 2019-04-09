@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aed4bfbfb4786ceb17a510581efccbd9e874fbd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a039ce590c9b522ab419adf119c60afb587b1846
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536842"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239423"
 ---
-# <a name="bug-check-0x18-referencebypointer"></a>バグ チェック 0x18 の。参照\_BY\_ポインター
+# <a name="bug-check-0x18-referencebypointer"></a>バグ チェック 0x18:参照\_BY\_ポインター
 
 
 参照\_BY\_ポインターのバグ チェックが 0x00000018 の値を持ちます。 これは、オブジェクトの参照カウントがオブジェクトの現在の状態に対して有効であることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="referencebypointer-parameters"></a>参照\_BY\_ポインター パラメーター
 
@@ -75,7 +77,7 @@ ms.locfileid: "56536842"
 
 ドライバーが、オブジェクトの参照カウントを増減するルーチンの呼び出しと一致することを確認します。 ドライバーが、オブジェクトを逆参照するルーチンに余分な呼び出しを行わないことを確認します (パラメーター 2 を参照してください)。
 
-この問題を分析するために、デバッガーを使用することができます。 詳細については、[Windows デバッガー (WinDbg) を使用してクラッシュ ダンプ分析](crash-dump-files.md)を参照してください。 [ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+この問題を分析するために、デバッガーを使用することができます。 詳細については、「[Crash dump analysis using the Windows debuggers (WinDbg) ](crash-dump-files.md)」(Windows デバッガーを用いたクラッシュ ダンプ分析 (WinDbg)) を参照してください。 [ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 ハンドルとポインターがオブジェクトの数を確認する、 **! オブジェクト**デバッガー コマンド。
 

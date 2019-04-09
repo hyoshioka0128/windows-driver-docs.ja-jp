@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cba4b04cdf675a0b31b81394d5233b12dd59a6f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 729065cf186ce60d9ce21d5c146a8fae1a05ad71
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577932"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239519"
 ---
 # <a name="bug-check-0x175-previousfatalabnormalreseterror"></a>バグ チェック 0x175:以前\_FATAL\_異常\_リセット\_エラー
 
 
 前\_FATAL\_異常\_リセット\_エラーのバグ チェックが 0x00000175 の値を持ちます。 回復不能なシステム エラーが発生しましたまたは Windows Phone デバイスでは、システムがリセット異常のことを示します。 システムでは、前のエラーからデバイスのクラッシュ データを収集するライブのダンプを生成します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="previousfatalabnormalreseterror-parameters"></a>以前\_FATAL\_異常\_リセット\_エラー パラメーター
 

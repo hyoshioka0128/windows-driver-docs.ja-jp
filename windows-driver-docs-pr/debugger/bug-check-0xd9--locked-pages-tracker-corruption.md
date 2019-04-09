@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a35a4195b03c4d0de9cb0f283c3cc631fc2537
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5074994724afa4d8b1cb81e8f09e3c8a83db77d7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532253"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238603"
 ---
-# <a name="bug-check-0xd9-lockedpagestrackercorruption"></a>バグ チェック 0xD9 の。ロックされている\_ページ\_トラッカー\_破損
+# <a name="bug-check-0xd9-lockedpagestrackercorruption"></a>バグ チェック 0xD9:ロックされている\_ページ\_トラッカー\_破損
 
 
 LOCKED\_ページ\_トラッカー\_破損バグ チェックが 0x000000D9 の値を持ちます。 これは、ロックされているページ追跡の内部構造が破損していることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="lockedpagestrackercorruption-parameters"></a>ロックされている\_ページ\_トラッカー\_破損パラメーター
 

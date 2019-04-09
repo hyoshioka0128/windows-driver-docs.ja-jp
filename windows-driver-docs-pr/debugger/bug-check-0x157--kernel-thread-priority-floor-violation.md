@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab3bc465157a2315bfb4a3bcf26d895ab4d93fea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 75151866611935c3dc0652d308d166e0ce2f2d8b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530240"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238325"
 ---
-# <a name="bug-check-0x157-kernelthreadpriorityfloorviolation"></a>バグ チェック 0x157 の。カーネル\_スレッド\_優先度\_FLOOR\_違反
+# <a name="bug-check-0x157-kernelthreadpriorityfloorviolation"></a>バグ チェック 0x157:カーネル\_スレッド\_優先度\_FLOOR\_違反
 
 
 試行\_スイッチ\_FROM\_DPC バグ チェックが 0x00000157 の値を持ちます。 これは、特定のスレッドの優先度のフロアに無効な操作が試行されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="kernelthreadpriorityfloorviolation-parameters"></a>カーネル\_スレッド\_優先度\_FLOOR\_違反パラメーター
 

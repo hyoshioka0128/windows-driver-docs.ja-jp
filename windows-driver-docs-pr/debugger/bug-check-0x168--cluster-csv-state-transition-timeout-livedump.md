@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7875bf4fb6e58cce425c5f0dd4d943b26e554706
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: dec08c58b7df26326055dc83ba0df723c41aa917
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761849"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239101"
 ---
-# <a name="bug-check-0x168-clustercsvstatetransitiontimeoutlivedump"></a>バグ チェック 0x168 の。クラスター\_CSV\_状態\_遷移\_タイムアウト\_LIVEDUMP
+# <a name="bug-check-0x168-clustercsvstatetransitiontimeoutlivedump"></a>バグ チェック 0x168:クラスター\_CSV\_状態\_遷移\_タイムアウト\_LIVEDUMP
 
 クラスター\_CSV\_状態\_遷移\_タイムアウト\_LIVEDUMP バグ チェックが 0x00000168 の値を持ちます。 これは、クラスターの共有ボリュームの状態遷移時間がかかりすぎたことを示します。
 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 
 ## <a name="clustercsvstatetransitiontimeoutlivedump-parameters"></a>クラスター\_CSV\_状態\_遷移\_タイムアウト\_LIVEDUMP パラメーター
@@ -66,7 +68,7 @@ ms.locfileid: "58761849"
 
 [使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fca51ae0b2ab19ccbb09ba1ea3d680508adccac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7ab77539705532e390a987c867ed591444b7ac5c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527866"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238531"
 ---
-# <a name="ate"></a>! ate
+# <a name="ate"></a>!ate
 
 
 **! Ate**拡張機能には、指定されたアドレスの代替のページ テーブル エントリ (食事) が表示されます。
@@ -61,7 +61,7 @@ ms.locfileid: "56527866"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ページのテーブルとページのディレクトリについては、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+ページのテーブルとページのディレクトリについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------
@@ -125,7 +125,7 @@ ms.locfileid: "56527866"
 <td align="left"><p>書き込み時にコピーします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>私</p></td>
+<td align="left"><p>I</p></td>
 <td align="left"><p>-</p></td>
 <td align="left"><p>間接 PTE します。 この食事が別の物理ページを直接参照します。 競合する 2 つの食事属性、食事を含むページがあります。</p></td>
 </tr>

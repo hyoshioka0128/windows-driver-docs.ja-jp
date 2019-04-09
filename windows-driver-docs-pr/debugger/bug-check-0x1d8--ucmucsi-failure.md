@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d94bb37cec00f13f4bbe728d64b4df8fe7062cc9
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 81a4036f65d8fb92ec7ea565639aac2afe18d06a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743568"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238987"
 ---
-# <a name="bug-check-0x1d8-ucmucsifailure"></a>バグ チェック 0x1D8 の。UCMUCSI\_エラー
+# <a name="bug-check-0x1d8-ucmucsifailure"></a>バグ チェック 0x1D8:UCMUCSI\_エラー
 
 UCMUCSI\_エラーのバグ チェックが 0x000001D8 の値を持ちます。 UCSI クラスの拡張機能でエラーが発生することを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 ## <a name="ucmucsifailure-parameters"></a>UCMUCSI\_エラー パラメーター
 
@@ -52,5 +54,5 @@ UCSI ファームウェアが応答していないと UcmUcsiCx が UCSI コマ�
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5965caefc1f647d9e76c38f57e524d154302a5be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 99d2f912626b29977d10403e7e65f7574eb53aef
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570539"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239027"
 ---
 # <a name="bug-check-0x156-winsockdetectedhungclosesocketlivedump"></a>バグ チェック 0x156:WINSOCK\_検出\_ハング\_CLOSESOCKET\_LIVEDUMP
 
 
 WINSOCK\_検出\_ハング\_CLOSESOCKET\_LIVEDUMP バグ チェックが 0x00000156 の値を持ちます。 これは、Winsock がハングしたトランスポート エンドポイントの閉じる要求を検出したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="winsockdetectedhungclosesocketlivedump-parameters"></a>WINSOCK\_検出\_ハング\_CLOSESOCKET\_LIVEDUMP パラメーター
 

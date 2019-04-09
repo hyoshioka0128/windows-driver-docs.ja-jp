@@ -4,8 +4,8 @@ description: バグ チェックでは、0x000000D1 の値を持ちます。 こ
 ms.assetid: 26cfd881-cc6e-4cc3-b464-e67d75700b96
 keywords:
 - バグ チェック 0xD1 します。
-- する
-ms.date: 05/23/2017
+- DRIVER_IRQL_NOT_LESS_OR_EQUAL
+ms.date: 03/28/2019
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 394644d10612dec67a93c6da1452ae43cc55c8e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 66b8fcf0a1c2a9e798075a30313112e17e75cde2
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531243"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239849"
 ---
-# <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>バグ チェック 0xD1 の。ドライバー\_IRQL\_いない\_少ない\_または\_と等しい
+# <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>バグ チェック 0xD1:ドライバー\_IRQL\_いない\_少ない\_または\_と等しい
 
 
-ドライバー\_IRQL\_いない\_少ない\_または\_等しいバグ チェックが 0x000000D1 の値を持ちます。 これは、カーネル モード ドライバーは、プロセスが高すぎる IRQL でページング可能なメモリへのアクセスを試行したことを示します。
+ドライバー\_IRQL\_いない\_少ない\_または\_等しいバグ チェックが 0x000000D1 の値を持ちます。 これは、カーネル モード ドライバーが高すぎる IRQL プロセス中にページング可能なメモリへのアクセスを試行したことを示します。 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverirqlnotlessorequal-parameters"></a>ドライバー\_IRQL\_いない\_少ない\_または\_等しいパラメーター
 
@@ -44,21 +46,23 @@ ms.locfileid: "56531243"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>参照されるメモリ</p></td>
+<td align="left"><p>参照されるメモリ。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>IRQL の参照時に</p></td>
+<td align="left"><p>IRQL の参照時にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
 <td align="left"><p><strong>0:</strong>Read</p>
 <p><strong>1:</strong>書き込み</p>
-<p><strong>8:</strong>実行する</p></td>
+<p><strong>2:</strong>実行する</p>
+<p><strong>8:</strong>実行する</p>
+</td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>メモリ アドレス</p></td>
+<td align="left"><p>メモリ アドレス。 このアドレスで 'ln' を使用して、関数の名前を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,43 +72,84 @@ ms.locfileid: "56531243"
 <a name="cause"></a>原因
 -----
 
-アドレスはページング可能な (または完全に有効ではない) にアクセスしようとしているドライバーの IRQL が高すぎます。
+ドライバーが、アドレスはページング可能な (または完全に有効でない) にアクセスしようとした通常の IRQL が高すぎます。
 
-通常、このバグ チェックは不適切なアドレスを使用しているドライバーで発生します。
+これは次のような事項が原因で発生します。
 
-場合は、最初のパラメーターは、4 番目のパラメーターと同じ値を持つ、3 番目のパラメーターは、実行の操作、このバグ チェック コード自体がページ アウトされたときに、コードを実行しようとしていたドライバーが原因の場合です。ページ フォールトの原因として、次のとおりです。
+1. DISPATCH_LEVEL 以上で実行中に (NULL または解放されたポインターの場合) などの無効なポインターを逆参照します。
+2. 同じか上位 DISPATCH_LEVEL ページング可能なデータにアクセスします。
+3. 同じか上位 DISPATCH_LEVEL ページング可能なコードを実行しています。
 
--   この関数は、ページング可能としてマークされましたし、(ロックの取得が含まれています) を管理者特権での IRQL で実行されていた。
+その名前がブルー スクリーンに印刷し、場所のメモリに格納されている場合は、エラーのドライバーを識別できます (PUNICODE\_文字列) **KiBugCheckDriver**します。 Dx のデバッガー コマンドを使用するには、これを表示する`dx KiBugCheckDriver`します。
 
--   別のドライバーでの関数に対する関数呼び出しと、そのドライバーが読み込まれました。
+通常、このバグ チェックは不適切なメモリ アドレスを使用しているドライバーで発生します。
 
--   無効なポインターを関数ポインターを使用して関数を呼び出しました。
+ページ フォールトの原因として、次のとおりです。
+
+- この関数は、ページング可能としてマークされましたし、(ロックの取得が含まれています) を管理者特権での IRQL で実行されていた。
+
+- 別のドライバーでの関数に対する関数呼び出しと、そのドライバーが読み込まれました。
+
+- 無効なポインターを関数ポインターを使用して関数を呼び出しました。
 
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+問題の原因が開発しているドライバーである場合は、そのバグ チェック時に実行された関数はページング可能としてマークされていないか、ページ アウトでした。 他のインライン関数を呼び出しませんを確認します。
 
-詳細については、次を参照してください[Windows デバッガー (WinDbg) を使用してクラッシュ ダンプ分析。](crash-dump-files.md)
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+
+```
+DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)
+An attempt was made to access a pageable (or completely invalid) address at an
+interrupt request level (IRQL) that is too high.  This is usually
+caused by drivers using improper addresses.
+If kernel debugger is available get stack backtrace.
+Arguments:
+Arg1: fffff808add27150, memory referenced
+Arg2: 0000000000000002, IRQL
+Arg3: 0000000000000000, value 0 = read operation, 1 = write operation
+Arg4: fffff808adc386a6, address which referenced memory
+```
+
+トラップのフレームはダンプ ファイルの目的で使用可能なかどうか、`.trap`のコンテキストを指定したアドレスに設定するコマンド。
 
 開始するには、スタック トレースを使用してを調べる、 [ **k、kb、kc、kd、kp、kP、kv (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンド。
 
-問題の原因が開発しているドライバーである場合は、そのバグ チェック時に実行された関数はページング可能としてマークされていないか、ページ アウトでした。 他のインライン関数を呼び出しませんを確認します。
+使用して、`!IRQL`デバッガー中断する前に、ターゲット コンピューター上のプロセッサの割り込み要求レベル (IRQL) に関する情報を表示するコマンド。
+
+```
+0: kd> !irql
+Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
+```
+
+ほとんどの問題はなく、IRQL レベルでアクセスされているメモリではなくです。
+
+このバグ チェックは、通常、不適切なメモリ アドレスを使用しているドライバーが原因であるためには、さらに 1, 3 および 4 invesitgate にパラメーターを使用します。
+
+使用[ln (最も近いシンボルの一覧)](ln--list-nearest-symbols-.md)パラメーター 4 に、呼び出された関数の名前を参照してください。 確認も、! して、エラー コードが識別されるかどうかの出力を分析します。
+
+使用[! プール](-pool.md)かどうか、それがページを参照してください。 へのパラメーター 1 アドレス プール。 使用[! アドレス](-address.md)と、高度な[! pte](-pte.md)詳細については、メモリのこの領域はコマンド。
+
+使用して、[表示メモリ](-db---dc---dd---dp---dq---du---dw.md)パラメーター 1 でのコマンドで参照されているメモリを確認するためのコマンド。
+
+使用して、 [Unassemble](u--unassemble-.md)コマンドをパラメーター 4 でのメモリをアドレスにコードを確認します。
+
+使用して、`lm t n`メモリに読み込まれたモジュールを一覧表示します。 使用[! memusage](-memusage.md)と、システム メモリの [全般] の状態を確認します。 
+
+**ドライバーの検証ツール**
+
+Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 たとえば、Driver Verifier は、メモリ プールなどのメモリ リソースの使用を確認します。 ドライバー コードの実行でエラーが表示される、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
+
+<a name="remarks"></a>注釈
+-------
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 
--   デバイスまたはこのバグ チェックが原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。
+- デバイスまたはこのバグ チェックが原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。
 
--   バグ チェックのメッセージでドライバーが特定された場合は、そのドライバーを無効にするか、ドライバーの更新状況を製造元に確認します。
+- バグ チェックのメッセージでドライバーが特定された場合は、そのドライバーを無効にするか、ドライバーの更新状況を製造元に確認します。
 
--   インストールされている新しいハードウェアが Windows のインストールされているバージョンと互換性があることを確認します。 たとえばに必要なハードウェアに関する情報を取得できます[Windows 10 の仕様](https://www.microsoft.com/windows/windows-10-specifications)します。
+- インストールされている新しいハードウェアが Windows のインストールされているバージョンと互換性があることを確認します。 たとえばに必要なハードウェアに関する情報を取得できます[Windows 10 の仕様](https://www.microsoft.com/windows/windows-10-specifications)します。
 
--   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
-
- 
-
- 
-
-
-
-
+- その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。

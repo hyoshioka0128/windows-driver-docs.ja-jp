@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3940ad7891c3872caf9a576d377905110e87e35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f55a14ae7b0c72a0b49436fee3e8bd054ab9408e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529733"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239809"
 ---
-# <a name="bug-check-0x138-gpiocontrollerdrivererror"></a>バグ チェック 0x138 の。GPIO\_コント ローラー\_ドライバー\_エラー
+# <a name="bug-check-0x138-gpiocontrollerdrivererror"></a>バグ チェック 0x138:GPIO\_コント ローラー\_ドライバー\_エラー
 
 
 GPIO\_コント ローラー\_ドライバー\_エラーのバグ チェックが 0x00000138 の値を持ちます。 このバグ チェックでは、GPIO クラスの拡張機能ドライバーに致命的なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="gpiocontrollerdrivererror-parameters"></a>GPIO\_コント ローラー\_ドライバー\_エラー パラメーター
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aee11dd54f5999a2dba3319f1ffe45b59056e69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 62e9359c862b7c3be1d7b599ce8d133aac503719
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572288"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239537"
 ---
 # <a name="bug-check-0x4000008a-threadterminateheldmutex"></a>バグ チェック 0x4000008A:スレッド\_TERMINATE\_保持\_ミュー テックス
 
 
 スレッド\_TERMINATE\_保持\_ミュー テックスのバグ チェックが 0x4000008A の値を持ちます。 これは、ドライバーが前に、ミュー テックスを解放する可能性がありますが終了したスレッドでミュー テックスを獲得することを示します。 ミュー テックスを解放しないままユーザー モードに戻るドライバーや、ミュー テックスを獲得ドライバーによってこれを発生することができ、スレッドが終了中で実行されている例外をしに原因と発生します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="threadterminateheldmutex-parameters"></a>スレッド\_TERMINATE\_保持\_ミュー テックス パラメーター
 

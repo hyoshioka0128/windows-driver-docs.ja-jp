@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e964b503487e668c9e9731a1952ec1789b28be7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0f55f5c3ad2e166c3b5302f17db459b86ebdb2c0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527827"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238963"
 ---
-# <a name="bug-check-0x100-loaderblockmismatch"></a>バグ チェック 0x100 の。ローダー\_ブロック\_が一致しません
+# <a name="bug-check-0x100-loaderblockmismatch"></a>バグ チェック 0x100:ローダー\_ブロック\_が一致しません
 
 
 ローダー\_ブロック\_の不一致のバグ チェックが 0x00000100 の値を持ちます。 これは、いずれか、ローダー ブロックが有効でないか、システムに読み込まれているのとは一致しませんを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="loaderblockmismatch-parameters"></a>ローダー\_ブロック\_不一致パラメーター
 

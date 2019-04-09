@@ -16,14 +16,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e09839a54bf11b2b625105b470aed19d004bce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 212acb273718c10104b5467cf3d5c00daac45f37
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549658"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238565"
 ---
-# <a name="pte"></a>! pte
+# <a name="pte"></a>!pte
 
 
 **! Pte**拡張機能は、ページ テーブル エントリ (PTE) と指定したアドレスのディレクトリ エントリ (PDE) ページが表示されます。
@@ -54,7 +54,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ページ テーブル、ページのディレクトリ、およびステータス ビットの説明については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+ページ テーブル、ページのディレクトリ、およびステータス ビットの説明については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------

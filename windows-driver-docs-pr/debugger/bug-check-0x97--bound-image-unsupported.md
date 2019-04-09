@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b480e58aa2a214796a14e88775f59e9c6ee22a7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9ac219e4533db2e430d9403c219145b7eee71d8f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538915"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239275"
 ---
-# <a name="bug-check-0x97-boundimageunsupported"></a>バグ チェック 0x97 の。バインドされている\_イメージ\_サポートされていません
+# <a name="bug-check-0x97-boundimageunsupported"></a>バグ チェック 0x97:バインドされている\_イメージ\_サポートされていません
 
 
 バインドされている\_イメージ\_サポートされていないバグ チェックが 0x00000097 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f9ba7484fdece53d6d01b6ab78e7f826a4c34c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: df35d0351959dec63f4eb368ebae52a290ec0453
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559727"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239258"
 ---
-# <a name="bug-check-0x162-kernelautoboostinvalidlockrelease"></a>バグ チェック 0x162 の。カーネル\_自動\_BOOST\_無効な\_ロック\_リリース
+# <a name="bug-check-0x162-kernelautoboostinvalidlockrelease"></a>バグ チェック 0x162:カーネル\_自動\_BOOST\_無効な\_ロック\_リリース
 
 
 カーネル\_自動\_BOOST\_無効な\_ロック\_リリースのバグ チェックが 0x00000162 の値を持ちます。 これは、スレッドがロックを所有せず AutoBoost によって追跡されるロックが離されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="kernelautoboostinvalidlockrelease-parameters"></a>カーネル\_自動\_BOOST\_無効な\_ロック\_リリース パラメーター
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd1589cc44a2a829b0b59b33678a0ba0936b007a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 18c711a3024b804c88c7375617ed3a00f2264da9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571446"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238525"
 ---
 # <a name="bug-check-0x9e-usermodehealthmonitor"></a>バグ チェック 0x9E:ユーザー\_モード\_ヘルス\_モニター
 
 
 ユーザー\_モード\_ヘルス\_モニターのバグ チェックがエラー 0x0000009e が発生の値を持ちます。 このバグ チェックでは、1 つまたは複数の重要なユーザー モード コンポーネントが正常性チェックを満たすために失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="usermodehealthmonitor-parameters"></a>ユーザー\_モード\_ヘルス\_モニタのパラメータ
 
@@ -38,7 +40,7 @@ ms.locfileid: "56571446"
 |4|予約済み|
  
 
-**VALUES** 
+**値** 
 
 ```text
         0  : WatchdogSourceDefault

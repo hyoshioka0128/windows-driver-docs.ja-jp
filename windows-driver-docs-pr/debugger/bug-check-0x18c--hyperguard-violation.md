@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b8e9b1d9eedd3d1bc8d68d9ad89c011a0a12dc
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 9b05871743c47aaca53dd42dc5dd8575bccbd73c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761833"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239139"
 ---
-# <a name="bug-check-0x18c-hyperguardviolation"></a>バグ チェック 0x18C の。HYPERGUARD\_違反 
+# <a name="bug-check-0x18c-hyperguardviolation"></a>バグ チェック 0x18C:HYPERGUARD\_違反 
 
 HYPERGUARD\_違反のバグ チェックが 0x0000018C の値を持ちます。 これは、カーネルの重大なカーネル コードまたはデータが壊れていることが検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 > [!NOTE] 
 > このバグ コードによって予約されている使用 Hyperguard のみです。  
@@ -103,7 +105,7 @@ HYPERGUARD\_違反のバグ チェックが 0x0000018C の値を持ちます。 
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

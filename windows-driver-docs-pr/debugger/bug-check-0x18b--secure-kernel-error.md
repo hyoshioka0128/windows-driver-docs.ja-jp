@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab84741c9f05bf2f6ee686718a9c803f207730ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 08a2e7cb64dfb26e03b541870eb2fc23717f1f0f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582256"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238499"
 ---
 # <a name="bug-check-0x18b-securekernelerror"></a>バグ チェック 0x18B:セキュリティで保護された\_カーネル\_エラー
 
 
 SECURE\_カーネル\_エラーのバグ チェックが 0x0000018B の値を持ちます。 これは、セキュリティで保護されたカーネルで致命的なエラーが発生したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="securekernelerror-parameters"></a>セキュリティで保護された\_カーネル\_エラー パラメーター
 

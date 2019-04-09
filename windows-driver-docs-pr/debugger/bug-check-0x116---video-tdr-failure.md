@@ -14,19 +14,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 33cde2e3f298313c96183ad19dbf43c8a7ee4cfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6b50a6aa80bfd796270831d6af9028832468a435
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558011"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239579"
 ---
-# <a name="bug-check-0x116-videotdrfailure"></a>バグ チェック 0x116 の。ビデオ\_TDR\_エラー
+# <a name="bug-check-0x116-videotdrfailure"></a>バグ チェック 0x116:ビデオ\_TDR\_エラー
 
 
 ビデオ\_TDR\_エラーのバグ チェックが 0x00000116 の値を持ちます。 これは、ディスプレイ ドライバーをリセットするか、タイムアウトから復旧試行が失敗したことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="videotdrfailure-parameters"></a>ビデオ\_TDR\_エラー パラメーター
 
@@ -71,7 +73,7 @@ ms.locfileid: "56558011"
 
 この検出と回復のプロセスは、タイムアウト検出と復旧 (TDR) と呼びます。 既定のタイムアウトは 2 秒です。 ビデオ カードの TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)ドライバーを再初期化し、GPU をリセットする関数。
 
-このプロセス中には、オペレーティング システムは、ドライバーがハードウェアまたはメモリにアクセスしないように指示し、現在実行中のスレッドが完了する短い形式の時刻を示します。 スレッドが、タイムアウト以内に完了しなかったかどうかは、0x116 によるチェックのシステムのバグ ビデオ\_TDR\_失敗します。 詳細については、[スレッドの同期と TDR](https://msdn.microsoft.com/library/windows/hardware/ff570082)を参照してください。
+このプロセス中には、オペレーティング システムは、ドライバーがハードウェアまたはメモリにアクセスしないように指示し、現在実行中のスレッドが完了する短い形式の時刻を示します。 スレッドが、タイムアウト以内に完了しなかったかどうかは、0x116 によるチェックのシステムのバグ ビデオ\_TDR\_失敗します。 詳細については、次を参照してください。[スレッドの同期と TDR](https://msdn.microsoft.com/library/windows/hardware/ff570082)します。
 
 ビデオをチェックできますもバグのシステム\_TDR\_エラー TDR イベントの数が短時間で発生した場合既定で 5 つを超える TDRs 1 分以内にします。
 
@@ -93,7 +95,7 @@ GPU には、モニターにグラフィックスを表示する許可より多�
     -   欠陥のある部分 (メモリ モジュール、マザーボードなど。)
 -   視覚効果、またはバック グラウンドで実行されているプログラムが多すぎる遅らせることができる PC できるように、必要に応じて、ビデオ カードが応答しないことができます。
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -199,7 +201,7 @@ fffff801`6470c14b cc              int     3
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 
@@ -225,7 +227,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 <a name="remarks"></a>注釈
 -------
 
-**ハードウェア認定要件**
+**ハードウェア認定の要件**
 
 TDR を実装するときにハードウェア デバイスが満たす必要のある要件については、ドキュメントを参照して、WHCK の*Device.Graphics.TDRResiliency*します。
 

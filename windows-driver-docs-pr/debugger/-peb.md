@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 47d757fcaabd9976ba3ba9c68607b05ef1ccd9a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1b8d30605c25ad6839ab818329ef470d1b9d27de
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581340"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238523"
 ---
 # <a name="peb"></a>!peb
 
@@ -60,9 +60,9 @@ Kdextx86.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-プロセスの環境ブロックについては、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+プロセスの環境ブロックについては、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 PEB は、Microsoft Windows プロセスの制御構造のユーザー モードの部分です。

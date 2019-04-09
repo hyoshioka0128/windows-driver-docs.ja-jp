@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f48aef593e74e52dcede6b64503cb30b285758
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5d9621b66d076efc428e4935e08de83f35b9d40e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556509"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239073"
 ---
-# <a name="bug-check-0x115-agpinternal"></a>バグ チェック 0x115 の。AGP\_内部
+# <a name="bug-check-0x115-agpinternal"></a>バグ チェック 0x115:AGP\_内部
 
 
 AGP\_内部バグ チェックが 0x00000115 の値を持ちます。 これは、高速のグラフィックスのポート (AGP) ドライバーの違反が検出されたことを示します。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

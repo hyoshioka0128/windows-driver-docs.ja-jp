@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b229f28e86b65db5995d53b1253878bc9915fdb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3b6063b1e6bfdc2596eab0648631761f08cbf14b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530596"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239637"
 ---
-# <a name="bug-check-0xf9-driverreturnedstatusreparseforvolumeopen"></a>バグ チェック 0xF9 の。ドライバー\_から返された\_状態\_再解析\_の\_ボリューム\_開く
+# <a name="bug-check-0xf9-driverreturnedstatusreparseforvolumeopen"></a>バグ チェック 0xF9:ドライバー\_から返された\_状態\_再解析\_の\_ボリューム\_開く
 
 
 ドライバー\_から返された\_状態\_再解析\_の\_ボリューム\_バグを開くチェックが 0x000000F9 の値を持ちます。 これは、ドライバーが状態を返すことを示します\_IRP を再解析\_MJ\_ない末尾の名前を持つ要求の作成。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverreturnedstatusreparseforvolumeopen-parameters"></a>ドライバー\_から返された\_状態\_再解析\_の\_ボリューム\_パラメーターを開く
 

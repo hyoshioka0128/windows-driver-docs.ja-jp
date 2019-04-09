@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 050a654f4c9865f0ca2ea8ceb8f4f2be6c66903c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 1ad38b67e5b2ed8e8c218c32a442be33013c6a89
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464182"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239791"
 ---
 # <a name="bug-check-0xa5-acpibioserror"></a>バグ チェック 0xA5:ACPI\_BIOS\_エラー
 
 
 ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます。 このバグ チェックでは、コンピューターの Advanced Configuration and Power Interface (ACPI) BIOS が ACPI の仕様に完全準拠ではないことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="acpibioserror-parameters"></a>ACPI\_BIOS\_エラー パラメーター
 
@@ -559,7 +561,7 @@ ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます�
 
 取得できない場合、BIOS の更新または最新の BIOS は引き続きいない ACPI に準拠して、テキスト モードのセットアップ中に、ACPI モードをオフにすることができます。 ACPI モードをオフにするには、ストレージ ドライバーのインストールを求められたら、F7 キーを押します。 システム通知は表示されません、F7 キーが押されましたが、ACPI を無効にし、インストールを続行することができますが、サイレント モードでします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 PCI のルーティング テーブル (\_PRT)、ACPI BIOS オブジェクトを指定するには、すべての PCI デバイスは割り込みコント ローラーに接続する方法。 複数の PCI バスを使用しているコンピューターが複数あります\_Prt します。

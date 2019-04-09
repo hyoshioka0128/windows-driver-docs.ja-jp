@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2142a6e5724ccfd48f1a94aa0f923a38b1c662b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bfd05b374a6d412196bdbc9b7ccc21558892bd48
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539389"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239737"
 ---
-# <a name="bug-check-0x121-driverviolation"></a>バグ チェック 0x121 の。ドライバー\_違反
+# <a name="bug-check-0x121-driverviolation"></a>バグ チェック 0x121:ドライバー\_違反
 
 
 ドライバー\_違反のバグ チェックが 0x00000121 の値を持ちます。 このバグ チェックでは、ドライバーの違反が原因となったことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="driverviolation-parameters"></a>ドライバー\_違反パラメーター
 
@@ -62,7 +64,7 @@ ms.locfileid: "56539389"
 <a name="remarks"></a>注釈
 -------
 
-カーネル デバッガーを使用し、違反の原因となったドライバーの名前を確認する呼び出し履歴を表示: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグして、非常に役に立ちます根本原因を判断するには、し、入力のいずれか、 [ **k (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)呼び出し履歴を表示するコマンド。
+カーネル デバッガーを使用し、違反の原因となったドライバーの名前を確認する呼び出し履歴を表示: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよびに役に立ついずれかを入力し、根本原因を突き止める、 [ **k (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)呼び出し履歴を表示するコマンド。
 
  
 

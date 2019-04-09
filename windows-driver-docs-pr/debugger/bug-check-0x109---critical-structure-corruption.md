@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba60f66549979d0865e0648536352f4e2e907350
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 63906a57ba37e6a487bfa250164978ff70173cd8
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582476"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238447"
 ---
 # <a name="bug-check-0x109-criticalstructurecorruption"></a>バグ チェック 0x109:重要な\_構造\_破損
 
 
 CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます。 これは、カーネルの重大なカーネル コードまたはデータの破損が検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="criticalstructurecorruption-parameters"></a>重要な\_構造\_破損パラメーター
 
@@ -263,7 +265,7 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 
 一般には、このバグ チェックの 3 つのさまざまな原因があります。
 
-1.  ドライバーに誤って、または意図的に、クリティカルなカーネル コードまたはデータを変更します。 Microsoft Windows Server 2003 Service Pack 1 (SP1) および x64 ベースのコンピューターに Windows の以降のバージョンでは、承認された Microsoft 主導のホット パッチ適用以外に、カーネルは許可されません。 詳細については、[x64 ベース システム用の修正プログラムの適用ポリシー](https://go.microsoft.com/fwlink/p/?linkid=50719)を参照してください。
+1.  ドライバーに誤って、または意図的に、クリティカルなカーネル コードまたはデータを変更します。 Microsoft Windows Server 2003 Service Pack 1 (SP1) および x64 ベースのコンピューターに Windows の以降のバージョンでは、承認された Microsoft 主導のホット パッチ適用以外に、カーネルは許可されません。 詳細については、次を参照してください。 [x64 ベース システム用の修正プログラムの適用ポリシー](https://go.microsoft.com/fwlink/p/?linkid=50719)します。
 
 2.  開発者は、システムが起動されたときにアタッチされませんでしたをカーネル デバッガーを使用して通常のカーネル ブレークポイントを設定しようとしました。 通常のブレークポイント ([**bp**](bp--bu--bm--set-breakpoint-.md)) 開始時に、デバッガーがアタッチされている場合にのみ設定できます。 プロセッサのブレークポイント ([**ba**](ba--break-on-access-.md)) いつでもでも設定できます。
 
@@ -272,7 +274,7 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 開始するには、スタック トレースを使用してを調べる、 [ **k、kb、kc、kd、kp、kP、kv (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンド。 すべてのプロセッサでスタックを確認するプロセッサ数を指定できます。
 
@@ -280,7 +282,7 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 

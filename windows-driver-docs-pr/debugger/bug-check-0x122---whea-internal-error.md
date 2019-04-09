@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 595a93e32024d1f1319e62d4afa241e69ed08ca8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8df990b5334833c4911dcc8c3a459ff565d4a892
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581334"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238881"
 ---
 # <a name="bug-check-0x122-wheainternalerror"></a>バグ チェック 0x122:WHEA\_内部\_エラー
 
 
 WHEA\_内部\_エラーのバグ チェックが 0x00000122 の値を持ちます。 このバグ チェックでは、Windows ハードウェア エラー アーキテクチャ (WHEA) で内部エラーが発生したことを示します。 エラーには、プラグイン プラットフォーム固有のハードウェア エラー ドライバー (PSHED) の実装でバグを仕入先、ファームウェアの実装のエラー レコード、またはエラー挿入のファームウェアの実装によって提供されることがあります。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="wheainternalerror-parameters"></a>WHEA\_内部\_エラー パラメーター
 
@@ -64,21 +66,21 @@ WHEA\_内部\_エラーのバグ チェックが 0x00000122 の値を持ちま�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x5</p></td>
-<td align="left"><p>状態</p></td>
+<td align="left"><p>状況</p></td>
 <td align="left"><p>フェーズ (バグ チェックの初期化フェーズ)</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>WHEA では、エラーのソースまたはエラーのソース列挙できませんでした。 十分なメモリを割り当てられませんでした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x6</p></td>
-<td align="left"><p>状態</p></td>
+<td align="left"><p>状況</p></td>
 <td align="left"><p>フェーズ</p></td>
 <td align="left"><p>エラー ソースの種類</p></td>
 <td align="left"><p>パラメーター 3 で指定されたフェーズ中にエラーの発生元 (パラメーター 4) を初期化できませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x7</p></td>
-<td align="left"><p>状態</p></td>
+<td align="left"><p>状況</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>十分なメモリを割り当てられませんでした。</p></td>
@@ -118,7 +120,7 @@ WHEA\_内部\_エラーのバグ チェックが 0x00000122 の値を持ちま�
 
 パラメーター 1 が 0x6、0x9、0 xa、または 0 xb と等しい場合は、その他のパラメーターのいずれかのエラーのソースの種類が含まれます。 次の表は、エラーのソースの種類、使用可能な値を示します。
 
-| [値] | 説明                          |
+| 値 | 説明                          |
 |-------|--------------------------------------|
 | 0x00  | マシン チェック例外              |
 | 0x01  | マシン チェックを修正しました              |

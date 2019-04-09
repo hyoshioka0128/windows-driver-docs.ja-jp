@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c824cb3b41b67a8cc35af9fa3092aafc1439cb
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: f39f8917244fc2ed35e1f60a6cb9d022689e5d60
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743575"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238503"
 ---
-# <a name="bug-check-0x16a-clustercsvvolumeremovallivedump"></a>バグ チェック 0x16A の。クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP
+# <a name="bug-check-0x16a-clustercsvvolumeremovallivedump"></a>バグ チェック 0x16A:クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP
 
 クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP バグ チェックが 0x0000016A の値を持ちます。 これは、クラスター共有ボリューム マネージャー ボリュームの削除要求がタイムアウトしたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 
 ## <a name="clustercsvvolumeremovallivedump-parameters"></a>クラスター\_CSV\_ボリューム\_削除\_LIVEDUMP パラメーター
@@ -52,7 +54,7 @@ ms.locfileid: "56743575"
 
 [使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef5a8421891f4444efe3be6ebe37867121981ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f780d210c5d337f02cf017c9e7c68a3d854c82fb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558115"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239353"
 ---
 # <a name="bug-check-0x133-dpcwatchdogviolation"></a>バグ チェック 0x133 DPC\_ウォッチドッグ\_違反
 
 
 DPC\_ウォッチドッグ\_違反のバグ チェックが 0x00000133 の値を持ちます。 このバグ チェックを示します、DPC ウォッチドッグが実行する、1 つの実行時間の長い遅延プロシージャ呼び出し (DPC) が検出されたか、またはシステムでは、長時間にわたる時間を費やして、割り込み要求レベル (IRQL) ためのディスパッチ\_レベルまたはそれ以降。 パラメーター 1 の値は、1 つの DPC が、タイムアウトを超えたかどうかを示す、システムが累積的 IRQL のディスパッチに長時間を費やしたかどうか、または\_レベルまたはそれ以降。 Dpc を 100 マイクロ秒より長く実行しないでくださいと Isr を 25 (マイクロ秒) よりも長く実行しないでください、ただし実際のタイムアウト値、システムは、非常に高いに設定されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="dpcwatchdogviolation-parameters"></a>DPC\_ウォッチドッグ\_違反パラメーター
 
@@ -72,7 +74,7 @@ DPC\_ウォッチドッグ\_違反のバグ チェックが 0x00000133 の値を
 <a name="cause"></a>原因
 -----
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 **パラメーター 1 = 0**
 
@@ -126,9 +128,9 @@ dt nt!_KPRCB fffff80309974180 Dpc*
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
-[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用して、! 拡張機能を分析](using-the--analyze-extension.md)と[! 分析](-analyze.md)
 

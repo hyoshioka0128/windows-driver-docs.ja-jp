@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c7d4e9479bd54d359a1fd1c59115cd95159dde72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 20973717890237a2b62a9d907cd306024ef3378d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578783"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239781"
 ---
 # <a name="bug-check-0x30-setofinvalidcontext"></a>バグ チェック 0x30:設定\_の\_無効な\_コンテキスト
 
 
 セット\_の\_無効な\_コンテキストのバグ チェックが 0x00000030 の値を持ちます。 これは、トラップ フレームのスタック ポインターが無効な値を持っていることを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="setofinvalidcontext-parameters"></a>設定\_の\_無効な\_コンテキスト パラメーター
 

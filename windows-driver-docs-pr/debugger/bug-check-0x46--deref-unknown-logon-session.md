@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2c780d146de1d98d2e40463e6629ce99e000a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 00661feb3c3443e2b5c19633b104e419876710a2
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532910"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238441"
 ---
-# <a name="bug-check-0x46-derefunknownlogonsession"></a>バグ チェック 0x46 の。DEREF\_不明な\_ログオン\_セッション
+# <a name="bug-check-0x46-derefunknownlogonsession"></a>バグ チェック 0x46:DEREF\_不明な\_ログオン\_セッション
 
 
 DEREF\_不明な\_ログオン\_セッションのバグ チェックが 0x00000046 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

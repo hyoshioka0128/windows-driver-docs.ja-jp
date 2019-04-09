@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a374141eb7646bcaad22887aef1f048dcbf4acb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 83e496d76ee22a7b2cdb1743aaaf3f7a1079701f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571718"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239181"
 ---
 # <a name="threadfields"></a>!threadfields
 
@@ -54,9 +54,9 @@ ms.locfileid: "56571718"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ETHREAD ブロックについては、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+ETHREAD ブロックについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能のコマンドは、Windows XP または Windows の以降のバージョンでご利用いただけません。 代わりに、使用、 [ **dt (表示の種類)** ](dt--display-type-.md) ETHREAD 構造体を直接表示するコマンド。

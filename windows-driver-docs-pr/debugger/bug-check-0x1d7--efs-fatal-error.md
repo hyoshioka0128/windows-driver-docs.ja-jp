@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc8d8ef903c0bee26daa47090f36c2a783ef040
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 58c1882671aadd3a4eff171e792219067d048eab
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743535"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239429"
 ---
-# <a name="bug-check-0x1d7-efsfatalerror"></a>バグ チェック 0x1D7 の。EFS\_FATAL\_エラー
+# <a name="bug-check-0x1d7-efsfatalerror"></a>バグ チェック 0x1D7:EFS\_FATAL\_エラー
 
 EFS\_FATAL\_エラーのバグ チェックが 0x000001D7 の値を持ちます。 データ損失やデータの破損なしに処理できないように、EFS のエラー条件が発生したことを示します。
 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="efsfatalerror-parameters"></a>EFS\_FATAL\_エラー パラメーター
@@ -55,5 +57,5 @@ EFS\_FATAL\_エラーのバグ チェックが 0x000001D7 の値を持ちます�
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

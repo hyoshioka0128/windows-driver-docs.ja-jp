@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd80ca748b3293b2b4202fdf36e081966d1d140
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 422218ac6fb5f1441997f01ecce1f81194a94e7b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761825"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238977"
 ---
-# <a name="bug-check-0x1c7-storedatastructurecorruption"></a>バグ チェック 0x1C7 の。ストア\_データ\_構造\_破損
+# <a name="bug-check-0x1c7-storedatastructurecorruption"></a>バグ チェック 0x1C7:ストア\_データ\_構造\_破損
 
 ストア\_データ\_構造\_破損バグ チェックが 0x000001C7 の値を持ちます。 これは、ストア コンポーネントに、そのデータ構造体で破損が検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="storedatastructurecorruption-parameters"></a>ストア\_データ\_構造\_破損パラメーター
@@ -71,7 +73,7 @@ ms.locfileid: "58761825"
 2.  ドライバーまたはデバイスが正しくない DMA 操作または関連付けられている MDL 経由で物理ページを正しく変更します。
 3.  ハードウェア デバイスまたはファームウェアのファームウェアが不正に電力の変化全体で物理的なページの変更などのメモリの破損が原因で破損しています。
 
-Windows メモリ マネージャーの詳細については、[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でを参照してください。
+Windows メモリ マネージャーの詳細については、次を参照してください。[内部 7 の Windows エディションのパート 1](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals) Pavel Yosifovich、E. のある Mark Russinovich、David A. Solomon、Alex Ionescu でします。
 
 ## <a name="resolution"></a>解決方法
 -----
@@ -83,6 +85,6 @@ Windows メモリ マネージャーの詳細については、[内部 7 の Win
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
-[Windows カーネル モードのメモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows カーネルモード メモリ マネージャー](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)

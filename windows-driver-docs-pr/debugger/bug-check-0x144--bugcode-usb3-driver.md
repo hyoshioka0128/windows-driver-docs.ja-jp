@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a112fc1e2f55a8c2b051be97cfcec53e06e859
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: d0584931acec5a0ad9bcaa52f3a7d80197bbe821
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348955"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239451"
 ---
 # <a name="bug-check-0x144-bugcodeusb3driver"></a>バグ チェック 0x144:BUGCODE\_USB3\_ドライバー
 
 
 **BUGCODE\_USB3\_ドライバー**バグ チェックが 0x00000144 の値を持ちます。 これは、すべての USB 3 のバグ チェックに使用されるコードです。 パラメーター 1 は、USB 3 のバグ チェックの種類を指定し、その他のパラメーターの意味では、パラメーター 1 に依存します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="bugcodeusb3driver-parameters"></a>BUGCODE\_USB3\_ドライバーのパラメーター
 
@@ -50,7 +52,7 @@ ms.locfileid: "57348955"
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>任意。 IRP へのポインター、URB を再送信するために使用</p></td>
+<td align="left"><p>(省略可能)。 IRP へのポインター、URB を再送信するために使用</p></td>
 <td align="left"><p>URB へのポインター</p></td>
 <td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、core スタックすることが以前に送信する、URB を使用します。</p></td>
@@ -396,7 +398,7 @@ ms.locfileid: "57348955"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 USB 機能の 1 つのクエリを実行するクライアント ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)または[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)

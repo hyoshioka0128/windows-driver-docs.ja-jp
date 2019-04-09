@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0654caec76f79f2cbc56e1d65338f8b62fed1649
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 9a8cff66082327b239de1d1159b405dfc4281deb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761845"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239401"
 ---
-# <a name="bug-check-0x1a7-smbredirectorlivedump"></a>バグ チェック 0x1A7 の。SMB\_リダイレクター\_LIVEDUMP
+# <a name="bug-check-0x1a7-smbredirectorlivedump"></a>バグ チェック 0x1A7:SMB\_リダイレクター\_LIVEDUMP
 
 SMB\_リダイレクター\_LIVEDUMP バグ チェックが 0x000001A7 の値を持ちます。 SMB リダイレクターが問題を検出し、デバッグ情報を収集するカーネル ダンプをキャプチャしたことを示します。
 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="smbredirectorlivedump-parameters"></a>SMB\_リダイレクター\_LIVEDUMP パラメーター
@@ -65,4 +67,4 @@ HKLM\System\CurrentControlSet\Services\Lanmanworkstation\Parameters [DWORD] Live
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)

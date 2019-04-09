@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3efa8dcdcb99ecbc2e136918ff52a9294e1a98d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 93a4a9d6aa1e50ea5dd79142f1bb7162c62552e4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537302"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238496"
 ---
-# <a name="bug-check-0x77-kernelstackinpageerror"></a>バグ チェック 0x77 の。カーネル\_スタック\_インページ\_エラー
+# <a name="bug-check-0x77-kernelstackinpageerror"></a>バグ チェック 0x77:カーネル\_スタック\_インページ\_エラー
 
 
 カーネル\_スタック\_インページ\_エラーのバグ チェックが 0x00000077 の値を持ちます。 このバグ チェックでは、メモリにカーネル データ ページング ファイルからの要求されたページを読み取れなかったことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="kernelstackinpageerror-parameters"></a>カーネル\_スタック\_インページ\_エラー パラメーター
 

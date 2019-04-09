@@ -15,14 +15,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6430ba8483ba98c3d2dbaa0a8f3adfeabcdee20f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 75bf4937bdaeea4b832728338f2fa4567ce1519d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530369"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239299"
 ---
-# <a name="vad"></a>! vad
+# <a name="vad"></a>!vad
 
 
 **! Vad**拡張機能は、仮想アドレス記述子 (VAD) の詳細または Vad のツリーが表示されます。
@@ -77,14 +77,14 @@ VAD ツリー全体に基づいて*VAD ルート*が表示されます。 (こ�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-仮想アドレス記述子の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+仮想アドレス記述子の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------
 
 使用して任意のプロセス VAD のルートのアドレスが見つかりません、 [ **! プロセス**](-process.md)コマンド。
 
-**! Vad**ページングされたメモリ不足がユーザー モードのモジュールのシンボルを読み込む必要がある場合、コマンドが役に立ちます。 詳細については、[マッピング シンボルときに、PEB がページ アウトが](mapping-symbols-when-the-peb-is-paged-out.md)を参照してください。
+**! Vad**ページングされたメモリ不足がユーザー モードのモジュールのシンボルを読み込む必要がある場合、コマンドが役に立ちます。 詳細については、次を参照してください。[マッピング シンボルときに、PEB がページ アウトが](mapping-symbols-when-the-peb-is-paged-out.md)します。
 
 次の例に示します、 **! vad**拡張機能。
 

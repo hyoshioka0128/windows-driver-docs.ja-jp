@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb1fd4451a7c62ee71863a31aba011659f7cc833
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2c9e0cacae756da13cf48898ddb8f2ed74b59c15
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529562"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239535"
 ---
-# <a name="bug-check-0x1c-pfnreferencecount"></a>バグ チェック 0x1C の。PFN\_参照\_数
+# <a name="bug-check-0x1c-pfnreferencecount"></a>バグ チェック 0x1C:PFN\_参照\_数
 
 
 PFN\_参照\_数のバグ チェックが 0x0000001C の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

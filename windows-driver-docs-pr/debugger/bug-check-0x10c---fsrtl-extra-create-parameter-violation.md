@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e39fefda4c181628d0c005ecb9aa46cc74cbb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0b8d9b15a8c370fa69d76bacb83428d5048aa234
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573897"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238529"
 ---
 # <a name="bug-check-0x10c-fsrtlextracreateparameterviolation"></a>バグ チェック 0x10C:FSRTL\_余分な\_作成\_パラメーター\_違反
 
 
 FSRTL\_余分な\_作成\_パラメーター\_違反のバグ チェックが 0x0000010C の値を持ちます。 これは、ファイル システムのランタイム ライブラリ (FsRtl) 余分な作成パラメーター (ECP) パッケージの違反が検出されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="fsrtlextracreateparameterviolation-parameters"></a>FSRTL\_余分な\_作成\_パラメーター\_違反パラメーター
 

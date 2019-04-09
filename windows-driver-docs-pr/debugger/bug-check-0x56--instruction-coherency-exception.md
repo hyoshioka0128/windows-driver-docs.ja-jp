@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2887f487f6d0d34bac9b86b4a48bed93fd0ef1a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4c53a5f5dff97f8f5f9c1805fd40a9c1d7280239
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530572"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239827"
 ---
-# <a name="bug-check-0x56-instructioncoherencyexception"></a>バグ チェック 0x56 の。命令\_コヒレンシー\_例外
+# <a name="bug-check-0x56-instructioncoherencyexception"></a>バグ チェック 0x56:命令\_コヒレンシー\_例外
 
 
 命令\_コヒレンシー\_例外のバグ チェックが 0x00000056 の値を持ちます。
 
 このバグ チェックが非常に少ない回数が表示されます。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 

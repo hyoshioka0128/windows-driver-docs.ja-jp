@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b9216d5506ceaf34967a6e800c43ad59ac78288
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c3e1843dbcfee98d14985f06150abde7d18f94c3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530235"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238371"
 ---
-# <a name="icpleak"></a>! icpleak
+# <a name="icpleak"></a>!icpleak
 
 
 **! Icpleak**拡張機能は、システム キューに置かれたエントリの最大数を持つオブジェクトのすべての I/O 完了オブジェクトを検査します。
@@ -58,7 +58,7 @@ ms.locfileid: "56530235"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-I/O 完了ポートについては、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 (この本できない場合がありますのいくつかの言語および国。)
+I/O 完了ポートについては、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
 <a name="remarks"></a>注釈
 -------

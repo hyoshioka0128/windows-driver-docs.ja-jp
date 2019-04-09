@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e79cf978d7cbfb26cc8efecd78fe3aef6177ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 552d80d27e769a7e1fcad9fe005a0a3824486586
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572713"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238743"
 ---
 # <a name="bug-check-0x92-updriveronmpsystem"></a>バグ チェック 0x92:\_ドライバー\_ON\_MP\_システム
 
 
 上向き\_ドライバー\_ON\_MP\_システムのバグ チェックが 0x00000092 の値を持ちます。 このバグ チェックでは、マルチプロセッサ システムでユニプロセッサ専用のドライバーが読み込まれたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="updriveronmpsystem-parameters"></a>\_ドライバー\_ON\_MP\_システム パラメーター
 

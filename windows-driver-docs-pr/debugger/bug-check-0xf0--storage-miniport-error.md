@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6adf55a813f819a7b423b87ab4a87acbadee03
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 34250b9e7efac7ed20071b28e7634417e18c4cf3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743559"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239210"
 ---
-# <a name="bug-check-0xf0-storageminiporterror"></a>バグのチェックは 0xf0 です.記憶域\_ミニポート\_エラー
+# <a name="bug-check-0xf0-storageminiporterror"></a>バグ チェック 0xF0:記憶域\_ミニポート\_エラー
 
 記憶域\_ミニポート\_エラーのバグ チェックが 0x00000F0 の値を持ちます。 ストレージ ミニポート ドライバーを SRB 要求を完了できなかったことを示します。
 
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
  
 
 ## <a name="storageminiporterror-parameters"></a>記憶域\_ミニポート\_エラー パラメーター
@@ -78,7 +80,7 @@ ms.locfileid: "56743559"
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
 [Storport ミニポート ドライバー、Storport のインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-s-interface-with-storport-miniport-drivers)
 

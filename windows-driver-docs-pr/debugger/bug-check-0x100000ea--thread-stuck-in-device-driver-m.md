@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e725df7d56d8d9d4843ecc8d0fbe475d5bc022a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0d0037a3156ab232e84bb3f8fd9ab5eb74597901
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538628"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238535"
 ---
-# <a name="bug-check-0x100000ea-threadstuckindevicedriverm"></a>バグ チェック 0x100000EA の。スレッド\_STUCK\_IN\_デバイス\_ドライバー\_M
+# <a name="bug-check-0x100000ea-threadstuckindevicedriverm"></a>バグ チェック 0x100000EA:スレッド\_STUCK\_IN\_デバイス\_ドライバー\_M
 
 
 スレッド\_STUCK\_IN\_デバイス\_ドライバー\_M のバグ チェックが 0x100000EA の値を持ちます。 これは、デバイス ドライバーのスレッドが際限なく回転していることを示します。
 
 バグ チェック 0x100000EA が同じ意味とパラメーターとして[**バグ チェック 0 xea** ](bug-check-0xea--thread-stuck-in-device-driver.md) (スレッド\_STUCK\_IN\_デバイス\_ドライバー)。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
  
 
