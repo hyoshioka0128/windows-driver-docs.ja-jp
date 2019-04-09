@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc6257a7dababdb0c52f720dea6abb6aab70c95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af2c767441d8ed49a0bafc2551f37ca8292c8a1b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537301"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239435"
 ---
-# <a name="bug-check-0xf-spinlockalreadyowned"></a>バグのチェック 0 xf です.スピン\_ロック\_ALREADY\_所有されています。
+# <a name="bug-check-0xf-spinlockalreadyowned"></a>バグ チェック 0xF:スピン\_ロック\_ALREADY\_所有されています。
 
 
 スピン\_ロック\_ALREADY\_所有されているバグ チェックが 0x0000000F の値を持ちます。 これは、スピン ロックが既に所有しているときに、スピン ロックの要求が開始されたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="spinlockalreadyowned-parameters"></a>スピン\_ロック\_ALREADY\_所有されているパラメーター
 

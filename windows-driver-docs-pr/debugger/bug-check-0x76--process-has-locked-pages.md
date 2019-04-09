@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3f25ac6634c2b10d346622f35d196809e4ead3f
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.openlocfilehash: 504dc2d81b4247a535c576c08bf7a3590ede1343
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582919"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239191"
 ---
 # <a name="bug-check-0x76-processhaslockedpages"></a>バグ チェック 0x76:プロセス\_HAS\_ロック\_ページ
 
 
 プロセス\_HAS\_ロック\_ページのバグ チェックが 0x00000076 の値を持ちます。 このバグ チェックでは、I/O 操作の後にロックされたページを解放するドライバーが失敗したこと、またはが既にロックされているページのロックを解除しようとしたことを示します。
 
-**重要な**プログラマ向けのトピックです。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+
 
 ## <a name="processhaslockedpages-parameters"></a>プロセス\_HAS\_ロック\_ページ パラメーター
 
@@ -75,7 +77,7 @@ ms.locfileid: "56582919"
 <a name="resolution"></a>解決方法
 ----------
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 **パラメーター 1 の値は 0x0 場合**
 
