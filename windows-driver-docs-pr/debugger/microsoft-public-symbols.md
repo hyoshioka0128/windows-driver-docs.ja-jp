@@ -9,15 +9,20 @@ keywords:
 - Microsoft シンボル ストア
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 35e314bb8695294aae703c92e76e5b44913e387a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f53f44ee1628fddd1bdd00c05b5ca05642af32a0
+ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573632"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362915"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft パブリック シンボル サーバー
 
+
+**サーバーの状態:** 既知の問題はありません: white_check_mark: <br> Microsoft パブリック シンボル サーバーが完全に動作します。 <br>
+既知の問題を報告してください[ windbgfb@microsoft.com](mailto:windbgfb@microsoft.com)します。 
+
+---
 
 Microsoft シンボル サーバーは、Windows デバッガーのシンボルを公開します。
 
@@ -46,7 +51,7 @@ Symbol search path is: srv*
 Expanded Symbol search path is: cache*c:\MyCache;SRV*https://msdl.microsoft.com/download/symbols
 ```
 
-シンボルの使用方法の詳細については、、 [Windows デバッガーのシンボル パス](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)を参照してください。
+シンボルの使用方法の詳細については、次を参照してください。、 [Windows デバッガーのシンボル パス](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)します。
 
 **シンボル ファイルの圧縮**
 

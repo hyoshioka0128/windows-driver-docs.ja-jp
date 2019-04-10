@@ -13,12 +13,12 @@ keywords:
 - SymStore, 概要
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa1b11ada2c7d5a00e7c43a538598fc21d760f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0943ddd04f7befbaf3ff99b3af284d0e5a2d10e8
+ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529563"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362905"
 ---
 # <a name="symbol-stores-and-symbol-servers"></a>シンボル ストアとシンボル サーバー
 
@@ -34,15 +34,13 @@ A*シンボル ストア*シンボル ファイルや、インデックスを追
 
 [シンボル サーバーの使用](using-a-symbol-server.md)
 
-[シンボル ストアの HTTP](http-symbol-stores.md)
+[HTTP シンボル ストア](http-symbol-stores.md)
 
-[ファイル共有 (SMB) のシンボル サーバー](file-share--smb--symbol-server.md)
+[ファイル共有 (SMB) シンボル サーバー](file-share--smb--symbol-server.md)
 
 [SymStore](symstore.md)
 
 [SymProxy](symproxy.md)
-
-[SymStore](symstore.md)
 
 独自のシンボル ストアを設定しないだけパブリックの Microsoft シンボル ストアを使用する場合を参照してください。 [Microsoft パブリック シンボル](microsoft-public-symbols.md)します。
 

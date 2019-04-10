@@ -1,20 +1,23 @@
 ---
-title: ミニフィルターの高度の要求
-description: ミニフィルターの高度の要求
+title: ミニフィルター高度要求
+description: ミニフィルター高度要求
 ms.assetid: 4861E5FC-9883-455F-A925-EBAFC890F568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c99b5c69c030bf1d5796ede21386c89bc9824a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 310b6abb180422126f89f0cdb9a27d946f2fd047
+ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536196"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362912"
 ---
-# <a name="minifilter-altitude-request"></a>ミニフィルターの高度の要求
+# <a name="minifilter-altitude-request"></a>ミニフィルター高度要求
 
+フィルター マネージャー モデルを開発したファイル システム ミニフィルター ドライバーには、他のミニフィルターに対しては、ファイル システム スタックに存在する相対位置を定義する高度と呼ばれる一意の識別子が必要です。
 
-ミニフィルターの高度割り当ての要求は、Microsoft に電子メールとして送信されます。 電子メールの本文には、次のフィールドと対応する情報を含める必要があります。
+ミニフィルターの高度の識別子を要求するには、ASCII テキスト電子メール メッセージに電子メールを送信[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)件名。「ミニフィルターの高度要求」します。 電子メールの本文を含める必要があります、下のフィールドと対応する情報。
+
+このフィルターの高度は、指定した連絡先の電子メール アドレスにメールで送信できます。
 
 <table>
 <colgroup>
@@ -34,7 +37,7 @@ ms.locfileid: "56536196"
 </tr>
 <tr class="even">
 <td align="left">連絡先の電子メール。</td>
-<td align="left"></td>
+<td align="left">提供、長期的な個別の電子メールと、会社の電子メール エイリアス。</td>
 </tr>
 <tr class="odd">
 <td align="left">製品名:</td>
@@ -75,10 +78,6 @@ ms.locfileid: "56536196"
 </tbody>
 </table>
 
- 
-
-この情報を送信する ASCII テキスト電子メール メッセージで[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)件名。「ミニフィルターの高度要求」します。 このフィルターの高度は、指定した連絡先の電子メール アドレスにメールで送信できます。
-
 割り当ての要求電子メールの本文の例を次に示します。
 
 ``` syntax
@@ -87,13 +86,10 @@ Hi,
 Below is the request information to assign an altitude for our Contoso DataKleen file system minifilter.
 
 Company name: Contoso Ltd.
-Contact e-mail: filterdev@contoso.com
+Contact e-mail: filterdevgroup@contoso.com
 Product name: Contoso DataKleen
 Product URL: http://fsfilters.contoso.com
-Product/Filter Description:
-    The Contoso DataKleen filter removes all occurences of any byte having a value
-    between 128 and 255 during file reads. Our minifilter removes this value since
-    it is not displayable on TTY devices.
+Product/Filter Description: The Contoso DataKleen filter removes all occurrences of any byte having a value between 128 and 255 during file reads. Our minifilter removes this value since it is not displayable on TTY devices.
 Filter filename: ContosoDK.sys
 Filter type: FileSystem
 Filter start-type: Demand
@@ -106,17 +102,8 @@ Thanks,
 FilterDev
 ```
 
-**注:**  
--   すべてのフィールドに入力する必要があります。
--   処理を高度を割り当てる 2 週間 Microsoft をかかる場合があります。 不足している情報は、割り当てに遅れる可能性があります。
--   割り当てられた高度で表示されている高度に最終的に反映される[ファイル システム ミニフィルター割り当てられた高度](allocated-altitudes.md)します。 Microsoft のみを更新するこのリスト年 1 回に注意してください。
+## <a name="note"></a>注
 
- 
-
- 
-
- 
-
-
-
-
+* すべてのフィールドに入力する必要があります。
+* 処理を高度を割り当てる 2 週間 Microsoft をかかる場合があります。 不足している情報は、割り当てに遅れる可能性があります。
+* 割り当てられた高度で表示されている高度に最終的に反映される[ファイル システム ミニフィルター割り当てられた高度](allocated-altitudes.md)します。 Microsoft のみを更新するこのリスト年 1 回に注意してください。
