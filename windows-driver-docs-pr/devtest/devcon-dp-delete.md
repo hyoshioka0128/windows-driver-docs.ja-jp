@@ -10,47 +10,34 @@ api_name:
 - DevCon Dp_delete
 api_type:
 - NA
-ms.date: 04/20/2017
+ms.date: 04/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 582f8aac06c8de1f30f70575b49f9a4d55ebe368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 240d2eed9fe8f4fe56f6236d586768c12cf90b08
+ms.sourcegitcommit: 094464a623e01150656620cf2490b8d4e80b707f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548579"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59516971"
 ---
 # <a name="devcon-dpdelete"></a>DevCon Dp\_削除
 
-
 ローカル コンピューターのドライバー ストアからサード パーティ (OEM) のドライバー パッケージを削除します。 このコマンドは、INF ファイル、PNF ファイル、および関連するカタログ ファイル (.cat) を削除します。
 
+```command
+    devcon [-f] dp_delete inf
 ```
-    devcon dp_delete [-f] inf
-```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="parameters"></a>パラメーター
 
+**-f**デバイスを使用すると、時に使用されている場合でも、このパラメーターは、ドライバー パッケージを削除します。
 
-<span id="_______-f______"></span><span id="_______-F______"></span> **-f**   
-このパラメーターは、デバイスを使用すると、時に使用されている場合でも、ドライバー パッケージを削除します。
+*inf* OEM\*INF ファイルの .inf ファイル名。 追加すると、ドライバー パッケージ、ドライバー ストアなどを使用して Windows に INF ファイルをこの形式のファイル名が割り当てられます[ **DevCon dp\_追加**](devcon-dp-add.md)します。
 
-<span id="_______inf______"></span><span id="_______INF______"></span> *inf*   
-OEM\*INF ファイルの .inf ファイル名。 追加すると、ドライバー パッケージ、ドライバー ストアなどを使用して Windows に INF ファイルをこの形式のファイル名が割り当てられます[ **DevCon dp\_追加**](devcon-dp-add.md)します。
+## <a name="comments"></a>コメント
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+### <a name="sample-usage"></a>使用例
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>サンプルの使用法
-
-```
+```command
 devcon dp_delete oem2.inf
 devcon dp_delete oem0.inf -f
 ```
-
-
-
-
-
-
-
-
-
