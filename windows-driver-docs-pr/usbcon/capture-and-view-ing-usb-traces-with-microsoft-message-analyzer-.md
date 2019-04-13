@@ -1,17 +1,17 @@
 ---
-Description: You can use Microsoft Message Analyzer (MMA) to capture and view live USB traces, or view an existing trace.
+Description: Microsoft メッセージ アナライザー (MMA) を使用して、キャプチャし、ライブの USB トレースを表示または既存のトレースを表示することができます。
 Search.SourceType: Video
-title: Microsoft Message Analyzer を使用した USB トレースのキャプチャとビュー
+title: Microsoft Message Analyzer を使用して USB トレースをキャプチャして表示する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3db2a968525f1e93672b68e82cc90ba054bdd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 417d26c54f265fd541272b7eb170f29d6abc4b33
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556480"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554052"
 ---
-# <a name="capture-and-view-usb-traces-with-microsoft-message-analyzer"></a>Microsoft Message Analyzer を使用した USB トレースのキャプチャとビュー
+# <a name="capture-and-view-usb-traces-with-microsoft-message-analyzer"></a>Microsoft Message Analyzer を使用して USB トレースをキャプチャして表示する
 
 
 **要約**
@@ -49,7 +49,7 @@ Microsoft Message Analyzer がキャプチャされ、人間が判読できる�
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/29cb1d44-a38a-4105-9513-256e69e9f6a0]
 
 ## <a name="related-topics"></a>関連トピック
-[ブログ:Microsoft メッセージ アナライザー (MMA) の USB の ETW トレースのキャプチャ](http://blogs.msdn.com/b/usbcoreblog/archive/2013/11/09/capturing-usb-etw-traces-with-microsoft-message-analyzer-mma.aspx)  
+[ブログ:Microsoft メッセージ アナライザー (MMA) の USB の ETW トレースのキャプチャ](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/11/09/capturing-usb-etw-traces-with-microsoft-message-analyzer-mma.aspx)  
 [Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
 
 

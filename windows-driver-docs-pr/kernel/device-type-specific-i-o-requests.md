@@ -7,12 +7,12 @@ keywords:
 - デバイスの種類に固有の I/O 要求の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df29a43a770745e35576b771c05f6e64e2cf973d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ee2079f4a31f913d7bd688920b1a28c8875edf3f
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570323"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554054"
 ---
 # <a name="device-type-specific-io-requests"></a>デバイスの種類に固有の I/O 要求
 
@@ -32,7 +32,7 @@ Windows Driver Kit (WDK) のデバイスに固有のセクションでは、シ�
 
 このような新しいドライバーを処理する必要がありますすべて**IRP\_MJ\_* XXX*** システム提供のドライバーを処理する要求。 ほとんどの場合、新しいデバイス ドライバも処理の同じセット**IOCTL\_* XXX*** のコードを[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)要求する場合でも、新しいドライバーは、対応するシステム提供のドライバーの動作をエミュレートする必要があります。 それ以外の場合、新しいドライバーは、この種の要求を受け付けるを必要とするユーザー モード アプリケーションを中断する可能性があります。
 
-ドライバーは Irp での I/O の状態のブロックで特定の要求の戻り値として設定できる NTSTATUS 値については、[NTSTATUS 値を使用して](using-ntstatus-values.md)を参照してください。 エラーのログ パケットに指定できる NTSTATUS 値については、[ログ エラー](logging-errors.md)を参照してください。 新しい種類のデバイス ドライバーによって返される、類似した種類のデバイス、または他、適切な状態の値の決定に役立つ用の新しいドライバーによって返される適切な状態の値を決定するには、この情報を使用します。
+ドライバーは Irp での I/O の状態のブロックで特定の要求の戻り値として設定できる NTSTATUS 値については、次を参照してください。 [NTSTATUS 値を使用して](using-ntstatus-values.md)します。 エラーのログ パケットに指定できる NTSTATUS 値については、次を参照してください。[ログ エラー](logging-errors.md)します。 新しい種類のデバイス ドライバーによって返される、類似した種類のデバイス、または他、適切な状態の値の決定に役立つ用の新しいドライバーによって返される適切な状態の値を決定するには、この情報を使用します。
 
 ドライバーとそれぞれがサポートするために必要である要求のさまざまな種類の詳細については、次を参照してください。
 
@@ -44,7 +44,7 @@ Windows Driver Kit (WDK) のデバイスに固有のセクションでは、シ�
 
 [HID のアーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)
 
-[USB クライアント ドライバーの I/O 要求](https://msdn.microsoft.com/library/windows/hardware/ff540134#km-ioctl)
+[USB クライアント ドライバーの I/O 要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#km-ioctl)
 
 [IEEE 1394 ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/ff538867)
 

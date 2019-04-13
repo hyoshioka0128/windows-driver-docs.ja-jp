@@ -3,19 +3,19 @@ Description: このトピックでは、USB ドライバー スタックに特�
 title: URB の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be6a5c675e6f1ba1a56d735f010c302b76d3a53c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 4ada89a24eddfc269748427e0276e129799269a2
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349835"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554060"
 ---
 # <a name="how-to-submit-an-urb"></a>URB の送信方法
 
 
 このトピックでは、USB ドライバー スタックに特定の要求を処理するのに初期化された URB を送信するために必要な手順について説明します。
 
-クライアント ドライバーは、型の I/O 要求パケット (Irp) のデバイスに配信される I/O 制御コード (IOCTL) 要求を使用して、そのデバイスと通信する[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。 など、選択構成要求をデバイス固有の要求の要求で、USB 要求ブロック (URB) に関連付けられた IRP を説明します。 IRP、URB を関連付けると、USB ドライバー スタックに要求を送信するプロセスを URB の送信と呼びます。 クライアント ドライバーを使用する必要があります、URB を送信する[ **IOCTL\_内部\_USB\_送信\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)デバイス制御コードとします。 IOCTL では、クライアント ドライバーを使用して、デバイスが接続されているポートとそのデバイスを管理する I/O インターフェイスを提供する「内部」の制御コードの 1 つです。 ユーザー モード アプリケーションには、その内部の I/O インターフェイスにアクセスがありません。 カーネル モード ドライバーの詳細の制御コードを参照してください。 [USB クライアント ドライバーのカーネル モードの Ioctl](https://msdn.microsoft.com/library/windows/hardware/ff540134#km-ioctl)します。
+クライアント ドライバーは、型の I/O 要求パケット (Irp) のデバイスに配信される I/O 制御コード (IOCTL) 要求を使用して、そのデバイスと通信する[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。 など、選択構成要求をデバイス固有の要求の要求で、USB 要求ブロック (URB) に関連付けられた IRP を説明します。 IRP、URB を関連付けると、USB ドライバー スタックに要求を送信するプロセスを URB の送信と呼びます。 クライアント ドライバーを使用する必要があります、URB を送信する[ **IOCTL\_内部\_USB\_送信\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)デバイス制御コードとします。 IOCTL では、クライアント ドライバーを使用して、デバイスが接続されているポートとそのデバイスを管理する I/O インターフェイスを提供する「内部」の制御コードの 1 つです。 ユーザー モード アプリケーションには、その内部の I/O インターフェイスにアクセスがありません。 カーネル モード ドライバーの詳細の制御コードを参照してください。 [USB クライアント ドライバーのカーネル モードの Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#km-ioctl)します。
 
 ### <a name="prerequisites"></a>前提条件
 

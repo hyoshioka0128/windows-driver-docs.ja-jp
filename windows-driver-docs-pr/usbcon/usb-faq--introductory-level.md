@@ -1,14 +1,14 @@
 ---
-Description: This topic presents frequently asked questions for driver developers who are new to developing and integrating USB devices and drivers with Windows operating systems.
+Description: このトピックでは、初心者の開発と Windows オペレーティング システムとの USB デバイスとドライバーの統合にはドライバー開発者向けのよく寄せられる質問を表示します。
 title: Windows における USB- よくあるご質問
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e5ffd611ce4f41f4c575defff6bd3fc5531d53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: db83cb21b66e83aae0c0962080cb56bb9dd83433
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581139"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554074"
 ---
 # <a name="usb-in-windows---faq"></a>Windows における USB- よくあるご質問
 
@@ -125,7 +125,7 @@ USB 3.0 ポートが xHCI コント ローラーに正しくルーティング�
 
 USB 2.0 ポートが USB 2.0 ハブを介して EHCI コント ローラーに接続されている場合は、トラフィックは EHCI コント ローラーを移動され、USB 2.0 ドライバー スタックが読み込まれます。
 
-USB ドライバー スタックのドライバーの詳細については、[Windows での USB ホスト側ドライバー](https://go.microsoft.com/fwlink/p/?linkid=320134)を参照してください。
+USB ドライバー スタックのドライバーの詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](https://go.microsoft.com/fwlink/p/?linkid=320134)します。
 
 PC の USB 2.0 ポートがコンパニオン コント ローラーを使用する場合、ポートがルーティング ホスト コント ローラーは、デバイスの速度によって異なります。 たとえば、低速デバイスは UHCI または OHCI コント ローラーを経由して接続し、USBUHCI または USBOHCI ドライバーを使用します。 PC 高速デバイスを EHCI コント ローラーにルーティングする、そのため、Windows は USBEHCI ドライバーを使用します。
 
@@ -592,7 +592,7 @@ Windows XP Service Pack 1 および Windows の以前のバージョン。
 
 Windows XP Service Pack 2 および以降のバージョンの Windows では、インターフェイスの番号は増加、連続しないにのみ必要です。
 
-インターフェイス番号の詳細については、[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/kb/814560)を参照してください。
+インターフェイス番号の詳細については、次を参照してください。[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/kb/814560)します。
 
 インターフェイスの代替設定は、すべてのバージョンの Windows には、次のように割り当てる必要があります。
 
@@ -635,9 +635,9 @@ Needs = Composite.Dev
 ## <a name="how-do-i-enable-debug-tracing-for-usb-core-binaries"></a>USB の主要なバイナリのデバッグ トレースを有効にする方法
 
 
-に関するブログの投稿を参照してください。[を含めると、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](http://blogs.msdn.com/b/usbcoreblog/archive/2013/06/29/wpp-blog-post.aspx)します。
+に関するブログの投稿を参照してください。[を含めると、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)します。
 
-USB core スタックのデバッグに関する詳細については、[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/kb/314743)を参照してください。
+USB core スタックのデバッグに関する詳細については、次を参照してください。[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/kb/314743)します。
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows は、インターフェイスの関連付けの記述子をサポートしますか。
 

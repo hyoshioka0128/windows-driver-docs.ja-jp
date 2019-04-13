@@ -1,21 +1,21 @@
 ---
-Description: This topic lists the headers and libraries required for writing a Windows Driver Model (WDM) USB client driver.
-title: ヘッダーと USB クライアント ドライバーで必要なライブラリ
+Description: このトピックでは、ヘッダーと、Windows Driver Model (WDM) USB クライアント ドライバーを記述するために必要なライブラリを一覧表示します。
+title: USB クライアント ドライバーで必要なヘッダーとライブラリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1402d3baf62a138b9f6718488c25e6dafb0bb75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 91613d6c66488820ca24f089ffc9cdf68d108571
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560754"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554058"
 ---
-# <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>ヘッダーと USB クライアント ドライバーで必要なライブラリ
+# <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB クライアント ドライバーで必要なヘッダーとライブラリ
 
 
 このトピックでは、ヘッダーと、Windows Driver Model (WDM) USB クライアント ドライバーを記述するために必要なライブラリを一覧表示します。
 
-特定のデバイス ドライバー インターフェイス (DDI) のヘッダーとライブラリを検索のリファレンス ページを参照してください。、 [USB 参照](https://msdn.microsoft.com/library/windows/hardware/ff540134)します。
+特定のデバイス ドライバー インターフェイス (DDI) のヘッダーとライブラリを検索のリファレンス ページを参照してください。、 [USB 参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/)します。
 
 ## <a name="headers"></a>ヘッダー
 
@@ -208,8 +208,8 @@ Windows Driver Kit (WDK) では、Windows 8 以降、ヘッダー ファイル u
 
 ## <a name="related-topics"></a>関連トピック
 [ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
-[Windows ドライバー キットのヘッダー ファイル](https://msdn.microsoft.com/library/windows/hardware/ff554695)  
-[USB クライアント ドライバー開発を入門](getting-started-with-usb-client-driver-development.md)  
+[Windows Driver Kit (WDK) のヘッダー ファイル](https://msdn.microsoft.com/library/windows/hardware/ff554695)  
+[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
 
 
 

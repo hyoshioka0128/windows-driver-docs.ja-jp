@@ -4,12 +4,12 @@ description: 転送トレース レコーダー (IFR) は、トレースなど�
 ms.assetid: D11FA28E-3B0C-4D9D-AEDA-8A80DE58091C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6821a9cf038953400c94d0d62afcd3a5d652ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f7df66cfc6e9ff645171ad8563e0caf86daaf68f
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570098"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554068"
 ---
 # <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>ログ トレースのように、転送トレース レコーダー (IFR)
 
@@ -20,7 +20,7 @@ ms.locfileid: "56570098"
 -   WPP 既定のログまたはカスタムのログにトレース メッセージを送信する方法
 -   デバッガーでのトレース メッセージを表示する方法
 
-**適用対象します。**
+**適用対象:**
 
 -   最小 OS:WDM、KMDF ドライバー開発者向け Windows 8
 -   最小 OS:(2.15) UMDF ドライバー開発者向け Windows 10
@@ -63,8 +63,8 @@ IFR 内のメッセージには、それらに関連付けられているタイ�
 
 
 -   理解して[WPP ソフトウェア トレース](wpp-software-tracing.md)など[WPP ソフトウェア トレースを追加するには、ドライバーを](adding-wpp-software-tracing-to-a-windows-driver.md)と[WPP マクロを呼び出すことの宣言と](adding-wpp-macros-to-a-trace-provider.md)します。
--   このブログ記事については、[を含めるし、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](http://blogs.msdn.com/b/usbcoreblog/archive/2013/06/29/wpp-blog-post.aspx)します。
--   トースター サンプルを検討します。 IFR を有効にして、それを使用する方法を示すために変更されました。 詳細については、[トースター サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=617723)を参照してください。
+-   このブログ記事については、[を含めるし、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)します。
+-   トースター サンプルを検討します。 IFR を有効にして、それを使用する方法を示すために変更されました。 詳細については、次を参照してください。[トースター サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=617723)します。
 
 ## <a name="span-idenablewppsoftwaretracingspanspan-idenablewppsoftwaretracingspanspan-idenablewppsoftwaretracingspanenable-wpp-software-tracing"></a><span id="Enable_WPP_software_tracing"></span><span id="enable_wpp_software_tracing"></span><span id="ENABLE_WPP_SOFTWARE_TRACING"></span>WPP ソフトウェア トレースを有効にします。
 
@@ -84,7 +84,7 @@ IFR を使用するには、ドライバーを構成する前に、WPP として
 
         ![visual studio で、wpp ソフトウェア トレースを有効にします。](images/wpp-enable2.png)
 
--   WDF のドライバー テンプレートのいずれかを使用されていない場合、は、WPP ソフトウェア トレースを設定します。 ヘッダー ファイル (WDF テンプレートで提供される trace.h に類似) を作成します。 ヘッダー ファイルには、WPP マクロが含まれています ([WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)、 [WPP\_クリーンアップ](https://msdn.microsoft.com/library/windows/hardware/ff556179)) と WPP 制御フラグとトレース メッセージのステートメント。 手順については、[Windows ドライバーに WPP ソフトウェア トレースを追加する](adding-wpp-software-tracing-to-a-windows-driver.md)を参照してください。
+-   WDF のドライバー テンプレートのいずれかを使用されていない場合、は、WPP ソフトウェア トレースを設定します。 ヘッダー ファイル (WDF テンプレートで提供される trace.h に類似) を作成します。 ヘッダー ファイルには、WPP マクロが含まれています ([WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)、 [WPP\_クリーンアップ](https://msdn.microsoft.com/library/windows/hardware/ff556179)) と WPP 制御フラグとトレース メッセージのステートメント。 手順については、次を参照してください。 [Windows ドライバーに WPP ソフトウェア トレースを追加する](adding-wpp-software-tracing-to-a-windows-driver.md)します。
 
     これらのタスクを実行することを確認します。
 
@@ -160,13 +160,13 @@ WPP ソフトウェア トレースをドライバーを追加した後、IFR �
 
 ドライバーのプロジェクトで WPP を有効にした後、WPP は既定のログを作成します。 WPP を出力する既定のログのバッファー サイズは、4096 バイトです。 デバッグ ビルドでは、バッファーは、24576 バイトです。
 
-既定のログ バッファーを割り当てることが失敗すると、トレース メッセージは、WPP に送信されます。 つまり、, 違いますでは、トレース メッセージは記録されませんが、トレースは、ライブ WPP トレースとしてまだ認識できます。 既定のログが作成されたかどうかを判断するドライバーを呼び出す必要があります[ **WppRecorderIsDefaultLogAvailable**](https://msdn.microsoft.com/library/windows/hardware/dn914614)します。 既定のログが存在しないドライバーが IFR を使用したい場合は、ドライバーは、ログを作成する必要があります。 詳細については、[カスタム ログ作成](#create)を参照してください。
+既定のログ バッファーを割り当てることが失敗すると、トレース メッセージは、WPP に送信されます。 つまり、, 違いますでは、トレース メッセージは記録されませんが、トレースは、ライブ WPP トレースとしてまだ認識できます。 既定のログが作成されたかどうかを判断するドライバーを呼び出す必要があります[ **WppRecorderIsDefaultLogAvailable**](https://msdn.microsoft.com/library/windows/hardware/dn914614)します。 既定のログが存在しないドライバーが IFR を使用したい場合は、ドライバーは、ログを作成する必要があります。 詳細については、次を参照してください。[カスタム ログ作成](#create)です。
 
 1.  初期化を[**レコーダー\_構成\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914606)呼び出して構造[**レコーダー\_構成\_PARAMS\_INIT**](https://msdn.microsoft.com/library/windows/hardware/dn914607)します。 マクロのセット、 **CreateDefaultLog** true の場合、メンバー、ドライバーが既定のログを使用することを示します。
 2.  呼び出す[ **WppRecorderConfigure** ](https://msdn.microsoft.com/library/windows/hardware/dn914611) 、初期化済みのアドレスを指定して[**レコーダー\_構成\_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/dn914606)構造体。
 3.  レコーダーを取得する\_呼び出すことによって既定のログにログの非透過ハンドル[ **WppRecorderLogGetDefault**](https://msdn.microsoft.com/library/windows/hardware/dn895240)します。
-4.  Trace.h で宣言されているトレース マクロを呼び出すことによって、既定のログにトレース メッセージを印刷します。 詳細については、[トレース関数を定義](#define)を参照してください。
-5.  ビューは、デバッガーでのメッセージをトレースします。 詳細については、[トレース メッセージを表示](#view)を参照してください。
+4.  Trace.h で宣言されているトレース マクロを呼び出すことによって、既定のログにトレース メッセージを印刷します。 詳細については、次を参照してください。[トレース関数を定義](#define)します。
+5.  ビューは、デバッガーでのメッセージをトレースします。 詳細については、次を参照してください。[トレース メッセージを表示](#view)します。
 
 **注**既定のログを無効にする設定、 **CreateDefaultLog**のメンバー、 [**レコーダー\_構成\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914606)にFalse の場合、まず[ **WppRecorderConfigure**](https://msdn.microsoft.com/library/windows/hardware/dn914611)します。
 
@@ -256,7 +256,7 @@ IFR に対する既定のログでは、非ページ プール メモリの 4096
 3.  任意。 設定、 **LogIdentifier**をこのバッファーからのトレース メッセージを識別するのに役立つ文字列です。 文字列は、16 文字でを超えない必要があります。
 4.  呼び出す[ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)の設定されたアドレスを指定して[**レコーダー\_ログ\_作成\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/dn914608)構造体。
 5.  この新しいバッファーへのトレース メッセージを印刷するには、トレース マクロを呼び出すと、レコーダーを渡す\_で受信したログのハンドル、 [ **WppRecorderLogCreate** ](https://msdn.microsoft.com/library/windows/hardware/dn914615)を呼び出します。
-6.  ビューは、デバッガーでのメッセージをトレースします。 詳細については、[トレース メッセージを表示](#view)を参照してください。
+6.  ビューは、デバッガーでのメッセージをトレースします。 詳細については、次を参照してください。[トレース メッセージを表示](#view)します。
 
 システムでは、レジストリに最大と最小バッファー サイズを定義します。 メモリを節約し、ログ機能を構成するのには、これらの値を適切に設定できます。
 
@@ -369,7 +369,7 @@ _In_ PUNICODE_STRING RegistryPath
 ## <a name="span-iddefinespanspan-iddefinespandefine-trace-functions"></a><span id="define"></span><span id="DEFINE"></span>トレース関数を定義します。
 
 
-入力パラメーターとして"IFRLOG"がある、Trace.h) の「トレース関数を追加します。 トレース マクロについては、[Windows ドライバーに追加の WPP ソフトウェア トレース](adding-wpp-software-tracing-to-a-windows-driver.md)を参照してください。
+入力パラメーターとして"IFRLOG"がある、Trace.h) の「トレース関数を追加します。 トレース マクロについては、次を参照してください。 [Windows ドライバーに追加の WPP ソフトウェア トレース](adding-wpp-software-tracing-to-a-windows-driver.md)します。
 
 ```ManagedCPlusPlus
 //

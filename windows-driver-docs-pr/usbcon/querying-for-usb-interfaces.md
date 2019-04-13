@@ -1,16 +1,16 @@
 ---
-Description: Instead of using the I/O Request Packet (IRP) mechanism, a USB client driver can get a reference to a bus driver interface and use it to access bus driver routines.
-title: バス ドライバー インターフェイスの照会
+Description: I/O 要求パケット (IRP) メカニズムを使用する代わりに USB クライアント ドライバーは、バス ドライバー インターフェイスへの参照を取得し、バス ドライバーのルーチンへのアクセスに使用できます。
+title: バス ドライバー インターフェイスのクエリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17449c4945716f83b336ea2e4d74acc1485ab166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fc0af9d081017db8cb0c3346f27bf9933d274f70
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549803"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554056"
 ---
-# <a name="querying-for-bus-driver-interfaces"></a>バス ドライバー インターフェイスの照会
+# <a name="querying-for-bus-driver-interfaces"></a>バス ドライバー インターフェイスのクエリ
 
 
 I/O 要求パケット (IRP) メカニズムを使用する代わりに USB クライアント ドライバーは、バス ドライバー インターフェイスへの参照を取得し、バス ドライバーのルーチンへのアクセスに使用できます。
@@ -58,7 +58,7 @@ Windows Vista の USB クライアント ドライバー自体は公開できま
     ntStatus = IoCallDriver(PDO that the client passes URBs to, irp);
     ```
 
-USB の詳細についてを参照してくださいをインターフェイスの[USB クライアント ドライバー、バス ドライバー インターフェイス ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540134#usbdi)します。
+USB の詳細についてを参照してくださいをインターフェイスの[USB クライアント ドライバー、バス ドライバー インターフェイス ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#usbdi)します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB デバイスの Windows クライアント ドライバーの開発](usb-driver-development-guide.md)  

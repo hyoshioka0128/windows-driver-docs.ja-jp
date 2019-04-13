@@ -1,16 +1,16 @@
 ---
-Description: Interfaces on a composite USB device can be grouped in collections. The USB Generic Parent Driver (Usbccgp.sys) can enumerate interface collections in four ways.
-title: 複合の USB デバイスのインターフェイスのコレクションの列挙
+Description: 複合 USB デバイス上のインターフェイスは、コレクションにグループ化できます。 USB の一般的な親ドライバー (Usbccgp.sys) は、次の 4 つの方法でインターフェイスのコレクションを列挙できます。
+title: USB 複合デバイス上のインターフェイス コレクションの列挙
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f1e73f3ce97a0e8ab7c65268a5d066bff1350f2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 912d9a75ae21c48fc47ddf1a8c5d7a46527974b2
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557350"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554076"
 ---
-# <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>複合の USB デバイスのインターフェイスのコレクションの列挙
+# <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイス コレクションの列挙
 
 
 複合 USB デバイス上のインターフェイスは、コレクションにグループ化できます。 [USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md) 4 つの方法でインターフェイスのコレクションを列挙できます。
@@ -19,19 +19,19 @@ ms.locfileid: "56557350"
 
 1.  **ベンダーから提供されたコールバック ルーチン**
 
-    仕入先がコールバック ルーチンに登録されている場合、 [USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)、コールバック ルーチンに優先順位できグループ インターフェイスにコールバック ルーチンことができます、一般的な親ドライバーなく他の方法を使用します。 ベンダーから提供されたコールバック ルーチンを使用してインターフェイスのコレクションの列挙体の詳細については、[複合デバイスを USB でインターフェイス コレクションの列挙体](support-for-interface-collections.md)を参照してください。
+    仕入先がコールバック ルーチンに登録されている場合、 [USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)、コールバック ルーチンに優先順位できグループ インターフェイスにコールバック ルーチンことができます、一般的な親ドライバーなく他の方法を使用します。 ベンダーから提供されたコールバック ルーチンを使用してインターフェイスのコレクションの列挙体の詳細については、次を参照してください。[複合デバイスを USB でインターフェイス コレクションの列挙体](support-for-interface-collections.md)します。
 
 2.  **Union 関数型記述子**
 
-    . 一般的な親ドライバーを使用して仕入先がジェネリックの親の USB ドライバーで CDC と WMCDC の列挙を有効な場合*共用体の機能の記述子*(Ufd) コレクションにグループのインターフェイスにします。 有効な場合、このメソッドは、ベンダーから提供されたコールバック ルーチンを除けば、他のすべてのメソッドに優先します。 Ufd デバイスの列挙体の詳細については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+    . 一般的な親ドライバーを使用して仕入先がジェネリックの親の USB ドライバーで CDC と WMCDC の列挙を有効な場合*共用体の機能の記述子*(Ufd) コレクションにグループのインターフェイスにします。 有効な場合、このメソッドは、ベンダーから提供されたコールバック ルーチンを除けば、他のすべてのメソッドに優先します。 Ufd デバイスの列挙体の詳細については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 3.  **インターフェイスの関連付けの記述子**
 
-    場合*インターフェイスの関連付け記述子*(Iad) が存在する、一般的な親の USB ドライバーは、従来の方法ではなく、Iad を使用して、常にインターフェイスをグループします。 ベンダーが、インターフェイスのコレクションを定義する Iad を使用することをお勧めします。 Iad でのデバイス列挙の詳細については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+    場合*インターフェイスの関連付け記述子*(Iad) が存在する、一般的な親の USB ドライバーは、従来の方法ではなく、Iad を使用して、常にインターフェイスをグループします。 ベンダーが、インターフェイスのコレクションを定義する Iad を使用することをお勧めします。 Iad でのデバイス列挙の詳細については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 4.  **従来のオーディオ メソッド。**
 
-    一般的な親の USB ドライバーでは、オーディオ機能用に予約されている従来の手法を使用して、インターフェイスのコレクションを列挙できます。 一般的な親ドライバーでは、デバイスで、Iad がある場合、このメソッドは使用しません。 列挙体のオーディオの従来の方法の詳細については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+    一般的な親の USB ドライバーでは、オーディオ機能用に予約されている従来の手法を使用して、インターフェイスのコレクションを列挙できます。 一般的な親ドライバーでは、デバイスで、Iad がある場合、このメソッドは使用しません。 列挙体のオーディオの従来の方法の詳細については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 ##  <a name="customizing-enumeration-of-interface-collections-for-composite-devices"></a>複合デバイス用のインターフェイスのコレクションの列挙をカスタマイズします。
 
@@ -55,7 +55,7 @@ ms.locfileid: "56557350"
 
 一般的な親ドライバーは、各関数の記述子の物理デバイス オブジェクト (PDO) を作成します。
 
-USB デバイスの構成インターフェイスと列挙型のコールバック ルーチンにまとめられています[汎用親ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540134#usbccgp)します。
+USB デバイスの構成インターフェイスと列挙型のコールバック ルーチンにまとめられています[汎用親ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#usbccgp)します。
 
 ### <a name="usb-generic-parent-driver-loading-mechanism"></a>USB 一般的な親ドライバーの読み込みメカニズム
 
@@ -65,7 +65,7 @@ USB デバイスの構成インターフェイスと列挙型のコールバッ�
 ただし、この既定のメカニズムは使えませんインターフェイスのコレクションのカスタム列挙を必要とする複合デバイスの既定のメカニズム、システム読み込まれないため、必要なベンダーから提供されたフィルター ドライバー。 列挙コールバック ルーチン メカニズムの動作をフィルター ドライバー、USB デバイスの構成インターフェイスを公開する必要があります既に読み込まれている USB の一般的な親複合デバイスのインターフェイスのコレクションを列挙する場合。 これには、複合デバイスのベンダーを複合デバイスのデバイス ID と一致して、一般的な親の USB ドライバーと、フィルター ドライバーの両方を明示的に読み込みます INF ファイルをインストールする必要があります。
 
 
-## <a name="support-for-the-wireless-mobile-communication-device-class"></a>ワイヤレス モバイル通信のデバイス クラスに対するサポート
+## <a name="support-for-the-wireless-mobile-communication-device-class"></a>ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
 
 
 Windows Vista では、 [USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)ユニバーサル シリアル バス (USB) 通信デバイス クラス (CDC) USB ワイヤレス モバイル通信デバイス クラス (に含まれているデバイスのサポートを提供します。WMCDC)。
@@ -102,7 +102,7 @@ HKR,,EnumeratorClass, 0x00000001,02,00,00
 
 値を割り当てる必要がある**EnumeratorClass** INF ファイルで 16 進数の組によって表される 3 つの 1 バイトのバイナリ値から構成されます。02、00 および 00 です。 これら 3 つの数値は、USB Implementers Forum がそれぞれの CDC デバイス クラス、CDC デバイス サブクラスおよび CDC デバイス プロトコルに割り当てられている値に対応します。
 
-正しく WMCDC デバイスを列挙するためにレジストリを構成する方法の詳細については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+正しく WMCDC デバイスを列挙するためにレジストリを構成する方法の詳細については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 さらに、次のトピックには、WMCDC について説明します。
 
@@ -232,7 +232,7 @@ COMPANYNAME.DeviceDesc="USB Phone Parent"
 -   OBEX コントロール モデル インターフェイスのコレクション、またはすべての OBEX コントロール モデル インターフェイス コレクションの 1 つの PDO を作成するには、別の物理デバイス オブジェクト (Pdo) を作成する USB 一般的な親ドライバーを構成することができます。
 -   UFD のインターフェイスの番号の一覧には、ギャップを持つことができます。 つまり、UFD のインターフェイスの番号は連続していないインターフェイスを参照できます。 この種類の番号が無効です、たとえば、 [USB インターフェイスの関連付け記述子 (IAD)](usb-interface-association-descriptor.md)シーケンシャル番号を持つ、インターフェイスが連続する必要があります。
 -   Ufd はオーディオ関連のインターフェイスのコレクションを含めることができます。
--   CDC と WMCDC インターフェイスのコレクションのハードウェア識別子 (Id) は、インターフェイス サブクラスを含める必要があります。 ハードウェア Id 持つには、MI が含まれて、他の USB インターフェイス\_%02 X サフィックス インターフェイスの番号を指定するインターフェイス サブクラスをに関する情報は含まれません。 ベンダーとのインターフェイスをロードするドライバーを確認する記述子レイアウト内の位置ではなく、特定のインターフェイスのコレクションに一致するハードウェア ID の INF ファイルを提供できるようにするハードウェア ID に含まれるサブクラス情報コレクションです。 ハードウェア ID のサブクラスの情報は、ユーザー モード ドライバーなどの代替手段を WMCDC インターフェイスのコレクションを管理する現在のベンダーから提供されたドライバーから段階的な移行パスができます。 CDC と WMCDC ハードウェア Id の例については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。 USB インターフェイスのハードウェアの概要については、Id が書式設定は、「 [USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)します。
+-   CDC と WMCDC インターフェイスのコレクションのハードウェア識別子 (Id) は、インターフェイス サブクラスを含める必要があります。 ハードウェア Id 持つには、MI が含まれて、他の USB インターフェイス\_%02 X サフィックス インターフェイスの番号を指定するインターフェイス サブクラスをに関する情報は含まれません。 ベンダーとのインターフェイスをロードするドライバーを確認する記述子レイアウト内の位置ではなく、特定のインターフェイスのコレクションに一致するハードウェア ID の INF ファイルを提供できるようにするハードウェア ID に含まれるサブクラス情報コレクションです。 ハードウェア ID のサブクラスの情報は、ユーザー モード ドライバーなどの代替手段を WMCDC インターフェイスのコレクションを管理する現在のベンダーから提供されたドライバーから段階的な移行パスができます。 CDC と WMCDC ハードウェア Id の例については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。 USB インターフェイスのハードウェアの概要については、Id が書式設定は、「 [USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)します。
 
 ### <a name="cdc-and-wmcdc-control-models"></a>CDC と WMCDC コントロール モデル
 
@@ -288,7 +288,7 @@ CDC と WMCDC デバイスで発生する USB オーディオ デバイス ク�
 <td><p>ハードウェア Id</p></td>
 <td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;MI_%02x
 USB\Vid_%04x&amp;Pid_%04x&amp;MI_%02x</code></pre>
-<p>オーディオのインターフェイスのコレクションのハードウェア Id では、インターフェイス クラスに固有の情報は含まれません。 ハードウェア オーディオ インターフェイスのコレクションに関連付けられている Id の書式設定の詳細については、<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">ワイヤレス モバイル通信デバイス クラスに対するサポート</a>を参照してください。</p></td>
+<p>オーディオのインターフェイスのコレクションのハードウェア Id では、インターフェイス クラスに固有の情報は含まれません。 ハードウェア オーディオ インターフェイスのコレクションに関連付けられている Id の書式設定の詳細については、次を参照してください。<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">ワイヤレス モバイル通信デバイス クラスに対するサポート</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
@@ -719,7 +719,7 @@ USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_03&amp;MI_%02x
 USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_03</code></pre></td>
 </tr>
 <tr class="even">
-<td><p>互換性のある ID</p></td>
+<td><p>互換性 ID</p></td>
 <td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_03&amp;Prot_%02X
 USB\Class_02&amp;SubClass_03
 USB\Class_02</code></pre></td>
@@ -1045,7 +1045,7 @@ USB\Class_02</code></pre></td>
 #### <a name="wmcdc-obex-control-model-multiple-pdos"></a>WMCDC OBEX コントロール モデル (複数 Pdo)
 
 
-オブジェクト交換プロトコル (OBEX) コントロール モデル インターフェイスのコレクションを列挙するために 2 つの方法があります一般的な親の USB ドライバーがすべての OBEX インターフェイスをまとめてグループ化とすべての OBEX インターフェイスの 1 つの物理デバイス オブジェクト (PDO) を作成、または。親のドライバーでは、OBEX インターフェイスごとに個別の PDO を作成できます。 ハードウェアのグループ化された OBEX インターフェイスの一般的な親の USB ドライバーを生成する Id については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+オブジェクト交換プロトコル (OBEX) コントロール モデル インターフェイスのコレクションを列挙するために 2 つの方法があります一般的な親の USB ドライバーがすべての OBEX インターフェイスをまとめてグループ化とすべての OBEX インターフェイスの 1 つの物理デバイス オブジェクト (PDO) を作成、または。親のドライバーでは、OBEX インターフェイスごとに個別の PDO を作成できます。 ハードウェアのグループ化された OBEX インターフェイスの一般的な親の USB ドライバーを生成する Id については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 一般的な親の USB ドライバーは、OBEX インターフェイスごとに個別の Pdo を割り当てます、ときに、Pdo の次のプロパティがあります。
 
@@ -1100,7 +1100,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>特別な処理</p></td>
-<td><p>複合デバイスを管理する USB 一般的な親ドライバーのインスタンスに関連付けられているレジストリ設定は、PDO を 1 つまたは複数の Pdo OBEX インターフェイスを管理するかどうかを決定します。 一般的な親の USB ドライバーが OBEX インターフェイスを列挙する方法を指定するレジストリ設定の詳細については、<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">ワイヤレス モバイル通信デバイス クラスに対するサポート</a>を参照してください。</p></td>
+<td><p>複合デバイスを管理する USB 一般的な親ドライバーのインスタンスに関連付けられているレジストリ設定は、PDO を 1 つまたは複数の Pdo OBEX インターフェイスを管理するかどうかを決定します。 一般的な親の USB ドライバーが OBEX インターフェイスを列挙する方法を指定するレジストリ設定の詳細については、次を参照してください。<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">ワイヤレス モバイル通信デバイス クラスに対するサポート</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1108,7 +1108,7 @@ USB\Class_02</code></pre></td>
 #### <a name="wmcdc-obex-control-model-single-pdo"></a>WMCDC OBEX コントロール モデル (単一 PDO)
 
 
-オブジェクト交換プロトコル (OBEX) コントロール モデル インターフェイスのコレクションを列挙するために 2 つの方法があります一般的な親の USB ドライバーがすべての OBEX インターフェイスをまとめてグループ化とすべての OBEX インターフェイスの 1 つの物理デバイス オブジェクト (PDO) を作成、または。親のドライバーでは、OBEX インターフェイスごとに個別の PDO を作成できます。 ハードウェアとは別に列挙されている OBEX インターフェイスの一般的な親の USB ドライバーを生成する Id については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+オブジェクト交換プロトコル (OBEX) コントロール モデル インターフェイスのコレクションを列挙するために 2 つの方法があります一般的な親の USB ドライバーがすべての OBEX インターフェイスをまとめてグループ化とすべての OBEX インターフェイスの 1 つの物理デバイス オブジェクト (PDO) を作成、または。親のドライバーでは、OBEX インターフェイスごとに個別の PDO を作成できます。 ハードウェアとは別に列挙されている OBEX インターフェイスの一般的な親の USB ドライバーを生成する Id については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 一般的な親の USB ドライバーが 1 つの PDO をすべての OBEX インターフェイスに割り当てると、ときに PDO は次のプロパティがあります。
 
@@ -1162,7 +1162,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>特別な処理</p></td>
-<td><p>複合デバイスを管理する USB 一般的な親ドライバーのインスタンスに関連付けられているレジストリ設定は、PDO を 1 つまたは複数の Pdo OBEX インターフェイスを管理するかどうかを決定します。 一般的な親の USB ドライバーが OBEX インターフェイスを列挙する方法を指定するレジストリ設定の詳細については、<a href="support-for-interface-collections.md" data-raw-source="[Enumeration of Interface Collections on USB Composite Devices](support-for-interface-collections.md)">複合デバイスを USB でインターフェイス コレクションの列挙体</a>を参照してください。</p></td>
+<td><p>複合デバイスを管理する USB 一般的な親ドライバーのインスタンスに関連付けられているレジストリ設定は、PDO を 1 つまたは複数の Pdo OBEX インターフェイスを管理するかどうかを決定します。 一般的な親の USB ドライバーが OBEX インターフェイスを列挙する方法を指定するレジストリ設定の詳細については、次を参照してください。<a href="support-for-interface-collections.md" data-raw-source="[Enumeration of Interface Collections on USB Composite Devices](support-for-interface-collections.md)">複合デバイスを USB でインターフェイス コレクションの列挙体</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1170,7 +1170,7 @@ USB\Class_02</code></pre></td>
 #### <a name="wmcdc-wireless-handset-control-model"></a>WMCDC ワイヤレス ハンドセット コントロール モデル
 
 
-一般的な親の USB ドライバーがワイヤレス ハンドセット コントロール モデル (WHCM) インターフェイスのコレクションを常に列挙することはできません。 USB の一般的な親ドライバー WHCM インターフェイスのコレクションを管理するのインスタンスに関連付けられているレジストリ設定は、かどうかに、一般的な親の USB ドライバーがインターフェイスのコレクションの物理デバイス オブジェクト (PDO) を作成するかどうかを決定します。 一般的な親の USB ドライバーが WHCM インターフェイスを列挙する方法を指定するレジストリ設定の詳細については、[複合デバイスを USB でインターフェイス コレクションの列挙体](support-for-interface-collections.md)を参照してください。
+一般的な親の USB ドライバーがワイヤレス ハンドセット コントロール モデル (WHCM) インターフェイスのコレクションを常に列挙することはできません。 USB の一般的な親ドライバー WHCM インターフェイスのコレクションを管理するのインスタンスに関連付けられているレジストリ設定は、かどうかに、一般的な親の USB ドライバーがインターフェイスのコレクションの物理デバイス オブジェクト (PDO) を作成するかどうかを決定します。 一般的な親の USB ドライバーが WHCM インターフェイスを列挙する方法を指定するレジストリ設定の詳細については、次を参照してください。[複合デバイスを USB でインターフェイス コレクションの列挙体](support-for-interface-collections.md)します。
 
 WHCM インターフェイスの列挙のコレクションの次のプロパティがあります。
 
@@ -1250,7 +1250,7 @@ USB\Class_02</code></pre></td>
 ### <a name="enumeration-of-interface-collections-on-usb-devices-with-iads"></a>Iad で USB デバイスのインターフェイスのコレクションの列挙
 
 
-場合複合 USB デバイスが、そのファームウェア インターフェイスの関連付け記述子 (IAD)、Windows を列挙しますインターフェイス コレクションものとして、各コレクションが 1 つのデバイスと、1 つの物理デバイス オブジェクト (PDO) を割り当てますインターフェイス コレクションごとに、PDO をハードウェアと互換性のある識別子 (Id) を関連付けます。 Iad の詳細については、[USB インターフェイスの関連付けの記述子](usb-interface-association-descriptor.md)を参照してください。 このセクションでは、ハードウェア Id および互換性のある識別子 (Id)、IAD に関連付けられているインターフェイスのコレクションに割り当てられているについて説明します。
+場合複合 USB デバイスが、そのファームウェア インターフェイスの関連付け記述子 (IAD)、Windows を列挙しますインターフェイス コレクションものとして、各コレクションが 1 つのデバイスと、1 つの物理デバイス オブジェクト (PDO) を割り当てますインターフェイス コレクションごとに、PDO をハードウェアと互換性のある識別子 (Id) を関連付けます。 Iad の詳細については、次を参照してください。 [USB インターフェイスの関連付けの記述子](usb-interface-association-descriptor.md)します。 このセクションでは、ハードウェア Id および互換性のある識別子 (Id)、IAD に関連付けられているインターフェイスのコレクションに割り当てられているについて説明します。
 
 ##  <a name="hardware-ids"></a>ハードウェア Id
 
