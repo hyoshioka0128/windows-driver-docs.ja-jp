@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f2fe3f647e69f03cbce14c0d0e3376d22e939d9
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 990877a9d7f1fc69e24de6ef7cf9cec115750cbf
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238388"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540507"
 ---
 # <a name="bug-check-0x51-registryerror"></a>バグ チェック 0x51:レジストリ\_エラー
 
@@ -68,7 +68,7 @@ ms.locfileid: "59238388"
 <a name="cause"></a>原因
 -----
 
-何かは、レジストリの問題が発生しました。 カーネル デバッガーを使用できる場合は、スタック トレースを取得します。
+何かは、レジストリの問題が発生しました。 カーネル デバッガーを使用できる場合は、スタック トレースを取得: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッグ拡張機能を根本原因を突き止めるに非常に役立ち、入力のいずれかのことができますとバグ チェックに関する情報を表示します[ **k (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)呼び出し履歴を表示するコマンド。
 
 このエラーは、レジストリをいずれかのファイルを読み取るときに I/O エラーが発生したことを示している可能性があります。 これは、ハードウェアの問題またはファイル システムの破損によって発生することができます。
 

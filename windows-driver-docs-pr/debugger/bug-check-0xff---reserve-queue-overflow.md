@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad6025bae6cdfe1a4a0348557d8ce08672b7b3d6
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 369da6be516d4686dc1d3694b4d7653c2d0e566c
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239475"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540505"
 ---
 # <a name="bug-check-0xff-reservequeueoverflow"></a>バグ チェック 0xFF:予約\_キュー\_オーバーフロー
 
@@ -63,8 +63,8 @@ ms.locfileid: "59239475"
 </tbody>
 </table>
 
- 
-
+## <a name="resolution"></a>解決方法 
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
  
 
  

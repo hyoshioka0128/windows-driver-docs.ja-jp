@@ -6,12 +6,12 @@ keywords:
 - GFlags、詳細情報
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62855e3081ff115ab8abd0fdcc9b83362a62b8e5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: c7d92955f719afcd688992b290ba4788f2682799
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463988"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540517"
 ---
 # <a name="gflags-details"></a>GFlags の詳細
 
@@ -68,37 +68,37 @@ GFlags、便利なダイアログ ボックスを使用するか、コマンド�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>システム全体の設定 ("Registry")</p></td>
-<td align="left"><p>Hkey_local_machine \system\currentcontrolset\control\session Manager&lt;強力な&gt;GlobalFlag</strong></p></td>
+<td align="left"><p>システム全体の設定 (&quot;レジストリ&quot;)</p></td>
+<td align="left"><p>Hkey_local_machine \system\currentcontrolset\control\session manager \<strong>GlobalFlag</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>コンピューターのすべてのユーザーのプログラムに固有の設定 (「画像ファイル」)。</p></td>
-<td align="left"><p>Hkey_local_machine \software\microsoft\windows nt \currentversion\image File Execution Options&lt;em&gt;ImageFileName</em>&lt;強力な&gt;GlobalFlag</strong></p></td>
+<td align="left"><p>プログラムに固有の設定 (&quot;イメージ ファイル&quot;) コンピューターのすべてのユーザー。</p></td>
+<td align="left"><p>Hkey_local_machine \software\microsoft\windows nt \currentversion\image ファイルの実行オプション<em>ImageFileName</em>\<strong>GlobalFlag</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>コンピューターのすべてのユーザーに対して特定のプログラム (「サイレント プロセス終了」) の設定をサイレント終了します。</p></td>
-<td align="left"><p>Hkey_local_machine \software\microsoft\windows NT\CurrentVersion\SilentProcessExit&lt;em&gt;ImageFileName</em></p></td>
+<td align="left"><p>特定のプログラムの自動終了設定 (&quot;サイレント プロセス終了&quot;) コンピューターのすべてのユーザー。</p></td>
+<td align="left"><p>Hkey_local_machine \software\microsoft\windows NT\CurrentVersion\SilentProcessExit\<strong><em>ImageFileName</em></strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>コンピューターのすべてのユーザーのイメージ ファイルをページ ヒープのオプション</p></td>
-<td align="left"><p>Hkey_local_machine \software\microsoft\windows nt \currentversion\image File Execution Options&lt;em&gt;ImageFileName</em>&lt;強力な&gt;PageHeapFlags</strong></p></td>
+<td align="left"><p>Hkey_local_machine \software\microsoft\windows nt \currentversion\image ファイルの実行オプション<em>ImageFileName</em>\<strong>PageHeapFlags</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ユーザー モードのスタック トレースのデータベース サイズ (<strong>tracedb</strong>)</p></td>
-<td align="left"><p>Hklm \software\microsoft\windows nt \currentversion\image File Execution Options&lt;em&gt;ImageFileName</em>&lt;強力な&gt;StackTraceDatabaseSizeInMb</strong></p></td>
+<td align="left"><p>Hklm \software\microsoft\windows nt \currentversion\image ファイルの実行オプション<em>ImageFileName</em>\<strong>StackTraceDatabaseSizeInMb</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ユーザー データベースの作成モード スタック トレース (ust、0x1000) のイメージ ファイル</p></td>
-<td align="left"><p>Windows イメージ ファイル名を USTEnabled レジストリ エントリの値に追加します (hklm \software\microsoft\windows nt \currentversion\image File Execution Options&lt;強力な&gt;USTEnabled</strong>)。</p></td>
+<td align="left"><p>Windows イメージ ファイル名を USTEnabled レジストリ エントリの値に追加します (hklm \software\microsoft\windows nt \currentversion\image ファイルの実行オプション<strong>USTEnabled</strong>)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Load image using large pages if possible</p></td>
-<td align="left"><p>Hklm \software\microsoft\windows nt \currentversion\image File Execution Options&lt;em&gt;ImageFileName</em>&lt;強力な&gt;UseLargePages</strong>します。</p></td>
+<td align="left"><p>Hklm \software\microsoft\windows nt \currentversion\image ファイルの実行オプション<em>ImageFileName</em>\<strong>UseLargePages</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Special Pool</p>
 <p>(カーネルの特別なプール タグ)</p></td>
-<td align="left"><p>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&lt;strong&gt;PoolTag</strong></p></td>
+<td align="left"><p>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\<strong>PoolTag</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>確認の開始/終了を確認します</p></td>
@@ -106,11 +106,11 @@ GFlags、便利なダイアログ ボックスを使用するか、コマンド�
 </tr>
 <tr class="even">
 <td align="left"><p>イメージ ファイルをデバッガー</p></td>
-<td align="left"><p>Hklm \software\microsoft\windows nt \currentversion\image File Execution Options&lt;em&gt;ImageFileName</em>&lt;強力な&gt;デバッガー</strong></p></td>
+<td align="left"><p>Hklm \software\microsoft\windows nt \currentversion\image ファイルの実行オプション<em>ImageFileName</em>\<strong>デバッガー</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Object Reference Tracing</p></td>
-<td align="left"><p>Hklm \system\currentcontrolset\control\session Manager\Kernel&lt;強力な&gt;ObTraceProcessName</strong>、 <strong>ObTracePermanent</strong>と<strong>ObTracePoolTags</strong></p></td>
+<td align="left"><p>Hklm \system\currentcontrolset\control\session Manager\Kernel\<strong>ObTraceProcessName</strong>、 <strong>ObTracePermanent</strong>と<strong>ObTracePoolTags</strong></p></td>
 </tr>
 </tbody>
 </table>

@@ -13,21 +13,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 34ff79b43b260aea6e1e758b84d5e511c47707f0
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 5ddd7c580fac6192f67b854f54427fc3877364a0
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239031"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540519"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>(開発者向けコンテンツ)チェック 0x9F バグの。ドライバー\_POWER\_状態\_エラー
 
 
-DRIVER_POWER_STATE_FAILURE のバグ チェックでは、0x0000009F の値を持ちます。 このバグ チェックでは、一貫性のない、または無効な電源状態で、ドライバーがあることを示します。
+ドライバー\_POWER\_状態\_エラーのバグ チェックが 0x0000009F の値を持ちます。 このバグ チェックでは、一貫性のない、または無効な電源状態で、ドライバーがあることを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
-
 
 ## <a name="driverpowerstatefailure-parameters"></a>ドライバー\_POWER\_状態\_エラー パラメーター
 

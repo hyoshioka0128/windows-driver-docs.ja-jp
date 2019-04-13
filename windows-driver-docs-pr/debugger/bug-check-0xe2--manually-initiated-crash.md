@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bcbc0f0331da1d8fa0518dee77d397227bba37b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: f47e1eea59fdf6d67901747133ead9b412cbd25e
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238415"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540506"
 ---
 # <a name="bug-check-0xe2-manuallyinitiatedcrash"></a>バグ チェック 0xE2:手動で\_INITIATED\_クラッシュ
 
@@ -37,7 +37,7 @@ ms.locfileid: "59238415"
 <a name="remarks"></a>注釈
 -------
 
-手動で開始されたクラッシュ ダンプの詳細については、強制的にシステムのクラッシュを参照してください。 .
+手動で開始されたクラッシュ ダンプの詳細については、次を参照してください。[システムのクラッシュを強制します。](https://docs.microsoft.com/windows-hardware/drivers/debugger/forcing-a-system-crash) .
 
  
 

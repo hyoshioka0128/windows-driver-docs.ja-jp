@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: edc34254832c365ef6c93a04a650becd1337ba88
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 9b038d43c0237f15630e461eb2628885d4d77a3b
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239823"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540504"
 ---
 # <a name="bug-check-0x5a-criticalservicefailed"></a>バグ チェック 0x5A:重要な\_サービス\_失敗
 
@@ -30,9 +30,8 @@ CRITICAL\_サービス\_失敗のバグ チェックが 0x0000005A の値を持�
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
 
-
- 
 ## <a name="resolution"></a>解決方法
+
 [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
 
 

@@ -6,14 +6,14 @@ keywords:
 - 拡張機能の例を分析します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22706477aa3ab69a0ec2a93632b88578f1b82ba2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 24547e89ed4a3a7c09fb8c43e0645fddd34dac6c
+ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538627"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59534158"
 ---
-# <a name="using-the-analyze-extension"></a>使用して、! 拡張機能の分析
+# <a name="using-the-analyze-extension"></a>!analyze 拡張機能の使用
 
 
 ## <span id="ddk_using_the_analyze_extension_dbg"></span><span id="DDK_USING_THE_ANALYZE_EXTENSION_DBG"></span>
@@ -23,7 +23,7 @@ ms.locfileid: "56538627"
 
 この拡張機能は、膨大な自動分析を実行します。 この分析の結果は、デバッガー コマンド ウィンドウに表示されます。
 
-使用する必要があります、 **-v**データの完全な詳細の表示のオプション。 その他のオプションについて詳しくは、、 [ **! 分析**](-analyze.md)リファレンス ページを参照してください。
+使用する必要があります、 **-v**データの完全な詳細の表示のオプション。 その他のオプションについて詳しくは、次を参照してください。、 [ **! 分析**](-analyze.md)リファレンス ページです。
 
 このトピックの内容は次のとおりです。
 
@@ -128,7 +128,7 @@ IMAGE_NAME:  MyApp.exe
 DEBUG_FLR_IMAGE_TIMESTAMP:  383490a9
 ```
 
-ときに[ **! 分析**](-analyze.md) 、エラーの原因となった可能性がありますが、命令を判断します、フォロー アップの表示、\_IP フィールド。 シンボル\_名、モジュール\_名前、イメージ\_名、および DBG\_FLR\_イメージ\_タイムスタンプ フィールドを表示、シンボル、モジュール、イメージ名、およびこれに対応するイメージのタイムスタンプ命令。
+ときに[ **! 分析**](-analyze.md) 、エラーの原因となった可能性がありますが、命令を判断します、フォロー アップの表示、\_IP フィールド。 シンボル\_名、モジュール\_名前、イメージ\_名、およびデバッグ\_FLR\_イメージ\_タイムスタンプ フィールドを表示、シンボル、モジュール、イメージ名、およびこれに対応するイメージのタイムスタンプ命令。
 
 ```dbgcmd
 STACK_COMMAND:  .ecxr ; kb
@@ -151,7 +151,7 @@ Followup: dbg
 
 さまざまな表示されるその他のフィールドがあります。
 
--   コントロールが FAULTING し、無効なアドレスに転送されたかどうか\_IP フィールドには、この無効なアドレスにが含まれます。 フォロー アップではなく\_IP フィールドに、失敗\_命令\_アドレス フィールドは、この逆アセンブリが意味のない可能性がありますが、このアドレスからの逆アセンブルしたコードに表示されます。 この場合、シンボル\_名、モジュール\_名前、イメージ\_名、および DBG\_FLR\_イメージ\_タイムスタンプ フィールドはこの命令の呼び出し元を参照してください。
+-   コントロールが FAULTING し、無効なアドレスに転送されたかどうか\_IP フィールドには、この無効なアドレスにが含まれます。 フォロー アップではなく\_IP フィールドに、失敗\_命令\_アドレス フィールドは、この逆アセンブリが意味のない可能性がありますが、このアドレスからの逆アセンブルしたコードに表示されます。 この場合、シンボル\_名、モジュール\_名前、イメージ\_名、およびデバッグ\_FLR\_イメージ\_タイムスタンプ フィールドはこの命令の呼び出し元を参照してください。
 
 -   1 つが生じる場合は、プロセッサが misfires\_ビット\_エラー、2 つ\_ビット\_エラー、または実行可能な\_無効な\_コントロール\_転送フィールド。
 
@@ -329,7 +329,7 @@ Followup: usbtri
 
 Triage.ini ファイルには、エラーの可能性がありますすべてのモジュールの所有者を識別する必要があります。 実際の所有者ではなく、情報の文字列を使用できますが、この文字列は、スペースを含めることはできません。 モジュールがエラーがない場合は、このモジュールを省略するか、スキップするかを示すことができます。 トリアージ プロセス、さらに細かい粒度を与える個々 の関数の所有者を指定することもできます。
 
-Triage.ini ファイルの構文について詳しくは、[モジュールを指定すると、関数の所有者](specifying-module-and-function-owners.md)を参照してください。
+Triage.ini ファイルの構文について詳しくは、次を参照してください。[モジュールを指定すると、関数の所有者](specifying-module-and-function-owners.md)します。
 
 ### <a name="span-idddkadditionalanalyzetechniquesdbgspanspan-idddkadditionalanalyzetechniquesdbgspanadditional-analyze-techniques"></a><span id="ddk_additional_analyze_techniques_dbg"></span><span id="DDK_ADDITIONAL_ANALYZE_TECHNIQUES_DBG"></span>追加! 手法の分析
 
