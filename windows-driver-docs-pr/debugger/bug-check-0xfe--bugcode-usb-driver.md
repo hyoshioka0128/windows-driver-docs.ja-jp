@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84234eeda018bf369dfcb9beb2841ae3c8d6ca51
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: e32cdf16ac87bba80168fbff07bf650530b911d0
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238443"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540511"
 ---
 # <a name="bug-check-0xfe-bugcodeusbdriver"></a>バグ チェック 0xFE:BUGCODE\_USB\_ドライバー
 
@@ -217,8 +217,10 @@ PDO パラメーター 3 が NULL でない場合。 コンテキスト パラ�
 </tbody>
 </table>
 
- 
+## <a name="resolution"></a>解決方法
 
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+ 
  
 
  
