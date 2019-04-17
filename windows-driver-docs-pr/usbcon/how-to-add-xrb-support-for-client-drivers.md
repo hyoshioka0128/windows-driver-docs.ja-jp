@@ -1,23 +1,23 @@
 ---
-Description: This topic describes how a USB client driver can use Windows Driver Model (WDM) driver routines to allocate and format an URB before sending the request to the Microsoft-provided USB driver stack.
-title: 割り当てと翻訳の構築
+Description: このトピックでは、Microsoft 提供の USB ドライバー スタックに要求を送信する前に、URB を書式設定を割り当てたり、USB クライアント ドライバーが Windows Driver Model (WDM) ドライバーのルーチンを使用する方法について説明します。
+title: URB の割り当てと構築
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91fc046fb5eb3608145bc3b40a907da4763501ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0f928ac9a8d769e60d98867db4bb0dd6ccfd377e
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553204"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554072"
 ---
-# <a name="allocating-and-building-urbs"></a>割り当てと翻訳の構築
+# <a name="allocating-and-building-urbs"></a>URB の割り当てと構築
 
 
 このトピックでは、Microsoft 提供の USB ドライバー スタックに要求を送信する前に、URB を書式設定を割り当てたり、USB クライアント ドライバーが Windows Driver Model (WDM) ドライバーのルーチンを使用する方法について説明します。
 
 クライアント ドライバーでは、USB ドライバー スタックの下位のドライバーで要求を処理するのにために必要なすべての情報をパッケージ化するのに、URB を使用します。 Windows オペレーティング システムで、URB が説明されている、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。
 
-Microsoft 提供のライブラリ[USB クライアント ドライバーのルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540134#client)します。 これらのルーチンを使用すると、USB クライアント ドライバーは URB 要求の特定の指定された操作をビルドし、下位の USB スタックに転送できます。 場合は、ライブラリ ルーチンを呼び出す独自 URB 要求を作成するのではなく、サポートされている操作は、クライアント ドライバーを設計できます。
+Microsoft 提供のライブラリ[USB クライアント ドライバーのルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#client)します。 これらのルーチンを使用すると、USB クライアント ドライバーは URB 要求の特定の指定された操作をビルドし、下位の USB スタックに転送できます。 場合は、ライブラリ ルーチンを呼び出す独自 URB 要求を作成するのではなく、サポートされている操作は、クライアント ドライバーを設計できます。
 
 このトピックには、次のセクションが含まれています。
 

@@ -3,12 +3,12 @@ title: WinDbg プレビューを使用したデバッグ
 description: このセクションでは、WinDbg プレビュー デバッガーを使用して、基本的なデバッグ タスクを実行する方法について説明します。
 ms.date: 10/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 600a5c853345753e8094481a23fb9899005d685c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 103c62d0e878c7d8d46a174ec07374192e1cec84
+ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570758"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59534156"
 ---
 ![Windbg のプレビューの小さいロゴ](images/windbgx-preview-logo.png) 
 
@@ -52,7 +52,7 @@ WinDbg のプレビューは、最新のビジュアル、windows の高速化�
 
 - **ログ**-これは、WinDbg プレビューの内部構造の内部ではログの下。 トラブルシューティングや長時間実行されるモニターに表示できます。 
 
-詳細については、[WinDbg プレビューの表示 メニュー](windbg-view-preview.md)を参照してください。
+詳細については、次を参照してください。 [WinDbg プレビューの表示 メニュー](windbg-view-preview.md)します。
 
 - **コマンド ウィンドウ**-コマンド ウィンドウを使用して DML を切り替えるし、デバッガーのコマンド ウィンドウをクリアに簡単にアクセスを提供します。 現在のすべてのデバッガー コマンドを使用して、互換性があり、WinDbg プレビューで作業を続行します。
 
@@ -79,7 +79,7 @@ WinDbg のプレビューは、最新のビジュアル、windows の高速化�
 ![スクリプト デバッガー メニューのスクリーン ショット](images/windbgx-source-window.png)
 
 
-### <a name="highlightighting"></a>Highlightighting
+### <a name="highlighting"></a>強調表示
 
 コマンド ウィンドウには 2 つの新しい強調表示機能。 任意のテキストを選択すると、そのテキストの他のインスタンスに微妙な強調表示が提供されます。 「強調表示や解除-強調」または強調表示を保持するには Ctrl + Alt + H しに達すことができます。 
 
@@ -99,7 +99,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![Screen shot showing ctrl tab menu](images/windbgx-ttd.png)
 
-詳細については、[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
+詳細については、次を参照してください。[タイム トラベルのデバッグ - 概要](time-travel-debugging-overview.md)します。
 
 
 ### <a name="debugging-app-packages"></a>アプリ パッケージのデバッグ
@@ -108,7 +108,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![検索ボックスに表示されている 3 つのアプリで cal を示すアプリ パッケージのアプリケーション タブを起動します。](images/windbgx-launch-app-package.png)
 
-詳細については、[アプリ パッケージの起動](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)を参照してください。
+詳細については、次を参照してください。[アプリ パッケージの起動](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)します。
 
 
 ### <a name="attach-to-a-process"></a>プロセスにアタッチします。
@@ -123,7 +123,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 - **ブレークポイントを有効または無効に**-[ブレークポイント] ウィンドウは、現在のすべてのブレークポイントを表示し、簡単にアクセスを提供可能にして無効にすることにします。 
 - **ヒット カウント**-、[ブレークポイント] ウィンドウは、実行中のブレークポイントがヒットするたびに現在の合計。
 
-詳細については、[ブレークポイント](windbg-breakpoints-preview.md)を参照してください。
+詳細については、次を参照してください。[ブレークポイント](windbg-breakpoints-preview.md)します。
 
 
 ### <a name="enhanced-data-model-support"></a>強化されたデータ モデルのサポート
@@ -131,7 +131,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 - **データ モデルのサポートで構築された**- 組み込まれているデータ モデルのサポートと WinDbg のプレビューが書き込まれ、データ モデルは、デバッガーを使用します。
 - **[モデル] ウィンドウ**- [モデル] ウィンドウでは、'dx' の拡張可能な参照可能なバージョンと 'dx-g' できるようにする強力なを作成するためのテーブル、NatVis、JavaScript、および LINQ クエリの上位にします。 
 
-詳細については、[WinDbg Preview - データ モデル](windbg-data-model-preview.md)を参照してください。
+詳細については、次を参照してください。 [WinDbg Preview - データ モデル](windbg-data-model-preview.md)します。
 
 ![デバッガーでのデータ モデル メニューのスクリーン ショット](images/windbgx-data-model-menu.png)
 
@@ -142,7 +142,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![スクリプト デバッガー メニューのスクリーン ショット](images/windbgx-scripting-intellisense.png)
 
-詳細については、[WinDbg Preview - Scripting](windbg-scripting-preview.md)を参照してください。
+詳細については、次を参照してください。 [WinDbg Preview - Scripting](windbg-scripting-preview.md)します。
 
 ### <a name="backwards-compatibility"></a>下位互換性 
 
@@ -160,7 +160,7 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ## <a name="next-steps"></a>次の手順
 
-新機能については、この最新リリースについては、[WinDbg Preview - 新](windbg-what-is-new-preview.md)を参照してください。
+新機能については、この最新リリースについては、次を参照してください。 [WinDbg Preview - 新](windbg-what-is-new-preview.md)します。
 
 これらのトピックをインストールし、WinDbg プレビューの構成を確認します。
 
@@ -176,9 +176,9 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 これらのトピックでは、メニュー、タブによって編成された、一般的なタスクについて説明します。
 
-- [WinDbg のプレビュー – [ファイル] メニュー](windbg-file-preview.md)
+- [WinDbg のプレビュー] – [ファイル] メニュー](windbg-file-preview.md)
 - [WinDbg プレビュー – ホーム メニュー](windbg-home-preview.md)
-- [WinDbg のプレビュー – [表示] メニュー](windbg-view-preview.md)
+- [WinDbg のプレビュー] – [表示] メニュー](windbg-view-preview.md)
 - [WinDbg プレビュー – ブレークポイント](windbg-breakpoints-preview.md)
 - [WinDbg プレビュー – データ モデル](windbg-data-model-preview.md)
 - [WinDbg Preview – Scripting](windbg-scripting-preview.md)
