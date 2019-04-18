@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 7b8ba7e497ee9ede100e110fbfe0b76a299c4093
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845531"
 ---
 # <a name="mobile-plans"></a>モバイル通信プラン
@@ -33,7 +33,7 @@ Mobile のプランには、次を実行するエンドユーザーができる�
 | 項目 | 説明 |
 | --- | --- |
 | Contoso の携帯電話 | 以下のトピックで説明のために使用される架空モバイル演算子。 |
-| COSA データベース | 国および演算子の設定の資産。 これは、Windows デバイスで使用される通信事業者の接続設定を含むデータベースです。 COSA に関する詳細については、[COSA 概要](cosa-overview.md)を参照してください。 |
+| COSA データベース | 国および演算子の設定の資産。 これは、Windows デバイスで使用される通信事業者の接続設定を含むデータベースです。 COSA に関する詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 |
 | モバイル通信プラン | このプロジェクトの名前。 |
 | プランのモバイル アプリ | Windows 10 デバイスでモバイルのプランを有効にする Microsoft アプリ。 |
 | Mobile プラン サービス | プランのモバイル ソリューションをできるようにするクラウド サービスです。 |

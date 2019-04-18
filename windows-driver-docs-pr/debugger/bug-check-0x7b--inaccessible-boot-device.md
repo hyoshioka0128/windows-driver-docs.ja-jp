@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d560f7216de76fea185bd7e5e679d79ae128112
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239635"
 ---
 # <a name="bug-check-0x7b-inaccessiblebootdevice"></a>バグ チェック 0x7B:アクセスできない\_ブート\_デバイス
@@ -107,7 +107,7 @@ ms.locfileid: "59239635"
 
 最近追加されたハードウェア、特にハード ディスク ドライブや、エラーが解決されたかどうかをコント ローラーを取り外します。 問題のあるハードウェアがハード ディスク ドライブの場合は、ディスク ファームウェアのバージョンが Windows オペレーティング システムのバージョンと互換性ない可能性があります。 更新プログラムの製造元に問い合わせてください。 ハードウェアの別の部分を削除して、エラーが解決、IRQ や I/O ポートの競合があります。 製造元の指示に従って新しいデバイスを再構成します。
 
-AHCI、BIOS で従来からコント ローラー モードを変更するなど、BIOS 設定を変更が加えられた最近の場合は、それらの変更を元に戻します。 詳細については、「 <https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface>
+AHCI、BIOS で従来からコント ローラー モードを変更するなど、BIOS 設定を変更が加えられた最近の場合は、それらの変更を元に戻します。 詳細については、「<https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface>」を参照してください。
 
 **記憶域デバイスの互換性のためのチェック**
 
@@ -174,7 +174,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
 
 -   カーネル デバッガーを使用して、システムに接続し、さらに「解説」の説明に従って、エラーを分析します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 **ストレージ システムの構成の調査**
@@ -189,7 +189,7 @@ Windows がインストールされているブート デバイスについて�
 
 **カーネル デバッガーを使用してこのエラーを分析します。** 実行、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md)に特定のドライバーを分離しようとするモジュールがロードされているデバッガー コマンド。 次のドライバーが読み込まれたことを確認します。
 
-*ディスク*
+*disk*
 
 ```dbgcmd
            

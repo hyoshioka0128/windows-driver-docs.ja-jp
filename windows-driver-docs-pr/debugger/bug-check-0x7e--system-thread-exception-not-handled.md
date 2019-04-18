@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ae805605e03e4ac29c6784949351a9bb4de679f3
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239473"
 ---
 # <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>バグ チェック 0x7E:システム\_スレッド\_例外\_いない\_処理済み
@@ -98,9 +98,9 @@ ms.locfileid: "59239473"
 
 詳細については、以下のトピックを参照してください。
 
-[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
+[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
 
-[WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用して、! 拡張機能を分析](using-the--analyze-extension.md)と[! 分析](-analyze.md)
 
