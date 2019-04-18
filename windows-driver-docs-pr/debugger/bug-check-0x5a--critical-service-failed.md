@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b038d43c0237f15630e461eb2628885d4d77a3b
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.openlocfilehash: 113c699f4d242f102ff8a2b8fc7bc98bb79892a4
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540504"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745865"
 ---
 # <a name="bug-check-0x5a-criticalservicefailed"></a>バグ チェック 0x5A:重要な\_サービス\_失敗
 
@@ -29,10 +29,16 @@ CRITICAL\_サービス\_失敗のバグ チェックが 0x0000005A の値を持�
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+<<<<<<< HEAD
+
+=======
+>>>>>>> マスター
 
 ## <a name="resolution"></a>解決方法
+<a name="-head"></a><<<<<<< HEAD
+=======
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
+>>>>>>> マスター、 [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
 
 
 

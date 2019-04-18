@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dbe161ef8dd7bd7bc4029d5108734db439665918
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.openlocfilehash: 0dd6634ff9170ad00462ad2825ef43cf8742b91a
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540509"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745863"
 ---
 # <a name="bug-check-0xb9-chipsetdetectederror"></a>バグ チェック 0xB9:チップセット\_検出\_エラー
 
@@ -29,6 +29,10 @@ ms.locfileid: "59540509"
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+<<<<<<< HEAD
+
+=======
+>>>>>>> マスター
 
 
  

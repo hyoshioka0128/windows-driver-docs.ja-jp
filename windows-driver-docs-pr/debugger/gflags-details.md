@@ -4,40 +4,36 @@ description: GFlags の詳細
 ms.assetid: 97faa63d-b876-4973-812f-f3bdd57c1778
 keywords:
 - GFlags、詳細情報
-ms.date: 05/23/2017
+ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c7d92955f719afcd688992b290ba4788f2682799
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.openlocfilehash: bfd6271b4f348b45da7899804b5338fc816449a2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540517"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745873"
 ---
 # <a name="gflags-details"></a>GFlags の詳細
 
-
 ## <span id="ddk_gflags_details_dtools"></span><span id="DDK_GFLAGS_DETAILS_DTOOLS"></span>
-
 
 GFlags ができ、Windows レジストリと内部の設定を編集することによってシステムの機能を無効にします。 このセクションでは、GFlags の操作の詳細を説明し、GFlags を最も効率的に使用するためのヒントが含まれています。
 
 ### <a name="span-idgeneralinformationspanspan-idgeneralinformationspangeneral-information"></a><span id="general_information"></span><span id="GENERAL_INFORMATION"></span>一般的な情報
 
--   コマンドラインで、GFlags ダイアログ ボックスを表示する次のように入力します。 **gflags** (パラメーターなし) を使用します。
+- コマンドラインで、GFlags ダイアログ ボックスを表示する次のように入力します。 **gflags** (パラメーターなし) を使用します。
 
--   レジストリまたはカーネル モードでは、フラグを設定する Windows Server 2003 および Windows の以前のバージョンでは、コンピューターの Administrators グループのメンバーをする必要があります。 ただし、ユーザーをゲスト アカウントの最小のアクセスは GFlags ダイアログ ボックスからプログラムを起動できます。
+- GFlags システム レベルのレジストリ設定はレジストリには、すぐに表示が有効になりません、システムを再起動するまで。
 
--   GFlags システム レベルのレジストリ設定はレジストリには、すぐに表示が有効になりません、システムを再起動するまで。
+- GFlags イメージ ファイルのレジストリ設定はレジストリには、すぐに表示が有効になりませんプロセスを再起動するまで。
 
--   GFlags イメージ ファイルのレジストリ設定はレジストリには、すぐに表示が有効になりませんプロセスを再起動するまで。
-
--   GFlags ダイアログ ボックスで、デバッガーと起動の機能は、特定のプログラムです。 のみ設定できますに 1 つのイメージ ファイルを一度に。
+- GFlags ダイアログ ボックスで、デバッガーと起動の機能は、特定のプログラムです。 のみ設定できますに 1 つのイメージ ファイルを一度に。
 
 ### <a name="span-idflagdetailsspanspan-idflagdetailsspanflag-details"></a><span id="flag_details"></span><span id="FLAG_DETAILS"></span>フラグの詳細
 
--   すべてのフラグをクリアするには、-FFFFFFFF に、フラグを設定します。 0 に、フラグを設定すると、現在のフラグ値に 0 が追加されます。
+- すべてのフラグをクリアするには、-FFFFFFFF に、フラグを設定します。 0 に、フラグを設定すると、現在のフラグ値に 0 が追加されます。
 
--   Windows イメージ ファイルのすべてのフラグをクリアし、削除 FFFFFFFF (0 xffffffff) にイメージ ファイルのフラグを設定すると、 **GlobalFlag**イメージ ファイルのレジストリ キー エントリ。 イメージ ファイルのレジストリ キーが保持されます。
+- Windows イメージ ファイルのすべてのフラグをクリアし、削除 FFFFFFFF (0 xffffffff) にイメージ ファイルのフラグを設定すると、 **GlobalFlag**イメージ ファイルのレジストリ キー エントリ。 イメージ ファイルのレジストリ キーが保持されます。
 
 ### <a name="span-iddialogboxandcommandlinespanspan-iddialogboxandcommandlinespandialog-box-and-command-line"></a><span id="dialog_box_and_command_line"></span><span id="DIALOG_BOX_AND_COMMAND_LINE"></span>ダイアログ ボックスとコマンドライン
 
@@ -45,17 +41,17 @@ GFlags、便利なダイアログ ボックスを使用するか、コマンド�
 
 **ダイアログ ボックスのみ**
 
--   起動します。 指定したフラグを使用してプログラムを起動します。
+- 起動します。 指定したフラグを使用してプログラムを起動します。
 
--   デバッガーでプログラムを実行します。
+- デバッガーでプログラムを実行します。
 
--   [特別なプール](special-pool.md)Windows Vista より前のシステムにします。 Windows Vista および Windows の以降のバージョンでは、コマンドラインまたは Gflags ダイアログ ボックスで、特別なプール機能を構成できます。
+- [特別なプール](special-pool.md)Windows Vista より前のシステムにします。 Windows Vista および Windows の以降のバージョンでは、コマンドラインまたは Gflags ダイアログ ボックスで、特別なプール機能を構成できます。
 
 **コマンドラインのみ**
 
--   ユーザー モードのスタック トレースのデータベースのサイズを設定 (/tracedb)。
+- ユーザー モードのスタック トレースのデータベースのサイズを設定 (/tracedb)。
 
--   ページ ヒープの検証オプションを設定します。
+- ページ ヒープの検証オプションを設定します。
 
 ### <a name="span-idregistryinformationspanspan-idregistryinformationspanregistry-information"></a><span id="registry_information"></span><span id="REGISTRY_INFORMATION"></span>レジストリ情報
 
@@ -114,14 +110,3 @@ GFlags、便利なダイアログ ボックスを使用するか、コマンド�
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-
-

@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 091012d1d2732cba714711dd40af56f34e203f2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a744b35346b16758aecb7754b375c4c2caa880f3
+ms.sourcegitcommit: e0953a7183f19937fefe1f62253c4b629926cd53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530667"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59671435"
 ---
 # <a name="filelock-structure"></a>ファイル\_ロック構造体
 
@@ -43,7 +43,7 @@ typedef struct _FILE_LOCK {
 } FILE_LOCK, *PFILE_LOCK;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **CompleteLockIrpRoutine**  
@@ -73,7 +73,7 @@ typedef struct _FILE_LOCK {
 <a name="remarks"></a>注釈
 -------
 
-ファイル システムのレガシ フィルター ドライバーとミニフィルターに対して、作成してファイルを使用するさまざまなルーチンを使用できます\_ロック オブジェクトでもファイルへの読み取り/書き込みアクセスをテストします。
+ファイル システム ドライバー、従来のファイル システム フィルター ドライバーおよびミニフィルターに対して、作成してファイルを使用するさまざまなルーチンを使用できます\_ロック オブジェクトでもファイルへの読み取り/書き込みアクセスをテストします。
 
 -   ファイルを割り当てる\_ロック オブジェクト、呼び出し[ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)または[ **FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)します。
 
@@ -85,7 +85,7 @@ typedef struct _FILE_LOCK {
 
 ファイルの後に\_ロックがれました初期化、ルーチンなど[ **FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)、 [ **FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)、および[ **FsRtlFastCheckLockForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff545918)ファイルを他のスレッドによってアクセスできるかどうかを判断するために使用できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
