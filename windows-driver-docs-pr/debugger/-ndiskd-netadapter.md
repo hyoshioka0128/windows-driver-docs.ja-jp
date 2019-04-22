@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac59f214f94532ef01f65859d4e0e0f1bb962a7
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238735"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
@@ -46,7 +46,7 @@ NDIS ミニポートのハンドル。
 <span id="_______-diag______"></span><span id="_______-DIAG______"></span> *-診断*   
 自動診断アラートが表示されます (ある場合)。
 
-<span id="_______-state______"></span><span id="_______-STATE______"></span> *-状態*   
+<span id="_______-state______"></span><span id="_______-STATE______"></span> *-state*   
 ミニポートの現在の状態を表示します。
 
 <span id="_______-bindings______"></span><span id="_______-BINDINGS______"></span> *-バインド*   
@@ -76,7 +76,7 @@ NDIS ポートの一覧が表示されます。
 <span id="_______-aoac______"></span><span id="_______-AOAC______"></span> *-aoac*   
 AOAC (コネクト スタンバイ) の状態を示しています。
 
-<span id="_______-wol______"></span><span id="_______-WOL______"></span> *wol-*   
+<span id="_______-wol______"></span><span id="_______-WOL______"></span> *-wol*   
 Wake on LAN (WoL) の構成を示します。
 
 <span id="_______-protocoloffloads______"></span><span id="_______-PROTOCOLOFFLOADS______"></span> *-protocoloffloads*   
@@ -88,7 +88,7 @@ Receive Side Scaling のパラメーターを示します。
 <span id="_______-hw______"></span><span id="_______-HW______"></span> *-hw*   
 ハードウェア リソースが表示されます。
 
-<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-デバイス*   
+<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-device*   
 基になる NT デバイス オブジェクトに関する情報が表示されます。
 
 <span id="_______-wmi______"></span><span id="_______-WMI______"></span> *-wmi*   
@@ -106,7 +106,7 @@ NDIS で提供される WMI の Guid を示しています。
 <span id="_______-log______"></span><span id="_______-LOG______"></span> *-log*   
 PnP と電力のイベント ログを表示します。
 
-<span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-もの grovel されます*   
+<span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-grovel*   
 メモリ内を検索するミニポートのブロックを強制的にします。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-findname*   
@@ -124,7 +124,7 @@ NIC のスイッチ機能を示しています。
 <span id="_______-nicswitches______"></span><span id="_______-NICSWITCHES______"></span> *-nicswitches*   
 NIC のスイッチを示します。
 
-<span id="_______-iov______"></span><span id="_______-IOV______"></span> *対応*   
+<span id="_______-iov______"></span><span id="_______-IOV______"></span> *-iov*   
 SR-IOV (Single Root I/O Virtualization) 機能を示しています。
 
 <span id="_______-vfs______"></span><span id="_______-VFS______"></span> *-vfs*   
@@ -271,7 +271,7 @@ HANDLERS
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバー設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
 
 [Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
 

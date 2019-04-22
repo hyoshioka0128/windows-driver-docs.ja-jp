@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d13728dd646a86dd7bd32073a0886142beb6c77
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238593"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
@@ -42,7 +42,7 @@ ms.locfileid: "59238593"
 <span id="_______-nolimit______"></span><span id="_______-NOLIMIT______"></span> *-nolimit*   
 表示されている Oid 保留中の数は制限されません。
 
-<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-ミニポート*   
+<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-miniport*   
 保留中のこのミニポートのスタックに OID 要求を検索します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -126,7 +126,7 @@ ALL PENDING OIDs
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバー設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
 
 [Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
 

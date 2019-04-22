@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a10f871b96afe67c2fb73a08ed56d9eb58a97283
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238761"
 ---
 # <a name="bug-check-0x17d-pdcunexpectedrevocationlivedump"></a>バグ チェック 0x17D の。PDC\_予期しない\_失効\_LIVEDUMP
@@ -52,7 +52,7 @@ PDC\_予期しない\_失効\_LIVEDUMP バグ チェックが 0x0000017D の値�
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグ チェック コード リファレンス](bug-check-code-reference2.md)
+[バグチェック コード リファレンス](bug-check-code-reference2.md)
 
  
 

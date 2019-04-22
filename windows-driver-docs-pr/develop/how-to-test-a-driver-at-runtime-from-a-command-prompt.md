@@ -5,10 +5,10 @@ description: WDK には、ネットワーク上のテスト コンピュータ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f1b2c59d6a9da5abdd8e614650a6234aa03b4a3
-ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58898061"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>コマンド プロンプトから実行時にドライバーをテストする方法

@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1af822a5b3cd92ebfb9b5bdb8ccb4000ebbec66c
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239815"
 ---
 # <a name="bug-check-0x15d-socsubsystemfailurelivedump"></a>バグ チェック 0x15D:SOC\_サブシステム\_エラー\_LIVEDUMP
@@ -58,7 +58,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>(省略可能)。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
+<td align="left"><p>任意。 ベンダーから提供されたデータ ブロックのアドレス。</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ SOC\_サブシステム\_エラー\_LIVEDUMP バグ コードが 0x0000015D の�
 
 詳細については、以下のトピックを参照してください。
 
-[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
+[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 

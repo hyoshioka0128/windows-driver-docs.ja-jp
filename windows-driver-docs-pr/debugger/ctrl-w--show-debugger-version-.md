@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d70f693c518b594259c9d4cb1d15ffd50091977
-ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58898059"
 ---
 # <a name="ctrlw-show-debugger-version"></a>Ctrl + W (デバッガーのバージョンの表示)
@@ -76,7 +76,7 @@ WinDbg では、このことができますもすることで実現選択[ビュ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**version (デバッガー バージョンの表示)**](version--show-debugger-version-.md)
+[**バージョン (デバッガーのバージョンの表示)**](version--show-debugger-version-.md)
 
 [**vertarget (ターゲット コンピューター バージョンの表示)**](vertarget--show-target-computer-version-.md)
 

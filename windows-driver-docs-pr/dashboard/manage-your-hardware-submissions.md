@@ -5,12 +5,12 @@ ms.assetid: C4C3C56F-8E92-4CB1-A57B-942E466ECD3D
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdaab461c6a1d5428a25243273b528592d65a326
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.openlocfilehash: 4c2649bac3fe5edf312fa80683ba72d674e4e51b
+ms.sourcegitcommit: 3508ab1c06671ac52e446aa2556b53f978ef6d83
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560581"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59586380"
 ---
 # <a name="managing-hardware-submissions-in-the-partner-center"></a>パートナー センターでのハードウェア申請の管理
 
@@ -20,9 +20,13 @@ Windows 10 の Windows ハードウェア互換性プログラム (以前のバ�
 
 「[Find hardware submission (ハードウェア申請を検索する)](find-hardware-submission.md)」をご覧ください。
 
-## <a name="update-an-hck-hardware-submission-using-the-driver-update-acceptable-dua-process"></a>Driver Update Acceptable (DUA) プロセスを使って HCK ハードウェア申請を更新する
+## <a name="update-an-hck-or-hlk-hardware-submission-using-the-driver-update-acceptable-dua-process"></a>Driver Update Acceptable (DUA) プロセスを使って HCK または HLK ハードウェア申請を更新する
 
-[ドライバーのみの更新プログラム パッケージの作成に関するページ](https://docs.microsoft.com/windows-hardware/test/hlk/user/create-a-driver-only-update-package)を参照してください。
+> [!Note]
+> DUA 申請は、初回の申請でしか作成できません。
+> - 他の会社と共有されている DUA 申請では、1 回の DUA 申請で 1 つの DUA を処理できないため、[Download DUA Shell]\(DUA シェルのダウンロード\) ボタンは表示されません。
+
+DUA シェルから DUA 申請を作成する方法については、「[ドライバーのみの更新プログラム パッケージの作成](https://docs.microsoft.com/windows-hardware/test/hlk/user/create-a-driver-only-update-package)」をご覧ください。
 
 ## <a name="registering-an-extensionid"></a>ExtensionId を登録する
 

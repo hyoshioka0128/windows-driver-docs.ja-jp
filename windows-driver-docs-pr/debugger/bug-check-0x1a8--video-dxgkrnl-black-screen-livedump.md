@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f78142a9898ce49d6cb29b7d109c92aadfcc606
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238753"
 ---
 # <a name="bug-check-0x1a8-videodxgkrnlblackscreenlivedump"></a>バグ チェック 0x1A8:ビデオ\_DXGKRNL\_黒い\_画面\_LIVEDUMP
@@ -57,4 +57,4 @@ ms.locfileid: "59238753"
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグ チェック コード リファレンス](bug-check-code-reference2.md)
+[バグチェック コード リファレンス](bug-check-code-reference2.md)

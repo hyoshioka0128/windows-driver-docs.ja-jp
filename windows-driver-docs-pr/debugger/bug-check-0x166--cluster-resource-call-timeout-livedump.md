@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0103223a4cc14431db4a0d6aa3714063c4c49467
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238649"
 ---
 # <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>バグ チェック 0x166:クラスター\_リソース\_呼び出す\_タイムアウト\_LIVEDUMP
@@ -84,7 +84,7 @@ ms.locfileid: "59238649"
 
 [使用してライブ ダンプ (ブログ) のトラブルシューティングがハングします。](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
-[バグ チェック コード リファレンス](bug-check-code-reference2.md)
+[バグチェック コード リファレンス](bug-check-code-reference2.md)
 
 
 

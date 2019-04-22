@@ -5,10 +5,10 @@ description: Windows で Bluetooth ホスト オプションのサポートに�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e03f6b403d7dd73869326dc0d9fa2b69e3934c66
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58761857"
 ---
 # <a name="bluetooth-host-radio-support"></a>Bluetooth ホストの無線のサポート
@@ -52,7 +52,7 @@ ms.locfileid: "58761857"
 
 Ihv は、Windows で box サポートに、Bluetooth 無線があることを確認するには、次の手順を実行する必要があります。
 
-- 無線拡張互換性 ID の OS の機能の記述子をサポートしていることを確認します。 詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)を参照してください。
+- 無線拡張互換性 ID の OS の機能の記述子をサポートしていることを確認します。 詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
 - Windows 認定プログラムの承認、Bluetooth 無線ハードウェアと関連付けられている INF ファイルを取得します。 Bluetooth 無線のベンダー固有の INF ファイルの例は、次を参照してください[付録 b:。Windows Vista で使用するため、ベンダー提供の INF ファイルの例](bluetooth-faq--appendix-b.md)します。
 - パートナー センターを使用して、INF ファイルを Windows Update を通じて使用できるようにするには
 

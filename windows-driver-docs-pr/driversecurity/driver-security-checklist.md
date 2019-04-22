@@ -5,10 +5,10 @@ ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 04/02/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 18c3e78adf67644de5cdfd8c434cf36d4ba78739
-ms.sourcegitcommit: 5402ab8a5ecc5e1933d4191174a09f96c000deb0
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59003639"
 ---
 # <a name="driver-security-checklist"></a>ドライバーのセキュリティ チェックリスト
@@ -152,9 +152,9 @@ Windows Driver Framework のソース コードはオープン ソースとは�
 
 |IOCTL バッファーの種類 | まとめ                                    | 詳細情報 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
-| METHOD_BUFFERED  |ほとんど入らないをお勧めします。            | [バッファー付き I/O の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
-| METHOD_IN_DIRECT または METHOD_OUT_DIRECT |いくつかの高速ハードウェア I/O の使用    |[ダイレクト I/O の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
-| METHOD_NEITHER |できる限り避ける |[バッファー付き I/O とダイレクト I/O のどちらも使用しない](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
+| METHOD_BUFFERED  |ほとんど入らないをお勧めします。            | [バッファー内の I/O を使用してください。](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
+| METHOD_IN_DIRECT または METHOD_OUT_DIRECT |いくつかの高速ハードウェア I/O の使用    |[ダイレクト I/O を使用します。](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
+| METHOD_NEITHER |できる限り避ける |[バッファーもダイレクト I/O を使用してください。](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
 
 一般にバッファー I/O は推奨最も安全なバッファリング メソッドを提供します。 使用する場合としても、軽減する必要がある埋め込みポインターなどのリスクがある I/O をバッファーします。
 
@@ -193,7 +193,7 @@ Ioctl でバッファーを操作の詳細については、次を参照して�
 
 HVCI 仮想化をサポートするドライバーを許可するには、追加のメモリ要件があります。 詳細については、次を参照してください。[デバイス ガード互換性](#dgc)この記事で後述します。
 
-**ハンドル数**
+**ハンドル**
 
 - ユーザー モードとカーネル モードのメモリの間で渡されたハンドルを検証します。 詳細については、次を参照してください。[処理管理](https://msdn.microsoft.com/library/windows/hardware/ff547382)と[オブジェクトの処理の検証に失敗した](https://msdn.microsoft.com/library/windows/hardware/ff545703)します。
 
@@ -215,13 +215,13 @@ WDM ドライバーを作成する場合は、次のガイダンスを確認し�
 
 次の記事では、IRP の入力値の検証に関する情報を提供します。
 
-[バッファー付き I/O を使用した DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543388)
+[バッファー内の I/O を使用して DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543388)
 
-[バッファー付き I/O のエラー](https://msdn.microsoft.com/library/windows/hardware/ff544293)
+[バッファー内の i/o エラー](https://msdn.microsoft.com/library/windows/hardware/ff544293)
 
-[ダイレクト I/O を使用した DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543393)
+[ダイレクト I/O を使用して DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543393)
 
-[ダイレクト I/O のエラー](https://msdn.microsoft.com/library/windows/hardware/ff544300)
+[ダイレクト I/O エラー](https://msdn.microsoft.com/library/windows/hardware/ff544300)
 
 [I/O 制御コードに関するセキュリティの問題](https://msdn.microsoft.com/library/windows/hardware/ff563700)
 
@@ -248,11 +248,11 @@ IRP を保存し、両方の呼び出しを含むを検討する必要があり�
 
 間の違いを理解しているかどうかを必ず[ **IRP\_MJ\_クリーンアップ**](https://msdn.microsoft.com/library/windows/hardware/ff550718)と[ **IRP\_MJ\_閉じる** ](https://msdn.microsoft.com/library/windows/hardware/ff550720)要求。 アプリケーションは、ファイル オブジェクトのすべてのハンドルを閉じますが、すべての I/O の前にも要求が完了した後、クリーンアップ要求が到着します。 閉じる要求は、ファイル オブジェクトのすべての I/O 要求が完了またはキャンセルされた後に到着します。 詳しくは、次の記事をご覧ください。
 
-[DispatchCreate、DispatchClose、DispatchCreateClose ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543279)
+[DispatchCreate、DispatchClose、および DispatchCreateClose ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543279)
 
 [DispatchCleanup ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff543242)
 
-[クリーンアップ操作と閉じる操作の処理エラー](https://msdn.microsoft.com/library/windows/hardware/ff544304)
+[操作のクリーンアップと閉じる処理のエラー](https://msdn.microsoft.com/library/windows/hardware/ff544304)
 
 Irp を正しく処理の詳細については、次を参照してください。 [Irp の処理で関連するエラー](https://msdn.microsoft.com/library/windows/hardware/ff540543)します。
 
@@ -298,7 +298,7 @@ PDO へのアクセスを制御するだ方法の 1 つは、INF の SDDL 文字
 
 アクセスの制御に関する詳細については、次の記事を参照してください。
 
-[KMDF ドライバーでのデバイス アクセスの制御](https://msdn.microsoft.com/windows/hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
+[KMDF ドライバーでのデバイスへのアクセスを制御します。](https://msdn.microsoft.com/windows/hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
 
 [名、セキュリティ記述子、およびデバイス クラスのデバイス オブジェクトにアクセスできるようにしています.安全な](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe)から、 *February 2017 年 1 月、NT Insider ニュースレター*によって発行された[OSR](https://www.osr.com)します。
 
@@ -309,9 +309,9 @@ WDM ドライバーを使用して、名前付きのデバイス オブジェク
    
 詳しくは、次の記事をご覧ください。
 
-[デバイス アクセスの制御](https://msdn.microsoft.com/library/windows/hardware/ff542063)
+[デバイスへのアクセスを制御します。](https://msdn.microsoft.com/library/windows/hardware/ff542063)
 
-[デバイスの名前空間アクセスの制御](https://msdn.microsoft.com/library/windows/hardware/ff542068)
+[デバイス Namespace へのアクセスを制御します。](https://msdn.microsoft.com/library/windows/hardware/ff542068)
 
 [ドライバー開発者向けの Windows セキュリティ モデル](windows-security-model.md)
 
@@ -344,7 +344,7 @@ Ioctl が呼び出し元のユーザー モードで送信されるときにセ�
 
 詳しくは、次の記事をご覧ください。
 
-[I/O 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
+[定義の I/O 制御コードします。](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
 
 
 ## <a name="span-iddgcspanspan-iddgcspanvalidate-device-guard-compatibility"></a><span id="DGC"></span><span id="dgc"></span>Device Guard の互換性を検証します。
@@ -384,9 +384,9 @@ Device Guard の詳細については、次を参照してください。 [Windo
 
 [ファイル システムのセキュリティに関する考慮事項](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-considerations-for-file-systems)
 
-[ファイル システムのセキュリティに関する問題](https://msdn.microsoft.com/windows/hardware/drivers/ifs/file-system-security-issues)
+[ファイル システムのセキュリティの問題](https://msdn.microsoft.com/windows/hardware/drivers/ifs/file-system-security-issues)
 
-[ファイル システム向けのセキュリティ機能](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-features-for-file-systems)
+[ファイル システムのセキュリティ機能](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-features-for-file-systems)
 
 [ファイル システム フィルター ドライバーのセキュリティに関する考慮事項](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-considerations-for-file-system-filter-drivers)
 
@@ -394,7 +394,7 @@ Device Guard の詳細については、次を参照してください。 [Windo
 
 NDIS ドライバーのセキュリティについては、次を参照してください。[ネットワーク ドライバーのセキュリティ問題](https://msdn.microsoft.com/windows/hardware/drivers/network/security-issues-for-network-drivers)します。
 
-*ディスプレイ*
+*Display*
 
 ディスプレイ ドライバーのセキュリティについては、次を参照してください。&lt;コンテンツ保留中&gt;します。
 
@@ -424,13 +424,13 @@ WIA セキュリティについては、次を参照してください。[セキ
 
 詳しくは、次の記事をご覧ください。
 
-[セキュリティで保護されたデバイスのインストールの作成](https://msdn.microsoft.com/windows/hardware/drivers/install/creating-secure-device-installations)
+[セキュリティで保護されたデバイスのインストールを作成します。](https://msdn.microsoft.com/windows/hardware/drivers/install/creating-secure-device-installations)
 
 [SetupAPI の使用に関するガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/guidelines-for-using-setupapi)
 
-[デバイス インストール関数の使用](https://msdn.microsoft.com/windows/hardware/drivers/install/using-device-installation-functions)
+[デバイス インストールの機能を使用します。](https://msdn.microsoft.com/windows/hardware/drivers/install/using-device-installation-functions)
 
-[デバイスとドライバーのインストールに関する高度なトピック](https://msdn.microsoft.com/windows/hardware/drivers/install/device-and-driver-installation-advanced-topics)
+[高度なトピックのデバイスとドライバーのインストール](https://msdn.microsoft.com/windows/hardware/drivers/install/device-and-driver-installation-advanced-topics)
 
 
 
@@ -611,15 +611,15 @@ Driver Verifier は、ドライバーのテストをライブにできます。 
 
 次のテストでは、コードの脆弱性に関連するいくつかの動作のドライバー コードの確認に役立つ可能性があるテストの例を示します。
 
- [DF - ファジー ランダム IOCTL テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
+ [DF - ランダム IOCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 
- [DF - ファジーはサブ テスト (信頼性) 開きます](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
+ [DF - サブオープンのファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
 
- [DF - ファジー 0 長バッファー FSCTL テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
+ [DF - 0 長バッファー FSCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
 
- [DF - ファジー ランダム FSCTL テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
+ [DF - ランダム FSCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
 
- [DF - その他の API をファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
+ [DF - Misc API のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 
  使用することも、[カーネル同期遅延ファジー テスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)Driver Verifier に含まれます。
 
@@ -671,7 +671,7 @@ Microsoft Security Engineering Center (MSEC)、作成、。 Crash Analyzer を�
 
 **セキュリティで保護されたカーネル モード ドライバーのコーディングのガイドライン**
 
-[信頼性の高いカーネルモード ドライバーの作成](https://msdn.microsoft.com/library/windows/hardware/ff542904.aspx)
+[信頼性の高いカーネル モード ドライバーを作成します。](https://msdn.microsoft.com/library/windows/hardware/ff542904.aspx)
 
 **セキュリティで保護されたコーディング組織**
 
@@ -692,7 +692,7 @@ SAFECode- [https://www.safecode.org/](https://www.safecode.org/)
 
 [OSR](https://www.osr.com)ドライバーの開発のトレーニングおよびコンサルティング サービスを提供します。 OSR ニュースレターからこれらの記事では、ドライバーのセキュリティの問題が強調表示します。
 
-[名、セキュリティ記述子、およびデバイス クラスのデバイス オブジェクトにアクセスできるようにしています. 安全な](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe)
+[名、セキュリティ記述子、およびデバイス クラスのデバイス オブジェクトにアクセスできるようにしています.安全な](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe)
 
 [すると Protection--内でドライバーとデバイスのセキュリティを使用して、ことごとく](https://www.osronline.com/article.cfm?article=100)
 
@@ -705,7 +705,7 @@ SAFECode- [https://www.safecode.org/](https://www.safecode.org/)
 [ドライバーの脆弱性にアラート: からMicrosoft Defender ATP 調査 unearths 特権エスカレーション欠陥](https://www.microsoft.com/security/blog/2019/03/25/from-alert-to-driver-vulnerability-microsoft-defender-atp-investigation-unearths-privilege-escalation-flaw/)
 
 
-**書籍**
+**ブックの「**
 
 *ソフトウェアのセキュリティの 24 の deadly sins: プログラミングの欠陥とその解決方法*Michael Howard、David LeBlanc、John Viega して
 

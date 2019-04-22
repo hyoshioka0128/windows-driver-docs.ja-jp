@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fee075a853e068c5906e4ba652cdd7775ceb6234
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239243"
 ---
 # <a name="bug-check-0x170-cryptolibraryinternalerror"></a>バグ チェック 0x170:CRYPTO\_ライブラリ\_内部\_エラー 
@@ -47,7 +47,7 @@ CRYPTO\_ライブラリ\_内部\_エラーのバグ チェックが 0x00000170 �
 ## <a name="see-also"></a>関連項目
 ----------
 
-[バグ チェック コード リファレンス](bug-check-code-reference2.md)
+[バグチェック コード リファレンス](bug-check-code-reference2.md)
 
 [Cryptography API:次世代](https://docs.microsoft.com/windows/desktop/SecCNG/cng-portal) 
 

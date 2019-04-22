@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a4ec4a3fcabe13dede1109d22ebffe4d1efcd801
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239665"
 ---
 # <a name="bug-check-0x139-kernelsecuritycheckfailure"></a>バグ チェック 0x139:カーネル\_セキュリティ\_確認\_エラー
@@ -122,9 +122,9 @@ ms.locfileid: "59239665"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
+[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
 
-[WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
  
 

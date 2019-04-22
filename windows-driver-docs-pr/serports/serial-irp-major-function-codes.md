@@ -8,10 +8,10 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845548"
 ---
 # <a name="serial-irp-major-function-codes"></a>シリアル IRP の主要な関数コード
@@ -90,7 +90,7 @@ IRP_MJ_DEVICE_CONTROL 要求には、シリアル ポートが動作します。
 * 取得およびレジスタを設定します。
 * 取得および設定の動作モード
 
-シリアルでサポートされるデバイス制御要求の説明は、[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)を参照してください。
+シリアルでサポートされるデバイス制御要求の説明は、次を参照してください。[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 特定の要求
@@ -151,7 +151,7 @@ STATUS_PENDING
 * 設定と基本設定のリセット
 * コントロールの待機またはスリープ解除の操作
 
-内部デバイスに対する制御要求の説明は、[シリアル デバイス制御要求の内部](https://msdn.microsoft.com/library/windows/hardware/ff547480)を参照してください。
+内部デバイスに対する制御要求の説明は、次を参照してください。[シリアル デバイス制御要求の内部](https://msdn.microsoft.com/library/windows/hardware/ff547480)します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 特定の要求
@@ -212,7 +212,7 @@ IRP_MN_FILTER_RESOURCE_REQUIREMENTS
 
 マルチポート ISA カードのシリアル デバイスは、同じ割り込み状態レジスタおよび同じ割り込みを共有します。
 
-プラグ アンド プレイの要求の一般的な操作の説明は、[プラグ アンド プレイ マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)を参照してください。
+プラグ アンド プレイの要求の一般的な操作の説明は、次を参照してください。[プラグ アンド プレイ マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)します。
 
 ##  <a name="irpmjpower"></a>IRP_MJ_POWER
 [対し、IRP_MJ_POWER](https://msdn.microsoft.com/library/windows/hardware/ff550784)要求の電源管理を制御します。
@@ -239,7 +239,7 @@ IRP_MN_FILTER_RESOURCE_REQUIREMENTS
 
 シリアルでは、関数のドライバーまたは下位レベルのフィルター ドライバーとしてシリアルを使用するシリアル デバイス スタックの既定の電源ポリシー所有者です。
 
-これらの要求の一般的な操作に関する詳細については、[Power Irp の処理の規則](https://msdn.microsoft.com/library/windows/hardware/ff563629)を参照してください。
+これらの要求の一般的な操作に関する詳細については、次を参照してください。 [Power Irp の処理の規則](https://msdn.microsoft.com/library/windows/hardware/ff563629)します。
 
 
 ##  <a name="irpmjqueryinformation"></a>IRP_MJ_QUERY_INFORMATION

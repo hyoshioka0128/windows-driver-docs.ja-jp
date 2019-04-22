@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 66b8fcf0a1c2a9e798075a30313112e17e75cde2
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239849"
 ---
 # <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>バグ チェック 0xD1:ドライバー\_IRQL\_いない\_少ない\_または\_と等しい

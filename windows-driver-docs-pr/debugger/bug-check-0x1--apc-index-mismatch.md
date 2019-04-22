@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0204a326523e449a853352eedb77275b26882a58
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238557"
 ---
 # <a name="bug-check-0x1-apcindexmismatch"></a>バグ チェック 0x1:APC\_インデックス\_が一致しません
@@ -81,7 +81,7 @@ APC\_インデックス\_の不一致のバグ チェックが 0x00000001 の値
 
 詳細については、以下のトピックを参照してください。
 
-[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
+[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 

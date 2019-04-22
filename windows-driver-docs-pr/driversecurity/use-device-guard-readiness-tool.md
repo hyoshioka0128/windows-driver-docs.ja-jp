@@ -5,10 +5,10 @@ ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4a31a354f05f96623fc1bfc30e32e9f9c4f203
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845549"
 ---
 # <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
@@ -25,7 +25,7 @@ HVCI ドライバー Device Guard の互換性をテストするための OS と
 
 準備ツールを使用してセキュリティで保護のブートなど、追加の要件を評価するには、準備ツールのダウンロードに含まれる readme.txt ファイルを参照してください。
 
-関連するデバイスの基本テストに関する詳細については、[Device.DevFund テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)を参照してください。
+関連するデバイスの基本テストに関する詳細については、次を参照してください。 [Device.DevFund テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)します。
 
 ## <a name="implement-device-guard-compatible-code"></a>Device Guard の互換性のあるコードを実装します。
 
@@ -113,7 +113,7 @@ Device Guard の互換性のあるコードを実装するには、次のドラ�
     Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
     ```
 
-    表示される出力を中断する方法については、[コードの整合性の仮想化ベースの保護を有効にする](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)を参照してください。
+    表示される出力を中断する方法については、次を参照してください。[コードの整合性の仮想化ベースの保護を有効にする](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)します。
 
     *Device Guard を無効にする*-準備ツールを実行中に Device Guard する必要がありますを無効にする、テスト対象の PC で Device Guard は、読み込みからドライバーを妨げる可能性し、ドライバーはテスト用に準備ツールを使用できませんに注意してください。
 
@@ -127,7 +127,7 @@ Device Guard の互換性のあるコードを実装するには、次のドラ�
 
     ターゲット テスト PC には、目的のテスト ドライバーをインストールします。
 
-    **重要な**開発ドライバーをテストして、コードの問題に対処したら、最終的な運用環境のドライバーを再テストします。 さらに、ドライバーをテスト、HLK を使用します。 詳細については、[ハイパーバイザー コードの整合性の準備のテスト](https://msdn.microsoft.com/library/windows/hardware/dn955152)を参照してください。
+    **重要な**開発ドライバーをテストして、コードの問題に対処したら、最終的な運用環境のドライバーを再テストします。 さらに、ドライバーをテスト、HLK を使用します。 詳細については、次を参照してください。[ハイパーバイザー コードの整合性の準備のテスト](https://msdn.microsoft.com/library/windows/hardware/dn955152)します。
 
 
 

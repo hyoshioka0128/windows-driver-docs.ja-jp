@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dc331c1266defef14cdbe656f0f040339c0fca6d
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238589"
 ---
 # <a name="bug-check-0xc4-driververifierdetectedviolation"></a>バグ チェック 0xC4:ドライバー\_VERIFIER\_検出\_違反
@@ -264,7 +264,7 @@ ms.locfileid: "59238589"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ドライバーの検証ツールが有効な場合のバグ チェックの処理](handling-a-bug-check-when-driver-verifier-is-enabled.md)
+[バグ チェック時にドライバー検証機能を処理が有効になっています。](handling-a-bug-check-when-driver-verifier-is-enabled.md)
 
  
 

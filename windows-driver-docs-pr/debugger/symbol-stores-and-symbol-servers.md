@@ -14,10 +14,10 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0943ddd04f7befbaf3ff99b3af284d0e5a2d10e8
-ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59362905"
 ---
 # <a name="symbol-stores-and-symbol-servers"></a>シンボル ストアとシンボル サーバー
@@ -34,9 +34,9 @@ A*シンボル ストア*シンボル ファイルや、インデックスを追
 
 [シンボル サーバーの使用](using-a-symbol-server.md)
 
-[HTTP シンボル ストア](http-symbol-stores.md)
+[シンボル ストアの HTTP](http-symbol-stores.md)
 
-[ファイル共有 (SMB) シンボル サーバー](file-share--smb--symbol-server.md)
+[ファイル共有 (SMB) のシンボル サーバー](file-share--smb--symbol-server.md)
 
 [SymStore](symstore.md)
 

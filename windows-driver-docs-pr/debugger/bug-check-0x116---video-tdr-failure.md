@@ -15,10 +15,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b50a6aa80bfd796270831d6af9028832468a435
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239579"
 ---
 # <a name="bug-check-0x116-videotdrfailure"></a>バグ チェック 0x116:ビデオ\_TDR\_エラー
@@ -201,7 +201,7 @@ fffff801`6470c14b cc              int     3
 
 詳細については、以下のトピックを参照してください。
 
-[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
+[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
 
 Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
 
@@ -227,7 +227,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 <a name="remarks"></a>注釈
 -------
 
-**ハードウェア認定の要件**
+**ハードウェア認定要件**
 
 TDR を実装するときにハードウェア デバイスが満たす必要のある要件については、ドキュメントを参照して、WHCK の*Device.Graphics.TDRResiliency*します。
 
