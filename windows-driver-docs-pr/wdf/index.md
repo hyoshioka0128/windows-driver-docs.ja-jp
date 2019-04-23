@@ -14,18 +14,19 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: a12e5cb0e965f6a98dad3cb5c35f419522f12626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 2d3dc6a72993a7df74bae3de857cefd7709b52b8
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465703"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902412"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 の WDF ドライバーの新機能
 
 このトピックでは、Windows 10 の Windows Driver Frameworks (WDF) の新機能と機能強化についてまとめています。
 
-Windows 10、バージョン 1809 (2018 年 10 月更新、Redstone 5) には、カーネル モード ドライバー フレームワーク (KMDF) バージョン 1.27 とユーザー モード ドライバー フレームワーク (UMDF) バージョン 2.27 が含まれます。
+Windows 10、バージョン 1903 (2019 年 3 月更新、19H1) には、カーネル モード ドライバー フレームワーク (KMDF) バージョン 1.29 とユーザー モード ドライバー フレームワーク (UMDF) バージョン 2.29 が含まれます。
 
 これらのフレームワーク バージョンを使用し、次のドライバーを構築できます。
 
@@ -33,6 +34,10 @@ Windows 10、バージョン 1809 (2018 年 10 月更新、Redstone 5) には、
 -   Windows Server、バージョン 1809
 
 バージョン履歴については、「[KMDF バージョン履歴](kmdf-version-history.md)」と「[UMDF バージョン履歴](umdf-version-history.md)」を参照してください。 注記のあるものを除き、このページの UMDF 参照は、UMDF バージョン 1 では利用できないバージョン 2 の機能を表します。
+
+## <a name="new-in-wdf-for-windows-10-version-1903"></a>Windows 10、バージョン 1903 の WDF の新機能
+
+追加または変更された機能はありません。
 
 ## <a name="new-in-wdf-for-windows-10-version-1809"></a>Windows 10、バージョン 1809 の WDF の新機能
 

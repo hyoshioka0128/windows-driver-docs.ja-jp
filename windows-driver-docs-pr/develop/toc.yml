@@ -1,56 +1,60 @@
-items:
 - name: ドライバーの開発、テスト、および展開
   href: index.md
 - name: ユニバーサル ドライバーの概要
   href: getting-started-with-universal-drivers.md
   items:
-  - name: ユニバーサル Windows ドライバーのビルド
-    href: building-a-universal-driver.md
-  - name: ユニバーサル ドライバーの検証
-    href: validating-universal-drivers.md
-  - name: OneCore をターゲットとしたビルド
-    href: building-for-onecore.md
-  - name: ユニバーサル ドライバーのシナリオ
-    href: universal-driver-scenarios.md
-  - name: ユニバーサル ドライバーのデバッグ
-    href: debugging-a-universal-driver.md
-  - name: ドライバー リファレンス ページでのターゲット プラットフォーム
-    href: windows-10-editions-for-universal-drivers.md
-  - name: Windows 10 のドライバーの収束モデル
-    href: driver-model-convergence.md
+    - name: ユニバーサル Windows ドライバーのビルド
+      href: building-a-universal-driver.md
+    - name: ユニバーサル ドライバーの検証
+      href: validating-universal-drivers.md
+    - name: OneCore をターゲットとしたビルド
+      href: building-for-onecore.md
+    - name: ユニバーサル ドライバーのシナリオ
+      href: universal-driver-scenarios.md
+    - name: ユニバーサル ドライバーのデバッグ
+      href: debugging-a-universal-driver.md
+    - name: ドライバー リファレンス ページでのターゲット プラットフォーム
+      href: windows-10-editions-for-universal-drivers.md
+    - name: "Windows\_10 のドライバーの収束モデル"
+      href: driver-model-convergence.md
 - name: 新しいデバイス ファンクション ドライバーの作成
   href: creating-a-new-driver.md
 - name: 新しいフィルター ドライバーの作成
   href: creating-a-new-filter-driver.md
+  items:
+    - name: デバイス フィルター ドライバーの順序
+      href: device-filter-driver-ordering.md
 - name: 新しいソフトウェア ドライバーの作成
   href: creating-a-new-software-driver.md
+- name: 新しいプリミティブ ドライバーの作成
+  href: creating-a-primitive-driver.md
 - name: 既にあるソース ファイルからのドライバーの作成
   href: creating-a-driver-from-existing-source-files.md
 - name: WDK を使ったドライバーのビルド
   href: building-a-driver.md
   items:
-  - name: 異なるバージョンの Windows に対するドライバーのビルド
-    href: building-drivers-for-different-versions-of-windows.md
-  - name: WDK を使った ARM64 ドライバーのビルド
-    href: building-arm64-drivers.md
-  - name: Enterprise WDK 10 の使用
-    href: using-the-enterprise-wdk.md
-  - name: ラボに WDK 8.1 ビルド環境をインストールする
-    href: installing-the-wdk-build-environment-in-a-lab.md
-  - name: ユーザー モード ドライバーとデスクトップ アプリでの Microsoft C ランタイムの使用
-    href: using-the-microsoft-c-runtime-with-user-mode-drivers-and-apps.md
-  - name: カスタム ビルド環境での浮動小数点エラーの回避
-    href: avoiding-floating-point-errors-in-custom-build-environments.md
-  - name: ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティ
-    href: counters-manifest-preprocessor-properties-for-driver-projects.md
-  - name: ドライバー プロジェクトのドライバー モデル設定プロパティ
-    href: driver-model-settings-properties-for-driver-projects.md
-  - name: ドライバー プロジェクトのメッセージ コンパイラ プロパティ
-    href: message-compiler-properties-for-driver-projects.md
-  - name: ドライバー プロジェクトの MOF コンパイラ プロパティ
-    href: mof-compiler-properties-for-driver-projects.md
-  - name: ドライバー プロジェクトの Stampinf プロパティ
-    href: stampinf-properties-for-driver-projects.md
+    - name: 異なるバージョンの Windows に対するドライバーのビルド
+      href: building-drivers-for-different-versions-of-windows.md
+    - name: WDK を使った ARM64 ドライバーのビルド
+      href: building-arm64-drivers.md
+    - name: Enterprise WDK 10 の使用
+      href: using-the-enterprise-wdk.md
+    - name: ラボに WDK 8.1 ビルド環境をインストールする
+      href: installing-the-wdk-build-environment-in-a-lab.md
+    - name: ユーザー モード ドライバーとデスクトップ アプリでの Microsoft C ランタイムの使用
+      href: using-the-microsoft-c-runtime-with-user-mode-drivers-and-apps.md
+    - name: カスタム ビルド環境での浮動小数点エラーの回避
+      href: avoiding-floating-point-errors-in-custom-build-environments.md
+    - name: ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティ
+      href: counters-manifest-preprocessor-properties-for-driver-projects.md
+    - name: ドライバー プロジェクトのドライバー モデル設定プロパティ
+      href: driver-model-settings-properties-for-driver-projects.md
+    - name: ドライバー プロジェクトのメッセージ コンパイラ プロパティ
+      href: message-compiler-properties-for-driver-projects.md
+    - name: ドライバー プロジェクトの MOF コンパイラ プロパティ
+      href: mof-compiler-properties-for-driver-projects.md
+    - name: ドライバー プロジェクトの Stampinf プロパティ
+      href: stampinf-properties-for-driver-projects.md
 - name: WDK 8.1 プロジェクトから WDK 10 への変換
   href: converting-wdk-8-1-projects-to-wdk-10.md
 - name: コード分析ツールと検証ツールを使ったドライバーの分析
@@ -70,72 +74,66 @@ items:
 - name: ドライバーへの署名
   href: signing-a-driver.md
   items:
-  - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
-    href: attestation-signing-a-kernel-driver-for-public-release.md
-  - name: 開発中とテスト中のドライバーへの署名
-    href: signing-a-driver-during-development-and-testing.md
-  - name: 一般リリース用のドライバーへの署名
-    href: signing-a-driver-for-public-release.md
-  - name: ドライバーの署名のプロパティ
-    href: driver-signing-properties.md
+    - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
+      href: attestation-signing-a-kernel-driver-for-public-release.md
+    - name: 開発中とテスト中のドライバーへの署名
+      href: signing-a-driver-during-development-and-testing.md
+    - name: 一般リリース用のドライバーへの署名
+      href: signing-a-driver-for-public-release.md
+    - name: ドライバーの署名のプロパティ
+      href: driver-signing-properties.md
 - name: テスト コンピューターへのドライバーの展開
   href: deploying-a-driver-to-a-test-computer.md
   items:
-  - name: ドライバー パッケージ プロジェクトの展開プロパティ
-    href: deployment-properties-for-driver-projects.md
-  - name: ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
-    href: driver-verifier-properties-for--driver-projects.md
-  - name: ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティ
-    href: kmdf-verifier-properties-for-driver-package-projects.md
-  - name: ドライバー パッケージ プロジェクトの UMDF 検証ツール プロパティ
-    href: umdf-verifier-properties-for-driver-package-projects.md
-  - name: ドライバー パッケージ プロジェクトの Inf2Cat プロパティ
-    href: inf2cat-properties-for-driver-package-projects.md
-  - name: カスタム ドライバー インストール スクリプトを作成する方法
-    href: create-a-custom-driver-installation-script.md
-  - name: Windows 10 Mobile へのドライバーのインストール
-    href: using-pkggen.md
+    - name: ドライバー パッケージ プロジェクトの展開プロパティ
+      href: deployment-properties-for-driver-projects.md
+    - name: ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
+      href: driver-verifier-properties-for--driver-projects.md
+    - name: ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティ
+      href: kmdf-verifier-properties-for-driver-package-projects.md
+    - name: ドライバー パッケージ プロジェクトの UMDF 検証ツール プロパティ
+      href: umdf-verifier-properties-for-driver-package-projects.md
+    - name: ドライバー パッケージ プロジェクトの Inf2Cat プロパティ
+      href: inf2cat-properties-for-driver-package-projects.md
+    - name: カスタム ドライバー インストール スクリプトを作成する方法
+      href: create-a-custom-driver-installation-script.md
+    - name: Windows 10 Mobile へのドライバーのインストール
+      href: using-pkggen.md
 - name: ドライバーのデバッグ
   href: debugging-a-driver.md
 - name: ドライバーのテスト
   href: testing-a-driver.md
   items:
-  - name: 開発中のドライバーのテストに関するヒント
-    href: strategies-for-testing-drivers-during-development.md
-  - name: Visual Studio を使って実行時にドライバーをテストする方法
-    href: testing-a-driver-at-runtime.md
-    items:
-    - name: WDK 8.1 の HCK テスト スイートを実行する方法
-      href: run-the-hck-test-suites-in-the-wdk.md
-    - name: Device Fundamental テストを選んで構成する方法
-      href: how-to-select-and-configure-the-device-fundamental-tests.md
-    - name: ドライバー パッケージをテストする方法
-      href: test-a-driver-package.md
-    - name: ドライバーのテスト結果ログを読み取る方法
-      href: read-the-driver-test-results-log.md
-    - name: コマンド プロンプトから実行時にドライバーをテストする方法
-      href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
-    - name: WDK を使った Device Fundamental テストのトラブルシューティング
-      href: troubleshooting-the-device-fundamental-tests.md
-  - name: ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
-    href: how-to-write-a-driver-test-.md
-    items:
-    - name: テスト メタデータを追加する方法
-      href: to-add-test-metadata.md
+    - name: 開発中のドライバーのテストに関するヒント
+      href: strategies-for-testing-drivers-during-development.md
+    - name: Visual Studio を使って実行時にドライバーをテストする方法
+      href: testing-a-driver-at-runtime.md
+      items:
+        - name: WDK 8.1 の HCK テスト スイートを実行する方法
+          href: run-the-hck-test-suites-in-the-wdk.md
+        - name: Device Fundamental テストを選んで構成する方法
+          href: how-to-select-and-configure-the-device-fundamental-tests.md
+        - name: ドライバー パッケージをテストする方法
+          href: test-a-driver-package.md
+        - name: ドライバーのテスト結果ログを読み取る方法
+          href: read-the-driver-test-results-log.md
+        - name: コマンド プロンプトから実行時にドライバーをテストする方法
+          href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
+        - name: WDK を使った Device Fundamental テストのトラブルシューティング
+          href: troubleshooting-the-device-fundamental-tests.md
+    - name: ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
+      href: how-to-write-a-driver-test-.md
+      items:
+        - name: テスト メタデータを追加する方法
+          href: to-add-test-metadata.md
 - name: ドライバー検証ツール ログの作成
   href: creating-a-driver-verification-log.md
   items:
-  - name: コード分析ツールのログ ファイルの作成
-    href: creating-a-log-file-for-the-code-analysis-tool.md
-  - name: 静的ドライバー検証ツールのログ ファイルの作成
-    href: creating-a-log-file-for-static-driver-verifier.md
-  - name: 静的ドライバー検証ツールの既知の問題 - Windows 10 October 2018 Update (バージョン 1809)
-    href: static-driver-verifier-known-issues.md
+    - name: コード分析ツールのログ ファイルの作成
+      href: creating-a-log-file-for-the-code-analysis-tool.md
+    - name: 静的ドライバー検証ツールのログ ファイルの作成
+      href: creating-a-log-file-for-static-driver-verifier.md
+    - name: 静的ドライバー検証ツールの既知の問題 - Windows 10 October 2018 Update (バージョン 1809)
+      href: static-driver-verifier-known-issues.md
 - name: ドライバー パッケージの配布
   href: distributing-a-driver-package-win8.md
-ms.openlocfilehash: e1b80e72c1dff97ba0f06b8592c8f36747cb3050
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465535"
