@@ -1,14 +1,14 @@
 ---
 title: WinDbg プレビューを使用したデバッグ
 description: このセクションでは、WinDbg プレビュー デバッガーを使用して、基本的なデバッグ タスクを実行する方法について説明します。
-ms.date: 10/18/2018
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 103c62d0e878c7d8d46a174ec07374192e1cec84
-ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
+ms.openlocfilehash: 7d3b32cfca7fee3ed39154012fc25e29f2782d8c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59534156"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903472"
 ---
 ![Windbg のプレビューの小さいロゴ](images/windbgx-preview-logo.png) 
 
@@ -156,7 +156,14 @@ TTD トレース、アプリケーションの場合は、起動または接続�
 
 ![新しいフィードバックの追加 ボタンを含むフィードバックのオプションを示すフィードバック ハブのスクリーン ショット](images/windbgx-feedback.png)
 
+## <a name="videos"></a>ビデオ
 
+これらのエピソードを見る、[デフラグ ツール](https://channel9.msdn.com/Shows/Defrag-Tools)番組にアクションの Windbg のプレビューを参照してください。  
+- [デフラグ ツール #182](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-182-WinDbg-Preview-Part-1) -Tim, チャド、および Andy WinDbg プレビューの基本と、機能の一部を経由します。
+- [デフラグ ツール #183](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-183-WinDbg-Preview-Part-2) -Nick、Tim、Chad WinDbg のプレビューを使用して、短いデモを経由します。
+- [デフラグ ツール #184](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-184-JavaScript-in-WinDbg-Preview) -請求書と Andrew は WinDbg のプレビューでのスクリプト機能を説明します。
+- [デフラグ ツール #185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) -James と Ivette を提供し、タイム トラベルのデバッグの概要。
+- [デフラグ ツール #186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) -James と JCAB で高度なタイム トラベルのデバッグについて説明します。
 
 ## <a name="next-steps"></a>次の手順
 
