@@ -2,14 +2,14 @@
 title: JavaScript デバッガーのスクリプト
 description: このトピックでは、JavaScript を使用して、デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成する方法について説明します。
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
-ms.date: 11/27/2018
+ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f557de91ca08a205b131d7dd9037382d759612d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ab8a09abb89ace35b8d44b6f1356432d73d860b4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573642"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902474"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript デバッガーのスクリプト
 
@@ -41,6 +41,8 @@ ms.locfileid: "56573642"
 
 [JavaScript のデバッグ](#debugging)
 
+[IntelliSense の追加 - VSCode での JavaScript](#vscode)
+
 [JavaScript リソース](#resources)
 
 これら 2 つのトピックでは、デバッガーでの JavaScript の使用に関する追加情報を提供します。
@@ -49,8 +51,13 @@ ms.locfileid: "56573642"
 
 [JavaScript の拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)
 
-## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>デバッガーの JavaScript プロバイダー
 
+## <a name="javascript-scripting-video"></a>JavaScript スクリプト ビデオ
+
+[ツールと 170 をデフラグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-170-Debugger-JavaScript-Scripting)-Andy と請求書は、JavaScript の機能拡張と、デバッガーでの機能をスクリプトを示します。
+
+
+## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>デバッガーの JavaScript プロバイダー
 
 デバッガーに含まれる JavaScript プロバイダー活用 ECMAScript6 のオブジェクトとクラスに関する最新の機能を強化します。 詳細については、次を参照してください。 [ECMAScript 6-新機能。概要 & 比較](https://es6-features.org/)します。
 
@@ -144,7 +151,7 @@ Hello World!  We are in JavaScript!
 
 スクリプトによって行われたすべてのデバッガー オブジェクト モデルの操作は、スクリプトが読み込まれた後または別のコンテンツを再度実行するまで、場所に維持されます。
 
-詳細については、[ **.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)を参照してください。
+詳細については、次を参照してください。 [ **.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)します。
 
 ## <a name="span-idscriptunloadunloadscriptspanspan-idscriptunloadunloadscriptspanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>.scriptunload (アンロード スクリプト)
 
@@ -156,7 +163,7 @@ Hello World!  We are in JavaScript!
 JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、[ **.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)を参照してください。
+詳細については、次を参照してください。 [ **.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)します。
 
 ## <a name="span-idscriptlistlistloadedscriptsspanspan-idscriptlistlistloadedscriptsspanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>.scriptlist (読み込まれたスクリプトを一覧表示)
 
@@ -169,7 +176,7 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、[ **.scriptlist (読み込まれたスクリプトの一覧)**](-scriptlist--list-loaded-scripts-.md)を参照してください。
+詳細については、次を参照してください。 [ **.scriptlist (読み込まれたスクリプトの一覧)**](-scriptlist--list-loaded-scripts-.md)します。
 
 ## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>JavaScript デバッガーがスクリプトの概要します。
 
@@ -424,9 +431,9 @@ function uninitializeScript()
 
 ||[.scriptload](-scriptload--load-script-.md)|[.scriptrun (スクリプトの実行)](-scriptrun--run-script-.md)|[.scriptunload (アンロード スクリプト)](-scriptunload--unload-script-.md)|
 |--- |--- |--- |--- |
-|ルート|はい|はい| | |
-|initializeScript|はい|はい| | |
-|invokeScript       | |はい| |
+|ルート|○|○| | |
+|initializeScript|○|○| | |
+|invokeScript       | |○| |
 |uninitializeScript | ||はい|
 
 
@@ -471,7 +478,7 @@ function main()
 ## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>JavaScript でデバッガー ビジュアライザーを作成します。
 
 
-カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、[ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)を参照してください。
+カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)します。
 
 **クラスの例 - Simple1DArray**
 
@@ -621,7 +628,7 @@ g_array1D.Select(@$myScript.multiplyBySeven),d
 
 ブレークポイントにヒットした後に、補足処理を行うには、JavaScript を使用できます。 たとえば、スクリプトは、その他の実行時の値を確認し、自動的にコードの実行を継続または停止して追加の手動デバッグを実行するかを使用できます。
 
-ブレークポイントの操作方法の概要については、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
+ブレークポイントの操作方法の概要については、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
 
 **ブレークポイントの処理のスクリプトを DebugHandler.js 例**
 
@@ -1195,6 +1202,21 @@ Caught and returned!
 Test
 ```
 
+## <a name="span-idvscodespanspan-idvscodespanspan-idvscodespanjavascript-in-vscode---adding-intellisense"></a><span id="Vscode"></span><span id="vscode"></span><span id="VSCODE"></span>IntelliSense の追加 - VSCode での JavaScript
+
+VSCode でデバッガーのデータ モデル オブジェクトを操作したい場合は、Windows の開発キットで提供される定義ファイルを使用できます。 IntelliSense の定義ファイルでは、すべて host.* デバッガー オブジェクト Api のサポートを提供します。 64 ビット PC 上の既定のディレクトリに、キットをインストールした場合の場所は。
+
+`C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\winext\JsProvider.d.ts`
+
+VSCode での IntelliSense の定義ファイルを使用するには
+
+1. 定義ファイルの JSProvider.d.ts
+
+2. 定義ファイルをスクリプトと同じフォルダーにコピーします。
+
+3. 追加`/// <reference path="JSProvider.d.ts" />`JavaScript スクリプト ファイルの先頭にします。
+
+JavaScript ファイル内の参照を VS Code 自動的に表示されます IntelliSense ホストだけでなく、スクリプト内の構造体 JSProvider で提供される Api で。 たとえば、「ホスト」を入力します。 すべての利用可能なデバッガー モデル Api の IntelliSense が表示されます。
 
 
 ## <a name="span-idresourcesspanspan-idresourcesspanspan-idresourcesspanjavascript-resources"></a><span id="Resources"></span><span id="resources"></span><span id="RESOURCES"></span>JavaScript リソース

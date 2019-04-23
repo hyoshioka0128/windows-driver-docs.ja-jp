@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_NETWORK_LIST_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a4054848f7df650f19e89d4912704f53d97d797f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 95a3de268503926aea4127d4547e48cb7b71457f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538923"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903428"
 ---
 # <a name="oidwdisetnetworklistoffload"></a>OID\_WDI\_設定\_ネットワーク\_一覧\_オフロード
 
@@ -70,7 +71,8 @@ NLO を示す探索は、2 つのケースです。
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

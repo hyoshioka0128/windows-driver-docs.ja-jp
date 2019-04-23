@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: df35d0351959dec63f4eb368ebae52a290ec0453
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239258"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902276"
 ---
 # <a name="bug-check-0x162-kernelautoboostinvalidlockrelease"></a>バグ チェック 0x162:カーネル\_自動\_BOOST\_無効な\_ロック\_リリース
 

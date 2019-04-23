@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: eacffa782652e541c1874d1d39f78c47222b3de2
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239707"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902630"
 ---
 # <a name="bug-check-0x1000007f-unexpectedkernelmodetrapm"></a>バグ チェック 0x1000007F:予期しない\_カーネル\_モード\_トラップ\_M
 

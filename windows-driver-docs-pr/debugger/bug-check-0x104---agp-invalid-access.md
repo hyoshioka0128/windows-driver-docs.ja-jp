@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: aafffa8115c95a04cd51ca9d8aefdb900e6938aa
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239023"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903210"
 ---
 # <a name="bug-check-0x104-agpinvalidaccess"></a>バグ チェック 0x104:AGP\_無効な\_アクセス
 

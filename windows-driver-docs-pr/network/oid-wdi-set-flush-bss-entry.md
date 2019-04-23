@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_FLUSH_BSS_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c042cec518f49ef5e880fe8dfdaee275683a09de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 831d33fe094e45ab34d3de5ad423956cf19b9753
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558376"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903926"
 ---
 # <a name="oidwdisetflushbssentry"></a>OID\_WDI\_設定\_フラッシュ\_BSS\_エントリ
 
@@ -32,7 +33,8 @@ OID\_WDI\_設定\_フラッシュ\_BSS\_エントリは、アダプターで保�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

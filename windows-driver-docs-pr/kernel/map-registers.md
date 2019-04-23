@@ -1,6 +1,6 @@
 ---
-title: レジスタをマップします。
-description: レジスタをマップします。
+title: レジスターのマッピング
+description: レジスターのマッピング
 ms.assetid: 0404f487-7a4f-43be-bbe0-b7da2087b8aa
 keywords:
 - メモリ管理の WDK カーネル、レジスタのマップ
@@ -15,14 +15,14 @@ keywords:
 - メモリ管理 WDK カーネルは、アドレスのマッピング
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 913dfa0e70e1e20c8cb4a819263edcbab15378a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a1495e62568731b0ea889775431531942ba1fc0
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529886"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903442"
 ---
-# <a name="map-registers"></a>レジスタをマップします。
+# <a name="map-registers"></a>レジスターのマッピング
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56529886"
 
 DMA を実行するドライバーは、次の図に示すように、次の 3 つの異なるアドレス空間を使用します。
 
-![論理的、物理的、および仮想のアドレスへのマッピングを示す図](images/3addrspc.png)
+![物理、論理、および仮想のアドレスへのマッピング](images/3addrspc.png)
 
 任意の Windows プラットフォームでは、ドライバーは、アクセスをプロセッサでサポートされている完全な仮想アドレス空間を持ちます。 32 ビット プロセッサでは、仮想アドレス空間は、4 ギガバイトを表します。 CPU では、ページのテーブルを使用して、システムの物理アドレス空間のアドレスを仮想アドレス空間のアドレスを変換します。 各ページ テーブル エントリ (PTE) は、必要な場合に、ページング操作の結果として、物理メモリのページに仮想メモリの 1 つのページをマップします。 MDL (メモリ記述子のリスト) は、ドライバーの DMA 操作に関連付けられているバッファーのようなマッピングを提供します。
 

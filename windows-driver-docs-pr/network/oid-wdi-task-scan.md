@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_SCAN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c630983a6aea5299d4ac507107974da2095bd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d7bf84cda2adbec918206cee5dfb3511cac1d75a
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527899"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902666"
 ---
 # <a name="oidwditaskscan"></a>OID\_WDI\_タスク\_スキャン
 
@@ -68,11 +69,11 @@ LiveUpdatesNeeded によって有効にすると、スキャンが開始され�
 | TLV                                                                       | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                   |
 |---------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_BSSID**](https://msdn.microsoft.com/library/windows/hardware/dn926153)                             |                                |          | ネットワークのスキャンする BSSID します。 このブロードキャストの MAC アドレスは、ステーションはすべて Bssid をスキャンします。                                                                                                                                                                                     |
-| [**WDI\_TLV\_SSID**](https://msdn.microsoft.com/library/windows/hardware/dn898064)                               | X                              |          | ポートをスキャンする必要がある SSID リストの一覧。 この一覧で複数の Ssid 許可されるは、ワイルドカードは、それらのいずれか。 チャネルで作業中のスキャンを実施する際に、ポートは、一覧には、各 SSID のプローブ要求を送信する必要があります。 このリストが空の場合は、Ssid のすべてのポートをスキャンする必要があります。 |
-| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076) |                                | X        | ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。 これらでは、パッシブ スキャンは使用されません。                                                                                                                                                                        |
+| [**WDI\_TLV\_SSID**](https://msdn.microsoft.com/library/windows/hardware/dn898064)                               | x                              |          | ポートをスキャンする必要がある SSID リストの一覧。 この一覧で複数の Ssid 許可されるは、ワイルドカードは、それらのいずれか。 チャネルで作業中のスキャンを実施する際に、ポートは、一覧には、各 SSID のプローブ要求を送信する必要があります。 このリストが空の場合は、Ssid のすべてのポートをスキャンする必要があります。 |
+| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076) |                                | x        | ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。 これらでは、パッシブ スキャンは使用されません。                                                                                                                                                                        |
 | [**WDI\_TLV\_スキャン\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn898052)                    |                                |          | モード パラメーターをスキャンします。                                                                                                                                                                                                                                                                         |
 | [**WDI\_TLV\_スキャン\_熟考\_時間**](https://msdn.microsoft.com/library/windows/hardware/dn898051)       |                                |          | 時刻のパラメーターについて詳しく説明しません。                                                                                                                                                                                                                                                                        |
-| [**WDI\_TLV\_バンド\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/dn926144)              | X                              | X        | スキャンすることをお勧めのチャネルのリスト。 最大スキャン時間の要件を満たしている限り、アダプターのサブセットまたはスーパー セットであるチャネルの一覧のスキャンを実行できます。 この一覧が空の場合、ポートがサポートされているすべてのチャネルでスキャンする必要があります。                                               |
+| [**WDI\_TLV\_バンド\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/dn926144)              | x                              | x        | スキャンすることをお勧めのチャネルのリスト。 最大スキャン時間の要件を満たしている限り、アダプターのサブセットまたはスーパー セットであるチャネルの一覧のスキャンを実行できます。 この一覧が空の場合、ポートがサポートされているすべてのチャネルでスキャンする必要があります。                                               |
 
  
 
@@ -80,10 +81,12 @@ LiveUpdatesNeeded によって有効にすると、スキャンが開始され�
 
 
 [NDIS\_STATUS\_WDI\_INDICATION\_SCAN\_COMPLETE](ndis-status-wdi-indication-scan-complete.md)
+
 ## <a name="unsolicited-indication"></a>要請されていないを示す値
 
+[NDIS\_STATUS\_WDI\_INDICATION\_BSS\_ENTRY\_LIST](ndis-status-wdi-indication-bss-entry-list.md)
 
-[NDIS\_状態\_WDI\_INDICATION\_BSS\_エントリ\_一覧](ndis-status-wdi-indication-bss-entry-list.md)この通知は BSS エントリが更新をホストに通知をデバイスで使用します。 これは、いつでも送信できます。
+デバイスはこの通知を使用して、BSS エントリが更新をホストに通知します。 これは、いつでも送信できます。
 
 <a name="requirements"></a>要件
 ------------

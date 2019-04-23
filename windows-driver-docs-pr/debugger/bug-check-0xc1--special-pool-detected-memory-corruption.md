@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c1f5826a4990d9b5cd2bff8fe6d922eec041968
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238518"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902808"
 ---
 # <a name="bug-check-0xc1-specialpooldetectedmemorycorruption"></a>バグ チェック 0xC1:特別な\_プール\_検出\_メモリ\_破損
 

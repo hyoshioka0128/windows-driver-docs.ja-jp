@@ -9,12 +9,12 @@ keywords:
 - プロファイル データの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9ff345d7d316dd51c071449acaaaf7d5a2b5d32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7f5badb786fbf0e7e8197f7abc24f7ba830aaa87
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573474"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903330"
 ---
 # <a name="accessing-profile-and-context-data"></a>プロファイルとコンテキスト データへのアクセス
 
@@ -25,9 +25,9 @@ ms.locfileid: "56573474"
 
 802.11 IHV UI 拡張機能のネイティブ DLL でサポートされているカスタム ユーザー インターフェイス (UI) は、いずれかで表示できます。
 
--   呼び出し[ **Dot11ExtSendUIRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff547567) 802.11 IHV 拡張機能のネイティブ DLL によって行われました。 このプロセスの詳細については、[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)を参照してください。
+-   呼び出し[ **Dot11ExtSendUIRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff547567) 802.11 IHV 拡張機能のネイティブ DLL によって行われました。 このプロセスの詳細については、次を参照してください。[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)します。
 
--   ネイティブ 802.11 IHV 拡張 DLL の呼び出し*Dot11ExtQueryUIRequest*オペレーティング システムによって行われた IHV ハンドラー関数。 このプロセスの詳細については、[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)を参照してください。
+-   ネイティブ 802.11 IHV 拡張 DLL の呼び出し*Dot11ExtQueryUIRequest*オペレーティング システムによって行われた IHV ハンドラー関数。 このプロセスの詳細については、次を参照してください。[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)します。
 
 バルーン通知またはオペレーティング システムのネットワーク接続ウィザードを通じて UI 要求が表示するかどうかに関係なく、802.11 IHV UI 拡張機能のネイティブの DLL は、次のデータにアクセスできます。
 
@@ -41,11 +41,11 @@ ms.locfileid: "56573474"
 
 プロファイル データへのアクセスは、**読み取り**と**書き込み**のメソッド、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)という名前のプロパティの**IHV\_通知\_データ**します。
 
-802.11 IHV UI 拡張機能のネイティブ DLL にアクセスする、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)を通じて、 *IUnknown*によって返されるポインター、 [ **IObjectWithSite::SetSite** ](https://msdn.microsoft.com/library/windows/desktop/ms683869)メソッド。 詳細については、[ **IObjectWithSite**](https://msdn.microsoft.com/library/windows/desktop/ms693765)を参照してください。
+802.11 IHV UI 拡張機能のネイティブ DLL にアクセスする、 [IPropertyBag COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56610)を通じて、 *IUnknown*によって返されるポインター、 [ **IObjectWithSite::SetSite** ](https://msdn.microsoft.com/library/windows/desktop/ms683869)メソッド。 詳細については、次を参照してください。 [ **IObjectWithSite**](https://msdn.microsoft.com/library/windows/desktop/ms693765)します。
 
 IPropertyBag COM インターフェイスの代わりに、802.11 IHV UI 拡張機能のネイティブ DLL にアクセスできる、 **IHV\_プロファイル\_データ**と**IHV\_通知\_データ**プロパティを通じて、 [ **GetProp** ](https://msdn.microsoft.com/library/windows/desktop/ms633564) Win32 関数。 このような状況で次の例に示すように、DLL は、親ウィンドウのハンドルを使用する必要があります。
 
-```
+```C++
 LPWSTR lpszBuffer = (LPWSTR) GetProp(GetParent(hwndDlg), L"IHV_PROFILE_DATA");
 ```
 

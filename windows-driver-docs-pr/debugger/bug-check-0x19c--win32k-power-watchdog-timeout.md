@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e503919524a307e7d3105639641212a2b45ae55b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239525"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902472"
 ---
 # <a name="bug-check-0x19c-win32kpowerwatchdogtimeout"></a>バグ チェック 0x19C:WIN32K\_POWER\_ウォッチドッグ\_タイムアウト
 

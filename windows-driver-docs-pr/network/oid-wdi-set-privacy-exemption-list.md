@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_PRIVACY_EXEMPTION_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d70fee933874b691be41eec5f37ca7e0e81ceea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: fc00502d2c67570ffce74b8457b736966a06f375
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537077"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903463"
 ---
 # <a name="oidwdisetprivacyexemptionlist"></a>OID\_WDI\_設定\_プライバシー\_除外\_一覧
 
@@ -29,7 +30,7 @@ OID\_WDI\_設定\_プライバシー\_除外\_一覧は、パケットの説明�
 
 | TLV                                                                                 | 許可されている複数の TLV インスタンス | 省略可能 | 説明                        |
 |-------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------|
-| [**WDI\_TLV\_プライバシー\_除外\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn898041) | X                              | X        | プライバシーの除外対象エントリの一覧です。 |
+| [**WDI\_TLV\_プライバシー\_除外\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn898041) | x                              | x        | プライバシーの除外対象エントリの一覧です。 |
 
  
 
@@ -37,7 +38,8 @@ OID\_WDI\_設定\_プライバシー\_除外\_一覧は、パケットの説明�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

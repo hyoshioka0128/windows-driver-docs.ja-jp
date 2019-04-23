@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d05dfa7ef85435f6ae06c9c1e625404c3628d2f0
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238367"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903502"
 ---
 # <a name="bug-check-0x21-quotaunderflow"></a>バグ チェック 0x21:クォータ\_アンダー フロー
 

@@ -2,16 +2,61 @@
 title: WDI ドキュメントの変更履歴
 description: このセクションでは、WDI ドキュメント ページのドキュメントの変更履歴を示します
 ms.assetid: 29268059-9C33-4768-8F80-195CB28B4663
-ms.date: 04/20/2017
+ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ea98288a032e0ae7d40e6bc25065854696ea53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 39293fe0e3930651b08c2296a530f11a4cd6a3f3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553100"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903316"
 ---
 # <a name="wdi-doc-change-history"></a>WDI ドキュメントの変更履歴
+
+## <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+
+ドキュメントをバージョン 1.1.8 WDI に更新します。
+
+| トピック | 説明 |
+| --- | --- |
+| [WDI_TLV_STATION_CAPABILITIES](wdi-tlv-station-capabilities.md) | サポート問題タイミング測定 (FTM) を示すため、ドライバーのサポートが追加されました。 |
+| [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md) | 新しく追加されたタスクを要求できる WDI BSS ターゲットからのラウンド トリップ時間 (RTT) と場所の構成情報 (LCI) レポートを取得するアダプター開始 FTM プロシージャをできるようにする OID。 |
+| [WDI_TLV_FTM_REQUEST_TIMEOUT](wdi-tlv-ftm-request-timeout.md) | FTM 要求の TLV が新しく追加します。 |
+| [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md) | FTM 要求の TLV が新しく追加します。 |
+| [WDI_TLV_REQUEST_LCI_REPORT](wdi-tlv-request-lci-report.md) | FTM 要求の TLV が新しく追加します。 |
+| [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md) | 新しく追加されたホストによって、タスクの完了を示す値として送信され OID_WDI_TASK_REQUEST_FTM の状態を示す値。 BSS ターゲットから FTM 応答の一覧が含まれています。 |
+| [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_FTM_RESPONSE_STATUS](wdi-tlv-ftm-response-status.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_RETRY_AFTER](wdi-tlv-retry-after.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS](wdi-tlv-ftm-number-of-measurements.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_RTT](wdi-tlv-rtt.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_RTT_ACCURACY](wdi-tlv-rtt-accuracy.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_RTT_VARIANCE](wdi-tlv-rtt-variance.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_LCI_REPORT_STATUS](wdi-tlv-lci-report-status.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_LCI_REPORT_BODY](wdi-tlv-lci-report-body.md) | FTM 応答の TLV が新しく追加します。 |
+| [WDI_TLV_INTERFACE_CAPABILITIES](wdi-tlv-interface-capabilities.md) | Multiband 操作 (MBO) とビーコン レポート オフロードのサポートを示すため、ドライバーの新機能を追加します。 |
+| [**WDI_ASSOC_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status) | 追加**WDI_ASSOC_STATUS_ASSOCIATION_DISALLOWED**状態。 |
+| [WPA3 SAE 認証](wpa3-sae-authentication.md) | WPA3 SAE (セキュリティで保護された認証の値) の認証の新しい概要です。 |
+| [WDI_TLV_INTERFACE_CAPABILITIES](wdi-tlv-interface-capabilities.md) | SAE 認証のサポートを示すため、ドライバーの新しい機能を追加します。 |
+| [**WDI_AUTH_ALGORITHM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) | 定義を追加**WDI_AUTH_ALGO_WPA3_SAE**します。 |
+| [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md) | 新しく追加されたドライバーによって、WDI からの要求 SAE 認証パラメーターに送信される状態を示す値。 |
+| [WDI_TLV_SAE_INDICATION_TYPE](wdi-tlv-sae-indication-type.md) | SAE 認証パラメーターの要求の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_COMMIT_RESPONSE](wdi-tlv-sae-commit-response.md) | SAE 認証パラメーターの要求の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_CONFIRM_RESPONSE](wdi-tlv-sae-confirm-response.md) | SAE 認証パラメーターの要求の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_STATUS](wdi-tlv-sae-status.md) | TLV は、SAE 認証パラメーターの要求と SAE 認証パラメーターを設定するために新しく追加されました。 |
+| [OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md) | 新しく追加されたプロパティ、SAE コミットまたは確認要求または SAE、BSSID での実行の失敗を示すエラー メッセージを送信するために必要なパラメーターを格納する OID。 |
+| [WDI_TLV_SAE_REQUEST_TYPE](wdi-tlv-sae-request-type.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_COMMIT_REQUEST](wdi-tlv-sae-commit-request.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_FINITE_CYCLIC_GROUP](wdi-tlv-sae-finite-cyclic-group.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_SCALAR](wdi-tlv-sae-scalar.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_ELEMENT](wdi-tlv-sae-element.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_ANTI_CLOGGING_TOKEN](wdi-tlv-sae-anti-clogging-token.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_SEND_CONFIRM](wdi-tlv-sae-send-confirm.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [WDI_TLV_SAE_CONFIRM](wdi-tlv-sae-confirm.md) | SAE 認証パラメーターの設定の TLV が新しく追加します。 |
+| [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](oid-wdi-task-p2p-send-request-action-frame.md) | 追加された追加の検証 P2P IEs の送信アクションのフレームにします。 |
+| [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](oid-wdi-task-p2p-send-response-action-frame.md) | 追加された追加の検証 P2P IEs の送信アクションのフレームにします。 || 
 
 ## <a name="windows-10-version-1809"></a>Windows 10 Version 1809
 

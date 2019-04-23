@@ -4,12 +4,12 @@ description: KMDF 検証ツールの使用
 ms.assetid: ab6a0149-9341-435b-b7e7-9c5d6520ebd8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 988f631c9ecd8c89fcba22eb6594bb252cf14e29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b3e781d04e506db62b0aa2ca4e336b743f641fed
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570350"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902424"
 ---
 # <a name="using-kmdf-verifier"></a>KMDF 検証ツールの使用
 
@@ -18,7 +18,7 @@ ms.locfileid: "56570350"
 
 フレームワークがロックの取得と階層を確認します。 によってフレームワークへの呼び出し、適切な IRQL で発生する、適切な I/O キャンセル機能とキューの使用率を確認しますをドライバーとフレームワークに従って、文書化されていること、KMDF 検証機能が有効になっている場合コントラクト。 ドライバー開発者は、クラッシュ、ハング、またはアンロードに失敗することがなく、ドライバーが適切に応答かどうかをテストできるようににメモリ不足の条件をシミュレーションすることもできます。
 
-KMDF 検証機能が有効にすると、フレームワークは、60 秒間の既定タイムアウト期間が終了する前に、いくつかのイベントについて説明した完了した場合、デバッガーに分割します。 この時点で、問題をデバッグしたり、タイムアウト期間を再起動するデバッガーで"g"を入力できます。 使用して既定のタイムアウト期間を変更することができます、 **DbgWaitForSignalTimeoutInSec**で説明されているレジストリ値[検証ツールの動作を制御する](#verifier-reg-values)します。
+KMDF 検証機能が有効にすると、フレームワークは、60 秒間の既定タイムアウト期間が終了する前に、いくつかのイベントについて説明した完了した場合、デバッガーに分割します。 この時点で、問題をデバッグしたり、タイムアウト期間を再起動するデバッガーで"g"を入力できます。 使用して既定のタイムアウト期間を変更することができます、 **DbgWaitForSignalTimeoutInSec**で説明されているレジストリ値[検証ツールの動作を制御する](#controlling-the-verifiers-behavior)します。
 
 お勧め Driver Verifier (Verifier.exe) を実行中にテスト、および独自のドライバーと wdf01000.sys を確認してください ボックスの一覧に追加します。
 
@@ -45,7 +45,7 @@ KMDF 検証機能が有効にすると、フレームワークは、60 秒間の
 
 **!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
 
-デバッガーの拡張機能コマンドの詳細については、[Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)を参照してください。
+デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
 
 ## <a name="controlling-the-verifiers-behavior"></a>検証の動作を制御します。
 
@@ -79,7 +79,7 @@ KMDF 検証機能が有効にすると、フレームワークは、60 秒間の
 
 一般的な規則として、上記のレジストリ値を設定すると、削除不要になったとき。
 
-これらのレジストリ値の完全な説明については、[デバッグ フレームワーク ベースのドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)を参照してください。
+これらのレジストリ値の完全な説明については、次を参照してください。[デバッグ フレームワーク ベースのドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
 
  
 

@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a45acd6dbbb623ca64a8d3524200cccc7ed5f2fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d6f0549dbe26b7cf65eaa2ae7447f306c858a194
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537913"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902376"
 ---
 # <a name="oidwdisetp2pstartbackgrounddiscovery"></a>OID\_WDI\_設定\_P2P\_開始\_バック グラウンド\_検出
 
@@ -43,10 +44,10 @@ D2 の NIC がある場合は、D0 に戻るまで、バック グラウンド�
 | TLV                                                                                                | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                         |
 |----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn897864)     |                                |          | Wi-Fi Direct バック グラウンドの検出モード パラメーター。                                                                                   |
-| [**WDI\_TLV\_P2P\_検出\_チャネル\_設定**](https://msdn.microsoft.com/library/windows/hardware/dn897877) | X                              | X        | 一覧は、スキャンするチャネルをお勧めします。                                                                                               |
-| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897873)                 |                                | X        | Wi-Fi Direct デバイスとデバイスの Wi-Fi Direct 時に検索するグループの所有者の一覧を検出します。                                    |
-| [**WDI\_TLV\_P2P\_サービス\_名前\_ハッシュ**](https://msdn.microsoft.com/library/windows/hardware/dn898009)                   | X                              | X        | クエリを実行するハッシュのサービス名のリスト。 これは、必要な場合 WDI\_P2P\_サービス\_検出\_型\_サービス\_名前\_のみを指定します。 |
-| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                          |                                | X        | ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。                                                       |
+| [**WDI\_TLV\_P2P\_検出\_チャネル\_設定**](https://msdn.microsoft.com/library/windows/hardware/dn897877) | x                              | x        | 一覧は、スキャンするチャネルをお勧めします。                                                                                               |
+| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897873)                 |                                | x        | Wi-Fi Direct デバイスとデバイスの Wi-Fi Direct 時に検索するグループの所有者の一覧を検出します。                                    |
+| [**WDI\_TLV\_P2P\_サービス\_名前\_ハッシュ**](https://msdn.microsoft.com/library/windows/hardware/dn898009)                   | x                              | x        | クエリを実行するハッシュのサービス名のリスト。 これは、必要な場合 WDI\_P2P\_サービス\_検出\_型\_サービス\_名前\_のみを指定します。 |
+| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                          |                                | x        | ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。                                                       |
 
  
 
@@ -57,7 +58,9 @@ D2 の NIC がある場合は、D0 に戻るまで、バック グラウンド�
 ## <a name="unsolicited-indication"></a>要請されていないを示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_BSS\_エントリ\_一覧](ndis-status-wdi-indication-bss-entry-list.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_BSS\_ENTRY\_LIST](ndis-status-wdi-indication-bss-entry-list.md)
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

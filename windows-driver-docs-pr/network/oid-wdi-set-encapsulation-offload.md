@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_ENCAPSULATION_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4473cc946cb6cdff7a7efb94df5ab70edda987d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 38e437abee229a0e40067e94a8111eb3261a4708
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535999"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904018"
 ---
 # <a name="oidwdisetencapsulationoffload"></a>OID\_WDI\_設定\_カプセル化\_オフロード
 
@@ -40,7 +41,8 @@ OID\_WDI\_設定\_カプセル化\_LSO/TCP チェックサム オフロードを
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

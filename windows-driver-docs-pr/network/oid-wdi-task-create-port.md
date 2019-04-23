@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_CREATE_PORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a2b1188ddcbe273b9148d56f7ebb3d1b69f867b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: c218861294d13130d5529d9c60c55e122102ab84
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552963"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904002"
 ---
 # <a name="oidwditaskcreateport"></a>OID\_WDI\_タスク\_作成\_ポート
 
@@ -20,7 +21,7 @@ OID\_WDI\_タスク\_作成\_ポートは IHV コンポーネントによって�
 
 | オブジェクト  | 中止できます。 | 既定の優先順位 (ホスト ドライバー ポリシー) | 通常の実行時間 (秒) |
 |---------|---------------|---------------------------------------|---------------------------------|
-| アダプタ | X            | 6                                     | 1                               |
+| [アダプター] | X            | 6                                     | 1                               |
 
  
 
@@ -56,7 +57,7 @@ Wi-Fi Direct デバイスのポートでは、として機能する場合は、M
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926270" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926270)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td><p>この TLV は、UE は休止状態から再開中に、プライマリ以外のポートを再作成するときに使用されます。 この TLV が存在する場合は、ファームウェアは、ポートを作成するこの MAC アドレスを使用する必要があります。 この MAC アドレス、ファームウェアが休止状態の前に、ポートの種類を作成する MAC アドレスにすることが保証されます。</p>
 <p>目標では、上位層の状態を一致させるために、同じ NDIS ポート番号と MAC アドレスを使用します。 WFC_PORT_ID を娯楽などのさまざまなことはできますが、ポート ID が既存のポートの任意のポート ID と競合する必要がありますしないことに注意してください。 この情報は、UE と LE/ファームウェアの間のみ使用されます。</p></td>
 </tr>
@@ -68,7 +69,9 @@ Wi-Fi Direct デバイスのポートでは、として機能する場合は、M
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_作成\_ポート\_完了](ndis-status-wdi-indication-create-port-complete.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_CREATE\_PORT\_COMPLETE](ndis-status-wdi-indication-create-port-complete.md)
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

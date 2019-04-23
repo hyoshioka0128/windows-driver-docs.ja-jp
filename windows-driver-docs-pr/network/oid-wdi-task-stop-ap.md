@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_STOP_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 696230ebded716b6c11ff671e1d22b14d70e2981
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: efae7d2c8c681ab42c1aeaeb02466677a9f67368
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532187"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902564"
 ---
 # <a name="oidwditaskstopap"></a>OID\_WDI\_タスク\_停止\_アジア太平洋
 
@@ -31,7 +32,9 @@ OID\_WDI\_タスク\_停止\_AP 要求 IHV コンポーネントは、指定し�
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_停止\_AP\_完了](ndis-status-wdi-indication-stop-ap-complete.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_STOP\_AP\_COMPLETE](ndis-status-wdi-indication-stop-ap-complete.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

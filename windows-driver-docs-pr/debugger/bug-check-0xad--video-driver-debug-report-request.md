@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c9a69e456f00bbb393d477506c55b286847149ba
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238651"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903950"
 ---
 # <a name="bug-check-0xad-videodriverdebugreportrequest"></a>バグ チェック 0xAD:ビデオ\_ドライバー\_デバッグ\_レポート\_要求
 

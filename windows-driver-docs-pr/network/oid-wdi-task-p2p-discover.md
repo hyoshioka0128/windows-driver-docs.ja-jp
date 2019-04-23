@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_P2P_DISCOVER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 8807d5952e61b438093d1a0df0c1a12cd5bbba9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1252f2fa12cd227c3c860ced7444488f4af9ee4b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551108"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902378"
 ---
 # <a name="oidwditaskp2pdiscover"></a>OID\_WDI\_タスク\_P2P\_検出
 
@@ -65,45 +66,45 @@ Wi-Fi Direct の検出は、標準的な Wi-fi スキャンの対象から相互
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897877" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897877)"><strong>WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS</strong></a></td>
-<td>X</td>
-<td>X</td>
+<td>x</td>
+<td>x</td>
 <td>期間とをスキャンするチャネルの一覧をスキャンします。 指定した場合、リッスンの設定をオーバーライド WDI_TLV_SCAN_DWELL_TIME で指定されています。 このリストが空の場合、ポートがでサポートされているすべてのチャンネル スキャンし、WDI_TLV_SCAN_DWELL_TIME からリッスン設定を使用する必要があります。</td>
 </tr>
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898064" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898064)"><strong>WDI_TLV_SSID</strong></a></td>
-<td>X</td>
-<td>X</td>
+<td>x</td>
+<td>x</td>
 <td>ポートをスキャンする必要がある Ssid の一覧。 この一覧で複数の Ssid 許可されるは、ワイルドカードは、それらのいずれか。 チャネルで作業中のスキャンを実施する際に、ポートは、一覧には、各 SSID のプローブ要求を送信する必要があります。 このリストが空の場合は、Ssid のすべてのポートをスキャンする必要があります。</td>
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898009" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_NAME_HASH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898009)"><strong>WDI_TLV_P2P_SERVICE_NAME_HASH</strong></a></td>
-<td>X</td>
-<td>X</td>
+<td>x</td>
+<td>x</td>
 <td>クエリを実行するハッシュのサービス名の一覧。 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY または WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_NAME_ONLY が指定されているかどうかに必要です。</td>
 </tr>
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898076" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898076)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。 これらでは、パッシブ スキャンは使用されません。</td>
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/mt269140" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt269140)"><strong>WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></td>
-<td>X</td>
-<td>X</td>
+<td>x</td>
+<td>x</td>
 <td>クエリを実行するサービス情報の検出のエントリのオプションのリスト。 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_INFORMATION が指定されている場合、この機能が必要です。 サービス名のハッシュを使用してプローブ要求/応答に対して P2P サービスの検出を実行するには、ドライバーが必要です。 サービス情報を含むサービス エントリごとに、ドライバーは、実行、ANQP クエリ要求/応答サービスの情報を照会すると想定されます。</td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt769912" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt769912)"><strong>WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></p></td>
-<td>X</td>
-<td><p>X</p></td>
+<td>x</td>
+<td><p>x</p></td>
 <td><p>Windows 10 version 1607 では、バージョン 1.0.21 WDI に追加されます。</p>
 <p>クエリを実行する ASP2 サービス情報の検出のエントリのオプションのリスト。 WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_INFORMATION が指定されている場合、この機能が必要です。 サービス名のハッシュを使用してプローブ要求/応答に対して P2P サービスの検出を実行するには、ドライバーが必要です。 サービス情報を含むサービス エントリごとに、ドライバーは、実行、ANQP クエリ要求/応答サービスの情報を照会すると想定されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt769913" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt769913)"><strong>WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL</strong></a></p></td>
 <td></td>
-<td><p>X</p></td>
+<td><p>x</p></td>
 <td><p>Windows 10 version 1607 では、バージョン 1.0.21 WDI に追加されます。</p>
 <p>プローブ要求が探索時にリッスンのチャネルの属性を含めるかどうかを指定します。</p></td>
 </tr>
@@ -119,7 +120,9 @@ Wi-Fi Direct の検出は、標準的な Wi-fi スキャンの対象から相互
 ## <a name="unsolicited-indication"></a>要請されていないを示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_BSS\_エントリ\_一覧](ndis-status-wdi-indication-bss-entry-list.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_BSS\_ENTRY\_LIST](ndis-status-wdi-indication-bss-entry-list.md)
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

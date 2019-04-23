@@ -2,14 +2,15 @@
 title: KSPROPERTYSETID\_ExtendedCameraControl
 description: KSPROPERTYSETID\_ExtendedCameraControl プロパティは拡張カメラ デバイスの設定コントロールを設定します。 カメラの写真のシーケンス処理を提供するその他のコントロールを許可します。
 ms.assetid: 37475847-D678-4977-8524-82FA80D6A7EF
-ms.date: 11/28/2017
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0584be19c114ebc0006afcb62dca0814ffde8209
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: rs5, 19H1
+ms.openlocfilehash: 06a32edadc503e8dc11f3347017437d41371065e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552729"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902544"
 ---
 # <a name="kspropertysetidextendedcameracontrol"></a>KSPROPERTYSETID\_ExtendedCameraControl
 
@@ -105,4 +106,12 @@ KSPROPERTYSETID\_ExtendedCameraControl プロパティは拡張カメラ デバ�
 
 次のカメラ ドライバー コントロールは、Windows 10 バージョン 1607 の新機能。
 
-[**KSPROPERTY\_CAMERACONTROL\_拡張\_FACEAUTH\_モード**](ksproperty-cameracontrol-extended-faceauth-mode.md)
+[**KSPROPERTY\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_MODE**](ksproperty-cameracontrol-extended-faceauth-mode.md)
+
+次のカメラ ドライバー コントロールは、Windows 10 バージョン 1709 の新機能。
+
+[**KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOTEMPORALDENOISING**](ksproperty-cameracontrol-extended-videotemporaldenoising.md)
+
+次のカメラ ドライバー コントロールは、Windows 10、バージョンが 1903 の新機能。
+
+[**KSPROPERTY\_CAMERACONTROL\_拡張\_IRTORCH\_モード**](ksproperty-cameracontrol-extended-irtorchmode.md)

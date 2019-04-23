@@ -4,20 +4,21 @@ description: デバイスとアダプターの初期化
 ms.assetid: EBBEF0FB-6CDB-4899-AAE9-71812EE20AFB
 keywords:
 - NetAdapterCx デバイスの初期化、NetCx デバイスの初期化、NetAdapterCx アダプターの初期化、NetCx アダプターの初期化
-ms.date: 08/02/2018
+ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e3e14e6c80f6ef27fdea607b9ce70ebd988ddc59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: fbd4bfca2a0026f133e1b7b445f56a42c147e3b3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582446"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903748"
 ---
 # <a name="device-and-adapter-initialization"></a>デバイスとアダプターの初期化
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-このトピックでは、NetAdapterCx クライアント ドライバーを初期化して WDFDEVICE および NETADAPTER オブジェクトを開始する手順について説明します。 これらのオブジェクトとの関係に関する詳細については、[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)を参照してください。
+このトピックでは、NetAdapterCx クライアント ドライバーを初期化して WDFDEVICE および NETADAPTER オブジェクトを開始する手順について説明します。 これらのオブジェクトとの関係に関する詳細については、次を参照してください。[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)します。
 
 ## <a name="evtwdfdriverdeviceadd"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
@@ -40,9 +41,9 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     > [!TIP]
     > デバイスは、1 つ以上の NETADAPTER をサポートする、デバイス コンテキストで各アダプターへのポインターを格納することをお勧めします。
 
-3. NETADAPTER オブジェクトを作成します。 これを行うには、クライアントを呼び出すか[ **NetDefaultAdapterInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netdefaultadapterinitallocate)または[ **NetAdapterInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)、その後に省略可能な**NetAdapterInitSetXxx**を初期化するメソッド、アダプターの属性。 最後に、クライアントが呼び出す[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)します。 
+3. NETADAPTER オブジェクトを作成します。 そのため、クライアントを呼び出すに[ **NetAdapterInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)オプションと、その後**NetAdapterInitSetXxx**を初期化するメソッド、アダプターの属性。 最後に、クライアントが呼び出す[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)します。 
 
-    次の例では、クライアント ドライバーが既定 NETADAPTER オブジェクトを初期化する方法を示します。 この例では、エラー処理が簡略化されたことに注意してください。
+    次の例では、クライアント ドライバーが NETADAPTER オブジェクトを初期化する方法を示します。 この例では、エラー処理が簡略化されたことに注意してください。
 
     ```C++
     WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(&attribs, MY_ADAPTER_CONTEXT);
@@ -50,7 +51,7 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     //
     // Allocate the initialization structure
     //
-    PNETADAPTER_INIT adapterInit = NetDefaultAdapterInitAllocate(device);
+    PNETADAPTER_INIT adapterInit = NetAdapterInitAllocate(device);
     if(adapterInit == NULL)
     {
         return status;
@@ -66,7 +67,7 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
                                         MyEvtAdapterCreateTxQueue,
                                         MyEvtAdapterCreateRxQueue);
     NetAdapterInitSetDatapathCallbacks(adapterInit,
-                                        datapathCallbacks);
+                                       datapathCallbacks);
 
     // Power settings attributes
     NetAdapterInitSetNetPowerSettingsAttributes(adapterInit,
@@ -102,7 +103,7 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     ...
     ```
 
-必要に応じて、NETADAPTER オブジェクトにコンテキストの領域を追加できます。 WDF のオブジェクトに対するコンテキストを設定することができますので、WDFDEVICE と NETADAPTER オブジェクトに対して別のコンテキストの領域を追加できます。 手順 3 での例で、クライアントの追加`MY_ADAPTER_CONTEXT`NETADAPTER オブジェクトにします。 詳細については、[フレームワーク オブジェクト コンテキストの空間](../wdf/framework-object-context-space.md)を参照してください。
+必要に応じて、NETADAPTER オブジェクトにコンテキストの領域を追加できます。 WDF のオブジェクトに対するコンテキストを設定することができますので、WDFDEVICE と NETADAPTER オブジェクトに対して別のコンテキストの領域を追加できます。 手順 3 での例で、クライアントの追加`MY_ADAPTER_CONTEXT`NETADAPTER オブジェクトにします。 詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](../wdf/framework-object-context-space.md)します。
 
 WDFDEVICE のコンテキストでのデバイス関連データを配置し、リンク層などのネットワーク関連のデータは、NETADAPTER コンテキストに対処することをお勧めします。 既存の NDIS 6.x ドライバーを移植する場合はネットワーク関連およびデバイス関連データを 1 つのデータ構造に結合する 1 つ MiniportAdapterContext 可能性があります。 移植プロセスを簡素化するには、WDFDEVICE コンテキストにその全体の構造を変換し、NETADAPTER のコンテキストに WDFDEVICE のコンテキストを指している小規模な構造を作成します。
 
@@ -164,17 +165,15 @@ NetAdapterSetPowerCapabilities(netAdapter,
 // Receive scaling capabilities
 ...
 NetAdapterSetReceiveScalingCapabilities(netAdapter,
-                                        receiveScalingCapabilities);
+                                        &receiveScalingCapabilities);
 
 // Hardware offload capabilities
 ...
 NetAdapterOffloadSetChecksumCapabilities(netAdapter,
-                                         &checksumCapabilities,
-                                         EvtAdapterOffloadSetChecksum);
+                                         &checksumCapabilities);
 ...
 NetAdapterOffloadSetLsoCapabilities(netAdapter,
-                                    &lsoCapabilities,
-                                    EvtAdapterOffloadSetLso);
+                                    &lsoCapabilities);
 
 //
 // Required: start the adapter

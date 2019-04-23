@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_RECEIVE_PACKET_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c3689ef12a32c38a5ae424b28a1d3b0357778eed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 33ab217bbd200c6e7236e245438967c3921044b5
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581808"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902849"
 ---
 # <a name="oidwdisetreceivepacketfilter"></a>OID\_WDI\_設定\_受信\_パケット\_フィルター
 
@@ -20,7 +21,7 @@ OID\_WDI\_設定\_受信\_パケット\_フィルターは、特定の仮想化�
 
 | Scope | タスクでシリアル化された設定します。 | 通常の実行時間 (秒) |
 |-------|--------------------------|---------------------------------|
-| ポート  | はい                      | 1                               |
+| ポート  | 〇                      | 1                               |
 
  
 
@@ -39,7 +40,8 @@ OID\_WDI\_設定\_受信\_パケット\_フィルターは、特定の仮想化�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-必要条件
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

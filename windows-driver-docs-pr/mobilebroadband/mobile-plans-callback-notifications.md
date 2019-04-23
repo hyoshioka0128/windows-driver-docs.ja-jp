@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e59e43bb970484ef4d1a344ec941847e052346b6
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845577"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903466"
 ---
 # <a name="mobile-plans-callback-notifications"></a>コールバック通知をモバイル プラン
 
@@ -39,7 +39,7 @@ MO ポータルをサポートするトランザクションでは、含める�
 
 ### <a name="mobileplansinlineprofilenotifyinlineprofiledownload"></a>MobilePlansInlineProfile.notifyInlineProfileDownload
 
-| パラメーター名 | 型 | 説明 |
+| パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
 | activationCode | String | Esim 状のプロファイルをダウンロードするためのアクティブ化コード。 プロファイルの ICCID は、プロファイルのメタデータから推論されます。 |
@@ -170,7 +170,7 @@ function onActivationComplete(activationArgs) {
 
 ### <a name="mobileplansnotifypurchasewithprofiledownload"></a>MobilePlans.notifyPurchaseWithProfileDownload
 
-| パラメーター名 | 型 | 説明 |
+| パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
 | activationCode | String | Esim 状のプロファイルをダウンロードするためのアクティブ化コード。 プロファイルの ICCID は、プロファイルのメタデータから推論されます。 |
@@ -198,7 +198,7 @@ function finishPurchaseWithDownload() {
 
 ### <a name="mobileplansnotifybalanceaddition"></a>MobilePlans.notifyBalanceAddition
 
-| パラメーター名 | 型 | 説明 |
+| パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
 | Iccid | String | データが割り当てられている ICCID します。 この ICCID がアクティブでない場合、プランのモバイル アプリには、対応するプロファイルがアクティブにします。|
@@ -225,7 +225,7 @@ function finishPurchaseWithBalanceAddition() {
 
 ### <a name="mobileplansnotifycancelledpurchase"></a>MobilePlans.notifyCancelledPurchase
 
-| パラメーター名 | 型 | 説明 |
+| パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
 
@@ -313,7 +313,7 @@ DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
 
 次の表では、通知の JSON ペイロード内の各フィールドについて説明します。
 
-| JSON フィールド         | 型    | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 例                                |
+| JSON フィールド         | 種類    | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 例                                |
 | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | 成功            | ブール値 | **True** MO ダイレクト プランを購入した場合。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `“success”:true`                     |
 | Iccid              | String  | ESIM は、購入月ダイレクト プランを使用するために、クライアントが使用する必要があります ICCID を示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `iccid:”8988247000100297655”`        |

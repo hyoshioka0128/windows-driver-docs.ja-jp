@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 05/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fec627e75d1645f0bdb00a24b95a5c3284e208c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ceb3f629202e768ca1c013d853494c38120ca183
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558688"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902740"
 ---
 # <a name="kspropertyaudiomicsensitivity2"></a>KSPROPERTY\_オーディオ\_MIC\_SENSITIVITY2
 
@@ -47,7 +47,7 @@ KSPROPERTY\_オーディオ\_MIC\_SENSITIVITY2 プロパティは、マイクの
 <td align="left"><p>X</p></td>
 <td align="left"><p>暗証番号 (pin) のインスタンス</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></td>
-<td align="left">長い</td>
+<td align="left">LONG</td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY\_オーディオ\_MIC\_SENSITIVITY2 プロパティ要求がステー
 
 オーディオ ドライバーには、それぞれのマイクのマイクの感度を取得できます。 このプロパティは、ドライバーから取得するには、この情報を使用します。
 
-音声認識エクスペリエンスを Windows 10 を正確に検出し、さまざまなデバイスでユーザーの音声を別のマイクと分析、Cortana など、OS は、入力信号の特定の特性を把握する必要があります。 その情報に基づいて、OS は有効な秘密度を計算し、入力信号を強化するために適切な向上を適用します。 詳細については、[音声をアクティブ化](https://msdn.microsoft.com/library/windows/hardware/mt593238)を参照してください。
+Cortana などの Windows 10 音声認識エクスペリエンスを正確に検出し、別のマイクを使用したさまざまなデバイスでユーザーのボイスの分析、OS 必要があります、入力信号の特定の特性を把握します。 その情報に基づいて、OS は有効な秘密度を計算し、入力信号を強化するために適切な向上を適用します。 詳細については、次を参照してください。[音声をアクティブ化](https://msdn.microsoft.com/library/windows/hardware/mt593238)します。
 
 KSPROPERTY\_オーディオ\_MIC\_SENSITIVITY2 は以降 Windows 10 バージョン 1803 で利用可能よりも優先されます[KSPROPERTY\_オーディオ\_MIC\_の感度](ksproperty-audio-mic-sensitivity.md).
 
@@ -84,10 +84,10 @@ KSPROPERTY\_オーディオ\_MIC\_SENSITIVITY2 は以降 Windows 10 バージョ
 </tbody>
 </table>
 
-参照してください。
+<a name="see-also"></a>関連項目
 ---------
 
-[KSPROPERTY_AUDIO_MIC_SENSITIVITY](ksproperty-audio-mic-sensitivity.md) �
+[KSPROPERTY_AUDIO_MIC_SENSITIVITY](ksproperty-audio-mic-sensitivity.md)
 
 
 

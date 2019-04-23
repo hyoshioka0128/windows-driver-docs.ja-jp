@@ -2,15 +2,16 @@
 title: OID_WWAN_SIGNAL_STATE
 description: OID_WWAN_SIGNAL_STATE 返します。 または現在のシグナルの状態を設定します。
 ms.assetid: 6f5d8fd6-b4cf-4058-a27e-d4f7cea19f47
-ms.date: 08/08/2017
+ms.date: 04/05/2019
 keywords: -OID_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0669db51a498d02b31d57d58eab82b552c8e0e21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8f766507dc6b298a831d80e4d9244c647c80290f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578350"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902790"
 ---
 # <a name="oidwwansignalstate"></a>OID\_WWAN\_信号\_状態
 
@@ -24,7 +25,7 @@ OID\_WWAN\_信号\_状態を返すか、現在のシグナルの状態を設定�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、[WWAN 信号強度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN 信号強度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)します。
 
 ミニポート ドライバー アクセスしないでください、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) とクエリの処理または操作を設定します。
 
@@ -73,7 +74,13 @@ NDIS\_状態\_いない\_サポートされています。
 
         RssiThreshold = &lt; WWAN\_RSSI\_無効、WWAN\_RSSI\_既定値またはセットの最後の値&gt;
 
-<a name="requirements"></a>必要条件
+### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+
+Windows 10、バージョンが 1903 年以降 OID_WWAN_SIGNAL_STATE は、リビジョン 3 にアップグレードされています。 このリビジョンでは、新しい参照信号を受信した電力 (RSRP) およびミニポート ドライバーからのシグナル ノイズ (SNR) 値のクエリをホストできるようにします。 ミニポート ドライバーは、ドライバーは、5 G をサポートしている場合、この OID とそのデータ構造体のリビジョン 3 を使用する必要があります。
+
+5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

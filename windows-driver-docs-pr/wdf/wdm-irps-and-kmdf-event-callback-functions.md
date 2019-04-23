@@ -1,17 +1,17 @@
 ---
-title: WDM Irp と WDF イベントのコールバック関数
-description: WDM Irp と WDF イベントのコールバック関数
+title: WDM の IRP と WDF のイベント コールバック関数
+description: WDM の IRP と WDF のイベント コールバック関数
 ms.assetid: 9B9A01FD-AA15-4C30-B19D-2F6451014EAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b72c2c9791ce9dfca31067ef36b915905468ef89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 553532e917a0132afde5ef726696dc0d88af0076
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553698"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902496"
 ---
-# <a name="wdm-irps-and-wdf-event-callback-functions"></a>WDM Irp と WDF イベントのコールバック関数
+# <a name="wdm-irps-and-wdf-event-callback-functions"></a>WDM の IRP と WDF のイベント コールバック関数
 
 
 カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) は、Windows の Irp のサブセットをサポートします。 次の表には、主な WDM IRP 型と対応するフレームワーク イベントのコールバック関数が一覧表示します。 指定しない場合、コールバックは、KMDF と UMDF の両方に適用されます。
@@ -74,11 +74,11 @@ ms.locfileid: "56553698"
 </tr>
 <tr class="even">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550772" data-raw-source="[&lt;strong&gt;IRP_MJ_PNP&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550772)"><strong>IRP_MJ_PNP</strong></a></td>
-<td align="left">多くの場合。参照してください<a href="#pnp" data-raw-source="[KMDF Callbacks for IRP_MJ_PNP](#pnp)">IRP_MJ_PNP の KMDF コールバック</a>します。</td>
+<td align="left">多くの場合。参照してください<a href="#kmdf-callbacks-for-irp_mj_pnp" data-raw-source="[KMDF Callbacks for IRP_MJ_PNP](#kmdf-callbacks-for-irp_mj_pnp)">IRP_MJ_PNP の KMDF コールバック</a>します。</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550784" data-raw-source="[&lt;strong&gt;IRP_MJ_POWER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550784)"><strong>IRP_MJ_POWER</strong></a></td>
-<td align="left">多くの場合。参照してください<a href="#power" data-raw-source="[KMDF Callbacks for IRP_MJ_POWER](#power)">KMDF コールバックに対し、IRP_MJ_POWER</a>します。</td>
+<td align="left">多くの場合。参照してください<a href="#kmdf-callbacks-for-irp_mj_power" data-raw-source="[KMDF Callbacks for IRP_MJ_POWER](#kmdf-callbacks-for-irp_mj_power)">KMDF コールバックに対し、IRP_MJ_POWER</a>します。</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff549279" data-raw-source="[&lt;strong&gt;IRP_MJ_QUERY_EA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549279)"><strong>IRP_MJ_QUERY_EA</strong></a></td>

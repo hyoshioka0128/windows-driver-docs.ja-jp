@@ -1,19 +1,20 @@
 ---
-title: 低レベルの MB UICC アクセス
-description: 低レベルの MB UICC アクセス
+title: MB 低レベル UICC アクセス
+description: MB 低レベル UICC アクセス
 ms.assetid: AD0E9F20-9C95-4102-94EF-054D45E2C597
 keywords:
 - 低レベルの MB UICC アクセス、低レベルのモバイル ブロード バンド UICC アクセス、モバイル ブロード バンド ミニポート ドライバー低レベルをリセット、MB UICC UICC、MB UICC ATR、MB UICC 応答チャネルを開く、MB UICC がチャネル、MB UICC APDU、MB UICC 端末の機能を閉じるには、MB UICC のリセット
 ms.date: 12/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a89a44f1449a5f9146ba07de14682dd19bdf21c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 054970b6946cfe290e978f7c4634c7cdf61362b4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538674"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903320"
 ---
-# <a name="mb-low-level-uicc-access"></a>低レベルの MB UICC アクセス
+# <a name="mb-low-level-uicc-access"></a>MB 低レベル UICC アクセス
 
 ## <a name="overview"></a>概要
 
@@ -35,12 +36,12 @@ Microsoft 拡張機能には、一連のデバイスのサービスのコマン�
 
 | CID | コマンド コード | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- | --- |
-| [MBIM_CID_MS_UICC_ATR](#mbimcidmsuiccatr) | 1 | N | Y | N |
-| [MBIM_CID_MS_UICC_OPEN_CHANNEL](#mbimcidmsuiccopenchannel) | 2 | Y | N | N |
-| [MBIM_CID_MS_UICC_CLOSE_CHANNEL](#mbimcidmsuiccclosechannel) | 3 | Y | N | N |
-| [MBIM_CID_MS_UICC_APDU](#mbimcidmsuiccapdu) | 4 | Y | N | N |
-| [MBIM_CID_MS_UICC_TERMINAL_CAPABILITY](#mbimcidmsuiccterminalcapability) | 5 | Y | Y | N |
-| [MBIM_CID_MS_UICC_RESET](#mbimcidmsuiccreset) | 6 | Y | Y | N |
+| MBIM_CID_MS_UICC_ATR | 1 | N | Y | N |
+| MBIM_CID_MS_UICC_OPEN_CHANNEL | 2 | Y | N | N |
+| MBIM_CID_MS_UICC_CLOSE_CHANNEL | 3 | Y | N | N |
+| MBIM_CID_MS_UICC_APDU) | 4 | Y | N | N |
+| MBIM_CID_MS_UICC_TERMINAL_CAPABILITY | 5 | Y | Y | N |
+| MBIM_CID_MS_UICC_RESET | 6 | Y | Y | N |
 
 ## <a name="status-codes"></a>状態コード
 
@@ -52,7 +53,7 @@ MBIM 状態コードがの 9.4. 5. で定義されている、 [MBIM 標準](htt
 | MBIM_STATUS_MS_SELECT_FAILED | 87430002 | 選択に失敗したため、論理のチャネルをオープンに失敗しました。 |
 | MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 87430003 | 論理のチャンネル番号が無効です (MBIM_CID_MS_UICC_OPEN_CHANNEL によってが開いていない)。 |
 
-## <a name="mbimsubscriberreadystate"></a>MBIM_SUBSCRIBER_READY_STATE
+### <a name="mbimsubscriberreadystate"></a>MBIM_SUBSCRIBER_READY_STATE
 
 | 種類 | Value | 説明 |
 | --- | --- | --- |
@@ -103,9 +104,8 @@ MBIM_COMMAND_DONE InformationBuffer にはには、この関数に接続され�
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | AtrSize | SIZE(0..33) | 長さ**AtrData**します。 |
-| 4 | 4 | AtrOffset | オフセット | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**AtrData** ATR データを格納します。 |
+| 4 | 4 | AtrOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**AtrData** ATR データを格納します。 |
 | 8 | AtrSize | DataBuffer | DATABUFFER | **AtrData**バイト配列。 |
-
 
 ### <a name="unsolicited-events"></a>要請されていないイベント
 
@@ -155,7 +155,7 @@ MBIM_COMMAND_MSG InformationBuffer にはには、次の MBIM_MS_SET_UICC_OPEN_C
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | AppIdSize | SIZE(0..32) | アプリケーション ID (AppId) のサイズ。 |
-| 4 | 4 | AppIdOffset | オフセット | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**AppId**を選択するアプリケーション Id を定義します。 |
+| 4 | 4 | AppIdOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**AppId**を選択するアプリケーション Id を定義します。 |
 | 8 | 4 | SelectP2Arg | UINT32(0..255) | *P2* SELECT コマンドの引数。 |
 | 12 | 4 | ChannelGroup | UINT32 | このチャネルのチャネルのグループを識別するタグの値。 |
 | 16 | AppIdSize | DataBuffer | DATABUFFER | **AppId**バイト配列。 |
@@ -171,7 +171,7 @@ MBIM_COMMAND_DONE InformationBuffer にはには、次の MBIM_MS_UICC_OPEN_CHAN
 | 0 | 4 | 状況 | BYTE[2] | SW1 と SW2、そのバイト順でします。 詳細については、次の次の表は、ノートを参照してください。 |
 | 4 | 4 | Channel | UINT32(0..19) | 論理のチャネルの識別子です。 このメンバーが 0 の場合は、操作できませんでした。 |
 | 8 | 4 | ResponseLength | SIZE(0..256) | 応答の長さ (バイト単位)。 |
-| 12 | 4 | ResponseOffset | オフセット | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**応答**SELECT からの応答を格納しています。 |
+| 12 | 4 | ResponseOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**応答**SELECT からの応答を格納しています。 |
 | 16 | - | DataBuffer | DATABUFFER | **応答**バイト配列のデータ。 |
 
 コマンドは、MBIM_STATUS_MS_NO_LOGICAL_CHANNELS を返す場合、**状態**フィールドは単語を含む、UICC 状態 SW1 と SW2 管理チャネル コマンドから、その他のフィールドが 0 になります。 コマンドは、MBIM_STATUS_MS_SELECT_FAILED を返す場合、**状態**フィールドは単語を含む、UICC 状態 SW1 と SW2 SELECT コマンドから、その他のフィールドが 0 になります。 その他の状態、InformationBuffer を空にする必要があります。
@@ -268,7 +268,7 @@ MBIM_COMMAND_DONE InformationBuffer にはには、次の MBIM_MS_UICC_CLOSE_CHA
 | 6 X | 7816 4 interindustry、4 < チャネルを = < = 19、セキュリティで保護された (ヘッダーは認証されていない) |
 | 8 X | 102 221 拡張、1 < = チャネル < = 3、該当する場合は、低ニブルでセキュリティをエンコードします |
 | CX | 102 221 拡張, 4 < チャネルを = < = 19、いいえ高セキュリティ メッセージング |
-| 例: | 102 221 拡張, 4 < チャネルを = < = 19、セキュリティで保護された (ヘッダーは認証されていない) |
+| EX | 102 221 拡張, 4 < チャネルを = < = 19、セキュリティで保護された (ヘッダーは認証されていない) |
 
 関数を返す応答の状態、および SW1 SW2、UICC からホストにします。
 
@@ -295,7 +295,7 @@ MBIM_COMMAND_MSG InformationBuffer にはには、次の MBIM_MS_SET_UICC_APDU �
 | 4 | 4 | SecureMessaging | MBIM_MS_UICC_SECURE_MESSAGING | セキュリティで保護されたメッセージングを使用して、[apdu] が交換されるかどうかを指定します。 |
 | 8 | 4 | 種類 | MBIM_MS_UICC_CLASS_BYTE_TYPE | クラス バイト定義の種類を指定します。 |
 | 12 | 4 | CommandSize | UINT32(0..261) | **コマンド**長さ (バイト単位)。 |
-| 16 | 4 | CommandOffset | オフセット | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**コマンド**[apdu] を格納しています。 |
+| 16 | 4 | CommandOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**コマンド**[apdu] を格納しています。 |
 | 20 | - | DataBuffer | DATABUFFER | **コマンド**バイト配列。 |
 
 MBIM_MS_SET_UICC_APDU 構造は、次の MBIM_MS_UICC_SECURE_MESSAGING と MBIM_MS_UICC_CLASS_BYTE_TYPE データ構造を使用します。
@@ -324,7 +324,7 @@ MBIM_COMMAND_DONE InformationBuffer にはには、次の MBIM_MS_UICC_APDU_INFO
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 状況 | BYTE[2] | コマンドの結果として SW1 と SW2 のステータス単語。 |
 | 4 | 4 | ResponseLength | サイズ | 応答の長さ (バイト単位)。 |
-| 8 | 4 | ResponseOffset | オフセット | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**応答**SELECT からの応答を格納しています。 |
+| 8 | 4 | ResponseOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**応答**SELECT からの応答を格納しています。 |
 | 12 | - | DataBuffer | DATABUFFER | **応答**バイト配列。 |
 
 ### <a name="unsolicited-events"></a>要請されていないイベント
@@ -435,7 +435,7 @@ MBIM_SET_MS_UICC_RESET 構造体には、ホストによって指定されたパ
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、[MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbimmsuiccpassthroughaction)を参照してください。 |
+| 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbimmsuiccpassthroughaction)します。 |
 
 #### <a name="mbimmsuiccpassthroughaction"></a>MBIM_MS_UICC_PASSTHROUGH_ACTION
 
@@ -454,7 +454,7 @@ MBIM_MS_UICC_RESET_INFO 構造体には、MBIM 関数のパススルー状態が
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、[MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbimmsuiccpassthroughstatus)を参照してください。 |
+| 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbimmsuiccpassthroughstatus)します。 |
 
 #### <a name="mbimmsuiccpassthroughstatus"></a>MBIM_MS_UICC_PASSTHROUGH_STATUS
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c96538916fe15fe76ebb5840f2cf9d950b6f7c1
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239431"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903296"
 ---
 # <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>バグ チェック 0xD4:システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロード
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b62903f4dd287dc66296682f8169e6e2508dc517
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238413"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903739"
 ---
 # <a name="bug-check-0x199-kernelstorageslotinuse"></a>バグ チェック 0x199:カーネル\_ストレージ\_スロット\_IN\_使用
 

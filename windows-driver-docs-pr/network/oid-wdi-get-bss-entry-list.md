@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_GET_BSS_ENTRY_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 93cfcc5f960be78a815dc16d0ec6d75a34efb974
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 23f1bd2a72969df318fec2fb3df1f2550fd82cf6
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530073"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903014"
 ---
 # <a name="oidwdigetbssentrylist"></a>OID\_WDI\_取得\_BSS\_エントリ\_一覧
 
@@ -46,7 +47,9 @@ Microsoft コンポーネントは、オペレーティング システムに BS
 ## <a name="unsolicited-indication"></a>要請されていないを示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_BSS\_エントリ\_一覧](ndis-status-wdi-indication-bss-entry-list.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_BSS\_ENTRY\_LIST](ndis-status-wdi-indication-bss-entry-list.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

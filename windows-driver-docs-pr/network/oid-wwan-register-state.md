@@ -5,12 +5,13 @@ ms.assetid: 564de5bf-10d9-47fe-a4c1-3409d9b2aee8
 ms.date: 08/08/2017
 keywords: -OID_WWAN_REGISTER_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d453e4956a330ee08ded409b1263c71d8c25f75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: a4eb8530c35d537061fd8e7b138efd5f6bec4127
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549274"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903492"
 ---
 # <a name="oidwwanregisterstate"></a>OID\_WWAN\_登録\_状態
 
@@ -24,7 +25,7 @@ OID\_WWAN\_登録\_状態を登録するネットワーク プロバイダーを
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、[WWAN 登録操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN 登録操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)します。
 
 ミニポート ドライバーは、処理するときに、プロバイダーのネットワークにアクセスできるクエリまたはの集合演算、Subscriber Identity Module (SIM カード) にアクセスしないでください。
 
@@ -43,6 +44,16 @@ RegisterAction 値のセマンティクスの定義は次のとおりです。
 -   デバイスがプロバイダーに現在登録されている場合でも、異なる RegisterAction 値間の切り替えが許可されます。 デバイスは、自動と手動登録モードの切り替え前に、の登録を解除する場合に、ミニポート ドライバーは、デバイスが新しい登録モードに設定する前に登録解除に設定されていることを確認する必要があります。
 
 -   *手動*と*自動*登録モードでは、ネットワークの選択モードのみに影響します。 MB デバイスは、無線がオンになっているときに、選択したネットワークに登録しようとする必要があります。
+
+### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+
+この OID の新しいリビジョン 3 は、Windows 10、バージョンが 1903 以降はサポートされています。 この拡張機能では、クエリ、ミニポート ドライバーから優先の無線アクセス テクノロジ (Rat) をホストできるようにします。 
+
+ホスト設定で WWAN_DATA_CLASS 値を表すビットマスクを優先 RAT を制御するため、 **WwanDataClass**のメンバー、 [ **WWAN_SET_REGISTER_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_set_register_state)構造体. このメンバーは、接続を優先的に使用されるデータ アクセス テクノロジを表します。 このフィールドに設定されている場合**WWAN_DATA_CLASS_NONE**、モデムはこのパラメーターのアクションを実行する必要がありますではありません。
+
+ホストをクエリ、ミニポート ドライバーから現在お使いデータ クラスを実行することもできます。 ミニポート ドライバーを使用して、 **PreferredDataClasses**のフィールド、 [ **WWAN_REGISTRATION_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_registration_state)が優先されるデータ アクセス テクノロジを報告する構造体現在、モデムに設定します。
+
+5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
 
 <a name="requirements"></a>要件
 ------------

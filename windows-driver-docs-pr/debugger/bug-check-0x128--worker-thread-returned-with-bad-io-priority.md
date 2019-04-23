@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 431e3f54f6bb397f0b25c72998720767c28ba614
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239641"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902210"
 ---
 # <a name="bug-check-0x128-workerthreadreturnedwithbadiopriority"></a>バグ チェック 0x128:ワーカー\_スレッド\_から返された\_WITH\_不良\_IO\_優先順位
 

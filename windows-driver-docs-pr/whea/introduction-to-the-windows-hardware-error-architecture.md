@@ -1,6 +1,6 @@
 ---
-title: Windows Hardware Error Architecture の概要
-description: Windows Hardware Error Architecture の概要
+title: Windows Hardware Error Architecture (WHEA) の概要
+description: Windows Hardware Error Architecture (WHEA) の概要
 ms.assetid: 5a0bbf8c-d644-4a64-9a7e-400d5de2c8fa
 keywords:
 - Windows Hardware Error Architecture WDK は、Windows Hardware Error Architecture について
@@ -10,14 +10,14 @@ keywords:
 - ソース情報 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acaf3b1567e8899743773a507c9d5a8c108c79d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e566a3c14b9ab758a26f09b7ef8766b47f1a30f2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553285"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903058"
 ---
-# <a name="introduction-to-the-windows-hardware-error-architecture"></a>Windows Hardware Error Architecture の概要
+# <a name="introduction-to-the-windows-hardware-error-architecture"></a>Windows Hardware Error Architecture の基本
 
 
 Windows Vista より前に、Microsoft Windows オペレーティング システムのバージョンでは、オペレーティング システムは、ハードウェア エラーの報告関連のないいくつかのメカニズムをサポートします。 これらのメカニズムでは、エラー回復のほとんどのサポートが用意されています。 未修正のエラーは、オペレーティング システムは、だけのバグ チェックが生成され、使用可能なエラー情報の一部のシステム イベント ログに記録、システムの再起動後です。

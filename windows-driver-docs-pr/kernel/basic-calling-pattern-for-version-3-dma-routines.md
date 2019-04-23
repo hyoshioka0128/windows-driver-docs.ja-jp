@@ -4,22 +4,22 @@ description: DMA 操作のインターフェイスのバージョン 3 で、ル
 ms.assetid: 5D73120F-79F5-4C9A-8AE5-25D5CF9B06F5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f3bbbb5fd327a23a95c9467bd356b5a0892096b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4388b99b25791bd7440c3e611f65d375f4de6f29
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570340"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902712"
 ---
 # <a name="basic-calling-pattern-for-version-3-dma-routines"></a>バージョン 3 の DMA ルーチンの基本的な呼び出しパターン
 
 
-DMA 操作のインターフェイスのバージョン 3 で、ルーチンを使用する DMA 転送を実行するには、ドライバーは、次の一覧で説明されている手順に従う必要があります。 次の手順では、下位のデバイスとバス マスターのデバイスの両方に共通です。 このインターフェイスのバージョン 3 では、Windows 8 以降で使用できます。 このインターフェイスでルーチンの詳細については、[ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)を参照してください。
+DMA 操作のインターフェイスのバージョン 3 で、ルーチンを使用する DMA 転送を実行するには、ドライバーは、次の一覧で説明されている手順に従う必要があります。 次の手順では、下位のデバイスとバス マスターのデバイスの両方に共通です。 このインターフェイスのバージョン 3 では、Windows 8 以降で使用できます。 このインターフェイスでルーチンの詳細については、次を参照してください。 [ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)します。
 
 ## <a name="step-1-obtain-a-dma-adapter-object"></a>手順 1:DMA アダプター オブジェクトを取得します。
 
 
-DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)ルーチン DMA アダプター オブジェクトを取得します。 DMA のアダプター オブジェクトは、バス マスター デバイス、またはシステム DMA コント ローラーの要求行のいずれかを表すソフトウェア オブジェクトです。 このオブジェクトには、デバイス間でデータを転送するために使用するバスの DMA 操作のインターフェイスが含まれています。 さらに、このオブジェクトは、転送を実行するために必要な共有リソースへのドライバーのアクセスを同期します。 詳細については、[アダプター オブジェクトの概要](introduction-to-adapter-objects.md)を参照してください。
+DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)ルーチン DMA アダプター オブジェクトを取得します。 DMA のアダプター オブジェクトは、バス マスター デバイス、またはシステム DMA コント ローラーの要求行のいずれかを表すソフトウェア オブジェクトです。 このオブジェクトには、デバイス間でデータを転送するために使用するバスの DMA 操作のインターフェイスが含まれています。 さらに、このオブジェクトは、転送を実行するために必要な共有リソースへのドライバーのアクセスを同期します。 詳細については、次を参照してください。[アダプター オブジェクトの概要](introduction-to-adapter-objects.md)します。
 
 ## <a name="step-2-obtain-a-description-of-the-required-dma-resources"></a>手順 2:DMA の必要なリソースの説明を取得します。
 
@@ -28,7 +28,7 @@ DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAda
 
 この呼び出しの入力パラメーターには、転送、および転送の方向 (読み取りまたは書き込み) を使用するメモリ バッファーについて説明します。
 
-この呼び出しから取得したリソースの要件には、マップのレジスタの数と、転送データのバッファーを記述するために必要なスキャッター/ギャザー リストのサイズが含まれます。 以降の呼び出しで、 [ **AllocateAdapterChannelEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406340)ルーチン (を参照してください[3.](#step-3))、ドライバーは、入力パラメーターとしてマップ登録数を提供します。
+この呼び出しから取得したリソースの要件には、マップのレジスタの数と、転送データのバッファーを記述するために必要なスキャッター/ギャザー リストのサイズが含まれます。 以降の呼び出しで、 [ **AllocateAdapterChannelEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406340)ルーチン (を参照してください[3.](#step-3-request-the-required-dma-resources))、ドライバーは、入力パラメーターとしてマップ登録数を提供します。
 
 ## <a name="step-3-request-the-required-dma-resources"></a>手順 3:DMA の必要なリソースを要求します。
 
@@ -49,7 +49,7 @@ DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAda
 
 非同期**AllocateAdapterChannelEx**呼び出し、 *ExecutionRoutine* NULL 以外の場合があります。 実行ルーチンが、入力パラメーターとしてマップ レジスタのベース アドレスを受け取るとします。
 
-後続の呼び出しで、 [ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチン (を参照してください[手順 5](#step-5))、ドライバーは、入力パラメーターとしてマップ レジスタのベース アドレスを指定します。
+後続の呼び出しで、 [ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチン (を参照してください[手順 5](#step-5-initialize-the-dma-resources-and-start-the-dma-transfer))、ドライバーは、入力パラメーターとしてマップ レジスタのベース アドレスを指定します。
 
 場合*ExecutionRoutine*が NULL 以外の場合、実行ルーチンが割り当てられているリソースのディス ポジションを示すステータス値を返します。 システム DMA 転送では、この戻り値がある必要があります**KeepObject**します。 この値は、オペレーティング システムは使用して、解放しないでアダプター オブジェクト (およびその割り当てられたリソースのすべて) を通知します。 ドライバーが代わりに呼び出す必要があります実行ルーチンが指定されていない場合、 [ **FreeAdapterObject** ](https://msdn.microsoft.com/library/windows/hardware/hh451107)ルーチンと供給**KeepObject**として、 *AllocationOption*パラメーター。
 
@@ -67,7 +67,7 @@ DMA 転送の準備として、ドライバーが呼び出す、 [ **IoGetDmaAda
 
 ドライバー呼び出し[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521) DMA 転送を開始して DMA のリソースを初期化します。 この呼び出しを呼び出すのと同じドライバー スレッドで発生した**AllocateAdapterChannelEx**に、ドライバーが提供する実行ルーチンで発生した、または**AllocateAdapterChannelEx**します。 1 つ以上の場合**MapTransferEx** DMA データ バッファー全体を転送する呼び出しが必要です、後で**MapTransferEx**以前完了ルーチンで発生した呼び出し**MapTransferEx**呼び出します。
 
-**MapTransferEx**サポートには、入力パラメーターとして MDLs がチェーンされています。 各 MDL では、仮想メモリ内で連続している DMA バッファーの領域について説明します。 ときに**MapTransferEx**スキャッター/ギャザー リストで、ドライバーの介入なしに仮想的に連続するバッファーの 1 つのリージョンからの移行を自動的に処理します。 詳細については、[MapTransferEx ルーチンを使用して](using-the-maptransferex-routine.md)を参照してください。
+**MapTransferEx**サポートには、入力パラメーターとして MDLs がチェーンされています。 各 MDL では、仮想メモリ内で連続している DMA バッファーの領域について説明します。 ときに**MapTransferEx**スキャッター/ギャザー リストで、ドライバーの介入なしに仮想的に連続するバッファーの 1 つのリージョンからの移行を自動的に処理します。 詳細については、次を参照してください。 [MapTransferEx ルーチンを使用して](using-the-maptransferex-routine.md)します。
 
 DMA 転送システムの場合に、DMA 完了ルーチンへのポインターを渡すことが**MapTransferEx** 、省略可能な*DmaCompletionRoutine*パラメーター。 このルーチンは、DMA 転送が完了したことを示すシステム DMA コント ローラーから、割り込みに応答でディスパッチで実行する予定です。
 
@@ -78,7 +78,7 @@ DMA 転送システムの場合に、DMA 完了ルーチンへのポインター
 
 **MapTransferEx**ステータスを返します\_DMA 転送が正常に開始されたことを示す成功します。 一部のプラットフォームで、ドライバーは、外側のいくつかの追加アクションを実行する必要があります、 **MapTransferEx**転送を開始する、呼び出しが遅延起動のこの型はすべてのプラットフォームで必要ありません。 ドライバーは、このような遅延を使用して、割り当てられたリソースを解放することについての決定のために依存する必要があります。
 
-DMA 操作のインターフェイスのルーチンでは、これらのルーチンを使用するドライバーに対して透過的な方法では、DMA 転送のキャッシュの一貫性を維持します。 ハードウェア、キャッシュの一貫性を強制しないプラットフォームで**MapTransferEx**により、プロセッサのデータ キャッシュは、書き込み (メモリ デバイス) を転送する前にフラッシュされます。 呼び出し中に、読み取り (デバイスのメモリ) の転送に、キャッシュが無効になる、 [ **FlushAdapterBuffersEx** ](https://msdn.microsoft.com/library/windows/hardware/hh451102)ルーチン (を参照してください[手順 8](#step-8)) すべて続く**MapTransferEx**呼び出します。
+DMA 操作のインターフェイスのルーチンでは、これらのルーチンを使用するドライバーに対して透過的な方法では、DMA 転送のキャッシュの一貫性を維持します。 ハードウェア、キャッシュの一貫性を強制しないプラットフォームで**MapTransferEx**により、プロセッサのデータ キャッシュは、書き込み (メモリ デバイス) を転送する前にフラッシュされます。 呼び出し中に、読み取り (デバイスのメモリ) の転送に、キャッシュが無効になる、 [ **FlushAdapterBuffersEx** ](https://msdn.microsoft.com/library/windows/hardware/hh451102)ルーチン (を参照してください[手順 8](#step-8-flush-any-data-that-remains-in-the-cache)) すべて続く**MapTransferEx**呼び出します。
 
 ## <a name="step-7-receive-notification-when-the-dma-transfer-finishes"></a>手順 7:DMA 転送が完了すると、通知を受け取る
 

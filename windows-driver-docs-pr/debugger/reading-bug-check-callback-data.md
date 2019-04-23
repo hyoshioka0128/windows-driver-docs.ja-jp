@@ -15,11 +15,11 @@ keywords:
 ms.date: 10/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a6803969949d640b9ac5215ce6014d9d7ea9070f
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845521"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902742"
 ---
 # <a name="reading-bug-check-callback-data"></a>バグ チェック コールバック データの読み取り
 
@@ -65,7 +65,7 @@ ms.locfileid: "58845521"
 
 [ **.Enumtag (セカンダリ コールバック データを列挙する)** ](-enumtag--enumerate-secondary-callback-data-.md)コマンドは、非常に正確な方法ではありません。 タグを表示して、16 進形式と ASCII 形式でデータを表示し、各セカンダリ データ ブロックが表示されます。 一般に、どのようなタグが実際に使用されているセカンダリのデータ ブロックの特定にのみ便利です。
 
-このデータを使用して、実用的な方法で、独自のデバッガー拡張機能を記述することをお勧めします。 この拡張機能は、dbgeng.h ヘッダー ファイルでメソッドを呼び出す必要があります。 詳細については、[デバッガー拡張機能の新規作成](writing-new-debugger-extensions.md)を参照してください。
+このデータを使用して、実用的な方法で、独自のデバッガー拡張機能を記述することをお勧めします。 この拡張機能は、dbgeng.h ヘッダー ファイルでメソッドを呼び出す必要があります。 詳細については、次を参照してください。[デバッガー拡張機能の新規作成](writing-new-debugger-extensions.md)です。
 
 セカンダリ データ ブロックのタグを GUID がわかっている場合、拡張機能がメソッドを使用する必要があります**IDebugDataSpaces3::ReadTagged**データにアクセスします。 そのプロトタイプは次のとおりです。
 

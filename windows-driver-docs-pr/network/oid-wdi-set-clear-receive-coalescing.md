@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_CLEAR_RECEIVE_COALESCING ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: bd0172db3f03d96a1897d671e85c986559aba64d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8112b2bd06cb569387d0d34a9a09cdae600ab8ce
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529661"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904016"
 ---
 # <a name="oidwdisetclearreceivecoalescing"></a>OID\_WDI\_設定\_クリア\_受信\_COALESCING
 
@@ -37,7 +38,8 @@ OID\_WDI\_設定\_クリア\_受信\_COALESCING がパケットの結合のパ�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

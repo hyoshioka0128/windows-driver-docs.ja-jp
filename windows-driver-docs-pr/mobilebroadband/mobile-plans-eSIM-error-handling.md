@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f79b394aa64da93fdf4dba0e0fc9fb62cd20cbc6
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845569"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903794"
 ---
 # <a name="mobile-plans-esim-download-error-handling"></a>Mobile のプランの eSIM ダウンロードのエラー処理
 
@@ -34,7 +34,7 @@ X-MP-LPAError-ICCIDs: 8988247000101997790
 
 | ヘッダー名              | 説明                                                                                                                                                                                                                                                                                                                          | 例                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| X MP LPAError コード      | このフィールドは、以下でキャプチャされたエラー コードを提供します。 複数のエラーがある場合は、コンマ区切りの一覧で、エラー コードが渡されます。 <p>想定されるエラー コードの一覧は、、 [ESimOperationStatus enum](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.esimoperationstatus)を参照してください。</p> | X MP-LPAError コード:ServerFailure、ServerNotReachable                 |
+| X MP LPAError コード      | このフィールドは、以下でキャプチャされたエラー コードを提供します。 複数のエラーがある場合は、コンマ区切りの一覧で、エラー コードが渡されます。 <p>想定されるエラー コードの一覧は、次を参照してください。、 [ESimOperationStatus enum](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.esimoperationstatus)します。</p> | X MP-LPAError コード:ServerFailure、ServerNotReachable                 |
 | X MP LPAError タイムスタンプ | このフィールドは、エラーが発生したときのタイムスタンプを提供します。 タイムスタンプの形式が*日付時刻の UTC オフセット*します。 複数のエラーがある場合は、タイムスタンプがコンマ区切りのリストとして渡されます。                                                                                                                                 | X MP-LPAError タイムスタンプ:2018 年 5 月 18 日 11時 17分: 23 PM、2018 年 5 月 18 日午後 11時 27分: 33 |
 | X-MP-LPAError-いる Iccid     | このフィールドは、ユーザーは、ダウンロードしてインストールしようとした eSIM プロファイル ICCID を提供します。 コントロールのハンドオフが発生したときに、プランのモバイル アプリにこの ICCID が渡されました。 1 つだけ ICCID が渡されます。                                                                                                                       | X-MP-LPAError-いる Iccid:8988247000101997790                             |
 

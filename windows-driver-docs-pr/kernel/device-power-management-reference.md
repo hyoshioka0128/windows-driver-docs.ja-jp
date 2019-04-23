@@ -5,18 +5,19 @@ keywords:
 - AcceptDeviceNotification
 ms.date: 12/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb3c8d1120d997529d8874b110e302dd71c8b20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: f57e13ce1653e1dadf3b7e8901db869adf47410c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573453"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902884"
 ---
 # <a name="device-power-management-reference"></a>デバイスの電源管理リファレンス
 
 ドライバーは、詳細な電源管理を有効にする複数の論理コンポーネントへのデバイスのハードウェアを分割できます。 コンポーネントには、他のコンポーネントを同じデバイスの電源の状態とは無関係に管理可能な電源状態のセットがあります。 F0 状態で、コンポーネントが完全に有効です。 コンポーネントを追加、低電力状態 F1、F2 サポート可能性があります。
 
-デバイスの電源ポリシー所有者は、通常、デバイスの関数のドライバーです。 このドライバーをコンポーネント レベルの電源管理を有効にするを使用してデバイスを登録します、[電源管理フレームワーク (PoFx)](overview-of-the-power-management-framework.md)します。 デバイスを登録することでは、ドライバーは、コンポーネントが既に使用されていると、コンポーネントがアイドル状態のときに、PoFx を通知する責任を負います。 PoFx により、コンポーネントのアクティビティ、待機時間の許容範囲、予想されるアイドル状態の期間、およびウェイク要件に関する情報に基づいて、デバイスのアイドル状態のインテリジェントな選択肢です。 コンポーネント レベルの制御の電力使用状況、によって PoFx はシステムの応答性を維持しながら電源の要件を減らすことができます。 詳細については、[コンポーネント レベルの電源管理](component-level-power-management.md)を参照してください。
+デバイスの電源ポリシー所有者は、通常、デバイスの関数のドライバーです。 このドライバーをコンポーネント レベルの電源管理を有効にするを使用してデバイスを登録します、[電源管理フレームワーク (PoFx)](overview-of-the-power-management-framework.md)します。 デバイスを登録することでは、ドライバーは、コンポーネントが既に使用されていると、コンポーネントがアイドル状態のときに、PoFx を通知する責任を負います。 PoFx により、コンポーネントのアクティビティ、待機時間の許容範囲、予想されるアイドル状態の期間、およびウェイク要件に関する情報に基づいて、デバイスのアイドル状態のインテリジェントな選択肢です。 コンポーネント レベルの制御の電力使用状況、によって PoFx はシステムの応答性を維持しながら電源の要件を減らすことができます。 詳細については、次を参照してください。[コンポーネント レベルの電源管理](component-level-power-management.md)します。
 
 ## <a name="device-power-management-routines"></a>デバイスの電源管理ルーチン
 
@@ -68,7 +69,7 @@ ms.locfileid: "56573453"
 |[PO_FX_COMPONENT_IDLE_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_idle_state)|**PO_FX_COMPONENT_IDLE_STATE**構造体は、デバイス コンポーネントの [fx] 電源状態の属性を指定します。|
 |[PO_FX_COMPONENT_PERF_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_info)|**PO_FX_COMPONENT_PERF_INFO**構造体には、デバイス内の 1 つのコンポーネントのパフォーマンス状態のすべてのセットがについて説明します。|
 |[PO_FX_COMPONENT_PERF_SET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_set)|**PO_FX_COMPONENT_PERF_SET**構造体は、一連のデバイス内の 1 つのコンポーネントのパフォーマンス状態を表します。|
-|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v2)|**PO_FX_DEVICE**構造体が、電源管理フレームワーク (PoFx) にデバイスの電源の属性について説明します。|
+|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v2)   [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v3)|**PO_FX_DEVICE**構造体が、電源管理フレームワーク (PoFx) にデバイスの電源の属性について説明します。|
 |[PO_FX_PERF_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_perf_state)|**PO_FX_PERF_STATE**構造体は、デバイス内の 1 つのコンポーネントのパフォーマンス状態を表します。|
 |[PO_FX_PERF_STATE_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_perf_state_change)|**PO_FX_PERF_STATE_CHANGE**構造には、呼び出すことによって要求されているパフォーマンスの状態の変更に関する情報が含まれる、 [PoFxIssueComponentPerfStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechange)または[PoFxIssueComponentPerfStateChangeMultiple](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)ルーチン。
 
@@ -126,7 +127,7 @@ ms.locfileid: "56573453"
 #define PO_FX_FLAG_PERF_QUERY_ON_ALL_IDLE_STATES 0x4
 ```
 
-|定数|値|説明|
+|定数|Value|説明|
 |----|----|----|
 |**PO_FX_FLAG_PERF_PEP_OPTIONAL**|1 (0x1)|ドライバーが、プラットフォーム拡張機能からプラグイン (PEP) の支援なしのパフォーマンス状態を変更できますか、ドライバーはパフォーマンス状態 PoFx でログ目的でのみ登録ことを示します。 このフラグが設定されている場合、 [PoFxRegisterComponentPerfStates](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)呼び出しは引き続き、PEP は、コンポーネントのパフォーマンス状態をサポートしていない場合に成功しました。|
 |**PO_FX_FLAG_PERF_QUERY_ON_F0**|2 (0x2)|一部のデバイスでは、PEP はパフォーマンスの状態が特定のパフォーマンスの状態にコンポーネントの設定の場所に必要があります (と呼ばれる、*名目上のパフォーマンスの状態*) コンポーネントがアイドル状態とします。 ドライバーは、コンポーネントには、標準のパフォーマンスの状態、ケース PoFx のコンポーネントが F0 に移行するときに、現在のパフォーマンスの状態を判断する、PEP のクエリが含まれている場合、このフラグを設定します。|

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be7a71e23afaf70723448600906f25e8b309b358
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238829"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902290"
 ---
 # <a name="bug-check-0x47-refunknownlogonsession"></a>バグ チェック 0x47:REF\_不明な\_ログオン\_セッション
 

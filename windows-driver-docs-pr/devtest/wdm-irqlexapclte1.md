@@ -1,6 +1,6 @@
 ---
 title: IrqlExApcLte1 ルール (wdm)
-description: IrqlExApcLte1 ルールは、ドライバーを呼び出す ExAcquireFastMutex と ExTryToAcquireFastMutex IRQL APC でのみを指定します\_レベル。
+description: IrqlExApcLte1 ルールは、ドライバーを呼び出す ExAcquireFastMutex と ExTryToAcquireFastMutex IRQL APC_LEVEL でのみを指定します。
 ms.assetid: c86aa593-03b5-4a65-9cef-3b64fcc3d5fd
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bd92f333d98cddcaaf90612276f2ad798cc68d5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fa141cb35fec1e658949080e3d7fb560bbde561f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552631"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903106"
 ---
 # <a name="irqlexapclte1-rule-wdm"></a>IrqlExApcLte1 ルール (wdm)
 
@@ -53,7 +53,7 @@ ms.locfileid: "56552631"
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
 </ol>
-<p>詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
 </tr>
 </tbody>
 </table>

@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_MULTICAST_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f82501e01636fc6ec5f6be436dbd6abd15a59003
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8a1a08abebf1983eb97b74bba2f3da119d6e9b4e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538656"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903842"
 ---
 # <a name="oidwdisetmulticastlist"></a>OID\_WDI\_設定\_マルチキャスト\_一覧
 
@@ -33,7 +34,7 @@ IHV コンポーネントがリストのサイズがで指定された制限を�
 
 | TLV                                                              | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                  |
 |------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------|
-| [**WDI\_TLV\_マルチキャスト\_一覧**](https://msdn.microsoft.com/library/windows/hardware/dn897849) |                                | X        | マルチキャスト MAC の一覧に対処します。 一覧は空にできません。 |
+| [**WDI\_TLV\_マルチキャスト\_一覧**](https://msdn.microsoft.com/library/windows/hardware/dn897849) |                                | x        | マルチキャスト MAC の一覧に対処します。 一覧は空にできません。 |
 
  
 
@@ -41,7 +42,8 @@ IHV コンポーネントがリストのサイズがで指定された制限を�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

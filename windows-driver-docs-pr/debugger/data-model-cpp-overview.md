@@ -1,15 +1,15 @@
 ---
 title: デバッガーのデータ モデルの C++ インターフェイスの概要
 description: このトピックでは、デバッガー データ モデルの C++ インターフェイスを拡張し、デバッガーの機能をカスタマイズの概要を示します。
-ms.date: 10/05/2018
-ms.openlocfilehash: 5f5e6247c5237d86133c7fb1329f92d8a759749f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.date: 04/09/2019
+ms.openlocfilehash: de9859083d6ede03b0f9cd6a82e0beeca961eda4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550609"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903354"
 ---
-# <a name="debugger-data-model-c-overview"></a>デバッガー データ モデルの C++ の概要
+# <a name="debugger-data-model-c-overview"></a>Debugger Data Model C++ の概要
 
 このトピックでは、デバッガーのデータ モデルの C++ インターフェイスを使用して拡張およびデバッガーの機能をカスタマイズする方法の概要を示します。
 
@@ -36,6 +36,9 @@ ms.locfileid: "56550609"
 [デバッガー データ モデルの C++ インターフェイスの概要](#overview)
 
 [デバッガー データのモデル インターフェイスの概要](#summary)
+
+[DbgModelClientEx ライブラリを使用します。](#dbgmodelclientex)
+
 
 ---
 
@@ -64,7 +67,11 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 論理的にモ ノの間隔と、特定のオブジェクトに対する拡張名は、デバッガーの拡張機能の検出できます。  
 
-データ モデルは、方法を新しい[WinDbg プレビュー](debugging-using-windbg-preview.md)デバッガー、ほとんどの機能が表示されます。 新しい UI の多くの要素のクエリを実行、拡張、またはデータ モデルで電源が入っているため、スクリプト化します。 詳細については、[WinDbg Preview - データ モデル](windbg-data-model-preview.md)を参照してください。
+> [!TIP]
+> ため、データ モデルC++オブジェクト インターフェイスを完全に実装するために非常に冗長になることができますC++データ モデルを完全に使用するためのヘルパー ライブラリC++例外とプログラミング パラダイムでテンプレートをお勧めします。 詳細については、次を参照してください。 [DbgModelClientEx ライブラリを使用して](#dbgmodelclientex)このトピックで後述します。
+>
+
+データ モデルは、方法を新しい[WinDbg プレビュー](debugging-using-windbg-preview.md)デバッガー、ほとんどの機能が表示されます。 新しい UI の多くの要素のクエリを実行、拡張、またはデータ モデルで電源が入っているため、スクリプト化します。 詳細については、次を参照してください。 [WinDbg Preview - データ モデル](windbg-data-model-preview.md)します。
 
 ![データ モデルの詳細 ウィンドウが表示されたプロセスとスレッド](images/windbgx-data-model-process-threads.png)
 
@@ -125,7 +132,6 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 - 図の右側にあるは、下部にある 2 つのプロバイダーが一番上に、NatVis および C と C++ の拡張機能のいずれかを示します。
 
 ![データ モデルのアーキテクチャの表示](images/data-model-manager.png)
-
 
 
 ## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary"> デバッガー データのモデル インターフェイスの概要
@@ -281,11 +287,49 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
 
 
+## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex"> DbgModelClientEx ライブラリを使用します。
+
+**概要**
+
+データ モデルC++データ モデルにオブジェクトのインターフェイスを実装するために非常に冗長になることができます。 さまざまなデータ モデルを拡張する小規模なインターフェイスの実装に必要なデータ モデルの完全な操作は、許可、(例:: IModelPropertyAccessor 追加される各動的 fetchable プロパティの実装)。 さらに、HRESULT ベースのプログラミング モデルは、大量のエラー チェックに使用されるボイラー プレート コードを追加します。
+
+この作業の一部を最小限に抑えるためには、完全なC++データ モデルを完全に使用するためのヘルパー ライブラリC++例外とテンプレートのプログラミング パラダイムです。 このライブラリの使用を消費したり、データ モデルを拡張するときより簡潔なコードをできるようにお勧めします。
+
+ヘルパー ライブラリには、2 つの重要な名前空間があります。
+
+Debugger::DataModel::ClientEx - データ モデルの使用量のヘルパー
+
+Debugger::DataModel::ProviderEx - データ モデルを拡張するためのヘルパー
+
+DbgModelClientEx ライブラリを使用する方法については、この github サイトで readme ファイルを参照してください。
+
+https://github.com/Microsoft/WinDbg-Libraries/tree/master/DbgModelCppLib
 
 
+**HelloWorldC++サンプル**
+
+DbgModelClientEx ライブラリの使用方法を表示するには、データ モデルの HelloWorld を参照してください。C++こちらのサンプルです。
+
+https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
+
+このサンプルは次のとおりです。
+
+- HelloProvider.cpp - これは、追加する新しいプロパティの例「こんにちは」に、デバッガーの概念、プロセスのプロバイダー クラスの実装です。
+
+- SimpleIntroExtension.cpp - これは、新しいプロパティを追加の例「こんにちは」に、デバッガーの概念、プロセスの簡単なデバッガー拡張機能です。 この拡張機能は、データ モデル c++ 17 ヘルパー ライブラリに対して書き込まれます。  生の COM ABI に必要なグルー コードの量 (および複雑さ) ではなく、このライブラリに対して拡張機能を記述することをお勧めまでになります。
 
 
+**JavaScript と COM のサンプル**
 
+データ モデルとデバッガー拡張機能を記述するさまざまな方法を理解するためにあるはデータ モデルの HelloWorld 拡張機能の 3 つのバージョン。
+
+https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
+
+- JavaScript の JavaScript で記述されたバージョン
+
+- C++ 17 - 17 のクライアント ライブラリ、データ モデルでは c++ に対して記述されたバージョン
+
+- COM の (WRL を使用して、COM ヘルパー) のみ、生の COM ABI に対して記述されたバージョン
 
 ---
 

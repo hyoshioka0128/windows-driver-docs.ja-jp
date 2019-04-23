@@ -2,15 +2,16 @@
 title: OID_WWAN_PACKET_SERVICE
 description: OID_WWAN_PACKET_SERVICE を使用すると、GSM ベースし、CDMA ベースの両方の MB デバイスの場合、現在登録されているプロバイダーのネットワークでパケット サービスのアタッチ/デタッチ操作を実行するミニポート ドライバーに指示します。
 ms.assetid: 97bb9324-8052-437c-baa5-fb9a8176c779
-ms.date: 08/08/2017
+ms.date: 04/04/2019
 keywords: -OID_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c83ca3648779e5bef04503c4f30f5b73c34a6c81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8150c4c70c7669b19256212929081eb95eb90a7b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572284"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903500"
 ---
 # <a name="oidwwanpacketservice"></a>OID\_WWAN\_パケット\_サービス
 
@@ -21,7 +22,7 @@ OID\_WWAN\_パケット\_サービスを使用すると、GSM ベースし、CDM
 
 呼び出し元のパケット サービスの現在の状態を設定する要求を提供する[ **NDIS\_WWAN\_設定\_パケット\_サービス**](https://msdn.microsoft.com/library/windows/hardware/ff567921)構造体を適切な情報のミニポート ドライバー。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 参照してください[WWAN パケット サービスのアタッチ操作](https://msdn.microsoft.com/library/windows/hardware/ff559092)詳細については、この OID を使用します。
@@ -35,6 +36,16 @@ SIM カードの中には、パケットのドメインと回線交換ドメイ�
 パケット アタッチをサポートしていないテクノロジ、ミニポート ドライバーは MB サービス コンテキストのアクティブ化を続行することを把握できるようにする、接続状態を偽装する必要があります。 ミニポート ドライバー セット OID のスプーフィングもする必要があります\_WWAN\_パケット\_ミニポート ドライバーでのサービス要求します。 ミニポート ドライバーに送信する必要があります[ **NDIS\_状態\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)通知クエリ操作と要請していません。イベント。 デバイスのパケット サービスの状態に設定されていない場合、ミニポート ドライバーの PDP アクティブ化が失敗する*WwanPacketServiceStateAttached*します。
 
 コンテキストのアクティブ化では、パケット サービスの状態に到達するまで MB サービスは続行されません*WwanPacketServiceStateAttached*します。
+
+### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+
+この OID の新しいリビジョン 2 は、Windows 10、バージョンが 1903 以降はサポートされています。 拡張機能をモデムが現在 5 G で動作周波数の範囲クエリをホストできるようにします。
+
+ホストは、いつでも拡張パケット サービス状態情報を照会できます。 応答では、リビジョン 2 がある 2 つの新しいフィールドを除いてリビジョン 1 の場合と同じです。
+
+モデムは、5 G ドメインに登録されて、通信事業者の 5 G 周波数の範囲が返されます。 複数の 5 G 通信事業者が存在しない場合は、すべての有効な範囲が返されます。
+
+5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
 
 <a name="requirements"></a>必要条件
 ------------

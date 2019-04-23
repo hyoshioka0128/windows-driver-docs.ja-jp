@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: bc58f763a53e8455cdfc66f13d2b77ad145c197f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 583432f989fe79c2eacafc8bf486f4912ea5134a
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550582"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903292"
 ---
 # <a name="oidwdisetneighborreportentries"></a>OID\_WDI\_設定\_近隣\_レポート\_エントリ
 
@@ -29,7 +30,7 @@ OID\_WDI\_設定\_近隣\_レポート\_エントリ、LE、AP から受信し�
 
 | TLV                                                                             | 許可されている複数の TLV インスタンス | 省略可能 | 説明                   |
 |---------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------|
-| [**WDI\_TLV\_近隣\_レポート\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/mt269133) | X                              |          | 近隣ノードのレポートの一覧。 |
+| [**WDI\_TLV\_近隣\_レポート\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/mt269133) | x                              |          | 近隣ノードのレポートの一覧。 |
 
  
 
@@ -37,7 +38,8 @@ OID\_WDI\_設定\_近隣\_レポート\_エントリ、LE、AP から受信し�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

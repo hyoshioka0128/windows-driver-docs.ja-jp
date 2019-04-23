@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_P2P_WPS_ENABLED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2a7dd1decd9ba925f1bc0fb9ed427e354d0865
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 4e679249bb4a78c3719b99186e37c9ad257f686a
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560207"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902416"
 ---
 # <a name="oidwdisetp2pwpsenabled"></a>OID\_WDI\_設定\_P2P\_WPS\_有効
 
@@ -37,7 +38,8 @@ OID\_WDI\_設定\_P2P\_WPS\_有効要求アダプターが有効にしたり、N
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

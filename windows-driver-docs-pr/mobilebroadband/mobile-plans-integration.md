@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c7fb09cf1195713a35843206dd5557bab689797
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845535"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903012"
 ---
 # <a name="mobile-plans-integration"></a>モバイルのプランの統合
 
@@ -29,7 +29,7 @@ ms.locfileid: "58845535"
 
 ### <a name="mobile-operator-web-portal"></a>Web ポータルのモバイル演算子
 
-定義した 50 個のエンド ツー エンド ユーザー ケースを実行できることを検証します。 以下に例を示します。
+定義した 50 個のエンド ツー エンド ユーザー ケースを実行できることを検証します。 次に、例を示します。
 
 - Esim 状、プロファイルをインストールします。
 - ウォーム SIM を有効にします。

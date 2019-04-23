@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e507d4553f3a8a6bc78d71a056ac24ec24b3a10
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238919"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902252"
 ---
 # <a name="bug-check-0x13d-criticalinitializationfailure"></a>バグ チェック 0x13D:重要な\_初期化\_エラー
 

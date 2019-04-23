@@ -1,6 +1,6 @@
 ---
 title: IrqlExPassive ルール (wdm)
-description: IrqlExPassive ルールでは、ドライバーが IRQL パッシブにのみ、次のエグゼクティブ サポート ルーチンを呼び出すことを指定します\_レベルExCreateCallbackExIsProcessorFeaturePresentExRaiseAccessViolationExRaiseDatatypeMisalignmentExRaiseStatusExUuidCreateThe IrqlExPassive ルールも指定します、ドライバーでは、IRQL APC で ExRaiseStatus が呼び出す\_レベル。
+description: IrqlExPassive ルールでは、IRQL PASSIVE_LEVEL でのみ、ドライバーが、次のエグゼクティブ サポート ルーチンを呼び出すことを指定します。 IrqlExPassive ルールでは、IRQL APC_LEVEL でドライバーが ExRaiseStatus を呼び出すことも指定します。
 ms.assetid: 92d73bd9-ce79-4be8-9ea2-a5aef2ea6edb
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2c27b1b3529d4929491e8d9a01959149224cda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5022d4174b25d3971cc65ede9dcc605d15d5c38
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549933"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903100"
 ---
 # <a name="irqlexpassive-rule-wdm"></a>IrqlExPassive ルール (wdm)
 
@@ -67,7 +67,7 @@ ms.locfileid: "56549933"
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://msdn.microsoft.com/library/windows/hardware/hh454281#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://msdn.microsoft.com/library/windows/hardware/hh454281#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
 </ol>
-<p>詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh454281" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://msdn.microsoft.com/library/windows/hardware/hh454281)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
 </tr>
 </tbody>
 </table>

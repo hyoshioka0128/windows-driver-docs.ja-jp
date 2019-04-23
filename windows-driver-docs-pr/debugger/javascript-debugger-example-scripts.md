@@ -2,24 +2,32 @@
 title: JavaScript デバッガーのスクリプト例
 description: このトピックでは、JavaScript コード サンプルでは、データのフィルター処理プラグ アンド プレイ デバイス ツリー サンプルなど、ユーザー モードとカーネル モードの情報を示します。
 ms.assetid: F477430B-10C7-4039-9C5F-25556C306643
-ms.date: 11/27/2018
+ms.date: 04/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f3f4dcc0adc3957c74abda3138f8c026afd2b593
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e5e27226292aefcf50508285021f5adaa5bdbf4e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573086"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903790"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript デバッガーのスクリプト例
 
-
 このトピックでは、次のユーザーとカーネル モード JavaScript コード サンプルを提供します。
 
--   [データのフィルター処理します。KD (カーネル モード) のプラグ アンド プレイ デバイス ツリー](#filter)
--   [マルチ メディア (カーネル モード) のデバイス固有を拡張します。](#multimedia)
--   [バスの情報を追加する\_デバイス\_オブジェクト (カーネル モード)](#bus)
--   [(ユーザー モード) のアプリケーション タイトルを検索します。](#title)
+- [プロセスのアーキテクチャを決定します。](#processarchitecture)
+- [データのフィルター処理します。KD (カーネル モード) のプラグ アンド プレイ デバイス ツリー](#filter)
+- [マルチ メディア (カーネル モード) のデバイス固有を拡張します。](#multimedia)
+- [バスの情報を追加する\_デバイス\_オブジェクト (カーネル モード)](#bus)
+- [(ユーザー モード) のアプリケーション タイトルを検索します。](#title)
+
+## <a name="microsoft-github-repo-example-scripts"></a>Microsoft の GitHub リポジトリのサンプル スクリプト
+
+デバッガー チームは、JavaScript のサンプル スクリプトと拡張機能を含む GitHub リポジトリをホストします。
+
+検索できます。 https://github.com/Microsoft/WinDbg-Samples
+
+Readme ファイルには、使用できる、現在コードの例について説明します。
 
 ## <a name="span-idworkingwithsamplesspanspan-idworkingwithsamplesspanspan-idworkingwithsamplesspanworking-with-samples"></a><span id="Working_with_Samples"></span><span id="working_with_samples"></span><span id="WORKING_WITH_SAMPLES"></span>サンプルの実行
 
@@ -68,14 +76,77 @@ Debugger.State.Scripts.HelloWorld.Contents.sayHi()
 
 参照してください[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)詳細については、JavaScript を使用します。
 
-## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>データのフィルター処理します。KD (カーネル モード) のプラグ アンド プレイ デバイス ツリー
+## <a name="span-idprocessarchitecturespanspan-idprocessarchitecturespanspan-idprocessarhcitecturespandetermining-process-architecture"></a><span id="Processarchitecture"></span><span id="processarchitecture"></span><span id="PROCESSARHCITECTURE"></span>プロセスのアーキテクチャを決定します。
 
+この JavaScript コードは、プロセスが x86 または x64 を示すデバッガー オブジェクト モデルのプロセスのオブジェクトに 'ProcessArchitecture' をという名前のプロパティを追加します。
+
+このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
+
+```JavaScript
+"use strict";
+ 
+class __CheckArchitecture
+{
+//
+// Add a property called 'ProcessArchitecture' on process.
+//
+    get ProcessArchitecture()
+    {
+    var guestStates = this.Threads.Any(t=> (!(t.GuestState === undefined) && t.GuestState.Architecture =="x86"));
+ 
+        if(guestStates)
+            return "x86";
+        else
+            return "x64";
+    }
+};
+ 
+function initializeScript()
+{
+//
+// Extends our notion of a process to place architecture information on it.
+//
+return [new host.namedModelParent(__CheckArchitecture, "Debugger.Models.Process")];
+}
+```
+
+カーネル ダンプ ファイルを読み込むか、ターゲット システムにカーネル モード接続を確立します。 次に、JavaScript プロバイダーとサンプル スクリプトを読み込みます。
+
+```dbgcmd
+0: kd> !load jsprovider.dll
+```
+
+```dbgcmd
+0: kd> .scriptload c:\WinDbg\Scripts\processarchitecture.js
+JavaScript script successfully loaded from 'c:\WinDbg\Scripts\processarchitecture.js'
+```
+
+使用して、 [dx](dx--display-visualizer-variables-.md)コマンドを現在のプロセスのプロセス アーキテクチャを表示します。
+
+```dbgcmd
+2: kd> dx @$curprocess
+@$curprocess                 : System [Switch To]
+    KernelObject     [Type: _EPROCESS]
+    Name             : System
+    Id               : 0x4
+    Handle           : 0xf0f0f0f0
+    Threads         
+    Modules         
+    Environment     
+    Devices         
+    Io              
+    ProcessArchitecture : x64
+```
+
+このサンプル コード常にできないことがあります、アーキテクチャを正しく判断に注意してください。 たとえばでは特定の場合は 32 ビットのデバッガーを使用している時にダンプ ファイルを操作します。
+
+## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>データのフィルター処理します。KD (カーネル モード) のプラグ アンド プレイ デバイス ツリー
 
 このサンプル コードは、ディスプレイだけのデバイス PCI のパスが含まれている開始されるデバイス ノード ツリーをフィルター処理します。
 
 このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
 
-使用することができます、! devnode 0 1 コマンド、デバイス ツリーに関する情報を表示します。 詳細については、[ **! devnode**](-devnode.md)を参照してください。
+使用することができます、! devnode 0 1 コマンド、デバイス ツリーに関する情報を表示します。 詳細については、次を参照してください。 [ **! devnode**](-devnode.md)します。
 
 ```javascript
 // PlugAndPlayDeviceTree.js

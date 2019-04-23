@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc9a56c5201890283c9bef44f27eb3531a925a5
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761853"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903420"
 ---
 # <a name="ranking-a-biometric-driver-on-windows-update"></a>Windows Update における生体認証ドライバーのランク付け
 
@@ -48,4 +48,4 @@ Microsoft は、従来の生体認証ドライバー 0xa0 の特徴のスコア�
 FeatureScore=x20
 ```
 
-ドライバーの特徴のスコアを設定する方法の詳細については、[特徴スコア](https://docs.microsoft.com/windows-hardware/drivers/install/feature-score--windows-vista-and-later-)を参照してください。
+ドライバーの特徴のスコアを設定する方法の詳細については、次を参照してください。[特徴スコア](https://docs.microsoft.com/windows-hardware/drivers/install/feature-score--windows-vista-and-later-)します。

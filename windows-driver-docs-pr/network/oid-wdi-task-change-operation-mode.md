@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_CHANGE_OPERATION_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2987e7c326fe7f2b16822292083dbce4964b063a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 7134b0e75af214a3a3d78cd9f406d295c84142ea
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550812"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902390"
 ---
 # <a name="oidwditaskchangeoperationmode"></a>OID\_WDI\_タスク\_変更\_操作\_モード
 
@@ -36,7 +37,9 @@ OID\_WDI\_タスク\_変更\_操作\_モードは、ポートの操作モード�
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_変更\_操作\_モード\_完了](ndis-status-wdi-indication-change-operation-mode-complete.md)要件
+[NDIS\_状態\_WDI\_INDICATION\_変更\_操作\_モード\_完了](ndis-status-wdi-indication-change-operation-mode-complete.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

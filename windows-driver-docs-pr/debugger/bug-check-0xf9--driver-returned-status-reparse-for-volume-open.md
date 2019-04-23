@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b6063b1e6bfdc2596eab0648631761f08cbf14b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239637"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903666"
 ---
 # <a name="bug-check-0xf9-driverreturnedstatusreparseforvolumeopen"></a>バグ チェック 0xF9:ドライバー\_から返された\_状態\_再解析\_の\_ボリューム\_開く
 

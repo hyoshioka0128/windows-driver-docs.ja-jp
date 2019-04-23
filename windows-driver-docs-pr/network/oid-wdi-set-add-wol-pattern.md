@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_ADD_WOL_PATTERN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f1cec01cc2d6baa379f72e732375453519ba19e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 4def5ce6b4796889502ae2ab3bf5551026063578
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557461"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902972"
 ---
 # <a name="oidwdisetaddwolpattern"></a>OID\_WDI\_設定\_追加\_WOL\_パターン
 
@@ -31,11 +32,11 @@ OID\_WDI\_設定\_追加\_WOL\_パターンのファームウェアに wake on L
 
 | TLV                                                                                                              | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                   |
 |------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------|
-| [**WDI\_TLV\_WAKE\_パケット\_ビットマップ\_パターン**](https://msdn.microsoft.com/library/windows/hardware/dn898084)                       | X                              | X        | WOL パターン情報。                      |
-| [**WDI\_TLV\_WAKE\_パケット\_マジック\_パケット**](https://msdn.microsoft.com/library/windows/hardware/dn898185)                           |                                | X        | マジック パケットのパターンの ID。               |
-| [**WDI\_TLV\_WAKE\_PACKET\_IPv4\_TCP\_SYNC**](https://msdn.microsoft.com/library/windows/hardware/dn898089)                        | X                              | X        | WOL IPv4 TCP 同期パケット情報。         |
-| [**WDI\_TLV\_WAKE\_パケット\_IPv6\_TCP\_同期**](https://msdn.microsoft.com/library/windows/hardware/dn898091)                        | X                              | X        | WOL IPv4 TCP 同期パケット情報。         |
-| [**WDI\_TLV\_WAKE\_パケット\_EAPOL\_要求\_ID\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/dn898087) |                                | X        | WOL EAPOL 要求の ID のメッセージの ID をパターンです。 |
+| [**WDI\_TLV\_WAKE\_パケット\_ビットマップ\_パターン**](https://msdn.microsoft.com/library/windows/hardware/dn898084)                       | x                              | x        | WOL パターン情報。                      |
+| [**WDI\_TLV\_WAKE\_パケット\_マジック\_パケット**](https://msdn.microsoft.com/library/windows/hardware/dn898185)                           |                                | x        | マジック パケットのパターンの ID。               |
+| [**WDI\_TLV\_WAKE\_PACKET\_IPv4\_TCP\_SYNC**](https://msdn.microsoft.com/library/windows/hardware/dn898089)                        | x                              | x        | WOL IPv4 TCP 同期パケット情報。         |
+| [**WDI\_TLV\_WAKE\_パケット\_IPv6\_TCP\_同期**](https://msdn.microsoft.com/library/windows/hardware/dn898091)                        | x                              | x        | WOL IPv4 TCP 同期パケット情報。         |
+| [**WDI\_TLV\_WAKE\_パケット\_EAPOL\_要求\_ID\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/dn898087) |                                | x        | WOL EAPOL 要求の ID のメッセージの ID をパターンです。 |
 
  
 
@@ -43,7 +44,8 @@ OID\_WDI\_設定\_追加\_WOL\_パターンのファームウェアに wake on L
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

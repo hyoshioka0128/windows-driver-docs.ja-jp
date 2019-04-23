@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b49b8c11dc91aaca2297727f927f5a8338a9d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 26828a0f514f393cd8f315672fc1ea55fa46f88a
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560538"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903384"
 ---
 # <a name="oidwditaskp2psendrequestactionframe"></a>OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレーム
 
@@ -33,6 +34,14 @@ OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレームは、Wi-
 タスクが完了するかローカルのデバイスが送信された操作フレーム用のリモート デバイスから受信確認を受信すると、タイムアウトになると、または、ホストは、操作を中止します。 デバイスは、同じチャネル時間の有効期限が切れた後、タスクの完了にすることがあります。
 
 ホストは、この操作を中止し、続行/再試行、Wi-Fi Direct アクション フレーム交換できるようになりますが、デバイスがすぐにこの操作を中止することがある重要なことがあります。
+
+## <a name="validation"></a>［確認］
+
+WDI をサポートするミニポート ドライバーのバージョン 1.1.8 と発信の P2P アクション フレームの P2P IEs の以降では、追加の検証が追加されました。 この検証を一般的な問題に対処して、**構成タイムアウト**P2P IE の属性が OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME とLEに提供する(ミリ秒単位)の形式を変換単位されていません[OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](oid-wdi-task-p2p-send-response-action-frame.md)、数十ミリ秒の単位に IE の形式であります。
+
+WDI バージョン 1.1.8 と以降の場合をサポートしているドライバーの Wi-Fi Direct と Wi-Fi Direct サービス HLK テストが失敗、**構成タイムアウト**P2P IE の属性が、送信アクション フレームに対して正しくエンコードされていません。 WDI バージョン 1.1.7 のテストがテスト出力に警告を表示する前と。
+
+WDI インターフェイス自体は変更されずは引き続き以前と同様、1.1.7 のバージョンは、ミリ秒の単位を使用しています。
 
 ## <a name="task-parameters"></a>タスク パラメーター
 
@@ -62,19 +71,19 @@ OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレームは、Wi-
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897937" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_ NEGOTIATION_REQUEST_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897937)"><strong>WDI_TLV_P2P_GO_ NEGOTIATION_REQUEST_INFO</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>ネゴシエーション要求パラメーターを参照してください。 WfdRequestFrameType がネゴシエーションの移動要求の場合、ポートだけこの構造体で検証されます。</td>
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897963" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INVITATION_REQUEST_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897963)"><strong>WDI_TLV_P2P_INVITATION_REQUEST_INFO</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>招待要求のパラメーターです。 ポートは、wfdRequestFrameType は招待要求を場合、この構造体を調べるだけ必要があります。</td>
 </tr>
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897980" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_PROVISION_ DISCOVERY_REQUEST_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897980)"><strong>WDI_TLV_P2P_PROVISION_ DISCOVERY_REQUEST_INFO</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>プロビジョニングの検出要求のパラメーターです。 WfdRequestFrameType が、プロビジョニングの検出要求の場合ポートだけこの構造体で検証されます。</td>
 </tr>
 <tr class="odd">
@@ -87,7 +96,7 @@ OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレームは、Wi-
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898076" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898076)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>ポートによって送信されたフレームに含める必要がある 1 つまたは複数の i。</td>
 </tr>
 </tbody>
@@ -98,7 +107,9 @@ OID\_WDI\_タスク\_P2P\_送信\_要求\_アクション\_フレームは、Wi-
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_P2P\_送信\_要求\_アクション\_フレーム\_完了](ndis-status-wdi-indication-p2p-send-request-action-frame-complete.md)要件
+[NDIS\_状態\_WDI\_INDICATION\_P2P\_送信\_要求\_アクション\_フレーム\_完了](ndis-status-wdi-indication-p2p-send-request-action-frame-complete.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

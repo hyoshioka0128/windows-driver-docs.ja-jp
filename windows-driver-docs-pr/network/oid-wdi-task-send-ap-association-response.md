@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 56732f65c9841acbe365267f46acd4ca0534d3c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 90def4671f3e4e291747ec94eeb148840f5d4ad9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582067"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902676"
 ---
 # <a name="oidwditasksendapassociationresponse"></a>OID\_WDI\_タスク\_送信\_AP\_アソシエーション\_応答
 
@@ -41,7 +42,9 @@ OID\_WDI\_タスク\_送信\_AP\_アソシエーション\_IHV コンポーネ�
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_送信\_AP\_アソシエーション\_応答\_完了](ndis-status-wdi-indication-send-ap-association-response-complete.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_SEND\_AP\_ASSOCIATION\_RESPONSE\_COMPLETE](ndis-status-wdi-indication-send-ap-association-response-complete.md)
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

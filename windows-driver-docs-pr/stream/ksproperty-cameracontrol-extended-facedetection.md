@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 12ec1ae5972e0290528bbea782e8cadc8f1699fe
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845545"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902836"
 ---
 # <a name="kspropertycameracontrolextendedfacedetection"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION
 
@@ -37,7 +37,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION がオンとオフは、顔検�
 <tr class="header">
 <th>Scope</th>
 <th>コントロール</th>
-<th>型</th>
+<th>種類</th>
 </tr>
 </thead>
 <tbody>
@@ -165,8 +165,8 @@ FACEDETECTION をサポートする必要があります、ドライバーは、
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>モード</p></td>
-<td><p>使用されていません。 0 を指定する必要があります。</p></td>
+<td><p>Mode</p></td>
+<td><p>未使用。 0 を指定する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>最小/最大/ステップ</p></td>
@@ -185,7 +185,7 @@ FACEDETECTION をサポートする必要があります、ドライバーは、
 </tbody>
 </table>
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 顔検出をオンにすると、必要に応じて、3 a の処理を支援するために、ドライバーによって直接興味 (Roi) の顔の領域を使用できます。 Roi が KSPROPERTY 経由で構成されているすべてのユーザーが指定されている場合\_CAMERACONTROL\_拡張\_ROI\_Roi は優先顔検出 Roi ISPCONTROL と同時に、ユーザーを指定します。 Roi をオフに指定されたユーザー、顔検出 Roi が有効になります。
 

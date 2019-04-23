@@ -6,12 +6,13 @@ ms.date: 04/02/2018
 keywords:
 - NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e2f5abfc24f40b5ee495065ebbc3760d638334
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: ca0f0fd8c13d3de0c3835c6499637ae700c9222f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560897"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902478"
 ---
 # <a name="ndisstatuswdiindicationcipherkeyupdated"></a>NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED
 
@@ -20,10 +21,6 @@ ms.locfileid: "56560897"
 この通知が送信されるは、ドライバーがあるないオフロード RSN GTK キー更新中にのみ (を使用して、 [WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY](wdi-tlv-pm-protocol-offload-80211rsn-rekey.md)フィールドで、 [OID_WDI_SET_ADD_PM_PROTOCOL_OFFLOAD](oid-wdi-set-add-pm-protocol-offload.md)コマンド)。 ドライバーは、現在 Rsn GTK キー更新のオフロード状態にあるかどうか、この方法で示す必要がありますいないを使用してクエリを実行する場合は、更新されたキー情報を許可する必要がありますが、 [OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)際のコマンドオフロード状態です。
 
 たとえば、ドライバーまたはファームウェア WNM スリープ モードの応答で新しい GTK/iGTK を受信する場合に、この通知を送信は。
-
-| オブジェクト |
-| --- |
-| ポート |
 
 ## <a name="payload-data"></a>ペイロード データ
 

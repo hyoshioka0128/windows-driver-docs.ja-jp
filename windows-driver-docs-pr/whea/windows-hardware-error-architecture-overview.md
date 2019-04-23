@@ -1,18 +1,28 @@
 ---
-title: Windows ハードウェア エラー アーキテクチャの概要
-description: Windows ハードウェア エラー アーキテクチャの概要
+title: Windows Hardware Error Architecture の概要
+description: Windows Hardware Error Architecture の概要
 ms.assetid: 859caa70-371c-4191-baf9-52a38411164a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af71244e7a12dc10137516ece79d2c0369c7d9d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: bfeb0802333e7e3f1393be049dad71b98e8111d2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527715"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902440"
 ---
-# <a name="windows-hardware-error-architecture-overview"></a>Windows ハードウェア エラー アーキテクチャの概要
+# <a name="windows-hardware-error-architecture-overview"></a>Windows Hardware Error Architecture の概要
 
+Windows 10、バージョンが 1903 WHEA に使いやすいインターフェイスが含まれています。  詳細については、次のページを参照してください。
+
+- [**WheaAddErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheaadderrorsourcedevicedriver)
+- [**WheaReportHwErrorDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
+- [**WheaRemoveErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-whearemoveerrorsourcedevicedriver)
+- [**WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-whea_error_source_configuration_device_driver)
+- [*WHEA_ERROR_SOURCE_READY_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-_whea_error_source_ready_device_driver)
+- [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
+- [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
 
 ここでは、次のトピックについて説明します。
 

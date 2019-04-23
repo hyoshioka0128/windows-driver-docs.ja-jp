@@ -3,12 +3,12 @@ title: ファームウェア WEG に関する FAQ
 description: ファームウェア WEG - よく寄せられる質問 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b6443d251b8ba31ce4c08a77893c7255b760881d
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.openlocfilehash: fead67ee21c49364b6effe1c03a141e1cd2f22d3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441929"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902736"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>ファームウェア WEG:よく寄せられる質問 (FAQ)
 
@@ -104,11 +104,11 @@ ms.locfileid: "58441929"
 
 **Q:** 32 ビットの vs への依存関係/影響とは64 ビットの OS UEFI へ、またはその逆のレガシ ブートからしようとして場合 UEFI の 64 ビットまたは 32 ビットの UEFI ファームウェアでしょうか。
 
-> **A:** Windows の UEFI ブートの 1 つの制限は OS「ビット数」(質問 7 を参照) が一致である、UEFI にインストールされていることを起動することのみできます 32 ビット UEFI を使っている場合は 32 ビット Windows のみインストールできますで 64 ビット Windows が必要です 64 ビットの UEFI または CSM。 ただし。、システムがない場合、CSM、Win7 64 ビット Windows OS を起動することはできません。
+> **A:** Windows の UEFI ブートの 1 つの制限は、OS「ビット数」(質問 7 を参照) が一致である、UEFI にインストールされていることを起動することができますのみです。 32 ビット UEFI を使っている場合は、32 ビット Windows のみインストールできます。 64 ビット Windows では、64 ビットの UEFI または CSM が必要です。 ただし、システムがない場合、CSM、Win7 64 ビット Windows OS を起動することはできません。
 
 **Q:** システムが起動、実行時にデータに影響を与えることがなく GPT ブートに従来の MBR ブートを使用して変換できますか。
 
-> **A:** No. Diskpart.exe などの Microsoft ツールを使用して、データの損失が発生します。 MBR ブートと GPT ブートは、2 つの異なるブート機構をこの変更を実装するために、ディスクからすべてのデータを削除するディスクに変更が必要なです。 この変更を試みる前にデータをバックアップします。
+> **A:** いいえ。 Diskpart.exe などの Microsoft ツールを使用して、データの損失が発生します。 MBR ブートと GPT ブートは、2 つの異なるブート機構をこの変更を実装するために、ディスクからすべてのデータを削除するディスクに変更が必要なです。 この変更を試みる前にデータをバックアップします。
 
 ## <a name="related-resources"></a>関連リソース
 

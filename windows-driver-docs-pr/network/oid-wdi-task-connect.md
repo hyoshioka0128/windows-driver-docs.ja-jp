@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_CONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d077a2641f023a8d6fa33e82e5b7a188b2f98a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8526e4ea1afb6b5db683ff0dc669d55116cb4a82
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539496"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902436"
 ---
 # <a name="oidwditaskconnect"></a>OID\_WDI\_タスク\_接続
 
@@ -57,7 +58,7 @@ MFPEnabled と HostFIPSModeEnabled 両方とも 1 に設定、接続パラメー
 | TLV                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                                                                                                                                  |
 |--------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |                                |          | 接続パラメーター。                                                                                                                                                                                                                                                                                                                                                                                   |
-| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | X                              |          | 優先される候補の一覧は、BSS エントリを接続します。 ポートは必要があります、リストがなくなるまで、BSS これらのエントリまたは正常に完了した接続のいずれかに接続しようとしています。 ポートは、必要な場合、エントリを優先できます。 アダプターが接続 BSS 選択をオーバーライド ビットを設定した場合、許可/拒否の一覧に従っている限り、この一覧にない BSS を選択できます。 |
+| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | x                              |          | 優先される候補の一覧は、BSS エントリを接続します。 ポートは必要があります、リストがなくなるまで、BSS これらのエントリまたは正常に完了した接続のいずれかに接続しようとしています。 ポートは、必要な場合、エントリを優先できます。 アダプターが接続 BSS 選択をオーバーライド ビットを設定した場合、許可/拒否の一覧に従っている限り、この一覧にない BSS を選択できます。 |
 
  
 
@@ -65,10 +66,14 @@ MFPEnabled と HostFIPSModeEnabled 両方とも 1 に設定、接続パラメー
 
 
 [NDIS\_状態\_WDI\_INDICATION\_CONNECT\_完了](ndis-status-wdi-indication-connect-complete.md)
+
 ## <a name="unsolicited-indication"></a>要請されていないを示す値
 
+[NDIS\_状態\_WDI\_INDICATION\_アソシエーション\_結果](ndis-status-wdi-indication-association-result.md)
 
-[NDIS\_状態\_WDI\_INDICATION\_アソシエーション\_結果](ndis-status-wdi-indication-association-result.md)要件
+[NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

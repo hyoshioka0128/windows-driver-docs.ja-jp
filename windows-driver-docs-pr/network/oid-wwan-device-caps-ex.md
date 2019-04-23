@@ -4,19 +4,20 @@ description: OID_WWAN_DEVICE_CAPS_EX は、OID_WWAN_DEVICE_CAPS から似てい�
 ms.assetid: BE664B41-3FE7-4E93-8739-12BD2F0AE5B8
 keywords:
 - OID_WWAN_DEVICE_CAPS_EX、ex デバイスの機能、executor あたりの OID
-ms.date: 08/08/2017
+ms.date: 04/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 89347328408ea03295a7c1ddc2b9d35bb4d56abe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d6e8f7efe2c671f559714562899953b9fc5d3d8b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574581"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903226"
 ---
 # <a name="oidwwandevicecapsex"></a>OID\_WWAN\_デバイス\_CAP\_例
 
 
-OID\_WWAN\_デバイス\_CAP\_EX がからに似ていますが、別の OID [OID\_WWAN\_デバイス\_CAP](oid-wwan-device-caps.md)します。 OID\_WWAN\_デバイス\_CAP\_EX が、実行プログラムあたり OID。 この OID を LTE 接続 APN 構成など、省略可能な機能の拡張機能を含む、ハードウェアのデバイス/実行プログラムの機能を示すためには機能します。
+OID\_WWAN\_デバイス\_CAP\_EX がのような[OID\_WWAN\_デバイス\_CAP](oid-wwan-device-caps.md)実行プログラムあたり OID_WWAN_ とは異なり、OID が、これは、デバイスごとの OID DEVICE_CAPS します。 この OID を LTE 接続 APN 構成など、省略可能な機能の拡張機能を含む、ハードウェアのデバイス/実行プログラムの機能を示すためには機能します。
 
 ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_後で送信する前に、元の要求に必要な[ **NDIS\_状態\_WWAN\_デバイス\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782396)状態通知を含む、 [ **NDIS\_WWAN\_デバイス\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782401)を格納する構造体、 [ **WWAN\_デバイス\_CAP\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt799889)構造体には、デバイスの機能に関する情報を提供します。
 
@@ -26,7 +27,7 @@ OID\_WWAN\_デバイス\_CAP\_EX がからに似ていますが、別の OID [OI
 
 要求のセットには適用されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 レポート サービスの拡張機能を実際のデバイス ドライバーを含む全体にドライバーが重要です。 ドライバーは、サービスをサポートしている基になるハードウェアでサポートされていない場合は、サービスの機能は FALSE としてマークする必要があります。
@@ -41,7 +42,17 @@ OID\_WWAN\_デバイス\_CAP\_EX は各 executor の機能の取得にも使用�
 
 Windows 10 バージョン 1703 より前の Windows のバージョンがまだ既存を使用[OID\_WWAN\_デバイス\_CAP](oid-wwan-device-caps.md); マルチ executor 対応モデムでの動作がサポートされているシナリオではありません。 Ihv は、この動作を定義する必要があります。
 
-<a name="requirements"></a>必要条件
+### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+
+Windows 10、バージョンが 1903 年以降 OID_WWAN_DEVICE_CAPS_EX は、リビジョン 2 にアップグレードされています。 ミニポート ドライバーでは、この OID とミニポート ドライバーは、5 G をサポートしている場合が含まれているデータ構造体のリビジョン 2 を使用する必要があります。
+
+この OID を使用してホストのクエリ機能、ミニポート ドライバーする必要がありますオンと基になるハードウェアが 5 G 携帯電話の機能をサポートしているかどうか。 ミニポート ドライバー対応するビットマスクを設定する場合は、 **WwanDataClass**のフィールド、 [ **WWAN_DEVICE_CAPS_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps_ex)ハードウェア 1,000万に従って構造体。
+
+さらに、 **WwanOptionalServiceCaps**のフィールド、 **WWAN_DEVICE_CAPS_EX**すべての新しい 5 G に関連する拡張機能のサポートをカバーする構造体の新しい省略可能なサービスのビットが定義されています。
+
+5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -2,16 +2,17 @@
 title: WDI_TLV_STATION_CAPABILITIES
 description: WDI_TLV_STATION_CAPABILITIES では、ステーションの機能を含む TLV です。
 ms.assetid: 567445F1-EEDC-4302-B709-ED76D044A971
-ms.date: 07/18/2017
+ms.date: 02/08/2019
 keywords:
 - WDI_TLV_STATION_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 582c1a38060f424081a50a142843a474918670f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 70b35e7549410cf9d7e1cf8dc2cc623865d23b26
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581134"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903258"
 ---
 # <a name="wditlvstationcapabilities"></a>WDI\_TLV\_ステーション\_機能
 
@@ -125,12 +126,21 @@ WDI\_TLV\_ステーション\_機能は、ステーションの機能を含む T
 <td>切断されたスタンバイはサポートされているかどうかを指定します。
 <p>有効な値は 0 (サポートされていません) および 1 (サポートです)。</p></td>
 </tr>
+<tr class="odd">
+<td>UINT8</td>
+<td>ドライバーが開始側として正常時間測定 (FTM) プロトコルをサポートするかどうかを指定します。
+<p>有効な値は 0 (サポートされていません) および 1 (サポートです)。</p></td>
+</tr>
+<tr class="even">
+<td>UINT8</td>
+<td>FTM 要求タスクごとにクエリ可能なターゲットの Sta の最大数。</td>
+</tr>
 </tbody>
 </table>
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

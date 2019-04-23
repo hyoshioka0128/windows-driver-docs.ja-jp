@@ -8,12 +8,13 @@ keywords:
 - カーネル モード ドライバー フレームワーク WDK のリビジョン履歴
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 297fa37b477f2ef82ff53b7d6b6849add6cfcddb
-ms.sourcegitcommit: 5cbc8ac1db572e92abeefebb39f5e72834785bc3
+ms.custom: 19H1
+ms.openlocfilehash: 358d5eb53fc4005f17577f79c2644b2074423ae4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56754462"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903068"
 ---
 # <a name="kmdf-version-history"></a>KMDF のバージョンの履歴
 
@@ -24,6 +25,7 @@ ms.locfileid: "56754462"
 
 |KMDF バージョン|Release メソッド|このバージョンの Windows に含まれる|これを使用してドライバーを実行します。|
 |--- |--- |--- |--- |
+|1.29|WDK リリースされません。|Windows 10 バージョン 1903 (2019年の更新プログラム、19 H 1 年 3 月)|Windows 10、バージョンが 1903 以降|
 |1.27|Windows 10、バージョンは 1809 WDK|Windows 10、バージョンは 1809 (2018 の年 10 月の更新、レッドス トーン 5)|Windows 10、1809 およびそれ以降のバージョン|
 |1.25|Windows 10、バージョン 1803 WDK|Windows 10、バージョン 1803 (2018 年 4 月の更新、Redstone 4)|Windows 10、バージョン 1803 以降|
 |1.23|Windows 10 バージョン 1709 WDK|Windows 10 バージョン 1709 (Fall Creators Update, レッドス トーン 3)|Windows 10 バージョン 1709 以降|
@@ -41,9 +43,13 @@ ms.locfileid: "56754462"
 
 Microsoft Visual Studio 2017 で、Windows Driver Kit (WDK) を使用すると、Windows 7 以降を実行しているドライバーをビルドします。
 
-コールバックの完全な一覧とメソッド、およびどのフレームワークとバージョンに適用される、[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)を参照してください。
+コールバックの完全な一覧とメソッド、およびどのフレームワークとバージョンに適用される、次を参照してください。 [WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
 
-KMDF ドライバーを Windows 10 の新機能については、[WDF ドライバーの新](index.md)を参照してください。
+KMDF ドライバーを Windows 10 の新機能については、次を参照してください。 [WDF ドライバーの新](index.md)します。
+
+## <a name="kmdf-version-129"></a>KMDF バージョン 1.29
+
+版 1.25 から変更されていません。
 
 ## <a name="kmdf-version-127"></a>KMDF バージョン 1.27
 
@@ -70,7 +76,7 @@ KMDF ドライバーを Windows 10 の新機能については、[WDF ドライ�
 * 追加**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**フラグ[ **WDF_DMA_ENABLER_CONFIG_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh439491)
 * 追加**STATUS_WDF_TOO_MANY_TRANSFERS**の値を返す[ **WdfDmaTransactionInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff547099)と[ **WdfDmaTransactionDmaCompleted**](https://msdn.microsoft.com/library/windows/hardware/ff547039)
 * 1 つの転送に出力するための出力メッセージを追加[ **! wdfkd.wdfdmatransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff565721)と[ **! wdfkd.wdfdmaenabler**](https://msdn.microsoft.com/library/windows/hardware/ff565717)
-* 1 つの転送 DMA に関する詳細については、[転送 DMA の 1 つを使用して](using-single-transfer-dma.md)を参照してください。
+* 1 つの転送 DMA に関する詳細については、次を参照してください。[転送 DMA の 1 つを使用して](using-single-transfer-dma.md)します。
 
 ## <a name="kmdf-version-115"></a>KMDF バージョン 1.15
 
@@ -81,9 +87,9 @@ KMDF ドライバーを Windows 10 の新機能については、[WDF ドライ�
 
 KMDF バージョン 1.13 は、次の機能を追加します。
 
--   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、[、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)を参照してください。
--   高解像度のタイマーをサポートします。 詳細については、[を使用してタイマー](using-timers.md)を参照してください。
--   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、[を使用してタイマー](using-timers.md)を参照してください。
+-   追加**CanWakeDevice**メンバー [ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)からデバイスを使用できる割り込みをサポートする構造体、低電力 Dx 状態は、完全に D0 状態に戻ります。 詳細については、次を参照してください。 [、割り込みを使用して、デバイスのスリープを解除する](using-an-interrupt-to-wake-a-device.md)します。
+-   高解像度のタイマーをサポートします。 詳細については、次を参照してください。[を使用してタイマー](using-timers.md)します。
+-   システムが低電力状態の場合有効期限が切れる場合、システムがウェイクしないタイマーをサポートします。 詳細については、次を参照してください。[を使用してタイマー](using-timers.md)します。
 -   説明した次の KMDF/UMDF メソッド[デバイス プロパティの統合モデルにアクセスする](accessing-the-unified-device-property-model.md):
     -   [**WdfDeviceAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265599)
     -   [**WdfDeviceAssignProperty**](https://msdn.microsoft.com/library/windows/hardware/dn265601)
@@ -92,7 +98,7 @@ KMDF バージョン 1.13 は、次の機能を追加します。
     -   [**WdfFdoInitAllocAndQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265612)
     -   [**WdfFdoInitQueryPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/dn265613)
 
-UMDF バージョンについては、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
+UMDF バージョンについては、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
 
 ## <a name="kmdf-version-111"></a>KMDF Version 1.11
 

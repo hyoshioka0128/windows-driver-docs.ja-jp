@@ -4,12 +4,13 @@ description: このセクションには、WDI プロパティ Oid にはが含�
 ms.assetid: 1B1B54B8-6CE4-4C17-AAF8-7394210B09E8
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f9fe7d6af0232a60f10cd79e9314215d5d8039f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 4165572608ab4c6ca2b722b9d3f17017b22b35a8
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572114"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903798"
 ---
 # <a name="wdi-property-oids"></a>WDI プロパティ OID
 
@@ -61,6 +62,7 @@ Wi-fi ドライバー インターフェイス (WDI) のオブジェクト識別
 | [OID\_WDI\_設定\_受信\_パケット\_フィルター](oid-wdi-set-receive-packet-filter.md)                     |     |     | R   |
 | [OID\_WDI\_設定\_削除\_PM\_プロトコル\_オフロード](oid-wdi-set-remove-pm-protocol-offload.md)          |     |     | O   |
 | [OID\_WDI\_設定\_削除\_WOL\_パターン](oid-wdi-set-remove-wol-pattern.md)                           |     |     | O   |
+| [OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md)                                      |     |     | O   |
 | [OID\_WDI\_設定\_TCP\_オフロード\_パラメーター](oid-wdi-set-tcp-offload-parameters.md)                   |     |     | O   |
 | [OID\_WDI\_TCP\_RSC\_STATISTICS](oid-wdi-tcp-rsc-statistics.md)                                    |     |     | O   |
 

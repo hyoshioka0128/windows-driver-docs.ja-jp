@@ -4,12 +4,13 @@ description: このセクションには、WDI TLVs (型の長さの値) が含�
 ms.assetid: BAE1E159-F0CB-4A74-9E35-4361C94518E6
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e58e3b9266faed7cb11ca6f8fd09099891088b8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 205178436f9bd8e7bbcd3dbc5c7cea6332889060
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557818"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903244"
 ---
 # <a name="wdi-miniport-driver-tlvs"></a>WDI ミニポート ドライバー TLVs
 
@@ -132,6 +133,11 @@ ms.locfileid: "56557818"
 -   [**WDI\_TLV\_FT\_REASSOC\_パラメーター**](wdi-tlv-ft-reassoc-parameters.md)
 -   [**WDI\_TLV\_FT\_RSNIE**](wdi-tlv-ft-rsnie.md)
 -   [**WDI\_TLV\_FT\_SNONCE**](wdi-tlv-ft-snonce.md)
+-   [**WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS**](wdi-tlv-ftm-number-of-measurements.md)
+-   [**WDI_TLV_FTM_REQUEST_TIMEOUT**](wdi-tlv-ftm-request-timeout.md)
+-   [**WDI_TLV_FTM_RESPONSE**](wdi-tlv-ftm-response.md)
+-   [**WDI_TLV_FTM_RESPONSE_STATUS**](wdi-tlv-ftm-response-status.md)
+-   [**WDI_TLV_FTM_TARGET_BSS_ENTRY**](wdi-tlv-ftm-target-bss-entry.md)
 -   [**WDI\_TLV\_取得\_自動\_POWER\_保存**](wdi-tlv-get-auto-power-save.md)
 -   [**WDI\_TLV\_HESSID**](wdi-tlv-hessid.md)
 -   [**WDI\_TLV\_HESSID\_情報**](wdi-tlv-hessid-info.md)
@@ -154,6 +160,8 @@ ms.locfileid: "56557818"
 -   [**WDI\_TLV\_IPV4\_LSO\_V2**](wdi-tlv-ipv4-lso-v2.md)
 -   [**WDI\_TLV\_IPV6\_チェックサム\_オフロード**](wdi-tlv-ipv6-checksum-offload.md)
 -   [**WDI\_TLV\_IPV6\_LSO\_V2**](wdi-tlv-ipv6-lso-v2.md)
+-   [**WDI_TLV_LCI_REPORT_BODY**](wdi-tlv-lci-report-body.md)
+-   [**WDI_TLV_LCI_REPORT_STATUS**](wdi-tlv-lci-report-status.md)
 -   [**WDI\_TLV\_リンク\_品質\_バー\_マップ**](wdi-tlv-link-quality-bar-map.md)
 -   [**WDI\_TLV\_リンク\_状態\_変更\_パラメーター**](wdi-tlv-link-state-change-parameters.md)
 -   [**WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター**](wdi-tlv-low-latency-connection-quality-parameters.md)
@@ -280,8 +288,26 @@ ms.locfileid: "56557818"
 -   [**WDI\_TLV\_受信\_COALESCING\_機能**](wdi-tlv-receive-coalescing-capabilities.md)
 -   [**WDI\_TLV\_受信\_COALESCING\_構成**](wdi-tlv-receive-coalescing-config.md)
 -   [**WDI\_TLV\_受信\_フィルター\_フィールド**](wdi-tlv-receive-filter-field.md)
+-   [**WDI_TLV_REQUEST_LCI_REPORT**](wdi-tlv-request-lci-report.md)
+-   [**WDI_TLV_RETRY_AFTER**](wdi-tlv-retry-after.md)
 -   [**WDI\_TLV\_ローミング\_必要\_パラメーター**](wdi-tlv-roaming-needed-parameters.md)
 -   [**WDI_TLV_RSN_KEY_INFO**](wdi-tlv-rsn-key-info.md)
+-   [**WDI_TLV_RTT**](wdi-tlv-rtt.md)
+-   [**WDI_TLV_RTT_ACCURACY**](wdi-tlv-rtt-accuracy.md)
+-   [**WDI_TLV_RTT_VARIANCE**](wdi-tlv-rtt-variance.md)
+-   [**WDI_TLV_SAE_ANTI_CLOGGING_TOKEN**](wdi-tlv-sae-anti-clogging-token.md)
+-   [**WDI_TLV_SAE_COMMIT_REQUEST**](wdi-tlv-sae-commit-request.md)
+-   [**WDI_TLV_SAE_COMMIT_RESPONSE**](wdi-tlv-sae-commit-response.md)
+-   [**WDI_TLV_SAE_CONFIRM**](wdi-tlv-sae-confirm.md)
+-   [**WDI_TLV_SAE_CONFIRM_REQUEST**](wdi-tlv-sae-confirm-request.md)
+-   [**WDI_TLV_SAE_CONFIRM_RESPONSE**](wdi-tlv-sae-confirm-response.md)
+-   [**WDI_TLV_SAE_ELEMENT**](wdi-tlv-sae-element.md)
+-   [**WDI_TLV_SAE_FINITE_CYCLIC_GROUP**](wdi-tlv-sae-finite-cyclic-group.md)
+-   [**WDI_TLV_SAE_INDICATION_TYPE**](wdi-tlv-sae-indication-type.md)
+-   [**WDI_TLV_SAE_REQUEST_TYPE**](wdi-tlv-sae-request-type.md)
+-   [**WDI_TLV_SAE_SCALAR**](wdi-tlv-sae-scalar.md)
+-   [**WDI_TLV_SAE_SEND_CONFIRM**](wdi-tlv-sae-send-confirm.md)
+-   [**WDI_TLV_SAE_STATUS**](wdi-tlv-sae-status.md)
 -   [**WDI\_TLV\_セーフ\_モード\_パラメーター**](wdi-tlv-safe-mode-parameters.md)
 -   [**WDI\_TLV\_スキャン\_熟考\_時間**](wdi-tlv-scan-dwell-time.md)
 -   [**WDI\_TLV\_スキャン\_モード**](wdi-tlv-scan-mode.md)

@@ -6,12 +6,13 @@ keywords:
 - NetAdapterCx NetCx ネットワーク データを転送する、ネットワーク データを転送します。
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 544b00d8e0e12184748bc3cb60617aad0a08a798
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1dab2b55fa2da0917c440d1c3a073b2c88793f9b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582498"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902488"
 ---
 # <a name="transferring-network-data"></a>ネットワーク データの転送
 
@@ -25,5 +26,5 @@ NetAdapterCx モデルでは、ネットワーク データがパケット記述
 
 - [Packet descriptors and extensions (パケットの記述子と拡張機能)](packet-descriptors-and-extensions.md)
 - [送信および受信キュー](transmit-and-receive-queues.md)
-- [リング バッファーを使用してください。](using-the-ring-buffer.md)
+- [Net のリングと net リングを行う反復子](net-rings-and-net-ring-iterators.md)
 - [Network data buffer management (ネットワーク データ バッファーの管理)](network-data-buffer-management.md)

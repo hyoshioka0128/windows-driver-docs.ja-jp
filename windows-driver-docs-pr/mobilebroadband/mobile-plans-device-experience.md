@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/15/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f54fcbcdefaf32e22ed359c16acf1b74a571f81
-ms.sourcegitcommit: 624427449978a8a82e77a3a31b9e22e3263793ae
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055723"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903974"
 ---
 # <a name="mobile-plans-windows-10-device-experience"></a>プランの Windows 10 のモバイル デバイス エクスペリエンス
 

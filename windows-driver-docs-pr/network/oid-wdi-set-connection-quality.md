@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_CONNECTION_QUALITY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 298e7431ea5e9b150f243a7781a1da62994dbad4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 7a14f8551a6a03841072c36587c15ad5ff9925eb
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538608"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903352"
 ---
 # <a name="oidwdisetconnectionquality"></a>OID\_WDI\_設定\_接続\_品質
 
@@ -34,7 +35,7 @@ OID\_WDI\_設定\_接続\_品質は、特定の仮想化されたポートの接
 | TLV                                                                                                                       | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_接続\_品質\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926259)                           |                                |          | 必要な Wi-fi 接続品質ヒント。                                                                                                                                                     |
-| [**WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn897843) |                                | X        | 接続品質の低待機時間の動作です。 これは、接続の品質は に設定されているかどうかに必要な[ **WDI\_接続\_品質\_低\_待機時間**](https://msdn.microsoft.com/library/windows/hardware/dn897807)します。 |
+| [**WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn897843) |                                | x        | 接続品質の低待機時間の動作です。 これは、接続の品質は に設定されているかどうかに必要な[ **WDI\_接続\_品質\_低\_待機時間**](https://msdn.microsoft.com/library/windows/hardware/dn897807)します。 |
 
  
 
@@ -42,7 +43,8 @@ OID\_WDI\_設定\_接続\_品質は、特定の仮想化されたポートの接
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

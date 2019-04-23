@@ -1,76 +1,183 @@
 ---
-title: デバッガー オブジェクトを LINQ で使用します。
+title: デバッガー オブジェクトでの LINQ の使用
 description: デバッガー オブジェクトを LINQ で使用します。 LINQ 構文は、データを検索および操作デバッガー オブジェクトを使用できます。
 keywords:
-- デバッガー オブジェクトを LINQ で使用します。
-ms.date: 08/10/2017
+- デバッガー オブジェクトでの LINQ の使用
+ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ac8dabc17e446eac28706c309d099663184d09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e3cbc22e4063fc75bd6358e6363d1f346243e78d
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527824"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902968"
 ---
-# <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトを LINQ で使用します。
+# <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトでの LINQ の使用
 
-LINQ 構文は、データを検索および操作デバッガー オブジェクトを使用できます。 LINQ に、構造化照会言語 (SQL) データベースのクエリに使用される概念的に似ています。 さまざまな LINQ メソッドを使用して、検索、フィルター、デバッグ データを解析することができます。 LINQC#メソッド構文を使用します。 LINQ および LINQ の詳細についてはC#構文では、次のトピックを参照してください。
+LINQ 構文は、データを検索および操作デバッガー オブジェクトを使用できます。 デバッガー コマンドを使用する場合に比べてより一貫したエクスペリエンス dx コマンドを使用して、LINQ 構文を使用できます。 出力とオプションは、デバッガーで表示しているオブジェクトに関係なく一貫したです。 LINQ クエリを使用すると、といった質問「ほとんどのスレッドを実行している上位 5 個のプロセスは何ですか?」できます。
 
-[LINQ (Language-integrated Query)](https://msdn.microsoft.com/library/bb397926.aspx)
+デバッガー オブジェクトは、「デバッガーの」ルート名前空間に射影されます。 プロセス、モジュール、スレッド、スタック、スタック フレーム、およびローカル変数は、LINQ クエリで使用するために利用します。
 
-[C# での LINQ の概要](https://msdn.microsoft.com/library/bb397933.aspx)
+LINQ に、構造化照会言語 (SQL) データベースのクエリに使用される概念的に似ています。 さまざまな LINQ メソッドを使用して、検索、フィルター、デバッグ データを解析することができます。 LINQC#メソッド構文を使用します。 LINQ および LINQ の詳細についてはC#構文を参照してください[での LINQ の概要C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/getting-started-with-linq)
+
+デバッガーのサポートで使用される LINQ は、LINQ の「メソッド構文」と、「クエリ構文ではなく」を使用します。 違いについての詳細が見つかります[LINQ (Language-Integrated Query)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq)します。
+
+デバッガー オブジェクトで、次のように LINQ コマンドを使用できます。 すべての。存在する。カウントします。まずは。、フラット化します。GroupBy、します。前の。OrderBy、します。OrderByDescending、します。選択するとします。どこ。 これらのメソッドが (可能な限り) に従って、 C# LINQ メソッド フォーム。
 
 ## <a name="native-debugger-objects"></a>ネイティブ デバッガー オブジェクト
 
 ネイティブ デバッガー オブジェクトは、さまざまな構成要素とデバッガー環境の動作を表します。 デバッガー オブジェクトの例では、次に示します。
 
--   セッション
--   スレッド/スレッド
--   プロセス/処理
--   スタック フレームのスタック フレーム/
--   ローカル変数
--   モジュール/モジュール
--   ユーティリティ
--   状態
--   設定
+- セッション
+- スレッド/スレッド
+- プロセス/処理
+- スタック フレームのスタック フレーム/
+- ローカル変数
+- モジュール/モジュール
+- ユーティリティ
+- 状態
+- 設定
 
-NatVis デバッガー オブジェクトを使用することができます。 詳細については、[NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)を参照してください。 JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください[JavaScript 拡張機能のネイティブ デバッガー オブジェクト。](native-objects-in-javascript-extensions.md)
+NatVis デバッガー オブジェクトを操作することもできます。 詳細については、次を参照してください。 [NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)します。 JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。 操作する方法についてC++ドライバーのオブジェクトを参照してくださいと[デバッガー データ モデルC++概要](data-model-cpp-overview.md)します。
 
 ## <a name="dx-command"></a>Dx コマンド
 
 ここでの使用例については、dx コマンドの使用に関する詳細については、dx コマンドを[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)します。
 
+## <a name="developing-a-linq-query"></a>LINQ クエリの開発
 
-## <a name="function-objects-lambda-expressions"></a>関数オブジェクト (ラムダ式)
+デバッガー オブジェクトの LINQ クエリを開発する方法の 1 つでは、最初に、クエリで使用されるデバッガー オブジェクトを検索するデータ モデルを調べるために表示されている DML のリンクを使用します。
 
-データのクエリに使用されるメソッドの多くは、ユーザーがコレクション内のオブジェクト間で関数を指定したを繰り返し実行するという考え方に基づいています。 クエリを実行し、デバッガーでのデータを操作する機能をサポートするためには、dx コマンドは、相当するものを使用してラムダ式をサポートしています。C#構文。 使用して、ラムダ式が定義されている、=&gt;演算子として次のとおりです。
+この例では、カーネルのデバッグ セッションとスレッドの数にそれらのプロセスの各プロセスの一覧を表示するお知らせします。
 
-(引数) =&gt; (結果)
-
-Dx で LINQ を使用する方法については、この簡単な例 5 および 7 を加算するをお試しください。
+この調査を開始するのにには、最上位レベル デバッガー オブジェクトを表示するのに dx コマンドを使用しましたできます。
 
 ```dbgcmd
-kd> dx ((x, y) => (x + y))(5, 7) 
+0: kd> dx Debugger
+Debugger
+    Sessions
+    Settings
+    State
+    Utility
 ```
 
-Dx コマンドの表示では、ラムダ式をバックアップし、12 の結果を表示します。
+表示が含まれている DML のリンクをクリックしてためセッションが最も興味深いことを判断最上位レベルのトピックをクリックすると、*プロセス*します。 
 
 ```dbgcmd
-((x, y) => (x + y))(5, 7)  : 12
+0: kd> dx -r1 Debugger.Sessions[0]
+Debugger.Sessions[0]                 : Remote KD: KdSrv:Server=@{<Local>},Trans=@{NET:Port=50005,Key=MyKey}
+    Processes
+    Id               : 0
+    Attributes
 ```
 
-このラムダ式の例では、「こんにちは」と"World"の文字列を結合します。
+クリックし、特定のプロセスを見てまでさらに表示して、*スレッド*に関連付けられたプロセスが使用できることです。 をクリックして*スレッド*プロセスの 1 つは、そのプロセスに関連付けられているスレッドのすべての利用を参照してください。
+
 
 ```dbgcmd
-kd> dx ((x, y) => (x + y))("Hello", "World")
-((x, y) => (x + y))("Hello", "World") : HelloWorld
+0: kd> dx -r1 Debugger.Sessions[0].Processes[1428].Threads
+Debugger.Sessions[0].Processes[1428].Threads
+    [0x598]          : <Unable to get stack trace> [Switch To]
+    [0x1220]         : <Unable to get stack trace> [Switch To]
+    [0x6f8]          : nt!KiSwapContext+0x76 (fffff806`4466a186)  [Switch To]
+    [0x128c]         : <Unable to get stack trace> [Switch To]
+    [0x27e4]         : nt!KiSwapContext+0x76 (fffff806`4466a186)  [Switch To] 
+```
+
+プロセスに関連付けられているスレッドの数を表示する必要があるデータがデバッガーのオブジェクト モデルで使用できることがわかりました。
+
+使用して LINQ クエリを少し短くする、[システム定義変数](#system-defined-variables)現在のセッションに関連付けられているプロセスを表示するには、このトピックの後半で説明します。
+
+```dbgcmd
+0: kd> dx @$cursession.Processes
+@$cursession.Processes                
+    [0x0]            : Idle [Switch To]
+    [0x4]            : System [Switch To]
+    [0x90]           : Registry [Switch To]
+...
+```
+
+次に、select ステートメントを追加します。 最初に、[名前] フィールドを指定できます。
+
+```dbgcmd
+0: kd> dx @$cursession.Processes.Select(p => p.Name)
+@$cursession.Processes.Select(p => p.Name)                
+    [0x0]            : Idle
+    [0x4]            : System
+    [0x90]           : Registry
+...
+```
+
+ここでは、スレッドの数も必要です。 2 つのフィールドがあるため、作成、匿名型を使用して、*新しい*と同様に、C#の匿名型の構文に示す[ユーザー定義変数](#user-defined-variables)します。
+
+```dbgcmd
+dx @$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})
+```
+
+、そのコマンドを 'dx' が実際に名前を印刷できなくなります、そのための追加 - r2 名前とスレッドを表示する (recurse 2 レベル)。
+
+```dbgcmd
+dx -r2 @$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})
+@$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})                
+    [0x0]           
+        Name             : Idle
+        Threads         
+    [0x4]           
+        Name             : System
+        Threads         
+    [0x90]          
+        Name             : Registry
+        Threads       
+```
+
+この時点で、プロセスの名前とスレッドの一覧を表示します。 表示するには、ThreadCount を使用して、*します。Count()* メソッド。
+
+
+```dbgcmd
+0: kd> dx -r2 @$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()})
+@$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()})                
+    [0x0]           
+        Name             : Idle
+        ThreadCount      : 0x4
+    [0x4]           
+        Name             : System
+        ThreadCount      : 0xe7
+    [0x90]          
+        Name             : Registry
+        ThreadCount      : 0x4
+...
+```
+
+どのプロセスがある多数のスレッドを表示するスレッドの数を使用して一覧の順序*OrderByDescending*します。
+
+```dbgcmd
+0: kd> dx -r2 @$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()}).OrderByDescending(p => p.ThreadCount)
+@$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()}).OrderByDescending(p => p.ThreadCount)                
+    [0x4]           
+        Name             : System
+        ThreadCount      : 0xe7
+    [0xa38]         
+        Name             : svchost.exe
+        ThreadCount      : 0x45
+    [0x884]         
+        Name             : MemCompression
+        ThreadCount      : 0x3e
+```
+
+ グリッドの書式設定された変更を表示するために、'-r2' を '-g'。 [グリッド] 列に適切に表示されるため、再帰のレベルは指定するのには必要ありません。 最後に、10 進数の値を出力する '、d' 形式の子を追加します。
+
+```dbgcmd
+0: kd> dx -g @$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()}).OrderByDescending(p => p.ThreadCount),d
+===========================================================================================
+=            = Name                                                         = ThreadCount =
+===========================================================================================
+= [4]        - System                                                       - 231         =
+= [2616]     - svchost.exe                                                  - 69          =
+= [2180]     - MemCompression                                               - 62          =
+= [968]      - explorer.exe                                                 - 61          =
 ```
 
 ## <a name="debugger-objects-examples"></a>デバッガー オブジェクトの例
-
-デバッガー オブジェクトは、「デバッガーの」ルート名前空間に射影されます。 プロセス、モジュール、スレッド、スタック、スタック フレーム、およびローカル変数は、LINQ クエリで使用するために利用します。
-
-次のように LINQ コマンドを使用できます。すべての。存在する。カウントします。まずは。、フラット化します。GroupBy、します。前の。OrderBy、します。OrderByDescending、します。選択するとします。どこ。 これらのメソッドが (可能な限り) に従って、 C# LINQ メソッド フォーム。
 
 この例では、ほとんどのスレッドを実行している上位 5 個のプロセスを示します。
 
@@ -201,18 +308,6 @@ kd> dx -r2 @$mySessionVar
         Processes        : 
         Devices     
 ```
-
-**ユーザー定義変数、匿名型**
-
-この動的オブジェクトの作成の完了を使用して、C#匿名型の構文 (新しい {...})。 詳細については、匿名型について詳細は、[匿名型 (C#プログラミング ガイド)](https://msdn.microsoft.com/library/bb397696.aspx)を参照してください。 この例では、整数、文字列値を持つ匿名型を作成します。
-
-```dbgcmd
-kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
-new { MyInt = 42, MyString = "Hello World" } : 
-    MyInt            : 42
-    MyString         : Hello World
-```
-
 ## <a name="system-defined-variables"></a>システム変数を定義します。
 
 次のシステム定義変数は、任意の LINQ dx クエリで使用できます。
@@ -239,6 +334,44 @@ kd> dx -r1 @$curprocess.Threads
     [0x62d8]         : 
      ...
 ```
+
+## <a name="user-defined-variables---anonymous-types"></a>ユーザー定義変数、匿名型
+
+この動的オブジェクトの作成の完了を使用して、C#匿名型の構文 (新しい {...})。 詳細については、匿名型について詳細は、次を参照してください。[匿名型 (C#プログラミング ガイド)](https://msdn.microsoft.com/library/bb397696.aspx)します。 この例では、整数、文字列値を持つ匿名型を作成します。
+
+```dbgcmd
+kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
+new { MyInt = 42, MyString = "Hello World" } : 
+    MyInt            : 42
+    MyString         : Hello World
+```
+
+
+## <a name="function-objects-lambda-expressions"></a>関数オブジェクト (ラムダ式)
+
+データのクエリに使用されるメソッドの多くは、ユーザーがコレクション内のオブジェクト間で関数を指定したを繰り返し実行するという考え方に基づいています。 クエリを実行し、デバッガーでのデータを操作する機能をサポートするためには、dx コマンドは、相当するものを使用してラムダ式をサポートしています。C#構文。 使用して、ラムダ式が定義されている、=&gt;演算子として次のとおりです。
+
+(引数) =&gt; (結果)
+
+Dx で LINQ を使用する方法については、この簡単な例 5 および 7 を加算するをお試しください。
+
+```dbgcmd
+kd> dx ((x, y) => (x + y))(5, 7) 
+```
+
+Dx コマンドの表示では、ラムダ式をバックアップし、12 の結果を表示します。
+
+```dbgcmd
+((x, y) => (x + y))(5, 7)  : 12
+```
+
+このラムダ式の例では、「こんにちは」と"World"の文字列を結合します。
+
+```dbgcmd
+kd> dx ((x, y) => (x + y))("Hello", "World")
+((x, y) => (x + y))("Hello", "World") : HelloWorld
+```
+
 
 ## <a name="supported-linq-syntax---query-methods"></a>LINQ 構文のクエリ メソッドをサポート
 

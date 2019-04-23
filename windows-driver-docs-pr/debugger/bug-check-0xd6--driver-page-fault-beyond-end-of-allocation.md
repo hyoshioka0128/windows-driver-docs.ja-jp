@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 38deede965ff4eca12381d2b3f36f8c5a9c61ad4
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239539"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903912"
 ---
 # <a name="bug-check-0xd6-driverpagefaultbeyondendofallocation"></a>バグ チェック 0xD6:ドライバー\_ページ\_フォールト\_を超えて\_エンド\_の\_割り当て
 

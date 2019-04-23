@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_ADAPTER_CONFIGURATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d32bc793e046baeda3e12c1b8b3faa05f7a1998
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: e7fe2a1cb746e720cffdafbd51c09c5f766ec5d9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536846"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902348"
 ---
 # <a name="oidwdisetadapterconfiguration"></a>OID\_WDI\_設定\_アダプター\_構成
 
@@ -20,7 +21,7 @@ OID\_WDI\_設定\_アダプター\_構成がアダプターを構成します。
 
 | Scope   | タスクでシリアル化された設定します。 | 通常の実行時間 (秒) |
 |---------|--------------------------|---------------------------------|
-| アダプタ | 〇                      | 1                               |
+| [アダプター] | 〇                      | 1                               |
 
  
 
@@ -46,25 +47,25 @@ OID\_WDI\_設定\_アダプター\_構成がアダプターを構成します。
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926257" data-raw-source="[&lt;strong&gt;WDI_TLV_CONFIGURED_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926257)"><strong>WDI_TLV_CONFIGURED_MAC_ADDRESS</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>MAC アドレスです。</td>
 </tr>
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898075" data-raw-source="[&lt;strong&gt;WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898075)"><strong>WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>到達不能検出のしきい値。</td>
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897879" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897879)"><strong>WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>停止/再起動、Wi-Fi Direct 移動をリセットした後、チャネルの選択を操作するために、ファームウェアによって使用されるポリシー。</td>
 </tr>
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926145" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_ID_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926145)"><strong>WDI_TLV_BAND_ID_LIST</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>バンド Id の一覧です。</td>
 </tr>
 <tr class="odd">
@@ -76,7 +77,7 @@ OID\_WDI\_設定\_アダプター\_構成がアダプターを構成します。
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/mt269108" data-raw-source="[&lt;strong&gt;WDI_TLV_ADAPTER_NLO_SCAN_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt269108)"><strong>WDI_TLV_ADAPTER_NLO_SCAN_MODE</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>アクティブまたはパッシブ モードで NLO スキャンを実行するかどうかを示します。</td>
 </tr>
 <tr class="odd">
@@ -95,7 +96,8 @@ OID\_WDI\_設定\_アダプター\_構成がアダプターを構成します。
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

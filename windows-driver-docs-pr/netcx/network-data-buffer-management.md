@@ -6,12 +6,13 @@ keywords:
 - WDF ネットワーク アダプター クラス拡張バッファー マネージャー、ネットワーク データ バッファー管理
 ms.date: 02/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 37a1fe52288bbb0e45666178573f861baac3be69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1172ec333545655055c8b1a28c577d8854834ccd
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572160"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902340"
 ---
 # <a name="network-data-buffer-management"></a>ネットワーク データ バッファーの管理
 
@@ -39,7 +40,7 @@ ms.locfileid: "56572160"
 バッファー管理するオプトインするには、これらの手順に従います。
 
 1. ネット アダプターを開始するときに、呼び出す前に[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart)、ハードウェアのデータ バッファーの機能や制約を使用して通知システム、 [ **NET_ADAPTER_RX_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/ns-netadapter-_net_adapter_rx_capabilities)と[ **NET_ADAPTER_TX_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/ns-netadapter-_net_adapter_tx_capabilities)データは、Rx、Tx パスをそれぞれ構造体します。 
-2. 初期化関数の 1 つを呼び出すことによって、2 つの機能の構造体を初期化します。 たとえば、DMA 対応の NIC のクライアント ドライバーは使用[ **NET_ADAPTER_TX_CAPABILITIES_INIT_FOR_DMA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_tx_capabilities_init_for_dma)と[ **NET_ADAPTER_RX_CAPABILITIES_INIT_SYSTEM_MANAGED** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_rx_capabilities_init_system_managed)そのハードウェア DMA capablities を宣言して、自身のためにデータ バッファーを完全に管理するシステムに指示します。
+2. 初期化関数の 1 つを呼び出すことによって、2 つの機能の構造体を初期化します。 たとえば、DMA 対応の NIC のクライアント ドライバーは使用[ **NET_ADAPTER_TX_CAPABILITIES_INIT_FOR_DMA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_tx_capabilities_init_for_dma)と[ **NET_ADAPTER_RX_CAPABILITIES_INIT_SYSTEM_MANAGED_DMA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_rx_capabilities_init_system_managed_dma)そのハードウェア DMA capablities を宣言して、自身のためにデータ バッファーを完全に管理するシステムに指示します。
 3. 初期化された送受信機能の構造に渡す、 [ **NetAdapterSetDatapathCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)メソッド。
 
 

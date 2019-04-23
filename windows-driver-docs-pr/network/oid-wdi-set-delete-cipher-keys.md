@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_DELETE_CIPHER_KEYS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 98710aad93945da650010b4bb7452d3bb1aefe87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 58390ab614bca413053e178fe572dd29ce95a39c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529867"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902908"
 ---
 # <a name="oidwdisetdeletecipherkeys"></a>OID\_WDI\_設定\_削除\_暗号\_キー
 
@@ -29,7 +30,7 @@ OID\_WDI\_設定\_削除\_暗号\_キーの削除、デバイスの暗号化キ�
 
 | TLV                                                                                | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                |
 |------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------|
-| [**WDI\_TLV\_削除\_暗号\_キー\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn926283) | X                              |          | デバイスのキー テーブルから削除する暗号キー。 |
+| [**WDI\_TLV\_削除\_暗号\_キー\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn926283) | x                              |          | デバイスのキー テーブルから削除する暗号キー。 |
 
  
 
@@ -37,7 +38,8 @@ OID\_WDI\_設定\_削除\_暗号\_キーの削除、デバイスの暗号化キ�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

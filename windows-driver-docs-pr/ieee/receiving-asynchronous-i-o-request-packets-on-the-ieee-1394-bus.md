@@ -9,15 +9,14 @@ keywords:
 - WDK の IEEE 1394 のバッキング ストア
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a84e476e93898e7ab2a6bb27aabb411baea3c6ef
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 695ba4688e41c73a1d2b21d3652912a3b9e7f8c7
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349661"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904032"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>IEEE 1394 バスでの非同期 I/O 要求パケットの受信
-
 
 コンピューター自体は、IEEE 1394 バス上のノードし、非同期 I/O 要求を受信できます。 ドライバーがコンピューターの IEEE 1394 のアドレス空間のアドレスの範囲を割り当てるし、要求を送信することで、外部のノードから要求を受信\_ALLOCATE\_アドレス\_バス ドライバーに範囲の要求。
 
@@ -25,13 +24,12 @@ ms.locfileid: "57349661"
 
 2 つの異なるドライバーでは、同じアドレス範囲を割り当てることもできます。 既定では、バス ドライバーは、要求を自動的に demultiplexes し、ドライバー、ドライバーのデバイスに由来する割り当て済みアドレスで要求のみが表示されます。 ドライバーは、アクセスを指定することで、バス上のすべてのノードで、アドレスに送信するすべてのパケットを受信したことを要求できます\_フラグ\_型\_でフラグをブロードキャスト**u.AllocateAddressRange.fulAccessType**.
 
--   [どのアドレスが割り当てられているでしょうか。](#ddk-receiving-asynchronous-i-o-request-packets-on-the-ieee-1394-bus-kg)
--   [割り当てとバッキング ストア](#allocation-and-backing-store)
--   [クライアント ドライバーの通知ルーチンが非同期 I/O 要求を受信します。](#client-drivers-notification-routine-for-receive-asynchronous-io-requests)
--   [非同期の受信の場合は事前の通知](#asynchronous-receive-in-the-pre-notification-case)
+* [割り当て済みアドレス](#allocated-addresses)
+* [割り当てとバッキング ストア](#allocation-and-backing-store)
+* [クライアント ドライバーの通知ルーチンが非同期 I/O 要求を受信します。](#client-drivers-notification-routine-for-receive-asynchronous-io-requests)
+* [非同期の受信の場合は事前の通知](#asynchronous-receive-in-the-pre-notification-case)
 
-## <a name="which-addresses-are-allocated"></a>どのアドレスが割り当てられているでしょうか。
-
+## <a name="allocated-addresses"></a>割り当て済みアドレス
 
 バス ドライバーでは、アドレス範囲を割り当てることの 2 つの異なる戦略をサポートします。 ハード コーディングされたアドレスを指定できます、ドライバーは、ハード コーディングされたアドレスで始まるアドレスの特定の範囲を必要とする場合、 **u.AllocateAddressRange.Required1394Offset**要求の IRB との長さのメンバー、アドレス範囲で**u.AllocateAddressRange.nLength**します。 バス ドライバーにより、2 回、同じアドレスを割り当てることの 2 つの異なるドライバー。 同じドライバーが、アドレスで始まる範囲と同じアドレス 2 回の割り当てを試みると、バス ドライバーは、要求の状態の状態コードを返します\_が成功した場合、要求自体は無視されます。
 
@@ -47,10 +45,9 @@ ms.locfileid: "57349661"
 
 ## <a name="allocation-and-backing-store"></a>割り当てとバッキング ストア
 
-
 バス ドライバーでは、ドライバーの代わりにすべてのパケットの非同期要求を受信します。 ドライバーの要請、要求を透過的に処理することができます。 またはドライバーに要求をディスパッチできます。 アドレスを割り当てるときのオプションを設定して、ドライバーは、バス ドライバーが各要求を処理する方法を選択できます。
 
-1.  ドライバーは、アドレスの範囲のバッキング ストアを提供し、バス ドライバーはすべての読み取り、書き込み、およびロックの要求を透過的に処理すると、バッキング ストアを使用しています。
+1. ドライバーは、アドレスの範囲のバッキング ストアを提供し、バス ドライバーはすべての読み取り、書き込み、およびロックの要求を透過的に処理すると、バッキング ストアを使用しています。
 
     MDL を指定できます、ドライバーがアドレスを割り当てるときに**u.AllocateAddressRange.Mdl**バッキング ストアとして機能します。 バス ドライバーでは、ドライバーを割り当てるによって読み取りまたは書き込み MDL からすべての要求を処理するアドレスの範囲に MDL がマップされます。 ホスト コント ローラーがサポートする場合、トランザクションは、ホスト コント ローラーの DMA のハードウェアによって完全処理されます。 可能であれば、デバイス ドライバーが割り当てられたアドレスの範囲を選択するバス ドライバーを許可する必要があります。 バス ドライバーがトランザクションごとに自動 DMA をサポートする 1394 アドレスを選択します。
 
@@ -61,7 +58,6 @@ ms.locfileid: "57349661"
     ```cpp
     pIRB->u.AllocateAddressRange.Mdl = an MDL previously allocated by the driver.
     pIRB->u.AllocateAddressRange.fulNotificationOptions = NOTIFY_FLAGS_NEVER
-     
     ```
 
     だけでこのオプションのドライバーも同時に、発生した IRQL のアドレス範囲を割り当てることができます。 ドライバーは、直接ポート ドライバー、ポート ドライバーの物理へのマッピングのルーチンを呼び出すことによって、通信の通常の IRP メソッドをバイパスする要求を送信できます。 デバイス ドライバーは、ポート ドライバーの物理へのマッピングのルーチンを IRB を渡します。 ポート ドライバーは、アドレスの範囲を非同期的に割り当てます、デバイス ドライバーの通知呼び出しポート ドライバーが完了したら、日常的な渡された**u.AllocateAddressRange.Callback**、し、渡します**u.AllocateAddressRange.Context**パラメーターとして。 通知のルーチンはディスパッチ時に呼び出されます\_レベル。
@@ -74,9 +70,8 @@ ms.locfileid: "57349661"
     GET_LOCAL_HOST_INFO5 PhysMapInfo;
     pGetInfoIRB->FunctionNumber = GET_LOCAL_HOST_INFO;
     pGetInfoIRB->GET_PHYS_ADDR_ROUTINE;
-     
+
     /* Driver submits the request. */
-     
     ```
 
     ドライバーが物理へのマッピングのルーチンを使用して、管理者特権での IRQL で要求を送信する方法の例に続けて、示します。
@@ -88,17 +83,16 @@ ms.locfileid: "57349661"
     pIRB->u.AllocateAddressRange.fulNotificationOptions = NOTIFY_FLAGS_NEVER
     pIRB->Callback = AllocationCompletionRoutine;
     pIRB->Context = information specific to this allocation the driver wants passed to its callback.
-     
+
     /* Driver submits the request to the physical mapping routine. */
     PhysMapInfo.PhysAddrMappingRoutine(PhysMapInfo.Context, pIRB);
-     
-    /* 
+
+    /*
     The bus driver does the allocation asynchronously. When it's done, it will signal the driver by executing AllocationCompletionRoutine(pIRB->u.AllocateAddressRange.Context);
     */
-     
     ```
 
-2.  ドライバーは、アドレス範囲のバッキング ストアを提供します。 I/O の各トランザクションが完了した後、バス ドライバーはドライバーを通知します。
+2. ドライバーは、アドレス範囲のバッキング ストアを提供します。 I/O の各トランザクションが完了した後、バス ドライバーはドライバーを通知します。
 
     ドライバーでは、バッキング ストアとして、1 つの MDL または MDLs のリンク リストのいずれかを指定できます。 ドライバーは、1 つの MDL を提供する場合、バス ドライバーは、非同期の要求に応答 MDL の内外にデータをポンプです。 トランザクションが完了すると、ドライバーによって提供される通知コールバックを呼び出すことによって、デバイス ドライバーを通知します。
 
@@ -113,17 +107,16 @@ ms.locfileid: "57349661"
     ```cpp
     PSLIST_HEADER FifoSListHead;
     KSPIN_LOCK FifoSpinLock;
-     
+
     ExInitializeSListHead(FifoSListHead);
     KeInitializeSpinLock(FifoSpinLock);
-     
     ```
 
     ドライバーは、要求を送信するときに、関連する IRB メンバーを次のように設定できます。
 
     ```cpp
     VOID DriverNotificationRoutine(PNOTIFICATION_INFO NotificationInfo);
-     
+
     pIRB->u.AllocateAddressRange.Mdl = NULL;
     pIRB->u.AllocateAddressRange.fulAccessType = ACCESS_FLAGS_READ;
     pIRB->u.AllocateAddressRange.fulNotificationOptions = NOTIFY_FLAGS_AFTER_WRITE;
@@ -131,19 +124,17 @@ ms.locfileid: "57349661"
     pIRB->u.AllocateAddressRange.FifoSpinLock = FifoSpinLock;
     pIRB->u.AllocateAddressRange.Callback = DriverNotificationRoutine;
     pIRB->u.AllocateAddressRange.Context = context information specific to this request -- the bus driver will pass this as the Context member of the NOTIFICATION_INFO it passes to NotificationRoutine.
-     
     ```
 
     コールバックでは、ドライバーを新しい MDL を割り当てると、一覧の上にそれをプッシュまたはプッシュ元 MDL のいずれかのニーズのバックアップ リスト。 後者の場合、バス ドライバーは、元のアドレスを渡す\_現在 MDL の FIFO です。 ドライバーの一覧に戻り、現在 MDL のプッシュの例を次に示します。
 
     ```cpp
     ExInterlockedPushEntrySList(FifoSListHead, NotificationInfo->Fifo->FifoList, FifoSpinLock);
-     
     ```
 
     ドライバーは、元の割り当て要求にストアをバックアップとして 1 つの MDL を指定する場合、ドライバーは、1 つまたは複数のアドレス範囲を返す可能性があります。
 
-3.  バス ドライバーでは、毎回の要求が到着すると、およびドライバーにパケットを渡します、ドライバーを通知します。
+3. バス ドライバーでは、毎回の要求が到着すると、およびドライバーにパケットを渡します、ドライバーを通知します。
 
     ドライバーでのコールバックを提供する、 **u.AllocateAddressRange.Callback** IRB のメンバー。 NOTIFY\_フラグ\_AFTER\_XXX フラグは無視され、すべてのパケットが処理するためにドライバーに渡されます。
 
@@ -151,13 +142,12 @@ ms.locfileid: "57349661"
 
     ```cpp
     VOID DriverNotificationRoutine( IN PNOTIFICATION_INFO NotificationInfo );
-     
+
     pIRB->u.AllocateAddressRange.Callback = DriverNotificationRoutine;
     pIRB->u.AllocateAddressRange.Context = information specific to this address range.
     pIRB->u.AllocateAddressRange.Mdl = NULL;
     pIRB->u.AllocateAddressRange.FifoSListHead = NULL;
     pIRB->u.AllocateAddressRange.FifoSpinLock = NULL;
-     
     ```
 
     バス ドライバーでは、単一の連続したアドレスの範囲を割り当てます。
@@ -175,42 +165,39 @@ ms.locfileid: "57349661"
     *(NotificationInfo->ResponsePacket) = ResponsePacket.
     *(NotificationInfo->ResponseLength) = ResponseLength;
     *(NotificationInfo)->ResponseEvent = Event;
-     
     ```
 
 ## <a name="client-drivers-notification-routine-for-receive-asynchronous-io-requests"></a>クライアント ドライバーの通知ルーチンが非同期 I/O 要求を受信します。
 
-
 クライアント ドライバーは、次を実行する必要があります、ドライバーの内の非同期タスクの受信通知ルーチン。
 
--   メンバーを確認する、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)クライアント ドライバーに渡される構造体。
--   (応答パケットからのデータを返す場所)、読み取り/ロックの成功した要求のクライアント ドライバーである必要があります。
-    -   呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM ベースのクライアント ドライバー用) の応答パケット データ。
-    -   返されるデータには、そのバッファーを入力します。
-    -   初期化、 **ResponseMdl**メンバーと、バッファーの参照。 呼び出すことができます[ **MmInitializeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554568)と[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)します。
-    -   設定 **\*NotificationInfo -&gt;ResponsePacket**バッファーを指すようにします。
-    -   設定 **\*NotificationInfo -&gt;ResponseLength** 、返される応答データのサイズには 4 の要求を読み取り、作成されます)。
-    -   呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM ベースのクライアント ドライバー用) の応答イベントです。
-    -   設定 **\*NotificationInfo -&gt;ResponseEvent**イベント バッファーを指すようにします。
-    -   イベントで待機する作業項目をスケジュールし、応答イベントが通知された後に、応答パケットとイベントのデータ バッファーを解放します。
-    -   設定**NotificationInfo -&gt;ResponseCode** RCODE に\_応答\_完了します。
+* メンバーを確認する、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)クライアント ドライバーに渡される構造体。
+* (応答パケットからのデータを返す場所)、読み取り/ロックの成功した要求のクライアント ドライバーである必要があります。
+  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM ベースのクライアント ドライバー用) の応答パケット データ。
+  * 返されるデータには、そのバッファーを入力します。
+  * 初期化、 **ResponseMdl**メンバーと、バッファーの参照。 呼び出すことができます[ **MmInitializeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554568)と[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)します。
+  * 設定 **\*NotificationInfo -&gt;ResponsePacket**バッファーを指すようにします。
+  * 設定 **\*NotificationInfo -&gt;ResponseLength** 、返される応答データのサイズには 4 の要求を読み取り、作成されます)。
+  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM ベースのクライアント ドライバー用) の応答イベントです。
+  * 設定 **\*NotificationInfo -&gt;ResponseEvent**イベント バッファーを指すようにします。
+  * イベントで待機する作業項目をスケジュールし、応答イベントが通知された後に、応答パケットとイベントのデータ バッファーを解放します。
+  * 設定**NotificationInfo -&gt;ResponseCode** RCODE に\_応答\_完了します。
 
 ## <a name="asynchronous-receive-in-the-pre-notification-case"></a>非同期の受信の場合は事前の通知
-
 
 非同期を完了する、従来の 1394 バス ドライバーは失敗では、事前通知メカニズムを使用してトランザクションを受信します。 詳細については、次を参照してください。[ナレッジ ベース。未送信の事前通知 (2635883) を使用して、IEEE 1394 非同期受信応答](http://support.microsoft.com/kb/2635883)します。
 
 新しい 1394 バス ドライバーの場合は、事前の通知の場合は、クライアント ドライバーの通知コールバック ルーチンの想定される動作がとおりです。
 
--   場合**Mdl**と**Fifo**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造体が null の場合、次の事前通知しています実行されます。
--   **ResponseMdl**、 **ResponsePacket**、 **ResponseLength**、および**ResponseEvent**のメンバー、 [ **通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造では、NULL は指定できません。
--   **FulNotificationOptions**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造がトリガーされたアクション (読み取り、書き込み、ロック) を示す必要があります、通知します。 1 つのみのフラグ (通知\_フラグ\_AFTER\_読み取り]、[通知\_フラグ\_AFTER\_書き込み、または通知\_フラグ\_AFTER\_ロック) を設定できます毎回、通知ルーチンが呼び出されます。
--   検査することによって、要求の種類を識別できます、 **RequestPacket -&gt;AP\_は**、非同期のメンバー\_パケットの構造体。 メンバーはブロックまたは作成されます読み取り/書き込み、ロック要求の種類など、要求の種類を指定することを示します。 ASYNC\_1394.h でパケットの構造体が宣言されています。
--   **ResponsePacket**と**ResponseEvent**のメンバー [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)ポインターへのポインターが含まれています。 したがって、応答パケットと応答イベントへのポインターを適切に参照する必要があります。
--   **ResponseLength**のメンバー [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437) ULONG 変数へのポインターです。 そのため、する必要があります設定するときに要求の応答データの長さなどの読み取りのために、メンバーを適切に逆参照 & ロック要求)。
--   1394 クライアント ドライバーは、(非ページ プールの場合) から、応答パケットと応答イベントのメモリの割り当てと、応答が配信された後、そのメモリを解放します。 作業項目がキューに登録され、作業項目は、応答イベントで待機する必要がありますのことをお勧めします。 応答が配信された後、1394 バス ドライバーによって、そのイベントがシグナル状態します。 クライアント ドライバーは、作業項目内のメモリを解放し、できます。
--   **ResponseCode**内のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437) 1394.h で定義されている \FLAGS 値の 1 つの構造を設定する必要があります。 場合**ResponseCode** RCODE 以外の値に設定されている\_応答\_完了、1394 バス ドライバーは、エラー応答パケットを送信します。 読み取りまたはロックの要求の場合、要求では、すべてのデータは返されません。 Windows 7 では、メモリ リークが発生、詳細については「[ナレッジ ベース。IEEE 1394 のバス ドライバー (2023232) の非同期の通知コールバックの実行中のメモリ リーク](http://support.microsoft.com/kb/2023232)します。
--   読み取りとロックの要求に対して、 **ResponsePacket**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造体で返されるデータを指す必要があります、非同期応答パケットです。
+* 場合**Mdl**と**Fifo**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造体が null の場合、次の事前通知しています実行されます。
+* **ResponseMdl**、 **ResponsePacket**、 **ResponseLength**、および**ResponseEvent**のメンバー、 [ **通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造では、NULL は指定できません。
+* **FulNotificationOptions**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造がトリガーされたアクション (読み取り、書き込み、ロック) を示す必要があります、通知します。 1 つのみのフラグ (通知\_フラグ\_AFTER\_読み取り]、[通知\_フラグ\_AFTER\_書き込み、または通知\_フラグ\_AFTER\_ロック) を設定できます毎回、通知ルーチンが呼び出されます。
+* 検査することによって、要求の種類を識別できます、 **RequestPacket -&gt;AP\_は**、非同期のメンバー\_パケットの構造体。 メンバーはブロックまたは作成されます読み取り/書き込み、ロック要求の種類など、要求の種類を指定することを示します。 ASYNC\_1394.h でパケットの構造体が宣言されています。
+* **ResponsePacket**と**ResponseEvent**のメンバー [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)ポインターへのポインターが含まれています。 したがって、応答パケットと応答イベントへのポインターを適切に参照する必要があります。
+* **ResponseLength**のメンバー [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437) ULONG 変数へのポインターです。 そのため、する必要があります設定するときに要求の応答データの長さなどの読み取りのために、メンバーを適切に逆参照 & ロック要求)。
+* 1394 クライアント ドライバーは、(非ページ プールの場合) から、応答パケットと応答イベントのメモリの割り当てと、応答が配信された後、そのメモリを解放します。 作業項目がキューに登録され、作業項目は、応答イベントで待機する必要がありますのことをお勧めします。 応答が配信された後、1394 バス ドライバーによって、そのイベントがシグナル状態します。 クライアント ドライバーは、作業項目内のメモリを解放し、できます。
+* **ResponseCode**内のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437) 1394.h で定義されている \FLAGS 値の 1 つの構造を設定する必要があります。 場合**ResponseCode** RCODE 以外の値に設定されている\_応答\_完了、1394 バス ドライバーは、エラー応答パケットを送信します。 読み取りまたはロックの要求の場合、要求では、すべてのデータは返されません。 Windows 7 では、メモリ リークが発生、詳細については「[ナレッジ ベース。IEEE 1394 のバス ドライバー (2023232) の非同期の通知コールバックの実行中のメモリ リーク](http://support.microsoft.com/kb/2023232)します。
+* 読み取りとロックの要求に対して、 **ResponsePacket**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造体で返されるデータを指す必要があります、非同期応答パケットです。
 
 次のコード例では、作業項目の実装と、クライアント ドライバーの通知ルーチンを示します。
 
@@ -232,10 +219,10 @@ kmdf1394_NotifyRoutineWorkItem (
                                      KernelMode,
                                      FALSE,
                                      NULL);
-    if (!NT_SUCCESS(ntStatus)) 
+    if (!NT_SUCCESS(ntStatus))
     {
-        DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                            TRACE_FLAG_ASYNC, 
+        DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                            TRACE_FLAG_ASYNC,
                             "Wait on notify response event failed: %!STATUS!\n",
                             ntStatus);
     }
@@ -245,7 +232,7 @@ kmdf1394_NotifyRoutineWorkItem (
     Exit();
 }
 
-VOID 
+VOID
 kmdf1394_NotificationCallback (
     IN PNOTIFICATION_INFO   NotifyInfo)
 {
@@ -260,13 +247,13 @@ kmdf1394_NotificationCallback (
 
     Enter();
 
-    DoTraceLevelMessage(TRACE_LEVEL_INFORMATION, 
-                        TRACE_FLAG_ASYNC, 
-                        "NotifyInfo Mdl %p ulOffset %08x nLength %08x fulNotificationOptions %08x Context %p RCode %x Pkt %p\n", 
-                        NotifyInfo->Mdl, 
-                        NotifyInfo->ulOffset, 
-                        NotifyInfo->nLength, 
-                        NotifyInfo->fulNotificationOptions, 
+    DoTraceLevelMessage(TRACE_LEVEL_INFORMATION,
+                        TRACE_FLAG_ASYNC,
+                        "NotifyInfo Mdl %p ulOffset %08x nLength %08x fulNotificationOptions %08x Context %p RCode %x Pkt %p\n",
+                        NotifyInfo->Mdl,
+                        NotifyInfo->ulOffset,
+                        NotifyInfo->nLength,
+                        NotifyInfo->fulNotificationOptions,
                         NotifyInfo->Context,
                         NotifyInfo->ResponseCode,
                         asyncPacket);
@@ -289,7 +276,7 @@ kmdf1394_NotificationCallback (
                 // NotifyInfo->ResponseCode = RCODE_RESPONSE_COMPLETE;
                 break;
 
-            default: 
+            default:
                 NotifyInfo->ResponseCode = RCODE_TYPE_ERROR;
                 break;
         }
@@ -304,18 +291,18 @@ kmdf1394_NotificationCallback (
                     !NotifyInfo->ResponseLength ||
                     !NotifyInfo->ResponseEvent )
             {
-                DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                    TRACE_FLAG_ASYNC, 
+                DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                    TRACE_FLAG_ASYNC,
                                     "Pre-Notification failure: missing Response field(s)!\n");
-                DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                    TRACE_FLAG_ASYNC, 
+                DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                    TRACE_FLAG_ASYNC,
                                     "ResponseMdl %p\tResponsePacket %p\tResponseLength %p\tResponseEvent %p\n",
                                     NotifyInfo->ResponseMdl, NotifyInfo->ResponsePacket,
                                     NotifyInfo->ResponseLength, NotifyInfo->ResponseEvent);
                 if (NotifyInfo->ResponsePacket != NULL)
                 {
-                    DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                        TRACE_FLAG_ASYNC, 
+                    DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                        TRACE_FLAG_ASYNC,
                                         "\t*ResponsePacket %p\n",
                                         *NotifyInfo->ResponsePacket);
                 }
@@ -323,21 +310,21 @@ kmdf1394_NotificationCallback (
             }
             else if ( NULL == asyncAddressData )
             {
-                DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                    TRACE_FLAG_ASYNC, 
+                DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                    TRACE_FLAG_ASYNC,
                                     "Pre-Notification failure: missing Notify Context!\n");
                 NotifyInfo->ResponseCode = RCODE_TYPE_ERROR;
             }
             else
             {
-                DoTraceLevelMessage(TRACE_LEVEL_INFORMATION, 
-                                    TRACE_FLAG_ASYNC, 
-                                    "AddrData %p DevExt %p Buffer %p Len %x hAddrRange %!HANDLE! Mdl %p\n", 
-                                    asyncAddressData, 
-                                    asyncAddressData->DeviceExtension, 
-                                    asyncAddressData->Buffer, 
-                                    asyncAddressData->nLength, 
-                                    asyncAddressData->hAddressRange, 
+                DoTraceLevelMessage(TRACE_LEVEL_INFORMATION,
+                                    TRACE_FLAG_ASYNC,
+                                    "AddrData %p DevExt %p Buffer %p Len %x hAddrRange %!HANDLE! Mdl %p\n",
+                                    asyncAddressData,
+                                    asyncAddressData->DeviceExtension,
+                                    asyncAddressData->Buffer,
+                                    asyncAddressData->nLength,
+                                    asyncAddressData->hAddressRange,
                                     asyncAddressData->pMdl);
 
                 switch (asyncPacket->AP_tCode)
@@ -358,7 +345,7 @@ kmdf1394_NotificationCallback (
                     case TCODE_READ_REQUEST_QUADLET:
                         // only implementing Quadlet Read for now
 
-                        // Create a WdfWorkItem, with notifyResponse as its context, 
+                        // Create a WdfWorkItem, with notifyResponse as its context,
                         // to handle waiting for the Response Event & cleaning up all the response stuff
 
                         WDF_WORKITEM_CONFIG_INIT (&workItemConfig, kmdf1394_NotifyRoutineWorkItem);
@@ -371,11 +358,11 @@ kmdf1394_NotificationCallback (
                             &attributes,
                             &workItem);
 
-                        if (!NT_SUCCESS (ntStatus)) 
+                        if (!NT_SUCCESS (ntStatus))
                         {
-                            DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                                TRACE_FLAG_ASYNC, 
-                                                "Failed to create workitem %x\n", 
+                            DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                                TRACE_FLAG_ASYNC,
+                                                "Failed to create workitem %x\n",
                                                 ntStatus);
 
                             NotifyInfo->ResponseCode = RCODE_DATA_ERROR;
@@ -404,8 +391,8 @@ kmdf1394_NotificationCallback (
 
                         if (!NT_SUCCESS(ntStatus) || !responseQuadlet)
                         {
-                            DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                                TRACE_FLAG_ASYNC, 
+                            DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                                TRACE_FLAG_ASYNC,
                                                 "Failed to allocate Response Data Memory: %!STATUS!\n",
                                                 ntStatus);
 
@@ -413,7 +400,7 @@ kmdf1394_NotificationCallback (
 
                             NotifyInfo->ResponseCode = RCODE_DATA_ERROR;
                             break;
-                        } 
+                        }
 
                         RtlFillMemory(responseQuadlet, sizeof(ULONG), 0x8F);    // dummy data for testing
 
@@ -450,16 +437,16 @@ kmdf1394_NotificationCallback (
                         // Enqueue the work item to clean up after notification completion
                         WdfWorkItemEnqueue (workItem);
 
-                        DoTraceLevelMessage(TRACE_LEVEL_INFORMATION, 
-                                            TRACE_FLAG_ASYNC, 
-                                            "Pre-Notification: Read Quadlet: Notify Response Handle %!HANDLE! Data %08x Event %p\n", 
-                                            notifyContext->responseMemory, 
-                                            *responseQuadlet, 
+                        DoTraceLevelMessage(TRACE_LEVEL_INFORMATION,
+                                            TRACE_FLAG_ASYNC,
+                                            "Pre-Notification: Read Quadlet: Notify Response Handle %!HANDLE! Data %08x Event %p\n",
+                                            notifyContext->responseMemory,
+                                            *responseQuadlet,
                                             &notifyContext->responseEvent);
 
                         break;
 
-                    default: 
+                    default:
                         NotifyInfo->ResponseCode = RCODE_TYPE_ERROR;
                         break;
                 } // switch (asyncPacket->AP_tCode)
@@ -467,8 +454,8 @@ kmdf1394_NotificationCallback (
         } // if (asyncPacket)
         else
         {
-            DoTraceLevelMessage(TRACE_LEVEL_ERROR, 
-                                TRACE_FLAG_ASYNC, 
+            DoTraceLevelMessage(TRACE_LEVEL_ERROR,
+                                TRACE_FLAG_ASYNC,
                                 "Pre-Notification failure: no RequestPacket!\n");
             NotifyInfo->ResponseCode = RCODE_DATA_ERROR;
         }
@@ -478,11 +465,3 @@ kmdf1394_NotificationCallback (
     return;
 } // kmdf1394_NotificationCallback
 ```
-
- 
-
- 
-
-
-
-

@@ -2,16 +2,17 @@
 title: WDI_TLV_STATION_ATTRIBUTES
 description: WDI_TLV_STATION_ATTRIBUTES では、ステーションの属性を含む TLV です。
 ms.assetid: CB15D3A4-5B42-44ED-A8A8-3E7F09B65F8B
-ms.date: 07/18/2017
+ms.date: 02/14/2019
 keywords:
 - WDI_TLV_STATION_ATTRIBUTES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 042d712e1358c72e3d80e711c451eda523c26d02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 078cb0e1b477d5ac64b6b0df6a016f4f93a69bca
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559081"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902794"
 ---
 # <a name="wditlvstationattributes"></a>WDI\_TLV\_ステーション\_属性
 
@@ -19,7 +20,6 @@ ms.locfileid: "56559081"
 WDI\_TLV\_ステーション\_属性は、ステーションの属性を含む TLV します。
 
 ## <a name="tlv-type"></a>TLV 型
-
 
 0x22
 
@@ -31,14 +31,12 @@ WDI\_TLV\_ステーション\_属性は、ステーションの属性を含む T
 ## <a name="values"></a>値
 
 
-| 種類                                                                                        | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                    |
-|---------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------|
-| [**WDI\_TLV\_ステーション\_機能**](wdi-tlv-station-capabilities.md)                     |                                |          | ステーションの機能。                      |
-| [**WDI\_TLV\_ユニキャスト\_アルゴリズム\_一覧**](wdi-tlv-unicast-algorithm-list.md)                |                                | X        | サポートされているユニキャスト アルゴリズム。              |
-| [**WDI\_TLV\_マルチキャスト\_データ\_アルゴリズム\_一覧**](wdi-tlv-multicast-data-algorithm-list.md) |                                | X        | マルチキャスト データがサポートされているアルゴリズムです。       |
-| [**WDI\_TLV\_マルチキャスト\_MGMT\_アルゴリズム\_一覧**](wdi-tlv-multicast-mgmt-algorithm-list.md) |                                | X        | マルチキャストのサポートされている管理アルゴリズム。 |
-
- 
+| 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
+|--- | --- | --- | --- |
+| [**WDI\_TLV\_ステーション\_機能**](wdi-tlv-station-capabilities.md) |   |   | ステーションの機能。 |
+| [**WDI\_TLV\_ユニキャスト\_アルゴリズム\_一覧**](wdi-tlv-unicast-algorithm-list.md) |   | x | サポートされているユニキャスト アルゴリズム。 |
+| [**WDI\_TLV\_マルチキャスト\_データ\_アルゴリズム\_一覧**](wdi-tlv-multicast-data-algorithm-list.md) |   | x  | マルチキャスト データがサポートされているアルゴリズムです。 |
+| [**WDI\_TLV\_マルチキャスト\_MGMT\_アルゴリズム\_一覧**](wdi-tlv-multicast-mgmt-algorithm-list.md) |   | x  | マルチキャストのサポートされている管理アルゴリズム。 |
 
 <a name="requirements"></a>要件
 ------------

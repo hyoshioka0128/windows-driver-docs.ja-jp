@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_CLOSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ce742a66a3bc6fee4d8d1d7e3f95f1e3944ba4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 5e48dd2af651173ba66ad26e030f2d03a18f0066
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559674"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902628"
 ---
 # <a name="oidwditaskclose"></a>OID\_WDI\_タスク\_閉じる
 
@@ -20,7 +21,7 @@ OID\_WDI\_タスク\_閉じる要求 IHV コンポーネントが、アダプタ
 
 | オブジェクト  | 中止できます。 | 既定の優先順位 (ホスト ドライバー ポリシー) | 通常の実行時間 (秒) |
 |---------|---------------|---------------------------------------|---------------------------------|
-| アダプタ | X            | 1                                     | 5                               |
+| [アダプター] | X            | 1                                     | 5                               |
 
  
 
@@ -31,7 +32,9 @@ OID\_WDI\_タスク\_閉じる要求 IHV コンポーネントが、アダプタ
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_閉じる\_完了](ndis-status-wdi-indication-close-complete.md)要件
+[NDIS\_状態\_WDI\_INDICATION\_閉じる\_完了](ndis-status-wdi-indication-close-complete.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

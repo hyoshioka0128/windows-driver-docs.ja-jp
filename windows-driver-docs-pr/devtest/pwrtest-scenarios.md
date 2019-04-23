@@ -4,12 +4,13 @@ description: PwrTest のシナリオ
 ms.assetid: 4d21e08b-d687-47dc-995e-9d2128cf6853
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccb24d457058661f155474b4b366a0648296894d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: b0b77118c1b22b9a07b66f7cb2c40a5e730e4bdb
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572256"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903088"
 ---
 # <a name="pwrtest-scenarios"></a>PwrTest のシナリオ
 
@@ -19,6 +20,7 @@ PwrTest 機能は、シナリオに分割されます。 現時点では、PwrTe
 -   [PwrTest バッテリ シナリオ](pwrtest-battery-scenario.md)
 -   [PwrTest スタンドバイのシナリオを接続します。](pwrtest-connected-standby--cs--scenario.md)
 -   [PwrTest デバイスのシナリオ](pwrtest-device-scenario.md)
+-   [PwrTest DirectedFx シナリオ](pwrtest-directedfx-scenario.md)
 -   [PwrTest のディスクのシナリオ](pwrtest-disk-scenario.md)
 -   [PwrTest 実行状態のシナリオ](pwrtest-execution-state-scenario.md)
 -   [PwrTest アイドル状態のシナリオ](pwrtest-idle-scenario.md)
@@ -31,12 +33,5 @@ PwrTest 機能は、シナリオに分割されます。 現時点では、PwrTe
 -   [PwrTest スリープ シナリオ](pwrtest-sleep-scenario.md)
 -   [PwrTest 熱のシナリオ](pwrtest-thermal-scenario.md)
 -   [PwrTest タイマーのシナリオ](pwrtest-timer-scenario.md)
-
- 
-
- 
-
-
-
 
 

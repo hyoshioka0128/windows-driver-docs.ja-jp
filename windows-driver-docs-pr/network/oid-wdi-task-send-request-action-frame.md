@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d19184ac34a7410df06a082b676f39ec47fd0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 9871162f5db6f2f44891df01cf87d9f4908bb360
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548750"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903528"
 ---
 # <a name="oidwditasksendrequestactionframe"></a>OID\_WDI\_タスク\_送信\_要求\_アクション\_フレーム
 
@@ -47,7 +48,9 @@ OID\_WDI\_タスク\_送信\_要求\_アクション\_フレームは、デバ�
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_送信\_要求\_アクション\_フレーム\_完了](ndis-status-wdi-indication-send-request-action-frame-complete.md)要件
+[NDIS\_状態\_WDI\_INDICATION\_送信\_要求\_アクション\_フレーム\_完了](ndis-status-wdi-indication-send-request-action-frame-complete.md)
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

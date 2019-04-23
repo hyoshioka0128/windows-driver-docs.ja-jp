@@ -1,17 +1,17 @@
 ---
-title: コード SetupApi から CfgMgr32 に移植
+title: SetupApi から CfgMgr32 へのコードの移植
 description: このトピックでは、Cfgmgr32.dll を代わりに使用する Setupapi.dll 機能を使用するコードを移植する方法を示すコード例を提供します。
 ms.assetid: 36668A17-EA56-464C-A38B-C75BE2359412
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d377ab0f71fe61e331a8a2b1afd1edc64b9e4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0f7b63e9fccf0ae0c00c01f1c2fe5cecdfbe429f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528216"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902970"
 ---
-# <a name="porting-code-from-setupapi-to-cfgmgr32"></a>コード SetupApi から CfgMgr32 に移植
+# <a name="porting-code-from-setupapi-to-cfgmgr32"></a>SetupApi から CfgMgr32 へのコードの移植
 
 
 このトピックでは、Cfgmgr32.dll を代わりに使用する Setupapi.dll 機能を使用するコードを移植する方法を示すコード例を提供します。 コードの移植で、ユニバーサル Windows プラットフォーム (UWP)、SetupApi をサポートしていないコードを実行することができます。 UWP の CfgMgr32 のサブセットがサポートされている、を通じて公開される機能では具体的には、 `api-ms-win-devices-config-l1-1-0.dll` API (Windows 8 以降) を設定または`api-ms-win-devices-config-l1-1-1.dll`API (Windows 8.1 以降) を設定します。 Windows 10 以降では、単にリンクする`onecore.lib`します。
@@ -21,7 +21,7 @@ ms.locfileid: "56528216"
 次のセクションでには、通常、アプリケーションを使用したコード例が含まれます。
 
 -   [存在するデバイスの一覧を取得し、各デバイスのプロパティを取得](#get-a-list-of-present-devices-and-retrieve-a-property-for-each-device)
--   [インターフェイスの一覧を取得、デバイスが、各インターフェイスを公開して、デバイスからプロパティを取得します。](#get-a-list-of-interfaces--get-the-device-exposing-each-interface---and-get-a-property-from-the-device)
+-   [インターフェイスの一覧を取得、デバイスが、各インターフェイスを公開して、デバイスからプロパティを取得します。](#get-a-list-of-interfaces-get-the-device-exposing-each-interface-and-get-a-property-from-the-device)
 -   [特定のデバイスからプロパティを取得します。](#get-a-property-from-a-specific-device)
 -   [デバイスを無効にします。](#disable-device)
 -   [デバイスを有効にします。](#enable-device)

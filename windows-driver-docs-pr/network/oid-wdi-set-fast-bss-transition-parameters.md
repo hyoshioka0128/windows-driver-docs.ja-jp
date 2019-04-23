@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7e9b59861ff75d0d11bdb844e77ede20d5e155
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: a0a4099a4aec594c70bebeaca39582a1cfb8e9a7
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550281"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903610"
 ---
 # <a name="oidwdisetfastbsstransitionparameters"></a>OID\_WDI\_設定\_高速\_BSS\_遷移\_パラメーター
 
@@ -30,9 +31,9 @@ OID\_WDI\_設定\_高速\_BSS\_遷移\_パラメーターへの応答で送信[N
 | TLV                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                    |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/dn898068)      |                                |          | この状態が成功である場合、残りのフィールド (RSNIE、MDE、FTE) は存在します。 これは、問題またはエラー (たとえば、MIC チェック失敗) 認証の応答がないと、IHV の再関連付け要求を続行することを示します。 |
-| [**WDI\_TLV\_FT\_RSNIE**](https://msdn.microsoft.com/library/windows/hardware/mt269125) |                                | X        | RSN IE バイト blob。                                                                                                                                                                                                                                          |
-| [**WDI\_TLV\_FT\_MDE**](https://msdn.microsoft.com/library/windows/hardware/mt269120)     |                                | X        | MDE バイト blob。                                                                                                                                                                                                                                             |
-| [**WDI\_TLV\_FT\_FTE**](https://msdn.microsoft.com/library/windows/hardware/mt269118)     |                                | X        | FTE バイト blob。                                                                                                                                                                                                                                             |
+| [**WDI\_TLV\_FT\_RSNIE**](https://msdn.microsoft.com/library/windows/hardware/mt269125) |                                | x        | RSN IE バイト blob。                                                                                                                                                                                                                                          |
+| [**WDI\_TLV\_FT\_MDE**](https://msdn.microsoft.com/library/windows/hardware/mt269120)     |                                | x        | MDE バイト blob。                                                                                                                                                                                                                                             |
+| [**WDI\_TLV\_FT\_FTE**](https://msdn.microsoft.com/library/windows/hardware/mt269118)     |                                | x        | FTE バイト blob。                                                                                                                                                                                                                                             |
 
  
 
@@ -40,7 +41,8 @@ OID\_WDI\_設定\_高速\_BSS\_遷移\_パラメーターへの応答で送信[N
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

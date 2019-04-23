@@ -1,6 +1,6 @@
 ---
 title: ndiskd.netrb
-description: Ndiskd.netrb 拡張機能では、NET_RING_BUFFER 構造に関する情報が表示されます。
+description: Ndiskd.netrb 拡張機能では、NET_RING 構造に関する情報が表示されます。
 ms.assetid: 2D749E7E-00A5-422B-B785-B8DB3393A74F
 keywords:
 - デバッグ ndiskd.netrb Windows
@@ -12,19 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1089b6a3fa623d23b83fe40910935cace07d7c32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: f8b9a6c2d7c62430a987c420df1ad026c8509b84
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551284"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903604"
 ---
 # <a name="ndiskdnetrb"></a>!ndiskd.netrb
 
 
 **! Ndiskd.netrb**拡張機能に関する情報を表示する、 [NET\_リング\_バッファー](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)構造体。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
 
 ```console
 !ndiskd.netrb [-handle <x>] [-basic] [-dump] [-elementtype <str>] 
@@ -86,7 +87,7 @@ NET のハンドルを取得する\_リング\_バッファー、これらの手
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000
 
-    NET_RING_BUFFER    ffffd1022d000000
+    NET_RING    ffffd1022d000000
 
     Number of elements 0x080
     Owned by OS        0x080

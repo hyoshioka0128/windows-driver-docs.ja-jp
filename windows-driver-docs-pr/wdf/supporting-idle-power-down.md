@@ -11,12 +11,12 @@ keywords:
 - システム スリープ WDK KMDF を状態します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffcf563c40650162a94c2e931825ce4d97c13f3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58a2a162d08f84e318ae460135b3974bede18671
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572780"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902878"
 ---
 # <a name="supporting-idle-power-down"></a>アイドル電源切断のサポート
 
@@ -46,7 +46,7 @@ ms.locfileid: "56572780"
     -   [*EvtDeviceWakeFromS0Triggered*](https://msdn.microsoft.com/library/windows/hardware/ff540919)バスがウェイク信号を検出、ドライバーに通知します。
 
 
-
+## <a name="idle-conditions"></a>アイドル条件
 
 フレームワークは、アイドル状態になるデバイスを考慮しの次の条件がすべて満たされたときに、アイドル時間をカウントします。
 
@@ -54,13 +54,13 @@ ms.locfileid: "56572780"
 -   ドライバーと呼ばれていた場合[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)、ドライバーは、その後、呼び出されて[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)します。
 -   電源ポリシーの所有者がバス ドライバーの場合は、D0 ではありません、バス ドライバーの子デバイスです。
 
-場合は、ドライバー (またはユーザー) には、アイドル状態に、デバイスの電源オフができますが、使用する必要があります、 [ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッド。 デバイスがその動作 (D0) 状態の場合は、このメソッドは、ドライバー呼び出されるまでアイドル状態から、デバイスを防ぎます[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)します。 ドライバーを呼び出すときに、デバイスが省電力状態がかどうか**WdfDeviceStopIdle**フレームワークがデバイスの作業 (D0) 状態を復元するバス ドライバーを要求、システムが作業 (S0) の状態である場合と。 すべての成功した呼び出し**WdfDeviceStopIdle**への呼び出しで一致する必要があります**WdfDeviceResumeIdle**します。 デバッガーで電源の参照カウントを表示する方法については、[WDF を使用した Power 参照リークのデバッグ](debugging-power-reference-leaks-in-wdf.md)を参照してください。
+場合は、ドライバー (またはユーザー) には、アイドル状態に、デバイスの電源オフができますが、使用する必要があります、 [ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッド。 デバイスがその動作 (D0) 状態の場合は、このメソッドは、ドライバー呼び出されるまでアイドル状態から、デバイスを防ぎます[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)します。 ドライバーを呼び出すときに、デバイスが省電力状態がかどうか**WdfDeviceStopIdle**フレームワークがデバイスの作業 (D0) 状態を復元するバス ドライバーを要求、システムが作業 (S0) の状態である場合と。 すべての成功した呼び出し**WdfDeviceStopIdle**への呼び出しで一致する必要があります**WdfDeviceResumeIdle**します。 デバッガーで電源の参照カウントを表示する方法については、次を参照してください。 [WDF を使用した Power 参照リークのデバッグ](debugging-power-reference-leaks-in-wdf.md)します。
 
 詳細については、ドライバーが呼び出す必要があります[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッドのリファレンス ページを参照してください。
 
 低電力状態からスリープ解除できるデバイスの場合、デバイスのバスのドライバーは、デバイスの起動時に参加します。 バス ドライバーは、通常は[ *EvtDeviceEnableWakeAtBus* ](https://msdn.microsoft.com/library/windows/hardware/ff540866)と[ *EvtDeviceDisableWakeAtBus* ](https://msdn.microsoft.com/library/windows/hardware/ff540858)コールバック関数。 これらの関数は、バス アダプターを有効にして、低電力状態から復帰するデバイスの機能を無効にするのに必要なことすべてを実行します。
 
-デバイスのアイドル状態の機能を制御するレジストリ エントリについては、[ユーザー コントロールのデバイス アイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)を参照してください。
+デバイスのアイドル状態の機能を制御するレジストリ エントリについては、次を参照してください。[ユーザー コントロールのデバイス アイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)します。
 
  
 

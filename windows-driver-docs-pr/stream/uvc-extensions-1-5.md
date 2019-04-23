@@ -1,14 +1,15 @@
 ---
 title: USB ビデオ クラス 1.5 仕様に対する Microsoft の拡張機能
 description: により、標準形式で適切に定義されたフレーム メタデータを実行する機能だけでなく、新しいコントロール USB ビデオ クラス 1.5 仕様に対する Microsoft 拡張機能について説明します。
-ms.date: 01/30/2018
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cb7158b1c37ee59e0a00755f96ef56e8c9052385
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.custom: rs5, 19H1
+ms.openlocfilehash: 8a88e66f7f7d8fe90bd55bfdbc783b17c659a693
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419576"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904022"
 ---
 # <a name="microsoft-extensions-to-usb-video-class-15-specification"></a>USB ビデオ クラス 1.5 仕様に対する Microsoft の拡張機能
 
@@ -150,9 +151,9 @@ GET_DEF 要件:既定の**bmControlFlags**は D0 1 に設定して**qwValue**を
 
 フィールドの GET_CUR/SET_CUR 要求の場合、次の制限が適用されます**bmControlFlags**:
 
--   D0、D1 と D2 のビット単位の間では、少なくとも 1 つのビットを設定するものとします。
+- D0、D1 と D2 のビット単位の間では、少なくとも 1 つのビットを設定するものとします。
 
--   D1 は、D0 と D2 と互換性がありません。
+- D1 は、D0 と D2 と互換性がありません。
 
 ##### <a name="2224-ev-compensation-control"></a>2.2.2.4 EV 補正コントロール
 
@@ -232,13 +233,54 @@ GET_RES、GET_MIN、GET_MAX、GET_CUR 要求とレポート フィールド**bNu
 
 GET_DEF 要求には、使用可能な組み込みの情報が含まれるすべてのエンドポイントは一覧表示します。
 
+##### <a name="22210-metadata-control"></a>2.2.2.10 メタデータ コントロール
+
+このコントロールは、クエリを実行し、カメラによって生成されるメタデータを制御するには、ホスト ソフトウェアを使用できます。 これは、すべてのビデオ ストリーミング、ビデオ コントロールのインターフェイスに関連付けられているインターフェイスのすべてのエンドポイントに影響を与えるグローバル コントロールです。 このコントロールにマップ[ **KSPROPERTY_CAMERACONTROL_EXTENDED_METADATA** ](ksproperty-cameracontrol-extended-metadata.md)カメラ ドライバー。
+
+![コントロールのメタデータ](images/uvc-1-15-metadata-control.png)
+
+SET_CUR 要求は、ファームウェアによってサポートされている場合、次の処理が適用されます。
+
+- GET_MIN、GET_DEF 要求はフィールド dwValue を 0 に設定をレポートする必要があります。
+- GET_RES 要求は、GET_MAX 要求によって報告された同じ値であるフィールド dwValue を報告する必要があります。
+- 0 に設定する dwValue に SET_CUR 要求が受信されると、カメラはすべてのメタデータを作成できません。 DwValue GET_MAX 要求によって報告された同じ値に設定と SET_CUR 要求が受信されると、カメラは、メタデータを生成できるし、このようなメタデータのサイズは、任意のフレームの dwValue を超えることはできません。
+
+SET_CUR 要求が、ファームウェアによってサポートされていない場合、次の処理が適用されます。
+
+- GET_MIN、GET_DEF 要求には、フィールド dwValue に GET_MAX 要求によって報告された値が同じであるものと報告します。
+- GET_RES 要求では、フィールド dwValue を 0 に設定を報告します。
+- カメラがメタデータを生成し、このようなメタデータの合計サイズは、任意のフレームの dwValue - GET_MAX 要求によって報告された –、時間、UsbVideoHeader メタデータ ペイロードのサイズ以下の 1024 バイトを超えることはできません。  
+- UsbVideoHeader メタデータのペイロードは、sizeof(KSCAMERA_METADATA_ITEMHEADER) + sizeof(KSTREAM_UVC_METADATA) または 24 バイトです。
+生成されたメタデータは、2.2.3 セクションで説明されている Microsoft 標準形式のメタデータに準拠しているものとします。
+
+##### <a name="22211-ir-torch-control"></a>2.2.2.11 IR Torch コントロール
+
+このコントロールは、IR LED ハードウェア レポートの範囲を制御でき、制御する機能を提供するための柔軟な手段を提供します。  これは、すべてのビデオ ストリーミング、カメラに接続されている IR への lamp の電源を調整することによって、ビデオ コントロールのインターフェイスに関連付けられているインターフェイスのすべてのエンドポイントに影響を与えるグローバル コントロールです。 このコントロールにマップ[ **KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE** ](ksproperty-cameracontrol-extended-irtorchmode.md)カメラ ドライバー。
+
+![IR Torch コントロール](images/uvc-1-15-irtorch-control.png)
+
+次の処理が適用されます。
+
+- GET_LEN 要求は、8 の値を報告する必要があります。
+- GET_INFO 要求では、3 を報告します。  この値は、同期 GET_CUR と SET_CUR をサポートするコントロールを示します。
+- GET_MIN 要求は、0 および dwValue に最低限の電力を示す値を設定する設定フィールドの寸法を報告する必要があります。  0 の電源レベルは OFF である可能性がありますが、動作可能な最小電力レベルは、0 にコールする必要はありません。
+- GET_RES 要求は、0 および dwValue のセットに設定するフィールドの寸法をレポートは、GET_MAX(dwValue) – 以下の数値を GET_MIN(dwValue) などその GET_MAX(dwValue) – GET_MIN(dwValue) は、この値で均等に分割します。  dwValue には、ゼロ (0) をできない可能性があります。
+- GET_MAX 要求は、このコントロールの機能を識別するために、D [0-2] のビットを設定で設定フィールドの寸法を報告する必要があります。  寸法は、D0 セット、OFF がサポートされている、他の少なくとも 1 つのビット設定が必要になることを示す、アクティブな状態をサポートしているビットがする必要があります。  dwValue は、通常の電源を示す値を設定する必要があります。
+- GET_DEF 要求は、ストリーミングを開始する前に、システムがでなければなりません、既定のモードに設定フィールドの寸法を報告する必要があります。  寸法は、(ON) 2 または 4 (繰り返し) に設定する必要があります。  dwValue は、FaceAuth コントロールに通常使用電力レベルに設定する必要があります。  dwValue は、製造元によって定義されます。
+- GET_CUR 要求にはレポート フィールド寸法の現在の操作モードに設定および dwValue の現在の照明に設定を指定します。
+- SET_CUR 要求が受信されると、IR Torch は要求された動作モードを使用して prorate 輝度に、照明を設定します。
+
+IR トーチを出力する必要があります、 [ **MF_CAPTURE_METADATA_FRAME_ILLUMINATION** ](standardized-extended-controls-.md)のすべてのフレームの属性。  デバイス MFT またはを含めることによってこれを提供できます、 **MetadataId_FrameIllumination**カメラからのメタデータのペイロード内の属性。  2.2.3.4.4 セクションを参照してください。  
+
+このメタデータの唯一の目的は、フレームが点灯しているかどうかどうかを示すです。  これは、同じメタデータが必要な[ **KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE** ](ksproperty-cameracontrol-extended-faceauth-mode.md) DDI、 **MSXU_FACE_AUTHENTICATION_CONTROL**セクションで定義されています。2.2.2.7 します。  
+
 #### <a name="223-metadata"></a>2.2.3 メタデータ
 
-フレームのメタデータの標準形式のデザインは、Windows 10 から UVC カスタム メタデータのデザインに基づいています。 Windows 10 では、UVC のカスタム メタデータをサポート、カメラのドライバーをカスタム INF を使用して (注: カメラのドライバーは、Windows USBVIDEO に基づくことができます。SYS がカスタム INF はを介してメタデータを特定のハードウェアに必要) です。 場合 MetadataBufferSizeInKB<PinIndex>レジストリ エントリが存在し、0 以外の場合、その pin でのカスタム メタデータはサポートされてし、値がメタデータに使用するバッファー サイズを示します。 <PinIndex>フィールドをピン留めするビデオのインデックスの 0 から始まるインデックスを示します。
+フレームのメタデータの標準形式のデザインは、Windows 10 から UVC カスタム メタデータのデザインに基づいています。 Windows 10 では、UVC のカスタム メタデータをサポート、カメラのドライバーをカスタム INF を使用して (注: カメラのドライバーは、Windows USBVIDEO に基づくことができます。SYS がカスタム INF はを介してメタデータを特定のハードウェアに必要) です。 場合`MetadataBufferSizeInKB<PinIndex>`レジストリ エントリが存在し、0 以外の場合、その pin でのカスタム メタデータはサポートされてし、値がメタデータに使用するバッファー サイズを示します。 `<PinIndex>`フィールドをピン留めするビデオのインデックスの 0 から始まるインデックスを示します。
 
 Windows 10 バージョン 1703、カメラのドライバーは、次 AddReg エントリを含めることによって Microsoft 標準形式のメタデータのサポートを通知できます。
 
-**StandardFormatMetadata<PinIndex>**:REG_DWORD:0x0 (NotSupported) 0x1 (サポート)
+`StandardFormatMetadata<PinIndex>` :REG_DWORD:0x0 (NotSupported) 0x1 (サポート)
 
 このレジストリ キーは DevProxy によって読み取られ、KSSTREAM_METADATA_INFO 構造の Flags フィールドで KSSTREAM_METADATA_INFO_FLAG_STANDARDFORMAT フラグを設定して、メタデータが標準の形式である UVC ドライバーに通知します。
 
@@ -329,7 +371,7 @@ UVC 経由でフレーム ベースのビデオの転送中にビデオのフレ
 
 - SCR フィールドでは、BFH [0] フィールドに、SCR のビットが設定されている場合があります。 2.4.3.3 を参照してください*ビデオとイメージのペイロード ヘッダーも*で、*ビデオ デバイスの USB デバイス クラス定義*仕様。
 
-既存の UVC ドライバー HLE フィールドは、12 バイト (PTS/SCR 存在) を 2 バイト (ありません PTS/SCR 存在) または最大のいずれかに固定されます。 ただし、サイズのバイトのフィールドでは、中、HLE フィールドは最大 255 バイト ヘッダー データの可能性がありますを指定できます。 ときにペイロード ヘッダーの最初の 12 バイトがビデオに固有の標準メタデータとして選択し、追加のデータの次のフレーム場合両方 PTS/SCR は、設定されており、HLE を超える 12 バイト、INF エントリ*StandardFormatMetadata<PinIndex>* 設定されます。
+既存の UVC ドライバー HLE フィールドは、12 バイト (PTS/SCR 存在) を 2 バイト (ありません PTS/SCR 存在) または最大のいずれかに固定されます。 ただし、サイズのバイトのフィールドでは、中、HLE フィールドは最大 255 バイト ヘッダー データの可能性がありますを指定できます。 ときにペイロード ヘッダーの最初の 12 バイトがビデオに固有の標準メタデータとして選択し、追加のデータの次のフレーム場合両方 PTS/SCR は、設定されており、HLE を超える 12 バイト、INF エントリ`StandardFormatMetadata<PinIndex>`設定されます。
 
 フレーム (ファームウェアによって生成される) 標準形式のメタデータは、そのフレームを表すビデオ フレームのパケット内に見つかった部分的な blob を連結することによって取得されます。
 
@@ -428,6 +470,7 @@ typedef struct tagKSCAMERA_METADATA_FRAMEILLUMINATION {
     ULONG Reserved;
 } KSCAMERA_METADATA_FRAMEILLUMINATION, *PKSCAMERA_METADATA_FRAMEILLUMINATION;
 ```
+
 **フラグ**フィールドは、キャプチャされたフレームに関する情報を示します。 現時点では、次のフラグが定義されています。
 
 ```cpp
@@ -437,6 +480,3 @@ typedef struct tagKSCAMERA_METADATA_FRAMEILLUMINATION {
 照明が存在していたときに、フレームをキャプチャした場合、フラグ KSCAMERA_METADATA_FRAMEILLUMINATION_FLAG_ON 設定するものとします。 それ以外の場合、このフラグは設定できません。
 
 **占有**フィールドは将来使用するために予約されていると、0 に設定する必要があります。
-
-
-

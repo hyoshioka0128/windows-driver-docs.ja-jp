@@ -4,12 +4,13 @@ description: このセクションには、WDI 状態通知が含まれていま
 ms.assetid: CD873C33-72ED-4F99-A584-5C307F4FB65E
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ddbec0ca3e046b0c68d7c068930e1dd409c14f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 98b98138951000335e1447f230688a4a772ab531
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535667"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903970"
 ---
 # <a name="wdi-miniport-driver-status-indications"></a>WDI ミニポート ドライバーの状態インジケーター
 
@@ -50,8 +51,10 @@ ms.locfileid: "56535667"
 -   [NDIS\_状態\_WDI\_INDICATION\_P2P\_送信\_要求\_アクション\_フレーム\_完了](ndis-status-wdi-indication-p2p-send-request-action-frame-complete.md)
 -   [NDIS\_STATUS\_WDI\_INDICATION\_P2P\_SEND\_RESPONSE\_ACTION\_FRAME\_COMPLETE](ndis-status-wdi-indication-p2p-send-response-action-frame-complete.md)
 -   [NDIS\_状態\_WDI\_INDICATION\_ラジオ\_状態](ndis-status-wdi-indication-radio-status.md)
+-   [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)
 -   [NDIS\_状態\_WDI\_INDICATION\_ローミング\_完了](ndis-status-wdi-indication-roam-complete.md)
 -   [NDIS\_状態\_WDI\_INDICATION\_ローミング\_が必要](ndis-status-wdi-indication-roaming-needed.md)
+-   [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
 -   [NDIS\_STATUS\_WDI\_INDICATION\_SCAN\_COMPLETE](ndis-status-wdi-indication-scan-complete.md)
 -   [NDIS\_STATUS\_WDI\_INDICATION\_SEND\_AP\_ASSOCIATION\_RESPONSE\_COMPLETE](ndis-status-wdi-indication-send-ap-association-response-complete.md)
 -   [NDIS\_状態\_WDI\_INDICATION\_送信\_要求\_アクション\_フレーム\_完了](ndis-status-wdi-indication-send-request-action-frame-complete.md)

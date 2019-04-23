@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_START_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b24d9a2142aee5a15a57a089ad61c89051b850d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1631e42945f5e4e73177003dbcbe45b50cc764fe
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558384"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903362"
 ---
 # <a name="oidwditaskstartap"></a>OID\_WDI\_タスク\_開始\_アジア太平洋
 
@@ -91,13 +92,13 @@ OID\_WDI\_タスク\_開始\_AP 要求 IHV コンポーネントが、Wi-Fi Dire
 <tr class="even">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897869" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_CHANNEL_NUMBER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897869)"><strong>WDI_TLV_P2P_CHANNEL_NUMBER</strong></a></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td>指定すると、これとグループの構成で決定された運用チャネルを定義します。 これはのみ、動作モードが Wi-Fi Direct の移動時に指定可能性があります。</td>
 </tr>
 <tr class="odd">
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/mt593242" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt593242)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a></td>
-<td>X</td>
-<td>X</td>
+<td>x</td>
+<td>x</td>
 <td>Windows 10 バージョン 1511、WDI バージョン 1.0.10 に追加されます。
 <p>バンドとアクセス ポイントを開始するチャネルの省略可能なリスト。 MustUseSpecifiedChannels が 1 に設定されている場合、アジア太平洋はこの一覧からのみ開始できます。 設定されていない場合は、この一覧は、ファームウェアを選択するチャネルの推奨設定をするものでし、場合は、指定したチャネルのいずれかの AP を開始することはできません、別のチャネルを選択こと可能性があります。</p></td>
 </tr>
@@ -109,7 +110,9 @@ OID\_WDI\_タスク\_開始\_AP 要求 IHV コンポーネントが、Wi-Fi Dire
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_開始\_AP\_完了](ndis-status-wdi-indication-start-ap-complete.md)要件
+[NDIS\_STATUS\_WDI\_INDICATION\_START\_AP\_COMPLETE](ndis-status-wdi-indication-start-ap-complete.md)
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

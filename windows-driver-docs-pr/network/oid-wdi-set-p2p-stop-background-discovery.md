@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_P2P_STOP_BACKGROUND_DISCOVERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e60302447783596c127a4e5dc6e336e7b8c60cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 55fd6f5814bf1c43726ca90cfc9e5296bc4dc22e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552960"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903738"
 ---
 # <a name="oidwdisetp2pstopbackgrounddiscovery"></a>OID\_WDI\_設定\_P2P\_停止\_バック グラウンド\_検出
 
@@ -32,7 +33,8 @@ OID\_WDI\_設定\_P2P\_停止\_バック グラウンド\_検出が、アダプ�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

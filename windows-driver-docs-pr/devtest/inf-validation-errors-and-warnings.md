@@ -4,12 +4,12 @@ description: ドライバーのインストールのエラーと警告は、Micr
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7f22db5efb0c1af011841ca274b9e8ee9e69a2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 6caa307ecdfe6a720f8f1050c89193a9a6e72040
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464214"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902514"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF の検証エラーと警告
 
@@ -51,9 +51,9 @@ InfVerif 一般的な次のようにルールを下のエラー番号より重�
 
 エラー コードは、次の分類があります。
 
-- [INF ファイル (1100 1299) 内の構文](#syntax-in-the-inf-file-(1100-1299))
-- [ユニバーサル INF (1319 1300)](#universal-inf-(1300-1319))
-- [インストール (2000 ~ 2999)](#installation-(2000-2999))
+- [INF ファイル (1100 1299) 内の構文](#syntax-in-the-inf-file-1100-1299)
+- [ユニバーサル INF (1319 1300)](#universal-inf-1300-1319)
+- [インストール (2000 ~ 2999)](#installation-2000-2999)
 
 すべてのエラー コードは、簡単明瞭な意味を持つ多くのように、以下に示します。 1000 1099 範囲内のエラーは基本的な構文エラーは、現在と見なされます。
 
@@ -198,7 +198,23 @@ HKR,,DllPath,%%SystemRoot%%\System32\myDll.sys
 </tr>
 <tr>
 <td><strong>1296:指定されたサービスのハードウェアに関連付けられていません。</strong></td>
-<td>この警告は、Windows 10、バージョンは 1809、以降が表示され、ハードウェアにインストール セクションを使用して、指定の関連付けられたサービスがないことを示します。
+<td>Windows 10、バージョンは 1809、以降と、エラーが発生する警告から変更がこれです。  します。サービスのセクションでは、定義されている各ターゲット OS 必要があります。  これはよい方法でありは 1809 だけでなくすべての Inf に適用されます。  
+
+以前いない含める場合このセクションで、サービスはありませんでしたし、受信トレイのドライバー サービスに依存しているため、しを作成しなければならないのです。サービスのセクションで、ニーズを使用して受信トレイ INF のサービスを参照し、ステートメントが含まれています。  
+
+例:INF ファイルに次の必要があります。このエラーを解決するには、各 OS ターゲット セクションをサービスします。
+
+<pre>
+[XXXXXXXX.Install.NTx86.Services]
+Include=filename.inf
+Needs=inf-section-name.Services
+</pre>
+
+関数のドライバーを必要としないデバイスの場合は、NULL ドライバーとしては、次のように指定できます。
+<pre>
+AddService = ,2.
+</pre>
+<b>のみ、INF がドライバーを必要としませんを指定する非機能的なデバイスをインストールする場合は、これを使用します。</b>
 </td>
 </tr>
 </tbody>
@@ -290,7 +306,7 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 LogConfig=LogConfigSection
 ...
 </pre>
-ディレクティブは非推奨する INF の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff547388">INF ディレクティブ</a>を参照してください。</td>
+ディレクティブは非推奨する INF の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547388">INF ディレクティブ</a>します。</td>
 </tr>
 <tr>
 <td><strong>2223:セクションは、アーキテクチャの装飾である必要があります。</strong></td>

@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d18f248d3e3899e8be9a5beab3885464d621ce8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: cc192d0be64f2e9f4dcff799acd9f500b78d38c5
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578112"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902410"
 ---
 # <a name="oidwditasksendresponseactionframe"></a>OID\_WDI\_タスク\_送信\_応答\_アクション\_フレーム
 
@@ -45,7 +46,9 @@ OID\_WDI\_タスク\_送信\_応答\_アクション\_フレームは IHV コン
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
 
-[NDIS\_状態\_WDI\_INDICATION\_送信\_応答\_アクション\_フレーム\_完了](ndis-status-wdi-indication-send-response-action-frame-complete.md)要件
+[NDIS\_状態\_WDI\_INDICATION\_送信\_応答\_アクション\_フレーム\_完了](ndis-status-wdi-indication-send-response-action-frame-complete.md)
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

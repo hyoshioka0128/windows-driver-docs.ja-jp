@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e84f2ba30c56734a6a10743206ae52b2af469296
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238741"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902324"
 ---
 # <a name="bug-check-0x131-invalidextendedprocessorstate"></a>バグ チェック 0x131:無効な\_拡張\_プロセッサ\_状態
 

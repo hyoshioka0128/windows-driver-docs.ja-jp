@@ -7,11 +7,11 @@ keywords:
 ms.date: 02/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 771d2674cff145f064aa960b7d18417c08aacfdf
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845573"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903660"
 ---
 # <a name="mobile-plans-service-configuration"></a>プランのモバイル サービスの構成
 
@@ -87,7 +87,7 @@ ms.locfileid: "58845573"
 
 | JSON オブジェクト | フィールド名 | 説明 | 例 |
 | --- | --- | --- | --- |
-| ルート オブジェクト | promotionTemplates | [ゲートウェイ] ページに表示される昇格テンプレートの一覧。 1 つだけ昇格テンプレートについては、各携帯電話会社のサポートします。 | N/A |
+| ルート オブジェクト | promotionTemplates | [ゲートウェイ] ページに表示される昇格テンプレートの一覧。 1 つだけ昇格テンプレートについては、各携帯電話会社のサポートします。 | なし |
 | PromotionTemplate | id | テンプレートの一意の文字列識別子です。 | 123 |
 |   | BackgroundColor | ゲートウェイのページの背景色。 このフィールドは、16 進数の文字列の形式で`0xRRGGBBAA`します。 未定義の場合、空白は、既定値として使用されます。 | 0x000000FF |
 |   | bodyFontColor | 本文テキストのフォントの色。 このフィールドは、16 進数の文字列の形式で`0xRRGGBBAA`します。 黒の未定義の場合は、既定値として使用されます。 | 0 xffffffff |

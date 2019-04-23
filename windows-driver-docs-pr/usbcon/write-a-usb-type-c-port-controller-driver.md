@@ -1,16 +1,17 @@
 ---
-Description: Describes the behavior of the USB Type-C Port Controller Interface Class Extension, known as UcmTcpciCx and tasks that a client driver must perform for a USB Type-C port controller.
-title: USB タイプ-c ポート コント ローラー ドライバーを作成します。
+Description: USB タイプ C ポート コント ローラー インターフェイス クラス拡張機能の UcmTcpciCx およびクライアント ドライバーは、型-C# の USB ポート コント ローラーに対して実行する必要がありますタスクと呼ばれる動作について説明します。
+title: USB Type-C ポート コントローラー ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a409408e9ed40560de8fd3157fec853784c5351
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: b0a35e31f3640f788b69e7bee08d8a9137b96e37
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536683"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902432"
 ---
-# <a name="write-a-usb-type-c-port-controller-driver"></a>USB タイプ-c ポート コント ローラー ドライバーを作成します。
+# <a name="write-a-usb-type-c-port-controller-driver"></a>USB Type-C ポート コントローラー ドライバーを記述する
 
 USB タイプ-c ハードウェア USB 型-c または電源配信 (PD) 物理レイヤーの実装が電源の配信に必要なステート マシンを実装していません型-C# の USB ポート コント ローラーのドライバーを記述する必要があります。 
 
@@ -52,7 +53,7 @@ UcmTcpciCx クラスの拡張機能自体は、UcmCx のクライアント ド�
 
 ## <a name="before-you-begin"></a>開始する前にしています.
 
--   によって、ハードウェアまたはファームウェアの PD ステート マシンを実装するかどうかを記述する必要があるドライバーの種類を決定します。 詳細については、[種類 C の USB コネクタ用の Windows の開発ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)を参照してください。  
+-   によって、ハードウェアまたはファームウェアの PD ステート マシンを実装するかどうかを記述する必要があるドライバーの種類を決定します。 詳細については、次を参照してください。[種類 C の USB コネクタ用の Windows の開発ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)します。  
 
 -   ターゲット コンピューターまたは Windows 10 Mobile にデスクトップのエディション (Home、Pro、Enterprise、および Education) が型-C# の USB コネクタの使用には、Windows 10 をインストールします。
 -   [インストール](https://go.microsoft.com/fwlink/p/?LinkID=845980)開発用コンピューターに最新 Windows Driver Kit (WDK)。 このキットが必要なヘッダー ファイルとライブラリを具体的には、クライアント ドライバーを記述するため、必要があります。
@@ -203,7 +204,7 @@ UcmTcpciPortControllerAlert を呼び出す前に、クライアントは UCMTCP
 
 UcmTcpciCx は、クライアント ドライバーから必要な取得/設定操作を記述する場合の I/O 制御コードとしてのコマンドを送信します。 クライアント ドライバーのキューのセットアップは、ドライバーは、そのキューを UcmTcpciCx に登録します。  Framework 要求オブジェクトをキューに配置する UcmTcpciCx 開始ドライバーからの操作が必要です。 I/O 制御コードは、手順 4. でテーブルに表示されます。
 
-適切なタイミングで要求を完了する、クライアント ドライバーの役目です。TBD、
+適切なタイミングで要求を完了する、クライアント ドライバーの役目です。
 
 クライアント ドライバーは、要求された操作が完了したら、framework 要求オブジェクトを表す完了状態で WdfRequestComplete を呼び出します。 
 

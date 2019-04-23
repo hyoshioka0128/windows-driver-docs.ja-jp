@@ -11,20 +11,19 @@ keywords:
 - WDM ドライバー WDK カーネル、WDM ドライバーについて
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7bc388e9530e90d0d3771c51920841f4fa1b1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dfaae90d1641d9def7fb833ba2e1166fd75c71c6
+ms.sourcegitcommit: 6df760d981c019f160e1a0ba91fc0ea576db3278
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580490"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60159037"
 ---
 # <a name="introduction-to-wdm"></a>WDM の概要
 
+> [!NOTE]
+> このセクションには、推奨されるドライバー モデルではなくなり、WDM ドライバーに関するガイダンスが含まれています。 ドライバー モデルを選択する方法の詳細については、次を参照してください。[ドライバー モデルを選択する](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)します。
 
 開発者がソース コードと互換性のあるすべての Microsoft Windows で動作しているシステムでは、デバイス ドライバーを記述する、 *Windows Driver Model* (WDM) が導入されました。 WDM 規則に従うカーネル モード ドライバーが呼び出されて*WDM ドライバー*します。
-
-
-
 
 すべて WDM ドライバーでは、次の操作を行う必要があります。
 
@@ -40,26 +39,11 @@ ms.locfileid: "56580490"
 
 -   サポート[Windows Management Instrumentation](implementing-wmi.md) (WMI)。
 
-### <a name="does-the-wdk-cover-non-wdm-drivers"></a>WDK カバー非 WDM ドライバーのでしょうか
+### <a name="should-you-write-a-wdm-driver"></a>WDM ドライバーを作成する必要がありますか。
 
-Windows Driver Kit (WDK) には、カーネル モードの WDM ドライバーの開発が強調されていますが、WDK には、WDM 規則に従っていないカーネル モード ドライバーに関連する情報も含まれています。 この情報により、既存の非 WDM ドライバーを維持するために、新しいドライバーにこれらの既存のドライバーとそのインターフェイスを記述します。
+新しいドライバーを作成する場合は、使用を検討して、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/dn265580)(KMDF)。 KMDF は、WDM インターフェイスよりも簡単に使用されるインターフェイスを提供します。
 
-### <a name="should-you-always-write-a-wdm-driver"></a>常に WDM ドライバーを記述する必要がありますか。
-
-新しいカーネル モード ドライバーを作成する場合、WDM ドライバーがあります*しない限り、* 非 WDM ドライバーのスタックに挿入されるドライバーを作成します。 新しいドライバーを決定するデバイスの種類に固有 Microsoft が提供ドライバーのドキュメントを Microsoft から提供されたドライバーとやり取りする必要がありますお読みください。 デバイスの種類に固有の詳細については、次を参照してください[デバイスとドライバー テクノロジ](https://msdn.microsoft.com/library/windows/hardware/ff557557)。)。
-
-**注**  WDM ドライバーのすべての新しいドライバー スタックがあります。
-
- 
-
-クロス プラットフォームの問題、考慮すべきは WDM または非 WDM ドライバーを開発しているかどうか。 詳細については、[さまざまなバージョンの Windows のドライバーを書き込み](https://msdn.microsoft.com/library/windows/hardware/ff554887)を参照してください。
-
-使用を検討する新しい WDM ドライバーを作成する場合もする必要があります、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/dn265580)(KMDF)。 KMDF は、WDM インターフェイスよりも簡単に使用されるインターフェイスを提供します。
-
- 
-
- 
-
+書き込みません WDM ドライバー、ドライバーを非 WDM ドライバーのスタックに挿入されるかどうか。 新しいドライバーを決定するデバイスの種類に固有 Microsoft が提供ドライバーのドキュメントを Microsoft から提供されたドライバーとやり取りする必要がありますお読みください。 デバイスの種類に固有の詳細については、次を参照してください[デバイスとドライバー テクノロジ](https://msdn.microsoft.com/library/windows/hardware/ff557557)。)。
 
 
 

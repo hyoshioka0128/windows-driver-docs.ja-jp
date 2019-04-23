@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_RECEIVE_COALESCING ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 335c6473e06e133ac2c4fd33aca38d38f1fc859c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 88328276655a68a71fa2ab013a9b271e70f363ba
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559671"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902344"
 ---
 # <a name="oidwdisetreceivecoalescing"></a>OID\_WDI\_設定\_受信\_COALESCING
 
@@ -39,7 +40,8 @@ OID\_WDI\_設定\_受信\_COALESCING がパケットの結合のパケット フ
 
 
 追加のパラメーターはありません。 ヘッダー内のデータで十分です。
-要件
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

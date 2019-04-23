@@ -1,5 +1,5 @@
 ---
-title: Mobile のプランのユース ケース
+title: モバイル通信プランのユース ケース
 description: このトピックでは、モバイルの演算子を実装する基本的なユーザー ケースについて説明します。
 ms.assetid: 24050B13-4A1A-466F-974B-40B34EDB16DC
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 8119bb90eb86a6849307020b60cfccab973f0983
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845575"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902485"
 ---
-# <a name="mobile-plans-use-cases"></a>Mobile のプランのユース ケース
+# <a name="mobile-plans-use-cases"></a>モバイル通信プランのユース ケース
 
 ## <a name="overview"></a>概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "58845575"
 
 このセクションでは、通信事業者の実装をアクティブ化、ダウンロード、および Windows デバイスで、eSIM プロファイルをインストールする必要がありますについて説明します。 ネットワーク バックエンドと、ライセンス認証プロセスにかかる時間の特定の条件に基づいてプランのモバイル アプリに制御を返す方法の 1 つ以上を実装できます。
 
-以下の操作を行ってください。
+次の手順に従います。
 
 1. 実装、 [web ポータルのモバイル プラン](mobile-plans-web-portal.md#web-service-api-used-for-esim)します。
 2. プランのモバイル アプリに戻すコントロールを提供する手段を実装します。
@@ -59,7 +59,7 @@ ms.locfileid: "58845575"
 
 このセクションでは、通信事業者の実装、ウォーム SIM プロファイルを Windows デバイスでアクティブ化する必要がありますについて説明します。
 
-以下の操作を行ってください。
+次の手順に従います。
 
 1. 実装、 [web ポータルの Mobile Operator](mobile-plans-web-portal.md#web-service-api-used-for-a-physical-sim)します。
 2. 実装、[残高を追加する](mobile-plans-callback-notifications.md#adding-balance)Mobile プランに戻すコントロールを渡すことにします。

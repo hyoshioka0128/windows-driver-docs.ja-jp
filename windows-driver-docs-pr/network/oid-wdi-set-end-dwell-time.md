@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_END_DWELL_TIME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a8769db6f39033d33e9d04d209ca782cc03809
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: e1b3eef35841dd69c645649235edaf76516825d0
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578825"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903554"
 ---
 # <a name="oidwdisetenddwelltime"></a>OID\_WDI\_設定\_エンド\_熟考\_時間
 
@@ -20,7 +21,7 @@ OID\_WDI\_設定\_エンド\_熟考\_時間は WDI にまでにフォロー ア�
 
 | Scope | タスクでシリアル化された設定します。 | 通常の実行時間 (秒) |
 |-------|--------------------------|---------------------------------|
-| ポート  | いいえ                       | 1                               |
+| ポート  | X                       | 1                               |
 
  
 
@@ -34,7 +35,8 @@ OID\_WDI\_設定\_エンド\_熟考\_時間は WDI にまでにフォロー ア�
 
 
 追加データがありません。 ヘッダー内のデータで十分です。
-必要条件
+
+<a name="requirements"></a>要件
 ------------
 
 <table>

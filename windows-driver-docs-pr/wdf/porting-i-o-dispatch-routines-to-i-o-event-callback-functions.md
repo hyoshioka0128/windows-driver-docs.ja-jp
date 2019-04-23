@@ -1,23 +1,23 @@
 ---
-title: I/O イベント コールバック関数への I/O ディスパッチ ルーチンの移植
-description: I/O イベント コールバック関数への I/O ディスパッチ ルーチンの移植
+title: I/O ディスパッチ ルーチンの I/O イベント コールバック関数への移植
+description: I/O ディスパッチ ルーチンの I/O イベント コールバック関数への移植
 ms.assetid: 0BD65185-C358-4E28-8E31-255AF8D77F93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba858e4db9d39aea035c230684cdbf35fe43280d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f16f8116bd4d8aa0afc4b8056815f585d1ca6bf9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530049"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902914"
 ---
-# <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>I/O イベント コールバック関数への I/O ディスパッチ ルーチンの移植
+# <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>I/O ディスパッチ ルーチンの I/O イベント コールバック関数への移植
 
 
 WDM ドライバーの I/O のディスパッチ ルーチンの中核は、WDF ドライバーの I/O イベント コールバック関数にマップされます。 ただし、I/O イベントのコールバック関数は、WDM ドライバーの I/O のディスパッチ ルーチンからいくつかの重要な点で異なります。
 
 -   フレームワークが WDF ドライバーの I/O イベント コールバックを呼び出すと、コールバックは、オブジェクトの状態で要求を受け取ります。 ドライバーに明示的にマークを付けますとしてキャンセル可能な限り、要求をキャンセルできません。
--   ドライバーでは、キューごとまたはデバイスのオブジェクトごとに、このような 1 つだけのコールバックが同時に実行されるように、フレームワークが I/O イベントのコールバックの呼び出しを同期するかどうか、またはかどうか、フレームワークが適用されない同期ですべてを指定します。 同期オプションを選択する方法についての詳細については、[を使用して自動同期](using-automatic-synchronization.md)を参照してください。
+-   ドライバーでは、キューごとまたはデバイスのオブジェクトごとに、このような 1 つだけのコールバックが同時に実行されるように、フレームワークが I/O イベントのコールバックの呼び出しを同期するかどうか、またはかどうか、フレームワークが適用されない同期ですべてを指定します。 同期オプションを選択する方法についての詳細については、次を参照してください。[を使用して自動同期](using-automatic-synchronization.md)します。
 
 これらの違いにより、ほとんどの I/O イベント コールバック関数がアクセスを同期して、対応する WDM よりも、競合状態を防ぐためには、大幅に少ないコードを含む**DispatchXxx**ルーチン。
 
@@ -42,8 +42,8 @@ WDF ドライバーは、同じ方法でバッファーをバッファーとダ�
 -   [要求を作成します。](#create-requests)
 -   [読み取り要求](#read-requests)
 -   [書き込み要求](#write-requests)
--   [デバイス I/O 制御要求](#device-i-o-requests)
--   [内部デバイス I/O 制御要求](#int-dev-i-o)
+-   [デバイス I/O 制御要求](#device-io-control-requests)
+-   [内部デバイス I/O 制御要求](#internal-device-io-control-requests)
 
 ## <a name="create-requests"></a>要求を作成します。
 
@@ -53,21 +53,21 @@ WDF のドライバーが処理できる要求の作成 ([**IRP\_MJ\_作成**](h
 -   キューをバイパスし、代わりに指定する[ *EvtDeviceFileCreate* ](https://msdn.microsoft.com/library/windows/hardware/ff540868)コールバック。
 -   フレームワークのキューの要求を作成し、実装がある、 [ *EvtIoDefault* ](https://msdn.microsoft.com/library/windows/hardware/ff541757)キューからこのような要求を処理するためにコールバックします。
 
-ファイルの作成要求の処理の詳細については、[Framework ファイル オブジェクト](framework-file-objects.md#creating-or-opening-a-file)を参照してください。
+ファイルの作成要求の処理の詳細については、次を参照してください。 [Framework ファイル オブジェクト](framework-file-objects.md#creating-or-opening-a-file)します。
 
 ## <a name="read-requests"></a>読み取り要求
 
 
 読み取り要求のためのバッファーを取得する ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794))、WDF ドライバーでは、1 つを呼び出す、 **WdfRequestRetrieveOutputXxx**メソッド。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701)。
 
-バッファー ポインターの WDM 対応については、[KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#read)を参照してください。
+バッファー ポインターの WDM 対応については、次を参照してください。 [KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#read)します。
 
 ## <a name="write-requests"></a>書き込み要求
 
 
 書き込み要求のためのバッファーを取得する ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819))、WDF ドライバーでは、1 つを呼び出す、 **WdfRequestRetrieveInputXxx**メソッド。 ドライバーが実行するかどうかに依存しているは、これらのメソッドを返します。 各バッファー[バッファー、直接、またはどちらも I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701)。
 
-バッファー ポインターの WDM 対応については、[KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#write)を参照してください。
+バッファー ポインターの WDM 対応については、次を参照してください。 [KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#write)します。
 
 ## <a name="device-io-control-requests"></a>デバイス I/O 制御要求
 
@@ -76,7 +76,7 @@ WDF のドライバーが処理できる要求の作成 ([**IRP\_MJ\_作成**](h
 
 ドライバーが別のデバイス スタックかを使用して送信されるデバイス I/O 制御要求を処理する場合、 **Parameters.Other**フィールド、ドライバーが呼び出す必要があります[ **WdfRequestGetParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff549969)呼び出す代わりにバッファーへのポインターを取得する[ **WdfRequestRetrieveInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550014)と[ **WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018). これらの要求のソースは、カーネル モード コンポーネントである保証は、ため、ドライバーは、返されたバッファー ポインターを信頼できます。 ただし、バッファー長、およびその他のパラメーターを検証にする必要がありますも。
 
-バッファー ポインターの WDM 対応については、[KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#device-control)を参照してください。
+バッファー ポインターの WDM 対応については、次を参照してください。 [KMDF バッファー ポインターの対応する WDM](wdm-equivalents-for-kmdf-buffer-pointers.md#device-control)します。
 
 ## <a name="internal-device-io-control-requests"></a>内部デバイス I/O 制御要求
 

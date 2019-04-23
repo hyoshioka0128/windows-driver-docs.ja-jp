@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cbbe5a27df8f4c09ae27f44ee7ac16c5fb616f9
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239361"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902438"
 ---
 # <a name="bug-check-0x13c-invalidiobooststate"></a>バグ チェック 0x13C:無効な\_IO\_BOOST\_状態
 
