@@ -1,16 +1,16 @@
 ---
-Description: Audio Devices Design Guide
+Description: オーディオ デバイス設計ガイド
 title: オーディオ デバイス設計ガイド
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: e5000e3658365a5a8806797b346377566a6f0add
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333424"
 ---
 # <a name="audio-devices-design-guide"></a>オーディオ デバイス設計ガイド
 

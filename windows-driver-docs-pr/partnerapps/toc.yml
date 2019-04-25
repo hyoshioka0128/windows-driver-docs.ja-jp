@@ -1,18 +1,11 @@
-items:
 - name: パートナー アプリ開発
   href: index.md
   items:
-  - name: バックグラウンド タスクとカスタム トリガー
-    href: background-tasks-and-oem-triggers.md
-  - name: 割り当てられたアクセスのキオスク アプリ:ベスト プラクティス
-    href: create-a-kiosk-app-for-assigned-access.md
-  - name: パートナーの設定アプリを作成する
-    href: create-a-system-settings-application.md
-  - name: Wi-Fi Direct
-    href: wi-fi-direct.md
-ms.openlocfilehash: 682347e495d3de87fc57b390f4ddc413dc2b15ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465544"
+    - name: バックグラウンド タスクとカスタム トリガー
+      href: background-tasks-and-oem-triggers.md
+    - name: '割り当てられたアクセスのキオスク アプリ:ベスト プラクティス'
+      href: create-a-kiosk-app-for-assigned-access.md
+    - name: パートナーの設定アプリを作成する
+      href: create-a-system-settings-application.md
+    - name: Wi-Fi Direct
+      href: wi-fi-direct.md

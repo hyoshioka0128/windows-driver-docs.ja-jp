@@ -7,11 +7,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 0b3335f1bf688083233b4e90e59e3ec2325341f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345208"
 ---
 # <a name="sensor-device-driver-design-guide"></a>センサー デバイス ドライバー設計ガイド
 

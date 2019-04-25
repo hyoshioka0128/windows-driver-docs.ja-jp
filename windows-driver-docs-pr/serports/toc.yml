@@ -1,147 +1,140 @@
-items:
 - name: シリアル コントローラー ドライバー設計ガイド
   href: index.md
   items:
-  - name: シリアル コントローラー ドライバーの概要
-    href: serial-drivers-overview.md
-    items:
-    - name: シリアル I/O 要求インターフェイス
-      href: serial-i-o-request-interface.md
+    - name: シリアル コントローラー ドライバーの概要
+      href: serial-drivers-overview.md
       items:
-      - name: SerCx I/O の制御要求
-        href: sercx-io-control-requests.md
-    - name: SerCx2.sys と Serial.sys の違い
-      href: differences-between-sercx2-and-serial-sys.md
-  - name: シリアル フレームワーク拡張機能 (SerCx2) バージョン 2 の使用
-    href: using-version-2-of-the-serial-framework-extension.md
-    items:
-    - name: SerCx2 アーキテクチャの概要
-      href: sercx2-architectural-overview.md
-    - name: SerCx2 用のシリアル コントローラー ドライバーの設計
-      href: serial-controller-driver-design-for-sercx2.md
+        - name: シリアル I/O 要求インターフェイス
+          href: serial-i-o-request-interface.md
+          items:
+            - name: SerCx I/O の制御要求
+              href: sercx-io-control-requests.md
+        - name: SerCx2.sys と Serial.sys の違い
+          href: differences-between-sercx2-and-serial-sys.md
+    - name: シリアル フレームワーク拡張機能 (SerCx2) バージョン 2 の使用
+      href: using-version-2-of-the-serial-framework-extension.md
       items:
-      - name: SerCx2 ベースのシリアル コントローラー ドライバーの機能
-        href: features-of-sercx2-based-serial-controller-drivers.md
-      - name: SerCx2 の I/O トランザクション
-        href: sercx2-i-o-transactions.md
-        items:
-        - name: SerCx2 の I/O トランザクションの概要
-          href: overview-of-sercx2-i-o-transactions.md
-        - name: SerCx2 PIO-受信トランザクション
-          href: sercx2-pio-receive-transactions.md
-        - name: SerCx2 PIO-送信トランザクション
-          href: sercx2-pio-transmit-transactions.md
-        - name: SerCx2 システム-DMA-受信トランザクション
-          href: sercx2-system-dma-receive-transactions.md
-        - name: SerCx2 システム-DMA-送信トランザクション
-          href: sercx2-system-dma-transmit-transactions.md
-        - name: SerCx2 カスタム-受信トランザクション
-          href: sercx2-custom-receive-transactions.md
-        - name: SerCx2 カスタム-送信トランザクション
-          href: sercx2-custom-transmit-transactions.md
-    - name: SerCx2 で管理されるシリアル ポート上のデバイスにアクセスする
-      href: accessing-a-device-on-a-sercx2-managed-serial-port.md
+        - name: SerCx2 アーキテクチャの概要
+          href: sercx2-architectural-overview.md
+        - name: SerCx2 用のシリアル コントローラー ドライバーの設計
+          href: serial-controller-driver-design-for-sercx2.md
+          items:
+            - name: SerCx2 ベースのシリアル コントローラー ドライバーの機能
+              href: features-of-sercx2-based-serial-controller-drivers.md
+            - name: SerCx2 の I/O トランザクション
+              href: sercx2-i-o-transactions.md
+              items:
+                - name: SerCx2 の I/O トランザクションの概要
+                  href: overview-of-sercx2-i-o-transactions.md
+                - name: SerCx2 PIO-受信トランザクション
+                  href: sercx2-pio-receive-transactions.md
+                - name: SerCx2 PIO-送信トランザクション
+                  href: sercx2-pio-transmit-transactions.md
+                - name: SerCx2 システム-DMA-受信トランザクション
+                  href: sercx2-system-dma-receive-transactions.md
+                - name: SerCx2 システム-DMA-送信トランザクション
+                  href: sercx2-system-dma-transmit-transactions.md
+                - name: SerCx2 カスタム-受信トランザクション
+                  href: sercx2-custom-receive-transactions.md
+                - name: SerCx2 カスタム-送信トランザクション
+                  href: sercx2-custom-transmit-transactions.md
+        - name: SerCx2 で管理されるシリアル ポート上のデバイスにアクセスする
+          href: accessing-a-device-on-a-sercx2-managed-serial-port.md
+          items:
+            - name: SerCx2 で管理されるシリアル ポート上のデバイスの周辺機器ドライバー
+              href: peripheral-drivers-for-devices-on-sercx2-managed-serial-ports.md
+            - name: SerCx2 で管理されるシリアル ポートを開く
+              href: opening-a-sercx2-managed-serial-port.md
+              items:
+                - name: シリアル接続される周辺デバイスの接続 ID
+                  href: connection-ids-for-serially-connected-peripheral-devices.md
+                - name: UMDF 周辺機器ドライバーをシリアル ポートに接続する
+                  href: connecting-a-umdf-peripheral-device-driver-to-a-serial-port.md
+                - name: KMDF 周辺機器ドライバーをシリアル ポートに接続する
+                  href: connecting-a-kmdf-peripheral-device-driver-to-a-serial-port.md
+            - name: 読み取り/書き込み要求の SerCx2 処理
+              href: sercx2-handling-of-read-and-write-requests.md
+            - name: SerCx2 で管理されるシリアル ポートからデータを読み取る
+              href: reading-data-from-a-sercx2-managed-serial-port.md
+        - name: SerCx2 オブジェクト ハンドル
+          href: sercx2-object-handles.md
+    - name: Serial.sys および Serenum.sys の使用
+      href: using-serial-sys-and-serenum-sys.md
       items:
-      - name: SerCx2 で管理されるシリアル ポート上のデバイスの周辺機器ドライバー
-        href: peripheral-drivers-for-devices-on-sercx2-managed-serial-ports.md
-      - name: SerCx2 で管理されるシリアル ポートを開く
-        href: opening-a-sercx2-managed-serial-port.md
-        items:
-        - name: シリアル接続される周辺デバイスの接続 ID
-          href: connection-ids-for-serially-connected-peripheral-devices.md
-        - name: UMDF 周辺機器ドライバーをシリアル ポートに接続する
-          href: connecting-a-umdf-peripheral-device-driver-to-a-serial-port.md
-        - name: KMDF 周辺機器ドライバーをシリアル ポートに接続する
-          href: connecting-a-kmdf-peripheral-device-driver-to-a-serial-port.md
-      - name: 読み取り/書き込み要求の SerCx2 処理
-        href: sercx2-handling-of-read-and-write-requests.md
-      - name: SerCx2 で管理されるシリアル ポートからデータを読み取る
-        href: reading-data-from-a-sercx2-managed-serial-port.md
-    - name: SerCx2 オブジェクト ハンドル
-      href: sercx2-object-handles.md
-  - name: Serial.sys および Serenum.sys の使用
-    href: using-serial-sys-and-serenum-sys.md
-    items:
-    - name: シリアルと Serenum の機能
-      href: features-of-serial-and-serenum.md
-    - name: シリアル デバイスとドライバーの構成
-      href: configuration-of-serial-devices-and-drivers.md
-      items:
-      - name: COM ポートの構成
-        href: configuration-of-com-ports.md
-      - name: RS-232 ポートに接続する非 PnP デバイスの構成
-        href: configuration-of-non-plug-and-play-serial-device-connected-to-an-rs-23.md
-      - name: RS-232 ポートに接続する PnP デバイスの構成
-        href: configuration-of-plug-and-play-serial-device-connected-to-an-rs-232-po.md
-      - name: 16550 UART インターフェイス用に PnP シリアル デバイスを構成する
-        href: configuration-of-plug-and-play-serial-device-that-requires-a-16550-uar.md
-      - name: '16550 UART インターフェイスを使用する PnP 多機能シリアル デバイスを構成する '
-        href: configuration-of-plug-and-play-serial-device-on-a-multifunction-device.md
-    - name: Serenum とシリアルの操作
-      href: operation-of-serenum-and-serial.md
-      items:
-      - name: I/O 要求の Serenum によるフィルター処理
-        href: serenum-filtering-of-i-o-requests.md
-      - name: Serenum デバイスを列挙する
-        href: enumerating-serenum-devices.md
-      - name: レガシ COM ポートを列挙する
-        href: enumerating-legacy-com-ports.md
-      - name: COM ポートの外部の名前付け
-        href: external-naming-of-com-ports.md
-      - name: シリアル デバイスを開いて初期化する
-        href: opening-and-initializing-a-serial-device.md
-      - name: 16550 UART 互換インターフェイスを開いて初期化する
-        href: opening-and-initializing-a-16550-uart-compatible-interface.md
-      - name: シリアル デバイスの割り込みを共有する
-        href: sharing-a-serial-device-interrupt.md
-      - name: シリアル デバイスの電源を入れる
-        href: powering-up-a-serial-device.md
-      - name: シリアル デバイスの読み取り/書き込みのタイムアウトを設定する
-        href: setting-read-and-write-timeouts-for-a-serial-device.md
-      - name: RS-232 ポート上の PnP シリアル デバイスを削除する
-        href: removing-a-plug-and-play-serial-device-on-an-rs-232-port.md
-      - name: PnP RS-232 ポートを削除する
-        href: removing-a-plug-and-play-rs-232-port.md
-      - name: シリアル デバイスの制御要求
-        href: serial-device-control-requests2.md
-      - name: デバッガーで使用される COM ポートを特定する
-        href: determining-which-com-port-a-debugger-uses.md
-    - name: シリアル用のレジストリ設定
-      href: registry-settings-for-serial.md
-      items:
-      - name: シリアル サービス用のレジストリ設定
-        href: registry-settings-for-the-serial-service.md
-      - name: PnP シリアル デバイス用のレジストリ設定
-        href: registry-settings-for-a-plug-and-play-serial-device.md
-      - name: レガシ COM ポート用のレジストリ設定
-        href: registry-settings-for-a-legacy-com-port.md
-    - name: Serenum 用のレジストリ設定
-      href: registry-settings-for-serenum.md
-    - name: COM ポート データベース
-      href: com-port-database.md
-    - name: シリアル デバイスをインストールする
-      href: installing-serial-devices.md
-      items:
-      - name: シリアル ポートと COM ポートをインストールする
-        href: installing-serial-ports-and-com-ports.md
-        items:
-        - name: PnP シリアル ポートと COM ポートをインストールする
-          href: installing-plug-and-play-serial-ports-and-com-ports.md
-        - name: レガシ COM ポートをインストールする
-          href: installing-legacy-com-ports.md
-      - name: COM ポート用の詳細プロパティ ページをインストールする
-        href: installing-an-advanced-properties-page-for-a-com-port.md
-      - name: 16550 UART 互換インターフェイスを使用するシリアル デバイスをインストールする
-        href: installing-serial-devices-that-use-a-16550-uart-compatible-interface.md
-      - name: Serenum デバイスをインストールする
-        href: installing-serenum-devices.md
-  - name: シリアル IRP の主要な関数コード
-    href: serial-irp-major-function-codes.md
-  - name: Serial Port Console Redirection Table (SPCR)
-    href: serial-port-console-redirection-table.md
-ms.openlocfilehash: 456bde161091a0a9335ddd037708ebf98797302c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465746"
+        - name: シリアルと Serenum の機能
+          href: features-of-serial-and-serenum.md
+        - name: シリアル デバイスとドライバーの構成
+          href: configuration-of-serial-devices-and-drivers.md
+          items:
+            - name: COM ポートの構成
+              href: configuration-of-com-ports.md
+            - name: RS-232 ポートに接続する非 PnP デバイスの構成
+              href: configuration-of-non-plug-and-play-serial-device-connected-to-an-rs-23.md
+            - name: RS-232 ポートに接続する PnP デバイスの構成
+              href: configuration-of-plug-and-play-serial-device-connected-to-an-rs-232-po.md
+            - name: 16550 UART インターフェイス用に PnP シリアル デバイスを構成する
+              href: configuration-of-plug-and-play-serial-device-that-requires-a-16550-uar.md
+            - name: '16550 UART インターフェイスを使用する PnP 多機能シリアル デバイスを構成する '
+              href: configuration-of-plug-and-play-serial-device-on-a-multifunction-device.md
+        - name: Serenum とシリアルの操作
+          href: operation-of-serenum-and-serial.md
+          items:
+            - name: I/O 要求の Serenum によるフィルター処理
+              href: serenum-filtering-of-i-o-requests.md
+            - name: Serenum デバイスを列挙する
+              href: enumerating-serenum-devices.md
+            - name: レガシ COM ポートを列挙する
+              href: enumerating-legacy-com-ports.md
+            - name: COM ポートの外部の名前付け
+              href: external-naming-of-com-ports.md
+            - name: シリアル デバイスを開いて初期化する
+              href: opening-and-initializing-a-serial-device.md
+            - name: 16550 UART 互換インターフェイスを開いて初期化する
+              href: opening-and-initializing-a-16550-uart-compatible-interface.md
+            - name: シリアル デバイスの割り込みを共有する
+              href: sharing-a-serial-device-interrupt.md
+            - name: シリアル デバイスの電源を入れる
+              href: powering-up-a-serial-device.md
+            - name: シリアル デバイスの読み取り/書き込みのタイムアウトを設定する
+              href: setting-read-and-write-timeouts-for-a-serial-device.md
+            - name: RS-232 ポート上の PnP シリアル デバイスを削除する
+              href: removing-a-plug-and-play-serial-device-on-an-rs-232-port.md
+            - name: PnP RS-232 ポートを削除する
+              href: removing-a-plug-and-play-rs-232-port.md
+            - name: シリアル デバイスの制御要求
+              href: serial-device-control-requests2.md
+            - name: デバッガーで使用される COM ポートを特定する
+              href: determining-which-com-port-a-debugger-uses.md
+        - name: シリアル用のレジストリ設定
+          href: registry-settings-for-serial.md
+          items:
+            - name: シリアル サービス用のレジストリ設定
+              href: registry-settings-for-the-serial-service.md
+            - name: PnP シリアル デバイス用のレジストリ設定
+              href: registry-settings-for-a-plug-and-play-serial-device.md
+            - name: レガシ COM ポート用のレジストリ設定
+              href: registry-settings-for-a-legacy-com-port.md
+        - name: Serenum 用のレジストリ設定
+          href: registry-settings-for-serenum.md
+        - name: COM ポート データベース
+          href: com-port-database.md
+        - name: シリアル デバイスをインストールする
+          href: installing-serial-devices.md
+          items:
+            - name: シリアル ポートと COM ポートをインストールする
+              href: installing-serial-ports-and-com-ports.md
+              items:
+                - name: PnP シリアル ポートと COM ポートをインストールする
+                  href: installing-plug-and-play-serial-ports-and-com-ports.md
+                - name: レガシ COM ポートをインストールする
+                  href: installing-legacy-com-ports.md
+            - name: COM ポート用の詳細プロパティ ページをインストールする
+              href: installing-an-advanced-properties-page-for-a-com-port.md
+            - name: 16550 UART 互換インターフェイスを使用するシリアル デバイスをインストールする
+              href: installing-serial-devices-that-use-a-16550-uart-compatible-interface.md
+            - name: Serenum デバイスをインストールする
+              href: installing-serenum-devices.md
+    - name: シリアル IRP の主要な関数コード
+      href: serial-irp-major-function-codes.md
+    - name: Serial Port Console Redirection Table (SPCR)
+      href: serial-port-console-redirection-table.md

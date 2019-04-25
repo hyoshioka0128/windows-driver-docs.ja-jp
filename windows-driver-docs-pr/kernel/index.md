@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 52ace0933e55268e11cb82acccd1e4b06bcc20f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341078"
 ---
 # <a name="kernel-mode-driver-architecture-design-guide"></a>カーネルモード ドライバー アーキテクチャ設計ガイド
 

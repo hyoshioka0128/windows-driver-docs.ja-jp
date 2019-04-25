@@ -10,11 +10,11 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
 ms.openlocfilehash: 41184d69be8382429ae6b59e8606afb49c729c0a
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375391"
 ---
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
 

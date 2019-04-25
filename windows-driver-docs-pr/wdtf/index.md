@@ -7,11 +7,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 9c20abe50214fffb98f1c5709d3a16cbe408680a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338977"
 ---
 # <a name="windows-device-testing-framework-wdtf-design-guide"></a>Windows Device Testing Framework (WDTF) 設計ガイド
 

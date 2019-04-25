@@ -1,78 +1,71 @@
-items:
 - name: ハードウェア通知設計ガイド
   href: index.md
   items:
-  - name: GPIO のボタンおよびインジケーター実装ガイド
-    href: gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md
-    items:
-    - name: 状態インジケーター
-      href: state-indicators.md
+    - name: GPIO のボタンおよびインジケーター実装ガイド
+      href: gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md
       items:
-      - name: 動作とガイダンス
-        href: behavior-and-guidance.md
-      - name: ドッキングとノート PC スレートの変換
-        href: docking-versus-laptop-slate-conversion.md
-      - name: さまざまなフォーム ファクターの実装要件
-        href: implementation-requirements-for-various-form-factors.md
-      - name: コンバーチブル PC に関する考慮事項
-        href: considerations-for-convertibles.md
-    - name: 物理ボタン
-      href: physical-buttons.md
+        - name: 状態インジケーター
+          href: state-indicators.md
+          items:
+            - name: 動作とガイダンス
+              href: behavior-and-guidance.md
+            - name: ドッキングとノート PC スレートの変換
+              href: docking-versus-laptop-slate-conversion.md
+            - name: さまざまなフォーム ファクターの実装要件
+              href: implementation-requirements-for-various-form-factors.md
+            - name: コンバーチブル PC に関する考慮事項
+              href: considerations-for-convertibles.md
+        - name: 物理ボタン
+          href: physical-buttons.md
+          items:
+            - name: ボタンの動作
+              href: button-behavior.md
+            - name: ボタンのレポート
+              href: button-reporting.md
+        - name: インターフェイス実装ガイダンス
+          href: interface-implementation-guidance.md
+          items:
+            - name: 使用できるインターフェイスと関連する API
+              href: available-interfaces-and-related-apis.md
+            - name: インジケーターの実装
+              href: indicator-implementation.md
+            - name: ボタンの実装
+              href: button-implementation.md
+        - name: コード サンプル
+          href: code-samples.md
+          items:
+            - name: ノート PC/スレート モードの状態の切り替え
+              href: laptop-slate-mode-toggling-between-states.md
+            - name: Windows ボタンのサンプル コード
+              href: windows-button-sample-code.md
+            - name: ACPI 記述子のサンプル
+              href: acpi-descriptor-samples.md
+            - name: HID ボタン レポート記述子
+              href: hid-button-report-descriptors.md
+        - name: Windows 無人セットアップ設定の実装
+          href: implement-the-unattended-windows-setup-setting.md
+        - name: ログインと調査
+          href: logging-and-investigations.md
+        - name: テスト パスの実行
+          href: running-test-passes.md
+    - name: GPIO のボタンおよびインジケーターの補足的なテスト
+      href: gpio-buttons-and-indicators-supplemental-certification-testing-for-windows-8-1.md
       items:
-      - name: ボタンの動作
-        href: button-behavior.md
-      - name: ボタンのレポート
-        href: button-reporting.md
-    - name: インターフェイス実装ガイダンス
-      href: interface-implementation-guidance.md
+        - name: テスト オートメーション ツール
+          href: test-automation-tools.md
+        - name: 統合テスト
+          href: integration-testing.md
+          items:
+            - name: インジケーター テスト
+              href: indicator-testing.md
+            - name: コンバーチブル PC テスト
+              href: convertible-testing.md
+            - name: タッチスクリーン ノート PC システム テスト
+              href: touchscreen-laptop-system-testing.md
+        - name: GPIO のログ記録と調査
+          href: gpio-logging-and-investigations.md
+    - name: ハードウェア通知サポート
+      href: hardware-notifications-support.md
       items:
-      - name: 使用できるインターフェイスと関連する API
-        href: available-interfaces-and-related-apis.md
-      - name: インジケーターの実装
-        href: indicator-implementation.md
-      - name: ボタンの実装
-        href: button-implementation.md
-    - name: コード サンプル
-      href: code-samples.md
-      items:
-      - name: ノート PC/スレート モードの状態の切り替え
-        href: laptop-slate-mode-toggling-between-states.md
-      - name: Windows ボタンのサンプル コード
-        href: windows-button-sample-code.md
-      - name: ACPI 記述子のサンプル
-        href: acpi-descriptor-samples.md
-      - name: HID ボタン レポート記述子
-        href: hid-button-report-descriptors.md
-    - name: Windows 無人セットアップ設定の実装
-      href: implement-the-unattended-windows-setup-setting.md
-    - name: ログインと調査
-      href: logging-and-investigations.md
-    - name: テスト パスの実行
-      href: running-test-passes.md
-  - name: GPIO のボタンおよびインジケーターの補足的なテスト
-    href: gpio-buttons-and-indicators-supplemental-certification-testing-for-windows-8-1.md
-    items:
-    - name: テスト オートメーション ツール
-      href: test-automation-tools.md
-    - name: 統合テスト
-      href: integration-testing.md
-      items:
-      - name: インジケーター テスト
-        href: indicator-testing.md
-      - name: コンバーチブル PC テスト
-        href: convertible-testing.md
-      - name: タッチスクリーン ノート PC システム テスト
-        href: touchscreen-laptop-system-testing.md
-    - name: GPIO のログ記録と調査
-      href: gpio-logging-and-investigations.md
-  - name: ハードウェア通知サポート
-    href: hardware-notifications-support.md
-    items:
-    - name: ハードウェア通知クライアント ドライバーの作成
-      href: create-a-hardware-notification-client-driver.md
-ms.openlocfilehash: 06140bb6cddfe19104f4b809df2265e866c3fbde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465534"
+        - name: ハードウェア通知クライアント ドライバーの作成
+          href: create-a-hardware-notification-client-driver.md

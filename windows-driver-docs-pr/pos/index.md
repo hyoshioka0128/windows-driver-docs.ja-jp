@@ -8,11 +8,11 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: 10201f72f1a3da6b415b79da6b020584e3a3558a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392881"
 ---
 # <a name="pos-device-driver-design-guide"></a>POS デバイス ドライバー設計ガイド
 

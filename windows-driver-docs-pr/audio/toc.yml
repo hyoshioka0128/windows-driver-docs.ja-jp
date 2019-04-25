@@ -1,1350 +1,1343 @@
-items:
 - name: オーディオ ドライバー設計ガイド
   href: index.md
   items:
-  - name: Windows 10:オーディオの新機能
-    href: windows-threshold--what-s-new-for-audio.md
-  - name: Windows オーディオ アーキテクチャ
-    href: windows-audio-architecture.md
-  - name: WDM オーディオ ドライバーの開発のロードマップ
-    href: roadmap-for-developing-wdm-audio-drivers.md
-  - name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
-    href: custom-audio-driver-type-decision-tree.md
+    - name: 'Windows 10:オーディオの新機能'
+      href: windows-threshold--what-s-new-for-audio.md
+    - name: Windows オーディオ アーキテクチャ
+      href: windows-audio-architecture.md
+    - name: WDM オーディオ ドライバーの開発のロードマップ
+      href: roadmap-for-developing-wdm-audio-drivers.md
+    - name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
+      href: custom-audio-driver-type-decision-tree.md
 - name: WDM オーディオ ドライバーの概要
   href: getting-started-with-wdm-audio-drivers.md
   items:
-  - name: オーディオ用のユニバーサル Windows ドライバー
-    href: audio-universal-drivers.md
-  - name: ユニバーサル オーディオ アーキテクチャ
-    href: universal-audio-architecture.md
-  - name: オーディオ信号の処理モード
-    href: audio-signal-processing-modes.md
-  - name: カスタム オーディオ ドライバー
-    href: custom-audio-drivers.md
-  - name: トポロジの指定
-    href: specifying-the-topology.md
-  - name: ピン データ範囲の指定
-    href: specifying-pin-data-ranges.md
+    - name: オーディオ用のユニバーサル Windows ドライバー
+      href: audio-universal-drivers.md
+    - name: ユニバーサル オーディオ アーキテクチャ
+      href: universal-audio-architecture.md
+    - name: オーディオ信号の処理モード
+      href: audio-signal-processing-modes.md
+    - name: カスタム オーディオ ドライバー
+      href: custom-audio-drivers.md
+    - name: トポロジの指定
+      href: specifying-the-topology.md
+    - name: ピン データ範囲の指定
+      href: specifying-pin-data-ranges.md
 - name: 'WDM オーディオ アーキテクチャ: 基本的な概念'
   href: wdm-audio-architecture--basic-concepts.md
   items:
-  - name: WDM オーディオ ドライバーの概要
-    href: introduction-to-wdm-audio-drivers.md
-    items:
-    - name: WDM オーディオ ドライバーの基本機能
-      href: basic-functions-of-a-wdm-audio-driver.md
-    - name: ベンダーのオーディオ ドライバー オプション
-      href: vendor-audio-driver-options.md
-    - name: WDM オーディオの用語
-      href: wdm-audio-terminology.md
-    - name: オーディオ ドライバーのサンプル
-      href: sample-audio-drivers.md
-    - name: KsStudio ユーティリティ
-      href: ksstudio-utility.md
-  - name: オーディオ フィルター、ピン、ノード
-    href: audio-filters--pins--and-nodes.md
-    items:
-    - name: オーディオ フィルター
-      href: audio-filters.md
-    - name: フィルター ファクトリ
-      href: filter-factories.md
-    - name: ピン ファクトリ
-      href: pin-factories.md
-    - name: ノードと接続
-      href: nodes-and-connections.md
-    - name: オーディオ フィルター グラフ
-      href: audio-filter-graphs.md
-    - name: ウェーブ フィルター
-      href: wave-filters.md
-    - name: MIDI フィルターと DirectMusic フィルター
-      href: midi-and-directmusic-filters.md
-    - name: トポロジ フィルター
-      href: topology-filters.md
-  - name: オーディオのエンドポイント、プロパティ、およびイベント
-    href: audio-endpoints--properties-and-events.md
-    items:
-    - name: オーディオのプロパティの要求
-      href: audio-property-requests.md
-    - name: フィルター、ピン、ノードのプロパティ
-      href: filter--pin--and-node-properties.md
-    - name: オーディオのプロパティのハンドラー
-      href: audio-property-handlers.md
-    - name: オーディオのプロパティに対してサポートされる基本的なクエリ
-      href: basic-support-queries-for-audio-properties.md
-    - name: Audio Endpoint Builder のアルゴリズム
-      href: audio-endpoint-builder-algorithm.md
-    - name: 動的サブデバイスの登録と登録解除
-      href: dynamic-subdeviceregistration-and-unregistration.md
-    - name: マルチ チャネル ノードの公開
-      href: exposing-multichannel-nodes.md
-    - name: ピン カテゴリのプロパティ
-      href: pin-category-property.md
-    - name: オーディオ エンドポイント デバイスのフレンドリ名
-      href: friendly-names-for-audio-endpoint-devices.md
-    - name: オーディオの位置プロパティ
-      href: audio-position-property.md
-    - name: ピンのデータ範囲と交差のプロパティ
-      href: pin-data-range-and-intersection-properties.md
-    - name: ジャック説明のプロパティ
-      href: jack-description-property.md
-    - name: マイク配列ジオメトリのプロパティ
-      href: microphone-array-geometry-property.md
+    - name: WDM オーディオ ドライバーの概要
+      href: introduction-to-wdm-audio-drivers.md
       items:
-      - name: マイク配列ジオメトリ記述子の形式
-        href: microphone-array-geometry-descriptor-format.md
-      - name: MSVAD Micarray 用の INF の変更
-        href: modified-inf-for-msvad-micarray.md
-    - name: ハードウェア イベント
-      href: hardware-events.md
-  - name: オーディオ データ形式とデータ範囲
-    href: audio-data-formats-and-data-ranges.md
-    items:
-    - name: オーディオ データ形式
-      href: audio-data-formats.md
-    - name: オーディオ データ範囲
-      href: audio-data-ranges.md
-    - name: 拡張可能な Wave 形式の記述子
-      href: extensible-wave-format-descriptors.md
-    - name: ホーム シアター システム用のマルチチャネル形式
-      href: multichannel-formats-for-home-theater-systems.md
+        - name: WDM オーディオ ドライバーの基本機能
+          href: basic-functions-of-a-wdm-audio-driver.md
+        - name: ベンダーのオーディオ ドライバー オプション
+          href: vendor-audio-driver-options.md
+        - name: WDM オーディオの用語
+          href: wdm-audio-terminology.md
+        - name: オーディオ ドライバーのサンプル
+          href: sample-audio-drivers.md
+        - name: KsStudio ユーティリティ
+          href: ksstudio-utility.md
+    - name: オーディオ フィルター、ピン、ノード
+      href: audio-filters--pins--and-nodes.md
       items:
-      - name: チャネル マスク
-        href: channel-mask.md
-      - name: スピーカー構成にストリーム形式をマップする
-        href: mapping-stream-formats-to-speaker-configurations.md
-      - name: ヘッダー ファイルの変更
-        href: header-file-changes.md
-    - name: オーディオ データ形式とデータ範囲の例
-      href: examples-of-audio-data-formats-and-data-ranges.md
+        - name: オーディオ フィルター
+          href: audio-filters.md
+        - name: フィルター ファクトリ
+          href: filter-factories.md
+        - name: ピン ファクトリ
+          href: pin-factories.md
+        - name: ノードと接続
+          href: nodes-and-connections.md
+        - name: オーディオ フィルター グラフ
+          href: audio-filter-graphs.md
+        - name: ウェーブ フィルター
+          href: wave-filters.md
+        - name: MIDI フィルターと DirectMusic フィルター
+          href: midi-and-directmusic-filters.md
+        - name: トポロジ フィルター
+          href: topology-filters.md
+    - name: オーディオのエンドポイント、プロパティ、およびイベント
+      href: audio-endpoints--properties-and-events.md
       items:
-      - name: アナログ オーディオ ストリームのデータ範囲
-        href: analog-audio-stream-data-range.md
-      - name: DirectMusic ストリームのデータ形式
-        href: directmusic-stream-data-format.md
-      - name: DirectMusic ストリームのデータ範囲
-        href: directmusic-stream-data-range.md
-      - name: DirectSound ストリームのデータ形式
-        href: directsound-stream-data-format.md
-      - name: DirectSound ストリームのデータ範囲
-        href: directsound-stream-data-range.md
-      - name: MIDI ストリームのデータ形式
-        href: midi-stream-data-format.md
-      - name: MIDI ストリームのデータ範囲
-        href: midi-stream-data-range.md
-      - name: PCM ストリームのデータ形式
-        href: pcm-stream-data-format.md
-      - name: PCM ストリームのデータ範囲
-        href: pcm-stream-data-range.md
-      - name: PCM マルチ チャンネル ストリームのデータ形式
-        href: pcm-multichannel-stream-data-format.md
-      - name: PCM マルチ チャネル ストリームのデータ範囲
-        href: pcm-multichannel-stream-data-range.md
-      - name: PCM 高ビットデプス ストリームのデータの形式
-        href: pcm-high-bitdepth-stream-data-format.md
-      - name: PCM 高ビットデプス ストリームのデータ範囲
-        href: pcm-high-bitdepth-stream-data-range.md
-  - name: デジタル著作権管理
-    href: digital-rights-management.md
-    items:
-    - name: DRM の概要
-      href: drm-overview.md
-    - name: コンテンツ ID とコンテンツの権利
-      href: content-ids-and-content-rights.md
-    - name: DRM コンテンツ ID の転送
-      href: forwarding-drm-content-ids.md
-    - name: DRM の要件
-      href: drm-requirements.md
-    - name: DRM ドライバーの開発とデバッグ
-      href: developing-and-debugging-drm-drivers.md
-    - name: DRM の関数とインターフェイス
-      href: drm-functions-and-interfaces.md
+        - name: オーディオのプロパティの要求
+          href: audio-property-requests.md
+        - name: フィルター、ピン、ノードのプロパティ
+          href: filter--pin--and-node-properties.md
+        - name: オーディオのプロパティのハンドラー
+          href: audio-property-handlers.md
+        - name: オーディオのプロパティに対してサポートされる基本的なクエリ
+          href: basic-support-queries-for-audio-properties.md
+        - name: Audio Endpoint Builder のアルゴリズム
+          href: audio-endpoint-builder-algorithm.md
+        - name: 動的サブデバイスの登録と登録解除
+          href: dynamic-subdeviceregistration-and-unregistration.md
+        - name: マルチ チャネル ノードの公開
+          href: exposing-multichannel-nodes.md
+        - name: ピン カテゴリのプロパティ
+          href: pin-category-property.md
+        - name: オーディオ エンドポイント デバイスのフレンドリ名
+          href: friendly-names-for-audio-endpoint-devices.md
+        - name: オーディオの位置プロパティ
+          href: audio-position-property.md
+        - name: ピンのデータ範囲と交差のプロパティ
+          href: pin-data-range-and-intersection-properties.md
+        - name: ジャック説明のプロパティ
+          href: jack-description-property.md
+        - name: マイク配列ジオメトリのプロパティ
+          href: microphone-array-geometry-property.md
+          items:
+            - name: マイク配列ジオメトリ記述子の形式
+              href: microphone-array-geometry-descriptor-format.md
+            - name: MSVAD Micarray 用の INF の変更
+              href: modified-inf-for-msvad-micarray.md
+        - name: ハードウェア イベント
+          href: hardware-events.md
+    - name: オーディオ データ形式とデータ範囲
+      href: audio-data-formats-and-data-ranges.md
+      items:
+        - name: オーディオ データ形式
+          href: audio-data-formats.md
+        - name: オーディオ データ範囲
+          href: audio-data-ranges.md
+        - name: 拡張可能な Wave 形式の記述子
+          href: extensible-wave-format-descriptors.md
+        - name: ホーム シアター システム用のマルチチャネル形式
+          href: multichannel-formats-for-home-theater-systems.md
+          items:
+            - name: チャネル マスク
+              href: channel-mask.md
+            - name: スピーカー構成にストリーム形式をマップする
+              href: mapping-stream-formats-to-speaker-configurations.md
+            - name: ヘッダー ファイルの変更
+              href: header-file-changes.md
+        - name: オーディオ データ形式とデータ範囲の例
+          href: examples-of-audio-data-formats-and-data-ranges.md
+          items:
+            - name: アナログ オーディオ ストリームのデータ範囲
+              href: analog-audio-stream-data-range.md
+            - name: DirectMusic ストリームのデータ形式
+              href: directmusic-stream-data-format.md
+            - name: DirectMusic ストリームのデータ範囲
+              href: directmusic-stream-data-range.md
+            - name: DirectSound ストリームのデータ形式
+              href: directsound-stream-data-format.md
+            - name: DirectSound ストリームのデータ範囲
+              href: directsound-stream-data-range.md
+            - name: MIDI ストリームのデータ形式
+              href: midi-stream-data-format.md
+            - name: MIDI ストリームのデータ範囲
+              href: midi-stream-data-range.md
+            - name: PCM ストリームのデータ形式
+              href: pcm-stream-data-format.md
+            - name: PCM ストリームのデータ範囲
+              href: pcm-stream-data-range.md
+            - name: PCM マルチ チャンネル ストリームのデータ形式
+              href: pcm-multichannel-stream-data-format.md
+            - name: PCM マルチ チャネル ストリームのデータ範囲
+              href: pcm-multichannel-stream-data-range.md
+            - name: PCM 高ビットデプス ストリームのデータの形式
+              href: pcm-high-bitdepth-stream-data-format.md
+            - name: PCM 高ビットデプス ストリームのデータ範囲
+              href: pcm-high-bitdepth-stream-data-range.md
+    - name: デジタル著作権管理
+      href: digital-rights-management.md
+      items:
+        - name: DRM の概要
+          href: drm-overview.md
+        - name: コンテンツ ID とコンテンツの権利
+          href: content-ids-and-content-rights.md
+        - name: DRM コンテンツ ID の転送
+          href: forwarding-drm-content-ids.md
+        - name: DRM の要件
+          href: drm-requirements.md
+        - name: DRM ドライバーの開発とデバッグ
+          href: developing-and-debugging-drm-drivers.md
+        - name: DRM の関数とインターフェイス
+          href: drm-functions-and-interfaces.md
 - name: 'WDM オーディオ アーキテクチャ: 高度なトピック'
   href: wdm-audio-architecture--advanced-topics.md
   items:
-  - name: データ交差ハンドラー
-    href: data-intersection-handlers.md
-    items:
-    - name: データ交差
-      href: data-intersection.md
-    - name: 既定のデータ交差ハンドラー
-      href: default-data-intersection-handlers.md
-    - name: 独自のデータ交差ハンドラー
-      href: proprietary-data-intersection-handlers.md
-    - name: 同じ周波数に対するハードウェアの制約
-      href: hardware-constraints-on-sample-frequency.md
-    - name: 出力バッファー サイズ
-      href: output-buffer-size.md
-    - name: 離散値を含むデータ範囲
-      href: data-ranges-with-discrete-values.md
-    - name: ワイルド カード
-      href: wild-cards.md
-    - name: データ範囲のプロパティ
-      href: data-range-properties.md
-  - name: 動的なオーディオ サブデバイス
-    href: dynamic-audio-subdevices.md
-    items:
-    - name: 動的なトポロジの管理
-      href: managing-dynamic-topologies.md
-    - name: 動的なサブデバイス用のドライバーのサポート
-      href: driver-support-for-dynamic-subdevices.md
-    - name: 動的なオーディオ サブデバイスのジャックに関する説明
-      href: jack-descriptions-for-dynamic-audio-subdevices.md
-  - name: 多機能オーディオ デバイス
-    href: multifunction-audio-devices.md
-    items:
-    - name: 複数のオーディオ サブデバイス
-      href: multiple-audio-subdevices.md
-    - name: 多機能デバイスの制限
-      href: multifunction-device-limits.md
-  - name: PCM 以外の Wave 形式
-    href: supporting-non-pcm-wave-formats.md
-    items:
-    - name: PCM 以外のサポートの背景
-      href: background-of-non-pcm-support.md
-    - name: PCM 以外のピン ファクトリの要件
-      href: requirements-for-a-non-pcm-pin-factory.md
-    - name: 圧縮されたオーディオ形式のサブ形式 GUID
-      href: subformat-guids-for-compressed-audio-formats.md
-    - name: 形式タグとサブ形式 GUID の間の変換
-      href: converting-between-format-tags-and-subformat-guids.md
-    - name: KS トポロジに関する考慮事項
-      href: ks-topology-considerations.md
-    - name: waveOut クライアントの詳細
-      href: specifics-for-waveout-clients.md
-    - name: DirectSound クライアントの詳細
-      href: specifics-for-directsound-clients.md
-    - name: PCM 以外のストリームの S/PDIF パススルー送信
-      href: s-pdif-pass-through-transmission-of-non-pcm-streams.md
-    - name: AC-3 データ範囲の指定
-      href: specifying-ac-3-data-ranges.md
-    - name: WMA Pro データ範囲の指定
-      href: specifying-wma-pro-data-ranges.md
-    - name: PCM 以外の形式用の USB オーディオのサポート
-      href: usb-audio-support-for-non-pcm-formats.md
-  - name: High Definition Audio DDI
-    href: high-definition-audio-ddi.md
-    items:
-    - name: HD オーディオと UAA
-      href: hd-audio-and-uaa.md
+    - name: データ交差ハンドラー
+      href: data-intersection-handlers.md
       items:
-      - name: Intel の HD オーディオのアーキテクチャ
-        href: intel-s-hd-audio-architecture.md
-      - name: HD オーディオ アーキテクチャに対する UAA 拡張機能
-        href: uaa-extensions-to-the-hd-audio-architecture.md
-      - name: HD オーディオ バス ドライバー
-        href: hd-audio-bus-driver.md
-      - name: UAA クラス ドライバー
-        href: uaa-class-drivers.md
-      - name: 動詞を HD オーディオ コーデックとやり取りする
-        href: communicating-verbs-with-the-hd-audio-codec.md
-    - name: プログラミング ガイド
-      href: programming-guidelines.md
+        - name: データ交差
+          href: data-intersection.md
+        - name: 既定のデータ交差ハンドラー
+          href: default-data-intersection-handlers.md
+        - name: 独自のデータ交差ハンドラー
+          href: proprietary-data-intersection-handlers.md
+        - name: 同じ周波数に対するハードウェアの制約
+          href: hardware-constraints-on-sample-frequency.md
+        - name: 出力バッファー サイズ
+          href: output-buffer-size.md
+        - name: 離散値を含むデータ範囲
+          href: data-ranges-with-discrete-values.md
+        - name: ワイルド カード
+          href: wild-cards.md
+        - name: データ範囲のプロパティ
+          href: data-range-properties.md
+    - name: 動的なオーディオ サブデバイス
+      href: dynamic-audio-subdevices.md
       items:
-      - name: HD オーディオ DDI バージョン間の相違点
-        href: differences-between-the-hd-audio-ddi-versions.md
-      - name: 同期および非同期のコーデック コマンド
-        href: synchronous-and-asynchronous-codec-commands.md
-      - name: ウォール クロックとリンク位置のレジスタ
-        href: wall-clock-and-link-position-registers.md
-      - name: ハードウェア リソース管理
-        href: hardware-resource-management.md
-        items:
-        - name: DMA エンジンの割り当て
-          href: allocating-dma-engines.md
-        - name: リンク帯域幅の割り当て
-          href: allocating-link-bandwidth.md
-        - name: ストライピング
-          href: striping.md
-      - name: 2 つ以上のストリームの同期
-        href: synchronizing-two-or-more-streams.md
-      - name: スリープ状態の解除
-        href: wake-enable.md
-      - name: データのコピーおよびキャッシュのポリシー
-        href: data-copying-and-caching-policy.md
-      - name: HD オーディオ DDI のクエリ
-        href: querying-for-an-hd-audio-ddi.md
-        items:
-        - name: HDAUDIO_BUS_INTERFACE DDI オブジェクトの取得
-          href: obtaining-an-hdaudio-bus-interface-ddi-object.md
-        - name: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトの取得
-          href: obtaining-an-hdaudio-bus-interface-v2-ddi-object.md
-        - name: HDAUDIO_BUS_INTERFACE_BDL DDI オブジェクトの取得
-          href: obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md
+        - name: 動的なトポロジの管理
+          href: managing-dynamic-topologies.md
+        - name: 動的なサブデバイス用のドライバーのサポート
+          href: driver-support-for-dynamic-subdevices.md
+        - name: 動的なオーディオ サブデバイスのジャックに関する説明
+          href: jack-descriptions-for-dynamic-audio-subdevices.md
+    - name: 多機能オーディオ デバイス
+      href: multifunction-audio-devices.md
+      items:
+        - name: 複数のオーディオ サブデバイス
+          href: multiple-audio-subdevices.md
+        - name: 多機能デバイスの制限
+          href: multifunction-device-limits.md
+    - name: PCM 以外の Wave 形式
+      href: supporting-non-pcm-wave-formats.md
+      items:
+        - name: PCM 以外のサポートの背景
+          href: background-of-non-pcm-support.md
+        - name: PCM 以外のピン ファクトリの要件
+          href: requirements-for-a-non-pcm-pin-factory.md
+        - name: 圧縮されたオーディオ形式のサブ形式 GUID
+          href: subformat-guids-for-compressed-audio-formats.md
+        - name: 形式タグとサブ形式 GUID の間の変換
+          href: converting-between-format-tags-and-subformat-guids.md
+        - name: KS トポロジに関する考慮事項
+          href: ks-topology-considerations.md
+        - name: waveOut クライアントの詳細
+          href: specifics-for-waveout-clients.md
+        - name: DirectSound クライアントの詳細
+          href: specifics-for-directsound-clients.md
+        - name: PCM 以外のストリームの S/PDIF パススルー送信
+          href: s-pdif-pass-through-transmission-of-non-pcm-streams.md
+        - name: AC-3 データ範囲の指定
+          href: specifying-ac-3-data-ranges.md
+        - name: WMA Pro データ範囲の指定
+          href: specifying-wma-pro-data-ranges.md
+        - name: PCM 以外の形式用の USB オーディオのサポート
+          href: usb-audio-support-for-non-pcm-formats.md
+    - name: High Definition Audio DDI
+      href: high-definition-audio-ddi.md
+      items:
+        - name: HD オーディオと UAA
+          href: hd-audio-and-uaa.md
+          items:
+            - name: Intel の HD オーディオのアーキテクチャ
+              href: intel-s-hd-audio-architecture.md
+            - name: HD オーディオ アーキテクチャに対する UAA 拡張機能
+              href: uaa-extensions-to-the-hd-audio-architecture.md
+            - name: HD オーディオ バス ドライバー
+              href: hd-audio-bus-driver.md
+            - name: UAA クラス ドライバー
+              href: uaa-class-drivers.md
+            - name: 動詞を HD オーディオ コーデックとやり取りする
+              href: communicating-verbs-with-the-hd-audio-codec.md
+        - name: プログラミング ガイド
+          href: programming-guidelines.md
+          items:
+            - name: HD オーディオ DDI バージョン間の相違点
+              href: differences-between-the-hd-audio-ddi-versions.md
+            - name: 同期および非同期のコーデック コマンド
+              href: synchronous-and-asynchronous-codec-commands.md
+            - name: ウォール クロックとリンク位置のレジスタ
+              href: wall-clock-and-link-position-registers.md
+            - name: ハードウェア リソース管理
+              href: hardware-resource-management.md
+              items:
+                - name: DMA エンジンの割り当て
+                  href: allocating-dma-engines.md
+                - name: リンク帯域幅の割り当て
+                  href: allocating-link-bandwidth.md
+                - name: ストライピング
+                  href: striping.md
+            - name: 2 つ以上のストリームの同期
+              href: synchronizing-two-or-more-streams.md
+            - name: スリープ状態の解除
+              href: wake-enable.md
+            - name: データのコピーおよびキャッシュのポリシー
+              href: data-copying-and-caching-policy.md
+            - name: HD オーディオ DDI のクエリ
+              href: querying-for-an-hd-audio-ddi.md
+              items:
+                - name: HDAUDIO_BUS_INTERFACE DDI オブジェクトの取得
+                  href: obtaining-an-hdaudio-bus-interface-ddi-object.md
+                - name: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトの取得
+                  href: obtaining-an-hdaudio-bus-interface-v2-ddi-object.md
+                - name: HDAUDIO_BUS_INTERFACE_BDL DDI オブジェクトの取得
+                  href: obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md
 - name: 異なるバージョンの Windows における WDM オーディオのサポート
   href: wdm-audio-support-in-different-versions-of-windows.md
   items:
-  - name: オーディオ モジュール通信の実装
-    href: implementing-audio-module-communication.md
-    items:
-    - name: オーディオ デバイス モジュールの構成とクエリ
-      href: configure-and-query-audiodevicemodules.md
-  - name: 低待機時間オーディオ
-    href: low-latency-audio.md
-  - name: 音声のアクティブ化
-    href: voice-activation.md
-  - name: USB Audio 2.0 のドライバー
-    href: usb-2-0-audio-drivers.md
-  - name: オーディオ ハードウェア リソースの管理
-    href: audio-hardware-resource-management.md
-  - name: オーディオ ドライバーの Bluetooth バイパス ガイドライン
-    href: bluetooth-bypass-guidelines-for-audio-drivers.md
-    items:
-    - name: Windows の Bluetooth ホスト コントローラー インターフェイス (HCI) アーキテクチャの概要
-      href: btth-architectural-overview.md
-    - name: 操作の理論
-      href: theory-of-operation.md
+    - name: オーディオ モジュール通信の実装
+      href: implementing-audio-module-communication.md
       items:
-      - name: HFP デバイスの起動
-        href: startup.md
-      - name: HFP デバイスの接続
-        href: hfp-device-connection.md
-      - name: HFP デバイスの削除
-        href: removal.md
-      - name: カーネル ストリーミングに関する考慮事項
-        href: kernel-streaming-considerations.md
-      - name: オーディオ エンドポイント コンテナー ID
-        href: audio-endpoint-container-id.md
-      - name: I2S および SCO リソースの管理
-        href: management-of-i2s-and-sco-resources.md
-    - name: Bluetooth バイパス DDI 参照
-      href: bluetooth-bypass-ddi-reference.md
-    - name: 関連する設計ガイドライン
-      href: related-design-guidelines.md
+        - name: オーディオ デバイス モジュールの構成とクエリ
+          href: configure-and-query-audiodevicemodules.md
+    - name: 低待機時間オーディオ
+      href: low-latency-audio.md
+    - name: 音声のアクティブ化
+      href: voice-activation.md
+    - name: USB Audio 2.0 のドライバー
+      href: usb-2-0-audio-drivers.md
+    - name: オーディオ ハードウェア リソースの管理
+      href: audio-hardware-resource-management.md
+    - name: オーディオ ドライバーの Bluetooth バイパス ガイドライン
+      href: bluetooth-bypass-guidelines-for-audio-drivers.md
       items:
-      - name: プロパティとレジストリ値の設定
-        href: setting-properties-and-registry-values.md
-      - name: フレンドリ名の設定、APO の登録
-        href: setting-friendly-name--registering-apos.md
-      - name: HF デバイスの Bluetooth のアドレスの取得
-        href: obtaining-bluetooth-address-of-hf-device.md
-  - name: ハードウェア オフロードのオーディオ処理
-    href: hardware-offloaded-audio-processing.md
-    items:
-    - name: アーキテクチャの概要
-      href: architectural-overview.md
-    - name: オフロードされたオーディオ用のドライバーの実装
-      href: driver-implementation-for-offloaded-audio.md
+        - name: Windows の Bluetooth ホスト コントローラー インターフェイス (HCI) アーキテクチャの概要
+          href: btth-architectural-overview.md
+        - name: 操作の理論
+          href: theory-of-operation.md
+          items:
+            - name: HFP デバイスの起動
+              href: startup.md
+            - name: HFP デバイスの接続
+              href: hfp-device-connection.md
+            - name: HFP デバイスの削除
+              href: removal.md
+            - name: カーネル ストリーミングに関する考慮事項
+              href: kernel-streaming-considerations.md
+            - name: オーディオ エンドポイント コンテナー ID
+              href: audio-endpoint-container-id.md
+            - name: I2S および SCO リソースの管理
+              href: management-of-i2s-and-sco-resources.md
+        - name: Bluetooth バイパス DDI 参照
+          href: bluetooth-bypass-ddi-reference.md
+        - name: 関連する設計ガイドライン
+          href: related-design-guidelines.md
+          items:
+            - name: プロパティとレジストリ値の設定
+              href: setting-properties-and-registry-values.md
+            - name: フレンドリ名の設定、APO の登録
+              href: setting-friendly-name--registering-apos.md
+            - name: HF デバイスの Bluetooth のアドレスの取得
+              href: obtaining-bluetooth-address-of-hf-device.md
+    - name: ハードウェア オフロードのオーディオ処理
+      href: hardware-offloaded-audio-processing.md
       items:
-      - name: 実装の概要
-        href: implementation-overview.md
-      - name: ドライバー実装の詳細
-        href: driver-implementation-details.md
-        items:
-        - name: オフロードされたオーディオ処理のためのヘルパー インターフェイス
-          href: helper-interfaces-for-offloaded-audio-processing.md
-        - name: オフロードされたオーディオに関するグリッチ レポート
-          href: glitch-reporting-for-offloaded-audio.md
-    - name: SoC の PortCls 電源管理更新プログラム
-      href: portcls-power-management-updates-for-soc.md
+        - name: アーキテクチャの概要
+          href: architectural-overview.md
+        - name: オフロードされたオーディオ用のドライバーの実装
+          href: driver-implementation-for-offloaded-audio.md
+          items:
+            - name: 実装の概要
+              href: implementation-overview.md
+            - name: ドライバー実装の詳細
+              href: driver-implementation-details.md
+              items:
+                - name: オフロードされたオーディオ処理のためのヘルパー インターフェイス
+                  href: helper-interfaces-for-offloaded-audio-processing.md
+                - name: オフロードされたオーディオに関するグリッチ レポート
+                  href: glitch-reporting-for-offloaded-audio.md
+        - name: SoC の PortCls 電源管理更新プログラム
+          href: portcls-power-management-updates-for-soc.md
+          items:
+            - name: PortCls レジストリの電源設定
+              href: portcls-registry-power-settings.md
+            - name: 即時アイドル タイムアウトのオプトイン
+              href: immediate-idle-timeout-opt-in.md
+            - name: PortCls プライベート PEP コンテキストの共有
+              href: portcls-private-pep-context-sharing.md
+            - name: PortCls D3 終了待機時間の要件
+              href: portcls-d3-exit-latency-requirement.md
+    - name: WDM オーディオ プラットフォームの相違点
+      href: wdm-audio-platform-differences.md
       items:
-      - name: PortCls レジストリの電源設定
-        href: portcls-registry-power-settings.md
-      - name: 即時アイドル タイムアウトのオプトイン
-        href: immediate-idle-timeout-opt-in.md
-      - name: PortCls プライベート PEP コンテキストの共有
-        href: portcls-private-pep-context-sharing.md
-      - name: PortCls D3 終了待機時間の要件
-        href: portcls-d3-exit-latency-requirement.md
-  - name: WDM オーディオ プラットフォームの相違点
-    href: wdm-audio-platform-differences.md
-    items:
-    - name: Windows Vista による WDM オーディオのサポート
-      href: windows-vista-support-for-wdm-audio.md
-  - name: WDM オーディオ コンポーネント
-    href: wdm-audio-components.md
-    items:
-    - name: ユーザー モード WDM オーディオ コンポーネント
-      href: user-mode-wdm-audio-components.md
-    - name: カーネル モード WDM オーディオ コンポーネント
-      href: kernel-mode-wdm-audio-components.md
+        - name: Windows Vista による WDM オーディオのサポート
+          href: windows-vista-support-for-wdm-audio.md
+    - name: WDM オーディオ コンポーネント
+      href: wdm-audio-components.md
       items:
-      - name: USB オーディオ クラス システム ドライバー (Usbaudio.sys)
-        href: usb-audio-class-system-driver--usbaudio-sys-.md
-    - name: Wave と DirectSound コンポーネント
-      href: wave-and-directsound-components.md
-    - name: MIDI と DirectMusic のコンポーネント
-      href: midi-and-directmusic-components.md
-    - name: 仮想オーディオ デバイス
-      href: virtual-audio-devices.md
-  - name: 一般的なオーディオ構成
-    href: typical-audio-configurations.md
-    items:
-    - name: Wave コンテンツのレンダリングとキャプチャ
-      href: rendering-and-capturing-wave-content.md
-    - name: MIDI コンテンツのレンダリングとキャプチャ
-      href: rendering-and-capturing-midi-content.md
-    - name: ポート クラスのオーディオ アダプターを使用したオーディオ コンテンツのレンダリングとキャプチャ
-      href: rendering-and-capturing-audio-content-by-using-a-port-class-audio-adap.md
-    - name: USBAudio ドライバーを使用したオーディオ コンテンツのレンダリングとキャプチャ
-      href: rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md
-    - name: DirectSound のソフトウェア バッファーとハードウェア バッファーを使用した Wave コンテンツのレンダリング
-      href: rendering-wave-content-using-directsound-software-and-hardware-buffers.md
-  - name: Wave 出力の待機時間に影響を及ぼす要因
-    href: factors-governing-wave-output-latency.md
-    items:
-    - name: WaveCyclic 待機時間
-      href: wavecyclic-latency.md
-    - name: WavePci 待機時間
-      href: wavepci-latency.md
-    - name: データ コピーの回避
-      href: avoiding-data-copying.md
-  - name: Windows Vista オーディオ エンジンの探索
-    href: exploring-the-windows-vista-audio-engine.md
-  - name: 形式に関するネゴシエーション
-    href: format-negotiation.md
-  - name: 動的な形式の変更
-    href: dynamic-format-change.md
+        - name: ユーザー モード WDM オーディオ コンポーネント
+          href: user-mode-wdm-audio-components.md
+        - name: カーネル モード WDM オーディオ コンポーネント
+          href: kernel-mode-wdm-audio-components.md
+          items:
+            - name: USB オーディオ クラス システム ドライバー (Usbaudio.sys)
+              href: usb-audio-class-system-driver--usbaudio-sys-.md
+        - name: Wave と DirectSound コンポーネント
+          href: wave-and-directsound-components.md
+        - name: MIDI と DirectMusic のコンポーネント
+          href: midi-and-directmusic-components.md
+        - name: 仮想オーディオ デバイス
+          href: virtual-audio-devices.md
+    - name: 一般的なオーディオ構成
+      href: typical-audio-configurations.md
+      items:
+        - name: Wave コンテンツのレンダリングとキャプチャ
+          href: rendering-and-capturing-wave-content.md
+        - name: MIDI コンテンツのレンダリングとキャプチャ
+          href: rendering-and-capturing-midi-content.md
+        - name: ポート クラスのオーディオ アダプターを使用したオーディオ コンテンツのレンダリングとキャプチャ
+          href: rendering-and-capturing-audio-content-by-using-a-port-class-audio-adap.md
+        - name: USBAudio ドライバーを使用したオーディオ コンテンツのレンダリングとキャプチャ
+          href: rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md
+        - name: DirectSound のソフトウェア バッファーとハードウェア バッファーを使用した Wave コンテンツのレンダリング
+          href: rendering-wave-content-using-directsound-software-and-hardware-buffers.md
+    - name: Wave 出力の待機時間に影響を及ぼす要因
+      href: factors-governing-wave-output-latency.md
+      items:
+        - name: WaveCyclic 待機時間
+          href: wavecyclic-latency.md
+        - name: WavePci 待機時間
+          href: wavepci-latency.md
+        - name: データ コピーの回避
+          href: avoiding-data-copying.md
+    - name: Windows Vista オーディオ エンジンの探索
+      href: exploring-the-windows-vista-audio-engine.md
+    - name: 形式に関するネゴシエーション
+      href: format-negotiation.md
+    - name: 動的な形式の変更
+      href: dynamic-format-change.md
 - name: Windows オーディオ処理オブジェクト
   href: windows-audio-processing-objects.md
   items:
-  - name: オーディオ処理オブジェクトのアーキテクチャ
-    href: audio-processing-object-architecture.md
-  - name: オーディオ処理オブジェクトの実装
-    href: implementing-audio-processing-objects.md
-  - name: APO 効果を構成するための UI の実装
-    href: implementing-a-ui-for-configuring-apo-effects.md
-  - name: APO 効果をオフロードするハードウェアの実装
-    href: implementing-hardware-offloaded-apo-effects.md
-  - name: Windows の既定の APO
-    href: windows-default-apos.md
-    items:
-    - name: 低音ブースト
-      href: bass-boost.md
-    - name: 低音管理
-      href: bass-management.md
-    - name: ラップトップ コンピューター用のサウンドの拡張
-      href: enhanced-sound-for-laptop-computers.md
-    - name: ラウドネス イコライゼーション DSP
-      href: loudness-equalization-dsp.md
-    - name: 低周波の保護
-      href: low-frequency-protection.md
-    - name: 室内音響補正
-      href: room-correction.md
-    - name: スピーカー フィル
-      href: speaker-fill.md
-    - name: スピーカーのファントム
-      href: speaker-phantoming.md
-    - name: 仮想サラウンド
-      href: virtual-surround.md
-    - name: ヘッドホンを介した仮想サラウンド サウンド
-      href: virtualized-surround-sound-over-headphones.md
+    - name: オーディオ処理オブジェクトのアーキテクチャ
+      href: audio-processing-object-architecture.md
+    - name: オーディオ処理オブジェクトの実装
+      href: implementing-audio-processing-objects.md
+    - name: APO 効果を構成するための UI の実装
+      href: implementing-a-ui-for-configuring-apo-effects.md
+    - name: APO 効果をオフロードするハードウェアの実装
+      href: implementing-hardware-offloaded-apo-effects.md
+    - name: Windows の既定の APO
+      href: windows-default-apos.md
+      items:
+        - name: 低音ブースト
+          href: bass-boost.md
+        - name: 低音管理
+          href: bass-management.md
+        - name: ラップトップ コンピューター用のサウンドの拡張
+          href: enhanced-sound-for-laptop-computers.md
+        - name: ラウドネス イコライゼーション DSP
+          href: loudness-equalization-dsp.md
+        - name: 低周波の保護
+          href: low-frequency-protection.md
+        - name: 室内音響補正
+          href: room-correction.md
+        - name: スピーカー フィル
+          href: speaker-fill.md
+        - name: スピーカーのファントム
+          href: speaker-phantoming.md
+        - name: 仮想サラウンド
+          href: virtual-surround.md
+        - name: ヘッドホンを介した仮想サラウンド サウンド
+          href: virtualized-surround-sound-over-headphones.md
 - name: オーディオ ミニポート ドライバー
   href: audio-miniport-drivers.md
   items:
-  - name: ポート クラスの概要
-    href: introduction-to-port-class.md
-    items:
-    - name: 関数固有のインターフェイスの実装
-      href: implementation-of-function-specific-interfaces.md
-    - name: オペレーティング システムによる PortCls のサポート
-      href: portcls-support-by-operating-system.md
-  - name: デバイスのサポート
-    href: supporting-a-device.md
-    items:
-    - name: WaveRT ポート ドライバー
-      href: wavert-port-driver.md
+    - name: ポート クラスの概要
+      href: introduction-to-port-class.md
       items:
-      - name: WaveRT ポート ドライバーの概要
-        href: introducing-the-wavert-port-driver.md
-      - name: WaveRT ポート ドライバーについて
-        href: understanding-the-wavert-port-driver.md
-        items:
-        - name: 再生時のストリームの待機時間
-          href: stream-latency-during-playback.md
-        - name: 記録時のストリームの待機時間
-          href: stream-latency-during-recording.md
-    - name: トポロジ ポート ドライバー
-      href: topology-port-driver.md
-    - name: MIDI ポート ドライバー
-      href: midi-port-driver.md
-    - name: DMus ポート ドライバー
-      href: dmus-port-driver.md
-  - name: アダプター ドライバーの構築
-    href: adapter-driver-construction.md
-    items:
-    - name: 開始シーケンス
-      href: startup-sequence.md
-    - name: サブデバイスの作成
-      href: subdevice-creation.md
-  - name: オペレーティング システムによるミニポート ドライバーの種類
-    href: miniport-driver-types-by-operating-system.md
-  - name: カーネルの COM
-    href: com-in-the-kernel.md
-    items:
-    - name: ミニポート ドライバーの関数テーブル
-      href: function-tables-for-miniport-drivers.md
-    - name: オーディオ ドライバー オブジェクトの作成
-      href: creating-audio-driver-objects.md
-    - name: COM オブジェクト用の参照カウントの規則
-      href: reference-counting-conventions-for-com-objects.md
-  - name: ミニポート インターフェイス
-    href: miniport-interfaces.md
-    items:
-    - name: WaveRT ミニポート ドライバー
-      href: wavert-miniport-driver.md
+        - name: 関数固有のインターフェイスの実装
+          href: implementation-of-function-specific-interfaces.md
+        - name: オペレーティング システムによる PortCls のサポート
+          href: portcls-support-by-operating-system.md
+    - name: デバイスのサポート
+      href: supporting-a-device.md
       items:
-      - name: WaveRT ミニポート ドライバーの開発
-        href: developing-a-wavert-miniport-driver.md
-    - name: トポロジ ミニポート ドライバー
-      href: topology-miniport-driver.md
-    - name: MIDI ミニポート ドライバー
-      href: midi-miniport-driver.md
-    - name: DMus ミニポート ドライバー
-      href: dmus-miniport-driver.md
-  - name: ポート クラス オーディオ アダプターのインストール
-    href: installing-a-port-class-audio-adapter.md
-    items:
-    - name: オーディオ アダプターのバージョン情報の指定
-      href: specifying-version-information-for-an-audio-adapter.md
-    - name: オーディオ アダプター用のデバイス インターフェイスのインストール
-      href: installing-device-interfaces-for-an-audio-adapter.md
-    - name: オーディオ アダプター用のコア システム コンポーネントのインストール
-      href: installing-core-system-components-for-an-audio-adapter.md
+        - name: WaveRT ポート ドライバー
+          href: wavert-port-driver.md
+          items:
+            - name: WaveRT ポート ドライバーの概要
+              href: introducing-the-wavert-port-driver.md
+            - name: WaveRT ポート ドライバーについて
+              href: understanding-the-wavert-port-driver.md
+              items:
+                - name: 再生時のストリームの待機時間
+                  href: stream-latency-during-playback.md
+                - name: 記録時のストリームの待機時間
+                  href: stream-latency-during-recording.md
+        - name: トポロジ ポート ドライバー
+          href: topology-port-driver.md
+        - name: MIDI ポート ドライバー
+          href: midi-port-driver.md
+        - name: DMus ポート ドライバー
+          href: dmus-port-driver.md
+    - name: アダプター ドライバーの構築
+      href: adapter-driver-construction.md
       items:
-      - name: Windows でのインストール
-        href: installing-in-windows.md
-    - name: オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
-      href: installing-windows-multimedia-system-support-for-an-audio-adapter.md
-    - name: Windows でのオーディオ アダプター サービスのインストール
-      href: installing-an-audio-adapter-service-in-windows.md
-    - name: コントロール パネルのカスタマイズ
-      href: customizing-control-panel.md
-    - name: ビットマップまたはアイコンを使用してコントロール パネルをブランド化する
-      href: branding-control-panel-with-bitmaps-or-icons.md
-    - name: コントロール パネルに新しいデジタル形式を追加する
-      href: adding-new-digital-formats-to-control-panel.md
-    - name: オーディオ アダプターためのインストールに関するその他の問題
-      href: miscellaneous-installation-issues-for-an-audio-adapter.md
+        - name: 開始シーケンス
+          href: startup-sequence.md
+        - name: サブデバイスの作成
+          href: subdevice-creation.md
+    - name: オペレーティング システムによるミニポート ドライバーの種類
+      href: miniport-driver-types-by-operating-system.md
+    - name: カーネルの COM
+      href: com-in-the-kernel.md
       items:
-      - name: 既定のオーディオ音量の設定
-        href: default-audio-volume-settings.md
-      - name: ソフトウェア音量制御のサポート
-        href: software-volume-control-support.md
-      - name: 音量レベルの持続性の無効化
-        href: opting-out-of-volume-level-persistence.md
-      - name: HD オーディオ ドライバー音量設定のカスタマイズ
-        href: customizing-default-audio-volume-settings.md
-      - name: オペレーティング システムのアップグレード
-        href: operating-system-upgrades.md
-      - name: システム全体にわたる一意のデバイス ID
-        href: system-wide-unique-device-ids.md
-      - name: メディア固有の INF ファイルのキーワード
-        href: media-specific-inf-file-keywords.md
-      - name: デバイス セットアップ情報の取得
-        href: retrieving-device-setup-information.md
-  - name: ポート ドライバーのヘルパー オブジェクト
-    href: port-driver-helper-objects.md
-    items:
-    - name: DMA チャネルのオブジェクト
-      href: dma-channel-objects.md
-    - name: レジストリ キーのオブジェクト
-      href: registry-key-objects.md
-    - name: リソース リストのオブジェクト
-      href: resource-list-objects.md
-    - name: サービス シンクとサービスのグループのオブジェクト
-      href: service-sink-and-service-group-objects.md
-    - name: 割り込み同期のオブジェクト
-      href: interrupt-sync-objects.md
-  - name: オーディオ デバイスの電源管理
-    href: power-management-for-audio-devices.md
-    items:
-    - name: IAdapterPowerManagement の実装
-      href: implementing-iadapterpowermanagement.md
-    - name: IPowerNotify の実装
-      href: implementing-ipowernotify.md
-    - name: オーディオ デバイス クラスの無通信タイマーの実装
-      href: audio-device-class-inactivity-timer-implementation.md
-  - name: オーディオ ドライバーのバージョン番号
-    href: version-numbers-for-audio-drivers.md
-    items:
-    - name: 内部および外部のバージョン番号
-      href: internal-and-external-version-numbers.md
-    - name: INF ドライバー バージョンのエントリ
-      href: inf-driver-version-entry.md
-    - name: DirectX ファイル バージョン番号
-      href: directx-file-version-numbers.md
-  - name: オーディオ ドライバーでの実装に関するその他の問題
-    href: other-implementation-issues-for-audio-drivers.md
-    items:
-    - name: 64 ビット オーディオ ドライバーの作成
-      href: writing-64-bit-audio-drivers.md
-    - name: PCI 構成領域へのアクセス
-      href: accessing-pci-configuration-space.md
-    - name: PortCls オーディオ ドライバー用に PnP 再調整を実装する
-      href: implement-pnp-rebalance-for-portcls-audio-drivers.md
+        - name: ミニポート ドライバーの関数テーブル
+          href: function-tables-for-miniport-drivers.md
+        - name: オーディオ ドライバー オブジェクトの作成
+          href: creating-audio-driver-objects.md
+        - name: COM オブジェクト用の参照カウントの規則
+          href: reference-counting-conventions-for-com-objects.md
+    - name: ミニポート インターフェイス
+      href: miniport-interfaces.md
+      items:
+        - name: WaveRT ミニポート ドライバー
+          href: wavert-miniport-driver.md
+          items:
+            - name: WaveRT ミニポート ドライバーの開発
+              href: developing-a-wavert-miniport-driver.md
+        - name: トポロジ ミニポート ドライバー
+          href: topology-miniport-driver.md
+        - name: MIDI ミニポート ドライバー
+          href: midi-miniport-driver.md
+        - name: DMus ミニポート ドライバー
+          href: dmus-miniport-driver.md
+    - name: ポート クラス オーディオ アダプターのインストール
+      href: installing-a-port-class-audio-adapter.md
+      items:
+        - name: オーディオ アダプターのバージョン情報の指定
+          href: specifying-version-information-for-an-audio-adapter.md
+        - name: オーディオ アダプター用のデバイス インターフェイスのインストール
+          href: installing-device-interfaces-for-an-audio-adapter.md
+        - name: オーディオ アダプター用のコア システム コンポーネントのインストール
+          href: installing-core-system-components-for-an-audio-adapter.md
+          items:
+            - name: Windows でのインストール
+              href: installing-in-windows.md
+        - name: オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
+          href: installing-windows-multimedia-system-support-for-an-audio-adapter.md
+        - name: Windows でのオーディオ アダプター サービスのインストール
+          href: installing-an-audio-adapter-service-in-windows.md
+        - name: コントロール パネルのカスタマイズ
+          href: customizing-control-panel.md
+        - name: ビットマップまたはアイコンを使用してコントロール パネルをブランド化する
+          href: branding-control-panel-with-bitmaps-or-icons.md
+        - name: コントロール パネルに新しいデジタル形式を追加する
+          href: adding-new-digital-formats-to-control-panel.md
+        - name: オーディオ アダプターためのインストールに関するその他の問題
+          href: miscellaneous-installation-issues-for-an-audio-adapter.md
+          items:
+            - name: 既定のオーディオ音量の設定
+              href: default-audio-volume-settings.md
+            - name: ソフトウェア音量制御のサポート
+              href: software-volume-control-support.md
+            - name: 音量レベルの持続性の無効化
+              href: opting-out-of-volume-level-persistence.md
+            - name: HD オーディオ ドライバー音量設定のカスタマイズ
+              href: customizing-default-audio-volume-settings.md
+            - name: オペレーティング システムのアップグレード
+              href: operating-system-upgrades.md
+            - name: システム全体にわたる一意のデバイス ID
+              href: system-wide-unique-device-ids.md
+            - name: メディア固有の INF ファイルのキーワード
+              href: media-specific-inf-file-keywords.md
+            - name: デバイス セットアップ情報の取得
+              href: retrieving-device-setup-information.md
+    - name: ポート ドライバーのヘルパー オブジェクト
+      href: port-driver-helper-objects.md
+      items:
+        - name: DMA チャネルのオブジェクト
+          href: dma-channel-objects.md
+        - name: レジストリ キーのオブジェクト
+          href: registry-key-objects.md
+        - name: リソース リストのオブジェクト
+          href: resource-list-objects.md
+        - name: サービス シンクとサービスのグループのオブジェクト
+          href: service-sink-and-service-group-objects.md
+        - name: 割り込み同期のオブジェクト
+          href: interrupt-sync-objects.md
+    - name: オーディオ デバイスの電源管理
+      href: power-management-for-audio-devices.md
+      items:
+        - name: IAdapterPowerManagement の実装
+          href: implementing-iadapterpowermanagement.md
+        - name: IPowerNotify の実装
+          href: implementing-ipowernotify.md
+        - name: オーディオ デバイス クラスの無通信タイマーの実装
+          href: audio-device-class-inactivity-timer-implementation.md
+    - name: オーディオ ドライバーのバージョン番号
+      href: version-numbers-for-audio-drivers.md
+      items:
+        - name: 内部および外部のバージョン番号
+          href: internal-and-external-version-numbers.md
+        - name: INF ドライバー バージョンのエントリ
+          href: inf-driver-version-entry.md
+        - name: DirectX ファイル バージョン番号
+          href: directx-file-version-numbers.md
+    - name: オーディオ ドライバーでの実装に関するその他の問題
+      href: other-implementation-issues-for-audio-drivers.md
+      items:
+        - name: 64 ビット オーディオ ドライバーの作成
+          href: writing-64-bit-audio-drivers.md
+        - name: PCI 構成領域へのアクセス
+          href: accessing-pci-configuration-space.md
+        - name: PortCls オーディオ ドライバー用に PnP 再調整を実装する
+          href: implement-pnp-rebalance-for-portcls-audio-drivers.md
 - name: レガシ オーディオ インターフェイス
   href: legacy-audio-interfaces.md
   items:
-  - name: WavePci ポート ドライバー
-    href: wavepci-port-driver.md
-  - name: WavePci ミニポート ドライバー
-    href: wavepci-miniport-driver.md
-  - name: WavePci デバイス用の実装に関する問題
-    href: implementation-issues-for-wavepci-devices.md
-    items:
-    - name: WavePci デバイスのハードウェア要件
-      href: hardware-requirements-for-wavepci-devices.md
-    - name: WavePci ミニポート ドライバーにおけるパフォーマンスの問題
-      href: performance-issues-for-a-wavepci-miniport-driver.md
-    - name: WavePci ミニポート ドライバーにおける信頼性の問題
-      href: reliability-issues-for-a-wavepci-miniport-driver.md
-  - name: WaveCyclic ポート ドライバー
-    href: wavecyclic-port-driver.md
-  - name: WaveCyclic ミニポート ドライバー
-    href: wavecyclic-miniport-driver.md
-  - name: DirectSound のドライバー サポート
-    href: driver-support-for-directsound.md
-    items:
-    - name: WDM オーディオでの DirectSound ハードウェア アクセラレータ
-      href: directsound-hardware-acceleration-in-wdm-audio.md
+    - name: WavePci ポート ドライバー
+      href: wavepci-port-driver.md
+    - name: WavePci ミニポート ドライバー
+      href: wavepci-miniport-driver.md
+    - name: WavePci デバイス用の実装に関する問題
+      href: implementation-issues-for-wavepci-devices.md
       items:
-      - name: DirectSound ハードウェア アクセラレータの概要
-        href: overview-of-directsound-hardware-acceleration.md
-      - name: WDM オーディオでの 2D DirectSound アクセラレータのサポート
-        href: supporting-2d-directsound-acceleration-in-wdm-audio.md
-      - name: WDM オーディオでの 3D DirectSound アクセラレータのサポート
-        href: supporting-3d-directsound-acceleration-in-wdm-audio.md
-      - name: DirectSound のノードの順序付け要件
-        href: directsound-node-ordering-requirements.md
-      - name: 2D ピンと 3D ピンの混在をサポート
-        href: supporting-a-mixture-of-2d-and-3d-pins.md
-      - name: DirectSound ハードウェア アクセラレータと SRC スライダー
-        href: directsound-hardware-acceleration-and-src-sliders.md
-      - name: カスタム オーディオ プロパティ セットの公開
-        href: exposing-custom-audio-property-sets.md
-      - name: プリフェッチ オフセット
-        href: prefetch-offsets.md
-    - name: DirectSound スピーカー構成の設定
-      href: directsound-speaker-configuration-settings.md
+        - name: WavePci デバイスのハードウェア要件
+          href: hardware-requirements-for-wavepci-devices.md
+        - name: WavePci ミニポート ドライバーにおけるパフォーマンスの問題
+          href: performance-issues-for-a-wavepci-miniport-driver.md
+        - name: WavePci ミニポート ドライバーにおける信頼性の問題
+          href: reliability-issues-for-a-wavepci-miniport-driver.md
+    - name: WaveCyclic ポート ドライバー
+      href: wavecyclic-port-driver.md
+    - name: WaveCyclic ミニポート ドライバー
+      href: wavecyclic-miniport-driver.md
+    - name: DirectSound のドライバー サポート
+      href: driver-support-for-directsound.md
       items:
-      - name: スピーカー構成の要求を変換
-        href: translating-speaker-configuration-requests.md
-      - name: スピーカー構成の設定を適用
-        href: applying-speaker-configuration-settings.md
-      - name: 専用のスピーカー構成ユーティリティ
-        href: proprietary-speaker-configuration-utilities.md
-      - name: DSSPEAKER_SURROUND スピーカー構成
-        href: dsspeaker-surround-speaker-configuration.md
-      - name: DSSPEAKER_DIRECTOUT スピーカー構成
-        href: dsspeaker-directout-speaker-configuration.md
-    - name: DirectSound キャプチャ効果
-      href: directsound-capture-effects.md
-      items:
-      - name: ハードウェア アクセラレータによるキャプチャ効果を公開
-        href: exposing-hardware-accelerated-capture-effects.md
-      - name: AEC システム フィルター
-        href: aec-system-filter.md
-  - name: DirectMusic のドライバー サポート
-    href: driver-support-for-directmusic.md
-    items:
-    - name: DirectMusic DDI の概要
-      href: directmusic-ddi-overview.md
-      items:
-      - name: ユーザー モードとカーネル モードの比較
-        href: user-mode-versus-kernel-mode.md
-    - name: ユーザー モードでのカスタム レンダリング
-      href: custom-rendering-in-user-mode.md
-      items:
-      - name: シンセサイザーと Wave シンク
-        href: synthesizers-and-wave-sinks.md
-      - name: IDirectMusicSynth と IDirectMusicSynthSink
-        href: idirectmusicsynth-and-idirectmusicsynthsink.md
-      - name: Wave と MIDI
-        href: midi-to-wave.md
-      - name: シンセサイザーのタイミング
-        href: synthesizer-timing.md
-        items:
-        - name: シンセサイザーの待機時間
-          href: synthesizer-latency.md
-        - name: イベントのタイムスタンプ
-          href: time-stamped-events.md
-        - name: 時計の同期化
-          href: clock-synchronization.md
-      - name: DLS ダウンロードのサポート
-        href: dls-download-support.md
-      - name: ご利用のシンセサイザーの登録
-        href: registering-your-synthesizer.md
-    - name: カーネル モードのハードウェア アクセラレータの DDI
-      href: kernel-mode-hardware-acceleration-ddi.md
-      items:
-      - name: DirectMusic WDM カーネル ストリーミングの背景
-        href: directmusic-wdm-kernel-streaming-background.md
-      - name: シンセサイザー ミニポート ドライバーの概要
-        href: synthesizer-miniport-driver-overview.md
-      - name: DirectMusic ミニポート ドライバー インターフェイス
-        href: directmusic-miniport-driver-interface.md
-        items:
-        - name: MIDI トランスポート
-          href: midi-transport.md
+        - name: WDM オーディオでの DirectSound ハードウェア アクセラレータ
+          href: directsound-hardware-acceleration-in-wdm-audio.md
           items:
-          - name: IMXF インターフェイス
-            href: imxf-interfaces.md
-          - name: アロケーター
-            href: allocator.md
-          - name: カーネル モードのソフトウェア シンセサイザーのウェーブ シンク
-            href: a-wave-sink-for-kernel-mode-software-synthesizers.md
-        - name: 待機時間の時計
-          href: latency-clocks.md
-        - name: ミニポート ドライバー プロパティの項目要求
-          href: miniport-driver-property-item-requests.md
-        - name: PortDMus を既定の DirectMusic ポート ドライバーとする
-          href: making-portdmus-the-default-directmusic-port-driver.md
-        - name: ご利用のシンセサイザーをレガシ デバイスとして公開
-          href: exposing-your-synthesizer-as-a-legacy-device.md
-      - name: 音声の割り当て
-        href: voice-allocation.md
-      - name: 既定のサウンド サンプル セット
-        href: default-sound-sample-sets.md
-      - name: DirectMusic プロパティのサポート
-        href: support-for-directmusic-properties.md
-  - name: レガシ オーディオ インターフェイス用のドライバー サポート
-    href: driver-support-for-legacy-audio-interfaces.md
-    items:
-    - name: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
-      href: kernel-streaming-topology-to-audio-mixer-api-translation.md
+            - name: DirectSound ハードウェア アクセラレータの概要
+              href: overview-of-directsound-hardware-acceleration.md
+            - name: WDM オーディオでの 2D DirectSound アクセラレータのサポート
+              href: supporting-2d-directsound-acceleration-in-wdm-audio.md
+            - name: WDM オーディオでの 3D DirectSound アクセラレータのサポート
+              href: supporting-3d-directsound-acceleration-in-wdm-audio.md
+            - name: DirectSound のノードの順序付け要件
+              href: directsound-node-ordering-requirements.md
+            - name: 2D ピンと 3D ピンの混在をサポート
+              href: supporting-a-mixture-of-2d-and-3d-pins.md
+            - name: DirectSound ハードウェア アクセラレータと SRC スライダー
+              href: directsound-hardware-acceleration-and-src-sliders.md
+            - name: カスタム オーディオ プロパティ セットの公開
+              href: exposing-custom-audio-property-sets.md
+            - name: プリフェッチ オフセット
+              href: prefetch-offsets.md
+        - name: DirectSound スピーカー構成の設定
+          href: directsound-speaker-configuration-settings.md
+          items:
+            - name: スピーカー構成の要求を変換
+              href: translating-speaker-configuration-requests.md
+            - name: スピーカー構成の設定を適用
+              href: applying-speaker-configuration-settings.md
+            - name: 専用のスピーカー構成ユーティリティ
+              href: proprietary-speaker-configuration-utilities.md
+            - name: DSSPEAKER_SURROUND スピーカー構成
+              href: dsspeaker-surround-speaker-configuration.md
+            - name: DSSPEAKER_DIRECTOUT スピーカー構成
+              href: dsspeaker-directout-speaker-configuration.md
+        - name: DirectSound キャプチャ効果
+          href: directsound-capture-effects.md
+          items:
+            - name: ハードウェア アクセラレータによるキャプチャ効果を公開
+              href: exposing-hardware-accelerated-capture-effects.md
+            - name: AEC システム フィルター
+              href: aec-system-filter.md
+    - name: DirectMusic のドライバー サポート
+      href: driver-support-for-directmusic.md
       items:
-      - name: トポロジのピン
-        href: topology-pins.md
-      - name: トポロジのノード
-        href: topology-nodes.md
-      - name: WDMAud トポロジ解析
-        href: wdmaud-topology-parsing.md
-      - name: SysTray と SndVol32
-        href: systray-and-sndvol32.md
-      - name: フィルター トポロジの公開
-        href: exposing-filter-topology.md
-    - name: レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
-      href: wdm-audio-extensions-to-legacy-windows-multimedia-apis.md
+        - name: DirectMusic DDI の概要
+          href: directmusic-ddi-overview.md
+          items:
+            - name: ユーザー モードとカーネル モードの比較
+              href: user-mode-versus-kernel-mode.md
+        - name: ユーザー モードでのカスタム レンダリング
+          href: custom-rendering-in-user-mode.md
+          items:
+            - name: シンセサイザーと Wave シンク
+              href: synthesizers-and-wave-sinks.md
+            - name: IDirectMusicSynth と IDirectMusicSynthSink
+              href: idirectmusicsynth-and-idirectmusicsynthsink.md
+            - name: Wave と MIDI
+              href: midi-to-wave.md
+            - name: シンセサイザーのタイミング
+              href: synthesizer-timing.md
+              items:
+                - name: シンセサイザーの待機時間
+                  href: synthesizer-latency.md
+                - name: イベントのタイムスタンプ
+                  href: time-stamped-events.md
+                - name: 時計の同期化
+                  href: clock-synchronization.md
+            - name: DLS ダウンロードのサポート
+              href: dls-download-support.md
+            - name: ご利用のシンセサイザーの登録
+              href: registering-your-synthesizer.md
+        - name: カーネル モードのハードウェア アクセラレータの DDI
+          href: kernel-mode-hardware-acceleration-ddi.md
+          items:
+            - name: DirectMusic WDM カーネル ストリーミングの背景
+              href: directmusic-wdm-kernel-streaming-background.md
+            - name: シンセサイザー ミニポート ドライバーの概要
+              href: synthesizer-miniport-driver-overview.md
+            - name: DirectMusic ミニポート ドライバー インターフェイス
+              href: directmusic-miniport-driver-interface.md
+              items:
+                - name: MIDI トランスポート
+                  href: midi-transport.md
+                  items:
+                    - name: IMXF インターフェイス
+                      href: imxf-interfaces.md
+                    - name: アロケーター
+                      href: allocator.md
+                    - name: カーネル モードのソフトウェア シンセサイザーのウェーブ シンク
+                      href: a-wave-sink-for-kernel-mode-software-synthesizers.md
+                - name: 待機時間の時計
+                  href: latency-clocks.md
+                - name: ミニポート ドライバー プロパティの項目要求
+                  href: miniport-driver-property-item-requests.md
+                - name: PortDMus を既定の DirectMusic ポート ドライバーとする
+                  href: making-portdmus-the-default-directmusic-port-driver.md
+                - name: ご利用のシンセサイザーをレガシ デバイスとして公開
+                  href: exposing-your-synthesizer-as-a-legacy-device.md
+            - name: 音声の割り当て
+              href: voice-allocation.md
+            - name: 既定のサウンド サンプル セット
+              href: default-sound-sample-sets.md
+            - name: DirectMusic プロパティのサポート
+              href: support-for-directmusic-properties.md
+    - name: レガシ オーディオ インターフェイス用のドライバー サポート
+      href: driver-support-for-legacy-audio-interfaces.md
       items:
-      - name: WDM オーディオ ドライバーからの強化された機能
-        href: extended-capabilities-from-a-wdm-audio-driver.md
-    - name: システムでインターセプトされるデバイス メッセージ
-      href: system-intercepted-device-messages.md
-      items:
-      - name: 推奨されるデバイス ID へのアクセス
-        href: accessing-the-preferred-device-id.md
-      - name: 推奨される音声通信デバイス ID
-        href: preferred-voice-communications-device-id.md
-      - name: デバイス インターフェイス名の取得
-        href: obtaining-a-device-interface-name.md
-      - name: 音楽テクノロジ GUID
-        href: music-technology-guids.md
+        - name: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
+          href: kernel-streaming-topology-to-audio-mixer-api-translation.md
+          items:
+            - name: トポロジのピン
+              href: topology-pins.md
+            - name: トポロジのノード
+              href: topology-nodes.md
+            - name: WDMAud トポロジ解析
+              href: wdmaud-topology-parsing.md
+            - name: SysTray と SndVol32
+              href: systray-and-sndvol32.md
+            - name: フィルター トポロジの公開
+              href: exposing-filter-topology.md
+        - name: レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
+          href: wdm-audio-extensions-to-legacy-windows-multimedia-apis.md
+          items:
+            - name: WDM オーディオ ドライバーからの強化された機能
+              href: extended-capabilities-from-a-wdm-audio-driver.md
+        - name: システムでインターセプトされるデバイス メッセージ
+          href: system-intercepted-device-messages.md
+          items:
+            - name: 推奨されるデバイス ID へのアクセス
+              href: accessing-the-preferred-device-id.md
+            - name: 推奨される音声通信デバイス ID
+              href: preferred-voice-communications-device-id.md
+            - name: デバイス インターフェイス名の取得
+              href: obtaining-a-device-interface-name.md
+            - name: 音楽テクノロジ GUID
+              href: music-technology-guids.md
 - name: オーディオ デバイス DDI リファレンスの概要
   href: portal-audio-ref.md
   items:
-  - name: オーディオ ドライバーの列挙
-    href: audio-drivers-enumerations.md
-  - name: オーディオ ドライバーのプロパティ セット
-    href: audio-drivers-property-sets.md
-    items:
-    - name: KSPROPSETID_AC3
-      href: kspropsetid-ac3.md
-    - name: KSPROPSETID_Acoustic_Echo_Cancel
-      href: kspropsetid-acoustic-echo-cancel.md
-    - name: KSPROPSETID_Audio
-      href: kspropsetid-audio.md
-    - name: KSPROPSETID_AudioEffectsDiscovery
-      href: kspropsetid-audioeffectsdiscovery.md
-    - name: KSPROPSETID_AudioEngine
-      href: kspropsetid-audioengine.md
-    - name: KSPROPSETID_AudioGfx
-      href: kspropsetid-audiogfx.md
-    - name: KSPROPSETID_AudioModule
-      href: kspropsetid-audiomodule.md
+    - name: オーディオ ドライバーの列挙
+      href: audio-drivers-enumerations.md
+    - name: オーディオ ドライバーのプロパティ セット
+      href: audio-drivers-property-sets.md
       items:
-      - name: KSPROPERTY_AUDIOMODULE_COMMAND
-        href: ksproperty-audiomodule-command.md
-      - name: KSPROPERTY_AUDIOMODULE_DESCRIPTORS
-        href: ksproperty-audiomodule-descriptors.md
-      - name: KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID
-        href: ksproperty-audiomodule-notification-device-id.md
-    - name: KSPROPSETID_AudioSignalProcessing
-      href: kspropsetid-audiosignalprocessing.md
-    - name: KSPROPSETID_BtAudio
-      href: kspropsetid-btaudio.md
-    - name: KSPROPSETID_DirectSound3DBuffer
-      href: kspropsetid-directsound3dbuffer.md
-    - name: KSPROPSETID_DirectSound3DListener
-      href: kspropsetid-directsound3dlistener.md
-    - name: KSPROPSETID_DrmAudioStream
-      href: kspropsetid-drmaudiostream.md
-    - name: KSPROPSETID_FMRXControl
-      href: kspropsetid-fmrxcontrol.md
+        - name: KSPROPSETID_AC3
+          href: kspropsetid-ac3.md
+        - name: KSPROPSETID_Acoustic_Echo_Cancel
+          href: kspropsetid-acoustic-echo-cancel.md
+        - name: KSPROPSETID_Audio
+          href: kspropsetid-audio.md
+        - name: KSPROPSETID_AudioEffectsDiscovery
+          href: kspropsetid-audioeffectsdiscovery.md
+        - name: KSPROPSETID_AudioEngine
+          href: kspropsetid-audioengine.md
+        - name: KSPROPSETID_AudioGfx
+          href: kspropsetid-audiogfx.md
+        - name: KSPROPSETID_AudioModule
+          href: kspropsetid-audiomodule.md
+          items:
+            - name: KSPROPERTY_AUDIOMODULE_COMMAND
+              href: ksproperty-audiomodule-command.md
+            - name: KSPROPERTY_AUDIOMODULE_DESCRIPTORS
+              href: ksproperty-audiomodule-descriptors.md
+            - name: KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID
+              href: ksproperty-audiomodule-notification-device-id.md
+        - name: KSPROPSETID_AudioSignalProcessing
+          href: kspropsetid-audiosignalprocessing.md
+        - name: KSPROPSETID_BtAudio
+          href: kspropsetid-btaudio.md
+        - name: KSPROPSETID_DirectSound3DBuffer
+          href: kspropsetid-directsound3dbuffer.md
+        - name: KSPROPSETID_DirectSound3DListener
+          href: kspropsetid-directsound3dlistener.md
+        - name: KSPROPSETID_DrmAudioStream
+          href: kspropsetid-drmaudiostream.md
+        - name: KSPROPSETID_FMRXControl
+          href: kspropsetid-fmrxcontrol.md
+          items:
+            - name: KSPROPERTY_FMRX_STATE
+              href: ksproperty-fmrx-state.md
+        - name: KSPROPSETID_FMRXTopology
+          href: kspropsetid-fmrxtopology.md
+        - name: KSPROPSETID_Hrtf3d
+          href: kspropsetid-hrtf3d.md
+        - name: KSPROPSETID_INTERLEAVEDAUDIO_FORMATINFORMATION
+          href: kspropsetid-interleavedaudio.md
+        - name: KSPROPSETID_Itd3d
+          href: kspropsetid-itd3d.md
+        - name: KSPROPSETID_Jack
+          href: kspropsetid-jack.md
+        - name: KSPROPSETID_RTAudio
+          href: kspropsetid-rtaudio.md
+        - name: KSPROPSETID_SoundDetector
+          href: kspropsetid-sounddetector.md
+        - name: KSPROPSETID_Synth
+          href: kspropsetid-synth.md
+        - name: KSPROPSETID_SynthClock
+          href: kspropsetid-synthclock.md
+        - name: KSPROPSETID_Synth_Dls
+          href: kspropsetid-synth-dls.md
+        - name: KSPROPSETID_Sysaudio
+          href: kspropsetid-sysaudio.md
+        - name: KSPROPSETID_Sysaudio_Pin
+          href: kspropsetid-sysaudio-pin.md
+        - name: KSPROPSETID_TelephonyControl
+          href: kspropsetid-telephonycontrol.md
+        - name: KSPROPSETID_TelephonyTopology
+          href: kspropsetid-telephonytopology.md
+        - name: KSPROPSETID_TopologyNode
+          href: kspropsetid-topologynode.md
+    - name: オーディオ ドライバーのイベント セット
+      href: audio-drivers-event-sets.md
       items:
-      - name: KSPROPERTY_FMRX_STATE
-        href: ksproperty-fmrx-state.md
-    - name: KSPROPSETID_FMRXTopology
-      href: kspropsetid-fmrxtopology.md
-    - name: KSPROPSETID_Hrtf3d
-      href: kspropsetid-hrtf3d.md
-    - name: KSPROPSETID_INTERLEAVEDAUDIO_FORMATINFORMATION
-      href: kspropsetid-interleavedaudio.md
-    - name: KSPROPSETID_Itd3d
-      href: kspropsetid-itd3d.md
-    - name: KSPROPSETID_Jack
-      href: kspropsetid-jack.md
-    - name: KSPROPSETID_RTAudio
-      href: kspropsetid-rtaudio.md
-    - name: KSPROPSETID_SoundDetector
-      href: kspropsetid-sounddetector.md
-    - name: KSPROPSETID_Synth
-      href: kspropsetid-synth.md
-    - name: KSPROPSETID_SynthClock
-      href: kspropsetid-synthclock.md
-    - name: KSPROPSETID_Synth_Dls
-      href: kspropsetid-synth-dls.md
-    - name: KSPROPSETID_Sysaudio
-      href: kspropsetid-sysaudio.md
-    - name: KSPROPSETID_Sysaudio_Pin
-      href: kspropsetid-sysaudio-pin.md
-    - name: KSPROPSETID_TelephonyControl
-      href: kspropsetid-telephonycontrol.md
-    - name: KSPROPSETID_TelephonyTopology
-      href: kspropsetid-telephonytopology.md
-    - name: KSPROPSETID_TopologyNode
-      href: kspropsetid-topologynode.md
-  - name: オーディオ ドライバーのイベント セット
-    href: audio-drivers-event-sets.md
-    items:
-    - name: KSEVENTSETID_AudioControlChange
-      href: kseventsetid-audiocontrolchange.md
-    - name: KSEVENTSETID_LoopedStreaming
-      href: kseventsetid-loopedstreaming.md
-    - name: KSEVENTSETID_PinCapsChange
-      href: kseventsetid-pincapschange.md
-    - name: KSEVENTSETID_SoundDetector
-      href: kseventsetid-sounddetector.md
-    - name: KSEVENTSETID_VolumeLimit
-      href: kseventsetid-volumelimit.md
+        - name: KSEVENTSETID_AudioControlChange
+          href: kseventsetid-audiocontrolchange.md
+        - name: KSEVENTSETID_LoopedStreaming
+          href: kseventsetid-loopedstreaming.md
+        - name: KSEVENTSETID_PinCapsChange
+          href: kseventsetid-pincapschange.md
+        - name: KSEVENTSETID_SoundDetector
+          href: kseventsetid-sounddetector.md
+        - name: KSEVENTSETID_VolumeLimit
+          href: kseventsetid-volumelimit.md
+          items:
+            - name: KSEVENT_VOLUMELIMIT_CHANGED
+              href: ksevent-volumelimit-changed.md
+    - name: オーディオ トポロジ ノード
+      href: audio-topology-nodes.md
       items:
-      - name: KSEVENT_VOLUMELIMIT_CHANGED
-        href: ksevent-volumelimit-changed.md
-  - name: オーディオ トポロジ ノード
-    href: audio-topology-nodes.md
-    items:
-    - name: KSNODETYPE_3D_EFFECTS
-      href: ksnodetype-3d-effects.md
-    - name: KSNODETYPE_ACOUSTIC_ECHO_CANCEL
-      href: ksnodetype-acoustic-echo-cancel.md
-    - name: KSNODETYPE_ADC
-      href: ksnodetype-adc.md
-    - name: KSNODETYPE_AGC
-      href: ksnodetype-agc.md
-    - name: KSNODETYPE_AUDIO_ENGINE
-      href: ksnodetype-audio-engine.md
-    - name: KSNODETYPE_AUDIO_KEYWORDDETECTOR
-      href: ksnodetype-audio-keyworddetector.md
-    - name: KSNODETYPE_CHORUS
-      href: ksnodetype-chorus.md
-    - name: KSNODETYPE_DAC
-      href: ksnodetype-dac.md
-    - name: KSNODETYPE_DELAY
-      href: ksnodetype-delay.md
-    - name: KSNODETYPE_DEMUX
-      href: ksnodetype-demux.md
-    - name: KSNODETYPE_DEV_SPECIFIC
-      href: ksnodetype-dev-specific.md
-    - name: KSNODETYPE_DMSYNTH
-      href: ksnodetype-dmsynth.md
-    - name: KSNODETYPE_DMSYNTH_CAPS
-      href: ksnodetype-dmsynth-caps.md
-    - name: KSNODETYPE_DRM_DESCRAMBLE
-      href: ksnodetype-drm-descramble.md
-    - name: KSNODETYPE_EQUALIZER
-      href: ksnodetype-equalizer.md
-    - name: KSNODETYPE_FM_RX
-      href: ksnodetype-fm-rx.md
-    - name: KSNODETYPE_LOUDNESS
-      href: ksnodetype-loudness.md
-    - name: KSNODETYPE_MICROPHONE_ARRAY_PROCESSOR
-      href: ksnodetype-microphone-array-processor.md
-    - name: KSNODETYPE_MUTE
-      href: ksnodetype-mute.md
-    - name: KSNODETYPE_MUX
-      href: ksnodetype-mux.md
-    - name: KSNODETYPE_NOISE_SUPPRESS
-      href: ksnodetype-noise-suppress.md
-    - name: KSNODETYPE_PEAKMETER
-      href: ksnodetype-peakmeter.md
-    - name: KSNODETYPE_PROLOGIC_DECODER
-      href: ksnodetype-prologic-decoder.md
-    - name: KSNODETYPE_PROLOGIC_ENCODER
-      href: ksnodetype-prologic-encoder.md
-    - name: KSNODETYPE_REVERB
-      href: ksnodetype-reverb.md
-    - name: KSNODETYPE_SRC
-      href: ksnodetype-src.md
-    - name: KSNODETYPE_STEREO_ENHANCE
-      href: ksnodetype-stereo-enhance.md
-    - name: KSNODETYPE_STEREO_WIDE
-      href: ksnodetype-stereo-wide.md
-    - name: KSNODETYPE_SUM
-      href: ksnodetype-sum.md
-    - name: KSNODETYPE_SUPERMIX
-      href: ksnodetype-supermix.md
-    - name: KSNODETYPE_SWMIDI
-      href: ksnodetype-swmidi.md
-    - name: KSNODETYPE_SWSYNTH
-      href: ksnodetype-swsynth.md
-    - name: KSNODETYPE_SYNTHESIZER
-      href: ksnodetype-synthesizer.md
-    - name: KSNODETYPE_TELEPHONY_BIDI
-      href: ksnodetype-telephony-bidi.md
-    - name: KSNODETYPE_TONE
-      href: ksnodetype-tone.md
-    - name: KSNODETYPE_VOLUME
-      href: ksnodetype-volume.md
-  - name: オーディオ ドライバーの構造体
-    href: audio-drivers-structures.md
-  - name: オーディオ ドライバーのインターフェイス
-    href: audio-drivers-interfaces.md
-    items:
-    - name: IAudioSystemEffects
-      href: iaudiosystemeffects.md
-    - name: IAudioSystemEffects2
-      href: iaudiosystemeffects2.md
-    - name: IKeywordDetectorOemAdapter
-      href: ikeyworddetectoroemadapter.md
-  - name: Bluetooth HFP DDI 参照
-    href: bluetooth-hfp-ddi-reference.md
-    items:
-    - name: Bluetooth HFP DDI の構造体
-      href: bluetooth-hfp-ddi-structures.md
-    - name: Bluetooth HFP DDI IOCTLs
-      href: bluetooth-hfp-ddi-ioctls.md
-  - name: High Definition Audio DDI リファレンス
-    href: high-definition-audio-ddi-reference.md
-    items:
-    - name: HD Audio DDI のルーチン
-      href: hd-audio-ddi-routines.md
-    - name: HD Audio DDI の構造体
-      href: hd-audio-ddi-structures.md
-  - name: HD Audio DDI の列挙
-    href: hd-audio-ddi-enumerations.md
-  - name: DRM の関数
-    href: drm-functions.md
-  - name: MIDI のオーディオ デバイス メッセージ
-    href: audio-device-messages-for-midi.md
-  - name: レガシ オーディオ デバイス メッセージ
-    href: legacy-audio-device-messages.md
-  - name: オーディオ INF ファイルの設定
-    href: media-class-inf-extensions.md
-    items:
-    - name: SetupPreferredAudioDevices
-      href: setuppreferredaudiodevices.md
-    - name: PKEY_APO_SWFallback_ProcessingModes
-      href: pkey-apo-swfallback-processingmodes.md
-    - name: PKEY_AudioDevice_EnableEndpointByDefault
-      href: pkey-audiodevice-enableendpointbydefault.md
-    - name: PKEY_AudioDevice_NeverSetAsDefaultEndpoint
-      href: pkey-audiodevice-neversetasdefaultendpoint.md
-    - name: PKEY_AudioEndpoint_Default_VolumeInDb
-      href: pkey-audioendpoint-default-volumeindb.md
-    - name: PKEY_AudioEngine_OEMFormat
-      href: pkey-audioengine-oemformat.md
-    - name: PKEY_AudioEngine_OEMPeriod
-      href: pkey-audioengine-oemperiod.md
-    - name: PKEY_CompositeFX_EndpointEffectClsid
-      href: pkey-compositefx-endpointeffectclsid.md
-    - name: PKEY_CompositeFX_KeywordDetector_EndpointEffectClsid
-      href: pkey-compositefx-keyworddetector-endpointeffectclsid.md
-    - name: PKEY_CompositeFX_KeywordDetector_ModeEffectClsid
-      href: pkey-compositefx-keyworddetector-modeeffectclsid.md
-    - name: PKEY_CompositeFX_KeywordDetector_StreamEffectClsid
-      href: pkey-compositefx-keyworddetector-streameffectclsid.md
-    - name: PKEY_CompositeFX_ModeEffectClsid
-      href: pkey-compositefx-modeeffectclsid.md
-    - name: PKEY_CompositeFX_Offload_ModeEffectClsid
-      href: pkey-compositefx-offload-modeeffectclsid.md
-    - name: PKEY_CompositeFX_Offload_StreamEffectClsid
-      href: pkey-compositefx-offload-streameffectclsid.md
-    - name: PKEY_CompositeFX_StreamEffectClsid
-      href: pkey-compositefx-streameffectclsid.md
-    - name: PKEY_Devices_AudioDevice_Microphone_IsFarField
-      href: pkey-devices-audiodevice-microphone-isfarfield.md
-    - name: PKEY_FX_KeywordDetector_StreamEffectClsid
-      href: pkey-fx-keyworddetector-streameffectclsid.md
-    - name: PKEY_FX_KeywordDetector_ModeEffectClsid
-      href: pkey-fx-keyworddetector-modeeffectclsid.md
-    - name: PKEY_FX_KeywordDetector_EndpointEffectClsid
-      href: pkey-fx-keyworddetector-endpointeffectclsid.md
-    - name: PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming
-      href: pkey-sfx-keyworddetector-processingmodes-supported-for-streaming.md
-    - name: PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming
-      href: pkey-mfx-keyworddetector-processingmodes-supported-for-streaming.md
-    - name: PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming
-      href: pkey-efx-keyworddetector-processingmodes-supported-for-streaming.md
-    - name: PKEY_FX_EndpointEffectClsid
-      href: pkey-fx-endpointeffectclsid.md
-    - name: PKEY_FX_ModeEffectClsid
-      href: pkey-fx-modeeffectclsid.md
-    - name: PKEY_FX_StreamEffectClsid
-      href: pkey-fx-streameffectclsid.md
-    - name: PKEY_FX_Offload_ModeEffectClsid
-      href: pkey-fx-offload-modeeffectclsid.md
-    - name: PKEY_FX_Offload_StreamEffectClsid
-      href: pkey-fx-offload-streameffectclsid.md
-    - name: PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming
-      href: pkey-sfx-offload-processingmodes-supported-for-streaming.md
-    - name: PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming
-      href: pkey-mfx-offload-processingmodes-supported-for-streaming.md
-    - name: PKEY_EFX_ProcessingModes_Supported_For_Streaming
-      href: pkey-efx-processingmodes-supported-for-streaming.md
-    - name: PKEY_MFX_ProcessingModes_Supported_For_Streaming
-      href: pkey-mfx-processingmodes-supported-for-streaming.md
-    - name: PKEY_SFX_ProcessingModes_Supported_For_Streaming
-      href: pkey-sfx-processingmodes-supported-for-streaming.md
-    - name: UsePositionLock
-      href: usepositionlock.md
-  - name: ポート クラス オーディオ ドライバー リファレンス
-    href: port-class-audio-driver-reference.md
-    items:
-    - name: オーディオ ポート クラスの関数
-      href: audio-port-class-functions.md
-    - name: オーディオ ヘルパー オブジェクトのインターフェイス
-      href: audio-helper-object-interfaces.md
-    - name: オーディオ ポート オブジェクトのインターフェイス
-      href: audio-port-object-interfaces.md
-    - name: オーディオ ミニポート オブジェクトのインターフェイス
-      href: audio-miniport-object-interfaces.md
-    - name: オーディオ ミニポート補助のインターフェイス
-      href: audio-miniport-auxiliary-interfaces.md
-    - name: オーディオ ストリーム オブジェクトのインターフェイス
-      href: audio-stream-object-interfaces.md
-    - name: シンセサイザーおよびシンセサイザー シンクの DirectMusic ユーザー モード インターフェイス
-      href: directmusic-user-mode-synth-and-synth-sink-interfaces.md
-    - name: オーディオ電源管理のインターフェイス
-      href: audio-power-management-interfaces.md
-    - name: 廃止された関数のマクロ定義
-      href: macro-definitions-for-obsolete-functions.md
+        - name: KSNODETYPE_3D_EFFECTS
+          href: ksnodetype-3d-effects.md
+        - name: KSNODETYPE_ACOUSTIC_ECHO_CANCEL
+          href: ksnodetype-acoustic-echo-cancel.md
+        - name: KSNODETYPE_ADC
+          href: ksnodetype-adc.md
+        - name: KSNODETYPE_AGC
+          href: ksnodetype-agc.md
+        - name: KSNODETYPE_AUDIO_ENGINE
+          href: ksnodetype-audio-engine.md
+        - name: KSNODETYPE_AUDIO_KEYWORDDETECTOR
+          href: ksnodetype-audio-keyworddetector.md
+        - name: KSNODETYPE_CHORUS
+          href: ksnodetype-chorus.md
+        - name: KSNODETYPE_DAC
+          href: ksnodetype-dac.md
+        - name: KSNODETYPE_DELAY
+          href: ksnodetype-delay.md
+        - name: KSNODETYPE_DEMUX
+          href: ksnodetype-demux.md
+        - name: KSNODETYPE_DEV_SPECIFIC
+          href: ksnodetype-dev-specific.md
+        - name: KSNODETYPE_DMSYNTH
+          href: ksnodetype-dmsynth.md
+        - name: KSNODETYPE_DMSYNTH_CAPS
+          href: ksnodetype-dmsynth-caps.md
+        - name: KSNODETYPE_DRM_DESCRAMBLE
+          href: ksnodetype-drm-descramble.md
+        - name: KSNODETYPE_EQUALIZER
+          href: ksnodetype-equalizer.md
+        - name: KSNODETYPE_FM_RX
+          href: ksnodetype-fm-rx.md
+        - name: KSNODETYPE_LOUDNESS
+          href: ksnodetype-loudness.md
+        - name: KSNODETYPE_MICROPHONE_ARRAY_PROCESSOR
+          href: ksnodetype-microphone-array-processor.md
+        - name: KSNODETYPE_MUTE
+          href: ksnodetype-mute.md
+        - name: KSNODETYPE_MUX
+          href: ksnodetype-mux.md
+        - name: KSNODETYPE_NOISE_SUPPRESS
+          href: ksnodetype-noise-suppress.md
+        - name: KSNODETYPE_PEAKMETER
+          href: ksnodetype-peakmeter.md
+        - name: KSNODETYPE_PROLOGIC_DECODER
+          href: ksnodetype-prologic-decoder.md
+        - name: KSNODETYPE_PROLOGIC_ENCODER
+          href: ksnodetype-prologic-encoder.md
+        - name: KSNODETYPE_REVERB
+          href: ksnodetype-reverb.md
+        - name: KSNODETYPE_SRC
+          href: ksnodetype-src.md
+        - name: KSNODETYPE_STEREO_ENHANCE
+          href: ksnodetype-stereo-enhance.md
+        - name: KSNODETYPE_STEREO_WIDE
+          href: ksnodetype-stereo-wide.md
+        - name: KSNODETYPE_SUM
+          href: ksnodetype-sum.md
+        - name: KSNODETYPE_SUPERMIX
+          href: ksnodetype-supermix.md
+        - name: KSNODETYPE_SWMIDI
+          href: ksnodetype-swmidi.md
+        - name: KSNODETYPE_SWSYNTH
+          href: ksnodetype-swsynth.md
+        - name: KSNODETYPE_SYNTHESIZER
+          href: ksnodetype-synthesizer.md
+        - name: KSNODETYPE_TELEPHONY_BIDI
+          href: ksnodetype-telephony-bidi.md
+        - name: KSNODETYPE_TONE
+          href: ksnodetype-tone.md
+        - name: KSNODETYPE_VOLUME
+          href: ksnodetype-volume.md
+    - name: オーディオ ドライバーの構造体
+      href: audio-drivers-structures.md
+    - name: オーディオ ドライバーのインターフェイス
+      href: audio-drivers-interfaces.md
       items:
-      - name: 廃止されたポート クラス関数
-        href: obsolete-port-class-functions.md
-      - name: 廃止されたカーネル モード ドライバー サポート関数
-        href: obsolete-kernel-mode-driver-support-functions.md
-  - name: Ks.h
-    href: ks-h.md
-    items:
-    - name: KSEVENT_PINCAPS_FORMATCHANGE
-      href: ksevent-pincaps-formatchange.md
-    - name: KSEVENT_PINCAPS_JACKINFOCHANGE
-      href: ksevent-pincaps-jackinfochange.md
-  - name: Ksmedia.h
-    href: ksmedia-h.md
-    items:
-    - name: KSEVENT_CONTROL_CHANGE
-      href: ksevent-control-change.md
-    - name: KSEVENT_LOOPEDSTREAMING_POSITION
-      href: ksevent-loopedstreaming-position.md
-    - name: KSEVENT_SOUNDDETECTOR_MATCHDETECTED
-      href: ksevent-sounddetector-matchdetected.md
-    - name: KSJACK_DESCRIPTION
-      href: ksjack-description.md
-    - name: KSJACK_DESCRIPTION2
-      href: ksjack-description2.md
-    - name: KSPROPERTY_AC3_ALTERNATE_AUDIO
-      href: ksproperty-ac3-alternate-audio.md
-    - name: KSPROPERTY_AC3_BIT_STREAM_MODE
-      href: ksproperty-ac3-bit-stream-mode.md
-    - name: KSPROPERTY_AC3_DIALOGUE_LEVEL
-      href: ksproperty-ac3-dialogue-level.md
-    - name: KSPROPERTY_AC3_DOWNMIX
-      href: ksproperty-ac3-downmix.md
-    - name: KSPROPERTY_AC3_ERROR_CONCEALMENT
-      href: ksproperty-ac3-error-concealment.md
-    - name: KSPROPERTY_AC3_LANGUAGE_CODE
-      href: ksproperty-ac3-language-code.md
-    - name: KSPROPERTY_AC3_ROOM_TYPE
-      href: ksproperty-ac3-room-type.md
-    - name: KSPROPERTY_AEC_MODE
-      href: ksproperty-aec-mode.md
-    - name: KSPROPERTY_AEC_NOISE_FILL_ENABLE
-      href: ksproperty-aec-noise-fill-enable.md
-    - name: KSPROPERTY_AEC_STATUS
-      href: ksproperty-aec-status.md
-    - name: KSPROPERTY_AUDIO_3D_INTERFACE
-      href: ksproperty-audio-3d-interface.md
-    - name: KSPROPERTY_AUDIO_AGC
-      href: ksproperty-audio-agc.md
-    - name: KSPROPERTY_AUDIO_ALGORITHM_INSTANCE
-      href: ksproperty-audio-algorithm-instance.md
-    - name: KSPROPERTY_AUDIO_BASS
-      href: ksproperty-audio-bass.md
-    - name: KSPROPERTY_AUDIO_BASS_BOOST
-      href: ksproperty-audio-bass-boost.md
-    - name: KSPROPERTY_AUDIO_BUFFER_DURATION
-      href: ksproperty-audio-buffer-duration.md
-    - name: KSPROPERTY_AUDIO_CHANNEL_CONFIG
-      href: ksproperty-audio-channel-config.md
-    - name: KSPROPERTY_AUDIO_CHORUS_LEVEL
-      href: ksproperty-audio-chorus-level.md
-    - name: KSPROPERTY_AUDIO_CHORUS_MODULATION_DEPTH
-      href: ksproperty-audio-chorus-modulation-depth.md
-    - name: KSPROPERTY_AUDIO_CHORUS_MODULATION_RATE
-      href: ksproperty-audio-chorus-modulation-rate.md
-    - name: KSPROPERTY_AUDIO_COPY_PROTECTION
-      href: ksproperty-audio-copy-protection.md
-    - name: KSPROPERTY_AUDIO_CPU_RESOURCES
-      href: ksproperty-audio-cpu-resources.md
-    - name: KSPROPERTY_AUDIO_DELAY
-      href: ksproperty-audio-delay.md
-    - name: KSPROPERTY_AUDIO_DEMUX_DEST
-      href: ksproperty-audio-demux-dest.md
-    - name: KSPROPERTY_AUDIO_DEV_SPECIFIC
-      href: ksproperty-audio-dev-specific.md
-    - name: KSPROPERTY_AUDIO_DYNAMIC_RANGE
-      href: ksproperty-audio-dynamic-range.md
-    - name: KSPROPERTY_AUDIO_DYNAMIC_SAMPLING_RATE
-      href: ksproperty-audio-dynamic-sampling-rate.md
-    - name: KSPROPERTY_AUDIO_EQ_BANDS
-      href: ksproperty-audio-eq-bands.md
-    - name: KSPROPERTY_AUDIO_EQ_LEVEL
-      href: ksproperty-audio-eq-level.md
-    - name: KSPROPERTY_AUDIO_FILTER_STATE
-      href: ksproperty-audio-filter-state.md
-    - name: KSPROPERTY_AUDIO_LATENCY
-      href: ksproperty-audio-latency.md
-    - name: KSPROPERTY_AUDIO_LINEAR_BUFFER_POSITION
-      href: ksproperty-audio-linear-buffer-position.md
-    - name: KSPROPERTY_AUDIO_LOUDNESS
-      href: ksproperty-audio-loudness.md
-    - name: KSPROPERTY_AUDIO_MANUFACTURE_GUID
-      href: ksproperty-audio-manufacture-guid.md
-    - name: KSPROPERTY_AUDIO_MIC_ARRAY_GEOMETRY
-      href: ksproperty-audio-mic-array-geometry.md
-    - name: KSPROPERTY_AUDIO_MIC_SENSITIVITY
-      href: ksproperty-audio-mic-sensitivity.md
-    - name: KSPROPERTY_AUDIO_MIC_SENSITIVITY2
-      href: ksproperty-audio-mic-sensitivity2.md
-    - name: KSPROPERTY_AUDIO_MIC_SNR
-      href: ksproperty-audio-mic-snr.md
-    - name: KSPROPERTY_AUDIO_MID
-      href: ksproperty-audio-mid.md
-    - name: KSPROPERTY_AUDIO_MIX_LEVEL_CAPS
-      href: ksproperty-audio-mix-level-caps.md
-    - name: KSPROPERTY_AUDIO_MIX_LEVEL_TABLE
-      href: ksproperty-audio-mix-level-table.md
-    - name: KSPROPERTY_AUDIO_MUTE
-      href: ksproperty-audio-mute.md
-    - name: KSPROPERTY_AUDIO_MUX_SOURCE
-      href: ksproperty-audio-mux-source.md
-    - name: KSPROPERTY_AUDIO_NUM_EQ_BANDS
-      href: ksproperty-audio-num-eq-bands.md
-    - name: KSPROPERTY_AUDIO_PEAKMETER
-      href: ksproperty-audio-peakmeter.md
-    - name: KSPROPERTY_AUDIO_PEAKMETER2
-      href: ksproperty-audio-peakmeter2.md
-    - name: KSPROPERTY_AUDIO_POSITION
-      href: ksproperty-audio-position.md
-    - name: KSPROPERTY_AUDIO_POSITIONEX
-      href: ksproperty-audio-positionex.md
-    - name: KSPROPERTY_AUDIO_PREFERRED_STATUS
-      href: ksproperty-audio-preferred-status.md
-    - name: KSPROPERTY_AUDIO_PRESENTATION_POSITION
-      href: ksproperty-audio-presentation-position.md
-    - name: KSPROPERTY_AUDIO_PRODUCT_GUID
-      href: ksproperty-audio-product-guid.md
-    - name: KSPROPERTY_AUDIO_QUALITY
-      href: ksproperty-audio-quality.md
-    - name: KSPROPERTY_AUDIO_REVERB_LEVEL
-      href: ksproperty-audio-reverb-level.md
-    - name: KSPROPERTY_AUDIO_REVERB_TIME
-      href: ksproperty-audio-reverb-time.md
-    - name: KSPROPERTY_AUDIO_SAMPLING_RATE
-      href: ksproperty-audio-sampling-rate.md
-    - name: KSPROPERTY_AUDIO_STEREO_ENHANCE
-      href: ksproperty-audio-stereo-enhance.md
-    - name: KSPROPERTY_AUDIO_STEREO_SPEAKER_GEOMETRY
-      href: ksproperty-audio-stereo-speaker-geometry.md
-    - name: KSPROPERTY_AUDIO_SURROUND_ENCODE
-      href: ksproperty-audio-surround-encode.md
-    - name: KSPROPERTY_AUDIO_TREBLE
-      href: ksproperty-audio-treble.md
-    - name: KSPROPERTY_AUDIO_VOLUMELEVEL
-      href: ksproperty-audio-volumelevel.md
-    - name: KSPROPERTY_AUDIO_VOLUMELIMIT_ENGAGED
-      href: ksproperty-audio-volumelimit-engaged.md
-    - name: KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_POSITION
-      href: ksproperty-audio-wavert-current-write-position.md
-    - name: KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_LASTBUFFER_POSITION
-      href: ksproperty-audio-wavert-current-write-lastbuffer-position.md
-    - name: KSPROPERTY_AUDIO_WIDE_MODE
-      href: ksproperty-audio-wide-mode.md
-    - name: KSPROPERTY_AUDIO_WIDENESS
-      href: ksproperty-audio-wideness.md
-    - name: KSPROPERTY_AUDIOENGINE
-      href: ksproperty-audioengine.md
-    - name: KSPROPERTY_AUDIOENGINE_BUFFER_SIZE_RANGE
-      href: ksproperty-audioengine-buffer-size-limits.md
-    - name: KSPROPERTY_AUDIOENGINE_DESCRIPTOR
-      href: ksproperty-audioengine-descriptor.md
-    - name: KSPROPERTY_AUDIOENGINE_DEVICEFORMAT
-      href: ksproperty-audioengine-deviceformat.md
-    - name: KSPROPERTY_AUDIOENGINE_GFXENABLE
-      href: ksproperty-audioengine-gfx-enable.md
-    - name: KSPROPERTY_AUDIOENGINE_LFXENABLE
-      href: ksproperty-audioengine-lfx-enable.md
-    - name: KSPROPERTY_AUDIOENGINE_LOOPBACK_PROTECTION
-      href: ksproperty-audioengine-loopback-protection.md
-    - name: KSPROPERTY_AUDIOENGINE_MIXFORMAT
-      href: ksproperty-audioengine-mixformat.md
-    - name: KSPROPERTY_AUDIOENGINE_SUPPORTEDDEVICEFORMATS
-      href: ksproperty-audioengine-supporteddeviceformats.md
-    - name: KSPROPERTY_AUDIOENGINE_VOLUMELEVEL
-      href: ksproperty-audioengine-volumelevel.md
-    - name: KSPROPERTY_AUDIOGFX_CAPTURETARGETDEVICEID
-      href: ksproperty-audiogfx-capturetargetdeviceid.md
-    - name: KSPROPERTY_AUDIOGFX_RENDERTARGETDEVICEID
-      href: ksproperty-audiogfx-rendertargetdeviceid.md
-    - name: KSPROPERTY_AUDIOMODULE
-      href: ksproperty-audiomodule.md
-    - name: KSPROPERTY_AUDIOSIGNALPROCESSING
-      href: ksproperty-audiosignalprocessing.md
-    - name: KSPROPERTY_AUDIOSIGNALPROCESSING_MODES
-      href: ksproperty-audiosignalprocessing-modes.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_ALL
-      href: ksproperty-directsound3dbuffer-all.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_CONEANGLES
-      href: ksproperty-directsound3dbuffer-coneangles.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_CONEORIENTATION
-      href: ksproperty-directsound3dbuffer-coneorientation.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_CONEOUTSIDEVOLUME
-      href: ksproperty-directsound3dbuffer-coneoutsidevolume.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_MAXDISTANCE
-      href: ksproperty-directsound3dbuffer-maxdistance.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_MINDISTANCE
-      href: ksproperty-directsound3dbuffer-mindistance.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_MODE
-      href: ksproperty-directsound3dbuffer-mode.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_POSITION
-      href: ksproperty-directsound3dbuffer-position.md
-    - name: KSPROPERTY_DIRECTSOUND3DBUFFER_VELOCITY
-      href: ksproperty-directsound3dbuffer-velocity.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ALL
-      href: ksproperty-directsound3dlistener-all.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ALLOCATION
-      href: ksproperty-directsound3dlistener-allocation.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_BATCH
-      href: ksproperty-directsound3dlistener-batch.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_DISTANCEFACTOR
-      href: ksproperty-directsound3dlistener-distancefactor.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_DOPPLERFACTOR
-      href: ksproperty-directsound3dlistener-dopplerfactor.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ORIENTATION
-      href: ksproperty-directsound3dlistener-orientation.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION
-      href: ksproperty-directsound3dlistener-position.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR
-      href: ksproperty-directsound3dlistener-rollofffactor.md
-    - name: KSPROPERTY_DIRECTSOUND3DLISTENER_VELOCITY
-      href: ksproperty-directsound3dlistener-velocity.md
-    - name: KSPROPERTY_FMRX_ANTENNAENDPOINTID
-      href: ksproperty-fmrx-antennaendpointid.md
-    - name: KSPROPERTY_FMRX_ENDPOINTID
-      href: ksproperty-fmrx-endpointid.md
-    - name: KSPROPERTY_FMRX_VOLUME
-      href: ksproperty-fmrx-volume.md
-    - name: KSPROPERTY_HRTF3D_FILTER_FORMAT
-      href: ksproperty-hrtf3d-filter-format.md
-    - name: KSPROPERTY_HRTF3D_INITIALIZE
-      href: ksproperty-hrtf3d-initialize.md
-    - name: KSPROPERTY_HRTF3D_PARAMS
-      href: ksproperty-hrtf3d-params.md
-    - name: KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION
-      href: ksproperty-interleavedaudio-formatinformation.md
-    - name: KSPROPERTY_ITD3D_PARAMS
-      href: ksproperty-itd3d-params.md
-    - name: KSPROPERTY_JACK
-      href: ksproperty-jack.md
-    - name: KSPROPERTY_JACK_CONTAINERID
-      href: ksproperty-jack-containerid.md
-    - name: KSPROPERTY_JACK_DESCRIPTION
-      href: ksproperty-jack-description.md
-    - name: KSPROPERTY_JACK_DESCRIPTION2
-      href: ksproperty-jack-description2.md
-    - name: KSPROPERTY_JACK_SINK_INFO
-      href: ksproperty-jack-sink-info.md
-    - name: KSPROPERTY_ONESHOT_DISCONNECT
-      href: ksproperty-oneshot-disconnect.md
-    - name: KSPROPERTY_ONESHOT_RECONNECT
-      href: ksproperty-oneshot-reconnect.md
-    - name: KSPROPERTY_RTAUDIO_BUFFER
-      href: ksproperty-rtaudio-buffer.md
-    - name: KSPROPERTY_RTAUDIO_BUFFER_WITH_NOTIFICATION
-      href: ksproperty-rtaudio-buffer-with-notification.md
-    - name: KSPROPERTY_RTAUDIO_CLOCKREGISTER
-      href: ksproperty-rtaudio-clockregister.md
-    - name: KSPROPERTY_RTAUDIO_GETREADPACKET
-      href: ksproperty-rtaudio-getreadpacket.md
-    - name: KSPROPERTY_RTAUDIO_HWLATENCY
-      href: ksproperty-rtaudio-hwlatency.md
-    - name: KSPROPERTY_RTAUDIO_PACKETCOUNT
-      href: ksproperty-rtaudio-packetcount.md
-    - name: KSPROPERTY_RTAUDIO_POSITIONREGISTER
-      href: ksproperty-rtaudio-positionregister.md
-    - name: KSPROPERTY_RTAUDIO_PRESENTATION_POSITION
-      href: ksproperty-rtaudio-presentation-position.md
-    - name: KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT
-      href: ksproperty-rtaudio-query-notification-support.md
-    - name: KSPROPERTY_RTAUDIO_REGISTER_NOTIFICATION_EVENT
-      href: ksproperty-rtaudio-register-notification-event.md
-    - name: KSPROPERTY_RTAUDIO_SETWRITEPACKET
-      href: ksproperty-rtaudio-setwritepacket.md
-    - name: KSPROPERTY_RTAUDIO_UNREGISTER_NOTIFICATION_EVENT
-      href: ksproperty-rtaudio-unregister-notification-event.md
-    - name: KSPROPERTY_SOUNDDETECTOR
-      href: ksproperty-sounddetector.md
-    - name: KSPROPERTY_SOUNDDETECTOR_ARMED
-      href: ksproperty-sounddetector-armed.md
-    - name: KSPROPERTY_SOUNDDETECTOR_MATCHRESULT
-      href: ksproperty-sounddetector-matchresult.md
-    - name: KSPROPERTY_SOUNDDETECTOR_PATTERNS
-      href: ksproperty-sounddetector-patterns.md
-    - name: KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS
-      href: ksproperty-sounddetector-supportedpatterns.md
-    - name: KSPROPERTY_SYSAUDIO_ATTACH_VIRTUAL_SOURCE
-      href: ksproperty-sysaudio-attach-virtual-source.md
-    - name: KSPROPERTY_SYSAUDIO_COMPONENT_ID
-      href: ksproperty-sysaudio-component-id.md
-    - name: KSPROPERTY_SYSAUDIO_CREATE_VIRTUAL_SOURCE
-      href: ksproperty-sysaudio-create-virtual-source.md
-    - name: KSPROPERTY_SYSAUDIO_DEVICE_COUNT
-      href: ksproperty-sysaudio-device-count.md
-    - name: KSPROPERTY_SYSAUDIO_DEVICE_FRIENDLY_NAME
-      href: ksproperty-sysaudio-device-friendly-name.md
-    - name: KSPROPERTY_SYSAUDIO_DEVICE_INSTANCE
-      href: ksproperty-sysaudio-device-instance.md
-    - name: KSPROPERTY_SYSAUDIO_DEVICE_INTERFACE_NAME
-      href: ksproperty-sysaudio-device-interface-name.md
-    - name: KSPROPERTY_SYSAUDIO_INSTANCE_INFO
-      href: ksproperty-sysaudio-instance-info.md
-    - name: KSPROPERTY_SYSAUDIO_SELECT_GRAPH
-      href: ksproperty-sysaudio-select-graph.md
-    - name: KSPROPERTY_TELEPHONY_CALLCONTROL
-      href: ksproperty-telephony-callcontrol.md
-    - name: KSPROPERTY_TELEPHONY_CALLHOLD
-      href: ksproperty-telephony-callhold.md
-    - name: KSPROPERTY_TELEPHONY_CALLINFO
-      href: ksproperty-telephony-callinfo.md
-    - name: KSPROPERTY_TELEPHONY_ENDPOINTIDPAIR
-      href: ksproperty-telephony-endpointidpair.md
-    - name: KSPROPERTY_TELEPHONY_MUTE_TX
-      href: ksproperty-telephony-mute-tx.md
-    - name: KSPROPERTY_TELEPHONY_PROVIDERCHANGE
-      href: ksproperty-telephony-providerchange.md
-    - name: KSPROPERTY_TELEPHONY_PROVIDERID
-      href: ksproperty-telephony-providerid.md
-    - name: KSPROPERTY_TELEPHONY_VOLUME
-      href: ksproperty-telephony-volume.md
-    - name: KSPROPERTY_TOPOLOGYNODE_ENABLE
-      href: ksproperty-topologynode-enable.md
-    - name: KSPROPERTY_TOPOLOGYNODE_RESET
-      href: ksproperty-topologynode-reset.md
-    - name: KSRTAUDIO_BUFFER_PROPERTY
-      href: ksrtaudio-buffer-property.md
-ms.openlocfilehash: c95133bd48c21bb84b21e256d2a97e78284f9bf8
-ms.sourcegitcommit: 5f4404a7010a6b26530f60144c5ea7cab846feec
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56465807"
+        - name: IAudioSystemEffects
+          href: iaudiosystemeffects.md
+        - name: IAudioSystemEffects2
+          href: iaudiosystemeffects2.md
+        - name: IKeywordDetectorOemAdapter
+          href: ikeyworddetectoroemadapter.md
+    - name: Bluetooth HFP DDI 参照
+      href: bluetooth-hfp-ddi-reference.md
+      items:
+        - name: Bluetooth HFP DDI の構造体
+          href: bluetooth-hfp-ddi-structures.md
+        - name: Bluetooth HFP DDI IOCTLs
+          href: bluetooth-hfp-ddi-ioctls.md
+    - name: High Definition Audio DDI リファレンス
+      href: high-definition-audio-ddi-reference.md
+      items:
+        - name: HD Audio DDI のルーチン
+          href: hd-audio-ddi-routines.md
+        - name: HD Audio DDI の構造体
+          href: hd-audio-ddi-structures.md
+    - name: HD Audio DDI の列挙
+      href: hd-audio-ddi-enumerations.md
+    - name: DRM の関数
+      href: drm-functions.md
+    - name: MIDI のオーディオ デバイス メッセージ
+      href: audio-device-messages-for-midi.md
+    - name: レガシ オーディオ デバイス メッセージ
+      href: legacy-audio-device-messages.md
+    - name: オーディオ INF ファイルの設定
+      href: media-class-inf-extensions.md
+      items:
+        - name: SetupPreferredAudioDevices
+          href: setuppreferredaudiodevices.md
+        - name: PKEY_APO_SWFallback_ProcessingModes
+          href: pkey-apo-swfallback-processingmodes.md
+        - name: PKEY_AudioDevice_EnableEndpointByDefault
+          href: pkey-audiodevice-enableendpointbydefault.md
+        - name: PKEY_AudioDevice_NeverSetAsDefaultEndpoint
+          href: pkey-audiodevice-neversetasdefaultendpoint.md
+        - name: PKEY_AudioEndpoint_Default_VolumeInDb
+          href: pkey-audioendpoint-default-volumeindb.md
+        - name: PKEY_AudioEngine_OEMFormat
+          href: pkey-audioengine-oemformat.md
+        - name: PKEY_AudioEngine_OEMPeriod
+          href: pkey-audioengine-oemperiod.md
+        - name: PKEY_CompositeFX_EndpointEffectClsid
+          href: pkey-compositefx-endpointeffectclsid.md
+        - name: PKEY_CompositeFX_KeywordDetector_EndpointEffectClsid
+          href: pkey-compositefx-keyworddetector-endpointeffectclsid.md
+        - name: PKEY_CompositeFX_KeywordDetector_ModeEffectClsid
+          href: pkey-compositefx-keyworddetector-modeeffectclsid.md
+        - name: PKEY_CompositeFX_KeywordDetector_StreamEffectClsid
+          href: pkey-compositefx-keyworddetector-streameffectclsid.md
+        - name: PKEY_CompositeFX_ModeEffectClsid
+          href: pkey-compositefx-modeeffectclsid.md
+        - name: PKEY_CompositeFX_Offload_ModeEffectClsid
+          href: pkey-compositefx-offload-modeeffectclsid.md
+        - name: PKEY_CompositeFX_Offload_StreamEffectClsid
+          href: pkey-compositefx-offload-streameffectclsid.md
+        - name: PKEY_CompositeFX_StreamEffectClsid
+          href: pkey-compositefx-streameffectclsid.md
+        - name: PKEY_Devices_AudioDevice_Microphone_IsFarField
+          href: pkey-devices-audiodevice-microphone-isfarfield.md
+        - name: PKEY_FX_KeywordDetector_StreamEffectClsid
+          href: pkey-fx-keyworddetector-streameffectclsid.md
+        - name: PKEY_FX_KeywordDetector_ModeEffectClsid
+          href: pkey-fx-keyworddetector-modeeffectclsid.md
+        - name: PKEY_FX_KeywordDetector_EndpointEffectClsid
+          href: pkey-fx-keyworddetector-endpointeffectclsid.md
+        - name: PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming
+          href: pkey-sfx-keyworddetector-processingmodes-supported-for-streaming.md
+        - name: PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming
+          href: pkey-mfx-keyworddetector-processingmodes-supported-for-streaming.md
+        - name: PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming
+          href: pkey-efx-keyworddetector-processingmodes-supported-for-streaming.md
+        - name: PKEY_FX_EndpointEffectClsid
+          href: pkey-fx-endpointeffectclsid.md
+        - name: PKEY_FX_ModeEffectClsid
+          href: pkey-fx-modeeffectclsid.md
+        - name: PKEY_FX_StreamEffectClsid
+          href: pkey-fx-streameffectclsid.md
+        - name: PKEY_FX_Offload_ModeEffectClsid
+          href: pkey-fx-offload-modeeffectclsid.md
+        - name: PKEY_FX_Offload_StreamEffectClsid
+          href: pkey-fx-offload-streameffectclsid.md
+        - name: PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming
+          href: pkey-sfx-offload-processingmodes-supported-for-streaming.md
+        - name: PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming
+          href: pkey-mfx-offload-processingmodes-supported-for-streaming.md
+        - name: PKEY_EFX_ProcessingModes_Supported_For_Streaming
+          href: pkey-efx-processingmodes-supported-for-streaming.md
+        - name: PKEY_MFX_ProcessingModes_Supported_For_Streaming
+          href: pkey-mfx-processingmodes-supported-for-streaming.md
+        - name: PKEY_SFX_ProcessingModes_Supported_For_Streaming
+          href: pkey-sfx-processingmodes-supported-for-streaming.md
+        - name: UsePositionLock
+          href: usepositionlock.md
+    - name: ポート クラス オーディオ ドライバー リファレンス
+      href: port-class-audio-driver-reference.md
+      items:
+        - name: オーディオ ポート クラスの関数
+          href: audio-port-class-functions.md
+        - name: オーディオ ヘルパー オブジェクトのインターフェイス
+          href: audio-helper-object-interfaces.md
+        - name: オーディオ ポート オブジェクトのインターフェイス
+          href: audio-port-object-interfaces.md
+        - name: オーディオ ミニポート オブジェクトのインターフェイス
+          href: audio-miniport-object-interfaces.md
+        - name: オーディオ ミニポート補助のインターフェイス
+          href: audio-miniport-auxiliary-interfaces.md
+        - name: オーディオ ストリーム オブジェクトのインターフェイス
+          href: audio-stream-object-interfaces.md
+        - name: シンセサイザーおよびシンセサイザー シンクの DirectMusic ユーザー モード インターフェイス
+          href: directmusic-user-mode-synth-and-synth-sink-interfaces.md
+        - name: オーディオ電源管理のインターフェイス
+          href: audio-power-management-interfaces.md
+        - name: 廃止された関数のマクロ定義
+          href: macro-definitions-for-obsolete-functions.md
+          items:
+            - name: 廃止されたポート クラス関数
+              href: obsolete-port-class-functions.md
+            - name: 廃止されたカーネル モード ドライバー サポート関数
+              href: obsolete-kernel-mode-driver-support-functions.md
+    - name: Ks.h
+      href: ks-h.md
+      items:
+        - name: KSEVENT_PINCAPS_FORMATCHANGE
+          href: ksevent-pincaps-formatchange.md
+        - name: KSEVENT_PINCAPS_JACKINFOCHANGE
+          href: ksevent-pincaps-jackinfochange.md
+    - name: Ksmedia.h
+      href: ksmedia-h.md
+      items:
+        - name: KSEVENT_CONTROL_CHANGE
+          href: ksevent-control-change.md
+        - name: KSEVENT_LOOPEDSTREAMING_POSITION
+          href: ksevent-loopedstreaming-position.md
+        - name: KSEVENT_SOUNDDETECTOR_MATCHDETECTED
+          href: ksevent-sounddetector-matchdetected.md
+        - name: KSJACK_DESCRIPTION
+          href: ksjack-description.md
+        - name: KSJACK_DESCRIPTION2
+          href: ksjack-description2.md
+        - name: KSPROPERTY_AC3_ALTERNATE_AUDIO
+          href: ksproperty-ac3-alternate-audio.md
+        - name: KSPROPERTY_AC3_BIT_STREAM_MODE
+          href: ksproperty-ac3-bit-stream-mode.md
+        - name: KSPROPERTY_AC3_DIALOGUE_LEVEL
+          href: ksproperty-ac3-dialogue-level.md
+        - name: KSPROPERTY_AC3_DOWNMIX
+          href: ksproperty-ac3-downmix.md
+        - name: KSPROPERTY_AC3_ERROR_CONCEALMENT
+          href: ksproperty-ac3-error-concealment.md
+        - name: KSPROPERTY_AC3_LANGUAGE_CODE
+          href: ksproperty-ac3-language-code.md
+        - name: KSPROPERTY_AC3_ROOM_TYPE
+          href: ksproperty-ac3-room-type.md
+        - name: KSPROPERTY_AEC_MODE
+          href: ksproperty-aec-mode.md
+        - name: KSPROPERTY_AEC_NOISE_FILL_ENABLE
+          href: ksproperty-aec-noise-fill-enable.md
+        - name: KSPROPERTY_AEC_STATUS
+          href: ksproperty-aec-status.md
+        - name: KSPROPERTY_AUDIO_3D_INTERFACE
+          href: ksproperty-audio-3d-interface.md
+        - name: KSPROPERTY_AUDIO_AGC
+          href: ksproperty-audio-agc.md
+        - name: KSPROPERTY_AUDIO_ALGORITHM_INSTANCE
+          href: ksproperty-audio-algorithm-instance.md
+        - name: KSPROPERTY_AUDIO_BASS
+          href: ksproperty-audio-bass.md
+        - name: KSPROPERTY_AUDIO_BASS_BOOST
+          href: ksproperty-audio-bass-boost.md
+        - name: KSPROPERTY_AUDIO_BUFFER_DURATION
+          href: ksproperty-audio-buffer-duration.md
+        - name: KSPROPERTY_AUDIO_CHANNEL_CONFIG
+          href: ksproperty-audio-channel-config.md
+        - name: KSPROPERTY_AUDIO_CHORUS_LEVEL
+          href: ksproperty-audio-chorus-level.md
+        - name: KSPROPERTY_AUDIO_CHORUS_MODULATION_DEPTH
+          href: ksproperty-audio-chorus-modulation-depth.md
+        - name: KSPROPERTY_AUDIO_CHORUS_MODULATION_RATE
+          href: ksproperty-audio-chorus-modulation-rate.md
+        - name: KSPROPERTY_AUDIO_COPY_PROTECTION
+          href: ksproperty-audio-copy-protection.md
+        - name: KSPROPERTY_AUDIO_CPU_RESOURCES
+          href: ksproperty-audio-cpu-resources.md
+        - name: KSPROPERTY_AUDIO_DELAY
+          href: ksproperty-audio-delay.md
+        - name: KSPROPERTY_AUDIO_DEMUX_DEST
+          href: ksproperty-audio-demux-dest.md
+        - name: KSPROPERTY_AUDIO_DEV_SPECIFIC
+          href: ksproperty-audio-dev-specific.md
+        - name: KSPROPERTY_AUDIO_DYNAMIC_RANGE
+          href: ksproperty-audio-dynamic-range.md
+        - name: KSPROPERTY_AUDIO_DYNAMIC_SAMPLING_RATE
+          href: ksproperty-audio-dynamic-sampling-rate.md
+        - name: KSPROPERTY_AUDIO_EQ_BANDS
+          href: ksproperty-audio-eq-bands.md
+        - name: KSPROPERTY_AUDIO_EQ_LEVEL
+          href: ksproperty-audio-eq-level.md
+        - name: KSPROPERTY_AUDIO_FILTER_STATE
+          href: ksproperty-audio-filter-state.md
+        - name: KSPROPERTY_AUDIO_LATENCY
+          href: ksproperty-audio-latency.md
+        - name: KSPROPERTY_AUDIO_LINEAR_BUFFER_POSITION
+          href: ksproperty-audio-linear-buffer-position.md
+        - name: KSPROPERTY_AUDIO_LOUDNESS
+          href: ksproperty-audio-loudness.md
+        - name: KSPROPERTY_AUDIO_MANUFACTURE_GUID
+          href: ksproperty-audio-manufacture-guid.md
+        - name: KSPROPERTY_AUDIO_MIC_ARRAY_GEOMETRY
+          href: ksproperty-audio-mic-array-geometry.md
+        - name: KSPROPERTY_AUDIO_MIC_SENSITIVITY
+          href: ksproperty-audio-mic-sensitivity.md
+        - name: KSPROPERTY_AUDIO_MIC_SENSITIVITY2
+          href: ksproperty-audio-mic-sensitivity2.md
+        - name: KSPROPERTY_AUDIO_MIC_SNR
+          href: ksproperty-audio-mic-snr.md
+        - name: KSPROPERTY_AUDIO_MID
+          href: ksproperty-audio-mid.md
+        - name: KSPROPERTY_AUDIO_MIX_LEVEL_CAPS
+          href: ksproperty-audio-mix-level-caps.md
+        - name: KSPROPERTY_AUDIO_MIX_LEVEL_TABLE
+          href: ksproperty-audio-mix-level-table.md
+        - name: KSPROPERTY_AUDIO_MUTE
+          href: ksproperty-audio-mute.md
+        - name: KSPROPERTY_AUDIO_MUX_SOURCE
+          href: ksproperty-audio-mux-source.md
+        - name: KSPROPERTY_AUDIO_NUM_EQ_BANDS
+          href: ksproperty-audio-num-eq-bands.md
+        - name: KSPROPERTY_AUDIO_PEAKMETER
+          href: ksproperty-audio-peakmeter.md
+        - name: KSPROPERTY_AUDIO_PEAKMETER2
+          href: ksproperty-audio-peakmeter2.md
+        - name: KSPROPERTY_AUDIO_POSITION
+          href: ksproperty-audio-position.md
+        - name: KSPROPERTY_AUDIO_POSITIONEX
+          href: ksproperty-audio-positionex.md
+        - name: KSPROPERTY_AUDIO_PREFERRED_STATUS
+          href: ksproperty-audio-preferred-status.md
+        - name: KSPROPERTY_AUDIO_PRESENTATION_POSITION
+          href: ksproperty-audio-presentation-position.md
+        - name: KSPROPERTY_AUDIO_PRODUCT_GUID
+          href: ksproperty-audio-product-guid.md
+        - name: KSPROPERTY_AUDIO_QUALITY
+          href: ksproperty-audio-quality.md
+        - name: KSPROPERTY_AUDIO_REVERB_LEVEL
+          href: ksproperty-audio-reverb-level.md
+        - name: KSPROPERTY_AUDIO_REVERB_TIME
+          href: ksproperty-audio-reverb-time.md
+        - name: KSPROPERTY_AUDIO_SAMPLING_RATE
+          href: ksproperty-audio-sampling-rate.md
+        - name: KSPROPERTY_AUDIO_STEREO_ENHANCE
+          href: ksproperty-audio-stereo-enhance.md
+        - name: KSPROPERTY_AUDIO_STEREO_SPEAKER_GEOMETRY
+          href: ksproperty-audio-stereo-speaker-geometry.md
+        - name: KSPROPERTY_AUDIO_SURROUND_ENCODE
+          href: ksproperty-audio-surround-encode.md
+        - name: KSPROPERTY_AUDIO_TREBLE
+          href: ksproperty-audio-treble.md
+        - name: KSPROPERTY_AUDIO_VOLUMELEVEL
+          href: ksproperty-audio-volumelevel.md
+        - name: KSPROPERTY_AUDIO_VOLUMELIMIT_ENGAGED
+          href: ksproperty-audio-volumelimit-engaged.md
+        - name: KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_POSITION
+          href: ksproperty-audio-wavert-current-write-position.md
+        - name: KSPROPERTY_AUDIO_WAVERT_CURRENT_WRITE_LASTBUFFER_POSITION
+          href: ksproperty-audio-wavert-current-write-lastbuffer-position.md
+        - name: KSPROPERTY_AUDIO_WIDE_MODE
+          href: ksproperty-audio-wide-mode.md
+        - name: KSPROPERTY_AUDIO_WIDENESS
+          href: ksproperty-audio-wideness.md
+        - name: KSPROPERTY_AUDIOENGINE
+          href: ksproperty-audioengine.md
+        - name: KSPROPERTY_AUDIOENGINE_BUFFER_SIZE_RANGE
+          href: ksproperty-audioengine-buffer-size-limits.md
+        - name: KSPROPERTY_AUDIOENGINE_DESCRIPTOR
+          href: ksproperty-audioengine-descriptor.md
+        - name: KSPROPERTY_AUDIOENGINE_DEVICEFORMAT
+          href: ksproperty-audioengine-deviceformat.md
+        - name: KSPROPERTY_AUDIOENGINE_GFXENABLE
+          href: ksproperty-audioengine-gfx-enable.md
+        - name: KSPROPERTY_AUDIOENGINE_LFXENABLE
+          href: ksproperty-audioengine-lfx-enable.md
+        - name: KSPROPERTY_AUDIOENGINE_LOOPBACK_PROTECTION
+          href: ksproperty-audioengine-loopback-protection.md
+        - name: KSPROPERTY_AUDIOENGINE_MIXFORMAT
+          href: ksproperty-audioengine-mixformat.md
+        - name: KSPROPERTY_AUDIOENGINE_SUPPORTEDDEVICEFORMATS
+          href: ksproperty-audioengine-supporteddeviceformats.md
+        - name: KSPROPERTY_AUDIOENGINE_VOLUMELEVEL
+          href: ksproperty-audioengine-volumelevel.md
+        - name: KSPROPERTY_AUDIOGFX_CAPTURETARGETDEVICEID
+          href: ksproperty-audiogfx-capturetargetdeviceid.md
+        - name: KSPROPERTY_AUDIOGFX_RENDERTARGETDEVICEID
+          href: ksproperty-audiogfx-rendertargetdeviceid.md
+        - name: KSPROPERTY_AUDIOMODULE
+          href: ksproperty-audiomodule.md
+        - name: KSPROPERTY_AUDIOSIGNALPROCESSING
+          href: ksproperty-audiosignalprocessing.md
+        - name: KSPROPERTY_AUDIOSIGNALPROCESSING_MODES
+          href: ksproperty-audiosignalprocessing-modes.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_ALL
+          href: ksproperty-directsound3dbuffer-all.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_CONEANGLES
+          href: ksproperty-directsound3dbuffer-coneangles.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_CONEORIENTATION
+          href: ksproperty-directsound3dbuffer-coneorientation.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_CONEOUTSIDEVOLUME
+          href: ksproperty-directsound3dbuffer-coneoutsidevolume.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_MAXDISTANCE
+          href: ksproperty-directsound3dbuffer-maxdistance.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_MINDISTANCE
+          href: ksproperty-directsound3dbuffer-mindistance.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_MODE
+          href: ksproperty-directsound3dbuffer-mode.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_POSITION
+          href: ksproperty-directsound3dbuffer-position.md
+        - name: KSPROPERTY_DIRECTSOUND3DBUFFER_VELOCITY
+          href: ksproperty-directsound3dbuffer-velocity.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ALL
+          href: ksproperty-directsound3dlistener-all.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ALLOCATION
+          href: ksproperty-directsound3dlistener-allocation.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_BATCH
+          href: ksproperty-directsound3dlistener-batch.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_DISTANCEFACTOR
+          href: ksproperty-directsound3dlistener-distancefactor.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_DOPPLERFACTOR
+          href: ksproperty-directsound3dlistener-dopplerfactor.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ORIENTATION
+          href: ksproperty-directsound3dlistener-orientation.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION
+          href: ksproperty-directsound3dlistener-position.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR
+          href: ksproperty-directsound3dlistener-rollofffactor.md
+        - name: KSPROPERTY_DIRECTSOUND3DLISTENER_VELOCITY
+          href: ksproperty-directsound3dlistener-velocity.md
+        - name: KSPROPERTY_FMRX_ANTENNAENDPOINTID
+          href: ksproperty-fmrx-antennaendpointid.md
+        - name: KSPROPERTY_FMRX_ENDPOINTID
+          href: ksproperty-fmrx-endpointid.md
+        - name: KSPROPERTY_FMRX_VOLUME
+          href: ksproperty-fmrx-volume.md
+        - name: KSPROPERTY_HRTF3D_FILTER_FORMAT
+          href: ksproperty-hrtf3d-filter-format.md
+        - name: KSPROPERTY_HRTF3D_INITIALIZE
+          href: ksproperty-hrtf3d-initialize.md
+        - name: KSPROPERTY_HRTF3D_PARAMS
+          href: ksproperty-hrtf3d-params.md
+        - name: KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION
+          href: ksproperty-interleavedaudio-formatinformation.md
+        - name: KSPROPERTY_ITD3D_PARAMS
+          href: ksproperty-itd3d-params.md
+        - name: KSPROPERTY_JACK
+          href: ksproperty-jack.md
+        - name: KSPROPERTY_JACK_CONTAINERID
+          href: ksproperty-jack-containerid.md
+        - name: KSPROPERTY_JACK_DESCRIPTION
+          href: ksproperty-jack-description.md
+        - name: KSPROPERTY_JACK_DESCRIPTION2
+          href: ksproperty-jack-description2.md
+        - name: KSPROPERTY_JACK_SINK_INFO
+          href: ksproperty-jack-sink-info.md
+        - name: KSPROPERTY_ONESHOT_DISCONNECT
+          href: ksproperty-oneshot-disconnect.md
+        - name: KSPROPERTY_ONESHOT_RECONNECT
+          href: ksproperty-oneshot-reconnect.md
+        - name: KSPROPERTY_RTAUDIO_BUFFER
+          href: ksproperty-rtaudio-buffer.md
+        - name: KSPROPERTY_RTAUDIO_BUFFER_WITH_NOTIFICATION
+          href: ksproperty-rtaudio-buffer-with-notification.md
+        - name: KSPROPERTY_RTAUDIO_CLOCKREGISTER
+          href: ksproperty-rtaudio-clockregister.md
+        - name: KSPROPERTY_RTAUDIO_GETREADPACKET
+          href: ksproperty-rtaudio-getreadpacket.md
+        - name: KSPROPERTY_RTAUDIO_HWLATENCY
+          href: ksproperty-rtaudio-hwlatency.md
+        - name: KSPROPERTY_RTAUDIO_PACKETCOUNT
+          href: ksproperty-rtaudio-packetcount.md
+        - name: KSPROPERTY_RTAUDIO_POSITIONREGISTER
+          href: ksproperty-rtaudio-positionregister.md
+        - name: KSPROPERTY_RTAUDIO_PRESENTATION_POSITION
+          href: ksproperty-rtaudio-presentation-position.md
+        - name: KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT
+          href: ksproperty-rtaudio-query-notification-support.md
+        - name: KSPROPERTY_RTAUDIO_REGISTER_NOTIFICATION_EVENT
+          href: ksproperty-rtaudio-register-notification-event.md
+        - name: KSPROPERTY_RTAUDIO_SETWRITEPACKET
+          href: ksproperty-rtaudio-setwritepacket.md
+        - name: KSPROPERTY_RTAUDIO_UNREGISTER_NOTIFICATION_EVENT
+          href: ksproperty-rtaudio-unregister-notification-event.md
+        - name: KSPROPERTY_SOUNDDETECTOR
+          href: ksproperty-sounddetector.md
+        - name: KSPROPERTY_SOUNDDETECTOR_ARMED
+          href: ksproperty-sounddetector-armed.md
+        - name: KSPROPERTY_SOUNDDETECTOR_MATCHRESULT
+          href: ksproperty-sounddetector-matchresult.md
+        - name: KSPROPERTY_SOUNDDETECTOR_PATTERNS
+          href: ksproperty-sounddetector-patterns.md
+        - name: KSPROPERTY_SOUNDDETECTOR_SUPPORTEDPATTERNS
+          href: ksproperty-sounddetector-supportedpatterns.md
+        - name: KSPROPERTY_SYSAUDIO_ATTACH_VIRTUAL_SOURCE
+          href: ksproperty-sysaudio-attach-virtual-source.md
+        - name: KSPROPERTY_SYSAUDIO_COMPONENT_ID
+          href: ksproperty-sysaudio-component-id.md
+        - name: KSPROPERTY_SYSAUDIO_CREATE_VIRTUAL_SOURCE
+          href: ksproperty-sysaudio-create-virtual-source.md
+        - name: KSPROPERTY_SYSAUDIO_DEVICE_COUNT
+          href: ksproperty-sysaudio-device-count.md
+        - name: KSPROPERTY_SYSAUDIO_DEVICE_FRIENDLY_NAME
+          href: ksproperty-sysaudio-device-friendly-name.md
+        - name: KSPROPERTY_SYSAUDIO_DEVICE_INSTANCE
+          href: ksproperty-sysaudio-device-instance.md
+        - name: KSPROPERTY_SYSAUDIO_DEVICE_INTERFACE_NAME
+          href: ksproperty-sysaudio-device-interface-name.md
+        - name: KSPROPERTY_SYSAUDIO_INSTANCE_INFO
+          href: ksproperty-sysaudio-instance-info.md
+        - name: KSPROPERTY_SYSAUDIO_SELECT_GRAPH
+          href: ksproperty-sysaudio-select-graph.md
+        - name: KSPROPERTY_TELEPHONY_CALLCONTROL
+          href: ksproperty-telephony-callcontrol.md
+        - name: KSPROPERTY_TELEPHONY_CALLHOLD
+          href: ksproperty-telephony-callhold.md
+        - name: KSPROPERTY_TELEPHONY_CALLINFO
+          href: ksproperty-telephony-callinfo.md
+        - name: KSPROPERTY_TELEPHONY_ENDPOINTIDPAIR
+          href: ksproperty-telephony-endpointidpair.md
+        - name: KSPROPERTY_TELEPHONY_MUTE_TX
+          href: ksproperty-telephony-mute-tx.md
+        - name: KSPROPERTY_TELEPHONY_PROVIDERCHANGE
+          href: ksproperty-telephony-providerchange.md
+        - name: KSPROPERTY_TELEPHONY_PROVIDERID
+          href: ksproperty-telephony-providerid.md
+        - name: KSPROPERTY_TELEPHONY_VOLUME
+          href: ksproperty-telephony-volume.md
+        - name: KSPROPERTY_TOPOLOGYNODE_ENABLE
+          href: ksproperty-topologynode-enable.md
+        - name: KSPROPERTY_TOPOLOGYNODE_RESET
+          href: ksproperty-topologynode-reset.md
+        - name: KSRTAUDIO_BUFFER_PROPERTY
+          href: ksrtaudio-buffer-property.md

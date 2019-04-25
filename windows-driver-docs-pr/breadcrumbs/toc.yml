@@ -1,158 +1,151 @@
-items:
 - name: Docs
   tocHref: /
   topicHref: /
   items:
-  - name: Windows ハードウェア
-    tocHref: /windows-hardware/
-    topicHref: https://docs.microsoft.com/windows/#pivot=hardware-dev
-    items:
-    - name: Windows ドライバー
-      tocHref: /windows-hardware/drivers/
-      topicHref: /windows-hardware/drivers/index
+    - name: Windows ハードウェア
+      tocHref: /windows-hardware/
+      topicHref: 'https://docs.microsoft.com/windows/#pivot=hardware-dev'
       items:
-      - name: 起動ガイド
-        tocHref: /windows-hardware/drivers/bringup/
-        topicHref: /windows-hardware/drivers/bringup/index
-      - name: 開発
-        tocHref: /windows-hardware/drivers/develop/
-        topicHref: /windows-hardware/drivers/develop/visual-studio-driver-development-environment
-      - name: インストール
-        tocHref: /windows-hardware/drivers/install/
-        topicHref: /windows-hardware/drivers/install/index
-      - name: カーネル モード ドライバー アーキテクチャ
-        tocHref: /windows-hardware/drivers/kernel/
-        topicHref: /windows-hardware/drivers/kernel/index
-      - name: Windows Driver Frameworks
-        tocHref: /windows-hardware/drivers/wdf/
-        topicHref: /windows-hardware/drivers/wdf/index
-      - name: Windows デバッグ ツール
-        tocHref: /windows-hardware/drivers/debugger/
-        topicHref: /windows-hardware/drivers/debugger/index
-      - name: デバイス テクノロジとドライバー テクノロジ
-        tocHref: /windows-hardware/drivers/device-and-driver-technologies/
-        topicHref: /windows-hardware/drivers/device-and-driver-technologies
-        items:
-        - name: 3D 印刷
-          tocHref: /windows-hardware/drivers/3dprint/
-          topicHref: /windows-hardware/drivers/3dprint/index
-        - name: ACPI
-          tocHref: /windows-hardware/drivers/acpi/
-          topicHref: /windows-hardware/drivers/acpi/index
-        - name: オーディオ
-          tocHref: /windows-hardware/drivers/audio/
-          topicHref: /windows-hardware/drivers/audio/index
-        - name: バッテリー
-          tocHref: /windows-hardware/drivers/battery/
-          topicHref: /windows-hardware/drivers/battery/index
-        - name: 生体認証
-          tocHref: /windows-hardware/drivers/biometric/
-          topicHref: /windows-hardware/drivers/biometric/index
-        - name: Bluetooth
-          tocHref: /windows-hardware/drivers/bluetooth/
-          topicHref: /windows-hardware/drivers/bluetooth/index
-        - name: ダッシュボード
-          tocHref: /windows-hardware/drivers/dashboard/
-          topicHref: /windows-hardware/drivers/dashboard/index
-        - name: デバイス アプリ
-          tocHref: /windows-hardware/drivers/devapps/
-          topicHref: /windows-hardware/drivers/devapps/index
-        - name: ディスプレイ
-          tocHref: /windows-hardware/drivers/display/
-          topicHref: /windows-hardware/drivers/display/index
-        - name: ドライバー テスト用ツール
-          tocHref: /windows-hardware/drivers/devtest/
-          topicHref: /windows-hardware/drivers/devtest/index
-        - name: HID
-          tocHref: /windows-hardware/drivers/hid/
-          topicHref: /windows-hardware/drivers/hid/index
-        - name: IEEE
-          tocHref: /windows-hardware/drivers/ieee/
-          topicHref: /windows-hardware/drivers/ieee/index
-        - name: Image
-          tocHref: /windows-hardware/drivers/image/
-          topicHref: /windows-hardware/drivers/image/index
-        - name: インストール可能ファイル システム
-          tocHref: /windows-hardware/drivers/ifs/
-          topicHref: /windows-hardware/drivers/ifs/index
-        - name: Windows ドライバーの概要
-          tocHref: /windows-hardware/drivers/gettingstarted/
-          topicHref: /windows-hardware/drivers/gettingstarted/index
-        - name: GNSS
-          tocHref: /windows-hardware/drivers/gnss/
-          topicHref: /windows-hardware/drivers/gnss/index
-        - name: GPIO
-          tocHref: /windows-hardware/drivers/gpio/
-          topicHref: /windows-hardware/drivers/gpio/index
-        - name: モバイル ブロードバンド
-          tocHref: /windows-hardware/drivers/mobilebroadband/
-          topicHref: /windows-hardware/drivers/mobilebroadband/index
-        - name: 多機能
-          tocHref: /windows-hardware/drivers/multifunction/
-          topicHref: /windows-hardware/drivers/multifunction/index
-        - name: NetCx
-          tocHref: /windows-hardware/drivers/netcx/
-          topicHref: /windows-hardware/drivers/netcx/index
-        - name: ネットワーク
-          tocHref: /windows-hardware/drivers/network/
-          topicHref: /windows-hardware/drivers/network/index
-        - name: NFC
-          tocHref: /windows-hardware/drivers/nfc/
-          topicHref: /windows-hardware/drivers/nfc/index
-        - name: パートナー アプリケーションの開発
-          tocHref: /windows-hardware/drivers/partnerapps/
-          topicHref: /windows-hardware/drivers/partnerapps/index
-        - name: PCI
-          tocHref: /windows-hardware/drivers/pci/
-          topicHref: /windows-hardware/drivers/pci/index
-        - name: PCMCIA
-          tocHref: /windows-hardware/drivers/pcmcia/
-          topicHref: /windows-hardware/drivers/pcmcia/index
-        - name: Powermeter
-          tocHref: /windows-hardware/drivers/powermeter/
-          topicHref: /windows-hardware/drivers/powermeter/index
-        - name: Point-of-Service (POS)
-          tocHref: /windows-hardware/drivers/pos/
-          topicHref: /windows-hardware/drivers/pos/index
-        - name: 印刷
-          tocHref: /windows-hardware/drivers/print/
-          topicHref: /windows-hardware/drivers/print/index
-        - name: SD
-          tocHref: /windows-hardware/drivers/sd/
-          topicHref: /windows-hardware/drivers/sd/index
-        - name: センサー
-          tocHref: /windows-hardware/drivers/sensors/
-          topicHref: /windows-hardware/drivers/sensors/index
-        - name: SPB
-          tocHref: /windows-hardware/drivers/spb/
-          topicHref: /windows-hardware/drivers/spb/index
-        - name: ストレージ
-          tocHref: /windows-hardware/drivers/storage/
-          topicHref: /windows-hardware/drivers/storage/index
-        - name: Stream
-          tocHref: /windows-hardware/drivers/stream/
-          topicHref: /windows-hardware/drivers/stream/index
-        - name: TAEF
-          tocHref: /windows-hardware/drivers/taef
-          topicHref: /windows-hardware/drivers/taef/index
-        - name: USB
-          tocHref: /windows-hardware/drivers/usbcon
-          topicHref: /windows-hardware/drivers/usbcon/index
-        - name: WDTF
-          tocHref: /windows-hardware/drivers/wdtf/
-          topicHref: /windows-hardware/drivers/wdtf/index
-        - name: WHEA
-          tocHref: /windows-hardware/drivers/whea/
-          topicHref: /windows-hardware/drivers/whea/index
-        - name: Windows ドライバー サンプル
-          tocHref: /windows-hardware/drivers/samples/
-          topicHref: /windows-hardware/drivers/samples/index
-        - name: Windows ポータブル デバイス
-          tocHref: /windows-hardware/drivers/portable/
-          topicHref: /windows-hardware/drivers/portable/index
-ms.openlocfilehash: 64590e777dcd18706f31ece0ecf93d6dbe640fa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465650"
+        - name: Windows ドライバー
+          tocHref: /windows-hardware/drivers/
+          topicHref: /windows-hardware/drivers/index
+          items:
+            - name: 起動ガイド
+              tocHref: /windows-hardware/drivers/bringup/
+              topicHref: /windows-hardware/drivers/bringup/index
+            - name: 開発
+              tocHref: /windows-hardware/drivers/develop/
+              topicHref: /windows-hardware/drivers/develop/visual-studio-driver-development-environment
+            - name: インストール
+              tocHref: /windows-hardware/drivers/install/
+              topicHref: /windows-hardware/drivers/install/index
+            - name: カーネル モード ドライバー アーキテクチャ
+              tocHref: /windows-hardware/drivers/kernel/
+              topicHref: /windows-hardware/drivers/kernel/index
+            - name: Windows Driver Frameworks
+              tocHref: /windows-hardware/drivers/wdf/
+              topicHref: /windows-hardware/drivers/wdf/index
+            - name: Windows デバッグ ツール
+              tocHref: /windows-hardware/drivers/debugger/
+              topicHref: /windows-hardware/drivers/debugger/index
+            - name: デバイス テクノロジとドライバー テクノロジ
+              tocHref: /windows-hardware/drivers/device-and-driver-technologies/
+              topicHref: /windows-hardware/drivers/device-and-driver-technologies
+              items:
+                - name: 3D 印刷
+                  tocHref: /windows-hardware/drivers/3dprint/
+                  topicHref: /windows-hardware/drivers/3dprint/index
+                - name: ACPI
+                  tocHref: /windows-hardware/drivers/acpi/
+                  topicHref: /windows-hardware/drivers/acpi/index
+                - name: オーディオ
+                  tocHref: /windows-hardware/drivers/audio/
+                  topicHref: /windows-hardware/drivers/audio/index
+                - name: バッテリー
+                  tocHref: /windows-hardware/drivers/battery/
+                  topicHref: /windows-hardware/drivers/battery/index
+                - name: 生体認証
+                  tocHref: /windows-hardware/drivers/biometric/
+                  topicHref: /windows-hardware/drivers/biometric/index
+                - name: Bluetooth
+                  tocHref: /windows-hardware/drivers/bluetooth/
+                  topicHref: /windows-hardware/drivers/bluetooth/index
+                - name: ダッシュボード
+                  tocHref: /windows-hardware/drivers/dashboard/
+                  topicHref: /windows-hardware/drivers/dashboard/index
+                - name: デバイス アプリ
+                  tocHref: /windows-hardware/drivers/devapps/
+                  topicHref: /windows-hardware/drivers/devapps/index
+                - name: ディスプレイ
+                  tocHref: /windows-hardware/drivers/display/
+                  topicHref: /windows-hardware/drivers/display/index
+                - name: ドライバー テスト用ツール
+                  tocHref: /windows-hardware/drivers/devtest/
+                  topicHref: /windows-hardware/drivers/devtest/index
+                - name: HID
+                  tocHref: /windows-hardware/drivers/hid/
+                  topicHref: /windows-hardware/drivers/hid/index
+                - name: IEEE
+                  tocHref: /windows-hardware/drivers/ieee/
+                  topicHref: /windows-hardware/drivers/ieee/index
+                - name: Image
+                  tocHref: /windows-hardware/drivers/image/
+                  topicHref: /windows-hardware/drivers/image/index
+                - name: インストール可能ファイル システム
+                  tocHref: /windows-hardware/drivers/ifs/
+                  topicHref: /windows-hardware/drivers/ifs/index
+                - name: Windows ドライバーの概要
+                  tocHref: /windows-hardware/drivers/gettingstarted/
+                  topicHref: /windows-hardware/drivers/gettingstarted/index
+                - name: GNSS
+                  tocHref: /windows-hardware/drivers/gnss/
+                  topicHref: /windows-hardware/drivers/gnss/index
+                - name: GPIO
+                  tocHref: /windows-hardware/drivers/gpio/
+                  topicHref: /windows-hardware/drivers/gpio/index
+                - name: モバイル ブロードバンド
+                  tocHref: /windows-hardware/drivers/mobilebroadband/
+                  topicHref: /windows-hardware/drivers/mobilebroadband/index
+                - name: 多機能
+                  tocHref: /windows-hardware/drivers/multifunction/
+                  topicHref: /windows-hardware/drivers/multifunction/index
+                - name: NetCx
+                  tocHref: /windows-hardware/drivers/netcx/
+                  topicHref: /windows-hardware/drivers/netcx/index
+                - name: ネットワーク
+                  tocHref: /windows-hardware/drivers/network/
+                  topicHref: /windows-hardware/drivers/network/index
+                - name: NFC
+                  tocHref: /windows-hardware/drivers/nfc/
+                  topicHref: /windows-hardware/drivers/nfc/index
+                - name: パートナー アプリケーションの開発
+                  tocHref: /windows-hardware/drivers/partnerapps/
+                  topicHref: /windows-hardware/drivers/partnerapps/index
+                - name: PCI
+                  tocHref: /windows-hardware/drivers/pci/
+                  topicHref: /windows-hardware/drivers/pci/index
+                - name: PCMCIA
+                  tocHref: /windows-hardware/drivers/pcmcia/
+                  topicHref: /windows-hardware/drivers/pcmcia/index
+                - name: Powermeter
+                  tocHref: /windows-hardware/drivers/powermeter/
+                  topicHref: /windows-hardware/drivers/powermeter/index
+                - name: Point-of-Service (POS)
+                  tocHref: /windows-hardware/drivers/pos/
+                  topicHref: /windows-hardware/drivers/pos/index
+                - name: 印刷
+                  tocHref: /windows-hardware/drivers/print/
+                  topicHref: /windows-hardware/drivers/print/index
+                - name: SD
+                  tocHref: /windows-hardware/drivers/sd/
+                  topicHref: /windows-hardware/drivers/sd/index
+                - name: センサー
+                  tocHref: /windows-hardware/drivers/sensors/
+                  topicHref: /windows-hardware/drivers/sensors/index
+                - name: SPB
+                  tocHref: /windows-hardware/drivers/spb/
+                  topicHref: /windows-hardware/drivers/spb/index
+                - name: ストレージ
+                  tocHref: /windows-hardware/drivers/storage/
+                  topicHref: /windows-hardware/drivers/storage/index
+                - name: Stream
+                  tocHref: /windows-hardware/drivers/stream/
+                  topicHref: /windows-hardware/drivers/stream/index
+                - name: TAEF
+                  tocHref: /windows-hardware/drivers/taef
+                  topicHref: /windows-hardware/drivers/taef/index
+                - name: USB
+                  tocHref: /windows-hardware/drivers/usbcon
+                  topicHref: /windows-hardware/drivers/usbcon/index
+                - name: WDTF
+                  tocHref: /windows-hardware/drivers/wdtf/
+                  topicHref: /windows-hardware/drivers/wdtf/index
+                - name: WHEA
+                  tocHref: /windows-hardware/drivers/whea/
+                  topicHref: /windows-hardware/drivers/whea/index
+                - name: Windows ドライバー サンプル
+                  tocHref: /windows-hardware/drivers/samples/
+                  topicHref: /windows-hardware/drivers/samples/index
+                - name: Windows ポータブル デバイス
+                  tocHref: /windows-hardware/drivers/portable/
+                  topicHref: /windows-hardware/drivers/portable/index

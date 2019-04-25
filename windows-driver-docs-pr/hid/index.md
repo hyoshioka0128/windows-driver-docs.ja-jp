@@ -12,11 +12,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: d6f8184fada8c5b4982a205d3f2d4541c6468061
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58898057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365072"
 ---
 # <a name="hid-drivers"></a>HID ドライバー
 

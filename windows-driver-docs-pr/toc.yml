@@ -1,4 +1,3 @@
-items:
 - name: Windows Driver Kit の概要
   href: index.md
 - name: What's new in driver development
@@ -6,10 +5,10 @@ items:
 - name: Windows Driver Kit (WDK) のダウンロード
   href: download-the-wdk.md
   items:
-  - name: 以前のバージョンの WDK のインストール
-    href: installing-preview-versions-wdk.md
-  - name: その他の WDK のダウンロード
-    href: other-wdk-downloads.md
+    - name: 以前のバージョンの WDK のインストール
+      href: installing-preview-versions-wdk.md
+    - name: その他の WDK のダウンロード
+      href: other-wdk-downloads.md
 - name: 起動ガイド
   href: bringup/index.md
 - name: ドライバーの開発、テスト、および展開
@@ -31,93 +30,87 @@ items:
 - name: デバイス テクノロジとドライバー テクノロジ
   href: device-and-driver-technologies.md
   items:
-  - name: 3D 印刷デバイス
-    href: 3dprint/index.md
-  - name: ACPI
-    href: acpi/index.md
-  - name: オーディオ
-    href: audio/index.md
-  - name: バッテリ ドライバー
-    href: battery/index.md
-  - name: 生体認証ドライバー
-    href: biometric/index.md
-  - name: Bluetooth ドライバー
-    href: bluetooth/index.md
-  - name: ディスプレイ ドライバー
-    href: display/index.md
-  - name: ドライバー開発ツール
-    href: devtest/index.md
-  - name: Windows ドライバーの概要
-    href: gettingstarted/index.md
-  - name: GNSS ドライバー
-    href: gnss/index.md
-  - name: GPIO ドライバー
-    href: gpio/index.md
-  - name: ハードウェア通知
-    href: gpiobtn/index.md
-  - name: HID ドライバー
-    href: hid/index.md
-  - name: IEEE ドライバー
-    href: ieee/index.md
-  - name: イメージング デバイス ドライバー
-    href: image/index.md
-  - name: インストール可能ファイル システム ドライバー
-    href: ifs/index.md
-  - name: カーネルモード ドライバー テクノロジ
-    href: kernel/index.md
-  - name: モバイル ブロードバンド
-    href: mobilebroadband/index.md
-  - name: 多機能デバイス ドライバー
-    href: multifunction/index.md
-  - name: NetAdapterCx
-    href: netcx/index.md
-  - name: ネットワーク ドライバー
-    href: network/index.md
-  - name: NFC デバイス ドライバー
-    href: nfc/index.md
-  - name: パラレル ポート ドライバー
-    href: parports/index.md
-  - name: パートナー アプリケーションの開発
-    href: partnerapps/index.md
-  - name: PCI ドライバー
-    href: pci/index.md
-  - name: PCMCIA ドライバー
-    href: pcmcia/index.md
-  - name: POS デバイス ドライバー
-    href: pos/index.md
-  - name: 電源管理テクノロジ
-    href: powermeter/index.md
-  - name: 印刷デバイス ドライバー
-    href: print/index.md
-  - name: SD カード バス ドライバー
-    href: sd/index.md
-  - name: センサー ドライバー
-    href: sensors/index.md
-  - name: シリアル ポート ドライバー
-    href: serports/index.md
-  - name: スマート カード デバイス ドライバー
-    href: smartcard/index.md
-  - name: SPB ドライバー
-    href: spb/index.md
-  - name: 記憶装置ドライバー
-    href: storage/index.md
-  - name: ストリーミング メディア デバイス ドライバー
-    href: stream/index.md
-  - name: Test Authoring and Execution Framework (TAEF)
-    href: taef/index.md
-  - name: ユニバーサル シリアル バス (USB)
-    href: usbcon/index.md
-  - name: Windows Device Testing Framework (WDTF)
-    href: wdtf/index.md
-  - name: Windows Hardware Error Architecture (WHEA)
-    href: whea/index.md
-  - name: Windows ポータブル デバイス ドライバー
-    href: portable/index.md
+    - name: 3D 印刷デバイス
+      href: 3dprint/index.md
+    - name: ACPI
+      href: acpi/index.md
+    - name: オーディオ
+      href: audio/index.md
+    - name: バッテリ ドライバー
+      href: battery/index.md
+    - name: 生体認証ドライバー
+      href: biometric/index.md
+    - name: Bluetooth ドライバー
+      href: bluetooth/index.md
+    - name: ディスプレイ ドライバー
+      href: display/index.md
+    - name: ドライバー開発ツール
+      href: devtest/index.md
+    - name: Windows ドライバーの概要
+      href: gettingstarted/index.md
+    - name: GNSS ドライバー
+      href: gnss/index.md
+    - name: GPIO ドライバー
+      href: gpio/index.md
+    - name: ハードウェア通知
+      href: gpiobtn/index.md
+    - name: HID ドライバー
+      href: hid/index.md
+    - name: IEEE ドライバー
+      href: ieee/index.md
+    - name: イメージング デバイス ドライバー
+      href: image/index.md
+    - name: インストール可能ファイル システム ドライバー
+      href: ifs/index.md
+    - name: カーネルモード ドライバー テクノロジ
+      href: kernel/index.md
+    - name: モバイル ブロードバンド
+      href: mobilebroadband/index.md
+    - name: 多機能デバイス ドライバー
+      href: multifunction/index.md
+    - name: NetAdapterCx
+      href: netcx/index.md
+    - name: ネットワーク ドライバー
+      href: network/index.md
+    - name: NFC デバイス ドライバー
+      href: nfc/index.md
+    - name: パラレル ポート ドライバー
+      href: parports/index.md
+    - name: パートナー アプリケーションの開発
+      href: partnerapps/index.md
+    - name: PCI ドライバー
+      href: pci/index.md
+    - name: PCMCIA ドライバー
+      href: pcmcia/index.md
+    - name: POS デバイス ドライバー
+      href: pos/index.md
+    - name: 電源管理テクノロジ
+      href: powermeter/index.md
+    - name: 印刷デバイス ドライバー
+      href: print/index.md
+    - name: SD カード バス ドライバー
+      href: sd/index.md
+    - name: センサー ドライバー
+      href: sensors/index.md
+    - name: シリアル ポート ドライバー
+      href: serports/index.md
+    - name: スマート カード デバイス ドライバー
+      href: smartcard/index.md
+    - name: SPB ドライバー
+      href: spb/index.md
+    - name: 記憶装置ドライバー
+      href: storage/index.md
+    - name: ストリーミング メディア デバイス ドライバー
+      href: stream/index.md
+    - name: Test Authoring and Execution Framework (TAEF)
+      href: taef/index.md
+    - name: ユニバーサル シリアル バス (USB)
+      href: usbcon/index.md
+    - name: Windows Device Testing Framework (WDTF)
+      href: wdtf/index.md
+    - name: Windows Hardware Error Architecture (WHEA)
+      href: whea/index.md
+    - name: Windows ポータブル デバイス ドライバー
+      href: portable/index.md
 - name: Windows ドライバー サンプル
   href: samples/index.md
-ms.openlocfilehash: 1cabcff6583ae3fef48237c76be75d6fedd0905c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465756"

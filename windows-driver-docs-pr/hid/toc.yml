@@ -1,178 +1,171 @@
-items:
 - name: HID ドライバー
   href: index.md
   items:
-  - name: HID の新機能
-    href: what-s-new-in-hid.md
-  - name: HID の概念の紹介
-    href: introduction-to-hid-concepts.md
-  - name: HID のアーキテクチャ
-    href: hid-architecture.md
-  - name: Windows でサポートされる HID クライアント
-    href: hid-clients-supported-in-windows.md
-  - name: Windows でサポートされる HID トランスポート
-    href: hid-transports-supported-in-windows.md
-  - name: HID クライアント
-    href: hid-clients.md
-    items:
-    - name: HID の使用状況
-      href: hid-usages.md
-    - name: HID コレクション
-      href: hid-collections.md
+    - name: HID の新機能
+      href: what-s-new-in-hid.md
+    - name: HID の概念の紹介
+      href: introduction-to-hid-concepts.md
+    - name: HID のアーキテクチャ
+      href: hid-architecture.md
+    - name: Windows でサポートされる HID クライアント
+      href: hid-clients-supported-in-windows.md
+    - name: Windows でサポートされる HID トランスポート
+      href: hid-transports-supported-in-windows.md
+    - name: HID クライアント
+      href: hid-clients.md
       items:
-      - name: 最上位のコレクション
-        href: top-level-collections.md
-      - name: Windows によって開かれる最上位のコレクション (システムで使用)
-        href: top-level-collections-opened-by-windows-for-system-use.md
-      - name: 事前解析データ
-        href: preparsed-data.md
-      - name: リンク コレクション
-        href: link-collections.md
-      - name: コレクションの機能
-        href: collection-capability.md
-      - name: ボタン機能配列
-        href: button-capability-arrays.md
-      - name: 値機能配列
-        href: value-capability-arrays.md
-      - name: データ インデックス
-        href: data-indices.md
-    - name: HID コレクションを開く
-      href: opening-hid-collections.md
+        - name: HID の使用状況
+          href: hid-usages.md
+        - name: HID コレクション
+          href: hid-collections.md
+          items:
+            - name: 最上位のコレクション
+              href: top-level-collections.md
+            - name: Windows によって開かれる最上位のコレクション (システムで使用)
+              href: top-level-collections-opened-by-windows-for-system-use.md
+            - name: 事前解析データ
+              href: preparsed-data.md
+            - name: リンク コレクション
+              href: link-collections.md
+            - name: コレクションの機能
+              href: collection-capability.md
+            - name: ボタン機能配列
+              href: button-capability-arrays.md
+            - name: 値機能配列
+              href: value-capability-arrays.md
+            - name: データ インデックス
+              href: data-indices.md
+        - name: HID コレクションを開く
+          href: opening-hid-collections.md
+          items:
+            - name: HID コレクションを検索して開く
+              href: finding-and-opening-a-hid-collection.md
+            - name: HID クライアント ドライバー
+              href: hid-client-drivers.md
+            - name: HID コレクションにセキュリティで保護された読み取りを適用する
+              href: enforcing-a-secure-read-for-a-hid-collection.md
+            - name: 事前解析データを取得する
+              href: obtaining-preparsed-data.md
+            - name: コレクション情報を取得する
+              href: obtaining-collection-information.md
+        - name: HID レポートを処理する
+          href: handling-hid-reports.md
+          items:
+            - name: HID レポートを初期化する
+              href: initializing-hid-reports.md
+            - name: HID レポートを取得する
+              href: obtaining-hid-reports.md
+            - name: HID レポートを送信する
+              href: sending-hid-reports.md
+            - name: HID レポートを解釈する
+              href: interpreting-hid-reports.md
+            - name: HID レポートのトラブルシューティング
+              href: troubleshooting-hid-reports.md
+        - name: リソースを解放する
+          href: freeing-resources.md
+        - name: HID クライアントをインストールする
+          href: installing-hid-clients.md
+        - name: 最上位のコレクションの HIDClass ハードウェア ID
+          href: hidclass-hardware-ids-for-top-level-collections.md
+        - name: キーボードとマウスの HID クライアント ドライバー
+          href: keyboard-and-mouse-hid-client-drivers.md
+        - name: センサー HID クラス ドライバー
+          href: sensor-hid-class-driver.md
+        - name: 機内モード無線管理
+          href: airplane-mode-radio-management.md
+        - name: ディスプレイの明るさの制御
+          href: display-brightness-control.md
+    - name: HID トランスポート
+      href: hid-transports.md
       items:
-      - name: HID コレクションを検索して開く
-        href: finding-and-opening-a-hid-collection.md
-      - name: HID クライアント ドライバー
-        href: hid-client-drivers.md
-      - name: HID コレクションにセキュリティで保護された読み取りを適用する
-        href: enforcing-a-secure-read-for-a-hid-collection.md
-      - name: 事前解析データを取得する
-        href: obtaining-preparsed-data.md
-      - name: コレクション情報を取得する
-        href: obtaining-collection-information.md
-    - name: HID レポートを処理する
-      href: handling-hid-reports.md
+        - name: ACPI ボタン デバイス
+          href: acpi-button-device.md
+        - name: HID ボタン ドライバー
+          href: buttons.md
+        - name: 仮想 HID フレームワーク (VHF)
+          href: virtual-hid-framework--vhf-.md
+        - name: トランスポート ミニドライバー
+          href: transport-minidrivers.md
+          items:
+            - name: ミニドライバーを HID クラスにバインドする
+              href: binding-minidrivers-to-the-hid-class.md
+            - name: ミニドライバーと HID クラス ドライバー
+              href: minidriver-operations.md
+            - name: タブレット PC のミニドライバーの要件
+              href: minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows.md
+        - name: HID over USB
+          href: hid-over-usb.md
+          items:
+            - name: HID over USB のアーキテクチャ
+              href: architecture-and-overview-for-usb.md
+            - name: プラグ アンド プレイのサポート
+              href: plug-and-play-support.md
+            - name: 電源管理
+              href: power-management.md
+            - name: HID over USB デバイスのセレクティブ サスペンド
+              href: selective-suspend-for-hid-over-usb-devices.md
+            - name: HID over USB のリソース
+              href: reference-and-additional-details.md
+        - name: HID over I2C
+          href: hid-over-i2c-guide.md
+          items:
+            - name: アーキテクチャと概要
+              href: architecture-and-overview.md
+            - name: プラグ アンド プレイのサポートと電源管理
+              href: plug-and-play-support-and-power-management.md
+            - name: I²C トランスポートの電源管理
+              href: power-management-over-i2c.md
+            - name: 一般的なエラーのトラブルシューティング
+              href: troubleshooting-common-errors.md
+            - name: イベント トレース
+              href: event-tracing.md
+            - name: HID over I2C のリソース
+              href: reference-and-additional-details2.md
+    - name: 非 HID のレガシ デバイス
+      href: non-hid-legacy-devices.md
       items:
-      - name: HID レポートを初期化する
-        href: initializing-hid-reports.md
-      - name: HID レポートを取得する
-        href: obtaining-hid-reports.md
-      - name: HID レポートを送信する
-        href: sending-hid-reports.md
-      - name: HID レポートを解釈する
-        href: interpreting-hid-reports.md
-      - name: HID レポートのトラブルシューティング
-        href: troubleshooting-hid-reports.md
-    - name: リソースを解放する
-      href: freeing-resources.md
-    - name: HID クライアントをインストールする
-      href: installing-hid-clients.md
-    - name: 最上位のコレクションの HIDClass ハードウェア ID
-      href: hidclass-hardware-ids-for-top-level-collections.md
-    - name: キーボードとマウスの HID クライアント ドライバー
-      href: keyboard-and-mouse-hid-client-drivers.md
-    - name: センサー HID クラス ドライバー
-      href: sensor-hid-class-driver.md
-    - name: 機内モード無線管理
-      href: airplane-mode-radio-management.md
-    - name: ディスプレイの明るさの制御
-      href: display-brightness-control.md
-  - name: HID トランスポート
-    href: hid-transports.md
-    items:
-    - name: ACPI ボタン デバイス
-      href: acpi-button-device.md
-    - name: HID ボタン ドライバー
-      href: buttons.md
-    - name: 仮想 HID フレームワーク (VHF)
-      href: virtual-hid-framework--vhf-.md
-    - name: トランスポート ミニドライバー
-      href: transport-minidrivers.md
-      items:
-      - name: ミニドライバーを HID クラスにバインドする
-        href: binding-minidrivers-to-the-hid-class.md
-      - name: ミニドライバーと HID クラス ドライバー
-        href: minidriver-operations.md
-      - name: タブレット PC のミニドライバーの要件
-        href: minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows.md
-    - name: HID over USB
-      href: hid-over-usb.md
-      items:
-      - name: HID over USB のアーキテクチャ
-        href: architecture-and-overview-for-usb.md
-      - name: プラグ アンド プレイのサポート
-        href: plug-and-play-support.md
-      - name: 電源管理
-        href: power-management.md
-      - name: HID over USB デバイスのセレクティブ サスペンド
-        href: selective-suspend-for-hid-over-usb-devices.md
-      - name: HID over USB のリソース
-        href: reference-and-additional-details.md
-    - name: HID over I2C
-      href: hid-over-i2c-guide.md
-      items:
-      - name: アーキテクチャと概要
-        href: architecture-and-overview.md
-      - name: プラグ アンド プレイのサポートと電源管理
-        href: plug-and-play-support-and-power-management.md
-      - name: I²C トランスポートの電源管理
-        href: power-management-over-i2c.md
-      - name: 一般的なエラーのトラブルシューティング
-        href: troubleshooting-common-errors.md
-      - name: イベント トレース
-        href: event-tracing.md
-      - name: HID over I2C のリソース
-        href: reference-and-additional-details2.md
-  - name: 非 HID のレガシ デバイス
-    href: non-hid-legacy-devices.md
-    items:
-    - name: キーボードとマウスのクラス ドライバー
-      href: keyboard-and-mouse-class-drivers.md
-    - name: PS/2 (i8042prt) ドライバー
-      href: ps-2--i8042prt--driver.md
-    - name: サード パーティのフィルター ドライバー
-      href: 3rd-party-filter-drivers.md
-    - name: OS ドライバーのインストール
-      href: os-driver-installation.md
-      items:
-      - name: INF DDInstall.MigrateToDevNode セクション
-        href: inf-ddinstall-migratetodevnode-section.md
-      - name: INF SharedDriver エントリ
-        href: inf-shareddriver-entry.md
-      - name: INF PS2_Inst.NoInterruptInit.Bioses セクション
-        href: inf-ps2-inst-nointerruptinit-bioses-section.md
-      - name: INF PS2_Inst.NoInterruptInit セクション
-        href: inf-ps2-inst-nointerruptinit-section.md
-    - name: DirectInput
-      href: directinput.md
-      items:
-      - name: ジョイスティックのサポート
-        href: joystick-support.md
-        items:
-        - name: ジョイスティック ドライバー モデル
-          href: joystick-driver-model.md
-        - name: ミニドライバーで指定されるコールバック
-          href: minidriver-supplied-callbacks.md
-        - name: " 元のインターフェイス"
-          href: original-interface.md
-        - name: " DirectX 5.0 インターフェイス"
-          href: directx-5-0-interface.md
-        - name: INF ファイルを作成する
-          href: creating-an-inf-file.md
-        - name: レジストリの設定
-          href: registry-settings2.md
-        - name: VJoyD ミニドライバーの上書き
-          href: vjoyd-minidriver-override.md
-        - name: 軸の選択
-          href: axis-selection.md
-      - name: フォース フィードバック デバイス ドライバー インターフェイス
-        href: force-feedback-device-driver-interface.md
-      - name: DirectInput ゲーム コントローラーのコントロール パネルを拡張する
-        href: extending-the-directinput-game-controller-control-panel.md
-  - name: Hdpi.h マクロ
-    href: hdpi-h-macros.md
-ms.openlocfilehash: 6812ba42428c7744ee118b938b2c02fdf730c0aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465782"
+        - name: キーボードとマウスのクラス ドライバー
+          href: keyboard-and-mouse-class-drivers.md
+        - name: PS/2 (i8042prt) ドライバー
+          href: ps-2--i8042prt--driver.md
+        - name: サード パーティのフィルター ドライバー
+          href: 3rd-party-filter-drivers.md
+        - name: OS ドライバーのインストール
+          href: os-driver-installation.md
+          items:
+            - name: INF DDInstall.MigrateToDevNode セクション
+              href: inf-ddinstall-migratetodevnode-section.md
+            - name: INF SharedDriver エントリ
+              href: inf-shareddriver-entry.md
+            - name: INF PS2_Inst.NoInterruptInit.Bioses セクション
+              href: inf-ps2-inst-nointerruptinit-bioses-section.md
+            - name: INF PS2_Inst.NoInterruptInit セクション
+              href: inf-ps2-inst-nointerruptinit-section.md
+        - name: DirectInput
+          href: directinput.md
+          items:
+            - name: ジョイスティックのサポート
+              href: joystick-support.md
+              items:
+                - name: ジョイスティック ドライバー モデル
+                  href: joystick-driver-model.md
+                - name: ミニドライバーで指定されるコールバック
+                  href: minidriver-supplied-callbacks.md
+                - name: ' 元のインターフェイス'
+                  href: original-interface.md
+                - name: ' DirectX 5.0 インターフェイス'
+                  href: directx-5-0-interface.md
+                - name: INF ファイルを作成する
+                  href: creating-an-inf-file.md
+                - name: レジストリの設定
+                  href: registry-settings2.md
+                - name: VJoyD ミニドライバーの上書き
+                  href: vjoyd-minidriver-override.md
+                - name: 軸の選択
+                  href: axis-selection.md
+            - name: フォース フィードバック デバイス ドライバー インターフェイス
+              href: force-feedback-device-driver-interface.md
+            - name: DirectInput ゲーム コントローラーのコントロール パネルを拡張する
+              href: extending-the-directinput-game-controller-control-panel.md
+    - name: Hdpi.h マクロ
+      href: hdpi-h-macros.md

@@ -1,322 +1,315 @@
-items:
 - name: 立ち上げ
   href: index.md
 - name: ファームウェアに関する Windows エンジニアリング ガイド (WEG)
   href: firmware-weg.md
   items:
-  - name: UEFI のセキュリティ
-    href: uefi-security.md
-    items:
-    - name: 拡張ファームウェア インターフェイス (UEFI)
-      href: unified-extensible-firmware-interface.md
-    - name: Device Guard と Credential Guard
-      href: device-guard-and-credential-guard.md
-    - name: 固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)
-      href: fixed-combuffer-and-windows-smm-security-mitigation-table.md
-    - name: ハードウェア セキュリティ テスト インターフェイス (HSTI) 1.1a
-      href: hardware-security-test-interface-1-1a.md
-    - name: メモリ上書き要求制御 (MOR) LOCK バージョン 2
-      href: memory-overwrite-request-control-lock-version-2.md
-    - name: セキュア ブート
-      href: secure-boot.md
-    - name: トラステッド プラットフォーム モジュール (TPM) に関する考慮事項
-      href: trusted-platform-module-considerations.md
-  - name: ファームウェアの更新
-    href: firmware-update.md
-    items:
-    - name: ファームウェア パッケージを構築して Windows Update (WU) に送信する
-      href: build-and-submit-a-firmware-package-to-windows-update.md
-    - name: CHID を使用してシステムをターゲットにする
-      href: target-a-system-using-chid.md
-    - name: ファームウェア ユーザー エクスペリエンス (UX) のベスト プラクティス
-      href: firmware-user-experience-best-practices.md
-    - name: ファームウェア更新の検証テスト
-      href: firmware-update-validation-testing.md
-  - name: SMBIOS
-    href: smbios.md
-  - name: HTTPS
-    href: https-boot.md
-  - name: ファームウェアでの Wi-Fi のサポート
-    href: wi-fi-support-in-firmware.md
-  - name: レガシ MBR ディスクから Windows 10 を使用した GPT ディスクに切り替える
-    href: switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10.md
-    items:
-    - name: レガシ BIOS ブートと CSM を UEFI と GPT に切り替える
-      href: switch-legacy-bios-boot-and-csm-to-uefi-and-gpt.md
-    - name: '新しいメソッド: Windows 10 バージョン 1703 以降'
-      href: new-method--windows-10--version-1703-and-later.md
-    - name: MBR2GPT ツール テスト ガイダンス
-      href: mbr2gpt-tool-test-guidance.md
-    - name: '古いメソッド: メソッド: Windows 10 バージョン 1607 以前'
-      href: old-method--windows-10--version-1607-and-earlier.md
-    - name: インストールされている x64 Windows 7 システムを変換する方法
-      href: how-to-convert-an-installed-x64-windows-7.md
-  - name: ファームウェア WEG に関する FAQ
-    href: frequently-asked-questions.md
-  - name: システム ファームウェアを Windows 7 用に構成し、後で Windows 10 用に更新する
-    href: configure-system-firmware-for-windows-7-and-later-update-for-windows-10.md
-  - name: SMBIOS をローカルにクエリする PowerShell スクリプトのサンプル
-    href: sample-powershell-script-to-query-smbios-locally.md
+    - name: UEFI のセキュリティ
+      href: uefi-security.md
+      items:
+        - name: 拡張ファームウェア インターフェイス (UEFI)
+          href: unified-extensible-firmware-interface.md
+        - name: Device Guard と Credential Guard
+          href: device-guard-and-credential-guard.md
+        - name: 固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)
+          href: fixed-combuffer-and-windows-smm-security-mitigation-table.md
+        - name: ハードウェア セキュリティ テスト インターフェイス (HSTI) 1.1a
+          href: hardware-security-test-interface-1-1a.md
+        - name: メモリ上書き要求制御 (MOR) LOCK バージョン 2
+          href: memory-overwrite-request-control-lock-version-2.md
+        - name: セキュア ブート
+          href: secure-boot.md
+        - name: トラステッド プラットフォーム モジュール (TPM) に関する考慮事項
+          href: trusted-platform-module-considerations.md
+    - name: ファームウェアの更新
+      href: firmware-update.md
+      items:
+        - name: ファームウェア パッケージを構築して Windows Update (WU) に送信する
+          href: build-and-submit-a-firmware-package-to-windows-update.md
+        - name: CHID を使用してシステムをターゲットにする
+          href: target-a-system-using-chid.md
+        - name: ファームウェア ユーザー エクスペリエンス (UX) のベスト プラクティス
+          href: firmware-user-experience-best-practices.md
+        - name: ファームウェア更新の検証テスト
+          href: firmware-update-validation-testing.md
+    - name: SMBIOS
+      href: smbios.md
+    - name: HTTPS
+      href: https-boot.md
+    - name: ファームウェアでの Wi-Fi のサポート
+      href: wi-fi-support-in-firmware.md
+    - name: レガシ MBR ディスクから Windows 10 を使用した GPT ディスクに切り替える
+      href: switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10.md
+      items:
+        - name: レガシ BIOS ブートと CSM を UEFI と GPT に切り替える
+          href: switch-legacy-bios-boot-and-csm-to-uefi-and-gpt.md
+        - name: '新しいメソッド: Windows 10 バージョン 1703 以降'
+          href: new-method--windows-10--version-1703-and-later.md
+        - name: MBR2GPT ツール テスト ガイダンス
+          href: mbr2gpt-tool-test-guidance.md
+        - name: '古いメソッド: メソッド: Windows 10 バージョン 1607 以前'
+          href: old-method--windows-10--version-1607-and-earlier.md
+        - name: インストールされている x64 Windows 7 システムを変換する方法
+          href: how-to-convert-an-installed-x64-windows-7.md
+    - name: ファームウェア WEG に関する FAQ
+      href: frequently-asked-questions.md
+    - name: システム ファームウェアを Windows 7 用に構成し、後で Windows 10 用に更新する
+      href: configure-system-firmware-for-windows-7-and-later-update-for-windows-10.md
+    - name: SMBIOS をローカルにクエリする PowerShell スクリプトのサンプル
+      href: sample-powershell-script-to-query-smbios-locally.md
 - name: ブートおよび UEFI
   href: boot-and-uefi.md
   items:
-  - name: Windows の UEFI
-    href: uefi-in-windows.md
-    items:
-    - name: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
-      href: minimum-uefi-requirements-for-windows-on-soc-platforms.md
+    - name: Windows の UEFI
+      href: uefi-in-windows.md
       items:
-      - name: SoC プラットフォーム上のすべての Windows エディションに適用される UEFI 要件
-        href: uefi-requirements-that-apply-to-all-windows-platforms.md
-      - name: Windows 10 Mobile に対する UEFI 要件
-        href: uefi-requirements-specific-to-windows-mobile.md
-      - name: USB フラッシング サポートのための UEFI 要件
-        href: uefi-requirements-for-usb-flashing-support.md
-    - name: Windows 用の UEFI プロトコル
-      href: uefi-protocols-for-windows.md
-      items:
-      - name: UEFI エントロピー収集プロトコル
-        href: uefi-entropy-gathering-protocol.md
-        items:
-        - name: EFI_RNG_SERVICE_BINDING_PROTOCOL
-          href: efi-rng-service-binding-protocol.md
-        - name: EFI_RNG_PROTOCOL
-          href: efi-rng-protocol.md
+        - name: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
+          href: minimum-uefi-requirements-for-windows-on-soc-platforms.md
           items:
-          - name: EFI_RNG_PROTOCOL.GetInfo
-            href: efi-rng-protocol-getinfo.md
-          - name: EFI_RNG_PROTOCOL.GetRNG
-            href: efi-rng-protocol-getrng.md
-          - name: EFI_RNG_ALGORITHM_LIST
-            href: efi-rng-algorithm-list.md
-      - name: UEFI USB 関数プロトコル
-        href: uefi-usb-function-protocol.md
-        items:
-        - name: EFI_USBFN_IO_PROTOCOL.AbortTransfer
-          href: efi-usbfn-io-protocolaborttransfer.md
-        - name: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
-          href: efi-usbfn-io-protocolallocatetransferbuffer.md
-        - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpoints
-          href: efi-usbfn-io-protocolconfigureenableendpoints.md
-        - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpointsEx
-          href: efi-usbfn-io-protocol-configureenableendpointsex.md
-        - name: EFI_USBFN_IO_PROTOCOL.DetectPort
-          href: efi-usbfn-io-protocoldetectport.md
-        - name: EFI_USBFN_IO_PROTOCOL.EventHandler
-          href: efi-usbfn-io-protocoleventhandler.md
-        - name: EFI_USBFN_IO_PROTOCOL.FreeTransferBuffer
-          href: efi-usbfn-io-protocolfreetransferbuffer.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetDeviceInfo
-          href: efi-usbfn-io-protocolgetdeviceinfo.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetEndpointMaxPacketSize
-          href: efi-usbfn-io-protocolgetendpointmaxpacketsize.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetEndpointPolicy
-          href: efi-usbfn-io-protocolgetendpointpolicy.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetEndpointStallState
-          href: efi-usbfn-io-protocolgetendpointstallstate.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetMaxTransferSize
-          href: efi-usbfn-io-protocolgetmaxtransfersize.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetVendorIdProductId
-          href: efi-usbfn-io-protocolgetvendoridproductid.md
-        - name: EFI_USBFN_IO_PROTOCOL.SetEndpointPolicy
-          href: efi-usbfn-io-protocolsetendpointpolicy.md
-        - name: EFI_USBFN_IO_PROTOCOL.SetEndpointStallState
-          href: efi-usbfn-io-protocolsetendpointstallstate.md
-        - name: EFI_USBFN_IO_PROTOCOL.StartController
-          href: efi-usbfn-io-protocolstartcontroller.md
-        - name: EFI_USBFN_IO_PROTOCOL.StopController
-          href: efi-usbfn-io-protocolstopcontroller.md
-        - name: EFI_USBFN_IO_PROTOCOL.Transfer
-          href: efi-usbfn-io-protocoltransfer.md
-        - name: EFI_USB_BOS_DESCRIPTOR
-          href: efi-usb-bos-descriptor.md
-        - name: EFI_USB_BUS_SPEED
-          href: efi-usb-bus-speed.md
-        - name: EFI_USB_CONFIG_INFO
-          href: efi-usb-config-info.md
-        - name: EFI_USB_DEVICE_INFO
-          href: efi-usb-device-info.md
-        - name: EFI_USB_ENDPOINT_TYPE
-          href: efi-usb-endpoint-type.md
-        - name: EFI_USB_INTERFACE_INFO
-          href: efi-usb-interface-info.md
-        - name: EFI_USB_SUPERSPEED_CONFIG_INFO
-          href: efi-usb-superspeed-config-info.md
-        - name: EFI_USB_SUPERSPEED_DEVICE_INFO
-          href: efi-usb-superspeed-device-info.md
-        - name: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
-          href: efi-usb-superspeed-endpoint-companion-descriptor.md
-        - name: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
-          href: efi-usb-superspeed-endpoint-descriptor.md
-        - name: EFI_USB_SUPERSPEED_INTERFACE_INFO
-          href: efi-usb-superspeed-interface-info.md
-        - name: EFI_USBFN_DEVICE_INFO_ID
-          href: efi-usbfn-device-info-id.md
-        - name: EFI_USBFN_ENDPOINT_DIRECTION
-          href: efi-usbfn-endpoint-direction.md
-        - name: EFI_USBFN_MESSAGE
-          href: efi-usbfn-message.md
-        - name: EFI_USBFN_MESSAGE_PAYLOAD
-          href: efi-usbfn-message-payload.md
-        - name: EFI_USBFN_POLICY_TYPE
-          href: efi-usbfn-policy-type.md
-        - name: EFI_USBFN_PORT_TYPE
-          href: efi-usbfn-port-type.md
-        - name: EFI_USBFN_TRANSFER_RESULT
-          href: efi-usbfn-transfer-result.md
-        - name: EFI_USBFN_TRANSFER_STATUS
-          href: efi-usbfn-transfer-status.md
-        - name: UEFI のシーケンス図
-          href: uefi-sequence-diagram.md
-      - name: UEFI のシンプルな I/O プロトコル
-        href: uefi-simple-io-protocol.md
-        items:
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
-          href: efi-simple-winphone-io-protocolinitialize.md
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
-          href: efi-simple-winphone-io-protocolread.md
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Write
-          href: efi-simple-winphone-io-protocolwrite.md
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
-          href: efi-simple-winphone-io-protocolgetmaxpacketsize.md
-      - name: UEFI 署名チェック プロトコル
-        href: uefi-check-signature-protocol.md
-        items:
-        - name: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
-          href: efi-checksig-protocolefichecksignatureandhash.md
-      - name: UEFI バッテリ充電プロトコル
-        href: uefi-battery-charging-protocol.md
-        items:
-        - name: EFI_BATTERY_CHARGING_PROTOCOL
-          href: efi-battery-charging-protocol.md
-        - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
-          href: efi-battery-charging-protocolgetbatteryinformation.md
-        - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus
-          href: efi-battery-charging-protocolgetbatterystatus.md
-        - name: EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery
-          href: efi-battery-charging-protocolchargebattery.md
-        - name: EFI_BATTERY_CHARGING_STATUS
-          href: efi-battery-charging-status.md
-        - name: EFI_BATTERY_CHARGING_COMPLETION_TOKEN
-          href: efi-battery-charging-completion-token.md
-      - name: UEFI の電力状態表示プロトコル
-        href: uefi-display-power-state-protocol.md
-        items:
-        - name: EFI_DISPLAY_POWER_PROTOCOL
-          href: efi-display-power-protocol.md
-        - name: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
-          href: efi-display-power-protocolgetdisplaypowerstate.md
-        - name: EFI_DISPLAY_POWER_PROTOCOL.SetDisplayPowerState
-          href: efi-display-power-protocolsetdisplaypowerstate.md
-        - name: EFI_DISPLAY_POWER_STATE
-          href: efi-display-power-state.md
-    - name: Windows UEFI ファームウェア更新プラットフォーム
-      href: windows-uefi-firmware-update-platform.md
+            - name: SoC プラットフォーム上のすべての Windows エディションに適用される UEFI 要件
+              href: uefi-requirements-that-apply-to-all-windows-platforms.md
+            - name: Windows 10 Mobile に対する UEFI 要件
+              href: uefi-requirements-specific-to-windows-mobile.md
+            - name: USB フラッシング サポートのための UEFI 要件
+              href: uefi-requirements-for-usb-flashing-support.md
+        - name: Windows 用の UEFI プロトコル
+          href: uefi-protocols-for-windows.md
+          items:
+            - name: UEFI エントロピー収集プロトコル
+              href: uefi-entropy-gathering-protocol.md
+              items:
+                - name: EFI_RNG_SERVICE_BINDING_PROTOCOL
+                  href: efi-rng-service-binding-protocol.md
+                - name: EFI_RNG_PROTOCOL
+                  href: efi-rng-protocol.md
+                  items:
+                    - name: EFI_RNG_PROTOCOL.GetInfo
+                      href: efi-rng-protocol-getinfo.md
+                    - name: EFI_RNG_PROTOCOL.GetRNG
+                      href: efi-rng-protocol-getrng.md
+                    - name: EFI_RNG_ALGORITHM_LIST
+                      href: efi-rng-algorithm-list.md
+            - name: UEFI USB 関数プロトコル
+              href: uefi-usb-function-protocol.md
+              items:
+                - name: EFI_USBFN_IO_PROTOCOL.AbortTransfer
+                  href: efi-usbfn-io-protocolaborttransfer.md
+                - name: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
+                  href: efi-usbfn-io-protocolallocatetransferbuffer.md
+                - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpoints
+                  href: efi-usbfn-io-protocolconfigureenableendpoints.md
+                - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpointsEx
+                  href: efi-usbfn-io-protocol-configureenableendpointsex.md
+                - name: EFI_USBFN_IO_PROTOCOL.DetectPort
+                  href: efi-usbfn-io-protocoldetectport.md
+                - name: EFI_USBFN_IO_PROTOCOL.EventHandler
+                  href: efi-usbfn-io-protocoleventhandler.md
+                - name: EFI_USBFN_IO_PROTOCOL.FreeTransferBuffer
+                  href: efi-usbfn-io-protocolfreetransferbuffer.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetDeviceInfo
+                  href: efi-usbfn-io-protocolgetdeviceinfo.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetEndpointMaxPacketSize
+                  href: efi-usbfn-io-protocolgetendpointmaxpacketsize.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetEndpointPolicy
+                  href: efi-usbfn-io-protocolgetendpointpolicy.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetEndpointStallState
+                  href: efi-usbfn-io-protocolgetendpointstallstate.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetMaxTransferSize
+                  href: efi-usbfn-io-protocolgetmaxtransfersize.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetVendorIdProductId
+                  href: efi-usbfn-io-protocolgetvendoridproductid.md
+                - name: EFI_USBFN_IO_PROTOCOL.SetEndpointPolicy
+                  href: efi-usbfn-io-protocolsetendpointpolicy.md
+                - name: EFI_USBFN_IO_PROTOCOL.SetEndpointStallState
+                  href: efi-usbfn-io-protocolsetendpointstallstate.md
+                - name: EFI_USBFN_IO_PROTOCOL.StartController
+                  href: efi-usbfn-io-protocolstartcontroller.md
+                - name: EFI_USBFN_IO_PROTOCOL.StopController
+                  href: efi-usbfn-io-protocolstopcontroller.md
+                - name: EFI_USBFN_IO_PROTOCOL.Transfer
+                  href: efi-usbfn-io-protocoltransfer.md
+                - name: EFI_USB_BOS_DESCRIPTOR
+                  href: efi-usb-bos-descriptor.md
+                - name: EFI_USB_BUS_SPEED
+                  href: efi-usb-bus-speed.md
+                - name: EFI_USB_CONFIG_INFO
+                  href: efi-usb-config-info.md
+                - name: EFI_USB_DEVICE_INFO
+                  href: efi-usb-device-info.md
+                - name: EFI_USB_ENDPOINT_TYPE
+                  href: efi-usb-endpoint-type.md
+                - name: EFI_USB_INTERFACE_INFO
+                  href: efi-usb-interface-info.md
+                - name: EFI_USB_SUPERSPEED_CONFIG_INFO
+                  href: efi-usb-superspeed-config-info.md
+                - name: EFI_USB_SUPERSPEED_DEVICE_INFO
+                  href: efi-usb-superspeed-device-info.md
+                - name: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
+                  href: efi-usb-superspeed-endpoint-companion-descriptor.md
+                - name: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
+                  href: efi-usb-superspeed-endpoint-descriptor.md
+                - name: EFI_USB_SUPERSPEED_INTERFACE_INFO
+                  href: efi-usb-superspeed-interface-info.md
+                - name: EFI_USBFN_DEVICE_INFO_ID
+                  href: efi-usbfn-device-info-id.md
+                - name: EFI_USBFN_ENDPOINT_DIRECTION
+                  href: efi-usbfn-endpoint-direction.md
+                - name: EFI_USBFN_MESSAGE
+                  href: efi-usbfn-message.md
+                - name: EFI_USBFN_MESSAGE_PAYLOAD
+                  href: efi-usbfn-message-payload.md
+                - name: EFI_USBFN_POLICY_TYPE
+                  href: efi-usbfn-policy-type.md
+                - name: EFI_USBFN_PORT_TYPE
+                  href: efi-usbfn-port-type.md
+                - name: EFI_USBFN_TRANSFER_RESULT
+                  href: efi-usbfn-transfer-result.md
+                - name: EFI_USBFN_TRANSFER_STATUS
+                  href: efi-usbfn-transfer-status.md
+                - name: UEFI のシーケンス図
+                  href: uefi-sequence-diagram.md
+            - name: UEFI のシンプルな I/O プロトコル
+              href: uefi-simple-io-protocol.md
+              items:
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
+                  href: efi-simple-winphone-io-protocolinitialize.md
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
+                  href: efi-simple-winphone-io-protocolread.md
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Write
+                  href: efi-simple-winphone-io-protocolwrite.md
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
+                  href: efi-simple-winphone-io-protocolgetmaxpacketsize.md
+            - name: UEFI 署名チェック プロトコル
+              href: uefi-check-signature-protocol.md
+              items:
+                - name: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
+                  href: efi-checksig-protocolefichecksignatureandhash.md
+            - name: UEFI バッテリ充電プロトコル
+              href: uefi-battery-charging-protocol.md
+              items:
+                - name: EFI_BATTERY_CHARGING_PROTOCOL
+                  href: efi-battery-charging-protocol.md
+                - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
+                  href: efi-battery-charging-protocolgetbatteryinformation.md
+                - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus
+                  href: efi-battery-charging-protocolgetbatterystatus.md
+                - name: EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery
+                  href: efi-battery-charging-protocolchargebattery.md
+                - name: EFI_BATTERY_CHARGING_STATUS
+                  href: efi-battery-charging-status.md
+                - name: EFI_BATTERY_CHARGING_COMPLETION_TOKEN
+                  href: efi-battery-charging-completion-token.md
+            - name: UEFI の電力状態表示プロトコル
+              href: uefi-display-power-state-protocol.md
+              items:
+                - name: EFI_DISPLAY_POWER_PROTOCOL
+                  href: efi-display-power-protocol.md
+                - name: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
+                  href: efi-display-power-protocolgetdisplaypowerstate.md
+                - name: EFI_DISPLAY_POWER_PROTOCOL.SetDisplayPowerState
+                  href: efi-display-power-protocolsetdisplaypowerstate.md
+                - name: EFI_DISPLAY_POWER_STATE
+                  href: efi-display-power-state.md
+        - name: Windows UEFI ファームウェア更新プラットフォーム
+          href: windows-uefi-firmware-update-platform.md
+          items:
+            - name: ファームウェア ドライバー パッケージを介したシステムとデバイスのファームウェアの更新
+              href: system-and-device-firmware-updates-via-a-firmware-driver-package.md
+              items:
+                - name: ESRT テーブルへのデータの挿入
+                  href: populating-the-esrt-table.md
+                - name: さまざまな地理的な地域向けにファームウェアをカスタマイズする
+                  href: customizing-firmware-for-different-geographic-regions.md
+                - name: ファームウェア更新プログラム パッケージの作成
+                  href: authoring-a-firmware-update-package.md
+                - name: 更新プログラム パッケージの認定と署名
+                  href: certifying-and-signing-the-update-package.md
+                - name: 更新プログラムのインストール
+                  href: installing-the-update.md
+            - name: UEFI ファームウェア更新プログラムのサポートの実装
+              href: implementing-support-for-uefi-firmware-updates.md
+              items:
+                - name: ESRT テーブルの定義
+                  href: esrt-table-definition.md
+                - name: プラグ アンド プレイ デバイス
+                  href: plug-and-play-device.md
+                - name: 更新プログラム ドライバー パッケージの作成
+                  href: authoring-an-update-driver-package.md
+                - name: 更新プログラムの処理
+                  href: processing-updates.md
+                - name: UEFI 環境からのデバイス I/O
+                  href: device-i-o-from-the-uefi-environment.md
+                - name: シームレスな危機防止と回復
+                  href: seamless-crisis-prevention-and-recovery.md
+                - name: ファームウェア更新の状態
+                  href: firmware-update-status.md
+            - name: UEFI ファームウェア更新プログラム用のユーザー エクスペリエンス
+              href: user-experience-for-uefi-firmware-updates.md
+              items:
+                - name: ブート画面のコンポーネント
+                  href: boot-screen-components.md
+    - name: Windows 10 Mobile 用のブート環境でのバッテリー充電
+      href: battery-charging-in-the-boot-environment.md
       items:
-      - name: ファームウェア ドライバー パッケージを介したシステムとデバイスのファームウェアの更新
-        href: system-and-device-firmware-updates-via-a-firmware-driver-package.md
-        items:
-        - name: ESRT テーブルへのデータの挿入
-          href: populating-the-esrt-table.md
-        - name: さまざまな地理的な地域向けにファームウェアをカスタマイズする
-          href: customizing-firmware-for-different-geographic-regions.md
-        - name: ファームウェア更新プログラム パッケージの作成
-          href: authoring-a-firmware-update-package.md
-        - name: 更新プログラム パッケージの認定と署名
-          href: certifying-and-signing-the-update-package.md
-        - name: 更新プログラムのインストール
-          href: installing-the-update.md
-      - name: UEFI ファームウェア更新プログラムのサポートの実装
-        href: implementing-support-for-uefi-firmware-updates.md
-        items:
-        - name: ESRT テーブルの定義
-          href: esrt-table-definition.md
-        - name: プラグ アンド プレイ デバイス
-          href: plug-and-play-device.md
-        - name: 更新プログラム ドライバー パッケージの作成
-          href: authoring-an-update-driver-package.md
-        - name: 更新プログラムの処理
-          href: processing-updates.md
-        - name: UEFI 環境からのデバイス I/O
-          href: device-i-o-from-the-uefi-environment.md
-        - name: シームレスな危機防止と回復
-          href: seamless-crisis-prevention-and-recovery.md
-        - name: ファームウェア更新の状態
-          href: firmware-update-status.md
-      - name: UEFI ファームウェア更新プログラム用のユーザー エクスペリエンス
-        href: user-experience-for-uefi-firmware-updates.md
-        items:
-        - name: ブート画面のコンポーネント
-          href: boot-screen-components.md
-  - name: Windows 10 Mobile 用のブート環境でのバッテリー充電
-    href: battery-charging-in-the-boot-environment.md
-    items:
-    - name: Microsoft が提供する UEFI バッテリ充電アプリケーションのアーキテクチャ
-      href: architecture-of-the-uefi-battery-charging-application.md
+        - name: Microsoft が提供する UEFI バッテリ充電アプリケーションのアーキテクチャ
+          href: architecture-of-the-uefi-battery-charging-application.md
 - name: SoC プラットフォーム向け Windows ACPI 設計ガイド
   href: windows-acpi-design-guide-for-soc-platforms.md
   items:
-  - name: ACPI 5.0 に対する Windows のサポートの概要
-    href: overview-of-windows-support-for-acpi-5-0.md
-    items:
-    - name: Windows での ACPI サポートの概要
-      href: summary-of-acpi-support-in-windows.md
-    - name: SoC ベースのプラットフォームのハードウェア要件
-      href: hardware-requirements-for-soc-based-platforms.md
-    - name: ACPI 名前空間の階層
-      href: acpi-namespace-hierarchy.md
-    - name: Microsoft ASL コンパイラ
-      href: microsoft-asl-compiler.md
-  - name: ACPI システム記述テーブル
-    href: acpi-system-description-tables.md
-    items:
-    - name: AcpiGenFx を使用して ACPI テーブルを生成する
-      href: generate-acpi-tables-by-using-acpigenfx.md
-  - name: デバイス管理用の名前空間オブジェクト
-    href: device-management-namespace-objects.md
-  - name: 汎用入出力 (GPIO)
-    href: general-purpose-i-o--gpio-.md
-    items:
-    - name: GPIO コントローラーの要件チェック リスト
-      href: gpio-controller-requirements-checklist.md
-  - name: SPB (Simple Peripheral Bus)
-    href: simple-peripheral-bus--spb-.md
-  - name: デバイス電源管理
-    href: device-power-management.md
-    items:
-    - name: D3cold のファームウェア要件
-      href: firmware-requirements-for-d3cold.md
-  - name: ACPI で定義されたデバイス
-    href: acpi-defined-devices.md
-  - name: その他の ACPI 名前空間オブジェクト
-    href: other-acpi-namespace-objects.md
-  - name: ACPI デバイス固有のメソッド
-    href: acpi-device-specific-methods.md
-    items:
-    - name: GPIO コント ローラーのデバイス固有のメソッド (_DSM)
-      href: gpio-controller-device-specific-method---dsm-.md
-    - name: バッテリーのデバイス固有のメソッド
-      href: battery-device-specific-method.md
-    - name: Microsoft 熱拡張機能に対するデバイス固有のメソッド
-      href: device-specific-method-for-microsoft-thermal-extensions.md
-    - name: USB のデバイス固有のメソッド (_DSM)
-      href: usb-device-specific-method---dsm-.md
-    - name: HIDI2C のデバイス固有のメソッド (_DSM)
-      href: hidi2c-device-specific-method---dsm-.md
-    - name: Windows ボタン配列のデバイス固有のメソッド (_DSM)
-      href: windows-button-array-device-specific-method---dsm-.md
+    - name: ACPI 5.0 に対する Windows のサポートの概要
+      href: overview-of-windows-support-for-acpi-5-0.md
+      items:
+        - name: Windows での ACPI サポートの概要
+          href: summary-of-acpi-support-in-windows.md
+        - name: SoC ベースのプラットフォームのハードウェア要件
+          href: hardware-requirements-for-soc-based-platforms.md
+        - name: ACPI 名前空間の階層
+          href: acpi-namespace-hierarchy.md
+        - name: Microsoft ASL コンパイラ
+          href: microsoft-asl-compiler.md
+    - name: ACPI システム記述テーブル
+      href: acpi-system-description-tables.md
+      items:
+        - name: AcpiGenFx を使用して ACPI テーブルを生成する
+          href: generate-acpi-tables-by-using-acpigenfx.md
+    - name: デバイス管理用の名前空間オブジェクト
+      href: device-management-namespace-objects.md
+    - name: 汎用入出力 (GPIO)
+      href: general-purpose-i-o--gpio-.md
+      items:
+        - name: GPIO コントローラーの要件チェック リスト
+          href: gpio-controller-requirements-checklist.md
+    - name: SPB (Simple Peripheral Bus)
+      href: simple-peripheral-bus--spb-.md
+    - name: デバイス電源管理
+      href: device-power-management.md
+      items:
+        - name: D3cold のファームウェア要件
+          href: firmware-requirements-for-d3cold.md
+    - name: ACPI で定義されたデバイス
+      href: acpi-defined-devices.md
+    - name: その他の ACPI 名前空間オブジェクト
+      href: other-acpi-namespace-objects.md
+    - name: ACPI デバイス固有のメソッド
+      href: acpi-device-specific-methods.md
+      items:
+        - name: GPIO コント ローラーのデバイス固有のメソッド (_DSM)
+          href: gpio-controller-device-specific-method---dsm-.md
+        - name: バッテリーのデバイス固有のメソッド
+          href: battery-device-specific-method.md
+        - name: Microsoft 熱拡張機能に対するデバイス固有のメソッド
+          href: device-specific-method-for-microsoft-thermal-extensions.md
+        - name: USB のデバイス固有のメソッド (_DSM)
+          href: usb-device-specific-method---dsm-.md
+        - name: HIDI2C のデバイス固有のメソッド (_DSM)
+          href: hidi2c-device-specific-method---dsm-.md
+        - name: Windows ボタン配列のデバイス固有のメソッド (_DSM)
+          href: windows-button-array-device-specific-method---dsm-.md
 - name: セキュリティ
   href: security-overview.md
   items:
-  - name: セキュリティで保護されたブートとデバイス暗号化の概要
-    href: secure-boot-and-device-encryption-overview.md
-  - name: セキュリティで保護された MOR 実装
-    href: device-guard-requirements.md
+    - name: セキュリティで保護されたブートとデバイス暗号化の概要
+      href: secure-boot-and-device-encryption-overview.md
+    - name: セキュリティで保護された MOR 実装
+      href: device-guard-requirements.md
 - name: パーティションのレイアウト
   href: partition-layout.md
-ms.openlocfilehash: 513d2025326ca8a6fbea090a296a07b5e964b84f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465648"

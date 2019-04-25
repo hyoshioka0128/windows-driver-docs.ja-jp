@@ -1,158 +1,151 @@
-items:
 - name: NFC の設計ガイド
   href: index.md
   items:
-  - name: NFC デバイス ドライバーの新機能
-    href: what-s-new-in-nfc-device-drivers.md
-  - name: NFC のアーキテクチャ
-    href: nfc-architecture.md
-  - name: Wi-Fi Direct ペアリングの実装
-    href: wi-fi-direct-paring-implementation.md
-  - name: 近距離近接通信設計ガイド
-    href: nfp-design-guide.md
-    items:
-    - name: Tap and Do
-      href: tap-and-do.md
+    - name: NFC デバイス ドライバーの新機能
+      href: what-s-new-in-nfc-device-drivers.md
+    - name: NFC のアーキテクチャ
+      href: nfc-architecture.md
+    - name: Wi-Fi Direct ペアリングの実装
+      href: wi-fi-direct-paring-implementation.md
+    - name: 近距離近接通信設計ガイド
+      href: nfp-design-guide.md
       items:
-      - name: Tap and Do のシナリオ
-        href: tap-and-do-scenarios.md
-      - name: Tap and Do の使用事例
-        href: tap-and-do-use-cases.md
-    - name: NFP プロバイダー モデル
-      href: nfp-provider-model.md
+        - name: Tap and Do
+          href: tap-and-do.md
+          items:
+            - name: Tap and Do のシナリオ
+              href: tap-and-do-scenarios.md
+            - name: Tap and Do の使用事例
+              href: tap-and-do-use-cases.md
+        - name: NFP プロバイダー モデル
+          href: nfp-provider-model.md
+          items:
+            - name: 物理センサー モデル
+              href: physical-sensor-model.md
+            - name: ［メッセージの種類］
+              href: message-type.md
+            - name: メッセージの公開
+              href: publishing-messages.md
+            - name: メッセージのサブスクライブ
+              href: subscribing-for-messages.md
+            - name: メッセージの転送
+              href: message-transmission.md
+            - name: 近接通信デバイスのプレゼンス イベント
+              href: proximity-device-presence-events.md
+            - name: NFP によるワイヤレス周辺デバイスのペアリング
+              href: nfp-facilitated-peripheral-wireless-device-pairing.md
+        - name: NFP デバイス ドライバーの要件
+          href: nfp-device-driver-requirements.md
+          items:
+            - name: デバイス識別子
+              href: device-identifiers.md
+            - name: デバイス インターフェイス
+              href: device-interface.md
+            - name: メッセージの公開
+              href: publication.md
+            - name: メッセージのサブスクリプション
+              href: message-subscriptions.md
+            - name: プレゼンス イベントのサブスクライブ
+              href: subscribing-for-presence-events.md
+            - name: 有効化
+              href: enabling.md
+            - name: 無効化
+              href: disabling.md
+            - name: 最大メッセージ サイズ
+              href: maximum-message-size.md
+            - name: 転送速度
+              href: transmission-rate.md
+            - name: タグの書き込み
+              href: tag-writing.md
+            - name: 予約済みの IOCTL コード
+              href: reserved-ioctl-codes.md
+            - name: 電源管理
+              href: power-management.md
+            - name: プロトコルのサポート
+              href: protocol-support.md
+              items:
+                - name: NDEF プロトコル
+                  href: ndef-protocol.md
+                - name: 'Pairing:Bluetooth プロトコル'
+                  href: pairing-bluetooth-protocol.md
+                - name: WindowsUri プロトコル
+                  href: windowsuri-protocol.md
+                - name: WindowsMime プロトコル
+                  href: windowsmime-protocol.md
+                - name: WriteableTag プロトコル
+                  href: writeabletag-protocol.md
+                - name: Windows プロトコル
+                  href: windows-protocol.md
+                - name: ピアツーピア
+                  href: peer-to-peer.md
+    - name: スマート カード設計ガイド
+      href: design-guide-smart-card.md
       items:
-      - name: 物理センサー モデル
-        href: physical-sensor-model.md
-      - name: ［メッセージの種類］
-        href: message-type.md
-      - name: メッセージの公開
-        href: publishing-messages.md
-      - name: メッセージのサブスクライブ
-        href: subscribing-for-messages.md
-      - name: メッセージの転送
-        href: message-transmission.md
-      - name: 近接通信デバイスのプレゼンス イベント
-        href: proximity-device-presence-events.md
-      - name: NFP によるワイヤレス周辺デバイスのペアリング
-        href: nfp-facilitated-peripheral-wireless-device-pairing.md
-    - name: NFP デバイス ドライバーの要件
-      href: nfp-device-driver-requirements.md
+        - name: 機能のフロー
+          href: functional-flow.md
+        - name: シーケンスの例
+          href: example-sequence.md
+        - name: 記憶域カードの要件
+          href: storage-card-requirements.md
+        - name: サポートされているスマート カードの属性
+          href: smart-card-attributes.md
+        - name: PC/SC インターフェイス
+          href: pc-sc-interface.md
+    - name: 電源管理
+      href: nfc-power-management.md
       items:
-      - name: デバイス識別子
-        href: device-identifiers.md
-      - name: デバイス インターフェイス
-        href: device-interface.md
-      - name: メッセージの公開
-        href: publication.md
-      - name: メッセージのサブスクリプション
-        href: message-subscriptions.md
-      - name: プレゼンス イベントのサブスクライブ
-        href: subscribing-for-presence-events.md
-      - name: 有効化
-        href: enabling.md
-      - name: 無効化
-        href: disabling.md
-      - name: 最大メッセージ サイズ
-        href: maximum-message-size.md
-      - name: 転送速度
-        href: transmission-rate.md
-      - name: タグの書き込み
-        href: tag-writing.md
-      - name: 予約済みの IOCTL コード
-        href: reserved-ioctl-codes.md
-      - name: 電源管理
-        href: power-management.md
-      - name: プロトコルのサポート
-        href: protocol-support.md
-        items:
-        - name: NDEF プロトコル
-          href: ndef-protocol.md
-        - name: Pairing:Bluetooth プロトコル
-          href: pairing-bluetooth-protocol.md
-        - name: WindowsUri プロトコル
-          href: windowsuri-protocol.md
-        - name: WindowsMime プロトコル
-          href: windowsmime-protocol.md
-        - name: WriteableTag プロトコル
-          href: writeabletag-protocol.md
-        - name: Windows プロトコル
-          href: windows-protocol.md
-        - name: ピアツーピア
-          href: peer-to-peer.md
-  - name: スマート カード設計ガイド
-    href: design-guide-smart-card.md
-    items:
-    - name: 機能のフロー
-      href: functional-flow.md
-    - name: シーケンスの例
-      href: example-sequence.md
-    - name: 記憶域カードの要件
-      href: storage-card-requirements.md
-    - name: サポートされているスマート カードの属性
-      href: smart-card-attributes.md
-    - name: PC/SC インターフェイス
-      href: pc-sc-interface.md
-  - name: 電源管理
-    href: nfc-power-management.md
-    items:
-    - name: ポーリング
-      href: polling.md
-  - name: NFC クラスの拡張 (CX) 設計ガイド
-    href: nfc-class-extension-.md
-    items:
-    - name: 用語集
-      href: glossary.md
-    - name: NFC CX クイック スタート ガイド
-      href: nfc-class-extension-quickstart.md
-    - name: Architecture
-      href: architecture.md
-    - name: NFC スタックのアーキテクチャ
-      href: nfc-stack-architecture.md
-    - name: ドライバーの読み込み順序
-      href: driver-load-order.md
-    - name: クラスの拡張インターフェイス
-      href: nfc-class-extension-interface.md
-    - name: クラスの拡張ステート マシン
-      href: nfc-class-extension-state-machine.md
-    - name: 拡張性モデル
-      href: extensibility-model.md
+        - name: ポーリング
+          href: polling.md
+    - name: NFC クラスの拡張 (CX) 設計ガイド
+      href: nfc-class-extension-.md
       items:
-      - name: シーケンス処理
-        href: sequence-handling.md
-        items:
-        - name: シーケンス
-          href: sequences.md
-        - name: シーケンスのフラグ
-          href: sequence-flags.md
-        - name: 初期化シーケンス
-          href: initialization-sequence.md
-        - name: NFCEE 検出シーケンス
-          href: nfcee-discovery-sequence.md
-        - name: RF 検出シーケンス
-          href: rf-discovery-sequence.md
-        - name: RF データ交換シーケンスにタグを付ける
-          href: tag-rf-data-exchange-sequence.md
-        - name: RF データ交換シーケンスの P2P
-          href: p2p-rf-data-exchange-sequence.md
-        - name: カード エミュレーション RF シーケンス
-          href: card-emulation-rf-sequence.md
-      - name: NCI のパケットの処理
-        href: packet-handling.md
-    - name: 構成可能の有無
-      href: configurability.md
-    - name: エラー処理
-      href: error-handling.md
-    - name: 電源の状態
-      href: power-states.md
-    - name: NFC クライアント ドライバーの電源の管理要件
-      href: nfc-client-driver-power-management-requirements.md
-    - name: ログ記録
-      href: logging.md
-    - name: 永続化されたデータ
-      href: persisted-data.md
-ms.openlocfilehash: a5a18bfde280012c516fbe455e3f60345006100b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465742"
+        - name: 用語集
+          href: glossary.md
+        - name: NFC CX クイック スタート ガイド
+          href: nfc-class-extension-quickstart.md
+        - name: Architecture
+          href: architecture.md
+        - name: NFC スタックのアーキテクチャ
+          href: nfc-stack-architecture.md
+        - name: ドライバーの読み込み順序
+          href: driver-load-order.md
+        - name: クラスの拡張インターフェイス
+          href: nfc-class-extension-interface.md
+        - name: クラスの拡張ステート マシン
+          href: nfc-class-extension-state-machine.md
+        - name: 拡張性モデル
+          href: extensibility-model.md
+          items:
+            - name: シーケンス処理
+              href: sequence-handling.md
+              items:
+                - name: シーケンス
+                  href: sequences.md
+                - name: シーケンスのフラグ
+                  href: sequence-flags.md
+                - name: 初期化シーケンス
+                  href: initialization-sequence.md
+                - name: NFCEE 検出シーケンス
+                  href: nfcee-discovery-sequence.md
+                - name: RF 検出シーケンス
+                  href: rf-discovery-sequence.md
+                - name: RF データ交換シーケンスにタグを付ける
+                  href: tag-rf-data-exchange-sequence.md
+                - name: RF データ交換シーケンスの P2P
+                  href: p2p-rf-data-exchange-sequence.md
+                - name: カード エミュレーション RF シーケンス
+                  href: card-emulation-rf-sequence.md
+            - name: NCI のパケットの処理
+              href: packet-handling.md
+        - name: 構成可能の有無
+          href: configurability.md
+        - name: エラー処理
+          href: error-handling.md
+        - name: 電源の状態
+          href: power-states.md
+        - name: NFC クライアント ドライバーの電源の管理要件
+          href: nfc-client-driver-power-management-requirements.md
+        - name: ログ記録
+          href: logging.md
+        - name: 永続化されたデータ
+          href: persisted-data.md

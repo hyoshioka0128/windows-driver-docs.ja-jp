@@ -1,122 +1,115 @@
-items:
 - name: Test Authoring and Execution Framework (TAEF)
   href: index.md
   items:
-  - name: 作業の開始
-    href: getting-started.md
-  - name: Te.Service
-    href: te-service.md
-  - name: テストを作成する
-    href: authoring-tests.md
-    items:
-    - name: C++ でテストを作成する
-      href: authoring-tests-in-c--.md
-    - name: C# でテストを作成する
-      href: authoring-tests-in-c-.md
-    - name: スクリプト言語でテストを作成する
-      href: authoring-tests-in-scripting-languages.md
-    - name: AXE でテストを作成する
-      href: authoring-tests-in-axe.md
-    - name: フレームワークを検証する
-      href: verify.md
-    - name: TAEF を最大限に活用する
-      href: making-the-most-of-taef.md
-    - name: 標準的なテスト メタデータ
-      href: standard-test-metadata.md
-    - name: 条件付きのメタデータ
-      href: conditional-metadata.md
-    - name: 再起動します
-      href: reboot.md
-    - name: ランタイム パラメーター
-      href: runtime-parameters.md
-    - name: スレッド モデル
-      href: threading-models.md
-    - name: 実行グループ
-      href: execution-groups.md
-    - name: アセンブリの構成ファイル
-      href: assembly-config-files.md
-    - name: デバイスのサポート
-      href: device-support.md
-    - name: WexLogger
-      href: wexlogger.md
-    - name: DeploymentItem メタデータ
-      href: deploymentitem-metadata.md
-  - name: データ ドリブン テスト
-    href: data-driven-testing.md
-    items:
-    - name: スクリプト言語でのデータ ドリブン テスト
-      href: data-driven-testing-in-scripting-languages.md
-    - name: テーブルのデータ ソース
-      href: table-data-source.md
-    - name: テーブルのデータ ソースにおけるパラメーターの型
-      href: parameter-types-in-table-data-sources.md
-    - name: シンプルなデータ ドリブン テストの例
-      href: simple-data-driven-test-example.md
-    - name: メタデータ オーバーライド データ ドリブン テストの例
-      href: metadata-overriding-data-driven-test-example.md
-    - name: アレイ サポート データ ドリブン テストの例
-      href: array-support-data-driven-test-example.md
-    - name: データ ドリブン クラス
-      href: data-driven-class.md
-    - name: PICT データ ソース
-      href: pict-data-source.md
-    - name: WMI データ ソース
-      href: wmi-data-source.md
-    - name: ライトウェイト データ ドリブン テスト
-      href: light-weight-data-driven-testing.md
-    - name: データ ドリブン テストを実行する
-      href: executing-data-driven-tests.md
-    - name: 複数のデータソース
-      href: multiple-datasources.md
-  - name: テストを実行する
-    href: executing-tests.md
-    items:
-    - name: テストの実行の概要
-      href: overview-of-executing-tests.md
-    - name: Te.exe のコマンド オプション
-      href: te-exe-command-line-parameters.md
-    - name: TAEF の終了コード
-      href: exit-codes-for-taef.md
-    - name: 選択
-      href: selection.md
-    - name: テストの分離
-      href: test-isolation.md
-    - name: テスト モード
-      href: test-modes.md
-    - name: Parallel
-      href: parallel.md
-    - name: RunAs
-      href: runas.md
+    - name: 作業の開始
+      href: getting-started.md
+    - name: Te.Service
+      href: te-service.md
+    - name: テストを作成する
+      href: authoring-tests.md
       items:
-      - name: RunAs Elevated
-        href: runas-elevated.md
-      - name: RunAs LowIL
-        href: runas-lowil.md
-      - name: RunAs Restricted
-        href: runas-restricted.md
-      - name: RunAs System
-        href: runas-system.md
-    - name: RunFixtureAs
-      href: runfixtureas.md
-    - name: クロス マシンの実行
-      href: cross-machine-execution.md
-    - name: クロス アーキテクチャの実行
-      href: cross-architecture-execution.md
-    - name: TAEF タイムアウト
-      href: taef-timeouts.md
-    - name: ユーザー モードのモニター
-      href: user-mode-monitor.md
-    - name: スタックとダンプのログ
-      href: stack-and-dump-logging.md
-    - name: TAEF テストをデバッグする
-      href: debugging-taef-tests.md
-    - name: ライセンス認証コンテキスト
-      href: activation-context.md
-    - name: TAEF のエラー コード
-      href: taef-error-codes.md
-ms.openlocfilehash: b9d7b830e899347c3b12331d44147384d46d452d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465738"
+        - name: C++ でテストを作成する
+          href: authoring-tests-in-c--.md
+        - name: 'C# でテストを作成する'
+          href: authoring-tests-in-c-.md
+        - name: スクリプト言語でテストを作成する
+          href: authoring-tests-in-scripting-languages.md
+        - name: AXE でテストを作成する
+          href: authoring-tests-in-axe.md
+        - name: フレームワークを検証する
+          href: verify.md
+        - name: TAEF を最大限に活用する
+          href: making-the-most-of-taef.md
+        - name: 標準的なテスト メタデータ
+          href: standard-test-metadata.md
+        - name: 条件付きのメタデータ
+          href: conditional-metadata.md
+        - name: 再起動します
+          href: reboot.md
+        - name: ランタイム パラメーター
+          href: runtime-parameters.md
+        - name: スレッド モデル
+          href: threading-models.md
+        - name: 実行グループ
+          href: execution-groups.md
+        - name: アセンブリの構成ファイル
+          href: assembly-config-files.md
+        - name: デバイスのサポート
+          href: device-support.md
+        - name: WexLogger
+          href: wexlogger.md
+        - name: DeploymentItem メタデータ
+          href: deploymentitem-metadata.md
+    - name: データ ドリブン テスト
+      href: data-driven-testing.md
+      items:
+        - name: スクリプト言語でのデータ ドリブン テスト
+          href: data-driven-testing-in-scripting-languages.md
+        - name: テーブルのデータ ソース
+          href: table-data-source.md
+        - name: テーブルのデータ ソースにおけるパラメーターの型
+          href: parameter-types-in-table-data-sources.md
+        - name: シンプルなデータ ドリブン テストの例
+          href: simple-data-driven-test-example.md
+        - name: メタデータ オーバーライド データ ドリブン テストの例
+          href: metadata-overriding-data-driven-test-example.md
+        - name: アレイ サポート データ ドリブン テストの例
+          href: array-support-data-driven-test-example.md
+        - name: データ ドリブン クラス
+          href: data-driven-class.md
+        - name: PICT データ ソース
+          href: pict-data-source.md
+        - name: WMI データ ソース
+          href: wmi-data-source.md
+        - name: ライトウェイト データ ドリブン テスト
+          href: light-weight-data-driven-testing.md
+        - name: データ ドリブン テストを実行する
+          href: executing-data-driven-tests.md
+        - name: 複数のデータソース
+          href: multiple-datasources.md
+    - name: テストを実行する
+      href: executing-tests.md
+      items:
+        - name: テストの実行の概要
+          href: overview-of-executing-tests.md
+        - name: Te.exe のコマンド オプション
+          href: te-exe-command-line-parameters.md
+        - name: TAEF の終了コード
+          href: exit-codes-for-taef.md
+        - name: 選択
+          href: selection.md
+        - name: テストの分離
+          href: test-isolation.md
+        - name: テスト モード
+          href: test-modes.md
+        - name: Parallel
+          href: parallel.md
+        - name: RunAs
+          href: runas.md
+          items:
+            - name: RunAs Elevated
+              href: runas-elevated.md
+            - name: RunAs LowIL
+              href: runas-lowil.md
+            - name: RunAs Restricted
+              href: runas-restricted.md
+            - name: RunAs System
+              href: runas-system.md
+        - name: RunFixtureAs
+          href: runfixtureas.md
+        - name: クロス マシンの実行
+          href: cross-machine-execution.md
+        - name: クロス アーキテクチャの実行
+          href: cross-architecture-execution.md
+        - name: TAEF タイムアウト
+          href: taef-timeouts.md
+        - name: ユーザー モードのモニター
+          href: user-mode-monitor.md
+        - name: スタックとダンプのログ
+          href: stack-and-dump-logging.md
+        - name: TAEF テストをデバッグする
+          href: debugging-taef-tests.md
+        - name: ライセンス認証コンテキスト
+          href: activation-context.md
+        - name: TAEF のエラー コード
+          href: taef-error-codes.md

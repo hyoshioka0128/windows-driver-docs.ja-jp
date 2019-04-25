@@ -1,49 +1,42 @@
-items:
 - name: 汎用 I/O (GPIO) ドライバーの設計ガイド
   href: index.md
   items:
-  - name: GPIO ドライバー サポートの概要
-    href: gpio-driver-support-overview.md
-  - name: GpioClx I/O と割り込みインターフェイス
-    href: gpioclx-i-o-and-interrupt-interfaces.md
-  - name: GPIO ベースのハードウェア リソース
-    href: gpio-based-hardware-resources.md
-    items:
-    - name: KMDF ドライバーの GPIO I/O ピンへの接続
-      href: connecting-a-kmdf-driver-to-gpio-i-o-pins.md
-  - name: GPIO 割り込み
-    href: gpio-interrupts.md
-    items:
-    - name: プライマリ割り込みとセカンダリ割り込み
-      href: primary-and-secondary-interrupts.md
-    - name: GPIO ベースの割り込みリソース
-      href: gpio-based-interrupt-resources.md
-    - name: パッシブレベルの ISR
-      href: passive-level-isrs.md
-    - name: 割り込み関連のコールバック
-      href: interrupt-related-callbacks.md
-    - name: GPIO コントローラー ドライバーの割り込み同期
-      href: interrupt-synchronization-for-gpio-controller-drivers.md
-    - name: 共有 GPIO 割り込みの有効化と無効化
-      href: enabling-and-disabling-shared-gpio-interrupts.md
-    - name: GPIO 割り込みマスク
-      href: gpio-interrupt-masks.md
-  - name: GpioClx DDI
-    href: gpioclx-ddi.md
-    items:
-    - name: GpioClx DDI のドライバー サポート メソッド
-      href: driver-support-methods-in-the-gpioclx-ddi.md
-    - name: 省略可能および必須の GPIO コールバック関数
-      href: optional-and-required-gpio-callback-functions.md
-    - name: GPIO デバイス コンテキスト
-      href: gpio-device-contexts.md
-    - name: GPIO コントローラーのピンのバンクへのパーティション分割
-      href: partitioning-a-gpio-controller-into-banks-of-pins.md
-    - name: GPIO コントローラー ドライバーの実装上の問題
-      href: implementation-issues-for-gpio-controller-drivers.md
-ms.openlocfilehash: ee82bc9483f0b52ef115e4d91ddc2c23dbb63721
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465711"
+    - name: GPIO ドライバー サポートの概要
+      href: gpio-driver-support-overview.md
+    - name: GpioClx I/O と割り込みインターフェイス
+      href: gpioclx-i-o-and-interrupt-interfaces.md
+    - name: GPIO ベースのハードウェア リソース
+      href: gpio-based-hardware-resources.md
+      items:
+        - name: KMDF ドライバーの GPIO I/O ピンへの接続
+          href: connecting-a-kmdf-driver-to-gpio-i-o-pins.md
+    - name: GPIO 割り込み
+      href: gpio-interrupts.md
+      items:
+        - name: プライマリ割り込みとセカンダリ割り込み
+          href: primary-and-secondary-interrupts.md
+        - name: GPIO ベースの割り込みリソース
+          href: gpio-based-interrupt-resources.md
+        - name: パッシブレベルの ISR
+          href: passive-level-isrs.md
+        - name: 割り込み関連のコールバック
+          href: interrupt-related-callbacks.md
+        - name: GPIO コントローラー ドライバーの割り込み同期
+          href: interrupt-synchronization-for-gpio-controller-drivers.md
+        - name: 共有 GPIO 割り込みの有効化と無効化
+          href: enabling-and-disabling-shared-gpio-interrupts.md
+        - name: GPIO 割り込みマスク
+          href: gpio-interrupt-masks.md
+    - name: GpioClx DDI
+      href: gpioclx-ddi.md
+      items:
+        - name: GpioClx DDI のドライバー サポート メソッド
+          href: driver-support-methods-in-the-gpioclx-ddi.md
+        - name: 省略可能および必須の GPIO コールバック関数
+          href: optional-and-required-gpio-callback-functions.md
+        - name: GPIO デバイス コンテキスト
+          href: gpio-device-contexts.md
+        - name: GPIO コントローラーのピンのバンクへのパーティション分割
+          href: partitioning-a-gpio-controller-into-banks-of-pins.md
+        - name: GPIO コントローラー ドライバーの実装上の問題
+          href: implementation-issues-for-gpio-controller-drivers.md
