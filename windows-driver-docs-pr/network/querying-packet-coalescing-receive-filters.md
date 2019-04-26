@@ -5,11 +5,11 @@ ms.assetid: D0B41718-37B9-4FB4-BA10-20765F836214
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a91050334c16928f908ed9b1139bf03c95e7af8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339990"
 ---
 # <a name="querying-packet-coalescing-receive-filters"></a>パケット結合受信フィルターのクエリ
 
@@ -19,7 +19,7 @@ ms.locfileid: "56578912"
 
 上位のドライバーとアプリケーションのクエリは、次の手順に従って、ミニポート ドライバーにダウンロードされているフィルターが表示されるパケットを結合できます。
 
--   OID メソッド要求を発行して、ミニポート ドライバーでの受信フィルターの一覧の列挙を要求[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 詳細については、[ミニポート ドライバーでの受信フィルターを列挙する](#enumerating)を参照してください。
+-   OID メソッド要求を発行して、ミニポート ドライバーでの受信フィルターの一覧の列挙を要求[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 詳細については、次を参照してください。[ミニポート ドライバーでの受信フィルターを列挙する](#enumerating)します。
 
 -   受信フィルター ミニポート ドライバーのテスト条件のパラメーターを要求の OID メソッド要求を発行して[OID\_受信\_フィルター\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569792)します。 詳細については、次を参照してください[ミニポート ドライバーでの受信フィルターのクエリを実行する。](#querying)
 

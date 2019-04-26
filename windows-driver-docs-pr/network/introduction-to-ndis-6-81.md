@@ -5,17 +5,17 @@ ms.assetid: 5B41C6D6-96FE-4B3D-94ED-46DF164FB202
 ms.date: 05/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a0ee434442739e401b862ee96a876650ee4186b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349467"
 ---
 # <a name="introduction-to-ndis-681"></a>NDIS 6.81 の概要
 
 このトピックでは、Network Driver Interface Specification (NDIS) 6.81 を示し、その主要な設計の追加機能を説明します。 NDIS 6.81 は、Windows 10、バージョン 1803 および Windows Server 2016 に含まれる以降です。
 
-NDIS 6.81 は、NDIS 6.80 にマイナー バージョン更新です。 NDIS 6.81 する NDIS 6.x ドライバーの移植の詳細については、[NDIS 6.81 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-81.md)を参照してください。
+NDIS 6.81 は、NDIS 6.80 にマイナー バージョン更新です。 NDIS 6.81 する NDIS 6.x ドライバーの移植の詳細については、次を参照してください。 [NDIS 6.81 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-81.md)します。
 
 ## <a name="feature-updates"></a>機能更新プログラム
 

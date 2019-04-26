@@ -1,6 +1,6 @@
 ---
-title: AYUV アルファ ブレンドの読み込み画面
-description: AYUV アルファ ブレンドの読み込み画面
+title: AYUV アルファ ブレンド サーフェスの読み込み
+description: AYUV アルファ ブレンド サーフェスの読み込み
 ms.assetid: 93b60622-47af-485c-a1db-9a05783ff698
 keywords:
 - データ読み込みの WDK DirectX VA をアルファ ブレンド
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27309f40e7e9c1a9f178714e0ef257862ca5bf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347600"
 ---
-# <a name="loading-an-ayuv-alpha-blending-surface"></a>AYUV アルファ ブレンドの読み込み画面
+# <a name="loading-an-ayuv-alpha-blending-surface"></a>AYUV アルファ ブレンド サーフェスの読み込み
 
 
 ## <span id="ddk_loading_an_ayuv_alpha_blending_surface_gg"></span><span id="DDK_LOADING_AN_AYUV_ALPHA_BLENDING_SURFACE_GG"></span>

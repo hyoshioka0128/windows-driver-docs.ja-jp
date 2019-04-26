@@ -1,17 +1,17 @@
 ---
 title: サンプル INF ターゲットのオペレーティング システムのセクションをモデル化します。
-description: サンプルの INF セクションをモデル化のいずれかまたはオペレーティング システムをターゲットの詳細
+description: 1 つ以上のターゲット オペレーティング システム用のサンプルの INF モデル セクション
 ms.assetid: bc1d9a5f-573f-4773-8716-8ac53478d0ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a11f39ddd9ea284eae37c9bcf6971a2b42b77a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348702"
 ---
-# <a name="sample-inf-models-sections-for-one-or-more-target-operating-systems"></a>サンプルの INF セクションをモデル化のいずれかまたはオペレーティング システムをターゲットの詳細
+# <a name="sample-inf-models-sections-for-one-or-more-target-operating-systems"></a>1 つ以上のターゲット オペレーティング システム用のサンプルの INF モデル セクション
 
 
 このトピックでは、さまざまなオペレーティング システムとプラットフォームでドライバー パッケージをインストールするサンプルの INF ファイルを示します。 この INF ファイルには、次の INF セクションとディレクティブがあります。

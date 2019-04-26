@@ -1,6 +1,6 @@
 ---
-title: 複数のモニターとビデオの存在するネットワーク
-description: 複数のモニターとビデオの存在するネットワーク
+title: 複数モニターとビデオ表現ネットワーク
+description: 複数モニターとビデオ表現ネットワーク
 ms.assetid: 27687fa4-1266-4341-b68a-83374c24ef73
 keywords:
 - ドライバー モデル WDK Windows Vista では、ビデオの存在するネットワークの表示します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7c038055485f92afc25894a62cc3b7a51b887fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345603"
 ---
-# <a name="multiple-monitors-and-video-present-networks"></a>複数のモニターとビデオの存在するネットワーク
+# <a name="multiple-monitors-and-video-present-networks"></a>複数モニターとビデオ表現ネットワーク
 
 
 このセクションでは、ビデオの存在 (VidPN) のネットワーク マネージャー、ディスプレイのミニポート ドライバー、およびポートのディスプレイ ドライバーがディスプレイ アダプターに接続されているディスプレイ デバイスのコレクションを管理する共同作業する方法について説明します。

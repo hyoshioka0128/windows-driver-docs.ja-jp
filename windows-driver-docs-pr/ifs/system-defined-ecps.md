@@ -1,17 +1,17 @@
 ---
-title: システム定義の ECPs
-description: システム定義の ECPs
+title: システム定義の ECP
+description: システム定義の ECP
 ms.assetid: 6acb4be4-a7aa-431d-b2d8-3ef6d41cb4ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dc84b3904b4b97aa42a79b96c4e4b9808847751
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344350"
 ---
-# <a name="system-defined-ecps"></a>システム定義の ECPs
+# <a name="system-defined-ecps"></a>システム定義の ECP
 
 
 オペレーティング システムで次の ECPs の定義、 *Ntifs.h*ヘッダー ファイル。 これらのシステム定義の ECPs に指定した追加情報をアタッチする、 [ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)ファイルを操作します。 ファイル システム スタックの要素の追加情報について ECPs を照会できます。
@@ -23,7 +23,7 @@ ms.locfileid: "56560537"
 <span id="GUID_ECP_OPLOCK_KEY"></span><span id="guid_ecp_oplock_key"></span>GUID\_ECP\_OPLOCK\_キー  
 識別する GUID、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551003)構造体であり、oplock のキーをファイルを開く要求にアタッチするために使用します。 Oplock キーには、アプリケーションのアプリケーションの oplock を損なうことがなく、同じストリームへの複数のハンドルを開くことができます。
 
-各 oplock と oplock のキーの詳細については、[Oplock セマンティクス概要](overview.md)を参照してください。
+各 oplock と oplock のキーの詳細については、次を参照してください。 [Oplock セマンティクス概要](overview.md)します。
 
 <span id="GUID_ECP_NETWORK_OPEN_CONTEXT"></span><span id="guid_ecp_network_open_context"></span>GUID\_ECP\_ネットワーク\_オープン\_コンテキスト  
 識別する GUID、 [**ネットワーク\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff550896)構造体し、ネットワーク リダイレクターの余分な情報をアタッチするために使用します。 この GUID も識別、 [**ネットワーク\_オープン\_ECP\_コンテキスト\_V0** ](https://msdn.microsoft.com/library/windows/hardware/ff550899)ドライバーが Windows 7 および以降のバージョンで動作するための構造Windows および Windows Vista に存在するファイルをネットワーク ECP コンテキストを解釈する必要があります。

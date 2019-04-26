@@ -5,11 +5,11 @@ ms.assetid: 017481f1-8021-4fd5-ab8e-f09f6006e616
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: afc0458e931dc164dd9869b5c6863433cbef8032
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346200"
 ---
 # <a name="obtaining-hid-reports-by-kernel-mode-drivers"></a>カーネル モード ドライバーでの HID レポートを取得します。
 
@@ -22,7 +22,7 @@ ms.locfileid: "56531138"
 
 ### <a href="" id="using-irp-ml-read-requests"></a>IRP を使用して\_MJ\_読み取り要求
 
-Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、デバイスへのすべての読み取り要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、読み取り要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法についての概要については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)と[Irp の再利用](https://msdn.microsoft.com/library/windows/hardware/ff561107)を参照してください。
+Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、デバイスへのすべての読み取り要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、読み取り要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法についての概要については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)と[Irp の再利用](https://msdn.microsoft.com/library/windows/hardware/ff561107)します。
 
 ドライバーが IRP、IRP の再利用かどうか[ **IoCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンは、状態の状態で要求を完了する必要があります\_詳細\_処理\_必須 (および notIRP を解放)。 ドライバーは IRP が不要になった必要がある場合、完了して IRP を呼び出すことによって解放[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)と[ **IoFreeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549113)します。 たとえば、ドライバー可能性があります通常完了し、解放で IRP その[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン、以降のデバイスを削除します。
 
@@ -59,7 +59,7 @@ HID コレクションで、開いているファイルを表すファイル オ
 <a href="" id="ioctl-hid-get-feature"></a>[**IOCTL\_HID\_取得\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541100)  
 HID コレクションから機能のレポートを返します。
 
-ドライバーは、特定のレポートの戻り値を要求できます。 これらの I/O 要求を使用して特定のレポートを取得するには、ドライバー最初出力レポート バッファーを割り当てたバッファーを 0 に初期化し、特定のレポート ID に、バッファー内の最初のバイトの設定 詳細については、[HID レポートの解釈](interpreting-hid-reports.md)を参照してください。
+ドライバーは、特定のレポートの戻り値を要求できます。 これらの I/O 要求を使用して特定のレポートを取得するには、ドライバー最初出力レポート バッファーを割り当てたバッファーを 0 に初期化し、特定のレポート ID に、バッファー内の最初のバイトの設定 詳細については、次を参照してください。 [HID レポートの解釈](interpreting-hid-reports.md)します。
 
  
 

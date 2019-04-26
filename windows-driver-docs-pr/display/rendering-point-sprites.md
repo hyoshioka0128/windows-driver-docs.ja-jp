@@ -1,6 +1,6 @@
 ---
-title: ポイントのスプライトをレンダリング
-description: ポイントのスプライトをレンダリング
+title: ポイント スプライトのレンダリング
+description: ポイント スプライトのレンダリング
 ms.assetid: f2bdfd93-5b79-4f48-87b6-a76847892f5e
 keywords:
 - Windows 2000 の WDK の表示、ポイントのスプライトの DirectX 8.0 リリース ノートします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9430c504da0b70079b6f613fa2222d1a58ca7a38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350239"
 ---
-# <a name="rendering-point-sprites"></a>ポイントのスプライトをレンダリング
+# <a name="rendering-point-sprites"></a>ポイント スプライトのレンダリング
 
 
 ## <span id="ddk_rendering_point_sprites_gg"></span><span id="DDK_RENDERING_POINT_SPRITES_GG"></span>

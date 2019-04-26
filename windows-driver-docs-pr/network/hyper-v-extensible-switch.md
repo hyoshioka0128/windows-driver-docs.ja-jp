@@ -5,11 +5,11 @@ ms.assetid: FB6AA190-0DB1-441E-9BC6-2FD3A6D88114
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0779c9b8bba1086c9a51e9600434e98bb3ffb43a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349490"
 ---
 # <a name="hyper-v-extensible-switch"></a>Hyper-V 拡張可能スイッチ
 

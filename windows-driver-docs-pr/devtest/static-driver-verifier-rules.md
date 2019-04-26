@@ -1,17 +1,17 @@
 ---
-title: DDI 準拠の規則
-description: DDI 準拠の規則
+title: DDI コンプライアンス規則
+description: DDI コンプライアンス規則
 ms.assetid: f020fff9-f880-4aa8-b422-5452728d2fdd
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d1261b3e37bef67b11d9b3844abed2b3c2e1cdef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345756"
 ---
-# <a name="ddi-compliance-rules"></a>DDI 準拠の規則
+# <a name="ddi-compliance-rules"></a>DDI コンプライアンス規則
 
 
 このセクションでは、一覧表示し、Windows Driver Model (WDM)、カーネル モード ドライバー フレームワーク (KMDF)、オーディオ (PortCls) AVStream (KS)、NDIS、および Storport ドライバーの検証に使用できる Windows デバイス ドライバー インターフェイス (DDI) コンプライアンス規則について説明します。 DDI 準拠規則は、ドライバーとオペレーティング システムのカーネル インターフェイスの適切な相互作用するための要件を定義します。

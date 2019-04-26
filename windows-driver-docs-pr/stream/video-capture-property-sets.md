@@ -1,6 +1,6 @@
 ---
-title: ビデオ キャプチャ プロパティ セット
-description: ビデオ キャプチャ プロパティ セット
+title: ビデオ キャプチャのプロパティ セット
+description: ビデオ キャプチャのプロパティ セット
 ms.assetid: 23f61735-ae04-4143-8bd5-b713a2ab0e90
 keywords:
 - WDK AVStream ビデオ キャプチャは、プロパティを設定します。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e3f0fecbe54d01fbb80b6aa6a60e632ee47e4cbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344978"
 ---
-# <a name="video-capture-property-sets"></a>ビデオ キャプチャ プロパティ セット
+# <a name="video-capture-property-sets"></a>ビデオ キャプチャのプロパティ セット
 
 
 ビデオ キャプチャ プロパティ セットのグループに関連するデバイスとストリームのプロパティを指定します。 可能であれば、ミニドライバーがで定義されている標準的なプロパティ セットを実装する必要があります、 *ksmedia.h*ヘッダー ファイルなど、 [KSPROPSETID\_Pin](kspropsetid-pin.md)と[PROPSETID\_アロケーター\_コントロール](propsetid-allocator-control.md)します。 ミニドライバーは、標準的なプロパティのいずれかは、同じ機能を提供します。 場合、新しいプロパティのセットを定義することを避ける必要があります。
@@ -31,7 +31,7 @@ ms.locfileid: "56527690"
 
 ミニドライバーは AVStream インターフェイスを使用している場合、プロパティおよびプロパティ セットをサポートする方法の詳細については、次を参照してください、 [AVStream フィルターを中心としたシミュレートされたキャプチャ ドライバー (Avssamp)](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/avssamp)と[AVStream のシミュレート。ハードウェア サンプル ドライバー (AVSHwS)](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/avshws)ミニドライバーで GitHub の Windows ドライバーのサンプル リポジトリのサンプルです。
 
-ミニドライバーは、Stream クラス インターフェイスを使用している場合、プロパティおよびプロパティ セットをサポートする方法の詳細については、[プロパティの設定をサポートしている](supporting-property-sets.md)を参照してください。
+ミニドライバーは、Stream クラス インターフェイスを使用している場合、プロパティおよびプロパティ セットをサポートする方法の詳細については、次を参照してください。[プロパティの設定をサポートしている](supporting-property-sets.md)します。
 
 ### <a name="hardware-and-stream-property-sets"></a>ハードウェアと Stream プロパティ セット
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af7f445d32f21ab001fe945f86b5d80aa822b0c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349630"
 ---
 # <a name="hshostsendusermessage-function"></a>HS\_ホスト\_送信\_ユーザー\_メッセージ関数
 
@@ -48,7 +48,7 @@ ms.locfileid: "56578725"
 
 この関数は、ホストと通信するようにプラグインによって呼び出され、値は返されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ホット スポットのプラグインでは、文字列テーブルに、メッセージを格納します。 プラグインは、文字列 Id を適切な文字列の読み込みを有効にする、ホット スポットのオフロード サービスに渡す必要があります。

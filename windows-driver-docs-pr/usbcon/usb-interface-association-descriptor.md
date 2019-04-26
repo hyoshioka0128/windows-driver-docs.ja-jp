@@ -1,16 +1,16 @@
 ---
-Description: USB interface association descriptor (IAD) allows the device to group interfaces that belong to a function.
-title: USB インターフェイスの関連付けの記述子
+Description: USB インターフェイスの関連付け記述子 (IAD) では、関数に属しているグループのインターフェイスにデバイスを許可します。
+title: USB インターフェイス関連付け記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1972b9b5a47db4d38c6feb0032bcfa8dab087af8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350723"
 ---
-# <a name="usb-interface-association-descriptor"></a>USB インターフェイスの関連付けの記述子
+# <a name="usb-interface-association-descriptor"></a>USB インターフェイス関連付け記述子
 
 
 USB インターフェイスの関連付け記述子 (IAD) では、関数に属しているグループのインターフェイスにデバイスを許可します。 このトピックでは、クライアント ドライバーを調べる方法、デバイスに、IAD 関数が含まれているかどうかについて説明します。

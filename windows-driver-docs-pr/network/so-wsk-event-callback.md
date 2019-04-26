@@ -7,11 +7,11 @@ keywords:
 - SO_WSK_EVENT_CALLBACK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cb01680ab134812a027a8b3ddd0a01bd3c4ce4b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349342"
 ---
 # <a name="sowskeventcallback"></a>したがって\_WSK\_イベント\_コールバック
 
@@ -45,7 +45,7 @@ WSK アプリケーションの呼び出しを有効にまたはソケットで�
 <td><p>SO_WSK_EVENT_CALLBACK</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -171,7 +171,7 @@ WSK アプリケーションことができます、特定の有効なイベン�
 
 接続指向のイベントのコールバック関数をリッスン ソケットで有効にした後は、リッスン ソケットで無効にできません。 場合、 *WskAcceptEvent*そのリッスン ソケットで有効にしていた最初の接続指向のイベントのコールバック関数は引き続き、イベントのコールバック関数が無効になり、リッスン ソケットの再有効化によって受け入れられるすべての接続指向のソケットに適用される、 *WskAcceptEvent*イベント コールバック関数。
 
-有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、[の有効化と無効にするとイベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff548851)を参照してください。
+有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff548851)します。
 
 <a name="requirements"></a>要件
 ------------

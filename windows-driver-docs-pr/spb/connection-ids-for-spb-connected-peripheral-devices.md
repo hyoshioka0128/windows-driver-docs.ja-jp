@@ -1,17 +1,17 @@
 ---
-title: Sp B に接続されている周辺機器の接続 Id
+title: SPB 接続周辺機器の接続 ID
 description: ドライバーが単純な周辺機器バス (sp B) 上の周辺機器に I/O 要求を送信する前に、ドライバーは、デバイスへの論理接続を開く必要があります。
 ms.assetid: 234B5858-5930-40AD-BE4C-4A774A809D10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b66cbbb6cab93960503be1e800503c2a4810cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348072"
 ---
-# <a name="connection-ids-for-spb-connected-peripheral-devices"></a>Sp B に接続されている周辺機器の接続 Id
+# <a name="connection-ids-for-spb-connected-peripheral-devices"></a>SPB 接続周辺機器の接続 ID
 
 
 ドライバーは、周辺機器の I/O 要求送信する前に、[シンプルな周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPB) ドライバーは、デバイスへの論理接続を開く必要があります。 この接続を介して、ドライバーは、送信、読み取りと書き込みをして、デバイスからデータを転送する要求。 さらに、ドライバー、I/O コントロール (IOCTL) 要求を送信できます SPB 固有の操作を実行するデバイス。
@@ -29,7 +29,7 @@ Sp B に接続されている周辺機器デバイスのドライバーでは、
 
 そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例は、次を参照してください。、 [SpbAccelerometer](https://go.microsoft.com/fwlink/p/?LinkId=618052)ドライバー サンプル。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例は、次を参照してください。、 [SpbAccelerometer](https://go.microsoft.com/fwlink/p/?LinkId=618052)ドライバー サンプル。
 
 ドライバーをリソースとして受信する接続 ID は、64 ビットの整数ですが、ドライバーを使用して、この ID をリソース ハブからの接続パラメーターを取得するために使用するデバイスのパス名に組み込む必要があります。 デバイス パス名は、ドライバーの呼び出しを作成する、**リソース\_ハブ\_作成\_パス\_FROM\_ID** Reshub.h ヘッダー ファイルで宣言されている関数。
 

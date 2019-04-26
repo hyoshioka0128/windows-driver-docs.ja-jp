@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_ENUMERATE_DEVICE_SERVICES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ebec1b11f3bc654868108acd9e30f0872ccb2f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343334"
 ---
 # <a name="oidwwanenumeratedeviceservices"></a>OID\_WWAN\_ENUMERATE\_デバイス\_サービス
 

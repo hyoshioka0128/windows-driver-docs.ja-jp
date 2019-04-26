@@ -5,18 +5,18 @@ ms.assetid: 604DF74E-AEF1-43DC-81B2-566A94B1CE8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80f04f419ca1fbf2c6e8f1938264b6c5a6fa4cd0
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357247"
 ---
 # <a name="javascript-api-reference"></a>JavaScript API リファレンス
 
 
 製造元は、印刷デバイスを USB 接続経由で双方向のサポートを提供する Bidi XML ファイルと組み合わせて、ここでは、表示、JavaScript API を使用できます。
 
-印刷デバイスとの USB の双方向通信の詳細については、[USB Bidi エクステンダー](usb-bidi-extender.md)を参照してください。
+印刷デバイスとの USB の双方向通信の詳細については、次を参照してください。 [USB Bidi エクステンダー](usb-bidi-extender.md)します。
 
 ## <a name="bidi-over-usb"></a>USB 経由での Bidi
 

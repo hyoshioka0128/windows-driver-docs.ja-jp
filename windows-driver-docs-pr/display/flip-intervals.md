@@ -1,6 +1,6 @@
 ---
-title: 間隔を反転します。
-description: 間隔を反転します。
+title: 反転の間隔
+description: 反転の間隔
 ms.assetid: 9372d63c-e2a7-4f70-a4f0-c50df9183f75
 keywords:
 - 図面ページ WDK DirectDraw、間隔を反転します。
@@ -26,13 +26,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae28d4406f78466634d321f5c0ee240596f0cefd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347572"
 ---
-# <a name="flip-intervals"></a>間隔を反転します。
+# <a name="flip-intervals"></a>反転の間隔
 
 
 ## <span id="ddk_flip_intervals_gg"></span><span id="DDK_FLIP_INTERVALS_GG"></span>

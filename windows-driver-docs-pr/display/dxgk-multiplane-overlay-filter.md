@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c242686c494b3d62813b0a6a19ffdfceea760f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350306"
 ---
 # <a name="dxgkmultiplaneoverlayfilter-structure"></a>\_DXGK\_MULTIPLANE\_オーバーレイ\_フィルターの構造
 
@@ -42,16 +42,16 @@ typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
 } DXGK_MULTIPLANE_OVERLAY_FILTER;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **filterType**
 
-**有効になっています。**
+**有効**
 
 **値**
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

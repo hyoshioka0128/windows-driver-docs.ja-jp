@@ -1,6 +1,6 @@
 ---
-title: 新しい DP2 Stream 描画トークン
-description: 新しい DP2 Stream 描画トークン
+title: 新しい DP2 ストリーム描画トークン
+description: 新しい DP2 ストリーム描画トークン
 ms.assetid: 09f3e5a4-60ed-4649-a30b-de4b320a54de
 keywords:
 - DirectX 8.0 リリース ノートには、Windows 2000 の WDK 表示 DP2 描画トークン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79321adf0c18f6dafbc7fc7a252502bfe9fe32bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345541"
 ---
-# <a name="new-dp2-stream-drawing-tokens"></a>新しい DP2 Stream 描画トークン
+# <a name="new-dp2-stream-drawing-tokens"></a>新しい DP2 ストリーム描画トークン
 
 
 ## <span id="ddk_new_dp2_stream_drawing_tokens_gg"></span><span id="DDK_NEW_DP2_STREAM_DRAWING_TOKENS_GG"></span>

@@ -1,19 +1,19 @@
 ---
-title: 基本的な AML デバッグ
-description: 基本的な AML デバッグ
+title: 基本的な AML のデバッグ
+description: 基本的な AML のデバッグ
 ms.assetid: 2897abd4-7fef-4f9e-a4d8-10302d555fe4
 keywords:
 - AMLI デバッガー、基本的な使用
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 50b7c7a420aec9633ef368da3bf363b3aeca96eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357044"
 ---
-# <a name="basic-aml-debugging"></a>基本的な AML デバッグ
+# <a name="basic-aml-debugging"></a>基本的な AML のデバッグ
 
 
 ## <span id="ddk_basic_aml_debugging_dbg"></span><span id="DDK_BASIC_AML_DEBUGGING_DBG"></span>
@@ -59,7 +59,7 @@ AML デバッグを実行するときは、2 つの異なる種類のデバッ�
 
 -   AMLI デバッガーは、実行、ステップ、AML コードをトレースすることができます。 使用して、**実行**、 **p**、および**t**これらのアクションを実行するコマンド。
 
-拡張機能とコマンドの一覧については、[AMLI デバッガーの拡張機能を使用して](using-amli-debugger-extensions.md)と[AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)を参照してください。
+拡張機能とコマンドの一覧については、次を参照してください。 [AMLI デバッガーの拡張機能を使用して](using-amli-debugger-extensions.md)と[AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)します。
 
 ## <a name="see-also"></a>参照
 

@@ -1,17 +1,17 @@
 ---
-title: Direct3D のバージョン 10 DDI との通信を初期化しています
-description: Direct3D のバージョン 10 DDI との通信を初期化しています
+title: Direct3D バージョン 10 DDI との通信の初期化
+description: Direct3D バージョン 10 DDI との通信の初期化
 ms.assetid: dc3cc26f-7295-46d6-9bd7-aae7027ea92c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66d42768b98d18dec92194fa33598889819dc172
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350272"
 ---
-# <a name="initializing-communication-with-the-direct3d-version-10-ddi"></a>Direct3D のバージョン 10 DDI との通信を初期化しています
+# <a name="initializing-communication-with-the-direct3d-version-10-ddi"></a>Direct3D バージョン 10 DDI との通信の初期化
 
 
 ユーザー モードのディスプレイ ドライバー DLL のバージョンとの通信を初期化するために 10 DDI、Direct3D のバージョン 10 ランタイムでは、DLL がまだ読み込まれていない場合、DLL が最初に読み込みます。 Direct3D ランタイムが次に、ユーザー モードのディスプレイ ドライバーを呼び出す[ **OpenAdapter10** ](https://msdn.microsoft.com/library/windows/hardware/ff568602)グラフィックス アダプターのインスタンスを開く、DLL のエクスポート テーブルを使用して関数。 *OpenAdapter10*関数は DLL の Direct3D のバージョン 10 関数をエクスポートします。

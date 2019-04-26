@@ -7,13 +7,13 @@ keywords:
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f4a193fbd6a2d17964f3d7478c92eb789b116e45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344156"
 ---
-# <a name="example-9-detecting-a-pool-memory-leak"></a>例 9:プールのメモリ リークを検出します。
+# <a name="example-9-detecting-a-pool-memory-leak"></a>例 9:プール メモリ リークを検出する
 
 
 ## <span id="ddk_example_9___detecting_a_pool_memory_leak_dtools"></span><span id="DDK_EXAMPLE_9___DETECTING_A_POOL_MEMORY_LEAK_DTOOLS"></span>
@@ -70,7 +70,7 @@ PoolMon では、ページおよび非ページ メモリ プール内のバイ�
 
 5.  レジストリの変更を有効にする Windows を再起動します。
 
-**注**  追加シンボルを使用して (**&gt;&gt;**) PoolMon 出力ログ ファイルにリダイレクトします。 後で、プール サイズの傾向のログ ファイルを確認することができます。 次に、例を示します。
+**注**  追加シンボルを使用して (**&gt;&gt;**) PoolMon 出力ログ ファイルにリダイレクトします。 後で、プール サイズの傾向のログ ファイルを確認することができます。 例:
 
  
 

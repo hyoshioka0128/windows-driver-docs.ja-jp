@@ -5,11 +5,11 @@ ms.assetid: 15D21B5A-2320-4C22-9957-ECC0EB46B02E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 68d4792fdc244f1d5ca998792b785a05fbb89d8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357644"
 ---
 # <a name="span-idstoragearmnvdimm-nfunctionindex20spanarm-nvdimm-n-function-index-20"></a><span id="storage.arm_nvdimm-n__function_index_20_"></span>Arm の Nvdimm-n (関数インデックス 20)
 

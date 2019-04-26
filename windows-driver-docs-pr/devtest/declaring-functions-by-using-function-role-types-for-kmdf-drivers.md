@@ -1,20 +1,20 @@
 ---
-title: KMDF ドライバーのロールの種類の関数を使用して関数を宣言します。
-description: KMDF ドライバーのロールの種類の関数を使用して関数を宣言します。
+title: KMDF ドライバーの関数役割型を使用した関数の宣言
+description: KMDF ドライバーの関数役割型を使用した関数の宣言
 ms.assetid: 73a408ba-0219-4fde-8dad-ca330e4e67c3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9024cd3b17c4b2aa5f43326268468183d248c0b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341168"
 ---
-# <a name="declaring-functions-by-using-function-role-types-for-kmdf-drivers"></a>KMDF ドライバーのロールの種類の関数を使用して関数を宣言します。
+# <a name="declaring-functions-by-using-function-role-types-for-kmdf-drivers"></a>KMDF ドライバーの関数役割型を使用した関数の宣言
 
 
-KMDF ドライバーを分析する SDV を有効にするには、kmdf 役割タイプの関数の宣言を使用して、関数を宣言する必要があります。 関数のロールの種類は、Wdf.h と Wdf.h に含まれているその他の KMDF ヘッダー ファイル内に定義されます。 関数のロールの種類とその対応するイベントのコールバック関数の一覧で、[静的ドライバー検証ツール KMDF 関数宣言](static-driver-verifier-kmdf-function-declarations.md)を参照してください。
+KMDF ドライバーを分析する SDV を有効にするには、kmdf 役割タイプの関数の宣言を使用して、関数を宣言する必要があります。 関数のロールの種類は、Wdf.h と Wdf.h に含まれているその他の KMDF ヘッダー ファイル内に定義されます。 関数のロールの種類とその対応するイベントのコールバック関数の一覧で、次を参照してください。[静的ドライバー検証ツール KMDF 関数宣言](static-driver-verifier-kmdf-function-declarations.md)します。
 
 KMDF ドライバー内の各イベントのコールバック関数は、対応するロールの種類を指定して宣言する必要があります。
 

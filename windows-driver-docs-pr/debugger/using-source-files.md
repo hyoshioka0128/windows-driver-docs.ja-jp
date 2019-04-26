@@ -1,24 +1,24 @@
 ---
-title: ソース ファイルを使用します。
-description: ソース ファイルを使用します。
+title: ソース ファイルの使用
+description: ソース ファイルの使用
 ms.assetid: c6dfcb37-140f-43d8-aa15-14f0317b5e19
 keywords:
 - エンジンの API のデバッガー、ソース
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b59dcc530b3d4c9708c7539b049b654e2a7aeaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353170"
 ---
-# <a name="using-source-files"></a>ソース ファイルを使用します。
+# <a name="using-source-files"></a>ソース ファイルの使用
 
 
 [デバッガー エンジン](introduction.md#debugger-engine)保持、*ソース パス*ディレクトリと現在のターゲットに関連付けられているソース コード ファイルが含まれている移行元サーバーの一覧します。 デバッガー エンジンには、これらのディレクトリとソース ファイルをソース サーバーを検索できます。 シンボル ファイルを利用して、デバッガー エンジンは、ターゲットのメモリ内の場所でソース ファイル内の行を照合できます。
 
-デバッガーでソース ファイルの使用の概要については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。 ソース パスの概要については、[ソース パス](source-path.md)を参照してください。 デバッガー エンジンからの移行元サーバーを使用しての概要については、[移行元サーバーを使用して](using-a-source-server.md)を参照してください。
+デバッガーでソース ファイルの使用の概要については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。 ソース パスの概要については、次を参照してください。[ソース パス](source-path.md)します。 デバッガー エンジンからの移行元サーバーを使用しての概要については、次を参照してください。[移行元サーバーを使用して](using-a-source-server.md)します。
 
 ### <a name="span-idsourcepathspanspan-idsourcepathspansource-path"></a><span id="source_path"></span><span id="SOURCE_PATH"></span>ソース パス
 

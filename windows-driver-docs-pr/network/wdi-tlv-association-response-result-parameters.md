@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ASSOCIATION_RESPONSE_RESULT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8278c7e46002e0501a1c14073e46233f619335a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342267"
 ---
 # <a name="wditlvassociationresponseresultparameters"></a>WDI\_TLV\_アソシエーション\_応答\_結果\_パラメーター
 
@@ -38,7 +38,7 @@ WDI\_TLV\_アソシエーション\_応答\_結果\_パラメーターは、ア�
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -74,7 +74,7 @@ WDI\_TLV\_アソシエーション\_応答\_結果\_パラメーターは、ア�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

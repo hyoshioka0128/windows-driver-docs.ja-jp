@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d9c5f9192828965fdc9995de0d021e58b9dc686
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343702"
 ---
 # <a name="compiling-a-drivers-mof-file"></a>ドライバーの MOF ファイルのコンパイル
 
@@ -42,7 +42,7 @@ WMI データとイベント ブロックを定義する MOF ファイルをコ�
 
 Mofcomp を使用する方法についての詳細についてに、コマンド プロンプト ウィンドウを開き**mofcomp/でしょうか。** します。
 
-Mofcomp の詳細については、[MofComp](https://go.microsoft.com/fwlink/p/?linkid=51316)と Windows SDK の他のトピックを参照してください。
+Mofcomp の詳細については、次を参照してください。 [MofComp](https://go.microsoft.com/fwlink/p/?linkid=51316)と Windows SDK の他のトピックです。
 
 ドライバーのバイナリ イメージのリソースとしてコンパイル済みの MOF ファイルを含めるドライバーのリソース スクリプト (RC) のファイルに次の行を追加します。
 
@@ -56,7 +56,7 @@ Mofcomp の詳細については、[MofComp](https://go.microsoft.com/fwlink/p/?
 
 処理の詳細については**IRP\_MN\_REGINFO**と**IRP\_MN\_REGINFO\_EX**要求、確認[WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
 
-WMI iibrary ルーチンを使用して WMI Irp の処理の詳細については、[WMI 要求の処理](handling-wmi-requests.md)を参照してください。
+WMI iibrary ルーチンを使用して WMI Irp の処理の詳細については、次を参照してください。 [WMI 要求の処理](handling-wmi-requests.md)します。
 
 定義して、実行可能ファイルにリソースを含める方法の詳細については、Microsoft Windows SDK を参照してください。
 

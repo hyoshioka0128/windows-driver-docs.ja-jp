@@ -6,11 +6,11 @@ ms.date: 08/23/2018
 keywords: -NDIS_STATUS_WWAN_LTE_ATTACH_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e3dcd88fa09cd7d99c5baf53f9bc5fa4366035b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346072"
 ---
 # <a name="ndisstatuswwanlteattachstatus"></a>NDIS_STATUS_WWAN_LTE_ATTACH_STATUS
 
@@ -20,7 +20,7 @@ ms.locfileid: "56537934"
 
 この状態の通知を使用して、 [ **NDIS_WWAN_LTE_ATTACH_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)構造体。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |

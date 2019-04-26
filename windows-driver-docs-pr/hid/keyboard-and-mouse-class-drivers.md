@@ -5,11 +5,11 @@ ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f29c31fae56bc7aac668d08854a40ee5bb55b5cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346252"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>キーボードとマウスのクラス ドライバー
 
@@ -149,7 +149,7 @@ I8042prt には、キーボード デバイスのパラメーターを設定し�
 
 [**IOCTL\_キーボード\_設定\_キーボード**](https://msdn.microsoft.com/library/windows/hardware/ff542070)
 
-キーボード デバイス コントロールのすべての要求に関する詳細については、[I8042prt キーボード内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539973)を参照してください。
+キーボード デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt キーボード内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539973)します。
 
 ## <a name="scan-code-mapper-for-keyboards"></a>コードのマッパーのキーボードをスキャンします。
 
@@ -257,7 +257,7 @@ I8042prt には、マウス デバイスに関する情報を照会は、次の�
 
 [**IOCTL\_マウス\_クエリ\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff542085)
 
-マウス デバイス コントロールのすべての要求に関する詳細については、[I8042prt マウス内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539982)を参照してください。
+マウス デバイス コントロールのすべての要求に関する詳細については、次を参照してください。 [I8042prt マウス内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff539982)します。
 
 ## <a name="registry-settings-associated-with-mouse-class-driver"></a>マウスのクラス ドライバーに関連するレジストリ設定
 

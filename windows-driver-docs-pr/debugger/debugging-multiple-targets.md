@@ -1,6 +1,6 @@
 ---
-title: 複数のターゲットのデバッグ
-description: 複数のターゲットのデバッグ
+title: 複数ターゲットのデバッグ
+description: 複数ターゲットのデバッグ
 ms.assetid: 93eb6b49-e7a0-4f30-ade8-94019a1adf43
 keywords:
 - 複数のターゲット
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 323836a8d1f357108793f224bc68473ef5eb1d14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350581"
 ---
-# <a name="debugging-multiple-targets"></a>複数のターゲットのデバッグ
+# <a name="debugging-multiple-targets"></a>複数ターゲットのデバッグ
 
 
 ## <span id="ddk_debugging_multiple_targets_dbg"></span><span id="DDK_DEBUGGING_MULTIPLE_TARGETS_DBG"></span>
@@ -73,7 +73,7 @@ ms.locfileid: "56548906"
 windbg -z c:\notepad.dmp -z c:\paint.dmp -z c:\calc.dmp
 ```
 
-詳細については、[WinDbg コマンド ライン オプション](windbg-command-line-options.md)を参照してください。 使用することもできます、 [.opendump](-opendump--open-dump-file-.md)と[ **g (移動)** ](g--go-.md)コマンドを追加で読み込むが、デバッガー内のファイルをダンプします。 
+詳細については、次を参照してください。 [WinDbg コマンド ライン オプション](windbg-command-line-options.md)します。 使用することもできます、 [.opendump](-opendump--open-dump-file-.md)と[ **g (移動)** ](g--go-.md)コマンドを追加で読み込むが、デバッガー内のファイルをダンプします。 
 
 使用して、 [| |(システム状態)](----system-status-.md)コマンドを 3 つすべてのシステムが存在することを確認します。
 

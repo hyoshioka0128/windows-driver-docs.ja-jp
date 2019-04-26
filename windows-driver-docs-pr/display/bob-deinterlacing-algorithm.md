@@ -1,6 +1,6 @@
 ---
-title: Bob デインター レース アルゴリズム
-description: Bob デインター レース アルゴリズム
+title: bob デインターレース アルゴリズム
+description: bob デインターレース アルゴリズム
 ms.assetid: ef3220bd-841d-4187-bc86-11b999eae2bd
 keywords:
 - bob WDK DirectX va なので、デインター レース アルゴリズム
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20cf5e3cbab2f267ddaf61e07947dd42ac0e078c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344635"
 ---
-# <a name="bob-deinterlacing-algorithm"></a>Bob デインター レース アルゴリズム
+# <a name="bob-deinterlacing-algorithm"></a>bob デインターレース アルゴリズム
 
 
 ## <span id="ddk_bob_deinterlacing_algorithm_gg"></span><span id="DDK_BOB_DEINTERLACING_ALGORITHM_GG"></span>

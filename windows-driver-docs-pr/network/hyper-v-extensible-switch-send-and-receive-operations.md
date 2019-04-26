@@ -5,11 +5,11 @@ ms.assetid: 3BC59344-CF8E-436F-A1C9-883707990C7D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d470df5e2414a6a20c3a73e6de954f0a4eb49bd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349502"
 ---
 # <a name="hyper-v-extensible-switch-send-and-receive-operations"></a>Hyper-V 拡張可能スイッチの送信および受信操作
 
@@ -63,7 +63,7 @@ ms.locfileid: "56574770"
 
 [HYPER-V 拡張可能なスイッチ ポートにパケットを転送](forwarding-packets-to-hyper-v-extensible-switch-ports.md)
 
-拡張可能スイッチのデータ パスの詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
+拡張可能スイッチのデータ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
 
  
 

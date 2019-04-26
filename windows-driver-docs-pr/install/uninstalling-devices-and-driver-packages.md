@@ -1,17 +1,17 @@
 ---
-title: デバイスとドライバー パッケージをアンインストールします。
-description: デバイスとドライバー パッケージをアンインストールします。
+title: デバイスとドライバー パッケージのアンインストール
+description: デバイスとドライバー パッケージのアンインストール
 ms.assetid: 4381ee42-778b-402d-b242-892ec921c28f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d35ac477ef83ca28c2a23b5b4adaeb90e54af305
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339459"
 ---
-# <a name="uninstalling-devices-and-driver-packages"></a>デバイスとドライバー パッケージをアンインストールします。
+# <a name="uninstalling-devices-and-driver-packages"></a>デバイスとドライバー パッケージのアンインストール
 
 
 デバイスがインストールされた後、デバイスをアンインストールする必要ありますまたは[ドライバー パッケージ](driver-packages.md)します。 たとえば、エンドユーザーが、関連付けられているデバイスに置き換えることや、ドライバー パッケージがドライバーが更新されたときにアンインストールする必要があります。

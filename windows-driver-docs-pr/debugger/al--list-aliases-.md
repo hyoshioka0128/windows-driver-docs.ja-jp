@@ -1,5 +1,5 @@
 ---
-title: al (エイリアスの一覧)
+title: al (エイリアスの一覧表示)
 description: Al コマンドは、現在定義されているすべてのユーザーというエイリアスの一覧を表示します。
 ms.assetid: 40e20edb-4545-4c5a-bb56-61e00b064efc
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cac3302ab00f1c88cbf4a3e35d054b942ec36b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355004"
 ---
-# <a name="al-list-aliases"></a>al (エイリアスの一覧)
+# <a name="al-list-aliases"></a>al (エイリアスの一覧表示)
 
 
 **Al**コマンドは、現在定義されているすべてのユーザーというエイリアスの一覧を表示します。
@@ -58,7 +58,7 @@ al
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-エイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
+エイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
 
 <a name="remarks"></a>注釈
 -------

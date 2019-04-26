@@ -1,6 +1,6 @@
 ---
-title: ホチキス止め Pscript のサポート
-description: ホチキス止め Pscript のサポート
+title: Pscript のホチキス止めサポート
+description: Pscript のホチキス止めサポート
 ms.assetid: 75fc11e1-5cd9-4e95-b062-989fe493fdb5
 keywords:
 - ミニドライバー WDK Pscript、ホチキス止め
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69b6de9fd7c58fd6e8a94b1eea42017fc783c626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359018"
 ---
-# <a name="pscript-support-for-stapling"></a>ホチキス止め Pscript のサポート
+# <a name="pscript-support-for-stapling"></a>Pscript のホチキス止めサポート
 
 
 
@@ -32,7 +32,7 @@ Microsoft Pscript ドライバーは、ホチキス止め機能で、次の標�
 
 -   \*StapleY
 
-これらの標準機能をホチキス止めについての詳細については、*PostScript プリンター説明ファイル形式の仕様*、バージョン 4.3、1996 年 2 月 9 を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
+これらの標準機能をホチキス止めについての詳細については、次を参照してください。 *PostScript プリンター説明ファイル形式の仕様*、バージョン 4.3、1996 年 2 月 9 です。 (このリソースできない場合がありますのいくつかの言語および国。)
 
 デバイスがホチキス止めをサポートしているかどうかを確認するのには、Pscript ドライバーは、次のロジックを使用します。
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75b6d550981ce1d1717984ebb3ded4ed6fe2a57a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351608"
 ---
 # <a name="srbsetdataformat"></a>SRB\_設定\_データ\_形式
 
@@ -39,7 +39,7 @@ ms.locfileid: "56536446"
 
 クラスのドライバーで新しいデータ形式を渡す、 **CommandData**.**OpenFormat**のメンバー、 *pSrb*ポインター。 (このポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造です)。
 
-データ形式の詳細については、、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)を参照してください。 参照してください[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+データ形式の詳細については、次を参照してください。、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)します。 参照してください[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
 
  
 

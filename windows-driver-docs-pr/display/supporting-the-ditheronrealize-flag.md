@@ -1,6 +1,6 @@
 ---
-title: DitherOnRealize フラグをサポートしています。
-description: DitherOnRealize フラグをサポートしています。
+title: DitherOnRealize フラグのサポート
+description: DitherOnRealize フラグのサポート
 ms.assetid: 2a480045-ed2e-4650-80a4-a374f0388591
 keywords:
 - ディスプレイ ドライバー WDK Windows 2000 では、ディザリング
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6afd4fcb4323168a553b285317e8409dba139a54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350112"
 ---
-# <a name="supporting-the-ditheronrealize-flag"></a>DitherOnRealize フラグをサポートしています。
+# <a name="supporting-the-ditheronrealize-flag"></a>DitherOnRealize フラグのサポート
 
 
 ## <span id="ddk_supporting_the_ditheronrealize_flag_gg"></span><span id="DDK_SUPPORTING_THE_DITHERONREALIZE_FLAG_GG"></span>

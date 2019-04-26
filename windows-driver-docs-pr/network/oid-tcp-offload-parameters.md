@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be54f424f8b0d421e046f6bf7a495cd8fe01cd61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351249"
 ---
 # <a name="oidtcpoffloadparameters"></a>OID_TCP_OFFLOAD_PARAMETERS
 

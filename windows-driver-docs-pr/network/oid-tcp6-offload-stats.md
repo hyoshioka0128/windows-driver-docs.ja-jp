@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdfbe05f0f44c14d02d0b6abcb44961e28777cc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350898"
 ---
 # <a name="oidtcp6offloadstats"></a>OID_TCP6_OFFLOAD_STATS
 

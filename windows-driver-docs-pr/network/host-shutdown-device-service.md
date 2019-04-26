@@ -1,17 +1,17 @@
 ---
-title: ホストのシャット ダウン デバイス サービス
+title: ホスト シャットダウン デバイス サービス
 description: このトピックではモバイル ブロード バンド インターフェイス モデル (MBIM) ためのガイドラインを提供します-CID_MBIM_DEVICE_SERVICES によりクエリされるときにサービスの準拠デバイスを実装して、デバイスをレポートします。
 ms.assetid: 62BFC796-EDB2-489E-B487-65E2DD7C4256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 708a9460279773e71816242146b1f2c44a4564d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349647"
 ---
-# <a name="host-shutdown-device-service"></a>ホストのシャット ダウン デバイス サービス
+# <a name="host-shutdown-device-service"></a>ホスト シャットダウン デバイス サービス
 
 
 このトピックではモバイル ブロード バンド インターフェイス モデル (MBIM) ためのガイドラインを提供します-準拠デバイスを実装して、デバイスのレポート サービスの CID が照会すると\_MBIM\_デバイス\_サービス。
@@ -48,9 +48,9 @@ UUID 値 = **883b7c26-985f-43fa-9804-27d7fb80959c**
 |--------------------------------------|---------------------------|
 | CID                                  | CID\_MBIM\_MSHOSTSHUTDOWN |
 | コマンド コード                         | 1                         |
-| 設定                                  | 〇                       |
+| Set                                  | 〇                       |
 | クエリ                                | X                        |
-| イベント                                | X                        |
+| event                                | X                        |
 | InformationBuffer ペイロードを設定します。        | なし                       |
 | クエリ InformationBuffer ペイロード      | なし                       |
 | 完了 InformationBuffer ペイロード | なし                       |
@@ -59,7 +59,7 @@ UUID 値 = **883b7c26-985f-43fa-9804-27d7fb80959c**
 
 |                   |                                                                                                      |
 |-------------------|------------------------------------------------------------------------------------------------------|
-| 設定               | MBIM で InformationBuffer\_コマンド\_MSG は使用されません。 MBIM の InformationBuffer\_コマンド\_DONE 使用されません。 |
+| Set               | MBIM で InformationBuffer\_コマンド\_MSG は使用されません。 MBIM の InformationBuffer\_コマンド\_DONE 使用されません。 |
 | クエリ             | サポートされません                                                                                          |
 | 要請されていないイベント | サポートされません                                                                                          |
 
@@ -136,7 +136,7 @@ UUID 値 = **883b7c26-985f-43fa-9804-27d7fb80959c**
 |--------------------------------------|------------------------------|
 | CID                                  | CID\_MBIM\_MSHOSTPRESHUTDOWN |
 | コマンド コード                         | 2                            |
-| 設定                                  | 〇                          |
+| Set                                  | 〇                          |
 | クエリ                                | X                           |
 | 通知                         | X                           |
 | InformationBuffer ペイロードを設定します。        | なし                          |
@@ -157,7 +157,7 @@ UUID 値 = **883b7c26-985f-43fa-9804-27d7fb80959c**
 <thead>
 <tr class="header">
 <th align="left"></th>
-<th align="left">設定</th>
+<th align="left">Set</th>
 <th align="left">クエリ</th>
 <th align="left">通知</th>
 </tr>

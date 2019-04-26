@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90fa623cda5ab86e461cc7b771073e1213e6c51d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353868"
 ---
 # <a name="monitor-filter-drivers"></a>モニター フィルター ドライバー
 
@@ -25,7 +25,7 @@ Microsoft は、汎用的なモニター クラス関数ドライバー、Monito
 
 モニターのベンダーには、目的のためのフィルター ドライバーは記述しないでください、表示データ チャネル コマンド インターフェイス (CI/DDC) 経由のモニターのプログラムによる制御が、監視デバイス スタックで処理されないことに注意してください。
 
-モニターのデバイス スタックの形式では、[モニター クラス関数ドライバー](monitor-class-function-driver.md)を参照してください。
+モニターのデバイス スタックの形式では、次を参照してください。[モニター クラス関数ドライバー](monitor-class-function-driver.md)します。
 
  
 

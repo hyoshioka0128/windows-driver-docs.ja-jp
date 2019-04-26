@@ -1,6 +1,6 @@
 ---
-title: プリンター ドライバーのアーキテクチャ
-description: プリンター ドライバーのアーキテクチャ
+title: プリンター ドライバー アーキテクチャ
+description: プリンター ドライバー アーキテクチャ
 ms.assetid: 68a61007-8f0d-4fd4-b4a7-c8acbc101236
 keywords:
 - 印刷ジョブ WDK、プリンター ドライバー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c41685a855f42fc453c71ef300fb6c0ab9259a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340904"
 ---
-# <a name="printer-driver-architecture"></a>プリンター ドライバーのアーキテクチャ
+# <a name="printer-driver-architecture"></a>プリンター ドライバー アーキテクチャ
 
 
 
@@ -47,7 +47,7 @@ Windows 2000 とプリンター ドライバーを後で構成される、一連
 
 このセクションでは、Windows 2000 と以降のオペレーティング システムがサポートするプリンター ドライバーのさまざまな種類の理解に役立つものですが、次の 3 つのプリンター ドライバーはオペレーティング システムに付属することも覚えて必要があります。
 
-[Microsoft Universal プリンター ドライバー](microsoft-universal-printer-driver.md)
+[Microsoft ユニバーサル プリンター ドライバー](microsoft-universal-printer-driver.md)
 
 [Microsoft PostScript プリンター ドライバー](microsoft-postscript-printer-driver.md)
 
@@ -59,11 +59,11 @@ Windows 2000 とプリンター ドライバーを後で構成される、一連
 
 [XPSDrv プリンター ドライバー](xpsdrv-printer-drivers.md)
 
-[GDI のプリンター ドライバー](gdi-printer-drivers.md)
+[GDI プリンター ドライバー](gdi-printer-drivers.md)
 
-[印刷チケットとテクノロジの印刷機能](print-ticket-and-print-capabilities-technologies.md)
+[印刷チケットと印刷機能のテクノロジ](print-ticket-and-print-capabilities-technologies.md)
 
-[64 ビット プリンター ドライバーの記述](writing-64-bit-printer-drivers.md)
+[64 ビット プリンター ドライバーの作成](writing-64-bit-printer-drivers.md)
 
  
 

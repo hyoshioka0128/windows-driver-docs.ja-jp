@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc429e4394d8a4fb946627c2b3019aad9065f6bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347954"
 ---
 # <a name="viewing-umdf-objects"></a>UMDF オブジェクトの表示
 
@@ -21,7 +21,7 @@ ms.locfileid: "56553693"
 
 このトピックでは、Wudfext.dll デバッガー拡張機能を使用して、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 のドライバーによって使用されるオブジェクトに関する情報を表示する方法について説明します。
 
-以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、[Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)を参照してください。
+以降 UMDF バージョン 2 では、代わりに、Wdfkd.dll デバッガー拡張機能を使用する必要があります。 詳細については、次を参照してください。 [Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff551876)します。
 
 UMDF バージョン 1 のオブジェクトに関する情報を表示するのには、次の手順を実行できます。
 

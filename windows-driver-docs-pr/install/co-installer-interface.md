@@ -1,6 +1,6 @@
 ---
-title: 共同インストーラー インターフェイス
-description: 共同インストーラー インターフェイス
+title: 共同インストーラーのインターフェイス
+description: 共同インストーラーのインターフェイス
 ms.assetid: affcf2a5-5dbb-49bd-916c-bc99302b5bd8
 keywords:
 - 共同インストーラー WDK デバイス インストールでは、インターフェイスします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b82a56a3952f71ef8ff024cb81f22034521525b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357047"
 ---
-# <a name="co-installer-interface"></a>共同インストーラー インターフェイス
+# <a name="co-installer-interface"></a>共同インストーラーのインターフェイス
 
 
 Co-インストーラーのインターフェイスは、エクスポートされたエントリ ポイント関数と、関連付けられているデータ構造で構成されます。
@@ -34,7 +34,7 @@ typedef DWORD
 ```
 
 <a href="" id="installfunction"></a>*InstallFunction*  
-共同インストーラーが参加しているのオプションを含むで処理されているデバイスのインストール要求を指定します。 これらの要求は DIF_INSTALLDEVICE などの差分のコードを使用して指定します。 詳細については、[デバイス インストールの関数コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)を参照してください。
+共同インストーラーが参加しているのオプションを含むで処理されているデバイスのインストール要求を指定します。 これらの要求は DIF_INSTALLDEVICE などの差分のコードを使用して指定します。 詳細については、次を参照してください。[デバイス インストールの関数コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)します。
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
 識別するハンドルを提供する[デバイス情報設定されている](device-information-sets.md)します。

@@ -1,20 +1,20 @@
 ---
-title: コードの整合性イベント ログとシステムの監査を有効にします。
+title: コードの整合性でのイベント ログとシステム監査の有効化
 description: コードの整合性イベント ログとシステムの監査を有効にする方法について説明します。
 ms.assetid: D17C64F1-B295-4EC1-B0D0-F1A119D77F64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa5f52d76a41d18bda2c3d1de153f86a901b5a1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342005"
 ---
-# <a name="appendix-3-enable-code-integrity-event-logging-and-system-auditing"></a>付録 3:コードの整合性イベント ログとシステムの監査を有効にします。
+# <a name="appendix-3-enable-code-integrity-event-logging-and-system-auditing"></a>付録 3: コードの整合性でのイベント ログとシステム監査の有効化
 
 
-## <a name="enable-code-integrity-event-logging-and-system-auditing"></a>コードの整合性イベント ログとシステムの監査を有効にします。
+## <a name="enable-code-integrity-event-logging-and-system-auditing"></a>コードの整合性でのイベント ログとシステム監査の有効化
 
 
 *抜粋*[コードの整合性イベント ログとシステムの監査](enabling-code-integrity-event-logging-and-system-auditing.md):

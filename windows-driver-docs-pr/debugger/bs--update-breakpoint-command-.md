@@ -1,5 +1,5 @@
 ---
-title: bs (更新プログラムはブレークポイント コマンド)
+title: bs (ブレークポイントの更新コマンド)
 description: Bs コマンドでは、指定したブレークポイントが発生した場合に実行されるコマンドを変更します。
 ms.assetid: 624c9a30-a0d8-49bd-aba6-a46250022677
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 093a1550ed7c30ead4f7714ccef515dd38c06a90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347829"
 ---
-# <a name="bs-update-breakpoint-command"></a>bs (更新プログラムはブレークポイント コマンド)
+# <a name="bs-update-breakpoint-command"></a>bs (ブレークポイントの更新コマンド)
 
 
 **Bs**コマンドは、指定したブレークポイントが発生した場合に実行されるコマンドを変更します。
@@ -70,7 +70,7 @@ bs ID ["CommandString"]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。 条件付きブレークポイントの詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
+詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。 条件付きブレークポイントの詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
 
 <a name="remarks"></a>注釈
 -------

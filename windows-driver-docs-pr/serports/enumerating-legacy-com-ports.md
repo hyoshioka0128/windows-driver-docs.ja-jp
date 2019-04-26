@@ -1,6 +1,6 @@
 ---
-title: 従来の COM ポートを列挙します。
-description: 従来の COM ポートを列挙します。
+title: レガシ COM ポートを列挙する
+description: レガシ COM ポートを列挙する
 ms.assetid: 36a73153-0e3e-4b41-9b3d-08b29b5220fe
 keywords:
 - シリアル ドライバー WDK では、COM ポート
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 355d59ab334d70715131ab2605ae39b2b46def07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341293"
 ---
-# <a name="enumerating-legacy-com-ports"></a>従来の COM ポートを列挙します。
+# <a name="enumerating-legacy-com-ports"></a>レガシ COM ポートを列挙する
 
 
 
@@ -43,7 +43,7 @@ ms.locfileid: "56532308"
 
 5.  従来の COM ポートのプラグ アンド プレイのレジストリ キーの下の COM ポートの情報を設定します。
 
-    シリアルでは、従来の COM ポートをレジストリから読み取られた情報のサブセットを使用します。 詳細については、[プラグ アンド プレイ シリアル デバイス用のレジストリ設定](registry-settings-for-a-plug-and-play-serial-device.md)を参照してください。
+    シリアルでは、従来の COM ポートをレジストリから読み取られた情報のサブセットを使用します。 詳細については、次を参照してください。[プラグ アンド プレイ シリアル デバイス用のレジストリ設定](registry-settings-for-a-plug-and-play-serial-device.md)します。
 
 6.  従来の COM ポートを開始します。
 

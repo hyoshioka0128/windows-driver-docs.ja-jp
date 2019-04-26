@@ -1,17 +1,17 @@
 ---
-title: IrpTracking ルール セット (WDM)
+title: IrpTracking の規則セット (WDM)
 description: Irp が保留状態中にデバイスを削除しないようにには、ドライバーがその I/O 要求パケット (IRP) を正しく追跡することを確認するのにには、これらの規則を使用します。
 ms.assetid: 9AD62397-6840-42FF-ADEC-6836EDD16647
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 792994e2a6071a8a94626b67611bd45649113693
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350516"
 ---
-# <a name="irptracking-rule-set-wdm"></a>IrpTracking ルール セット (WDM)
+# <a name="irptracking-rule-set-wdm"></a>IrpTracking の規則セット (WDM)
 
 
 Irp が保留状態中にデバイスを削除しないようにには、ドライバーがその I/O 要求パケット (IRP) を正しく追跡することを確認するのにには、これらの規則を使用します。
@@ -166,7 +166,7 @@ Irp が保留状態中にデバイスを削除しないようにには、ドラ�
 
 **IrpTracking ルールを選択するには、次のように設定します。**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています.**.
+1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
 
 2.  をクリックして、**ルール**タブ。**規則セット**、 **IrpTracking**します。
 
@@ -176,7 +176,7 @@ Irp が保留状態中にデバイスを削除しないようにには、ドラ�
     msbuild /t:sdv /p:Inputs="/check:IrpTracking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

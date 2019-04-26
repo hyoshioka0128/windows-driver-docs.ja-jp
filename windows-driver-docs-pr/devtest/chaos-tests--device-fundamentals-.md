@@ -5,11 +5,11 @@ ms.assetid: FA0D73DC-B0B8-4CA7-8DDC-A2C3EC106C3F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ba7b831802cf9ffe7b76bc5b29526a0c10cbf23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343982"
 ---
 # <a name="chaos-tests-device-fundamentals"></a>CHAOS テスト (Device Fundamental)
 
@@ -55,17 +55,17 @@ ms.locfileid: "56549051"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[デバイスの基本テスト](device-fundamentals-tests.md)
+[Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
 [PwrTest](pwrtest.md)
 
-[侵入テスト (デバイスの基本)](penetration-tests--device-fundamentals-.md)
+[侵入テスト (Device Fundamental)](penetration-tests--device-fundamentals-.md)
 
 [PnP テスト (デバイスの基本)](pnp-tests--device-fundamentals-.md)
 

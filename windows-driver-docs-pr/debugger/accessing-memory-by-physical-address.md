@@ -1,19 +1,19 @@
 ---
-title: 物理アドレスをメモリにアクセスします。
-description: 物理アドレスをメモリにアクセスします。
+title: 物理アドレスによるメモリへのアクセス
+description: 物理アドレスによるメモリへのアクセス
 ms.assetid: 248871dc-dac0-413e-8971-2ee2c2fe5290
 keywords:
 - 物理アドレス、メモリへのアクセス
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21c56460649584f009fd49636646ea3620fa3380
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351887"
 ---
-# <a name="accessing-memory-by-physical-address"></a>物理アドレスをメモリにアクセスします。
+# <a name="accessing-memory-by-physical-address"></a>物理アドレスによるメモリへのアクセス
 
 
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>

@@ -1,16 +1,16 @@
 ---
-Description: Digital Rights Management (DRM) systems often make use of device serial numbers to ensure that legitimate customers have access to digitized intellectual property.
-title: Usbccgp.sys のコンテンツのセキュリティ機能
+Description: デジタル著作権管理 (DRM) システムが頻繁に活用する正当なユーザーにアクセスできるようにするデバイスのシリアル番号の使用は知的財産権をデジタル化します。
+title: Usbccgp.sys のコンテンツ セキュリティ機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 027bba805ecfebe72046357dfab9d2451fa7f51b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352598"
 ---
-# <a name="content-security-features-in-usbccgpsys"></a>Usbccgp.sys のコンテンツのセキュリティ機能
+# <a name="content-security-features-in-usbccgpsys"></a>Usbccgp.sys のコンテンツ セキュリティ機能
 
 
 デジタル著作権管理 (DRM) システムが頻繁に活用する正当なユーザーにアクセスできるようにするデバイスのシリアル番号の使用は知的財産権をデジタル化します。 USB デバイスに、CSM 1 コンテンツ セキュリティ インターフェイスがある場合は、クライアント ドライバーを照会できます、シリアル番号を送信して、 [ **IOCTL\_ストレージ\_取得\_メディア\_シリアル\_数**](https://msdn.microsoft.com/library/windows/hardware/ff560557)一般的な親ドライバーに要求します。

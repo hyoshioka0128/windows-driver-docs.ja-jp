@@ -5,18 +5,18 @@ ms.assetid: 2af431f1-a35d-4312-86f6-a928ef4148df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 958bd97952c05b5cff884f34c476603dde0b563e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344281"
 ---
 # <a name="creating-a-catalog-file-for-a-pnp-driver-package"></a>PnP ドライバー パッケージ用のカタログ ファイルの作成
 
 
 ドライバー パッケージを符号なしのカタログ ファイルを作成するには、次の手順を実行します。
 
-1. 追加の必要な INF **CatalogFile**=<em>FileName</em>**します。Cat**エントリまたは INF **CatalogFile** 。<em>PlatformExtension</em>=<em>一意のファイル名</em>**します。Cat**エントリを[ **INF バージョン セクション**](inf-version-section.md)の[ドライバー パッケージの](driver-packages.md)INF ファイル。 プラットフォームの拡張機能を使用する方法については、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
+1. 追加の必要な INF **CatalogFile**=<em>FileName</em>**します。Cat**エントリまたは INF **CatalogFile** 。<em>PlatformExtension</em>=<em>一意のファイル名</em>**します。Cat**エントリを[ **INF バージョン セクション**](inf-version-section.md)の[ドライバー パッケージの](driver-packages.md)INF ファイル。 プラットフォームの拡張機能を使用する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
 
 2. 使用して、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)ツールをターゲット プラットフォームのドライバー パッケージを署名できることを確認し、符号なしの生成を[カタログ ファイル](catalog-files.md)(*.cat*ファイル) のターゲット プラットフォームに適用されています。
 

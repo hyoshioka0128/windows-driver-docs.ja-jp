@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: efe4f349f7857426f0c803727bd93ef64199629c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351746"
 ---
 # <a name="guiddevinterfaceusbhub"></a>GUID_DEVINTERFACE_USB_HUB
 
@@ -51,7 +51,7 @@ GUID_DEVINTERFACE_USB_HUB[デバイス インターフェイス クラス](https
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 システム提供の USB ポート ドライバーでは、オペレーティング システムとアプリケーションのホスト コント ローラー デバイスのルート ハブの存在を通知する GUID_DEVINTERFACE_USB_HUB のインスタンスを登録します。 USB ハブのシステムによって提供されるドライバーは、あるホスト コント ローラーでサポートされている場合、追加ハブ デバイスの場合は、このクラスのインスタンスを登録します。

@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 393da6d1968da18c793ce9000a441c546d03e067
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344678"
 ---
-# <a name="example-16-viewing-trace-messages-in-a-debugger"></a>16 の使用例:デバッガーでのトレース メッセージの表示
+# <a name="example-16-viewing-trace-messages-in-a-debugger"></a>例 16: デバッガーでのトレース メッセージの表示
 
 
 ## <span id="ddk_viewing_trace_messages_in_a_debugger_tools"></span><span id="DDK_VIEWING_TRACE_MESSAGES_IN_A_DEBUGGER_TOOLS"></span>
@@ -44,7 +44,7 @@ tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 
 応答では、トレース ログは、セッションが開始されたことを報告します。 トレース プロバイダーは、メッセージを生成するときは、デバッガーで、メッセージが表示されます。
 
-デバッガーでのメッセージを表示するには、WMI のトレース拡張機能を使用します。 詳しくは、[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)を参照してください。
+デバッガーでのメッセージを表示するには、WMI のトレース拡張機能を使用します。 詳しくは、次を参照してください。[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)します。
 
  
 

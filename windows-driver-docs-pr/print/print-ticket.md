@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f4a034a40446ff606b6b7fd9597323f373eb434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351827"
 ---
 # <a name="print-ticket"></a>印刷チケット
 
@@ -24,7 +24,7 @@ PrintTicket ドキュメントは、印刷するドキュメントまたはド�
 
 変換関数には、Microsoft Win32 アプリケーションでの印刷チケットの使用を有効にします。 関数は、使用する印刷チケットを変換する[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造および DEVMODEW 構造は、印刷チケットをバックアップします。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [印刷チケット組織](print-ticket-organization.md)
 

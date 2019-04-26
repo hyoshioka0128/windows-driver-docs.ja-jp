@@ -5,11 +5,11 @@ ms.assetid: d5b0e3a3-51c3-40d8-a2dc-c9392feff2cb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 553a0c6855a958259a303d471c9d8ff6a9457dee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348641"
 ---
 # <a name="signature-categories-and-driver-installation"></a>署名のカテゴリとドライバーのインストール
 
@@ -52,7 +52,7 @@ Windows Vista および Windows の以降のバージョンのドライバーを
 
     ![有効な署名がないドライバーを windows セキュリティ ダイアログ ボックスのスクリーン ショット](images/install2.png)
 
-**注**  Windows Vista のおよびユーザー HD DVD および下でライセンス供与されている他の形式など、次世代のプレミアム コンテンツを再生するために、Windows の以降のバージョン、 *Advanced Access Content System (AACS)仕様*、そのシステム上のすべてのカーネル モード コンポーネントに署名する必要があります。 つまり、符号なしまたは変更されたドライバーをインストールする管理ユーザーを選択した場合、システムはプレミアム コンテンツを再生は許可されていません。 Windows Vista のメディア コンポーネントを保護する方法の詳細については、[コードは、Windows Vista のメディアの保護されているコンポーネントの署名](https://go.microsoft.com/fwlink/p/?linkid=74262)を参照してください。
+**注**  Windows Vista のおよびユーザー HD DVD および下でライセンス供与されている他の形式など、次世代のプレミアム コンテンツを再生するために、Windows の以降のバージョン、 *Advanced Access Content System (AACS)仕様*、そのシステム上のすべてのカーネル モード コンポーネントに署名する必要があります。 つまり、符号なしまたは変更されたドライバーをインストールする管理ユーザーを選択した場合、システムはプレミアム コンテンツを再生は許可されていません。 Windows Vista のメディア コンポーネントを保護する方法の詳細については、次を参照してください。[コードは、Windows Vista のメディアの保護されているコンポーネントの署名](https://go.microsoft.com/fwlink/p/?linkid=74262)します。
 
  
 

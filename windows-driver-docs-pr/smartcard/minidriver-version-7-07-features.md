@@ -1,17 +1,17 @@
 ---
-title: ミニドライバー バージョン 7.07 機能
-description: ミニドライバー バージョン 7.07 機能
+title: ミニドライバー バージョン 7.07 の機能
+description: ミニドライバー バージョン 7.07 の機能
 ms.assetid: F23211BB-798D-45C4-9729-D8D7CB4D3A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57565a8505821300fed8bdc21f092cc5cf086bb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356745"
 ---
-# <a name="minidriver-version-707-features"></a>ミニドライバー バージョン 7.07 機能
+# <a name="minidriver-version-707-features"></a>ミニドライバー バージョン 7.07 の機能
 
 
 このバージョンでは、次の機能が導入されました。

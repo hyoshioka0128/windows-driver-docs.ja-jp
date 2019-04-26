@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eca6217b597f3e3419377c903b48fc7e0c6d9b84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350597"
 ---
 # <a name="debugging-optimized-code-and-inline-functions"></a>最適化されたコードとインライン関数のデバッグ
 
@@ -139,7 +139,7 @@ Windows デバッガーの場所の特定の機能が配置されているイン
 
 Windows デバッガーには、インライン関数のすべての呼び出し元のサイトを列挙、ために、呼び出し元のサイトからのオフセットを計算することで、インライン関数内でのブレークポイントを設定できます。 使用することができます、 [ **bm** ](bp--bu--bm--set-breakpoint-.md)コマンド (これは、正規表現パターンに一致するブレークポイントの設定を使用) インライン関数のブレークポイントを設定します。
 
-Windows デバッガーには、特定のインライン関数のブレークポイントのコンテナーに設定されているすべてのブレークポイントがグループ化します。 全体として、ブレークポイントのコンテナーを操作するにはのようなコマンドを使用して[**する**](be--breakpoint-enable-.md)、 [ **bd**](bd--breakpoint-disable-.md)、 [ **bc**](bc--breakpoint-clear-.md)します。 **bd 3**と**bc 3**コマンドの例を参照してください。 個々 のブレークポイントを操作することもできます。 **2 する**コマンドの例を参照してください。
+Windows デバッガーには、特定のインライン関数のブレークポイントのコンテナーに設定されているすべてのブレークポイントがグループ化します。 全体として、ブレークポイントのコンテナーを操作するにはのようなコマンドを使用して[**する**](be--breakpoint-enable-.md)、 [ **bd**](bd--breakpoint-disable-.md)、 [ **bc**](bc--breakpoint-clear-.md)します。 次を参照してください。 **bd 3**と**bc 3**コマンドの例です。 個々 のブレークポイントを操作することもできます。 次を参照してください。 **2 する**コマンドの例です。
 
 ```dbgcmd
 0:000> bm simple!MoreCalculate

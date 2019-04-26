@@ -4,11 +4,11 @@ title: システム開発において推奨される USB テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22770ad4938e8c30b30e4595fdd9b8d97504d93d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354726"
 ---
 # <a name="recommended-usb-tests-for-system-development"></a>システム開発において推奨される USB テスト
 

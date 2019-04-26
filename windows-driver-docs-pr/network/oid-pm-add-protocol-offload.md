@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PM_ADD_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e04155e5118fd1971cdd753cba629235da9d1644
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346796"
 ---
 # <a name="oidpmaddprotocoloffload"></a>OID\_PM\_追加\_プロトコル\_オフロード
 
@@ -34,7 +34,7 @@ NDIS は、NDIS ドライバーは、基になるまでこの OID 要求を送�
 
 生成 NDIS または基になるネットワーク アダプターに、オフロードが拒否された場合、 [ **NDIS\_状態\_PM\_オフロード\_REJECTED** ](https://msdn.microsoft.com/library/windows/hardware/ff567412)状態示します。 これは NDIS が返された後に発生\_状態\_OID の成功します。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体には ULONG プロトコル オフロード識別子が含まれています、プロトコルのオフロードが拒否されます。
 
-ネイティブの 802.11 ワイヤレス LAN のミニポート ドライバーでこの OID を使用する方法については、[の追加および削除する低電力プロトコルをオフロード](https://msdn.microsoft.com/library/windows/hardware/ff543707)を参照してください。
+ネイティブの 802.11 ワイヤレス LAN のミニポート ドライバーでこの OID を使用する方法については、次を参照してください。[の追加および削除する低電力プロトコルをオフロード](https://msdn.microsoft.com/library/windows/hardware/ff543707)します。
 
 ミニポート ドライバーでは、要求の状態コードの次のいずれかを返します。
 
@@ -62,7 +62,7 @@ NDIS または基になるネットワーク アダプターを追加できな�
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 上記の理由以外の理由、要求が失敗しました。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

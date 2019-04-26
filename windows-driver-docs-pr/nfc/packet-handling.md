@@ -4,18 +4,18 @@ description: 場合によっては、NFC CX によって定義されたシーケ
 ms.assetid: 48BD5100-A1D4-4844-B53A-DAC73FDBB089
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fb6a55e4820016de798c535a1b6745c5260ae0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348587"
 ---
 # <a name="nci-packet-handling"></a>NCI のパケットの処理
 

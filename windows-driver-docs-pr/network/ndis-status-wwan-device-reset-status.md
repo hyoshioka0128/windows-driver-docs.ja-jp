@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1755716139d831c4a2015db127e99eb22ddd5e0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348544"
 ---
 # <a name="ndisstatuswwandeviceresetstatus"></a>NDIS_STATUS_WWAN_DEVICE_RESET_STATUS
 
@@ -19,7 +19,7 @@ NDIS_STATUS_WWAN_DEVICE_RESET_STATUS 通知は、モデム デバイスのリセ
 
 この通知を使用して、 [NDIS_WWAN_DEVICE_RESET_STATUS](https://msdn.microsoft.com/library/windows/hardware/D18E8633-BEAD-49A5-A730-10564AFF8A3E)構造体。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

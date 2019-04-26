@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c06e828d6712816d98a2bb20c1cb4a1f9d0baeac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355223"
 ---
 # <a name="pre-association-operation-overview"></a>関連付け前の操作の概要
 
@@ -71,15 +71,15 @@ IHV 拡張機能の DLL を呼び出すことによって、関連付け前操�
 
 -   呼び出す、 [ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL を受信するセキュリティ パケットに IEEE EtherTypes の一覧を登録する関数。 オペレーティング システムの呼び出しリストは、登録後、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513)が EtherType には、リスト内のエントリが一致するすべてのパケットの IHV ハンドラー関数。
 
-    IHV 拡張機能の DLL には、一連のペイロードの暗号化解除を除外 EtherTypes も指定できます。 EtherTypes の登録の詳細については、[IEEE EtherType 処理](ieee-ethertype-handling.md)を参照してください。
+    IHV 拡張機能の DLL には、一連のペイロードの暗号化解除を除外 EtherTypes も指定できます。 EtherTypes の登録の詳細については、次を参照してください。 [IEEE EtherType 処理](ieee-ethertype-handling.md)します。
 
 -   呼び出す、 [ **Dot11ExtSetProfileCustomUserData** ](https://msdn.microsoft.com/library/windows/hardware/ff547603)関数、ユーザーと現在の BSS ネットワーク プロファイルに固有のレジストリにデータを保存します。
 
 -   呼び出す、 [ **Dot11ExtGetProfileCustomUserData** ](https://msdn.microsoft.com/library/windows/hardware/ff547430)関数、ユーザーと現在の BSS ネットワーク プロファイルに固有のレジストリからデータを取得します。
 
-IHV 拡張機能の詳細については、[802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)を参照してください。
+IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)します。
 
-BSS ネットワークで接続操作の詳細については、[接続操作](connection-operations.md)を参照してください。
+BSS ネットワークで接続操作の詳細については、次を参照してください。[接続操作](connection-operations.md)します。
 
  
 

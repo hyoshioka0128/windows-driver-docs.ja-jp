@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fceb6db6fb58d26326ffa84bdd5140fbe985901
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349663"
 ---
 # <a name="hotspothosthandlers-structure"></a>ホット スポット\_ホスト\_ハンドラー構造体
 
@@ -41,32 +41,32 @@ typedef struct _HOTSPOT_HOST_HANDLERS {
 **HSHostAllocateMemory**  
 省略可能なメモリ管理のハンドラー。
 
-プラグインは、プラグインによって必要なメモリを割り当てることによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)を参照してください。
+プラグインは、プラグインによって必要なメモリを割り当てることによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)します。
 
 **HSHostFreeMemory**  
 省略可能なメモリ管理のハンドラー。
 
-割り当てられているすべてのメモリを解放するプラグインによって呼び出される関数へのハンドルへの呼び出しによって以前[ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)します。 詳細については、[ **HS\_ホスト\_FREE\_メモリ**](hs-host-free-memory.md)を参照してください。
+割り当てられているすべてのメモリを解放するプラグインによって呼び出される関数へのハンドルへの呼び出しによって以前[ **HS\_ホスト\_ALLOCATE\_メモリ**](hs-host-allocate-memory.md)します。 詳細については、次を参照してください。 [ **HS\_ホスト\_FREE\_メモリ**](hs-host-free-memory.md)します。
 
 **HSHostPostConnectAuthCompletion**  
 接続処理のハンドラーが必要です。
 
-次の Wi-fi 接続のセットアップを層 2 では、認証の試行の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_プラグイン\_開始\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md)を参照してください。
+次の Wi-fi 接続のセットアップを層 2 では、認証の試行の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_プラグイン\_開始\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md)します。
 
 **HSHostSendKeepAliveCompletion**  
 省略可能な定期的な要求。
 
-Keep Alive の送信要求の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_プラグイン\_送信\_保持\_ALIVE**](hs-plugin-send-keep-alive.md)を参照してください。
+Keep Alive の送信要求の結果の成功または失敗の状態を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_プラグイン\_送信\_保持\_ALIVE**](hs-plugin-send-keep-alive.md)します。
 
 **HSHostUpdateConfigurationCompletion**  
 省略可能な定期的な要求。
 
-成功した場合または更新プログラムの確認の呼び出しの失敗を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、[ **HS\_プラグイン\_確認\_の\_更新**](hs-plugin-check-for-updates.md)を参照してください。
+成功した場合または更新プログラムの確認の呼び出しの失敗を示すプラグインによって呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_プラグイン\_確認\_の\_更新**](hs-plugin-check-for-updates.md)します。
 
 **HSHostSendUserMessage**  
 省略可能な定期的な要求。
 
-ユーザーとの通信のために呼び出される関数へのハンドルします。 詳細については、[ **HS\_ホスト\_送信\_ユーザー\_メッセージ**](hs-host-send-user-message.md)を参照してください。
+ユーザーとの通信のために呼び出される関数へのハンドルします。 詳細については、次を参照してください。 [ **HS\_ホスト\_送信\_ユーザー\_メッセージ**](hs-host-send-user-message.md)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -15,11 +15,11 @@ keywords:
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f0b178b36b0646ba3850ac77abadc6c212ac39df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353862"
 ---
 # <a name="components-of-a-driver-package"></a>ドライバー パッケージのコンポーネント
 
@@ -57,13 +57,13 @@ ms.locfileid: "56538811"
 
     INF ファイルに情報が含まれていますが、[システム指定のデバイスのインストール コンポーネント](system-provided-device-installation-components.md)を使用して、デバイスのサポートをインストールします。 Windows では、このファイルをコピー、%*SystemRoot*%\\*inf*ディレクトリ、デバイスをインストールするとき。 すべてのデバイス、INF ファイルが必要です。
 
-    詳細については、[、INF ファイルを指定して](supplying-an-inf-file.md)を参照してください。
+    詳細については、次を参照してください。 [、INF ファイルを指定して](supplying-an-inf-file.md)します。
 
 -   ドライバー[カタログ (.cat) ファイル](catalog-files.md)
 
     ドライバー カタログのファイルには、ドライバー パッケージ内の各ファイルの暗号化ハッシュが含まれています。 Windows では、これらのハッシュを使用して、パブリッシュされた後、パッケージが変更しないことを確認します。 ように、カタログ ファイルが変更されていない必要がある[デジタル署名された](digital-signatures.md)します。
 
-    ドライバーに署名する方法については、[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)と[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)を参照してください。
+    ドライバーに署名する方法については、次を参照してください。[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)と[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)します。
 
 ### <a name="other-files"></a>その他のファイル
 
@@ -71,7 +71,7 @@ ms.locfileid: "56538811"
 
 [デバイスのプロパティ ページを提供します。](providing-device-property-pages.md)
 
-[ブート開始ドライバーをインストールします。](installing-a-boot-start-driver.md)
+[ブート開始ドライバーのインストール](installing-a-boot-start-driver.md)
 
  
 

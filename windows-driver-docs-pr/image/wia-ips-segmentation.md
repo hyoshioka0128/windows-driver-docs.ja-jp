@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6ed0ba88a16d034ad9c9398899f766e8aa9da9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343846"
 ---
 # <a name="wiaipssegmentation"></a>WIA\_IP\_セグメント化
 
@@ -28,7 +28,7 @@ WIA\_IP\_セグメンテーション プロパティは、セグメント化が�
 
 プロパティの種類:VT\_I4
 
-有効な値 :WIA\_PROP\_NONE
+有効な値:WIA\_PROP\_NONE
 
 アクセス権:読み取り専用かどうか
 
@@ -44,7 +44,7 @@ WIA\_IP\_セグメンテーション プロパティは、セグメント化が�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

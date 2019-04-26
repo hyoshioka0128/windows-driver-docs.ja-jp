@@ -1,6 +1,6 @@
 ---
-title: 設定とスレッドのログをトークン取得
-description: 設定とスレッドのログをトークン取得
+title: スレッド用のログ トークンの設定と取得
+description: スレッド用のログ トークンの設定と取得
 ms.assetid: 6c701b91-ae0a-48ba-a1e0-711fc21eaf60
 keywords:
 - テキスト ログの WDK SetupAPI、ログのコンテキスト
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fd984a1cda789acb583c4a570992a92e9ab8c26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348681"
 ---
-# <a name="setting-and-getting-a-log-token-for-a-thread"></a>設定とスレッドのログをトークン取得
+# <a name="setting-and-getting-a-log-token-for-a-thread"></a>スレッド用のログ トークンの設定と取得
 
 
 [SetupAPI ログ](setupapi-logging--windows-vista-and-later-.md)スレッドのログのコンテキストを確立するメカニズムをサポートしています。 設定によってこのコンテキストが確立されている、[ログ トークン](log-tokens.md)スレッド。 SetupAPI では、このメカニズムを提供するため、スレッドによって呼び出されるコードは、呼び出し元のスレッドのログのコンテキストにログ エントリを書き込むことができます。

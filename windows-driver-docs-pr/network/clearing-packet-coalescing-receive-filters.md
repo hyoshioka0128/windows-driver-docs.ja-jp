@@ -1,17 +1,17 @@
 ---
-title: 受信フィルターのクリア パケットの結合
-description: 受信フィルターのクリア パケットの結合
+title: パケット結合受信フィルターのクリア
+description: パケット結合受信フィルターのクリア
 ms.assetid: 0924A494-AA4E-45FA-AFE6-65E0D105E0F2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71f3a26d7119945727ff823679026543958be4aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353276"
 ---
-# <a name="clearing-packet-coalescing-receive-filters"></a>受信フィルターのクリア パケットの結合
+# <a name="clearing-packet-coalescing-receive-filters"></a>パケット結合受信フィルターのクリア
 
 
 を解放するまたは*オフ*、パケットの結合をサポートしているミニポート ドライバーに対する受信フィルター、上位のドライバーがの OID セット要求を発行する[OID\_受信\_フィルター\_オフ\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569785)します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_クリア\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567166)構造体。

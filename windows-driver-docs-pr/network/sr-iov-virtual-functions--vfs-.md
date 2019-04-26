@@ -1,17 +1,17 @@
 ---
-title: SR-IOV 仮想機能 (Vf)
-description: SR-IOV 仮想機能 (Vf)
+title: SR-IOV 仮想機能 (VF)
+description: SR-IOV 仮想機能 (VF)
 ms.assetid: 92EFC8C3-A610-46EB-A1BC-750715378077
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5fcc02cbe32598a6f7417a75e10fdea49d948ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345999"
 ---
-# <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 仮想機能 (Vf)
+# <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 仮想機能 (VF)
 
 
 PCI Express (PCIe) 仮想機能 (VF) は、ライトウェイト シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターに対して PCIe 関数です。 VF であり、ネットワーク アダプター上 PCIe 物理機能 (PF) と関連付けられているネットワーク アダプターの仮想化されたインスタンスを表します。 各 VF が、独自の PCI 構成領域です。 各 VF は、PF とその他の VFs も、外部のネットワーク ポートなど、ネットワーク アダプター上の 1 つまたは複数の物理リソースを共有します。
@@ -36,9 +36,9 @@ VF のミニポート ドライバーは、PCI デバイス ドライバーの�
 
     ドライバーは VF PCI 構成領域にデータを書き込み、OID 要求が完了すると、要求の状態を返します。 この状態は、呼び出しの後 VF のミニポート ドライバーに返される[ **NdisMSetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff563670)が完了するとします。
 
-VF のミニポート ドライバーも PF ミニポート ドライバーと通信します。 この通信パスは、バック チャネル インターフェイスです。 詳細については、[SR-IOV PF/VF のバック チャネル通信](sr-iov-pf-vf-backchannel-communication.md)を参照してください。
+VF のミニポート ドライバーも PF ミニポート ドライバーと通信します。 この通信パスは、バック チャネル インターフェイスです。 詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](sr-iov-pf-vf-backchannel-communication.md)します。
 
-**注**  VF ミニポート ドライバーは、実行されている仮想化環境内で特定の操作の PF ミニポート ドライバーと通信できるように対応である必要があります。 方法は、ドライバーの詳細については、[VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)を参照してください。
+**注**  VF ミニポート ドライバーは、実行されている仮想化環境内で特定の操作の PF ミニポート ドライバーと通信できるように対応である必要があります。 方法は、ドライバーの詳細については、次を参照してください。 [VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)します。
 
  
 

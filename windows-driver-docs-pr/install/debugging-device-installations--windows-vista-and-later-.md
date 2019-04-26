@@ -5,11 +5,11 @@ ms.assetid: bc7105f6-8ba7-49da-8c02-ceda69066daa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 087ddb8305f6c2592ea086d5fda3c32040b07338
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352073"
 ---
 # <a name="debugging-device-installations"></a>デバイスのインストールのデバッグ
 
@@ -26,7 +26,7 @@ ms.locfileid: "56577810"
 
 [カーネル デバッガー (KD) を使用したデバイスのインストールのデバッグ](debugging-device-installations-with-the-kernel-debugger--kd-.md)
 
-共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
  
 

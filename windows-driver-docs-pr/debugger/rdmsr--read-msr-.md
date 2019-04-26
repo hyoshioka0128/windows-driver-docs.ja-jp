@@ -1,5 +1,5 @@
 ---
-title: rdmsr (読み取り MSR)
+title: rdmsr (MSR の読み取り)
 description: Rdmsr コマンドは、指定したアドレスからのモデルに固有の登録 (MSR) 値を読み取ります。
 ms.assetid: 693f1be5-f215-4719-ae6f-30e367cefd77
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be90d702d97c5eedd5b47254d33d873610264ca4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358550"
 ---
-# <a name="rdmsr-read-msr"></a>rdmsr (読み取り MSR)
+# <a name="rdmsr-read-msr"></a>rdmsr (MSR の読み取り)
 
 
 **Rdmsr**コマンドを読み取り、[モデルに固有の登録 (MSR)](other-data-spaces.md)指定したアドレスからの値。

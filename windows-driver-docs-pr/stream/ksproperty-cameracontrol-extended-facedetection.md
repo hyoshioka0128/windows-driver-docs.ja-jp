@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 12ec1ae5972e0290528bbea782e8cadc8f1699fe
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348028"
 ---
 # <a name="kspropertycameracontrolextendedfacedetection"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_FACEDETECTION
 
@@ -189,7 +189,7 @@ FACEDETECTION をサポートする必要があります、ドライバーは、
 
 顔検出をオンにすると、必要に応じて、3 a の処理を支援するために、ドライバーによって直接興味 (Roi) の顔の領域を使用できます。 Roi が KSPROPERTY 経由で構成されているすべてのユーザーが指定されている場合\_CAMERACONTROL\_拡張\_ROI\_Roi は優先顔検出 Roi ISPCONTROL と同時に、ユーザーを指定します。 Roi をオフに指定されたユーザー、顔検出 Roi が有効になります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_ADVERTISEMENT_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ac3c5d8b59cc7b527d93a12f1878b3d7c19ccae0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353132"
 ---
 # <a name="wditlvp2padvertisementid"></a>WDI\_TLV\_P2P\_広告\_ID
 
@@ -37,7 +37,7 @@ Uint32 型のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

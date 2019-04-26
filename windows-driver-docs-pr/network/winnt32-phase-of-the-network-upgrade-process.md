@@ -1,6 +1,6 @@
 ---
-title: ネットワークのアップグレード プロセスの Winnt32 フェーズ
-description: ネットワークのアップグレード プロセスの Winnt32 フェーズ
+title: ネットワーク アップグレード プロセスの Winnt32 フェーズ
+description: ネットワーク アップグレード プロセスの Winnt32 フェーズ
 ms.assetid: a83edcfb-e075-4763-8a6a-33879ccf2357
 keywords:
 - ネットワーク コンポーネントをアップグレード WDK、フェーズ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0298b9c63779032a3d3fb80fd2fbef8c3d850aea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342903"
 ---
-# <a name="winnt32-phase-of-the-network-upgrade-process"></a>ネットワークのアップグレード プロセスの Winnt32 フェーズ
+# <a name="winnt32-phase-of-the-network-upgrade-process"></a>ネットワーク アップグレード プロセスの Winnt32 フェーズ
 
 
 

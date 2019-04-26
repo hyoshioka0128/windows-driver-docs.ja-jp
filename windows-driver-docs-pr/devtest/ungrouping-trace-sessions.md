@@ -1,6 +1,6 @@
 ---
-title: トレース セッションをグループ化の解除
-description: トレース セッションをグループ化の解除
+title: トレース セッションのグループ化解除
+description: トレース セッションのグループ化解除
 ms.assetid: 8ff4d692-85c9-4282-8046-a54170fd9dbc
 keywords:
 - トレース セッションをグループ化
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0b126683d4114b38fcf4baa5a71c2a58e4d6f36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351780"
 ---
-# <a name="ungrouping-trace-sessions"></a>トレース セッションをグループ化の解除
+# <a name="ungrouping-trace-sessions"></a>トレース セッションのグループ化解除
 
 
 トレース セッションのグループをグループ化を解除します。

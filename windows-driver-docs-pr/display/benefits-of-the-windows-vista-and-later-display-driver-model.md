@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eeebf753a7ffe3452e5ce939ccba286abd8da72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347016"
 ---
 # <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のメリット
 
@@ -26,7 +26,7 @@ ms.locfileid: "56579486"
 
  
 
--   マイクロソフトの Direct3D ランタイムおよび Microsoft DirectX グラフィックスのカーネル サブシステム詳細の表示処理を実行 (つまりより多くのコードがランタイムと、ドライバーではなくサブシステムで)。 ビデオ メモリを管理するコードが含まれ、スケジュールは、GPU のメモリ アクセス (DMA) バッファーを送信します。 詳細については、[ビデオ メモリ管理と GPU がスケジュール](video-memory-management-and-gpu-scheduling.md)を参照してください。
+-   マイクロソフトの Direct3D ランタイムおよび Microsoft DirectX グラフィックスのカーネル サブシステム詳細の表示処理を実行 (つまりより多くのコードがランタイムと、ドライバーではなくサブシステムで)。 ビデオ メモリを管理するコードが含まれ、スケジュールは、GPU のメモリ アクセス (DMA) バッファーを送信します。 詳細については、次を参照してください。[ビデオ メモリ管理と GPU がスケジュール](video-memory-management-and-gpu-scheduling.md)します。
 
 -   画面の作成より少ないカーネル モードのステージが必要です。
 

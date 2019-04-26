@@ -1,6 +1,6 @@
 ---
-title: Autodetect PPD の両面印刷ユニット
-description: Autodetect PPD の両面印刷ユニット
+title: PPD の Duplex ユニットを自動検出する
+description: PPD の Duplex ユニットを自動検出する
 ms.assetid: bbecceb1-ba1d-4d2d-9a7b-e43f49345ca2
 keywords:
 - 自動検出の両面印刷ユニット WDK のプリンターの自動構成
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d808c550e226e0fc0eeb236aca9d0df79867936e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345947"
 ---
-# <a name="autodetect-the-duplex-unit-for-ppd"></a>Autodetect PPD の両面印刷ユニット
+# <a name="autodetect-the-duplex-unit-for-ppd"></a>PPD の Duplex ユニットを自動検出する
 
 
 次の 2 つの例は、PPD ファイルと GDL ファイル内の対応」の説明に従って、両面印刷ユニット機能間の 1 つの可能なマッピングを示します。 この最初の例は、PPD ファイルから抜粋です。

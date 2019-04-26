@@ -1,17 +1,17 @@
 ---
-title: リモートのデバッグを使用して KD
+title: KD を使用したリモート デバッグ
 description: リモート デバッグには、2 つの異なる場所で実行されている 2 つのデバッガーが含まれます。
 ms.assetid: 274CAB1D-DD3B-4ACD-919C-8B8C253BCE50
 ms.date: 05/03/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cb9663cd1b172140bb461d55cc2e1748645facb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353542"
 ---
-# <a name="remote-debugging-using-kd"></a>リモートのデバッグを使用して KD
+# <a name="remote-debugging-using-kd"></a>KD を使用したリモート デバッグ
 
 
 リモート デバッグには、2 つの異なる場所で実行されている 2 つのデバッガーが含まれます。 デバッグを実行する、デバッガーが呼び出され、*サーバー デバッグ*します。 呼ばれる、2 つ目のデバッガー、*デバッグ クライアント*、リモートの場所から、デバッグ セッションを制御します。 リモート セッションを確立するには、まずデバッグ サーバーを設定し、デバッグのクライアントを有効にする必要があります。
@@ -52,7 +52,7 @@ ms.locfileid: "56535787"
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-起動 KD (および確立するリモート デバッグ)、コマンドラインでの詳細については、[ **KD コマンド ライン オプション**](kd-command-line-options.md)を参照してください。
+起動 KD (および確立するリモート デバッグ)、コマンドラインでの詳細については、次を参照してください。 [ **KD コマンド ライン オプション**](kd-command-line-options.md)します。
 
  
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c4f317c9659282abaad0ac7833cf6b388dcdc8c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347268"
 ---
 # <a name="wditlvp2padvertisedserviceentry"></a>WDI\_TLV\_P2P\_アドバタイズ\_サービス\_エントリ
 
@@ -35,14 +35,14 @@ WDI\_TLV\_P2P\_アドバタイズ\_サービス\_エントリがアドバタイ�
 |--------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_サービス\_名**](wdi-tlv-p2p-service-name.md)               |                                |          | Utf-8、最大 255 バイトでは、サービスの名前です。                                                                                                                          |
 | [**WDI\_TLV\_P2P\_サービス\_名前\_ハッシュ**](wdi-tlv-p2p-service-name-hash.md)    |                                |          | サービス名のハッシュです。                                                                                                                                                    |
-| [**WDI\_TLV\_P2P\_サービス\_情報**](wdi-tlv-p2p-service-information.md) |                                | X        | このサービスのサービス情報。                                                                                                                                    |
+| [**WDI\_TLV\_P2P\_サービス\_情報**](wdi-tlv-p2p-service-information.md) |                                | x        | このサービスのサービス情報。                                                                                                                                    |
 | [**WDI\_TLV\_P2P\_サービス\_状態**](wdi-tlv-p2p-service-status.md)           |                                |          | このサービスのサービスの状態。                                                                                                                                          |
 | [**WDI\_TLV\_P2P\_広告\_ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | サービス インスタンスを一意に識別する ID です。                                                                                                                     |
 | [**WDI\_TLV\_P2P\_CONFIG\_メソッド**](wdi-tlv-p2p-config-methods.md)           |                                |          | 構成の方法で定義されている[ **WDI\_WPS\_構成\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/dn898198)します。 暗証番号 (pin) の表示、暗証番号 (pin) のキーパッドおよび WFDS は適用できます。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -6,11 +6,11 @@ keywords: デバッガー, ブレークポイントは、メソッド、ブレ�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b714acd984506f36205285f0c61cd90e43c839b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347859"
 ---
 # <a name="breakpoint-syntax"></a>ブレークポイントの構文
 
@@ -30,7 +30,7 @@ ms.locfileid: "56550808"
 0:000> bp `source.c:31`
 ```
 
-この構文の詳細については、[数値式の構文](numerical-expression-syntax.md)、[ソース行構文](source-line-syntax.md)、および個々 のコマンドのトピックを参照してください。
+この構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)、[ソース行構文](source-line-syntax.md)、および個々 のコマンドのトピックです。
 
 ### <a name="span-idbreakpointsonmethodsspanspan-idbreakpointsonmethodsspanbreakpoints-on-methods"></a><span id="breakpoints_on_methods"></span><span id="BREAKPOINTS_ON_METHODS"></span>メソッドのブレークポイント
 
@@ -49,7 +49,7 @@ ms.locfileid: "56550808"
     0:000> bp @@( MyClass::MyMethod ) 
     ```
 
-複雑なブレークポイント コマンドを使用する場合は、MASM 式の構文を使用する必要があります。 式の構文の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
+複雑なブレークポイント コマンドを使用する場合は、MASM 式の構文を使用する必要があります。 式の構文の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
 ### <a name="span-idbreakpointsusingcomplicatedtextspanspan-idbreakpointsusingcomplicatedtextspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>複雑な文字を使用してブレークポイント
 

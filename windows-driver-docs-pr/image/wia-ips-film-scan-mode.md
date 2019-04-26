@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ec5d7bc0ae73114ee586e3ad1524ad09de00d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348294"
 ---
 # <a name="wiaipsfilmscanmode"></a>WIA\_IP\_フィルム\_スキャン\_モード
 
@@ -47,7 +47,7 @@ WIA\_IP\_フィルム\_スキャン\_モード プロパティには、フィル
 
 このプロパティは、フィルム スキャナーと透明度のアダプターの WIA 項目ツリーのルート項目に必要です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

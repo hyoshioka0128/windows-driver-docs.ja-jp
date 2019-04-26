@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3deba68f840c7b39c8607d521bccdc1b5f048f44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339005"
 ---
 # <a name="storage-class-drivers-removedevice-routine"></a>記憶域クラス ドライバーの RemoveDevice ルーチン
 
@@ -46,7 +46,7 @@ ms.locfileid: "56573348"
 
 デバイス オブジェクトが削除された場合は、参照カウントが 0 になるまで、システムでデバイス オブジェクトが解決しないゼロ以外の参照カウントがある後に、もサイレント モードで消えます。 ストレージ クラス ドライバーは、デバイス オブジェクトが削除された後にデバイス オブジェクトへのポインターを使用して試みませんする必要があります。
 
-削除要求の処理の詳細については、[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)を参照してください。
+削除要求の処理の詳細については、次を参照してください。[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
 
  
 

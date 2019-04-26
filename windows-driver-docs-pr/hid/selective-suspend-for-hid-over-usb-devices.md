@@ -1,17 +1,17 @@
 ---
-title: HID を USB デバイスをセレクティブ中断します。
+title: HID over USB デバイスのセレクティブ サスペンド
 description: ユニバーサル シリアル バス仕様のバージョン 2.0 では、USB のセレクティブ サスペンドの機能を指定します。
 ms.assetid: A4560D7C-8A32-4A91-95B6-4377E0F0D0C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db622b90b32fff0e64e92fc8738edd0939d3d0da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345448"
 ---
-# <a name="selective-suspend-for-hid-over-usb-devices"></a>HID を USB デバイスをセレクティブ中断します。
+# <a name="selective-suspend-for-hid-over-usb-devices"></a>HID over USB デバイスのセレクティブ サスペンド
 
 
 バージョン 2.0、*ユニバーサル シリアル バス仕様*USB のセレクティブ サスペンドの機能を指定します。 この機能を使用すると、Windows オペレーティング システムがアイドル状態の USB デバイスをセレクティブ サスペンドことができます。 これにより、Windows システム全体の電力を効率的に管理できます。 Windows で USB のセレクティブをサポートする方法の詳細については、機能を中断しを参照してください[USB のセレクティブ サスペンド](../usbcon/usb-selective-suspend.md)します。 (このリソースできない場合がありますのいくつかの言語および国。)

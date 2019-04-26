@@ -1,6 +1,6 @@
 ---
-title: トレース ログを表示します。
-description: トレース ログを表示します。
+title: トレース ログの表示
+description: トレース ログの表示
 ms.assetid: c60c801a-6128-43d6-a435-4537c597177f
 keywords:
 - トレース ログは、WDK traceview で表示します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3687f2b7aaa26d058684d92ffa006113ddeb5e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348320"
 ---
-# <a name="displaying-a-trace-log"></a>トレース ログを表示します。
+# <a name="displaying-a-trace-log"></a>トレース ログの表示
 
 
 Traceview でを使用すると、すべてのコンテンツを表示[イベント トレース ログ (.etl) ファイル](trace-level.md)(とも呼ばれる、*トレース ログ*)、traceview でを使用して生成されたイベント トレース ログ ファイルを含むです。

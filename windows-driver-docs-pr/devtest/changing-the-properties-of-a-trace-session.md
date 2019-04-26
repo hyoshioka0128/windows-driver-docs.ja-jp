@@ -1,6 +1,6 @@
 ---
-title: トレース セッションのプロパティを変更します。
-description: トレース セッションのプロパティを変更します。
+title: トレース セッションのプロパティの変更
+description: トレース セッションのプロパティの変更
 ms.assetid: 6a3522c5-d59b-423b-8d8d-5df9ac3be7cc
 keywords:
 - WDK、プロパティのセッションをトレースします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b588c3fc7f838c5ba6420222e51b04475b220991
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344001"
 ---
-# <a name="changing-the-properties-of-a-trace-session"></a>トレース セッションのプロパティを変更します。
+# <a name="changing-the-properties-of-a-trace-session"></a>トレース セッションのプロパティの変更
 
 
 セッションの実行中には、トレース セッションの選択したプロパティを変更できます。 変更することも、[トレース フラグ](trace-flags.md)と[トレース レベル](trace-level.md)セッションの実行中には、トレース プロバイダーのプロパティ。

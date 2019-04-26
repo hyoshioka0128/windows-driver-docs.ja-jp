@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0a57c7c3eba65539a9296009826b900a81da3b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346384"
 ---
 # <a name="kspropertypindataintersection"></a>KSPROPERTY\_PIN\_DATAINTERSECTION
 
@@ -51,7 +51,7 @@ ms.locfileid: "56559478"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
@@ -70,7 +70,7 @@ ms.locfileid: "56559478"
 
 Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
 
-詳細については、[KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)を参照してください。
+詳細については、次を参照してください。 [KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)します。
 
 <a name="requirements"></a>要件
 ------------

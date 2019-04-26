@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INVITATION_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cac2e8c37aee93e87f664396de68dea854e321d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347232"
 ---
 # <a name="wditlvp2pinvitationrequestparameters"></a>WDI\_TLV\_P2P\_招待\_要求\_パラメーター
 
@@ -38,7 +38,7 @@ WDI\_TLV\_P2P\_招待\_要求\_パラメーターは、Wi-Fi Direct 招待要求
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>

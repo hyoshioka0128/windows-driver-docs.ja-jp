@@ -1,16 +1,16 @@
 ---
-Description: This topic provides a brief overview about USB bulk transfers.
-title: USB 一括転送要求を送信する方法
+Description: このトピックでは、USB 一括転送について、簡単な概要を説明します。
+title: USB バルク転送要求の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab6e0a844f762270b63e644c8cf7805e1c3136dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355109"
 ---
-# <a name="how-to-send-usb-bulk-transfer-requests"></a>USB 一括転送要求を送信する方法
+# <a name="how-to-send-usb-bulk-transfer-requests"></a>USB バルク転送要求の送信方法
 
 
 このトピックでは、USB 一括転送について、簡単な概要を説明します。 クライアント ドライバーが送信して、デバイスから大量のデータを受信する方法についての詳細な手順についても提供します。
@@ -98,7 +98,7 @@ SuperSpeed エンドポイントから一括で転送を開始するには、ホ
 
 このトピックでは、ドライバーが、アプリケーションの要求の結果を送信または受信データの一括転送を開始する例を使用してこれらのタスクについて説明します。
 
-デバイスからデータを読み取り、クライアント ドライバーは、継続的なリーダー オブジェクトを提供するフレームワークを使用できます。 詳細については、[USB パイプからデータを読み取るための継続的なリーダーを使用する方法](how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)を参照してください。
+デバイスからデータを読み取り、クライアント ドライバーは、継続的なリーダー オブジェクトを提供するフレームワークを使用できます。 詳細については、次を参照してください。 [USB パイプからデータを読み取るための継続的なリーダーを使用する方法](how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)します。
 
 ## <a name="bulk-transfer-request-example"></a>一括転送要求の例
 
@@ -117,7 +117,7 @@ I/O マネージャーが要求を受信するには、I/O 要求パケット (I
 
 クライアント ドライバーの実装で[ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)または[ *EvtIoWrite*](https://msdn.microsoft.com/library/windows/hardware/ff541813)ドライバーを検査、要求のパラメーターとは必要に応じて検証チェックを実行します。
 
-SuperSpeed 一括エンドポイントのストリームを使用している場合は、KMDF がストリームを本質的にサポートされていないために、URB で、依頼が送信されます。 一括エンドポイントのストリームに転送するための要求を送信する方法の詳細については、[を開いて、USB 一括エンドポイントで静的なストリームを閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)を参照してください。
+SuperSpeed 一括エンドポイントのストリームを使用している場合は、KMDF がストリームを本質的にサポートされていないために、URB で、依頼が送信されます。 一括エンドポイントのストリームに転送するための要求を送信する方法の詳細については、次を参照してください。[を開いて、USB 一括エンドポイントで静的なストリームを閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)します。
 
 ストリームを使用していない場合は、次の手順に従って、要求を送信する KMDF が定義されているメソッドを使用できます。
 
@@ -131,9 +131,9 @@ SuperSpeed 一括エンドポイントのストリームを使用している場
 
 -   この要求に関する詳細を含むフレームワーク要求オブジェクトへのハンドルを WDFREQUEST します。
 -   読み取りまたは書き込みバイト数。
--   対象のエンドポイントに関連付けられている framework パイプ オブジェクト WDFUSBPIPE ハンドルです。 列挙のパイプでデバイスの構成時にパイプ ハンドルを取得する必要があります。 詳細については、[USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)を参照してください。
+-   対象のエンドポイントに関連付けられている framework パイプ オブジェクト WDFUSBPIPE ハンドルです。 列挙のパイプでデバイスの構成時にパイプ ハンドルを取得する必要があります。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
 
-    一括エンドポイントは、ストリームをサポートする場合は、パイプのストリームへのハンドルが必要です。 詳細については、[を開いて、USB 一括エンドポイントで静的なストリームを閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)を参照してください。
+    一括エンドポイントは、ストリームをサポートする場合は、パイプのストリームへのハンドルが必要です。 詳細については、次を参照してください。[を開いて、USB 一括エンドポイントで静的なストリームを閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)します。
 
 ### <a href="" id="step-1--get-the-transfer-buffer--"></a>手順 1:転送バッファーを取得します。
 
@@ -174,7 +174,7 @@ SuperSpeed 一括エンドポイントのストリームを使用している場
 
 -   取得することによって、要求の状態を確認、 **CompletionParams -&gt;IoStatus.Status**値。
 -   USB ドライバー スタックが設定 USBD の状態を確認します。
--   パイプのエラーが発生した場合は、エラーの回復操作を実行します。 詳細については、[USB パイプ エラーから回復する方法](how-to-recover-from-usb-pipe-errors.md)を参照してください。
+-   パイプのエラーが発生した場合は、エラーの回復操作を実行します。 詳細については、次を参照してください。 [USB パイプ エラーから回復する方法](how-to-recover-from-usb-pipe-errors.md)します。
 -   転送されたバイト数を確認します。
 
     要求されたバイト数をまたはデバイスから転送されたときに、一括転送が完了しました。 KMDF メソッドを呼び出すことによって、要求のバッファーを送信する場合で受信した値を確認し、 **CompletionParams -&gt;Parameters.Usb.Completion -&gt;Parameters.PipeWrite.Length**または**CompletionParams -&gt;Parameters.Usb.Completion -&gt;Parameters.PipeRead.Length**メンバー。

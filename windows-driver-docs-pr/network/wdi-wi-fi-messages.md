@@ -1,17 +1,17 @@
 ---
-title: WDI メッセージの構造
+title: WDI メッセージ構造
 description: このセクションは、WDI コマンド メッセージの構造を説明します。
 ms.assetid: 09663C5F-A458-479F-B450-A994486A6C18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16859876b0bf381c6b46f36d6d0aa7e54643b90a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346630"
 ---
-# <a name="wdi-message-structure"></a>WDI メッセージの構造
+# <a name="wdi-message-structure"></a>WDI メッセージ構造
 
 
 WDI コマンドのすべてのメッセージが始まり、 [ **WDI\_メッセージ\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/dn926074)構造体。 コマンドのヘッダーには、0 個以上の型 (TLV) を値構造体が続きます。
@@ -68,7 +68,7 @@ TLV リスト サイズが静的ににはは、いくつかのサイズを静的
 
  
 
-その他の TLVs が含まれている TLVs、TLV 参照トピックは、ある、*許可されている複数の TLV インスタンス*列。 この列がチェックされ、複数回出現する指定の TLV が許可されます。 これの例は、[ **WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266)を参照してください。
+その他の TLVs が含まれている TLVs、TLV 参照トピックは、ある、*許可されている複数の TLV インスタンス*列。 この列がチェックされ、複数回出現する指定の TLV が許可されます。 これの例は、次を参照してください。 [ **WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266)します。
 
  
 

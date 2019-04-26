@@ -13,21 +13,21 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5d08c61fe7014d5b3fc04c200f882e795693a78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349068"
 ---
 # <a name="debugrequestreadcapturedeventcodestream"></a>デバッグ\_要求\_読み取り\_CAPTURED\_イベント\_コード\_ストリーム
 
 
 デバッグ\_要求\_読み取り\_CAPTURED\_イベント\_コード\_ストリーム[**要求**](request.md)まで操作を返します現在のイベントの命令ポインターのメモリの 64 バイトです。
 
-**パラメーター**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-使用されません。
+使用されていません。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 現在のイベントの命令ポインターのメモリ。 最大で 64 バイトのメモリは、返される可能性があります。

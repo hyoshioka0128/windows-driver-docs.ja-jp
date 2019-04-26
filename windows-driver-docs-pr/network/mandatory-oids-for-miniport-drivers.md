@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a236c5de40c56374108cbbd45d89c22c089558c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343496"
 ---
 # <a name="mandatory-oids-for-miniport-drivers"></a>ミニポート ドライバーの必須 OID
 
@@ -47,8 +47,8 @@ ms.locfileid: "56578162"
 
 | OID | クエリの O/分 | セットの O/分 | コメント |
 | --- | --- | --- | --- |
-| [OID_GEN_CURRENT_LOOKAHEAD](oid-gen-current-lookahead.md) | N/A | M | NDIS は、クエリとミニポート ドライバーの失敗したセット要求を処理します。 NDIS は、ミニポート ドライバーに有効な一連の要求を送信します。 同じ情報を取得できます[OID_GEN_RECEIVE_BLOCK_SIZE](oid-gen-receive-block-size.md)します。 |
-| [OID_GEN_CURRENT_PACKET_FILTER](oid-gen-current-packet-filter.md) | N/A | M | クエリは必須ではありません。 セットは必須です。 |
+| [OID_GEN_CURRENT_LOOKAHEAD](oid-gen-current-lookahead.md) | なし | M | NDIS は、クエリとミニポート ドライバーの失敗したセット要求を処理します。 NDIS は、ミニポート ドライバーに有効な一連の要求を送信します。 同じ情報を取得できます[OID_GEN_RECEIVE_BLOCK_SIZE](oid-gen-receive-block-size.md)します。 |
+| [OID_GEN_CURRENT_PACKET_FILTER](oid-gen-current-packet-filter.md) | なし | M | クエリは必須ではありません。 セットは必須です。 |
 | [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md) | M | M |   |
 | [OID_GEN_LINK_PARAMETERS](oid-gen-link-parameters.md) |   | M |   |
 | [OID_GEN_MAXIMUM_TOTAL_SIZE](oid-gen-maximum-total-size.md) | M |   | この情報を取得するには、その他の方法はありません。 |

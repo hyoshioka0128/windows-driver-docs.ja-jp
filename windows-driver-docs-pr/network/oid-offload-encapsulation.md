@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd894fa568a50c77207243c2f1c59e8c88d7027
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350970"
 ---
 # <a name="oidoffloadencapsulation"></a>OID_OFFLOAD_ENCAPSULATION
 
@@ -19,7 +19,7 @@ ms.locfileid: "56571398"
 
 セットの要求としては、上にあるドライバーは、タスクの基になるミニポート アダプターのオフロード カプセル化の設定を設定するのに OID_OFFLOAD_ENCAPSULATION OID を使用します。 タスク オフロードをサポートするミニポート ドライバーでは、この OID セット要求を処理する必要があります。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 InformationBuffer メンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_OFFLOAD_ENCAPSULATION](https://msdn.microsoft.com/library/windows/hardware/ff566702)構造体。
 

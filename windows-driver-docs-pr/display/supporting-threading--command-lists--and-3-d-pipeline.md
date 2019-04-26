@@ -1,6 +1,6 @@
 ---
-title: スレッドのサポート、コマンドのリスト、および 3-D パイプライン
-description: スレッドのサポート、コマンドのリスト、および 3-D パイプライン
+title: スレッド、コマンド リスト、および 3-D パイプラインのサポート
+description: スレッド、コマンド リスト、および 3-D パイプラインのサポート
 ms.assetid: 2c5adc7d-b8ac-48d2-9777-b3d9fbba829a
 keywords:
 - Direct3D バージョン 11 WDK Windows 7 の表示、スレッドのサポート
@@ -18,18 +18,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c5984748274c8a2e0e418df5ce4177959e6a4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350115"
 ---
-# <a name="supporting-threading-command-lists-and-3-d-pipeline"></a>スレッドのサポート、コマンドのリスト、および 3-D パイプライン
+# <a name="supporting-threading-command-lists-and-3-d-pipeline"></a>スレッド、コマンド リスト、および 3-D パイプラインのサポート
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
 
-ユーザー モードのディスプレイ ドライバーがサポートされる新しい Direct3D バージョン 11 の機能を示します (たとえば、スレッド、コマンド リスト、および 3-D パイプライン)、Direct3D のバージョン 11 ランタイムが、ドライバーを呼び出すときに[ **GetCaps(D3D10\_2)** ](https://msdn.microsoft.com/library/windows/hardware/ff566764)関数。 *GetCaps (D3D10\_2)* で、ドライバーには、ドライバーのアダプター固有の関数の 1 つ、 [ **D3D10\_2DDI\_ADAPTERFUNCS** ](https://msdn.microsoft.com/library/windows/hardware/ff541900)構造体、 **pAdapterFuncs\_2**のメンバー、 [ **D3D10DDIARG\_OPENADAPTER** ](https://msdn.microsoft.com/library/windows/hardware/ff541724)へのポインターを構造体します。 ドライバーの初期化中にアダプターに固有の機能を提供する詳細については、[Direct3D のバージョン 11 DDI との通信を初期化して](initializing-communication-with-the-direct3d-version-11-ddi.md)を参照してください。 ときにその**GetCaps (D3D10\_2)** 関数が呼び出されると、ユーザー モードのディスプレイ ドライバーが、要求の種類に基づいて、新しい Direct3D バージョン 11 の機能を提供します (で指定される、**型**メンバー、 [ **D3D10\_2DDIARG\_GETCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff541887)構造体、 *GetCaps (D3D10\_2)* 関数の*pData*パラメーターが指す) です。
+ユーザー モードのディスプレイ ドライバーがサポートされる新しい Direct3D バージョン 11 の機能を示します (たとえば、スレッド、コマンド リスト、および 3-D パイプライン)、Direct3D のバージョン 11 ランタイムが、ドライバーを呼び出すときに[ **GetCaps(D3D10\_2)** ](https://msdn.microsoft.com/library/windows/hardware/ff566764)関数。 *GetCaps (D3D10\_2)* で、ドライバーには、ドライバーのアダプター固有の関数の 1 つ、 [ **D3D10\_2DDI\_ADAPTERFUNCS** ](https://msdn.microsoft.com/library/windows/hardware/ff541900)構造体、 **pAdapterFuncs\_2**のメンバー、 [ **D3D10DDIARG\_OPENADAPTER** ](https://msdn.microsoft.com/library/windows/hardware/ff541724)へのポインターを構造体します。 ドライバーの初期化中にアダプターに固有の機能を提供する詳細については、次を参照してください。 [Direct3D のバージョン 11 DDI との通信を初期化して](initializing-communication-with-the-direct3d-version-11-ddi.md)します。 ときにその**GetCaps (D3D10\_2)** 関数が呼び出されると、ユーザー モードのディスプレイ ドライバーが、要求の種類に基づいて、新しい Direct3D バージョン 11 の機能を提供します (で指定される、**型**メンバー、 [ **D3D10\_2DDIARG\_GETCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff541887)構造体、 *GetCaps (D3D10\_2)* 関数の*pData*パラメーターが指す) です。
 
 ### <a name="span-idthreadingandcommandlistsspanspan-idthreadingandcommandlistsspan-threading-and-command-lists"></a><span id="threading_and_command_lists"></span><span id="THREADING_AND_COMMAND_LISTS"></span> スレッド処理とコマンドの一覧
 

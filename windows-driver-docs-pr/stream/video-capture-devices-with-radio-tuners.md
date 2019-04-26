@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0516b11d079e4bdda6d2c03a9cf6dd4323f3764
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351601"
 ---
 # <a name="video-capture-devices-with-radio-tuners"></a>ラジオ チューナー付きビデオ キャプチャ デバイス
 
@@ -44,7 +44,7 @@ FM チューナーを使用したデバイスのビデオ キャプチャ ミニ
 
 FM のモードで*KsTvTune.ax*頻度 (右辺でも左辺でも 100 kHz)、200 kHz バンドをステップ実行ミニドライバー指定を使用して**TuningGranularity**のメンバー、 [ **KSPROPERTY\_チューナー\_モード\_CAP\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565872)ステップ サイズとして構造体。 検索を停止した*KsTvTune.ax*全体の 200 kHz バンドの検索が、ミニドライバーが良好な信号が見つかったこと、早い方を判断するとき、または。
 
-チューニングが長く、ミニドライバーは常に指定されている場合、 **PLLOffset** -1 または 1 の値。 この場合は、チューニングのロジックで*KsTvTune.ax*再試行の頻度の範囲が重複します。 ミニドライバーを指定する必要があります、 **PLLOffset** -1 または 1、チューニングの最初の要求でのみ、またはチューナーが 8 つの手順の最適な信号内の。 要求のチューニングの詳細については、[最初のチューニング要求を認識する](recognizing-the-first-tuning-request.md)を参照してください。
+チューニングが長く、ミニドライバーは常に指定されている場合、 **PLLOffset** -1 または 1 の値。 この場合は、チューニングのロジックで*KsTvTune.ax*再試行の頻度の範囲が重複します。 ミニドライバーを指定する必要があります、 **PLLOffset** -1 または 1、チューニングの最初の要求でのみ、またはチューナーが 8 つの手順の最適な信号内の。 要求のチューニングの詳細については、次を参照してください。[最初のチューニング要求を認識する](recognizing-the-first-tuning-request.md)します。
 
 チューニング処理は常に、アプリケーションによって要求された center 頻度、開始し、中央上 kHz が 100 以上手順します。 ただし場合、 **PLLOffset** 100 kHz バンド以外のチューニング ロジック手順 1、上限 100 kHz の近くになります。
 

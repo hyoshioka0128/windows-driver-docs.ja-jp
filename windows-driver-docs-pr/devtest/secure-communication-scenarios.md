@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c40b21e295c17d62e4f2894e4fe3b65dfb27fa47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340116"
 ---
 # <a name="secure-communication-scenarios"></a>セキュリティで保護された通信のシナリオ
 
@@ -24,7 +24,7 @@ ms.locfileid: "56579450"
 
 これらのシナリオを試行する前にする必要がありますが正常に完了して、[デバイスとサービスの検査](device-and-service-inspection-scenarios.md)と[Eventing](eventing-scenarios.md)シナリオ。
 
-これらの相互運用性のテスト_ケースを試行する前に、[をセキュリティで保護されたチャネルを使用して WSDAPI](https://go.microsoft.com/fwlink/p/?linkid=81271)と[WSDAPI アプリケーションをセキュリティで保護されたチャネルを使用する構成](https://go.microsoft.com/fwlink/p/?linkid=81272)セキュリティで保護されたチャネルの詳細についてはを参照してください。
+これらの相互運用性のテスト_ケースを試行する前に、次を参照してください。[をセキュリティで保護されたチャネルを使用して WSDAPI](https://go.microsoft.com/fwlink/p/?linkid=81271)と[WSDAPI アプリケーションをセキュリティで保護されたチャネルを使用する構成](https://go.microsoft.com/fwlink/p/?linkid=81272)セキュリティで保護されたチャネルの詳細についてはします。
 
 クライアント アクション サーバー アクションの不合格条件の場合**5.1**
 
@@ -76,7 +76,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 5.1.5
 
@@ -84,7 +84,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 5.1.6
 
@@ -92,7 +92,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 **5.2**
 

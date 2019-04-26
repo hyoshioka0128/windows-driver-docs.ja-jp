@@ -1,6 +1,6 @@
 ---
-title: 証明書をテストします。
-description: 証明書をテストします。
+title: テスト証明書
+description: テスト証明書
 ms.assetid: 1423e4ad-ea72-4720-b5de-163c9c8e4e32
 keywords:
 - ドライバー WDK、テスト証明書の署名
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2c6836324000abafd6b17669d115ac96354e9cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339630"
 ---
-# <a name="test-certificates"></a>証明書をテストします。
+# <a name="test-certificates"></a>テスト証明書
 
 
 開発/テスト チームは次の種類のテスト証明書を使用して、サインイン、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)または[署名を埋め込む](embedded-signatures-in-a-driver-file.md)ドライバー ファイル。

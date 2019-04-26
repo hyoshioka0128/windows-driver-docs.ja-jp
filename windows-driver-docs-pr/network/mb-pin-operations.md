@@ -1,17 +1,17 @@
 ---
-title: MB のピン留め操作
-description: MB のピン留め操作
+title: MB PIN 操作
+description: MB PIN 操作
 ms.assetid: ca9e1537-29e8-4849-a634-5c2177886321
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc6e164116a4c427b4da5395d9b865811bf506f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343291"
 ---
-# <a name="mb-pin-operations"></a>MB のピン留め操作
+# <a name="mb-pin-operations"></a>MB PIN 操作
 
 
 このトピックでは、MB デバイスのメモリまたは Subscriber Identity Module (SIM カード) に格納されているサブスクリプション情報のアクセス制御に関連する操作について説明します。
@@ -35,4 +35,4 @@ USB モデム デバイスでコールド D3 を有効にする方法につい�
 * [USB デバイスの D3Cold をサポートしている](https://blogs.msdn.microsoft.com/usbcoreblog/2013/02/18/supporting-d3cold-for-usb-devices)します。
 * [ドライバーで D3cold のサポート](https://msdn.microsoft.com/library/windows/hardware/hh967717)
 
-ピン留め操作の詳細については、[OID\_WWAN\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)を参照してください。
+ピン留め操作の詳細については、次を参照してください。 [OID\_WWAN\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)します。

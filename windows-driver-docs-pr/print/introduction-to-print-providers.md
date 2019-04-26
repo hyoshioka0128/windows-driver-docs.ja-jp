@@ -1,23 +1,23 @@
 ---
-title: プロバイダーの印刷の概要
-description: プロバイダーの印刷の概要
+title: 印刷プロバイダーの概要
+description: 印刷プロバイダーの概要
 ms.assetid: a0e5e8c8-7af4-4715-9036-64ae851b307d
 keywords:
 - 印刷プロバイダー WDK、印刷プロバイダーについて
 - WDK のジョブの印刷、印刷プロバイダー
 - 印刷プロバイダー WDK、フロー パス
-- ようになりました
+- OpenPrinter
 - WDK のジョブの印刷、印刷プロバイダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e43c86a73678fe6841147b08f883826224914990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355661"
 ---
-# <a name="introduction-to-print-providers"></a>プロバイダーの印刷の概要
+# <a name="introduction-to-print-providers"></a>印刷プロバイダーの概要
 
 > [!WARNING]
 > Windows 10 以降では、サード パーティの印刷プロバイダーをサポートする Api は非推奨します。 Microsoft には、サード パーティの印刷プロバイダーに他の投資はお勧めしません。 さらに、Windows 8 および v4 印刷ドライバー モデルが使用可能な新しい製品では、サード パーティの印刷プロバイダーが作成や v4 印刷ドライバーを使用するキューを管理します。
@@ -42,7 +42,7 @@ Novell NetWare の印刷プロバイダー。 ハンドルは、Novell NetWare �
 **Inetpp.dll**  
 HTTP の印刷プロバイダー。 ハンドルは、URL に送信されたジョブを印刷します。
 
-ベンダーは、印刷プロバイダー、追加のネットワークを作成できます。 詳細については、[ネットワーク印刷プロバイダーの記述](writing-a-network-print-provider.md)を参照してください。
+ベンダーは、印刷プロバイダー、追加のネットワークを作成できます。 詳細については、次を参照してください。[ネットワーク印刷プロバイダーの記述](writing-a-network-print-provider.md)します。
 
 次の図は、これらの印刷プロバイダーに関連するフローを可能なパスを示します。
 

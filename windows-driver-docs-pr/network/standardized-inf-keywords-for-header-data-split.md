@@ -1,6 +1,6 @@
 ---
-title: ヘッダー データの分割の標準化された INF キーワード
-description: ヘッダー データの分割の標準化された INF キーワード
+title: ヘッダー データの分割用の標準化された INF キーワード
+description: ヘッダー データの分割用の標準化された INF キーワード
 ms.assetid: 4c341940-9d9d-4c58-8d15-d54680eef50e
 keywords:
 - ヘッダー データの分割 WDK、構成
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82af1d7b2770042bc9c42be706f3a9a205850862
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345996"
 ---
-# <a name="standardized-inf-keywords-for-header-data-split"></a>ヘッダー データの分割の標準化された INF キーワード
+# <a name="standardized-inf-keywords-for-header-data-split"></a>ヘッダー データの分割用の標準化された INF キーワード
 
 
 
@@ -36,7 +36,7 @@ A*標準化されたキーワード*有効またはヘッダー データ ミニ
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -58,7 +58,7 @@ A*標準化されたキーワード*有効またはヘッダー データ ミニ
 
  
 
-標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
  
 

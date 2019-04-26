@@ -1,6 +1,6 @@
 ---
-title: TCP/IP のオフロード
-description: TCP/IP のオフロード
+title: TCP/IP オフロード
+description: TCP/IP オフロード
 ms.assetid: 1f074ce5-2614-47a5-9ee0-a5e43f05273d
 keywords:
 - ネットワーク ドライバー WDK では、TCP/IP の負荷を軽減します。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5924e6c230c51f5a84a4028b3eb610748941266f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350831"
 ---
-# <a name="tcpip-offload"></a>TCP/IP のオフロード
+# <a name="tcpip-offload"></a>TCP/IP オフロード
 
 
 

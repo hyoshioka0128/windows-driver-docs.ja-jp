@@ -7,11 +7,11 @@ keywords:
 - SIO_WSK_SET_REMOTE_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d3c0e231f85875b4730e7c0f9a57712d0b774a73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351682"
 ---
 # <a name="siowsksetremoteaddress"></a>SIO\_WSK\_設定\_リモート\_アドレス
 
@@ -34,7 +34,7 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -47,7 +47,7 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 <td><p>SIO_WSK_SET_REMOTE_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -84,7 +84,7 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -97,7 +97,7 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 <td><p>SIO_WSK_SET_REMOTE_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -126,7 +126,7 @@ WSK アプリケーションを呼び出して、データグラム ソケット
 
 呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**関数を設定または、データグラム ソケットに対して固定のリモート トランスポート アドレスをクリアします。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

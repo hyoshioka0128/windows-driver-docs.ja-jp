@@ -1,6 +1,6 @@
 ---
-title: コレクションの情報を取得します。
-description: コレクションの情報を取得します。
+title: コレクション情報を取得する
+description: コレクション情報を取得する
 ms.assetid: 0568993b-ff50-48ac-a875-95ab643d6c28
 keywords:
 - コレクションを非表示に WDK を素早く収集
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 871aa3a668e7554dbb7002a313d2963c67067b60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346189"
 ---
-# <a name="obtaining-collection-information"></a>コレクションの情報を取得します。
+# <a name="obtaining-collection-information"></a>コレクション情報を取得する
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: パラレル ポートに接続されたデバイスの物理的な構成
-description: パラレル ポートに接続されたデバイスの物理的な構成
+title: パラレル ポートに接続されているデバイスの物理構成
+description: パラレル ポートに接続されているデバイスの物理構成
 ms.assetid: ae90fcc6-7ea8-4cb1-89a1-1fbf1ad5c05e
 keywords:
 - IEEE 1284 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2a18430701f9a851b06f06f9bb2ab2364cdf4b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349347"
 ---
-# <a name="physical-configuration-of-devices-attached-to-a-parallel-port"></a>パラレル ポートに接続されたデバイスの物理的な構成
+# <a name="physical-configuration-of-devices-attached-to-a-parallel-port"></a>パラレル ポートに接続されているデバイスの物理構成
 
 
 

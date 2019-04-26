@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abb415848c70a67db17c5c1163a9e3630839edf8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349226"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodessuccess-method"></a>IPrinterScriptUsbJobContextReturnCodes::Success メソッド
 

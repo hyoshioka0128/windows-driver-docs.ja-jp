@@ -5,11 +5,11 @@ ms.assetid: B200461F-9F9C-43A7-BA78-0864FD58C64E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81667c573880a1c55ceace8dc78e959d3d0bba87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356736"
 ---
 # <a name="handling-ioctlspbfullduplex-requests"></a>処理の IOCTL\_SPB\_完全\_双方向の要求
 
@@ -43,7 +43,7 @@ SPB コント ローラーのドライバーでは、全二重転送の I/O 要�
 
 ただし、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)と**IOCTL\_SPB\_完全\_双方向**要求と同様の形式、SPB フレームワーク拡張機能 (SpbCx) によって異なる方法で処理されます。 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求、SpbCx は、要求内のパラメーター値を検証し、要求の送信元のプロセスのコンテキストでは、要求のバッファーをキャプチャします。 SpbCx 渡します**IOCTL\_SPB\_EXECUTE\_シーケンス**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoSequence*](https://msdn.microsoft.com/library/windows/hardware/hh450810)コールバック関数は、これらの要求をささげます。
 
-これに対し、SpbCx が扱われます、 **IOCTL\_SPB\_完全\_双方向**IOCTL、ドライバーの定義済みのカスタム要求として要求します。 SpbCx 渡します**IOCTL\_SPB\_完全\_双方向**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoOther*](https://msdn.microsoft.com/library/windows/hardware/hh450805)も、ドライバーがサポートする任意のカスタムの IOCTL 要求を処理するコールバック関数。 SpbCx には、これらの要求パラメーターをチェックまたはバッファーのキャプチャは行われません。 ドライバーは、パラメーターのチェック、または、IOCTL に必要なバッファーのキャプチャ要求を介して、ドライバーが受け取るその*EvtSpbControllerIoOther*関数。 バッファーのキャプチャを有効にするドライバーを指定する必要があります、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)コールバック関数、ドライバーの登録時にその*EvtSpbControllerIoOther*関数。 詳細については、[を使用して、 **SPB\_転送\_一覧**カスタム Ioctl 構造](https://msdn.microsoft.com/library/windows/hardware/hh974776)を参照してください。
+これに対し、SpbCx が扱われます、 **IOCTL\_SPB\_完全\_双方向**IOCTL、ドライバーの定義済みのカスタム要求として要求します。 SpbCx 渡します**IOCTL\_SPB\_完全\_双方向**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoOther*](https://msdn.microsoft.com/library/windows/hardware/hh450805)も、ドライバーがサポートする任意のカスタムの IOCTL 要求を処理するコールバック関数。 SpbCx には、これらの要求パラメーターをチェックまたはバッファーのキャプチャは行われません。 ドライバーは、パラメーターのチェック、または、IOCTL に必要なバッファーのキャプチャ要求を介して、ドライバーが受け取るその*EvtSpbControllerIoOther*関数。 バッファーのキャプチャを有効にするドライバーを指定する必要があります、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)コールバック関数、ドライバーの登録時にその*EvtSpbControllerIoOther*関数。 詳細については、次を参照してください。[を使用して、 **SPB\_転送\_一覧**カスタム Ioctl 構造](https://msdn.microsoft.com/library/windows/hardware/hh974776)します。
 
 
 

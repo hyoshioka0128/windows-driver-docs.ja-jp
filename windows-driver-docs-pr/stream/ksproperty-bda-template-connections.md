@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45e0864fb84b9f86c3be3db8d6c2658134276871
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344962"
 ---
 # <a name="kspropertybdatemplateconnections"></a>KSPROPERTY\_BDA\_テンプレート\_接続
 
@@ -42,16 +42,16 @@ ms.locfileid: "56571272"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>いいえ</p></td>
+<td><p>〇</p></td>
+<td><p>X</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>BDA_TEMPLATE_CONNECTION</p></td>
@@ -61,14 +61,14 @@ ms.locfileid: "56571272"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 返された BDA\_テンプレート\_接続構造には、テンプレートのトポロジ内の接続がについて説明します。
 
 Pin とテンプレートのトポロジのノード間の接続の一覧は、配列 bda\_テンプレート\_接続構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

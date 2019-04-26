@@ -1,6 +1,6 @@
 ---
-title: フレーム バッファー組織
-description: フレーム バッファー組織
+title: フレーム バッファー構造
+description: フレーム バッファー構造
 ms.assetid: 2a9ce844-84c5-4517-acf7-c7e67a1e5e07
 keywords:
 - DirectX のビデオ アクセラレータ WDK Windows 2000 の表示、ビデオのデコード
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efe643a2130d6cb64058d4af53ca520b15130996
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348297"
 ---
-# <a name="frame-buffer-organization"></a>フレーム バッファー組織
+# <a name="frame-buffer-organization"></a>フレーム バッファー構造
 
 
 ## <span id="ddk_frame_buffer_organization_gg"></span><span id="DDK_FRAME_BUFFER_ORGANIZATION_GG"></span>

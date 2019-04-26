@@ -5,11 +5,11 @@ ms.assetid: 2b96bc23-705b-47f0-811c-1cb4a8be8b34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d30de05c1e0ad1efccf7cd6ce6b584c6927c0048
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352724"
 ---
 # <a name="wia-item-flags"></a>WIA 項目のフラグ
 
@@ -31,7 +31,7 @@ WIA 項目の現在の状態を報告するフラグ。
 
 次に、例を示します。**WiaItemTypeImage** WIA の現在の項目に関連付けられているデータをアプリケーションに通知するデータ表現フラグはイメージ データであり、イメージ データ プロパティがあります。 **WiaItemTypeProgrammableDataSource** WIA 項目が構成可能な一連の定義済みの構成ルールに基づいてアプリケーションに示す項目使用法フラグには、 [ **WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581)、および構成の各データ転送結果を変更できる可能性があります。 参照してください[WIA 項目カテゴリ](wia-item-categories.md)カテゴリ定義の詳細についてはします。
 
-WIA 項目のフラグとその定義の完全な一覧については、[ **WIA\_IPA\_項目\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff551585)を参照してください。
+WIA 項目のフラグとその定義の完全な一覧については、次を参照してください。 [ **WIA\_IPA\_項目\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff551585)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: Irp の処理
-description: Irp の処理
+title: IRP の処理
+description: IRP の処理
 ms.assetid: 5fb6d2b9-17ee-4e76-95e9-dd5a7d1e79de
 keywords:
 - カーネル モード ドライバー WDK、Irp
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30221c07b1887e56123e285e6f5017e23548e8af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341052"
 ---
-# <a name="handling-irps"></a>Irp の処理
+# <a name="handling-irps"></a>IRP の処理
 
 
 

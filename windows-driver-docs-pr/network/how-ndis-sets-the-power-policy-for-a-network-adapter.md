@@ -1,6 +1,6 @@
 ---
-title: NDIS がネットワーク アダプター、電源ポリシーを設定する方法
-description: NDIS がネットワーク アダプター、電源ポリシーを設定する方法
+title: NDIS がネットワーク アダプターの電源ポリシーを設定する方法
+description: NDIS がネットワーク アダプターの電源ポリシーを設定する方法
 ms.assetid: ede0e33d-16f9-45ec-9e9d-b188f6360b2f
 keywords:
 - ネットワーク インターフェイス カード WDK ネットワーク、電源ポリシー
@@ -15,19 +15,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abc803dd36329774f3928581555520aa8fa9a108
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349632"
 ---
-# <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS がネットワーク アダプター、電源ポリシーを設定する方法
+# <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS がネットワーク アダプターの電源ポリシーを設定する方法
 
 
 
 
 
-NDIS は、各ネットワーク デバイスのデバイスの電源ポリシー所有者として機能します。 そのため、NDIS は設定して、各ネットワーク デバイスの電源ポリシーを管理します。 デバイスの電源ポリシーの管理に関する詳細については、[デバイス電源ポリシーを管理する](https://msdn.microsoft.com/library/windows/hardware/ff554355)を参照してください。
+NDIS は、各ネットワーク デバイスのデバイスの電源ポリシー所有者として機能します。 そのため、NDIS は設定して、各ネットワーク デバイスの電源ポリシーを管理します。 デバイスの電源ポリシーの管理に関する詳細については、次を参照してください。[デバイス電源ポリシーを管理する](https://msdn.microsoft.com/library/windows/hardware/ff554355)します。
 
 NDIS では、次の情報を使用して、NIC の電源ポリシーを設定します。
 
@@ -127,7 +127,7 @@ NDIS では、システムと NIC の両方が wake on LAN をサポートする
 
 NDIS が OID を発行することに注意してください。\_PNP\_、ユーザーがユーザー インターフェイスの LAN のスリープ解除を有効にするかどうかに関係なく、機能要求。
 
-ミニポート ドライバーは、NDIS を返す場合\_状態\_のクエリに対する応答で成功[OID\_PNP\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569774)、NDIS ミニポート ドライバーを電源管理-対応として扱われます。 ミニポート ドライバーは、NDIS を返す場合\_状態\_いない\_サポート、NDIS ミニポート ドライバーとして扱います古いミニポート ドライバーでは、電源管理機能を持つです。 このようなドライバーの電源管理の詳細については、[古いミニポート ドライバーの電源管理](power-management-for-old-miniport-drivers.md)を参照してください。
+ミニポート ドライバーは、NDIS を返す場合\_状態\_のクエリに対する応答で成功[OID\_PNP\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569774)、NDIS ミニポート ドライバーを電源管理-対応として扱われます。 ミニポート ドライバーは、NDIS を返す場合\_状態\_いない\_サポート、NDIS ミニポート ドライバーとして扱います古いミニポート ドライバーでは、電源管理機能を持つです。 このようなドライバーの電源管理の詳細については、次を参照してください。[古いミニポート ドライバーの電源管理](power-management-for-old-miniport-drivers.md)します。
 
 OID が成功するのミニポート ドライバー\_PNP\_機能要求が要求に応答内の NDIS を次の情報を返します。
 
@@ -149,7 +149,7 @@ NDIS は、この情報を取得、すぐを決定します、各システムの
 
 **スタンバイからコンピューターの状態にデバイスを許可します。**
 
-NIC の電源管理を有効にする最初のオプションが既定で選択されます。 オプションをオフにすると、NDIS は電源管理に関して、古い NIC と NIC を扱います。 詳細については、[古いミニポート ドライバーの電源管理](power-management-for-old-miniport-drivers.md)を参照してください。
+NIC の電源管理を有効にする最初のオプションが既定で選択されます。 オプションをオフにすると、NDIS は電源管理に関して、古い NIC と NIC を扱います。 詳細については、次を参照してください。[古いミニポート ドライバーの電源管理](power-management-for-old-miniport-drivers.md)します。
 
 2 番目のオプションは、既定では明らかです。 NDIS は、許容される低電力状態が、NIC がウェイク アップのシグナルを生成できますがないことを判断した場合 NDIS 2 番目のオプション使用できなくなります。 たとえば場合、 **DeviceState**デバイスの配列メンバー\_機能の構造は、NIC は、すべてのシステムの低電力状態の D3 内でなければならないことを示す場合**DeviceWake**ことを示しますNIC がシステムを解除を利用した最下位のデバイスの状態が d2 に切り替わり、NDIS 網掛けは、2 番目のチェック ボックスを使用できないようにします。
 

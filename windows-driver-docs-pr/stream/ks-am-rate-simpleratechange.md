@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 625c7b6c65180e7811ec3a1009ce383b6618009d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345925"
 ---
 # <a name="ksamratesimpleratechange"></a>KS\_AM\_レート\_SimpleRateChange
 
@@ -63,7 +63,7 @@ KS\_AM\_レート\_SimpleDataRate プロパティは、フィルターで時間�
 
 プロパティの値 (データの操作) は、KS\_AM\_mpeg-2 ストリーム、早送りまたは巻き戻しなどの単純な料金の変更を記述する SimpleRateChange 構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_LISTEN_CHANNEL ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c341847563c60271e10069bc971dccf9039d1dde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347214"
 ---
 # <a name="wditlvp2plistenchannel"></a>WDI\_TLV\_P2P\_リッスン\_チャネル
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_リッスン\_チャネルは、Wi-Fi Direct チャネル情報�
 ## <a name="values"></a>値
 
 
-| 種類                          | 説明                                                                        |
+| 型                          | 説明                                                                        |
 |-------------------------------|------------------------------------------------------------------------------------|
 | UINT8\[3\]                    | クラスの動作とチャンネル番号が有効な国または地域コード。 |
 | UINT8                         | チャンネル番号の動作のクラス/周波数帯。                         |

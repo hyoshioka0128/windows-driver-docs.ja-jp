@@ -1,17 +1,17 @@
 ---
-title: バッテリのドライバーのサンプル
+title: バッテリ ドライバーのサンプル
 description: このディレクトリにバッテリ ドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
 ms.assetid: 0C73DBE1-6214-4E7F-A3EE-AEC87F8BE99C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4cb1a0c17490b92a191060840d6e13cfb7c7ee5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355622"
 ---
-# <a name="battery-driver-samples"></a>バッテリのドライバーのサンプル
+# <a name="battery-driver-samples"></a>バッテリ ドライバーのサンプル
 
 
 このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。

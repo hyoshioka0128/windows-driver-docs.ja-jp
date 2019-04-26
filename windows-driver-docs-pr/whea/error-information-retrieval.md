@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 143d8296c23015bbc52052dcdf88c2d124dd1a06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354456"
 ---
 # <a name="error-information-retrieval"></a>エラー情報の取得
 
@@ -39,7 +39,7 @@ PSHED、PSHED を検出する標準的なエラーのソースによって報告
 
  
 
-エラー情報の取得に参加している PSHED プラグインを実装する方法の詳細については、[エラー情報の取得に参加している](participating-in-error-information-retrieval.md)を参照してください。
+エラー情報の取得に参加している PSHED プラグインを実装する方法の詳細については、次を参照してください。[エラー情報の取得に参加している](participating-in-error-information-retrieval.md)します。
 
  
 

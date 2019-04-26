@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: dfab99478ca5de062860c23911d534e2c113bc13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351748"
 ---
 # <a name="guiddevinterfaceusbhostcontroller"></a>GUID_DEVINTERFACE_USB_HOST_CONTROLLER
 
@@ -51,7 +51,7 @@ GUID_DEVINTERFACE_USB_HOST_CONTROLLER[デバイス インターフェイス ク�
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 システム指定のポートのドライバーを USB ホスト コント ローラーは、オペレーティング システムと USB ホスト コント ローラーの存在をアプリケーションに通知する GUID_DEVINTERFACE_USB_HOST_CONTROLLER のインスタンスを登録します。

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c454e2deea3ad0f27476f75fff549f8541f59cd9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343838"
 ---
 # <a name="wiaipssupportedbarcodetypes"></a>WIA\_IP\_サポートされている\_バーコード\_型
 
@@ -33,9 +33,9 @@ ms.locfileid: "57464274"
 
 有効な値 :WIA\_PROP\_NONE (1 つの配列/ベクトル値)
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 次の表に、有効な値、 **WIA\_IP\_サポートされている\_バーコード\_型**プロパティ。
@@ -47,7 +47,7 @@ ms.locfileid: "57464274"
 </colgroup>
 <thead>
 <tr class="header">
-<th>[値]</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

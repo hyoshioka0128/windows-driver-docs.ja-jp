@@ -5,11 +5,11 @@ ms.assetid: 6315FB18-3F57-43C2-B864-3759058092BB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79fa01624e4c06e40bc051106e1ea3382894634b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342334"
 ---
 # <a name="moving-a-receive-filter-to-a-virtual-port"></a>仮想ポートへの受信フィルターの移動
 
@@ -20,7 +20,7 @@ ms.locfileid: "56580548"
 
     リソースの PCI Express (PCIe) 仮想機能 (VF) が割り当てられているし、VF が子パーティションに接続されている、仮想化スタックは VF に既定以外の VPort を作成します。 仮想化スタックはし、VF に VPort がアタッチされている既定以外に、既定 VPort から VM のネットワーク アダプターの受信フィルターを移動します。 これにより、VF、ハードウェア ベースのデータ パス経由で VM ネットワーク アダプターと基になるネットワーク アダプター間で転送されるパケット。
 
-    これらのデータ パスの詳細については、[SR-IOV データ パス](sr-iov-data-paths.md)を参照してください。
+    これらのデータ パスの詳細については、次を参照してください。 [SR-IOV データ パス](sr-iov-data-paths.md)します。
 
 -   ゲスト オペレーティング システムがまだ実行されている HYPER-V 子パーティションから、VF がデタッチされました。 上にあるドライバーが、PF. に VPort がアタッチされている既定値に VPort 既定以外からの VM ネットワーク アダプターの受信フィルターを移動する OID セット要求を発行するこの例では、 この場合、合成データ パスにパケット トラフィックが戻されます。
 

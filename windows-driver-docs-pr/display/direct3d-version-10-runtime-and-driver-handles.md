@@ -1,17 +1,17 @@
 ---
-title: Direct3D のバージョン 10 ランタイムとドライバーのハンドル
-description: Direct3D のバージョン 10 ランタイムとドライバーのハンドル
+title: Direct3D バージョン 10 ランタイムおよびドライバー ハンドル
+description: Direct3D バージョン 10 ランタイムおよびドライバー ハンドル
 ms.assetid: 1e50afe1-7103-45c4-8f58-a08d51423b22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a57b769eb0180cf591e65e48f57f07683c1cc93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358140"
 ---
-# <a name="direct3d-version-10-runtime-and-driver-handles"></a>Direct3D のバージョン 10 ランタイムとドライバーのハンドル
+# <a name="direct3d-version-10-runtime-and-driver-handles"></a>Direct3D バージョン 10 ランタイムおよびドライバー ハンドル
 
 
 Direct3D のバージョン 10 とドライバーのランタイム ハンドルは、同じ有効期間を共有します。 Direct3D のランタイムを作成する型の関数呼び出しの間でオブジェクトの有効期間を指定します (たとえば、 [ **CreateResource(D3D10)**](https://msdn.microsoft.com/library/windows/hardware/ff540691)) 破棄型関数の呼び出し (たとえば、 [ **DestroyResource(D3D10)**](https://msdn.microsoft.com/library/windows/hardware/ff552797))。 ランタイムは、ランタイム ハンドルの値だけでなく、ドライバー ハンドル値を提供します。 これらのハンドルは、操作対象のオブジェクトを識別する厳密な型でラップされているポインター基本的にです。 リソースのランタイムとドライバーの処理の例を次に示します。

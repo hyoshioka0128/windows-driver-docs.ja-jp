@@ -1,17 +1,17 @@
 ---
-title: Service (POS) ドライバーのサンプルのポイント
+title: Point of Service (POS) ドライバーのサンプル
 description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム POS ドライバーを記述するための開始点を提供します。
 ms.assetid: 5147739F-2BC7-4AAC-959A-19702F6DB73E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 525c69dd0c70c00dea9ec02a457cca321c6d99b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345944"
 ---
-# <a name="point-of-service-pos-driver-samples"></a>Service (POS) ドライバーのサンプルのポイント
+# <a name="point-of-service-pos-driver-samples"></a>Point of Service (POS) ドライバーのサンプル
 
 
 このディレクトリにドライバーのサンプルでは、デバイスのカスタム POS ドライバーを記述するための開始点を提供します。

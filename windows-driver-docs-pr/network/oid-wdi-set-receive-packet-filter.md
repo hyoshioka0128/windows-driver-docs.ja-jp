@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 33ab217bbd200c6e7236e245438967c3921044b5
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342987"
 ---
 # <a name="oidwdisetreceivepacketfilter"></a>OID\_WDI\_設定\_受信\_パケット\_フィルター
 
@@ -41,7 +41,7 @@ OID\_WDI\_設定\_受信\_パケット\_フィルターは、特定の仮想化�
 
 追加データがありません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: 2919f3fc-1eb5-4801-a589-ae3000320763
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 010e7f0231a43ba1249a4a4fc829b858c76e219a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352714"
 ---
 # <a name="wia-security-and-security-descriptors"></a>WIA セキュリティおよびセキュリティ記述子
 
@@ -87,7 +87,7 @@ HKLM,"SOFTWARE\MyCompany\MySpecialKey\"
 "D:(A;CIOI;GA;;;BA)(A;CIOI;GA;;;LS)"
 ```
 
-INF ファイルの詳細については、[WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)を参照してください。
+INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)します。
 
 詳細については、Windows セキュリティ モデルは Windows セキュリティのドキュメントを参照してください。 ドライバーの作成者は、破壊的なユーザーが、ドライバーの脆弱性を悪用の可能性を低減する一般的なセキュリティのベスト プラクティスの対応もあります。 "*Writing Secure Code*"(ISBN 0-7356-1588-8) マイクロソフト プレスがいくつかの有用なリソースの利用可能です。
 

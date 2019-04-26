@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eeb96b0fd3f4c9c429bcf216142db9da56d6cd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342002"
 ---
 # <a name="wiaipsxscaling"></a>WIA\_IP\_XSCALING
 
@@ -32,7 +32,7 @@ WIA\_IP\_XSCALING プロパティは、x 軸に沿ってスケーリングは、
 
 アクセス権:読み取り/書き込みまたは読み取り専用
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 有効な値、WIA\_IP\_XSCALING プロパティ 1 ~ 65535 の範囲。
@@ -47,7 +47,7 @@ WIA\_IP\_XSCALING は x 軸に沿ってスケーリングだけを示します�
 
 -   200、2 x (200%) をスケーリングします。 イメージのサイズは 200% (double)、x 軸に沿って拡大されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

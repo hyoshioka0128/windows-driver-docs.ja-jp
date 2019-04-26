@@ -1,6 +1,6 @@
 ---
-title: ディスクの入力とエラー処理関数
-description: ディスクの入力とエラー処理関数
+title: ディスク要求およびエラー処理関数
+description: ディスク要求およびエラー処理関数
 ms.assetid: e1afeeb3-02f0-4570-9910-f948646f07bf
 keywords:
 - SetupAPI 関数 WDK、ディスクの入力を求める
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f88f144aea08b6b9ad71d3fa67c11e46f5d026bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356058"
 ---
-# <a name="disk-prompting-and-error-handling-functions"></a>ディスクの入力とエラー処理関数
+# <a name="disk-prompting-and-error-handling-functions"></a>ディスク要求およびエラー処理関数
 
 
 

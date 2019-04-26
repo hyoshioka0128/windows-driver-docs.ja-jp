@@ -1,6 +1,6 @@
 ---
-title: データの読み込みで強調表示
-description: データの読み込みで強調表示
+title: ハイライト データの読み込み
+description: ハイライト データの読み込み
 ms.assetid: d893fdbe-847d-45a7-b2b2-62da505c8aeb
 keywords:
 - データ読み込みの WDK DirectX VA をアルファ ブレンド
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6dc12e59bd64d765947e507dd39917508a5aa49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347550"
 ---
-# <a name="loading-highlight-data"></a>データの読み込みで強調表示
+# <a name="loading-highlight-data"></a>ハイライト データの読み込み
 
 
 ## <span id="ddk_loading_highlight_data_gg"></span><span id="DDK_LOADING_HIGHLIGHT_DATA_GG"></span>

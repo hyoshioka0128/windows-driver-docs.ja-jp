@@ -1,6 +1,6 @@
 ---
-title: DriverEntry から記憶装置ドライバーの戻り値
-description: DriverEntry から記憶装置ドライバーの戻り値
+title: DriverEntry からの記憶装置ドライバーの戻り値
+description: DriverEntry からの記憶装置ドライバーの戻り値
 ms.assetid: a5772e9c-ec7b-4570-aaae-d2879f7e0bc7
 keywords:
 - WDK SCSI の値を返す
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e9d41262f3b4981bf18f5e808db818dbda53054
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348458"
 ---
-# <a name="storage-drivers-return-from-driverentry"></a>DriverEntry から記憶装置ドライバーの戻り値
+# <a name="storage-drivers-return-from-driverentry"></a>DriverEntry からの記憶装置ドライバーの戻り値
 
 
 ## <span id="ddk_storage_driver_s_return_from_driverentry_kg"></span><span id="DDK_STORAGE_DRIVER_S_RETURN_FROM_DRIVERENTRY_KG"></span>

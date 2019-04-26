@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dbc1f1a0ecb05234007737aa4f04b5019c9d5a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352956"
 ---
 # <a name="ethernet-send-and-receive-operations"></a>イーサネット送信および受信操作
 

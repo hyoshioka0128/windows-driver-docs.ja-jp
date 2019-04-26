@@ -1,6 +1,6 @@
 ---
-title: 現在のヘッダー データ分割構成の設定
-description: 現在のヘッダー データ分割構成の設定
+title: 現在のヘッダー データの分割構成の設定
+description: 現在のヘッダー データの分割構成の設定
 ms.assetid: b5b20ce8-1522-4729-8d0a-bc2d2c5afff2
 keywords:
 - ヘッダー データの分割 WDK、構成
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13c7b9060bdb950f2036363a83f4c3ace7fecd49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346642"
 ---
-# <a name="setting-the-current-header-data-split-configuration"></a>現在のヘッダー データ分割構成の設定
+# <a name="setting-the-current-header-data-split-configuration"></a>現在のヘッダー データの分割構成の設定
 
 
 

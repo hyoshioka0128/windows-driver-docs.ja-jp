@@ -15,11 +15,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 8210a068c972e38ba8d169a21a2a9d55e2dadcf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351785"
 ---
 # <a name="hresult-values"></a>HRESULT の値
 
@@ -66,7 +66,7 @@ ms.locfileid: "56574802"
 
 **Win32 エラーが発生します。** エラーなど、他のエラー コード\_読み取り\_障害ドメインとエラー\_書き込み\_場合があります、障害が発生します。 これらの結果は、HRESULT に渡される\_FROM\_WinError.h で返される前に定義されている WIN32 マクロ。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,19 +1,19 @@
 ---
-title: deviceState
-description: deviceState
+title: DeviceState
+description: DeviceState
 ms.assetid: 4cf650ea-cccf-411c-809f-0a01e2ceb067
 keywords:
-- deviceState
+- DeviceState
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 994521158ddec6fa1af9942cfa7b81e08fb5b98c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342704"
 ---
-# <a name="devicestate"></a>deviceState
+# <a name="devicestate"></a>DeviceState
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "56550563"
 <thead>
 <tr class="header">
 <th>DeviceState 要素</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +74,7 @@ ms.locfileid: "56550563"
 <thead>
 <tr class="header">
 <th>DeviceState 要素</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>

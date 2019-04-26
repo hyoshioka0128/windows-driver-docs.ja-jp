@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eb32eaffe880d7ae06b2e3990ae1dc2ece2c6fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346458"
 ---
 # <a name="kspropertypincommunication"></a>KSPROPERTY\_PIN\_通信
 
@@ -51,7 +51,7 @@ KSPROPERTY\_PIN\_通信プロパティ pin ファクトリによってインス�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_COMMUNICATION</p></td>
@@ -81,7 +81,7 @@ KS フィルターには、この暗証番号 (pin) ファクトリによって�
 <span id="KSPIN_COMMUNICATION_BRIDGE"></span><span id="kspin_communication_bridge"></span>KSPIN\_通信\_ブリッジ  
 この pin は、他のピンに接続できませんが、KS 以外の I/O 要求を受信するには、インスタンスを作成できます。
 
-ソースのピンは、ピンをシンクする Irp を送信します。 ソース暗証番号 (pin) が読み取りまたは書き込み、およびシンク暗証番号 (pin) はデータを読み取りまたはそこから書き込まれる必要があります。 詳細については、[ **KSPROPERTY\_PIN\_データフロー**](ksproperty-pin-dataflow.md)を参照してください。
+ソースのピンは、ピンをシンクする Irp を送信します。 ソース暗証番号 (pin) が読み取りまたは書き込み、およびシンク暗証番号 (pin) はデータを読み取りまたはそこから書き込まれる必要があります。 詳細については、次を参照してください。 [ **KSPROPERTY\_PIN\_データフロー**](ksproperty-pin-dataflow.md)します。
 
 Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、必要に応じて詳細情報のクエリに Stream 要求のブロックを使って、このプロパティを処理します。
 

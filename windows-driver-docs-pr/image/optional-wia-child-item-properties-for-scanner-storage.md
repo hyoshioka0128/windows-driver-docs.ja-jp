@@ -1,17 +1,17 @@
 ---
-title: ストレージのスキャナー用 WIA の省略可能な子項目のプロパティ
-description: ストレージのスキャナー用 WIA の省略可能な子項目のプロパティ
+title: スキャナー記憶域の省略可能 WIA 子項目のプロパティ
+description: スキャナー記憶域の省略可能 WIA 子項目のプロパティ
 ms.assetid: 3683e5ed-0a0a-479f-90ed-8d0d17833260
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 000f057f2e96810a13fe0489a5a4960fc4cc4132
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342385"
 ---
-# <a name="optional-wia-child-item-properties-for-scanner-storage"></a>ストレージのスキャナー用 WIA の省略可能な子項目のプロパティ
+# <a name="optional-wia-child-item-properties-for-scanner-storage"></a>スキャナー記憶域の省略可能 WIA 子項目のプロパティ
 
 
 WIA スキャナーの記憶域 (ファイル) の子アイテムは、WIA の次のプロパティを必要に応じてサポートできます。

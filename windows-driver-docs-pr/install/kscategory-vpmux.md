@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e0675ae9ce016ff05809cd45102e4b77665827af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346812"
 ---
 # <a name="kscategoryvpmux"></a>KSCATEGORY_VPMUX
 
@@ -56,9 +56,9 @@ KSCATEGORY_VPMUX[デバイス インターフェイス クラス](https://msdn.m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_VPMUX 機能カテゴリをサポートすることを示す KSCATEGORY_VPMUX のインスタンスを登録します。
 
-概要ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)を参照してください。
+概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
 
-ビデオ デバイスのデバイスのインターフェイス クラスについては、[ **KSCATEGORY_VIDEO**](kscategory-video.md)を参照してください。
+ビデオ デバイスのデバイスのインターフェイス クラスについては、次を参照してください。 [ **KSCATEGORY_VIDEO**](kscategory-video.md)します。
 
 <a name="requirements"></a>要件
 ------------

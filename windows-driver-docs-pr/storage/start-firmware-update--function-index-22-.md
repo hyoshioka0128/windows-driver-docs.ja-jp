@@ -1,17 +1,17 @@
 ---
-title: ファームウェア更新を開始 (関数インデックス 22)
+title: ファームウェア更新の開始 (関数インデックス 22)
 description: この関数は、特定のファームウェア スロットにファームウェアの更新を開始します。
 ms.assetid: 34950124-6DBF-43CE-862A-E6DEF7A5FADE
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8479001241b1fdfade828f17224174cca17c5ee9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339057"
 ---
-# <a name="start-firmware-update-function-index-22"></a>ファームウェア更新を開始 (関数インデックス 22)
+# <a name="start-firmware-update-function-index-22"></a>ファームウェア更新の開始 (関数インデックス 22)
 
 
 この関数は、特定のファームウェア スロットにファームウェアの更新を開始します。 特定の時点のファームウェア更新操作の 1 つだけあります。
@@ -68,7 +68,7 @@ ms.locfileid: "56535766"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>
@@ -80,7 +80,7 @@ ms.locfileid: "56535766"
 
  
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 ホストは、更新 (&)、ファームウェアのアクティブ化するには、次のファームウェア関数を呼び出します。

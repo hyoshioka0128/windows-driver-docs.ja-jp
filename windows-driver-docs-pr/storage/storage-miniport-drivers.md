@@ -1,6 +1,6 @@
 ---
-title: ストレージ ミニポート ドライバー
-description: ストレージ ミニポート ドライバー
+title: 記憶域ミニポート ドライバー
+description: 記憶域ミニポート ドライバー
 ms.assetid: 374d8370-02a9-43ab-ab47-27fa9f4051ea
 keywords:
 - ストレージ ミニポート ドライバー WDK
@@ -9,19 +9,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f9c1e02583436ac3af9d0feaca0a121455c93c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354539"
 ---
-# <a name="storage-miniport-drivers"></a>ストレージ ミニポート ドライバー
+# <a name="storage-miniport-drivers"></a>記憶域ミニポート ドライバー
 
 
 ## <span id="ddk_storage_miniport_drivers_kg"></span><span id="DDK_STORAGE_MINIPORT_DRIVERS_KG"></span>
 
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [SCSI ミニポート ドライバー](scsi-miniport-drivers.md)
 

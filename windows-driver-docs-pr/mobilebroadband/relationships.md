@@ -5,11 +5,11 @@ ms.assetid: 78443a49-96c6-45d9-a4f3-8213005f82d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e6b2714071466b7bf988dd040d3dab647c32ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342978"
 ---
 # <a name="relationships"></a>リレーションシップ
 
@@ -104,7 +104,7 @@ Relationships 要素には、デバイスのメタデータ キャッシュ内�
 </xs:complexType>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 Relationships 要素の子要素 ([ExperienceID](experienceid.md)と[LanguageNeutralIdentifier](languageneutralidentifier.md)) オペレーティング システムは、デバイス メタデータのクエリを使用して別の検索キーをパッケージに提供デバイスのメタデータ キャッシュ内にインストールされます。

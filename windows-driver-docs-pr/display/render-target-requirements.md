@@ -1,6 +1,6 @@
 ---
-title: レンダリング ターゲットの要件
-description: レンダリング ターゲットの要件
+title: レンダー ターゲットの要件
+description: レンダー ターゲットの要件
 ms.assetid: 4d16819e-f209-44df-b5af-f3ff9cae256b
 keywords:
 - レンダー ターゲット WDK Direct3D
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e70f923768bf7be7ca6352ac8a123b42a39ee5f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351485"
 ---
-# <a name="render-target-requirements"></a>レンダリング ターゲットの要件
+# <a name="render-target-requirements"></a>レンダー ターゲットの要件
 
 
 ## <span id="ddk_render_target_requirements_gg"></span><span id="DDK_RENDER_TARGET_REQUIREMENTS_GG"></span>

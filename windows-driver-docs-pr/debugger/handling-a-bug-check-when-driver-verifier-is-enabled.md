@@ -1,5 +1,5 @@
 ---
-title: バグ チェック時にドライバー検証機能を処理が有効になっています。
+title: ドライバーの検証ツールが有効な場合のバグ チェックの処理
 description: Driver Verifier は、実行時にドライバー関連のエラーを検出します。 検出され、ドライバー エラーに関する情報を表示、分析のデバッガー コマンドと共に Driver Verifier を使用できます。
 ms.assetid: 4226B62B-0AA5-4D04-A32D-7DD22FD694E3
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07a835eb71d0a959575ae04a7f55970b02d68a89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342080"
 ---
-# <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>バグ チェック時にドライバー検証機能を処理が有効になっています。
+# <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>ドライバーの検証ツールが有効な場合のバグ チェックの処理
 
 
 [Driver Verifier](https://go.microsoft.com/fwlink/p?LinkID=268663)実行時にドライバー関連のエラーを検出します。 Driver Verifier と共に使用することができます、 [ **! 分析**](-analyze.md)デバッガー コマンドが検出され、ドライバー エラーに関する情報を表示します。
@@ -98,7 +98,7 @@ PROCESS_NAME:  TiWorker.exe
 CURRENT_IRQL:  9
 ```
 
-上記の出力で、ルールの説明と名前を表示できます**IrqlExApcLte1**に違反していた、およびルールを説明するリファレンス ページへのリンクをクリックすることができます:<https://go.microsoft.com/fwlink/p/?linkid=216022>します。 デバッガー コマンド リンクをクリックすることもできます。 **! ruleinfo 0x20005**、ルールに関する情報を取得します。 この場合、ルールの状態を呼び出すことができません[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)割り込み要求レベル (IRQL) が APC より大きいかどうか\_レベル。 出力は、現在の IRQL は 9、および wdm.h で確認できますを示しています。 その APC\_レベルが 1 の値を持ちます。 Irql の詳細については、[を管理するハードウェアの優先順位](https://go.microsoft.com/fwlink/p?LinkID=268625)を参照してください。
+上記の出力で、ルールの説明と名前を表示できます**IrqlExApcLte1**に違反していた、およびルールを説明するリファレンス ページへのリンクをクリックすることができます:<https://go.microsoft.com/fwlink/p/?linkid=216022>します。 デバッガー コマンド リンクをクリックすることもできます。 **! ruleinfo 0x20005**、ルールに関する情報を取得します。 この場合、ルールの状態を呼び出すことができません[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)割り込み要求レベル (IRQL) が APC より大きいかどうか\_レベル。 出力は、現在の IRQL は 9、および wdm.h で確認できますを示しています。 その APC\_レベルが 1 の値を持ちます。 Irql の詳細については、次を参照してください。[を管理するハードウェアの優先順位](https://go.microsoft.com/fwlink/p?LinkID=268625)します。
 
 出力[ **! 分析-v** ](-analyze.md)はスタック トレースとエラーの原因となったコードに関する情報を使って続行されます。 次の出力を表示できます、 **OnInterrupt**と呼ばれる MyDriver.sys で日常的な[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)します。 **OnInterrupt** APC より大きい IRQL で実行される割り込みサービス ルーチンは、\_レベルに、このルーチンを呼び出すの違反が発生するように[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)します。
 
@@ -167,7 +167,7 @@ BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Static Driver Verifier](https://go.microsoft.com/fwlink/p?LinkID=268668)
+[静的ドライバー検証ツール](https://go.microsoft.com/fwlink/p?LinkID=268668)
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ドライバーのインストールを簡略化 SetupAPI 関数
-description: ドライバーのインストールを簡略化 SetupAPI 関数
+title: ドライバーのインストールを簡略化する SetupAPI 関数
+description: ドライバーのインストールを簡略化する SetupAPI 関数
 ms.assetid: 7201b260-6239-4c76-8d48-7e2df9c662cd
 keywords:
 - SetupAPI 関数 WDK、ドライバーのインストールを簡略化します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14f781b80d64c58948d0f8fe602968dec8cfd256
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348660"
 ---
-# <a name="setupapi-functions-that-simplify-driver-installation"></a>ドライバーのインストールを簡略化 SetupAPI 関数
+# <a name="setupapi-functions-that-simplify-driver-installation"></a>ドライバーのインストールを簡略化する SetupAPI 関数
 
 
 インストール アプリケーションでは、関数の PnP ドライバーのインストールを簡略化するのに次の SetupAPI 関数を使用できます。
@@ -52,7 +52,7 @@ ms.locfileid: "56552704"
 
 呼び出す**DiInstallDriver**または[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)デバイス用の新しいドライバーをインストールするインストール アプリケーションの最も簡単な方法です。 **DiInstallDriver**と**UpdateDriverForPlugAndPlayDevices**同じ基本的なインストール操作を実行します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
 
-既定では、 **DiInstallDriver**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。 Windows デバイスのドライバーを選択する方法については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
+既定では、 **DiInstallDriver**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。 Windows デバイスのドライバーを選択する方法については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
 呼び出し元が呼び出すことができますも**DiInstallDriver**以下を実行します。
 

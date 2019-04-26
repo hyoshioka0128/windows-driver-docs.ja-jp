@@ -5,18 +5,18 @@ ms.assetid: 625BE34B-5A3C-4E22-BC2F-5375601E629A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6feea8eef83a04f176a2f67194c002989c2628a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346359"
 ---
 # <a name="debugging-using-kd-and-ntkd"></a>KD と NTKD を使用したデバッグ
 
 
 このセクションでは、KD、NTKD デバッガーを使用して、基本的なデバッグ タスクを実行する方法について説明します。
 
-KD と NTKD が NTKD の KD が呼び出されたコマンド プロンプト ウィンドウを継承する一方に開始されると、新しいテキスト ウィンドウが生成する点を除いて、すべての方法で同じです。 KD のこのセクションの指示が与えられますが、同様に機能する NTKD に適しています。 KD または NTKD を使用する場合の詳細については、[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)を参照してください。
+KD と NTKD が NTKD の KD が呼び出されたコマンド プロンプト ウィンドウを継承する一方に開始されると、新しいテキスト ウィンドウが生成する点を除いて、すべての方法で同じです。 KD のこのセクションの指示が与えられますが、同様に機能する NTKD に適しています。 KD または NTKD を使用する場合の詳細については、次を参照してください。[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)します。
 
 詳細については、次のトピックで与えられます。
 
