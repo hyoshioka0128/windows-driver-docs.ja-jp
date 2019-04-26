@@ -1,6 +1,6 @@
 ---
-title: 自動検出、プリンターのハード ドライブ GPD
-description: 自動検出、プリンターのハード ドライブ GPD
+title: GPD のプリンターのハード ドライブを自動検出する
+description: GPD のプリンターのハード ドライブを自動検出する
 ms.assetid: c3bc415e-fa4d-42d0-9686-3105a588a7ea
 keywords:
 - 自動検出プリンター ハード ドライブ WDK プリンターの自動構成
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54409b51cd6d1ea1a1aee0a8faf3db8e47d91587
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349253"
 ---
-# <a name="autodetecting-the-printers-hard-drive-for-gpd"></a>自動検出、プリンターのハード ドライブ GPD
+# <a name="autodetecting-the-printers-hard-drive-for-gpd"></a>GPD のプリンターのハード ドライブを自動検出する
 
 
 GPD ファイルのハード ドライブに関連する機能の GDL ファイルにエントリを追加します。 たとえば、ハード ドライブがインストールされているかどうかに依存する Collate 機能がある場合は、自動的にプリンターが部単位印刷できるかどうかを決定するのに自動構成を使用できます。 GPD ファイルから次のコード例を検討してください。

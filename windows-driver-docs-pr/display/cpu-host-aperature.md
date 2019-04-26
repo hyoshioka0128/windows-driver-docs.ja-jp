@@ -1,17 +1,17 @@
 ---
-title: CPU ホスト aperture
+title: CPU ホスト アパーチャ
 description: 32 ビットの OS の個別のグラフィックス処理ユニット (Gpu) バーのサイズをサポートしていないか、バーが失敗したときにバッファー フレームのサイズ変更、Windows Display Driver Model (WDDM) v2 では提供される独立した GPU VRAM 効率的にアクセスできる代替手段. Gpu で、アドレス スペース バーのプログラミング可能なサポート、新しい CPU ホスト Aperture 機能はその機能を抽象化する WDDM v2 で導入されました。
 ms.assetid: 0E4D01E4-93AF-4205-A360-0CA3470716D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c745c74a503fef51b1e5557e60b1618a051c8fe2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346961"
 ---
-# <a name="cpu-host-aperture"></a>CPU ホスト aperture
+# <a name="cpu-host-aperture"></a>CPU ホスト アパーチャ
 
 
 32 ビットの OS の個別のグラフィックス処理ユニット (Gpu) バーのサイズをサポートしていないか、バーが失敗したときにバッファー フレームのサイズ変更、Windows Display Driver Model (WDDM) v2 では提供される独立した GPU VRAM 効率的にアクセスできる代替手段. Gpu で、アドレス スペース バーのプログラミング可能なサポート、新しい CPU ホスト Aperture 機能はその機能を抽象化する WDDM v2 で導入されました。

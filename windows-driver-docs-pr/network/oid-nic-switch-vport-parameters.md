@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_VPORT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f8cfe00f7a921662c4d0de32e245a01ccf5c2d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350968"
 ---
 # <a name="oidnicswitchvportparameters"></a>OID\_NIC\_スイッチ\_VPORT\_パラメーター
 
@@ -40,7 +40,7 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VPORT\_�
 
 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。 この構造体には、指定されたスイッチの構成パラメーターが含まれています。
 
-詳細については、[仮想ポートのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440181)を参照してください。
+詳細については、次を参照してください。[仮想ポートのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440181)します。
 
 ### <a href="" id="oid-set-requests"></a>OID の要求を設定する処理 OID\_NIC\_スイッチ\_VPORT\_パラメーター
 
@@ -56,7 +56,7 @@ VPort の構成パラメーターの一部のサブセットのみを変更す�
 
 OID の OID セット要求を受信するミニポート ドライバー、PF 後\_NIC\_スイッチ\_VPORT\_パラメーター、ドライバーで、構成パラメーターを使用してハードウェアが構成されます。 ドライバーでは、NDIS で識別されるこれらの構成パラメーターを変更できるだけ\_NIC\_スイッチ\_VPORT\_パラメーター\_*Xxx*\_CHANGEDフラグ、**フラグ**のメンバー、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。
 
-詳細については、[仮想ポートのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440228)を参照してください。
+詳細については、次を参照してください。[仮想ポートのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440228)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

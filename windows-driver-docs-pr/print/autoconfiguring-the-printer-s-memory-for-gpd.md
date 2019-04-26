@@ -1,6 +1,6 @@
 ---
-title: Autoconfiguring GPD のプリンターのメモリ
-description: Autoconfiguring GPD のプリンターのメモリ
+title: GPD のプリンターのメモリを自動構成する
+description: GPD のプリンターのメモリを自動構成する
 ms.assetid: 5e8339a5-d515-4821-853e-bc6607b2d9c1
 keywords:
 - メモリの WDK プリンター autoconfig
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ece6688e56a9f3e601ff76272c83383268b1d313
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349276"
 ---
-# <a name="autoconfiguring-the-printers-memory-for-gpd"></a>Autoconfiguring GPD のプリンターのメモリ
+# <a name="autoconfiguring-the-printers-memory-for-gpd"></a>GPD のプリンターのメモリを自動構成する
 
 
 次のコード例では、GPD ファイル内の任意のメモリ オプションの GDL ファイルにエントリを追加する方法を示します。 次の例の後に表示される GPD のコード例は、メモリ機能の一般的な定義です。

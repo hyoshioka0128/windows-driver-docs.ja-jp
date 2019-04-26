@@ -1,14 +1,14 @@
 ---
-Description: USBStress is the combination of a user-mode application (usbstress.exe) and driver installation package for the kernel-mode driver, usbstress.sys.
+Description: USBStress がユーザー モード アプリケーション (usbstress.exe) と、カーネル モード ドライバーのドライバーのインストール パッケージの組み合わせ usbstress.sys します。
 title: USBStress
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a321240256a9550d82e9b72ef96eaf8d0cd33cfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342135"
 ---
 # <a name="usbstress"></a>USBStress
 

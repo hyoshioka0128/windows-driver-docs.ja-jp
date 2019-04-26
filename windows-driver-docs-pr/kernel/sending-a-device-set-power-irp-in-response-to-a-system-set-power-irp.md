@@ -1,6 +1,6 @@
 ---
-title: システムのセット Power IRP への応答でデバイスのセット Power IRP を送信します。
-description: システムのセット Power IRP への応答でデバイスのセット Power IRP を送信します。
+title: システム電源設定 IRP への応答におけるデバイス電源設定 IRP の送信
+description: システム電源設定 IRP への応答におけるデバイス電源設定 IRP の送信
 ms.assetid: b2029292-d770-4095-8bd7-9358b282216c
 keywords:
 - セット power Irp を送信します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a9b96219bd9ced1b5761dda271fb261388a2126
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342688"
 ---
-# <a name="sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp"></a>システムのセット Power IRP への応答でデバイスのセット Power IRP を送信します。
+# <a name="sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp"></a>システム電源設定 IRP への応答におけるデバイス電源設定 IRP の送信
 
 
 
@@ -38,7 +38,7 @@ ms.locfileid: "56531094"
 
 *IoCompletion*ルーチン (上記の手順 3 を参照します) デバイスの電源ポリシー所有者は、デバイスを送信します次のようにセット power IRP:。
 
-1.  システムの検査セット power IRP を要求されたシステムの電源状態を取得します。 そのシステムの電源状態で、適切なデバイスの電源状態を選択します。 詳細については、[正しいデバイスの電源状態を判断する](determining-the-correct-device-power-state.md)を参照してください。
+1.  システムの検査セット power IRP を要求されたシステムの電源状態を取得します。 そのシステムの電源状態で、適切なデバイスの電源状態を選択します。 詳細については、次を参照してください。[正しいデバイスの電源状態を判断する](determining-the-correct-device-power-state.md)します。
 
 2.  呼び出す[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)を送信する、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)用、デバイスの電源状態がステップ 1 で決定されます。 電源ポリシー所有者は、デバイスがその状態で既に場合でもデバイス セット power 要求を送信する必要があります。
 
@@ -46,7 +46,7 @@ ms.locfileid: "56531094"
 
 4.  状態を返す\_詳細\_処理\_から必要な*IoCompletion*ドライバーは、システムの処理を完了できるように日常的なセット power IRP power 完了コールバック ルーチンでします。
 
-デバイスの電源ポリシーの所有者だけでなく、デバイスが送信ことに注意してくださいセット power IRP もデバイス スタックを介してやり取りする際に、この IRP を処理する必要があります。 その結果、デバイスの電源ポリシー所有者はだけでなく、デバイスに関連付けられた power 完了コールバック ルーチンを必要がありますセット power IRP と*IoCompletion*システムの日常的なセット power の IRP も、 *IoCompletion*デバイスの日常的な IRP の出力を設定します。 詳細については、[IRP の処理\_MN\_設定\_デバイスの電源状態のための電力](handling-irp-mn-set-power-for-device-power-states.md)を参照してください。
+デバイスの電源ポリシーの所有者だけでなく、デバイスが送信ことに注意してくださいセット power IRP もデバイス スタックを介してやり取りする際に、この IRP を処理する必要があります。 その結果、デバイスの電源ポリシー所有者はだけでなく、デバイスに関連付けられた power 完了コールバック ルーチンを必要がありますセット power IRP と*IoCompletion*システムの日常的なセット power の IRP も、 *IoCompletion*デバイスの日常的な IRP の出力を設定します。 詳細については、次を参照してください。 [IRP の処理\_MN\_設定\_デバイスの電源状態のための電力](handling-irp-mn-set-power-for-device-power-states.md)します。
 
 マネージャーはすべて、後の I/O、 *IoCompletion*セット power IRP を結ぶデバイス スタックをデバイスとして設定されたルーチンでは、I/O マネージャーが電源完了コールバック ルーチンを呼び出します。 この時点で、スタック内のすべてのドライバーがデバイスを完了したセット power IRP とデバイスの電源の移行が完了します。
 

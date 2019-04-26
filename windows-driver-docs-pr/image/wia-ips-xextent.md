@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c4ee7b524df501dcee8f7dc31fe04b6b14b190
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343864"
 ---
 # <a name="wiaipsxextent"></a>WIA\_IP\_XEXTENT
 
@@ -35,7 +35,7 @@ WIA\_IP\_XEXTENT プロパティには、現在の幅 (ピクセル単位) を�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーション設定、WIA\_IP\_XEXTENT プロパティを取得する選択領域の左上隅 (つまり、幅) をマークします。 ミニドライバーは、作成し、このプロパティを保持します。

@@ -1,17 +1,17 @@
 ---
-title: 1394 デバイス用のコンテナー Id
-description: 1394 デバイス用のコンテナー Id
+title: 1394 デバイス用のコンテナー ID
+description: 1394 デバイス用のコンテナー ID
 ms.assetid: 667df2c6-bbbd-41da-b626-da493e316016
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1ef0e397ed3eb916529c8623d795dc3d1f20dfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346854"
 ---
-# <a name="container-ids-for-1394-devices"></a>1394 デバイス用のコンテナー Id
+# <a name="container-ids-for-1394-devices"></a>1394 デバイス用のコンテナー ID
 
 
 1394 のバス仕様では、デバイス関数は、またはは、1394 ホスト コント ローラーから削除できないかどうかを示す、内部ハードウェア メカニズムは指定しません。 Windows に含まれている 1394 バス ドライバーは、デバイスのすべてのノードをマーク (*devnode*)、親ホスト コント ローラーからリムーバブルとします。

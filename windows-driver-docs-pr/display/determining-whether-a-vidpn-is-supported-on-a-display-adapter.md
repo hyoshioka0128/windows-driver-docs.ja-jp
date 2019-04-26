@@ -11,11 +11,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 8aea923286e1c54585e6d39f99056efd17c7046f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342417"
 ---
 # <a name="determining-vidpn-support-on-a-display-adapter"></a>ディスプレイ アダプターで VidPN サポートの判断
 
@@ -42,7 +42,7 @@ VidPN は*ディスプレイ アダプターではサポートされて*次の�
 
 VidPN のトポロジが有効かどうかを VidPN がサポートされているかどうかを決定する部分の決定です。 ビデオに存在するソースは、トポロジによって指定されたビデオ存在するターゲットに言い換えると、接続できるでしょうか。 トポロジ内のすべてのビデオ存在するターゲットのモニターが接続されている要件ではないことに注意します。 トポロジを有効にして、モニターが接続されていない場合でも、VidPN をサポートできます。
 
-VidPN manager の呼び出しに、 [ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)ディスプレイのミニポート ドライバー ディスプレイ アダプターの特定の VidPN をサポートするかどうかを確認します。 渡される引数の 1 つ**DxgkDdiIsSupportedVidPn**という目的 VidPN VidPN オブジェクトへのハンドルします。 **DxgkDdiIsSupportedVidPn**目的 VidPN のトポロジを検査する必要があり、メモが存在するビデオのソースと目的の VidPN 既に内のターゲットがピン留めするモードを実行する必要があります。 (このトピックで前述下手定義) に従って目的の VidPN がサポートされているかどうかを示すブール値を返すにする必要があります。 トポロジ、ソース モードのセット、およびターゲット モード、VidPN 一連の検査については、[VidPN オブジェクトとインターフェイス](vidpn-objects-and-interfaces.md)を参照してください。
+VidPN manager の呼び出しに、 [ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)ディスプレイのミニポート ドライバー ディスプレイ アダプターの特定の VidPN をサポートするかどうかを確認します。 渡される引数の 1 つ**DxgkDdiIsSupportedVidPn**という目的 VidPN VidPN オブジェクトへのハンドルします。 **DxgkDdiIsSupportedVidPn**目的 VidPN のトポロジを検査する必要があり、メモが存在するビデオのソースと目的の VidPN 既に内のターゲットがピン留めするモードを実行する必要があります。 (このトピックで前述下手定義) に従って目的の VidPN がサポートされているかどうかを示すブール値を返すにする必要があります。 トポロジ、ソース モードのセット、およびターゲット モード、VidPN 一連の検査については、次を参照してください。 [VidPN オブジェクトとインターフェイス](vidpn-objects-and-interfaces.md)します。
 
  
 

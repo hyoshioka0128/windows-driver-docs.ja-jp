@@ -5,11 +5,11 @@ ms.assetid: F8CD670F-C817-40BF-AF4B-5F3839E46EFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d71bd1573a871c2e5f9effc969e7b4d000a9ce0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348083"
 ---
 # <a name="atomic-bus-operations"></a>アトミック バス操作
 
@@ -36,7 +36,7 @@ SPB に接続されているほとんどの周辺機器にコント ローラー
 
 ただし、ほとんどの sp B に接続されたデバイスでは、コント ローラーのロックが必要な機能がありません。 アトミックを必要とするほとんどのデバイスの操作のバスの[ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求で十分です。
 
-SPB 接続ロック SPB コント ローラーのロックを混同しないでください。 2 つのクライアントが同じ SPB に接続されている周辺機器のデバイスへのアクセスを共有する特殊な場合は、いずれかのクライアントは、一時的にデバイスへの排他アクセスを取得する接続ロックを使用できます。 詳細については、[SPB 接続ロック](https://msdn.microsoft.com/library/windows/hardware/jj819326)を参照してください。
+SPB 接続ロック SPB コント ローラーのロックを混同しないでください。 2 つのクライアントが同じ SPB に接続されている周辺機器のデバイスへのアクセスを共有する特殊な場合は、いずれかのクライアントは、一時的にデバイスへの排他アクセスを取得する接続ロックを使用できます。 詳細については、次を参照してください。 [SPB 接続ロック](https://msdn.microsoft.com/library/windows/hardware/jj819326)します。
 
 ## <a name="hardware-bus-signals"></a>ハードウェア バス信号
 

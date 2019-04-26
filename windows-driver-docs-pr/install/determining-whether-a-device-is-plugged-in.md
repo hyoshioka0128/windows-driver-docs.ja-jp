@@ -1,6 +1,6 @@
 ---
-title: デバイスが接続されているかどうかを決定します。
-description: デバイスが接続されているかどうかを決定します。
+title: デバイスが接続されているかどうかの判断
+description: デバイスが接続されているかどうかの判断
 ms.assetid: 26dc3c2b-49a6-4bba-b86b-2c93a1914f87
 keywords:
 - 接続されていないデバイスを再インストールします。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa9d278f6b4d44cfff671b4f510bdf187b92984b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346196"
 ---
-# <a name="determining-whether-a-device-is-plugged-in"></a>デバイスが接続されているかどうかを決定します。
+# <a name="determining-whether-a-device-is-plugged-in"></a>デバイスが接続されているかどうかの判断
 
 
 注意してくださいを自動起動の動作*デバイス インストール アプリケーション*のハードウェアでユーザーをかどうかは最初に依存する必要がありますまたは最初に、配布メディアを挿入します。 独立系ハードウェア ベンダー (Ihv) は、通常、1 つの配布のディスクを提供し、ディスクでは、1 つの自動起動アプリケーションしか、ため、デバイスの自動起動のインストール アプリケーションは、デバイスが接続されているかどうかを決定する必要があります。

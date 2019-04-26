@@ -1,6 +1,6 @@
 ---
-title: FLT_PREOP_SYNCHRONIZE を返す
-description: FLT_PREOP_SYNCHRONIZE を返す
+title: FLT_PREOP_SYNCHRONIZE が返される場合
+description: FLT_PREOP_SYNCHRONIZE が返される場合
 ms.assetid: b1331f8d-e230-45b2-be1b-f85d85557350
 keywords:
 - FLT_PREOP_SYNCHRONIZE
@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63458ce3d59588f9702dd10684b1427365edb007
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344559"
 ---
 # <a name="returning-fltpreopsynchronize"></a>返す FLT\_PREOP\_同期
 

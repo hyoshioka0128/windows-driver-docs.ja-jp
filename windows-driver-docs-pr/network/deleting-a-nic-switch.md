@@ -1,17 +1,17 @@
 ---
-title: NIC のスイッチを削除します。
-description: NIC のスイッチを削除します。
+title: NIC スイッチの削除
+description: NIC スイッチの削除
 ms.assetid: BCC6A38B-F25B-483A-B9FF-D6FF73F9B2F3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d35b1913ce7845cdf9d89aff75b55340721e2a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347464"
 ---
-# <a name="deleting-a-nic-switch"></a>NIC のスイッチを削除します。
+# <a name="deleting-a-nic-switch"></a>NIC スイッチの削除
 
 
 シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターは、NIC のスイッチを削除できる必要があります。 ミニポート ドライバーを PCI Express (PCIe) 物理機能 (PF) の SR-IOV 対応アダプターだけでは、アダプターで NIC スイッチを削除できます。
@@ -34,11 +34,11 @@ OID メソッド要求を受け取ったとき[OID\_NIC\_スイッチ\_削除\_�
 
 1.  PF のミニポート ドライバーでは、静的な作成と NIC のスイッチの構成をサポートする場合は、指定した NIC スイッチに関連付けられているソフトウェア リソースを解放にする必要があります。 ただし、ドライバーのみを解放できますハードウェア リソースの NIC を切り替えるときに[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)が呼び出されます。
 
-    静的な NIC スイッチの作成の詳細については、[NIC スイッチの作成を静的](static-creation-of-a-nic-switch.md)を参照してください。
+    静的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの作成を静的](static-creation-of-a-nic-switch.md)します。
 
 2.  PF ミニポート ドライバーでは、動的な作成と NIC のスイッチの構成をサポートする場合、指定した NIC スイッチに関連付けられているハードウェアおよびソフトウェア リソースを無料する必要があります。
 
-    動的な NIC スイッチの作成の詳細については、[NIC スイッチの動的な作成](dynamic-creation-of-a-nic-switch.md)を参照してください。
+    動的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの動的な作成](dynamic-creation-of-a-nic-switch.md)です。
 
 3.  ドライバーが呼び出すことによってに、アダプターで仮想化を無効にする必要があります、PF ミニポート ドライバーでは、ネットワーク アダプターで NIC スイッチおよび NIC スイッチが削除されているすべての動的作成をサポートする場合[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481). ネットワーク アダプターの設定を仮想化を無効にする必要があります、 *EnableVirtualization*パラメーターを FALSE と*NumVFs*パラメーターを 0 にします。
 

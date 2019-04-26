@@ -1,5 +1,5 @@
 ---
-title: 携帯電話の COM API の機能
+title: 携帯ネットワーク COM API の機能
 description: このトピックでは、携帯電話の COM API の機能についてを説明します。
 ms.assetid: f6172f25-9003-4b98-a87d-26dc193d40e3
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e87107e64fd6fffd5c62e6f6e8cc4dc9bdbed98c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341902"
 ---
-# <a name="cellular-com-api-capabilities"></a>携帯電話の COM API の機能
+# <a name="cellular-com-api-capabilities"></a>携帯ネットワーク COM API の機能
 
 > [!WARNING]
 > 携帯電話の COM API は、Windows 10 で非推奨とされます。 このコンテンツは、OEM および携帯電話会社が Windows Phone 8.1 アプリケーションの作成の保守をサポートするために提供されます。

@@ -5,18 +5,18 @@ ms.assetid: cadc2cd3-10aa-4a4a-926f-edc01b046f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 621a63f0d81101bc8fca0fd9ddc0d3a4b685b42b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345066"
 ---
 # <a name="using-vector-types-with-sensors"></a>ベクター型センサーを使用します。
 
 
 いくつかのプロパティとデータ フィールドには、情報の配列が含まれます。 センサーなど\_プロパティ\_LIGHT\_応答\_曲線プロパティには 4 バイト符号なし整数の配列が含まれています。 ただし、アプリケーションでは、センサー API を介してこのような配列を受け取る、ときに常に表される VT の種類として\_ベクター |UI1、1 バイト文字の配列。
 
-対象のプロパティとデータのフィールドは配列を含むについては、[定数](about-sensor-constants.md)を参照してください。
+対象のプロパティとデータのフィールドは配列を含むについては、次を参照してください。[定数](about-sensor-constants.md)します。
 
 次のコード例を作成する方法を示しています、 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)センサーの値を格納しているオブジェクト\_プロパティ\_LIGHT\_応答\_曲線。 M という名前の変数\_pSensorProperties はへのポインター、 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)インターフェイス。
 

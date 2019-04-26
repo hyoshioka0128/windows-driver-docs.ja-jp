@@ -1,22 +1,22 @@
 ---
-title: 問題のレポートを使用してデバイス メタデータ パッケージのデバッグ
-description: 問題のレポートを使用してデバイス メタデータ パッケージのデバッグ
+title: 問題レポートを使用したデバイス メタデータ パッケージのデバッグ
+description: 問題レポートを使用したデバイス メタデータ パッケージのデバッグ
 ms.assetid: 303d1b08-1f1c-48ca-89a9-9087516fcd48
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 756ee7eb302e6cde389d51141b469ceabd710e0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352067"
 ---
-# <a name="debugging-device-metadata-packages-by-using-problem-reports"></a>問題のレポートを使用してデバイス メタデータ パッケージのデバッグ
+# <a name="debugging-device-metadata-packages-by-using-problem-reports"></a>問題レポートを使用したデバイス メタデータ パッケージのデバッグ
 
 
 Windows 7 以降のオペレーティング システムは、Windows エラー レポート (WER) サーバーに、デバイス メタデータ パッケージのエラー (エラー コード 0x50000xx) に関する問題のレポートを送信します。 これらのレポートは、デバイス メタデータ パッケージに関する問題の診断に役立つ有用なデバッグ情報を提供します。
 
-デバイス メタデータ パッケージのエラーの詳細については、[デバイス メタデータのエラー コード](device-metadata-error-codes.md)を参照してください。
+デバイス メタデータ パッケージのエラーの詳細については、次を参照してください。[デバイス メタデータのエラー コード](device-metadata-error-codes.md)します。
 
 アクション センターまたはイベント ビューアーを使用するには、オペレーティング システムが送信かは、すぐに Windows エラーのレポート サーバーに送信される問題レポートを表示します。
 
@@ -52,7 +52,7 @@ Windows 7 以降のオペレーティング システムは、Windows エラー 
 
 すべてのデバイス メタデータの取得のクライアントの問題レポートには、次の情報が含まれています。
 
--   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、[デバイス メタデータのエラー コード](device-metadata-error-codes.md)を参照してください。
+-   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、次を参照してください。[デバイス メタデータのエラー コード](device-metadata-error-codes.md)します。
 
 -   Win32 エラー コード。
 

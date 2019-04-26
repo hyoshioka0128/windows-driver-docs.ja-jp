@@ -1,17 +1,17 @@
 ---
-title: WDK のソース ファイルを Visual Studio プロジェクトに変換します。
+title: WDK ソース ファイルから Visual Studio プロジェクトへの変換
 description: Nmake2msBuild を使用して、WDK のソース ファイルを Visual Studio プロジェクトに変換します。
 ms.assetid: 6030317B-5068-40FD-8C9A-0B7A48C82B31
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15a989a7f5b46dfec63e58e02c5429c6edbc08dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343060"
 ---
-# <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>WDK のソース ファイルを Visual Studio プロジェクトに変換します。
+# <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>WDK ソース ファイルから Visual Studio プロジェクトへの変換
 
 
 **注**Nmake2MsBuild ツールは、Windows 10、バージョン 1511 以降、WDK から削除されました。
@@ -136,7 +136,7 @@ NMake2MsBuild ユーティリティは、カスタム ターゲットの変換�
 
 [Nmake2MsBuild](nmake2msbuild.md)
 
-[既存のソース ファイルからドライバーを作成します。](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)
+[既にあるソース ファイルからのドライバーの作成](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)
 
  
 

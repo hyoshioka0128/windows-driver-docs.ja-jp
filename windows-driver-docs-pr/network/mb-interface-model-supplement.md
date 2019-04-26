@@ -5,11 +5,11 @@ ms.assetid: 577BCF39-868B-44F5-A5C0-75E28689C2B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdbc2f5019b71faefb9b29343e41bb00ac7eaeac
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343347"
 ---
 # <a name="mb-interface-model-supplement"></a>MB インターフェイス モデルに関する補足条項
 
@@ -198,7 +198,7 @@ Microsoft OS 文字列記述子と、検索に、次の制約が適用されま�
 
 **BmRequestType**フィールドは 3 つの部分で構成されるビットマップ — データ転送、記述子の型、および受信者の方向-USB 仕様に従って、します。 Microsoft OS 機能の記述子は、ベンダー固有記述子とデータ転送の方向は、デバイスからホストにします。 値ではそのため、 **bmRequestType** 1100 0000b (0xC0) に設定されます。
 
-**BRequest**フィールドは、要求の形式を示すために使用します。 Microsoft OS 機能の記述子を取得する、 **bRequest**特別な GET のフィールドを代入する\_MS\_記述子バイト。 このバイトの値が付いて、 **bMS\_VendorCode**Microsoft の文字列記述子から取得します。 Microsoft OS 文字列記述子の基準取得に関する詳細については、**OS 文字列記述子を取得する**を参照してください。
+**BRequest**フィールドは、要求の形式を示すために使用します。 Microsoft OS 機能の記述子を取得する、 **bRequest**特別な GET のフィールドを代入する\_MS\_記述子バイト。 このバイトの値が付いて、 **bMS\_VendorCode**Microsoft の文字列記述子から取得します。 Microsoft OS 文字列記述子の基準取得に関する詳細については、次を参照してください。 **OS 文字列記述子を取得する**します。
 
 **WValue**フィールドは、特別な用途し、は、上位バイトと下位バイトに分割されます。 高位のバイトを使用して、インターフェイスの数を格納します。 これは複合デバイスは、特に用のインターフェイスごとに機能の記述子を格納するために不可欠なまたはデバイスを[複数のインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537102)します。 ほとんどの場合、0 のインターフェイスが使用されます。 下位バイトを使用して、ページ番号を格納します。 この機能は 64 KB のサイズの境界の記述子を防止 (のサイズによって設定された制限、 **wLength**フィールド)。 記述子は、ページの値を 0 に初期設定がフェッチされます。 完全な記述子の場合 (サイズは 64 KB) が受信されると、ページの値は 1 つずつ増えます、記述子の要求が再度送信されます (この時点で、インクリメントは、値をページ)。 このプロセスは、64 KB 未満のサイズの記述子が受信されるまで繰り返されます。 ページの最大数は 255 に、記述子のサイズに対して 16 MB の制限が適用されるに注意してください。
 

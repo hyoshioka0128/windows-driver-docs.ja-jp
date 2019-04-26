@@ -1,6 +1,6 @@
 ---
-title: ソフトウェア トレース ツールのアンケート
-description: ソフトウェア トレース ツールのアンケート
+title: ソフトウェア トレース ツールの調査
+description: ソフトウェア トレース ツールの調査
 ms.assetid: d6b5d131-ed03-4961-9680-1c4ded35de96
 keywords:
 - ソフトウェアが示されているツールを WDK のトレース
@@ -22,13 +22,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b61d157a36319926691e98acba80ca3e2bb05e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347613"
 ---
-# <a name="survey-of-software-tracing-tools"></a>ソフトウェア トレース ツールのアンケート
+# <a name="survey-of-software-tracing-tools"></a>ソフトウェア トレース ツールの調査
 
 
 ## <span id="ddk_survey_of_software_tracing_tools_tools"></span><span id="DDK_SURVEY_OF_SOFTWARE_TRACING_TOOLS_TOOLS"></span>
@@ -42,7 +42,7 @@ Windows Driver Kit (WDK) または Windows オペレーティング システム
 
     TraceWPP では、ドライバーまたは WDK と Visual Studio を使用してアプリケーションをビルドするときに、WPP オプションを設定する代わりに提供します。 このツールのプロセスでは、ソース ファイル内のマクロをトレースし、WPP トレースを有効にするヘッダー ファイルを作成します。
 
-    際に使用されるものと同じ TraceWPP のコマンド ライン オプションは、 [TraceWPP タスク](tracewpp-task.md)は MSBuild に渡されます。 これらのオプションの詳細については、[WPP プリプロセッサ](wpp-preprocessor.md)を参照してください。
+    際に使用されるものと同じ TraceWPP のコマンド ライン オプションは、 [TraceWPP タスク](tracewpp-task.md)は MSBuild に渡されます。 これらのオプションの詳細については、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
 
     TraceWPP が、箱にある\\&lt;*プラットフォーム*&gt; WDK のディレクトリ。
 
@@ -60,7 +60,7 @@ Windows Driver Kit (WDK) または Windows オペレーティング システム
 
 -   Logman (Logman.exe) が完全に機能を GUI ベース[トレース コント ローラー](trace-controller.md)はパフォーマンス カウンターおよびイベント トレースのログ記録を制御するために特に設計されています。
 
-    Windows XP および Windows の以降のバージョンので Logman が含まれます。 このツールを使用する方法の詳細については、、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=179385) TechNet web サイトのトピックを参照してください。
+    Windows XP および Windows の以降のバージョンので Logman が含まれます。 このツールを使用する方法の詳細については、次を参照してください。、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=179385) TechNet web サイトのトピックです。
 
 ### <a name="span-idcreatingtmffilesspanspan-idcreatingtmffilesspancreating-tmf-files"></a><span id="creating_tmf_files"></span><span id="CREATING_TMF_FILES"></span>TMF ファイルを作成します。
 
@@ -78,7 +78,7 @@ Windows Driver Kit (WDK) または Windows オペレーティング システム
 
 -   Tracerpt (Tracerpt.exe) は、コマンド ライン[トレース コンシューマー](trace-consumer.md)に書式設定*トレース イベント*(**TraceEvent**) パフォーマンス カウンターし、CSV または XML ファイルに書き込むとします。 また、イベントを分析し、概要レポートを生成します。
 
-    Tracerpt は、Windows XP および Windows の以降のバージョンに含まれます。 このツールを使用する方法の詳細については、[Tracerpt](https://go.microsoft.com/fwlink/p/?linkid=179389) TechNet web サイトのトピックを参照してください。
+    Tracerpt は、Windows XP および Windows の以降のバージョンに含まれます。 このツールを使用する方法の詳細については、次を参照してください。 [Tracerpt](https://go.microsoft.com/fwlink/p/?linkid=179389) TechNet web サイトのトピックです。
 
 -   [Traceview で](traceview.md)、GUI ツール、つまりトレース コント ローラーとトレース コンシューマーも書式設定し、トレース メッセージが表示されます (**TraceMessage**) からのリアルタイムのトレース セッションまたはトレース ログ。 フィルター処理しを参照しやすく、表形式で、トレース メッセージを表示します。
 

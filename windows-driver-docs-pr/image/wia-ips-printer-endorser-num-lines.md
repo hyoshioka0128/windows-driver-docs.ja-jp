@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ba64eba726a424a4759d3415f4a0a23f9c05c90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351222"
 ---
 # <a name="wiaipsprinterendorsernumlines"></a>WIA\_IP\_プリンター\_裏書き\_NUM\_行
 
@@ -30,14 +30,14 @@ ms.locfileid: "56578317"
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **WIA\_IP\_プリンター\_裏書き\_NUM\_行**プロパティは・ インプリント ・/裏書き項目のオプションです。 このプロパティはサポートされていません、ドキュメントの各側で 1 行のテキストのみが許可されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: NDIS 電源管理のためのプロトコルのオフロード
-description: NDIS 電源管理のためのプロトコルのオフロード
+title: NDIS 電源管理のプロトコル オフロード
+description: NDIS 電源管理のプロトコル オフロード
 ms.assetid: 191aa59d-1772-4824-ad15-e813f2e154e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea4f1904bac0bccc9011a0587eb339edf3c51d14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347353"
 ---
-# <a name="protocol-offloads-for-ndis-power-management"></a>NDIS 電源管理のためのプロトコルのオフロード
+# <a name="protocol-offloads-for-ndis-power-management"></a>NDIS 電源管理のプロトコル オフロード
 
 
 

@@ -1,19 +1,19 @@
 ---
-title: ミニポート ドライバーからデータを送信します。
-description: ミニポート ドライバーからデータを送信します。
+title: ミニポート ドライバーからのデータの送信
+description: ミニポート ドライバーからのデータの送信
 ms.assetid: f82475ff-8d32-4448-9b19-b6fa97a93d32
 keywords:
 - WDK ネットワークのデータを送信します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec41f368d101e216234767a4a18aa6924feccced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346807"
 ---
-# <a name="sending-data-from-a-miniport-driver"></a>ミニポート ドライバーからデータを送信します。
+# <a name="sending-data-from-a-miniport-driver"></a>ミニポート ドライバーからのデータの送信
 
 
 

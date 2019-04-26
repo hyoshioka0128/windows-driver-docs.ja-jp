@@ -5,11 +5,11 @@ ms.assetid: 228A7F58-8F22-415C-AA22-4CE4B98185E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 973310b348d395ec242ecd5ef6a15a1c1b82e905
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343605"
 ---
 # <a name="managing-hyper-v-extensible-switch-feature-status-information"></a>Hyper-V 拡張可能スイッチ機能の状態情報の管理
 
@@ -22,7 +22,7 @@ HYPER-V 拡張可能スイッチのインターフェイスには、拡張可能
 
 [カスタムのスイッチ機能の状態情報を管理します。](managing-custom-switch-feature-status-information.md)
 
-機能の状態情報の詳細については、[Hyper-v 拡張可能スイッチ機能の状態情報](hyper-v-extensible-switch-feature-status-information.md)を参照してください。
+機能の状態情報の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ機能の状態情報](hyper-v-extensible-switch-feature-status-information.md)します。
 
  
 

@@ -1,28 +1,28 @@
 ---
-title: HYPER-V 拡張可能スイッチのライブ マイグレーションのサポート
-description: HYPER-V 拡張可能スイッチのライブ マイグレーションのサポート
+title: Hyper-V 拡張可能スイッチのライブ マイグレーションのサポート
+description: Hyper-V 拡張可能スイッチのライブ マイグレーションのサポート
 ms.assetid: 4AFC9E3F-C9C5-4693-BA8C-BC7122A4055F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 027b8b09f76383277e3f69ac8eef00c0529fbcce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349553"
 ---
-# <a name="hyper-v-extensible-switch-live-migration-support"></a>HYPER-V 拡張可能スイッチのライブ マイグレーションのサポート
+# <a name="hyper-v-extensible-switch-live-migration-support"></a>Hyper-V 拡張可能スイッチのライブ マイグレーションのサポート
 
 
 子パーティションでは、HYPER-V のライブ マイグレーション中または*仮想マシン (VM)*、1 つのホスト コンピューターが停止している (*ソース ホスト*) と別のホスト コンピューターに移行 (*宛先ホスト*). ライブ移行中に、次の操作が行われます。
 
 -   ライブ マイグレーションは、ソース ホストの起動時に、拡張可能スイッチのインターフェイスは、各ポートと関連付けられているネットワーク アダプター接続の実行時データを保存する基になる拡張機能を要求します。
 
-    この操作の詳細については、[Hyper-v 拡張可能スイッチの保存操作](hyper-v-extensible-switch-save-operations.md)を参照してください。
+    この操作の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの保存操作](hyper-v-extensible-switch-save-operations.md)します。
 
 -   宛先のホストでライブ移行の完了前に拡張可能スイッチのインターフェイスは、各ポートと関連付けられているネットワーク アダプター接続の実行時データを復元する基になる拡張機能を要求します。
 
-    この操作の詳細については、[Hyper-v 拡張可能スイッチの復元操作](hyper-v-extensible-switch-restore-operations.md)を参照してください。
+    この操作の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの復元操作](hyper-v-extensible-switch-restore-operations.md)します。
 
 ライブ マイグレーションのセットアップ ステージでは、ソース ホストは、変換先の物理ホストとの TCP 接続を作成します。 HYPER-V では、移行先の物理ホストにこの接続で、ソース VM の構成データを転送します。 スケルトン VM でセットアップされて、宛先ホストと接続先の VM メモリの割り当ています。 この時点では、HYPER-V は、接続先の VM にそのメモリ ページをなど、ソース VM の状態を転送します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "56530326"
 
     場合は、拡張機能は、ポートの作成に失敗またはライブ マイグレーションが引き続きその移行先ノードのおよびスイッチしていないポリシーのプロパティのいずれかを無効にします。
 
-    検証のポートとその使用法の詳細については、[検証ポート](validation-ports.md)を参照してください。
+    検証のポートとその使用法の詳細については、次を参照してください。[検証ポート](validation-ports.md)します。
 
 2.  ポリシーのプロパティの検証が正常に完了したら、検証ポートは削除の OID セット要求を転送先ホスト[OID\_スイッチ\_ポート\_削除](https://msdn.microsoft.com/library/windows/hardware/hh598273)します。 このポートが削除されると、運用上のポートは宛先のホストで作成し、運用上のポートがその場所に作成します。 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598229)構造に関連付けられている、 [OID\_スイッチ\_ポート\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598272)運用上のポートの要求には、ソース ホスト上のポートの作成に使用された同じデータが含まれています。
 

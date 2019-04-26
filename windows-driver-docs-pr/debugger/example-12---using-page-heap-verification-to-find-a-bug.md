@@ -5,13 +5,13 @@ ms.assetid: aa3f5c53-8522-48be-a3cd-49b740803fe3
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a541f8ef5e454d73afebb0fd1ee48b251f453068
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347775"
 ---
-# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>12 の例:ページ ヒープの検証を使用してバグを発見するには
+# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>例 12:ページ ヒープ検証を使用してバグを発見する
 
 
 ## <span id="ddk_example_12___using_page_heap_verification_to_find_a_bug_dtools"></span><span id="DDK_EXAMPLE_12___USING_PAGE_HEAP_VERIFICATION_TO_FIND_A_BUG_DTOOLS"></span>
@@ -19,9 +19,9 @@ ms.locfileid: "56529756"
 
 次の一連のコマンドでは、GFlags と NTSD デバッガーのページ ヒープの検証機能を使用して、ヒープ メモリの使用エラーを検出する方法を示します。 この例で、プログラマは疑わする架空のアプリケーション、pheap buggy.exe、ヒープ エラーが発生し、一連のエラーを識別するためのテストを実行します。
 
-NTSD について詳しくは、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
+NTSD について詳しくは、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
 
-### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>手順 1:標準的なページ ヒープの検証を有効にします。
+### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>手順 1: 標準的なページ ヒープの検証を有効にします。
 
 次のコマンドにより、pheap の標準的なページ ヒープの検証-buggy.exe:
 
@@ -29,7 +29,7 @@ NTSD について詳しくは、[デバッグを使用して CDB、NTSD](debuggi
 gflags /p /enable pheap-buggy.exe
 ```
 
-### <a name="span-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>手順 2:そのページ ヒープが有効になっていることを確認します。
+### <a name="span-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>手順 2: そのページ ヒープが有効になっていることを確認します。
 
 次のコマンドでは、ヒープのページ検証が有効になっているイメージ ファイルが表示されます。
 
@@ -43,7 +43,7 @@ gflags /p
 pheap-buggy.exe: page heap enabled with flags (traces )
 ```
 
-### <a name="span-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>手順 3:デバッガーを実行します。
+### <a name="span-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>手順 3: デバッガーを実行します。
 
 次のコマンドを実行、 **CorruptAfterEnd** pheap-buggy.exe で NTSD での関数、 **-g** (最初のブレークポイントを無視する) と **-x** (セカンド チャンスの中断に設定アクセス違反例外) のパラメーター:
 
@@ -75,7 +75,7 @@ ntdll!DbgBreakPoint:
 
 「破損したサフィックス パターン」メッセージは、アプリケーションが GFlags が pheap buggy.exe ヒープ割り当ての終了後に挿入されたデータの整合性のパターンに違反したことを示します。
 
-### <a name="span-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>手順 4:呼び出し履歴を表示します。
+### <a name="span-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>手順 4: 呼び出し履歴を表示します。
 
 次の手順で、エラーの原因となった関数を検索する NTSD を報告したアドレスを使用します。 次の 2 つのコマンドでは、行番号の表示の行番号、呼び出し履歴、デバッガーでのダンプを有効にします。
 
@@ -105,7 +105,7 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 
 このエラーの最も可能性の高い原因は、この関数では、割り当てられているバッファーの末尾を越えたプログラムが記述したことです。
 
-### <a name="span-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>手順 5:完全ページ ヒープの検証を有効にします。
+### <a name="span-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>手順 5: 完全ページ ヒープの検証を有効にします。
 
 標準的なページ ヒープの検証とは異なり完全ページ ヒープの検証は発生するとすぐにこのヒープ バッファーの誤用をキャッチできます。 次のコマンドにより、pheap の完全ページ ヒープの検証-buggy.exe:
 
@@ -113,7 +113,7 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 gflags /p /enable pheap-buggy.exe /full
 ```
 
-### <a name="span-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>手順 6:その完全ページ ヒープが有効になっていることを確認します。
+### <a name="span-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>手順 6: その完全ページ ヒープが有効になっていることを確認します。
 
 次のコマンドには、ヒープのページ検証が有効になっているプログラムが一覧表示されます。
 
@@ -127,7 +127,7 @@ gflags /p
 pheap-buggy.exe: page heap enabled with flags (full traces )
 ```
 
-### <a name="span-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>手順 7:デバッガーをもう一度実行します。
+### <a name="span-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>手順 7: デバッガーをもう一度実行します。
 
 次のコマンドを実行、 **CorruptAfterEnd** pheap-buggy.exe NTSD デバッガーでの関数、 **-g** (最初のブレークポイントを無視する) と **-x** (設定アクセス違反例外でのセカンド チャンス中断) のパラメーター。
 
@@ -167,7 +167,7 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 
 行 184 pheap buggy.exe で問題が発生するスタック トレースを示しています。 完全ページ ヒープの検証が有効になっているため、呼び出し履歴は、システム DLL ではなく、プログラム コードで開始します。 その結果、違反は、これが発生した場合、ヒープ ブロックが解放されたのではなく検出されました。
 
-### <a name="span-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>手順 8:コードで、エラーを見つけてください。
+### <a name="span-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>手順 8: コードで、エラーを見つけてください。
 
 クイック検査では、問題の原因が表示されます。プログラムは、256 バイトの (0x100) バッファーの一般的なものではオフ エラー 257 バイト (0x101) への書き込みを試みます。
 

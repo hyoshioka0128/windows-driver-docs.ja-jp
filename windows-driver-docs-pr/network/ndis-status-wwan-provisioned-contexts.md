@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_PROVISIONED_CONTEXTS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3de74bb7cae95238180173e80f8d417188b9ac79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341384"
 ---
 # <a name="ndisstatuswwanprovisionedcontexts"></a>NDIS\_状態\_WWAN\_プロビジョニング済み\_コンテキスト
 

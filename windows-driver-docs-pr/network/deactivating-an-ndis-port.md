@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06659c1d44b1b038db1da1a56b2cde61a9aad544
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347486"
 ---
 # <a name="deactivating-an-ndis-port"></a>NDIS ポートの非アクティブ化
 
@@ -48,9 +48,9 @@ NET の残りのメンバーを設定\_PNP\_イベント**NULL**します。
 
 ミニポート ドライバーは、いつでも、アクティブなポートを非アクティブ化できます。 ただし、ミニポート ドライバーには、ポートが非アクティブ化、前に、未処理の状態インジケーターがないまたは受信ポートに関連付けられている表示があることが確認する必要があります。 ミニポート ドライバーが、ポートの非アクティブ化の PnP イベントを送信した後、すべての状態を開始または受信ポートを非アクティブ化に関連付けられている表示しないください。
 
-ミニポート ドライバーには、ポートも再アクティブ化できます。 NDIS ポートをアクティブ化についての詳細については、[ライセンス NDIS ポート](activating-an-ndis-port.md)を参照してください。
+ミニポート ドライバーには、ポートも再アクティブ化できます。 NDIS ポートをアクティブ化についての詳細については、次を参照してください。[ライセンス NDIS ポート](activating-an-ndis-port.md)します。
 
-NDIS ミニポート ドライバーにバインドされているプロトコル ドライバーのすべてに通知ミニポート ドライバーには、ポートが非アクティブ化、ときに、 **NetEventPortDeactivation** PnP イベント。 この PnP イベントでは、ポートが割り当てられている状態に変更され、ポートは既に非アクティブ化するには含まれませんが一覧表示します。 プロトコル ドライバーでのポートの非アクティブ化イベントの処理の詳細については、[ポート非アクティブ化の PnP イベントを処理する](handling-the-port-deactivation-pnp-event.md)を参照してください。
+NDIS ミニポート ドライバーにバインドされているプロトコル ドライバーのすべてに通知ミニポート ドライバーには、ポートが非アクティブ化、ときに、 **NetEventPortDeactivation** PnP イベント。 この PnP イベントでは、ポートが割り当てられている状態に変更され、ポートは既に非アクティブ化するには含まれませんが一覧表示します。 プロトコル ドライバーでのポートの非アクティブ化イベントの処理の詳細については、次を参照してください。[ポート非アクティブ化の PnP イベントを処理する](handling-the-port-deactivation-pnp-event.md)します。
 
 ミニポート ドライバーは、NDIS ポートを割り当てる、前に、ドライバーを呼び出す必要があります、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)の登録を設定する関数の属性、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)構造体。 ミニポート ドライバーは、NDIS を設定して、既定のポートのアクティブ化を制御できます\_ミニポート\_コントロール\_既定\_ポート属性フラグの呼び出し時に**NdisMSetMiniportAttributes**. 戻る前に、既定のポートを無効する必要がありますミニポート ドライバーには、既定のポートをアクティブ化を担当し、ミニポート ドライバーには、既定のポートがアクティブ化される場合、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数。
 

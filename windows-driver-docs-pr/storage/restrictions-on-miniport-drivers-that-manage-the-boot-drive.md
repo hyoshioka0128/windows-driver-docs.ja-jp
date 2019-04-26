@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバーをブート ドライブの管理に関する制限事項
-description: ミニポート ドライバーをブート ドライブの管理に関する制限事項
+title: ブート ドライブを管理するミニポート ドライバーに関する制約
+description: ブート ドライブを管理するミニポート ドライバーに関する制約
 ms.assetid: 78375e9b-8be9-4e64-b90e-cc8c4ab1751b
 keywords:
 - ストレージ ミニポート ドライバー WDK、ブート ドライブ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8054aab82bd62b7a47b8d6b3025effaad30d31b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346542"
 ---
-# <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>ミニポート ドライバーをブート ドライブの管理に関する制限事項
+# <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>ブート ドライブを管理するミニポート ドライバーに関する制約
 
 
 システムのクラッシュ時に特別な制限は、記憶域ミニポート ドライバーをブート デバイス用のアダプターを管理します。 ディスクにシステム メモリのイメージをダンプするには、中には、ミニポート ドライバーは、別の環境内で動作する必要があります。 ミニポート ドライバー、ポートのドライバーとディスク クラス ドライバー間の通常の通信が中断されました。 ディスク ダンプのポート ドライバーへの直接呼び出しによって、カーネルはディスク I/O *diskdump.sys* (*dumpata.sys* ATA コント ローラー)、ファイル システム、および通常の I/O スタックをバイパスします。 ディスク ダンプ ドライバーが、さらに、すべての I/O 操作を処理するために、ブート デバイスのミニポート ドライバーを呼び出すし、ディスク ダンプ ドライバーはすべてのポート ドライバーに、ミニポート ドライバーの呼び出しをインターセプトします。

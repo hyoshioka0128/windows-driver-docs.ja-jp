@@ -1,17 +1,17 @@
 ---
-title: ComputerHardwareIds 出力
-description: ComputerHardwareIds 出力
+title: ComputerHardwareIds の出力
+description: ComputerHardwareIds の出力
 ms.assetid: 38a08dda-92db-4389-9c2c-91fe17a88051
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cadc25f122b2e3da31b3a1b30ce5c4553305011
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343105"
 ---
-# <a name="computerhardwareids-output"></a>ComputerHardwareIds 出力
+# <a name="computerhardwareids-output"></a>ComputerHardwareIds の出力
 
 
 ComputerHardwareIds ツールによって生成される出力の例を次に示します。

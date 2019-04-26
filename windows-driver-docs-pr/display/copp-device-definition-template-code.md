@@ -1,6 +1,6 @@
 ---
-title: COPP デバイス定義のテンプレート コード
-description: COPP デバイス定義のテンプレート コード
+title: COPP デバイスの定義テンプレート コード
+description: COPP デバイスの定義テンプレート コード
 ms.assetid: 86cafb33-f92a-4c5d-8a54-37aab5e79f37
 keywords:
 - COPP デバイス WDK DirectX VA
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3910502765c9a12daed1639d4c70b71de4b9424
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346926"
 ---
-# <a name="copp-device-definition-template-code"></a>COPP デバイス定義のテンプレート コード
+# <a name="copp-device-definition-template-code"></a>COPP デバイスの定義テンプレート コード
 
 
 ## <span id="ddk_copp_device_definition_template_code_gg"></span><span id="DDK_COPP_DEVICE_DEFINITION_TEMPLATE_CODE_GG"></span>

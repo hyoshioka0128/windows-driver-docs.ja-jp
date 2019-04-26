@@ -1,17 +1,17 @@
 ---
-title: PwrTest 実行状態のシナリオ
+title: PwrTest の実行状態シナリオ
 description: PwrTest 実行状態のシナリオ (/es) のモニター スレッドの現在実行中のプロセスとサービスの状態の変更を実行します。
 ms.assetid: 5470c99b-5780-486f-b36a-922fb821b7f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f321396beaddca43406e4c201840a24d5f29cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345771"
 ---
-# <a name="pwrtest-execution-state-scenario"></a>PwrTest 実行状態のシナリオ
+# <a name="pwrtest-execution-state-scenario"></a>PwrTest の実行状態シナリオ
 
 
 PwrTest 実行状態のシナリオ (**/es**) モニター スレッドの現在実行中のプロセスとサービスの状態の変更を実行します。
@@ -54,7 +54,7 @@ pwrtest /es  [/t:n] [/stes:{y|n}] [/rss:{y|n}] [/sss:{y|n}] [/all] [/user] [/ker
 <span id="_idle"></span><span id="_IDLE"></span>**アイドル状態/**  
 アイドル状態の統計情報を記録します。
 
-**例**
+**使用例**
 
 ```
 pwrtest /es /all

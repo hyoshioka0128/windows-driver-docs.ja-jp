@@ -5,11 +5,11 @@ ms.assetid: a67f3b71-b7a6-4712-a76f-b3b412a149c2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5893789273a46615f428b354d3eadbe63f56b36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352056"
 ---
 # <a name="installing-a-release-signed-catalog-file-for-a-non-pnp-driver"></a>非 PnP ドライバー用のリリース署名されたカタログ ファイルのインストール
 
@@ -22,7 +22,7 @@ ms.locfileid: "56574027"
 
  
 
-**ヒント:**   署名済みカタログ ファイルを使用して一般的により簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)を参照してください。
+**ヒント:**   署名済みカタログ ファイルを使用して一般的により簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)します。
 
  
 

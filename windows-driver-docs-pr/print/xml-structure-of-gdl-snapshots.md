@@ -12,16 +12,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28eda4cbe723ae5efeded569785b783fa3be5978
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355177"
 ---
 # <a name="xml-structure-of-gdl-snapshots"></a>GDL スナップショットの XML 構造
 
 
-XML のスナップショットは、クライアントが指定した構成に適合するこれらのスイッチとケース分岐を含む GDL データ ツリーのサブセットです。 データのツリーは、すべての構成の依存関係のうちいくつかあります、GDL データ エントリによって構成されるツリーです。 構成の依存関係の詳細については、[GDL 構成に依存するデータを作成する](creating-gdl-configuration-dependent-data.md)を参照してください。
+XML のスナップショットは、クライアントが指定した構成に適合するこれらのスイッチとケース分岐を含む GDL データ ツリーのサブセットです。 データのツリーは、すべての構成の依存関係のうちいくつかあります、GDL データ エントリによって構成されるツリーです。 構成の依存関係の詳細については、次を参照してください。 [GDL 構成に依存するデータを作成する](creating-gdl-configuration-dependent-data.md)します。
 
 だけでなく、XML のスナップショットを生成するには、GDL パーサーのスナップショットの全体的な構造を記述する別の XSD スキーマを生成できます。 このスキーマには、GDL テンプレートを定義する列挙型のデータ型の定義も含まれています。 これらの定義には、必要な場合は、スナップショットのすべてのプリミティブ データ型のスキーマ検証を実行するクライアントが有効にします。 場合は、スキーマの検証は実行されず、列挙型のチェックを行わないの有効性、DOM ツリーが読み込まれる。GDL パーサーは、独自の列挙の有効性チェックを実行するため、このチェックは必要ではありません。
 
@@ -33,7 +33,7 @@ GDL パーサーで属性を属性の値のデータ型を定義するテンプ�
 
 GDL では、スナップショット スキーマ要素の次の種類をサポートしています。
 
--   [ルート](gdl-schema-root-element.md)
+-   [Root](gdl-schema-root-element.md)
 
 -   [コンス トラクター](gdl-schema-construct-element.md)
 
@@ -45,7 +45,7 @@ GDL では、スナップショット スキーマ要素の次の種類をサポ
 
 [データ型のラッパー](data-type-wrappers.md)
 
-スナップショット、XML スキーマの名前空間の詳細については、[XML スナップショットの名前空間](xml-snapshot-namespaces.md)を参照してください。
+スナップショット、XML スキーマの名前空間の詳細については、次を参照してください。 [XML スナップショットの名前空間](xml-snapshot-namespaces.md)します。
 
 文字データを XML スナップショットについては、次のトピックを参照してください。
 

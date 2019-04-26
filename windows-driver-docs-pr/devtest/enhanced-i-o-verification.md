@@ -1,6 +1,6 @@
 ---
-title: 強化された I/O の検証
-description: 強化された I/O の検証
+title: 拡張 I/O 検証
+description: 拡張 I/O 検証
 ms.assetid: ce8a0b22-fa27-45e5-b013-b3accf604ed4
 keywords:
 - 強化された I/O の検証機能 WDK Driver Verifier
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2edd9c7ed87e3e9a029c44ae335b02e116d90c80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344850"
 ---
-# <a name="enhanced-io-verification"></a>強化された I/O の検証
+# <a name="enhanced-io-verification"></a>拡張 I/O 検証
 
 
 この機能は Windows XP および Windows オペレーティング システムの以降のバージョンで使用できるだけです。
@@ -57,11 +57,11 @@ I/O の検証の強化によってキャッチ ドライバー エラーによ�
 
 カーネル デバッガー (KD または WinDbg) でこれらのエラーは、メッセージによって記録されます**WDM ドライバー エラー**と説明のテキスト文字列。 カーネル デバッガーがアクティブな場合は、レベル 2 のエラーを無視し、システムの操作を再開することです。 (これが、その他のバグ チェックで可能です)
 
-ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 すべての I/O の検証レベル 2 のエラー メッセージの詳細については、[**バグ チェック 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)を参照してください。
+ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 すべての I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)します。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバの I/O の検証の強化された機能をアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバの I/O の検証の強化された機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
 **注**  Windows 7 および Windows オペレーティング システムの以降のバージョンでは、強化された I/O の検証は自動的にアクティブ化を選択すると[I/O の検証](i-o-verification.md)です。 それが利用できないか個別のオプションとして選択するために必要です。
 
@@ -83,7 +83,7 @@ I/O の検証の強化によってキャッチ ドライバー エラーによ�
     verifier /volatile /flags 0x40 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
 -   **ドライバー検証マネージャーを使用します。**
 

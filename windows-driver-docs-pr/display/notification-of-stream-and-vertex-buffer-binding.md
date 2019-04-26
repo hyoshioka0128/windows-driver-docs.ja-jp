@@ -1,6 +1,6 @@
 ---
-title: Stream および頂点の通知は、バインドをバッファー
-description: Stream および頂点の通知は、バインドをバッファー
+title: ストリーム バッファーと頂点バッファーのバインドの通知
+description: ストリーム バッファーと頂点バッファーのバインドの通知
 ms.assetid: 9ab9727f-053d-404b-95cc-ffd64fde7997
 keywords:
 - WDK の Windows 2000 の表示、複数のストリームの頂点の DirectX 8.0 リリース ノートします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ca8485f65e7c74ff0ef3e4c959dbaac8bfc9a29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345534"
 ---
-# <a name="notification-of-stream-and-vertex-buffer-binding"></a>Stream および頂点の通知は、バインドをバッファー
+# <a name="notification-of-stream-and-vertex-buffer-binding"></a>ストリーム バッファーと頂点バッファーのバインドの通知
 
 
 ## <span id="ddk_notification_of_stream_vertex_buffer_binding_gg"></span><span id="DDK_NOTIFICATION_OF_STREAM_VERTEX_BUFFER_BINDING_GG"></span>

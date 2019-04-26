@@ -5,16 +5,16 @@ ms.assetid: D5341D6D-7C71-43CB-9C70-7E939B32C33F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e10d95d11c5d8620ab9f84a5f7dfe90f6090f6b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343686"
 ---
 # <a name="component-level-performance-state-management"></a>コンポーネント レベルのパフォーマンス状態の管理
 
 
-Windows 10 以降では、電源管理フレームワーク (PoFx) は、デバイス内の個々 のコンポーネントを個別に調整可能なパフォーマンスの状態の 1 つまたは複数のセットを定義するためのドライバーを使用できます。 ドライバーは、パフォーマンスの状態を使用して、のに十分なパフォーマンスが現在のニーズを提供するコンポーネントのワークロードを調整します。
+Windows 10 以降では、電源管理フレームワーク (PoFx) は、デバイス内の個々 のコンポーネントを個別に調整可能なパフォーマンスの状態の 1 つまたは複数のセットを定義するためのドライバーを使用できます。 このドライバーは、パフォーマンスの状態を使ってコンポーネントのワークロードを調整し、現在のニーズに最適なパフォーマンスを提供します。
 
 ## <a name="overview-of-performance-states"></a>パフォーマンス状態の概要
 
@@ -40,7 +40,7 @@ PoFx は、次の種類の各コンポーネントのパフォーマンス状態
 
 PoFx によるパフォーマンスの状態管理のため、デバイスのコンポーネントを登録するには、ドライバーには、一般的な手順が次に示します。
 
-1.  ドライバーは、PoFx によって管理されるデバイスのコンポーネントを登録します。 詳細については、[コンポーネント レベルの電源管理](component-level-power-management.md)を参照してください。
+1.  ドライバーは、PoFx によって管理されるデバイスのコンポーネントを登録します。 詳細については、次を参照してください。[コンポーネント レベルの電源管理](component-level-power-management.md)します。
 
 2.  ドライバーは、呼び出すことによってパフォーマンスの状態のサポートを登録[ **PoFxRegisterComponentPerfStates**](https://msdn.microsoft.com/library/windows/hardware/dn939778)します。 登録の呼び出しの一環として、ドライバー自体が特定のコンポーネントのパフォーマンスの状態を定義するかプラットフォーム拡張機能にプラグインを代わりに定義するには、(PEP) を延期します。
 

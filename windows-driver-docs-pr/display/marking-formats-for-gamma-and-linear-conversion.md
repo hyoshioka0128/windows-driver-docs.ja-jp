@@ -1,6 +1,6 @@
 ---
-title: ガンマと線形変換の形式をマークします。
-description: ガンマと線形変換の形式をマークします。
+title: ガンマ変換と線形変換の形式のマークキング
+description: ガンマ変換と線形変換の形式のマークキング
 ms.assetid: 1285b04e-b67a-46d2-82b2-3cde433bf578
 keywords:
 - ガンマ補正 WDK DirectX 9.0、ガンマ変換の形式をマークします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5939fbadf9cb4ea6ff5ab5fb22ca4b0257dbff6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347523"
 ---
-# <a name="marking-formats-for-gamma-and-linear-conversion"></a>ガンマと線形変換の形式をマークします。
+# <a name="marking-formats-for-gamma-and-linear-conversion"></a>ガンマ変換と線形変換の形式のマークキング
 
 
 ## <span id="ddk_marking_formats_for_gamma_and_linear_conversion_gg"></span><span id="DDK_MARKING_FORMATS_FOR_GAMMA_AND_LINEAR_CONVERSION_GG"></span>

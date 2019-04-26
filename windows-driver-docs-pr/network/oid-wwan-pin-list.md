@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_PIN_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 607939af39974b19d3021c8644032d65ecb90c47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354598"
 ---
 # <a name="oidwwanpinlist"></a>OID\_WWAN\_PIN\_一覧
 
@@ -24,7 +24,7 @@ OID\_WWAN\_PIN\_リストが MB デバイスでサポートされている個人
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、[WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)します。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできる処理がクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 

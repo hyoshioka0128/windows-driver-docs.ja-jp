@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_CHANNEL_LIST_ATTRIBUTE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3d1a6570bee286b0b1b915b660e9bdd6712b2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345949"
 ---
 # <a name="wditlvp2pchannellistattribute"></a>WDI\_TLV\_P2P\_チャネル\_一覧\_属性
 
@@ -34,11 +34,11 @@ WDI\_TLV\_P2P\_チャネル\_一覧\_属性は、チャネルの一覧の属性�
 | 種類                                                                          | 許可されている複数の TLV インスタンス | 省略可能 | 説明              |
 |-------------------------------------------------------------------------------|--------------------------------|----------|--------------------------|
 | [**WDI\_TLV\_国\_リージョン\_一覧**](wdi-tlv-country-region-list.md)        |                                |          | 国/地域の一覧です。 |
-| [**WDI\_TLV\_P2P\_チャネル\_エントリ\_一覧**](wdi-tlv-p2p-channel-entry-list.md) | X                              |          | チャネルのリスト。    |
+| [**WDI\_TLV\_P2P\_チャネル\_エントリ\_一覧**](wdi-tlv-p2p-channel-entry-list.md) | x                              |          | チャネルのリスト。    |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,11 +4,11 @@ description: このセクションについて説明します WinDbg プレビ�
 ms.date: 08/15/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 078dce80d3efc3cf85ea6ce4d4d6622806cbd2e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353072"
 ---
 # <a name="windbg-preview---starting-a-kernel-mode-session"></a>WinDbg Preview - カーネル モードのセッションを開始します。 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56552423"
 デバッガーのカーネル モードのセッションの設定に慣れていない場合は、次を参照してください[WinDbg (カーネル モード) の概要。](getting-started-with-windbg--kernel-mode-.md) 
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
  

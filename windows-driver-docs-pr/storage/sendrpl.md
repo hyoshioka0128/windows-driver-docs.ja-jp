@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 0dc71f1aef614860f95fa884aa93e21d7929eb30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343174"
 ---
 # <a name="sendrpl-function"></a>SendRPL 関数
 
@@ -47,7 +47,7 @@ void SendRPL(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565503)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565503)構造体。
 
 *PortWWN*   
 世界中の名前読み取りのポートを使用するには、(RPL) コマンドを一覧表示、ローカル ポートに送信されます。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRPL\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565496)構造体。

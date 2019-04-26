@@ -1,17 +1,17 @@
 ---
-title: レポートのパケットの結合機能
-description: レポートのパケットの結合機能
+title: パケット結合機能のレポート
+description: パケット結合機能のレポート
 ms.assetid: 6118F648-87FE-4B9E-9535-1602F4FF79D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec920d2d8e1919d060abf50acf1b760541674cf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349426"
 ---
-# <a name="reporting-packet-coalescing-capabilities"></a>レポートのパケットの結合機能
+# <a name="reporting-packet-coalescing-capabilities"></a>パケット結合機能のレポート
 
 
 ミニポート ドライバーは、NDIS を使用して、ネットワーク アダプターの初期化中に、次の機能を登録します。
@@ -22,7 +22,7 @@ ms.locfileid: "56553084"
 
 -   ネットワーク アダプター上で現在有効なフィルター処理機能を受信パケットの結合します。
 
-**注**パケットの結合のミニポート ドライバーのサポートを有効または無効にできる、  **\*PacketCoalescing** INF キーワードの設定。 この設定が表示されます、**詳細**ネットワーク アダプターのプロパティ ページ。 パケット結合 INF ファイルの設定の詳細については、[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)を参照してください。
+**注**パケットの結合のミニポート ドライバーのサポートを有効または無効にできる、  **\*PacketCoalescing** INF キーワードの設定。 この設定が表示されます、**詳細**ネットワーク アダプターのプロパティ ページ。 パケット結合 INF ファイルの設定の詳細については、次を参照してください。[パケットの結合の標準化された INF キーワード](standardized-inf-keywords-for-packet-coalescing.md)します。
 
 
 
@@ -156,6 +156,6 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 -   ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-結合して、基になるネットワーク アダプターの機能をフィルター処理、パケットを報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
+結合して、基になるネットワーク アダプターの機能をフィルター処理、パケットを報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
 
-アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
+アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。

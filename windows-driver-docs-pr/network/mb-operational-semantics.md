@@ -1,17 +1,17 @@
 ---
-title: MB 演算のセマンティクス
-description: MB 演算のセマンティクス
+title: MB 操作のセマンティクス
+description: MB 操作のセマンティクス
 ms.assetid: 5f04b7fd-3df3-4efa-bb26-c7f4cd3c9ebd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bbaaa26143c7f05d21caaa0807995f34aa53b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343282"
 ---
-# <a name="mb-operational-semantics"></a>MB 演算のセマンティクス
+# <a name="mb-operational-semantics"></a>MB 操作のセマンティクス
 
 
 ### <a name="asynchronous-transactions"></a>非同期のトランザクション
@@ -258,8 +258,8 @@ OID 要求に対する非同期応答のミニポート ドライバーの場合
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -373,8 +373,8 @@ OID 要求に対する非同期応答のミニポート ドライバーの場合
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

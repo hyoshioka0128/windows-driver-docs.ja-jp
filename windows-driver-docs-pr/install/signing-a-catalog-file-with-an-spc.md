@@ -1,17 +1,17 @@
 ---
-title: SPC のカタログ ファイルへの署名
-description: SPC のカタログ ファイルへの署名
+title: SPC を使用したカタログ ファイルの署名
+description: SPC を使用したカタログ ファイルの署名
 ms.assetid: 8fe1fc32-73c9-4c09-96bd-93effb35c061
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86bda35fd6e72a83433dfe7e1f817ae5201076cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348611"
 ---
-# <a name="signing-a-catalog-file-with-an-spc"></a>SPC のカタログ ファイルへの署名
+# <a name="signing-a-catalog-file-with-an-spc"></a>SPC を使用したカタログ ファイルの署名
 
 
 次を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)に署名するコマンド、[カタログ ファイル](catalog-files.md)カーネル モードの[ドライバー パッケージ](driver-packages.md)で、 [ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。 64 ビット バージョンの Windows Vista および以降のバージョンの Windows では、カーネル モード ドライバー パッケージがない、 [WHQL リリース署名](whql-release-signature.md)両方に準拠する SPC 署名を使って署名する必要があります、[カーネル モード コード署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)と[PnP デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)します。

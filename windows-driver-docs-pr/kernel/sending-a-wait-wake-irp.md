@@ -1,6 +1,6 @@
 ---
-title: 待機/ウェイク IRP を送信します。
-description: 待機/ウェイク IRP を送信します。
+title: 待機/ウェイク IRP の送信
+description: 待機/ウェイク IRP の送信
 ms.assetid: ed582644-af51-4841-be59-6a3deb6d9de5
 keywords:
 - 電源管理の WDK カーネル、ウェイク アップ機能
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2210ec915ca4d224f6ccbc2eeb3a4cef3d456cab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342680"
 ---
-# <a name="sending-a-waitwake-irp"></a>待機/ウェイク IRP を送信します。
+# <a name="sending-a-waitwake-irp"></a>待機/ウェイク IRP の送信
 
 
 

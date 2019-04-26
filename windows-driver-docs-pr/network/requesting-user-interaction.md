@@ -1,6 +1,6 @@
 ---
-title: ユーザーの介入を要求します。
-description: ユーザーの介入を要求します。
+title: ユーザー操作の要求
+description: ユーザー操作の要求
 ms.assetid: 888faeb0-1984-4b0f-b955-2772a6bd86f7
 keywords:
 - ユーザーの介入 WDK ネイティブ 802.11 IHV 拡張 DLL
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2fe595483b2b03c5e16354a0963cc68aea85b80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349393"
 ---
-# <a name="requesting-user-interaction"></a>ユーザーの介入を要求します。
+# <a name="requesting-user-interaction"></a>ユーザー操作の要求
 
 
 
@@ -23,7 +23,7 @@ ms.locfileid: "56530218"
 
 呼び出した後、いつでも[ *Dot11ExtIhvInitAdapter*](https://msdn.microsoft.com/library/windows/hardware/ff547469)、IHV 拡張機能の DLL は呼び出すことによって、ユーザーとの対話を要求することができます、 [ **Dot11ExtSendUIRequest**](https://msdn.microsoft.com/library/windows/hardware/ff547567)関数。 オペレーティング システムでは、IHV UI 拡張 DLL は、要求を処理し、ユーザーに適切なユーザー インターフェイス (UI) のページを表示するにすべてのユーザーの操作要求を転送します。
 
-要求が完了したとき、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvProcessUIResponse* ](https://msdn.microsoft.com/library/windows/hardware/ff547504)ユーザーとの対話の IHV UI 拡張機能の DLL からの結果を転送する関数。 IHV UI 拡張機能の DLL の詳細については、[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)を参照してください。
+要求が完了したとき、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvProcessUIResponse* ](https://msdn.microsoft.com/library/windows/hardware/ff547504)ユーザーとの対話の IHV UI 拡張機能の DLL からの結果を転送する関数。 IHV UI 拡張機能の DLL の詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)します。
 
 たとえば、IHV 拡張機能の DLL は、次のいずれかのユーザーの操作を要求できます。
 

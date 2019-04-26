@@ -1,6 +1,6 @@
 ---
-title: 記憶域クラス ドライバーではマウント マネージャの要求をサポートしています。
-description: 記憶域クラス ドライバーではマウント マネージャの要求をサポートしています。
+title: 記憶域クラス ドライバーでのマウント マネージャーのサポート
+description: 記憶域クラス ドライバーでのマウント マネージャーのサポート
 ms.assetid: fb37f862-70d6-4514-b481-16f664346422
 keywords:
 - 記憶域クラス ドライバー WDK、マウント マネージャ
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a05bb94b0be40e790074ee82ddcef48fb6d52160
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342191"
 ---
-# <a name="supporting-mount-manager-requests-in-a-storage-class-driver"></a>記憶域クラス ドライバーではマウント マネージャの要求をサポートしています。
+# <a name="supporting-mount-manager-requests-in-a-storage-class-driver"></a>記憶域クラス ドライバーでのマウント マネージャーのサポート
 
 
 ## <span id="ddk_supporting_mount_manager_requests_in_a_storage_class_driver_kg"></span><span id="DDK_SUPPORTING_MOUNT_MANAGER_REQUESTS_IN_A_STORAGE_CLASS_DRIVER_KG"></span>
@@ -60,7 +60,7 @@ ms.locfileid: "56529190"
 
 これら 3 つの Ioctl への応答でクライアントが返されます、ボリュームのデバイスを非永続的オブジェクト名 (またはターゲット名) にあるで、**デバイス**システム オブジェクトのツリーのディレクトリ (例。"\\デバイス\\HarddiskVolume1")、ボリュームの一意の ID、および推奨される永続的なシンボリック リンクのそれぞれのボリュームの名前します。 クライアントは、無視することができますが[ **IOCTL\_MOUNTDEV\_クエリ\_提案\_リンク\_名前**](https://msdn.microsoft.com/library/windows/hardware/ff560440)、する必要があります受信するとボリュームの一意の ID を指定[ **IOCTL\_MOUNTDEV\_クエリ\_デバイス\_名前**](https://msdn.microsoft.com/library/windows/hardware/ff560437)または IOCTL\_MOUNTDEV\_クエリ\_UNIQUE\_id。 マウント マネージャが、一意のボリューム ID を指定するクライアントの完全に依存しています、クライアントを提供しないこと、しマウント マネージャでない場合、ドライブ文字など、マウント ポイントをボリュームに割り当てることができません。
 
-これらの Ioctl の詳細については、[マウント マネージャによって送信された I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff561594)を参照してください。
+これらの Ioctl の詳細については、次を参照してください。[マウント マネージャによって送信された I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff561594)します。
 
 クライアントがそのボリュームの到着をマウント マネージャに警告が照会されたときに、ボリュームの一意の ID を提供できない場合は、ボリュームが掲載、*配信不能にマウントされているデバイス*一覧。 この場合、クライアントが送信できる、 [ **IOCTL\_MOUNTMGR\_確認\_UNPROCESSED\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/ff560454) IOCTL マウント マネージャーに要求します。マウント マネージャはその配信不能にマウントされているデバイスの一覧を再スキャンして、それぞれのボリュームの一意の Id の一覧にクライアントを照会する別の試行です。 詳細については、IOCTL\_MOUNTMGR\_xxx Ioctl を参照してください[マウント Manager クライアントによって送信される I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff561593)
 
@@ -68,7 +68,7 @@ ms.locfileid: "56529190"
 
 ときにマウント マネージャはマウント マネージャのデータベースに対応するシンボリック リンク名を削除することがなく、デバイス オブジェクトを指すシンボリック リンクを削除し、ボリュームがオフラインなったことを検出します。
 
-Mount manager のクライアントが永続的なシンボル名を作成する方法については、[ **IOCTL\_MOUNTMGR\_作成\_ポイント**](https://msdn.microsoft.com/library/windows/hardware/ff560457)を参照してください。
+Mount manager のクライアントが永続的なシンボル名を作成する方法については、次を参照してください。 [ **IOCTL\_MOUNTMGR\_作成\_ポイント**](https://msdn.microsoft.com/library/windows/hardware/ff560457)します。
 
  
 

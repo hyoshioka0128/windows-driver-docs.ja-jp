@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1ddc2b0838eb2e5bd5d04628b3bf6d5842abda1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354122"
 ---
 # <a name="oidtcptaskipsecaddudpespsa"></a>OID_TCP_TASK_IPSEC_ADD_UDPESP_SA
 
@@ -37,7 +37,7 @@ TCP/IP トランスポートは、IP プロトコルを指定できます、**�
 
 [OFFLOAD_ALGO_INFO](https://msdn.microsoft.com/library/windows/hardware/ff568842)メンバーである構造体の[OFFLOAD_SECURITY_ASSOCIATION](https://msdn.microsoft.com/library/windows/hardware/ff569061)構造体をセキュリティ アソシエーション (SA) を使用するアルゴリズムを指定します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

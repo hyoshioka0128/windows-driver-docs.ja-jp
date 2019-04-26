@@ -1,6 +1,6 @@
 ---
-title: システム電源の状態
-description: システム電源の状態
+title: システムの電源状態
+description: システムの電源状態
 ms.assetid: bb30bc89-d1f2-4cb3-bcfb-fb76c69dba27
 keywords:
 - システム電源の状態 WDK カーネル、システム電源の状態について
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 073611a13d298cdf2a8289b01815f2bfb5d9e7e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345443"
 ---
-# <a name="system-power-states"></a>システム電源の状態
+# <a name="system-power-states"></a>システムの電源状態
 
 
 

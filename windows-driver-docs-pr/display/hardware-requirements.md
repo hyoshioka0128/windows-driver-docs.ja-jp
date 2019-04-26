@@ -5,11 +5,11 @@ ms.assetid: 7297C938-D2DD-4A06-B9AD-18DDAA73A1E4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 130268432a805b92fed9cf90a644fbd19b2bbb9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353896"
 ---
 # <a name="direct3d-hardware-requirements-in-windows-8"></a>Windows 8 で Direct3D ハードウェア要件
 
@@ -44,7 +44,7 @@ ms.locfileid: "56559016"
 
 **Windows 8 向けの Microsoft direct3d10 ハードウェア仕様の変更**
 
-| 必須?      | 機能                            |
+| 必須/省略可能      | 機能                            |
 |----------------|------------------------------------|
 | 必須       | ピクセル形式 (5551、565、4444) \* |
 | 必須       | 同じ画面ブリット \*              |
@@ -54,7 +54,7 @@ ms.locfileid: "56559016"
 
 **Windows 8 の Direct3D 10.1 ハードウェア仕様の変更**
 
-| 必須?      | 機能                            |
+| 必須/省略可能      | 機能                            |
 |----------------|------------------------------------|
 | 必須       | ピクセル形式 (5551、565、4444) \* |
 | 必須       | 同じ画面ブリット \*              |
@@ -64,7 +64,7 @@ ms.locfileid: "56559016"
 
 **Windows 8 向けの Microsoft direct3d11 ハードウェア仕様の変更**
 
-| 必須?      | 機能                            |
+| 必須/省略可能      | 機能                            |
 |----------------|------------------------------------|
 | 必須       | ピクセル形式 (5551、565、4444) \* |
 | 必須       | 同じ画面ブリット \*              |
@@ -78,7 +78,7 @@ ms.locfileid: "56559016"
 
 **Windows 8 のハードウェア仕様を Direct3D 11.1**
 
-| 必須?      | 機能                                |
+| 必須/省略可能      | 機能                                |
 |----------------|----------------------------------------|
 | 必須       | Ops のロジック                              |
 | 必須       | ピクセル形式 (5551、565、4444) \*     |

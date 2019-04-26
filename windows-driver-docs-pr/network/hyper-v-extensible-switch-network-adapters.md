@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチのネットワーク アダプター
-description: HYPER-V 拡張可能スイッチのネットワーク アダプター
+title: Hyper-V 拡張可能スイッチ ネットワーク アダプター
+description: Hyper-V 拡張可能スイッチ ネットワーク アダプター
 ms.assetid: 30FBB908-74C1-480B-8DA7-B1334964BF53
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 339284ea41566f8f71effb1def4cfd0d1a27116a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349556"
 ---
-# <a name="hyper-v-extensible-switch-network-adapters"></a>HYPER-V 拡張可能スイッチのネットワーク アダプター
+# <a name="hyper-v-extensible-switch-network-adapters"></a>Hyper-V 拡張可能スイッチ ネットワーク アダプター
 
 
 このセクションには、拡張可能スイッチのネットワーク アダプターの特性と拡張可能スイッチのポートへの接続を記述する次のトピックが含まれています。

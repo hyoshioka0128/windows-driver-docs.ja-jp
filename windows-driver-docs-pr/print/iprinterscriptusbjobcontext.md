@@ -17,17 +17,17 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f662d41a3ccfad4852054ec9b36d28fae2aed89b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349211"
 ---
 # <a name="iprinterscriptusbjobcontext-interface"></a>IPrinterScriptUsbJobContext インターフェイス
 
 IPrinterScriptUsbJobContext インターフェイスがパラメーターとして渡される、 **startPrintJob** JavaScript 関数。
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **IPrinterScriptUsbJobContext**インターフェイスから継承、 [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)インターフェイス。 **IPrinterScriptUsbJobContext**これらの種類のメンバーがあります。

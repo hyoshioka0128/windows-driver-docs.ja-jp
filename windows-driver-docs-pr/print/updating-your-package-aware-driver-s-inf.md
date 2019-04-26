@@ -1,17 +1,17 @@
 ---
-title: パッケージに対応したドライバーの INF を更新しています
-description: パッケージに対応したドライバーの INF を更新しています
+title: パッケージ対応ドライバーの INF を更新する
+description: パッケージ対応ドライバーの INF を更新する
 ms.assetid: d0bf489d-d084-40df-b5aa-69cdf679993f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a58709ac71945097fb69619f9225d95bf72d788a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346536"
 ---
-# <a name="updating-your-package-aware-drivers-inf"></a>パッケージに対応したドライバーの INF を更新しています
+# <a name="updating-your-package-aware-drivers-inf"></a>パッケージ対応ドライバーの INF を更新する
 
 
 パッケージに対応した、ドライバーを使用したコア ドライバーをバンドルする後、次の手順では、パッケージに対応したドライバーの INF ファイルを更新します。

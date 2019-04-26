@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f14e2d229cf684ff0828dd227da7609fda5c679
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348233"
 ---
 # <a name="wiaipslamp"></a>WIA\_IP\_LAMP
 
@@ -46,7 +46,7 @@ WIA\_IP\_LAMP プロパティは、スキャナーの lamp のプログラムに
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

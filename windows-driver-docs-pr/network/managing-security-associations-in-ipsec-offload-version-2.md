@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: deecaf4b56ddcf841a0b38fed885a0504e2a9657
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343528"
 ---
 # <a name="managing-security-associations-in-ipsec-offload-version-2"></a>IPsec Offload Version 2 でのセキュリティ アソシエーションの管理
 
@@ -28,7 +28,7 @@ ms.locfileid: "56572412"
 
  
 
-ミニポート ドライバーが、TCP/IP をトランスポート設定の NIC に 1 つ以上の SAs を追加することを要求する、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569812) OID。 ミニポート ドライバーが、受信、 [ **IPSEC\_オフロード\_V2\_追加\_SA** ](https://msdn.microsoft.com/library/windows/hardware/ff556977)構造体し、SA で処理を IPsecOV2 の NIC を構成します。 OID に正常に設定されている\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA、ミニポート ドライバーでオフロード SA を識別するハンドルを初期化します、IPSEC\_オフロード\_V2\_追加\_SA 構造体。 トランスポートは、ミニポート ドライバーに後続の要求でこのハンドルを使用して (つまり、または変更または削除、SA への呼び出しで、送信パス上)。 詳細については、送信パスで SA ハンドルを使用して、[IPsec オフロード バージョン 2 でのネットワーク データの送信](sending-network-data-with-ipsec-offload-version-2.md)を参照してください。
+ミニポート ドライバーが、TCP/IP をトランスポート設定の NIC に 1 つ以上の SAs を追加することを要求する、 [OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569812) OID。 ミニポート ドライバーが、受信、 [ **IPSEC\_オフロード\_V2\_追加\_SA** ](https://msdn.microsoft.com/library/windows/hardware/ff556977)構造体し、SA で処理を IPsecOV2 の NIC を構成します。 OID に正常に設定されている\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA、ミニポート ドライバーでオフロード SA を識別するハンドルを初期化します、IPSEC\_オフロード\_V2\_追加\_SA 構造体。 トランスポートは、ミニポート ドライバーに後続の要求でこのハンドルを使用して (つまり、または変更または削除、SA への呼び出しで、送信パス上)。 詳細については、送信パスで SA ハンドルを使用して、次を参照してください。 [IPsec オフロード バージョン 2 でのネットワーク データの送信](sending-network-data-with-ipsec-offload-version-2.md)します。
 
 ミニポート ドライバーは、SAs でサポートできる NIC の数を報告、 **SaOffloadCapacity**のメンバー、 [ **NDIS\_IPSEC\_オフロード\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff565808)構造体。
 

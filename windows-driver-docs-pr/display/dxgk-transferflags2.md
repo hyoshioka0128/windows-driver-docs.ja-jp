@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f017aaafc25f3e5acad42d84bb0a12ac42f1da75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350284"
 ---
 # <a name="dxgktransferflags2-structure"></a>\_DXGK\_TRANSFERFLAGS2 構造体
 
@@ -45,7 +45,7 @@ typedef struct _DXGK_TRANSFERFLAGS2 {
 } DXGK_TRANSFERFLAGS2;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **スィズル**システム用に予約されています。

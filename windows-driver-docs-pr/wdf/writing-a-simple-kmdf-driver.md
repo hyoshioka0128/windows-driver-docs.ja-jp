@@ -1,5 +1,5 @@
 ---
-title: 単純な WDF ドライバーの作成
+title: 簡単な WDF ドライバーの作成
 description: このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーを作成する必要がある最小限の機能について説明します。 UMDF バージョン 2 で始まるユーザー モード ドライバー フレームワーク (UMDF) ドライバーを作成する同じ最小限の機能を必要とします。
 ms.assetid: 6225b81c-e0da-473a-ba38-24846436dae7
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c3caa669af0041b3b59716313ee1ce9682c3db3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347998"
 ---
-# <a name="writing-a-simple-wdf-driver"></a>単純な WDF ドライバーの作成
+# <a name="writing-a-simple-wdf-driver"></a>簡単な WDF ドライバーの作成
 
 
 このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーを作成する必要がある最小限の機能について説明します。 UMDF バージョン 2 で始まるユーザー モード ドライバー フレームワーク (UMDF) ドライバーを作成する同じ最小限の機能を必要とします。
@@ -32,7 +32,7 @@ ms.locfileid: "56535921"
 
 -   [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数は、プラグ アンド プレイ (PnP) マネージャーが、ハードウェアに一致するハードウェア識別子 (ID) を使用したデバイスの検出を報告したときにフレームワークドライバーがサポートする ID です。
 
-    ハードウェア、オペレーティング システムを使用して初めてコンピューターに接続しているデバイスのいずれかのドライバーをインストールする INF ファイルを提供することで、ドライバーをサポートする Id を指定します。 システムが INF ファイルとハードウェア Id を使用する方法の詳細については、[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)を参照してください。
+    ハードウェア、オペレーティング システムを使用して初めてコンピューターに接続しているデバイスのいずれかのドライバーをインストールする INF ファイルを提供することで、ドライバーをサポートする Id を指定します。 システムが INF ファイルとハードウェア Id を使用する方法の詳細については、次を参照してください。[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)します。
 
     ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数の呼び出し[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)の framework デバイス オブジェクトを作成しますデバイスが検出されました。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56535921"
 
     ドライバーは、ドライバーは、デバイスの I/O 要求を受信できるように、デバイスごとに少なくとも 1 つの I/O キューを作成する必要があります。 I/O キューをドライバーの呼び出しを作成する[ **WdfIoQueueCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547401)、framework キュー オブジェクトを作成して、デバイスの要求ハンドラーを登録します。
 
-フレームワーク ベースのドライバーの記述方法の詳細については、[ドライバーを開発するフレームワークを使用して](using-the-framework-to-develop-a-driver.md)を参照してください。
+フレームワーク ベースのドライバーの記述方法の詳細については、次を参照してください。[ドライバーを開発するフレームワークを使用して](using-the-framework-to-develop-a-driver.md)します。
 
  
 

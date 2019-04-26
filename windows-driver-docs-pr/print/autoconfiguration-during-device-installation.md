@@ -1,6 +1,6 @@
 ---
-title: デバイスのインストール中に自動構成
-description: デバイスのインストール中に自動構成
+title: デバイスのインストール時の自動構成
+description: デバイスのインストール時の自動構成
 ms.assetid: 04b53767-4b5e-450d-96ab-b029cdf62b36
 keywords:
 - デバイスのインストール中に、自動構成の WDK プリンター
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d048827d1228847228f5203fb0cb41cc4e90cdc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350781"
 ---
-# <a name="autoconfiguration-during-device-installation"></a>デバイスのインストール中に自動構成
+# <a name="autoconfiguration-during-device-installation"></a>デバイスのインストール時の自動構成
 
 
 次の図は、デバイスがインストールされている場合、自動構成で、データ フローを示します。

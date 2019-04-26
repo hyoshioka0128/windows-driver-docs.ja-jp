@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WAN_CO_GET_COMP_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e0af4684bfedf1be715ee6fa599dcaa74cc7b8df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342322"
 ---
 # <a name="oidwancogetcompinfo"></a>OID\_WAN\_CO\_取得\_COMP\_情報
 
@@ -37,12 +37,12 @@ OID\_WAN\_CO\_取得\_COMP\_情報 OID 要求の NIC、またはそのドライ�
 <a href="" id="recvcapabilities"></a>**RecvCapabilities**  
 受信側のデータの圧縮機能に関する情報を含む構造体を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 詳しくは、NDIS の\_WAN\_圧縮\_情報構造体を参照してください[OID\_WAN\_取得\_COMP\_情報](https://msdn.microsoft.com/library/windows/hardware/ff561202)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

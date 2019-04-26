@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 94981e59cd11e152cd201aaab1b4032290fac0f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348236"
 ---
 # <a name="guidclassusbdevice"></a>GUID_CLASS_USB_DEVICE
 
@@ -31,7 +31,7 @@ GUID_CLASS_USB_DEVICE は古い形式の識別子、[デバイス インター�
 
 Microsoft Windows Driver Kit (WDK) が含まれています、 [USBVIEW サンプル アプリケーション](https://go.microsoft.com/fwlink/p/?linkid=256205)します。 USBVIEW サンプルでは、GUID_CLASS_USB_DEVICE を使用して、GUID_CLASS_USB_DEVICE インターフェイス クラスのインスタンスが存在する場合は通知に登録します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

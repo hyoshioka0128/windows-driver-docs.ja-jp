@@ -1,6 +1,6 @@
 ---
-title: メモリのヒープ割り当て
-description: メモリのヒープ割り当て
+title: メモリ ヒープの割り当て
+description: メモリ ヒープの割り当て
 ms.assetid: 669dce85-ed37-4d47-88d6-115cb3a2e419
 keywords:
 - stride WDK DirectDraw
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b344b8cc4971d2ef17b2b541887e78d52dd49826
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344652"
 ---
-# <a name="memory-heap-allocation"></a>メモリのヒープ割り当て
+# <a name="memory-heap-allocation"></a>メモリ ヒープの割り当て
 
 
 ## <span id="ddk_memory_heap_allocation_gg"></span><span id="DDK_MEMORY_HEAP_ALLOCATION_GG"></span>
@@ -35,7 +35,7 @@ DirectDraw のヒープ マネージャーは、2 つのパスを通じて、 [*
 
 **DdsCapsAlt**グラフィックスアクセラレータ構造体のメンバーは、2 番目のパスでスプライトを許可する設定できます。 そうすること場合は、その他のヒープでスプライトを作成できませんでした、問題のヒープでのみ、スプライトを許可できます。 DDSCAPS を指定しない\_OFFSCREENPLAIN フラグ**ddsCapsAlt**します。 これにより、代替の使用を取り除くことがなく、最適に使用するヒープができます。
 
-表示メモリ ヒープ線形または、ブリット機能に応じて、四角形のいずれかまたは既存のニーズのディスプレイ ドライバー。 **DwFlags**のメンバー、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造体を使用して、メモリ割り当ての種類を指定します。 線形のヒープには、各画面のピッチを異なるできるメモリの領域について説明します。 四角形のヒープには、各画面のピッチは固定されているメモリの領域について説明します。 これらのヒープを混合および必要に応じて、同じのディスプレイ カード内で一致することができます。 詳細については、[メモリ構成](memory-configurations.md)を参照してください。
+表示メモリ ヒープ線形または、ブリット機能に応じて、四角形のいずれかまたは既存のニーズのディスプレイ ドライバー。 **DwFlags**のメンバー、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)構造体を使用して、メモリ割り当ての種類を指定します。 線形のヒープには、各画面のピッチを異なるできるメモリの領域について説明します。 四角形のヒープには、各画面のピッチは固定されているメモリの領域について説明します。 これらのヒープを混合および必要に応じて、同じのディスプレイ カード内で一致することができます。 詳細については、次を参照してください。[メモリ構成](memory-configurations.md)します。
 
 画面のメモリ*ピッチ*、stride または offset とも呼ばれる、次のスキャン ラインの表示メモリの同じ列を達成するために、メモリの表示の列に追加されたバイト数です。 ピッチはピクセル単位ではなくバイト単位、640 x 480 x 8 の画面で同じ幅と高さの寸法が別のピクセル形式 (ビット単位の深さ)、画面よりもさまざまなピッチの値があります。 さらに、ピッチの値には、ランタイムがと共に配置要件のための追加のバイトのキャッシュとして予約されている追加のバイト場合がありますが反映されます。 そのため、想定することはできません、声の高さはピクセルあたりのバイトの数を乗算して、画面の幅だけです。 代わりに、幅と次の図に示すように、ピッチの違いを視覚化します。
 

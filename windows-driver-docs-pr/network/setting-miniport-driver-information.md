@@ -1,6 +1,6 @@
 ---
-title: 設定のミニポート ドライバー情報
-description: 設定のミニポート ドライバー情報
+title: ミニポート ドライバー情報の設定
+description: ミニポート ドライバー情報の設定
 ms.assetid: 366d6012-c16c-457d-aa88-d395b95f4aa3
 keywords:
 - WMI の WDK ネットワー キング、ミニポート ドライバー情報の設定
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f550d0f9acb33b23343ee50487f200b2fbc8be7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346671"
 ---
-# <a name="setting-miniport-driver-information"></a>設定のミニポート ドライバー情報
+# <a name="setting-miniport-driver-information"></a>ミニポート ドライバー情報の設定
 
 
 

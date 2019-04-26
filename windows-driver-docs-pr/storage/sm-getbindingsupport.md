@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 17efc0a66dc48fc7ade64d9ffa1e7737b135f666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356708"
 ---
 # <a name="smgetbindingsupport-function"></a>SM\_GetBindingSupport 関数
 

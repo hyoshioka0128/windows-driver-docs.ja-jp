@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_RESET_MSG
-Description: This message is sent to a Remote NDIS device from a host to reset the device and return status.
+Description: このメッセージは、ホストからデバイスをリセットし、リターン ステータスに NDIS リモート デバイスに送信されます。
 ms.assetid: b5938b0d-75bf-497f-afeb-9950b383af5e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: beed2ca885a5d76af4f43c1efc58411b215e3bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351260"
 ---
 # <a name="remotendisresetmsg"></a>リモート\_NDIS\_リセット\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56528615"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000006 に設定します。</p></td>
 </tr>
 <tr class="even">

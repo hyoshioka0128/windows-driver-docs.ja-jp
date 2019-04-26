@@ -4,11 +4,11 @@ description: MB プロビジョニング済みコンテキスト操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b472c9c19d2299ecb08f7df3999b9570e8328cec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353763"
 ---
 # <a name="mb-provisioned-context-operations"></a>MB プロビジョニング済みコンテキスト操作
 
@@ -61,7 +61,7 @@ MBIM 1.0 から MBIM_CONTEXT_IP_TYPE 構造は MBIM_CID_CONNECT のみ使用し�
 
 Windows 10 バージョン 1703、MBIM_CID_MS_PROVISIONED_CONTEXT_V2 をサポートする新しいハードウェアにレガシ MBIM_CID_PROVISIONED_CONTEXT はパーティのコンポーネントを最初から使用されません。 MBIM_CID_PROVISIONED_CONTEXT を送信するその他のレガシ クライアントの OS コンポーネントがある場合は、Windows 10 バージョン 1703 より前のバージョンの Windows でのように結果を返す、モデムが必要です。
 
-##### <a name="query"></a>Query
+##### <a name="query"></a>クエリ
 
 MBIM_MS_PROVISIONED_CONTEXTS_INFO、InformationBuffer でクエリとセットの両方の完全なメッセージが返されます。 
 
@@ -77,14 +77,14 @@ MBIM_MS_PROVISIONED_CONTEXTS_INFO、InformationBuffer でクエリとセット�
 
 #### <a name="parameters"></a>パラメーター
 
-|  | Set | Query | Notification |
+|  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_SET_MS_PROVISIONED_CONTEXT_V2 | 適用なし | 適用なし |
+| コマンド | MBIM_SET_MS_PROVISIONED_CONTEXT_V2 | 該当なし | 該当なし |
 | 応答 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 |
 
 #### <a name="data-structures"></a>データ構造体
 
-##### <a name="query"></a>Query
+##### <a name="query"></a>クエリ
 
 InformationBuffer は NULL にするものとし、InformationBufferLength を 0 にする必要があります。
 
@@ -93,7 +93,7 @@ InformationBuffer は NULL にするものとし、InformationBufferLength を 0
 次の MBIM_SET_MS_PROVISIONED_CONTEXT_V2 データ構造は、InformationBuffer で使用されます。
 
 
-| Offset | サイズ |       フィールド        |              型               |                                                                                                                                                                                                                                                                                                   説明                                                                                                                                                                                                                                                                                                   |
+| Offset | サイズ |       フィールド        |              種類               |                                                                                                                                                                                                                                                                                                   説明                                                                                                                                                                                                                                                                                                   |
 |--------|------|--------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |     操作      |   MBIM_MS_CONTEXT_OPERATIONS    |                                             SET コマンドを使用する対象の操作の種類を指定します。 場合 MbimMsContextOperationDelete し、指定されたコンテキストに設定 MBIM_CONTEXT_TYPES が削除する必要がありますされ MBIM_SET_MS_PROVISIONED_CONTEXT_V2 で他のすべてのフィールドを無視する必要があります。  MbimMsContextOperationRestoreFactory に設定と、すべての OS が作成または変更されたコンテキストを削除するか、既定のファクトリ事前構成済みのコンテキストを読み込む必要がと MBIM_SET_MS_PROVISIONED_CONTEXT_V2 の他のすべてのフィールドを無視する必要があります。、                                              |
 |   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                                                                表される; コンテキストの種類を指定しますインターネット接続、VPN (企業ネットワークに接続)、またはボイス オーバー IP など (VOIP)。 詳細については、MBIM_CONTEXT_TYPES テーブルを参照してください。                                                                                                                                                                                                |
@@ -101,12 +101,12 @@ InformationBuffer は NULL にするものとし、InformationBufferLength を 0
 |   24   |  4   |       Enable       |     MBIM_MS_CONTEXT_ENABLE      |                                                                                                                                                                     コンテキスト、モデムで使用できるかどうかを指定します。 MbimMsContextDisabled に設定されている場合、ネットワークに通知せず、コンテキストに一致するすべての OS 接続要求を失敗する必要があります。 詳細については、MBIM_MS_CONTEXT_ENABLE テーブルを参照してください。                                                                                                                                                                     |
 |   28   |  4   |      Roaming       | MBIM_MS_CONTEXT_ROAMING_CONTROL |                                                                                                                                                                                                                                       このコンテキストではなくまたはローミングが許可されているかどうかを指定します。 詳細については、MBIM_MS_CONTEXT_ROAMING_CONTROL テーブルを参照してください。                                                                                                                                                                                                                                        |
 |   32   |  4   |     MediaType      |   MBIM_MS_CONTEXT_MEDIA_TYPE    |                                                                                                                                                                                                                                         コンテキストでの使用は、メディアの輸送の種類を指定します。 詳細については、MBIM_MS_CONTEXT_MEDIA_TYPE テーブルを参照してください。                                                                                                                                                                                                                                         |
-|   36   |  4   |       ソース       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                    コンテキストの作成のソースを指定します。 詳細については、MBIM_MS_CONTEXT_SOURCE テーブルを参照してください。                                                                                                                                                                                                                                                    |
-|   40   |  4   | AccessStringOffset |             オフセット              | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 CDMA ベースのネットワークでは、これがあります「#777」またはネットワーク アクセスの識別子 (NAI) などの特殊なダイヤル コードなど"foo@thephone-company.com"。 このメンバーは、APN の既定のネットワークを割り当てることを要求する NULL を指定できます。 注:すべてのネットワークは、ため、無効な APN によって発生した接続エラー、考えられる結果のこの NULL APN 規則をサポートします。 文字列のサイズは 100 文字を超えない必要があります。 |
+|   36   |  4   |       Source       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                    コンテキストの作成のソースを指定します。 詳細については、MBIM_MS_CONTEXT_SOURCE テーブルを参照してください。                                                                                                                                                                                                                                                    |
+|   40   |  4   | AccessStringOffset |             OFFSET              | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 CDMA ベースのネットワークでは、これがあります「#777」またはネットワーク アクセスの識別子 (NAI) などの特殊なダイヤル コードなど"foo@thephone-company.com"。 このメンバーは、APN の既定のネットワークを割り当てることを要求する NULL を指定できます。 注:すべてのネットワークは、ため、無効な APN によって発生した接続エラー、考えられる結果のこの NULL APN 規則をサポートします。 文字列のサイズは 100 文字を超えない必要があります。 |
 |   44   |  4   |  AccessStringSize  |          SIZE(0..200)           |                                                                                                                                                                                                                                                                                           AccessString に使用するサイズ。                                                                                                                                                                                                                                                                                           |
-|   48   |  4   |   UserNameOffset   |             オフセット              |                                                                                                                                                                                                                         計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                         |
+|   48   |  4   |   UserNameOffset   |             OFFSET              |                                                                                                                                                                                                                         計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                         |
 |   52   |  4   |    UserNameSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                            ユーザー名に使用するサイズ。                                                                                                                                                                                                                                                                                             |
-|   56   |  4   |   PasswordOffset   |             オフセット              |                                                                                                                                                                                                                           ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                            |
+|   56   |  4   |   PasswordOffset   |             OFFSET              |                                                                                                                                                                                                                           ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                            |
 |   60   |  4   |    PasswordSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                             パスワードを使用するサイズ。                                                                                                                                                                                                                                                                                             |
 |   64   |  4   |    圧縮     |        MBIM_COMPRESSION         |                                                                                                                                                                         ヘッダーとデータのデータ接続に使用する圧縮形式を指定します。 このメンバーは、GSM ベースのデバイスにのみ適用されます。 ホストは、CDMA ベースのデバイス、MBIMCompressionNone にこのメンバーを設定します。 詳細については、MBIM_COMPRESSION テーブルを参照してください。                                                                                                                                                                          |
 |   68   |  4   |    AuthProtocol    |       MBIM_AUTH_PROTOCOL        |                                                                                                                                                                                                                                                   PDP ライセンス認証を使用する認証の種類。 詳細については、MBIM_AUTH_PROTOCOL テーブルを参照してください。                                                                                                                                                                                                                                                    |
@@ -116,7 +116,7 @@ InformationBuffer は NULL にするものとし、InformationBufferLength を 0
 
 MBIM_MS_CONTEXT_ROAMING_CONTROL は、コンテキストごとの移動ポリシーを指定します。 OS は、かどうかをローミング中に指定されたコンテキストを有効にできるかどうかを指定できます。 モデム セルフ アクティブにしないでください OS の介入なしコンテキスト ローミングの状態が、指定された条件を満たしていない場合。 モデムは、パートナーをサポートしていませんし、すべてのパートナーの構成の場合は、同等として扱う必要があるホームにします。
 
-| 型 | 値 | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | --- |
 | MbimMsContextRoamingControlHomeOnly | 0 | コンテキストは、ホーム ネットワークで使用するかにのみ使用できるかどうかを示します。 |
 | MbimMsContextRoamingControlPartnerOnly | 1 | コンテキストがパートナー ローミング ネットワークで使用するかにのみ使用できるかどうかを示します。 |
@@ -128,7 +128,7 @@ MBIM_MS_CONTEXT_ROAMING_CONTROL は、コンテキストごとの移動ポリシ
 
 今後のプラットフォームでサポートされている携帯電話のコンテキストを使用または iWLAN Wi-fi オフロードとなるのかどうかを指定できる MBIM_MS_CONTEXT_MEDIA_TYPE が追加されました。 などの携帯電話としてコンテキストを設定し、モデムは、現在 Wi-fi をオフロードしする必要がありますいない接続を開始そのコンテキストを使用しています。
 
-| 型 | 値 | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | --- |
 | MbimMsContextMediaTypeCellularOnly | 0 | コンテキストが移動体通信で登録されているときに使用されるのみ許可されているかどうかを示します。 |
 | MbimMsContextMediaTypeWifiOnly | 1 | コンテキストが iWLAN (Wi-fi オフロード) 経由で登録されているときに使用されるのみ許可されているかどうかを示します。 |
@@ -136,14 +136,14 @@ MBIM_MS_CONTEXT_ROAMING_CONTROL は、コンテキストごとの移動ポリシ
 
 MBIM_MS_CONTEXT_ENABLE では、コンテキストが有効になっているかどうかを指定します。
 
-| 型 | 値 | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | --- |
 | MbimMsContextDisabled | 0 | プロビジョニングのコンテキストが無効です。 モデムには、OS 自体から、このコンテキストでアクティブ化が有効にする必要があります。 |
 | MbimMsContextEnabled | 1 | プロビジョニングのコンテキストが有効になっているとします。 その他の条件が満たされる場合、コンテキストが有効にすることができます。たとえば、ローミングが許可されていない場合コンテキストする必要がありますいない有効にするローミング中に。 |
 
 モデムのコンテキストの作成方法は、OS の可視性を提供する MBIM_MS_CONTEXT_SOURCE が追加されました。 これにより、出荷時の設定などのさまざまな状況の後に正しく動作する OS、何が保持され、さまざまな演算子の要件に基づいて既定の状態を返すべき内容かが分かるようにします。
 
-| 型 | 値 | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | --- |
 | MbimMsContextSourceAdmin | 0 | コンテキストは、OS から企業の IT 管理者によって作成されました。 |
 | MbimMsContextSourceUser | 1 | コンテキストは、OS の設定を使用して、ユーザーによって作成されました。 | 
@@ -153,7 +153,7 @@ MBIM_MS_CONTEXT_ENABLE では、コンテキストが有効になっているか
 
 MBIM_MS_CONTEXT_OPERATIONS では、モデムでコンテキストを構成する実行できる操作、OS を指定します。
 
-| 型 | 値 | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | --- |
 | MbimMsContextOperationDefault | 0 | 既定の操作などの追加またはモデムで既存のコンテキストを交換します。 |
 | MbimMsContextOperationDelete | 1 | 削除操作では、モデムの既存のコンテキストを削除するモデムが必要です。 | 
@@ -161,7 +161,7 @@ MBIM_MS_CONTEXT_OPERATIONS では、モデムでコンテキストを構成す�
 
 MBIM 1.0 から元の MBIM_CONTEXT_TYPES は引き続き有効です。 Microsoft では、MBIM 1.0 が定義されているために、コンテキストの種類が導入として、追加のコンテキストの種類を追加です。 次の表では、導入される新しい種類を定義します。 Ihv と Oem は、独自の目的で、OS によって認識できないがあるその他の一意の UUID 値をその他の独自のコンテキスト型を定義できます。
 
-| 型 | [値] | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | --- |
 | MBIMMsContextTypeAdmin | 5f7e4c2e-e80b-40a9-a239-f0abcfd11f4b | コンテキストは、デバイスの管理などの管理の目的で使用されます。 |
 | MBIMMSContextTypeApp | 74d88a3d-dfbd-4799-9a8c-7310a37bb2ee | コンテキストは、特定のアプリケーションのホワイト リストに登録の携帯電話会社によって使用されます。 |
@@ -173,7 +173,7 @@ MBIM 1.0 から元の MBIM_CONTEXT_TYPES は引き続き有効です。 Microsof
 
 次の MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 構造、InformationBuffer で使用されます。
 
-| Offset | サイズ | フィールド | 型 | 説明 |
+| Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 後に、DataBuffer にカウントの MBIM_MS_CONTEXT_V2 構造体。 |
 | 4 | 8 * EC | MsProvisionedContextV2RefList | OL_PAIR_LIST | ペアの最初の要素は、4 バイトのオフセット (バイト単位) (詳細についてを参照してください、MBIM_MS_CONTEXT_V2 テーブル) の MBIM_MS_CONTEXT_V2 構造体をこの MBIM_MS_PROVISIONED_CONTEXTS_INFO_V2 構造体の先頭 (オフセット 0) から計算されます。 ペアの 2 番目の要素は、対応する MBIM_MS_CONTEXT_V2 構造へのポインターのサイズが 4 バイトです。 |
@@ -182,7 +182,7 @@ MBIM 1.0 から元の MBIM_CONTEXT_TYPES は引き続き有効です。 Microsof
 MBIM_MS_CONTEXT_V2、前の表では、使用は、特定のコンテキストに関する情報を提供します。
 
 
-| Offset | サイズ |       フィールド        |              型               |                                                                                                                                                                                                                                                                                                 説明                                                                                                                                                                                                                                                                                                  |
+| Offset | サイズ |       フィールド        |              種類               |                                                                                                                                                                                                                                                                                                 説明                                                                                                                                                                                                                                                                                                  |
 |--------|------|--------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |     ContextId      |             UINT32              |                                                                                                                                                                                                                                                                                        このコンテキストの一意の ID。                                                                                                                                                                                                                                                                                         |
 |   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                      表される; コンテキストの種類を指定しますインターネット接続、VPN (企業ネットワークに接続)、またはボイス オーバー IP など (VOIP)。 デバイスは、空またはプロビジョニングされていないコンテキスト MBIMContextTypeNone を指定する必要があります。 詳細については、MBIM_CONTEXT_TYPES テーブルを参照してください。                                                                                                                                                       |
@@ -190,18 +190,18 @@ MBIM_MS_CONTEXT_V2、前の表では、使用は、特定のコンテキスト�
 |   24   |  4   |       Enable       |     MBIM_MS_CONTEXT_ENABLE      |                                                                                                                                                                   コンテキスト、モデムで使用できるかどうかを指定します。 MbimMsContextDisabled に設定されている場合、ネットワークに通知せず、コンテキストに一致するすべての OS 接続要求を失敗する必要があります。 詳細については、MBIM_MS_CONTEXT_ENABLE テーブルを参照してください。                                                                                                                                                                    |
 |   28   |  4   |      Roaming       | MBIM_MS_CONTEXT_ROAMING_CONTROL |                                                                                                                                                                                                                                      このコンテキストではなくまたはローミングが許可されているかどうかを指定します。 詳細については、MBIM_MS_CONTEXT_ROAMING_CONTROL テーブルを参照してください。                                                                                                                                                                                                                                      |
 |   32   |  4   |     MediaType      |   MBIM_MS_CONTEXT_MEDIA_TYPE    |                                                                                                                                                                                                                                       コンテキストでの使用は、メディアの輸送の種類を指定します。 詳細については、MBIM_MS_CONTEXT_MEDIA_TYPE テーブルを参照してください。                                                                                                                                                                                                                                        |
-|   36   |  4   |       ソース       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                  コンテキストの作成のソースを指定します。 詳細については、MBIM_MS_CONTEXT_SOURCE テーブルを参照してください。                                                                                                                                                                                                                                                   |
-|   40   |  4   | AccessStringOffset |             オフセット              | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 CDMA ベースのネットワークでは、これがあります「#777」またはネットワーク アクセスの識別子 (NAI) などの特殊なダイヤル コードなど"foo@thephone-company.com"。 このメンバーには、APN の既定のネットワークを割り当てることを要求する、NULL を指定できます。 注:すべてのネットワークは、ため、無効な APN によって発生した接続エラー、考えられる結果のこの NULL APN 規則をサポートします。 文字列のサイズは 100 文字を超えない必要があります。 |
+|   36   |  4   |       Source       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                  コンテキストの作成のソースを指定します。 詳細については、MBIM_MS_CONTEXT_SOURCE テーブルを参照してください。                                                                                                                                                                                                                                                   |
+|   40   |  4   | AccessStringOffset |             OFFSET              | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 CDMA ベースのネットワークでは、これがあります「#777」またはネットワーク アクセスの識別子 (NAI) などの特殊なダイヤル コードなど"foo@thephone-company.com"。 このメンバーには、APN の既定のネットワークを割り当てることを要求する、NULL を指定できます。 注:すべてのネットワークは、ため、無効な APN によって発生した接続エラー、考えられる結果のこの NULL APN 規則をサポートします。 文字列のサイズは 100 文字を超えない必要があります。 |
 |   44   |  4   |  AccessStringSize  |          SIZE(0..200)           |                                                                                                                                                                                                                                                                                         AccessString に使用するサイズ。                                                                                                                                                                                                                                                                                          |
-|   48   |  4   |   UserNameOffset   |             オフセット              |                                                                                                                                                                                                                       計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                        |
+|   48   |  4   |   UserNameOffset   |             OFFSET              |                                                                                                                                                                                                                       計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                        |
 |   52   |  4   |    UserNameSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                           規模のユーザー名に使用します。                                                                                                                                                                                                                                                                                           |
-|   56   |  4   |   PasswordOffset   |             オフセット              |                                                                                                                                                                                                                          ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                          |
+|   56   |  4   |   PasswordOffset   |             OFFSET              |                                                                                                                                                                                                                          ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                          |
 |   60   |  4   |    PasswordSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                           パスワードを使用するサイズ。                                                                                                                                                                                                                                                                                            |
 |   64   |  4   |    圧縮     |        MBIM_COMPRESSION         |                                                                                                                                                                        ヘッダーとデータのデータ接続に使用する圧縮形式を指定します。 このメンバーは、GSM ベースのデバイスにのみ適用されます。 ホストは、CDMA ベースのデバイス、MBIMCompressionNone にこのメンバーを設定します。 詳細については、MBIM_COMPRESSION テーブルを参照してください。                                                                                                                                                                        |
 |   68   |  4   |    AuthProtocol    |       MBIM_AUTH_PROTOCOL        |                                                                                                                                                                                                                                                  PDP ライセンス認証を使用する認証の種類。 詳細については、MBIM_AUTH_PROTOCOL テーブルを参照してください。                                                                                                                                                                                                                                                  |
 |   72   |      |     DataBuffer     |           DATABUFFER            |                                                                                                                                                                                                                                                                     AccessString、UserName、およびパスワードを格納しているデータ バッファー。                                                                                                                                                                                                                                                                      |
 
-##### <a name="notification"></a>Notification
+##### <a name="notification"></a>通知
 
 詳細については、MBIM_MS_PROVISIONED_CONTEXT_V2 テーブルを参照してください。
 

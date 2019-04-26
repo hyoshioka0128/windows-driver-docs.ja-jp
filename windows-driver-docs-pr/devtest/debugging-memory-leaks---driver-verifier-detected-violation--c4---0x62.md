@@ -5,13 +5,13 @@ ms.assetid: CDBE9A18-4126-4AD7-8E53-6D75DCA8B022
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01151f9b50e7e8a10e8f4e8a88a16c233bb10243
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344843"
 ---
-# <a name="debugging-memory-leaks---driververifierdetectedviolation-c4-0x62"></a>ドライバーのメモリ リークのデバッグ\_VERIFIER\_検出\_違反 (C4)。数 0 x 62
+# <a name="debugging-memory-leaks---driververifierdetectedviolation-c4-0x62"></a>ドライバーのメモリ リークのデバッグ\_VERIFIER\_検出\_違反 (C4)。0x62
 
 
 [Driver Verifier](driver-verifier.md)生成[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)が最初に、ドライバーをアンロードするときに数 0x62 のパラメーター 1 の値には、割り当てられたプールのすべてを解放します。 未解放のメモリの割り当て (メモリ リークとも呼ばれます) は、短くしたオペレーティング システムのパフォーマンスの一般的な原因です。 これらはシステム プールのフラグメントあり、最終的にシステムのクラッシュの原因します。
@@ -265,7 +265,7 @@ Pool block 9a836fd0, Size 00000030, Thread 88758740
 
 [カーネル モード メモリ リークを検出](https://msdn.microsoft.com/library/windows/hardware/ff545403)
 
-[Static Driver Verifier](static-driver-verifier.md)
+[静的ドライバー検証ツール](static-driver-verifier.md)
 
 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)
 

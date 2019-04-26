@@ -1,6 +1,6 @@
 ---
-title: Windows Vista で GPD のフローを自動構成
-description: Windows Vista で GPD のフローを自動構成
+title: Windows Vista の GPD の自動構成フロー
+description: Windows Vista の GPD の自動構成フロー
 ms.assetid: 41468218-fa05-4431-a57d-3056449f2e2e
 keywords:
 - GPD ファイル WDK GDL 拡張機能、自動構成のフロー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04830129bf16f80c99f2ce5e2247f7252d5ee1dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350746"
 ---
-# <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista で GPD のフローを自動構成
+# <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista の GPD の自動構成フロー
 
 
 自動構成は、次のシーケンスを次に示します。

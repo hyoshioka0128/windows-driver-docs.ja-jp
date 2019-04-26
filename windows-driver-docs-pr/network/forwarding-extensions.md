@@ -5,11 +5,11 @@ ms.assetid: 7ABBB3F3-66F5-4651-8A5A-94940F3FD82D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9edee9cb08971a5cd6eeabb6511359f0fca5989
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347375"
 ---
 # <a name="forwarding-extensions"></a>転送拡張機能
 
@@ -18,7 +18,7 @@ ms.locfileid: "56557592"
 
 -   パケットの宛先ポートを決定します。
 
-    **注**  宛先ポートし、パケットを転送パケットが、NVGRE パケットの場合は、拡張可能スイッチの HYPER-V ネットワーク仮想化 (HNV) コンポーネントを決定します。 詳細については、[ハイブリッド転送](hybrid-forwarding.md)を参照してください。
+    **注**  宛先ポートし、パケットを転送パケットが、NVGRE パケットの場合は、拡張可能スイッチの HYPER-V ネットワーク仮想化 (HNV) コンポーネントを決定します。 詳細については、次を参照してください。[ハイブリッド転送](hybrid-forwarding.md)します。
 
      
 
@@ -32,7 +32,7 @@ ms.locfileid: "56557592"
 
  
 
-転送拡張機能は、すぐに拡張可能スイッチ拡張機能のミニポート ドライバーで送信および受信データ パス上に配置されます。 これらのデータ パスの詳細については、[Hyper-v 拡張可能スイッチのデータ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
+転送拡張機能は、すぐに拡張可能スイッチ拡張機能のミニポート ドライバーで送信および受信データ パス上に配置されます。 これらのデータ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのデータ パス](hyper-v-extensible-switch-data-path.md)します。
 
 転送拡張機能は、イングレス データ パス取得したパケットを使用して、次を実行できます。
 
@@ -40,15 +40,15 @@ ms.locfileid: "56557592"
 
     カスタム ポリシーは、独立系ソフトウェア ベンダー (ISV) によって定義されます。 標準的なポリシーは、拡張可能スイッチのインターフェイスによって定義されます。 この種のポリシーのプロパティの設定は、HYPER-V の WMI 管理層によって管理されます。 転送拡張機能がこれらのオブジェクト識別子 (OID) 要求プロパティの設定で構成されている[OID\_スイッチ\_ポート\_プロパティ\_UPDATE](https://msdn.microsoft.com/library/windows/hardware/hh598278)と[OID\_スイッチ\_プロパティ\_UPDATE](https://msdn.microsoft.com/library/windows/hardware/hh598283)します。
 
-    ポリシーの拡張可能スイッチの詳細については、[を管理する Hyper-v 拡張可能なスイッチ ポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)を参照してください。
+    ポリシーの拡張可能スイッチの詳細については、次を参照してください。[を管理する Hyper-v 拡張可能なスイッチ ポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)します。
 
 -   新しい、変更、または複製されたパケットの受信データのパスを挿入できます。
 
-    詳細については、[Hyper-v 拡張可能スイッチの送信と受信操作](hyper-v-extensible-switch-send-and-receive-operations.md)を参照してください。
+    詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの送信と受信操作](hyper-v-extensible-switch-send-and-receive-operations.md)します。
 
 -   それは、パケットの 1 つまたは複数の拡張可能スイッチの宛先ポートへの配信を判断できます。 これにより、拡張可能なスイッチ ポートのパケット配信の宛先ポートを追加する転送拡張機能です。
 
-    宛先ポートを追加する方法の詳細については、[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)を参照してください。
+    宛先ポートを追加する方法の詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
 
 転送拡張機能は、送信データ パス取得したパケットを使用して、次を実行できます。
 
@@ -56,7 +56,7 @@ ms.locfileid: "56557592"
 
 -   これは、パケットの 1 つまたは複数の拡張可能スイッチの宛先ポートへの配信を除外できます。 これにより、拡張可能スイッチのポートへのパケットの配信を除外する転送拡張機能です。
 
-    拡張可能スイッチ ポートにパケット配信を除外する方法の詳細については、[拡張可能スイッチの宛先ポートへのパケット配送の除外](excluding-packet-delivery-to-extensible-switch-destination-ports.md)を参照してください。
+    拡張可能スイッチ ポートにパケット配信を除外する方法の詳細については、次を参照してください。[拡張可能スイッチの宛先ポートへのパケット配送の除外](excluding-packet-delivery-to-extensible-switch-destination-ports.md)します。
 
     **注**  エグレス データ パス上のパケットを処理する場合、転送拡張機能はパケット配信を除外のみできます。 拡張機能では追加のみまたはイングレス データ パス上のパケットの宛先ポートを変更できます。
 
@@ -64,7 +64,7 @@ ms.locfileid: "56557592"
 
 -   パケット データを変更できます。 転送拡張機能、データ パケットを変更する場合は、変換先のポートを割り当てる前にパケットを最初に複製にする必要があります。 パケットが割り当てられている変換先が変更されたとポートをされた後、拡張機能は、エグレス データのパスに変更されたパケットを挿入する必要があります。
 
-    詳細については、[パケット トラフィックの複製](cloning-or-duplicating-packet-traffic.md)を参照してください。
+    詳細については、次を参照してください。[パケット トラフィックの複製](cloning-or-duplicating-packet-traffic.md)します。
 
 OID 要求と NDIS 状態インジケーターを検査、だけでなく転送拡張機能は、次の操作を行うことができます。
 
@@ -76,37 +76,37 @@ OID 要求と NDIS 状態インジケーターを検査、だけでなく転送�
 
     チーミング プロバイダーとして動作している、転送拡張機能は作成または変更を有効または、チームでアダプターのハードウェア機能を無効にする OID 要求できます。 チーム化のプロバイダーを作成またはチームの 1 つまたは複数のアダプターへの変更に基づく NDIS 状態インジケーターの変更もできます。
 
-    プロバイダーのチーミングの詳細については、[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)を参照してください。
+    プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
 
 -   状態を返すことによって、拡張可能スイッチ ポートまたはネットワーク アダプターの接続の作成を拒否することができます\_データ\_いない\_適用可能な拡張可能スイッチの Oid を承諾します。 状態を返すことによって、転送拡張機能がポートの作成要求を拒否するなど、\_データ\_いない\_ドライバーの OID 設定要求の受信時に合意[OID\_スイッチ\_ポート\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598272)です。
 
-    **注**  転送拡張機能を作成またはポートを削除またはしないでネットワーク アダプターの接続。 拡張可能スイッチのプロトコルのエッジは、作成またはポートまたはネットワーク アダプターの接続の削除について、基になる拡張機能を通知する Oid を発行します。 詳細については、[Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](hyper-v-extensible-switch-port-and-network-adapter-states.md)を参照してください。
+    **注**  転送拡張機能を作成またはポートを削除またはしないでネットワーク アダプターの接続。 拡張可能スイッチのプロトコルのエッジは、作成またはポートまたはネットワーク アダプターの接続の削除について、基になる拡張機能を通知する Oid を発行します。 詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](hyper-v-extensible-switch-port-and-network-adapter-states.md)します。
 
      
 
 -   状態を返すことによって追加または拡張可能スイッチまたはポートのポリシーの更新プログラムを拒否できます、\_データ\_いない\_適用可能な拡張可能スイッチの Oid を受け入れられます。 状態を返すことによって、転送拡張機能がポート ポリシーの追加を拒否するなど、\_データ\_いない\_ドライバーの OID 設定要求の受信時に合意[OID\_スイッチ\_ポート\_プロパティ\_追加](https://msdn.microsoft.com/library/windows/hardware/hh598275)します。
 
-    ポリシーの拡張可能スイッチの詳細については、[を管理する Hyper-v 拡張可能なスイッチ ポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)を参照してください。
+    ポリシーの拡張可能スイッチの詳細については、次を参照してください。[を管理する Hyper-v 拡張可能なスイッチ ポリシー](managing-hyper-v-extensible-switch-extensibility-policies.md)します。
 
 転送拡張機能では、次の要件があります。
 
 -   転送拡張機能は、拡張可能スイッチのインターフェイスをサポートする NDIS フィルター ドライバーとして開発する必要があります。
 
-    フィルター ドライバーの詳細については、[NDIS フィルター ドライバー](ndis-filter-drivers2.md)を参照してください。
+    フィルター ドライバーの詳細については、次を参照してください。 [NDIS フィルター ドライバー](ndis-filter-drivers2.md)します。
 
-    転送拡張機能を記述する方法の詳細については、[書き込みの Hyper-v 拡張可能スイッチ拡張機能](writing-hyper-v-extensible-switch-extensions.md)を参照してください。
+    転送拡張機能を記述する方法の詳細については、次を参照してください。[書き込みの Hyper-v 拡張可能スイッチ拡張機能](writing-hyper-v-extensible-switch-extensions.md)します。
 
 -   転送拡張機能の INF ファイルでは、変更のフィルター ドライバーとして拡張機能をインストールする必要があります。 NDIS 監視フィルターは、拡張可能スイッチ ドライバー スタックでドライバーをインストールすることはできません。
 
-    フィルター ドライバーを変更する方法の詳細については、[型のフィルター ドライバー](types-of-filter-drivers.md)を参照してください。
+    フィルター ドライバーを変更する方法の詳細については、次を参照してください。[型のフィルター ドライバー](types-of-filter-drivers.md)します。
 
-    フィルター ドライバーを変更するための INF 要件の詳細については、[変更フィルター ドライバーの INF ファイルを構成する](configuring-an-inf-file-for-a-modifying-filter-driver.md)を参照してください。
+    フィルター ドライバーを変更するための INF 要件の詳細については、次を参照してください。[変更フィルター ドライバーの INF ファイルを構成する](configuring-an-inf-file-for-a-modifying-filter-driver.md)します。
 
--   **FilterClass** INF ファイルで値拡張機能を設定する必要があります**ms\_切り替える\_フォワード**します。 詳細については、[Hyper-v 拡張可能スイッチ拡張機能の要件を INF](inf-requirements-for-hyper-v-extensions.md)を参照してください。
+-   **FilterClass** INF ファイルで値拡張機能を設定する必要があります**ms\_切り替える\_フォワード**します。 詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ拡張機能の要件を INF](inf-requirements-for-hyper-v-extensions.md)します。
 
 -   拡張可能スイッチのインスタンスごとにドライバー スタックでは、1 つだけの転送拡張機能を有効にできます。
 
-拡張可能スイッチ チームの詳細については、[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)を参照してください。
+拡張可能スイッチ チームの詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
 
 転送拡張機能の詳細については、次のページを参照してください。
 

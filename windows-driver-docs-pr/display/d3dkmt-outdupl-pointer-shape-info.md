@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b9d13dfbcd76612c2de97d8c1b4f104e64efa40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341552"
 ---
 # <a name="d3dkmtoutduplpointershapeinfo-structure"></a>D3DKMT\_OUTDUPL\_ポインター\_図形\_情報構造体
 
@@ -39,14 +39,14 @@ typedef struct _D3DKMT_OUTDUPL_POINTER_SHAPE_INFO {
 } D3DKMT_OUTDUPL_POINTER_SHAPE_INFO;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **型**
 
-**幅**
+**Width**
 
-**高さ**
+**Height**
 
 **ピッチ**
 

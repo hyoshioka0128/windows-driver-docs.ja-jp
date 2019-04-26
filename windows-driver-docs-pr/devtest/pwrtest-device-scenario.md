@@ -1,17 +1,17 @@
 ---
-title: PwrTest デバイスのシナリオ
+title: PwrTest のデバイス シナリオ
 description: PwrTest デバイスのシナリオでは、デバイスのアイドル状態の統計を監視します。
 ms.assetid: 75C53B6E-3D1F-4E9D-A99E-3060A9CC37BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 043c1ee4dc230dd9c075e48356cc15a4c391d64c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345790"
 ---
-# <a name="pwrtest-device-scenario"></a>PwrTest デバイスのシナリオ
+# <a name="pwrtest-device-scenario"></a>PwrTest のデバイス シナリオ
 
 
 PwrTest デバイスのシナリオでは、デバイスのアイドル状態の統計を監視します。
@@ -28,7 +28,7 @@ pwrtest /device  [/t:n] [/?]
 <span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
 シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /device /t:60

@@ -5,11 +5,11 @@ ms.assetid: 1f248e1c-7faf-4a11-a4c2-3c0e829e1583
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bbef3c703f47c2b0859b730613cd5451278bd65
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343314"
 ---
 # <a name="mb-miniport-driver-inf-requirements"></a>MB ミニポート ドライバーの INF の要件
 
@@ -41,7 +41,7 @@ AddReg と CopyFiles などのキーワードの場合と同じ INF セクショ
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 <td align="left"><p><strong>名前</strong></p></td>
 <td align="left"><p><strong>IfType</strong></p></td>
 </tr>
@@ -72,7 +72,7 @@ MB のミニポート ドライバーでは、ミニポート ドライバーが
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 <td align="left"><p><strong>名前</strong></p></td>
 <td align="left"><p><strong>メディアの種類</strong></p></td>
 </tr>
@@ -103,7 +103,7 @@ MB のミニポート ドライバーには、DHCP サーバーのエミュレ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>値</strong></p></td>
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0</p></td>
@@ -130,7 +130,7 @@ MB のミニポート ドライバーには、DHCP サーバーのエミュレ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>値</strong></p></td>
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>"flpp4"</p></td>
@@ -157,7 +157,7 @@ MB のミニポート ドライバーには、DHCP サーバーのエミュレ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>値</strong></p></td>
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>"ppip"</p></td>

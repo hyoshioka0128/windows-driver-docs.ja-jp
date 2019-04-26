@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67135e7348bfe8a3ee2c58b932c98c54f5fad319
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349652"
 ---
 # <a name="hshostupdateconfigurationcompletion-function"></a>HS\_ホスト\_UPDATE\_構成\_完了関数
 
@@ -44,12 +44,12 @@ ms.locfileid: "56569931"
 
 この関数は、ホストと通信するようにプラグインによって呼び出され、値は返されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプラグインは、以前の呼び出しの結果のホストに通知するには、この関数を呼び出す必要があります[ **HS\_プラグイン\_確認\_の\_更新**](hs-plugin-check-for-updates.md)。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

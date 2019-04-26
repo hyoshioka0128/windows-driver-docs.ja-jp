@@ -5,11 +5,11 @@ ms.assetid: be93f0b4-a075-455e-b03c-6d23a2be7b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15936af901990a4214ecd9faf50de553a197f65a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343406"
 ---
 # <a name="mb-dns-updates"></a>MB DNS の更新
 
@@ -55,7 +55,7 @@ ms.locfileid: "56572399"
 
 ミニポート ドライバーを指定する場合にのみ、これらの操作を使用する必要があります**EnableDhcp**の INF ファイルでゼロにします。 つまり、ミニポート ドライバーでは、DHCP が実装されていません。
 
-IP アドレスの通知の処理に関する詳細については、[MB ミニポート ドライバー IP アドレスの通知のガイドライン](guidelines-for-mb-miniport-driver-ip-address-notifications.md)を参照してください。
+IP アドレスの通知の処理に関する詳細については、次を参照してください。 [MB ミニポート ドライバー IP アドレスの通知のガイドライン](guidelines-for-mb-miniport-driver-ip-address-notifications.md)します。
 
  
 

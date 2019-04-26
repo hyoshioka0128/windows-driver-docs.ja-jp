@@ -1,6 +1,6 @@
 ---
-title: 割り込みを管理します。
-description: 割り込みを管理します。
+title: 割り込みの管理
+description: 割り込みの管理
 ms.assetid: 9a2dea43-844d-4c87-9c20-610972d7a3a4
 keywords:
 - ミニポート ドライバー WDK ネットワー キング、割り込み
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 730e5bf8414fa163a7d30431df46423c7f0db8e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343593"
 ---
-# <a name="managing-interrupts"></a>割り込みを管理します。
+# <a name="managing-interrupts"></a>割り込みの管理
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 89170dff-284d-4d82-953c-46792158fbe5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a860de23de38a93ea415f076d99fa49c1bcb66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341483"
 ---
 # <a name="installing-private-builds-of-inbox-drivers"></a>受信トレイのドライバーのプライベート ビルドをインストールします。
 
@@ -18,7 +18,7 @@ Windows Vista 以降、オペレーティング システムは、インスト�
 
 このセクションでは、ビルドし、Windows の既定のインストールに含まれているドライバーのプライベート ビルドをインストールする方法について説明します。 このようなドライバーと呼ばれる、"*受信トレイ*"ドライバー。
 
-**注**  にこのしくみを理解するには、ドライバーは、Windows によるこの署名とその他の条件に基づいたドライバーのランクにデジタル署名を理解しておく必要があります。 ドライバーのデジタル署名の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+**注**  にこのしくみを理解するには、ドライバーは、Windows によるこの署名とその他の条件に基づいたドライバーのランクにデジタル署名を理解しておく必要があります。 ドライバーのデジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
  
 

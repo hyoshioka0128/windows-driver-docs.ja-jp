@@ -1,17 +1,17 @@
 ---
-title: Storport をアダプターを使用するための要件
-description: Storport をアダプターを使用するための要件
+title: アダプターで Storport を使用するための要件
+description: アダプターで Storport を使用するための要件
 ms.assetid: 85adf2f9-e9eb-40d8-9177-adda150a8ea4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 845db304e2823be4be07648d809f302ec1a29404
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352624"
 ---
-# <a name="requirements-for-using-storport-with-an-adapter"></a>Storport をアダプターを使用するための要件
+# <a name="requirements-for-using-storport-with-an-adapter"></a>アダプターで Storport を使用するための要件
 
 
 ## <span id="ddk_requirements_for_using_storport_with_an_adapter_kg"></span><span id="DDK_REQUIREMENTS_FOR_USING_STORPORT_WITH_AN_ADAPTER_KG"></span>
@@ -33,7 +33,7 @@ ms.locfileid: "56536516"
 
 -   プラグ アンド プレイします。 プラグ アンド プレイ操作 Storport ミニポート ドライバーを有効にする必要があります、ため、すべての共有リソースの取得と管理のポートのドライバーが処理されます。
 
--   多階層をリセットします。 アダプターは、階層型のリセットをサポートする必要があります。 詳細については、[多層リセット Storport](multi-tier-reset-in-storport.md)を参照してください。
+-   多階層をリセットします。 アダプターは、階層型のリセットをサポートする必要があります。 詳細については、次を参照してください。[多層リセット Storport](multi-tier-reset-in-storport.md)します。
 
 -   公開仮想論理ユニットは、SCSI 問い合わせ重要製品データをサポートするために必要な RAID アダプターは、00 h、80 時間、および h 83 ページします。 たとえば、ホスト ベースの RAID アダプターは、重要製品データ ページは、次のページの 01」に設定、SCSI 問い合わせコマンドに応答する必要があります。0 (サポートされている重要製品データ ページ)、80」(単位シリアル番号 ページ)、および 83 h (デバイス id ページ)。 これらのコマンドは、アダプターのファームウェアでいずれかの処理またはミニポート ドライバーで合成します。
 

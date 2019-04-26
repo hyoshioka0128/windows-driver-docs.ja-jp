@@ -1,6 +1,6 @@
 ---
-title: MB 5 G データ クラスのサポート
-description: MB 5 G データ クラスのサポート
+title: MB 5G データ クラスのサポート
+description: MB 5G データ クラスのサポート
 ms.assetid: 16531A63-76EC-4722-8817-FA8DB3B2B82F
 keywords:
 - MB 5 G データ クラスのサポート、モバイル ブロード バンド 5 G データ クラスのサポート
@@ -8,13 +8,13 @@ ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c895a81e549bcd856ff796c1cdddd85bbbcf82d9
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343467"
 ---
-# <a name="mb-5g-data-class-support"></a>MB 5 G データ クラスのサポート
+# <a name="mb-5g-data-class-support"></a>MB 5G データ クラスのサポート
 
 ## <a name="terminology"></a>用語
 

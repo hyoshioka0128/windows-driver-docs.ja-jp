@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65bf1c747517b843b0d316d3742a8f68446d606d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343830"
 ---
 # <a name="wiaipsshowpreviewcontrol"></a>WIA\_IP\_表示\_プレビュー\_コントロール
 
@@ -44,7 +44,7 @@ WIA\_IP\_表示\_プレビュー\_コントロール プロパティは、項目
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -64,7 +64,7 @@ WIA\_IP\_表示\_プレビュー\_コントロール プロパティは、項目
 
 WIA を使用する\_IP\_表示\_プレビュー\_をプレビューできませんデバイスの制御を支援するコントロール プロパティ。 たとえば、フィーダー駆動の一部のデバイスには、プレビュー スキャンのホワイト ペーパーが再読み込みできません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: 6a7fe617-156d-4eb0-83f7-df78104acbde
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4f2e57328ae536802892d1ef121fb2366600db
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344486"
 ---
 # <a name="securitydescriptorcontrol"></a>セキュリティ\_記述子\_コントロール
 
@@ -112,7 +112,7 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 
  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 ntifs.h (ntifs.h を含む)

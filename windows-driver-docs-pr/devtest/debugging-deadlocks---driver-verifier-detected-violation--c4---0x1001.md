@@ -5,11 +5,11 @@ ms.assetid: 4C3ED1DB-5EDC-4386-B91C-CF86973EE1F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b49d9c51ca2141a12f518298bb56fd5505e94e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344868"
 ---
 # <a name="span-iddevtestdebuggingdeadlocks-driververifierdetectedviolationc40x1001spandebugging-deadlocks---driververifierdetectedviolation-c4-0x1001"></a><span id="devtest.debugging_deadlocks_-_driver_verifier_detected_violation__c4___0x1001"></span>デッドロックのドライバーをデバッグ\_VERIFIER\_検出\_違反 (C4)。0x1001
 
@@ -226,7 +226,7 @@ NTSTATUS DeviceControlIrpWorker(_In_ PIRP Irp,
 
 この潜在的な違反を修正するのには、いることを確認、ドライバーが AlphaLock の取得を試みると、そのチェック BravoLock が保持されないようにを正しい操作ですがあります。 最も簡単な修正プログラムは、単に BravoLock を解放し、再度 AlphaLock が取得されるとすぐに取得できます。 より重要なコード変更 AlphaLock と BravoLock の再取得を待機中に、BravoLock を保護する任意のデータが変更されないことが重要である場合に必要な場合があります。
 
-スピン ロックやその他の同期方法の詳細については、[スピン ロック](https://msdn.microsoft.com/library/windows/hardware/ff563830)を参照してください。
+スピン ロックやその他の同期方法の詳細については、次を参照してください。[スピン ロック](https://msdn.microsoft.com/library/windows/hardware/ff563830)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

@@ -1,6 +1,6 @@
 ---
-title: Direct3D のコンテキストの管理
-description: Direct3D のコンテキストの管理
+title: Direct3D コンテキスト管理
+description: Direct3D コンテキスト管理
 ms.assetid: 143f5150-9ac4-43f7-985f-0baa32871af2
 keywords:
 - WDK Direct3D のコンテキスト
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c8e07b466c989b1dbcc4ef966b0be70b6532f1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342400"
 ---
-# <a name="direct3d-context-management"></a>Direct3D のコンテキストの管理
+# <a name="direct3d-context-management"></a>Direct3D コンテキスト管理
 
 
 ## <span id="ddk_direct3d_context_management_gg"></span><span id="DDK_DIRECT3D_CONTEXT_MANAGEMENT_GG"></span>

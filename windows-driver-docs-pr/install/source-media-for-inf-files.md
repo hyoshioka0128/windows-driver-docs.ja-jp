@@ -1,6 +1,6 @@
 ---
-title: ソース メディアの INF ファイル
-description: ソース メディアの INF ファイル
+title: INF ファイルのソース メディア
+description: INF ファイルのソース メディア
 ms.assetid: b8bb7115-acac-4364-a205-16816c52fdb0
 keywords:
 - INF ファイルのソース メディアの WDK デバイス インストール
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b66da54bc9c78a39e7d99f2106a4e7de69f1dfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348606"
 ---
-# <a name="source-media-for-inf-files"></a>ソース メディアの INF ファイル
+# <a name="source-media-for-inf-files"></a>INF ファイルのソース メディア
 
 
 
@@ -28,7 +28,7 @@ ms.locfileid: "56556667"
 
 デバイス ファイルのソース メディアを指定するために使用する必要がありますメソッドは、かどうか、INF ファイルからの出荷とは別に、オペレーティング システムに依存または、オペレーティング システムに付属します。
 
-### <a name="source-media-for-inf-files"></a>ソース メディアの INF ファイル
+### <a name="source-media-for-inf-files"></a>INF ファイルのソース メディア
 
 ドライバーの INF ファイルを使用して、ファイルの場所を指定する[ **SourceDisksNames** ](inf-sourcedisksnames-section.md)と[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)セクション。 このような INF が含まれている場合**Include**と**必要がある**内のエントリ、 [ ***DDInstall*** ](inf-ddinstall-section.md)セクションの他の INF ファイルと、セクションを参照するこれらファイルとのセクションでは、可能な追加のソースの場所を指定できます。
 

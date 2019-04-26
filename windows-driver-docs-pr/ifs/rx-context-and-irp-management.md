@@ -1,6 +1,6 @@
 ---
-title: RX_CONTEXT と IRP の管理
-description: RX_CONTEXT と IRP の管理
+title: RX_CONTEXT と IRP 管理
+description: RX_CONTEXT と IRP 管理
 ms.assetid: 74ca681d-2599-442c-aebe-3556d6354f7f
 keywords:
 - Irp、RDBSS WDK ファイル システム
@@ -19,11 +19,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 699a5743801eb94dc6a5a7ea1ade1ccb3bb9c2f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344518"
 ---
 # <a name="rxcontext-and-irp-management"></a>RX\_コンテキストと IRP の管理
 

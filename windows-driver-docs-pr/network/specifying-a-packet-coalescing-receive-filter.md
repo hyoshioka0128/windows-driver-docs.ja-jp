@@ -1,17 +1,17 @@
 ---
-title: 受信パケットの結合の指定のフィルター
-description: 受信パケットの結合の指定のフィルター
+title: パケット結合受信フィルターの指定
+description: パケット結合受信フィルターの指定
 ms.assetid: 0369A63D-4CDE-448A-8472-EEEB7B859B8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 384e3acaeecaf2f7730dd854ee4e352f964bfe67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355210"
 ---
-# <a name="specifying-a-packet-coalescing-receive-filter"></a>受信パケットの結合の指定のフィルター
+# <a name="specifying-a-packet-coalescing-receive-filter"></a>パケット結合受信フィルターの指定
 
 
 以上の受信 NDIS パケットの結合をサポートするミニポート ドライバーのフィルターまたは上位のドライバーが 1 つを設定できます。 上にあるドライバーは、ミニポート ドライバーがで指定された受信フィルターの最大数まで指定できます、 **MaxPacketCoalescingFilters**のメンバー、 [ **NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。
@@ -24,11 +24,11 @@ ms.locfileid: "56552464"
 
 -   [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181) NDIS のパラメーターを指定する構造体は、フィルターを受信します。
 
-    この構造体を初期化する方法の詳細については、[受信フィルターを指定する](#specifying-receive-filter)を参照してください。
+    この構造体を初期化する方法の詳細については、次を参照してください。[受信フィルターを指定する](#specifying-receive-filter)します。
 
 -   配列の[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)フィルターを指定する構造体のフィールドの条件をテストします。ネットワーク パケットのヘッダー。
 
-    これらの構造体を初期化する方法の詳細については、[ヘッダー フィールドのテストを指定する](#specifying-header-field-test)を参照してください。
+    これらの構造体を初期化する方法の詳細については、次を参照してください。[ヘッダー フィールドのテストを指定する](#specifying-header-field-test)します。
 
 ## <a name="specifying-a-receive-filter"></a>受信フィルターを指定します。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56552464"
 
     **注**  NDIS では、フィルターの一意の識別子 (ID) の生成、受信フィルターの OID メソッド要求を転送する前に[OID\_受信\_フィルター\_セット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)ミニポート ドライバーにします。     
 
--  上にあるドライバーは、既存の受信フィルターを変更することは場合に、設定する必要があります、 **FilterId**受信フィルターの 0 以外のフィルター ID にメンバー。 上にあるドライバーの OID メソッド要求を発行するときに受信フィルターのフィルター ID を取得します[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 受信フィルターを変更する方法の詳細については、[変更パケット結合受信フィルター](modifying-packet-coalescing-receive-filters.md)を参照してください。
+-  上にあるドライバーは、既存の受信フィルターを変更することは場合に、設定する必要があります、 **FilterId**受信フィルターの 0 以外のフィルター ID にメンバー。 上にあるドライバーの OID メソッド要求を発行するときに受信フィルターのフィルター ID を取得します[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 受信フィルターを変更する方法の詳細については、次を参照してください。[変更パケット結合受信フィルター](modifying-packet-coalescing-receive-filters.md)します。
 
 -   **FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**、および**FieldParametersArrayElementSize**のメンバー、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)フィールド パラメーターの配列を定義する構造体を設定する必要があります。 配列内の各要素は、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)ヘッダーのパラメーターを指定する構造体受信フィルターのフィールドのテスト。
 

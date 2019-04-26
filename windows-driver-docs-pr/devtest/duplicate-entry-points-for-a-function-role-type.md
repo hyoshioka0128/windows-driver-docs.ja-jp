@@ -1,17 +1,17 @@
 ---
-title: 関数のロールの種類のエントリ ポイントを重複しています
-description: 関数のロールの種類のエントリ ポイントを重複しています
+title: 関数役割型の重複エントリ ポイント
+description: 関数役割型の重複エントリ ポイント
 ms.assetid: cf6604da-bd79-4adf-a08f-9b903aa91133
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d0c356561c2bae6c8dc73f097eac12b04e5f2f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344853"
 ---
-# <a name="duplicate-entry-points-for-a-function-role-type"></a>関数のロールの種類のエントリ ポイントを重複しています
+# <a name="duplicate-entry-points-for-a-function-role-type"></a>関数役割型の重複エントリ ポイント
 
 
 ほとんどの関数の役割の種類は、SDV は、ドライバーが、最大でエントリ ポイントごとに 1 つのコールバック関数と仮定します。 ただしは、複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、KMDF ドライバーが複数をある[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)または[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683) (EVTを使用するコールバック関数\_WDF\_タイマーと EVT\_WDF\_DPC ロール型の注釈)。 この場合は、SDV は、Sdv map.h 関数の型に整数を追加します。 たとえばには、ドライバーに 2 つの DPC コールバック関数がある場合は、SDV にマップする**楽しい\_WDF\_DPC\_1**と**楽しい\_WDF\_DPC\_2**.

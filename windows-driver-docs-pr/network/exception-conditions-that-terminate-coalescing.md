@@ -1,17 +1,17 @@
 ---
-title: 例外条件の結合を終了します。
+title: 結合を終了する例外条件
 description: このセクションでは、セグメントの結合 (RSC) を受信確認を定義します。-結合して、前に、対応のミニポート ドライバーがセグメントで実行する必要があります。
 ms.assetid: 6294541A-AF32-46CF-81AB-5855EA440053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 891a482918833a430df81481c3f097ac75261603
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351304"
 ---
-# <a name="exception-conditions-that-terminate-coalescing"></a>例外条件の結合を終了します。
+# <a name="exception-conditions-that-terminate-coalescing"></a>結合を終了する例外条件
 
 
 このセクションでは、セグメントの結合 (RSC) を受信確認を定義します。-結合して、前に、対応のミニポート ドライバーがセグメントで実行する必要があります。

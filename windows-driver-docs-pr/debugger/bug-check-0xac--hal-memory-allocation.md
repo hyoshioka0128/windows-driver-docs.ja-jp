@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 25ef29ebdf568a657d3ed446c9585699da2b5a8d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347210"
 ---
 # <a name="bug-check-0xac-halmemoryallocation"></a>バグ チェック 0xAC:HAL\_メモリ\_割り当て
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 72fa51716e5a80dbdfe838888b721179a662e405
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343460"
 ---
 # <a name="mb-device-based-reset-and-recovery"></a>MB デバイスベースのリセットと回復
 
@@ -31,7 +31,7 @@ MB デバイス ベースのリセットと回復を検出し、次の種類の�
 
 | 障害の領域        | エラーの説明                                         |
 |------------------------|-------------------------------------------------------------|
-| コントロールのパス           | <ul><li>MBIM プロトコル パス上で検出されたハング条件です。 ハング検出の詳細については、[MB ハング検出](mb-hang-detection.md)を参照してください。</li><li>無効な状態および情報に MBB reponding によるエラー。</li></ul> |
+| コントロールのパス           | <ul><li>MBIM プロトコル パス上で検出されたハング条件です。 ハング検出の詳細については、次を参照してください。 [MB ハング検出](mb-hang-detection.md)します。</li><li>無効な状態および情報に MBB reponding によるエラー。</li></ul> |
 | データ パス              | <ul><li>デバイス側のデータ パスの障害の結果に失敗しました。 例では、エンドポイントのデータ トラフィックに reponding いない PHY などからデータを破損しています。</li><li>モデム/ネットワーク側に失敗しました。 たとえば、ネットワークの IP トラフィックに、DNS エラー、パケット損失、repsonding しないなどです。</li></ul> |
 
 いくつかのエラーは、これらに限定されませんが、回復の観点からは実用的ではないです。
@@ -148,7 +148,7 @@ Device(USB1)  
 } 
 ```
 
-また、PLDR は D3Cold 電源の状態にして再度 D0 にデバイスを配置することで実現できる、サイクリング、デバイスの電源を本質的に。 この場合は、発生`_PR3`宣言されているデバイスのスコープは PLDR をサポートするための十分な。 ACPI は使用`_PR3`いない場合は、デバイス間でのリセットの依存関係を判断する`_PRR`デバイスのスコープで参照されています。 詳細については、[リセットおよびデバイスを回復する](../kernel/resetting-and-recovering-a-device.md)を参照してください。 
+また、PLDR は D3Cold 電源の状態にして再度 D0 にデバイスを配置することで実現できる、サイクリング、デバイスの電源を本質的に。 この場合は、発生`_PR3`宣言されているデバイスのスコープは PLDR をサポートするための十分な。 ACPI は使用`_PR3`いない場合は、デバイス間でのリセットの依存関係を判断する`_PRR`デバイスのスコープで参照されています。 詳細については、次を参照してください。[リセットおよびデバイスを回復する](../kernel/resetting-and-recovering-a-device.md)します。 
 
 ## <a name="related-links"></a>関連リンク
 

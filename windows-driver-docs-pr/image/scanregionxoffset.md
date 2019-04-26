@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b4dc536cdb955e11180ed1fb6ebf8164b6fdd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356229"
 ---
 # <a name="scanregionxoffset-element"></a>ScanRegionXOffset 要素
 
@@ -111,7 +111,7 @@ ms.locfileid: "56560686"
 <a name="remarks"></a>注釈
 -------
 
-スキャンの地域のパラメーターの詳細については、[ **ScanRegion**](scanregion.md)を参照してください。
+スキャンの地域のパラメーターの詳細については、次を参照してください。 [ **ScanRegion**](scanregion.md)します。
 
 クライアントは、省略可能な指定できます**MustHonor**属性の場合にのみ、 **ScanRegionXOffset**要素に含まれる、 **CreateScanJobRequest**階層。 詳細については**MustHonor**と使用状況を参照してください[ **CreateScanJobRequest**](createscanjobrequest.md)します。
 

@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_SET_POWER_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 982326f8e938b8549b395365997e22f29d54f4c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348576"
 ---
 # <a name="oidwdisetpowerstate"></a>OID\_WDI\_設定\_POWER\_状態
 
@@ -20,7 +20,7 @@ OID\_WDI\_設定\_POWER\_状態は、デバイスの電源状態を設定しま�
 
 | Scope   | タスクでシリアル化された設定します。 | 通常の実行時間 (秒) |
 |---------|--------------------------|---------------------------------|
-| アダプタ | 〇                      | 10                              |
+| [アダプター] | 〇                      | 10                              |
 
  
 
@@ -163,13 +163,13 @@ AOAC システムを休止状態またはされていないために必要なサ
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn926303" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926303)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td><p>このフィールドは可能性があります、NIC が省電力に配置されていると (SD IO で D2) などの指定したイベントのいずれかのスリープ解除されている場合にのみ表示されます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn898060" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898060)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
 <td></td>
-<td>X</td>
+<td>x</td>
 <td><p>セットの電力理由です。</p></td>
 </tr>
 </tbody>
@@ -182,7 +182,7 @@ AOAC システムを休止状態またはされていないために必要なサ
 
 | TLV                                                                                 | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_アダプター\_再開\_必要な作業**](https://msdn.microsoft.com/library/windows/hardware/dn926120) |                                | X        | 値が true の場合に通知、OS のファームウェアがそのコンテキストの再開中にアシスタンスを必要があること。 ストレージに、ドライバーが中断されている場合にのみ発生する必要があります。 IHV コンポーネントは、オペレーティング システムは、一連のファームウェア コンテキストおよび IHV コンポーネント コンテキストの最新の状態を表示する Wi-fi のコマンドを発行するため、ソフトウェアの状態をリセットする必要があります。 |
+| [**WDI\_TLV\_アダプター\_再開\_必要な作業**](https://msdn.microsoft.com/library/windows/hardware/dn926120) |                                | x        | 値が true の場合に通知、OS のファームウェアがそのコンテキストの再開中にアシスタンスを必要があること。 ストレージに、ドライバーが中断されている場合にのみ発生する必要があります。 IHV コンポーネントは、オペレーティング システムは、一連のファームウェア コンテキストおよび IHV コンポーネント コンテキストの最新の状態を表示する Wi-fi のコマンドを発行するため、ソフトウェアの状態をリセットする必要があります。 |
 
  
 

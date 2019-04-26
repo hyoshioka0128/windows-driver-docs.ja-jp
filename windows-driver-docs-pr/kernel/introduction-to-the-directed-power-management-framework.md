@@ -1,17 +1,17 @@
 ---
-title: 有向の電源管理フレームワークの概要
+title: 指示電源管理フレームワークの概要
 description: Power Framework、または PoFx、バージョン 3 には、電源管理フレームワークの指示または DFx、について説明します。
 ms.assetid: 58550c57-3439-4212-b0c6-6a2fbfd38414
 ms.date: 03/27/2019
 ms.custom: 19H1
 ms.openlocfilehash: 5bd11c3b5728e9e6515c687fa902e2236e37608b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341433"
 ---
-# <a name="introduction-to-the-directed-power-management-framework"></a>有向の電源管理フレームワークの概要
+# <a name="introduction-to-the-directed-power-management-framework"></a>指示電源管理フレームワークの概要
 
 Windows 10、バージョンが 1903、実行時の電源管理フレームワークのバージョン 3 以降 ([PoFx](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)) 省略可能な指示を提供します Directed PoFx (チェンジ DFx) 電源モデル。
 
@@ -87,8 +87,8 @@ Microsoft 提供の DFx の使用できる 3 つのテスト: で単一デバイ
 
 HLK テストについては、次のページを参照してください。
 
-- [有向 FX 単一デバイスのテスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
-- [有向 FX システム検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
+- [有向 FX 単一デバイス テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
+- [有向 FX システムの検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
 
 ## <a name="dfx-and-s-state-transitions"></a>DFx および S 状態遷移
 
@@ -108,5 +108,5 @@ HLK テストについては、次のページを参照してください。
 - [PO_FX_DIRECTED_POWER_UP_CALLBACK コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_up_callback)
 - [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxcompletedirectedpowerdown)関数
 - [PwrTest DirectedFx シナリオ](../devtest/pwrtest-directedfx-scenario.md)
-- [有向 FX 単一デバイスのテスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
-- [有向 FX システム検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
+- [有向 FX 単一デバイス テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
+- [有向 FX システムの検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)

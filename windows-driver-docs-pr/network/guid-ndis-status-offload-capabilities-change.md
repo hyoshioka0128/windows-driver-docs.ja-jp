@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fdd85a78851c5df5578d018e7ab07f48023009f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349870"
 ---
 # <a name="guidndisstatusoffloadcapabilitieschange"></a>GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE
 
@@ -23,5 +23,5 @@ GUID_NDIS_STATUS_OFFLOAD_CAPABILITIES_CHANGE イベント GUID では、NDIS ポ
 
 GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。
 
-タスクのオフロード機能の詳細については、[NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)と[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)を参照してください。
+タスクのオフロード機能の詳細については、次を参照してください。 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)と[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)します。
 

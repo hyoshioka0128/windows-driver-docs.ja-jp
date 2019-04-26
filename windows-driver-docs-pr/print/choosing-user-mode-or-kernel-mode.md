@@ -1,6 +1,6 @@
 ---
-title: ユーザー モードまたはカーネル モードの選択
-description: ユーザー モードまたはカーネル モードの選択
+title: ユーザー モードまたはカーネル モードを選択する
+description: ユーザー モードまたはカーネル モードを選択する
 ms.assetid: 1e63d01e-8cf2-488a-89e8-d4a3ff5cfe19
 keywords:
 - プリンター グラフィックス DLL WDK、ユーザー モードとカーネル モード
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7effd5c2c5439c27525f03bf9bf0205df242c2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351972"
 ---
-# <a name="choosing-user-mode-or-kernel-mode"></a>ユーザー モードまたはカーネル モードの選択
+# <a name="choosing-user-mode-or-kernel-mode"></a>ユーザー モードまたはカーネル モードを選択する
 
 
 

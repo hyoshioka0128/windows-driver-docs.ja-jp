@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_VF_VENDOR_DEVICE_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 71edfff9a856ea29291c8158819b38e9b609a84b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351363"
 ---
 # <a name="oidsriovvfvendordeviceid"></a>OID\_SRIOV\_VF\_ベンダー\_デバイス\_ID
 
@@ -28,7 +28,7 @@ ms.locfileid: "56539071"
 
 この OID 要求を処理する場合、PF ミニポート ドライバーする必要があります指定 VF に以前割り当てられたリソースを確認します。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
 
-詳細については、[仮想関数、PCI ベンダーとデバイスのデバイス Id の照会](https://msdn.microsoft.com/library/windows/hardware/hh440185)を参照してください。
+詳細については、次を参照してください。[仮想関数、PCI ベンダーとデバイスのデバイス Id の照会](https://msdn.microsoft.com/library/windows/hardware/hh440185)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

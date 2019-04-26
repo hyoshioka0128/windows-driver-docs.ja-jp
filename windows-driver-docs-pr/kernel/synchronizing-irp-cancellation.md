@@ -1,6 +1,6 @@
 ---
-title: IRP のキャンセルを同期します。
-description: IRP のキャンセルを同期します。
+title: IRP キャンセルの同期
+description: IRP キャンセルの同期
 ms.assetid: a110c6ad-794d-4b8a-a89d-bceb08ea82b8
 keywords:
 - Irp、同期をキャンセル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c25b2fd53bf4b3079839853dac31f6475d17279b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345433"
 ---
-# <a name="synchronizing-irp-cancellation"></a>IRP のキャンセルを同期します。
+# <a name="synchronizing-irp-cancellation"></a>IRP キャンセルの同期
 
 
 

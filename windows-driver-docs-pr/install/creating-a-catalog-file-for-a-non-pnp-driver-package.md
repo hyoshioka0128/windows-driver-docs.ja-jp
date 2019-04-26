@@ -1,22 +1,22 @@
 ---
-title: 非 PnP ドライバー パッケージのカタログ ファイルを作成します。
-description: 非 PnP ドライバー パッケージのカタログ ファイルを作成します。
+title: 非 PnP ドライバー パッケージ用のカタログ ファイルの作成
+description: 非 PnP ドライバー パッケージ用のカタログ ファイルの作成
 ms.assetid: b40a6f42-53a8-468f-abf1-335c5ead3cbd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e301da648db48a14ae97b3635b3283a2687d350
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344336"
 ---
-# <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>非 PnP ドライバー パッケージのカタログ ファイルを作成します。
+# <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>非 PnP ドライバー パッケージ用のカタログ ファイルの作成
 
 
 使用することができます、 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)を作成するツール、[カタログ ファイル](catalog-files.md)非 PnP の[ドライバー パッケージ](driver-packages.md)します。
 
-**注**  INF ファイルを使用してインストールされていないドライバー パッケージのカタログ ファイルを作成するには、のみ MakeCat ツールを使用する必要があります。 INF ファイルを使用して、ドライバー パッケージをインストールする場合は、使用、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)カタログ ファイルを作成するためのツール。 Inf2Cat には、パッケージの INF ファイル内で参照される、ドライバー パッケージ内のすべてのファイルに自動的に含まれています。 Inf2Cat ツールを使用する方法の詳細については、[カタログ ファイルを作成するのを使用して Inf2Cat](using-inf2cat-to-create-a-catalog-file.md)を参照してください。
+**注**  INF ファイルを使用してインストールされていないドライバー パッケージのカタログ ファイルを作成するには、のみ MakeCat ツールを使用する必要があります。 INF ファイルを使用して、ドライバー パッケージをインストールする場合は、使用、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)カタログ ファイルを作成するためのツール。 Inf2Cat には、パッケージの INF ファイル内で参照される、ドライバー パッケージ内のすべてのファイルに自動的に含まれています。 Inf2Cat ツールを使用する方法の詳細については、次を参照してください。[カタログ ファイルを作成するのを使用して Inf2Cat](using-inf2cat-to-create-a-catalog-file.md)します。
 
  
 

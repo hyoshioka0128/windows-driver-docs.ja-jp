@@ -1,6 +1,6 @@
 ---
-title: ドライバーとの通信を GDI
-description: ドライバーとの通信を GDI
+title: ドライバーとの GDI 通信
+description: ドライバーとの GDI 通信
 ms.assetid: 81d9e87f-883b-4019-86fc-bccde861de46
 keywords:
 - GDI WDK Windows 2000 の表示、ドライバーの通信
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35905c02d622b0e31c1aaedf6d25190361cfa1a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353865"
 ---
-# <a name="gdi-communication-with-the-driver"></a>ドライバーとの通信を GDI
+# <a name="gdi-communication-with-the-driver"></a>ドライバーとの GDI 通信
 
 
 ## <span id="ddk_gdi_communication_with_the_driver_gg"></span><span id="DDK_GDI_COMMUNICATION_WITH_THE_DRIVER_GG"></span>

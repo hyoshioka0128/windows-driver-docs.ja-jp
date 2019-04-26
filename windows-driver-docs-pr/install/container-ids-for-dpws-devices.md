@@ -1,17 +1,17 @@
 ---
-title: DPWS デバイス用のコンテナー Id
-description: DPWS デバイス用のコンテナー Id
+title: DPWS デバイス用のコンテナー ID
+description: DPWS デバイス用のコンテナー ID
 ms.assetid: b613a25e-bedf-481c-8c86-9486af01b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9694d53ac64ea133009fb4c3f1aa4b88b50fb785
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346806"
 ---
-# <a name="container-ids-for-dpws-devices"></a>DPWS デバイス用のコンテナー Id
+# <a name="container-ids-for-dpws-devices"></a>DPWS デバイス用のコンテナー ID
 
 
 Windows 7 以降、デバイスを PnP 拡張機能 (PNP-X) をサポートするデバイス プロファイルの Web サービス (DPWS) を含めることでコンテナー ID を指定できます、 **ContainerId**デバイスのメタデータ ドキュメント内の XML 要素。 DPWS とデバイスの DPWS メタデータ ドキュメントの詳細についてを参照してください、 [DPWS 仕様。](https://go.microsoft.com/fwlink/p/?linkid=142400)

@@ -1,17 +1,17 @@
 ---
-title: 設定にリセットして既定値は (関数インデックス 21)
+title: 出荷時の既定値へのリセット (関数インデックス 21)
 description: この関数は、構成済みの仕入先の設定に戻す、NVDIMM-N をリセットします。
 ms.assetid: 64CEF5C8-FC2A-4C6E-829C-27E18A4EDC26
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bb6598830bb7efc03f016b22dfe2949a2904eb42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346543"
 ---
-# <a name="reset-to-factory-defaults-function-index-21"></a>設定にリセットして既定値は (関数インデックス 21)
+# <a name="reset-to-factory-defaults-function-index-21"></a>出荷時の既定値へのリセット (関数インデックス 21)
 
 
 この関数は、構成済みの仕入先の設定に戻す、NVDIMM-N をリセットします。
@@ -43,7 +43,7 @@ ms.locfileid: "56548618"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

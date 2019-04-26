@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_IN_USE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 09b3af88cf9cb83c88ba9acd94721ee4bd242c10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348148"
 ---
 # <a name="oidgenmediainuse"></a>OID\_GEN\_メディア\_IN\_使用
 
@@ -41,7 +41,7 @@ NDIS 6.0 とそれ以降のミニポート ドライバーでは、この OID �
 
 この OID と同じ情報を提供する、 [OID\_GEN\_メディア\_サポートされている](oid-gen-media-supported.md)OID。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

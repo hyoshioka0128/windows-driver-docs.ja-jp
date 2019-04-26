@@ -1,19 +1,19 @@
 ---
-title: リセット操作の MB モデム
-description: リセット操作の MB モデム
+title: MB モデム リセット操作
+description: MB モデム リセット操作
 ms.assetid: E33073B5-53D5-4F6F-85EC-5B46FDE9EA4D
 keywords:
 - MB モデムのリセット、モバイル ブロード バンド モデムをリセットするミニポート ドライバーのモバイル ブロード バンド モデムのリセット
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6172d1949ae8b52a8c353f26503d14ad01435a80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343289"
 ---
-# <a name="mb-modem-reset-operations"></a>リセット操作の MB モデム
+# <a name="mb-modem-reset-operations"></a>MB モデム リセット操作
 
 このセクションでは、MBIM CID コマンドとデータ構造体だけでなく NDIS OID コマンドとモバイル ブロード バンド (MB) デバイスでモデムをリセットするためのデータ構造を定義します。 これらのコマンドとデータ構造体、Windows 10 バージョン 1709 以降で利用できます。
 
@@ -40,7 +40,7 @@ ms.locfileid: "56558212"
 
 適用できません。
 
-### <a name="set"></a>設定
+### <a name="set"></a>Set
 
 NULL にする必要があります、InformationBuffer と*InformationBufferLength* 0 にする必要があります。
 

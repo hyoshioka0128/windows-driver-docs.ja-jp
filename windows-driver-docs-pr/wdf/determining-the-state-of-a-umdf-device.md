@@ -1,5 +1,5 @@
 ---
-title: UMDF デバイスの状態を判断します。
+title: UMDF デバイスの状態の判断
 description: このトピックでは、UMDF デバイスはどのような状態を確認すると共に、ユーザー モード ドライバー フレームワーク (UMDF) のバージョン 1 または 2 ドライバー デバッガー拡張機能を使用する方法について説明します。
 ms.assetid: ed1a4429-4f36-44b9-9564-587aa381342f
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca57211ad0850d1e1cc41d92b2bcb2b7b5c1e398
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344953"
 ---
-# <a name="determining-the-state-of-a-umdf-device"></a>UMDF デバイスの状態を判断します。
+# <a name="determining-the-state-of-a-umdf-device"></a>UMDF デバイスの状態の判断
 
 
 このトピックでは、UMDF デバイスはどのような状態を確認すると共に、ユーザー モード ドライバー フレームワーク (UMDF) のバージョン 1 または 2 ドライバー デバッガー拡張機能を使用する方法について説明します。

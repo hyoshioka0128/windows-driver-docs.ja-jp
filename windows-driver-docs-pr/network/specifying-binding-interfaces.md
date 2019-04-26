@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b91c63325aaa4d929b277ef2871fa4f6c9d2085
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342584"
 ---
 # <a name="specifying-binding-interfaces"></a>バインド インターフェイスの指定
 
@@ -43,7 +43,7 @@ ms.locfileid: "56580121"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[値]</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -130,7 +130,7 @@ ms.locfileid: "56580121"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[値]</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

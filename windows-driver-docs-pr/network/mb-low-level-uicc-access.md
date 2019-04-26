@@ -8,11 +8,11 @@ ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 054970b6946cfe290e978f7c4634c7cdf61362b4
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343350"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低レベル UICC アクセス
 

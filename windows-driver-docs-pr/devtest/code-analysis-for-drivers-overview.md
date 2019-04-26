@@ -5,11 +5,11 @@ ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f97641467932fa3abe3b9648f5f15363e5886ad9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343963"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>ドライバーのコード分析の概要
 
@@ -45,23 +45,23 @@ Windows Driver Kit にドライバー固有の拡張機能を提供する、[コ
 ## <a name="span-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>コード分析の警告
 
 
-コード分析ツールは、プログラムまたはドライバーのコード内のエラーを識別するために、ルールに基づくモデルを使用します。 各ルールは、コード分析ツール規則の違反を検出した場合に報告される警告に関連付けられます。 ドライバー固有の警告の詳細については、[Code Analysis for Drivers 警告](prefast-for-drivers-warnings.md)を参照してください。 Visual Studio でコード分析ツールをレポートする警告のコア セットについては、[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)を参照してください。
+コード分析ツールは、プログラムまたはドライバーのコード内のエラーを識別するために、ルールに基づくモデルを使用します。 各ルールは、コード分析ツール規則の違反を検出した場合に報告される警告に関連付けられます。 ドライバー固有の警告の詳細については、次を参照してください。 [Code Analysis for Drivers 警告](prefast-for-drivers-warnings.md)します。 Visual Studio でコード分析ツールをレポートする警告のコア セットについては、次を参照してください。[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)します。
 
 ## <a name="span-idannotationsspanspan-idannotationsspanspan-idannotationsspanannotations"></a><span id="Annotations"></span><span id="annotations"></span><span id="ANNOTATIONS"></span>注釈
 
 
-コード分析ツールを提供する重要な機能の 1 つは、関数の説明と、ドライバーのソース コード内の他のエンティティの注釈を設定する機能です。 コード分析ツールには、機能内のスコープつまり、関数間の相互作用を分析します。 注釈のでは、呼び出されると、呼び出し元関数の間のコントラクトのより完全な式を提供するコード分析ツールは、コントラクトが満たされているをチェックできるようにします。 注釈の別の目的は、関数の使用方法のコードを読み取るすべてのユーザーに通知を予想される結果です。 注釈は、インターフェイスのコントラクトを宣言し、そのコントラクトを実現する方法について説明しようとはしないでください。 多くの場合、コード分析ツールを実行してから結果がない場合、適切な注釈を反映して、注釈を追加することで注釈がに関する警告を抑制すると追加のチェックが有効になっています。 詳細については、[Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)を参照してください。 詳細については、SAL 2.0 についてを参照してください[C と C++ コードの欠陥を削減する SAL 注釈を使って](https://go.microsoft.com/fwlink/p/?linkid=247283)します。 SAL 2.0 には、SAL 1.0 が置き換えられます。 WDK for Windows 8 では、SAL 2.0 を使用する必要があります。 ドライバーの SAL 1.0 についての情報を必要がある場合は、Windows 7 の WDK に同梱されているドライバーの注釈のドキュメントの PREfast を参照してください。
+コード分析ツールを提供する重要な機能の 1 つは、関数の説明と、ドライバーのソース コード内の他のエンティティの注釈を設定する機能です。 コード分析ツールには、機能内のスコープつまり、関数間の相互作用を分析します。 注釈のでは、呼び出されると、呼び出し元関数の間のコントラクトのより完全な式を提供するコード分析ツールは、コントラクトが満たされているをチェックできるようにします。 注釈の別の目的は、関数の使用方法のコードを読み取るすべてのユーザーに通知を予想される結果です。 注釈は、インターフェイスのコントラクトを宣言し、そのコントラクトを実現する方法について説明しようとはしないでください。 多くの場合、コード分析ツールを実行してから結果がない場合、適切な注釈を反映して、注釈を追加することで注釈がに関する警告を抑制すると追加のチェックが有効になっています。 詳細については、次を参照してください。 [Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)します。 詳細については、SAL 2.0 についてを参照してください[C と C++ コードの欠陥を削減する SAL 注釈を使って](https://go.microsoft.com/fwlink/p/?linkid=247283)します。 SAL 2.0 には、SAL 1.0 が置き換えられます。 WDK for Windows 8 では、SAL 2.0 を使用する必要があります。 ドライバーの SAL 1.0 についての情報を必要がある場合は、Windows 7 の WDK に同梱されているドライバーの注釈のドキュメントの PREfast を参照してください。
 
 ## <a name="span-idinterpretingtheresultspanspan-idinterpretingtheresultspanspan-idinterpretingtheresultspaninterpreting-the-result"></a><span id="Interpreting_the_result"></span><span id="interpreting_the_result"></span><span id="INTERPRETING_THE_RESULT"></span>結果の解釈
 
 
 ドライバーのコード分析が簡単に実行できると非常に大きなドライバーとプログラムでも、迅速に実行されます。 開発者の作業では、出力を調べる、コード分析ツールが検出されると、エラーを分析およびコード分析ツールが誤って解釈される有効なコードから実際のコーディング エラーを区別します。
 
-コード分析ツールが検出される警告をすべてを説明する包括的なリファレンスを参照してください[Code Analysis for Drivers 警告](prefast-for-drivers-warnings.md)します。 Visual Studio でコード分析ツールをレポートする警告のコア セットについては、[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)を参照してください。
+コード分析ツールが検出される警告をすべてを説明する包括的なリファレンスを参照してください[Code Analysis for Drivers 警告](prefast-for-drivers-warnings.md)します。 Visual Studio でコード分析ツールをレポートする警告のコア セットについては、次を参照してください。[コード分析の警告](https://go.microsoft.com/fwlink/p/?linkid=226853)します。
 
 警告は、通常のコード分析を解決するには、必要に応じて、ソース コードを更新または関数のコントラクトを明確にするための注釈を追加する必要があります。 将来のすべての呼び出し元のコントラクトを強制するアナライザーは、注釈を追加し、読みやすさも向上します。
 
-場合、**コード分析結果**、慎重に調査した後、ユーザーが決定した表示エラーが有効でないし、注釈を使用しても回避することはできません、除外するか、これらの警告を抑制することもできます。 詳細については、[ドライバーのコード分析を実行する方法](how-to-run-code-analysis-for-drivers.md)を参照してください。
+場合、**コード分析結果**、慎重に調査した後、ユーザーが決定した表示エラーが有効でないし、注釈を使用しても回避することはできません、除外するか、これらの警告を抑制することもできます。 詳細については、次を参照してください。[ドライバーのコード分析を実行する方法](how-to-run-code-analysis-for-drivers.md)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

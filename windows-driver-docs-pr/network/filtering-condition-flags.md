@@ -7,11 +7,11 @@ keywords:
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad23cac352db91acafb9a1526b3897c7e3ed591
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347392"
 ---
 # <a name="filtering-condition-flags"></a>フィルター条件フラグ
 
@@ -310,7 +310,7 @@ ms.locfileid: "57463957"
 <p>0x00010000</p>
 </td>
 <td>
-<p>パケットが認証済みファイアウォール ポリシーと一致していることを示します。 ファイアウォール ルールの「セキュリティで保護された場合は、接続を許可する」オプションに一致する接続だけでは、このフラグが設定があります。 詳細については、<a href="https://technet.microsoft.com/library/cc753463">ファイアウォールのバイパスの認証を有効にする方法</a>を参照してください。</p>
+<p>パケットが認証済みファイアウォール ポリシーと一致していることを示します。 ファイアウォール ルールの「セキュリティで保護された場合は、接続を許可する」オプションに一致する接続だけでは、このフラグが設定があります。 詳細については、次を参照してください。<a href="https://technet.microsoft.com/library/cc753463">ファイアウォールのバイパスの認証を有効にする方法</a>します。</p>
 <p>このフラグは、Windows Server 2008、Windows Vista SP1 と以降のバージョンの Windows で次のフィルター処理レイヤーで該当するもです。<dl>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V4</dd>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V6</dd>

@@ -1,6 +1,6 @@
 ---
-title: スピンロックの概要
-description: スピンロックの概要
+title: スピン ロックの概要
+description: スピン ロックの概要
 ms.assetid: a37c0db4-ff9c-4958-a9f4-62b671458d03
 keywords:
 - KSPIN_LOCK
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cb62577c53d3b6a4fbde51b76e38649f2b2029e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341436"
 ---
-# <a name="introduction-to-spin-locks"></a>スピンロックの概要
+# <a name="introduction-to-spin-locks"></a>スピン ロックの概要
 
 
 
@@ -27,7 +27,7 @@ ms.locfileid: "56536519"
 
 多くのコンポーネントは、ドライバーを含めて、スピン ロックを使用します。 任意の種類のドライバーが 1 つ以上使用可能性があります*executive スピン ロック*します。 たとえば、ほとんどのファイル システムでは、Irp の処理が、ファイル システムのワーカー スレッド コールバック ルーチンと FSD の両方を格納するのに、インタロックされた作業のキュー、ファイル システム ドライバー (FSD) でデバイスの拡張機能を使用します。 インタロックされた作業をキューは、キューや Irp を削除しようとして同時にすべてのスレッドに Irp を挿入しようとしています。 FSD 間の競合を解決する、executive スピン ロックによって保護されます。 別の例としては、システムのフロッピー コント ローラー ドライバーは、2 つの executive スピン ロックを使用します。 Executive スピン ロックを 1 つは、インタロックされた作業キューがこのドライバーのデバイス専用のスレッドと共有を保護します。他は、次の 3 つのドライバー ルーチンによって共有されるタイマー オブジェクトを保護します。
 
-Microsoft Windows XP および Windows の以降のバージョンのドライバーを使用できる[ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)と[ **KeReleaseInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553130)取得およびとしてスピン ロックを解放する、*スピン ロックをキューに置かれた*します。 キューに置かれたスピン ロックでは、マルチプロセッサ コンピューターで通常スピンロックの競合が増加のロックよりも優れたパフォーマンスを提供します。 詳細については、[スピン ロックをキューに置かれた](queued-spin-locks.md)を参照してください。 Windows 2000 用のドライバーを使用できる[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)取得およびとして、通常、スピン ロックを解放するにはスピン ロックします。
+Microsoft Windows XP および Windows の以降のバージョンのドライバーを使用できる[ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)と[ **KeReleaseInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553130)取得およびとしてスピン ロックを解放する、*スピン ロックをキューに置かれた*します。 キューに置かれたスピン ロックでは、マルチプロセッサ コンピューターで通常スピンロックの競合が増加のロックよりも優れたパフォーマンスを提供します。 詳細については、次を参照してください。[スピン ロックをキューに置かれた](queued-spin-locks.md)します。 Windows 2000 用のドライバーを使用できる[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)取得およびとして、通常、スピン ロックを解放するにはスピン ロックします。
 
 単純なデータ構造へのアクセスを同期するには、ドライバーはいずれかの使用、 **ExInterlocked * Xxx*** ルーチン データ構造をアトミックにアクセスできるようにします。 これらのルーチンを使用するドライバーは、取得するか、スピン ロックを明示的に解放する必要はありません。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_VF_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 69a7bdb5f9f3050aca78adcf3b7d207a44abae6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350960"
 ---
 # <a name="oidnicswitchvfparameters"></a>OID\_NIC\_スイッチ\_VF\_パラメーター
 
@@ -21,7 +21,7 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミ�
 
 OID メソッドの要求が行われたときに、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、[ **NDIS\_NIC\_スイッチ\_VF\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451593)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 上にあるドライバーまたはユーザー モード アプリケーションを設定して、VF にクエリを指定します、 **VFId**のメンバー、 [ **NDIS\_NIC\_スイッチ\_VF\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451593) VF の識別子に構造体。 上にあるドライバーやアプリケーションは次の方法のいずれかで VF 識別子を取得します。
@@ -85,7 +85,7 @@ OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_VF\_ミ�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

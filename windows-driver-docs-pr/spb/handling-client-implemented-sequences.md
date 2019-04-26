@@ -1,24 +1,24 @@
 ---
-title: クライアントで実装されたシーケンスの処理
+title: クライアント実装シーケンスの処理
 description: 省略可能な EvtSpbControllerLock と EvtSpbControllerUnlock イベント コールバック関数では、補完的な操作を実行します。
 ms.assetid: C1DED853-059D-481F-A524-E50772072018
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d391105da7f94c485b96594b946d16560ce12987
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356742"
 ---
-# <a name="handling-client-implemented-sequences"></a>クライアントで実装されたシーケンスの処理
+# <a name="handling-client-implemented-sequences"></a>クライアント実装シーケンスの処理
 
 
 省略可能な[ *EvtSpbControllerLock* ](https://msdn.microsoft.com/library/windows/hardware/hh450814)と[ *EvtSpbControllerUnlock* ](https://msdn.microsoft.com/library/windows/hardware/hh450816)イベント コールバック関数を補完的な実行操作です。 *EvtSpbControllerLock*関数は、ハンドラーを[ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858)要求。 *EvtSpbControllerUnlock*関数は、ハンドラーを[ **IOCTL\_SPB\_UNLOCK\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)要求。 クライアント (つまり、バス上の周辺機器のデバイスのドライバー) の先頭し、末尾にこれらの要求を送信する[I/O 転送シーケンス](https://msdn.microsoft.com/library/windows/hardware/hh450890)します。 ほとんどの SPB コント ローラー ドライバーがサポートしていません**IOCTL\_SPB\_ロック\_コント ローラー**と**IOCTL\_SPB\_UNLOCK\_コント ローラー**要求と、そのため、実装しない*EvtSpbControllerLock*と*EvtSpbControllerUnlock*関数。
 
 クライアントは、一連の単純な転送要求としての I/O 転送シーケンスを実行できます (つまり、 [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)要求)。 シーケンスの最初の転送は続く必要があります、 **IOCTL\_SPB\_ロック\_コント ローラー**要求-この要求に指示 SPB のコント ローラー ドライバー、バスの I/O の中にロックをシーケンスを転送します。 最後の転送は続く必要があります、 **IOCTL\_SPB\_UNLOCK\_コント ローラー**要求は、ドライバー、バスのロックを解除するように指示します。 この種類の I/O 転送シーケンスが呼び出されます、[クライアントで実装されたシーケンス](https://msdn.microsoft.com/library/windows/hardware/hh450890#buses-client-implemented-sequences)から区別するために、[単一要求シーケンス](https://msdn.microsoft.com/library/windows/hardware/hh450890#buses-single-request-sequences)、使用、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求の代わりに**IOCTL\_SPB\_ロック\_コント ローラー**と**IOCTL\_SPB\_UNLOCK\_コント ローラー**要求。
 
-周辺機器のデバイスのドライバー、バスにロックをかけて、バス コント ローラー、バスのない他の周辺機器へのアクセスを使用できます。 バス ロック操作の詳細については、バスの種類によって異なります。 I²C コント ローラーでは、転送の方向 (読み取り後に、書き込み、またはその逆) に変更を I²C 再起動操作が必要です。 SPI コント ローラーでは、ターゲット デバイスにチップ選択する必要がありますままアサートされたコント ローラーのロックが有効になります。 詳細については、[Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)を参照してください。
+周辺機器のデバイスのドライバー、バスにロックをかけて、バス コント ローラー、バスのない他の周辺機器へのアクセスを使用できます。 バス ロック操作の詳細については、バスの種類によって異なります。 I²C コント ローラーでは、転送の方向 (読み取り後に、書き込み、またはその逆) に変更を I²C 再起動操作が必要です。 SPI コント ローラーでは、ターゲット デバイスにチップ選択する必要がありますままアサートされたコント ローラーのロックが有効になります。 詳細については、次を参照してください。 [Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)します。
 
 転送のクライアントで実装されたシーケンスのサポートは、省略可能です。 SPB コント ローラーのドライバーは、コント ローラーは、次の場合にのみ、それらをサポートするために要求する必要があります。
 

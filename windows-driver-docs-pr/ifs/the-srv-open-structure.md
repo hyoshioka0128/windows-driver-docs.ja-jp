@@ -1,6 +1,6 @@
 ---
-title: SRV_OPEN 構造体
-description: SRV_OPEN 構造体
+title: SRV_OPEN 構造
+description: SRV_OPEN 構造
 ms.assetid: 6cf4c6f6-a21f-4919-92b5-2403b650d8d0
 keywords:
 - サーバーは、WDK RDBSS を開く
@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19af10d64c1f5d4200dcef515f113d26c83a4654
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348271"
 ---
 # <a name="the-srvopen-structure"></a>SRV\_オープン構造体
 

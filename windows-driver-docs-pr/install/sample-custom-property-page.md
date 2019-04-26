@@ -5,11 +5,11 @@ ms.assetid: 96dd5f08-1543-4e13-9344-767cd9e6df78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2eb6f4429061a99af5fa54a2d1ad399d58cb74f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348728"
 ---
 # <a name="sample-custom-property-page"></a>サンプルのカスタム プロパティ ページ
 

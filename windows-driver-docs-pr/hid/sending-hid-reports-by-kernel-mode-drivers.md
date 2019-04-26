@@ -5,22 +5,22 @@ ms.assetid: ff3d090f-cf76-40a7-9215-8440a592f303
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d19f85569a04c35f05a9937afdaf16737e5a849b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345453"
 ---
 # <a name="sending-hid-reports-by-kernel-mode-drivers"></a>カーネル モード ドライバーでの HID レポートを送信します。
 
 
 カーネル モード ドライバーを使用する必要があります[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819) HID コレクションにレポート出力を継続的に送信する要求の主なアプローチとして。 ドライバーは、IOCTL を使用できますも\_HID\_設定\_*Xxx*出力レポートを送信し、機能のコレクションにレポートを要求します。 ただし、ドライバーでは、コレクションの現在の状態を設定するのにこれらの I/O 要求が使用する必要がありますのみ。 一部のデバイスをサポートしていない[ **IOCTL\_HID\_設定\_出力\_レポート**](https://msdn.microsoft.com/library/windows/hardware/ff541196)され、この要求を使用する場合に応答しなくなります。
 
-詳細については、[を使用して IRP\_MJ\_書き込み要求](#using-irp-mj-write-requests)と[を使用して IOCTL\_HID\_設定\_Xxx 要求](#using-ioctl-hid-set-xxx-requests)を参照してください。
+詳細については、次を参照してください。[を使用して IRP\_MJ\_書き込み要求](#using-irp-mj-write-requests)と[を使用して IOCTL\_HID\_設定\_Xxx 要求](#using-ioctl-hid-set-xxx-requests)します。
 
 ### <a href="" id="using-irp-mj-write-requests"></a>IRP を使用して\_MJ\_書き込み要求
 
-Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、コレクションに送信されたすべての書き込み要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、書き込み要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法の詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)と[Irp の再利用](https://msdn.microsoft.com/library/windows/hardware/ff561107)を参照してください。
+Windows 2000 の非 WDM ドライバー、および Windows XP およびそれ以降のバージョンのドライバーは、コレクションに送信されたすべての書き込み要求の 1 つの IRP を使用できます。 ただし、Windows 2000 WDM ドライバーでは、書き込み要求ごとに新しい IRP を割り当てる必要があります。 使用して、Irp を再利用する方法の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)と[Irp の再利用](https://msdn.microsoft.com/library/windows/hardware/ff561107)します。
 
 ドライバーを書き込み、IRP IRP の再利用かどうか[ **IoCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンは、状態の状態で要求を完了する必要があります\_詳細\_処理\_REQUIRED (および IRP を解放)。 ドライバーは IRP が不要になった必要がある場合、完了して IRP を呼び出すことによって解放[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)と[ **IoFreeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549113)します。 たとえば、ドライバー可能性があります通常完了し、解放で IRP その[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン、以降のデバイスを削除します。
 

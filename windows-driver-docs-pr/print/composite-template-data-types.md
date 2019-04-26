@@ -1,6 +1,6 @@
 ---
-title: 複合のテンプレートのデータ型
-description: 複合のテンプレートのデータ型
+title: 複合テンプレート データ型
+description: 複合テンプレート データ型
 ms.assetid: 5fd9218a-2827-4cca-b913-eeb6484653d9
 keywords:
 - WDK GDL、データ型のテンプレート
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24943c647dca4a7a9fd0ab7dd5f414ad7d0bb39e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353120"
 ---
-# <a name="composite-template-data-types"></a>複合のテンプレートのデータ型
+# <a name="composite-template-data-types"></a>複合テンプレート データ型
 
 
 複合データ型は、同じまたは異なるデータ型を持つ 1 つまたは複数の値で構成されます。 合成には、固定または可変 (ただし、いない無期限) の長さを持つことができます。 このデータ型は、C lLanguage 構造体のデータ型に似ています。

@@ -1,6 +1,6 @@
 ---
-title: Irp の完了
-description: Irp の完了
+title: IRP の完了
+description: IRP の完了
 ms.assetid: 4b4be95e-ebf5-4726-87fc-20c3e6c94f52
 keywords:
 - Irp WDK のカーネルの完了
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9621f371bf6bf3bb64b2670711d7c2b010a0ade5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343690"
 ---
-# <a name="completing-irps"></a>Irp の完了
+# <a name="completing-irps"></a>IRP の完了
 
 
 
@@ -29,7 +29,7 @@ ms.locfileid: "56557597"
 
 すべてのドライバーは IRP が完了したら、I/O マネージャーは、操作の元の要求者にステータスを返します。 ドライバーが作成した IRP を設定するより高度なドライバーを指定する必要がありますに注意してください、 *IoCompletion*ルーチン IRP のリリースを作成します。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [IRP を完了するタイミング](when-to-complete-an-irp.md)
 

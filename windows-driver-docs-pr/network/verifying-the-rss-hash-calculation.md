@@ -1,6 +1,6 @@
 ---
-title: RSS ハッシュの計算結果を確認しています
-description: RSS ハッシュの計算結果を確認しています
+title: RSS ハッシュ計算の確認
+description: RSS ハッシュ計算の確認
 ms.assetid: 321a2c3e-98f8-464b-96ad-8b6fc34d5261
 keywords:
 - 受信側スケーリング WDK ネットワーク、ハッシュ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c0767c1d7d9497c99b824c9ebcb7466ee3b288d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348447"
 ---
-# <a name="verifying-the-rss-hash-calculation"></a>RSS ハッシュの計算結果を確認しています
+# <a name="verifying-the-rss-hash-calculation"></a>RSS ハッシュ計算の確認
 
 
 

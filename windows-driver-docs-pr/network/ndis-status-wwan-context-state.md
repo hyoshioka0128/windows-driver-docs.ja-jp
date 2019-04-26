@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_CONTEXT_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 88cba37b828fa8cb7c0cfcc15a077f54a9246708
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348541"
 ---
 # <a name="ndisstatuswwancontextstate"></a>NDIS\_状態\_WWAN\_コンテキスト\_状態
 
@@ -36,7 +36,7 @@ ms.locfileid: "56539519"
 
 -   音声通話が完了した後は、VoiceCallState WwanVoiceCallStateHangUp に設定したイベント通知を送信します。 その他のすべてのメンバーは、その現在の状態を反映する必要があります。 音声通話切断中にアクティブな接続がないが発生した場合、ConnectionId を「0」に設定してください。 このイベントは後、に、VoiceCallState を設定する必要があります**WwanVoiceCallStateNone**ミニポート ドライバーでします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 776c63f2cb7d6be7c520f67fae64f0a0770e2c92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343820"
 ---
 # <a name="wiaipsxres"></a>WIA\_IP\_XRES
 
@@ -44,7 +44,7 @@ WIA\_IP\_XRES プロパティには、水平方向のデバイスの 1 インチ
 
 WIA\_IP\_XRES はすべてのイメージの取得が有効な項目と項目の保存されたイメージに必要です。 ストレージ アイテムを使用できなくなります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

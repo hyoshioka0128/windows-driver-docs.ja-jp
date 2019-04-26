@@ -1,6 +1,6 @@
 ---
-title: CLFS マーシャ リング領域
-description: CLFS マーシャ リング領域
+title: CLFS マーシャリング領域
+description: CLFS マーシャリング領域
 ms.assetid: 1153bcfd-43e9-43bd-b893-5ec044ea9584
 keywords:
 - 一般的なログ ファイル システムの WDK カーネルでは、領域をマーシャ リング
@@ -17,13 +17,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6202c5524e84a9bb4239c866643c694809d5f9d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343712"
 ---
-# <a name="clfs-marshalling-areas"></a>CLFS マーシャ リング領域
+# <a name="clfs-marshalling-areas"></a>CLFS マーシャリング領域
 
 
 

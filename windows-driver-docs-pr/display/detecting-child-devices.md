@@ -1,6 +1,6 @@
 ---
-title: 子のデバイスを検出します。
-description: 子のデバイスを検出します。
+title: 子デバイスの検出
+description: 子デバイスの検出
 ms.assetid: 36c0c4ef-7810-4e8a-b349-0b7c1f8c2f0c
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、子デバイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e6978919b2dce9f3f36ca7c44f8735aa4626387
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348842"
 ---
-# <a name="detecting-child-devices"></a>子のデバイスを検出します。
+# <a name="detecting-child-devices"></a>子デバイスの検出
 
 
 ## <span id="ddk_detecting_child_devices_gg"></span><span id="DDK_DETECTING_CHILD_DEVICES_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: システム容量のメモリの割り当てください。
-description: システム容量のメモリの割り当てください。
+title: システム領域メモリの割り当て
+description: システム領域メモリの割り当て
 ms.assetid: eee425b3-6ddd-4e9d-b51d-1f2c9ea106a5
 keywords:
 - メモリ管理の WDK カーネル、システムによって割り当てられた領域
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dc9dfcf7f903ac0dc34adfdae9b6bdc3888f0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348563"
 ---
-# <a name="allocating-system-space-memory"></a>システム容量のメモリの割り当てください。
+# <a name="allocating-system-space-memory"></a>システム領域メモリの割り当て
 
 
 

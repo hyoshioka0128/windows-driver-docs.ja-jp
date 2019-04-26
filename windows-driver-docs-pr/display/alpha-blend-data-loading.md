@@ -1,6 +1,6 @@
 ---
-title: アルファ ブレンドのデータの読み込み
-description: アルファ ブレンドのデータの読み込み
+title: アルファ ブレンド データの読み込み
+description: アルファ ブレンド データの読み込み
 ms.assetid: d61fbb07-a6b0-4623-bb5b-1c1218f570ae
 keywords:
 - データ読み込みの WDK DirectX VA をアルファ ブレンド
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5edf23d4319372fb9f76f989504c7571dea57250
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344639"
 ---
-# <a name="alpha-blend-data-loading"></a>アルファ ブレンドのデータの読み込み
+# <a name="alpha-blend-data-loading"></a>アルファ ブレンド データの読み込み
 
 
 ## <span id="ddk_alpha_blend_data_loading_gg"></span><span id="DDK_ALPHA_BLEND_DATA_LOADING_GG"></span>

@@ -1,22 +1,22 @@
 ---
-title: ローカルの DCBX しようとして状態を管理します。
-description: ローカルの DCBX しようとして状態を管理します。
+title: ローカル DCBX Willing 状態の管理
+description: ローカル DCBX Willing 状態の管理
 ms.assetid: B37CA18B-FCCD-414D-95AB-0C54B9F1F421
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8bf348dbc6ee033ae6cd0f0e3f85b04ff4bd7fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343498"
 ---
-# <a name="managing-the-local-dcbx-willing-state"></a>ローカルの DCBX しようとして状態を管理します。
+# <a name="managing-the-local-dcbx-willing-state"></a>ローカル DCBX Willing 状態の管理
 
 
 IEEE 802.1 qaz ドラフト標準には、Data Center Bridging Exchange (DCBX) プロトコルが定義されています。 このプロトコルは、ネットワーク アダプター (ローカル ピア) と直接接続されているリモート ピア間で交換される DCB 構成パラメーターです。 これにより、これらのピアに適応し、接続経由でデータ転送を最適化するためにサービスの品質 (QoS) パラメーターを調整できます。
 
-ローカルおよびリモートの QoS パラメーターの設定に基づき、ミニポート ドライバーは、競合を解決し、一連の運用上の QoS パラメーターを派生します。 ネットワーク アダプターでは、リモート ピアにパケットの優先順位の送信のこれらのオペレーションのパラメーターを使用します。 ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)を参照してください。
+ローカルおよびリモートの QoS パラメーターの設定に基づき、ミニポート ドライバーは、競合を解決し、一連の運用上の QoS パラメーターを派生します。 ネットワーク アダプターでは、リモート ピアにパケットの優先順位の送信のこれらのオペレーションのパラメーターを使用します。 ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
 
 リンク層探索プロトコル (LLDP) パケットで実行される DCB 型の値の長さ (TLV) 設定 DCBX で構成されます。 個別の TLV は、次の種類の QoS パラメーターに対して定義されます。
 
@@ -28,9 +28,9 @@ ETS と PFC TLVs 定義と少し呼ばれる、*許容*ビット。 ネットワ
 
 これら TLVs で許容できる個別のビットを設定する機能は、ローカルの DCBX しようとして、ミニポート ドライバーで管理されている状態に依存します。 ミニポート ドライバーは、ローカルの DCBX しようとして状態を管理するための次のガイドラインに従う必要があります。
 
--   ローカルの DCBX しようとして状態が無効になっている場合、DCBX TLVs で 0 にしようとしてローカルのビットを設定する必要があります。 この場合は、運用上の QoS パラメーターは、ローカルの QoS パラメーターから常に解決されます。 これらのパラメーターの詳細については、[NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)を参照してください。
+-   ローカルの DCBX しようとして状態が無効になっている場合、DCBX TLVs で 0 にしようとしてローカルのビットを設定する必要があります。 この場合は、運用上の QoS パラメーターは、ローカルの QoS パラメーターから常に解決されます。 これらのパラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
 
--   しようとして状態ローカル DCBX が有効になっている場合、DCBX TLVs でいずれかにしようとしてローカルのビットを設定する必要があります。 この場合は、QoS パラメーターをリモートから運用上の QoS パラメーターを解決する必要があります。 これらのパラメーターの詳細については、[リモートの NDIS QoS パラメーターを受け取る](receiving-remote-ndis-qos-parameters.md)を参照してください。
+-   しようとして状態ローカル DCBX が有効になっている場合、DCBX TLVs でいずれかにしようとしてローカルのビットを設定する必要があります。 この場合は、QoS パラメーターをリモートから運用上の QoS パラメーターを解決する必要があります。 これらのパラメーターの詳細については、次を参照してください。[リモートの NDIS QoS パラメーターを受け取る](receiving-remote-ndis-qos-parameters.md)します。
 
     **注**  ミニポート ドライバーが、独立系ハードウェア ベンダー (IHV) で定義されている独自の QoS 設定に基づいて、運用の QoS パラメーターを解決できるもローカルの DCBX しようとして状態が有効になっている場合。 QoS パラメーターまたはローカル ピアが、オペレーティング システムによってリモートで構成されていないこのドライバーにはのみことができます。
 

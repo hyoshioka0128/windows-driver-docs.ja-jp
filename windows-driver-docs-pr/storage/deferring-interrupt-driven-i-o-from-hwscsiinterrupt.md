@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b358d5adf70961f65ebcc04cd52256b9f280ddcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344969"
 ---
 # <a name="deferring-interrupt-driven-io-from-hwscsiinterrupt"></a>HwScsiInterrupt からの割り込み駆動型 I/O の延期
 
@@ -34,7 +34,7 @@ ms.locfileid: "56570450"
 
 4.  コントロールを返します。
 
-**ScsiPortNotification**ルーチンの呼び出し、 *HwScsiEnableInterruptsCallback*ルーチンと DPC ルーチン。 Dpc の詳細については、[DPC オブジェクトと Dpc](https://msdn.microsoft.com/library/windows/hardware/ff544084)を参照してください。
+**ScsiPortNotification**ルーチンの呼び出し、 *HwScsiEnableInterruptsCallback*ルーチンと DPC ルーチン。 Dpc の詳細については、次を参照してください。 [DPC オブジェクトと Dpc](https://msdn.microsoft.com/library/windows/hardware/ff544084)します。
 
 ミニポート ドライバーの場合、 *HwScsiInterrupt*ルーチンは、HBA の割り込みを無効にすることはできませんが、その割り込み駆動の転送で 50 を超える (マイクロ秒) を実行できる、 *HwScsiInterrupt*ルーチン、ドライバーライターは、転送を受け入れることのサイズを制限することによって、ミニポート ドライバーを調整する必要があります。 それ以外の場合、マウス ポインターが表示されます「過敏」や、ミニポート ドライバーでは、データを同時に転送が毎回シリアルおよびパラレルのスループットが著しく低下します。
 

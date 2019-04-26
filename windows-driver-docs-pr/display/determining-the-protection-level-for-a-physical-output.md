@@ -1,19 +1,19 @@
 ---
-title: 物理的な出力の保護レベルを決定します。
-description: 物理的な出力の保護レベルを決定します。
+title: 物理的な出力の保護レベルの決定
+description: 物理的な出力の保護レベルの決定
 ms.assetid: ea06903a-0ad5-43fd-b2d3-013584ae6f69
 keywords:
 - 保護レベルの物理的な出力を決定する、WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efc6ae4e16b771eb4bab21c3c490042a4ff63cec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348825"
 ---
-# <a name="determining-the-protection-level-for-a-physical-output"></a>物理的な出力の保護レベルを決定します。
+# <a name="determining-the-protection-level-for-a-physical-output"></a>物理的な出力の保護レベルの決定
 
 
 物理的なビデオ出力コネクタの保護レベルを決定するのに、次のセクションでアルゴリズムを使用する必要があります。 これらのアルゴリズムは、擬似コードで表現されます。

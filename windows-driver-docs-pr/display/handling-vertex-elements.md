@@ -1,6 +1,6 @@
 ---
-title: 頂点の要素の処理
-description: 頂点の要素の処理
+title: 頂点要素の処理
+description: 頂点要素の処理
 ms.assetid: b931b674-f8c4-4852-a66a-97d545059287
 keywords:
 - 頂点シェーダー宣言 WDK DirectX 9.0、頂点の要素の処理
@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 921f232be4ef716f33b6c803958e41447ed0b00f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353869"
 ---
-# <a name="handling-vertex-elements"></a>頂点の要素の処理
+# <a name="handling-vertex-elements"></a>頂点要素の処理
 
 
 ## <span id="ddk_handling_vertex_elements_gg"></span><span id="DDK_HANDLING_VERTEX_ELEMENTS_GG"></span>
 
 
-DirectX 9.0 バージョンのドライバーが処理できるシェーダー宣言での頂点の要素の数は、ドライバーのデバイスが固定機能やプログラミング可能な頂点の処理をサポートするかどうかによって異なります。 頂点シェーダー宣言の要素の詳細については、[宣言の分離と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)を参照してください。
+DirectX 9.0 バージョンのドライバーが処理できるシェーダー宣言での頂点の要素の数は、ドライバーのデバイスが固定機能やプログラミング可能な頂点の処理をサポートするかどうかによって異なります。 頂点シェーダー宣言の要素の詳細については、次を参照してください。[宣言の分離と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)します。
 
 デバイスは、固定機能の頂点の処理をサポートする場合、ドライバーは、最大 17 頂点要素 (FVF コード) を処理する必要があります。
 

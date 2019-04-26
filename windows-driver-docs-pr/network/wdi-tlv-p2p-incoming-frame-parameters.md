@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INCOMING_FRAME_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 40bbfbf0b9f60090e1ba6cf1aa7256ec81388990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347276"
 ---
 # <a name="wditlvp2pincomingframeparameters"></a>WDI\_TLV\_P2P\_受信\_フレーム\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_受信\_フレーム\_パラメーターは受信 Wi-Fi Direct �
 ## <a name="values"></a>値
 
 
-| 種類                                                                    | 説明                                        |
+| 型                                                                    | 説明                                        |
 |-------------------------------------------------------------------------|----------------------------------------------------|
 | [**WDI\_P2P\_アクション\_フレーム\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926086) | 受信操作のフレームの型。             |
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)                       | リモート ピアの MAC アドレス。                |

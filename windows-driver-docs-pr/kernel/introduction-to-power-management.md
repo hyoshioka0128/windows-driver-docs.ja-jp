@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c33c06d8b0698d48e5a7f9c4404072d5d7bdf76d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341453"
 ---
 # <a name="introduction-to-power-management"></a>電源管理の概要
 
@@ -55,7 +55,7 @@ Windows 電源管理アーキテクチャを活用する PC の構成では、�
 
 電源節約の大きいとより効率的に使用可能なされた以前よりも組み合わせることで、これらの利点があります。
 
-業界全体にわたる OnNow イニシアチブでは、電源管理のハードウェアとソフトウェアの要件を定義します。 詳細については、[電源管理のための業界イニシアティブ](industry-initiatives-for-power-management.md)を参照してください。
+業界全体にわたる OnNow イニシアチブでは、電源管理のハードウェアとソフトウェアの要件を定義します。 詳細については、次を参照してください。[電源管理のための業界イニシアティブ](industry-initiatives-for-power-management.md)します。
 
  
 

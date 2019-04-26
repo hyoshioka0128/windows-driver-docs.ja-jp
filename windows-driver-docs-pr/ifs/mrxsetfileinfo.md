@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf86f3ea29db3027c62041b8e33fc261a57ae05c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352846"
 ---
 # <a name="mrxsetfileinfo-routine"></a>MRxSetFileInfo ルーチン
 
@@ -103,7 +103,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 RDBSS への呼び出しを発行する*MRxSetFileInfo*受信に応答する[ **IRP\_MJ\_設定\_情報**](irp-mj-set-information.md)要求。
@@ -116,7 +116,7 @@ RDBSS への呼び出しを発行する*MRxSetFileInfo*受信に応答する[ **
 
 **Info.Length**に設定されているメンバー **IrpSp -&gt;Parameters.SetFile.Length**します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

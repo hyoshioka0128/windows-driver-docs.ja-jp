@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f08e07d8a7cacbcc9ed7ff7f69e862b497867fb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352412"
 ---
 # <a name="sending-output-to-the-debugger"></a>デバッガーへの出力の送信
 
@@ -44,7 +44,7 @@ VOID OutputDebugString(
 
 [**による DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)ルーチンでは、デバッガー ウィンドウに出力が表示されます。 このルーチンには、basic がサポートしている**printf**パラメーターの書式を設定します。 カーネル モード ドライバーのみが呼び出せる**による DbgPrint**します。
 
-[ **DbgPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff543634)ルーチンはのような**による DbgPrint**に、メッセージの「タグ」ことができます。 デバッガーを実行するときに送信する特定のタグを持つメッセージのみを許可することができます。 これにより、興味のあるメッセージだけを表示することができます。 詳細については、[読み取りとデバッグ メッセージをフィルター処理](reading-and-filtering-debugging-messages.md)を参照してください。
+[ **DbgPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff543634)ルーチンはのような**による DbgPrint**に、メッセージの「タグ」ことができます。 デバッガーを実行するときに送信する特定のタグを持つメッセージのみを許可することができます。 これにより、興味のあるメッセージだけを表示することができます。 詳細については、次を参照してください。[読み取りとデバッグ メッセージをフィルター処理](reading-and-filtering-debugging-messages.md)します。
 
 **注**  で Windows Vista と以降のバージョンの Windows、**による DbgPrint**が生成されますがメッセージにもタグ付けします。 以前のバージョンの Windows、**による DbgPrint**タグなしのメッセージを生成します。
 

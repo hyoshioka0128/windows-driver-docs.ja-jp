@@ -1,27 +1,27 @@
 ---
-title: HYPER-V 拡張可能なスイッチ ポートとネットワーク アダプターの状態
-description: HYPER-V 拡張可能なスイッチ ポートとネットワーク アダプターの状態
+title: Hyper-V 拡張可能スイッチ ポートおよびネットワーク アダプターの状態
+description: Hyper-V 拡張可能スイッチ ポートおよびネットワーク アダプターの状態
 ms.assetid: 1E2075E3-D7CC-4364-ABB2-D5969DB361B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bd220ab2293647821d2615c9831db60bf953363
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349525"
 ---
-# <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>HYPER-V 拡張可能なスイッチ ポートとネットワーク アダプターの状態
+# <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>Hyper-V 拡張可能スイッチ ポートおよびネットワーク アダプターの状態
 
 
 HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポーネントの有効期間を管理します。
 
 <a href="" id="hyper-v-extensible-switch-ports"></a>HYPER-V 拡張可能なスイッチ ポート  
-各ネットワーク アダプターの接続、拡張可能スイッチには、ポートで表されます。 HYPER-V 子パーティションが、拡張可能スイッチのインスタンスへの接続に構成されている場合は、ポートが作成されます。 スイッチの種類に応じても外部および内部ネットワーク アダプターの接続用にポートが作成されます。 スイッチの種類の詳細については、[Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)を参照してください。
+各ネットワーク アダプターの接続、拡張可能スイッチには、ポートで表されます。 HYPER-V 子パーティションが、拡張可能スイッチのインスタンスへの接続に構成されている場合は、ポートが作成されます。 スイッチの種類に応じても外部および内部ネットワーク アダプターの接続用にポートが作成されます。 スイッチの種類の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)します。
 
 各ポートは、インターフェイスのネットワーク接続の構成を保持するために使用されます。 インターフェイスのネットワーク接続の構成を解除するか、子パーティションが停止している、ポートが破棄され、削除します。
 
-このコンポーネントの詳細については、[Hyper-v 拡張可能スイッチ ポート](hyper-v-extensible-switch-ports.md)を参照してください。
+このコンポーネントの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ ポート](hyper-v-extensible-switch-ports.md)します。
 
 <a href="" id="hyper-v-extensible-switch-network-adapters"></a>HYPER-V 拡張可能スイッチのネットワーク アダプター  
 これらは、拡張可能スイッチ ポートに接続する仮想ネットワーク アダプターです。 これらの仮想ネットワーク アダプターは、HYPER-V 子と親パーティション内で公開されます。 これには、子パーティションと基になる物理ネットワーク アダプターとチーミングは、外部ネットワーク アダプターで公開されている仮想マシン (VM) ネットワーク アダプターが含まれます。
@@ -34,7 +34,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 
 たとえば、HYPER-V 子パーティションが開始されるは、VM のネットワーク アダプターがゲスト オペレーティング システム内で公開する前に、拡張可能スイッチのインターフェイス ポートは作成します。 VM のネットワーク アダプターが公開され、列挙、拡張可能スイッチのインターフェイスは、VM のネットワーク アダプターと、拡張可能スイッチ ポート間のネットワーク接続を作成します。 子パーティションが停止している場合、拡張可能スイッチのインターフェイスは最初のネットワーク接続を削除し、し、拡張可能スイッチのポートを削除します。
 
-このコンポーネントの詳細については、[Hyper-v 拡張可能スイッチのネットワーク アダプター](hyper-v-extensible-switch-network-adapters.md)を参照してください。
+このコンポーネントの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのネットワーク アダプター](hyper-v-extensible-switch-network-adapters.md)します。
 
 拡張可能スイッチのインターフェイスを作成するには、削除、またはこれらのコンポーネントの構成を変更、ときに、下位の拡張可能スイッチ ドライバー スタック オブジェクト識別子 (OID) のセット要求を発行します。 この操作を実行するは、拡張可能スイッチ拡張機能を基になることができます、コンポーネントとその構成の状態に関する通知を受け取るようにします。 各 OID は、これらのコンポーネントの状態遷移で要求の結果を設定します。
 
@@ -52,9 +52,9 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <a href="" id="port-created"></a>*ポートの作成*  
 拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_ポート\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598272)、拡張可能スイッチのポートを作成します。 この状態で、拡張可能スイッチのインターフェイスと拡張機能は、ポートをターゲットとする OID 要求を発行できます。
 
-拡張可能スイッチ ドライバー スタックを通じた OID トラフィックに関する詳細については、[Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)を参照してください。
+拡張可能スイッチ ドライバー スタックを通じた OID トラフィックに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)します。
 
-**注**  基になる拡張機能は OID セットの要求が失敗して、ポートの作成を拒否します。 拡張機能は状態が、OID 要求の完了によって\_データ\_いない\_ACCEPTED です。 これは場合、拡張可能スイッチのポートは作成されません。 この手順の詳細については、[Hyper-v 拡張可能スイッチ ポート](hyper-v-extensible-switch-ports.md)を参照してください。
+**注**  基になる拡張機能は OID セットの要求が失敗して、ポートの作成を拒否します。 拡張機能は状態が、OID 要求の完了によって\_データ\_いない\_ACCEPTED です。 これは場合、拡張可能スイッチのポートは作成されません。 この手順の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ ポート](hyper-v-extensible-switch-ports.md)します。
 
  
 
@@ -73,11 +73,11 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 
  
 
-拡張可能スイッチ ドライバー スタックを通じた OID トラフィックに関する詳細については、[Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)を参照してください。
+拡張可能スイッチ ドライバー スタックを通じた OID トラフィックに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)します。
 
-拡張可能スイッチ ドライバー スタックを通じたパケット トラフィックに関する詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
+拡張可能スイッチ ドライバー スタックを通じたパケット トラフィックに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
 
-**注**  基になる拡張機能は OID セットの要求が失敗して、ネットワーク アダプターの接続の作成を拒否します。 そうである場合、拡張可能スイッチ ポートで、接続は作成されません。 この手順の詳細については、[Hyper-v 拡張可能スイッチのネットワーク アダプター](hyper-v-extensible-switch-network-adapters.md)を参照してください。
+**注**  基になる拡張機能は OID セットの要求が失敗して、ネットワーク アダプターの接続の作成を拒否します。 そうである場合、拡張可能スイッチ ポートで、接続は作成されません。 この手順の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのネットワーク アダプター](hyper-v-extensible-switch-network-adapters.md)します。
 
  
 
@@ -90,7 +90,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 
 -   ネットワーク アダプターの接続にパケット トラフィックをリダイレクトします。 たとえば、拡張機能は拡張可能スイッチの他の接続を 1 つのネットワーク アダプターの接続からのパケットをリダイレクトできます。
 
-    **注**  この操作を実行できる転送拡張機能のみです。 詳細については、[転送拡張機能](forwarding-extensions.md)を参照してください。
+    **注**  この操作を実行できる転送拡張機能のみです。 詳細については、次を参照してください。[転送拡張機能](forwarding-extensions.md)します。
 
      
 
@@ -206,10 +206,10 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <tr class="odd">
 <td align="left"><p>ポートを作成していません。</p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
@@ -217,8 +217,8 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
@@ -226,7 +226,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 </tr>
@@ -244,7 +244,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 </tr>
@@ -253,17 +253,17 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ポートの破棄</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>X</p></td>
 </tr>
 </tbody>

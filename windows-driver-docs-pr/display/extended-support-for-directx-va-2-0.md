@@ -5,11 +5,11 @@ ms.assetid: ae68e1d6-4e05-41c4-a11e-90b916f9e02c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fe4b963c26a968ff6a52ab169ec3592c151bd91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353500"
 ---
 # <a name="extended-support-for-directx-va-20"></a>DirectX VA 2.0 の拡張サポート
 

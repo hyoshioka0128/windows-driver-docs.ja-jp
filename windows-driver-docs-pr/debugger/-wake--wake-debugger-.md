@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ae68fce209bb88acec21b488ebf8d053e76589
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341782"
 ---
 # <a name="wake-wake-debugger"></a>.wake (デバッガーのスリープ解除)
 
@@ -63,7 +63,7 @@ ms.locfileid: "56581999"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。 デバッガーのプロセス ID を検索する方法については、[プロセス ID の検索](finding-the-process-id.md)を参照してください。
+詳細については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。 デバッガーのプロセス ID を検索する方法については、次を参照してください。[プロセス ID の検索](finding-the-process-id.md)します。
 
 <a name="remarks"></a>コメント
 -------

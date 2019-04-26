@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_802_3_DELETE_MULTICAST_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1edd7f5dfe57c943a05daf4277b00544eb6baf87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350990"
 ---
 # <a name="oid8023deletemulticastaddress"></a>OID\_802\_3\_削除\_マルチキャスト\_アドレス
 

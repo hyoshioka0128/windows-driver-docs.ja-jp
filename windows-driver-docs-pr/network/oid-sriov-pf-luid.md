@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_PF_LUID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 65992a7e5f8afe66bf48954040c9b882acab7169
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351328"
 ---
 # <a name="oidsriovpfluid"></a>OID\_SRIOV\_PF\_LUID
 
@@ -19,7 +19,7 @@ ms.locfileid: "56580898"
 
 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_PF\_LUID\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451678)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS は、NDIS 呼び出される前に PF の LUID を生成、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) PF. のミニポート ドライバーの機能 NDIS 呼び出されるまでこの LUID が正しく、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)ドライバーの機能です。
@@ -67,7 +67,7 @@ NDIS が、OID を処理するときに\_SRIOV\_PF\_LUID 要求と、次のス�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

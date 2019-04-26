@@ -1,5 +1,5 @@
 ---
-title: 接続指向のミニポート ドライバーの全般的な統計の Oid
+title: 接続指向ミニポート ドライバーの一般統計情報 OID
 description: このトピックでは、オブジェクトの接続指向の全般的な統計の Oid をについて説明します。
 ms.assetid: 1967ebb9-0cc9-46ca-b9db-fc505f41c38e
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe516e58249a7654edf13c8777e60a03410e3327
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349984"
 ---
-# <a name="general-statistics-oids-for-connection-oriented-miniport-drivers"></a>接続指向のミニポート ドライバーの全般的な統計の Oid
+# <a name="general-statistics-oids-for-connection-oriented-miniport-drivers"></a>接続指向ミニポート ドライバーの一般統計情報 OID
 
 次の表は、接続指向のミニポート ドライバーの全般的な統計の特性や、Nic 設定を取得または使用 Oid をまとめたものです。
 
@@ -22,7 +22,7 @@ ms.locfileid: "56528320"
 
 次の表では、M は、OID は必須では、O は、これは省略可能なことを示しますを示します。
 
-| 長さ | クエリ | 設定 | 名前 |
+| 長さ | クエリ | Set | 名前 |
 | --- | --- | --- | --- |
 | 4 または 8 | O |   | [OID_GEN_CO_BYTES_RCV](oid-gen-co-bytes-rcv.md) |
 | 4 または 8 | O |   | [OID_GEN_CO_BYTES_XMIT](oid-gen-co-bytes-xmit.md) |

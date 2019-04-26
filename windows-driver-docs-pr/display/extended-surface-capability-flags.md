@@ -1,6 +1,6 @@
 ---
-title: 画面の機能フラグの拡張
-description: 画面の機能フラグの拡張
+title: 拡張サーフェス機能のフラグ
+description: 拡張サーフェス機能のフラグ
 ms.assetid: 197d899e-57ab-40f8-9c09-440c2dc6197c
 keywords:
 - 拡張セキュリティ機能 WDK DirectDraw を描画するには、フラグを設定します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77cc677189af22b0f734b1f6f965f0c740d282f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353514"
 ---
-# <a name="extended-surface-capability-flags"></a>画面の機能フラグの拡張
+# <a name="extended-surface-capability-flags"></a>拡張サーフェス機能のフラグ
 
 
 ## <span id="ddk_extended_surface_capability_flags_gg"></span><span id="DDK_EXTENDED_SURFACE_CAPABILITY_FLAGS_GG"></span>

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_DEVICE_CAPABILITY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d861b334849837f3df3531b075a3d77f311654
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349331"
 ---
 # <a name="wditlvp2pdevicecapability"></a>WDI\_TLV\_P2P\_デバイス\_機能
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_デバイス\_機能は、Wi-Fi Direct デバイス機能を含�
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                     |
+| 型   | 説明                                                                                                                     |
 |--------|---------------------------------------------------------------------------------------------------------------------------------|
 | UINT8  | Wi-Fi Direct デバイスの Wi-Fi Direct technical specification 表 12 で定義されている機能のビットマップです。            |
 | UINT8  | オペレーティング システムによって現在設定されている Wi-Fi Direct 機能上のデバイス機能ビットマップでのビットマップです。 |
@@ -39,7 +39,7 @@ WDI\_TLV\_P2P\_デバイス\_機能は、Wi-Fi Direct デバイス機能を含�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

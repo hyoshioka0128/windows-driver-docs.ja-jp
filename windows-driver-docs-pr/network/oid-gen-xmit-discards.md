@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_DISCARDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e28c7d4ca38bb09a9ee8ca6c517bc3ddbc12bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354182"
 ---
 # <a name="oidgenxmitdiscards"></a>OID\_GEN\_XMIT\_破棄
 
@@ -25,14 +25,14 @@ ms.locfileid: "56570536"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 要求されません。 (「解説」を参照してください セクション)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS は、ミニポート ドライバーには、この OID を処理します。 参照してください、 [OID\_GEN\_統計](oid-gen-statistics.md)統計情報の詳細については OID。
 
 この OID を表す数は、インターフェイスによって破棄されるパケットの数です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

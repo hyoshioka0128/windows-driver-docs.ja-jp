@@ -1,5 +1,5 @@
 ---
-title: .writemem (ファイルに書き込みメモリ)
+title: .writemem (ファイルへのメモリの書き込み)
 description: .Writemem コマンドは、メモリのセクションをファイルに書き込みます。
 ms.assetid: 928e9452-d9b4-49fa-a5fa-cdc3832d7349
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed5a669a39292388e96294742b9f7749516f03f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348034"
 ---
-# <a name="writemem-write-memory-to-file"></a>.writemem (ファイルに書き込みメモリ)
+# <a name="writemem-write-memory-to-file"></a>.writemem (ファイルへのメモリの書き込み)
 
 
 **.Writemem**コマンドでは、メモリのセクションをファイルに書き込みます。
@@ -35,7 +35,7 @@ ms.locfileid: "56528916"
 作成するファイルの名前を指定します。 完全なパスとファイル名、またはファイル名だけを指定することができます。 ファイル名にスペースが含まれている場合*FileName*引用符で囲む必要があります。 パスを指定しない場合、現在のディレクトリが使われます。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-ファイルに書き込まれるメモリの範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+ファイルに書き込まれるメモリの範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

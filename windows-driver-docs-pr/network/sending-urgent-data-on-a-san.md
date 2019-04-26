@@ -1,19 +1,19 @@
 ---
-title: SAN の緊急データを送信します。
-description: SAN の緊急データを送信します。
+title: SAN での緊急データの送信
+description: SAN での緊急データの送信
 ms.assetid: 9ff9719a-dd42-4ce7-8c07-370afa17fd7b
 keywords:
 - 緊急データ WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10370e2e6d1a6e44d6145abc9832ff5fa465f09f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346756"
 ---
-# <a name="sending-urgent-data-on-a-san"></a>SAN の緊急データを送信します。
+# <a name="sending-urgent-data-on-a-san"></a>SAN での緊急データの送信
 
 
 

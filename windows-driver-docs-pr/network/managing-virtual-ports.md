@@ -5,11 +5,11 @@ ms.assetid: BF3DFE01-6583-4FBB-AFFA-2C017A3D9A05
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 806f9af053dee9448fbfed201a2e83551f9dab1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343500"
 ---
 # <a name="managing-virtual-ports"></a>仮想ポートの管理
 
@@ -36,11 +36,11 @@ ms.locfileid: "56530051"
 
 [既定以外の仮想ポートおよび VMQ](nondefault-virtual-ports-and-vmq.md)
 
-拡張の詳細については、[仮想ポート (拡張)](virtual-ports--vports-.md)を参照してください。
+拡張の詳細については、次を参照してください。[仮想ポート (拡張)](virtual-ports--vports-.md)します。
 
-NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
+NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
 
-**注**  だけで、ミニポート ドライバーを PCI Express (PCIe) 物理機能 (PF) は、拡張などのネットワーク アダプターのハードウェア リソースを構成できます。 ミニポート ドライバー PCIe 仮想機能 (VF) には、SR-IOV 対応のアダプターのハードウェア リソースのほとんどに直接アクセスできません。 詳細については、[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)を参照してください。
+**注**  だけで、ミニポート ドライバーを PCI Express (PCIe) 物理機能 (PF) は、拡張などのネットワーク アダプターのハードウェア リソースを構成できます。 ミニポート ドライバー PCIe 仮想機能 (VF) には、SR-IOV 対応のアダプターのハードウェア リソースのほとんどに直接アクセスできません。 詳細については、次を参照してください。[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)します。
 
  
 

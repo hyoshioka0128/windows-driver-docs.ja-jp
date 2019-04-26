@@ -1,6 +1,6 @@
 ---
-title: ドライバー検証マネージャー (Windows 2000)
-description: ドライバー検証マネージャー (Windows 2000)
+title: ドライバーの検証ツール マネージャー (Windows 2000)
+description: ドライバーの検証ツール マネージャー (Windows 2000)
 ms.assetid: d1266d2d-2388-472d-a1c4-875ed24913d4
 keywords:
 - ドライバー検証マネージャー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f7c17054c0b4065eaa72cc4f2c889217a6127d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348360"
 ---
-# <a name="driver-verifier-manager-windows-2000"></a>ドライバー検証マネージャー (Windows 2000)
+# <a name="driver-verifier-manager-windows-2000"></a>ドライバーの検証ツール マネージャー (Windows 2000)
 
 
 ## <span id="ddk_driver_verifier_manager_windows_2000__tools"></span><span id="DDK_DRIVER_VERIFIER_MANAGER_WINDOWS_2000__TOOLS"></span>

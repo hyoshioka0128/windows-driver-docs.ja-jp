@@ -1,6 +1,6 @@
 ---
-title: バッファーの説明の一覧
-description: バッファーの説明の一覧
+title: バッファー情報リスト
+description: バッファー情報リスト
 ms.assetid: 7d820491-2df2-4036-8f3d-e6bcff4cd1f6
 keywords:
 - ビデオのデコード WDK DirectX va なので、バッファーの説明の一覧
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aaea7ebea615fceac2d37bfc4af5a7fb2bc79ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341568"
 ---
-# <a name="buffer-description-list"></a>バッファーの説明の一覧
+# <a name="buffer-description-list"></a>バッファー情報リスト
 
 
 ## <span id="ddk_buffer_description_list_gg"></span><span id="DDK_BUFFER_DESCRIPTION_LIST_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 6B08B04D-C9A1-4159-9866-D179012191B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e39ae46525a657d36145ab137d2f78645c7975
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343520"
 ---
 # <a name="managing-virtual-functions"></a>仮想関数の管理
 
@@ -34,9 +34,9 @@ ms.locfileid: "56574163"
 
 [仮想関数をリセットします。](resetting-a-virtual-function.md)
 
-SR-IOV 対応ネットワーク アダプターの VFs の詳細については、[SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)を参照してください。
+SR-IOV 対応ネットワーク アダプターの VFs の詳細については、次を参照してください。 [SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)します。
 
-**注**  だけで、PF ミニポート ドライバーは Vf などのネットワーク アダプターのハードウェア リソースを構成できます。 VF のミニポート ドライバーでは、SR-IOV 対応のアダプターのハードウェア リソースのほとんどを直接アクセスできません。 詳細については、[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)を参照してください。
+**注**  だけで、PF ミニポート ドライバーは Vf などのネットワーク アダプターのハードウェア リソースを構成できます。 VF のミニポート ドライバーでは、SR-IOV 対応のアダプターのハードウェア リソースのほとんどを直接アクセスできません。 詳細については、次を参照してください。[書き込み SR-IOV VF ミニポート ドライバー](writing-sr-iov-vf-miniport-drivers.md)します。
 
  
 

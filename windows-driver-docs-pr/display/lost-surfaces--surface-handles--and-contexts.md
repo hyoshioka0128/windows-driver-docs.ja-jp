@@ -1,6 +1,6 @@
 ---
-title: 失われたサーフェス、サーフェスのハンドル、およびコンテキスト
-description: 失われたサーフェス、サーフェスのハンドル、およびコンテキスト
+title: 破棄されたサーフェス、サーフェス ハンドル、およびコンテキスト
+description: 破棄されたサーフェス、サーフェス ハンドル、およびコンテキスト
 ms.assetid: d2458077-56f8-481b-b612-a706e9560314
 keywords:
 - コンテキスト WDK の Direct3D D3dCreateSurfaceEx
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca7eefde044f6a8b2f7a44a4986a513e5377d4ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347532"
 ---
-# <a name="lost-surfaces-surface-handles-and-contexts"></a>失われたサーフェス、サーフェスのハンドル、およびコンテキスト
+# <a name="lost-surfaces-surface-handles-and-contexts"></a>破棄されたサーフェス、サーフェス ハンドル、およびコンテキスト
 
 
 ## <span id="ddk_lost_surfaces_surface_handles_and_contexts_gg"></span><span id="DDK_LOST_SURFACES_SURFACE_HANDLES_AND_CONTEXTS_GG"></span>
@@ -27,7 +27,7 @@ ms.locfileid: "56538722"
 
 1 つの画面が 1 つ以上のコンテキストに関連付けられている可能性があるためサーフェスがコンテキストを指すポインターを維持することがないお勧めします。
 
-概念*失わ*サーフェスは、DirectDraw SDK ドキュメントで導入されました。 失われたサーフェスでは、DirectX 7.0 DDI モデルでいくつかに影響を与えます。 詳細については、[データが失われると DirectDraw サーフェスの復元](losing-and-restoring-directdraw-surfaces.md)を参照してください。
+概念*失わ*サーフェスは、DirectDraw SDK ドキュメントで導入されました。 失われたサーフェスでは、DirectX 7.0 DDI モデルでいくつかに影響を与えます。 詳細については、次を参照してください。[データが失われると DirectDraw サーフェスの復元](losing-and-restoring-directdraw-surfaces.md)します。
 
  
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d0698b891872e151876486579c5be7b470bd7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355721"
 ---
 # <a name="oidgencoprotocoloptions"></a>OID_GEN_CO_PROTOCOL_OPTIONS
 
@@ -28,7 +28,7 @@ NDIS_PROT_OPTION_NO_LOOPBACK
 NDIS_PROT_OPTION_NO_RSVD_ON_RCVPKT  
 プロトコルが使用しない、 **ProtocolReserved**のセクションに示されるパケットを受信します。 これにより、受信パケットを 1 つ以上のプロトコルを示す NDIS できます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

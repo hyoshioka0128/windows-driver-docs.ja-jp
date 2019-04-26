@@ -1,16 +1,16 @@
 ---
-Description: This topic describes best practices for a client driver for allocating, building, and sending an URB to the USB driver stack included with Windows 8.
+Description: このトピックでは、割り当て、構築、および Windows 8 に含まれている USB ドライバー スタックへ、URB の送信用のクライアント ドライバーのベスト プラクティスについて説明します。
 title: ベスト プラクティス - を使用して翻訳
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 496f0017819bfb9743948da82c41ae27eb91b235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355058"
 ---
-# <a name="best-practices-using-urbs"></a>ベスト プラクティス:翻訳を使用します。
+# <a name="best-practices-using-urbs"></a>ベスト プラクティス:URB の使用
 
 
 このトピックでは、割り当て、構築、および Windows 8 に含まれている USB ドライバー スタックへ、URB の送信用のクライアント ドライバーのベスト プラクティスについて説明します。
@@ -48,7 +48,7 @@ Windows 8 は、割り当て、作成、および USB 要求のブロック (翻
 -   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
 -   [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
 
-上記のルーチンは、追跡と処理を向上させるために割り当てられた URB を非透過の URB コンテキストをアタッチ可能性があります。 クライアント ドライバーでは、表示または URB コンテキストの内容を変更できません。 Windows 8 で URB 割り当ての詳細については、[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)を参照してください。
+上記のルーチンは、追跡と処理を向上させるために割り当てられた URB を非透過の URB コンテキストをアタッチ可能性があります。 クライアント ドライバーでは、表示または URB コンテキストの内容を変更できません。 Windows 8 で URB 割り当ての詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
 
 場合 USBD とそのバージョンを識別する Windows Driver Framework (WDF) クライアント ドライバー\_クライアント\_コントラクト\_バージョン\_602 の登録時に (を参照してください**WdfUsbTargetDeviceCreateWithParameters**)、USB ドライバー スタックを呼び出して、新しい URB のメモリを割り当て、クライアント ドライバーが必要ですが**WdfUsbTargetDeviceCreateUrb**します。
 

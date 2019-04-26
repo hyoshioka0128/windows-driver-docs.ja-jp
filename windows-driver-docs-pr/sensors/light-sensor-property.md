@@ -5,11 +5,11 @@ ms.assetid: 87C58F14-E23D-4567-BBD5-AA42DF9371B0
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 57161a83aa5e8690f2861fffc3940622d93c44cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345174"
 ---
 # <a name="light-sensor-property"></a>光センサーのプロパティ
 
@@ -27,7 +27,7 @@ ms.locfileid: "56580008"
 <thead>
 <tr class="header">
 <th>プロパティのキー</th>
-<th>型</th>
+<th>種類</th>
 <th>アクセス (R/O、読み取り/書き込み)</th>
 <th>必須/オプション</th>
 <th>説明</th>

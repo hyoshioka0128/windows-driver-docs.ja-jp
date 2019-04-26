@@ -1,17 +1,17 @@
 ---
-title: Windows カーネル モードの I/O マネージャー
-description: Windows カーネル モードの I/O マネージャー
+title: Windows カーネルモード I/O マネージャー
+description: Windows カーネルモード I/O マネージャー
 ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e2f1c9dcd8798ddf47dee17d0cce0859af59e506
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353424"
 ---
-# <a name="windows-kernel-mode-io-manager"></a>Windows カーネル モードの I/O マネージャー
+# <a name="windows-kernel-mode-io-manager"></a>Windows カーネルモード I/O マネージャー
 
 
 コンピューターは、入力と出力 (I/O)、外部との間に提供するさまざまなデバイスで構成されます。 代表的なデバイスは、キーボード、マウス、コント ローラーのオーディオ、ビデオ コント ローラー、ディスク ドライブ、ネットワーク ポート、およびなどです。 デバイス ドライバーは、ソフトウェアのデバイスとオペレーティング システムの間の接続を提供します。 このため、I/O は、デバイス ドライバーのライターに非常に重要です。
@@ -22,17 +22,17 @@ Windows I/O システムでは、スタックと呼ばれる階層化ドライ�
 
 強調することはできません、十分には、ドライバーが送信し、を効率的に動作するスタック全体を適時に Irp を受信する必要があります。 ドライバー スタックの一部であるとは正しく受信、処理、および情報を渡す場合、ドライバーが原因でシステムがクラッシュします。
 
-Irp の詳細については、[Irp の処理](handling-irps.md)を参照してください。
+Irp の詳細については、次を参照してください。 [Irp の処理](handling-irps.md)します。
 
-ドライバー スタックの詳細については、[デバイス オブジェクトとデバイス スタック](device-objects-and-device-stacks.md)を参照してください。
+ドライバー スタックの詳細については、次を参照してください。[デバイス オブジェクトとデバイス スタック](device-objects-and-device-stacks.md)します。
 
-I/O の管理に関連する techiques をプログラミングするには、[I/O マネージャー プログラミング手法](i-o-programming-techniques.md)を参照してください。
+I/O の管理に関連する techiques をプログラミングするには、次を参照してください。 [I/O マネージャー プログラミング手法](i-o-programming-techniques.md)します。
 
-I/O マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Io**"。 たとえば、 **IoCreateDevice**します。 I/O マネージャー ルーチンの一覧は、[I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)を参照してください。
+I/O マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Io**"。 たとえば、 **IoCreateDevice**します。 I/O マネージャー ルーチンの一覧は、次を参照してください。 [I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)します。
 
-IRP に関連するルーチンの一覧は、[Irp](https://msdn.microsoft.com/library/windows/hardware/ff550701)を参照してください。
+IRP に関連するルーチンの一覧は、次を参照してください。 [Irp](https://msdn.microsoft.com/library/windows/hardware/ff550701)します。
 
-I/O マネージャーが 2 つのサブコンポーネント: プラグ アンド プレイのマネージャーと電源マネージャー。 プラグ アンド プレイし、電源管理のテクノロジの I/O 機能を管理します。 プラグ アンド プレイの管理の詳細については、[Windows カーネル モードのプラグ アンド プレイ Manager](windows-kernel-mode-plug-and-play-manager.md)と電源管理の詳細については、次を参照してください。 [Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)を参照してください。
+I/O マネージャーが 2 つのサブコンポーネント: プラグ アンド プレイのマネージャーと電源マネージャー。 プラグ アンド プレイし、電源管理のテクノロジの I/O 機能を管理します。 プラグ アンド プレイの管理の詳細については、次を参照してください。 [Windows カーネル モードのプラグ アンド プレイ Manager](windows-kernel-mode-plug-and-play-manager.md)と電源管理の詳細については、次を参照してください。 [Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)します。
 
  
 

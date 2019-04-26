@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_BSS_ENTRY_DEVICE_CONTEXT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: bb67a5d4108599a2389da46c3bf3ad339d9ae10a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343215"
 ---
 # <a name="wditlvbssentrydevicecontext"></a>WDI\_TLV\_BSS\_エントリ\_デバイス\_コンテキスト
 
@@ -31,7 +31,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                                                                                                                                                                                                                                                                |
+| 型      | 説明                                                                                                                                                                                                                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8\[\] | コンテキスト データを指定する UINT8 要素の配列。 このコンテキストは IHV コンポーネントによって提供され、IHV コンポーネントが維持する必要がある BSS ごとのエントリの状態を格納するために使用できます。 有効期間管理を回避するためには、問題と、IHV コンポーネントは、この TLV でポインターを使用しない必要があります。 |
 

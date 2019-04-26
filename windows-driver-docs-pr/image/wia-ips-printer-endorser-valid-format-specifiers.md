@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69ef6b7f9e5404fe827c2b8a893b1ca40223fac8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351100"
 ---
 # <a name="wiaipsprinterendorservalidformatspecifiers"></a>WIA\_IP\_プリンター\_裏書き\_有効\_形式\_指定子
 
@@ -33,9 +33,9 @@ ms.locfileid: "57464168"
 
 有効な値 :WIA\_PROP\_一覧
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 次の表に、有効な定数、 **WIA\_IP\_プリンター\_裏書き\_有効\_形式\_指定子**プロパティ。
@@ -123,7 +123,7 @@ ms.locfileid: "57464168"
 
 このプロパティは・ インプリント ・/裏書きデータ ソース アイテムの省略可能です。 シーケンスのプリンター/裏書きデバイスが任意の特殊な形式をサポートしていないサポートされていないことを意味します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

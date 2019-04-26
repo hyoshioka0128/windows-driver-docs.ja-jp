@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da07d5f3c65a0eb4e9d51b849c3c6c13789d0367
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349840"
 ---
 # <a name="guidndistcpoffloadcapabilities"></a>GUID_NDIS_TCP_OFFLOAD_CAPABILITIES
 
@@ -23,5 +23,5 @@ NDIS は、この GUID を処理し、ミニポート ドライバーが、OID �
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。
 
-ポートの状態の詳細については、[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)を参照してください。
+ポートの状態の詳細については、次を参照してください。 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)します。
 

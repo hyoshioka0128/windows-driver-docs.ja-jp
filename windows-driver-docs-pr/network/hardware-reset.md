@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバーのハードウェアのリセット
-description: ミニポート ドライバーのハードウェアのリセット
+title: ミニポート ドライバー ハードウェア リセット
+description: ミニポート ドライバー ハードウェア リセット
 ms.assetid: d5209809-039c-4ac2-afdf-1f5144307850
 keywords:
 - ネットワーク インターフェイス カードの WDK ネットワー キング、リセット
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 910ddf81b74e9e316d4de863609c0f1e91390d25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342627"
 ---
-# <a name="miniport-driver-hardware-reset"></a>ミニポート ドライバーのハードウェアのリセット
+# <a name="miniport-driver-hardware-reset"></a>ミニポート ドライバー ハードウェア リセット
 
 
 

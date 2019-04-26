@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DRIVER_CAPS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: fed4cfc9ac5595cacbe6ba3b145fc585a9b03c61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343249"
 ---
 # <a name="oidwwandrivercaps"></a>OID\_WWAN\_ドライバー\_キャップ
 
@@ -24,7 +24,7 @@ OID\_WWAN\_ドライバー\_キャップは、ミニポート ドライバーで
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、[MB ミニポート ドライバーの初期化](https://msdn.microsoft.com/library/windows/hardware/ff557186)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [MB ミニポート ドライバーの初期化](https://msdn.microsoft.com/library/windows/hardware/ff557186)します。
 
 ミニポート ドライバーが、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでくださいクエリ操作を処理するときにします。
 

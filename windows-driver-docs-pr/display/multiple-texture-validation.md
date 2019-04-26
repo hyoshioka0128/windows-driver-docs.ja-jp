@@ -1,6 +1,6 @@
 ---
-title: テクスチャの複数の検証
-description: テクスチャの複数の検証
+title: 複数テクスチャの検証
+description: 複数テクスチャの検証
 ms.assetid: 3f56f7c1-89d6-40d0-9540-b6280379ddc5
 keywords:
 - 複数のテクスチャ WDK Direct3D、検証
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 629c742b29620f8670bc4974ad47107f8cb38bb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345568"
 ---
-# <a name="multiple-texture-validation"></a>テクスチャの複数の検証
+# <a name="multiple-texture-validation"></a>複数テクスチャの検証
 
 
 ## <span id="ddk_multiple_texture_validation_gg"></span><span id="DDK_MULTIPLE_TEXTURE_VALIDATION_GG"></span>
@@ -32,7 +32,7 @@ ms.locfileid: "56559552"
 <thead>
 <tr class="header">
 <th align="left">リターン コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

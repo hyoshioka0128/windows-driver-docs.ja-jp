@@ -1,6 +1,6 @@
 ---
-title: 静的ドライバー検証ツールの一般的なツールと技術の制限事項
-description: 静的ドライバー検証ツールの一般的なツールと技術の制限事項
+title: 静的ドライバー検証ツールの一般的なツールと技術的な制限
+description: 静的ドライバー検証ツールの一般的なツールと技術的な制限
 ms.assetid: d263dee5-2408-4772-96d7-d1895a445fab
 keywords:
 - 静的ドライバー検証ツールの WDK、制限事項
@@ -9,18 +9,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7e5ae2e2ac118888b298e2a9703e91847e08b99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353476"
 ---
-# <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静的ドライバー検証ツールの一般的なツールと技術の制限事項
+# <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静的ドライバー検証ツールの一般的なツールと技術的な制限
 
 
 SDV は、次の一般的な制限事項があります。
 
--   SDV は、一度に 1 つだけのドライバーを確認し、ドライバーが完全に検証するには、これらドライバー モデルのいずれかに従う必要があります。WDM、KMDF、NDIS、または Storport します。 サポートされているドライバーに関する詳細については、[Static Driver Verifier に、ドライバーまたはライブラリがサポートしているかを決定する](determining-if-static-driver-verifier-supports-your-driver-or-library.md)を参照してください。
+-   SDV は、一度に 1 つだけのドライバーを確認し、ドライバーが完全に検証するには、これらドライバー モデルのいずれかに従う必要があります。WDM、KMDF、NDIS、または Storport します。 サポートされているドライバーに関する詳細については、次を参照してください。 [Static Driver Verifier に、ドライバーまたはライブラリがサポートしているかを決定する](determining-if-static-driver-verifier-supports-your-driver-or-library.md)します。
 
 -   上記のカテゴリのいずれかに分類されないドライバーは、確認することができますし、分析中に失敗する可能性が高い規則で深刻な制限されます。
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e4eb3e1ccfc8ea9b976702ab3b00bbd6114bf3d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358130"
 ---
 # <a name="bug-check-0x15b-workerthreadreturnedwithsystempagepriorityactive"></a>バグ チェック 0x15B:ワーカー\_スレッド\_から返された\_WITH\_システム\_ページ\_優先度\_ACTIVE
 

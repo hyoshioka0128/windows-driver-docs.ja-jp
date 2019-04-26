@@ -1,6 +1,6 @@
 ---
-title: デバイスは、作業の状態に戻ります
-description: デバイスは、作業の状態に戻ります
+title: デバイスが動作状態に戻る
+description: デバイスが動作状態に戻る
 ms.assetid: 0a5bdaf5-ed9e-44d0-bc8a-876ceb342520
 keywords:
 - デバイスの電源状態が WDK KMDF
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce525cafebccd00971426e0ebfdcf7ea5cd58287
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342144"
 ---
-# <a name="a-device-returns-to-its-working-state"></a>デバイスは、作業の状態に戻ります
+# <a name="a-device-returns-to-its-working-state"></a>デバイスが動作状態に戻る
 
 
 低電力状態にあるデバイスは、次のいずれかが発生した場合の稼働状態に返されます。

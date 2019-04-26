@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INCOMING_FRAME_INFORMATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fc6067b325e4778a6cfe4e0c2fd09b9be2ca9cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342578"
 ---
 # <a name="wditlvp2pincomingframeinformation"></a>WDI\_TLV\_P2P\_受信\_フレーム\_情報
 
@@ -35,11 +35,11 @@ WDI\_TLV\_P2P\_受信\_フレーム\_情報は、受信の Wi-Fi Direct アク�
 |---------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_受信\_フレーム\_パラメーター**](wdi-tlv-p2p-incoming-frame-parameters.md) |                                |          | 受信のフレームのパラメーターを指定します。                                                                                                                                                                                        |
 | [**WDI\_TLV\_P2P\_ACTION\_FRAME\_IES**](wdi-tlv-p2p-action-frame-ies.md)                   |                                |          | 公開操作を受信したフレームの IEs セクションを指定します。                                                                                                                                                                  |
-| [**WDI\_TLV\_ACTION\_FRAME\_DEVICE\_CONTEXT**](wdi-tlv-action-frame-device-context.md)     |                                | X        | この受信メッセージに応答を送信するホストが決定した場合、元に戻す渡されるベンダー固有の情報を指定します。 有効期間管理を回避するためには、問題と、IHV コンポーネントは、このフィールドにポインターを使用しない必要があります。 |
+| [**WDI\_TLV\_ACTION\_FRAME\_DEVICE\_CONTEXT**](wdi-tlv-action-frame-device-context.md)     |                                | x        | この受信メッセージに応答を送信するホストが決定した場合、元に戻す渡されるベンダー固有の情報を指定します。 有効期間管理を回避するためには、問題と、IHV コンポーネントは、このフィールドにポインターを使用しない必要があります。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

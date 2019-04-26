@@ -1,6 +1,6 @@
 ---
-title: ボリュームに接続されているデバイス オブジェクトをフィルター処理します。
-description: ボリュームに接続されているデバイス オブジェクトをフィルター処理します。
+title: ボリュームにアタッチされるフィルター デバイス オブジェクト
+description: ボリュームにアタッチされるフィルター デバイス オブジェクト
 ms.assetid: cf152065-fc03-4f5f-b65b-13a76e83d745
 keywords:
 - デバイス オブジェクトの WDK ファイル システム フィルターをかける
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85ee67d1928696ea0e49789e21259748af9ff07b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341524"
 ---
-# <a name="filter-device-object-attached-to-a-volume"></a>ボリュームに接続されているデバイス オブジェクトをフィルター処理します。
+# <a name="filter-device-object-attached-to-a-volume"></a>ボリュームにアタッチされるフィルター デバイス オブジェクト
 
 
 ## <span id="ddk_a_filter_device_object_attached_to_a_volume_if"></span><span id="DDK_A_FILTER_DEVICE_OBJECT_ATTACHED_TO_A_VOLUME_IF"></span>

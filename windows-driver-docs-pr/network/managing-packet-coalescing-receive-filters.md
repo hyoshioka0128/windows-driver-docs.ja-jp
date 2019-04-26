@@ -1,17 +1,17 @@
 ---
-title: フィルターは受信パケットの結合を管理します。
-description: フィルターは受信パケットの結合を管理します。
+title: パケット結合受信フィルターの管理
+description: パケット結合受信フィルターの管理
 ms.assetid: 20EA71E0-B880-4891-A12E-76F4C9AB16E6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1de72b545a26a884ecf3191dedb47612cfb34fbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343515"
 ---
-# <a name="managing-packet-coalescing-receive-filters"></a>フィルターは受信パケットの結合を管理します。
+# <a name="managing-packet-coalescing-receive-filters"></a>パケット結合受信フィルターの管理
 
 
 このセクションでは、ミニポート ドライバーとアダプターをパケットの結合を管理する方法について説明しますフィルターを受信します。 ここでは、次のトピックについて説明します。

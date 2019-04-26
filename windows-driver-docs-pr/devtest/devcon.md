@@ -1,5 +1,5 @@
 ---
-title: Windows デバイスのコンソール (Devcon.exe)
+title: Windows デバイス コンソール (Devcon.exe)
 description: DevCon (Devcon.exe)、デバイス コンソールは、Windows を実行するコンピューターでデバイスの詳細情報を表示するコマンド ライン ツールです。
 ms.assetid: ac74200e-e2ae-40db-9fb7-5ea2e7760613
 keywords:
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 909ac5e2f1ae49d83f7c2a0ef59fa44d5a9dae1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341706"
 ---
-# <a name="windows-device-console-devconexe"></a>Windows デバイスのコンソール (Devcon.exe)
+# <a name="windows-device-console-devconexe"></a>Windows デバイス コンソール (Devcon.exe)
 
 
 DevCon (Devcon.exe)、デバイス コンソールは、Windows を実行するコンピューターでデバイスの詳細情報を表示するコマンド ライン ツールです。 DevCon を使用して、有効にする、無効にする、インストール、構成、およびデバイスを削除することができます。
@@ -46,7 +46,7 @@ DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で動�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、DevCon (Devcon.exe) が含まれます。 キットのダウンロード方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>を参照してください。</p>
+<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、DevCon (Devcon.exe) が含まれます。 キットのダウンロード方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>します。</p>
 <p><strong>Windows Driver Kit (WDK) 8 と Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
 <p>%WindowsSdkDir%\tools\x64\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\devcon.exe</p>

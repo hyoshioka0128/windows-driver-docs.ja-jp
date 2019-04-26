@@ -1,17 +1,17 @@
 ---
-title: PwrTest のディスクのシナリオ
+title: PwrTest のディスク シナリオ
 description: PwrTest のディスクのシナリオでは、ディスクのアイドル状態の統計およびスピン ダウン イベントを監視します。
 ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 671cee3e73d0a0a64a8efbf4a4c2cea17cd1d265
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345792"
 ---
-# <a name="pwrtest-disk-scenario"></a>PwrTest のディスクのシナリオ
+# <a name="pwrtest-disk-scenario"></a>PwrTest のディスク シナリオ
 
 
 PwrTest のディスクのシナリオでは、ディスクのアイドル状態の統計およびスピン ダウン イベントを監視します。
@@ -32,7 +32,7 @@ pwrtest /disk  [/t:n] [/?]
 <span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
 シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /disk /t:60

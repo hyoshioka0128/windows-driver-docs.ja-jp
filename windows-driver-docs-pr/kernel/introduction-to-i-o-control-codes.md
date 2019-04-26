@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1425338b7af965a9936ab445735209482b0f5dd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340997"
 ---
 # <a name="introduction-to-io-control-codes"></a>I/O 制御コードの概要
 
@@ -37,7 +37,7 @@ Ioctl には"public"と"private"がいくつか。 通常パブリック Ioctl �
 
 その一方で、プライベート Ioctl では、互いに通信するベンダーのソフトウェア コンポーネントによって排他的に使用するものです。 プライベート Ioctl では、通常はベンダーから提供されたヘッダー ファイルで定義し、パブリックに記載されていません。 これらのパブリックの Ioctl などへのユーザー モード コンポーネントの呼び出しを使用して送信が[ **DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)、または間を使用して 1 つのカーネル モード ドライバーから送信が**IRP\_MJ\_デバイス\_コントロール**または**IRP\_MJ\_内部\_デバイス\_コントロール**要求。
 
-パブリックおよびプライベートの Ioctl のコーディングとの間の違いはありません。 ただし、システム定義の Ioctl に使用されるものと比較して、ベンダー定義の Ioctl で使用できる内部のコードの違いがあります。 使用可能なパブリック Ioctl はニーズに適合しない場合は、あなたのソフトウェア コンポーネントが相互に通信に使用できる新しいプライベート Ioctl を定義できます。 詳細については、[I/O 制御コードを定義する](defining-i-o-control-codes.md)を参照してください。
+パブリックおよびプライベートの Ioctl のコーディングとの間の違いはありません。 ただし、システム定義の Ioctl に使用されるものと比較して、ベンダー定義の Ioctl で使用できる内部のコードの違いがあります。 使用可能なパブリック Ioctl はニーズに適合しない場合は、あなたのソフトウェア コンポーネントが相互に通信に使用できる新しいプライベート Ioctl を定義できます。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
 
  
 

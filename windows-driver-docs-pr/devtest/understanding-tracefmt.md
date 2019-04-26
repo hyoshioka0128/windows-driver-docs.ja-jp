@@ -1,6 +1,6 @@
 ---
-title: Understanding Tracefmt
-description: Understanding Tracefmt
+title: Tracefmt の概要
+description: Tracefmt の概要
 ms.assetid: 614be46f-8c44-43da-b4ec-7fd7195e2c08
 keywords:
 - Tracefmt WDK、Tracefmt について
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d3c792dd3817124762658b1fca8c9c05c216c2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351784"
 ---
-# <a name="understanding-tracefmt"></a>Understanding Tracefmt
+# <a name="understanding-tracefmt"></a>Tracefmt の概要
 
 
 ## <span id="ddk_understanding_tracefmt_tools"></span><span id="DDK_UNDERSTANDING_TRACEFMT_TOOLS"></span>
@@ -39,8 +39,8 @@ ms.locfileid: "56558064"
 
 トレース メッセージを書式設定後 Tracefmt がコマンドラインで、トレース メッセージを表示でき、次のファイルを作成できます。
 
-- *出力ファイル*の書式設定済みトレース メッセージ。 トレース プロバイダーによって生成されたことの順序でメッセージが表示されます。 各メッセージには、トレースのプレフィックスが付きます。 詳しくは、[トレース メッセージのプレフィックス](trace-message-prefix.md)を参照してください。
+- *出力ファイル*の書式設定済みトレース メッセージ。 トレース プロバイダーによって生成されたことの順序でメッセージが表示されます。 各メッセージには、トレースのプレフィックスが付きます。 詳しくは、次を参照してください。[トレース メッセージのプレフィックス](trace-message-prefix.md)します。
 
 - A*概要メッセージ ファイル*のトレース メッセージが生成されたトレース セッションの情報。
 
-イベントのトレースの詳細については、Microsoft Windows SDK のドキュメントを参照してください。 ドライバーでのイベント トレーシングの使用方法の詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)を参照してください。
+イベントのトレースの詳細については、Microsoft Windows SDK のドキュメントを参照してください。 ドライバーでのイベント トレーシングの使用方法の詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)します。

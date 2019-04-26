@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff495e947018a6689b4e85e75f8518e5d3710d5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341451"
 ---
 # <a name="introduction-to-mutex-objects"></a>ミューテックス オブジェクトの概要
 
@@ -64,7 +64,7 @@ ms.locfileid: "56581388"
 
 パッシブより大きい IRQL で実行している任意の標準のドライバー ルーチン\_システム停止することがなくすべてのディスパッチャー オブジェクトに対するレベルを 0 以外の値の間隔を待機できません。 ただし、このようなルーチンを呼び出すことができます**KeReleaseMutex**ディスパッチに少ないの IRQL で実行中にミュー テックスが所有している場合\_レベル。
 
-実行する標準のドライバー ルーチンで Irql の概要については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)を参照してください。
+実行する標準のドライバー ルーチンで Irql の概要については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
 
  
 

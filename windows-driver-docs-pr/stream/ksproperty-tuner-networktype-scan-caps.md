@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2ee9d7d0eec9c6530d24c35cfd1c1df79858abd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342151"
 ---
 # <a name="kspropertytunernetworktypescancaps"></a>KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_キャップ
 
@@ -48,7 +48,7 @@ KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAPS プロパティは�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565885" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565885)"><strong>KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S</strong></a></p></td>
 <td><p>KSPROPERTY_TUNER_NETWORKTYPE</p>
@@ -64,7 +64,7 @@ KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAPS プロパティは�
 <a name="remarks"></a>注釈
 -------
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d0b715e70d69a55e28dc47160ca9a1d3ea7e1262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347960"
 ---
 # <a name="wudfextumdevstack"></a>!wudfext.umdevstack
 
@@ -66,7 +66,7 @@ ms.locfileid: "56557321"
 
 ### <a name="span-idadditionalinformation1spanspan-idadditionalinformation1spanadditional-information"></a><span id="additional_information1"></span><span id="ADDITIONAL_INFORMATION1"></span>追加情報
 
-詳細については、[ユーザー モード ドライバー フレームワークのデバッグ](user-mode-driver-framework-debugging.md)を参照してください。
+詳細については、次を参照してください。[ユーザー モード ドライバー フレームワークのデバッグ](user-mode-driver-framework-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------

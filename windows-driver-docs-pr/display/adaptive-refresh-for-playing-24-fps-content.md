@@ -1,5 +1,5 @@
 ---
-title: 24 fps ビデオ コンテンツを再生するための適応型の更新
+title: 24 fps のビデオ コンテンツを再生するための適応更新
 description: Windows Display Driver Model (WDDM) 1.3 およびそれ以降のドライバーは、60 Hz のモニターで 24 フレームあたり 2 つ目の (fps) のビデオ コンテンツを再生するときに電源を節約するために、48 Hz アダプティブ更新を実装する必要があります。
 ms.assetid: CFA1AE0F-B591-4C5E-A97B-8D4E4B475167
 ms.date: 10/19/2018
@@ -8,13 +8,13 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: bb0ac9cacd5d61e254dc84f88b1af1a38b401c9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341578"
 ---
-# <a name="adaptive-refresh-for-playing-24-fps-video-content"></a>24 fps ビデオ コンテンツを再生するための適応型の更新
+# <a name="adaptive-refresh-for-playing-24-fps-video-content"></a>24 fps のビデオ コンテンツを再生するための適応更新
 
 
 Windows Display Driver Model (WDDM) 1.3 およびそれ以降のドライバーは、60 Hz のモニターで 24 フレームあたり 2 つ目の (fps) のビデオ コンテンツを再生するときに電源を節約するために、48 Hz アダプティブ更新を実装する必要があります。 このシナリオでは、モニターは 60 Hz から 24 fps ビデオ コンテンツを再生する 48 Hz のリフレッシュ レートに切り替わります。

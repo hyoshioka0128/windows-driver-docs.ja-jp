@@ -1,6 +1,6 @@
 ---
-title: IRP ディスパッチ ルーチンを登録します。
-description: IRP ディスパッチ ルーチンを登録します。
+title: IRP ディスパッチ ルーチンの登録
+description: IRP ディスパッチ ルーチンの登録
 ms.assetid: 096f4bb7-2326-4e6c-b3db-a2d95ca4982b
 keywords:
 - IRP ディスパッチ ルーチンを登録します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b658a41298600c8216500b8a8c8eeeb6b8e262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344588"
 ---
-# <a name="registering-irp-dispatch-routines"></a>IRP ディスパッチ ルーチンを登録します。
+# <a name="registering-irp-dispatch-routines"></a>IRP ディスパッチ ルーチンの登録
 
 
 ## <span id="ddk_registering_irp_dispatch_routines_if"></span><span id="DDK_REGISTERING_IRP_DISPATCH_ROUTINES_IF"></span>

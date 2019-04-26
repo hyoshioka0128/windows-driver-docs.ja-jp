@@ -1,17 +1,17 @@
 ---
-title: ネットワーク アダプターに仮想関数を列挙します。
-description: ネットワーク アダプターに仮想関数を列挙します。
+title: ネットワーク アダプターでの仮想関数の列挙
+description: ネットワーク アダプターでの仮想関数の列挙
 ms.assetid: 3AAF2D8B-9C7A-4E5B-86B6-264ACA5EA492
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e173ef1dbbe084bc3960e64761ed4831e95bc2ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352970"
 ---
-# <a name="enumerating-virtual-functions-on-a-network-adapter"></a>ネットワーク アダプターに仮想関数を列挙します。
+# <a name="enumerating-virtual-functions-on-a-network-adapter"></a>ネットワーク アダプターでの仮想関数の列挙
 
 
 上にあるドライバーやユーザー アプリケーションは、すべて PCI Express (PCIe) 仮想機能 (Vf) でシングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの一覧を取得できます。 ドライバーまたはアプリケーションのオブジェクト識別子 (OID) メソッド要求を発行[OID\_NIC\_スイッチ\_ENUM\_VFS](https://msdn.microsoft.com/library/windows/hardware/hh451820)この一覧を取得します。
@@ -34,7 +34,7 @@ ms.locfileid: "56556541"
 
     **注**VFs が添付されていない場合、ネットワーク アダプター上の NIC スイッチに、 **NumElements**のメンバー、 [ **NDIS\_NIC\_切り替える\_VF\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/hh451592)構造を設定に 0 と no [ **NDIS\_NIC\_スイッチ\_VF\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451591)構造体が返されます。
 
-    NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
+    NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
 
 NDIS ハンドル、 [OID\_NIC\_スイッチ\_ENUM\_VFS](https://msdn.microsoft.com/library/windows/hardware/hh451820)ミニポート ドライバーに要求します。 NDIS は、次のソースを調べることから保持されているデータの内部キャッシュから情報を返します。
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6448456a819ba9501651ad91bdcde40e85d7e01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345958"
 ---
 # <a name="virtual-interface-architecture-and-support-for-san"></a>仮想インターフェイス アーキテクチャと SAN のサポート
 
@@ -26,7 +26,7 @@ Compaq、Intel、および、Microsoft によって提案された、仮想イ�
 
 VI アーキテクチャは、SAN の相互接続用に一連の機能と特性を定義します。 たとえば、VI アーキテクチャには、リモート ダイレクト メモリ アクセス (RDMA) の操作のサポートが含まれています。 VI アーキテクチャでは、エンドポイントとの接続を管理して、データ転送の要求を処理、SAN NIC と対話するための特定のメカニズムについても説明します。
 
-VI アーキテクチャを使用するもの以外に SAN の広範なクラスでの Windows Sockets スイッチの動作が相互接続します。 Windows ソケットに SAN の拡張機能は、特定の SAN NIC のプロバイダー インターフェイス (SPI) シールド ハードウェア インターフェイスからスイッチをサービスします。 そのハードウェア インターフェイスが SAN サービス プロバイダーの DLL とそのカーネル モードのプロキシ ドライバー内でカプセル化されます。 これらのコンポーネントは、SAN ベンダーによって提供されます。 SAN の拡張機能の詳細については、[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。
+VI アーキテクチャを使用するもの以外に SAN の広範なクラスでの Windows Sockets スイッチの動作が相互接続します。 Windows ソケットに SAN の拡張機能は、特定の SAN NIC のプロバイダー インターフェイス (SPI) シールド ハードウェア インターフェイスからスイッチをサービスします。 そのハードウェア インターフェイスが SAN サービス プロバイダーの DLL とそのカーネル モードのプロキシ ドライバー内でカプセル化されます。 これらのコンポーネントは、SAN ベンダーによって提供されます。 SAN の拡張機能の詳細については、次を参照してください。 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。
 
  
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e538fc9bbec138e7f7de0fae9117c2b1b00e5c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349644"
 ---
 # <a name="hshostpostconnectauthcompletion-function"></a>HS\_ホスト\_POST\_CONNECT\_AUTH\_完了関数
 
@@ -57,7 +57,7 @@ ms.locfileid: "56558866"
 
 このプラグインは、以前の呼び出しの結果のホストに通知するには、この関数を呼び出す必要があります[ **HS\_プラグイン\_開始\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md).
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

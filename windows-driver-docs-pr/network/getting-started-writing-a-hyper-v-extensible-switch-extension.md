@@ -5,20 +5,20 @@ ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ef7f91118982c0372ebf4ad28fd9845f8cdff05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349878"
 ---
-# <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>記述について HYPER-V 拡張可能スイッチの拡張機能
+# <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>Hyper-V 拡張可能スイッチ拡張機能の作成の開始
 
 
 HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルターです。 または、HYPER-V 拡張可能スイッチ (「HYPER-V 仮想スイッチ」とも呼ばれます) 内で実行される Windows フィルタ リング プラットフォーム (WFP) フィルターです。
 
 拡張機能の 3 つのクラスがあります。 キャプチャ、フィルター、および転送します。 それらのすべては、NDIS フィルター ドライバーとして実装することができます。 フィルター拡張機能は、WFP フィルター ドライバーとして実装できます。
 
-ドライバー開発者向けのアーキテクチャ概要については、[Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)を参照してください。
+ドライバー開発者向けのアーキテクチャ概要については、次を参照してください。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)します。
 
 HYPER-V 拡張可能スイッチの拡張機能を作成するには、次の手順を実行します。
 

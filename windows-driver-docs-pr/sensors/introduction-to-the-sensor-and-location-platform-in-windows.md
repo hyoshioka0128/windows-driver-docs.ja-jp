@@ -1,17 +1,17 @@
 ---
-title: Sensor and Location プラットフォームで Windows の概要
-description: Sensor and Location プラットフォームで Windows の概要
+title: Windows でのセンサーおよび位置情報プラットフォームの概要
+description: Windows でのセンサーおよび位置情報プラットフォームの概要
 ms.assetid: 62e945e5-78a1-4eb6-ad59-b30cf5e3d5ad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43bb07f40abf23af895b6d5a0dfe1e7c318f1909
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345176"
 ---
-# <a name="introduction-to-the-sensor-and-location-platform-in-windows"></a>Sensor and Location プラットフォームで Windows の概要
+# <a name="introduction-to-the-sensor-and-location-platform-in-windows"></a>Windows でのセンサーおよび位置情報プラットフォームの概要
 
 
 Windows オペレーティング システムでは、センサー デバイスのネイティブ サポートも提供します。 このサポートには、GPS デバイスなどの場所のセンサーが含まれます。 このサポートの一環として、プラットフォームは、ソフトウェア開発者は、コンシューマー デバイスのセンサーを公開するデバイスの製造元の標準的な方法を提供します。 同時に、センサーおよびセンサー データを操作するには、標準化された API の開発者やデバイス ドライバー インターフェイス (DDI)、プラットフォームになります。 ここでは、Windows sensor and location プラットフォームをまとめたものです、プラットフォームのさまざまな部分について説明し、部分が連携して機能しセンサーを操作するための包括的なシステムを提供するについて説明します。

@@ -1,6 +1,6 @@
 ---
-title: StretchBlt を通じて multisample のサポート
-description: StretchBlt を通じて multisample のサポート
+title: StretchBlt を介したマルチサンプル サポート
+description: StretchBlt を介したマルチサンプル サポート
 ms.assetid: c829c612-d09d-4a33-a117-e50b9ed57251
 keywords:
 - WDK の Windows 2000 の表示、表示、マルチ サンプリング StretchBlt の DirectX 8.0 リリース ノートします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b43d65a06e4bf45f3830e13b3bdd789fef8f41a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345562"
 ---
-# <a name="multisample-support-through-stretchblt"></a>StretchBlt を通じて multisample のサポート
+# <a name="multisample-support-through-stretchblt"></a>StretchBlt を介したマルチサンプル サポート
 
 
 ## <span id="ddk_multisample_support_through_stretchblt_gg"></span><span id="DDK_MULTISAMPLE_SUPPORT_THROUGH_STRETCHBLT_GG"></span>

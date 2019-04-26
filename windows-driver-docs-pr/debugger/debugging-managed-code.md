@@ -1,23 +1,23 @@
 ---
-title: マネージ Windows デバッガーを使用してコードのデバッグ
+title: Windows デバッガーを使用したマネージド コードのデバッグ
 description: Windows デバッガー (WinDbg、CDB、NTSD) をマネージ コードを含む対象アプリケーションをデバッグするを使用することができます。
 ms.assetid: eb4cc883-71ac-4a57-8654-07c3120310c0
 keywords: デバッグ、デバッグ、Windbg、マネージ コードのデバッグ、.NET 共通言語ランタイム、共通言語ランタイム、CLR、JIT コンパイラ、JITted コード
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8edea69504ef1085bb2df54934350426a28e1a01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350608"
 ---
-# <a name="debugging-managed-code-using-the-windows-debugger"></a>マネージ Windows デバッガーを使用してコードのデバッグ
+# <a name="debugging-managed-code-using-the-windows-debugger"></a>Windows デバッガーを使用したマネージド コードのデバッグ
 
 
 Windows デバッガー (WinDbg、CDB、NTSD) をマネージ コードを含む対象アプリケーションをデバッグするを使用することができます。 マネージ コードのデバッグに読み込む必要がある、 [SOS デバッガー拡張 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)およびデータ アクセス コンポーネント (mscordacwks.dll)。
 
-Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、[Windows デバッグ](index.md)を参照してください。
+Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、次を参照してください。 [Windows デバッグ](index.md)します。
 
 ## <a name="span-idintroduction-to-managed-codespanspan-idintroductiontomanagedcodespanintroduction-to-managed-code"></a><span id="introduction-to-managed-code"></span><span id="INTRODUCTION_TO_MANAGED_CODE"></span>マネージ コードの概要
 
@@ -194,7 +194,7 @@ SOS デバッガー拡張をテストするには、入力 **! sos.help**しま�
 
 ### <a name="span-idnotesspanspan-idnotesspanspan-idnotesspannotes"></a><span id="Notes"></span><span id="notes"></span><span id="NOTES"></span>ノート
 
-場合があります、マネージ コード アプリケーションでは、CLR の 1 つ以上のバージョンを読み込みます。 その場合は、読み込みに DAC のバージョンを指定する必要があります。 詳細については、[ **.cordll**](-cordll--control-clr-debugging-.md)を参照してください。
+場合があります、マネージ コード アプリケーションでは、CLR の 1 つ以上のバージョンを読み込みます。 その場合は、読み込みに DAC のバージョンを指定する必要があります。 詳細については、次を参照してください。 [ **.cordll**](-cordll--control-clr-debugging-.md)します。
 
  
 

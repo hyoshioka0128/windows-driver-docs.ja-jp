@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ecde56415d4c1f5266057adf38a4177105fbcf5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342726"
 ---
 # <a name="kscategoryacousticechocancel"></a>KSCATEGORY_ACOUSTIC_ECHO_CANCEL
 
@@ -56,7 +56,7 @@ KSCATEGORY_ACOUSTIC_ECHO_CANCEL[デバイス インターフェイス クラス]
 
 KS オーディオ デバイス用のドライバーでは、オペレーティング システムに、デバイスがアコースティック エコー キャンセルを実行する KS 機能のカテゴリをサポートすることを示す KSCATEGORY_ACOUSTIC_ECHO_CANCEL のインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 <a name="requirements"></a>要件
 ------------

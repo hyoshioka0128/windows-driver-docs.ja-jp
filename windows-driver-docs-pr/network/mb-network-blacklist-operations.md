@@ -4,11 +4,11 @@ description: MB ネットワーク ブラックリスト操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8b839edae59e50126b399cb0018573180281ba5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343294"
 ---
 # <a name="mb-network-blacklist-operations"></a>MB ネットワーク ブラックリスト操作
 
@@ -43,7 +43,7 @@ SIM カードとネットワークを登録するモデムは望まれていま�
 
 セットのコマンドは、既存の上書きと予想されてブラック リスト Set コマンドのペイロードでモデムにします。
 
-#### <a name="query"></a>Query
+#### <a name="query"></a>クエリ
 
 MBIM_MS_NETWORK_BLACKLIST_INFO、InformationBuffer で完了したクエリと一連のメッセージが返されます。 クエリの場合は、InformationBuffer は NULL です。
 
@@ -57,14 +57,14 @@ MBIM_MS_NETWORK_BLACKLIST_INFO、InformationBuffer で完了したクエリと�
 
 ### <a name="parameters"></a>パラメーター
 
-|  | Set | Query | Notification |
+|  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_NETWORK_BLACKLIST_INFO | 適用なし | 適用なし |
+| コマンド | MBIM_MS_NETWORK_BLACKLIST_INFO | 該当なし | 該当なし |
 | 応答 | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO |
 
 ### <a name="data-structures"></a>データ構造体
 
-#### <a name="query"></a>Query
+#### <a name="query"></a>クエリ
 
 InformationBuffer は NULL にするものとし、InformationBufferLength を 0 にする必要があります。
 
@@ -72,7 +72,7 @@ InformationBuffer は NULL にするものとし、InformationBufferLength を 0
 
 次の MBIM_MS_NETWORK_BLACKLIST_INFO 構造、InformationBuffer で使用されます。
 
-| Offset | サイズ | フィールド | 型 | 説明 |
+| Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | BlacklistState | MBIM_MS_NETWORK_BLACKLIST_STATE | その結果、ネットワークに登録しないモデムで満たされる条件がブラック リストのいずれかどうかを示します。 詳細については、MBIM_MS_NETWORK_BLACKLIST_STATE テーブルを参照してください。 |
 | 4 | 4 | ElementCount (EC) | UINT32 | 後に、DataBuffer にカウントの MBIM_MS_NETWORK_BLACKLIST_PROVIDER 構造体。 |
@@ -83,7 +83,7 @@ InformationBuffer は NULL にするものとし、InformationBufferLength を 0
 
 MBIM_MS_NETWORK_BLACKLIST_STATE では、2 つの異なるブラック リストの考えられる状態について説明します。
 
-| 型 | ［マスク］ | 説明 |
+| 種類 | ［マスク］ | 説明 |
 | --- | --- | --- |
 | MbimMsNetworkBlacklistStateNotActuated | 0 h | ブラック リストの両方の条件が満たされていません。 |
 | MbimMsNetworkBlacklistSIMProviderActuated | 1 時間 | プロバイダー ID には、SIM プロバイダー ID のブラック リストが一致するように挿入された SIM がブラックします。 |
@@ -91,7 +91,7 @@ MBIM_MS_NETWORK_BLACKLIST_STATE では、2 つの異なるブラック リスト
 
 MBIM_MS_NETWORK_BLACKLIST_PROVIDER では、ブラック リストのプロバイダーを指定します。
 
-| Offset | サイズ | フィールド | 型 | 説明 |
+| Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MCC | UINT32 | 3 gpp により指定に従って、MCC は IMSI の一部であるし、プロバイダーの国を指定します。 |
 | 4 | 4 | MNC | UINT32 | 3 gpp により指定に従って、mnc もは IMSI の一部であるし、プロバイダーのネットワークを指定します。 |
@@ -99,7 +99,7 @@ MBIM_MS_NETWORK_BLACKLIST_PROVIDER では、ブラック リストのプロバ�
 
 MBIM_MS_NETWORK_BLACKLIST_TYPE は、前のデータ構造で使用されます。 これは、2 つのブラック リストのどちらを使用するを指定します。
 
-| 型 | 値 | 説明 |
+| 種類 | Value | 説明 |
 | --- | --- | ---- |
 | MbimMsNetworkBlacklistTypeSIM | 0 | MCC/mnc もペアは、SIM プロバイダーのブラック リストに使用されます。 |
 | MbimMsNetworkBlacklistTypeNetwork | 1 | MCC/mnc もペアは、ネットワーク プロバイダーのブラック リストに使用されます。 |

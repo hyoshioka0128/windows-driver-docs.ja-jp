@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源状態の IRP_MN_SET_POWER の処理
-description: デバイスの電源状態の IRP_MN_SET_POWER の処理
+title: デバイス電源状態についての IRP_MN_SET_POWER の処理
+description: デバイス電源状態についての IRP_MN_SET_POWER の処理
 ms.assetid: b4a19995-7933-41f7-b951-15ce0e4627da
 keywords:
 - IRP_MN_SET_POWER
@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f80deda87b323aea0d72b09ec5f2c4af319d3186
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350029"
 ---
 # <a name="handling-irpmnsetpower-for-device-power-states"></a>IRP の処理\_MN\_設定\_電源状態のデバイスの電源
 
@@ -48,7 +48,7 @@ ms.locfileid: "56558223"
 
 処理中に、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)からのデバイスの電源状態をドライバーの要求を返す必要があります、 *DispatchPower*できる限り迅速に日常的な。 ドライバーが待機する必要があります、 *DispatchPower*同じ IRP を処理するコードによってルーチンのカーネル イベントがシグナル状態します。 Power Irp がシステム全体で同期されるため、デッドロックが発生する可能性があります。
 
-システム パフォーマンス、特にマルチ メディア アプリケーションの最高レベルを維持するドライバーがパッシブに等しい割り込み要求レベル (IRQL) で時間のかかる操作を実行する必要があります\_レベル。 IRQL で操作を実行するパッシブ =\_、ドライバーを使用して、レベル、[専用スレッド](device-dedicated-threads.md)または[システム ワーカー スレッド](system-worker-threads.md)します。 マルチ メディア プラットフォームに対するドライバーのパフォーマンスの最適化に関するガイドラインについては、、[ストリーミング メディア デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568270)を参照してください。
+システム パフォーマンス、特にマルチ メディア アプリケーションの最高レベルを維持するドライバーがパッシブに等しい割り込み要求レベル (IRQL) で時間のかかる操作を実行する必要があります\_レベル。 IRQL で操作を実行するパッシブ =\_、ドライバーを使用して、レベル、[専用スレッド](device-dedicated-threads.md)または[システム ワーカー スレッド](system-worker-threads.md)します。 マルチ メディア プラットフォームに対するドライバーのパフォーマンスの最適化に関するガイドラインについては、次を参照してください。、[ストリーミング メディア デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568270)します。
 
 次のセクションで説明したようにアップまたはスケール ダウン、デバイスの電源がかどうかによってドライバーが IRP の電源を処理するために実行する必要が正確な手順は異なります。
 

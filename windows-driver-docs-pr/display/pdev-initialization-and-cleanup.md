@@ -1,6 +1,6 @@
 ---
-title: PDEV 初期化とクリーンアップ
-description: PDEV 初期化とクリーンアップ
+title: PDEV の初期化とクリーンアップ
+description: PDEV の初期化とクリーンアップ
 ms.assetid: 26651869-861a-4be8-bc6c-df3704ca714e
 keywords:
 - 描画の WDK GDI、初期化、PDEV 初期化
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2cfa4b833895a1a420b93116e7c0ec1e516235d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352312"
 ---
-# <a name="pdev-initialization-and-cleanup"></a>PDEV 初期化とクリーンアップ
+# <a name="pdev-initialization-and-cleanup"></a>PDEV の初期化とクリーンアップ
 
 
 ## <span id="ddk_pdev_initialization_and_cleanup_gg"></span><span id="DDK_PDEV_INITIALIZATION_AND_CLEANUP_GG"></span>

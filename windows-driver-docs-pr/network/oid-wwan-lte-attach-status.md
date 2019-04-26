@@ -6,11 +6,11 @@ ms.date: 08/23/2018
 keywords: -OID_WWAN_LTE_ATTACH_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a1355569f886c606cbf9c5e3cef5710a81a8303
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353712"
 ---
 # <a name="oidwwanlteattachstatus"></a>OID_WWAN_LTE_ATTACH_STATUS
 
@@ -22,7 +22,7 @@ OID_WWAN_LTE_ATTACH_STATUS は LTE 接続コンテキストを最後に使用さ
 
 ## <a name="remarks"></a>コメント
 
-詳細については、この OID を使用して、[MBIM_CID_MS_LTE_ATTACH_STATUS](mb-lte-attach-operations.md)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [MBIM_CID_MS_LTE_ATTACH_STATUS](mb-lte-attach-operations.md)します。
 
 ## <a name="requirements"></a>必要条件
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c82c6787948473707fc23e29fd927b56c2a3c0e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343760"
 ---
 # <a name="kscategorysplitter"></a>KSCATEGORY_SPLITTER
 
@@ -58,7 +58,7 @@ KS オーディオ アダプター デバイス用のドライバーでは、オ
 
 KSCATEGORY_SPLITTER 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)機能別に分類します。
 
-分割ウィンドウについては、[AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)を参照してください。
+分割ウィンドウについては、次を参照してください。 [AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)します。
 
 <a name="requirements"></a>要件
 ------------

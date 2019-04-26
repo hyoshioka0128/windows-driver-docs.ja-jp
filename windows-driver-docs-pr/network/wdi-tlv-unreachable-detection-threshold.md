@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a557610cb4e19049936195e4dbe031b3e792d10b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344209"
 ---
 # <a name="wditlvunreachabledetectionthreshold"></a>WDI\_TLV\_UNREACHABLE\_検出\_しきい値
 
@@ -37,7 +37,7 @@ Uint32 型のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

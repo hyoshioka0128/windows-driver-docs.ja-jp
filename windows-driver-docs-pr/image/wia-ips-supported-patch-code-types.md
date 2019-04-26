@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c47b9810313db00796afbfacca7d5a353d1838d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343836"
 ---
 # <a name="wiaipssupportedpatchcodetypes"></a>WIA\_IP\_サポートされている\_PATCH\_コード\_型
 
@@ -47,7 +47,7 @@ WIA ミニドライバーを使用して、 **WIA\_IP\_サポートされてい�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -89,7 +89,7 @@ WIA ミニドライバーは、WIA として定義されている追加のカス
 
 このプロパティは、修正プログラム コード リーダーのすべての項目に必要です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

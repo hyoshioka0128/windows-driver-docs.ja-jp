@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c262a174865348acecc70f36c614c065aa2731bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345278"
 ---
 # <a name="page-event-callbacks"></a>ページ イベント コールバック
 
@@ -28,7 +28,7 @@ ms.locfileid: "56574385"
 
 -   使用して、ページが定義された場合、 [CPSUI が指定したページやテンプレート](cpsui-supplied-pages-and-templates.md)を指定できます、 [CPSUI メッセージ ハンドラー](cpsui-message-handler.md)。
 
--   アプリケーションがない CPSUI によって提供されるカスタマイズされたページを作成する場合は、ダイアログ ボックスのプロシージャを提供します。 詳細については、[ ダイアログ ボックス プロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)を参照してください。
+-   アプリケーションがない CPSUI によって提供されるカスタマイズされたページを作成する場合は、ダイアログ ボックスのプロシージャを提供します。 詳細については、次を参照してください。 [ ダイアログ ボックス プロシージャと CPSUI](dialog-box-procedures-and-cpsui.md)します。
 
 呼び出すときにページ イベントのコールバックのアドレスを CPSUI CPSUI アプリケーション提供、 [ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)関数。
 

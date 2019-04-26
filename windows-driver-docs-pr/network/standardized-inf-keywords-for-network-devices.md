@@ -1,17 +1,17 @@
 ---
-title: ネットワーク デバイスの標準化された INF キーワード
-description: ネットワーク デバイスの標準化された INF キーワード
+title: ネットワーク デバイス用の標準化された INF キーワード
+description: ネットワーク デバイス用の標準化された INF キーワード
 ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d55125e09c24d6b12248b4802e6a992ee71543a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345961"
 ---
-# <a name="standardized-inf-keywords-for-network-devices"></a>ネットワーク デバイスの標準化された INF キーワード
+# <a name="standardized-inf-keywords-for-network-devices"></a>ネットワーク デバイス用の標準化された INF キーワード
 
 
 
@@ -49,7 +49,7 @@ NDIS ミニポート ドライバーの呼び出しません必須キーワー�
 
 このセクションでは、ユーザー インターフェイスで公開されている INF キーワードを指定します。 ただし、ミニポート ドライバーでは、現在の構成設定を判断するために初期化中にレジストリ設定を読み取る必要があります。
 
-INF ファイル内では、これらのキーワードの定義は、高度なプロパティ ページの他の定義に配置されます。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
+INF ファイル内では、これらのキーワードの定義は、高度なプロパティ ページの他の定義に配置されます。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 
 キーワードは、アスタリスクで始まるを標準化すべて (* *\\* * *)。 この名前付け規則では、標準名の名前を標準化を簡単に区別することができます。
 

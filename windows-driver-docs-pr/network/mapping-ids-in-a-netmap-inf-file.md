@@ -1,6 +1,6 @@
 ---
-title: Netmap.inf ファイル ファイル内の Id のマッピング
-description: Netmap.inf ファイル ファイル内の Id のマッピング
+title: Netmap.inf ファイル内の ID のマッピング
+description: Netmap.inf ファイル内の ID のマッピング
 ms.assetid: 7cab4aa1-8b0b-4cdc-a093-b91be6170961
 keywords:
 - ネットワーク コンポーネントのアップグレード WDK、netmap.inf ファイルのファイル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3a4342a2285ad86a97619b78b68baee07ee2a14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343474"
 ---
-# <a name="mapping-ids-in-a-netmapinf-file"></a>Netmap.inf ファイル ファイル内の Id のマッピング
+# <a name="mapping-ids-in-a-netmapinf-file"></a>Netmap.inf ファイル内の ID のマッピング
 
 
 
@@ -39,7 +39,7 @@ Netmap.inf ファイルのファイルには、次のセクションでは、最
 <thead>
 <tr class="header">
 <th align="left">セクション</th>
-<th align="left">Map</th>
+<th align="left">マップ</th>
 </tr>
 </thead>
 <tbody>

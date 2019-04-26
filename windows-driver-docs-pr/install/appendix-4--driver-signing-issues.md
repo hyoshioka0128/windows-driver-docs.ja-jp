@@ -5,11 +5,11 @@ ms.assetid: EC244022-A02B-4AAD-93EE-B9AE3E72A674
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1592fab6e387c7d4c01c005e62dcdaad77403b96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342012"
 ---
 # <a name="appendix-4-driver-signing-issues"></a>付録 4:ドライバーの署名の問題
 

@@ -5,27 +5,27 @@ ms.assetid: 2ee6ce92-44dc-4c59-a438-f65b41f3b43a
 ms.date: 09/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b69702cc3df8fdae47c717be62f9d8273623c1dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343909"
 ---
 # <a name="imaging-devices-reference"></a>イメージング デバイス参照
 
 このセクションには、次のテクノロジに関するリファレンス情報が含まれています。
 
-[イメージング デバイスのデバイスのインターフェイス クラス](device-interface-classes-for-imaging-devices.md)
+[イメージング デバイスのデバイス インターフェイス クラス](device-interface-classes-for-imaging-devices.md)
 
 [IWiaMiniDrv インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545027)
 
 [インターフェイスを静止画像します。](https://msdn.microsoft.com/library/windows/hardware/ff548281)
 
-[参照をデバイス上の web サービス](https://msdn.microsoft.com/library/windows/hardware/ff549148)
+[Web Services on Devices リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff549148)
 
 ## <a name="wia-and-sti-driver-reference-table"></a>WIA と STI ドライバーの参照テーブル
 
-次の表には、Windows Image Acquisition (WIA) ドライバーとまだイメージング (STI) ドライバーの参照情報が含まれています。 これらのドライバーでは、スキャナー、静止画像をキャプチャするには、カメラなどのデバイスを制御します。 これらのドライバーの詳細については、[Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)と[イメージ ドライバーも](https://msdn.microsoft.com/library/windows/hardware/ff548278)を参照してください。
+次の表には、Windows Image Acquisition (WIA) ドライバーとまだイメージング (STI) ドライバーの参照情報が含まれています。 これらのドライバーでは、スキャナー、静止画像をキャプチャするには、カメラなどのデバイスを制御します。 これらのドライバーの詳細については、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)と[イメージ ドライバーも](https://msdn.microsoft.com/library/windows/hardware/ff548278)します。
 
 次のセクションでは、インターフェイス、関数、構造、および WIA と STI ドライバーによって使用されるプロパティについて説明します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56560698"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="device-interface-classes-for-imaging-devices.md" data-raw-source="[Device Interface Classes for Imaging Devices](device-interface-classes-for-imaging-devices.md)">イメージング デバイスのデバイスのインターフェイス クラス</a></p></td>
+<td><p><a href="device-interface-classes-for-imaging-devices.md" data-raw-source="[Device Interface Classes for Imaging Devices](device-interface-classes-for-imaging-devices.md)">イメージング デバイスのデバイス インターフェイス クラス</a></p></td>
 <td><p>イメージング デバイスのデバイス クラス GUID です。</p></td>
 </tr>
 <tr class="even">
@@ -54,7 +54,7 @@ ms.locfileid: "56560698"
 <td><p>WIA ミニドライバー デバイス アイテムとデータの転送を管理するために使用するヘルパー関数です。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="wia-properties.md" data-raw-source="[WIA Properties](wia-properties.md)">WIA プロパティ</a></p></td>
+<td><p><a href="wia-properties.md" data-raw-source="[WIA Properties](wia-properties.md)">WIA のプロパティ</a></p></td>
 <td><p>状態、機能、およびデバイスの識別情報を含め、WIA デバイスのプロパティです。</p></td>
 </tr>
 <tr class="odd">
@@ -106,7 +106,7 @@ ms.locfileid: "56560698"
 <td><p>インターフェイス、構造体、データ型、および STI ドライバーによって使用される制御コード。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547963" data-raw-source="[Web Services on Devices Reference](https://msdn.microsoft.com/library/windows/hardware/ff547963)">参照をデバイス上の web サービス</a></p></td>
+<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547963" data-raw-source="[Web Services on Devices Reference](https://msdn.microsoft.com/library/windows/hardware/ff547963)">Web Services on Devices リファレンス</a></p></td>
 <td><p>スキャン サービス (WS スキャン) を含むデバイスについては、上の web サービス</p></td>
 </tr>
 </tbody>

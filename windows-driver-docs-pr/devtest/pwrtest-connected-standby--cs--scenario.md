@@ -5,11 +5,11 @@ ms.assetid: 2601603D-F9AF-4DEB-9A1B-F5A091A51B2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dfd00a1637484860280ff137cfa8038d30af7d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345782"
 ---
 # <a name="pwrtest-connected-standby-scenario"></a>PwrTest のコネクト スタンバイ シナリオ
 
@@ -18,7 +18,7 @@ PwrTest 接続スタンバイ シナリオ (**/cs**) コネクテッド スタ�
 
 PwrTest では、PDC フェーズで進行状況をログ記録、システムでサポートされている場合、プラットフォームのアイドル状態の遷移の数をログインしようとします。 これは、システムが、アイドル状態の詳細なプラットフォームを入力する場合と、すべてのソフトウェア コンポーネントは、移行をブロックしている場合の診断に役立ちます。
 
-このシナリオがテスト システムをサポートする必要があります、*常に常時接続されている*(SoC および ARM のほとんどのシステムは、これをサポート) (AoAc) 電源機能。 このシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーも必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 詳細については、[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)を参照してください。 WDTF については、[ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff539547)を参照してください。
+このシナリオがテスト システムをサポートする必要があります、*常に常時接続されている*(SoC および ARM のほとんどのシステムは、これをサポート) (AoAc) 電源機能。 このシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーも必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)します。 WDTF については、次を参照してください。 [ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff539547)します。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
 
@@ -36,7 +36,7 @@ pwrtest /cs [/c:n] [/d:n] [/p:n][/?]
 <span id="_p_n"></span><span id="_P_N"></span>**/p:**<em>n</em>  
 コネクテッド スタンバイの終了時刻を指定します (秒単位。 60 秒は既定値)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /cs /c:4 

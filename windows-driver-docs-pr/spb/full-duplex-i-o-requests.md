@@ -1,17 +1,17 @@
 ---
-title: Full-Duplex I/O Requests
+title: 全二重 I/O 要求
 description: SPI などのいくつかのバスは、全二重バスの転送をサポートします。
 ms.assetid: C80FE3F2-6659-4DE8-8F77-F77EDA60400F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c9aad36345ec0e46e4ab2677cf66c112a6ae485
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348062"
 ---
-# <a name="full-duplex-io-requests"></a>Full-Duplex I/O Requests
+# <a name="full-duplex-io-requests"></a>全二重 I/O 要求
 
 
 SPI などのいくつかのバスは、全二重バスの転送をサポートします。 これらの転送では、同時にデータをデバイスに書き込むと、同じデバイスからデータを読み取るで I/O のパフォーマンスが向上します。 全二重バスの転送をサポートするために、[シンプルな周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPB) [I/O 要求インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh698224)定義、 [ **IOCTL\_SPB\_完全\_双方向**](https://msdn.microsoft.com/library/windows/hardware/hh974774) I/O 制御コード (IOCTL)。

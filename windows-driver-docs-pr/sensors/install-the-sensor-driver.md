@@ -5,11 +5,11 @@ ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda94f5dc8955bce05a900764d818c967f15779c
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345260"
 ---
 # <a name="install-the-sensor-driver"></a>センサー ドライバーをインストールします。
 
@@ -185,7 +185,7 @@ SSDT を更新する次のタスクを実行し、読み込む工場出荷時の
 
 わかりやすくするためは、上記の一覧で、最後のメソッドを使用します。 次の手順を使用してセンサー ドライバーを手動でインストールする実行**デバイス マネージャー**します。
 
-センサー ドライバーをインストールする前に、サメ Cove にセンサーを接続する必要があります。 SparkFun から ADXL345 加速度計のブレイク アウト ボードを変更する方法については、サンプル センサー ドライバーと連動するようを参照してください[センサー テスト ボードの準備](prepare-your-sensor-test-board.md)します。 サメ Cove にセンサーのブレイク アウト ボードを接続する方法については、および[サメ Cove 掲示板にセンサーを接続](connect-your-sensor-to-the-sharks-cove-board.md)を参照してください。
+センサー ドライバーをインストールする前に、サメ Cove にセンサーを接続する必要があります。 SparkFun から ADXL345 加速度計のブレイク アウト ボードを変更する方法については、サンプル センサー ドライバーと連動するようを参照してください[センサー テスト ボードの準備](prepare-your-sensor-test-board.md)します。 サメ Cove にセンサーのブレイク アウト ボードを接続する方法については、次を参照してください。 および[サメ Cove 掲示板にセンサーを接続](connect-your-sensor-to-the-sharks-cove-board.md)します。
 
 1. サメ Cove J1C1 コネクタ、サメ Cove の電源をオンし ADXL345 加速度計が接続されていることを確認します。
 
@@ -199,9 +199,9 @@ SSDT を更新する次のタスクを実行し、読み込む工場出荷時の
 
 6. サンプル センサー ドライバーが正常にインストールされると、**デバイス マネージャー**の次のスクリーン ショットに示すように、センサーを表示します。<br/>![デバイス マネージャーのスクリーン ショット、正常にインストールされている adxl345 加速度計に対してデバイス ノードの表示](images/dev-mgr-sensors.png)
 
-Visual Studio を使用して (サメ Cove) などのクライアント コンピューターにドライバーを展開する方法については、[テスト コンピューターにドライバーを展開する](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)を参照してください。
+Visual Studio を使用して (サメ Cove) などのクライアント コンピューターにドライバーを展開する方法については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)します。
 
-センサー ドライバーのサンプルを正常にインストールした後、[ユニバーサル センサー ドライバーをテストして](test-your-universal-sensor-driver.md)センサーをテストする方法についてはを参照してください。
+センサー ドライバーのサンプルを正常にインストールした後、次を参照してください。[ユニバーサル センサー ドライバーをテストして](test-your-universal-sensor-driver.md)センサーをテストする方法についてはします。
 
  
 

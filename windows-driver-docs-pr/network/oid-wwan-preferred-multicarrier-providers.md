@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 63b98071b56285e6c112c7eb14dd4a608446cf15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354592"
 ---
 # <a name="oidwwanpreferredmulticarrierproviders"></a>OID\_WWAN\_優先\_マルチ\_プロバイダー
 
@@ -27,7 +27,7 @@ OID\_WWAN\_優先\_マルチ\_プロバイダーを使用する*設定*または
 
 **Rssi**と**ErrorRate** WWAN のメンバー\_PROVIDER2 構造は、使用可能な場合、設定する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

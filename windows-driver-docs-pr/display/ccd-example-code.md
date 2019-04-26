@@ -1,6 +1,6 @@
 ---
-title: CCD サンプル コード
-description: CCD サンプル コード
+title: CCD コード例
+description: CCD コード例
 ms.assetid: 8ca2c7c4-8e6f-4e4f-9234-eb3e5dc164cc
 keywords:
 - 接続するには、WDK Windows 7 の表示、CCD Api、コード例が表示されます。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b9fe2c962e79f998d55b14bde271fd68daa4d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346986"
 ---
-# <a name="ccd-example-code"></a>CCD サンプル コード
+# <a name="ccd-example-code"></a>CCD コード例
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

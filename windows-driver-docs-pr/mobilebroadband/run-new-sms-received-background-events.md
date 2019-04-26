@@ -1,17 +1,17 @@
 ---
-title: 新しい受信 SMS のバック グラウンド イベントを実行します。
-description: 新しい受信 SMS のバック グラウンド イベントを実行します。
+title: 新しい SMS で受信したバックグラウンド イベントを実行する
+description: 新しい SMS で受信したバックグラウンド イベントを実行する
 ms.assetid: 57534569-3678-4e2c-b55a-7dc6f057fb7d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3196d69f70e3e044915a21d30c0bfa076e9e372
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345326"
 ---
-# <a name="run-new-sms-received-background-events"></a>新しい受信 SMS のバック グラウンド イベントを実行します。
+# <a name="run-new-sms-received-background-events"></a>新しい SMS で受信したバックグラウンド イベントを実行する
 
 
 モバイル ブロード バンド SMS プラットフォームは、モバイル ネットワーク オペレーターまたは一般的な SMS メッセージからの管理用の SMS 通知がかどうかに応じて、受信した新しい SMS データを別のシステム イベントを提供します。 モバイル ネットワーク オペレーターから受信する新しい管理 SMS 通知をバック グラウンドのシステム イベントでは、モバイル ブロード バンド アプリからアクセスできるのみです。

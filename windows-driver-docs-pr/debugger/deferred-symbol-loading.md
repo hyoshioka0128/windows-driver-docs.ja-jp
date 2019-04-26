@@ -1,6 +1,6 @@
 ---
-title: シンボルの読み込みの遅延
-description: シンボルの読み込みの遅延
+title: シンボルの遅延読み込み
+description: シンボルの遅延読み込み
 ms.assetid: 58771089-dd0c-4ea9-8a9a-41553f290e88
 keywords:
 - シンボルの遅延読み込み
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 853eba6fce8395fb81e6a37e8e33bfefed0ba557
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346314"
 ---
-# <a name="deferred-symbol-loading"></a>シンボルの読み込みの遅延
+# <a name="deferred-symbol-loading"></a>シンボルの遅延読み込み
 
 
 ## <span id="ddk_deferred_symbol_loading_dbg"></span><span id="DDK_DEFERRED_SYMBOL_LOADING_DBG"></span>

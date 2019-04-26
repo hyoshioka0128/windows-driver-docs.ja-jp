@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8133d47f86875787083cb74c53bd20a019eb426a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341470"
 ---
 # <a name="inf-sourcedisksnames-section"></a>INF SourceDisksNames セクション
 
@@ -75,7 +75,7 @@ Windows XP と Windows の以降のバージョンでは、参照も、*フラ�
 <a href="" id="tag-file"></a>*タグ ファイル*  
 場合は、Windows XP 以降*フラグ*に設定されている**0x10**、この省略可能な値の名前を指定する、*タグ ファイル*でいずれか、配布中に指定した*インストール ルート*またはで指定されたサブディレクトリで*パス*します。 値には、ファイル名とパス情報がない拡張機能を指定する必要があります。 詳細については、「解説」を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 A **SourceDisksNames**セクションは、任意の数の配布のディスクごとに 1 つのエントリを持つことができます。 INF、 **SourceDisksNames**セクションがあります、 [ **INF SourceDisksFiles セクション**](inf-sourcedisksfiles-section.md)します。 (慣例として、 **SourceDisksNames**と**SourceDisksFiles**以下のセクションでは、 [ **INF バージョン セクション**](inf-version-section.md))。
@@ -108,7 +108,7 @@ A **SourceDisksNames**セクションは、任意の数の配布のディスク�
 
 SetupAPI 関数の使用、 **SourceDisksNames**と**SourceDisksNames** 。<em>アーキテクチャ</em>ファイルと同じ INF 内にあるセクションでは、関連するとして[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)セクション。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次の例では、 *write.exe*ファイルがインストールされているすべての Windows プラットフォームにある、 *\\共通*配布 cd-rom 上のインストールのルートの下のサブディレクトリ.*Cmd.exe*ファイルは、x86 ベースのプラットフォームでのみ使用されるプラットフォーム固有のファイル。

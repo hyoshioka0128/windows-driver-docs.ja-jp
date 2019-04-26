@@ -1,6 +1,6 @@
 ---
-title: デバイスの親を判断します。
-description: デバイスの親を判断します。
+title: デバイスの親の判断
+description: デバイスの親の判断
 ms.assetid: 61458911-222f-46aa-bc0e-a61ee25337bb
 keywords:
 - SetupAPI 関数 WDK、保護者の方を決定します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c492882772d986215087acc68dfaf0b704df0e38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346185"
 ---
-# <a name="determining-the-parent-of-a-device"></a>デバイスの親を判断します。
+# <a name="determining-the-parent-of-a-device"></a>デバイスの親の判断
 
 
 
@@ -25,9 +25,9 @@ ms.locfileid: "56529286"
 
 ときに、プラグ アンド プレイ)、デバイス、デバイス ツリーにします。 使用するデバイスの親を確認する方法は、方法、デバイスは現在構成されているシステムでは、次のように依存します。
 
--   デバイスでは、デバイス ツリーに devnode が含まれる場合は、使用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)親のデバイスのインスタンス ハンドルを取得します。 取得できますのデバイスのインスタンス ハンドルを指定する、[デバイス インスタンス ID](device-instance-ids.md)と[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイスの構造体。 詳細については、[デバイス ツリー内のデバイスの親を取得する](obtaining-the-parent-of-a-device-in-the-device-tree.md)を参照してください。
+-   デバイスでは、デバイス ツリーに devnode が含まれる場合は、使用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)親のデバイスのインスタンス ハンドルを取得します。 取得できますのデバイスのインスタンス ハンドルを指定する、[デバイス インスタンス ID](device-instance-ids.md)と[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイスの構造体。 詳細については、次を参照してください。[デバイス ツリー内のデバイスの親を取得する](obtaining-the-parent-of-a-device-in-the-device-tree.md)します。
 
--   デバイスに、親の固定的な関係がある場合は、保存し、親のデバイス インスタンス ID を取得できます。 デバイスの存在になると、デバイスの SP_DEVINFO_DATA 構造体を取得するのにデバイスのインスタンス ハンドルを使用できます。 詳細については、[Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)を参照してください。
+-   デバイスに、親の固定的な関係がある場合は、保存し、親のデバイス インスタンス ID を取得できます。 デバイスの存在になると、デバイスの SP_DEVINFO_DATA 構造体を取得するのにデバイスのインスタンス ハンドルを使用できます。 詳細については、次を参照してください。 [Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)します。
 
  
 

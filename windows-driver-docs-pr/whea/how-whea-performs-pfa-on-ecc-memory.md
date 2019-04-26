@@ -1,6 +1,6 @@
 ---
-title: WHEA が ECC メモリ PFA を実行する方法
-description: WHEA が ECC メモリ PFA を実行する方法
+title: WHEA が ECC メモリ上で PFA を実行する方法
+description: WHEA が ECC メモリ上で PFA を実行する方法
 ms.assetid: def94688-9ca6-4146-8d5b-4c3550d3d272
 keywords:
 - 予測的な失敗の分析 (PFA) WDK WHEA、エラー訂正コードのメモリ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd43fbbff691133978503716618368cbabed8a7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340809"
 ---
-# <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA が ECC メモリ PFA を実行する方法
+# <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA が ECC メモリ上で PFA を実行する方法
 
 
 Windows 7 以降、Windows ハードウェア エラー アーキテクチャ (WHEA) は、エラー修正コード (ECC) メモリの予測的な障害の分析 (PFA) をサポートします。
@@ -27,7 +27,7 @@ WHEA は、次の条件に当てはまる場合にのみ、ECC メモリ ペー�
 
 -   レジストリ値**MemPfaDisable** 1 に設定されていません。
 
--   A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)が既に設定されていない、 **PlatformPfaControl**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)のメンバー、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体を 1 にします。 プラグインに設定 PFA を実行する場合のこのビットをします。 PFA の実行方法でこのプラグインの詳細については、[PFA 実行プラグイン PSHED](pfa-performed-by-a-pshed-plug-in.md)を参照してください。
+-   A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)が既に設定されていない、 **PlatformPfaControl**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)のメンバー、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体を 1 にします。 プラグインに設定 PFA を実行する場合のこのビットをします。 PFA の実行方法でこのプラグインの詳細については、次を参照してください。 [PFA 実行プラグイン PSHED](pfa-performed-by-a-pshed-plug-in.md)します。
 
 [メモリ] ページは、ECC メモリ エラーが発生するときに WHEA は、次の手順に従って ECC メモリ ページで PFA を実行します。
 
@@ -53,7 +53,7 @@ WHEA では、システム ストアでのブート構成データ (BCD) に、�
 
 
 
-WHEA の PFA レジストリ値に関する詳細については、[WHEA ポリシー設定](whea-pfa-registry-settings.md)を参照してください。
+WHEA の PFA レジストリ値に関する詳細については、次を参照してください。 [WHEA ポリシー設定](whea-pfa-registry-settings.md)します。
 
 システムのメモリ マネージャーの詳細については、次を参照してください。、[メモリ管理](https://go.microsoft.com/fwlink/p/?linkid=140723)Windows SDK のドキュメント。
 

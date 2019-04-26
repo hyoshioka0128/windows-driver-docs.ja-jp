@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_RESET_START ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a026c9c371f27ba3aeaf068b42daa279b0715bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353157"
 ---
 # <a name="ndisstatusresetstart"></a>NDIS\_状態\_リセット\_開始
 
@@ -31,7 +31,7 @@ NDIS ミニポート ドライバーを呼び出すときに、ミニポート �
 
 -   などのリソースを返すへの呼び出しでのデータ バッファーを受信した点を除いては、基になるミニポート ドライバーが送信されるすべての NDIS 呼び出しをしないように、 [ **NdisReturnNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564534)関数。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

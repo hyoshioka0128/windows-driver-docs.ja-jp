@@ -5,11 +5,11 @@ ms.assetid: 0aca0d3c-9865-4a11-a9c5-e77cc735ba21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3fe25da46f1c4222ca279e66218f9811a934262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351320"
 ---
 # <a name="app-startup"></a>アプリの起動
 

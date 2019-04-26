@@ -1,6 +1,6 @@
 ---
-title: ネットワークの INF ファイルにバージョン セクション
-description: ネットワークの INF ファイルにバージョン セクション
+title: ネットワーク INF ファイル内の Version セクション
+description: ネットワーク INF ファイル内の Version セクション
 ms.assetid: c76151e9-fef2-4bfe-8587-d58d95d234bc
 keywords:
 - INF ファイルの WDK ネットワーク、バージョン セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f46f9c7a5a95b1d2163f2ea4857b84b1aa40ba4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346626"
 ---
-# <a name="version-section-in-a-network-inf-file"></a>ネットワークの INF ファイルにバージョン セクション
+# <a name="version-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の Version セクション
 
 
 
@@ -25,7 +25,7 @@ ms.locfileid: "56530665"
 
 **バージョン**ネットワーク INF ファイルでセクションが次のネットワークに固有のエントリには。
 
--   [クラス](#class)
+-   [Class](#class)
 -   [ClassGuid](#classguid)
 -   [署名とオペレーティング システム エントリ](#signature-and-operating-system-entries)
 -   [PnpLockDown](#pnplockdown)
@@ -111,7 +111,7 @@ TCP/IP、IPX、接続指向のクライアントでは、接続指向のコー�
 
 ### <a name="pnplockdown"></a>PnpLockDown
 
-**PnpLockDown**エントリは、アプリケーションがドライバー パッケージの INF ファイルを指定するファイルを直接変更するを防ぐに 1 に設定する必要があります。 このエントリの詳細については、[ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)を参照してください。
+**PnpLockDown**エントリは、アプリケーションがドライバー パッケージの INF ファイルを指定するファイルを直接変更するを防ぐに 1 に設定する必要があります。 このエントリの詳細については、次を参照してください。 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
 
 ### <a name="catalogfile"></a>CatalogFile
 

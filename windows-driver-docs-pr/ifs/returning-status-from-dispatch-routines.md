@@ -1,6 +1,6 @@
 ---
-title: ディスパッチ ルーチンから状態を返す
-description: ディスパッチ ルーチンから状態を返す
+title: ディスパッチ ルーチンから返される状態
+description: ディスパッチ ルーチンから返される状態
 ms.assetid: 76bd651a-344f-4e22-a435-b62fdf2d7ddc
 keywords:
 - IRP ディスパッチ ルーチン WDK ファイル システムの状態の取得
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c08527fb47b9a81d22804867a6d2157563392e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344543"
 ---
-# <a name="returning-status-from-dispatch-routines"></a>ディスパッチ ルーチンから状態を返す
+# <a name="returning-status-from-dispatch-routines"></a>ディスパッチ ルーチンから返される状態
 
 
 ## <span id="ddk_returning_status_from_dispatch_routines_if"></span><span id="DDK_RETURNING_STATUS_FROM_DISPATCH_ROUTINES_IF"></span>
@@ -36,7 +36,7 @@ ms.locfileid: "56536485"
 
 これらの動作が正しいこと、またはこともできます、特定の操作に依存します。 ディレクトリ変更の通知など、いくつかの操作を同期的です。 にすることはできません。非同期の各 oplock など、一部にすることはできません。
 
-ディスパッチ ルーチンから状態を返す方法についての詳細については、[ディスパッチ ルーチンに対する制約](constraints-on-dispatch-routines.md)を参照してください。
+ディスパッチ ルーチンから状態を返す方法についての詳細については、次を参照してください。[ディスパッチ ルーチンに対する制約](constraints-on-dispatch-routines.md)します。
 
  
 

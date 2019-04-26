@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b0b7129de668eabdfd2e7d711d1ed8dfb26c907
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343732"
 ---
 # <a name="changes-to-the-number-of-processors"></a>プロセッサ数の変更
 
@@ -42,7 +42,7 @@ ms.locfileid: "56570336"
 
 -   デバイス ドライバーは、I/O 要求の処理を複数のプロセッサに分散するのに負荷の分散アルゴリズムを使用します。 このような状況で、デバイス ドライバーはハードウェアのパーティションにプロセッサを追加して、デバイス ドライバーを完全に任意の新しいプロセッサを使用することはできませんがある場合、正しく機能しているを停止する可能性があります。
 
-デバイス ドライバーがアクティブなプロセッサの数の変更によって影響を受ける場合自体、ハードウェアのパーティションにプロセッサを追加するときに通知するオペレーティング システムが登録する必要があります。 デバイス ドライバーが通知されたときに、安全で最適な操作に必要な応答できます。 デバイス ドライバーを登録する方法自体、オペレーティング システムの詳細については、[ドライバー通知](driver-notification.md)を参照してください。
+デバイス ドライバーがアクティブなプロセッサの数の変更によって影響を受ける場合自体、ハードウェアのパーティションにプロセッサを追加するときに通知するオペレーティング システムが登録する必要があります。 デバイス ドライバーが通知されたときに、安全で最適な操作に必要な応答できます。 デバイス ドライバーを登録する方法自体、オペレーティング システムの詳細については、次を参照してください。[ドライバー通知](driver-notification.md)します。
 
 現在のアクティブなプロセッサがハードウェア パーティションの数を取得するデバイス ドライバーを呼び出す必要があります、 [ **KeQueryActiveProcessorCount** ](https://msdn.microsoft.com/library/windows/hardware/ff552985)関数。 現在のプロセッサ アフィニティ値を取得するデバイス ドライバー呼び出すことができます、 [ **KeQueryActiveProcessors** ](https://msdn.microsoft.com/library/windows/hardware/ff553001)関数または**KeQueryActiveProcessorCount**関数。
 

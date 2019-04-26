@@ -13,24 +13,24 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a443041865d023db1669747a1b03a4bd9696bc1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349044"
 ---
 # <a name="debugrequestsetadditionalcreateoptions"></a>デバッグ\_要求\_設定\_追加\_作成\_オプション
 
 
 デバッグ\_要求\_設定\_追加\_作成\_オプション[**要求**](request.md)操作は、既定のプロセスの作成を設定します。オプション。
 
-**パラメーター**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 新しい既定のプロセスの作成オプション。 プロセスの作成オプションの種類は[**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)します。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-使用されません。
+使用されていません。
 
 <a name="remarks"></a>注釈
 -------

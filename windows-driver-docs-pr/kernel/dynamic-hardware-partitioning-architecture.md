@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57366470ad89d8305ad0958c1530c7ea671e4da7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341480"
 ---
 # <a name="dynamic-hardware-partitioning-architecture"></a>動的ハードウェア パーティション分割のアーキテクチャ
 
@@ -31,9 +31,9 @@ ms.locfileid: "56569939"
 
 パーティションのユニットごとの Windows Server 2008 以降、プラグ アンド プレイ (PnP) デバイスと見なされます。 これらのデバイスは PnP であるため、オペレーティング システムが開始した後を追加できます。
 
-デバイス ドライバーを登録する方法自体パーティション単位はハードウェアのパーティションに動的に追加されたときに通知を受信するオペレーティング システムの詳細については、[ドライバー通知](driver-notification.md)を参照してください。
+デバイス ドライバーを登録する方法自体パーティション単位はハードウェアのパーティションに動的に追加されたときに通知を受信するオペレーティング システムの詳細については、次を参照してください。[ドライバー通知](driver-notification.md)します。
 
-アプリケーションを登録する方法自体パーティション単位はハードウェアのパーティションに動的に追加されたときに通知を受信するオペレーティング システムの詳細については、[アプリケーション通知](application-notification.md)を参照してください。
+アプリケーションを登録する方法自体パーティション単位はハードウェアのパーティションに動的に追加されたときに通知を受信するオペレーティング システムの詳細については、次を参照してください。[アプリケーション通知](application-notification.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: Irp のキャンセル
-description: Irp のキャンセル
+title: IRP のキャンセル
+description: IRP のキャンセル
 ms.assetid: da199435-f6c3-44f4-b1ed-0280f39ee452
 keywords:
 - Irp WDK のカーネルのキャンセル
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e2888c0913c923a2d46c52ee80ffd45967ac6b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343792"
 ---
-# <a name="canceling-irps"></a>Irp のキャンセル
+# <a name="canceling-irps"></a>IRP のキャンセル
 
 
 
@@ -28,7 +28,7 @@ ms.locfileid: "56536719"
 
 Microsoft Windows XP およびそれ以降のオペレーティング システム用のドライバーを使用できる[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)独自の実装ではなく*キャンセル*ルーチン。
 
-「IRP をキャンセル」には、システムの整合性を維持しながら、IRP をできるだけ早く完了することを示します。 IRP の完了の概要については、[Irp の完了](completing-irps.md)を参照してください。
+「IRP をキャンセル」には、システムの整合性を維持しながら、IRP をできるだけ早く完了することを示します。 IRP の完了の概要については、次を参照してください。 [Irp の完了](completing-irps.md)します。
 
 キャンセルは、まず、システムまたはドライバーのいずれかを呼び出すと[ **IoCancelIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548338)します。 このルーチンは、まだ完全に完了しているスレッドに関連付けられている各 IRP に呼び出されます。 システムは、I/O 要求を開始したスレッドが終了した場合、未処理の Irp をキャンセルします。 ドライバーは、作成した Irp だけをキャンセルできます (を参照してください[下位レベルのドライバーの作成の Irp](creating-irps-for-lower-level-drivers.md))。
 

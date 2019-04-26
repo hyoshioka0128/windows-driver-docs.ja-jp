@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_SET_CMPLT
-Description: A Remote NDIS device will respond to a REMOTE_NDIS_SET_MSG message with a REMOTE_NDIS_SET_CMPLT message.
+Description: リモートの NDIS デバイスは REMOTE_NDIS_SET_CMPLT メッセージ REMOTE_NDIS_SET_MSG メッセージに応答します。
 ms.assetid: 97436a5f-7516-46cf-b789-a6b1c8c067a2
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3664bd100a640d6ece3441b68a3f1242c60e595
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343222"
 ---
 # <a name="remotendissetcmplt"></a>リモート\_NDIS\_設定\_CMPLT
 
@@ -35,7 +35,7 @@ ms.locfileid: "56580283"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x80000005 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -53,7 +53,7 @@ ms.locfileid: "56580283"
 <tr class="even">
 <td><p>12</p></td>
 <td><p>4</p></td>
-<td><p>状態</p></td>
+<td><p>状況</p></td>
 <td><p>OID のセット要求を処理の状態を指定します。</p></td>
 </tr>
 </tbody>

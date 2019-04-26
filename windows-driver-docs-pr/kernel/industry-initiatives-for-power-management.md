@@ -1,6 +1,6 @@
 ---
-title: 電源管理のための業界イニシアティブ
-description: 電源管理のための業界イニシアティブ
+title: 電源管理についての業界の取り組み
+description: 電源管理についての業界の取り組み
 ms.assetid: 81754a9b-67ec-47a6-bd18-5da10a1f18f5
 keywords:
 - 電源管理の WDK カーネル、業界の取り組み
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c8e5c8a800a1fa80bd4d10550179bb485ea3ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341048"
 ---
-# <a name="industry-initiatives-for-power-management"></a>電源管理のための業界イニシアティブ
+# <a name="industry-initiatives-for-power-management"></a>電源管理についての業界の取り組み
 
 
 

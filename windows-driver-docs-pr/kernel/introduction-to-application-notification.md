@@ -5,11 +5,11 @@ ms.assetid: c115eb29-8bd2-40f7-b979-cff386bdc9aa
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a01abb24cf2e1c9de3de5c1afea43c8f2d427bde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341040"
 ---
 # <a name="introduction-to-application-notification"></a>アプリケーション通知の概要
 
@@ -34,7 +34,7 @@ Windows Server 2008 以降では、プロセッサおよびメモリ モジュ�
 
 ユーザー モード アプリケーションが呼び出すことによって、ハードウェアのパーティションでは物理メモリの量を取得できます、 [GlobalMemoryStatusEx](https://go.microsoft.com/fwlink/p/?linkid=97891)関数。 詳細については、 **GlobalMemoryStatusEx**関数を Microsoft Windows SDK のマニュアルを参照してください。
 
-ユーザー モード アプリケーションは、アプリケーション通知を受信するオペレーティング システムを自体を登録する必要があります。 詳細については、[アプリケーション通知を登録する](registering-for-application-notification.md)を参照してください。
+ユーザー モード アプリケーションは、アプリケーション通知を受信するオペレーティング システムを自体を登録する必要があります。 詳細については、次を参照してください。[アプリケーション通知を登録する](registering-for-application-notification.md)します。
 
  
 

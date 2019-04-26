@@ -4,11 +4,11 @@ description: このセクションでは、タイム トラベル ナビゲー�
 ms.date: 09/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b07f9dbc2b5f447ad6229fd6782ed0d3e019bb9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349027"
 ---
 ![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "56528097"
 
 ## <a name="spanspan-idadditionalinformationspanadditional-information"></a></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-旅行ナビゲーション コマンドは、時間でのみ動作時間は、トレースを移動します。 タイム トラベルの詳細については、[時出張デバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
+旅行ナビゲーション コマンドは、時間でのみ動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
 
 ## <a name="see-also"></a>参照
 

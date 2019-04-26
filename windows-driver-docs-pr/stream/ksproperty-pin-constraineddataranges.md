@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e37fc6110a8d7be8f18df53d71c6e28b9caa97d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346431"
 ---
 # <a name="kspropertypinconstraineddataranges"></a>KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES
 
@@ -51,7 +51,7 @@ KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES プロパティが現在 pin の pin の�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"><strong>KSMULTIPLE_ITEM</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff561658" data-raw-source="[&lt;strong&gt;KSDATARANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561658)"> <strong>KSDATARANGE</strong></a></p></td>
@@ -72,7 +72,7 @@ KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES プロパティが現在 pin の pin の�
 
 Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
 
-詳細については、[KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)を参照してください。
+詳細については、次を参照してください。 [KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42db158705e6b214301d6541ad7bb900ecb82f32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349887"
 ---
 # <a name="guidndisgenenumerateports"></a>GUID_NDIS_GEN_ENUMERATE_PORTS
 
@@ -23,5 +23,5 @@ GUID_NDIS_GEN_ENUMERATE_PORTS には、ポートを列挙する WMI メソッド
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_PORT_ARRAY](https://msdn.microsoft.com/library/windows/hardware/ff566786)構造体。 **NumberOfPorts** NDIS_PORT_ARRAY のメンバーには、ミニポート アダプターに関連付けられているアクティブなポートの数が含まれています。 **ポート**NDIS_PORT_ARRAY のメンバーにはへのポインターのリストが含まれています[NDIS_PORT_CHARACTERISTICS](https://msdn.microsoft.com/library/windows/hardware/ff566791)構造体。 各 NDIS_PORT_CHARACTERISTICS 構造体は、1 つの NDIS ポートの特性を定義します。
 
-ポートの列挙の詳細については、[OID_GEN_ENUMERATE_PORTS](oid-gen-enumerate-ports.md)を参照してください。
+ポートの列挙の詳細については、次を参照してください。 [OID_GEN_ENUMERATE_PORTS](oid-gen-enumerate-ports.md)します。
 

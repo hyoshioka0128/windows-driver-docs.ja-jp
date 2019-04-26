@@ -1,6 +1,6 @@
 ---
-title: INF ファイルを見る
-description: INF ファイルを見る
+title: INF ファイルの参照
+description: INF ファイルの参照
 ms.assetid: 4d9d5f28-b643-4369-8bf8-94703e8926d2
 keywords:
 - INF ファイル WDK デバイス インストールでは、構造体
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dfc3fb3a6eb63d47e5d829be12a0c3b1e73ee2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346826"
 ---
-# <a name="looking-at-an-inf-file"></a>INF ファイルを見る
+# <a name="looking-at-an-inf-file"></a>INF ファイルの参照
 
 
 

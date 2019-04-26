@@ -5,11 +5,11 @@ ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a76b55ed3084b756e802d834f071e57629e63b8d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339926"
 ---
 # <a name="test-signing"></a>テスト署名
 
@@ -199,7 +199,7 @@ BCDEdit を使用して、ユーザーは、システムの Administrators グ�
 
     -   テスト署名、 *tstamd64.cat*のカタログ ファイル、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)します。 詳細についてはこの[カタログ ファイル](catalog-files.md)が作成されるを参照してください[ドライバー パッケージのテスト署名カタログ ファイルを作成する](creating-a-catalog-file-for-test-signing-a-driver-package.md)します。
 
-    -   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、[テスト証明書を作成する](creating-test-certificates.md)を参照してください。
+    -   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
 
     -   タイム スタンプ機関 (TSA) 経由のデジタル署名のタイムスタンプ。
 

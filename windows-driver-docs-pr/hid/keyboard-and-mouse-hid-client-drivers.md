@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4d83fcc34bcdc272e9e903ab1e9dfca6ca50893
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346242"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>キーボードとマウスの HID クライアント ドライバー
 

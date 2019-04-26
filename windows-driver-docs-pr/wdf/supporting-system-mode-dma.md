@@ -1,17 +1,17 @@
 ---
-title: システム モード DMA をサポートしています。
+title: システム モード DMA のサポート
 description: KMDF ドライバーがそのイベントに提供するコードを記述システム モード DMA のデバイスの I/O 要求を処理するコールバック関数。
 ms.assetid: CCC77C15-69CA-44CB-8DEB-29F3EAEA44F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d629648ae39ec68f5817d8f58fbda8ff75e685c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350729"
 ---
-# <a name="supporting-system-mode-dma"></a>システム モード DMA をサポートしています。
+# <a name="supporting-system-mode-dma"></a>システム モード DMA のサポート
 
 
 \[KMDF にのみ適用されます。\]
@@ -22,7 +22,7 @@ ms.locfileid: "56557831"
 
 このトピックでは、KMDF ドライバーは、そのイベントのコールバック関数や、登録する省略可能なイベント コールバック関数で提供する必要があるコードを説明しますシステム モード DMA のデバイスの I/O 要求を処理します。
 
-KMDF とバス マスター DMA については、[KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)を参照してください。
+KMDF とバス マスター DMA については、次を参照してください。 [KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)します。
 
 次の図は、イベントには、ドライバーはサポート システム モードの DMA を使用してコールバック関数を示します。
 

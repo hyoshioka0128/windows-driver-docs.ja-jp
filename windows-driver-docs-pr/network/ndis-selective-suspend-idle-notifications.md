@@ -1,17 +1,17 @@
 ---
-title: 選択的 NDIS がアイドル状態の通知を中断します。
-description: 選択的 NDIS がアイドル状態の通知を中断します。
+title: NDIS セレクティブ サスペンド アイドル通知
+description: NDIS セレクティブ サスペンド アイドル通知
 ms.assetid: 958A2588-A847-4699-9906-95FB47CA1CDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2e6759c3617c1bf5342bd3eae75e1df3baa16f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342312"
 ---
-# <a name="ndis-selective-suspend-idle-notifications"></a>選択的 NDIS がアイドル状態の通知を中断します。
+# <a name="ndis-selective-suspend-idle-notifications"></a>NDIS セレクティブ サスペンド アイドル通知
 
 
 ミニポート ドライバーが有効にし、選択的 NDIS のサポートを登録、中断、NDIS が基になるネットワーク アダプターの I/O アクティビティを監視します。 NDIS ドライバーとアダプターがアイドル状態である NDIS 実行と判断した場合、セレクティブ サスペンド操作。 この操作では、アダプターを低電力状態に遷移することによって、ネットワーク アダプターが中断します。

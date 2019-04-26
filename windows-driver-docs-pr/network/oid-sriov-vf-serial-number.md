@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_VF_SERIAL_NUMBER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f2f4b5fddfc84b6ca1bbd6362afc46481cbba87b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351262"
 ---
 # <a name="oidsriovvfserialnumber"></a>OID\_SRIOV\_VF\_シリアル\_数
 
@@ -19,7 +19,7 @@ ms.locfileid: "56572763"
 
 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_VF\_シリアル\_数\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451685)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 上にあるドライバーでは、シリアル番号を使用して、VF のネットワーク アダプターを物理ネットワーク アダプター上の VF のインスタンスにマップします。 VF のリソースの割り当ての OID セット要求を使用する前に、シリアル番号が、仮想化スタックによって生成された[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
@@ -63,7 +63,7 @@ NDIS が、OID を処理するときに\_SRIOV\_VF\_シリアル\_数要求と�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

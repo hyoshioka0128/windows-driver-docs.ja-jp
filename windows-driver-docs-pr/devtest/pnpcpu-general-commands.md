@@ -1,19 +1,19 @@
 ---
-title: PNPCPU 一般的なコマンド
-description: PNPCPU 一般的なコマンド
+title: PNPCPU の一般的なコマンド
+description: PNPCPU の一般的なコマンド
 ms.assetid: 8b98149c-6c5a-4c1f-b988-dce86bdc3e29
 keywords:
 - PNPCPU WDK、コマンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39df37eae40b56f336c075e0d047cbb68431a4bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343068"
 ---
-# <a name="pnpcpu-general-commands"></a>PNPCPU 一般的なコマンド
+# <a name="pnpcpu-general-commands"></a>PNPCPU の一般的なコマンド
 
 
 次の構文では、共通 PNPCPU のすべての操作です。

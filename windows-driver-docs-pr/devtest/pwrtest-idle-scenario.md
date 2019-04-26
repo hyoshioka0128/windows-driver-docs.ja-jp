@@ -5,11 +5,11 @@ ms.assetid: 7E40DD91-D236-41B3-BC3A-DEB6DDD76139
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2d7606d97a1bb410b7920b26e1b485193e08985
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345770"
 ---
 # <a name="pwrtest-idle-scenario"></a>PwrTest のアイドル シナリオ
 
@@ -35,7 +35,7 @@ pwrtest /idle  [/t:n] [/?] [/es [es_options]
 <span id="_es___es_options_"></span><span id="_ES___ES_OPTIONS_"></span>**/es \[**<em>es\_options</em>**\]**  
 実行、 [PwrTest 実行状態 (ES) のシナリオ](pwrtest-execution-state-scenario.md)します。
 
-**例**
+**使用例**
 
 ```
 pwrtest /idle /t:60

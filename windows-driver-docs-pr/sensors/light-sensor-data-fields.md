@@ -1,22 +1,22 @@
 ---
-title: 光センサーのデータ フィールド
+title: 光センサー データ フィールド
 description: このトピックでは、光センサーに固有のデータ フィールドの詳細についての情報を提供します。
 ms.assetid: 96572A6A-CACC-4B79-B63C-5554C07F7C83
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f731ab9f09c2776063f610fbc653d7ae78d7f60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345222"
 ---
-# <a name="light-sensor-data-fields"></a>光センサーのデータ フィールド
+# <a name="light-sensor-data-fields"></a>光センサー データ フィールド
 
 
 このトピックでは、光センサーに固有のデータ フィールドの詳細についての情報を提供します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 <table>
 <colgroup>

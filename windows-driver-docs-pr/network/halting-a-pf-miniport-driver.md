@@ -1,24 +1,24 @@
 ---
-title: PF のミニポート ドライバーを停止します。
-description: PF のミニポート ドライバーを停止します。
+title: PF ミニポート ドライバーの停止
+description: PF ミニポート ドライバーの停止
 ms.assetid: E3F6B78E-6938-459B-883E-5DA0BB1D73C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43dba8bda1cc62e6f1cf7ed277ca022f84c94e1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349828"
 ---
-# <a name="halting-a-pf-miniport-driver"></a>PF のミニポート ドライバーを停止します。
+# <a name="halting-a-pf-miniport-driver"></a>PF ミニポート ドライバーの停止
 
 
 このトピックでは、PCI Express (PCIe) 物理機能 (PF) シングル ルート I/O 仮想化 (SR-IOV) をサポートするアダプターのミニポート ドライバーを停止に関連する手順について説明します。 次の手順は、次の図に表示されます。
 
 ![上にある、ドライバー、ndis、および、pf ミニポート ドライバーの間でどの要求と関数のフローで、完全なテキストで説明されているプロセスのイメージです。](images/sriov-pf-halt.png)
 
-このトピックには、次の情報が含まれています。
+このトピックの内容は次のとおりです。
 
 -   [NDIS を前にドライバーを後続のアクション実行*MiniportHaltEx*が呼び出されます](#overlying-drivers)
 
@@ -41,15 +41,15 @@ NDIS 呼び出し、PF ミニポート ドライバーの前に[ *MiniportHaltEx
 
 3.  ドライバーの OID セット要求を発行する必要があります[OID\_NIC\_スイッチ\_FREE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451822)どの PCIe 仮想機能 (Vf) NIC で以前割り当てられているリソースを解放するにはスイッチです。 ドライバーは、の OID メソッド要求を発行して、VF のリソースを割り当てます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814) PF ミニポート ドライバーにします。
 
-    詳細については、[仮想関数のリソースを解放](freeing-resources-for-a-virtual-function.md)を参照してください。
+    詳細については、次を参照してください。[仮想関数のリソースを解放](freeing-resources-for-a-virtual-function.md)します。
 
-    **注**  VF 用のリソースが解放されると、NDIS を呼び出す、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388) VF ミニポート ドライバーの機能です。 詳細については、[VF のミニポート ドライバーを停止する](halting-a-vf-miniport-driver.md)を参照してください。
+    **注**  VF 用のリソースが解放されると、NDIS を呼び出す、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388) VF ミニポート ドライバーの機能です。 詳細については、次を参照してください。 [VF のミニポート ドライバーを停止する](halting-a-vf-miniport-driver.md)します。
 
      
 
 すべてのフィルター、拡張、既定以外の受信し VFs はから削除されている NIC の切り替え、NDIS が次の手順に従います。
 
--   NDIS の OID のセット要求を発行してすべての NIC スイッチを削除します[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)PF ミニポート ドライバーにします。 NIC のスイッチを削除する方法の詳細については、[NIC スイッチを削除する](deleting-a-nic-switch.md)を参照してください。
+-   NDIS の OID のセット要求を発行してすべての NIC スイッチを削除します[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)PF ミニポート ドライバーにします。 NIC のスイッチを削除する方法の詳細については、次を参照してください。 [NIC スイッチを削除する](deleting-a-nic-switch.md)します。
 
     **注**  以降 Windows Server 2012 では、SR-IOV インターフェイスに対してのみサポートして既定の NIC のスイッチ、ネットワーク アダプター。
 
@@ -70,7 +70,7 @@ NDIS を呼び出すと*MiniportHaltEx*、PF ミニポート ドライバーが�
 
      
 
-2.  PF のミニポート ドライバーでは、ミニポート停止の操作に関連するその他のタスクを実行します。 詳細については、[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)を参照してください。
+2.  PF のミニポート ドライバーでは、ミニポート停止の操作に関連するその他のタスクを実行します。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
 
  
 

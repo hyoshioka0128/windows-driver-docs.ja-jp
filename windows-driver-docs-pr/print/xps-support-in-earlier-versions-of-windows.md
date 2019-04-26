@@ -1,19 +1,19 @@
 ---
-title: 以前のバージョンの Windows での XPS のサポート
-description: 以前のバージョンの Windows での XPS のサポート
+title: 以前のバージョンの Windows の XPS サポート
+description: 以前のバージョンの Windows の XPS サポート
 ms.assetid: e13b43f5-e926-404d-9f76-c2dfef6e0637
 keywords:
 - XPSDrv プリンター ドライバー WDK、Windows の以前のバージョン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f4a85f89a820de51e585083c821a048df876f0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355129"
 ---
-# <a name="xps-support-in-earlier-versions-of-windows"></a>以前のバージョンの Windows での XPS のサポート
+# <a name="xps-support-in-earlier-versions-of-windows"></a>以前のバージョンの Windows の XPS サポート
 
 
 Windows Vista では、だけでなく、XPS ベースのテクノロジは、Microsoft Windows Server 2003 および Windows XP、Microsoft WinFX Runtime コンポーネント 3.0 でサポートされます。 XPS 印刷時点で作業をこれらのオペレーティング システムのシナリオを印刷します。

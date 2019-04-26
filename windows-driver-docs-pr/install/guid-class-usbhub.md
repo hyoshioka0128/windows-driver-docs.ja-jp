@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 49f4511ac07cea0f586b49866f4f6adecdf79c88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340094"
 ---
 # <a name="guidclassusbhub"></a>GUID_CLASS_USBHUB
 
@@ -31,7 +31,7 @@ GUID_CLASS_USBHUB は古い形式の識別子、[デバイス インターフェ
 
 Microsoft Windows Driver Kit (WDK) が含まれています、 [USBVIEW サンプル アプリケーション](https://go.microsoft.com/fwlink/p/?linkid=256205)します。 USBVIEW サンプルでは、GUID_CLASS_USBHUB デバイス インターフェイス クラスのインスタンスが存在する場合に通知を受け取る GUID_CLASS_USBHUB を使用します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: 電源管理 (NDIS 6.20 が動作)
-description: 電源管理 (NDIS 6.20 が動作)
+title: 電源管理 (NDIS 6.20)
+description: 電源管理 (NDIS 6.20)
 ms.assetid: 7C4A4A48-8427-490C-B695-D806A7825FD8
 keywords:
 - NDIS 6.20 WDK、電源管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 109ecd5c2d88808dc944af465e5f2bf168453388
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342963"
 ---
-# <a name="power-management-ndis-620"></a>電源管理 (NDIS 6.20 が動作)
+# <a name="power-management-ndis-620"></a>電源管理 (NDIS 6.20)
 
 
 

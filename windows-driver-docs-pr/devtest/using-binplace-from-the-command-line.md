@@ -1,17 +1,17 @@
 ---
-title: コマンドラインから BinPlace を使用します。
-description: コマンドラインから BinPlace を使用します。
+title: コマンド ラインからの BinPlace の使用
+description: コマンド ラインからの BinPlace の使用
 ms.assetid: ed92fee5-d45c-437a-8c3f-de51b910c2ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12c5fdb3b54fa7e01b969518a56bb614e679d242
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341636"
 ---
-# <a name="using-binplace-from-the-command-line"></a>コマンドラインから BinPlace を使用します。
+# <a name="using-binplace-from-the-command-line"></a>コマンド ラインからの BinPlace の使用
 
 
 **重要な**  このトピックの例で、BINPLACE の使用方法の説明\_PLACEFILE マクロと[BinPlace](binplace.md)[**場所ファイル**](place-file-syntax.md). このマクロとファイルは、Windows 7 バージョンの Windows ドライバー キットの廃止と WDK の将来のバージョンではサポートされない可能性があります。

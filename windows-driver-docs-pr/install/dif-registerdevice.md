@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fea8e67c711ba52156d66247893f6c921b22a97d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356091"
 ---
 # <a name="difregisterdevice"></a>DIF_REGISTERDEVICE
 
@@ -87,7 +87,7 @@ DIF_REGISTERDEVICE 要求は、PnP マネージャーで、インスタンスを
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
+既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -107,7 +107,7 @@ A*デバイス インストール アプリケーション*通常マネージャ
 
 インストーラーでは、この差分コードのエラーが返された場合通常 ERROR_DUPLICATE_FOUND、Windows デバイスを削除、デバイス情報のセットから。
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
 <a name="requirements"></a>要件
 ------------

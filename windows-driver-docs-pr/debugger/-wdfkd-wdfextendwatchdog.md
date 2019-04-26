@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e1f512d9629a13f17a7daac8bd4413b6e5d4c99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341719"
 ---
 # <a name="wdfkdwdfextendwatchdog"></a>!wdfkd.wdfextendwatchdog
 
@@ -47,14 +47,14 @@ KMDF 1
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------
 
 それを呼び出すたびに、電源ポリシーまたは電源イベントのコールバック関数の電源がオフのドライバーに対してページング可能なフレームワークが、内部ウォッチドッグ タイマーを開始 (操作は、\_POWER\_ページング可能なビットがクリアされて)。 コールバック関数がページング i/o、ためブロックされた場合は、要求の処理を使用可能なページングのデバイスがないため、オペレーティング システムがハングします。
 
-タイムアウト期間が経過すると、フレームワークのバグ チェック 0x10D 問題 (WDF\_違反)。 詳細については、[**バグ チェック 0x10D**](bug-check-0x10d---wdf-violation.md)を参照してください。
+タイムアウト期間が経過すると、フレームワークのバグ チェック 0x10D 問題 (WDF\_違反)。 詳細については、次を参照してください。 [**バグ チェック 0x10D**](bug-check-0x10d---wdf-violation.md)します。
 
  
 

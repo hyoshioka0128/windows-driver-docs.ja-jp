@@ -1,6 +1,6 @@
 ---
-title: 動的な列挙型
-description: 動的な列挙型
+title: 動的な列挙
+description: 動的な列挙
 ms.assetid: 6e46b456-7d2d-4c6e-8692-7f310366387d
 keywords:
 - WDK KMDF の動的な列挙型
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa6659f7cac4e5bd15aa28a1d7cdc07a47c3792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342827"
 ---
-# <a name="dynamic-enumeration"></a>動的な列挙型
+# <a name="dynamic-enumeration"></a>動的な列挙
 
 
 *動的な列挙*は検出し、システムの実行中に、システムに接続されているデバイスの種類と数に変更を報告するドライバーの機能です。
@@ -75,7 +75,7 @@ ms.locfileid: "56549863"
 
 ### <a name="adding-devices-to-a-dynamic-child-list"></a>動的な子の一覧にデバイスを追加
 
-ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)バス アダプターは、通常、親デバイスの FDO を作成します。 FDO の作成の詳細については、[Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)を参照してください。 ドライバーは、親デバイスの子を列挙する必要がありますし、子を子リストに追加します。
+ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)バス アダプターは、通常、親デバイスの FDO を作成します。 FDO の作成の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)です。 ドライバーは、親デバイスの子を列挙する必要がありますし、子を子リストに追加します。
 
 ドライバーを呼び出すことができます必要に応じて、 [ **WdfDeviceSetBusInformationForChildren** ](https://msdn.microsoft.com/library/windows/hardware/ff546868)バスについての情報をフレームワークを提供します。 子デバイスと、バスを識別するためにアプリを簡単になりますので、これをお勧めします。
 

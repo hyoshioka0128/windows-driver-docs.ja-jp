@@ -1,17 +1,17 @@
 ---
-title: WIA プロパティ
-description: WIA プロパティ
+title: WIA のプロパティ
+description: WIA のプロパティ
 ms.assetid: 3b9d4d90-775b-450e-b5d1-646ea45253d7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23c0e4fc99f5b22bf16fe811c0dda7f554115c75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352666"
 ---
-# <a name="wia-properties"></a>WIA プロパティ
+# <a name="wia-properties"></a>WIA のプロパティ
 
 
 ## <span id="ddk_wia_properties_si"></span><span id="DDK_WIA_PROPERTIES_SI"></span>
@@ -66,7 +66,7 @@ Unicode 文字 (ワイド文字の文字列) の文字列。
 <span id="Read_write"></span><span id="read_write"></span><span id="READ_WRITE"></span>読み取り/書き込み  
 ドライバーはどちらも読み取りおよび書き込みアクセス。
 
-上記のリストには、ここでは、WIA プロパティで使用されている型のみがについて説明します。 これらおよびその他のプロパティの型の詳細については、[ **WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)を参照してください。
+上記のリストには、ここでは、WIA プロパティで使用されている型のみがについて説明します。 これらおよびその他のプロパティの型の詳細については、次を参照してください。 [ **WIA\_プロパティ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552751)します。
 
 Windows SDK にはに関する情報が含まれて、 [WIA\_RAW\_ヘッダー](https://go.microsoft.com/fwlink/p/?linkid=153316)構造体。 WIA に関する情報も含まれています。\_イベント\_XXX と WIA\_CMD\_XXX 定数、で説明した、 [WIA イベント識別子](https://go.microsoft.com/fwlink/p/?linkid=153318)トピック。
 

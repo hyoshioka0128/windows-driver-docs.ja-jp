@@ -1,19 +1,19 @@
 ---
-title: メモリ リークが存在するかどうかを決定します。
-description: メモリ リークが存在するかどうかを決定します。
+title: リークが存在するかどうかの判別
+description: リークが存在するかどうかの判別
 ms.assetid: a29db56e-6507-48f4-ad30-eb0a849f8673
 keywords:
 - メモリ リークの検出
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a685b39143c5acf5773c90c7a70fe50285e3c8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346292"
 ---
-# <a name="determining-whether-a-leak-exists"></a>メモリ リークが存在するかどうかを決定します。
+# <a name="determining-whether-a-leak-exists"></a>リークが存在するかどうかの判別
 
 
 Windows のパフォーマンスが時間の経過と共に低下させること、メモリ リークが含まれている疑いがある場合は、このセクションで説明した手法は、メモリ リークがあるかどうかを指定できます。 わかりません、リークの原因とは何もユーザー モードとカーネル モードであるか。

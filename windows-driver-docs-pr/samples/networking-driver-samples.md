@@ -1,17 +1,17 @@
 ---
-title: ネットワークのドライバーのサンプル
+title: ネットワーク ドライバーのサンプル
 description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム ネットワーク ドライバーを記述するための開始点を提供します。
 ms.assetid: 97C88E82-96AA-41AD-9B1F-3EB848A08BD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d32596886982c9e1c549b1cf17ca5ffb73ec4a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345956"
 ---
-# <a name="networking-driver-samples"></a>ネットワークのドライバーのサンプル
+# <a name="networking-driver-samples"></a>ネットワーク ドライバーのサンプル
 
 
 このディレクトリにドライバーのサンプルでは、デバイスのカスタム ネットワーク ドライバーを記述するための開始点を提供します。
@@ -21,10 +21,10 @@ ms.locfileid: "56539521"
 
 | サンプル名                                                | ソリューション                                                                 | 説明                                                                                                                                                                                                                            |
 |------------------------------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Bindview                                                   | [bindview](https://go.microsoft.com/fwlink/p/?LinkId=617732)              | INetCfg の Api を使用して、列挙する方法については、アプリケーションで、インストール、アンインストール、バインド、およびネットワーク コンポーネントのバインドを解除します。                                                                                                         |
+| Bindview                                                   | [Bindview](https://go.microsoft.com/fwlink/p/?LinkId=617732)              | INetCfg の Api を使用して、列挙する方法については、アプリケーションで、インストール、アンインストール、バインド、およびネットワーク コンポーネントのバインドを解除します。                                                                                                         |
 | Fakemodem                                                  | [fakemodem](https://go.microsoft.com/fwlink/p/?LinkId=617733)             | 単純なコント ローラーのないモデムのドライバーを示します。                                                                                                                                                                                    |
 | HYPER-V 拡張可能スイッチ拡張機能フィルター                 | [extensions](https://go.microsoft.com/fwlink/p/?LinkId=617913)            | HYPER-V 拡張可能スイッチの拡張機能フィルター ドライバーを実装するために使用される基本ライブラリ。                                                                                                                                                  |
-| NDIS 6.0 のフィルター処理                                            | [フィルター](https://go.microsoft.com/fwlink/p/?LinkId=617915)                | このサンプルは、NDIS 6.0 のフィルター ドライバーの基本原則のデモの何もしないパススルー 6 の NDIS フィルター ドライバーです。                                                                                                          |
+| NDIS 6.0 のフィルター処理                                            | [フィルター (filter)](https://go.microsoft.com/fwlink/p/?LinkId=617915)                | このサンプルは、NDIS 6.0 のフィルター ドライバーの基本原則のデモの何もしないパススルー 6 の NDIS フィルター ドライバーです。                                                                                                          |
 | MUX の NDIS 中間ドライバとオブジェクトへの通知             | [mux](https://go.microsoft.com/fwlink/p/?LinkId=617916)                   | NDIS 6.0 ドライバーであり、"N:1"MUX ドライバーの操作。 このサンプルでは、アダプターが 1 つ下の上に複数の仮想ネットワーク デバイスを作成します。                                                                        |
 | コネクションレス NDIS 6.0 および 6.3 プロトコル ドライバー            | [ndisprot60](https://go.microsoft.com/fwlink/p/?LinkId=617917)            | このドライバーは、ユーザー モードから ReadFile/WriteFile 呼び出しを使用して、生のイーサネット フレームの送受信をサポートします。 NDIS プロトコル ドライバーでは、としては、構築し、破棄のイーサネット アダプターにバインドする方法を示しています。                 |
 | コネクションレス NDIS 6.0 プロトコル ドライバー                    | [ndisprot\_kmdf](https://go.microsoft.com/fwlink/p/?LinkId=620197)        | このドライバーは、ユーザー モードから ReadFile/WriteFile 呼び出しを使用して、生のイーサネット フレームの送受信をサポートします。 NDIS プロトコル ドライバーでは、としては、構築し、破棄のイーサネット アダプターにバインドする方法を示しています。                 |

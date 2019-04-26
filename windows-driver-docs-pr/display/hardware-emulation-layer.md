@@ -1,6 +1,6 @@
 ---
-title: ハードウェアのエミュレーション層
-description: ハードウェアのエミュレーション層
+title: ハードウェア エミュレーション レイヤー
+description: ハードウェア エミュレーション レイヤー
 ms.assetid: 79ca4e7f-f335-4e71-8abb-811d98976cc9
 keywords:
 - WDK DirectDraw、ハードウェア エミュレーション レイヤーの描画
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6030bbe421152dad292196fadfff694bc6a5342f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353884"
 ---
-# <a name="hardware-emulation-layer"></a>ハードウェアのエミュレーション層
+# <a name="hardware-emulation-layer"></a>ハードウェア エミュレーション レイヤー
 
 
 ## <span id="ddk_hardware_emulation_layer_gg"></span><span id="DDK_HARDWARE_EMULATION_LAYER_GG"></span>

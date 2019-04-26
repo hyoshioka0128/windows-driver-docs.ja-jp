@@ -5,11 +5,11 @@ ms.assetid: B425C05C-0F65-4F94-AECD-0BAD35DA441F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5411b0ee5d87e8b6575023e04d2cc8995bc1478e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347322"
 ---
 # <a name="quality-of-service-qos-support-in-ndis-630"></a>NDIS 6.30 のサービスの品質 (QoS) のサポート
 
@@ -28,7 +28,7 @@ DCB の NDIS QoS のサポートには、ポリシーのセットを指定する
 <a href="" id="traffic-selection-algorithms--tsas-"></a>トラフィックの選択アルゴリズム (TSAs)  
 このポリシーは、ネットワーク アダプターがその送信キューからの配信のエグレス トラフィックがどのように選択する方法を指定します。 たとえば、アダプターでは、IEEE 802.1p の優先度またはトラフィック クラスごとに割り当てられているエグレス帯域幅の割合に基づく送信パケットを選択できます。
 
-DCB の NDIS QoS のサポートの詳細については、[データ センター ブリッジングの NDIS QoS](ndis-qos-for-data-center-bridging.md)を参照してください。
+DCB の NDIS QoS のサポートの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS](ndis-qos-for-data-center-bridging.md)します。
 
  
 

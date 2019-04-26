@@ -1,18 +1,18 @@
 ---
-title: タイム トラベル デバッグ - トラブルシューティング
+title: Time Travel Debugging - トラブルシューティング
 description: このセクションは、時間のトラブルシューティングを行う方法を説明しますトレースを移動します。
 ms.date: 10/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9fcb1c922b3bc769d78153c0fb90c01f31be67f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349025"
 ---
 ![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png) 
 
-# <a name="time-travel-debugging---troubleshooting"></a>タイム トラベル デバッグ - トラブルシューティング
+# <a name="time-travel-debugging---troubleshooting"></a>Time Travel Debugging - トラブルシューティング
 
 このセクションは、時間のトラブルシューティングを行う方法を説明しますトレースを移動します。
 
@@ -105,7 +105,7 @@ TTD は記録内の各位置にそのプロセスの状態をレプリケート�
 ほとんどの場合にこのエラー メッセージことを示します、します。実行のトレース ファイルが必要で derailed、命令のいくつかの不確定な数の derailed その時点で開始したスレッドにギャップがあります。 デバッグしようとして関心のあるイベントは、その間隔中に発生していない、トレースが使用可能な可能性があります。 その間隔中に関心のあるイベントが発生した場合は、トレースを再記録する必要があります。
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [旅行時間 - デバッグの概要](time-travel-debugging-overview.md)
 

@@ -6,11 +6,11 @@ keywords: マルチプロセッサ コンピューターで、マルチプロセ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c76c200699c287359f4d50167f4a8d58175b2da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351792"
 ---
 # <a name="multiprocessor-syntax"></a>マルチプロセッサの構文
 
@@ -49,7 +49,7 @@ KD とカーネル モード WinDbg は複数のプロセッサのデバッグ�
 
 いくつかのコマンドの前に、プロセッサ番号を追加することができます。 この番号がない前にティルダ (**~**) を除く、 **~ S**コマンド。
 
-**注**  ユーザー モードのデバッグ、チルダは、スレッドの指定に使用されます。 この構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+**注**  ユーザー モードのデバッグ、チルダは、スレッドの指定に使用されます。 この構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
  
 

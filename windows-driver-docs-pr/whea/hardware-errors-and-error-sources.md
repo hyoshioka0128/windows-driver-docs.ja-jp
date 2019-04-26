@@ -1,6 +1,6 @@
 ---
-title: ハードウェア エラーとエラーのソース
-description: ハードウェア エラーとエラーのソース
+title: ハードウェア エラーとエラーの原因
+description: ハードウェア エラーとエラーの原因
 ms.assetid: 047e5d6d-a7c6-4c20-bfb2-c1d686ec0b7b
 keywords:
 - Windows ハードウェア アーキテクチャ WDK のエラー、ハードウェア エラー
@@ -20,13 +20,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 454f0741ae4aa1a7f1b37aa423709e70df837dc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340819"
 ---
-# <a name="hardware-errors-and-error-sources"></a>ハードウェア エラーとエラーのソース
+# <a name="hardware-errors-and-error-sources"></a>ハードウェア エラーとエラーの原因
 
 
 A*ハードウェア エラー*コンピューター システムのハードウェア コンポーネントの故障が。 ハードウェア コンポーネントには、ハードウェアのエラー条件が存在する場合に検出できるエラーの検出メカニズムが含まれています。 ハードウェアのエラーは、いずれかに分類できます*エラーを修正*、または*未修正エラー*します。

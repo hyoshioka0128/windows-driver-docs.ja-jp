@@ -5,11 +5,11 @@ ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ac909cb176bd644fdaa76895d56ad1c62e3dd014
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341322"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>ログの収集と WPP をデコード
 
@@ -22,12 +22,12 @@ WPP は、トレース プロバイダーと呼ばれるソフトウェア コ�
 
 -   SensorsUtilsV2.pdb
 
-トレース ログ ツールを使用して、WPP ログを収集します。 詳細については、[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)を参照してください。 トレースのトレース Guid、トレース フラグ、トレース レベル、または PDB ファイルなどの概念の詳細については、[トレース ツールの概念](https://msdn.microsoft.com/library/windows/hardware/ff553975.aspx)を参照してください。
+トレース ログ ツールを使用して、WPP ログを収集します。 詳細については、次を参照してください。 [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)します。 トレースのトレース Guid、トレース フラグ、トレース レベル、または PDB ファイルなどの概念の詳細については、次を参照してください。[トレース ツールの概念](https://msdn.microsoft.com/library/windows/hardware/ff553975.aspx)します。
 
 ## <a name="tracing-guid"></a>トレース GUID
 
 
-次の GUID は、CX ドライバー センサー V2 スタックのトレース プロバイダーを識別します。 この GUID を使用してトレース ログの詳細については、[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)を参照してください。
+次の GUID は、CX ドライバー センサー V2 スタックのトレース プロバイダーを識別します。 この GUID を使用してトレース ログの詳細については、次を参照してください。 [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)します。
 
 ``` syntax
 c88b592b-6090-480f-a839-ca2434de5844
@@ -164,7 +164,7 @@ WPP マクロをその関連するトレース レベルとトレース フラ�
 ## <a name="decoding-etl-logs"></a>ログに記録 ETL のデコード
 
 
-Tracefmt ツールは、ETL ログのデコードに使用されます。 このツールの詳細については、[Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)を参照してください。
+Tracefmt ツールは、ETL ログのデコードに使用されます。 このツールの詳細については、次を参照してください。 [Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)します。
 
 参照してください、センサー ドライバーのより広範なテストを実行するかどうか [ユニバーサル センサー ドライバーをテストして] (テスト-、-汎用-センサー-driver.md します。
 

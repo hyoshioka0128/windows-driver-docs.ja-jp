@@ -1,17 +1,17 @@
 ---
-title: PCI Express デバイス用のコンテナー Id
-description: PCI Express デバイス用のコンテナー Id
+title: PCI Express デバイス用のコンテナー ID
+description: PCI Express デバイス用のコンテナー ID
 ms.assetid: ff86def3-a278-4f7b-a394-42f608f8993d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e234d54d0a83bd7e90ac1742fe851e09687421fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344327"
 ---
-# <a name="container-ids-for-pci-express-devices"></a>PCI Express デバイス用のコンテナー Id
+# <a name="container-ids-for-pci-express-devices"></a>PCI Express デバイス用のコンテナー ID
 
 
 PCI Express (PCIe) バスは、コンテナー ID を表現できません。 Windows オペレーティング システムは、PCI バス ドライバーを返す PCIe デバイスのグループ化デバイス コンテナーと判断した場合、リムーバブル機能に依存します。

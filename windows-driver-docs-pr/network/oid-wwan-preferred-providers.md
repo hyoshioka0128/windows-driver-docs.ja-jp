@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_PREFERRED_PROVIDERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 10678081206be6ec9d1a53bcba787fddc1675109
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354576"
 ---
 # <a name="oidwwanpreferredproviders"></a>OID\_WWAN\_優先\_プロバイダー
 
@@ -22,7 +22,7 @@ OID\_WWAN\_優先\_プロバイダーが優先 GSM ベースのデバイス プ�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、[WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)します。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできると処理クエリの要求が、プロバイダーのネットワークにアクセスしないでください。
 

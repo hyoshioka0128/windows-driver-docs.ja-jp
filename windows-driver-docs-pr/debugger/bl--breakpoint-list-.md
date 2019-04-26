@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6776d96d5fd9690adcb0e835ca991258e2505b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347872"
 ---
 # <a name="bl-breakpoint-list"></a>bl (ブレークポイントの一覧)
 
@@ -64,7 +64,7 @@ bl [/L] [Breakpoints]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。 条件付きブレークポイントの詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
+詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。 条件付きブレークポイントの詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
 
 <a name="remarks"></a>コメント
 -------
@@ -75,11 +75,11 @@ bl [/L] [Breakpoints]
 
 - ブレークポイントの状態です。 状態は、 **e** (有効) または**d** (無効)。
 
-- (未解決のブレークポイントのみ)ブレークポイントが解決されない場合は、文字"u"が表示されます。 つまり、ブレークポイントでは、現在読み込まれているモジュールのシンボリック参照は一致しません。 これらのブレークポイントの詳細については、[未解決ブレークポイント (bu ブレークポイント)](unresolved-breakpoints---bu-breakpoints-.md)を参照してください。
+- (未解決のブレークポイントのみ)ブレークポイントが解決されない場合は、文字"u"が表示されます。 つまり、ブレークポイントでは、現在読み込まれているモジュールのシンボリック参照は一致しません。 これらのブレークポイントの詳細については、次を参照してください。[未解決ブレークポイント (bu ブレークポイント)](unresolved-breakpoints---bu-breakpoints-.md)します。
 
 - 仮想アドレスまたはブレークポイントの場所を構成するシンボル定義の式。 ソース行の番号の読み込みを有効にした場合、 **bl**コマンドがアドレス オフセットではなく、ファイルと行番号情報を表示します。 アドレスがここでを省略して、一覧の最後に表示、ブレークポイントが解決されない場合は、代わりにします。
 
-- (データ ブレークポイントのみ)データ ブレークポイントの種類とサイズの情報が表示されます。 指定できる型は**e** (execute)、 **r** (読み取り/書き込み) **w** (書き込み)、または**は**(入力/出力)。 これらの型は、(バイト単位)、ブロックのサイズに従います。 これらのブレークポイントの詳細については、[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)を参照してください。
+- (データ ブレークポイントのみ)データ ブレークポイントの種類とサイズの情報が表示されます。 指定できる型は**e** (execute)、 **r** (読み取り/書き込み) **w** (書き込み)、または**は**(入力/出力)。 これらの型は、(バイト単位)、ブロックのサイズに従います。 これらのブレークポイントの詳細については、次を参照してください。[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)します。
 
 - ブレークポイントがアクティブになるまでのパス数後にかっこで囲まれたパスの初期数。 この種のブレークポイントの詳細については、の説明を参照して、*パス*パラメーター [ **bp、bu、bm (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)します。
 

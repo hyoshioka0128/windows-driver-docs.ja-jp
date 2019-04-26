@@ -5,11 +5,11 @@ ms.assetid: 5074669c-3914-4d15-983b-d979c7f88b21
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: eab2897ea3ef584edc4224118d951e8fa23fd915
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349324"
 ---
 # <a name="magneticstripereaderdatareceived"></a>MagneticStripeReaderDataReceived
 
@@ -81,6 +81,6 @@ typedef struct _MSR_DATA_RECEIVED {
 | unsigned char                                                       | **AdditionalSecurityInformationLength**                                                                                               |
 | unsigned char\[MSR\_追加\_セキュリティ\_情報\_サイズ\]       | **AdditionalSecurityInformationLength**バイトの追加のセキュリティ情報                                                      |
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **ヘッダー:** pointofservicedriverinterface.h

@@ -10,11 +10,11 @@ keywords:
 ms.date: 07/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: adaf103c38fe11afca2ce8cba65d7c98bc0bde92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344926"
 ---
 # <a name="deadlock-detection"></a>デッドロックの検出
 
@@ -121,7 +121,7 @@ Driver Verifier はこれらの違反が検出されたときのバグ チェッ
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーのデッドロック検出機能をアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーのデッドロック検出機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
 -   **コマンドラインで**
 
@@ -139,7 +139,7 @@ Driver Verifier はこれらの違反が検出されたときのバグ チェッ
     verifier /volatile /flags 0x20 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
     デッドロック検出機能は、標準の設定にも含まれます。 次に、例を示します。
 

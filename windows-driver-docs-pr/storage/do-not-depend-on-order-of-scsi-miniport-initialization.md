@@ -1,6 +1,6 @@
 ---
-title: SCSI ミニポートの初期化の順序に依存しません。
-description: SCSI ミニポートの初期化の順序に依存しません。
+title: SCSI ミニポート初期化の順序への依存禁止
+description: SCSI ミニポート初期化の順序への依存禁止
 ms.assetid: 762fa062-4eaa-40f2-acdb-99fc6cafe680
 keywords:
 - SCSI ミニポート ドライバー WDK 記憶域、PnP
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cd210324e74f30d0eb34caaa1ef19b64c5165da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342841"
 ---
-# <a name="do-not-depend-on-order-of-scsi-miniport-initialization"></a>SCSI ミニポートの初期化の順序に依存しません。
+# <a name="do-not-depend-on-order-of-scsi-miniport-initialization"></a>SCSI ミニポート初期化の順序への依存禁止
 
 
 ## <span id="ddk_do_not_depend_on_order_of_scsi_miniport_initialization_kg"></span><span id="DDK_DO_NOT_DEPEND_ON_ORDER_OF_SCSI_MINIPORT_INITIALIZATION_KG"></span>

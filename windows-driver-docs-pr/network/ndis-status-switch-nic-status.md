@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_SWITCH_NIC_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cffe960cf89909e93c8cc1f6e8fcd81b1e2fb429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353151"
 ---
 # <a name="ndisstatusswitchnicstatus"></a>NDIS\_状態\_スイッチ\_NIC\_状態
 
@@ -31,7 +31,7 @@ ms.locfileid: "56570594"
 
     通常、拡張機能は、基になる外部ネットワーク アダプターにバインドされている物理アダプターのチームの現在のオフロード機能の変更をカプセル化された状態を示す値を変更します。
 
-    外部ネットワーク アダプターを物理ネットワーク アダプターのバインドのさまざまな構成に関する詳細については、[型の物理ネットワーク アダプターの構成](https://msdn.microsoft.com/library/windows/hardware/hh582274)を参照してください。
+    外部ネットワーク アダプターを物理ネットワーク アダプターのバインドのさまざまな構成に関する詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](https://msdn.microsoft.com/library/windows/hardware/hh582274)します。
 
 3.  ときに、 **NDIS\_状態\_切り替える\_NIC\_ステータス**状態を示す値がスタックの上にある、拡張可能スイッチ プロトコル ドライバーによって受信されると、インターフェイスの転送、関連プロトコルまたはフィルター ドライバーをカプセル化解除された状態を示す値。
 

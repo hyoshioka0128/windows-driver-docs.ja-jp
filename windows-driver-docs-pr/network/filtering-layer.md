@@ -1,19 +1,19 @@
 ---
-title: レイヤーをフィルター処理
-description: レイヤーをフィルター処理
+title: フィルタリング レイヤー
+description: フィルタリング レイヤー
 ms.assetid: db2fd1dc-c080-4f12-8138-7e66c74adacd
 keywords:
 - WDK Windows フィルタ リング プラットフォームのレイヤーをフィルター処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3790778a96eed061c961f51df14e90c58f81b4b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347368"
 ---
-# <a name="filtering-layer"></a>レイヤーをフィルター処理
+# <a name="filtering-layer"></a>フィルタリング レイヤー
 
 
 A*レイヤーをフィルター処理*ネットワーク データに渡される、TCP/IP ネットワーク スタック内のポイントは、[フィルター エンジン](filter-engine.md)の現在のフィルターのセットに対して照合します。 ネットワーク スタックの各フィルターのレイヤーが一意で識別される[レイヤー識別子のフィルタ リング](https://msdn.microsoft.com/library/windows/hardware/ff549947)します。

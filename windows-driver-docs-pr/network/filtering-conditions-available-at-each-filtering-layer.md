@@ -1,5 +1,5 @@
 ---
-title: 各フィルター レイヤーで使用可能な条件をフィルター処理
+title: 各フィルター レイヤーで使用可能なフィルター条件
 description: このセクションでは、各フィルター レイヤーで使用可能なフィルタ リング条件について説明します。
 ms.assetid: 470f809c-7bf7-4d8b-acd6-898cc68ea7ac
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b18c1b5400631c9c562c9ad0dbdd58f9f9faeff1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347389"
 ---
-# <a name="filtering-conditions-available-at-each-filtering-layer"></a>各フィルター レイヤーで使用可能な条件をフィルター処理
+# <a name="filtering-conditions-available-at-each-filtering-layer"></a>各フィルター レイヤーで使用可能なフィルター条件
 
 各フィルター レイヤーで使用できるフィルター条件は次のとおりです。
 

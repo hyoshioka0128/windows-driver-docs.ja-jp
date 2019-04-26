@@ -1,6 +1,6 @@
 ---
-title: オブジェクトの ACL の決定
-description: オブジェクトの ACL の決定
+title: オブジェクトの ACL の判別
+description: オブジェクトの ACL の判別
 ms.assetid: 8dcd4f5a-1415-4a58-bfb1-fd3cbd58cc56
 keywords:
 - アクセス制御リスト (ACL)
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e43c405d40b0768ac348dc0aeed0be372a5529b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346308"
 ---
-# <a name="determining-the-acl-of-an-object"></a>オブジェクトの ACL の決定
+# <a name="determining-the-acl-of-an-object"></a>オブジェクトの ACL の判別
 
 
 ## <span id="ddk_determining_the_acl_of_an_object_dbg"></span><span id="DDK_DETERMINING_THE_ACL_OF_AN_OBJECT_DBG"></span>

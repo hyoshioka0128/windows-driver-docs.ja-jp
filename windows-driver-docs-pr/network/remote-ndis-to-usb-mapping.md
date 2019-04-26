@@ -1,6 +1,6 @@
 ---
-title: リモートの NDIS と USB のマッピング
-description: リモートの NDIS と USB のマッピング
+title: リモート NDIS と USB のマッピング
+description: リモート NDIS と USB のマッピング
 ms.assetid: 6dcebd63-dce9-47a9-a19c-52f8dab63202
 keywords:
 - USB の WDK ネットワーク
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c5f592ac85288c8c45303189828372e0f7e75b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343190"
 ---
-# <a name="remote-ndis-to-usb-mapping"></a>リモートの NDIS と USB のマッピング
+# <a name="remote-ndis-to-usb-mapping"></a>リモート NDIS と USB のマッピング
 
 
 

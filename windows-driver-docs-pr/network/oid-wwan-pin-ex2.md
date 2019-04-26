@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 126f8a38903e477bffe60b07086d038050518124
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354579"
 ---
 # <a name="oidwwanpinex2"></a>OID_WWAN_PIN_EX2
 
@@ -34,7 +34,7 @@ OID_WWAN_PIN_EX2 を設定または暗証番号 (Pin) に関連する拡張情�
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10、バージョンが 1903 |
+| バージョン | Windows 10 バージョン 1903 |
 | Header | Ntddndis.h (include Ndis.h) |
 
 ## <a name="see-also"></a>関連項目

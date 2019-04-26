@@ -1,6 +1,6 @@
 ---
-title: GDL と GPD 前処理の違い
-description: GDL と GPD 前処理の違い
+title: GDL 前処理と GPD 前処理の違い
+description: GDL 前処理と GPD 前処理の違い
 ms.assetid: 0ca79e85-1697-4f8d-b534-fe24748aaf5b
 keywords:
 - GPD ファイル エントリ WDK Unidrv、プリプロセッサ ディレクティブ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 656b294f610e4e65fc03c1cf29da6fafbd8df319
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342876"
 ---
-# <a name="differences-between-gdl-and-gpd-preprocessing"></a>GDL と GPD 前処理の違い
+# <a name="differences-between-gdl-and-gpd-preprocessing"></a>GDL 前処理と GPD 前処理の違い
 
 
 GPD 実装では存在しなかった GDL には、次の 4 つの新しいプリプロセッサ ディレクティブがあります。**\#プリコンパイル済み**、  **\#UndefinePrefix**、  **\#EnablePPDirective**、および **\#DisablePPDirective**します。

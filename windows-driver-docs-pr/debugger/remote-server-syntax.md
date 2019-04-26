@@ -1,5 +1,5 @@
 ---
-title: リモート サーバーの構文
+title: Remote サーバーの構文
 description: サーバー側のリモート ツールを開始するには、コマンドラインで、次の構文を使用します。
 ms.assetid: fecc9f43-6946-4d99-840b-a85c75ac397c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 93fa605ad436efbf676756cdd871888f1c198045
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353505"
 ---
-# <a name="remote-server-syntax"></a>リモート サーバーの構文
+# <a name="remote-server-syntax"></a>Remote サーバーの構文
 
 
 サーバー側のリモート ツールを開始するには、コマンドラインで、次の構文を使用します。
@@ -59,18 +59,18 @@ remote /s Command SessionName [/f Color] [/b] [/u User [/u User...]] [/ud User [
 ユーザーまたはグループの名前を示す\[*ドメイン* | *コンピューター*\]\\{*ユーザー*  | *グループ*} の形式。 ローカル コンピューターのユーザーまたはグループを指定する場合は、コンピューター名を省略します。
 
 <span id="________v______"></span><span id="________V______"></span> **/v**   
-セッションは、表示します。 詳細については、[表示セッション](remote-tool-concepts.md#visible-session)を参照してください。
+セッションは、表示します。 詳細については、次を参照してください。[表示セッション](remote-tool-concepts.md#visible-session)します。
 
 既定では、デバッガー セッションのみが表示され、セッションは、の値、*コマンド*パラメーターに含める単語**kd**、 **dbg**、 **remoteds**、 **ntsd**、または**cdb**。 そうしないと、セッションは表示されません。
 
 <span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-リモート デバッガー セッションは、見えなくなります。 詳細については、[表示セッション](remote-tool-concepts.md#visible-session)を参照してください。
+リモート デバッガー セッションは、見えなくなります。 詳細については、次を参照してください。[表示セッション](remote-tool-concepts.md#visible-session)します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
 *コマンド*と*SessionName*構文行に示されている順序でパラメーターを表示する必要があります。
 
-リモート セッションを終了するには、次のように入力します。  <strong>@k</strong>します。 詳細については、[リモート セッションのコマンド](remote-session-commands.md)を参照してください。
+リモート セッションを終了するには、次のように入力します。  <strong>@k</strong>します。 詳細については、次を参照してください。[リモート セッションのコマンド](remote-session-commands.md)します。
 
 リモート ツールでは、現在のユーザーには、参加するアクセス許可はありません。 セッションは作成されません。
 

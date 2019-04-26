@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a3d735b1c176b9f8d07e94c481bbbb427bd3dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343398"
 ---
 # <a name="mb-hang-detection"></a>MB ハング検出
 
@@ -33,7 +33,7 @@ ms.locfileid: "56581308"
 
 サービス層は、何かため問題がユーザーのレイヤーで検出されたときに、回復を開始するドライバーにヒントを提供します。`WWANSvc`が携帯ネットワーク アダプターの接続状態を管理するステート マシン。 これをサポートするには、リセット操作をトリガーするドライバーを使用するプライベート インターフェイスが定義されます。 ドライバーがステート マシンが有効かどうかを確認するまで、デバイス独自のコマンドが発信されるいくつかのケースがあります。 これらのコマンド タイムアウトの存在する場合は、復旧操作を開始するユーザー モードに戻す操作と通信することがなく、ドライバー自体からリセット/復旧がトリガーされます。 
 
-リセット操作をトリガーする UDE クライアント ドライバーが使用できるプライベート インターフェイスの詳細については、[MB デバイス ベースのリセットとリカバリ](mb-device-based-reset-and-recovery.md#reset-recovery-for-ude-devices)を参照してください。
+リセット操作をトリガーする UDE クライアント ドライバーが使用できるプライベート インターフェイスの詳細については、次を参照してください。 [MB デバイス ベースのリセットとリカバリ](mb-device-based-reset-and-recovery.md#reset-recovery-for-ude-devices)します。
 
 この例では[OID_WWAN_CONNECT](oid-wwan-connect.md)ハング検出のフローを進めるに例として。 
 
@@ -51,7 +51,7 @@ ms.locfileid: "56581308"
 10. この時点で、後に、FDO は突然削除および再 MBB デバイスを列挙するバスを呼び出します。 USB の場合は、基になるバス、FDO はデバイスをリセットする適切な関数を呼び出します。 
 11. UEFI では、適切な ACPI メソッドが定義されている、FLDR または PLDR のいずれかをトリガーするされます。
 
-FLDR と PLDR の詳細については、[MB デバイス ベースのリセットとリカバリ](mb-device-based-reset-and-recovery.md#device-based-resets)を参照してください。
+FLDR と PLDR の詳細については、次を参照してください。 [MB デバイス ベースのリセットとリカバリ](mb-device-based-reset-and-recovery.md#device-based-resets)します。
 
 ## <a name="reset-surprise-removal"></a>(突然削除) のリセットします。
 

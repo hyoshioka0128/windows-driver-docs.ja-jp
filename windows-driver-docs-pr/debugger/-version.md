@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2353c12fe18e72756c46d75f9ea12f3bab8ae788
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341777"
 ---
 # <a name="version"></a>!version
 
@@ -40,7 +40,7 @@ ms.locfileid: "56580352"
 
 この拡張機能は、ほとんどの拡張 Dll で使用できます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 拡張 DLL のバージョンがデバッガーのバージョンが一致しない場合は、エラー メッセージが表示されます。

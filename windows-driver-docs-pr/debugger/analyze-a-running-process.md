@@ -1,5 +1,5 @@
 ---
-title: 実行中のプロセスを分析します。
+title: 実行プロセスの分析
 description: 記録および分析の実行中のプロセスでは、ヒープ メモリの割り当てには、次のコマンドを使用します。 この分析は、スタック トレースについて説明します。
 ms.assetid: 65a8b510-f5f1-4622-87ff-b44d5855787d
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0abc7873df21e5fa570ddf7395257d21cf141dd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354999"
 ---
-# <a name="analyze-a-running-process"></a>実行中のプロセスを分析します。
+# <a name="analyze-a-running-process"></a>実行プロセスの分析
 
 
 記録および分析の実行中のプロセスでは、ヒープ メモリの割り当てには、次のコマンドを使用します。 この分析は、スタック トレースについて説明します。

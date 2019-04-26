@@ -5,11 +5,11 @@ ms.assetid: b5533962-ea42-416e-bbd8-ce9dce1a9a40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb842736555a1b824dcefd98ee0bd1590179cba5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344293"
 ---
 # <a name="packageidentity"></a>PackageIdentity
 
@@ -37,7 +37,7 @@ PackageIdentity 要素には、ユーザーはデバイスをプラグインと�
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -46,13 +46,13 @@ PackageIdentity 要素には、ユーザーはデバイスをプラグインと�
 <tr class="odd">
 <td><p>名前</p></td>
 <td><p>tns:PackageNameType</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>この要素は、「解説」で説明されている、アプリ マニフェストの Identity 要素の Name 属性からコピーします。</p></td>
 </tr>
 <tr class="even">
-<td><p>パブリッシャー</p></td>
+<td><p>発行元</p></td>
 <td><p>tns:PublisherType</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>この要素は、「解説」で説明されている、アプリ マニフェストの Identity 要素の Publisher 属性からコピーします。</p></td>
 </tr>
 </tbody>

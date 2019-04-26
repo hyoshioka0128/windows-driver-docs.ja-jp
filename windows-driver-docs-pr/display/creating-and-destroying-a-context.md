@@ -1,6 +1,6 @@
 ---
-title: 作成して、コンテキストを破棄します。
-description: 作成して、コンテキストを破棄します。
+title: コンテキストの作成と破棄
+description: コンテキストの作成と破棄
 ms.assetid: 31462b0a-ed06-4138-ab91-7ec98bc5ff14
 keywords:
 - WDK の Direct3D のコンテキストを作成します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1e824842c66c6dd67493c887760733651c4c5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346910"
 ---
-# <a name="creating-and-destroying-a-context"></a>作成して、コンテキストを破棄します。
+# <a name="creating-and-destroying-a-context"></a>コンテキストの作成と破棄
 
 
 ## <span id="ddk_creating_and_destroying_a_context_gg"></span><span id="DDK_CREATING_AND_DESTROYING_A_CONTEXT_GG"></span>

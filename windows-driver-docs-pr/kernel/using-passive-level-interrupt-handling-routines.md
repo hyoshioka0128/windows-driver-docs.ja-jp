@@ -5,11 +5,11 @@ ms.assetid: 122BDE14-1552-4F7B-88D3-030423713E00
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7359f2764e46f3def32118848f04a2483590fc0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354204"
 ---
 # <a name="using-passive-level-interrupt-service-routines"></a>パッシブ レベル割り込みサービス ルーチンの使用
 
@@ -45,7 +45,7 @@ I²C に接続されたセンサー デバイスの登録にアクセスする�
 
 この例ではパッシブ レベル ISR は、ISR が中断する必要のデバイスを I/O 要求を送信すると、I²C バス コント ローラーがオフの場合、時間が長くなるのブロックがあります。 この場合、コント ローラーは、バス経由でデータを転送に前に、D0 電源の状態への移行を完了する必要があります。
 
-PCI などのバスとは異なり、I²C bus は、この例では、周辺機器からすると、プロセッサの割り込み要求を伝達するためには意味 bus 固有を提供します。 代わりに、センサー デバイスは、割り込みをプロセッサの割り込み要求をリレーし、GPIO コント ローラーのデバイスで pin を通知する場合があります。 詳細については、[GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)を参照してください。
+PCI などのバスとは異なり、I²C bus は、この例では、周辺機器からすると、プロセッサの割り込み要求を伝達するためには意味 bus 固有を提供します。 代わりに、センサー デバイスは、割り込みをプロセッサの割り込み要求をリレーし、GPIO コント ローラーのデバイスで pin を通知する場合があります。 詳細については、次を参照してください。 [GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)します。
 
 通常、GPIO コント ローラーのハードウェア レジスタはメモリ マップし、カーネルの割り込みのトラップ ハンドラーで DIRQL サービスにアクセスできます。 センサー デバイスでは、割り込みが発生するときに、ハンドラーは GPIO コント ローラーのレジスタに割り込みビットを操作することによって、割り込みを無音する必要があります。
 
@@ -60,7 +60,7 @@ Edge によってトリガーされる、割り込みは、カーネルのトラ
 
 まれなケースでは、割り込み処理パッシブ レベル ISR は、割り込みのすべての処理を実行できるし、ワーカーのルーチンは必要ないことはあまり必要があります。
 
-KMDF ドライバーでパッシブ レベル isr を特定の使用方法の詳細については、[パッシブ レベルの中断をサポートしている](https://msdn.microsoft.com/library/windows/hardware/hh451035)を参照してください。
+KMDF ドライバーでパッシブ レベル isr を特定の使用方法の詳細については、次を参照してください。[パッシブ レベルの中断をサポートしている](https://msdn.microsoft.com/library/windows/hardware/hh451035)します。
 
  
 

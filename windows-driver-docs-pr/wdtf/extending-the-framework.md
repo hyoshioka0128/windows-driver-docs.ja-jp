@@ -1,6 +1,6 @@
 ---
-title: フレームワークを拡張します。
-description: フレームワークを拡張します。
+title: フレームワークの拡張
+description: フレームワークの拡張
 ms.assetid: 37a0fd70-0c88-414f-b4e3-afd641f1c667
 keywords:
 - Windows デバイスのテスト フレームワーク WDK、WDTF を拡張します。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad1ceebb1450740034b8b80d21462843c1f606d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341206"
 ---
-# <a name="extending-the-framework"></a>フレームワークを拡張します。
+# <a name="extending-the-framework"></a>フレームワークの拡張
 
 
 WDTF は拡張性が構築されています。 性は、次の図に示すように 3 つの異なる方法で可能性があります。
@@ -33,7 +33,7 @@ WDTF は拡張性が構築されています。 性は、次の図に示すよ�
 
 -   **既存の実装** [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)**と同様に、** SimpleIO します。 このメソッドは、黄色が上記の図に表示されます。 インターフェイスが機能する対象の種類を拡張する既存のアクション インターフェイスを実装できます。 デバイスの種類に、SimpleIO を実装する場合、デバイスの I/O の検証を実行する WDTF ベースの既存のシナリオのすべてを自動的に開始されます。
 
-    WDTF は、SimpleIO の実装で支援するために Microsoft Visual Studio テンプレートを提供します。 詳細については、[WDTF SimpleIO がデバイスのプラグインを記述](writing-a-wdtf-simpleio-plug-in-for-your-device.md)を参照してください。
+    WDTF は、SimpleIO の実装で支援するために Microsoft Visual Studio テンプレートを提供します。 詳細については、次を参照してください。 [WDTF SimpleIO がデバイスのプラグインを記述](writing-a-wdtf-simpleio-plug-in-for-your-device.md)します。
 
 -   **作成 (および実装し)、新しい** [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)します。 このメソッドは、上記の図で赤色で表示されます。 WDTF を提供する機能が、コンポーネント ベースのシナリオを構築するのに十分でない場合は、新しいコンポーネントを作成する WDTF を使用できます。
 

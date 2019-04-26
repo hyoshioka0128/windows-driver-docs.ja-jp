@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33aa59f884e99a17349c2c73a66dd404553de677
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344414"
 ---
 # <a name="storage-volumes"></a>ストレージ ボリューム
 
@@ -57,7 +57,7 @@ A*記憶域ボリューム*、または*ストレージ デバイス オブジ�
 
 -   ドライブ文字など、ボリュームの推奨される永続的なシンボリック リンクの名前 (たとえば、"\\\dosdevices\z\\d:")
 
-記憶装置ドライバーとマウント マネージャ間の相互作用の詳細については、[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff567603)を参照してください。
+記憶装置ドライバーとマウント マネージャ間の相互作用の詳細については、次を参照してください。[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff567603)します。
 
  
 

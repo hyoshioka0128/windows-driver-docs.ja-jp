@@ -1,6 +1,6 @@
 ---
-title: Web ページを印刷
-description: Web ページを印刷
+title: 印刷 Web ページを表示する
+description: 印刷 Web ページを表示する
 ms.assetid: c2cf782c-0f53-47e1-8c5e-1e2aa87613c4
 keywords:
 - インターネット WDK の印刷、印刷の Web ページを表示します。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 706b189efd5834df0f3246d32407ff65de6b8292
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345287"
 ---
-# <a name="viewing-print-web-pages"></a>Web ページを印刷
+# <a name="viewing-print-web-pages"></a>印刷 Web ページを表示する
 
 
 

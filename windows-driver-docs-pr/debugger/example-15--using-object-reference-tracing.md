@@ -5,16 +5,16 @@ ms.assetid: 3c6102e6-4dac-4d90-ab8f-162dd6d8adf9
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0730f0242c1011826bfbf037f1879b81a8db2823
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347758"
 ---
-# <a name="example-15-using-object-reference-tracing"></a>15 の使用例:オブジェクト参照のトレースを使用します。
+# <a name="example-15-using-object-reference-tracing"></a>例 15:オブジェクト参照トレースを使用する
 
 
-オブジェクト参照のトレースは、オブジェクトが参照されているか、逆参照するときに、シーケンシャルなスタック トレースを記録する Windows 機能です。 クラッシュまたはメモリ リークにつながる可能性があるオブジェクトの処理でエラーを検出するために設計されています。 これらのエラーの一部が一貫して表示されないため、検出を困難にします。 詳細については、[オブジェクト参照トレース](object-reference-tracing.md)を参照してください。
+オブジェクト参照のトレースは、オブジェクトが参照されているか、逆参照するときに、シーケンシャルなスタック トレースを記録する Windows 機能です。 クラッシュまたはメモリ リークにつながる可能性があるオブジェクトの処理でエラーを検出するために設計されています。 これらのエラーの一部が一貫して表示されないため、検出を困難にします。 詳細については、次を参照してください。[オブジェクト参照トレース](object-reference-tracing.md)します。
 
 オブジェクト参照のトレースを構成を使用して、**グローバル フラグ** ダイアログ ボックスまたはコマンド プロンプトでします。 次の例では、コマンド プロンプトを使用します。 使用方法について、**グローバル フラグ**オブジェクト参照のトレースを構成するを参照してください ダイアログ ボックス[オブジェクト参照トレースの構成](configuring-object-reference-tracing.md)します。
 

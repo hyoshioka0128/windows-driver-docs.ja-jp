@@ -1,19 +1,19 @@
 ---
-title: レジストリ値を設定してデバッグ トレースを有効にする NDIS
-description: レジストリ値を設定してデバッグ トレースを有効にする NDIS
+title: レジストリ値を設定して NDIS のデバッグのトレースを有効にする
+description: レジストリ値を設定して NDIS のデバッグのトレースを有効にする
 ms.assetid: ae01f546-0636-4e67-bfc7-229c3cc24b27
 keywords:
 - NDIS デバッグ、デバッグ、トレース、レジストリ値の設定
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d06839b09b7af4aa5c290e9d5628e7ce30a91c7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340595"
 ---
-# <a name="enabling-ndis-debug-tracing-by-setting-registry-values"></a>レジストリ値を設定してデバッグ トレースを有効にする NDIS
+# <a name="enabling-ndis-debug-tracing-by-setting-registry-values"></a>レジストリ値を設定して NDIS のデバッグのトレースを有効にする
 
 
 レジストリを編集して、さまざまなレベルのさまざまな NDIS コンポーネントでのデバッグ トレースを有効にできます。 通常、次のエントリと値を追加する必要があります、 **HKLM\\システム\\CurrentControlSet\\サービス\\NDIS\\パラメーター**レジストリ キー。
@@ -40,9 +40,9 @@ NDIS ドライバーが、デバッガーを自動的に中断するかどうか
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">レベル</th>
+<th align="left">Level</th>
 <th align="left">説明</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +89,7 @@ NDIS ドライバーが、デバッガーを自動的に中断するかどうか
 <tr class="header">
 <th align="left">Component</th>
 <th align="left">説明</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

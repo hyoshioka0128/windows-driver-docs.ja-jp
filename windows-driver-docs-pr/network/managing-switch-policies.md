@@ -5,16 +5,16 @@ ms.assetid: F2261CA6-2D7A-4499-82F9-7E2D7C9C908D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3645f6da02e6d0d1db8a939ea616b452d4531b0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343514"
 ---
 # <a name="managing-switch-policies"></a>スイッチ ポリシーの管理
 
 
-HYPER-V 拡張可能スイッチのフィルター処理および転送拡張機能は、カスタムのスイッチのプロパティのプロパティをプロビジョニングできます。 プロビジョニング完了すると、これらの拡張機能は、拡張可能スイッチのイングレス データ パス取得したパケットをフィルター処理するときに、ポリシーを適用できます。 これらのポリシーの詳細については、[スイッチ ポリシー](switch-policies.md)を参照してください。
+HYPER-V 拡張可能スイッチのフィルター処理および転送拡張機能は、カスタムのスイッチのプロパティのプロパティをプロビジョニングできます。 プロビジョニング完了すると、これらの拡張機能は、拡張可能スイッチのイングレス データ パス取得したパケットをフィルター処理するときに、ポリシーを適用できます。 これらのポリシーの詳細については、次を参照してください。[スイッチ ポリシー](switch-policies.md)します。
 
 HYPER-V 拡張可能スイッチのインターフェイスでは、次のオブジェクト識別子 (Oid) を使用して、フィルター処理と転送スイッチのカスタム ポリシーのプロパティを持つ拡張機能をプロビジョニングします。
 

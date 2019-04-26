@@ -1,6 +1,6 @@
 ---
-title: DispatchCreate と DispatchClose ルーチンを分離します。
-description: DispatchCreate と DispatchClose ルーチンを分離します。
+title: DispatchCreate ルーチンと DispatchClose ルーチンの分離
+description: DispatchCreate ルーチンと DispatchClose ルーチンの分離
 ms.assetid: b2e05555-c70d-4293-8622-51eea92091b1
 keywords:
 - ディスパッチ ルーチンの WDK カーネル、DispatchCreate ルーチン
@@ -14,19 +14,19 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cf1686cf8e32b28bf29b5987307440f8a883d8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342650"
 ---
-# <a name="separate-dispatchcreate-and-dispatchclose-routines"></a>DispatchCreate と DispatchClose ルーチンを分離します。
+# <a name="separate-dispatchcreate-and-dispatchclose-routines"></a>DispatchCreate ルーチンと DispatchClose ルーチンの分離
 
 
 
 
 
-ドライバーの*ディスパッチ*ルーチン[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)と[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)要求可能性があります何もしない複数の完全な入力の状態が IRP\_成功します。 詳細については、[Irp の完了](completing-irps.md)を参照してください。
+ドライバーの*ディスパッチ*ルーチン[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)と[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)要求可能性があります何もしない複数の完全な入力の状態が IRP\_成功します。 詳細については、次を参照してください。 [Irp の完了](completing-irps.md)します。
 
 別のドライバーの*ディスパッチ*ルーチン**IRP\_MJ\_作成**と**IRP\_MJ\_閉じる**要求基になるデバイス ドライバーによって、または基になるデバイスに複数の作業を行う可能性があります。 次に、例をいくつか示します。
 

@@ -5,11 +5,11 @@ ms.assetid: ED809122-5938-4087-AAB8-0D3EB6DB1092
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 40ad2406e83bc1b02a7c74235f141acb9a060429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341138"
 ---
 # <a name="default-rule-set-ndis"></a>既定の規則セット (NDIS)
 
@@ -28,13 +28,13 @@ ms.locfileid: "56581834"
 
 2.  をクリックして、**ルール**タブ。**規則セット**、**既定**。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Default.sdv**で、 **/check**オプション。 以下に例を示します。
+    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Default.sdv**で、 **/check**オプション。 次に、例を示します。
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Default.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

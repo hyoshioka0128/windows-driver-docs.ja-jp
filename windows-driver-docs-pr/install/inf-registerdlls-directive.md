@@ -13,16 +13,16 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89ec7c7fe0ad0ac159c2cbfad20016c06b3895f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353081"
 ---
 # <a name="inf-registerdlls-directive"></a>INF RegisterDlls ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 使用することができます、 [Reg2inf ツール](../devtest/reg2inf.md)既存を変換する[INF RegisterDlls ディレクティブ](../install/inf-registerdlls-directive.md)に[INF AddReg ディレクティブ](../install/inf-addreg-directive.md)ユニバーサル ドライバー パッケージを作成するためにします。  詳細については、[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)を参照してください。
+**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 使用することができます、 [Reg2inf ツール](../devtest/reg2inf.md)既存を変換する[INF RegisterDlls ディレクティブ](../install/inf-registerdlls-directive.md)に[INF AddReg ディレクティブ](../install/inf-addreg-directive.md)ユニバーサル ドライバー パッケージを作成するためにします。  詳細については、次を参照してください。[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
 
 A **RegisterDlls**ディレクティブが OLE コントロールは、自己登録を必要とするファイルを指定するために使用する 1 つまたは複数の INF セクションを参照します。
 
@@ -46,7 +46,7 @@ A*レジスタ-section dll*それぞれ別々 の行に任意の数のエント�
 
 
 <a href="" id="dirid"></a>*Dirid*  
-登録するファイルの変換先のディレクトリ ID を指定します。 詳細については、[を使用して Dirids](using-dirids.md)を参照してください。
+登録するファイルの変換先のディレクトリ ID を指定します。 詳細については、次を参照してください。[を使用して Dirids](using-dirids.md)します。
 
 <a href="" id="subdir"></a>*subdir*  
 登録するファイルを現在のディレクトリに対する相対のディレクトリ パスを指定します。 指定されていない場合、ファイルは、現在のディレクトリです。
@@ -74,7 +74,7 @@ OLE コントロールで実行する登録操作を示します。 次のフラ
 <a name="remarks"></a>コメント
 -------
 
-各*レジスタ-section dll*名は、INF ファイルに一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各*レジスタ-section dll*名は、INF ファイルに一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 次の規則の使用に適用されます、 **RegisterDlls**ディレクティブをデバイスのインストール。
 

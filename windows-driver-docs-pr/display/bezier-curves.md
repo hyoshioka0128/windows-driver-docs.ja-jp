@@ -1,6 +1,6 @@
 ---
-title: ベジエ曲線
-description: ベジエ曲線
+title: ベジェ曲線
+description: ベジェ曲線
 ms.assetid: 322ff79b-e5b8-4247-99eb-1aa3779216ef
 keywords:
 - GDI WDK Windows 2000 の表示、曲線、ベジエ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 156092e5ea14faa556a31f5bad0e70a1ded45f5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346967"
 ---
-# <a name="bezier-curves"></a>ベジエ曲線
+# <a name="bezier-curves"></a>ベジェ曲線
 
 
 ## <span id="ddk_bezier_curves_gg"></span><span id="DDK_BEZIER_CURVES_GG"></span>

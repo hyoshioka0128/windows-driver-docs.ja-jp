@@ -1,24 +1,24 @@
 ---
-title: ミットで静電容量方式タッチ テスト
+title: MITT の静電容量式タッチ テスト
 description: ミット ソフトウェア パッケージの静電容量方式タッチ テストには、MCATT (Microsoft 静電容量方式のアプリケーション テスト ツール) が必要です。
 ms.assetid: 86E4D489-7DC3-4765-85BE-3706B3CA6C0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e98f80fa90859a2ca62803a0611608c4d0d95c2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348154"
 ---
-# <a name="capacitive-touch-tests-in-mitt"></a>ミットで静電容量方式タッチ テスト
+# <a name="capacitive-touch-tests-in-mitt"></a>MITT の静電容量式タッチ テスト
 
 
 **最終更新日**
 
 -   2015 年 1 月
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows 8.1
 

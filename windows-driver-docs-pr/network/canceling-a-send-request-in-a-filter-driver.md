@@ -1,19 +1,19 @@
 ---
-title: フィルター ドライバーでは、送信要求を取り消す
-description: フィルター ドライバーでは、送信要求を取り消す
+title: フィルター ドライバーでの送信要求のキャンセル
+description: フィルター ドライバーでの送信要求のキャンセル
 ms.assetid: afa9c8d3-b30b-4009-8428-d31719885154
 keywords:
 - 送信操作の WDK ネットワー キングのキャンセル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dfeda07f9ef8a4178781f2c8a9fb18fc3ac98e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352036"
 ---
-# <a name="canceling-a-send-request-in-a-filter-driver"></a>フィルター ドライバーでは、送信要求を取り消す
+# <a name="canceling-a-send-request-in-a-filter-driver"></a>フィルター ドライバーでの送信要求のキャンセル
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: f5778b36-4f84-4cfe-965c-36af225ac0dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b72b67507864b2177cd42ae43c318da390cf0ea7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343373"
 ---
 # <a name="mb-driver-model-versioning"></a>MB ドライバー モデルのバージョン管理
 
@@ -24,7 +24,7 @@ MB ドライバー モデルのバージョン管理は、モデルのドライ�
 
  
 
-このドキュメントでは、MB ドライバー モデルの Windows 8 のリリースについて説明します。 ドライバー モデルのバージョンはバージョン 2.0 にインクリメントされていた。 一部の OID リビジョンは引き続きリビジョン 2 に更新される一部のリビジョン番号 1 をします。 それぞれの Oid を使用するには、どのリビジョンに関する詳細については、[MB のデータ モデル](mb-data-model.md)を参照してください。
+このドキュメントでは、MB ドライバー モデルの Windows 8 のリリースについて説明します。 ドライバー モデルのバージョンはバージョン 2.0 にインクリメントされていた。 一部の OID リビジョンは引き続きリビジョン 2 に更新される一部のリビジョン番号 1 をします。 それぞれの Oid を使用するには、どのリビジョンに関する詳細については、次を参照してください。 [MB のデータ モデル](mb-data-model.md)します。
 
 このドキュメントではため、モデルのドライバーのバージョンと個々 のリビジョンを OID を起動リビジョン番号が 1 MB、ドライバー モデルの最初のリリースについて説明します。
 

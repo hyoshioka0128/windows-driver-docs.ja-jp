@@ -1,17 +1,17 @@
 ---
-title: ディスパッチ ルーチンに Irp の完了
-description: ディスパッチ ルーチンに Irp の完了
+title: ディスパッチ ルーチン内での IRP の完了
+description: ディスパッチ ルーチン内での IRP の完了
 ms.assetid: 279913cb-90f1-411f-a23a-38af4c99638d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6aa0c5de8982fdc9ef736ca5ecb59e9d7bd00cc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343684"
 ---
-# <a name="completing-irps-in-dispatch-routines"></a>ディスパッチ ルーチンに Irp の完了
+# <a name="completing-irps-in-dispatch-routines"></a>ディスパッチ ルーチン内での IRP の完了
 
 
 

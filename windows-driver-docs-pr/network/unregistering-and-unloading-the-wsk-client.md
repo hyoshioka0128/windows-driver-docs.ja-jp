@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0df3b4cbc19b082553bec52093ba7f201c77329
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340916"
 ---
 # <a name="unregistering-and-unloading-the-wsk-client"></a>WSK クライアントの登録解除とアンロード
 
@@ -23,7 +23,7 @@ ms.locfileid: "57350152"
 
 NMR 呼び出し WSK アプリケーションの*ClientDetachProvider*コールバック関数を 1 回だけです。 WSK アプリケーションと WSK サブシステムの両方が、NMR で登録解除、NMR 呼び出します WSK アプリケーションの*ClientDetachProvider*コールバック関数の最初の登録解除が開始された後のみです。
 
-WSK WSK 関数のいずれかに進行中の呼び出しがない場合\_プロバイダー\_、NMR WSK アプリケーションの呼び出し時にディスパッチ*ClientDetachProvider*コールバック関数、WSK アプリケーション状態を返す必要があります\_成功からその*ClientDetachProvider*コールバック関数。 それ以外の場合、WSK アプリケーションは状態を返す必要があります\_PENDING からその*ClientDetachProvider*コールバック関数、およびそれを呼び出す必要があります、 [ **NmrClientDetachProviderComplete**](https://msdn.microsoft.com/library/windows/hardware/ff568772)関数結局、WSK を実行中の呼び出しの関数の WSK\_プロバイダー\_ディスパッチが返されます。 WSK アプリケーションが呼び出す、 **NmrClientDetachProviderComplete** WSK サブシステムから、アプリケーションがデタッチされている NMR に通知します。 ただし、WSK サブシステムでは、すべての開いているソケットが WSK アプリケーションによって閉じられるまで完全に完了するデタッチ プロシージャは許可されません。 詳細については、[ソケットを閉じて](closing-a-socket.md)を参照してください。
+WSK WSK 関数のいずれかに進行中の呼び出しがない場合\_プロバイダー\_、NMR WSK アプリケーションの呼び出し時にディスパッチ*ClientDetachProvider*コールバック関数、WSK アプリケーション状態を返す必要があります\_成功からその*ClientDetachProvider*コールバック関数。 それ以外の場合、WSK アプリケーションは状態を返す必要があります\_PENDING からその*ClientDetachProvider*コールバック関数、およびそれを呼び出す必要があります、 [ **NmrClientDetachProviderComplete**](https://msdn.microsoft.com/library/windows/hardware/ff568772)関数結局、WSK を実行中の呼び出しの関数の WSK\_プロバイダー\_ディスパッチが返されます。 WSK アプリケーションが呼び出す、 **NmrClientDetachProviderComplete** WSK サブシステムから、アプリケーションがデタッチされている NMR に通知します。 ただし、WSK サブシステムでは、すべての開いているソケットが WSK アプリケーションによって閉じられるまで完全に完了するデタッチ プロシージャは許可されません。 詳細については、次を参照してください。[ソケットを閉じて](closing-a-socket.md)します。
 
 WSK アプリケーションは、NMR を通知がデタッチが完了すると後の状態を返すことによって、\_から成功の*ClientDetachProvider*コールバック関数または呼び出すことによって、 **NmrClientDetachProviderComplete**関数、WSK で、アプリケーションは WSK 関数のいずれかにさらに任意呼び出しを行う必要がない\_プロバイダー\_ディスパッチします。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f0c75886d6b984d0d794f3ed4087d09302e3c3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344721"
 ---
 # <a name="example-12-starting-an-nt-kernel-logger-session"></a>例 12:NT カーネル ロガー セッションの開始
 
@@ -42,7 +42,7 @@ tracelog -start -rt
 
 バッファーとタイマー精度をカスタマイズするパラメーターに加え、リアルタイムのトレース セッションのカスタマイズされた NT Kernel Logger のパラメーターを使用することもできます。
 
-フォーマットして、このセッションからのトレース メッセージを表示するには、Tracefmt を使用します。 次のコマンドでは、コマンド プロンプト ウィンドウで、NT Kernel Logger セッションからのトレース メッセージが表示されます。 詳細については、[Tracefmt](tracefmt.md)を参照してください。
+フォーマットして、このセッションからのトレース メッセージを表示するには、Tracefmt を使用します。 次のコマンドでは、コマンド プロンプト ウィンドウで、NT Kernel Logger セッションからのトレース メッセージが表示されます。 詳細については、次を参照してください。 [Tracefmt](tracefmt.md)します。
 
 ```
 tracefmt -rt -display

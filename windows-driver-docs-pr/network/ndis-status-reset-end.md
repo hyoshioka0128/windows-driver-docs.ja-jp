@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_RESET_END ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c6c344047bde049e87f03fd2edcc02590703a0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353161"
 ---
 # <a name="ndisstatusresetend"></a>NDIS\_状態\_リセット\_終了
 
@@ -29,7 +29,7 @@ NDIS ミニポート ドライバーでは、リセット操作を開始、通�
 
 上位フィルターまたは中間ドライバーを受け取た後、NDIS\_状態\_リセット\_終了ステータスを示す値、データを送信して、ドライバーに関連する OID 要求を行う、ドライバーを再開できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

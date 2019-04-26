@@ -1,17 +1,17 @@
 ---
-title: DXGI DDI をサポートしています。
-description: DXGI DDI をサポートしています。
+title: DXGI DDI のサポート
+description: DXGI DDI のサポート
 ms.assetid: 3a49d7cb-984f-4e4f-a549-5c0442e1c45a
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9accff4e1d95f836bd937c0328216a471da998ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350114"
 ---
-# <a name="supporting-the-dxgi-ddi"></a>DXGI DDI をサポートしています。
+# <a name="supporting-the-dxgi-ddi"></a>DXGI DDI のサポート
 
 
 Microsoft DirectX Graphics Infrastructure (DXGI) のデバイス ドライバー インターフェイス (DDI) をサポートするために、ユーザー モードのディスプレイ ドライバーが Dxgiddi.h ヘッダー ファイルを含める必要があります。 Dxgiddi.h は、アプリケーション レベルと共有されている定義を含む Dxgitype.h ヘッダー ファイルも含まれています。 DXGI を構築します。 Dxgiddi.h では、いくつかのユーザー モード ディスプレイ ドライバーのエントリ ポイントと、ドライバーは、カーネル (ディスプレイのミニポート ドライバーを含む) との通信に使用できる DXGI コールバック関数を定義します。

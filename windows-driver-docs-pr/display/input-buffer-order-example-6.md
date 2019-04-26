@@ -5,11 +5,11 @@ ms.assetid: e94ca05a-5089-460a-bf71-ee6d8cf52f17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c60fba42711eab5e330641883c50582846aa9033
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350242"
 ---
 # <a name="input-buffer-order-example-6"></a>入力バッファー順序の例 6
 
@@ -39,7 +39,7 @@ ms.locfileid: "56582404"
 <tbody>
 <tr class="odd">
 <td align="left"><p>lpBufferInfo [0]</p></td>
-<td align="left"><p>保存先</p></td>
+<td align="left"><p>宛先</p></td>
 <td align="left"><p>T</p></td>
 <td align="left"></td>
 </tr>

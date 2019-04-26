@@ -5,18 +5,18 @@ ms.assetid: 232c4272-0bf0-4a4e-9560-3bceeca8a3e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6467f919247aa8b34e9df5b81eaf001e2965f6b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341156"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-ndis-drivers"></a>NDIS ドライバーの関数役割型を使用した関数の宣言
 
 
 SDV NDIS ドライバーの分析を有効にするには、NDIS の関数の役割の型宣言を使用して関数を宣言する必要があります。 関数のロールの種類は、Ndis.h で定義されます。
 
-関数のロールの種類とその対応するイベントのコールバック関数の一覧で、、[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)を参照してください。
+関数のロールの種類とその対応するイベントのコールバック関数の一覧で、次を参照してください。、[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)します。
 
 対応するロールの種類を指定することで、NDIS ドライバー内の各コールバック関数を宣言する必要があります。
 

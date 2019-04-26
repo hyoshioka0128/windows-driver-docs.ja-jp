@@ -1,6 +1,6 @@
 ---
-title: Storport で行う SCSI ポート ミニポート ドライバーの作業
-description: Storport で行う SCSI ポート ミニポート ドライバーの作業
+title: SCSI ポート ミニポート ドライバーを Storport で動作させる
+description: SCSI ポート ミニポート ドライバーを Storport で動作させる
 ms.assetid: d2e8daaf-47e2-4a6c-9992-517dc107d4bd
 keywords:
 - Storport ドライバー WDK、ミニポート ドライバーの SCSI ポート
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09711e8b3ca0bba7c2b2c40db8b1042b5c0e5977
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355574"
 ---
-# <a name="making-scsi-port-miniport-drivers-work-with-storport"></a>Storport で行う SCSI ポート ミニポート ドライバーの作業
+# <a name="making-scsi-port-miniport-drivers-work-with-storport"></a>SCSI ポート ミニポート ドライバーを Storport で動作させる
 
 
 ## <span id="ddk_making_scsi_port_miniport_drivers_work_with_storport_kg"></span><span id="DDK_MAKING_SCSI_PORT_MINIPORT_DRIVERS_WORK_WITH_STORPORT_KG"></span>

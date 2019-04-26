@@ -1,6 +1,6 @@
 ---
-title: 現在のヘッダー データ分割構成を取得します。
-description: 現在のヘッダー データ分割構成を取得します。
+title: 現在のヘッダー データの分割構成の取得
+description: 現在のヘッダー データの分割構成の取得
 ms.assetid: 62c5e362-4e19-465d-85a8-a8277cb46f5d
 keywords:
 - ヘッダー データの分割 WDK、構成
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee8134b50741203f7951ea8417f3d387e5ce480a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349898"
 ---
-# <a name="getting-the-current-header-data-split-configuration"></a>現在のヘッダー データ分割構成を取得します。
+# <a name="getting-the-current-header-data-split-configuration"></a>現在のヘッダー データの分割構成の取得
 
 
 

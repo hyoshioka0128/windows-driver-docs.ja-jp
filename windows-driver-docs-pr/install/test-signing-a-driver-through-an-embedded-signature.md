@@ -1,17 +1,17 @@
 ---
-title: テスト署名ドライバーは、埋め込みの署名
-description: テスト署名ドライバーは、埋め込みの署名
+title: 埋め込みの署名を使用したドライバーのテスト署名
+description: 埋め込みの署名を使用したドライバーのテスト署名
 ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 934e373a83a897d71b607c0996e4c482b0317223
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339569"
 ---
-# <a name="test-signing-a-driver-through-an-embedded-signature"></a>テスト署名ドライバーは、埋め込みの署名
+# <a name="test-signing-a-driver-through-an-embedded-signature"></a>埋め込みの署名を使用したドライバーのテスト署名
 
 
 符号付き[カタログ ファイル](catalog-files.md)を正しくインストールして、ほとんどを読み込むことが必要、[ドライバー パッケージ](driver-packages.md)します。 ただし、埋め込まれた署名可能性がありますも選択肢になります。 カタログ ファイルにデジタル署名を保存せずに、ドライバーのバイナリ イメージ ファイル自体にデジタル署名を追加するには埋め込まれた署名です。 その結果、ドライバーが埋め込みで署名されたドライバーのバイナリ イメージが変更されます。
@@ -26,7 +26,7 @@ ms.locfileid: "56535588"
 
 -   テスト署名 Toastpkg サンプルの 64 ビット バージョンのバイナリ ファイル、toaster.sys します。 WDK のインストール ディレクトリ内でこのファイルにある、 *src\\全般\\トースター\\toastpkg\\toastcd\\amd64*ディレクトリ。
 
--   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、[テスト証明書を作成する](creating-test-certificates.md)を参照してください。
+-   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
 
 -   タイムスタンプ時刻スタンプ機関 (TSA) 経由のデジタル署名。
 
@@ -53,9 +53,9 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 
 -   *amd64\\toaster.sys*埋め込まれた署名されるカーネル モード バイナリ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
+SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
 
-埋め込みの署名を使用して、ドライバーのテスト署名する方法の詳細については、[テスト署名ドライバー ファイルを](test-signing-a-driver-file.md)を参照してください。
+埋め込みの署名を使用して、ドライバーのテスト署名する方法の詳細については、次を参照してください。[テスト署名ドライバー ファイルを](test-signing-a-driver-file.md)します。
 
  
 

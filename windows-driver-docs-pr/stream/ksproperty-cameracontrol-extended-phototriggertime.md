@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a42aee278a9c178608c607987c050074a3aa534
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351820"
 ---
 # <a name="kspropertycameracontrolextendedphototriggertime"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOTRIGGERTIME
 
@@ -81,8 +81,8 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>メンバー</th>
-<th>Value</th>
+<th>Member</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tr class="even">
 <td>結果</td>
 <td><p>結果の最大フレーム レートを読み取ろうとしてエラー値。</p>
-<p>それ以外の場合、0 を返します。</p></td>
+<p>それ以外の場合は、0 に設定されます。</p></td>
 </tr>
 <tr class="odd">
 <td>機能</td>
@@ -121,7 +121,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 
 プロパティが設定されている場合、**フル**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)トリガーの時間値が含まれます。 トリガーの時刻が設定またはクリア操作フラグに基づいて。 ときに、フラグは、KSPROPERTY\_カメラ\_PHOTOTRIGGERTIME\_の値をクリア**KSCAMERA\_EXTENDEDPROP\_値**は使用されず、無視されます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>

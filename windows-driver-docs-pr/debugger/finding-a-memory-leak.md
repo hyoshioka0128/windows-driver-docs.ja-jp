@@ -1,6 +1,6 @@
 ---
-title: メモリ リークを検出
-description: メモリ リークを検出
+title: メモリ リークの検出
+description: メモリ リークの検出
 ms.assetid: 1227c5e8-d83b-4f27-aa69-6e54aebc3ad8
 keywords:
 - メモリ リーク
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c40c8ffec03de3610ddb26268a5f9f1bff4d698
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348332"
 ---
-# <a name="finding-a-memory-leak"></a>メモリ リークを検出
+# <a name="finding-a-memory-leak"></a>メモリ リークの検出
 
 
 ## <span id="ddk_finding_a_memory_leak_dbg"></span><span id="DDK_FINDING_A_MEMORY_LEAK_DBG"></span>

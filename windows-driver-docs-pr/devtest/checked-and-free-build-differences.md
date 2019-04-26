@@ -1,5 +1,5 @@
 ---
-title: Checked と無料のビルドの違い
+title: チェック ビルドと無料ビルドの違い
 description: 使用可能な無料 (リテール版) および (デバッグ) をチェックする NT ベースのオペレーティング システムの 2 つの異なるビルドがあります。 2 つの要素を結合する部分的なチェック ビルドと呼ばれる 3 番目のオプションがあります。
 ms.assetid: 43aebfdb-2605-485c-a3a4-93e03b33aeca
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b23da3179e4241544f0dd3d12c5ec2066ccd55c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343978"
 ---
-# <a name="checked-and-free-build-differences"></a>Checked と無料のビルドの違い
+# <a name="checked-and-free-build-differences"></a>チェック ビルドと無料ビルドの違い
 
 
 利用できる NT ベースのオペレーティング システムの 2 つの異なるビルドがある: (リテール版) を解放し、(デバッグ) をチェックします。 3 つ目のオプションがある*部分チェック ビルドと呼ばれる*、2 つの要素を結合します。
@@ -57,7 +57,7 @@ Microsoft Windows のチェック ビルドを特定して簡単にオペレー�
 ## <a name="where-to-find-a-checked-build-of-windows"></a>Windows のチェック ビルドの入手先
 
 
-ダウンロードおよび配布メディア チェック ビルドが含まれているが明確にラベル付けとして"Debug/checked Build"。 チェック ビルド ダウンロードには、オペレーティング システムのチェック済みバージョンと Hal、ドライバー、ファイル システム、および多くのユーザー モード コンポーネントの検証済みのバージョンが含まれています。 Checked と部分的なチェック ビルドの入手方法については、[チェック ビルドをインストールする](installing-the-checked-build.md)を参照してください。 便宜上、HAL およびカーネルのバージョン チェックは、Windows ドライバー キット (WDK for Windows Vista 以降) の/debug ディレクトリで提供されます。
+ダウンロードおよび配布メディア チェック ビルドが含まれているが明確にラベル付けとして"Debug/checked Build"。 チェック ビルド ダウンロードには、オペレーティング システムのチェック済みバージョンと Hal、ドライバー、ファイル システム、および多くのユーザー モード コンポーネントの検証済みのバージョンが含まれています。 Checked と部分的なチェック ビルドの入手方法については、次を参照してください。[チェック ビルドをインストールする](installing-the-checked-build.md)します。 便宜上、HAL およびカーネルのバージョン チェックは、Windows ドライバー キット (WDK for Windows Vista 以降) の/debug ディレクトリで提供されます。
 
 ## <a name="when-to-use-the-checked-build-or-partial-checked-build"></a>チェック ビルドまたは部分的なチェック ビルドを使用する場合
 
@@ -66,7 +66,7 @@ Microsoft Windows のチェック ビルドを特定して簡単にオペレー�
 
 チェックのビルドには、以下の最適化と空きビルドよりもより多くのデバッグ チェックが含まれています、サイズが大きいと、無料ビルドよりも実行に時間がかかりますが、チェック ビルド。 結果として、無料のビルドは、重大な問題を識別するためにチェック ビルドを使用する必要がある場合を除き、運用環境で使用されます。
 
-完全なチェック ビルドする代わりに、一部のチェック ビルドを使用するコンピューターを構成できます。 これにより、デバッグについては、チェックのビルドの利点と無料のビルドのパフォーマンスが向上。 部分的なチェック ビルド用にコンピューターを構成する方法の詳細については、[オペレーティング システムのチェックと HAL (For Windows Vista 以降) のみをインストールする](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)を参照してください。
+完全なチェック ビルドする代わりに、一部のチェック ビルドを使用するコンピューターを構成できます。 これにより、デバッグについては、チェックのビルドの利点と無料のビルドのパフォーマンスが向上。 部分的なチェック ビルド用にコンピューターを構成する方法の詳細については、次を参照してください。[オペレーティング システムのチェックと HAL (For Windows Vista 以降) のみをインストールする](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)します。
 
 完全なテスト用のドライバーの部分的なチェック ビルドを使用しているときも考慮する関連のシステム指定のドライバーの検証済みのバージョンをインストールします。 たとえば、下位のディスクのフィルター ドライバーを開発している場合抽出および完全なチェック ビルドから Disk.sys と Storport.sys のチェック ビルドをインストールを検討する必要があります。
 

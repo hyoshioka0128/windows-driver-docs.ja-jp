@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1271c01b4b643fcb128d8e834b1f19f36d86c89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352087"
 ---
 # <a name="wiaipsprinterendorsergraphicsupload"></a>WIA\_IP\_プリンター\_裏書き\_グラフィックス\_アップロード
 

@@ -1,6 +1,6 @@
 ---
-title: NDIS 中間ドライバの概要
-description: NDIS 中間ドライバの概要
+title: NDIS 中間ドライバーの概要
+description: NDIS 中間ドライバーの概要
 ms.assetid: 63e1b34b-c59e-4aa9-9551-ac9ccb8bcc82
 keywords:
 - 中間ドライバー WDK ネットワークでは、中間ドライバーについて
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7c603d8e3d571e16c3f98580c0639435a4f4b64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343672"
 ---
-# <a name="introduction-to-ndis-intermediate-drivers"></a>NDIS 中間ドライバの概要
+# <a name="introduction-to-ndis-intermediate-drivers"></a>NDIS 中間ドライバーの概要
 
 
 

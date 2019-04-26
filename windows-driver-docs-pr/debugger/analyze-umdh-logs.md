@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3300e26ed433a558d2590c973d67501bf4276731
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354998"
 ---
 # <a name="analyze-umdh-logs"></a>UMDH ログの分析
 
@@ -62,7 +62,7 @@ umdh -d -v dump.txt
 umdh dump1.txt dump2.txt
 ```
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 2 台のコンピューターがあるとします。、*コンピューターへのログオン*UMDH ログを作成すると、*分析コンピューター* UMDH ログを分析します。 分析のコンピューター上のシンボル パスは、ログが行われた時にログ記録のコンピューターに読み込まれている Windows のバージョンのシンボルを指す必要があります。 シンボル サーバーを分析コンピューターにシンボル パスを指していません。 場合は、UMDH は分析のコンピューターで実行されている Windows のバージョンのシンボルを取得し、UMDH に意味のある結果は表示されません。

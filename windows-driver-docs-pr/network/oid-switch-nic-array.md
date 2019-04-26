@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_NIC_ARRAY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1e53c4320b7e77ae90f56e356aa0998428cc07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351258"
 ---
 # <a name="oidswitchnicarray"></a>OID\_スイッチ\_NIC\_配列
 

@@ -1,6 +1,6 @@
 ---
-title: モジュールの OID 要求をフィルター処理します。
-description: モジュールの OID 要求をフィルター処理します。
+title: フィルター モジュール OID 要求
+description: フィルター モジュール OID 要求
 ms.assetid: 6de5ec1c-8e12-4f50-8708-ec136cafd9c2
 keywords:
 - フィルター モジュールの WDK ネットワーク、OID 要求
@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77b384ad25b00c26b864e82ea7bb4776fa5b7b9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350008"
 ---
-# <a name="filter-module-oid-requests"></a>モジュールの OID 要求をフィルター処理します。
+# <a name="filter-module-oid-requests"></a>フィルター モジュール OID 要求
 
 
 
 
 
-NDIS は、アダプターのパラメーターは、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含めるを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)を参照してください。
+NDIS は、アダプターのパラメーターは、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含めるを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、次を参照してください。 [NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)します。
 
 フィルター ドライバーは、クエリまたは基になるドライバーの動作のパラメーターを設定またはドライバーを後続の OID 要求をフィルター処理できます。
 

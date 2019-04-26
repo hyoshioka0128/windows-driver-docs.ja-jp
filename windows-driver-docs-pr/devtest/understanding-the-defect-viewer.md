@@ -1,6 +1,6 @@
 ---
-title: トレース ビューアーを理解します。
-description: トレース ビューアーを理解します。
+title: トレース ビューアーの概要
+description: トレース ビューアーの概要
 ms.assetid: 2b839e7f-770f-4bf4-96e1-98524768f4f0
 keywords:
 - Static Driver Verifier レポート WDK、欠陥ビューアー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd007d9372688d1cb3b043de1f349c971a7f8c0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351806"
 ---
-# <a name="understanding-the-trace-viewer"></a>トレース ビューアーを理解します。
+# <a name="understanding-the-trace-viewer"></a>トレース ビューアーの概要
 
 
 トレース ビューアーは、SDV 検証用に選択された規則には少なくとも 1 つの規則違反を検出したときに使用できます。

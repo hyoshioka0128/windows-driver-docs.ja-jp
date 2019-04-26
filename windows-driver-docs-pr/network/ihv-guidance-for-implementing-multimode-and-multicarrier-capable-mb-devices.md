@@ -5,11 +5,11 @@ ms.assetid: 17BB2478-F98D-4AE6-A62D-F65E2E1DCDFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a53128bdde33dc24ccefd68f9fa611fc891680b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349519"
 ---
 # <a name="ihv-guidance-for-implementing-multimode-and-multicarrier-capable-mb-devices"></a>マルチモードおよびマルチキャリア対応 MB デバイスの実装に関する IHV ガイダンス
 
@@ -240,7 +240,7 @@ UUID の次の Cid を定義する具体的には、\_および MULTICARRIER デ
 
 要請されていないイベント =**サポートされていません。**
 
-ホストで指定された国コードは Windows で使用可能な地理的場所 GEOID に基づいて構築します。 詳細については、[テーブルの地理的な場所 (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd374073)を参照してください。
+ホストで指定された国コードは Windows で使用可能な地理的場所 GEOID に基づいて構築します。 詳細については、次を参照してください。[テーブルの地理的な場所 (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd374073)します。
 
 <table>
 <colgroup>
@@ -293,7 +293,7 @@ UUID の次の Cid を定義する具体的には、\_および MULTICARRIER デ
 <th align="left">Offset</th>
 <th align="left">サイズ</th>
 <th align="left">フィールド</th>
-<th align="left">型</th>
+<th align="left">種類</th>
 <th align="left">説明</th>
 </tr>
 </thead>

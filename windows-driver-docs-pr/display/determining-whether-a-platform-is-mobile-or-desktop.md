@@ -1,19 +1,19 @@
 ---
-title: 確認するかどうか、プラットフォーム、モバイルまたはデスクトップ
-description: 確認するかどうか、プラットフォーム、モバイルまたはデスクトップ
+title: プラットフォームがモバイルとデスクトップのどちらであるかの確認
+description: プラットフォームがモバイルとデスクトップのどちらであるかの確認
 ms.assetid: f0a553a4-a23b-45c8-abc5-b5014ba328ae
 keywords:
 - TMM WDK 表示では、判別中のモバイルまたはデスクトップ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 420f26fddec527b63c539a6adfc647d6b8034f44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342424"
 ---
-# <a name="determining-whether-a-platform-is-mobile-or-desktop"></a>確認するかどうか、プラットフォーム、モバイルまたはデスクトップ
+# <a name="determining-whether-a-platform-is-mobile-or-desktop"></a>プラットフォームがモバイルとデスクトップのどちらであるかの確認
 
 
 TMM では、モバイル コンピューターでのみ実行しは、デスクトップ コンピューターに自動的に無効にします。 ハードウェア ベンダーは、有効にし、独自のメソッドを使用して、デスクトップ コンピューターに複製ビューを入力する必要があります。 プラットフォームがモバイルで、モバイル コンピューターで複製ビューを入力し、TMM を代わりに使用する、独自の方法を使用しないためかどうかを判断する必要があります。

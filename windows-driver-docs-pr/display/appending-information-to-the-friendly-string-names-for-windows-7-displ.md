@@ -1,16 +1,16 @@
 ---
-title: Windows 7 のディスプレイ ドライバーのフレンドリ名に情報を追加します。
+title: Windows 7 のディスプレイ ドライバーのフレンドリ名に情報を追加する
 description: Windows 7 のディスプレイ ドライバーの名前をわかりやすい文字列に追加する必要があります情報について説明します。
 ms.assetid: 8c65f3d9-6f4c-49e9-a9b2-2689d83a181c
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 3541b8030ca6be161a7275aaf63bcd078387d0d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344656"
 ---
 # <a name="appending-information-to-the-friendly-string-names-for-windows-7-display-drivers"></a>Windows 7 のディスプレイ ドライバーのわかりやすい文字列名に情報を追加
 

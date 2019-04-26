@@ -1,19 +1,19 @@
 ---
-title: Visual SourceSafe を使用したデバッグ
-description: Visual SourceSafe を使用したデバッグ
+title: Visual SourceSafe によるデバッグ
+description: Visual SourceSafe によるデバッグ
 ms.assetid: 65cc4eda-7aed-489f-a622-27a42afc0e4a
 keywords:
 - Visual SourceSafe は、デバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c51bcaa59549706d4dba145703e77408299e5e18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346315"
 ---
-# <a name="debugging-with-visual-sourcesafe"></a>Visual SourceSafe を使用したデバッグ
+# <a name="debugging-with-visual-sourcesafe"></a>Visual SourceSafe によるデバッグ
 
 
 デバッガーで適切に機能する Visual SourceSafe を使用してインデックス付きソース ファイルで、適切にシステムを構成する必要があります。

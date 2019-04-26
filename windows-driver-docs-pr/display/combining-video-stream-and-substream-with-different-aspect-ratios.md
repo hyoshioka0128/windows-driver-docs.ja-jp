@@ -12,11 +12,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: f58bb5a966f7bf6f69cabaffb2e3d72400145eaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343046"
 ---
 # <a name="combining-video-stream-and-substream-with-different-aspect-ratios"></a>Stream のビデオと縦横比が異なるとサブストリームの組み合わせ
 

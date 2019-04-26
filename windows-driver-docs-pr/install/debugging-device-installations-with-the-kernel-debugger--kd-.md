@@ -5,11 +5,11 @@ ms.assetid: 0967d375-2602-44d2-b4ac-8d1e112afc3f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67a236e3391cae97bd201fe6f6d8790b2a4a4923
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352086"
 ---
 # <a name="debugging-device-installations-with-the-kernel-debugger-kd"></a>カーネル デバッガー (KD) でのデバイスのインストールのデバッグ
 
@@ -24,9 +24,9 @@ ms.locfileid: "56577820"
 
 -   KD 拡張機能を使用して複数のデバッガーを管理することがなく他のユーザー モード プロセスを監視します。 プロセスまたは .process/p です。
 
-KD と他のデバッグ ツールの詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
+KD と他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
 
-**DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)を参照してください。
+**DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、次を参照してください。[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)します。
 
 ときに、 **DebugInstall**レジストリ値が 1 に設定*DrvInst.exe*最初は、カーネル デバッガーが有効になっているおよびデバッガーに中断されるまでに現在接続されているを確認します。 この中断が行われた後は、現在のプロセスのユーザー モードのモジュールでブレークポイントを設定できます。 例:
 

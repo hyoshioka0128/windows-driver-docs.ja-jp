@@ -1,17 +1,17 @@
 ---
-title: Multiplane オーバーレイのサポート
+title: マルチプレーン オーバーレイのサポート
 description: Multiplane オーバーレイは、Windows Display Driver Model (WDDM) 1.3 およびそれ以降のドライバーによってサポートできます。 この機能は、新しい Windows 8.1 以降です。
 ms.assetid: 8B2F5497-554D-4D4A-B44E-985A9F89143D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23daa66180396b6b4a65458a13a122e977777db5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345616"
 ---
-# <a name="multiplane-overlay-support"></a>Multiplane オーバーレイのサポート
+# <a name="multiplane-overlay-support"></a>マルチプレーン オーバーレイのサポート
 
 
 Multiplane オーバーレイは、Windows Display Driver Model (WDDM) 1.3 およびそれ以降のドライバーによってサポートできます。 この機能は、新しい Windows 8.1 以降です。
@@ -31,7 +31,7 @@ Multiplane オーバーレイは、Windows Display Driver Model (WDDM) 1.3 お�
 
 このセクションには、Windows 表示 Driver Model (WDDM) 1.3 およびそれ以降のユーザー モードのディスプレイ ドライバーが multiplane オーバーレイをサポートするために実装する必要があります関数が含まれています。
 
-ドライバーのメンバーを使用して DXGI multiplane オーバーレイ関数へのポインターを提供する、 [DXGI1_3_DDI_BASE_FUNCTIONS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi1_3_ddi_base_functions)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice(D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。 詳細については、[DXGI DDI をサポートしている](supporting-the-dxgi-ddi.md)を参照してください。
+ドライバーのメンバーを使用して DXGI multiplane オーバーレイ関数へのポインターを提供する、 [DXGI1_3_DDI_BASE_FUNCTIONS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi1_3_ddi_base_functions)ユーザー モードのディスプレイ ドライバーへの呼び出しで構造体のアダプター固有[CreateDevice(D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数。 詳細については、次を参照してください。 [DXGI DDI をサポートしている](supporting-the-dxgi-ddi.md)します。
 
 ドライバーのメンバーを使用してマイクロソフトの Direct3D multiplane オーバーレイ関数へのポインターを提供する、 [D3DDDI_DEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)ドライバーの呼び出しで構造[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数。
 

@@ -4,11 +4,11 @@ title: USB クライアント ドライバーで必要なヘッダーとライ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91613d6c66488820ca24f089ffc9cdf68d108571
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347992"
 ---
 # <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB クライアント ドライバーで必要なヘッダーとライブラリ
 

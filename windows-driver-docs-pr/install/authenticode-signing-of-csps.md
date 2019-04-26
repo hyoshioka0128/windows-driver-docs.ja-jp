@@ -5,11 +5,11 @@ ms.assetid: DBAA575A-F0B5-4725-A7B1-D6EA84977212
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6dc171573b04401fd293800dd12012ec496b535
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342036"
 ---
 # <a name="authenticode-signing-of-third-party-csps"></a>サード パーティ製の CSP の Authenticode での署名
 
@@ -42,7 +42,7 @@ signtool.exe sign /ac <cross-certificate_from_ms> /sha1 <sha1_hash> /t <timestam
 -   &lt;"optional_description_in_double_quotes"&gt;省略可能な説明のわかりやすい名前
 -   &lt;binary_file.ext&gt;署名するファイルは、
 
-以下に例を示します。
+例:
 
 ```cpp
 signtool.exe sign /ac certificate.cer /sha1 553e39af9e0ea8c9edcd802abbf103166f81fa50 /t "http://timestamp.verisign.com/scripts/timstamp.dll" /d "My Cryptographic Service Provider" csp.dll

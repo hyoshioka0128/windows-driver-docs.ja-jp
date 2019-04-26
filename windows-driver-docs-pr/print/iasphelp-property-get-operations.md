@@ -1,6 +1,6 @@
 ---
-title: Iasphelp プロパティの Get 操作
-description: Iasphelp プロパティの Get 操作
+title: Iasphelp プロパティ Get 操作
+description: Iasphelp プロパティ Get 操作
 MS-HAID:
 - webfnc\_fee9acda-e54a-4039-b7d4-6bb7cb7fefd3.xml
 - print.iasphelp\_property\_get\_operations
@@ -11,13 +11,13 @@ ms.assetid: f454b544-a17f-4542-b930-4e52b6667d55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6115e1d802b32804799f912dd0857f7f6625bc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358622"
 ---
-# <a name="iasphelp-property-get-operations"></a>Iasphelp プロパティの Get 操作
+# <a name="iasphelp-property-get-operations"></a>Iasphelp プロパティ Get 操作
 
 このセクションの「プロパティの取得」操作を説明します、 **Iasphelp**オブジェクト。 操作は次のとおりです。
 

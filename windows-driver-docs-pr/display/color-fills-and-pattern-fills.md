@@ -1,6 +1,6 @@
 ---
-title: 塗りつぶしの色とパターンの塗りつぶし
-description: 塗りつぶしの色とパターンの塗りつぶし
+title: 色による塗りつぶしとパターンの塗りつぶし
+description: 色による塗りつぶしとパターンの塗りつぶし
 ms.assetid: 6e597405-e40f-4cb8-b177-896681745e00
 keywords:
 - 描画 blt WDK DirectDraw、色を設定します。
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9893a8932f712f26b16960bdc1540949c25c39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354236"
 ---
-# <a name="color-fills-and-pattern-fills"></a>塗りつぶしの色とパターンの塗りつぶし
+# <a name="color-fills-and-pattern-fills"></a>色による塗りつぶしとパターンの塗りつぶし
 
 
 ## <span id="ddk_color_fills_and_pattern_fills_gg"></span><span id="DDK_COLOR_FILLS_AND_PATTERN_FILLS_GG"></span>

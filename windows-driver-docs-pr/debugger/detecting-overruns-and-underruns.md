@@ -1,17 +1,17 @@
 ---
-title: アンダーラン オーバーランを検出
-description: アンダーラン オーバーランを検出
+title: オーバーランとアンダーランの検出
+description: オーバーランとアンダーランの検出
 ms.assetid: d7d282c8-adde-49fc-a20e-d633abd6dd3f
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14eed792f1d8c57a75d125d84fbffb4e2ddd025d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346329"
 ---
-# <a name="detecting-overruns-and-underruns"></a>アンダーラン オーバーランを検出
+# <a name="detecting-overruns-and-underruns"></a>オーバーランとアンダーランの検出
 
 
 ## <span id="ddk_detecting_overruns_and_underruns_dtools"></span><span id="DDK_DETECTING_OVERRUNS_AND_UNDERRUNS_DTOOLS"></span>

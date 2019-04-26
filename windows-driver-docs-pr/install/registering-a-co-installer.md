@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8df7332e52584a50df06f6ac54f62503d366b3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348260"
 ---
 # <a name="registering-a-co-installer"></a>共同インストーラーの登録
 
@@ -22,7 +22,7 @@ ms.locfileid: "56574033"
 
 共同インストーラーは、単一のデバイス、または特定のセットアップ クラスのすべてのデバイスを登録できます。 デバイスに固有の共同インストーラーは、そのデバイスのいずれかがインストールされているときに INF ファイルを動的に登録されます。 クラスの共同インストーラーは、手動でまたはによってカスタム デバイスのインストール アプリケーションと、INF 登録されます。
 
-詳しくは、
+詳細については、「
 
 [デバイスに固有の共同インストーラーを登録します。](registering-a-device-specific-co-installer.md)
 

@@ -1,17 +1,17 @@
 ---
-title: KD のデバッグ セッションを終了します。
-description: KD のデバッグ セッションを終了します。
+title: KD のデバッグ セッションの終了
+description: KD のデバッグ セッションの終了
 ms.assetid: 6CD39971-424D-4F29-9A36-CCD14187DEB0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d114286fd8ebfc1e2f2bfe8e8eeba0a255c7586
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340578"
 ---
-# <a name="ending-a-debugging-session-in-kd"></a>KD のデバッグ セッションを終了します。
+# <a name="ending-a-debugging-session-in-kd"></a>KD のデバッグ セッションの終了
 
 
 KD を終了する 2 つのさまざまな方法はあります。

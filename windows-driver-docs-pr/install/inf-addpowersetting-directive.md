@@ -13,16 +13,16 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7285dcf05973b87c886ce0a9db0a90d65f0d421
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354643"
 ---
 # <a name="inf-addpowersetting-directive"></a>INF AddPowerSetting ディレクティブ
 
 
-**AddPowerSetting**ディレクティブが変更または電源設定の情報の作成に使用される 1 つまたは複数のセクションを参照します。 各*追加設定 power セクション*電源設定、電源設定、電源設定のフレンドリ名と電源設定の説明に使用できる値を定義します。 *追加設定 power セクション*も各電源スキーム パーソナリティの既定値を指定します。 電源設定と電源スキーム個性の詳細については、[管理デバイスのパフォーマンス状態](https://msdn.microsoft.com/library/windows/hardware/ff554353)を参照してください。
+**AddPowerSetting**ディレクティブが変更または電源設定の情報の作成に使用される 1 つまたは複数のセクションを参照します。 各*追加設定 power セクション*電源設定、電源設定、電源設定のフレンドリ名と電源設定の説明に使用できる値を定義します。 *追加設定 power セクション*も各電源スキーム パーソナリティの既定値を指定します。 電源設定と電源スキーム個性の詳細については、次を参照してください。[管理デバイスのパフォーマンス状態](https://msdn.microsoft.com/library/windows/hardware/ff554353)します。
 
 ```ini
 [DDInstall] | 
@@ -112,7 +112,7 @@ AddPowerSetting=add-power-setting-section[,add-power-setting-section]
 <a href="" id="subgroup-icon"></a>*subgroup-icon*  
 アイコン リソースへの参照。 サブグループがシステム定義のサブグループである場合は、このエントリを指定しない必要があります。 サブグループが新しい場合は、このエントリが必要です。
 
-アイコン リソースは、言語に依存しないレジストリ値として指定する必要があります。 言語に依存しないレジストリ値を指定する方法については、[AddPowerSetting 文字列エントリの値を指定する](#specifying-an-addpowersetting-string-entry-value)を参照してください。
+アイコン リソースは、言語に依存しないレジストリ値として指定する必要があります。 言語に依存しないレジストリ値を指定する方法については、次を参照してください。 [AddPowerSetting 文字列エントリの値を指定する](#specifying-an-addpowersetting-string-entry-value)します。
 
 <a href="" id="setting"></a>**設定**  
 **設定**ディレクティブは、設定を指定します。 すべてのセクションではその他のエントリが適用されます。 1 つ**設定**ディレクティブが電源設定の追加のセクションで必要なのみ 1 つできます**設定**電源設定の追加のセクションではディレクティブ。 INF ファイルには、1 つ以上の設定が定義されている場合、追加電源設定 セクションで、独自の各設定を定義する必要があります。
@@ -133,7 +133,7 @@ AddPowerSetting=add-power-setting-section[,add-power-setting-section]
 <a href="" id="setting-icon"></a>*setting-icon*  
 アイコン リソースへの参照は、省略可能なエントリです。 言語に依存しないレジストリ値では、アイコン リソースを指定してください。
 
-言語に依存しない-レジストリ値を指定する方法については、[AddPowerSetting 文字列エントリの値を指定する](#specifying-an-addpowersetting-string-entry-value)を参照してください。
+言語に依存しない-レジストリ値を指定する方法については、次を参照してください。 [AddPowerSetting 文字列エントリの値を指定する](#specifying-an-addpowersetting-string-entry-value)します。
 
 <a href="" id="value"></a>**値**  
 A**値**ディレクティブは、電源設定の許容値を定義します。 **値**ディレクティブを使用する場合、2 つ以上の値のセットとしては、値が適切に定義されたそれぞれの値が値に固有のカスタム データ型を持つことができます。 このような状況で、追加の電源の設定-セクションを 2 つ以上含める必要があります**値**ディレクティブ。 ユーザーがこれらの値のいずれかを選択できる**電源オプション**電源設定を構成するコントロール パネルの します。
@@ -260,7 +260,7 @@ range-minimum-value + k*range-increment
 <a href="" id="comment"></a>*コメント*  
 デバッグを支援する、または、設定に関するその他のコメントを提供するために使用できる省略可能な値。 場合は、文字列リソースを電源マネージャー結合またはしませんコメント文字列は、文字列が指定されたリソースを表示します。
 
-言語に依存しないレジストリ値を指定する方法の詳細については、[シェルのレンダリングとレジストリの文字列](https://go.microsoft.com/fwlink/p/?linkid=70407)を参照してください。
+言語に依存しないレジストリ値を指定する方法の詳細については、次を参照してください。[シェルのレンダリングとレジストリの文字列](https://go.microsoft.com/fwlink/p/?linkid=70407)します。
 
 <a name="examples"></a>例
 --------

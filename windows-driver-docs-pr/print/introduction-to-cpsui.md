@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69cd6fff7da2f4b3b8668b8e10199805a75e5dc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345292"
 ---
 # <a name="introduction-to-cpsui"></a>CPSUI の概要
 
@@ -33,9 +33,9 @@ CPSUI は、任意のアプリケーションで使用するように設計、�
 
 CPSUI は、プリンターおよび印刷するドキュメントの定義済みのプロパティ シートのページを提供します。 CPSUI が指定したページから成る、**デバイス設定**、プリンターのページと**レイアウト**、**用紙/品質**と**詳細**ページドキュメント。 これらのページは、印刷フォルダーから表示できます**プリンター**メニュー。
 
-組み合わせて、印刷スプーラー[プリンター インターフェイス Dll](printer-interface-dll.md)、これらの定義済みページを使用して、プリンターおよびドキュメントのプロパティ シートを作成します。 印刷スプーラー、プリンター インターフェイス Dll、および CPSUI がやり取りする方法については、[プリンター ドライバーを使用して CPSUI](using-cpsui-with-printer-drivers.md)を参照してください。
+組み合わせて、印刷スプーラー[プリンター インターフェイス Dll](printer-interface-dll.md)、これらの定義済みページを使用して、プリンターおよびドキュメントのプロパティ シートを作成します。 印刷スプーラー、プリンター インターフェイス Dll、および CPSUI がやり取りする方法については、次を参照してください。[プリンター ドライバーを使用して CPSUI](using-cpsui-with-printer-drivers.md)します。
 
-Microsoft の用に作成されたユーザー インターフェイスのコードをカスタマイズ*Unidrv*と*Pscript*ドライバーが CPSUI を使用してもできます。 詳細については、[ユーザー インターフェイスのプラグイン](user-interface-plug-ins.md)を参照してください。
+Microsoft の用に作成されたユーザー インターフェイスのコードをカスタマイズ*Unidrv*と*Pscript*ドライバーが CPSUI を使用してもできます。 詳細については、次を参照してください。[ユーザー インターフェイスのプラグイン](user-interface-plug-ins.md)します。
 
  
 

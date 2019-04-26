@@ -1,6 +1,6 @@
 ---
-title: デバイスに固有のアプリケーションをインストールします。
-description: デバイスに固有のアプリケーションをインストールします。
+title: デバイスに固有のアプリケーションのインストール
+description: デバイスに固有のアプリケーションのインストール
 ms.assetid: 47e54ea6-f391-420a-aa69-caf7225b1147
 keywords:
 - インストール アプリケーション WDK、デバイス固有のアプリケーション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 095f4ec16702756e9126a076a3f5e0b5f06f0770
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341490"
 ---
-# <a name="installing-device-specific-applications"></a>デバイスに固有のアプリケーションをインストールします。
+# <a name="installing-device-specific-applications"></a>デバイスに固有のアプリケーションのインストール
 
 
 
@@ -32,9 +32,9 @@ ms.locfileid: "56527283"
     1.  開始、*デバイス インストール アプリケーション*デバイスに固有のアプリケーションをインストールする配布メディア上です。
     2.  インターネットからデバイスのインストール アプリケーションの新しいバージョンをダウンロードするように求めます。
 
-    独立系ハードウェア ベンダー (Ihv) が提供するさまざまなメソッドを使用して[ハードウェア最初インストール](hardware-first-installation.md)デバイス固有のアプリケーションをインストールするためのソリューションです。 これらのメソッドの詳細については、[ハードウェア最初インストールの特定のデバイス アプリケーション](hardware-first-installation-of-device-specific-applications.md)を参照してください。
+    独立系ハードウェア ベンダー (Ihv) が提供するさまざまなメソッドを使用して[ハードウェア最初インストール](hardware-first-installation.md)デバイス固有のアプリケーションをインストールするためのソリューションです。 これらのメソッドの詳細については、次を参照してください。[ハードウェア最初インストールの特定のデバイス アプリケーション](hardware-first-installation-of-device-specific-applications.md)します。
 
-    共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+    共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
 -   デバイスに固有のアプリケーションをインストールする Windows インストーラーを使用するデバイスのインストール アプリケーションを使用します。
 

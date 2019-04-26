@@ -1,6 +1,6 @@
 ---
-title: 構成に依存するデータへの依存関係の追加
-description: 構成に依存するデータへの依存関係の追加
+title: 構成依存データに依存関係を追加する
+description: 構成依存データに依存関係を追加する
 ms.assetid: 16e15147-6e83-4675-b050-cf13dcd6b397
 keywords:
 - GDL WDK の構成
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7a5ad83041e6a5b425f423676395eaf28d79e9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343172"
 ---
-# <a name="adding-dependencies-to-the-configuration-dependent-data"></a>構成に依存するデータへの依存関係の追加
+# <a name="adding-dependencies-to-the-configuration-dependent-data"></a>構成依存データに依存関係を追加する
 
 
 **\*スイッチ**/**\*ケース**ディレクティブによってデータを使用して定義されているパラメーターに依存、 **\*機能** / **\*オプション**ディレクティブ。 構成体タグ、 **\*スイッチ**コンス トラクターの名前で定義されているパラメーターの 1 つ、 **\*機能**を構築します。 構成要素のタグを使用してパラメーターの参照、 **\*スイッチ**コンストラクトがその定義を前に可能性があります、 **\*機能**を構築します。

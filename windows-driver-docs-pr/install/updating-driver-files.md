@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc88fa941c2245549fabece328b822f252a58bce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339444"
 ---
 # <a name="updating-driver-files"></a>ドライバー ファイルの更新
 
@@ -48,7 +48,7 @@ ms.locfileid: "56571875"
     -   [**DiInstallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff544717)、事前にインストールされるドライバーとドライバーがサポートするシステムに存在するデバイスのドライバーをインストールします。
     -   [**DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)システムに存在する指定されたデバイスのドライバー ストアから、指定したドライバーをインストールします。
 
-    詳細については、[デバイス インストール アプリケーションを記述して](writing-a-device-installation-application.md)を参照してください。
+    詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](writing-a-device-installation-application.md)します。
 
 -   クラスのインストーラーと共同インストーラーする必要があります - インストールが [完了] ページへの応答をれなかったドライバーをアップグレードするときに[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)しない限り、絶対に必要です。 可能であれば、以前のインストールの設定から完了インストール情報を取得します。
 
@@ -66,7 +66,7 @@ ms.locfileid: "56571875"
 
 -   クラスのインストーラー、共同インストーラーをクラス、またはサービスの DLL を更新する場合は、新しいバージョンに新しいファイル名を付ける必要があります。
 
-INF ファイルの詳細については、[INF ファイルを作成する](overview-of-inf-files.md)と[INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)を参照してください。
+INF ファイルの詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)と[INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)します。
 
  
 

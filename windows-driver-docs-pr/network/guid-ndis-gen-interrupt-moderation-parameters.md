@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cb2583d2fba0b86f7f1d76700657055de19c9cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349868"
 ---
 # <a name="guidndisgeninterruptmoderationparameters"></a>GUID_NDIS_GEN_INTERRUPT_MODERATION_PARAMETERS
 
@@ -21,5 +21,5 @@ NDIS に変換するには、この GUID、 [OID_GEN_INTERRUPT_MODERATION](oid-g
 
 WMI の入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904)が続く構造体、 [NDIS_INTERRUPT_MODERATION_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff565793)構造体。
 
-ポート パラメーターの詳細については、[OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)を参照してください。
+ポート パラメーターの詳細については、次を参照してください。 [OID_GEN_INTERRUPT_MODERATION](oid-gen-interrupt-moderation.md)します。
 

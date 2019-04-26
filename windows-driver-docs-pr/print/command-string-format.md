@@ -1,6 +1,6 @@
 ---
-title: コマンド文字列の形式
-description: コマンド文字列の形式
+title: コマンド文字列形式
+description: コマンド文字列形式
 ms.assetid: 3b33b261-08c7-4441-94f5-6c9de53ae349
 keywords:
 - プリンターが WDK Unidrv、文字列をコマンドします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f34b2a6588ce5d66f3557a0eed5a483fabf1954
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348091"
 ---
-# <a name="command-string-format"></a>コマンド文字列の形式
+# <a name="command-string-format"></a>コマンド文字列形式
 
 
 

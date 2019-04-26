@@ -5,26 +5,26 @@ ms.assetid: 5fe52fe6-97b4-477a-9450-727c5bf9bd72
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f3ccbd84b0f29683d6d94495fd8563d214be76a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350520"
 ---
 > [!NOTE]
 > IoSpy と IoAttack は Windows 10 バージョン 1703 後は WDK に含まれて使用できなくします。
 >
 > これらのツールを別の方法として、HLK で使用可能なファジー化のテストを使用して検討してください。 次に考慮すべきいくつか示します。
 > 
-> [DF - ファジー ランダム IOCTL テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
+> [DF - ランダム IOCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 >
-> [DF - ファジーはサブ テスト (信頼性) 開きます](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
+> [DF - サブオープンのファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
 >
-> [DF - ファジー 0 長バッファー FSCTL テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
+> [DF - 0 長バッファー FSCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
 >
-> [DF - ファジー ランダム FSCTL テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
+> [DF - ランダム FSCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
 >
-> [DF - その他の API をファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
+> [DF - Misc API のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 >
 > 使用することも、[カーネル同期遅延ファジー テスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)Driver Verifier に含まれます。
 >
@@ -38,7 +38,7 @@ IoSpy は、デバイスのカーネル モード ドライバーに対して行
 
 インストールして IoSpy を使用して削除する、[侵入テスト (デバイスの基本)](coverage-tests--device-fundamentals-.md)テスト、 **I/O スパイを有効にする**と**I/O スパイを無効にする**します。 *DQ*パラメーターは、IoSpy フィルター ドライバーがインストールされているデバイスを制御します。 IoSpy IOCTL および WMI 要求内で詳細を記録する、 [IoSpy データ ファイル](#iospy-data-file)が使用する[IoAttack](ioattack.md)ファジーを実行するには、テストします。
 
-**重要な**  IoSpy を以前実行が必要があるあり、テスト システムから削除された IoAttack を実行する前にします。 詳細については、[IoSpy IoAttack と実行のファジー テスト方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)を参照してください。
+**重要な**  IoSpy を以前実行が必要があるあり、テスト システムから削除された IoAttack を実行する前にします。 詳細については、次を参照してください。 [IoSpy IoAttack と実行のファジー テスト方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)します。
 
  
 

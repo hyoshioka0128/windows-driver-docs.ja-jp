@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_SET_VF_POWER_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f8d73086a5f7ba2e10d92cd23e92a548c71fec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351331"
 ---
 # <a name="oidsriovsetvfpowerstate"></a>OID\_SRIOV\_設定\_VF\_POWER\_状態
 
@@ -28,7 +28,7 @@ PF ミニポート ドライバーには、この OID セットの要求が発�
 
 -   電源状態の操作は、指定 VF のみに影響する必要があります。 操作では、その他の VFs または同じネットワーク アダプターの PF には影響する必要があります。
 
-詳細については、[仮想関数の状態の電源設定](https://msdn.microsoft.com/library/windows/hardware/hh440230)を参照してください。
+詳細については、次を参照してください。[仮想関数の状態の電源設定](https://msdn.microsoft.com/library/windows/hardware/hh440230)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -71,7 +71,7 @@ OID OID の要求の設定の次のステータス コードのいずれかの P
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

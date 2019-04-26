@@ -1,17 +1,17 @@
 ---
-title: デバイス クラスのどのプロパティが設定を決定します。
-description: デバイス クラスのどのプロパティが設定を決定します。
+title: デバイス クラスに設定するプロパティの決定
+description: デバイス クラスに設定するプロパティの決定
 ms.assetid: a8016b04-ae52-47d9-b3ef-74e0896aa825
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08fc5374cf0be9ccdf03a82dbcd69dde2793bfbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346178"
 ---
-# <a name="determining-which-properties-are-set-for-a-device-class"></a>デバイス クラスのどのプロパティが設定を決定します。
+# <a name="determining-which-properties-are-set-for-a-device-class"></a>デバイス クラスに設定するプロパティの決定
 
 
 次のトピックでは、Windows Vista 以降のバージョンの Windows でのデバイス クラスに対するクラス プロパティが設定を決定する方法について説明します。

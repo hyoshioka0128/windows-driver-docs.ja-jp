@@ -1,19 +1,19 @@
 ---
-title: 読み込めないモジュールによるグラフ分析
-description: 読み込めないモジュールによるグラフ分析
+title: アンロード可能なモジュールを使用したグラフ分析
+description: アンロード可能なモジュールを使用したグラフ分析
 ms.assetid: 12441fa1-3d19-4485-815c-546367f31567
 keywords:
 - カーネル デバッグを読み込めないモジュールのストリーミング
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22993d158783a7661bb55bf0c24dc275b2a390c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342076"
 ---
-# <a name="graph-analysis-with-unloadable-modules"></a>読み込めないモジュールによるグラフ分析
+# <a name="graph-analysis-with-unloadable-modules"></a>アンロード可能なモジュールを使用したグラフ分析
 
 
 このセクションでは、KMixer など読み込めないモジュールを使用する場合に影響する可能性があるシナリオについて説明します。

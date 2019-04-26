@@ -1,17 +1,17 @@
 ---
-title: フラット ベッド スキャナーのアーキテクチャ
-description: フラット ベッド スキャナーのアーキテクチャ
+title: フラットベッド スキャナーのアーキテクチャ
+description: フラットベッド スキャナーのアーキテクチャ
 ms.assetid: 04f7df17-d289-44a1-8c2d-7d0fa618cc97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 002946aa4e4678c1c190969697298dc7ce8053ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352211"
 ---
-# <a name="flatbed-scanner-architecture"></a>フラット ベッド スキャナーのアーキテクチャ
+# <a name="flatbed-scanner-architecture"></a>フラットベッド スキャナーのアーキテクチャ
 
 
 
@@ -29,7 +29,7 @@ WIA ベッド項目がルート項目から直接配置されていることに�
 
 ![自動ドキュメント フィーダーのフラット ベッド スキャナーを示す図](images/art-flatbed2.png)
 
-WIA 項目のツリーの最初のルート項目は、他のスキャン データ ソースが実装されている場合、WIA ベッド項目にすることがあります。 この配置では、Microsoft Windows XP および Windows Me のアプリケーションをサポートするやすくなります。 これらのオペレーティング システムとの互換性の詳細については、[WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)を参照してください。
+WIA 項目のツリーの最初のルート項目は、他のスキャン データ ソースが実装されている場合、WIA ベッド項目にすることがあります。 この配置では、Microsoft Windows XP および Windows Me のアプリケーションをサポートするやすくなります。 これらのオペレーティング システムとの互換性の詳細については、次を参照してください。 [WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)します。
 
  
 

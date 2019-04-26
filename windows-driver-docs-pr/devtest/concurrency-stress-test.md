@@ -5,11 +5,11 @@ ms.assetid: A33DEA5B-4758-456A-B4CF-F036CB511A1F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f3268173a4500e1111aa08ed4027f5190add8fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343101"
 ---
 # <a name="power-framework-delay-fuzzing"></a>Power Framework 遅延ファジー テスト
 
@@ -27,7 +27,7 @@ Power Framework 遅延ファジー テスト オプションを使用するド�
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に Power Framework 遅延ファジー テスト機能をアクティブ化できます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に Power Framework 遅延ファジー テスト機能をアクティブ化できます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 Power Framework 遅延ファジー テスト オプションをアクティブ化またはコンピューターを再起動する必要があります。
 
 **注**  The Power Framework 遅延ファジー テスト オプションには、さまざまな電源 API 関数呼び出しでランダムな遅延を挿入することで、実行時に表示される競合状態の確率が高くなります。 これら遅延をより有効にするには、その他のドライバーの検証オプションでは、このオプションを有効にすることができます。 導入できる遅延のためには、コンピューターが、応答が遅くできるが期待できます。
 

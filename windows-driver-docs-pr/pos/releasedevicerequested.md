@@ -5,11 +5,11 @@ ms.assetid: 0fcb8905-1370-4260-9456-6c80e2186dfc
 ms.date: 09/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fc0d485ed5e1946954b309cb62941a7dc7984b2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349304"
 ---
 # <a name="releasedevicerequested"></a>ReleaseDeviceRequested
 
@@ -35,10 +35,10 @@ typedef struct _PosEventDataHeader
 | 0x00000001 | **EventType PosEventType::ReleaseDeviceRequested を =** |
 | 0x00000008 | sizeof (**PosEventDataHeader**)                       |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 によってポイントのサービス クラスの拡張機能 (PosCx)、デバイス ドライバーの代わりに、このイベントが処理されます。 クライアントが別のクライアントを使用しているデバイスを要求しようとすると、PosCx を別のクライアントが、デバイスを要求しようとしていることを示すために、スキャナーのデバイスで要求を現在保持しているクライアントでは、このイベントを発生させます。 現在のクライアントがそのクレームを保持するかが必要です ([IOCTL\_ポイント\_の\_サービス\_保持\_デバイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ni-pointofservicedriverinterface-ioctl_point_of_service_retain_device)) またはその要求をリリース ([IOCTL\_ポイント\_の\_サービス\_リリース\_デバイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ni-pointofservicedriverinterface-ioctl_point_of_service_release_device)) のデバイスでこのイベントに応答します。 現在のクライアントがデバイスで、その要求を保持していない場合、 **ClaimedBarcodeScanner**オブジェクトが有効にできなくなります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 **ヘッダー:** pointofservicedriverinterface.h

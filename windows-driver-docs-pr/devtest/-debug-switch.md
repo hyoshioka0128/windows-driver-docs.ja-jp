@@ -1,5 +1,5 @@
 ---
-title: /デバッグ スイッチ
+title: /Debug スイッチ
 description: 拡張記憶域証明書管理ツールの/Debug スイッチ機能を報告し、IEEE 1667 準拠 USB ストレージ デバイスに認証サイロ証明書 (ASC) に関する情報を格納します。
 ms.assetid: 9a7c8fd0-34a8-4f60-a8cb-d5777645f672
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6712be11ed34a234460ee6088d2b81c349a40d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344014"
 ---
-# <a name="debug-switch"></a>/デバッグ スイッチ
+# <a name="debug-switch"></a>/Debug スイッチ
 
 
 /**デバッグ**拡張記憶域証明書管理ツールのスイッチ機能と IEEE 1667 準拠 USB ストレージ デバイスに認証サイロ (ASC) の証明書ストアの情報を報告します。 このレポートには、次の部分が含まれます。
@@ -43,7 +43,7 @@ ms.locfileid: "56559978"
 
 
 <span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span> **-ボリューム:**   
-ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)を参照してください。
+ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、次を参照してください。[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)します。
 
 **注**IEEE 1667 準拠 USB ストレージ デバイスをコンピューターに現在接続されているボリューム名の一覧を生成するために次のように入力します。 **EhStorCertMgrCmd/List** 、コマンドラインから。
 

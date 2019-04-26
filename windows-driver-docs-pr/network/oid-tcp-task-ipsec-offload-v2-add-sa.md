@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 35e3eb0253b8e671fc02efec29ba7363c7e1fa10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350914"
 ---
 # <a name="oidtcptaskipsecoffloadv2addsa"></a>OID\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA
 
@@ -19,7 +19,7 @@ ms.locfileid: "56581804"
 
 TCP/IP トランスポートが、OID を使用して、セットとして\_TCP\_タスク\_IPSEC\_オフロード\_V2\_追加\_SA OID ミニポート ドライバーが、指定したセキュリティを追加することを要求するにはNIC にアソシエーション (Sa)
 
-**注**  NDIS OID 要求インターフェイスを直接この OID をサポートしています。 直接の OID 要求インターフェイスの詳細については、[NDIS 6.1 Direct OID 要求インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff564736)を参照してください。
+**注**  NDIS OID 要求インターフェイスを直接この OID をサポートしています。 直接の OID 要求インターフェイスの詳細については、次を参照してください。 [NDIS 6.1 Direct OID 要求インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff564736)します。
 
  
 

@@ -1,22 +1,22 @@
 ---
-title: インターフェイスの実装のガイダンス
+title: インターフェイス実装ガイダンス
 description: このセクションでは、インターフェイスの実装のガイダンスを提供します。
 ms.assetid: E97A880F-0422-432C-8567-444CA6FD2980
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 37285e04fe0e09a4353a392b92e1fdff569774eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344612"
 ---
-# <a name="interface-implementation-guidance"></a>インターフェイスの実装のガイダンス
+# <a name="interface-implementation-guidance"></a>インターフェイス実装ガイダンス
 
 
 このセクションでは、インターフェイスの実装のガイダンスを提供します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>

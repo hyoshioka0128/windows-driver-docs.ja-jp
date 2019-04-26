@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_NIC_SWITCH_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 49b911a31a2b9df397db61c1e3462f67a11bd1bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343267"
 ---
 # <a name="ndisstatusnicswitchhardwarecapabilities"></a>NDIS\_状態\_NIC\_スイッチ\_ハードウェア\_機能
 
@@ -26,7 +26,7 @@ PF のミニポート ドライバーを発行する必要があります、 **N
 
 -   NIC スイッチ ハードウェアの機能では、有効または独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションで無効にします。
 
--   負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属している 1 つまたは複数のネットワーク アダプターの NIC スイッチ ハードウェアの機能を変更します。 詳細については、[NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)を参照してください。
+-   負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属している 1 つまたは複数のネットワーク アダプターの NIC スイッチ ハードウェアの機能を変更します。 詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)します。
 
 PF のミニポート ドライバーを発行したとき、 **NDIS\_状態\_NIC\_スイッチ\_ハードウェア\_機能**状態を示す値、次の手順に従う必要があります。
 

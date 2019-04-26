@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INVITATION_RESPONSE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f49c1abdd25504eaedd2eee10dec81f3d19dfffc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347239"
 ---
 # <a name="wditlvp2pinvitationresponseparameters"></a>WDI\_TLV\_P2P\_招待\_応答\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_招待\_応答\_パラメーターは、Wi-Fi Direct 招待応答
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                    |
+| 型   | 説明                                                                    |
 |--------|--------------------------------------------------------------------------------|
 | UINT8  | Wi-Fi Direct ステータス コード、Wi-Fi Direct の仕様で指定された. |
 | UINT16 | 移動の構成のタイムアウト値 (ミリ秒)。                                 |
@@ -39,7 +39,7 @@ WDI\_TLV\_P2P\_招待\_応答\_パラメーターは、Wi-Fi Direct 招待応答
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

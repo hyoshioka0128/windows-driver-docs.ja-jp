@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb32465f493a45e20441ac9a0651e9724a7e0864
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344704"
 ---
 # <a name="example-2-basic-command"></a>例 2:基本的なコマンド
 
@@ -22,7 +22,7 @@ Tracefmt を開始するために使用する基本的なコマンドの構文�
 tracefmt EtlFile -p TMFPath -o OutputFile
 ```
 
-例えば以下のようにします。
+以下に例を示します。
 
 ```
 tracefmt mytrace.etl -p c:\tracing -o mytrace.txt

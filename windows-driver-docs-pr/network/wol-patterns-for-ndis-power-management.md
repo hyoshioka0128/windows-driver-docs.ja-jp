@@ -1,17 +1,17 @@
 ---
-title: 電源管理の NDIS WOL パターン
-description: 電源管理の NDIS WOL パターン
+title: NDIS 電源管理の WOL パターン
+description: NDIS 電源管理の WOL パターン
 ms.assetid: 44d49fe9-0983-4753-8f6f-f3445b5b9f3b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d769b7f8d0ca87df47368153100f015367a6a49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348620"
 ---
-# <a name="wol-patterns-for-ndis-power-management"></a>電源管理の NDIS WOL パターン
+# <a name="wol-patterns-for-ndis-power-management"></a>NDIS 電源管理の WOL パターン
 
 
 
@@ -33,9 +33,9 @@ WOL パターンの 2 種類あります。
 
 以降では、NDIS 6.20 が動作は、複数のプロトコル ドライバーは、ネットワーク アダプターを WOL パターンを設定できます。 WOL パターンの要求の数が、ネットワーク アダプターをサポートできる数より大きい場合に、正しい WOL パターンのセットが設定されていることを確認するには、プロトコル ドライバーは、WOL パターンごとに優先順位を割り当てます。 NDIS は、ネットワーク アダプターは、リソース不足になるため、新しい優先度の高い WOL パターンを追加することはできません、NDIS は低優先度のパターンを削除できます。
 
-WOL パターンの管理に関する詳細については、[の追加と削除 Wake on LAN パターン](adding-and-deleting-wake-on-lan-patterns.md)を参照してください。
+WOL パターンの管理に関する詳細については、次を参照してください。[の追加と削除 Wake on LAN パターン](adding-and-deleting-wake-on-lan-patterns.md)します。
 
-NDIS 6.20 が動作し、以降のバージョンでサポートされる WOL メソッドの詳細については、[NDIS 6.20 WOL メソッド](introduction-to-ndis-6-20.md)を参照してください。
+NDIS 6.20 が動作し、以降のバージョンでサポートされる WOL メソッドの詳細については、次を参照してください。 [NDIS 6.20 WOL メソッド](introduction-to-ndis-6-20.md)します。
 
  
 

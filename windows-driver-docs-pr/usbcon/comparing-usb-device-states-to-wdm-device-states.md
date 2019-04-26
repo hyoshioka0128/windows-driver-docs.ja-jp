@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the WDM device states to use for USB device power states as specified in section 9.1 of the Universal Serial Bus 2.0 specification.
+Description: このトピックでは、ユニバーサル シリアル バス 2.0 仕様のセクション 9.1 で指定された USB デバイス電源状態を使用する WDM デバイスの状態について説明します。
 title: USB デバイスの電源状態
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1d086417d1f4898c2bc80dfb62a1f3591d20d93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352676"
 ---
 # <a name="usb-device-power-states"></a>USB デバイスの電源状態
 
@@ -21,7 +21,7 @@ USB デバイスの電源状態 (ユニバーサル シリアル バス 2.0 仕�
 -   電源。デバイスの電源が入っている状態のいずれかが。既定値、アドレス、または構成します。
 -   中断。デバイスでは、アイドル状態と低電力で動作しています。
 
-WDM power モデルで定義されているデバイスの電源状態と USB の標準で定義されているデバイスの電源状態の間の直接の相関関係はありません。 用語など*中断*と*アイドル*USB に非常に特定の意味がある仕様。 ただしこれらの用語は多くの場合、異なる方法で、モデルで使用 WDM 電源。 Windows クライアント ドライバーでは、"suspended"状態で、USB デバイスを配置できます。 詳細については、[USB セレクティブ サスペンド](usb-selective-suspend.md)を参照してください。 クライアント ドライバーをそのデバイスを中断する準備ができたら、バスの運転手がアイドル状態のことを指示します。 アイドル状態の要求の詳細については、[USB セレクティブ サスペンド](usb-selective-suspend.md)を参照してください。
+WDM power モデルで定義されているデバイスの電源状態と USB の標準で定義されているデバイスの電源状態の間の直接の相関関係はありません。 用語など*中断*と*アイドル*USB に非常に特定の意味がある仕様。 ただしこれらの用語は多くの場合、異なる方法で、モデルで使用 WDM 電源。 Windows クライアント ドライバーでは、"suspended"状態で、USB デバイスを配置できます。 詳細については、次を参照してください。 [USB セレクティブ サスペンド](usb-selective-suspend.md)します。 クライアント ドライバーをそのデバイスを中断する準備ができたら、バスの運転手がアイドル状態のことを指示します。 アイドル状態の要求の詳細については、次を参照してください。 [USB セレクティブ サスペンド](usb-selective-suspend.md)します。
 
 デバイスの電源状態 WDM モデルに関するものです。
 
@@ -29,11 +29,11 @@ WDM power モデルで定義されているデバイスの電源状態と USB �
 -   **D1 または D2**の中間のスリープ状態です。 これらの状態は、リモート ウェイク アップ装備するデバイスをできるようにします。
 -   **D3**の最下位のスリープ状態です。 状態のデバイスの**D3**リモート ウェイク アップ武装ことはできません。
 
-WDM power モデル デバイスの電源状態の詳細については、[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)を参照してください。
+WDM power モデル デバイスの電源状態の詳細については、次を参照してください。[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)します。
 
-WDM power モデルという用語を使用する*取り組ま*のデバイスをリモート ウェイク アップします。 ハードウェア操作につながるを常にではありませんが、通常、ソフトウェアの操作は、取り組ま*を有効にする*USB デバイスにリモート ウェイク アップ機能。 リモート ウェイク アップのデバイスを準備する WDM ソフトウェア操作が待機ウェイク IRP ([**IRP\_MN\_待機\_WAKE**](https://msdn.microsoft.com/library/windows/hardware/ff551766))。 この IRP の詳細については、[サポート デバイスがあるウェイク アップ機能](https://msdn.microsoft.com/library/windows/hardware/ff563907)を参照してください。
+WDM power モデルという用語を使用する*取り組ま*のデバイスをリモート ウェイク アップします。 ハードウェア操作につながるを常にではありませんが、通常、ソフトウェアの操作は、取り組ま*を有効にする*USB デバイスにリモート ウェイク アップ機能。 リモート ウェイク アップのデバイスを準備する WDM ソフトウェア操作が待機ウェイク IRP ([**IRP\_MN\_待機\_WAKE**](https://msdn.microsoft.com/library/windows/hardware/ff551766))。 この IRP の詳細については、次を参照してください。[サポート デバイスがあるウェイク アップ機能](https://msdn.microsoft.com/library/windows/hardware/ff563907)します。
 
-このソフトウェアの操作と、USB リモート ウェイク アップ機能を有効にする間のリレーションシップの詳細については、[USB デバイスのリモート ウェイク アップ](remote-wakeup-of-usb-devices.md)を参照してください。
+このソフトウェアの操作と、USB リモート ウェイク アップ機能を有効にする間のリレーションシップの詳細については、次を参照してください。 [USB デバイスのリモート ウェイク アップ](remote-wakeup-of-usb-devices.md)します。
 
 このセクションには、次のサブセクションが含まれています。
 
@@ -44,7 +44,7 @@ WDM power モデルという用語を使用する*取り組ま*のデバイス�
 ## <a name="changing-the-power-state-of-a-non-composite-device"></a>電源状態の非複合デバイスを変更します。
 
 
-USB デバイスの電源ポリシー マネージャーは、デバイスの電源の状態を設定します。 WDM 電源を発行して、電源ポリシー マネージャーが電源の状態を設定 ([**IRP\_MN\_設定\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744)) IRP します。 電源ポリシー マネージャーの詳細については、[電源ポリシー所有権](https://msdn.microsoft.com/library/windows/hardware/ff544518)を参照してください。
+USB デバイスの電源ポリシー マネージャーは、デバイスの電源の状態を設定します。 WDM 電源を発行して、電源ポリシー マネージャーが電源の状態を設定 ([**IRP\_MN\_設定\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744)) IRP します。 電源ポリシー マネージャーの詳細については、次を参照してください。[電源ポリシー所有権](https://msdn.microsoft.com/library/windows/hardware/ff544518)します。
 
 バス ドライバーによって実行されたアクションは、電源ポリシー マネージャーを要求するデバイスの電源のレベルに依存します。 電源の要求のセットのレベルごとに、バス ドライバーの動作を次に示します。
 

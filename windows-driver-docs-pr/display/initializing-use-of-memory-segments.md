@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dd291523544587468e311fd9f139afe00931bdd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350274"
 ---
 # <a name="initializing-use-of-memory-segments"></a>メモリ セグメントの使用の初期化
 
@@ -37,7 +37,7 @@ Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkr
 
 初期化中に、メモリが十分にある、ので、ページング バッファーのメモリは、特定のセグメントから割り当てことができます。 ビデオ メモリ マネージャーで指定されたセグメントからページング バッファーのメモリを割り当て、 **PagingBufferSegmentId**のメンバー [ **DXGK\_QUERYSEGMENTOUT** ](https://msdn.microsoft.com/library/windows/hardware/ff562018)または[ **DXGK\_QUERYSEGMENTOUT3**](https://msdn.microsoft.com/library/windows/hardware/hh464082)します。 ドライバーは、2 番目の呼び出しでページング バッファー セグメントの識別子を示します[ *DxgkDdiQueryAdapterInfo*](https://msdn.microsoft.com/library/windows/hardware/ff559746)します。 ドライバーでページング バッファーを割り当てる必要があるバイト単位でサイズを指定する必要がありますも、 **PagingBufferSize**のメンバー **DXGK\_QUERYSEGMENTOUT**または**DXGK\_QUERYSEGMENTOUT3**します。
 
-セグメントのメモリとページング バッファーの使用の詳細については、[メモリ セグメントの処理](handling-memory-segments.md)と[ビデオ メモリ リソースをページング](paging-video-memory-resources.md)を参照してください。
+セグメントのメモリとページング バッファーの使用の詳細については、次を参照してください。[メモリ セグメントの処理](handling-memory-segments.md)と[ビデオ メモリ リソースをページング](paging-video-memory-resources.md)します。
 
  
 

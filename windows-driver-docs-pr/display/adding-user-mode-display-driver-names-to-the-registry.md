@@ -1,6 +1,6 @@
 ---
-title: ユーザー モード ドライバーの表示名をレジストリに追加します。
-description: ユーザー モード ドライバーの表示名をレジストリに追加します。
+title: レジストリへのユーザー モード ディスプレイ ドライバー名の追加
+description: レジストリへのユーザー モード ディスプレイ ドライバー名の追加
 ms.assetid: 52f98ce5-4458-4058-9134-f57e4b56377f
 keywords:
 - INF ファイル WDK の表示、ユーザー モード ドライバー名
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 823b56df8251bfcd2c3bc2843b6ecc0e8ccbc52b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341591"
 ---
-# <a name="adding-user-mode-display-driver-names-to-the-registry"></a>ユーザー モード ドライバーの表示名をレジストリに追加します。
+# <a name="adding-user-mode-display-driver-names-to-the-registry"></a>レジストリへのユーザー モード ディスプレイ ドライバー名の追加
 
 
 ユーザー モードのディスプレイ ドライバーの名前がドライバーのインストール中にレジストリに追加されるよう、INF ファイルの追加レジストリ セクションで、次のエントリを設定する必要があります。

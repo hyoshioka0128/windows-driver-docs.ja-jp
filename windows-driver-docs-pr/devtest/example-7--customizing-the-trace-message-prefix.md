@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45ef8258a2b8252951b6fd602a080af8d5cb7bb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352898"
 ---
-# <a name="example-7-customizing-the-trace-message-prefix"></a>例 7:トレース メッセージのプレフィックスをカスタマイズします。
+# <a name="example-7-customizing-the-trace-message-prefix"></a>例 7:トレース メッセージのプレフィックスのカスタマイズ
 
 
 各トレース メッセージの先頭が、[トレース メッセージのプレフィックス](trace-message-prefix.md)トレース メッセージに関するデータで構成されます。 トレースのトレース メッセージのプレフィックスの形式が格納されている\_形式\_%path% 環境変数のプレフィックス。 環境変数の値を変更すると、最もわかりやすい形式で、トレース メッセージに関する必要なデータを表示するトレース メッセージのプレフィックスをカスタマイズできます。 既定のトレース メッセージのプレフィックスで変数とトレース メッセージのプレフィックスに使用できるすべての変数については、トレース メッセージのプレフィックスのトピックで説明します。

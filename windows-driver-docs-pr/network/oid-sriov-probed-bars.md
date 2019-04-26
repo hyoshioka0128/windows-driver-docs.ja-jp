@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_PROBED_BARS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 27f0aa9c863d7ca8977936c40f6669ba7db3826b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351340"
 ---
 # <a name="oidsriovprobedbars"></a>OID\_SRIOV\_PROBED\_バー
 
@@ -48,9 +48,9 @@ OID\_SRIOV\_PROBED\_バー クエリ要求に含まれる、 [ **NDIS\_SRIOV\_PR
 
 同じ値は、管理オペレーティング システムで実行されている PCI ドライバによって実行される PCI バーのクエリを次に各棒、ドライバーによって返される値があります。 PF のミニポート ドライバーを呼び出すことができます[ **NdisMQueryProbedBars** ](https://msdn.microsoft.com/library/windows/hardware/hh451520)にこの情報を確認します。
 
-PCI デバイスの横棒の詳細については、、 *PCI ローカル バス仕様*を参照してください。
+PCI デバイスの横棒の詳細については、次を参照してください。、 *PCI ローカル バス仕様*します。
 
-VF PCI バー レジスタを照会する方法の詳細については、、 [、PCI ベース アドレスを登録仮想関数のクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440182)を参照してください。
+VF PCI バー レジスタを照会する方法の詳細については、次を参照してください。、 [、PCI ベース アドレスを登録仮想関数のクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440182)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

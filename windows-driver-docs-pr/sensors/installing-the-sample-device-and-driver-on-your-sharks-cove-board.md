@@ -5,21 +5,21 @@ ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4933140d66f1aa5a7d8f9b0ce89d384aa87e808c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345247"
 ---
 # <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>サメ Cove ボード上のサンプル デバイスとドライバーをインストールします。
 
 
 サンプル ドライバーをインストールして ADXL345 加速度計をサメ Cove ボードに J1C1 ヘッダーにアタッチします。 これらの手順に従います。
 
-## <a name="install-windows-on-the-sharks-cove-board"></a>サメ Cove ボード上の Windows をインストールします。
+## <a name="install-windows-on-the-sharks-cove-board"></a>Sharks Cove ボードに Windows をインストールする
 
 
-サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)を参照してください。
+サメ Cove ボードを取得する方法と、ボード上で Windows をインストールする方法については、次を参照してください。[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910)と[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)します。
 
 ## <a name="modify-the-adxl345-to-work-with-the-sharks-cove"></a>サメ Cove を使用する ADXL345 を変更します。
 
@@ -82,12 +82,12 @@ Visual Studio での**ビルド**] メニューの [選択**ソリューショ�
 
 
 
-## <a name="alter-the-secondary-system-description-table-ssdt"></a>セカンダリ システムの説明テーブル (SSDT) の変更
+## <a name="alter-the-secondary-system-description-table-ssdt"></a>Secondary System Description Table (SSDT) を変更する
 
 
 1.  x86 バージョンの ASL.exe を Sharks Cove ボードにコピーします。 ASL.exe は、Windows Driver Kit (WDK) で含まれています。
 
-    以下に例を示します。C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\ツール\\x86\\ACPIVerify\\ASL.exe
+    以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
 
 2.  サメ Cove ボードには、管理者としてコマンド プロンプト ウィンドウを開きます。 次のコマンドを入力して、SSDT を逆コンパイルします。
 
@@ -133,7 +133,7 @@ Visual Studio での**ビルド**] メニューの [選択**ソリューショ�
     }
     ```
 
-4.  スコープを挿入 (\_SB\_) エントリ。 スコープ エントリ内に、ユーザー独自の Device エントリを挿入します。 スコープを次に示します (\_SB\_) エントリおよび ADXL345 加速度計のデバイス エントリ。
+4.  Scope(\_SB\_) エントリを挿入します。 スコープ エントリ内に、ユーザー独自の Device エントリを挿入します。 スコープを次に示します (\_SB\_) エントリおよび ADXL345 加速度計のデバイス エントリ。
 
     ``` syntax
     Scope(_SB_)
@@ -229,7 +229,7 @@ testsigning             Yes
 
 1.  管理者としてコマンド プロンプト ウィンドウを開き、次のコマンドを入力します。
 
-    **bcdedit/set TESTSIGNING ON**
+    **bcdedit /set TESTSIGNING ON**
 
 2.  Sharks Cove ボードを再起動します。 ボードを再起動するとき、音量を上げるボタンを押したままにします。 **[Device Manager (デバイス マネージャー)] &gt; [System Setup (システム セットアップ)] &gt; [Boot (ブート)]** の順に移動します。 **[UEFI Security Boot (UEFI セキュリティ ブート)]** を **[Disabled (無効)]** に設定します。
 3.  変更を保存し、Windows の起動を続けます。

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee4578db0bbfc142fde6664de4afb52238e4d6da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353475"
 ---
 # <a name="choosing-a-wan-driver-model"></a>WAN ドライバー モデルの選択
 
@@ -37,7 +37,7 @@ NDIS WAN ミニポート ドライバーは、コネクションレス ミニポ
 
 -   WAN に固有の追加機能を提供します。
 
-いる CoNDIS ドライバーの詳細については、[Connection-Oriented NDIS](connection-oriented-ndis.md)を参照してください。
+いる CoNDIS ドライバーの詳細については、次を参照してください。 [Connection-Oriented NDIS](connection-oriented-ndis.md)します。
 
 新しい WAN ドライバーを作成する場合は、WAN いる CoNDIS モデルを使用することをお勧めします。
 

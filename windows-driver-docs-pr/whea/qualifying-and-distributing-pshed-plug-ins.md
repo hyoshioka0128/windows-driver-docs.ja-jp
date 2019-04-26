@@ -1,6 +1,6 @@
 ---
-title: 修飾および PSHED プラグインを配布します。
-description: 修飾および PSHED プラグインを配布します。
+title: PSHED プラグインの認定と配布
+description: PSHED プラグインの認定と配布
 ms.assetid: fe6cbb01-552f-4b24-b300-168d6311a596
 keywords:
 - デジタル署名 WDK WHEA)、PSHED プラグイン
@@ -9,18 +9,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 906c41d26fd154203b9ce07efbd8c24d8766ecd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340704"
 ---
-# <a name="qualifying-and-distributing-pshed-plug-ins"></a>修飾および PSHED プラグインを配布します。
+# <a name="qualifying-and-distributing-pshed-plug-ins"></a>PSHED プラグインの認定と配布
 
 
 品質およびドライバーの整合性を確保するには、プラグインの PSHED をデジタル署名する必要があります。 プラグインの PSHED をデジタル署名するときに、プラットフォーム ベンダーは次のガイドラインに従う必要があります。
 
--   システムの起動時間を最小限に抑えるには、推奨の埋め込み、 [Authenticode](https://msdn.microsoft.com/library/windows/hardware/ff686697) PSHED プラグイン ファイルにデジタル署名します。 この手順の詳細については、[埋め込みの署名でのドライバーをリリース署名](https://msdn.microsoft.com/library/windows/hardware/ff549832)を参照してください。
+-   システムの起動時間を最小限に抑えるには、推奨の埋め込み、 [Authenticode](https://msdn.microsoft.com/library/windows/hardware/ff686697) PSHED プラグイン ファイルにデジタル署名します。 この手順の詳細については、次を参照してください。[埋め込みの署名でのドライバーをリリース署名](https://msdn.microsoft.com/library/windows/hardware/ff549832)します。
 
 -   ハードウェア プラットフォームがサーバーのロゴ テストに追加の検証を受ける前に処理する、プラグインの[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)Windows Hardware Quality Labs (WHQL) デジタル署名が必要です。 このデジタル署名を取得するには、テストし、Unclassified WHQL テスト カテゴリを使用して、ドライバー パッケージを送信する必要があります。
 
@@ -28,9 +28,9 @@ ms.locfileid: "56537945"
 
      
 
-プラグインの PSHED をデジタル署名する方法の詳細については、[パブリック リリース用のドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552289)を参照してください。
+プラグインの PSHED をデジタル署名する方法の詳細については、次を参照してください。[パブリック リリース用のドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552289)します。
 
-プラグイン PSHED が WHQL のデジタル署名を取得後、プラグインできますシステム ロゴの認定を要求する任意のシステムで。 サーバーのロゴ認定プロセスの詳細については、[Windows ロゴ プログラム](https://go.microsoft.com/fwlink/p/?linkid=26144)を参照してください。
+プラグイン PSHED が WHQL のデジタル署名を取得後、プラグインできますシステム ロゴの認定を要求する任意のシステムで。 サーバーのロゴ認定プロセスの詳細については、次を参照してください。 [Windows ロゴ プログラム](https://go.microsoft.com/fwlink/p/?linkid=26144)します。
 
 PSHED プラグインは、「ファミリ」アプローチでは、クラス、またはハードウェア プラットフォームのファミリ間でプラグインの特定の PSHED を展開に修飾する場所を使用して修飾されます。
 

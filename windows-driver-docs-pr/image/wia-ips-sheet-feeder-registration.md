@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2516bbc397836a660921f9bc2689d224bf679d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343860"
 ---
 # <a name="wiaipssheetfeederregistration"></a>WIA\_IP\_シート\_フィーダー\_登録
 
@@ -70,7 +70,7 @@ WIA\_IP\_シート\_フィーダー\_登録プロパティは、シート フィ
 
 1 つ以上をサポートするスキャナーをスキャン、WIA ヘッド\_IP\_シート\_フィーダー\_REGISTRATION プロパティは、最上位の基準としたスキャン head です。 このプロパティは、シートが取り込まれる、スクロールが取り込まれる、およびハンドヘルド スキャナーで必須です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

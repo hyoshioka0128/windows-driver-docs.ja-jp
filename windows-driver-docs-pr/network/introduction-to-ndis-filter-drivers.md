@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d883cdbfb42d31392cb651e440b872d15faaa10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343635"
 ---
 # <a name="introduction-to-ndis-filter-drivers"></a>NDIS フィルター ドライバーの概要
 
@@ -20,7 +20,7 @@ ms.locfileid: "56581009"
 
 
 
-フィルター ドライバーは、ミニポート ドライバーのフィルター処理のサービスを提供します。 NDIS ドライバー スタックは、ミニポート ドライバーとプロトコル ドライバーが含まれます、必要に応じてフィルター ドライバーを含める必要があります。 NDIS ドライバーとドライバー スタックの詳細については、[ドライバー スタック管理](driver-stack-management.md)を参照してください。
+フィルター ドライバーは、ミニポート ドライバーのフィルター処理のサービスを提供します。 NDIS ドライバー スタックは、ミニポート ドライバーとプロトコル ドライバーが含まれます、必要に応じてフィルター ドライバーを含める必要があります。 NDIS ドライバーとドライバー スタックの詳細については、次を参照してください。[ドライバー スタック管理](driver-stack-management.md)します。
 
 次のアプリケーションには、フィルター ドライバーが必要です。
 

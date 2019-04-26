@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11a26829f683dfda9d0fa6d72a324944c3c5c4f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354037"
 ---
 # <a name="kspropertyvideocontrolframerates"></a>KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金
 
@@ -42,16 +42,16 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>いいえ</p></td>
+<td><p>〇</p></td>
+<td><p>X</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566041" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566041)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"><strong>KSMULTIPLE_ITEM</strong> </a>配列</p></td>
@@ -63,7 +63,7 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 
 プロパティの値 (データの操作) は、KSMULTIPLE\_を 100 ナノ秒単位で使用可能なフレーム レートを記述する項目の配列。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 使用可能なフレーム レートが、KSMULTIPLE で返される\_アイテムの配列。 アプリケーションに送信、ミニドライバーを KSPROPERTY\_VIDEOCONTROL\_フレーム\_、KSPROPERTY でストリームのインデックスとイメージのサイズを指定するレート要求\_VIDEOCONTROL\_フレーム\_料金\_S 構造体。 ミニドライバーは、呼び出し元の KSMULTIPLE でフレーム レート情報を返します\_項目配列バッファー。 このバッファーは固定ヘッダー (KSMULTIPLE\_項目)、およびそれに続くデータの可変長の量 (、KSMULTIPLE の値に基づいて\_項目の構造)。
@@ -72,7 +72,7 @@ KSPROPERTY\_VIDEOCONTROL\_フレーム\_料金プロパティが使用可能な�
 
 バッファーのサイズが渡された場合、ミニドライバーは、0、ようにミニドライバーに設定する必要があります、 **NumberOfBytesToTransfer**ハードウェア ベースのメンバー\_ストリーム\_要求\_に渡されるブロック構造、ミニドライバー バッファーのサイズが必要なし、状態を返す\_バッファー\_オーバーフローが発生します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

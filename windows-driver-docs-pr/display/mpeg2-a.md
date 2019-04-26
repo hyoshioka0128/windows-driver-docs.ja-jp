@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e040c995b2796a49ce6b23c2a90003b6850b1acd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345654"
 ---
 # <a name="mpeg2a"></a>MPEG2\_A
 
@@ -35,7 +35,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 <thead>
 <tr class="header">
 <th align="left">構造体のメンバー</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +58,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 <thead>
 <tr class="header">
 <th align="left">構造体のメンバー</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +92,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bRcontrol</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bBidirectionalAveragingMode</strong></p></td>
@@ -104,27 +104,27 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bPicExtrapolation</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bPicDeblocked</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bPic4MVallowed</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bPicOBMC</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bMV_RPS</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>SpecificIDCT</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bPicScanFixed</strong></p></td>
@@ -145,7 +145,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 <thead>
 <tr class="header">
 <th align="left">wMBtype ビット</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@ MPEG2\_プロファイルは、次の制限のセットによって定義され�
 </tr>
 <tr class="even">
 <td align="left"><p>H261LoopFilter</p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 </tbody>
 </table>

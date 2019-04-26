@@ -1,17 +1,17 @@
 ---
-title: カスタム ポート機能の状態情報を管理します。
-description: カスタム ポート機能の状態情報を管理します。
+title: カスタム ポート機能の状態情報の管理
+description: カスタム ポート機能の状態情報の管理
 ms.assetid: C989888B-1636-488A-80BF-13D136312417
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 372388340c148149f2f49d03150fa969abae1bd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343606"
 ---
-# <a name="managing-custom-port-feature-status-information"></a>カスタム ポート機能の状態情報を管理します。
+# <a name="managing-custom-port-feature-status-information"></a>カスタム ポート機能の状態情報の管理
 
 
 HYPER-V 拡張可能スイッチのインターフェイスは、拡張可能スイッチ ポートのカスタム状態情報を照会する次のオブジェクト識別子 (OID) を使用します。 この状態情報と呼ばれる*機能の状態をポート*情報。
@@ -43,9 +43,9 @@ HYPER-V 拡張可能スイッチのインターフェイスは、拡張可能ス
 
 -   呼び出す必要がありますが、拡張機能が拡張可能スイッチのカスタム プロパティを管理しない場合は[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張可能スイッチのドライバー スタック ダウン OID 要求を転送します。
 
-    OID 要求を転送する方法の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)を参照してください。
+    OID 要求を転送する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
 
-詳細を定義し、ポート機能の状態情報を登録する方法については、[カスタム ポート機能の状態](custom-port-feature-status.md)を参照してください。
+詳細を定義し、ポート機能の状態情報を登録する方法については、次を参照してください。[カスタム ポート機能の状態](custom-port-feature-status.md)します。
 
  
 

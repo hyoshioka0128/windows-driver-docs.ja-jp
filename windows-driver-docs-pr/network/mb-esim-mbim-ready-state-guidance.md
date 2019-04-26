@@ -1,17 +1,17 @@
 ---
-title: MB eSIM MBIM 準備完了状態のガイダンス
-description: MB eSIM MBIM 準備完了状態のガイダンス
+title: MB eSIM MBIM 準備完了状態ガイダンス
+description: MB eSIM MBIM 準備完了状態ガイダンス
 ms.assetid: E7EB5E6D-1858-4B94-AF91-05333CC93D8B
 ms.date: 08/10/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a74ff0333adb8772a2b355e4c43819cf34ff738
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343389"
 ---
-# <a name="mb-esim-mbim-ready-state-guidance"></a>MB eSIM MBIM 準備完了状態のガイダンス
+# <a name="mb-esim-mbim-ready-state-guidance"></a>MB eSIM MBIM 準備完了状態ガイダンス
 
 このトピックでは、Windows 10 バージョン 1709 以降の eSIM シナリオの予期される MBIM 準備完了状態でガイダンスを示します。 OS が正しくシナリオのすべての変更を処理することにより、正しい準備完了状態に準拠しています。 
 
