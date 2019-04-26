@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1b804bf7f2fd8cd580827f6a54df0bef192a20c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344594"
 ---
 # <a name="rxallocatepoolwithtag-function"></a>\_RxAllocatePoolWithTag 関数
 
@@ -55,7 +55,7 @@ IRQL からアクセスできる非ページ システム メモリです。 **N
 割り当てるバイトで、メモリ ブロックのサイズ。
 
 *タグ*   
-割り当てられたバッファーをマークするために使用する 4 バイト タグ。 タグを使用する方法については、[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)を参照してください。 タグ内の各文字の ASCII 値は 0 ~ 127 の範囲にある必要があります。
+割り当てられたバッファーをマークするために使用する 4 バイト タグ。 タグを使用する方法については、次を参照してください。 [ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)します。 タグ内の各文字の ASCII 値は 0 ~ 127 の範囲にある必要があります。
 
 *ファイル名*   
 メモリの割り当てが発生したソース ファイル名へのポインター。 このパラメーターは現在は使用されません。

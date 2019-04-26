@@ -5,11 +5,11 @@ ms.assetid: C1FB0519-6BB7-46B0-A3FA-B8E982279C44
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99dd3b002389b3844b0f68ef21c750d00ba91893
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345968"
 ---
 # <a name="standardized-inf-keywords-for-nvgre-task-offload"></a>NVGRE タスク オフロード用の標準化された INF キーワード
 
@@ -29,7 +29,7 @@ ms.locfileid: "56538626"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -38,7 +38,7 @@ ms.locfileid: "56538626"
 <td align="left"><p><strong>*EncapsulatedPacketTaskOffload</strong></p></td>
 <td align="left"><p>カプセル化タスク オフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -52,7 +52,7 @@ EnterprisePublishing</td>
 
  
 
-標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
  
 

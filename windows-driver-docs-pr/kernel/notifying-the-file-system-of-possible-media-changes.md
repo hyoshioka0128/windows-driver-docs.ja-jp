@@ -1,6 +1,6 @@
 ---
-title: 変更の可能性があるメディアのファイル システムへの通知
-description: 変更の可能性があるメディアのファイル システムへの通知
+title: メディア変更の可能性に関するファイル システムへの通知
+description: メディア変更の可能性に関するファイル システムへの通知
 ms.assetid: b1956370-ec9c-4a43-90a8-12705d28e314
 keywords:
 - WDK カーネルをリムーバブル メディア、メディアの変更の通知
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78c0f16444119e460ddab1434f8422769310ca2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341960"
 ---
-# <a name="notifying-the-file-system-of-possible-media-changes"></a>変更の可能性があるメディアのファイル システムへの通知
+# <a name="notifying-the-file-system-of-possible-media-changes"></a>メディア変更の可能性に関するファイル システムへの通知
 
 
 

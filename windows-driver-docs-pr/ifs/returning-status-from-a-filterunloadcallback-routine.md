@@ -1,6 +1,6 @@
 ---
-title: FilterUnloadCallback ルーチンから状態を返す
-description: FilterUnloadCallback ルーチンから状態を返す
+title: FilterUnloadCallback ルーチンから返される状態
+description: FilterUnloadCallback ルーチンから返される状態
 ms.assetid: 6fdaadc7-860d-49d6-833c-64624f435fd3
 keywords:
 - 状態値 WDK ファイル システム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28366e44f850590ff82b71ab6227bdd68def06f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344558"
 ---
-# <a name="returning-status-from-a-filterunloadcallback-routine"></a>FilterUnloadCallback ルーチンから状態を返す
+# <a name="returning-status-from-a-filterunloadcallback-routine"></a>FilterUnloadCallback ルーチンから返される状態
 
 
 ## <span id="ddk_returning_status_from_a_filterunloadcallback_routine_if"></span><span id="DDK_RETURNING_STATUS_FROM_A_FILTERUNLOADCALLBACK_ROUTINE_IF"></span>

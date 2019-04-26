@@ -1,19 +1,19 @@
 ---
-title: 記憶域クラス ドライバーいる出力ルーチン
-description: 記憶域クラス ドライバーいる出力ルーチン
+title: 記憶域クラス ドライバーの GetDescriptor ルーチン
+description: 記憶域クラス ドライバーの GetDescriptor ルーチン
 ms.assetid: d1ddcfe8-f276-4e45-82b7-0f07f0526c71
 keywords:
 - いる出力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f3f439c1fd1a72561cb5c25adf8e8158b94de8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339029"
 ---
-# <a name="storage-class-drivers-getdescriptor-routine"></a>記憶域クラス ドライバーいる出力ルーチン
+# <a name="storage-class-drivers-getdescriptor-routine"></a>記憶域クラス ドライバーの GetDescriptor ルーチン
 
 
 ## <span id="ddk_storage_class_drivers_getdescriptor_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_GETDESCRIPTOR_ROUTINE_KG"></span>
@@ -41,7 +41,7 @@ A*いる出力*日常的なビルドや要求のクエリ プロパティを設�
 
 -   かどうかのデータをキャッシュ、HBA 内部的に (**CachesData**)。
 
-クラス ドライバーは、サイズ、物理的な改行は、基になる HBA のアラインメント要件の数に記憶域ポート ドライバーに送信されたすべての要求が準拠していること、ディスパッチ ルーチンを確認できるように、FDO のデバイスの拡張機能でこの情報を格納する必要があります。 クラス ドライバーのディスパッチ ルーチンの詳細については、[記憶域クラス ドライバーのディスパッチ ルーチン](storage-class-driver-s-dispatch-routines.md)を参照してください。 デバイスの拡張機能の設定に関する詳細については、[デバイス拡張機能の設定を、記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)を参照してください。
+クラス ドライバーは、サイズ、物理的な改行は、基になる HBA のアラインメント要件の数に記憶域ポート ドライバーに送信されたすべての要求が準拠していること、ディスパッチ ルーチンを確認できるように、FDO のデバイスの拡張機能でこの情報を格納する必要があります。 クラス ドライバーのディスパッチ ルーチンの詳細については、次を参照してください。[記憶域クラス ドライバーのディスパッチ ルーチン](storage-class-driver-s-dispatch-routines.md)します。 デバイスの拡張機能の設定に関する詳細については、次を参照してください。[デバイス拡張機能の設定を、記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)します。
 
  
 

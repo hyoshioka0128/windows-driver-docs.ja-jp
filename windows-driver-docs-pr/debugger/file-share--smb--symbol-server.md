@@ -1,17 +1,17 @@
 ---
-title: ファイル共有 (SMB) のシンボル サーバー
+title: ファイル共有 (SMB) シンボル サーバー
 description: 単にファイル共有を作成して、そのファイル共有へのアクセスをユーザーに許可するは、SMB シンボル サーバーを実行します。
 ms.assetid: C5CF9665-9289-48EB-AA12-8881F812488A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2bbaeed3a565e8854074439b410d2cc17494fff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348477"
 ---
-# <a name="file-share-smb-symbol-server"></a>ファイル共有 (SMB) のシンボル サーバー
+# <a name="file-share-smb-symbol-server"></a>ファイル共有 (SMB) シンボル サーバー
 
 
 単にファイル共有を作成して、そのファイル共有へのアクセスをユーザーに許可するは、SMB シンボル サーバーを実行します。

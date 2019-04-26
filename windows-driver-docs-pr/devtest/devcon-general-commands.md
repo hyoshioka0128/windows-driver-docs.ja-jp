@@ -1,5 +1,5 @@
 ---
-title: デバイス コンソール (DevCon.exe) コマンド
+title: デバイス コンソール (DevCon.exe) のコマンド
 description: DevCon (DevCon.exe) は、Windows を実行しているコンピューターにデバイスの詳細情報を表示できるコマンド ライン ツールです。 有効にする、無効にする、インストール、構成、およびデバイスを削除する DevCon を使用することもできます。 DevCon では、次の構文を使用します。
 ms.assetid: b397c407-db1f-4e2a-8beb-4fe989bd06e0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6faefcb9433e56c0e752a413ede69719525dc1a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347048"
 ---
-# <a name="device-console-devconexe-commands"></a>デバイス コンソール (DevCon.exe) コマンド
+# <a name="device-console-devconexe-commands"></a>デバイス コンソール (DevCon.exe) のコマンド
 
 
 DevCon (DevCon.exe) は、Windows を実行しているコンピューターにデバイスの詳細情報を表示できるコマンド ライン ツールです。 有効にする、無効にする、インストール、構成、およびデバイスを削除する DevCon を使用することもできます。 DevCon では、次の構文を使用します。
@@ -46,7 +46,7 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 <span id="________r______"></span><span id="________R______"></span> **/r**条件付き再起動します。 再起動が必要な変更を有効にする場合にのみ操作を完了した後、システムを再起動します。
 
-このパラメーターとは異なります、 [ **DevCon 再起動**](devcon-reboot.md)操作で、強制的にシステムを再起動します。 代わりに、 **/r**かどうか、再起動が必要、付随する操作からのリターン コードに基づくパラメーターを決定します。詳細については、[再起動と再起動](#ddk-rebooting-and-restarting-tools)を参照してください。
+このパラメーターとは異なります、 [ **DevCon 再起動**](devcon-reboot.md)操作で、強制的にシステムを再起動します。 代わりに、 **/r**かどうか、再起動が必要、付随する操作からのリターン コードに基づくパラメーターを決定します。詳細については、次を参照してください。[再起動と再起動](#ddk-rebooting-and-restarting-tools)します。
 
 <span id="_______command______"></span><span id="_______COMMAND______"></span> *コマンド*DevCon コマンドを指定します。 使用可能な DevCon コマンドとコマンド引数の詳細については、次の一覧を使用します。
 
@@ -114,7 +114,7 @@ DevCon コマンドのパラメーターは、構文に示されている順序�
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 DevCon の後続の操作で使用するためのコンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するで始まる、 [ **DevCon HwIDs** ](devcon-hwids.md)コマンド。 詳細については、[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を参照してください。
+多くの DevCon 操作には、デバイスのハードウェア ID が必要です。 DevCon の後続の操作で使用するためのコンピューター上のすべてのデバイスのハードウェア Id の一覧を作成するで始まる、 [ **DevCon HwIDs** ](devcon-hwids.md)コマンド。 詳細については、次を参照してください。[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
 
 ### <a name="span-idddkdevconsearchlogictoolsspanspan-idddkdevconsearchlogictoolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon でデバイスを検索する方法
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57e90bc3f1882d888832c1978c7f0da02da772c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353615"
 ---
 # <a name="registers"></a>レジスタ
 
@@ -22,7 +22,7 @@ ms.locfileid: "56578832"
 
 [デバッガー エンジン](introduction.md#debugger-engine)を調べて、ターゲットのレジスタを変更するために使用できます。
 
-ターゲットで使用可能なレジスタは、そのプロセッサ アーキテクチャに依存します。 X86、Itanium プロセッサのレジスタの説明は、[プロセッサ アーキテクチャ](processor-architecture.md)を参照してください。 プロセッサの使用可能なレジスタの詳細については、そのプロセッサのマニュアルを参照してください。
+ターゲットで使用可能なレジスタは、そのプロセッサ アーキテクチャに依存します。 X86、Itanium プロセッサのレジスタの説明は、次を参照してください。[プロセッサ アーキテクチャ](processor-architecture.md)します。 プロセッサの使用可能なレジスタの詳細については、そのプロセッサのマニュアルを参照してください。
 
 ### <a name="span-idtheregistersetspanspan-idtheregistersetspanthe-register-set"></a><span id="the_register_set"></span><span id="THE_REGISTER_SET"></span>登録セット
 
@@ -52,7 +52,7 @@ A *subregister*が別のレジスタ内に含まれる登録します。 Subregi
 
 ### <a name="span-idpseudoregistersspanspan-idpseudoregistersspan-pseudo-registers"></a><span id="pseudo_registers"></span><span id="PSEUDO_REGISTERS"></span> 擬似レジスタ
 
-*擬似レジスタ*デバッガー エンジンによって管理される、たとえば、特定の値を保持する変数 **$teb**擬似レジスタの値が現在のスレッドのスレッドの環境のアドレスの名前を指定しますブロック終了します。 詳細についてと擬似レジスタの一覧は、[擬似レジスタ構文](pseudo-register-syntax.md)を参照してください。
+*擬似レジスタ*デバッガー エンジンによって管理される、たとえば、特定の値を保持する変数 **$teb**擬似レジスタの値が現在のスレッドのスレッドの環境のアドレスの名前を指定しますブロック終了します。 詳細についてと擬似レジスタの一覧は、次を参照してください。[擬似レジスタ構文](pseudo-register-syntax.md)します。
 
 各擬似レジスタには、インデックスがあります。 インデックスが 0 ~ 擬似レジスタの数の数値 (によって返される[ **GetNumberPseudoRegisters**](https://msdn.microsoft.com/library/windows/hardware/ff547957)) から 1 を引いたします。 その名前で擬似レジスタのインデックスを確認する[ **GetPseudoIndexByName**](https://msdn.microsoft.com/library/windows/hardware/ff548206)します。 使用して擬似レジスタの値を読み取ることができます[ **GetPseudoValues**](https://msdn.microsoft.com/library/windows/hardware/ff548215)を使用して擬似レジスタに値を記述できますと[ **SetPseudoValues** ](https://msdn.microsoft.com/library/windows/hardware/ff556767). については、その型を含む、擬似レジスタを使用して、 [ **GetPseudoDescription**](https://msdn.microsoft.com/library/windows/hardware/ff548189)します。
 
@@ -66,7 +66,7 @@ A *subregister*が別のレジスタ内に含まれる登録します。 Subregi
 
 ### <a name="span-ideventsspanspan-ideventsspanevents"></a><span id="events"></span><span id="EVENTS"></span>イベント
 
-エンジンを呼び出すが、ターゲットのレジスタの値が変更されるたびに、 [ **IDebugEventCallbacks::ChangeDebuggeeState** ](https://msdn.microsoft.com/library/windows/hardware/ff550678)コールバック メソッド、パラメーターを持つ*フラグ*デバッグ に設定\_CDS\_を登録します。
+エンジンを呼び出すが、ターゲットのレジスタの値が変更されるたびに、 [ **IDebugEventCallbacks::ChangeDebuggeeState** ](https://msdn.microsoft.com/library/windows/hardware/ff550678)コールバック メソッド、パラメーターを持つ*フラグ*デバッグ] に設定\_CDS\_を登録します。
 
  
 

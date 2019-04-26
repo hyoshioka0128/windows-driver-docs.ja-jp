@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5793feb0cc669e966f9cc29ffddfccaf17a427c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358422"
 ---
 # <a name="mapping-the-copp-ddi-to-directdraw-and-directx-va"></a>DirectDraw および DirectX VA への COPP DDI のマッピング
 
@@ -29,7 +29,7 @@ COPP 機能からアクセスする必要があります、[補正コールバ�
 
 型指定されたパラメーターを使用しないため COPP DDI は動き補正のコールバック関数にマップできる (これは、1 つのパラメーターが、構造体へのポインターがある)。 つまり、その情報の種類に従って動き補正のコールバック関数に渡される 1 つのパラメーターの情報を処理できます。
 
-たとえば場合、 **DXVA\_COPPGetCertificateLengthFnCode**-に型情報が渡される、 [ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)関数は、*DdMoCompRender*呼び出しを開始することができます、 [ *COPPGetCertificateLength* ](https://msdn.microsoft.com/library/windows/hardware/ff539644)のグラフィックスで使用される証明書の長さ (バイト単位) を照会する COPP DDI 関数ハードウェア。 ただし場合、 **DXVA\_COPPSequenceStartFnCode**-に型情報が渡される*DdMoCompRender*代わりに、 *DdMoCompRender*への呼び出しを開始できます[ *COPPSequenceStart* ](https://msdn.microsoft.com/library/windows/hardware/ff540421)の現在のビデオ セッションで保護されているコマンドと状態のシーケンスの開始を示す COPP DDI 関数。
+たとえば場合、 **DXVA\_COPPGetCertificateLengthFnCode**-に型情報が渡される、 [ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)関数は、[ *DdMoCompRender*呼び出しを開始することができます、 [ *COPPGetCertificateLength* ](https://msdn.microsoft.com/library/windows/hardware/ff539644)のグラフィックスで使用される証明書の長さ (バイト単位) を照会する COPP DDI 関数ハードウェア。 ただし場合、 **DXVA\_COPPSequenceStartFnCode**-に型情報が渡される*DdMoCompRender*代わりに、 *DdMoCompRender*への呼び出しを開始できます[ *COPPSequenceStart* ](https://msdn.microsoft.com/library/windows/hardware/ff540421)の現在のビデオ セッションで保護されているコマンドと状態のシーケンスの開始を示す COPP DDI 関数。
 
 次のトピックでは、COPP DDI を動き補正のコールバック関数にマップする方法について説明します。
 

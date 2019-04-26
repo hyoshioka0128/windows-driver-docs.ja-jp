@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1681950b654ea6f01ca8b56eeea3a3f7b99071e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346871"
 ---
 # <a name="sending-data-from-a-filter-driver"></a>フィルター ドライバーからのデータの送信
 
@@ -19,7 +19,7 @@ ms.locfileid: "56579044"
 
 
 
-フィルター ドライバーでは、送信要求を開始したり、上にあるドライバーを開始する送信要求をフィルター処理することができます。 プロトコル ドライバーを呼び出すと、 [ **NdisSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564535)関数、NDIS を指定された送信[ **NET\_バッファー\_ボックスの一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ドライバー スタックの最上位フィルター モジュールに構造体。
+フィルター ドライバーでは、送信要求を開始したり、上にあるドライバーを開始する送信要求をフィルター処理することができます。 プロトコル ドライバーを呼び出すと、 [ **NdisSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff564535)関数、NDIS を指定された送信[ **NET\_バッファー\_]ボックスの一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ドライバー スタックの最上位フィルター モジュールに構造体。
 
 ### <a name="send-requests-initiated-by-a-filter-driver"></a>フィルター ドライバーによって開始された要求を送信します。
 
@@ -69,7 +69,7 @@ NDIS フィルター ドライバーを呼び出す[ *FilterSendNetBufferLists* 
 
 -   後で処理するためのローカル データ構造内のバッファーをキューします。 フィルター ドライバーの設計では、キューに置かれたバッファーの処理、ドライバーの原因は何を決定します。 いくつかの例には、処理のタイムアウト後または特定のバッファーを受信した後の処理が含まれます。
 
-    **注**  キャンセル要求の送信をサポートする必要がありますドライバー キューでは、後で処理するための要求を送信する場合、。 キャンセル要求の送信の詳細については、[フィルター ドライバーの送信要求をキャンセル](canceling-a-send-request-in-a-filter-driver.md)を参照してください。
+    **注**  キャンセル要求の送信をサポートする必要がありますドライバー キューでは、後で処理するための要求を送信する場合、。 キャンセル要求の送信の詳細については、次を参照してください。[フィルター ドライバーの送信要求をキャンセル](canceling-a-send-request-in-a-filter-driver.md)します。
 
      
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 071f88c4fed60aaebd6a9001b402551023a5f640
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357785"
 ---
 # <a name="guiddevinterfacemediumchanger"></a>GUID_DEVINTERFACE_MEDIUMCHANGER
 
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[デバイス インターフェイス クラス]
 
 システム提供中[チェンジャー ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff551455)オペレーティング システムとメディア チェンジャー デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_MEDIUMCHANGER のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
+記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

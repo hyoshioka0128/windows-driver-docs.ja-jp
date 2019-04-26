@@ -1,17 +1,17 @@
 ---
-title: 自動アイテムでサポートされる WIA プロパティ
-description: 自動アイテムでサポートされる WIA プロパティ
+title: 自動項目でサポートされる WIA のプロパティ
+description: 自動項目でサポートされる WIA のプロパティ
 ms.assetid: 71b3a9ea-e402-4be8-9c62-9463e2a10f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 995920193026fc1f5702cb4fe42ba27da6c2697b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352682"
 ---
-# <a name="wia-properties-supported-by-an-auto-item"></a>自動アイテムでサポートされる WIA プロパティ
+# <a name="wia-properties-supported-by-an-auto-item"></a>自動項目でサポートされる WIA のプロパティ
 
 
 [自動項目](auto-item.md)を表す、[スキャンの自動構成](auto-configured-scanning.md)WIA デバイス WIA アプリケーションでスキャン ジョブの介入なしにその設定のほとんどは自動的に構成での関数。 自動アイテムの詳細については、WIA の説明を参照してください。\_カテゴリ\_] の [自動] [WIA 項目カテゴリ](wia-item-categories.md)します。

@@ -5,11 +5,11 @@ ms.assetid: 59ac7ec7-1b96-4fe1-a221-d8422e60072d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c7fccb17923cebd1236b368820130abb71900d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337516"
 ---
 # <a name="windows-10-mobile-partition-layout"></a>Windows 10 Mobile のパーティション レイアウト
 

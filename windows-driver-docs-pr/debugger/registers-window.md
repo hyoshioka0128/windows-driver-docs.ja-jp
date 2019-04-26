@@ -1,5 +1,5 @@
 ---
-title: WinDbg での表示と編集を登録します
+title: WinDbg でのレジスタの表示と編集
 description: 、WinDbg では、表示し、コマンドを入力して、[レジスタ] ウィンドウを使用して、または [ウォッチ] ウィンドウを使用して、レジスタを編集します。
 ms.assetid: bd7ced3b-7f71-4ea5-a45b-38339dc3e87c
 keywords:
@@ -9,16 +9,16 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 434e682405af1bff8054c49c5e6c915040a5bfd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353652"
 ---
-# <a name="viewing-and-editing-registers-in-windbg"></a>WinDbg での表示と編集を登録します
+# <a name="viewing-and-editing-registers-in-windbg"></a>WinDbg でのレジスタの表示と編集
 
 
-レジスタは、CPU 上にある小さな揮発性メモリ単位です。 多くのレジスタは、特定の用途専用し、その他のレジスタが使用するユーザー モード アプリケーションで利用できます。 X86 ベースおよび x64 ベース プロセッサでは、使用可能なレジスタのさまざまなコレクションがあります。 各プロセッサの詳細については、レジスタは、[プロセッサ アーキテクチャ](processor-architecture.md)を参照してください。
+レジスタは、CPU 上にある小さな揮発性メモリ単位です。 多くのレジスタは、特定の用途専用し、その他のレジスタが使用するユーザー モード アプリケーションで利用できます。 X86 ベースおよび x64 ベース プロセッサでは、使用可能なレジスタのさまざまなコレクションがあります。 各プロセッサの詳細については、レジスタは、次を参照してください。[プロセッサ アーキテクチャ](processor-architecture.md)します。
 
 、WinDbg では、表示し、コマンドを入力して、[レジスタ] ウィンドウを使用して、または [ウォッチ] ウィンドウを使用して、レジスタを編集します。
 
@@ -29,7 +29,7 @@ ms.locfileid: "56535782"
 
 レジスタは、ターゲットを停止するたびとも自動的に表示されます。 使用してコードをステップ実行する場合、 [ **p (ステップ)** ](p--step-.md)または[ **t (トレース)** ](t--trace-.md)コマンド、レジスタのあらゆる段階で表示を表示します。 この表示を停止するには、使用、 **r**これらのコマンドを使用する場合します。
 
-X86 ベースのプロセッサでは、上、 **r**オプションもフラグと呼ばれるいくつかの 1 ビット レジスタを制御します。 これらのフラグを変更するには、ときに、通常のレジスタを変更するよりも若干異なる構文を使用します。 詳細については、これらのフラグとこの構文の詳細については、[x86 フラグ](x86-architecture.md#x86-flags)を参照してください。
+X86 ベースのプロセッサでは、上、 **r**オプションもフラグと呼ばれるいくつかの 1 ビット レジスタを制御します。 これらのフラグを変更するには、ときに、通常のレジスタを変更するよりも若干異なる構文を使用します。 詳細については、これらのフラグとこの構文の詳細については、次を参照してください。 [x86 フラグ](x86-architecture.md#x86-flags)します。
 
 ## <a name="span-idtheregisterswindowspanspan-idtheregisterswindowspanspan-idtheregisterswindowspanthe-registers-window"></a><span id="The_Registers_Window"></span><span id="the_registers_window"></span><span id="THE_REGISTERS_WINDOW"></span>[レジスタ] ウィンドウ
 
@@ -55,7 +55,7 @@ X86 ベースのプロセッサでは、上、 **r**オプションもフラグ�
     -   無効な値を入力すると、ENTER キーを押したときに、古い値が再び表示されます。
 -   レジスタの値は、現在の基数に表示され、同じ基数に新しい値を入力する必要があります。 現在の基数を変更するには、使用、 [ **n (設定数の基本)** ](n--set-number-base-.md)デバッガー コマンド] ウィンドウでコマンド。
 
--   ユーザー モードでは、[レジスタ] ウィンドウには、現在のスレッドに関連付けられているレジスタが表示されます。 現在のスレッドの詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+-   ユーザー モードでは、[レジスタ] ウィンドウには、現在のスレッドに関連付けられているレジスタが表示されます。 現在のスレッドの詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 -   カーネル モードで [レジスタ] ウィンドウを表示に現在関連付けられているレジスタ[コンテキストを登録](changing-contexts.md#register-context)します。 特定のスレッド、コンテキストのレコードを一致するように登録するコンテキストを設定したり、フレームをトラップします。 指定されたレジスタのコンテキストの最も重要なレジスタのみが実際に表示されます。その値を変更することはできません。
 
@@ -73,7 +73,7 @@ X86 ベースのプロセッサでは、上、 **r**オプションもフラグ�
 
 -   (メニューのみ)**常に浮動**によって、ウィンドウをドッキング場所にドラッグされる場合でも、ドッキングされていないままにします。
 
--   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+-   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
 -   (メニューのみ)**ヘルプ**ツールを Windows のデバッグ ドキュメントのこのトピックを開きます。
 
@@ -107,7 +107,7 @@ WinDbg を [ウォッチ] ウィンドウを使用して、レジスタを表示
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
  
 

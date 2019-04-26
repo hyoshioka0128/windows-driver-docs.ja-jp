@@ -1,6 +1,6 @@
 ---
 title: __Sdv_save_request と __sdv_retrieve_request 遅延プロシージャ呼び出しを使用します。
-description: __Sdv_save_request と __sdv_retrieve_request 遅延プロシージャ呼び出しを使用します。
+description: 遅延プロシージャ呼び出しのための __sdv_save_request と __sdv_retrieve_request の使用
 ms.assetid: 14d3a022-3e74-4526-9bf5-fee1ce36ac9e
 keywords:
 - __sdv_save_request
@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b15e8f76027bc25c168d4d993652bfc671223c6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341648"
 ---
 # <a name="using-sdvsaverequest-and-sdvretrieverequest-for-deferred-procedure-calls"></a>使用して\_ \_sdv\_保存\_要求と\_ \_sdv\_取得\_遅延プロシージャ呼び出しの要求
 

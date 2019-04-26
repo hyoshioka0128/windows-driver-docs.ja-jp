@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PACKET_COALESCING_FILTER_MATCH_COUNT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a90580eea69d85ccf616b3793ba48617810d5678
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350938"
 ---
 # <a name="oidpacketcoalescingfiltermatchcount"></a>OID\_パケット\_COALESCING\_フィルター\_一致\_数
 
@@ -38,7 +38,7 @@ OID の OID のクエリ要求を処理した後、ミニポート ドライバ�
 
 -   NDIS ミニポート ドライバーの呼び出す[ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)関数を基になるネットワーク アダプターをリセットします。
 
-パケットの結合の詳細については、[NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh205393)を参照してください。
+パケットの結合の詳細については、次を参照してください。 [NDIS パケット結合](https://msdn.microsoft.com/library/windows/hardware/hh205393)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -53,7 +53,7 @@ OID 要求は正常に完了しました。
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 他の理由から、要求が失敗しました。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

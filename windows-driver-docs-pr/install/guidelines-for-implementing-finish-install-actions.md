@@ -1,17 +1,17 @@
 ---
-title: 完了-インストール アクションを実装するためのガイドライン
-description: 完了-インストール アクションを実装するためのガイドライン
+title: インストールの完了アクションの実装のガイドライン
+description: インストールの完了アクションの実装のガイドライン
 ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 968e752fa905d35eaf7c7479ff4cff59e8995807
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342747"
 ---
-# <a name="guidelines-for-implementing-finish-install-actions"></a>完了-インストール アクションを実装するためのガイドライン
+# <a name="guidelines-for-implementing-finish-install-actions"></a>インストールの完了アクションの実装のガイドライン
 
 
 完了-インストール アクションを実行できる、*インストーラー* (クラスのインストーラー、クラスの共同インストーラーまたはデバイスの共同インストーラー)。 完了-インストール アクションでは、インストーラーできます実行可能プログラムを実行、プロセスを作成、スレッドを作成またはデバイス ドライバーのインストールの完了-インストール プロセスでコードを実行します。
@@ -42,7 +42,7 @@ ms.locfileid: "56559373"
 
     このフラグは、デバイスの設定が、Windows には、新しい 完了-インストール プロセスが実行されます。
 
-    詳細については、[- インストールが完了操作を実行している](running-finish-install-actions.md)を参照してください。
+    詳細については、次を参照してください。 [- インストールが完了操作を実行している](running-finish-install-actions.md)します。
 
 -   インストーラーでは、完了インストール アクションが失敗し、もう一度は試行しない必要がある状況を処理する必要があります。
 
@@ -58,7 +58,7 @@ ms.locfileid: "56559373"
 
 -   含めるし、で、完了-インストール アクションを実行するために必要なすべてのファイルをインストールする必要があります完了インストール アクションを実装するインストーラーを登録する前に、 [ **CopyFiles ディレクティブ**](inf-copyfiles-directive.md)の[INF ファイル](inf-files.md)デバイス。 ファイルがアクセスできる場所にインストール中に、インストーラーによって配置されるように必要です。
 
-    デバイスまたはクラスの共同インストーラーの登録要件の詳細については、[クラス共同インストーラーを登録する](registering-a-class-co-installer.md)を参照してください。
+    デバイスまたはクラスの共同インストーラーの登録要件の詳細については、次を参照してください。[クラス共同インストーラーを登録する](registering-a-class-co-installer.md)します。
 
  
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a1983f4c5acfde48a2051a00e450df326ab3187
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348833"
 ---
 # <a name="details-of-the-extended-format"></a>拡張形式の詳細
 
@@ -25,25 +25,25 @@ ms.locfileid: "56572113"
 
 書式設定 (DXGI\_形式\_\*) B8G8R8A8 B8G8R8A8 B8G8R8X8 B8G8R8X8 R10G10B10 リソース B8G8R8A8 \_UNORM \_UNORM B8G8R8X8 \_UNORM \_UNORM R10G10B10A2 \_XR\_バイアス属性\_(既存) TYPELESS \_SRGB \_(既存) TYPELESS \_SRGB \_TYPELESS \_A2\_UNORM バッファー
 
-N/A
+なし
 
 R
 
 (変更)
 
-N/A
+なし
 
-N/A
+なし
 
 R
 
 (変更)
 
-N/A
+なし
 
-N/A
+なし
 
-N/A
+なし
 
 入力
 
@@ -53,25 +53,25 @@ N/A
 
 バッファー
 
-N/A
+なし
 
 R
 
 (変更)
 
-N/A
+なし
 
-N/A
+なし
 
 R
 
 (変更)
 
-N/A
+なし
 
-N/A
+なし
 
-N/A
+なし
 
 Texture1D
 
@@ -93,7 +93,7 @@ R
 
 R
 
-N/A
+なし
 
 Texture2D
 
@@ -135,11 +135,11 @@ R
 
 R
 
-N/A
+なし
 
 テクスチャ
 
-キューブ
+Cube
 
 R
 
@@ -159,25 +159,25 @@ R
 
 R
 
-N/A
+なし
 
 シェーダーの ID
 
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
-N/A
+なし
 
 シェーダー
 
@@ -185,21 +185,21 @@ N/A
 
 (フィルター)
 
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
-N/A
+なし
 
 MIP マップ
 
@@ -223,7 +223,7 @@ R
 
 R
 
-N/A
+なし
 
 MIP マップ
 
@@ -231,7 +231,7 @@ MIP マップ
 
 生成
 
-N/A
+なし
 
 R
 
@@ -239,7 +239,7 @@ R
 
 R
 
-N/A
+なし
 
 R
 
@@ -247,51 +247,51 @@ R
 
 R
 
-N/A
+なし
 
-N/A
+なし
 
 Render
 
-移行先
+対象
 
-N/A
-
-R
-
-R
-
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
-N/A
+R
+
+R
+
+なし
+
+なし
 
 Blendable
 
 Render
 
-移行先
+対象
 
-N/A
-
-R
-
-R
-
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
-N/A
+R
+
+R
+
+なし
+
+なし
 
 CPU
 
@@ -319,23 +319,23 @@ R
 
 Render
 
-移行先
+対象
 
-N/A
-
-O
-
-O
-
-N/A
+なし
 
 O
 
 O
 
-N/A
+なし
 
-N/A
+O
+
+O
+
+なし
+
+なし
 
 マルチ
 
@@ -343,7 +343,7 @@ N/A
 
 解決
 
-N/A
+なし
 
 R
 
@@ -351,7 +351,7 @@ R
 
 R
 
-N/A
+なし
 
 R
 
@@ -359,9 +359,9 @@ R
 
 R
 
-N/A
+なし
 
-N/A
+なし
 
 マルチ
 
@@ -369,27 +369,27 @@ N/A
 
 Load
 
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
 R
 
 R
 
-N/A
+なし
 
-N/A
+なし
 
 ディスプレイ
 
 スキャンします。
 
-N/A
+なし
 
 R
 
@@ -397,13 +397,13 @@ R
 
 R
 
-N/A
+なし
 
-N/A
+なし
 
-N/A
+なし
 
-N/A
+なし
 
 R
 

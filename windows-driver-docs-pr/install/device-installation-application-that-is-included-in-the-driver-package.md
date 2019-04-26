@@ -5,11 +5,11 @@ ms.assetid: bd6e182c-6b7a-4cde-bcc7-637ae6bf39be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee2c252bc26494ff4542f1939bc7b211dcd0a2e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357952"
 ---
 # <a name="device-installation-application-that-is-included-in-the-driver-package"></a>ドライバー パッケージに含まれるデバイスのインストール アプリケーション
 
@@ -26,11 +26,11 @@ ms.locfileid: "56578735"
 
 ただし、このメソッドは、次の欠点もあります。
 
--   一部である場合、デバイスのインストールのアプリケーションと関連付けられているインストール ファイルをデジタル署名する必要があります、[ドライバー パッケージ](driver-packages.md)します。 デジタル署名の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+-   一部である場合、デバイスのインストールのアプリケーションと関連付けられているインストール ファイルをデジタル署名する必要があります、[ドライバー パッケージ](driver-packages.md)します。 デジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
-    さらに、ドライバー、デバイスのインストール アプリケーション、および関連するインストール ファイル送信する必要がある Windows Hardware Quality Labs (WHQL) を 1 つのドライバー パッケージとしてこれらのコンポーネントが変更されるたびにします。 このプロセスの詳細については、[WHQL リリース署名](whql-release-signature.md)を参照してください。
+    さらに、ドライバー、デバイスのインストール アプリケーション、および関連するインストール ファイル送信する必要がある Windows Hardware Quality Labs (WHQL) を 1 つのドライバー パッケージとしてこれらのコンポーネントが変更されるたびにします。 このプロセスの詳細については、次を参照してください。 [WHQL リリース署名](whql-release-signature.md)します。
 
--   デバイス インストールのアプリケーションと関連付けられているインストール ファイルは、ユーザーのハード ドライブ上の 2 つの場所にコピーされます INF ファイルの指定されたディレクトリと同様に、ドライバー ストア[ **INF DestinationDirs セクション**](inf-destinationdirs-section.md)。
+-   デバイス インストールのアプリケーションと関連付けられているインストール ファイルは、ユーザーのハード ドライブ上の 2 つの場所にコピーされます INF ファイルの指定されたディレクトリと同様に、ドライバー ストア[ **INF DestinationDirs セクション。**](inf-destinationdirs-section.md).
 
 -   省略可能なデバイス固有アプリケーションがインストールされていないデバイスのインストール アプリケーションでは、配布メディアからインストールまたは、インターネットからダウンロードできません。
 
@@ -48,9 +48,9 @@ ms.locfileid: "56578735"
 
  
 
-共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
-共同インストーラー経由でデバイスのインストール アプリケーションを起動する方法の詳細については、[co-installer をデバイス インストール アプリケーションを開始するためのガイドライン](guidelines-for-starting-device-installation-applications-through-co-in.md)を参照してください。
+共同インストーラー経由でデバイスのインストール アプリケーションを起動する方法の詳細については、次を参照してください。 [co-installer をデバイス インストール アプリケーションを開始するためのガイドライン](guidelines-for-starting-device-installation-applications-through-co-in.md)します。
 
  
 

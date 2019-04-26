@@ -1,20 +1,20 @@
 ---
-title: 物理ネットワーク アダプター接続の状態を管理します。
-description: 物理ネットワーク アダプター接続の状態を管理します。
+title: 物理ネットワーク アダプターの接続状態の管理
+description: 物理ネットワーク アダプターの接続状態の管理
 ms.assetid: B8C6EB48-59D7-469B-87C8-57E60CB5C5D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fec7c4f864c80a14e2112907bb5b98dfb87f7fc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343524"
 ---
-# <a name="managing-physical-network-adapter-connection-status"></a>物理ネットワーク アダプター接続の状態を管理します。
+# <a name="managing-physical-network-adapter-connection-status"></a>物理ネットワーク アダプターの接続状態の管理
 
 
-HYPER-V 拡張可能スイッチのアーキテクチャでは、基になる物理メディアにアクセスするため、1 つの外部ネットワーク アダプターへの接続をサポートしています。 外部ネットワーク アダプターは、1 つ以上のさまざまな構成での物理ネットワーク アダプターを基になるにバインドできます。 これらの構成の詳細については、[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)を参照してください。
+HYPER-V 拡張可能スイッチのアーキテクチャでは、基になる物理メディアにアクセスするため、1 つの外部ネットワーク アダプターへの接続をサポートしています。 外部ネットワーク アダプターは、1 つ以上のさまざまな構成での物理ネットワーク アダプターを基になるにバインドできます。 これらの構成の詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
 
 拡張可能スイッチのインターフェイスには、次の手順を各物理ネットワーク アダプターの接続状態の拡張機能により通知されます。
 

@@ -4,18 +4,18 @@ title: USB クライアント ドライバー コードの構造 (UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 159efb50d5b561a413cff0767fc1c72c2aeb828b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355092"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>USB クライアント ドライバー コード構造 (UMDF) を理解します。
 
 
 このトピックでは、UMDF に基づく USB クライアント ドライバーのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー** Microsoft Visual Studio 2012 に含まれているテンプレートです。 テンプレート コードでは、Active Template Library (ATL) を使用して、COM インフラストラクチャを生成します。 ATL と、クライアント ドライバーで COM 実装の詳細については、ここで説明しません。
 
-UMDF のテンプレート コードを生成する方法については、[、最初の USB クライアント ドライバー (UMDF) を書き込む方法](implement-driver-entry-for-a-usb-driver--umdf-.md)を参照してください。 テンプレート コードは、これらのセクションについて説明します。
+UMDF のテンプレート コードを生成する方法については、次を参照してください。 [、最初の USB クライアント ドライバー (UMDF) を書き込む方法](implement-driver-entry-for-a-usb-driver--umdf-.md)します。 テンプレート コードは、これらのセクションについて説明します。
 
 -   [ドライバーのコールバックのソース コード](#driver)
 -   [デバイスのコールバックのソース コード](#device)
@@ -296,7 +296,7 @@ public:
 ## <a name="device-callback-source-code"></a>デバイスのコールバックのソース コード
 
 
-*Framework デバイス オブジェクト*クライアント ドライバーのデバイス スタックに読み込まれるデバイス オブジェクトを表す framework クラスのインスタンスです。 デバイス オブジェクトの機能については、[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/hh406296)を参照してください。
+*Framework デバイス オブジェクト*クライアント ドライバーのデバイス スタックに読み込まれるデバイス オブジェクトを表す framework クラスのインスタンスです。 デバイス オブジェクトの機能については、次を参照してください。[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/hh406296)します。
 
 デバイス オブジェクトの完全なソース コードは Device.h と Device.c にあります。
 
@@ -380,7 +380,7 @@ Exit:
 
 前のコード例では、クライアント ドライバーは、デバイス オブジェクトを作成し、そのデバイス コールバックを登録します。 デバイス オブジェクトを作成する前に、ドライバーはメソッドを呼び出すことによって、構成の基本設定を指定します、 [ **IWDFDeviceInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff556965)インターフェイス ポインター。 その以前のクライアント ドライバーの呼び出しで、フレームワークによって渡された同じポインターは[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)メソッド。
 
-クライアント ドライバーでは、デバイス オブジェクトの電源ポリシー所有者になるを指定します。 電源ポリシー所有者は、クライアント ドライバーはシステムの電源状態が変更されたときに、デバイスが入力する適切な電源状態を判断します。 電源の状態遷移を実行するには、デバイスに関連する要求を送信するため、ドライバーもします。 既定ではない、電源ポリシー所有者に UMDF ベースのクライアント ドライバーです。フレームワークは、すべての電源の状態遷移を処理します。 フレームワークでは、デバイスを自動的に送信されます**D3** 、システムがスリープ状態とは逆に、デバイスに**D0** 、システムの稼働状態に入ったとき**S0**. 詳細については、[UMDF で電源ポリシー所有権](https://msdn.microsoft.com/library/windows/hardware/ff560462)を参照してください。
+クライアント ドライバーでは、デバイス オブジェクトの電源ポリシー所有者になるを指定します。 電源ポリシー所有者は、クライアント ドライバーはシステムの電源状態が変更されたときに、デバイスが入力する適切な電源状態を判断します。 電源の状態遷移を実行するには、デバイスに関連する要求を送信するため、ドライバーもします。 既定ではない、電源ポリシー所有者に UMDF ベースのクライアント ドライバーです。フレームワークは、すべての電源の状態遷移を処理します。 フレームワークでは、デバイスを自動的に送信されます**D3** 、システムがスリープ状態とは逆に、デバイスに**D0** 、システムの稼働状態に入ったとき**S0**. 詳細については、次を参照してください。 [UMDF で電源ポリシー所有権](https://msdn.microsoft.com/library/windows/hardware/ff560462)します。
 
 別の構成オプションでは、クライアント ドライバーが、フィルター ドライバーまたはデバイスの機能のドライバーがかどうかを指定します。 コード例では、クライアント ドライバーに明示的に指定していないことの優先順位に注意してください。 つまり、クライアント ドライバーは、関数ドライバー、フレームワークは、デバイス スタックで FDO を作成する必要があります。 かどうかには、クライアント ドライバーは、フィルター ドライバーを希望していますし、ドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize::SetFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff556985)メソッド。 その場合は、フレームワークは、デバイス スタックで、FiDO を作成します。
 
@@ -538,7 +538,7 @@ Exit:
 -   書式を設定し、コントロールの I/O 要求を既定のエンドポイントに送信します。
 -   全体の USB デバイスの電源ポリシーを設定します。
 
-詳細については、[UMDF で USB デバイスを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561472)を参照してください。
+詳細については、次を参照してください。 [UMDF で USB デバイスを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561472)します。
 次のコード例の実装を示しています。 [ **IPnpCallbackHardware::OnReleaseHardware**](https://msdn.microsoft.com/library/windows/hardware/ff556768)します。
 
 ```ManagedCPlusPlus
@@ -784,7 +784,7 @@ Exit:
 
 1 つのフレームワークのキュー オブジェクトは、いくつかの種類の読み取り、書き込み、およびデバイスの I/O のコントロールなどの要求を処理しにできます。 テンプレート コードに基づくクライアント ドライバーでは、デバイス I/O 制御の要求のみを処理できます。 クライアント ドライバーのキューのコールバック クラスを実装、そのため、 [ **IQueueCallbackDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556852)インターフェイスとその[ **IQueueCallbackDeviceIoControl::OnDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556852_ondeviceiocontrol)メソッド。 これにより、クライアントを呼び出すために、フレームワークのドライバーの実装**IQueueCallbackDeviceIoControl::OnDeviceIoControl**フレームワークがデバイスの I/O 制御要求を処理する場合。
 
-対応する他の種類の要求では、クライアント ドライバーを実装する必要があります**IQueueCallbackXxx**インターフェイス。 たとえば、クライアント ドライバーは、読み取り要求を処理する必要がある場合、キュー コールバック クラス、 [ **IQueueCallbackRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556872)インターフェイスとその[ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556872_onread)メソッド。 要求とコールバック インターフェイスの種類については、[I/O キュー イベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff560424)を参照してください。
+対応する他の種類の要求では、クライアント ドライバーを実装する必要があります**IQueueCallbackXxx**インターフェイス。 たとえば、クライアント ドライバーは、読み取り要求を処理する必要がある場合、キュー コールバック クラス、 [ **IQueueCallbackRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556872)インターフェイスとその[ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556872_onread)メソッド。 要求とコールバック インターフェイスの種類については、次を参照してください。 [I/O キュー イベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff560424)します。
 
 次のコード例は、 [ **IQueueCallbackDeviceIoControl::OnDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556854)実装します。
 
@@ -928,7 +928,7 @@ EXPORTS
         DllGetClassObject   PRIVATE
 ```
 
-ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760)エクスポート します。 詳細については、[DEF ファイルを使用する DLL からエクスポート](https://msdn.microsoft.com/library/d91k01sh(VS.80).aspx)を参照してください。
+ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760)エクスポート [します。 詳細については、次を参照してください。 [DEF ファイルを使用する DLL からエクスポート](https://msdn.microsoft.com/library/d91k01sh(VS.80).aspx)します。
 
 
 

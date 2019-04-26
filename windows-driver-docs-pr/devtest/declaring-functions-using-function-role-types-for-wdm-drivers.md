@@ -1,17 +1,17 @@
 ---
-title: WDM ドライバーのロールの種類の関数を使用して関数の宣言
-description: WDM ドライバーのロールの種類の関数を使用して関数の宣言
+title: WDM ドライバーの関数役割型を使用した関数の宣言
+description: WDM ドライバーの関数役割型を使用した関数の宣言
 ms.assetid: 3260b53e-82be-4dbc-8ac5-d0e52de77f9d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eefd27d42e1d4d8619b2b75a3eba015e4a6d60d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341133"
 ---
-# <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>WDM ドライバーのロールの種類の関数を使用して関数の宣言
+# <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>WDM ドライバーの関数役割型を使用した関数の宣言
 
 
 SDV は、WDM ドライバーを分析するときに、通知には、ドライバーのエントリ ポイント、するには、関数の役割の種類の宣言を使用して関数を宣言する必要があります。 関数のロールの種類は、Wdm.h で定義されます。 内の各エントリ ポイント、 *DriverEntry* WDM ドライバー ルーチンは、対応するロールの種類を指定することで宣言する必要があります。 ロールの種類は、WDM ドライバーで認識されているエントリ ポイントに対応する定義済みの typedef です。

@@ -1,19 +1,19 @@
 ---
-title: WMI される Srb をサポートする記憶域ミニポート ドライバー、ルーチンの変更
-description: WMI される Srb をサポートする記憶域ミニポート ドライバー、ルーチンの変更
+title: WMI SRB をサポートするための記憶域ミニポート ドライバー ルーチンの変更
+description: WMI SRB をサポートするための記憶域ミニポート ドライバー ルーチンの変更
 ms.assetid: c3a222e8-dd02-4e45-b3e2-cec35d3abfdc
 keywords:
 - WMI される Srb WDK の記憶域をサポートするルーチンの変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b8184f8419852b73991423297b660faef2a2f83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355572"
 ---
-# <a name="modifying-storage-miniport-driver-routines-to-support-wmi-srbs"></a>WMI される Srb をサポートする記憶域ミニポート ドライバー、ルーチンの変更
+# <a name="modifying-storage-miniport-driver-routines-to-support-wmi-srbs"></a>WMI SRB をサポートするための記憶域ミニポート ドライバー ルーチンの変更
 
 
 ## <span id="ddk_modifying_storage_miniport_driver_routines_to_support_wmi_srbs_kg"></span><span id="DDK_MODIFYING_STORAGE_MINIPORT_DRIVER_ROUTINES_TO_SUPPORT_WMI_SRBS_KG"></span>
@@ -39,7 +39,7 @@ ms.locfileid: "56560569"
 
 -   確認**Srb**-&gt;**WMIFlags**要求が、アダプターまたは論理ユニットのかどうかを判断します。
 
--   SCSI ポート WMI ライブラリのディスパッチ ルーチンを呼び出す[ **ScsiPortWmiDispatchFunction**](https://msdn.microsoft.com/library/windows/hardware/ff564766)します。 このディスパッチ ルーチンを呼び出す方法の詳細については、[SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)を参照してください。
+-   SCSI ポート WMI ライブラリのディスパッチ ルーチンを呼び出す[ **ScsiPortWmiDispatchFunction**](https://msdn.microsoft.com/library/windows/hardware/ff564766)します。 このディスパッチ ルーチンを呼び出す方法の詳細については、次を参照してください。 [SCSI ポート WMI ライブラリを使用して](using-the-scsi-port-wmi-library.md)します。
 
 -   呼び出す[ **ScsiPortWmiPostProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff564796)ドライバーによって保留された場合、要求を処理した後。 かどうか、ドライバーが保留されません、要求し**ScsiPortWmiPostProcess**ミニポート ドライバーの I/O ルーチンを開始するのではなく、ミニポート ドライバー コールバック ルーチンを呼び出す必要があります。
 

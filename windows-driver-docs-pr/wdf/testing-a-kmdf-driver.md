@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e65c49140ce838f65983ecba3334f59189ae3522
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350653"
 ---
 # <a name="testing-a-wdf-driver-kmdf-or-umdf"></a>WDF ドライバー (KMDF または UMDF) のテスト
 
@@ -25,7 +25,7 @@ ms.locfileid: "56582874"
 
 ドライバーをテストするときに次の操作を行う必要があります。
 
--   設定、 **VerifierOn**フレームワークのドライバーの検証機能を有効にするレジストリ値。 詳細については**VerifierOn** 、ドライバーのテスト、デバッグする際に使用できるその他のレジストリ値を参照してくださいと[KMDF Verifier を使用して](using-kmdf-verifier.md)と[UMDFVerifierを使用します](using-umdf-verifier.md)。 フレームワークのドライバーの検証機能を使用するのに役立つアプリケーションについては、[WDF Verifier コントロール アプリケーション](https://msdn.microsoft.com/library/windows/hardware/ff556129)を参照してください。
+-   設定、 **VerifierOn**フレームワークのドライバーの検証機能を有効にするレジストリ値。 詳細については**VerifierOn** 、ドライバーのテスト、デバッグする際に使用できるその他のレジストリ値を参照してくださいと[KMDF Verifier を使用して](using-kmdf-verifier.md)と[UMDFVerifierを使用します。](using-umdf-verifier.md). フレームワークのドライバーの検証機能を使用するのに役立つアプリケーションについては、次を参照してください。 [WDF Verifier コントロール アプリケーション](https://msdn.microsoft.com/library/windows/hardware/ff556129)します。
 
 -   UMDF バージョン 1 と 2 両方を有効にする[Application Verifier (AppVerif.exe)](http://www.microsoft.com/download/details.aspx?id=20028) Wudfhost.exe にします。 例:
     ```cpp
@@ -40,7 +40,7 @@ ms.locfileid: "56582874"
 
 ドライバーを徹底的にテストするには、フレームワークのドライバーの検証機能とドライバーの検証ツールの両方を使用する必要があります。
 
-Microsoft Visual Studio と Windows Driver Kit (WDK) を使用してドライバーのテストについては、[ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers/develop/testing-a-driver)と[WDF ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers/wdf/testing-a-kmdf-driver)を参照してください。
+Microsoft Visual Studio と Windows Driver Kit (WDK) を使用してドライバーのテストについては、次を参照してください。[ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers/develop/testing-a-driver)と[WDF ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers/wdf/testing-a-kmdf-driver)します。
 
  
 

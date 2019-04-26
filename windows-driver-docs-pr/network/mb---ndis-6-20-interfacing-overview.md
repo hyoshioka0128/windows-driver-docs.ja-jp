@@ -1,6 +1,6 @@
 ---
-title: MB/NDIS 6.20 が動作インターフェイスの概要
-description: MB/NDIS 6.20 が動作インターフェイスの概要
+title: MB/NDIS 6.20 のインターフェイスの概要
+description: MB/NDIS 6.20 のインターフェイスの概要
 ms.assetid: 6abde9b4-8ac2-4757-8db3-4f563fc5ed24
 keywords:
 - NDIS 6.20 WDK では、モバイル ブロード バンド (MB) のインターフェイス
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55d2751b0406ebb7eac538bba9b61f7902ba9900
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343461"
 ---
-# <a name="mb--ndis-620-interfacing-overview"></a>MB/NDIS 6.20 が動作インターフェイスの概要
+# <a name="mb--ndis-620-interfacing-overview"></a>MB/NDIS 6.20 のインターフェイスの概要
 
 
 このトピックではについて十分な背景を提供するように設計、 *NDIS 6.20 が動作仕様*パースペクティブに MB ドライバー モデルを格納します。 NDIS 6.20 が動作の参照であるものではありません。 このコンテンツの不一致の場合、 *NDIS 6.20 が動作仕様*を参照してください、 [NDIS 6.20](introduction-to-ndis-6-20.md)についてのドキュメント。

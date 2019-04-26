@@ -1,5 +1,5 @@
 ---
-title: (最後のコマンドを繰り返し) を入力します。
+title: ENTER (最後のコマンドを繰り返す)
 description: ENTER キーでは、入力した最後のコマンドが繰り返されます。
 ms.assetid: 058e455a-8934-4b28-8cf0-2d3f09a7e7cc
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd72fad5a79c949b008ae271f5d89fe0d1e076f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347853"
 ---
-# <a name="enter-repeat-last-command"></a>(最後のコマンドを繰り返し) を入力します。
+# <a name="enter-repeat-last-command"></a>ENTER (最後のコマンドを繰り返す)
 
 
 ENTER キーでは、入力した最後のコマンドが繰り返されます。

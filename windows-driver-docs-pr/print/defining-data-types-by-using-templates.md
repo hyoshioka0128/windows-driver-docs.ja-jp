@@ -1,6 +1,6 @@
 ---
-title: テンプレートを使用してデータ型の定義
-description: テンプレートを使用してデータ型の定義
+title: テンプレートを使用してデータ型を定義する
+description: テンプレートを使用してデータ型を定義する
 ms.assetid: 9768f0da-b6cb-4f92-9ab4-2c95fedcb44c
 keywords:
 - WDK GDL、データ型のテンプレート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d4b6cd1794aee2465f77c2c39bd647a1be7b988
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357650"
 ---
-#  <a name="defining-data-types-by-using-templates"></a>テンプレートを使用してデータ型の定義
+#  <a name="defining-data-types-by-using-templates"></a>テンプレートを使用してデータ型を定義する
 
 
 テンプレートを使用してすべてのデータ型、プリミティブ型および複合の両方の種類を定義する必要があります。 すべての属性のテンプレートを使用して特定のデータ型には、その値を宣言できますデータ型を定義した後、  **\*ValueType**ディレクティブ。 このディレクティブの値は、データ型のテンプレートの名前です。

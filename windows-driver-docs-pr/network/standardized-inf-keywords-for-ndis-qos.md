@@ -1,22 +1,22 @@
 ---
-title: NDIS QoS の標準化された INF キーワード
-description: NDIS QoS の標準化された INF キーワード
+title: NDIS QoS 用の標準化された INF キーワード
+description: NDIS QoS 用の標準化された INF キーワード
 ms.assetid: 7967D633-850F-4707-9577-9262AEB1A597
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 236ea7fa353a460c774fc4786b96903d84289291
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345980"
 ---
-# <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS の標準化された INF キーワード
+# <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS 用の標準化された INF キーワード
 
 
 有効またはミニポート ドライバーで NDIS サービスの品質 (QoS) のサポートを無効にするには、標準化された INF キーワードが定義されます。
 
-NDIS QoS をサポートするアダプターのミニポート ドライバーの INF ファイルを指定する必要があります、  **\*QOS** INF キーワードを標準化します。 ドライバーがインストールされている場合後の管理者を更新できます、  **\*QOS**でキーワード値、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
+NDIS QoS をサポートするアダプターのミニポート ドライバーの INF ファイルを指定する必要があります、  **\*QOS** INF キーワードを標準化します。 ドライバーがインストールされている場合後の管理者を更新できます、  **\*QOS**でキーワード値、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 
 **注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 
@@ -51,7 +51,7 @@ SubkeyName に関連付けられているテキスト。
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -83,13 +83,13 @@ NDIS QoS のハードウェア機能の現在の状態を登録するとき、�
 
 -   場合、  **\*QOS**キーワードは、1 つの値を持つ、ミニポート ドライバーでは、現在有効になっているすべての NDIS QoS ハードウェア機能を登録する必要があります。 ドライバーに関係なく、次の NDIS QoS のハードウェア機能が有効にする必要があります。
 
-    -   Microsoft データ センター ブリッジング (DCB) サーバーの機能がインストールまたは Windows Server 2012 およびそれ以降のバージョンの Windows Server で有効になっているかどうか。 このサーバーの機能と関連コンポーネントの詳細については、[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)を参照してください。
+    -   Microsoft データ センター ブリッジング (DCB) サーバーの機能がインストールまたは Windows Server 2012 およびそれ以降のバージョンの Windows Server で有効になっているかどうか。 このサーバーの機能と関連コンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
 
-    -   ネットワーク アダプターで、ローカル Data Center Bridging Exchange (DCBX) しようとして状態を有効かどうか。 この状態が有効にすると、ネットワーク アダプターとミニポート ドライバーはリモート ピアから受信したリモートの NDIS QoS パラメーターから、運用の NDIS QoS パラメーターを解決できます。 詳細については、[DCBX 許容状態のローカル管理](managing-the-local-dcbx-willing-state.md)を参照してください。
+    -   ネットワーク アダプターで、ローカル Data Center Bridging Exchange (DCBX) しようとして状態を有効かどうか。 この状態が有効にすると、ネットワーク アダプターとミニポート ドライバーはリモート ピアから受信したリモートの NDIS QoS パラメーターから、運用の NDIS QoS パラメーターを解決できます。 詳細については、次を参照してください。 [DCBX 許容状態のローカル管理](managing-the-local-dcbx-willing-state.md)します。
 
-    QoS のハードウェアと現在の機能を登録する方法の詳細については、[NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)を参照してください。
+    QoS のハードウェアと現在の機能を登録する方法の詳細については、次を参照してください。 [NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)します。
 
-    **注**  ミニポート ドライバーが常に発行する必要があります[ **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)と[ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)状態NDIS QoS ハードウェア機能が現在有効になっている場合に表示します。 Windows Server 2012、現在の運用上およびリモート QoS パラメーター設定に、これらの状態がないレポートでそれぞれ開始しています。 これらの問題では、NDIS QoS と DCB の Microsoft サーバーの機能がインストールされているかどうかに関係なく DCB 設定を表示するシステム管理者を使用できます。 詳細については、[NDIS QoS パラメーターの状態のことを示す](indicating-ndis-qos-parameter-status.md)を参照してください。
+    **注**  ミニポート ドライバーが常に発行する必要があります[ **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)と[ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)状態NDIS QoS ハードウェア機能が現在有効になっている場合に表示します。 Windows Server 2012、現在の運用上およびリモート QoS パラメーター設定に、これらの状態がないレポートでそれぞれ開始しています。 これらの問題では、NDIS QoS と DCB の Microsoft サーバーの機能がインストールされているかどうかに関係なく DCB 設定を表示するシステム管理者を使用できます。 詳細については、次を参照してください。 [NDIS QoS パラメーターの状態のことを示す](indicating-ndis-qos-parameter-status.md)します。
 
      
 
@@ -170,9 +170,9 @@ NDIS QoS のハードウェア機能の現在の状態を登録するとき、�
 
 詳細については、  **\*PriorityVLANTag**キーワードを参照してください[列挙キーワード](enumeration-keywords.md)します。
 
-標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
-NDIS QoS 機能を登録する方法の詳細については、[NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)を参照してください。
+NDIS QoS 機能を登録する方法の詳細については、次を参照してください。 [NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)します。
 
  
 

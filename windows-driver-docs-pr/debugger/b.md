@@ -6,11 +6,11 @@ ms.assetid: 5ba110fc-1a12-4cbd-adc9-ef9441e257cb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23a9888c606525e9611a88f8fae4087c9ba0ceb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356678"
 ---
 # <a name="b"></a>B
 
@@ -21,12 +21,12 @@ ms.locfileid: "56570645"
 <span id="breakpoint"></span><span id="BREAKPOINT"></span>**ブレークポイント**  
 ターゲットまたはターゲットの操作がトリガーされたときにイベントを発生する場所です。
 
-詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
+詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
 
 <span id="breakpoint_id"></span><span id="BREAKPOINT_ID"></span>**ブレークポイントの ID**  
 ブレークポイントの一意の識別子。
 
-詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
+詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
 
 <span id="breakpoint_type"></span><span id="BREAKPOINT_TYPE"></span>**ブレークポイントの種類**  
 ブレークポイントを実装するために使用するメソッド。 ブレークポイントの 2 種類があります。 プロセッサ ブレークポイントとブレークポイントのソフトウェア。

@@ -1,6 +1,6 @@
 ---
-title: CLFS Stream へのデータ レコードの書き込み
-description: CLFS Stream へのデータ レコードの書き込み
+title: CLFS ストリームへのデータ レコードの書き込み
+description: CLFS ストリームへのデータ レコードの書き込み
 ms.assetid: 22bd6d39-b777-4a62-85b1-3d03a7144f7a
 keywords:
 - 一般的なログ ファイル システムの WDK カーネルでは、データ レコード
@@ -13,19 +13,19 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f817b8406a1d5ad041ba418004b09e1ed9f13e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356006"
 ---
-# <a name="writing-data-records-to-a-clfs-stream"></a>CLFS Stream へのデータ レコードの書き込み
+# <a name="writing-data-records-to-a-clfs-stream"></a>CLFS ストリームへのデータ レコードの書き込み
 
 
 
 
 
-Common Log File System (CLFS) ストリーム内のレコードの 2 種類があります。 データがレコードとレコードを再起動します。 このトピックでは、データ レコードをストリームに書き込む方法について説明します。 再起動のレコードを作成する方法については、[CLFS Stream にの再開レコードの書き込み](writing-restart-records-to-a-clfs-stream.md)を参照してください。
+Common Log File System (CLFS) ストリーム内のレコードの 2 種類があります。 データがレコードとレコードを再起動します。 このトピックでは、データ レコードをストリームに書き込む方法について説明します。 再起動のレコードを作成する方法については、次を参照してください。 [CLFS Stream にの再開レコードの書き込み](writing-restart-records-to-a-clfs-stream.md)します。
 
 データ レコードを作成するには、CLFS ストリームに、前に呼び出すことによって、マーシャ リング領域を作成する必要があります[ **ClfsCreateMarshallingArea**](https://msdn.microsoft.com/library/windows/hardware/ff541520)します。 (これは揮発性メモリ内に) マーシャ リング領域にレコードを追加でき、CLFS は安定ストレージにレコードを定期的にフラッシュします。
 
@@ -189,11 +189,11 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 </tr>
 <tr class="even">
 <td><p><em>plsnUndoNext</em></p></td>
-<td><p>CLFS_LSN_INVALID または元に戻すチェーンの前のレコードの LSN。 元に戻すチェーンの詳細については、<a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>を参照してください。</p></td>
+<td><p>CLFS_LSN_INVALID または元に戻すチェーンの前のレコードの LSN。 元に戻すチェーンの詳細については、次を参照してください。 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>plsnPrevious</em></p></td>
-<td><p>CLFS_LSN_INVALID または以前 LSN チェーンの前のログ レコードの LSN。 以前 LSN チェーンの詳細については、<a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>を参照してください。</p></td>
+<td><p>CLFS_LSN_INVALID または以前 LSN チェーンの前のログ レコードの LSN。 以前 LSN チェーンの詳細については、次を参照してください。 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>cReserveRecords</em></p></td>
@@ -250,11 +250,11 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 </tr>
 <tr class="odd">
 <td><p><em>plsnUndoNext</em></p></td>
-<td><p>CLFS_LSN_INVALID または元に戻すチェーンの前のレコードの LSN。 元に戻すチェーンの詳細については、<a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>を参照してください。</p></td>
+<td><p>CLFS_LSN_INVALID または元に戻すチェーンの前のレコードの LSN。 元に戻すチェーンの詳細については、次を参照してください。 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>plsnPrevious</em></p></td>
-<td><p>CLFS_LSN_INVALID または以前 LSN チェーンの前のログ レコードの LSN。 以前 LSN チェーンの詳細については、<a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>を参照してください。</p></td>
+<td><p>CLFS_LSN_INVALID または以前 LSN チェーンの前のログ レコードの LSN。 以前 LSN チェーンの詳細については、次を参照してください。 <a href="clfs-log-sequence-numbers.md" data-raw-source="[CLFS Log Sequence Numbers](clfs-log-sequence-numbers.md)">CLFS ログ シーケンス番号</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cReserveRecords</em></p></td>

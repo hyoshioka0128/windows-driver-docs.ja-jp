@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d5848cf1a2abcf49e9ce5d373058d48a3b8efdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346766"
 ---
 # <a name="sending-data-over-a-datagram-socket"></a>データグラム ソケット経由でのデータの送信
 
@@ -131,7 +131,7 @@ NTSTATUS
 
 WSK アプリケーションがリモートの固定のトランスポート アドレスまたはデータグラム ソケットの固定の送信先のトランスポート アドレスのいずれかを設定する場合、 *RemoteAddress*に渡されるパラメーター、 [ **WskSendTo**](https://msdn.microsoft.com/library/windows/hardware/ff571148)関数は省略可能でありできる**NULL**します。 場合**NULL**データグラムをリモートの固定のトランスポート アドレスまたは固定の送信先のトランスポート アドレスに送信します。 場合以外**NULL**データグラムをリモートの指定したトランスポート アドレスに送信します。
 
-データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する方法についての詳細については、[ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)を参照してください。
+データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する方法についての詳細については、次を参照してください。 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)します。
 
 データグラム ソケットに対して固定の送信先のトランスポート アドレスを設定する方法についての詳細については、次を参照してください[ **SIO\_WSK\_設定\_SENDTO\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570821).
 

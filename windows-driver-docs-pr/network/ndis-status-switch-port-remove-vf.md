@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_SWITCH_PORT_REMOVE_VF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d54d3304f3ba0bddb7a46a70d70a36a2b181fc88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353369"
 ---
 # <a name="ndisstatusswitchportremovevf"></a>NDIS\_状態\_スイッチ\_ポート\_削除\_VF
 
@@ -33,7 +33,7 @@ PCIe VF が作成され、SR-IOV 対応インターフェイスをサポート�
 
 転送拡張機能は、ときに、 **NDIS\_状態\_スイッチ\_ポート\_削除\_VF**状態の表示を拡張可能スイッチのポートを指定しますVM のネットワーク アダプターが接続されています。
 
-拡張可能スイッチの転送拡張機能の詳細については、[転送拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh598148)を参照してください。
+拡張可能スイッチの転送拡張機能の詳細については、次を参照してください。[転送拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh598148)します。
 
 ### <a href="" id="issuing"></a>NDIS を発行するためのガイドライン\_状態\_スイッチ\_ポート\_削除\_VF 状態表示
 
@@ -81,7 +81,7 @@ PCIe VF が作成され、SR-IOV 対応インターフェイスをサポート�
 
  
 
-転送拡張機能で状態インジケーターを転送する方法の詳細については、[フィルター モジュールの状態インジケーター](https://msdn.microsoft.com/library/windows/hardware/ff550020)を参照してください。
+転送拡張機能で状態インジケーターを転送する方法の詳細については、次を参照してください。[フィルター モジュールの状態インジケーター](https://msdn.microsoft.com/library/windows/hardware/ff550020)します。
 
 ### <a name="guidelines-for-determining-vf-assignments"></a>VF の割り当てを決定するためのガイドライン
 

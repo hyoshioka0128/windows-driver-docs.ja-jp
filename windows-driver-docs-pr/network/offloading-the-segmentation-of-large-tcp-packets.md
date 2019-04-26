@@ -1,6 +1,6 @@
 ---
-title: 大きな TCP パケットのセグメント化をオフロード
-description: 大きな TCP パケットのセグメント化をオフロード
+title: 大きな TCP パケットのセグメント化のオフロード
+description: 大きな TCP パケットのセグメント化のオフロード
 ms.assetid: 6ae162fb-a8fc-47b8-80ae-ff39f3059d53
 keywords:
 - タスクのオフロード WDK TCP/IP トランスポート、大きなパケットのセグメント化
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f7a386de570abd90929988ae3fdf142b339e844
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359557"
 ---
-# <a name="offloading-the-segmentation-of-large-tcp-packets"></a>大きな TCP パケットのセグメント化をオフロード
+# <a name="offloading-the-segmentation-of-large-tcp-packets"></a>大きな TCP パケットのセグメント化のオフロード
 
 
 
@@ -37,7 +37,7 @@ TCP/IP トランスポートは、次の条件を満たす大きな TCP パケ�
 
 -   パケットは、TCP パケットです。 TCP/IP トランスポートは、セグメント化の大きな UDP パケットをオフロードできません。
 
--   パケットで割り切れる以上でなければなりません、ミニポート ドライバーで指定されたセグメントの最小数。 詳細については、[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)を参照してください。
+-   パケットで割り切れる以上でなければなりません、ミニポート ドライバーで指定されたセグメントの最小数。 詳細については、次を参照してください。[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
 
 -   パケットはループバック パケットではありません。
 

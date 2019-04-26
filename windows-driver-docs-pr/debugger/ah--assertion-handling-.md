@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 36ef3af780fb85093d8ad257543b8975c8e5800c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355018"
 ---
 # <a name="ah-assertion-handling"></a>ah (アサーションの処理)
 
@@ -82,7 +82,7 @@ ah
 
 中断状態と状態、すべてのイベント コードの説明については、すべてのイベント、およびこの状態を制御するための他の方法の詳細の既定の状態の一覧を処理の詳細については、次を参照してください[を制御する例外とイベント](controlling-exceptions-and-events.md).
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **Ah\\*** コマンドは、特定のアドレスの状態を処理するアサーションを制御します。 [ **Sx\* asrt** ](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)コマンドは、グローバルのアサーションの状態の処理を制御します。 使用する場合**ah\\*** デバッガー応答に基づいて、アドレスを特定し、assert が発生するため、 **ah\\*** 設定を無視し、 **sx\* asrt**設定します。

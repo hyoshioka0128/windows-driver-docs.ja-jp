@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d3f917b21439da077cded5461b9b7a01385245
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352766"
 ---
 # <a name="process-and-thread-termination-issues"></a>処理とスレッド終了に関する問題
 
@@ -23,7 +23,7 @@ ms.locfileid: "56574986"
 ## <span id="ddk_process_and_thread_termination_issues_if"></span><span id="DDK_PROCESS_AND_THREAD_TERMINATION_ISSUES_IF"></span>
 
 
-特定のユーザーに関連する状態情報を格納するファイル システムは、プロセスとスレッドの終了条件を監視する必要があります。 たとえば、暗号化キーの特定のユーザーに関連付けられている必要があります、終了時に破棄されます (計画済みまたは途中) かどうかのアプリケーションの特殊なコントロール。 これらの条件を処理するために使用されるルーチンの詳細については、次を参照してください[ **PsSetCreateProcessNotifyRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff559951)と[ **PsSetCreateThreadNotifyRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff559954)。
+特定のユーザーに関連する状態情報を格納するファイル システムは、プロセスとスレッドの終了条件を監視する必要があります。 たとえば、暗号化キーの特定のユーザーに関連付けられている必要があります、終了時に破棄されます (計画済みまたは途中) かどうかのアプリケーションの特殊なコントロール。 これらの条件を処理するために使用されるルーチンの詳細については、次を参照してください[ **PsSetCreateProcessNotifyRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff559951)と[ **PsSetCreateThreadNotifyRoutine。**](https://msdn.microsoft.com/library/windows/hardware/ff559954).
 
  
 

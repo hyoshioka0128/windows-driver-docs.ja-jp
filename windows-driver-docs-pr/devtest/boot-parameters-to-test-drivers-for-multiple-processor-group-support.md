@@ -5,11 +5,11 @@ ms.assetid: 8ce311d6-a182-4d04-a453-81f6abe2043b
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c8b605a0430e60956392ffbcea88bd3d58300293
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344914"
 ---
 # <a name="boot-parameters-to-test-drivers-for-multiple-processor-group-support"></a>ドライバーの複数プロセッサ グループのサポートをテストするためのブート パラメーター
 
@@ -35,7 +35,7 @@ Windows 7 以降、アプリケーション、ドライバーと、従来の Api
 
  
 
-複数のプロセッサ グループを作成するには、実行[ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)で管理者特権のコマンド プロンプト ウィンドウと、新しい指定*maxsize*値**サイズ**論理プロセッサの合計数より小さいされています。 グループ サイズの設定はテストをこの設定で配布システムを構成する必要がありますに注意してください。 *Maxsize*値は 1 ~ 64 の範囲での 2 の累乗に設定することができます。 コマンドは、次の構文を使用します。
+複数のプロセッサ グループを作成するには、実行[ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)で管理者特権のコマンド プロンプト] ウィンドウと、新しい指定*maxsize*値**サイズ**論理プロセッサの合計数より小さいされています。 グループ サイズの設定はテストをこの設定で配布システムを構成する必要がありますに注意してください。 *Maxsize*値は 1 ~ 64 の範囲での 2 の累乗に設定することができます。 コマンドは、次の構文を使用します。
 
 ```
 bcdedit.exe /set groupsize maxsize
