@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4727d82145ea9936b1c0064f28dd58342b3ab93e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357420"
 ---
 # <a name="connection-oriented-ndis-miniport-drivers"></a>接続指向の NDIS ミニポート ドライバー
 
@@ -21,9 +21,9 @@ ms.locfileid: "56532576"
 
 
 
-A*接続指向のミニポート ドライバー*接続指向のメディアの 1 つまたは複数のミニポート アダプターを制御します。 接続指向のミニポート ドライバーを逆シリアル化する必要があります。 逆シリアル化されたドライバーの詳細については、[NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)を参照してください。
+A*接続指向のミニポート ドライバー*接続指向のメディアの 1 つまたは複数のミニポート アダプターを制御します。 接続指向のミニポート ドライバーを逆シリアル化する必要があります。 逆シリアル化されたドライバーの詳細については、次を参照してください。 [NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)します。
 
-接続指向のミニポート ドライバーでは、接続指向プロトコル ドライバー (クライアントの接続指向とコール マネージャー) と NIC のハードウェア (物理ミニポート アダプターなど) 間のインターフェイスを提供します。 接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、[Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)を参照してください。
+接続指向のミニポート ドライバーでは、接続指向プロトコル ドライバー (クライアントの接続指向とコール マネージャー) と NIC のハードウェア (物理ミニポート アダプターなど) 間のインターフェイスを提供します。 接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、次を参照してください。 [Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)します。
 
 接続指向のミニポート ドライバーは、次を登録する必要があります*MiniportXxx*接続指向の操作に固有の機能。
 
@@ -39,7 +39,7 @@ A*接続指向のミニポート ドライバー*接続指向のメディアの 
 
 -   [**MiniportCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff559362)
 
-これらの関数の登録の詳細については、[ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)を参照してください。
+これらの関数の登録の詳細については、次を参照してください。 [ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)します。
 
  
 

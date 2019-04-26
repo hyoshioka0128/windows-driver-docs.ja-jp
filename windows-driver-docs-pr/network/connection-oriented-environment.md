@@ -1,6 +1,6 @@
 ---
-title: 接続指向の環境
-description: 接続指向の環境
+title: 接続指向環境
+description: 接続指向環境
 ms.assetid: 596d7d74-ad9d-40da-b483-3afc0e333f98
 keywords:
 - 接続指向の NDIS WDK、環境
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38c3fbdb7ed895138cb0c005984f23aae82cbe59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357448"
 ---
-# <a name="connection-oriented-environment"></a>接続指向の環境
+# <a name="connection-oriented-environment"></a>接続指向環境
 
 
 
@@ -49,13 +49,13 @@ NDIS は、次の接続指向のドライバーをサポートしています。
 
 A*接続指向のミニポート ドライバー* 1 つまたは複数のネットワーク インターフェイス カード (Nic) を制御し、接続指向プロトコル ドライバー (クライアントの接続指向とコール マネージャー) と、NIC 間のインターフェイスを提供します。ハードウェア。
 
-接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、[Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)を参照してください。
+接続指向のミニポート ドライバーによって実行された接続指向の操作の概要については、次を参照してください。 [Connection-Oriented ミニポート ドライバーによって操作が実行される](connection-oriented-operations-performed-by-miniport-drivers.md)します。
 
 A*コール マネージャー*通話のセットアップとクライアントの接続指向の廃棄サービスを提供する NDIS プロトコル ドライバーします。 コール マネージャー:
 
 -   送信を使用し、ネットワーク スイッチ、リモート ピアなどのネットワークのエンティティとシグナリング メッセージを交換する接続指向のミニポート ドライバーの機能を利用します。
 
--   1 つまたは複数のシグナリング プロトコル ドライバーをサポートしています。 コール マネージャーによって実行される、接続指向の操作の概要については、[Connection-Oriented 操作は、マネージャーの呼び出しによって実行される](connection-oriented-operations-performed-by-call-managers.md)を参照してください。
+-   1 つまたは複数のシグナリング プロトコル ドライバーをサポートしています。 コール マネージャーによって実行される、接続指向の操作の概要については、次を参照してください。 [Connection-Oriented 操作は、マネージャーの呼び出しによって実行される](connection-oriented-operations-performed-by-call-managers.md)します。
 
 *MCM の統合されたドライバー*もクライアントの接続指向にコール マネージャー サービスを提供する接続指向のミニポート ドライバーします。 MCM にドライバーでは、次の特徴があります。
 
@@ -85,7 +85,7 @@ A*クライアントの接続指向*:
 
  
 
-接続指向のクライアントによって実行される、接続指向の操作の概要については、[Connection-Oriented 操作は、クライアントによって実行される](connection-oriented-operations-performed-by-clients.md)を参照してください。
+接続指向のクライアントによって実行される、接続指向の操作の概要については、次を参照してください。 [Connection-Oriented 操作は、クライアントによって実行される](connection-oriented-operations-performed-by-clients.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 

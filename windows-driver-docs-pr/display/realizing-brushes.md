@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58708feb5e26ecd67154d88b0abf114e40bb4992
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351452"
 ---
 # <a name="realizing-brushes"></a>ブラシの実現
 
@@ -66,8 +66,8 @@ GDI を使用するため、アプリケーションが要求したすべての�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

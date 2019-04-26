@@ -1,16 +1,16 @@
 ---
-Description: UCX extends the WDF object functionality to define its own USB-specific UCX objects. UCX uses these objects for queuing requests to any underlying host controller driver.
-title: UCX オブジェクトとホスト コント ローラーのドライバーによって使用されるハンドル
+Description: UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 UCX は、基になるホスト コント ローラー ドライバーに要求をキューにこれらのオブジェクトを使用します。
+title: ホスト コントローラー ドライバーが使用する UCX オブジェクトとハンドル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43989c34cb5e345b3c082f8e9215a94bc3cf85e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355179"
 ---
-# <a name="ucx-objects-and-handles-used-by-a-host-controller-driver"></a>UCX オブジェクトとホスト コント ローラーのドライバーによって使用されるハンドル
+# <a name="ucx-objects-and-handles-used-by-a-host-controller-driver"></a>ホスト コントローラー ドライバーが使用する UCX オブジェクトとハンドル
 
 
 **要約**
@@ -18,7 +18,7 @@ ms.locfileid: "56558608"
 -   UCX オブジェクトは、コント ローラー、そのルート ハブおよびすべてのエンドポイントに関連する操作を処理するために、ホスト コント ローラー ドライバーによって使用されます。
 -   UCX オブジェクトは、ホスト コント ローラー ドライバーによって作成され、各オブジェクトの有効期間が UCX によって管理されます。
 
-**適用されます。**
+**適用対象**
 
 -   Windows 10
 
@@ -34,7 +34,7 @@ ms.locfileid: "56558608"
 
 UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 UCX は、基になるホスト コント ローラー ドライバーに要求をキューにこれらのオブジェクトを使用します。
 
-WDF のオブジェクトの詳細については、[Framework オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff544249)を参照してください。
+WDF のオブジェクトの詳細については、次を参照してください。 [Framework オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff544249)します。
 
 ## <a name="host-controller-object"></a>ホスト コント ローラーのオブジェクト
 
@@ -82,7 +82,7 @@ USB ハブでは、機能の制御の要求を処理します。
 [*EVT\_UCX\_ROOTHUB\_INTERRUPT\_TX*](https://msdn.microsoft.com/library/windows/hardware/mt187837)  
 変更されたポートに関する情報を要求をハンドルします。
 
-詳細については、[ホスト コント ローラーのドライバーのコールバック関数のハブ ルート](manage-the-root-hub-in-a-host-controller-driver.md)を参照してください。
+詳細については、次を参照してください。[ホスト コント ローラーのドライバーのコールバック関数のハブ ルート](manage-the-root-hub-in-a-host-controller-driver.md)します。
 
 ## <a name="usb-device-object"></a>USB デバイス オブジェクト
 
@@ -153,7 +153,7 @@ Endpoint オブジェクトは、ドライバーは、エンドポイントに�
 エンドポイントのコント ローラーのプログラミングをリセットするドライバーに通知します。
 
 ホスト コント ローラーのドライバーでは、エンドポイントの USB 3.0 いいえ Ping 応答エラーを受信すると、ドライバーを呼び出す必要があります[ **UcxEndpointNoPingResponseError**](https://msdn.microsoft.com/library/windows/hardware/mt188043)します。 USB デバイス オブジェクトの受信で結果を呼び出す[ *EVT\_UCX\_USBDEVICE\_UPDATE*](https://msdn.microsoft.com/library/windows/hardware/mt187846)します。
-詳細については、[ホスト コント ローラーのドライバーを構成する USB エンドポイント](configuring-usb-endpoints-in-a-host-controller-driver.md)を参照してください。
+詳細については、次を参照してください。[ホスト コント ローラーのドライバーを構成する USB エンドポイント](configuring-usb-endpoints-in-a-host-controller-driver.md)します。
 
 ## <a name="stream-object"></a>Stream オブジェクト
 
@@ -177,7 +177,7 @@ Endpoint オブジェクトは、ドライバーは、エンドポイントに�
 オブジェクトと関連付けられているキューの有効期間は UCX、によって管理され、ドライバーは、オブジェクトを削除する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
-[USB ホスト コント ローラーの Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)  
+[USB ホスト コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)  
 
 
 

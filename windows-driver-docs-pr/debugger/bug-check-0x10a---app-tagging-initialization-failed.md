@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a6b804ed05d235e97353ec2691eb8555688862d3
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357752"
 ---
 # <a name="bug-check-0x10a-apptagginginitializationfailed"></a>バグ チェック 0x10A:アプリ\_タグ付け\_初期化\_失敗
 

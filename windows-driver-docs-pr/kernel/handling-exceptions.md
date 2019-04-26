@@ -1,6 +1,6 @@
 ---
-title: 例外の処理
-description: 例外の処理
+title: 例外処理
+description: 例外処理
 ms.assetid: 20040d86-5088-48ec-a5b9-54760d143871
 keywords:
 - 構造化例外処理の WDK カーネル
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3fc196616a9d610349f7f3660d2f70576ad135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359468"
 ---
-# <a name="handling-exceptions"></a>例外の処理
+# <a name="handling-exceptions"></a>例外処理
 
 
 
@@ -84,7 +84,7 @@ try {
 
 -   [**ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)
 
-メモリ アクセスをユーザー モードのバッファーにもアクセス違反があります。 詳細については、[ユーザー スペースのアドレスを参照するエラー](errors-in-referencing-user-space-addresses.md)を参照してください。
+メモリ アクセスをユーザー モードのバッファーにもアクセス違反があります。 詳細については、次を参照してください。[ユーザー スペースのアドレスを参照するエラー](errors-in-referencing-user-space-addresses.md)します。
 
 構造化例外処理が C++ 例外から個別であることに注意してください。 カーネルは、C++ 例外処理をサポートしていません。
 

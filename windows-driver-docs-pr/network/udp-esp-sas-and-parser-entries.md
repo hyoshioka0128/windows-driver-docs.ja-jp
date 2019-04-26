@@ -1,6 +1,6 @@
 ---
-title: UDP ESP SAs とパーサー エントリ
-description: UDP ESP SAs とパーサー エントリ
+title: UDP ESP SA およびパーサー エントリ
+description: UDP ESP SA およびパーサー エントリ
 ms.assetid: 1682b077-07ba-4b2e-9c01-fd7662f3f189
 keywords:
 - WDK の IPsec ESP パケットを UDP カプセル化オフロード、パーサーのエントリ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a5d655628e902bccdd434081706651c56f5cc88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358254"
 ---
-# <a name="udp-esp-sas-and-parser-entries"></a>UDP ESP SAs とパーサー エントリ
+# <a name="udp-esp-sas-and-parser-entries"></a>UDP ESP SA およびパーサー エントリ
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 
@@ -30,7 +30,7 @@ UDP ESP カプセル化をサポートしているミニポート ドライバ�
 
 -   UDP ESP カプセル化の種類。
 
-    現時点では、1 つだけのカプセル化の種類がサポートされています。 基本的な UDP ESP カプセル化型の説明は、[UDP ESP カプセル化型](udp-esp-encapsulation-types.md)を参照してください。
+    現時点では、1 つだけのカプセル化の種類がサポートされています。 基本的な UDP ESP カプセル化型の説明は、次を参照してください。 [UDP ESP カプセル化型](udp-esp-encapsulation-types.md)します。
 
 -   接続先のカプセル化ポート。
 

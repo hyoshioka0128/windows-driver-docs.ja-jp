@@ -5,11 +5,11 @@ ms.assetid: 37614100-0a56-4a32-8e45-3161994e503a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3932c57925a4bd544bb20e6ef24f475e122dc5a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357786"
 ---
 # <a name="device-metadata-package-structure"></a>デバイス メタデータのパッケージ構造
 
@@ -28,7 +28,7 @@ WindowsInformation WindowsInfo.xml
 
 -   DeviceInformation サブディレクトリが含まれています、 [DeviceInfo XML ドキュメント](deviceinfo-xml-document.md)と省略可能なデバイスのアイコン ファイル。 XML ドキュメントの名前は、DeviceInfo.xml である必要があります。
 
-    任意の名前を持つことができますのサフィックスで終わる必要がありますが、デバイス メタデータ パッケージには、デバイスのアイコン ファイルが含まれている場合 *.ico*します。 詳細については、[デバイス アイコン ファイル](device-icon-file.md)を参照してください。
+    任意の名前を持つことができますのサフィックスで終わる必要がありますが、デバイス メタデータ パッケージには、デバイスのアイコン ファイルが含まれている場合 *.ico*します。 詳細については、次を参照してください。[デバイス アイコン ファイル](device-icon-file.md)します。
 
 -   WindowsInformation サブディレクトリが含まれています、 [WindowsInfo XML ドキュメント](windowsinfo-xml-document.md)します。 XML ドキュメントの名前は、WindowsInfo.xml である必要があります。
 

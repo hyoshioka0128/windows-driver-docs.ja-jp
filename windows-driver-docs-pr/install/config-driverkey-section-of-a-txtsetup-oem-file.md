@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf88e4b0b1fe90c0d951b7f1a4f4bff37dc3ce12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353846"
 ---
 # <a name="configdriverkey-section-of-a-txtsetupoem-file"></a>TxtSetup.oem ファイルの Config.DriverKey セクション
 
@@ -55,7 +55,7 @@ value = parameters,NumberOfButtons,REG_DWORD,2
 <a href="" id="reg-sz-or-reg-expand-sz"></a>REG_SZ または[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)  
 1 つ*値*; 許可されて格納される null で終わる文字列として解釈されます。
 
-次に、例を示します。
+例:
 
 ``` syntax
 value = parameters,Description,REG_SZ,"This is a text string"
@@ -73,7 +73,7 @@ value = parameters,Data,REG_BINARY,0034eC4D045a
 <a href="" id="reg-multi-sz"></a>REG_MULTI_SZ  
 複数*値*引数を指定することは、それぞれは、コンポーネントのレジストリ文字列として解釈されます。
 
-次に、例を示します。
+例:
 
 ``` syntax
 value = parameters,Strings,REG_MULTI_SZ,String1,"String 2",string3

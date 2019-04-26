@@ -1,6 +1,6 @@
 ---
-title: VC を非アクティブ化
-description: VC を非アクティブ化
+title: VC の非アクティブ化
+description: VC の非アクティブ化
 ms.assetid: 094e339c-b5a7-4894-9a3d-145231311647
 keywords:
 - 仮想接続 WDK いる CoNDIS、非アクティブ化
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d023e8d5b173156a0efd438c052984685315659
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358904"
 ---
-# <a name="deactivating-a-vc"></a>VC を非アクティブ化
+# <a name="deactivating-a-vc"></a>VC の非アクティブ化
 
 
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7025de9d07fc53fbeacbb66112366389992b8e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357528"
 ---
 # <a name="connection-oriented-operations-performed-by-call-managers"></a>コール マネージャーによって実行される接続指向操作
 
@@ -25,7 +25,7 @@ ms.locfileid: "56572221"
 
 -   **登録し、1 つまたは複数のアドレス ファミリ (AFs) の登録を解除します。**
 
-    コール マネージャー [1 つまたは複数のアドレス ファミリを登録します](registering-and-opening-an-address-family.md)NDIS にします。 アドレス ファミリを登録することでは、コール マネージャーは、クライアントの接続指向のバインドのコール マネージャー (具体的には、シグナリング プロトコル) サービスをアドバタイズします。 NDIS にエントリ ポイントを登録する方法の詳細については、[いる CoNDIS 登録](condis-registration.md)を参照してください。
+    コール マネージャー [1 つまたは複数のアドレス ファミリを登録します](registering-and-opening-an-address-family.md)NDIS にします。 アドレス ファミリを登録することでは、コール マネージャーは、クライアントの接続指向のバインドのコール マネージャー (具体的には、シグナリング プロトコル) サービスをアドバタイズします。 NDIS にエントリ ポイントを登録する方法の詳細については、次を参照してください。[いる CoNDIS 登録](condis-registration.md)します。
 
 -   **登録し、接続指向のクライアントの要求での Sap の登録を解除します。**
 

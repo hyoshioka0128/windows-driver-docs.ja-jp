@@ -1,6 +1,6 @@
 ---
-title: RSS の構成
-description: RSS の構成
+title: RSS 構成
+description: RSS 構成
 ms.assetid: 84a00163-6908-439a-a980-c13f0ec8e3c1
 keywords:
 - 受信側スケーリング WDK ネットワーク、ndirection テーブルの例
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf8b8b30a3b5ffb52e5c274f61f636140091218e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359114"
 ---
-# <a name="rss-configuration"></a>RSS の構成
+# <a name="rss-configuration"></a>RSS 構成
 
 
 

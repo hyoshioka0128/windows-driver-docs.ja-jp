@@ -1,17 +1,17 @@
 ---
-title: 場合設定ミニポート ドライバー情報
-description: 場合設定ミニポート ドライバー情報
+title: ミニポート ドライバー情報の設定の場面
+description: ミニポート ドライバー情報の設定の場面
 ms.assetid: 46834d76-e1b9-440c-af18-a4b564d1a76e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 564b0ef7ce7e8709f3171c922bc57fff1fbc6e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359198"
 ---
-# <a name="occasions-for-setting-miniport-driver-information"></a>場合設定ミニポート ドライバー情報
+# <a name="occasions-for-setting-miniport-driver-information"></a>ミニポート ドライバー情報の設定の場面
 
 
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac01ac091755bebe1ceae35b232b5cc06de7e82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359652"
 ---
 # <a name="kspropertybdalnbloflowband"></a>KSPROPERTY\_BDA\_LNB\_LOF\_低\_バンド
 
@@ -70,7 +70,7 @@ ms.locfileid: "56552254"
 
 LNB RF 信号を衛星アンテナがリフレクションを収集するには、RF 信号の頻度を低帯域 LOF amount では、下にシフトおよび RF チューナーを結果として得られる信号を送信します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

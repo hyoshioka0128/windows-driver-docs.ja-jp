@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_ADVERTISED_SERVICES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c684ff1415f0391ad6f359638839011a74973128
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356810"
 ---
 # <a name="wditlvp2padvertisedservices"></a>WDI\_TLV\_P2P\_アドバタイズ\_サービス
 
@@ -49,20 +49,20 @@ WDI\_TLV\_P2P\_アドバタイズ\_サービスが提供するサービスの一
 <tbody>
 <tr class="odd">
 <td><p><a href="wdi-tlv-p2p-advertised-service-entry.md" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY&lt;/strong&gt;](wdi-tlv-p2p-advertised-service-entry.md)"><strong>WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY</strong></a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
 <td>提供するサービスの一覧。</td>
 </tr>
 <tr class="even">
 <td><p><a href="wdi-tlv-p2p-advertised-prefix-entry.md" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ADVERTISED_PREFIX_ENTRY&lt;/strong&gt;](wdi-tlv-p2p-advertised-prefix-entry.md)"><strong>WDI_TLV_P2P_ADVERTISED_PREFIX_ENTRY</strong></a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
 <td><p>提供するサービスの一覧から派生したアドバタイズされたプレフィックスの一覧。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="wdi-tlv-p2p-asp2-advertised-service-entry.md" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY&lt;/strong&gt;](wdi-tlv-p2p-asp2-advertised-service-entry.md)"><strong>WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY</strong></a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
 <td><p>Windows 10 version 1607 では、バージョン 1.0.21 WDI に追加されます。</p>
 <p>提供する ASP2 サービスの一覧。</p></td>
 </tr>
@@ -77,7 +77,7 @@ WDI\_TLV\_P2P\_アドバタイズ\_サービスが提供するサービスの一
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

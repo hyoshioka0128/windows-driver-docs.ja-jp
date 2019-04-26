@@ -18,11 +18,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 88ab10bc4188c3df053b8f91b650a380311e864f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359440"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange メソッド
 
@@ -92,7 +92,7 @@ HRESULT ProcAmpControlQueryRange(
 
 ProcAmp の各プロパティの VMR は、最小、最大値、ステップのサイズ、および既定値を決定するドライバーを照会します。 ドライバーを返す必要があるかどうか、ハードウェアは、特定の ProcAmp コントロール プロパティをサポートしていません、E\_から NOTIMPL、 **ProcAmpControlQueryRange**関数。
 
-ProcAmp プロパティに関する詳細については、[ProcAmp プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff569189)を参照してください。
+ProcAmp プロパティに関する詳細については、次を参照してください。 [ProcAmp プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff569189)します。
 
 サンプル**ProcAmpControlQueryRange**関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 **RenderMoComp**メンバーがドライバーによって提供される指す[ **DdMoCompRender** ](https://msdn.microsoft.com/library/windows/hardware/ff550248)参照コールバック、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 

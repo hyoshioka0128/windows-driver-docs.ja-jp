@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3559780bdce1a6a0896cd6e599afac6c4a22d121
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359101"
 ---
 # <a name="rss-hashing-functions"></a>RSS ハッシュ関数
 
@@ -22,7 +22,7 @@ ms.locfileid: "56527258"
 
 NIC のミニポート ドライバー、RSS ハッシュ関数でを使用して RSS ハッシュ値を計算します。
 
-ドライバーの重なって Cpu への接続を割り当てるには、ハッシュ型、関数、およびテーブルを設定します。 詳細については、[RSS 構成](rss-configuration.md)を参照してください。
+ドライバーの重なって Cpu への接続を割り当てるには、ハッシュ型、関数、およびテーブルを設定します。 詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
 
 ハッシュ関数には、次のいずれかを指定できます。
 
@@ -34,15 +34,15 @@ NIC のミニポート ドライバー、RSS ハッシュ関数でを使用し�
 >[!NOTE]
 > 現時点では、 **NdisHashFunctionToeplitz**は唯一のハッシュ関数をミニポート ドライバーを使用できます。 他のハッシュ関数は、NDIS 用に予約されています。 
 
-ミニポート ドライバーは、ハッシュ関数と各で使用される値を識別する必要があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)受信したデータの構造体の前に、ドライバーを示します。 詳細については、[RSS の受信データのことを示す](indicating-rss-receive-data.md)を参照してください。
+ミニポート ドライバーは、ハッシュ関数と各で使用される値を識別する必要があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)受信したデータの構造体の前に、ドライバーを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
 
 ## <a name="examples"></a>例
 
-次の 4 つの擬似コード例を計算する方法を示して、 **NdisHashFunctionToeplitz**ハッシュ値。 これらの例は、利用できる 4 つの可能なハッシュ型を表す**NdisHashFunctionToeplitz**します。 ハッシュの種類の詳細については、[RSS ハッシュ型](rss-hashing-types.md)を参照してください。
+次の 4 つの擬似コード例を計算する方法を示して、 **NdisHashFunctionToeplitz**ハッシュ値。 これらの例は、利用できる 4 つの可能なハッシュ型を表す**NdisHashFunctionToeplitz**します。 ハッシュの種類の詳細については、次を参照してください。 [RSS ハッシュ型](rss-hashing-types.md)します。
 
 例を簡素化するには、入力バイト ストリームを処理する汎用的なアルゴリズムが必要です。 バイト ストリームの特定の形式は、4 つの例では後で定義されます。
 
-上位のドライバーは、ハッシュ計算で使用するため、ミニポート ドライバーに秘密キー (K) を提供します。 長さ 40 バイト (320 bits) が重要です。 キーの詳細については、[RSS 構成](rss-configuration.md)を参照してください。
+上位のドライバーは、ハッシュ計算で使用するため、ミニポート ドライバーに秘密キー (K) を提供します。 長さ 40 バイト (320 bits) が重要です。 キーの詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
 
 入力を含む配列を指定した*n*バイト、バイト ストリームは次のように定義されています。
 

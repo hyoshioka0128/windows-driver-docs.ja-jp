@@ -1,6 +1,6 @@
 ---
-title: デバイス ツリーを通じて待機/ウェイク Irp のパスを理解します。
-description: デバイス ツリーを通じて待機/ウェイク Irp のパスを理解します。
+title: デバイス ツリーを通じた待機/ウェイク IRP のパスの概要
+description: デバイス ツリーを通じた待機/ウェイク IRP のパスの概要
 ms.assetid: 35118367-d20b-45c9-a296-656028339c59
 keywords:
 - 待機/ウェイク Irp WDK 電源管理、デバイス ツリー パス
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58cea02da33eb028b76b361ec20682be5a85b0e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355359"
 ---
-# <a name="understanding-the-path-of-waitwake-irps-through-a-device-tree"></a>デバイス ツリーを通じて待機/ウェイク Irp のパスを理解します。
+# <a name="understanding-the-path-of-waitwake-irps-through-a-device-tree"></a>デバイス ツリーを通じた待機/ウェイク IRP のパスの概要
 
 
 
@@ -88,7 +88,7 @@ ACPI は、ACPI のコンピューターで、各リーフ デバイスからウ
 
 キーボードは、ウェイク アップの信号をアサートする場合は、Acpi.sys はインターセプトします。 ACPI、ただし、確認できません、キーボードにのみルート デバイスを介して、信号が付属するいると、シグナルがアサートされること。 Acpi.sys 完了 IRP4、および I/O マネージャーを呼び出す*IoCompletion*旅行ルーチンは、PCI デバイス スタックをバックアップします。 IRP4 が完了すると、すべて*IoCompletion*ルーチンが実行した場合、PCI ドライバのコールバック ルーチンが呼び出されます。 そのコールバック ルーチンでは、PCI ドライバは、信号が通過 USB ホスト コント ローラーを決定します。 PCI ドライバは、IRP3 を完了します。 同じシーケンスは、キーボードのドライバーが IRP1 を受信するまでに、USB ホスト コント ローラーのスタックと、USB ハブ スタックを介して行われます。 この時点でのキーボード ドライバーでは、必要に応じて、ウェイク アップ イベントを処理できます。
 
-設定する必要がありますドライバー待機/ウェイク IRP を親 PDO に送信するたびに、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) IRP を独自のルーチンです。 設定、*キャンセル*ルーチンはそれをトリガーした IRP が取り消された場合は、新しい IRP をキャンセルする機会、ドライバーを示します。 USB の例でのキーボード ドライバーがその待機/ウェイク IRP (したがってキーボードのウェイク アップを無効化) をキャンセルした場合、USB ハブ、USB ホスト コント ローラー、および PCI ドライバー取り消す必要があります Irp キーボード IRP の結果として送信します。 詳細については、[待機/ウェイク Irp のキャンセル ルーチン](canceling-a-wait-wake-irp.md#ddk-cancel-routines-for-wait-wake-irps-kg)を参照してください。
+設定する必要がありますドライバー待機/ウェイク IRP を親 PDO に送信するたびに、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) IRP を独自のルーチンです。 設定、*キャンセル*ルーチンはそれをトリガーした IRP が取り消された場合は、新しい IRP をキャンセルする機会、ドライバーを示します。 USB の例でのキーボード ドライバーがその待機/ウェイク IRP (したがってキーボードのウェイク アップを無効化) をキャンセルした場合、USB ハブ、USB ホスト コント ローラー、および PCI ドライバー取り消す必要があります Irp キーボード IRP の結果として送信します。 詳細については、次を参照してください。[待機/ウェイク Irp のキャンセル ルーチン](canceling-a-wait-wake-irp.md#ddk-cancel-routines-for-wait-wake-irps-kg)します。
 
 1 つだけ待機/ウェイク IRP が保留されているが、親のドライバーでは、待機またはスリープ解除を有効にできる 1 つ以上の子を列挙可能性があります、PDO の。 このような場合は、親のドライバーは待機/ウェイク IRP を保持することを確認してください保留中のときにそのデバイスのいずれかが有効になってウェイク アップします。 これを行うには、ドライバーは待機/ウェイク IRP を受信するたびに内部カウンターをインクリメントします。 ドライバーが待機/ウェイク IRP を完了するたびに、デクリメント カウントし、結果の値が 0 以外の場合は、そのデバイス スタックを別の待機またはスリープ解除 IRP を送信します。
 

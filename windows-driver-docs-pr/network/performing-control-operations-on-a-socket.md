@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58433daf71a339c3bca4176d65a3c3a5d67371ae
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358823"
 ---
 # <a name="performing-control-operations-on-a-socket"></a>ソケットの制御操作の実行
 
@@ -133,7 +133,7 @@ NTSTATUS
 }
 ```
 
-各ソケットがサポートされているオプションの詳細については、[ **WSK ソケット オプション**](https://msdn.microsoft.com/library/windows/hardware/ff571186)を参照してください。
+各ソケットがサポートされているオプションの詳細については、次を参照してください。 [ **WSK ソケット オプション**](https://msdn.microsoft.com/library/windows/hardware/ff571186)します。
 
 次のコード例は、WSK アプリケーションが実行できる方法を示しています、 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)ソケットの IOCTL の操作をデータグラム ソケット。
 
@@ -243,7 +243,7 @@ NTSTATUS
 }
 ```
 
-各サポートされているソケットの IOCTL 操作の詳細については、[WSK ソケットの IOCTL 操作](https://msdn.microsoft.com/library/windows/hardware/ff571183)を参照してください。
+各サポートされているソケットの IOCTL 操作の詳細については、次を参照してください。 [WSK ソケットの IOCTL 操作](https://msdn.microsoft.com/library/windows/hardware/ff571183)します。
 
  
 

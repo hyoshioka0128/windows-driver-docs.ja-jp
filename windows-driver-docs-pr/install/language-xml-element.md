@@ -1,6 +1,6 @@
 ---
-title: 言語の XML 要素
-description: 言語の XML 要素
+title: language XML 要素
+description: language XML 要素
 ms.assetid: 1fc6a3b4-379e-4fd3-b526-c4193e9e84c5
 keywords:
 - 言語の XML 要素のデバイスとドライバーのインストール
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9b2c28fc664e93ae4f4218153477459d5daffd56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356946"
 ---
-# <a name="language-xml-element"></a>言語の XML 要素
+# <a name="language-xml-element"></a>language XML 要素
 
 
 \[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]

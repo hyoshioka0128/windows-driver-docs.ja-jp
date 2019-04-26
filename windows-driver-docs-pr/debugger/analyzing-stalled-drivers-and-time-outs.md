@@ -1,19 +1,19 @@
 ---
-title: 停止しているドライバーとタイムアウトの分析
-description: 停止しているドライバーとタイムアウトの分析
+title: 停止したドライバーとタイムアウトの分析
+description: 停止したドライバーとタイムアウトの分析
 ms.assetid: c305acba-48b9-4597-925a-8b1ded4f0048
 keywords:
 - SCSI ミニポート デバッグ、ハング、タイムアウト
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 191bda869710e14d445e68722da54c06c9d08290
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355410"
 ---
-# <a name="analyzing-stalled-drivers-and-time-outs"></a>停止しているドライバーとタイムアウトの分析
+# <a name="analyzing-stalled-drivers-and-time-outs"></a>停止したドライバーとタイムアウトの分析
 
 
 SCSI ミニポート ドライバーをデバッグするときにハングするには 3 つの最も一般的な原因し、タイムアウトは。

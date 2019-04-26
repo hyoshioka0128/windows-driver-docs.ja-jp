@@ -5,11 +5,11 @@ ms.assetid: 38cfbd87-0526-49d1-8580-96f4e1adf7bb
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0060519110f16262ca643b8bb4c2805ab640a534
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358774"
 ---
 # <a name="barcodescannererroroccurred"></a>BarcodeScannerErrorOccurred
 
@@ -48,7 +48,7 @@ typedef struct _PosBarcodeScannerErrorOccurredEventData
 | BOOL                                   | **IsRetriable**                                                                                                                         |
 | 32 ビット UnifiedPosErrorSeverity         | **重要度**                                                                                                                            |
 | UINT32                                 | **VendorErrorCode**                                                                                                                     |
-| 32 ビット UnifiedPosErrorReason           | **理由**                                                                                                                              |
+| 32 ビット UnifiedPosErrorReason           | **Reason**                                                                                                                              |
 | UINT32                                 | **ExtendedReason**                                                                                                                      |
 | UINT32                                 | **MessageLength**                                                                                                                       |
 | PosBarcodeScannerDataReceivedEventData | **PartialData**                                                                                                                         |
@@ -67,6 +67,6 @@ typedef struct _PosBarcodeScannerErrorOccurredEventData
 
 スキャン エラーが発生するいくつかのスキャン データが取得された場合は、イベント データには、部分的なスキャン データが含まれています。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **ヘッダー:** pointofservicedriverinterface.h

@@ -1,6 +1,6 @@
 ---
-title: Irp を削除する場合は、発行
-description: Irp を削除する場合は、発行
+title: IRP の削除が発行される場合の概要
+description: IRP の削除が発行される場合の概要
 ms.assetid: e92e30ce-ca0d-4f00-b54a-778bafba15b3
 keywords:
 - Irp WDK PnP の削除します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3d658f24a3a803057f393bcc410621083a79bd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355307"
 ---
-# <a name="understanding-when-remove-irps-are-issued"></a>Irp を削除する場合は、発行
+# <a name="understanding-when-remove-irps-are-issued"></a>IRP の削除が発行される場合の概要
 
 
 

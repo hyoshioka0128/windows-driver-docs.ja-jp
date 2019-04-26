@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a4bd1450090346b39c9ff22802c9cb2f2a8c921
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358215"
 ---
 # <a name="kspropertytvaudiocurrentlyavailablemodes"></a>KSPROPERTY\_TVAUDIO\_現在\_利用可能な\_モード
 
@@ -51,7 +51,7 @@ KSPROPERTY\_TVAUDIO\_現在\_利用可能な\_モード プロパティは、デ
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565953" data-raw-source="[&lt;strong&gt;KSPROPERTY_TVAUDIO_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565953)"><strong>KSPROPERTY_TVAUDIO_S</strong></a></p></td>
 <td><p>ULONG</p></td>
@@ -68,7 +68,7 @@ KSPROPERTY\_TVAUDIO\_現在\_利用可能な\_モード プロパティは、デ
 
 **モード**、KSPROPERTY のメンバー\_TVAUDIO\_の構造は、オーディオ モードを指定します。 KS のビットごとの or 演算が含まれている\_TVAUDIO\_モード\_\*情報が要求された時点で、デバイスでサポートされるモードを示すフラグ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

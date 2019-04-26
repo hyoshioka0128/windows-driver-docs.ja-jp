@@ -1,6 +1,6 @@
 ---
-title: プリント プロセッサの概要
-description: プリント プロセッサの概要
+title: 印刷プロセッサの概要
+description: 印刷プロセッサの概要
 ms.assetid: a34d8daa-b000-4501-8799-5f38cdf38ba4
 keywords:
 - プリント プロセッサ WDK、プリント プロセッサについて
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82e49973eabfd92f91ecffb3b564911b13d788b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355688"
 ---
-# <a name="introduction-to-print-processors"></a>プリント プロセッサの概要
+# <a name="introduction-to-print-processors"></a>印刷プロセッサの概要
 
 
 
@@ -45,14 +45,14 @@ Microsoft Windows 2000 以降では、次の表に、プリント プロセッ�
 <tr class="odd">
 <td><p>Localspl.dll *</p></td>
 <td><p>EMF</p>
-<p>生</p>
+<p>RAW</p>
 <p>テキスト</p></td>
-<td><p>生</p></td>
+<td><p>RAW</p></td>
 </tr>
 <tr class="even">
 <td><p>Sfmpsprt.dll</p></td>
 <td><p>PSCRIPT1</p></td>
-<td><p>生</p></td>
+<td><p>RAW</p></td>
 </tr>
 </tbody>
 </table>
@@ -73,7 +73,7 @@ Microsoft Windows 2000 以降では、次の表に、プリント プロセッ�
 
 Windows 2000 またはそれ以降のオペレーティング システムのバージョンによってサポートされていないデータ型をサポートするためにカスタマイズしたプリント プロセッサを作成することができます。 行うことができますもカスタマイズしたプリント プロセッサ、サポートされているデータ型の 1 つ以上をサポートするため、指定したプリント プロセッサによって提供される機能を変更することができます。
 
-プリント プロセッサに関連付けられているプリンター ドライバー、ドライバーのインストール中に、同じデータ型をサポートしている複数のプリント プロセッサが共存できるようにします。 詳細については、[プリント プロセッサをインストールする](installing-a-print-processor.md)を参照してください。
+プリント プロセッサに関連付けられているプリンター ドライバー、ドライバーのインストール中に、同じデータ型をサポートしている複数のプリント プロセッサが共存できるようにします。 詳細については、次を参照してください。[プリント プロセッサをインストールする](installing-a-print-processor.md)します。
 
 **注**  プリント プロセッサをコンパイルするときに Unicode フラグを設定します\#UNICODE を定義します。 プリント プロセッサ コードでは、たとえば LPWSTR、型のワイドのみの文字列を使用する必要があります。
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f4b52008ecac2d926e367b7322f09b6e87863bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359768"
 ---
 # <a name="rss-with-message-signaled-interrupts"></a>メッセージ シグナル割り込みを使用した RSS
 
@@ -23,7 +23,7 @@ ms.locfileid: "56580680"
 
 
 
-ミニポート ドライバーがサポートできるメッセージ シグナル割り込み RSS のパフォーマンスを向上させるには、(Msi)。 Msi には、受信したデータを処理する CPU の割り込みを要求する NIC が有効にします。 MSI の NDIS サポートの詳細については、[NDIS Msi-x](ndis-msi-x.md)を参照してください。
+ミニポート ドライバーがサポートできるメッセージ シグナル割り込み RSS のパフォーマンスを向上させるには、(Msi)。 Msi には、受信したデータを処理する CPU の割り込みを要求する NIC が有効にします。 MSI の NDIS サポートの詳細については、次を参照してください。 [NDIS Msi-x](ndis-msi-x.md)します。
 
 次の図では、RSS MSI X を示しています。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56580680"
     その他の Cpu で DPC が現在の CPU で実行されているときに、中断が発生することができますも。
 
 5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)の DPC キューごとに機能します。 各 DPC:
-    1.  ビルドでは、そのキュー内のすべての受信バッファー記述子を受信し、ドライバー スタック上のデータを示します。 詳細については、[RSS の受信データのことを示す](indicating-rss-receive-data.md)を参照してください。
+    1.  ビルドでは、そのキュー内のすべての受信バッファー記述子を受信し、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
     2.  現在の CPU の割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 その他の Dpc の進行状況を追跡するためにアトミック操作が必要ないことに注意してください。
 
  

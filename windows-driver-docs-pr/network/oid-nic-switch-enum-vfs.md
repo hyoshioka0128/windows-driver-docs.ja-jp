@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_ENUM_VFS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c3ea8f06739035dac11b7325a714b01255176dc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359268"
 ---
 # <a name="oidnicswitchenumvfs"></a>OID\_NIC\_スイッチ\_ENUM\_VFS
 
@@ -46,7 +46,7 @@ ms.locfileid: "56560533"
 
  
 
-NIC のスイッチの詳細については、[NIC スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh439961)を参照してください。
+NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh439961)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

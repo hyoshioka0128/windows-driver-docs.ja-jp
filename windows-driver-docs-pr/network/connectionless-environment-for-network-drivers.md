@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 163b2b5dd14977d7a3bb6064aafd990bbb760b16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357410"
 ---
 # <a name="connectionless-environment-for-network-drivers"></a>ネットワーク ドライバーのコネクションレス環境
 
@@ -20,7 +20,7 @@ ms.locfileid: "56570222"
 
 
 
-コネクションレス型の環境には、イーサネットなどのコネクションレスのメディアの標準のネットワーク ドライバー環境です。 この環境でドライバーについては、[NDIS ドライバー](ndis-drivers.md)と[NDIS ミニポート ドライバー](ndis-miniport-drivers2.md)を参照してください。
+コネクションレス型の環境には、イーサネットなどのコネクションレスのメディアの標準のネットワーク ドライバー環境です。 この環境でドライバーについては、次を参照してください。 [NDIS ドライバー](ndis-drivers.md)と[NDIS ミニポート ドライバー](ndis-miniport-drivers2.md)します。
 
 次の図には、コネクションレス ネットワーク ドライバーの NDIS 環境が表示されます。
 

@@ -1,6 +1,6 @@
 ---
-title: 受信キューに 1 つのハードウェアでの RSS
-description: 受信キューに 1 つのハードウェアでの RSS
+title: 単一ハードウェア受信キューを使用した RSS
+description: 単一ハードウェア受信キューを使用した RSS
 ms.assetid: 835f5646-4514-4973-978a-9bab0777a66c
 keywords:
 - 受信側のスケーリング、WDK のネットワーク ハードウェア キュー
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6ac453e65e8a3b992b6ef3d8521368308d929eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359782"
 ---
-# <a name="rss-with-a-single-hardware-receive-queue"></a>受信キューに 1 つのハードウェアでの RSS
+# <a name="rss-with-a-single-hardware-receive-queue"></a>単一ハードウェア受信キューを使用した RSS
 
 
 
@@ -57,7 +57,7 @@ ms.locfileid: "56537712"
     キューの割り当てとその他の Dpc キューには、追加の処理オーバーヘッドが必要です。 システム パフォーマンスの向上を実現するには、使用可能な Cpu 使用率の向上によってこのオーバーヘッドをオフセットする必要があります。
 
 6.  特定の CPU で DPC:
-    1.  受信キューに関連付けられている受信バッファーを処理し、ドライバー スタック上のデータを示します。 詳細については、[RSS の受信データのことを示す](indicating-rss-receive-data.md)を参照してください。
+    1.  受信キューに関連付けられている受信バッファーを処理し、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
     2.  完了する最後の DPC にある場合は、割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 ドライバーは、分割不可能な操作を完了するのに最後の DPC を識別するために使用する必要があります。 たとえば、ドライバーを使用できます、 [ **NdisInterlockedDecrement** ](https://msdn.microsoft.com/library/windows/hardware/ff562751)アトミックのカウンターを実装する関数。
 
  

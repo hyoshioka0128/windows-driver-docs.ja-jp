@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9d2ae5948a5443bb1451b09e6447b9779ba7b24b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357840"
 ---
 # <a name="devpkeydeviceupperfilters"></a>DEVPKEY_Device_UpperFilters
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_UpperFilters デバイスのプロパティは、デバイスの�
 <a name="remarks"></a>注釈
 -------
 
-デバイスのデバイスの上位レベルのフィルター ドライバーがインストールされている場合、DEVPKEY_Device_UpperFilters プロパティの値が設定されます。 デバイス フィルター ドライバーをインストールする方法の詳細については、[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)を参照してください。
+デバイスのデバイスの上位レベルのフィルター ドライバーがインストールされている場合、DEVPKEY_Device_UpperFilters プロパティの値が設定されます。 デバイス フィルター ドライバーをインストールする方法の詳細については、次を参照してください。[フィルター ドライバーをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547595)します。
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)と**SetupDiGetDeviceProperty** DEVPKEY_Device_UpperFilters の値の設定を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UpperFilters プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UPPERFILTERS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UpperFilters プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UPPERFILTERS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
 <a name="requirements"></a>要件
 ------------

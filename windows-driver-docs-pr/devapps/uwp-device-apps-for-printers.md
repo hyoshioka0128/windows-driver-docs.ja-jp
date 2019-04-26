@@ -5,18 +5,18 @@ ms.assetid: 3325B492-2A70-4EB7-99B0-3FE3E24CE398
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 881528423e31121f8e6705ab7bd2f86ca9a83e9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359510"
 ---
 # <a name="uwp-device-apps-for-printers"></a>プリンター用の UWP デバイス アプリ
 
 
-このセクションでは、プリンター用の UWP デバイス アプリを紹介します。 UWP デバイス アプリでの印刷にカスタマイズした設定のフライアウトを使用したプリンター特別な機能を強調表示でき、通知をサポートします。 UWP デバイス アプリことができますもプリンターのステータスを表示、印刷ジョブの管理およびプリンターの保守タスクを実行します。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+このセクションでは、プリンター用の UWP デバイス アプリを紹介します。 UWP デバイス アプリでの印刷にカスタマイズした設定のフライアウトを使用したプリンター特別な機能を強調表示でき、通知をサポートします。 UWP デバイス アプリことができますもプリンターのステータスを表示、印刷ジョブの管理およびプリンターの保守タスクを実行します。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
-**重要な**  UWP デバイス アプリの機能を使用するプリンターが v4 印刷ドライバー モデルをサポートする必要があります。 詳細については、[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)を参照してください。
+**重要な**  UWP デバイス アプリの機能を使用するプリンターが v4 印刷ドライバー モデルをサポートする必要があります。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
 
  
 

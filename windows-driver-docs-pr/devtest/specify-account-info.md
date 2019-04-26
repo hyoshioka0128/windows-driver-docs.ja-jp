@@ -1,19 +1,19 @@
 ---
-title: モバイル ブロード バンド メタデータの作成ウィザードでアカウント情報を指定します。
-description: モバイル ブロード バンド メタデータの作成ウィザードでアカウント情報を指定します。
+title: モバイル ブロードバンド メタデータ作成ウィザードでのアカウント情報の指定
+description: モバイル ブロードバンド メタデータ作成ウィザードでのアカウント情報の指定
 ms.assetid: FFE19760-360F-482C-BBD8-7068D2DD34E5
 keywords:
-- モバイル ブロード バンド メタデータの作成ウィザードでアカウント情報を指定します。
+- モバイル ブロードバンド メタデータ作成ウィザードでのアカウント情報の指定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cbd84da67bdcfc55a60463002a23e1cead8768e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358922"
 ---
-# <a name="specify-account-information-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロード バンド メタデータの作成ウィザードでアカウント情報を指定します。
+# <a name="specify-account-information-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのアカウント情報の指定
 
 
 モバイル ブロード バンド アカウント情報を指定するには、次のオプションのフィールドに入力、**アカウント** タブ。
@@ -38,7 +38,7 @@ ms.locfileid: "56548835"
 
     ハッシュがプロビジョニング ファイルのデジタル署名の検証に使用される信頼された証明書は、初期セットアップ時に、モバイル ネットワーク オペレーターの web ページまたは captive portal から配信されます。 これは、ユーザーがモバイル ブロード バンドのアプリをインストールする前に、サービスを購入、シナリオをサポートします。 両方のフィールドの識別名として書式設定する必要があり、一致する必要があります、**サブジェクト**と**発行者**購入 web サイトのプロビジョニング ファイルの署名に使用されるデジタル証明書のフィールド。 識別名の詳細についてで RFC 4514 のセクションを参照してください。[文字列表現の識別名、Internet Engineering Task Force の web サイトで](https://go.microsoft.com/fwlink/p/?LinkId=242261)します。
 
-    プロビジョニングの詳細については、[サービス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226755)を参照してください。
+    プロビジョニングの詳細については、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226755)します。
 
  
 

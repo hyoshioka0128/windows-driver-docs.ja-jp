@@ -1,6 +1,6 @@
 ---
-title: ディスパッチ (内部) デバイスのルーチンを記述するためのガイドライン
-description: ディスパッチ (内部) デバイスのルーチンを記述するためのガイドライン
+title: Dispatch(Internal)DeviceControl ルーチンの記述に関するガイドライン
+description: Dispatch(Internal)DeviceControl ルーチンの記述に関するガイドライン
 ms.assetid: e64ab28e-2904-41c2-a262-405bc129b9bb
 keywords:
 - ディスパッチ ルーチンの WDK カーネル、DispatchDeviceControl ルーチン
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 588966e1a0767a9201345d00cf6205d833bd9e51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359878"
 ---
-# <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>ディスパッチ (内部) デバイスのルーチンを記述するためのガイドライン
+# <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>Dispatch(Internal)DeviceControl ルーチンの記述に関するガイドライン
 
 
 

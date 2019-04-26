@@ -1,6 +1,6 @@
 ---
-title: リソース要件の一覧を作成します。
-description: リソース要件の一覧を作成します。
+title: リソース要件リストの作成
+description: リソース要件リストの作成
 ms.assetid: 1254aa21-c64b-4c62-93dc-6758cef382f9
 keywords:
 - ハードウェア リソース WDK KMDF、リソース要件のリストを作成します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc4c23ae0b003a09823d64b5d342afadc29f8e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358488"
 ---
-# <a name="creating-a-resource-requirements-list"></a>リソース要件の一覧を作成します。
+# <a name="creating-a-resource-requirements-list"></a>リソース要件リストの作成
 
 
 バス ドライバーでは、子デバイスを検出すると、ドライバーは、デバイスのリソース要件の一覧を作成する責任を負います。 リスト内の各項目は、[論理構成](https://msdn.microsoft.com/library/windows/hardware/ff547012#ddk-logical-configurations-kg)デバイス。

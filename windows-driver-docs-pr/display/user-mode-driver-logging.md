@@ -5,11 +5,11 @@ ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 291bc3072a934958d816240d2e563e0f90e14792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359131"
 ---
 # <a name="span-iddisplayuser-modedriverloggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>ユーザー モード ドライバーのログ記録
 

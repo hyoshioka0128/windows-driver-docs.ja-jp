@@ -1,6 +1,6 @@
 ---
-title: デバイス マネージャーからデバイスを非表示
-description: デバイス マネージャーからデバイスを非表示
+title: デバイス マネージャーでのデバイスの非表示
+description: デバイス マネージャーでのデバイスの非表示
 ms.assetid: dd362ae1-ab14-44ee-982e-f972454c2623
 keywords:
 - デバイス マネージャーの WDK、非表示のデバイス
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9a2483d39287f6dd2f0dc6a8ab0737e84b02d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358798"
 ---
-# <a name="hiding-devices-from-device-manager"></a>デバイス マネージャーからデバイスを非表示
+# <a name="hiding-devices-from-device-manager"></a>デバイス マネージャーでのデバイスの非表示
 
 
 既定では、デバイス マネージャーは、コンピューター上のすべてのデバイスの状態を示します。 状況によっては、特定のデバイスでデバイス マネージャーに表示されないようにする場合があります。 たとえば、マザーボードには、CardBus コント ローラーではないユーザーがアクセスできるスロットがあります。 ユーザーが、スロットを使用できないため、デバイスに関する情報を表示するデバイス マネージャーをしないようにします。

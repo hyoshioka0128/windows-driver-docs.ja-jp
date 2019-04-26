@@ -1,19 +1,19 @@
 ---
-title: クライアント側のレンダリングの概要
-description: クライアント側のレンダリングの概要
+title: クライアント側レンダリングの概要
+description: クライアント側レンダリングの概要
 ms.assetid: 0c73ca03-0fde-423d-80c9-6800468176b5
 keywords:
 - クライアント側のレンダリングについて、クライアント側のレンダリング WDK の印刷します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4d6a184876e8b888f1858728047276bae4ce8e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351928"
 ---
-# <a name="client-side-rendering-overview"></a>クライアント側のレンダリングの概要
+# <a name="client-side-rendering-overview"></a>クライアント側レンダリングの概要
 
 [ポイント アンド プリント](introduction-to-point-and-print.md)以前のバージョンの Windows オペレーティング システムのようにクライアント コンピューターにプリンター ドライバーを読み込みます。 クライアント側のレンダリングには、拡張メタファイル (EMF) 形式またはプリンター ドライバーを使用する XML Paper Specification (XPS) 形式の代わりに、プリンターを使用するページ記述言語 (PDL) に印刷ジョブを表示するために、プリンター ドライバーが原因です。 RAW 形式 PDL は、キュー、および印刷スプーラー サービスの新機能での印刷とプリント サーバーに送信されます。
 

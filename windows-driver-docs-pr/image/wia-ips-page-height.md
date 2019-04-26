@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 572747fc78b38c0af4ea6c04d4166b0c3430eba1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353315"
 ---
 # <a name="wiaipspageheight"></a>WIA\_IP\_ページ\_高さ
 
@@ -30,9 +30,9 @@ WIA\_IP\_ページ\_1/1000 インチの高さが高さのプロパティに含�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションは、WIA を読み取ります\_IP\_ページ\_スキャンされているページの物理的なサイズを決定する高さ。 エクステント設定が既知のページ サイズと異なる場合、このプロパティは、ページの高さを報告が[ **WIA\_IP\_ページ\_サイズ**](wia-ips-page-size.md)プロパティは、WIA を設定\_ページ\_カスタム。
@@ -43,7 +43,7 @@ WIA\_IP\_ページ\_高さによって報告されるピクセル値と等価の
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

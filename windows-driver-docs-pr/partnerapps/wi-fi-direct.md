@@ -5,11 +5,11 @@ ms.assetid: 52D09B1D-5832-48C9-B200-46B8DDC14BE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00a5c1f5a1bca8bde86b33a8b1089d9d34afe21f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357652"
 ---
 # <a name="wi-fi-direct"></a>Wi-Fi Direct
 
@@ -20,7 +20,7 @@ Windows 10 のすべての機能をする必要があります、Wi-Fi Direct Wi
 
 Wi-Fi Direct WinRT Api の一部を使用して、クラシック Windows アプリケーションでは、ただし。 たとえばクラシック Windows アプリケーションで WFDOpenHandle の代わりに Wi-Fi Direct WinRT Api と関連 Api を使用することができます。 WiFiDirectLegacySettings クラスは、それをサポートしているデバイスに接続して、Wi-Fi Direct デバイスによって提供されるサービスを使用する Wi-Fi Direct をサポートしないデバイスを使用できます。
 
-WiFiDirectLegacySettings は、SSID とパスワードを指定することができます。 クラシック Windows アプリケーションで WiFiDirectLegacySettings を使用する方法の例は、、 [WiFiDirectLegacyAPDemo\_v1.0.zip](https://go.microsoft.com/fwlink/?LinkId=617905) Microsoft ダウンロード センターからダウンロードを参照してください。
+WiFiDirectLegacySettings は、SSID とパスワードを指定することができます。 クラシック Windows アプリケーションで WiFiDirectLegacySettings を使用する方法の例は、次を参照してください。、 [WiFiDirectLegacyAPDemo\_v1.0.zip](https://go.microsoft.com/fwlink/?LinkId=617905) Microsoft ダウンロード センターからダウンロードします。
 
 モバイル ホット スポットは、Windows 10 バージョン 1607 以降はサポートされています。 モバイル ホット スポットは、モバイル ブロード バンド ケーブルの機能の強化されたバージョンです。 モバイル ホット スポットと Wi-Fi Direct グループ所有者のレガシ機能を同時に使用できないことに注意してください。 さらに、モバイル ホット スポットは、Wi-Fi Direct のすべてのシナリオに優先します。
 

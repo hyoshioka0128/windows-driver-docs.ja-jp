@@ -1,22 +1,22 @@
 ---
-title: インフラストラクチャの画面に進みます
+title: ディスプレイ インフラストラクチャの向上
 description: Windows 8 の強化し、ユーザー エクスペリエンスを向上するため、表示のインフラストラクチャをさらに最適化します。
 ms.assetid: 312F39D8-5D95-4E3D-AB66-627E074115CD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d40739ef5c709627cf56264ea3ef27f635844a0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356282"
 ---
-# <a name="advances-to-the-display-infrastructure"></a>インフラストラクチャの画面に進みます
+# <a name="advances-to-the-display-infrastructure"></a>ディスプレイ インフラストラクチャの向上
 
 
 Windows 8 の強化し、ユーザー エクスペリエンスを向上するため、表示のインフラストラクチャをさらに最適化します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>

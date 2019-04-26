@@ -1,6 +1,6 @@
 ---
-title: 画面の配置の拡張
-description: 画面の配置の拡張
+title: 拡張サーフェス配置
+description: 拡張サーフェス配置
 ms.assetid: 3a91a826-7f57-4cad-b236-b41178ac3b17
 keywords:
 - 描画サーフェスの整列 WDK DirectDraw を拡張します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7517b9a9019df36de76dd60474d2a58705963c8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353353"
 ---
-# <a name="extended-surface-alignment"></a>画面の配置の拡張
+# <a name="extended-surface-alignment"></a>拡張サーフェス配置
 
 
 ## <span id="ddk_extended_surface_alignment_gg"></span><span id="DDK_EXTENDED_SURFACE_ALIGNMENT_GG"></span>

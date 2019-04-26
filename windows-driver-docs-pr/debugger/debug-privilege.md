@@ -1,5 +1,5 @@
 ---
-title: 特権をデバッグします。
+title: デバッグ特権
 description: デバッグ特権には、他のユーザーへのアクセスも済む、それ以外の場合のプロセスのデバッグができます。
 ms.assetid: f3ea9065-6d04-4629-88ed-85428f7915ca
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c2ddfbf7f2d0e75b47727a6250402de47bd5c6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359554"
 ---
-# <a name="debug-privilege"></a>特権をデバッグします。
+# <a name="debug-privilege"></a>デバッグ特権
 
 
 デバッグ特権には、他のユーザーへのアクセスも済む、それ以外の場合のプロセスのデバッグができます。 たとえば、そのトークンを有効になっているデバッグ権限を持つユーザーとして実行中のプロセスでは、ローカル システムとして実行されているサービスをデバッグできます。

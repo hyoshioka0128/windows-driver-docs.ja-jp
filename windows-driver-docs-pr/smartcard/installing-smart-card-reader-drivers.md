@@ -1,6 +1,6 @@
 ---
-title: スマート カード リーダーのドライバーをインストールします。
-description: スマート カード リーダーのドライバーをインストールします。
+title: スマート カード リーダー ドライバーのインストール
+description: スマート カード リーダー ドライバーのインストール
 ms.assetid: 6e641718-d6d0-4f09-8935-6b381ad0c085
 keywords:
 - スマート カードのドライバー WDK をインストールします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e7ac7a11bca8f6712e4ffcdd872c30beace569d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354758"
 ---
-# <a name="installing-smart-card-reader-drivers"></a>スマート カード リーダーのドライバーをインストールします。
+# <a name="installing-smart-card-reader-drivers"></a>スマート カード リーダー ドライバーのインストール
 
 
 ## <span id="_ntovr_installing_smart_card_reader_drivers"></span><span id="_NTOVR_INSTALLING_SMART_CARD_READER_DRIVERS"></span>
@@ -47,7 +47,7 @@ UmdfKernelModeClientPolicy=AllowKernelModeClients
 
 スマート カード リーダーのドライバーのインストールに関連付けられているその他の特別な要件はありません。
 
-Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
+Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
 
 
 

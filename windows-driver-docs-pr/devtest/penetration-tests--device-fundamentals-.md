@@ -5,11 +5,11 @@ ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4326689b9b276cc1f7be8d753042b52dd15f6d64
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356320"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>侵入テスト (Device Fundamental)
 
@@ -98,7 +98,7 @@ ms.locfileid: "57464091"
 <tr class="even">
 <td align="left"><p><span id="fuzz_open_and_close_test"></span>ファジー オープンとクローズのテスト</p></td>
 <td align="left"><p>このテストでは、何千もの作成-開く、閉じるシーケンスを実行します。</p>
-<p>このテストの詳細については、<a href="#about-the-fuzz-open-and-close-test" data-raw-source="[About the Fuzz open and close test](#about-the-fuzz-open-and-close-test)">、ファジーについて開閉テスト</a>を参照してください。</p>
+<p>このテストの詳細については、次を参照してください。 <a href="#about-the-fuzz-open-and-close-test" data-raw-source="[About the Fuzz open and close test](#about-the-fuzz-open-and-close-test)">、ファジーについて開閉テスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoOpenCloseTest</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -182,7 +182,7 @@ ms.locfileid: "57464091"
 <p>中に、<em>相対開くテスト</em>、(とも呼ばれます、<em>サブ オープン テスト</em>) ファジー テストが、デバイスのオブジェクトを開こうと<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[namespace](https://msdn.microsoft.com/library/windows/hardware/ff542068)">名前空間</a>します。</p>
 <p>ファジー テストをこのテストは中に、は、迅速な一連の呼び出しを使用して開かれたデバイスの名前空間でオブジェクトを開くを実行します<a href="#basic-open-operations" data-raw-source="[Basic Open Operations](#basic-open-operations)">を開く操作の基本的な</a>およびその他の開く操作。 これらの呼び出しでは、ファジー テストは、デバイスで始まり、任意の名前とさまざまな長さで、コンテンツの意味がない文字列が含まれているパスを渡します。</p>
 <p>このテストでは、ドライバーまたはファイル システムがその名前空間でのオープン要求を管理する方法を決定します。 具体的には、ドライバーは、名前空間でのオープン要求をサポートしていない場合、防ぐ必要があります未承認のアクセスを要求、失敗したかを使用する場合は、FILE_DEVICE_SECURE_OPEN デバイスの特性を設定して<a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"> <strong>IoCreateDevice</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff548407" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548407)"> <strong>IoCreateDeviceSecure</strong> </a>デバイス オブジェクトを作成します。</p>
-<p>デバイスの名前空間の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[Controlling Device Namespace Access](https://msdn.microsoft.com/library/windows/hardware/ff542068)">デバイス Namespace のアクセスを制御する</a>を参照してください。</p>
+<p>デバイスの名前空間の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[Controlling Device Namespace Access](https://msdn.microsoft.com/library/windows/hardware/ff542068)">デバイス Namespace のアクセスを制御する</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>メソッドをテストします。</strong>DoSubOpensTest</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -212,7 +212,7 @@ ms.locfileid: "57464091"
 <tr class="even">
 <td align="left"><p><span id="Fuzz_Zero-Length_Buffer_FSCTL_test___Fuzz_Zero-Length_Buffer_IOCTL_test"></span><span id="fuzz_zero-length_buffer_fsctl_test___fuzz_zero-length_buffer_ioctl_test"></span><span id="FUZZ_ZERO-LENGTH_BUFFER_FSCTL_TEST___FUZZ_ZERO-LENGTH_BUFFER_IOCTL_TEST"></span>ファジー バッファー FSCTL を長さ 0 のテスト/長さ 0 のバッファー IOCTL のファジー テスト</p></td>
 <td align="left"><p>このテストへの呼び出しの一連の問題、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまなファイル システムの制御コードを生成します。</p>
-<p>ファジー テストへの呼び出しの一連の問題を長さ 0 のバッファーのテスト中に、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまな I/O 制御コードを生成します。 I/O 制御コードの内容については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff543023" data-raw-source="[Defining I/O Control Codes](https://msdn.microsoft.com/library/windows/hardware/ff543023)">I/O 制御コードを定義する</a>を参照してください。</p>
+<p>ファジー テストへの呼び出しの一連の問題を長さ 0 のバッファーのテスト中に、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 関数</strong></a> 0 の入力または出力バッファー長を持つ。 テストは、別の関数コード、デバイスの種類、データ転送方法、およびアクセスの要件を使用して、さまざまな I/O 制御コードを生成します。 I/O 制御コードの内容については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff543023" data-raw-source="[Defining I/O Control Codes](https://msdn.microsoft.com/library/windows/hardware/ff543023)">I/O 制御コードを定義する</a>します。</p>
 <p>無効なバッファーのポインターのドライバーの処理をテストするには、これらのユーザー モードの呼び出しでバッファー ポインターのアドレスを指定高 0xFFFFFC00 などのカーネルの仮想アドレス空間)。</p>
 <p>ファジー テストでは、基本および追加の開いているテスト中に開かれたすべてのデバイスでバッファーの長さ 0 のテストを実行します。 使用してこのテストをカスタマイズすることができます、 <em>MinFunctionCode</em>と<em>MaxFunctionCode</em>関数の呼び出しで使用されるコードの範囲の IOCTL または FSCTL を指定するパラメーターのコマンドと<em>MinDeviceType</em>と<em>MaxDeviceType</em>の呼び出しで使用されるデバイスの種類の範囲を指定します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_DevicePathExerciser.dll</p>

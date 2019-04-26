@@ -1,6 +1,6 @@
 ---
-title: コールアウト付きの型
-description: コールアウト付きの型
+title: コールアウトの種類
+description: コールアウトの種類
 ms.assetid: d9539403-7657-4e95-8791-309673d1207d
 keywords:
 - 保留中のパケット WDK Windows フィルタ リング プラットフォーム
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1475cbd66408c86560e29ff5fb3fbfe8097668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358376"
 ---
-# <a name="types-of-callouts"></a>コールアウト付きの型
+# <a name="types-of-callouts"></a>コールアウトの種類
 
 
 次の種類の吹き出しは、WFP で使用できます。
@@ -38,7 +38,7 @@ ms.locfileid: "56537528"
 この種類の吹き出しのフィルター アクションの種類を設定する必要があります**FWP\_アクション\_コールアウト\_終端**します。
 
 <a href="" id="redirection-callout"></a>**リダイレクトの吹き出し**  
-この種類の吹き出しの詳細については、[Bind を使用して、または接続のリダイレクト](using-bind-or-connect-redirection.md)を参照してください。
+この種類の吹き出しの詳細については、次を参照してください。 [Bind を使用して、または接続のリダイレクト](using-bind-or-connect-redirection.md)します。
 
 これにはリダイレクト コールアウトの 2 つの種類があります。
 

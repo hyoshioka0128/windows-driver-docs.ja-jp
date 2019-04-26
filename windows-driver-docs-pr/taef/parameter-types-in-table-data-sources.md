@@ -1,17 +1,17 @@
 ---
-title: パラメーター テーブルのデータ ソースの型
-description: パラメーター テーブルのデータ ソースの型
+title: テーブルのデータ ソースにおけるパラメーターの型
+description: テーブルのデータ ソースにおけるパラメーターの型
 ms.assetid: 034F171E-716F-4795-9B07-46A109052227
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3004599456191567616a82ae54546f5ac447f59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355472"
 ---
-# <a name="parameter-types-in-table-data-sources"></a>パラメーター テーブルのデータ ソースの型
+# <a name="parameter-types-in-table-data-sources"></a>テーブルのデータ ソースにおけるパラメーターの型
 
 
 次の表には、概要テーブルで使用できるさまざまなパラメーターの型のベースのデータ ソースとどの型文字列を使用して互換性のあるデータ ソース ファイルにすることができます、ネイティブで管理され、スクリプトをテストします。

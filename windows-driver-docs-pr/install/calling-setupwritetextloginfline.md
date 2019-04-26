@@ -5,11 +5,11 @@ ms.assetid: 7b7a08bf-b97a-4dfe-8695-dc947481ad2b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c932f0b1c5d72d22a25404ab0577c0e4d5e3acaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358174"
 ---
 # <a name="calling-setupwritetextloginfline"></a>SetupWriteTextLogInfLine の呼び出し
 
@@ -22,13 +22,13 @@ ms.locfileid: "56573231"
 
     さらに、かどうか**SetupWriteTextLogInfLine** 、ログ エントリを書き込みますとテキスト ログ**SetupWriteTextLogInfLine**エントリを書き込む、ログのシステム定義のトークン値に依存します。
 
-    ログのトークンの詳細については、[設定とスレッドのログのトークン取得](setting-and-getting-a-log-token-for-a-thread.md)を参照してください。
+    ログのトークンの詳細については、次を参照してください。[設定とスレッドのログのトークン取得](setting-and-getting-a-log-token-for-a-thread.md)します。
 
 -   イベント レベル、インデントの深さ、およびタイムスタンプを含めるかどうかを指定する定数をシステム定義のビットごとの OR のフラグ値します。 イベント レベルが記載されて[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)します。
 
     テキスト ログは、エントリのイベント レベル以上のイベント レベルを設定する場合[ **SetupWriteTextLogInfLine** ](https://msdn.microsoft.com/library/windows/hardware/ff552236)テキスト ログでログ エントリを書き込みます。 それ以外の場合、 **SetupWriteTextLogInfLine**テキスト ログでログ エントリは書き込まれません。 インデントを使用すると、セクションで、情報を読み、理解しやすくにように書式設定されたメッセージを配置できます。
 
-    詳細については、[インデントのログ エントリの書き込み](writing-indented-log-entries.md)を参照してください。
+    詳細については、次を参照してください。[インデントのログ エントリの書き込み](writing-indented-log-entries.md)します。
 
 -   INF ファイルの行を格納している INF ファイルへのハンドル。
 

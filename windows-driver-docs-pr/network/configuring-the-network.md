@@ -1,6 +1,6 @@
 ---
-title: ネットワークを構成します。
-description: ネットワークを構成します。
+title: ネットワークの構成
+description: ネットワークの構成
 ms.assetid: 9529467b-353d-41c3-9d4e-bb5df5c43665
 keywords:
 - 通知オブジェクトの WDK ネットワーク、ネットワークの構成
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f78f81f9bf90ee0f6076269363ce9cdea10b6adf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357414"
 ---
-# <a name="configuring-the-network"></a>ネットワークを構成します。
+# <a name="configuring-the-network"></a>ネットワークの構成
 
 
 

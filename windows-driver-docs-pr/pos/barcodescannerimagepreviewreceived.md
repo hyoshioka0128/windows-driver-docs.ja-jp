@@ -5,11 +5,11 @@ ms.assetid: ec05bffb-95e6-4d9c-b632-adee1cbd5bad
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ad80780dcb8af4d32b58732833c2dd0af62cadf1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358762"
 ---
 # <a name="barcodescannerimagepreviewreceived"></a>BarcodeScannerImagePreviewReceived
 
@@ -40,6 +40,6 @@ typedef struct _PosEventDataHeader PosBarcodeScannerImagePreviewEventData;
 | 0x00000008 + イメージ データの長さ | sizeof (**PosBarcodeScannerImagePreviewEventData**) + (バイト単位) のデータのプレビュー イメージのサイズ |
 | イメージ データ                        | イメージ データのプレビュー                                                                           |
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **ヘッダー:** pointofservicedriverinterface.h

@@ -1,19 +1,19 @@
 ---
-title: ドライバーのカバレッジ Toolkit の概要
-description: ドライバーのカバレッジ Toolkit の概要
+title: Driver Coverage Toolkit の概要
+description: Driver Coverage Toolkit の概要
 ms.assetid: eead0c9a-fc26-4777-b19a-e97b898e28a2
 keywords:
 - ドライバーのカバレッジ Toolkit について、カバレッジ Toolkit のドライバーの WDK、
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e7262b7b1d0aaa7bc5244fb7c7d795f0dfb5f72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356337"
 ---
-# <a name="overview-of-the-driver-coverage-toolkit"></a>ドライバーのカバレッジ Toolkit の概要
+# <a name="overview-of-the-driver-coverage-toolkit"></a>Driver Coverage Toolkit の概要
 
 
 **注**  ドライバーのカバレッジ Toolkit は Windows 10 で不要になったと、インストーラーが WDK に含まれていません。 ここで説明されている Windows 10 でタスクを実行する代わりに使用[Driver Verifier](driver-verifier.md)と[IRP のログ記録](irp-logging.md)します。
@@ -25,7 +25,7 @@ ms.locfileid: "56537349"
 ドライバの対応のツールキットが収集され、3 つのメトリックに基づく IRP カバレッジ データを報告します。
 
 <span id="Major__MJ__IRP_Function_Codes"></span><span id="major__mj__irp_function_codes"></span><span id="MAJOR__MJ__IRP_FUNCTION_CODES"></span>メジャー (MJ) IRP の関数コード  
-デバイスのドライバー スタック内でアクティブだった Irp の MJ 関数のコードの数。 ドライバの対応 toolkit は、12 MJ 関数コードのデータを収集します。 これらの関数コードの詳細については、[IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)を参照してください。
+デバイスのドライバー スタック内でアクティブだった Irp の MJ 関数のコードの数。 ドライバの対応 toolkit は、12 MJ 関数コードのデータを収集します。 これらの関数コードの詳細については、次を参照してください。 [IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)します。
 
 <span id="Major__MJ__and_Minor__MN__IRP_Function_Codes"></span><span id="major__mj__and_minor__mn__irp_function_codes"></span><span id="MAJOR__MJ__AND_MINOR__MN__IRP_FUNCTION_CODES"></span>メジャー (MJ) と IRP 関数コードのマイナー (MN)  
 MJ IRP の関数コードで、その下位 MN 関数コードと共に、デバイスのドライバー スタック内でアクティブだった Irp の数。 ドライバの対応 toolkit は、52 MJ および mn の各関数のコードのデータを収集します。
@@ -33,7 +33,7 @@ MJ IRP の関数コードで、その下位 MN 関数コードと共に、デバ
 <span id="IRP_Pairs"></span><span id="irp_pairs"></span><span id="IRP_PAIRS"></span>IRP のペア  
 デバイスのドライバー スタック内で同時にアクティブだった MJ と MJ/MN IRP の関数コードの数。 この数には、個別の Irp が入力または同時に、ドライバー スタックのままの回数が反映されます。 ドライバの対応 toolkit は、1099 MJ および mn の各関数のコードのペアのデータを収集します。
 
-IRP の関数コードの詳細については、[IRP 関数コード](https://msdn.microsoft.com/library/windows/hardware/ff550706)を参照してください。
+IRP の関数コードの詳細については、次を参照してください。 [IRP 関数コード](https://msdn.microsoft.com/library/windows/hardware/ff550706)します。
 
 ### <a name="span-idirpcoveragedataspanspan-idirpcoveragedataspanirp-coverage-data"></a><span id="irp_coverage_data"></span><span id="IRP_COVERAGE_DATA"></span>IRP カバレッジ データ
 

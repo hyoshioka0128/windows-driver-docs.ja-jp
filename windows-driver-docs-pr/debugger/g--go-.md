@@ -1,5 +1,5 @@
 ---
-title: g (移動)
+title: g (実行)
 description: G コマンドでは、特定のプロセスまたはスレッドの実行を開始します。 BreakAddress に達したら、または別のイベントにより、デバッガーを停止するときに、プログラムの最後に実行を停止します。
 ms.assetid: 9b6aac94-6c53-40c2-a8de-2ad106678c65
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b9d7cd181a6c508374323b2ad877886a06c0d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357588"
 ---
-# <a name="g-go"></a>g (移動)
+# <a name="g-go"></a>g (実行)
 
 
 **G**コマンドは、特定のプロセスまたはスレッドの実行を開始します。 プログラムの最後に実行を停止時に*BreakAddress*に達すると、または別のイベントがデバッガーを停止を発生する場合。
@@ -40,16 +40,16 @@ g[a] [= StartAddress] [BreakAddress ... [; BreakCommands]]
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-(ユーザー モードのみ)スレッドの実行を指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+(ユーザー モードのみ)スレッドの実行を指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 <span id="_______a______"></span><span id="_______A______"></span> **A**   
 プロセッサのブレークポイントにするには、このコマンドによって作成されたすべてのブレークポイントの発生 (などによって作成された[ **ba**](ba--break-on-access-.md)) ソフトウェア ブレークポイントではなく (などによって作成された[ **bp** ](bp--bu--bm--set-breakpoint-.md)と**bm**)。 場合*BreakAddress*が指定されていない、ブレークポイントは作成されません、 **、** フラグが影響を与えません。
 
 <span id="_______StartAddress______"></span><span id="_______startaddress______"></span><span id="_______STARTADDRESS______"></span> *StartAddress*   
-実行を開始するアドレスを指定します。 これが指定されていない場合、デバッガーは実行を命令ポインターの現在の値で指定されたアドレスに渡します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+実行を開始するアドレスを指定します。 これが指定されていない場合、デバッガーは実行を命令ポインターの現在の値で指定されたアドレスに渡します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span> *BreakAddress*   
-ブレークポイントを設定するアドレスを指定します。 場合*BreakAddress*指定すると、命令アドレスを指定する必要があります (つまり、アドレス必要命令の最初のバイトがあります)。 最大 10 個の区切りは、任意の順序でのアドレスを一度に 1 つ指定できます。 場合*BreakAddress*解決できないとして格納されて、[未解決ブレークポイント](unresolved-breakpoints---bu-breakpoints-.md)します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+ブレークポイントを設定するアドレスを指定します。 場合*BreakAddress*指定すると、命令アドレスを指定する必要があります (つまり、アドレス必要命令の最初のバイトがあります)。 最大 10 個の区切りは、任意の順序でのアドレスを一度に 1 つ指定できます。 場合*BreakAddress*解決できないとして格納されて、[未解決ブレークポイント](unresolved-breakpoints---bu-breakpoints-.md)します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______BreakCommands______"></span><span id="_______breakcommands______"></span><span id="_______BREAKCOMMANDS______"></span> *BreakCommands*   
 ブレークポイントが指定されたときに自動的に実行する 1 つまたは複数のコマンドを指定します*BreakAddress*にヒットします。 *BreakCommands*パラメーターの先頭にセミコロンする必要があります。 複数*BreakAddress*値を指定すると、 *BreakCommands*それらすべてに適用されます。

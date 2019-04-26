@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_NIC_SAVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e1a6feae0af84084052d24174c7e2e0d626433cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355894"
 ---
 # <a name="oidswitchnicsave"></a>OID\_スイッチ\_NIC\_保存
 
@@ -30,7 +30,7 @@ OID の OID メソッド要求を受け取ったとき\_切り替える\_NIC\_�
 
 -   拡張機能の設定、 *ExtensionId*と*ExtensionFriendlyName*の独自の識別子と名前、フィールドし、NDIS に OID メソッド要求が完了すると\_状態\_成功しました。 この原因のいずれかに拡張を許可するもう 1 つの OID メソッド要求を発行する拡張可能スイッチのプロトコルの端を返す複数のデータを保存または他の拡張機能を許可するには、独自のデータを保存するスタックがダウンします。
 
-**注**  呼び出す必要がありますが、拡張機能では、実行時のデータを保存することはない場合、 [ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張機能を基になるはこの OID メソッドの要求を転送するように、拡張可能スイッチ ドライバー スタックです。 この手順の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](https://msdn.microsoft.com/library/windows/hardware/ff549950)を参照してください。
+**注**  呼び出す必要がありますが、拡張機能では、実行時のデータを保存することはない場合、 [ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張機能を基になるはこの OID メソッドの要求を転送するように、拡張可能スイッチ ドライバー スタックです。 この手順の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](https://msdn.microsoft.com/library/windows/hardware/ff549950)します。
 
  
 
@@ -38,7 +38,7 @@ HYPER-V 拡張可能スイッチの設定、*ヘッダー*、 *PortId*、 *NicId
 
 OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能スイッチの基になるミニポート edge によって最終的に処理されます。 NDIS に OID 要求が完了するこの OID メソッド要求は拡張可能スイッチのミニポート edge によって受信されると、\_状態\_成功します。 実行時のデータの拡張可能スイッチ ドライバー スタック内のすべての拡張機能をクエリが実行されている拡張可能スイッチのプロトコルの端に通知します。 拡張可能スイッチのプロトコルのエッジの OID セットの要求を発行し、 [OID\_切り替える\_NIC\_保存\_完了](oid-switch-nic-save-complete.md)保存を完了する操作。
 
-拡張可能スイッチ ポートの実行時データを保存する方法の詳細については、[保存 Hyper-v 拡張可能なスイッチ実行時データ](https://msdn.microsoft.com/library/windows/hardware/hh598299)を参照してください。
+拡張可能スイッチ ポートの実行時データを保存する方法の詳細については、次を参照してください。[保存 Hyper-v 拡張可能なスイッチ実行時データ](https://msdn.microsoft.com/library/windows/hardware/hh598299)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -96,7 +96,7 @@ OID の OID メソッド要求\_切り替える\_NIC\_保存は拡張可能ス�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

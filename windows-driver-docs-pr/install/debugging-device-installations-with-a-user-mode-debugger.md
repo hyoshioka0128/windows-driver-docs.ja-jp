@@ -1,26 +1,26 @@
 ---
-title: ユーザー モード デバッガーによるデバッグ デバイスのインストール
-description: ユーザー モード デバッガーによるデバッグ デバイスのインストール
+title: ユーザーモード デバッガーでのデバイスのインストールのデバッグ
+description: ユーザーモード デバッガーでのデバイスのインストールのデバッグ
 ms.assetid: 34427afb-3303-44ec-a3a7-72f247c5506d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a86b65d148ce509e7e85619775ce7fadd8427728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358852"
 ---
-# <a name="debugging-device-installations-with-a-user-mode-debugger"></a>ユーザー モード デバッガーによるデバッグ デバイスのインストール
+# <a name="debugging-device-installations-with-a-user-mode-debugger"></a>ユーザーモード デバッガーでのデバイスのインストールのデバッグ
 
 
 以降、Windows Vista では、プラグ アンド プレイ (PnP) マネージャー、システムで新しいデバイスを検出した場合、オペレーティング システムの起動時、デバイスのインストールのホスト プロセス (*DrvInst.exe*) を検索し、デバイスのドライバーをインストールします。
 
 ユーザー モード デバイスのインストールのホスト プロセスをデバッグする最も効率的な方法は、WinDbg または Visual Studio など、ユーザー モード デバッガーです。 *DrvInst.exe*プロセスは通常ユーザーが介入せずに完了、マイクロソフトの開発者を許可するには、Windows Vista と以降のバージョンの Windows にサポートが追加されて、[ドライバー パッケージ](driver-packages.md)デバイス インストールの主要なステージが処理される前にデバッガーをアタッチします。
 
-ユーザー モード デバッガーや他のデバッグ ツールの詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
+ユーザー モード デバッガーや他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
 
-**DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)を参照してください。
+**DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、次を参照してください。[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)します。
 
 ときに、 **DebugInstall**レジストリ値が 2 に設定*DrvInst.exe*インストールを続行する前にそのプロセスに接続するユーザー モード デバッガーが待機します。 デバッガーが接続されると、デバッガー自体に、プロセスが中断されます。 デバッガーをアタッチおよび構成のデバッグ中にターゲット システムで、独自の最初のブレークポイントは開始されませんする必要があります。
 

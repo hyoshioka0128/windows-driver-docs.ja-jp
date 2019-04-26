@@ -1,17 +1,17 @@
 ---
-title: Windows カーネル モードの電源マネージャー
-description: Windows カーネル モードの電源マネージャー
+title: Windows カーネルモード電源マネージャー
+description: Windows カーネルモード電源マネージャー
 ms.assetid: 2d39e43a-63a6-4474-a1ed-c24b4526a3f5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 87760d4c79399b7807639c2a605cc90cf18a17a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357518"
 ---
-# <a name="windows-kernel-mode-power-manager"></a>Windows カーネル モードの電源マネージャー
+# <a name="windows-kernel-mode-power-manager"></a>Windows カーネルモード電源マネージャー
 
 
 Windows では、power 管理テクノロジを使用して、電力消費の削減 Pc の一般に、ラップトップのバッテリ電源を具体的には。 たとえば、Windows コンピューターはスリープまたは休止状態に配置できます。 シャット ダウンまたは電力消費の削減に移動するコンピューターの開始時に接続されているデバイスも電源を切断できる適切な方法でデータが失われないようにするために、コンピューターのデバイスの複雑な電源管理システムが進化してきました。 これらのデバイスには、警告が必要がありますを電源の状態を変更するのにも、それらは正しくシャット ダウンするまで待機する制御デバイスに指示する通信ループの一部である必要があるとします。
@@ -30,17 +30,17 @@ Windows カーネル モードの電源マネージャーは、電源の状態�
 
 -   10% のバッテリ電源で自動的にシャット ダウンなどのパネルの設定を制御します。
 
-電源マネージャーは、Irp を使用してこれらの要求を処理します。 Irp の詳細については、[Irp の処理](handling-irps.md)を参照してください。
+電源マネージャーは、Irp を使用してこれらの要求を処理します。 Irp の詳細については、次を参照してください。 [Irp の処理](handling-irps.md)します。
 
 電源マネージャーは、電源管理と座標の電源イベントを処理するポリシーの管理と組み合わせて動作し、電源管理 Irp が生成されます。 電源マネージャー、電源の状態を変更する要求を収集します順位のデバイスの電源状態変更、および変更を行う適切なドライバーを通知する適切な Irp を送信し、必要があります (するさらに可能性がありますように指示するサブデバイス、。変わります)。 ポリシー マネージャーは、システムのアクティビティを監視し、電源ポリシーにユーザーの状態、アプリケーションの状態、およびデバイス ドライバ ステータスを統合します。
 
 電源管理に関する情報の詳細を参照してください。[電源管理の Windows ドライバー](implementing-power-management.md)します。
 
-電源マネージャーは、I/O マネージャーのサブコンポーネントと見なされます。 詳細については、[Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)を参照してください。
+電源マネージャーは、I/O マネージャーのサブコンポーネントと見なされます。 詳細については、次を参照してください。 [Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)します。
 
-電源マネージャーに直接インターフェイスを提供するルーチンが、通常は付いて"**Po**"。 たとえば、 **PoSetPowerState**します。 電源マネージャー ルーチンの一覧は、[電源マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff559835)を参照してください。
+電源マネージャーに直接インターフェイスを提供するルーチンが、通常は付いて"**Po**"。 たとえば、 **PoSetPowerState**します。 電源マネージャー ルーチンの一覧は、次を参照してください。[電源マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff559835)します。
 
-Windows Driver Frameworks (WDF) は、電源管理を簡単にライブラリのセットを提供します。 WDF の詳細については、[カーネル モード ドライバー フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/ff544296)を参照してください。
+Windows Driver Frameworks (WDF) は、電源管理を簡単にライブラリのセットを提供します。 WDF の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/ff544296)します。
 
  
 

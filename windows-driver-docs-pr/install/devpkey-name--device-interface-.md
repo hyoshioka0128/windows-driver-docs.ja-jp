@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 96d917d97f39fefc1117d19228251d0f792e4314
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353818"
 ---
 # <a name="devpkeyname-device-interface"></a>DEVPKEY_NAME (デバイス インターフェイス)
 
@@ -62,7 +62,7 @@ DEVPKEY_NAME の値の値と同じ、 [ **DEVPKEY_DeviceInterface_FriendlyName**
 
 DEVPKEY_NAME の値を取得するには呼び出すことによって[ **SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)します。
 
-デバイスのインターフェイスについては、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
+デバイスのインターフェイスについては、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
 
 Windows Server 2003、Windows XP、および Windows 2000 は、対応する名前プロパティを直接サポートされません。 ただし、Windows の以前のバージョンは、DEVPKEY_DeviceInterface_FriendlyName に対応するプロパティをサポートする操作を行います。
 

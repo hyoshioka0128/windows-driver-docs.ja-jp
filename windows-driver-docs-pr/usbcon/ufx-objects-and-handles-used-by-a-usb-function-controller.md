@@ -1,16 +1,16 @@
 ---
-Description: USB function class extension (UFX) uses the WDF object functionality to define these USB-specific UFX objects.
-title: UFX オブジェクトと関数の USB クライアント ドライバーによって使用されるハンドル
+Description: USB 関数クラスの拡張機能 (UFX) は、これらの特定の USB UFX オブジェクトを定義するのに WDF オブジェクトの機能を使用します。
+title: USB 機能クライアント ドライバーが使用する UFX オブジェクトとハンドル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 268d3e82963c889328671c5bcc4ab1856daad554
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355166"
 ---
-# <a name="ufx-objects-and-handles-used-by-a-usb-function-client-driver"></a>UFX オブジェクトと関数の USB クライアント ドライバーによって使用されるハンドル
+# <a name="ufx-objects-and-handles-used-by-a-usb-function-client-driver"></a>USB 機能クライアント ドライバーが使用する UFX オブジェクトとハンドル
 
 
 **要約**
@@ -18,7 +18,7 @@ ms.locfileid: "56535949"
 -   UFX オブジェクトは、エンドポイントと転送を処理するために、関数のコント ローラー ドライバーによって使用されます。
 -   これらのオブジェクトは、WDF オブジェクトへのハンドルし、クライアント ドライバーの要求で UFX によって作成されます。 各オブジェクトの有効期間は、UFX によって管理されます。
 
-**適用されます。**
+**適用対象**
 
 -   Windows 10
 
@@ -86,7 +86,7 @@ USB 経由での課金を有効にするために使用する充電器の情報�
 ホストとデバイスの間の論理接続を表します。 オブジェクトは、ホストからのデータの転送を担当します。 すべてのデバイス オブジェクト、1 つまたは複数のエンドポイントがあります。 既定のエンドポイントは、コントロール エンドポイントでは常に、残りの部分はクラス ドライバーの特定のオブジェクト。 関数のコント ローラー ドライバー内のオブジェクトを作成する、 [ *EVT\_UFX\_デバイス\_エンドポイント\_追加*](https://msdn.microsoft.com/library/windows/hardware/mt187851) を呼び出すことによってコールバック[ **UfxEndpointCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt187965)メソッド。
 
 ## <a name="related-topics"></a>関連トピック
-[関数の USB コント ローラーの Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)  
+[USB ファンクション コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)  
 
 
 

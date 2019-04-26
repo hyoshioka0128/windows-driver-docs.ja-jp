@@ -1,5 +1,5 @@
 ---
-title: WSK ソケットの IOCTL 操作
+title: WSK ソケット IOCTL 操作
 description: WSK サブシステムは、次のソケット I/O 制御操作をサポートしています。
 ms.assetid: ffdf74d4-4795-4d3f-aaf0-49db89f5ad93
 ms.date: 07/18/2017
@@ -10,13 +10,13 @@ keywords:
 - Winsock カーネル WDK が、ネットワーク操作
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a8875ba387c3a72c77f6321d5bfdd16ff657741
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356758"
 ---
-# <a name="wsk-socket-ioctl-operations"></a>WSK ソケットの IOCTL 操作
+# <a name="wsk-socket-ioctl-operations"></a>WSK ソケット IOCTL 操作
 
 
 WSK サブシステムには、次のソケット I/O 制御操作がサポートされています。

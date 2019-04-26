@@ -5,11 +5,11 @@ ms.assetid: 1CD11A3C-8181-4AF2-9AB3-10B04668CF1C
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb4e197292db24f0c882d80b8e5834a49b23ec2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353684"
 ---
 # <a name="metransformhaveoutput"></a>METransformHaveOutput
 
@@ -35,7 +35,7 @@ Devproxy METransformHaveOutput が発生したときに、DTM は Devproxy で P
 
 デバイス MFT は、の合計の出力ストリームの数を受け取る**MFT\_出力\_データ\_バッファー**配列内の構造体。 構造体のメンバーを適切な値を入力すると想定されます。 応答のサンプルを取得するデバイス MFT に DTM 呼び出される前に、 **METransformHaveOutput**メッセージ、別のサンプルが、別のストリーム可能になる場合デバイス MFT はさあ、これで、サンプルを送信ProcessOutput 呼び出し。 DTM は ProcessOutput をもう一度、呼び出しが、その時点でデバイス MFT でしたのみを返す、呼び出しでは、サンプルはありませんが利用できない場合。
 
-詳細については、[ **IMFDeviceTransform::ProcessOutput**](https://msdn.microsoft.com/library/windows/hardware/mt797682)を参照してください。
+詳細については、次を参照してください。 [ **IMFDeviceTransform::ProcessOutput**](https://msdn.microsoft.com/library/windows/hardware/mt797682)します。
 
  
 

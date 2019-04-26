@@ -4,11 +4,11 @@ description: MB SAR プラットフォームのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d29378af0b76c3c3e664b75e82ad5e0c8e9313
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353756"
 ---
 # <a name="mb-sar-platform-support"></a>MB SAR プラットフォームのサポート
 
@@ -25,7 +25,7 @@ Windows を Windows 10 バージョン 1703 以降、行政区の構成とモデ
 この機能は、新しい 2 つの Oid と Cid を追加してサポートされます。 MBIM を実装するための IHV パートナー、CID バージョンのみをサポートする必要があります。
 
 > [!NOTE]
-> このトピックでは、モデム デバイス ドライバーに SAR プラットフォームのサポートを実装するために、IHV パートナーのインターフェイスを定義します。 デバイスの行政区マッピング テーブルのカスタマイズに関する情報を探している場合は、[特定吸収レート (SAR) のマッピング テーブルをカスタマイズ](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-sar-mapping-table)を参照してください。
+> このトピックでは、モデム デバイス ドライバーに SAR プラットフォームのサポートを実装するために、IHV パートナーのインターフェイスを定義します。 デバイスの行政区マッピング テーブルのカスタマイズに関する情報を探している場合は、次を参照してください。[特定吸収レート (SAR) のマッピング テーブルをカスタマイズ](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-sar-mapping-table)します。
 
 ## <a name="mb-interface-update-for-sar-platform-support"></a>MB インターフェイスの更新プログラム SAR プラットフォームのサポート
 

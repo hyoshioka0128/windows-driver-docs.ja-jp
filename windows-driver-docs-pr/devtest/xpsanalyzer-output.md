@@ -1,17 +1,17 @@
 ---
-title: XpsAnalyzer 出力
-description: XpsAnalyzer 出力
+title: XpsAnalyzer の出力
+description: XpsAnalyzer の出力
 ms.assetid: eb9c024a-05fd-4dc8-a1bf-6164ee94f853
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b293a46f5d79bd83ad5f5939230a356cb41ac1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358042"
 ---
-# <a name="xpsanalyzer-output"></a>XpsAnalyzer 出力
+# <a name="xpsanalyzer-output"></a>XpsAnalyzer の出力
 
 
 次は、XPS 分析レポートの例です。 この例で XpsAnalyzer ツールは、次のように実行されました。
@@ -33,7 +33,7 @@ c:\\temp\\SampleXpsFile.xps
 <tbody>
 <tr class="odd">
 <td align="left"><p>ルール</p></td>
-<td align="left"><p>Value</p></td>
+<td align="left"><p>値</p></td>
 <td align="left"><p>Location</p></td>
 </tr>
 <tr class="even">

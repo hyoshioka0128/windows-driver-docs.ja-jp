@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8823a98372fc413a795177c9c5e8ed403a31cdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356147"
 ---
 # <a name="validscanticket-element"></a>ValidScanTicket 要素
 
@@ -79,7 +79,7 @@ ms.locfileid: "56573061"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 クライアントが送信する、 [ **ScanTicket** ](scanticket.md)を通じて検証、 [ **ValidateScanTicketRequest** ](validatescanticketrequest.md)操作。 場合、送信された**ScanTicket** WSD スキャン サービスが返す必要があります、無効な設定が含まれています、 **ValidScanTicket**要素が有効な設定を無効な設定が変更されることができます。 検証情報を返しますスキャン サービス**ValidScanTicket**の[ **ValidateScanTicketResponse**](validatescanticketresponse.md)します。

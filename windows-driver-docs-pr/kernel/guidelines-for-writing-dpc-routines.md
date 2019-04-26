@@ -1,6 +1,6 @@
 ---
-title: DPC ルーチンを記述するためのガイドライン
-description: DPC ルーチンを記述するためのガイドライン
+title: DPC ルーチンの記述に関するガイドライン
+description: DPC ルーチンの記述に関するガイドライン
 ms.assetid: 570219be-d152-4826-855a-737bbed67ffd
 keywords:
 - 遅延プロシージャ呼び出しの WDK カーネル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc6b179d708942de114158b1430763815a8ef22c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359885"
 ---
-# <a name="guidelines-for-writing-dpc-routines"></a>DPC ルーチンを記述するためのガイドライン
+# <a name="guidelines-for-writing-dpc-routines"></a>DPC ルーチンの記述に関するガイドライン
 
 
 
@@ -26,9 +26,9 @@ ms.locfileid: "56551686"
 
 -   A *DpcForIsr*または*CustomDpc*ルーチンは、物理デバイスへのアクセスを同期する必要があり、共有状態の情報やリソースにドライバーを使用したドライバーでが維持されるのでその他のルーチンを同じデバイスまたはメモリの場所にアクセスします。
 
-    場合、 *DpcForIsr*または*CustomDpc*ルーチン ISR と、デバイスや状態を共有する、呼び出す必要があります[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)、提供ドライバーによって提供されるアドレス[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンをデバイスのプログラムや、共有状態にアクセスします。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
+    場合、 *DpcForIsr*または*CustomDpc*ルーチン ISR と、デバイスや状態を共有する、呼び出す必要があります[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)、提供ドライバーによって提供されるアドレス[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンをデバイスのプログラムや、共有状態にアクセスします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
 
-    場合、 *DpcForIsr*または*CustomDpc*共有状態またはを使用したリソースのどちらを保護する必要があります日常的な共有状態や、インター ロックされたキューまたは ISR、以外のルーチンのタイマー オブジェクトなどのリソースをドライバー初期化 executive スピン ロックします。 詳細については、[スピン ロック](spin-locks.md)を参照してください。
+    場合、 *DpcForIsr*または*CustomDpc*共有状態またはを使用したリソースのどちらを保護する必要があります日常的な共有状態や、インター ロックされたキューまたは ISR、以外のルーチンのタイマー オブジェクトなどのリソースをドライバー初期化 executive スピン ロックします。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
 
 -   *DpcForIsr*と*CustomDpc* IRQL でルーチンの実行のディスパッチを =\_レベルで、呼び出すことができますサポート ルーチンのセットを制限します。
 

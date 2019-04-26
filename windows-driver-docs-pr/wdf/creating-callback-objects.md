@@ -1,6 +1,6 @@
 ---
-title: コールバック オブジェクトを作成します。
-description: コールバック オブジェクトを作成します。
+title: コールバック オブジェクトの作成
+description: コールバック オブジェクトの作成
 ms.assetid: bbae1458-911f-4a48-8bf2-0997e8f98826
 keywords:
 - コールバック オブジェクト WDK UMDF
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18cf7083d053a77f280e5d3377342878fc962527
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358589"
 ---
-# <a name="creating-callback-objects"></a>コールバック オブジェクトを作成します。
+# <a name="creating-callback-objects"></a>コールバック オブジェクトの作成
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

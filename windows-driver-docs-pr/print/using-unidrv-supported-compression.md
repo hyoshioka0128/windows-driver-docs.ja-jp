@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ba602f74762c59bcc83e4bab97bc033f93ab6ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355648"
 ---
 # <a name="using-unidrv-supported-compression"></a>Unidrv でサポートされている圧縮の使用
 
@@ -38,7 +38,7 @@ CmdDisableCompression コマンドの入力を指定する場合、使用可能�
 
 CmdEnableTIFF4、CmdEnableDRC、CmdEnableFE の詳細については\_RLE、CmdDisableCompression のエントリを参照してくださいと[ラスター データ圧縮コマンド](raster-data-compression-commands.md)します。
 
-CmdSendBlockData の詳細については、[ラスター データ出力コマンド](raster-data-emission-commands.md)を参照してください。
+CmdSendBlockData の詳細については、次を参照してください。[ラスター データ出力コマンド](raster-data-emission-commands.md)します。
 
  
 

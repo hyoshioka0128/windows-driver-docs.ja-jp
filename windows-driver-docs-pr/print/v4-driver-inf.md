@@ -1,17 +1,17 @@
 ---
-title: V4 ドライバーの INF
+title: V4 ドライバー INF
 description: V4 印刷ドライバーのセットアップのモデルでは、引き続き INF ファイルを使用するもプリンターの特定のセットアップのディレクティブをキャプチャする場合は、新しいマニフェスト ファイルを採用しています。
 ms.assetid: 48F19796-43F9-4A69-B042-1305245C9CB9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c641762929e4619a4c15762878bd730d2e8e2f3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358702"
 ---
-# <a name="v4-driver-inf"></a>V4 ドライバーの INF
+# <a name="v4-driver-inf"></a>V4 ドライバー INF
 
 
 V4 印刷ドライバーのセットアップのモデルでは、引き続き INF ファイルを使用するもプリンターの特定のセットアップのディレクティブをキャプチャする場合は、新しいマニフェスト ファイルを採用しています。
@@ -71,7 +71,7 @@ faPDL.dll =2
 Location="Fabrikam DVD"
 ```
 
-## <a name="inf-directives"></a>INF ディレクティブ
+## <a name="inf-directives"></a>INF のディレクティブ
 
 
 次の表では、v4 印刷ドライバーと印刷クラス ドライバーでは許可されているプリンター固有のディレクティブの一覧を示します。
@@ -164,7 +164,7 @@ V4 印刷ドライバーでは、他のプリンター固有のディレクテ�
 
 **構成のモジュール参照**します。 すべての印刷ドライバーを使用して、同じの構成モジュールをバイナリ (PrintConfig.dll)。構成モジュールを選択するためのドライバーのメカニズムはありません。
 
-基本的な v4 プリンター ドライバーの INF ファイルを作成する方法については、[構築の基本的な v4 プリンター ドライバー](building-a-basic-v4-printer-driver.md)を参照してください。
+基本的な v4 プリンター ドライバーの INF ファイルを作成する方法については、次を参照してください。[構築の基本的な v4 プリンター ドライバー](building-a-basic-v4-printer-driver.md)します。
 
  
 

@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fe8478b6c685c125bab4f7b11e67906cb268c42
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356915"
 ---
 # <a name="closing-a-socket"></a>ソケットを閉じる
 
 
-Winsock カーネル (WSK) アプリケーションは、ソケットの使用が完了したらは、ソケットを閉じる必要があり、関連付けられたリソースを解放します。 WSK アプリケーションは、アプリケーションがそれ自体を WSK サブシステムからデタッチする前に、すべての開いているソケットを閉じる必要があります。 WSK サブシステムから WSK アプリケーションのデタッチに関する詳細については、[Winsock カーネル アプリケーションの登録を解除](unregistering-a-winsock-kernel-application.md)を参照してください。
+Winsock カーネル (WSK) アプリケーションは、ソケットの使用が完了したらは、ソケットを閉じる必要があり、関連付けられたリソースを解放します。 WSK アプリケーションは、アプリケーションがそれ自体を WSK サブシステムからデタッチする前に、すべての開いているソケットを閉じる必要があります。 WSK サブシステムから WSK アプリケーションのデタッチに関する詳細については、次を参照してください。 [Winsock カーネル アプリケーションの登録を解除](unregistering-a-winsock-kernel-application.md)します。
 
 WSK アプリケーションが呼び出すことによって、ソケットを閉じます、 [ **WskCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571124)関数。 呼び出しの前に、 **WskCloseSocket**関数、WSK アプリケーションの必要がありますようにに他の関数呼び出しなしに、アプリケーションのいずれかで、拡張関数を含む、ソケットの関数のいずれかに進行状況ほかはスレッド。 ただし、WSK アプリケーションを呼び出すことができます**WskCloseSocket**かどうかがある保留中の Irp をまだ完了していないソケットの関数の前の呼び出しから。
 
@@ -131,7 +131,7 @@ NTSTATUS
 
 アプリケーションが呼び出されて、WSK 後[ **WskCloseSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571124)、さらに呼び出し、ソケットの関数のいずれかにしないようにします。
 
-WSK アプリケーションでは、双方向で以前に切断されましたいない接続指向のソケットが閉じ、ソケットを閉じる前に、ソケットの中止になる切断は、WSK サブシステムによって自動的に実行します。 ソケットを切断しています。 詳細については、[宛先からソケットを切断する](disconnecting-a-socket-from-a-destination.md)を参照してください。
+WSK アプリケーションでは、双方向で以前に切断されましたいない接続指向のソケットが閉じ、ソケットを閉じる前に、ソケットの中止になる切断は、WSK サブシステムによって自動的に実行します。 ソケットを切断しています。 詳細については、次を参照してください。[宛先からソケットを切断する](disconnecting-a-socket-from-a-destination.md)します。
 
  
 

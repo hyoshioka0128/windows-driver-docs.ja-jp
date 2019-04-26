@@ -1,6 +1,6 @@
 ---
-title: CustomTimerDpc ルーチンを使用してください。
-description: CustomTimerDpc ルーチンを使用してください。
+title: CustomTimerDpc ルーチンの使用
+description: CustomTimerDpc ルーチンの使用
 ms.assetid: e95d01a2-4d13-40d2-aeb0-44c45e4a49f5
 keywords:
 - タイマー オブジェクトの WDK カーネル、CustomTimerDpc ルーチン
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a93e78f91adcb769b83b8d75197c982e815b9723
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355268"
 ---
-# <a name="using-a-customtimerdpc-routine"></a>CustomTimerDpc ルーチンを使用してください。
+# <a name="using-a-customtimerdpc-routine"></a>CustomTimerDpc ルーチンの使用
 
 
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CONNECTION_SETTINGS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 99d814d05a4e8569e2a99d86ae1021f4a24ff8b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357254"
 ---
 # <a name="wditlvconnectionsettings"></a>WDI\_TLV\_接続\_設定
 
@@ -31,7 +31,7 @@ WDI\_TLV\_接続\_設定は、の接続設定を含む TLV [OID\_WDI\_タスク\
 ## <a name="values"></a>値
 
 
-| 種類                                                         | 説明                                                                                                                                                                                                               |
+| 型                                                         | 説明                                                                                                                                                                                                               |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                                        | これは、初回の接続要求 (0 の値) またはローミング接続 (1 の値) を指定します。                                                                                                                   |
 | UINT8                                                        | 非表示/非ブロードキャストの Ssid を持つネットワークへの接続を指定します。 非表示のネットワークに接続するときに、この値は 1 です。                                                                                      |

@@ -1,6 +1,6 @@
 ---
-title: チューナー イベント
-description: チューナー イベント
+title: チューナーのイベント
+description: チューナーのイベント
 ms.assetid: eb5e0698-2641-4d47-9fa3-d1969a03c795
 keywords:
 - チューナー イベント WDK ビデオのキャプチャします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32a738879c95cfb3d4654bae447025d87394e1be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354857"
 ---
-# <a name="tuner-events"></a>チューナー イベント
+# <a name="tuner-events"></a>チューナーのイベント
 
 
 [EVENTSETID\_チューナー](https://msdn.microsoft.com/library/windows/hardware/ff559566)チューナー イベントがイベント セットに含まれています。 次の表に、イベント、EVENTSETID の一部である\_チューナー イベントのセット。 2 番目のテーブルには、Windows Vista 以降を実行している AVStream ミニドライバーに対して実装されるチューナー イベントについて説明します。

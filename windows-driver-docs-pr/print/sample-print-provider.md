@@ -1,19 +1,19 @@
 ---
-title: サンプルの印刷プロバイダー
-description: サンプルの印刷プロバイダー
+title: サンプル印刷プロバイダー
+description: サンプル印刷プロバイダー
 ms.assetid: fdb6979a-3566-4280-bee7-b58cc39af6f8
 keywords:
 - WDK、サンプルのプロバイダーを印刷します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 696fd122e24e04a8fafd070e871ed3ca2ef0d2b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354817"
 ---
-# <a name="sample-print-provider"></a>サンプルの印刷プロバイダー
+# <a name="sample-print-provider"></a>サンプル印刷プロバイダー
 
 
 

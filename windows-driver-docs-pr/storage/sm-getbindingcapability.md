@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 89cf5cd97caac3b8eef64b46e0b919dc0c13c5cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356702"
 ---
 # <a name="smgetbindingcapability-function"></a>SM\_GetBindingCapability 関数
 
@@ -58,12 +58,12 @@ void SM_GetBindingCapability(
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 SM\_GetBindingSupport メソッド返すは、現在有効になっているバインディング機能に対し、SM\_GetBindingCapability メソッドかどうかを指定せず、ポートのバインド機能を示す特定のバインド有効ですか。 この WMI メソッドは、ミリ秒に属する\_SM\_TargetInformationMethods WMI クラスです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

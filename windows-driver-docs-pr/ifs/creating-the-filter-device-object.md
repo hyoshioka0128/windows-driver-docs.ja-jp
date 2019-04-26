@@ -1,6 +1,6 @@
 ---
-title: フィルターのデバイス オブジェクトを作成します。
-description: フィルターのデバイス オブジェクトを作成します。
+title: フィルター デバイス オブジェクトの作成
+description: フィルター デバイス オブジェクトの作成
 ms.assetid: aca9a2ba-8630-4eb3-9312-a0c6454c3e44
 keywords:
 - フィルターをアタッチ、フィルター ドライバー WDK ファイル システム
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23855c49a21b874809fe998826d801e452f67d13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359346"
 ---
-# <a name="creating-the-filter-device-object"></a>フィルターのデバイス オブジェクトを作成します。
+# <a name="creating-the-filter-device-object"></a>フィルター デバイス オブジェクトの作成
 
 
 ## <span id="ddk_creating_the_filter_device_object_if"></span><span id="DDK_CREATING_THE_FILTER_DEVICE_OBJECT_IF"></span>

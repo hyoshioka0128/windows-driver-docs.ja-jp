@@ -1,17 +1,17 @@
 ---
 title: ドライバー パッケージに含まれていないデバイスのインストール アプリケーション
-description: ドライバー パッケージに含まれていないデバイスのインストール アプリケーション
+description: ドライバー パッケージに含まれないデバイスのインストール アプリケーション
 ms.assetid: 3c8fd504-50c9-4a61-9cca-cd8cee4e2bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8386c1bb6ece9d68be9e7c032cfff8cf9744adc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357938"
 ---
-# <a name="device-installation-application-not-included-in-the-driver-package"></a>ドライバー パッケージに含まれていないデバイスのインストール アプリケーション
+# <a name="device-installation-application-not-included-in-the-driver-package"></a>ドライバー パッケージに含まれないデバイスのインストール アプリケーション
 
 
 このメソッドは、共同インストーラーを使用して完了-インストール アクションをデバイス固有のアプリケーションをインストールする方法について説明します。
@@ -22,7 +22,7 @@ ms.locfileid: "56553597"
 
 -   共同インストーラーによって、する場合[完了-インストール アクション](finish-install-actions--windows-vista-and-later-.md)、このメソッドは、インストールに使用できます[ドライバー パッケージ](driver-packages.md)と Windows Vista および以降のバージョンの Windows デバイスに固有のアプリケーション。
 
--   ドライバー パッケージのみをデジタル署名する必要があります。 デバイス インストールのアプリケーションと関連付けられているインストール ファイルは、デジタル署名するのにはありません。 デジタル署名の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+-   ドライバー パッケージのみをデジタル署名する必要があります。 デバイス インストールのアプリケーションと関連付けられているインストール ファイルは、デジタル署名するのにはありません。 デジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
 -   ドライバー パッケージのみが、ドライバー ストアにコピーされます。 デバイスのインストール アプリケーションを起動するときにユーザーのハード ドライブに、デバイス固有のアプリケーションが他の場所でインストールされます。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56553597"
 
  
 
-共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
-共同インストーラー経由でデバイスのインストール アプリケーションを起動する方法の詳細については、[co-installer をデバイス インストール アプリケーションを開始するためのガイドライン](guidelines-for-starting-device-installation-applications-through-co-in.md)を参照してください。
+共同インストーラー経由でデバイスのインストール アプリケーションを起動する方法の詳細については、次を参照してください。 [co-installer をデバイス インストール アプリケーションを開始するためのガイドライン](guidelines-for-starting-device-installation-applications-through-co-in.md)します。
 
  
 

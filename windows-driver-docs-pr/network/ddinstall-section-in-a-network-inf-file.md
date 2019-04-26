@@ -1,6 +1,6 @@
 ---
-title: ネットワークの INF ファイルで DDInstall セクション
-description: ネットワークの INF ファイルで DDInstall セクション
+title: ネットワーク INF ファイル内の DDInstall セクション
+description: ネットワーク INF ファイル内の DDInstall セクション
 ms.assetid: f6621796-0d1f-4d96-9850-720718e7ac44
 keywords:
 - INF ファイルの WDK ネットワーク、DDInstall セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce4968d47102e892fcc91b476044dfd0ab473c6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358780"
 ---
-# <a name="ddinstall-section-in-a-network-inf-file"></a>ネットワークの INF ファイルで DDInstall セクション
+# <a name="ddinstall-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の DDInstall セクション
 
 
 
@@ -25,7 +25,7 @@ A *DDInstall*ネットワーク INF ファイルのセクションは、ジェ�
 
 A *DDInstall*ネットワーク INF ファイルでセクションが次のネットワークに固有のエントリには。
 
--   [特性](#characteristics)
+-   [Characteristics](#characteristics)
 -   [BusType](#bustype)
 -   [Port1DeviceNumber と Port1FunctionNumber](#port1devicenumber-and-port1functionnumber)
 
@@ -133,7 +133,7 @@ A *DDInstall*セクションは、物理ネットワーク アダプターを含
 <thead>
 <tr class="header">
 <th align="left">BusType Entry</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

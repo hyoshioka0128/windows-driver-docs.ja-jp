@@ -1,17 +1,17 @@
 ---
-title: 拡張記憶域証明書の管理ツールの概要
-description: 拡張記憶域証明書の管理ツールの概要
+title: Enhanced Storage Certificate Management Tool の概要
+description: Enhanced Storage Certificate Management Tool の概要
 ms.assetid: 963e6510-d62f-421f-9c3d-781092f98969
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89869f3ae2d630381283bcb63f13915e0ff7de92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356331"
 ---
-# <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>拡張記憶域証明書の管理ツールの概要
+# <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>Enhanced Storage Certificate Management Tool の概要
 
 
 Windows 7 以降のオペレーティング システムが提供、*拡張記憶域*USB ストレージ デバイスをコンピューターに接続されているインフラストラクチャ。 このインフラストラクチャは、デバイスの認証との通信に標準的な IEEE 1667 のバージョン 1.1 に基づきます。 IEEE 1667 standard の概要については、IEEE 1667 の標準的な用語と定義を参照してください。
@@ -22,7 +22,7 @@ Windows 7 以降のオペレーティング システムが提供、*拡張記�
 
     証明書を追加または (ASCm 証明書) を除く標準的な IEEE 1667 に対応している任意の USB 記憶装置の ASC ストア内で置換できます。
 
-    詳細については、[拡張記憶域証明書の管理ツールを使って証明書をインポートする](importing-certificates-by-using-the-enhanced-storage-certificate-manag.md)を参照してください。
+    詳細については、次を参照してください。[拡張記憶域証明書の管理ツールを使って証明書をインポートする](importing-certificates-by-using-the-enhanced-storage-certificate-manag.md)します。
 
 -   ASC ストアから証明書をファイルにエクスポートします。
 
@@ -52,7 +52,7 @@ Windows 7 以降のオペレーティング システムが提供、*拡張記�
 
 各項目の意味は次のとおりです。
 
--   *USB\_ハードウェア\_ID*されているハードウェアや、USB ストレージ デバイスの互換性のある識別子 (ID)。 これらの Id の詳細については、[USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)を参照してください。
+-   *USB\_ハードウェア\_ID*されているハードウェアや、USB ストレージ デバイスの互換性のある識別子 (ID)。 これらの Id の詳細については、次を参照してください。 [USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)します。
 
 -   デバイス インスタンスを表す GUID。
 

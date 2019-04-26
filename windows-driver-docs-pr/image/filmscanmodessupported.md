@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf2472a14dbbe96338899781382c13924754b89e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358048"
 ---
 # <a name="filmscanmodessupported-element"></a>FilmScanModesSupported 要素
 

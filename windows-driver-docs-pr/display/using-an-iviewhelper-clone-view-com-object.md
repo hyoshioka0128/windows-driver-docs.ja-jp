@@ -1,6 +1,6 @@
 ---
-title: IViewHelper 複製-ビューの COM オブジェクトを使用します。
-description: IViewHelper 複製-ビューの COM オブジェクトを使用します。
+title: IViewHelper 複製ビュー COM オブジェクトの使用
+description: IViewHelper 複製ビュー COM オブジェクトの使用
 ms.assetid: 2f264c5d-0e12-4116-9561-16dce99ce1fe
 keywords:
 - IViewHelper について、TMM WDK の表示
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5270208041af24fbf168805a311d1f2f46129838
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359122"
 ---
-# <a name="using-an-iviewhelper-clone-view-com-object"></a>IViewHelper 複製-ビューの COM オブジェクトを使用します。
+# <a name="using-an-iviewhelper-clone-view-com-object"></a>IViewHelper 複製ビュー COM オブジェクトの使用
 
 
 TMM がハードウェア ベンダーの複製-ビューのメソッドを使用して[IViewHelper](https://msdn.microsoft.com/library/windows/hardware/ff568164)および永続化されたモニターの構成で新しいモニターの COM インターフェイスのオブジェクト。 永続化されたモニターの構成では、TMM は、モニターに (つまり、表示モードとトポロジのデータ) データを表示を復元します。 TMM がこのデータの表示をユーザー モードのディスプレイ ドライバーを通じてに渡すことができます、 [ **IViewHelper::SetConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff568176)のため、ドライバーを変更したりその他の表示データ (たとえば、ガンマまたはテレビのフォールド メソッド設定)。

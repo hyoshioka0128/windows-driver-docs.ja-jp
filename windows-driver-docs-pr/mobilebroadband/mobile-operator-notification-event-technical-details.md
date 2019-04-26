@@ -5,11 +5,11 @@ ms.assetid: 639f238a-4bb4-4ac0-9b59-92a761dbc351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e25284f32fe27ffdd4379ec3c218045d1a7ad708
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356926"
 ---
 # <a name="mobile-operator-notification-event-technical-details"></a>通信事業者の通知イベントの技術的な詳細
 
@@ -40,7 +40,7 @@ MobileOperatorNotification イベントのペイロードには、次のフィ�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>MessageType</strong></p></td>
+<td><p><strong>[MessageType]</strong></p></td>
 <td><p>イベントをトリガーしたメッセージの列挙体。</p></td>
 </tr>
 <tr class="even">
@@ -168,7 +168,7 @@ SMS、USSD など、受信操作メッセージと共に、適切な対応する
 </CarrierProvisioning>
 ```
 
-アカウント プロビジョニングのメタデータに関する詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
+アカウント プロビジョニングのメタデータに関する詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
 
 このイベントが生成された**MessageType**ローカル データのカウンターがモバイル ブロード バンド インターフェイスでそので使用される (送受信されたバイト数) を推定するとき以降に変更されたを 5%、最後に見つかった、を除き、次の場合。
 
@@ -208,7 +208,7 @@ ProfileConnected MessageType はモバイル ブロード バンド インター
 
 ### <a name="span-idtetheringentitlementcheckspanspan-idtetheringentitlementcheckspanspan-idtetheringentitlementcheckspantetheringentitlementcheck"></a><span id="TetheringEntitlementCheck"></span><span id="tetheringentitlementcheck"></span><span id="TETHERINGENTITLEMENTCHECK"></span>TetheringEntitlementCheck
 
-この MobileOperatorNotification イベントが生成された**MessageType**すると、ユーザーがインターネット共有をオンにします。 ユーザーが、携帯電話会社が設定されている限り、インターネット共有を使用しようとしています。 たびにイベントがトリガーされた、 [AllowTethering](allowtethering.md)にサービス メタデータ スキーマ内の要素**EntitlementCheckRequired**します。 サービス メタデータのスキーマの詳細については、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
+この MobileOperatorNotification イベントが生成された**MessageType**すると、ユーザーがインターネット共有をオンにします。 ユーザーが、携帯電話会社が設定されている限り、インターネット共有を使用しようとしています。 たびにイベントがトリガーされた、 [AllowTethering](allowtethering.md)にサービス メタデータ スキーマ内の要素**EntitlementCheckRequired**します。 サービス メタデータのスキーマの詳細については、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
 
 アプリが携帯ネットワークでサポートされている適切な権利チェック メカニズムを実行しを使用して、結果をシステムに送信する必要があります、 [ **AuthorizeTethering** ](https://msdn.microsoft.com/library/windows/apps/dn266090)メソッド、の[ **NetworkOperatorNotificationEventDetails** ](https://msdn.microsoft.com/library/windows/apps/br207377)クラス、 [ **Windows.Networking.NetworkOperators** ](https://msdn.microsoft.com/library/windows/apps/br241148)名前空間。 携帯電話会社がサービス メタデータを変更する必要があります、アプリが権利チェックを実行する機能を持たない場合[AllowTethering](allowtethering.md)要素**常に**または**Never**、イベントは生成されません。
 
@@ -308,7 +308,7 @@ Windows から XML ベースのプロビジョニング ファイルを受け入
 </CarrierProvisioning>
 ```
 
-アカウント プロビジョニングのメタデータに関する詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
+アカウント プロビジョニングのメタデータに関する詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
 
 演算子メッセージは、この XML で定義できるように、テキスト メッセージを識別するルール。
 

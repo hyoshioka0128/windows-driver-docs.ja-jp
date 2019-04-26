@@ -1,6 +1,6 @@
 ---
-title: フィルター ドライバーではシステム セット Power IRP の処理
-description: フィルター ドライバーではシステム セット Power IRP の処理
+title: フィルター ドライバーでのシステム電源設定 IRP の処理
+description: フィルター ドライバーでのシステム電源設定 IRP の処理
 ms.assetid: a6e364fc-f173-47ce-b36b-84f802cefcc3
 keywords:
 - セット power Irp WDK の電源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09deaada5b6f5abf5a9fb86935524aa6d5e0e385
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359816"
 ---
-# <a name="handling-a-system-set-power-irp-in-a-filter-driver"></a>フィルター ドライバーではシステム セット Power IRP の処理
+# <a name="handling-a-system-set-power-irp-in-a-filter-driver"></a>フィルター ドライバーでのシステム電源設定 IRP の処理
 
 
 

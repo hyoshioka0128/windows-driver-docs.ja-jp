@@ -1,6 +1,6 @@
 ---
-title: フィルター ドライバーをインストールします。
-description: フィルター ドライバーをインストールします。
+title: フィルター ドライバーのインストール
+description: フィルター ドライバーのインストール
 ms.assetid: 48ffa6db-3254-4108-b8bb-5884b9168a9d
 keywords:
 - デバイス セットアップ WDK デバイスのインストール、フィルター ドライバー
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02b1d844be1a359d193adf3a17f59f4f31155b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357522"
 ---
-# <a name="installing-a-filter-driver"></a>フィルター ドライバーをインストールします。
+# <a name="installing-a-filter-driver"></a>フィルター ドライバーのインストール
 
 
 

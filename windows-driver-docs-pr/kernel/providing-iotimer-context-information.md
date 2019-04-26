@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9346742cfbafcbd3f2a0793f2356cb6986dbb96c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353316"
 ---
 # <a name="providing-iotimer-context-information"></a>IoTimer コンテキスト情報の提供
 
@@ -26,9 +26,9 @@ ms.locfileid: "56570757"
 
 **これらのガイドラインに従う、** *IoTimer * * * ルーチンのコンテキストの領域。**
 
--   場合、 *IoTimer*ルーチンでは、ドライバーの ISR とそのコンテキストの領域を共有、使用する必要がある必要があります[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出す、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンをマルチプロセッサ セーフ方式でコンテキストの領域にアクセスします。 詳細については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
+-   場合、 *IoTimer*ルーチンでは、ドライバーの ISR とそのコンテキストの領域を共有、使用する必要がある必要があります[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出す、 [ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンをマルチプロセッサ セーフ方式でコンテキストの領域にアクセスします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
 
--   場合、 *IoTimer*ルーチンは ISR とそのコンテキストの領域を共有していないが、別のドライバーのルーチンで共有は、ドライバーがコンテキストにアクセスするために初期化された executive スピン ロックを共有コンテキストの領域を保護する必要がありますマルチプロセッサの安全な方法で情報。 詳細については、[スピン ロック](spin-locks.md)を参照してください。
+-   場合、 *IoTimer*ルーチンは ISR とそのコンテキストの領域を共有していないが、別のドライバーのルーチンで共有は、ドライバーがコンテキストにアクセスするために初期化された executive スピン ロックを共有コンテキストの領域を保護する必要がありますマルチプロセッサの安全な方法で情報。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
 
  
 

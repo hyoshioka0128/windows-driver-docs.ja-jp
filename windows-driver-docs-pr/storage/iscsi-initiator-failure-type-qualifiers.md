@@ -5,11 +5,11 @@ ms.assetid: b8983c80-6d3f-404d-a0b3-74e44e43d39e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7427056973c8f0a74027790701897d9b4e76d93c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358531"
 ---
 # <a name="iscsiinitiatorfailuretypequalifiers"></a>ISCSI\_イニシエーター\_エラー\_型\_修飾子
 
@@ -29,7 +29,7 @@ ISCSI\_イニシエーター\_エラー\_型\_修飾子 WMI プロパティ修�
 <thead>
 <tr class="header">
 <th align="left">開始側のエラー値です。</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

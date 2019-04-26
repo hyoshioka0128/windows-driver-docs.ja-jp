@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4c01f47bb90f157ac4e2b411f006bf553ff4211
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356316"
 ---
 # <a name="place-file-syntax"></a>配置ファイルの構文
 
@@ -245,7 +245,7 @@ binplace -r BinaryRoot  -xa -s SymbolsDir1 -n SymbolsDir2 SourceFileLocation\bui
 
 AMD64、IA64 のビルドを使用して、 **hal** BinPlace 結果が期待どおりではないため、クラス注意が必要です。 たとえば、ルート インストール先のディレクトリが c:\\バイナリ\\Amd64 として指定、 **hal** c: クラス、ファイルが配置されます\\バイナリおよびプロセッサ固有のディレクトリではなくを意図していた可能性があります。
 
-複数のインスタンスを含めることができます、ファイルを複数の場所に配置する場合は、*クラス*コロンで区切られました。 コロンのディレクトリとの間にスペースできないする必要があります。 例:
+複数のインスタンスを含めることができます、ファイルを複数の場所に配置する場合は、*クラス*コロンで区切られました。 コロンのディレクトリとの間にスペースできないする必要があります。 次に、例を示します。
 
 ```
 someprogram.exe   dir1\dir2\dir3:otherdir1\otherdir2   ; To two locations

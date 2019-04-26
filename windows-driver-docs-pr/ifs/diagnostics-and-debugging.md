@@ -1,6 +1,6 @@
 ---
-title: 診断およびデバッグ
-description: 診断およびデバッグ
+title: 診断とデバッグ
+description: 診断とデバッグ
 ms.assetid: 6c5c1b4a-338d-4550-903d-c6905ce743f9
 keywords:
 - RDBSS WDK ファイル システムでは、診断
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4af1c575bc56b9de201e8136b177787e6127cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359308"
 ---
-# <a name="diagnostics-and-debugging"></a>診断およびデバッグ
+# <a name="diagnostics-and-debugging"></a>診断とデバッグ
 
 
 ## <span id="ddk_diagnostics_and_debugging_if"></span><span id="DDK_DIAGNOSTICS_AND_DEBUGGING_IF"></span>

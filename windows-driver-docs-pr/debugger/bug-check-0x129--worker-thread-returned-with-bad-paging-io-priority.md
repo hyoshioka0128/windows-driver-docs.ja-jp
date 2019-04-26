@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c357bdf19c4a98dc537f53db349c8b66c7cf9c57
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354841"
 ---
 # <a name="bug-check-0x129-workerthreadreturnedwithbadpagingiopriority"></a>バグ チェック 0x129:ワーカー\_スレッド\_から返された\_WITH\_不良\_ページング\_IO\_優先順位
 

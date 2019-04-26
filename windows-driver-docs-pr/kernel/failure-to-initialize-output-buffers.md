@@ -1,6 +1,6 @@
 ---
-title: 出力バッファーの初期化の失敗
-description: 出力バッファーの初期化の失敗
+title: 出力バッファーの初期化失敗
+description: 出力バッファーの初期化失敗
 ms.assetid: 8c038a94-8506-44e3-ac7f-82b58d791124
 keywords:
 - 出力バッファーの WDK カーネル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94dcc2403f1d6ec633a20f9fd23dcbd874efb489
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359997"
 ---
-# <a name="failure-to-initialize-output-buffers"></a>出力バッファーの初期化の失敗
+# <a name="failure-to-initialize-output-buffers"></a>出力バッファーの初期化失敗
 
 
 

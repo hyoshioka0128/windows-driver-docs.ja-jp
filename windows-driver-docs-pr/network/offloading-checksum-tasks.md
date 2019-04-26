@@ -8,18 +8,18 @@ keywords:
 ms.date: 09/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 36e50d3218236b52430e2f0e00f1b9d47a09453c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359197"
 ---
 # <a name="offloading-checksum-tasks"></a>チェックサム タスクのオフロード
 
 NDIS は、実行時に TCP/IP チェックサム タスクをオフロードすることをサポートします。
 
 > [!NOTE]
-> チェックサム オフロード アウト オブ バンド (OOB) データが格納されている、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)情報の配列。 OOB のデータの詳細については、[TCP/IP Offload NET のへのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)を参照してください。
+> チェックサム オフロード アウト オブ バンド (OOB) データが格納されている、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)情報の配列。 OOB のデータの詳細については、次を参照してください。 [TCP/IP Offload NET のへのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
 
 NET ミニポート ドライバーに渡す前に\_バッファー\_リスト構造をパケットのミニポート ドライバーがチェックサム タスクを実行する場合は、TCP/IP トランスポートは NETに関連付けられているチェックサム情報を指定します\_バッファー\_リスト構造体。 この情報がで指定された、 [ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567877)構造体は、ネットワークの一部である\_バッファー\_リストの情報 (帯域外のデータ)、NET に関連付けられている\_バッファー\_リスト構造体。
 

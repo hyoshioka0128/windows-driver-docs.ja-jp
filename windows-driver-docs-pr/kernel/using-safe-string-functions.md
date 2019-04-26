@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee63e77c0760c1aef2619c25e18d0038da4082b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351000"
 ---
 # <a name="using-safe-string-functions"></a>セーフ文字列関数の使用
 
@@ -27,7 +27,7 @@ ms.locfileid: "56579666"
 
 安全な文字列関数の 1 つのセットはカーネル モード コードで使用されます。 これらの関数は、Ntstrsafe.h をという名前のヘッダー ファイルはプロトタイプ宣言します。 このヘッダー ファイルと、関連するライブラリは、WDK で利用します。
 
-その他の一連の安全な文字列関数はユーザー モード アプリケーションで使用されます。 対応するヘッダー ファイルでは、Strsafe.h には、これらの関数のプロトタイプが含まれています。 そのファイルと、関連するライブラリは Windows SDK の使用です。 Strsafe.h の詳細については、[Strsafe.h 関数を使用して](https://go.microsoft.com/fwlink/p/?linkid=165522)を参照してください。
+その他の一連の安全な文字列関数はユーザー モード アプリケーションで使用されます。 対応するヘッダー ファイルでは、Strsafe.h には、これらの関数のプロトタイプが含まれています。 そのファイルと、関連するライブラリは Windows SDK の使用です。 Strsafe.h の詳細については、次を参照してください。 [Strsafe.h 関数を使用して](https://go.microsoft.com/fwlink/p/?linkid=165522)します。
 
 一連のカーネル モードの安全な文字列関数は、次の 2 つのサブセットで構成されます。
 

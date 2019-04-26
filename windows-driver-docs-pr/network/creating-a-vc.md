@@ -1,19 +1,19 @@
 ---
-title: VC を作成します。
-description: VC を作成します。
+title: VC の作成
+description: VC の作成
 ms.assetid: 29d7f2b3-0514-46f8-8b12-02275b404a2a
 keywords:
 - 仮想接続 WDK いる CoNDIS、作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f6728dc8c803c5567f7dcc771331838322efb05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357395"
 ---
-# <a name="creating-a-vc"></a>VC を作成します。
+# <a name="creating-a-vc"></a>VC の作成
 
 
 

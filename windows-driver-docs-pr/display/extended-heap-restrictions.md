@@ -1,6 +1,6 @@
 ---
-title: ヒープの拡張の制限
-description: ヒープの拡張の制限
+title: 拡張ヒープ制限
+description: 拡張ヒープ制限
 ms.assetid: 4f907768-670a-4ce5-b2d7-7af27baf80da
 keywords:
 - 拡張セキュリティ機能 WDK DirectDraw を描画するには、ヒープします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2d9ef2a829691e0412b581c134c966527e1e149
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353360"
 ---
-# <a name="extended-heap-restrictions"></a>ヒープの拡張の制限
+# <a name="extended-heap-restrictions"></a>拡張ヒープ制限
 
 
 ## <span id="ddk_extended_heap_restrictions_gg"></span><span id="DDK_EXTENDED_HEAP_RESTRICTIONS_GG"></span>

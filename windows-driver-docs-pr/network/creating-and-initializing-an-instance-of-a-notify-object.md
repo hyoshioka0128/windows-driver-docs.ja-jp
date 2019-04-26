@@ -1,6 +1,6 @@
 ---
-title: 作成して、通知オブジェクトのインスタンスを初期化しています
-description: 作成して、通知オブジェクトのインスタンスを初期化しています
+title: 通知オブジェクトのインスタンスの作成と初期化
+description: 通知オブジェクトのインスタンスの作成と初期化
 ms.assetid: 933d24cc-d1a0-4768-9bba-4c78150a84da
 keywords:
 - オブジェクトの WDK ネットワー キングのインスタンスへの通知します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5351a760b864d31f3a655af0638b097379eb05fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357344"
 ---
-# <a name="creating-and-initializing-an-instance-of-a-notify-object"></a>作成して、通知オブジェクトのインスタンスを初期化しています
+# <a name="creating-and-initializing-an-instance-of-a-notify-object"></a>通知オブジェクトのインスタンスの作成と初期化
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "56550561"
 
 -   コンス トラクターは、ネットワーク構成オブジェクトのインスタンスにインターフェイス ポインターを設定する必要があります[ **INetCfg**](https://msdn.microsoft.com/library/windows/hardware/ff547694)を**NULL**値。
 
--   コンス トラクターには、通知オブジェクトは以前、不明なアクションを識別する定数を実行するアクションを指定する変数を設定する必要があります。 この変数の詳細については、[通知のクラスを定義する](defining-a-notify-class.md)を参照してください。
+-   コンス トラクターには、通知オブジェクトは以前、不明なアクションを識別する定数を実行するアクションを指定する変数を設定する必要があります。 この変数の詳細については、次を参照してください。[通知のクラスを定義する](defining-a-notify-class.md)します。
 
 オブジェクトを呼び出して、サブシステム、ネットワーク構成のサブシステムには、通知オブジェクトのインスタンスが作成されたら、 [ **INetCfgComponentControl::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff547729)オブジェクトを初期化するメソッドインスタンス。 この呼び出しでは、サブシステムを渡します、 **INetCfgComponent**インターフェイス ポインター。 これは、 **INetCfgComponent**にアクセスして、コンポーネントを制御するオブジェクトで使用できるオブジェクトのコンポーネントのインスタンスに通知オブジェクトを提供します。 サブシステム、この呼び出しで渡すことも、 **INetCfg**通知オブジェクトを使用してネットワークの構成のすべての側面にアクセスするネットワーク構成オブジェクトのインスタンスを持つ通知オブジェクトを提供するインターフェイス ポインター。
 

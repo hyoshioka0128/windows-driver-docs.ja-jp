@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e803243b434410b8711c2a357c2ad498e8c9df28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358990"
 ---
 # <a name="avcfunctiongetuniqueid"></a>AVC\_関数\_取得\_UNIQUE\_ID
 
@@ -89,7 +89,7 @@ typedef struct _AVC_UNIQUE_ID {
 } AVC_UNIQUE_ID, *PAVC_UNIQUE_ID;
 ```
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 **ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
 

@@ -5,11 +5,11 @@ ms.assetid: 1091571c-2e30-4ad5-b4b9-0f8633e68288
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: eb6dadd7721bb235ec0a51c8ee63a29b5303ed7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359952"
 ---
 # <a name="fast-startup-from-a-low-power-state"></a>低電力状態からの高速スタートアップ
 

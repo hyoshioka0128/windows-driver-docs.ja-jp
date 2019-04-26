@@ -1,14 +1,14 @@
 ---
-Description: Describes the limitations of the Universal Serial Bus (USB) 2.0 Selective Suspend mechanism.
+Description: ユニバーサル シリアル バス (USB) 2.0 セレクティブ サスペンド メカニズムの制限事項について説明します。
 title: USB 2.0 メカニズムの制限事項
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d345cd6b3b5da73208f70d6e9b3f5396a0299e9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355466"
 ---
 # <a name="limitations-of-usb-20-mechanism"></a>USB 2.0 メカニズムの制限事項
 

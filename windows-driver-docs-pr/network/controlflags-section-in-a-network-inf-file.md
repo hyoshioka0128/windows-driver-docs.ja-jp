@@ -1,6 +1,6 @@
 ---
-title: ネットワークの INF ファイルで ControlFlags セクション
-description: ネットワークの INF ファイルで ControlFlags セクション
+title: ネットワーク INF ファイル内の ControlFlags セクション
+description: ネットワーク INF ファイル内の ControlFlags セクション
 ms.assetid: 384e56e3-8a64-4b47-ae9c-e9973733c7e7
 keywords:
 - INF ファイルの WDK ネットワーク、ControlFlags セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e64a7cdec2c73ebac5b9cd2ce539f31e091ebc5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357392"
 ---
-# <a name="controlflags-section-in-a-network-inf-file"></a>ネットワークの INF ファイルで ControlFlags セクション
+# <a name="controlflags-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の ControlFlags セクション
 
 
 
@@ -29,7 +29,7 @@ A **ControlFlags**ネットワーク INF ファイルのセクションは、ジ
 
 プラグ アンド プレイと互換性がないするアダプターがユーザーによって手動で追加する必要があります、ためには表示されません、 *ControlFlags*セクション。 たとえば、非 PnP ISA アダプター、および EISA アダプターする必要があります手動で追加するユーザー。 Windows XP およびそれ以降のオペレーティング システムはサポートされていないことおよび EISA アダプター非 PnP ISA アダプターに注意してください。
 
-**注**  、 **ExcludeFromSelect** 、NCF よりも、エントリは、別の関数を実行します\_の HIDDEN 値、**特性**、エントリ *。DDInstall*セクション。 詳細については、[DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)を参照してください。
+**注**  、 **ExcludeFromSelect** 、NCF よりも、エントリは、別の関数を実行します\_の HIDDEN 値、**特性**、エントリ *。DDInstall*セクション。 詳細については、次を参照してください。 [DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)します。
 
  
 

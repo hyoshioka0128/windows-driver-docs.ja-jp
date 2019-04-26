@@ -1,16 +1,16 @@
 ---
-Description: Best practices for a host controller driver for handling I/O requests sent by UCX.
-title: USB ホスト コント ローラー ドライバーでの I/O 要求を処理します。
+Description: ホスト コント ローラーのドライバーを UCX から送信された I/O 要求を処理するためのベスト プラクティス。
+title: USB ホスト コントローラー ドライバーでの I/O 要求の処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1e2837d698a81d8fa27820b7b5c62d168901217
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357031"
 ---
-# <a name="handle-io-requests-in-a-usb-host-controller-driver"></a>USB ホスト コント ローラー ドライバーでの I/O 要求を処理します。
+# <a name="handle-io-requests-in-a-usb-host-controller-driver"></a>USB ホスト コントローラー ドライバーでの I/O 要求の処理
 
 
 ホスト コント ローラーのドライバーを UCX から送信された I/O 要求を処理するためのベスト プラクティス。
@@ -26,7 +26,7 @@ UCX の追跡、USB バス上のデバイス用のホスト コント ローラ�
 フレームワークの要求オブジェクト、 [ **IOCTL\_内部\_USB\_送信\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)にある、URB を含む**Parameters.Others.Arg1**の要求。 か USBD に URB 状態を設定する必要があります、要求が完了したら、\_状態\_成功した場合、または、エラーの性質を示すエラー状態にします。 失敗の状態値は、usb.h ヘッダー ファイルで定義されます。
 
 ## <a name="related-topics"></a>関連トピック
-[USB ホスト コント ローラーの Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)  
+[USB ホスト コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)  
 
 
 

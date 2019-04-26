@@ -1,6 +1,6 @@
 ---
-title: 待機/ウェイク Irp の IoCompletion ルーチン
-description: 待機/ウェイク Irp の IoCompletion ルーチン
+title: 待機/ウェイク IRP の IoCompletion ルーチン
+description: 待機/ウェイク IRP の IoCompletion ルーチン
 ms.assetid: 61239398-2d37-4163-8128-7a4a0916a262
 keywords:
 - 受信側の待機またはスリープ解除 Irp
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f2df22314f662f05957524c8da7e39890b00453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358321"
 ---
-# <a name="iocompletion-routines-for-waitwake-irps"></a>待機/ウェイク Irp の IoCompletion ルーチン
+# <a name="iocompletion-routines-for-waitwake-irps"></a>待機/ウェイク IRP の IoCompletion ルーチン
 
 
 
@@ -23,7 +23,7 @@ ms.locfileid: "56558441"
 
 I/O マネージャーがドライバーの待機またはスリープ解除を呼び出す[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン デバイス スタックの次の下位ドライバー待機/ウェイク IRP の完了後します。 各関数し、待機/ウェイク IRP がハンドルを設定する必要があります (FDO) ドライバーをフィルター処理、 *IoCompletion* IRP のルーチンです。
 
-各関数またはフィルター ドライバーの設定、 *IoCompletion*処理時に、待機/ウェイク IRP デバイス スタックには、その方法で日常的な。 デバイスの電源ポリシー所有者、IRP を送信する場合がありますので、 *IoCompletion*コールバック ルーチンに加えルーチン。 後に呼び出されるコールバック ルーチンに注意してください、 *IoCompletion*ルーチンと 2 つに異なる要件があります。 詳細については、[待機/ウェイク コールバック ルーチン](wait-wake-callback-routines.md)を参照してください。
+各関数またはフィルター ドライバーの設定、 *IoCompletion*処理時に、待機/ウェイク IRP デバイス スタックには、その方法で日常的な。 デバイスの電源ポリシー所有者、IRP を送信する場合がありますので、 *IoCompletion*コールバック ルーチンに加えルーチン。 後に呼び出されるコールバック ルーチンに注意してください、 *IoCompletion*ルーチンと 2 つに異なる要件があります。 詳細については、次を参照してください。[待機/ウェイク コールバック ルーチン](wait-wake-callback-routines.md)します。
 
 待機またはスリープ解除に必要なアクション*IoCompletion*ルーチンは、デバイスとドライバーの種類によって異なります。 次に、ドライバーは、その待機またはスリープ解除を実行する必要がありますアクション*IoCompletion*ルーチン。
 
@@ -35,7 +35,7 @@ I/O マネージャーがドライバーの待機またはスリープ解除を�
 
 連続する各ドライバーでは、IRP が完了すると、I/O マネージャー通過コントロールを*IoCompletion*スタック上に戻って、次に高いドライバーの日常的な。
 
-呼び出した後、 *IoCompletion*待機/ウェイク IRP デバイス スタックを渡されるときに、ドライバーによって設定のルーチンに渡されたコールバック ルーチンを呼び出すと I/O マネージャー [ **PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734)ドライバー IRP を送信します。 詳細については、[待機/ウェイク コールバック ルーチン](wait-wake-callback-routines.md)を参照してください。
+呼び出した後、 *IoCompletion*待機/ウェイク IRP デバイス スタックを渡されるときに、ドライバーによって設定のルーチンに渡されたコールバック ルーチンを呼び出すと I/O マネージャー [ **PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734)ドライバー IRP を送信します。 詳細については、次を参照してください。[待機/ウェイク コールバック ルーチン](wait-wake-callback-routines.md)します。
 
  
 

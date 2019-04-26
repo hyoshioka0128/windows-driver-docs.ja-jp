@@ -1,6 +1,6 @@
 ---
-title: Netupg.inf ファイルを作成します。
-description: Netupg.inf ファイルを作成します。
+title: Netupg.inf ファイルの作成
+description: Netupg.inf ファイルの作成
 ms.assetid: 8ee000e0-abd1-4a06-9f38-2a7971bc2c97
 keywords:
 - netupg.inf files WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73b0a899d68714290fa88887ee35c2b902902e7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357386"
 ---
-# <a name="creating-a-netupginf-file"></a>Netupg.inf ファイルを作成します。
+# <a name="creating-a-netupginf-file"></a>Netupg.inf ファイルの作成
 
 
 

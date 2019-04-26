@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c13edb4ef565012cb9e3aadf13242ccbe1d7da6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355438"
 ---
 # <a name="analyzing-a-kernel-mode-dump-file-with-windbg"></a>WinDbg によるカーネルモード ダンプ ファイルの分析
 
@@ -28,13 +28,13 @@ WinDbg では、カーネル モード メモリ ダンプ ファイルを分析
 
 **windbg -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 オプションの一覧については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
+**-V**オプション (詳細モード) も便利です。 オプションの一覧については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
 
 WinDbg が既に実行中、休止モードでは、選択して、クラッシュ ダンプを開くことができます、**ファイル |クラッシュ ダンプを開く**メニュー コマンドまたは CTRL + D ショートカット キーを押します。 ときに、**クラッシュ ダンプを開く**でクラッシュ ダンプ ファイルの名前と完全なパスを入力してください ダイアログ ボックスが表示されたら、**ファイル名**テキスト ボックス、または適切なパスとファイル名を選択するダイアログ ボックスを使用します。 適切なファイルを選択すると、クリックして**オープン**します。
 
 使用して、デバッガーを実行した後も、ダンプ ファイルを開くことができます、 [ **.opendump (ダンプ ファイルを開く)** ](-opendump--open-dump-file-.md)とそれに続くコマンド[ **g (移動)** ](g--go-.md).
 
-同時に複数のダンプ ファイルをデバッグすることになります。 これを行う複数を含む **-z** (それぞれが別のファイル名が後に) コマンド ラインでまたはを使用してスイッチ[ **.opendump** ](-opendump--open-dump-file-.md)として追加のダンプ ファイルを追加するにはデバッガーのターゲット。 複数のターゲットのセッションを制御する方法については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+同時に複数のダンプ ファイルをデバッグすることになります。 これを行う複数を含む **-z** (それぞれが別のファイル名が後に) コマンド ラインでまたはを使用してスイッチ[ **.opendump** ](-opendump--open-dump-file-.md)として追加のダンプ ファイルを追加するにはデバッガーのターゲット。 複数のターゲットのセッションを制御する方法については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
 ダンプ ファイルは、一般に、拡張子 .dmp または .mdmp で終了します。 ネットワーク共有または汎用名前付け規則 (UNC) のメモリ ダンプ ファイルの名前のファイルを使用することができます。
 
@@ -66,7 +66,7 @@ WinDbg が既に実行中、休止モードでは、選択して、クラッシ�
 
 [**!process 0 7**](-process.md)
 
-ダンプ ファイルから特定の種類の情報の読み取りに使用できる方法では、[ダンプ ファイルから情報を抽出](extracting-information-from-a-dump-file.md)を参照してください。
+ダンプ ファイルから特定の種類の情報の読み取りに使用できる方法では、次を参照してください。[ダンプ ファイルから情報を抽出](extracting-information-from-a-dump-file.md)します。
 
  
 

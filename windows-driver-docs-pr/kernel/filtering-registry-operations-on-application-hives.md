@@ -1,17 +1,17 @@
 ---
-title: ハイブをアプリケーションのレジストリの操作をフィルター処理
+title: アプリケーション ハイブのレジストリ操作のフィルター処理
 description: アプリケーションのハイブの初期のサポートは、Windows Vista で導入されました。
 ms.assetid: A8D06E25-7CC6-476A-AB55-DAFE19954347
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ce08bbe206c7cda4125e0a1c8f97f469172e4dc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359956"
 ---
-# <a name="filtering-registry-operations-on-application-hives"></a>ハイブをアプリケーションのレジストリの操作をフィルター処理
+# <a name="filtering-registry-operations-on-application-hives"></a>アプリケーション ハイブのレジストリ操作のフィルター処理
 
 
 アプリケーションのハイブの初期のサポートは、Windows Vista で導入されました。 Windows 8 以降、アプリケーションのハイブのサポートの向上が使用して、アプリケーション ハイブのより広範囲に利用が必要です。 したがって、フィルター ドライバーのレジストリのバージョンの Windows、および Windows 8 の特に開発し、アプリケーションのハイブをレジストリの操作の認識、後である必要があります。 これらのドライバーでは、ユーザー エクスペリエンスに悪影響を与えるを回避するために効率的には、このような操作を処理する必要があります。

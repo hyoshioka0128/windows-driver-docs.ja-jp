@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c50d0281f1136be2d273ebc736f1b35b305a87f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357009"
 ---
 # <a name="kspropertycameracontrolextendedoptimizationhint"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_OPTIMIZATIONHINT
 
@@ -37,7 +37,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_OPTIMIZATIONHINT はビデオ キャプチャ
 <tr class="header">
 <th>Scope</th>
 <th>コントロール</th>
-<th>型</th>
+<th>種類</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +152,7 @@ f、ドライバーは、このコントロールをサポートしている、K
 
  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 最適化ヒントを使用する場合は、次の項目に注意してください。
 
@@ -177,7 +177,7 @@ f、ドライバーは、このコントロールをサポートしている、K
 -   ドライバーには、品質のヒントが設定されている場合は、ビデオの品質を向上させるために最も高いアグレッシブなビデオ安定が適用されます。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

@@ -1,15 +1,15 @@
 ---
-title: 不要にするデバッガーが不要なシンボルを検索します。
+title: デバッガーによる不要なシンボルの検索の回避
 description: 理由はシンボルの読み込みもほど時間がかかるでしょうか。 シンボル名は、修飾名または修飾されていないかどうかによって異なります。
 ms.assetid: 710BAEAF-BC45-416E-8359-69E9DFCA2570
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2ac691b1bb58f52f506e9fb7d3fbf6caa5031fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354399"
 ---
 # <a name="avoiding-debugger-searches-for-un-needed-symbols"></a>不要にするデバッガーが不要なシンボルを検索します。
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f82dc8979ae3f6507f60ed346a570526a3534b54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357018"
 ---
 # <a name="wiaipsyscaling"></a>WIA\_IP\_YSCALING
 
@@ -47,7 +47,7 @@ WIA\_IP\_YSCALING は y 軸に沿ってスケーリングだけを示します�
 
 -   200、2 x (200%) をスケーリングします。 イメージのサイズは 200% (double)、y 軸に沿って拡大されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

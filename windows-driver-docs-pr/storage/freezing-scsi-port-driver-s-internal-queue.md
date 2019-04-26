@@ -1,17 +1,17 @@
 ---
-title: フリーズ SCSI ポート ドライバーの内部キュー
-description: フリーズ SCSI ポート ドライバーの内部キュー
+title: SCSI ポート ドライバーの内部キューの凍結
+description: SCSI ポート ドライバーの内部キューの凍結
 ms.assetid: 8e93b7d4-8429-43ec-a439-75cfeaa95887
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31d5ad502d05dd12a0877fa9332cb3cc0b64fbe2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355878"
 ---
-# <a name="freezing-scsi-port-drivers-internal-queue"></a>フリーズ SCSI ポート ドライバーの内部キュー
+# <a name="freezing-scsi-port-drivers-internal-queue"></a>SCSI ポート ドライバーの内部キューの凍結
 
 
 ## <span id="ddk_freezing_scsi_port_drivers_internal_queue_kg"></span><span id="DDK_FREEZING_SCSI_PORT_DRIVERS_INTERNAL_QUEUE_KG"></span>

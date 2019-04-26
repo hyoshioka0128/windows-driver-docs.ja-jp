@@ -1,17 +1,17 @@
 ---
-title: PnP テスト (デバイスの基本)
+title: PnP テスト (Device Fundamental)
 description: デバイスの基礎 PnP テスト PnP Irp; のほぼすべてを処理するためのドライバーを強制します。ただしが具体的には、削除、再調整、および突然の取り外しは 3 つの領域が強調されます。
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6a7d773b8c5111dd7577db676e4f09aa8e0b688
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356304"
 ---
-# <a name="pnp-tests-device-fundamentals"></a>PnP テスト (デバイスの基本)
+# <a name="pnp-tests-device-fundamentals"></a>PnP テスト (Device Fundamental)
 
 
 デバイスの基礎 PnP テスト PnP Irp; のほぼすべてを処理するためのドライバーを強制します。ただし、具体的には負荷がかかっている 3 つの領域がある: 削除、再調整、および突然の削除。 PnP テストは、これらのそれぞれを個別に、テスト、またはすべて同時にテストするメカニズムを提供します (これは、ストレス テストとして)。 PnP このテストは、ユーザー モード API の呼び出し (のテスト アプリケーションの概要) と (上位フィルター ドライバー) を通じてカーネル モードの API 呼び出しの組み合わせを使用して行われます。
@@ -19,7 +19,7 @@ ms.locfileid: "56548994"
 ## <a name="pnp-tests"></a>PNP テスト
 
 
-プラグ アンド プレイ (PnP) テストでは、ドライバーとユーザー モード コンポーネントでさまざまな PnP に関連するコード パスを実行します。 PnP のテストが実行する必要があります[Driver Verifier](driver-verifier.md)テスト コンピューターで有効にします。 ドライバーの検証を有効にする方法については、[ドライバー プロジェクトの Driver Verifier プロパティ](https://msdn.microsoft.com/windows-drivers/develop/driver_verifier_properties_for__driver_projects)を参照してください。
+プラグ アンド プレイ (PnP) テストでは、ドライバーとユーザー モード コンポーネントでさまざまな PnP に関連するコード パスを実行します。 PnP のテストが実行する必要があります[Driver Verifier](driver-verifier.md)テスト コンピューターで有効にします。 ドライバーの検証を有効にする方法については、次を参照してください。[ドライバー プロジェクトの Driver Verifier プロパティ](https://msdn.microsoft.com/windows-drivers/develop/driver_verifier_properties_for__driver_projects)します。
 
 <table>
 <colgroup>
@@ -74,7 +74,7 @@ ms.locfileid: "56548994"
 <tr class="even">
 <td align="left"><p><span id="PNP_Cancel_Remove_Device_test_"></span><span id="pnp_cancel_remove_device_test_"></span><span id="PNP_CANCEL_REMOVE_DEVICE_TEST_"></span>PNP デバイスの削除の取り消しのテスト</p></td>
 <td align="left"><p>このテストでは、EDT フィルター ドライバーを使用して、ターゲット デバイス スタックを IRP_MN_CANCEL_REMOVE_DEVICE を送信します。</p>
-<p>詳細については、<a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">、デバイスの削除に関するテスト</a>を参照してください。</p>
+<p>詳細については、次を参照してください。 <a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">、デバイスの削除に関するテスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPCancelRemoveDevice</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -87,7 +87,7 @@ ms.locfileid: "56548994"
 <tr class="odd">
 <td align="left"><p><span id="PNP_Cancel_Stop_Device_test"></span><span id="pnp_cancel_stop_device_test"></span><span id="PNP_CANCEL_STOP_DEVICE_TEST"></span>PNP キャンセル停止デバイス テスト</p></td>
 <td align="left"><p>このテストでは、EDT フィルター ドライバーを使用して、ターゲット デバイス スタックを IRP_MN_CANCEL_STOP_DEVICE を送信します。</p>
-<p>詳細については、<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>を参照してください。</p>
+<p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPCancelStopDevice</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -125,7 +125,7 @@ ms.locfileid: "56548994"
 <tr class="even">
 <td align="left"><p><span id="PNP_Rebalance_Fail_Restart_Device_test"></span><span id="pnp_rebalance_fail_restart_device_test"></span><span id="PNP_REBALANCE_FAIL_RESTART_DEVICE_TEST"></span>PNP が失敗する再起動のデバイスの再調整のテスト</p></td>
 <td align="left"><p>このテストでは、EDT フィルター ドライバーを使用して、ターゲット デバイス スタックを IRP_MN_STOP_DEVICE を送信しようとしています。 EDT フィルター ドライバーでは、ターゲット デバイスの突然の削除をトリガーする (続く IRP_MN_STOP_DEVICE 要求) IRP_MN_START_DEVICE 要求、失敗します。</p>
-<p>詳細については、<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>を参照してください。</p>
+<p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPTryStopDeviceAndFailRestart</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -138,7 +138,7 @@ ms.locfileid: "56548994"
 <tr class="odd">
 <td align="left"><p><span id="PNP_Rebalance_Request_New_Resources_Device_test"></span><span id="pnp_rebalance_request_new_resources_device_test"></span><span id="PNP_REBALANCE_REQUEST_NEW_RESOURCES_DEVICE_TEST"></span>PNP の新しいリソースの要求を再調整デバイス テスト</p></td>
 <td align="left"><p>このテストでは、EDT フィルター ドライバーを使用して、ターゲット デバイス スタックを IRP_MN_STOP_DEVICE を送信しようとしています。 また、新しいリソースがデバイスに割り当てられている確率を最大化するデバイスのリソース要件を操作します。</p>
-<p>詳細については、<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>を参照してください。</p>
+<p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPTryStopDeviceRequestNewResourcesAndRestartDevice</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -151,7 +151,7 @@ ms.locfileid: "56548994"
 <tr class="even">
 <td align="left"><p><span id="PNP_Remove_Device_Test"></span><span id="pnp_remove_device_test"></span><span id="PNP_REMOVE_DEVICE_TEST"></span>削除の PNP デバイスのテスト</p></td>
 <td align="left"><p>このテストによって、IRP_MN_QUERY_REMOVE_DEVICE および IRP_MN_REMOVE_DEVICE デバイス スタックをターゲットに送信されます。</p>
-<p>詳細については、<a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">、デバイスの削除に関するテスト</a>を参照してください。</p>
+<p>詳細については、次を参照してください。 <a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">、デバイスの削除に関するテスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPRemoveAndRestartDevice</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -164,7 +164,7 @@ ms.locfileid: "56548994"
 <tr class="odd">
 <td align="left"><p><span id="PNP_Stop__Rebalance__Device_test"></span><span id="pnp_stop__rebalance__device_test"></span><span id="PNP_STOP__REBALANCE__DEVICE_TEST"></span>PNP デバイスの停止 (再調整) のテスト</p></td>
 <td align="left"><p>このテストでは、EDT フィルター ドライバーを使用して、ターゲット デバイス スタックを IRP_MN_STOP_DEVICE を送信しようとしています。</p>
-<p>詳細については、<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>を参照してください。</p>
+<p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPTryStopAndRestartDevice</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -177,7 +177,7 @@ ms.locfileid: "56548994"
 <tr class="even">
 <td align="left"><p><span id="PNP_Surprise_Remove_Device_test"></span><span id="pnp_surprise_remove_device_test"></span><span id="PNP_SURPRISE_REMOVE_DEVICE_TEST"></span>PNP デバイスの削除の突然のテスト</p></td>
 <td align="left"><p>このテストでは、EDT フィルター ドライバーを使用して、ターゲット デバイス スタックを IRP_MN_SURPRISE_REMOVAL を送信します。</p>
-<p>詳細については、<a href="#about-the-surprise-removal-test" data-raw-source="[About the Surprise Removal test](#about-the-surprise-removal-test)">突然についての取り外しテスト</a>を参照してください。</p>
+<p>詳細については、次を参照してください。<a href="#about-the-surprise-removal-test" data-raw-source="[About the Surprise Removal test](#about-the-surprise-removal-test)">突然についての取り外しテスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPSurpriseRemoveAndRestartDevice</p>
 <p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
@@ -284,7 +284,7 @@ ms.locfileid: "56548994"
 ## <a name="device-error-codes"></a>デバイスのエラー コード
 
 
-テストには、デバイスの状態が OK でないというエラー メッセージが利用できますが場合、できる詳細を確認するデバイスの状態のデバイス マネージャーを使用します。 さまざまなデバイスのエラー コードの概要については、[デバイス マネージャーのエラー メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff541422)を参照してください。
+テストには、デバイスの状態が OK でないというエラー メッセージが利用できますが場合、できる詳細を確認するデバイスの状態のデバイス マネージャーを使用します。 さまざまなデバイスのエラー コードの概要については、次を参照してください。[デバイス マネージャーのエラー メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff541422)します。
 
 ## <a name="debug-installation-failures-using-the-setup-api-logs"></a>API のセットアップ ログを使用して、インストール エラーをデバッグします。
 
@@ -300,15 +300,15 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 ## <a name="related-topics"></a>関連トピック
 
 
-[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[デバイスの基本テスト](device-fundamentals-tests.md)
+[Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[単純な I/O の WDTF プラグインを提供](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/library/windows/hardware/hh781398)
 
 [コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
 

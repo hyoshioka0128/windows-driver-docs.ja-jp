@@ -1,5 +1,5 @@
 ---
-title: Windows ドライバーの拡張のプロセッサ機能の使用
+title: Windows ドライバーでの拡張プロセッサ機能の使用
 description: X86 および x64 のシステム プロセッサの拡張機能を使用する Windows ドライバーは、同時実行アプリケーションのエラーを回避するために、KeSaveExtendedProcessorState への呼び出しと KeRestoreExtendedProcessorState 間の浮動小数点演算をラップする必要がありますが使用して、レジスタ。
 ms.assetid: a42e86cf-47a2-44ed-8bf1-7407633af8b7
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1f893e4917e3bb82e091ae372b017f7cf11f14f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359951"
 ---
-# <a name="using-extended-processor-features-in-windows-drivers"></a>Windows ドライバーの拡張のプロセッサ機能の使用
+# <a name="using-extended-processor-features-in-windows-drivers"></a>Windows ドライバーでの拡張プロセッサ機能の使用
 
 
 **最終更新日**

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfdd02f84b9bff7f826339b87ac577636ee372f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355414"
 ---
 # <a name="analyzing-a-stuck-call-problem"></a>スタックした呼び出しの問題の分析
 
@@ -128,7 +128,7 @@ ChildEBP RetAddr
 
 スレッドが別の RPC 呼び出しを行っていることができます。 必要に応じて、この手順を繰り返すことによって、この呼び出しをトレースできます。
 
-**注**  この手順は、クライアント スレッドがわかっている場合は、サーバー スレッドを見つける方法を示しています。 逆の手法の例は、[、呼び出し元から、サーバー スレッドを識別する](identifying-the-caller-from-the-server-thread.md)を参照してください。
+**注**  この手順は、クライアント スレッドがわかっている場合は、サーバー スレッドを見つける方法を示しています。 逆の手法の例は、次を参照してください。 [、呼び出し元から、サーバー スレッドを識別する](identifying-the-caller-from-the-server-thread.md)します。
 
  
 

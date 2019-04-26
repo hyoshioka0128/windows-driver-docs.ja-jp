@@ -1,19 +1,19 @@
 ---
-title: Windows の配置
-description: Windows の配置
+title: ウィンドウの配置変更
+description: ウィンドウの配置変更
 ms.assetid: f6c0b778-42a8-4073-8cdb-c4b801e59274
 keywords:
 - デバッグ情報のウィンドウをドッキングの提案
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2fcc6682e4aefeb87675a6a14e24f5c69f8f9e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354704"
 ---
-# <a name="arranging-windows"></a>Windows の配置
+# <a name="arranging-windows"></a>ウィンドウの配置変更
 
 
 ## <span id="ddk_suggested_configurations_dbg"></span><span id="DDK_SUGGESTED_CONFIGURATIONS_DBG"></span>
@@ -31,7 +31,7 @@ ms.locfileid: "56557988"
 
 デュアル モニターを使用している場合は、1 つのモニターと、それ以外の追加の dock に WinDbg ウィンドウを配置できます。
 
-さまざまなデバッグ シナリオのいくつかの標準ウィンドウ配置は、Windows のツールをデバッグ パッケージに含まれます。 これらの並べ替え方法について詳しくは、[WinDbg テーマのカスタマイズの使用と](using-and-customizing-windbg-themes.md)を参照してください。
+さまざまなデバッグ シナリオのいくつかの標準ウィンドウ配置は、Windows のツールをデバッグ パッケージに含まれます。 これらの並べ替え方法について詳しくは、次を参照してください。 [WinDbg テーマのカスタマイズの使用と](using-and-customizing-windbg-themes.md)します。
 
  
 

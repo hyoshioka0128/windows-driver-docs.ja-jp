@@ -1,19 +1,19 @@
 ---
-title: 色の管理を制御します。
-description: 色の管理を制御します。
+title: 色の管理を制御する
+description: 色の管理を制御する
 ms.assetid: cb210b8d-fee1-4904-8c50-f03d2445085e
 keywords:
 - 色の管理 WDK の印刷を制御します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 765943a92ff35b77d246b574114c0999c78d139e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358656"
 ---
-# <a name="controlling-color-management"></a>色の管理を制御します。
+# <a name="controlling-color-management"></a>色の管理を制御する
 
 
 

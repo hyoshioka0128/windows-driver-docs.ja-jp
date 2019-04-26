@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: deb6613783927531d6e86a94a013a31795e4dfda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353243"
 ---
 # <a name="gdl-parser"></a>GDL パーサー
 
@@ -29,11 +29,11 @@ GDL 提供[標準解析](standard-gdl-parsing.md)と[テンプレート ベー�
 
 パーサー フィルターが認識のさまざまな*データ型のプリミティブ*します。 これらのデータ型は属性の値として表示されと同等の XML のスナップショットで、最も近い XML にマップされます。 さらに、パーサーのフィルターは、プリミティブ データ型から作成した複合データ型を認識します。 データの種類のテンプレートを使用して、データ型を定義し、  **\*ValueType**ディレクティブを使用して、属性のテンプレートを使用したデータ型のテンプレートを関連付けます。
 
-標準解析の詳細については、[標準 GDL 解析](standard-gdl-parsing.md)を参照してください。
+標準解析の詳細については、次を参照してください。[標準 GDL 解析](standard-gdl-parsing.md)します。
 
-テンプレートのデータ型の詳細については、[GDL テンプレートのデータ型](gdl-template-data-types.md)を参照してください。
+テンプレートのデータ型の詳細については、次を参照してください。 [GDL テンプレートのデータ型](gdl-template-data-types.md)します。
 
-解析の概要情報をトラブルシューティングするには、[トラブルシューティング GDL 解析](troubleshooting-gdl-parsing.md)を参照してください。
+解析の概要情報をトラブルシューティングするには、次を参照してください。[トラブルシューティング GDL 解析](troubleshooting-gdl-parsing.md)します。
 
  
 

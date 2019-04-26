@@ -1,6 +1,6 @@
 ---
-title: 開発/テスト ツール
-description: 開発/テスト ツール
+title: 開発とテスト ツール
+description: 開発とテスト ツール
 ms.assetid: 6cc81509-27e1-4d5b-996c-6a7bbfd0ddcf
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター、ツール
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73737850d38bc3ddfb5e0f6fb38581e40d43fe10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359317"
 ---
-# <a name="development-and-testing-tools"></a>開発/テスト ツール
+# <a name="development-and-testing-tools"></a>開発とテスト ツール
 
 
 IFS Kit for Windows Server 2003 SP1 とで、Windows Driver Kit (WDK) Windows Vista 以降、このセクションで説明されているフィルター マネージャー ツールが提供されます。

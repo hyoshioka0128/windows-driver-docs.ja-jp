@@ -1,17 +1,17 @@
 ---
-title: エネルギー ソース ヘルス情報 (関数インデックス 12) を取得します。
+title: 電力源の正常性に関する情報の取得 (関数インデックス 12)
 description: この関数は、エネルギー ソース (ES) モジュールの正常性に関する情報を返します。
 ms.assetid: A2044F2A-79DA-4D3A-93B7-BE9D389DA399
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a5458376ec4e849e6d95b795b7fab113dc66d8d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355837"
 ---
-# <a name="get-energy-source-health-info-function-index-12"></a>エネルギー ソース ヘルス情報 (関数インデックス 12) を取得します。
+# <a name="get-energy-source-health-info-function-index-12"></a>電力源の正常性に関する情報の取得 (関数インデックス 12)
 
 
 この関数は、エネルギー ソース (ES) モジュールの正常性に関する情報を返します。 この関数は、ES が管理されているホストと正常性の情報が利用できない場合、エラー状態を返す可能性があります。
@@ -47,7 +47,7 @@ ms.locfileid: "56537113"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

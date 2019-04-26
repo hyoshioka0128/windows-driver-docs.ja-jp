@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1da5246b412b46034b01f9a19f55894bc1344d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351893"
 ---
 # <a name="com-based-rendering-plug-ins"></a>COM ベースのレンダリング プラグイン
 
@@ -22,7 +22,7 @@ ms.locfileid: "56579689"
 
 カスタマイズしたフック関数を提供するを実装する必要があります、COM ベースのレンダリング プラグイン、 [ **IPrintOemUni::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554248)または[ **IPrintOemPS::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff553212)を満たすメソッドを[ **DRVENABLEDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff556206)各フック関数のアドレスを持つ構造体。
 
-Unidrv または Pscript5 ドライバーには、関数が定義されている場合にのみ、COM ベースのレンダリング プラグインできるグラフィックス DDI 関数をフックします。 このような関数の一覧は、[ **IPrintOemUni::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554248)または[ **IPrintOemPS::EnableDriver**](https://msdn.microsoft.com/library/windows/hardware/ff553212)を参照してください。
+Unidrv または Pscript5 ドライバーには、関数が定義されている場合にのみ、COM ベースのレンダリング プラグインできるグラフィックス DDI 関数をフックします。 このような関数の一覧は、次を参照してください。 [ **IPrintOemUni::EnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554248)または[ **IPrintOemPS::EnableDriver**](https://msdn.microsoft.com/library/windows/hardware/ff553212)します。
 
 特定のカスタマイズのフック関数を指定すると、その関数は、ドライバーのと同じグラフィックス DDI 関数を横取りします。 カスタマイズされたフック関数を設計するときは、次のオプションがあります。
 

@@ -9,11 +9,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1790f94523c243f2d8cb1b1553fc0a4ef5dde251
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358894"
 ---
 # <a name="setting-value-data-by-specifying-its-usage"></a>その使用法を指定することで設定値のデータ
 

@@ -1,6 +1,6 @@
 ---
-title: ネットワークのドライバーの接続指向の環境
-description: ネットワークのドライバーの接続指向の環境
+title: ネットワーク ドライバーの接続指向環境
+description: ネットワーク ドライバーの接続指向環境
 ms.assetid: 71c7961c-3db6-4ef8-aa77-93a629219de0
 keywords:
 - 接続指向の環境の WDK ネットワーク
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee0d4ae466769123b4bc2f5ef1896ab3b69375e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357456"
 ---
-# <a name="connection-oriented-environment-for-network-drivers"></a>ネットワークのドライバーの接続指向の環境
+# <a name="connection-oriented-environment-for-network-drivers"></a>ネットワーク ドライバーの接続指向環境
 
 
 

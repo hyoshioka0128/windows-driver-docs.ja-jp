@@ -1,6 +1,6 @@
 ---
-title: オブジェクト ハンドルの検証に失敗しました
-description: オブジェクト ハンドルの検証に失敗しました
+title: オブジェクト ハンドルの検証失敗
+description: オブジェクト ハンドルの検証失敗
 ms.assetid: 67d52ca8-4e86-4fe2-a541-f7a0e4040b93
 keywords:
 - 信頼性 WDK カーネルでは、オブジェクトのハンドルの検証
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 198ace4aca05664a91f8244398fe2e3bc80c6ef5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359994"
 ---
-# <a name="failure-to-validate-object-handles"></a>オブジェクト ハンドルの検証に失敗しました
+# <a name="failure-to-validate-object-handles"></a>オブジェクト ハンドルの検証失敗
 
 
 

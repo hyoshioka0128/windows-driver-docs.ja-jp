@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dee3a93e1a7ef7321c3ae8d8bd722c005ab75325
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356882"
 ---
-# <a name="power-management-enhancements-in-ndis-620"></a>NDIS 6.20 で電源管理の機能強化
+# <a name="power-management-enhancements-in-ndis-620"></a>NDIS 6.20 の電源管理の機能強化
 
 
 
@@ -37,9 +37,9 @@ NDIS 6.20 電源管理のインターフェイスは、Nic と最新の電源管
 
 -   NDIS 6.20 およびそれ以降は、メディアが接続したときに、コンピューターをウェイクさせることができます。 オペレーティング システムでは、メディアが切断されたときに、低電力状態に NIC を書き込みます。
 
-デバイス ドライバーの NDIS インターフェイス要素の一部は、NDIS 6.20 が動作し、以降のドライバーの廃止されています。 古い形式のインターフェイスの詳細については、[NDIS 6.20 で古いインターフェイス](obsolete-interfaces-in-ndis-6-20.md)を参照してください。
+デバイス ドライバーの NDIS インターフェイス要素の一部は、NDIS 6.20 が動作し、以降のドライバーの廃止されています。 古い形式のインターフェイスの詳細については、次を参照してください。 [NDIS 6.20 で古いインターフェイス](obsolete-interfaces-in-ndis-6-20.md)します。
 
-NDIS 6.20 が動作し、以降のバージョンの NDIS の電源管理の詳細については、[電源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)を参照してください。
+NDIS 6.20 が動作し、以降のバージョンの NDIS の電源管理の詳細については、次を参照してください。[電源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 

@@ -1,6 +1,6 @@
 ---
-title: コントロールのデバイス オブジェクトを作成します。
-description: コントロールのデバイス オブジェクトを作成します。
+title: コントロール デバイス オブジェクトの作成
+description: コントロール デバイス オブジェクトの作成
 ms.assetid: 9f89fd24-59b8-4529-b151-4e91e6334173
 keywords:
 - デバイス オブジェクトの WDK ファイル システムを制御します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87cb1f62e103544254cf6909a5ce23c0db6e574b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359365"
 ---
-# <a name="creating-the-control-device-object"></a>コントロールのデバイス オブジェクトを作成します。
+# <a name="creating-the-control-device-object"></a>コントロール デバイス オブジェクトの作成
 
 
 ## <span id="ddk_creating_the_control_device_object_if"></span><span id="DDK_CREATING_THE_CONTROL_DEVICE_OBJECT_IF"></span>

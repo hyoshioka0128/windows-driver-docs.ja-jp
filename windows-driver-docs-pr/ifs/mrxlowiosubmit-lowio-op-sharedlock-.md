@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3446b08be99f35ee98c8ecbeadc73914d9a48a45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357530"
 ---
 # <a name="mrxlowiosubmitlowioopsharedlock-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\] routine
 
@@ -103,7 +103,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]* 受信に応答する[ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md) IRP のコードを少し使用して要求\_MN\_場合ロック**IrpSp -&gt;フラグ**が、SL\_排他\_ロック ビットが設定されます。
@@ -128,7 +128,7 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]* 受信に応答す�
 
 **LowIoContext.ResourceThreadId** 、RX のメンバー\_CONTEXT 構造体を使用して、別のスレッドの代わり FCB 構造体を解放できます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

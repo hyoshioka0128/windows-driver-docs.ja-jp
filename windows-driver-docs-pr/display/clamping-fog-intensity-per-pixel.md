@@ -1,6 +1,6 @@
 ---
-title: 1 ピクセルあたり霧強度をクランプ
-description: 1 ピクセルあたり霧強度をクランプ
+title: ピクセル単位でのフォグ濃度のクランプ
+description: ピクセル単位でのフォグ濃度のクランプ
 ms.assetid: 249d085a-b54c-48b3-bc7a-3fe5f8238b1b
 keywords:
 - WDK DirectX 9.0 ピクセルあたり霧強度をクランプ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfbd86db9c30804eb9cf9b48fb0cb42eaee09aa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354328"
 ---
-# <a name="clamping-fog-intensity-per-pixel"></a>1 ピクセルあたり霧強度をクランプ
+# <a name="clamping-fog-intensity-per-pixel"></a>ピクセル単位でのフォグ濃度のクランプ
 
 
 ## <span id="ddk_clamping_fog_intensity_per_pixel_gg"></span><span id="DDK_CLAMPING_FOG_INTENSITY_PER_PIXEL_GG"></span>

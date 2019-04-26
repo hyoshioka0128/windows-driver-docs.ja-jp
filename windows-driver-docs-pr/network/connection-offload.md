@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf445931229909edb60544d2ac2a785a5e3ce914
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357445"
 ---
 # <a name="connection-offload"></a>接続オフロード
 
@@ -25,7 +25,7 @@ ms.locfileid: "56570725"
 
 パフォーマンスを向上させるには、Microsoft TCP/IP トランスポートは接続されている、適切な TCP/IP - オフロード機能 NIC への接続をオフロードできます。
 
-NDIS 接続のオフロード インターフェイスは、接続の構成を有効にするフック オフロード TCP chimney オフロードなどのサービスを提供します。 NDIS でオフロード サービスの接続の詳細については、[TCP/IP 接続のオフロード](offloading-tcp-ip-connections.md)を参照してください。
+NDIS 接続のオフロード インターフェイスは、接続の構成を有効にするフック オフロード TCP chimney オフロードなどのサービスを提供します。 NDIS でオフロード サービスの接続の詳細については、次を参照してください。 [TCP/IP 接続のオフロード](offloading-tcp-ip-connections.md)します。
 
 TCP chimney オフロード サービスは、NDIS 6.0 以降でサポートされています。
 

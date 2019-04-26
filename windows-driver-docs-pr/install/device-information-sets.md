@@ -1,6 +1,6 @@
 ---
-title: デバイス情報設定
-description: デバイス情報設定
+title: デバイス情報セット
+description: デバイス情報セット
 ms.assetid: 20539c63-10b1-408a-8c60-da444f54b64e
 keywords:
 - デバイス情報要素 WDK デバイスのインストール
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3cb7c60cea5fa761d67f1ee3693b275e661f121
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357804"
 ---
-# <a name="device-information-sets"></a>デバイス情報設定
+# <a name="device-information-sets"></a>デバイス情報セット
 
 
 

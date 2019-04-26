@@ -1,19 +1,19 @@
 ---
-title: X64 の注釈付き逆アセンブリ
-description: X64 の注釈付き逆アセンブリ
+title: 注釈付き x64 逆アセンブリ
+description: 注釈付き x64 逆アセンブリ
 ms.assetid: 67930062-8a3a-460f-ae56-248d2a8e131e
 keywords:
 - x64 プロセッサ、注釈付き逆アセンブリ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62993cca9e37a60ae1a6b674e15bc219f10404c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355391"
 ---
-# <a name="annotated-x64-disassembly"></a>X64 の注釈付き逆アセンブリ
+# <a name="annotated-x64-disassembly"></a>注釈付き x64 逆アセンブリ
 
 
 ## <span id="ddk_annotated_x64_disassembly_dbg"></span><span id="DDK_ANNOTATED_X64_DISASSEMBLY_DBG"></span>

@@ -1,25 +1,25 @@
 ---
-title: PaperSize 機能のオプションの属性
-description: PaperSize 機能のオプションの属性
+title: PaperSize 機能のオプション属性
+description: PaperSize 機能のオプション属性
 ms.assetid: cfd82bc5-b89b-41c2-b542-28cb5905e37a
 keywords:
 - PaperSize 機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0358299ed31d7f114da95cc7c0b56609ee3c5178
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353694"
 ---
-# <a name="option-attributes-for-the-papersize-feature"></a>PaperSize 機能のオプションの属性
+# <a name="option-attributes-for-the-papersize-feature"></a>PaperSize 機能のオプション属性
 
 
 
 
 
-次の表は、PaperSize 機能に関連付けられている属性を一覧表示します。 PaperSize 機能の詳細については、[標準機能](standard-features.md)を参照してください。
+次の表は、PaperSize 機能に関連付けられている属性を一覧表示します。 PaperSize 機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
 
 **注**  ランドス ケープなどのさまざまな方向を記述する属性を使用している場合でも、縦向きを基準とした、次の属性のすべての用紙サイズの仕様を表現する必要があります。
 
@@ -139,7 +139,7 @@ ms.locfileid: "56529978"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
 ### <a href="" id="ddk-customsize-parameter-expressions-gg"></a>パラメーターの式を CUSTOMSIZE します。
 

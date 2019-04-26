@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 348cab367d2199aeefcc7b6459a97a673d0f61a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357889"
 ---
 # <a name="devproptypedevpropkey"></a>DEVPROP_TYPE_DEVPROPKEY
 
 
 Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPE_DEVPROPKEY 識別子は、データ型が DEVPROPKEY に型指定されたデバイス プロパティのキーであることを示す基本データ型識別子を表します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DEVPROP_TYPE_DEVPROPKEY プロパティの型は、のみと組み合わせることができます、 [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)プロパティ データ型の修飾子。
@@ -39,7 +39,7 @@ DEVPROP_TYPE_DEVPROPKEY プロパティの型は、のみと組み合わせる�
 
 -   プロパティを設定する、必要に応じて、他の関数の入力パラメーターを設定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

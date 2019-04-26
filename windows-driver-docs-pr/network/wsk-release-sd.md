@@ -7,11 +7,11 @@ keywords:
 - WSK_RELEASE_SD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e6b760af3a66ce7cf6b4f02c0fb43aa9edc91c43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356778"
 ---
 # <a name="wskreleasesd"></a>WSK\_リリース\_SD
 
@@ -28,7 +28,7 @@ WSK アプリケーションの使用、WSK\_リリース\_SD のクライアン
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -67,7 +67,7 @@ WSK アプリケーションの使用、WSK\_リリース\_SD のクライアン
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

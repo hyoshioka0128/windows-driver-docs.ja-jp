@@ -1,19 +1,19 @@
 ---
-title: コンテキストを作成します。
-description: コンテキストを作成します。
+title: コンテキストの作成
+description: コンテキストの作成
 ms.assetid: da62d79d-064b-4ea4-abed-ffb13a9cc13d
 keywords:
 - WDK のコンテキストのファイル システム ミニフィルターを作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae2d6d8bff653c96d1c5d44a41312b8c8224ab1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359370"
 ---
-# <a name="creating-contexts"></a>コンテキストを作成します。
+# <a name="creating-contexts"></a>コンテキストの作成
 
 
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1263574f3266e452e0970eb90e095d1a453a2737
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356999"
 ---
 # <a name="inf-featurescore-directive"></a>INF FeatureScore ディレクティブ
 
@@ -57,7 +57,7 @@ Windows では、同じデバイスに対して複数のドライバーを検出
 
 特徴のスコアは、ドライバー作成者より簡単かつ正確には明確に定義された条件に基づいているデバイスのさまざまなドライバーを区別することができます識別子スコアを補足します。
 
-ドライバーが順位付けされる方法の詳細については、[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
+ドライバーが順位付けされる方法の詳細については、次を参照してください。[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
 
 ## <a name="see-also"></a>関連項目
 

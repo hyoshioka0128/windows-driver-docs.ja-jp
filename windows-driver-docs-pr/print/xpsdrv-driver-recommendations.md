@@ -1,19 +1,19 @@
 ---
-title: XPSDrv ドライバーに関する推奨事項
-description: XPSDrv ドライバーに関する推奨事項
+title: XPSDrv ドライバー推奨事項
+description: XPSDrv ドライバー推奨事項
 ms.assetid: 6700afd2-8526-4464-92b8-a9c1a37f8402
 keywords:
 - バージョン 3 XPS ドライバー WDK XPSDrv、推奨事項
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cae981451f5fc77b5e42f2e50ae7c8f58a1f0b70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358232"
 ---
-# <a name="xpsdrv-driver-recommendations"></a>XPSDrv ドライバーに関する推奨事項
+# <a name="xpsdrv-driver-recommendations"></a>XPSDrv ドライバー推奨事項
 
 
 加え、 [XPSDrv ドライバー要件](xpsdrv-driver-requirements.md)、次のベスト プラクティスを検討する必要があります。

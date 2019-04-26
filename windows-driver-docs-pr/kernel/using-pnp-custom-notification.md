@@ -1,6 +1,6 @@
 ---
-title: PnP カスタム通知を使用してください。
-description: PnP カスタム通知を使用してください。
+title: PnP カスタム通知の使用
+description: PnP カスタム通知の使用
 ms.assetid: de5562f8-07a8-4f4e-ac49-58c789bd9fde
 keywords:
 - WDK PnP、カスタムの通知
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ae6795262b4600251fa2e78dae896385a85404
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354218"
 ---
-# <a name="using-pnp-custom-notification"></a>PnP カスタム通知を使用してください。
+# <a name="using-pnp-custom-notification"></a>PnP カスタム通知の使用
 
 
 

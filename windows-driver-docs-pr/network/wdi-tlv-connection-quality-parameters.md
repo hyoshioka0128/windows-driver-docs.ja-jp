@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CONNECTION_QUALITY_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ce8680e00d04276a7bb7fd80a96db8ae9ae977c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357259"
 ---
 # <a name="wditlvconnectionqualityparameters"></a>WDI\_TLV\_接続\_品質\_パラメーター
 
@@ -31,13 +31,13 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                          |
+| 型   | 説明                                                                                                                          |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32 | 必要な Wi-fi 接続品質ヒントで定義された[ **WDI\_接続\_品質\_ヒント**](https://msdn.microsoft.com/library/windows/hardware/dn897807)します。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

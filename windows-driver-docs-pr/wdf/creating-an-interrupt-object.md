@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5466e4b38f4c6ca08318e572eb2b7cb856a33143
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358478"
 ---
 # <a name="creating-an-interrupt-object"></a>割り込みオブジェクトの作成
 
@@ -69,7 +69,7 @@ KMDF バージョン 1.15 以降、KMDF も割り込みをサポートして、�
 ## <a name="supporting-message-signaled-interrupts"></a>メッセージ シグナル割り込みをサポートしています。
 
 
-メッセージ シグナル割り込み (Msi) は、以降 Windows Vista でサポートされます。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、[Enabling Message-Signaled がレジストリへの割り込み](https://msdn.microsoft.com/library/windows/hardware/ff544246)を参照してください。
+メッセージ シグナル割り込み (Msi) は、以降 Windows Vista でサポートされます。 デバイスの Msi をサポートするために、オペレーティング システムを有効にするには、ドライバーの INF ファイルは、レジストリのいくつかの値を設定する必要があります。 これらの値を設定する方法については、次を参照してください。 [Enabling Message-Signaled がレジストリへの割り込み](https://msdn.microsoft.com/library/windows/hardware/ff544246)します。
 
 ドライバーは、割り込みベクトルまたはデバイスをサポートできる MSI メッセージごとに framework 割り込みオブジェクトを作成する必要があります。 PnP マネージャーでは付与されません、デバイスのすべてのデバイスをサポートする割り込みリソース、余分な割り込みオブジェクトは使用されませんし、これらのコールバック関数は呼び出されません。
 

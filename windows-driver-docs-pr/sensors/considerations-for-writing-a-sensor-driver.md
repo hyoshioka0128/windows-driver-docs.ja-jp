@@ -5,11 +5,11 @@ ms.assetid: fec3cfe8-43ad-481a-833a-6f38d04bfdef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29a7773e4c548578637842ed47aa8bb72bb078d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357770"
 ---
 # <a name="considerations-for-writing-a-sensor-driver"></a>センサー ドライバーの記述に関する考慮事項
 
@@ -18,7 +18,7 @@ ms.locfileid: "56573598"
 
 -   ドライバーが複数のセンサーまたは 1 つのセンサーをサポートしているかどうかを決定します。 たとえば、ハードウェア デバイスは、センサーの組み合わせを含めることができますが、1 つのデバイス ドライバーを使用することがあります。
 
--   デバイスで、必要な操作のレベルを決定し、プラットフォームにイベントを送信、かどうか。 (ほとんどのドライバー、およびセンサー ソリューションをサポートするイベントです。)センサー ドライバーのイベントの概要については、[センサー ドライバー イベントについて](about-sensor-driver-events.md)を参照してください。
+-   デバイスで、必要な操作のレベルを決定し、プラットフォームにイベントを送信、かどうか。 (ほとんどのドライバー、およびセンサー ソリューションをサポートするイベントです。)センサー ドライバーのイベントの概要については、次を参照してください。[センサー ドライバー イベントについて](about-sensor-driver-events.md)します。
 
 -   カテゴリ、センサーの種類、およびドライバーのデータ型を決定します。 プラットフォーム定義されている並べ替え方法のいずれかを使用して、または独自に定義することができます。 プラットフォームがセンサーの情報を整理する方法の概要については、次を参照してください[センサー定数について。](about-sensor-constants.md)
 

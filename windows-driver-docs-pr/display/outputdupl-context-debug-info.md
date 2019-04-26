@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: bc91f429563af15195dd15a557f472102c518928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358344"
 ---
 # <a name="outputduplcontextdebuginfo-structure"></a>OUTPUTDUPL\_コンテキスト\_デバッグ\_情報構造体
 
@@ -40,10 +40,10 @@ typedef struct _OUTPUTDUPL_CONTEXT_DEBUG_INFO {
 } OUTPUTDUPL_CONTEXT_DEBUG_INFO;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
-**状態**
+**ステータス**
 
 **プロセス Id**
 

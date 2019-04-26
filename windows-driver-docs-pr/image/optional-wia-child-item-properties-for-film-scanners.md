@@ -1,17 +1,17 @@
 ---
-title: フィルム スキャナーの WIA の省略可能な子項目のプロパティ
-description: フィルム スキャナーの WIA の省略可能な子項目のプロパティ
+title: フィルム スキャナーの省略可能 WIA 子項目のプロパティ
+description: フィルム スキャナーの省略可能 WIA 子項目のプロパティ
 ms.assetid: 85364b59-e0a8-4a82-bc89-6f160609f35d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9d2dc1756c6b09303b7ac5866d6d409fa6b761
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358031"
 ---
-# <a name="optional-wia-child-item-properties-for-film-scanners"></a>フィルム スキャナーの WIA の省略可能な子項目のプロパティ
+# <a name="optional-wia-child-item-properties-for-film-scanners"></a>フィルム スキャナーの省略可能 WIA 子項目のプロパティ
 
 
 WIA フィルム スキャナーの子項目は、WIA の次のプロパティを必要に応じてサポートできます。

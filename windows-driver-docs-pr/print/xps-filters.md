@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bba5075a0d09a710cb670e362c21008f513997b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354866"
 ---
 # <a name="xps-filters"></a>XPS フィルター
 
@@ -53,15 +53,15 @@ Windows Vista では、フィルターのボックスは含まれませんで Wi
 
 -   基準値
 
-フィルター パイプライン マネージャーの詳細については、[XPSDrv レンダリング モジュール](xpsdrv-render-module.md)を参照してください。
+フィルター パイプライン マネージャーの詳細については、次を参照してください。 [XPSDrv レンダリング モジュール](xpsdrv-render-module.md)します。
 
-フィルターの実装の詳細については、[XPS フィルターを実装する](implementing-xps-filters.md)を参照してください。
+フィルターの実装の詳細については、次を参照してください。 [XPS フィルターを実装する](implementing-xps-filters.md)します。
 
-印刷フィルターで非同期通知の詳細については、[印刷フィルターで非同期通知](asynchronous-notifications-in-print-filters.md)を参照してください。
+印刷フィルターで非同期通知の詳細については、次を参照してください。[印刷フィルターで非同期通知](asynchronous-notifications-in-print-filters.md)します。
 
 使用してフィルターを構成する必要があります、[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)します。
 
-印刷フィルター パイプラインのサービスをデバッグする方法については、[フィルター パイプラインの印刷サービスにデバッガーをアタッチ](attaching-a-debugger-to-the-print-filter-pipeline-service.md)を参照してください。
+印刷フィルター パイプラインのサービスをデバッグする方法については、次を参照してください。[フィルター パイプラインの印刷サービスにデバッガーをアタッチ](attaching-a-debugger-to-the-print-filter-pipeline-service.md)します。
 
 Windows 7、XPS フィルターを使用できます、 [XPS ラスタライズ サービス](using-the-xps-rasterization-service.md)ビットマップに XPS ドキュメントのページを固定に変換します。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WAN_CO_GET_STATS_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ae1e2597a80d8a917eca0616c23f19df5ee4eba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358736"
 ---
 # <a name="oidwancogetstatsinfo"></a>OID\_WAN\_CO\_取得\_STATS\_情報
 

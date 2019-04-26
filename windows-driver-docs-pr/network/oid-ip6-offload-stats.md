@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58affcd02f9bd3871e0f217808b74f5234b7de95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355933"
 ---
 # <a name="oidip6offloadstats"></a>OID_IP6_OFFLOAD_STATS
 
@@ -21,7 +21,7 @@ OID_IP6_OFFLOAD_STATS のクエリに応答してでは、オフロード対象�
 
 OID_IP6_OFFLOAD_STATS のセットへの応答、オフロード対象はすべてゼロにオフロードされた TCP 接続の IPv6 の統計カウンターのリセットする必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

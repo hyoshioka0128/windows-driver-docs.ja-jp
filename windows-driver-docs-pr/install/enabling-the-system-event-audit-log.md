@@ -1,6 +1,6 @@
 ---
-title: システム イベントの監査ログを有効にします。
-description: システム イベントの監査ログを有効にします。
+title: システム イベントの監査ログの有効化
+description: システム イベントの監査ログの有効化
 ms.assetid: a4206f06-0c81-407e-80aa-4f6b08cb2a70
 keywords:
 - WDK のドライバー署名の詳細なログ記録
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17628840a7d2bc6d7bda4d9399fa82b1c02fb4fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357763"
 ---
-# <a name="enabling-the-system-event-audit-log"></a>システム イベントの監査ログを有効にします。
+# <a name="enabling-the-system-event-audit-log"></a>システム イベントの監査ログの有効化
 
 
 このトピックは、次の情報で構成されます。

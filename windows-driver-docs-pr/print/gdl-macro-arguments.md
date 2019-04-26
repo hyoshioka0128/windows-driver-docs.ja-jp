@@ -1,6 +1,6 @@
 ---
-title: GDL マクロの引数
-description: GDL マクロの引数
+title: GDL マクロ引数
+description: GDL マクロ引数
 ms.assetid: 2aeaf2fd-39e3-4661-85d1-ccb855a73044
 keywords:
 - GDL WDK、マクロ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3873dcdfe75311ca533f452f4a3ac180777fc664
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358650"
 ---
-# <a name="gdl-macro-arguments"></a>GDL マクロの引数
+# <a name="gdl-macro-arguments"></a>GDL マクロ引数
 
 
 マクロ定義の内容はすべてを参照できるいくつか、または none 値マクロを定義し、複数値のマクロ定義が 1 つ内でどのように発生する場所の特に、仮引数の\*仮引数の 1 つのマクロのコンス トラクターが一覧表示します。すべての定義で共有されます。 この場合は、1 つの定義を参照できます、仮引数のいくつか別参照なしながら。

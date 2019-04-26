@@ -1,14 +1,14 @@
 ---
-Description: UCX performs root hub management.
+Description: UCX は、ルート ハブの管理を実行します。
 title: USB ホスト コントローラー ドライバー用のルート ハブ コールバック関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36bf6193d0342ee6a9f0590774e2a287c86de5e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355448"
 ---
 # <a name="root-hub-callback-functions-of-a-usb-host-controller-driver"></a>USB ホスト コントローラー ドライバー用のルート ハブ コールバック関数
 

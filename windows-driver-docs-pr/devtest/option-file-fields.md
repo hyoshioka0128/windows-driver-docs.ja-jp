@@ -1,6 +1,6 @@
 ---
-title: オプション ファイル フィールド
-description: オプション ファイル フィールド
+title: オプション ファイルのフィールド
+description: オプション ファイルのフィールド
 ms.assetid: 5ca79c91-5d19-4393-aa5e-be3d47e62967
 keywords:
 - ファイル WDK Static Driver Verifier のオプション
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 045168ae1a1e38d8a591937e6ef66aa45aa0aedb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356341"
 ---
-# <a name="option-file-fields"></a>オプション ファイル フィールド
+# <a name="option-file-fields"></a>オプション ファイルのフィールド
 
 
 SDV のオプションをファイルには、SDV 設定が含まれています。 いくつかのこれらの設定を変更することができます。 その他の設定は、SDV で予約されています。

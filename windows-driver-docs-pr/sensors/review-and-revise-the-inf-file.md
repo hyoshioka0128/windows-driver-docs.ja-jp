@@ -5,11 +5,11 @@ ms.assetid: 1D326C5F-5B69-4C5C-AE52-14153DF964E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab3c989c935fb290dde31c22eb58374aa147ad4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358760"
 ---
 # <a name="review-the-inx-file"></a>INX ファイルを確認してください。
 
@@ -32,7 +32,7 @@ Microsoft Visual Studio でドライバーのプロジェクトを作成する�
    ClassGuid   = {5175D334-C371-4806-B3BA-71FD53C9258D}
    ```
 
-デバイスのクラスが「センサー」と適切な GUID に設定されているので注意が提供されます。 デバイス クラス GUID の Windows の詳細については、[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)を参照してください。
+デバイスのクラスが「センサー」と適切な GUID に設定されているので注意が提供されます。 デバイス クラス GUID の Windows の詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)します。
 
 2. 検索、 \[ADXL345Acc\_Device.NT$ARCH$\]セクション。
    ```cpp

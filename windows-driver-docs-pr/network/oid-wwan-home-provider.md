@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_HOME_PROVIDER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: bb86023c594a1cfad4f7a6153e6fab7f828f5477
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353741"
 ---
 # <a name="oidwwanhomeprovider"></a>OID\_WWAN\_ホーム\_プロバイダー
 
@@ -36,7 +36,7 @@ A*設定*操作では、現在の SIM またはターゲット SIM がロック�
 
  
 
-詳細については、この OID を使用して、[WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN プロバイダー操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)します。
 
 ミニポート ドライバー Subscriber Identity Module (SIM カード) にアクセスできる処理がクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 

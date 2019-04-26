@@ -5,11 +5,11 @@ ms.assetid: cc47b4c9-fd1d-47c2-9af9-0b7f4a7a918a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d52e1c40e423ef11048e05427e44de9fcb735c2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357835"
 ---
 # <a name="enabling-support-for-debugging-device-installations"></a>デバイスのインストールのデバッグのサポートの有効化
 
@@ -36,11 +36,11 @@ ms.locfileid: "56573573"
 <tbody>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>デバイスのインストール プロセスは、ユーザー モード デバッガーを使用してデバッグされます。 詳細については、<a href="debugging-device-installations-with-a-user-mode-debugger.md" data-raw-source="[Debugging Device Installations with a User-mode Debugger](debugging-device-installations-with-a-user-mode-debugger.md)">ユーザー モード デバッガーでのデバイス インストールのデバッグ</a>を参照してください。</p></td>
+<td align="left"><p>デバイスのインストール プロセスは、ユーザー モード デバッガーを使用してデバッグされます。 詳細については、次を参照してください。<a href="debugging-device-installations-with-a-user-mode-debugger.md" data-raw-source="[Debugging Device Installations with a User-mode Debugger](debugging-device-installations-with-a-user-mode-debugger.md)">ユーザー モード デバッガーでのデバイス インストールのデバッグ</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>デバイスのインストール プロセスは、カーネル デバッガー (KD) を使用してデバッグされます。 詳細については、<a href="debugging-device-installations-with-the-kernel-debugger--kd-.md" data-raw-source="[Debugging Device Installations with the Kernel Debugger (KD)](debugging-device-installations-with-the-kernel-debugger--kd-.md)">Kernel Debugger (KD) でのデバイス インストールのデバッグ</a>を参照してください。</p></td>
+<td align="left"><p>デバイスのインストール プロセスは、カーネル デバッガー (KD) を使用してデバッグされます。 詳細については、次を参照してください。 <a href="debugging-device-installations-with-the-kernel-debugger--kd-.md" data-raw-source="[Debugging Device Installations with the Kernel Debugger (KD)](debugging-device-installations-with-the-kernel-debugger--kd-.md)">Kernel Debugger (KD) でのデバイス インストールのデバッグ</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0</p></td>

@@ -1,6 +1,6 @@
 ---
-title: ドライバーの登録と開始/停止の制御
-description: ドライバーの登録と開始/停止の制御
+title: ドライバーの登録と開始/停止制御
+description: ドライバーの登録と開始/停止制御
 ms.assetid: 66f44703-1277-49fe-a481-c8712172db0f
 keywords:
 - RDBSS WDK ファイル システムでは、コントロールの開始/停止
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd265f9d8848d53821cb240a432657f655b02ffb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359492"
 ---
-# <a name="driver-registration-and-startstop-control"></a>ドライバーの登録と開始/停止の制御
+# <a name="driver-registration-and-startstop-control"></a>ドライバーの登録と開始/停止制御
 
 
 ## <span id="ddk_driver_registration_and_start_stop_control_if"></span><span id="DDK_DRIVER_REGISTRATION_AND_START_STOP_CONTROL_IF"></span>

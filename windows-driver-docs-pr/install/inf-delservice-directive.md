@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7b0d1a47050af081d57ee2c9c6947bccbf49658
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358807"
 ---
 # <a name="inf-delservice-directive"></a>INF DelService ディレクティブ
 
@@ -63,7 +63,7 @@ DelService=ServiceName[,[flags][,[EventLogType][,EventName]]
 
 このディレクティブはほとんど使用されません。 安全に削除できる唯一のサービスはいるか、オペレーティング システムの以前のバージョンでのみ使用され、現在のバージョンで使用されないためです。
 
-使用できます Windows XP 以降、 *TargetOSVersion*コントロール バージョン固有のインストール時の動作を装飾します。 この装飾の詳細については、[ **INF 製造元セクション**](inf-manufacturer-section.md)を参照してください。
+使用できます Windows XP 以降、 *TargetOSVersion*コントロール バージョン固有のインストール時の動作を装飾します。 この装飾の詳細については、次を参照してください。 [ **INF 製造元セクション**](inf-manufacturer-section.md)します。
 
 ただし、既定では、特定のデバイス ドライバーが提供するイベント ログ情報は削除されません、アンインストール、システムから、デバイスとドライバーの INF が明示的に削除を要求しない限り (*フラグ*または*EventName*) ドライバー サービスの削除と共にイベント ログの。
 

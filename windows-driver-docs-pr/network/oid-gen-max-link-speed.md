@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MAX_LINK_SPEED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: bbfdbdb9d0dd747be6e650d2298e4aafa4f4d67b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358770"
 ---
 # <a name="oidgenmaxlinkspeed"></a>OID\_GEN\_最大\_リンク\_速度
 
@@ -25,14 +25,14 @@ ms.locfileid: "56579507"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 要求されません。 (「解説」を参照してください セクション)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ミニポート ドライバーでは、初期化中に最大リンク速度を提供します。
 
 最大のリンク速度を指定するには、設定、 **MaxXmitLinkSpeed**と**MaxRcvLinkSpeed**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)ミニポート ドライバーに渡します構造、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数。 ミニポート ドライバーがこの OID をサポートしていない場合、ドライバーは NDIS を返す必要があります\_状態\_いない\_サポートされています。 ミニポート ドライバーでは、この OID をサポートする場合の最大数のリンク速度が返されます、 [ **NDIS\_リンク\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff565864)構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

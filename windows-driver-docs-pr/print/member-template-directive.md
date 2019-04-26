@@ -1,19 +1,19 @@
 ---
-title: メンバー テンプレート ディレクティブ
-description: メンバー テンプレート ディレクティブ
+title: Member テンプレート ディレクティブ
+description: Member テンプレート ディレクティブ
 ms.assetid: 3f4bdf3c-30cb-4edc-bd9e-422c4bfbb5b7
 keywords:
 - メンバーのディレクティブ WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41bfee072481fea3e585fe2b61a1e60fc63a953a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358611"
 ---
-# <a name="member-template-directive"></a>メンバー テンプレート ディレクティブ
+# <a name="member-template-directive"></a>Member テンプレート ディレクティブ
 
 
 \* `Member`ディレクティブはコンストラクトもです。 このコンス トラクターの値は、テンプレート名です。 このテンプレートの名前に表示する必要があります、\*メンバー一覧のホストのテンプレート (内にあります。 運用環境のテンプレート) または、\*ホスト テンプレートは、(直接または間接的に) から継承したメンバーの一覧。 \* `Member`コンストラクトと呼ばれる省略可能な子属性を含めることができます\* **Occurs**します。

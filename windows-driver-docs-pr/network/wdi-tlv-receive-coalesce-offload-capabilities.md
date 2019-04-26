@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c58c4a917784767462bf5c60d7dc960463532fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359725"
 ---
 # <a name="wditlvreceivecoalesceoffloadcapabilities"></a>WDI\_TLV\_受信\_COALESCE\_オフロード\_機能
 

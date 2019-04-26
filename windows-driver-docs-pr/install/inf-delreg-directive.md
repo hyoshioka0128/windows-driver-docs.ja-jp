@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbde52ab47f5eb3f99f5f3bf83103c674125d41a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358812"
 ---
 # <a name="inf-delreg-directive"></a>INF DelReg ディレクティブ
 
@@ -125,7 +125,7 @@ A**して**上記の正式な構文のステートメントで次のセクショ
 
 一般に、INF では、サブキーまたはシステム コンポーネントによって、またはその他のデバイスの INF ファイルによって設定された既存のサブキー内の値のエントリを削除する試みる必要があることはありません。 目的を*delete レジストリ セクション*同じプロバイダーによって提供される新しい INF ファイルを使用して以前のインストールから古いレジストリ情報をクリーンアップします。
 
-各*del-section レジストリ*名は、INF ファイルに固有である必要がありますが、それを参照できます**して**同じ INF の他のセクション ディレクティブ。 各セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各*del-section レジストリ*名は、INF ファイルに固有である必要がありますが、それを参照できます**して**同じ INF の他のセクション ディレクティブ。 各セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 Windows XP より前のオペレーティング システムのバージョンは、キーを削除する唯一の方法は、次を指定することです。
 

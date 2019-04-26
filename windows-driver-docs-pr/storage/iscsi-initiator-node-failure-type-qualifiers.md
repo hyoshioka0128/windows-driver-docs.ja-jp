@@ -5,11 +5,11 @@ ms.assetid: 77be126e-73c0-4471-8d3c-506107cc3d3d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c2770d6005a31edc76e6bac75fca21c01293536b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358524"
 ---
 # <a name="iscsiinitiatornodefailuretypequalifiers"></a>ISCSI\_イニシエーター\_ノード\_エラー\_型\_修飾子
 
@@ -29,7 +29,7 @@ ISCSI\_イニシエーター\_ノード\_エラー\_型\_修飾子 WMI プロパ
 <thead>
 <tr class="header">
 <th align="left">ノード障害の値</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

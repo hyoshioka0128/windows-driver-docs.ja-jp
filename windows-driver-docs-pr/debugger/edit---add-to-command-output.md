@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cb937b814426c48fe9bd922019580303177c9cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358964"
 ---
 # <a name="edit--add-to-command-output"></a>Edit | Add to Command Output (編集 | コマンド出力に追加)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56578789"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッガー コマンド ウィンドウの他の機能の詳細については、[デバッガー コマンドを使用して](using-debugger-commands.md)を参照してください。
+デバッガー コマンド ウィンドウの他の機能の詳細については、次を参照してください。[デバッガー コマンドを使用して](using-debugger-commands.md)します。
 
  
 

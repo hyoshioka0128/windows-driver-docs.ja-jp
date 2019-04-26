@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ca0eea973a0ff33afc3cf50539b1a643ed51814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355853"
 ---
 # <a name="ksmethodbdagetchangestate"></a>KSMETHOD\_BDA\_取得\_変更\_状態
 
@@ -37,7 +37,7 @@ KSMETHOD**フラグ**メンバー KSMETHOD に設定\_型\_を読み取る。
 
 値、BDA から\_変更\_現在の状態の列挙型は、フィルターの状態を変更します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

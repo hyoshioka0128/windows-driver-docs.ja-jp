@@ -1,6 +1,6 @@
 ---
-title: タイミングの接続指向の機能
-description: タイミングの接続指向の機能
+title: 接続指向タイミング機能
+description: 接続指向タイミング機能
 ms.assetid: 73b005c2-39bd-4931-89cd-7ea3db9068ca
 keywords:
 - 接続指向 NDIS WDK、タイミングの機能
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47ac08445814538a95675b783e2926b0fb9fc9e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357404"
 ---
-# <a name="connection-oriented-timing-features"></a>タイミングの接続指向の機能
+# <a name="connection-oriented-timing-features"></a>接続指向タイミング機能
 
 
 
@@ -45,7 +45,7 @@ ms.locfileid: "56527644"
 
 NIC のローカル時刻を取得する接続指向プロトコルを呼び出すことができます**NdisCoOidRequest**接続指向のミニポート ドライバーまたは MCM のドライバーの照会に[OID\_GEN\_CO\_取得\_ネットワーク カード\_時間](https://msdn.microsoft.com/library/windows/hardware/ff569450)します。 接続指向のミニポート ドライバーまたは MCM ドライバーは同期的にパケットの転送をスケジュールする接続指向プロトコルを使用できますし、ローカル時刻を取得するを返します。
 
-タイミング情報を送信または受信パケットが、パケットのアウト オブ バンド (OOB) データに含まれています。 詳細については、[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)を参照してください。
+タイミング情報を送信または受信パケットが、パケットのアウト オブ バンド (OOB) データに含まれています。 詳細については、次を参照してください。 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。
 
  
 

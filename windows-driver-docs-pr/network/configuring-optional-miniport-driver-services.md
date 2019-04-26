@@ -1,6 +1,6 @@
 ---
-title: 省略可能なミニポート ドライバー サービスを構成します。
-description: 省略可能なミニポート ドライバー サービスを構成します。
+title: オプションのミニポート ドライバー サービスの構成
+description: オプションのミニポート ドライバー サービスの構成
 ms.assetid: 42fe3863-ded0-4a02-9216-86fa4c167a49
 keywords:
 - ミニポート ドライバー WDK、省略可能なネットワーク サービス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32acf87c53e965d4144c372286e886592680dd73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358896"
 ---
-# <a name="configuring-optional-miniport-driver-services"></a>省略可能なミニポート ドライバー サービスを構成します。
+# <a name="configuring-optional-miniport-driver-services"></a>オプションのミニポート ドライバー サービスの構成
 
 
 

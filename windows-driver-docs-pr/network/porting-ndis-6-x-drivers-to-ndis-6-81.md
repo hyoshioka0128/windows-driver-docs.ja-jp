@@ -5,11 +5,11 @@ ms.assetid: 63E345CD-4445-45EA-AA62-824161C8573D
 ms.date: 05/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b5cd5dc3e6a5a4886357e8f1dae5525f08209c69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358714"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-681"></a>NDIS 6.x ドライバーの NDIS 6.81 への移植
 

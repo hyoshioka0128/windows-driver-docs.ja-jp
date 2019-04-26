@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c8ed67cc886550c192e40629defd629c82a44901
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358464"
 ---
 # <a name="outputduplcontextdebugstatus-enumeration"></a>OUTPUTDUPL\_コンテキスト\_デバッグ\_状態の列挙型
 
@@ -49,7 +49,7 @@ typedef enum _OUTPUTDUPL_CONTEXT_DEBUG_STATUS {
 
 <span id="OUTPUTDUPL_CONTEXT_DEBUG_STATUS_FORCE_UINT32"></span><span id="outputdupl_context_debug_status_force_uint32"></span>**OUTPUTDUPL\_CONTEXT\_DEBUG\_STATUS\_FORCE\_UINT32**
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_LINK_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b37225cde129644fba488a88aa4d51d480fa511
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358888"
 ---
 # <a name="oidgenlinkstate"></a>OID\_GEN\_リンク\_状態
 
@@ -34,7 +34,7 @@ ms.locfileid: "56549679"
 
 ミニポート ドライバーがこの OID をサポートしていない場合、ドライバーは NDIS を返す必要があります\_状態\_いない\_サポートされています。 ミニポート ドライバーは、この OID をサポートしている場合は、接続状態、双方向の状態を返します内のリンクが高速化、 [ **NDIS\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh205390)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

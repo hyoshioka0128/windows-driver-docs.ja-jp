@@ -1,6 +1,6 @@
 ---
-title: パス情報をモード情報との関係
-description: パス情報をモード情報との関係
+title: モード情報とパス情報との関係
+description: モード情報とパス情報との関係
 ms.assetid: 214717dd-1c01-4daf-9296-586299668d3a
 keywords:
 - 接続には、WDK の Windows 7 の表示、CCD 概念、モード、およびパスの情報が表示されます。
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53658021a130763c19ac750fa3a2c73acecafa1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351470"
 ---
-# <a name="relationship-of-mode-information-to-path-information"></a>パス情報をモード情報との関係
+# <a name="relationship-of-mode-information-to-path-information"></a>モード情報とパス情報との関係
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

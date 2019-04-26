@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9590339d89be7b99c7dce4b5bb25f7e64a4ad4f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356942"
 ---
 # <a name="lowerlogoversion"></a>LowerLogoVersion
 
@@ -67,7 +67,7 @@ A **LowerLogoVersion**値では、次の表に記載されている Windows の�
 
 システムの既定**LowerLogoVersion**システム定義の値[デバイス セットアップ クラス](device-setup-classes.md)「5.1」。 これは、ドライバーを Windows Server 2003 および Windows XP、WHQL 署名を持つのマイクロソフトの Windows Vista と Windows の以降のバージョンで署名されたドライバーとして同じシグネチャ スコアであることを意味します。
 
-ドライバーのランク付けの詳細については、[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
+ドライバーのランク付けの詳細については、次を参照してください。[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
 
  
 

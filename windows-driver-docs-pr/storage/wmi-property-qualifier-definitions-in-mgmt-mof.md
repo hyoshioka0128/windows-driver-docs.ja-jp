@@ -5,11 +5,11 @@ ms.assetid: 2d8e7e83-6304-459f-b9d8-b40365834bb7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 82a2ab76b3ad2623b17851a9d094c5ef3870b7dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357225"
 ---
 # <a name="wmi-property-qualifier-definitions-in-mgmtmof"></a>Mgmt.mof 内の WMI プロパティ修飾子の定義
 
@@ -41,7 +41,7 @@ WMI クラス定義内のデータ フィールドに、上記の修飾子のい
 
 そのため、WMI プロパティ修飾子では、修飾子は、一連の整数値を表すために列挙体が似ています。 WMI ツールのスイートで列挙型の宣言を生成しませんが、 *Iscsimgt.h*で修飾子に対応する*Mgmt.mof*、シンボリック定数の定義のセットはどちらも、生成します。修飾子の値に対応します。
 
-WMI プロパティ修飾子の概要については、[WMI プロパティ修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566365)を参照してください。
+WMI プロパティ修飾子の概要については、次を参照してください。 [WMI プロパティ修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566365)します。
 
  
 

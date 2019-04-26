@@ -1,6 +1,6 @@
 ---
-title: イメージ品質を制御します。
-description: イメージ品質を制御します。
+title: 画質の制御
+description: 画質の制御
 ms.assetid: b6d25178-6726-4ce0-ab34-efeedc618044
 keywords:
 - Unidrv、画像の品質
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5f993d6dc41c93c245993e2b1c841a00480dd9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358653"
 ---
-# <a name="controlling-image-quality"></a>イメージ品質を制御します。
+# <a name="controlling-image-quality"></a>画質の制御
 
 
 

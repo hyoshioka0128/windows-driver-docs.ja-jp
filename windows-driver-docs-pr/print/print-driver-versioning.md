@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2766f0f4de62a036b03612b71df86780e3fdb4e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358239"
 ---
 # <a name="print-driver-versioning"></a>印刷ドライバーのバージョン管理
 
@@ -33,9 +33,9 @@ Pdrvver.h ヘッダーは、プリプロセッサのほぼ例外なく\#ディ�
 <a href="" id="ver-fileversion"></a>VER\_FILEVERSION  
 この定数は、コンマで区切られた 4 つの WORD 値のシーケンスに設定する必要があります。 3 番目と 4 番目の単語が高に設定し、VS のそれぞれの単語を低に使用される\_FIXEDFILEINFO 構造体の**dwFileVersionLS**メンバー。 4 つの単語の意味は次の表で説明します。
 
-Value
+値
 
-意味
+説明
 
 最初の単語
 

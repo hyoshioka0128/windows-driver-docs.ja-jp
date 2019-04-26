@@ -1,17 +1,17 @@
 ---
-title: ユーザー モードのディスプレイ ドライバーによって実装された Direct3D 関数
+title: ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数
 description: このトピックでは、ユーザー モードは、マイクロソフトの Direct3D 実行時にドライバーの実装と提供を表示し、オペレーティング システムによって呼び出すことができます関数について説明します。
 ms.assetid: 6A9D0944-261D-4CAD-AD1B-601369D2FD68
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 26affc22a77dfa2aabe4fe4da1344a271267a08b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358041"
 ---
-# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>ユーザー モードのディスプレイ ドライバーによって実装された Direct3D 関数
+# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数
 
 このトピックでは、ユーザー モードは、マイクロソフトの Direct3D 実行時にドライバーの実装と提供を表示し、オペレーティング システムによって呼び出すことができます関数について説明します。
 

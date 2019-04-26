@@ -1,6 +1,6 @@
 ---
-title: 画面の拡張機能
-description: 画面の拡張機能
+title: 拡張サーフェス機能
+description: 拡張サーフェス機能
 ms.assetid: daa1a310-1cea-48ca-a373-a496b997424f
 keywords:
 - 描画サーフェイス機能 WDK の DirectDraw surface の拡張機能の詳細についてを拡張します。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c7a1fafc74e381b65f454c1676d087c86178860
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353364"
 ---
-# <a name="extended-surface-capabilities"></a>画面の拡張機能
+# <a name="extended-surface-capabilities"></a>拡張サーフェス機能
 
 
 ## <span id="ddk_extended_surface_capabilities_gg"></span><span id="DDK_EXTENDED_SURFACE_CAPABILITIES_GG"></span>

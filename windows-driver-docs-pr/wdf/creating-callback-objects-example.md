@@ -1,19 +1,19 @@
 ---
-title: コールバック オブジェクトの例を作成します。
-description: コールバック オブジェクトの例を作成します。
+title: コールバック オブジェクトの作成の例
+description: コールバック オブジェクトの作成の例
 ms.assetid: 4476c2f0-12ba-4678-b20e-bde7e81df01d
 keywords:
 - コールバック オブジェクト WDK UMDF、作成する例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f852def4de16f87cef0b970f1ed39e78ca9024
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358472"
 ---
-# <a name="creating-callback-objects-example"></a>コールバック オブジェクトの例を作成します。
+# <a name="creating-callback-objects-example"></a>コールバック オブジェクトの作成の例
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

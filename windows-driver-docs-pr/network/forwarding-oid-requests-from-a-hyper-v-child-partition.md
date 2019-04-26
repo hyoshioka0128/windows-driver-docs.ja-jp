@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 子パーティションから OID の要求を転送
-description: HYPER-V 子パーティションから OID の要求を転送
+title: Hyper-V 子パーティションからの OID 要求の転送
+description: Hyper-V 子パーティションからの OID 要求の転送
 ms.assetid: 35EA9964-4CD0-4636-9573-65F37393B7E2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90cfdfcb4f95805e5f60cc7487566bef0166b39e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356905"
 ---
-# <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>HYPER-V 子パーティションから OID の要求を転送
+# <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>Hyper-V 子パーティションからの OID 要求の転送
 
 
 マルチキャストのオブジェクト識別子 (OID) が要求を含む[OID\_802\_3\_追加\_マルチキャスト\_アドレス](https://msdn.microsoft.com/library/windows/hardware/ff569068)と[OID\_802\_3\_削除\_マルチキャスト\_アドレス](https://msdn.microsoft.com/library/windows/hardware/ff569070)関連プロトコルで発行し、ドライバーが次のように動作するをフィルター処理します。
@@ -38,7 +38,7 @@ ms.locfileid: "56557102"
 
 プロトコルのエッジを発行し、 [OID\_切り替える\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)拡張可能スイッチ コントロールのパスをカプセル化された OID 要求を転送するように要求します。 基になる転送拡張機能カプセル化された OID 要求を検査できメンバーが指定したマルチキャスト アドレス情報を保持できます。 たとえば、拡張機能は、拡張可能スイッチ ポートに転送するマルチキャスト パケットが発生した場合にこの情報を必要があります。
 
-拡張可能スイッチの管理パスの詳細については、[Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)を参照してください。
+拡張可能スイッチの管理パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)します。
 
  
 

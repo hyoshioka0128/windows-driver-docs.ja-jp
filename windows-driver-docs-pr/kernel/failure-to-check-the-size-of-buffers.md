@@ -1,6 +1,6 @@
 ---
-title: バッファーのサイズを確認するエラー
-description: バッファーのサイズを確認するエラー
+title: バッファーのサイズの確認エラー
+description: バッファーのサイズの確認エラー
 ms.assetid: e9d9a5d9-19a5-4a1d-95f9-df2021c51c41
 keywords:
 - バッファー サイズの WDK カーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2673d535c8b2d123e5fa6c53f8c9eaeac8583a2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359996"
 ---
-# <a name="failure-to-check-the-size-of-buffers"></a>バッファーのサイズを確認するエラー
+# <a name="failure-to-check-the-size-of-buffers"></a>バッファーのサイズの確認エラー
 
 
 
@@ -54,7 +54,7 @@ Ioctl およびバッファー内の I/O を実装する FSCTLs を処理する�
 
 可変サイズのバッファーを使用する WMI 要求などのバッファー内の他の I/O を処理するコードは、同様のエラーを持つことができます。
 
-### <a name="output-buffer-size"></a>出力バッファーのサイズ
+### <a name="output-buffer-size"></a>出力バッファー サイズ
 
 出力バッファーの問題は、入力バッファーの問題に似ています。 プールを破損することが簡単にして、ユーザー モードの呼び出し元にエラーが発生したことを認識できない可能性があります。
 

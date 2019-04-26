@@ -1,17 +1,17 @@
 ---
-title: 運用上のポート
-description: 運用上のポート
+title: 操作ポート
+description: 操作ポート
 ms.assetid: 647EBDFD-A100-46A7-B387-BF11004415EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1099da8298d00f12290045da7df747c8a8c044c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359141"
 ---
-# <a name="operational-ports"></a>運用上のポート
+# <a name="operational-ports"></a>操作ポート
 
 
 Windows Server 2012 で NDIS 6.30 以降では、拡張可能スイッチのインターフェイスは、拡張可能スイッチのネットワーク アダプターの接続をホストする運用上のポートを作成します。 拡張可能スイッチ ポートが作成されると、ポートの種類が割り当てられます。 破棄する前に、ポートを作成した後、このポートの種類は有効では。 運用上のポートの種類は HYPER-V 子パーティションに割り当てられているポートについては、パーティションが実行され、運用中で有効になります。

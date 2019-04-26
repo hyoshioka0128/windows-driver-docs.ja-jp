@@ -1,6 +1,6 @@
 ---
-title: VRAM に圧縮されていないデータのキャプチャ
-description: VRAM に圧縮されていないデータのキャプチャ
+title: 圧縮されていないデータの VRAM へのキャプチャ
+description: 圧縮されていないデータの VRAM へのキャプチャ
 ms.assetid: efec607d-3337-40a5-812c-57292f201d54
 keywords:
 - VRAM キャプチャ WDK AVStream、圧縮されていないデータ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59ef846fe259895bc3a0c5ce0dff4a4ffe017fc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357029"
 ---
-# <a name="capturing-uncompressed-data-to-vram"></a>VRAM に圧縮されていないデータのキャプチャ
+# <a name="capturing-uncompressed-data-to-vram"></a>圧縮されていないデータの VRAM へのキャプチャ
 
 
 VRAM が有効な AVStream ミニドライバーは、キャプチャ暗証番号 (pin) の記述子では、次のサポートを提供することで圧縮されていないデータをキャプチャできます。

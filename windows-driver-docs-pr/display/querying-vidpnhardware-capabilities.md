@@ -1,19 +1,19 @@
 ---
-title: クエリの VidPN ハードウェア機能
-description: クエリの VidPN ハードウェア機能
+title: VidPN ハードウェア機能のクエリ
+description: VidPN ハードウェア機能のクエリ
 ms.assetid: fb7939bb-ff7e-4ba8-b801-ac10010c44b7
 keywords:
 - VidPN WDK の表示、ハードウェアの機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 725186db025fb355b48200ad21a2b88eb1404c51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351457"
 ---
-# <a name="querying-vidpn-hardware-capabilities"></a>クエリの VidPN ハードウェア機能
+# <a name="querying-vidpn-hardware-capabilities"></a>VidPN ハードウェア機能のクエリ
 
 
 Windows 7 以降、ミニポート ドライバーが指定した機能 VidPN のすべてのハードウェア機能を報告する必要があるされます。 ドライバーには、次のコールバック関数とその関連付けられている構造体をサポートする必要があります。

@@ -7,11 +7,11 @@ keywords:
 - WSK_SET_STATIC_EVENT_CALLBACKS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 19bee586264f06c08e2f8d8831d88ad743b4d2a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356776"
 ---
 # <a name="wsksetstaticeventcallbacks"></a>WSK\_設定\_静的\_イベント\_コールバック
 
@@ -67,9 +67,9 @@ WSK アプリケーションを呼び出す特定イベントのコールバッ�
 
 WSK アプリケーションのさまざまなソケットの種類についてイベント フラグの組み合わせを指定できます、**使う**のメンバー、 [ **WSK\_イベント\_コールバック\_コントロール** ](https://msdn.microsoft.com/library/windows/hardware/ff571166)構造体。 WSK サブシステムで、特定の適切なイベントのコールバック関数が自動的に有効に WSK アプリケーションでは、新しいソケットを作成するとき[カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff571093)WSK ソケットが作成されるのです。
 
-標準的な WSK イベントのコールバック関数のイベント フラグの詳細については、[**ように\_WSK\_イベント\_コールバック**](so-wsk-event-callback.md)を参照してください。
+標準的な WSK イベントのコールバック関数のイベント フラグの詳細については、次を参照してください。 [**ように\_WSK\_イベント\_コールバック**](so-wsk-event-callback.md)します。
 
-有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、[の有効化と無効にするとイベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff548851)を参照してください。
+有効にして、ソケットのイベントのコールバック関数を無効化の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff548851)します。
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 

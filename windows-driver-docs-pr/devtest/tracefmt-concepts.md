@@ -1,23 +1,23 @@
 ---
-title: Tracefmt 概念
-description: Tracefmt 概念
+title: Tracefmt の概念
+description: Tracefmt の概念
 ms.assetid: 42e22b26-b537-4684-af8e-32604a6ffaac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c68709fb20a42e364cb5c09482180b635191c17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354340"
 ---
-# <a name="tracefmt-concepts"></a>Tracefmt 概念
+# <a name="tracefmt-concepts"></a>Tracefmt の概念
 
 
 ## <span id="ddk_tracefmt_concepts_tools"></span><span id="DDK_TRACEFMT_CONCEPTS_TOOLS"></span>
 
 
-このトピックでは、Tracefmt を基になる概念を説明します。 すべての Windows トレース ツールに共通の概念については、[トレース ツールの概念](tracing-tool-concepts.md)を参照してください。
+このトピックでは、Tracefmt を基になる概念を説明します。 すべての Windows トレース ツールに共通の概念については、次を参照してください。[トレース ツールの概念](tracing-tool-concepts.md)します。
 
 このトピックには次が含まれます。
 

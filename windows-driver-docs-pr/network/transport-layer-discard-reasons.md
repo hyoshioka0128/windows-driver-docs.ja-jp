@@ -1,5 +1,5 @@
 ---
-title: トランスポート層の破棄の理由
+title: トランスポート レイヤー破棄理由
 description: このセクションでは、Windows Filtering Platform コールアウト ドライバーのトランスポート層の破棄理由について説明します。
 ms.assetid: e2a9dcd1-87c6-4052-ae96-3a7994328dd0
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5008e6eb284ba76b671909b1e1a01aeed12fe001
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358380"
 ---
-# <a name="transport-layer-discard-reasons"></a>トランスポート層の破棄の理由
+# <a name="transport-layer-discard-reasons"></a>トランスポート レイヤー破棄理由
 
 識別子のトランスポート層のいずれかによってデータが破棄された原因には次のとおりです。 これらの識別子は、Fwpsk.h で定義されている INET_DISCARD_REASON 列挙で定数の値です。
 

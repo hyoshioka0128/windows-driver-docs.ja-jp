@@ -1,6 +1,6 @@
 ---
-title: ファイル名を管理します。
-description: ファイル名を管理します。
+title: ファイル名の管理
+description: ファイル名の管理
 ms.assetid: 390c3817-e306-4d20-9ec0-9d68ccc8ff1b
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター、ファイル名
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e49472487be997520fac5bd3d98960ed81d8a48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357548"
 ---
-# <a name="managing-file-names"></a>ファイル名を管理します。
+# <a name="managing-file-names"></a>ファイル名の管理
 
 
 フィルター マネージャーは、レガシ フィルター ドライバーを取得し、ファイル名を管理するために必要な作業の大半を排除します。 フィルター マネージャーが、現在の操作、適切な形式で参照カウントされた構造に名前を提供する名前が要求されたときに: 名前、開かれている名前、または短い名前を正規化します。

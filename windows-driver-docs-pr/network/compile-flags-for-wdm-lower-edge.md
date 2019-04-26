@@ -1,6 +1,6 @@
 ---
-title: WDM 下端のフラグをコンパイルします。
-description: WDM 下端のフラグをコンパイルします。
+title: WDM の下端のコンパイル フラグ
+description: WDM の下端のコンパイル フラグ
 ms.assetid: 60fbee2a-b8f3-4d1a-95c2-b4962a406065
 keywords:
 - NDIS WDM ミニポート ドライバー WDK ネットワー キング、コンパイル フラグ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b7fcf5c7f29e17abdb009b6e1b120b9f40bd6a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356917"
 ---
-# <a name="compile-flags-for-wdm-lower-edge"></a>WDM 下端のフラグをコンパイルします。
+# <a name="compile-flags-for-wdm-lower-edge"></a>WDM の下端のコンパイル フラグ
 
 
 

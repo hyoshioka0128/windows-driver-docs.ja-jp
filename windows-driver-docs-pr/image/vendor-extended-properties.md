@@ -5,11 +5,11 @@ ms.assetid: bcc89272-c14d-4d46-a2ca-7da0fb188111
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15937fdd0040d87217fc01ff00a73741951d5976
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356144"
 ---
 # <a name="vendor-extended-properties"></a>ベンダー拡張プロパティ
 

@@ -1,6 +1,6 @@
 ---
-title: GDI の画面に切り替える
-description: GDI の画面に切り替える
+title: GDI サーフェスへの切り替え
+description: GDI サーフェスへの切り替え
 ms.assetid: e74e108d-f88c-4e42-9136-ef087378807a
 keywords:
 - 図面ページ WDK DirectDraw、GDI の画面を反転します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5287f565c499a1325bc7b7d049946bc57359f1d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359404"
 ---
-# <a name="flipping-to-the-gdi-surface"></a>GDI の画面に切り替える
+# <a name="flipping-to-the-gdi-surface"></a>GDI サーフェスへの切り替え
 
 
 ## <span id="ddk_flipping_to_the_gdi_surface_gg"></span><span id="DDK_FLIPPING_TO_THE_GDI_SURFACE_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 61A3AE1B-2256-4034-AE9F-86E6900D9093
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f17cc44c5827959cbe3c2fd1306cb16d672ef25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356640"
 ---
 # <a name="step-2-create-device-metadata-for-your-uwp-device-app"></a>手順 2:UWP デバイス アプリのデバイス メタデータを作成します。
 
@@ -17,7 +17,7 @@ ms.locfileid: "56550931"
 
 このトピックでは、使用する方法を説明します、**デバイス メタデータの作成ウィザード**UWP デバイス アプリをデバイスに関連付けられる新しいデバイス メタデータを作成します。 ウィザードで作成できますも、 **StoreManfest.xml**ファイルを次の手順で、アプリを追加する必要があります。
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
 **注**このトピックはステップ バイ ステップの一連の一部です。 参照してください[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)導入します。
 
@@ -74,7 +74,7 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 
     他のアプリを選択し、デバイスの自動再生ハンドラーとして機能できるようにする場合**登録済みのアプリの自動再生を有効にする**します。
 
-    自動再生の詳細については、[UWP デバイス アプリの自動再生](autoplay-for-uwp-device-apps.md)を参照してください。
+    自動再生の詳細については、次を参照してください。 [UWP デバイス アプリの自動再生](autoplay-for-uwp-device-apps.md)します。
 
 11. 続行する準備ができたら、クリックして**次**します。
 
@@ -90,6 +90,6 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 
 [UWP デバイス アプリをビルドします。](the-workflow.md)
 
-[デバイスとの同期と UWP デバイス アプリの更新](device-sync-and-update-for-uwp-device-apps.md)
+[UWP デバイス アプリによるデバイスの同期と更新](device-sync-and-update-for-uwp-device-apps.md)
 
 [内部デバイス用の UWP デバイス アプリ](uwp-device-apps-for-specialized-devices.md)

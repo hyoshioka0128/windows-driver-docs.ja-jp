@@ -1,15 +1,15 @@
 ---
-title: OID_NIC_SWITCH_ALLOCATE_VF 要求を発行
-description: OID_NIC_SWITCH_ALLOCATE_VF 要求を発行
+title: OID_NIC_SWITCH_ALLOCATE_VF 要求の発行
+description: OID_NIC_SWITCH_ALLOCATE_VF 要求の発行
 ms.assetid: 72285E72-DEC7-4578-9B6C-E616FECD6F41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48395ca61ef3e2cc48ae1bee5394d19173829140
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353751"
 ---
 # <a name="issuing-oidnicswitchallocatevf-requests"></a>OID の発行\_NIC\_スイッチ\_ALLOCATE\_VF 要求
 
@@ -22,7 +22,7 @@ ms.locfileid: "56531467"
 
     **注**Windows Server 2012 で NDIS 6.30 以降、SR-IOV インターフェイスに対してのみサポートして既定の NIC のスイッチ、ネットワーク アダプター。 値、 **SwitchId** NDIS にメンバーを設定する必要があります\_既定\_スイッチ\_id。
 
-    NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
+    NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
 
 -   **VFId** NDIS にメンバーを設定する必要があります\_無効な\_VF\_関数\_id。
 
@@ -38,7 +38,7 @@ ms.locfileid: "56531467"
 
     VF のリソースが割り当てられているし、子パーティションにアタッチされている、VF のネットワーク アダプターがゲスト オペレーティング システムに公開されます。 VM のネットワーク アダプターのチームは、パケットの転送、VF のネットワーク アダプターと VF、ハードウェア ベースのデータ パス経由でします。
 
-    ただし、VF は、ライブ マイグレーション中のプロセスなど、子パーティションからデタッチでした。 この場合、ソフトウェア ベースの合成データ パスを介してパケットの転送が行われます。 これらのデータ パスの詳細については、[SR-IOV データ パス](sr-iov-data-paths.md)を参照してください。
+    ただし、VF は、ライブ マイグレーション中のプロセスなど、子パーティションからデタッチでした。 この場合、ソフトウェア ベースの合成データ パスを介してパケットの転送が行われます。 これらのデータ パスの詳細については、次を参照してください。 [SR-IOV データ パス](sr-iov-data-paths.md)します。
 
 -   **PermanentMacAddress**と**CurrentMacAddress**メンバーに設定してください、メディア、VF の仮想ネットワーク アダプターのアクセス制御 (MAC) アドレス。 これらのアドレスは、HYPER-V 子パーティションのゲスト オペレーティング システムで実行されているネットワーク スタックに公開されます。
 

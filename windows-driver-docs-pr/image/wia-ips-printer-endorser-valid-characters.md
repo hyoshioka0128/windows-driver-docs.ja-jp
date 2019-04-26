@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c65c9ab5bbdf94c3d4d2859910cfa9f003b95c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360036"
 ---
 # <a name="wiaipsprinterendorservalidcharacters"></a>WIA\_IP\_プリンター\_裏書き\_有効\_文字
 
@@ -37,16 +37,16 @@ ms.locfileid: "56571666"
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ・ インプリント ・/裏書きのすべての項目で発生するすべての文字をサポートする必要があります、 [ **WIA\_IP\_プリンター\_裏書き\_有効\_形式\_指定子**](wia-ips-printer-endorser-valid-format-specifiers.md)値 (ある場合)、'$' 文字を含むです。 ・ インプリント ・/機能、WiaImgFmt をサポートしている場合\_の CSV 値[ **WIA\_IPA\_TYMED**](wia-ipa-tymed.md)、'、' (コンマ) 文字をで表示されない必要があります**WIA\_IP\_プリンター\_裏書き\_有効\_文字**します。
 
 このプロパティは・ インプリント ・/裏書きデータ ソース アイテムをすべて省略可能です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: PwrTest プラットフォーム アイドル状態のシナリオ
+title: PwrTest のプラットフォーム アイドル シナリオ
 description: PwrTest プラットフォームのアイドル状態のシナリオ (/platidle) をポーリングし、コンピューターでサポートされている場合、プラットフォームのアイドル状態の遷移の数をログインしようとしています。
 ms.assetid: 71A3AB26-AAC5-46DB-99A3-6693D5AF5AC9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2a477c5a1ff8ad446ac8bdee6aeaa9238345b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360096"
 ---
-# <a name="pwrtest-platform-idle-scenario"></a>PwrTest プラットフォーム アイドル状態のシナリオ
+# <a name="pwrtest-platform-idle-scenario"></a>PwrTest のプラットフォーム アイドル シナリオ
 
 
 PwrTest プラットフォームのアイドル状態のシナリオ (**/platidle**) をポーリングし、コンピューターでサポートされている場合、プラットフォームのアイドル状態の遷移の数をログインしようとしています。
@@ -33,7 +33,7 @@ pwrtest /platidle  [/t:n] [/i:n] [/?]
 <span id="_i_n"></span><span id="_I_N"></span>**/i:**<em>n</em>  
 ポーリング間隔を秒単位でプラットフォームのアイドル状態の統計情報の収集を指定します (既定値の*n*は 5 秒です)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /platidle /t:60

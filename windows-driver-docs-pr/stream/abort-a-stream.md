@@ -1,6 +1,6 @@
 ---
-title: Stream を中止します。
-description: Stream を中止します。
+title: ストリームの中止
+description: ストリームの中止
 ms.assetid: 46c726b6-8553-4588-9be1-2cf7779efec5
 keywords:
 - Avcstrm.sys フィルター ドライバー WDK のストリーミング、ストリームを中止しています
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48ec5181a900d67261bb34f235729d5d1f2bee4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357222"
 ---
-# <a name="abort-a-stream"></a>Stream を中止します。
+# <a name="abort-a-stream"></a>ストリームの中止
 
 
 

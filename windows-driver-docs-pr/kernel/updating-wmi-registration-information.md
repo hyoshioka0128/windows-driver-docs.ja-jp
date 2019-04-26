@@ -1,6 +1,6 @@
 ---
-title: WMI の登録情報を更新しています
-description: WMI の登録情報を更新しています
+title: WMI 登録情報の更新
+description: WMI 登録情報の更新
 ms.assetid: d24688e5-bb50-4bce-a4d4-4a3bf886f86d
 keywords:
 - WMI の WDK カーネルでは、WMI に登録します。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67ab688a5299ac20a91de68e450c80bf62322dde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355278"
 ---
-# <a name="updating-wmi-registration-information"></a>WMI の登録情報を更新しています
+# <a name="updating-wmi-registration-information"></a>WMI 登録情報の更新
 
 
 

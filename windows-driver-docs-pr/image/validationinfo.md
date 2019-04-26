@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6dd42552ec29116bdcd47a0bea3117c4c7b012
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354863"
 ---
 # <a name="validationinfo-element"></a>ValidationInfo 要素
 
@@ -82,7 +82,7 @@ ms.locfileid: "56581869"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **ValidationInfo**要素には定義する要素が含まれて かどうか、クライアントの[ **ScanTicket** ](scanticket.md)が有効では、WSD スキャン サービスの変更にどのようなデータそうでない場合、チケットが無効です。 スキャン サービスには、この情報が返されます。 その[ **ValidateScanTicketResponse** ](validatescanticketresponse.md)操作。

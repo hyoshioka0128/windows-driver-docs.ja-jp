@@ -6,11 +6,11 @@ keywords: 受信側のスケーリングのバージョン 2、RSSv2、受信側
 ms.date: 10/12/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7dad30280a68c572c982e119b16bbce0b8293d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353211"
 ---
 # <a name="receive-side-scaling-version-2-rssv2"></a>Receive Side Scaling Version 2 (RSSv2)
 
@@ -22,7 +22,7 @@ ms.locfileid: "56578207"
 
 RSSv2 は、RSSv1 と比較して、CPU 負荷の測定と間接指定テーブルを更新するまでの時間が短縮されます。 高トラフィックの状況時に速度の低下を回避できます。 これを実現する RSSv2 は IRQL でそのアクションを実行、要求を処理のプロセッサ コンテキスト = DISPATCH_LEVEL とを現在のプロセッサを指す間接指定テーブル エントリのサブセットについてだけ動作します。 つまり RSSv2 が動的に分散させることは、RSSv1 よりもはるかに使えるレスポンシブ複数のプロセッサにキューを受信します。
 
-2 つの Oid [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)と[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)、適切な RSS 機能とコントロールを設定する、ミニポート ドライバー RSSv2 に導入されました。間接指定は、それぞれ表。 にします。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 は正規の OID、OID_GEN_RSS_SET_INDIRECTION_ENTRIES は同期の OID を NDIS_STATUS_PENDING を返すことはできません。 これらの Oid の詳細については、その個々 のリファレンス ページを参照してください。 同期の Oid の詳細については、[NDIS 6.80 で同期 OID 要求インターフェイス](synchronous-oid-request-interface-in-ndis-6-80.md)を参照してください。
+2 つの Oid [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)と[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)、適切な RSS 機能とコントロールを設定する、ミニポート ドライバー RSSv2 に導入されました。間接指定は、それぞれ表。 にします。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 は正規の OID、OID_GEN_RSS_SET_INDIRECTION_ENTRIES は同期の OID を NDIS_STATUS_PENDING を返すことはできません。 これらの Oid の詳細については、その個々 のリファレンス ページを参照してください。 同期の Oid の詳細については、次を参照してください。 [NDIS 6.80 で同期 OID 要求インターフェイス](synchronous-oid-request-interface-in-ndis-6-80.md)します。
 
 ## <a name="rssv2-terminology"></a>RSSv2 用語集
 

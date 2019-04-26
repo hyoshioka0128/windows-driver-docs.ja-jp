@@ -1,6 +1,6 @@
 ---
-title: 作成して、ドライバーに作成されたファイル オブジェクトを使用します。
-description: 作成して、ドライバーに作成されたファイル オブジェクトを使用します。
+title: ドライバー作成ファイル オブジェクトの作成と使用
+description: ドライバー作成ファイル オブジェクトの作成と使用
 ms.assetid: 84b677b4-fddf-4f06-9ea6-e4642c3f1b2d
 keywords:
 - ドライバーに作成されたファイル オブジェクト WDK UMDF
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca6e7a6e717d78b4c938b0fc056188874f40d59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358483"
 ---
-# <a name="creating-and-using-driver-created-file-objects"></a>作成して、ドライバーに作成されたファイル オブジェクトを使用します。
+# <a name="creating-and-using-driver-created-file-objects"></a>ドライバー作成ファイル オブジェクトの作成と使用
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "56560092"
 
 Framework の呼び出し後に[ **OnCloseFile**](https://msdn.microsoft.com/library/windows/hardware/ff554910)、破棄、 [IWDFFile](https://msdn.microsoft.com/library/windows/hardware/ff558912)ファイル オブジェクトを表すインターフェイスです。
 
-ドライバーに作成されたファイル オブジェクトが、ドライバーのデバイスの削除メソッドの後に残っている場合 (たとえば[ **IPnpCallbackHardware::OnReleaseHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556768)と[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup**](https://msdn.microsoft.com/library/windows/hardware/ff556780)) 戻り、ドライバーの停止はフレームワークに生成されます。 この問題をトラブルシューティングする方法の詳細については、[を決定する理由 UMDF 示します未処理のファイルがデバイスの削除時に](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)を参照してください。
+ドライバーに作成されたファイル オブジェクトが、ドライバーのデバイスの削除メソッドの後に残っている場合 (たとえば[ **IPnpCallbackHardware::OnReleaseHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556768)と[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup**](https://msdn.microsoft.com/library/windows/hardware/ff556780)) 戻り、ドライバーの停止はフレームワークに生成されます。 この問題をトラブルシューティングする方法の詳細については、次を参照してください。[を決定する理由 UMDF 示します未処理のファイルがデバイスの削除時に](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)します。
 
  
 

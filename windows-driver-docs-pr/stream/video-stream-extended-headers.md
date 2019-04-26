@@ -1,6 +1,6 @@
 ---
-title: ビデオの Stream 拡張ヘッダー
-description: ビデオの Stream 拡張ヘッダー
+title: ビデオ ストリームの拡張ヘッダー
+description: ビデオ ストリームの拡張ヘッダー
 ms.assetid: 6540026c-a41a-49e2-a41f-fe64106408f5
 keywords:
 - ビデオ キャプチャ WDK AVStream、拡張ヘッダー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 175cdf1e81deccbfb9c2222a1d069c2e87e24072
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359606"
 ---
-# <a name="video-stream-extended-headers"></a>ビデオの Stream 拡張ヘッダー
+# <a name="video-stream-extended-headers"></a>ビデオ ストリームの拡張ヘッダー
 
 
 ビデオ キャプチャ ミニドライバーでは、その出力ストリームに含まれる拡張のヘッダーを使用して、ストリームと現在のフレームの内容に関する補足情報を提供します。 たとえば、イメージ ストリーム ヘッダーは、現在のフレーム数、フレームのドロップ、およびフィールドの極性フラグの数に関する情報を提供します。 各フレームが完了したため、ミニドライバーは、キャプチャされたフレームに関する補足情報と拡張のヘッダーに格納します。

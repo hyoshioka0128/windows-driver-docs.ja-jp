@@ -1,6 +1,6 @@
 ---
-title: SAN サービス プロバイダーのプロキシ ドライバーを作成します。
-description: SAN サービス プロバイダーのプロキシ ドライバーを作成します。
+title: SAN サービス プロバイダー向けのプロキシ ドライバーの作成
+description: SAN サービス プロバイダー向けのプロキシ ドライバーの作成
 ms.assetid: 350c21a3-98e3-48a2-8403-68de97314933
 keywords:
 - Windows ソケットは、WDK をプロキシ ドライバーを直接します。
@@ -12,19 +12,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cfabd7a3321436740cab7fe58a95e2bd7323e71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357360"
 ---
-# <a name="creating-a-proxy-driver-for-a-san-service-provider"></a>SAN サービス プロバイダーのプロキシ ドライバーを作成します。
+# <a name="creating-a-proxy-driver-for-a-san-service-provider"></a>SAN サービス プロバイダー向けのプロキシ ドライバーの作成
 
 
 
 
 
-SAN サービス プロバイダーのプロキシ ドライバーは、Windows Sockets スイッチに必要なタスクを実行するカーネル モード ドライバーと SAN サービス プロバイダー。 このようなタスクには、メモリの管理とのネットワーク インターフェイス コント ローラー (Nic)、プロキシ ドライバーの制御下にある IP アドレスの決定が含まれます。 プロキシ ドライバーは、Windows Driver Model (WDM) ドライバーを使用する必要はありません。 つまり、プラグ アンド プレイまたは電源の管理をサポートする必要はありません。 カーネル モード ドライバーの開発に関する詳細については、[カーネル モード ドライバー コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff553213)を参照してください。
+SAN サービス プロバイダーのプロキシ ドライバーは、Windows Sockets スイッチに必要なタスクを実行するカーネル モード ドライバーと SAN サービス プロバイダー。 このようなタスクには、メモリの管理とのネットワーク インターフェイス コント ローラー (Nic)、プロキシ ドライバーの制御下にある IP アドレスの決定が含まれます。 プロキシ ドライバーは、Windows Driver Model (WDM) ドライバーを使用する必要はありません。 つまり、プラグ アンド プレイまたは電源の管理をサポートする必要はありません。 カーネル モード ドライバーの開発に関する詳細については、次を参照してください。[カーネル モード ドライバー コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff553213)します。
 
 さまざまなベンダーでは、さまざまな基になるテクノロジを使用して、SAN ネットワーク インターフェイス コント ローラー (Nic) を実装する場合があります、ため Windows Sockets ダイレクトで指定されていない SAN サービス プロバイダーとそのプロキシ ドライバー間や、プロキシ インターフェイスドライバーと SAN を転送します。
 

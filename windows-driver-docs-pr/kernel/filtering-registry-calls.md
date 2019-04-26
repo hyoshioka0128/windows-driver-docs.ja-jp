@@ -1,6 +1,6 @@
 ---
-title: レジストリの呼び出しをフィルター処理
-description: レジストリの呼び出しをフィルター処理
+title: レジストリ呼び出しのフィルター処理
+description: レジストリ呼び出しのフィルター処理
 ms.assetid: 6b35c3a0-4ece-4101-b348-e71f5cccf0c8
 keywords:
 - レジストリの呼び出しの WDK カーネルをフィルター処理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3875f62cc4aa19e775384500c6653097d83d2bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359948"
 ---
-# <a name="filtering-registry-calls"></a>レジストリの呼び出しをフィルター処理
+# <a name="filtering-registry-calls"></a>レジストリ呼び出しのフィルター処理
 
 
 A*レジストリのドライバーをフィルタ リング*は任意のカーネル モード ドライバーのウイルス対策ソフトウェア パッケージのドライバー コンポーネントなど、レジストリの呼び出しをフィルター処理します。 レジストリを実装するには、configuration manager では、レジストリの関数のすべてのスレッドの呼び出しをフィルター処理するレジストリのフィルター ドライバーを許可します。 Microsoft Windows XP では、レジストリ呼び出しのフィルター処理はサポートが最初。
@@ -42,7 +42,7 @@ Windows Vista では、次の追加レジストリ フィルタ リング機能�
 
 -   ドライバーは、追加のレジストリの操作の通知を受信します。
 
-ドライバーは、Windows の各バージョンでフィルター処理できるレジストリの操作の一覧は、[ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)を参照してください。
+ドライバーは、Windows の各バージョンでフィルター処理できるレジストリの操作の一覧は、次を参照してください。 [ **REG\_通知\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560950)します。
 
 レジストリの呼び出しをフィルター処理の詳細については、次のトピックを参照してください。
 

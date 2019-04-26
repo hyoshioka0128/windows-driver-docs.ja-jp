@@ -1,6 +1,6 @@
 ---
-title: 省略可能なプロトコル ドライバー サービスを構成します。
-description: 省略可能なプロトコル ドライバー サービスを構成します。
+title: オプションのプロトコル ドライバー サービスの構成
+description: オプションのプロトコル ドライバー サービスの構成
 ms.assetid: 3bb6d0ed-bc44-48c6-8f28-d861c4ff7a87
 keywords:
 - プロトコル ドライバー WDK、省略可能なネットワーク サービス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 038ef1eaf48247d5f723ba837c720ed43eda605a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357438"
 ---
-# <a name="configuring-optional-protocol-driver-services"></a>省略可能なプロトコル ドライバー サービスを構成します。
+# <a name="configuring-optional-protocol-driver-services"></a>オプションのプロトコル ドライバー サービスの構成
 
 
 

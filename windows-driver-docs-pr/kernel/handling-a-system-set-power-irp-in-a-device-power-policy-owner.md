@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源ポリシー所有者にシステム セット Power IRP の処理
-description: デバイスの電源ポリシー所有者にシステム セット Power IRP の処理
+title: デバイス電源ポリシー所有者のシステム電源設定 IRP の処理
+description: デバイス電源ポリシー所有者のシステム電源設定 IRP の処理
 ms.assetid: f6206455-142b-4f3f-ae5a-d8e79386bce3
 keywords:
 - セット power Irp WDK の電源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8e8cb45d24f56a788d75a8c91cca222847fae21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359830"
 ---
-# <a name="handling-a-system-set-power-irp-in-a-device-power-policy-owner"></a>デバイスの電源ポリシー所有者にシステム セット Power IRP の処理
+# <a name="handling-a-system-set-power-irp-in-a-device-power-policy-owner"></a>デバイス電源ポリシー所有者のシステム電源設定 IRP の処理
 
 
 

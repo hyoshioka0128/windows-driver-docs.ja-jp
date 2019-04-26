@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8a03d693785cf574d5b11af39ab1ea9746f676b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356416"
 ---
 # <a name="nt-kernel-logger-trace-session"></a>NT カーネル ロガー トレース セッション
 
@@ -28,7 +28,7 @@ NT Kernel Logger のトレース セッション中にトレース イベント�
 
 既定では、トレース ログ、NT Kernel Logger セッションの開始時に、プロセス、スレッド、物理ディスク I/O、トレースと TCP/IP イベントを有効。 にします。 ただしを有効にするか、次の方法で特定のイベントのトレースを無効にします。
 
--   トレース ログ コマンド ライン パラメーターを使用します。 詳細については、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)を参照してください。
+-   トレース ログ コマンド ライン パラメーターを使用します。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
 
 -   チェック ボックスを設定して、 [traceview で](traceview.md)GUI です。
 

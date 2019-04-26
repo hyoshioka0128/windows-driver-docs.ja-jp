@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier の概要
-description: Static Driver Verifier の概要
+title: 静的ドライバー検証ツールとは
+description: 静的ドライバー検証ツールとは
 ms.assetid: fa6e8b0f-0d0f-4293-87ec-e67decd6acb7
 keywords:
 - Static Driver Verifier WDK、Static Driver Verifier について
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6bb44e32f323c409d8f0d8930d2e289ad0210d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356534"
 ---
-# <a name="introducing-static-driver-verifier"></a>Static Driver Verifier の概要
+# <a name="introducing-static-driver-verifier"></a>静的ドライバー検証ツールとは
 
 
 Static Driver Verifier (SDV) は、コンパイル時に実行する静的検証ツールです。 オペレーティング システムの状態と、ドライバーの初期状態について最小限の可能な推測すること、ソース コードをシンボリックに実行をドライバー コード内のパスがについて説明します。 その結果、SDV は、パスで従来のテストが欠落しているコードを実行することができます。

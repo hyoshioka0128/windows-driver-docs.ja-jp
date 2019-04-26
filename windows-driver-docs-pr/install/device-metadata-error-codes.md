@@ -5,16 +5,16 @@ ms.assetid: 7ca3b9d3-8e7d-4421-affa-bddea2d4c262
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0724edeae8b219dd267367712229b3a9158f87e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357892"
 ---
 # <a name="device-metadata-error-codes"></a>デバイス メタデータのエラー コード
 
 
-以降、Windows 7 オペレーティング システムでは、次のエラー コードのダウンロードに関連するイベント内のログと、デバイス メタデータ パッケージの処理します。 これらのイベントは Event Tracing for Windows (ETW) サービスによって管理され、イベント ビューアーを使用して表示することができます。 これらのイベントに関する詳細については、[デバッグ デバイス メタデータ パッケージを使用してイベント ビューアー](debugging-device-metadata-packages-by-using-event-viewer.md)を参照してください。
+以降、Windows 7 オペレーティング システムでは、次のエラー コードのダウンロードに関連するイベント内のログと、デバイス メタデータ パッケージの処理します。 これらのイベントは Event Tracing for Windows (ETW) サービスによって管理され、イベント ビューアーを使用して表示することができます。 これらのイベントに関する詳細については、次を参照してください。[デバッグ デバイス メタデータ パッケージを使用してイベント ビューアー](debugging-device-metadata-packages-by-using-event-viewer.md)します。
 
 <a href="" id="windows-metadata-and-internet-services--wmis--errors--200000xx-"></a>Windows メタデータとインターネット サービス (WMIS) エラー (200000xx)  
 <table>

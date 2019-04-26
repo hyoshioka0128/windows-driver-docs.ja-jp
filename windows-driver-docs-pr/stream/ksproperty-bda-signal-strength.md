@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62501a1a3ab272be4c1da73981a1d139f80b10ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357012"
 ---
 # <a name="kspropertybdasignalstrength"></a>KSPROPERTY\_BDA\_信号\_強度
 
@@ -54,7 +54,7 @@ ms.locfileid: "56535786"
 <td><p>〇</p></td>
 <td><p>Pin またはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ ms.locfileid: "56535786"
 
 0 の強度は標準強度のブロードキャスト ネットワークの特定の種類が必要です。 Subnominal 長所は、正の mDb として報告されます。 超名目上の長所は、負の mDb として報告されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

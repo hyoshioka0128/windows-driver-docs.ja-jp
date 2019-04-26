@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dda7b0529f1523625ad6cb0563bde2e45ac5a7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355446"
 ---
 # <a name="analyzing-a-kernel-mode-dump-file-with-kd"></a>KD によるカーネルモード ダンプ ファイルの分析
 
@@ -28,11 +28,11 @@ KD では、カーネル モード メモリ ダンプ ファイルを分析で�
 
 **kd -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 オプションの一覧については、[ **KD コマンド ライン オプション**](kd-command-line-options.md)を参照してください。
+**-V**オプション (詳細モード) も便利です。 オプションの一覧については、次を参照してください。 [ **KD コマンド ライン オプション**](kd-command-line-options.md)します。
 
 使用して、デバッガーを実行した後も、ダンプ ファイルを開くことができます、 [ **.opendump (ダンプ ファイルを開く)** ](-opendump--open-dump-file-.md)とそれに続くコマンド[ **g (移動)** ](g--go-.md).
 
-同時に複数のダンプ ファイルをデバッグすることになります。 これを行う複数を含む **-z** (それぞれが別のファイル名が後に) コマンド ラインでまたはを使用してスイッチ[ **.opendump** ](-opendump--open-dump-file-.md)として追加のダンプ ファイルを追加するにはデバッガーのターゲット。 複数のターゲットのセッションを制御する方法については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+同時に複数のダンプ ファイルをデバッグすることになります。 これを行う複数を含む **-z** (それぞれが別のファイル名が後に) コマンド ラインでまたはを使用してスイッチ[ **.opendump** ](-opendump--open-dump-file-.md)として追加のダンプ ファイルを追加するにはデバッガーのターゲット。 複数のターゲットのセッションを制御する方法については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
 ダンプ ファイルは、一般に、拡張子 .dmp または .mdmp で終了します。 ネットワーク共有または汎用名前付け規則 (UNC) のメモリ ダンプ ファイルの名前のファイルを使用することができます。
 
@@ -64,7 +64,7 @@ KD では、カーネル モード メモリ ダンプ ファイルを分析で�
 
 [**!process 0 7**](-process.md)
 
-ダンプ ファイルから特定の種類の情報の読み取りに使用できる方法では、[ダンプ ファイルから情報を抽出](extracting-information-from-a-dump-file.md)を参照してください。
+ダンプ ファイルから特定の種類の情報の読み取りに使用できる方法では、次を参照してください。[ダンプ ファイルから情報を抽出](extracting-information-from-a-dump-file.md)します。
 
  
 

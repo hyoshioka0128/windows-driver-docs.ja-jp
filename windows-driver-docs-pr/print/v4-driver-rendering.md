@@ -1,17 +1,17 @@
 ---
-title: V4 プリンター ドライバーの表示
+title: V4 プリンター ドライバー レンダリング
 description: V4 印刷ドライバー モデルを印刷デバイス用のページ記述言語に印刷ジョブを表示するためには、XPSDrv レンダリング モジュールを使用しています。
 ms.assetid: 8952063C-3706-43A0-BA6B-231E7CD01514
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fa8369d625a1c5e0ce9633243507b984a819c4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358674"
 ---
-# <a name="v4-printer-driver-rendering"></a>V4 プリンター ドライバーの表示
+# <a name="v4-printer-driver-rendering"></a>V4 プリンター ドライバー レンダリング
 
 
 V4 印刷ドライバー モデルの使用を印刷デバイス用のページ記述言語に印刷ジョブを表示するため、 [XPSDrv レンダリング モジュール](xpsdrv-render-module.md)します。

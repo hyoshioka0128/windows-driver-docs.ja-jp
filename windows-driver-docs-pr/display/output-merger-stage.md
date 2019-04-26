@@ -1,17 +1,17 @@
 ---
-title: 出力マージャー ステージ
-description: 出力マージャー ステージ
+title: 出力結合 (OM) ステージ
+description: 出力結合 (OM) ステージ
 ms.assetid: 9b549614-0f51-4c79-a6c4-ba907a5f9068
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3de6b397b57ae785c386d2aabc7c5a023ad44df8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358348"
 ---
-# <a name="output-merger-stage"></a>出力マージャー ステージ
+# <a name="output-merger-stage"></a>出力結合 (OM) ステージ
 
 
 論理のパイプラインの最後の手順では、ステンシルまたは深さを記述または出力のブレンド経由の可視性決定、多くのリソースの種類のいずれかのターゲットを表示するためにです。 出力 (レンダー ターゲット) のリソースのバインドと同様に、これらの操作は、出力マージャー ステージで定義されます。

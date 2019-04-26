@@ -1,6 +1,6 @@
 ---
-title: IPsec タスク オフロード、パスが表示されます。
-description: IPsec タスク オフロード、パスが表示されます。
+title: 受信パスでの IPsec タスクのオフロード
+description: 受信パスでの IPsec タスクのオフロード
 ms.assetid: d1dff4fa-7354-4c8c-8591-223c6b524619
 keywords:
 - WDK IPsec オフロード、ESP により保護されたパケットの受信パスのオフロード
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 173ce6885d4b161f40b93be6f625958a523ac60e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359349"
 ---
-# <a name="offloading-ipsec-tasks-in-the-receive-path"></a>IPsec タスク オフロード、パスが表示されます。
+# <a name="offloading-ipsec-tasks-in-the-receive-path"></a>受信パスでの IPsec タスクのオフロード
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 

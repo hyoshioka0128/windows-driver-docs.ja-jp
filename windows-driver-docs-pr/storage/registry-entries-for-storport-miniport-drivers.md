@@ -5,11 +5,11 @@ ms.assetid: 543EC6A4-113C-4525-8063-28854B50760E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d449dd4d6051b90abe5e05425df851f3ebc016a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358322"
 ---
 # <a name="registry-entries-for-storport-miniport-drivers"></a>StorPort ミニポート ドライバーのレジストリ エントリ
 
@@ -32,7 +32,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>DriverParameter</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">任意</td>
 </tr>
 <tr class="odd">
@@ -70,7 +70,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>LinkDownTimeoutValue</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -110,7 +110,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>MaximumLogicalUnit</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -149,7 +149,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>MaximumUCXAddress</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_BINARY</td>
 </tr>
 <tr class="odd">
@@ -188,7 +188,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>MinimumUCXAddress</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_BINARY</td>
 </tr>
 <tr class="odd">
@@ -227,7 +227,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>UncachedExtAlignment</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -238,7 +238,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:0</p>
 <p>最小:3</p>
 <p>最大:16</p></td>
@@ -267,7 +267,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>NumberOfRequests</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -303,7 +303,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>BusType</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -312,7 +312,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:6、 <strong>BusTypeFiber</strong></p>
 <p>最大:0x7f、値が大きい場合は、既定値として扱われます。</p></td>
 </tr>
@@ -340,7 +340,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>IoTimeoutValue</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -378,7 +378,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>IoLatencyCap</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -387,7 +387,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:0</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -418,7 +418,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>TotalSenseDataBytes</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -427,7 +427,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>HKLM\System\CurrentControlSet\Enum&amp;lt; インスタンス パス&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:255</p>
 <p>最小:18</p>
 <p>最大:255</p>
@@ -457,7 +457,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>QueueFullWaitIoPercentage</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -466,7 +466,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:25</p>
 <p>最大:100</p>
 <p>単位:キューの深さの割合</p></td>
@@ -495,7 +495,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>BusyPauseTime</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -532,7 +532,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>BusyPauseTime</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -541,7 +541,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:250</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -569,7 +569,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>BusyRetryCount</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -578,7 +578,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:10</p></td>
 </tr>
 <tr class="odd">
@@ -605,7 +605,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>EnableIdlePowerManagement</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -641,7 +641,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>DisableIdlePowerManagement</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -677,7 +677,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>MinimumIdleTimeoutInMS</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -686,7 +686,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">[値]</td>
+<td align="left">値</td>
 <td align="left"><p>既定:MAXULONG を示す設定を解除します。 ミニポートはタイムアウト値を提供しない場合、実際の既定値は 5 分間、または 5 * 60 * 1000 が。</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -714,7 +714,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>DisableRuntimePowerManagement</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -756,7 +756,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>IdleTimeoutInMS</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">
@@ -793,7 +793,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <td align="left"><strong>DisableD3Cold</strong></td>
 </tr>
 <tr class="even">
-<td align="left">型</td>
+<td align="left">種類</td>
 <td align="left">REG_DWORD</td>
 </tr>
 <tr class="odd">

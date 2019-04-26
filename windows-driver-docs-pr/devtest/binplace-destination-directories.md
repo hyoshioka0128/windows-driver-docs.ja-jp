@@ -1,6 +1,6 @@
 ---
-title: BinPlace コピー先のディレクトリ
-description: BinPlace コピー先のディレクトリ
+title: BinPlace の出力先ディレクトリ
+description: BinPlace の出力先ディレクトリ
 ms.assetid: 7a5a2324-b2a1-488b-b8de-cb5a6319d3ec
 keywords:
 - BinPlace WDK、コピー先のディレクトリ
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff36360cd8e4aa49448a9a01d684f37144de4e5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351473"
 ---
-# <a name="binplace-destination-directories"></a>BinPlace コピー先のディレクトリ
+# <a name="binplace-destination-directories"></a>BinPlace の出力先ディレクトリ
 
 
 ## <span id="ddk_binplace_destination_directories_tools"></span><span id="DDK_BINPLACE_DESTINATION_DIRECTORIES_TOOLS"></span>

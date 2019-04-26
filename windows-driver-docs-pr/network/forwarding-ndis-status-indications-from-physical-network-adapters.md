@@ -5,11 +5,11 @@ ms.assetid: 6EE9BB96-FFAB-4844-9F74-43FB3F18FAB2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb00a0579f21d7fc23cb8204174d4cc0693b3cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356922"
 ---
 # <a name="forwarding-ndis-status-indications-from-physical-network-adapters"></a>物理ネットワーク アダプターからの NDIS 状態表示の転送
 
@@ -18,7 +18,7 @@ ms.locfileid: "56571935"
 
 たとえば、外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX driver は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドされます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。
 
-この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)を参照してください。
+この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
 
 次の図では、NDIS 6.40 (Windows Server 2012 R2) と後で、基になる物理ネットワーク アダプターから NDIS 状態インジケーターの HYPER-V 拡張可能スイッチ コントロール パスが表示されます。
 
@@ -38,7 +38,7 @@ ms.locfileid: "56571935"
 
 転送拡張機能が、NDIS 状態を示す値を受け取ると、元の表示データを転送も示す値を転送する前に、データを変更できます。
 
-**注**  だけが、状態を示す値を転送する前に、データを変更できる転送拡張機能。 この種類の拡張機能の詳細については、[転送拡張機能](forwarding-extensions.md)を参照してください。
+**注**  だけが、状態を示す値を転送する前に、データを変更できる転送拡張機能。 この種類の拡張機能の詳細については、次を参照してください。[転送拡張機能](forwarding-extensions.md)します。
 
  
 
@@ -52,7 +52,7 @@ ms.locfileid: "56571935"
 
 メンバーを設定する必要があります、転送拡張機能では、NDIS 状態を示す値の転送の場合、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/hh598217)次のように構造体。
 
--   **SourcePortId**メンバーは、外部ネットワーク アダプターが接続されているポートの識別子を設定する必要があります。 外部ネットワーク アダプターは、1 つまたは複数の物理アダプターにバインドされます。 詳細については、[外部ネットワーク アダプター](external-network-adapters.md)を参照してください。
+-   **SourcePortId**メンバーは、外部ネットワーク アダプターが接続されているポートの識別子を設定する必要があります。 外部ネットワーク アダプターは、1 つまたは複数の物理アダプターにバインドされます。 詳細については、次を参照してください。[外部ネットワーク アダプター](external-network-adapters.md)します。
 
 -   **SourceNicIndex** NDIS にメンバーを設定する必要があります\_スイッチ\_既定\_NIC\_インデックス。 これにより、外部ネットワーク アダプターにバインドされている全体の拡張可能スイッチ チームからのものとして解釈される状態の表示ができます。
 
@@ -80,7 +80,7 @@ ms.locfileid: "56571935"
 
 3.  後[ **NdisFIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff561824)拡張機能の呼び出しから返される[ *DereferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598141)の参照カウンターをオフにします送信元または送信先のネットワーク アダプター接続します。 拡張機能セット、 *SwitchPortId*と*SwitchNicIndex*を同じパラメーター値への呼び出しで使用されるその it [ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294).
 
-MUX ドライバーの詳細については、[NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)を参照してください。
+MUX ドライバーの詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)します。
 
  
 

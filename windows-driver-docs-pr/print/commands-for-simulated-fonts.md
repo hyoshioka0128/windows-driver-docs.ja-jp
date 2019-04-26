@@ -1,6 +1,6 @@
 ---
-title: シミュレートされたフォント用コマンド
-description: シミュレートされたフォント用コマンド
+title: シミュレーションしたフォントのコマンド
+description: シミュレーションしたフォントのコマンド
 ms.assetid: 3bfdcf86-35ac-4b95-9efd-31f79a8b9871
 keywords:
 - シミュレートされたフォントの WDK Unidrv コマンドします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dc65447889349cf1071c4bb64654a005062c146
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355896"
 ---
-# <a name="commands-for-simulated-fonts"></a>シミュレートされたフォント用コマンド
+# <a name="commands-for-simulated-fonts"></a>シミュレーションしたフォントのコマンド
 
 
 
@@ -121,7 +121,7 @@ ms.locfileid: "56556626"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
  
 

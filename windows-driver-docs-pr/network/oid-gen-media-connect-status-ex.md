@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_CONNECT_STATUS_EX ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 340d83dee8f23949dd80e88e398dd92ee1a721cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358842"
 ---
 # <a name="oidgenmediaconnectstatusex"></a>OID\_GEN\_メディア\_CONNECT\_状態\_例
 
@@ -23,7 +23,7 @@ ms.locfileid: "56580446"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 要求されません。 NDIS インターフェイス プロバイダーのみです。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS の接続の状態を照会するこの OID を使用して、[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー。 のみ NDIS インターフェイス プロバイダー、およびしたがってミニポート ドライバーではないまたはフィルター ドライバー、する必要がありますサポートこの OID OID 要求として。

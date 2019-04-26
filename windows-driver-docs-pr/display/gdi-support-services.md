@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca220ac893d235b99633179f7c4618a3ca9712bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357900"
 ---
 # <a name="gdi-support-services"></a>GDI サポート サービス
 
@@ -62,7 +62,7 @@ ms.locfileid: "56551331"
 
 [ハーフトーン サービス](gdi-halftone-services.md)
 
-[グラフィックス DDI を使用して](using-the-graphics-ddi.md)グラフィックス DDI のエントリ ポイントを説明し、これらのサービス ルーチンの多くを使用して、ドライバーのエントリ ポイントを実装する場所についても説明します。 各サービスの機能の詳細な説明については、[GDI 関数は、プリンターおよびディスプレイ ドライバーによって呼び出されます](https://msdn.microsoft.com/library/windows/hardware/ff566544)を参照してください。
+[グラフィックス DDI を使用して](using-the-graphics-ddi.md)グラフィックス DDI のエントリ ポイントを説明し、これらのサービス ルーチンの多くを使用して、ドライバーのエントリ ポイントを実装する場所についても説明します。 各サービスの機能の詳細な説明については、次を参照してください。 [GDI 関数は、プリンターおよびディスプレイ ドライバーによって呼び出されます](https://msdn.microsoft.com/library/windows/hardware/ff566544)します。
 
  
 

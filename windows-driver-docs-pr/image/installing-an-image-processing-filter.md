@@ -1,17 +1,17 @@
 ---
-title: イメージ処理フィルターをインストールします。
-description: イメージ処理フィルターをインストールします。
+title: 画像処理フィルターのインストール
+description: 画像処理フィルターのインストール
 ms.assetid: bce6405f-0377-4e50-b898-28c6cdb962be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f33e27ca3c5341326922589674415fe017145b02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360034"
 ---
-# <a name="installing-an-image-processing-filter"></a>イメージ処理フィルターをインストールします。
+# <a name="installing-an-image-processing-filter"></a>画像処理フィルターのインストール
 
 
 

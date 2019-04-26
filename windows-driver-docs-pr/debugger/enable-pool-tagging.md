@@ -1,19 +1,19 @@
 ---
-title: プールのタグ付けを有効にします。
-description: プールのタグ付けを有効にします。
+title: Enable pool tagging
+description: Enable pool tagging
 ms.assetid: e88f97a0-a8c3-4162-871a-b78671b902bb
 keywords:
 - プールのタグ (グローバル フラグ) を有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dabbd77f722b6d6b55c0062b42487ea6432a08d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354794"
 ---
-# <a name="enable-pool-tagging"></a>プールのタグ付けを有効にします。
+# <a name="enable-pool-tagging"></a>Enable pool tagging
 
 
 ## <span id="ddk_enable_pool_tagging_dtools"></span><span id="DDK_ENABLE_POOL_TAGGING_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56537400"
 <td align="left"><p>FLG_POOL_ENABLE_TAGGING</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ</p></td>
 </tr>
 </tbody>

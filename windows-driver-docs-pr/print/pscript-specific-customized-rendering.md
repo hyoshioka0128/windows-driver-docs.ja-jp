@@ -1,6 +1,6 @@
 ---
-title: Pscript に固有のレンダリングをカスタマイズします。
-description: Pscript に固有のレンダリングをカスタマイズします。
+title: Pscript 固有のカスタマイズされたレンダリング
+description: Pscript 固有のカスタマイズされたレンダリング
 ms.assetid: e984f0f0-1435-4cfd-9a99-297f6a9521f5
 keywords:
 - プラグインの WDK の印刷、Pscript5 のレンダリング
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a41d7be6c9277e895ba32d029c6218fbf7218305
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357646"
 ---
-# <a name="pscript-specific-customized-rendering"></a>Pscript に固有のレンダリングをカスタマイズします。
+# <a name="pscript-specific-customized-rendering"></a>Pscript 固有のカスタマイズされたレンダリング
 
 
 

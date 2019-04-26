@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_LINK_SPEED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 60b327f047c9f1b510dcc8ec013237b4be100bb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355948"
 ---
 # <a name="oidgenxmitlinkspeed"></a>OID\_GEN\_XMIT\_リンク\_速度
 
@@ -32,7 +32,7 @@ ms.locfileid: "56527274"
 
 インターフェイス プロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、転送を示す ULONG64 値の 1 秒あたりのビット単位で、インターフェイス リンク速度。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

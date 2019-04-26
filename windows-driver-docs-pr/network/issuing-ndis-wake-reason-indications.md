@@ -5,11 +5,11 @@ ms.assetid: F3DBE0DB-9787-4C3D-8DE3-AD47E5778B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ea8b9e3526a346cafafe919b52ef7e739761ecf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353774"
 ---
 # <a name="issuing-ndis-wake-reason-status-indications"></a>NDIS ウェイク理由状態表示の発行
 
@@ -85,7 +85,7 @@ WOL パターンを使用して指定、 **EnabledWoLPacketPatterns**のメン�
 
         -   **SavedPacketSize**を通じて報告されるパケットの長さにメンバーを設定する必要があります、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態を示す値。
 
-            **注**このメンバーの値がミニポート ドライバーに設定した値より大きくはできません、 **MaxWoLPacketSaveBuffer**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 ドライバーは、ウェイク アップ パケットを示す値機能を報告する場合に、この構造体を返します。 詳細については、[Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)を参照してください。
+            **注**このメンバーの値がミニポート ドライバーに設定した値より大きくはできません、 **MaxWoLPacketSaveBuffer**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 ドライバーは、ウェイク アップ パケットを示す値機能を報告する場合に、この構造体を返します。 詳細については、次を参照してください。 [Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)します。
 
         -   **SavedPacketOffset**に続くウェイク アップ パケットをバイト単位のオフセットにメンバーを設定する必要があります、 [ **NDIS\_PM\_WAKE\_パケット**](https://msdn.microsoft.com/library/windows/hardware/hh451603)構造体。
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d60f1b9a3652ddbc5bd211f3d0ece9e7a03ed1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356707"
 ---
 # <a name="kspropertycameracontrolextendedmetadata"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_メタデータ
 
@@ -75,7 +75,7 @@ ms.locfileid: "56529545"
 </colgroup>
 <thead>
 <tr class="header">
-<th>メンバー</th>
+<th>Member</th>
 <th>説明</th>
 </tr>
 </thead>

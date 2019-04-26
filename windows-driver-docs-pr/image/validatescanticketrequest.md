@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dda1f11b6123105b0f2c5abfce44704d3d3fd38b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356148"
 ---
 # <a name="validatescanticketrequest-element"></a>ValidateScanTicketRequest 要素
 
@@ -71,7 +71,7 @@ ms.locfileid: "56559606"
 
 WSD スキャン サービスが正常に処理する場合、 **ValidateScanTicketRequest**でその検証情報が返されます、 [ **ValidateScanTicketResponse** ](validatescanticketresponse.md)操作。 それ以外の場合、スキャン サービスでは、適切なエラー コードを返す必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
 
 この操作は、次のエラー コードを返すも可能性があります。
 
@@ -83,7 +83,7 @@ WSD スキャン サービスが正常に処理する場合、 **ValidateScanTic
     |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | \[コード\]       | soap 送信者:                                                                                                                                                    |
     | \[サブコード\]    | wscn:ClientErrorConflictingRequiredParameters                                                                                                                  |
-    | \[理由\]     | DocumentParameters 要素で複数の要素がある MustHonor true に設定するが、すべての設定を適用する設定を true 競合スキャナーのデバイスで。 |
+    | \[Reason\]     | DocumentParameters 要素で複数の要素がある MustHonor true に設定するが、すべての設定を適用する設定を true 競合スキャナーのデバイスで。 |
     | \[詳細\]     | なし                                                                                                                                                           |
 
      

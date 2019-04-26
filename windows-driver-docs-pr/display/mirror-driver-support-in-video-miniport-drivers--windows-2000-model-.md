@@ -9,11 +9,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: a14f99bcd3e360fe494f27ff2264b3c67d1d205a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358404"
 ---
 # <a name="mirror-driver-support-in-video-miniport-drivers-windows-2000-model"></a>ビデオ ミニポート ドライバーでのミラー ドライバー サポート (Windows 2000 モデル)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56574741"
 
 ミラー化されたサーフェイスに関連付けられた物理ディスプレイ デバイスがないため、上記の一覧に表示される関数の 3 つすべてを常に成功を返すための空の実装を使用できます。
 
-**注**  以降 Windows 8 では、ミラー ドライバーがインストールされないシステムにします。 詳細については、[ミラー ドライバー](mirror-drivers.md)を参照してください。
+**注**  以降 Windows 8 では、ミラー ドライバーがインストールされないシステムにします。 詳細については、次を参照してください。[ミラー ドライバー](mirror-drivers.md)します。
 
  
 

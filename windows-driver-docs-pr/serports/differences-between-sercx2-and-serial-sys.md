@@ -5,18 +5,18 @@ ms.assetid: 62FA69BB-FE04-4B5E-96CC-13764ED83AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f514210c357c408f30be541422e3f9fb8a8a3034
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359696"
 ---
 # <a name="differences-between-sercx2sys-and-serialsys"></a>SerCx2.sys と Serial.sys の違い
 
 
 受信トレイ Sercx2.sys とスタック ドライバー コンポーネントは、両方の実装が、[シリアルの I/O 要求インターフェイス](serial-i-o-request-interface.md)、これらのコンポーネントに置き換えることはできません。 異なる要件のセットを満たすために、設計されています。
 
-**注**  Sercx2.sys には、Windows 8 で導入された Sercx.sys シリアル フレームワークの拡張機能の以前のバージョンが置き換えられます。 詳細については、[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)を参照してください。
+**注**  Sercx2.sys には、Windows 8 で導入された Sercx.sys シリアル フレームワークの拡張機能の以前のバージョンが置き換えられます。 詳細については、次を参照してください。[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)します。
 
  
 
@@ -51,9 +51,9 @@ Sercx2.sys とその関連付けられたシリアル コント ローラー ド
 
 これに対し、以下のようでは、PoFx で管理されていないと、代わりに Windows の以前のバージョンでサポートされているデバイスの電源管理機能に依存します。
 
-もう 1 つの違いは、以下のようには、ソフトウェアのフロー制御が実装されていますが、Sercx2.sys しないことです。 スタックと Sercx2.sys の両方をサポートしてハードウェア フロー制御を使用して、*要求の送信*(RTS) と*オフにすると、送信*(CTS) 信号。 フロー制御の詳細については、[**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)を参照してください。
+もう 1 つの違いは、以下のようには、ソフトウェアのフロー制御が実装されていますが、Sercx2.sys しないことです。 スタックと Sercx2.sys の両方をサポートしてハードウェア フロー制御を使用して、*要求の送信*(RTS) と*オフにすると、送信*(CTS) 信号。 フロー制御の詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
 
-最終的な違いが Serenum.sys で連携して機能する際に Sercx2.sys ことはできません。 Serenum.sys は、シリアル ポートに接続されているデバイスを列挙するフィルター ドライバーです。 詳細については、[Serenum デバイスを列挙する](enumerating-serenum-devices.md)を参照してください。
+最終的な違いが Serenum.sys で連携して機能する際に Sercx2.sys ことはできません。 Serenum.sys は、シリアル ポートに接続されているデバイスを列挙するフィルター ドライバーです。 詳細については、次を参照してください。 [Serenum デバイスを列挙する](enumerating-serenum-devices.md)します。
 
  
 

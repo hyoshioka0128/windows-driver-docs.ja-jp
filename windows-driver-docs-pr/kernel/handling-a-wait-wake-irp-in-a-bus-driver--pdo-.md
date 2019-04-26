@@ -1,6 +1,6 @@
 ---
-title: 待機/ウェイク バス ドライバー (PDO) で IRP の処理
-description: 待機/ウェイク バス ドライバー (PDO) で IRP の処理
+title: バス ドライバー (PDO) での待機/ウェイク IRP の処理
+description: バス ドライバー (PDO) での待機/ウェイク IRP の処理
 ms.assetid: 9583b935-26e1-49c6-827d-932762af114d
 keywords:
 - 受信側の待機またはスリープ解除 Irp
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9185f81649a2c637aa94ce65df560c96e5673662
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359834"
 ---
-# <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>待機/ウェイク バス ドライバー (PDO) で IRP の処理
+# <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>バス ドライバー (PDO) での待機/ウェイク IRP の処理
 
 
 

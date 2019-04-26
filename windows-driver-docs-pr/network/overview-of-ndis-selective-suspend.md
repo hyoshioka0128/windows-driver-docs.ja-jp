@@ -1,17 +1,17 @@
 ---
-title: 選択的 NDIS の概要を中断します。
-description: 選択的 NDIS の概要を中断します。
+title: NDIS セレクティブ サスペンドの概要
+description: NDIS セレクティブ サスペンドの概要
 ms.assetid: D23E103E-893E-4B42-8EFD-0524846EF45F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce566792bb1d769032c26658c0e788ee80b5fe7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355701"
 ---
-# <a name="overview-of-ndis-selective-suspend"></a>選択的 NDIS の概要を中断します。
+# <a name="overview-of-ndis-selective-suspend"></a>NDIS セレクティブ サスペンドの概要
 
 
 NDIS 6.30 以降では、選択的の NDIS インターフェイスにより、アダプターを低電力状態に遷移することによって、アイドル状態のネットワーク アダプターを中断する NDIS を中断します。 これにより、CPU を削減し、アダプターのオーバーヘッドの電源をシステムができます。
@@ -27,9 +27,9 @@ NDIS およびミニポート ドライバーに参加次のように選択的 N
 2.  NDIS は、ネットワーク アダプターの場合、これが非アイドル タイムアウトを指定した期間よりも長くアイドル状態であると見なします。 このような場合は、選択的 NDIS 開始は、ネットワーク アダプターを低電力状態に移行するために、ミニポート ドライバーにアイドル状態の通知を発行して操作を中断します。
 
     > [!NOTE]
-    > 値によって、アイドル状態のタイムアウト時間の長さが指定されて、  **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードの詳細については、[NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)を参照してください。     
+    > 値によって、アイドル状態のタイムアウト時間の長さが指定されて、  **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードの詳細については、次を参照してください。 [NDIS セレクティブ サスペンドの標準化された INF キーワード](standardized-inf-keywords-for-ndis-selective-suspend.md)します。     
 
-    NDIS がネットワーク アダプターがアイドル状態を決定する方法についての詳細については、[方法 NDIS 検出アイドル状態のネットワーク アダプター](how-ndis-detects-idle-network-adapters.md)を参照してください。
+    NDIS がネットワーク アダプターがアイドル状態を決定する方法についての詳細については、次を参照してください。[方法 NDIS 検出アイドル状態のネットワーク アダプター](how-ndis-detects-idle-network-adapters.md)します。
 
 3.  NDIS ミニポート ドライバーを呼び出してドライバーのアイドル状態の通知を発行する[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。 この関数が呼び出されたときに、ミニポート ドライバーは、ネットワーク アダプターが、低電力状態に移行できるかどうかを決定します。 ミニポート ドライバーでは、バスに固有の方法でこの決定を実行します。
 
@@ -38,7 +38,7 @@ NDIS およびミニポート ドライバーに参加次のように選択的 N
     > [!NOTE]
     > ミニポート ドライバーでは、USB アイドル要求 IRP のコールバックと完了ルーチンを指定する必要があります。
     
-    ミニポート ドライバーがアイドル状態の通知を処理する方法の詳細については、[、NDIS セレクティブ サスペンド アイドル状態通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
+    ミニポート ドライバーがアイドル状態の通知を処理する方法の詳細については、次を参照してください。 [、NDIS セレクティブ サスペンド アイドル状態通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)します。
 
 4.  呼び出し後、ミニポート ドライバーでは、ネットワーク アダプターが、低電力状態に移行することを確認、 [ **NdisMIdleNotificationConfirm**](https://msdn.microsoft.com/library/windows/hardware/hh451492)します。 この呼び出しでは、ミニポート ドライバーは、ネットワーク アダプターに移行する最下位の電源状態を指定します。
 
@@ -54,9 +54,9 @@ NDIS およびミニポート ドライバーに参加次のように選択的 N
 
     ネットワーク アダプターが中断された後、ミニポート ドライバーを使用電力状態にアダプターを再開するには、アイドル状態の通知を完了できます。 これを行う理由は、設計およびアダプターとドライバーの要件に固有です。
 
-    NDIS がアイドル状態の通知をキャンセルする方法の詳細については、[NDIS セレクティブ サスペンド アイドル状態通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
+    NDIS がアイドル状態の通知をキャンセルする方法の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド アイドル状態通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)します。
 
-    ミニポート ドライバーがアイドル状態の通知を完了する方法の詳細については、[NDIS セレクティブ サスペンド アイドル状態通知の完了](completing-the-ndis-selective-suspend-idle-notification.md)を参照してください。
+    ミニポート ドライバーがアイドル状態の通知を完了する方法の詳細については、次を参照してください。 [NDIS セレクティブ サスペンド アイドル状態通知の完了](completing-the-ndis-selective-suspend-idle-notification.md)します。
 
 7.  ときに、 [ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)ハンドラー関数が呼び出されると、ミニポート ドライバーが電力状態に、ネットワーク アダプターが再開できるかどうかを決定します。 ドライバーでは、アイドル状態の通知で以前発行がある可能性があります bus 固有 Irp もキャンセルします。
 

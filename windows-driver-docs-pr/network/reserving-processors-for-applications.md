@@ -1,6 +1,6 @@
 ---
-title: アプリケーションのプロセッサを予約します。
-description: アプリケーションのプロセッサを予約します。
+title: アプリケーション用のプロセッサの予約
+description: アプリケーション用のプロセッサの予約
 ms.assetid: e09790e9-29a7-4ff6-a122-b4bd99de8bc7
 keywords:
 - WDK の RSS CPU の構成
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87ef6dfe6e40cef6cbaeb001cb38a49aa614c1b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358304"
 ---
-# <a name="reserving-processors-for-applications"></a>アプリケーションのプロセッサを予約します。
+# <a name="reserving-processors-for-applications"></a>アプリケーション用のプロセッサの予約
 
 
 

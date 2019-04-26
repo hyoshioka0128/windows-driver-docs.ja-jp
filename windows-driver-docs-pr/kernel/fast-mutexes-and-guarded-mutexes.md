@@ -1,6 +1,6 @@
 ---
-title: 高速なミュー テックスと保護されたミュー テックス
-description: 高速なミュー テックスと保護されたミュー テックス
+title: 高速ミューテックスと保護されたミューテックス
+description: 高速ミューテックスと保護されたミューテックス
 ms.assetid: 8c8014bf-6b81-4039-ae93-d4cedd6d6fed
 keywords:
 - 同期 WDK カーネルでは、高速なミュー テックス
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 212263c52417da6fcbe0ba80ffb3e8b347c59d82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359968"
 ---
-# <a name="fast-mutexes-and-guarded-mutexes"></a>高速なミュー テックスと保護されたミュー テックス
+# <a name="fast-mutexes-and-guarded-mutexes"></a>高速ミューテックスと保護されたミューテックス
 
 
 ドライバーを使用できます Windows 2000 以降、*ミュー テックスを高速*IRQL で実行されるコードの相互排他のオーバーヘッドの少ない形式を必要な場合&lt;APC を =\_レベル。 高速なミュー テックスは、一度に 1 つのスレッドによって入力必要のあるコード パスを保護できます。 スレッドである保護されたコード パスを入力する*取得*ミュー テックスです。 別のスレッドがミュー テックスを取得済みの場合、ミュー テックスが解放されるまで、現在のスレッドの実行は中断されます。 保護されているコードのパスをスレッドを終了する*解放*ミュー テックスです。
@@ -52,7 +52,7 @@ Windows Server 2003 以降から使用できますが、保護されたミュー
 
 Windows 8 以降、保護されたミュー テックスと高速なミュー テックス実装されます同じです。
 
-Windows 8 の前に Windows のバージョンでは、保護されたミュー テックスは、高速なミュー テックスを異なる方法で実装されます。 APC を現在の IRQL を発生させる、高速なミュー テックスを獲得\_レベルをすばやく処理、保護された領域を入力して、保護されたミュー テックスを取得します。 保護された領域の詳細については、[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)を参照してください。
+Windows 8 の前に Windows のバージョンでは、保護されたミュー テックスは、高速なミュー テックスを異なる方法で実装されます。 APC を現在の IRQL を発生させる、高速なミュー テックスを獲得\_レベルをすばやく処理、保護された領域を入力して、保護されたミュー テックスを取得します。 保護された領域の詳細については、次を参照してください。[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)します。
 
 保護されたミュー テックスがによって表される、 [ **KGUARDED\_ミュー テックス**](https://msdn.microsoft.com/library/windows/hardware/ff554235)構造体。 ドライバーの独自のストレージを割り当て、 **KGUARDED\_ミュー テックス**構造体に呼び出し、 [ **KeInitializeGuardedMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff552144)ルーチンを初期化するために、構造体。
 

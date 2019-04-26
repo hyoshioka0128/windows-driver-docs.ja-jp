@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c8b465ac667d458874a1fcd1346b06b5bd711c7
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356920"
 ---
 # <a name="communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface"></a>IOemCellularModem インターフェイスを使用して、RIL ドライバーとの通信します。
 
@@ -20,7 +20,7 @@ ms.locfileid: "58136131"
 
 使用することができます、 [IOemCellularModem](https://msdn.microsoft.com/library/windows/hardware/dn946687) OEM RIL ドライバーと通信するインターフェイス。 パートナーが使用できる場合は、制限付きのプラットフォームで Api を使用して、モデムとの通信には、(RPAL) ボックスの一覧。
 
-携帯電話の COM Api の詳細については、[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)を参照してください。
+携帯電話の COM Api の詳細については、次を参照してください。[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)します。
 
 ## <a name="using-cellular-com-apis"></a>携帯電話の COM Api を使用します。
 

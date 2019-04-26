@@ -6,18 +6,18 @@ ms.date: 08/08/2017
 keywords: -OID_PM_REMOVE_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ef4fdfdc6f7b42980212c90bb1b4b69c9426392
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359507"
 ---
 # <a name="oidpmremoveprotocoloffload"></a>OID\_PM\_削除\_プロトコル\_オフロード
 
 
 OID を使用する NDIS およびプロトコルのドライバー セットの要求として\_PM\_削除\_プロトコル\_オフロードの OID を電源管理のプロトコルを削除するネットワーク アダプターから負荷を軽減します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 **ULONG**プロトコル識別子の負荷を軽減します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 OID を使用する NDIS とプロトコル ドライバー\_PM\_削除\_プロトコル\_プロトコルを削除する OID のオフロードの基になるネットワーク アダプターから負荷を軽減します。
@@ -48,7 +48,7 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 <a href="" id="ndis-status-file-not-found"></a>**NDIS\_状態\_ファイル\_いない\_が見つかりました**  
 OID 要求のプロトコルのオフロード識別子が無効です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

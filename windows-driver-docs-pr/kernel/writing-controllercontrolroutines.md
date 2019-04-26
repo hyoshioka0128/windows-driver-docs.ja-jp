@@ -1,6 +1,6 @@
 ---
-title: 書き込み ControllerControl ルーチン
-description: 書き込み ControllerControl ルーチン
+title: ControllerControl ルーチンの記述
+description: ControllerControl ルーチンの記述
 ms.assetid: 9330e0ff-c4bb-4aa6-985e-ef89791f74df
 keywords:
 - コント ローラー オブジェクトの WDK カーネル、ControllerControl ルーチンを記述
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcec280f64accb304c28a3b0eee798b30f99d235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355996"
 ---
-# <a name="writing-controllercontrol-routines"></a>書き込み ControllerControl ルーチン
+# <a name="writing-controllercontrol-routines"></a>ControllerControl ルーチンの記述
 
 
 

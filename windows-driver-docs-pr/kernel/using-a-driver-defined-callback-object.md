@@ -1,6 +1,6 @@
 ---
-title: ドライバー定義のコールバック オブジェクトを使用します。
-description: ドライバー定義のコールバック オブジェクトを使用します。
+title: ドライバーによって定義されたコールバック オブジェクトの使用
+description: ドライバーによって定義されたコールバック オブジェクトの使用
 ms.assetid: b3b32534-0641-4818-9384-65fd45f689e8
 keywords:
 - コールバック オブジェクトの WDK カーネル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a28711ec8958f9dc14e8884e946f153de2dd6ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355288"
 ---
-# <a name="using-a-driver-defined-callback-object"></a>ドライバー定義のコールバック オブジェクトを使用します。
+# <a name="using-a-driver-defined-callback-object"></a>ドライバーによって定義されたコールバック オブジェクトの使用
 
 
 

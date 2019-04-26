@@ -4,11 +4,11 @@ title: Microsoft が提供する USB ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 572b867501af1658d4ef7d89c5880743bdfefaf5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355189"
 ---
 # <a name="microsoft-provided-usb-drivers"></a>Microsoft が提供する USB ドライバー
 
@@ -20,9 +20,9 @@ ms.locfileid: "57350195"
 
 マイクロソフトでは、これらのドライバーのセットを提供します。
 
--   USB ホスト コント ローラーとハブ。 詳細については、[Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)を参照してください。 USB ホスト コント ローラーの拡張機能 (UCX) ドライバーを使用した通信を行うカスタム ホスト コント ローラー ドライバーを開発することができます。 詳細については、[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)を参照してください。
--   USB デバイスの共通の関数ロジックを処理します。 詳細については、[Windows での USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)を参照してください。
--   型 C コネクタをサポートします。 詳細については、[USB コネクタ マネージャー クラスの拡張機能 (UcmCx)](https://msdn.microsoft.com/library/windows/hardware/mt188011)を参照してください。
+-   USB ホスト コント ローラーとハブ。 詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)します。 USB ホスト コント ローラーの拡張機能 (UCX) ドライバーを使用した通信を行うカスタム ホスト コント ローラー ドライバーを開発することができます。 詳細については、次を参照してください。[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)します。
+-   USB デバイスの共通の関数ロジックを処理します。 詳細については、次を参照してください。 [Windows での USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)します。
+-   型 C コネクタをサポートします。 詳細については、次を参照してください。 [USB コネクタ マネージャー クラスの拡張機能 (UcmCx)](https://msdn.microsoft.com/library/windows/hardware/mt188011)します。
 
 ## <a name="other-microsoft-provided-usb-drivers"></a>その他の Microsoft 提供の USB ドライバー
 
@@ -52,7 +52,7 @@ ms.locfileid: "57350195"
 <p>Windows 7</p>
 <p>Windows Vista</p>
 <p>Windows XP</p></td>
-<td>Usbccgp.sys は、複数の関数をサポートする複合デバイス用の親のドライバーです。 詳細については、<a href="usb-common-class-generic-parent-driver.md" data-raw-source="[USB Generic Parent Driver (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)">USB 汎用親ドライバー (Usbccgp.sys)</a>を参照してください。</td>
+<td>Usbccgp.sys は、複数の関数をサポートする複合デバイス用の親のドライバーです。 詳細については、次を参照してください。 <a href="usb-common-class-generic-parent-driver.md" data-raw-source="[USB Generic Parent Driver (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)">USB 汎用親ドライバー (Usbccgp.sys)</a>します。</td>
 </tr>
 <tr class="even">
 <td>生体認証</td>

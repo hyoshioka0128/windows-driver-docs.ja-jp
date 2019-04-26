@@ -1,6 +1,6 @@
 ---
-title: 可変長バッファーを検証に失敗しました
-description: 可変長バッファーを検証に失敗しました
+title: 可変長バッファーの検証失敗
+description: 可変長バッファーの検証失敗
 ms.assetid: 0cc4be22-8197-421a-a5a6-2e7b89a79a38
 keywords:
 - 入力バッファーの WDK カーネル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be723319ea8d6b2419f40e83068f0e6d0e6f0bb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359985"
 ---
-# <a name="failure-to-validate-variable-length-buffers"></a>可変長バッファーを検証に失敗しました
+# <a name="failure-to-validate-variable-length-buffers"></a>可変長バッファーの検証失敗
 
 
 

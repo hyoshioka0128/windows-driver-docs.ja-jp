@@ -6,11 +6,11 @@ ms.date: 08/22/2018
 keywords: -OID_WWAN_LTE_ATTACH_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 157740fd5afd819823d8c015961595ac6ed8bec9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353750"
 ---
 # <a name="oidwwanlteattachconfig"></a>OID_WWAN_LTE_ATTACH_CONFIG
 
@@ -24,7 +24,7 @@ OID_WWAN_LTE_ATTACH_CONFIG により、オペレーティング システムは�
 
 各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG](ndis-status-wwan-lte-attach-config.md) LTE を示す通知が構成をアタッチします。
 
-詳細については、この OID を使用して、[MBIM_CID_MS_LTE_ATTACH_CONFIG](mb-lte-attach-operations.md)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [MBIM_CID_MS_LTE_ATTACH_CONFIG](mb-lte-attach-operations.md)します。
 
 ## <a name="requirements"></a>要件
 

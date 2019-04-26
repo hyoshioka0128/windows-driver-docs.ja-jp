@@ -1,17 +1,17 @@
 ---
-title: ほぼフィールド近接 (NFP) ドライバーのサンプル
+title: 近距離近接通信 (NFP) ドライバーのサンプル
 description: このディレクトリに NFP driver サンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
 ms.assetid: 0AE9A015-A18E-4E2A-A477-C5EAAA2FBD3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da8535b0e020d1c131ca4e850659296049f24997
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359014"
 ---
-# <a name="near-field-proximity-nfp-driver-samples"></a>ほぼフィールド近接 (NFP) ドライバーのサンプル
+# <a name="near-field-proximity-nfp-driver-samples"></a>近距離近接通信 (NFP) ドライバーのサンプル
 
 
 このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。

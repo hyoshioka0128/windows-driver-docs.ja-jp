@@ -1,19 +1,19 @@
 ---
 title: デバイス プロパティの表示 (Windows Server 2003、Windows XP)
-description: デバイス プロパティの表示 (Windows Server 2003、Windows XP、および Windows 2000)
+description: デバイスのプロパティの表現 (Windows Server 2003、Windows XP、および Windows 2000)
 ms.assetid: 124172d7-52a4-423c-a1fd-eec554f328d6
 keywords:
 - デバイスのプロパティ表現 WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6d874d6075034c3b18bc0fa0c5edf521488d5aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356114"
 ---
-# <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>デバイス プロパティの表示 (Windows Server 2003、Windows XP、および Windows 2000)
+# <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>デバイスのプロパティの表現 (Windows Server 2003、Windows XP、および Windows 2000)
 
 
 Windows Server 2003、Windows XP、および Windows 2000 をサポートしていない、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)その Windows Vista と Windows のサポートの以降のバージョン。 ただし、ほとんどの[デバイスのシステム定義のプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff553413)収録されているプロパティの統一されたデバイス モデルで Windows の以前のバージョンでサポートされている対応する表現があります。 Windows の以前のバージョン、方法は、デバイス プロパティが表され、プロパティにアクセスするためのメカニズムは、コンポーネントの種類とプロパティの型によって異なります。 これらの表現とメカニズム次に示します。

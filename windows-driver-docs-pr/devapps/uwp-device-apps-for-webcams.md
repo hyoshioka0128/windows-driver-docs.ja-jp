@@ -5,11 +5,11 @@ ms.assetid: 6CF13679-BCF3-443C-A864-4BBC54B8DA1C
 ms.date: 09/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24feda30bbe41eba2021a02bda768b76200ef53b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359484"
 ---
 # <a name="uwp-device-apps-for-cameras"></a>カメラ用の UWP デバイス アプリ
 

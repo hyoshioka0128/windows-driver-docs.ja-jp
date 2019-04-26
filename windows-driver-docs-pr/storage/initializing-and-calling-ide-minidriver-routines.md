@@ -1,6 +1,6 @@
 ---
-title: 初期化と IDE ミニドライバー ルーチンを呼び出す
-description: 初期化と IDE ミニドライバー ルーチンを呼び出す
+title: IDE ミニドライバー ルーチンの初期化と呼び出し
+description: IDE ミニドライバー ルーチンの初期化と呼び出し
 ms.assetid: ae7b19a9-0a2e-4231-b008-879b7f6c8566
 keywords:
 - IDE コント ローラー ミニドライバー WDK のストレージの初期化
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cce0d2261f3eb302904f5ead51ed0217bf97a411
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359108"
 ---
-# <a name="initializing-and-calling-ide-minidriver-routines"></a>初期化と IDE ミニドライバー ルーチンを呼び出す
+# <a name="initializing-and-calling-ide-minidriver-routines"></a>IDE ミニドライバー ルーチンの初期化と呼び出し
 
 
 ## <span id="ddk_initializing_and_calling_ide_minidriver_routines_kr"></span><span id="DDK_INITIALIZING_AND_CALLING_IDE_MINIDRIVER_ROUTINES_KR"></span>

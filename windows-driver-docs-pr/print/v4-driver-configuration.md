@@ -1,17 +1,17 @@
 ---
-title: V4 プリンター ドライバーの構成
+title: V4 プリンター ドライバー構成
 description: V4 プリンター ドライバー モデルは、大幅に簡略化された構成のレイヤーをサポートします。
 ms.assetid: 1EAF1322-43A6-4DB5-B059-721FBF640B77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46b2494a0a4893b06aa0c3291a3ee1d161d43c2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358575"
 ---
-# <a name="v4-printer-driver-configuration"></a>V4 プリンター ドライバーの構成
+# <a name="v4-printer-driver-configuration"></a>V4 プリンター ドライバー構成
 
 
 V4 プリンター ドライバー モデルは、大幅に簡略化された構成のレイヤーをサポートします。

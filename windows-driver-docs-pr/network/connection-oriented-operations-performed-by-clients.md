@@ -1,6 +1,6 @@
 ---
-title: クライアントによって実行される、接続指向の操作
-description: クライアントによって実行される、接続指向の操作
+title: クライアントによって実行される接続指向操作
+description: クライアントによって実行される接続指向操作
 ms.assetid: 342f534e-d203-4823-a4d8-a8a51b7ff0bd
 keywords:
 - クライアントの接続指向 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c96f4bf462c572c5d47feeab75cf9fddf950c09c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357406"
 ---
-# <a name="connection-oriented-operations-performed-by-clients"></a>クライアントによって実行される、接続指向の操作
+# <a name="connection-oriented-operations-performed-by-clients"></a>クライアントによって実行される接続指向操作
 
 
 

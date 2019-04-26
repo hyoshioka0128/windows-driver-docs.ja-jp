@@ -1,6 +1,6 @@
 ---
-title: トレース セッションに参加します。
-description: トレース セッションに参加します。
+title: トレース セッションへの参加
+description: トレース セッションへの参加
 ms.assetid: 0fd065e4-004f-426a-bdb1-4b2e7d219e20
 keywords:
 - トレース セッションに参加します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c39e5d0516054ab13dffff2e12705e20b23c92f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356510"
 ---
-# <a name="joining-a-trace-session"></a>トレース セッションに参加します。
+# <a name="joining-a-trace-session"></a>トレース セッションへの参加
 
 
 Traceview でを実行中のトレース セッションを制御しているときに終了を強制するなどのまれな状況で、traceview でがいないセッション プロバイダーを無効にし、トレース セッションを停止しません。 このような状況でまだ有効になっているプロバイダーでトレース セッションを開始しようとすると traceview では警告を表示して停止して、セッションを再起動するかが既に進行中のトレース セッションに参加できるように提供しています。
@@ -37,7 +37,7 @@ Traceview では、トレース セッションを開始する試行を取り消
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-Traceview でウィンドウを起動してトレース セッションを実行しているものだけが表示されます。 システムで実行されているすべてのトレース セッションの一覧、入力**traceview で-l**コマンド プロンプト ウィンドウでします。 Traceview では開始されませんでしたトレース セッションを停止する次のように入力します。 **traceview で-停止 * * * SessionName*コマンド プロンプト ウィンドウでします。 これらのコマンドの詳細については、[traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)を参照してください。
+Traceview でウィンドウを起動してトレース セッションを実行しているものだけが表示されます。 システムで実行されているすべてのトレース セッションの一覧、入力**traceview で-l**コマンド プロンプト ウィンドウでします。 Traceview では開始されませんでしたトレース セッションを停止する次のように入力します。 **traceview で-停止 * * * SessionName*コマンド プロンプト ウィンドウでします。 これらのコマンドの詳細については、次を参照してください。 [traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)します。
 
  
 

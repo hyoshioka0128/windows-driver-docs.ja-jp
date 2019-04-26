@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6d89cbecd42799219a9ac3ac2ac702eaebb80de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353790"
 ---
 # <a name="interpreting-a-sample-setupapi-log-file"></a>サンプルの SetupAPI ログ ファイルの変換
 
@@ -35,7 +35,7 @@ Windows xp では、各ログ エントリにはで構成されるメッセー�
 <thead>
 <tr class="header">
 <th align="left">［メッセージ ID］</th>
-<th align="left">メッセージの種類</th>
+<th align="left">メッセージ型</th>
 </tr>
 </thead>
 <tbody>

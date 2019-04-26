@@ -1,6 +1,6 @@
 ---
-title: 書き込みディスパッチ ルーチン
-description: 書き込みディスパッチ ルーチン
+title: ディスパッチ ルーチンの記述
+description: ディスパッチ ルーチンの記述
 ms.assetid: 84eb9372-2ef7-4cc2-94af-97e3399e69e0
 keywords:
 - ディスパッチ ルーチン WDK カーネル
@@ -19,13 +19,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fc1eb1c4616afa4c0765d8e24601f922a7db54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355989"
 ---
-# <a name="writing-dispatch-routines"></a>書き込みディスパッチ ルーチン
+# <a name="writing-dispatch-routines"></a>ディスパッチ ルーチンの記述
 
 
 
@@ -35,7 +35,7 @@ ms.locfileid: "56539301"
 
 ドライバーは、処理する主要な各 I/O 関数コードの別のディスパッチ ルーチンを提供できます。 または、複数の I/O 関数のコードを処理するディスパッチ ルーチンを記述できます。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [ディスパッチの日常的な機能](dispatch-routine-functionality.md)
 

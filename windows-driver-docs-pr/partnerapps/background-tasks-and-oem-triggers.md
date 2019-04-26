@@ -5,11 +5,11 @@ ms.assetid: 672d3501-da84-495b-b70e-f07de32aff53
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a34d6920032d824cd151bd55114f9eb1db89ea4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358252"
 ---
 # <a name="background-tasks-and-custom-triggers"></a>バックグラウンド タスクとカスタム トリガー
 

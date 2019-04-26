@@ -5,11 +5,11 @@ ms.assetid: ABA1A097-D9AA-41F4-90D4-B2FBB9B08534
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a7ac0ce1a713890191b74b55cdecd7734a2a9cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358918"
 ---
 # <a name="disabling-frame-pointer-omission-fpo-optimization"></a>フレーム ポインターの省略 (FPO) の最適化の無効化
 

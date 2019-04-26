@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8b115c5ac28397faef5b8d2c28f0e74a77edcd1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356010"
 ---
 # <a name="guiddevicebattery"></a>GUID_DEVICE_BATTERY
 
@@ -56,7 +56,7 @@ GUID_DEVICE_BATTERY[デバイス インターフェイス クラス](https://msd
 
 システム提供[バッテリ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536278)バッテリ デバイスのバッテリ miniclass ドライバーに代わってこのデバイス インターフェイス クラスのインスタンスを登録します。
 
-バッテリのデバイスとドライバーについては、[システム バッテリ管理の概要](https://msdn.microsoft.com/library/windows/hardware/ff536300)を参照してください。
+バッテリのデバイスとドライバーについては、次を参照してください。[システム バッテリ管理の概要](https://msdn.microsoft.com/library/windows/hardware/ff536300)します。
 
 <a name="requirements"></a>要件
 ------------

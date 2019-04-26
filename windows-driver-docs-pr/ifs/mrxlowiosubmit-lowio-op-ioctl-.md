@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f98e441933f8a33e5013cd03aa36e6f93c7ab753
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357538"
 ---
 # <a name="mrxlowiosubmitlowioopioctl-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]ルーチン
 
@@ -110,7 +110,7 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 受信に応答する[ **
 
 中に、 *MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RXのメンバー\_コンテキストを RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId** RX のメンバー\_コンテキストは、別のスレッドの代わりの入力のリソースを解放するために使用できます。 非同期のルーチンが完了したら、最初のスレッドから取得された入力のリソースを解放できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

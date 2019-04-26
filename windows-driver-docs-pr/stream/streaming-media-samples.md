@@ -1,6 +1,6 @@
 ---
-title: ストリーミング メディア サンプルします。
-description: ストリーミング メディア サンプルします。
+title: ストリーミング メディアのサンプル
+description: ストリーミング メディアのサンプル
 ms.assetid: 797763a6-cd13-4d76-8ddb-75d812a8dde3
 keywords:
 - ストリーミング メディア サンプル WDK
@@ -8,18 +8,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f559224f9dcd5b2d2097eb01ab355bdf3fda4b72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359632"
 ---
-# <a name="streaming-media-samples"></a>ストリーミング メディア サンプルします。
+# <a name="streaming-media-samples"></a>ストリーミング メディアのサンプル
 
 
 ### <a href="" id="streaming-media-samples"></a>
 
-Windows 10 以降、 [Windows ドライバーのサンプル リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=616507)は GitHub で入手できます。
+Windows 10 以降、[Windows ドライバーのサンプル リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=616507)は GitHub で入手できます。
 
 [Windows 8 ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616509)と[Windows 8.1 ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)からダウンロードできます、 [Windows ハードウェア デベロッパー センター](https://go.microsoft.com/fwlink/p/?LinkId=616506)します。
 

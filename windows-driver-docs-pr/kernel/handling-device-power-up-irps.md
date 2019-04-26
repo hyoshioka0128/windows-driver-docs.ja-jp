@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源投入 Irp の処理
-description: デバイスの電源投入 Irp の処理
+title: デバイスの電源投入 IRP の処理
+description: デバイスの電源投入 IRP の処理
 ms.assetid: 8fcfd324-97f9-4fd0-8fa1-87685c6b5ec3
 keywords:
 - セット power Irp WDK カーネル
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db661a11878c38fbac46d1f972afaf3ee6969900
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359515"
 ---
-# <a name="handling-device-power-up-irps"></a>デバイスの電源投入 Irp の処理
+# <a name="handling-device-power-up-irps"></a>デバイスの電源投入 IRP の処理
 
 
 
@@ -44,7 +44,7 @@ ms.locfileid: "56532318"
 
 -   呼び出す[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)電源投入を設定する*IoCompletion*ルーチン。
 
-    ドライバーを設定する必要があります、デバイスの処理の電源投入 IRP、ときに、 *IoCompletion* IRP の完了後のタスクとデバイスの電源をルーチンにコンテキストを復元、削除ロックが解除、およびその他の実行が必要です。 IRP の完了前に、ドライバーはコンテキストを復元する必要があります。 詳細については、[デバイス電源 Irp の IoCompletion ルーチン](iocompletion-routines-for-device-power-irps.md)を参照してください。
+    ドライバーを設定する必要があります、デバイスの処理の電源投入 IRP、ときに、 *IoCompletion* IRP の完了後のタスクとデバイスの電源をルーチンにコンテキストを復元、削除ロックが解除、およびその他の実行が必要です。 IRP の完了前に、ドライバーはコンテキストを復元する必要があります。 詳細については、次を参照してください。[デバイス電源 Irp の IoCompletion ルーチン](iocompletion-routines-for-device-power-irps.md)します。
 
 -   呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) (で Windows 7 および Windows Vista の場合) または[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) (Windows Server 2003、Windows XP、および Windows 2000) する次の下位のドライバーに IRP を渡します。 IRP は、デバイス スタックの一番下バス ドライバーに移動する必要があります。 IRP の完了、バス ドライバーのみが許可されます。
 
@@ -54,7 +54,7 @@ ms.locfileid: "56532318"
 
 バス ドライバーが呼び出しの操作状態をデバイスを返すために必要なタスクを実行しますし、デバイスがまだ存在する場合は、 [ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)新しいデバイスの電源の電源マネージャーに通知するには状態、および IRP の完了 ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343))。 ドライバーが、デバイスがスリープ状態の間に I/O がキューにまたは、デバイスに突入パワーが必要な場合は、バス ドライバーには、デバイスに電源が適用されます。 それ以外の場合、バス ドライバーでは、デバイスと通信する必要があると、すぐに電力が適用されます。
 
-電源オフ、standby、および休止状態から高速スタートアップに時間を実現するために、ベスト プラクティスの一覧は、[システム起動時のパフォーマンスを向上させる](improving-system-startup-performance.md)を参照してください。
+電源オフ、standby、および休止状態から高速スタートアップに時間を実現するために、ベスト プラクティスの一覧は、次を参照してください。[システム起動時のパフォーマンスを向上させる](improving-system-startup-performance.md)します。
 
  
 

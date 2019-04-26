@@ -1,6 +1,6 @@
 ---
-title: DEP と PAE を構成するブート パラメーター
-description: DEP と PAE を構成するブート パラメーター
+title: DEP と PAE を構成するためのブート パラメーター
+description: DEP と PAE を構成するためのブート パラメーター
 ms.assetid: cb8b6298-e679-4ca3-8b94-4f0c6af23a3f
 keywords:
 - WDK のブート パラメーター
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c3596cbb5b4a27a270c4f8cb0efba16e1899b58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359048"
 ---
-# <a name="boot-parameters-to-configure-dep-and-pae"></a>DEP と PAE を構成するブート パラメーター
+# <a name="boot-parameters-to-configure-dep-and-pae"></a>DEP と PAE を構成するためのブート パラメーター
 
 
 このトピックでは、ブート パラメーターを使用して有効化、無効化、およびこれらの機能をサポートするオペレーティング システムでデータ実行防止 (DEP) と物理アドレス拡張 (PAE) を構成する方法について説明します。

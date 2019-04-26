@@ -1,17 +1,17 @@
 ---
-title: Stream に固有のコマンド コード
-description: Stream に固有のコマンド コード
+title: ストリーム固有のコマンド コード
+description: ストリーム固有のコマンド コード
 ms.assetid: b57a1449-6e7a-404a-a513-29a02363c268
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ace705e07fd7acc17b2abcc7dbbd6a1f611b0f58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359640"
 ---
-# <a name="stream-specific-command-codes"></a>Stream に固有のコマンド コード
+# <a name="stream-specific-command-codes"></a>ストリーム固有のコマンド コード
 
 
 ## <span id="ddk_stream_specific_command_codes_ks"></span><span id="DDK_STREAM_SPECIFIC_COMMAND_CODES_KS"></span>

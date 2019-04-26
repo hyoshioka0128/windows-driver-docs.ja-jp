@@ -1,6 +1,6 @@
 ---
-title: ドライバーの状態を確認するエラー
-description: ドライバーの状態を確認するエラー
+title: ドライバーの状態の確認エラー
+description: ドライバーの状態の確認エラー
 ms.assetid: 963f79f6-2282-41bd-9cf4-bd5bc02a510e
 keywords:
 - 信頼性 WDK のカーネル ドライバーの状態を確認
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06dbe787b4d97fbe17beb6972464de943f7b37f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360026"
 ---
-# <a name="failure-to-check-a-drivers-state"></a>ドライバーの状態を確認するエラー
+# <a name="failure-to-check-a-drivers-state"></a>ドライバーの状態の確認エラー
 
 
 

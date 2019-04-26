@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MAC_OPTIONS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 23254474b06ed189ad93c274aad890b4f7893bdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359004"
 ---
 # <a name="oidgenmacoptions"></a>OID\_GEN\_MAC\_オプション
 
@@ -68,7 +68,7 @@ NDIS は、このドライバーに代わってループバックするを管理
 このフラグは廃止されています。
 
 <a href="" id="ndis-mac-option-8021p-priority"></a>NDIS\_MAC\_オプション\_8021 P\_優先順位  
-NIC とそのドライバーは、802.1 p のパケットの優先順位をサポートします。 詳細については、[パケットの優先順位](https://msdn.microsoft.com/library/windows/hardware/ff562331)を参照してください。 パケットの優先度の値がで受信した[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)上位レイヤー ドライバーからの構造体。 適切な情報がパケットの MAC ヘッダーで生成され、ネットワーク経由で送信します。 さらに、この NIC とそのドライバーは、ネットワークから受信したパケットの MAC ヘッダーから適切な情報の抽出をサポートします。 NET でこの情報が転送される\_上位層のドライバーにバッファーの構造体。
+NIC とそのドライバーは、802.1 p のパケットの優先順位をサポートします。 詳細については、次を参照してください。[パケットの優先順位](https://msdn.microsoft.com/library/windows/hardware/ff562331)します。 パケットの優先度の値がで受信した[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)上位レイヤー ドライバーからの構造体。 適切な情報がパケットの MAC ヘッダーで生成され、ネットワーク経由で送信します。 さらに、この NIC とそのドライバーは、ネットワークから受信したパケットの MAC ヘッダーから適切な情報の抽出をサポートします。 NET でこの情報が転送される\_上位層のドライバーにバッファーの構造体。
 
 **注**  NDIS 6.0 と以降およびそれ以降、およびそれ以降のミニポート ドライバーは、NDIS を設定する必要があります\_MAC\_オプション\_8021 P\_優先順位フラグ。
 

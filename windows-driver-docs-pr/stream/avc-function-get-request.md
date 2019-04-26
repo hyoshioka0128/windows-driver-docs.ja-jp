@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa191f6b7b0b54c562d6aecf2769d0961aeda4ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359085"
 ---
 # <a name="avcfunctiongetrequest"></a>AVC\_関数\_取得\_要求
 
@@ -128,7 +128,7 @@ GUID のコンテキストで\_AVC\_クラス デバイスのインターフェ�
 
 この関数のコードは、IRQL で呼び出すことができます&lt;= ディスパッチ\_レベル。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**AVC\_関数\_送信\_応答**](avc-function-send-response.md)、 [ **AvcResponseCode**](https://msdn.microsoft.com/library/windows/hardware/ff554105)、 [ **AVC\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)、 [ **RtlZeroMemory**](https://msdn.microsoft.com/library/windows/hardware/ff563610)
 

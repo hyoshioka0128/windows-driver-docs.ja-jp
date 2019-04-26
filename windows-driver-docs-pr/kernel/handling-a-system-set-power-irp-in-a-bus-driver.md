@@ -1,6 +1,6 @@
 ---
-title: バス ドライバーではシステム セット Power IRP の処理
-description: バス ドライバーではシステム セット Power IRP の処理
+title: バス ドライバーでのシステム電源設定 IRP の処理
+description: バス ドライバーでのシステム電源設定 IRP の処理
 ms.assetid: e88344bd-4223-4cd5-9428-201d46c6dbb4
 keywords:
 - セット power Irp WDK の電源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 482e495e7806b24659e43b0aeade26094e8b883c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359825"
 ---
-# <a name="handling-a-system-set-power-irp-in-a-bus-driver"></a>バス ドライバーではシステム セット Power IRP の処理
+# <a name="handling-a-system-set-power-irp-in-a-bus-driver"></a>バス ドライバーでのシステム電源設定 IRP の処理
 
 
 

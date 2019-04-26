@@ -1,6 +1,6 @@
 ---
-title: 作成して SAN のソケットをバインドします。
-description: 作成して SAN のソケットをバインドします。
+title: SAN ソケットの作成とバインド
+description: SAN ソケットの作成とバインド
 ms.assetid: 0589bd82-40d3-42df-926c-93093fb0617f
 keywords:
 - SAN 接続のセットアップ WDK、ソケットの作成とバインド
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a536797eb2f860c395d5a2997f344eda8f5de4f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357366"
 ---
-# <a name="creating-and-binding-san-sockets"></a>作成して SAN のソケットをバインドします。
+# <a name="creating-and-binding-san-sockets"></a>SAN ソケットの作成とバインド
 
 
 

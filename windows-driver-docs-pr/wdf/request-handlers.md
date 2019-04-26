@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d636e10958b2d9254d40bff7dacaf7a7aab872b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359610"
 ---
 # <a name="request-handlers"></a>要求ハンドラー
 
@@ -44,7 +44,7 @@ ms.locfileid: "56551244"
 
 これらのコールバック関数の 2 つの入力引数を受信します。 フレームワークは、ドライバーと、要求に保持されている I/O キューを識別するハンドルを提供する I/O 要求を識別するハンドル。 コールバック関数が呼び出すことによって、ターゲット デバイスを調べる[ **WdfIoQueueGetDevice**](https://msdn.microsoft.com/library/windows/hardware/ff547421)します。
 
-フレームワークは、任意のスレッド コンテキストで、ドライバーの要求ハンドラーを呼び出します。 ドライバーを任意のスレッド コンテキストで実行中に長時間待機する必要があります。 場合によってには、ドライバーは、同期メカニズムとしてカーネルのディスパッチャー オブジェクトを使用する可能性があります。 ディスパッチャー オブジェクトの場合、ドライバーが待機できる場合とできない場合の対処方法については、[カーネルのディスパッチャー オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff548068)を参照してください。
+フレームワークは、任意のスレッド コンテキストで、ドライバーの要求ハンドラーを呼び出します。 ドライバーを任意のスレッド コンテキストで実行中に長時間待機する必要があります。 場合によってには、ドライバーは、同期メカニズムとしてカーネルのディスパッチャー オブジェクトを使用する可能性があります。 ディスパッチャー オブジェクトの場合、ドライバーが待機できる場合とできない場合の対処方法については、次を参照してください。[カーネルのディスパッチャー オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff548068)します。
 
  
 

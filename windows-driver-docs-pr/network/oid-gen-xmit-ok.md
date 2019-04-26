@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_OK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 72108ade883a18748ad1839258d00c37769673ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355930"
 ---
 # <a name="oidgenxmitok"></a>OID\_GEN\_XMIT\_OK
 
@@ -39,7 +39,7 @@ ms.locfileid: "56558475"
 
 OID\_GEN\_XMIT\_[ok] をエラーなしで送信されるフレームの数を指定します。 ただし、 [OID\_GEN\_統計](oid-gen-statistics.md)この情報は含まれません。
 
-注: 統計の Oid は NDIS は、それを処理しない限り、NDIS 6.0 とそれ以降のミニポート ドライバーの必須です。 Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
+注: 統計の Oid は NDIS は、それを処理しない限り、NDIS 6.0 とそれ以降のミニポート ドライバーの必須です。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
 
 <a name="requirements"></a>要件
 ------------

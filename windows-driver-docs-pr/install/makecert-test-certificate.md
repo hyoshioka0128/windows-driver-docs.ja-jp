@@ -8,18 +8,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46c8ca0484a7325b95cbfe5b5f0a77a0f64d4475
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356934"
 ---
 # <a name="makecert-test-certificate"></a>MakeCert テスト証明書
 
 
 MakeCert テスト証明書が、 [X.509 デジタル証明書](digital-certificates.md)を使用して作成され、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)ツール。 MakeCert テスト証明書はテスト署名に使用できる、自己署名ルート証明書を[ドライバー パッケージの](driver-packages.md)[カタログ ファイル](catalog-files.md)またはテスト署名ドライバー ファイルの署名を埋め込むことで、ドライバー ファイル。
 
-MakeCert テスト証明書の作成の詳細については、[**テスト証明書の作成**](creating-test-certificates.md)を参照してください。
+MakeCert テスト証明書の作成の詳細については、次を参照してください。 [**テスト証明書の作成**](creating-test-certificates.md)します。
 
 ## <a name="installing-a-makecert-test-certificate"></a>MakeCert テスト証明書をインストールします。
 
@@ -31,7 +31,7 @@ MakeCert テスト証明書の作成の詳細については、[**テスト証�
 CertMgr /add CertFileName.cer /s /r localMachine root
 ```
 
-インストールする前に、[ドライバー パッケージ](driver-packages.md)MakeCert テスト証明書によって署名されている、信頼されたルート証明機関の証明書ストアにテスト証明書をインストールする必要があります、[信頼済み証明書ストアの発行元](trusted-publishers-certificate-store.md)のテスト コンピューター。 テスト コンピューターで MakeCert テスト証明書をインストールする方法については、[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)を参照してください。
+インストールする前に、[ドライバー パッケージ](driver-packages.md)MakeCert テスト証明書によって署名されている、信頼されたルート証明機関の証明書ストアにテスト証明書をインストールする必要があります、[信頼済み証明書ストアの発行元](trusted-publishers-certificate-store.md)のテスト コンピューター。 テスト コンピューターで MakeCert テスト証明書をインストールする方法については、次を参照してください。[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)します。
 
  
 

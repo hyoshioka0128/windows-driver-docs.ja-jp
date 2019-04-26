@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec819f268b48609a7d1529d033da5857f1d06349
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360028"
 ---
 # <a name="installing-test-signed-driver-packages"></a>テスト署名されたドライバー パッケージのインストール
 
@@ -36,11 +36,11 @@ ms.locfileid: "56538433"
 
 -   非 PnP ドライバーが署名付き[カタログ ファイル](catalog-files.md)埋め込みの署名ではなく、ドライバーをインストールするインストール アプリケーションがカタログ ファイル システム カタログのルート ディレクトリでの説明に従ってインストール[非 PnP ドライバーのテスト署名済みカタログ ファイルをインストールする](installing-a-test-signed-catalog-file-for-a-non-pnp-driver.md)します。
 
--   テスト コンピューターで、テスト署名を有効になっています。 詳細については、[TESTSIGNING ブートの構成オプション](the-testsigning-boot-configuration-option.md)を参照してください。
+-   テスト コンピューターで、テスト署名を有効になっています。 詳細については、次を参照してください。 [TESTSIGNING ブートの構成オプション](the-testsigning-boot-configuration-option.md)します。
 
-テスト署名されたドライバー パッケージをインストールする方法の概要については、[Test-Signed ドライバー パッケージをテスト コンピューターにインストールする](installing-a-test-signed-driver-package-on-the-test-computer.md)を参照してください。
+テスト署名されたドライバー パッケージをインストールする方法の概要については、次を参照してください。 [Test-Signed ドライバー パッケージをテスト コンピューターにインストールする](installing-a-test-signed-driver-package-on-the-test-computer.md)します。
 
-インストールに関する問題のトラブルシューティングを行う方法の詳細については、[インストールのトラブルシューティングと負荷の問題のドライバー パッケージの署名に](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)を参照してください。
+インストールに関する問題のトラブルシューティングを行う方法の詳細については、次を参照してください。[インストールのトラブルシューティングと負荷の問題のドライバー パッケージの署名に](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)します。
 
  
 

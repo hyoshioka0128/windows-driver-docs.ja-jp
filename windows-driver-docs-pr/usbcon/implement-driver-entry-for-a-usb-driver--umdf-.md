@@ -1,16 +1,16 @@
 ---
-Description: Use the USB User-Mode Driver template provided with Microsoft Visual Studio to write a UMDF client driver.
-title: 最初、USB クライアント ドライバー (UMDF) を記述する方法
+Description: UMDF のクライアント ドライバーを作成するのにには、Microsoft Visual Studio に付属する USB ユーザー モード ドライバー テンプレートを使用します。
+title: 初めての USB クライアント ドライバーの記述方法 (UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a636c0ff23adc0c4682a4d8f80475273a6250875
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355478"
 ---
-# <a name="how-to-write-your-first-usb-client-driver-umdf"></a>最初、USB クライアント ドライバー (UMDF) を記述する方法
+# <a name="how-to-write-your-first-usb-client-driver-umdf"></a>初めての USB クライアント ドライバーの記述方法 (UMDF)
 
 
 このトピックでは使用し、 **USB ユーザー モード ドライバー**ユーザー モード ドライバー フレームワーク (UMDF) を記述する、Microsoft Visual Studio 2012 に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
@@ -19,7 +19,7 @@ UMDF (このトピックの「フレームワークと呼ばれます) は、コ
 
 UMDF ベースのクライアント ドライバーは、インプロセス COM サーバー (DLL) として実装し、C++ は USB デバイスのクライアント ドライバーを記述するための優先言語。 通常、クライアント ドライバーは、フレームワークによって公開されているいくつかのインターフェイスを実装します。 このトピックでは、クライアント ドライバーで定義されているコールバック クラスとして framework インターフェイスを実装するクラスを参照します。 これらのクラスをインスタンス化した後、結果のコールバック オブジェクトは特定のフレームワーク オブジェクトと提携しました。 このパートナーシップには、クライアント ドライバーのデバイスや、フレームワークによって報告されるシステムに関連するイベントに応答する機会が与えられます。 Windows では、特定のイベントに関する、フレームワークに通知、たびに、フレームワークがある場合、クライアント ドライバーのコールバックを呼び出します。 それ以外の場合、フレームワークは、イベントの既定の処理を続行します。 テンプレート コードでは、ドライバー、デバイス、およびキュー コールバック lasses を定義します。
 
-テンプレートによって生成されたソース コードに関する詳細については、[USB クライアント ドライバーの UMDF テンプレート コードを理解する](understanding-the-umdf-template-code-for-usb.md)を参照してください。
+テンプレートによって生成されたソース コードに関する詳細については、次を参照してください。 [USB クライアント ドライバーの UMDF テンプレート コードを理解する](understanding-the-umdf-template-code-for-usb.md)します。
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -40,7 +40,7 @@ UMDF ベースのクライアント ドライバーは、インプロセス COM 
     キットには、ヘッダー、ライブラリ、ツール、ドキュメント、およびデバッグ ツールを開発するために必要なビルド、および USB クライアント ドライバーをデバッグします。 WDK からの最新版を入手できます[、WDK を取得する方法](https://go.microsoft.com/fwlink/p/?linkid=617585)します。
 
 -   ホスト コンピューターでは、Windows 用デバッグ ツールの最新バージョンがあります。 WDK から最新バージョンを取得することもできますを[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=617701)します。
--   2 台のコンピューターを使用している場合は、ユーザー モード デバッグのホストとターゲットのコンピューターを構成する必要があります。 詳細については、[ユーザー モード デバッグのセットアップでは、Visual Studio](https://msdn.microsoft.com/library/windows/hardware/hh439381)を参照してください。
+-   2 台のコンピューターを使用している場合は、ユーザー モード デバッグのホストとターゲットのコンピューターを構成する必要があります。 詳細については、次を参照してください。[ユーザー モード デバッグのセットアップでは、Visual Studio](https://msdn.microsoft.com/library/windows/hardware/hh439381)します。
 
 **ハードウェア要件**
 
@@ -54,14 +54,14 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 -   [デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)
 -   [Windows ドライバーの概要](https://msdn.microsoft.com/library/windows/hardware/ff554690)
 -   [ユーザー モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff560027)
--   *Windows Driver Foundation でのドライバーの開発*少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、[WDF のドライバーが開発](https://go.microsoft.com/fwlink/p/?linkid=617702)を参照してください。
+-   *Windows Driver Foundation でのドライバーの開発*少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 [WDF のドライバーが開発](https://go.microsoft.com/fwlink/p/?linkid=617702)します。
 
 <a name="instructions"></a>手順
 ------------
 
 ### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2012-usb-driver-template"></a>手順 1:Visual Studio 2012 の USB ドライバーのテンプレートを使用して UMDF ドライバーのコードを生成します。
 
-<a href="" id="generate"></a> UMDF ドライバー コードの生成方法については、[UMDF ドライバーの作成、テンプレートに基づく](https://msdn.microsoft.com/library/windows/hardware/hh439659)を参照してください。
+<a href="" id="generate"></a> UMDF ドライバー コードの生成方法については、次を参照してください。 [UMDF ドライバーの作成、テンプレートに基づく](https://msdn.microsoft.com/library/windows/hardware/hh439659)します。
 
 **USB に固有のコードを Visual Studio 2012 で、次のオプションを選択します。**
 
@@ -147,7 +147,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 3.  **Configuration Manager**を選択、**アクティブ ソリューション構成**(たとえば、 **Windows 8 のデバッグ**または**Windows 8 Release**)、および**アクティブ ソリューション プラットフォーム**(たとえば、Win32) 興味のあるビルドの種類に対応しています。
 4.  **ビルド** メニューのをクリックして**ソリューションのビルド**します。
 
-詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
+詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>手順 4:テストとデバッグ用のコンピューターを構成します。
 
@@ -165,7 +165,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
-   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、[ **Tracepdb コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff553043)を参照してください。
+   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、次を参照してください。 [ **Tracepdb コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff553043)します。
 
    指定した位置には、3 つのファイル (.c ファイルで、プロジェクトごとに 1 つ) を確認します。 GUID ファイル名が表示されます。
 
@@ -188,7 +188,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
 **WPP トレースの対象のコンピューターを構成するには**
 
-1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\*&lt;arch&gt;*  WDK のフォルダー。 詳細については、[ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)を参照してください。
+1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\*&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
 2. 開く、**コマンド ウィンドウ**管理者として実行します。
 3. 次のコマンドを入力します。
 
@@ -269,15 +269,15 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 -   UMDF: クライアント ドライバーの代わりに Windows とのほとんど対話を処理するフレームワーク モジュール。 クライアント ドライバーがドライバーの一般的なタスクを実行するユーザー モード デバイス ドライバー インターフェイス (Ddi) を公開します。
 -   ディスパッチャー、ホスト プロセスで実行されているメカニズムユーザー モード ドライバーによって処理されたおよびユーザー モードのスタックの一番下に達した後に、カーネル モードへの要求を転送する方法を決定します。 図では、ディスパッチャーは、ユーザー モード DLL Winusb.dll に要求を転送します。
 -   Winusb.dll—a を公開する Microsoft 提供のユーザー モード DLL [WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)クライアント ドライバーと WinUSB (Winusb.sys、カーネル モードで読み込まれます) の間の通信プロセスを簡略化します。
--   Winusb.sys—a Microsoft 提供のドライバーの USB デバイスのすべての UMDF クライアント ドライバーで必要とされます。 カーネル モードでの USB ドライバー スタックへのゲートウェイとしては、reflector と機能の下、ドライバーをインストールする必要があります。 詳細については、[WinUSB](winusb.md)を参照してください。
--   USB ドライバー スタックなど、一連のドライバー、Microsoft が提供されている USB デバイスとプロトコル レベルの通信を処理します。 詳細については、[Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)を参照してください。
+-   Winusb.sys—a Microsoft 提供のドライバーの USB デバイスのすべての UMDF クライアント ドライバーで必要とされます。 カーネル モードでの USB ドライバー スタックへのゲートウェイとしては、reflector と機能の下、ドライバーをインストールする必要があります。 詳細については、次を参照してください。 [WinUSB](winusb.md)します。
+-   USB ドライバー スタックなど、一連のドライバー、Microsoft が提供されている USB デバイスとプロトコル レベルの通信を処理します。 詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)します。
 
 アプリケーションでは、USB ドライバー スタックの要求を行う、たびに、Windows I/O マネージャーは、reflector は、ユーザー モードでのクライアント ドライバーにリダイレクトする、要求を送信します。 クライアント ドライバーでは、要求を処理、内部的に呼び出す特定の UMDF メソッドを呼び出して、 [WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) WinUSB に要求を送信します。 要求を受信したら WinUSB は要求を処理するか、または USB ドライバー スタックに転送。
 
 ## <a name="related-topics"></a>関連トピック
 [USB クライアント ドライバーの UMDF テンプレート コードを理解します。](understanding-the-umdf-template-code-for-usb.md)  
 [USB のセレクティブがサスペンドを有効にする方法と、USB デバイスの UMDF ドライバーにシステムがスリープ解除](https://go.microsoft.com/fwlink/p/?linkid=617587)  
-[USB クライアント ドライバー開発を入門](getting-started-with-usb-client-driver-development.md)  
+[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
 
 
 

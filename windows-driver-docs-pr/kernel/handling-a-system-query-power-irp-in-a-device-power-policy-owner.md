@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39f3e36ce6f240d400449f9f160a1c81527f9ef6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359822"
 ---
 # <a name="handling-a-system-query-power-irp-in-a-device-power-policy-owner"></a>デバイス電源ポリシー オーナーでのシステム電源クエリ IRP の処理
 
@@ -30,7 +30,7 @@ ms.locfileid: "56581283"
 
 2.  ドライバーが、クエリ対象のシステム電源の状態をサポートできることを確認する」の説明に従って[フィルターまたは関数のドライバーで、システム クエリ性能の IRP を失敗](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)します。 ない場合は、そのセクションで説明した IRP がエラー状態を完了します。
 
-    ただし、ドライバーをする必要があります失敗しないクエリ s4 (**PowerSystemHibernate**) 場合はウェイク アップのデバイスが有効になっているが、システムを休止状態からのスリープを解除できません。 この場合は、ドライバーの電源ポリシー所有者 (送信先となる、 [ **IRP\_MN\_待機\_WAKE**](https://msdn.microsoft.com/library/windows/hardware/ff551766)) 待機/ウェイク IRP をキャンセルし、システムのクエリが成功する必要があります。 詳細については、[待機/ウェイク IRP のキャンセル](canceling-a-wait-wake-irp.md)を参照してください。
+    ただし、ドライバーをする必要があります失敗しないクエリ s4 (**PowerSystemHibernate**) 場合はウェイク アップのデバイスが有効になっているが、システムを休止状態からのスリープを解除できません。 この場合は、ドライバーの電源ポリシー所有者 (送信先となる、 [ **IRP\_MN\_待機\_WAKE**](https://msdn.microsoft.com/library/windows/hardware/ff551766)) 待機/ウェイク IRP をキャンセルし、システムのクエリが成功する必要があります。 詳細については、次を参照してください。[待機/ウェイク IRP のキャンセル](canceling-a-wait-wake-irp.md)します。
 
 3.  場合は、ドライバーは、クエリ対象のシステム電源の状態をサポートできますが、呼び出す[ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)します。
 
@@ -60,7 +60,7 @@ IRP が完了した後、すべて*IoCompletion* IRP の処理中に設定する
 
 3.  呼び出す[ **IoReleaseRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549560)を以前に取得したロックを解放します。
 
-デバイスの電源ポリシーの所有者だけでなく、デバイスのクエリを送信しますがもデバイス スタックには、その方法で処理する必要がありますに注意してください。 詳細については、[IRP の処理\_MN\_クエリ\_デバイスの電源状態のための電力](handling-irp-mn-query-power-for-device-power-states.md)を参照してください。
+デバイスの電源ポリシーの所有者だけでなく、デバイスのクエリを送信しますがもデバイス スタックには、その方法で処理する必要がありますに注意してください。 詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_デバイスの電源状態のための電力](handling-irp-mn-query-power-for-device-power-states.md)します。
 
  
 

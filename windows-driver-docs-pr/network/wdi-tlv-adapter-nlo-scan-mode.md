@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ADAPTER_NLO_SCAN_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 95dadeb161840e0e4d975d40c701159b3fa5147d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356815"
 ---
 # <a name="wditlvadapternloscanmode"></a>WDI\_TLV\_アダプター\_NLO\_スキャン\_モード
 
@@ -31,7 +31,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                     |
+| 型   | 説明                                                                                                                     |
 |--------|---------------------------------------------------------------------------------------------------------------------------------|
 | UINT32 | [**WDI\_スキャン\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926115)アクティブまたはパッシブ モードでスキャンを実行するかどうかを示す値です。 |
 

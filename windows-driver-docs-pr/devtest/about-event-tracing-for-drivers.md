@@ -1,6 +1,6 @@
 ---
-title: Event Tracing for ドライバーについて
-description: Event Tracing for ドライバーについて
+title: ドライバーのイベント トレーシングについて
+description: ドライバーのイベント トレーシングについて
 ms.assetid: 1b5c85b1-5b7a-48bc-bdd4-356316d4467f
 keywords:
 - Event Tracing for Windows Event Tracing for Windows は、WDK
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23fee31ba48a8afb8f50a267438e5524e9b70faf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358089"
 ---
-# <a name="about-event-tracing-for-drivers"></a>Event Tracing for ドライバーについて
+# <a name="about-event-tracing-for-drivers"></a>ドライバーのイベント トレーシングについて
 
 
 ## <a name="what-is-event-tracing"></a>イベントのトレースとは

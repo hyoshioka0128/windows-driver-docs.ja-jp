@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20fb386fe4e7a23e0ff63f00357f3eb8b4d0b1f2
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359248"
 ---
 # <a name="handling-an-irpmnsurpriseremoval-request"></a>IRP の処理\_MN\_突然\_削除要求
 
@@ -60,7 +60,7 @@ PnP マネージャーでは、ユーザー モード アプリケーション�
 
 2.  (割り込み、I/O ポート、メモリのレジスタおよび DMA チャネル) のデバイスのハードウェア リソースを解放します。
 
-3.  親のバス ドライバー、バス スロット電源、ドライバーではこれを行う場合。 呼び出す[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)電源マネージャーに通知します。 詳細については、[電源管理](implementing-power-management.md)を参照してください。
+3.  親のバス ドライバー、バス スロット電源、ドライバーではこれを行う場合。 呼び出す[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)電源マネージャーに通知します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
 
 4.  デバイスで新しい I/O 操作を防止します。
 

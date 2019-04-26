@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d10e36b99287a788b2e97c383201919b40a120cd
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357021"
 ---
 # <a name="bug-check-0xc5-drivercorruptedexpool"></a>バグ チェック 0xC5:ドライバー\_破損した\_EXPOOL
 

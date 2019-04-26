@@ -1,17 +1,17 @@
 ---
-title: LocationPaths レジストリのサブキー
-description: LocationPaths レジストリのサブキー
+title: LocationPaths レジストリ サブキー
+description: LocationPaths レジストリ サブキー
 ms.assetid: d34ba7f4-97d2-4e63-a820-436c0336c584
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62970aff742d93ad3f4410ace59a506726a84a8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356940"
 ---
-# <a name="locationpaths-registry-subkey"></a>LocationPaths レジストリのサブキー
+# <a name="locationpaths-registry-subkey"></a>LocationPaths レジストリ サブキー
 
 
 Windows 7 以降、 **LocationPaths** HardwareID のいずれかで識別されるデバイスのレジストリ サブキーがリムーバブル デバイス機能のオーバーライドの指定で使用される) リムーバブル デバイスの機能が提供されます上書きを適用します。 リムーバブル デバイスの機能の詳細を上書きするを参照してください。 [DeviceOverrides レジストリ キー](deviceoverrides-registry-key.md)します。

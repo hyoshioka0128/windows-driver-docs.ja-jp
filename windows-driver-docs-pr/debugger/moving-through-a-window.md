@@ -1,19 +1,19 @@
 ---
-title: ウィンドウ内を移動
-description: ウィンドウ内を移動
+title: ウィンドウ内の移動
+description: ウィンドウ内の移動
 ms.assetid: c164a446-1f6c-4d37-8ad6-aa254d3268bc
 keywords:
 - デバッグ情報ウィンドウを移動します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45f14eadd827386e503aca77ebddb6f2669f1fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358962"
 ---
-# <a name="moving-through-a-window"></a>ウィンドウ内を移動
+# <a name="moving-through-a-window"></a>ウィンドウ内の移動
 
 
 ## <span id="ddk_moving_through_a_window_dbg"></span><span id="DDK_MOVING_THROUGH_A_WINDOW_DBG"></span>

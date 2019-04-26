@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_CONNECT_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 72575278de3943b532989997a37fd8f3e8afcfa3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358744"
 ---
 # <a name="oidgenmediaconnectstatus"></a>OID\_GEN\_メディア\_CONNECT\_状態
 

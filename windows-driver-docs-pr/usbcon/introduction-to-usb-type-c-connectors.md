@@ -4,11 +4,11 @@ title: USB タイプ C Windows システムのメッセージをトラブルシ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 060ecddcb41ae474d0845afc0b9f11216525c407
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355468"
 ---
 # <a name="troubleshoot-messages-for-a-usb-type-c-windows-system"></a>USB タイプ C Windows システムのメッセージをトラブルシューティングします。
 
@@ -132,7 +132,7 @@ USB 型-c コネクタの対称的、および元に戻すことのデザイン�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>接続されたデバイスのドライバーは、システムで実行されている Windows のバージョンでサポートされていません。 サポートされているデバイスについては、<a href="supported-usb-classes.md" data-raw-source="[USB device class drivers included in Windows](supported-usb-classes.md)">USB デバイス クラス ドライバーが Windows に含まれる</a>を参照してください。</p>
+<td><p>接続されたデバイスのドライバーは、システムで実行されている Windows のバージョンでサポートされていません。 サポートされているデバイスについては、次を参照してください。 <a href="supported-usb-classes.md" data-raw-source="[USB device class drivers included in Windows](supported-usb-classes.md)">USB デバイス クラス ドライバーが Windows に含まれる</a>します。</p>
 <div class="alert">
 <strong>注</strong>モバイル システムが他の USB 周辺機器を接続する機能。 ただし、PC に接続するすべてのデバイスは、モバイル システムに接続できます。 サポートされているデバイスには、上記の一覧を確認します。
 </div>
@@ -140,7 +140,7 @@ USB 型-c コネクタの対称的、および元に戻すことのデザイン�
 
 </div></td>
 <td><ul>
-<li>最新のドライバー パッケージがあるように、Windows の最新バージョンが実行していることを確認します。 詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkID=698739" data-raw-source="[Windows 10 Updates](https://go.microsoft.com/fwlink/p/?LinkID=698739 )">Windows 10 更新プログラム</a>を参照してください。</li>
+<li>最新のドライバー パッケージがあるように、Windows の最新バージョンが実行していることを確認します。 詳しくは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkID=698739" data-raw-source="[Windows 10 Updates](https://go.microsoft.com/fwlink/p/?LinkID=698739 )">Windows 10 更新プログラム</a>します。</li>
 <li>最新バージョンを既に実行している場合は、代わりに、デバイスを PC に接続してみてください。</li>
 </ul></td>
 </tr>

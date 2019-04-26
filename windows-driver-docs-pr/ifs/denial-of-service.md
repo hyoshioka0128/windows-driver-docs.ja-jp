@@ -1,6 +1,6 @@
 ---
-title: サービス拒否が起こる
-description: サービス拒否が起こる
+title: サービス拒否
+description: サービス拒否
 ms.assetid: b8b28d42-b680-482a-a7a1-6b2f5614ebfb
 keywords:
 - 脅威モデルの WDK ファイル システム、サービス拒否が起こる
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b9b0dfde7a1429e3282f370876c7b891e19de5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359321"
 ---
-# <a name="denial-of-service"></a>サービス拒否が起こる
+# <a name="denial-of-service"></a>サービス拒否
 
 
 ## <span id="ddk_denial_of_service_if"></span><span id="DDK_DENIAL_OF_SERVICE_IF"></span>

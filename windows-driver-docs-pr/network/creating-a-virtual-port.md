@@ -1,17 +1,17 @@
 ---
-title: 仮想ポートを作成します。
-description: 仮想ポートを作成します。
+title: 仮想ポートの作成
+description: 仮想ポートの作成
 ms.assetid: 6102576D-3236-4FDD-8963-83A9E90FF7F0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1b27a68a95763d43226600c5fb42d2ebd9291fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357352"
 ---
-# <a name="creating-a-virtual-port"></a>仮想ポートを作成します。
+# <a name="creating-a-virtual-port"></a>仮想ポートの作成
 
 
 仮想ポート (VPort) は、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC のスイッチを内部ポートを表すデータ オブジェクトです。 各 NIC スイッチでは、ネットワーク接続のため、次のポートがあります。
@@ -33,7 +33,7 @@ ms.locfileid: "56548867"
 
 既定の VPort は常にアクティブ化の状態と、明示的に削除することはできません。 PF ミニポート ドライバーでは、既定の NIC のスイッチを削除するときにのみ既定 VPort 暗黙的に削除します。
 
-NIC のスイッチと既定 VPort スイッチを作成する方法の詳細については、[NIC スイッチの作成](creating-a-nic-switch.md)を参照してください。
+NIC のスイッチと既定 VPort スイッチを作成する方法の詳細については、次を参照してください。 [NIC スイッチの作成](creating-a-nic-switch.md)です。
 
 <a href="" id="nondefault-vport"></a>既定以外の VPort  
 NIC のスイッチの作成時に既定以外の拡張は暗黙的に作成されません。 OID メソッド要求を発行して、これらのポートを明示的に作成しますなど、仮想化スタックの上にあるドライバー [OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。 既定以外の拡張は、PF または、VF、接続されている可能性があり、NIC のスイッチが作成された後にのみ作成できます。
@@ -70,7 +70,7 @@ NIC のスイッチの作成時に既定以外の拡張は暗黙的に作成さ�
 
 
 
-上にあるドライバーは、VPort に割り当てられているキュー ペアの数を指定もできます。 キュー ペアは、送信は、送受信、VPort に割り当てられているネットワーク アダプターのキューです。 ネットワーク アダプターでは、既定以外の拡張の非対称キュー ペアをサポートする場合、上にあるドライバーはドライバーを作成する各 VPort のキュー ペアの数が異なるを指定できます。 詳細については、[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)を参照してください。
+上にあるドライバーは、VPort に割り当てられているキュー ペアの数を指定もできます。 キュー ペアは、送信は、送受信、VPort に割り当てられているネットワーク アダプターのキューです。 ネットワーク アダプターでは、既定以外の拡張の非対称キュー ペアをサポートする場合、上にあるドライバーはドライバーを作成する各 VPort のキュー ペアの数が異なるを指定できます。 詳細については、次を参照してください。[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)します。
 
 上にあるドライバー呼び出し[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)問題を[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)基になる PF ミニポート ドライバーに要求します。 NDIS ミニポート ドライバーに OID メソッド要求を転送する前に、次は。
 

@@ -1,5 +1,5 @@
 ---
-title: PnPUtil コマンドの構文
+title: PnPUtil のコマンド構文
 description: 構文とパラメーターを含む、pnputil ツールを実行する方法。
 ms.assetid: f14ceb98-8d82-43dd-b06e-2595b59b6999
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 01/31/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b591b0ab1676b56e5b35db7c7cc9c1bb77ed7f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356302"
 ---
-# <a name="pnputil-command-syntax"></a>PnPUtil コマンドの構文
+# <a name="pnputil-command-syntax"></a>PnPUtil のコマンド構文
 
 
 Pnputil ツールを実行するには、コマンド プロンプト ウィンドウを開き (**管理者として実行**) し、次の構文とパラメーターを使用してコマンドを入力します。
@@ -83,7 +83,7 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 
 
 
-PnPUtil ツールを使用する方法の例については、[PnPUtil 例](pnputil-examples.md)を参照してください。
+PnPUtil ツールを使用する方法の例については、次を参照してください。 [PnPUtil 例](pnputil-examples.md)します。
 
  
 

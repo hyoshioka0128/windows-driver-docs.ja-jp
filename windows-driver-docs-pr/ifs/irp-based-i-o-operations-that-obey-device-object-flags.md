@@ -5,11 +5,11 @@ ms.assetid: d322aeda-a753-4616-8a35-1a5ae5a37cf2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d7e1150aebabf4d8cd0d705666bd3c90edb6b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360054"
 ---
 # <a name="irp-based-io-operations-that-obey-device-object-flags"></a>デバイス オブジェクト フラグに従う IRP ベースの I/O 操作
 
@@ -41,9 +41,9 @@ DO\_バッファーに格納された\_IO、および操作を行います\_直�
 
 -   どちらのフラグが設定されている場合、操作には、バッファーも直接 I/O が使用されます。
 
-デバイス オブジェクトのフラグの詳細については、[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)と[デバイス オブジェクトを初期化して](https://msdn.microsoft.com/library/windows/hardware/ff547807)を参照してください。
+デバイス オブジェクトのフラグの詳細については、次を参照してください。 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)と[デバイス オブジェクトを初期化して](https://msdn.microsoft.com/library/windows/hardware/ff547807)します。
 
-注その IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込みは IRP ベースまたは高速の I/O 操作を指定できます。 IRP ベースできたら、バッファリングのメソッドは上記で説明したようにデバイス オブジェクトのフラグによって決まります。 これらの操作が高速の I/O の場合、バッファーのどちらを使用して、常にもダイレクト I/O。 IRP ベースまたは高速の I/O 操作は、I/O 操作の詳細については、[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)を参照してください。
+注その IRP\_MJ\_読み取りおよび IRP\_MJ\_書き込みは IRP ベースまたは高速の I/O 操作を指定できます。 IRP ベースできたら、バッファリングのメソッドは上記で説明したようにデバイス オブジェクトのフラグによって決まります。 これらの操作が高速の I/O の場合、バッファーのどちらを使用して、常にもダイレクト I/O。 IRP ベースまたは高速の I/O 操作は、I/O 操作の詳細については、次を参照してください。[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)します。
 
  
 

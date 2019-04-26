@@ -5,11 +5,11 @@ ms.assetid: c310829f-e102-4a96-aa3e-39136b8a641b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d0441ff7e12e6ada42b5d46d8836a22f929bf517
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359942"
 ---
 # <a name="general-io-programming-techniques"></a>I/O の一般的なプログラミング手法
 
@@ -22,9 +22,9 @@ ms.locfileid: "56560987"
 
 [I/O の非同期プログラミング](asynchronous-i-o-programming.md)
 
-Microsoft Vista では、同期プログラミングの問題に対処するための新しいポリシーを持ちます。 この新しいポリシーの詳細については、[Windows Vista での待機を制限する](restricting-waits-in-vista.md)詳細についてはを参照してください。
+Microsoft Vista では、同期プログラミングの問題に対処するための新しいポリシーを持ちます。 この新しいポリシーの詳細については、次を参照してください。 [Windows Vista での待機を制限する](restricting-waits-in-vista.md)詳細についてはします。
 
-プログラミング以前のデバイス ドライバー、ドライバーは、回答が提供されるまで、ドライバーから情報を繰り返し要求する必要があります。 この手法では、ポーリングは呼び出され、ほとんどないを使用する必要があります。 ポーリングの問題に対処する最善の方法では、ハードウェアの割り込みを使用します。 ハードウェアの割り込みの詳細については、[サービス割り込み](servicing-interrupts.md)を参照してください。 ポーリングといないを使用する理由の詳細については、[デバイスのポーリングを回避](avoid-polling-devices.md)を参照してください。
+プログラミング以前のデバイス ドライバー、ドライバーは、回答が提供されるまで、ドライバーから情報を繰り返し要求する必要があります。 この手法では、ポーリングは呼び出され、ほとんどないを使用する必要があります。 ポーリングの問題に対処する最善の方法では、ハードウェアの割り込みを使用します。 ハードウェアの割り込みの詳細については、次を参照してください。[サービス割り込み](servicing-interrupts.md)します。 ポーリングといないを使用する理由の詳細については、次を参照してください。[デバイスのポーリングを回避](avoid-polling-devices.md)します。
 
  
 

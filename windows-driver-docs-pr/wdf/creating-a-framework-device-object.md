@@ -1,6 +1,6 @@
 ---
-title: Framework デバイス オブジェクトを作成します。
-description: Framework デバイス オブジェクトを作成します。
+title: フレームワーク デバイス オブジェクトの作成
+description: フレームワーク デバイス オブジェクトの作成
 ms.assetid: 25023c19-a153-4bd4-9fb6-3a1bf85860aa
 keywords:
 - PnP WDK KMDF、デバイス オブジェクト
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f94a1a8a2989fb80d3f497eb0613974ab32928ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358497"
 ---
-# <a name="creating-a-framework-device-object"></a>Framework デバイス オブジェクトを作成します。
+# <a name="creating-a-framework-device-object"></a>フレームワーク デバイス オブジェクトの作成
 
 
 すべての関数のドライバー、フィルター ドライバー、およびバス ドライバーは、システムに接続されているサポートされているデバイスの各インスタンスの framework デバイス オブジェクトを作成する必要があります。

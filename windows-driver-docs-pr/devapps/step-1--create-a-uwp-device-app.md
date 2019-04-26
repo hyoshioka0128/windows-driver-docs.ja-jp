@@ -5,26 +5,26 @@ ms.assetid: 4D8240AD-F589-4623-BC6E-47E304831250
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19bb9f718ff864ff2987950f9e4808bf7eda3416
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356646"
 ---
-# <a name="step-1-create-a-uwp-device-app"></a>手順 1:UWP デバイス アプリを作成します。
+# <a name="step-1-create-a-uwp-device-app"></a>手順 1:UWP デバイス アプリを作成する
 
 
 ![デバイス アプリのワークフロー、手順 1](images/1-device-app-workflow.png)
 
 このトピックでは、Microsoft Visual Studio を使用して、UWP デバイス アプリを作成するための基本的なプロセスについて説明します。 すべての UWP デバイス アプリに共通するタスクについて説明します。
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
 **注**  このトピックはステップ バイ ステップの一連の一部です。 参照してください[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)導入します。
 
  
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>開始する前に
+## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>始める前に
 
 
 このステップ バイ ステップ ガイドでは、UWP アプリ プロジェクトを作成したことと、必要なデバイス ドライバーが既に存在している前提としています。
@@ -39,10 +39,10 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 
 | デバイスのアプリまたは API                      | ドライバー情報                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| カメラ用の UWP デバイス アプリ   | カメラのドライバーは AvStream ドライバー モデルを使用する必要があります。 AvStream ドライバー モデルの詳細については、、 [AVStream の概要](https://go.microsoft.com/fwlink/p/?LinkId=273032)、Windows Driver Kit でを参照してください。 A カメラのカスタム効果を提供するドライバーのインストール パッケージで、Driver MFT (media foundation 変換) と呼ばれる追加のコンポーネントを指定することができます。 詳細については、[Windows ストアのカメラ用のデバイス アプリ](uwp-device-apps-for-webcams.md)を参照してください。 |
+| カメラ用の UWP デバイス アプリ   | カメラのドライバーは AvStream ドライバー モデルを使用する必要があります。 AvStream ドライバー モデルの詳細については、次を参照してください。、 [AVStream の概要](https://go.microsoft.com/fwlink/p/?LinkId=273032)、Windows Driver Kit でします。 A カメラのカスタム効果を提供するドライバーのインストール パッケージで、Driver MFT (media foundation 変換) と呼ばれる追加のコンポーネントを指定することができます。 詳細については、次を参照してください。 [Windows ストアのカメラ用のデバイス アプリ](uwp-device-apps-for-webcams.md)します。 |
 | プリンター用の UWP デバイス アプリ | プリンター、v4 プリンター ドライバーを使用する必要があります。 参照してください[v4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)の詳細。                                                                                                                                                                                                                                                                                                                                                         |
 | USB Api                               | Windows ランタイムを使用する[Windows.Devices.Usb](https://go.microsoft.com/fwlink/p/?LinkId=306694)Api では、デバイスは Winusb.sys ドライバーとの互換性である必要があります。                                                                                                                                                                                                                                                                                                                                      |
-| ヒューマン インターフェイス デバイス (HID) Api      | HID Api は USB、Bluetooth、Bluetooth Smart、および I2C トランスポート経由で使用するために設計されています。 Windows ランタイムを使用する[Windows.Devices.HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) Api では、デバイスは HIDClass.sys ドライバーとトランスポートによって必要なドライバーと互換性のあるである必要があります。 詳細については、[HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)を参照してください。                                                                                                            |
+| ヒューマン インターフェイス デバイス (HID) Api      | HID Api は USB、Bluetooth、Bluetooth Smart、および I2C トランスポート経由で使用するために設計されています。 Windows ランタイムを使用する[Windows.Devices.HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) Api では、デバイスは HIDClass.sys ドライバーとトランスポートによって必要なドライバーと互換性のあるである必要があります。 詳細については、次を参照してください。 [HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)します。                                                                                                            |
 | Bluetooth GATT Api                    | Windows ランタイムの Bluetooth GATT Api を使用する[Windows.Devices.Bluetooth.GenericAttributeProfile](https://go.microsoft.com/fwlink/p/?LinkId=306698)デバイスを BthLEEnum.sys ドライバーとの互換性にする必要があります。                                                                                                                                                                                                                                                                                   |
 | Bluetooth RFCOMM Api                  | Windows ランタイムの Bluetooth RFCOMM Api を使用する[Windows.Devices.Bluetooth.Rfcomm](https://go.microsoft.com/fwlink/p/?LinkId=306699)デバイスは、Rfcomm.sys と BthEnum.sys ドライバーと互換性のあるである必要があります。                                                                                                                                                                                                                                                                                    |
 
@@ -121,15 +121,15 @@ UWP デバイス アプリの開発を開始すると、次の点を検討して
 
 ### <a name="span-iddevicecapabilitiesspanspan-iddevicecapabilitiesspanspan-iddevicecapabilitiesspandevice-capabilities"></a><span id="Device_capabilities"></span><span id="device_capabilities"></span><span id="DEVICE_CAPABILITIES"></span>デバイスの機能
 
-デバイスにアクセスするには、アプリのパッケージ マニフェストでデバイスの機能を指定する必要があります。 指定されて、 [DeviceCapability](https://go.microsoft.com/fwlink/p/?LinkId=306696)アプリのプロジェクトの Package.appxmanifest ファイルの要素。 いくつかのデバイス機能を手動で指定する必要がありますに注意してください。 詳細については、[パッケージ マニフェストでデバイスの機能を指定する方法](https://go.microsoft.com/fwlink/p/?LinkID=306695)を参照してください。
+デバイスにアクセスするには、アプリのパッケージ マニフェストでデバイスの機能を指定する必要があります。 指定されて、 [DeviceCapability](https://go.microsoft.com/fwlink/p/?LinkId=306696)アプリのプロジェクトの Package.appxmanifest ファイルの要素。 いくつかのデバイス機能を手動で指定する必要がありますに注意してください。 詳細については、次を参照してください。[パッケージ マニフェストでデバイスの機能を指定する方法](https://go.microsoft.com/fwlink/p/?LinkID=306695)します。
 
 ### <a name="span-idautoplayforwindowsstoredeviceappsspanspan-idautoplayforwindowsstoredeviceappsspanspan-idautoplayforwindowsstoredeviceappsspanautoplay-for-uwp-device-apps"></a><span id="AutoPlay_for_Windows_Store_device_apps"></span><span id="autoplay_for_windows_store_device_apps"></span><span id="AUTOPLAY_FOR_WINDOWS_STORE_DEVICE_APPS"></span>UWP デバイス アプリの自動再生
 
-自動再生デバイスが接続されているときに、既定では、アプリを開始します。 この機能を使用するには、アプリのパッケージ マニフェストとデバイスのメタデータを編集する必要があります。 詳細については、[UWP デバイス アプリの自動再生](autoplay-for-uwp-device-apps.md)を参照してください。
+自動再生デバイスが接続されているときに、既定では、アプリを開始します。 この機能を使用するには、アプリのパッケージ マニフェストとデバイスのメタデータを編集する必要があります。 詳細については、次を参照してください。 [UWP デバイス アプリの自動再生](autoplay-for-uwp-device-apps.md)します。
 
 ### <a name="span-idsyncorupdateyourdeviceinthebackgroundspanspan-idsyncorupdateyourdeviceinthebackgroundspanspan-idsyncorupdateyourdeviceinthebackgroundspansync-or-update-your-device-in-the-background"></a><span id="Sync_or_update_your_device_in_the_background"></span><span id="sync_or_update_your_device_in_the_background"></span><span id="SYNC_OR_UPDATE_YOUR_DEVICE_IN_THE_BACKGROUND"></span>同期またはバック グラウンドでデバイスを更新します。
 
-同期または、デバイスのバック グラウンド タスクを使用して UWP デバイス アプリからデバイスを更新することができます。 この機能を使用するには、デバイスのメタデータでの特権を持つアプリとしてアプリを指定する必要があります。 詳細については、[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)を参照してください。
+同期または、デバイスのバック グラウンド タスクを使用して UWP デバイス アプリからデバイスを更新することができます。 この機能を使用するには、デバイスのメタデータでの特権を持つアプリとしてアプリを指定する必要があります。 詳細については、次を参照してください。[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)します。
 
 ### <a name="span-idlearnmorespanspan-idlearnmorespanspan-idlearnmorespanlearn-more"></a><span id="Learn_more"></span><span id="learn_more"></span><span id="LEARN_MORE"></span>詳細情報
 
@@ -145,7 +145,7 @@ UWP デバイス アプリの開発を開始すると、次の点を検討して
 ## <a name="span-idusethewindowsappcertificationkitspanspan-idusethewindowsappcertificationkitspanspan-idusethewindowsappcertificationkitspanuse-the-windows-app-certification-kit"></a><span id="Use_the_Windows_App_Certification_Kit"></span><span id="use_the_windows_app_certification_kit"></span><span id="USE_THE_WINDOWS_APP_CERTIFICATION_KIT"></span>Windows アプリ認定キットを使用します。
 
 
-アプリの認定資格を取得やすければを得られるように、検証し、認定および Microsoft Store への掲載のために送信する前に、コンピューターにテストします。 詳細については、[Windows アプリ認定キット](https://go.microsoft.com/fwlink/p/?LinkId=273040)を参照してください。
+アプリの認定資格を取得やすければを得られるように、検証し、認定および Microsoft Store への掲載のために送信する前に、コンピューターにテストします。 詳細については、次を参照してください。 [Windows アプリ認定キット](https://go.microsoft.com/fwlink/p/?LinkId=273040)します。
 
 ## <a name="span-idnextstepspanspan-idnextstepspanspan-idnextstepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>次の手順
 

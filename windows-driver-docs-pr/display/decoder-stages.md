@@ -1,6 +1,6 @@
 ---
-title: デコーダーのステージ
-description: デコーダーのステージ
+title: デコーダー ステージ
+description: デコーダー ステージ
 ms.assetid: 34562b2a-9568-440d-b6ec-dbd1e5004d56
 keywords:
 - DirectX のビデオ アクセラレータ WDK Windows 2000 の表示、ビデオのデコード
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c1a39d09d330a48e2ff21153c87d4af4e3d7e3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360092"
 ---
-# <a name="decoder-stages"></a>デコーダーのステージ
+# <a name="decoder-stages"></a>デコーダー ステージ
 
 
 ## <span id="ddk_decoder_stages_gg"></span><span id="DDK_DECODER_STAGES_GG"></span>

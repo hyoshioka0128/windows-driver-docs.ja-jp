@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01b4d0f4da0394470a581c3cc164a951fbb306e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358281"
 ---
 # <a name="types-of-filter-drivers"></a>フィルター ドライバーの種類
 
@@ -32,7 +32,7 @@ ms.locfileid: "56528290"
 
 **FilterType** INF ファイルのエントリは、0x00000001 フィルター ドライバーおよびフィルター ドライバーを変更するための 0x00000002 を監視します。
 
-フィルター ドライバーが必須であるを指定することができます。 この機能は通常、フィルター ドライバーの変更に使用されます。 必須のフィルター ドライバーが読み込まれない場合は、関連するドライバー スタックは破棄されます。 必須フィルター ドライバーの詳細については、[必須フィルター ドライバー](mandatory-filter-drivers.md)を参照してください。
+フィルター ドライバーが必須であるを指定することができます。 この機能は通常、フィルター ドライバーの変更に使用されます。 必須のフィルター ドライバーが読み込まれない場合は、関連するドライバー スタックは破棄されます。 必須フィルター ドライバーの詳細については、次を参照してください。[必須フィルター ドライバー](mandatory-filter-drivers.md)します。
 
  
 

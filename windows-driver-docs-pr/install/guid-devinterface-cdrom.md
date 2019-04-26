@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: dac56719f1334916bda5c00089210247317bc87e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358827"
 ---
 # <a name="guiddevinterfacecdrom"></a>GUID_DEVINTERFACE_CDROM
 
@@ -58,9 +58,9 @@ CD-ROM の記憶域デバイスのシステム指定のクラス ドライバー
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、 [CDROM クラス ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256093)サンプルと[Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)。 CD-ROM クラス ドライバーのサンプルが古い形式の識別子を使用して[ **CdRomClassGuid** ](cdromclassguid.md) GUID_DEVINTERFACE_CDROM デバイス インターフェイスのクラスのインスタンスを登録します。 サンプルの Addfilter アプリケーションでは、CdRomClassGuid を使用して、GUID_DEVINTERFACE_CDROM デバイス インターフェイスのクラスのインスタンスを列挙します。
 
-チェンジャーの CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)を参照してください。
+チェンジャーの CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)します。
 
-記憶域デバイスについては、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
+記憶域デバイスについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
 
 <a name="requirements"></a>必要条件
 ------------

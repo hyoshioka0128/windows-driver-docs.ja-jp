@@ -1,6 +1,6 @@
 ---
-title: TP のコンポーネントをについてください。
-description: TP のコンポーネントをについてください。
+title: TPS コンポーネントの概要
+description: TPS コンポーネントの概要
 ms.assetid: 4bc962fa-8c05-4b0f-b634-9c0f435907b7
 keywords:
 - トランザクション処理システム WDK KTM、コンポーネント
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66708e2418a48d30492986900b278f39781817db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355304"
 ---
-# <a name="understanding-tps-components"></a>TP のコンポーネントをについてください。
+# <a name="understanding-tps-components"></a>TPS コンポーネントの概要
 
 
 すべて[*トランザクション処理システム*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TP) カーネル トランザクション マネージャー (KTM) を使用して、 [Common Log File System](using-common-log-file-system.md) (CLFS) は、次を含める必要があります重要なコンポーネント:
@@ -104,9 +104,9 @@ Leave:
 
 トランザクションのクライアントが呼び出された場合[ **ZwCommitTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566420)クラッシュの前にトランザクションがトランザクションのコミット操作の処理を開始した、リソース マネージャーは、復元できる必要があります、クラッシュする直前にポイントするトランザクションの状態。 クライアントが、クラッシュ前にトランザクションをコミットする準備完了でない場合、リソース マネージャーは、データを破棄し、トランザクションをロールバックします。
 
-トランザクションのクライアントを記述する方法の詳細については、[トランザクションのクライアントを作成する](creating-a-transactional-client.md)を参照してください。
+トランザクションのクライアントを記述する方法の詳細については、次を参照してください。[トランザクションのクライアントを作成する](creating-a-transactional-client.md)します。
 
-リソース マネージャーを作成する方法の詳細については、[リソース マネージャーを作成する](creating-a-resource-manager.md)を参照してください。
+リソース マネージャーを作成する方法の詳細については、次を参照してください。[リソース マネージャーを作成する](creating-a-resource-manager.md)します。
 
 ### <a name="multiple-resource-managers-in-a-tps"></a>複数のリソース マネージャーで、TP
 

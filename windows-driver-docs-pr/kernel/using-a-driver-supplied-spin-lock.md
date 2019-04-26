@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 04faab726c2c712184737fbc602030a3405d41ed
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355252"
 ---
 # <a name="using-a-driver-supplied-spin-lock"></a>ドライバーによって提供されるスピン ロックの使用
 

@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8eb23f0e5429b26fff04f04c25d7e1135a7b4fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357810"
 ---
-# <a name="device-identification-strings"></a>デバイスの識別文字列
+# <a name="device-identification-strings"></a>デバイスの識別用文字列
 
 プラグ アンド プレイ (PnP) マネージャー、およびその他の[デバイス インストール コンポーネント](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)コンピューターにインストールされているデバイスを識別するためにデバイスの識別文字列を使用します。
 
@@ -31,7 +31,7 @@ Windows では、次のデバイスの識別文字列を使用して、デバイ
 
 - [互換性 Id](compatible-ids.md)
 
-Windows では、ハードウェア Id または互換性 Id の 1 つの一致を見つけようとします。 Windows がこれらの Id を使用して、INF ファイルにデバイスを照合する方法と、INF ファイルで Id を指定する方法の詳細については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
+Windows では、ハードウェア Id または互換性 Id の 1 つの一致を見つけようとします。 Windows がこれらの Id を使用して、INF ファイルにデバイスを照合する方法と、INF ファイルで Id を指定する方法の詳細については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
 上記の Id を使用して、デバイスを識別するために、だけでなく PnP マネージャーは次の Id を使用してコンピューターにインストールされている各デバイスのインスタンスを一意に識別します。
 
@@ -41,4 +41,4 @@ Windows では、ハードウェア Id または互換性 Id の 1 つの一致�
 
 Windows 7 以降、PnP マネージャーを使用して、[コンテナー ID](container-ids.md)デバイスの識別文字列を 1 つまたは複数デバイス (devnode) するノードのコンピューターにインストールされている物理デバイスの各インスタンスの列挙操作をグループ化します。
 
-各列挙子は、そのデバイス Id、ハードウェア Id、および互換性 Id を列挙するデバイスを一意に識別するをカスタマイズします。 また、ハードウェア Id および互換性 Id を識別するために、独自のポリシーでは各列挙子。 ハードウェア ID とシステム バスのほとんどの互換性のある ID 形式の詳細については、[デバイス識別子の形式](device-identifier-formats.md)を参照してください。
+各列挙子は、そのデバイス Id、ハードウェア Id、および互換性 Id を列挙するデバイスを一意に識別するをカスタマイズします。 また、ハードウェア Id および互換性 Id を識別するために、独自のポリシーでは各列挙子。 ハードウェア ID とシステム バスのほとんどの互換性のある ID 形式の詳細については、次を参照してください。[デバイス識別子の形式](device-identifier-formats.md)します。

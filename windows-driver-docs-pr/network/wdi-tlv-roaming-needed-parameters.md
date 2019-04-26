@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ROAMING_NEEDED_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f1d14aa9cf18d423bbdf99dd86ba7a6cc87bd907
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359367"
 ---
 # <a name="wditlvroamingneededparameters"></a>WDI\_TLV\_ローミング\_必要\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_ローミング\_必要\_パラメーターは、ローミングのト
 ## <a name="values"></a>値
 
 
-| 種類                                                | 説明                                                                                                                                      |
+| 型                                                | 説明                                                                                                                                      |
 |-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_ASSOC\_状態**](https://msdn.microsoft.com/library/windows/hardware/dn897725) | ローミングのトリガーの理由を指定します。 ときに、 [OID\_WDI\_タスク\_ローミング](https://msdn.microsoft.com/library/windows/hardware/dn925958)がトリガーされると、この理由はそれに転送されます。 |
 

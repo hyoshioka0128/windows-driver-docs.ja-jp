@@ -1,17 +1,17 @@
 ---
-title: Irql ルール セット (Storport)
+title: Irql の規則セット (Storport)
 description: これらの規則を使用すると、ドライバーが必要な IRQL で DDI 呼び出しを行うことを確認します。IRQL の規則に従っていないドライバーは、デッドロック状態またはコンピューターがクラッシュする可能性のある操作中に重大な問題を発生することができます。
 ms.assetid: 3322200A-2073-4568-B1FC-481B216D8F61
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 222c87a7112787356607649b09776abc47ef1bac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356492"
 ---
-# <a name="irql-rule-set-storport"></a>Irql ルール セット (Storport)
+# <a name="irql-rule-set-storport"></a>Irql の規則セット (Storport)
 
 
 これらの規則を使用すると、ドライバーが必要な IRQL で DDI 呼び出しを行うことを確認します。
@@ -60,17 +60,17 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
 
 **Irql ルールを選択するには、次のように設定します。**
 
-1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています.**.
+1.  Microsoft Visual Studio で、ドライバーのプロジェクト (.vcxProj) を選択します。 **ドライバー**  メニューのをクリックして**Static Driver Verifier を起動しています**.
 
 2.  をクリックして、**ルール**タブ。**規則セット**、 **Irql**します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Irql.sdv**で、 **/check**オプション。 次に、例を示します。
+    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **Irql.sdv**で、 **/check**オプション。 以下に例を示します。
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

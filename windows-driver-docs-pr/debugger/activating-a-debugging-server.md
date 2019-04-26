@@ -1,5 +1,5 @@
 ---
-title: デバッグ サーバー アクティブ化します。
+title: デバッグ サーバーのアクティブ化
 description: デバッグ サーバーのアクティブ化の 2 つの方法はあります。
 ms.assetid: aba75d2d-4077-415f-b847-023e47239e2e
 keywords:
@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c2cac5496dcf0cf3b821773cea0e7b64b87a23a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353224"
 ---
-# <a name="activating-a-debugging-server"></a>デバッグ サーバー アクティブ化します。
+# <a name="activating-a-debugging-server"></a>デバッグ サーバーのアクティブ化
 
 
 デバッグ サーバーのアクティブ化の 2 つの方法はあります。 使用して、デバッガーが開始されるとアクティブ化、 **-サーバー**管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) でのコマンド ライン オプション。 また、デバッガーの実行後にもアクティブにできます。 管理者特権 (管理者として実行) でデバッガーを起動し、入力、 [ **.server** ](-server--create-debugging-server-.md)コマンド。
 
-**注**  特権を昇格することがなくデバッグ サーバーをアクティブ化することができ、クライアントのデバッグはサーバーに接続することになります。 ただし、クライアントを昇格した特権でアクティブ化がない限り、デバッグ サーバーを検出することはできません。 デバッグ サーバーを検出する方法については、[デバッグ サーバーの検索](searching-for-debugging-servers.md)を参照してください。
+**注**  特権を昇格することがなくデバッグ サーバーをアクティブ化することができ、クライアントのデバッグはサーバーに接続することになります。 ただし、クライアントを昇格した特権でアクティブ化がない限り、デバッグ サーバーを検出することはできません。 デバッグ サーバーを検出する方法については、次を参照してください。[デバッグ サーバーの検索](searching-for-debugging-servers.md)します。
 
  
 

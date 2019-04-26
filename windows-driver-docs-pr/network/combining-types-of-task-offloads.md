@@ -1,6 +1,6 @@
 ---
-title: タスクの型を結合する負荷を軽減します。
-description: タスクの型を結合する負荷を軽減します。
+title: タスク オフロードの種類の組み合わせ
+description: タスク オフロードの種類の組み合わせ
 ms.assetid: 33f8ba3c-09ab-4041-9641-d4207b98c8b7
 keywords:
 - タスクのオフロード WDK TCP/IP トランスポート、オフロード型を結合します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b387f5092c4abfda70725a7e134df39950d7f978
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356925"
 ---
-# <a name="combining-types-of-task-offloads"></a>タスクの型を結合する負荷を軽減します。
+# <a name="combining-types-of-task-offloads"></a>タスク オフロードの種類の組み合わせ
 
 
 

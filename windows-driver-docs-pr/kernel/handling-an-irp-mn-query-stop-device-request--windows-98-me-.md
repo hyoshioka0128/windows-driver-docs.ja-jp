@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fc2a7682541ff599f4336ab4d7d1499b179c4b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359790"
 ---
 # <a name="handling-an-irpmnquerystopdevice-request-windows-98me"></a>IRP の処理\_MN\_クエリ\_停止\_デバイス要求 (Windows 98/Me)
 

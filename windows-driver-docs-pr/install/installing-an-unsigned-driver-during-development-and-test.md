@@ -1,6 +1,6 @@
 ---
-title: 開発およびテスト中に、署名されていないドライバーをインストールします。
-description: 開発およびテスト中に、署名されていないドライバーをインストールします。
+title: 開発中およびテスト中の署名されていないドライバーのインストール
+description: 開発中およびテスト中の署名されていないドライバーのインストール
 ms.assetid: b7b08d5a-40cf-498f-8645-6b02d803f62f
 keywords:
 - ドライバー WDK、署名されていないドライバーの署名
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03d34534f308fc97938ac456eb8948f95ab250e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358800"
 ---
-# <a name="installing-an-unsigned-driver-during-development-and-test"></a>開発およびテスト中に、署名されていないドライバーをインストールします。
+# <a name="installing-an-unsigned-driver-during-development-and-test"></a>開発中およびテスト中の署名されていないドライバーのインストール
 
 
 既定では、64 ビット バージョンの Windows Vista と Windows の以降のバージョンがカーネル モードのドライバーの読み込み、カーネルがドライバーの署名を検証できる場合にのみ。 ただし、初期のドライバーの開発中、およびテスト自動化されていないにこの既定の動作を無効にできます。 開発者は、一時的に有効なドライバーの署名の読み込み時の強制を無効にするのに、次のメカニズムのいずれかを使用できます。 ただし、プラグ アンド プレイ (PnP) がインストールされているドライバーのテストを完全に自動化、[カタログ ファイル](catalog-files.md)のドライバーを署名する必要があります。 Windows Vista および Windows の以降のバージョンの表示、ドライバーの署名されていないドライバーをドライバーのインストールを承認するためにシステム管理者を必要とする ダイアログ ボックスの署名、せず、すべてのユーザーができない可能性があるため、ドライバーの署名が必要です、ドライバーをインストールして、デバイスを使用してから必要な権限。 Windows Vista および Windows の以降のバージョンでは、この PnP ドライバー インストールの動作を無効にできません。

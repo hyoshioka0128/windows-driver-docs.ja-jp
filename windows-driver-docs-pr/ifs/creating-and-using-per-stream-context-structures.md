@@ -1,6 +1,6 @@
 ---
-title: 作成して、Stream あたりのコンテキストの構造体を使用
-description: 作成して、Stream あたりのコンテキストの構造体を使用
+title: ストリーム別コンテキスト構造の作成と使用
+description: ストリーム別コンテキスト構造の作成と使用
 ms.assetid: f34898e2-f82e-4962-89d2-e9fb077c04f9
 keywords:
 - フィルター ドライバー WDK ファイル システム、ストリームのコンテキストの追跡
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 055d1c33c2d6830aa6a35e6e89f6ff824bf7725f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359384"
 ---
-# <a name="creating-and-using-per-stream-context-structures"></a>作成して、Stream あたりのコンテキストの構造体を使用
+# <a name="creating-and-using-per-stream-context-structures"></a>ストリーム別コンテキスト構造の作成と使用
 
 
 ## <span id="ddk_creating_and_using_per_stream_context_structures_if"></span><span id="DDK_CREATING_AND_USING_PER_STREAM_CONTEXT_STRUCTURES_IF"></span>

@@ -6,18 +6,18 @@ ms.date: 08/08/2017
 keywords: -OID_PM_REMOVE_WOL_PATTERN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b0bea9946e514bb9d7fea65017ff5b953f7e1e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359163"
 ---
 # <a name="oidpmremovewolpattern"></a>OID\_PM\_削除\_WOL\_パターン
 
 
 NDIS およびプロトコルのドライバーが、OID を使用し、セットとして\_PM\_削除\_WOL\_LAN (WOL) パターンで電源管理のウェイク アップをネットワーク アダプターから削除するパターンの OID。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、ULONG パターン識別子へのポインターが含まれています。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ドライバーの NDIS とプロトコルを使用して、OID\_PM\_削除\_WOL\_LAN (WOL) パターンにウェイク アップを基になるネットワーク アダプターから削除するパターン。
@@ -35,7 +35,7 @@ NDIS およびプロトコルのドライバーが、OID を使用し、セッ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>

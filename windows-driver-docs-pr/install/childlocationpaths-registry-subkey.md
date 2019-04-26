@@ -1,17 +1,17 @@
 ---
-title: ChildLocationPaths レジストリのサブキー
-description: ChildLocationPaths レジストリのサブキー
+title: ChildLocationPaths レジストリ サブキー
+description: ChildLocationPaths レジストリ サブキー
 ms.assetid: 9c485981-e9f8-420d-9a87-d298b55356c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9b1df40309d1743642e0f27b87d0871e992b7a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357874"
 ---
-# <a name="childlocationpaths-registry-subkey"></a>ChildLocationPaths レジストリのサブキー
+# <a name="childlocationpaths-registry-subkey"></a>ChildLocationPaths レジストリ サブキー
 
 
 以降、Windows 7 では、 **ChildLocationPaths** HardwareID のいずれかで識別されるデバイスのレジストリ サブキーがリムーバブル デバイス機能のオーバーライドの指定で使用される) は、リムーバブル デバイスありません適用される機能をオーバーライドします。 リムーバブル デバイスの機能の詳細を上書きするを参照してください。 [DeviceOverrides レジストリ キー](deviceoverrides-registry-key.md)します。

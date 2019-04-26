@@ -7,11 +7,11 @@ keywords: -OID_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 8150c4c70c7669b19256212929081eb95eb90a7b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354762"
 ---
 # <a name="oidwwanpacketservice"></a>OID\_WWAN\_パケット\_サービス
 
@@ -37,7 +37,7 @@ SIM カードの中には、パケットのドメインと回線交換ドメイ�
 
 コンテキストのアクティブ化では、パケット サービスの状態に到達するまで MB サービスは続行されません*WwanPacketServiceStateAttached*します。
 
-### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+### <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
 この OID の新しいリビジョン 2 は、Windows 10、バージョンが 1903 以降はサポートされています。 拡張機能をモデムが現在 5 G で動作周波数の範囲クエリをホストできるようにします。
 

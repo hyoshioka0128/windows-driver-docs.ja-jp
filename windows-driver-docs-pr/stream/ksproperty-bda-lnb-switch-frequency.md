@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b79ea535bbaee7707eb7f830da524e36aa65f3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359654"
 ---
 # <a name="kspropertybdalnbswitchfrequency"></a>KSPROPERTY\_BDA\_LNB\_スイッチ\_頻度
 
@@ -42,16 +42,16 @@ ms.locfileid: "56575095"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56575095"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **NodeId** KSP のメンバー\_ノードは、RF チューナーのノードの識別子を指定します。
@@ -72,7 +72,7 @@ ms.locfileid: "56575095"
 
 同様に、クライアントが送信、KSPROPERTY 場合\_BDA\_RF\_チューナー\_RF チューナーは、特定の頻度と、この頻度を調整する頻度の要求は、切り替えの頻度よりも小さい、RF チューナーを送信する必要があります、低帯域 LOF に切り替える、LNB するコマンドです。 RF チューナーが LNB デバイスが KSPROPERTY を使用して指定された、低帯域 LOF 金額によって RF 信号を受信の頻度を移動することを期待する必要がありますし、\_BDA\_LNB\_LOF\_低\_バンド。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58637a4455936743b900d393d7e09deec6231397
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359210"
 ---
 # <a name="wan-driver-bindings-and-connections"></a>WAN ドライバーのバインドと接続
 
@@ -51,9 +51,9 @@ NDIS WAN といる CoNDIS WAN ミニポート ドライバーでは、接続の�
 
 WAN ミニポート ドライバーでは、送信したり、ワイド エリア ネットワーク上のパケットを受信することが、前に、接続を作成する必要があります。
 
--   NDIS 環境では、アプリケーションが送信元ノードから発信される接続を設定するか、または呼び出しの受け入れによってリモート ノード上で発生した接続を受け入れる必要があります。 セットアップ、監視、および接続の破棄は、TAPI によって行われます。 発行される TAPI 要求と tapi のすべての状態インジケーターは、NDISTAPI を通じて行われます。 TAPI と NDISTAPI の詳細については、[NDISTAPI 概要](ndistapi-overview.md)を参照してください。
+-   NDIS 環境では、アプリケーションが送信元ノードから発信される接続を設定するか、または呼び出しの受け入れによってリモート ノード上で発生した接続を受け入れる必要があります。 セットアップ、監視、および接続の破棄は、TAPI によって行われます。 発行される TAPI 要求と tapi のすべての状態インジケーターは、NDISTAPI を通じて行われます。 TAPI と NDISTAPI の詳細については、次を参照してください。 [NDISTAPI 概要](ndistapi-overview.md)します。
 
--   いる CoNDIS 環境では、VC を作成する必要があります。 NDPROXY ドライバーは、アプリケーションで発生した発信呼び出しの VC を作成します。 同様に、コール マネージャー (または MCM) NDISWAN を NDPROXY コール マネージャーに示す着信呼び出しの VC の作成を開始します。 コール マネージャーは、通信、場合によってリモート側と VC のパラメーターをネゴシエートする必要があります。 セットアップ、監視、および接続の破棄は、TAPI によって行われます。 発行される TAPI 要求と tapi のすべての状態インジケーターは、NDPROXY を通じて行われます。 TAPI と NDPROXY の詳細については、[NDPROXY 概要](ndproxy-overview.md)を参照してください。
+-   いる CoNDIS 環境では、VC を作成する必要があります。 NDPROXY ドライバーは、アプリケーションで発生した発信呼び出しの VC を作成します。 同様に、コール マネージャー (または MCM) NDISWAN を NDPROXY コール マネージャーに示す着信呼び出しの VC の作成を開始します。 コール マネージャーは、通信、場合によってリモート側と VC のパラメーターをネゴシエートする必要があります。 セットアップ、監視、および接続の破棄は、TAPI によって行われます。 発行される TAPI 要求と tapi のすべての状態インジケーターは、NDPROXY を通じて行われます。 TAPI と NDPROXY の詳細については、次を参照してください。 [NDPROXY 概要](ndproxy-overview.md)します。
 
  
 

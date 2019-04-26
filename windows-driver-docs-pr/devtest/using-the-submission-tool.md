@@ -1,19 +1,19 @@
 ---
-title: Visual Studio でのデバイス メタデータの提出パッケージの作成
-description: Visual Studio でのデバイス メタデータの提出パッケージの作成
+title: Visual Studio でのデバイス メタデータ申請パッケージの作成
+description: Visual Studio でのデバイス メタデータ申請パッケージの作成
 ms.assetid: 17CF8185-C9EE-4B25-BEE7-A1FFB8C92EE0
 keywords:
-- Visual Studio でのデバイス メタデータの提出パッケージの作成
+- Visual Studio でのデバイス メタデータ申請パッケージの作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67d801b660fcf3cfbc1bb48e351ce06de2c8abdd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359020"
 ---
-# <a name="creating-a-device-metadata-submission-package-in-visual-studio"></a>Visual Studio でのデバイス メタデータの提出パッケージの作成
+# <a name="creating-a-device-metadata-submission-package-in-visual-studio"></a>Visual Studio でのデバイス メタデータ申請パッケージの作成
 
 
 デバイス メタデータの提出パッケージを作成するには、Microsoft Visual Studio で Submission tool を使用します。
@@ -49,9 +49,9 @@ ms.locfileid: "56552516"
 
 10. をクリックしてパッケージを送信する準備ができたら、**起動 Windows デベロッパー センター - ハードウェア ダッシュ ボード**します。
 
-パッケージを送信する方法の詳細については、[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)を参照してください。
+パッケージを送信する方法の詳細については、次を参照してください。[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)します。
 
-Bulkmetadata ファイルに関する詳細については、[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)を参照してください。
+Bulkmetadata ファイルに関する詳細については、次を参照してください。[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)します。
 
  
 

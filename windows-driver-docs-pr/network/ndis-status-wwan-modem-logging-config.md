@@ -7,11 +7,11 @@ keywords: -NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG ネットワーク ドライバ
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: d20ccc643575337460d0fb88ca713be132c8ad47
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354172"
 ---
 # <a name="ndisstatuswwanmodemloggingconfig"></a>NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG
 
@@ -21,11 +21,11 @@ ms.locfileid: "59905379"
 
 この通知を使用して、 [ **NDIS_WWAN_MODEM_LOGGING_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_logging_config)構造体。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10、バージョンが 1903 |
+| バージョン | Windows 10 バージョン 1903 |
 | Header | Ntddndis.h (include Ndis.h) |
 
 ## <a name="see-also"></a>関連項目

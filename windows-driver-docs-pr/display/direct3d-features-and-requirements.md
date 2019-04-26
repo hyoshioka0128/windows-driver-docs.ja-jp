@@ -1,22 +1,22 @@
 ---
-title: Direct3D の機能および WDDM 1.2 での要件
+title: WDDM 1.2 での Direct3D の機能と要件
 description: マイクロソフトの Direct3D には、3-D グラフィックス、複雑な視覚化とゲーム開発ソフトウェア アプリケーションで広く使用されている Api の豊富なコレクションが用意されています。
 ms.assetid: 8A40276D-FAE3-4433-A3E5-573700331B07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32befb6229afe1856f6dad3c66db68867b29f796
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358055"
 ---
-# <a name="direct3d-features-and-requirements-in-wddm-12"></a>Direct3D の機能および WDDM 1.2 での要件
+# <a name="direct3d-features-and-requirements-in-wddm-12"></a>WDDM 1.2 での Direct3D の機能と要件
 
 
 マイクロソフトの Direct3D には、3-D グラフィックス、複雑な視覚化とゲーム開発ソフトウェア アプリケーションで広く使用されている Api の豊富なコレクションが用意されています。 このセクションでは、機能の改善と Windows 8 の Direct3D ソフトウェアおよびハードウェア要件について説明します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: D50C371B-4A03-4BDD-8EC2-6E7A4A4DF3C5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 327d545f5a1704d0e90b245d5b263fff76fab6b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356807"
 ---
 # <a name="gpio-tests-in-mitt"></a>MITT の GPIO テスト
 
@@ -18,7 +18,7 @@ ms.locfileid: "56575074"
 
 -   2015 年 1 月
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows 8.1
 
@@ -112,7 +112,7 @@ WDTF を使用して手動で GPIO テストを実行するには、これらの
 3.  実行 **%programfiles (x86) %\\Windows キット\\8.1\\テスト\\ランタイム\\WDTF\\ランタイム\\アクション.\\RegisterWDTF.exe/nogacinstall**
 4.  SimpleIO を実行して GPIO オートメーション テストを開始\_ミット\_GPIO \_Sample.vbs ミットのソフトウェア パッケージに含まれています。
 
-## <a name="example-custom-gpio-input-injection"></a>例:カスタム GPIO インジェクションの入力
+## <a name="example-custom-gpio-input-injection"></a>以下に例を示します。カスタム GPIO インジェクションの入力
 
 
 この例では、Example.txt で、シーケンスを 2 秒間の電源ボタンを押すし、ボタンを離しますを含む、ファイルを使用します。 ファイルの内容を次に示します。
@@ -162,14 +162,14 @@ WDTF を使用して手動で GPIO テストを実行するには、これらの
     | 3                         | 回転のロックを有効にする (「1」により、出力)       |
     | 4                         | ボリュームを有効にする (「1」により、出力)         |
     | 5                         | スレート/ラップトップの切り替えを有効にする (「1」により、出力) |
-    | 6-7                       | 不使用                                            |
+    | 6-7                       | 使用しない                                            |
     | 8                         | 電源ボタンの値 (「1」が押したスイッチ)         |
     | 9                         | インジケーターの値をドッキング (「1」が押したスイッチ)       |
     | 10                        | ボリューム値 (「1」が押したスイッチ)            |
     | 11                        | 回転ロック値 (「1」が押したスイッチ)        |
     | 12                        | 音量下げる値 (「1」が押したスイッチ)          |
     | 13                        | スレート/ラップトップ トグルの値 (「1」が押したスイッチ)  |
-    | 14-15                     | 不使用                                            |
+    | 14-15                     | 使用しない                                            |
 
      
 

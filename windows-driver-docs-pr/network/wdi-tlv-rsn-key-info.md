@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_RSN_KEY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c86ecacd424f00a41db920352ce3bd618aa7e0ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359093"
 ---
 # <a name="wditlvrsnkeyinfo"></a>WDI_TLV_RSN_KEY_INFO
 
@@ -27,7 +27,7 @@ WDI_TLV_RSN_KEY_INFO は、Rsn Eapol キー パラメーターを含む TLV で�
 
 ## <a name="values"></a>値
 
-| 種類 | 説明 |
+| 型 | 説明 |
 | --- | --- |
 | UINT32 | プロトコルのオフロード ID を指定する UINT32 値 これは、オフロードされたプロトコルを識別する OS で提供される値です。 OS では、追加要求を送信します。 または、上にあるドライバーへの要求が完了すると、前に、プロトコル間で一意の値に OS セット ProtocolOffloadId をネットワーク アダプターにオフロードします。 |
 | UINT64 | 再生のカウンターを指定する UINT64 値。 |

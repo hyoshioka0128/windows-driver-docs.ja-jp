@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6a2a9d0286d1616597dccaf355734bcf85c4f7f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357780"
 ---
 # <a name="devpkeydeviceuinumberdescformat"></a>DEVPKEY_Device_UINumberDescFormat
 
@@ -50,7 +50,7 @@ DEVPKEY_Device_UINumberDescFormat デバイス プロパティを表します、
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,9 +62,9 @@ DEVPKEY_Device_UINumberDescFormat デバイス プロパティを表します、
 
 DDEVPKEY_Device_UINumberDescFormat の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)呼び出すことによってこの値を設定することもできますまたは[  **。SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UINumberDescFormat プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UI_NUMBER_DESC_FORMAT 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UINumberDescFormat プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UI_NUMBER_DESC_FORMAT 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

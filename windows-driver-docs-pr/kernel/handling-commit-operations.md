@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da1a107f0ca554dfd91937148a39bdc68c20c0a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359474"
 ---
 # <a name="handling-commit-operations"></a>コミット操作の処理
 
@@ -108,7 +108,7 @@ Pre-prepare フェーズ (とも呼ばれます*フェーズ 0*) KTM トラン�
 
 1.  永続的であり、パブリックにすべてのデータ変更を行う (つまり、その他のトランザクションから確認できる)。
 
-    通常、リソース マネージャー、変更、永続的なパブリック ログ ストリームから、データベースの公開、永続的なストレージにトランザクションの保存されたデータをコピーしています。 ログ ストリームを使用する方法の詳細については、[ktm を使用するログ ストリーム](using-log-streams-with-ktm.md)を参照してください。
+    通常、リソース マネージャー、変更、永続的なパブリック ログ ストリームから、データベースの公開、永続的なストレージにトランザクションの保存されたデータをコピーしています。 ログ ストリームを使用する方法の詳細については、次を参照してください。 [ktm を使用するログ ストリーム](using-log-streams-with-ktm.md)します。
 
 2.  呼び出す[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)します。
 

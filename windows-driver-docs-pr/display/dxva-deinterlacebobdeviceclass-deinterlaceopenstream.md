@@ -16,11 +16,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 614d6dfa6fdee4d9496af412031ef003828d8a20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357684"
 ---
 # <a name="dxvadeinterlacebobdeviceclassdeinterlaceopenstream-method"></a>DXVA\_DeinterlaceBobDeviceClass::DeinterlaceOpenStream メソッド
 
@@ -46,7 +46,7 @@ HRESULT DeinterlaceOpenStream(
 
 0 を返します (S\_[ok] または DD\_OK) 成功した場合、それ以外の場合、エラー コードを返します。 参照してください*ddraw.h*エラー コードの完全な一覧についてはします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 使用して GUID を確認した後のインター モード、 [ **DeinterlaceQueryAvailableModes** ](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)関数、インター ストリーム オブジェクトを作成できます。 このオブジェクトは、任意のハードウェアを予約するディスプレイ ドライバーを使用できます。 要求されたを実行するために必要なリソース操作インター レースを解除します。

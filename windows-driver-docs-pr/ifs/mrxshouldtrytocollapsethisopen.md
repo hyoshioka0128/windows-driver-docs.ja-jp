@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b61fe389d1a54bbcbea8161ed2afb50af27d1647
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352894"
 ---
 # <a name="mrxshouldtrytocollapsethisopen-routine"></a>MRxShouldTryToCollapseThisOpen ルーチン
 
@@ -71,7 +71,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *MRxShouldTryToCollapseThisOpen*が呼び出され、オープンの要求を折りたたまれていないかどうかを判断します。
@@ -84,7 +84,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 場合、RDBSS 禁止折りたたみが開き、 **Create.NtCreateParameters.CreateOptions** 、RX のメンバー\_CONTEXT 構造は、ファイル\_オープン\_の\_バックアップ\_インテント オプションまたはファイル\_削除\_ON\_閉じるオプションを設定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: Stream あたりのコンテキストを削除します。
-description: Stream あたりのコンテキストを削除します。
+title: ストリーム別コンテキストの削除
+description: ストリーム別コンテキストの削除
 ms.assetid: 293a2ba2-af8a-4c1b-bc35-5e37e6e84d57
 keywords:
 - フィルター ドライバー WDK ファイル システム、ストリームのコンテキストの追跡
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e559ba5dd4caecdcf5545eb970fb62184686f9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359330"
 ---
-# <a name="deleting-a-per-stream-context"></a>Stream あたりのコンテキストを削除します。
+# <a name="deleting-a-per-stream-context"></a>ストリーム別コンテキストの削除
 
 
 ## <span id="ddk_deleting_a_per_stream_context_if"></span><span id="DDK_DELETING_A_PER_STREAM_CONTEXT_IF"></span>

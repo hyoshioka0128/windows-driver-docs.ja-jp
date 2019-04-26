@@ -5,11 +5,11 @@ ms.assetid: 11EE42BF-2C44-4601-B262-570E6D154151
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b2d485a38cd8f4718ed28bc031ead8ba6a35aa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356888"
 ---
 # <a name="wdi-task-command-priority-and-existing-state"></a>WDI タスク コマンドの優先順位と既存の状態
 

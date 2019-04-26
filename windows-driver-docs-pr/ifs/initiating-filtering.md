@@ -1,19 +1,19 @@
 ---
-title: フィルター処理を開始します。
-description: フィルター処理を開始します。
+title: フィルタリングの開始
+description: フィルタリングの開始
 ms.assetid: 79ae93bc-0a6d-412a-80ca-ec4f907fb814
 keywords:
 - I/O 操作の WDK ファイル システム ミニフィルターをフィルター処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0323bc6d3906004828ad19b5563fd908abd29659
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357579"
 ---
-# <a name="initiating-filtering"></a>フィルター処理を開始します。
+# <a name="initiating-filtering"></a>フィルタリングの開始
 
 
 ## <span id="ddk_initiating_filtering_if"></span><span id="DDK_INITIATING_FILTERING_IF"></span>

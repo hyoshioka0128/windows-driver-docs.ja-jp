@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b5fd67a13962d3662842d1a2a10b29fd521fd56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359306"
 ---
 # <a name="offloading-the-processing-of-udp-encapsulated-esp-packets"></a>UDP カプセル化 ESP パケットの処理のオフロード
 

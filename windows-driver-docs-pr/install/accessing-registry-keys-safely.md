@@ -1,6 +1,6 @@
 ---
-title: レジストリ キーを安全にアクセスします。
-description: レジストリ キーを安全にアクセスします。
+title: レジストリ キーへの安全なアクセス
+description: レジストリ キーへの安全なアクセス
 ms.assetid: 81203790-66CB-42ee-82F8-2F0FFF04DF10
 keywords:
 - レジストリ WDK デバイスのインストール、レジストリ キーを安全にアクセスします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62b7e171d77620bdd977ed66e48a66a9cf36f96d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358528"
 ---
-# <a name="accessing-registry-keys-safely"></a>レジストリ キーを安全にアクセスします。
+# <a name="accessing-registry-keys-safely"></a>レジストリ キーへの安全なアクセス
 
 
 お客様の問題が頻繁に由来するサード パーティ製などの外部コンポーネント[デバイス インストール アプリケーション](writing-a-device-installation-application.md)以下を実行します。
@@ -33,7 +33,7 @@ ms.locfileid: "56556907"
 
 -   レジストリ キーの形式と場所は、Windows の異なるバージョン間で変更可能性があります。 場所、形式、またはレジストリ キーまたはデバイスとドライバーのインストールに使用される値の意味について想定しないでください。
 
-    レジストリ キーおよびツリーに関する詳細については、[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)を参照してください。
+    レジストリ キーおよびツリーに関する詳細については、次を参照してください。[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)します。
 
 -   直接アクセスするか、デバイスの内部設定を変更するのには、レジストリを使用しません。
 
@@ -59,13 +59,13 @@ ms.locfileid: "56556907"
 
     インターフェイス クラスのデバイスのキーを安全に開くを使用して[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)で DIOCR_INSTALLER を設定して、*フラグ*パラメーター。
 
--   INF ディレクティブのみを使用すると、オペレーティング システムで使用するために予約されているレジストリ キーを変更できます。 詳細については、[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
+-   INF ディレクティブのみを使用すると、オペレーティング システムで使用するために予約されているレジストリ キーを変更できます。 詳細については、次を参照してください。 [INF ディレクティブの概要](summary-of-inf-directives.md)します。
 
 -   *インストーラー クラス*と*co-installer*作成、変更、またはオペレーティング システムで使用するために予約されているレジストリ値を削除するレジストリ関数を呼び出すことはできません。
 
-    詳細については、[クラスのインストーラーと共同インストーラーによってレジストリにアクセスする](accessing-the-registry-by-class-installers-and-co-installers.md)を参照してください。
+    詳細については、次を参照してください。[クラスのインストーラーと共同インストーラーによってレジストリにアクセスする](accessing-the-registry-by-class-installers-and-co-installers.md)します。
 
-レジストリ キーのアクセス許可の詳細については、[レジストリ キーのセキュリティとアクセス権](https://go.microsoft.com/fwlink/p/?linkid=194542)を参照してください。
+レジストリ キーのアクセス許可の詳細については、次を参照してください。[レジストリ キーのセキュリティとアクセス権](https://go.microsoft.com/fwlink/p/?linkid=194542)します。
 
  
 

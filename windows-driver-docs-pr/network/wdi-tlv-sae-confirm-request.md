@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2037de1054b6a4117fbe03a4bddbdf74fb8c5322
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359344"
 ---
 # <a name="wditlvsaeconfirmrequest"></a>WDI_TLV_SAE_CONFIRM_REQUEST
 
@@ -35,10 +35,10 @@ ms.locfileid: "59905426"
 | [WDI_TLV_SAE_SEND_CONFIRM](wdi-tlv-sae-send-confirm.md) | UINT16 |   |   | 確認を送信フィールド、リプレイ カウンターとして使用します。 |
 | [WDI_TLV_SAE_CONFIRM](wdi-tlv-sae-confirm.md) | TLV\<一覧\<UINT8 &GT;&GT; |  |   | 確認入力 フィールドにします。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
-| サポートされている最小のクライアント | Windows 10、バージョンが 1903 |
+| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
 | サポートされている最小のサーバー | Windows Server 2016 |
 | Header | Wditypes.hpp |

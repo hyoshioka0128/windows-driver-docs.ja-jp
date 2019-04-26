@@ -1,6 +1,6 @@
 ---
-title: ユーザー モードのディスプレイ ドライバー
-description: ユーザー モードのディスプレイ ドライバー
+title: ユーザー モード ディスプレイ ドライバー
+description: ユーザー モード ディスプレイ ドライバー
 ms.assetid: cb4e8fb9-a2f0-43b2-ae9e-ccffa850ccd7
 keywords:
 - ドライバー モデル WDK Windows Vista では、ユーザー モードのディスプレイ ドライバーの表示します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00dd1da159a813e24e99989f98bf053d3d46e5c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358920"
 ---
-# <a name="user-mode-display-drivers"></a>ユーザー モードのディスプレイ ドライバー
+# <a name="user-mode-display-drivers"></a>ユーザー モード ディスプレイ ドライバー
 
 
 ## <span id="ddk_user_mode_display_drivers_gg"></span><span id="DDK_USER_MODE_DISPLAY_DRIVERS_GG"></span>

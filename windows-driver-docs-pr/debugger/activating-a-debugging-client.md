@@ -1,5 +1,5 @@
 ---
-title: デバッグ クライアントをアクティブ化します。
+title: デバッグ クライアントのアクティブ化
 description: デバッグ サーバーがアクティブになると、別のコンピューターでデバッグ クライアントを起動し、デバッグ セッションに接続できます。
 ms.assetid: 45a7baa7-08dc-47ae-a137-874aaa4ec8aa
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 270529b9c1120e805c8de880d34666d778454d03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353662"
 ---
-# <a name="activating-a-debugging-client"></a>デバッグ クライアントをアクティブ化します。
+# <a name="activating-a-debugging-client"></a>デバッグ クライアントのアクティブ化
 
 
 デバッグ サーバーがアクティブになると、別のコンピューターでデバッグ クライアントを起動し、デバッグ セッションに接続できます。

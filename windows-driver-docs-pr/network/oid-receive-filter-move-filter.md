@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_MOVE_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b664e6d438390619fac6ba8ed4c0062a65e52fdd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359254"
 ---
 # <a name="oidreceivefiltermovefilter"></a>OID\_受信\_フィルター\_移動\_フィルター
 
@@ -28,7 +28,7 @@ NDIS のメンバーの検証、 [ **NDIS\_受信\_フィルター\_移動\_フ�
 
 PF のミニポート ドライバーでは、アトミックにこの OID セット要求を処理する必要があります。 ドライバーは、同時に受信キューと VPort からフィルターを削除し、別の受信キューと VPort に設定するには、ネットワーク アダプターを構成できる必要があります。
 
-詳細については、[仮想ポートに受信フィルターを移動](https://msdn.microsoft.com/library/windows/hardware/hh464102)を参照してください。
+詳細については、次を参照してください。[仮想ポートに受信フィルターを移動](https://msdn.microsoft.com/library/windows/hardware/hh464102)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

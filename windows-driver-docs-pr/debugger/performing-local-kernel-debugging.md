@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 755e0abd8fa9b095a81f7837a922dbf4988c4937
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352900"
 ---
 # <a name="local-kernel-mode-debugging"></a>ローカル カーネルモード デバッグ
 
@@ -24,7 +24,7 @@ ms.locfileid: "56579235"
 ## <a name="span-idstartinglocalkerneldebuggingspanspan-idstartinglocalkerneldebuggingspansetting-up-local-kernel-mode-debugging"></a><span id="starting_local_kernel_debugging"></span><span id="STARTING_LOCAL_KERNEL_DEBUGGING"></span>ローカル カーネル モード デバッグの設定
 
 
-ローカル カーネル モードのデバッグをセットアップする方法については、[ローカル カーネル モード デバッグのセットアップの 1 つのコンピューターを手動で](setting-up-local-kernel-debugging-of-a-single-computer-manually.md)を参照してください。
+ローカル カーネル モードのデバッグをセットアップする方法については、次を参照してください。[ローカル カーネル モード デバッグのセットアップの 1 つのコンピューターを手動で](setting-up-local-kernel-debugging-of-a-single-computer-manually.md)します。
 
 ## <a name="span-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグ セッションの開始
 

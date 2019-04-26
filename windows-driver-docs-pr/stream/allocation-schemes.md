@@ -1,19 +1,19 @@
 ---
-title: 割り当てのパターン
-description: 割り当てのパターン
+title: 割り当てスキーム
+description: 割り当てスキーム
 ms.assetid: bd51205d-53e6-42d0-b5e3-36968acba3a3
 keywords:
 - 割り当てオプション WDK のカーネルのストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 660886aa8d4fb96ffc7ab1dd619c632ef7047c0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357073"
 ---
-# <a name="allocation-schemes"></a>割り当てのパターン
+# <a name="allocation-schemes"></a>割り当てスキーム
 
 
 

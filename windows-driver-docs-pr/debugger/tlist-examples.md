@@ -1,19 +1,19 @@
 ---
-title: TList 例
-description: TList 例
+title: TList の例
+description: TList の例
 ms.assetid: 9c9a1e81-03c2-4b7c-b0da-b25942548aa9
 keywords:
 - TList、TList 例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d1f614e364bd4a576e2df44c825a2aa1713b8d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357002"
 ---
-# <a name="tlist-examples"></a>TList 例
+# <a name="tlist-examples"></a>TList の例
 
 
 ## <span id="ddk_tlist_examples_dtools"></span><span id="DDK_TLIST_EXAMPLES_DTOOLS"></span>

@@ -5,13 +5,13 @@ ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b65e9adced45cbd7a55ca24bbb84ce24005905b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359755"
 ---
-# <a name="rules-for-coalescing-tcpip-segments"></a>TCP/IP セグメントの結合規則
+# <a name="rules-for-coalescing-tcpip-segments"></a>TCP/IP セグメントの結合の規則
 
 
 このセクションでは、セグメント coalescing (RSC) を持つ"を受信するときに指定するルールを定義します。-対応ミニポート ドライバーを特定の TCP 接続のセグメントを結合する必要があります。 規則のいずれかに違反すると、例外が発生すると、し、ミニポート ドライバーは、セグメントの結合を中止する必要があります。
@@ -156,7 +156,7 @@ SCU を追跡する場合は**H.LEN** &gt; 0 (つまり、まとめられたセ�
 
 ### <a name="duplicate-ack-exemption"></a>ACK の除外対象が重複しています
 
-ミニポート ドライバーは、純粋な ACK に相当重複 ACK セグメントを扱うし、合体しません可能性があります。 この場合は、現在 SCU (あれば) の表示を完了し、個々 のセグメントとして重複 ACK セグメントを示しますにする必要があります。 Windows クライアントは、既定では、SACK を使用するため、重複した ACK セグメントは例外を生成可能性があります。 例については、[例の受信 Segment Coalescing](examples-of-receive-segment-coalescing.md)を参照してください。 この除外は、ウィンドウの更新プログラムのセグメントには適用されません。
+ミニポート ドライバーは、純粋な ACK に相当重複 ACK セグメントを扱うし、合体しません可能性があります。 この場合は、現在 SCU (あれば) の表示を完了し、個々 のセグメントとして重複 ACK セグメントを示しますにする必要があります。 Windows クライアントは、既定では、SACK を使用するため、重複した ACK セグメントは例外を生成可能性があります。 例については、次を参照してください。[例の受信 Segment Coalescing](examples-of-receive-segment-coalescing.md)します。 この除外は、ウィンドウの更新プログラムのセグメントには適用されません。
 
 ## <a name="coalescing-segments-with-the-timestamp-option"></a>タイムスタンプ オプションを使用してセグメントを結合
 

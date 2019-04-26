@@ -1,19 +1,19 @@
 ---
-title: さまざまなカーネル モードのダンプ ファイル
-description: さまざまなカーネル モードのダンプ ファイル
+title: さまざまなカーネルモード ダンプ ファイル
+description: さまざまなカーネルモード ダンプ ファイル
 ms.assetid: 6db2a755-ed9c-492a-a650-9ae34ae59968
 keywords:
 - ダンプ ファイル、カーネル モードのファイルの種類
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f963d98be95c454f2be57cadbaaf792c09927e77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354897"
 ---
-# <a name="varieties-of-kernel-mode-dump-files"></a>さまざまなカーネル モードのダンプ ファイル
+# <a name="varieties-of-kernel-mode-dump-files"></a>さまざまなカーネルモード ダンプ ファイル
 
 
 ## <span id="ddk_varieties_of_kernel_mode_dump_files_dbg"></span><span id="DDK_VARIETIES_OF_KERNEL_MODE_DUMP_FILES_DBG"></span>

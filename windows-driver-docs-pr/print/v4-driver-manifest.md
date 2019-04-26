@@ -5,11 +5,11 @@ ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fc09503d34bea29e78406eb34c5884e853f0ab25
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358572"
 ---
 # <a name="v4-driver-manifest"></a>V4 ドライバー マニフェスト
 
@@ -141,7 +141,7 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <td><p>必須。</p></td>
 <td><p>DriverCategory =</p>
 <p>PrintFax.Printer</p>
-<p>その他のドライバー カテゴリの詳細については、<a href="printer-inf-file-entries.md" data-raw-source="[Printer INF File Entries](printer-inf-file-entries.md)">プリンター INF ファイルのエントリ</a>を参照してください。</p></td>
+<p>その他のドライバー カテゴリの詳細については、次を参照してください。<a href="printer-inf-file-entries.md" data-raw-source="[Printer INF File Entries](printer-inf-file-entries.md)">プリンター INF ファイルのエントリ</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>PrinterExtensionUrl</strong></p>

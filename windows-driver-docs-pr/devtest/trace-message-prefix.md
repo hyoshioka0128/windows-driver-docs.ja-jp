@@ -1,6 +1,6 @@
 ---
-title: トレース メッセージのプレフィックス
-description: トレース メッセージのプレフィックス
+title: トレース メッセージ プレフィックス
+description: トレース メッセージ プレフィックス
 ms.assetid: ab400174-cc2a-4cb8-9b7b-390af6464a2e
 keywords:
 - Tracefmt WDK、トレース メッセージのプレフィックス
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95228298ec048e0753e108691eed2546cdfadc52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354640"
 ---
-# <a name="trace-message-prefix"></a>トレース メッセージのプレフィックス
+# <a name="trace-message-prefix"></a>トレース メッセージ プレフィックス
 
 Tracefmt を各トレース メッセージに格納されたデータで構成されるプレフィックスを追加する、[イベント トレース ログ (.etl) ファイル](trace-log.md)と[トレース メッセージの形式 (.tmf) ファイル](trace-message-format-file.md)します。
 
@@ -81,7 +81,7 @@ Tracefmt には、既定では、特定のデータ要素が含まれていま�
 </tr>
 <tr>
 <td><p>%7</p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 <td><p>シーケンス番号。</p>
 <p>トレース メッセージのローカルまたはグローバルのシーケンス番号が表示されます。 このトレース セッションにのみ一意ではローカルのシーケンス番号は、既定値です。</p></td>
 </tr>

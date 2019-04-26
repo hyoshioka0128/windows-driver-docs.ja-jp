@@ -1,19 +1,19 @@
 ---
-title: クラスの通信インターフェイス
-description: クラスの通信インターフェイス
+title: 通信クラス インターフェイス
+description: 通信クラス インターフェイス
 ms.assetid: b0414d0e-6e1b-4d84-8ca4-40a59fb1b099
 keywords:
 - 通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be9190ea105d99730974e2ad6140e5f96bad71a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356918"
 ---
-# <a name="communication-class-interface"></a>クラスの通信インターフェイス
+# <a name="communication-class-interface"></a>通信クラス インターフェイス
 
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "56556944"
 <th align="left">オフセット (バイト)</th>
 <th align="left">フィールド</th>
 <th align="left">サイズ (バイト)</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
