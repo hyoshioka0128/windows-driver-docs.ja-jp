@@ -1,17 +1,17 @@
 ---
 title: デバイスのプロパティで SetupAPI と Configuration Manager の使用
-description: SetupAPI とデバイス プロパティにアクセスする Configuration Manager を使用してください。
+description: デバイスのプロパティにアクセスするための SetupAPI と構成マネージャーの使用
 ms.assetid: ec00d9c0-1355-478b-af48-0b589628e2d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0893fed50015044d7b8d3b08f1ce4ec2ee7d27d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339411"
 ---
-# <a name="using-setupapi-and-configuration-manager-to-access-device-properties"></a>SetupAPI とデバイス プロパティにアクセスする Configuration Manager を使用してください。
+# <a name="using-setupapi-and-configuration-manager-to-access-device-properties"></a>デバイスのプロパティにアクセスするための SetupAPI と構成マネージャーの使用
 
 
 Windows Server 2003、Windows XP、および Windows 2000 のサポートでサポートされているデバイスのシステム定義のプロパティのほとんどに対応しているデバイス プロパティ表現、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)の Windows Vista とWindows の以降のバージョン。

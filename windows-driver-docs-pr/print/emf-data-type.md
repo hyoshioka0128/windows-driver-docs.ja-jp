@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1e49ba1551df5753088de2cdba9463113b0d94e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343196"
 ---
 # <a name="emf-data-type"></a>EMF データ型
 
@@ -25,7 +25,7 @@ ms.locfileid: "56549408"
 
 オペレーティング システムの NT ベースのクライアントは、プリント サーバー、NT ベースのオペレーティング システムに EMF データを送信します。 EMF データは、デバイスに依存しないと、生データよりも迅速に、サーバーに送信されることができます。 印刷ジョブは、要求元のアプリケーションが、スプーラーのバック グラウンド スレッドで EMF データが表示される、その後、アプリケーションにすばやく戻り値を許可するサーバーのローカル EMF データとしてもスプールされます。
 
-EMF のデータ型の詳細については、、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*を参照してください。 拡張メタファイルの詳細については、Windows SDK のドキュメントを参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+EMF のデータ型の詳細については、次を参照してください。、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*します。 拡張メタファイルの詳細については、Windows SDK のドキュメントを参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

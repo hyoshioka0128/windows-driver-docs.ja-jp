@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 36c3aba41ef95f9880ba5e1835c1b6a1392c069b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335738"
 ---
 # <a name="reload-reload-module"></a>.reload (モジュールの再読み込み)
 
@@ -78,7 +78,7 @@ ms.locfileid: "56578108"
 扱います*モジュール*としてリテラル文字列。 この処理は、デバッガーがワイルドカード文字を展開することを防ぎます。
 
 <span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *モジュール*   
-ホスト コンピューター上のシンボルを再読み込みする対象のターゲット システム上の画像の名前を指定します。 *モジュール*ファイルの名前とファイル名拡張子を含める必要があります。 使用しない限り、 **/w**オプション、*モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。 省略した場合*モジュール*の動作、 **.reload**コマンドによって異なりますが*オプション*を使用します。
+ホスト コンピューター上のシンボルを再読み込みする対象のターゲット システム上の画像の名前を指定します。 *モジュール*ファイルの名前とファイル名拡張子を含める必要があります。 使用しない限り、 **/w**オプション、*モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。 省略した場合*モジュール*の動作、 **.reload**コマンドによって異なりますが*オプション*を使用します。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
 モジュールのベース アドレスを指定します。 通常がこのアドレスをイメージ ヘッダーが破損していますか、ページ アウトされた場合にのみ必要です。
@@ -123,7 +123,7 @@ ms.locfileid: "56578108"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-遅延 (遅延) シンボルの読み込みの詳細については、[シンボルの遅延読み込み](deferred-symbol-loading.md)を参照してください。 その他のシンボルのオプションの詳細については、[シンボル オプションを設定](symbol-options.md)を参照してください。
+遅延 (遅延) シンボルの読み込みの詳細については、次を参照してください。[シンボルの遅延読み込み](deferred-symbol-loading.md)します。 その他のシンボルのオプションの詳細については、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
 
 <a name="remarks"></a>コメント
 -------

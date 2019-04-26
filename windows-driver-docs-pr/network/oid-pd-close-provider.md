@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PD_CLOSE_PROVIDER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cb89d22693c13b4fa2aa8ee966c6edf0a46acf2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346790"
 ---
 # <a name="oidpdcloseprovider"></a>OID\_PD\_閉じる\_プロバイダー
 
@@ -21,7 +21,7 @@ NDIS プロトコルまたはフィルター ドライバーは、バインド�
 
 この OID を呼び出す前に NDIS プロトコルまたはフィルター ドライバーをする必要があることは、クローズされ、キュー、カウンター、および PD プロバイダーのインスタンスを作成したフィルターなどのすべての PD オブジェクトを解放ことが確認します。 NDIS プロトコルまたはフィルター ドライバーする必要があることを保証しない PD プロバイダーのディスパッチのいずれかに進行中の呼び出しテーブル関数この OID を発行する前にします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

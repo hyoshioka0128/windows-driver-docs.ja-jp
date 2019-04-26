@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_HALT_MSG
-Description: This message is sent by the host to terminate the network connection.
+Description: このメッセージは、ネットワーク接続を終了する、ホストによって送信されます。
 ms.assetid: ad7802ff-20ee-4228-b236-a2ca39e8c478
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c12ac1133475961bc85d0431338698187dc39cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350915"
 ---
 # <a name="remotendishaltmsg"></a>リモート\_NDIS\_HALT\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56531343"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000003 に設定します。</p></td>
 </tr>
 <tr class="even">

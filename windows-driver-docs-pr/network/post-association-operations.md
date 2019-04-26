@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cee769a195b5e6168ea2c41bd198f71703709290
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342944"
 ---
 # <a name="post-association-operations"></a>関連付け後の操作
 
@@ -32,7 +32,7 @@ ms.locfileid: "56580278"
 
 -   新しいデータ ポートに必要なすべてのリソースを割り当てます。
 
--   独自のセキュリティがデータ ポートの関連付け前の操作中に構成された認証アルゴリズムのためにパケットを送受信することなどの処理を実行します。 この操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
+-   独自のセキュリティがデータ ポートの関連付け前の操作中に構成された認証アルゴリズムのためにパケットを送受信することなどの処理を実行します。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
 -   暗号キーを派生し、WLAN アダプターにダウンロードします。
 
@@ -46,11 +46,11 @@ ms.locfileid: "56580278"
 
 [インターフェイスをネイティブの 802.11 802.1 X モジュール](interface-to-the-native-802-11-802-1x-module.md)
 
-関連付け操作の詳細については、[関連付け操作](association-operations.md)を参照してください。
+関連付け操作の詳細については、次を参照してください。[関連付け操作](association-operations.md)します。
 
-関連付け解除操作の詳細については、[関連付け解除操作](disassociation-operations.md)を参照してください。
+関連付け解除操作の詳細については、次を参照してください。[関連付け解除操作](disassociation-operations.md)します。
 
-ポートの管理に関連する手順の詳細については、[ポート ベースのネットワーク アクセス](port-based-network-access.md)を参照してください。
+ポートの管理に関連する手順の詳細については、次を参照してください。[ポート ベースのネットワーク アクセス](port-based-network-access.md)します。
 
  
 

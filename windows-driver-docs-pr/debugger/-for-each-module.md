@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4455402ce1b2b061449c54cad58983e89077f7b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336635"
 ---
 # <a name="foreachmodule"></a>! の\_各\_モジュール
 
@@ -191,7 +191,7 @@ ms.locfileid: "56572674"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-定義および文字の文字列 ($ {} のトークンの使用を含む) を入力するためのショートカットとしてエイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
+定義および文字の文字列 ($ {} のトークンの使用を含む) を入力するためのショートカットとしてエイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
 
 <a name="remarks"></a>コメント
 -------

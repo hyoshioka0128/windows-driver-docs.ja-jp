@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb9821d992fe0db9cc18b18e5a2448e0e9908f65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342692"
 ---
 # <a name="dispatch-routines-and-irqls"></a>ディスパッチ ルーチンと IRQL
 
@@ -34,7 +34,7 @@ ms.locfileid: "56573547"
 
 -   *DispatchPower* IRQL で起動時に突入パワーが必要なドライバーのルーチンを呼び出すことができます = ディスパッチ\_レベル。
 
-詳細については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)を参照してください。
+詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
 
  
 

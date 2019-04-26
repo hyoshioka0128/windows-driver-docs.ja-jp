@@ -5,11 +5,11 @@ ms.assetid: A1D561CC-22D8-47B6-9D95-6294B2998F3E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 228382aab92f39c7b72a618ec782ffc5bb9365c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343632"
 ---
 # <a name="managing-custom-switch-feature-status-information"></a>カスタム スイッチ機能の状態情報の管理
 
@@ -43,9 +43,9 @@ HYPER-V 拡張可能スイッチのインターフェイスは、拡張可能ス
 
 -   呼び出す必要がありますが、拡張機能が拡張可能スイッチのカスタム機能の状態を管理しない場合は[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張可能スイッチのドライバー スタック ダウン OID 要求を転送します。
 
-    OID 要求を転送する方法の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)を参照してください。
+    OID 要求を転送する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
 
-詳細を定義し、スイッチ機能の状態情報を登録する方法については、[スイッチ機能の状態のカスタム](custom-switch-feature-status.md)を参照してください。
+詳細を定義し、スイッチ機能の状態情報を登録する方法については、次を参照してください。[スイッチ機能の状態のカスタム](custom-switch-feature-status.md)します。
 
  
 

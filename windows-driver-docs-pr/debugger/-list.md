@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cbd26bdccc2b040a85939746860817aeb175f461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336198"
 ---
-# <a name="list"></a>! 一覧
+# <a name="list"></a>!list
 
 
 **! 一覧**拡張機能、指定されたデバッガー コマンドを繰り返し実行、1 回、リンク リスト内の各要素。

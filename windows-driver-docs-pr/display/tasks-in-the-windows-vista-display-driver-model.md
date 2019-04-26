@@ -1,6 +1,6 @@
 ---
-title: Windows Display Driver Model (WDDM) 内のタスク
-description: Windows Display Driver Model (WDDM) 内のタスク
+title: Windows Display Driver Model (WDDM) のタスク
+description: Windows Display Driver Model (WDDM) のタスク
 ms.assetid: a0d853b2-06d3-4d93-ba65-7fa8d5b50a9b
 keywords:
 - ドライバー モデル WDK Windows Vista では、タスクを表示します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7134a7e93fcfe99265dc096ec750d586f563cd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342788"
 ---
-# <a name="tasks-in-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) 内のタスク
+# <a name="tasks-in-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のタスク
 
 
 ## <span id="ddk_tasks_in_the_windows_codename_longhorn_display_driver_model_gg"></span><span id="DDK_TASKS_IN_THE_WINDOWS_CODENAME_LONGHORN_DISPLAY_DRIVER_MODEL_GG"></span>

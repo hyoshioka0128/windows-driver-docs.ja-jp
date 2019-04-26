@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: abc0e5cb7300123bf453889ea85f80204679450e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351772"
 ---
 # <a name="d3dkmtscatterblts-structure"></a>D3DKMT\_SCATTERBLTS 構造体
 
@@ -43,7 +43,7 @@ typedef struct _D3DKMT_SCATTERBLTS {
 
 **Blt**
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

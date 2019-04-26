@@ -1,17 +1,17 @@
 ---
-title: UEFI ファームウェアの更新プログラムのサポートを実装します。
+title: UEFI ファームウェア更新プログラムのサポートの実装
 description: 'このセクションでは、更新カプセル: ファームウェアの更新プログラムのサポートを実装するファームウェア仕入先の必要な手順について説明します。'
 ms.assetid: A854835A-1C3B-425D-BA3B-D747AB43BEBA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b006f7cee4eaae1e4824a58a0d024b248e66338d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337604"
 ---
-# <a name="implementing-support-for-uefi-firmware-updates"></a>UEFI ファームウェアの更新プログラムのサポートを実装します。
+# <a name="implementing-support-for-uefi-firmware-updates"></a>UEFI ファームウェア更新プログラムのサポートの実装
 
 
 このセクションでは、更新カプセル: ファームウェアの更新プログラムのサポートを実装するファームウェア仕入先の必要な手順について説明します。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_PORT_PROPERTY_UPDATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ce04afb1c726cefb28f6030ec61c2a68fe051fe1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343354"
 ---
 # <a name="oidswitchportpropertyupdate"></a>OID\_スイッチ\_ポート\_プロパティ\_UPDATE
 
@@ -23,7 +23,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
 -   ポートのポリシーのパラメーターを含むプロパティのバッファー。 プロパティ バッファーに基づいている構造体が含まれています、 **PropertyType**のメンバー、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598238)構造体。 たとえば場合、 **PropertyType**に設定されているメンバー **NdisSwitchPortPropertyTypeVlan**、プロパティのバッファーが含まれています、 [ **NDIS\_スイッチ\_ポート\_プロパティ\_VLAN** ](https://msdn.microsoft.com/library/windows/hardware/hh598243)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 転送拡張機能は、OID の OID のセット要求を処理できる\_スイッチ\_ポート\_プロパティ\_更新します。 その他のすべての種類の拡張機能を呼び出す必要があります[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張可能スイッチのドライバー スタックで、[次へ] の拡張機能に OID 要求を転送します。
@@ -98,7 +98,7 @@ OID を処理する方法に関するガイドラインの OID 要求のセッ�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

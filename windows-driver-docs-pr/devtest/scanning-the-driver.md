@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9953e67c8242108d74aeeac2afc44be80ee3518a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340206"
 ---
 # <a name="scanning-the-driver"></a>ドライバーのスキャン
 
@@ -37,7 +37,7 @@ ms.locfileid: "56559573"
 
 Sdv map.h ファイルがすべてのエントリ ポイント; は、ドライバーの一覧を表示する必要はありません。のみ IRP の主要な関数のコードまたは分析で使用される関数のロールの種類のエントリ ポイント。 ファイルに任意の IRP の主要な関数のコードまたは関数のロールの種類を追加することはできません。
 
-Sdv map.h ファイルの詳細については、[Sdv map.h](sdv-map-h.md)を参照してください。 形式については、「 [Sdv map.h ファイルの形式](format-of-the-sdv-map-h-file.md)します。 Sdv map.h ファイルに含まれるエラーについては、 [Sdv map.h ファイルを承認する](approving-the-sdv-map-h-file.md)します。
+Sdv map.h ファイルの詳細については、次を参照してください。 [Sdv map.h](sdv-map-h.md)します。 形式については、「 [Sdv map.h ファイルの形式](format-of-the-sdv-map-h-file.md)します。 Sdv map.h ファイルに含まれるエラーについては、 [Sdv map.h ファイルを承認する](approving-the-sdv-map-h-file.md)します。
 
 失敗から次の例は、Sdv map.h ファイルのコンテンツ\_driver1、ツールのサンプル WDM ドライバー\\sdv\\サンプル\\失敗\_ドライバー\\wdm ディレクトリ。
 

@@ -1,6 +1,6 @@
 ---
-title: セキュリティ チェック
-description: セキュリティ チェック
+title: セキュリティの検査
+description: セキュリティの検査
 ms.assetid: 2883910a-72f3-4be9-b1dd-6fb02abffe73
 keywords:
 - セキュリティの WDK ファイル システム、セキュリティ チェック
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fe72a499e4938a4a969eeae2071bd6bed9e519d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344504"
 ---
-# <a name="security-checks"></a>セキュリティ チェック
+# <a name="security-checks"></a>セキュリティの検査
 
 
 ## <span id="ddk_security_checks_if"></span><span id="DDK_SECURITY_CHECKS_IF"></span>

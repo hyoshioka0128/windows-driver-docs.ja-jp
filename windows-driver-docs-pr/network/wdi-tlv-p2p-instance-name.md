@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INSTANCE_NAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d26711f00edc3d1cf677d0a2c3b5b765295d29f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347258"
 ---
 # <a name="wditlvp2pinstancename"></a>WDI\_TLV\_P2P\_インスタンス\_名
 
@@ -35,13 +35,13 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                                     |
+| 型      | 説明                                                     |
 |-----------|-----------------------------------------------------------------|
 | UINT8\[\] | Utf-8、最大 63 バイト長で、サービスのインスタンスの名前。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

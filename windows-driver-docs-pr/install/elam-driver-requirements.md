@@ -5,11 +5,11 @@ ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 005cc3daaee4e66308dbbfea2e97782b4f2d7963
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346174"
 ---
 # <a name="elam-driver-requirements"></a>ELAM ドライバーの要件
 
@@ -142,7 +142,7 @@ ELAM ドライバーは、署名のデータとそのチェックの整合性が
 <tbody>
 <tr class="odd">
 <td align="left"><p>シナリオ</p></td>
-<td align="left"><p>開始時刻</p></td>
+<td align="left"><p>Start Time</p></td>
 <td align="left"><p>終了時刻</p></td>
 <td align="left"><p>上限</p></td>
 </tr>

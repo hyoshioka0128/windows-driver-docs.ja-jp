@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_PACKET_MSG
-Description: REMOTE_NDIS_PACKET_MSG encapsulates NDIS data packets to form a single data message.
+Description: REMOTE_NDIS_PACKET_MSG は、1 つのデータのメッセージを形成する NDIS データ パケットをカプセル化します。
 ms.assetid: cc4efe94-6e2c-4201-b251-10e76cf5a553
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb6a990e578f3e14634bac684270755004e2afaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350830"
 ---
 # <a name="remotendispacketmsg"></a>リモート\_NDIS\_パケット\_メッセージ
 
@@ -39,7 +39,7 @@ ms.locfileid: "56553975"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x1 に設定します。</p></td>
 </tr>
 <tr class="even">

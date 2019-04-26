@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源ポリシー所有者から PoStartNextPowerIrp の呼び出し
-description: デバイスの電源ポリシー所有者から PoStartNextPowerIrp の呼び出し
+title: デバイス電源ポリシー オーナーからの PoStartNextPowerIrp の呼び出し
+description: デバイス電源ポリシー オーナーからの PoStartNextPowerIrp の呼び出し
 ms.assetid: 58576ff8-638e-4928-9a2d-337ac3f4d2d8
 keywords:
 - Irp WDK カーネル、PoStartNextPowerIrp を電源します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03c27cdaae466f11c9d220e412f7a327b923fa31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338605"
 ---
-# <a name="calling-postartnextpowerirp-from-a-device-power-policy-owner"></a>デバイスの電源ポリシー所有者から PoStartNextPowerIrp の呼び出し
+# <a name="calling-postartnextpowerirp-from-a-device-power-policy-owner"></a>デバイス電源ポリシー オーナーからの PoStartNextPowerIrp の呼び出し
 
 
 

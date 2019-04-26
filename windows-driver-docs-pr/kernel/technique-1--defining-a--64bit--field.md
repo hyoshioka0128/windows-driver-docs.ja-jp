@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cd78bd2a9304cd6cfe3732189fc00828d43b17f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345538"
 ---
 # <a name="technique-1-defining-a-64bit-field"></a>方法 1: 「64 ビット」フィールドを定義します。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56580115"
 <thead>
 <tr class="header">
 <th>デバイスの種類</th>
-<th>アクセス</th>
+<th>アクセス権</th>
 <th>関数</th>
 <th>メソッド</th>
 </tr>
@@ -73,7 +73,7 @@ ms.locfileid: "56580115"
 <thead>
 <tr class="header">
 <th>デバイスの種類</th>
-<th>アクセス</th>
+<th>アクセス権</th>
 <th>64 ビット</th>
 <th>関数</th>
 <th>メソッド</th>

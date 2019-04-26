@@ -13,21 +13,21 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e85b67bfb58caa4d2715150a92d8ff9dabd5877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349040"
 ---
 # <a name="debugrequesttargetexceptioncontext"></a>デバッグ\_要求\_ターゲット\_例外\_コンテキスト
 
 
 デバッグ\_要求\_ターゲット\_例外\_コンテキスト[**要求**](request.md)操作は戻り、[スレッド コンテキスト](https://msdn.microsoft.com/library/windows/hardware/ff554702#thread-context)ユーザー モードのミニダンプ ファイル ストアド イベント。
 
-**パラメーター**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-使用されません。
+使用されていません。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 ストアドのイベントのスレッド コンテキスト。 スレッド コンテキストの種類は、イベントの時点で、ターゲットの有効なプロセッサのコンテキスト構造です。 *OutBuffer*この構造体を保持するために十分な大きさである必要があります。

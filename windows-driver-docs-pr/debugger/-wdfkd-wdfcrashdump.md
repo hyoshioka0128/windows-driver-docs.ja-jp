@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5de525a7ffeee84d06f2a0073f86030d6d67f1fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341770"
 ---
 # <a name="wdfkdwdfcrashdump"></a>!wdfkd.wdfcrashdump
 
@@ -121,13 +121,13 @@ Listing all drivers loaded in this host process at the time of the failure:
   WUDFOsrUsbFilter
 ```
 
-上記の例では、出力には、WER レポートのイベントの種類であるエラーの種類が含まれます。 ここでは、できる**WUDFVerifierFailure**または**WUDFUnhandledException**します。 詳細については、[WER レポートでの UMDF メタデータにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff542975)を参照してください。 UMDF の出力には、イベントの種類がある場合、エラー コードが含まれます**WUDFVerifierFailure**します。
+上記の例では、出力には、WER レポートのイベントの種類であるエラーの種類が含まれます。 ここでは、できる**WUDFVerifierFailure**または**WUDFUnhandledException**します。 詳細については、次を参照してください。 [WER レポートでの UMDF メタデータにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff542975)します。 UMDF の出力には、イベントの種類がある場合、エラー コードが含まれます**WUDFVerifierFailure**します。
 
 フレームワークのエラー ログの記録を表示する、[完全メモリ ダンプ](complete-memory-dump.md)、[カーネル メモリ ダンプ](kernel-memory-dump.md)、または[ライブのカーネル モード ターゲット](live-kernel-mode-targets.md)、試すこともできます、 [**! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)拡張機能。
 
 **追加情報**
 
-実行中のトレース レコーダーには、ドライバーを有効にする方法については、[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)を参照してください。 ドライバーを WDF のデバッグの詳細については、[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。 KMDF のデバッグ方法の詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

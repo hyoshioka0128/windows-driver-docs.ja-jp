@@ -1,16 +1,16 @@
 ---
-title: :SO_BROADCAST
-description: :SO_BROADCAST
+title: SO_BROADCAST
+description: SO_BROADCAST
 ms.assetid: 24b93d4e-461d-44c3-b721-85cf41a1680a
 ms.date: 08/08/2017
 keywords: -:So_broadcast ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: afa77d7a6ef19f0ea47f1f1787216698aff9f137
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342592"
 ---
 # <a name="sobroadcast"></a>したがって\_ブロードキャスト
 
@@ -37,10 +37,10 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 </tr>
 <tr class="even">
 <td><p><em>ControlCode</em></p></td>
-<td><p>:SO_BROADCAST</p></td>
+<td><p>SO_BROADCAST</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -90,10 +90,10 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 </tr>
 <tr class="even">
 <td><p><em>ControlCode</em></p></td>
-<td><p>:SO_BROADCAST</p></td>
+<td><p>SO_BROADCAST</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -127,7 +127,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 このソケット オプションの既定の状態は、ブロードキャスト メッセージは許可されません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

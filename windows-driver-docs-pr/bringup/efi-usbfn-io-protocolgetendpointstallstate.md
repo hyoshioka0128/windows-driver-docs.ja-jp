@@ -5,11 +5,11 @@ ms.assetid: abf53ee7-8460-4861-a82d-827ad1dc6c40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6fde5a4b46ca52fb6f41725974508377ab830d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337681"
 ---
 # <a name="efiusbfnioprotocolgetendpointstallstate"></a>EFI\_USBFN\_IO\_プロトコル。GetEndpointStallState
 
@@ -40,7 +40,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 エンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
+エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
 
 <a href="" id="state"></a>*状態*  
 ブール値。**TRUE**値では、停止した状態で、エンドポイントがあることを示します**FALSE**それ以外の場合。

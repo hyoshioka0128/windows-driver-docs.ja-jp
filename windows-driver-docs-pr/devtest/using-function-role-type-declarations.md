@@ -5,11 +5,11 @@ ms.assetid: aaa37aa7-808c-48aa-bd83-96b9aeb00234
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6627245bc75b08741207b906fedc5a5440a7050
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341620"
 ---
 # <a name="using-function-role-type-declarations"></a>関数役割型宣言の使用
 

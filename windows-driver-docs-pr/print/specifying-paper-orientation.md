@@ -1,6 +1,6 @@
 ---
-title: 用紙の向きを指定します。
-description: 用紙の向きを指定します。
+title: 用紙の向きを指定する
+description: 用紙の向きを指定する
 ms.assetid: 2d62e1ff-965b-4fd7-922c-319ec1bc39a5
 keywords:
 - Unidrv、用紙の向き
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 428bfa4c9bd84cd2981e09362e813df5dbb78c99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341303"
 ---
-# <a name="specifying-paper-orientation"></a>用紙の向きを指定します。
+# <a name="specifying-paper-orientation"></a>用紙の向きを指定する
 
 
 
@@ -66,7 +66,7 @@ ms.locfileid: "56551796"
 }
 ```
 
-**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、[ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)を参照してください。
+**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 [ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)します。
 
  
 

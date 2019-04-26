@@ -1,17 +1,17 @@
 ---
-title: PCI の電源管理とデバイス ドライバー
+title: PCI 電源の管理とデバイス ドライバー
 description: PCI 電源管理 (PCI PM) に準拠しているハードウェアがデバイス ドライバーと対話する方法について説明します。
 ms.assetid: BA6792EE-CAD8-4C9E-AAA6-D1D8799F50C3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dba043ac0e4b9df2d7ebbe2cb836ce14d0d7bfc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354521"
 ---
-# <a name="pci-power-management-and-device-drivers"></a>PCI の電源管理とデバイス ドライバー
+# <a name="pci-power-management-and-device-drivers"></a>PCI 電源の管理とデバイス ドライバー
 
 
 **更新**

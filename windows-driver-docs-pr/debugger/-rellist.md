@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d632bc61ff186381cbc5e61f2c527014cc43c845
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338920"
 ---
-# <a name="rellist"></a>! rellist
+# <a name="rellist"></a>!rellist
 
 
 **! Rellist**拡張機能には、プラグ アンド プレイ関係一覧が表示されます。

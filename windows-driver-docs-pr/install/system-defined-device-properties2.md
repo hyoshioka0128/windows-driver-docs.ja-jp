@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3303baf46621e4037768ff56a658b85b842aedac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339637"
 ---
 # <a name="system-defined-device-properties"></a>システム定義のデバイス プロパティ
 
@@ -44,7 +44,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 -   プロパティのキーを表す[デバイス インターフェイスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541409)します。
 
-カスタムのデバイスのプロパティを作成する方法については、[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)を参照してください。
+カスタムのデバイスのプロパティを作成する方法については、次を参照してください。[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)です。
 
  
 

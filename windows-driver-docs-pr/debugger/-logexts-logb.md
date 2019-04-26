@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e3309d55ecfb336e59024e9660dba6c0ff53e32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336189"
 ---
 # <a name="logextslogb"></a>!logexts.logb
 
@@ -61,7 +61,7 @@ ms.locfileid: "56580585"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[Logger と LogViewer](logger-and-logviewer.md)を参照してください。
+詳細については、次を参照してください。 [Logger と LogViewer](logger-and-logviewer.md)します。
 
 <a name="remarks"></a>コメント
 -------

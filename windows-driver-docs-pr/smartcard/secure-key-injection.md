@@ -5,11 +5,11 @@ ms.assetid: 21F8ED59-B04C-40D3-AEED-015890798215
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56843d10d3555f7b21f53785f7304f95e0eda6d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339115"
 ---
 # <a name="secure-key-injection"></a>セキュリティで保護されたキーの挿入
 
@@ -20,7 +20,7 @@ ms.locfileid: "56580327"
 
     1.  サーバーとクライアントのスマート カードの間で共有対称キーを使用します。
     2.  サーバー上の一時対称セッション キーを生成して、スマート カードをインポートします。 セッション キーは、スマート カードに生成された対応する秘密キーを持つ公開キーで暗号化する必要があります。
-    3.  セッション キーを共有対称キーから派生させます。 詳細については、[ **CardGetSharedKeyHandle**](https://msdn.microsoft.com/library/windows/hardware/dn468730)を参照してください。
+    3.  セッション キーを共有対称キーから派生させます。 詳細については、次を参照してください。 [ **CardGetSharedKeyHandle**](https://msdn.microsoft.com/library/windows/hardware/dn468730)します。
     4.  DH キーの派生を使用します。
 
 2.  サーバー上のデータの暗号化:
@@ -109,7 +109,7 @@ typedef ULONG_PTR  CARD_KEY_HANDLE;
 16. カードをサポートするアルゴリズムのいずれかを使用してでは、サーバー アプリケーションは、対称キー (S1) を生成します。 対称キーの S1 が K1 を使用して暗号化し、クライアント アプリケーションに返されます。 サーバー アプリケーションでは、暗号化アルゴリズムについての情報も返されます、埋め込みの型は、S1 の暗号化に使用されました。
 17. クライアント アプリケーションの呼び出し[ **CardImportSessionKey** ](https://msdn.microsoft.com/library/windows/hardware/dn468731)を BLOB に暗号化されたキー データが BLOB を復号化に使用するには、K1 およびパディング情報への参照と共に使用します。
 
-    キーのデータの Blob の詳細については、[ **BCRYPT\_キー\_データ\_BLOB\_ヘッダー**](https://msdn.microsoft.com/library/windows/desktop/aa375524)を参照してください。
+    キーのデータの Blob の詳細については、次を参照してください。 [ **BCRYPT\_キー\_データ\_BLOB\_ヘッダー**](https://msdn.microsoft.com/library/windows/desktop/aa375524)します。
 
 18. ミニドライバーは、暗号化された BLOB データを復号化用のスマート カードに渡します。
 19. 対称キーの暗号化を解除した後、スマート カード ミニドライバーに対称キーへの参照を返します。

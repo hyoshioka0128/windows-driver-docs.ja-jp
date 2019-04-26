@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INSTANCE_NAME_HASH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e504755b4048efaa2c728c09f11ba684de4a505
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347269"
 ---
 # <a name="wditlvp2pinstancenamehash"></a>WDI\_TLV\_P2P\_インスタンス\_名前\_ハッシュ
 
@@ -35,7 +35,7 @@ WDI\_TLV\_P2P\_インスタンス\_名前\_ハッシュのハッシュを含む 
 ## <a name="values"></a>値
 
 
-| 種類                                                                    | 説明                                |
+| 型                                                                    | 説明                                |
 |-------------------------------------------------------------------------|--------------------------------------------|
 | [**WDI\_P2P\_サービス\_名前\_ハッシュ**](https://msdn.microsoft.com/library/windows/hardware/dn926103) | 「インスタンス名、サービスの種類」のハッシュです。 |
 

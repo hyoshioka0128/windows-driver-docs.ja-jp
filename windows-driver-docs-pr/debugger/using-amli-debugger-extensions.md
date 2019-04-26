@@ -9,11 +9,11 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e2405122012154c1a54133e0a5134942496c64fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342010"
 ---
 # <a name="using-amli-debugger-extensions"></a>AMLI Debugger 拡張機能の使用
 
@@ -45,7 +45,7 @@ AMLI(? for help)-> command [parameters]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">操作</th>
+<th align="left">アクション</th>
 <th align="left">拡張機能コマンド</th>
 </tr>
 </thead>

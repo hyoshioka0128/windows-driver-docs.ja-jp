@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: db8e1964e526ac141d27418f1410ee514bdfa43c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335827"
 ---
-# <a name="pat"></a>! pat
+# <a name="pat"></a>!pat
 
 
 **! Pat**拡張機能には、ターゲットのプロセッサにページ属性テーブル (PAT) レジスタが表示されます。

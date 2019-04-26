@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fdbe9f8861a0db9217fdbf4c6276003547a815
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353409"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>MBBCx クライアント ドライバーの作成
 
@@ -22,7 +22,7 @@ ms.locfileid: "58136125"
 
 ## <a name="inf-files-for-mbbcx-client-drivers"></a>MBBCx クライアント ドライバーの INF ファイル
 
-MBBCx クライアント ドライバーの INF ファイルでは、その他の NetAdapterCx クライアント ドライバーと同じです。 詳細については、[NetAdapterCx クライアント ドライバーの INF ファイル](inf-files-for-netadaptercx-client-drivers.md)を参照してください。
+MBBCx クライアント ドライバーの INF ファイルでは、その他の NetAdapterCx クライアント ドライバーと同じです。 詳細については、次を参照してください。 [NetAdapterCx クライアント ドライバーの INF ファイル](inf-files-for-netadaptercx-client-drivers.md)します。
 
 ## <a name="initialize-the-device"></a>デバイスを初期化します。
 
@@ -172,7 +172,7 @@ MBBCx は、常にプライマリの PDP コンテキストと既定の EPS ベ�
     }
 ```
 
-データパス機能の設定のコード例では、[ネットワーク データ バッファー管理](network-data-buffer-management.md)を参照してください。
+データパス機能の設定のコード例では、次を参照してください。[ネットワーク データ バッファー管理](network-data-buffer-management.md)します。
 
 呼び出していることを保証 MBBCx *EvtMbbDeviceCreateAdapter*要求する前に**MBIM_CID_CONNECT**同じのセッション ID に置き換えます。 次のフロー図は、NETADAPTER オブジェクトを作成するクライアント ドライバーと、クラス拡張の間の相互作用を示しています。  
 

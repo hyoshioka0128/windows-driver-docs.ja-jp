@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3915b51b215cb87742de5928065d1bf02e28aad4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344738"
 ---
-# <a name="example-11-starting-a-private-trace-session"></a>例 11:プライベートのトレース セッションを開始します。
+# <a name="example-11-starting-a-private-trace-session"></a>例 11:プライベート トレース セッションの開始
 
 
 ## <span id="ddk_starting_a_private_trace_session_tools"></span><span id="DDK_STARTING_A_PRIVATE_TRACE_SESSION_TOOLS"></span>

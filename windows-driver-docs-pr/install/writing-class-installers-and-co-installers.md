@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2be547e9a6744009398545ce3e6191ee1a068e81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339157"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーの記述
 
@@ -33,7 +33,7 @@ ms.locfileid: "56573028"
 
 [他のプロセスやサービスを開始](#starting-other-processes-or-services)
 
-共同インストーラーを作成する方法の詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+共同インストーラーを作成する方法の詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
 ## <a name="displaying-a-user-interface"></a>ユーザー インターフェイスを表示します。
 
@@ -64,7 +64,7 @@ ms.locfileid: "56573028"
 
 場合、*共同インストーラー* Windows 64 ビット プラットフォーム、オペレーティング システムで、署名されていない実行可能ファイルまたは DLL を読み込むようにしようからこのセキュリティで保護された環境に読み込まれるようにします。
 
-安全に、クラスのインストーラー ファイルまたは共同インストーラーによって、実行可能ファイルまたは DLL を読み込み、強くお勧め、実行可能ファイルまたは DLL が含まれることで、デジタル署名された[ドライバー パッケージ](driver-packages.md)します。 ドライバー パッケージに署名する方法の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+安全に、クラスのインストーラー ファイルまたは共同インストーラーによって、実行可能ファイルまたは DLL を読み込み、強くお勧め、実行可能ファイルまたは DLL が含まれることで、デジタル署名された[ドライバー パッケージ](driver-packages.md)します。 ドライバー パッケージに署名する方法の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
 **注**  クラスのインストーラーと共同インストーラー読み込む必要がありますいない DLL モジュール明示的な関数の呼び出しによってなど**LoadLibrary**、または依存関係のリンクを作成しています。
 

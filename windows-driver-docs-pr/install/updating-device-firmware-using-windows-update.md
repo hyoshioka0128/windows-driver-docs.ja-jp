@@ -1,21 +1,21 @@
 ---
-title: Windows Update を使用してデバイス ファームウェアの更新
+title: Windows Update を使用したデバイス ファームウェアの更新
 description: このトピックでは、Windows の更新 (WU) サービスを使用して、デバイスのファームウェアを更新する方法について説明します。
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6eeab3f3f202b34af9f094e2dd56380f3b9735b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339487"
 ---
-# <a name="updating-device-firmware-using-windows-update"></a>Windows Update を使用してデバイス ファームウェアの更新
+# <a name="updating-device-firmware-using-windows-update"></a>Windows Update を使用したデバイス ファームウェアの更新
 
-このトピックでは、Windows の更新 (WU) サービスを使用してシャーシ内、またはリムーバブル デバイスのファームウェアを更新する方法について説明します。  システム ファームウェアの更新方法の詳細については、[Windows の UEFI ファームウェアを更新するプラットフォーム](../bringup/windows-uefi-firmware-update-platform.md)を参照してください。
+このトピックでは、Windows の更新 (WU) サービスを使用してシャーシ内、またはリムーバブル デバイスのファームウェアを更新する方法について説明します。  システム ファームウェアの更新方法の詳細については、次を参照してください。 [Windows の UEFI ファームウェアを更新するプラットフォーム](../bringup/windows-uefi-firmware-update-platform.md)します。
 
-これを行うには、デバイス ドライバー、ファームウェアのペイロードを含むとして実装されている更新メカニズムを提供します。  デバイス ベンダーから提供されたドライバーを使用する場合は、ファームウェアの更新ロジックとペイロードを関数の既存のドライバーに追加するか、別のファームウェア更新プログラムのドライバー パッケージを提供するオプションがあります。  デバイスは、Microsoft 提供のドライバーを使用している場合は、個別のファームウェア更新プログラムのドライバー パッケージを提供する必要があります。  どちらの場合も、ファームウェアの更新プログラムのドライバー パッケージは universal 必要があります。  ユニバーサル ドライバーに関する詳細については、[ユニバーサル Windows ドライバーの概要](../develop/getting-started-with-universal-drivers.md)を参照してください。  バイナリのドライバーを使用して[KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md)または[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)します。 
+これを行うには、デバイス ドライバー、ファームウェアのペイロードを含むとして実装されている更新メカニズムを提供します。  デバイス ベンダーから提供されたドライバーを使用する場合は、ファームウェアの更新ロジックとペイロードを関数の既存のドライバーに追加するか、別のファームウェア更新プログラムのドライバー パッケージを提供するオプションがあります。  デバイスは、Microsoft 提供のドライバーを使用している場合は、個別のファームウェア更新プログラムのドライバー パッケージを提供する必要があります。  どちらの場合も、ファームウェアの更新プログラムのドライバー パッケージは universal 必要があります。  ユニバーサル ドライバーに関する詳細については、次を参照してください。[ユニバーサル Windows ドライバーの概要](../develop/getting-started-with-universal-drivers.md)します。  バイナリのドライバーを使用して[KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md)または[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)します。 
 
 ドライバーがファームウェアの更新は WU には、ソフトウェアを実行できません、ため、プラグ アンド プレイ (PnP) のインストールにファームウェアを配信する必要があります。
 

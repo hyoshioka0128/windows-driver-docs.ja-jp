@@ -1,19 +1,19 @@
 ---
-title: デバッガーを使用します。
-description: デバッガーを使用します。
+title: デバッガーの使用
+description: デバッガーの使用
 ms.assetid: e2490442-9d90-454b-95e0-db8c5d7fa19a
 keywords:
 - ドライバー WDK をデバッグするには、デバッガーします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f61eb4e507bb72495a30cdfcef08439d3fae443d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341644"
 ---
-# <a name="using-a-debugger"></a>デバッガーを使用します。
+# <a name="using-a-debugger"></a>デバッガーの使用
 
 
 ## <span id="ddk_using_a_debugger_tools"></span><span id="DDK_USING_A_DEBUGGER_TOOLS"></span>

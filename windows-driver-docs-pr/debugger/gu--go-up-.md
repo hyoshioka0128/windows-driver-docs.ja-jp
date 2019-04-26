@@ -1,5 +1,5 @@
 ---
-title: gu (Go を)
+title: gu (完了まで実行)
 description: Gu コマンドでは、現在の関数が完了するまでに実行するターゲットを実行します。
 ms.assetid: 10022292-92a4-4663-b277-26aa3c0d73a7
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 840c33d31bc3bf7358d7fdda939a35d0f2a8bea6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342029"
 ---
-# <a name="gu-go-up"></a>gu (Go を)
+# <a name="gu-go-up"></a>gu (完了まで実行)
 
 
 **Gu**コマンドにより、現在の関数が完了するまでに実行するターゲット。
@@ -40,7 +40,7 @@ gu
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-(ユーザー モードのみ)スレッドの実行を指定します。 このスレッドは、例外によって停止している必要があります。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+(ユーザー モードのみ)スレッドの実行を指定します。 このスレッドは、例外によって停止している必要があります。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

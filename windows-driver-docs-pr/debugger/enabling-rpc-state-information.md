@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6c3a5a9b29664527dec139283d56ef2ba31020d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340594"
 ---
 # <a name="enabling-rpc-state-information"></a>RPC 状態情報を有効にする
 
@@ -44,7 +44,7 @@ Windows XP と Windows の以降のバージョンのみ、RPC 状態情報の�
 <span id="Auto2"></span><span id="auto2"></span><span id="AUTO2"></span>**Auto2**  
 これと同じである 128 MB の RAM、未満を使用して Windows Server 2003 を実行しているコンピューターまたは Windows XP コンピューターでは、 **None**します。 同じで、少なくとも 128 MB の RAM での Windows Server 2003 コンピューターではこの**Server**します。
 
-既定値です。
+これが既定値です。
 
 同時に、一連のネットワークに接続されたコンピューターでこれらのレベルを設定する場合は、マシンの推奨セットをコンピューターのポリシーをロールアウトするグループ ポリシー エディターを使用します。 ポリシー エンジンにより自動的に希望の設定は、マシンの推奨セットに反映されます。 **Auto1**と**Auto2**レベルは特にそれがここでは、オペレーティング システムと各コンピューターの RAM の量が異なるためです。
 

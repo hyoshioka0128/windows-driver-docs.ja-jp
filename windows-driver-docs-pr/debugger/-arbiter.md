@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b2b46e2b87090e5096ca131515dd02cf86bab3e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337003"
 ---
 # <a name="arbiter"></a>!arbiter
 
@@ -77,7 +77,7 @@ DMA 仲裁を表示します。
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドのアプリケーション。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 各決定者の **! アービター** PDO が範囲 (つまり、範囲の所有者)、およびこの所有者のサービス名に接続されている (わかる場合) にシステム リソースをいくつかのオプション フラグの範囲を割り当てる各が表示されます。

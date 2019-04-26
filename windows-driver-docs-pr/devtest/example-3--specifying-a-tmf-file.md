@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d83a2a1899393f503f6efddd514de426823471f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344696"
 ---
-# <a name="example-3-specifying-a-tmf-file"></a>例 3: TMF ファイルを指定します。
+# <a name="example-3-specifying-a-tmf-file"></a>例 3: TMF ファイルの指定
 
 この例では、トレース メッセージを書式設定に使用される TMF ファイルを指定する方法を示します。
 

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 331d20203285de5a75eda12d785b5e767c7b9ff2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337118"
 ---
-# <a name="findfilelockowner"></a>! findfilelockowner
+# <a name="findfilelockowner"></a>!findfilelockowner
 
 
 **! Findfilelockowner**拡張機能を持つファイル オブジェクトをパラメーターとして IopSynchronousServiceTail アサートでブロックされたスレッドのすべてのスレッドを調べることで、ファイル オブジェクトのロックの所有者を検索しようとしました。

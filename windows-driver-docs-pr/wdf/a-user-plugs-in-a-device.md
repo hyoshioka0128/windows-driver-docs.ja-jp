@@ -1,6 +1,6 @@
 ---
-title: ユーザーはデバイスをプラグインします。
-description: ユーザーはデバイスをプラグインします。
+title: ユーザーがデバイスを接続する
+description: ユーザーがデバイスを接続する
 ms.assetid: cc047c05-f3aa-4423-98fc-cafd7777e104
 keywords:
 - WDK の PnP KMDF、装置を接続します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7b0cfc39f3d3d58011432216864379fb3ee34e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342138"
 ---
-# <a name="a-user-plugs-in-a-device"></a>ユーザーはデバイスをプラグインします。
+# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスを接続する
 
 
 次のシナリオでは、[デバイス] ノードには、KMDF バス ドライバーと 1 つまたは複数 KMDF 関数またはフィルターをサポートするドライバー、PnP デバイスが含まれます。
@@ -29,7 +29,7 @@ ms.locfileid: "56561067"
 
 -   フレームワークは、バス ドライバーの[ *EvtDeviceResourcesQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540895)と[ *EvtDeviceResourceRequirementsQuery* ](https://msdn.microsoft.com/library/windows/hardware/ff540894)コールバックデバイスを必要とするシステムのハードウェア リソースを特定する関数。
 
-KMDF バス ドライバーの電源投入シーケンスの詳細については、[バス ドライバーの電源投入シーケンス](power-up-sequence-for-a-bus-driver.md)を参照してください。
+KMDF バス ドライバーの電源投入シーケンスの詳細については、次を参照してください。[バス ドライバーの電源投入シーケンス](power-up-sequence-for-a-bus-driver.md)します。
 
 次に、PnP マネージャーでは、デバイスが必要とする追加のドライバー (関数ドライバーおよびフィルター ドライバー) を決定します。 PnP マネージャーがそれらを読み込み、呼び出しをこれらのドライバーが既に読み込まれていない場合、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチン。 各関数またはフィルター ドライバーは、次の操作が行われます。
 

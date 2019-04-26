@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e216d6ca081b008b602d13e80b7213eabb58150a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339666"
 ---
 # <a name="summary-of-inf-directives"></a>INF ディレクティブの概要
 
@@ -27,7 +27,7 @@ ms.locfileid: "56570105"
 <a href="" id="addreg-directive"></a>[**AddReg ディレクティブ**](inf-addreg-directive.md)  
 このディレクティブは、1 つまたは複数を参照*追加レジストリ セクション*で、これは INF セクションが追加またはサブキーを変更し、レジストリのエントリの値を使用します。
 
-これで、特定の INF セクション、 **AddReg** (または**して**) ディレクティブが存在する、既定の参照先ので指定された変更を受信する相対的なレジストリの場所を決定します。*追加レジストリ セクション*(または*delete-section レジストリ*)。 これら既定のレジストリの場所は、特定のデバイスまたはドライバーに固有のサブキー HKEY_LOCAL_MACHINE レジストリ ツリーのどこかでは通常です。 詳細については、[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)を参照してください。
+これで、特定の INF セクション、 **AddReg** (または**して**) ディレクティブが存在する、既定の参照先ので指定された変更を受信する相対的なレジストリの場所を決定します。*追加レジストリ セクション*(または*delete-section レジストリ*)。 これら既定のレジストリの場所は、特定のデバイスまたはドライバーに固有のサブキー HKEY_LOCAL_MACHINE レジストリ ツリーのどこかでは通常です。 詳細については、次を参照してください。[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)します。
 
 追加*追加レジストリ セクション*より高いレベルのドライバ、新しいデバイスのエクスポート (カーネル ストリーミング インターフェイス) などのデバイスのシステム定義のインターフェイスのベンダーから提供された共同インストーラーをレジストリ情報を設定できますデバイス ドライバーのサービスの特定のクラスに対して、インストールされているコンポーネントによってエクスポートされたインターフェイスまたは (ほとんど)、INF があるいる場合はデバイスの新しいセットアップ クラスに対する、 **ClassInstall32**セクション。
 

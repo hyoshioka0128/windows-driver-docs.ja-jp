@@ -1,6 +1,6 @@
 ---
-title: デバッガーと Logexts.dll を使用してください。
-description: デバッガーと Logexts.dll を使用してください。
+title: デバッガーと Logexts.dll の使用
+description: デバッガーと Logexts.dll の使用
 ms.assetid: 7f7d3ca2-9b40-41ce-b66c-4367b93a7ff7
 keywords:
 - Logger, logexts.dll
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1538080047adc6ac27e8868268b2673e23e37c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340490"
 ---
-# <a name="using-the-debugger-and-logextsdll"></a>デバッガーと Logexts.dll を使用してください。
+# <a name="using-the-debugger-and-logextsdll"></a>デバッガーと Logexts.dll の使用
 
 
 ## <span id="ddk_using_the_debugger_and_logexts_dll_dtoolq"></span><span id="DDK_USING_THE_DEBUGGER_AND_LOGEXTS_DLL_DTOOLQ"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56531779"
 
 ### <a name="span-idattachingtothetargetapplicationspanspan-idattachingtothetargetapplicationspanattaching-to-the-target-application"></a><span id="attaching_to_the_target_application"></span><span id="ATTACHING_TO_THE_TARGET_APPLICATION"></span>ターゲット アプリケーションへのアタッチ
 
-ターゲット アプリケーションにデバッガーをアタッチする方法については、[ユーザー モード プロセスを使用して WinDbg をデバッグ](debugging-a-user-mode-process-using-windbg.md)または[デバッグ ユーザー モード プロセスを使用して CDB](debugging-a-user-mode-process-using-cdb.md)を参照してください。
+ターゲット アプリケーションにデバッガーをアタッチする方法については、次を参照してください。[ユーザー モード プロセスを使用して WinDbg をデバッグ](debugging-a-user-mode-process-using-windbg.md)または[デバッグ ユーザー モード プロセスを使用して CDB](debugging-a-user-mode-process-using-cdb.md)します。
 
 ### <a name="span-idusingtheloggerextensioncommandsspanspan-idusingtheloggerextensioncommandsspanusing-the-logger-extension-commands"></a><span id="using_the_logger_extension_commands"></span><span id="USING_THE_LOGGER_EXTENSION_COMMANDS"></span>ロガー拡張機能のコマンドを使用します。
 

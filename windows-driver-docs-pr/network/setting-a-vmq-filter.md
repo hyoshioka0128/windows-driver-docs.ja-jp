@@ -1,17 +1,17 @@
 ---
-title: VMQ フィルタの設定
-description: VMQ フィルタの設定
+title: VMQ フィルターの設定
+description: VMQ フィルターの設定
 ms.assetid: d40b6806-6ba8-4073-b802-57cb886ffcfb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da692ecad229f9aa87d9a288db66573faf1badda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346677"
 ---
-# <a name="setting-a-vmq-filter"></a>VMQ フィルタの設定
+# <a name="setting-a-vmq-filter"></a>VMQ フィルターの設定
 
 
 受信キューが割り当てられた後、後続のドライバーと、フィルターが受信キューに設定できます。 受信キューを割り当て、ドライバーは、そのキューにフィルターを設定できます。
@@ -76,7 +76,7 @@ NDIS フィルター識別子を割り当てます、 **FilterId**のメンバ�
 
 NDIS 受信キューにフィルターを設定する OID 要求を受け取ると、フィルター パラメーターを確認します。 NDIS は、必要なリソースとフィルターの識別子を割り当て後、は、基になるネットワーク アダプターに OID 要求を送信します。 OID を使用して要求が完了する場合は、ネットワーク アダプターは、フィルター、必要なソフトウェアとハードウェア リソースを割り当てることができますが正常に、 **NDIS\_状態\_成功**します。
 
-ミニポート ドライバーでは、割り当てられた受信のフィルターのフィルターの識別子を保持する必要があります。 NDIS は、受信フィルター パラメーターを変更または受信のフィルターをクリアするには、以降の OID 要求フィルターのフィルターの識別子を使用します。 パラメーターを変更し、フィルターをクリアする方法の詳細については、[VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)と[VMQ フィルターをクリア](clearing-a-vmq-filter.md)を参照してください。
+ミニポート ドライバーでは、割り当てられた受信のフィルターのフィルターの識別子を保持する必要があります。 NDIS は、受信フィルター パラメーターを変更または受信のフィルターをクリアするには、以降の OID 要求フィルターのフィルターの識別子を使用します。 パラメーターを変更し、フィルターをクリアする方法の詳細については、次を参照してください。 [VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)と[VMQ フィルターをクリア](clearing-a-vmq-filter.md)します。
 
 ## <a name="handling-the-filter-on-a-receive-queue"></a>受信キューにフィルターを処理
 
@@ -96,7 +96,7 @@ NDIS 受信キューにフィルターを設定する OID 要求を受け取る�
 ## <a name="receiving-packets-from-a-receive-queue"></a>受信キューからのパケットの受信
 
 
-ドライバーの受信後、ミニポート、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)要求、キューに設定されているフィルター、キューが*を実行している*状態。 キューは、この状態では、ミニポート ドライバーでは、キュー上のパケットを指定できます。 キューの状態の詳細については、[キューの状態と操作](queue-states-and-operations.md)を参照してください。
+ドライバーの受信後、ミニポート、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)要求、キューに設定されているフィルター、キューが*を実行している*状態。 キューは、この状態では、ミニポート ドライバーでは、キュー上のパケットを指定できます。 キューの状態の詳細については、次を参照してください。[キューの状態と操作](queue-states-and-operations.md)します。
 
 ミニポート ドライバーが受信した場合、 [OID\_受信\_フィルター\_キュー\_割り当て\_完了](https://msdn.microsoft.com/library/windows/hardware/ff569793)OID がキューの要求が、フィルターのセットがない、キュー、ミニポート ドライバー示す必要がありますいないそのキューでパケットを受信していずれか。 この場合、ミニポート ドライバーを受け取ると、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795) OID は、キューの要求し、OID 要求が完了すると、前に、可能な限りそのキュー上のパケットを示します。 OID を処理している間、ミニポート ドライバーをキューにパケットを示している場合\_受信\_フィルター\_設定\_フィルター OID 要求、ミニポート ドライバーが、OID を完了する必要があります\_受信\_フィルター\_設定\_がフィルターの要求、 **NDIS\_状態\_成功**コードが返されます。
 

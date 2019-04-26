@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_WAKE_PACKET_IPv4_TCP_SYNC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2cf053aa39a45614166145fdbe021520e5e93e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339951"
 ---
 # <a name="wditlvwakepacketipv4tcpsync"></a>WDI\_TLV\_WAKE\_パケット\_IPv4\_TCP\_同期
 
@@ -31,7 +31,7 @@ WDI\_TLV\_WAKE\_パケット\_IPv4\_TCP\_同期は、wake on LAN IPv4 TCP 同期
 ## <a name="values"></a>値
 
 
-| 種類       | 説明                                                      |
+| 型       | 説明                                                      |
 |------------|------------------------------------------------------------------|
 | UINT32     | Wake on LAN のパターンの ID を指定します                            |
 | UINT8\[4\] | TCP SYN パケットでは、IPv4 の発信元アドレスを指定します。         |
@@ -41,7 +41,7 @@ WDI\_TLV\_WAKE\_パケット\_IPv4\_TCP\_同期は、wake on LAN IPv4 TCP 同期
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: 共有の状態情報にアクセスします。
-description: 共有の状態情報にアクセスします。
+title: 共有している状態情報へのアクセス
+description: 共有している状態情報へのアクセス
 ms.assetid: f3e5ac07-cab1-4f66-90e4-88b2e28079a5
 keywords:
 - クリティカル セクション ルーチン WDK カーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8c322397c3ed10dd9351851d477c07714298f2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339127"
 ---
-# <a name="accessing-shared-state-information"></a>共有の状態情報にアクセスします。
+# <a name="accessing-shared-state-information"></a>共有している状態情報へのアクセス
 
 
 

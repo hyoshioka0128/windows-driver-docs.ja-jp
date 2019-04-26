@@ -1,6 +1,6 @@
 ---
 title: 接続指向の NDIS 経由で TAPI の WAN 特定されていない拡張機能
-description: 接続指向の NDIS 経由で電話サービスをサポートする非 WAN 固有の拡張機能
+description: 接続指向 NDIS 経由で電話サービスをサポートする WAN 固有でない拡張機能
 ms.assetid: be677971-8c4a-435a-81b1-ff1ad9d849b4
 keywords:
 - いる CoNDIS WAN ドライバー WDK ネットワーク、TAPI サービス
@@ -11,19 +11,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29999186934e2393241190b33bbeb2a2485cd224
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342288"
 ---
-# <a name="non-wan-specific-extensions-to-support-telephonic-services-over-connection-oriented-ndis"></a>接続指向の NDIS 経由で電話サービスをサポートする非 WAN 固有の拡張機能
+# <a name="non-wan-specific-extensions-to-support-telephonic-services-over-connection-oriented-ndis"></a>接続指向 NDIS 経由で電話サービスをサポートする WAN 固有でない拡張機能
 
 
 
 
 
-このトピックでは、接続指向の NDIS 経由での TAPI サポート WAN 特定されていない拡張機能について説明します。 これらの拡張機能は、NDIS/TAPI 翻訳 Oid です。 これらの拡張機能は、NDIS パラメーターまたは TAPI パラメーターを NDIS パラメーターに TAPI パラメーターを変換するには、WAN 特定されていない呼び出しマネージャーと統合ミニポート コール マネージャー (MCM) ドライバーを許可します。 これらの拡張機能は、コール マネージャーとの接続指向のメディアを介した TAPI アクセスを提供する ATM などをサポートする MCMs を許可します。 接続指向の NDIS 経由の TAPI サポートの WAN 固有の拡張機能については、[いる CoNDIS WAN 操作サポートの電話サービスのその](condis-wan-operations-that-support-telephonic-services.md)を参照してください。
+このトピックでは、接続指向の NDIS 経由での TAPI サポート WAN 特定されていない拡張機能について説明します。 これらの拡張機能は、NDIS/TAPI 翻訳 Oid です。 これらの拡張機能は、NDIS パラメーターまたは TAPI パラメーターを NDIS パラメーターに TAPI パラメーターを変換するには、WAN 特定されていない呼び出しマネージャーと統合ミニポート コール マネージャー (MCM) ドライバーを許可します。 これらの拡張機能は、コール マネージャーとの接続指向のメディアを介した TAPI アクセスを提供する ATM などをサポートする MCMs を許可します。 接続指向の NDIS 経由の TAPI サポートの WAN 固有の拡張機能については、次を参照してください。[いる CoNDIS WAN 操作サポートの電話サービスのその](condis-wan-operations-that-support-telephonic-services.md)します。
 
 呼び出しの管理者または共同をそれぞれ登録 MCMs NDIS/TAPI 翻訳 Oid を使用しない必要があります\_アドレス\_ファミリ\_TAPI\_プロキシを[ **NdisCmRegisterAddressFamilyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561685)または[ **NdisMCmRegisterAddressFamilyEx**](https://msdn.microsoft.com/library/windows/hardware/ff563554)します。 代わりに、マネージャーと MCMs、さらに、TAPI クライアントを呼び出すなど、」の説明に従って、接続指向の構造内に TAPI パラメーターをカプセル化する必要があります[いる CoNDIS WAN 操作電話サービスをサポートする](condis-wan-operations-that-support-telephonic-services.md)します。
 

@@ -1,6 +1,6 @@
 ---
-title: コマンドと頂点バッファーの割り当て
-description: コマンドと頂点バッファーの割り当て
+title: コマンド バッファーと頂点バッファーの割り当て
+description: コマンド バッファーと頂点バッファーの割り当て
 ms.assetid: 07666a6f-1d2e-4f30-bba8-a09b59225ecf
 keywords:
 - コマンド バッファー WDK Direct3D
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea323e33290e6a6a4181500c71f98bf73457e77f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343043"
 ---
-# <a name="command-and-vertex-buffer-allocation"></a>コマンドと頂点バッファーの割り当て
+# <a name="command-and-vertex-buffer-allocation"></a>コマンド バッファーと頂点バッファーの割り当て
 
 
 ## <span id="ddk_command_and_vertex_buffer_allocation_gg"></span><span id="DDK_COMMAND_AND_VERTEX_BUFFER_ALLOCATION_GG"></span>

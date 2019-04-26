@@ -1,6 +1,6 @@
 ---
-title: 標準および非標準モードの切り替え
-description: 標準および非標準モードの切り替え
+title: 標準モードと非標準モードの切り替え
+description: 標準モードと非標準モードの切り替え
 ms.assetid: 15939910-b325-47ff-b4ed-bbaeec4149bd
 keywords:
 - 非標準の表示モード WDK DirectX 9.0、標準および非標準モードの切り替え
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd007ce8d8298fe85907c80bb7005e1147e26681
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354207"
 ---
-# <a name="switching-between-standard-and-nonstandard-modes"></a>標準および非標準モードの切り替え
+# <a name="switching-between-standard-and-nonstandard-modes"></a>標準モードと非標準モードの切り替え
 
 
 ## <span id="ddk_switching_between_standard_and_nonstandard_modes_gg"></span><span id="DDK_SWITCHING_BETWEEN_STANDARD_AND_NONSTANDARD_MODES_GG"></span>
@@ -44,7 +44,7 @@ DirectX 9.0 ドライバーは、標準の表示モードの標準のプライ�
 
 5.  アプリケーションを実行します。
 
-    アプリケーションがドライバーのそれ以降の呼び出しを生成*DdFlip*非標準のバッファーとドライバーの間の関数は、非標準の形式を表示します。 アプリケーションでは、ドライバーへの呼び出しを生成できますも[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) 、D3DDP2OP を使用して機能\_フロント バッファーが、これらの呼び出しにバック バッファーをコピーする BLT 操作コード常に、2 つの非標準のサーフェス オブジェクト間で行われます。 ドライバーは、ウィンドウ表示モードで非標準の形式をサポートする場合を除き、ドライバーでは非標準と標準のサーフェス形式の間の blt は処理されません。 詳細については、ウィンドウ表示モードの場合は、[Two-Dimensional 操作のサポート](supporting-two-dimensional-operations.md)を参照してください。
+    アプリケーションがドライバーのそれ以降の呼び出しを生成*DdFlip*非標準のバッファーとドライバーの間の関数は、非標準の形式を表示します。 アプリケーションでは、ドライバーへの呼び出しを生成できますも[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) 、D3DDP2OP を使用して機能\_フロント バッファーが、これらの呼び出しにバック バッファーをコピーする BLT 操作コード常に、2 つの非標準のサーフェス オブジェクト間で行われます。 ドライバーは、ウィンドウ表示モードで非標準の形式をサポートする場合を除き、ドライバーでは非標準と標準のサーフェス形式の間の blt は処理されません。 詳細については、ウィンドウ表示モードの場合は、次を参照してください。 [Two-Dimensional 操作のサポート](supporting-two-dimensional-operations.md)します。
 
 6.  ドライバーは、標準の形式に surface の背面を反転します。
 

@@ -1,17 +1,17 @@
 ---
-title: 仮想関数のパラメーターのクエリを実行します。
-description: 仮想関数のパラメーターのクエリを実行します。
+title: 仮想関数のパラメーターのクエリ
+description: 仮想関数のパラメーターのクエリ
 ms.assetid: D834762D-9141-4F0F-B76D-5C8ABB016B64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2e2ca1b03bd73611583a102902e1455887a8ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339984"
 ---
-# <a name="querying-the-parameters-of-a-virtual-function"></a>仮想関数のパラメーターのクエリを実行します。
+# <a name="querying-the-parameters-of-a-virtual-function"></a>仮想関数のパラメーターのクエリ
 
 
 上にある、ドライバーまたはユーザー モード アプリケーションを取得できます、現在のパラメーターの PCI Express (PCIe) 仮想機能 (VF) シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターで。 ドライバーまたはアプリケーションのオブジェクト識別子 (OID) メソッド要求を発行[OID\_NIC\_スイッチ\_VF\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451824)これらのパラメーターを取得します。

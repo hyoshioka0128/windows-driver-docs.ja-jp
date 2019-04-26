@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_LSO_V1_CAPABILITIES (0 xcc) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 366fde51f9f3cea9fec6b4c97e0ba14b4164715c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357240"
 ---
 # <a name="wditlvlsov1capabilities-0xcc"></a>WDI\_TLV\_LSO\_V1\_機能 (0 xcc)
 
@@ -73,7 +73,7 @@ WDI\_TLV\_LSO\_V1\_機能は、大規模なオフロード V1 の送信機能を
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

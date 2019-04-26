@@ -5,11 +5,11 @@ ms.assetid: b72f6ba1-7704-4661-8855-1ff88bd08e5a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92f35031fd4bec7d933003aef775c01f9d0ae061
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337703"
 ---
 # <a name="efiusbfnioprotocolgetdeviceinfo"></a>EFI\_USBFN\_IO\_プロトコル。GetDeviceInfo
 
@@ -87,12 +87,12 @@ Unicode 文字列として、要求された情報が返されるバッファー
 
  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
 メソッドは、指定されたバッファーが小さすぎるか、NULL の場合は、 **EFI\_バッファー\_すぎます\_小さな**を通して必要なサイズが返される**BufferSize**します。 すべての返される文字列は Unicode 形式です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 **ヘッダー:** ユーザーが生成しました。

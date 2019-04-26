@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2641acc7ce0367701a9759383d74babcfe4e0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343898"
 ---
 # <a name="wiaipsrotation"></a>WIA\_IP\_回転
 
@@ -35,7 +35,7 @@ WIA\_IP\_ROTATION プロパティが実装されている場合、画像の回�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーション設定、WIA\_IP\_ROTATION プロパティ ドライバーをどの程度 (すべての場合) に通知するために、ドライバーは、アプリケーションに返す前に画像を回転します。
@@ -85,7 +85,7 @@ WIA ミニドライバーは、アプリケーションに送信する前に画�
 
 WIA\_IP\_向きスキャンする領域に影響を与えることができます。 すべてのページ サイズが横と縦と WIA な変更からのイメージのエクステントの両方で使用可能な\_IP\_方向は、イメージをトリミングでした。 WIA\_IP\_回転イメージ エクステントには影響しませんし、スキャンするのには、ドキュメントの方向は関係ありません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

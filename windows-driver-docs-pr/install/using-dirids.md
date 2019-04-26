@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e977273eaca5dc17251a24b73451bce303047e5d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339421"
 ---
 # <a name="using-dirids"></a>Dirids の使用
 
@@ -85,7 +85,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 <td align="left"><p><em>SourceDrive</em><strong>: \</strong><em>pathname</em> (INF ファイルのインストール元のディレクトリ)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>10</strong></p></td>
+<td align="left"><p>"<strong>10</strong>"</p></td>
 <td align="left"><p>Windows ディレクトリ。</p>
 <p>これに相当<em>%systemroot%</em>します。</p></td>
 </tr>

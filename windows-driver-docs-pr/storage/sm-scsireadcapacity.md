@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3715c2aaaf352f59ec8c623270583028f2782bea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339059"
 ---
 # <a name="smscsireadcapacity-function"></a>SM\_ScsiReadCapacity 関数
 
@@ -72,7 +72,7 @@ void SM_ScsiReadCapacity(
 応答に意味がバッファーのバイト単位で最大サイズ。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返しますの HBAStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
+操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返しますの HBAStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。
 
 *ScsiStatus*   
 SCSI 問い合わせコマンドの状態。 ミニポート ドライバーでは、この情報を返しますの ScsiStatus メンバーでは、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564602)構造体。

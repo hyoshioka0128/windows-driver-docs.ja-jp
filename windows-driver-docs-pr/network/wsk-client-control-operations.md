@@ -1,6 +1,6 @@
 ---
-title: WSK クライアント管理の操作
-description: WSK クライアント管理の操作
+title: WSK クライアント制御操作
+description: WSK クライアント制御操作
 ms.assetid: aa1159f5-defd-440e-9628-906a246c11df
 ms.date: 07/18/2017
 keywords:
@@ -10,13 +10,13 @@ keywords:
 - Winsock カーネル WDK が、ネットワーク操作
 ms.localizationpriority: medium
 ms.openlocfilehash: 932d834d2400c4d7983be34f8e78ba398c95e02e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342594"
 ---
-# <a name="wsk-client-control-operations"></a>WSK クライアント管理の操作
+# <a name="wsk-client-control-operations"></a>WSK クライアント制御操作
 
 
 WSK サブシステムには、次の WSK クライアント コントロールの操作がサポートされています。

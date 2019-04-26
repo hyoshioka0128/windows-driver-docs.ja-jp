@@ -1,6 +1,6 @@
 ---
-title: CLFS 安定したストレージ
-description: CLFS 安定したストレージ
+title: CLFS の安定した記憶域
+description: CLFS の安定した記憶域
 ms.assetid: d0ee4f22-9fba-47da-a9c9-eaf3a21feb36
 keywords:
 - 一般的なログ ファイル システムの WDK カーネル、安定したストレージ
@@ -20,13 +20,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd6fb99c9d0f549a19ea8e905068d198df9dd605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343753"
 ---
-# <a name="clfs-stable-storage"></a>CLFS 安定したストレージ
+# <a name="clfs-stable-storage"></a>CLFS の安定した記憶域
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: ドライバー StartIo ルーチンなしでキャンセル ルーチン
-description: ドライバー StartIo ルーチンなしでキャンセル ルーチン
+title: StartIo ルーチンを使用していないドライバーのキャンセル ルーチン
+description: StartIo ルーチンを使用していないドライバーのキャンセル ルーチン
 ms.assetid: c6e1a05e-28ed-4f42-8678-55f01303b312
 keywords:
 - Irp、StartIo ルーチンのキャンセル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cee9b06809bc16e81acf960aade0998eda1a2ced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338719"
 ---
-# <a name="cancel-routines-in-drivers-without-startio-routines"></a>ドライバー StartIo ルーチンなしでキャンセル ルーチン
+# <a name="cancel-routines-in-drivers-without-startio-routines"></a>StartIo ルーチンを使用していないドライバーのキャンセル ルーチン
 
 
 

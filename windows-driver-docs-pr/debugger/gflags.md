@@ -6,11 +6,11 @@ keywords: GFlags、グローバル フラグのエディター gflags.exe
 ms.date: 06/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cfa08a777d1e4a9e5fd7c59687fb5a7f419aef18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342051"
 ---
 # <a name="gflags"></a>GFlags
 
@@ -46,7 +46,7 @@ GFlags には、ダイアログ ボックスとコマンド ライン インタ�
 
 -   ヒープのページ検証します。 GFlags には pageheap によって (pageheap.exe) ヒープ割り当ての監視を有効にするツールの機能が含まれています。 Pageheap によっては、以前のバージョンの Windows に含まれていました。
 
--   特別なプールの機能に必要な再起動は不要です。 Windows Vista および Windows の以降のバージョンでは、有効にする、無効にする、およびできます (「再起動」) を再起動しなくても、特別なプール機能を構成するコンピューター。 詳しくは、[特別なプール](special-pool.md)を参照してください。
+-   特別なプールの機能に必要な再起動は不要です。 Windows Vista および Windows の以降のバージョンでは、有効にする、無効にする、およびできます (「再起動」) を再起動しなくても、特別なプール機能を構成するコンピューター。 詳しくは、次を参照してください。[特別なプール](special-pool.md)します。
 
 -   オブジェクトの参照を追跡します。 新しいフラグは、オブジェクトを参照して、カーネル オブジェクトが逆参照のトレースを有効します。 Windows のこの新機能では、オブジェクトの参照カウントがデクリメントされた回数が多すぎますかにもかかわらずオブジェクトにないデクリメントは使用されなくときを検出します。 このフラグは、Windows Vista および Windows の以降のバージョンでのみサポートされます。
 

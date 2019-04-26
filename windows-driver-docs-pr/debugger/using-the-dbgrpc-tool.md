@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18926641104455df4d8804af9f21ddc0b458cbf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340544"
 ---
 # <a name="using-the-dbgrpc-tool"></a>DbgRpc ツールの使用
 
@@ -45,7 +45,7 @@ Endpoint name: OLE18
 
 ### <a name="span-iddbgrpccommandlinespanspan-iddbgrpccommandlinespandbgrpc-command-line"></a><span id="dbgrpc_command_line"></span><span id="DBGRPC_COMMAND_LINE"></span>させるためのコマンドライン
 
-完全なコマンド構文については、[**させるためのコマンド ライン オプション**](dbgrpc-command-line-options.md)を参照してください。
+完全なコマンド構文については、次を参照してください。 [**させるためのコマンド ライン オプション**](dbgrpc-command-line-options.md)します。
 
  
 

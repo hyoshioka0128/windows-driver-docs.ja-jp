@@ -1,5 +1,5 @@
 ---
-title: .bpcmds (ブレークポイント コマンドが表示)
+title: .bpcmds (ブレークポイント コマンドの表示)
 description: .Bpcmds コマンドには、現在のブレークポイントの各設定に使用されたコマンドが表示されます。
 ms.assetid: 96c13c54-8d85-414c-9775-a0373459dc7a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d77eebdf2b11279981f51560ab849f9ae985f4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336989"
 ---
-# <a name="bpcmds-display-breakpoint-commands"></a>.bpcmds (ブレークポイント コマンドが表示)
+# <a name="bpcmds-display-breakpoint-commands"></a>.bpcmds (ブレークポイント コマンドの表示)
 
 
 **.Bpcmds**コマンドには、現在のブレークポイントの各設定に使用されたコマンドが表示されます。
@@ -55,7 +55,7 @@ ms.locfileid: "56559021"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とブレークポイント、他のコマンドのブレークポイントとブレークポイントを制御する方法を使用する方法の例については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
+詳細とブレークポイント、他のコマンドのブレークポイントとブレークポイントを制御する方法を使用する方法の例については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
 
 <a name="remarks"></a>注釈
 -------

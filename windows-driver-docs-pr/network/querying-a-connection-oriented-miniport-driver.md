@@ -1,19 +1,19 @@
 ---
-title: 接続指向のミニポート ドライバーのクエリを実行します。
-description: 接続指向のミニポート ドライバーのクエリを実行します。
+title: 接続指向ミニポート ドライバーのクエリ
+description: 接続指向ミニポート ドライバーのクエリ
 ms.assetid: 9e9926f6-cf90-48af-885f-59725721948d
 keywords:
 - 接続指向のドライバー WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b4de30e3ab57303a48b608173335fa4931e8c71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349436"
 ---
-# <a name="querying-a-connection-oriented-miniport-driver"></a>接続指向のミニポート ドライバーのクエリを実行します。
+# <a name="querying-a-connection-oriented-miniport-driver"></a>接続指向ミニポート ドライバーのクエリ
 
 
 
@@ -65,7 +65,7 @@ NDIS ミニポート ドライバーを呼び出すことも[ *MiniportCoOidRequ
 
 [*MiniportCoOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559362)は、NIC の現在のアドレスを決定するメディア固有の OID を照会することもできます。
 
-詳細については、[Connection-Oriented 呼び出す管理者とクライアントの Oid](https://msdn.microsoft.com/library/windows/hardware/ff569067)と[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)を参照してください。
+詳細については、次を参照してください。 [Connection-Oriented 呼び出す管理者とクライアントの Oid](https://msdn.microsoft.com/library/windows/hardware/ff569067)と[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。
 
  
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: df6a9b410a7498c3aadc31a68435af08c19b9836
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346235"
 ---
 # <a name="d3dkmtoutputduplmetadata-structure"></a>D3DKMT\_OUTPUTDUPL\_メタデータ構造体
 
@@ -40,7 +40,7 @@ typedef struct _D3DKMT_OUTPUTDUPL_METADATA {
 } D3DKMT_OUTPUTDUPL_METADATA;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **hAdapter**

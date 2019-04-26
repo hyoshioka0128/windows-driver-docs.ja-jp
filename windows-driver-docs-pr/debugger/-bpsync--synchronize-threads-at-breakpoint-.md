@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e646158b0e11a9cd337c7ab3a0973cc55d50b19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336982"
 ---
 # <a name="bpsync-synchronize-threads-at-breakpoint"></a>.bpsync (ブレークポイントのスレッドの同期)
 
@@ -64,7 +64,7 @@ ms.locfileid: "56580138"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 パラメーターのないです。 **.bpsync**コマンドは、現在の同期のブレークポイントの動作を制御するルールを表示します。

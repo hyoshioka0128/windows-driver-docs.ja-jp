@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_CONFIG_METHODS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5325763ad6396b8b0872fe3ec656aca91c7f5724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345948"
 ---
 # <a name="wditlvp2pconfigmethods"></a>WDI\_TLV\_P2P\_CONFIG\_メソッド
 
@@ -31,7 +31,7 @@ Uint16 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                              |
+| 型   | 説明                                                                                                                                                              |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT16 | 構成の方法で定義されている[ **WDI\_WPS\_構成\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/dn898198)します。 暗証番号 (pin) の表示、暗証番号 (pin) のキーパッドおよび WFDS は適用できます。 |
 

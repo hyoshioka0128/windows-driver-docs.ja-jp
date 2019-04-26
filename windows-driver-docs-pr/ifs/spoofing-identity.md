@@ -1,6 +1,6 @@
 ---
-title: Id を偽装
-description: Id を偽装
+title: なりすまし
+description: なりすまし
 ms.assetid: adc0b986-a8c2-45ce-a4d5-9d4d867603b5
 keywords:
 - 脅威モデルの WDK ファイル システム、id 偽装
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfe71c0ab36a0922ce1fc23e784a9c217d555cf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344434"
 ---
-# <a name="spoofing-identity"></a>Id を偽装
+# <a name="spoofing-identity"></a>なりすまし
 
 
 ## <span id="ddk_spoofing_identity_if"></span><span id="DDK_SPOOFING_IDENTITY_IF"></span>

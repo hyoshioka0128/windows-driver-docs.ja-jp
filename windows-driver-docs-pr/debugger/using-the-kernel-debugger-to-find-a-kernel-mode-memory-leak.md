@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5162aa2d79a996f32676e8575a929a2f5aa7d975
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340482"
 ---
 # <a name="using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak"></a>カーネル デバッガーを使用したカーネルモード メモリ リークの検出
 
@@ -26,7 +26,7 @@ Windows Server 2003 および Windows の以降のバージョンでは、プー
 
 ### <a name="span-iddeterminingthepooltagoftheleakspanspan-iddeterminingthepooltagoftheleakspandetermining-the-pool-tag-of-the-leak"></a><span id="determining_the_pool_tag_of_the_leak"></span><span id="DETERMINING_THE_POOL_TAG_OF_THE_LEAK"></span>リークのプール タグを決定します。
 
-どのプール タグはをリークに関連付けを確認するのには、通常 PoolMon ツールを使用して、この手順を最も簡単なは。 詳細については、[カーネル モード メモリ リークの検出に使用する PoolMon](using-poolmon-to-find-a-kernel-mode-memory-leak.md)を参照してください。
+どのプール タグはをリークに関連付けを確認するのには、通常 PoolMon ツールを使用して、この手順を最も簡単なは。 詳細については、次を参照してください。[カーネル モード メモリ リークの検出に使用する PoolMon](using-poolmon-to-find-a-kernel-mode-memory-leak.md)します。
 
 また、カーネル デバッガーを使用すると、大規模なプールの割り当てに関連付けられているタグを探します。 これを行うには、次の手順を実行します。
 

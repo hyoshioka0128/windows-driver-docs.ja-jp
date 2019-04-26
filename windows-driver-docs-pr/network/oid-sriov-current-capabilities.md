@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_CURRENT_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e4bad1cad357e8a0587216b301b4df31bb9c7209
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351301"
 ---
 # <a name="oidsriovcurrentcapabilities"></a>OID\_SRIOV\_現在\_機能
 

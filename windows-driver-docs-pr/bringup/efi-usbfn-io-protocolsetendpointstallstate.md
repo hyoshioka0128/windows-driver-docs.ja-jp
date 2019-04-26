@@ -1,15 +1,15 @@
 ---
-title: EFI_USBFN_IO_PROTOCOL します。SetEndpointStallState
-description: EFI_USBFN_IO_PROTOCOL します。SetEndpointStallState
+title: EFI_USBFN_IO_PROTOCOL.SetEndpointStallState
+description: EFI_USBFN_IO_PROTOCOL.SetEndpointStallState
 ms.assetid: bd754296-5002-48b6-9986-fa09c2094470
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f2df4b3b5f81bc2e9b78ea27c9b306b83e9f5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337672"
 ---
 # <a name="efiusbfnioprotocolsetendpointstallstate"></a>EFI\_USBFN\_IO\_プロトコル。SetEndpointStallState
 
@@ -40,7 +40,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 エンドポイントを停止している必要があることを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
+エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
 
 <a href="" id="state"></a>*状態*  
 指定したエンドポイントの停止の状態を要求します。 このパラメーターを設定**TRUE**直さざるを得ないというエンドポイントをによりします。 設定すると**FALSE**既存の停止をクリアします。
@@ -81,12 +81,12 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 
  
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 
 この関数は、 **EFI\_無効な\_パラメーター**指定した方向がエンドポイントの正しくない場合。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 **ヘッダー:** ユーザーが生成しました。

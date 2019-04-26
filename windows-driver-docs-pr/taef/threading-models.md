@@ -5,11 +5,11 @@ ms.assetid: 3BB0C01B-D82B-45dd-8AC8-EA2E2811CD24
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 606f9b78d54a8cda3f6c02ae0eaef99967b25220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348350"
 ---
 # <a name="threading-models"></a>スレッド モデル
 

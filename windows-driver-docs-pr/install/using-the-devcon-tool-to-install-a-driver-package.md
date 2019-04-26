@@ -1,17 +1,17 @@
 ---
-title: DevCon ツールを使用して、ドライバー パッケージをインストールするには
-description: DevCon ツールを使用して、ドライバー パッケージをインストールするには
+title: ドライバー パッケージをインストールするための DevCon ツールの使用
+description: ドライバー パッケージをインストールするための DevCon ツールの使用
 ms.assetid: d77573e0-7866-46a5-88bc-c911bbd2a165
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e58b8cf9c61d1b21ae60adf366e07cfa741cb0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339385"
 ---
-# <a name="using-the-devcon-tool-to-install-a-driver-package"></a>DevCon ツールを使用して、ドライバー パッケージをインストールするには
+# <a name="using-the-devcon-tool-to-install-a-driver-package"></a>ドライバー パッケージをインストールするための DevCon ツールの使用
 
 
 このトピックの例では、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)します。 WDK のインストール ディレクトリ内で、パッケージのソース ファイル内にある、 *src\\全般\\トースター\\toastpkg\\toastcd*ディレクトリ。 構築して、デジタル署名されたドライバー パッケージのこの後は、ドライバー パッケージをディレクトリにコピー *c:\\トースター*テスト コンピューター。

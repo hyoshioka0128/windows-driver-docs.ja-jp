@@ -5,11 +5,11 @@ ms.assetid: 9b5525a4-d98c-4328-8ebe-55ede53befca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b71ff27f2e13acb8a3c6076382658f75e9bcd4b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337788"
 ---
 # <a name="efisimplewinphoneioprotocolread"></a>EFI\_単純\_WINPHONE\_IO\_プロトコル。読み取り
 
@@ -91,7 +91,7 @@ EFI へのポインター\_単純\_WINPHONE\_IO\_プロトコル インスタン
 
  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
 この関数は、要求されたデータ量があるか、タイムアウトまでにブロックされます。

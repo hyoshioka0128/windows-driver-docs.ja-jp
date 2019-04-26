@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8296b3045fdde44687e8469ee2466cddb5c6784
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343042"
 ---
 # <a name="command-stream"></a>コマンド ストリーム
 
@@ -25,7 +25,7 @@ ms.locfileid: "56572837"
 
 D3DHAL つまり\_DP2OPERATION 操作コードでは、何入力構造体の次のコマンド バッファーを指定します。 従う構造体の数がいずれかで指定された**wPrimitiveCount**または**wStateCount**、さらに、D3DHAL のメンバーである共用体のメンバー\_DP2COMMAND 構造体。 **WPrimitiveCount**メンバーには、表示するために、グラフィックス プリミティブの数の追跡中に、 **wStateCount**メンバーの追跡を処理する状態の変更の数。
 
-ドライバー操作のコードを処理する方法の例は、[テクスチャの処理ステージ](processing-texture-stages.md)を参照してください。
+ドライバー操作のコードを処理する方法の例は、次を参照してください。[テクスチャの処理ステージ](processing-texture-stages.md)します。
 
  
 

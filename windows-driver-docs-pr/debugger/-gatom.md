@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f6f414933532b9b170148f832708e21e1fa2bab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336609"
 ---
-# <a name="gatom"></a>! gatom
+# <a name="gatom"></a>!gatom
 
 
 **! Gatom**拡張機能には、グローバル atom テーブルが表示されます。

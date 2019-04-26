@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba56d78c33627e9b70feb5ec457f09ae97c01429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338642"
 ---
 # <a name="providing-storage-for-spin-locks-and-protected-data"></a>スピン ロックおよび保護されたデータ用の記憶域の提供
 
@@ -39,7 +39,7 @@ ms.locfileid: "56570276"
 
 ドライバーがへの呼び出しを行うときに、 **ExInterlocked * Xxx*** その ISR からルーチンまたは[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンでは使用できませんのいずれか、 **Ke * Xxx*** ディスパッチより大きい IRQL で取得および解放するルーチンがスピンロック\_レベル。 その結果、呼び出しの間スピン ロックを再利用するドライバー、 **Ke*Xxx*スピンロック**と**ExInterlocked * Xxx*** ルーチンは、IRQL での実行中にすべての呼び出しを行う必要があります&lt;= ディスパッチ\_レベル。
 
-ドライバーに同じスピン ロックを渡すことができます**ExInterlockedInsertHeadList**間は**ExInterlocked * Xxx*** でに 2 つのルーチンは、同じ IRQL でスピン ロックを使用して日常的な。 スピン ロックの使用率がパフォーマンスに与える影響の詳細については、[スピン ロックを使用を参照してください。たとえば](using-spin-locks--an-example.md)します。
+ドライバーに同じスピン ロックを渡すことができます**ExInterlockedInsertHeadList**間は**ExInterlocked * Xxx*** でに 2 つのルーチンは、同じ IRQL でスピン ロックを使用して日常的な。 スピン ロックの使用率がパフォーマンスに与える影響の詳細については、次を参照してください。[スピン ロックを使用します。たとえば](using-spin-locks--an-example.md)します。
 
 Executive スピン ロックをストレージに加え、デバイス ドライバーが multivector ISR または 1 つ以上の ISR. がある場合に、その割り込みオブジェクトに関連するもう 1 つのスピンロックの記憶域を提供する必要があります。
 

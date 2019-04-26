@@ -1,19 +1,19 @@
 ---
-title: コンテナー Id の実装のトラブルシューティング
-description: コンテナー Id の実装のトラブルシューティング
+title: コンテナー ID の実装のトラブルシューティング
+description: コンテナー ID の実装のトラブルシューティング
 ms.assetid: 9c992f5a-73b6-4567-977f-1cd92862bf60
 keywords:
 - コンテナー Id の WDK のトラブルシューティング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 165189d318d5065d594cf721a9b0c958e536bdf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339519"
 ---
-# <a name="troubleshooting-the-implementation-of-container-ids"></a>コンテナー Id の実装のトラブルシューティング
+# <a name="troubleshooting-the-implementation-of-container-ids"></a>コンテナー ID の実装のトラブルシューティング
 
 
 1 つだけを行うには、デバイスとプリンターのユーザー インターフェイス (UI) 内のデバイスの 1 つ以上のインスタンスが表示されている場合、デバイスは、コンテナーの ID 要件を正しく実装しません。 この不適切な実装により、プラグ アンド プレイ (PnP) manager を 1 つまたは複数のデバイス ノードをグループ化 (*devnode*) デバイスの追加のデバイスのコンテナーにします。
@@ -33,13 +33,13 @@ ms.locfileid: "56553999"
 
     Devnode の機能の値の一覧に CM_DEVCAP_REMOVABLE フラグが含まれている場合、devnode はリムーバブルとマークされます。 プラグ アンド プレイ (PnP) manager devnode と削除できない子用に新しいデバイス コンテナーが作成されます。
 
-    リムーバブル デバイスの機能の詳細については、[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)を参照してください。
+    リムーバブル デバイスの機能の詳細については、次を参照してください。[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)します。
 
-    デバイス マネージャーの詳細については、[デバイス マネージャーを使用して](using-device-manager.md)を参照してください。
+    デバイス マネージャーの詳細については、次を参照してください。[デバイス マネージャーを使用して](using-device-manager.md)します。
 
 -   デバイスには、コンテナー ID またはハードウェアの他の一意識別子が含まれてでしょうか。
 
-    コンテナー ID またはハードウェアの一意の識別子の形式が指定したバスの形式の要件に準拠していることを確認します。 詳細については、[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)を参照してください。
+    コンテナー ID またはハードウェアの一意の識別子の形式が指定したバスの形式の要件に準拠していることを確認します。 詳細については、次を参照してください。[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)します。
 
     デバイスの devnode は、カスタム バス ドライバーによって列挙されますが場合、は、バス ドライバーに正しく応答することを確認、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)要求**BusQueryContainerID**.
 

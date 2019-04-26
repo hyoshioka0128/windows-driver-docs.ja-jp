@@ -1,17 +1,17 @@
 ---
-title: データ転送の要求を完了します。
-description: データ転送の要求を完了します。
+title: データ転送要求の完了
+description: データ転送要求の完了
 ms.assetid: 4c187202-c7a8-4fd8-984a-5bae647b74b0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dad5ee2937b9810d0076ac3ab6dfca612f1e1a13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344250"
 ---
-# <a name="completing-data-transfer-requests"></a>データ転送の要求を完了します。
+# <a name="completing-data-transfer-requests"></a>データ転送要求の完了
 
 
 

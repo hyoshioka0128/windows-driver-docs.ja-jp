@@ -1,19 +1,19 @@
 ---
-title: ライブラリを再処理
-description: ライブラリを再処理
+title: ライブラリの再処理
+description: ライブラリの再処理
 ms.assetid: 8d9f5890-cbe1-4240-ab23-76b6008fe686
 keywords:
 - WDK の Static Driver Verifier のライブラリを再処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c0734adc5d59005acb19dce9a2c2d7a3cbb6f9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340269"
 ---
-# <a name="reprocessing-a-library"></a>ライブラリを再処理
+# <a name="reprocessing-a-library"></a>ライブラリの再処理
 
 
 通常、ドライバーが 1 回だけが必要なライブラリのコードを処理する必要があります。 ただし、次の状況でもう一度のライブラリを処理する必要があります。
@@ -41,7 +41,7 @@ ms.locfileid: "56531959"
 4.  ライブラリ ディレクトリに移動し、ライブラリのプロジェクト ファイルを選択します。
 5.  手順を追加して、ドライバーを使用して、各ライブラリのプロジェクト ファイルを選択します。
 
-使用して、/clean/lib パラメーターのオプションから、MSBuild コマンドのライブラリ再処理することもできます。 詳細については、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。
+使用して、/clean/lib パラメーターのオプションから、MSBuild コマンドのライブラリ再処理することもできます。 詳細については、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
 
  
 

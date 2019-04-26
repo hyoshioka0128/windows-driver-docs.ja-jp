@@ -1,17 +1,17 @@
 ---
-title: インタロックされたオペランドのドライバーの注釈
-description: インタロックされたオペランドのドライバーの注釈
+title: インタロックされたオペランドのドライバー注釈
+description: インタロックされたオペランドのドライバー注釈
 ms.assetid: 33C85016-765B-42BF-9F38-BB682951B20C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65c1f021f73da6f72fa077c8a1b79097535a9df1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341664"
 ---
-# <a name="driver-annotations-for-interlocked-operands"></a>インタロックされたオペランドのドライバーの注釈
+# <a name="driver-annotations-for-interlocked-operands"></a>インタロックされたオペランドのドライバー注釈
 
 
 大規模なファミリの関数は、パラメーターの 1 つとして、インタロックされたプロセッサ命令を使用してアクセスする必要がある変数のアドレスを受け取ります。 キャッシュ リード スルーのアトミック手順では、これらし、非常に微妙なバグが発生する場合は、オペランドが正しくに使用されていません。

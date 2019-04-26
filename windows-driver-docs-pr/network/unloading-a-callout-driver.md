@@ -1,6 +1,6 @@
 ---
-title: コールアウト ドライバーをアンロード
-description: コールアウト ドライバーをアンロード
+title: コールアウト ドライバーのアンロード
+description: コールアウト ドライバーのアンロード
 ms.assetid: a8c1bb33-41f8-420c-a761-669864eb9444
 keywords:
 - Windows Filtering Platform コールアウト ドライバー WDK、アンロード
@@ -9,16 +9,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0af4f957b5e8bc92b513c13e3b7e164814fa6c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346634"
 ---
-# <a name="unloading-a-callout-driver"></a>コールアウト ドライバーをアンロード
+# <a name="unloading-a-callout-driver"></a>コールアウト ドライバーのアンロード
 
 
-コールアウト ドライバーをアンロードするには、は、オペレーティング システムは、コールアウト ドライバーのアンロード関数を呼び出します。 コールアウト ドライバーのアンロード関数を指定する方法の詳細については、[、アンロード関数を指定する](specifying-an-unload-function.md)を参照してください。
+コールアウト ドライバーをアンロードするには、は、オペレーティング システムは、コールアウト ドライバーのアンロード関数を呼び出します。 コールアウト ドライバーのアンロード関数を指定する方法の詳細については、次を参照してください。 [、アンロード関数を指定する](specifying-an-unload-function.md)します。
 
 コールアウト ドライバーのアンロード関数では、コールアウト ドライバーがシステム メモリからアンロードの直前には、コールアウト ドライバーのコールアウトはフィルター エンジンから登録しないことを保証します。 コールアウト ドライバーを呼び出すか、 [ **FwpsCalloutUnregisterById0** ](https://msdn.microsoft.com/library/windows/hardware/ff551144)関数または[ **FwpsCalloutUnregisterByKey0** ](https://msdn.microsoft.com/library/windows/hardware/ff551145)関数フィルター エンジンからの引き出し線の登録を解除します。 コールアウト ドライバーはする必要があります、フィルター エンジンからそのすべての吹き出しを登録解除が正常にした後、まで、アンロード関数から返されません。
 

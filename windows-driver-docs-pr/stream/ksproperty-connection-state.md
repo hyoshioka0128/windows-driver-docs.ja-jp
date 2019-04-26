@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ad42db96c218f457a53d7aef9a3272b98f81550
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338980"
 ---
 # <a name="kspropertyconnectionstate"></a>KSPROPERTY\_接続\_状態
 
@@ -42,16 +42,16 @@ KSPROPERTY\_接続\_状態プロパティが現在の実行、暗証番号 (pin)
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>いいえ</p></td>
-<td><p>はい</p></td>
+<td><p>X</p></td>
+<td><p>〇</p></td>
 <td><p>フィルターまたはピン留めします。</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566856" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566856)"><strong>KSSTATE</strong></a></p></td>
@@ -61,7 +61,7 @@ KSPROPERTY\_接続\_状態プロパティが現在の実行、暗証番号 (pin)
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプロパティは、次の値のいずれかを返します。
@@ -73,7 +73,7 @@ KSPROPERTY\_接続\_状態プロパティが現在の実行、暗証番号 (pin)
 </colgroup>
 <thead>
 <tr class="header">
-<th>[値]</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>

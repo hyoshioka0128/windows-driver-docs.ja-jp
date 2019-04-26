@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32335accd55ea8f78b088d11a1322773069458db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339668"
 ---
 # <a name="summary-of-inf-sections"></a>INF セクションの概要
 
@@ -76,7 +76,7 @@ Microsoft Windows 2000 以降、このセクションは必須の拡張として
 
 このオプションのセクションでは、1 つまたは複数デバイス固有 co-installer 配布メディアに、システムのデバイスのインストーラーのまたは既存のデバイス クラスのインストーラーの操作を補足する登録します。
 
-共同インストーラーがする通常のレジストリに追加の構成情報を書き込むか場合は使用できませんを動的に生成される、マシン固有の情報を必要とするその他のインストール タスクを実行する IHV と OEM が提供 Win32 の DLL をデバイスの INF ファイルが作成されます。 詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+共同インストーラーがする通常のレジストリに追加の構成情報を書き込むか場合は使用できませんを動的に生成される、マシン固有の情報を必要とするその他のインストール タスクを実行する IHV と OEM が提供 Win32 の DLL をデバイスの INF ファイルが作成されます。 詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
 <a href="" id="ddinstall-factdef-section"></a>[***DDInstall *。FactDef セクション**](inf-ddinstall-factdef-section.md)  
 **注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このセクションが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。

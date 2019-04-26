@@ -5,11 +5,11 @@ ms.assetid: C4012369-F1C6-4EBC-8DAE-F4E551DE782D
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f265d1402c548515773528a57bb419c6dee6059
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346561"
 ---
 # <a name="usb-bidi-extender"></a>USB 双方向エクステンダー
 
@@ -34,7 +34,7 @@ Windows 8.1 では、v4 ドライバー モデルがホスト ベースのデバ
 
 ![getstatus メソッドを使用した usb bidi エクステンダーのアーキテクチャ](images/usbbidiext-arch.png)
 
-USB プリンターの使用方法の詳細については、[USB 印刷](usb-printing.md)を参照してください。
+USB プリンターの使用方法の詳細については、次を参照してください。 [USB 印刷](usb-printing.md)します。
 
 ## <a name="usb-bidi-extender-api-reference"></a>USB Bidi エクステンダー API リファレンス
 
@@ -55,7 +55,7 @@ USB Bidi エクステンダーの JavaScript コードは、印刷デバイス�
 
 -   **endPrintJob**
 
-これらの Api の詳細については、[JavaScript API リファレンス](javascript-api-reference-.md)を参照してください。
+これらの Api の詳細については、次を参照してください。 [JavaScript API リファレンス](javascript-api-reference-.md)します。
 
 ## <a name="usbmon-bidi-extension-xml-schema"></a>USBMon 双方向の拡張機能の XML スキーマ
 
@@ -80,11 +80,11 @@ USBMon 双方向の拡張機能ファイルは、SNMP Bidi 拡張ファイルと
 ## <a name="windows-driver-samples-on-github"></a>GitHub の Windows ドライバーのサンプル
 
 
-**USBMon 双方向の XML ファイルのサンプル**-この USBMon 双方向の拡張 XML ファイルのサンプルを提供します。 Bidi スキーマの標準プロパティ DeviceInfo、構成、およびメモリを使用しても、いくつかのカスタム拡張機能を定義します。 詳細については、[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)を参照してください。
+**USBMon 双方向の XML ファイルのサンプル**-この USBMon 双方向の拡張 XML ファイルのサンプルを提供します。 Bidi スキーマの標準プロパティ DeviceInfo、構成、およびメモリを使用しても、いくつかのカスタム拡張機能を定義します。 詳細については、次を参照してください。[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)します。
 
-Bibi 拡張ファイルの詳細については、および[双方向通信スキーマ](bidirectional-communication-schema.md)を参照してください。
+Bibi 拡張ファイルの詳細については、次を参照してください。 および[双方向通信スキーマ](bidirectional-communication-schema.md)します。
 
-**USBMon 双方向の JavaScript ファイルのサンプル**します。 このサンプルには、USBMon 双方向の Extender の JavaScript ファイルが含まれています。 双方向の設定と取得をサポートする方法を示します、操作とプリンターの印刷中にイベントをリッスンする方法。 詳細については、[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)を参照してください。
+**USBMon 双方向の JavaScript ファイルのサンプル**します。 このサンプルには、USBMon 双方向の Extender の JavaScript ファイルが含まれています。 双方向の設定と取得をサポートする方法を示します、操作とプリンターの印刷中にイベントをリッスンする方法。 詳細については、次を参照してください。[印刷ドライバー USB モニターおよび Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)します。
 
 デバッグ
 

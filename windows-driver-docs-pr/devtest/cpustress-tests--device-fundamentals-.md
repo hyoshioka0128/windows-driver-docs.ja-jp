@@ -5,11 +5,11 @@ ms.assetid: E546C3A3-89E6-450B-90D3-4F349A3EC495
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5522ecb85b757e545c62c0b76b84da23104d1d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343054"
 ---
 # <a name="cpustress-tests-device-fundamentals"></a>CPUStress テスト (Device Fundamental)
 
@@ -80,15 +80,15 @@ CpuStress テストでは、別のプロセッサ使用率のレベルを持つ�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[デバイスの基本テスト](device-fundamentals-tests.md)
+[Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[単純な I/O の WDTF プラグインを提供](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/library/windows/hardware/hh781398)
 
 [コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
 

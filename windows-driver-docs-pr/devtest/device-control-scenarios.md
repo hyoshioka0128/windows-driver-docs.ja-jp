@@ -1,6 +1,6 @@
 ---
-title: デバイスの制御のシナリオ
-description: デバイスの制御のシナリオ
+title: デバイス制御のシナリオ
+description: デバイス制御のシナリオ
 ms.assetid: 9effc192-77ef-40fd-9ab6-564637019576
 keywords:
 - WSDBIT ツール WDK、テスト シナリオ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a23a22ab9de5580998f1bb990c479716dff1a7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341672"
 ---
-# <a name="device-control-scenarios"></a>デバイスの制御のシナリオ
+# <a name="device-control-scenarios"></a>デバイス制御のシナリオ
 
 
 デバイスの制御のシナリオでは、単純な SOAP メッセージの交換をテストします。

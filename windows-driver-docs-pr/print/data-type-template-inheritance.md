@@ -1,6 +1,6 @@
 ---
-title: データ型のテンプレートの継承
-description: データ型のテンプレートの継承
+title: データ型テンプレート継承
+description: データ型テンプレート継承
 ms.assetid: c2ecc091-8fdc-4666-9cdf-629903f13f6f
 keywords:
 - WDK GDL、データ型のテンプレート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6944f9d58e45413a84a02f5c71321fe492f665b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341313"
 ---
-# <a name="data-type-template-inheritance"></a>データ型のテンプレートの継承
+# <a name="data-type-template-inheritance"></a>データ型テンプレート継承
 
 
 データ型のテンプレートは、定義済みのデータ型のテンプレートからプロパティを継承できます。 すべて認識は、基本テンプレートを適切なプロパティが継承されます。 継承されたプロパティは、派生テンプレートで再定義することはできません。

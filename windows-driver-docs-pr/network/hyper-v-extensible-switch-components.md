@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチのコンポーネント
-description: HYPER-V 拡張可能スイッチのコンポーネント
+title: Hyper-V 拡張可能スイッチ コンポーネント
+description: Hyper-V 拡張可能スイッチ コンポーネント
 ms.assetid: 510A4D75-8DB4-46D7-BA54-248ED4FEC349
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cff31c4e67ebb02218729c2cc1afa4914bce076
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341954"
 ---
-# <a name="hyper-v-extensible-switch-components"></a>HYPER-V 拡張可能スイッチのコンポーネント
+# <a name="hyper-v-extensible-switch-components"></a>Hyper-V 拡張可能スイッチ コンポーネント
 
 
 Windows Server 2012 以降、HYPER-V 拡張可能スイッチは NDIS フィルター ドライバーのためのインターフェイスをサポートしています (と呼ばれる*HYPER-V 拡張可能スイッチの拡張機能*)、拡張可能スイッチ ドライバー スタック内でバインドします。 これにより、拡張機能を監視、変更、および拡張可能スイッチ ポートにパケットを転送できます。 これは、drop、リダイレクトすると、または HYPER-V パーティションによって使用されるポートにパケットを送信する拡張機能もできます。

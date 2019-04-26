@@ -1,6 +1,6 @@
 ---
-title: GDI グラフィックス ドライバーのサポート
-description: GDI グラフィックス ドライバーのサポート
+title: グラフィックス ドライバーの GDI サポート
+description: グラフィックス ドライバーの GDI サポート
 ms.assetid: ef42cda0-106f-4c1b-babc-29a1070e2a2f
 keywords:
 - GDI WDK Windows 2000 の表示、参照
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f91bc718ff8504486ead47cbaf2dba0206537531
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342374"
 ---
-# <a name="gdi-support-for-graphics-drivers"></a>GDI グラフィックス ドライバーのサポート
+# <a name="gdi-support-for-graphics-drivers"></a>グラフィックス ドライバーの GDI サポート
 
 
 ## <span id="ddk_gdi_support_for_graphics_drivers_gg"></span><span id="DDK_GDI_SUPPORT_FOR_GRAPHICS_DRIVERS_GG"></span>

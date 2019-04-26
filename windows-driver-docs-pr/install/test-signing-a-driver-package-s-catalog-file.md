@@ -5,11 +5,11 @@ ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b571acb71206973608a8a9ecb051abc3f70fbfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339575"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルのテスト署名
 
@@ -24,7 +24,7 @@ SignTool は、デジタル署名にタイムスタンプを追加すること�
 
 -   テスト署名、 *tstamd64.cat*のカタログ ファイル、 *ToastPkg*サンプル[ドライバー パッケージ](driver-packages.md)します。 詳細についてはこの[カタログ ファイル](catalog-files.md)が作成されるを参照してください[ドライバー パッケージのテスト署名カタログ ファイルを作成する](creating-a-catalog-file-for-test-signing-a-driver-package.md)します。
 
--   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、[テスト証明書を作成する](creating-test-certificates.md)を参照してください。
+-   テスト署名、PrivateCertStore から Contoso.com(Test) 証明書を使用します。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
 
 -   タイム スタンプ機関 (TSA) 経由のデジタル署名のタイムスタンプ。
 
@@ -51,7 +51,7 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 
 -   *tstamd64.cat*デジタル署名されるカタログ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
+SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
 
 テスト署名の詳細については、ドライバー パッケージのカタログ ファイルを参照してください[カタログ ファイルのテスト署名](test-signing-a-catalog-file.md)します。
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d161689c48d8d8364f0dada691162b14f551d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339045"
 ---
 # <a name="storage-class-drivers-interpretrequestsense-routine"></a>記憶域クラス ドライバーの InterpretRequestSense ルーチン
 
@@ -30,7 +30,7 @@ ms.locfileid: "56580247"
 
 *InterpretRequestSense*ルーチンは、ドライバーが指定したエラーのログ記録ルーチンも呼び出すことができます。 含める必要がありますが、記憶域クラス ドライバー ログ、I/O エラー、たびに、 **PathId**、 **TargetId**、 **Lun**、および**SrbStatus**によって値の設定SRB の記憶域ポート ドライバーと、可能であれば、関連の要求の意味については、エラーの一部としてログ エントリの**DumpData**します。 ストレージ クラス ドライバーを使用する必要がありますに注意してください、 **PathId**、 **TargetId**、および**Lun**からこのようなされる Srb 他の要求に対処します。
 
-I/O エラーのログ記録の詳細については、[ログ エラー](https://msdn.microsoft.com/library/windows/hardware/ff554312)を参照してください。
+I/O エラーのログ記録の詳細については、次を参照してください。[ログ エラー](https://msdn.microsoft.com/library/windows/hardware/ff554312)します。
 
  
 

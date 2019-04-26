@@ -1,6 +1,6 @@
 ---
-title: 一般的なセットアップ関数を使用します。
-description: 一般的なセットアップ関数を使用します。
+title: 一般的なセットアップ関数の使用
+description: 一般的なセットアップ関数の使用
 ms.assetid: 08a7b585-7930-47a3-9fa0-a36625242e5d
 keywords:
 - 関数は、SetupAPI の WDK、一般的なセットアップ関数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c38f5cbe6d0158a4362c4a9e35285a2eb28b01f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339429"
 ---
-# <a name="using-general-setup-functions"></a>一般的なセットアップ関数を使用します。
+# <a name="using-general-setup-functions"></a>一般的なセットアップ関数の使用
 
 
 

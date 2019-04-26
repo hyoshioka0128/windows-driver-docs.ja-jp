@@ -1,19 +1,19 @@
 ---
-title: トレース メッセージの一覧の機能
-description: トレース メッセージの一覧の機能
+title: トレース メッセージ一覧の機能
+description: トレース メッセージ一覧の機能
 ms.assetid: c640626d-6d64-45c4-861f-6e2f20b7dfb1
 keywords:
 - トレース メッセージの一覧 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5912df03c0a6c848fe9dd5f5d73698b796fca06a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354744"
 ---
-# <a name="trace-message-list-features"></a>トレース メッセージの一覧の機能
+# <a name="trace-message-list-features"></a>トレース メッセージ一覧の機能
 
 
 このトピックでは、トレース メッセージの一覧の機能について説明します。 これらの機能を使用して、一覧をカスタマイズすることができます。
@@ -58,7 +58,7 @@ Traceview では、既定で選択した列を表示します。 たい場合は
 
 メッセージは、タブ区切り形式でコピーされます。 テキスト ファイルまたは後で使用するためのスプレッドシート ファイルに貼り付けることができます。
 
-トレース メッセージを保存する方法の詳細については、[トレース ログのテキストのバージョンを作成する](creating-text-versions-of-trace-logs.md)を参照してください。
+トレース メッセージを保存する方法の詳細については、次を参照してください。[トレース ログのテキストのバージョンを作成する](creating-text-versions-of-trace-logs.md)します。
 
  
 

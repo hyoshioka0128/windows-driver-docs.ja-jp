@@ -1,17 +1,17 @@
 ---
-title: SerCx2 で管理されたシリアル ポート上のデバイスへのアクセス
+title: SerCx2 で管理されるシリアル ポート上のデバイスにアクセスする
 description: SerCx2 とコント ローラーのシリアル ドライバーの周辺機器が完全に接続されているシリアル ポートを連携して管理します。
 ms.assetid: EF7F42D3-21A5-42F8-86AB-897281DF4F18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea57350c220ff0ed11be014f3d8b32beffaaf5a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345298"
 ---
-# <a name="accessing-a-device-on-a-sercx2-managed-serial-port"></a>SerCx2 で管理されたシリアル ポート上のデバイスへのアクセス
+# <a name="accessing-a-device-on-a-sercx2-managed-serial-port"></a>SerCx2 で管理されるシリアル ポート上のデバイスにアクセスする
 
 
 SerCx2 とコント ローラーのシリアル ドライバーの周辺機器が完全に接続されているシリアル ポートを連携して管理します。 SerCx2 で管理されたシリアル ポート周辺機器にアクセスするには、周辺機器は、ドライバーは、シリアル ポートへの論理接続を開きをこの接続を表すファイル ハンドルを取得します。 ドライバーは、I/O 要求をポートに送信するのにこのハンドルを使用します。

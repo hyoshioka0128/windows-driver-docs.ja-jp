@@ -1,5 +1,5 @@
 ---
-title: .fiximports (修正対象モジュールのインポート)
+title: .fiximports (ターゲット モジュールのインポートの修正)
 description: .Fiximports コマンドでは、検証し、対象のモジュールのすべての静的インポート リンクを修正します。
 ms.assetid: 584a5060-5ab5-4126-bfec-e2fe647d50ff
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 92a5ef997dc3ae8bc85d4bb762a93994e6b38ad1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336658"
 ---
-# <a name="fiximports-fix-target-module-imports"></a>.fiximports (修正対象モジュールのインポート)
+# <a name="fiximports-fix-target-module-imports"></a>.fiximports (ターゲット モジュールのインポートの修正)
 
 
 **.Fiximports**コマンドを検証し、対象のモジュールのすべての静的インポート リンクを修正します。
@@ -33,7 +33,7 @@ ms.locfileid: "56531531"
 
 
 <span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *モジュール*   
-ターゲット モジュールがインポートがデバッガーの修正を指定します。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。 内のスペースを含める場合*モジュール*パラメーターを引用符で囲む必要があります。
+ターゲット モジュールがインポートがデバッガーの修正を指定します。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。 内のスペースを含める場合*モジュール*パラメーターを引用符で囲む必要があります。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

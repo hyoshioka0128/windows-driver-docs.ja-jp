@@ -1,17 +1,17 @@
 ---
-title: No-Execute (NX) 非ページ プール
+title: No-Execute (NX) の非ページ プール
 description: ベスト プラクティスとして Windows 8 と以降のバージョンの Windows 用ドライバーを割り当てる必要があります、非ページ メモリのほとんどまたはすべて備える (NX) から非ページ プール。
 ms.assetid: E5BF34F6-ABA0-4EC7-B740-CC83EF8438CF
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 0981ffff9c53307c3d39958990c585e529b436e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341948"
 ---
-# <a name="no-execute-nx-nonpaged-pool"></a>No-Execute (NX) 非ページ プール
+# <a name="no-execute-nx-nonpaged-pool"></a>No-Execute (NX) の非ページ プール
 
 
 ベスト プラクティスとして Windows 8 と以降のバージョンの Windows 用ドライバーを割り当てる必要があります、非ページ メモリのほとんどまたはすべて備える (NX) から非ページ プール。 NX からメモリを割り当てることによって非ページ プールは、カーネル モード ドライバーに悪意のあるソフトウェアがこのメモリで手順を実行するを防ぐことでセキュリティが向上します。
@@ -21,7 +21,7 @@ Windows 8 以降、カーネル モード ドライバーから割り当てら�
 ## <a name="support-for-legacy-drivers"></a>レガシのドライバーのサポート
 
 
-Windows 7、Windows の以前のバージョンでは、非ページ プールから割り当てられたすべてのメモリは実行可能ファイルです。 これらのドライバーを使用して、NX の移植を推進するには、は、Windows 8 および Windows、Microsoft の以降のバージョンの非ページ プールは、開発者は最小限の労力で、ドライバーの更新を有効にするいくつかのオプトイン メカニズムを提供します。 詳細については、[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)を参照してください。
+Windows 7、Windows の以前のバージョンでは、非ページ プールから割り当てられたすべてのメモリは実行可能ファイルです。 これらのドライバーを使用して、NX の移植を推進するには、は、Windows 8 および Windows、Microsoft の以降のバージョンの非ページ プールは、開発者は最小限の労力で、ドライバーの更新を有効にするいくつかのオプトイン メカニズムを提供します。 詳細については、次を参照してください。[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)します。
 
 旧バージョンと互換性のため、ドライバーのバイナリを Windows 7 と以前のバージョンの Windows を実行して、実行可能ファイルの非ページ プールからメモリを割り当てるは、Windows 8 および Windows の変更を加えなければ以降のバージョンで実行されます。 ただし、これらのドライバーには、NX のセキュリティ強化になりません非ページ プール。
 

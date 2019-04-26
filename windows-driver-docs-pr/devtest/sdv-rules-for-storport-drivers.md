@@ -5,11 +5,11 @@ ms.assetid: C880A30B-8629-4648-B2E3-7AC8F1A9059D
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 557a9bbe0ad4411ea7ed8caec7065fb04f6e3c63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340124"
 ---
 # <a name="rules-for-storport-drivers"></a>Storport ドライバーの規則
 

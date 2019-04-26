@@ -1,19 +1,19 @@
 ---
-title: ネットワーク ドライバー設計のガイドを使用します。
-description: ネットワーク ドライバー設計のガイドを使用します。
+title: ネットワーク ドライバー設計ガイドの使用
+description: ネットワーク ドライバー設計ガイドの使用
 ms.assetid: 8d9cbf3c-5eec-4409-ab4c-595bb921832d
 keywords:
 - ネットワーク ドライバー WDK ドキュメント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b2bf7c48a9efaee8b1dd3117ab1d791cfdeb83f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342285"
 ---
-# <a name="using-the-network-driver-design-guide"></a>ネットワーク ドライバー設計のガイドを使用します。
+# <a name="using-the-network-driver-design-guide"></a>ネットワーク ドライバー設計ガイドの使用
 
 
 
@@ -25,23 +25,23 @@ Microsoft Windows ベースのオペレーティング システムでは、複�
 
 -   NDIS 6.40: Windows 8.1、Windows Server 2012 R2、および以降のバージョンの Windows ではサポートされています。 NDIS 6.30 のネットワーク直接カーネル プロバイダー インターフェイス (NDKPI) 1.12 をサポートしています。
 
-    NDIS 6.30 の詳細については、[NDIS 6.40 概要](introduction-to-ndis-6-40.md)を参照してください。
+    NDIS 6.30 の詳細については、次を参照してください。 [NDIS 6.40 概要](introduction-to-ndis-6-40.md)します。
 
 -   NDIS 6.30: Windows 8、Windows Server 2012、および以降のバージョンの Windows ではサポートされています。 NDIS 6.30 には、1 つのルート/入出力仮想化 (SR-IOV)、HYPER-V 拡張可能スイッチ、ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI) 1.1、およびその他のサービスのサポートが含まれています。
 
-    NDIS 6.30 の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
+    NDIS 6.30 の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
 
 -   NDIS 6.20: Windows 7、Windows Server 2008 R2、および以降のバージョンの Windows ではサポートされています。 受信側のスロットル、およびその他のサービス、NDIS 6.20 が動作には仮想マシン キュー (VMQ) のサポートが含まれます。
 
-    NDIS 6.20 が動作の詳細については、[NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)を参照してください。
+    NDIS 6.20 が動作の詳細については、次を参照してください。 [NDIS 6.20 が動作の概要](introduction-to-ndis-6-20.md)します。
 
 -   NDIS 6.1 には、Windows Vista Service Pack 1 (SP1)、Windows Server 2008、および以降のバージョンの Windows ではサポートされています。 NDIS 6.1 には、ヘッダー データの分割、直接 OID 要求、およびその他のサービスのサポートが含まれています。
 
-    NDIS 6.1 の詳細については、[NDIS 6.1 概要](introduction-to-ndis-6-1.md)を参照してください。
+    NDIS 6.1 の詳細については、次を参照してください。 [NDIS 6.1 概要](introduction-to-ndis-6-1.md)します。
 
--   NDIS 6.0 には、Windows Vista および Windows の以降のバージョンでサポートされます。 NDIS 6.0 には、フィルター ドライバーのサポートおよびが以前のバージョンの NDIS で指定されていない多くの追加サービスが含まれます。 NDIS 6.0 には、ドライバーの初期化とネットワーク データの管理に必要なドライバーの再構成時のサポートなどの主要な更新プログラムが含まれていますと[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)ネットワーク パケット データを処理するためのアーキテクチャです。 ランタイムの再構成のサポートに関する詳細については、[ドライバー スタック管理](driver-stack-management.md)を参照してください。 NDIS 6.0 でのネットワーク パケット データを処理する方法の詳細を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
+-   NDIS 6.0 には、Windows Vista および Windows の以降のバージョンでサポートされます。 NDIS 6.0 には、フィルター ドライバーのサポートおよびが以前のバージョンの NDIS で指定されていない多くの追加サービスが含まれます。 NDIS 6.0 には、ドライバーの初期化とネットワーク データの管理に必要なドライバーの再構成時のサポートなどの主要な更新プログラムが含まれていますと[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)ネットワーク パケット データを処理するためのアーキテクチャです。 ランタイムの再構成のサポートに関する詳細については、次を参照してください。[ドライバー スタック管理](driver-stack-management.md)します。 NDIS 6.0 でのネットワーク パケット データを処理する方法の詳細を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
 
-    NDIS 6.0 の詳細については、[NDIS 6.0 の概要](introduction-to-ndis-6-0.md)を参照してください。
+    NDIS 6.0 の詳細については、次を参照してください。 [NDIS 6.0 の概要](introduction-to-ndis-6-0.md)します。
 
 Windows Vista およびそれ以降のオペレーティング システム バージョンは、NDIS ベースのネットワークのカーネル モード ドライバーの次の種類をサポートします。
 
@@ -65,7 +65,7 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 
 詳細については、Windows ネットワーク アーキテクチャおよびプログラミングの考慮事項を参照してください[カーネル モード ドライバー用のネットワーク アーキテクチャ](network-architecture-for-kernel-mode-drivers.md)と[ネットワーク ドライバーのプログラミングに関する考慮事項](network-driver-programming-considerations.md)します。
 
-使用して、ネットワーク コンポーネントをインストール、ネットワーク INF ファイルの詳細については、[ネットワーク コンポーネントをインストール](installing-network-components.md)を参照してください。 ネットワーク ドライバーには、通知オブジェクト - が必要な場合などのバインディング - を制御するもを参照してください[ネットワーク コンポーネントの通知オブジェクト](notify-objects-for-network-components.md)します。
+使用して、ネットワーク コンポーネントをインストール、ネットワーク INF ファイルの詳細については、次を参照してください。[ネットワーク コンポーネントをインストール](installing-network-components.md)します。 ネットワーク ドライバーには、通知オブジェクト - が必要な場合などのバインディング - を制御するもを参照してください[ネットワーク コンポーネントの通知オブジェクト](notify-objects-for-network-components.md)します。
 
 次の追加のドライバー モデルは、特定のハードウェア テクノロジとアーキテクチャを使用して利用できます。
 
@@ -82,7 +82,7 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570735" data-raw-source="[Scalable Networking](https://msdn.microsoft.com/library/windows/hardware/ff570735)">スケーラブルなネットワーク</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570735" data-raw-source="[Scalable Networking](https://msdn.microsoft.com/library/windows/hardware/ff570735)">スケーラブル ネットワーク</a></p></td>
 <td align="left"><p>ネットワーク アダプターを次のようにタスクのオフロードをサポートするネットワーク テクノロジ:</p>
 <ul>
 <li><p><a href="header-data-split.md" data-raw-source="[Header-Data Split](header-data-split.md)">ヘッダー データの分割</a>ヘッダーとのデータを分割するサービスを別のバッファーにイーサネット フレームを受信します。</p></li>
@@ -100,7 +100,7 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="virtualized-networking.md" data-raw-source="[Virtualized Networking](virtualized-networking.md)">仮想化されたネットワーク</a></p></td>
+<td align="left"><p><a href="virtualized-networking.md" data-raw-source="[Virtualized Networking](virtualized-networking.md)">仮想化ネットワーク</a></p></td>
 <td align="left"><p>ネットワーク接続など、次の HYPER-V 仮想化環境をサポートするテクノロジ。</p>
 <ul>
 <li><p><a href="single-root-i-o-virtualization--sr-iov-.md" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)">シングル ルート I/O 仮想化 (SR-IOV)</a></p></li>
@@ -109,15 +109,15 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571095" data-raw-source="[Wireless Networking](https://msdn.microsoft.com/library/windows/hardware/ff571095)">ワイヤレス ネットワーク接続</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571095" data-raw-source="[Wireless Networking](https://msdn.microsoft.com/library/windows/hardware/ff571095)">ワイヤレス ネットワーキング</a></p></td>
 <td align="left"><p>ネットワークを含むネイティブ 802.11 ワイヤレス LAN 機能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568366" data-raw-source="[Network Module Registrar](https://msdn.microsoft.com/library/windows/hardware/ff568366)">ネットワーク モジュールのレジストラー</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568366" data-raw-source="[Network Module Registrar](https://msdn.microsoft.com/library/windows/hardware/ff568366)">ネットワーク モジュール レジストラー</a></p></td>
 <td align="left"><p>ネットワーク モジュールを相互に接続するためのドライバーを許可するシステム機能。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571083" data-raw-source="[Winsock Kernel](https://msdn.microsoft.com/library/windows/hardware/ff571083)">Winsock Kernel</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571083" data-raw-source="[Winsock Kernel](https://msdn.microsoft.com/library/windows/hardware/ff571083)">Winsock カーネル</a></p></td>
 <td align="left"><p>カーネル モード ネットワーク プログラミング インターフェイス (NPI)。</p></td>
 </tr>
 <tr class="even">
@@ -125,7 +125,7 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 <td align="left"><p>ドライバーを取得し、ローカル コンピューターのネットワーク構成に関する情報を変更できるようにするユーティリティ関数のセット。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="windows-filtering-platform-callout-drivers2.md" data-raw-source="[Windows Filtering Platform Callout Drivers](windows-filtering-platform-callout-drivers2.md)">Windows フィルタ リング プラットフォーム コールアウト ドライバー</a></p></td>
+<td align="left"><p><a href="windows-filtering-platform-callout-drivers2.md" data-raw-source="[Windows Filtering Platform Callout Drivers](windows-filtering-platform-callout-drivers2.md)">Windows フィルタリング プラットフォーム コールアウト ドライバー</a></p></td>
 <td align="left"><p>カーネル モード インターフェイスにより、詳細な検査、パケットの変更、ストリームの変更、およびネットワーク データのログ記録です。</p></td>
 </tr>
 <tr class="even">
@@ -133,7 +133,7 @@ A*フィルター ドライバー*プロトコルおよびミニポートのド�
 <td align="left"><p>高パフォーマンス、接続指向ネットワークをサポートする Windows Sockets ダイレクトを使用するネットワーク接続の種類。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570659" data-raw-source="[Remote NDIS (RNDIS)](https://msdn.microsoft.com/library/windows/hardware/ff570659)">リモートの NDIS (RNDIS)</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570659" data-raw-source="[Remote NDIS (RNDIS)](https://msdn.microsoft.com/library/windows/hardware/ff570659)">リモート NDIS (RNDIS)</a></p></td>
 <td align="left"><p>USB バス経由で設定するシステム提供、バスに依存しないメッセージを定義するクラスの指定。</p></td>
 </tr>
 </tbody>

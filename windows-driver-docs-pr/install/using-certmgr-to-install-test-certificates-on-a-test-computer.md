@@ -1,6 +1,6 @@
 ---
-title: CertMgr を使用して、テスト コンピューターでテスト証明書をインストールするには
-description: CertMgr を使用して、テスト コンピューターでテスト証明書をインストールするには
+title: テスト コンピューターへの CertMgr を使用したテスト証明書のインストール
+description: テスト コンピューターへの CertMgr を使用したテスト証明書のインストール
 ms.assetid: 5928c810-65e8-412e-9723-7b371574006c
 keywords:
 - Certmgr ツール
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccda7273b3b8173f0382a0e3e928fc6cb7a16193
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339455"
 ---
-# <a name="using-certmgr-to-install-test-certificates-on-a-test-computer"></a>CertMgr を使用して、テスト コンピューターでテスト証明書をインストールするには
+# <a name="using-certmgr-to-install-test-certificates-on-a-test-computer"></a>テスト コンピューターへの CertMgr を使用したテスト証明書のインストール
 
 
 使用して、テスト コンピューターにテスト証明書をインストールする[ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)、これらの手順に従います。

@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cf1b650d02b6abc31e9e8aa8c29e2ccb410603c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336593"
 ---
 # <a name="gle"></a>!gle
 
@@ -62,7 +62,7 @@ Ext.dll Ntsdexts.dll</td>
 
 詳細については、 [ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)ルーチン、Micorosft Windows SDK のドキュメントを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **! Gle**拡張機能の値を表示する[ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)この値をデコードしようとします。

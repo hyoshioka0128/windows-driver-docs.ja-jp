@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5947ac71adbfde2a2a85e7fee0adcf05bd69145a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336185"
 ---
 # <a name="locks-ntsdextslocks"></a>!locks (!ntsdexts.locks)
 
@@ -65,7 +65,7 @@ ms.locfileid: "56558874"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のコマンドとクリティカル セクションの情報を表示できる拡張機能では、[クリティカル セクションを表示する](displaying-a-critical-section.md)を参照してください。 重要なセクションについては、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。
+その他のコマンドとクリティカル セクションの情報を表示できる拡張機能では、次を参照してください。[クリティカル セクションを表示する](displaying-a-critical-section.md)します。 重要なセクションについては、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。
 
 <a name="remarks"></a>注釈
 -------

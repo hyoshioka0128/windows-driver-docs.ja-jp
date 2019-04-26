@@ -1,6 +1,6 @@
 ---
-title: 存在のデバイスの親を判断します。
-description: 存在のデバイスの親を判断します。
+title: 存在しないデバイスの親の判断
+description: 存在しないデバイスの親の判断
 ms.assetid: 2d5948db-5844-4f78-b3a6-2f9f88ee1b24
 keywords:
 - SetupAPI 関数 WDK、保護者の方を決定します。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c035b398accb563efca4635424e0e0f8f690aba1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346172"
 ---
-# <a name="determining-the-parent-of-a-nonpresent-device"></a>存在のデバイスの親を判断します。
+# <a name="determining-the-parent-of-a-nonpresent-device"></a>存在しないデバイスの親の判断
 
 
 

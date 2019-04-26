@@ -1,5 +1,5 @@
 ---
-title: 対して
+title: .for
 description: 対してトークンと同様に動作、C でキーワードの複数の増分値を除くコマンドする必要がありますセミコロンで区切って、コンマではありません。
 ms.assetid: 35f54c4c-e7f5-42a9-b579-1e4958b7286b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 09e3d3fc802c7a81aa9e1564a1bb7ee6f6d52fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336633"
 ---
-# <a name="for"></a>対して
+# <a name="for"></a>.for
 
 
 **対して**トークンと同様に動作、**の**キーワード C では、複数の増分値はそのコマンドをコンマではなく、セミコロンで区切る必要があります。
@@ -35,7 +35,7 @@ ms.locfileid: "56552438"
 ループを開始する前に実行されるコマンドを指定します。 最初のコマンドは 1 つのみが許可されます。
 
 <span id="_______Condition______"></span><span id="_______condition______"></span><span id="_______CONDITION______"></span> *条件*   
-条件を指定します。 これは、0 に評価されると、false; として扱われますそれ以外の場合は true です。 それを囲む*条件*かっこは省略可能です。 *条件*デバッガー コマンドではなく、式を指定する必要があります。 (MASM または C++) の既定式エバリュエーターによって評価されます。 詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
+条件を指定します。 これは、0 に評価されると、false; として扱われますそれ以外の場合は true です。 それを囲む*条件*かっこは省略可能です。 *条件*デバッガー コマンドではなく、式を指定する必要があります。 (MASM または C++) の既定式エバリュエーターによって評価されます。 詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
 <span id="_______IncrementCommands______"></span><span id="_______incrementcommands______"></span><span id="_______INCREMENTCOMMANDS______"></span> *IncrementCommands*   
 各ループの終了時に実行される 1 つまたは複数のコマンドを指定します。 複数の増分コマンドを使用する場合は、セミコロンで区切りますが、中かっこで囲むを表示できません。
@@ -45,7 +45,7 @@ ms.locfileid: "56552438"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)を参照してください。
+その他のコントロール フロー トークンと、デバッガー コマンド プログラムでの使用については、次を参照してください。[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)します。
 
 <a name="remarks"></a>注釈
 -------

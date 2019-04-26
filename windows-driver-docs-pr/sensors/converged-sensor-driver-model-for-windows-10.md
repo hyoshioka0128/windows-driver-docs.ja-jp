@@ -5,11 +5,11 @@ ms.assetid: B8DF3DDB-C0E9-41F8-8FC0-0869A10FF565
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15acbc378815f2a88dfa24cd2b9584916b58e5fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340889"
 ---
 # <a name="universal-sensor-driver-model-for-windows-10"></a>Windows 10 用のユニバーサル センサー ドライバー モデル
 

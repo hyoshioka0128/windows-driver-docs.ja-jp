@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e02df29ea68f5f8ad56cbd0153185e10c252dd19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338606"
 ---
 # <a name="calling-wmisystemcontrol-to-handle-wmi-irps"></a>WMI IRP を処理するための WmiSystemControl の呼び出し
 
@@ -24,11 +24,11 @@ ms.locfileid: "56571913"
 
 WMI のライブラリ ルーチンがこのような各要求を処理する代わりに、ドライバーを呼び出すためにの WMI 要求の処理を簡略化[ **WmiSystemControl**](https://msdn.microsoft.com/library/windows/hardware/ff565834)します。 **WmiSystemControl**呼び出し、ドライバーは初期化された渡します[ **WMILIB\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff565813)ドライバーのを指すエントリを含む構造体[WMI ライブラリ コールバック ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566357)(*DpWmiXxx*ルーチン) と、ドライバーのデータ ブロックおよびブロックのイベントに関する情報。
 
-WMI ライブラリは動的なインスタンス名または静的インスタンス名の一覧を渡すためのメカニズムを提供しないために、ドライバーは、PDO または 1 つのベース名の文字列に基づく静的インスタンスの名前を唯一のデータ ブロックに関連した要求を処理するために WMI ライブラリを使用できます。 静的および動的なインスタンス名の詳細については、[WMI インスタンスの名前の定義](defining-wmi-instance-names.md)を参照してください。 WMI ライブラリを使用して、このようなブロックの要求を処理して、ブロックを他の要求の処理からドライバーにこだわるの[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 詳細については、[DispatchSystemControl ルーチンで WMI Irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)を参照してください。
+WMI ライブラリは動的なインスタンス名または静的インスタンス名の一覧を渡すためのメカニズムを提供しないために、ドライバーは、PDO または 1 つのベース名の文字列に基づく静的インスタンスの名前を唯一のデータ ブロックに関連した要求を処理するために WMI ライブラリを使用できます。 静的および動的なインスタンス名の詳細については、次を参照してください。 [WMI インスタンスの名前の定義](defining-wmi-instance-names.md)します。 WMI ライブラリを使用して、このようなブロックの要求を処理して、ブロックを他の要求の処理からドライバーにこだわるの[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 詳細については、次を参照してください。 [DispatchSystemControl ルーチンで WMI Irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)します。
 
 呼び出して WMI Irp を処理するために**WmiSystemControl**、ドライバーが必要な特定を実装する必要があります*DpWmiXxx*コールバック ルーチンでは、追加の実装と省略可能な*DpWmiXxx*コールバック ルーチン。
 
--   [*DpWmiQueryReginfo*](https://msdn.microsoft.com/library/windows/hardware/ff544097)—(Required) データおよびイベントに関する情報を提供は、ドライバーによって登録されているをブロックします。 WMI 呼び出し、ドライバーの*DpWmiQueryReginfo*プロセスに日常的な[ **IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)または[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734)要求。 詳細については、[ブロックの登録に WMI ライブラリを使用して](using-the-wmi-library-to-register-blocks.md)を参照してください。
+-   [*DpWmiQueryReginfo*](https://msdn.microsoft.com/library/windows/hardware/ff544097)—(Required) データおよびイベントに関する情報を提供は、ドライバーによって登録されているをブロックします。 WMI 呼び出し、ドライバーの*DpWmiQueryReginfo*プロセスに日常的な[ **IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)または[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734)要求。 詳細については、次を参照してください。[ブロックの登録に WMI ライブラリを使用して](using-the-wmi-library-to-register-blocks.md)します。
 
 -   [*DpWmiQueryDataBlock*](https://msdn.microsoft.com/library/windows/hardware/ff544096)—(Required) が 1 つのインスタンスまたはデータ ブロックのすべてのインスタンスのいずれかを返します。 WMI 呼び出し、ドライバーの*DpWmiQueryDataBlock*プロセスに日常的な[ **IRP\_MN\_クエリ\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff551718)または[ **IRP\_MN\_クエリ\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff551650)要求。
 

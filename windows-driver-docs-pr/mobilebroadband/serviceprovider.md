@@ -1,22 +1,22 @@
 ---
-title: サービス プロバイダー
-description: サービス プロバイダー
+title: ServiceProvider
+description: ServiceProvider
 ms.assetid: 6fa22f4d-9be9-4d02-b610-e20bed4958e9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d170aa38f54eaf91340aa8d9c02ffc6765eae6b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335401"
 ---
-# <a name="serviceprovider"></a>サービス プロバイダー
+# <a name="serviceprovider"></a>ServiceProvider
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
-> Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
+> Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
 
 ServiceProvider 要素には、サービス プロバイダーの名前を指定します。 ホーム プロバイダー ネットワークの名前を表示する Windows 接続マネージャー で表示されます。 ユーザーがローミング ネットワーク上にある場合は、ローミングのネットワーク名が表示されます。
 
@@ -82,7 +82,7 @@ ServiceProvider 要素には、サービス プロバイダーの名前を指定
 </xs:simpleType>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 ServiceProvider 要素では、ユーザーがローミング時に Windows 接続マネージャーでは表示されません。

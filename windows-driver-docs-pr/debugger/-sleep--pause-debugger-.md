@@ -1,5 +1,5 @@
 ---
-title: .sleep (デバッガーを一時停止)
+title: .sleep (デバッガーの一時停止)
 description: .Sleep コマンドは、ユーザー モード デバッガーを一時停止と対象コンピューターがアクティブになるとします。 このコマンドは、カーネル デバッガーからユーザー モード デバッガーの制御を行うときにのみ使用されます。
 ms.assetid: bc3ee17f-e3b8-4bdb-8c80-6b1fef29000e
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d05c72238575ddf79a51f0f7e9f2035212e0dde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339916"
 ---
-# <a name="sleep-pause-debugger"></a>.sleep (デバッガーを一時停止)
+# <a name="sleep-pause-debugger"></a>.sleep (デバッガーの一時停止)
 
 
 **.Sleep**コマンドがアクティブになると対象コンピューターの一時停止をユーザー モードのデバッガーを実行します。 このコマンドは、カーネル デバッガーからユーザー モード デバッガーの制御を行うときにのみ使用されます。
@@ -63,7 +63,7 @@ ms.locfileid: "56559849"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細およびスリープ モードのデバッガーを起動する方法については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。
+詳細およびスリープ モードのデバッガーを起動する方法については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。
 
 <a name="remarks"></a>注釈
 -------

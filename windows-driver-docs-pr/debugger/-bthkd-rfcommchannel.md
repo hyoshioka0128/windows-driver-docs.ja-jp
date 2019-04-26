@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 431a9bdab05c625d362b51939e8cbaf7c5bbc252
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336939"
 ---
-# <a name="bthkdrfcommchannel"></a>! bthkd.rfcommchannel
+# <a name="bthkdrfcommchannel"></a>!bthkd.rfcommchannel
 
 
 **! Bthkd.rfcommchannel**コマンドは、特定の RFCOMM チャネル CB に関する情報を表示します。

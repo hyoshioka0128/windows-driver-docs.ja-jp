@@ -1,17 +1,17 @@
 ---
-title: GPU 上で XPS ラスタライズ
+title: GPU での XPS ラスター化
 description: XML Paper Specification (XPS) ラスタライズ GPU 上では、独立系ハードウェア ベンダー (IHV) コードやドライバーの動作の変更は必要ありません。
 ms.assetid: 3C43552A-7D2B-4C10-9AD3-66755171D997
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95436d3e791d758404b9e29672e215c7eca4620c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340109"
 ---
-# <a name="xps-rasterization-on-the-gpu"></a>GPU 上で XPS ラスタライズ
+# <a name="xps-rasterization-on-the-gpu"></a>GPU での XPS ラスター化
 
 
 XML Paper Specification (XPS) ラスタライズ GPU 上では、独立系ハードウェア ベンダー (IHV) コードやドライバーの動作の変更は必要ありません。 ただし、XPS ラスタライズ、バグまたはドライバーのコードで不適切な想定を公開することができます可能性のある使用状況パターンです。 Windows 表示 Driver Model (WDDM) 1.2 およびそれ以降のドライバーが XPS ラスタライズ ディスプレイへの準拠テストを高品質な Windows 印刷を確保するために渡すことがあります。

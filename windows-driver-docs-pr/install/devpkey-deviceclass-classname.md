@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e04770b53f2ecd8897963a2ab18faae4692632af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339656"
 ---
 # <a name="devpkeydeviceclassclassname"></a>DEVPKEY_DeviceClass_ClassName
 
@@ -60,7 +60,7 @@ DEVPKEY_DeviceClass_ClassName の値によって設定されます、**クラス
 
 呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するにはクラス名。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassName プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスの名前にアクセスする方法については、[フレンドリ名と、デバイス セットアップ クラスのクラス名にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537755)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassName プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスの名前にアクセスする方法については、次を参照してください。[フレンドリ名と、デバイス セットアップ クラスのクラス名にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537755)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -85,7 +85,7 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**バージョンの INF セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547394)
+[**INF Version セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547394)
 
 [**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 161c118f64938238e44864ff191e8410da25369f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341866"
 ---
 # <a name="kseventbdaprogramflowstatuschanged"></a>KSEVENT\_BDA\_プログラム\_フロー\_状態\_CHANGED
 

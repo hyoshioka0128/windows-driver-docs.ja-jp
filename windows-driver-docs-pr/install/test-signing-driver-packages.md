@@ -1,6 +1,6 @@
 ---
-title: テスト署名ドライバー パッケージ
-description: テスト署名ドライバー パッケージ
+title: ドライバー パッケージのテスト署名
+description: ドライバー パッケージのテスト署名
 ms.assetid: 84727762-5ba0-48ea-8d5a-7ac54aadbb7e
 keywords:
 - ドライバー WDK、ドライバー パッケージの署名
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d8214197c221c1f426ecea21e5fae9d0119fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339555"
 ---
-# <a name="test-signing-driver-packages"></a>テスト署名ドライバー パッケージ
+# <a name="test-signing-driver-packages"></a>ドライバー パッケージのテスト署名
 
 
 このセクションに Windows Vista および Windows の以降のバージョンをリリース用のドライバーの署名を検査するコンピューターを参照として、*コンピューターを署名*します。 署名のコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 たとえば、ドライバーが Windows 7 のリリースのためのものは、Windows Vista を実行するコンピューターで署名できます。
@@ -88,7 +88,7 @@ Windows Hardware Quality Labs (WHQL) テスト署名から要求を送信でき�
 
 PnP デバイス インストールの署名の要件は、非 PnP ドライバーには適用されません。
 
-**注**  一般的により簡単かつ署名済みカタログ ファイルを使用するよりも効率的には埋め込みの署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)を参照してください。
+**注**  一般的により簡単かつ署名済みカタログ ファイルを使用するよりも効率的には埋め込みの署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)します。
 
  
 

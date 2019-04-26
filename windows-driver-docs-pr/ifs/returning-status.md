@@ -1,6 +1,6 @@
 ---
-title: 状態を返す
-description: 状態を返す
+title: 返される状態
+description: 返される状態
 ms.assetid: fd490517-f4c5-4e20-9eac-6a9ac7d04992
 keywords:
 - 状態値 WDK ファイル システム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b42dfacd2daedcf2011e06d9eb3f90fa08ab6d36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344534"
 ---
-# <a name="returning-status"></a>状態を返す
+# <a name="returning-status"></a>返される状態
 
 
 ## <span id="ddk_returning_status_if"></span><span id="DDK_RETURNING_STATUS_IF"></span>

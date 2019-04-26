@@ -1,6 +1,6 @@
 ---
-title: クライアントのモジュールのアンロード
-description: クライアントのモジュールのアンロード
+title: クライアント モジュールのアンロード
+description: クライアント モジュールのアンロード
 ms.assetid: 2cca2918-ce0b-4016-b3f2-fbbc06c0b7f7
 keywords:
 - クライアント モジュールをアンロード WDK ネットワーク モジュール レジストラー
@@ -9,20 +9,20 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f79248bd77e9a5170b083da4d30ff0e98ee603e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346636"
 ---
-# <a name="unloading-a-client-module"></a>クライアントのモジュールのアンロード
+# <a name="unloading-a-client-module"></a>クライアント モジュールのアンロード
 
 
 オペレーティング システムをクライアント モジュールをアンロードするには、呼び出しのクライアント モジュールの[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数。 参照してください[の初期化とクライアント モジュールを登録する](initializing-and-registering-a-client-module.md)クライアント モジュールを指定する方法の詳細について**アンロード**の初期化中に機能します。
 
 クライアント モジュールの[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数により、クライアント モジュールがシステム メモリからアンロードの直前にあるクライアント モジュールがネットワーク モジュール レジストラー (NMR) からの登録が解除されます。 クライアントのモジュールを呼び出すことによって、NMR から登録解除の開始、 [ **NmrDeregisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568774)関数からはその**アンロード**関数。 クライアント モジュールから返す必要がありますいないその**アンロード**が完全に登録解除された、NMR から後まで関数。 場合に呼び出し**NmrDeregisterClient**ステータスを返します\_保留中、クライアント モジュールを呼び出す必要があります、 [ **NmrWaitForClientDeregisterComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff568786)関数登録解除を返す前に完了するまで待ちますその**アンロード**関数。
 
-次に、例を示します。
+例:
 
 ```C++
 // Variable containing the handle for the registration

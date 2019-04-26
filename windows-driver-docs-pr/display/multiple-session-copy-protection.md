@@ -1,6 +1,6 @@
 ---
-title: 複数のセッションのコピー防止
-description: 複数のセッションのコピー防止
+title: 複数セッションのコピー防止
+description: 複数セッションのコピー防止
 ms.assetid: f6ac9854-3326-48da-9153-1eec596a157b
 keywords:
 - 保護 WDK ビデオのミニポート複数セッションをコピーします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c35ad31da613268a8b9a77de6ef7d01dbd5e22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345584"
 ---
-# <a name="multiple-session-copy-protection"></a>複数のセッションのコピー防止
+# <a name="multiple-session-copy-protection"></a>複数セッションのコピー防止
 
 
 ## <span id="ddk_multiple_session_copy_protection_gg"></span><span id="DDK_MULTIPLE_SESSION_COPY_PROTECTION_GG"></span>

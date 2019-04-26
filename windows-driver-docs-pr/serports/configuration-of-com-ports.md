@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d215b97c9397fb8f2d12fdf73ffc5b368acab9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345010"
 ---
 # <a name="configuration-of-com-ports"></a>COM ポートの構成
 
@@ -30,7 +30,7 @@ Windows 2000 以降、COM ポートは、次の要件に準拠するシリアル
 
 既定でポートのクラスのインストーラーの結合操作[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)シリアル関数ドライバーは、COM ポートとしてデバイスを構成するとします。
 
-ポート クラスのインストーラーとシリアルの COM ポートの COM ポート デバイス インターフェイスを作成する方法については、[外部名前付けの COM ポート](external-naming-of-com-ports.md)を参照してください。
+ポート クラスのインストーラーとシリアルの COM ポートの COM ポート デバイス インターフェイスを作成する方法については、次を参照してください。[外部名前付けの COM ポート](external-naming-of-com-ports.md)します。
 
  
 

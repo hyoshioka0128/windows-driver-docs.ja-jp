@@ -16,11 +16,11 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fcc86a36fcc5b79a4eb7bfffc026d8f9d0ec33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336108"
 ---
 # <a name="lookaside"></a>!lookaside
 
@@ -60,7 +60,7 @@ ms.locfileid: "56572646"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ルック アサイド リストについては、、 [Windows Driver Kit (WDK) ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=201141)と*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ルック アサイド リストについては、次を参照してください。、 [Windows Driver Kit (WDK) ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=201141)と*Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

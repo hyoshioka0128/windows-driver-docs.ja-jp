@@ -1,5 +1,5 @@
 ---
-title: .createdir (セットの作成プロセスのディレクトリ)
+title: .createdir (作成されるプロセス ディレクトリの設定)
 description: .Createdir コマンドでは、デバッガーによって作成されたすべてのプロセスの開始ディレクトリとハンドルの継承を制御します。
 ms.assetid: 797f5398-f0b4-48e9-bc5f-eac5a53cad67
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5245f42b272564849464fd2c57a794c9f73e43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336884"
 ---
-# <a name="createdir-set-created-process-directory"></a>.createdir (セットの作成プロセスのディレクトリ)
+# <a name="createdir-set-created-process-directory"></a>.createdir (作成されるプロセス ディレクトリの設定)
 
 
 **.Createdir**コマンドは、デバッガーによって作成されたすべてのプロセスの開始ディレクトリとハンドルの継承を制御します。

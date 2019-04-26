@@ -1,19 +1,19 @@
 ---
-title: Stream のビデオの停止の原因を特定します。
-description: Stream のビデオの停止の原因を特定します。
+title: ビデオ ストリームの停止原因の判別
+description: ビデオ ストリームの停止原因の判別
 ms.assetid: 959c2295-1ec3-48b0-aed9-93a81378372f
 keywords:
 - カーネル デバッグは、ストリーミング ビデオ ストリームの停止が発生します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f596aa7a30ae7730711c649b96b158cd07e6dd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346304"
 ---
-# <a name="determining-the-cause-of-a-video-stream-stall"></a>Stream のビデオの停止の原因を特定します。
+# <a name="determining-the-cause-of-a-video-stream-stall"></a>ビデオ ストリームの停止原因の判別
 
 
 これには 2 つの基本的なビデオ ストリーム失速原因があります。

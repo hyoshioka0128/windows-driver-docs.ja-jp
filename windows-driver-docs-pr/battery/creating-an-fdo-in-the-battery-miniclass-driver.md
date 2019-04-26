@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fdf96a5adcf0cb1bbf60421c63e715c1960e75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335451"
 ---
 # <a name="creating-an-fdo-in-the-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの FDO の作成
 
@@ -39,7 +39,7 @@ Miniclass ドライバーは、FDO を作成し、次のように、デバイス
 
     入力パラメーターを[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)に渡されたドライバー オブジェクトへのポインターは、 *AddDevice*ルーチン、NULL の代わりにデバイスの拡張機能のサイズデバイス名、およびデバイスのシステム定義の種類 (ファイル\_デバイス\_バッテリ)。 バッテリ miniclass ドライバーに 0 を指定できます、 *DeviceCharacteristics*パラメーターで、これらのドライバーには使用されません。 複数のスレッドは、miniclass ドライバーが FALSE に渡すために、バッテリの I/O 要求を送信できるとして、*排他*パラメーター。 **IoCreateDevice**作成 FDO へのポインターを返します。
 
-2.  返される FDO では、フラグとスタックのサイズを設定します。 以下に例を示します。
+2.  返される FDO では、フラグとスタックのサイズを設定します。 次に、例を示します。
 
     ```cpp
     Fdo->Flags |= DO_BUFFERED_IO;

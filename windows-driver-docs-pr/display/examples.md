@@ -1,17 +1,17 @@
 ---
-title: GpuMmu サンプル シナリオ
+title: GpuMmu のシナリオ例
 description: このトピックでは、一般的な使用シナリオとそれらを実装するために必要な操作手順について説明します。
 ms.assetid: 30F7D158-3D99-40EE-8FED-48EC1615AC71
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51cf5e6417fdf4ad725cf2e06f9538f76d5e07ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342822"
 ---
-# <a name="gpummu-example-scenarios"></a>GpuMmu サンプル シナリオ
+# <a name="gpummu-example-scenarios"></a>GpuMmu のシナリオ例
 
 
 このトピックでは、一般的な使用シナリオとそれらを実装するために必要な操作手順について説明します。

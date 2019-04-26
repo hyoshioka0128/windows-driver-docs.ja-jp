@@ -1,6 +1,6 @@
 ---
-title: キューに置かれたスピン ロック
-description: キューに置かれたスピン ロック
+title: キューを使用するスピン ロック
+description: キューを使用するスピン ロック
 ms.assetid: 7ccec366-5436-4e69-9fb7-f0090cf2adcb
 keywords:
 - スピン ロック WDK カーネルをキューに登録
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bce42cba22d0ba89839cc8db85d02dedf144ae5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338507"
 ---
-# <a name="queued-spin-locks"></a>キューに置かれたスピン ロック
+# <a name="queued-spin-locks"></a>キューを使用するスピン ロック
 
 
 

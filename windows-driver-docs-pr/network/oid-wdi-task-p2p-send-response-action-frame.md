@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: f3532ff933f6912db02381b2c0581ae24b1033df
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340018"
 ---
 # <a name="oidwditaskp2psendresponseactionframe"></a>OID\_WDI\_タスク\_P2P\_送信\_応答\_アクション\_フレーム
 

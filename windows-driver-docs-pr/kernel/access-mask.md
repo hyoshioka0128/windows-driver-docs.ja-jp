@@ -1,17 +1,17 @@
 ---
-title: アクセス権を指定します。
-description: アクセス権を指定します。
+title: アクセス権の指定
+description: アクセス権の指定
 ms.assetid: 8ef4b4bb-5f4e-4095-b4ab-1182c0f75619
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5017af564e071f69c2973513b8d826801d1ba5b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339132"
 ---
-# <a name="specifying-access-rights"></a>アクセス権を指定します。
+# <a name="specifying-access-rights"></a>アクセス権の指定
 
 
 アクセス\_マスクの種類のアクセス権限のセットを示すビットマスクである、[アクセス マスク](https://msdn.microsoft.com/library/windows/hardware/ff538834)の[アクセス制御エントリ](https://msdn.microsoft.com/library/windows/hardware/ff538813)します。
@@ -43,7 +43,7 @@ typedef ULONG  ACCESS_MASK;
 <td><p>呼び出し元には、アクセス制御リスト (ACL) とファイルの所有権情報を読み取ることができます。</p></td>
 </tr>
 <tr class="odd">
-<td><p>同期</p></td>
+<td><p>SYNCHRONIZE</p></td>
 <td><p>呼び出し元は、オブジェクトの待機操作を実行できます。 (たとえばにオブジェクトを渡すことができます<a href="https://msdn.microsoft.com/library/windows/hardware/ff553324" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553324)"> <strong>KeWaitForMultipleObjects</strong></a>)。</p></td>
 </tr>
 <tr class="even">
@@ -135,7 +135,7 @@ typedef ULONG  ACCESS_MASK;
 
  
 
-オブジェクトの種類ごとに独自の追加のアクセス権をことができます。 ファイル、ディレクトリ、またはデバイスに適用されるアクセス権については、[ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)を参照してください。 オブジェクト マネージャーのディレクトリに適用されるアクセス権については、[ **ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)を参照してください。 レジストリ キーに適用されるアクセス権については、[ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)を参照してください。 セクション オブジェクトに適用されるアクセス権については、[ **ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)を参照してください。 WMI データのブロックに適用されるアクセス権については、[ **IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)を参照してください。
+オブジェクトの種類ごとに独自の追加のアクセス権をことができます。 ファイル、ディレクトリ、またはデバイスに適用されるアクセス権については、次を参照してください。 [ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)します。 オブジェクト マネージャーのディレクトリに適用されるアクセス権については、次を参照してください。 [ **ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)します。 レジストリ キーに適用されるアクセス権については、次を参照してください。 [ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)します。 セクション オブジェクトに適用されるアクセス権については、次を参照してください。 [ **ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)します。 WMI データのブロックに適用されるアクセス権については、次を参照してください。 [ **IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)します。
 
 アクセス権の詳細については、Microsoft Windows SDK のドキュメントでは、次のトピックを参照してください。
 

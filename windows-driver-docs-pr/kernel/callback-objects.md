@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb0b163efdc27101f7dbeb7df7fd3c8a2f2169c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338619"
 ---
 # <a name="callback-objects"></a>コールバック オブジェクト
 
@@ -30,7 +30,7 @@ ms.locfileid: "56532476"
 
 システムまたはドライバーの定義済みのコールバックからの通知を要求するには、ドライバーは、コールバック オブジェクトを開きし、コールバック ルーチンを登録します。 コールバックを定義された条件が true になると、作成者は、通知をトリガーします。 さらに、システムは、コールバックの登録されたすべてのコールバック ルーチンを呼び出します。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [コールバック オブジェクトの定義](defining-a-callback-object.md)
 

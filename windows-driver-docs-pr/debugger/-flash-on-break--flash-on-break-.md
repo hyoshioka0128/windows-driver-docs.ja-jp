@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b735bbfeb806737ec1a39a8518e8ca5f357dc51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336671"
 ---
 # <a name="flashonbreak-flash-on-break"></a>.flash\_で\_break (中断で Flash)
 
@@ -66,7 +66,7 @@ ms.locfileid: "56581352"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 使用する場合、 **.flash\_で\_break**パラメーターを指定せずコマンドと、デバッガーは、現在フラッシュ設定を表示します。

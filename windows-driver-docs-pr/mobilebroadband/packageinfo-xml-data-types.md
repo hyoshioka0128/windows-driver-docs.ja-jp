@@ -1,17 +1,17 @@
 ---
-title: PackageInfo の XML データ型
-description: PackageInfo の XML データ型
+title: PackageInfo XML データ型
+description: PackageInfo XML データ型
 ms.assetid: 97e35e40-dba9-4cdf-9b75-59fb674b521e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a57ff50f25691828ce1d092d488dd71151063a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344286"
 ---
-# <a name="packageinfo-xml-data-types"></a>PackageInfo の XML データ型
+# <a name="packageinfo-xml-data-types"></a>PackageInfo XML データ型
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

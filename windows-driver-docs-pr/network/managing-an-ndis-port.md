@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 925ed4de88ae2bf0a0d9420de116b81da09bbadb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343641"
 ---
 # <a name="managing-an-ndis-port"></a>NDIS ポートの管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "56571124"
 
 NDIS は、関連付けられている状態のインジケーターと PnP イベントを発行して、目的の NDIS ドライバーとポートの状態変化のユーザー モード アプリケーションを通知します。
 
-送信操作のターゲット ポートまたは受信を示す値を発信元ポート、送信し、受信機能に渡されるポート番号を識別します。 同様に、関連付けられた構造内のポート番号は、状態インジケーター、OID 要求、および PnP イベントのポートを識別します。 ポート番号の詳細については、[NDIS ポート概要](overview-of-ndis-ports.md)を参照してください。
+送信操作のターゲット ポートまたは受信を示す値を発信元ポート、送信し、受信機能に渡されるポート番号を識別します。 同様に、関連付けられた構造内のポート番号は、状態インジケーター、OID 要求、および PnP イベントのポートを識別します。 ポート番号の詳細については、次を参照してください。 [NDIS ポート概要](overview-of-ndis-ports.md)します。
 
 NDIS ポートを管理するは、以下の構造体は、ポート番号を含めます。
 

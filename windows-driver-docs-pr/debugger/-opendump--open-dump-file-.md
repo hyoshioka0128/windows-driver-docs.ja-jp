@@ -1,5 +1,5 @@
 ---
-title: .opendump (開いているダンプ ファイル)
+title: .opendump (ダンプ ファイルを開く)
 description: .Opendump コマンドでは、デバッグ ダンプ ファイルを開きます。
 ms.assetid: 751af9ea-be7e-4aef-a6f6-fc99e3b3a56e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 820a38241bfc83ea1a8929132da3298cdd77eeb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334435"
 ---
-# <a name="opendump-open-dump-file"></a>.opendump (開いているダンプ ファイル)
+# <a name="opendump-open-dump-file"></a>.opendump (ダンプ ファイルを開く)
 
 
 **.Opendump**コマンドは、デバッグ ダンプ ファイルを開きます。
@@ -73,7 +73,7 @@ ms.locfileid: "56552348"
 
 使用する必要があります (CAB ファイル) などのアーカイブ ファイルを開くとき、 **/c**スイッチします。 このスイッチを使用しないし、アーカイブを指定する*DumpFile*デバッガーがこのアーカイブ内 .mdmp または .dmp ファイル名拡張子を持つ最初のファイルを開きます。
 
-使用することができます **.opendump**場合でも、デバッグ セッションは既に進行中です。 この機能では、同時に 1 つ以上のクラッシュ ダンプをデバッグすることができます。 複数のターゲットのセッションを制御する方法の詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+使用することができます **.opendump**場合でも、デバッグ セッションは既に進行中です。 この機能では、同時に 1 つ以上のクラッシュ ダンプをデバッグすることができます。 複数のターゲットのセッションを制御する方法の詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
  
 **注**  コマンドのデバッグの種類ごとに異なる方法で動作しているために、ライブのターゲットと、ダンプ ターゲットをデバッグするときに、問題があります。 たとえば、使用する場合、 **g (移動)** コマンドの場合は、現在のシステムは、ダンプ ファイル、デバッガーが実行を開始がすることはできません戻るデバッガーに割り込む、break コマンドが認識されないため、ダンプ ファイルのデバッグの有効とします。

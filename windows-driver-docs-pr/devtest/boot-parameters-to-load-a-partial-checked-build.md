@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27993aaf78504ddf3ea490e98d52b0dea746b206
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344931"
 ---
 #  <a name="boot-parameters-to-load-a-partial-checked-build"></a>部分チェック ビルドを読み込むためのブート パラメーター
 
@@ -22,7 +22,7 @@ ms.locfileid: "56570636"
 ## <span id="ddk_boot_parameters_to_load_a_partial_checked_build_tools"></span><span id="DDK_BOOT_PARAMETERS_TO_LOAD_A_PARTIAL_CHECKED_BUILD_TOOLS"></span>
 
 
-A*チェック済みビルドの部分的な*チェック ビルド バージョンのカーネルと HAL およびオペレーティング システムの残りの部分の無料のビルドが含まれています。 詳細については、[オペレーティング システムのチェックと HAL (For Windows Vista 以降) のみをインストールする](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)を参照してください。
+A*チェック済みビルドの部分的な*チェック ビルド バージョンのカーネルと HAL およびオペレーティング システムの残りの部分の無料のビルドが含まれています。 詳細については、次を参照してください。[オペレーティング システムのチェックと HAL (For Windows Vista 以降) のみをインストールする](installing-just-the-checked-operating-system-and-hal--for-windows-vist.md)します。
 
 ### <a name="span-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanspan-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanconfiguring-a-partial-checked-build-in-windows"></a><span id="configuring_a_partial_checked_build_in_windows_vista_and_later"></span><span id="CONFIGURING_A_PARTIAL_CHECKED_BUILD_IN_WINDOWS_VISTA_AND_LATER"></span>Windows での部分的なチェック ビルドの構成
 

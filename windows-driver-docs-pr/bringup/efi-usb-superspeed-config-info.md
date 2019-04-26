@@ -5,11 +5,11 @@ ms.assetid: 9827B0A9-AC69-43FA-922F-384E3AE140F7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f336370023fff9ddd185c6c4f2b56140499240a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337749"
 ---
 # <a name="efiusbsuperspeedconfiginfo"></a>EFI\_USB\_SUPERSPEED\_CONFIG\_情報
 
@@ -27,7 +27,7 @@ typedef struct
 } EFI_USB_SUPERSPEED_CONFIG_INFO;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 
 <a href="" id="configdescriptor"></a>**ConfigDescriptor**  

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a3314967d8b9b9249a8c66ca0889ec536c90308
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337062"
 ---
 # <a name="-evaluate-expression"></a>? (式の評価)
 
@@ -64,7 +64,7 @@ ms.locfileid: "56572503"
 <a name="remarks"></a>コメント
 -------
 
-入力と出力の**でしょうか。** コマンドは、MASM 式の構文または C++ 式の構文を使用しているかどうかによって異なります。 この種の式の構文の詳細については、[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)を参照してください。
+入力と出力の**でしょうか。** コマンドは、MASM 式の構文または C++ 式の構文を使用しているかどうかによって異なります。 この種の式の構文の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)します。
 
 MASM の構文を使用している場合、入力と出力は現在の基数に依存します。 基数を変更するには、使用、 [ **n (設定数の基本)** ](n--set-number-base-.md)コマンド。
 

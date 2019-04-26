@@ -1,5 +1,5 @@
 ---
-title: .prefer_dml (デバッガーのマークアップ言語を使用)
+title: .prefer_dml (優先するデバッガー マークアップ言語)
 description: .Prefer_dml コマンドでは、デバッガーのマークアップ言語 (DML) の形式で出力を提供することができるコマンドの既定の動作を設定します。
 ms.assetid: BBB96770-A575-4E31-AE8B-9226BB61727D
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f1fec50a3d1bc943bf8ce9b95e147fe5d4bbef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335787"
 ---
 # <a name="preferdml-prefer-debugger-markup-language"></a>.prefer\_dml (デバッガーのマークアップ言語の優先)
 

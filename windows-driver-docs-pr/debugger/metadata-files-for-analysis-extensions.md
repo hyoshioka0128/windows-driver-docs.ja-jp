@@ -1,17 +1,17 @@
 ---
-title: メタデータ ファイルを分析拡張機能プラグイン
+title: 分析拡張機能プラグインのメタデータ ファイル
 description: プラグイン分析拡張機能を記述するときに、呼び出されるプラグイン状況について説明しますメタデータ ファイルを作成します。
 ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f859a93a32304c8fc75c3ebf4f101297fa515da0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341725"
 ---
-# <a name="metadata-files-for-analysis-extension-plug-ins"></a>メタデータ ファイルを分析拡張機能プラグイン
+# <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析拡張機能プラグインのメタデータ ファイル
 
 
 プラグイン分析拡張機能を記述するときに、呼び出されるプラグイン状況について説明しますメタデータ ファイルを作成します。 ときに、 [ **! 分析**](-analyze.md)デバッガー コマンドが実行され、メタデータ ファイルを使ってロード プラグインを決定します。

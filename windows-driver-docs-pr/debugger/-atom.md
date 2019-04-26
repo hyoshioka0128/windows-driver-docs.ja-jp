@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dd991ea29e8d290b354662d1d25fe34d0a3013ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336996"
 ---
-# <a name="atom"></a>! atom
+# <a name="atom"></a>!atom
 
 
 **! Atom**拡張機能には、指定した atom または現在のプロセスのすべてのアトムの書式設定された atom テーブルが表示されます。

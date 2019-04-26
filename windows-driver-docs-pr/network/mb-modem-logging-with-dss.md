@@ -1,6 +1,6 @@
 ---
-title: DSS で MB モデムのログ記録
-description: DSS で MB モデムのログ記録
+title: DSS による MB モデムのログ記録
+description: DSS による MB モデムのログ記録
 ms.assetid: A40EAF7C-A808-4C2D-848C-EAD2D639EB55
 keywords:
 - DSS、DSS でログに記録するモバイル ブロード バンド モデムで MB モデムのログ記録
@@ -8,13 +8,13 @@ ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: d9f4869fed3c1929f35520eccc6811d7d24ed7e8
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343301"
 ---
-# <a name="mb-modem-logging-with-dss"></a>DSS で MB モデムのログ記録
+# <a name="mb-modem-logging-with-dss"></a>DSS による MB モデムのログ記録
 
 ## <a name="overview"></a>概要
 

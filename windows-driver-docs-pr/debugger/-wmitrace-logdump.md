@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d9896a368c1369327762f48d5dfeefb3de69e91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346358"
 ---
 # <a name="wmitracelogdump"></a>!wmitrace.logdump
 
@@ -74,7 +74,7 @@ Windows ソフトウェア トレース プリプロセッサ (WPP) ソフトウ
 
 この拡張機能はのような[ **! wmitrace.eventlogdump** ](-wmitrace-eventlogdump.md)点を除いて、拡張機能の出力 **! wmitrace.logdump** WPP スタイル、およびの出力で書式設定 **! wmitrace.eventlogdump**イベント ログ スタイルで書式設定されます。 その形式は、データを表示するのに適切な拡張機能を選択する必要があります。
 
-UMDF トレース ログを表示する方法については、[UMDF ベースのドライバーで WPP ソフトウェア トレースを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561391#viewing-the-umdf-trace-log)を参照してください。
+UMDF トレース ログを表示する方法については、次を参照してください。 [UMDF ベースのドライバーで WPP ソフトウェア トレースを使用して](https://msdn.microsoft.com/library/windows/hardware/ff561391#viewing-the-umdf-trace-log)します。
 
  
 

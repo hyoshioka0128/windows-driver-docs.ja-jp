@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2922b2e9a0cd45183bf56d1b4145437133f1d956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346997"
 ---
 # <a name="devcon-update"></a>DevCon Update
 
@@ -42,7 +42,7 @@ ms.locfileid: "56550543"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-**DevCon 更新**操作は、それらのドライバーが古いまたは最新のドライバーや別の INF ファイル内のドライバーよりも小さい適切な場合でも、指定した INF ファイルで最も適切なドライバーを更新を強制します。 詳細については、[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)を参照してください。
+**DevCon 更新**操作は、それらのドライバーが古いまたは最新のドライバーや別の INF ファイル内のドライバーよりも小さい適切な場合でも、指定した INF ファイルで最も適切なドライバーを更新を強制します。 詳細については、次を参照してください。[セットアップによるドライバーの選択](https://msdn.microsoft.com/library/windows/hardware/ff546228)します。
 
 使用することはできません、 **DevCon 更新**存在デバイス用のドライバーを更新するコマンド。
 

@@ -1,6 +1,6 @@
 ---
-title: 完了ルーチンから状態を返す
-description: 完了ルーチンから状態を返す
+title: 完了ルーチンから返される状態
+description: 完了ルーチンから返される状態
 ms.assetid: fb12720b-10fe-43ab-ade7-c1b09d00d922
 keywords:
 - IRP の完了ルーチン WDK ファイル システム、状態を返す
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9716f55e9f35c1a51adc3549aa210095583c8f30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344545"
 ---
-# <a name="returning-status-from-completion-routines"></a>完了ルーチンから状態を返す
+# <a name="returning-status-from-completion-routines"></a>完了ルーチンから返される状態
 
 
 ## <span id="ddk_returning_status_from_completion_routines_if"></span><span id="DDK_RETURNING_STATUS_FROM_COMPLETION_ROUTINES_IF"></span>

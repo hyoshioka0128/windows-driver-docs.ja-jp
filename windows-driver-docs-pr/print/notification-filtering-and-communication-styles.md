@@ -1,6 +1,6 @@
 ---
-title: 通知にフィルター処理との通信スタイル
-description: 通知にフィルター処理との通信スタイル
+title: 通知のフィルター処理と通信スタイル
+description: 通知のフィルター処理と通信スタイル
 ms.assetid: 66d019c2-0760-440d-acc4-85a7c073929a
 keywords:
 - スプーラ通知 WDK の印刷、フィルター処理
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 400860734767a3aa137321575739e9204dd5743a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339974"
 ---
-# <a name="notification-filtering-and-communication-styles"></a>通知にフィルター処理との通信スタイル
+# <a name="notification-filtering-and-communication-styles"></a>通知のフィルター処理と通信スタイル
 
 
 

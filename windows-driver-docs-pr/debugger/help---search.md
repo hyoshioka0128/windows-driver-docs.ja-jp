@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 338fb759e89e90de65ef8628158f12be50efb354
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342019"
 ---
 # <a name="help--search"></a>Help | Search (ヘルプ | 検索)
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578396"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-このヘルプ ファイルを使用する方法の詳細については、[、のヘルプ ファイルを使用して](using-the-help-documentation.md)を参照してください。
+このヘルプ ファイルを使用する方法の詳細については、次を参照してください。 [、のヘルプ ファイルを使用して](using-the-help-documentation.md)します。
 
  
 

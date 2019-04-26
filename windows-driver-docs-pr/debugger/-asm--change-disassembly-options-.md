@@ -1,5 +1,5 @@
 ---
-title: .asm (逆アセンブリのオプションを変更)
+title: .asm (逆アセンブリ オプションの変更)
 description: .Asm コマンドでは、逆アセンブリ コードの表示方法を制御します。
 ms.assetid: c963c4f2-3bfc-4551-9b7b-74473a63eb11
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a76cb9f8294411d07ee652e693060901165313
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337001"
 ---
-# <a name="asm-change-disassembly-options"></a>.asm (逆アセンブリのオプションを変更)
+# <a name="asm-change-disassembly-options"></a>.asm (逆アセンブリ オプションの変更)
 
 
 **.Asm**コマンドは、逆アセンブリ コードの表示方法を制御します。

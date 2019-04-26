@@ -1,6 +1,6 @@
 ---
-title: テスト署名ドライバー ファイル
-description: テスト署名ドライバー ファイル
+title: ドライバー ファイルのテスト署名
+description: ドライバー ファイルのテスト署名
 ms.assetid: 3d73d632-e910-43e7-a8fd-c78a11df0206
 keywords:
 - テスト署名ドライバー パッケージにドライバー ファイル
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7442f05d8d409f950b4e364fae179a61ce2e1b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339599"
 ---
-# <a name="test-signing-a-driver-file"></a>テスト署名ドライバー ファイル
+# <a name="test-signing-a-driver-file"></a>ドライバー ファイルのテスト署名
 
 
 使用[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)次のトピックの説明に従って、ドライバー ファイルに署名を埋め込むには。

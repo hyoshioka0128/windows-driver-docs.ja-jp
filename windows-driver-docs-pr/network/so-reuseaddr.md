@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: ・ SO_REUSEADDR ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 041884abb365ec731c2930064398129528d23eee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341388"
 ---
 # <a name="soreuseaddr"></a>したがって\_REUSEADDR
 
@@ -29,7 +29,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -42,7 +42,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <td><p>SO_REUSEADDR</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -82,7 +82,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +95,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <td><p>SO_REUSEADDR</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -131,7 +131,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 SO を使用しての詳細については\_REUSEADDR ソケット オプションと、ソケットとの間ローカル トランスポート アドレスの共有への影響を参照してください。[トランスポート アドレスを共有](https://msdn.microsoft.com/library/windows/hardware/ff570806)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

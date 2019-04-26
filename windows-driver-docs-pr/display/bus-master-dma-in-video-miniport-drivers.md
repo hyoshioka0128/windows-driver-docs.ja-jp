@@ -1,6 +1,6 @@
 ---
-title: ビデオのミニポート ドライバー、バス マスター DMA
-description: ビデオのミニポート ドライバー、バス マスター DMA
+title: ビデオ ミニポート ドライバーのバス マスター DMA
+description: ビデオ ミニポート ドライバーのバス マスター DMA
 ms.assetid: fe6c2e16-d222-4948-b1df-34ed8d57d9d8
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、バス マスター DMA
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40297b11d5225031b27f20f20ea64e3d56532154
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341594"
 ---
-# <a name="bus-master-dma-in-video-miniport-drivers"></a>ビデオのミニポート ドライバー、バス マスター DMA
+# <a name="bus-master-dma-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーのバス マスター DMA
 
 
 ## <span id="ddk_bus_master_dma_in_video_miniport_drivers_gg"></span><span id="DDK_BUS_MASTER_DMA_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>

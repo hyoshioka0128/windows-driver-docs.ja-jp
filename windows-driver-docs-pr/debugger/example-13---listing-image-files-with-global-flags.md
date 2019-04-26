@@ -5,13 +5,13 @@ ms.assetid: 1b1285d5-ed73-49c4-a123-de9cbdb3090c
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 996f85db746fcc628ea6beb3de3b9249ee8e97bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347767"
 ---
-# <a name="example-13-listing-image-files-with-global-flags"></a>13 の使用例:グローバル フラグとイメージ ファイルの一覧
+# <a name="example-13-listing-image-files-with-global-flags"></a>例 13:グローバル フラグを使用してイメージ ファイルを一覧表示する
 
 
 ## <span id="ddk_example_13___listing_image_files_with_global_flags_dtools"></span><span id="DDK_EXAMPLE_13___LISTING_IMAGE_FILES_WITH_GLOBAL_FLAGS_DTOOLS"></span>

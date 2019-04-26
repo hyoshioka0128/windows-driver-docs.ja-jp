@@ -5,11 +5,11 @@ ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58f45248683bd487d421bb3503bfff6b5fabc881
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339441"
 ---
 # <a name="using-a-universal-inf-file"></a>ユニバーサル INF ファイルの使用
 
@@ -78,7 +78,7 @@ Windows、Windows 10 Mobile などの一部のエディションは、ドライ�
     -   10、*ベンダー固有のサブディレクトリの名前*  
             **注:** Windows 10、バージョン 1709 を使用してで*dirid*ベンダー固有のサブディレクトリの名前を持つ 10 を使用する測定とユニバーサル INF で有効では、 [InfVerif](../devtest/infverif.md)ツール。  今後のリリースで、この値をサポートしない可能性があります。  移行をお勧めします。 *dirid* 13。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [ユニバーサル Windows ドライバーをインストールします。](https://msdn.microsoft.com/windows-drivers/develop/installing_a_universal_driver)
 * [InfVerif](https://msdn.microsoft.com/library/windows/hardware/dn929319)

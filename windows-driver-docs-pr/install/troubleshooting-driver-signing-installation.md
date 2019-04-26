@@ -5,11 +5,11 @@ ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65fdb85ef48cec5515b9f3029eeb42b1797e588
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339587"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>ドライバーの署名のインストールのトラブルシューティング
 
@@ -34,7 +34,7 @@ ms.locfileid: "57350395"
 
 チェック ボックスをオンには表示されませんこのダイアログ ボックスもう一度、コンピューターでドライバーがもう一度インストールされている場合、ドライバーが何らかの理由で削除されるかどうか。
 
-**注**  パブリッシャー情報が正確である、カタログの署名に使用された SPC に基づいてシステムを確認します。 発行者の信頼レベルが不明の場合: Contoso.com—the システム ダイアログ ボックスを表示するには、true とになります。 インストールを続行するには、ユーザーはインストールをクリックする必要があります。 信頼とドライバーのインストールの詳細については、[コード署名のベスト プラクティス](https://msdn.microsoft.com/library/windows/hardware/dn653556)を参照してください。
+**注**  パブリッシャー情報が正確である、カタログの署名に使用された SPC に基づいてシステムを確認します。 発行者の信頼レベルが不明の場合: Contoso.com—the システム ダイアログ ボックスを表示するには、true とになります。 インストールを続行するには、ユーザーはインストールをクリックする必要があります。 信頼とドライバーのインストールの詳細については、次を参照してください。[コード署名のベスト プラクティス](https://msdn.microsoft.com/library/windows/hardware/dn653556)します。
 
  
 

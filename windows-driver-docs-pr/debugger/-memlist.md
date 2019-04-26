@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b8b877ec4f6e8cbb6b9be8015f7a49dd528862
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336111"
 ---
 # <a name="memlist"></a>!memlist
 
@@ -59,7 +59,7 @@ ms.locfileid: "56571694"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 現時点では、この拡張機能は、そのリスト内のすべてのページがゼロになっていることを確認するゼロ ページ リストをのみ確認されます。 適切な構文です。

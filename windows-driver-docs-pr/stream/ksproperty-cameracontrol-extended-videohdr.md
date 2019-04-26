@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e8b124f0d13ce5e5ba68c3db7037b68db2c8d80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341857"
 ---
 # <a name="kspropertycameracontrolextendedvideohdr"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR
 
@@ -37,7 +37,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOHDR の使用を有効または、動的
 <tr class="header">
 <th>Scope</th>
 <th>コントロール</th>
-<th>型</th>
+<th>種類</th>
 </tr>
 </thead>
 <tbody>

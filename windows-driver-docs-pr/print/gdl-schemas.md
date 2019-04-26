@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f4f642c799cab763952b8b66e9e6d6843e3205a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346576"
 ---
 # <a name="gdl-schemas"></a>GDL スキーマ
 
@@ -80,7 +80,7 @@ GDL スキーマでは、正式に構造とデータを受信する必要があ�
 
 前の例に示す、継承を使用すると、一般的なパターンを考慮して、定義と付属のメンテナンスの不要な重複を避けるためです。 その結果、スキーマとそれが表すデータ セットは考え抜かと論理的に構造化に指定できます。
 
-継承に基づくスキーマを使用する方法の詳細については、[GDL テンプレート](gdl-template-structure.md)を参照してください。
+継承に基づくスキーマを使用する方法の詳細については、次を参照してください。 [GDL テンプレート](gdl-template-structure.md)します。
 
  
 

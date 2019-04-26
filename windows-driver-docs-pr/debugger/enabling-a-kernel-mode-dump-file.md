@@ -1,19 +1,19 @@
 ---
-title: カーネル モードのダンプ ファイルを有効にします。
-description: カーネル モードのダンプ ファイルを有効にします。
+title: カーネルモード ダンプ ファイルを有効にする
+description: カーネルモード ダンプ ファイルを有効にする
 ms.assetid: 4faf389f-764e-4439-9e45-fdd53890b0d1
 keywords:
 - カーネル モードのダンプ ファイルを有効にすると、ダンプ ファイル
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10156aa9bda2a55778c0ded4b5ec53f30cbb5e92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340623"
 ---
-# <a name="enabling-a-kernel-mode-dump-file"></a>カーネル モードのダンプ ファイルを有効にします。
+# <a name="enabling-a-kernel-mode-dump-file"></a>カーネルモード ダンプ ファイルを有効にする
 
 
 ## <span id="ddk_enabling_a_kernel_mode_dump_file_dbg"></span><span id="DDK_ENABLING_A_KERNEL_MODE_DUMP_FILE_DBG"></span>

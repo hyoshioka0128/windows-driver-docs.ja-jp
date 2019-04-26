@@ -1,17 +1,17 @@
 ---
-title: FLT_PREOP_SUCCESS_NO_CALLBACK を返す
-description: FLT_PREOP_SUCCESS_NO_CALLBACK を返す
+title: FLT_PREOP_SUCCESS_NO_CALLBACK が返される場合
+description: FLT_PREOP_SUCCESS_NO_CALLBACK が返される場合
 ms.assetid: cde708b0-b572-4444-ba4b-158b6906884e
 keywords:
 - FLT_PREOP_SUCCESS_NO_CALLBACK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed11d5ace93beb67fb08c70005538ce306367ebd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344570"
 ---
 # <a name="returning-fltpreopsuccessnocallback"></a>返す FLT\_PREOP\_成功\_いいえ\_コールバック
 

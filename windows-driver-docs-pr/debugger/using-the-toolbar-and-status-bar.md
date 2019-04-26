@@ -1,6 +1,6 @@
 ---
-title: ツールバーとステータス バーを使用
-description: ツールバーとステータス バーを使用
+title: ツール バーとステータス バーの使用
+description: ツール バーとステータス バーの使用
 ms.assetid: 96427166-b6df-4f6b-b550-69d0eb33042d
 keywords:
 - ツールバー (WinDbg)
@@ -15,13 +15,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54d95640ccb586e68ab50324107fa9ac298aa917
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340516"
 ---
-# <a name="using-the-toolbar-and-status-bar"></a>ツールバーとステータス バーを使用
+# <a name="using-the-toolbar-and-status-bar"></a>ツール バーとステータス バーの使用
 
 
 ## <span id="ddk_using_the_toolbar_and_status_bar_dbg"></span><span id="DDK_USING_THE_TOOLBAR_AND_STATUS_BAR_DBG"></span>
@@ -37,7 +37,7 @@ ms.locfileid: "56556903"
 
 ツール バー ボタンには、さまざまな影響があります。 これらのほとんどは、メニュー コマンドと同じです。 ツール バー ボタンに関連付けられているコマンドを実行するには、ツール バー ボタンをクリックします。 ボタンを使用できない場合は、使用できない表示されます。
 
-各ボタンの詳細については、[ツール バー ボタン](toolbar-buttons.md)を参照してください。
+各ボタンの詳細については、次を参照してください。[ツール バー ボタン](toolbar-buttons.md)します。
 
 ### <a name="span-idusingthestatusbarspanspan-idusingthestatusbarspanusing-the-status-bar"></a><span id="using_the_status_bar"></span><span id="USING_THE_STATUS_BAR"></span>ステータス バーを使用します。
 

@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_ALL_DATA カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3caa66f4b6b68b32f7fd712619b76492cf73f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342705"
 ---
 # <a name="irpmnqueryalldata"></a>IRP\_MN\_クエリ\_すべて\_データ
 

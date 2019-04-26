@@ -1,5 +1,5 @@
 ---
-title: .restart (ターゲット アプリケーションを再起動)
+title: .restart (ターゲット アプリケーションの再起動)
 description: .Restart コマンドでは、ターゲット アプリケーションを再起動します。このコマンドはカーネル モードでのみ動作 .restart (再起動カーネル接続) のコマンドを使用を混同しないでください。
 ms.assetid: abfa1817-41d8-4bb2-a6d2-e9c9027b50df
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 77576f22e1ac1fbb039369494a8683ccfa1bb582
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338910"
 ---
-# <a name="restart-restart-target-application"></a>.restart (ターゲット アプリケーションを再起動)
+# <a name="restart-restart-target-application"></a>.restart (ターゲット アプリケーションの再起動)
 
 
 **.Restart**コマンドは、対象のアプリケーションを再起動します。
@@ -60,7 +60,7 @@ ms.locfileid: "56560583"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-このコマンドと、関連するコマンドの概要を発行する方法の詳細については、[ターゲットを制御する](controlling-the-target.md)を参照してください。
+このコマンドと、関連するコマンドの概要を発行する方法の詳細については、次を参照してください。[ターゲットを制御する](controlling-the-target.md)します。
 
 <a name="remarks"></a>注釈
 -------

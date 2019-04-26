@@ -5,20 +5,20 @@ ms.assetid: F245AD4C-F63C-48A7-9AEB-7414047E0627
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ecaa0ae3e678b386eb87a1be195d3bf93cc8a1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345114"
 ---
 # <a name="magnetometer-thresholds"></a>磁力計のしきい値
 
 
 このトピックでは、磁力計しきい値に関する情報を提供します。
 
-次の表は、磁力計の使用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表は、磁力計の使用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
-|プロパティのキー|型|必須/オプション|既定値|説明|
+|プロパティのキー|種類|必須/オプション|既定値|説明|
 |---|---|---|---|---|
 |PKEY_SensorData_MagneticFieldStrengthX_Microteslas|VT_R4|必須|5.0f|単位は microteslas、しきい値に到達するために必要な x 軸に沿った磁場の変更の最小量。|
 |PKEY_SensorData_MagneticFieldStrengthY_Microteslas|VT_R4|必須|5.0f|単位は microteslas、しきい値に到達するために必要な y 軸に沿った磁場の変更の最小量。|

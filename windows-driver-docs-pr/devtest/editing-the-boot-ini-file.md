@@ -23,17 +23,17 @@ keywords:
 ms.date: 07/03/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8db413aeebdde2e1c135717876544e0147ef6d9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344858"
 ---
 # <a name="editing-the-bootini-file"></a>Boot.ini ファイルの編集
 
 
 > [!IMPORTANT] 
-> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
+> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、次を参照してください。 [Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)します。
 
 Windows Vista では、前に、Windows を実行している BIOS ベースのコンピューターは、Boot.ini テキスト ファイルのブート オプションを格納します。 Bootcfg を使用して Boot.ini を編集することができます (`bootcfg.exe`)、Windows XP および Windows Server 2003 に含まれるか、メモ帳などのテキスト エディターを使用して、ツール。 Bootcfg は、Windows ヘルプとサポートで記載されています。 表示またシステム コントロール パネルの ブート オプションを変更します。 システムのプロパティ ダイアログ ボックスの 詳細設定 タブで、の設定をクリックします。**起動と回復**します。 この機能が限られているために、このセクションでは説明しません。 については、**起動と回復** ダイアログ ボックスで、ヘルプとサポート センターを参照してください。
 

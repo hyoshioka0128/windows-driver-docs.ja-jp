@@ -1,19 +1,19 @@
 ---
-title: ビデオ デコーディングの圧縮
-description: ビデオ デコーディングの圧縮
+title: 圧縮ビデオ デコード
+description: 圧縮ビデオ デコード
 ms.assetid: 79341948-7fc5-4373-9d46-cfaa027b229a
 keywords:
 - WDK DirectDraw をデコード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81ce9b47b1d7893a1c68c47bb4544554a34ce321
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338699"
 ---
-# <a name="compressed-video-decoding"></a>ビデオ デコーディングの圧縮
+# <a name="compressed-video-decoding"></a>圧縮ビデオ デコード
 
 
 ## <span id="ddk_compressed_video_decoding_gg"></span><span id="DDK_COMPRESSED_VIDEO_DECODING_GG"></span>

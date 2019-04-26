@@ -1,6 +1,6 @@
 ---
-title: テキストの印刷コマンド
-description: テキストの印刷コマンド
+title: テキスト印刷コマンド
+description: テキスト印刷コマンド
 ms.assetid: 9dc4bbea-c4e4-43a2-9c58-6e4aded5efee
 keywords:
 - テキストの印刷コマンド WDK Unidrv
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6081fcff47836532d747ab2a565188d83b6936d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342202"
 ---
-# <a name="text-printing-commands"></a>テキストの印刷コマンド
+# <a name="text-printing-commands"></a>テキスト印刷コマンド
 
 
 

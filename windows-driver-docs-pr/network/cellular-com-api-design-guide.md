@@ -1,5 +1,5 @@
 ---
-title: 携帯電話の COM API の設計ガイド
+title: 携帯ネットワーク COM API 設計ガイド
 description: このセクションでは、携帯電話の COM API についてを説明します。
 ms.assetid: 93aa20d0-d8c3-40ec-baf1-fab56ff5686d
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8da7aa11d0d6e2b5d35a87d593cdd8aa3ba965f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353354"
 ---
-# <a name="cellular-com-api-design-guide"></a>携帯電話の COM API の設計ガイド
+# <a name="cellular-com-api-design-guide"></a>携帯ネットワーク COM API 設計ガイド
 
 > [!WARNING]
 > 携帯電話の COM API は、Windows 10 で非推奨とされます。 このコンテンツは、OEM および携帯電話会社が Windows Phone 8.1 アプリケーションの作成の保守をサポートするために提供されます。
@@ -25,9 +25,9 @@ Microsoft インターフェイス定義言語 (MIDL) の 2 つのファイル�
 - cellularapi_oem.idl
 - rilapitypes.idl
 
-ヘッダー ファイルを生成するのにには、MIDL コンパイラを使用します。 詳細については、[Microsoft インターフェイス定義言語](https://msdn.microsoft.com/library/windows/desktop/aa367091)、Windows デベロッパー センターでを参照してください。
+ヘッダー ファイルを生成するのにには、MIDL コンパイラを使用します。 詳細については、次を参照してください。 [Microsoft インターフェイス定義言語](https://msdn.microsoft.com/library/windows/desktop/aa367091)、Windows デベロッパー センターでします。
 
-携帯電話アプリケーションを含むパッケージ内の適切な機能を宣言する必要があります。 詳細については、[携帯電話の COM API 機能](cellular-com-api-capabilities.md)を参照してください。
+携帯電話アプリケーションを含むパッケージ内の適切な機能を宣言する必要があります。 詳細については、次を参照してください。[携帯電話の COM API 機能](cellular-com-api-capabilities.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

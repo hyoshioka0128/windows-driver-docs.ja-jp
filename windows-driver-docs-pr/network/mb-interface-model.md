@@ -5,11 +5,11 @@ ms.assetid: B1C6D5F4-63E2-4C46-8038-71B8144AB474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 907eb83a0ddc9b27a179000e745bce9b4a19b0e8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343402"
 ---
 # <a name="mb-interface-model"></a>MB インターフェイス モデル
 
@@ -24,7 +24,7 @@ Windows 8 以降、Microsoft は、MBIM 関数 MBCD と呼ばれる、インボ�
 
 モバイル ブロード バンド デバイス id モーフィングを示すには、Microsoft OS ディスクリプターも実装する必要があります。
 
-MB インターフェイス モデルのトピックについて詳細には、これらのシナリオについて説明します。 次の表は、これらのサブトピックに記載されている Microsoft OS 互換性 Id のすべてをまとめたものです。 詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=308932)を参照してください。
+MB インターフェイス モデルのトピックについて詳細には、これらのシナリオについて説明します。 次の表は、これらのサブトピックに記載されている Microsoft OS 互換性 Id のすべてをまとめたものです。 詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=308932)します。
 
 *Microsoft OS 互換性 Id*
 

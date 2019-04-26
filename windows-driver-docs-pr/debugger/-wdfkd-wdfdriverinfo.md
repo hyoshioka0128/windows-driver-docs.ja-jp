@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 675b7f1eea24bd62561f53896033d9f0b3bf5496
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341754"
 ---
 # <a name="wdfkdwdfdriverinfo"></a>!wdfkd.wdfdriverinfo
 
@@ -35,7 +35,7 @@ ms.locfileid: "56558977"
 (省略可能)。 ドライバーの名前。 *DriverName* .sys ファイル名拡張子を含めることはできません。
 
 <span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-(省略可能)。 表示する情報の種類を指定するフラグ。 *フラグ*次のビットの組み合わせにすることができます。
+任意。 表示する情報の種類を指定するフラグ。 *フラグ*次のビットの組み合わせにすることができます。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
 表示では、ドライバーの検証の設定が含まれ、WDF のオブジェクト数も含まれます。 このフラグをビット 6 と組み合わせることができます (0x40) 内部のオブジェクトを表示します。
@@ -71,7 +71,7 @@ KMDF 1、UMDF 2
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------

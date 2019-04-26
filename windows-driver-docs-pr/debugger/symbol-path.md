@@ -6,16 +6,16 @@ keywords: シンボル ファイルとパス、記号、遅延のシンボルの
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9b2751df0473c1ddf8f840aa6b705b4de435f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335489"
 ---
 # <a name="symbol-path-for-windows-debuggers"></a>Windows デバッガーのシンボル パス
 
 
-シンボル パスには、Windows デバッガー (WinDbg、KD、CDB、NTST) がシンボル ファイルを検索する場所を指定します。 シンボルとシンボル ファイルの詳細については、[シンボル](symbols.md)を参照してください。
+シンボル パスには、Windows デバッガー (WinDbg、KD、CDB、NTST) がシンボル ファイルを検索する場所を指定します。 シンボルとシンボル ファイルの詳細については、次を参照してください。[シンボル](symbols.md)します。
 
 (Microsoft Visual Studio) などの一部のコンパイラでは、バイナリ ファイルと同じディレクトリにシンボル ファイルを配置します。 シンボル ファイルとバイナリ ファイルがチェックされているパスとファイル名の情報が含まれています。 この情報は、デバッガー シンボル ファイルを自動的に検出を頻繁に使用できます。 実行可能ファイルが作成されたコンピューター上のユーザー モード プロセスをデバッグしている場合、およびシンボル ファイルが元の場所にまだの場合は、デバッガーがシンボル パスを設定することがなく、シンボル ファイルを検索できます。
 
@@ -32,7 +32,7 @@ ms.locfileid: "56574314"
 
 シンボル ファイルには、日付と時刻のタイムスタンプがあります。 このシーケンスで、最初に検出できるを正しくない記号が、デバッガーを使用するかを心配する必要はありません。 デバッグ バイナリのファイルのタイムスタンプに一致するシンボルを常に検索します。 応答の詳細についてはシンボル ファイルが使用できない場合を参照してください[の問題の一致するシンボル補正](matching-symbol-names.md)します。
 
-シンボル パスを設定する方法の 1 つは、入力して、 [ **.sympath** ](-sympath--set-symbol-path-.md)コマンド。 シンボル パスを設定する他の方法では、[シンボル パスを制御する](#controlling-the-symbol-path)このトピックで後述を参照してください。
+シンボル パスを設定する方法の 1 つは、入力して、 [ **.sympath** ](-sympath--set-symbol-path-.md)コマンド。 シンボル パスを設定する他の方法では、次を参照してください。[シンボル パスを制御する](#controlling-the-symbol-path)このトピックで後述します。
 
 ## <a name="span-idcachingsymbolslocallyspanspan-idcachingsymbolslocallyspanspan-idcachingsymbolslocallyspancaching-symbols-locally"></a><span id="Caching_Symbols_Locally"></span><span id="caching_symbols_locally"></span><span id="CACHING_SYMBOLS_LOCALLY"></span>ローカル キャッシュにシンボル
 
@@ -82,7 +82,7 @@ ms.locfileid: "56574314"
 .sympath c:\MyRegularSymbols;srv*c:\MyServerSymbols*https://msdl.microsoft.com/download/symbols
 ```
 
-シンボル サーバーの詳細については、[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)を参照してください。
+シンボル サーバーの詳細については、次を参照してください。[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)します。
 
 ## <a name="span-idcombiningcacheandsrvspanspan-idcombiningcacheandsrvspanspan-idcombiningcacheandsrvspancombining-cache-and-srv"></a><span id="Combining_cache__and_srv_"></span><span id="combining_cache__and_srv_"></span><span id="COMBINING_CACHE__AND_SRV_"></span>キャッシュを組み合わせて\*や srv\*
 
@@ -104,9 +104,9 @@ ms.locfileid: "56574314"
 ## <a name="span-idusingagestoretoreducethecachesizespanspan-idusingagestoretoreducethecachesizespanusing-agestore-to-reduce-the-cache-size"></a><span id="using_agestore_to_reduce_the_cache_size"></span><span id="USING_AGESTORE_TO_REDUCE_THE_CACHE_SIZE"></span>AgeStore を使用して、キャッシュのサイズを小さくには
 
 
-AgeStore ツールを使用して、指定した日付より古いキャッシュ ファイルを削除するか、キャッシュの結果のサイズは、指定した量よりも少ないための十分な古いファイルを削除することができます。 ダウン ストリーム ストアが大きすぎる場合に役立ちます。 ことができます。 詳細については、[AgeStore](agestore.md)を参照してください。
+AgeStore ツールを使用して、指定した日付より古いキャッシュ ファイルを削除するか、キャッシュの結果のサイズは、指定した量よりも少ないための十分な古いファイルを削除することができます。 ダウン ストリーム ストアが大きすぎる場合に役立ちます。 ことができます。 詳細については、次を参照してください。 [AgeStore](agestore.md)します。
 
-シンボル サーバーとシンボル ストアの詳細については、[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)を参照してください。
+シンボル サーバーとシンボル ストアの詳細については、次を参照してください。[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)します。
 
 ## <a name="span-idlazysymbolloadingspanspan-idlazysymbolloadingspanlazy-symbol-loading"></a><span id="lazy_symbol_loading"></span><span id="LAZY_SYMBOL_LOADING"></span>シンボルの遅延読み込み
 
@@ -117,7 +117,7 @@ AgeStore ツールを使用して、指定した日付より古いキャッシ�
 
 完全な PDB シンボルを使用したモジュールのシンボルは遅延を再読み込みする場合は、新しいパスが PDB シンボルの読み込みに使用された元のパスには含まれていません。 まだ、新しいパスには、PDB シンボル ファイルを元のパスが含まれているこれらのシンボルは遅れて読み込まれません。
 
-シンボルの遅延読み込みの詳細については、[シンボルの読み込みの遅延](deferred-symbol-loading.md)を参照してください。
+シンボルの遅延読み込みの詳細については、次を参照してください。[シンボルの読み込みの遅延](deferred-symbol-loading.md)します。
 
 遅延のシンボルを使用して、KD、CDB で読み込みをオフにすることができます、 `-s` [コマンド ライン オプション](command-line-options.md)します。 使用して、シンボルの読み込みを強制することもできます、 `ld` [ **(シンボルの読み込み)** ](ld--load-symbols-.md)コマンドまたはを使用して、 `.reload` [ **(モジュールの再読み込み)** 。](-reload--reload-module-.md)コマンドと共に、`/f`オプション。
 

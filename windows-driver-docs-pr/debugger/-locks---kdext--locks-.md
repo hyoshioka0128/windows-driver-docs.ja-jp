@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bcef64132d52b5f0d4af99fbb45c4353e5dd25b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336163"
 ---
 # <a name="locks-kdextlocks"></a>! ロック (! kdext\*.locks)
 
@@ -72,7 +72,7 @@ ms.locfileid: "56582277"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **! ロック**拡張機能は、スレッドがリソースで保持されているすべてのロックを表示します。 ロックを共有することができます、他のスレッドは意味がないことができますにアクセスしたりそのリソース。 この情報は、システムでデッドロックが発生する場合に便利です。 実行中のスレッドが必要なリソースに対する排他ロックを保持する 1 つの実行中でないスレッドでデッドロックが発生します。

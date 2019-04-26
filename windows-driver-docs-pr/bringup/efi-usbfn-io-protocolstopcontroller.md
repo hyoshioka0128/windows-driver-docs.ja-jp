@@ -1,15 +1,15 @@
 ---
-title: EFI_USBFN_IO_PROTOCOL します。StopController
-description: EFI_USBFN_IO_PROTOCOL します。StopController
+title: EFI_USBFN_IO_PROTOCOL.StopController
+description: EFI_USBFN_IO_PROTOCOL.StopController
 ms.assetid: 531fd280-bcb1-4b6f-a2fa-9052318171b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 366b30016650084b171e94321117fae20d6eab0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337690"
 ---
 # <a name="efiusbfnioprotocolstopcontroller"></a>EFI\_USBFN\_IO\_プロトコル。StopController
 
@@ -70,7 +70,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 
 この関数は、以降のリビジョン 0x00010001 で利用可能、 **EFI\_USBFN\_IO\_プロトコル**します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 **ヘッダー:** ユーザーが生成しました。

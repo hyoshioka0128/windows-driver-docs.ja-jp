@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aab35dafdf21cbf19fc90489f991a6773ac6897
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340779"
 ---
 # <a name="introduction-to-whea-aware-user-mode-applications"></a>WHEA 対応のユーザーモード アプリケーションの概要
 
@@ -40,7 +40,7 @@ WHEA の管理操作には、有効化またはエラーのソースを無効に
 
 シングル ユーザー モード アプリケーションでは、イベントの処理および管理メカニズムの任意の組み合わせを使用できます。
 
-WHEA ハードウェア エラーのイベント処理アプリケーションは、以降 Windows Vista でサポートされます。 WHEA のハードウェア エラーのイベントを処理するユーザー モード アプリケーションを実装する方法の詳細については、[WHEA ハードウェア エラー イベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)を参照してください。
+WHEA ハードウェア エラーのイベント処理アプリケーションは、以降 Windows Vista でサポートされます。 WHEA のハードウェア エラーのイベントを処理するユーザー モード アプリケーションを実装する方法の詳細については、次を参照してください。 [WHEA ハードウェア エラー イベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)します。
 
 Windows Server 2008 では、WHEA 管理アプリケーションがサポートされている、Windows Vista SP1 と以降のバージョンの Windows WHEA の管理操作を実行するユーザー モード アプリケーションを実装する方法の詳細について参照[WHEA の管理アプリケーション](whea-management-applications.md)します。
 

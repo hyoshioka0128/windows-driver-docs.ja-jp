@@ -13,20 +13,20 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 90eb2e802ad7357e27ccadfb1a9cb97e447c7d9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335861"
 ---
 # <a name="ndiskdwdiminidriver"></a>!ndiskd.wdiminidriver
 
 
 **! Ndiskd.wdiminidriver**拡張機能は、1 つまたは複数の CMiniportDriver 構造に関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd CMiniportDriver 構造体のすべての一覧が表示されます。
 
-WDI ミニポート ドライバーの詳細については、、 [WDI ミニポート ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)を参照してください。
+WDI ミニポート ドライバーの詳細については、次を参照してください。、 [WDI ミニポート ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)します。
 
-WDI ミニポート ドライバー リファレンスの詳細については、[WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)を参照してください。
+WDI ミニポート ドライバー リファレンスの詳細については、次を参照してください。 [WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)します。
 
 ```console
 !ndiskd.wdiminidriver [-handle <x>] [-pm] [-rcvfilter] 

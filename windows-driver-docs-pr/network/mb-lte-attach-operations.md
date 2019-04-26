@@ -1,16 +1,16 @@
 ---
-title: MB LTE アタッチの操作
-description: MB LTE アタッチの操作
+title: MB LTE アタッチ操作
+description: MB LTE アタッチ操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e11ca811b7caea3538fcc6391ab2afaf78fdc77f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343337"
 ---
-# <a name="mb-lte-attach-operations"></a>MB LTE アタッチの操作
+# <a name="mb-lte-attach-operations"></a>MB LTE アタッチ操作
 
 ## <a name="lte-attach-apn-configuration-for-mbim-modems"></a>LTE は、MBIM モデムの構成を APN をアタッチします。
 
@@ -94,7 +94,7 @@ Ihv と Oem が事前に構成できますが、LTE、モデムの既定の設�
 
 MBIM_MS_LTE_ATTACH_CONFIG_INFO、InformationBuffer で完了したクエリと一連のメッセージが返されます。 クエリの場合は、InformationBuffer は NULL です。
 
-#### <a name="set"></a>設定
+#### <a name="set"></a>Set
 
 セットに対して、InformationBuffer には、MBIM_MS_SET_LTE_ATTACH_CONFIG が含まれています。
 
@@ -115,7 +115,7 @@ MBIM_MS_LTE_ATTACH_CONFIG_INFO、InformationBuffer で完了したクエリと�
 
 InformationBuffer は NULL にするものとし、InformationBufferLength を 0 にする必要があります。
 
-#### <a name="set"></a>設定
+#### <a name="set"></a>Set
 
 次の MBIM_MS_SET_LTE_ATTACH_CONFIG 構造、InformationBuffer で使用されます。 Set コマンドでは、有効なは、一覧には、3 ローミング条件 (ホーム/パートナー/パートナー以外) ごとに 1 つの要素数が含まれている場合のみ。
 
@@ -142,11 +142,11 @@ MBIM_MS_LTE_ATTACH_CONTEXT LTE に使用するコンテキストを指定する�
 | 0 | 4 | IPType | MBIM_CONTEXT_IP_TYPE | 詳細については、MBIM_CONTEXT_IP_TYPE テーブルを参照してください。 |
 | 4 | 4 | Roaming | MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL | この既定値に適用される移動条件を示します LTE がコンテキストをアタッチします。 詳細については、MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL テーブルを参照してください。 |
 | 8 | 4 | Source | MBIM_MS_CONTEXT_SOURCE | コンテキストの作成のソースを指定します。 詳細については、MBIM_MS_CONTEXT_SOURCE テーブルを参照してください。 |
-| 12 | 4 | AccessStringOffset | オフセット | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 文字列のサイズは 100 文字を超えない必要があります。 AccessString が空の場合、デバイスで、ネットワーク アクセスの文字列をデバイスに割り当てるには。 ここで指定するのにはまだ IP の種類があります。 |
+| 12 | 4 | AccessStringOffset | OFFSET | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 文字列のサイズは 100 文字を超えない必要があります。 AccessString が空の場合、デバイスで、ネットワーク アクセスの文字列をデバイスに割り当てるには。 ここで指定するのにはまだ IP の種類があります。 |
 | 16 | 4 | AccessStringSize | SIZE(0..200) | AccessString に使用するサイズ。 デバイスが LTE の元のデバイスにアクセス文字列を割り当てるネットワークが必要な場合、この値は 0 にはアタッチします。 |
-| 20 | 4 | UserNameOffset | オフセット | 計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。 |
+| 20 | 4 | UserNameOffset | OFFSET | 計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。 |
 | 24 | 4 | UserNameSize | SIZE(0..510) | ユーザー名に使用するサイズ。 |
-| 28 | 4 | PasswordOffset | オフセット | ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。 |
+| 28 | 4 | PasswordOffset | OFFSET | ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。 |
 | 32 | 4 | PasswordSize | SIZE(0..510) | パスワードを使用するサイズ。 |
 | 36 | 4 | 圧縮 | MBIM_COMPRESSION | ヘッダーとデータのデータ接続に使用する圧縮形式を指定します。 このメンバーは、GSM ベースのデバイスにのみ適用されます。 ホストは、CDMA ベースのデバイス、MBIMCompressionNone にこのメンバーを設定します。 詳細については、MBIM_COMPRESSION テーブルを参照してください。 |
 | 40 | 4 | AuthProtocol | MBIM_AUTH_PROTOCOL | PDP ライセンス認証を使用する認証の種類。 詳細については、MBIM_AUTH_PROTOCOL テーブルを参照してください。 |
@@ -231,7 +231,7 @@ LTE デバイスの既定値がアタッチするときに、os、LTE 最新添�
 
 MBIM_MS_LTE_ATTACH_STATUS、InformationBuffer でクエリの完全なメッセージが返されます。 クエリの場合は、InformationBuffer は NULL です。
 
-#### <a name="set"></a>設定 
+#### <a name="set"></a>Set 
 
 セット操作はサポートされていません。
 
@@ -243,7 +243,7 @@ MBIM_MS_LTE_ATTACH_STATUS、InformationBuffer でクエリの完全なメッセ�
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | 該当なし | 該当なし |
+| コマンド | 該当なし | 適用なし | 該当なし |
 | 応答 | 該当なし | MBIM_MS_LTE_ATTACH_STATUS | MBIM_MS_LTE_ATTACH_STATUS |
 
 ### <a name="data-structures"></a>データ構造体
@@ -252,7 +252,7 @@ MBIM_MS_LTE_ATTACH_STATUS、InformationBuffer でクエリの完全なメッセ�
 
 InformationBuffer は NULL にするものとし、InformationBufferLength を 0 にする必要があります。
 
-#### <a name="set"></a>設定
+#### <a name="set"></a>Set
 
 セット操作はサポートされていません。
 
@@ -265,11 +265,11 @@ InformationBuffer は NULL にするものとし、InformationBufferLength を 0
 |--------|------|--------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |   LteAttachState   | MBIM_MS_LTE_ATTACH_STATE |                                                                                                                                                                                                                                    かどうか、デバイスが現在 LTE ネットワークに接続するかどうかを示します。  詳細については、MBIM_MS_LTE_ATTACH_STATE テーブルを参照してください。                                                                                                                                                                                                                                     |
 |   4    |  4   |       IPType       |  MBIM_CONTEXT_IP_TYPES   |                                                                                                                                                                                                                                                                             詳細については、MBIM_CONTEXT_IP_TYPE テーブルを参照してください。                                                                                                                                                                                                                                                                              |
-|   8    |  4   | AccessStringOffset |          オフセット          | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 CDMA ベースのネットワークでは、これがあります「#777」またはネットワーク アクセスの識別子 (NAI) などの特殊なダイヤル コードなど"foo@thephone-company.com"。 このメンバーは、APN の既定のネットワークを割り当てることを要求する NULL を指定できます。 注:すべてのネットワークでは、この NULL APN 規則をサポートします。 したがって、無効な APN によって発生した接続エラーは、考えられる結果です。 文字列のサイズは 100 文字を超えない必要があります。 |
+|   8    |  4   | AccessStringOffset |          OFFSET          | 文字列、AccessString、ネットワークにアクセスするデータ バッファーのオフセットします。 GSM ベースのネットワークでは、"data.thephone company.com"など、アクセス ポイント名 (APN) 文字列になります。 CDMA ベースのネットワークでは、これがあります「#777」またはネットワーク アクセスの識別子 (NAI) などの特殊なダイヤル コードなど"foo@thephone-company.com"。 このメンバーは、APN の既定のネットワークを割り当てることを要求する NULL を指定できます。 注:すべてのネットワークでは、この NULL APN 規則をサポートします。 したがって、無効な APN によって発生した接続エラーは、考えられる結果です。 文字列のサイズは 100 文字を超えない必要があります。 |
 |   12   |  4   |  AccessStringSize  |       SIZE(0..200)       |                                                                                                                                                                                                                                                                                        AccessString のサイズをバイト単位のサイズ。                                                                                                                                                                                                                                                                                        |
-|   16   |  4   |   UserNameOffset   |          オフセット          |                                                                                                                                                                                                                          計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                           |
+|   16   |  4   |   UserNameOffset   |          OFFSET          |                                                                                                                                                                                                                          計算される、この構造体の先頭から、ユーザー名、認証するユーザー名を表す文字列へのバイト オフセットします。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                           |
 |   20   |  4   |    UserNameSize    |       SIZE(0..510)       |                                                                                                                                                                                                                                                                                          サイズ (バイト) のユーザー名に使用します。                                                                                                                                                                                                                                                                                          |
-|   24   |  4   |   PasswordOffset   |          オフセット          |                                                                                                                                                                                                                             ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                             |
+|   24   |  4   |   PasswordOffset   |          OFFSET          |                                                                                                                                                                                                                             ユーザー名のパスワードを表すオフセット (バイト)、文字列、パスワードに、この構造体の先頭から計算されます。 このメンバーは、NULL を指定できます。                                                                                                                                                                                                                             |
 |   28   |  4   |    PasswordSize    |       SIZE(0..510)       |                                                                                                                                                                                                                                                                                          サイズ (バイト) のパスワードを使用します。                                                                                                                                                                                                                                                                                          |
 |   32   |  4   |    圧縮     |     MBIM_COMPRESSION     |                                                                                                                                                                           ヘッダーとデータのデータ接続に使用する圧縮形式を指定します。 このメンバーは、GSM ベースのデバイスにのみ適用されます。 ホストは、CDMA ベースのデバイス、MBIMCompressionNone にこのメンバーを設定します。 詳細については、MBIM_COMPRESSION テーブルを参照してください。                                                                                                                                                                           |
 |   36   |  4   |    AuthProtocol    |    MBIM_AUTH_PROTOCOL    |                                                                                                                                                                                                                                                     PDP ライセンス認証を使用する認証の種類。 詳細については、MBIM_AUTH_PROTOCOL テーブルを参照してください。                                                                                                                                                                                                                                                     |

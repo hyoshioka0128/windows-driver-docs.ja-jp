@@ -1,6 +1,6 @@
 ---
-title: SRV_CALL 構造体
-description: SRV_CALL 構造体
+title: SRV_CALL 構造
+description: SRV_CALL 構造
 ms.assetid: 9a3bb194-0289-47f4-a5c8-848d8d82cdd7
 keywords:
 - SRV_CALL 構造体
@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aeb31919d7303758c702e98993d0a233ba115631
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348370"
 ---
 # <a name="the-srvcall-structure"></a>SRV\_呼び出し構造
 

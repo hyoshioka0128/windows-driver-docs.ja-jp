@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b21dd6bc0184bbb64dded884b35d72655f0b353
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339041"
 ---
 # <a name="storage-class-drivers-adddevice-routine"></a>記憶域クラス ドライバーの AddDevice ルーチン
 
@@ -37,7 +37,7 @@ PnP マネージャーには、記憶域クラス ドライバーの[ **AddDevic
 
 ストレージ クラス ドライバーによって返されたポインターを格納する**IoAttachDeviceToDeviceStack**新しく要求されたデバイスを表す独自デバイス オブジェクト (FDO) の拡張機能でデバイスと*すべてでこのポインターを使用する必要がありますクラス ドライバーは、次の下位ドライバーに送信する後続の要求*します。 ドライバーは、デバイス拡張機能の後に入力 PDO へのポインターを格納するも**IoAttachDeviceToDeviceStack** 、ドライバーは PnP への呼び出しでのみ入力 PDO へのポインターを使用する必要がありますを返します **Io * * * Xxx*パラメーターとしてこのようなポインターを使用するルーチン。
 
-詳細については、[、AddDevice ルーチンを記述](https://msdn.microsoft.com/library/windows/hardware/ff566398)を参照してください。
+詳細については、次を参照してください。 [、AddDevice ルーチンを記述](https://msdn.microsoft.com/library/windows/hardware/ff566398)します。
 
  
 

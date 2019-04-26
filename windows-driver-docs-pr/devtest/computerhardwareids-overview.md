@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97796374be5c5b543521e3bbea7123ab6fa3baf5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343126"
 ---
 # <a name="computerhardwareids-overview"></a>ComputerHardwareIds の概要
 
@@ -35,11 +35,11 @@ ComputerHardwareIds を実行するには、コマンド プロンプトでコ�
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-ComputerHardwareIds ツールでは、コンピューターの System Management BIOS (SMBIOS) のフィールドからの情報に基づいて、コンピューターのハードウェア Id を作成します。 フィールドの一覧は、[のコンピューターのハードウェア Id を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552325)を参照してください。
+ComputerHardwareIds ツールでは、コンピューターの System Management BIOS (SMBIOS) のフィールドからの情報に基づいて、コンピューターのハードウェア Id を作成します。 フィールドの一覧は、次を参照してください。[のコンピューターのハードウェア Id を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552325)します。
 
 ハードウェア ID の選択の詳細については、デバイス メタデータ パッケージについても増えるは、コンピューターの値を参照してください。[のコンピューターのハードウェア Id を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552325)します。
 
-Windows の開発キットの詳細については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=846744)を参照してください。
+Windows の開発キットの詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=846744)します。
 
 
 

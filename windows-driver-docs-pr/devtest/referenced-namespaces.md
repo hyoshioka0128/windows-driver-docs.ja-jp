@@ -1,6 +1,6 @@
 ---
-title: 参照先の名前空間
-description: 参照先の名前空間
+title: 参照されている名前空間
+description: 参照されている名前空間
 ms.assetid: 4adb0979-1e97-4697-bd85-c808023ce43f
 keywords:
 - WSDBIT ツール WDK、名前空間
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2eaacd83d10e2b4832bfa3c11f05112e45a3f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339741"
 ---
-# <a name="referenced-namespaces"></a>参照先の名前空間
+# <a name="referenced-namespaces"></a>参照されている名前空間
 
 
 次の表では、このセクションと DWPS 仕様で参照される名前空間について説明します。

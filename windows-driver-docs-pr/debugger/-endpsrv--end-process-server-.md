@@ -1,5 +1,5 @@
 ---
-title: .endpsrv (エンド プロセス サーバー)
+title: .endpsrv (プロセス サーバーの終了)
 description: .Endpsrv コマンドでは、現在のプロセス サーバー、または閉じる KD 接続のサーバーを実行します。
 ms.assetid: 3f8d0a85-f0f4-4c13-ab52-e4d99ba3599c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9339a9aaf2d51e9b7f9a2d13b1ee0685543f660b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337219"
 ---
-# <a name="endpsrv-end-process-server"></a>.endpsrv (エンド プロセス サーバー)
+# <a name="endpsrv-end-process-server"></a>.endpsrv (プロセス サーバーの終了)
 
 
 **.Endpsrv**コマンドにより、現在のプロセス サーバー、または KD 接続のサーバーを閉じます。
@@ -69,7 +69,7 @@ ms.locfileid: "56549945"
 
 プロセス サーバー、またはが実行されているコンピューターから KD 接続のサーバーを終了する場合は、タスク マネージャーを使用して、(dbgsrv.exe または kdsrv.exe) プロセスを終了します。
 
-**.Endpsrv**コマンドは、プロセス サーバー、または KD 接続のサーバーを終了できますが、デバッグ サーバーを終了できません。 その方法については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
+**.Endpsrv**コマンドは、プロセス サーバー、または KD 接続のサーバーを終了できますが、デバッグ サーバーを終了できません。 その方法については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
 
  
 

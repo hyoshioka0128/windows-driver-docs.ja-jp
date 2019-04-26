@@ -5,11 +5,11 @@ ms.assetid: 0c07e514-73f9-4d24-86ad-8ac036fdbcf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85b94151a985dfdfa262cfadeaff93b2da70f24e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337791"
 ---
 # <a name="user-mode-driver-framework-frequently-asked-questions"></a>ユーザー モード ドライバー フレームワークについてよく寄せられる質問
 
@@ -38,7 +38,7 @@ UMDF バージョン 2 (2.0 および 2.1) は、Windows 10 に含まれる以�
 
 UMDF バージョン 2 で作成されたドライバーは、C プログラミング言語で記述されます。 この同じドライバーは、kmdf 簡単にコンパイルします。 さらに、COM プログラミング モデルに従って UMDF バージョン 1 のドライバーを記述する必要があります。 
 
-詳細については、[UMDF 入門](getting-started-with-umdf-version-2.md)を参照してください。
+詳細については、次を参照してください。 [UMDF 入門](getting-started-with-umdf-version-2.md)します。
 
 ## <a name="which-operating-systems-support-umdf-2"></a>UMDF 2 でサポートされるオペレーティング システムですか。
 
@@ -48,7 +48,7 @@ UMDF ドライバーのバージョン 2 では、Windows 8.1 以降を実行し
 ## <a name="which-umdf-versions-can-i-build-against-in-windows-driver-kit-wdk10"></a>UMDF バージョンをビルドできますに対して Windows Driver Kit (WDK) 10 でしょうか。
 
 
-UMDF 2.1、2.0、1.11、および 1.9 のドライバーを Windows Driver Kit (WDK) 10 と Microsoft Visual Studio を使用して構築できます。 Windows のバージョンに関するこれら UMDF バージョンを使用して構築されたドライバーを実行できるは、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
+UMDF 2.1、2.0、1.11、および 1.9 のドライバーを Windows Driver Kit (WDK) 10 と Microsoft Visual Studio を使用して構築できます。 Windows のバージョンに関するこれら UMDF バージョンを使用して構築されたドライバーを実行できるは、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
 
 ## <a name="can-i-write-part-of-my-driver-to-run-in-user-mode-and-part-in-kernel-mode"></a>カーネル モードでユーザー モードで実行するには、ドライバーの部品と部品を作成しますか。
 
@@ -90,9 +90,9 @@ UMDF ドライバーは、LocalService アカウントのセキュリティ資�
 ## <a name="how-do-i-debug-a-umdf-driver"></a>UMDF ドライバーをデバッグする方法は?
 
 
-UMDF ドライバーは、ユーザー モード デバッガーまたはカーネル モードのデバッガーを使用してデバッグできます。 詳細については、[デバッグ WDF ドライバー](debugging-a-wdf-driver.md)を参照してください。
+UMDF ドライバーは、ユーザー モード デバッガーまたはカーネル モードのデバッガーを使用してデバッグできます。 詳細については、次を参照してください。[デバッグ WDF ドライバー](debugging-a-wdf-driver.md)します。
 
-UMDF バージョン 2.0 以降、ことができますを使用する多くのコマンドで、 *Wdfkd.dll* UMDF ドライバーをデバッグするデバッガー拡張機能ライブラリ。 コマンドの一覧は、[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)を参照してください。 UMDF が UMDF トレース ログを格納するさらに、(または UMDF *IFR*) 非ページ メモリのカーネルにします。 詳細、IFR については、[フレームワークのイベントのロガーを使用して](using-the-framework-s-event-logger.md)を参照してください。
+UMDF バージョン 2.0 以降、ことができますを使用する多くのコマンドで、 *Wdfkd.dll* UMDF ドライバーをデバッグするデバッガー拡張機能ライブラリ。 コマンドの一覧は、次を参照してください。[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)します。 UMDF が UMDF トレース ログを格納するさらに、(または UMDF *IFR*) 非ページ メモリのカーネルにします。 詳細、IFR については、次を参照してください。[フレームワークのイベントのロガーを使用して](using-the-framework-s-event-logger.md)します。
 
 ## <a name="is-there-a-newsgroup-for-umdf"></a>UMDF のニュースグループはありますか。
 

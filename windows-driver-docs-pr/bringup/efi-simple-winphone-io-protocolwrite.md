@@ -5,11 +5,11 @@ ms.assetid: 55475573-e904-4adc-91cf-62afe9e67927
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24ebe500efe1da3cc058369c84b341f1bbf7c0c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337759"
 ---
 # <a name="efisimplewinphoneioprotocolwrite"></a>EFI\_単純\_WINPHONE\_IO\_プロトコル。書き込み
 
@@ -91,12 +91,12 @@ EFI へのポインター\_単純\_WINPHONE\_IO\_プロトコル インスタン
 
  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
 エラーが発生した場合、適切な状態コードで、転送を終了します。 場合は、実際には、デバイスに書き込まれたバイト数が返される**NumberOfBytesWritten**します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 **ヘッダー:** ユーザーが生成しました。

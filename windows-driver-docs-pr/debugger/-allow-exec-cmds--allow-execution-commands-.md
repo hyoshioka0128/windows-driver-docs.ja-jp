@@ -1,5 +1,5 @@
 ---
-title: .allow_exec_cmds (コマンドの実行を許可する)
+title: .allow_exec_cmds (実行コマンドの許可)
 description: .Allow_exec_cmds コマンドでは、実行コマンドを使用できるかどうかを制御します。
 ms.assetid: c6e37cf1-42cc-4f82-9eb8-d252f0b6e196
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b81c201ee4429b131c1e7f41f00814cae541f724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337035"
 ---
 # <a name="allowexeccmds-allow-execution-commands"></a>.allow\_exec\_コマンド (実行コマンドを許可する)
 

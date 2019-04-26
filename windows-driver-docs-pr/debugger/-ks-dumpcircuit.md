@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8167c78550aba9893f601632370aaa963faf98f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336300"
 ---
 # <a name="ksdumpcircuit"></a>!ks.dumpcircuit
 
@@ -37,7 +37,7 @@ ms.locfileid: "56579764"
 PortCls のオブジェクトは、次の種類のいずれかを指定する必要があります。CPortPin\*、CKsShellRequestor\*、または CIrpStream\*します。
 
 <span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *レベル*   
-任意。 0 ~ 7 で表示する詳細のレベルを指定の値を大きく表示徐々 に詳細なスケールします。 使用可能なすべての詳細を表示するには、7 の値を指定します。
+(省略可能)。 0 ~ 7 で表示する詳細のレベルを指定の値を大きく表示徐々 に詳細なスケールします。 使用可能なすべての詳細を表示するには、7 の値を指定します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -62,7 +62,7 @@ PortCls のオブジェクトは、次の種類のいずれかを指定する必
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)を参照してください。
+詳細については、次を参照してください。[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)します。
 
 <a name="remarks"></a>コメント
 -------

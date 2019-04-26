@@ -1,6 +1,6 @@
 ---
-title: NDIS フィルター ドライバーの OID 要求のフィルター処理
-description: NDIS フィルター ドライバーの OID 要求のフィルター処理
+title: NDIS フィルター ドライバーでの OID 要求のフィルター処理
+description: NDIS フィルター ドライバーでの OID 要求のフィルター処理
 ms.assetid: 88bb8318-f19c-4d98-bb06-6120e6adb51d
 keywords:
 - Oid WDK ネットワー キング、フィルター ドライバー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d7c1e81b8d422f60dcc8cd5e41c9b93c5d1a6d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347381"
 ---
-# <a name="filtering-oid-requests-in-an-ndis-filter-driver"></a>NDIS フィルター ドライバーの OID 要求のフィルター処理
+# <a name="filtering-oid-requests-in-an-ndis-filter-driver"></a>NDIS フィルター ドライバーでの OID 要求のフィルター処理
 
 
 
@@ -30,7 +30,7 @@ NDIS フィルター ドライバーを呼び出すことができます[ *Filte
 
 フィルター ドライバーは、要求を完了 OID 同期または非同期で NDIS を返すことによって\_状態\_成功または NDIS\_状態\_PENDING からそれぞれ[ *FilterOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff549954)します。 *FilterOidRequest*はエラー状態を同期的に完了もできます。
 
-OID のセット要求を正常に処理するフィルター ドライバーを設定する必要があります、 **SupportedRevision**内のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)OID のセットの要求からの戻り時に構造体。 **SupportedRevision**メンバーにサポートされているドライバーのリビジョンに関する OID 要求の発信側に通知します。 NDIS 構造のバージョン情報の詳細については、[NDIS バージョン情報を指定する](specifying-ndis-version-information.md)を参照してください。
+OID のセット要求を正常に処理するフィルター ドライバーを設定する必要があります、 **SupportedRevision**内のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)OID のセットの要求からの戻り時に構造体。 **SupportedRevision**メンバーにサポートされているドライバーのリビジョンに関する OID 要求の発信側に通知します。 NDIS 構造のバージョン情報の詳細については、次を参照してください。 [NDIS バージョン情報を指定する](specifying-ndis-version-information.md)します。
 
 場合*FilterOidRequest*返します NDIS\_状態\_保留中、呼び出す必要があります、 [ **NdisFOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff561833)関数が完了した後OID 要求。 この場合、ドライバーに渡しますで要求の結果、 *OidRequest*パラメーターの**NdisFOidRequestComplete**します。 ドライバーで要求の最終的な状態を渡す、*状態*パラメーターの**NdisFOidRequestComplete**します。
 
@@ -42,7 +42,7 @@ OID のセット要求を正常に処理するフィルター ドライバーを
 
  
 
-転送された要求では、フィルター ドライバーによって開始された要求と同じ処理されます。 詳細については、[NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)を参照してください。
+転送された要求では、フィルター ドライバーによって開始された要求と同じ処理されます。 詳細については、次を参照してください。 [NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)します。
 
 転送された要求を完了すると、基になるドライバー、フィルター ドライバーは、必要に応じて、応答を変更し、関連ドライバーに渡すことできます。
 

@@ -1,6 +1,6 @@
 ---
-title: (内部) のデバイス ドライバーのクラス/ポートでのディスパッチします。
-description: (内部) のデバイス ドライバーのクラス/ポートでのディスパッチします。
+title: クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
+description: クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
 ms.assetid: 94f6050d-c47e-4fb2-8b7f-afadcf12e0b8
 keywords:
 - ディスパッチ ルーチンの WDK カーネル、DispatchDeviceControl ルーチン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 348956033719d1fedb417bd47946c76d175bd179
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342700"
 ---
-# <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>(内部) のデバイス ドライバーのクラス/ポートでのディスパッチします。
+# <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56559011"
 
 システムの並列クラス/ポート ドライバー モデルには、同様の機能があります。 Parallel クラスの新しいドライバーからサポートを受けるシステムのパラレル ポート ドライバーの Irp を設定して**IRP\_MJ\_内部\_デバイス\_コントロール**パブリック IOCTL で要求\_並列\_ポート\_*XXX*コードを制御します。 システムのパラレル ポート ドライバーを置き換えることができますが、新しいドライバーもこの内部パブリックのデバイスに対する制御要求のセットをサポートする必要があります。
 
-これらの内部パブリックのデバイス制御要求の詳細については、Windows Driver Kit (WDK) でデバイス固有のマニュアルを参照してください。 プライベートの I/O 制御コードを定義する方法については、[I/O 制御コードを使用して](using-i-o-control-codes.md)を参照してください。
+これらの内部パブリックのデバイス制御要求の詳細については、Windows Driver Kit (WDK) でデバイス固有のマニュアルを参照してください。 プライベートの I/O 制御コードを定義する方法については、次を参照してください。 [I/O 制御コードを使用して](using-i-o-control-codes.md)します。
 
 ポート/クラス ドライバーの密接に結合されたペアは、クラス ドライバーは、ポート ドライバーに渡すことがなく特定のデバイス制御要求の処理を処理することがあります。 新しいクラス/ポート ドライバー ペアで、クラス ドライバーの*DispatchDeviceControl*ルーチンは、次のいずれかで行うことができます。
 
@@ -38,7 +38,7 @@ ms.locfileid: "56559011"
 
 -   または、何もしない複数のパラメーターをチェックせず、ポート ドライバーの IRP で I/O スタックの場所を設定し、処理のためのポート ドライバーに渡すこと。
 
-SCSI クラス ドライバーには、デバイス制御要求を処理するための特別な要件があります。 これらの要件の詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
+SCSI クラス ドライバーには、デバイス制御要求を処理するための特別な要件があります。 これらの要件の詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
 
  
 

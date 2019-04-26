@@ -1,17 +1,17 @@
 ---
-title: PwrTest モニターのシナリオ
+title: PwrTest のモニター シナリオ
 description: PwrTest モニターのシナリオでは、ユーザーのアイドル状態のモニターまたは表示の自動暗転と非表示に関連する統計情報を記録します。
 ms.assetid: 8B45C85A-01E8-4256-82F3-097871CB9021
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a9e3a9b439f3888e05ffcbdee460e10f80462c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351790"
 ---
-# <a name="pwrtest-monitor-scenario"></a>PwrTest モニターのシナリオ
+# <a name="pwrtest-monitor-scenario"></a>PwrTest のモニター シナリオ
 
 PwrTest モニターのシナリオでは、ユーザーのアイドル状態のモニターまたは表示の自動暗転と非表示に関連する統計情報を記録します。
 

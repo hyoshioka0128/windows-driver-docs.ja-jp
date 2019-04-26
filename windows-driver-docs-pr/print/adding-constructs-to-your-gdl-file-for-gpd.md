@@ -1,17 +1,17 @@
 ---
-title: GDL ファイル GPD の構成要素を追加します。
-description: GDL ファイル GPD の構成要素を追加します。
+title: GPD の GDL ファイルにコンストラクトを追加する
+description: GPD の GDL ファイルにコンストラクトを追加する
 ms.assetid: a0ce5a46-152f-47f3-9246-c272224d4be9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0808de9030b2089929445403dec6132f79e93464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343170"
 ---
-# <a name="adding-constructs-to-your-gdl-file-for-gpd"></a>GDL ファイル GPD の構成要素を追加します。
+# <a name="adding-constructs-to-your-gdl-file-for-gpd"></a>GPD の GDL ファイルにコンストラクトを追加する
 
 
 自動構成をサポートするには、次の新しいキーワードを使用して GDL ファイルに構造を追加する必要があります。\***BidiQuery**、 \* **QueryString**、 \* **BidiResponse**、 \* **ResponseType**、 \* **ResponseData**、および\* **BidiValue**します。 これらのキーワードを使用して、機能とそのオプションに選択肢の 1 つのオプションに関連付けられている bidi スキーマの要求を指定することができます。

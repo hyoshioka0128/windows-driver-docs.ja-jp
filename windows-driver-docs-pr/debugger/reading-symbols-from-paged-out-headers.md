@@ -1,19 +1,19 @@
 ---
-title: ページアウトのヘッダーからの読み取りシンボル
-description: ページアウトのヘッダーからの読み取りシンボル
+title: ページアウトされたヘッダーからのシンボルの読み取り
+description: ページアウトされたヘッダーからのシンボルの読み取り
 ms.assetid: 74ec20d8-e2b5-449d-8b93-7553c57fac07
 keywords:
 - シンボル、ページ アウト ヘッダーの問題
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 267b6ef8d4ad4a9286e8601146cd056277cd12c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350548"
 ---
-# <a name="reading-symbols-from-paged-out-headers"></a>ページアウトのヘッダーからの読み取りシンボル
+# <a name="reading-symbols-from-paged-out-headers"></a>ページアウトされたヘッダーからのシンボルの読み取り
 
 
 ## <span id="ddk_reading_symbols_from_paged_out_headers_dbg"></span><span id="DDK_READING_SYMBOLS_FROM_PAGED_OUT_HEADERS_DBG"></span>

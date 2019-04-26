@@ -1,16 +1,16 @@
 ---
-title: コンポーネントの INF ファイルを使用します。
+title: コンポーネント INF ファイルの使用
 description: ソフトウェア コンポーネントを使用して、デバイスに固有のユーザー モード ソフトウェアを追加する方法について説明します。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 633023f0187a3ff1d331d1bdf83bad258d125ce1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339438"
 ---
-# <a name="using-a-component-inf-file"></a>コンポーネントの INF ファイルを使用します。
+# <a name="using-a-component-inf-file"></a>コンポーネント INF ファイルの使用
 
 Windows 10 デバイスで使用するためのユーザー モード ソフトウェアを含める場合は、作成するには、次のオプションがある、 [DCHU 準拠ユニバーサル ドライバー](../develop/getting-started-with-universal-drivers.md):
     
@@ -178,9 +178,9 @@ CONTOSO = "Contoso"
 ContosoCtrlPnl.DeviceDesc = "Contoso Control Panel" 
 ```
 
-ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、[Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)を参照してください。
+ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)します。
 
-セットアップ クラスの詳細については、[ベンダー デバイス セットアップ クラスできるベンダー](https://msdn.microsoft.com/library/windows/hardware/ff553426)を参照してください。
+セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://msdn.microsoft.com/library/windows/hardware/ff553426)します。
 
 ## <a name="see-also"></a>参照
 

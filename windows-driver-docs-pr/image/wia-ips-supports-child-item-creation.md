@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1940ad102a88f5195051faeb81026569544740d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343839"
 ---
 # <a name="wiaipssupportschilditemcreation"></a>WIA\_IP\_サポート\_子\_項目\_の作成
 
@@ -37,7 +37,7 @@ WIA\_IP\_サポート\_子\_項目\_作成プロパティは、デバイスが�
 
 項目をサポートする、 [ **WIA\_IP\_セグメンテーション**](wia-ips-segmentation.md)プロパティと、WIA\_使用\_セグメンテーション\_フィルター値にする必要がありますWIA をサポート\_IP\_サポート\_子\_項目\_作成プロパティに設定すること**TRUE**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

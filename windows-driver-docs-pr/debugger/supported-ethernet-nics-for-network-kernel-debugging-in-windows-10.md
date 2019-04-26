@@ -1,17 +1,17 @@
 ---
-title: Windows 10 でのデバッグ ネットワーク カーネルのイーサネット Nic をサポート
+title: Windows 10 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
 description: ターゲット コンピューターで Windows を実行している場合に、イーサネット ネットワーク ケーブル経由でカーネル デバッグを行うことができます。 対象のコンピュータは、サポートされているネットワーク インターフェイス カード (NIC) またはネットワーク アダプターが必要です。
 ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
 ms.date: 12/04/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4653c71d6a736abf7f36a2d713384d0d6478666e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335483"
 ---
-# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 でのデバッグ ネットワーク カーネルのイーサネット Nic をサポート
+# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
 
 ターゲット コンピューターで Windows を実行している場合に、イーサネット ネットワーク ケーブル経由でカーネル デバッグを行うことができます。 対象のコンピュータは、サポートされているネットワーク インターフェイス カード (NIC) またはネットワーク アダプターが必要です。
 

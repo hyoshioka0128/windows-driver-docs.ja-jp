@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e31f9d83928a71628828d6e6416beccd4cf421e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354734"
 ---
-# <a name="displaying-169-video-within-a-43-destination-surface"></a>4:3 変換先の画面内で 16:9 のビデオを表示します。
+# <a name="displaying-169-video-within-a-43-destination-surface"></a>4:3 宛先サーフェス内への 16:9 ビデオの表示
 
 
 ## <span id="ddk_displaying_16_9_video_within_a_4_3_destination_surface_gg"></span><span id="DDK_DISPLAYING_16_9_VIDEO_WITHIN_A_4_3_DESTINATION_SURFACE_GG"></span>

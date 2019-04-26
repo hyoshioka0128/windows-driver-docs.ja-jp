@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b70059e40e3e30233eb1900849181607d0a5cb10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336595"
 ---
 # <a name="fwver"></a>!fwver
 
@@ -62,7 +62,7 @@ ms.locfileid: "56574923"
 
 詳細については、Intel アーキテクチャ マニュアルを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能からの出力の例を次に示します。

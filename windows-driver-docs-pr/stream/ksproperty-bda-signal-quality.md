@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 216aa48c1c0a35f54dae4c20979723b58eba10a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348128"
 ---
 # <a name="kspropertybdasignalquality"></a>KSPROPERTY\_BDA\_信号\_品質
 
@@ -54,7 +54,7 @@ ms.locfileid: "56528215"
 <td><p>〇</p></td>
 <td><p>Pin またはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>

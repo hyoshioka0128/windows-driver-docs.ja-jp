@@ -1,6 +1,6 @@
 ---
-title: 記憶域クラス ドライバー BuildRequest ルーチン
-description: 記憶域クラス ドライバー BuildRequest ルーチン
+title: 記憶域クラス ドライバーの BuildRequest ルーチン
+description: 記憶域クラス ドライバーの BuildRequest ルーチン
 ms.assetid: 2ba26628-4862-440c-b8f1-dd983cf9923b
 keywords:
 - BuildRequest
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a45786810fa0afed81032af4481142dfa7bf87e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339052"
 ---
-# <a name="storage-class-drivers-buildrequest-routine"></a>記憶域クラス ドライバー BuildRequest ルーチン
+# <a name="storage-class-drivers-buildrequest-routine"></a>記憶域クラス ドライバーの BuildRequest ルーチン
 
 
 ## <span id="ddk_storage_class_drivers_buildrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_BUILDREQUEST_ROUTINE_KG"></span>
@@ -39,7 +39,7 @@ A *BuildRequest*ルーチンが、SRB のペアを設定する責任を共有*Se
 
 ほとんどされる Srb 設定クラス ドライバーが読み込まれた後、**関数**メンバー SRB に設定\_関数\_EXECUTE\_SCSI バス経由で送信するデバイスの I/O 要求を示します。
 
-システム定義の SRB メンバーとその値の詳細については、[ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)を参照してください。
+システム定義の SRB メンバーとその値の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)します。
 
 ### <a name="span-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespansetting-up-srbs-for-request-sense"></a><span id="Setting_Up_SRBs_for_Request_Sense"></span><span id="setting_up_srbs_for_request_sense"></span><span id="SETTING_UP_SRBS_FOR_REQUEST_SENSE"></span>要求の意味のされる Srb の設定
 

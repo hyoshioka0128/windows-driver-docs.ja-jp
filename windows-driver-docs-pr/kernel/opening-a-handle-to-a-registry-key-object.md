@@ -1,6 +1,6 @@
 ---
-title: レジストリ キー オブジェクトを識別するハンドルを開く
-description: レジストリ キー オブジェクトを識別するハンドルを開く
+title: レジストリ キー オブジェクトのハンドルを開く
+description: レジストリ キー オブジェクトのハンドルを開く
 ms.assetid: 451e36a1-1cc2-469e-9f54-c02fef7b1666
 keywords:
 - レジストリ WDK カーネルでは、オブジェクトのルーチン
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41051871ed71f806dd6d8f6c8727a19759b97871
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352063"
 ---
-# <a name="opening-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトを識別するハンドルを開く
+# <a name="opening-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルを開く
 
 
 
@@ -73,7 +73,7 @@ ms.locfileid: "56557515"
 
 使用できる値の詳細については、 *DesiredAccess*パラメーターを参照してください[ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)します。
 
-呼び出すこともできます[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)をこれらのレジストリ キーへのハンドルを開く特定のデバイスと、特定のデバイス インターフェイスをそれぞれです。 詳細については、[プラグ アンド プレイ レジストリ ルーチン](plug-and-play-registry-routines.md)を参照してください。
+呼び出すこともできます[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)をこれらのレジストリ キーへのハンドルを開く特定のデバイスと、特定のデバイス インターフェイスをそれぞれです。 詳細については、次を参照してください。[プラグ アンド プレイ レジストリ ルーチン](plug-and-play-registry-routines.md)します。
 
 **注**  への呼び出しに**ZwCreateKey**、 **ZwOpenKey**、 **IoOpenDeviceRegistryKey**、および**IoOpenDeviceInterfaceRegistryKey**、汎用的なアクセス権、ジェネリック\_読み取りとジェネリック\_記述では、キーのキーに固有のアクセス権を意味的に同等です\_読み取りとキー\_書き込み、それぞれ、および、これらのキーに固有のアクセス権の代替として使用できます。
 

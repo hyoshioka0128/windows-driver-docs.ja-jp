@@ -14,11 +14,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 75f89e1a255133e0b23037f7fd6bf630bcf2f669
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339760"
 ---
 # <a name="debugprocessxxx"></a>デバッグ\_プロセス\_XXX
 
@@ -52,7 +52,7 @@ ms.locfileid: "56582615"
 </tbody>
 </table>
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

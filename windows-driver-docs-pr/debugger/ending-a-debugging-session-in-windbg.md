@@ -1,17 +1,17 @@
 ---
-title: WinDbg でデバッグ セッションを終了します。
-description: WinDbg でデバッグ セッションを終了します。
+title: WinDbg のデバッグ セッションの終了
+description: WinDbg のデバッグ セッションの終了
 ms.assetid: 9C19211B-38CC-482B-B69F-B83B29963B3F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3406b5ecef7d23eb740093b99942bfdf382dd182
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340597"
 ---
-# <a name="ending-a-debugging-session-in-windbg"></a>WinDbg でデバッグ セッションを終了します。
+# <a name="ending-a-debugging-session-in-windbg"></a>WinDbg のデバッグ セッションの終了
 
 
 ## <a name="span-idexitingwindbgspanspan-idexitingwindbgspanspan-idexitingwindbgspanexiting-windbg"></a><span id="Exiting_WinDbg"></span><span id="exiting_windbg"></span><span id="EXITING_WINDBG"></span>WinDbg を終了します。
@@ -51,7 +51,7 @@ WinDbg を終了するを選択して**終了**から、**ファイル**メニ�
 
 -   入力、 [ **.abandon (破棄プロセス)** ](-abandon--abandon-process-.md)コマンド。
 
-ターゲットに再アタッチ方法の詳細については、[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)を参照してください。
+ターゲットに再アタッチ方法の詳細については、次を参照してください。[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)します。
 
 ## <a name="span-idendingakernel-modesessionwithoutexitingspanspan-idendingakernel-modesessionwithoutexitingspanspan-idendingakernel-modesessionwithoutexitingspanending-a-kernel-mode-session-without-exiting"></a><span id="Ending_a_Kernel-Mode_Session_Without_Exiting"></span><span id="ending_a_kernel-mode_session_without_exiting"></span><span id="ENDING_A_KERNEL-MODE_SESSION_WITHOUT_EXITING"></span>カーネル モードのセッションを終了する前に終了
 

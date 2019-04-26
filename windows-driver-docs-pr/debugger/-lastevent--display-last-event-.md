@@ -1,5 +1,5 @@
 ---
-title: .lastevent (最後のイベントを表示する)
+title: .lastevent (最後のイベントの表示)
 description: .Lastevent コマンドには、最新の例外または発生したイベントが表示されます。
 ms.assetid: 6f722c22-cb0f-4a10-b719-a168f7ba0943
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fc4137f1aa7b2ed47a26aedaabd990995d15a0eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336197"
 ---
-# <a name="lastevent-display-last-event"></a>.lastevent (最後のイベントを表示する)
+# <a name="lastevent-display-last-event"></a>.lastevent (最後のイベントの表示)
 
 
 **.Lastevent**コマンドは、最新の例外または発生したイベントが表示されます。
@@ -58,7 +58,7 @@ ms.locfileid: "56527997"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-例外とイベントの詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+例外とイベントの詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
 <a name="remarks"></a>注釈
 -------

@@ -1,17 +1,17 @@
 ---
-title: Core のドライバーを使用します。
-description: Core のドライバーを使用します。
+title: コア ドライバーの使用
+description: コア ドライバーの使用
 ms.assetid: 333f3f17-0cdc-48d3-bb30-f8e2d7216d89
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fffa11f020d3233267b23e614e818898019365f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339644"
 ---
-# <a name="using-core-drivers"></a>Core のドライバーを使用します。
+# <a name="using-core-drivers"></a>コア ドライバーの使用
 
 
 ライターの印刷ドライバーが一覧表示する主要なモデル、INF のモデルのセクションでは GUID を使用して作成したコア ドライバーを使用できます、 **PackageAware**と**CoreDriverSections**キーワード。

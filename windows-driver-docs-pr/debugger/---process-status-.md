@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3af3ba4af34516df61e3826e759be964c495f3e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334847"
 ---
-# <a name="-process-status"></a>|(プロセスの状態)
+# <a name="-process-status"></a>| (プロセスの状態)
 
 
 パイプ (**|**) コマンドは、指定したプロセスの状態を表示します。 または、現在デバッグ中のすべてが処理します。
@@ -34,7 +34,7 @@ ms.locfileid: "56558830"
 
 
 <span id="_______Process______"></span><span id="_______process______"></span><span id="_______PROCESS______"></span> *プロセス*   
-表示するプロセスを指定します。 このパラメーターを省略した場合は、デバッグしているすべてのプロセスが表示されます。 構文の詳細については、[プロセス構文](process-syntax.md)を参照してください。
+表示するプロセスを指定します。 このパラメーターを省略した場合は、デバッグしているすべてのプロセスが表示されます。 構文の詳細については、次を参照してください。[プロセス構文](process-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -63,7 +63,7 @@ ms.locfileid: "56558830"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-表示するためのプロセスとスレッドを制御するには、他の方法と詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+表示するためのプロセスとスレッドを制御するには、他の方法と詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 <a name="remarks"></a>注釈
 -------

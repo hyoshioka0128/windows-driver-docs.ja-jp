@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be71b499f13e007b1948fb46d191f13b77c22cbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336706"
 ---
 # <a name="findxmldata"></a>!findxmldata
 
@@ -79,7 +79,7 @@ XML ファイルのチェックサムが表示されます。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-CAB ファイルにダンプ ファイルを配置する方法の詳細については、[ **.dumpcab (ダンプ ファイル CAB の作成)**](-dumpcab--create-dump-file-cab-.md)を参照してください。 CAB ファイルに保存されているダンプ ファイルを含む、カーネル モードのダンプ ファイルをデバッグする方法の詳細については、[カーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file.md)を参照してください。
+CAB ファイルにダンプ ファイルを配置する方法の詳細については、次を参照してください。 [ **.dumpcab (ダンプ ファイル CAB の作成)**](-dumpcab--create-dump-file-cab-.md)します。 CAB ファイルに保存されているダンプ ファイルを含む、カーネル モードのダンプ ファイルをデバッグする方法の詳細については、次を参照してください。[カーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file.md)します。
 
 <a name="remarks"></a>コメント
 -------

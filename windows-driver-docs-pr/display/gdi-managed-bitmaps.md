@@ -1,6 +1,6 @@
 ---
-title: GDI で管理されたビットマップ
-description: GDI で管理されたビットマップ
+title: GDI 管理対象ビットマップ
+description: GDI 管理対象ビットマップ
 ms.assetid: 4b575574-7090-4010-962b-80cac059bfa5
 keywords:
 - レンダリング エンジンの GDI WDK Windows 2000 の表示
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce336f19ea9ecf5376ee974ede0b2963b149cff4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347592"
 ---
-# <a name="gdi-managed-bitmaps"></a>GDI で管理されたビットマップ
+# <a name="gdi-managed-bitmaps"></a>GDI 管理対象ビットマップ
 
 
 ## <span id="ddk_gdi_managed_bitmaps_gg"></span><span id="DDK_GDI_MANAGED_BITMAPS_GG"></span>

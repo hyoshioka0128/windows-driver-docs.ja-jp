@@ -11,11 +11,11 @@ keywords:
 ms.date: 01/02/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f5c5b21ba678ae6d82d6f9de835bd4b805412a14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343986"
 ---
 # <a name="changing-the-friendly-name-of-a-boot-entry"></a>ブート エントリのフレンドリ名の変更
 
@@ -93,7 +93,7 @@ Bootcfg でエントリをコピー中にのみ、ブート エントリのフ�
 bootcfg /copy /ID 1 /d "Windows 10 Debug"
 ```
 
-Bootcfg を使用して完全な手順については、ヘルプとサポート サービスを参照してください。 例については、[ブート パラメーターを使用して](using-boot-parameters.md)を参照してください。
+Bootcfg を使用して完全な手順については、ヘルプとサポート サービスを参照してください。 例については、次を参照してください。[ブート パラメーターを使用して](using-boot-parameters.md)します。
 
 ## <a name="span-ideditingthebootinifilespanspan-ideditingthebootinifilespanediting-the-bootini-file"></a><span id="editing_the_boot_ini_file"></span><span id="EDITING_THE_BOOT_INI_FILE"></span>Boot.ini ファイルの編集
 

@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2355ff00e776403108f1f480b2b04a6965927956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336181"
 ---
 # <a name="logappend-append-log-file"></a>.logappend (ログ ファイルの追加)
 
@@ -68,7 +68,7 @@ ms.locfileid: "56579868"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ファイルを開くログがあれば実行すると、 **.logappend**コマンド、デバッガーが、ログ ファイルを閉じます。 既に存在するファイルの名前を指定する場合、デバッガーは、ファイルに新しい情報を追加します。 ファイルが存在しない場合、デバッガーが作成されます。

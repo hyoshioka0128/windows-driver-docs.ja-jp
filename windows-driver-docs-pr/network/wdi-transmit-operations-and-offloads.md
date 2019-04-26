@@ -5,11 +5,11 @@ ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30d215fbc9906b339d82d4d734636fb0472eed49
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342905"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 送信操作とオフロード
 
@@ -46,7 +46,7 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
 <td align="left"><p>チェックサムは、LSO します。</p></td>
 <td align="left"><p>チェックサムは、起動時の構成可能なオフロードです。 各フレームでは、適用可能なチェックサム演算を指定するフラグには。</p>
 <p>WDI は、該当する場合ですか?/ターゲットから透過的に LSO セグメント化を処理します。</p></td>
-<td align="left"><p>チェックサム。ターゲット WDI にそのチェックサム オフロード機能の一部として渡すデバイス キャップ bringup 中にします。 機能については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>を参照してください。</p>
+<td align="left"><p>チェックサム。ターゲット WDI にそのチェックサム オフロード機能の一部として渡すデバイス キャップ bringup 中にします。 機能については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>します。</p>
 <p>WDI は、該当する場合ですか?/ターゲットから透過的に LSO セグメント化を処理します。</p></td>
 </tr>
 <tr class="even">
@@ -153,7 +153,7 @@ WDI は、2 つの Tx モードのいずれかで動作します。ポートの�
     <tr><td>住所 2</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
     <tr><td>住所 3</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
     <tr><td>シーケンス コントロール</td><td>フラグメントの数</td><td>x</td><td></td><td></td><td>x</td></tr>
-    <tr><td>シーケンス コントロール</td><td>シーケンス番号</td><td></td><td>x</td><td></td><td>x</td></tr>
+    <tr><td>シーケンス コントロール</td><td>Sequence Number</td><td></td><td>x</td><td></td><td>x</td></tr>
     <tr><td>アドレス 4</td><td></td><td>x</td><td></td><td>x</td><td></td></tr>
     <tr><td>QoS 制御</td><td></td><td></td><td>/設定対象で入力追加します。</td><td></td><td>追加/によって設定されます 11n QoS 関連の場合のターゲット。</td></tr>
     <tr><td>HT コントロール</td><td></td><td></td><td>/設定対象で入力追加します。</td><td></td><td>/設定対象で入力追加します。</td></tr>

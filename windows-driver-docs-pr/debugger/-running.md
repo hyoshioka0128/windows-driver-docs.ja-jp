@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be23896e3bb75514251c78d37c3e5359400aed6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338861"
 ---
-# <a name="running"></a>! を実行しています。
+# <a name="running"></a>!running
 
 
 **! を実行している**拡張機能は、ターゲット コンピューターのすべてのプロセッサで実行中のスレッド一覧を表示します。
@@ -60,7 +60,7 @@ ms.locfileid: "56549150"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-マルチプロセッサ コンピューターのデバッグの詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。
+マルチプロセッサ コンピューターのデバッグの詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。
 
 <a name="remarks"></a>注釈
 -------

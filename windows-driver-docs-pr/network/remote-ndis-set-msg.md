@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_SET_MSG
-Description: This message is sent to a Remote NDIS device from a host, when it requires to set the value of some operational parameter on the device.
+Description: このメッセージは、デバイスにいくつかのオペレーションのパラメーターの値を設定するために必要なときに、ホストからリモートの NDIS デバイスに送信されます。
 ms.assetid: d39032e2-e3a5-415f-8bd6-b60b9049ce33
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d730f462919a074f85f869d042480ccace052066
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343184"
 ---
 # <a name="remotendissetmsg"></a>リモート\_NDIS\_設定\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56574685"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000005 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -79,7 +79,7 @@ ms.locfileid: "56574685"
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

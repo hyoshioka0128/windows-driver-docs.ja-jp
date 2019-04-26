@@ -1,6 +1,6 @@
 ---
-title: 記憶域クラス ドライバーのデバイスの拡張機能の設定
-description: 記憶域クラス ドライバーのデバイスの拡張機能の設定
+title: 記憶域クラス ドライバーのデバイス拡張の設定
+description: 記憶域クラス ドライバーのデバイス拡張の設定
 ms.assetid: 9d050d23-39c0-406e-9f4b-2e95d388f5cf
 keywords:
 - 記憶域クラス ドライバー WDK、デバイスの拡張機能
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 171e371d910fd0bb30073fac79f818746a974488
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341196"
 ---
-# <a name="setting-up-a-storage-class-drivers-device-extension"></a>記憶域クラス ドライバーのデバイスの拡張機能の設定
+# <a name="setting-up-a-storage-class-drivers-device-extension"></a>記憶域クラス ドライバーのデバイス拡張の設定
 
 
 ## <span id="ddk_setting_up_a_storage_class_drivers_device_extension_kg"></span><span id="DDK_SETTING_UP_A_STORAGE_CLASS_DRIVERS_DEVICE_EXTENSION_KG"></span>
@@ -37,7 +37,7 @@ ms.locfileid: "56528536"
 
 -   センス データ用のドライバーに割り当てられたバッファーへのポインター
 
-    クラス ドライバーは、キャッシュで固定された、非ページ プールから返される検出データのメモリを割り当てる必要があります。 ドライバーのバッファーのメモリの割り当ての詳細については、[システム容量のメモリを割り当てる](https://msdn.microsoft.com/library/windows/hardware/ff540588)を参照してください。
+    クラス ドライバーは、キャッシュで固定された、非ページ プールから返される検出データのメモリを割り当てる必要があります。 ドライバーのバッファーのメモリの割り当ての詳細については、次を参照してください。[システム容量のメモリを割り当てる](https://msdn.microsoft.com/library/windows/hardware/ff540588)します。
 
 -   ドライバーにより決定された既定値を**SrbFlags**される Srb のクラス ドライバーを設定します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "56528536"
 
 -   ポインター、 [**ストレージ\_アダプター\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566346)と[**ストレージ\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566971)ポート ドライバーは HBA から収集されたデータ
 
-    クラス ドライバーが取得してこのデータを使用する方法については、[記憶域クラス ドライバーいる出力ルーチン](storage-class-driver-s-getdescriptor-routine.md)を参照してください。
+    クラス ドライバーが取得してこのデータを使用する方法については、次を参照してください。[記憶域クラス ドライバーいる出力ルーチン](storage-class-driver-s-getdescriptor-routine.md)します。
 
 -   フラグの状態を示す、以前と現在 PnP、デバイスの状態間の遷移を管理するには
 

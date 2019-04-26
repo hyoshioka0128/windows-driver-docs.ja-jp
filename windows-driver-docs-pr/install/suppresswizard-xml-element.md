@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 72c24e2bbd3ea296555b4563294ae229dd022233
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339636"
 ---
 # <a name="suppresswizard-xml-element"></a>suppressWizard XML 要素
 
@@ -65,7 +65,7 @@ ms.locfileid: "56557934"
 
  
 
-**「解説」**
+**注釈**
 
 既定で、 **suppressWizard**フラグが OFF に設定します。 設定することができます、 **suppressWizard**を ON にフラグを含めることによって、 **suppressWizard** XML 要素の子要素として、 **dpinst** DPInst 記述子ファイル、またはを使用して XML 要素 **/sw** コマンド ライン スイッチ。 **SuppressWizard**フラグの連携、 **suppressEulaPage**フラグ。
 

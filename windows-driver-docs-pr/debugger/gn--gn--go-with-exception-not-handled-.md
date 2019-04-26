@@ -1,5 +1,5 @@
 ---
-title: gn、gN (Go 処理されない例外を使用)
+title: gn、gN (例外処理なしで実行)
 description: Gn と gN コマンド、例外が処理済みとしてマークすることがなく特定のスレッドの実行を続行します。 これにより、アプリケーションの例外のハンドラーが例外を処理できます。
 ms.assetid: b6f69882-b30a-45b7-b777-1b4857719e7f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab11fa4e087cce9bb0448eee10dff4e95e551d46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342063"
 ---
-# <a name="gn-gn-go-with-exception-not-handled"></a>gn、gN (Go 処理されない例外を使用)
+# <a name="gn-gn-go-with-exception-not-handled"></a>gn、gN (例外処理なしで実行)
 
 
 **Gn**と**gN**コマンドは、例外が処理済みとしてマークすることがなく特定のスレッドの実行を続行します。 これにより、アプリケーションの例外のハンドラーが例外を処理できます。
@@ -42,16 +42,16 @@ gN[a] [= StartAddress] [BreakAddress ... [; BreakCommands]]
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-(ユーザー モードのみ)スレッドの実行を指定します。 このスレッドは、例外によって停止している必要があります。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+(ユーザー モードのみ)スレッドの実行を指定します。 このスレッドは、例外によって停止している必要があります。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 <span id="_______a______"></span><span id="_______A______"></span> **A**   
 プロセッサのブレークポイントにするには、このコマンドによって作成されたすべてのブレークポイントの発生 (などによって作成された[ **ba**](ba--break-on-access-.md)) ソフトウェア ブレークポイントではなく (などによって作成された[ **bp** ](bp--bu--bm--set-breakpoint-.md)と**bm**)。 場合*BreakAddress*が指定されていない、ブレークポイントは作成されません、 **、** フラグが影響を与えません。
 
 <span id="_______StartAddress______"></span><span id="_______startaddress______"></span><span id="_______STARTADDRESS______"></span> *StartAddress*   
-実行を開始するアドレスを指定します。 これが指定されていない、デバッガーは実行をアドレス通過し、例外が発生します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+実行を開始するアドレスを指定します。 これが指定されていない、デバッガーは実行をアドレス通過し、例外が発生します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span> *BreakAddress*   
-ブレークポイントを設定するアドレスを指定します。 場合*BreakAddress*指定すると、命令アドレスを指定する必要があります (つまり、アドレス必要命令の最初のバイトがあります)。 最大 10 個の区切りは、任意の順序でのアドレスを一度に 1 つ指定できます。 場合*BreakAddress*解決できないとして格納されて、[未解決ブレークポイント](unresolved-breakpoints---bu-breakpoints-.md)します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+ブレークポイントを設定するアドレスを指定します。 場合*BreakAddress*指定すると、命令アドレスを指定する必要があります (つまり、アドレス必要命令の最初のバイトがあります)。 最大 10 個の区切りは、任意の順序でのアドレスを一度に 1 つ指定できます。 場合*BreakAddress*解決できないとして格納されて、[未解決ブレークポイント](unresolved-breakpoints---bu-breakpoints-.md)します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______BreakCommands______"></span><span id="_______breakcommands______"></span><span id="_______BREAKCOMMANDS______"></span> *BreakCommands*   
 ブレークポイントが指定されたときに自動的に実行する 1 つまたは複数のコマンドを指定します*BreakAddress*にヒットします。 *BreakCommands*パラメーターの先頭にセミコロンする必要があります。 複数*BreakAddress*値を指定すると、 *BreakCommands*それらすべてに適用されます。

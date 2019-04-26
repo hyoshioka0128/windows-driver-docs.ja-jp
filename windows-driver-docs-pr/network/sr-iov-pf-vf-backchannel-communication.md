@@ -1,17 +1,17 @@
 ---
-title: SR-IOV PF/VF のバック チャネル通信
-description: SR-IOV PF/VF のバック チャネル通信
+title: SR-IOV PF/VF バックチャネル通信
+description: SR-IOV PF/VF バックチャネル通信
 ms.assetid: 66D40452-1286-449E-BD6B-AFAD466E03A1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1416a113c4563a2c54963b5fc4930d9175cc88c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346038"
 ---
-# <a name="sr-iov-pfvf-backchannel-communication"></a>SR-IOV PF/VF のバック チャネル通信
+# <a name="sr-iov-pfvf-backchannel-communication"></a>SR-IOV PF/VF バックチャネル通信
 
 
 シングル ルート I/O 仮想化 (SR-IOV) のインターフェイスは、通信チャネルを提供します。 または*backchannel*、ミニポート ドライバー、PCI Express (PCIe) 仮想機能 (VF) と PCIe 物理機能 (PF) の間。 各 VF ミニポート ドライバーは、PF ミニポート ドライバーに、バック チャネル経由で要求を発行できます。 PF のミニポート ドライバーは、個々 の VF のミニポート ドライバーのバック チャネル経由で状態の通知を発行できます。

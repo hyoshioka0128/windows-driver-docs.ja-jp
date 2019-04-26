@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d2cd6116ac3d69a4e5c8c0076c699a4fd6b452e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335457"
 ---
 # <a name="t-trace"></a>t (トレース)
 
@@ -40,7 +40,7 @@ t [r] [= StartAddress] [Count] ["Command"]
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-スレッドの凍結を解除するを指定します。 その他のすべてのスレッドが固定されています。 この構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。 スレッドは、ユーザー モードでのみ指定できます。
+スレッドの凍結を解除するを指定します。 その他のすべてのスレッドが固定されています。 この構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。 スレッドは、ユーザー モードでのみ指定できます。
 
 <span id="_______r______"></span><span id="_______R______"></span> **r**   
 オンとオフのレジスタとフラグの表示を切り替えます。 既定では、レジスタとフラグが表示されます。 使用して登録の表示を無効にすることができます、 [ **pr**](p--step-.md)、 **tr**、または .prompt\_-reg コマンドを許可します。 これらのコマンドの 3 つすべてが同じ設定を制御し、これらのいずれかを使用して、すべて以前を使用してこれらのコマンドを上書きすることができます。
@@ -48,7 +48,7 @@ t [r] [= StartAddress] [Count] ["Command"]
 L os コマンドを使用して登録表示無効にすることもできます。 この設定は、その他の 3 つのコマンドとは別です。 コントロールのどのレジスタとフラグが表示される、使用する、 [ **rm (登録マスク)** ](rm--register-mask-.md)コマンド。
 
 <span id="_______StartAddress______"></span><span id="_______startaddress______"></span><span id="_______STARTADDRESS______"></span> *StartAddress*   
-実行を開始するアドレスを指定します。 使用しない場合*StartAddress*命令を命令ポインターが指すから実行が開始します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+実行を開始するアドレスを指定します。 使用しない場合*StartAddress*命令を命令ポインターが指すから実行が開始します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span> *カウント*   
 指示または停止する前にトレースするソース行の数を指定します。 別のアクションとして各ステップが表示されます、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。 既定値は、1 つ。

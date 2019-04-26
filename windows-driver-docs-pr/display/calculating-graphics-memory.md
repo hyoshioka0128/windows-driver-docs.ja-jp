@@ -1,17 +1,17 @@
 ---
-title: グラフィックス メモリを計算します。
-description: グラフィックス メモリを計算します。
+title: グラフィックス メモリの計算
+description: グラフィックス メモリの計算
 ms.assetid: 030a332b-d1f0-4a86-b11f-cfd2fbe42ac2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5933d95cb8549bf4cc8e10e940c6d5b2142f3ee1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341586"
 ---
-# <a name="calculating-graphics-memory"></a>グラフィックス メモリを計算します。
+# <a name="calculating-graphics-memory"></a>グラフィックス メモリの計算
 
 
 ビデオ メモリ マネージャーは、グラフィックス メモリの正確なアカウントを報告する前に、グラフィックス メモリの総量を計算する必要があります。 次の項目の一覧では、ビデオ メモリ マネージャーがグラフィックス メモリの数値を計算する方法について説明します。

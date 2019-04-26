@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6b49e3e617a786d7e19be273bdb2d5768d54e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340118"
 ---
 # <a name="wmv8a-wmv8b-wmv9a-wmv9b-and-wmv9c"></a>WMV8\_、WMV8\_B、WMV9\_、WMV9\_B、および WMV9\_C
 

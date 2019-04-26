@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5baa68d958e495a31633cf1d15936c6e7d1becd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349064"
 ---
 # <a name="debugrequestgetadditionalcreateoptions-control-code"></a>デバッグ\_要求\_取得\_追加\_作成\_オプションは、コードを制御します。
 
@@ -28,7 +28,7 @@ ms.locfileid: "56528392"
 
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-使用されません。
+使用されていません。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 既定のプロセス作成のオプション。 プロセスの作成オプションの種類は[**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)します。

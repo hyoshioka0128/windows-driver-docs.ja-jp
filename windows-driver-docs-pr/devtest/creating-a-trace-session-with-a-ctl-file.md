@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc6cf38da8435feff70cbd7a554dea11f496d00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339736"
 ---
 # <a name="creating-a-trace-session-with-a-ctl-file"></a>CTL ファイルでのトレース セッションの作成
 
@@ -47,7 +47,7 @@ ms.locfileid: "56571926"
 
 10. [詳細トレース セッションのオプションを設定する](setting-advanced-trace-session-options.md)必要な場合、します。
 
-11. **[完了]** をクリックします。
+11. **[Finish]**(完了) をクリックします。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
@@ -59,7 +59,7 @@ Traceview では、トレース プロバイダーを TMF ファイルを見つ�
 
 コントロールの GUID をトレース セッションを作成するときに使用できます、**トレース フラグとレベル選択** ダイアログ ボックス (に記載されている[フラグを選択してレベル](selecting-flags-and-levels.md)) traceview でがときに、PDB に見つけることができますのみシンボル ファイルは、プロバイダー、または (TMF 検索パスの設定オプションを使用して指定された) TMF パス、プロバイダーのトレース メッセージのコントロール (.tmc) ファイルを検索できます。
 
-TMC ファイルが利用できない場合することができます、トレース フラグとレベルのプロバイダーの設定に手動で、**トレース セッション オプションの高度な** ダイアログ ボックス。 手順については、[トレース セッション オプションの高度な設定](setting-advanced-trace-session-options.md)を参照してください。
+TMC ファイルが利用できない場合することができます、トレース フラグとレベルのプロバイダーの設定に手動で、**トレース セッション オプションの高度な** ダイアログ ボックス。 手順については、次を参照してください。[トレース セッション オプションの高度な設定](setting-advanced-trace-session-options.md)します。
 
 TMF ファイルを指定する方法の詳細については、TMF ファイルの選択および TMF 検索パスの設定を参照してください。
 

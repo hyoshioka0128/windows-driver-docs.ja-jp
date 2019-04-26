@@ -1,17 +1,17 @@
 ---
-title: ラップトップ/スレート モードの状態の切り替え
+title: ノート PC/スレート モードの状態の切り替え
 description: このトピックでには、ラップトップ/スレート モードのインジケーターの状態を切り替えるためのサンプル コードが含まれています。
 ms.assetid: C5D9B586-EED7-4DC7-8BFF-3AB3A972307D
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e35e21cb956921d870384b8aa76a08a201b518ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344596"
 ---
-# <a name="laptopslate-mode-toggling-between-states"></a>ラップトップ/スレート モードの状態の切り替え
+# <a name="laptopslate-mode-toggling-between-states"></a>ノート PC/スレート モードの状態の切り替え
 
 
 このトピックでには、ラップトップ/スレート モードのインジケーターの状態を切り替えるためのサンプル コードが含まれています。

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d9699254771ad1784fd6009d97c46639f41ad429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336645"
 ---
 # <a name="foreachfunction"></a>! の\_各\_関数
 
@@ -52,8 +52,8 @@ ms.locfileid: "56529804"
 <thead>
 <tr class="header">
 <th align="left">Alias</th>
-<th align="left">データの種類</th>
-<th align="left">Value</th>
+<th align="left">データ型</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

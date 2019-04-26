@@ -1,19 +1,19 @@
 ---
-title: デバイス メタデータの作成ウィザードでデバイスのアイコンを選択します。
-description: デバイス メタデータの作成ウィザードでデバイスのアイコンを選択します。
+title: デバイス メタデータ作成ウィザードでのデバイス アイコンの選択
+description: デバイス メタデータ作成ウィザードでのデバイス アイコンの選択
 ms.assetid: D66A6141-87DA-49E6-9634-705D279C5E97
 keywords:
-- デバイス メタデータの作成ウィザードでデバイスのアイコンを選択します。
+- デバイス メタデータ作成ウィザードでのデバイス アイコンの選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ceb7ea2f11c991a1d25efedb502a5ca160dfdbcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340132"
 ---
-# <a name="select-device-icon-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータの作成ウィザードでデバイスのアイコンを選択します。
+# <a name="select-device-icon-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのデバイス アイコンの選択
 
 
 Windows でのデバイスについて表示されるアイコンを指定することができます。 透過的なアイコンがあります背景および縁を滑らかにします。 次の形式とサイズ要件も満たす必要があります。

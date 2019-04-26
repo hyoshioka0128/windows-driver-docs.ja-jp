@@ -1,6 +1,6 @@
 ---
-title: 複数の行列による頂点のブレンド
-description: 複数の行列による頂点のブレンド
+title: マルチマトリックス頂点ブレンド
+description: マルチマトリックス頂点ブレンド
 ms.assetid: d7348609-324d-4852-b217-4c298b8aaab7
 keywords:
 - 貸出 WDK Direct3D
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef426d08b1e3e987abbf4763805faa93a7602eb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345648"
 ---
-# <a name="multimatrix-vertex-blending"></a>複数の行列による頂点のブレンド
+# <a name="multimatrix-vertex-blending"></a>マルチマトリックス頂点ブレンド
 
 
 ## <span id="ddk_multimatrix_vertex_blending_gg"></span><span id="DDK_MULTIMATRIX_VERTEX_BLENDING_GG"></span>
@@ -44,7 +44,7 @@ ms.locfileid: "56530275"
 
 すべてのアクティブなワールド行列を使用して指定された頂点の位置データを変換し、結果は、対応する頂点の重みを使用してブレンドされました。
 
-頂点内で通常すべて存在するのと同じ手順が実行されます。 これには、1 つの頂点 (位置、または通常) し、従来の照明とクリッピングのパイプラインの残りの部分にフィードバックするが生成されます。 詳細については、[Multimatrix 頂点ブレンディング アルゴリズム](multimatrix-vertex-blending-algorithm.md)を参照してください。
+頂点内で通常すべて存在するのと同じ手順が実行されます。 これには、1 つの頂点 (位置、または通常) し、従来の照明とクリッピングのパイプラインの残りの部分にフィードバックするが生成されます。 詳細については、次を参照してください。 [Multimatrix 頂点ブレンディング アルゴリズム](multimatrix-vertex-blending-algorithm.md)します。
 
 多くの場合、文字は、シーンの多角形の大部分を含めることができます、主要なパフォーマンスの問題になります。 Smooth スキニングも処理しないジオメトリのパイプラインは、大部分のコンテンツで、問題になります。
 

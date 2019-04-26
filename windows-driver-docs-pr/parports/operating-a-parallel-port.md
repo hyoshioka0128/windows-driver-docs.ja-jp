@@ -1,6 +1,6 @@
 ---
-title: パラレル ポートの動作
-description: パラレル ポートの動作
+title: パラレル ポートの操作
+description: パラレル ポートの操作
 ms.assetid: c9015a01-a7cb-41f4-9710-a868ef19f6d7
 keywords:
 - ベンダーから提供された並列ドライバー WDK、パラレル ポート操作
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 826f1999e1edfea550c8b96e1dec1a262b3870e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339103"
 ---
-# <a name="operating-a-parallel-port"></a>パラレル ポートの動作
+# <a name="operating-a-parallel-port"></a>パラレル ポートの操作
 
 
 
@@ -45,7 +45,7 @@ ms.locfileid: "56553600"
 
 [ParallelPorts とデバイスの概要](introduction-to-parallel-ports-and-devices.md)
 
-[システム提供平行ドライバー](system-supplied-parallel-drivers.md)
+[システム提供のパラレル ドライバー](system-supplied-parallel-drivers.md)
 
 [システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
 

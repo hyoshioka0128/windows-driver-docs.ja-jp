@@ -1,5 +1,5 @@
 ---
-title: .abandon (電話放棄呼プロセス)
+title: .abandon (プロセスの破棄)
 description: .Abandon コマンドでは、デバッグ セッションを終了が、対象のアプリケーション デバッグ状態のままにします。 これは、休止モードにデバッガーを返します。
 ms.assetid: e44ae9b8-b6a2-4648-911d-61ff3c94527c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f5227a6f1aaa507204ddf470c718241671895f07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334832"
 ---
-# <a name="abandon-abandon-process"></a>.abandon (電話放棄呼プロセス)
+# <a name="abandon-abandon-process"></a>.abandon (プロセスの破棄)
 
 
 **.Abandon**コマンドはデバッグ セッションを終了しますが、対象のアプリケーション デバッグ状態のままになります。 これは、休止モードにデバッガーを返します。

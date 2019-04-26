@@ -5,11 +5,11 @@ ms.assetid: 073D9854-0F51-4518-A22B-0A0546694E30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63f4bc21850570653114833098d2a548f622140c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352634"
 ---
 # <a name="spb-connection-locks"></a>SPB 接続のロック
 
@@ -51,7 +51,7 @@ SpbCx の現在の実装では、接続のロックの主な用途は、Acpi.sys
 
 バスのアトミック操作として一連のデータ転送を実行するクライアントが通常使用して、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求。 バスのアトミック操作を実行するあまり一般的な方法は、コント ローラーのロックを使用してです。 クライアントが送信[ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858)と[ **IOCTL\_SPB\_ロックの解除\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)取得と解放コント ローラーのロックを要求します。
 
-コント ローラーのロックは、接続のロックとは異なります。 コント ローラーのロックは、I/O と転送の対象となるデバイスから、バスのバスの単一のアトミック操作として実行するシーケンスを使用できます。 コント ローラーのロックが有効では、コント ローラーのロックが解放されるまで、バス上にまたは他のデバイスからの転送が遅延します。 詳細については、[Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)を参照してください。
+コント ローラーのロックは、接続のロックとは異なります。 コント ローラーのロックは、I/O と転送の対象となるデバイスから、バスのバスの単一のアトミック操作として実行するシーケンスを使用できます。 コント ローラーのロックが有効では、コント ローラーのロックが解放されるまで、バス上にまたは他のデバイスからの転送が遅延します。 詳細については、次を参照してください。 [Bus のアトミック操作](https://msdn.microsoft.com/library/windows/hardware/jj850339)します。
 
 **注**  一部の実装で接続ロックできない場合があります、副作用として転送バス上の他のデバイスにします。 ただし、この動作は実装に依存して、クライアント ドライバーがそれに依存する必要があります。 これに対し、コント ローラーのロックがコント ローラーのロックを保持する、クライアントと同じターゲット デバイスへのアクセスを別のクライアントを確実に防止し、クライアントに安全にこの動作に依存します。
 

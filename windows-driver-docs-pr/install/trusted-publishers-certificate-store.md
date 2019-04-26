@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e1d715f3222a5468c134e5230b183d8d6374973
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339527"
 ---
 # <a name="trusted-publishers-certificate-store"></a>信頼された発行元の証明書ストア
 
@@ -36,7 +36,7 @@ Windows をインストール、発行元の Authenticode 証明書が信頼さ�
 
 使用して Authenticode 証明書をコンピューターの信頼された発行元証明書ストアに手動でインストールすることができます、 [ **CertMgr** ](https://msdn.microsoft.com/library/windows/hardware/ff543411)ツール。
 
-**注**  ドライバーのプラグ アンド プレイによって使用される認証ポリシーの署名は、CA の Authenticode 証明書が信頼された発行元の証明書ストアのローカル コンピューターのバージョンで以前にインストールされている必要があります。 詳細については、[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)を参照してください。
+**注**  ドライバーのプラグ アンド プレイによって使用される認証ポリシーの署名は、CA の Authenticode 証明書が信頼された発行元の証明書ストアのローカル コンピューターのバージョンで以前にインストールされている必要があります。 詳細については、次を参照してください。[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)します。
 
  
 

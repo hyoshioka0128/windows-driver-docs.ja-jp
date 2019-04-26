@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f635661505a0a8249b061feebf124e41fc0e8e58
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339871"
 ---
 # <a name="option-attributes-for-the-colormode-feature"></a>ColorMode 機能のオプション属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "57463858"
 
 
 
-次の表は、返さ機能に関連付けられている属性を一覧表示します。 返さ機能の詳細については、[標準機能](standard-features.md)を参照してください。
+次の表は、返さ機能に関連付けられている属性を一覧表示します。 返さ機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
 
 <table>
 <colgroup>
@@ -89,9 +89,9 @@ ms.locfileid: "57463858"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
-追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
+追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
 
 参照してください[画質を制御する](controlling-image-quality.md)します。
 

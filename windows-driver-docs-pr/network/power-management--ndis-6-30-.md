@@ -5,11 +5,11 @@ ms.assetid: 2A7F6BD2-6C2F-4B28-92BD-29DC4928624A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e60ea21a0a19f9a4b3a7cecc464c5a4be90a77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342946"
 ---
 # <a name="power-management-ndis-630"></a>電源管理 (NDIS 6.30)
 
@@ -24,7 +24,7 @@ ms.locfileid: "56574593"
 
 [NDIS ウェイク理由状態インジケーター](ndis-wake-reason-status-indications.md)
 
-**注**  NDIS 6.30 電源管理のインターフェイスは、NDIS 6.20 電源管理のインターフェイスの拡張機能です。 NDIS 6.20 電源管理のインターフェイスの詳細については、[電源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)を参照してください。
+**注**  NDIS 6.30 電源管理のインターフェイスは、NDIS 6.20 電源管理のインターフェイスの拡張機能です。 NDIS 6.20 電源管理のインターフェイスの詳細については、次を参照してください。[電源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)します。
 
  
 

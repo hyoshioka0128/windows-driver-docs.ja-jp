@@ -1,5 +1,5 @@
 ---
-title: .readmem (ファイルから読み取りメモリ)
+title: .readmem (ファイルからメモリを読み込む)
 description: .Readmem コマンドでは、指定したファイルから生のバイナリ データを読み取るし、対象のコンピュータのメモリにデータをコピーします。
 ms.assetid: 128cbea1-5fb5-4685-8587-f814f94cc658
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a23efb0889cccf1ab13cc167866222c4701306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338931"
 ---
-# <a name="readmem-read-memory-from-file"></a>.readmem (ファイルから読み取りメモリ)
+# <a name="readmem-read-memory-from-file"></a>.readmem (ファイルからメモリを読み込む)
 
 
 **.Readmem**コマンドが指定したファイルから生のバイナリ データを読み取るし、ターゲット コンピューターのメモリにデータをコピーします。
@@ -35,7 +35,7 @@ ms.locfileid: "56549619"
 読み取るファイルの名前を指定します。 完全なパスまたはファイル名のみを指定することができます。 ファイル名にスペースが含まれている場合は、囲む*FileName*引用符で囲んで指定します。 パスを指定しない場合、デバッガーには、現在のディレクトリが使用されます。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-メモリ内のデータを格納するためのアドレス範囲を指定します。 このパラメーターは、開始と終了アドレスまたは開始アドレスと、オブジェクトの数に含めることができます。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+メモリ内のデータを格納するためのアドレス範囲を指定します。 このパラメーターは、開始と終了アドレスまたは開始アドレスと、オブジェクトの数に含めることができます。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

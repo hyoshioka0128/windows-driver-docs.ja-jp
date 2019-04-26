@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 34b0e8fe39749ce5a29d1ff0cd3f1417296f3b44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337198"
 ---
 # <a name="extmatch-display-all-matching-extensions"></a>.extmatch (一致するすべての拡張機能の表示)
 
@@ -44,7 +44,7 @@ ms.locfileid: "56556719"
 使用して、出力が表示されます。[デバッガー マークアップ言語 (DML)](debugger-markup-language-commands.md)します。 出力では、表示されている各拡張機能は、拡張機能の詳細を取得するクリックできるリンクです。 すべての拡張機能モジュールでは、DML をサポートします。
 
 <span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *パターン*   
-拡張機能を含める必要があるパターンを指定します。 *パターン*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+拡張機能を含める必要があるパターンを指定します。 *パターン*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

@@ -5,11 +5,11 @@ ms.assetid: f7f7a42a-590e-4f81-b325-ba9f9ffa9664
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59a4112f2dee1d23457d4d1fa3480a7eac758740
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339674"
 ---
 # <a name="32-bit-and-64-bit-wia-interoperability"></a>32 ビットおよび 64 ビットの WIA 相互運用性
 

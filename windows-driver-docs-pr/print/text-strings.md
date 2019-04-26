@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f32e1065a3e4562bbb7f561709e913c0df3a3cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342259"
 ---
 # <a name="text-strings"></a>テキスト文字列
 
@@ -59,7 +59,7 @@ ms.locfileid: "56551747"
 
 リソース ファイルで定義された文字列に関連する追加の規則では、Microsoft Windows sdk で STRINGTABLE ステートメントの説明を参照してください。
 
-プリンター コマンドのエスケープ シーケンスを指定する方法については、[コマンド文字列の形式](command-string-format.md)を参照してください。
+プリンター コマンドのエスケープ シーケンスを指定する方法については、次を参照してください。[コマンド文字列の形式](command-string-format.md)します。
 
  
 

@@ -5,16 +5,16 @@ ms.assetid: 46394916-6558-4BDA-8920-E3C5378823BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 916a50af47ca454e754ab8d32d52c5ddbca53d09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343540"
 ---
 # <a name="managing-port-policies"></a>ポート ポリシーの管理
 
 
-HYPER-V 拡張可能スイッチのフィルター処理および転送拡張機能は、標準とカスタム ポートのプロパティのプロパティでプロビジョニングできます。 プロビジョニング完了すると、これらの拡張機能は、拡張可能スイッチのイングレス データ パス取得したパケットをフィルター処理するときに、ポリシーを適用できます。 これらのポリシーの詳細については、[ポート ポリシー](port-policies.md)を参照してください。
+HYPER-V 拡張可能スイッチのフィルター処理および転送拡張機能は、標準とカスタム ポートのプロパティのプロパティでプロビジョニングできます。 プロビジョニング完了すると、これらの拡張機能は、拡張可能スイッチのイングレス データ パス取得したパケットをフィルター処理するときに、ポリシーを適用できます。 これらのポリシーの詳細については、次を参照してください。[ポート ポリシー](port-policies.md)します。
 
 HYPER-V 拡張可能スイッチのインターフェイスは、ポートを標準とカスタム ポリシーのプロパティをフィルター処理と転送拡張機能をプロビジョニングするのに次のオブジェクト識別子 (Oid) を使用します。
 

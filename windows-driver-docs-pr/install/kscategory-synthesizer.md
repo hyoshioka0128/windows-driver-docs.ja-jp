@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3c182cb446cf0ea2d4517ac3a939b91ea7e7f2df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343795"
 ---
 # <a name="kscategorysynthesizer"></a>KSCATEGORY_SYNTHESIZER
 
@@ -58,9 +58,9 @@ KS オーディオ アダプター デバイス用のドライバーでは、オ
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください、 *Ddksynth.inf* INF ファイルでのソフトウェアのシンセサイザー サンプルに含まれている、 *src\\オーディオ\\ddksynth。* WDK のディレクトリ。
 
-シンセサイザーの詳細については、[MIDI と DirectMusic フィルター](https://msdn.microsoft.com/library/windows/hardware/ff537520)を参照してください。
+シンセサイザーの詳細については、次を参照してください。 [MIDI と DirectMusic フィルター](https://msdn.microsoft.com/library/windows/hardware/ff537520)します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 <a name="requirements"></a>必要条件
 ------------

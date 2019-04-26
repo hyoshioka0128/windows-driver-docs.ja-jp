@@ -1,5 +1,5 @@
 ---
-title: .scroll_prefs (ソースのコントロールにスクロールの基本設定)
+title: .scroll_prefs (ソース スクロール設定の制御)
 description: .Scroll_prefs コマンドでは、行にスクロールする場合、ソース ウィンドウで、ソースの位置を制御します。
 ms.assetid: 08978751-c4b7-491a-9e1f-de21d74a10a8
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 22361c782981011a8fc5a36235973049077594e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339836"
 ---
 # <a name="scrollprefs-control-source-scrolling-preferences"></a>.scroll\_環境設定 (コントロール ソース スクロールの設定)
 

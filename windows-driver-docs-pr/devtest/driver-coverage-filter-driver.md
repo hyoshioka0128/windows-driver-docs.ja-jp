@@ -1,19 +1,19 @@
 ---
-title: カバレッジ フィルター ドライバーのドライバー
-description: カバレッジ フィルター ドライバーのドライバー
+title: Driver Coverage フィルター ドライバー
+description: Driver Coverage フィルター ドライバー
 ms.assetid: 8d345081-b9be-4e22-9276-dacd7815f506
 keywords:
 - ドライバーのカバレッジ Toolkit WDK、フィルター ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ca9df66e8e272b8cafa1af70ec182d0462e6a42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341714"
 ---
-# <a name="driver-coverage-filter-driver"></a>カバレッジ フィルター ドライバーのドライバー
+# <a name="driver-coverage-filter-driver"></a>Driver Coverage フィルター ドライバー
 
 
 **注**  ドライバーのカバレッジ Toolkit は Windows 10 で不要になったと、インストーラーが WDK に含まれていません。 ここで説明されている Windows 10 でタスクを実行する代わりに使用[Driver Verifier](driver-verifier.md)と[IRP のログ記録](irp-logging.md)します。

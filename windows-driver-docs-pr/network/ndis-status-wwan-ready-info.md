@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_READY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cb93eb3d2b2974d7fabe9a40c50ae90c237c609e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341385"
 ---
 # <a name="ndisstatuswwanreadyinfo"></a>NDIS\_状態\_WWAN\_準備\_情報
 
@@ -28,7 +28,7 @@ ms.locfileid: "56528810"
 
 ほとんどのデバイスの準備完了状態の変更は、デバイスの初期化、ラジオ スタックおよび SIM カード (必要な場合) ときに発生します。 変更も MB サービスとユーザーが、SIM カードの変更など、ミニポート ドライバーとのセッションの実行中に発生します。 新しいデバイスの準備完了の状態に基づいて適切 MB サービスの動作を変更するものとします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

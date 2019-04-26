@@ -1,6 +1,6 @@
 ---
-title: プリンター ドライバーの COM インターフェイスを実装します。
-description: プリンター ドライバーの COM インターフェイスを実装します。
+title: プリンター ドライバー COM インターフェイスを実装する
+description: プリンター ドライバー COM インターフェイスを実装する
 ms.assetid: 39f873e9-7f72-420c-b6d6-dce31840aa16
 keywords:
 - プリンター ドライバーが、WDK をカスタマイズする COM インターフェイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91b33e436ce11156f251854f7bcd9881425ce2ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340908"
 ---
-# <a name="implementing-printer-driver-com-interfaces"></a>プリンター ドライバーの COM インターフェイスを実装します。
+# <a name="implementing-printer-driver-com-interfaces"></a>プリンター ドライバー COM インターフェイスを実装する
 
 
 

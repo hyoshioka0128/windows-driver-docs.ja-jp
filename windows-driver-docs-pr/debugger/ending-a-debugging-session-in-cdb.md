@@ -1,17 +1,17 @@
 ---
-title: CDB でのデバッグ セッションを終了
+title: CDB のデバッグ セッションの終了
 description: CDB を終了するには、q (終了) のコマンドを入力します。 このコマンドでは、デバッグしているアプリケーションも閉じられます。
 ms.assetid: B32AD09D-7F88-420E-94BD-59FAE6EC1720
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60741484442d6e66411251968fbc88af001a412c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340576"
 ---
-# <a name="ending-a-debugging-session-in-cdb"></a>CDB でのデバッグ セッションを終了
+# <a name="ending-a-debugging-session-in-cdb"></a>CDB のデバッグ セッションの終了
 
 
 CDB を終了するには、入力、 [ **q (終了)** ](q--qq--quit-.md)コマンド。 このコマンドでは、デバッグしているアプリケーションも閉じられます。
@@ -36,7 +36,7 @@ CDB を終了するには、入力、 [ **q (終了)** ](q--qq--quit-.md)コマ�
 
 -   入力、 [ **.abandon (破棄プロセス)** ](-abandon--abandon-process-.md)コマンド。
 
-ターゲットに再アタッチの詳細については、[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)を参照してください。
+ターゲットに再アタッチの詳細については、次を参照してください。[対象アプリケーションを再アタッチ](reattaching-to-the-target-application.md)します。
 
  
 

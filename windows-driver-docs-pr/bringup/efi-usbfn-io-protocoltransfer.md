@@ -1,15 +1,15 @@
 ---
-title: EFI_USBFN_IO_PROTOCOL します。転送
-description: EFI_USBFN_IO_PROTOCOL します。転送
+title: EFI_USBFN_IO_PROTOCOL.Transfer
+description: EFI_USBFN_IO_PROTOCOL.Transfer
 ms.assetid: 0585de75-9268-4964-8c5f-dcc3338e5287
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08f45877b8a785f11f09f6672e3a349e4489b323
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337674"
 ---
 # <a name="efiusbfnioprotocoltransfer"></a>EFI\_USBFN\_IO\_プロトコル。転送
 
@@ -66,7 +66,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 転送を行う必要が送信と受信のエンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
+エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
 
 <a href="" id="buffersize"></a>*BufferSize*  
 方向が場合**EfiUsbEndpointDirectionDeviceRx**:入力バッファーのバイト単位のサイズ。 出力では、データの量は、バッファーのバイト単位で返されます。 方向が場合**EfiUsbEndpointDirectionDeviceTx**:入力バッファーのバイト単位のサイズ。 出力で、実際に転送されるデータ量 (バイト単位)。

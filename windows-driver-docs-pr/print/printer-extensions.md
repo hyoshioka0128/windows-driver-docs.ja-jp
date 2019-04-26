@@ -1,17 +1,17 @@
 ---
-title: プリンターの拡張機能
+title: プリンター拡張機能
 description: プリンター拡張アプリは、ユーザーが Windows デスクトップで既存のアプリケーションを実行すると、印刷設定とプリンターの通知をサポートします。
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ac419a9f97ecb648733dd3244c41e632ff722b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339944"
 ---
-# <a name="printer-extensions"></a>プリンターの拡張機能
+# <a name="printer-extensions"></a>プリンター拡張機能
 
 プリンター拡張アプリは、ユーザーが Windows デスクトップで既存のアプリケーションを実行すると、印刷設定とプリンターの通知をサポートします。
 
@@ -143,9 +143,9 @@ mgr.EnableEvents(new Guid(PrinterDriverID1));
 
 - 多くのアプリの初期化、できるだけまで遅らせる EnableEvents を呼び出した後。 その後、非同期メソッドを使用して初期化中に UI スレッドをブロックしていない UI の応答性を優先します。
 
-- Ngen を使用すると、インストール時にネイティブ イメージを生成します。 詳細については、[ネイティブ イメージ ジェネレーター](https://msdn.microsoft.com/library/6t9t5wcf.aspx)を参照してください。
+- Ngen を使用すると、インストール時にネイティブ イメージを生成します。 詳細については、次を参照してください。[ネイティブ イメージ ジェネレーター](https://msdn.microsoft.com/library/6t9t5wcf.aspx)します。
 
-- パフォーマンス測定ツールを使用すると、読み込みのパフォーマンスの問題を検索できます。 詳細については、[Windows パフォーマンス分析ツール](https://msdn.microsoft.com/performance/cc825801.aspx)を参照してください。
+- パフォーマンス測定ツールを使用すると、読み込みのパフォーマンスの問題を検索できます。 詳細については、次を参照してください。 [Windows パフォーマンス分析ツール](https://msdn.microsoft.com/performance/cc825801.aspx)します。
 
 ### <a name="driverevent-handler"></a>DriverEvent ハンドラー
 
@@ -207,7 +207,7 @@ static void OnDriverEvent(object sender, PrinterExtensionEventArgs eventArgs)
 
 各[ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)または[ **IPrintSchemaCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/hh451256)オブジェクトの機能があります ([ **IPrintSchemaFeature**](https://msdn.microsoft.com/library/windows/hardware/hh451284)) とオプション ([**IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335))。 機能とオプションのためのインターフェイスでは、配信元に関係なく同じですが、基になる XML の結果として、動作が若干異なります。 たとえば、PrintCapabilities ドキュメントは、多くの機能、PrintTicket ドキュメントを指定だけ選択したときに (または既定値) ごとのオプション を指定します。 同様に、付きません PrintTicket ドキュメント PrintCapabilities ドキュメントは、ローカライズされた表示文字列を指定します。
 
-[PrinterExtensionSample](https://go.microsoft.com/fwlink/p/?LinkId=617945)データ バインディングを使用して、プリンターの設定のコンボ ボックス コントロールを作成します。 により、コードの拡散を減らすことで維持するためにはるかに簡単にデータ バインディングを使用することをお勧めします。 WPF でのデータ バインディングの詳細については、[データ バインディングの概要](https://msdn.microsoft.com/library/ms752347.aspx)を参照してください。
+[PrinterExtensionSample](https://go.microsoft.com/fwlink/p/?LinkId=617945)データ バインディングを使用して、プリンターの設定のコンボ ボックス コントロールを作成します。 により、コードの拡散を減らすことで維持するためにはるかに簡単にデータ バインディングを使用することをお勧めします。 WPF でのデータ バインディングの詳細については、次を参照してください。[データ バインディングの概要](https://msdn.microsoft.com/library/ms752347.aspx)します。
 
 パフォーマンスを最大化するために、GetPrintCapabilities への呼び出しが PrintCapabilities ドキュメントを更新する必要がある場合のみ実行することをお勧めします。
 
@@ -233,7 +233,7 @@ EventHandler<PrinterQueueEventArgs>(OnBidiResponseReceived);
 PrinterQueue.SendBidiQuery("\\Printer.consumables");
 ```
 
-Bidi 応答が受信したときに、次のイベント ハンドラーが呼び出されます。 このイベント ハンドラーもにモックのインク状態実装では、デバイスが利用できない場合の開発に便利ですがありますに注意してください。 PrinterQueueEventArgs オブジェクトには、HRESULT と Bidi XML 応答の両方が含まれています。 Bidi XML 応答の詳細については、[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)を参照してください。
+Bidi 応答が受信したときに、次のイベント ハンドラーが呼び出されます。 このイベント ハンドラーもにモックのインク状態実装では、デバイスが利用できない場合の開発に便利ですがありますに注意してください。 PrinterQueueEventArgs オブジェクトには、HRESULT と Bidi XML 応答の両方が含まれています。 Bidi XML 応答の詳細については、次を参照してください。[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)します。
 
 ```csharp
 private void OnBidiResponseReceived(object sender, PrinterQueueEventArgs e)
@@ -267,7 +267,7 @@ private void OnBidiResponseReceived(object sender, PrinterQueueEventArgs e)
 
 - PrinterExtensionEventArgs.DetailedReasonId – eventID ドライバー イベントの xml ファイルからの GUID が含まれます。
 
-通知の IPrinterExtensionEventArgs オブジェクトの最も重要な属性は、BidiNotification プロパティです。 これは実行をトリガーするイベントの原因となった Bidi XML です。 Bidi XML 応答の詳細については、[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)を参照してください。
+通知の IPrinterExtensionEventArgs オブジェクトの最も重要な属性は、BidiNotification プロパティです。 これは実行をトリガーするイベントの原因となった Bidi XML です。 Bidi XML 応答の詳細については、次を参照してください。[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)します。
 
 ### <a name="managing-printers"></a>プリンターの管理
 
@@ -301,11 +301,11 @@ OpenPrinter
 ClosePrinter
 ```
 
-これらのレガシ Api を .NET にマーシャ リングする方法の詳細については、[Visual を使用して、プリンターに生データを送信する方法C#.NET](http://support.microsoft.com/?kbid=322091)または[Visual Basic .NET を使用して、プリンターに生データを送信する方法](http://support.microsoft.com/?kbid=322090)を参照してください。
+これらのレガシ Api を .NET にマーシャ リングする方法の詳細については、次を参照してください。 [Visual を使用して、プリンターに生データを送信する方法C#.NET](http://support.microsoft.com/?kbid=322091)または[Visual Basic .NET を使用して、プリンターに生データを送信する方法](http://support.microsoft.com/?kbid=322090)します。
 
 ## <a name="printer-extension-performance-best-practices"></a>プリンター拡張機能のパフォーマンスに関するベスト プラクティス
 
-最適なユーザー エクスペリエンスを確保するためにロードをできるだけ高速にプリンターの拡張機能を設計する必要があります。 プリンター拡張機能のサンプル プロジェクトは、実行時にネイティブ プロセッサ アーキテクチャに適した形式にコンパイルする必要がありますを中間言語 (IL) に構築されたを取得するには、.NET アプリケーションです。 インストール中には、ネイティブ システム アーキテクチャ、アプリがコンパイルされていることを確認するベスト プラクティスに従って、プリンターの拡張機能がインストールされていることをお勧めします。 コードのコンパイルとインストールのベスト プラクティスの詳細については、[、デスクトップ アプリケーションの起動パフォーマンスの向上](http://blogs.msdn.com/b/dotnet/archive/2012/03/20/improving-launch-performance-for-your-desktop-applications.aspx)を参照してください。
+最適なユーザー エクスペリエンスを確保するためにロードをできるだけ高速にプリンターの拡張機能を設計する必要があります。 プリンター拡張機能のサンプル プロジェクトは、実行時にネイティブ プロセッサ アーキテクチャに適した形式にコンパイルする必要がありますを中間言語 (IL) に構築されたを取得するには、.NET アプリケーションです。 インストール中には、ネイティブ システム アーキテクチャ、アプリがコンパイルされていることを確認するベスト プラクティスに従って、プリンターの拡張機能がインストールされていることをお勧めします。 コードのコンパイルとインストールのベスト プラクティスの詳細については、次を参照してください。 [、デスクトップ アプリケーションの起動パフォーマンスの向上](http://blogs.msdn.com/b/dotnet/archive/2012/03/20/improving-launch-performance-for-your-desktop-applications.aspx)します。
 
 Microsoft では、プリンターの拡張機能が、EnableEvents メソッドが呼び出された後までのリソースの読み込みなどの初期化タスクを延期することもお勧めします。 これには、プリンターの拡張機能の 5 秒のタイムアウトの前に EnableEvents を呼び出し、アプリが発生する可能性が最小限に抑えます。
 

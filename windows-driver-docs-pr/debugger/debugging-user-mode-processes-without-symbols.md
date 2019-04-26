@@ -1,19 +1,19 @@
 ---
-title: シンボルのないユーザー モード プロセスのデバッグ
-description: シンボルのないユーザー モード プロセスのデバッグ
+title: シンボルを使用しないユーザーモード プロセスのデバッグ
+description: シンボルを使用しないユーザーモード プロセスのデバッグ
 ms.assetid: ac742239-ed6b-4813-80d6-7b8eb84a0cb4
 keywords:
 - シンボル、シンボルを使用しないデバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed71b1003b1a5f0667b8ae89bdf02ef0a18c40de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346366"
 ---
-# <a name="debugging-user-mode-processes-without-symbols"></a>シンボルのないユーザー モード プロセスのデバッグ
+# <a name="debugging-user-mode-processes-without-symbols"></a>シンボルを使用しないユーザーモード プロセスのデバッグ
 
 
 ## <span id="ddk_debugging_user_mode_processes_without_symbols_dbg"></span><span id="DDK_DEBUGGING_USER_MODE_PROCESSES_WITHOUT_SYMBOLS_DBG"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8158f5e9d97425b19d3765a647520873b2e9d20f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339652"
 ---
 # <a name="devpkeydeviceclassdefaultservice"></a>DEVPKEY_DeviceClass_DefaultService
 
@@ -66,7 +66,7 @@ DEVPKEY_DeviceClass_DefaultService の値は、の値、**既定 Service**クラ
 
 呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するにはDefaultService します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_DefaultService プロパティのキーをサポートしていません。 対応するこのプロパティの値にアクセスすることができます**既定 Service**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_DefaultService プロパティのキーをサポートしていません。 対応するこのプロパティの値にアクセスすることができます**既定 Service**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)します。
 
 <a name="requirements"></a>要件
 ------------

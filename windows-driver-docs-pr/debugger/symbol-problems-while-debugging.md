@@ -1,17 +1,17 @@
 ---
-title: デバッグ中にシンボルに関する問題
-description: デバッグ中にシンボルに関する問題
+title: デバッグ中のシンボルに関する問題
+description: デバッグ中のシンボルに関する問題
 ms.assetid: 2713c371-9683-4d0d-a8ab-8a4c897ba0ab
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc7b959d45d576368aa37c4d6d3dfef6db3714a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335490"
 ---
-# <a name="symbol-problems-while-debugging"></a>デバッグ中にシンボルに関する問題
+# <a name="symbol-problems-while-debugging"></a>デバッグ中のシンボルに関する問題
 
 
 ## <span id="ddk_debugging_user_mode_processes_without_symbols_dbg"></span><span id="DDK_DEBUGGING_USER_MODE_PROCESSES_WITHOUT_SYMBOLS_DBG"></span>

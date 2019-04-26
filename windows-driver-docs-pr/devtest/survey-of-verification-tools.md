@@ -1,6 +1,6 @@
 ---
-title: 検証ツールのアンケート
-description: 検証ツールのアンケート
+title: 検証ツールの調査
+description: 検証ツールの調査
 ms.assetid: d36e041f-efa5-450f-b4de-c84c4880e44d
 keywords:
 - WDK の動的検証ツール
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: feeee25ed8dd8687a68f75c730e6e86a27a3542a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347604"
 ---
-# <a name="survey-of-verification-tools"></a>検証ツールのアンケート
+# <a name="survey-of-verification-tools"></a>検証ツールの調査
 
 
 次の検証ツールは、WDK で説明されているし、ドライバー開発者およびテスト担当者による使用は推奨します。 これらは、その通常使用する順序に表示されます。

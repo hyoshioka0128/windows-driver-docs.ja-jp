@@ -4,11 +4,11 @@ description: このセクションでは、タイム トラベルのデバッグ
 ms.date: 09/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1930ad42eda48937c3bf83393a7ff4b621d84246
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342038"
 ---
 # <a name="ttd-exception-objects"></a>TTD 例外オブジェクト
 ## <a name="description"></a>説明
@@ -19,7 +19,7 @@ ms.locfileid: "56578328"
 
 | プロパティ | 説明 |
 | --- | --- |
-| 型 | 例外の種類について説明します。 使用可能な値は、「ソフトウェア」と「ハードウェア」です。 |
+| 種類 | 例外の種類について説明します。 使用可能な値は、「ソフトウェア」と「ハードウェア」です。 |
 | ProgramCounter | 例外がスローされた命令。  |
 | コード | 例外のコードです。  |
 | フラグ | 例外フラグ。 |

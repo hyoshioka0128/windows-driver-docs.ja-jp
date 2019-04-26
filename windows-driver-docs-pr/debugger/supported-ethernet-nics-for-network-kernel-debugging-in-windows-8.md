@@ -5,11 +5,11 @@ ms.assetid: 92FEEBAF-9978-4BDE-BB4F-81454D84A7E7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1973d4d39270d6a9ac25f9badfedc45b1adfccb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335488"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-8"></a>Windows 8 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
 
@@ -18,7 +18,7 @@ ms.locfileid: "56570755"
 
 カーネルのデバッグ中には、デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*ターゲット コンピューター*します。 行う[ネットワーク ケーブル経由でのカーネル デバッグ](setting-up-a-network-debugging-connection.md)、ターゲット コンピューターがサポートされているネットワーク アダプターをいる必要があります。 ターゲット コンピューターでは、Windows 8 を実行している、カーネルのデバッグ、ここで記載されているネットワーク アダプターがサポートされます。
 
-**注**  カーネル デバッグ for Windows 8.1 でサポートされるネットワーク アダプターの一覧は、[Windows 8.1 でのネットワーク カーネル デバッグのサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)を参照してください。
+**注**  カーネル デバッグ for Windows 8.1 でサポートされるネットワーク アダプターの一覧は、次を参照してください。 [Windows 8.1 でのネットワーク カーネル デバッグのサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)します。
 
  
 

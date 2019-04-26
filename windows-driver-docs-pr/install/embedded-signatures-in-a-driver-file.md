@@ -1,6 +1,6 @@
 ---
-title: ドライバー ファイルの埋め込み署名
-description: ドライバー ファイルの埋め込み署名
+title: ドライバー ファイル内の埋め込み署名
+description: ドライバー ファイル内の埋め込み署名
 ms.assetid: 21941c7b-4f9a-424c-9984-3048a53398b6
 keywords:
 - 埋め込み署名 WDK ドライバーの署名
@@ -11,18 +11,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 088116e76b998833eba57d253a84da9802372fe0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346180"
 ---
-# <a name="embedded-signatures-in-a-driver-file"></a>ドライバー ファイルの埋め込み署名
+# <a name="embedded-signatures-in-a-driver-file"></a>ドライバー ファイル内の埋め込み署名
 
 
 64 ビット バージョンの Windows Vista および以降のバージョンの Windows では、カーネル モード コード署名の要件が埋め込まれたあります[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)署名します。 埋め込みの署名は、ドライバーはブート開始ドライバーの必要はありません。
 
-**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、[Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)を参照してください。
+**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)します。
 
  
 

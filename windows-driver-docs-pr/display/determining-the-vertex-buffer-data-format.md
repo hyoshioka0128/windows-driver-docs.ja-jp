@@ -1,6 +1,6 @@
 ---
-title: 頂点バッファーのデータ形式を決定します。
-description: 頂点バッファーのデータ形式を決定します。
+title: 頂点バッファーのデータ形式の決定
+description: 頂点バッファーのデータ形式の決定
 ms.assetid: e10604f9-e800-40ff-a0e1-0f9389340e9c
 keywords:
 - 頂点形式 WDK Direct3D
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c47237926cb89856faa121f573acb58e34cb3ca8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342456"
 ---
-# <a name="determining-the-vertex-buffer-data-format"></a>頂点バッファーのデータ形式を決定します。
+# <a name="determining-the-vertex-buffer-data-format"></a>頂点バッファーのデータ形式の決定
 
 
 ## <span id="ddk_determining_the_vertex_buffer_data_format_gg"></span><span id="DDK_DETERMINING_THE_VERTEX_BUFFER_DATA_FORMAT_GG"></span>
@@ -62,8 +62,8 @@ ms.locfileid: "56537276"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

@@ -1,16 +1,16 @@
 ---
-title: 固定 ComBuffer と Windows SMM セキュリティ リスク軽減テーブル (WSMT)
-description: 固定 ComBuffer と Windows SMM セキュリティ リスク軽減テーブル (WSMT)
+title: 固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)
+description: 固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b573858b60ced40ee8ae2c7e8f302389fabe440
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337615"
 ---
-# <a name="fixed-combuffer-and-windows-smm-security-mitigation-table-wsmt"></a>固定 ComBuffer と Windows SMM セキュリティ リスク軽減テーブル (WSMT)
+# <a name="fixed-combuffer-and-windows-smm-security-mitigation-table-wsmt"></a>固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)
 
 
 Windows SMM セキュリティ リスク軽減テーブル (WSMT) は、特定のセキュリティ機能をシステムに実装されていることを示すフラグを含む ACPI 名前空間で説明されている静的なテーブルです。

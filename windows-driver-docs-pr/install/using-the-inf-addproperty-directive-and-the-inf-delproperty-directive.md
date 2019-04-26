@@ -1,17 +1,17 @@
 ---
 title: INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用してください。
-description: INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用してください。
+description: INF AddProperty ディレクティブと INF DelProperty ディレクティブの使用
 ms.assetid: e5ae8d66-b2dc-409e-bdac-9034a9e24672
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf63e5b2cb5d9ddda5d616d563f4f76fa07df949
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339393"
 ---
-# <a name="using-the-inf-addproperty-directive-and-the-inf-delproperty-directive"></a>INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用してください。
+# <a name="using-the-inf-addproperty-directive-and-the-inf-delproperty-directive"></a>INF AddProperty ディレクティブと INF DelProperty ディレクティブの使用
 
 
 Windows Vista および Windows の以降のバージョンで使用できます[ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md)と[ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)に設定し、デバイスのインスタンスのプロパティを削除[デバイス セットアップ クラス](device-setup-classes.md)、[デバイス インターフェイス クラス](device-interface-classes.md)、およびデバイスのインターフェイス。 これが含まれています[デバイスのシステム定義プロパティ](system-defined-device-properties2.md)と[カスタム デバイス プロパティ](creating-custom-device-properties.md)します。 使用する場合に、次のガイドラインを使用する必要があります、 **AddProperty**と**DelProperty**ディレクティブの代わりに[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)と[ **INF してディレクティブ**](inf-delreg-directive.md)を設定し、デバイスのプロパティを削除します。

@@ -1,5 +1,5 @@
 ---
-title: .write_cmd_hist (書き込みコマンド履歴)
+title: .write_cmd_hist (コマンド履歴の書き込み)
 description: .Write_cmd_hist コマンドは、デバッガー コマンド ウィンドウの履歴全体をファイルに書き込みます。
 ms.assetid: 7d512f0c-56cd-48e5-b618-d5615113f065
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 00dd73e25f967e25d6ded22580ae45e5cb6640ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349089"
 ---
 # <a name="writecmdhist-write-command-history"></a>.write\_cmd\_hist (書き込みコマンド履歴)
 

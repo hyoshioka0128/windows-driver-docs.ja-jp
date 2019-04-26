@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74e93ae910fc9008d1c623334d6b4b4a27b24655
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338529"
 ---
 # <a name="handling-rollback-operations"></a>ロールバック操作の処理
 
@@ -33,7 +33,7 @@ ms.locfileid: "56527868"
 
 1.  トランザクションのデータをトランザクションに参加しているリソース マネージャーは、前の状態に復元します。
 
-    通常、リソース マネージャーは、データベースの公開、永続的なストレージにログ ストリームからトランザクションの保存の初期データをコピーして、トランザクションのデータを復元します。 ログ ストリームを使用する方法の詳細については、[ktm を使用するログ ストリーム](using-log-streams-with-ktm.md)を参照してください。
+    通常、リソース マネージャーは、データベースの公開、永続的なストレージにログ ストリームからトランザクションの保存の初期データをコピーして、トランザクションのデータを復元します。 ログ ストリームを使用する方法の詳細については、次を参照してください。 [ktm を使用するログ ストリーム](using-log-streams-with-ktm.md)します。
 
 2.  呼び出す[ **ZwRollbackComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567081)します。
 

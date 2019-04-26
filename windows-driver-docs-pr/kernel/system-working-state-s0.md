@@ -1,6 +1,6 @@
 ---
-title: システムの稼働状態 S0
-description: システムの稼働状態 S0
+title: システム稼働状態 S0
+description: システム稼働状態 S0
 ms.assetid: 93ab0943-a4cc-4ef0-a250-1c63b2c915d5
 keywords:
 - 操作の状態、システム電源の状態 WDK カーネル
@@ -17,13 +17,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bf32a4953ef071ff18a60ad229b482a7e09401
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345398"
 ---
-# <a name="system-working-state-s0"></a>システムの稼働状態 S0
+# <a name="system-working-state-s0"></a>システム稼働状態 S0
 
 
 

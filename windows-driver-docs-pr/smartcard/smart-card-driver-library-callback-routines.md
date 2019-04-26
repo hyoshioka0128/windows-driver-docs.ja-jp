@@ -1,6 +1,6 @@
 ---
-title: スマート カード ドライバー ライブラリ コールバック ルーチン
-description: スマート カード ドライバー ライブラリ コールバック ルーチン
+title: スマート カード ドライバー ライブラリのコールバックルーチン
+description: スマート カード ドライバー ライブラリのコールバックルーチン
 ms.assetid: e536d539-4871-4b1d-bb5a-92a310dfa1e7
 keywords:
 - Ioctl WDK のスマート カード
@@ -11,19 +11,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 523bc557ed901eb64cb4ca0b0da6161fa3276e36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340873"
 ---
-# <a name="smart-card-driver-library-callback-routines"></a>スマート カード ドライバー ライブラリ コールバック ルーチン
+# <a name="smart-card-driver-library-callback-routines"></a>スマート カード ドライバー ライブラリのコールバックルーチン
 
 
 ## <span id="_ntovr_smart_card_driver_library_callback_routines"></span><span id="_NTOVR_SMART_CARD_DRIVER_LIBRARY_CALLBACK_ROUTINES"></span>
 
 
-スマート カードのアーキテクチャでは、一連の標準的なコールバックの日常的な型を定義します。 詳細については、これらのルーチンは、[スマート カード ドライバー コールバック](https://msdn.microsoft.com/library/windows/hardware/ff548982)を参照してください。
+スマート カードのアーキテクチャでは、一連の標準的なコールバックの日常的な型を定義します。 詳細については、これらのルーチンは、次を参照してください。[スマート カード ドライバー コールバック](https://msdn.microsoft.com/library/windows/hardware/ff548982)します。
 
 リーダー ドライバーする必要がありますこれらのコールバック ルーチンを使用できるようにドライバー ライブラリのルーチン、 [ **SmartcardDeviceControl (WDM)**](https://msdn.microsoft.com/library/windows/hardware/ff548939)を呼び出す、スマート カード デバイス拡張機能でそれらへのポインターを格納することで、型の[**スマート カード\_拡張子**](https://msdn.microsoft.com/library/windows/hardware/ff548974)します。 これらのポインターに配置されている配列に格納されます、 **ReaderFunction**スマート カードのメンバー\_拡張機能の構造体。 個々 のコールバック ルーチンは、一連の定数の値へのインデックスとして使用する必要がありますで識別できます、 **ReaderFunction**配列。
 

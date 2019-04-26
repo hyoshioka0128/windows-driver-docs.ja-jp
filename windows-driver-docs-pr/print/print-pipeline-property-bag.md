@@ -1,5 +1,5 @@
 ---
-title: パイプラインのプロパティ バッグを印刷します。
+title: 印刷パイプライン プロパティ バッグ
 description: 印刷のパイプラインのプロパティ バッグを使用して、フィルター パイプライン内のフィルターの間で情報を渡します。プロパティ nameSymbolic nameProperty typeDescriptionPrinterNameXPS\_FP\_プリンター\_NAMEVT\_BSTRThe プリンターの名前。ProgressReportXPS\_FP\_進行状況\_REPORTVT\_UNKNOWNA IUnknown インターフェイス ポインター。 IPrintPipelineProgressReport インターフェイスへのポインターを取得する QueryInterface を呼び出します。PrinterHandleXPS\_FP\_プリンター\_ハンドル VT\_BYREFThe プリンター ハンドル。 フィルターは、このハンドルを閉じないでください。PerUserPrintTicketXPS\_FP\_ユーザー\_印刷\_TICKETVT\_UNKNOWNA IUnknown インターフェイス ポインター。 IPrintReadStreamFactory インターフェイスへのポインターを取得する QueryInterface を呼び出します。UserSecurityTokenXPS\_FP\_ユーザー\_TOKENVT\_BYREFA 処理、フィルターは、印刷ジョブを送信するユーザー アカウントの借用を使用できます。PrintJobIdXPS\_FP\_ジョブ\_IDVT\_UI4The 印刷ジョブの識別番号。PrintClassFactoryXPS\_FP\_印刷\_クラス\_FACTORYVT\_UNKNOWNA IUnknown インターフェイス ポインター。 IPrintClassObjectFactory インターフェイスへのポインターを取得する QueryInterface を呼び出します。IPrintCoreHelper (このプロパティ名のシンボリック名がありません)。VT\_UNKNOWNA IUnknown インターフェイス ポインター。 IPrintCoreHelper インターフェイスへのポインターを取得する QueryInterface を呼び出します。このプロパティは構成 UI の DLL として、unidrvui.dll を使用する XPSDrv プリンター ドライバーで利用できるのみことに注意してください。PrintDeviceCapabilitiesXPS\_FP\_PRINTDEVICECAPABILITIES VT\_UNKNOWNA IUnknown インターフェイス ポインター。 IPrintReadStreamFactory インターフェイスへのポインターを取得する QueryInterface を呼び出します。印刷フィルター パイプラインのプロパティ バッグから PrintDeviceCapabilities XML ファイルを取得する XPS レンダリング フィルターを使用できます。
 MS-HAID:
 - filterpipeline\_f3fbd165-3f72-41cc-91b8-aa8b36823da9.xml
@@ -19,13 +19,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23ae404f052d7ea69152dacfcf9203fde5c9679f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340888"
 ---
-# <a name="print-pipeline-property-bag"></a>パイプラインのプロパティ バッグを印刷します。
+# <a name="print-pipeline-property-bag"></a>印刷パイプライン プロパティ バッグ
 
 印刷のパイプラインのプロパティ バッグを使用して、フィルター パイプライン内のフィルターの間で情報を渡します。
 

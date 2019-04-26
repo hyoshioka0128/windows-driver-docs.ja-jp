@@ -1,6 +1,6 @@
 ---
-title: システム電源の状態の処理の要求
-description: システム電源の状態の処理の要求
+title: システム電源状態要求の処理
+description: システム電源状態要求の処理
 ms.assetid: c4547b72-107e-4335-a7bd-081376962da0
 keywords:
 - 電源の状態の WDK カーネル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85334d5348cfa4eac7a4ff357bbac2eb033bda9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338524"
 ---
-# <a name="handling-system-power-state-requests"></a>システム電源の状態の処理の要求
+# <a name="handling-system-power-state-requests"></a>システム電源状態要求の処理
 
 
 

@@ -1,19 +1,19 @@
 ---
 title: ロケールを選択し、パッケージのモバイル ブロード バンド メタデータの作成ウィザードの種類
-description: ロケールを選択し、パッケージのモバイル ブロード バンド メタデータの作成ウィザードの種類
+description: モバイル ブロードバンド メタデータ作成ウィザードでのロケールとパッケージの種類の選択
 ms.assetid: B2C9AEE8-6278-4870-A977-15FE1B59C9FD
 keywords:
-- ロケールを選択し、パッケージのモバイル ブロード バンド メタデータの作成ウィザードの種類
+- モバイル ブロードバンド メタデータ作成ウィザードでのロケールとパッケージの種類の選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25102051cb2eba5ac8fdf4e8a9c40f7b6a2ec048
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340104"
 ---
-# <a name="select-locales-and-package-type-in-the-mobile-broadband-metadata-authoring-wizard"></a>ロケールを選択し、パッケージのモバイル ブロード バンド メタデータの作成ウィザードの種類
+# <a name="select-locales-and-package-type-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのロケールとパッケージの種類の選択
 
 
 適切なロケールは、パッケージの種類 (Windows 7 または Windows 8) と同様に、メタデータ パッケージのロケールを選択します。

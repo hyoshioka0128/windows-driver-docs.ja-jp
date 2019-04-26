@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ae3a27bae1767e10445859090f81b00f6cf61b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346694"
 ---
 # <a name="setting-condis-wan-miniport-driver-information"></a>CoNDIS WAN ミニポート ドライバー情報の設定
 
@@ -50,7 +50,7 @@ NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼
 
  
 
-いる CoNDIS WAN ミニポート ドライバーは、NDIS もサポートしています。[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、[クエリの実行または情報を設定する](querying-or-setting-information.md)を参照してください。
+いる CoNDIS WAN ミニポート ドライバーは、NDIS もサポートしています。[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、次を参照してください。[クエリの実行または情報を設定する](querying-or-setting-information.md)します。
 
  
 

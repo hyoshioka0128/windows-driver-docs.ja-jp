@@ -1,5 +1,5 @@
 ---
-title: .scriptlist (読み込まれたスクリプトを一覧表示)
+title: .scriptlist (読み込まれたスクリプトの一覧表示)
 description: .Scriptlist コマンドは、読み込まれたスクリプトを一覧表示します。
 ms.assetid: 98F24BE6-3F34-44E7-9546-3D5AB6D521DD
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 85dba9f144d77400de63d6ba9b15f414d4c6ffb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338857"
 ---
-# <a name="scriptlist-list-loaded-scripts"></a>.scriptlist (読み込まれたスクリプトを一覧表示)
+# <a name="scriptlist-list-loaded-scripts"></a>.scriptlist (読み込まれたスクリプトの一覧表示)
 
 
 **.Scriptlist**コマンドが読み込まれたスクリプトを一覧表示します。
@@ -71,7 +71,7 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-**要件**
+**必要条件**
 
 .Script コマンドのいずれかを使用するのには、スクリプトのプロバイダーが読み込まれる必要があります。 使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
 
@@ -82,7 +82,7 @@ Command Loaded Scripts:
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[Scripting JavaScript デバッガー](javascript-debugger-scripting.md)
+[JavaScript デバッガー スクリプト](javascript-debugger-scripting.md)
 
 [**.scriptload (スクリプトの読み込み)**](-scriptload--load-script-.md)
 

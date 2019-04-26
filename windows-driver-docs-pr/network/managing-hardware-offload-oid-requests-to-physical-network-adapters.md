@@ -5,11 +5,11 @@ ms.assetid: A646CBB8-89AD-4C08-BECB-1E54E4D74311
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0bbd6a16622412d283ba2ce87332f37af060ce3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343614"
 ---
 # <a name="managing-hardware-offload-oid-requests-to-physical-network-adapters"></a>物理ネットワーク アダプターへのハードウェア オフロード OID 要求の管理
 
@@ -18,7 +18,7 @@ ms.locfileid: "56580124"
 
 たとえば、外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX driver は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドされます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。
 
-この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)を参照してください。
+この構成で拡張可能スイッチの拡張機能は、チーム内のすべてのネットワーク アダプターに公開されます。 これにより、拡張機能の構成と、チーム内の個々 のネットワーク アダプターの使用を管理できます。 たとえば、転送拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 拡張可能スイッチ チームを管理する転送拡張機能が呼ばれる、*チーミング プロバイダー*します。 プロバイダーのチーミングの詳細については、次を参照してください。[プロバイダーの拡張機能のチーミング](teaming-provider-extensions.md)します。
 
 次の図は、NDIS 6.40 (Windows Server 2012 R2) と後で拡張可能スイッチ チームの例を示します。
 
@@ -51,7 +51,7 @@ NDIS と上位のプロトコルとフィルター ドライバーは、基に�
 
 転送拡張機能は失敗する必要がありますまたは*拒否*、これらの OID 要求。
 
-IPsec のハードウェア オフロード テクノロジのバージョン 2 の詳細については、[IPsec オフロード バージョン 2](ipsec-offload-version-2.md)を参照してください。
+IPsec のハードウェア オフロード テクノロジのバージョン 2 の詳細については、次を参照してください。 [IPsec オフロード バージョン 2](ipsec-offload-version-2.md)します。
 
 <a href="" id="single-root-i-o-virtualization--sr-iov-"></a>シングル ルート I/O 仮想化 (SR-IOV)  
 次の SR-IOV OID 要求がカプセル化します。
@@ -70,7 +70,7 @@ IPsec のハードウェア オフロード テクノロジのバージョン 2 
 
 転送拡張機能の OID 要求を拒否できます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)と[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816) NDIS 以外の状態コードで要求を完了して\_状態\_成功します。 ただし、拡張する必要があります、他の SR-IOV OID 要求を拒否しては。
 
-SR-IOV 対応のハードウェア オフロード テクノロジの詳細については、[Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)を参照してください。
+SR-IOV 対応のハードウェア オフロード テクノロジの詳細については、次を参照してください。 [Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)します。
 
 <a href="" id="virtualized-machine-queue--vmq-"></a>仮想マシン キュー (VMQ)  
 次の VMQ OID 要求がカプセル化します。
@@ -87,7 +87,7 @@ SR-IOV 対応のハードウェア オフロード テクノロジの詳細に�
 
 転送拡張機能の OID 要求を拒否できます[OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784)と[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795) NDIS 以外の状態コードで要求を完了して\_状態\_成功します。 ただし、拡張する必要があります他 VMQ OID 要求を拒否しては。
 
-VMQ のハードウェア オフロード テクノロジの詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。
+VMQ のハードウェア オフロード テクノロジの詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
 
 転送拡張機能は、ハードウェア オフロード OID 要求を処理するための次のガイドラインに従う必要があります。
 
@@ -97,7 +97,7 @@ VMQ のハードウェア オフロード テクノロジの詳細について�
 
 -   プロトコルまたはフィルター ドライバーに関連して発生したすべてのハードウェア オフロード OID 要求が内部にカプセル化、 [ **NDIS\_スイッチ\_NIC\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)構造体。 転送拡張機能によって発信されたすべてのハードウェア オフロード OID 要求する必要がありますにカプセル化することも、 **NDIS\_スイッチ\_NIC\_OID\_要求**構造体。
 
-    拡張機能の OID セットの要求を通じて基になる物理ネットワーク アダプターをカプセル化された OID 要求を転送する[OID\_スイッチ\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)します。 この手順の詳細については、[物理ネットワーク アダプターへの OID 要求の転送](forwarding-oid-requests-to-physical-network-adapters.md)を参照してください。
+    拡張機能の OID セットの要求を通じて基になる物理ネットワーク アダプターをカプセル化された OID 要求を転送する[OID\_スイッチ\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)します。 この手順の詳細については、次を参照してください。[物理ネットワーク アダプターへの OID 要求の転送](forwarding-oid-requests-to-physical-network-adapters.md)します。
 
 -   拡張機能またはことはできませんを変更またはを無料でクリアするハードウェア オフロード OID 要求を失敗オフロード リソースの割り当てを完了します。 たとえば、拡張機能にする必要がありますの OID 要求失敗しない[OID\_受信\_フィルター\_クリア\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569785)または[OID\_NIC\_スイッチ\_削除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818)します。 拡張可能スイッチのインターフェイスには、これらのリソースの状態情報をクリーンアップするこれらの OID 要求を処理する必要があります。
 
@@ -111,7 +111,7 @@ VMQ のハードウェア オフロード テクノロジの詳細について�
 
      
 
--   拡張機能が、基になる物理ネットワーク アダプターにハードウェアのオフロード OID 要求を転送する場合、 **DestinationNicIndex**のメンバー、 [ **NDIS\_スイッチ\_NIC\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)構造体は、アダプターのインデックスが 0 以外の値に設定する必要があります。 これらのインデックス値の詳細については、[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)を参照してください。
+-   拡張機能が、基になる物理ネットワーク アダプターにハードウェアのオフロード OID 要求を転送する場合、 **DestinationNicIndex**のメンバー、 [ **NDIS\_スイッチ\_NIC\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)構造体は、アダプターのインデックスが 0 以外の値に設定する必要があります。 これらのインデックス値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)します。
 
     また、 **DestinationPortId**メンバーは、外部ネットワーク アダプターが接続されている拡張可能スイッチ ポートの識別子を設定する必要があります。
 
@@ -121,9 +121,9 @@ VMQ のハードウェア オフロード テクノロジの詳細について�
 
 -   拡張機能を呼び出すと[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)に OID 要求を転送するように設定する必要があります、 *OidRequest*パラメーターへのポインターを[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)用の構造、 [OID\_スイッチ\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)OID 要求。
 
-拡張機能が OID 要求をフィルター処理する方法の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)を参照してください。
+拡張機能が OID 要求をフィルター処理する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
 
-MUX ドライバーの詳細については、[NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)を参照してください。
+MUX ドライバーの詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 08A353F5-D8CB-4645-9337-8169D302F6F2
 ms.date: 12/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5004c44a7205702b5dbc4d57b16a7309ae0a6734
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343599"
 ---
 # <a name="managing-hyper-v-extensible-switch-run-time-data"></a>Hyper-V 拡張可能スイッチ実行時データの管理
 
@@ -37,7 +37,7 @@ ms.locfileid: "56574173"
 
 3.  場合、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598216)構造体は、拡張機能のランタイム状態を保持するための十分なバッファーを提供していない、拡張機能設定メソッドの構造体の*BytesNeeded*フィールドを**NDIS\_SIZEOF\_NDIS\_スイッチ\_NIC\_保存\_状態\_リビジョン\_1**さらに、保存を保持するために必要なバッファーの量、データの OID が完了して**NDIS\_状態\_バッファー\_すぎる\_短い**します。 OID が必要なサイズで再発行されます。
 
-4.  呼び出す必要がありますが、拡張子が指定した NIC について保存する実行時データを持たない場合[ **NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)します。 これは、拡張可能スイッチ ドライバー スタック内の基になるドライバーに OID メソッド要求を転送します。 この手順の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)を参照してください。
+4.  呼び出す必要がありますが、拡張子が指定した NIC について保存する実行時データを持たない場合[ **NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)します。 これは、拡張可能スイッチ ドライバー スタック内の基になるドライバーに OID メソッド要求を転送します。 この手順の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
 
 内のポートの実行時データを保存するときにガイドラインに従ってする必要がありますが、拡張機能に保存する実行時にポート データがある場合、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598216)構造体。
 
@@ -58,7 +58,7 @@ OID メソッド要求[OID\_切り替える\_NIC\_保存](https://msdn.microsoft
 
 ### <a name="handling-the-oidswitchnicsavecomplete-request"></a>OID の処理\_スイッチ\_NIC\_保存\_完全な要求
 
-拡張可能スイッチ ポートにネットワーク アダプターの接続を持つ HYPER-V 子パーティションが一時停止したり、その状態は保存されている、HYPER-V 拡張可能スイッチのインターフェイスが通知されます。 これにより、拡張可能スイッチのオブジェクト識別子 (OID) メソッド要求を発行するためのプロトコルのエッジ[OID\_スイッチ\_NIC\_保存](https://msdn.microsoft.com/library/windows/hardware/hh598268)拡張可能スイッチのドライバー スタックのダウンします。 この手順の詳細については、[OID を処理\_スイッチ\_NIC\_保存要求](handling-the-oid-switch-nic-save-request.md)を参照してください。
+拡張可能スイッチ ポートにネットワーク アダプターの接続を持つ HYPER-V 子パーティションが一時停止したり、その状態は保存されている、HYPER-V 拡張可能スイッチのインターフェイスが通知されます。 これにより、拡張可能スイッチのオブジェクト識別子 (OID) メソッド要求を発行するためのプロトコルのエッジ[OID\_スイッチ\_NIC\_保存](https://msdn.microsoft.com/library/windows/hardware/hh598268)拡張可能スイッチのドライバー スタックのダウンします。 この手順の詳細については、次を参照してください。 [OID を処理\_スイッチ\_NIC\_保存要求](handling-the-oid-switch-nic-save-request.md)します。
 
 すべての HYPER-V 拡張可能スイッチの拡張機能では、その実行時データを保存した、拡張可能スイッチのプロトコルの端に通知基になる拡張機能を保存操作が完了しました。 プロトコルのエッジの OID セット要求を発行することによって[OID\_切り替える\_NIC\_保存\_完了](https://msdn.microsoft.com/library/windows/hardware/hh598269)拡張可能スイッチのドライバー スタックの下します。
 
@@ -92,7 +92,7 @@ OID のセット要求を受け取ったとき[OID\_切り替える\_NIC\_復元
 
 2.  拡張機能は、NDIS を使用して、OID のセット要求を完了\_状態\_成功します。
 
-拡張機能が保存する指定された実行時データを所有していない場合、拡張機能を呼び出す[ **NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)します。 これは、拡張可能スイッチ ドライバー スタック内の基になるドライバーに OID のセット要求を転送します。 この場合、拡張機能は変更しないで、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598216) OID 要求に関連付けられている構造体。 OID 要求を転送する方法の詳細については、[NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)を参照してください。
+拡張機能が保存する指定された実行時データを所有していない場合、拡張機能を呼び出す[ **NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)します。 これは、拡張可能スイッチ ドライバー スタック内の基になるドライバーに OID のセット要求を転送します。 この場合、拡張機能は変更しないで、 [ **NDIS\_スイッチ\_NIC\_保存\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598216) OID 要求に関連付けられている構造体。 OID 要求を転送する方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーでの OID 要求のフィルタ リング](filtering-oid-requests-in-an-ndis-filter-driver.md)します。
 
 OID の要求を設定する場合は[OID\_切り替える\_NIC\_復元](https://msdn.microsoft.com/library/windows/hardware/hh598267)NDIS が完了しました\_状態\_成功すると、拡張可能スイッチのプロトコル edge 問題別。OID は、要求を設定します。 この新しい OID セット要求を受信した場合、拡張機能は、次のいずれかを実行できます。
 
@@ -105,6 +105,6 @@ OID の要求を設定する場合は[OID\_切り替える\_NIC\_復元](https:/
 
 この OID 要求は、拡張機能の拡張可能スイッチを指定した NIC に対してのみ復元操作が完了したことを通知します
 
-この OID 要求の詳細については、[OID\_スイッチ\_NIC\_復元\_完了](https://msdn.microsoft.com/library/windows/hardware/hh846215)を参照してください。
+この OID 要求の詳細については、次を参照してください。 [OID\_スイッチ\_NIC\_復元\_完了](https://msdn.microsoft.com/library/windows/hardware/hh846215)します。
 
 **注**  場合、 [OID\_切り替える\_NIC\_復元](https://msdn.microsoft.com/library/windows/hardware/hh598267)セット要求を受信した拡張可能スイッチのミニポート エッジ、NDIS に OID 要求が完了します。\_状態\_成功します。 これによって、拡張機能に、実行時データが所有していないことに拡張可能スイッチのプロトコルの端に通知します。 拡張可能スイッチのインターフェイスを記載したイベントをログにこのような場合、 **ExtensionId**と**PortId**ポート データの最初の実行時に保存された拡張機能のメンバーの値。

@@ -1,17 +1,17 @@
 ---
-title: SoC のプラットフォームで Windows の最小の UEFI 要件
-description: SoC のプラットフォームで Windows の最小の UEFI 要件
+title: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
+description: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
 ms.assetid: 32743d69-83a2-4658-8652-6d624e75e3db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cfb1408e1c2d1a19cb9bd0fd2bc25dd22821568
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337596"
 ---
-# <a name="minimum-uefi-requirements-for-windows-on-soc-platforms"></a>SoC のプラットフォームで Windows の最小の UEFI 要件
+# <a name="minimum-uefi-requirements-for-windows-on-soc-platforms"></a>SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
 
 
 統一された Extensible Firmware Interface (UEFI) では、Windows を実行している SoC プラットフォームの必要なブート ファームウェアです。 このセクションでは、SoC プラットフォームで Windows を実行するための UEFI の実装要件について説明します。 監視とこれらの要件への準拠により、Windows の適切な機能を保証は役立ちます。

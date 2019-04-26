@@ -5,11 +5,11 @@ ms.assetid: 7c594f40-8e75-4c8b-a60e-42f74116c75f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1395d36098f6eeab848fde8b80ff1aaf13a91b0f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346534"
 ---
 # <a name="unidrvpscript5-xpsdrv-ui-behavior-changes"></a>Unidrv/PScript5 XPSDrv UI 動作変更
 
@@ -31,7 +31,7 @@ XPSDrv モードで実行されている Unidrv/PScript5 ドライバーがド�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Orientation</p>
+<td><p>方向</p>
 <p>(<strong>レイアウト</strong> タブ)</p></td>
 <td><p>(PS のみ)ハード コーディングされた UI では、次の 3 つのオプションがあります。縦、横、および横置きに回転します。</p></td>
 <td><p>(PS のみ)印刷の向きのハード コーディングされた UI は表示されません。</p></td>

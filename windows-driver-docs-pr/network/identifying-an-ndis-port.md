@@ -1,6 +1,6 @@
 ---
-title: NDIS ポートを識別します。
-description: NDIS ポートを識別します。
+title: NDIS ポートの識別
+description: NDIS ポートの識別
 ms.assetid: 40917e62-5424-4c46-9b5b-a1a15812ef59
 keywords:
 - WDK NDIS、identifyng のポート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71d5818dbd50554884bc245bdf8c8ec8dfeb7080
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349476"
 ---
-# <a name="identifying-an-ndis-port"></a>NDIS ポートを識別します。
+# <a name="identifying-an-ndis-port"></a>NDIS ポートの識別
 
 
 

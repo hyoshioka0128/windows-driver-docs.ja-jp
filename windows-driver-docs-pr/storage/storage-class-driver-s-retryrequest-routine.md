@@ -1,6 +1,6 @@
 ---
-title: 記憶域クラス ドライバー RetryRequest ルーチン
-description: 記憶域クラス ドライバー RetryRequest ルーチン
+title: 記憶域クラス ドライバーの RetryRequest ルーチン
+description: 記憶域クラス ドライバーの RetryRequest ルーチン
 ms.assetid: de1eea7d-88db-444c-a9f7-462ad4a5df27
 keywords:
 - RetryRequest
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdfd72c30a243cef7c1d608c3a0b7e889e6bfcb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339007"
 ---
-# <a name="storage-class-drivers-retryrequest-routine"></a>記憶域クラス ドライバー RetryRequest ルーチン
+# <a name="storage-class-drivers-retryrequest-routine"></a>記憶域クラス ドライバーの RetryRequest ルーチン
 
 
 ## <span id="ddk_storage_class_drivers_retryrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_RETRYREQUEST_ROUTINE_KG"></span>

@@ -1,6 +1,6 @@
 ---
-title: GDL を使用します。
-description: GDL を使用します。
+title: GDL の使用
+description: GDL の使用
 ms.assetid: 25bbe17d-f9a5-4e29-98e8-c91d71b897b6
 keywords:
 - GDL WDK、GDL を使用したプログラミング
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 706da3f149f90198d16878910bf0357f5ddda4e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339070"
 ---
-# <a name="using-gdl"></a>GDL を使用します。
+# <a name="using-gdl"></a>GDL の使用
 
 
 次のセクションでは、GDL を使用して構成し、スナップショットを作成する方法を示します。

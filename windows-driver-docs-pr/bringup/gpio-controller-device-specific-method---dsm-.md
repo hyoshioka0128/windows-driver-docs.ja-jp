@@ -1,15 +1,15 @@
 ---
-title: GPIO コント ローラー デバイスに固有のメソッド (_DSM)
+title: GPIO コント ローラーのデバイス固有のメソッド (_DSM)
 description: Microsoft、さまざまなデバイス固有クラス通信は Windows では、汎用の I/O (GPIO) ドライバー スタックとプラットフォームのファームウェアをサポートするには、特定のデバイス メソッド (_DSM)、ACPI に GPIO コント ローラーの下に含めることができるを定義します名前空間。
 ms.assetid: 2891A78C-8C4F-4FE4-AB69-402F04DFA885
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9223bb68b3869bafa9e3c04a3c41c6781f42534
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337618"
 ---
 # <a name="gpio-controller-device-specific-method-dsm"></a>デバイス固有のメソッドに GPIO コント ローラー (\_DSM)
 
@@ -38,7 +38,7 @@ GPIO コント ローラーの GUID \_DSM メソッドとして定義されて�
 
 GPIO コント ローラーの関数の 1 のパラメーター \_DSM メソッドは次のように定義されます。
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>引数
 
 -   **Arg0:** GPIO コント ローラーの UUID \_DSM
 

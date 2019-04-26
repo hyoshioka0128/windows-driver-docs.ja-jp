@@ -7,19 +7,19 @@ keywords:
 ms.date: 09/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f71ea841e0304bb0c9924b99098a4307b789f61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338704"
 ---
-# <a name="portminiport-interface-checking"></a>ポート/ミニポート インターフェイスのチェック
+# <a name="portminiport-interface-checking"></a>ポート/ミニポート インターフェイス チェック
 
 ポート/ミニポート インターフェイスのチェックには、Driver Verifier PortCls.sys やオーディオのミニポート ドライバーは、ks.sys AVStream ミニポート ドライバーとの間の DDI インターフェイスの検査を有効になります。 参照してください[AVStream ドライバー ルール](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-avstream-drivers)と[オーディオ ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-audio-drivers)
 
 ### <a name="activating-this-option"></a>このオプションをアクティブ化。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーを確認するポート/ミニポート インターフェイスを有効にすることができます。 詳細については、[driver verifier のオプションを選択する](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-driver-verifier-options)を参照してください。 オプションをオンにするポート/ミニポート インターフェイスをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して 1 つまたは複数のドライバーを確認するポート/ミニポート インターフェイスを有効にすることができます。 詳細については、次を参照してください。 [driver verifier のオプションを選択する](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-driver-verifier-options)します。 オプションをオンにするポート/ミニポート インターフェイスをアクティブ化またはコンピューターを再起動する必要があります。
 
 * **コマンドラインで**
 

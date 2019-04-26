@@ -7,13 +7,13 @@ keywords:
 - IRP_MJ_CLOSE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 46dcf7742a7c57527dd6e3206890c263e493ccd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338521"
 ---
-# <a name="irpmjclose"></a>IRP\_MJ\_閉じる
+# <a name="irpmjclose"></a>IRP\_MJ\_CLOSE
 
 
 すべてのドライバーで閉じる要求を処理する必要があります、 [ *DispatchClose* ](separate-dispatchcreate-and-dispatchclose-routines.md)ルーチン、可能性のある例外のドライバーがデバイスを無効またはシステムを停止せずに、マシンから削除できません. デバイスを保持するシステムのページング ファイル ディスク ドライバーは、このようなドライバーの例を示します。 このようなデバイスのドライバーもできないことアンロード動的に注意してください。
@@ -42,7 +42,7 @@ ms.locfileid: "56528305"
 
 **IRP\_MJ\_閉じる**パッシブで常に要求が送信される\_レベル。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

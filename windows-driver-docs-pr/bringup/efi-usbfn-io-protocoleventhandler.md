@@ -1,15 +1,15 @@
 ---
-title: EFI_USBFN_IO_PROTOCOL します。イベント ハンドラー
-description: EFI_USBFN_IO_PROTOCOL します。イベント ハンドラー
+title: EFI_USBFN_IO_PROTOCOL.EventHandler
+description: EFI_USBFN_IO_PROTOCOL.EventHandler
 ms.assetid: d493de90-cb8c-44d1-8999-f1ceb26e5c15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff785fedb41a40e0425fbb75465aec14a94368c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337705"
 ---
 # <a name="efiusbfnioprotocoleventhandler"></a>EFI\_USBFN\_IO\_プロトコル。イベント ハンドラー
 
@@ -156,7 +156,7 @@ A [EFI\_USBFN\_メッセージ](efi-usbfn-message.md)この通知を開始した
 
  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 **ヘッダー:** ユーザーが生成しました。

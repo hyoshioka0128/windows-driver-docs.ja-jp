@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21e5d5d99cc5e8cc0c0f11bfe51b46a0d916d20f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342395"
 ---
 # <a name="gdi-color-space-conversions"></a>GDI 色空間の変換
 
@@ -44,7 +44,7 @@ GDI は、次の RGB 色空間を認識します。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">移行元</th>
+<th align="left">From</th>
 <th align="left">目的</th>
 <th align="left">ルール</th>
 <th align="left">例</th>

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 03174c0f7843337bfd333921d34d130e73681972
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342363"
 ---
 # <a name="devpkeydrvpkgicon"></a>DEVPKEY_DrvPkg_Icon
 
@@ -46,14 +46,14 @@ DEVPKEY_DrvPkg_Icon デバイス プロパティは、Windows はデバイスの
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 リスト内の各アイコンがアイコン ファイルのパスで指定された (\*.ico) または実行可能ファイルのアイコンのリソースへの参照。
@@ -97,7 +97,7 @@ DeviceIcon,,,,"SomeResource.dll,-2","SomeIcon.icon"
 ...
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

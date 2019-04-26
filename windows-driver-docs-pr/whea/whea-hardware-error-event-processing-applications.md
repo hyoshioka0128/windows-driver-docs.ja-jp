@@ -1,6 +1,6 @@
 ---
-title: WHEA ハードウェア エラーのイベント処理アプリケーション
-description: WHEA ハードウェア エラーのイベント処理アプリケーション
+title: WHEA ハードウェア エラー イベント処理アプリケーション
+description: WHEA ハードウェア エラー イベント処理アプリケーション
 ms.assetid: df1790ec-5a7f-41c2-94df-757621e67ade
 keywords:
 - Windows ハードウェア エラー アーキテクチャ WDK、イベント処理アプリケーション
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad08ccf76dbc8657919fc5427e41f0c709cd39d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340630"
 ---
-# <a name="whea-hardware-error-event-processing-applications"></a>WHEA ハードウェア エラーのイベント処理アプリケーション
+# <a name="whea-hardware-error-event-processing-applications"></a>WHEA ハードウェア エラー イベント処理アプリケーション
 
 
 ここでは、次のトピックについて説明します。

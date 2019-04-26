@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e5c02094509d424108666be077921e1daebc424
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336288"
 ---
 # <a name="kseval"></a>!ks.eval
 
@@ -32,7 +32,7 @@ ms.locfileid: "56528045"
 
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-評価する式を指定します。 *式*MASM 演算子、シンボル、または数値の構文を以下に示す拡張機能に固有の演算子を含めることができます。 MASM の式の詳細については、[MASM 数字と演算子](masm-numbers-and-operators.md)を参照してください。
+評価する式を指定します。 *式*MASM 演算子、シンボル、または数値の構文を以下に示す拡張機能に固有の演算子を含めることができます。 MASM の式の詳細については、次を参照してください。 [MASM 数字と演算子](masm-numbers-and-operators.md)します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -57,7 +57,7 @@ ms.locfileid: "56528045"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)を参照してください。
+詳細については、次を参照してください。[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------

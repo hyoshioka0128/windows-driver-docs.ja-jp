@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 613a76033869153ac4f1dc53df58eae8cb2b2847
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341081"
 ---
 # <a name="initializing-a-device-object"></a>デバイス オブジェクトの初期化
 
@@ -36,7 +36,7 @@ ms.locfileid: "56573995"
 
 [**IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198)下位レベルのドライバーのデバイス オブジェクトと関連付けられているファイルのオブジェクトの両方のポインターを返します。 FSD のみ (または、場合によっては、別の最上位レベルのドライバー)、返されるファイル オブジェクト ポインターを使用することができます。 呼び出すための中間ドライバー **IoGetDeviceObjectPointer**呼び出すことによって逆参照できるように、このファイル オブジェクト ポインターを保存する必要があります[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)ときドライバーでは、読み込まれます。
 
-FSD は、下位のドライバーのデバイス オブジェクトを表すファイル オブジェクトを含むボリュームをマウント後、中間ドライバーことはできませんチェーン自体、ファイル システムおよび下位のドライバーの間で呼び出すことによって**IoAttachDevice**または**IoAttachDeviceToDeviceStack**します。 さらに、FSD が設定できる、**セクタサイズ**マウントが発生した場合、基になるボリュームのハードウェアのジオメトリ ベースのデバイス オブジェクトのメンバー。 詳細については、[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)を参照してください。
+FSD は、下位のドライバーのデバイス オブジェクトを表すファイル オブジェクトを含むボリュームをマウント後、中間ドライバーことはできませんチェーン自体、ファイル システムおよび下位のドライバーの間で呼び出すことによって**IoAttachDevice**または**IoAttachDeviceToDeviceStack**します。 さらに、FSD が設定できる、**セクタサイズ**マウントが発生した場合、基になるボリュームのハードウェアのジオメトリ ベースのデバイス オブジェクトのメンバー。 詳細については、次を参照してください。 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)します。
 
 中級以上の最下位レベルのドライバーもビットを設定、デバイス オブジェクトの**フラグ**Or で、いずれかで\_直接\_IO または操作を行います\_バッファーに格納された\_オブジェクトのすべてのデバイスの IO作成します。 論理または仮想デバイスの最上位レベルのドライバーは、設定を回避できます**フラグ**ドライバー ライターに関連する追加作業が決定した場合は、直接またはバッファー内のいずれかの I/O がドライバーのパフォーマンスが向上支払いいただけます。 中間のドライバーをセットアップする必要があります、**フラグ**次の下位ドライバーのデバイス オブジェクトの一致するように、デバイス オブジェクトのフィールド。
 

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28a312a03f6b93a9f5abc4de84251ff612d0eca1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340773"
 ---
 # <a name="participating-in-error-record-persistence"></a>エラー レコードの永続化への参加
 
@@ -183,7 +183,7 @@ NTSTATUS
 
 エラー レコードの永続化に参加している PSHED プラグインを指定する必要があります、 **PshedFAErrorRecordPersistence**フラグを付けるときに、[登録](registering-a-pshed-plug-in.md)自体と、オペレーティング システムを使用します。
 
-エラー レコードの永続化の詳細については、[エラー レコードの永続化メカニズム](error-record-persistence-mechanism.md)を参照してください。
+エラー レコードの永続化の詳細については、次を参照してください。[エラー レコードの永続化メカニズム](error-record-persistence-mechanism.md)します。
 
  
 

@@ -1,23 +1,23 @@
 ---
-title: ピア ツー ピア
+title: ピアツーピア
 ms.assetid: 0234BA57-477E-408C-94C8-8DD8922FD386
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 description: NFC フォーラムに関する情報は、ピア ツー ピアの標準を定義して、デバイスを確認します。 プロトコルは NFC を使用してやり取りできます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c0272feb0fd890058c34c911742fb0155b9c466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348410"
 ---
-# <a name="peer-to-peer"></a>ピア ツー ピア
+# <a name="peer-to-peer"></a>ピアツーピア
 
 
 2 つのデバイスが NFC を使用してやり取りできるように、ドライバーが次の NFC フォーラムを使用してデータを送受信する必要がありますには、ピア ツー ピアの規格とプロトコルを定義しました。

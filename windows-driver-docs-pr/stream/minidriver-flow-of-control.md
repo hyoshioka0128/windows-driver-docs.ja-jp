@@ -1,6 +1,6 @@
 ---
-title: コントロールのミニドライバーのフロー
-description: コントロールのミニドライバーのフロー
+title: ミニドライバーの制御フロー
+description: ミニドライバーの制御フロー
 ms.assetid: c3c23d32-4023-445b-bd89-e0b454bec1ed
 keywords:
 - Stream.sys クラス ドライバー WDK Windows 2000 のカーネル、制御フロー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c24bb312c11716a9a4921190e919c4529c294575
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348402"
 ---
-# <a name="minidriver-flow-of-control"></a>コントロールのミニドライバーのフロー
+# <a name="minidriver-flow-of-control"></a>ミニドライバーの制御フロー
 
 
 

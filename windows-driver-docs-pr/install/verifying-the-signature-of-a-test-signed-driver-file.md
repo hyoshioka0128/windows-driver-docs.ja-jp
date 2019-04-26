@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e923126bbf0a19944589be54d8bd86af3e44728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339298"
 ---
 # <a name="verifying-the-signature-of-a-test-signed-driver-file"></a>テスト署名されたドライバー ファイルの署名の検証
 
@@ -38,7 +38,7 @@ SignTool verify /v /pa DriverFileName.sys
 
 -   *DriverFileName.sys*ドライバー ファイルの名前を指定します。
 
-注意してくださいを SignTool**確認**コマンドは、ドライバー ファイルの署名に使用されたテスト証明書を明示的に指定しません。 検証操作が成功するには、テスト証明書をインストールする必要があります最初、[信頼されたルート証明機関証明書ストア](trusted-root-certification-authorities-certificate-store.md)署名の検証に使用するローカル コンピューターの。 テスト証明書をローカル コンピューターの信頼されたルート証明機関の証明書ストアにインストールする方法の詳細については、[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)を参照してください。 インストール手順は、署名のコンピューターとテスト用のコンピューターの両方で同じです。
+注意してくださいを SignTool**確認**コマンドは、ドライバー ファイルの署名に使用されたテスト証明書を明示的に指定しません。 検証操作が成功するには、テスト証明書をインストールする必要があります最初、[信頼されたルート証明機関証明書ストア](trusted-root-certification-authorities-certificate-store.md)署名の検証に使用するローカル コンピューターの。 テスト証明書をローカル コンピューターの信頼されたルート証明機関の証明書ストアにインストールする方法の詳細については、次を参照してください。[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)します。 インストール手順は、署名のコンピューターとテスト用のコンピューターの両方で同じです。
 
 次のコマンドがで埋め込みの署名を検証するなど、 *Toaster.sys*では、 *amd64*コマンドが実行されるディレクトリのサブディレクトリ。
 

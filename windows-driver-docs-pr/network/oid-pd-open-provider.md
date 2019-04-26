@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PD_OPEN_PROVIDER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: aeb4fb1808bde918932b081e456df3254aa4718f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346788"
 ---
 # <a name="oidpdopenprovider"></a>OID\_PD\_オープン\_プロバイダー
 
@@ -24,7 +24,7 @@ OID のオブジェクト識別子 (OID) メソッド要求を送信する NDIS 
 <a name="remarks"></a>注釈
 -------
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

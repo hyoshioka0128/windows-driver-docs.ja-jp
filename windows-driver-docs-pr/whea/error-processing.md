@@ -18,18 +18,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b30a07f2179c525fc9ddcd124f227b3463fe13fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354438"
 ---
 # <a name="error-processing"></a>エラー処理
 
 
-Windows ハードウェア エラー アーキテクチャ (WHEA) は、エラー状態の分類に応じて異なる方法でハードウェア エラーを処理します。 ハードウェア エラーのさまざまな分類の詳細については、[ハードウェア エラーとエラーのソース](hardware-errors-and-error-sources.md)を参照してください。
+Windows ハードウェア エラー アーキテクチャ (WHEA) は、エラー状態の分類に応じて異なる方法でハードウェア エラーを処理します。 ハードウェア エラーのさまざまな分類の詳細については、次を参照してください。[ハードウェア エラーとエラーのソース](hardware-errors-and-error-sources.md)します。
 
-ハードウェア エラー条件の種類ごとに応答 WHEA によって実行されたアクションのシーケンスを次に示します。 これらのアクションで参照される WHEA コンポーネントの詳細については、[コンポーネント、Windows Hardware Error Architecture の](components-of-the-windows-hardware-error-architecture.md)を参照してください。
+ハードウェア エラー条件の種類ごとに応答 WHEA によって実行されたアクションのシーケンスを次に示します。 これらのアクションで参照される WHEA コンポーネントの詳細については、次を参照してください。[コンポーネント、Windows Hardware Error Architecture の](components-of-the-windows-hardware-error-architecture.md)します。
 
 ### <a name="corrected-hardware-error"></a>**修正されたハードウェア エラー**
 

@@ -4,11 +4,11 @@ description: ハードウェア セキュリティ テスト インターフェ�
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f8771c4fd335724f7a3cb412f95d5bb4d3c81aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337529"
 ---
 # <a name="hardware-security-test-interface-hsti-11a"></a>ハードウェア セキュリティ テスト インターフェイス (HSTI) 1.1a
 
@@ -26,7 +26,7 @@ HSTI のサポートは、次のバージョンの Windows に含まれていま
 
 ## <a name="related-resources"></a>関連リソース
 
-[ハードウェア セキュリティ テストの容易性の仕様](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)
+[ハードウェア セキュリティの検証可能性に関する仕様](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)
 
 
 

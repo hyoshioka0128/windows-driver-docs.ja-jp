@@ -1,5 +1,5 @@
 ---
-title: No ウェイク アップ タイマー
+title: ウェイクなしタイマー
 description: Windows 8.1 以降、ドライバーは低電力状態からのプロセッサを不必要にウェイク アップを回避するために no ウェイク アップ タイマーを使用できます。
 ms.assetid: 04CD107B-F196-4FF8-A423-C43CAA9A7EBD
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e69f335ee69c22d6385d7a8130b64c1b745a59b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341967"
 ---
-# <a name="no-wake-timers"></a>No ウェイク アップ タイマー
+# <a name="no-wake-timers"></a>ウェイクなしタイマー
 
 
 Windows 8.1 以降、ドライバーは低電力状態からのプロセッサを不必要にウェイク アップを回避するために no ウェイク アップ タイマーを使用できます。 低電力状態で、プロセッサを保持することでいいえウェイク アップ タイマーは電力消費量を削減し、タブレットやその他のモバイル コンピューターがバッテリの充電で実行できる時間が長くなります。

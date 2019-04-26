@@ -1,17 +1,17 @@
 ---
-title: リソースのデバッグ
+title: デバッグに関するリソース
 description: Windows のツールのデバッグを使用して、ドライバー、アプリケーション、および Windows システム上のサービスをデバッグします。
 ms.assetid: F2111416-EC6C-4967-B123-9A6101040561
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2431ebd44c6e3c2338b7859e3daf03b7988c07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350602"
 ---
-# <a name="debugging-resources"></a>リソースのデバッグ
+# <a name="debugging-resources"></a>デバッグに関するリソース
 
 
 Windows のツールのデバッグを使用して、ドライバー、アプリケーション、および Windows システム上のサービスをデバッグします。 中核的なツール セット内のエンジンのデバッグには、Windows のデバッガーは呼び出されます。 Windows 8 以降、Visual Studio を使用して、Windows デバッガーのインターフェイスとして。 従来のインターフェイス (WinDbg、CDB、NTSD) ツールを Windows のデバッグに含まれているを使用することもできます。
@@ -71,7 +71,7 @@ Windows のツールのデバッグを使用して、ドライバー、アプリ
 
 [ドライバー開発者向けコミュニティ リソース](https://msdn.microsoft.com/windows/hardware/gg454517)
 
-[Windows のドライバー署名要件](https://msdn.microsoft.com/library/windows/hardware/gg487317)
+[Windows のドライバー署名の要件](https://msdn.microsoft.com/library/windows/hardware/gg487317)
 
 [開発者向けキットとツールのサポート](https://msdn.microsoft.com/windows/hardware/gg454528)
 

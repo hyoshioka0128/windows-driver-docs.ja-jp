@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f923094189d30b9515fde20843eb624102e2d8b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348884"
 ---
 # <a name="setting-the-directory-path-of-the-text-logs"></a>テキスト ログのディレクトリ パスの設定
 

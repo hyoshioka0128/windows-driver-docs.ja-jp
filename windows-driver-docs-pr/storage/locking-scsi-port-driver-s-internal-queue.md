@@ -5,11 +5,11 @@ ms.assetid: ea5be4e1-4908-431c-9c80-96539157b87e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e938816dd8fa1ef0db51995733118bcac7199012
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355620"
 ---
 # <a name="locking-scsi-port-drivers-internal-queue"></a>SCSI ポート ドライバーの内部キューのロック
 
@@ -27,7 +27,7 @@ ms.locfileid: "56527361"
 
 そのキューのロックが解除されると SCSI ポートは、キューに置かれたされる Srb の処理を再開します。 クラス ドライバーは、別のドライバーによってロックされたキューをバイパスしないようにします。
 
-クラスのドライバーの観点からロックを解除するキューの詳細については、[記憶域クラス ドライバー ReleaseQueue ルーチン](storage-class-driver-s-releasequeue-routine.md)を参照してください。
+クラスのドライバーの観点からロックを解除するキューの詳細については、次を参照してください。[記憶域クラス ドライバー ReleaseQueue ルーチン](storage-class-driver-s-releasequeue-routine.md)します。
 
  
 

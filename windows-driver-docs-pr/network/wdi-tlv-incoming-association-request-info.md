@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_INCOMING_ASSOCIATION_REQUEST_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 95889b682cf985c926f7d0237be439e52fc960a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342274"
 ---
 # <a name="wditlvincomingassociationrequestinfo"></a>WDI\_TLV\_受信\_アソシエーション\_要求\_情報
 
@@ -35,7 +35,7 @@ WDI\_TLV\_受信\_アソシエーション\_要求\_情報が入力方向の関�
 |-----------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------|
 | [**WDI\_TLV\_受信\_アソシエーション\_要求\_パラメーター**](wdi-tlv-incoming-association-request-parameters.md) |                                |          | アソシエーションの着信要求のパラメーター。             |
 | [**WDI\_TLV\_アソシエーション\_要求\_フレーム**](wdi-tlv-association-request-frame.md)                              |                                |          | 関連要求フレーム。                                   |
-| [**WDI\_TLV\_アソシエーション\_要求\_デバイス\_コンテキスト**](wdi-tlv-association-request-device-context.md)           |                                | X        | ポートに下位へ渡されるベンダー固有の情報。 |
+| [**WDI\_TLV\_アソシエーション\_要求\_デバイス\_コンテキスト**](wdi-tlv-association-request-device-context.md)           |                                | x        | ポートに下位へ渡されるベンダー固有の情報。 |
 
  
 

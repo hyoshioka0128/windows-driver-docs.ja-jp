@@ -1,5 +1,5 @@
 ---
-title: .load、.loadby (拡張 DLL の読み込み)
+title: .load、.loadby (拡張機能 DLL の読み込み)
 description: .Load と .loadby コマンドは、デバッガーに、新しい拡張 DLL を読み込みます。
 ms.assetid: bf54064a-6f30-4f31-a373-fbc643e2660c
 keywords:
@@ -17,13 +17,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c559509c916563fe1f9fedc459503c407b55fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336512"
 ---
-# <a name="load-loadby-load-extension-dll"></a>.load、.loadby (拡張 DLL の読み込み)
+# <a name="load-loadby-load-extension-dll"></a>.load、.loadby (拡張機能 DLL の読み込み)
 
 
 **.Load**と **.loadby**コマンドでは、新しい拡張 DLL を読み込む、デバッガーを起動します。
@@ -70,7 +70,7 @@ ms.locfileid: "56531568"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-読み込み、アンロード、およびコントロール拡張機能する方法の詳細については、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)を参照してください。
+読み込み、アンロード、およびコントロール拡張機能する方法の詳細については、次を参照してください。[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。
 
 <a name="remarks"></a>注釈
 -------

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 64be5d0163bb821ad30c1ebe65d26ce7b41c6ecf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342832"
 ---
-# <a name="whea"></a>! whea
+# <a name="whea"></a>!whea
 
 
 **! Whea**拡張機能には、最上位レベルの Windows ハードウェア エラー アーキテクチャ (WHEA) 情報が表示されます。
@@ -64,7 +64,7 @@ ms.locfileid: "56560456"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Errrec** ](-errrec.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。 WHEA の詳細については、[Windows ハードウェア エラー アーキテクチャ (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) ドキュメントを参照してください。
+[ **! Errrec** ](-errrec.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。 WHEA の詳細については、次を参照してください。 [Windows ハードウェア エラー アーキテクチャ (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) ドキュメントです。
 
 <a name="remarks"></a>注釈
 -------

@@ -5,11 +5,11 @@ ms.assetid: 5D4CBEA1-3C13-4B5C-A43D-7E6DBBB1A80F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7b9e7d6792d60a231da694ff409c7e502a734a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348890"
 ---
 # <a name="desktop-duplication"></a>デスクトップの重複
 
@@ -41,7 +41,7 @@ API は、モニターの境界に沿ってデスクトップの内容にアク�
     -   ハードウェア アクセラレータを使用して、移動、およびマウスのデータを処理するアプリケーションを選択できます。
     -   圧縮をストリーミングする前にハードウェア アクセラレータを使用するアプリケーションを選択できます。
 
-詳細なドキュメントとサンプルでは、[デスクトップ重複 API](https://msdn.microsoft.com/library/windows/desktop/hh404487)を参照してください。
+詳細なドキュメントとサンプルでは、次を参照してください。[デスクトップ重複 API](https://msdn.microsoft.com/library/windows/desktop/hh404487)します。
 
  
 

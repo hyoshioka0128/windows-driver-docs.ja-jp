@@ -1,5 +1,5 @@
 ---
-title: .pagein (メモリ内のページ)
+title: .pagein (メモリへのページング)
 description: メモリの指定した領域に .pagein コマンド ページ。
 ms.assetid: 5fb8f9d2-d07a-49c3-b844-aade9bdba367
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b9f6f6126d3d0ff439bbfe212c6c431ab1476a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338996"
 ---
-# <a name="pagein-page-in-memory"></a>.pagein (メモリ内のページ)
+# <a name="pagein-page-in-memory"></a>.pagein (メモリへのページング)
 
 
 **.Pagein**メモリの指定した領域内のページをコマンドします。

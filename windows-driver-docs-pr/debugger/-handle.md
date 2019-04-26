@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e4d4c011d120c66d8cd9ade7d019832bf63cca6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336559"
 ---
-# <a name="handle"></a>! 処理
+# <a name="handle"></a>!handle
 
 
 **! 処理**ターゲット システムのすべてのプロセスを所有または拡張機能は、ハンドルに関する情報を表示またはそのいずれかを処理します。

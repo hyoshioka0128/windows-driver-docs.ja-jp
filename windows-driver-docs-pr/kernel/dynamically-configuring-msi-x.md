@@ -1,17 +1,17 @@
 ---
-title: MSI X を動的に構成します。
-description: MSI X を動的に構成します。
+title: MSI-X の動的な構成
+description: MSI-X の動的な構成
 ms.assetid: 53051239-e00f-41e8-b95d-9618693e696d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 564c18d512d23ab7372d7ab089e570b47ea7658a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341462"
 ---
-# <a name="dynamically-configuring-msi-x"></a>MSI X を動的に構成します。
+# <a name="dynamically-configuring-msi-x"></a>MSI-X の動的な構成
 
 
 Windows Vista Service Pack 1 (SP1)、Windows Server 2008、および以降のオペレーティング システムは、MSI X 割り込みメッセージのプロパティを動的に変更をサポートします。 (PCI 3.0 の仕様には、MSI X が定義されている)。GUID を公開、PCI バス ドライバー\_MSIX\_テーブル\_CONFIG\_バス ハードウェア割り込みの表の設定を変更する PCI デバイス用のドライバーを許可するインターフェイス。

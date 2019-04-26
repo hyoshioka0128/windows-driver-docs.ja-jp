@@ -1,6 +1,6 @@
 ---
-title: 登録して、CustomTimerDpc ルーチンのキュー
-description: 登録して、CustomTimerDpc ルーチンのキュー
+title: CustomTimerDpc ルーチンの登録とキュー
+description: CustomTimerDpc ルーチンの登録とキュー
 ms.assetid: 884bff8e-8437-44fb-acc0-f535d64ce900
 keywords:
 - タイマー オブジェクトの WDK カーネル、CustomTimerDpc ルーチン
@@ -22,13 +22,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d328e808a94225536cd8ef31216a86ecf8a477c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352996"
 ---
-# <a name="registering-and-queuing-a-customtimerdpc-routine"></a>登録して、CustomTimerDpc ルーチンのキュー
+# <a name="registering-and-queuing-a-customtimerdpc-routine"></a>CustomTimerDpc ルーチンの登録とキュー
 
 
 

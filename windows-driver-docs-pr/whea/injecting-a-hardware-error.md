@@ -1,6 +1,6 @@
 ---
-title: ハードウェア エラーを挿入します。
-description: ハードウェア エラーを挿入します。
+title: ハードウェア エラーの挿入
+description: ハードウェア エラーの挿入
 ms.assetid: c27c79d9-c0b2-433b-b3f4-7674c361f1aa
 keywords:
 - ハードウェア エラー WDK WHEA の挿入
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3715863ceb38fb03afcb3d8a4cf0fc8b9c74e046
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340782"
 ---
-# <a name="injecting-a-hardware-error"></a>ハードウェア エラーを挿入します。
+# <a name="injecting-a-hardware-error"></a>ハードウェア エラーの挿入
 
 
 ユーザー モード アプリケーションは呼び出すことによって、ハードウェア プラットフォームにハードウェア エラーを挿入することができます、 [ **WHEAErrorInjectionMethods::InjectError** ](https://msdn.microsoft.com/library/windows/hardware/ff559518)メソッド。 アプリケーションでは、ハードウェア エラーをテストして、システムのハードウェアのエラー処理機能を検証するハードウェア プラットフォームに挿入します。

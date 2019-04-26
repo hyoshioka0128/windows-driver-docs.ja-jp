@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bacde07581ed79ca399e0c7386ef337c9653f2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339130"
 ---
 # <a name="acpi-bios"></a>ACPI BIOS
 
@@ -25,5 +25,5 @@ Windows Server 2003、Windows XP、および Windows 2000、ACPI BIOS が 1999 �
 
 デバイス マネージャーは、個々 のコンピューターが ACPI をサポートしているかどうかを示します。 ドライバー情報の確認、**コンピューター**デバイス カテゴリ。
 
-ACPI の詳細については、、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)を参照してください。
+ACPI の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
 

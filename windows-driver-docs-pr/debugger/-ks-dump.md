@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 81b6db8685a6b6841febcbec68379362a2eab817
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336660"
 ---
 # <a name="ksdump"></a>!ks.dump
 
@@ -35,7 +35,7 @@ ms.locfileid: "57349745"
 AVStream 構造体、AVStream クラス オブジェクト、または PortCls オブジェクトへのポインターを指定します。 IRP またはファイル オブジェクトへのポインターを指定することもできます。
 
 <span id="_______Level______"></span><span id="_______level______"></span><span id="_______LEVEL______"></span> *レベル*   
-任意。 0 ~ 7 で表示する詳細のレベルを指定の値を大きく表示徐々 に詳細なスケールします。 使用可能なすべての詳細を表示するには、7 の値を指定します。 発行することによってレベルの詳細を確認できます、 **! ks.dump**引数なしでコマンド。
+(省略可能)。 0 ~ 7 で表示する詳細のレベルを指定の値を大きく表示徐々 に詳細なスケールします。 使用可能なすべての詳細を表示するには、7 の値を指定します。 発行することによってレベルの詳細を確認できます、 **! ks.dump**引数なしでコマンド。
 
 <span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
 任意。 表示される情報の種類を指定します。 *フラグ*次のビットの組み合わせにすることができます。
@@ -75,7 +75,7 @@ AVStream 構造体、AVStream クラス オブジェクト、または PortCls �
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)を参照してください。
+詳細については、次を参照してください。[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)します。
 
 <a name="remarks"></a>コメント
 -------

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cadafae4ce7d46c0da6f89f4771548563a5eaa96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340880"
 ---
 # <a name="kspropertybdaguardinterval"></a>KSPROPERTY\_BDA\_GUARD\_間隔
 
@@ -42,16 +42,16 @@ ms.locfileid: "56569643"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>GuardInterval</p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56569643"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 GuardInterval 列挙型から返される値は、ガード間隔の設定を識別します。

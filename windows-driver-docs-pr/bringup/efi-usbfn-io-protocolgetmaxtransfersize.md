@@ -5,11 +5,11 @@ ms.assetid: 61160708-029b-4691-87fe-22d06424220d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e20d650747a0b14c572c5088c264e014d12e18f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337711"
 ---
 # <a name="efiusbfnioprotocolgetmaxtransfersize"></a>EFI\_USBFN\_IO\_プロトコル。GetMaxTransferSize
 
@@ -75,10 +75,10 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 
  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 **ヘッダー:** ユーザーが生成しました。

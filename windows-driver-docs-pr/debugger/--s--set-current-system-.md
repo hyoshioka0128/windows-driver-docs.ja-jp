@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6079bff9140a042410252a0ecbee5da5eca6569f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337074"
 ---
 # <a name="s-set-current-system"></a>||s (システム時刻の設定)
 
@@ -35,7 +35,7 @@ ms.locfileid: "56570717"
 
 
 <span id="_______System______"></span><span id="_______system______"></span><span id="_______SYSTEM______"></span> *システム*   
-アクティブ化するシステムの番号を指定します。 構文の詳細については、[システム構文](system-syntax.md)を参照してください。
+アクティブ化するシステムの番号を指定します。 構文の詳細については、次を参照してください。[システム構文](system-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -65,7 +65,7 @@ ms.locfileid: "56570717"
 <a name="remarks"></a>コメント
 -------
 
-**| |s**コマンドは、複数のターゲットをデバッグまたは複数のダンプ ファイルを操作するときに便利です。  この種のセッションの詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+**| |s**コマンドは、複数のターゲットをデバッグまたは複数のダンプ ファイルを操作するときに便利です。  この種のセッションの詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
 使用する場合、 **| |s**構文、デバッガーには、現在のシステムに関する情報が表示されます。
 

@@ -1,17 +1,17 @@
 ---
-title: PFA メモリの一覧を管理する方法
-description: PFA メモリの一覧を管理する方法
+title: PFA メモリ一覧を管理する方法
+description: PFA メモリ一覧を管理する方法
 ms.assetid: 28463f91-275b-4ad4-af64-59bed7fd3806
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9b8e74e2307f7e8da4d02db62368c164336a55a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340816"
 ---
-# <a name="how-to-manage-the-pfa-memory-list"></a>PFA メモリの一覧を管理する方法
+# <a name="how-to-manage-the-pfa-memory-list"></a>PFA メモリ一覧を管理する方法
 
 
 表示および BCDEdit のコマンド ライン ツールを使用して、BCD システム ストアに保存されているメモリ ページの一覧を削除できます。 BCDEdit ツールを使用するには、コンピューターの Administrators グループのメンバーであるし、BCDEdit を管理者特権でコマンド プロンプトから実行する必要があります。 管理者特権でコマンド プロンプト ウィンドウを開くには、次の手順に従います。

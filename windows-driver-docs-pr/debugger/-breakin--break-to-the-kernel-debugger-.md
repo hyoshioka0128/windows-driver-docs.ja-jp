@@ -1,5 +1,5 @@
 ---
-title: .breakin (カーネル デバッガーにブレーク)
+title: .breakin (中断してカーネル デバッガーに切り替え)
 description: .Breakin コマンドは、ユーザー モードのデバッグのカーネル モードのデバッグに切り替えます。 このコマンドは、カーネル デバッガーからユーザー モード デバッガーの制御を行うときに特に便利です。
 ms.assetid: f0dab2c2-60f4-4a85-91bd-6379b247ceaf
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ead826fad720ba8e9729b0044cd2db10064a1fe0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336974"
 ---
-# <a name="breakin-break-to-the-kernel-debugger"></a>.breakin (カーネル デバッガーにブレーク)
+# <a name="breakin-break-to-the-kernel-debugger"></a>.breakin (中断してカーネル デバッガーに切り替え)
 
 
 **.Breakin**コマンドがユーザー モードのデバッグのカーネル モードのデバッグに切り替えます。 このコマンドは、カーネル デバッガーからユーザー モード デバッガーの制御を行うときに特に便利です。

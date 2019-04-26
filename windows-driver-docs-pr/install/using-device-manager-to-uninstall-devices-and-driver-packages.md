@@ -1,17 +1,17 @@
 ---
-title: デバイス マネージャーを使用して、デバイスとドライバー パッケージをアンインストールするには
-description: デバイス マネージャーを使用して、デバイスとドライバー パッケージをアンインストールするには
+title: デバイス マネージャーを使用したデバイスとドライバー パッケージのアンインストール
+description: デバイス マネージャーを使用したデバイスとドライバー パッケージのアンインストール
 ms.assetid: 6e798b87-a35d-414a-8116-ee1523c782ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4498a88f2d1e0d65b3ca46ef38bc12df454f9e51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339447"
 ---
-# <a name="using-device-manager-to-uninstall-devices-and-driver-packages"></a>デバイス マネージャーを使用して、デバイスとドライバー パッケージをアンインストールするには
+# <a name="using-device-manager-to-uninstall-devices-and-driver-packages"></a>デバイス マネージャーを使用したデバイスとドライバー パッケージのアンインストール
 
 
 [デバイス マネージャー](using-device-manager.md)は、コントロール パネル アプリケーションをデバイスと、システムのドライバーを管理することができます。 デバイス マネージャーを使用して、デバイスといくつかの制限を持つドライバー パッケージをアンインストールすることができます。 通常、エンドユーザーはデバイスまたはドライバー パッケージをアンインストールするのにはデバイス マネージャーを使用しませんが、自分のコンピューターで発生する問題のトラブルシューティングを行うデバイス マネージャーを使用する必要があります。
@@ -20,7 +20,7 @@ ms.locfileid: "56557693"
 
  
 
-ドライバーとドライバー パッケージのアンインストールの詳細については、[と、どのデバイスとドライバー パッケージがアンインストール](how-devices-and-driver-packages-are-uninstalled.md)を参照してください。
+ドライバーとドライバー パッケージのアンインストールの詳細については、次を参照してください。[と、どのデバイスとドライバー パッケージがアンインストール](how-devices-and-driver-packages-are-uninstalled.md)します。
 
 ### <a href="" id="uninstalling-the-device"></a> デバイスのアンインストール
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 39cc03ebcdc74b86e7d471cccc62583a55d20186
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336211"
 ---
 # <a name="locale-set-locale"></a>.locale (ロケールの設定)
 
@@ -61,7 +61,7 @@ ms.locfileid: "56578249"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ロケールの詳細については、、 **setlocale**日常的なリファレンス ページを参照してください。
+ロケールの詳細については、次を参照してください。、 **setlocale**日常的なリファレンス ページです。
 
 <a name="remarks"></a>コメント
 -------

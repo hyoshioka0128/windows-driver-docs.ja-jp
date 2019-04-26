@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bad0a2d5c26f63bca91ef6cc546843c7a7eaa81d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339672"
 ---
 # <a name="storagekdstorloglist"></a>!storagekd.storloglist
 
@@ -60,7 +60,7 @@ Storport アダプター デバイス拡張機能またはデバイス オブジ
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 次の例に示します **! storagekd.storloglist**表示。

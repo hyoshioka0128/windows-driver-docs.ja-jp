@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_INDICATION_STOP_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc35b827bccd41c052bf27a34e6a568eb300949
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342231"
 ---
 # <a name="wditlvindicationstopap"></a>WDI\_TLV\_INDICATION\_停止\_アジア太平洋
 
@@ -31,7 +31,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                  |
+| 型   | 説明                                                                                                  |
 |--------|--------------------------------------------------------------------------------------------------------------|
 | UINT32 | アジア太平洋の停止の理由です。 参照してください[ **WDI\_停止\_AP\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn926116)の考えられる理由の値。 |
 

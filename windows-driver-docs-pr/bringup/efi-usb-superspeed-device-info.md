@@ -5,11 +5,11 @@ ms.assetid: 7861BA16-7499-48A1-9D6A-9BB8F5AA36CE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2bcc9909d7cc666164b80e737d2b2b74f6afdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337746"
 ---
 # <a name="efiusbsuperspeeddeviceinfo"></a>EFI\_USB\_SUPERSPEED\_デバイス\_情報
 
@@ -40,12 +40,12 @@ EFI\_USB\_デバイス\_USB デバイスの構成情報を含む記述子構造�
 <a href="" id="bosdescriptor"></a>**BosDescriptor**  
 [EFI\_USB\_BOS\_記述子](efi-usb-bos-descriptor.md)USB 機能ドライバーをバイナリ オブジェクト ストアに関する情報を含む構造体。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
 **EFI\_USB\_CONFIG\_記述子**構造体は、UEFI 仕様バージョン 2.3 で定義されている以降。 詳細については、次を参照してください。、 [UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526) web サイト。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 **ヘッダー:** ユーザーが生成しました。

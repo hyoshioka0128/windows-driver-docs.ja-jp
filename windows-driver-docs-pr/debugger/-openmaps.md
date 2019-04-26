@@ -17,13 +17,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2496778b2ec95bd3941420766cf0087c241d0e78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334436"
 ---
-# <a name="openmaps"></a>! openmaps
+# <a name="openmaps"></a>!openmaps
 
 
 **! Openmaps**拡張機能は、参照先のバッファーのコントロール ブロック (BCBs) を表示し、仮想アドレス コントロールが、指定された共有キャッシュのマップの (同時に Vacb) をブロックします。
@@ -39,7 +39,7 @@ ms.locfileid: "56549263"
 共有キャッシュのマップのアドレスを指定します。
 
 <span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *フラグ*   
-コントロール ブロックが表示されるかを決定します。 場合*フラグ*は**1**デバッガーですべてのコントロール ブロックを表示します。 場合*フラグ*は**0**デバッガーは、コントロール ブロックの参照のみが表示されます。 既定値は**0**します。
+コントロール ブロックが表示されるかを決定します。 場合*フラグ*は**1**デバッガーですべてのコントロール ブロックを表示します。 場合*フラグ*は**0**デバッガーは、コントロール ブロックの参照のみが表示されます。 既定値は **0**です。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 

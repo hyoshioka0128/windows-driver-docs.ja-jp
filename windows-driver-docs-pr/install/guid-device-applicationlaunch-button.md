@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 81278aa4aaac7027ffe13708f2698e5f320c97f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340025"
 ---
 # <a name="guiddeviceapplicationlaunchbutton"></a>GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
 
@@ -56,7 +56,7 @@ GUID_DEVICE_APPLICATIONLAUNCH_BUTTON[デバイス インターフェイス ク�
 
 システム提供[ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)スタート ボタンのオペレーティング システムと ACPI アプリケーションのプレゼンスのアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、[ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)を参照してください。
+WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、次を参照してください。 [ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)します。
 
 <a name="requirements"></a>要件
 ------------

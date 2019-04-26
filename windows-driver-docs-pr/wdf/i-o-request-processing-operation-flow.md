@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79377468a59511c59a79c3069ea1a49974e21b15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342866"
 ---
 # <a name="io-request-processing-operation-flow"></a>I/O 要求処理の操作フロー
 

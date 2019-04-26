@@ -4,11 +4,11 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 08/17/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64cf7cc9d215afc29e332ea6ee5b5a4fa10ab199
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340496"
 ---
 # <a name="windbg-preview---settings-and-workspaces"></a>WinDbg Preview - とワークスペースの設定
 
@@ -21,7 +21,7 @@ ms.locfileid: "56572778"
 
 ![新しいフィードバックの追加 ボタンを含むフィードバックのオプションを示すフィードバック ハブのスクリーン ショット](images/windbgx-settings-menu.png)
 
-パスの設定の詳細については、[へのアクセスのデバッグ シンボル](accessing-symbols-for-debugging.md)と[WinDbg でソース コードをデバッグ](source-window.md)を参照してください。
+パスの設定の詳細については、次を参照してください。[へのアクセスのデバッグ シンボル](accessing-symbols-for-debugging.md)と[WinDbg でソース コードをデバッグ](source-window.md)します。
 
 ## <a name="workspaces"></a>ワークスペース
 
@@ -49,7 +49,7 @@ Verbose | false  | 詳細モードをオンにすると (登録のダンプ) な
 再開可能 | - |  WinDbg - によって内部的に使用は変更しないでください。
 UseImplicitCommandLine | false | 使用して暗黙的なコマンド ライン (-cimp コマンド ライン オプション)。 これは、明示的のプロセスを実行するのではなく暗黙的なコマンドラインを使用したデバッガーを開始します。
 
-コマンド ライン オプションの詳細については、[WinDbg コマンド ライン オプション](windbg-command-line-options.md)を参照してください。
+コマンド ライン オプションの詳細については、次を参照してください。 [WinDbg コマンド ライン オプション](windbg-command-line-options.md)します。
 
 
 #### <a name="symbol-settings"></a>シンボルの設定 
@@ -67,7 +67,7 @@ SymOptNoUnqualifiedLoads | false | このシンボルのオプションには、
 SymOptAutoPublics | false | このシンボルのオプションは、最後の手段としての .pdb ファイルに、パブリック シンボル テーブルを検索する DbgHelp とします。 プライベート シンボル データを検索するときに、一致が見つかった場合、パブリック シンボルは検索されません。 これにより、シンボルの検索の速度が向上します。 
 SymOptDebug | false | このシンボルのオプションは、ノイズの多いシンボルの読み込みをオンにします。 これには、デバッガーのシンボルの検索についての情報を表示するように指示します。
 
-シンボルのオプションの詳細については、[シンボル オプション](symbol-options.md)を参照してください。
+シンボルのオプションの詳細については、次を参照してください。[シンボル オプション](symbol-options.md)します。
 
 
 #### <a name="window-layout-settings"></a>ウィンドウ レイアウトの設定

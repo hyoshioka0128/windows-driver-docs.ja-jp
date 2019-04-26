@@ -1,17 +1,17 @@
 ---
-title: 書き込みのエラーや警告をログ エントリ
-description: 書き込みのエラーや警告をログ エントリ
+title: エラーや警告ログ エントリの書き込み
+description: エラーや警告ログ エントリの書き込み
 ms.assetid: 80393368-7430-46ca-a53e-c94b7e8acfa0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a60e9ec98226c5bfcea29ca6397d623c1aea2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339229"
 ---
-# <a name="writing-an-error-or-warning-log-entry"></a>書き込みのエラーや警告をログ エントリ
+# <a name="writing-an-error-or-warning-log-entry"></a>エラーや警告ログ エントリの書き込み
 
 
 次の例は、アプリケーションが呼び出す可能性があります通常方法[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)エラーまたは警告のエントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)します。 ただし、イベントが SetupAPI 固有のエラーまたは Win32 エラーに関連付けられている場合は、アプリケーションが呼び出して[ **SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232)代わりにします。 **SetupWriteTextLogError**ログ記録とこれらの種類のエラーについての情報の解釈が容易になります。
@@ -26,7 +26,7 @@ ms.locfileid: "56551565"
 
 -   *カテゴリ*TXTLOG_VENDOR で、ログ エントリがベンダーから提供されたアプリケーションによって行われたことを示しますに設定されます。 イベント カテゴリについては、後述[テキスト ログのイベント カテゴリを有効にする](enabling-event-categories-for-a-text-log.md)します。
 
--   *フラグ*TXTLOG_TIMESTAMP とビットごとの TXTLOG_ERROR またはに設定されます。 この例では、インデント深度が変更されていないとインデントの現在の深さは 5 つの固定幅テキスト スペースに設定されていました。 インデントの深さを変更する方法については、[インデントのログ エントリの書き込み](writing-indented-log-entries.md)を参照してください。 イベント レベルが記載されて、[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)トピック。
+-   *フラグ*TXTLOG_TIMESTAMP とビットごとの TXTLOG_ERROR またはに設定されます。 この例では、インデント深度が変更されていないとインデントの現在の深さは 5 つの固定幅テキスト スペースに設定されていました。 インデントの深さを変更する方法については、次を参照してください。[インデントのログ エントリの書き込み](writing-indented-log-entries.md)します。 イベント レベルが記載されて、[テキスト ログのイベント レベルの設定](setting-the-event-level-for-a-text-log.md)トピック。
 
 -   *MessageStr*テキスト (「アプリケーション エラー (%d)」) に設定されます。
 

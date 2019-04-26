@@ -1,6 +1,6 @@
 ---
-title: AVStream サンプル
-description: AVStream サンプル
+title: AVStream のサンプル
+description: AVStream のサンプル
 ms.assetid: 18ddd9f1-d8bb-49a7-91bf-a8aeaa9565ad
 keywords:
 - AVStream WDK サンプル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7627eb196b6690edf749ba06f4007d671e2784c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348363"
 ---
-# <a name="avstream-samples"></a>AVStream サンプル
+# <a name="avstream-samples"></a>AVStream のサンプル
 
 
 

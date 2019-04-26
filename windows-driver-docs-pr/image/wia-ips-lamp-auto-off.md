@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d296fb17bee8a6948a39815629aa882801c84666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348336"
 ---
 # <a name="wiaipslampautooff"></a>WIA\_IP\_LAMP\_自動\_OFF
 
@@ -32,7 +32,7 @@ WIA\_IP\_LAMP\_自動\_プロパティをオフには、スキャナーの lamp 
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA\_IP\_LAMP\_自動\_プロパティの有効無効、どれくらいの時間の lamp のプログラムによる制御は保持されますスキャナーが使用されていないときに; (透明度アダプター) の専用 lamp またはメインこの lamp 可能性があります(専用のフィルム スキャナー) に lamp をスキャナーです。
@@ -41,7 +41,7 @@ WIA を実装する必要があります\_IP\_LAMP\_自動\_デバイスは、�
 
 WIA の有効な値\_IP\_LAMP\_自動\_範囲 0 ~ 4095 秒オフします。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

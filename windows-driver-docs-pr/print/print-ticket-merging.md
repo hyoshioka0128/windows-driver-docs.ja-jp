@@ -1,6 +1,6 @@
 ---
-title: 印刷チケットのマージ
-description: 印刷チケットのマージ
+title: 印刷チケット結合
+description: 印刷チケット結合
 ms.assetid: 2d9cf4d3-5c73-4355-b5e0-effcfb7102cc
 keywords:
 - XPSDrv プリンター ドライバー WDK、モジュールを表示します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e49acda9d9b06ac9a237061812545716df3e1f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341896"
 ---
-# <a name="print-ticket-merging"></a>印刷チケットのマージ
+# <a name="print-ticket-merging"></a>印刷チケット結合
 
 
 印刷ドライバーで処理 PrintTicket オブジェクトでは、関連付けられているドキュメントの一部に基づいた階層関係があります。 次の図は、XPS ドキュメント内のこれらの部分の関係を示しています。

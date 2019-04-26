@@ -1,6 +1,6 @@
 ---
-title: ファイル システムに接続されたデバイス オブジェクトをフィルター処理します。
-description: ファイル システムに接続されたデバイス オブジェクトをフィルター処理します。
+title: ファイル システムにアタッチされるフィルター デバイス オブジェクト
+description: ファイル システムにアタッチされるフィルター デバイス オブジェクト
 ms.assetid: 5fb0ec43-a639-4b2a-8057-3313e9dee457
 keywords:
 - デバイス オブジェクトの WDK ファイル システム フィルターをかける
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ac461c09b91c00ec11118f1cc0907d751e22227
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341520"
 ---
-# <a name="filter-device-object-attached-to-a-file-system"></a>ファイル システムに接続されたデバイス オブジェクトをフィルター処理します。
+# <a name="filter-device-object-attached-to-a-file-system"></a>ファイル システムにアタッチされるフィルター デバイス オブジェクト
 
 
 ## <span id="ddk_a_filter_device_object_attached_to_a_file_system_if"></span><span id="DDK_A_FILTER_DEVICE_OBJECT_ATTACHED_TO_A_FILE_SYSTEM_IF"></span>

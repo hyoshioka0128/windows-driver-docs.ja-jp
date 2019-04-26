@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a6534394c955c2b7761c95ef0bea2d23f318d48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341797"
 ---
 # <a name="wdfkdhelp"></a>!wdfkd.help
 
@@ -36,7 +36,7 @@ Wdfkd.dll
 
 **! Wdfkd.help**拡張機能は、 [ **! wdfkd.wdfhelp** ](-wdfkd-wdfhelp.md)拡張機能。
 
-フレームワーク ベースのドライバーのデバッグの詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+フレームワーク ベースのドライバーのデバッグの詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
  
 

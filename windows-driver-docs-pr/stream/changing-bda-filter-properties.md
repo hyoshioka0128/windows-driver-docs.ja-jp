@@ -1,6 +1,6 @@
 ---
-title: BDA フィルター プロパティを変更します。
-description: BDA フィルター プロパティを変更します。
+title: BDA フィルター プロパティの変更
+description: BDA フィルター プロパティの変更
 ms.assetid: 1833864a-5759-437c-ba60-0b38602d9e41
 keywords:
 - プロパティは、WDK BDA、フィルター プロパティの変更を設定します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5f2d456e8e19154c4d5d1c3012defd46343c9c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351852"
 ---
-# <a name="changing-bda-filter-properties"></a>BDA フィルター プロパティを変更します。
+# <a name="changing-bda-filter-properties"></a>BDA フィルター プロパティの変更
 
 
 

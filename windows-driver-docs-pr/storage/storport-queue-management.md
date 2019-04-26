@@ -1,6 +1,6 @@
 ---
-title: Storport のキューの管理
-description: Storport のキューの管理
+title: Storport のキュー管理
+description: Storport のキュー管理
 ms.assetid: 29fddcac-abc9-4aa4-8485-56120805ae34
 keywords:
 - Storport ドライバー WDK、キューの管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56729d234463c19a3be01c9503e34bd8e7e66fa4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344975"
 ---
-# <a name="storport-queue-management"></a>Storport のキューの管理
+# <a name="storport-queue-management"></a>Storport のキュー管理
 
 
 ## <span id="ddk_storport_queue_management_kg"></span><span id="DDK_STORPORT_QUEUE_MANAGEMENT_KG"></span>

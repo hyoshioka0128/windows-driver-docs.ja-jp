@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf39c37a8a8ecd090f5afd111f9f1980c1c116d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336663"
 ---
 # <a name="foreachframe"></a>! の\_各\_フレーム
 
@@ -61,7 +61,7 @@ ms.locfileid: "56538822"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ローカル コンテキストの詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+ローカル コンテキストの詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 <a name="remarks"></a>注釈
 -------

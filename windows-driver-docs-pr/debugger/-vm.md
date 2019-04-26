@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: eb4ae55dd673f84744b856e7154b9e8b2b1158c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342105"
 ---
 # <a name="vm"></a>!vm
 
@@ -83,7 +83,7 @@ ms.locfileid: "56571760"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Memusage** ](-memusage.md)物理メモリ使用量を分析する拡張機能のコマンドを使用できます。 メモリ管理の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+[ **! Memusage** ](-memusage.md)物理メモリ使用量を分析する拡張機能のコマンドを使用できます。 メモリ管理の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

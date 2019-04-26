@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_PIN_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cd02f5297bb72fd0d69237a8fd919e2aed511f5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341396"
 ---
 # <a name="ndisstatuswwanpinlist"></a>NDIS\_状態\_WWAN\_PIN\_一覧
 
@@ -21,7 +21,7 @@ ms.locfileid: "56580098"
 
 この通知を使用して、 [ **NDIS\_WWAN\_PIN\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff567912)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この目安は、OID の OID クエリ要求に応答のみ通知\_WWAN\_PIN\_一覧。 要請されていない問題は、この表示はありません。
@@ -30,7 +30,7 @@ OID の結果として発生する PIN の入力モードを変更しても\_WWA
 
 クエリ要求ごとに、ミニポート ドライバーですべてのデバイスをサポートするピンの現在の PinMode が現在の状態を反映するように更新する必要がありますに注意してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

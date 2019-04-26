@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80e17425462079d09e3f9b260d8bcd4a1f7a691e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353572"
 ---
 # <a name="remote-debugging-debugger-engine"></a>リモート デバッグ (デバッガー エンジン)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56552279"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リモート デバッグを実行する方法の詳細については、[リモート ターゲット](remote-targets.md)を参照してください。
+リモート デバッグを実行する方法の詳細については、次を参照してください。[リモート ターゲット](remote-targets.md)します。
 
  
 

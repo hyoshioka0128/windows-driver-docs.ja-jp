@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da61c06f09580ab717d81dd18cf67708b10ab083
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343512"
 ---
 # <a name="mapping-of-ndis-network-interfaces-to-ndis-oids"></a>NDIS ネットワーク インターフェイスの NDIS OID へのマッピング
 
@@ -171,27 +171,27 @@ NDIS プロキシ インターフェイス プロバイダーには、ミニポ�
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569074" data-raw-source="[OID_802_3_PERMANENT_ADDRESS](https://msdn.microsoft.com/library/windows/hardware/ff569074)">OID_802_3_PERMANENT_ADDRESS</a></p></td>
 <td align="left"><p>OID_802_3_PERMANENT_ADDRESS</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>* <a href="https://msdn.microsoft.com/library/windows/hardware/ff569589" data-raw-source="[OID_GEN_INTERFACE_INFO](https://msdn.microsoft.com/library/windows/hardware/ff569589)">OID_GEN_INTERFACE_INFO</a></p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>* <a href="https://msdn.microsoft.com/library/windows/hardware/ff569605" data-raw-source="[OID_GEN_MEDIA_CONNECT_STATUS_EX](https://msdn.microsoft.com/library/windows/hardware/ff569605)">OID_GEN_MEDIA_CONNECT_STATUS_EX</a></p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p>* <a href="https://msdn.microsoft.com/library/windows/hardware/ff569606" data-raw-source="[OID_GEN_MEDIA_DUPLEX_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569606)">OID_GEN_MEDIA_DUPLEX_STATE</a></p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>適用なし</p></td>
+<td align="left"><p>該当なし</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569640" data-raw-source="[OID_GEN_STATISTICS](https://msdn.microsoft.com/library/windows/hardware/ff569640)">OID_GEN_STATISTICS</a></p></td>
 <td align="left"></td>
 </tr>

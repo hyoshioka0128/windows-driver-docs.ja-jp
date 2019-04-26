@@ -1,17 +1,17 @@
 ---
-title: ドライバーの IRQL の注釈
+title: ドライバーの IRQL 注釈
 description: ドライバー コードに IRQL の注釈がある場合は、コード分析ツールは位置関数を実行する必要がありより正確に見つけられるエラーのレベルの範囲に関するより優れた推定を行うことができます。
 ms.assetid: E4C1D490-BE06-483A-90E4-6F3223E269A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d184f7742da975a6375884141aa9f33f2e033e4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340468"
 ---
-# <a name="irql-annotations-for-drivers"></a>ドライバーの IRQL の注釈
+# <a name="irql-annotations-for-drivers"></a>ドライバーの IRQL 注釈
 
 ドライバー コードに IRQL の注釈がある場合は、コード分析ツールは位置関数を実行する必要がありより正確に見つけられるエラーのレベルの範囲に関するより優れた推定を行うことができます。 たとえば、位置、関数を呼び出すことができます。 最大の IRQL を指定する注釈を追加できます。高い IRQL で関数を呼び出すと、コード分析ツールは、不整合を識別できます。
 

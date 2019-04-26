@@ -17,11 +17,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 144fe5b98a359c4e6ee01c50674c8b9d7e6e2950
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343743"
 ---
 # <a name="clfs-log-sequence-numbers"></a>CLFS ログ シーケンス番号
 
@@ -59,7 +59,7 @@ Common Log File System (CLFS) では、指定されたストリーム内の各�
 
 ![clfs ストリームのアクティブな部分を示す図](images/clfsactivelog.gif)
 
-**注**  ベース LSN またはアーカイブ末尾が指すレコードで、ストリームのアクティブな部分が開始されますストリームをアーカイブ末尾にある場合は、小さい方です。 アーカイブの詳細については、[アーカイブの CLFS サポート](clfs-support-for-archiving.md)を参照してください。
+**注**  ベース LSN またはアーカイブ末尾が指すレコードで、ストリームのアクティブな部分が開始されますストリームをアーカイブ末尾にある場合は、小さい方です。 アーカイブの詳細については、次を参照してください。[アーカイブの CLFS サポート](clfs-support-for-archiving.md)します。
 
  
 

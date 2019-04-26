@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bad5a4c159c2b963bf8a3a50d16331afd7396e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342430"
 ---
 # <a name="direct-flip-of-video-memory"></a>ビデオ メモリの直接の反転
 

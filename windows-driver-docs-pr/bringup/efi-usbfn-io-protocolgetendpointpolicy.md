@@ -5,11 +5,11 @@ ms.assetid: 143ee448-2c29-46f4-b62c-6429a4a1d890
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad5c2af7349738995cb17a4ff1e25b754ff831b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337701"
 ---
 # <a name="efiusbfnioprotocolgetendpointpolicy"></a>EFI\_USBFN\_IO\_プロトコル。GetEndpointPolicy
 
@@ -42,16 +42,16 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 ポリシーで設定が必要のあるコントロール以外のエンドポイントを示します。
 
 <a href="" id="direction"></a>*方向*  
-エンドポイントの方向です。 詳細については、[EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)を参照してください。
+エンドポイントの方向です。 詳細については、次を参照してください。 [EFI\_USBFN\_エンドポイント\_方向](efi-usbfn-endpoint-direction.md)します。
 
 <a href="" id="policytype"></a>*PolicyType*  
-ポリシーの種類、ユーザーが指定されたコントロール以外のエンドポイントを取得しようとしています。 詳細については、[EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)を参照してください。
+ポリシーの種類、ユーザーが指定されたコントロール以外のエンドポイントを取得しようとしています。 詳細については、次を参照してください。 [EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)します。
 
 <a href="" id="buffersize"></a>*BufferSize*  
 入力のサイズ*バッファー* (バイト単位)。 出力に、によって返されるデータの量*バッファー* (バイト単位)。
 
 <a href="" id="buffer"></a>*バッファー*  
-要求されたエンドポイントのポリシー値を返すバッファーへのポインター。 ポリシーの種類のサイズ要件の詳細については、[EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)を参照してください。
+要求されたエンドポイントのポリシー値を返すバッファーへのポインター。 ポリシーの種類のサイズ要件の詳細については、次を参照してください。 [EFI\_USBFN\_ポリシー\_型](efi-usbfn-policy-type.md)します。
 
 ## <a name="return-values"></a>戻り値
 

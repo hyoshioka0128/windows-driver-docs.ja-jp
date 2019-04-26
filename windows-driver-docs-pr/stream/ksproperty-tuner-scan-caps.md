@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f6244fa9f9a6915515502e58ad6881a647a6b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342148"
 ---
 # <a name="kspropertytunerscancaps"></a>KSPROPERTY\_チューナー\_スキャン\_キャップ
 
@@ -48,7 +48,7 @@ KSPROPERTY\_チューナー\_スキャン\_CAPS プロパティが、デバイ�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565892" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_CAPS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565892)"><strong>KSPROPERTY_TUNER_SCAN_CAPS_S</strong></a></p></td>
 <td><p>KSPROPERTY_TUNER_SCAN_CAPS_S</p></td>
@@ -63,7 +63,7 @@ KSPROPERTY\_チューナー\_スキャン\_CAPS プロパティが、デバイ�
 <a name="remarks"></a>注釈
 -------
 
-ドライバーは、少なくとも 1 つのネットワークの種類でサポートされるは、次の Guid を返す必要があります。 これらの Guid が定義されている*Bdamedia.h*からは参照する必要があります*Bdamedia.h*します。 これらの Guid の詳細については、[ブロードキャスト ネットワークの種類の Guid](broadcast-network-type-guids.md)を参照してください。
+ドライバーは、少なくとも 1 つのネットワークの種類でサポートされるは、次の Guid を返す必要があります。 これらの Guid が定義されている*Bdamedia.h*からは参照する必要があります*Bdamedia.h*します。 これらの Guid の詳細については、次を参照してください。[ブロードキャスト ネットワークの種類の Guid](broadcast-network-type-guids.md)します。
 
 -   デジタル\_ケーブル\_ネットワーク\_型
 

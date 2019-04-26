@@ -5,11 +5,11 @@ ms.assetid: 1E4FC9D9-7F84-4F67-8FBC-4283C69AB0AC
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a2f4cae56eb5c7046b4dfcfefa4f3c0b68b6b5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346323"
 ---
 # <a name="debugging-windows-vista"></a>Windows Vista のデバッグ
 
@@ -18,7 +18,7 @@ WinDbg を使用して、Windows Vista をデバッグするに含まれてい�
 
 SDK をインストールし、インストール中、次のように選択します。 のみのデバッグ ツールの Windows をダウンロードする場合、**ツールを Windows のデバッグ**ボックスとその他のすべてのボックスをオフにします。
 
-**注**  SDK をインストールする前に、Microsoft Visual C 2010 再頒布可能コンポーネントをアンインストールする必要があります。 詳細については、[、Microsoft サポート web サイト](https://support.microsoft.com/kb/2717426)を参照してください。
+**注**  SDK をインストールする前に、Microsoft Visual C 2010 再頒布可能コンポーネントをアンインストールする必要があります。 詳細については、次を参照してください。 [、Microsoft サポート web サイト](https://support.microsoft.com/kb/2717426)します。
 
  
 

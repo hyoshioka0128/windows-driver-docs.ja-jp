@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 519315cf1c00d4e3d2e0561821bd671f4de6daee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342059"
 ---
 # <a name="guiddevinterfacebrightness"></a>GUID_DEVINTERFACE_BRIGHTNESS
 
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_BRIGHTNESS[デバイス インターフェイス クラス](ht
 
 ディスプレイのミニポート ドライバーは、この直接呼出しの明るさコントロールのインターフェイスをサポートしている場合[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_BRIGHTNESS を指定します。
 
-明るさのデバイスについては、[統合表示パネルの明るさコントロールをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569755)と[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)を参照してください。
+明るさのデバイスについては、次を参照してください。[統合表示パネルの明るさコントロールをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569755)と[明るさコントロール インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff538260)します。
 
 <a name="requirements"></a>必要条件
 ------------

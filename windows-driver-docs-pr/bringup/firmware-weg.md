@@ -1,18 +1,18 @@
 ---
-title: ファームウェア Windows エンジニア リング ガイド (WEG)
-description: ファームウェア Windows エンジニア リング ガイド (WEG) は、システム ファームウェアに関連するベスト プラクティスを実装するを実行するためのロードマップを提供します。
+title: ファームウェアに関する Windows エンジニアリング ガイド (WEG)
+description: ファームウェアに関する Windows エンジニアリング ガイド (WEG) は、システム ファームウェアに関連するベスト プラクティスの実装時に従うロードマップを提供します。
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fc5fd86aa82665f574d42dde95d2a998a4cd2a02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337621"
 ---
-# <a name="firmware-windows-engineering-guide-weg"></a>ファームウェア Windows エンジニア リング ガイド (WEG)
+# <a name="firmware-windows-engineering-guide-weg"></a>ファームウェアに関する Windows エンジニアリング ガイド (WEG)
 
-ファームウェア Windows エンジニア リング ガイド (WEG) は、システム ファームウェアに関連するベスト プラクティスを実装するを実行するためのロードマップを提供します。
+ファームウェアに関する Windows エンジニアリング ガイド (WEG) は、システム ファームウェアに関連するベスト プラクティスの実装時に従うロードマップを提供します。
 
 
 ## <a name="in-this-section"></a>このセクションの内容

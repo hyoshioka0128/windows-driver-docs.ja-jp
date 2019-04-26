@@ -1,6 +1,6 @@
 ---
-title: D3DRENDERSTATETYPE 変更
-description: D3DRENDERSTATETYPE 変更
+title: D3DRENDERSTATETYPE の変更
+description: D3DRENDERSTATETYPE の変更
 ms.assetid: b62bc1f9-b9f1-40f1-aed1-752285adb3c4
 keywords:
 - 複数の行列による頂点の WDK Direct3D、D3DRENDERSTATETYPE のブレンド
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5237a7af393297708301b2e504c1112a56e616
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341118"
 ---
-# <a name="d3drenderstatetype-changes"></a>D3DRENDERSTATETYPE 変更
+# <a name="d3drenderstatetype-changes"></a>D3DRENDERSTATETYPE の変更
 
 
 ## <span id="ddk_d3drenderstatetype_changes_gg"></span><span id="DDK_D3DRENDERSTATETYPE_CHANGES_GG"></span>

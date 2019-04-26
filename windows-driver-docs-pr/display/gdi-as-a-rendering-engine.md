@@ -1,6 +1,6 @@
 ---
-title: GDI レンダリング エンジンとして
-description: GDI レンダリング エンジンとして
+title: レンダリング エンジンとしての GDI
+description: レンダリング エンジンとしての GDI
 ms.assetid: 3aae0c71-fc98-452c-a7a3-f20a790a466b
 keywords:
 - レンダリング エンジンの GDI WDK Windows 2000 の表示
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: feed077997c562dc0248f53040fffc31987dfdc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342371"
 ---
-# <a name="gdi-as-a-rendering-engine"></a>GDI レンダリング エンジンとして
+# <a name="gdi-as-a-rendering-engine"></a>レンダリング エンジンとしての GDI
 
 
 ## <span id="ddk_gdi_as_a_rendering_engine_gg"></span><span id="DDK_GDI_AS_A_RENDERING_ENGINE_GG"></span>

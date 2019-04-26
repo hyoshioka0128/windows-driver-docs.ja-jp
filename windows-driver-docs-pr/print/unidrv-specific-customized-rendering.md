@@ -1,6 +1,6 @@
 ---
-title: Unidrv に固有のレンダリングをカスタマイズします。
-description: Unidrv に固有のレンダリングをカスタマイズします。
+title: Unidrv 固有のカスタマイズされたレンダリング
+description: Unidrv 固有のカスタマイズされたレンダリング
 ms.assetid: aff39531-ca40-4985-b458-c6217f8a2e5c
 keywords:
 - プラグインの WDK の印刷、Unidrv のレンダリング
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff6fc1aa2fe2474707dc16abd14979a3e1c79a6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346554"
 ---
-# <a name="unidrv-specific-customized-rendering"></a>Unidrv に固有のレンダリングをカスタマイズします。
+# <a name="unidrv-specific-customized-rendering"></a>Unidrv 固有のカスタマイズされたレンダリング
 
 
 

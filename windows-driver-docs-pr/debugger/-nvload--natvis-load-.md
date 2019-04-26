@@ -1,5 +1,5 @@
 ---
-title: .nvload (NatVis 負荷)
+title: .nvload (NatVis の読み込み)
 description: .Nvload コマンドは、デバッガーの環境に NatVis ファイルを読み込みます。 視覚エフェクトが読み込まれた後、視覚エフェクトで定義されているデータを表示するために使用されます。
 ms.assetid: 9B14B3B4-EA90-426E-8555-0E5B8F63E0A9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4a08aeb8e7676a6759a89726701a6a2f24ae44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335839"
 ---
-# <a name="nvload-natvis-load"></a>.nvload (NatVis 負荷)
+# <a name="nvload-natvis-load"></a>.nvload (NatVis の読み込み)
 
 
 .Nvload コマンドは、デバッガーの環境に NatVis ファイルを読み込みます。 視覚エフェクトが読み込まれた後、視覚エフェクトで定義されているデータを表示するために使用されます。
@@ -65,7 +65,7 @@ NatVis ファイルの名前または読み込むモジュールの名前を指�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)を参照してください。
+詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

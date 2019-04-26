@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ffb6803028bbe2e28dca3c015ca302a8c3770f5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336203"
 ---
 # <a name="lines-toggle-source-line-support"></a>.lines (ソース行サポートの切り替え)
 
@@ -67,7 +67,7 @@ ms.locfileid: "56571693"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソースのデバッグと関連するコマンドの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
+ソースのデバッグと関連するコマンドの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。
 
 <a name="remarks"></a>コメント
 -------
@@ -76,7 +76,7 @@ ms.locfileid: "56571693"
 
 使用してソース行のサポートを有効にすることができます、 **.lines**コマンドまたは[-コマンド ライン オプションを行](command-line-options.md)します。 ソース行のサポートはまだ有効に、使用する場合、 **.lines**コマンドは、このサポートを無効にします。
 
-使用しない場合、既定で、 **.lines**コマンド、WinDbg をオンにソース行のサポート、およびコンソール デバッガー (KD、CDB、NTSD) が、サポートを無効にします。 この設定を変更する方法の詳細については、[シンボル オプションを設定](symbol-options.md)を参照してください。
+使用しない場合、既定で、 **.lines**コマンド、WinDbg をオンにソース行のサポート、およびコンソール デバッガー (KD、CDB、NTSD) が、サポートを無効にします。 この設定を変更する方法の詳細については、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
 
  
 

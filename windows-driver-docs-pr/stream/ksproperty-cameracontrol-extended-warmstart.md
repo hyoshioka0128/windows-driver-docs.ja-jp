@@ -13,11 +13,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 62bab08cc8f2cf01b5fb9addf6518d91f96cec48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341852"
 ---
 # <a name="kspropertycameracontrolextendedwarmstart"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_WARMSTART という
 
@@ -81,8 +81,8 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>メンバー</th>
-<th>Value</th>
+<th>Member</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>

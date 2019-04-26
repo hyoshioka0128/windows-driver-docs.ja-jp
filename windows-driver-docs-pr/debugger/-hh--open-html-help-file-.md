@@ -1,5 +1,5 @@
 ---
-title: '*.hh* (HTML ヘルプ ファイルを開く)'
+title: .hh (HTML ヘルプ ファイルを開く)
 description: '*.Hh* コマンドでは、Windows のツールのデバッグ ドキュメントが開きます。'
 ms.assetid: 6c6d5b33-ad54-4325-93d7-ed63f9f012e8
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d418cb363e08b9358401f9139df9c41de6e75ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336540"
 ---
-# <a name="hh-open-html-help-file"></a>*.hh* (HTML ヘルプ ファイルを開く)
+# <a name="hh-open-html-help-file"></a>.hh (HTML ヘルプ ファイルを開く)
 
 
 ***.Hh*** コマンド ツールを Windows のデバッグ ドキュメントが開きます。
@@ -63,7 +63,7 @@ ms.locfileid: "56551418"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ヘルプ ドキュメントの詳細については、[、のヘルプ ファイルを使用して](using-the-help-documentation.md)を参照してください。
+ヘルプ ドキュメントの詳細については、次を参照してください。 [、のヘルプ ファイルを使用して](using-the-help-documentation.md)します。
 
 <a name="remarks"></a>注釈
 -------

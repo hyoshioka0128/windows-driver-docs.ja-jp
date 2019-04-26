@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3978b3e780aa2a2b778819dceb42ec4dfdbc366
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340087"
 ---
 # <a name="scanregion-element"></a>ScanRegion 要素
 
@@ -88,7 +88,7 @@ ms.locfileid: "56579433"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 すべて**ScanRegion**値は 1 つの部分の 1/1000 を表します (1/1000) インチです。

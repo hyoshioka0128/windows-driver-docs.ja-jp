@@ -1,6 +1,6 @@
 ---
-title: 書き込みログ エントリをインデントします。
-description: 書き込みログ エントリをインデントします。
+title: インデントされたログ エントリの記述
+description: インデントされたログ エントリの記述
 ms.assetid: 8ce6b433-a004-43f6-9481-9c23c5e7e8da
 keywords:
 - WDK SetupAPI のインデントを設定したログ エントリ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b40ef65859e8919d115c1da2922c9807e860908e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339137"
 ---
-# <a name="writing-indented-log-entries"></a>書き込みログ エントリをインデントします。
+# <a name="writing-indented-log-entries"></a>インデントされたログ エントリの記述
 
 
 」の説明に従って[ログ セクションのテキスト本文の形式](format-of-a-text-log-section-body.md)にセクション本文のログ エントリの形式を[SetupAPI テキスト ログ](setupapi-text-logs.md)次のフィールドで構成されています。

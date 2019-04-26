@@ -5,11 +5,11 @@ ms.assetid: 652AE9A2-D733-4EC2-9D49-B95DDABE42B1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 65fb075f7cf89fc0197c8c2b60023cd514bb4d9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341932"
 ---
 # <a name="nx-pool-compatibility-issues"></a>NX プールの互換性の問題
 
@@ -41,9 +41,9 @@ Windows 8 では、前に Windows のバージョンでは、 **NonPagedPoolExec
 
 -   ほとんどまたはすべてのインスタンスを置き換える場合は、ドライバーは、Windows 8 より前のバージョンの Windows で実行するものではありません、 **NonPagedPool**で**NonPagedPoolNx**します。 ほとんど置き換える必要があります、開発者のインスタンスのみ**NonPagedPool**で**NonPagedPoolExecute します。**
 
--   ドライバーのソース コードは、Windows 8 および Windows での以前のバージョンの両方を対象バージョンごとのバイナリの別のドライバーを配布する場合は、プールを使用して\_NX\_OPTIN\_自動オプトイン メカニズム。 インスタンスは、この方法で必要ありません**NonPagedPool**でドライバーのソース。 詳細については、[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)を参照してください。
+-   ドライバーのソース コードは、Windows 8 および Windows での以前のバージョンの両方を対象バージョンごとのバイナリの別のドライバーを配布する場合は、プールを使用して\_NX\_OPTIN\_自動オプトイン メカニズム。 インスタンスは、この方法で必要ありません**NonPagedPool**でドライバーのソース。 詳細については、次を参照してください。[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)します。
 
--   ドライバーのソース コードが Windows 8 および Windows での以前のバージョンの両方を対象とサポートされているすべてのバージョンで実行する二項 1 つのドライバーを配布する場合は、プールを使用して\_NX\_OPTIN オプトイン メカニズム。 インスタンスは、この方法で必要ありません**NonPagedPool**でドライバーのソース。 詳細については、[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)を参照してください。
+-   ドライバーのソース コードが Windows 8 および Windows での以前のバージョンの両方を対象とサポートされているすべてのバージョンで実行する二項 1 つのドライバーを配布する場合は、プールを使用して\_NX\_OPTIN オプトイン メカニズム。 インスタンスは、この方法で必要ありません**NonPagedPool**でドライバーのソース。 詳細については、次を参照してください。[プール オプトイン メカニズムに NX](nx-pool-opt-in-mechanisms.md)します。
 
 これら 3 つのアプローチのいずれかは、ほとんどのドライバーを迅速かつ簡単に移植できます。
 

@@ -17,11 +17,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad91066a0d80f68a64ee2fe213e30bbda8acea4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335758"
 ---
 # <a name="process-set-process-context"></a>.process (プロセス コンテキストの設定)
 
@@ -79,7 +79,7 @@ ms.locfileid: "56582515"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-プロセスのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+プロセスのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 <a name="remarks"></a>コメント
 -------
@@ -88,7 +88,7 @@ ms.locfileid: "56582515"
 
 **.Process**コマンドとして特定のユーザー モード プロセスを使用してカーネル デバッガーに指示、*プロセス コンテキスト*します。 この使用状況がいくつかの効果がデバッガーでこのプロセスの仮想アドレス空間へのアクセスがある最も重要です。 デバッガーでは、このプロセスのページ テーブルを使用して、このメモリへの書き込みし、読み取りできるように、すべてのユーザー モード メモリ アドレスを解釈します。
 
-[ **.Context (ユーザー モード アドレス コンテキストの設定)** ](-context--set-user-mode-address-context-.md)コマンドには、同様の効果。 ただし、 **.context**コマンドのセット、*ユーザー モード アドレス コンテキスト*に特定のページのディレクトリでは、中に、 **.process**コマンドを特定のプロセスのコンテキストの設定プロセスです。 X86 ベースのプロセッサで **.context**と **.process**ほぼ同じ効果があります。 ただし、Itanium ベースのプロセッサでは、1 つのプロセスは、ページの 1 つ以上のディレクトリがあります。 このような状況で、 **.process**コマンドは、すべてのプロセスに関連付けられているページのディレクトリにアクセスできるため、さらに強力です。 プロセスのコンテキストの詳細については、[プロセス コンテキスト](changing-contexts.md#process-context)を参照してください。
+[ **.Context (ユーザー モード アドレス コンテキストの設定)** ](-context--set-user-mode-address-context-.md)コマンドには、同様の効果。 ただし、 **.context**コマンドのセット、*ユーザー モード アドレス コンテキスト*に特定のページのディレクトリでは、中に、 **.process**コマンドを特定のプロセスのコンテキストの設定プロセスです。 X86 ベースのプロセッサで **.context**と **.process**ほぼ同じ効果があります。 ただし、Itanium ベースのプロセッサでは、1 つのプロセスは、ページの 1 つ以上のディレクトリがあります。 このような状況で、 **.process**コマンドは、すべてのプロセスに関連付けられているページのディレクトリにアクセスできるため、さらに強力です。 プロセスのコンテキストの詳細については、次を参照してください。[プロセス コンテキスト](changing-contexts.md#process-context)します。
 
 **注**  ライブ デバッグを実行する場合は使用、 **/i**または **/p**パラメーター。 これらのパラメーターのないユーザー モードまたはセッションのメモリを正しく表示できません。
 

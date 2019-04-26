@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 53e387a16ef145a63b919fc367629643747f96de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336217"
 ---
 # <a name="lmi"></a>!lmi
 
@@ -68,7 +68,7 @@ ms.locfileid: "56531540"
 
 -   **モジュール**フィールド、*モジュール名*します。 これは、通常、拡張子を除いたファイル名だけです。 いくつかの場合、モジュール名はファイル名から大幅に異なります。
 
--   **記号の型**フィールドには、このモジュールのシンボルを読み込むため、デバッガーの試行に関する情報が表示されます。 さまざまな状態の値の詳細については、[シンボルの状態の省略形](symbol-status-abbreviations.md)を参照してください。 シンボルが読み込まれている場合、シンボル ファイル名はこれに従います。
+-   **記号の型**フィールドには、このモジュールのシンボルを読み込むため、デバッガーの試行に関する情報が表示されます。 さまざまな状態の値の詳細については、次を参照してください。[シンボルの状態の省略形](symbol-status-abbreviations.md)します。 シンボルが読み込まれている場合、シンボル ファイル名はこれに従います。
 
 -   モジュールの最初のアドレスを示した**ベース アドレス**します。 モジュールのサイズを示す**サイズ**します。 したがって場合、**ベース アドレス**"faab4000"と**サイズ**「2000」0xFAAB5FFF、包括的に 0xFAAB4000 からモジュールを拡張します。
 
@@ -97,7 +97,7 @@ Debug Data Dirs: Type Size     VA  Pointer
     Load Report: export symbols
 ```
 
-表示される省略形の詳細については、**特性**行のこの例では、[シンボルの状態の省略形](symbol-status-abbreviations.md)を参照してください。
+表示される省略形の詳細については、**特性**行のこの例では、次を参照してください。[シンボルの状態の省略形](symbol-status-abbreviations.md)します。
 
  
 

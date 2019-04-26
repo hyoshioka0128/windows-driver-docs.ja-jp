@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9c35c30ae28f7610712d02c114f19aa2b24027
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337066"
 ---
-# <a name="-system-status"></a>||(システム状態)
+# <a name="-system-status"></a>|| (システム ステータス)
 
 
 二重の縦棒 (**||**) コマンドは、指定したシステムまたは現在デバッグ中のすべてのシステム状態を出力します。
@@ -34,7 +34,7 @@ ms.locfileid: "56535989"
 
 
 <span id="_______System______"></span><span id="_______system______"></span><span id="_______SYSTEM______"></span> *システム*   
-表示するシステムを指定します。 このパラメーターを省略した場合は、デバッグしているすべてのシステムが表示されます。 構文の詳細については、[システム構文](system-syntax.md)を参照してください。
+表示するシステムを指定します。 このパラメーターを省略した場合は、デバッグしているすべてのシステムが表示されます。 構文の詳細については、次を参照してください。[システム構文](system-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -64,7 +64,7 @@ ms.locfileid: "56535989"
 <a name="remarks"></a>注釈
 -------
 
-**||** コマンドは、複数のターゲットをデバッグする際にのみ役立ちます。 すべてではなく、多くの複数ターゲットのデバッグ セッションには、複数のシステムが含まれます。 これらのセッションに関する詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+**||** コマンドは、複数のターゲットをデバッグする際にのみ役立ちます。 すべてではなく、多くの複数ターゲットのデバッグ セッションには、複数のシステムが含まれます。 これらのセッションに関する詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
 各システムの一覧には、サーバー名およびプロトコルの詳細が含まれています。 デバッガーが実行されているシステムとして識別**&lt;ローカル&gt;** します。
 

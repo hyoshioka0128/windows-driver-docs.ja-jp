@@ -4,11 +4,11 @@ description: このセクションでは、タイム トラベルのデバッグ
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3511933227006dc5a5fe22b8c8da99a75dbfe887
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342047"
 ---
 # <a name="ttd-event-objects"></a>TTD イベント オブジェクト
 ## <a name="description"></a>説明
@@ -55,7 +55,7 @@ ms.locfileid: "56537314"
 ```
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
 

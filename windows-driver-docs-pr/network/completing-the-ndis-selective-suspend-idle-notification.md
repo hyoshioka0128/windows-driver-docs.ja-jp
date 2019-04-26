@@ -5,16 +5,16 @@ ms.assetid: 2330A8EE-DC8B-4244-935C-DEF20A6EB5E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd9d3acdc1cb0c2d065c84afdb4c66647b91a9d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344258"
 ---
 # <a name="completing-the-ndis-selective-suspend-idle-notification"></a>NDIS セレクティブ サスペンド アイドル通知の完了
 
 
-NDIS 呼び出し、 [ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)基になるネットワーク アダプターがアイドル状態であると思われるドライバーに通知ハンドラー関数。 この操作の詳細については、[、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
+NDIS 呼び出し、 [ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)基になるネットワーク アダプターがアイドル状態であると思われるドライバーに通知ハンドラー関数。 この操作の詳細については、次を参照してください。 [、NDIS セレクティブ サスペンド アイドル状態の通知の処理](handling-the-ndis-selective-suspend-idle-notification.md)します。
 
 ミニポート ドライバーが選択的 NDIS を完了すると、アイドル状態の通知が発行されると、次の条件下でアイドル状態の通知を中断します。
 
@@ -22,7 +22,7 @@ NDIS 呼び出し、 [ *MiniportIdleNotification* ](https://msdn.microsoft.com/l
 
 -   ミニポート ドライバーでは、アイドル状態の通知自体を完了します。 これを行う理由は、設計およびアダプターとドライバーの要件に固有です。 たとえば、受信ネットワーク アダプターのアクティビティを検出した場合、ドライバーはアイドル状態の通知を完了でした。
 
-**注**  ミニポート ドライバーからアイドル状態の通知を明示的にキャンセルすることはできません。 NDIS がアイドル状態の通知をキャンセルすると、ミニポート ドライバーはこのトピックの説明に従って通知を完了する必要があります。 詳細については、[NDIS 選択的な中断アイドル状態の通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)を参照してください。
+**注**  ミニポート ドライバーからアイドル状態の通知を明示的にキャンセルすることはできません。 NDIS がアイドル状態の通知をキャンセルすると、ミニポート ドライバーはこのトピックの説明に従って通知を完了する必要があります。 詳細については、次を参照してください。 [NDIS 選択的な中断アイドル状態の通知をキャンセル](canceling-the-ndis-selective-suspend-idle-notification.md)します。
 
  
 
@@ -34,7 +34,7 @@ NDIS 呼び出し、 [ *MiniportIdleNotification* ](https://msdn.microsoft.com/l
 
 2.  バス ドライバーが IRP USB アイドル状態要求をキャンセルすると、IRP のミニポート ドライバーの完了ルーチンを呼び出します。 この呼び出しでは、IRP が完了し、ネットワーク アダプターが電力状態に移行するドライバーに通知します。 ドライバーを呼び出し、完了ルーチンのコンテキストから[ **NdisMIdleNotificationComplete** ](https://msdn.microsoft.com/library/windows/hardware/hh451491) NDIS ネットワーク アダプターを電力状態に移行できることを通知します。
 
-    USB アイドル要求 IRP の完了ルーチンを実装する方法の詳細については、[USB のアイドル状態要求 IRP の完了ルーチンを実装する](implementing-a-usb-idle-request-irp-completion-routine.md)を参照してください。
+    USB アイドル要求 IRP の完了ルーチンを実装する方法の詳細については、次を参照してください。 [USB のアイドル状態要求 IRP の完了ルーチンを実装する](implementing-a-usb-idle-request-irp-completion-routine.md)します。
 
 **注**  ミニポート ドライバーを呼び出す bus 固有のアイドル状態の要求をキャンセルする依存関係に応じて[ **NdisMIdleNotificationComplete** ](https://msdn.microsoft.com/library/windows/hardware/hh451491)か同期的に呼び出しのコンテキストで[ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)または後に非同期的に*MiniportCancelIdleNotification*を返します。
 

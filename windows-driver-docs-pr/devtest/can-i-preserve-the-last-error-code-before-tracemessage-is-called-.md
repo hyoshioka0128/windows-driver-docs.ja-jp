@@ -5,13 +5,13 @@ ms.assetid: 57390fb1-5e01-4b98-960f-0201213d673c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea0614ceee3bc10330bebb08786c36b041c47666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344918"
 ---
-# <a name="can-i-preserve-the-last-error-code-before-tracemessage-is-called"></a>TraceMessage が呼び出される前に直前のエラー コードを保持はできますか。
+# <a name="can-i-preserve-the-last-error-code-before-tracemessage-is-called"></a>TraceMessage が呼び出される前の最後のエラー コードを保持できますか?
 
 
 既定では、 [TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)によって、WPP を使用して呼び出される\_TRACE マクロ。 Windows Vista より前のバージョンの Windows で、[直前のエラー コード](https://go.microsoft.com/fwlink/p/?linkid=179346)で上書きされた**TraceMessage**します。

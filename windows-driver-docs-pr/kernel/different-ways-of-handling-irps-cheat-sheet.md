@@ -1,5 +1,5 @@
 ---
-title: さまざまな Irp の処理方法
+title: IRP 処理のさまざまな方法 - チート シート
 author: kaushika-msft
 description: さまざまな Irp の処理方法
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 12/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 555dc8d8fb051791959fe6492633481888f1fc87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342696"
 ---
-# <a name="different-ways-of-handling-irps---cheat-sheet"></a>さまざまな Irp の処理方法 
+# <a name="different-ways-of-handling-irps---cheat-sheet"></a>IRP 処理のさまざまな方法 - チート シート 
 
 通常、Windows Driver Model (WDM) ドライバーは、他のドライバーに入力/出力要求パケット (Irp) を送信します。 ドライバーが IRP を独自に作成し、下位のドライバーに送信します。 または、ドライバーは Irp の上に接続されている別のドライバーから受信するに転送します。 
 
@@ -357,7 +357,7 @@ DispatchRoutine_5(
 
 ### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>シナリオ 6:IoBuildDeviceIoControlRequest を使用して同期デバイス制御要求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL) を送信します。
 
-次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)同期 IOCTL 要求に要求します。  詳細については、[IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)を参照してください。
+次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)同期 IOCTL 要求に要求します。  詳細については、次を参照してください。 [IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)します。
 
 ```cpp
 NTSTATUS

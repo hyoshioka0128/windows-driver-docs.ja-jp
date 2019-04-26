@@ -5,13 +5,13 @@ ms.assetid: 5890AF7E-93E1-4E19-B483-C75657D749EB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3482ebacd55cc5044f568a945548cf1eaca966a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343228"
 ---
-# <a name="overview-of-network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>Generic Routing Encapsulation (NVGRE) タスク オフロードを使用してネットワーク仮想化の概要
+# <a name="overview-of-network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化の概要
 
 
 ## <a name="nvgre-encapsulation-packet-format"></a>NVGRE カプセル化パケットの形式

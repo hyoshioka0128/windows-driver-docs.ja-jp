@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbb5f3c32c17eb7bb84485c9c44943ac6a02966f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338729"
 ---
 # <a name="parsing-extension-arguments"></a>拡張機能の引数の解析
 
@@ -70,7 +70,7 @@ EngExtCpp の拡張機能フレームワークでは、拡張機能に渡され�
 {[optname];[type[,flags]];[argname];[argdesc]}
 ```
 
-この場合
+それぞれの文字の説明は次のとおりです。
 
 <span id="optname"></span><span id="OPTNAME"></span>*optname*  
 引数の名前。 これは、名前でコマンドと引数をフェッチするメソッドを使用する名前です。 この名前は省略可能です。 引数が「名前付き引数;」になりますが存在する場合コマンドラインで任意の場所に表示されることができ、名前で参照されます。 引数が「名前なし引数;」になりますが存在しない場合コマンドライン上での位置が重要と名前のない他の引数に対する相対位置を使用して参照されています。

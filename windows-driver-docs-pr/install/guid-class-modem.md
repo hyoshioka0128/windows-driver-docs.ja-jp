@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e30550559b132e31f19cc33b6d3dc47432327d90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340129"
 ---
 # <a name="guidclassmodem"></a>GUID_CLASS_MODEM
 
 
 GUID_CLASS_MODEM は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)モデム デバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_MODEM** ](guid-devinterface-modem.md)このクラスの新しいインスタンスのクラス識別子。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

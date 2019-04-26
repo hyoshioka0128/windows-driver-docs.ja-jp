@@ -15,11 +15,11 @@ ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2da1efe08dab339ed6e58d5f0a913685794e0638
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341843"
 ---
 # <a name="kspropertycameracontrolextendedvideotemporaldenoising"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOTEMPORALDENOISING
 
@@ -74,7 +74,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_VIDEOTEMPORALDENOISING はドライバーで�
 | 機能 | ビットごとの OR、サポートされている KSCAMERA_EXTENDEDPROP_VIDEOTEMPORALDENOISING_ * フラグの上に定義されている必要があります。 |
 | フラグ | これは、読み取り/書き込みフィールドです。  これは、上記で定義された KSCAMERA_EXTENDEDPROP_VIDEOTEMPORALDENOISING_XXX フラグのいずれかでなければなりません。 これらのフラグは相互に排他的で、ビットごとの OR の組み合わせで設定できませんに注意してください。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

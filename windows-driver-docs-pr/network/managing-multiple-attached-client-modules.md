@@ -1,6 +1,6 @@
 ---
-title: 複数のクライアントが接続されているモジュールを管理します。
-description: 複数のクライアントが接続されているモジュールを管理します。
+title: 複数のアタッチされているクライアント モジュールの管理
+description: 複数のアタッチされているクライアント モジュールの管理
 ms.assetid: dcb2ebba-6df7-47d5-97b6-ed2691b5e6c8
 keywords:
 - WDK ネットワーク モジュールの登録、アタッチされている複数のプロバイダー モジュール
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f36f764e8dceef2c3081dbff4c53196a60bf9531
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343580"
 ---
-# <a name="managing-multiple-attached-client-modules"></a>複数のクライアントが接続されているモジュールを管理します。
+# <a name="managing-multiple-attached-client-modules"></a>複数のアタッチされているクライアント モジュールの管理
 
 
 1 つのプロバイダー モジュールは、1 つ以上のクライアント モジュールにアタッチできます。 複数のクライアントが接続されているモジュールを管理するためにプロバイダー モジュールする必要があります独立していないバインド ハンドル、クライアント モジュールのバインディング コンテキスト、および保存がアタッチされている各クライアント モジュール用のクライアント モジュールのディスパッチ テーブル。 通常、このデータは、添付ファイルごとに、プロバイダー モジュールのバインド コンテキストに保存されます。 ただし、プロバイダー モジュールでは、選択した任意の方法では、各クライアントが接続されているモジュールのデータを管理できます。

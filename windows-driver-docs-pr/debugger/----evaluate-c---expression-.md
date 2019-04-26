@@ -1,5 +1,5 @@
 ---
-title: (C++ の式の評価)
+title: (C++ 式の評価)
 description: 二重の疑問符 () のコマンドは、評価し、C++ の式の規則に従って、式の値を表示します。
 ms.assetid: 3a15a0a3-03d0-4807-a6df-054de819c0a0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d87d24430baa315e9e0ec45fdbdb21eb441f76ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334859"
 ---
-# <a name="-evaluate-c-expression"></a>?? (C++ の式の評価)
+# <a name="-evaluate-c-expression"></a>?? (C++ 式の評価)
 
 
 二重の疑問符 (**??**) コマンドを評価し、C++ の式の規則に従って、式の値を表示します。
@@ -32,7 +32,7 @@ ms.locfileid: "56535462"
 
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-C++ の式を評価するを指定します。 構文の詳細については、[C++ 数字と演算子](c---numbers-and-operators.md)を参照してください。
+C++ の式を評価するを指定します。 構文の詳細については、次を参照してください。 [C++ 数字と演算子](c---numbers-and-operators.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -64,7 +64,7 @@ C++ の式を評価するを指定します。 構文の詳細については、
 
 **??** コマンドは、現在のスレッドとプロセスのコンテキストで式内のシンボルを評価します。
 
-一部を評価する場合、**式**MASM 式の規則に従って式がその一部をかっこで囲むし、追加の 2 つのアット ( **@@** ) する前にします。 MASM の式と C++ の式の詳細については、[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)を参照してください。
+一部を評価する場合、**式**MASM 式の規則に従って式がその一部をかっこで囲むし、追加の 2 つのアット ( **@@** ) する前にします。 MASM の式と C++ の式の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)と[数値式の構文](numerical-expression-syntax.md)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

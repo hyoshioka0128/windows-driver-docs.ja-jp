@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 05310b438903a114631b764b8d7e068e78c4f5a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336596"
 ---
-# <a name="fxdevice"></a>! fxdevice
+# <a name="fxdevice"></a>!fxdevice
 
 
 ! Fxdevice 拡張機能には、デバイスが登録されているすべての電源管理フレームワーク (PoFx) に関する概要情報が表示されます。 このコマンドは、カーネル モードのデバッグ中にのみ使用できます。
 
-PoFX の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
+PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
 
 構文
 

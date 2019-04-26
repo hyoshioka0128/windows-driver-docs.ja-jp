@@ -1,17 +1,17 @@
 ---
-title: ACPI を使用して、デバイスのコンテナーのグループ化
-description: ACPI を使用して、デバイスのコンテナーのグループ化
+title: デバイスのコンテナーのグループ化での ACPI の使用
+description: デバイスのコンテナーのグループ化での ACPI の使用
 ms.assetid: c49949cd-59e0-4ad2-a067-bc4e048f26c5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88106262ae3e4eaf9d2d280a3a6b70500a522c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339431"
 ---
-# <a name="using-acpi-for-device-container-grouping"></a>ACPI を使用して、デバイスのコンテナーのグループ化
+# <a name="using-acpi-for-device-container-grouping"></a>デバイスのコンテナーのグループ化での ACPI の使用
 
 
 使用は、コンピューター相手先ブランド供給 (Oem) によって、ACPI の設定を使用して、デバイスのコンテナー グループを指定するを対象としています。 をコンピューターの BIOS で ACPI オブジェクトを構成することは、コンピューターの正確な構成を示します。 この機能は、このホワイト ペーパーで説明されているメカニズムをグループ化、他のデバイス コンテナーだけでなく、します。
@@ -22,7 +22,7 @@ ms.locfileid: "56532438"
 
 -   Windows は、バス ドライバーによって提供されるリムーバブル機能を評価した後に、ACPI の設定を評価します。 したがって、製造元は ACPI 設定を使用して、リムーバブル記憶域として正しく報告されるデバイスを修正し、Windows は、コンピューターのデバイスのコンテナーに機能をグループ化できます。
 
--   ACPI の設定を使用しては、コンピューターの oem を USB ポートは、コンピューターの内部および USB ポート、ユーザーが外部のデバイスをアタッチできるを示すために特に便利です。 詳細については、[コンピューターに USB ポートを構成するのを使用して ACPI](using-acpi-to-configure-usb-ports-on-a-computer.md)を参照してください。
+-   ACPI の設定を使用しては、コンピューターの oem を USB ポートは、コンピューターの内部および USB ポート、ユーザーが外部のデバイスをアタッチできるを示すために特に便利です。 詳細については、次を参照してください。[コンピューターに USB ポートを構成するのを使用して ACPI](using-acpi-to-configure-usb-ports-on-a-computer.md)します。
 
     コンピューターの OEM には、コンピューターの USB ポートのトポロジを正確に反映するように、ACPI BIOS 設定を構成するのには強くお勧めします。 これにより、USB デバイスを物理的に統合されているコンピューター (たとえば、内部の Bluetooth 無線または統合の web カメラ) は、コンピューターのデバイスのコンテナーにグループ化されます。 コンピューターと外部接続のデバイス間の境界を見つけやすくするオペレーティング システムは、接続可能/ユーザーに表示されるポートに接続されているデバイスは外部デバイスと見なされますのでこともできます。
 

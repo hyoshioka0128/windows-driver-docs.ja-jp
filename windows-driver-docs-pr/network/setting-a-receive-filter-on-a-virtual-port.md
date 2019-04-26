@@ -5,18 +5,18 @@ ms.assetid: F0137D59-1701-4DFC-BB30-27E477FC0706
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47be2c6633368f628e4b3dbfacbdcfd336785c9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346713"
 ---
 # <a name="setting-a-receive-filter-on-a-virtual-port"></a>仮想ポートでの受信フィルターの設定
 
 
 仮想ポート (VPort) を作成した後スイッチ、NIC のネットワーク アダプター、重なってドライバー セットを受信できる、VPort のフィルター。 作成、VPort ドライバーのみがその VPort で受信フィルターを設定できます。
 
-このトピックには、次の情報が含まれています。
+このトピックの内容は次のとおりです。
 
 [に対して、VPort 受信フィルターを設定](#set)
 
@@ -26,7 +26,7 @@ ms.locfileid: "56573749"
 
 [処理の受信、VPort のフィルター](#handle)
 
-VPort を作成する方法の詳細については、[仮想ポートを作成する](creating-a-virtual-port.md)を参照してください。
+VPort を作成する方法の詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
 
 **注**  VPort の既定値は常に存在し、明示的に作成、ので上にあるドライバーが VPort の既定の受信フィルターを設定できます。 上にあるドライバーは、既定 VPort を所有していません。 そのため、ネットワーク アダプターにバインドされているすべてのプロトコル ドライバーには、既定 VPort を使用できます。 既定 VPort NDIS の識別子の値を持つ\_既定\_VPORT\_id。
 
@@ -103,7 +103,7 @@ NDIS フィルター識別子を割り当てます、 **FilterId**のメンバ�
 
 NDIS、VPort に対してフィルターを設定する OID 要求を受け取ると、フィルター パラメーターを確認します。 NDIS は、必要なリソースとフィルターの識別子を割り当て後、は、基になるネットワーク アダプターに OID 要求を送信します。 OID を使用して要求が完了する場合は、ネットワーク アダプターは、フィルター、必要なソフトウェアとハードウェア リソースを割り当てることができますが正常に、 **NDIS\_状態\_成功**します。
 
-ミニポート ドライバーでは、割り当てられた受信のフィルターのフィルターの識別子を保持する必要があります。 NDIS は、以降の OID 要求と受信フィルター パラメーターを変更または受信のフィルターをクリアするフィルターのフィルターの識別子を使用します。 パラメーターを変更し、フィルターをクリアする方法の詳細については、[VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)と[VMQ フィルターをクリア](clearing-a-vmq-filter.md)を参照してください。
+ミニポート ドライバーでは、割り当てられた受信のフィルターのフィルターの識別子を保持する必要があります。 NDIS は、以降の OID 要求と受信フィルター パラメーターを変更または受信のフィルターをクリアするフィルターのフィルターの識別子を使用します。 パラメーターを変更し、フィルターをクリアする方法の詳細については、次を参照してください。 [VM キュー パラメーターの更新の取得と](obtaining-and-updating-vm-queue-parameters.md)と[VMQ フィルターをクリア](clearing-a-vmq-filter.md)します。
 
 ## <a name="handling-receive-filters-on-a-vport"></a>処理の受信、VPort のフィルター
 

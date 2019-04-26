@@ -1,5 +1,5 @@
 ---
-title: バグ チェックのコードの解釈
+title: バグ チェック コードの解釈
 description: Microsoft Windows には、その妥協安全なシステム操作の条件が検出されると、システムを停止します。
 ms.assetid: b5c8e18e-c2d3-47d9-b2bd-38aaaedcfde9
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad601c2da8e67a4ae181e9f03e7bc2adad2ebf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340478"
 ---
-# <a name="interpreting-a-bug-check-code"></a>バグ チェックのコードの解釈
+# <a name="interpreting-a-bug-check-code"></a>バグ チェック コードの解釈
 
 
 Microsoft Windows には、その妥協安全なシステム操作の条件が検出されると、システムを停止します。 この条件と呼ばれる、*バグ チェック*します。 としても一般的に指す、*システム クラッシュ*、*カーネル エラー*、*停止エラー*、または*BSOD*します。 ハードウェア デバイス、そのドライバー、または関連するソフトウェアが、このエラーを引き起こしたがある可能性があります。
@@ -68,7 +68,7 @@ Windows では、いくつかの条件下でブルー スクリーンの最初�
 
 ### <a name="span-idreadingbugcheckinformationfromthedebuggerspanspan-idreadingbugcheckinformationfromthedebuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>デバッガーからのバグ チェック情報の読み取り
 
-デバッガーがアタッチされているバグ チェックが、デバッガーを中断する対象のコンピュータに発生します。 ブルー スクリーンが表示されない、またはで以下のテキストが表示されるこの場合、このクラッシュの完全な詳細情報は、デバッガーに送信され、デバッガー ウィンドウに表示されます。 詳細については、[デバッガーを使用して](using-a-debugger.md)を参照してください。
+デバッガーがアタッチされているバグ チェックが、デバッガーを中断する対象のコンピュータに発生します。 ブルー スクリーンが表示されない、またはで以下のテキストが表示されるこの場合、このクラッシュの完全な詳細情報は、デバッガーに送信され、デバッガー ウィンドウに表示されます。 詳細については、次を参照してください。[デバッガーを使用して](using-a-debugger.md)します。
 
 バグ チェックのコードの場合は、このリファレンス セクションの一部として存在[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。 参照してください[バグ チェック コード参照](https://msdn.microsoft.com/library/windows/hardware/hh994433)のバグ チェックおよびパラメーターの説明。 各リファレンス ページには、バグ チェックのコード、文字列、および 4 つの追加のパラメーターに表示される各バグ チェックが一覧表示します。 バグ チェック、およびエラーを処理する方法を引き起こしたエラーを診断する方法も説明します。
 

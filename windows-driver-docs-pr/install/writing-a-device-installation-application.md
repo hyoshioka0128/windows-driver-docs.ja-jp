@@ -1,6 +1,6 @@
 ---
-title: デバイスのインストール アプリケーションの作成
-description: デバイスのインストール アプリケーションの作成
+title: デバイスのインストール アプリケーションの記述
+description: デバイスのインストール アプリケーションの記述
 ms.assetid: 9927e2e0-6c8e-437f-98ce-595bd304ec72
 keywords:
 - インストール アプリケーション WDK、インストール アプリケーションの作成方法
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4963dac2ff7bc9a626767bc2c3eb3e49b61471
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339248"
 ---
-# <a name="writing-a-device-installation-application"></a>デバイスのインストール アプリケーションの作成
+# <a name="writing-a-device-installation-application"></a>デバイスのインストール アプリケーションの記述
 
 
 
@@ -31,9 +31,9 @@ ms.locfileid: "56537251"
 
  
 
-ドライバーをパッケージ化する場合は、これらのコンポーネントをインストールします。 デバイスのインストール アプリケーションと配布メディアは、自動実行が開始されるように、アプリケーションに自動的にユーザーが、配布メディアを挿入するときに、自動実行と互換性があります。 自動実行の詳細については、[AutoRun-Enabled アプリケーションを作成する](https://msdn.microsoft.com/library/windows/desktop/cc144206)を参照してください。
+ドライバーをパッケージ化する場合は、これらのコンポーネントをインストールします。 デバイスのインストール アプリケーションと配布メディアは、自動実行が開始されるように、アプリケーションに自動的にユーザーが、配布メディアを挿入するときに、自動実行と互換性があります。 自動実行の詳細については、次を参照してください。 [AutoRun-Enabled アプリケーションを作成する](https://msdn.microsoft.com/library/windows/desktop/cc144206)します。
 
-デバイスのインストール アプリケーションを記述する方法に関するガイドラインについては、[デバイス インストール アプリケーションの作成に関するガイドライン](guidelines-for-writing-device-installation-applications.md)を参照してください。
+デバイスのインストール アプリケーションを記述する方法に関するガイドラインについては、次を参照してください。[デバイス インストール アプリケーションの作成に関するガイドライン](guidelines-for-writing-device-installation-applications.md)します。
 
 [ドライバー パッケージ](driver-packages.md)2 つの状況を処理する必要があります。
 

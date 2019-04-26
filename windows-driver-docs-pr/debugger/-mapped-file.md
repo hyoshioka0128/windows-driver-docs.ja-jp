@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a38e66b023c84fa72123bcd6d1f88908f8fc461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336112"
 ---
 # <a name="mappedfile"></a>! マップ\_ファイル
 
@@ -61,7 +61,7 @@ ms.locfileid: "56572640"
 
 ファイルのマッピングの詳細については、次を参照してください。 [MapViewOfFile](https://go.microsoft.com/fwlink/p/?linkid=123354) Windows SDK に含まれています。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ここでは、次の 3 つの例です。 使用される最初の 2 つのアドレスは、ファイルからマップされ、3 つ目はありません。

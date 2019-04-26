@@ -5,11 +5,11 @@ ms.assetid: 1d5cce4a-9830-4e2e-af90-fc1fecfb0fc9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60af504f094a74bee4c1a5b59f6235b6e5b9ecf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340920"
 ---
 # <a name="status-values"></a>状態の値
 
