@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 216d30e15ceb8690160bc0655371d24bcaef7b65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350302"
 ---
 # <a name="dxgkpowerpstate-structure"></a>DXGK\_POWER\_P\_状態構造体
 
@@ -39,7 +39,7 @@ typedef struct _DXGK_POWER_P_STATE {
 } DXGK_POWER_P_STATE, *PDXGK_POWER_P_STATE;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **NominalPower**

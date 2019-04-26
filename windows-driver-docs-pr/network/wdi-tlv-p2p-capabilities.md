@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7673589acdb9a97e4aef4d6a072645bef62e6af8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349336"
 ---
 # <a name="wditlvp2pcapabilities"></a>WDI\_TLV\_P2P\_機能
 
@@ -38,7 +38,7 @@ WDI\_TLV\_P2P\_機能は、Wi-Fi Direct 機能を含む TLV します。
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -144,7 +144,7 @@ ASP2 サービス名のインスタンスの一覧が提供された場合、ア
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

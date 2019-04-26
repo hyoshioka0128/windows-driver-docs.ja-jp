@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the USB 3.0 LPM mechanism.There is an addendum to the official USB 2.0 Specification (USB2_LinkPowerMangement_ECN), which defines LPM for newer USB 2.0 hardware.
+Description: このトピックでは、USB 3.0 LPM メカニズムについて説明します。新しい USB 2.0 ハードウェアに対して LPM を定義する公式の USB 2.0 仕様 (USB2_LinkPowerMangement_ECN) に補遺があります。
 title: USB 3.0 LPM メカニズム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2d787b2fec190dd25b1f5a4d8e903963577bc8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355084"
 ---
 # <a name="usb-30-lpm-mechanism"></a>USB 3.0 LPM メカニズム
 

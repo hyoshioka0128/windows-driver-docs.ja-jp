@@ -1,6 +1,6 @@
 ---
-title: ディスク領域の関数の一覧
-description: ディスク領域の関数の一覧
+title: ディスク容量の取得関数
+description: ディスク容量の取得関数
 ms.assetid: 850e9f41-b534-49f3-891d-c12c1126e52f
 keywords:
 - SetupAPI 関数 WDK では、ディスク領域を一覧表示します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 875f98f96b241c7d90499213c87f89c568cfa9c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356055"
 ---
-# <a name="disk-space-list-functions"></a>ディスク領域の関数の一覧
+# <a name="disk-space-list-functions"></a>ディスク容量の取得関数
 
 
 

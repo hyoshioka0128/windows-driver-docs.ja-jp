@@ -1,6 +1,6 @@
 ---
-title: ユーザーはデバイスをプラグインします。
-description: ユーザーはデバイスをプラグインします。
+title: ユーザーがデバイスを接続する
+description: ユーザーがデバイスを接続する
 ms.assetid: 1968270b-ce57-4a8c-8b7a-bbd4a972435d
 keywords:
 - 電源管理のシナリオ WDK UMDF、デバイスに接続します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ec90d539a15c59a2dad36a4fdff0b6bcd9eb0b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342155"
 ---
-# <a name="a-user-plugs-in-a-device"></a>ユーザーはデバイスをプラグインします。
+# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスを接続する
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

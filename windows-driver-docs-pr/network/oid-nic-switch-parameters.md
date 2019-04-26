@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f41ef06761ea0091456e500a59d42bde2db14e6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350965"
 ---
 # <a name="oidnicswitchparameters"></a>OID\_NIC\_スイッチ\_パラメーター
 
@@ -38,13 +38,13 @@ ms.locfileid: "56537987"
 
 上位のドライバーの問題の OID\_NIC\_スイッチ\_次のようにパラメーター要求。
 
--   上にあるドライバーは、OID の OID メソッド要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを取得します。 詳細については、[NIC スイッチのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440179)を参照してください。
+-   上にあるドライバーは、OID の OID メソッド要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを取得します。 詳細については、次を参照してください。 [NIC スイッチのパラメーターのクエリを実行する](https://msdn.microsoft.com/library/windows/hardware/hh440179)します。
 
     **注**  OID の OID メソッド要求を処理する NDIS\_NIC\_スイッチ\_PF ミニポート ドライバーのパラメーター。
 
      
 
--   上にあるドライバーは、OID の OID セット要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを変更します。 詳細については、[NIC スイッチのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440227)を参照してください。
+-   上にあるドライバーは、OID の OID セット要求を発行\_NIC\_切り替える\_パラメーターを指定した NIC スイッチの現在のパラメーターを変更します。 詳細については、次を参照してください。 [NIC スイッチのパラメーターを設定する](https://msdn.microsoft.com/library/windows/hardware/hh440227)します。
 
     **注**  、PF ミニポート ドライバー OID の OID のセット要求を処理する\_NIC\_スイッチ\_パラメーター。
 

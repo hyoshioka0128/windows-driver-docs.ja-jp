@@ -1,5 +1,5 @@
 ---
-title: 表示して、WinDbg でメモリを編集
+title: WinDbg でのメモリの表示と編集
 description: 、WinDbg では、表示し、コマンドを入力するか、または [メモリ] ウィンドウを使用してメモリを編集します。
 ms.assetid: 4ac3b94c-5d92-4074-bf79-6da151ce52c8
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc1f6a57867190c3144b344508ac07d70ed35279
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351816"
 ---
-# <a name="viewing-and-editing-memory-in-windbg"></a>表示して、WinDbg でメモリを編集
+# <a name="viewing-and-editing-memory-in-windbg"></a>WinDbg でのメモリの表示と編集
 
 
 、WinDbg では、表示し、コマンドを入力するか、または [メモリ] ウィンドウを使用してメモリを編集します。
@@ -23,7 +23,7 @@ ms.locfileid: "56560749"
 ## <a name="span-iddebuggercommandwindowspanspan-iddebuggercommandwindowspanspan-iddebuggercommandwindowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>デバッガー コマンド ウィンドウ
 
 
-いずれかを入力してメモリを表示することができます、 [**表示メモリ**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)デバッガー コマンド ウィンドウでコマンド。 いずれかを入力してメモリを編集することができます、 [**入力値**](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md)デバッガー コマンド ウィンドウでコマンド。 詳細については、[仮想アドレスにアクセスするメモリ](accessing-memory-by-virtual-address.md)と[物理アドレスにアクセスするメモリ](accessing-memory-by-physical-address.md)を参照してください。
+いずれかを入力してメモリを表示することができます、 [**表示メモリ**](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)デバッガー コマンド ウィンドウでコマンド。 いずれかを入力してメモリを編集することができます、 [**入力値**](e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-.md)デバッガー コマンド ウィンドウでコマンド。 詳細については、次を参照してください。[仮想アドレスにアクセスするメモリ](accessing-memory-by-virtual-address.md)と[物理アドレスにアクセスするメモリ](accessing-memory-by-physical-address.md)します。
 
 ## <a name="span-idddkmemorywindowdbgspanspan-idddkmemorywindowdbgspanopening-a-memory-window"></a><span id="ddk_memory_window_dbg"></span><span id="DDK_MEMORY_WINDOW_DBG"></span>[メモリ] ウィンドウを開く
 
@@ -80,7 +80,7 @@ ms.locfileid: "56560749"
 
 -   (メニューのみ)**常に浮動**によって、ウィンドウをドッキング場所にドラッグされる場合でも、ドッキングされていないままにします。
 
--   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+-   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
 -   (メニューのみ)**プロパティ**開きます、**メモリ オプション**ダイアログ ボックスで、このトピックでは、次のセクションに記載されています。
 
@@ -117,7 +117,7 @@ ms.locfileid: "56560749"
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-メモリの操作とその他のメモリに関連するコマンドの説明の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+メモリの操作とその他のメモリに関連するコマンドの説明の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
  
 

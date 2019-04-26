@@ -1,5 +1,5 @@
 ---
-title: KD 接続のサーバーをアクティブ化します。
+title: KD 接続サーバーのアクティブ化
 description: KD 接続のサーバーをアクティブ化するには、(管理者として実行)、管理者特権でコマンド プロンプト ウィンドウを開き kdsrv コマンドを入力します。
 ms.assetid: 1b6f6f72-2679-45c7-bf1b-9607bf7e7d89
 keywords:
@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cbb6307c64e2ff19ddd694995921455e0ac663bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353144"
 ---
-# <a name="activating-a-kd-connection-server"></a>KD 接続のサーバーをアクティブ化します。
+# <a name="activating-a-kd-connection-server"></a>KD 接続サーバーのアクティブ化
 
 
 Windows のツールのデバッグに含まれている KD 接続サーバー KdSrv (kdsrv.exe) と呼びます。 KD 接続のサーバーをアクティブ化する (管理者として実行)、管理者特権でコマンド プロンプト ウィンドウを開くし、入力、 **kdsrv**コマンド。
 
-**注**  特権を昇格することがなく KD 接続のサーバーをアクティブ化することができ、クライアントのデバッグはサーバーに接続することになります。 ただし、クライアントを昇格した特権でアクティブ化がない限り、KD 接続のサーバーを発見することはできません。 デバッグ サーバーを検出する方法については、[ **KD 接続のサーバーを探して**](searching-for-kd-connection-servers.md)を参照してください。
+**注**  特権を昇格することがなく KD 接続のサーバーをアクティブ化することができ、クライアントのデバッグはサーバーに接続することになります。 ただし、クライアントを昇格した特権でアクティブ化がない限り、KD 接続のサーバーを発見することはできません。 デバッグ サーバーを検出する方法については、次を参照してください。 [ **KD 接続のサーバーを探して**](searching-for-kd-connection-servers.md)します。
 
  
 

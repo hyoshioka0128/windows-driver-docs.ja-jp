@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a311c298d7b1a73fc9baf8faeebef8baa4fdcc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343974"
 ---
 # <a name="checked-build-of-windows"></a>Windows のチェック ビルド
 
@@ -24,7 +24,7 @@ ms.locfileid: "56536069"
 
 このセクションについて説明しますどの Microsoft Windows*チェック済みビルド*(とも呼ばれます、*デバッグ ビルド*) NT ベースのオペレーティング システムと異なる、*フリー ビルド*(も呼ばれる、*リテール ビルド*) このオペレーティング システム。 セクションでは、開発および x86 と x64 プラットフォーム上のドライバーをデバッグ チェックのビルドの一意の機能がどのように役立つことができますかについて説明します。 セクションには、インストールしチェック ビルドを使用して、別のドライバーの開発とデバッグ環境のいくつかのメソッドも一覧表示されます。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 -   [Checked と無料のビルドの違い](checked-and-free-build-differences.md)

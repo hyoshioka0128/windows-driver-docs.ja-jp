@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49c9ad86cb3185d24e3d1df13bb29c9c9bd079d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347415"
 ---
 # <a name="extending-wireless-security-properties"></a>ワイヤレス セキュリティ プロパティの拡張
 
@@ -23,15 +23,15 @@ ms.locfileid: "56559362"
 
 このトピックでは、ネイティブの 802.11 IHV UI の拡張 DLL でのプロパティを拡張する方法について説明します、**セキュリティ**ネットワーク構成ユーザー インターフェイス (UI) を通じて表示されるタブ。 802.11 IHV UI 拡張機能のネイティブ DLL では、このような状況では、プロパティの追加、**セキュリティ**802.11 802.1 X のネイティブ モジュールから相互に排他的である独自のセキュリティ設定 タブ。
 
-802.11 IHV UI 拡張機能のネイティブ DLL は、802.11 802.1 X のネイティブ モジュールでサポートされているセキュリティと暗号化のメソッドを拡張することもできます。 方法は、DLL の詳細については、[を拡張する Microsoft 802.1 X のセキュリティ設定](extending-microsoft-802-1x-security-settings.md)を参照してください。
+802.11 IHV UI 拡張機能のネイティブ DLL は、802.11 802.1 X のネイティブ モジュールでサポートされているセキュリティと暗号化のメソッドを拡張することもできます。 方法は、DLL の詳細については、次を参照してください。[を拡張する Microsoft 802.1 X のセキュリティ設定](extending-microsoft-802-1x-security-settings.md)します。
 
-ネットワークの構成 UI やその他のネイティブの 802.11 コンポーネントに関する詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
+ネットワークの構成 UI やその他のネイティブの 802.11 コンポーネントに関する詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
 
 表示にする前に、**セキュリティ** タブで、オペレーティング システムは次の処理します。
 
 1.  呼び出すことによって、セキュリティ プロパティの拡張機能に対してネイティブ 802.11 IHV UI 拡張 DLL のクエリ、 [ **IDot11ExtUI::GetDot11ExtUIProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff553776)メソッド。 オペレーティング システムの値を渡す**DOT11\_EXT\_UI\_セキュリティ**メソッドの*ExtType*パラメーター。
 
-    802.11 IHV UI 拡張機能のネイティブ DLL には、型の 1 つまたは複数のプロパティがサポートされている場合**DOT11\_EXT\_UI\_セキュリティ**、DLL を返します (メソッドのを通じて*ppDot11ExtUIProperty*パラメーター) の一覧[IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)DLL でサポートされているセキュリティのプロパティの拡張機能。 セキュリティのプロパティを拡張するために使用する COM インターフェイスの詳細については、[ネイティブ 802.11 IHV UI 拡張機能の COM インターフェイス](native-802-11-ihv-ui-extensions-com-interfaces.md)を参照してください。
+    802.11 IHV UI 拡張機能のネイティブ DLL には、型の 1 つまたは複数のプロパティがサポートされている場合**DOT11\_EXT\_UI\_セキュリティ**、DLL を返します (メソッドのを通じて*ppDot11ExtUIProperty*パラメーター) の一覧[IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)DLL でサポートされているセキュリティのプロパティの拡張機能。 セキュリティのプロパティを拡張するために使用する COM インターフェイスの詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の COM インターフェイス](native-802-11-ihv-ui-extensions-com-interfaces.md)します。
 
 2.  セキュリティ拡張機能のフレンドリ名を拡張機能を呼び出すことによってクエリ[ **IDot11ExtUIProperty::GetDot11ExtUIPropertyFriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff553768)メソッド。 オペレーティング システムの下部にある独自のセキュリティ設定の一覧に表示名を追加する、**セキュリティ**タブ。
 

@@ -4,11 +4,11 @@ description: MB マルチ SIM 操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ed574ad545900fa22d779253824d49c32d4205c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343368"
 ---
 # <a name="mb-multi-sim-operations"></a>MB のマルチ SIM 操作
 
@@ -185,7 +185,7 @@ InformationBuffer MBIM_COMMAND_MSG の先頭からは、次の CID のセクシ�
 
 MBIM_COMMAND_MSG で InformationBuffer には、MBIM_MS_SYS_CAPS_INFO として応答データが含まれています。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 適用できません。
 
@@ -197,7 +197,7 @@ MBIM_COMMAND_MSG で InformationBuffer には、MBIM_MS_SYS_CAPS_INFO として�
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | 該当なし | 該当なし |
+| コマンド | 該当なし | 適用なし | 該当なし |
 | 応答 | 該当なし | MBIM_MS_SYS_CAPS_INFO | 該当なし |
 
 #### <a name="data-structures"></a>データ構造体
@@ -206,7 +206,7 @@ MBIM_COMMAND_MSG で InformationBuffer には、MBIM_MS_SYS_CAPS_INFO として�
 
 InformationBuffer は null にして、InformationBufferLength を 0 にする必要があります。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 適用できません。
 
@@ -218,7 +218,7 @@ InformationBuffer は null にして、InformationBufferLength を 0 にする�
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NumberOfExecutors | UINT32 | このモデムによって報告された MBB インスタンスの数 |
 | 4 | 4 | NumberOfSlots | UINT32 | このモデムで利用可能な物理の UICC スロットの数 |
-| 8 | 4 | 同時実行 | UINT32 | 同時にアクティブにできる MBB インスタンスの数 |
+| 8 | 4 | コンカレンシー | UINT32 | 同時にアクティブにできる MBB インスタンスの数 |
 | 12 | 8 | ModemId | UINT64 | 各モデムの 64 ビット一意識別子 |
 
 *NumberOfExecutors*フィールドの数を表しています*executor*現在の構成でモデムでサポートされています。 これは、モデムがサポートする 'サブ電話' スタックの数に直接マップされます。 
@@ -245,7 +245,7 @@ InformationBuffer は null にして、InformationBufferLength を 0 にする�
 
 |  | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | 該当なし | 該当なし |
+| コマンド | 該当なし | 適用なし | 該当なし |
 | 応答 | 該当なし | MBIM_MS_DEVICE_CAPS_INFO_V2 | 該当なし |
 
 #### <a name="data-structures"></a>データ構造体
@@ -254,7 +254,7 @@ InformationBuffer は null にして、InformationBufferLength を 0 にする�
 
 10.5.1.4 USB MBIM 標準のパブリックのと同じです。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 適用できません。
 
@@ -272,13 +272,13 @@ InformationBuffer は null にして、InformationBufferLength を 0 にする�
 | 20 | 4 | SmsCaps | MBIM_SMS_CAPS |  |
 | 24 | 4 | ControlCaps | MBIM_CTRL_CAPS |  |
 | 28 | 4 | MaxSessions | UINT32 |  |
-| 32 | 4 | CustomDataClassOffset | オフセット |  |
+| 32 | 4 | CustomDataClassOffset | OFFSET |  |
 | 36 | 4 | CustomDataClassSize | SIZE(0..22) |  |
-| 40 | 4 | DeviceIdOffset | オフセット |  |
+| 40 | 4 | DeviceIdOffset | OFFSET |  |
 | 44 | 4 | DeviceIdSize | SIZE(0..26) |  |
-| 48 | 4 | FirmwareInfoOffset | オフセット |  |
+| 48 | 4 | FirmwareInfoOffset | OFFSET |  |
 | 52 | 4 | FirmwareInfoSize | SIZE(0..60) |  |
-| 56 | 4 | HardwareInfoOffset | オフセット |  |
+| 56 | 4 | HardwareInfoOffset | OFFSET |  |
 | 60 | 4 | HardwareInfoSize | SIZE(0..60) |  |
 | 64| 4 | ExecutorIndex | UINT32 | Executor のインデックス。 これは、範囲から*0*に*n-1*場所*n* MBIM モデムに含まれている MBB インスタンスの数です。 その値は、定数と列挙順序に関係なく常にします。 |
 | 68 |  | DataBuffer | DATABUFFER | データ バッファーを含む、 *CustomDataClass*、 *DeviceId*、 *FirmwareInfo*、および*HardwareInfo*メンバー。 |
@@ -297,7 +297,7 @@ InformationBuffer は null にして、InformationBufferLength を 0 にする�
 
 MBIM_COMMAND_MSG で InformationBuffer は使用されません。 MBIM_COMMAND_DONE の InformationBuffer MBIM_MS_DEVICE_SLOT_MAPPING_INFO が返されます。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 MBIM_COMMAND_MSG InformationBuffer には MBIM_MS_DEVICE_SLOT_MAPPING_INFO が含まれています。 MBIM_COMMAND_DONE の InformationBuffer MBIM_MS_DEVICE_SLOT_MAPPING_INFO が返されます。 設定 CID が成功したか失敗したかに関係なく、応答に含まれている MBIM_MS_DEVICE_SLOT_MAPPING_INFO は現在のデバイスのスロットのマッピングを表します。
 
@@ -318,7 +318,7 @@ MBIM_COMMAND_MSG InformationBuffer には MBIM_MS_DEVICE_SLOT_MAPPING_INFO が�
 
 InformationBuffer は null にして、InformationBufferLength を 0 にする必要があります。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 次の MBIM_MS_DEVICE_SLOT_MAPPING_INFO 構造、InformationBuffer で使用されます。
 
@@ -351,7 +351,7 @@ InformationBuffer は null にして、InformationBufferLength を 0 にする�
 
 MBIM_COMMAND_MSG InformationBuffer には MBIM_MS_SLOT_INFO_REQ 構造体が含まれています。 MBIM_COMMAND_DONE メッセージの InformationBuffer には MBIM_MS_SLOT_INFO 構造体が含まれています。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 適用できません。
 
@@ -376,7 +376,7 @@ MBIM_COMMAND_MSG InformationBuffer には MBIM_MS_SLOT_INFO_REQ 構造体が含�
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | クエリを実行するスロットのインデックス。 |
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>Set
 
 適用できません。
 
@@ -391,7 +391,7 @@ MBIM_COMMAND_MSG InformationBuffer には MBIM_MS_SLOT_INFO_REQ 構造体が含�
 
 次の MBIM_MS_UICCSLOT_STATE 構造では、スロットの可能な状態について説明します。
 
-| 状態 | Value | 説明 |
+| 状態 | 値 | 説明 |
 | --- | --- | --- |
 | UICCSlotStateUnknown | 0 | モデムは、SIM スロットの状態が明確ではありませんのでを初期化中には、まだです。 |
 | UICCSlotStateOffEmpty | 1 | UICC スロットは電源がオフとカードが存在しません。 電源がオフのスロットでカードの有無を確認することはない実装 UICCSlotStateOff の状態を報告します。 |

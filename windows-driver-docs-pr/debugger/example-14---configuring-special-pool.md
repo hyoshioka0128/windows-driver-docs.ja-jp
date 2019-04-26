@@ -5,13 +5,13 @@ ms.assetid: a89f8a08-30e4-4d04-9689-c665b2175780
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c70d2bb2345c4378c2cf2214510ffecfb7250585
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347810"
 ---
-# <a name="example-14-configuring-special-pool"></a>14 の使用例:特別なプールを構成します。
+# <a name="example-14-configuring-special-pool"></a>例 14:特別なプールの構成
 
 
 Windows vista 以降、構成できます、[特別なプール](special-pool.md)カーネル フラグを設定またはレジストリ設定として機能します。 をカーネル (実行時) フラグの設定として構成する場合は、変更を有効にするコンピューターを再起動する必要はありません。 以前のバージョンの Windows では、特別なプールはレジストリ設定としてのみ使用できます。
@@ -38,7 +38,7 @@ Current Running Kernel Settings are: 00000000
 
 特別なプールの割り当て要求がカーネル フラグの設定ではなく、カーネル設定の値に反映されていないことに注意してください。
 
-また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)を参照してください。
+また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、次を参照してください。[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)します。
 
 コマンドラインでプール タグを表示することはできません。 プール タグがカーネル設定であることを確認するには、Gflags のダイアログ ボックスを使用します。
 
@@ -62,7 +62,7 @@ Current Boot Registry Settings are: 00000000
 
 特別なプールの割り当て要求がレジストリ フラグの設定ではなく、レジストリ設定の値に反映されていないことに注意してください。
 
-また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)を参照してください。
+また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、次を参照してください。[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)します。
 
 値がレジストリに追加されたことを確認するの値を表示する Reg または Regedit を使用、 **PoolTag**内のエントリ、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理**キー。
 
@@ -96,7 +96,7 @@ Current Running Kernel Settings are: 00000000
 
 ここでも、特別なプールの割り当て要求はカーネル フラグの設定ではありませんし、カーネル設定の値には反映されません。
 
-また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)を参照してください。
+また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、次を参照してください。[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)します。
 
 ### <a name="span-idrequestspecialpoolbysizeintheregistryspanspan-idrequestspecialpoolbysizeintheregistryspanrequest-special-pool-by-size-in-the-registry"></a><span id="request_special_pool_by_size_in_the_registry"></span><span id="REQUEST_SPECIAL_POOL_BY_SIZE_IN_THE_REGISTRY"></span>レジストリのサイズで特別なプールを要求します。
 
@@ -120,7 +120,7 @@ Current Boot Registry Settings are: 00000000
 
 ここでも、特別なプールの割り当て要求はレジストリ フラグの設定ではありませんし、レジストリ設定の値には反映されません。
 
-また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)を参照してください。
+また、特別なプールの割り当て要求オーバーラン (0x1) の値を変更したりしないアンダーラン特別なプール (0x0) 設定。 オーバーランから変更するには、既定値は、アンダーランには、Gflags ダイアログを使用します。 詳しくは、次を参照してください。[オーバーランの検出とアンダーラン](detecting-overruns-and-underruns.md)します。
 
 値がレジストリに追加されたことを確認するの値を表示する Reg または Regedit を使用、 **PoolTag**内のエントリ、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理**キー。
 

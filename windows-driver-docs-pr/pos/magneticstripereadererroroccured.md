@@ -5,11 +5,11 @@ ms.assetid: c2402411-1bbf-44c1-bf7f-813f6d967822
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 256b7ddf3ee94902e89bf315dc5820da7ed9fc1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349286"
 ---
 # <a name="magneticstripereadererroroccured"></a>MagneticStripeReaderErrorOccured
 
@@ -44,7 +44,7 @@ typedef struct _MSR_ERROR_EVENT
 | 32 ビット[MsrTrackErrorType](https://msdn.microsoft.com/library/windows/hardware/dn772173)                   | **Track3Status**                                                                                                               |
 | 32 ビット[MsrTrackErrorType](https://msdn.microsoft.com/library/windows/hardware/dn772173)                   | **Track4Status**                                                                                                               |
 | 32 ビット[UnifiedPosErrorSeverity](https://msdn.microsoft.com/library/windows/hardware/dn790053)       | **重要度**                                                                                                                   |
-| 32 ビット[UnifiedPosErrorReason](https://msdn.microsoft.com/library/windows/hardware/dn790050)           | **理由**                                                                                                                     |
+| 32 ビット[UnifiedPosErrorReason](https://msdn.microsoft.com/library/windows/hardware/dn790050)           | **Reason**                                                                                                                     |
 | UINT32                                                              | **拡張の理由**                                                                                                            |
 | 32 ビット[MsrCardType](https://msdn.microsoft.com/library/windows/hardware/dn772167)                               | **CardType**                                                                                                                   |
 | unsigned char                                                       | **Track1EncryptedDataLength**                                                                                                  |
@@ -75,10 +75,10 @@ typedef struct _MSR_ERROR_EVENT
 | wchar\_T \[MSR\_エラー\_最大\_メッセージ\_長さ\]                       | 最大**MSR\_エラー\_最大\_メッセージ\_長さ**wchar\_エラーの t **Null**-メッセージのテキストの終了                                  |
 
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 スキャン エラーが発生するいくつかのスキャン データが取得された場合は、イベント データには、部分的なスキャン データが含まれています。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 **ヘッダー:** pointofservicedriverinterface.h

@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_INITIALIZE_MSG
-Description: This message is sent by the host to a Remote NDIS device to initialize the network connection.
+Description: このメッセージは、NDIS リモート デバイスへのホストでネットワーク接続を初期化するために送信されます。
 ms.assetid: 08735ee8-7a4c-4a3d-9082-27c61cfd15e8
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74da17faed5fa28822ff5098414175bb27f1990c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350867"
 ---
 # <a name="remotendisinitializemsg"></a>リモート\_NDIS\_初期化\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56552378"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000002 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -73,7 +73,7 @@ ms.locfileid: "56552378"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

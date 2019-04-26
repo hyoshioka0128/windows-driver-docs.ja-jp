@@ -5,11 +5,11 @@ ms.assetid: 40ED3410-EC46-42C8-B09B-8010639F2268
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e6949b11b989e091aa6ed932b711625b6059c07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345294"
 ---
 # <a name="wi-fi-direct-printing-overview"></a>Wi-Fi Direct 印刷の概要
 

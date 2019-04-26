@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa56bc6cf92ae4106d28cd3bfc61ea50a581a46a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352060"
 ---
 # <a name="installing-a-test-certificate-on-a-test-computer"></a>テスト コンピューターへのテスト証明書のインストール
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 605f647216d8ca92bf86ab16caf3892ef323b965
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355190"
 ---
 # <a name="kspropertycameracontrolperframesettingcapability"></a>KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_機能
 
@@ -46,7 +46,7 @@ GET 呼び出しで 0 個の長バッファーには全体の機能のペイロ�
 
 **公開時の項目**  
 
-**Size**
+**サイズ**
 
 これは、サイズの**KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー**構造 + のサイズ、 **KSPROPERTY\_ステッピング\_LONGLONG**手動モードがサポートされている場合に構造体します。
 
@@ -69,7 +69,7 @@ KSPROPERTY で範囲のペイロードを指定する必要があります、ド
 
 **フラッシュ項目**  
 
-**Size**
+**サイズ**
 
 これは、サイズの[ **KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)構造体。
 
@@ -96,7 +96,7 @@ KSPROPERTY で範囲のペイロードを指定する必要があります、ド
 
 **露出の補正項目**  
 
-**Size**
+**サイズ**
 
 これは、サイズの**KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー**構造 + のサイズ、 **KSPROPERTY\_ステッピング\_時間の長い**手順がサポートされている場合に構造体します。
 
@@ -123,7 +123,7 @@ KSPROPERTY で範囲のペイロードを指定する必要があります、ド
 
 **ISO 速度項目**  
 
-**Size**
+**サイズ**
 
 これは、サイズの**KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー**構造 + のサイズ、 **KSPROPERTY\_ステッピング\_時間の長い**手動モードがサポートされている場合に構造体します。
 
@@ -149,7 +149,7 @@ KSPROPERTY で範囲のペイロードを指定する必要があります、ド
 
 **フォーカスの項目**  
 
-**Size**
+**サイズ**
 
 これは、サイズの**KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー**構造 + のサイズ、 **KSPROPERTY\_ステッピング\_時間の長い**構造体。
 
@@ -181,7 +181,7 @@ KSPROPERTY で範囲のペイロードを指定する必要があります、ド
 
 **イメージの種類の確認** 
 
-**Size**
+**サイズ**
 
 これは、サイズの**KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー**構造体。
 
@@ -200,7 +200,7 @@ Flags フィールドには使用されません。
 
 **カスタム プロパティの項目**  
 
-**Size**
+**サイズ**
 
 これは、サイズの**KSCAMERA\_PERFRAMESETTING\_CAP\_ヘッダー**構造 + GUID のサイズ。
 

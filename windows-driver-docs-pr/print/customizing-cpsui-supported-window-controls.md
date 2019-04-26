@@ -1,6 +1,6 @@
 ---
-title: CPSUI でサポートされているウィンドウのコントロールをカスタマイズします。
-description: CPSUI でサポートされているウィンドウのコントロールをカスタマイズします。
+title: CPSUI 指定のウィンドウ コントロールをカスタマイズする
+description: CPSUI 指定のウィンドウ コントロールをカスタマイズする
 ms.assetid: b9ced902-6368-4b3b-a974-81e7d38c0ced
 keywords:
 - 共通のプロパティ シートのユーザー インターフェイスを WDK の印刷、ウィンドウ コントロール
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c21e159da744343971dec67a4d3fcc104bd50c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355680"
 ---
-# <a name="customizing-cpsui-supported-window-controls"></a>CPSUI でサポートされているウィンドウのコントロールをカスタマイズします。
+# <a name="customizing-cpsui-supported-window-controls"></a>CPSUI 指定のウィンドウ コントロールをカスタマイズする
 
 
 

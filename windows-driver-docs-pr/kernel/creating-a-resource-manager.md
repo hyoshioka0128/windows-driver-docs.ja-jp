@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06706db926cbc3d7c062f0fabbc8042b1ef1ebe2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345438"
 ---
 # <a name="creating-a-resource-manager"></a>リソース マネージャーの作成
 
@@ -47,7 +47,7 @@ ms.locfileid: "56530502"
 
 5.  リソース マネージャーの状態を回復します。
 
-    呼び出し[ **ZwRecoverResourceManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567078) KTM トランザクション リソース マネージャーを送信すると、\_通知\_トランザクションが進行中の回復の通知最後に、リソース マネージャーがシャット ダウンします。 リソース マネージャーがこれらの通知に応答する方法については、[回復操作の処理](handling-recovery-operations.md)を参照してください。
+    呼び出し[ **ZwRecoverResourceManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567078) KTM トランザクション リソース マネージャーを送信すると、\_通知\_トランザクションが進行中の回復の通知最後に、リソース マネージャーがシャット ダウンします。 リソース マネージャーがこれらの通知に応答する方法については、次を参照してください。[回復操作の処理](handling-recovery-operations.md)します。
 
 6.  クライアントからトランザクションを受信します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "56530502"
 
 10. コミットまたはクライアントの操作をロールバックします。
 
-    リソース マネージャーが開始する通知を受け取る最終的には、コミットや、クライアントが実行される操作をロールバックします。 応答では、resource manager は必要があります、永続的なクライアント操作を行うまたはいずれかして破棄します。 コミットとロールバック通知を処理する方法の詳細については、[トランザクション操作の処理](handling-transaction-operations.md)を参照してください。
+    リソース マネージャーが開始する通知を受け取る最終的には、コミットや、クライアントが実行される操作をロールバックします。 応答では、resource manager は必要があります、永続的なクライアント操作を行うまたはいずれかして破棄します。 コミットとロールバック通知を処理する方法の詳細については、次を参照してください。[トランザクション操作の処理](handling-transaction-operations.md)します。
 
     場合によっては、リソース マネージャーは、迅速に、リソース マネージャーがデバイスでは、突然削除されたことを確認するため、commit または rollback の通知をおそらく提供 KTM を強制しようとする必要があります。 このような場合は、resource manager を呼び出すことができます[ **TmRequestOutcomeEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff564727)します。
 

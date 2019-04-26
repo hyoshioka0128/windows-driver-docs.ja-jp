@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e08f8c4911cac4b245fdea4ddc448dbfe990e85b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345450"
 ---
 # <a name="creating-controller-objects-and-controller-extensions"></a>コントローラー オブジェクトとコントローラー拡張の作成
 
@@ -35,7 +35,7 @@ ms.locfileid: "56570304"
 
 コント ローラーのオブジェクトを設定するほとんどのドライバーを検索するコント ローラー拡張機能の現在のターゲット デバイス オブジェクト、またはデバイス拡張子へのポインターを格納すると便利です。 通常、このようなドライバー コント ローラー オブジェクトのポインターを保存のすべてのデバイスの拡張機能の使用できるように、 *ControllerObject * * *-&gt;ControllerExtension** ドライバーで維持されるアクセスへのポインターターゲット デバイスのすべてのオブジェクトの I/O 操作についての状態をコント ローラーに固有です。
 
-コント ローラーのオブジェクトによって表される物理コント ローラーは、割り込みを生成する場合、ドライバーも使用できますコント ローラー拡張機能のストレージとして*PtrToInterruptObject*で返されたポインター [ **IoConnectInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff548371)します。 詳細については、[割り込みサービス ルーチン](interrupt-service-routines.md)を参照してください。
+コント ローラーのオブジェクトによって表される物理コント ローラーは、割り込みを生成する場合、ドライバーも使用できますコント ローラー拡張機能のストレージとして*PtrToInterruptObject*で返されたポインター [ **IoConnectInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff548371)します。 詳細については、次を参照してください。[割り込みサービス ルーチン](interrupt-service-routines.md)します。
 
 **IoCreateController**常駐ストレージ コント ローラーのオブジェクトと拡張機能は、ゼロで初期化を割り当てます。 場合は、メモリを割り当てることができません**IoCreateController**を返します、 **NULL**ポインター。 このような場合、ドライバーがデバイスのスタートアップに失敗する必要があり、状態を返す必要があります\_不十分\_リソース。
 

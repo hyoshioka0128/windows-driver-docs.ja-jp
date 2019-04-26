@@ -1,6 +1,6 @@
 ---
-title: Efi ブート オプションの編集
-description: Efi ブート オプションの編集
+title: EFI でのブート オプションの編集
+description: EFI でのブート オプションの編集
 ms.assetid: 0fdd01b3-7475-4959-87d8-5ec8ae65fea0
 keywords:
 - NVRAM ブート オプション、WDK の編集
@@ -16,13 +16,13 @@ keywords:
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d9dc5ea74b6d95452edce219253eef5a00aa45c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344826"
 ---
-# <a name="editing-boot-options-in-efi"></a>Efi ブート オプションの編集
+# <a name="editing-boot-options-in-efi"></a>EFI でのブート オプションの編集
 
 
 オプションを編集するブート コンピューターで EFI NVRAM と Windows Server 2003 または NT ベースの Windows の以前のバージョンを実行するには、Bootcfg (bootcfg.exe)、Windows、または Nvrboot (nvrboot.efi) EFI 環境で実行されているツールで実行されるツールを使用します。 Windows XP 64-bit Edition および Windows Server 2003 の 64 ビット バージョンでは、どちらのツールが含まれます。

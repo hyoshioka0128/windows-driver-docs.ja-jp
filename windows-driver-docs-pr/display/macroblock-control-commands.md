@@ -1,6 +1,6 @@
 ---
-title: マクロ ブロック管理コマンド
-description: マクロ ブロック管理コマンド
+title: マクロブロック制御コマンド
+description: マクロブロック制御コマンド
 ms.assetid: be70ec8f-1821-4075-b5e3-b7574fbe4e27
 keywords:
 - WDK の DirectX va なので、コマンドをマクロ ブロック
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46432e442e4c41bfe2db8a1a490b86f698689ebe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346846"
 ---
-# <a name="macroblock-control-commands"></a>マクロ ブロック管理コマンド
+# <a name="macroblock-control-commands"></a>マクロブロック制御コマンド
 
 
 ## <span id="ddk_macroblock_control_commands_gg"></span><span id="DDK_MACROBLOCK_CONTROL_COMMANDS_GG"></span>
@@ -33,7 +33,7 @@ ms.locfileid: "56538034"
 
 [**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563997)
 
-構造体で明示的に定義されている*dxva.h*マクロ ブロック コントロールのコマンドの DirectX 問い合わせください使用される汎用的なデザインの特殊なケース。 この汎用的な設計については、[マクロ ブロック コントロール コマンド構造の汎用フォーム](generic-form-of-macroblock-control-command-structures.md)を参照してください。
+構造体で明示的に定義されている*dxva.h*マクロ ブロック コントロールのコマンドの DirectX 問い合わせください使用される汎用的なデザインの特殊なケース。 この汎用的な設計については、次を参照してください。[マクロ ブロック コントロール コマンド構造の汎用フォーム](generic-form-of-macroblock-control-command-structures.md)します。
 
 使用できるマクロ ブロック コントロール コマンド構造体の選択はデコードする画像の種類とデコードする方法に基づいています。 次の構造体のメンバーとフラグ オプション、および 4 つの DirectX VA マクロ ブロックの制御構造のどちらを使用するデコードを画像の種類に決定します。
 

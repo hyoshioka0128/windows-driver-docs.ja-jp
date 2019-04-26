@@ -14,11 +14,11 @@ api_type:
 ms.date: 06/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f46a416ceb244e5532115b9666e4586899f3c41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341487"
 ---
 # <a name="inf-ddinstallevents-section"></a>INF DDInstall.Events セクション
 
@@ -43,7 +43,7 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 ## <a name="entries"></a>エントリ
 
 <a href="" id="addeventprovider--providerguid--event-provider-install-section"></a>**AddEventProvider=**{*ProviderGUID*},*event-provider-install-section*  
-このディレクティブは、INF ライターの定義を参照*イベント プロバイダーのインストール セクション*この対象となるデバイスのドライバーの INF ファイルの他の場所で*DDInstall*セクション。 詳細については、[ **INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)を参照してください。
+このディレクティブは、INF ライターの定義を参照*イベント プロバイダーのインストール セクション*この対象となるデバイスのドライバーの INF ファイルの他の場所で*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)します。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 このエントリが指定されている場合、**必要がある**エントリも通常は必要です。

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78811c4e2c1546efe7dc5f9feccfaec884c1102d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347657"
 ---
 # <a name="supported-drivers"></a>サポートされているドライバー
 
@@ -33,13 +33,13 @@ SDV は、次の特性を持つドライバーのみを確認できません。
 
 -   SDV は、汎用プロパティの制限付きの検証を試みます (など[NullCheck](nullcheckw.md)) 上記のカテゴリに適合しないドライバーにします。
 
--   SDV は、WDM 関数のロールの種類を使用して、ドライバーのコールバック関数を宣言する WDM ドライバーを確認できます。 関数を宣言する方法については、[を宣言する関数を使用して関数ロールの種類の WDM ドライバー](declaring-functions-using-function-role-types-for-wdm-drivers.md)を参照してください。
+-   SDV は、WDM 関数のロールの種類を使用して、ドライバーのコールバック関数を宣言する WDM ドライバーを確認できます。 関数を宣言する方法については、次を参照してください。[を宣言する関数を使用して関数ロールの種類の WDM ドライバー](declaring-functions-using-function-role-types-for-wdm-drivers.md)します。
 
--   SDV はから生成されるドライバーを確認できます、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)、SDV KMDF コールバック関数ロールの種類を使用して各コールバック関数を宣言します。 詳細については、[を使用して関数の役割の種類 KMDF ドライバーで関数を宣言する](static-driver-verifier-kmdf-function-declarations.md)を参照してください。
+-   SDV はから生成されるドライバーを確認できます、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)、SDV KMDF コールバック関数ロールの種類を使用して各コールバック関数を宣言します。 詳細については、次を参照してください。[を使用して関数の役割の種類 KMDF ドライバーで関数を宣言する](static-driver-verifier-kmdf-function-declarations.md)します。
 
--   SDV は、SDV NDIS コールバック関数の型を使用して、関数宣言では、各コールバック関数に注釈を付ける提供される、NDIS ドライバーを確認できます。 詳細については、[を宣言する関数を使用してロール関数の種類の NDIS ドライバー](static-driver-verifier-ndis-function-declarations.md)を参照してください。
+-   SDV は、SDV NDIS コールバック関数の型を使用して、関数宣言では、各コールバック関数に注釈を付ける提供される、NDIS ドライバーを確認できます。 詳細については、次を参照してください。[を宣言する関数を使用してロール関数の種類の NDIS ドライバー](static-driver-verifier-ndis-function-declarations.md)します。
 
--   SDV は、関数の宣言では、各コールバック関数に注釈を付けること、Storport のドライバーを確認できます。 SDV Storport コールバック関数の型を使用してこれを行います。 詳細については、[を宣言する関数を使用してロール関数の種類 Storport ドライバー](declaring-functions-by-using-function-role-types-for-storport-drivers.md)を参照してください。
+-   SDV は、関数の宣言では、各コールバック関数に注釈を付けること、Storport のドライバーを確認できます。 SDV Storport コールバック関数の型を使用してこれを行います。 詳細については、次を参照してください。[を宣言する関数を使用してロール関数の種類 Storport ドライバー](declaring-functions-by-using-function-role-types-for-storport-drivers.md)します。
 
 ### <a name="span-idbasicdriverrequirementsspanspan-idbasicdriverrequirementsspanbasic-driver-requirements"></a><span id="basic_driver_requirements"></span><span id="BASIC_DRIVER_REQUIREMENTS"></span>基本的なドライバーの要件
 
@@ -59,7 +59,7 @@ KMDF ドライバーを確認する SDV は、ドライバー必要がありま�
 
 -   説明されている KMDF オブジェクトを作成する[ドライバーを開発するフレームワークを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545545)します。
 
--   型を使用して、SDV KMDF コールバック関数の役割で説明されている各コールバック関数の注釈を付ける[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 サポートされているロールの種類の一覧は、[静的ドライバー検証ツール KMDF 関数宣言](static-driver-verifier-kmdf-function-declarations.md)を参照してください。
+-   型を使用して、SDV KMDF コールバック関数の役割で説明されている各コールバック関数の注釈を付ける[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 サポートされているロールの種類の一覧は、次を参照してください。[静的ドライバー検証ツール KMDF 関数宣言](static-driver-verifier-kmdf-function-declarations.md)します。
 
 SDV NDIS ドライバーを確認する、ドライバー必要があります。
 
@@ -67,7 +67,7 @@ SDV NDIS ドライバーを確認する、ドライバー必要があります�
 
 -   ガイドラインに従う、[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)NDIS ドライバーを作成します。
 
--   」の説明に従って、SDV NDIS コールバック関数の役割の型を使用して各コールバック関数に注釈を付ける[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 サポートされているロールの種類の一覧は、[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)を参照してください。
+-   」の説明に従って、SDV NDIS コールバック関数の役割の型を使用して各コールバック関数に注釈を付ける[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 サポートされているロールの種類の一覧は、次を参照してください。[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)します。
 
 さらに、SDV は、サポートするドライバーを確認できます。
 
@@ -89,7 +89,7 @@ SDV[検証エンジン](verification-engine.md)が正しく動作しないドラ
 
 -   ライブラリでは、.def ファイルを使用して、エクスポートされた関数の名前を変更して、外部の名前は、ライブラリ内の別の静的関数の名前と同じです。
 
-ドライバーのコードまたはライブラリ コードは、これらの要素が含まれています、SDV は、ドライバーを確認します。 または、ライブラリを処理を試みますが、結果は場合**いないサポートされている機能 (NSF)** します。 SDV の結果の詳細については、[静的ドライバー検証結果を解釈する](interpreting-static-driver-verifier-results.md)を参照してください。
+ドライバーのコードまたはライブラリ コードは、これらの要素が含まれています、SDV は、ドライバーを確認します。 または、ライブラリを処理を試みますが、結果は場合**いないサポートされている機能 (NSF)** します。 SDV の結果の詳細については、次を参照してください。[静的ドライバー検証結果を解釈する](interpreting-static-driver-verifier-results.md)します。
 
  
 

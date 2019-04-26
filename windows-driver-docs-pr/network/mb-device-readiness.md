@@ -5,11 +5,11 @@ ms.assetid: 67a67ff7-dcff-4aec-bea9-7b1be9593649
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95f83da274cae07e6a886ab706d852a48c8c1afd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343410"
 ---
 # <a name="mb-device-readiness"></a>MB デバイスの準備
 
@@ -46,7 +46,7 @@ MB サービスを想定していないこと、ミニポート ドライバー�
 
 SIM が不要になった有効である、おそらく、サブスクリプションが有料、またはサービスが、デバイスが盗難にあった報告されているために、非アクティブ化されているため、検出場所のシナリオであっても緊急呼び出しサービスをサポートするミニポート ドライバーを指定できます。
 
-デバイスの準備の詳細については、[OID\_WWAN\_準備\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569833)を参照してください。
+デバイスの準備の詳細については、次を参照してください。 [OID\_WWAN\_準備\_情報](https://msdn.microsoft.com/library/windows/hardware/ff569833)します。
 
  
 

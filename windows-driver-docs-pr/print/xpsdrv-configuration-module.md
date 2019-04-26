@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 285383a33f7bccdabb724ed3818343456ccb4016
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354764"
 ---
 # <a name="xpsdrv-configuration-module"></a>XPSDrv 構成モジュール
 
@@ -34,11 +34,11 @@ XPSDrv プリンターのドライバーの 2 つの主要なコンポーネン�
 
 ### <a name="xpsdrv-document-events"></a>XPSDrv ドキュメント イベント
 
-XPSDrv ドライバーを通じて GDI ドキュメント イベントを受信できる、 [ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)関数には、印刷は Win32 ベースのアプリケーションとドライバーを XPS ドキュメントのイベントを受信できます。DrvDocumentEvent に WPF アプリケーションを印刷するとき。 XPSDrv ドキュメント イベントの詳細については、[XPSDrv ドライバーのドキュメント イベント](xps-driver-document-events.md)を参照してください。
+XPSDrv ドライバーを通じて GDI ドキュメント イベントを受信できる、 [ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)関数には、印刷は Win32 ベースのアプリケーションとドライバーを XPS ドキュメントのイベントを受信できます。DrvDocumentEvent に WPF アプリケーションを印刷するとき。 XPSDrv ドキュメント イベントの詳細については、次を参照してください。 [XPSDrv ドライバーのドキュメント イベント](xps-driver-document-events.md)します。
 
 ### <a name="xpsdrv-driver-installation"></a>XPSDrv ドライバーのインストール
 
-XPSDrv ドライバーでは、インストールの特定の要件があります。 XPSDrv ドライバーのインストールの詳細については、[XPSDrv インストール](xpsdrv-installation.md)を参照してください。
+XPSDrv ドライバーでは、インストールの特定の要件があります。 XPSDrv ドライバーのインストールの詳細については、次を参照してください。 [XPSDrv インストール](xpsdrv-installation.md)します。
 
  
 

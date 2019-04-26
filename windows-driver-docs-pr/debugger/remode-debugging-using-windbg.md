@@ -1,17 +1,17 @@
 ---
-title: リモートのデバッグを使用して WinDbg
+title: WinDbg を使用したリモート デバッグ
 description: リモート デバッグには、2 つの異なる場所で実行されている 2 つのデバッガーが含まれます。
 ms.assetid: 3030CEE4-DF10-4F84-A32D-38613D7EE072
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4ec56f7332a46adc31879859fcf0e0d1703438
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353600"
 ---
-# <a name="remote-debugging-using-windbg"></a>リモートのデバッグを使用して WinDbg
+# <a name="remote-debugging-using-windbg"></a>WinDbg を使用したリモート デバッグ
 
 
 リモート デバッグには、2 つの異なる場所で実行されている 2 つのデバッガーが含まれます。 デバッグを実行する、デバッガーが呼び出され、*サーバー デバッグ*します。 呼ばれる、2 つ目のデバッガー、*デバッグ クライアント*、リモートの場所から、デバッグ セッションを制御します。 リモート セッションを確立するには、まずデバッグ サーバーを設定し、デバッグのクライアントを有効にする必要があります。
@@ -68,7 +68,7 @@ ms.locfileid: "56557210"
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-リモート デバッグのこのトピックに示すもの以外の場合を確立するために多くの方法はあります。 デバッグ、WinDbg でサーバーをセットアップする詳細については[デバッガー コマンド ウィンドウ](debugger-command-window.md)を参照してください[ **.server (デバッグ サーバーの作成)**](-server--create-debugging-server-.md)します。 起動 WinDbg (および確立するリモート デバッグ)、コマンドラインでの詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
+リモート デバッグのこのトピックに示すもの以外の場合を確立するために多くの方法はあります。 デバッグ、WinDbg でサーバーをセットアップする詳細については[デバッガー コマンド ウィンドウ](debugger-command-window.md)を参照してください[ **.server (デバッグ サーバーの作成)**](-server--create-debugging-server-.md)します。 起動 WinDbg (および確立するリモート デバッグ)、コマンドラインでの詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
 
  
 

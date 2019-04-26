@@ -5,11 +5,11 @@ ms.assetid: 1203b7cd-50b9-4174-8bec-112019444fac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 727cebe2bbe3f3a4f324428501c9d06f87c29ddf
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356602"
 ---
 # <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>チェック済みのオペレーティング システムと HAL のみのインストール (Windows Vista 以降)
 
@@ -121,7 +121,7 @@ PAE のサポートしているマルチプロセッサの x86 アーキテク�
 %Systemroot% にチェックされたファイルをコピーしたら\\system32 ディレクトリにより、これらのチェックされたファイルの使用を開始する、システム起動時のエントリを作成する必要があります。 BCDEdit を使用して、これを作成することができます。
 
 **ヒント:**   チェックされているオペレーティング システム イメージと HAL を使用する変更可能な新しいブート エントリを作成する既存のブート エントリをコピーすることができます。 たとえば、現在のブート エントリのコピーを作成する次のコマンドを使用: **「Windows 8.1 部分チェック ビルド」bcdedit/copy {current}/d**します。
-BCDEdit を使用して一般的な手順については、[ドライバーのテストおよびデバッグの起動オプションを変更するためのツール](boot-options-for-driver-testing-and-debugging.md)と[ブート オプションの編集](editing-boot-options.md)を参照してください。
+BCDEdit を使用して一般的な手順については、次を参照してください。[ドライバーのテストおよびデバッグの起動オプションを変更するためのツール](boot-options-for-driver-testing-and-debugging.md)と[ブート オプションの編集](editing-boot-options.md)します。
 
 **注**  BCDEdit のオプションを無効にするか、またはコンピューターの BitLocker とセキュア ブートを中断する必要がありますを設定する前にします。
 

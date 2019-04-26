@@ -1,6 +1,6 @@
 ---
-title: 失われると、DirectDraw サーフェスの復元
-description: 失われると、DirectDraw サーフェスの復元
+title: DirectDraw サーフェスの作成と復元
+description: DirectDraw サーフェスの作成と復元
 ms.assetid: 74203932-8a30-44ea-8d0d-45265dd2e74a
 keywords:
 - 描画サーフェスの WDK DirectDraw、失われる
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb0483064a05bc44f18cd250fd3fea3a0fd6e34c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347502"
 ---
-# <a name="losing-and-restoring-directdraw-surfaces"></a>失われると、DirectDraw サーフェスの復元
+# <a name="losing-and-restoring-directdraw-surfaces"></a>DirectDraw サーフェスの作成と復元
 
 
 ## <span id="ddk_losing_and_restoring_directdraw_surfaces_gg"></span><span id="DDK_LOSING_AND_RESTORING_DIRECTDRAW_SURFACES_GG"></span>

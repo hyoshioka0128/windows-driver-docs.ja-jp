@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e031ed48a5b2d36cd1d2951cb65d6d699864031e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349695"
 ---
 # <a name="handling-oidpnpxxx-queries-and-sets"></a>OID の処理\_PNP\_Xxx クエリとセット
 
@@ -21,7 +21,7 @@ ms.locfileid: "56572177"
 
 
 
-中間のドライバーの仮想ミニポートをエクスポートする必要があります、 [ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。 NDIS ドライバーの中間の呼び出し*MiniportOidRequest*関数の場合、中間のドライバーのミニポート仮想呼び出しにバインドされている上位のドライバー [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)クエリまたはオブジェクトの情報を設定する (OID\_*Xxx*)。 NDIS は呼び出すことができますも*MiniportOidRequest*独自の代わりにします。 セットとオブジェクトの情報をクエリのミニポート ドライバーの処理の詳細については、[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)を参照してください。
+中間のドライバーの仮想ミニポートをエクスポートする必要があります、 [ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。 NDIS ドライバーの中間の呼び出し*MiniportOidRequest*関数の場合、中間のドライバーのミニポート仮想呼び出しにバインドされている上位のドライバー [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)クエリまたはオブジェクトの情報を設定する (OID\_*Xxx*)。 NDIS は呼び出すことができますも*MiniportOidRequest*独自の代わりにします。 セットとオブジェクトの情報をクエリのミニポート ドライバーの処理の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
 
 中間のドライバーが、基になるミニポート アダプターで受信するの機能に関する情報を保持する必要があります、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数。 ミニポート アダプタの管理に対応した電源は、NDIS 設定、**デバイス**のメンバー [ **NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)に**NULL**します。
 

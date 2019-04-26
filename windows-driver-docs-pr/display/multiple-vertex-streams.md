@@ -1,6 +1,6 @@
 ---
-title: 複数の頂点のストリーム
-description: 複数の頂点のストリーム
+title: 複数頂点ストリーム
+description: 複数頂点ストリーム
 ms.assetid: aaaea27b-79e0-4c48-9102-898b42a1487f
 keywords:
 - WDK の Windows 2000 の表示、複数のストリームの頂点の DirectX 8.0 リリース ノートします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd942a1d9b9f154807319484fdd6f5bd16fdc3e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345559"
 ---
-# <a name="multiple-vertex-streams"></a>複数の頂点のストリーム
+# <a name="multiple-vertex-streams"></a>複数頂点ストリーム
 
 
 ## <span id="ddk_multiple_vertex_streams_gg"></span><span id="DDK_MULTIPLE_VERTEX_STREAMS_GG"></span>

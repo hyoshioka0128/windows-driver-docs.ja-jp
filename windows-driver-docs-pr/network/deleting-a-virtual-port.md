@@ -1,17 +1,17 @@
 ---
-title: 仮想ポートを削除します。
-description: 仮想ポートを削除します。
+title: 仮想ポートの削除
+description: 仮想ポートの削除
 ms.assetid: CBE7AC59-D878-44BA-8FE6-168EC17A2D67
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b612265ed2aa877eab4eed80ae6e31cb99c6a0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347484"
 ---
-# <a name="deleting-a-virtual-port"></a>仮想ポートを削除します。
+# <a name="deleting-a-virtual-port"></a>仮想ポートの削除
 
 
 上位のドライバーのオブジェクト識別子 (OID) セット要求を発行する[OID\_NIC\_スイッチ\_削除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818)ネットワーク アダプターの既定以外の仮想ポート (VPort) を削除するにはNIC のスイッチです。 上にあるドライバーが削除できるがの OID メソッド要求を発行して以前作成した VPort だけ[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。
@@ -48,7 +48,7 @@ OID のセット要求を発行する前に[OID\_NIC\_スイッチ\_削除\_VPOR
 
 -   NDIS のセット要求を発行する前に[OID\_NIC\_切り替える\_削除\_切り替える](https://msdn.microsoft.com/library/windows/hardware/hh451817)ネットワーク アダプターで NIC スイッチを削除するのにはすべて既定以外の拡張が削除されたことを保証そのスイッチ。
 
--   既定の OID 要求を通じて、拡張を明示的に削除できる以外のみ[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、[NIC スイッチを削除する](deleting-a-nic-switch.md)を参照してください。
+-   既定の OID 要求を通じて、拡張を明示的に削除できる以外のみ[OID\_NIC\_スイッチ\_削除\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451817)します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、次を参照してください。 [NIC スイッチを削除する](deleting-a-nic-switch.md)します。
 
  
 

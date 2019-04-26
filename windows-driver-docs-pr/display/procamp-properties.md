@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 399d2975d06360626c3590cd247b951cdea6d590
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352188"
 ---
 # <a name="procamp-properties"></a>ProcAmp プロパティ
 
@@ -33,8 +33,8 @@ ms.locfileid: "56573748"
 <tr class="header">
 <th align="left">プロパティ</th>
 <th align="left">最小</th>
-<th align="left">最大</th>
-<th align="left">既定</th>
+<th align="left">[最大]</th>
+<th align="left">Default</th>
 <th align="left">増分値</th>
 </tr>
 </thead>

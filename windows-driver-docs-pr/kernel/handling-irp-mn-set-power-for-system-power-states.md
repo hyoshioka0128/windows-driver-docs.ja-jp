@@ -1,6 +1,6 @@
 ---
-title: システム電源の状態の IRP_MN_SET_POWER の処理
-description: システム電源の状態の IRP_MN_SET_POWER の処理
+title: システム電源状態についての IRP_MN_SET_POWER の処理
+description: システム電源状態についての IRP_MN_SET_POWER の処理
 ms.assetid: 21e8e8a7-ca77-445b-a49e-28a53f431a26
 keywords:
 - IRP_MN_SET_POWER
@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36e2048aac516b4420188cbbd383317396f67956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350013"
 ---
 # <a name="handling-irpmnsetpower-for-system-power-states"></a>IRP の処理\_MN\_設定\_システム電源の状態の電源
 
@@ -31,7 +31,7 @@ I/O マネージャーを通じて電源マネージャーは IRP を PnP デバ
 
 所定のスタートアップを確実には、電源マネージャー シーケンス システムの電源を Irp その子の実行前に、親デバイスで power する機会が与えようにします。 電源マネージャーで、システムに送信する前に、照会されません IRP の電源投入します。
 
-同様に、コンピューターがスリープ モードや、シャット ダウンを正しい方法で確実に、電源マネージャー送信システムで定義された一連の場合は、スリープ、休止状態またはシャット ダウンを指定する Irp ルートからのデバイスのルートに近いデバイスの前に電源を切るようにします。 可能であれば、このような IRP を送信する前に、電源マネージャーに照会します。 詳細については、[IRP の処理\_MN\_クエリ\_システム電源の状態のための電力](handling-irp-mn-query-power-for-system-power-states.md)を参照してください。
+同様に、コンピューターがスリープ モードや、シャット ダウンを正しい方法で確実に、電源マネージャー送信システムで定義された一連の場合は、スリープ、休止状態またはシャット ダウンを指定する Irp ルートからのデバイスのルートに近いデバイスの前に電源を切るようにします。 可能であれば、このような IRP を送信する前に、電源マネージャーに照会します。 詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_システム電源の状態のための電力](handling-irp-mn-query-power-for-system-power-states.md)します。
 
 システム電源 IRP が電源状態の変更を直接要求ではありません — 通知します。 ドライバーへの直接応答として、デバイスの電源状態を変更する必要があります、*システム*IRP; の電源をドライバーへの応答でのみ、そのデバイスの電源状態の変更、*デバイス*IRP の電源をします。 (デバイスの電源ポリシー所有者には、デバイスの電源 IRP は送信しますを参照してください[電源ポリシー所有者のデバイスでシステム セット Power IRP の処理](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)。)。
 

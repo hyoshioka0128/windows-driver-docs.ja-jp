@@ -1,6 +1,6 @@
 ---
-title: Common Log File System の概要
-description: Common Log File System の概要
+title: 共通ログ ファイル システムの概要
+description: 共通ログ ファイル システムの概要
 ms.assetid: 2185d834-81f3-4bf9-afa6-897c1515f8b5
 keywords:
 - Common Log File System についての一般的なログ ファイル システムの WDK カーネル
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2f61ec177cdab10e1d0219f450ed0860fc70aac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341444"
 ---
-# <a name="introduction-to-the-common-log-file-system"></a>Common Log File System の概要
+# <a name="introduction-to-the-common-log-file-system"></a>共通ログ ファイル システムの概要
 
 
 

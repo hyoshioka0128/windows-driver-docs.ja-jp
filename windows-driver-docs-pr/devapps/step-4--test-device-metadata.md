@@ -5,11 +5,11 @@ ms.assetid: C1DA36DE-DB89-4A2A-8B9F-DF2A279D3EDD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac63ded86f4c48343fd3073d3eb55d3bdc35984a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348365"
 ---
 # <a name="step-4-test-the-device-metadata-for-your-uwp-device-app"></a>手順 4:UWP デバイス アプリのデバイス メタデータをテストします。
 
@@ -18,7 +18,7 @@ ms.locfileid: "56578402"
 
 ここでは、テストする方法デバイス メタデータ UWP デバイス アプリをローカルで、Windows デベロッパー センター ダッシュ ボードに送信する前に説明します。
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
 **注**  このトピックはステップ バイ ステップの一連の一部です。 参照してください[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)導入します。
 

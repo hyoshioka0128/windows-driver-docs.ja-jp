@@ -1,17 +1,17 @@
 ---
-title: WIA を一般的なユーティリティ関数
-description: WIA を一般的なユーティリティ関数
+title: 一般的な WIA ユーティリティの関数
+description: 一般的な WIA ユーティリティの関数
 ms.assetid: 235c07a1-4903-4df6-b29f-0ecc342782b4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ffaaeb0e6fc1ae22cb7db396663ebb908269f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357662"
 ---
-# <a name="general-wia-utility-functions"></a>WIA を一般的なユーティリティ関数
+# <a name="general-wia-utility-functions"></a>一般的な WIA ユーティリティの関数
 
 
 

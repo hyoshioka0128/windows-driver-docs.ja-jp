@@ -1,6 +1,6 @@
 ---
-title: IRP のドライバー管理キュー
-description: IRP のドライバー管理キュー
+title: ドライバーによって管理される IRP キュー
+description: ドライバーによって管理される IRP キュー
 ms.assetid: b701e4aa-96ba-44af-96a5-b6cecf075bac
 keywords:
 - デバイスは、WDK の Irp でオブジェクトをキューします。
@@ -17,13 +17,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ebe8a4e657ff53dd6456bdfa98266798a687e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355724"
 ---
-# <a name="driver-managed-irp-queues"></a>IRP のドライバー管理キュー
+# <a name="driver-managed-irp-queues"></a>ドライバーによって管理される IRP キュー
 
 
 

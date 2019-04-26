@@ -1,6 +1,6 @@
 ---
-title: クライアント側のレンダリング
-description: クライアント側のレンダリング
+title: クライアント側レンダリング
+description: クライアント側レンダリング
 ms.assetid: 7b67de2a-b5aa-4d8c-9b2c-9caeffdb71c3
 keywords:
 - 印刷ジョブの WDK では、クライアント側のレンダリング
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bef7c62d7324045175bedc008f44046a682f3d60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351950"
 ---
-# <a name="client-side-rendering"></a>クライアント側のレンダリング
+# <a name="client-side-rendering"></a>クライアント側レンダリング
 
 
 印刷ジョブの表示は、Windows Vista を実行しているクライアント コンピューターで、既定の場所を受け取る。

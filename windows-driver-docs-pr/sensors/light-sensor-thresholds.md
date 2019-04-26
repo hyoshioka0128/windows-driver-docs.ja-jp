@@ -5,18 +5,18 @@ ms.assetid: A120601A-A5CE-4778-94A9-97E71B721E9B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f87faf112f72635362704fe06e3ce5b82f38745f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345171"
 ---
 # <a name="light-sensor-thresholds"></a>光センサーのしきい値
 
 
 このトピックでは、光センサーのしきい値に関する情報を提供します。
 
-次の表では、光センサーのドライバーの既定のしきい値を示します。 光センサーの既定の間隔は、10 Hz です。 型の列に示すように種類の詳細については、、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、光センサーのドライバーの既定のしきい値を示します。 光センサーの既定の間隔は、10 Hz です。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 |プロパティのキー|種類|必須/オプション|既定値|説明|
 |---|---|---|---|---|

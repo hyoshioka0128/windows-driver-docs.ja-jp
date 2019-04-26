@@ -1,19 +1,19 @@
 ---
-title: 検証するドライバーを選択します。
-description: 検証するドライバーを選択します。
+title: 検証するドライバーの選択
+description: 検証するドライバーの選択
 ms.assetid: a752dea1-f49c-4e58-9e56-6b54701c760e
 keywords:
 - Driver Verifier WDK、ドライバーの選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2eb963341b9012da015bb1151c427d7de5423ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351152"
 ---
-# <a name="selecting-drivers-to-be-verified"></a>検証するドライバーを選択します。
+# <a name="selecting-drivers-to-be-verified"></a>検証するドライバーの選択
 
 
 ## <span id="ddk_selecting_drivers_to_be_verified_tools"></span><span id="DDK_SELECTING_DRIVERS_TO_BE_VERIFIED_TOOLS"></span>
@@ -81,9 +81,9 @@ Windows XP とそれ以降のドライバー検証マネージャーでは、ド
 
 ### <a name="span-idrebootrequiredspanspan-idrebootrequiredspanreboot-required"></a><span id="reboot_required"></span><span id="REBOOT_REQUIRED"></span>再起動が必要です。
 
-Windows XP と Windows Server 2003 で開始し、(「再起動」) を再起動しなくてもドライバーの検証を停止、ドライバーが読み込まれていない場合にのみ、コンピューター。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+Windows XP と Windows Server 2003 で開始し、(「再起動」) を再起動しなくてもドライバーの検証を停止、ドライバーが読み込まれていない場合にのみ、コンピューター。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
-以降では、Windows Vista は、開始および、コンピューターを再起動しなくても読み込まれていないドライバーの検証を停止できます。 再起動しなくても既に読み込まれているドライバーの検証を開始することもできます。 ただし、システムを再起動するまでは既に読み込まれているドライバーの検証を停止することはできません。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+以降では、Windows Vista は、開始および、コンピューターを再起動しなくても読み込まれていないドライバーの検証を停止できます。 再起動しなくても既に読み込まれているドライバーの検証を開始することもできます。 ただし、システムを再起動するまでは既に読み込まれているドライバーの検証を停止することはできません。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
  
 

@@ -1,15 +1,15 @@
 ---
-title: WIA スキャナーは、Windows XP と Windows のツリー レイアウトを項目します。
-description: WIA スキャナーは、Windows XP と Windows のツリー レイアウトを項目します。
+title: Windows Me および Windows XP の WIA スキャナー項目ツリー レイアウト
+description: Windows Me および Windows XP の WIA スキャナー項目ツリー レイアウト
 ms.assetid: e4824d3a-6439-4ebb-903e-2b592108ddbe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e26a9dc2bf6b51b0b418cca831cfe284244e86cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352667"
 ---
 # <a name="wia-scanner-item-tree-layout-for-windows-xp"></a>Windows XP の WIA スキャナー項目ツリーのレイアウト
 
@@ -24,7 +24,7 @@ Windows xp で WIA スキャナーの項目のツリーは、ルート項目と 
 
 Microsoft では、Windows XP には、次の名前が必要です。
 
-**ルート**  
+**Root**  
 この項目は、WIA 項目のツリー内の最初の要素を表します。
 
 **フラット ベッド**  

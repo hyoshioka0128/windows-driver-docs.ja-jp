@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier エラー メッセージ
-description: Static Driver Verifier エラー メッセージ
+title: 静的ドライバー検証ツールのエラー メッセージ
+description: 静的ドライバー検証ツールのエラー メッセージ
 ms.assetid: 16fae27c-2495-4b54-9df8-b70ad20d30ab
 keywords:
 - Static Driver Verifier WDK、エラー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fdbc8ed12a58a59cbd347c88b1c44b3f4dde888c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353472"
 ---
-# <a name="static-driver-verifier-error-messages"></a>Static Driver Verifier エラー メッセージ
+# <a name="static-driver-verifier-error-messages"></a>静的ドライバー検証ツールのエラー メッセージ
 
 
 このセクションより頻繁に見られる SDV エラーのいくつかの意味は、メッセージをそれらを解決する方法について説明します。

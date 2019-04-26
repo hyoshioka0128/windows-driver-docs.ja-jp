@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_INDICATE_STATUS_MSG
-Description: This message is sent from a Remote NDIS device to a host to indicate a change in the status of the device.
+Description: このメッセージをデバイスの状態の変更を示すために、リモート NDIS デバイスから、ホストに送信されます。
 ms.assetid: 768aad13-3da6-436c-a7ba-d420af34643e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26c27b3fb61aacdfc6e9463f47b8041e31a1731f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350884"
 ---
 # <a name="remotendisindicatestatusmsg"></a>リモート\_NDIS\_を示す\_状態\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56535485"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000007 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -115,7 +115,7 @@ ms.locfileid: "56535485"
 
 -   受信時、 [**リモート\_NDIS\_パケット\_MSG** ](remote-ndis-packet-msg.md)許容できない内容にします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

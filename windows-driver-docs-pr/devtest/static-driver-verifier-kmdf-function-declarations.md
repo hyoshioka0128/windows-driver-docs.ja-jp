@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier KMDF 関数の宣言
-description: Static Driver Verifier KMDF 関数の宣言
+title: 静的ドライバー検証ツールでの KMDF 関数の宣言
+description: 静的ドライバー検証ツールでの KMDF 関数の宣言
 ms.assetid: 1623f3a4-e318-41b3-bbcf-d443202f31e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cbc67327c87323f87060757be75227e95ec4e53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353467"
 ---
-# <a name="static-driver-verifier-kmdf-function-declarations"></a>Static Driver Verifier KMDF 関数の宣言
+# <a name="static-driver-verifier-kmdf-function-declarations"></a>静的ドライバー検証ツールでの KMDF 関数の宣言
 
 
 SDV には、KMDF ドライバーを確認するを有効にするにはロールの種類をコールバック関数を使用して各コールバック関数では、宣言する必要があります。 コールバック関数のロールの種類は、さまざまな WDF ヘッダー ファイルで定義されてし、Wdf.h ヘッダー ファイルでは、ドライバーをビルドするとが含まれています。 次の表は、関数のロールの種類と関連付けられているイベントのコールバック関数を示します。
@@ -24,7 +24,7 @@ SDV には、KMDF ドライバーを確認するを有効にするにはロー�
 EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 ```
 
-コールバック関数に関数のプロトタイプ宣言がある場合とロールの種類の関数の宣言、関数プロトタイプを置き換える必要があります。 関数の役割の種類の宣言に関する詳細については、[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)を参照してください。
+コールバック関数に関数のプロトタイプ宣言がある場合とロールの種類の関数の宣言、関数プロトタイプを置き換える必要があります。 関数の役割の種類の宣言に関する詳細については、次を参照してください。[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。
 
 次の表は、コールバック関数の型と関連付けられているイベントのコールバック関数を示します。
 
@@ -427,7 +427,7 @@ EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 
 ### <a name="span-idfunctionroletypesthatallowmultiplecallbackfunctionsspanspan-idfunctionroletypesthatallowmultiplecallbackfunctionsspanfunction-role-types-that-allow-multiple-callback-functions"></a><span id="function_role_types_that_allow_multiple_callback_functions"></span><span id="FUNCTION_ROLE_TYPES_THAT_ALLOW_MULTIPLE_CALLBACK_FUNCTIONS"></span>複数のコールバック関数を許可する関数のロールの種類
 
-複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、ドライバーが複数をある[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)または[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683)コールバック関数。 次の表では、機能ロールの種類ごとの SDV をサポートするためのコールバックの最大数を示します。 コールバック関数のテーブルの一覧の最大数よりも多くするためのドライバーに対して正しくない場合は、中には、SDV を使用する場合に、検証プロセスが複雑には。 Sdv map.h ファイルに追加のコールバック関数に対応するために必要な場合があります変更については、[関数ロールの種類のエントリ ポイントが重複しています](duplicate-entry-points-for-a-function-role-type.md)を参照してください。
+複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、ドライバーが複数をある[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)または[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683)コールバック関数。 次の表では、機能ロールの種類ごとの SDV をサポートするためのコールバックの最大数を示します。 コールバック関数のテーブルの一覧の最大数よりも多くするためのドライバーに対して正しくない場合は、中には、SDV を使用する場合に、検証プロセスが複雑には。 Sdv map.h ファイルに追加のコールバック関数に対応するために必要な場合があります変更については、次を参照してください。[関数ロールの種類のエントリ ポイントが重複しています](duplicate-entry-points-for-a-function-role-type.md)します。
 
 <table>
 <colgroup>
@@ -478,7 +478,7 @@ EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 
 宣言するときに次の関数のロールの種類を使用して、[要求ハンドラーの](https://go.microsoft.com/fwlink/p/?linkid=153345)と (順次または並列ディスパッチ) 用ドライバーを I/O 要求を配信するため、KMDF フレームワークに依存するコールバック関数。 手動で、既定のキューからの要求を (手動ディスパッチ) 他のキューに転送する関数をこれらの関数の役割の種類を使用しないでください。 SDV は、1 つのキューからの要求を追跡することを許可するメモリ モデルをサポートしていません。
 
-I/O キューの詳細については、[I/O キューの作成](https://go.microsoft.com/fwlink/p/?linkid=153346)を参照してください。
+I/O キューの詳細については、次を参照してください。 [I/O キューの作成](https://go.microsoft.com/fwlink/p/?linkid=153346)です。
 
 <table>
 <colgroup>

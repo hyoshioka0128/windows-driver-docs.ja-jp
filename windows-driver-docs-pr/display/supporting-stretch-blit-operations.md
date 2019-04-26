@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4269f3d0ed6899c4af7149c1f949c84692df79e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350134"
 ---
 # <a name="supporting-stretch-blit-operations"></a>ストレッチ ブリット操作のサポート
 
@@ -39,7 +39,7 @@ ms.locfileid: "56580884"
 
 拡張要素は、浮動小数点演算であるため、すべてのグラフィックス デバイスをサポートできます。 そのため、このようなデバイスのドライバーでは、計算して、拡張要素を使用する必要はありません。 ただし、stretch 係数の計算はサポートされていない場合でも、DirectX 9.0 と以降のバージョンのドライバー、NT ベースのオペレーティング システムにする必要がありますもの存在を確認、DDBLT\_拡張\_プレゼンテーション\_STRETCHFACTOR フラグ実際の blit 操作を実行しようとしているため、DDBLT\_拡張\_プレゼンテーション\_STRETCHFACTOR フラグが設定されてレンダリングの破損が発生するとします。
 
-拡張 blit フラグの詳細については、[拡張 Blt フラグ](extended-blt-flags.md)を参照してください。
+拡張 blit フラグの詳細については、次を参照してください。[拡張 Blt フラグ](extended-blt-flags.md)します。
 
  
 

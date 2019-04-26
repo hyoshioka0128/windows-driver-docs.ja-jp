@@ -1,17 +1,17 @@
 ---
-title: デバイス インスタンスのどのプロパティが設定を決定します。
-description: デバイス インスタンスのどのプロパティが設定を決定します。
+title: デバイス インスタンスに設定するプロパティの決定
+description: デバイス インスタンスに設定するプロパティの決定
 ms.assetid: aeca4da5-9632-4523-aa2d-8d1c64b1eccc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 294671676af288ea25932b3835c8d09933462978
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346166"
 ---
-# <a name="determining-which-properties-are-set-for-a-device-instance"></a>デバイス インスタンスのどのプロパティが設定を決定します。
+# <a name="determining-which-properties-are-set-for-a-device-instance"></a>デバイス インスタンスに設定するプロパティの決定
 
 
 Windows Vista および以降のバージョンの Windows デバイスのインスタンスを設定するプロパティを確認するのには、次の手順を実行します。

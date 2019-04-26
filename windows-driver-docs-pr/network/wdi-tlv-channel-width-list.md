@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CHANNEL_WIDTH_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ce0aed396336af11a382a2673fbe7fb80d6389e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357659"
 ---
 # <a name="wditlvchannelwidthlist"></a>WDI\_TLV\_チャネル\_幅\_一覧
 
@@ -31,7 +31,7 @@ Uint32 型の要素の配列のサイズをバイト単位で。 配列には、
 ## <a name="values"></a>値
 
 
-| 種類       | 説明                                 |
+| 型       | 説明                                 |
 |------------|---------------------------------------------|
 | UINT32\[\] | チャネル幅を (mhz) を指定の一覧。 |
 

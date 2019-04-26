@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_WRITE_VF_CONFIG_SPACE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f8adaaef91ea9e86187a83cbb7fdabd249490845
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351334"
 ---
 # <a name="oidsriovwritevfconfigspace"></a>OID\_SRIOV\_書き込み\_VF\_CONFIG\_領域
 
@@ -46,7 +46,7 @@ OID の OID メソッド要求を処理するときに\_SRIOV\_書き込み\_VF\
 
 PF のミニポート ドライバーでは、OID 要求を正常に完了する場合、ドライバーは要求された PCI 構成の領域データをによって参照されるバッファーにコピーする必要があります、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 ドライバーで指定されたオフセットからバッファーにデータをコピーする**BufferOffset**のメンバー、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451681)構造体。
 
-詳細については、[仮想関数の PCI 構成データを設定](https://msdn.microsoft.com/library/windows/hardware/hh440229)を参照してください。
+詳細については、次を参照してください。[仮想関数の PCI 構成データを設定](https://msdn.microsoft.com/library/windows/hardware/hh440229)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

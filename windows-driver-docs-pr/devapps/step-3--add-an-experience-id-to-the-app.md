@@ -5,11 +5,11 @@ ms.assetid: D114C916-EADE-4C08-BF7E-628D2FA5AACC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4817a2c5c8f6395d5c0e30b47f877ab95954a435
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356636"
 ---
 # <a name="step-3-add-an-experience-id-to-the-microsoft-store-device-app"></a>手順 3:Microsoft Store のデバイスのアプリに、エクスペリエンスの ID を追加します。
 
@@ -22,13 +22,13 @@ ms.locfileid: "56551026"
 
  
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
 **注**  このトピックはステップ バイ ステップの一連の一部です。 参照してください[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)導入します。
 
  
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>開始する前に
+## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>始める前に
 
 
 この手順で作成された StoreManifest.xml ファイルが必要です、[前の手順](step-2--create-device-metadata.md)します。 StoreManifest.xml ファイル エクスペリエンスの ID を指定します
@@ -49,7 +49,7 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 3.  プロジェクトに追加された後、StoreManifest.xml ファイルのプロパティを確認します。 右クリックし、 **StoreManifest.xml**ファイルおよび選択**プロパティ**します。 これを強調表示、**プロパティ**ウィンドウ。
 4.  **プロパティ**ウィンドウで、いることを確認、**ビルド アクション**プロパティと等しい**コンテンツ**と**出力ディレクトリにコピー**プロパティ等しい**コピーしない**します。
 
-StoreManifest.xml ファイルに関する詳細については、[StoreManifest スキーマ リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=307124)を参照してください。
+StoreManifest.xml ファイルに関する詳細については、次を参照してください。 [StoreManifest スキーマ リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=307124)します。
 
 ## <a name="span-idnextstepspanspan-idnextstepspanspan-idnextstepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>次の手順
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d90fc239bb159d3926f3147b8be91ca5ec3695d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352286"
 ---
 # <a name="performing-floating-point-operations-in-direct3d"></a>Direct3D での浮動小数点演算の実行
 
@@ -43,7 +43,7 @@ DirectX のランタイムでは、保存し、Direct3D の次のコールバッ
 
 -   [D3DBuffer コールバック](https://msdn.microsoft.com/library/windows/hardware/ff542176)
 
-浮動小数点演算の詳細については、[グラフィックス ドライバー関数での浮動小数点操作](floating-point-operations-in-graphics-driver-functions.md)を参照してください。
+浮動小数点演算の詳細については、次を参照してください。[グラフィックス ドライバー関数での浮動小数点操作](floating-point-operations-in-graphics-driver-functions.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 0162E7C3-CF1E-452C-908E-D65C090CD365
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 838bd2ef95b55cf751995a3e487d3df365d31f7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357216"
 ---
 # <a name="write-typed-data-function-index-30"></a>型指定されたデータの書き込み (関数インデックス 30)
 
@@ -42,7 +42,7 @@ ms.locfileid: "56569926"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>データ型</strong></td>
+<td align="left"><strong>[データ型]</strong></td>
 <td align="left">1</td>
 <td align="left">0</td>
 <td align="left"><p>データの型。 指定された値のいずれかにあるこの必要があります *<em>TYPED_BLOCK_DATA</em> (3, 0x04)。</p></td>
@@ -60,7 +60,7 @@ ms.locfileid: "56569926"
 <td align="left"><p>領域の内側に書き込まれるブロックの id です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>データ</strong></td>
+<td align="left"><strong>Data</strong></td>
 <td align="left">32</td>
 <td align="left">4</td>
 <td align="left"><p>書き込むデータ。</p></td>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_WRITE_VF_CONFIG_BLOCK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 753364458f9d5a93ea4863d48a7a4bbb9f35631d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351263"
 ---
 # <a name="oidsriovwritevfconfigblock"></a>OID\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック
 
@@ -50,7 +50,7 @@ OID の OID のセット要求を処理するときに\_SRIOV\_書き込み\_VF\
 
 -   PF のミニポート ドライバーは、ことを確認する必要があります、 **BlockId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451687)構造体が有効な VF 構成ブロックを指定します。 それ以外の場合は、ドライバーは OID 要求に失敗する必要があります。
 
-シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、[SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)を参照してください。
+シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -93,7 +93,7 @@ OID OID の要求の設定の次のステータス コードのいずれかの�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

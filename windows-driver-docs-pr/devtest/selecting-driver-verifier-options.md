@@ -1,19 +1,19 @@
 ---
-title: Driver Verifier のオプションを選択します。
-description: Driver Verifier のオプションを選択します。
+title: ドライバーの検証ツールのオプションの選択
+description: ドライバーの検証ツールのオプションの選択
 ms.assetid: 02ef5dd6-7532-4979-b45c-a9ee81582788
 keywords:
 - Driver Verifier の WDK、オプションの選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2b0fd151576001898b1d1dce5f8658f855dce27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351214"
 ---
-# <a name="selecting-driver-verifier-options"></a>Driver Verifier のオプションを選択します。
+# <a name="selecting-driver-verifier-options"></a>ドライバーの検証ツールのオプションの選択
 
 
 ## <span id="ddk_selecting_driver_verifier_options_tools"></span><span id="DDK_SELECTING_DRIVER_VERIFIER_OPTIONS_TOOLS"></span>
@@ -61,9 +61,9 @@ Windows XP 以降では、ドライバー検証マネージャーは、さまざ
 
 ### <a name="span-idrebootrequiredspanspan-idrebootrequiredspanreboot-required"></a><span id="reboot_required"></span><span id="REBOOT_REQUIRED"></span>再起動が必要です。
 
-Windows vista 以降では、アクティブ化し、(「再起動」) を再起動しなくても、すべてのオプションを非アクティブ化以外のコンピューター [DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+Windows vista 以降では、アクティブ化し、(「再起動」) を再起動しなくても、すべてのオプションを非アクティブ化以外のコンピューター [DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
-Windows Vista より前のシステムでは、アクティブ化しを再起動しなくても、特定のオプションを非アクティブ化することができますが、少なくとも 1 つのドライバーが、コンピューターを再起動してドライバーの検証を有効にした後にのみです。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+Windows Vista より前のシステムでは、アクティブ化しを再起動しなくても、特定のオプションを非アクティブ化することができますが、少なくとも 1 つのドライバーが、コンピューターを再起動してドライバーの検証を有効にした後にのみです。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
  
 

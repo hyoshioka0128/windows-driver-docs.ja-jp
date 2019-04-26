@@ -1,6 +1,6 @@
 ---
-title: GDL マクロに関する考慮事項
-description: GDL マクロに関する考慮事項
+title: GDL マクロ考慮事項
+description: GDL マクロ考慮事項
 ms.assetid: b1e3e32f-2f5f-47ae-b69b-7645ada59c2a
 keywords:
 - GDL WDK、マクロ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a249c243574095846b55ee3f0e9022f27a9aa6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353118"
 ---
-# <a name="gdl-macro-considerations"></a>GDL マクロに関する考慮事項
+# <a name="gdl-macro-considerations"></a>GDL マクロ考慮事項
 
 
 GDL マクロは、スコープと有効期間があります。 マクロは、マクロ定義のコンス トラクターを含む入れ子のレベルが終わるまで定義のポイントからのみ参照できます。

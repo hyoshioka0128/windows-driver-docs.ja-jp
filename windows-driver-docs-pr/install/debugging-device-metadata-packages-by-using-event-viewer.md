@@ -1,17 +1,17 @@
 ---
-title: イベント ビューアーを使用してデバイス メタデータ パッケージのデバッグ
-description: イベント ビューアーを使用してデバイス メタデータ パッケージのデバッグ
+title: イベント ビューアーを使用したデバイス メタデータ パッケージのデバッグ
+description: イベント ビューアーを使用したデバイス メタデータ パッケージのデバッグ
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10a6ba2d48a0d191822a799c9bb33e8f2308af01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352076"
 ---
-# <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>イベント ビューアーを使用してデバイス メタデータ パッケージのデバッグ
+# <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>イベント ビューアーを使用したデバイス メタデータ パッケージのデバッグ
 
 
 Windows 7 以降では、Event Tracing for Windows (ETW) サービスは、デバイス メタデータ パッケージの処理に関連するイベントの DeviceMetadata/デバッグ チャネルをサポートします。
@@ -57,7 +57,7 @@ DeviceMetadata/デバッグ チャネルには、エラーと、ダウンロー�
 
 -   デバイス メタデータ パッケージの名前。
 
--   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、[デバイス メタデータのエラー コード](device-metadata-error-codes.md)を参照してください。
+-   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、次を参照してください。[デバイス メタデータのエラー コード](device-metadata-error-codes.md)します。
 
 -   Win32 エラー コード。
 
@@ -85,7 +85,7 @@ DeviceMetadata/デバッグ チャネルには、エラーと、ダウンロー�
 
 -   デバイス メタデータ パッケージの名前。
 
--   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、[デバイス メタデータのエラー コード](device-metadata-error-codes.md)を参照してください。
+-   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、次を参照してください。[デバイス メタデータのエラー コード](device-metadata-error-codes.md)します。
 
 -   Win32 エラー コード。
 
@@ -107,7 +107,7 @@ DMRC クエリでは、特定のデバイスのデバイス メタデータ パ�
 
 -   イベントの説明。
 
--   デバイスのハードウェア ID などのモデル ID、デバイスのルックアップ キー 詳細については、[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)と[ **ModelID**](https://msdn.microsoft.com/library/windows/hardware/ff549295)を参照してください。
+-   デバイスのハードウェア ID などのモデル ID、デバイスのルックアップ キー 詳細については、次を参照してください。 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)と[ **ModelID**](https://msdn.microsoft.com/library/windows/hardware/ff549295)します。
 
     **注**  ハードウェアの一覧をパラメーターとして Id が渡されるときに、特定のハードウェア ID のみが記録されます。
 
@@ -124,7 +124,7 @@ DMRC では、パッケージ、WMIS からデバイス メタデータのダウ
 
 -   エラーの詳細な説明。
 
--   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、[デバイス メタデータのエラー コード](device-metadata-error-codes.md)を参照してください。
+-   アプリケーション固有のエラー コード。 これらのエラー コードの詳細については、次を参照してください。[デバイス メタデータのエラー コード](device-metadata-error-codes.md)します。
 
 -   ネットワーク エラーの時点で HTTP ステータス コード。
 

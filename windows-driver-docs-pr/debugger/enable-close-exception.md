@@ -1,19 +1,19 @@
 ---
-title: 閉じる例外を有効にします。
-description: 閉じる例外を有効にします。
+title: Enable close exception
+description: Enable close exception
 ms.assetid: 4089df14-3204-4a48-b67f-cf6bd53100a5
 keywords:
 - 閉じる例外 (グローバル フラグ) を有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47bd62aa61664b6a25b5e15b1badf8e023d03932
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353642"
 ---
-# <a name="enable-close-exception"></a>閉じる例外を有効にします。
+# <a name="enable-close-exception"></a>Enable close exception
 
 
 ## <span id="ddk_enable_close_exception_dtools"></span><span id="DDK_ENABLE_CLOSE_EXCEPTION_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56552503"
 <td align="left"><p>FLG_ENABLE_CLOSE_EXCEPTIONS</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ、カーネル フラグ</p></td>
 </tr>
 </tbody>

@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb57c669a68a71656e5e7cb1a40ac6ffa517d60d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356634"
 ---
 # <a name="creating-text-versions-of-trace-logs"></a>トレース ログのテキスト バージョンの作成
 
@@ -51,9 +51,9 @@ ms.locfileid: "56538282"
 
 3.  **ログ ファイル名**ボックスで、既存のイベント トレース ログ (.etl) ファイルの名前を指定します。
 
-トレース ログを表示する場合、traceview では、リスティング ファイルを作成します。 詳細については、[トレース ログ オプションの設定](setting-trace-log-options.md)を参照してください。
+トレース ログを表示する場合、traceview では、リスティング ファイルを作成します。 詳細については、次を参照してください。[トレース ログ オプションの設定](setting-trace-log-options.md)します。
 
-詳細については、[ **traceview で-プロセス**](traceview--process.md)を参照してください。
+詳細については、次を参照してください。 [ **traceview で-プロセス**](traceview--process.md)します。
 
 ### <a name="span-idcopyingthetracemessagelistspanspan-idcopyingthetracemessagelistspan-copying-the-trace-message-list"></a><span id="copying_the_trace_message_list"></span><span id="COPYING_THE_TRACE_MESSAGE_LIST"></span> トレース メッセージの一覧をコピー
 

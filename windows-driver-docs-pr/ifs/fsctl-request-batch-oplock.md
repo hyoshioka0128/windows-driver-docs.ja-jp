@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53970226e5f7421fcc3102cf3f35681676e8d21c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354196"
 ---
 # <a name="fsctlrequestbatchoplock-control-code"></a>FSCTL\_要求\_バッチ\_OPLOCK 制御コード
 
@@ -58,7 +58,7 @@ ms.locfileid: "56574992"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>

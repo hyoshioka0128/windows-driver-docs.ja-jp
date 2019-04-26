@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d57fc1464cc39e4137bcd5665df41b903476ec6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349241"
 ---
 # <a name="iprinterscriptusbjobcontextprintedpagecount-method"></a>IPrinterScriptUsbJobContext::PrintedPageCount メソッド
 
@@ -57,7 +57,7 @@ IHV JavaScript コードを呼び出すことはない場合**PrintedPageCount**
 
 USBMon と USB ベースの双方向については、印刷デバイスとの通信を参照してください[USB Bidi エクステンダー](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier の入力ファイル
-description: Static Driver Verifier の入力ファイル
+title: 静的ドライバー検証ツールの入力ファイル
+description: 静的ドライバー検証ツールの入力ファイル
 ms.assetid: 0c31a752-6946-4704-aff6-c9cd1bf9f522
 keywords:
 - Static Driver Verifier WDK、入力ファイル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d79e38c64ac7365e4cc9e562ba07d93d00dd0e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353464"
 ---
-# <a name="static-driver-verifier-input-files"></a>Static Driver Verifier の入力ファイル
+# <a name="static-driver-verifier-input-files"></a>静的ドライバー検証ツールの入力ファイル
 
 
 SDV[検証エンジン](verification-engine.md)検証への入力として、次のファイルを受け取ります。 ドライバーのソース ファイルとオペレーティング システムのモデル ファイルのみの検証にすべての必要です。

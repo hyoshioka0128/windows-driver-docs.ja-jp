@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef670ed92132114119174230fc78532fe5ca6e44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349628"
 ---
 # <a name="hsnetworkprofile-structure"></a>HS\_ネットワーク\_プロファイルの構造
 
@@ -40,7 +40,7 @@ typedef struct _HS_NETWORK_PROFILE {
 -------
 
 **dwNetworkCapabilities**  
-使用可能なサブセット**HS\_フラグ\_機能\_ネットワーク\_\\*** 値。 ホット スポットのホスト機能の詳細については、[ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)を参照してください。
+使用可能なサブセット**HS\_フラグ\_機能\_ネットワーク\_\\*** 値。 ホット スポットのホスト機能の詳細については、次を参照してください。 [ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)します。
 
 **usPriority**  
 関連付けられているネットワークに割り当てられている固有の優先順位の値。 1 ~ 65000 (非表示のネットワークは、値 1 が必要) の値があります。 小さい数値は高い優先順位に対応します。

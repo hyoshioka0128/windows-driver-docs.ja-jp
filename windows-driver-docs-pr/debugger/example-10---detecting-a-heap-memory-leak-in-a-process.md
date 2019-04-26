@@ -5,13 +5,13 @@ ms.assetid: ec98dd96-b12b-4f83-85e8-2c5ee32fc17e
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e04334e3cf26dd734a7964d974e62f832f650ef0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347771"
 ---
-# <a name="example-10-detecting-a-heap-memory-leak-in-a-process"></a>例 10:プロセスのヒープ メモリ リークを検出します。
+# <a name="example-10-detecting-a-heap-memory-leak-in-a-process"></a>例 10:プロセス内のヒープ メモリ リークを検出する
 
 
 ## <span id="ddk_example_10___detecting_a_heap_memory_leak_in_a_process_dtools"></span><span id="DDK_EXAMPLE_10___DETECTING_A_HEAP_MEMORY_LEAK_IN_A_PROCESS_DTOOLS"></span>

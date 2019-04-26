@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e090547a65b599eb1f778d7a012f17a0b8ffd853
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355007"
 ---
 # <a name="aml-debugging-examples"></a>AML デバッグの例
 
@@ -34,7 +34,7 @@ kd> !amli lc
 
 コンテキストを示す場合は、1 つのアスタリスクでマークを探します。 これは、*現在のコンテキスト*(存在する時点で、インタープリターで実行されているもの)。
 
-この例では、ターゲット コンピューターは 32 ビット プロセッサで Windows を実行します。 そのためのすべてのアドレスは、64 ビット、上位 32 ビットで贈答 FFFFFFFF の生成にキャストされます。 省略形**pbOp**命令ポインター (「ポインターを二項演算のコード」) を示します。 **Obj** ACPI テーブルに表示されるフィールドは、完全なパスと、メソッドの名前。 フラグの説明は、[ **! amli lc**](-amli-lc.md)を参照してください。
+この例では、ターゲット コンピューターは 32 ビット プロセッサで Windows を実行します。 そのためのすべてのアドレスは、64 ビット、上位 32 ビットで贈答 FFFFFFFF の生成にキャストされます。 省略形**pbOp**命令ポインター (「ポインターを二項演算のコード」) を示します。 **Obj** ACPI テーブルに表示されるフィールドは、完全なパスと、メソッドの名前。 フラグの説明は、次を参照してください。 [ **! amli lc**](-amli-lc.md)します。
 
 使用することができます、 [ **! amli u** ](-amli-u.md)逆アセンブルするコマンド、 \_CRS メソッドとして、次のとおりです。
 

@@ -1,6 +1,6 @@
 ---
-title: デバイス メタデータの取得のクライアント
-description: デバイス メタデータの取得のクライアント
+title: デバイス メタデータの取得クライアント
+description: デバイス メタデータの取得クライアント
 ms.assetid: fdcf3459-0fd4-4cf6-a9f5-13337fbd604b
 keywords:
 - DMRC WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0f3ac1d6c5635e2553a62ef2b14c1fe58e2e5e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348210"
 ---
-# <a name="device-metadata-retrieval-client"></a>デバイス メタデータの取得のクライアント
+# <a name="device-metadata-retrieval-client"></a>デバイス メタデータの取得クライアント
 
 
 デバイス メタデータの取得クライアント (DMRC) は、デバイス メタデータ パッケージをデバイスに一致するオペレーティング システム コンポーネントです。 デバイスのギャラリー ビュー ウィンドウを開くし、DMRC、プリンターのユーザー インターフェイスは、デバイスとプリンターを表示するデバイスのデバイス メタデータの取得を試みます。 まず、ローカル コンピューターを確認します[デバイス メタデータのキャッシュ](device-metadata-cache.md)と[デバイス メタデータ ストア](device-metadata-store.md)します。 デバイスが新しくインストールした場合、または DMRC クエリ メタデータの定期的な更新プログラムのデバイスがスケジュールされている場合、 [Windows メタデータとインターネット サービス](windows-metadata-and-internet-services.md)デバイス メタデータ パッケージが使用できるかどうかを判断する (WMIS) web サイト、デバイスです。 デバイス メタデータ パッケージを使用できる場合 DMRC 自動的に WMIS からダウンロードしたパッケージ、パッケージのデバイスのメタデータ コンポーネントを抽出およびデバイスのメタデータ キャッシュ内に保存します。

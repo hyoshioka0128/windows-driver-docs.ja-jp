@@ -1,6 +1,6 @@
 ---
-title: バス マスター DMA のパケットに基づく
-description: バス マスター DMA のパケットに基づく
+title: パケットベース バス マスター DMA
+description: パケットベース バス マスター DMA
 ms.assetid: f94b9ca9-6e29-4801-a092-30af19345f6d
 keywords:
 - バス マスターの DMA WDK ビデオのミニポート、パケットのベース
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d352e018433c845c2d96e0ed89cd648cf6e85ec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352418"
 ---
-# <a name="packet-based-bus-master-dma"></a>バス マスター DMA のパケットに基づく
+# <a name="packet-based-bus-master-dma"></a>パケットベース バス マスター DMA
 
 
 ## <span id="ddk_packet_based_bus_master_dma_gg"></span><span id="DDK_PACKET_BASED_BUS_MASTER_DMA_GG"></span>

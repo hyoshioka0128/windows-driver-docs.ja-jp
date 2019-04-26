@@ -1,6 +1,6 @@
 ---
-title: 非ローカルの表示メモリ サーフェスのコールバックの処理
-description: 非ローカルの表示メモリ サーフェスのコールバックの処理
+title: 非ローカルの表示メモリ サーフェスのコールバック処理
+description: 非ローカルの表示メモリ サーフェスのコールバック処理
 ms.assetid: 803c52df-93c4-4124-9e17-6ef6c734a15f
 keywords:
 - WDK DirectDraw、コールバックのメモリを表示します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 714e3e4795a97f342eb69229951fb82e3805bf46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341588"
 ---
-# <a name="callback-handling-of-nonlocal-display-memory-surfaces"></a>非ローカルの表示メモリ サーフェスのコールバックの処理
+# <a name="callback-handling-of-nonlocal-display-memory-surfaces"></a>非ローカルの表示メモリ サーフェスのコールバック処理
 
 
 ## <span id="ddk_callback_handling_of_nonlocal_display_memory_surfaces_gg"></span><span id="DDK_CALLBACK_HANDLING_OF_NONLOCAL_DISPLAY_MEMORY_SURFACES_GG"></span>

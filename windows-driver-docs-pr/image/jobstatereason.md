@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2809441e4a488a115205a63a56c6f0c92b070a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348777"
 ---
 # <a name="jobstatereason-element"></a>JobStateReason 要素
 
@@ -50,7 +50,7 @@ ms.locfileid: "57348965"
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -135,7 +135,7 @@ ms.locfileid: "57348965"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスの実装を検出する条件を表す値をサポートする必要があります。 特定の場合に使用できる値のサブセットのみをサポートするそのため、 **JobStateReason**理由は、実装では検出されません。

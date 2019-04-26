@@ -1,19 +1,19 @@
 ---
-title: セキュリティで保護されたモードをアクティブ化します。
-description: セキュリティで保護されたモードをアクティブ化します。
+title: 保護モードのアクティブ化
+description: 保護モードのアクティブ化
 ms.assetid: bb7cd081-f032-4af4-bb4d-efa96917088b
 keywords:
 - 保護モードをアクティブ化する方法
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc2807ce8c10d103b59eb6818cb985024fbb0976
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354414"
 ---
-# <a name="activating-secure-mode"></a>セキュリティで保護されたモードをアクティブ化します。
+# <a name="activating-secure-mode"></a>保護モードのアクティブ化
 
 
 ## <span id="ddk_activating_secure_mode_dbg"></span><span id="DDK_ACTIVATING_SECURE_MODE_DBG"></span>

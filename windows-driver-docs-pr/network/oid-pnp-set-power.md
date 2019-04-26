@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PNP_SET_POWER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 902d2fd60d315c3430194c7e19f835178b11f330
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342974"
 ---
 # <a name="oidpnpsetpower"></a>OID\_PNP\_設定\_電源
 
@@ -53,7 +53,7 @@ NDIS 6.30 と以降のバージョンの NDIS をサポートしているミニ�
 
 -   保留中の完了の呼び出しを通じてインジケーターを受信するを待ちませんその[ *MiniportReturnNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559437)関数。 また、ミニポート ドライバーを変更する必要がありますいない、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体または完了を待機しているすべてのパケットのデータ。
 
--   OID の処理\_PNP\_設定\_電源要求の一時停止または実行中のいずれかのアダプター状態から低電力状態にします。 これらの状態の詳細については、[ミニポート アダプターの状態と操作](https://msdn.microsoft.com/library/windows/hardware/ff560490)を参照してください。
+-   OID の処理\_PNP\_設定\_電源要求の一時停止または実行中のいずれかのアダプター状態から低電力状態にします。 これらの状態の詳細については、次を参照してください。[ミニポート アダプターの状態と操作](https://msdn.microsoft.com/library/windows/hardware/ff560490)します。
 
 D3 の状態に遷移する場合、ネットワーク アダプター、前に、次のタスクを実行することによって、ミニポート ドライバーが、ミニポート ドライバーの管理下にあるすべてをオフにする必要があります。
 
@@ -95,7 +95,7 @@ NDIS ミニポート ドライバーの呼び出す[ *MiniportRestart* ](https:/
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>

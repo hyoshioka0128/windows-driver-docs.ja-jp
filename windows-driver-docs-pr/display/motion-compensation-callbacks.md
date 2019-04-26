@@ -1,6 +1,6 @@
 ---
-title: 動き補正コールバック
-description: 動き補正コールバック
+title: モーション補正コールバック
+description: モーション補正コールバック
 ms.assetid: a1f748e4-0d62-4543-a409-bb9ec02a7d77
 keywords:
 - 描画の WDK DirectDraw、動き補正
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8252c7ce899166483e6b9e3d38569747df59134
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353076"
 ---
-# <a name="motion-compensation-callbacks"></a>動き補正コールバック
+# <a name="motion-compensation-callbacks"></a>モーション補正コールバック
 
 
 ## <span id="ddk_motion_compensation_callbacks_gg"></span><span id="DDK_MOTION_COMPENSATION_CALLBACKS_GG"></span>

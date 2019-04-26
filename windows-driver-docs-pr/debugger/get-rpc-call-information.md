@@ -1,6 +1,6 @@
 ---
-title: RPC 呼び出し情報を取得します。
-description: RPC 呼び出し情報を取得します。
+title: RPC 呼び出し情報の取得
+description: RPC 呼び出し情報の取得
 ms.assetid: bb883bb1-3ab8-4702-896d-4ff8076bad68
 keywords:
 - RPC 呼び出し情報
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b6098fec13506a66fc975d15a0e6912082ca495
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347089"
 ---
-# <a name="get-rpc-call-information"></a>RPC 呼び出し情報を取得します。
+# <a name="get-rpc-call-information"></a>RPC 呼び出し情報の取得
 
 
 ## <span id="ddk_get_rpc_call_information_dbg"></span><span id="DDK_GET_RPC_CALL_INFORMATION_DBG"></span>

@@ -1,17 +1,17 @@
 ---
-title: リムーバブル デバイスの機能の概要
-description: リムーバブル デバイスの機能の概要
+title: リムーバブル デバイス機能の概要
+description: リムーバブル デバイス機能の概要
 ms.assetid: c6dfb2ac-89a5-40fd-ae9a-1f2800af9ef8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65e92ad0b95132a95afeb3bb60f158cb4042c73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348746"
 ---
-# <a name="overview-of-the-removable-device-capability"></a>リムーバブル デバイスの機能の概要
+# <a name="overview-of-the-removable-device-capability"></a>リムーバブル デバイス機能の概要
 
 
 リムーバブル デバイスの機能が少し (**リムーバブル**) バス ドライバー設定されて、 **DEVICE_CAPABILITIES**)。

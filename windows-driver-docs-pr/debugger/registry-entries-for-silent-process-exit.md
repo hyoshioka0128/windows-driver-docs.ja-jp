@@ -1,17 +1,17 @@
 ---
-title: サイレント プロセス終了時の監視
+title: プロセスの暗黙の終了の監視
 description: Windows 7 以降、することができます、サイレント プロセスを終了 タブを使用 GFlags サイレントの終了を監視するプロセスの名前を入力します。
 ms.assetid: 116B2053-7F48-48B4-AEAC-333B7D9C38C7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51fdb8ff6afeb4350210b88450b1ce6ffbb5863d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353606"
 ---
-# <a name="monitoring-silent-process-exit"></a>サイレント プロセス終了時の監視
+# <a name="monitoring-silent-process-exit"></a>プロセスの暗黙の終了の監視
 
 
 Windows 7 以降、使える、**サイレント プロセスを終了**GFlags サイレントの終了を監視するプロセスの名前を入力するタブ。
@@ -30,7 +30,7 @@ Windows 7 以降、使える、**サイレント プロセスを終了**GFlags �
 
 **HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\File Execution Options をイメージ\\*ProcessName* \\GlobalFlag**
 
-このフラグの詳細については、[サイレント プロセス終了の監視を有効にする](enable-silent-process-exit-monitoring.md)を参照してください。
+このフラグの詳細については、次を参照してください。[サイレント プロセス終了の監視を有効にする](enable-silent-process-exit-monitoring.md)します。
 
 使用しての詳細については、**サイレント プロセスの終了**GFlags でタブを参照してください[サイレント プロセス終了の監視を構成する](setting-and-clearing-flags-for-silent-process-exit.md)します。
 

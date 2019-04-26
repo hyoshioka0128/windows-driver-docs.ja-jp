@@ -1,6 +1,6 @@
 ---
-title: いる CoNDIS 登録
-description: いる CoNDIS 登録
+title: CoNDIS 登録
+description: CoNDIS 登録
 ms.assetid: 6db5a4a2-f090-4688-99fa-9d22ca7077ed
 keywords:
 - ネットワーク、いる CoNDIS WDK 登録
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0449cb59335274dac5d1f51000918b27d95be131
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351036"
 ---
-# <a name="condis-registration"></a>いる CoNDIS 登録
+# <a name="condis-registration"></a>CoNDIS 登録
 
 
 

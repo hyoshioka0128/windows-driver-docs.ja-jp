@@ -1,6 +1,6 @@
 ---
 title: 電源管理とビデオのミニポート ドライバー (XDDM) での PnP
-description: 電源管理とビデオのミニポート ドライバー (Windows 2000 モデル) のプラグ アンド プレイ
+description: ビデオ ミニポート ドライバーでの電源管理およびプラグ アンド プレイ (Windows 2000 モデル)
 ms.assetid: e5b2ac53-e492-43de-91a3-5b02c26ee9a3
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、プラグ アンド プレイ
@@ -12,13 +12,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 189c3fcf5f2fafb70244bd73bc0ffe3f1c86f9e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352276"
 ---
-# <a name="power-management-and-plug-and-play-in-video-miniport-drivers-windows-2000-model"></a>電源管理とビデオのミニポート ドライバー (Windows 2000 モデル) のプラグ アンド プレイ
+# <a name="power-management-and-plug-and-play-in-video-miniport-drivers-windows-2000-model"></a>ビデオ ミニポート ドライバーでの電源管理およびプラグ アンド プレイ (Windows 2000 モデル)
 
 
 ## <span id="ddk_plug_and_play_and_power_management_in_video_miniport_drivers_windo"></span><span id="DDK_PLUG_AND_PLAY_AND_POWER_MANAGEMENT_IN_VIDEO_MINIPORT_DRIVERS_WINDO"></span>
@@ -38,7 +38,7 @@ ms.locfileid: "56529658"
 
 システムが実行されていることもレガシ ミニポート ドライバーは実行中のシステムに追加されたときに自動的に検出中に、システムからレガシ ミニポート ドライバーのグラフィックス アダプターを削除できません。
 
-参照してください[ディスプレイ アダプター (Windows 2000 モデル) の子デバイス](child-devices-of-the-display-adapter--windows-2000-model-.md)を検出して、アダプターの子デバイスと通信の詳細についてはします。 プラグ アンド プレイ ドライバーについては、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
+参照してください[ディスプレイ アダプター (Windows 2000 モデル) の子デバイス](child-devices-of-the-display-adapter--windows-2000-model-.md)を検出して、アダプターの子デバイスと通信の詳細についてはします。 プラグ アンド プレイ ドライバーについては、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
 
  
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4ba0806bd159e35cb6e7f9af3bc25eafd339a0a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356092"
 ---
 # <a name="devpropkey-structure"></a>DEVPROPKEY 構造体
 
@@ -57,7 +57,7 @@ DEVPROPID のデータ型は、として定義されます。
 typedef ULONG DEVPROPID, *PDEVPROPID;
 ```
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DEVPROPKEY 構造がの一部、[統一されたデバイス プロパティのモデル](https://msdn.microsoft.com/library/windows/hardware/ff553515)します。
@@ -66,7 +66,7 @@ DEVPROPKEY 構造がの一部、[統一されたデバイス プロパティの�
 
 [**定義\_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)マクロは、デバイス プロパティのキーを表す DEVPROPKEY 構造体のインスタンスを作成します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

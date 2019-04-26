@@ -1,6 +1,6 @@
 ---
-title: グローバルのクリーンアップを実行します。
-description: グローバルのクリーンアップを実行します。
+title: グローバル クリーンアップの実行
+description: グローバル クリーンアップの実行
 ms.assetid: 18e0fca0-16ec-4ca9-8b71-47f58f41c46d
 keywords:
 - グローバル クリーンアップ WDK ファイル システム ミニフィルター
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d6420a1275a74761c329237354664b3c38de7e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352860"
 ---
-# <a name="performing-global-cleanup"></a>グローバルのクリーンアップを実行します。
+# <a name="performing-global-cleanup"></a>グローバル クリーンアップの実行
 
 
 ## <span id="ddk_performing_global_cleanup_if"></span><span id="DDK_PERFORMING_GLOBAL_CLEANUP_IF"></span>

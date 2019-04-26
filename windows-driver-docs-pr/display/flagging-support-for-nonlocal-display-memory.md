@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fb1aa3c5a2faaa092392b2b70f5dc92b491627
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347580"
 ---
 # <a name="flagging-support-for-nonlocal-display-memory"></a>非ローカルの表示メモリに対するフラグ設定のサポート
 

@@ -1,6 +1,6 @@
 ---
-title: ネットワーク リダイレクターと、ファイル システムのプロセス
-description: ネットワーク リダイレクターと、ファイル システムのプロセス
+title: ネットワーク リダイレクターとファイル システムの処理
+description: ネットワーク リダイレクターとファイル システムの処理
 ms.assetid: 01bdd0d4-d03e-4b3c-ab34-1d5909cde284
 keywords:
 - カーネル ネットワーク リダイレクター WDK、ファイル システムのプロセス
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a914ddae53fd28edc569b09ee2e17df9abb9045
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352868"
 ---
-# <a name="network-redirectors-and-the-file-system-process"></a>ネットワーク リダイレクターと、ファイル システムのプロセス
+# <a name="network-redirectors-and-the-file-system-process"></a>ネットワーク リダイレクターとファイル システムの処理
 
 
 ファイル システム ドライバーによって実行されるファイルの操作のほとんどは、通常、ユーザーのスレッドのコンテキストで完了します。 これらの操作には、すべてのファイル システムにファイルが同期 I/O 呼び出しが含まれます。 このような場合は、すべての作業はインライン行われます。 カーネルで操作がブロックされる可能性がありますが、作業のと同じスレッドで実行されます。 Windows 上のファイル システムは、多くの場合、ファイル システム ディスパッチ (FSD) として、ユーザーのスレッド コンテキストを使用してこの作業を呼び出します。 ほとんどの場合、FSD で作業を完了するファイル システムを試みます。
@@ -47,11 +47,11 @@ RDBSS はユーザーのバッファーでメソッド 1 を使用して自動�
 
 方法 2 は、通常、メソッドを使用する Irp の処理に使用\_も少量の情報のみが通常渡され、返されます。 これらの Irp が次に示します。
 
--   IRP\_MJ\_デバイス\_コントロール
+-   IRP\_MJ\_DEVICE\_CONTROL
 
 -   IRP\_MJ\_ファイル\_システム\_コントロール
 
--   IRP\_MJ\_内部\_デバイス\_コントロール
+-   IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
 RDBSS のみの非同期呼び出しをサポートする、 **MrxLowIoSubmit**操作の配列。 ネットワークのミニ リダイレクターは、その他の操作を実装する必要がある場合 ([**MRxQueryFileInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550770)など)、非同期の呼び出しとしてネットワークのミニ リダイレクターは FSP に要求を投稿する必要があります。 ネットワークのミニ リダイレクターは要求を受信するかどうかは**MrxQueryFileInfo** 、rx\_コンテキスト\_非同期\_操作ビットが設定で、**フラグ**RX のメンバー\_CONTEXT 構造体、ネットワークのミニ リダイレクターは非同期操作の FSP にこの要求を投稿する必要があります。 操作で、 **MrxQueryFileInfo** 、日常的なネットワーク ミニリダイレクターはまず、ユーザーのスレッドのセキュリティ コンテキストをキャプチャおよびユーザー バッファーをカーネル領域にマップ (または必要をアタッチするシステム ワーカー スレッドを設定します。ユーザーの呼び出しプロセス FSP で実行中に)。 ネットワーク ミニリダイレクターを設定し、 **PostRequest** 、RX のメンバー\_コンテキスト構造体を**TRUE**状態を返すと\_FSD から PENDING。 操作の作業キューにはシステム ワーカー スレッド (FSP) によって、作業を RDBSS によってディスパッチは。
 

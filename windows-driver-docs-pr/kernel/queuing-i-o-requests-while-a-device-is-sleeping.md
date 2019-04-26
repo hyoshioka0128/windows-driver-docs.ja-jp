@@ -1,6 +1,6 @@
 ---
-title: デバイスがスリープ状態の間の I/O 要求をキュー
-description: デバイスがスリープ状態の間の I/O 要求をキュー
+title: デバイスがスリープ状態のときの I/O 要求のキュー
+description: デバイスがスリープ状態のときの I/O 要求のキュー
 ms.assetid: 8cc0cea0-e5be-4705-ad4d-13a44d536469
 keywords:
 - I/O WDK 電源管理
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8235955f0cfe59c2fcba47f5bb5dc65f4ef289
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353602"
 ---
-# <a name="queuing-io-requests-while-a-device-is-sleeping"></a>デバイスがスリープ状態の間の I/O 要求をキュー
+# <a name="queuing-io-requests-while-a-device-is-sleeping"></a>デバイスがスリープ状態のときの I/O 要求のキュー
 
 
 

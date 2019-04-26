@@ -1,6 +1,6 @@
 ---
-title: 既定のドメイン ポリシーを使用して、テスト証明書を展開します。
-description: 既定のドメイン ポリシーを使用して、テスト証明書を展開します。
+title: 既定のドメイン ポリシーを使用したテスト証明書の展開
+description: 既定のドメイン ポリシーを使用したテスト証明書の展開
 ms.assetid: eafa4e20-94c5-49d6-a192-2fc7c9f1e64f
 keywords:
 - テスト証明書の MakeCert WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e16f7e63d73ff20c8288cae0fee270b784db25fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346188"
 ---
-# <a name="deploying-a-test-certificate-by-using-the-default-domain-policy"></a>既定のドメイン ポリシーを使用して、テスト証明書を展開します。
+# <a name="deploying-a-test-certificate-by-using-the-default-domain-policy"></a>既定のドメイン ポリシーを使用したテスト証明書の展開
 
 
 Windows Vista および Windows の以降のバージョンを実行しているコンピューター上のドメインにログオンしているドメイン管理者は、ドメイン内のコンピューターの証明書ストアにテスト証明書をデプロイする既定のドメイン ポリシーを構成できます。

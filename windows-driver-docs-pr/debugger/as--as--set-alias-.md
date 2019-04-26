@@ -1,5 +1,5 @@
 ---
-title: (セットの別名) としてとして
+title: as、aS (エイリアスの設定)
 description: 同様に、コマンドは、新しいエイリアスを定義または、既存のものを再定義します。
 ms.assetid: 6e42122b-5a18-403b-a19a-1346bea8da12
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fc6fe184b81ddf621165be258a5c529c13bd40fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354694"
 ---
-# <a name="as-as-set-alias"></a>(セットの別名) としてとして
+# <a name="as-as-set-alias"></a>as、aS (エイリアスの設定)
 
 
 **として**と**として**コマンドは、新しいエイリアスの定義や、既存のものを再定義します。
@@ -77,7 +77,7 @@ Null で終わる Unicode 文字列で始まるエイリアスと等価の等値
 エイリアスと等価の等値、64 ビットの値に設定*式*します。
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-評価する式を指定します。 この値になります、エイリアスと同じです。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
+評価する式を指定します。 この値になります、エイリアスと同じです。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
 <span id="________f______"></span><span id="________F______"></span> **/f**   
 内容をエイリアスと等価の等値の設定、*ファイル*ファイル。 常に使用する必要があります、 **/f**スイッチと共に**として**ではなく**として**します。
@@ -118,7 +118,7 @@ Null で終わる Unicode 文字列で始まるエイリアスと等価の等値
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-エイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
+エイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
 
 <a name="remarks"></a>注釈
 -------
@@ -139,7 +139,7 @@ Null で終わる Unicode 文字列で始まるエイリアスと等価の等値
 myAlias
 ```
 
-スクリプトでエイリアスの使用に関する詳細については、[Using エイリアス](using-aliases.md)を参照してください。
+スクリプトでエイリアスの使用に関する詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
 
 使用する場合、 **/e**、 **/ma**、 **/mu**、 **/msa**、 **/msu**、または **/x**切り替えるには、**として**と**として**コマンドでは、同じ機能し、セミコロンが発生した場合に、コマンドが終了します。
 

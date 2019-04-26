@@ -5,18 +5,18 @@ ms.assetid: 18f95848-71fe-4884-bcbe-d3cae90fc262
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d2f2a5abc278d3679ecb57bd1b8d084dc2f992e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354634"
 ---
 # <a name="deviceoverrides-registry-key"></a>DeviceOverrides レジストリ キー
 
 
-Windows 7 以降、 **DeviceOverrides**レジストリ キーは、1 つまたは複数のリムーバブル デバイス機能の上書きがシステムに存在することを指定します。 リムーバブル デバイスの機能の詳細については、[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)を参照してください。
+Windows 7 以降、 **DeviceOverrides**レジストリ キーは、1 つまたは複数のリムーバブル デバイス機能の上書きがシステムに存在することを指定します。 リムーバブル デバイスの機能の詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)します。
 
-プラグ アンド プレイ (PnP) マネージャーでは、発生元をコンピューターにインストールされている特定の物理デバイスの各インスタンスに属する新しい ID (コンテナー Id) を使用します。 レガシ デバイスの場合は、PnP マネージャーは、リムーバブル デバイスの機能を通じてコンテナー Id を生成します。 PnP マネージャーが、コンテナー Id がどのように生成するかについての詳細については、[どのコンテナー Id が生成される](how-container-ids-are-generated.md)を参照してください。
+プラグ アンド プレイ (PnP) マネージャーでは、発生元をコンピューターにインストールされている特定の物理デバイスの各インスタンスに属する新しい ID (コンテナー Id) を使用します。 レガシ デバイスの場合は、PnP マネージャーは、リムーバブル デバイスの機能を通じてコンテナー Id を生成します。 PnP マネージャーが、コンテナー Id がどのように生成するかについての詳細については、次を参照してください。[どのコンテナー Id が生成される](how-container-ids-are-generated.md)します。
 
 独立系ハードウェア ベンダー (IHV) または供給 (OEM) devnode または devnode のグループにリムーバブル デバイスの機能の解釈された値を変更してリムーバブル デバイスの機能の上書きを使用できます。
 

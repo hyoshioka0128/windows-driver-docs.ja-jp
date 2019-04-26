@@ -5,11 +5,11 @@ ms.assetid: E809B7A3-256B-4351-8A60-D80D4A86EFDB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73bdd5da9bdcd3045ed71ac6662128f65f07a269
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353016"
 ---
 # <a name="enumerating-receive-filters-on-a-virtual-port"></a>仮想ポートでの受信フィルターの列挙
 
@@ -21,13 +21,13 @@ ms.locfileid: "56571837"
 
 -   受信フィルターを VPort のパラメーターを列挙します。
 
-    詳細については、[受信フィルターを列挙する](#enumerate)を参照してください。
+    詳細については、次を参照してください。[受信フィルターを列挙する](#enumerate)します。
 
 -   特定の受信のフィルターのパラメーターをクエリします。
 
-    詳細については、[特定の受信のフィルターのクエリを実行する](#query)を参照してください。
+    詳細については、次を参照してください。[特定の受信のフィルターのクエリを実行する](#query)します。
 
-VPort を作成する方法の詳細については、[仮想ポートを作成する](creating-a-virtual-port.md)を参照してください。
+VPort を作成する方法の詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
 
 ## <a name="enumerating-receive-filters"></a>受信フィルターを列挙
 

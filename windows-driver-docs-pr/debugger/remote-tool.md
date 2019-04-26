@@ -1,21 +1,21 @@
 ---
-title: リモート ツール
+title: Remote ツール
 description: リモート ツール、Remote.exe は、コマンド ライン ツールを実行し、リモート コンピューターのコンソール プログラムを制御することができます。
 ms.assetid: b6fbde9b-1a2a-46b8-9edc-7fa143f5a711
 keywords:
-- リモート ツール
+- Remote ツール
 - Remote.exe
 - Remote.exe、リモート ツールを参照してください。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6859127b5d6f86606161440495c73ac2d0b756f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353486"
 ---
-# <a name="remote-tool"></a>リモート ツール
+# <a name="remote-tool"></a>Remote ツール
 
 
 リモート ツール、Remote.exe は、コマンド ライン ツールを実行し、リモート コンピューターのコンソール プログラムを制御することができます。

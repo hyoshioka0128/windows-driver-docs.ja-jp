@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_FT_PMKR0NAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: dadb4a2f6dc2c5222d6f4cdef2a30d05fcef9b99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353174"
 ---
 # <a name="wditlvftpmkr0name"></a>WDI\_TLV\_FT\_PMKR0NAME
 

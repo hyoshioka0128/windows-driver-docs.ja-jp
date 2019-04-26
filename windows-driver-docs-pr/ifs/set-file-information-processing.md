@@ -1,6 +1,6 @@
 ---
-title: ファイル情報の処理を設定します。
-description: ファイル情報の処理を設定します。
+title: ファイル情報設定処理
+description: ファイル情報設定処理
 ms.assetid: bda94e8d-0be1-4730-a82e-4aa4d3763cce
 keywords:
 - WDK ファイル システムのセキュリティ、セマンティック モデルを確認します
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3cd1768adedd72e6df380902de5bfa3ca975c6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344444"
 ---
-# <a name="set-file-information-processing"></a>ファイル情報の処理を設定します。
+# <a name="set-file-information-processing"></a>ファイル情報設定処理
 
 
 ## <span id="ddk_set_file_information_processing_if"></span><span id="DDK_SET_FILE_INFORMATION_PROCESSING_IF"></span>

@@ -1,6 +1,6 @@
 ---
-title: デバイスの状態を判断します。
-description: デバイスの状態を判断します。
+title: デバイスの状態の判別
+description: デバイスの状態の判別
 ms.assetid: d250643e-13cb-4657-9235-5fdeb1eab89a
 keywords:
 - プラグ アンド プレイ (PnP) デバイスの状態
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f0ea19c5aa6debf255e44106cf2d7b3b6c74f1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346298"
 ---
-# <a name="determining-the-status-of-a-device"></a>デバイスの状態を判断します。
+# <a name="determining-the-status-of-a-device"></a>デバイスの状態の判別
 
 
 ## <span id="ddk_determining_the_status_of_a_device_dbg"></span><span id="DDK_DETERMINING_THE_STATUS_OF_A_DEVICE_DBG"></span>
@@ -30,7 +30,7 @@ kd> !devnode 0 1
 
 いずれかを調べて、ドライバーまたはバスに公開されるは、次の検索は、devnode を識別します。
 
-Devnode 状態フラグには、デバイスの状態について説明します。 詳細については、[デバイス ノードの状態フラグ](device-node-status-flags.md)を参照してください。
+Devnode 状態フラグには、デバイスの状態について説明します。 詳細については、次を参照してください。[デバイス ノードの状態フラグ](device-node-status-flags.md)します。
 
 例では、 **! devnode**コマンド、[デバッグ プラグ アンド プレイ ドライバーの拡張機能](extensions-for-debugging-plug-and-play-drivers.md)セクション swenum デバイスによって作成された、PnP マネージャーでは、そのため、DNF\_作り上げられた (0x00000001)フラグが設定されています。
 
@@ -56,7 +56,7 @@ DevNode 0xfffffa8004483490 for PDO 0xfffffa800448d060
   CapabilityFlags (0x00002000)  WakeFromD3
 ```
 
-**例**
+**使用例**
 
 1. リソース不足を使用したデバイスの devnode:
 

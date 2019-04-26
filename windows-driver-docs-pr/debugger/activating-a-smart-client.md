@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e9db6fc4eead1efd0e893f62de4494a3f4be37f4
-ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351492"
 ---
 # <a name="activating-a-smart-client"></a>スマート クライアントのアクティブ化
 
@@ -130,7 +130,7 @@ SSL または SPIPE プロトコルを使用すると場合、*プロトコル*�
 
 このメッセージ場合があります。*クライアントがサーバーとして同じバージョンのリモート処理プロトコルを使用しない*DbgSrv に接続しようとしているのバージョンが WinDbg のバージョンよりも、別のプロトコルのバージョンを使用することを示します。 
 
-共通のプロトコルの変更が行われることはできません。 これが発生する場合は DbgSrv と WinDbg または WinDbg Preview の最新バージョンの一致するバージョンを使用してください。 最新バージョンをダウンロードする方法の詳細については、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。
+共通のプロトコルの変更が行われることはできません。 これが発生する場合は DbgSrv と WinDbg または WinDbg Preview の最新バージョンの一致するバージョンを使用してください。 最新バージョンをダウンロードする方法の詳細については、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: すべてのエラーのソースのエラーのソース情報の取得
-description: すべてのエラーのソースのエラーのソース情報の取得
+title: すべてのエラー ソースのエラー ソース情報の取得
+description: すべてのエラー ソースのエラー ソース情報の取得
 ms.assetid: 78e3a015-128d-44d1-b0ec-4da43c359090
 keywords:
 - エラー ソース WDK WHEA、情報の取得
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a021928b8b7bd6420443b5f3df96d0bcb41c6c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340814"
 ---
-# <a name="getting-error-source-information-for-all-error-sources"></a>すべてのエラーのソースのエラーのソース情報の取得
+# <a name="getting-error-source-information-for-all-error-sources"></a>すべてのエラー ソースのエラー ソース情報の取得
 
 
 ユーザー モード アプリケーションは、すべての情報を取得できます、[エラー ソース](hardware-errors-and-error-sources.md)で呼び出すことによって、システム、 [ **WHEAErrorSourceMethods::GetAllErrorSourcesRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559527)メソッド。 このメソッドの配列を返します[ **WHEA\_エラー\_ソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff560505)でサポートされているエラーのソースのすべてを記述する構造体、ハードウェア プラットフォームです。

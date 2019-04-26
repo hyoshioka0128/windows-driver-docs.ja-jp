@@ -1,6 +1,6 @@
 ---
-title: デバイスの概要を追加します。
-description: デバイスの概要を追加します。
+title: デバイスの追加の概要
+description: デバイスの追加の概要
 ms.assetid: ee01fe71-9c02-4d37-87ca-9788ffa23e76
 keywords:
 - ユーザー モード ドライバー フレームワーク WDK は、デバイスの追加
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5950db612b14e3ae7caf89dc65c9b967c292ba9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353255"
 ---
-# <a name="adding-a-device-overview"></a>デバイスの概要を追加します。
+# <a name="adding-a-device-overview"></a>デバイスの追加の概要
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

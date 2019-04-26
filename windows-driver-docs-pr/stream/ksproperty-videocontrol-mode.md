@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e052d38b7328e59fbaba9eafb1860f8a7b57e3a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354068"
 ---
 # <a name="kspropertyvideocontrolmode"></a>KSPROPERTY\_VIDEOCONTROL\_モード
 
@@ -42,16 +42,16 @@ KSPROPERTY\_VIDEOCONTROL\_モード プロパティは、イメージの運用�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566043" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_MODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566043)"><strong>KSPROPERTY_VIDEOCONTROL_MODE_S</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566043" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_MODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566043)"><strong>KSPROPERTY_VIDEOCONTROL_MODE_S</strong></a></p></td>
@@ -63,12 +63,12 @@ KSPROPERTY\_VIDEOCONTROL\_モード プロパティは、イメージの運用�
 
 プロパティの値 (データの操作) は、KSPROPERTY\_VIDEOCONTROL\_CAP\_構造をイメージの回転、または機能をトリガーするイベントなど、ミニドライバーのビデオ コントロールの機能を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **モード**、KSPROPERTY のメンバー\_VIDEOCONTROL\_モード\_の構造は、ビデオ コントロールのモードを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

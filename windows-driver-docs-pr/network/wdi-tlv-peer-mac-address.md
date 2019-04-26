@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PEER_MAC_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fd71e809e182cefe1f1f6b0cf2400de6d44905
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349334"
 ---
 # <a name="wditlvpeermacaddress"></a>WDI\_TLV\_ピア\_MAC\_アドレス
 
@@ -31,7 +31,7 @@ WDI\_TLV\_ピア\_MAC\_アドレスは、ピアの MAC アドレスを含む TLV
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                  |
+| 型                                              | 説明                                  |
 |---------------------------------------------------|----------------------------------------------|
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | ピアの Wi-fi MAC アドレスを指定します。 |
 

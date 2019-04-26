@@ -1,6 +1,6 @@
 ---
-title: ラスターのデータを圧縮します。
-description: ラスターのデータを圧縮します。
+title: ラスター データの圧縮
+description: ラスター データの圧縮
 ms.assetid: 8c74e7f3-5601-4510-9fcd-261f5cd48e9c
 keywords:
 - Unidrv、ラスター データ圧縮
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 484b98a1ef740280a19e4c5e66aaac6240ff11d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349250"
 ---
-# <a name="compressing-raster-data"></a>ラスターのデータを圧縮します。
+# <a name="compressing-raster-data"></a>ラスター データの圧縮
 
 
 

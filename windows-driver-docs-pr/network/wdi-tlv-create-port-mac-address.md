@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CREATE_PORT_MAC_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 06e99e197ea7d8733bea3db77feb7f65a6948d6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348196"
 ---
 # <a name="wditlvcreateportmacaddress"></a>WDI\_TLV\_作成\_ポート\_MAC\_アドレス
 
@@ -31,7 +31,7 @@ WDI\_TLV\_作成\_ポート\_MAC\_アドレスは、MAC アドレスを含む TL
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                   |
+| 型                                              | 説明                                   |
 |---------------------------------------------------|-----------------------------------------------|
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | ポートの作成に使用する MAC アドレスです。 |
 

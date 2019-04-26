@@ -1,6 +1,6 @@
 ---
-title: プリンター グラフィックス DLL をサンプルします。
-description: プリンター グラフィックス DLL をサンプルします。
+title: サンプル プリンター グラフィックス DLL
+description: サンプル プリンター グラフィックス DLL
 ms.assetid: d113159a-766e-44c3-a1b1-2975e803d7e2
 keywords:
 - プリンター グラフィックス DLL の WDK サンプル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d5730d2c63c1ec934ffe3e717964ab6aa1c1794
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354804"
 ---
-# <a name="sample-printer-graphics-dll"></a>プリンター グラフィックス DLL をサンプルします。
+# <a name="sample-printer-graphics-dll"></a>サンプル プリンター グラフィックス DLL
 
 
 

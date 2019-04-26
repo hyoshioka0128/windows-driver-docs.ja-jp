@@ -1,6 +1,6 @@
 ---
-title: ピクセル形式の非圧縮ビデオ
-description: ピクセル形式の非圧縮ビデオ
+title: 非圧縮ビデオのピクセル形式
+description: 非圧縮ビデオのピクセル形式
 ms.assetid: f7e54642-c712-4af1-b7b7-f0d961167c77
 keywords:
 - 非圧縮ビデオ ピクセル形式の WDK DirectX VA
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d066e944baee2d9bf5349d7751f3364ab2701e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352228"
 ---
-# <a name="pixel-formats-for-uncompressed-video"></a>ピクセル形式の非圧縮ビデオ
+# <a name="pixel-formats-for-uncompressed-video"></a>非圧縮ビデオのピクセル形式
 
 
 ## <span id="ddk_pixel_formats_for_uncompressed_video_gg"></span><span id="DDK_PIXEL_FORMATS_FOR_UNCOMPRESSED_VIDEO_GG"></span>

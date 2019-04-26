@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9779e7350a34fc4ced0b9750649d9acceb22b792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353576"
 ---
 # <a name="remote-client-syntax"></a>Remote クライアントの構文
 
@@ -64,7 +64,7 @@ remote /c Server SessionName [/L Lines] [/f] [/b] [/k ColorFile]
 
 *Server*と*SessionName*構文行に示されている順序でパラメーターを表示する必要があります。
 
-リモート セッションから切断して、次のように入力します。  <strong>@q</strong>します。 詳細については、[リモート セッションのコマンド](remote-session-commands.md)を参照してください。
+リモート セッションから切断して、次のように入力します。  <strong>@q</strong>します。 詳細については、次を参照してください。[リモート セッションのコマンド](remote-session-commands.md)します。
 
 **キーワードの色のファイルです。** キーワード ファイルの形式は次のとおりです。 キーワード インタープリターは大文字小文字が区別されません。
 

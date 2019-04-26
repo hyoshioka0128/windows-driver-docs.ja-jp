@@ -1,6 +1,6 @@
 ---
-title: Bob メソッド
-description: Bob メソッド
+title: bob メソッド
+description: bob メソッド
 ms.assetid: 3ef4ad25-fe62-4f80-8d0a-d21035d93c1f
 keywords:
 - DirectX VPE サポート WDK DirectDraw、インターリーブのビデオを表示します。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb7159560173e198ad8fea688a5a748636a72a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341574"
 ---
-# <a name="bob-method"></a>Bob メソッド
+# <a name="bob-method"></a>bob メソッド
 
 
 ## <span id="ddk_bob_method_gg"></span><span id="DDK_BOB_METHOD_GG"></span>

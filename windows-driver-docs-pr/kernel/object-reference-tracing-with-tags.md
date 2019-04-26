@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cd71cca13a7d87fb4e981215cef0f6c593964a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351071"
 ---
 # <a name="object-reference-tracing-with-tags"></a>タグを使用したオブジェクト参照トレース
 
@@ -42,7 +42,7 @@ Windows 7 および Windows の以降のバージョンでは、オブジェク�
 
 関連付けられている潜在的なオブジェクト リークや参照の不足を追跡しのセットを識別する**ObReferenceObject*Xxx*WithTag**と**ObDereferenceObject*Xxx*WithTag**をインクリメントおよびデクリメント、特定のオブジェクトの参照カウントは、ドライバーを呼び出します。 このセット内のすべての呼び出しに使用するには、一般的なタグ値 (たとえば、"Lky8") を選択します。 ドライバーが完了したらオブジェクト、デクリメントの数を使用する必要がありますインクリメント数正確に一致します。 これらの番号が一致しない場合、ドライバーは、オブジェクト参照のバグが。 デバッガーは、インクリメントおよびデクリメント各タグの値の数を比較し、一致しないかどうかに通知することができます。 この機能により、参照カウントの不一致の原因をすばやく特定できます。
 
-デバッグ ツールの Windows ではオブジェクト参照のトレースを表示する、 [! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)カーネル モード デバッガーの拡張機能。 Windows 7、Windows の以降のバージョンで、 [! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)オブジェクト参照のトレースが有効になっている場合、拡張機能はオブジェクト参照のタグを表示できます。 既定では、オブジェクト参照のトレースは無効になります。 使用して、[グローバル フラグ エディター](https://go.microsoft.com/fwlink/p/?linkid=153601) (Gflags) オブジェクトの参照のトレースを有効にします。 Gflags の詳細については、[オブジェクト参照トレースの構成](https://go.microsoft.com/fwlink/p/?linkid=153602)を参照してください。
+デバッグ ツールの Windows ではオブジェクト参照のトレースを表示する、 [! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)カーネル モード デバッガーの拡張機能。 Windows 7、Windows の以降のバージョンで、 [! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)オブジェクト参照のトレースが有効になっている場合、拡張機能はオブジェクト参照のタグを表示できます。 既定では、オブジェクト参照のトレースは無効になります。 使用して、[グローバル フラグ エディター](https://go.microsoft.com/fwlink/p/?linkid=153601) (Gflags) オブジェクトの参照のトレースを有効にします。 Gflags の詳細については、次を参照してください。[オブジェクト参照トレースの構成](https://go.microsoft.com/fwlink/p/?linkid=153602)します。
 
 オブジェクト参照のトレースを有効にすると、によって生成される出力、 [! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)拡張機能には、次の例として「タグ」列が含まれています。
 

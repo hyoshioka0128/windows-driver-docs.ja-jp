@@ -5,11 +5,11 @@ ms.assetid: 949BF170-99B3-412F-9DC2-ECE10D480F00
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 114f37d42c2ba11314f0b2450551556ac16401ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341881"
 ---
 # <a name="hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能
 
@@ -24,7 +24,7 @@ ms.locfileid: "56581429"
 
 [転送拡張機能](forwarding-extensions.md)
 
-**注**  同じ種類の複数の拡張機能は、拡張可能スイッチ インスタンスにバインドする場合は、拡張可能スイッチのドライバー スタックに配置されます順序を変更できます。 詳細については、[の並べ替えの Hyper-v 拡張可能スイッチの拡張](reordering-hyper-v-extensibility-switch-extensions.md)を参照してください。
+**注**  同じ種類の複数の拡張機能は、拡張可能スイッチ インスタンスにバインドする場合は、拡張可能スイッチのドライバー スタックに配置されます順序を変更できます。 詳細については、次を参照してください。[の並べ替えの Hyper-v 拡張可能スイッチの拡張](reordering-hyper-v-extensibility-switch-extensions.md)します。
 
  
 

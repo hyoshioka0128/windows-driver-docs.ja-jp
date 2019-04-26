@@ -1,6 +1,6 @@
 ---
-title: リモートの NDIS ファイルの名前付け規則
-description: リモートの NDIS ファイルの名前付け規則
+title: リモート NDIS ファイルの名前付け規則
+description: リモート NDIS ファイルの名前付け規則
 ms.assetid: 9c5b2cfe-c38f-4314-a91c-f27c77ea1f63
 keywords:
 - リモートの NDIS WDK のネットワーク、ドライバー名
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e82f1ad42a769675ad313e38324466e2c45e210b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350899"
 ---
-# <a name="remote-ndis-file-naming-conventions"></a>リモートの NDIS ファイルの名前付け規則
+# <a name="remote-ndis-file-naming-conventions"></a>リモート NDIS ファイルの名前付け規則
 
 
 

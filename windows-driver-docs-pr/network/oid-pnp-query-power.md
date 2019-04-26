@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PNP_QUERY_POWER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 95612f7679bc453462154b3f99de3ee022cbda64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351718"
 ---
 # <a name="oidpnpquerypower"></a>OID\_PNP\_クエリ\_電源
 
@@ -39,7 +39,7 @@ OID\_PNP\_クエリ\_POWER 要求が常に続く OID\_PNP\_設定\_POWER 要求�
 
 中間のドライバーは、NDIS を返す必要があります常に\_状態\_OID のクエリに成功\_PNP\_クエリ\_電源。 中間のドライバーは、OID を伝達することはありません\_PNP\_クエリ\_電源要求の基になる、ミニポート ドライバーにします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

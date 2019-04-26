@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5905d194337034c9b1bb46b9cdb817d87289812
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355536"
 ---
 # <a name="kspropertytvaudiomode"></a>KSPROPERTY\_TVAUDIO\_モード
 
@@ -68,7 +68,7 @@ KSPROPERTY\_TVAUDIO\_モード プロパティは、デバイスのオーディ�
 
 **モード**、KSPROPERTY のメンバー\_TVAUDIO\_の構造は、オーディオ モードを指定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

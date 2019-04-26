@@ -1,6 +1,6 @@
 ---
-title: ポイントのスプライト
-description: ポイントのスプライト
+title: ポイント スプライト
+description: ポイント スプライト
 ms.assetid: 1841d68a-68c3-4522-8935-46bab9bb7c47
 keywords:
 - Windows 2000 の WDK の表示、ポイントのスプライトの DirectX 8.0 リリース ノートします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bb52073d750e48b6ff81c262c5c03328af449c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352246"
 ---
-# <a name="point-sprites"></a>ポイントのスプライト
+# <a name="point-sprites"></a>ポイント スプライト
 
 
 ## <span id="ddk_point_sprites_gg"></span><span id="DDK_POINT_SPRITES_GG"></span>

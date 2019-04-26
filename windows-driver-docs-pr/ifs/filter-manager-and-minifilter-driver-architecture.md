@@ -1,6 +1,6 @@
 ---
-title: フィルター マネージャーとミニフィルター ドライバーのアーキテクチャ
-description: フィルター マネージャーとミニフィルター ドライバーのアーキテクチャ
+title: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
+description: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
 ms.assetid: d3fde421-3475-4327-95cf-eaa520f5c132
 keywords:
 - ファイル システム ミニフィルター ドライバー WDK、アーキテクチャ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7ecc93c9a3dd9ae42b4b0fe444155b6a959fcf5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341505"
 ---
-# <a name="filter-manager-and-minifilter-driver-architecture"></a>フィルター マネージャーとミニフィルター ドライバーのアーキテクチャ
+# <a name="filter-manager-and-minifilter-driver-architecture"></a>フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
 
 
 ## <span id="ddk_writing_a_driverentry_routine_for_a_minifilter_driver_if"></span><span id="DDK_WRITING_A_DRIVERENTRY_ROUTINE_FOR_A_MINIFILTER_DRIVER_IF"></span>

@@ -7,11 +7,11 @@ keywords:
 - SIO_WSK_QUERY_RECEIVE_BACKLOG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ed4d02617201f39c6ebeb9f98d02ed52069d4edc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351697"
 ---
 # <a name="siowskqueryreceivebacklog"></a>SIO\_WSK\_クエリ\_受信\_バックログ
 
@@ -30,7 +30,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの受信�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -43,7 +43,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの受信�
 <td><p>SIO_WSK_QUERY_RECEIVE_BACKLOG</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -71,7 +71,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの受信�
 
 呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**接続指向のソケットの受信データの現在のバックログ クエリを実行する関数。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: カーネル モードの整数の安全な関数をインポートします。
+title: カーネルモード セーフ整数関数のインポート
 description: カーネル モードの安全な整数関数 ntintsafe.h、または、コードをリンクするライブラリに含まれるインライン コードとして利用できます。
 ms.assetid: C6696C4E-952A-4162-B2BE-F262496FFBD2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ecb667fc5ffd86f52c62eb1db13ec8f21c9558cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341066"
 ---
-# <a name="importing-kernel-mode-safe-integer-functions"></a>カーネル モードの整数の安全な関数をインポートします。
+# <a name="importing-kernel-mode-safe-integer-functions"></a>カーネルモード セーフ整数関数のインポート
 
 
 カーネル モードの安全な整数関数 ntintsafe.h、または、コードをリンクするライブラリに含まれるインライン コードとして利用できます。 このヘッダー ファイルでは、Windows Driver Kit (WDK) で使用することができます。

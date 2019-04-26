@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7472dc34fec0c8c2f14e252d6d262efc7d1c36e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354155"
 ---
 # <a name="oidtcpoffloadcurrentconfig"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -19,7 +19,7 @@ ms.locfileid: "56578107"
 
 要求のセットがサポートされていません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーでは、NDIS ミニポート アダプター オフロード機能を報告します。 渡すタスクに関する情報の構成設定にオフロード NDIS ミニポート ドライバーおよび NDIS からドライバーに関連する NDIS_OFFLOAD を参照してください。
 
@@ -46,7 +46,7 @@ OID_TCP_OFFLOAD_CURRENT_CONFIG への応答、**カプセル化**上記の構造
 [NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://msdn.microsoft.com/library/windows/hardware/ff567884)    
 [NDIS_IPSEC_OFFLOAD_V1](https://msdn.microsoft.com/library/windows/hardware/ff565796)  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

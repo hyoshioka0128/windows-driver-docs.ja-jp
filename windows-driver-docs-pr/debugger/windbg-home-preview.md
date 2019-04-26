@@ -4,11 +4,11 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 08/04/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ed549918efe252cdbc490187d4a39bcc1900cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353109"
 ---
 # <a name="windbg-preview---home-menu"></a>WinDbg Preview - ホーム メニュー 
 
@@ -36,7 +36,7 @@ ms.locfileid: "56560999"
 - フィードバックの送信 (WinDbg を向上させるフィードバックの送信の詳細については、次を参照してください[フィードバックを提供する](debugging-using-windbg-preview.md#providing-feedback)。)。 
 
  
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
  

@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0116e57bd1953033089eb766d5a4b1e325fc1328
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351068"
 ---
 # <a name="object-handles"></a>オブジェクト ハンドル
 
@@ -95,7 +95,7 @@ ms.locfileid: "56537524"
 
 使用して、 [ **InitializeObjectAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff547804)これらの属性を設定するルーチンを**オブジェクト\_属性**構造体。
 
-オブジェクト ハンドルを検証する方法の詳細については、[オブジェクト ハンドルの検証に失敗した](failure-to-validate-object-handles.md)を参照してください。
+オブジェクト ハンドルを検証する方法の詳細については、次を参照してください。[オブジェクト ハンドルの検証に失敗した](failure-to-validate-object-handles.md)します。
 
 ### <a name="private-object-handles"></a>プライベート オブジェクト ハンドル
 

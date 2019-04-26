@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0f52676394c3e28b56f5ed15195225a4d46171c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351141"
 ---
 # <a name="wiaipsprinterendorserpadding"></a>WIA\_IP\_プリンター\_裏書き\_パディング
 
@@ -37,7 +37,7 @@ ms.locfileid: "56551065"
 
 このプロパティの有効な値は、次の表に表示されます。
 
-| Value                      | 説明                                        |
+| 値                      | 説明                                        |
 |----------------------------|----------------------------------------------------|
 | WIA\_印刷\_PADDING\_NONE  | パディングなし。                                        |
 | WIA\_印刷\_PADDING\_0  | 数字のゼロ (0) は、埋め込み文字として使用されます。 |

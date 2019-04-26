@@ -1,6 +1,6 @@
 ---
-title: オフセット Stream のサポート
-description: オフセット Stream のサポート
+title: ストリーム オフセットのサポート
+description: ストリーム オフセットのサポート
 ms.assetid: 2c2ca906-8685-47f5-a2ca-855394b9674f
 keywords:
 - ストリームのオフセット WDK DirectX 9.0
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c4795f469ed5759d11a971f288a6f15e44f5d93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350141"
 ---
-# <a name="supporting-stream-offsets"></a>オフセット Stream のサポート
+# <a name="supporting-stream-offsets"></a>ストリーム オフセットのサポート
 
 
 ## <span id="ddk_supporting_stream_offsets_gg"></span><span id="DDK_SUPPORTING_STREAM_OFFSETS_GG"></span>

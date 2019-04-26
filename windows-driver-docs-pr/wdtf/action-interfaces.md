@@ -1,5 +1,5 @@
 ---
-title: アクションのインターフェイス
+title: アクション インターフェイス
 description: アクションのインターフェイスは、IWDTFTarget2 インターフェイスのインスタンスを制御します。 各プラグインはこのインターフェイスをサポートする必要があります。
 keywords:
 - Windows デバイスのテスト フレームワーク WDK、アクションのインターフェイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/24/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 60b71582afea95abed27dd36b46904c8bbd0d52b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347974"
 ---
-# <a name="action-interfaces"></a>アクションのインターフェイス
+# <a name="action-interfaces"></a>アクション インターフェイス
 
 アクションのインターフェイスのインスタンスを制御する、 [IWDTFTarget2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2)インターフェイス。 各プラグインはこのインターフェイスをサポートする必要があります。 アクションのすべてのインターフェイスを継承[IAction](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iaction)、直接または間接的にします。 
 

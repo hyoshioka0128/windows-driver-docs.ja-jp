@@ -5,11 +5,11 @@ ms.assetid: 9817AC4B-2BE8-44AC-8C9B-DED5EF0A7DD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca4dfeb4728968de0c7e2773afd6a53dbecbb15b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344862"
 ---
 # <a name="debugging-ddi-compliance-bugs---driververifierdetectedviolation-c4-0x20002---0x20022"></a>DDI 準拠のバグのドライバーをデバッグ\_VERIFIER\_検出\_違反 (C4)。0x20002 - 0x20022
 
@@ -153,7 +153,7 @@ ISR でどのような種類のメモリ割り当てが設定 IRQL 規則に違�
 
 [DDI 準拠の規則](https://msdn.microsoft.com/library/windows/hardware/ff552840)
 
-[Static Driver Verifier](static-driver-verifier.md)
+[静的ドライバー検証ツール](static-driver-verifier.md)
 
 [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)
 

@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 873a13cc76aad4a0e4723eb47d5ab3d9e515bb32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349218"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodesabortthejob-method"></a>IPrinterScriptUsbJobContextReturnCodes::AbortTheJob メソッド
 
@@ -53,7 +53,7 @@ HRESULT AbortTheJob(
 
 **AbortTheJob**は読み取り専用のメソッドです。 このリターン コード、IHV JavaScript 関数からは、いずれか、デバイスは、ジョブの処理を続行できませんでしたか、ユーザー、デバイスの前面パネルでジョブが取り消されました USBMon を通知します。 USBMon では、印刷ジョブを中止するメッセージを受信したときに、印刷スプーラーを返す前に、ジョブを中止する情報を渡します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

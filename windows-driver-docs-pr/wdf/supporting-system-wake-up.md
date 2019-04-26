@@ -1,6 +1,6 @@
 ---
-title: システムのウェイク アップをサポートしています。
-description: システムのウェイク アップをサポートしています。
+title: システム ウェイクアップのサポート
+description: システム ウェイクアップのサポート
 ms.assetid: 519dcd1a-9975-48b1-a032-04348b903ac5
 keywords:
 - システム ウェイク アップ WDK KMDF
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 770e61d38caa0d308537ef770bb83217b355afef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350704"
 ---
-# <a name="supporting-system-wake-up"></a>システムのウェイク アップをサポートしています。
+# <a name="supporting-system-wake-up"></a>システム ウェイクアップのサポート
 
 
 システムは、低電力状態では、一部のデバイスは、受信ネットワーク パケットなどの外部イベントを検出し、システムのスリープ状態を解除できます。 たとえば、PCI デバイスがシステムのウェイク アップ機能では、デバイスの電源管理機能 (PMC) の登録に記載されているスリープ状態をシステム PCI バス上の電源管理イベント (PME) シグナルを発生させることで。
@@ -45,7 +45,7 @@ ms.locfileid: "56528879"
 
 呼び出す必要があります、バス ドライバーでは、デバイスがウェイク信号をトリガーしたことを判断、 [ **WdfDeviceIndicateWakeStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff546025)デバイスの電源を復元することをフレームワークに通知するためにします。 フレームワークは、この情報をドライバー、ドライバー スタック内の残りの部分に渡します。
 
-デバイスのウェイク アップ機能を制御するレジストリ エントリについては、[ユーザー コントロールのデバイスがアイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)を参照してください。
+デバイスのウェイク アップ機能を制御するレジストリ エントリについては、次を参照してください。[ユーザー コントロールのデバイスがアイドル状態と動作のスリープ解除](user-control-of-device-idle-and-wake-behavior.md)します。
 
  
 

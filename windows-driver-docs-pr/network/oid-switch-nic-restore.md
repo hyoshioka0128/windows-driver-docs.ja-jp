@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_NIC_RESTORE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c199635a6daf6c8130e599c37bd2de301f119b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353219"
 ---
 # <a name="oidswitchnicrestore"></a>OID\_スイッチ\_NIC\_復元
 
@@ -38,7 +38,7 @@ OID の OID のセット要求を受け取ったとき\_切り替える\_NIC\_�
 
 場合、OID\_切り替える\_NIC\_拡張可能スイッチのミニポート edge によって復元セットの要求が受信されると、NDIS に OID 要求が完了すると、\_状態\_成功します。 これによって、拡張機能に、実行時データが所有していないことに拡張可能スイッチのプロトコルの端に通知します。
 
-実行時のデータを復元する方法の詳細については、[Hyper-v 拡張可能スイッチ実行時データを復元](https://msdn.microsoft.com/library/windows/hardware/hh598298)を参照してください。
+実行時のデータを復元する方法の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ実行時データを復元](https://msdn.microsoft.com/library/windows/hardware/hh598298)します。
 
 **注**  拡張機能には、OID セットの要求が失敗した場合、拡張可能スイッチによって、全体の復元操作は失敗します。 結果として、拡張機能では、可能な場合は、OID 要求を失敗を避ける必要があります。 など、拡張機能は、実行時データを復元するために必要なリソースを割り当てることができない場合、その実行時データを復元しない適切に機能しない場合は OID 要求が失敗にする必要があります。 ただし、「拡張機能は、エラーの状態から回復できる、OID のセット要求しないは失敗します。
 

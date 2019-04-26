@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bec546532b0d656dc3a493e30ff1a7d7dd34c2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350724"
 ---
 # <a name="specifying-the-reflector-in-an-inf-file"></a>INF ファイルで、Reflector を指定します。
 
@@ -32,7 +32,7 @@ AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
 
 この例で、ドライバーは、0x2 を指定します (SPSVCINST\_ASSOCSERVICE) フラグ (に入れて、*フラグ*上記のパラメーター)、カーネル モード デバイス スタック内の関数のドライバーとして、reflector を割り当てる。
 
-**AddService**ディレクティブでは、既存のサービス構成が上書きされないように 0x000001f8 フラグもを設定します。 これらのフラグの詳細については、、*フラグ*のパラメーター、 [ **AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
+**AddService**ディレクティブでは、既存のサービス構成が上書きされないように 0x000001f8 フラグもを設定します。 これらのフラグの詳細については、次を参照してください。、*フラグ*のパラメーター、 [ **AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
 
 WUDFVhidmini サンプルでは、次のコード例を示しています、 **AddService** UMDF フィルター ドライバーのディレクティブ。
 

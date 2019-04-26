@@ -1,14 +1,14 @@
 ---
-Description: Starting in Windows 8.1, the set of WinUSB Functions have APIs that allow a desktop application to transfer data to and from isochronous endpoints of a USB device. For such an application, the Microsoft-provided Winusb.sys must be the device driver.
+Description: Windows 8.1 以降、WinUSB 関数のセットは、Api を使用して、USB デバイスのアイソクロナス エンドポイントからデータを転送するデスクトップ アプリケーションがあります。 このようなアプリケーションには、Microsoft から提供された Winusb.sys はデバイス ドライバーである必要があります。
 title: WinUSB デスクトップ アプリから USB 等時性転送を送信する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e006c8cce52229f75dcfbe0771fb8ea4cf7d607b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341223"
 ---
 # <a name="send-usb-isochronous-transfers-from-a-winusb-desktop-app"></a>WinUSB デスクトップ アプリから USB 等時性転送を送信する
 
@@ -85,7 +85,7 @@ USB デバイスは、オーディオ/ビデオ ストリーミングなど、�
 
 いることを確認してください、
 
--   デバイス ドライバーは、Microsoft 提供のドライバーを示します。WinUSB (Winusb.sys)。 そのドライバーが含まれて、 \\Windows\\System32\\フォルダー。 詳細については、[WinUSB (Winusb.sys) インストール](winusb-installation.md)を参照してください。
+-   デバイス ドライバーは、Microsoft 提供のドライバーを示します。WinUSB (Winusb.sys)。 そのドライバーが含まれて、 \\Windows\\System32\\フォルダー。 詳細については、次を参照してください。 [WinUSB (Winusb.sys) インストール](winusb-installation.md)します。
 
 -   呼び出すことによってデバイスに WinUSB インターフェイスのハンドルを取得する以前[ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277)します。 すべての操作は、そのハンドルを使用して実行されます。 読み取り[WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 

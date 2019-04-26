@@ -5,13 +5,13 @@ ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61ff1dc27865727c148b2450d29d31f288135aff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348265"
 ---
-# <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>Generic Routing Encapsulation (NVGRE) タスク オフロードを使用してネットワーク仮想化
+# <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化
 
 HYPER-V ネットワーク仮想化では、Generic Routing Encapsulation (NVGRE) を IP アドレスを仮想化メカニズムとして使用するネットワーク仮想化をサポートします。 Nvgre で仮想マシンのパケットに別のパケット カプセル化します。 この新しい、NVGRE でフォーマットされたパケットのヘッダーは、適切なソースと変換先プロバイダーの領域 (PA) の IP アドレスを持ちます。 さらに、24 ビット仮想サブネット ID (VSID)、新しいパケットの GRE ヘッダーに格納されているがあります。
 

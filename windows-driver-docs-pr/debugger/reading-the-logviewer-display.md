@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7edf95aba0116d9326e96e57c388f2f26108ec5e
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353613"
 ---
 # <a name="reading-the-logviewer-display"></a>LogViewer 表示の読み取り
 
@@ -30,7 +30,7 @@ LogViewer では、ログに記録された順序ですべての関数の一覧�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[列]</th>
+<th align="left">列</th>
 <th align="left">説明</th>
 </tr>
 </thead>

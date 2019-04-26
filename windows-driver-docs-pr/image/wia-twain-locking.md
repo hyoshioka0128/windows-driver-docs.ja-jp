@@ -1,17 +1,17 @@
 ---
-title: WIA TWAIN ロック
-description: WIA TWAIN ロック
+title: WIA-TWAIN ロック
+description: WIA-TWAIN ロック
 ms.assetid: bf2dc7f5-f3a0-4c51-86e1-854d0704074a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc6180e98766c7c3ee83fad88a1423a7c63c2b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344330"
 ---
-# <a name="wia-twain-locking"></a>WIA TWAIN ロック
+# <a name="wia-twain-locking"></a>WIA-TWAIN ロック
 
 
 
@@ -23,7 +23,7 @@ TWAIN ハードウェアは、ベンダーから提供されたユーティリ�
 
 したがって、このベンダーから提供されたソフトウェアを使用する場合は、信頼性の高いロックおよびロック解除の手法に従うことを確認してください。 これにより、WIA サービスは、デバイスをポーリングまたはデータ転送が中断されない (たとえば、を通じて TWAIN)、もう 1 つの転送され、WIA サービスが中断しない同様に自体であります。 1 つだけのシステムが指定されたイベントを取得することを確認します。 つまり、スキャナーで、ボタンをプッシュする場合、WIA サービスは、ベンダーから提供されたソフトウェアが、独自のアプリケーションを開始すると同時に登録済みの WIA アプリケーションは開始されません。
 
-詳細については、[ロックおよびロック解除のベスト プラクティス](locking-and-unlocking-best-practices.md)を参照してください。
+詳細については、次を参照してください。[ロックおよびロック解除のベスト プラクティス](locking-and-unlocking-best-practices.md)します。
 
  
 

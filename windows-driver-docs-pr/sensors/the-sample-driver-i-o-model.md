@@ -5,11 +5,11 @@ ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07e090668c678b8ad9b6f31822341acadef2b2c7
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345104"
 ---
 # <a name="sample-driver-io-model"></a>I/O ドライバー モデルのサンプル
 
@@ -27,7 +27,7 @@ Windows 8.1 では、開発と SPB コント ローラー ドライバーを簡�
 -   同時のターゲットとバスのロック要求を管理する implements 階層化キューの構造体
 -   ユーザー モードからカーネル モードのバッファーを変換します。
 
-詳細については、[シンプルな周辺機器のバス](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)を参照してください。
+詳細については、次を参照してください。[シンプルな周辺機器のバス](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)します。
 
 ### <a name="spb-component-and-the-sample-driver"></a>SPB コンポーネントとドライバーのサンプル
 

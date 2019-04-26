@@ -1,6 +1,6 @@
 ---
-title: エラー ソースの情報を設定します。
-description: エラー ソースの情報を設定します。
+title: エラー ソース情報の設定
+description: エラー ソース情報の設定
 ms.assetid: 87c61c3e-768a-4784-b9ec-1ec85d65ea81
 keywords:
 - エラー ソース WDK WHEA、情報を設定します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fae1553ec7358460cca21634c1c0b25345ef079
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340652"
 ---
-# <a name="setting-error-source-information"></a>エラー ソースの情報を設定します。
+# <a name="setting-error-source-information"></a>エラー ソース情報の設定
 
 
 ユーザー モード アプリケーションが特定の情報を設定できます[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームによって呼び出すことによってサポートされている、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn**](https://msdn.microsoft.com/library/windows/hardware/ff559531)メソッド。 このような状況では、アプリケーションを提供する[ **WHEA\_エラー\_ソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff560505)用に設定する情報を記述する構造体、指定したエラーのソース。
@@ -167,9 +167,9 @@ pOutParameters->Release();
 
 1.  取得、WHEA\_エラー\_ソース\_特定のエラーのソースを記述する記述子構造体。
 
-    すべてに関する情報の取得の詳細については、[エラー ソース](hardware-errors-and-error-sources.md)システムでは、[エラー ソースのすべてのエラー ソース情報を取得する](getting-error-source-information-for-all-error-sources.md)を参照してください。
+    すべてに関する情報の取得の詳細については、[エラー ソース](hardware-errors-and-error-sources.md)システムでは、次を参照してください。[エラー ソースのすべてのエラー ソース情報を取得する](getting-error-source-information-for-all-error-sources.md)します。
 
-    システムで特定のエラーのソースに関する情報の取得の詳細については、[特定のエラーの発生元のエラー ソース情報を取得する](getting-error-source-information-for-a-specific-error-source.md)を参照してください。
+    システムで特定のエラーのソースに関する情報の取得の詳細については、次を参照してください。[特定のエラーの発生元のエラー ソース情報を取得する](getting-error-source-information-for-a-specific-error-source.md)します。
 
 2.  WHEA の内容を変更\_エラー\_ソース\_エラー ソースの構成を変更する記述子構造体。
 

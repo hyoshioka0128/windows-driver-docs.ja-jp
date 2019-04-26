@@ -5,11 +5,11 @@ ms.assetid: B403F21E-FE35-4A57-92DB-C78FDC1488BD
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d1558914e06d08435645db2d088b4889518cc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350514"
 ---
 # <a name="irpprocessing-rule-set-kmdf"></a>IrpProcessing の規則セット (KMDF)
 
@@ -54,13 +54,13 @@ ms.locfileid: "56573719"
 
 2.  をクリックして、**ルール**タブ。**規則セット**、 **IrpProcessing**します。
 
-    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **IrpProcessing.sdv**で、 **/check**オプション。 以下に例を示します。
+    Visual Studio の開発者コマンド プロンプト ウィンドウから既定のルールを選択するには、次のように指定します。 **IrpProcessing.sdv**で、 **/check**オプション。 例:
 
     ```
     msbuild /t:sdv /p:Inputs="/check:IrpProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

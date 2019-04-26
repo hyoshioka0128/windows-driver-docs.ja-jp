@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PHY_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b201b23a6c7f68e65daefa5c01a89fd1f5c27d33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350815"
 ---
 # <a name="wditlvphylist"></a>WDI\_TLV\_PHY\_一覧
 

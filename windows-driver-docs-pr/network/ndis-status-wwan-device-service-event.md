@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WWAN_DEVICE_SERVICE_EVENT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: fb652399b22a2bc948ef913dc4b24b39087a0c6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348536"
 ---
 # <a name="ndisstatuswwandeviceserviceevent"></a>NDIS\_状態\_WWAN\_デバイス\_サービス\_イベント
 

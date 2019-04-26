@@ -1,6 +1,6 @@
 ---
-title: UMDF ドライバーでのシステムのウェイク アップのサポート
-description: UMDF ドライバーでのシステムのウェイク アップのサポート
+title: UMDF ドライバーでのシステム ウェイクアップのサポート
+description: UMDF ドライバーでのシステム ウェイクアップのサポート
 ms.assetid: 945b1751-f3a1-4a29-8fb7-6690f91af7d9
 keywords:
 - 電源管理 WDK UMDF、システムのウェイク アップ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a09dc7bd063a3132a65c68ce60dced5d2072d63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350736"
 ---
-# <a name="supporting-system-wake-up-in-umdf-drivers"></a>UMDF ドライバーでのシステムのウェイク アップのサポート
+# <a name="supporting-system-wake-up-in-umdf-drivers"></a>UMDF ドライバーでのシステム ウェイクアップのサポート
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "56552387"
 
 バス ドライバーは、ウェイク アップするシステムにも参加します。 デバイスのバスのカーネル モード ドライバーでは、バス アダプターを有効にして、低電力状態から復帰するデバイスの機能を無効にするのに必要なことすべてを実行します。
 
-デバイスのウェイク アップ機能を制御するレジストリ エントリについては、[ユーザー コントロールのデバイスがアイドル状態と UMDF Wake 動作](user-control-of-device-idle-and-wake-behavior-in-umdf.md)を参照してください。
+デバイスのウェイク アップ機能を制御するレジストリ エントリについては、次を参照してください。[ユーザー コントロールのデバイスがアイドル状態と UMDF Wake 動作](user-control-of-device-idle-and-wake-behavior-in-umdf.md)します。
 
  
 

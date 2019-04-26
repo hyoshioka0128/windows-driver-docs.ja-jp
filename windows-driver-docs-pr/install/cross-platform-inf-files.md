@@ -1,6 +1,6 @@
 ---
-title: クロス プラットフォームの INF ファイル
-description: クロス プラットフォームの INF ファイル
+title: クロスプラットフォームの INF ファイル
+description: クロスプラットフォームの INF ファイル
 ms.assetid: 5f7e80d2-b8b5-4ce9-9e70-cacc51223deb
 keywords:
 - クロス プラットフォームの INF ファイル WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee9118a88cd58d5a3219f906d879d34da5175083
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352077"
 ---
-# <a name="cross-platform-inf-files"></a>クロス プラットフォームの INF ファイル
+# <a name="cross-platform-inf-files"></a>クロスプラットフォームの INF ファイル
 
 
 クロス プラットフォームの INF ファイルの最も簡単な方法では、この方法は最も簡単な作成および管理するため、各プラットフォームの種類に個別の INF ファイルを作成します。 プラットフォームに固有の INF ファイルを作成する方法の詳細については、次のトピックを参照してください。
@@ -99,7 +99,7 @@ ms.locfileid: "56529870"
 
 11. Windows XP または Windows の以降のバージョンを実行する x64 ベース システム用に必要な追加のデバイス固有のセクションが含まれます。 含める、 **.ntamd64**これらセクション名で拡張機能。
 
-INF ファイルのセクションとディレクティブの詳細については、[INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
+INF ファイルのセクションとディレクティブの詳細については、次を参照してください。 [INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)します。
 
  
 

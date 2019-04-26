@@ -1,6 +1,6 @@
 ---
-title: DMA パケットに基づくシステムを使用します。
-description: DMA パケットに基づくシステムを使用します。
+title: パケットベース システム DMA の使用
+description: パケットベース システム DMA の使用
 ms.assetid: 5d175193-4a28-49fd-80b5-18f116232c6e
 keywords:
 - DMA WDK カーネルでは、パケットに基づくシステム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 758bac46c48c4dc24bbe81646acafe9d55c682fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354194"
 ---
-# <a name="using-packet-based-system-dma"></a>DMA パケットに基づくシステムを使用します。
+# <a name="using-packet-based-system-dma"></a>パケットベース システム DMA の使用
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: Direct3D の固定機能の状態に変換します。
-description: Direct3D の固定機能の状態に変換します。
+title: Direct3D の固定機能状態の変換
+description: Direct3D の固定機能状態の変換
 ms.assetid: bc93d65e-ac16-470d-8c52-db8b1cc74456
 keywords:
 - ユーザー モード ドライバー WDK Windows Vista の表示、Direct3D 固定機能の状態の変換
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eb742e9c11b271d408abd2f310936f62b5ebf22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346938"
 ---
-# <a name="converting-the-direct3d-fixed-function-state"></a>Direct3D の固定機能の状態に変換します。
+# <a name="converting-the-direct3d-fixed-function-state"></a>Direct3D の固定機能状態の変換
 
 
 マイクロソフトの Direct3D ランタイムでは、ユーザー モードのディスプレイ ドライバーは、各シェーダーの種類のバージョン 2.0 以降をサポートしている場合に、頂点またはピクセル シェーダーのバージョン 2.0 に Direct3D 固定機能の状態を変換します。 ただし、ランタイムでは、シェーダーのバージョンは変換されません。 たとえば、アプリケーションでは、頂点またはピクセル シェーダーのバージョン 1.1 を使用する場合、バージョン 1.1 に渡されます未変換ドライバーがシェーダーのバージョン 2.0 以降をサポートするかどうかに関係なく、ユーザー モードのディスプレイ ドライバー。 柔軟な頂点の形式 (FVF) コードは、固定機能の処理に使用されます。

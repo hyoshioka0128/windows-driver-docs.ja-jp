@@ -1,19 +1,19 @@
 ---
-title: プリンターのサンプルの INF ファイル
-description: プリンターのサンプルの INF ファイル
+title: サンプル プリンター INF ファイル
+description: サンプル プリンター INF ファイル
 ms.assetid: e57f11fe-b114-46e4-a4ae-b48f04613da7
 keywords:
 - WDK の INF ファイルを印刷するサンプル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ee131f12339a4097bf975ce68002a5e3f1031d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354926"
 ---
-# <a name="sample-printer-inf-files"></a>プリンターのサンプルの INF ファイル
+# <a name="sample-printer-inf-files"></a>サンプル プリンター INF ファイル
 
 
 

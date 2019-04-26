@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 840fa4452e61c1725555dcbfdcc1725204c93c3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348043"
 ---
 # <a name="kspropertycameracontrolextendedadvancedphoto"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO
 
@@ -39,7 +39,7 @@ KSPROPERTY\_CAMERACONTROL\_拡張\_ADVANCEDPHOTO は、フォト HDR の制御�
 <tr class="header">
 <th>Scope</th>
 <th>コントロール</th>
-<th>型</th>
+<th>種類</th>
 </tr>
 </thead>
 <tbody>
@@ -151,7 +151,7 @@ KSCAMERA をサポートする必要があります、ドライバーは、こ�
 
  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 <table>
 <colgroup>

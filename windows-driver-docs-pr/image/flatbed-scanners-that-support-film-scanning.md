@@ -1,17 +1,17 @@
 ---
-title: フィルムのスキャンをサポートするためのフラット ベッド スキャナー
-description: フィルムのスキャンをサポートするためのフラット ベッド スキャナー
+title: フィルムのスキャンをサポートするフラット ベッド スキャナー
+description: フィルムのスキャンをサポートするフラット ベッド スキャナー
 ms.assetid: ee77c2c6-41a2-43dd-90e4-baf902b46f69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c6873b33303cca9182bf7a90764b8f010189ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352165"
 ---
-# <a name="flatbed-scanners-that-support-film-scanning"></a>フィルムのスキャンをサポートするためのフラット ベッド スキャナー
+# <a name="flatbed-scanners-that-support-film-scanning"></a>フィルムのスキャンをサポートするフラット ベッド スキャナー
 
 
 

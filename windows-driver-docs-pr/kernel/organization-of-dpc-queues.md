@@ -1,6 +1,6 @@
 ---
-title: 組織の DPC キュー
-description: 組織の DPC キュー
+title: DPC キューの構造
+description: DPC キューの構造
 ms.assetid: df176a6d-d7a7-4d8b-ab1b-fd7f5b89fcbe
 keywords:
 - DPC キュー WDK カーネル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8895aecb8cb3ac08235b911f34bd26d978967c80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352017"
 ---
-# <a name="organization-of-dpc-queues"></a>組織の DPC キュー
+# <a name="organization-of-dpc-queues"></a>DPC キューの構造
 
 
 システムでは、プロセッサごとに 1 つの DPC キューを提供します。 ドライバーは、DPC、DPC、キュー内の場所をシステムが割り当てられますがキューに登録し、キューを処理するときのコントロール。

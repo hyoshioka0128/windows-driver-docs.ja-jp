@@ -10,24 +10,24 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52f3b71aaf46ad77ee7b9db0880a7ba0c970e894
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357238"
 ---
 # <a name="creating-sockets"></a>ソケットの作成
 
 
 後は、Winsock カーネル (WSK) アプリケーションが正常に WSK サブシステムにアタッチと、ネットワーク I/O 操作に使用できるソケットを作成できます。 WSK アプリケーションが呼び出すことでソケットを作成、 [ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)関数。 **WskSocket**関数で指し示されます、 **WskSocket**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571175)添付ファイルの中に、WSK サブシステムによって返された構造体。
 
-WSK ソケットのカテゴリを作成している新しいソケットが作成されるたびに WSK アプリケーションが指定する必要があります。 WSK ソケットのカテゴリの詳細については、[Winsock カーネル ソケット カテゴリ](winsock-kernel-socket-categories.md)を参照してください。
+WSK ソケットのカテゴリを作成している新しいソケットが作成されるたびに WSK アプリケーションが指定する必要があります。 WSK ソケットのカテゴリの詳細については、次を参照してください。 [Winsock カーネル ソケット カテゴリ](winsock-kernel-socket-categories.md)します。
 
-WSK アプリケーションにはアドレス ファミリ、ソケットの種類、およびプロトコルもを指定する必要がありますが、新しいソケットが作成されるたび。 WSK でサポートされているアドレス ファミリの詳細については、[WSK アドレス ファミリ](https://msdn.microsoft.com/library/windows/hardware/ff571151)を参照してください。
+WSK アプリケーションにはアドレス ファミリ、ソケットの種類、およびプロトコルもを指定する必要がありますが、新しいソケットが作成されるたび。 WSK でサポートされているアドレス ファミリの詳細については、次を参照してください。 [WSK アドレス ファミリ](https://msdn.microsoft.com/library/windows/hardware/ff571151)します。
 
-新しいソケットを作成するときに WSK アプリケーションは必要場合は、アプリケーションに、ソケットでイベントのコールバック関数が有効にするソケット コンテキストの値と、クライアント ディスパッチ テーブル構造へのポインターと提供する必要があります。 ソケットでのイベントのコールバック関数を有効にする方法の詳細については、[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)を参照してください。
+新しいソケットを作成するときに WSK アプリケーションは必要場合は、アプリケーションに、ソケットでイベントのコールバック関数が有効にするソケット コンテキストの値と、クライアント ディスパッチ テーブル構造へのポインターと提供する必要があります。 ソケットでのイベントのコールバック関数を有効にする方法の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
 
-ソケットが正常に作成された場合、 **IoStatus.Information** IRP のフィールドには、ソケット オブジェクトの構造体へのポインターが含まれています ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182))新しいソケット。 Irp を WSK 関数を使用する方法の詳細については、[Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)を参照してください。
+ソケットが正常に作成された場合、 **IoStatus.Information** IRP のフィールドには、ソケット オブジェクトの構造体へのポインターが含まれています ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182))新しいソケット。 Irp を WSK 関数を使用する方法の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)します。
 
 次のコード例では、WSK アプリケーションがリスニング ソケットを作成する方法を示します。
 

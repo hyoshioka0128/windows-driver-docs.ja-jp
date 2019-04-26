@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 8526e4ea1afb6b5db683ff0dc669d55116cb4a82
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348850"
 ---
 # <a name="oidwditaskconnect"></a>OID\_WDI\_タスク\_接続
 
@@ -73,7 +73,7 @@ MFPEnabled と HostFIPSModeEnabled 両方とも 1 に設定、接続パラメー
 
 [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

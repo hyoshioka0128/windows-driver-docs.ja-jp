@@ -5,11 +5,11 @@ ms.assetid: 7415DB28-5E93-4F47-B169-7C652969D4C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffbe0d3ea5c54f3185f321dd0e85df598e0bb63c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356710"
 ---
 # <a name="io-transfer-sequences"></a>I/O 転送シーケンス
 
@@ -23,9 +23,9 @@ I/O の転送シーケンスの例は、バス書き込み操作で、バスの�
 
 クライアントは、これら 2 つの方法のいずれかでの I/O 転送シーケンスを開始できます。
 
--   クライアントは、全体のシーケンスを指定できます、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857) I/O 制御要求。 この要求には、転送シーケンスを実行するどのようなハードウェア固有のパフォーマンスの最適化を使用する SPB コント ローラー ドライバーができます。 詳細については、[単一要求シーケンス](#buses-single-request-sequences)を参照してください。
+-   クライアントは、全体のシーケンスを指定できます、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857) I/O 制御要求。 この要求には、転送シーケンスを実行するどのようなハードウェア固有のパフォーマンスの最適化を使用する SPB コント ローラー ドライバーができます。 詳細については、次を参照してください。[単一要求シーケンス](#buses-single-request-sequences)します。
 
--   クライアントが送信できる、 [ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858)は、シーケンスの先頭に、コント ローラーをロックして、の送信I/O制御要求[ **IOCTL\_SPB\_UNLOCK\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)シーケンスが完了するとします。 クライアントが別の I/O 要求を送信して、コント ローラーがロックされている間 ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)または[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)) ごとに読み取りまたは書き込み順序で操作します。 詳細については、[Client-Implemented シーケンス](#buses-client-implemented-sequences)を参照してください。
+-   クライアントが送信できる、 [ **IOCTL\_SPB\_ロック\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450858)は、シーケンスの先頭に、コント ローラーをロックして、の送信I/O制御要求[ **IOCTL\_SPB\_UNLOCK\_コント ローラー** ](https://msdn.microsoft.com/library/windows/hardware/hh450859)シーケンスが完了するとします。 クライアントが別の I/O 要求を送信して、コント ローラーがロックされている間 ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)または[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)) ごとに読み取りまたは書き込み順序で操作します。 詳細については、次を参照してください。 [Client-Implemented シーケンス](#buses-client-implemented-sequences)します。
 
 可能であれば、クライアントを使用する必要があります、 **IOCTL\_SPB\_EXECUTE\_シーケンス**が高速化、要求が、発生したエラーを生じとする他の中に時間が大幅に減少クライアントは、バスからロックアウトされました。 ただし、クライアントが使用できる、 **IOCTL\_SPB\_ロック\_コント ローラー**と**IOCTL\_SPB\_UNLOCK\_コント ローラー**要求のかどうかは、シーケンス内の以降の転送を開始できる前に、シーケンス内の転送の 1 つの中に読み取られる値を確認する必要があります。 この場合は、慎重に設計が他のクライアントは、必要に応じてよりも長い期間のバスからのロックを回避するために必要と、不適切に設計され周辺ドライバーには、システム全体のパフォーマンスが低下する可能性が。
 
@@ -38,9 +38,9 @@ I/O の転送シーケンスの例は、バス書き込み操作で、バスの�
 
  
 
-転送シーケンスの実装では、単純な読み取りまたは書き込み操作に似ていますが、さらに、シーケンス内の個々 の転送間隔シーケンス操作の状態を保存する更新プログラムが必要です。 最初の転送が完了すると、SPB コント ローラーのドライバーは、シーケンス内の次の転送を選択するシーケンスの状態を更新します。 シーケンスの状態は、デバイス コンテキストに格納されが含まれています、 [ **SPBREQUEST** ](https://msdn.microsoft.com/library/windows/hardware/hh450925)ハンドルに渡される、 *EvtSpbControllerIoSequence*コールバック。 SPB コント ローラーのドライバーでは、このハンドルを使用して、バッファー、長さ、方向を取得し、シーケンス内の個々 の転送パラメーターを配置します。 これらのパラメーターを取得する方法の詳細については、[ **SpbRequestGetTransferParameters**](https://msdn.microsoft.com/library/windows/hardware/hh450924)を参照してください。
+転送シーケンスの実装では、単純な読み取りまたは書き込み操作に似ていますが、さらに、シーケンス内の個々 の転送間隔シーケンス操作の状態を保存する更新プログラムが必要です。 最初の転送が完了すると、SPB コント ローラーのドライバーは、シーケンス内の次の転送を選択するシーケンスの状態を更新します。 シーケンスの状態は、デバイス コンテキストに格納されが含まれています、 [ **SPBREQUEST** ](https://msdn.microsoft.com/library/windows/hardware/hh450925)ハンドルに渡される、 *EvtSpbControllerIoSequence*コールバック。 SPB コント ローラーのドライバーでは、このハンドルを使用して、バッファー、長さ、方向を取得し、シーケンス内の個々 の転送パラメーターを配置します。 これらのパラメーターを取得する方法の詳細については、次を参照してください。 [ **SpbRequestGetTransferParameters**](https://msdn.microsoft.com/library/windows/hardware/hh450924)します。
 
-SPB コント ローラーのドライバーが、要求を実行できないかどうか**IOCTL\_SPB\_EXECUTE\_シーケンス**操作、エラー コードを使用して要求を完了します。 このような障害が発生する場合、クライアントことができます、オプションとして、バスをロック、一連の簡単なの I/O 要求として I/O 転送シーケンスを明示的に実行およびバスのロックを解除します。 詳細については、[Client-Implemented シーケンス](#buses-client-implemented-sequences)を参照してください。
+SPB コント ローラーのドライバーが、要求を実行できないかどうか**IOCTL\_SPB\_EXECUTE\_シーケンス**操作、エラー コードを使用して要求を完了します。 このような障害が発生する場合、クライアントことができます、オプションとして、バスをロック、一連の簡単なの I/O 要求として I/O 転送シーケンスを明示的に実行およびバスのロックを解除します。 詳細については、次を参照してください。 [Client-Implemented シーケンス](#buses-client-implemented-sequences)します。
 
 SpbCx はパラメーターのチェック**IOCTL\_SPB\_* XXX*** 周辺機器のデバイス ドライバーから受信した要求。 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求、SpbCx は空のシーケンスとバッファー ポインターを NULL または長さ 0 のバッファーを含むシーケンスを拒否します。
 
@@ -59,7 +59,7 @@ SPB コント ローラーのドライバーのクライアントと一連の単
 
 SPB ロックは、読み取りと書き込みのシーケンスが、バスのアトミック操作として実行され、その目的専用に使用する必要がありますの保証にのみ使用されます。
 
-詳細については、[Handling Client-Implemented シーケンス](https://msdn.microsoft.com/library/windows/hardware/jj191736)を参照してください。
+詳細については、次を参照してください。 [Handling Client-Implemented シーケンス](https://msdn.microsoft.com/library/windows/hardware/jj191736)します。
 
  
 

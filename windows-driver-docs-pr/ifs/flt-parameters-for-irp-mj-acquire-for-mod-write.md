@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be5291f6faf4ce9b1b394d3bc1216cccc34afc1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358547"
 ---
 # <a name="fltparameters-for-irpmjacquireformodwrite-union"></a>FLT\_IRP のパラメーター\_MJ\_ACQUIRE\_の\_MOD\_書き込み共用体
 
@@ -42,7 +42,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **AcquireForModifiedPageWriter**  
@@ -63,7 +63,7 @@ IRP\_MJ\_ACQUIRE\_の\_MOD\_書き込みは、ファイル システム (FSFilte
 
 FSFilter コールバック操作の詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

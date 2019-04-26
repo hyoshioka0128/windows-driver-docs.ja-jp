@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 436e2b14d2e82fb2208e9dd6bbe81344b61535f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349216"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodesretry-method"></a>IPrinterScriptUsbJobContextReturnCodes::Retry メソッド
 
@@ -53,7 +53,7 @@ HRESULT Retry(
 
 **再試行**は読み取り専用のメソッドです。 USBMon が printerBidiSchemaResponses オブジェクト (Bidi イベントを含む) 任意の Bidi スキーマの更新を処理する必要がありますを呼び出して、**再試行**IHV コードが、データの処理を続行できるようにするには、もう一度メソッド。 印刷データ ストリーム (printData) から処理されるバイト数が、印刷ジョブに関連付けられている writePrintDataProgress オブジェクトで返されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

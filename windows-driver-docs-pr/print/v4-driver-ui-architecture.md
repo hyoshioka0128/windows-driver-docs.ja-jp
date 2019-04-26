@@ -5,11 +5,11 @@ ms.assetid: 6318E480-C567-4866-8E88-B19904408C59
 ms.date: 09/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb6a7e4feb816b79aa9f366bff0883f79b7c120
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348474"
 ---
 # <a name="v4-driver-ui-architecture"></a>V4 ドライバー UI アーキテクチャ
 
@@ -65,7 +65,7 @@ Microsoft Store のデバイスのアプリとプリンターの拡張機能の�
 
 API は、印刷用のプリンター拡張と UWP デバイス用アプリケーションをサポートするために v4 印刷ドライバー モデルの一部として開発されました。 高レベルは、印刷設定のシナリオは、取得し、すべての情報を格納する PrintTicket、PrintCapabilities と新しいプロパティ バッグを使用します。 プリンターの通知は、双方向通信 (Bidi) スキーマに基づいている新しいイベント システムによって駆動し、この新しいシステムがクライアントとサーバー間 AsyncUI プロトコルを使用します。 この API のデータ中心の性質は、1 つのアプリケーションは、多くのデバイスに簡単にサポート可能性がありますを意味します。
 
-プリンターの拡張機能は、ことが適切に低下することが要求されたデータが利用できない場合、このような方法でビルドする必要があります。 たとえば、特定 PrintCapabilities 機能が使用できない場合、またはプロパティ バッグのいずれかのプロパティが使用できない場合は、これする必要がありますいないしなく、アプリの残りの部分。 プロパティ バッグ、またはプロパティ バッグ内の特定のプロパティにアクセスするとき、アプリは、スローされる例外には、アプリのクラッシュが発生しないことを確認するには、try-catch 構文を使用する必要があります。 詳細については、[プリンター拡張機能インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/index#interfaces)を参照してください。
+プリンターの拡張機能は、ことが適切に低下することが要求されたデータが利用できない場合、このような方法でビルドする必要があります。 たとえば、特定 PrintCapabilities 機能が使用できない場合、またはプロパティ バッグのいずれかのプロパティが使用できない場合は、これする必要がありますいないしなく、アプリの残りの部分。 プロパティ バッグ、またはプロパティ バッグ内の特定のプロパティにアクセスするとき、アプリは、スローされる例外には、アプリのクラッシュが発生しないことを確認するには、try-catch 構文を使用する必要があります。 詳細については、次を参照してください。[プリンター拡張機能インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/index#interfaces)します。
 
 ## <a name="related-resources"></a>関連リソース
 

@@ -1,6 +1,6 @@
 ---
-title: COPP とマルチ モニターのサポート
-description: COPP とマルチ モニターのサポート
+title: COPP と複数モニターのサポート
+description: COPP と複数モニターのサポート
 ms.assetid: 96bd24f6-4aba-4605-8fd4-465c86061044
 keywords:
 - コピー防止 WDK COPP、複数をモニターします。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aab7bad643d839cfc720262a25e40b4fc467dcb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346936"
 ---
-# <a name="copp-and-multiple-monitor-support"></a>COPP とマルチ モニターのサポート
+# <a name="copp-and-multiple-monitor-support"></a>COPP と複数モニターのサポート
 
 
 ## <span id="ddk_copp_and_multiple_monitor_support_gg"></span><span id="DDK_COPP_AND_MULTIPLE_MONITOR_SUPPORT_GG"></span>

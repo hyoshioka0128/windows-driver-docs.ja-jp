@@ -1,6 +1,6 @@
 ---
-title: RDBSS によって定義されているマクロ
-description: RDBSS によって定義されているマクロ
+title: RDBSS が定義するマクロ
+description: RDBSS が定義するマクロ
 ms.assetid: 11add885-ecd9-4b43-be42-ef060e847183
 keywords:
 - RDBSS WDK ファイル システム、マクロ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fce4743163abccf2f355daddbce6eaa7aed9812a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357732"
 ---
-# <a name="macros-defined-by-rdbss"></a>RDBSS によって定義されているマクロ
+# <a name="macros-defined-by-rdbss"></a>RDBSS が定義するマクロ
 
 
 ## <span id="ddk_macros_defined_by_rdbss_if"></span><span id="DDK_MACROS_DEFINED_BY_RDBSS_IF"></span>

@@ -7,11 +7,11 @@ keywords:
 - Windows Vista 以降のドライバーをネットワーク SIO_WSK_SET_TCP_SILENT_MODE 制御コード
 ms.localizationpriority: medium
 ms.openlocfilehash: 70fc504df0db9cb1d355199f7f1b0ddd0be34be6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351683"
 ---
 # <a name="siowsksettcpsilentmode-control-code"></a>SIO\_WSK\_設定\_TCP\_サイレント\_モード制御コード
 
@@ -49,7 +49,7 @@ ms.locfileid: "56580331"
 *OutputSizeReturned* \[アウト\]  
 使用**NULL**この操作にします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)サイレント モードを有効にする関数。

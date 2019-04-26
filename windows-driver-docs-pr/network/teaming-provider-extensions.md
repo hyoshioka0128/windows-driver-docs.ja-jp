@@ -1,20 +1,20 @@
 ---
-title: プロバイダーの拡張機能のチーミング
-description: プロバイダーの拡張機能のチーミング
+title: チーミング プロバイダー拡張機能
+description: チーミング プロバイダー拡張機能
 ms.assetid: 94F73ECD-54D0-4218-B3C4-33DC3BD57ED0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cac8019547ac19006c46433307eb0ce9c75ecf37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350845"
 ---
-# <a name="teaming-provider-extensions"></a>プロバイダーの拡張機能のチーミング
+# <a name="teaming-provider-extensions"></a>チーミング プロバイダー拡張機能
 
 
-拡張可能スイッチの外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX 中間ドライバー自体は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドできます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。 拡張可能スイッチ チームの詳細については、[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)を参照してください。
+拡張可能スイッチの外部ネットワーク アダプターは、NDIS マルチプレクサー (マルチプレクサー) の中間ドライバーの仮想ミニポート端にバインドできます。 MUX 中間ドライバー自体は、ホスト上の 1 つまたは複数の物理ネットワーク チームにバインドできます。 この構成と呼ばれる、*拡張可能スイッチ チーム*します。 拡張可能スイッチ チームの詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
 
 この構成では、拡張可能スイッチ拡張機能は拡張可能スイッチ チームのすべてのネットワーク アダプターに公開されます。 これにより、転送拡張機能が拡張可能スイッチのドライバー スタックを構成し、チーム内の個々 のネットワーク アダプターの使用を管理するの。 たとえば、拡張機能では、個々 のアダプターに送信されるパケットを転送することによって、over、チーム分散フェールオーバー (LBFO) のソリューション ロードのサポートを提供できます。 このような拡張機能と呼ばれる、*チーミング プロバイダー*します。
 
@@ -50,25 +50,25 @@ ms.locfileid: "56552339"
 
     チーム化のプロバイダーは、発行したり、基になる物理ネットワーク アダプターにパケットまたは OID 要求を転送したりする場合、ネットワーク アダプターのインデックス値を指定します。
 
-    詳細については、[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)を参照してください。
+    詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](network-adapter-index-values.md)します。
 
 -   チーム化のプロバイダーが発行または物理アダプターにパケットを転送は、物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値を指定する必要があります。
 
-    パケットの帯域外の転送のコンテキストのソースのネットワーク アダプターのインデックス値を決定できるプロバイダーでは、パケットを受信するときに、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 転送コンテキストに関する詳細については、[Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)を参照してください。
+    パケットの帯域外の転送のコンテキストのソースのネットワーク アダプターのインデックス値を決定できるプロバイダーでは、パケットを受信するときに、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 転送コンテキストに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
 
-    詳細については、[Hyper-v 拡張可能スイッチのデータ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
+    詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのデータ パス](hyper-v-extensible-switch-data-path.md)します。
 
 -   物理アダプターに OID 要求の転送を発行するにはチーム化のプロバイダーに OID 要求内でカプセル化、 [ **NDIS\_スイッチ\_NIC\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)構造体。 プロバイダーを設定する必要があります、 **DestinationNicIndex**メンバーを物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値。 プロバイダーの OID セット要求を発行し、 [OID\_スイッチ\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)ターゲットの物理アダプターにカプセル化された OID 要求を配信します。
 
-    詳細については、[OID 要求を物理ネットワーク アダプターを管理する](managing-oid-requests-to-physical-network-adapters.md)を参照してください。
+    詳細については、次を参照してください。 [OID 要求を物理ネットワーク アダプターを管理する](managing-oid-requests-to-physical-network-adapters.md)します。
 
 -   チーム化のプロバイダーは、基になる物理アダプターに代わって、NDIS 状態インジケーターを発行できます。 内で示す値をプロバイダーには、カプセル化する必要があります、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/hh598217)構造体。 プロバイダーを設定する必要があります、 **SourceNicIndex**メンバーを物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値。 プロバイダーの NDIS 状態を示す値を発行し、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)カプセル化された状態を配信するには拡張可能スイッチのドライバー スタックのドライバーの関連を示します。
 
-    詳細については、[物理ネットワーク アダプターから NDIS 状態インジケーターを管理する](managing-ndis-status-indications-from-physical-network-adapters.md)を参照してください。
+    詳細については、次を参照してください。[物理ネットワーク アダプターから NDIS 状態インジケーターを管理する](managing-ndis-status-indications-from-physical-network-adapters.md)します。
 
-転送拡張機能の詳細については、[転送拡張機能](forwarding-extensions.md)を参照してください。
+転送拡張機能の詳細については、次を参照してください。[転送拡張機能](forwarding-extensions.md)します。
 
-MUX ドライバーの詳細については、[NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)を参照してください。
+MUX ドライバーの詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](ndis-mux-intermediate-drivers.md)します。
 
  
 

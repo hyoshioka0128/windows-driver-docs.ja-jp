@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0db9f880772611ed4572d1d9e0ca9cbefcb6f650
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345582"
 ---
 # <a name="multiple-textures"></a>複数のテクスチャ
 

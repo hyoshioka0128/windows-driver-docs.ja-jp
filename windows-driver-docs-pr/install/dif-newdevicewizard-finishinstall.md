@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f272a415e87897329478a41594780f7c6b3f7a9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342768"
 ---
 # <a name="difnewdevicewizardfinishinstall"></a>DIF_NEWDEVICEWIZARD_FINISHINSTALL
 
@@ -89,7 +89,7 @@ Windows デバイスをインストールした後 (が正常に完了[ **DIF_IN
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
 <a name="requirements"></a>要件
 ------------

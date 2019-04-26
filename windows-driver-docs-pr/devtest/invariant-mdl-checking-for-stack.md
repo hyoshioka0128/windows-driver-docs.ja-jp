@@ -5,11 +5,11 @@ ms.assetid: AB27803A-6B3A-40FA-B962-79B0DA2F5FA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f54c83c39bc3935033de21060aea1c3319877ea8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350521"
 ---
 # <a name="invariant-mdl-checking-for-stack"></a>不変な MDL のスタック用検査
 
@@ -31,7 +31,7 @@ IRP の有効期間全体を通じて、書き込み要求の不変のバッフ�
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のスタック機能の 1 つまたは複数のドライバーをアクティブにできます。 不変な Mdl スタック用検査オプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用してに不変な Mdl のスタック機能の 1 つまたは複数のドライバーをアクティブにできます。 不変な Mdl スタック用検査オプションがアクティブまたは非アクティブにコンピューターを再起動する必要があります。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
 不変な Mdl スタック用検査オプションをアクティブ化する必要がありますもアクティブ化する[I/O の検証](i-o-verification.md)です。
 

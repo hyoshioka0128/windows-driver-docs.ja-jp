@@ -5,11 +5,11 @@ ms.assetid: 4c5c4990-6095-4ab8-a20b-7597b3169f52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 180431f45c8dd048dcd7f062b055bb5a9f319019
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344928"
 ---
 # <a name="can-i-customize-dotracemessage"></a>DoTraceMessage をカスタマイズできますか?
 
@@ -68,7 +68,7 @@ FunctionName(Conditions...,"Message",MessageVariables...);
 MyDoTrace(Level, Flag, Subcomponent,"Message",MessageVariables...);
 ```
 
-以下に例を示します。
+例:
 
 ```
 MyDoTrace(TRACE_LEVEL_ERROR, VERBOSE, Network,"IOCTL = %d", ControlCode);
@@ -111,7 +111,7 @@ MyDoTrace(TRACE_LEVEL_ERROR, VERBOSE, Network,"IOCTL = %d", ControlCode);
 #define WPP_LEVEL_FLAGS_ENABLED(lvl, flags) (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >=lvl
 ```
 
-通常、WPP\_レベル\_ロガー マクロが影響を受けません。 このような場合は、既定のマクロを使用する新しいマクロを定義できます。 例:
+通常、WPP\_レベル\_ロガー マクロが影響を受けません。 このような場合は、既定のマクロを使用する新しいマクロを定義できます。 次に、例を示します。
 
 ```
 #define WPP_LEVEL_FLAGS_LOGGER(lvl,flags) WPP_LEVEL_LOGGER(flags)

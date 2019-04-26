@@ -1,24 +1,24 @@
 ---
-title: トレース セッション リスト内の列
-description: トレース セッション リスト内の列
+title: トレース セッション一覧の列
+description: トレース セッション一覧の列
 ms.assetid: 2e9d7636-3cff-459c-827a-719062bb778c
 keywords:
 - トレース セッションの WDK の一覧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3f630ea21461e0bb84e124807440cf434833202
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354661"
 ---
-# <a name="trace-session-list-columns"></a>トレース セッション リスト内の列
+# <a name="trace-session-list-columns"></a>トレース セッション一覧の列
 
 
 内の列、[トレース セッション リスト](trace-session-list.md)トレース セッションと、トレース プロバイダーのプロパティを表します。 これらのプロパティのほとんどを設定することができます、[ログ セッションのパラメーター オプション](log-session-parameter-options.md)のタブ、**ログ セッション オプションの高度な**トレース セッションを作成するときに、ダイアログ ボックス。 オプションの詳細については、**ログ セッションのパラメーター オプション** タブを参照してください[トレース セッション オプションの高度な設定](setting-advanced-trace-session-options.md)します。
 
-トレース セッションの実行中に変更できるプロパティは、黒色の文字が使用できる表示で表示されます。 トレース セッションが停止している場合にのみ変更可能なプロパティは、使用できなくなります。 トレース ログにトレース メッセージのプロパティを変更できません。 詳細については、[トレース セッションのプロパティを変更する](changing-the-properties-of-a-trace-session.md)を参照してください。
+トレース セッションの実行中に変更できるプロパティは、黒色の文字が使用できる表示で表示されます。 トレース セッションが停止している場合にのみ変更可能なプロパティは、使用できなくなります。 トレース ログにトレース メッセージのプロパティを変更できません。 詳細については、次を参照してください。[トレース セッションのプロパティを変更する](changing-the-properties-of-a-trace-session.md)します。
 
 次の一覧では、すべての既定で非表示になっているものも含め、トレース セッションの一覧で列について説明します。 非表示の列を表示する方法については、「列の非表示とを表示する」を参照してください[トレース セッション リスト機能](trace-session-list-features.md)します。
 

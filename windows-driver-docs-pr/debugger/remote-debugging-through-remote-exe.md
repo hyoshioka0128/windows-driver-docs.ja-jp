@@ -1,6 +1,6 @@
 ---
-title: リモート デバッグ Remote.exe 経由
-description: リモート デバッグ Remote.exe 経由
+title: Remote.exe によるリモート デバッグ
+description: Remote.exe によるリモート デバッグ
 ms.assetid: 138cd409-bf89-498a-8c7c-74fca7c227d5
 keywords:
 - リモート remote.exe 経由でのデバッグ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f54130ff1bcef0bd03a5867af2c6bd4a245f3d1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353567"
 ---
-# <a name="remote-debugging-through-remoteexe"></a>リモート デバッグ Remote.exe 経由
+# <a name="remote-debugging-through-remoteexe"></a>Remote.exe によるリモート デバッグ
 
 
 ## <span id="ddk_remote_debugging_through_remote_exe_dbg"></span><span id="DDK_REMOTE_DEBUGGING_THROUGH_REMOTE_EXE_DBG"></span>

@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 697b2869971ffde81981f6c5e8e0a3433565f050
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356061"
 ---
 # <a name="digital-certificates"></a>デジタル証明書
 
@@ -41,7 +41,7 @@ Windows コード署名テクノロジでは、X.509 コード署名証明書、
 
 ソフトウェアの発行元は、証明書の整合性を保証する証明機関 (CA) から証明書を取得する必要があります。 通常、CA では、一意の識別情報を提供するソフトウェアの発行元が必要です。 CA では、この情報を使用して、証明書を発行する前に、要求元の id を認証します。 ソフトウェアの発行元は、CA が設定されているポリシーを遵守する同意もあります。 そのためには、失敗した場合、CA は証明書を取り消すことができます。
 
-CA から証明書を入手すると、ソフトウェアの発行元する必要があります、証明書を格納ローカル コンピューターにします。 このプロセスの詳細については、[証明書ストア](certificate-stores.md)を参照してください。
+CA から証明書を入手すると、ソフトウェアの発行元する必要があります、証明書を格納ローカル コンピューターにします。 このプロセスの詳細については、次を参照してください。[証明書ストア](certificate-stores.md)します。
 
  
 

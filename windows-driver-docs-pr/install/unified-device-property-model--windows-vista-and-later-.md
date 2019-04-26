@@ -1,19 +1,19 @@
 ---
-title: 統一されたデバイス プロパティのモデル
-description: 統一されたデバイス プロパティのモデル
+title: 統合デバイス プロパティ モデル
+description: 統合デバイス プロパティ モデル
 ms.assetid: 51105f84-38d8-4005-a3fd-4beccc0a2a39
 keywords:
 - デバイスの WDK デバイス インストールでは、統一されたデバイス プロパティのモデルのプロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c270cfe3723541c84e84e519b56fea2e001ee9e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339544"
 ---
-# <a name="unified-device-property-model"></a>統一されたデバイス プロパティのモデル
+# <a name="unified-device-property-model"></a>統合デバイス プロパティ モデル
 
 
 Windows Vista と以降のバージョンの Windows のサポートのシステム構成の特性を設定する統一されたデバイス プロパティ モデル*デバイス インスタンス*、デバイス セットアップ クラス。 統一されたデバイス プロパティのモデルについては、次のトピックを参照してください。

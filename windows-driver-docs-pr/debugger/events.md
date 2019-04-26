@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe20756868d9217ce3ca983c65a732502f6ffacc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347806"
 ---
 # <a name="events"></a>イベント
 
@@ -33,7 +33,7 @@ ms.locfileid: "56579858"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-イベントの監視の詳細については、[監視イベント](monitoring-events.md)を参照してください。
+イベントの監視の詳細については、次を参照してください。[監視イベント](monitoring-events.md)します。
 
  
 

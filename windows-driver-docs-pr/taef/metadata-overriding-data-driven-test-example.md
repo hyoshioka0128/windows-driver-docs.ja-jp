@@ -1,17 +1,17 @@
 ---
-title: メタデータがデータ ドリブン テストの例をオーバーライドします。
-description: メタデータがデータ ドリブン テストの例をオーバーライドします。
+title: メタデータ オーバーライド データ ドリブン テストの例
+description: メタデータ オーバーライド データ ドリブン テストの例
 ms.assetid: F39A556F-1816-4272-ABDE-62164AE09685
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef422f67aeca894b264e45d4013127bbaefa4b82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355506"
 ---
-# <a name="metadata-overriding-data-driven-test-example"></a>メタデータがデータ ドリブン テストの例をオーバーライドします。
+# <a name="metadata-overriding-data-driven-test-example"></a>メタデータ オーバーライド データ ドリブン テストの例
 
 
 このセクションでは、データ ドリブンの例を使用してテストの高度な機能について説明します。 最初にする場合があります、基礎をカバーは引き続き、する場合、[単純なデータ駆動型の例です。](simple-data-driven-test-example.md)

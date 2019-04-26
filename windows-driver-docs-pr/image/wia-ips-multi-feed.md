@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7aa0b980da213adfd84d18afc6c4f9b04cf5300
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348245"
 ---
 # <a name="wiaipsmultifeed"></a>WIA\_IP\_マルチ\_フィード
 
@@ -33,9 +33,9 @@ ms.locfileid: "56572899"
 
 有効な値 :WIA\_PROP\_一覧
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 次の表に、有効な値、 **WIA\_IP\_マルチ\_フィード**プロパティ。
@@ -77,7 +77,7 @@ ms.locfileid: "56572899"
 
 WIA ミニドライバーが、複数を設定するときに\_フィードのビットを[ **WIA\_DPS\_ドキュメント\_処理\_状態**](wia-dps-document-handling-status.md)プロパティ間もなく、ミニドライバーは、フィーダーがアンロードされての再読み込みが検出されると、新しいスキャン ジョブの開始時、ミニドライバーこのビット (フラグ) をオフにする必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

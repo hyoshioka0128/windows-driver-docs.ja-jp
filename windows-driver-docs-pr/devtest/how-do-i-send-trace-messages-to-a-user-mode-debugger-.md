@@ -5,11 +5,11 @@ ms.assetid: d1a9df10-3339-4518-a42a-abd1123d5e21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2085f7643b12c3315855bcfa481c814b6164f38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347676"
 ---
 # <a name="how-do-i-send-trace-messages-to-a-user-mode-debugger"></a>ユーザー モード デバッガーにトレース メッセージを送信する方法
 

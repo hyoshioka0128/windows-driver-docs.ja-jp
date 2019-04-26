@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_PIN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 42e58929faa293234ef314b713186a3b3eea820a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354540"
 ---
 # <a name="oidwwanpin"></a>OID\_WWAN\_暗証番号 (PIN)
 
@@ -23,7 +23,7 @@ OID\_WWAN\_暗証番号 (pin) が暗証番号 (Pin) に関連する情報を取�
 
 呼び出し元がピンに関連する情報を設定する要求を提供、 [ **NDIS\_WWAN\_設定\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff567922) MB のデバイスに PIN を送信するミニポート ドライバーに構造体有効にするか、PIN の設定を無効にする、SIM で PIN を変更したりします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 参照してください[WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)詳細については、この OID を使用します。
@@ -46,7 +46,7 @@ CDMA ベースのデバイスでは、PIN1 として電源投入時のデバイ�
 
 MB API には、PIN1 だけでなく他のピンがサポートされています。 ただし、サード パーティ製接続マネージャー/GUI は、Windows 接続マネージャー/GUI PIN1 のみをサポートするためにインストールする必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

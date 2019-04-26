@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9fb4383d35237faeb57585798523f60983256e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349602"
 ---
 # <a name="hsplugindeinit-function"></a>HS\_プラグイン\_DEINIT 関数
 
@@ -45,7 +45,7 @@ ms.locfileid: "56537393"
 
 受け取る通知することがアンロードされると、プラグインが、現在のアクティビティを完了、必要な場合に、状態を保存する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

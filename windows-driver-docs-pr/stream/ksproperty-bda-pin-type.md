@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b776208930c94c6873138fd9928035c635fc7cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342143"
 ---
 # <a name="kspropertybdapintype"></a>KSPROPERTY\_BDA\_PIN\_型
 
@@ -51,7 +51,7 @@ ms.locfileid: "56536130"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>ULONG</p></td>
@@ -68,7 +68,7 @@ ms.locfileid: "56536130"
 
 ネットワーク プロバイダーが KSMETHOD を使用してフィルターの暗証番号 (pin) を作成するときに\_BDA\_作成\_PIN\_ファクトリ、フィルターの BDA テンプレートのトポロジに含まれる暗証番号 (pin) の種類の一覧からの暗証番号 (pin) 型を指定します。 KSPROPERTY\_BDA\_PIN\_型は、このピンの型を返します。 BDA テンプレート トポロジでは、フィルターの各ピンの型は 1 回だけが実際のトポロジで複数回が発生することができます。 暗証番号 (pin) の型の値は、暗証番号 (pin) の型の 0 から始まる配列内の要素のインデックスに対応します。 このピンの型の配列は配列 KSPIN の\_記述子\_EX 構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: FBA506EC-4E9F-4964-9C9C-FF4910DDA908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ca974256b6d9ea1e83a3e9f52896a88848fb8e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349505"
 ---
 # <a name="hyper-v-extensible-switch-send-and-receive-flags"></a>Hyper-V 拡張可能スイッチ送信および受信フラグ
 
@@ -42,7 +42,7 @@ NDIS を呼び出すと[ *FilterSendNetBufferLists*](https://msdn.microsoft.com/
 
 キャプチャおよび拡張機能をフィルター処理は、このフラグを使用できません。
 
-**注**  転送拡張機能では、非 NVGRE パケットのパケットの宛先ポートのみを決定します。 パケットが、NVGRE パケットの場合は、HYPER-V ネットワーク仮想化 (HNV) のコンポーネントは、パケットの宛先ポートを決定し、パケットを転送します。 詳細については、[ハイブリッド転送](hybrid-forwarding.md)を参照してください。
+**注**  転送拡張機能では、非 NVGRE パケットのパケットの宛先ポートのみを決定します。 パケットが、NVGRE パケットの場合は、HYPER-V ネットワーク仮想化 (HNV) のコンポーネントは、パケットの宛先ポートを決定し、パケットを転送します。 詳細については、次を参照してください。[ハイブリッド転送](hybrid-forwarding.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ブロックを登録するには、IRP_MN_REGINFO および IRP_MN_REGINFO_EX の処理
-description: ブロックを登録するには、IRP_MN_REGINFO および IRP_MN_REGINFO_EX の処理
+title: ブロックを登録するための IRP_MN_REGINFO と IRP_MN_REGINFO_EX の処理
+description: ブロックを登録するための IRP_MN_REGINFO と IRP_MN_REGINFO_EX の処理
 ms.assetid: 2c17fc63-3c33-4d03-8c46-8d56242556d1
 keywords:
 - WMI の WDK カーネルでは、WMI に登録します。
@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60860c450401e03b7f38c53bde34a3fa836b7c72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350050"
 ---
 # <a name="handling-irpmnreginfo-and-irpmnreginfoex-to-register-blocks"></a>IRP の処理\_MN\_REGINFO と IRP\_MN\_REGINFO\_ブロックを登録する例。
 
@@ -49,7 +49,7 @@ ms.locfileid: "56537183"
 
     -   ブロックを表す GUID。
 
-    -   ブロックが収集する高コストかどうかなど、インスタンス名と、ブロックの他の特性に関する情報を提供するフラグ。 詳細については、[WMI 登録フラグ](wmi-registration-flags.md)を参照してください。
+    -   ブロックが収集する高コストかどうかなど、インスタンス名と、ブロックの他の特性に関する情報を提供するフラグ。 詳細については、次を参照してください。 [WMI 登録フラグ](wmi-registration-flags.md)します。
 
     静的なインスタンスの名前を持つ、ブロックが登録されている場合、静的なインスタンス名のデータ ブロックを指定する次のメンバーのいずれかのドライバーを設定します。
 

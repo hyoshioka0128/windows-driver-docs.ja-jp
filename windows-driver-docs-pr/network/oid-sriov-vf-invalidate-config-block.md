@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6437cd91a0dca9486ab1ee6053db96a832fe6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351266"
 ---
 # <a name="oidsriovvfinvalidateconfigblock"></a>OID\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロック
 
@@ -59,7 +59,7 @@ NDIS ミニポート ドライバーおよび無効な VF 構成データの通�
 
     3.  VF ドライバーが、OID を処理するときに\_SRIOV\_VF\_INVALIDATE\_CONFIG\_ブロックの要求、指定した VF 構成要素からデータを読み取ることです。
 
-シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、[SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)を参照してください。
+シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

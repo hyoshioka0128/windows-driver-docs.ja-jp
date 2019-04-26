@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 420532a2f91190afcc0d70bf7dcfdf2e43f42f30
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353710"
 ---
 # <a name="option-attributes-for-the-memory-feature"></a>Memory 機能のオプション属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "57464342"
 
 
 
-次の表は、メモリの機能に関連付けられている属性を一覧表示します。 メモリ機能の詳細については、[標準機能](standard-features.md)を参照してください。
+次の表は、メモリの機能に関連付けられている属性を一覧表示します。 メモリ機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
 
 <table>
 <colgroup>
@@ -55,11 +55,11 @@ ms.locfileid: "57464342"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
-例については、と共に、これらの属性を使用の詳細については、[プリンター メモリの構成を記述する](describing-printer-memory-configurations.md)を参照してください。
+例については、と共に、これらの属性を使用の詳細については、次を参照してください。[プリンター メモリの構成を記述する](describing-printer-memory-configurations.md)します。
 
-追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
+追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
 
  
 

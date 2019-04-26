@@ -1,6 +1,6 @@
 ---
-title: 接続し、ファイル制御ブロック管理ルーチン
-description: 接続し、ファイル制御ブロック管理ルーチン
+title: 接続とファイル制御ブロック管理ルーチン
+description: 接続とファイル制御ブロック管理ルーチン
 ms.assetid: e56c0cba-7352-4964-b067-57bc90c7f911
 keywords:
 - WDK RDBSS をブロックします。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b9241ada099d4a45015a829de53e679116eed5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351436"
 ---
-# <a name="connection-and-file-control-block-management-routines"></a>接続し、ファイル制御ブロック管理ルーチン
+# <a name="connection-and-file-control-block-management-routines"></a>接続とファイル制御ブロック管理ルーチン
 
 
 接続し、ファイル制御ブロック管理ルーチンは、接続およびファイル制御ブロックを表すために使用する構造の管理に RDBSS によって使用されます。
@@ -141,7 +141,7 @@ RDBSS は、接続とネットワーク ミニ リダイレクター ドライ�
 
  
 
-多くのマクロも定義されてラッパーを提供する、 [ **RxReference** ](https://msdn.microsoft.com/library/windows/hardware/ff554688)と[ **RxDeference** ](https://msdn.microsoft.com/library/windows/hardware/ff554388)のルーチンデバッグします。 これらのマクロの詳細については、[の診断およびデバッグ](diagnostics-and-debugging.md)を参照してください。
+多くのマクロも定義されてラッパーを提供する、 [ **RxReference** ](https://msdn.microsoft.com/library/windows/hardware/ff554688)と[ **RxDeference** ](https://msdn.microsoft.com/library/windows/hardware/ff554388)のルーチンデバッグします。 これらのマクロの詳細については、次を参照してください。[の診断およびデバッグ](diagnostics-and-debugging.md)します。
 
  
 

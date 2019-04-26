@@ -1,16 +1,16 @@
 ---
-Description: Learn about the source code for KMDF-based USB client driver.
+Description: KMDF ベースの USB クライアント ドライバーのソース コードについて説明します。
 title: USB クライアント ドライバー コードの構造 (KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 739708ddef79aca1fba280b640b61615cb5da598
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355153"
 ---
-# <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>USB クライアント ドライバー コード構造 (KMDF) を理解します。
+# <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>USB クライアント ドライバー コード構造について (KMDF)
 
 
 このトピックでは、USB クライアント ドライバーの aKMDF ベースのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー**Microsoft Visual Studio 2012 に含まれているテンプレートです。
@@ -22,7 +22,7 @@ ms.locfileid: "56549767"
 -   [キュー ソース コード](#queue)
 -   [関連トピック](#related-topics)
 
-KMDF のテンプレート コードを生成する方法の詳細については、[、最初の USB クライアント ドライバー (KMDF) を書き込む方法](tutorial--write-your-first-usb-client-driver--kmdf-.md)を参照してください。
+KMDF のテンプレート コードを生成する方法の詳細については、次を参照してください。 [、最初の USB クライアント ドライバー (KMDF) を書き込む方法](tutorial--write-your-first-usb-client-driver--kmdf-.md)します。
 
 ## <a name="driver-source-code"></a>ドライバーのソース コード
 
@@ -55,7 +55,7 @@ Wdfusb.h には、構造体と、フレームワークによって提供され�
 
 Device.h、Queue.h、および Trace.h は WDK に含まれていません。 これらのヘッダー ファイルでは、テンプレートによって生成され、このトピックの後半で説明されています。
 
-ロールの種類の宣言機能を提供する Driver.h の次のブロック、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン、および[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)[ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)イベント コールバック ルーチン。 すべてのこれらのルーチンは、ドライバーによって実装されます。 ロールの種類では、Static Driver Verifier (SDV) ドライバーのソース コードを分析するのに役立ちます。 ロールの種類の詳細については、[を使用して関数の役割の種類 KMDF ドライバーで関数を宣言する](https://msdn.microsoft.com/library/windows/hardware/ff544643)を参照してください。
+ロールの種類の宣言機能を提供する Driver.h の次のブロック、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン、および[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)[ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)イベント コールバック ルーチン。 すべてのこれらのルーチンは、ドライバーによって実装されます。 ロールの種類では、Static Driver Verifier (SDV) ドライバーのソース コードを分析するのに役立ちます。 ロールの種類の詳細については、次を参照してください。[を使用して関数の役割の種類 KMDF ドライバーで関数を宣言する](https://msdn.microsoft.com/library/windows/hardware/ff544643)します。
 
 ```ManagedCPlusPlus
 DRIVER_INITIALIZE DriverEntry;
@@ -73,7 +73,7 @@ Driver.c、実装ファイルには、次を使用するコードのブロック
 #endif
 ```
 
-注意[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)イベント コールバック ルーチンがページとしてマークされている一方、INIT、としてマークされます。 INIT セクションでは、ことを示しますの実行可能コード*DriverEntry*ページングし、破棄からドライバーを返し、すぐにその*DriverEntry*します。 ページ セクションでは、すべての時間です。 物理メモリ内に、コードがないことを示します使用中でないときに、ページング ファイルに記述できます。 詳細については、[ロック ページング可能なコードまたはデータ](https://msdn.microsoft.com/library/windows/hardware/ff554307)を参照してください。
+注意[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)イベント コールバック ルーチンがページとしてマークされている一方、INIT、としてマークされます。 INIT セクションでは、ことを示しますの実行可能コード*DriverEntry*ページングし、破棄からドライバーを返し、すぐにその*DriverEntry*します。 ページ セクションでは、すべての時間です。 物理メモリ内に、コードがないことを示します使用中でないときに、ページング ファイルに記述できます。 詳細については、次を参照してください。[ロック ページング可能なコードまたはデータ](https://msdn.microsoft.com/library/windows/hardware/ff554307)します。
 
 Windows を割り当てるには、ドライバーが読み込まれると、すぐに、 [**ドライバー\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff544174)ドライバーを表す構造体です。 ドライバーのエントリ ポイントのルーチンを呼び出して[ *DriverEntry*](https://msdn.microsoft.com/library/windows/hardware/ff544113)、構造体へのポインターを渡します。 すべてのドライバーがという名前のルーチンを実装する必要がありますので、Windows は、ルーチンの名前で検索、 *DriverEntry*します。 ルーチンは、ドライバーの初期化タスクを実行し、フレームワークに、ドライバーのイベントのコールバック ルーチンを指定します。
 
@@ -174,7 +174,7 @@ MyUSBDriver_EvtDriverContextCleanup(
 }
 ```
 
-USB ドライバー スタックによって、デバイスが認識した後、バス ドライバーは、デバイスの物理デバイス オブジェクト (PDO) を作成し、[デバイス] ノードで PDO を関連付けます。 [デバイス] ノードが、スタックの構成、PDO は下部にします。 各スタックは、1 つの PDO があり、フィルター デバイス オブジェクトが (DOs をフィルター処理) と、関数のデバイス オブジェクト (FDO) 上に持つことができます。 詳細については、[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/hh406296)を参照してください。
+USB ドライバー スタックによって、デバイスが認識した後、バス ドライバーは、デバイスの物理デバイス オブジェクト (PDO) を作成し、[デバイス] ノードで PDO を関連付けます。 [デバイス] ノードが、スタックの構成、PDO は下部にします。 各スタックは、1 つの PDO があり、フィルター デバイス オブジェクトが (DOs をフィルター処理) と、関数のデバイス オブジェクト (FDO) 上に持つことができます。 詳細については、次を参照してください。[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/hh406296)します。
 
 次に示します。 テンプレートのドライバー、MyUSBDriver デバイス スタック\_.sys します。
 
@@ -286,7 +286,7 @@ MyUSBDriver_CreateDevice(
 
     -   ドライバーのデバイス コンテキストの構造体へのポインターを指定します。 ポインターを設定する必要があります、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)呼び出すことによって初期化される構造体、 [ **WDF\_オブジェクト\_属性\_INIT\_コンテキスト\_型**](https://msdn.microsoft.com/library/windows/hardware/ff552400_init_context_type)マクロ。
 
-        デバイス コンテキスト (デバイスの拡張機能とも呼ばれます) は、特定のデバイス オブジェクトに関する情報を格納するための (クライアント ドライバーで定義された) データ構造です。 クライアント ドライバーは、フレームワークには、そのデバイス コンテキストへのポインターを渡します。 フレームワークは、構造体のサイズに基づいて、メモリのブロックを割り当て、そのメモリ位置へのポインターを framework デバイス オブジェクトに格納します。 クライアント ドライバーは、ポインターを使用して、アクセスして、デバイス コンテキストのメンバーに情報を格納することができます。 デバイス コンテキストの詳細については、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
+        デバイス コンテキスト (デバイスの拡張機能とも呼ばれます) は、特定のデバイス オブジェクトに関する情報を格納するための (クライアント ドライバーで定義された) データ構造です。 クライアント ドライバーは、フレームワークには、そのデバイス コンテキストへのポインターを渡します。 フレームワークは、構造体のサイズに基づいて、メモリのブロックを割り当て、そのメモリ位置へのポインターを framework デバイス オブジェクトに格納します。 クライアント ドライバーは、ポインターを使用して、アクセスして、デバイス コンテキストのメンバーに情報を格納することができます。 デバイス コンテキストの詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
 
         後に、 [ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)呼び出しが完了すると、クライアント ドライバーがデバイスのフレームワークによって割り当てられたメモリ ブロックへのポインターを格納する新しいフレームワーク デバイス オブジェクトを識別するハンドルを受け取りますコンテキスト。 クライアント ドライバーられるようになりましたポインター デバイス コンテキストを呼び出すことによって、 **WdfObjectGet\_デバイス\_コンテキスト**マクロ。
 
@@ -347,7 +347,7 @@ Device.c 実装ファイルには、次を使用するコードのブロック�
 #endif
 ```
 
-実装で[ *EvtDevicePrepareHardware*](https://msdn.microsoft.com/library/windows/hardware/ff540880)、クライアント ドライバーが USB に固有の初期化タスクを実行します。 これらのタスクには、クライアント ドライバーの登録、特定の USB I/O ターゲットのオブジェクトの初期化および USB 構成の選択が含まれます。 次の表では、フレームワークによって提供される特殊な I/O ターゲット オブジェクトを示します。 詳細については、[USB I/O ターゲット](https://msdn.microsoft.com/library/windows/hardware/ff544752)を参照してください。
+実装で[ *EvtDevicePrepareHardware*](https://msdn.microsoft.com/library/windows/hardware/ff540880)、クライアント ドライバーが USB に固有の初期化タスクを実行します。 これらのタスクには、クライアント ドライバーの登録、特定の USB I/O ターゲットのオブジェクトの初期化および USB 構成の選択が含まれます。 次の表では、フレームワークによって提供される特殊な I/O ターゲット オブジェクトを示します。 詳細については、次を参照してください。 [USB I/O ターゲット](https://msdn.microsoft.com/library/windows/hardware/ff544752)します。
 
 | USB I/O ターゲット オブジェクト (ハンドル)                   | 呼び出すことによって、ハンドルを取得してください.                                                          | 説明                                                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -449,7 +449,7 @@ MyUSBDriver_EvtDevicePrepareHardware(
 
         クライアント ドライバーを呼び出す場合[ **WdfUsbTargetDeviceCreateWithParameters**](https://msdn.microsoft.com/library/windows/hardware/hh439428)、USB ドライバー スタックは、すべての翻訳が呼び出すことによって割り当てられている前提としています[  **。WdfUsbTargetDeviceCreateUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)または[ **WdfUsbTargetDeviceCreateIsochUrb**](https://msdn.microsoft.com/library/windows/hardware/hh439420)します。 これらのメソッドによって割り当てられている翻訳には、高速化を処理するため、USB ドライバー スタックで使用される非透過の URB コンテキスト ブロックがあります。 クライアント ドライバーには、これらのメソッドによって割り当てられていない、URB が使用して、USB ドライバーのバグチェックが生成されます。
 
-        URB 割り当ての詳細については、[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)を参照してください。
+        URB 割り当ての詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
 
     -   説明する規則のセットに準拠するには、クライアント ドライバーは予定はありません[ベスト プラクティス。翻訳を使用して](usb-client-driver-contract-in-windows-8.md)します。
 
@@ -593,7 +593,7 @@ MyUSBDriver_EvtIoDeviceControl(
 要求 (およびその入力と出力のバッファー) を保持している framework 要求オブジェクトにハンドルを渡すために、フレームワークが、クライアント ドライバーのイベントのコールバックを呼び出すと、アプリケーションによって送信されます。 さらに、要求を格納するフレームワークのキュー オブジェクトへのハンドルを送信します。 イベントのコールバックでは、クライアント ドライバーが要求を処理に応じて。 テンプレート コードは、単に、要求を完了します。 クライアント ドライバーより複雑なタスクを実行できます。 たとえば、アプリケーションでは、特定のデバイス情報を要求している場合イベントのコールバック、クライアント ドライバーを USB 制御の要求を作成し、送信要求されたデバイス情報を取得する USB ドライバー スタックに。 USB 制御の要求は、後ほど[USB 制御転送](usb-control-transfer.md)します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB クライアント ドライバー開発を入門](getting-started-with-usb-client-driver-development.md)  
+[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
 [WinUSB](winusb.md)  
 [最初、USB クライアント ドライバー (UMDF) の記述します。](implement-driver-entry-for-a-usb-driver--umdf-.md)  
 [最初、USB クライアント ドライバー (KMDF) の記述します。](tutorial--write-your-first-usb-client-driver--kmdf-.md)  

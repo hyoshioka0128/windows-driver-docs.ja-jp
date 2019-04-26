@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 622a0d68c82afff9ec669355bc6e2015f1f17421
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355011"
 ---
 # <a name="printer-connected-to-a-usb-port"></a>USB ポートに接続されているプリンター
 
@@ -39,7 +39,7 @@ USBPRINT\Company_NameModelNam1234
 
 ![usb プリンターのプラグ アンド プレイ](images/pnpusb01.png)
 
-次の例では、エントリ、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454) USB またはその他のバスの種類のプリンター ドライバーをインストールに使用できます。 最初の行は、USB バスでプリンターがインストールされている場合に、ランク 0 のハードウェア ID の一致を保証します。 2 行目は、別のバス上のプリンターがインストールされている場合、ランク 0 のハードウェア ID の一致を保証します。 詳細については、[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)を参照してください。
+次の例では、エントリ、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454) USB またはその他のバスの種類のプリンター ドライバーをインストールに使用できます。 最初の行は、USB バスでプリンターがインストールされている場合に、ランク 0 のハードウェア ID の一致を保証します。 2 行目は、別のバス上のプリンターがインストールされている場合、ランク 0 のハードウェア ID の一致を保証します。 詳細については、次を参照してください。[カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする](installing-a-custom-plug-and-play-printer-driver.md)します。
 
 ```cpp
  "Model Name XYZ" = Install_Section_XYZ, USBPRINT\Company_NameModelNam1234, Company_NameModelNam1234 ; plus any other compatible IDs  

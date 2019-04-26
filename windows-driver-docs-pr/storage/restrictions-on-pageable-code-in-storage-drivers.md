@@ -1,6 +1,6 @@
 ---
-title: ページング可能なコード記憶装置ドライバーの制約
-description: ページング可能なコード記憶装置ドライバーの制約
+title: ストレージ ドライバーでのページング可能コードの制約
+description: ストレージ ドライバーでのページング可能コードの制約
 ms.assetid: 1958f22f-5563-41e9-9c3f-dec8a4ac80c0
 keywords:
 - ストレージ ドライバー WDK、ページング可能なコードの制限
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cedb4d9f3200c276d0860fa9f7ca4c405966b22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346550"
 ---
-# <a name="restrictions-on-pageable-code-in-storage-drivers"></a>ページング可能なコード記憶装置ドライバーの制約
+# <a name="restrictions-on-pageable-code-in-storage-drivers"></a>ストレージ ドライバーでのページング可能コードの制約
 
 
 ## <span id="ddk_restrictions_on_pageable_code_in_storage_drivers_kg"></span><span id="DDK_RESTRICTIONS_ON_PAGEABLE_CODE_IN_STORAGE_DRIVERS_KG"></span>
@@ -32,7 +32,7 @@ Microsoft では、する必要がすべて*ストレージ*IOCTL 要求はパ�
 
 ページングのパスでの記憶域デバイスを管理するドライバーに特別な考慮事項が適用されます。 ドライバーが、「ページング パス」ページング ファイルの I/O 操作に含まれているかどうか。 ページングのパスが記憶装置ドライバーの場合、 [ **DispatchPower** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRP の日常的な\_MJ\_POWER 要求をページングすることはできません。
 
-既定では、カーネル モード ドライバー用のコードはページング可能なもがグローバル メモリをページング可能なカーネル モード ドライバーで使用します。 ページング可能なコードを作成する方法については、[ドライバー コードの作成やページング可能なデータ](https://msdn.microsoft.com/library/windows/hardware/ff554349)を参照してください。
+既定では、カーネル モード ドライバー用のコードはページング可能なもがグローバル メモリをページング可能なカーネル モード ドライバーで使用します。 ページング可能なコードを作成する方法については、次を参照してください。[ドライバー コードの作成やページング可能なデータ](https://msdn.microsoft.com/library/windows/hardware/ff554349)します。
 
  
 

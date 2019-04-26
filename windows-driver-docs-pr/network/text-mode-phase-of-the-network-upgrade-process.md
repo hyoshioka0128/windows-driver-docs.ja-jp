@@ -1,6 +1,6 @@
 ---
-title: ネットワークのアップグレード プロセスのテキスト モードのフェーズ
-description: ネットワークのアップグレード プロセスのテキスト モードのフェーズ
+title: ネットワーク アップグレード プロセスのテキスト モード フェーズ
+description: ネットワーク アップグレード プロセスのテキスト モード フェーズ
 ms.assetid: 4878e0ae-194a-459c-bebf-75259b1eed2d
 keywords:
 - ネットワーク コンポーネントをアップグレード WDK、フェーズ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f567b813392aead3e22c1c1be5ecb9c40bb28060
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350822"
 ---
-# <a name="text-mode-phase-of-the-network-upgrade-process"></a>ネットワークのアップグレード プロセスのテキスト モードのフェーズ
+# <a name="text-mode-phase-of-the-network-upgrade-process"></a>ネットワーク アップグレード プロセスのテキスト モード フェーズ
 
 
 

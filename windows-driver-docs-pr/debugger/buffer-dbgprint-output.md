@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db5634202fcb99544309cf2304aebdc3ddad9aa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347848"
 ---
 # <a name="buffer-dbgprint-output"></a>Buffer DbgPrint Output
 
@@ -52,7 +52,7 @@ ms.locfileid: "56570689"
 
 デバッガーの出力を抑制、ときに、カーネル デバッガーで自動的に表示されません。 ただし、メッセージは常に送信、による DbgPrint バッファーを使用してアクセスできる、 [ **! による dbgprint** ](-dbgprint.md)デバッガー拡張機能。
 
-デバッガーと通信する関数については、[デバッガーに送信する出力](sending-output-to-the-debugger.md)を参照してください。
+デバッガーと通信する関数については、次を参照してください。[デバッガーに送信する出力](sending-output-to-the-debugger.md)します。
 
  
 

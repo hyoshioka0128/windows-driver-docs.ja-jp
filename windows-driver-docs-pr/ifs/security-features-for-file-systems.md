@@ -1,19 +1,19 @@
 ---
-title: ファイル システムのセキュリティ機能
-description: ファイル システムのセキュリティ機能
+title: ファイル システム向けのセキュリティ機能
+description: ファイル システム向けのセキュリティ機能
 ms.assetid: 344083d5-781a-46e3-ab90-b70e57d07dd0
 keywords:
 - セキュリティ WDK ファイル システムの機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5c946b7a0bd284656990cec4583e29358d1f628
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344462"
 ---
-# <a name="security-features-for-file-systems"></a>ファイル システムのセキュリティ機能
+# <a name="security-features-for-file-systems"></a>ファイル システム向けのセキュリティ機能
 
 
 ## <span id="ddk_security_features_for_file_systems_if"></span><span id="DDK_SECURITY_FEATURES_FOR_FILE_SYSTEMS_IF"></span>

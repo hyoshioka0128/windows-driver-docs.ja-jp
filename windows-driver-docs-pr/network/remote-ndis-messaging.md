@@ -1,19 +1,19 @@
 ---
-title: リモートの NDIS メッセージング
-description: リモートの NDIS メッセージング
+title: リモート NDIS メッセージング
+description: リモート NDIS メッセージング
 ms.assetid: 6364a9a1-c65f-463d-971b-cf94cd2a5cde
 keywords:
 - リモートの NDIS WDK ネットワーク、メッセージング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1c06267e3edc5937ae3161c2683ad1a10f41dd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350836"
 ---
-# <a name="remote-ndis-messaging"></a>リモートの NDIS メッセージング
+# <a name="remote-ndis-messaging"></a>リモート NDIS メッセージング
 
 
 

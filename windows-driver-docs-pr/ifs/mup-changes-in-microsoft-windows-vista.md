@@ -1,6 +1,6 @@
 ---
-title: Microsoft Windows vista MUP の変更点
-description: Microsoft Windows vista MUP の変更点
+title: Microsoft Windows Vista における MUP の変更点
+description: Microsoft Windows Vista における MUP の変更点
 ms.assetid: 8ca2f9bc-14f1-45d3-a397-f3e5459cf8ec
 keywords:
 - カーネル ネットワーク リダイレクター WDK、MUP
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45524f2823bda74db343326487a536f2a4014b12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352879"
 ---
-# <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows vista MUP の変更点
+# <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows Vista における MUP の変更点
 
 
 Windows Vista では、さまざまなネットワーク リダイレクターに影響を与える複数 UNC プロバイダー (MUP) の変更を実装します。

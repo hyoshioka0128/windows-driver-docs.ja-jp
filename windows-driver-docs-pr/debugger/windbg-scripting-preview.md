@@ -4,11 +4,11 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 04/10/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45b2b80bf9d3514ca9bdc11a0d8c657518791c16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353061"
 ---
 # <a name="windbg-preview---scripting"></a>WinDbg Preview - Scripting 
 
@@ -55,7 +55,7 @@ JavaScript の使用に関する詳細については、これらのトピック
 </AutoVisualizer>
 ```
 
-NatVis の使用方法の詳細については、[に NatVis デバッガー オブジェクト](native-debugger-objects-in-natvis.md)を参照してください。
+NatVis の使用方法の詳細については、次を参照してください。[に NatVis デバッガー オブジェクト](native-debugger-objects-in-natvis.md)します。
 
  
 ---

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 8bff2419cd0812bd81c0f462218fcd52c77b5d13
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359042"
 ---
 # <a name="wditlvsaerequesttype"></a>WDI_TLV_SAE_REQUEST_TYPE
 
@@ -34,10 +34,10 @@ Uint32 型のサイズをバイト単位で。
 | --- | --- |
 | [**WDI_SAE_REQUEST_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_sae_request_type) | BSSID に送信する SAE 要求フレームの型。 |
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |
-| サポートされている最小のクライアント | Windows 10、バージョンが 1903 |
+| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
 | サポートされている最小のサーバー | Windows Server 2016 |
 | Header | Wditypes.hpp |

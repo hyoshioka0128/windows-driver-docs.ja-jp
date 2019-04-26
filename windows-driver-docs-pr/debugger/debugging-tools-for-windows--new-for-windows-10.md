@@ -5,17 +5,17 @@ ms.assetid: DCF1222F-6A67-463E-8C31-B7753CAFFC20
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b3f05b74821862e834ed98a82adbd3b048cf403
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350560"
 ---
-# <a name="debugging-tools-for-windows-new-for-windows-10"></a>Windows 用デバッグ ツールは:Windows 10 の新機能
+# <a name="debugging-tools-for-windows-new-for-windows-10"></a>Debugging Tools for Windows:Windows 10 の新機能
 
 ## <a name="span-idwindbgpreviewspanspan-idwindbgpreviewspanspan-idwindbgpreviewspanwindbg-preview"></a><span id="Windbg_Preview"></span><span id="windbg_preview"></span><span id="WINDBG_PREVIEW"></span>Windbg のプレビュー
 
-Windows デバッグ ツールの最新ニュースについては、[WinDbg Preview - 新](windbg-what-is-new-preview.md)を参照してください。
+Windows デバッグ ツールの最新ニュースについては、次を参照してください。 [WinDbg Preview - 新](windbg-what-is-new-preview.md)します。
 
 
 ## <a name="span-idwindows10version1703spanspan-idwindows10version1703spanspan-idwindows10version1703spanwindows10-version-1703"></a><span id="Windows_10__version_1703"></span><span id="windows_10__version_1703"></span><span id="WINDOWS_10__VERSION_1703"></span>Windows 10 バージョン 1703
@@ -68,7 +68,7 @@ Windows デバッグ ツールの最新ニュースについては、[WinDbg Pre
  
 ## <a name="looking-to-download-the-debugging-tools"></a>デバッグ ツールをダウンロードしようとしていますか。
 
-デバッグ ツールをダウンロードする方法の詳細については、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。
+デバッグ ツールをダウンロードする方法の詳細については、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。
 
 
 

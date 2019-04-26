@@ -1,19 +1,19 @@
 ---
-title: ログの比較を解釈します。
-description: ログの比較を解釈します。
+title: ログ比較の解釈
+description: ログ比較の解釈
 ms.assetid: fe2acdd5-00aa-4414-a59e-e6203ad48363
 keywords:
 - ログの比較を解釈する UMDH
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f223dab0c0d50915f715758a9302b53f6deb87b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357042"
 ---
-# <a name="interpreting-a-log-comparison"></a>ログの比較を解釈します。
+# <a name="interpreting-a-log-comparison"></a>ログ比較の解釈
 
 
 ## <span id="ddk_interpreting_a_log_comparison_dtools"></span><span id="DDK_INTERPRETING_A_LOG_COMPARISON_DTOOLS"></span>

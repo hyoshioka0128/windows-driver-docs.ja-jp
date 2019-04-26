@@ -7,11 +7,11 @@ keywords:
 - SIO_WSK_REGISTER_EXTENSION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 722f69616475e59f1a343f5895a9afd513b5fefd
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351678"
 ---
 # <a name="siowskregisterextension"></a>SIO\_WSK\_登録\_拡張機能
 
@@ -28,7 +28,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -41,7 +41,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 <td><p>SIO_WSK_REGISTER_EXTENSION</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -72,7 +72,7 @@ SIO\_WSK\_登録\_ソケット I/O 制御操作の拡張機能を使用すると
 
 ディスパッチ テーブル構造体の内容は、拡張機能インターフェイスに固有です。
 
-拡張機能インターフェイスを登録の詳細については、[拡張機能インターフェイスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff570461)を参照してください。
+拡張機能インターフェイスを登録の詳細については、次を参照してください。[拡張機能インターフェイスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff570461)します。
 
 <a name="requirements"></a>必要条件
 ------------

@@ -1,6 +1,6 @@
 ---
-title: XPS フィルターを実装します。
-description: XPS フィルターを実装します。
+title: XPS フィルターの実装
+description: XPS フィルターの実装
 ms.assetid: 681f533f-d6f6-43a3-be0b-10d8c1a6f12e
 keywords:
 - XPSDrv プリンター ドライバー WDK、モジュールを表示します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4b444e04e45231277c96e6798ea0bd3938e25ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340894"
 ---
-# <a name="implementing-xps-filters"></a>XPS フィルターを実装します。
+# <a name="implementing-xps-filters"></a>XPS フィルターの実装
 
 
 XPS のすべてのフィルターを実装する必要があります、 [IPrintPipelineFilter](https://msdn.microsoft.com/library/windows/hardware/ff554286)インターフェイス。
@@ -56,7 +56,7 @@ Microsoft XPS ドキュメントとストリーム インターフェイスを�
 
 -   フィルターをれたりするパイプラインで順不同のケースを処理する必要があります。 フィルターが想定されている順序では、クラッシュし、状況を適切に処理する必要があります。 フィルターは、別のフィルターに依存している場合、依存関係が指定されていない場合は、適切に状況を処理にする必要があります。
 
-非同期通知をフィルターに追加する方法の詳細については、[印刷フィルターで非同期通知](asynchronous-notifications-in-print-filters.md)を参照してください。
+非同期通知をフィルターに追加する方法の詳細については、次を参照してください。[印刷フィルターで非同期通知](asynchronous-notifications-in-print-filters.md)します。
 
  
 

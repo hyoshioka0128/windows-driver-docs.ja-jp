@@ -5,11 +5,11 @@ ms.assetid: 0CB6F5C9-4AA8-4745-A5FE-28440ADB0F11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c90fe2b6d2bcf681e8b5f6ebe7fe83ba0e1cb528
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355201"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境を設定します。
 
@@ -30,7 +30,7 @@ ms.locfileid: "56539266"
 -   USB ネットワーク アダプター
 -   (場合によっては HDMI ケーブル アダプター) で、モニター、HDMI ケーブル
 
-接続し、上記のハードウェアを設定する方法の詳細については、[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910.aspx)、まで、すべてのタスクを実行し、手順 4 を含むとを参照してください。
+接続し、上記のハードウェアを設定する方法の詳細については、次を参照してください。[サメ Cove ハードウェア開発ボード](https://msdn.microsoft.com/library/windows/hardware/dn745910.aspx)、まで、すべてのタスクを実行し、手順 4 を含むとします。
 
 前の段落で推奨される手順を正常に完了する場合は、開発環境が、次が今すぐ必要です。
 

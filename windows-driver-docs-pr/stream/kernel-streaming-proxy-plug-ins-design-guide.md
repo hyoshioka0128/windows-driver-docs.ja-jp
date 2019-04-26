@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e291b4ff1da8cbf70d69c1c29457e00b8fb3b23b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341208"
 ---
 # <a name="kernel-streaming-proxy-plug-ins-design-guide"></a>カーネル ストリーミング プロキシ プラグイン設計ガイド
 
@@ -32,7 +32,7 @@ ms.locfileid: "56530658"
 
 [プラグインのプロパティ ページ](property-page-plug-in.md)
 
-KS プロキシ COM インターフェイス、エクスポートされたヘルパー関数、およびアプリケーションとプラグインで使用される構造に関する詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
+KS プロキシ COM インターフェイス、エクスポートされたヘルパー関数、およびアプリケーションとプラグインで使用される構造に関する詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
 
  
 

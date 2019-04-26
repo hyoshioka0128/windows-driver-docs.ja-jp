@@ -1,17 +1,17 @@
 ---
-title: IEEE 802.1p の優先度レベル
-description: IEEE 802.1p の優先度レベル
+title: IEEE 802.1p 優先順位のレベル
+description: IEEE 802.1p 優先順位のレベル
 ms.assetid: C7EB3D85-544E-4898-A456-843621F6488D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92c91917211c16566728241d5999597a03d2e129
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349471"
 ---
-# <a name="ieee-8021p-priority-levels"></a>IEEE 802.1p の優先度レベル
+# <a name="ieee-8021p-priority-levels"></a>IEEE 802.1p 優先順位のレベル
 
 
 IEEE 802.1p は、IEEE 802.1 タスクで指定されたサービスの品質 (QoS) のトラフィックの優先順位付けに対処するグループ。 802.1p は、個別の IEEE 802.1 標準ではありませんが、IEEE 802.1 q の Annex G で定義されている-2005 standard。

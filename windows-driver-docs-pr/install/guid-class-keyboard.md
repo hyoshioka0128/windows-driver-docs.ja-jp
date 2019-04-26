@@ -15,23 +15,23 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 07c78de8a238b97a5a706af8369a529079ab913c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348231"
 ---
 # <a name="guidclasskeyboard"></a>GUID_CLASS_KEYBOARD
 
 
 GUID_CLASS_KEYBOARD は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)キーボード デバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_KEYBOARD** ](guid-devinterface-keyboard.md)このクラスの新しいインスタンスのクラス識別子。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WDK に用意されている HID サンプルには、キーボード クラス ドライバーが含まれています。 キーボード クラス ドライバーは GUID_CLASS_KEYBOARD を使用して、このデバイスのインターフェイス クラスのインスタンスを登録します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

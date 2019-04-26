@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d105b8218755279ceb7f442ff63f96c57c7127de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351661"
 ---
 # <a name="smgettargetmapping-function"></a>SM\_GetTargetMapping 関数
 
@@ -70,12 +70,12 @@ MS の種類の構造体の配列\_SMHBA\_SCSIENTRY オペレーティング シ
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この WMI メソッドは、ミリ秒に属する\_SM\_TargetInformationMethods WMI クラスです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: 入力バッファー順序例 5
-description: 入力バッファー順序例 5
+title: 入力バッファー順序の例 5
+description: 入力バッファー順序の例 5
 ms.assetid: f0ba80bb-ff84-4944-aae5-52eb0848edf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f61909e55eaf370fffe958f70998ea9eac8ce59b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350248"
 ---
-# <a name="input-buffer-order-example-5"></a>入力バッファー順序例 5
+# <a name="input-buffer-order-example-5"></a>入力バッファー順序の例 5
 
 
 ## <span id="ddk_input_buffer_order_example_5_gg"></span><span id="DDK_INPUT_BUFFER_ORDER_EXAMPLE_5_GG"></span>

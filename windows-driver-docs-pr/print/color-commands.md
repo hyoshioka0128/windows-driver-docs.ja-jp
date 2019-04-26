@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 233234cd9a43ad51d98479ddbe4a7e18e7621eac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351938"
 ---
 # <a name="color-commands"></a>色コマンド
 
@@ -97,7 +97,7 @@ ms.locfileid: "56537039"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
 ### <a href="" id="ddk-commands-for-controlling-printer-palettes-gg"></a>プリンターのパレットを制御するためのコマンド
 
@@ -159,7 +159,7 @@ ms.locfileid: "56537039"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
 ### <a href="" id="ddk-commands-for-selecting-pattern-brushes-gg"></a>パターンのブラシを選択するためのコマンド
 

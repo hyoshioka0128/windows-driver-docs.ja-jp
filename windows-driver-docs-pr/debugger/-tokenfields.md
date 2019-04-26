@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d0e0e7574e229e8edb9b26fc7f9d0eea43628b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339819"
 ---
 # <a name="tokenfields"></a>!tokenfields
 
@@ -55,7 +55,7 @@ ms.locfileid: "56579678"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-トークンの構造については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 この本は、いくつかの言語と国でできない場合があります。(Microsoft Windows SDK のドキュメントで説明されているユーザー モードのトークン構造は、若干異なる)。
+トークンの構造については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 この本は、いくつかの言語と国でできない場合があります。(Microsoft Windows SDK のドキュメントで説明されているユーザー モードのトークン構造は、若干異なる)。
 
 <a name="remarks"></a>コメント
 -------

@@ -1,17 +1,17 @@
 ---
-title: Multiplane オーバーレイ リソースの作成
+title: マルチプレーン オーバーレイ リソースの作成
 description: Multiplane オーバーレイを使用している場合は、Microsoft DirectX アプリ内に作成される割り当てにこれらの要件が適用されます。
 ms.assetid: B3E9BEF8-5CB8-45A3-9491-19AB1EA3D74F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac2cf5a648d676dc1580ad18ef2e77bfe6926c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345612"
 ---
-# <a name="multiplane-overlay-resource-creation"></a>Multiplane オーバーレイ リソースの作成
+# <a name="multiplane-overlay-resource-creation"></a>マルチプレーン オーバーレイ リソースの作成
 
 
 Multiplane オーバーレイを使用している場合は、Microsoft DirectX アプリ内に作成される割り当てにこれらの要件が適用されます。

@@ -4,11 +4,11 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e35ba5ffb7fa8bd170b1401e3e6b4a80987174
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353086"
 ---
 # <a name="windbg-preview---data-model"></a>WinDbg Preview - データ モデル 
 
@@ -67,7 +67,7 @@ Debugger.Sessions.First().Devices.DeviceTree.Flatten(n => n.Children).GroupBy(n 
 
 ---
  
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)
 

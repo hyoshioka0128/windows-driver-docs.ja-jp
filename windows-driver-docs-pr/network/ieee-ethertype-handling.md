@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f05f3fb28c0465f509f360ba8d12913cd9dda0d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349478"
 ---
 # <a name="ieee-ethertype-handling"></a>IEEE EtherType 処理
 
@@ -35,14 +35,14 @@ IHV 拡張機能の DLL には、処理され使用される EtherTypes を登�
 
 IHV 拡張機能の DLL を呼び出すことによって処理 EtherType を指定します、 [ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587)関数。 この関数を呼び出すときに IHV 拡張機能の DLL は次のガイドラインに従う必要があります。
 
--   IHV 拡張機能の DLL を呼び出すことができますのみ[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587)いつ関連付け前の操作を完了する前にします。 この操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
+-   IHV 拡張機能の DLL を呼び出すことができますのみ[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587)いつ関連付け前の操作を完了する前にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
 -   IHV 拡張機能の DLL は、0 個以上の配列のプライバシー例外の一覧を指定[ **DOT11\_プライバシー\_除外**](https://msdn.microsoft.com/library/windows/hardware/ff548756)構造体。 IHV 拡張機能の DLL が要求されていない場合[ **Dot11ExtSetEtherTypeHandling**](https://msdn.microsoft.com/library/windows/hardware/ff547587)、オペレーティング システムの既定値は空のアクセス ポイント (AP) と 802.11 の関連のプライバシーの除外対象のリスト。
     **注**  Windows Vista の IHV 拡張機能の DLL は、基本的なサービスのインフラストラクチャ (BSS) ネットワークの設定のみをサポートします。
 
      
 
--   IHV 拡張機能の DLL は、受信する 0 個以上の EtherTypes の一覧を登録します。 通常、DLL は、処理後の関連付け操作中にセキュリティ パケット EtherTypes を登録します。 この操作の詳細については、[後関連付け操作](post-association-operations.md)を参照してください。
+-   IHV 拡張機能の DLL は、受信する 0 個以上の EtherTypes の一覧を登録します。 通常、DLL は、処理後の関連付け操作中にセキュリティ パケット EtherTypes を登録します。 この操作の詳細については、次を参照してください。[後関連付け操作](post-association-operations.md)します。
 
     IHV 拡張機能の DLL が要求されていない場合[ **Dot11ExtSetEtherTypeHandling**](https://msdn.microsoft.com/library/windows/hardware/ff547587)、オペレーティング システムの既定値は、AP と 802.11 関連付けの登録済み EtherTypes の空のリスト。
 

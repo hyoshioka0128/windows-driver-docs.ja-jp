@@ -5,11 +5,11 @@ ms.assetid: fc61e950-14e5-4bc3-b425-8f22143b76d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad12e35ee9888389ce63f1a533e075d39ceff5ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352774"
 ---
 # <a name="wia-properties-for-segmentation-filters"></a>セグメンテーション フィルターの WIA プロパティ
 
@@ -17,7 +17,7 @@ ms.locfileid: "56579132"
 
 
 
-セグメント化フィルターは、いくつかの WIA プロパティに依存します。 不足している機能には次が含まれます。
+セグメント化フィルターは、いくつかの WIA プロパティに依存します。 次のようなクラスがあります。
 
 [**WIA\_IP\_XPOS**](https://msdn.microsoft.com/library/windows/hardware/ff552663)
 

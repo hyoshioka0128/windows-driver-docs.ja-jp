@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d1ce8036545de2526ec0bd0cd0679b74b290d10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354501"
 ---
 # <a name="kspropertyallocatorcontrolcapturecaps"></a>KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_キャップ
 
@@ -42,15 +42,15 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_CAPS プロ
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564269" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564269)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS_S</strong></a></p></td>
@@ -63,7 +63,7 @@ KSPROPERTY\_アロケーター\_コントロール\_キャプチャ\_CAPS プロ
 
 プロパティの値 (データの操作) は、ULONG、インターリーブのキャプチャはサポートされているかどうかを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d8658dc896b852bb854f887cd0112ed5613852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352636"
 ---
 # <a name="required-changer-miniclass-routines"></a>必須のチェンジャー ミニクラス ルーチン
 
@@ -41,7 +41,7 @@ ms.locfileid: "56580812"
 
 状態が返されるように、そのドライバーが、ルーチンを実装する必要がありますチェンジャーが指定したルーチンが含まれる機能をサポートしていない場合\_無効な\_デバイス\_を要求します。
 
-必須の詳細については **チェンジャー * * * Xxx*チェンジャー miniclass ドライバーでは、ルーチンを参照してください[チェンジャー Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551472)します。 デバイスに対する制御要求のチェンジャーに固有の I/O 制御コードの詳細については、[チェンジャー I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff551469)を参照してください。
+必須の詳細については **チェンジャー * * * Xxx*チェンジャー miniclass ドライバーでは、ルーチンを参照してください[チェンジャー Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551472)します。 デバイスに対する制御要求のチェンジャーに固有の I/O 制御コードの詳細については、次を参照してください。[チェンジャー I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff551469)します。
 
  
 

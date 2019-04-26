@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d231f8c14774d5f4c3e9af6839247504b368ec5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339657"
 ---
 # <a name="devproptypedouble"></a>DEVPROP_TYPE_DOUBLE
 
 
 Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPE_DOUBLE 識別子は、データ型が二重に型指定された IEEE 浮動小数点数を示す基本データ型識別子を表します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DEVPROP_TYPE_DOUBLE は、のみと組み合わせることができます、 [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)プロパティ データ型の修飾子。

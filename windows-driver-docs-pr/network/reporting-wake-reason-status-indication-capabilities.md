@@ -1,17 +1,17 @@
 ---
-title: レポートのウェイク アップの理由の状態を示す値機能
-description: レポートのウェイク アップの理由の状態を示す値機能
+title: NDIS ウェイク理由状態表示機能のレポート
+description: NDIS ウェイク理由状態表示機能のレポート
 ms.assetid: A72D04F7-EB09-4B1B-9AF5-7FEBC2514CE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01595a4a45e6ec441fa339af107be0cc27dad5cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349425"
 ---
-# <a name="reporting-wake-reason-status-indication-capabilities"></a>レポートのウェイク アップの理由の状態を示す値機能
+# <a name="reporting-wake-reason-status-indication-capabilities"></a>NDIS ウェイク理由状態表示機能のレポート
 
 
 NDIS 6.30 以降、ミニポート ドライバー報告する必要がある NDIS ウェイク アップの理由の状態を示す値を発行できるかどうか ([**NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808))、次のいずれかによって発生したウェイク アップのイベントを報告します。
@@ -57,11 +57,11 @@ NDIS がドライバーを呼び出すときに[ *MiniportInitializeEx* ](https:
 
 3.  ミニポート ドライバーの呼び出し、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)の電源管理機能を登録する関数。 ミニポート ドライバーでは、この関数を呼び出しとき、に、設定、 *MiniportAttributes*パラメーターのアドレスを[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体。
 
-ウェイク アップの理由のステータスを示す値機能を報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
+ウェイク アップの理由のステータスを示す値機能を報告するミニポート ドライバーによって使用されるメソッドは、電源管理機能を報告するための NDIS 6.20 が動作方法に基づきます。 この方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
 
-アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
+アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
-電源管理機能のレポート方法の詳細については、[電源管理機能の報告](reporting-power-management-capabilities.md)を参照してください。
+電源管理機能のレポート方法の詳細については、次を参照してください。[電源管理機能の報告](reporting-power-management-capabilities.md)します。
 
  
 

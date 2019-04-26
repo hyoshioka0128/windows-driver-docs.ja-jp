@@ -1,6 +1,6 @@
 ---
-title: 保護レベルに優先順位を割り当てる
-description: 保護レベルに優先順位を割り当てる
+title: 保護レベルへの優先順位の割り当て
+description: 保護レベルへの優先順位の割り当て
 ms.assetid: 87a63d30-4aa2-4835-87bc-1acb062bde26
 keywords:
 - 保護レベルの優先順位を割り当て、WDK の表示
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b55f594291ec36d8e6c400ce03aeb59994d001
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350322"
 ---
-# <a name="assigning-precedence-to-protection-levels"></a>保護レベルに優先順位を割り当てる
+# <a name="assigning-precedence-to-protection-levels"></a>保護レベルへの優先順位の割り当て
 
 
 優先順位の値は、各保護の種類の場合は、各保護レベルに割り当てられます。 これにより、物理出力は、2 つ以上の保護されている出力が物理的な出力に関連付けられ、保護された各出力が別の保護レベルがある場合に使用する保護レベルを決定できます。

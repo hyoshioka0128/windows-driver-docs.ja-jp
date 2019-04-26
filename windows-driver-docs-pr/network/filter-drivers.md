@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c25ae2df670fe092c016e70e9a92c3763e4c2220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350023"
 ---
 # <a name="faster-filter-drivers"></a>高速のフィルター ドライバー
 
@@ -30,7 +30,7 @@ NDIS 6.x フィルター ドライバー モデルには、NDIS 5.x フィルタ
 
 -   NDIS 6.0 とそれ以降のフィルター ドライバーが動的に挿入したりバインド解除を行うことがなく実行時にドライバー スタックから削除します。 このような動的操作が発生する前に、NDIS 6.0 には、スタック内のすべての NDIS ドライバーが一時停止します。 NDIS は、再構成が完了すると、スタックを再起動します。
 
-NDIS 6.0 フィルター ドライバーの詳細については、[NDIS 6.0 のフィルター ドライバー](ndis-filter-drivers.md)を参照してください。
+NDIS 6.0 フィルター ドライバーの詳細については、次を参照してください。 [NDIS 6.0 のフィルター ドライバー](ndis-filter-drivers.md)します。
 
  
 

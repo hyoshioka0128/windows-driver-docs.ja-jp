@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d587ea9ab9ff4985d8004e4024044999a77a3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340042"
 ---
 # <a name="wiaipspagewidth"></a>WIA\_IP\_ページ\_幅
 
@@ -30,9 +30,9 @@ WIA\_IP\_ページ\_WIDTH プロパティには、選択した状態で 1/1000 �
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションは、WIA を読み取ります\_IP\_ページ\_スキャンされているページの物理的なサイズを決定する幅。 エクステント設定が既知のページ サイズと異なる場合、このプロパティは、ページの幅を報告が[ **WIA\_IP\_ページ\_サイズ**](wia-ips-page-size.md)プロパティに設定WIA\_ページ\_カスタム。

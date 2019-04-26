@@ -1,5 +1,5 @@
 ---
-title: 条件のデータ型をフィルター処理
+title: フィルター条件データ型
 description: このセクションでは、フィルター条件のデータ型について説明します。
 ms.assetid: 43810fc0-f386-4a21-9229-c8c8f8d6710f
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3f6d1796ea469cd3849cde750a6fc9b7709d21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350002"
 ---
-# <a name="filtering-condition-data-types"></a>条件のデータ型をフィルター処理
+# <a name="filtering-condition-data-types"></a>フィルター条件データ型
 
 各フィルター条件の条件値のデータ型は、としては、次のように、FWP_DATA_TYPE 値として指定されます。
 

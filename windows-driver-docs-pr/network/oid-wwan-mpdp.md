@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 757b96d735e332cdbf265fd5b37f8515133b2bc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353729"
 ---
 # <a name="oidwwanmpdp"></a>OID_WWAN_MPDP
 
@@ -25,7 +25,7 @@ OID_WWAN_MPDP は、プライマリの PDP コンテキスト/EPS ベアラー�
 
 場合、**操作**のメンバー、 **NDIS_WWAN_MPDP_INFO**構造に設定されている**WwanMPDPOperationDeleteChildInterface**、対応するミニポート ドライバーを削除します以前に作成され MB サービスに、削除操作に関する情報を返します子インターフェイス、 [ **NDIS_WWAN_MPDP_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mpdp_state)構造に含まれている、 [NDIS_STATUS_WWAN_MPDP_STATE](ndis-status-wwan-mpdp-state.md)通知します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |

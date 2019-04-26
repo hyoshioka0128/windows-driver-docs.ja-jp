@@ -1,17 +1,17 @@
 ---
-title: リソースの作成時に DXGI 情報を渡す
-description: リソースの作成時に DXGI 情報を渡す
+title: リソース作成時に DXGI 情報を渡す
+description: リソース作成時に DXGI 情報を渡す
 ms.assetid: d99fc77a-7192-4e45-852a-7a2ae87cc9a2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef9c4e2123918ff3c9321ccf086f96e78b6d2490
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352410"
 ---
-# <a name="passing-dxgi-information-at-resource-creation-time"></a>リソースの作成時に DXGI 情報を渡す
+# <a name="passing-dxgi-information-at-resource-creation-time"></a>リソース作成時に DXGI 情報を渡す
 
 
 ユーザー モードのディスプレイ ドライバーを呼び出すときに、Direct3D のバージョン 10 ランタイムは DXGI に固有の情報を渡すことができます[ **CreateResource(D3D10)** ](https://msdn.microsoft.com/library/windows/hardware/ff540691)リソースを作成する関数。 ランタイムへのポインターを渡すことができます、 [ **DXGI\_DDI\_プライマリ\_DESC** ](https://msdn.microsoft.com/library/windows/hardware/ff557511)構造体、 **pPrimaryDesc**のメンバー、[ **D3D10DDIARG\_CREATERESOURCE** ](https://msdn.microsoft.com/library/windows/hardware/ff541697)プライマリとして、リソースを使用できることを指定する構造体 (つまり、リソース スキャンできますを表示するため)。 ランタイム セット**pPrimaryDesc** 、ランタイムは、D3D10 も設定する場合にのみ NULL 以外の値を\_DDI\_バインド\_内のビットを現在のところ、 **BindFlags**のメンバーD3D10DDIARG\_CREATERESOURCE します。

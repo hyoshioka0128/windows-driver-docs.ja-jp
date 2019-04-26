@@ -5,11 +5,11 @@ ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ef278843da0b6e35b5954b238a2f44f201f5a51c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352120"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA デバイスの INF ファイル
 
@@ -73,7 +73,7 @@ ms.locfileid: "57463856"
 <p>詳細については、<strong>プロパティ ページ</strong>エントリを参照してください<a href="inf-files-for-still-image-devices.md" data-raw-source="[INF Files for Still Image Devices](inf-files-for-still-image-devices.md)">静止画像デバイスの INF ファイル</a>します。</p></td>
 <td><p>省略可能</p>
 <p>このエントリは STI ドライバーによってのみ使用するためは WIA ドライバーの廃止されています。</p>
-<p>WIA ドライバー開発者向けに関連するプロパティ ページについては、、<strong>注</strong>プロパティ ページの次の表の後にを参照してください。</p></td>
+<p>WIA ドライバー開発者向けに関連するプロパティ ページについては、次を参照してください。、<strong>注</strong>プロパティ ページの次の表の後にします。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DeviceData</strong></p></td>
@@ -130,7 +130,7 @@ ms.locfileid: "57463856"
 <thead>
 <tr class="header">
 <th>INF ファイルのエントリ</th>
-<th>値</th>
+<th>[値]</th>
 <th>コメント</th>
 </tr>
 </thead>

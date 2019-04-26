@@ -1,19 +1,19 @@
 ---
-title: Repeater の例
-description: Repeater の例
+title: repeater の例
+description: repeater の例
 ms.assetid: 83aff647-65a7-409f-adce-254305395775
 keywords:
 - repeater、例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a6dc91c7ba60ab880546da6fd293e7846c1d1ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353590"
 ---
-# <a name="repeater-examples"></a>Repeater の例
+# <a name="repeater-examples"></a>repeater の例
 
 
 ## <span id="ddk_repeater_examples_dbg"></span><span id="DDK_REPEATER_EXAMPLES_DBG"></span>
@@ -39,7 +39,7 @@ C:\Misc> dbengprx -c tcp:server=BOXA,port=1025 -s npipe:pipe=MyPipe
 G:\Debugging Tools> windbg -remote npipe:server=BOXB,pipe=MyPipe,password=wrought 
 ```
 
-別の例を次に示します。 127.0.0.30、リモートの場所で、シンボルとは。 したがって、ターゲットが、127.0.0.10 コンピューターでプロセス サーバーを使用すること。 127.0.0.20 には、repeater を配置します。
+別の例を示します。 127.0.0.30、リモートの場所で、シンボルとは。 したがって、ターゲットが、127.0.0.10 コンピューターでプロセス サーバーを使用すること。 127.0.0.20 には、repeater を配置します。
 
 逆方向の接続を使用することもできます。 したがって 127.0.0.30 でクライアントを起動して開始します。
 
@@ -59,7 +59,7 @@ C:\Misc> dbengprx -c tcp:clicon=127.0.0.10,port=1025 -s tcp:port=1033,clicon=127
 E:\Debugging Tools for Windows> dbgsrv -t tcp:port=1025,clicon=127.0.0.20 
 ```
 
-リピータを使用してより複雑な例は、[2 つのファイアウォール](two-firewalls.md)を参照してください。
+リピータを使用してより複雑な例は、次を参照してください。 [2 つのファイアウォール](two-firewalls.md)します。
 
  
 

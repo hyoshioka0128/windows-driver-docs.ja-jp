@@ -1,6 +1,6 @@
 ---
-title: 証明書をリリースします。
-description: 証明書をリリースします。
+title: リリース証明書
+description: リリース証明書
 ms.assetid: 61bd5002-b3b6-4f11-b0c2-80eeaf2fec39
 keywords:
 - パブリック リリース ドライバーの WDK、リリースの証明書の署名
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0aeb74c1ab2cb88a51cd779948026e77b9b0dc4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348178"
 ---
-# <a name="release-certificates"></a>証明書をリリースします。
+# <a name="release-certificates"></a>リリース証明書
 
 
 に準拠して署名ポリシーを 64 ビット バージョンの Windows Vista と Windows の以降のバージョンのカーネル モード コードを取得する必要があります、 [WHQL リリース署名](whql-release-signature.md)を使用して、または、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)署名、[カタログ ファイル](catalog-files.md)カーネル モードの[ドライバー パッケージ](driver-packages.md)します。

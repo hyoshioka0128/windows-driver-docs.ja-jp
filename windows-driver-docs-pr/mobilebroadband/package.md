@@ -1,17 +1,17 @@
 ---
-title: パッケージ (SoftwareInfo)
-description: パッケージ (SoftwareInfo)
+title: Package (SoftwareInfo)
+description: Package (SoftwareInfo)
 ms.assetid: f15f0ffe-593d-4007-8002-4d593d18dd9a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 612d0a90275e67c0988c8254682a6f7b3cb2d065
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347569"
 ---
-# <a name="package-softwareinfo"></a>パッケージ (SoftwareInfo)
+# <a name="package-softwareinfo"></a>Package (SoftwareInfo)
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "56538883"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="identity.md" data-raw-source="[Identity](identity.md)">Id</a></p></td>
+<td><p><a href="identity.md" data-raw-source="[Identity](identity.md)">[ID]</a></p></td>
 <td><p>アプリの発行元を識別します。</p></td>
 </tr>
 <tr class="even">
@@ -98,7 +98,7 @@ ms.locfileid: "56538883"
 </xs:complexType>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 パッケージ要素は省略可能です。

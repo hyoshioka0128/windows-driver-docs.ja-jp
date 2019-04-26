@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_QUERY_CMPLT
-Description: A Remote NDIS device will respond to a REMOTE_NDIS_QUERY_MSG message with a REMOTE_NDIS_QUERY_CMPLT message.
+Description: リモートの NDIS デバイスは REMOTE_NDIS_QUERY_CMPLT メッセージ REMOTE_NDIS_QUERY_MSG メッセージに応答します。
 ms.assetid: 357e2ade-0b67-42c3-b1e1-dcc4b7ec5cda
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 618860ecf39a5660b7a3bc3cf8f4fc9e66b0bf37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350829"
 ---
 # <a name="remotendisquerycmplt"></a>リモート\_NDIS\_クエリ\_CMPLT
 
@@ -35,7 +35,7 @@ ms.locfileid: "56553957"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x80000004 に設定します。</p></td>
 </tr>
 <tr class="even">

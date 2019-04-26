@@ -4,11 +4,11 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 08/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ea41f3c3bf56bb02a6be0346199ce9786d0d0d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353139"
 ---
 # <a name="windbg-preview-keyboard-shortcuts"></a>WinDbg Preview keyboard shortcuts 
 
@@ -71,7 +71,7 @@ Ctrl + 8      |       [ブレークポイント] ウィンドウで開く/フォ
 Ctrl キーを押しながら 9      |       [スレッド] ウィンドウを開く/フォーカス
 
 
-### <a name="scripting"></a>スクリプト作成
+### <a name="scripting"></a>スクリプトの作成
 
 | キー入力      | 説明             |
 | -------------- |-------------------------|
@@ -106,7 +106,7 @@ Ctrl + Alt + V      |       詳細モードの切り替え
 
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
 

@@ -1,6 +1,6 @@
 ---
-title: SAP の登録を解除
-description: SAP の登録を解除
+title: SAP の登録解除
+description: SAP の登録解除
 ms.assetid: 2d279348-b58e-4d7e-ac8b-211e9b8a0622
 keywords:
 - WDK いる CoNDIS のサービス アクセス ポイントします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bbb46ad690875b66bf6bfb0757cf3c48126ed06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347473"
 ---
-# <a name="deregistering-a-sap"></a>SAP の登録を解除
+# <a name="deregistering-a-sap"></a>SAP の登録解除
 
 
 

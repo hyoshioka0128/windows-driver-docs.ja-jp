@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8712185a6da5fe9621a7f11a23ac9ea115509bc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351091"
 ---
 # <a name="devpkeydevicelocationpaths"></a>DEVPKEY_Device_LocationPaths
 
@@ -64,7 +64,7 @@ Windows では、DEVPKEY_Device_LocationPaths の値を設定します。
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_LocationPaths の値を取得します。
 
-Windows Server 2003 は、このプロパティをサポートしますが、DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 代わりに、Windows Server 2003 でプロパティの値へのアクセスに対応する SPDRP_LOCATION_PATHS 識別子を使用することができます。 Windows Server 2003 でこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003 は、このプロパティをサポートしますが、DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 代わりに、Windows Server 2003 でプロパティの値へのアクセスに対応する SPDRP_LOCATION_PATHS 識別子を使用することができます。 Windows Server 2003 でこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
 <a name="requirements"></a>要件
 ------------

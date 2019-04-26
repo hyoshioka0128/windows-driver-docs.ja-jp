@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DISCONNECT_DISASSOCIATION_FRAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 481e698fb094ee5364f700417c9b2f20bf3be22a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347278"
 ---
 # <a name="wditlvdisconnectdisassociationframe"></a>WDI\_TLV\_切断\_戻せません\_フレーム
 

@@ -4,16 +4,16 @@ title: アプリ マニフェストへの USB デバイス機能の追加方法
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 013695e2f0990172d3a79304f96dda4a9f0db553
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355094"
 ---
 # <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>アプリ マニフェストへの USB デバイス機能の追加方法
 
 
-**概要**
+**要約**
 
 -   USB デバイスの機能では、Package.appxmanifest を更新する必要があります。
 -   デバイス クラスには、サポートされているクラスのいずれかを指定する必要があります。

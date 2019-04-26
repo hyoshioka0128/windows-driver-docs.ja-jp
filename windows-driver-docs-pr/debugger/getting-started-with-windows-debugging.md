@@ -1,17 +1,17 @@
 ---
-title: Windows デバッグの概要
+title: Windows のデバッグの概要
 description: このセクションでは、Windows のデバッグを開始する方法について説明します。 目標は、デバッガーを使用して、クラッシュ ダンプを分析する場合に、クラッシュ ダンプ分析が、Windows を使用してデバッガー (WinDbg) を参照してください。
 ms.assetid: 4981928E-A33D-4F60-AAA0-124C360B7E03
 ms.date: 08/23/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 46df3c5645ea0403f7a10f5ccb757b943bf1ac2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350566"
 ---
-# <a name="getting-started-with-windows-debugging"></a>Windows デバッグの概要
+# <a name="getting-started-with-windows-debugging"></a>Windows のデバッグの概要
 
 
 このセクションでは、Windows のデバッグを開始する方法について説明します。 目標は、デバッガーを使用して、参照してください、クラッシュ ダンプを分析する場合[、Windows を使用してクラッシュ ダンプ分析のデバッガー (WinDbg)](crash-dump-files.md)します。
@@ -25,7 +25,7 @@ ms.locfileid: "56552868"
 
    ![二重矢印で接続されているホストとターゲットの pc](images/targethost1.png)
 
-   デバッグ中にプロセッサの命令の実行を停止する一般的なため、通常、2 つのシステムは使用されます。 場合によっては、2 番目のシステムが仮想システムを同じ PC で実行されている virtual PC などにある可能性があります。 ただし、コードが低レベルのハードウェアに通信している場合 virtual PC を使用できないがあります最善の方法。 詳細については、[ネットワーク デバッグのセットアップ、バーチャル マシン ホストの](setting-up-network-debugging-of-a-virtual-machine-host.md)を参照してください。
+   デバッグ中にプロセッサの命令の実行を停止する一般的なため、通常、2 つのシステムは使用されます。 場合によっては、2 番目のシステムが仮想システムを同じ PC で実行されている virtual PC などにある可能性があります。 ただし、コードが低レベルのハードウェアに通信している場合 virtual PC を使用できないがあります最善の方法。 詳細については、次を参照してください。[ネットワーク デバッグのセットアップ、バーチャル マシン ホストの](setting-up-network-debugging-of-a-virtual-machine-host.md)します。
 
 2. かどうかには作業カーネルまたはユーザー モードのデバッグを決定します。
 
@@ -40,15 +40,15 @@ ms.locfileid: "56552868"
    どのようなモードでデバッグすることによっては、構成して、さまざまな方法で、デバッガーを使用する必要があります。 いくつかのデバッグ コマンドでは、同じですを操作し、いくつかのコマンドの動作の異なるモードでは異なります。
 
    カーネル モードでデバッガーを使用する方法の詳細については、次のトピックを参照してください。
-   - [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md) 
-   - [ユニバーサル ドライバー - ステップ バイ ステップのラボ (エコー カーネル モード) のデバッグします。](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md) 
+   - [WinDbg ドライバーの概要 (カーネル モード)](getting-started-with-windbg--kernel-mode-.md) 
+   - [ユニバーサル ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md) 
    - [ステップ バイ ステップのラボ (Sysvad カーネル モード) - ドライバのデバッグ](debug-universal-drivers--kernel-mode-.md)します。 
     
-     ユーザー モードでデバッガーを使用する方法の詳細については、[WinDbg (ユーザー モード) の概要](getting-started-with-windbg.md)を参照してください。
+     ユーザー モードでデバッガーを使用する方法の詳細については、次を参照してください。 [WinDbg (ユーザー モード) の概要](getting-started-with-windbg.md)します。
 
 3. デバッガー、環境を選択します。
 
-   WinDbg はほとんどの状況に適していますが、ある automation または偶数の Visual Studio のコンソール デバッガーなどの別のデバッガーを使用する場合があります。 詳細については、[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)を参照してください。
+   WinDbg はほとんどの状況に適していますが、ある automation または偶数の Visual Studio のコンソール デバッガーなどの別のデバッガーを使用する場合があります。 詳細については、次を参照してください。[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)します。
 
 4. ターゲットとホストのシステムを接続する方法を決定します。
 
@@ -60,26 +60,26 @@ ms.locfileid: "56552868"
 
 5. いずれか、32 ビットまたは 64 ビット デバッグ ツールを選択します。
 
-   この選択は、ターゲットおよびホスト システムと 32 ビットまたは 64 ビットのコードをデバッグするかどうかで実行されている Windows のバージョンによって異なります。 詳細については、[32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)を参照してください。
+   この選択は、ターゲットおよびホスト システムと 32 ビットまたは 64 ビットのコードをデバッグするかどうかで実行されている Windows のバージョンによって異なります。 詳細については、次を参照してください。 [32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)します。
 
 6. シンボルを構成します。
 
-   すべての WinDbg を提供する高度な機能を使用する適切なシンボルを読み込む必要があります。 シンボルが正しく構成されていない場合、シンボルに依存する機能を使用しようとしたときに、シンボルが使用できないことを示すメッセージが届きます。 詳細については、[(WinDbg、KD、CDB、NTSD) のデバッグ シンボルの Windows](symbols.md)を参照してください。
+   すべての WinDbg を提供する高度な機能を使用する適切なシンボルを読み込む必要があります。 シンボルが正しく構成されていない場合、シンボルに依存する機能を使用しようとしたときに、シンボルが使用できないことを示すメッセージが届きます。 詳細については、次を参照してください。 [(WinDbg、KD、CDB、NTSD) のデバッグ シンボルの Windows](symbols.md)します。
 
 7. ソース コードを構成します。
-   目標は、ソース コードをデバッグする場合に、ソース コードへのパスを構成する必要があります。 詳細については、[ソース パス](source-path.md)を参照してください。
+   目標は、ソース コードをデバッグする場合に、ソース コードへのパスを構成する必要があります。 詳細については、次を参照してください。[ソース パス](source-path.md)します。
 
 8. デバッガー操作に詳しくなります。
-   [デバッガー操作](debugger-operation-win8.md)ドキュメントのセクションには、さまざまなタスクのデバッガー操作がについて説明します。 たとえば、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)トピックでは、デバッガーの拡張機能を読み込む方法を説明します。 WinDbg の処理に関する詳細については、[デバッグを使用して WinDbg](debugging-using-windbg.md)を参照してください。
+   [デバッガー操作](debugger-operation-win8.md)ドキュメントのセクションには、さまざまなタスクのデバッガー操作がについて説明します。 たとえば、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)トピックでは、デバッガーの拡張機能を読み込む方法を説明します。 WinDbg の処理に関する詳細については、次を参照してください。[デバッグを使用して WinDbg](debugging-using-windbg.md)します。
 
 9. デバッグ手法に詳しくなります。
    [標準的なデバッグ手法](standard-debugging-techniques.md)大半のデバッグ シナリオに適用され、例としては、ブレークポイントの設定、コール スタックの検査、およびメモリ リークを検出します。 [デバッグ技術を特殊化された](specialized-debugging-techniques.md)特定の技術やコードの種類に適用されます。 例は、プラグ アンド プレイのデバッグ、カーネル モード ドライバー フレームワークは、次のデバッグ、および RPC デバッグです。
 
 10. デバッガーの参照のコマンドを使用します。
-    時間の経過と共に、デバッガーでの作業時に、さまざまなデバッグ コマンドを使用します。 使用して、 [*.hh* (開いている HTML ヘルプ ファイル)](-hh--open-html-help-file-.md)デバッグ コマンドに関するヘルプ情報を表示するデバッガー コマンド。 使用可能なコマンドの詳細については、[デバッガー リファレンス](debugger-reference.md)を参照してください。
+    時間の経過と共に、デバッガーでの作業時に、さまざまなデバッグ コマンドを使用します。 使用して、 [*.hh* (開いている HTML ヘルプ ファイル)](-hh--open-html-help-file-.md)デバッグ コマンドに関するヘルプ情報を表示するデバッガー コマンド。 使用可能なコマンドの詳細については、次を参照してください。[デバッガー リファレンス](debugger-reference.md)します。
 
 11. 特定のテクノロジの拡張機能のデバッグに使用します。
-    ドメイン固有のデータ構造の解析を提供するデバッグの拡張機能を数多くあります。 詳細については、[拡張機能の特殊化された](specialized-extensions.md)を参照してください。
+    ドメイン固有のデータ構造の解析を提供するデバッグの拡張機能を数多くあります。 詳細については、次を参照してください。[拡張機能の特殊化された](specialized-extensions.md)します。
 
 12. メモリ使用量、コンテキスト、スレッドやプロセスなどの関連する Windows の内部構造について説明します。 このドキュメントには、Windows 内部の知識を前提としています。 Windows の内部構造の詳細については、この書籍などのリソースを確認します。 
     -   E. のある Mark Russinovich、David A. Solomon Alex Ionescu、Windows の内部構造
@@ -92,12 +92,12 @@ ms.locfileid: "56552868"
 
 ## <a name="see-also"></a>参照
 
--   [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)
--   [WinDbg (ユーザー モード) の概要](getting-started-with-windbg.md)
+-   [WinDbg ドライバーの概要 (カーネル モード)](getting-started-with-windbg--kernel-mode-.md)
+-   [WinDbg ドライバーの概要 (ユーザー モード)](getting-started-with-windbg.md)
 -   [32 ビットまたは 64 ビット デバッグ ツールの選択](choosing-a-32-bit-or-64-bit-debugger-package.md)
 -   [デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)
 -   [デバッグ (カーネル モードとユーザー モード) の設定](getting-set-up-for-debugging.md)
--   [ユニバーサル ドライバー - ステップ バイ ステップのラボ (エコー カーネル モード) のデバッグします。](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
+-   [ユニバーサル ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 -   [ステップ バイ ステップのラボ (Sysvad カーネル モード) - ドライバのデバッグします。](debug-universal-drivers--kernel-mode-.md)
 
 

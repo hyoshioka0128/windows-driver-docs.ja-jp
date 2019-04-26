@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 156d77b43a723011599b9c4afc81060f198564c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359040"
 ---
 # <a name="installing-an-inbox-driver-or-a-preinstalled-driver"></a>受信トレイのドライバーまたはプレインストールされているドライバーをインストールします。
 
@@ -22,7 +22,7 @@ ms.locfileid: "56570541"
 
 ドライバー パッケージが実行中に検索する方法の詳細については、[ハードウェア最初インストール](hardware-first-installation.md)を参照してください[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)します。
 
-Windows デバイスに最適な一致のあるドライバーを選択する方法については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
+Windows デバイスに最適な一致のあるドライバーを選択する方法については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
  
 

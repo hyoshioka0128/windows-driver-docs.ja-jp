@@ -1,6 +1,6 @@
 ---
-title: SetupAPI ログ ドライバーのランク付け情報
-description: SetupAPI ログ ドライバーのランク付け情報
+title: SetupAPI ログ内のドライバーのランク情報
+description: SetupAPI ログ内のドライバーのランク情報
 ms.assetid: 169a1963-3fb3-4254-9634-78034cda2924
 keywords:
 - SetupAPI WDK Windows Vista では、ドライバーのランク付け情報をログ記録
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a0583922123f50ba3b33c08e5f01eb5fe62402
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356018"
 ---
-# <a name="driver-rank-information-in-the-setupapi-log"></a>SetupAPI ログ ドライバーのランク付け情報
+# <a name="driver-rank-information-in-the-setupapi-log"></a>SetupAPI ログ内のドライバーのランク情報
 
 
 Windows では、署名のインジケーターを使用して、署名の種類を表します。 Windows では、この情報の保存、[ドライバー ストア](driver-store.md)データベース内部で使用します。
@@ -61,7 +61,7 @@ Windows は、署名の種類ごとに SetupAPI デバイス ログに記録さ�
 <a href="" id="unsigned-driver"></a>署名されていないドライバー  
 「署名者スコア - デジタル署名されていない」
 
-ドライバーのランク付けの詳細については、[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
+ドライバーのランク付けの詳細については、次を参照してください。[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
 
  
 

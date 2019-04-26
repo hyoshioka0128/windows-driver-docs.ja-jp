@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5bfc79d7b0e607a14a6500adfc84608e9ae0990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349042"
 ---
 # <a name="debugrequesttargetcandetach"></a>デバッグ\_要求\_ターゲット\_できます\_デタッチ
 
@@ -27,10 +27,10 @@ ms.locfileid: "56581081"
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-使用されません。
+使用されていません。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-使用されません。
+使用されていません。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -40,7 +40,7 @@ ms.locfileid: "56581081"
 <span id="S_FALSE"></span><span id="s_false"></span>S\_FALSE  
 現在のプロセスからデバッガーをデタッチすることはできません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Microsoft Windows XP または Windows の以降のバージョンで実行されているターゲットのみをサポート プロセスからデバッガーをデタッチします。

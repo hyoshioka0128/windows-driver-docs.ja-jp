@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 650872e6dfb0ef7d1f7ac0c1d27050ec985255a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353098"
 ---
 # <a name="using-srcsrv"></a>SrcSrv の使用
 
@@ -41,7 +41,7 @@ ms.locfileid: "56531321"
 
 ### <a name="span-idusingagestoretoreducethecachesizespanspan-idusingagestoretoreducethecachesizespanusing-agestore-to-reduce-the-cache-size"></a><span id="using_agestore_to_reduce_the_cache_size"></span><span id="USING_AGESTORE_TO_REDUCE_THE_CACHE_SIZE"></span>AgeStore を使用して、キャッシュのサイズを小さくには
 
-ソースによってダウンロードされたファイル[SrcSrv](srcsrv.md)デバッグ セッションが完了したら、ハード ドライブ上に残ります。 ソースのキャッシュのサイズを制御するには、指定した日付より古いキャッシュ ファイルを削除するかを指定したサイズ以下のキャッシュの内容を減らす AgeStore ツールが使用できます。 詳細については、[AgeStore](agestore.md)を参照してください。
+ソースによってダウンロードされたファイル[SrcSrv](srcsrv.md)デバッグ セッションが完了したら、ハード ドライブ上に残ります。 ソースのキャッシュのサイズを制御するには、指定した日付より古いキャッシュ ファイルを削除するかを指定したサイズ以下のキャッシュの内容を減らす AgeStore ツールが使用できます。 詳細については、次を参照してください。 [AgeStore](agestore.md)します。
 
  
 

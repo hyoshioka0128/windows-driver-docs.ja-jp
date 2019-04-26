@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c28659e301e7e85bc0db0319cec681159173430
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352770"
 ---
 # <a name="pending-an-io-operation-in-a-preoperation-callback-routine"></a>操作前コールバック ルーチン内で I/O 操作を保留にする
 
@@ -28,7 +28,7 @@ ms.locfileid: "56572947"
 
 2.  返す FLT\_PREOP\_保留します。
 
-ミニフィルター ドライバーを保留する必要がありますすべて (またはほとんど) の受信 I/O 操作はなどのルーチンを使用しない**FltQueueDeferredIoWorkItem**保留中の操作をこのルーチンを呼び出すと、システムが作業キューに送信するためです。 代わりに、このようなミニフィルター ドライバーには、キャンセルの安全なキューを使用する必要があります。 キャンセルの安全なキューの使用に関する詳細については、[ *FltCbdqInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff541802)を参照してください。
+ミニフィルター ドライバーを保留する必要がありますすべて (またはほとんど) の受信 I/O 操作はなどのルーチンを使用しない**FltQueueDeferredIoWorkItem**保留中の操作をこのルーチンを呼び出すと、システムが作業キューに送信するためです。 代わりに、このようなミニフィルター ドライバーには、キャンセルの安全なキューを使用する必要があります。 キャンセルの安全なキューの使用に関する詳細については、次を参照してください。 [ *FltCbdqInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff541802)します。
 
 なおへの呼び出し**FltQueueDeferredIoWorkItem**次の条件のいずれかに該当する場合は失敗します。
 

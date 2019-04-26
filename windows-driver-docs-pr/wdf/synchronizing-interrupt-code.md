@@ -1,6 +1,6 @@
 ---
-title: 割り込みのコードを同期します。
-description: 割り込みのコードを同期します。
+title: 割り込みコードの同期
+description: 割り込みコードの同期
 ms.assetid: a24477dc-f75d-4ab6-8695-d8a85247e276
 keywords:
 - ハードウェアの割り込み WDK KMDF、同期
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6a2996bcd901435c1f95f136434bc690884618
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350656"
 ---
-# <a name="synchronizing-interrupt-code"></a>割り込みのコードを同期します。
+# <a name="synchronizing-interrupt-code"></a>割り込みコードの同期
 
 
 次の要因には、マルチプロセッサ システムでハードウェアの割り込みを処理するドライバーのコードが複雑になります。
@@ -63,7 +63,7 @@ ms.locfileid: "56558581"
 
 -   ドライバーを同期する必要がある場合[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)と[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683)互いとコールバック関数その他のデバイスに関連付けられているコールバック関数には、ドライバーを設定できます、 **AutomaticSerialization**メンバー **TRUE**の割り込みの[ **WDF\_INTERRUPT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552347)構造と DPC オブジェクトの[ **WDF\_DPC\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551296)構造体。 また、ドライバーを使用できる[framework スピン ロック](using-framework-locks.md#framework-spin-locks)します。 (設定、 **AutomaticSerialization**メンバー **TRUE**同期しません、 [ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735)でコールバック関数その他のコールバック関数。 使用[ **WdfInterruptSynchronize** ](https://msdn.microsoft.com/library/windows/hardware/ff547389)または[ **WdfInterruptAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/ff547340)を同期する、 *EvtInterruptIsr*コールバック関数は、このトピックで前述のようです)。
 
-ドライバーのルーチンの同期の詳細については、[Framework ベースのドライバーの同期手法](synchronization-techniques-for-wdf-drivers.md)を参照してください。
+ドライバーのルーチンの同期の詳細については、次を参照してください。 [Framework ベースのドライバーの同期手法](synchronization-techniques-for-wdf-drivers.md)します。
 
  
 

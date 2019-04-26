@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ASSOCIATION_RESULT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2221e79f6824090e946d83360f3d59c86334bfac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351947"
 ---
 # <a name="wditlvassociationresultparameters"></a>WDI\_TLV\_アソシエーション\_結果\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_アソシエーション\_結果\_パラメーターは、関連付け
 ## <a name="values"></a>値
 
 
-| 種類                                                        | 説明                                                                                                                                                                                                                                         |
+| 型                                                        | 説明                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32                                                      | 定義されている、関連付けの試行の完了ステータスを指定します[ **WDI\_ASSOC\_状態**](https://msdn.microsoft.com/library/windows/hardware/dn897725)します。                                                                                                                       |
 | UINT32                                                      | このポートからの認証またはアソシエーション要求への応答でピアによって送信された 802.11 ステータス コード。                                                                                                                                     |
@@ -50,7 +50,7 @@ WDI\_TLV\_アソシエーション\_結果\_パラメーターは、関連付け
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

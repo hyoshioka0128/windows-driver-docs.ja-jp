@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバー Halt ハンドラー
-description: ミニポート ドライバー Halt ハンドラー
+title: ミニポート ドライバー停止ハンドラー
+description: ミニポート ドライバー停止ハンドラー
 ms.assetid: 63b0b25e-f52f-4486-a57d-448985207fc8
 keywords:
 - MiniportHaltEx
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5080471ca9d0ce6094a2c4050dadb9eb352b5ea4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349858"
 ---
-# <a name="miniport-driver-halt-handler"></a>ミニポート ドライバー Halt ハンドラー
+# <a name="miniport-driver-halt-handler"></a>ミニポート ドライバー停止ハンドラー
 
 
 

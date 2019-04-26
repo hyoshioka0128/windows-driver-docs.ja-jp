@@ -1,6 +1,6 @@
 ---
-title: 必須および省略可能なテープ Miniclass ルーチン
-description: 必須および省略可能なテープ Miniclass ルーチン
+title: 必須およびオプションのテープ ミニクラス ルーチン
+description: 必須およびオプションのテープ ミニクラス ルーチン
 ms.assetid: 7a641199-2607-4980-bd8b-ec3856b311ef
 keywords:
 - テープ ドライバー WDK 記憶域、省略可能なルーチン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f50eae3803f9297bf157153ed563e3f1cbad0cf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352632"
 ---
-# <a name="required-and-optional-tape-miniclass-routines"></a>必須および省略可能なテープ Miniclass ルーチン
+# <a name="required-and-optional-tape-miniclass-routines"></a>必須およびオプションのテープ ミニクラス ルーチン
 
 
 ## <span id="ddk_required_and_optional_tape_miniclass_routines_kg"></span><span id="DDK_REQUIRED_AND_OPTIONAL_TAPE_MINICLASS_ROUTINES_KG"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56538334"
 
 -   TapeMiniGetPosition TapeMiniGetMediaTypes などのデバイス制御要求のデバイスに固有の処理を実装するルーチン。
 
-    テープのクラス ドライバーは、そのデバイス制御ディスパッチ ルーチンからこのようなルーチンを呼び出します。 詳細については、[テープ デバイス制御要求の処理](processing-tape-device-control-requests.md)を参照してください。
+    テープのクラス ドライバーは、そのデバイス制御ディスパッチ ルーチンからこのようなルーチンを呼び出します。 詳細については、次を参照してください。[テープ デバイス制御要求の処理](processing-tape-device-control-requests.md)します。
 
 テープの miniclass ドライバーには、次の省略可能なルーチンがあります。
 

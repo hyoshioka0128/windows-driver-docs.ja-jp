@@ -1,6 +1,6 @@
 ---
-title: Null のドライバーをインストールします。
-description: Null のドライバーをインストールします。
+title: Null ドライバーのインストール
+description: Null ドライバーのインストール
 ms.assetid: 8684eade-3f25-48fe-94e7-a7e76d8072ad
 keywords:
 - デバイス セットアップ WDK デバイスのインストール、null のドライバー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f371e29e64de92310352164b9c1e7a8f2f6d461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352052"
 ---
-# <a name="installing-a-null-driver"></a>Null のドライバーをインストールします。
+# <a name="installing-a-null-driver"></a>Null ドライバーのインストール
 
 
 

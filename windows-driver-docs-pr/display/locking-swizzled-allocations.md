@@ -1,6 +1,6 @@
 ---
-title: スィズル割り当てのロック
-description: スィズル割り当てのロック
+title: スウィズル割り当てのロック
+description: スウィズル割り当てのロック
 ms.assetid: c9be52d9-36b2-4a0f-9629-01b31293af38
 keywords:
 - WDK の表示のロック スィズルの割り当て
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4488bf5f490d4fa43b76f2df7c340aa6d18d8cb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347551"
 ---
-# <a name="locking-swizzled-allocations"></a>スィズル割り当てのロック
+# <a name="locking-swizzled-allocations"></a>スウィズル割り当てのロック
 
 
 ビデオ メモリ マネージャー スィズル割り当てに直接アクセスする CPU の特別なサポートを提供します (を割り当て、ディスプレイのミニポート ドライバーの[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)関数のセット**Swizzled**フラグ、**フラグ**のメンバー、 [ **DXGK\_ALLOCATIONINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff560960)構造)。

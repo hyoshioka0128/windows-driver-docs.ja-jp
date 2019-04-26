@@ -5,11 +5,11 @@ ms.assetid: 3d4f41f1-07ec-484d-a748-27fbbb9bd0b2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce680cc5b5fc66fe10dff5ca6b24844ed5653c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354943"
 ---
 # <a name="address-and-address-range-syntax"></a>アドレスとアドレス範囲の構文
 
@@ -19,7 +19,7 @@ ms.locfileid: "56535438"
 
 デバッガーでアドレスを指定するいくつかの方法はあります。
 
-アドレスは、常に*仮想アドレス*とき、ドキュメント具体的には別の種類のアドレスを除き、します。 ユーザー モードでデバッガーがに従って、ディレクトリの仮想アドレスを解釈し、[現在のプロセス](controlling-processes-and-threads.md)します。 カーネル モードでデバッガーがプロセスのページ ディレクトリに従って仮想アドレスを解釈する、[プロセス コンテキスト](changing-contexts.md#process-context)を指定します。 直接設定することができます、*ユーザー モード アドレス コンテキスト*します。 ユーザー モード アドレス コンテキストに関する詳細については、[ **.context (ユーザー モード アドレス コンテキストの設定)**](-context--set-user-mode-address-context-.md)を参照してください。
+アドレスは、常に*仮想アドレス*とき、ドキュメント具体的には別の種類のアドレスを除き、します。 ユーザー モードでデバッガーがに従って、ディレクトリの仮想アドレスを解釈し、[現在のプロセス](controlling-processes-and-threads.md)します。 カーネル モードでデバッガーがプロセスのページ ディレクトリに従って仮想アドレスを解釈する、[プロセス コンテキスト](changing-contexts.md#process-context)を指定します。 直接設定することができます、*ユーザー モード アドレス コンテキスト*します。 ユーザー モード アドレス コンテキストに関する詳細については、次を参照してください。 [ **.context (ユーザー モード アドレス コンテキストの設定)**](-context--set-user-mode-address-context-.md)します。
 
 ### <a name="span-idaddressmodesandsegmentsupportspanspan-idaddressmodesandsegmentsupportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>アドレス モードとセグメントのサポート
 
@@ -121,7 +121,7 @@ C++ の式では、ポインターは、C++ のポインターのように動作
 
 いくつか[擬似レジスタ](pseudo-register-syntax.md)もプログラム カウンターの現在の場所など、一般的なアドレスを保持します。
 
-元のソース ファイル名と行番号を指定しても、アプリケーション内のアドレスを指定できます。 この情報を指定する方法の詳細については、[ソース行構文](source-line-syntax.md)を参照してください。
+元のソース ファイル名と行番号を指定しても、アプリケーション内のアドレスを指定できます。 この情報を指定する方法の詳細については、次を参照してください。[ソース行構文](source-line-syntax.md)します。
 
 ### <a name="span-idaddressrangesspanspan-idaddressrangesspanaddress-ranges"></a><span id="address_ranges"></span><span id="ADDRESS_RANGES"></span>アドレス範囲
 

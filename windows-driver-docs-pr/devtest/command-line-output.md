@@ -1,6 +1,6 @@
 ---
-title: コマンドライン出力
-description: コマンドライン出力
+title: コマンド ラインの出力
+description: コマンド ラインの出力
 ms.assetid: 21225785-e8b8-4488-b0a0-fe4cea50d1ff
 keywords:
 - 出力ファイルは、WDK Static Driver Verifier
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b0caf66d4f52e3c062f5f4d431e3fbd66d313f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343099"
 ---
-# <a name="command-line-output"></a>コマンドライン出力
+# <a name="command-line-output"></a>コマンド ラインの出力
 
 
 SDV のコマンドを送信するときに実行されるコマンドの成否を示すステータス メッセージとエラー メッセージまたは警告が生成されている可能性がありますコマンドに関する情報が表示されます。 出力の下部にある検証の結果の概要が表示されます。
@@ -102,7 +102,7 @@ Build succeeded.
 Time Elapsed 00:01:37.93
 ```
 
-どのルールに違反しましたを表示する結果の概要を表示した後を指定できます、 **/ビュー**静的ドライバー検証ツールのレポートを表示する MSBuild コマンドのオプション。 コマンド オプションについては、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。 については、**スキャン**、**ビルド**と**確認**出力では、手順を参照してください[検証プロセス](verification-process.md)します。
+どのルールに違反しましたを表示する結果の概要を表示した後を指定できます、 **/ビュー**静的ドライバー検証ツールのレポートを表示する MSBuild コマンドのオプション。 コマンド オプションについては、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。 については、**スキャン**、**ビルド**と**確認**出力では、手順を参照してください[検証プロセス](verification-process.md)します。
 
 次の表では、結果の概要に表示される結果について説明します。
 

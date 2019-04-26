@@ -1,6 +1,6 @@
 ---
-title: 64 ビット システムでデバイスのインストール
-description: 64 ビット システムでデバイスのインストール
+title: 64 ビット システムへのデバイスのインストール
+description: 64 ビット システムへのデバイスのインストール
 ms.assetid: 76d9bff7-6429-4d20-9790-a41ed2cb1bdd
 keywords:
 - 64 ビットの WDK デバイスのインストール
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b156df529315318ebe412bf6ae728c8dfe416ff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354623"
 ---
-# <a name="device-installations-on-64-bit-systems"></a>64 ビット システムでデバイスのインストール
+# <a name="device-installations-on-64-bit-systems"></a>64 ビット システムへのデバイスのインストール
 
 
 
@@ -22,7 +22,7 @@ ms.locfileid: "56535579"
 
 作成するときに、次の手順にする必要があります、デバイスは 32 ビット プラットフォームと 64 ビット プラットフォームの両方でインストールする場合、[ドライバー パッケージ](driver-packages.md):
 
--   すべてのカーネル モード ドライバーの 32 ビットと 64 ビットの両方のコンパイルを提供*デバイス インストール アプリケーション*、*クラス インストーラー*と*共同インストーラー*します。 詳細については、[Your のドライバーを 64 ビット Windows に移植](https://msdn.microsoft.com/library/windows/hardware/ff559747)を参照してください。
+-   すべてのカーネル モード ドライバーの 32 ビットと 64 ビットの両方のコンパイルを提供*デバイス インストール アプリケーション*、*クラス インストーラー*と*共同インストーラー*します。 詳細については、次を参照してください。 [Your のドライバーを 64 ビット Windows に移植](https://msdn.microsoft.com/library/windows/hardware/ff559747)します。
 
 -   使用する 1 つまたは複数のクロス プラットフォーム INF ファイルを提供*INF セクションを装飾*プラットフォームに固有のインストールの動作を制御します。
 

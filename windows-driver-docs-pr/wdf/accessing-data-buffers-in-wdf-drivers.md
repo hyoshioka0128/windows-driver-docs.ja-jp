@@ -1,5 +1,5 @@
 ---
-title: WDF ドライバー (KMDF または UMDF) 内のデータ バッファーへのアクセス
+title: WDF ドライバー (KMDF または UMDF) でのデータ バッファーへのアクセス
 description: Windows Driver Frameworks (WDF) ドライバーは、読み取り、書き込み、またはデバイスの I/O 操作の要求を受け取る、要求オブジェクトには、入力バッファー、出力バッファー、またはその両方が含まれます。
 ms.assetid: ceba2279-b0fb-4261-b439-723d5dad967b
 keywords:
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcf3495783391447c9b33a443906ae4d463b3ccf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342124"
 ---
-# <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>WDF ドライバー (KMDF または UMDF) 内のデータ バッファーへのアクセス
+# <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>WDF ドライバー (KMDF または UMDF) でのデータ バッファーへのアクセス
 
 
 Windows Driver Frameworks (WDF) ドライバーは、読み取り、書き込み、またはデバイスの I/O 操作の要求を受け取る、要求オブジェクトには、入力バッファー、出力バッファー、またはその両方が含まれます。
@@ -47,11 +47,11 @@ Windows Driver Frameworks (WDF) ドライバーは、読み取り、書き込み
 
 以降のバージョン 1.13 では、KMDF ドライバー アクセス方法を指定のすべてのデバイスの読み取りと書き込み要求を呼び出して[ **WdfDeviceInitSetIoTypeEx** ](https://msdn.microsoft.com/library/windows/hardware/dn265604)デバイスごとにします。 たとえば、ドライバーでは、そのデバイスの 1 つのバッファー内の I/O メソッドを指定する場合は、読み取りおよび書き込み要求、デバイスのドライバーを提供するとき I/O マネージャー バッファー内の I/O メソッドは使用します。
 
-デバイス I/O 制御要求の場合は、I/O 制御コード (IOCTL) には、バッファーへのアクセス方法を指定するビットが含まれています。 その結果、KMDF ドライバーは何も操作の Ioctl のバッファリング方法を選択する必要はありません。 Ioctl の詳細については、[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)を参照してください。 読み取りおよび書き込みとは異なり、同じアクセス方法を指定する必要はありませんすべてのデバイスの Ioctl を要求します。
+デバイス I/O 制御要求の場合は、I/O 制御コード (IOCTL) には、バッファーへのアクセス方法を指定するビットが含まれています。 その結果、KMDF ドライバーは何も操作の Ioctl のバッファリング方法を選択する必要はありません。 Ioctl の詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。 読み取りおよび書き込みとは異なり、同じアクセス方法を指定する必要はありませんすべてのデバイスの Ioctl を要求します。
 
 <a href="" id="umdf-drivers"></a>**UMDF ドライバー**  
 
-UMDF ドライバーを指定します*設定*へのアクセスのために、フレームワークを使用するメソッドの読み書き、要求とデバイスの I/O 要求を制御します。 UMDF ドライバーを提供する値のみの設定は、フレームワークによって使用されるとは限りません。 詳細については、[UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md)を参照してください。
+UMDF ドライバーを指定します*設定*へのアクセスのために、フレームワークを使用するメソッドの読み書き、要求とデバイスの I/O 要求を制御します。 UMDF ドライバーを提供する値のみの設定は、フレームワークによって使用されるとは限りません。 詳細については、次を参照してください。 [UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md)します。
 
 UMDF ドライバーは、呼び出すことによって、デバイスの読み取り、書き込み、IOCTL 要求のすべてのアクセス方法を指定[ **WdfDeviceInitSetIoTypeEx** ](https://msdn.microsoft.com/library/windows/hardware/dn265604)デバイスごとにします。 たとえば、ドライバーでは、そのデバイスの 1 つのバッファー内の I/O メソッドを指定する場合、そのデバイスのドライバーを読み取り、書き込み、IOCTL 要求を配信する場合フレームワークにはバッファー内の I/O メソッドが使用されます。
 
@@ -59,9 +59,9 @@ Ioctl KMDF と UMDF の間には、バッファーへのアクセス方法の違
 
 WDF ドライバーでは、I/O ターゲットを使用する I/O メソッドの不適切な手法を使用して、I/O 要求のバッファーを記述、フレームワークは、バッファーの説明を修正します。 たとえば、ドライバーに渡されるバッファーを記述する、MDL を使用している場合[ **WdfIoTargetSendReadSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff548669)I/O のターゲット バッファー内の I/O を使用している場合、(バッファーである必要がありますを使用して指定仮想アドレス MDLs ではなく)、フレームワークは、バッファーの説明を MDL から仮想アドレスと長さに変換します。 ただしがより効率的な場合は、ドライバーは、正しい形式でバッファーを指定します。
 
-Framework メモリ オブジェクト、ルック アサイド リスト、MDLs、およびローカル バッファーについては、[メモリ バッファーを使用して](using-memory-buffers.md)を参照してください。
+Framework メモリ オブジェクト、ルック アサイド リスト、MDLs、およびローカル バッファーについては、次を参照してください。[メモリ バッファーを使用して](using-memory-buffers.md)します。
 
-メモリ バッファーを削除する時期については、[メモリ バッファーのライフ サイクル](memory-buffer-life-cycle.md)を参照してください。
+メモリ バッファーを削除する時期については、次を参照してください。[メモリ バッファーのライフ サイクル](memory-buffer-life-cycle.md)します。
 
 ## <a href="" id="buffered"></a> バッファー内の I/O のデータ バッファーへのアクセス
 

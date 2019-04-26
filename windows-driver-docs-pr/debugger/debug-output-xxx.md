@@ -23,11 +23,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: fd52f1179291e48b61466c1c1d653e6838e68cd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349084"
 ---
 # <a name="debugoutputxxx"></a>デバッグ\_出力\_XXX
 
@@ -106,7 +106,7 @@ ms.locfileid: "56558126"
 </tbody>
 </table>
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

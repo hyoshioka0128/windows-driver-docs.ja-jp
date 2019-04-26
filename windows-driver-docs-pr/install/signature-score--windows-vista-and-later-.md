@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e322655aab6d6b4b84cbe8dd3653a80a1932902
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348802"
 ---
 # <a name="signature-score"></a>署名のスコア
 
@@ -38,7 +38,7 @@ ms.locfileid: "56538900"
 
 -   Windows には、4 番目と最悪の署名のスコアが割り当てられます (署名スコアの最高値) にドライバーが署名されていないか、署名の状態は不明です。
 
-ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)を参照してください。
+ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
 
  
 

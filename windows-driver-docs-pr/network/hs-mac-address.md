@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3da45d1c5f9088da55ec0b771ecfecc433b25ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349635"
 ---
 # <a name="hsmacaddress-structure"></a>HS\_MAC\_アドレスの構造
 
@@ -30,7 +30,7 @@ typedef struct _HS_MAC_ADDRESS {
 } HS_MAC_ADDRESS, *PHS_MAC_ADDRESS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **ucHSMacAddress**  

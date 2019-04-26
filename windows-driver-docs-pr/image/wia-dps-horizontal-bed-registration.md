@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: feb460f523e4dca58f5f3f8480e05576a9a3074d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352823"
 ---
 # <a name="wiadpshorizontalbedregistration"></a>WIA\_DPS\_水平\_ベッド\_登録
 
@@ -47,7 +47,7 @@ WIA\_DPS\_水平\_ベッド\_REGISTRATION プロパティには、登録、ま�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

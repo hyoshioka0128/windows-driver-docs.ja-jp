@@ -1,6 +1,6 @@
 ---
-title: ポートを列挙します。
-description: ポートを列挙します。
+title: ポートの列挙
+description: ポートの列挙
 ms.assetid: b38c5556-5124-45ea-af2f-4a4cd9313cc7
 keywords:
 - WDK NDIS をポート NDIS を列挙します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9858b55d37f59c16dd4a49f5756aadef42be2ee6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353063"
 ---
-# <a name="enumerating-ports"></a>ポートを列挙します。
+# <a name="enumerating-ports"></a>ポートの列挙
 
 
 

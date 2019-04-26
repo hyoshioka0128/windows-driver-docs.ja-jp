@@ -13,11 +13,11 @@ api_type:
 ms.date: 12/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 13aea23c888d1fa5b0802861affe5fe2a07b01ec
-ms.sourcegitcommit: 132f0c2d827982b808053ecd3b4d137a2883cca1
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56582851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353458"
 ---
 # <a name="traceview-control-commands"></a>TraceView の制御コマンド
 
@@ -38,7 +38,7 @@ Traceview でコントロールのコマンドを使用すると、トレース 
 
 ### <a name="actions"></a>Actions
 
-|操作|説明|
+|アクション|説明|
 |----|----|
 |**-開始**|指定されたトレース セッションを開始します。|
 |**-stop**|指定されたトレース セッションを停止します。|

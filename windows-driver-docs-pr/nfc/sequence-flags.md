@@ -4,9 +4,9 @@ description: NFC CX は、次のイベントのシーケンスの定数を定義
 ms.assetid: AC6CE286-52F7-4FC9-9F38-CD10C1413A90
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 topic_type:
 - apiref
@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71441dadf2bb8922d6e2f1f0a1ec0b25f4c520f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348494"
 ---
 # <a name="sequence-flags"></a>シーケンスのフラグ
 

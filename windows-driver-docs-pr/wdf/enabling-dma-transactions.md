@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e75b39f9d1ecb46c5b19bd6f370512ecf0aad033
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342830"
 ---
 # <a name="enabling-dma-transactions"></a>DMA トランザクションの有効化
 
@@ -46,7 +46,7 @@ status = WdfDmaEnablerCreate( DevExt->Device,
                               &DevExt->DmaEnabler );
 ```
 
-かどうか、ドライバー共通のバッファーが必要、ドライバーの*EvtDriverDeviceAdd*コールバック関数通常それらを設定します。 これらのバッファーの詳細については、[を使用して一般的なバッファー](using-common-buffers.md)を参照してください。
+かどうか、ドライバー共通のバッファーが必要、ドライバーの*EvtDriverDeviceAdd*コールバック関数通常それらを設定します。 これらのバッファーの詳細については、次を参照してください。[を使用して一般的なバッファー](using-common-buffers.md)します。
 
 ドライバーが呼び出された後**WdfDmaEnablerCreate**、呼び出すことができます[ **WdfDmaEnablerWdmGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff547020) WDM へのポインターを取得する[ **DMA\_アダプター** ](https://msdn.microsoft.com/library/windows/hardware/ff544062)デバイスの入力と出力方向のフレームワークを作成する構造体。 ただし、ほとんどのフレームワーク ベースのドライバーでは、これらの構造体にアクセスする必要はありません。
 

@@ -1,19 +1,19 @@
 ---
-title: モバイル ブロード バンド メタデータの作成ウィザードでサービスのアイコンを選択します。
-description: モバイル ブロード バンド メタデータの作成ウィザードでサービスのアイコンを選択します。
+title: モバイル ブロードバンド メタデータ作成ウィザードでのサービス アイコンの選択
+description: モバイル ブロードバンド メタデータ作成ウィザードでのサービス アイコンの選択
 ms.assetid: 6BD0A5A1-E954-42A8-B216-721AE888157F
 keywords:
-- モバイル ブロード バンド メタデータの作成ウィザードでサービスのアイコンを選択します。
+- モバイル ブロードバンド メタデータ作成ウィザードでのサービス アイコンの選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e1fb9b21ea633714d750dd44343bb03686a645c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340120"
 ---
-# <a name="select-service-icon-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロード バンド メタデータの作成ウィザードでサービスのアイコンを選択します。
+# <a name="select-service-icon-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのサービス アイコンの選択
 
 
 Windows 接続マネージャーで、サービス用に表示されるアイコンを指定する必要があります。 モバイル ブロード バンド アダプターがホーム ネットワーク プロバイダーに登録されているときに、ネットワークのエントリの横にアイコンが表示されます。 モバイル ブロード バンド アダプターがローミングされているかどうか、アイコンが表示されません。

@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 85025e4cc531cff03917e5ac78d898b9ce76fe32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346282"
 ---
 # <a name="d3dkmtoutduplpointershapetype-enumeration"></a>D3DKMT\_OUTDUPL\_ポインター\_図形\_種類の列挙型
 

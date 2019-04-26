@@ -17,16 +17,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ecb360b6f22e8154afd27a43fecbf21d0bfd35e
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341334"
 ---
 # <a name="adding-forms-to-the-forms-database"></a>フォーム データベースにフォームを追加する
 
 
-プリンターの追加フォームをサポートする場合は、プリンター ドライバーの GPD ファイルでそれらを記述することで Unidrv プリンター ドライバーを追加にできます。 リソース ID を使用する場合、 \*rcNameId フィールドと、フォームのリソース DLL 名の文字列を表示には、ドライバーは、Windows Vista Unidrv プリンター ドライバーを提供する新しいローカライズに関する拡張機能を自動的に使用します。 Unidrv プリンターのドライバー プラグインもスプーラーに自動的にこれらの変更を利用し、追加変更が必要としません。 これらの拡張機能の詳細については、[Windows Vista でプリンター フォームへの変更](changes-to-printer-forms-in-windows-vista.md)を参照してください。
+プリンターの追加フォームをサポートする場合は、プリンター ドライバーの GPD ファイルでそれらを記述することで Unidrv プリンター ドライバーを追加にできます。 リソース ID を使用する場合、 \*rcNameId フィールドと、フォームのリソース DLL 名の文字列を表示には、ドライバーは、Windows Vista Unidrv プリンター ドライバーを提供する新しいローカライズに関する拡張機能を自動的に使用します。 Unidrv プリンターのドライバー プラグインもスプーラーに自動的にこれらの変更を利用し、追加変更が必要としません。 これらの拡張機能の詳細については、次を参照してください。 [Windows Vista でプリンター フォームへの変更](changes-to-printer-forms-in-windows-vista.md)します。
 
 GPD ファイル内のローカライズ可能な文字列のリソース DLL を使用していない場合は、ローカライズ可能な文字列を削除してリソース DLL に格納し、GPD ファイルに対応するリソース ID を文字列に 必要があります。
 

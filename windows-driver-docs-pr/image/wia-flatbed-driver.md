@@ -1,17 +1,17 @@
 ---
-title: WIA ベッド ドライバー
-description: WIA ベッド ドライバー
+title: WIA フラットベッド ドライバー
+description: WIA フラットベッド ドライバー
 ms.assetid: 83c35b1f-10e0-47e1-97cc-5a7a79fb8088
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d3ba2f9affb0c05218ce660243561248cae846d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356117"
 ---
-# <a name="wia-flatbed-driver"></a>WIA ベッド ドライバー
+# <a name="wia-flatbed-driver"></a>WIA フラットベッド ドライバー
 
 
 

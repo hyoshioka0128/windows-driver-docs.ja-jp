@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 843f04bb47bcc68603f8be4bbecdb8cd58c4bbdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351665"
 ---
 # <a name="iprinterbidischemaresponsesaddstring-method"></a>IPrinterBidiSchemaResponses::AddString メソッド
 
@@ -67,7 +67,7 @@ HRESULT AddString(
 </tr>
 <tr class="even">
 <td><p>バージョン</p></td>
-<td><p>Windows 8 以降</p></td>
+<td><p>Windows 8 以降</p></td>
 </tr>
 </tbody>
 </table>

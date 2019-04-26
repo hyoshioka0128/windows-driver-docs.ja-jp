@@ -5,16 +5,16 @@ ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8989e988f12be06b037ecc580c5352b78d201970
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356622"
 ---
 # <a name="ctrpp-task"></a>Ctrpp タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、ctrpp.exe ツールを実行できるようにの Ctrpp タスクが用意されています。 Ctrpp.exe の使用方法の詳細については、[ **CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)を参照してください。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、ctrpp.exe ツールを実行できるようにの Ctrpp タスクが用意されています。 Ctrpp.exe の使用方法の詳細については、次を参照してください。 [ **CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)します。
 
 MSBuild では、Ctrpp 項目を使用して、ctrpp.exe に Ctrpp タスクのパラメーターを送信します。 プロジェクト ファイルで Ctrpp 項目では、ctrpp.exe の項目メタデータにアクセスします。
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8ac765e8dfc4963f45d7fcc434ea102ede65b08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353720"
 ---
 # <a name="page-creation-callbacks"></a>ページ作成コールバック
 
@@ -30,7 +30,7 @@ CPSUI の**CommonPropertySheetUI**関数がすぐに PFNPROPSHEETUI に型指定
 
 ![アプリケーション cpsui 通信を示す図](images/comprop.png)
 
-詳細については、[メソッドを指定するページの](methods-for-specifying-pages.md)を参照してください。
+詳細については、次を参照してください。[メソッドを指定するページの](methods-for-specifying-pages.md)します。
 
  
 

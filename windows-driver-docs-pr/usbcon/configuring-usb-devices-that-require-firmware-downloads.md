@@ -1,14 +1,14 @@
 ---
-Description: Firmware is internal to a device, and is independent of the operating system. However, firmware downloads can cause operating system errors.
+Description: ファームウェアであり、デバイスの内部は、オペレーティング システムに依存しません。 ただし、ファームウェアのダウンロードには、オペレーティング システムのエラーを生じることができます。
 title: ファームウェアの更新の USB デバイスを構成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4c1d98ac24d0381046fbed203ab3550707ea4ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352596"
 ---
 # <a name="configuring-a-usb-device-for-firmware-update"></a>ファームウェアの更新の USB デバイスを構成します。
 

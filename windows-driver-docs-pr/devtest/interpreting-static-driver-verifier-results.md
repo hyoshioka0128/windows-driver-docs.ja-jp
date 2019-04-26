@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier の結果の解釈
-description: Static Driver Verifier の結果の解釈
+title: 静的ドライバー検証ツールの結果の解釈
+description: 静的ドライバー検証ツールの結果の解釈
 ms.assetid: ec7e3b90-5d55-411a-8cfe-a1c9c4029694
 keywords:
 - Static Driver Verifier WDK、表示オプション
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 922e804db8e60443d6df75a230d4d199677bd495
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356576"
 ---
-# <a name="interpreting-static-driver-verifier-results"></a>Static Driver Verifier の結果の解釈
+# <a name="interpreting-static-driver-verifier-results"></a>静的ドライバー検証ツールの結果の解釈
 
 
 Visual Studio からの Static Driver Verifier を起動して、ドライバーの分析を実行するで結果が表示されます、**結果**メイン タブの概要。
@@ -53,7 +53,7 @@ SDV は、規則違反のドライバーをテストまたはドライバーで�
 
 場合、規則が関数呼び出し (通常は、リソースへのポインター) で特定の引数を監視し、ドライバーは、関数を呼び出しませんまたはその引数を参照していません、ルールは、ドライバーには適用されません。
 
-ドライバーは、エントリ ポイントを指定するルール モニターでは、この結果ことを示しています、SDV が見つかりませんでしたエントリ ポイントが正しく解釈されませんでした関数を呼び出すことが場合。 このような状況が発生したことを確認するを調べ、必要に応じて、修正、 [Sdv map.h](sdv-map-h.md)ファイル。 この手順については、[ドライバーをスキャン](scanning-the-driver.md)を参照してください。
+ドライバーは、エントリ ポイントを指定するルール モニターでは、この結果ことを示しています、SDV が見つかりませんでしたエントリ ポイントが正しく解釈されませんでした関数を呼び出すことが場合。 このような状況が発生したことを確認するを調べ、必要に応じて、修正、 [Sdv map.h](sdv-map-h.md)ファイル。 この手順については、次を参照してください。[ドライバーをスキャン](scanning-the-driver.md)します。
 
 各ルールの詳細については、次を参照してください。、[静的ドライバー検証規則](https://msdn.microsoft.com/library/windows/hardware/ff551714)参照。
 

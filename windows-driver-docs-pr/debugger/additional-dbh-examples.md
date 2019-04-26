@@ -1,6 +1,6 @@
 ---
-title: 追加 DBH 例
-description: 追加 DBH 例
+title: その他の DBH の例
+description: その他の DBH の例
 ms.assetid: 6db23b6b-e5da-4ea3-9f0a-ab42c0e712d7
 keywords:
 - DBH、シンボルを表示します。
@@ -10,20 +10,20 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21292ca6ed92b9fc419dae7231298ca630ca6183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354810"
 ---
-# <a name="additional-dbh-examples"></a>追加 DBH 例
+# <a name="additional-dbh-examples"></a>その他の DBH の例
 
 
 DBH プロンプトで実行できるコマンドの他の例を示します。
 
 ### <a name="span-iddisplayingprivatesymbolsandpublicsymbolsspanspan-iddisplayingprivatesymbolsandpublicsymbolsspandisplaying-private-symbols-and-public-symbols"></a><span id="displaying_private_symbols_and_public_symbols"></span><span id="DISPLAYING_PRIVATE_SYMBOLS_AND_PUBLIC_SYMBOLS"></span>プライベート シンボルとパブリック シンボルを表示します。
 
-かどうか、ターゲットは、完全なシンボル ファイル、ファイルに 2 回各パブリック シンボルが表示されます。 パブリック シンボルの表で、プライベート シンボル データにします。 多くの場合、パブリック シンボル テーブル内のコピーには、さまざまな文字の装飾 (プレフィックス/サフィックス) が含まれています。 詳細については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
+かどうか、ターゲットは、完全なシンボル ファイル、ファイルに 2 回各パブリック シンボルが表示されます。 パブリック シンボルの表で、プライベート シンボル データにします。 多くの場合、パブリック シンボル テーブル内のコピーには、さまざまな文字の装飾 (プレフィックス/サフィックス) が含まれています。 詳細については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
 DBH には、プライベート シンボル データに、装飾なしのパブリック シンボル テーブルおよびデコレーションでパブリック シンボル テーブルは、このシンボルに関する情報を表示できます。 これはすべて次の 3 種類が表示されます、コマンドを使用して、 **addr 414fe0**たび。
 

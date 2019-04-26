@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 091874d26248c2b01cab016008595918ba168387
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352736"
 ---
 # <a name="wiadpshorizontalbedsize"></a>WIA\_DPS\_水平\_ベッド\_サイズ
 
@@ -33,9 +33,9 @@ WIA\_DPS\_水平\_ベッド\_1/1000 インチので、スキャナーのフラ�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

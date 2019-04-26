@@ -1,6 +1,6 @@
 ---
-title: IHV、ドライバーの自動構成
-description: IHV、ドライバーの自動構成
+title: IHV ドライバーの自動構成
+description: IHV ドライバーの自動構成
 ms.assetid: 81febae0-6fab-4226-9e98-7705d606caf4
 keywords:
 - IHV ドライバーの自動構成の WDK プリンター
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb13bbf726003ee037c4cf392f4fc90826e2539d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350762"
 ---
-# <a name="autoconfiguration-in-an-ihv-driver"></a>IHV、ドライバーの自動構成
+# <a name="autoconfiguration-in-an-ihv-driver"></a>IHV ドライバーの自動構成
 
 
 自動構成をサポートしているスタンドアロン IHV ドライバーでは、次の要件を満たす必要があります。
@@ -26,7 +26,7 @@ ms.locfileid: "56549166"
 
 3.  受信した通知を理解する bidi 通知スキーマの機能を把握します。 参照してください[双方向通信スキーマ](bidirectional-communication-schema.md)します。
 
-**注**  自動構成サポートを提供するために、スタンドアロンのドライバーを作成する必要はありません。 代わりに、GPD または PPD ファイルを利用する Microsoft のプリンターのいずれかのクラス ドライバーを記述することができます。 詳細については、[自動構成のインボックス サポート](in-box-support-for-autoconfiguration.md)を参照してください。
+**注**  自動構成サポートを提供するために、スタンドアロンのドライバーを作成する必要はありません。 代わりに、GPD または PPD ファイルを利用する Microsoft のプリンターのいずれかのクラス ドライバーを記述することができます。 詳細については、次を参照してください。[自動構成のインボックス サポート](in-box-support-for-autoconfiguration.md)します。
 
  
 

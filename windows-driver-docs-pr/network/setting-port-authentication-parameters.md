@@ -1,6 +1,6 @@
 ---
-title: ポート設定の認証パラメーター
-description: ポート設定の認証パラメーター
+title: ポート認証パラメーターの設定
+description: ポート認証パラメーターの設定
 ms.assetid: 88ac8229-d1d5-4287-8b5d-3a7b9b1f2e89
 keywords:
 - WDK の NDIS OID 要求をポートします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09cb15313092b834341bbe840f576ade3b36a781
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346692"
 ---
-# <a name="setting-port-authentication-parameters"></a>ポート設定の認証パラメーター
+# <a name="setting-port-authentication-parameters"></a>ポート認証パラメーターの設定
 
 
 

@@ -1,19 +1,19 @@
 ---
-title: 印刷ドライバーをパッケージに注意してください。
-description: 印刷ドライバーをパッケージに注意してください。
+title: パッケージ対応印刷ドライバー
+description: パッケージ対応印刷ドライバー
 ms.assetid: f2ab38b9-410c-4dd8-bb81-4a8e0e48317a
 keywords:
 - パッケージに対応した印刷ドライバー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54292a6c1d83ab6e21d95a82adcfe60a23863088
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353701"
 ---
-# <a name="package-aware-print-drivers"></a>印刷ドライバーをパッケージに注意してください。
+# <a name="package-aware-print-drivers"></a>パッケージ対応印刷ドライバー
 
 
 パッケージに対応した印刷ドライバーでは、ポイントをサポートし、パッケージを使用した印刷、INF ファイルにエントリがあります。 これらのエントリ ポイントを行えるようにし、他のファイルに印刷ドライバーの依存関係の対応するために印刷をでは、わずかなものにでき、ドライバー パッケージの性質に依存することができます。

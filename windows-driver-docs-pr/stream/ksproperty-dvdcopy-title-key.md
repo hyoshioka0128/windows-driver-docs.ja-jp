@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85370626318c1e961f76b378c555f33e0b8615b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348416"
 ---
 # <a name="kspropertydvdcopytitlekey"></a>KSPROPERTY\_DVDCOPY\_タイトル\_キー
 
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_タイトル\_キー プロパティは、DVD 著作権保�
 <a name="remarks"></a>注釈
 -------
 
-タイトルのキーの詳細については、[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
+タイトルのキーの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
 
 <a name="requirements"></a>要件
 ------------

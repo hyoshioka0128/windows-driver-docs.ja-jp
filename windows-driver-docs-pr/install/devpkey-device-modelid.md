@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f6fbf4b052a9d074e3e908725d155c1f5b265392
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351079"
 ---
 # <a name="devpkeydevicemodelid"></a>DEVPKEY_Device_ModelId
 
@@ -46,7 +46,7 @@ DEVPKEY_Device_ModelId デバイスのプロパティに一致するデバイス
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +60,7 @@ DEVPKEY_Device_ModelId のデバイス プロパティでは、同じ製造元�
 
 DEVPKEY_Device_ModelId のデバイス プロパティの値を格納、 [ **ModelID** ](https://msdn.microsoft.com/library/windows/hardware/ff549295)デバイスのメタデータ パッケージの XML 要素。 デバイスがインストールされている場合、デバイスによって報告された ModelID GUID 値を持つこの鍵が設定されます。
 
-詳細については、[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)を参照してください。
+詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。
 
 <a name="requirements"></a>必要条件
 ------------

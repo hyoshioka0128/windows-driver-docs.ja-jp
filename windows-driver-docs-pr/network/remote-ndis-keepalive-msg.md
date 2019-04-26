@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_KEEPALIVE_MSG
-Description: The host sends this message periodically when there has been no other control or data traffic from the device to the host for the bus-defined KeepAliveTimeoutPeriod.
+Description: ホストは、定期的に行われていないその他のコントロールやデータからのトラフィック デバイス bus によって定義された KeepAliveTimeoutPeriod をホストするときに、このメッセージを送信します。
 ms.assetid: 7e0b329f-8ba7-488d-b99d-63e6b9bbc171
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9415e36ec305b1fb0df2e30106d8f4398d051f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350855"
 ---
 # <a name="remotendiskeepalivemsg"></a>リモート\_NDIS\_KEEPALIVE\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56552379"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000008 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -68,7 +68,7 @@ ms.locfileid: "56552379"
 
 デバイスは、表示が停止した場合に、特定のアクションを実行する必要はありません**リモート\_NDIS\_KEEPALIVE\_MSG**ホストからのメッセージ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

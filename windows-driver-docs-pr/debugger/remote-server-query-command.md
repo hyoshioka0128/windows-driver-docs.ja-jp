@@ -1,5 +1,5 @@
 ---
-title: リモート サーバーのクエリ コマンド
+title: Remote サーバー クエリ コマンド
 description: ローカル コンピューターまたはリモート サーバーで利用可能なセッションの一覧を表示するには、次の構文を使用します。
 ms.assetid: c95114a3-2ff5-456b-90e2-4d7bc6346f1f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d98ff180d451e52e4f2e4e2b11b3c1240d95d37c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353524"
 ---
-# <a name="remote-server-query-command"></a>リモート サーバーのクエリ コマンド
+# <a name="remote-server-query-command"></a>Remote サーバー クエリ コマンド
 
 
 ローカル コンピューターまたはリモート サーバーで利用可能なセッションの一覧を表示するには、次の構文を使用します。

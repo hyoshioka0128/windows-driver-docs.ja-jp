@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ec2391559d7849351f58c43b594208956c0b18f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356062"
 ---
 # <a name="digital-signatures-and-pnp-device-installation-windows-vista-and-later"></a>デジタル署名と PnP デバイスのインストール (Windows Vista 以降)
 
@@ -100,7 +100,7 @@ Windows のプレインストールかどうかを[ドライバー パッケー�
 
 -   **変更または符号なし。** Windows では、署名が検証されないことには、システム管理者を適切に警告するダイアログ ボックスが表示されます。 ダイアログ ボックスは、管理者は、インストールしたり、ドライバー パッケージをインストールしないようにオプションを提供します。 Windows では、標準ユーザーにダイアログ ボックスを表示しないと、標準ユーザー用のドライバー パッケージをプレインストールすることはできません。
 
-ドライバーの署名とインストールの詳細については、[署名カテゴリとドライバーのインストール](signature-categories-and-driver-installation.md)を参照してください。
+ドライバーの署名とインストールの詳細については、次を参照してください。[署名カテゴリとドライバーのインストール](signature-categories-and-driver-installation.md)します。
 
  
 

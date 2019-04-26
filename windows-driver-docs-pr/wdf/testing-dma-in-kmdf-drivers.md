@@ -5,11 +5,11 @@ ms.assetid: 1D37F8B3-EAFC-4BB0-988D-64ADF30DBC40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c1f02897021ee80b3c3bea917968efda609303e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350636"
 ---
 # <a name="testing-dma-in-kmdf-drivers"></a>KMDF ドライバーでの DMA のテスト
 
@@ -18,7 +18,7 @@ ms.locfileid: "56571298"
 
 次のツールは、DMA をサポートするフレームワーク ベースのドライバーをデバッグできます。
 
--   [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448) DMA のさまざまな操作の不適切な使用を検出する特定の検証テストが含まれています。 DMA 固有の検証の詳細については、[DMA の検証](https://msdn.microsoft.com/library/windows/hardware/ff544915)を参照してください。
+-   [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448) DMA のさまざまな操作の不適切な使用を検出する特定の検証テストが含まれています。 DMA 固有の検証の詳細については、次を参照してください。 [DMA の検証](https://msdn.microsoft.com/library/windows/hardware/ff544915)です。
 
 -   [ **! Dma** ](https://msdn.microsoft.com/library/windows/hardware/ff562369)カーネル デバッガー拡張機能は、DMA サブシステムとにより検証される DMA デバイス ドライバーに関する情報を表示[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
 

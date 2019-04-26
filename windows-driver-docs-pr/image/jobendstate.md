@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1137667a5f0640aad6510bd540ea05545f278bfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348836"
 ---
 # <a name="jobendstate-element"></a>JobEndState 要素
 
@@ -94,7 +94,7 @@ ms.locfileid: "56579133"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **JobEndState**要素には、スキャン ジョブの終了の状態に関するさまざまな側面を記述する子要素が含まれています。 WSD スキャン サービスに送信する**JobEndState**要素を使用して、クライアントを[ **JobEndStateEvent** ](jobendstateevent.md)要素。

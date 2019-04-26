@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8df5f23d62dd9be3be1a8768581aa0aefdd8ac5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348202"
 ---
 # <a name="oidgencominimumlinkspeed"></a>OID_GEN_CO_MINIMUM_LINK_SPEED
 
@@ -32,7 +32,7 @@ NIC の最小の送信速度 測定単位は 100,000 の値が 10 Mbps のハー
 **受信**  
 NIC の最小の受信速度 測定単位は 100,000 の値が 10 Mbps のハードウェア ビット レートを表すためにの 100 bps です。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

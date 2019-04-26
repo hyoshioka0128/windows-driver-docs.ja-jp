@@ -1,6 +1,6 @@
 ---
-title: セットの電力要求を処理
-description: セットの電力要求を処理
+title: 電源の設定要求の処理
+description: 電源の設定要求の処理
 ms.assetid: c69d4a9b-009a-4320-8e20-32a9cf9113bf
 keywords:
 - セット power WDK NDIS 中間の要求します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ebb5ea14ebecd3b9562cb769c3555edaddc0f966
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349751"
 ---
-# <a name="handling-a-set-power-request"></a>セットの電力要求を処理
+# <a name="handling-a-set-power-request"></a>電源の設定要求の処理
 
 
 
@@ -41,7 +41,7 @@ ms.locfileid: "56527611"
 
 1.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)各プロトコル ドライバーの機能が仮想ミニポートにバインドします。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**スリープ状態のイベント。 中間のドライバーにバインドされているプロトコル ドライバーには、ネットワーク データを送信して、仮想ミニポート ドライバーの中間の OID の要求を行うが停止します。 NDIS は、基になるミニポート ドライバーがスリープ状態への移行を行っていることを示すまで、ネットワーク データと要求を送信する中間のドライバーのプロトコルの下端を続行できます。
 
-2.  NDIS が発行した後、上にあるドライバーおよびし仮想ミニポートを一時停止します、 **NetEventSetPower**イベント。 一時停止の原因は、低電力状態に遷移です。 仮想ミニポートを一時停止の詳細については、[アダプターを一時停止](pausing-an-adapter.md)を参照してください。
+2.  NDIS が発行した後、上にあるドライバーおよびし仮想ミニポートを一時停止します、 **NetEventSetPower**イベント。 一時停止の原因は、低電力状態に遷移です。 仮想ミニポートを一時停止の詳細については、次を参照してください。[アダプターを一時停止](pausing-an-adapter.md)します。
 
     **注**  いいえ OID 要求は、例外として、低電力状態になっている仮想ミニポートに送信できる[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)します。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56527611"
 
 1.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)中間ドライバー プロトコルの下端の関数。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**スリープ状態のイベント。 ネットワーク データを送信して、基になるミニポート ドライバーに OID 要求を行う、中間のドライバーを停止する必要があります。 未処理の要求または送信の場合は、中間のドライバーが NDIS を返す必要があります\_状態\_への呼び出しから PENDING *ProtocolNetPnPEvent*します。 中間ドライバー呼び出し[ **NdisCompleteNetPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff561705)への呼び出しを完了する*ProtocolNetPnPEvent*します。 ただし、中間のドライバーのプロトコルのエッジは、基になるミニポート ドライバーから受信したパケットと状態インジケーターをアクセスできます。 受信したネットワーク データを無視できます。 中間のドライバーの実装が基になるミニポート ドライバーの状態の監視に依存している場合、状態インジケーター引き続き監視する必要があります。
 
-2.  NDIS は中間のドライバーのプロトコルのエッジを一時停止しを実行した後、underying ミニポート アダプターを置いた、 **NetEventSetPower**イベント。 一時停止の原因は、低電力状態に遷移です。 プロトコル バインドを一時停止の詳細については、[バインディングを一時停止](pausing-a-binding.md)を参照してください。
+2.  NDIS は中間のドライバーのプロトコルのエッジを一時停止しを実行した後、underying ミニポート アダプターを置いた、 **NetEventSetPower**イベント。 一時停止の原因は、低電力状態に遷移です。 プロトコル バインドを一時停止の詳細については、次を参照してください。[バインディングを一時停止](pausing-a-binding.md)します。
 
     **注**  いいえ OID 要求は、例外として、低電力状態になっている、基になるミニポート アダプターに送信できます[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)します。
 
@@ -75,7 +75,7 @@ ms.locfileid: "56527611"
 
 1.  NDIS 問題、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)中間ドライバーの仮想ミニポートにします。 中間ドライバー返します NDIS\_状態\_セット power 要求に成功します。 中間ドライバーが、OID を伝達する必要がありますされません\_PNP\_設定\_電源要求の基になるミニポート ドライバーにします。
 
-2.  NDIS は、仮想ミニポートを再起動し、セット power OID を発行した後、上にあるドライバーを再起動します。 仮想ミニポートを再開する方法の詳細については、[アダプター開始](starting-an-adapter.md)を参照してください。
+2.  NDIS は、仮想ミニポートを再起動し、セット power OID を発行した後、上にあるドライバーを再起動します。 仮想ミニポートを再開する方法の詳細については、次を参照してください。[アダプター開始](starting-an-adapter.md)します。
 
 3.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)上位プロトコル ドライバーの関数。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**イベントを動作状態 (D0) を設定します。 バインド プロトコル ドライバーには、仮想ミニポートのドライバーの中間にネットワークのデータの送信を開始できます。
 
@@ -83,7 +83,7 @@ ms.locfileid: "56527611"
 
 1.  NDIS 問題、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)基になるミニポート ドライバーまたは呼び出しをその[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)基になるミニポート ドライバーが停止した場合はハンドラー。
 
-2.  NDIS は、OID を発行した後、基になるミニポート ドライバー、プロトコルの端との中間の NDIS と基になるミニポート アダプターを再起動します。 プロトコル バインドを一時停止の詳細については、[バインディングを再起動する](restarting-a-binding.md)を参照してください。
+2.  NDIS は、OID を発行した後、基になるミニポート ドライバー、プロトコルの端との中間の NDIS と基になるミニポート アダプターを再起動します。 プロトコル バインドを一時停止の詳細については、次を参照してください。[バインディングを再起動する](restarting-a-binding.md)します。
 
 3.  NDIS 呼び出し、 [ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)中間ドライバーの機能です。 呼び出し*ProtocolNetPnPEvent*を指定します、 **NetEventSetPower**イベントを動作状態 (D0) を設定します。 ネットワーク データを基になるミニポート ドライバーに送信する中間のドライバーを開始できます。
 

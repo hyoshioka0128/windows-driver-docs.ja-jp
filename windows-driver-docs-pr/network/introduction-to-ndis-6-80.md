@@ -5,17 +5,17 @@ ms.assetid: 5E6E12BF-DE34-4CDD-84BB-7708A59134E9
 ms.date: 07/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85aa0c719bfcf42a74057d332a1c203ed8352e4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349464"
 ---
 # <a name="introduction-to-ndis-680"></a>NDIS 6.80 の概要
 
 このトピックでは、Network Driver Interface Specification (NDIS) 6.80 を示し、その主要な設計の追加機能を説明します。 Windows 10 バージョン 1709 では、NDIS 6.80 が含まれます。
 
-NDIS 6.80 は、NDIS 6.70 にミニポート、プロトコル、フィルター、および中間ドライバーのマイナー バージョン更新です。 NDIS 6.80 する NDIS 6.x ドライバーの移植の詳細については、[NDIS 6.80 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-70.md)を参照してください。
+NDIS 6.80 は、NDIS 6.70 にミニポート、プロトコル、フィルター、および中間ドライバーのマイナー バージョン更新です。 NDIS 6.80 する NDIS 6.x ドライバーの移植の詳細については、次を参照してください。 [NDIS 6.80 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-70.md)します。
 
 NIC ドライバーでは、NetAdapter クラス拡張 (NetAdapterCx) をバージョン 1.0 からバージョン 1.1 では、Windows 10 バージョン 1709 に更新されましたがします。
 
@@ -23,11 +23,11 @@ NIC ドライバーでは、NetAdapter クラス拡張 (NetAdapterCx) をバー�
 
 ### <a name="synchronous-oid-requests"></a>同期の OID 要求
 
-NDIS 6.80 では、Oid の新しい機能が導入されて、同期の OID を要求します。 OID の同期呼び出しは、低待機時間、非ブロッキング、スケーラブルでと、通常の OID 要求信頼性の高い比較されます。 詳細については、[同期 OID 要求インターフェイスで NDIS 6.80](synchronous-oid-request-interface-in-ndis-6-80.md)を参照してください。
+NDIS 6.80 では、Oid の新しい機能が導入されて、同期の OID を要求します。 OID の同期呼び出しは、低待機時間、非ブロッキング、スケーラブルでと、通常の OID 要求信頼性の高い比較されます。 詳細については、次を参照してください。[同期 OID 要求インターフェイスで NDIS 6.80](synchronous-oid-request-interface-in-ndis-6-80.md)します。
 
 ### <a name="rssv2"></a>RSSv2
 
-NDIS 6.80 で[Receive Side Scaling (RSS)](ndis-receive-side-scaling2.md) RSS バージョン 2 (RSSv2) にアップグレードされました。 RSSv2 が RSSv2 上あたり VPort の拡散を提供することで向上します。 詳細については、[受信側のスケーリング バージョン 2 (RSSv2) で NDIS 6.80](receive-side-scaling-version-2-rssv2-in-ndis-6-80.md)を参照してください。
+NDIS 6.80 で[Receive Side Scaling (RSS)](ndis-receive-side-scaling2.md) RSS バージョン 2 (RSSv2) にアップグレードされました。 RSSv2 が RSSv2 上あたり VPort の拡散を提供することで向上します。 詳細については、次を参照してください。[受信側のスケーリング バージョン 2 (RSSv2) で NDIS 6.80](receive-side-scaling-version-2-rssv2-in-ndis-6-80.md)します。
 
 RSSv2 は、Windows 10 バージョン 1709 でのみプレビューです。
 
@@ -49,7 +49,7 @@ NDIS 6.80、ドライバーがで定義されている要件に従う必要が�
 
 ### <a name="nic-drivers"></a>NIC ドライバー
 
-コンパイル、NetAdapterCx で NIC ドライバーの詳細については、[NetAdapterCx (コンパイルの設定) に移植する NDIS ミニポート ドライバー](../netcx/porting-ndis-miniport-drivers-to-netadaptercx.md#compilation-settings)を参照してください。
+コンパイル、NetAdapterCx で NIC ドライバーの詳細については、次を参照してください。 [NetAdapterCx (コンパイルの設定) に移植する NDIS ミニポート ドライバー](../netcx/porting-ndis-miniport-drivers-to-netadaptercx.md#compilation-settings)します。
 
 ### <a name="miniport-protocol-and-filter-drivers"></a>ミニポート、プロトコル、およびフィルター ドライバー
 

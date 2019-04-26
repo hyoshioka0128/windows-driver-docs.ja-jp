@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチのインターフェイス
-description: HYPER-V 拡張可能スイッチのインターフェイス
+title: Hyper-V 拡張可能スイッチ インターフェイス
+description: Hyper-V 拡張可能スイッチ インターフェイス
 ms.assetid: 268AEA25-39D6-4494-B778-49C0B209E62E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d45bfbbce606c4f85d6aa2b40aff03acb82ec6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349572"
 ---
-# <a name="hyper-v-extensible-switch-interface"></a>HYPER-V 拡張可能スイッチのインターフェイス
+# <a name="hyper-v-extensible-switch-interface"></a>Hyper-V 拡張可能スイッチ インターフェイス
 
 
 **注**  このページは、情報とでのダイアグラムに精通していることを前提としています。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)します。
@@ -31,17 +31,17 @@ Windows Server 2012 で NDIS 6.30 以降では、拡張可能スイッチ モジ
 <a href="" id="capturing-extension"></a>キャプチャ拡張機能  
 拡張機能をキャプチャし、パケットのトラフィックを監視します。 この種類の拡張機能には、パケットまたは拡張可能スイッチを通じてパケットの宛先を変更できません。 ただし、取得拡張機能と拡張機能は、ホスト アプリケーションに送信するトラフィックの統計情報を含むパケットなどのパケットのトラフィックが発生することです。
 
-詳細については、[キャプチャ拡張機能](capturing-extensions.md)を参照してください。
+詳細については、次を参照してください。[キャプチャ拡張機能](capturing-extensions.md)します。
 
 <a href="" id="filtering-extension"></a>拡張機能をフィルター処理  
 拡張機能をキャプチャし、パケットのトラフィックを監視します。 この種類の拡張を検査し、ポートやスイッチのカスタム ポリシー設定に基づいてパケット配信元に戻すこともできます。
 
-詳細については、[拡張機能のフィルタ リング](filtering-extensions.md)を参照してください。
+詳細については、次を参照してください。[拡張機能のフィルタ リング](filtering-extensions.md)します。
 
 <a href="" id="forwarding-extension"></a>転送拡張機能  
 フィルター拡張機能として同じ機能を備えている拡張機能。 この種類の拡張機能のことができます、パケットが配信される拡張可能スイッチ宛先ポートを確認するだけでなく任意の拡張可能スイッチ ポートにパケット トラフィックを挿入します。 この種類の拡張も検査し、標準のポートのポリシー設定に基づいてパケット配信を拒否します。
 
-詳細については、[転送拡張機能](forwarding-extensions.md)を参照してください。
+詳細については、次を参照してください。[転送拡張機能](forwarding-extensions.md)します。
 
 **注**  NDIS 6.40 (Windows Server 2012 R2) と以降では、転送拡張機能をサポートする必要があります[ハイブリッド転送](hybrid-forwarding.md)します。
 
@@ -51,7 +51,7 @@ Windows Server 2012 で NDIS 6.30 以降では、拡張可能スイッチ モジ
 
  
 
-拡張可能スイッチのインターフェイスの詳細については、[Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)を参照してください。
+拡張可能スイッチのインターフェイスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)します。
 
  
 

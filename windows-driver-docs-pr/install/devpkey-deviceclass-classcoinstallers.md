@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 25ae30272396b1a31b699e730dfcb0e3017adc85
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344305"
 ---
 # <a name="devpkeydeviceclassclasscoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 
@@ -54,7 +54,7 @@ DEVPKEY_DeviceClass_ClassCoInstallers デバイス プロパティがインス�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -66,11 +66,11 @@ DEVPKEY_DeviceClass_ClassCoInstallers デバイス プロパティがインス�
 
 クラスの共同インストーラー リスト内の各クラス インストーラーは、その DLL とエントリ ポイントで識別されます。
 
-クラスの共同インストーラーをインストールする方法については、[クラス共同インストーラーを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549801)を参照してください。
+クラスの共同インストーラーをインストールする方法については、次を参照してください。[クラス共同インストーラーを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549801)します。
 
 DEVPKEY_DeviceClass_ClassCoInstallers の値を取得するには呼び出すことによって[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090). 呼び出して DEVPKEY_DeviceClass_ClassCoInstallers を設定する[ **SetupDiSetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552128)または[ **SetupDiSetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552132).
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassCoInstallers プロパティのキーをサポートしていません。 Windows の以前のバージョンに対応する情報にアクセスする方法については、[デバイス セットアップ クラスの共同インストーラー レジストリ エントリの値にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537754)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_ClassCoInstallers プロパティのキーをサポートしていません。 Windows の以前のバージョンに対応する情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスの共同インストーラー レジストリ エントリの値にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537754)します。
 
 <a name="requirements"></a>必要条件
 ------------

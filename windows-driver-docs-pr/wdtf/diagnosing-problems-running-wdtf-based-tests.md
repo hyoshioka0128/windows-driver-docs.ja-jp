@@ -5,11 +5,11 @@ ms.assetid: 24257B50-ED9C-4D45-A245-1EC855463D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5136738c5fb9a69b6508ee3bafab18ba23616a03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348020"
 ---
 # <a name="diagnosing-problems-running-wdtf-based-tests"></a>WDTF ベース テストの実行時に発生する問題の診断
 
@@ -20,7 +20,7 @@ WDTF ベースのテストを実行している問題をトラブルシューテ
 
 
 1.  構成し、カーネル デバッガーを WDTF ベースのテストを実行しているコンピューターに接続します。 参照してください[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
-2.  Te.exe プロセスとスイッチを検索するには、そのプロセスのコンテキスト。 Te.exe については、[テストの作成および実行フレームワーク (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)を参照してください。
+2.  Te.exe プロセスとスイッチを検索するには、そのプロセスのコンテキスト。 Te.exe については、次を参照してください。[テストの作成および実行フレームワーク (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)します。
 
     ``` syntax
     !process 0 0 Te.exe 

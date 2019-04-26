@@ -1,14 +1,14 @@
 ---
-Description: This topic discusses the LPM mechanism for saving power and described various common problems seen in current USB 3.0 hardware.
+Description: このトピックでは、省電力に関する LPM 機構について説明し、USB 3.0 の現在のハードウェアのさまざまな一般的な問題を説明します。
 title: U1 または U2 の実装を含む一般的なハードウェアの問題
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 764a3e326883e3c78ddc422d0c03e5eef608ba78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352754"
 ---
 # <a name="common-hardware-problems-with-u1-or-u2-implementation"></a>U1 または U2 の実装を含む一般的なハードウェアの問題
 

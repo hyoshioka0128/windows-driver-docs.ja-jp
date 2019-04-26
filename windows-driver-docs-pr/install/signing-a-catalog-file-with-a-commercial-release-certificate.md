@@ -1,17 +1,17 @@
 ---
-title: 製品版の証明書でカタログ ファイルへの署名
-description: 製品版の証明書でカタログ ファイルへの署名
+title: 商用リリース証明書でのカタログ ファイルの署名
+description: 商用リリース証明書でのカタログ ファイルの署名
 ms.assetid: 362b0c79-50b9-4749-80e2-62601d76e9e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ccb98c77c8c7e29ffbab77d2c73edca33826f4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348770"
 ---
-# <a name="signing-a-catalog-file-with-a-commercial-release-certificate"></a>製品版の証明書でカタログ ファイルへの署名
+# <a name="signing-a-catalog-file-with-a-commercial-release-certificate"></a>商用リリース証明書でのカタログ ファイルの署名
 
 
 次を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)に署名するコマンド、[カタログ ファイル](catalog-files.md)カーネル モードの[ドライバー パッケージ](driver-packages.md)で、 [証明書の商用リリース](commercial-release-certificate.md)します。

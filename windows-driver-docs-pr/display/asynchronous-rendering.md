@@ -1,6 +1,6 @@
 ---
-title: 非同期表示
-description: 非同期表示
+title: 非同期レンダリング
+description: 非同期レンダリング
 ms.assetid: f291e416-aaee-4639-9410-6d01b3b02097
 keywords:
 - ディスプレイ ドライバー WDK Windows 2000、非同期のレンダリング
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37e3e8ba92f957b90f6db108180c8889ae674439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350328"
 ---
-# <a name="asynchronous-rendering"></a>非同期表示
+# <a name="asynchronous-rendering"></a>非同期レンダリング
 
 
 ## <span id="ddk_asynchronous_rendering_gg"></span><span id="DDK_ASYNCHRONOUS_RENDERING_GG"></span>

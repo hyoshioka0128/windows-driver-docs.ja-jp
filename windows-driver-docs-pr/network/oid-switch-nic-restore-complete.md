@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_NIC_RESTORE_COMPLETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cff184050292a50e18f0ab0593c1e556918a1ac8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353235"
 ---
 # <a name="oidswitchnicrestorecomplete"></a>OID\_スイッチ\_NIC\_復元\_完了
 
@@ -29,7 +29,7 @@ OID の OID のセット要求を受け取ったとき\_スイッチ\_NIC\_復�
 
 OID の要求を設定しました OID\_スイッチ\_NIC\_復元\_完了は拡張可能スイッチの基になるミニポート edge によって最終的に処理されます。 NDIS に OID 要求が完了するミニポート edge によってこの OID メソッド要求を受信すると後、\_状態\_成功します。 拡張可能スイッチのプロトコルの端に通知、拡張可能スイッチ ドライバー スタック内のすべての拡張機能が、保存を完了している操作。
 
-拡張可能スイッチ ポートの実行時データを保存する方法の詳細については、[保存 Hyper-v 拡張可能なスイッチ実行時データ](https://msdn.microsoft.com/library/windows/hardware/hh598299)を参照してください。
+拡張可能スイッチ ポートの実行時データを保存する方法の詳細については、次を参照してください。[保存 Hyper-v 拡張可能なスイッチ実行時データ](https://msdn.microsoft.com/library/windows/hardware/hh598299)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

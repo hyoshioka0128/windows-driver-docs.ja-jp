@@ -1,6 +1,6 @@
 ---
-title: 双方向通信のスキーマ リファレンス
-description: 双方向通信のスキーマ リファレンス
+title: 双方向通信のスキーマ参照
+description: 双方向通信のスキーマ参照
 ms.assetid: 23432e94-e932-43a4-917b-a5a393cbbb60
 keywords:
 - 双方向通信スキーマ WDK の印刷
@@ -8,13 +8,13 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bfa414a3a43d0b43336e0c1621bceb870e6d223
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349265"
 ---
-# <a name="bidirectional-communication-schema-reference"></a>双方向通信のスキーマ リファレンス
+# <a name="bidirectional-communication-schema-reference"></a>双方向通信のスキーマ参照
 
 
 このセクションでは、プロパティと値の双方向通信のスキーマの詳細について説明します。 このセクションの内容は、主なカテゴリの各最上位レベル (プリンターのプロパティ) から双方向通信のスキーマの階層を並列に編成されます。

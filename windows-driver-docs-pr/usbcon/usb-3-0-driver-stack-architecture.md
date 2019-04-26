@@ -1,16 +1,16 @@
 ---
-Description: This topic provides an overview of the Universal Serial Bus (USB) driver stack architecture.
-title: Windows での USB ホスト側のドライバー
+Description: このトピックでは、ユニバーサル シリアル バス (USB) ドライバー スタックのアーキテクチャの概要を示します。
+title: Windows の USB ホスト側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e021cffe443cab922140fab6d5c5c32af6460d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355103"
 ---
-# <a name="usb-host-side-drivers-in-windows"></a>Windows での USB ホスト側のドライバー
+# <a name="usb-host-side-drivers-in-windows"></a>Windows の USB ホスト側ドライバー
 
 
 このトピックでは、ユニバーサル シリアル バス (USB) ドライバー スタックのアーキテクチャの概要を示します。
@@ -84,19 +84,19 @@ USB の一般的なクラスの一般的な親ドライバーは、複合デバ�
 
 Usbccgp.sys は Windows XP SP1、および以降のバージョンの Windows オペレーティング システムに含まれています。 関数を実装するために、ドライバーが更新された Windows 8 で中断し、リモート ウェイク アップ機能、USB 3.0 仕様で定義されています。
 
-詳細については、[USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)を参照してください。
+詳細については、次を参照してください。 [USB 汎用親ドライバー (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)します。
 
 ## <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
 
-Windows USB (WinUSB) は、USB デバイスの Microsoft 提供の汎用ドライバーです。 WinUSB アーキテクチャは、カーネル モード ドライバー (Winusb.sys) とユーザー モードのダイナミック リンク ライブラリ (Winusb.dll) で構成されます。 デバイスのユーザー定義関数のドライバーを必要としない場合、機能のドライバーとして Winusb.sys デバイスのカーネル モード スタックでインストールできます。 ユーザー モード デバイス I/O 制御要求のセットを使用して、または呼び出すことによって、プロセスは Winusb.sys と通信し、できる**WinUsb\_Xxx**関数。 詳細については、[WinUSB](winusb.md)を参照してください。
+Windows USB (WinUSB) は、USB デバイスの Microsoft 提供の汎用ドライバーです。 WinUSB アーキテクチャは、カーネル モード ドライバー (Winusb.sys) とユーザー モードのダイナミック リンク ライブラリ (Winusb.dll) で構成されます。 デバイスのユーザー定義関数のドライバーを必要としない場合、機能のドライバーとして Winusb.sys デバイスのカーネル モード スタックでインストールできます。 ユーザー モード デバイス I/O 制御要求のセットを使用して、または呼び出すことによって、プロセスは Winusb.sys と通信し、できる**WinUsb\_Xxx**関数。 詳細については、次を参照してください。 [WinUSB](winusb.md)します。
 
-Windows 8 での WinUSB、Winusb.inf、Microsoft から提供された情報 (INF) ファイルを含む USB\\MS\_COMP\_WINUSB デバイス識別子の文字列として。 これにより、Winusb.sys MS OS 記述子に一致する WinUSB 互換性のある ID を持つこれらのデバイスの機能のドライバーとして自動的に読み込まれたを取得できます。 このようなデバイスでは、WinUSB デバイスと呼ばれます。 いないハードウェアの製造元が、エンドユーザーの簡単なドライバーのインストール処理を行う、WinUSB デバイスの INF ファイルを配布するに必要です。 詳細については、[WinUSB デバイス](automatic-installation-of-winusb.md)を参照してください。
+Windows 8 での WinUSB、Winusb.inf、Microsoft から提供された情報 (INF) ファイルを含む USB\\MS\_COMP\_WINUSB デバイス識別子の文字列として。 これにより、Winusb.sys MS OS 記述子に一致する WinUSB 互換性のある ID を持つこれらのデバイスの機能のドライバーとして自動的に読み込まれたを取得できます。 このようなデバイスでは、WinUSB デバイスと呼ばれます。 いないハードウェアの製造元が、エンドユーザーの簡単なドライバーのインストール処理を行う、WinUSB デバイスの INF ファイルを配布するに必要です。 詳細については、次を参照してください。 [WinUSB デバイス](automatic-installation-of-winusb.md)します。
 
 ## <a name="usb-client-driver"></a>USB クライアント ドライバー
 
 
-複合または複合ではない各 USB デバイスは、クライアント ドライバーによって管理されます。 USB クライアント ドライバーは、USB ドライバー スタックのクライアントであるクラスまたはデバイス ドライバーです。 このようなドライバーには、このクラスにはと、Microsoft またはサード パーティ ベンダーからのデバイス固有ドライバーが含まれます。 Microsoft によって提供されるクラス ドライバーの一覧を表示するには、[のサポートされている USB デバイス クラスに対するドライバー](supported-usb-classes.md)を参照してください。 クライアント ドライバーは、USB ドライバー スタックによって公開されるパブリック インターフェイスを呼び出すことによって、デバイスと通信する要求を作成します。
+複合または複合ではない各 USB デバイスは、クライアント ドライバーによって管理されます。 USB クライアント ドライバーは、USB ドライバー スタックのクライアントであるクラスまたはデバイス ドライバーです。 このようなドライバーには、このクラスにはと、Microsoft またはサード パーティ ベンダーからのデバイス固有ドライバーが含まれます。 Microsoft によって提供されるクラス ドライバーの一覧を表示するには、次を参照してください。[のサポートされている USB デバイス クラスに対するドライバー](supported-usb-classes.md)します。 クライアント ドライバーは、USB ドライバー スタックによって公開されるパブリック インターフェイスを呼び出すことによって、デバイスと通信する要求を作成します。
 
 複合デバイス用のクライアント ドライバーがドライバー スタック内の場所を除き、非複合デバイス用のクライアント ドライバーと変わりありません。
 
@@ -117,11 +117,11 @@ USB クライアント ドライバーは、ユーザー モードまたはカ�
 
 -   Usbdex.lib
 
-    このヘルパー ライブラリは Windows 8 の新機能です。 ライブラリでは、ルーチンの割り当てと翻訳の構築について主にエクスポートします。 これらのルーチンは、一部のしくみによってエクスポートされたレガシ ルーチンを置き換えます。 新しいルーチンでは、クライアント ドライバーの登録のためのハンドルを保持する USB ドライバー スタックを登録する必要があります。 そのハンドルは、他の Usbdex.lib ルーチンへの呼び出しに使用されます。 新しいルーチンによって割り当てられた特定の翻訳は、追跡と処理の向上のため USB ドライバーを使用する URB コンテキストを持っています。 詳細については、[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)を参照してください。
+    このヘルパー ライブラリは Windows 8 の新機能です。 ライブラリでは、ルーチンの割り当てと翻訳の構築について主にエクスポートします。 これらのルーチンは、一部のしくみによってエクスポートされたレガシ ルーチンを置き換えます。 新しいルーチンでは、クライアント ドライバーの登録のためのハンドルを保持する USB ドライバー スタックを登録する必要があります。 そのハンドルは、他の Usbdex.lib ルーチンへの呼び出しに使用されます。 新しいルーチンによって割り当てられた特定の翻訳は、追跡と処理の向上のため USB ドライバーを使用する URB コンテキストを持っています。 詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
 
 -   Winusb.dll
 
-    Winusb.dll が公開しているユーザー モード DLL [WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) Winusb.sys を通信するためのカーネル モードでデバイスの機能のドライバーとして読み込まれます。 アプリケーションでは、これらの関数を使用するデバイスを構成して、デバイスに関する情報を取得、I/O 操作を実行します。 これらの関数の使用方法の詳細については、[WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)を参照してください。
+    Winusb.dll が公開しているユーザー モード DLL [WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) Winusb.sys を通信するためのカーネル モードでデバイスの機能のドライバーとして読み込まれます。 アプリケーションでは、これらの関数を使用するデバイスを構成して、デバイスに関する情報を取得、I/O 操作を実行します。 これらの関数の使用方法の詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 [ユニバーサル シリアル バス (USB) ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538930)  

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_SUPPORTED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b121850c66dc8990be0701c6e5d5dd05d33ea0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348190"
 ---
 # <a name="oidgenmediasupported"></a>OID\_GEN\_メディア\_サポートされています。
 
@@ -56,7 +56,7 @@ NDIS 6.0 とそれ以降のミニポート ドライバーでは、この OID �
 <a href="" id="ndismedium802-3"></a>**NdisMedium802\_3**  
 イーサネット (802.3)。
 
-**注**  NDIS 5 *。x* 802.11 インターフェイスに準拠しているミニポート ドライバーは、このメディアの種類を使用する必要があります。 802.11 インターフェイスの詳細については、[802.11 ワイヤレス LAN のミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff543933)を参照してください。
+**注**  NDIS 5 *。x* 802.11 インターフェイスに準拠しているミニポート ドライバーは、このメディアの種類を使用する必要があります。 802.11 インターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff543933)します。
 
  
 
@@ -89,7 +89,7 @@ ARCNET (878.2)。 Windows Vista および Windows の以降のバージョンで
 ATM します。 NDIS 6.0 およびそれ以降のドライバーは、このメディアの種類はサポートされていません。
 
 <a href="" id="ndismediumnative802-11"></a>**NdisMediumNative802\_11**  
-ネイティブの 802.11 します。 このメディアの種類は、ネイティブの 802.11 インターフェイスに準拠しているミニポート ドライバーによって使用されます。 このインターフェイスの詳細については、[802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)を参照してください。
+ネイティブの 802.11 します。 このメディアの種類は、ネイティブの 802.11 インターフェイスに準拠しているミニポート ドライバーによって使用されます。 このインターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)します。
 
 <a href="" id="ndismediumwirelesswan"></a>**NdisMediumWirelessWan**  
 さまざまな種類の **NdisWireless * * * Xxx*メディア。 このメディアの種類は、Windows Vista および Windows の以降のバージョン以降の使用をご利用いただけません。
@@ -124,7 +124,7 @@ NDIS 5. *x*オペレーティング システムおよびイーサネットの�
 
 NDIS 6.0 とそれ以降のミニポート ドライバー WLAN メディアをサポートするオペレーティング システムおよび NDIS IEEE 802.11 パケットとして表示されるパケットを転送します。 これらの NDIS ドライバーは、ネイティブの 802.11 ミニポート ドライバーとして WLAN のネットワークのサポートを提供する必要があります。 このようなドライバーとその中の宣言**NdisMediumNative802\_11**します。
 
-ネイティブの 802.11 ミニポート ドライバーの詳細については、[802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)を参照してください。
+ネイティブの 802.11 ミニポート ドライバーの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)します。
 
 基になるミニポート ドライバーに返された場合**NULL**このクエリで、実験用のメディアの種類を使用されるかどうか、ドライバーを示す必要がありますまたは受信操作を使用して、 [ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)関数。 このような基になるミニポート ドライバーにバインドされている任意のプロトコルは、このようなすべての問題を受け取り、プロトコル ドライバーのフィルターを適用できませんは、受信操作で[OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md)します。
 

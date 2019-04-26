@@ -1,17 +1,17 @@
 ---
-title: 表示と WinDbg のグローバル変数の編集
-description: 表示と WinDbg のグローバル変数の編集
+title: WinDbg でのグローバル変数の表示と編集
+description: WinDbg でのグローバル変数の表示と編集
 ms.assetid: 4273F6D8-A2A1-43FA-80BF-97E5673FAF05
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a559fb816042a272e0430f58ec02c96828799448
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348945"
 ---
-# <a name="viewing-and-editing-global-variables-in-windbg"></a>表示と WinDbg のグローバル変数の編集
+# <a name="viewing-and-editing-global-variables-in-windbg"></a>WinDbg でのグローバル変数の表示と編集
 
 
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>

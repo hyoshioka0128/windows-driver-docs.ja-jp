@@ -1,19 +1,19 @@
 ---
-title: 表示のミニポート ドライバーの初期化
-description: 表示のミニポート ドライバーの初期化
+title: ディスプレイ ミニポート ドライバーの初期化
+description: ディスプレイ ミニポート ドライバーの初期化
 ms.assetid: 505dab48-7c00-4bf4-8433-487360f67b26
 keywords:
 - 初期化のミニポート ドライバー WDK で表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c5e62adedbddd59339712fc9d819e5cd8ba97db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350276"
 ---
-# <a name="initializing-the-display-miniport-driver"></a>表示のミニポート ドライバーの初期化
+# <a name="initializing-the-display-miniport-driver"></a>ディスプレイ ミニポート ドライバーの初期化
 
 
 オペレーティング システムがディスプレイのミニポート ドライバーが読み込まれた後、次の手順は、ディスプレイのミニポート ドライバーを初期化するために発生します。

@@ -1,24 +1,24 @@
 ---
-title: テスト コンピューターにテスト署名されたドライバー パッケージをインストールします。
-description: テスト コンピューターにテスト署名されたドライバー パッケージをインストールします。
+title: テスト コンピューターへのテスト署名されたドライバー パッケージのインストール
+description: テスト コンピューターへのテスト署名されたドライバー パッケージのインストール
 ms.assetid: d825acb6-d1de-4fc5-bde2-ea27bd706f61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 470068734445ea3c7d9c1b7248da56f9966c3814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352046"
 ---
-# <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>テスト コンピューターにテスト署名されたドライバー パッケージをインストールします。
+# <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>テスト コンピューターへのテスト署名されたドライバー パッケージのインストール
 
 
 テスト署名されたをインストールする[ドライバー パッケージ](driver-packages.md)テスト コンピューターを 1 回。
 
--   テスト コンピューターは、テスト署名されたドライバーやドライバー パッケージをインストールする準備ができた。 詳細については、[サポートのテスト署名をテスト コンピューターを構成する](configuring-the-test-computer-to-support-test-signing.md)を参照してください。
+-   テスト コンピューターは、テスト署名されたドライバーやドライバー パッケージをインストールする準備ができた。 詳細については、次を参照してください。[サポートのテスト署名をテスト コンピューターを構成する](configuring-the-test-computer-to-support-test-signing.md)します。
 
--   テスト証明書は、テスト コンピューターで信頼されたルート証明機関の証明書ストアにコピーされます。 詳細については、[テスト証明書のインストール](installing-test-certificates.md)を参照してください。
+-   テスト証明書は、テスト コンピューターで信頼されたルート証明機関の証明書ストアにコピーされます。 詳細については、次を参照してください。[テスト証明書のインストール](installing-test-certificates.md)します。
 
 テスト署名されたをインストールする[ドライバー パッケージ](driver-packages.md)によりコンピューターに。
 
@@ -28,7 +28,7 @@ ms.locfileid: "56531669"
 
 この手順をビルドおよびテスト署名、 *ToastPkg*サンプル ドライバー パッケージ。
 
-1.  署名のコンピューターでは、ビルド、 *ToastPkg*ドライバー パッケージのカーネル モード バイナリのサンプルです。 ドライバーを構築する方法の詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
+1.  署名のコンピューターでは、ビルド、 *ToastPkg*ドライバー パッケージのカーネル モード バイナリのサンプルです。 ドライバーを構築する方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 
 2.  署名のコンピューターでは、作成、 *Contoso.com(Test)* 」の説明に従って証明書[テスト証明書を作成する](creating-test-certificates.md)します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "56531669"
 
 1 回、[ドライバー パッケージ](driver-packages.md)がインストールされている場合、問題のトラブルシューティング テスト署名されたドライバーの読み込みで説明したメソッドを介して[インストールのトラブルシューティングとドライバー パッケージの署名を使用した負荷の問題](troubleshooting-install-and-load-problems-with-signed-driver-packages.md).
 
-テスト署名されたドライバー パッケージをインストールする方法の詳細については、[Installing Test-Signed ドライバー パッケージ](installing-test-signed-driver-packages.md)を参照してください。
+テスト署名されたドライバー パッケージをインストールする方法の詳細については、次を参照してください。 [Installing Test-Signed ドライバー パッケージ](installing-test-signed-driver-packages.md)します。
 
  
 

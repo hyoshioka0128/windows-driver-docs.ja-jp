@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 5e48dd2af651173ba66ad26e030f2d03a18f0066
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348490"
 ---
 # <a name="oidwditaskclose"></a>OID\_WDI\_タスク\_閉じる
 
@@ -34,7 +34,7 @@ OID\_WDI\_タスク\_閉じる要求 IHV コンポーネントが、アダプタ
 
 [NDIS\_状態\_WDI\_INDICATION\_閉じる\_完了](ndis-status-wdi-indication-close-complete.md)
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

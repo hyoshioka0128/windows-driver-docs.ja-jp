@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_ALIAS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 19c096ca75c596f7066f090bcb9f42ac177313d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349466"
 ---
 # <a name="oidgenalias"></a>OID\_GEN\_エイリアス
 
@@ -34,7 +34,7 @@ NDIS ネットワーク インターフェイスのプロバイダーとその�
 
 インターフェイスのプロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、NDIS で返されるエイリアス文字列\_場合\_カウント済\_文字列構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

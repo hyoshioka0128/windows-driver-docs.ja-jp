@@ -1,6 +1,6 @@
 ---
-title: NET_BUFFER_LIST 情報を設定します。
-description: NET_BUFFER_LIST 情報を設定します。
+title: NET_BUFFER_LIST 情報の設定
+description: NET_BUFFER_LIST 情報の設定
 ms.assetid: 28f50ab4-043b-47bb-af70-e8c892288f21
 keywords:
 - NET_BUFFER_LIST
@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21fecb68a1592ba9b6d4bdec6cade8658c0f6ad8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346661"
 ---
 # <a name="setting-netbufferlist-information"></a>NET の設定\_バッファー\_情報を一覧表示
 

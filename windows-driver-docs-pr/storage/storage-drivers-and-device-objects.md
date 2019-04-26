@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90e12270b8ba39446bf7e4342c01077158d81a0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348442"
 ---
 # <a name="storage-drivers-and-device-objects"></a>ストレージ ドライバーとデバイス オブジェクト
 
@@ -28,7 +28,7 @@ PnP ドライバーや記憶域クラス、記憶域フィルター ドライバ
 
 記憶域ポート ドライバー ファイルの種類の物理デバイス オブジェクト (Pdo) を作成する\_デバイス\_大容量\_ストレージ。 クラスのディスク、CD-ROM クラス、tape クラスおよびチェンジャー クラス ドライバーは、作成ファイルの種類の Fdo\_デバイス\_ディスク、ファイル\_デバイス\_CD\_ROM]、[ファイル\_デバイス\_テープ、ファイルと\_デバイス\_チェンジャーそれぞれします。
 
-PnP ドライバーのデザイン方法の詳細については、、 [PnP ドライバー設計のガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff559623)を参照してください。 PnP 関連について **Io * * * Xxx*ルーチンを参照してください、[プラグ アンド プレイ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558809)します。
+PnP ドライバーのデザイン方法の詳細については、次を参照してください。、 [PnP ドライバー設計のガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff559623)します。 PnP 関連について **Io * * * Xxx*ルーチンを参照してください、[プラグ アンド プレイ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558809)します。
 
  
 

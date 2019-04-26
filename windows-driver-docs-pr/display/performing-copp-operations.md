@@ -1,6 +1,6 @@
 ---
-title: COPP 操作を実行します。
-description: COPP 操作を実行します。
+title: COPP 操作の実行
+description: COPP 操作の実行
 ms.assetid: 2cded173-1462-4034-888b-c37d9e1708b5
 keywords:
 - 保護 WDK COPP、COPP 操作をコピーします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f00f391f5d1e8f05933b98d52a8e6ccc79f99df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352283"
 ---
-# <a name="performing-copp-operations"></a>COPP 操作を実行します。
+# <a name="performing-copp-operations"></a>COPP 操作の実行
 
 
 **このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**

@@ -1,6 +1,6 @@
 ---
-title: トレース メッセージのヘッダー ファイル
-description: トレース メッセージのヘッダー ファイル
+title: トレース メッセージ ヘッダー ファイル
+description: トレース メッセージ ヘッダー ファイル
 ms.assetid: 835162c0-6596-42ae-bc6d-824dd6c3f69f
 keywords:
 - トレース メッセージのヘッダー ファイル WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49a75ba013366393766b8f91866a30fb974fb37e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354625"
 ---
-# <a name="trace-message-header-file"></a>トレース メッセージのヘッダー ファイル
+# <a name="trace-message-header-file"></a>トレース メッセージ ヘッダー ファイル
 
 
 A*トレース メッセージのヘッダー* (TMH) ファイルは関数と WPP によって生成されるトレース コードで使用される変数の宣言を含むテキスト ファイルです。 ヘッダー ファイルには、書式の PDB ファイルにトレース メッセージを追加するマクロも含まれています、[トレース プロバイダー](trace-provider.md)、カーネル モード ドライバーまたはユーザー モード アプリケーションなどです。

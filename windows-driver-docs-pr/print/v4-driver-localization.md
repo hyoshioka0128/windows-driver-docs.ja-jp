@@ -5,11 +5,11 @@ ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31cffd917fad5cda53ba8ad4de2619720ee9bd32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358582"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 プリンター ドライバー ローカライズ
 
@@ -43,7 +43,7 @@ Windows 8 は、プリンターの拡張機能と UWP デバイス アプリの�
 <td>JobDuplexAllDocumentsContiguously</td>
 </tr>
 <tr class="even">
-<td>Collation</td>
+<td>[照合順序]</td>
 <td>示さ</td>
 </tr>
 <tr class="odd">
@@ -51,7 +51,7 @@ Windows 8 は、プリンターの拡張機能と UWP デバイス アプリの�
 <td>印刷</td>
 </tr>
 <tr class="even">
-<td>Orientation</td>
+<td>方向</td>
 <td>PageOrientation</td>
 </tr>
 <tr class="odd">
@@ -73,7 +73,7 @@ Windows 8 は、プリンターの拡張機能と UWP デバイス アプリの�
 </ul></td>
 </tr>
 <tr class="even">
-<td>Binding</td>
+<td>バインディング</td>
 <td><ul>
 <li><p>JobBindAllDocuments</p></li>
 <li><p>DocumentBinding</p></li>

@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cd62de203e732d306abd348d1b67e535fc0c87d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349852"
 ---
 # <a name="guidndisstatusportstate"></a>GUID_NDIS_STATUS_PORT_STATE
 
@@ -23,5 +23,5 @@ NDIS ポートの使用をサポートするミニポート ドライバー、 [
 
 この GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_PORT_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569624)構造体。
 
-ポートの状態の詳細については、[OID_GEN_PORT_STATE](oid-gen-port-state.md)を参照してください。
+ポートの状態の詳細については、次を参照してください。 [OID_GEN_PORT_STATE](oid-gen-port-state.md)します。
 

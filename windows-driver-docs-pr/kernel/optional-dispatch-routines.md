@@ -1,6 +1,6 @@
 ---
-title: 省略可能なディスパッチ ルーチン
-description: 省略可能なディスパッチ ルーチン
+title: オプションのディスパッチ ルーチン
+description: オプションのディスパッチ ルーチン
 ms.assetid: 38a3fcc9-237d-432d-85db-1594697c96a5
 keywords:
 - ルーチンの WDK カーネルをディスパッチする、省略可能
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 361e81c6ed13f342ac821baf727a4e07f30ce8a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352050"
 ---
-# <a name="optional-dispatch-routines"></a>省略可能なディスパッチ ルーチン
+# <a name="optional-dispatch-routines"></a>オプションのディスパッチ ルーチン
 
 
 

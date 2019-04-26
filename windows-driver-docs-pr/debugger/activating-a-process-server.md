@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a4c23fc841cf552ae9b369b702b787db39f5186
-ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354002"
 ---
 # <a name="activating-a-process-server"></a>プロセス サーバーのアクティブ化
 
 
 ツールを Windows のデバッグに含まれているプロセス サーバーは、DbgSrv (dbgsrv.exe) と呼ばれます。 プロセス サーバーをアクティブ化する (管理者として実行)、管理者特権でコマンド プロンプト ウィンドウを開くし、入力、 **dbgsrv**コマンド。
 
-**注**  特権を昇格することがなく、プロセス サーバーをアクティブ化することができ、クライアントのデバッグはサーバーに接続することになります。 ただし、クライアントを昇格した特権でアクティブ化がない限り、プロセス サーバーを検出することはできません。 デバッグ サーバーを検出する方法については、[プロセス サーバーを探して](searching-for-process-servers.md)を参照してください。
+**注**  特権を昇格することがなく、プロセス サーバーをアクティブ化することができ、クライアントのデバッグはサーバーに接続することになります。 ただし、クライアントを昇格した特権でアクティブ化がない限り、プロセス サーバーを検出することはできません。 デバッグ サーバーを検出する方法については、次を参照してください。[プロセス サーバーを探して](searching-for-process-servers.md)します。
 
  
 

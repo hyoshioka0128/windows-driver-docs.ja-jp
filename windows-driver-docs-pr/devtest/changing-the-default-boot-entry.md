@@ -1,6 +1,6 @@
 ---
-title: 既定のブート エントリを変更します。
-description: 既定のブート エントリを変更します。
+title: 既定のブート エントリの変更
+description: 既定のブート エントリの変更
 ms.assetid: 0dce10d4-f73a-49bd-8a24-a4aa14c82233
 keywords:
 - 既定のブート エントリ
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a5f6f5e29e977095c2b28f19feb08199c11a37a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344054"
 ---
-# <a name="changing-the-default-boot-entry"></a>既定のブート エントリを変更します。
+# <a name="changing-the-default-boot-entry"></a>既定のブート エントリの変更
 
 
 ## <span id="ddk_changing_the_default_boot_entry_tools"></span><span id="DDK_CHANGING_THE_DEFAULT_BOOT_ENTRY_TOOLS"></span>

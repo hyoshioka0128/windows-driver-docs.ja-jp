@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SRIOV_RESET_VF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1484aa08143befd9544f0237b73c08806addb440
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351344"
 ---
 # <a name="oidsriovresetvf"></a>OID\_SRIOV\_リセット\_VF
 
@@ -30,7 +30,7 @@ VF にを通じて、PCI Express (PCIe) 関数レベルのリセット (FLR) を
 
 -   リセット操作には、指定 VF のみ影響する必要があります。 操作では、その他の VFs または同じネットワーク アダプターの PF には影響する必要があります。
 
-詳細については、[仮想関数をリセットする](https://msdn.microsoft.com/library/windows/hardware/hh440219)を参照してください。
+詳細については、次を参照してください。[仮想関数をリセットする](https://msdn.microsoft.com/library/windows/hardware/hh440219)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

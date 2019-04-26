@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ef6a69e6867bc6edddd97a624d4073b1066dad1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356046"
 ---
 # <a name="digital-signatures"></a>デジタル署名
 
@@ -58,7 +58,7 @@ Windows では、有効なデジタル署名を使用して、次のことを確
 
 プラグ アンド プレイ (PnP) デバイスのインストールでのデジタル署名の使用方法の詳細については、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)を参照してください[デジタル署名と PnP デバイスインストール](digital-signatures-and-pnp-device-installation.md)します。
 
-Microsoft 公開キー基盤テクノロジ、コード署名、およびデジタル署名の詳細については、[コード署名の概要](https://go.microsoft.com/fwlink/p/?linkid=104071)と[コード署名のベスト プラクティス](https://go.microsoft.com/fwlink/p/?linkid=68250)を参照してください。
+Microsoft 公開キー基盤テクノロジ、コード署名、およびデジタル署名の詳細については、次を参照してください。[コード署名の概要](https://go.microsoft.com/fwlink/p/?linkid=104071)と[コード署名のベスト プラクティス](https://go.microsoft.com/fwlink/p/?linkid=68250)します。
 
  
 

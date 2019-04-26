@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 23c1e8d305312dfa6750d7b313a1626c038147c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350320"
 ---
 # <a name="dxgkallocationinfo2-structure"></a>\_DXGK\_ALLOCATIONINFO2 構造体
 
@@ -49,7 +49,7 @@ typedef struct _DXGK_ALLOCATIONINFO2 {
 } DXGK_ALLOCATIONINFO2;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **pPrivateDriverData**システム用に予約されています。

@@ -5,11 +5,11 @@ ms.assetid: 256edfa8-de02-438d-b4ce-0a2df0d0f46e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6768651c9c16aff0bbd80941b66938132672ccd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354184"
 ---
 # <a name="configuration-descriptor"></a>構成記述子
 
@@ -30,7 +30,7 @@ ms.locfileid: "56556550"
 <th align="left">Offset</th>
 <th align="left">フィールド</th>
 <th align="left">サイズ</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

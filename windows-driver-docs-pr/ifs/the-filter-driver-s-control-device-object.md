@@ -1,6 +1,6 @@
 ---
-title: フィルター ドライバーの制御デバイス オブジェクト
-description: フィルター ドライバーの制御デバイス オブジェクト
+title: フィルター ドライバーのコントロール デバイス オブジェクト
+description: フィルター ドライバーのコントロール デバイス オブジェクト
 ms.assetid: ac49b5d0-110d-4e47-814b-05f59791de41
 keywords:
 - デバイス オブジェクトの WDK ファイル システムを制御します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f93fe614dc97a10f571e7eb443415312c190135e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344326"
 ---
-# <a name="the-filter-drivers-control-device-object"></a>フィルター ドライバーの制御デバイス オブジェクト
+# <a name="the-filter-drivers-control-device-object"></a>フィルター ドライバーのコントロール デバイス オブジェクト
 
 
 ## <span id="ddk_the_filter_drivers_control_device_object_if"></span><span id="DDK_THE_FILTER_DRIVERS_CONTROL_DEVICE_OBJECT_IF"></span>

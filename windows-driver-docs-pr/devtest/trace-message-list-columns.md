@@ -1,19 +1,19 @@
 ---
-title: トレース メッセージの一覧の列
-description: トレース メッセージの一覧の列
+title: トレース メッセージ一覧の列
+description: トレース メッセージ一覧の列
 ms.assetid: d0f5873e-9b01-4a74-8448-90194545da1f
 keywords:
 - トレース メッセージの一覧 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52726498ccf71f138fe65b79af67e3a1875ff629
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354632"
 ---
-# <a name="trace-message-list-columns"></a>トレース メッセージの一覧の列
+# <a name="trace-message-list-columns"></a>トレース メッセージ一覧の列
 
 
 トレース メッセージの一覧で列がトレース メッセージのプロパティを表す、もののような一般的に表示される、[トレース メッセージのプレフィックス](trace-message-prefix.md)します。 表示し、列を非表示にできますが、それらの順序を変更することはできません。

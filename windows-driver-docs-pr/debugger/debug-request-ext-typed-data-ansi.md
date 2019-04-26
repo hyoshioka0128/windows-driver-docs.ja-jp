@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4efeb9c99f2b921b2213b714501068e8c0269d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349099"
 ---
 # <a name="debugrequestexttypeddataansi"></a>デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI
 
 
 デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI [**要求**](request.md)操作は、別のさまざまなを実行します。型指定されたデータの解釈を支援するサブ操作。
 
-**パラメーター**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 指定します、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)を実行するサブ操作を決定する構造体。 この EXT\_型指定された\_データ構造には (省略可能) その他のデータとそのサブ操作の入力パラメーターが含まれています。 追加のデータが含まれている*InBuffer* 、EXT 後\_型指定された\_データ構造体。 サイズ*InBuffer* 、EXT を格納しているバッファーの合計サイズは、\_型指定された\_データ構造とデータを追加します。 参照してください**EXT\_型指定された\_データ**この構造体と、追加のデータを含める方法の詳細について。

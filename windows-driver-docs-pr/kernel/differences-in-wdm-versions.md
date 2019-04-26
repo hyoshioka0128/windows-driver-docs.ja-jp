@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1d4ba1aadc2d130d8760aac290af4be8631969
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342752"
 ---
 # <a name="differences-in-wdm-versions"></a>WDM バージョン間の違い
 
@@ -63,7 +63,7 @@ DO\_POWER\_PAGABLE フラグ、 [**デバイス\_オブジェクト**](https://m
 
 ### <a name="wdm-differences-in-kernel-mode-driver-operation"></a>WDM カーネル モード ドライバー操作の違い
 
-Windows 98 のカーネル モード WDM ドライバー]、[浮動小数点演算、MMX、3 dnow を使用するための特定のガイドラインに従う必要があります Me!、または Intel の SSE 拡張機能。 詳細については、[を使用する浮動小数点または WDM ドライバーで MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)を参照してください。
+Windows 98 のカーネル モード WDM ドライバー]、[浮動小数点演算、MMX、3 dnow を使用するための特定のガイドラインに従う必要があります Me!、または Intel の SSE 拡張機能。 詳細については、次を参照してください。[を使用する浮動小数点または WDM ドライバーで MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)します。
 
 Windows 98/私の一部のドライバーに適切なことができない可能性があるワーカー スレッドの固定数を提供します。
 

@@ -5,15 +5,15 @@ ms.assetid: ae552bb5-702e-443f-8a97-c143859b127d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca8efbd4588bbf9aa09f8ba7b2e750b7ef306be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351354"
 ---
 # <a name="apn-schema-definition"></a>APN スキーマの定義
 
-**注**   utf-8 エンコードを使用して XML ドキュメントを保存する必要があります。
+**注**   XML ドキュメントは UTF-8 エンコーディングで保存されている必要があります。
 
 APN スキーマの定義を次に示します。
 

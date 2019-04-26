@@ -14,16 +14,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c977d484fa9f698afb2db77400efd5a2b821a740
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352428"
 ---
 # <a name="mirror-drivers"></a>ミラー ドライバー
 
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 -   [リモートのディスプレイ ドライバー](remote-display-drivers.md)
@@ -38,7 +38,7 @@ Windows 8 以降では、システム上のミラー ドライバーはインス
 
 ただし、特別な GDI アクセシビリティ ドライバー モデルはミラー ドライバー機能を提供する開発者向けに Windows 8 以降より使用可能[*支援技術*](https://go.microsoft.com/fwlink/p/?linkid=248209)お客様向けに障害または障碍があります。 この特別なドライバー モデルの詳細についてにお問い合わせください<acc_driver@microsoft.com>します。
 
-A*リモート ディスプレイ ドライバー*ミラー ドライバーのアーキテクチャに基づいているモデルは、Windows 8 以降でも実行できます。 詳細については、[リモート ディスプレイ ドライバー](remote-display-drivers.md)を参照してください。
+A*リモート ディスプレイ ドライバー*ミラー ドライバーのアーキテクチャに基づいているモデルは、Windows 8 以降でも実行できます。 詳細については、次を参照してください。[リモート ディスプレイ ドライバー](remote-display-drivers.md)します。
 
 ## <a name="span-idddkmirrordriversggspanspan-idddkmirrordriversggspanmirror-driver-description"></a><span id="ddk_mirror_drivers_gg"></span><span id="DDK_MIRROR_DRIVERS_GG"></span>ミラー ドライバーの説明
 

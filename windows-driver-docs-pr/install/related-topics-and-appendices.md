@@ -5,11 +5,11 @@ description: Windows ドライバーの署名に関連するトピックへの�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf05617b84f6ff5da03a47b6c40465260faa3c1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348168"
 ---
 # <a name="related-topics-and-appendices"></a>関連トピックと付録
 

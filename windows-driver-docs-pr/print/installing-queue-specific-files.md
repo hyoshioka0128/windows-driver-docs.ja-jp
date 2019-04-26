@@ -1,6 +1,6 @@
 ---
-title: キューに固有のファイルをインストールします。
-description: キューに固有のファイルをインストールします。
+title: キュー固有ファイルのインストール
+description: キュー固有ファイルのインストール
 ms.assetid: 86cb16d5-6035-4a4d-a6b7-f27ebd3e9f5c
 keywords:
 - ポイント アンド プリントの WDK、キューに固有のファイル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e022281cfbdc68ff209919f5de75c978f9a20bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345516"
 ---
-# <a name="installing-queue-specific-files"></a>キューに固有のファイルをインストールします。
+# <a name="installing-queue-specific-files"></a>キュー固有ファイルのインストール
 
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "56532824"
 <tr class="header">
 <th>［値の名前］</th>
 <th>値の種類</th>
-<th>Value</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +49,7 @@ ms.locfileid: "56532824"
 <td><p>ファイルのクライアントがプリント サーバーに接続するときに、クライアントにコピーするファイルの名前。 ファイルは、Dll、データ ファイル、または他の種類のファイルにあります。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>モジュール</strong></p></td>
+<td><p><strong>Module</strong></p></td>
 <td><p>REG_SZ</p></td>
 <td><p>ファイル名の省略可能な<a href="point-and-print-dlls.md" data-raw-source="[Point and Print DLL](point-and-print-dlls.md)">ポイントと印刷 DLL</a>します。</p></td>
 </tr>

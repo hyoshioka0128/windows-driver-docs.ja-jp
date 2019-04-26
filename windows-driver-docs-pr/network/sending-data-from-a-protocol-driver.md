@@ -1,19 +1,19 @@
 ---
-title: プロトコル ドライバーからデータを送信します。
-description: プロトコル ドライバーからデータを送信します。
+title: プロトコル ドライバーからのデータの送信
+description: プロトコル ドライバーからのデータの送信
 ms.assetid: f4fa1814-1d8f-49d3-90fb-766b5b17ef28
 keywords:
 - WDK ネットワークのデータを送信します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32850e4e9c84895cd6c4de4661003ff275596c6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346784"
 ---
-# <a name="sending-data-from-a-protocol-driver"></a>プロトコル ドライバーからデータを送信します。
+# <a name="sending-data-from-a-protocol-driver"></a>プロトコル ドライバーからのデータの送信
 
 
 

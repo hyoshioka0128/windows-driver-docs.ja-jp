@@ -1,6 +1,6 @@
 ---
-title: いる CoNDIS TAPI の初期化
-description: いる CoNDIS TAPI の初期化
+title: CoNDIS TAPI の初期化
+description: CoNDIS TAPI の初期化
 ms.assetid: eabb2038-ab64-4f48-8c94-e47d1139727b
 keywords:
 - いる CoNDIS WAN ドライバー WDK ネットワーク、TAPI サービス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fe9e7a297bb7c48b293bf69cf777a3e636b5ed6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354180"
 ---
-# <a name="condis-tapi-initialization"></a>いる CoNDIS TAPI の初期化
+# <a name="condis-tapi-initialization"></a>CoNDIS TAPI の初期化
 
 
 

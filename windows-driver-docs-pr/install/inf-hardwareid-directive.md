@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5a364030ddade721a392b3a7b3b513efcf03e59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346113"
 ---
 # <a name="inf-hardwareid-directive"></a>INF HardwareId ディレクティブ
 
@@ -45,7 +45,7 @@ HardwareId="pnp-hardware-id"
 
 HardwareId ディレクティブごと、1 つだけのプラグ アンド プレイ ハードウェア ID を指定できます。 複数のハードウェア Id を指定するには、複数の HardwareId ディレクティブの行ごとに 1 つを使用します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 中に、[ハードウェア最初インストール](hardware-first-installation.md)ユーザーがそのデバイスのドライバーをインストールする前に、ハードウェア デバイスをインストールします。 この場合、新しいハードウェアの検出ウィザードには、配布メディアのユーザー メッセージが表示されます。

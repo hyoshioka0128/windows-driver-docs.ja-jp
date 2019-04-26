@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_RADIO_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0125e02889c4f9980b1008ec74ef3f698cd9c593
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354526"
 ---
 # <a name="oidwwanradiostate"></a>OID\_WWAN\_ラジオ\_状態
 
@@ -24,7 +24,7 @@ MB デバイスの無線電源の状態を設定するように要求して呼�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、[WWAN ラジオの電源状態の操作](https://msdn.microsoft.com/library/windows/hardware/ff559107)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN ラジオの電源状態の操作](https://msdn.microsoft.com/library/windows/hardware/ff559107)します。
 
 ミニポート ドライバー アクセスしないでください、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) とクエリの処理または操作を設定します。
 

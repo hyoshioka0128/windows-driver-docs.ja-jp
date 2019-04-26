@@ -1,6 +1,6 @@
 ---
-title: 処理には、IOCTL_VIDEO_XXX 要求がサポートされていません
-description: 処理には、IOCTL_VIDEO_XXX 要求がサポートされていません
+title: サポートされていない IOCTL_VIDEO_XXX 要求の処理
+description: サポートされていない IOCTL_VIDEO_XXX 要求の処理
 ms.assetid: e3a96cc2-bb7f-4060-bf71-d8a63b918329
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000、要求の処理
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fcd563a2b3529fb78ecfd7d70e18602769b7cc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353909"
 ---
 # <a name="handling-unsupported-ioctlvideoxxx-requests"></a>処理のサポートされていない IOCTL\_ビデオ\_XXX 要求
 

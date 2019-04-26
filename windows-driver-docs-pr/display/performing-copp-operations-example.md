@@ -1,5 +1,5 @@
 ---
-title: COPP 操作の例を実行します。
+title: COPP 操作の実行例
 description: COPP 演算を実行する例
 ms.assetid: ba5c98d3-63d1-4e2d-ba11-6054c1623e80
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11716ec6ce25a67748a93cd2afe860a396b32f20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352294"
 ---
-# <a name="performing-copp-operations-example"></a>COPP 操作の例を実行します。
+# <a name="performing-copp-operations-example"></a>COPP 操作の実行例
 
 
 ## <span id="ddk_performing_copp_operations_gg"></span><span id="DDK_PERFORMING_COPP_OPERATIONS_GG"></span>

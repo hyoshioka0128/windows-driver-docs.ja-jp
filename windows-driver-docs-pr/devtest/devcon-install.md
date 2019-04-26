@@ -1,5 +1,5 @@
 ---
-title: DevCon インストール
+title: DevCon Install
 description: プラグ アンド プレイ デバイスの新しい、ルート列挙 devnode を作成し、そのサポート対象のソフトウェアをインストールします。 ローカル コンピューターでのみ有効です。
 ms.assetid: d31007dd-6f20-460d-8561-d1639c69aa09
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 122eab295ea09855ca4c49d77fc1fa899de59adf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347045"
 ---
-# <a name="devcon-install"></a>DevCon インストール
+# <a name="devcon-install"></a>DevCon Install
 
 
 プラグ アンド プレイ デバイスの新しい、ルート列挙 devnode を作成し、そのサポート対象のソフトウェアをインストールします。 ローカル コンピューターでのみ有効です。
@@ -40,7 +40,7 @@ ms.locfileid: "56550523"
 <span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
 デバイスのハードウェア ID を指定します。
 
-指定されたハードウェア ID では、デバイスのハードウェア ID を完全に一致する必要があります。 パターンが有効ではありません。 単一引用符文字を入力しないでください (**'**) をリテラル値を示します。 詳細については、[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を参照してください。
+指定されたハードウェア ID では、デバイスのハードウェア ID を完全に一致する必要があります。 パターンが有効ではありません。 単一引用符文字を入力しないでください (**'**) をリテラル値を示します。 詳細については、次を参照してください。[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 

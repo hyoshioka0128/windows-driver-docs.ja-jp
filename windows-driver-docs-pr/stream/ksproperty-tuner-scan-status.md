@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2bd64fcae87c8b88a898e70cc4082719bc0c80b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342198"
 ---
 # <a name="kspropertytunerscanstatus"></a>KSPROPERTY\_チューナー\_スキャン\_状態
 
@@ -39,15 +39,15 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565898" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_STATUS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565898)"><strong>KSPROPERTY_TUNER_SCAN_STATUS_S</strong></a></p></td>
@@ -60,7 +60,7 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 
 プロパティの値 (データの操作) は、KSPROPERTY\_チューナー\_スキャン\_状態\_構造をスキャン操作の状態を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *KsTvTune.ax*モジュールは、ドライバーの KSPROPERTY を呼び出すことができます\_チューナー\_スキャン\_いつでも STATUS プロパティ。 ただし、 *KsTvTune.ax*は KSPROPERTY\_チューナー\_スキャン\_ステータスを呼び出した後、 [ **KSEVENT\_チューナー\_開始\_スキャン**](ksevent-tuner-initiate-scan.md)イベント スキャン操作を設定して、スキャンが完了したときの通知を設定します。 *KsTvTune.ax*スキャン完了通知を発生を待ちます。 最悪のシナリオとして*KsTvTune.ax*で指定されている時間にわたって待機、 **SettlingTime**のメンバー、 [**チューナー\_アナログ\_CAP\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff568547)構造体。 データが設定されたチューナーのドライバーが返されますが\_アナログ\_CAP\_への呼び出しからその[ **KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAP** ](ksproperty-tuner-networktype-scan-caps.md)アナログ プロパティ\_テレビ\_ネットワーク\_型の値の設定、 **NetworkType**のメンバー、 [ **KSPROPERTY\_チューナー\_NETWORKTYPE\_スキャン\_CAP\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565885)構造体。 ただし、チューナーでする必要がありますで指定されている時間よりも高速のシグナルの状態を確認通常**SettlingTime**し、その後に通知する必要があります*KsTvTune.ax*でスキャンが完了します。イベントを通知します。
@@ -71,7 +71,7 @@ KSPROPERTY\_チューナー\_スキャン\_STATUS プロパティは、スキャ
 
 -   **チューナー\_LockType\_ロック**正確な頻度にチューニングのデバイスがロックされている場合。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: サンプル PrintCapabilities ファイルの暗証番号 (pin) の印刷
+title: PIN 印刷のサンプル PrintCapabilities ファイル
 description: ここでは、保護された印刷の個人 ID 番号 (PIN) を指定する方法を示すサンプル PrintCapabilities ファイル。
 ms.assetid: 4C3BBEF1-C0DB-48F7-B4EC-BBB5D3699692
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1c674cdd09328183a57ede8759c07e46ea6f622
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354937"
 ---
-# <a name="sample-printcapabilities-file-for-pin-printing"></a>サンプル PrintCapabilities ファイルの暗証番号 (pin) の印刷
+# <a name="sample-printcapabilities-file-for-pin-printing"></a>PIN 印刷のサンプル PrintCapabilities ファイル
 
 
 ここでは、保護された印刷の個人 ID 番号 (PIN) を指定する方法を示すサンプル PrintCapabilities ファイル。
@@ -60,7 +60,7 @@ ms.locfileid: "56550534"
 </psf:PrintCapabilities>
 ```
 
-保護された印刷の詳細については、[ドライバー サポートの保護された印刷](driver-support-for-protected-printing.md)を参照してください。
+保護された印刷の詳細については、次を参照してください。[ドライバー サポートの保護された印刷](driver-support-for-protected-printing.md)します。
 
  
 

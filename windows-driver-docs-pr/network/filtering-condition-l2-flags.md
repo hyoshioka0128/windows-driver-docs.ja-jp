@@ -1,5 +1,5 @@
 ---
-title: L2 条件フラグをフィルター処理
+title: フィルター条件 L2 フラグ
 description: このセクションでは、フィルター処理条件 L2 フラグについて説明します。
 ms.assetid: D24A261D-6324-43CC-BD2A-CDB9B024432C
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7571f114a4a0fecc6371215441aaf9b4153c8e84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347526"
 ---
-# <a name="filtering-condition-l2-flags"></a>L2 条件フラグをフィルター処理
+# <a name="filtering-condition-l2-flags"></a>フィルター条件 L2 フラグ
 
 フィルター処理条件 L2 フラグは、各ビット フィールドで表されます。 これらのフラグの定義は次のとおりです。
 

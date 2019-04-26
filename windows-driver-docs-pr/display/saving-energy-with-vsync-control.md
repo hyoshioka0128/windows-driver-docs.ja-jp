@@ -1,6 +1,6 @@
 ---
-title: コントロールの垂直同期とエネルギーを節約します。
-description: コントロールの垂直同期とエネルギーを節約します。
+title: VSync 制御による労力の低減
+description: VSync 制御による労力の低減
 ms.assetid: d7ee7461-0d2a-4103-9225-57ca10a75a7a
 keywords:
 - ディスプレイ ドライバー モデル WDK Windows Vista、エネルギーを節約します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d614b49dc71f5f222cd07af4454b9ab66e64db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351454"
 ---
-# <a name="saving-energy-with-vsync-control"></a>コントロールの垂直同期とエネルギーを節約します。
+# <a name="saving-energy-with-vsync-control"></a>VSync 制御による労力の低減
 
 
 コンピューターで電力を節約するには、カーネル モードのディスプレイ ドライバーが発生した VSync モニターの更新の割り込みの数を減らすことができます。

@@ -1,6 +1,6 @@
 ---
-title: プラグ アンド プレイ ドライバーのデバッグ用の拡張機能
-description: プラグ アンド プレイ ドライバーのデバッグ用の拡張機能
+title: プラグ アンド プレイ ドライバーをデバッグするための拡張機能
+description: プラグ アンド プレイ ドライバーをデバッグするための拡張機能
 ms.assetid: 0b60c4ce-5c2d-4cce-a1e6-8275186aa147
 keywords:
 - プラグ アンド プレイ (PnP) 拡張機能
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48a1d0aa5d3a93d3517875cf9f7d446b78a84741
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347716"
 ---
-# <a name="extensions-for-debugging-plug-and-play-drivers"></a>プラグ アンド プレイ ドライバーのデバッグ用の拡張機能
+# <a name="extensions-for-debugging-plug-and-play-drivers"></a>プラグ アンド プレイ ドライバーをデバッグするための拡張機能
 
 
 プラグ アンド プレイ ドライバーをデバッグするときに役立つ次のデバッガー拡張機能。

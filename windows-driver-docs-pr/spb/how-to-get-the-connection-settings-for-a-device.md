@@ -5,11 +5,11 @@ ms.assetid: B614993A-0EA9-4B91-A336-80EEF9BE3E69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 337e1089e103bc67e2da9b8d4ba96e1746ae4814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356735"
 ---
 # <a name="how-to-get-the-connection-settings-for-a-device"></a>デバイスの接続設定を取得する方法
 
@@ -18,7 +18,7 @@ SPB コント ローラーのドライバーを登録する場合、 [ *EvtSpbTa
 
 たとえば、I2C バス上のターゲット デバイスの接続設定には、デバイス、アドレスの幅 (7 または 10 ビット)、およびデバイスのアクセス時に使用するバスのクロック周波数のバスのアドレスが含まれます。 I2C コント ローラーのドライバーでは、これらの設定を使用して、I2C バス経由でデバイスにアクセスするコント ローラーを構成します。
 
-SPB のコント ローラー ドライバーは呼び出し**SpbTargetGetConnectionParameters**へのポインターを取得する、*シリアル バス接続記述子*I2C 型のシリアル バスにターゲット デバイスの接続を記述するか、SPI を示します。 この記述子には、両方シリアル バスの種類に共通であり、デバイスが接続されているシリアル バスに固有の情報が続きますされる接続情報が含まれています。 この記述子の形式の詳細については、、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)を参照してください。
+SPB のコント ローラー ドライバーは呼び出し**SpbTargetGetConnectionParameters**へのポインターを取得する、*シリアル バス接続記述子*I2C 型のシリアル バスにターゲット デバイスの接続を記述するか、SPI を示します。 この記述子には、両方シリアル バスの種類に共通であり、デバイスが接続されているシリアル バスに固有の情報が続きますされる接続情報が含まれています。 この記述子の形式の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
 
 次のコード例では、I2C コント ローラーのドライバー定義、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造体。 この構造体を表す、 *I2C シリアル バス接続記述子*、これは、ACPI 5.0 仕様を使用して、I2C に固有の接続設定が後に続くシリアル バス接続記述子をについて説明する用語バスです。 最初のメンバー、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造、 **SerialBusDescriptor**は、 [ **PNP\_シリアル\_BUS\_記述子**](https://msdn.microsoft.com/library/windows/hardware/jj938062)シリアル バス接続記述子を表す構造体です。 **ConnectionSpeed**と**SlaveAddress**メンバー I2C に固有の接続設定を含めることができます。
 

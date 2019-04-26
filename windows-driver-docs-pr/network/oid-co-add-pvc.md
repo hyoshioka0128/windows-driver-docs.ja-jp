@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 149fe8425be3eef925c9d6b4e75e1eb0d1b23f05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351946"
 ---
 # <a name="oidcoaddpvc"></a>OID_CO_ADD_PVC
 
@@ -34,7 +34,7 @@ typedef struct _CO_PVC {
 
 PVC は、管理者によって手動で構成されます。 このようなアクティビティを監視するクライアントでは、この OID をコール マネージャーに送信することによって、新しく構成した PVC のコール マネージャーに通知します。 その他のクライアントは、新しく構成された PVC を使用できます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

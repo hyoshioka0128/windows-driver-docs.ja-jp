@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9db76f31b4e7088d889b5fc07ef0d29109a1f047
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349238"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodes-method"></a>IPrinterScriptUsbJobContext::ReturnCodes メソッド
 
@@ -53,7 +53,7 @@ IHV JavaScript 関数のリターン コード値。 リターン コード値�
 
 IHV は、現在の印刷ジョブに関連付けられたプロパティ バッグを実装するインターフェイスを開発する必要があります。 IHV JavaScript 関数は、プロパティまたは処理されている現在の印刷ジョブに固有のデータを格納するのに、このプロパティ バッグを使用できます。 このプロパティ バッグには、現在のジョブだけの期間が存在します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

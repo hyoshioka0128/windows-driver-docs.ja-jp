@@ -1,19 +1,19 @@
 ---
-title: ロケールを選択し、パッケージのデバイス メタデータの作成ウィザードの種類
-description: ロケールを選択し、パッケージのデバイス メタデータの作成ウィザードの種類
+title: デバイス メタデータ作成ウィザードでのロケールとパッケージの種類の選択
+description: デバイス メタデータ作成ウィザードでのロケールとパッケージの種類の選択
 ms.assetid: 02227FAB-A37F-4B20-AD52-E071C19E8743
 keywords:
-- ロケールを選択し、パッケージのデバイス メタデータの作成ウィザードの種類
+- デバイス メタデータ作成ウィザードでのロケールとパッケージの種類の選択
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5693c025865ea9f4620b1ecf7861dd9e2584e7d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351358"
 ---
-# <a name="select-locales-and-package-type-in-the-device-metadata-authoring-wizard"></a>ロケールを選択し、パッケージのデバイス メタデータの作成ウィザードの種類
+# <a name="select-locales-and-package-type-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのロケールとパッケージの種類の選択
 
 
 開始するには、適切なロケールまたはパッケージの種類 (Windows 7 または Windows 8) と同様に、メタデータ パッケージのロケールを選択します。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b74e0d81622a613334ca2548b69bbd6b231e4ef8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352445"
 ---
 # <a name="methods-of-controlling-breakpoints"></a>ブレークポイントを制御するメソッド
 
@@ -28,7 +28,7 @@ ms.locfileid: "56571225"
 
 -   ブレークポイントは、非実行可能ファイルのメモリと読み取りまたは書き込みをするのには、その場所へのウォッチを設定できます。
 
-ユーザー モードでは、複数のプロセスをデバッグする場合、ブレークポイントのコレクションは、現在のプロセスに依存します。 を表示または変更するプロセスのブレークポイントは、現在のプロセスとしてプロセスを選択する必要があります。 現在のプロセスの詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+ユーザー モードでは、複数のプロセスをデバッグする場合、ブレークポイントのコレクションは、現在のプロセスに依存します。 を表示または変更するプロセスのブレークポイントは、現在のプロセスとしてプロセスを選択する必要があります。 現在のプロセスの詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 ### <a name="span-idmethodsofcontrollinganddisplayingbreakpointsspanspan-idmethodsofcontrollinganddisplayingbreakpointsspandebugger-commands-for-controlling-and-displaying-breakpoints"></a><span id="methods_of_controlling_and_displaying_breakpoints"></span><span id="METHODS_OF_CONTROLLING_AND_DISPLAYING_BREAKPOINTS"></span>制御して、ブレークポイントを表示するためのデバッガー コマンド
 
@@ -40,11 +40,11 @@ ms.locfileid: "56571225"
 
 -   使用して、 [ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)新しいブレークポイントを設定するコマンド。
 
--   使用して、 [ **bu (未解決のブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)新しいブレークポイントを設定するコマンド。 設定されているブレークポイント**bu**未解決ブレークポイントが呼び出される異なる特性が設定されているブレークポイントがある**bp**します。 詳細については、[未解決ブレークポイント (bu ブレークポイント)](unresolved-breakpoints---bu-breakpoints-.md)を参照してください。
+-   使用して、 [ **bu (未解決のブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)新しいブレークポイントを設定するコマンド。 設定されているブレークポイント**bu**未解決ブレークポイントが呼び出される異なる特性が設定されているブレークポイントがある**bp**します。 詳細については、次を参照してください。[未解決ブレークポイント (bu ブレークポイント)](unresolved-breakpoints---bu-breakpoints-.md)します。
 
 -   使用して、 [ **bm (シンボルのブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを指定したパターンに一致するシンボルに新しいブレークポイントを設定します。 ブレークポイントを設定**bm**アドレスに関連付けられます (など、 **bp**ブレークポイント) 場合、 **/d**スイッチが含まれています解決とが (など、 **bu。** ブレークポイント) このスイッチが含まれていない場合。
 
--   使用して、 [ **ba (アクセスの切断)** ](ba--break-on-access-.md)を設定するコマンド、*プロセッサ ブレークポイント*とも呼ばれます、*データ ブレークポイント*します。 または、コードとして実行されると、読み取り時に、カーネルの I/O が発生した場合、メモリ位置が書き込まれるときに、これらのブレークポイントをトリガーできます。 詳細については、[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)を参照してください。
+-   使用して、 [ **ba (アクセスの切断)** ](ba--break-on-access-.md)を設定するコマンド、*プロセッサ ブレークポイント*とも呼ばれます、*データ ブレークポイント*します。 または、コードとして実行されると、読み取り時に、カーネルの I/O が発生した場合、メモリ位置が書き込まれるときに、これらのブレークポイントをトリガーできます。 詳細については、次を参照してください。[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)します。
 
 -   使用して、 [ **bc (ブレークポイント クリア)** ](bc--breakpoint-clear-.md)コマンドを完全に 1 つ以上のブレークポイントを削除します。
 
@@ -70,7 +70,7 @@ Visual Studio および WinDbg では、いくつかのユーザー インター
 0:000> bu MyFunction+0x47 ".dump c:\mydump.dmp; g" 
 ```
 
-**注**  カーネル デバッガーからユーザー モード デバッガーの制御を行う場合は使用しないで[ **g (移動)** ](g--go-.md)ブレークポイント コマンド文字列にします。 シリアル インターフェイスは、このコマンドでは、対応できない可能性があります、CDB を分割することはできません。 このような状況の詳細については、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)を参照してください。
+**注**  カーネル デバッガーからユーザー モード デバッガーの制御を行う場合は使用しないで[ **g (移動)** ](g--go-.md)ブレークポイント コマンド文字列にします。 シリアル インターフェイスは、このコマンドでは、対応できない可能性があります、CDB を分割することはできません。 このような状況の詳細については、次を参照してください。[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)します。
 
  
 
@@ -82,7 +82,7 @@ Visual Studio および WinDbg では、いくつかのユーザー インター
 
 ### <a name="span-idconditionalbreakpointsspanspan-idconditionalbreakpointsspanconditional-breakpoints"></a><span id="conditional_breakpoints"></span><span id="CONDITIONAL_BREAKPOINTS"></span>条件付きブレークポイント
 
-特定の条件下でのみトリガーされるブレークポイントを設定できます。 これらのブレークポイントの詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
+特定の条件下でのみトリガーされるブレークポイントを設定できます。 これらのブレークポイントの詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: 標準の WMI の Oid と状態インジケーター
-description: 標準の WMI の Oid と状態インジケーター
+title: 標準 WMI OID と状態表示
+description: 標準 WMI OID と状態表示
 ms.assetid: d36f49be-da29-4190-ad9e-2c5a24c3830e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3a716abc4eb919ce182eb6f133c513f9d28c3bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345997"
 ---
-# <a name="standard-wmi-oids-and-status-indications"></a>標準の WMI の Oid と状態インジケーター
+# <a name="standard-wmi-oids-and-status-indications"></a>標準 WMI OID と状態表示
 
 
 このセクションの内容:

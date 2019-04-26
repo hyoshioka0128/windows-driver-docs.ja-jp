@@ -5,11 +5,11 @@ ms.assetid: 59BD092F-A530-446F-93E7-02E1F254E9A0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb66653302c503cf756c107090b64b35a93af0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346710"
 ---
 # <a name="setting-a-packet-coalescing-receive-filter"></a>パケット結合受信フィルターの設定
 
@@ -20,7 +20,7 @@ OID メソッド要求を発行している上位のドライバーをダウン�
 
 -   配列の[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)フィルターを指定する構造体のフィールドの条件をテストします。ネットワーク パケットのヘッダー。
 
-上位のドライバーがパラメーターを指定するフィルターを受信パケットの結合の方法の詳細については、[パケット結合受信フィルターを指定する](specifying-a-packet-coalescing-receive-filter.md)を参照してください。
+上位のドライバーがパラメーターを指定するフィルターを受信パケットの結合の方法の詳細については、次を参照してください。[パケット結合受信フィルターを指定する](specifying-a-packet-coalescing-receive-filter.md)します。
 
 NDIS は、基になるネットワーク アダプターで受信フィルターを設定する OID 要求を受信、受信のフィルター パラメーターを確認します。 上にあるドライバーは、新しい受信フィルターを指定する場合は、NDIS 受信フィルターのフィルターの一意な識別子 (ID) も生成されます。
 

@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチの構成のクエリを実行します。
-description: HYPER-V 拡張可能スイッチの構成のクエリを実行します。
+title: Hyper-V 拡張可能スイッチ構成のクエリ
+description: Hyper-V 拡張可能スイッチ構成のクエリ
 ms.assetid: AF646860-01AB-4F4B-84F8-B570054B10FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2116ba6b1927e9a17aaeaffb7926618ae1781b4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339982"
 ---
-# <a name="querying-the-hyper-v-extensible-switch-configuration"></a>HYPER-V 拡張可能スイッチの構成のクエリを実行します。
+# <a name="querying-the-hyper-v-extensible-switch-configuration"></a>Hyper-V 拡張可能スイッチ構成のクエリ
 
 
 HYPER-V 拡張可能スイッチのインターフェイスには、拡張可能スイッチ、ポート、およびそのネットワーク アダプターの接続の現在の構成を照会する拡張可能スイッチ拡張機能によって発行されるオブジェクト識別子 (OID) 要求が含まれています。 これらの要求には、次の Oid が含まれます。
@@ -35,11 +35,11 @@ HYPER-V 拡張可能スイッチのインターフェイスには、拡張可能
 
  
 
-**注**  拡張機能は、独自の OID 要求を生成するときでは、この同じと同様の NDIS フィルター ドライバー。 これを行う方法の詳細については、[NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)を参照してください。
+**注**  拡張機能は、独自の OID 要求を生成するときでは、この同じと同様の NDIS フィルター ドライバー。 これを行う方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-filter-driver.md)します。
 
  
 
-拡張可能スイッチ OID 要求の管理パスの詳細については、[Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)を参照してください。
+拡張可能スイッチ OID 要求の管理パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パスの OID 要求](hyper-v-extensible-switch-control-path-for-oid-requests.md)します。
 
  
 

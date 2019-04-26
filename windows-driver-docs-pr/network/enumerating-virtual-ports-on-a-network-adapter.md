@@ -1,17 +1,17 @@
 ---
-title: ネットワーク アダプター上のバーチャル ポートの列挙
-description: ネットワーク アダプター上のバーチャル ポートの列挙
+title: ネットワーク アダプターでの仮想ポートの列挙
+description: ネットワーク アダプターでの仮想ポートの列挙
 ms.assetid: 437C3356-4CC7-4128-9E61-FD01157F4FD9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8c088c83181f0372064df478fceac45f1f320aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352968"
 ---
-# <a name="enumerating-virtual-ports-on-a-network-adapter"></a>ネットワーク アダプター上のバーチャル ポートの列挙
+# <a name="enumerating-virtual-ports-on-a-network-adapter"></a>ネットワーク アダプターでの仮想ポートの列挙
 
 
 上にあるドライバーまたはユーザーのアプリケーションは、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC のスイッチ上のすべての仮想ポート (拡張) の一覧を取得できます。 ドライバーまたはアプリケーションのオブジェクト識別子 (OID) メソッド要求を発行[OID\_NIC\_スイッチ\_ENUM\_拡張](https://msdn.microsoft.com/library/windows/hardware/hh451821)この一覧を取得します。

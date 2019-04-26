@@ -1,6 +1,6 @@
 ---
-title: 出力 Protection Manager をサポートしています。
-description: 出力 Protection Manager をサポートしています。
+title: Output Protection Manager のサポート
+description: Output Protection Manager のサポート
 ms.assetid: 2c138dbd-55ca-4c71-8c8b-b2efd1ca80f2
 keywords:
 - COPP WDK DirectX va なので、出力 Protection Manager
@@ -12,18 +12,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de880c8af0af882a0d5df662f77301b7f1784d31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350182"
 ---
-# <a name="supporting-output-protection-manager"></a>出力 Protection Manager をサポートしています。
+# <a name="supporting-output-protection-manager"></a>Output Protection Manager のサポート
 
 
 出力保護マネージャー (OPM) デバイス ドライバー インターフェイス (DDI) は、グラフィックス アダプターのさまざまなコネクタによって出力されるビデオ信号のコピー保護を有効します。 Windows Vista でコンテンツを保護する方法の詳細についてそのグラフィックス アダプターの出力で出力コンテンツの保護ドキュメントをダウンロードして、[出力 Content Protection と Windows Vista](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/output_protect.doc) web サイト。
 
-OPM が後継、[認定出力保護プロトコル (COPP)](copp-processing.md)を[Windows 2000 のディスプレイ ドライバー モデル](windows-2000-display-driver-model-design-guide.md)を提供します。 OPM には、すべての COPP の機能がサポートしています。 COPP の機能については、[COPP 概要](introduction-to-copp.md)を参照してください。 OPM には、新機能もサポートしています。
+OPM が後継、[認定出力保護プロトコル (COPP)](copp-processing.md)を[Windows 2000 のディスプレイ ドライバー モデル](windows-2000-display-driver-model-design-guide.md)を提供します。 OPM には、すべての COPP の機能がサポートしています。 COPP の機能については、次を参照してください。 [COPP 概要](introduction-to-copp.md)します。 OPM には、新機能もサポートしています。
 
 ## <a name="opm-interface"></a>OPM インターフェイス
 

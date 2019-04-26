@@ -1,19 +1,19 @@
 ---
-title: リモート ツールの概念
-description: リモート ツールの概念
+title: Remote ツールの概念
+description: Remote ツールの概念
 ms.assetid: 509b25cd-d69a-442d-bd5b-a69266d341c3
 keywords:
 - リモート ツール、リモート ツールの概念
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd804aa61f79d37a8879387ad0a8758884302359
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353495"
 ---
-# <a name="remote-tool-concepts"></a>リモート ツールの概念
+# <a name="remote-tool-concepts"></a>Remote ツールの概念
 
 
 ## <span id="ddk_remote_tool_concepts_dtools"></span><span id="DDK_REMOTE_TOOL_CONCEPTS_DTOOLS"></span>

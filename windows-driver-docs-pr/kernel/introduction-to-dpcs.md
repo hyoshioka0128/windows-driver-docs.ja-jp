@@ -1,6 +1,6 @@
 ---
-title: Dpc の概要
-description: Dpc の概要
+title: DPC の概要
+description: DPC の概要
 ms.assetid: 10e8d0e7-c04a-4dca-853c-74c911f59341
 keywords:
 - 遅延プロシージャ呼び出しの WDK カーネル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 990e4151becb3d9a7bbee1b9ef303a542bd5795b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341029"
 ---
-# <a name="introduction-to-dpcs"></a>Dpc の概要
+# <a name="introduction-to-dpcs"></a>DPC の概要
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "56531419"
 
 A *DpcForIsr*または*CustomDpc*ルーチンは、IRQL のディスパッチに任意の DPC コンテキストで呼び出される\_レベル。 ディスパッチで実行されている\_レベル サポート ルーチンのセットを制限する、 *DpcForIsr*または*CustomDpc*ルーチンを呼び出すことができます。 参照してください[を管理するハードウェアの優先順位](managing-hardware-priorities.md)詳細についてはします。
 
-DPC オブジェクトと Dpc は、タイマーにも使用できます。 詳細については、[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)を参照してください。
+DPC オブジェクトと Dpc は、タイマーにも使用できます。 詳細については、次を参照してください。[タイマー オブジェクトと Dpc](timer-objects-and-dpcs.md)します。
 
  
 

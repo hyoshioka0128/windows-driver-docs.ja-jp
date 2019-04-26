@@ -5,11 +5,11 @@ ms.assetid: 69f76919-5bbb-4968-997c-2d51f19aab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbd778f1d426f9678b9af52e723f2ca0ea725836
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352629"
 ---
 # <a name="wia-transfer-constants"></a>WIA 転送定数
 
@@ -18,13 +18,13 @@ ms.locfileid: "56550641"
 
 これらの定数は、3 つのサブグループに分類されます。
 
--   項目の種類
+-   アイテムの種類
 
 -   コールバック メッセージ
 
 -   転送フラグ
 
-### <a name="item-type"></a>項目の種類
+### <a name="item-type"></a>アイテムの種類
 
 次の表はどの WIA 項目型のビットは、ストリーム ベースのデータ転送に関連します。
 

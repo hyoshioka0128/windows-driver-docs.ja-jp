@@ -1,6 +1,6 @@
 ---
-title: リンクのコレクション
-description: リンクのコレクション
+title: リンク コレクション
+description: リンク コレクション
 ms.assetid: 3f934661-c33c-4c08-82ac-ee2e0f519c8e
 keywords:
 - コレクションの WDK を非表示のリンクします。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 417ee3c07732623ff66c5d3ef3fa4dc58dde7434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346223"
 ---
-# <a name="link-collections"></a>リンクのコレクション
+# <a name="link-collections"></a>リンク コレクション
 
 
 

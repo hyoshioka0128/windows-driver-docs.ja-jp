@@ -1,17 +1,17 @@
 ---
-title: ドライバーのパブリック リリースへの署名
-description: ドライバーのパブリック リリースへの署名
+title: 一般リリース用のドライバーへの署名
+description: 一般リリース用のドライバーへの署名
 ms.assetid: e5fa85ef-0b93-4c4d-919c-1c732b438e7e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61ed585736e8bc70d7644afa385e3906686c76f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348604"
 ---
-# <a name="signing-drivers-for-public-release"></a>ドライバーのパブリック リリースへの署名
+# <a name="signing-drivers-for-public-release"></a>一般リリース用のドライバーへの署名
 
 
 このセクションでは、パブリック リリースでは、ドライバーにデジタル署名に従う必要があり、次のトピックが含まれて 手順について説明します。

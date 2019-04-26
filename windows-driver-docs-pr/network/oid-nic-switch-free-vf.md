@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_FREE_VF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5469c272ed6c52721e0c2a3e374b5a8811f341c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350973"
 ---
 # <a name="oidnicswitchfreevf"></a>OID\_NIC\_スイッチ\_FREE\_VF
 
@@ -28,7 +28,7 @@ OID のオブジェクト識別子 (OID) セット要求を発行する上位の
 
 OID の OID セット要求を発行する上位のドライバー\_NIC\_スイッチ\_FREE\_VF を VF のリソースを解放します。 これらのリソースがの OID メソッド要求を通じて割り当てられた以前[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
 
-VF リソースを解放する方法の詳細については、[仮想関数のリソースを解放](https://msdn.microsoft.com/library/windows/hardware/hh439570)を参照してください。
+VF リソースを解放する方法の詳細については、次を参照してください。[仮想関数のリソースを解放](https://msdn.microsoft.com/library/windows/hardware/hh439570)します。
 
 **注**  そのドライバーは VF を同じリソースの解放が要求できる唯一のコンポーネントで上にある、ドライバーは VF のリソースの割り当てを要求するとします。 上にあるドライバーは、OID の OID セット要求を発行する必要があります\_NIC\_スイッチ\_FREE\_VF VF リソースを解放します。 ドライバーのによって割り当てられた各 VF のリソースを解放する必要があります上にあるドライバーを停止できますが、前に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)要求。
 
@@ -80,7 +80,7 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 </colgroup>
 <thead>
 <tr class="header">
-<th>用語</th>
+<th>項目</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -106,7 +106,7 @@ NDIS は、この要求の次のステータス コードのいずれかを返�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

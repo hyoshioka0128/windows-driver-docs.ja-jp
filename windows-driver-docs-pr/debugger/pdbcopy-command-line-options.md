@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c9f8c1ed1d96b0bc9654ce5ce9aa26cd0c8c04d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354746"
 ---
 # <a name="pdbcopy-command-line-options"></a>PDBCopy のコマンドライン オプション
 
@@ -82,7 +82,7 @@ PDBCopy コマンドラインのヘルプを表示します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-PDBCopy ツールの詳細については、[を使用して PDBCopy](using-pdbcopy.md)を参照してください。
+PDBCopy ツールの詳細については、次を参照してください。[を使用して PDBCopy](using-pdbcopy.md)します。
 
  
 

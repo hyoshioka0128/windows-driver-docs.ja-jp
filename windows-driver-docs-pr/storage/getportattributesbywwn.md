@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1109369b42d33c9430b166631c1ed2095b9bc067
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354066"
 ---
 # <a name="getportattributesbywwn-function"></a>GetPortAttributesByWWN 関数
 
@@ -45,7 +45,7 @@ void GetPortAttributesByWWN(
 属性を持つがクエリを実行するには、ポートの名前。 この情報は、ミニポート ドライバーに配信される、 **wwn**のメンバー、 [ **GetPortAttributesByWWN\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554967)構造体。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetPortAttributesByWWN\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554969)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetPortAttributesByWWN\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554969)構造体。
 
 *PortAttributes*   
 型の構造体[ **MSFC\_HBAPortAttributesResults** ](https://msdn.microsoft.com/library/windows/hardware/ff562510)で検出された fc 属性\_ポートを返すことができます。 ミニポート ドライバーには、この情報が返されます、 **PortAttributes**のメンバー、 [ **GetDiscoveredPortAttributes\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553930)構造体。

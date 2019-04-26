@@ -1,5 +1,5 @@
 ---
-title: (アセンブリ)
+title: a (アセンブル)
 description: コマンドがアセンブル 32 ビット x86 命令ニーモニックおよび結果として得られる命令がメモリにコードを配置します。
 ms.assetid: 6736a5fd-5a33-4698-9510-8a95f6a1caf7
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f77510936fbc6d3073b300b1ccd52a4cf5c531e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351496"
 ---
-# <a name="a-assemble"></a>(アセンブリ)
+# <a name="a-assemble"></a>a (アセンブル)
 
 
 **、** コマンド アセンブル 32 ビット x86 命令ニーモニックおよび結果として得られる命令がメモリにコードを配置します。
@@ -34,7 +34,7 @@ a [Address]
 
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-結果として得られるコードを配置する場所のメモリ ブロックの先頭を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+結果として得られるコードを配置する場所のメモリ ブロックの先頭を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

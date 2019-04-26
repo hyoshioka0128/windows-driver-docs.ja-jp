@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_KEEPALIVE_CMPLT
-Description: A Remote NDIS device will respond to a REMOTE_NDIS_KEEPALIVE_MSG message from the host by sending back a REMOTE_NDIS_KEEPALIVE_CMPLT response message.
+Description: リモートの NDIS デバイスは、REMOTE_NDIS_KEEPALIVE_CMPLT の応答メッセージを返送して、ホストから REMOTE_NDIS_KEEPALIVE_MSG メッセージに応答します。
 ms.assetid: c090b781-73f1-4a7a-a0a2-60af366daa77
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69abf349b66b4307f62d00827d79829660822ae8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350878"
 ---
 # <a name="remotendiskeepalivecmplt"></a>リモート\_NDIS\_KEEPALIVE\_CMPLT
 
@@ -35,7 +35,7 @@ ms.locfileid: "56531413"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x80000008 に設定します。</p></td>
 </tr>
 <tr class="even">

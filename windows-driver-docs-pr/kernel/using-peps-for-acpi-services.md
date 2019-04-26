@@ -1,17 +1,17 @@
 ---
-title: Pep を ACPI サービスの使用
+title: ACPI サービス用 PEP の使用
 description: このトピックでは、ACPI サービスのプラットフォーム拡張機能プラグイン (Pep) の使用についての情報を提供します。
 ms.assetid: 80ED3B80-A1FF-4A41-BA88-EC1C832C4639
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: dabdecc43254606cebbf6f8cdec6da962c0fb164
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354213"
 ---
-# <a name="using-peps-for-acpi-services"></a>Pep を ACPI サービスの使用
+# <a name="using-peps-for-acpi-services"></a>ACPI サービス用 PEP の使用
 
 
 このトピックでは、ACPI サービスのプラットフォーム拡張機能プラグイン (Pep) の使用についての情報を提供します。

@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4fdd8d5637ad3796f6f27357ee934ceec746694
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352949"
 ---
 # <a name="mrxsetfileinfoatcleanup-routine"></a>MRxSetFileInfoAtCleanup ルーチン
 
@@ -50,7 +50,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 *MRxSetFileInfoAtCleanup*ステータスを返します\_成功または適切な NTSTATUS 値に成功しました。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 RDBSS への呼び出しを発行する*MRxSetFileInfoAtCleanup*ファイル オブジェクトへの最後のハンドルが閉じられたときのクリーンアップ中にします。 これは、ファイル オブジェクトへの最後の参照が削除されたときに呼び出される、閉じる操作よりも異なります。

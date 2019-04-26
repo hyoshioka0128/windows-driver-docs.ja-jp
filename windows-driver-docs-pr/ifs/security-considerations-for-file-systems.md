@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 300e54540855e4536b7a59ad9942f142013fc51d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344515"
 ---
 # <a name="security-considerations-for-file-systems"></a>ファイル システムのセキュリティに関する考慮事項
 
@@ -22,7 +22,7 @@ ms.locfileid: "56530556"
 ## <span id="ddk_security_considerations_for_file_systems_if"></span><span id="DDK_SECURITY_CONSIDERATIONS_FOR_FILE_SYSTEMS_IF"></span>
 
 
-このセクションでは、ファイル システムの開発者向けのセキュリティ ガイダンスを提供します。 Windows Driver Kit (WDK) を使用して、ファイル システムと Microsoft Windows オペレーティング システムのファイル システム フィルター ドライバーを実装するときに、次のガイドラインに従います。 次のトピックがについて説明します。
+このセクションでは、ファイル システムの開発者向けのセキュリティ ガイダンスを提供します。 Windows Driver Kit (WDK) を使用して、ファイル システムと Microsoft Windows オペレーティング システムのファイル システム フィルター ドライバーを実装するときに、次のガイドラインに従います。 次のトピックについて説明します。
 
 [ファイル システムのセキュリティの概要](introduction-to-file-systems-security.md)
 

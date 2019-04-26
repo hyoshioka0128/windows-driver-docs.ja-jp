@@ -5,11 +5,11 @@ ms.assetid: 911375A9-6761-45C1-BB5E-79BC0E4409AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa980ceb8c5e2d9108c5763ee9bfee6d99331032
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352711"
 ---
 # <a name="pwm-driver-for-an-on-soc-pwm-module"></a>on-SoC PWM モジュールの PWM ドライバー
 SoC の一部であるパルス幅変調 (PWM) コント ローラーへのアクセスを提供して、メモリ マップト SoC のアドレス空間に、する必要があるライターはカーネル モード ドライバー。 ドライバーは、UWP アプリは Windows.Devices.Pwm 名前空間で定義されている PWM WinRT Api を介して公開されているシステム PWM デバイスにアクセスできるように、PWM コント ローラーのデバイス クラスのインターフェイスを登録する必要があります。 

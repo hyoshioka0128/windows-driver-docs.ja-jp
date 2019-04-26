@@ -1,17 +1,17 @@
 ---
-title: WIA Microdriver コマンド
-description: WIA Microdriver コマンド
+title: WIA マイクロドライバーのコマンド
+description: WIA マイクロドライバーのコマンド
 ms.assetid: 54d0c35b-d8b3-4e38-85cf-d5b4f80f6daa
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a9d7f58639a5025b1b0b91076a02884d5dac1d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352790"
 ---
-# <a name="wia-microdriver-commands"></a>WIA Microdriver コマンド
+# <a name="wia-microdriver-commands"></a>WIA マイクロドライバーのコマンド
 
 
 ## <span id="ddk_wia_microdriver_commands_si"></span><span id="DDK_WIA_MICRODRIVER_COMMANDS_SI"></span>

@@ -1,6 +1,6 @@
 ---
-title: バック バッファーを全画面表示でアルファ チャネルを有効にします。
-description: バック バッファーを全画面表示でアルファ チャネルを有効にします。
+title: 全画面バック バッファーでのアルファ チャネルの有効化
+description: 全画面バック バッファーでのアルファ チャネルの有効化
 ms.assetid: 9d922464-fb1b-459b-9363-61afff7c51e3
 keywords:
 - DirectX 8.0 リリース ノート WDK Windows 2000 の表示、全画面表示のアルファ チャネルのバック バッファー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9829939051617356f0c62cd2eda516c4808b7f9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355348"
 ---
-# <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>バック バッファーを全画面表示でアルファ チャネルを有効にします。
+# <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>全画面バック バッファーでのアルファ チャネルの有効化
 
 
 ## <span id="ddk_enabling_alpha_channels_on_full_screen_back_buffers_gg"></span><span id="DDK_ENABLING_ALPHA_CHANNELS_ON_FULL_SCREEN_BACK_BUFFERS_GG"></span>

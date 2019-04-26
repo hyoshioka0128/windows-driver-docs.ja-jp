@@ -10,11 +10,11 @@ ms.assetid: B13FECA3-FBD1-4B95-8400-ECDDC3FD09FC
 ms.date: 08/21/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b004611835036611865b78a8c1ddba16f50e746
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346019"
 ---
 このセクションには、Single Root I/O Virtualization (SR-IOV) で使用される NDIS 状態インジケーターが含まれています。
 

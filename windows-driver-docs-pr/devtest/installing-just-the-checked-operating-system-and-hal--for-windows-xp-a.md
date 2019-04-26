@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e5dd6eaaccd860590e7801278a757461f7b0de0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356592"
 ---
 # <a name="installing-just-the-checked-operating-system-and-hal-for-windows-xp-and-windows-server-2003"></a>チェック済みのオペレーティング システムと HAL のみのインストール (Windows XP と Windows Server 2003)
 
@@ -162,7 +162,7 @@ arcldr.exe = "arcldr.exe","2eca9"
 
 %Systemroot% にチェックされたファイルをコピーしたら\\system32 ディレクトリの場合は、これらのチェックされたファイルの使用を開始する、システム起動時のオプションを作成する必要があります。 これを実行するには、boot.ini ファイルを編集します。
 
-一般的な手順については、[boot.ini ファイルを編集](editing-the-boot-ini-file.md)を参照してください。
+一般的な手順については、次を参照してください。 [boot.ini ファイルを編集](editing-the-boot-ini-file.md)します。
 
 この特定のケースでは、オペレーティング システム イメージとインストールされている HAL のチェックを行うバージョンでシステムを起動できるようにする新しい起動時のオプションを作成する必要があります。
 
@@ -189,7 +189,7 @@ multi(0)disk(0)rdisk(0)partition(1)\WINNT="Microsoft Windows 2000 Professional" 
 multi(0)disk(0)rdisk(0)partition(1)\WINNT="Windows 2000 Checked" /fastdetect /kernel=ntoskrnl.chk /hal=halacpi.chk
 ```
 
-カーネル デバッガーを使用してチェックのビルドを使用する場合は、適切なデバッグ関連のパラメーターも追加する必要があります。 (、 **/Kernel**と **/hal**パラメーター デバッグが自動的に有効にしないでください)。詳細については、[boot.ini ファイルを編集](editing-the-boot-ini-file.md)を参照してください。
+カーネル デバッガーを使用してチェックのビルドを使用する場合は、適切なデバッグ関連のパラメーターも追加する必要があります。 (、 **/Kernel**と **/hal**パラメーター デバッグが自動的に有効にしないでください)。詳細については、次を参照してください。 [boot.ini ファイルを編集](editing-the-boot-ini-file.md)します。
 
 変更を行った後は、変更を保存し、エディターを終了します。 次に、このシステムを起動する新しいオペレーティング システムのブート オプションが表示されますがチェックされているオペレーティング システム イメージと HAL を選択することができます。
 
@@ -206,7 +206,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
 SFCDisable:REG_DWORD:2
 ```
 
-設定**SFCDisable** 2 の値に、WFP を次回の起動時に (のみ) を無効にします。 0 (既定値) の値には、WFP が有効になります。 WFP の機能については、Microsoft Windows SDK を参照してください。 WFP のレジストリ設定の詳細については、[Microsoft サポート技術情報記事 Q222473](https://go.microsoft.com/fwlink/p/?linkid=38360)を参照してください。
+設定**SFCDisable** 2 の値に、WFP を次回の起動時に (のみ) を無効にします。 0 (既定値) の値には、WFP が有効になります。 WFP の機能については、Microsoft Windows SDK を参照してください。 WFP のレジストリ設定の詳細については、次を参照してください。 [Microsoft サポート技術情報記事 Q222473](https://go.microsoft.com/fwlink/p/?linkid=38360)します。
 
  
 

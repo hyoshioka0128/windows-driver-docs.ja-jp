@@ -1,17 +1,17 @@
 ---
-title: 仮想関数をリセットします。
-description: 仮想関数をリセットします。
+title: 仮想関数のリセット
+description: 仮想関数のリセット
 ms.assetid: 4B7A4E02-6383-45FB-9F75-D17C047C40D0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a74f7e369b87d4e4ca7d84d4eeea501e007c025
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347332"
 ---
-# <a name="resetting-a-virtual-function"></a>仮想関数をリセットします。
+# <a name="resetting-a-virtual-function"></a>仮想関数のリセット
 
 
 上位のドライバーのオブジェクト識別子 (OID) セット要求を発行する[OID\_SRIOV\_リセット\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451889)を指定された PCI Express (PCIe) 仮想機能 (VF) をリセットします。 VF とは、シングル ルート I/O 仮想化をサポートするネットワーク アダプターのハードウェア コンポーネントです。 上にあるドライバーは、ミニポート ドライバーの PCI Express (PCIe) 物理機能 (PF) をこの OID セット要求を発行します。

@@ -1,6 +1,6 @@
 ---
-title: デバイス マネージャーの問題のコード
-description: デバイス マネージャーの問題のコード
+title: デバイス マネージャーの問題コード
+description: デバイス マネージャーの問題コード
 ms.assetid: d08c3dd1-ab2e-4ce6-8bf7-9634c0a5be1f
 keywords:
 - プラグ アンド プレイ (PnP) デバイス マネージャーの問題のコード
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: afa8b4fb0a8e88d71b3e8fe56cee8acf79bb0f84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346296"
 ---
-# <a name="device-manager-problem-codes"></a>デバイス マネージャーの問題のコード
+# <a name="device-manager-problem-codes"></a>デバイス マネージャーの問題コード
 
 
 デバイス マネージャーは、デバイスに問題があるときに、黄色の感嘆符 (!) を使用したデバイスをマークします。 問題のコードは形式 CM\_確率\_*XXX*ヘッダー ファイルの cfg.h に定義されています。 最も重要なは、次に説明へのマッピングと共に、[デバイス ノードの状態フラグ](device-node-status-flags.md)します。 詳細についてを参照してください[デバイス マネージャーのエラー メッセージ](../install/device-manager-error-messages.md)します。

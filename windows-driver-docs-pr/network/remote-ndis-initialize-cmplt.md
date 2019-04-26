@@ -4,11 +4,11 @@ ms.assetid: e1e057bf-aa92-4b90-b993-a82cc260ff7f
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 599c811c124304595867c899fd750bdaa15dd45c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350887"
 ---
 # <a name="remotendisinitializecmplt"></a>リモート\_NDIS\_初期化\_CMPLT
 
@@ -34,7 +34,7 @@ ms.locfileid: "56549207"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x80000002 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -129,7 +129,7 @@ ms.locfileid: "56549207"
 
 -   デバイスが、ホストから受信する 1 つのデータ転送のバイトの最大サイズです。 デバイスは、各リモート NDIS メッセージに multimessage 転送の一部である必要があるバイトのアラインメントを指定できます。 2 の累乗では、この配置の値を指定します。 たとえばを 8 バイト アラインメントを示すために、3 にこの値を設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: ネットワーク アダプターで NIC スイッチを列挙します。
-description: ネットワーク アダプターで NIC スイッチを列挙します。
+title: ネットワーク アダプターでの NIC スイッチの列挙
+description: ネットワーク アダプターでの NIC スイッチの列挙
 ms.assetid: 0799A879-2BC0-43C5-A6B6-6D46C74A26FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5066ebde7ac30d395c459da0faa64e7993d01c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352980"
 ---
-# <a name="enumerating-nic-switches-on-a-network-adapter"></a>ネットワーク アダプターで NIC スイッチを列挙します。
+# <a name="enumerating-nic-switches-on-a-network-adapter"></a>ネットワーク アダプターでの NIC スイッチの列挙
 
 
 上にあるドライバーやユーザー アプリケーションは、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターで作成されたすべての NIC スイッチの一覧を取得できます。 ドライバーまたはアプリケーションのオブジェクト識別子 (OID) のクエリ要求を発行[OID\_NIC\_スイッチ\_ENUM\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451819)この一覧を取得します。
@@ -32,7 +32,7 @@ ms.locfileid: "56531635"
 
 NDIS ハンドル、 [OID\_NIC\_スイッチ\_ENUM\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451819)ミニポート ドライバーに要求します。 NDIS は、次のソースから保持されているデータの内部キャッシュから情報を返します。
 
--   レジストリの標準化された設定の SR-IOV キーワード。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
+-   レジストリの標準化された設定の SR-IOV キーワード。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
 -   OID 要求[OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)と[OID\_NIC\_スイッチ\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451823).
 

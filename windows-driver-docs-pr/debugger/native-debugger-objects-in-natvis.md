@@ -6,11 +6,11 @@ keywords:
 ms.date: 08/10/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22087a2b36d254b9b287d85ca37103f119647af0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353102"
 ---
 # <a name="native-debugger-objects-in-natvis"></a>NatVis のネイティブ デバッガー オブジェクト
 
@@ -28,7 +28,7 @@ ms.locfileid: "56569940"
 -   状態
 -   設定
 
-デバッガー オブジェクトとの対話には、dx コマンドと LINQ を使用できます。 詳細については、[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)と[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)を参照してください。
+デバッガー オブジェクトとの対話には、dx コマンドと LINQ を使用できます。 詳細については、次を参照してください。 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)と[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)します。
 
 JavaScript を使用してデバッガー オブジェクトを操作することもできます。 詳細については、「その[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。
 

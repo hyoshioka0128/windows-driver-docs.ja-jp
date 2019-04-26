@@ -1,6 +1,6 @@
 ---
-title: Microsoft Windows の以前のバージョンとの違い
-description: Microsoft Windows の以前のバージョンとの違い
+title: 以前のバージョンの Microsoft Windows との違い
+description: 以前のバージョンの Microsoft Windows との違い
 ms.assetid: 9c30c5c6-27a7-424e-b5f0-ab625eed4b8a
 keywords:
 - Windows ハードウェア エラー アーキテクチャ WDK、Windows の以前のバージョン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad3b9310580adb6a1c8d09ba3f7e7bb2c7d009b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354532"
 ---
-# <a name="differences-from-previous-versions-of-microsoft-windows"></a>Microsoft Windows の以前のバージョンとの違い
+# <a name="differences-from-previous-versions-of-microsoft-windows"></a>以前のバージョンの Microsoft Windows との違い
 
 
 次の一覧は、Windows ハードウェア エラー アーキテクチャ (WHEA) と Windows Vista より前に、Microsoft Windows のバージョンでの処理、ハードウェア エラーの違いをまとめたものです。

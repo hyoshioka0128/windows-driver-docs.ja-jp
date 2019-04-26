@@ -1,15 +1,15 @@
 ---
-title: _Flt_CompletionContext_Outptr_注釈
+title: _Flt_CompletionContext_Outptr_ 注釈
 description: 使用して、 _Flt_CompletionContext_Outptr_注釈ファイル システム ミニフィルターの前の操作のコールバック関数 PFLT_PRE_OPERATION_CALLBACK を宣言するときにします。
 ms.assetid: C3B285EA-0DAB-48D4-AE2F-CB4FBB30EF15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02b3e10ef2e3aec771e9d8407cc837b5d762e639
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344790"
 ---
 # <a name="fltcompletioncontextoutptr-annotation"></a>\_Flt\_CompletionContext\_Outptr\_注釈
 
@@ -41,7 +41,7 @@ SwapPreReadBuffers(
 
 [**PFLT\_POST\_操作\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551107)
 
-[SAL 2.0 Annotations for Windows Drivers](sal-2-annotations-for-windows-drivers.md)
+[Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)
 
 
 

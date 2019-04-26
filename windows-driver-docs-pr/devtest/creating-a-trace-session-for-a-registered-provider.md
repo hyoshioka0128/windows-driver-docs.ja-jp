@@ -1,19 +1,19 @@
 ---
-title: 登録済みのプロバイダーのトレース セッションを作成します。
-description: 登録済みのプロバイダーのトレース セッションを作成します。
+title: 登録済みプロバイダーのトレース セッションの作成
+description: 登録済みプロバイダーのトレース セッションの作成
 ms.assetid: 3013b5fa-5390-4d46-b138-4ddcda468ddf
 keywords:
 - 登録されているプロバイダーの WDK ソフトウェア トレース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9bd580f5251a74e34a74eee211cb3bbb3e2f9b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340612"
 ---
-# <a name="creating-a-trace-session-for-a-registered-provider"></a>登録済みのプロバイダーのトレース セッションを作成します。
+# <a name="creating-a-trace-session-for-a-registered-provider"></a>登録済みプロバイダーのトレース セッションの作成
 
 
 ## <span id="ddk_create_a_trace_session_for_a_registered_provider_tools"></span><span id="DDK_CREATE_A_TRACE_SESSION_FOR_A_REGISTERED_PROVIDER_TOOLS"></span>
@@ -57,7 +57,7 @@ TMF ファイルを指定する方法の詳細については、TMF ファイル
 
 TMF ファイルを Windows カーネル トレースで、system.tmf が WDK に含まれています。 をクリックして**TMF ファイルの選択**、 をクリックして**追加**に移動し、\\ツール\\トレース\\i386 サブディレクトリ、し system.tmf を選択します。
 
-詳細については、[NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)を参照してください。
+詳細については、次を参照してください。 [NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)します。
 
  
 

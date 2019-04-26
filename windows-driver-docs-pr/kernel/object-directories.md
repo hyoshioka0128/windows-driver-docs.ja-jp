@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 809fbba9f52f255f77fa42c3f4ec4c3104742561
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351070"
 ---
 # <a name="object-directories"></a>オブジェクト ディレクトリ
 
@@ -30,19 +30,19 @@ ms.locfileid: "56582208"
 
 -   **\\コールバック**
 
-    システムでは、このディレクトリに標準的なコールバック オブジェクトを作成します。 詳細については、[ベンダーのコールバック オブジェクトを使用して](using-a-system-defined-callback-object.md)を参照してください。
+    システムでは、このディレクトリに標準的なコールバック オブジェクトを作成します。 詳細については、次を参照してください。[ベンダーのコールバック オブジェクトを使用して](using-a-system-defined-callback-object.md)します。
 
 -   **\\デバイス**
 
-    ドライバーは、このディレクトリの名前付きのデバイス オブジェクトを作成します。 詳細については、[という名前のデバイス オブジェクト](named-device-objects.md)を参照してください。
+    ドライバーは、このディレクトリの名前付きのデバイス オブジェクトを作成します。 詳細については、次を参照してください。[という名前のデバイス オブジェクト](named-device-objects.md)します。
 
 -   **\\KernelObjects**
 
-    システムでは、このディレクトリで標準的なイベント オブジェクトを作成します。 詳細については、[標準イベント オブジェクト](standard-event-objects.md)を参照してください。
+    システムでは、このディレクトリで標準的なイベント オブジェクトを作成します。 詳細については、次を参照してください。[標準イベント オブジェクト](standard-event-objects.md)します。
 
 -   **\\\Dosdevices\z**
 
-    このディレクトリは、デバイスの対応するオブジェクトへのシンボリック リンクとして、デバイスの MS-DOS デバイス名を格納します。 詳細については、[MS-DOS デバイス名](ms-dos-device-names.md)を参照してください。
+    このディレクトリは、デバイスの対応するオブジェクトへのシンボリック リンクとして、デバイスの MS-DOS デバイス名を格納します。 詳細については、次を参照してください。 [MS-DOS デバイス名](ms-dos-device-names.md)します。
 
 システムが他の最上位レベルのディレクトリを作成しますが、システムの使用に予約されています。
 

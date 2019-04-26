@@ -1,19 +1,19 @@
 ---
-title: カスタム UI の表示を要求します。
-description: カスタム UI の表示を要求します。
+title: カスタム UI の表示の要求
+description: カスタム UI の表示の要求
 ms.assetid: 4b7366d9-e55a-4b24-b75f-a5f133b80ca7
 keywords:
 - カスタム UI WDK ネイティブ 802.11 IHV UI 拡張機能の DLL、表示を要求します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4a14426a8874e8630f128976d364b59ddf1d933
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349392"
 ---
-# <a name="requesting-the-display-of-a-custom-ui"></a>カスタム UI の表示を要求します。
+# <a name="requesting-the-display-of-a-custom-ui"></a>カスタム UI の表示の要求
 
 
 
@@ -44,9 +44,9 @@ ms.locfileid: "56553046"
 
 ユーザーのセッション ID の WLAN 接続状態に応じて、カスタム UI 要求が、次のいずれかとして表示されます。
 
--   場合は、アダプターは、WLAN のネットワークに接続されているが、要求がクリック可能なバルーン通知を通じて UI が起動されるスタンドアロンとして表示されます。 このプロセスの詳細については、[バルーン通知を表示する](displaying-custom-ui-pages-within-a-balloon-notification.md)を参照してください。
+-   場合は、アダプターは、WLAN のネットワークに接続されているが、要求がクリック可能なバルーン通知を通じて UI が起動されるスタンドアロンとして表示されます。 このプロセスの詳細については、次を参照してください。[バルーン通知を表示する](displaying-custom-ui-pages-within-a-balloon-notification.md)します。
 
--   アダプターが WLAN ネットワークへの接続中にある場合は、要求が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)を参照してください。
+-   アダプターが WLAN ネットワークへの接続中にある場合は、要求が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、次を参照してください。[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)します。
 
  
 

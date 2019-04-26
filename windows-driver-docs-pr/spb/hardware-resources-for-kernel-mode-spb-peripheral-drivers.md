@@ -5,11 +5,11 @@ ms.assetid: ABFFCBEC-16AB-44AF-BEF6-34AEE612EAF7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53c5a28556e1d7e0682a8fc2305157c7c8c950a0
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356731"
 ---
 # <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>カーネルモード SPB 周辺機器ドライバーのハードウェア リソース
 

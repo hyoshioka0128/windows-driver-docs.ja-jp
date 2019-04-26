@@ -7,11 +7,11 @@ keywords:
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: af161ef2b4f2cc7c70cc0142abd255b62ce9844f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343080"
 ---
 # <a name="configure-the-machine-for-testing"></a>テスト マシンを構成します。
 このトピックでは、インストールに必要な手順を説明[WDTF](https://docs.microsoft.com/windows-hardware/drivers/wdtf/)と[TAEF](https://docs.microsoft.com/windows-hardware/drivers/taef/)、データ ドリブン テストをコピーして、テスト マシンを構成します。 WDTF インストールでは、システムのドライバーがインストールされるため、管理者特権または管理者のコマンド プロンプトから次のコマンドを実行する必要があることに注意してください。

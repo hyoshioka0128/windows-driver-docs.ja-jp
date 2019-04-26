@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 355d215fb633b51e6e629833ab7fb8699963b0bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350725"
 ---
 # <a name="advantages-of-writing-umdf-drivers"></a>UMDF ドライバーを作成する利点
 
@@ -30,7 +30,7 @@ UMDF ドライバーを記述するときに、次の中から活用できます
 -   UMDF バージョン 2 では、KMDF と UMDF 間の変換が容易になります。 参照してください[KMDF ドライバーを 2 の UMDF ドライバー (およびその逆) に変換する方法について](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)します。
 -   UMDF ドライバーは、ユーザー モード デバッガーを使用すると、以降 UMDF バージョン 2 では、カーネル モード デバッガーによってデバッグできます。
 
--   KMDF UMDF バージョン 2 以降と Wdfkd.dll デバッガー拡張機能のコマンドを使用できます。 詳細については、[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)を参照してください。
+-   KMDF UMDF バージョン 2 以降と Wdfkd.dll デバッガー拡張機能のコマンドを使用できます。 詳細については、次を参照してください。[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)します。
 
 WDF モデル全体の基本的な目的は、デバイスのハードウェアに注目して、ほとんどのドライバーに共通のタスクを実行するコードの記述を回避できるように、インテリジェントな既定値を指定します。
 

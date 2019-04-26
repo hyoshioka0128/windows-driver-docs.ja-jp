@@ -5,11 +5,11 @@ ms.assetid: 7a1cea3c-d542-47e9-90f9-18bae4969b9f
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: aa7669617c8bff697da8f6c07c405ed8abe9c132
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349174"
 ---
 # <a name="creating-a-sensor-driver"></a>センサー ドライバーを作成します。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56570226"
 
      
 
-場合は、ドライバーをインストールすることはできません、手順 2 のエラー コードが返されたメソッドの 1 つでは可能性があります。 この問題をデバッグするには、インストール中にデバッガーをアタッチする必要があります。 UMDF ドライバーを読み込み中にデバッグする方法については、[を決定する、UMDF ドライバーが失敗した理由の読み込みまたは開始に失敗した UMDF デバイス](https://msdn.microsoft.com/library/windows/hardware/ff554611)を参照してください。
+場合は、ドライバーをインストールすることはできません、手順 2 のエラー コードが返されたメソッドの 1 つでは可能性があります。 この問題をデバッグするには、インストール中にデバッガーをアタッチする必要があります。 UMDF ドライバーを読み込み中にデバッグする方法については、次を参照してください。[を決定する、UMDF ドライバーが失敗した理由の読み込みまたは開始に失敗した UMDF デバイス](https://msdn.microsoft.com/library/windows/hardware/ff554611)します。
 
 クラス ID を INF でファイルと一致する指定を確認する必要がありますも、 **GUID**コクラス 's ドライバー用の IDL ファイルで使用することです。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_NIC_CONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a5a9a95aa1390d530160326764507d6bd086a8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351244"
 ---
 # <a name="oidswitchnicconnect"></a>OID\_スイッチ\_NIC\_接続
 
@@ -28,7 +28,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
 -   さまざまな OID の要求の設定を調べることによって[OID\_スイッチ\_ポート\_作成](oid-switch-port-create.md)と[OID\_スイッチ\_ポート\_の削除](oid-switch-port-delete.md).
 
-**インデックス**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598215)構造体は、ネットワーク アダプターのインデックスを指定します。対象の接続の通知が行われました。 指定したネットワーク アダプター**インデックス**値がで指定された拡張可能スイッチ ポートに接続されている、 **PortId**メンバー。 これらのインデックス値の詳細については、[ネットワーク アダプターのインデックス値](https://msdn.microsoft.com/library/windows/hardware/hh598258)を参照してください。
+**インデックス**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598215)構造体は、ネットワーク アダプターのインデックスを指定します。対象の接続の通知が行われました。 指定したネットワーク アダプター**インデックス**値がで指定された拡張可能スイッチ ポートに接続されている、 **PortId**メンバー。 これらのインデックス値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](https://msdn.microsoft.com/library/windows/hardware/hh598258)します。
 
 OID の OID のセット要求を受け取ったとき\_スイッチ\_NIC\_接続で、拡張機能には、次のガイドラインが従う必要があります。
 
@@ -38,15 +38,15 @@ OID の OID のセット要求を受け取ったとき\_スイッチ\_NIC\_接�
 
 -   拡張機能は常に呼び出す必要があります[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)基になる拡張機能には、この OID 要求を転送します。 拡張機能は、自体 OID 要求を完了する必要があります。
 
--   拡張可能スイッチの外部ネットワーク アダプターは、1 つまたは複数の基になる物理アダプターにバインドできます。 拡張可能スイッチのプロトコルのエッジが OID の独立した OID セット要求を発行する外部ネットワーク アダプターにバインドされているすべての物理ネットワーク アダプターの\_切り替える\_NIC\_接続します。 各 OID セットの要求では、別のネットワーク アダプター接続のインデックス値を指定します。 これらの値の詳細については、[ネットワーク アダプターのインデックス値](https://msdn.microsoft.com/library/windows/hardware/hh598258)を参照してください。
+-   拡張可能スイッチの外部ネットワーク アダプターは、1 つまたは複数の基になる物理アダプターにバインドできます。 拡張可能スイッチのプロトコルのエッジが OID の独立した OID セット要求を発行する外部ネットワーク アダプターにバインドされているすべての物理ネットワーク アダプターの\_切り替える\_NIC\_接続します。 各 OID セットの要求では、別のネットワーク アダプター接続のインデックス値を指定します。 これらの値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](https://msdn.microsoft.com/library/windows/hardware/hh598258)します。
 
-    拡張機能では、外部ネットワーク アダプターにバインドされている基になる各物理アダプターの接続状態を維持する必要があります。 外部ネットワーク アダプターを物理ネットワーク アダプターのバインドのさまざまな構成に関する詳細については、[型の物理ネットワーク アダプターの構成](https://msdn.microsoft.com/library/windows/hardware/hh582274)を参照してください。
+    拡張機能では、外部ネットワーク アダプターにバインドされている基になる各物理アダプターの接続状態を維持する必要があります。 外部ネットワーク アダプターを物理ネットワーク アダプターのバインドのさまざまな構成に関する詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](https://msdn.microsoft.com/library/windows/hardware/hh582274)します。
 
 **注**  、拡張機能は、OID の独自の OID セット要求を発行する必要があります\_スイッチ\_NIC\_接続します。
 
  
 
-拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、[Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)を参照してください。
+拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

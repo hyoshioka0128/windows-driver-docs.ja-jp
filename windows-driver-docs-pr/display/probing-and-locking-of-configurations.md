@@ -1,6 +1,6 @@
 ---
-title: プローブと構成のロック
-description: プローブと構成のロック
+title: 構成のプローブとロック
+description: 構成のプローブとロック
 ms.assetid: 6f68db48-ed4b-487c-b425-43c610651c16
 keywords:
 - ビデオのデコード WDK DirectX va なので、構成のプローブとロック
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d31d21d387fdbfacaab9fbe22cf2043d2f12b8cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352233"
 ---
-# <a name="probing-and-locking-of-configurations"></a>プローブと構成のロック
+# <a name="probing-and-locking-of-configurations"></a>構成のプローブとロック
 
 
 ## <span id="ddk_probing_and_locking_of_configurations_gg"></span><span id="DDK_PROBING_AND_LOCKING_OF_CONFIGURATIONS_GG"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05657209ef6c2cad47d7da062a303900261cacf7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352109"
 ---
 # <a name="wiadipdevtype"></a>WIA\_DIP\_DEV\_型
 
@@ -81,7 +81,7 @@ WIA\_DIP\_DEV\_型のプロパティには、デバイスの種類とデバイ�
 
  
 
-INF ファイルの詳細については、[WIA デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542770)を参照してください。 **StiDeviceType * * * Xxx*定数で定義されて*Sti.h*します。
+INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542770)します。 **StiDeviceType * * * Xxx*定数で定義されて*Sti.h*します。
 
 <a name="requirements"></a>要件
 ------------

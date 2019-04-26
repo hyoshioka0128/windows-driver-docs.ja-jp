@@ -1,28 +1,28 @@
 ---
-title: ユーザー モード SPB の周辺機器のドライバーのハードウェア リソース
+title: ユーザーモード SPB 周辺機器ドライバーのハードウェア リソース
 description: SPB の周辺機器のデバイスの UMDF ドライバーのコード例と、ハードウェア リソースを取得します。
 ms.assetid: 4D240011-1F4E-4C1E-8258-A2CF44BD3F06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84ee90c56c37454e4892811d638f94a90a0fbf1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356722"
 ---
-# <a name="hardware-resources-for-user-mode-spb-peripheral-drivers"></a>ユーザー モード SPB の周辺機器のドライバーのハードウェア リソース
+# <a name="hardware-resources-for-user-mode-spb-peripheral-drivers"></a>ユーザーモード SPB 周辺機器ドライバーのハードウェア リソース
 
 
 コード例では、このトピックの「表示方法、[ユーザー モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff560442)上周辺機器のデバイス用の (UMDF) ドライバー、[シンプルな周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPB) が動作するために必要なハードウェア リソースを取得しますデバイスです。 これらのリソースに含まれるは、ドライバーがデバイスへの論理接続を確立するために使用する情報です。 その他のリソースは、割り込みを含めることができ、1 つまたは複数の GPIO 入力または出力ピンです。 (GPIO ピンは、詳細については、入力または出力として構成されている汎用的な I/O コント ローラー デバイスの暗証番号 (pin) を参照してください[GPIO コント ローラー ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh439512))。メモリが割り当てられているデバイスとは異なり、SPB に接続されている周辺機器は、レジスタにマップするシステムのメモリ アドレスのブロックを必要としません。
 
 このドライバーは、実装、 [ **IPnpCallbackHardware2** ](https://msdn.microsoft.com/library/windows/hardware/hh439727)インターフェイス、および、UMDF ドライバーの呼び出し中にこのインターフェイスに登録[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)メソッド。 フレームワークでメソッドを呼び出します、 **IPnpCallbackHardware2**インターフェイス、デバイスの電源状態の変化のドライバーに通知します。
 
-SPB に接続されている周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 [ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)このデバイスにする必要があるドライバーに通知するメソッド使用できるように準備します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://msdn.microsoft.com/library/windows/hardware/hh439762)オブジェクト。 翻訳済みのリソースが含まれて、*接続 ID* SPB 周辺ドライバーは、SPB に接続されている周辺機器への論理接続を確立する必要があります。 詳細については、[SPB の周辺機器の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)を参照してください。
+SPB に接続されている周辺機器に電力が復元されると、ドライバー、フレームワークが呼び出す、 [ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)このデバイスにする必要があるドライバーに通知するメソッド使用できるように準備します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://msdn.microsoft.com/library/windows/hardware/hh439762)オブジェクト。 翻訳済みのリソースが含まれて、*接続 ID* SPB 周辺ドライバーは、SPB に接続されている周辺機器への論理接続を確立する必要があります。 詳細については、次を参照してください。 [SPB の周辺機器の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)します。
 
 そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。
 
 次のコード例は、ドライバーの**OnPrepareHardware**メソッドからの接続 ID の取得、 *pWdfResourcesTranslated*パラメーター。
 
@@ -227,9 +227,9 @@ if (fSynchronous || FAILED(hres))
 5.  **送信**メソッドは、sp B に接続されている周辺機器に書式設定された書き込み要求を送信します。 `Flags`変数は、書き込み要求が同期的または非同期的に送信するかどうかを示します。
 6.  要求が同期的に送信される場合、 [ **IWDFIoRequest::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)メソッドによって示される、両方の I/O 要求オブジェクトを削除`pWdfIoRequest`によって示される子オブジェクトと`pInputMemory`. **IWDFIoRequest**インターフェイスからこのメソッドを継承する、 [ **IWDFObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560200)インターフェイス。 呼び出し、要求は、非同期的に送信されてかどうか、 **DeleteWdfObject**メソッドは、ドライバーので、後で発生する必要があります**OnCompletion**メソッド。
 
-上記のコード例の代替実装を作成**IWDFIoRequest**と**IWDFMemory**ドライバーの初期化中に、および繰り返しオブジェクトの代わりにこれらの同じオブジェクトを使用作成して、毎回新しいオブジェクトを削除するには、I/O 要求が送信されます。 詳細については、[ **IWDFIoRequest2::Reuse** ](https://msdn.microsoft.com/library/windows/hardware/ff559048)と[ **IWDFMemory::SetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff560162)を参照してください。
+上記のコード例の代替実装を作成**IWDFIoRequest**と**IWDFMemory**ドライバーの初期化中に、および繰り返しオブジェクトの代わりにこれらの同じオブジェクトを使用作成して、毎回新しいオブジェクトを削除するには、I/O 要求が送信されます。 詳細については、次を参照してください。 [ **IWDFIoRequest2::Reuse** ](https://msdn.microsoft.com/library/windows/hardware/ff559048)と[ **IWDFMemory::SetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff560162)します。
 
-さらに、代替実装が I/O 要求からの I/O のステータス コード存在検査、**送信**呼び出しが成功します。 詳細については、[ **IWDFIoRequest::GetCompletionParams**](https://msdn.microsoft.com/library/windows/hardware/ff559084)を参照してください。
+さらに、代替実装が I/O 要求からの I/O のステータス コード存在検査、**送信**呼び出しが成功します。 詳細については、次を参照してください。 [ **IWDFIoRequest::GetCompletionParams**](https://msdn.microsoft.com/library/windows/hardware/ff559084)します。
 
  
 
