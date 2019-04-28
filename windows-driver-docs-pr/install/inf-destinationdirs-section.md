@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e0df8123a9ab861b102b87e72d62d43f0eb7b6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380744"
 ---
 # <a name="inf-destinationdirs-section"></a>INF DestinationDirs セクション
 
@@ -46,7 +46,7 @@ INF ライター決定によって参照されるセクションの名前を指�
 <a href="" id="subdir"></a>*subdir*  
 サブディレクトリを指定します (で識別されたディレクトリの下で、存在する場合、そのパスの残りの部分と*dirid*) でのファイル操作のコピー先にする、指定された*ファイルのセクション一覧*。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **DestinationDirs**セクションが使用するすべての INF ファイルで必要な[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)を参照するか、*ファイル リスト セクション*、かどうかを**CopyFiles**、 [ **DelFiles**](inf-delfiles-directive.md)、または[ **RenFiles** ](inf-renfiles-directive.md)ディレクティブ。
@@ -60,7 +60,7 @@ INF ファイルが含まれていない場合**Include**と**必要がある**�
 -   [**CopyFiles** ](inf-copyfiles-directive.md)直接コピーを使用するディレクティブ (@*filename*) 表記する必要がありますが、 **DefaultDestDir**内のエントリ、 **DestinationDirs**の INF を直接コピー エントリが表示されます。
 -   **CopyFiles**、 [ **RenFiles**](inf-renfiles-directive.md)、または[ **DelFiles** ](inf-delfiles-directive.md)で直接参照されていないセクション、 **DestinationDirs**セクションがあります、 **DefaultDestDir**内のエントリ、 **DestinationDirs**のコピー、名前の変更、および削除ファイルのセクションを表示する INF セクション。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 この例では、すべてのファイルのコピー、削除、ファイル、およびファイルの名前の変更操作の既定のターゲット ディレクトリを設定します。 このような単純な**DestinationDirs**セクションは、このような INF は、ターゲット コンピューター上の 1 つのディレクトリにソース ファイルのセットをコピーする通常だけなので新しいの周辺機器の INF ファイルに共通します。

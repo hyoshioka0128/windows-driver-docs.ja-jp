@@ -1,19 +1,19 @@
 ---
-title: プロバイダー モジュールの作成
-description: プロバイダー モジュールの作成
+title: 独自のプロバイダー モジュールの作成
+description: 独自のプロバイダー モジュールの作成
 ms.assetid: 4282d375-bcf0-478f-bb2f-a43dc50b09e3
 keywords:
 - プロバイダーのモジュールのバージョン コントロール システム
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a0ce3602ab4c46980e6892efdd539395a45059d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374960"
 ---
-# <a name="creating-your-own-provider-module"></a>プロバイダー モジュールの作成
+# <a name="creating-your-own-provider-module"></a>独自のプロバイダー モジュールの作成
 
 
 一般に、プロバイダー モジュールを作成する次の一連のインターフェイスを実装する必要があります。

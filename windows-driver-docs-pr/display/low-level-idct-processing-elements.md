@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e8d30d07de56ac537e0e7a28f1fc2786b5c655
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375386"
 ---
 # <a name="low-level-idct-processing-elements"></a>低レベルの IDCT 処理要素
 

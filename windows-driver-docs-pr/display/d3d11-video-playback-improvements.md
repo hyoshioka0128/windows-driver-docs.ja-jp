@@ -1,17 +1,17 @@
 ---
-title: Direct3d11 のビデオ再生の機能強化
+title: Direct3D 11 のビデオ再生の機能強化
 description: メイン ストリームのアプリケーションで direct3d10 Microsoft テクノロジの広く普及で、一部のアプリ開発者は、同じすべてのコンテンツを処理するとします。
 ms.assetid: BB32F074-16E8-46E4-B9CF-6AEBE331B549
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03c48a09e9d84ccf56214c00e21c2466ac89b8c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376764"
 ---
-# <a name="direct3d-11-video-playback-improvements"></a>Direct3d11 のビデオ再生の機能強化
+# <a name="direct3d-11-video-playback-improvements"></a>Direct3D 11 のビデオ再生の機能強化
 
 
 メイン ストリームのアプリケーションで direct3d10 Microsoft テクノロジの広く普及で、一部のアプリ開発者は、同じすべてのコンテンツを処理するとします。 これは、機能は、Direct3D 10 または 11 Api を介して、2-d および 3-D コンテンツのすべての処理時に Microsoft direct3d9 API でのビデオの扱いに困難です。 Windows 8 には、Microsoft direct3d11 でビデオが導入されています、ために、アプリケーションは、すべてのグラフィカルな操作を実行するのに 1 つの API を使用できます。

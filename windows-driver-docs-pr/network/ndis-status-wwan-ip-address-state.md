@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WWAN_IP_ADDRESS_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6986232ecebdc566ad5fc76afc9f61910f0e42e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377284"
 ---
 # <a name="ndisstatuswwanipaddressstate"></a>NDIS\_STATUS\_WWAN\_IP\_ADDRESS\_STATE
 
@@ -20,7 +20,7 @@ ms.locfileid: "56572386"
 
 この通知を使用して、 [ **NDIS\_WWAN\_IP\_アドレス\_状態**](https://msdn.microsoft.com/library/windows/hardware/dn449746)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この通知は、追加の PDP コンテキストのセッションに関連付けられた NDIS ポートで送信する必要があります。

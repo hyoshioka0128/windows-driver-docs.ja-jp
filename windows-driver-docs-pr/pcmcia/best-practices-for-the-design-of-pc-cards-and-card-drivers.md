@@ -1,6 +1,6 @@
 ---
-title: PC カードとカードのドライバーの設計のベスト プラクティス
-description: PC カードとカードのドライバーの設計のベスト プラクティス
+title: PC カードとカード ドライバーの設計のベスト プラクティス
+description: PC カードとカード ドライバーの設計のベスト プラクティス
 ms.assetid: c3f31757-4063-4c68-ae19-1d8af98f81bc
 keywords:
 - IRQ ルーティング WDK PCMCIA バス
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07762164ed7788d85650fa500e75be8e8ae38d5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378282"
 ---
-# <a name="best-practices-for-the-design-of-pc-cards-and-card-drivers"></a>PC カードとカードのドライバーの設計のベスト プラクティス
+# <a name="best-practices-for-the-design-of-pc-cards-and-card-drivers"></a>PC カードとカード ドライバーの設計のベスト プラクティス
 
 
 

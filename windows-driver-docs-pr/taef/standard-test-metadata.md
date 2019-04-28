@@ -5,11 +5,11 @@ ms.assetid: A95FC176-B3A1-4bbf-833E-411CDE73C571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b871461fc606870f35813b86e56c734c5a634603
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374036"
 ---
 # <a name="standard-test-metadata"></a>標準的なテスト メタデータ
 
@@ -77,7 +77,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 最小 TAEF テストを実行するときに使用する分離レベルを指定します。 参照してください[テストの分離](test-isolation.md)の詳細。
 
 <span id="_Parallel_"></span><span id="_parallel_"></span><span id="_PARALLEL_"></span>["Parallel"](parallel.md)  
-複数のプロセッサ全体には、並列でテストを実行します。 詳細については、[並列](parallel.md)を参照してください。
+複数のプロセッサ全体には、並列でテストを実行します。 詳細については、次を参照してください。[並列](parallel.md)します。
 
 <span id="_Priority_"></span><span id="_priority_"></span><span id="_PRIORITY_"></span>"Priority"  
 小さい整数として、テストの優先順位は、優先度の高いです。

@@ -1,6 +1,6 @@
 ---
-title: オブジェクトに基づく
-description: オブジェクトに基づく
+title: オブジェクトベース
+description: オブジェクトベース
 ms.assetid: 53024912-5e6e-4738-81b5-dacc59c22c3f
 keywords:
 - オブジェクト ベースのドライバー WDK カーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b33cfa177d3334655ebfd369573ba97412158673
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380932"
 ---
-# <a name="object-based"></a>オブジェクトに基づく
+# <a name="object-based"></a>オブジェクトベース
 
 
 
@@ -41,7 +41,7 @@ I/O マネージャーは、構造とファイル オブジェクト、デバイ
 
 *PrefixOperationObject*
 
-を割り当てます。ここで、
+パラメーターの説明
 
 *プレフィックス*サポート ルーチンをエクスポートするカーネル モード コンポーネントと、通常は、オブジェクトの種類が定義されているコンポーネントを識別します。 ほとんどのプレフィックスには、2 つの文字があります。
 

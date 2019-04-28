@@ -1,6 +1,6 @@
 ---
-title: Netmap.inf ファイル ファイルに代替のヘルプ メッセージ ファイルを指定します。
-description: Netmap.inf ファイル ファイルに代替のヘルプ メッセージ ファイルを指定します。
+title: Netmap.inf ファイル内の代替ヘルプ メッセージ ファイルの指定
+description: Netmap.inf ファイル内の代替ヘルプ メッセージ ファイルの指定
 ms.assetid: 66ab7124-803a-4497-b5e0-98b47006dfb6
 keywords:
 - ネットワーク コンポーネントのアップグレード WDK、netmap.inf ファイルのファイル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90811d5ba23b3e3771e9c98461bb720fee3781a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378970"
 ---
-# <a name="specifying-alternative-help-message-files-in-a-netmapinf-file"></a>Netmap.inf ファイル ファイルに代替のヘルプ メッセージ ファイルを指定します。
+# <a name="specifying-alternative-help-message-files-in-a-netmapinf-file"></a>Netmap.inf ファイル内の代替ヘルプ メッセージ ファイルの指定
 
 
 
@@ -37,7 +37,7 @@ Netmap.inf ファイルのファイルのいずれかのネットワーク コ�
 
 *postupgrade-ID* = *text-name*, *htm-file*
 
-この場合
+それぞれの文字の説明は次のとおりです。
 
 *postupgrade ID*が Windows 2000 またはネットワーク コンポーネントの以降のデバイス ID
 

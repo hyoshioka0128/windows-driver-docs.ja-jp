@@ -1,17 +1,17 @@
 ---
-title: デバイス メタデータ パッケージを開発するためのベスト プラクティス
-description: デバイス メタデータ パッケージを開発するためのベスト プラクティス
+title: デバイス メタデータ パッケージの開発のベスト プラクティス
+description: デバイス メタデータ パッケージの開発のベスト プラクティス
 ms.assetid: e563006b-790c-44d2-a457-56ba3db1973f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0870b0e9cfa0590853b9e41370e733d11c9fca08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378380"
 ---
-# <a name="best-practices-for-developing-device-metadata-packages"></a>デバイス メタデータ パッケージを開発するためのベスト プラクティス
+# <a name="best-practices-for-developing-device-metadata-packages"></a>デバイス メタデータ パッケージの開発のベスト プラクティス
 
 
 このセクションでは、デバイス メタデータ パッケージを開発するためのベスト プラクティスについて説明します。 これには、ルールと、デバイス メタデータ パッケージのさまざまなコンポーネントを指定する場合に従う必要があるガイドラインが含まれます。

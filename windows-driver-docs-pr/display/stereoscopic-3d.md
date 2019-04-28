@@ -1,17 +1,17 @@
 ---
-title: ステレオスコ ピック 3D
+title: ステレオスコピック 3D
 description: Windows 8 では、ゲームやビデオの再生などのステレオスコ ピック 3-D シナリオの一貫性のある API とデバイスのドライバー インターフェイス (DDI) プラットフォームを提供します。
 ms.assetid: 2F83E5C6-E333-4BF6-A133-C65A23DAEF62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc8dde4ab8c427e0701556e6e721ad6ca162f2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376036"
 ---
-# <a name="stereoscopic-3d"></a>ステレオスコ ピック 3D
+# <a name="stereoscopic-3d"></a>ステレオスコピック 3D
 
 
 Windows 8 では、ゲームやビデオの再生などのステレオスコ ピック 3-D シナリオの一貫性のある API とデバイスのドライバー インターフェイス (DDI) プラットフォームを提供します。

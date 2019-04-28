@@ -1,6 +1,6 @@
 ---
-title: ネイティブの 802.11 IHV 拡張 DLL
-description: ネイティブの 802.11 IHV 拡張 DLL
+title: ネイティブ 802.11 IHV 拡張 DLL
+description: ネイティブ 802.11 IHV 拡張 DLL
 ms.assetid: b49ae93e-8d1a-4b8a-b17b-b3a875fe819a
 keywords:
 - IHV 拡張子 WDK のネイティブ 802.11 DLL
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01044766685afacdb67aaafe547c8605482aa13a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382623"
 ---
-# <a name="native-80211-ihv-extensions-dll"></a>ネイティブの 802.11 IHV 拡張 DLL
+# <a name="native-80211-ihv-extensions-dll"></a>ネイティブ 802.11 IHV 拡張 DLL
 
 
 

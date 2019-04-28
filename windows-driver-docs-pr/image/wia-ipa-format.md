@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2339edf101df144529d99b534d231159c4c950af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369552"
 ---
 # <a name="wiaipaformat"></a>WIA\_IPA\_形式
 
@@ -35,7 +35,7 @@ WIA\_IPA\_FORMAT プロパティに転送されるイメージの現在の形式
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 デバイスを 1 つの値に設定すると作成、WIA\_PROP\_リストの種類、および有効な値を配置します。
@@ -77,7 +77,7 @@ Windows 8 と Windows の以降のバージョンでは、次の値に追加さ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>形式</th>
+<th>表記</th>
 <th>説明</th>
 </tr>
 </thead>

@@ -5,11 +5,11 @@ ms.assetid: 206A00AE-45D7-49D8-97E2-45A6DACFCB08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b1325be764d4272929c2802a6a705b45921d3b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376432"
 ---
 # <a name="access-the-sensor-class-extension"></a>センサー クラスの拡張機能にアクセスします。
 

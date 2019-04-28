@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2bb33eda4fbf0c898e3b69c32df217ae97726fa4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369466"
 ---
 # <a name="devpkeydevicebasecontainerid"></a>DEVPKEY_Device_BaseContainerId
 
@@ -74,7 +74,7 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 
     優先機構はリムーバブル デバイスの機能の値を変更していない、強制的に、PnP マネージャー デバイス用のコンテナーの Id を生成するときに、上書きの設定とリムーバブル デバイスの機能の値ではなくを使用する作成されます。
 
-これらのメソッドの詳細については、[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)を参照してください。
+これらのメソッドの詳細については、次を参照してください。[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)します。
 
 コンテナーの ID 値を取得する方法に関係なく、PnP マネージャーは devnode の DEVPKEY_Device_BaseContainerId プロパティに値を割り当てます。
 
@@ -88,7 +88,7 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 
  
 
-コンテナー Id の詳細については、[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)を参照してください。
+コンテナー Id の詳細については、次を参照してください。[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)します。
 
 <a name="requirements"></a>要件
 ------------

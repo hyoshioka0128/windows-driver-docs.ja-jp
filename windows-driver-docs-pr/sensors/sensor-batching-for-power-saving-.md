@@ -5,11 +5,11 @@ ms.assetid: E64B9CE0-2C76-430A-ABE0-717BD27BCA8A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6887e6081d6b29aed699cbf033ded20cc6a10620
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381318"
 ---
 # <a name="sensor-data-batching-for-power-savings"></a>節電のためのセンサー データの一括処理
 
@@ -44,7 +44,7 @@ ms.locfileid: "56578917"
 
 -   鍵\_センサー\_WakeCapable
 
-詳細については、[センサーの共通プロパティ](common-sensor-properties.md)と[列挙プロパティ](enumeration-properties.md)を参照してください。
+詳細については、次を参照してください。[センサーの共通プロパティ](common-sensor-properties.md)と[列挙プロパティ](enumeration-properties.md)します。
 
 センサー ハードウェアのサブシステムがスリープ解除できる場合には、開始されるスリープ解除を早いバッファー オーバーランを回避するを確認、必要があります。
 
@@ -55,7 +55,7 @@ ms.locfileid: "56578917"
 
 -   [EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)これは、指定したセンサーのバッチの待機時間を設定するコールバック関数。 ドライバーに等しいまたはそれよりも小さい値をバッチの待機時間を設定する必要があります、 *BatchLatencyMs*バッファーの可用性に応じて、パラメーター。
 
-ドライバーでは、必要なすべての DDSI 関数も実装する必要があります。 詳細については、[センサー DDSI 関数](sensor-ddsi-functions.md)を参照してください。
+ドライバーでは、必要なすべての DDSI 関数も実装する必要があります。 詳細については、次を参照してください。[センサー DDSI 関数](sensor-ddsi-functions.md)します。
 
 このコマンドは、バッチの待機時間を指定するセンサー クラスの拡張機能を省略できます。 すべてのセンサーの既定のバッチの待機時間は、サンプルがないバッチ処理はことを示すために使用されるゼロ (0) です。 センサーのサンプルは、クラスの拡張機能を呼び出す場合にのみ、バッチで配信される**EvtSensorSetBatchLatency**バッチ待機時間の値を設定します。 それ以外の場合、サンプルを正常に配信データの定期的な間隔のレートでされます。
 

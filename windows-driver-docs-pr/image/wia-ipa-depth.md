@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd89ae491a066af635f902ee973b864c98c86300
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369549"
 ---
 # <a name="wiaipadepth"></a>WIA\_IPA\_深さ
 
@@ -35,7 +35,7 @@ WIA\_IPA\_DEPTH プロパティには、イメージのビット深さの設定�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションの読み取り、WIA\_IPA\_DEPTH プロパティ イメージのビット深度設定を確認します。 必要なビット深度、または、WIA アプリケーション、このプロパティ設定も\_深さ\_自動値。
@@ -46,7 +46,7 @@ WIA\_深さ\_(1 ピクセルあたりのビットを 0 として定義されて�
 
 ときに、 **WIA\_IPA\_深さ**プロパティが WIA\_深さ\_AUTO、WIA ミニ ドライバーを更新する必要があります、 [ **WIA\_IPA\_DATATYPE** ](wia-ipa-datatype.md) WIA に同じ項目をプロパティ\_データ\_自動 (これは、デバイスは、自動の色をサポートしている場合は、サポートされている値をある必要があります)。 ときに、 **WIA\_IPA\_DATATYPE** WIA を値\_データ\_自動がサポートされている、 **WIA\_IPA\_深さ**値WIA\_深さ\_自動が省略可能なされなくなり、必要な値になります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

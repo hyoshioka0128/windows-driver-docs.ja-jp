@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e447b1a5f4f0d0926f64250762629840f72be9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380948"
 ---
 # <a name="wiadpspagewidth"></a>WIA\_DPS\_ページ\_幅
 
@@ -42,7 +42,7 @@ WIA\_DPS\_ページ\_WIDTH プロパティがインチの部分の 1/1000 で、
 
 WIA\_DPS\_ページ\_幅の値に相当する測定値を提供する必要があります、 [ **WIA\_IP\_XEXTENT** ](wia-ips-xextent.md)プロパティ幅 (ピクセル単位) をスキャンするページのレポートします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

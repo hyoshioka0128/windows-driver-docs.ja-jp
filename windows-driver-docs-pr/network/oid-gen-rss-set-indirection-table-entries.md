@@ -6,11 +6,11 @@ keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES、OID_GEN_RSS_SET_INDIRECTIO
 ms.date: 10/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b90bc6a0728d5b257fb1b5fe638d62ecb748b21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381348"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -31,7 +31,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES を使用して、 [NDIS_RSS_SET_INDIR
 
 上位層プロトコルは、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES ite 用や、プライマリに設定し、既定の異なるプロセッサをポイントするプロセッサのパラメーターを発行します。 
 
-この OID は、いずれかに対して発行できます*active*または*非アクティブな*トラフィックの制御パラメーター。 ハンドル パラメーターの詳細については、[受信側のバージョン 2 (RSSv2) スケーリング](receive-side-scaling-version-2-rssv2-.md)を参照してください。 Ite 用のパラメーターの*非アクティブな*状態では、ミニポート ドライバーの検証および関連する次の RSS 状態 (有効化または無効化) を変更するまでの間に、ターゲットのプロセッサをキャッシュする必要があります。 その時点では、プロセッサの数になるキャッシュされた*active*され、トラフィックを転送するために使用されます。 更新*active*パラメーター (これも検証する必要があります) する必要がありますを直ちに有効に、トラフィックを転送します。
+この OID は、いずれかに対して発行できます*active*または*非アクティブな*トラフィックの制御パラメーター。 ハンドル パラメーターの詳細については、次を参照してください。[受信側のバージョン 2 (RSSv2) スケーリング](receive-side-scaling-version-2-rssv2-.md)します。 Ite 用のパラメーターの*非アクティブな*状態では、ミニポート ドライバーの検証および関連する次の RSS 状態 (有効化または無効化) を変更するまでの間に、ターゲットのプロセッサをキャッシュする必要があります。 その時点では、プロセッサの数になるキャッシュされた*active*され、トラフィックを転送するために使用されます。 更新*active*パラメーター (これも検証する必要があります) する必要がありますを直ちに有効に、トラフィックを転送します。
 
 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES をミニポート アダプターに発行する必要があります、 *NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*フラグをクリアします。 これは、配列内のさまざまな要素によって参照されている別の拡張の可能性があります。
 

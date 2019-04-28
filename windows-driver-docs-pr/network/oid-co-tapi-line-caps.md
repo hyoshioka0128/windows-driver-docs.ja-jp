@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c55b4c15b07c41afa7fe7f05b979cb921aad7e94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380708"
 ---
 # <a name="oidcotapilinecaps"></a>OID_CO_TAPI_LINE_CAPS
 
@@ -50,7 +50,7 @@ LINE_DEV_CAPS 構造として書式設定された行のテレフォニー機能
 - 行が 1 つのアドレスをサポートしている場合、または行が同じアドレス機能を備えた複数のアドレスをサポートしている場合、クライアントが 1 回 OID_CO_TAPI_ADDRESS_CAPS を照会します。
 - 行は、複数の異なる機能を備えた複数のアドレスをサポートする場合、クライアント クエリ OID_CO_TAPI_ADDRESS_CAPS 1 回行には、各アドレスのください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

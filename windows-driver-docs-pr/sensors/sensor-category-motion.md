@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cabb7b6cef6f0c1be87675db5aede006f18b213c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370568"
 ---
 # <a name="sensorcategorymotion"></a>センサー\_カテゴリ\_モーション
 
@@ -38,7 +38,7 @@ ms.locfileid: "56551949"
 <thead>
 <tr class="header">
 <th>センサーの種類</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -93,7 +93,7 @@ ms.locfileid: "56551949"
 <tr class="header">
 <th>データの種類</th>
 <th>種類</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>

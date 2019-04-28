@@ -1,6 +1,6 @@
 ---
-title: GetDriverInfo2 をサポートしています。
-description: GetDriverInfo2 をサポートしています。
+title: GetDriverInfo2 のサポート
+description: GetDriverInfo2 のサポート
 ms.assetid: 5e2dd363-9e72-4674-940e-8b4f06f6eb14
 keywords:
 - DirectX 8.0 リリース ノートには、Windows 2000 の WDK 表示 GetDriverInfo2
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6549b1da3cc2c0d814e02fae247b8028de0816ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372764"
 ---
-# <a name="supporting-getdriverinfo2"></a>GetDriverInfo2 をサポートしています。
+# <a name="supporting-getdriverinfo2"></a>GetDriverInfo2 のサポート
 
 
 ## <span id="ddk_supporting_getdriverinfo2_gg"></span><span id="DDK_SUPPORTING_GETDRIVERINFO2_GG"></span>

@@ -1,15 +1,15 @@
 ---
-title: デバッガーのデータ モデルの C++ オブジェクト
+title: Debugger Data Model C++ のオブジェクト
 description: このトピックでは、デバッガーのデータ モデルの C++ オブジェクトを使用する方法と、デバッガーの機能を拡張する方法について説明します。
 ms.date: 10/08/2018
 ms.openlocfilehash: df747dd779761f71a07ec23085f991287c36f518
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376128"
 ---
-# <a name="debugger-data-model-c-objects"></a>デバッガーのデータ モデルの C++ オブジェクト
+# <a name="debugger-data-model-c-objects"></a>Debugger Data Model C++ のオブジェクト
 
 このトピックでは、デバッガーのデータ モデルの C++ オブジェクトを使用する方法と、デバッガーの機能を拡張する方法について説明します。
 
@@ -481,7 +481,7 @@ OverrideContextObject メソッド (IModelKeyReference2 にのみ存在する) �
 
 コンテキスト オブジェクトは、すべてのオブジェクトに関連付けます (データ モデルとの連携) でのデバッグ ホスト情報の非透過 blob です。 情報は、プロセスのコンテキストまたはアドレス空間などなどの可能性があります.コンテキスト オブジェクトは、IDebugHostContext、IModelObject 内にボックス化の実装です。 IDebugHostContext が定義されているホスト インターフェイスであることに注意してください。 クライアントは、このインターフェイスを実装しないされます。 
 
-コンテキスト オブジェクトの詳細については、[デバッガー データ モデルの C++ ホスト インターフェイス](data-model-cpp-interfaces.md#hostinterface)デバッガー データ モデルの C++ インターフェイスにを参照してください。 
+コンテキスト オブジェクトの詳細については、次を参照してください。[デバッガー データ モデルの C++ ホスト インターフェイス](data-model-cpp-interfaces.md#hostinterface)デバッガー データ モデルの C++ インターフェイスにします。 
 
 
 ## <a name="span-idmodelmanager-the-data-model-manager"></a><span id="modelmanager"> データ モデルのマネージャー  

@@ -1,19 +1,19 @@
 ---
-title: AVStream コーデックで状態をリセットします。
-description: AVStream コーデックで状態をリセットします。
+title: AVStream コーデックの状態のリセット
+description: AVStream コーデックの状態のリセット
 ms.assetid: c50014fe-bff0-43f4-8552-24e8e97f636b
 keywords:
 - AVStream ハードウェア コーデック サポート WDK、状態をリセットします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffaf707a6a58810d8fe1ef435c3d8e0908d3bc34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376387"
 ---
-# <a name="resetting-state-in-avstream-codecs"></a>AVStream コーデックで状態をリセットします。
+# <a name="resetting-state-in-avstream-codecs"></a>AVStream コーデックの状態のリセット
 
 
 MFT を送信するパイプラインのストリーミング メディアをストリーム データを破棄し、ストリーミングの状態をリセット、\_メッセージ\_コマンド\_MFT をフラッシュします。 HW MFT が、MFT を受信すると\_メッセージ\_コマンド\_フラッシュ、MFT 送信[ **IOCTL\_KS\_リセット\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff560832)KSRESET の値を持つ\_入力と出力ピンを開始します。 指定することでリセット通知を受信するミニドライバーがサブスクライブする必要があります、 [ *AVStrMiniPinReset* ](https://msdn.microsoft.com/library/windows/hardware/ff556354)コールバックで、**リセット**のメンバー [ **KSPIN\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff563535)します。

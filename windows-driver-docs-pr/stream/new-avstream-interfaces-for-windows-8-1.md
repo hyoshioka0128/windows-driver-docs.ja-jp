@@ -1,17 +1,17 @@
 ---
-title: Windows 8.1 の新しい AVStream インターフェイス
+title: Windows 8.1 用の新しい AVStream インターフェイス
 description: AVStream ストリーミング メディア ドライバー インターフェイスは、Windows 8.1 以降、新しいカメラ プラットフォームの機能をサポートするために拡張されます。
 ms.assetid: 1D06A754-236B-441D-A0BB-A78B419270E9
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5757cf789163b01866878740c822b69456b8012f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376096"
 ---
-# <a name="new-avstream-interfaces-for-windows-81"></a>Windows 8.1 の新しい AVStream インターフェイス
+# <a name="new-avstream-interfaces-for-windows-81"></a>Windows 8.1 用の新しい AVStream インターフェイス
 
 
 AVStream ストリーミング メディア ドライバー インターフェイスは、Windows 8.1 以降、新しいカメラ プラットフォームの機能をサポートするために拡張されます。

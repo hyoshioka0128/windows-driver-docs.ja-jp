@@ -1,6 +1,6 @@
 ---
-title: ネットワークのウェイク アップ イベント
-description: ネットワークのウェイク アップ イベント
+title: ネットワーク ウェイクアップ イベント
+description: ネットワーク ウェイクアップ イベント
 ms.assetid: 85195d44-4d79-4feb-af35-c478dc4319c5
 keywords:
 - ウェイク アップ機能 WDK ネットワー キング、種類
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 835f99f4b4af8465f37ff43bfcdb9238b0585c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380890"
 ---
-# <a name="network-wake-up-events"></a>ネットワークのウェイク アップ イベント
+# <a name="network-wake-up-events"></a>ネットワーク ウェイクアップ イベント
 
 
 
@@ -44,7 +44,7 @@ NDIS は、次の 2 つのネットワークのウェイク アップ イベン�
 
 プロトコル ドライバーを使用して[OID\_PNP\_追加\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569773)着信パケットのデータの量を示すマスクと共に、ウェイク アップのパターンを指定するにはパターンと比較する必要があります。 プロトコル ドライバーにウェイク アップのパターンを削除できます[OID\_PNP\_削除\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569779)します。
 
-ネットワークのウェイク アップのフレームの詳細については、[ネットワーク デバイスの電源管理](https://go.microsoft.com/fwlink/p/?linkid=9945)を参照してください。
+ネットワークのウェイク アップのフレームの詳細については、次を参照してください。[ネットワーク デバイスの電源管理](https://go.microsoft.com/fwlink/p/?linkid=9945)します。
 
 ### <a name="magic-packet-wake-up"></a>マジック パケットのウェイク アップ
 

@@ -1,17 +1,17 @@
 ---
-title: Vista のアプリケーションと従来のドライバーのマッピング
-description: Vista のアプリケーションと従来のドライバーのマッピング
+title: Vista アプリケーションとレガシ ドライバーのマッピング
+description: Vista アプリケーションとレガシ ドライバーのマッピング
 ms.assetid: 176157b0-cc30-467b-95ec-2d25a40c43ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96a305c388f371e151bd27b84b26e6fb36487b1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379686"
 ---
-# <a name="mapping-for-a-vista-application-and-legacy-driver"></a>Vista のアプリケーションと従来のドライバーのマッピング
+# <a name="mapping-for-a-vista-application-and-legacy-driver"></a>Vista アプリケーションとレガシ ドライバーのマッピング
 
 
 このセクションでは、Windows Vista アプリケーションを従来、ドライバーを使用する必要がある場合に使用されるマッピングを示します。 次の表では、従来の転送メッセージと転送の Windows Vista のメッセージへのデータ フローとデータ フローの WIA 互換性レイヤーのマップについて説明します。
@@ -110,9 +110,9 @@ ms.locfileid: "56531935"
 
  
 
-従来の転送メッセージの詳細については、、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)を参照してください。
+従来の転送メッセージの詳細については、次を参照してください。、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)します。
 
-TYMED 定数の詳細については、[理解 TYMED](understanding-tymed.md)を参照してください。
+TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
 
 **IStream**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
 

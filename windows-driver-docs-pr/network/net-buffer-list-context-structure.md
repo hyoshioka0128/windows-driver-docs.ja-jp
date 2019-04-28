@@ -1,6 +1,6 @@
 ---
-title: NET_BUFFER_LIST_CONTEXT 構造体
-description: NET_BUFFER_LIST_CONTEXT 構造体
+title: NET_BUFFER_LIST_CONTEXT 構造
+description: NET_BUFFER_LIST_CONTEXT 構造
 ms.assetid: 45be8503-2c5f-46e6-9fc3-b1b3c42f0d91
 keywords:
 - NET_BUFFER_LIST_CONTEXT
@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc5666609e5751a93bc7aec1b5d30cafb5df4201
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380895"
 ---
 # <a name="netbufferlistcontext-structure"></a>NET\_バッファー\_一覧\_CONTEXT 構造体
 

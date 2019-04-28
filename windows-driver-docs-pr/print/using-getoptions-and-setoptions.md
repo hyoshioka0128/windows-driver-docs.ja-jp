@@ -1,6 +1,6 @@
 ---
-title: GetOptions と SetOptions を使用してください。
-description: GetOptions と SetOptions を使用してください。
+title: GetOptions と SetOptions の使用
+description: GetOptions と SetOptions の使用
 ms.assetid: c8b5c235-0b74-47c8-b6ba-eba810a8467b
 keywords:
 - GetOptions
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f75feac586ffc1d281ddafac7157d09e178c262d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374228"
 ---
-# <a name="using-getoptions-and-setoptions"></a>GetOptions と SetOptions を使用してください。
+# <a name="using-getoptions-and-setoptions"></a>GetOptions と SetOptions の使用
 
 
 

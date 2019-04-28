@@ -1,5 +1,5 @@
 ---
-title: パラレル ポートの I/O 要求のデバイス固有の操作
+title: パラレル ポートの I/O 要求に対するデバイス固有の操作
 description: パラレル ポートの I/O 要求の操作をデバイスに固有のドキュメントします。
 keywords:
 - WDK のパラレル ポート
@@ -8,13 +8,13 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4a93a0019b61b5f9df628a94a59f8f19eeeb4a21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373527"
 ---
-# <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>パラレル ポートの I/O 要求のデバイス固有の操作
+# <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>パラレル ポートの I/O 要求に対するデバイス固有の操作
 このトピックでは、パラレル ポートの I/O 要求の次のデバイスに固有の操作を説明します。
 
 * [IRP_MJ_CREATE](#irp_mj_create)

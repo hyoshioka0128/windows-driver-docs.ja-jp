@@ -1,17 +1,17 @@
 ---
-title: レガシ アプリケーションおよび Windows Vista のドライバーのマッピング
-description: レガシ アプリケーションおよび Windows Vista のドライバーのマッピング
+title: レガシ アプリケーションと Windows Vista ドライバーのマッピング
+description: レガシ アプリケーションと Windows Vista ドライバーのマッピング
 ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c7c711bb93cfd9d1b33f55ed46aa2a49f4fb4a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380387"
 ---
-# <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションおよび Windows Vista のドライバーのマッピング
+# <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションと Windows Vista ドライバーのマッピング
 
 
 このセクションでは、Windows Vista のメッセージの転送とデータ フローにマップする方法従来の転送メッセージとデータ フロー、レガシ アプリケーションは、Windows Vista ドライバーを使用する必要がある場合について説明します。
@@ -123,7 +123,7 @@ ms.locfileid: "56550304"
 
 詳細については、従来の転送でメッセージを参照してください、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)します。
 
-TYMED 定数の詳細については、[理解 TYMED](understanding-tymed.md)を参照してください。
+TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
 
 **IStream**インターフェイスは、Microsoft Windows SDK ドキュメントで説明します。
 

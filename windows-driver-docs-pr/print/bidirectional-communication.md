@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcd94d84a537e4b9113c1d4520a0c19f244b9f1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379038"
 ---
 # <a name="bidirectional-communication"></a>双方向通信
 
@@ -28,7 +28,7 @@ ms.locfileid: "56531374"
 
 スキーマでは、アプリケーションがデバイスと、要求の形式に加えることが要求について説明します。 スプーラ Api デバイスへの要求の送信も送受信双方向データ。 アプリケーションは要求をネットワーク プリンターまたはリモート プリンター サーバーに接続されているプリンターをネットワーク印刷プロバイダーに送信もできます。
 
-印刷スプーラが双方向通信をサポートする方法については、[双方向通信の追加](adding-bidirectional-communication.md)と[スプーラー通知](spooler-notification.md)を参照してください。
+印刷スプーラが双方向通信をサポートする方法については、次を参照してください。[双方向通信の追加](adding-bidirectional-communication.md)と[スプーラー通知](spooler-notification.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -40,7 +40,7 @@ ms.locfileid: "56531374"
 
 [双方向の通信インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545163)
 
-[双方向通信のスキーマ リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff545175)
+[双方向通信のスキーマ参照](https://msdn.microsoft.com/library/windows/hardware/ff545175)
 
 [双方向通信のエラー コード](https://msdn.microsoft.com/library/windows/hardware/dd183367)
 

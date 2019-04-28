@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b394e8aa8b19e451e1a404b6c0e9d3ceeb670421
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379601"
 ---
 # <a name="wiadpcfnumber"></a>WIA\_DPC\_FNUMBER
 
@@ -35,12 +35,12 @@ WIA\_DPC\_FNUMBER プロパティは、100 を掛けます f 値の数の単位�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA 設定\_DPC\_FNUMBER プロパティが有効な通常の場合にのみ、 [ **WIA\_DPC\_露出\_モード**](wia-dpc-exposure-mode.md)EXPOSUREMODE に設定されて\_手動] または [EXPOSUREMODE\_APERTURE\_優先順位。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

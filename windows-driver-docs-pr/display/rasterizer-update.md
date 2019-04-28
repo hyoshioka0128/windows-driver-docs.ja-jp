@@ -1,6 +1,6 @@
 ---
-title: ラスタライザーの更新
-description: ラスタライザーの更新
+title: ラスタライザー更新
+description: ラスタライザー更新
 ms.assetid: 0b7db462-2b04-42e1-baa0-ec9070741c1d
 keywords:
 - rasterizers WDK Direct3D
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05aa0ab41457b0675fa10e5790fe0c1b182fcf38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378441"
 ---
-# <a name="rasterizer-update"></a>ラスタライザーの更新
+# <a name="rasterizer-update"></a>ラスタライザー更新
 
 
 ## <span id="ddk_rasterizer_update_gg"></span><span id="DDK_RASTERIZER_UPDATE_GG"></span>

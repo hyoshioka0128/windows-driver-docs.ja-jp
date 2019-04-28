@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c94d4dda73a0bbb950ac4ce96257c4595fbc575
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377990"
 ---
 # <a name="fvf-flexible-vertex-format"></a>FVF (柔軟な頂点形式)
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578022"
 
 ドライバーの[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)コールバックは、柔軟な頂点の形式 (FVF) で頂点データを受信します。 頂点の形式は、柔軟であるために、このデータに対して定義された包括的なデータ構造はありません。 ドライバーは、FVF のすべての機能を実装する必要があります。
 
-Microsoft DirectX 7.0 を含む 1 D、3 D、および通常の 2D テクスチャだけでなく 4 D テクスチャ FVF 更新プログラムがあります。 この更新プログラムの詳細については、[FVF 更新](fvf-update.md)を参照してください。 参照してください、 *Perm3*ドライバーとこれらのトピックの詳細については、DirectX SDK ドキュメントのサンプルです。
+Microsoft DirectX 7.0 を含む 1 D、3 D、および通常の 2D テクスチャだけでなく 4 D テクスチャ FVF 更新プログラムがあります。 この更新プログラムの詳細については、次を参照してください。 [FVF 更新](fvf-update.md)します。 参照してください、 *Perm3*ドライバーとこれらのトピックの詳細については、DirectX SDK ドキュメントのサンプルです。
 
 **注**   、Microsoft Windows Driver Kit (WDK) に 3 dlabs Permedia3 サンプルのディスプレイ ドライバーが含まれていません (*Perm3.h*)。 Windows Server 2003 SP1 ドライバー開発キット (DDK)、DDK - WDHC web サイトの Windows ドライバー開発キットのページからダウンロードできるこのサンプル ドライバーを取得できます。
 

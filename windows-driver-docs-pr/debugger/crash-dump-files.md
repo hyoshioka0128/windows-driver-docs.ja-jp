@@ -1,18 +1,18 @@
 ---
-title: クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法
+title: Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析
 description: WinDbg およびその他の Windows デバッガーを使用して、クラッシュ ダンプ ファイルを分析します。
 ms.assetid: e7b4883c-6551-4a94-80d2-635f79348a48
 keywords: ダンプ ファイル、クラッシュ ダンプ ファイル
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1bd1c07278491bb0fb1c961df7d30affe5597f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374436"
 ---
-# <a name="crash-dump-analysis-using-the-windows-debuggers-windbg"></a>クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法
+# <a name="crash-dump-analysis-using-the-windows-debuggers-windbg"></a>Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析
 
 
 WinDbg およびその他の Windows デバッガーを使用して、クラッシュ ダンプ ファイルを分析します。

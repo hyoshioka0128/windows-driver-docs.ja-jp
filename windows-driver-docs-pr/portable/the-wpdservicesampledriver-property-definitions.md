@@ -1,16 +1,16 @@
 ---
-Description: Defining the Service Properties
-title: サービスのプロパティを定義します。
+Description: サービス プロパティの定義
+title: サービス プロパティの定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf751e8e7964db8eaa19a7d680561350d305521c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370504"
 ---
-# <a name="defining-the-service-properties"></a>サービスのプロパティを定義します。
+# <a name="defining-the-service-properties"></a>サービス プロパティの定義
 
 
 WPD プロパティは、オブジェクトの説明するメタデータです。 このセクションでは、サンプルのドライバーがサポートするプロパティについて説明します。 連絡先のサービス オブジェクトは、14 個のプロパティをサポートしています。個々 の連絡先オブジェクトは 14 個のプロパティもサポートします。 一部のオブジェクト プロパティに WPD などのドライバーの機能に必要な\_オブジェクト\_ID と WPD\_オブジェクト\_持続\_UNIQUE\_id。 その他のプロパティが WPD など、オブジェクトを記述する情報を提供\_にお問い合わせください\_表示\_連絡先オブジェクトの名前。
@@ -27,7 +27,7 @@ WDK には、WPD ドライバー開発者向けのいくつかのツールが含
 
 このオブジェクトは、14 個のプロパティをサポートします。 最初の 8 プロパティは、一般的な WPD オブジェクトのプロパティです。 過去 6 回のプロパティは、連絡先固有 (名前、携帯電話番号、電子メール アドレス、およびなど)。
 
-WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造は、2 つの部分で構成されます。 グローバル一意識別子 (GUID) と DWORD。 GUID がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、[PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md)を参照してください。
+WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造は、2 つの部分で構成されます。 グローバル一意識別子 (GUID) と DWORD。 GUID がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、次を参照してください。 [PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md)します。
 
 配列で、サンプル ドライバーでサポートされている連絡先のプロパティが定義されている**PropertyAttributeInfo**構造体。 この構造体には、次の形式があります。
 

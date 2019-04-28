@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3c6caf1dca07278044c356f1f1fd05285c71e9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382931"
 ---
 # <a name="accessing-device-properties"></a>デバイス プロパティへのアクセス
 
@@ -27,13 +27,13 @@ ms.locfileid: "56574473"
 
     1.  使用して、Windows Vista 以降、 [ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) 、デバイスのプロパティを取得して使用し[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)DEVPKEY_Xxx プロパティのコードをデバイスのプロパティを設定するとします。
 
-        Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティに関する詳細については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+        Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティに関する詳細については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
-        **注**  以降 Windows Vista では、いくつかのデバイス プロパティは、オペレーティング システムによって予約されています。 詳細については、[デバイス プロパティの変更](modifying-device-properties.md)を参照してください。
+        **注**  以降 Windows Vista では、いくつかのデバイス プロパティは、オペレーティング システムによって予約されています。 詳細については、次を参照してください。[デバイス プロパティの変更](modifying-device-properties.md)します。
 
     2.  Windows 2000、Windows XP、および Windows Server 2003 を使用して[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122) 、デバイスのプロパティを取得して使用し[ **SetupDiSetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552169) SPDRP_Xxx プロパティのコードをデバイスのプロパティを設定するとします。
 
-        Windows 2000、Windows XP、および Windows Server 2003 デバイス インスタンスのプロパティに関する詳細については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](accessing-device-instance-spdrp-xxx-properties.md)を参照してください。
+        Windows 2000、Windows XP、および Windows Server 2003 デバイス インスタンスのプロパティに関する詳細については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](accessing-device-instance-spdrp-xxx-properties.md)します。
 
     3.  物理的に存在するデバイスのカスタム設定といない方は、レジストリ内で永続的なストレージを使用します。 この場合は、独自のレジストリ キーと値のセットを作成する必要があります。 これを行うには、次のように使用します。 **SetupDiCreateDevRegKey** (DIREG_DEV) または*ソフトウェア キー* (DIREG_DRV) デバイス。
 

@@ -1,19 +1,19 @@
 ---
-title: リモート デバッグ セッションを制御します。
-description: リモート デバッグ セッションを制御します。
+title: リモート デバッグ セッションの制御
+description: リモート デバッグ セッションの制御
 ms.assetid: dedd277d-1aa0-468c-919c-29b25b0b5c0d
 keywords:
 - セッションを制御する、デバッガーからのリモート デバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 165f4973c870d4071942521f4eb87e27672d7a94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375536"
 ---
-# <a name="controlling-a-remote-debugging-session"></a>リモート デバッグ セッションを制御します。
+# <a name="controlling-a-remote-debugging-session"></a>リモート デバッグ セッションの制御
 
 
 ## <span id="ddk_controlling_a_remote_debugging_session_dbg"></span><span id="DDK_CONTROLLING_A_REMOTE_DEBUGGING_SESSION_DBG"></span>

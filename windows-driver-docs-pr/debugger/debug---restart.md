@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8039d0b044c771fa6ae2260a5d6439f74fde418
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374868"
 ---
-# <a name="debug--restart"></a>デバッグ |再起動
+# <a name="debug--restart"></a>Debug | Restart (デバッグ | 再開)
 
 
 ## <span id="ddk_debug_restart_dbg"></span><span id="DDK_DEBUG_RESTART_DBG"></span>
@@ -26,7 +26,7 @@ ms.locfileid: "56527685"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-このアクションの影響の詳細については、このコマンドでは、およびプログラムの実行を制御する他の方法の他のメソッドを参照してください[ターゲットを制御する](controlling-the-target.md)します。 WinDbg または最後に、デバッグ セッションを終了する方法の詳細については、[WinDbg でデバッグ セッションを終了する](ending-a-debugging-session-in-windbg.md)を参照してください。
+このアクションの影響の詳細については、このコマンドでは、およびプログラムの実行を制御する他の方法の他のメソッドを参照してください[ターゲットを制御する](controlling-the-target.md)します。 WinDbg または最後に、デバッグ セッションを終了する方法の詳細については、次を参照してください。 [WinDbg でデバッグ セッションを終了する](ending-a-debugging-session-in-windbg.md)します。
 
  
 

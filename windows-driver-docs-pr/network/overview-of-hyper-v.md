@@ -1,17 +1,17 @@
 ---
-title: HYPER-V の概要
-description: HYPER-V の概要
+title: Hyper-V の概要
+description: Hyper-V の概要
 ms.assetid: 2D77B1EB-6320-4609-B8EE-236EA75BEADE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac26f781a8f700f6af5ab7e0cf1beb10208679d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376310"
 ---
-# <a name="overview-of-hyper-v"></a>HYPER-V の概要
+# <a name="overview-of-hyper-v"></a>Hyper-V の概要
 
 
 HYPER-V は x64 のハイパーバイザー ベースの仮想化テクノロジのバージョンの Windows Server 2008 および Windows Server の以降のバージョン。 ハイパーバイザーは、1 つのハードウェア プラットフォームを共有する複数の独立したオペレーティング システムを許可するプロセッサに固有の仮想化プラットフォームです。
@@ -36,7 +36,7 @@ Hyper-v 統合ネットワーク アダプター経由でネットワークの�
 
 これらのデータ パスは、仮想マシン キュー (VMQ)、シングル ルート I/O 仮想化 (SR-IOV)、または HYPER-V 拡張可能スイッチのインターフェイスなど、仮想化された NDIS ネットワーク インターフェイスを使用して拡張されます。 たとえば、SR-IOV インターフェイスをサポートする物理ネットワーク アダプターの仮想機能 (VF) を接続する、NetVSC を構成する可能性があります。 ここでは、NetVSC 送信し、および、VMBus 経由ではなく、基になる物理アダプター経由で直接パケットを受信します。
 
-HYPER-V の詳細については、[Hyper-v](https://go.microsoft.com/fwlink/p/?linkid=217079)を参照してください。
+HYPER-V の詳細については、次を参照してください。 [Hyper-v](https://go.microsoft.com/fwlink/p/?linkid=217079)します。
 
  
 

@@ -4,18 +4,18 @@ description: 発行 NFP メッセージ
 ms.assetid: 45BE3620-ADF4-413D-90B3-586FCEB5F606
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad5b29f3064cb5cc84f6e9844c514fc2bb1d9f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373721"
 ---
 # <a name="publishing-nfp-messages"></a>発行 NFP メッセージ
 

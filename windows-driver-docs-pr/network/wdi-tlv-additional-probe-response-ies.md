@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ADDITIONAL_PROBE_RESPONSE_IES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0957337ce6c66e8cd9ab1bd86bc5329ff31b46d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382179"
 ---
 # <a name="wditlvadditionalproberesponseies"></a>WDI\_TLV\_追加\_プローブ\_応答\_IES
 
@@ -31,13 +31,13 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                                                                                                                                                                                                                                  |
+| 型      | 説明                                                                                                                                                                                                                                                  |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8\[\] | プローブの応答での配列。 Wi-Fi Direct のポートは、Wi-Fi Direct デバイスまたはグループの所有者として動作しているときに、プローブ応答パケットをこれら追加 IEs を追加する必要があります。 このメンバーには、Wi-Fi Direct のポートは、クライアント モードで動作している場合は無視されます。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: 同期送信済み要求の取り消し
-description: 同期送信済み要求の取り消し
+title: 送信済み要求のキャンセルの同期
+description: 送信済み要求のキャンセルの同期
 ms.assetid: e7ec65c9-bc7b-46ea-853d-3e23b1763666
 keywords:
 - 要求の WDK KMDF、キャンセル要求を処理します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39880b129b9f812fb276c6d19ec4404f6e40e8be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376388"
 ---
-# <a name="synchronizing-cancellation-of-sent-requests"></a>同期送信済み要求の取り消し
+# <a name="synchronizing-cancellation-of-sent-requests"></a>送信済み要求のキャンセルの同期
 
 
 ドライバーが有効な要求を識別するハンドルを渡すことを確認する必要があります、ドライバーが、I/O のターゲットに転送する I/O 要求をキャンセルしようとしたとき、 [ **WdfRequestCancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff549941)メソッド。 要求ハンドルが I/O ターゲットには、要求が完了すると無効になるドライバーの[ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数が呼び出す[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945) (これは要求オブジェクトを削除する試行)。

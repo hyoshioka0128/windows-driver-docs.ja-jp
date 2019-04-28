@@ -1,6 +1,6 @@
 ---
 title: ロックおよびパラレル ポートのロックを解除
-description: ロックおよび並列のデバイスで使用するため、パラレル ポートのロックを解除
+description: パラレル デバイスに使用するパラレル ポートのロックとロック解除
 ms.assetid: dbfa962e-9de8-4a9c-b962-24b53c41f35d
 keywords:
 - 並列デバイス WDK、ポートのロック/ロック解除
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cef7f6c2e1e07b3077695d49892fb3c3cfdeeb68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373537"
 ---
-# <a name="locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device"></a>ロックおよび並列のデバイスで使用するため、パラレル ポートのロックを解除
+# <a name="locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device"></a>パラレル デバイスに使用するパラレル ポートのロックとロック解除
 
 
 

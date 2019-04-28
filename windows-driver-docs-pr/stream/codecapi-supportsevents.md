@@ -5,11 +5,11 @@ ms.assetid: feb6d110-9a9c-4e2b-bc19-259f80f3947a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3add63d9a6c4d1be086762aff919358a7f7fa00e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372788"
 ---
 # <a name="codecapisupportsevents"></a>CODECAPI\_SUPPORTSEVENTS
 
@@ -55,7 +55,7 @@ CODECAPI\_SUPPORTSEVENTS プロパティは、ミニドライバーはユーザ�
 
 **ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

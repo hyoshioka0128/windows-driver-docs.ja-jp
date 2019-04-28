@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_QUERY_INFORMATION カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: a9f7260d59759bf5640425cef6724c34c2c30710
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368443"
 ---
 # <a name="irpmjqueryinformation"></a>IRP\_MJ\_QUERY\_INFORMATION
 
@@ -42,7 +42,7 @@ ms.locfileid: "56573833"
 
 すべての有効な値の[**ファイル\_情報\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff728840)発生することができます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

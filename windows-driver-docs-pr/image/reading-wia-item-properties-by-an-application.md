@@ -1,17 +1,17 @@
 ---
-title: アプリケーションによって WIA 項目プロパティの読み取り
-description: アプリケーションによって WIA 項目プロパティの読み取り
+title: アプリケーションによる WIA 項目のプロパティの読み取り
+description: アプリケーションによる WIA 項目のプロパティの読み取り
 ms.assetid: e09f604e-451e-40dc-bc12-a077d4d263ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6957e3b9d9cbd971568d1317a66bc61f17319135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379610"
 ---
-# <a name="reading-wia-item-properties-by-an-application"></a>アプリケーションによって WIA 項目プロパティの読み取り
+# <a name="reading-wia-item-properties-by-an-application"></a>アプリケーションによる WIA 項目のプロパティの読み取り
 
 
 

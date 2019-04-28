@@ -1,6 +1,6 @@
 ---
-title: 処理プールの取得
-description: 処理プールの取得
+title: プール ハンドルの取得
+description: プール ハンドルの取得
 ms.assetid: 752b0d64-2ca3-4dc0-a6cd-642e96af1f8f
 keywords:
 - プールの WDK ネットワークを処理します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09ec469bd5831a1901880dc2db55483d0362284a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380714"
 ---
-# <a name="obtaining-pool-handles"></a>処理プールの取得
+# <a name="obtaining-pool-handles"></a>プール ハンドルの取得
 
 
 

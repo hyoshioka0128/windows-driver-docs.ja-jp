@@ -1,6 +1,6 @@
 ---
-title: インター レースと Proscan モニターでビデオを表示します。
-description: インター レースと Proscan モニターでビデオを表示します。
+title: インターレース モニターと Proscan モニターへのビデオの表示
+description: インターレース モニターと Proscan モニターへのビデオの表示
 ms.assetid: 26438a11-7627-45c1-956a-c48409102784
 keywords:
 - DirectX VPE サポート WDK DirectDraw、proscan モニター
@@ -20,13 +20,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 307e35410405d4daa9c300e7a53bd3965190bf3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377747"
 ---
-# <a name="displaying-video-on-interlaced-and-proscan-monitors"></a>インター レースと Proscan モニターでビデオを表示します。
+# <a name="displaying-video-on-interlaced-and-proscan-monitors"></a>インターレース モニターと Proscan モニターへのビデオの表示
 
 
 ## <span id="ddk_displaying_video_on_interlaced_and_proscan_monitors_gg"></span><span id="DDK_DISPLAYING_VIDEO_ON_INTERLACED_AND_PROSCAN_MONITORS_GG"></span>

@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_CHANGE_SINGLE_INSTANCE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b9afcc67cf6b42a31b54c4be11988ab9cb121d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380608"
 ---
 # <a name="irpmnchangesingleinstance"></a>IRP\_MN\_変更\_単一\_インスタンス
 
@@ -96,7 +96,7 @@ GUID をまず確認する必要があります、ドライバーは、要求を
 
 インスタンスが有効では、ドライバーが要求を処理できない場合は、すべての該当するエラー状態を返すできます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

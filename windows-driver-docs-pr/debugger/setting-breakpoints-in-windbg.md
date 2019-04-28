@@ -1,17 +1,17 @@
 ---
-title: WinDbg にブレークポイントを設定
+title: WinDbg でのブレークポイントの設定
 description: 設定、表示、および WinDbg を使用してブレークポイントを操作できるいくつかの方法はあります。
 ms.assetid: 4A7BE6D2-05AF-4EFB-8F24-C19B1A98217C
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cfdeb439a342d0dc328842621dc34f89cd567da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381958"
 ---
-# <a name="setting-breakpoints-in-windbg"></a>WinDbg にブレークポイントを設定
+# <a name="setting-breakpoints-in-windbg"></a>WinDbg でのブレークポイントの設定
 
 
 設定、表示、および WinDbg を使用してブレークポイントを操作できるいくつかの方法はあります。
@@ -19,7 +19,7 @@ ms.locfileid: "56556500"
 ## <a name="span-iddebuggercommandwindowspanspan-iddebuggercommandwindowspanspan-iddebuggercommandwindowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>デバッガー コマンド ウィンドウ
 
 
-設定、表示、およびデバッガー コマンド ウィンドウでコマンドを入力して、ブレークポイントを操作することができます。 コマンドの一覧は、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
+設定、表示、およびデバッガー コマンド ウィンドウでコマンドを入力して、ブレークポイントを操作することができます。 コマンドの一覧は、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
 
 ## <a name="span-idwindbgmenuspanspan-idwindbgmenuspanspan-idwindbgmenuspanwindbg-menu"></a><span id="WinDbg_Menu"></span><span id="windbg_menu"></span><span id="WINDBG_MENU"></span>WinDbg のメニュー
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8287e9e4a8aa57840113e8c7a8e1fabc1d1e7a81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378790"
 ---
 # <a name="wiaipsalarm"></a>WIA\_IP\_アラーム
 
@@ -43,7 +43,7 @@ ms.locfileid: "56557377"
 
 このプロパティの有効な値は、次の表に表示されます。
 
-| Value              | 説明                                           |
+| 値              | 説明                                           |
 |--------------------|-------------------------------------------------------|
 | WIA\_アラーム\_NONE   | 可聴アラーム (ビープ音) がデバイスで再生されません。      |
 | WIA\_アラーム\_BEEP1  | 可聴アラーム (ビープ音) は、デバイスで再生されます。      |
@@ -63,7 +63,7 @@ WIA ミニドライバーは、1 つまたは複数の WIA を実装できます
 
 このプロパティは有効であり、フィーダー項目では省略可能 (WIA\_カテゴリ\_フィーダー) ときに、WIA\_IP\_マルチ\_フィードのプロパティがサポートされています。 このプロパティは有効であり、バーコード リーダーでは省略可能 (WIA\_カテゴリ\_バーコード\_リーダー) と修正プログラム コード リーダー (WIA\_カテゴリ\_パッチ\_コード\_閲覧者) の項目。 このプロパティが実装された場合、WIA\_アラーム\_NONE という値が必要としてミニ ドライバーを既定値として設定する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

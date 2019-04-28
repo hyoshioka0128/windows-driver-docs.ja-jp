@@ -1,6 +1,6 @@
 ---
-title: ネットワークの NDIS インターフェイス
-description: ネットワークの NDIS インターフェイス
+title: NDIS ネットワーク インターフェイス
+description: NDIS ネットワーク インターフェイス
 ms.assetid: a1d062d4-3d4b-4244-b851-667d708810db
 keywords:
 - NDIS WDK、ネットワーク インターフェイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4c312b31feb1872a999fc43a2c5245f142c1cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378296"
 ---
-# <a name="ndis-network-interfaces"></a>ネットワークの NDIS インターフェイス
+# <a name="ndis-network-interfaces"></a>NDIS ネットワーク インターフェイス
 
 
 

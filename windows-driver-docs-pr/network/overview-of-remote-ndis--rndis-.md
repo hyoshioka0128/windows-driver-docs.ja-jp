@@ -1,6 +1,6 @@
 ---
-title: リモートの NDIS (RNDIS) の概要
-description: リモートの NDIS (RNDIS) の概要
+title: リモート NDIS (RNDIS) の概要
+description: リモート NDIS (RNDIS) の概要
 ms.assetid: 03da539d-9613-4454-8f79-514e76767af6
 keywords:
 - リモートの NDIS WDK のネットワーク アーキテクチャ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcc0748f952439cf1de6b2b8380a855f9d2b7b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376984"
 ---
-# <a name="overview-of-remote-ndis-rndis"></a>リモートの NDIS (RNDIS) の概要
+# <a name="overview-of-remote-ndis-rndis"></a>リモート NDIS (RNDIS) の概要
 
 
 

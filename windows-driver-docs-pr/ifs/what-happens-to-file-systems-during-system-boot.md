@@ -1,6 +1,6 @@
 ---
-title: システムの起動中にファイル システムを処理します。
-description: システムの起動中にファイル システムを処理します。
+title: システム起動時のファイル システムの状態
+description: システム起動時のファイル システムの状態
 ms.assetid: f6ed556a-2353-4a0d-8db1-1fb5eac3c1ef
 keywords:
 - フィルター ドライバー WDK ファイル システム、起動プロセス
@@ -23,13 +23,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b0759d077296c64b60efd885dc9b1f70bdd6da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379350"
 ---
-# <a name="what-happens-to-file-systems-during-system-boot"></a>システムの起動中にファイル システムを処理します。
+# <a name="what-happens-to-file-systems-during-system-boot"></a>システム起動時のファイル システムの状態
 
 
 ## <span id="ddk_what_happens_to_file_systems_during_system_boot_if"></span><span id="DDK_WHAT_HAPPENS_TO_FILE_SYSTEMS_DURING_SYSTEM_BOOT_IF"></span>

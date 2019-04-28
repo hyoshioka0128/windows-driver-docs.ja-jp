@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a81f9fea8cb3b1afe8a57b2d2235b10175f7b180
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372351"
 ---
 # <a name="inf-driverver-directive"></a>INF DriverVer ディレクティブ
 
@@ -44,7 +44,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 
 各*w*、 *x*、 *y*、および*z* 0 以上 65535 未満である整数にする必要があります。
 
-Windows XP SP1、Windows Server 2003 と以降のバージョンの Windows では、この値はまた、*使用*ドライバーのランクとデバイスのドライバーを選択する、日付の組み合わせで、セットアップでします。 詳細については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
+Windows XP SP1、Windows Server 2003 と以降のバージョンの Windows では、この値はまた、*使用*ドライバーのランクとデバイスのドライバーを選択する、日付の組み合わせで、セットアップでします。 詳細については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
 次の点は、Windows 2000、および Windows XP には、この値に適用されます。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8351112bd3860494a3823205f3f5021a5927ee9d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372439"
 ---
 # <a name="raster-data-emission-attributes"></a>ラスター データ出力属性
 
@@ -83,7 +83,7 @@ NO_MOVE AUTO_INCREMENT</td>
 <tr class="odd">
 <td><p></em><strong>PreAnalysisOptions</strong></p></td>
 <td><p>数値 0、1、2、4、または 8 のいずれかです。</p>
-<p>各属性のパラメーターの意味については、<a href="preanalysis-infrastructure.md" data-raw-source="[Preanalysis Infrastructure](preanalysis-infrastructure.md)">Preanalysis インフラストラクチャ</a>を参照してください。</p></td>
+<p>各属性のパラメーターの意味については、次を参照してください。 <a href="preanalysis-infrastructure.md" data-raw-source="[Preanalysis Infrastructure](preanalysis-infrastructure.md)">Preanalysis インフラストラクチャ</a>します。</p></td>
 <td><p>任意。 指定しない場合、既定値は 1 です。</p></td>
 </tr>
 <tr class="even">
@@ -112,9 +112,9 @@ NO_MOVE AUTO_INCREMENT</td>
 
  
 
-ラスターのデータの出力に関連付けられているコマンドについては、[ラスター データ出力コマンド](raster-data-emission-commands.md)を参照してください。
+ラスターのデータの出力に関連付けられているコマンドについては、次を参照してください。[ラスター データ出力コマンド](raster-data-emission-commands.md)します。
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
  
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f634b9e5ee38111c3dcd885b6b9c1cd2addf3c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383113"
 ---
 # <a name="handling-srbfunctionwmi"></a>処理 SRB\_関数\_WMI
 
@@ -26,7 +26,7 @@ HBA がサポートしている場合[Windows Management Instrumentation](https:
 
 ミニポート ドライバーのライターは、次のように WMI 要求を処理するミニポートを準備します。
 
--   ミニポートは、カスタム データのブロックまたはブロックのイベントを公開する場合は、MOF ファイルにこのようなブロックを定義する必要があり、ミニポートのバイナリの画像のバイナリ リソースとしてコンパイルします。 詳細については、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)を参照してください。
+-   ミニポートは、カスタム データのブロックまたはブロックのイベントを公開する場合は、MOF ファイルにこのようなブロックを定義する必要があり、ミニポートのバイナリの画像のバイナリ リソースとしてコンパイルします。 詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。
 
 -   必須および省略可能な実装*HwScsiWmiXxx* 」の説明に従って、コールバック ルーチン[SCSI ミニポート ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff565312)します。
 
@@ -66,7 +66,7 @@ SCSI を割り当てる必要があります、ミニポート ドライバー�
 
 -   呼び出し[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)で**RequestComplete**ときのこ**NextRequest**または (**NextLuRequest**).
 
-WMI の詳細については、[Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)を参照してください。
+WMI の詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 973294b5-0c4f-4056-ad28-62c58f10c232
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 347344b72f12e246ce633ec58f8f5cde5612d929
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375776"
 ---
 # <a name="network-cost-information-element"></a>ネットワーク コストの情報の要素
 
@@ -87,7 +87,7 @@ Wi-fi ネットワークのコストをクライアントに通信するため�
 </colgroup>
 <thead>
 <tr class="header">
-<th>[値]</th>
+<th>値</th>
 <th>名前</th>
 <th>説明</th>
 </tr>
@@ -95,7 +95,7 @@ Wi-fi ネットワークのコストをクライアントに通信するため�
 <tbody>
 <tr class="odd">
 <td><p>0x01</p></td>
-<td><p>制限しない</p></td>
+<td><p>[無制限]</p></td>
 <td><p>この接続でデータを転送するためない増分のコストが適用されます。</p></td>
 </tr>
 <tr class="even">

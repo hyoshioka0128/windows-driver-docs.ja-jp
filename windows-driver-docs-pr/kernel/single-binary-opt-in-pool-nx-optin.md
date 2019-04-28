@@ -5,13 +5,13 @@ ms.assetid: BE9D3C85-0212-4206-A59B-4D53FB842C39
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 00366b375a953a585acadf52f8cca8331f6ad943
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367938"
 ---
-# <a name="single-binary-opt-in-poolnxoptin"></a>単一バイナリにオプトインします。プール\_NX\_OPTIN
+# <a name="single-binary-opt-in-poolnxoptin"></a>単一バイナリ オプトイン: プール\_NX\_OPTIN
 
 
 Windows 8 と Windows の以前のバージョンの両方を実行している 1 つのドライバー バイナリをビルドするには、プールを使用して\_NX\_OPTIN オプトイン メカニズム。 これは、複数の Windows バージョンをサポートするためにバイナリの 1 つのドライバーを提供するサード パーティ製ハードウェア ベンダーの移植の支援です。

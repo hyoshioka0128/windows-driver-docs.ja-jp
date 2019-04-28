@@ -1,6 +1,6 @@
 ---
-title: デュアル (Windows 2000 モデル) をサポートしています。
-description: デュアル (Windows 2000 モデル) をサポートしています。
+title: DualView のサポート (Windows 2000 モデル)
+description: DualView のサポート (Windows 2000 モデル)
 ms.assetid: 08da97c9-1d31-40f5-99df-5f16eaa47c79
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、デュアル ビュー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d90d09e2e0ed83cd554c1c932e21767d4da2c29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372744"
 ---
-# <a name="supporting-dualview-windows-2000-model"></a>デュアル (Windows 2000 モデル) をサポートしています。
+# <a name="supporting-dualview-windows-2000-model"></a>DualView のサポート (Windows 2000 モデル)
 
 
 多くの最新のディスプレイ アダプターは、2 つ以上の別のディスプレイ デバイスのドライブを同時にできます。 デュアル ビュー、および後で、Microsoft Windows XP の機能は、マルチ モニターのと同様の機能をシステム レベルのサポートを提供しますが、1 つのディスプレイ アダプターのみが必要です。 グラフィックス デバイス インターフェイス (GDIs) とエンドユーザーのエクスペリエンスは、同じデュアル ビューとマルチ モニターの両方です。

@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_CLOSE
-description: IRP\_MJ\_閉じる
+description: IRP\_MJ\_CLOSE
 ms.assetid: 62bb28de-7f89-4009-9ea9-0aa3d6bca0ed
 keywords:
 - 未完了のインストール可能なファイル システム ドライバー
@@ -13,13 +13,13 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0397bed8fe7dfb85c62369e3be18259255574c68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379709"
 ---
-# <a name="irpmjclose"></a>IRP\_MJ\_閉じる
+# <a name="irpmjclose"></a>IRP\_MJ\_CLOSE
 
 
 ## <a name="when-sent"></a>送信時
@@ -41,7 +41,7 @@ IRP の受領書\_MJ\_終了要求は、ファイル オブジェクトの参照
 
 それ以外の場合、フィルター ドライバーは、ファイルごとと、フィルター ドライバーによって保持されているファイルごとのオブジェクトのコンテキスト情報を削除するなど、必要な処理を実行した後は、スタック上に次の下位ドライバー IRP を渡す必要があります。
 
-ファイル システム フィルター ドライバー開発者が注意を[ **IoCreateStreamFileObject** ](https://msdn.microsoft.com/library/windows/hardware/ff548296)により、 [ **IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)ボリュームのファイル システム ドライバー スタックに送信される要求。 ファイル システム多くの場合、オブジェクトを作成ストリーム ファイルの操作の副作用として以外のため、 [ **IRP\_MJ\_作成**](irp-mj-create.md)、フィルター ドライバーを確実に検出することは困難ですストリームのファイル オブジェクトの作成。 フィルター ドライバーを受信することはそのため**IRP\_MJ\_クリーンアップ**と[ **IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)未知のファイル オブジェクトを要求します。
+ファイル システム フィルター ドライバー開発者が注意を[ **IoCreateStreamFileObject** ](https://msdn.microsoft.com/library/windows/hardware/ff548296)により、 [ **IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)ボリュームのファイル システム ドライバー スタックに送信される要求。 ファイル システム多くの場合、オブジェクトを作成ストリーム ファイルの操作の副作用として以外のため、 [ **IRP\_MJ\_作成**](irp-mj-create.md)、フィルター ドライバーを確実に検出することは困難ですストリームのファイル オブジェクトの作成。 フィルター ドライバーを受信することはそのため**IRP\_MJ\_クリーンアップ**と[**IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)未知のファイル オブジェクトを要求します。
 
 フィルター ドライバー開発者も注意してくださいとは異なり[ **IoCreateStreamFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff548296)、 [ **IoCreateStreamFileObjectLite** ](https://msdn.microsoft.com/library/windows/hardware/ff548306)しません[ **IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)要求をファイル システム ドライバー スタックに送信します。 このため、のでファイル システム多くの場合、ストリームのファイル オブジェクトの操作の副作用として以外の[ **IRP\_MJ\_作成**](irp-mj-create.md)、フィルター ドライバーのことは困難ですストリームのファイル オブジェクトの作成を確実に検出します。 フィルター ドライバーを受信することはつまり**IRP\_MJ\_閉じる**見えないファイル オブジェクトを以前に要求します。
 

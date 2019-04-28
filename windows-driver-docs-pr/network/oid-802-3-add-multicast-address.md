@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_802_3_ADD_MULTICAST_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ba8b1e689d3ce2ce190a0967ae58f29dd428ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377280"
 ---
 # <a name="oid8023addmulticastaddress"></a>OID\_802\_3\_追加\_マルチキャスト\_アドレス
 
@@ -25,7 +25,7 @@ ms.locfileid: "56578508"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 要求されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、マルチキャストに追加する 6 バイトのアドレスが含まれています。アドレスの一覧です。
@@ -40,7 +40,7 @@ NDIS ミニポート ドライバーでは、この OID 要求を直接受け取
 
 以前に追加されたマルチキャスト アドレスを削除するには、セット要求を行う、 [OID\_802\_3\_削除\_マルチキャスト\_アドレス](oid-802-3-delete-multicast-address.md)OID。 上にあるドライバーは、複数回指定したマルチキャスト アドレスを追加できます。 NDIS は後続のすべての成功 NDIS には、指定されたマルチキャスト アドレスの最初の追加要求が成功すると、そのアドレスの要求を追加します。 上にあるドライバーは複数回追加されたマルチキャスト アドレスを削除するには、アドレスをアドレスが追加されたことと同じ回数を削除する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

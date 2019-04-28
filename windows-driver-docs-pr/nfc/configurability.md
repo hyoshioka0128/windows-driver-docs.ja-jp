@@ -1,23 +1,23 @@
 ---
-title: 構成機能
+title: 構成可能の有無
 description: このトピックである拡張機能は、その操作の多くのパラメーターを構成するクライアント ドライバーを有効化、NFC クライアント ドライバーを使用可能なポイントします。
 ms.assetid: 29C6C96E-9F20-4750-ABDD-103871B405FA
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63bdc7235c1291bd1fe2259585712197717af45d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375216"
 ---
-# <a name="configurability"></a>構成機能
+# <a name="configurability"></a>構成可能の有無
 
 
 NFC CX は NFC クライアント ドライバーに利用可能な機能拡張ポイント、だけでなく、その操作の多くのパラメーターを構成するクライアント ドライバーもできます。 NFC クライアント ドライバーでは、次の構成をカスタマイズできます。

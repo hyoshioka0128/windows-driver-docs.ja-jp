@@ -1,17 +1,17 @@
 ---
-title: エネルギー ソース温度の警告しきい値 (関数インデックス 9) の設定します。
+title: 電力源の温度に関する警告しきい値の設定 (関数インデックス 9)
 description: この関数は、温度がエネルギー ソース (ES) の警告しきい値を設定します。
 ms.assetid: AE624191-87F2-4673-A31B-CABE94623535
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8cd26d9b84f1d9e3a57b5f0a21c5e7845997cb91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376426"
 ---
-# <a name="set-energy-source-temperature-warning-threshold-function-index-9"></a>エネルギー ソース温度の警告しきい値 (関数インデックス 9) の設定します。
+# <a name="set-energy-source-temperature-warning-threshold-function-index-9"></a>電力源の温度に関する警告しきい値の設定 (関数インデックス 9)
 
 
 この関数は、温度がエネルギー ソース (ES) の警告しきい値を設定します。 この関数は、ES が管理されているホストとしきい値が、プラットフォームでサポートされていない場合、エラー状態を返す可能性があります。
@@ -73,7 +73,7 @@ ms.locfileid: "56538111"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

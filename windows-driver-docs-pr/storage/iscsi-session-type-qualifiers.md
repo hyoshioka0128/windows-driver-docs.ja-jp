@@ -5,11 +5,11 @@ ms.assetid: e293c4c3-3e98-4481-b71f-9433ede0cc61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 24d7a048da4e5eefd0424012a3aac5a0bb8a7d00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377486"
 ---
 # <a name="iscsisessiontypequalifiers"></a>ISCSI\_セッション\_型\_修飾子
 
@@ -29,7 +29,7 @@ ISCSI\_セッション\_型\_修飾子 WMI プロパティ修飾子は、DHCP �
 <thead>
 <tr class="header">
 <th align="left">セッションの型の値</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_ADMIN_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5323c785ee3688a7803c69c2d6c40dace8babdfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380698"
 ---
 # <a name="oidgenadminstatus"></a>OID\_GEN\_管理者\_状態
 
@@ -34,7 +34,7 @@ ms.locfileid: "56558890"
 
 クエリが成功すると、インターフェイス プロバイダーを返します NDIS\_状態\_成功して、クエリの結果は、値のいずれかで指定できます、 [ **NET\_場合\_管理者\_ステータス**](https://msdn.microsoft.com/library/windows/hardware/ff568740)列挙体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

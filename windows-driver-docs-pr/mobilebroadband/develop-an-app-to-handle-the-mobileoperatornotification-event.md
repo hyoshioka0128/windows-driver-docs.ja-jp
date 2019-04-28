@@ -1,17 +1,17 @@
 ---
-title: MobileOperatorNotification イベントを処理するアプリを開発します。
-description: MobileOperatorNotification イベントを処理するアプリを開発します。
+title: MobileOperatorNotification イベントを処理するアプリを開発する
+description: MobileOperatorNotification イベントを処理するアプリを開発する
 ms.assetid: 3c483888-8ec4-4270-af3e-ef1efc995171
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7e778c54a6077bb306f1b0b2ec6dfe29b93296a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380286"
 ---
-# <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>MobileOperatorNotification イベントを処理するアプリを開発します。
+# <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>MobileOperatorNotification イベントを処理するアプリを開発する
 
 
 このトピックでは、処理するモバイル ブロード バンド アプリを開発する方法を説明します、 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)イベント。
@@ -43,7 +43,7 @@ ms.locfileid: "56532341"
 
 -   トースト通知の表示、バック グラウンド イベントへの応答でのタイルを更新してください。 モバイル ブロード バンド アプリでは、バック グラウンド イベントのペイロードを処理できます。
 
-バック グラウンド タスクの詳細については、[バック グラウンド タスクの概要](https://go.microsoft.com/fwlink/p/?linkid=313924)を参照してください。
+バック グラウンド タスクの詳細については、次を参照してください。[バック グラウンド タスクの概要](https://go.microsoft.com/fwlink/p/?linkid=313924)します。
 
 ## <a name="span-idsteponespanspan-idsteponespanstep-1-background-task-contract-declaration"></a><span id="stepone"></span><span id="STEPONE"></span>手順 1:バック グラウンド タスク コントラクトの宣言
 
@@ -476,7 +476,7 @@ Windows がイベント ビューアーで SmsRouter イベントをチェック
 
 ### <a name="span-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanspan-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanspan-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanreceived-sms-messages-are-not-detected-as-operator-notifications"></a><span id="Received_SMS_messages_are_not_detected_as_operator_notifications"></span><span id="received_sms_messages_are_not_detected_as_operator_notifications"></span><span id="RECEIVED_SMS_MESSAGES_ARE_NOT_DETECTED_AS_OPERATOR_NOTIFICATIONS"></span>オペレーターへの通知として受信した SMS メッセージが検出されません。
 
-オペレーターへの通知として受信した SMS が検出されない場合、アカウントのプロビジョニングのメタデータの管理用の SMS 通知のカスタム フィルター規則を確認します。 プロビジョニングのメタデータに関する詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
+オペレーターへの通知として受信した SMS が検出されない場合、アカウントのプロビジョニングのメタデータの管理用の SMS 通知のカスタム フィルター規則を確認します。 プロビジョニングのメタデータに関する詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
 
 具体的には、アカウント プロビジョニングのメタデータは、送信者の電話番号を指定する場合は、数値の書式指定と一致することを受信したメッセージで SMS Api を使用して確認します。 これが正しく一致することを確認するためにパターンを一時的に変更**\[ ^ \] \\*** この送信者からのすべてのメッセージを照合します。
 

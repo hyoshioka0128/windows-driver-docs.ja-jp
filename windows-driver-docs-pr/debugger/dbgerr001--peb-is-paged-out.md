@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a81e0e2a6b8f2b4cf5892e88f989df9aa7527c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374934"
 ---
-# <a name="dbgerr001-peb-is-paged-out"></a>dbgerr001:PEB がページ アウトには
+# <a name="dbgerr001-peb-is-paged-out"></a>dbgerr001:PEB is Paged Out
 
 
 ## <span id="ddk_dbgerr001_dbg"></span><span id="DDK_DBGERR001_DBG"></span>

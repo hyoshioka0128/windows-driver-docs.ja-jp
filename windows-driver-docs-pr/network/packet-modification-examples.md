@@ -1,19 +1,19 @@
 ---
-title: パケットの変更例
-description: パケットの変更例
+title: パケット変更例
+description: パケット変更例
 ms.assetid: dec76575-041b-4cbd-8042-184b15354f61
 keywords:
 - WDK Windows フィルタ リング プラットフォーム パケットの変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b7b794aed9ae196e9b8f3c8b4c77ca351722fc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376297"
 ---
-# <a name="packet-modification-examples"></a>パケットの変更例
+# <a name="packet-modification-examples"></a>パケット変更例
 
 
 次のコード例では、変更および WFP を持つパケットを検査する方法を示します。

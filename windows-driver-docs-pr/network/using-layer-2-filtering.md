@@ -1,17 +1,17 @@
 ---
-title: レイヤー 2 のフィルターを使用します。
-description: レイヤー 2 のフィルターを使用します。
+title: レイヤー 2 フィルターの使用
+description: レイヤー 2 フィルターの使用
 ms.assetid: 679E6DE2-4EFB-44F6-936D-2BF611BC9726
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e3a1f9f4266ac5db031fcc78704879305ee30d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372256"
 ---
-# <a name="using-layer-2-filtering"></a>レイヤー 2 のフィルターを使用します。
+# <a name="using-layer-2-filtering"></a>レイヤー 2 フィルターの使用
 
 Windows 8 および Windows の以降のバージョンでは、レイヤー 2 のフィルタ リングがサポートされています。
 

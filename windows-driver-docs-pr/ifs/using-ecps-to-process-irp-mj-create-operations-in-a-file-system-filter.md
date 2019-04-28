@@ -1,15 +1,15 @@
 ---
 title: ECPs を使用して、ファイル システム フィルター ドライバーで irp_mj_create 用を処理するには
-description: ECPs irp_mj_create 用の操作を処理を使用して、ファイル システム フィルター ドライバー
+description: ファイル システム フィルター ドライバーで ECP を使用して IRP_MJ_CREATE 操作を処理する
 ms.assetid: 969709a9-cdca-4a1a-95a0-0bb89cd17693
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a05d82d4e6ba4e5fe1be8c36973ca95bb7fe034c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379437"
 ---
 # <a name="using-ecps-to-process-irpmjcreate-operations-in-a-file-system-filter-driver"></a>ECPs を使用して、IRP を処理する\_MJ\_作成操作、ファイル システム フィルター ドライバー
 

@@ -1,6 +1,6 @@
 ---
-title: 2 つのサブユニット プラグ AV/C の異なる単位間の接続
-description: 2 つのサブユニット プラグ AV/C の異なる単位間の接続
+title: 異なる AV/C ユニット内の 2 つのサブユニット プラグ間の接続
+description: 異なる AV/C ユニット内の 2 つのサブユニット プラグ間の接続
 ms.assetid: 20d209b3-2516-4913-9f31-b14afddb78fb
 keywords:
 - WDK AV/C の接続
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cca8650152be9426efe116983dc958ac08dcf6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374248"
 ---
-# <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>2 つのサブユニット プラグ AV/C の異なる単位間の接続
+# <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>異なる AV/C ユニット内の 2 つのサブユニット プラグ間の接続
 
 
 シナリオ 5 および 6 では、別の単位でのサブユニットを 1 つのまとまりのサブユニット間の接続を表します。 これらの種類の接続が必要な**信号のソース**と**入力選択**CCM コマンド。

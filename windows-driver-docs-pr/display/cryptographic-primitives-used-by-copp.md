@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81c95ae5a9ecde73889c686ab64c7880957c931f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371488"
 ---
 # <a name="cryptographic-primitives-used-by-copp"></a>COPP で使用される暗号プリミティブ
 
@@ -35,7 +35,7 @@ COPP では、公開キーの暗号化と復号化キーを 2,048 ビット RSA 
 COPP eXtensible rights Markup Language (XrML) デジタル証明書を使用します。
 
 <span id="Message_authentication_code__MAC_"></span><span id="message_authentication_code__mac_"></span><span id="MESSAGE_AUTHENTICATION_CODE__MAC_"></span>メッセージ認証コード (MAC)  
-COPP を 1 つのキー暗号化ブロック チェーン (CBC) を使用して-メッセージの信頼性の MAC (OMAC) のモード。 OMAC は、Advanced Encryption Standard (AES) に基づいています。 AES の詳細については、次を参照してください。、 [RSA Laboratories](https://go.microsoft.com/fwlink/p/?linkid=70411) web サイト。 OMAC の詳細については、、 [OMAC 1 アルゴリズム](https://go.microsoft.com/fwlink/p/?linkid=70417)を参照してください。
+COPP を 1 つのキー暗号化ブロック チェーン (CBC) を使用して-メッセージの信頼性の MAC (OMAC) のモード。 OMAC は、Advanced Encryption Standard (AES) に基づいています。 AES の詳細については、次を参照してください。、 [RSA Laboratories](https://go.microsoft.com/fwlink/p/?linkid=70411) web サイト。 OMAC の詳細については、次を参照してください。、 [OMAC 1 アルゴリズム](https://go.microsoft.com/fwlink/p/?linkid=70417)します。
 
  
 

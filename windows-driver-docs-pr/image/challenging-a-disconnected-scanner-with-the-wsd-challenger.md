@@ -1,17 +1,17 @@
 ---
-title: 切断されているスキャナー WSD 見据えて困難になります
-description: 切断されているスキャナー WSD 見据えて困難になります
+title: WSD チャレンジャーを使用して切断されたスキャナーの通信の確立を試みる
+description: WSD チャレンジャーを使用して切断されたスキャナーの通信の確立を試みる
 ms.assetid: f938a235-0360-43f9-9f84-6b9cb6ca9245
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0da63b43d71af20550fab340e97cc790ccdd6607
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373328"
 ---
-# <a name="challenging-a-disconnected-scanner-with-the-wsd-challenger"></a>切断されているスキャナー WSD 見据えて困難になります
+# <a name="challenging-a-disconnected-scanner-with-the-wsd-challenger"></a>WSD チャレンジャーを使用して切断されたスキャナーの通信の確立を試みる
 
 > [!IMPORTANT] 
 > WSD 見据えて機能は非推奨とされているし、WSD の挑戦者に関連するすべてのドキュメントは、2018 年に削除されます。
@@ -45,7 +45,7 @@ WIA ドライバー クライアントが使用する WSD 見据えてインタ�
 
 [ヘルパー メソッドを実装するためのコード例](code-example-for-implementing-helper-methods.md)
 
-定義とこれらの例で使用されている変数の詳細については、[定義と変数は、この例で使用](definitions-and-variables-used-in-the-examples.md)を参照してください。
+定義とこれらの例で使用されている変数の詳細については、次を参照してください。[定義と変数は、この例で使用](definitions-and-variables-used-in-the-examples.md)します。
 
  
 

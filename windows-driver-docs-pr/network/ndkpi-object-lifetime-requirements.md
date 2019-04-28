@@ -1,17 +1,17 @@
 ---
-title: NDKPI オブジェクトの有効期間の要件
+title: NDKPI オブジェクト有効期間要件
 description: このセクションでは、NDKPI オブジェクトの有効期間の要件を説明します。
 ms.assetid: 94993523-D0D7-441E-B95C-417800840BAC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8b59e31e8c09007a36a9a8004e3bcd07612efe4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380909"
 ---
-# <a name="ndkpi-object-lifetime-requirements"></a>NDKPI オブジェクトの有効期間の要件
+# <a name="ndkpi-object-lifetime-requirements"></a>NDKPI オブジェクト有効期間要件
 
 
 ## <a name="how-ndk-objects-are-created-used-and-closed"></a>NDK オブジェクトを作成、使用、および終了する方法

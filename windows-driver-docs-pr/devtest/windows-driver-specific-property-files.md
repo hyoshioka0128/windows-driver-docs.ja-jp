@@ -5,11 +5,11 @@ ms.assetid: 696EE510-266B-457A-B74E-491D7804B833
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c5c533f07d452e2fdba722b40a6bf1f8607773
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379140"
 ---
 # <a name="span-iddevtestwindowsdriver-specificpropertyfilesspanwindows-driver-specific-property-files"></a><span id="devtest.windows_driver-specific_property_files"></span>Windows ドライバー固有のプロパティ ファイル
 
@@ -61,7 +61,7 @@ $(WDKContentRoot)\\ビルドでビルド拡張機能ドライバーをビルド�
 これらのプロパティ設定は、ミニポート ドライバーをビルドするときに適用する必要がある特別な設定です。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**ミニポート**、次の例。*&lt;DriverType&gt;ミニポート&lt;/DriverType&gt;* します。
 
 <span id="WindowsDriver.LateEvaluation.props_"></span><span id="windowsdriver.lateevaluation.props_"></span><span id="WINDOWSDRIVER.LATEEVALUATION.PROPS_"></span>**WindowsDriver.LateEvaluation.props**   
-内部でのみ使用します。 編集したり、使用しないでください。
+内部使用のみです。 編集したり、使用しないでください。
 
 <span id="WindowsDriver.masm.props"></span><span id="windowsdriver.masm.props"></span><span id="WINDOWSDRIVER.MASM.PROPS"></span>**WindowsDriver.masm.props**  
 これらのプロパティ設定には、サポートされているアーキテクチャ (プラットフォーム) のアセンブリ ファイル (MASM) を構築するための設定が含まれます。

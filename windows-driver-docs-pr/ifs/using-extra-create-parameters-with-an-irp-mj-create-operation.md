@@ -1,15 +1,15 @@
 ---
-title: 余分なを使用して irp_mj_create 用の操作の操作のパラメーターの作成
-description: 余分なを使用して irp_mj_create 用の操作の操作のパラメーターの作成
+title: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
+description: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
 ms.assetid: e32aeec6-1a0a-4d21-8358-89d9fc0a15eb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d41a8d53a8146611820408666cbf34634042a8db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379422"
 ---
 # <a name="using-extra-create-parameters-with-an-irpmjcreate-operation"></a>IRP のパラメーターを作成する余分なを使用して\_MJ\_作成操作
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ANQP_QUERY_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b8a32f742829b721454f70127d35741cf202565
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383168"
 ---
 # <a name="wditlvanqpquerystatus"></a>WDI\_TLV\_ANQP\_クエリ\_状態
 

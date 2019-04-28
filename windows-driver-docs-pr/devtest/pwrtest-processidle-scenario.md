@@ -1,17 +1,17 @@
 ---
-title: PwrTest ProcessIdle シナリオ
+title: PwrTest のプロセス アイドル シナリオ
 description: PwrTest ProcessIdle シナリオでは、(ここではなく、スケジュールされた時刻) を実行するバック グラウンドのメンテナンス タスクおよびその進行状況を監視します。
 ms.assetid: 14932191-C956-4623-AF62-5A6650D72164
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8768034c5c4dc1b1cd189d9489a141c1883979f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382664"
 ---
-# <a name="pwrtest-processidle-scenario"></a>PwrTest ProcessIdle シナリオ
+# <a name="pwrtest-processidle-scenario"></a>PwrTest のプロセス アイドル シナリオ
 
 
 PwrTest ProcessIdle シナリオでは、(ここではなく、スケジュールされた時刻) を実行するバック グラウンドのメンテナンス タスクおよびその進行状況を監視します。
@@ -26,7 +26,7 @@ pwrtest /processidle [/t:n] [/?]
 <span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
 その後、待機が中止された、実行するには、シナリオの場合でも、アイドル状態のタスクが実行を継続しています最大時間 (分) を指定します (既定では、すべてのタスクを完了するまで実行)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /processidle  

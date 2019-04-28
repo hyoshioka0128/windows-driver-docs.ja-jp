@@ -1,6 +1,6 @@
 ---
-title: ドライバー スタックの管理
-description: ドライバー スタックの管理
+title: ドライバー スタック管理
+description: ドライバー スタック管理
 ms.assetid: 61d17e92-a1bf-42d9-b241-400b43b0ec0a
 keywords:
 - ドライバー スタックの WDK ネットワーク、管理します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fe5bd1e91088a1f61d86930d0c426f58dac966
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372666"
 ---
-# <a name="driver-stack-management"></a>ドライバー スタックの管理
+# <a name="driver-stack-management"></a>ドライバー スタック管理
 
 
 

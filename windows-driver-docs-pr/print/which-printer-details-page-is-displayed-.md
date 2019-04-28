@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76ee8a17f7f05bff893d255ad4f4ef469f2d7791
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370626"
 ---
-# <a name="which-printer-details-page-is-displayed"></a>プリンターの詳細ページが表示されますか。
+# <a name="which-printer-details-page-is-displayed"></a>どのプリンター詳細ページが表示されていますか?
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56531273"
     4.  SNMP がサポートされていない場合、プリンターの詳細ページが指定されていません。
 -   プリンターに標準の TCP/IP ポート モニタを使用しない場合、サーバーを監視に固有の ASP ファイルのセットがインストールされているかどうかを確認します。 そうである場合に使用されます。 それ以外の場合は、プリンターの詳細ページが指定されていません。
 
-詳細については、[印刷 Web ページをカスタマイズしたインストール](installing-customized-print-web-pages.md)を参照してください。
+詳細については、次を参照してください。[印刷 Web ページをカスタマイズしたインストール](installing-customized-print-web-pages.md)します。
 
  
 

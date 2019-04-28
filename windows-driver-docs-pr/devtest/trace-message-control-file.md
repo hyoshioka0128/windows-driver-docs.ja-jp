@@ -1,6 +1,6 @@
 ---
-title: トレース メッセージのコントロール ファイル
-description: トレース メッセージのコントロール ファイル
+title: トレース メッセージ コントロール ファイル
+description: トレース メッセージ コントロール ファイル
 ms.assetid: 4904a1d2-1314-49ad-bd57-ec976b18de13
 keywords:
 - トレース メッセージの制御ファイル WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7809e05e07808a1fb948a13109fe678d815422c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380482"
 ---
-# <a name="trace-message-control-file"></a>トレース メッセージのコントロール ファイル
+# <a name="trace-message-control-file"></a>トレース メッセージ コントロール ファイル
 
 
 **注**  Windows Vista では、前に、この種類のファイルが既定で生成された[Tracepdb](tracepdb.md)します。 代わりに、Tracepdb ツールは、バイナリでプロバイダーの情報について説明します MOF (.mof) ファイルを生成するようになりました。

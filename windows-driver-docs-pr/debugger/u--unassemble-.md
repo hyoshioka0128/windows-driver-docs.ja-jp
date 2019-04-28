@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e70cbe647cfb76cddcff3baa9e6669d1684904
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380776"
 ---
 # <a name="u-ub-uu-unassemble"></a>u、ub、uu (Unassemble)
 
@@ -36,10 +36,10 @@ u[u|b]
 
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-逆アセンブルする指示を含む、メモリ範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。 使用する場合、 **b**フラグが指定する必要があります*範囲*を使用して、"*アドレス* **L * * * 長さ*"の構文、しない"、*住所 1 住所 2*"構文があります。
+逆アセンブルする指示を含む、メモリ範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。 使用する場合、 **b**フラグが指定する必要があります*範囲*を使用して、"*アドレス* **L * * * 長さ*"の構文、しない"、*住所 1 住所 2*"構文があります。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-逆アセンブルするメモリの範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+逆アセンブルするメモリの範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______b______"></span><span id="_______B______"></span> **b**   
 旧バージョンとカウントすることによって逆アセンブルするメモリの範囲を決定します。 場合**ub** *アドレス*が使用すると、逆アセンブルした範囲になりますで終わる 8 または 9 バイト範囲*アドレス*します。 構文を使用して、範囲が指定されている場合**ub** *アドレス* **L * * * 長さ*、逆アセンブルされた範囲終了に指定された長さの範囲になります*アドレス*します。

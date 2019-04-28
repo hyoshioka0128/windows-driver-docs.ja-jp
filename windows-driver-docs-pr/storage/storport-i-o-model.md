@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07360d804cf18580db8865f880fc966c44ffe261
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374510"
 ---
 # <a name="storport-io-model"></a>Storport I/O モデル
 
@@ -26,7 +26,7 @@ Storport ドライバーでは、I/O のプッシュ モデルを使用します
 
 その一方で、SCSI ポート ドライバーは、I/O のプル モデルを使用します。 I/O のプル モデルでは、SCSI ポート ドライバーは、ミニポート ドライバーへの I/O 要求を同期的に転送し、[次へ] の I/O 要求を送信する前に、新しい入力を要求するミニポート ドライバーに待機します。 さらに、ミニポート ドライバーでは、I/O 要求のフローを制御し、ポート ドライバーからの要求をプルダウンします。
 
-SCSI ポート ドライバーの I/O モデルの詳細については、[SCSI ポート I/O モデル](scsi-port-i-o-model.md)を参照してください。
+SCSI ポート ドライバーの I/O モデルの詳細については、次を参照してください。 [SCSI ポート I/O モデル](scsi-port-i-o-model.md)します。
 
 このセクションで取り上げるトピックは次のとおりです。
 

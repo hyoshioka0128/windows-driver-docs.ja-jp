@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_LINK_STATE_CHANGE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f343df41fe54f377d58831b797273936808771fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375308"
 ---
 # <a name="wditlvlinkstatechangeparameters"></a>WDI\_TLV\_リンク\_状態\_変更\_パラメーター
 

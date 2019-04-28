@@ -1,6 +1,6 @@
 ---
-title: NDIS 6.20 が動作の概要
-description: NDIS 6.20 が動作の概要
+title: NDIS 6.20 の概要
+description: NDIS 6.20 の概要
 ms.assetid: a0a25173-5f57-4317-b963-20ba9bb3f95b
 keywords:
 - NDIS 6.20 WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da44e7f54512dd8fddee3e286891277691f8235d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380603"
 ---
-# <a name="introduction-to-ndis-620"></a>NDIS 6.20 が動作の概要
+# <a name="introduction-to-ndis-620"></a>NDIS 6.20 の概要
 
 
 
@@ -25,9 +25,9 @@ ms.locfileid: "56548878"
 
 よく理解する NDIS 6.0 および 6.1 の NDIS NDIS 6.20 が動作の詳細について学習する前に。
 
--   NDIS 6.0 の詳細については、[NDIS 6.0 の概要](introduction-to-ndis-6-0.md)を参照してください。
+-   NDIS 6.0 の詳細については、次を参照してください。 [NDIS 6.0 の概要](introduction-to-ndis-6-0.md)します。
 
--   NDIS 6.1 の詳細については、[NDIS 6.1 概要](introduction-to-ndis-6-1.md)を参照してください。
+-   NDIS 6.1 の詳細については、次を参照してください。 [NDIS 6.1 概要](introduction-to-ndis-6-1.md)します。
 
 NDIS 6.20 が動作し、以前のバージョンの違いの説明、および NDIS 6.20 が動作するドライバーの移植の詳細については、「 [NDIS 6.20 が動作する移植 NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-20.md)します。
 

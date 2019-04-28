@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e57b7f747f1ca25cd5c0c8738febc77dbc5b0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380594"
 ---
 # <a name="networkprovider-and-printprovider-sections-in-a-network-inf-file"></a>ネットワーク INF ファイル内の NetworkProvider および PrintProvider セクション
 
@@ -36,11 +36,11 @@ A **NetClient**コンポーネントは、ネットワーク プロバイダー�
 
 -   別のデバイス名はコンポーネントを指定します。
 
--   使用するため、コンポーネントの短い名前が指定されて、 **「net view**コマンド。 詳細については、[、NetworkProvider セクションを含む](including-a-networkprovider-section.md)を参照してください。
+-   使用するため、コンポーネントの短い名前が指定されて、 **「net view**コマンド。 詳細については、次を参照してください。 [、NetworkProvider セクションを含む](including-a-networkprovider-section.md)します。
 
-インストールする、INF、 **NetClient**印刷プロバイダーであるコンポーネントを含める必要があります、**した PrintProvider**そのコンポーネントのセクション。 詳細については、[、した PrintProvider セクションを含む](including-a-printprovider-section.md)を参照してください。
+インストールする、INF、 **NetClient**印刷プロバイダーであるコンポーネントを含める必要があります、**した PrintProvider**そのコンポーネントのセクション。 詳細については、次を参照してください。 [、した PrintProvider セクションを含む](including-a-printprovider-section.md)します。
 
-インストールする INF ファイル、 **NetClient**コンポーネントも含める必要があります、*追加レジストリ セクション*(によって参照される、 **AddReg**ディレクティブで、 *サービスのインストール-セクション*コンポーネント) を追加する、 **NetworkProvider**をコンポーネントのキー**サービス**キー。 詳細については、[NetClient コンポーネントのプロバイダーのパスと名前を指定する](specifying-the-name-and-provider-path-for-a-netclient-component.md)を参照してください。
+インストールする INF ファイル、 **NetClient**コンポーネントも含める必要があります、*追加レジストリ セクション*(によって参照される、 **AddReg**ディレクティブで、 *サービスのインストール-セクション*コンポーネント) を追加する、 **NetworkProvider**をコンポーネントのキー**サービス**キー。 詳細については、次を参照してください。 [NetClient コンポーネントのプロバイダーのパスと名前を指定する](specifying-the-name-and-provider-path-for-a-netclient-component.md)します。
 
  
 

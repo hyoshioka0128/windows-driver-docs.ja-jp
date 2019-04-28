@@ -1,6 +1,6 @@
 ---
-title: 作成して、ワークスペースを開く
-description: 作成して、ワークスペースを開く
+title: ワークスペースを作成して開く
+description: ワークスペースを作成して開く
 ms.assetid: 0163f380-f982-4635-a450-ed83f0b52e03
 keywords:
 - ワークスペースを作成します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11cd78591bfa934f4ac7f7ee7dcb2760d6641b70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375464"
 ---
-# <a name="creating-and-opening-a-workspace"></a>作成して、ワークスペースを開く
+# <a name="creating-and-opening-a-workspace"></a>ワークスペースを作成して開く
 
 
 ## <span id="ddk_creating_and_opening_a_workspace_dbg"></span><span id="DDK_CREATING_AND_OPENING_A_WORKSPACE_DBG"></span>
@@ -59,7 +59,7 @@ WinDbg 作業のすべてに適用する場合、最大の効率は下位レベ�
 
 ワークスペースの名前を付けると、保存したり、読み込むには個別にできます。 名前付きのワークスペースの読み込み後、すべての自動読み込みと既定のワークスペースの保存が無効です。
 
-名前付きのワークスペースには、既定のワークスペースにはないいくつかの追加情報が含まれて。 この追加情報の詳細については、[ワークスペース内容](workspace-contents.md)を参照してください。
+名前付きのワークスペースには、既定のワークスペースにはないいくつかの追加情報が含まれて。 この追加情報の詳細については、次を参照してください。[ワークスペース内容](workspace-contents.md)します。
 
 ### <a name="span-idopeningsavingandclearingworkspacesspanspan-idopeningsavingandclearingworkspacesspanopening-saving-and-clearing-workspaces"></a><span id="opening__saving__and_clearing_workspaces"></span><span id="OPENING__SAVING__AND_CLEARING_WORKSPACES"></span>開く、保存、およびワークスペースをクリアします。
 

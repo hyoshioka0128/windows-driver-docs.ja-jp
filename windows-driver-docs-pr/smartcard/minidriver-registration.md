@@ -5,11 +5,11 @@ ms.assetid: 332FEBD6-9803-4502-8F84-9DB2F17BB19B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df83902740e4143861243de30ef4a11a91764c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377208"
 ---
 # <a name="minidriver-registration"></a>ミニドライバーの登録
 
@@ -29,7 +29,7 @@ ms.locfileid: "56553389"
 
 INF ベースのアプローチは、スマート カード ミニドライバーの登録に使用する必要があります。 ドライバー パッケージから適切なディレクトリにファイルのコピーと、必要なレジストリ エントリの作成、INF ファイルを使用できます。
 
-スマート カード INF ファイルの例は、[スマート カードのプラグ アンド プレイ](smart-card-plug-and-play.md)を参照してください。
+スマート カード INF ファイルの例は、次を参照してください。[スマート カードのプラグ アンド プレイ](smart-card-plug-and-play.md)します。
 
 ## <a name="span-idinffilerequirementsspanspan-idinffilerequirementsspanspan-idinffilerequirementsspaninf-file-requirements"></a><span id="INF_File_Requirements"></span><span id="inf_file_requirements"></span><span id="INF_FILE_REQUIREMENTS"></span>INF ファイルの要件
 

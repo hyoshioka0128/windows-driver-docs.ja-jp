@@ -1,6 +1,6 @@
 ---
-title: ユーザー モードのハンドルを取得します。
-description: ユーザー モードのハンドルを取得します。
+title: ユーザー モード ハンドルの取得
+description: ユーザー モード ハンドルの取得
 ms.assetid: b241bf00-1adb-4ab0-a00e-e922bdc9eee5
 keywords:
 - カーネル モードのビデオ トランスポート WDK DirectDraw を描画するには、ユーザー モードの処理します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 018d2000150c8305a3673b483a7d120e25455ad3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379483"
 ---
-# <a name="getting-the-user-mode-handles"></a>ユーザー モードのハンドルを取得します。
+# <a name="getting-the-user-mode-handles"></a>ユーザー モード ハンドルの取得
 
 
 ## <span id="ddk_getting_the_user_mode_handles_gg"></span><span id="DDK_GETTING_THE_USER_MODE_HANDLES_GG"></span>

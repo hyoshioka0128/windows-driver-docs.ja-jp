@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f97eed9f2072524a51317b8ed2cb8320f41564f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380139"
 ---
 # <a name="minidriver-supplied-halftone-patterns"></a>ミニドライバーで指定されるハーフトーン パターン
 
@@ -46,7 +46,7 @@ ms.locfileid: "56570774"
 
 -   リソース DLL で暗号化されたハーフトーン パターンを配置するかどうかは、指定することも必要があります、 **IPrintOemUni::HalftonePattern**メソッド パターンをデコードし、さらに GDI に渡され、Unidrv に戻します。
 
-ハーフトーンの詳細については、[カスタマイズ ハーフトーン](customized-halftoning.md)を参照してください。
+ハーフトーンの詳細については、次を参照してください。[カスタマイズ ハーフトーン](customized-halftoning.md)します。
 
  
 

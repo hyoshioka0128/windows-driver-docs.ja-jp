@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f37c5576c785f7680d0fd8e3892baade1464d774
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380864"
 ---
 # <a name="wditlvp2pserviceinformationdiscoveryentry"></a>WDI\_TLV\_P2P\_サービス\_情報\_検出\_エントリ
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_サービス\_情報\_検出\_エントリは、サービス情�
 ## <a name="values"></a>値
 
 
-| 型                                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                         |
+| 種類                                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                         |
 |-------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_サービス\_名**](wdi-tlv-p2p-service-name.md)                          |                                |          | 最大 255 バイト (utf-8)、サービスの名前です。                                                                       |
 | [**WDI\_TLV\_P2P\_サービス\_名前\_ハッシュ**](wdi-tlv-p2p-service-name-hash.md)               |                                |          | サービス名のハッシュです。                                                                                               |

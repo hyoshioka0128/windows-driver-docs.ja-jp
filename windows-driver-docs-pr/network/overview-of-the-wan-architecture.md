@@ -1,6 +1,6 @@
 ---
-title: WAN のアーキテクチャの概要
-description: WAN のアーキテクチャの概要
+title: WAN アーキテクチャの概要
+description: WAN アーキテクチャの概要
 ms.assetid: 96dff98f-32fa-4996-bc29-9e6c36deff05
 keywords:
 - WAN ミニポート ドライバー WDK ネットワー キング、アーキテクチャ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6bec250c5267f782b8539692bd25dc1c50115d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372920"
 ---
-# <a name="overview-of-the-wan-architecture"></a>WAN のアーキテクチャの概要
+# <a name="overview-of-the-wan-architecture"></a>WAN アーキテクチャの概要
 
 
 

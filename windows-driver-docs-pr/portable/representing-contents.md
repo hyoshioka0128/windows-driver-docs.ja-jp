@@ -1,16 +1,16 @@
 ---
-Description: Representing Contents
-title: 内容を表す
+Description: コンテンツの表現
+title: コンテンツの表現
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10dc19532908615655edcb95d1e637ea1199817a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376238"
 ---
-# <a name="representing-contents"></a>内容を表す
+# <a name="representing-contents"></a>コンテンツの表現
 
 
 データ オブジェクトは、簡単に理解できます。 音楽ファイル、連絡先のエントリが含まれます、図内で表示するために、[デバイスの表現](device-representation.md)トピック。

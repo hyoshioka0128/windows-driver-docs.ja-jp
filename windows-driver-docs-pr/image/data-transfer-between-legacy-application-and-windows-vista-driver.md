@@ -1,17 +1,17 @@
 ---
-title: レガシ アプリケーションと Windows Vista ドライバー間データ転送
-description: レガシ アプリケーションと Windows Vista ドライバー間データ転送
+title: レガシ アプリケーションと Windows Vista ドライバー間のデータ転送
+description: レガシ アプリケーションと Windows Vista ドライバー間のデータ転送
 ms.assetid: 83817277-3526-4f64-8e7c-7e02c8cd77bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1bafeee84f848d10500ce24baab0b6bf8f52009
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379845"
 ---
-# <a name="data-transfer-between-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションと Windows Vista ドライバー間データ転送
+# <a name="data-transfer-between-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションと Windows Vista ドライバー間のデータ転送
 
 
 ドライバーのイメージの処理のフィルターが常に呼び出されること、および、レガシ アプリケーションを明示的に互換性レイヤーを確認する必要がありますサポート、 **LocalService**アカウントは、データ転送を実行できます。 **LocalService**アカウントは、Microsoft Windows XP 以降のオペレーティング システムで使用します。
@@ -32,7 +32,7 @@ WIA COM プロキシ内での従来のコールバック オブジェクトは�
 
 ドライバーを呼び出すによって公開されるメソッドのいずれかと、 **IStream**インターフェイスから受信した、 [ **IWiaMiniDrvTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/jj151551)メソッド (注、ドライバーはのみ呼び出す必要があります**IStream::Write**、 **IStream::Seek**、および**IStream::SetSize**)。 互換レイヤーがカスタムを作成するために、 **IStream**を単純にラップする実装、 **IStream** WIA COM プロキシを提供するインターフェイス。
 
-従来のファイル転送は簡単です。 このような転送の例は、レガシ アプリケーションを呼び出すと**IWiaDataTransfer::idtGetData**します。 互換性レイヤーでは、アプリケーションを STGMEDIUM 構造体で指定するファイルにデータ ストリームを作成します。 このストリームはフィルターに渡される、ドライバーまたはイメージ処理を呼び出すときに[ **IWiaTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/ff545039)し、すべての転送メッセージは従来の転送メッセージを簡単にマップします。 メッセージにマップする方法の詳細については、[WIA 互換性レイヤーのデータ転送実装](wia-compatibility-layer-message-mapping.md)を参照してください。
+従来のファイル転送は簡単です。 このような転送の例は、レガシ アプリケーションを呼び出すと**IWiaDataTransfer::idtGetData**します。 互換性レイヤーでは、アプリケーションを STGMEDIUM 構造体で指定するファイルにデータ ストリームを作成します。 このストリームはフィルターに渡される、ドライバーまたはイメージ処理を呼び出すときに[ **IWiaTransferCallback::GetNextStream** ](https://msdn.microsoft.com/library/windows/hardware/ff545039)し、すべての転送メッセージは従来の転送メッセージを簡単にマップします。 メッセージにマップする方法の詳細については、次を参照してください。 [WIA 互換性レイヤーのデータ転送実装](wia-compatibility-layer-message-mapping.md)します。
 
 呼び出すときに、 **IWiaDataTransfer::dtGetData メソッド**、互換性レイヤーでは、いくつかのより厳密なパラメーター チェックします。 互換レイヤーが呼び出し元を許可しないなど、 **IWiaDataTrasnfer::idtGetData**メソッド[TYMED\_ファイル](understanding-tymed.md)とするデータの転送し、上位のページ数がないです。呼び出すことが互換性レイヤーを利用、 **IWiaDataTrasnfer::idtGetData** TYMED メソッド\_ファイル カウントより大きなページがあると、1 つ。
 

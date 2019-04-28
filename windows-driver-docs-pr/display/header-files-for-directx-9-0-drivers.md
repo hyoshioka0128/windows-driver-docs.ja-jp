@@ -1,19 +1,19 @@
 ---
-title: DirectX 9.0 ドライバーのヘッダー ファイル
-description: DirectX 9.0 ドライバーのヘッダー ファイル
+title: DirectX 9.0 ドライバー用のヘッダー ファイル
+description: DirectX 9.0 ドライバー用のヘッダー ファイル
 ms.assetid: b8628c92-0983-4f3a-af64-ef54201ee689
 keywords:
 - WDK DirectX 9.0 のヘッダー ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cedd7365d61a9808853e33458d38baee90a57f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377959"
 ---
-# <a name="header-files-for-directx-90-drivers"></a>DirectX 9.0 ドライバーのヘッダー ファイル
+# <a name="header-files-for-directx-90-drivers"></a>DirectX 9.0 ドライバー用のヘッダー ファイル
 
 
 ## <span id="ddk_header_files_for_directx_9_0_drivers_gg"></span><span id="DDK_HEADER_FILES_FOR_DIRECTX_9_0_DRIVERS_GG"></span>

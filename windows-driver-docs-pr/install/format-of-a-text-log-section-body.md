@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17264b2db9d8bd40913b3a6b02e58eca16097874
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377077"
 ---
 # <a name="format-of-a-text-log-section-body"></a>テキスト ログ セクション本文の書式
 
@@ -145,7 +145,7 @@ A*テキスト ログ セクション本文*テキスト ログのセクショ�
 <a href="" id="formatted-message-field"></a>*formatted_message*フィールド  
 ログ エントリに適用される特定の情報が含まれています。
 
-ログに記録されるセクション本文エントリは、ログが設定されているイベントのレベルと、ログを有効になっているカテゴリ レベルによって異なります。 これらの設定の詳細については、[SetupAPI ログのレジストリ設定](setupapi-logging-registry-settings.md)を参照してください。
+ログに記録されるセクション本文エントリは、ログが設定されているイベントのレベルと、ログを有効になっているカテゴリ レベルによって異なります。 これらの設定の詳細については、次を参照してください。 [SetupAPI ログのレジストリ設定](setupapi-logging-registry-settings.md)します。
 
 SetupAPI がデバイスのインストールに適用される操作をグループ化するセクションを作成するときにも再帰的にグループ化のサブセクションにセクション本文ログ エントリ。 方法は、ログ エントリにインデントを設定して注釈を付けますでは、SetupAPI にサブセクションが区別されます。 一般的なデバイスのインストール」セクションから次の例では、このような 1 つのサブセクションが表示されます。 サブセクションは、ログ エントリで始まる"dvi: {ドライバーのリストを作成しました"ログ エントリで終了"dvi: {ドライバーのリスト作成 - exit(0x00000000)}"。 このサブセクションが含まれるログ エントリの一般的なシーケンスを示しています、 *entry_prefix*、 *event_category*、*インデント*、および*formatted_message*フィールド。 ログ エントリを記述した SetupAPI 操作は、インデントを作成して、書式設定されたメッセージの内容を指定します。 この例では、イベント レベルが TXTLOG_DETAILS に設定されており、この例では有効にしていたすべてのカテゴリ レベル。
 

@@ -1,11 +1,11 @@
 ---
-title: プロセスとスレッドを制御します。
-description: プロセスとスレッドを制御します。
+title: プロセスとスレッドの制御
+description: プロセスとスレッドの制御
 ms.assetid: f5a50b54-443e-425e-98cb-cff8d31ac897
 keywords:
 - プロセス
 - 選択が処理します。
-- スレッド
+- スレッド (thread)
 - スレッドの選択
 - スレッドを凍結
 - スレッドを解除する (凍結解除)
@@ -15,13 +15,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21fafe94ccd6d6b262b2505cc00b83ff640a3209
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375064"
 ---
-# <a name="controlling-processes-and-threads"></a>プロセスとスレッドを制御します。
+# <a name="controlling-processes-and-threads"></a>プロセスとスレッドの制御
 
 
 ## <span id="ddk_controlling_processes_and_threads_dbg"></span><span id="DDK_CONTROLLING_PROCESSES_AND_THREADS_DBG"></span>
@@ -33,7 +33,7 @@ ms.locfileid: "56536926"
 
 デバッグの開始時に、現在のプロセスに、デバッガーがアタッチされている、またはデバッガーに割り込んだ例外の原因となったものになります。 同様に、現在のスレッドが、デバッガーがプロセスにアタッチされているか、例外の原因となったときにアクティブだった 1 つです。 ただし、デバッガーを使用して、現在のプロセスとスレッドを変更および固定または個々 のスレッドの固定を解除することができます。
 
-カーネル モードで、デバッグのプロセスとスレッドによって制御されないこのセクションで説明されているメソッド。 カーネル モードでのプロセスとスレッドを操作する方法の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+カーネル モードで、デバッグのプロセスとスレッドによって制御されないこのセクションで説明されているメソッド。 カーネル モードでのプロセスとスレッドを操作する方法の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 ### <a name="span-iddisplayingprocessesandthreadsspanspan-iddisplayingprocessesandthreadsspandisplaying-processes-and-threads"></a><span id="displaying_processes_and_threads"></span><span id="DISPLAYING_PROCESSES_AND_THREADS"></span>プロセスとスレッドを表示します。
 
@@ -97,7 +97,7 @@ ms.locfileid: "56536926"
 
 ### <a name="span-idmultiplesystemsspanspan-idmultiplesystemsspanmultiple-systems"></a><span id="multiple_systems"></span><span id="MULTIPLE_SYSTEMS"></span>複数のシステム
 
-デバッガーは、同時に複数のターゲットにアタッチできます。 これらのプロセスがダンプ ファイルを含める場合、または複数のコンピューター上のライブのターゲットを含めると、デバッガーは、システム、プロセス、およびアクションごとにスレッドを参照します。 この種のデバッグの詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+デバッガーは、同時に複数のターゲットにアタッチできます。 これらのプロセスがダンプ ファイルを含める場合、または複数のコンピューター上のライブのターゲットを含めると、デバッガーは、システム、プロセス、およびアクションごとにスレッドを参照します。 この種のデバッグの詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
  
 

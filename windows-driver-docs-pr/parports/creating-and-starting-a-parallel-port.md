@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe62cb2720451afd46645a0d463a9722071638af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373542"
 ---
 # <a name="creating-and-starting-a-parallel-port"></a>パラレル ポートの作成と開始
 

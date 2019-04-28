@@ -1,6 +1,6 @@
 ---
-title: 従来の COM ポートのレジストリ設定
-description: 従来の COM ポートのレジストリ設定
+title: レガシ COM ポート用のレジストリ設定
+description: レガシ COM ポート用のレジストリ設定
 ms.assetid: 043ac1f5-eeb1-4828-8417-b3c6d76b4322
 keywords:
 - シリアル ドライバー WDK では、COM ポート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f74c82f59edc994e65027b175553c367e064af8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382549"
 ---
-# <a name="registry-settings-for-a-legacy-com-port"></a>従来の COM ポートのレジストリ設定
+# <a name="registry-settings-for-a-legacy-com-port"></a>レガシ COM ポート用のレジストリ設定
 
 
 

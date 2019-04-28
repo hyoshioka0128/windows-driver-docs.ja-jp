@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS ネットワーク ドライバーが Windows Vista で始まるコードを制御します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 087c3fa63652333ffd9057aea7fa14bb2ecad99c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370546"
 ---
 # <a name="sioquerywfpconnectionredirectrecords-control-code"></a>SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード制御コード
 
@@ -23,7 +23,7 @@ WFP リダイレクト レコードは、WFP が送信プロキシ接続を設�
 
  
 
-リダイレクトの詳細については、[Bind を使用して、または接続のリダイレクト](https://msdn.microsoft.com/library/windows/hardware/ff571005)を参照してください。
+リダイレクトの詳細については、次を参照してください。 [Bind を使用して、または接続のリダイレクト](https://msdn.microsoft.com/library/windows/hardware/ff571005)します。
 
 リダイレクトされた接続のリダイレクト レコードを照会するには、Winsock クライアントが呼び出す、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
 
@@ -35,7 +35,7 @@ WFP リダイレクト レコードは、WFP が送信プロキシ接続を設�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -48,7 +48,7 @@ WFP リダイレクト レコードは、WFP が送信プロキシ接続を設�
 <td><p><strong>SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -89,13 +89,13 @@ WFP リダイレクト レコードは、WFP が送信プロキシ接続を設�
 
  
 
-この種の要求では、Winsock クライアントは IRP へのポインターとその完了ルーチンへのポインターを指定する必要があります。 以上のドライバーをクライアントに IRP を渡せるまたは IRP を割り当て、クライアントを選択できます。 完了ルーチンを指定する、クライアントが呼び出す必要があります[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)します。 詳細については、[Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)を参照してください。
+この種の要求では、Winsock クライアントは IRP へのポインターとその完了ルーチンへのポインターを指定する必要があります。 以上のドライバーをクライアントに IRP を渡せるまたは IRP を割り当て、クライアントを選択できます。 完了ルーチンを指定する、クライアントが呼び出す必要があります[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)します。 詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)します。
 
 Winsock クライアント WSK サブシステムによって IRP が完了するまで、割り当てられたバッファーを解放する必要があります。 WSK サブシステムには、IRP が完了すると、完了ルーチンを呼び出すことによって、クライアントを通知します。 WSK サブシステムによってそのバッファーへの参照がクライアントに渡される、*コンテキスト*完了ルーチンのパラメーター。 バッファーのサイズが格納されている*Irp -&gt;IoStatus.Information*します。
 
 チェックして、クライアントが IRP の状態を取得できます*Irp -&gt;IoStatus.Status*します。 *Irp -&gt;IoStatus.Status*に設定されます**状態\_成功**要求が成功した場合。 それが含まれます**状態\_整数\_OVERFLOW**、**状態\_いない\_が見つかりました**、**状態\_バッファー\_すぎます\_小さな**、または**状態\_アクセス\_DENIED**呼び出しが成功しなかった場合。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

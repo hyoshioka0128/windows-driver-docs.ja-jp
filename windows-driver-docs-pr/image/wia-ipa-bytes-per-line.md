@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e79195687a1199ec7bffd9336dd651e63127a6e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369558"
 ---
 # <a name="wiaipabytesperline"></a>WIA\_IPA\_バイト\_1 秒あたり\_行
 
@@ -44,7 +44,7 @@ Windows Vista ドライバーがこれらのプロパティを指定しない場
 
 Windows Vista アプリケーションのイメージのより正確な情報を取得するイメージ ヘッダー データを常に解析する必要があり、これらのプロパティから利用可能です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

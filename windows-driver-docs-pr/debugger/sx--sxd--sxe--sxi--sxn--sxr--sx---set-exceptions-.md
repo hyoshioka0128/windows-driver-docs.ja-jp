@@ -1,5 +1,5 @@
 ---
-title: sx, sxd、sxe、sxi、sxn、sxr、sx - (例外の設定)
+title: sx、sxd、sxe、sxi、sxn、sxr、sx- (例外の設定)
 description: Sx のコマンドは、デバッグ対象のアプリケーションで例外が発生した場合、または特定のイベントが発生したときに、デバッガーが実行されるアクションを制御します。
 ms.assetid: fdb5059f-e7d9-4e14-aa3d-030e72c30732
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: db9b92435bd60bde07fff905bb7af15337799f5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383004"
 ---
-# <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx, sxd、sxe、sxi、sxn、sxr、sx - (例外の設定)
+# <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx- (例外の設定)
 
 
 **Sx * * *\** コマンドは、アプリケーションをデバッグ中、または特定のイベントが発生したときに例外が発生したときに、デバッガーが実行されるアクションを制御します。
@@ -50,10 +50,10 @@ sxr
 現在の基数でのコマンドの処理、例外番号を指定します。
 
 <span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span> *イベント*   
-コマンドが機能するイベントを指定します。 これらのイベントは、短い省略名によって識別されます。 イベントの一覧は、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+コマンドが機能するイベントを指定します。 これらのイベントは、短い省略名によって識別されます。 イベントの一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
 <span id="______________"></span> **\\***   
-それ以外の場合に明示的に名前のないのすべての例外の影響を与える**sx**します。 明示的に名前付きの例外の一覧は、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+それ以外の場合に明示的に名前のないのすべての例外の影響を与える**sx**します。 明示的に名前付きの例外の一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -82,7 +82,7 @@ sxr
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断状態と処理の状態、すべてのイベント コードの説明については、すべてのイベントの既定の状態の一覧と、この状態を制御するその他の方法の詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+中断状態と処理の状態、すべてのイベント コードの説明については、すべてのイベントの既定の状態の一覧と、この状態を制御するその他の方法の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
 <a name="remarks"></a>注釈
 -------

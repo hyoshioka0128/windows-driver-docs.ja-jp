@@ -5,18 +5,18 @@ ms.assetid: 33C5C079-510F-4BD3-AEF1-F152E88E45C2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29295c3d39d4c87b1b0bc5a4cd0345d1bc8bca2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379125"
 ---
 # <a name="wmimofck-task"></a>Wmimofck タスク
 
 
 Windows Driver Kit (WDK) には、MSBuild を使用して、ドライバーをビルドするときに、wmimofck.exe ツールを実行できるようにの Wmimofck タスクが用意されています。
 
-Wmimofck ツールの使用方法の詳細については、[を使用して Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)を参照してください。
+Wmimofck ツールの使用方法の詳細については、次を参照してください。[を使用して Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
 
 MSBuild では、Wmimofck 項目を使用して、Wmimofck タスクのパラメーターを送信します。 Wmimofck の項目メタデータは、プロジェクト ファイルで Wmimofck 項目を使用してアクセスします。
 

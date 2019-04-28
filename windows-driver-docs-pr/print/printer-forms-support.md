@@ -1,6 +1,6 @@
 ---
-title: プリンタ フォームのサポート
-description: プリンタ フォームのサポート
+title: プリンター フォーム サポート
+description: プリンター フォーム サポート
 ms.assetid: 7525dc6c-7521-4a6b-923c-00b7e1c9db8c
 keywords:
 - プリンタ フォーム WDK
@@ -13,18 +13,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbc9a9ddeaf423da3069f0446c65277ee2dc16fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380682"
 ---
-# <a name="printer-forms-support"></a>プリンタ フォームのサポート
+# <a name="printer-forms-support"></a>プリンター フォーム サポート
 
 
 Microsoft のプリンター ドライバーはプリンターで特殊な形式および用紙サイズをサポートするカスタム フォームを追加できます。 システムのプリンター フォーム データベースにこれらのフォームを追加するには呼び出すことによって**AddForm**各新規フォーム用のプリンター ドライバーから。 Unidrv プリンター ドライバーでの他の形式を指定できます、 [GPD ファイル](introduction-to-gpd-files.md)プリンター ドライバー。
 
-フォームのデータベースにフォームを追加する方法の詳細については、[フォーム データベースへの追加フォーム](adding-forms-to-the-forms-database.md)を参照してください。
+フォームのデータベースにフォームを追加する方法の詳細については、次を参照してください。[フォーム データベースへの追加フォーム](adding-forms-to-the-forms-database.md)します。
 
 このセクションの内容:
 

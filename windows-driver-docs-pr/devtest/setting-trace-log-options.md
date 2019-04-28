@@ -1,6 +1,6 @@
 ---
-title: トレース ログ オプションの設定
-description: トレース ログ オプションの設定
+title: トレース ログのオプションの設定
+description: トレース ログのオプションの設定
 ms.assetid: 3790a3af-69bd-4ccc-a116-0df6312f378a
 keywords:
 - 概要メッセージ WDK traceview でをファイルします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ade6590e6fd373ae9d21d6f7f849ad15e2f0482
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378137"
 ---
-# <a name="setting-trace-log-options"></a>トレース ログ オプションの設定
+# <a name="setting-trace-log-options"></a>トレース ログのオプションの設定
 
 
 トレース ログを表示する場合は、リスティング ファイルまたは概要ファイルを作成することもできます。 これらのテキスト ファイルを表示し、ログ データを簡単に操作できます。 トレース ログのオプションを設定するには、次の手順を使用します。

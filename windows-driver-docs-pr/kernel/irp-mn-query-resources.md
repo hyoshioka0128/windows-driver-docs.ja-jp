@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_RESOURCES Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: e7f88927d772ed26d945456dfd46c6fe2f939af3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381420"
 ---
 # <a name="irpmnqueryresources"></a>IRP\_MN\_クエリ\_リソース
 
@@ -64,7 +64,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_任意
 
 ドライバーを呼び出すことができます[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)生と翻訳の両方のフォームで、デバイスのブート構成を取得します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

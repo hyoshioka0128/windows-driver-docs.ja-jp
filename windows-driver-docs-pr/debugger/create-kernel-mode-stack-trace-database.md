@@ -1,19 +1,19 @@
 ---
-title: カーネル モード スタック トレースのデータベースを作成します。
-description: カーネル モード スタック トレースのデータベースを作成します。
+title: Create kernel mode stack trace database
+description: Create kernel mode stack trace database
 ms.assetid: 0c1f94c0-ebc7-4e3c-8101-ba3cf830e7f8
 keywords:
 - カーネル モード スタック トレース データベース (グローバル フラグ) の作成します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0b92527797d311c111c96a104c3e89100c02892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374978"
 ---
-# <a name="create-kernel-mode-stack-trace-database"></a>カーネル モード スタック トレースのデータベースを作成します。
+# <a name="create-kernel-mode-stack-trace-database"></a>Create kernel mode stack trace database
 
 
 ## <span id="ddk_create_kernel_mode_stack_trace_database_dtools"></span><span id="DDK_CREATE_KERNEL_MODE_STACK_TRACE_DATABASE_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56531412"
 <td align="left"><p>FLG_KERNEL_STACK_TRACE_DB</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ</p></td>
 </tr>
 </tbody>

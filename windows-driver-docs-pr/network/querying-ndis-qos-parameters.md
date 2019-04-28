@@ -1,17 +1,17 @@
 ---
-title: クエリの NDIS QoS パラメーター
-description: クエリの NDIS QoS パラメーター
+title: NDIS QoS パラメーターのクエリ
+description: NDIS QoS パラメーターのクエリ
 ms.assetid: 875D39BA-D70D-4450-9F64-D08EAB54BDC2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cbf310d055dd8b48e91d7a204b98be4d472f02c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373126"
 ---
-# <a name="querying-ndis-qos-parameters"></a>クエリの NDIS QoS パラメーター
+# <a name="querying-ndis-qos-parameters"></a>NDIS QoS パラメーターのクエリ
 
 
 関連プロトコルとフィルター ドライバーは次の方法でネットワーク アダプターの NDIS サービスの品質 (QoS) パラメーターを照会できます。
@@ -24,7 +24,7 @@ ms.locfileid: "56536332"
 
  
 
-ローカル、リモート、および運用上の NDIS QoS パラメーターの詳細については、[NDIS QoS パラメーターの概要](overview-of-ndis-qos-parameters.md)を参照してください。
+ローカル、リモート、および運用上の NDIS QoS パラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](overview-of-ndis-qos-parameters.md)します。
 
 NDIS ミニポート ドライバーのこれらの OID 要求を処理し、内で要求された QoS パラメーターを返します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 NDIS は、次の方法でこれらの OID 要求を処理します。
 

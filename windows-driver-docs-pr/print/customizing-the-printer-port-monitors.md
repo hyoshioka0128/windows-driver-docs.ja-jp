@@ -1,6 +1,6 @@
 ---
-title: プリンタ ポート モニターをカスタマイズします。
-description: プリンタ ポート モニターをカスタマイズします。
+title: プリンター ポート モニターをカスタマイズする
+description: プリンター ポート モニターをカスタマイズする
 ms.assetid: e5d4166a-2593-43fd-b476-c54642e2d099
 keywords:
 - 組み込みの自動構成サポート WDK プリンター、プリンター ポート モニターをカスタマイズします。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07ac1ee03c461ea2a8931e5e827e3b113fb2c3e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373487"
 ---
-# <a name="customizing-the-printer-port-monitors"></a>プリンタ ポート モニターをカスタマイズします。
+# <a name="customizing-the-printer-port-monitors"></a>プリンター ポート モニターをカスタマイズする
 
 
 標準を上回る機能を備えた印刷デバイス用の新しいスキーマを定義する[双方向通信スキーマ](bidirectional-communication-schema.md)標準 TCP/IP またはに付属している Devices (WSD) ポート モニター用の Web サービスをカスタマイズします。Windows Vista の場合。 双方向の拡張ファイル、ドライバーを特定の新しいスキーマを定義する XML ファイルを作成する必要があります。 ドライバーがインストールされている場合、この拡張機能ファイルがインストールされます。 TCP/IP または WSD ポート モニターは、この拡張機能ファイルを識別する、モニターは、ファイルを読み込みし、追加 bidi スキーマを使用できます。

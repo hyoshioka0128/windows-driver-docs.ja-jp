@@ -1,6 +1,6 @@
 ---
-title: NT カーネル ロガーのトレース セッションを作成します。
-description: NT カーネル ロガーのトレース セッションを作成します。
+title: NT カーネル ロガー トレース セッションの作成
+description: NT カーネル ロガー トレース セッションの作成
 ms.assetid: 606156b9-8ad9-4510-9929-4f0e3b7a3134
 keywords:
 - WDK、NT Kernel Logger のセッションをトレースします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 977319c35e40e713e6cbe02cc4b569d1aeee0369
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380970"
 ---
-# <a name="creating-an-nt-kernel-logger-trace-session"></a>NT カーネル ロガーのトレース セッションを作成します。
+# <a name="creating-an-nt-kernel-logger-trace-session"></a>NT カーネル ロガー トレース セッションの作成
 
 ## <span id="ddk_create_a_real_time_nt_kernel_logger_trace_session_tools"></span><span id="DDK_CREATE_A_REAL_TIME_NT_KERNEL_LOGGER_TRACE_SESSION_TOOLS"></span>
 

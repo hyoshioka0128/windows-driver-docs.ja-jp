@@ -1,6 +1,6 @@
 ---
-title: セレクター プロパティ UVC ビデオ キャプチャします。
-description: セレクター プロパティ UVC ビデオ キャプチャします。
+title: UVC ビデオ キャプチャ セレクターのプロパティ
+description: UVC ビデオ キャプチャ セレクターのプロパティ
 ms.assetid: f3af81a1-5c9b-4af6-a931-5146ef187b36
 keywords:
 - UVC ビデオ キャプチャ セレクター プロパティ WDK ビデオ キャプチャ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de060a62003b62d34d3fade7788cd96c58b15a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380624"
 ---
-# <a name="uvc-video-capture-selector-properties"></a>セレクター プロパティ UVC ビデオ キャプチャします。
+# <a name="uvc-video-capture-selector-properties"></a>UVC ビデオ キャプチャ セレクターのプロパティ
 
 
 次の表に、プロパティの一部である、 [PROPSETID\_しました\_セレクター](https://msdn.microsoft.com/library/windows/hardware/ff567810)プロパティ セット。

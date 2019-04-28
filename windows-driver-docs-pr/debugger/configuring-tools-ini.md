@@ -1,6 +1,6 @@
 ---
-title: Tools.ini を構成します。
-description: Tools.ini を構成します。
+title: tools.ini の構成
+description: tools.ini の構成
 ms.assetid: 4f0d9f48-99d5-4180-b25d-70fd8de6f20e
 keywords:
 - tools.ini ファイル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82c07d43844c941446d93c6646615dc42e84e63d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375062"
 ---
-# <a name="configuring-toolsini"></a>Tools.ini を構成します。
+# <a name="configuring-toolsini"></a>tools.ini の構成
 
 
 ## <span id="ddk_configuring_tools_ini_dbg"></span><span id="DDK_CONFIGURING_TOOLS_INI_DBG"></span>
@@ -56,17 +56,17 @@ Tools.ini エントリは、次の表に表示されます。
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IniFile:</strong> <em>ファイル</em></p></td>
-<td align="left"><p>か KD、CDB が起動時にコマンドを受け取ることのスクリプト ファイルの名前を指定します。 既定では、現在のディレクトリで ntsd.ini ファイルです。 コマンド ライン コマンドは<strong>cf</strong>します。詳細については、<a href="using-script-files.md" data-raw-source="[Using Script Files](using-script-files.md)">スクリプト ファイルを使用する</a>を参照してください。</p></td>
+<td align="left"><p>か KD、CDB が起動時にコマンドを受け取ることのスクリプト ファイルの名前を指定します。 既定では、現在のディレクトリで ntsd.ini ファイルです。 コマンド ライン コマンドは<strong>cf</strong>します。詳細については、次を参照してください。<a href="using-script-files.md" data-raw-source="[Using Script Files](using-script-files.md)">スクリプト ファイルを使用する</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>LazyLoad:</strong> <em>フラグ</em></p></td>
 <td align="left"><p><strong>TRUE</strong>または<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、CDB シンボルの遅延読み込みを実行します。 必要になるまでは、シンボルが読み込まれなかったします。 コマンド ライン コマンドは<strong>-s</strong>します。</p>
-<p>詳細、および他の方法でこのオプションを設定では、<a href="deferred-symbol-loading.md" data-raw-source="[Deferred Symbol Loading](deferred-symbol-loading.md)">シンボルの読み込みの遅延</a>を参照してください。</p></td>
+<p>詳細、および他の方法でこのオプションを設定では、次を参照してください。<a href="deferred-symbol-loading.md" data-raw-source="[Deferred Symbol Loading](deferred-symbol-loading.md)">シンボルの読み込みの遅延</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>SetDll:</strong> <em>ファイル名</em></p></td>
 <td align="left"><p>拡張 DLL を設定します。 .Dll ファイル名の拡張子を省略する必要があります。 既定では、userexts.dll です。 コマンド ライン コマンドは<strong>-</strong>します。</p>
-<p>詳細、およびこの既定の設定の他のメソッドでは、<a href="loading-debugger-extension-dlls.md" data-raw-source="[Loading Debugger Extension DLLs](loading-debugger-extension-dlls.md)">デバッガー拡張 Dll の読み込み</a>を参照してください。</p></td>
+<p>詳細、およびこの既定の設定の他のメソッドでは、次を参照してください。<a href="loading-debugger-extension-dlls.md" data-raw-source="[Loading Debugger Extension DLLs](loading-debugger-extension-dlls.md)">デバッガー拡張 Dll の読み込み</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>StopFirst:</strong> <em>フラグ</em></p></td>
@@ -83,7 +83,7 @@ Tools.ini エントリは、次の表に表示されます。
 <td align="left"><p>応答と、指定した例外またはイベントの処理のステータスは、デバッガーを設定します。</p>
 <p>例外とイベントは、次の方法で指定できます。</p>
 <p></p>
-<strong>*</strong>:既定の例外<em>n</em>:例外<em>n</em> (10 進数) <em>0xn</em>:例外<em>0xn</em> (その他) (16 進)。イベント コード
+<strong>*</strong>[ ] :既定の例外<em>n</em>:例外<em>n</em> (10 進数) <em>0xn</em>:例外<em>0xn</em> (その他) (16 進)。イベント コード
 <p>参照してください<a href="controlling-exceptions-and-events.md" data-raw-source="[Controlling Exceptions and Events](controlling-exceptions-and-events.md)">を制御する例外とイベント</a>このプロセスの詳細と、これらの設定を制御するための他のメソッド。</p></td>
 </tr>
 <tr class="even">
@@ -96,11 +96,11 @@ Tools.ini エントリは、次の表に表示されます。
 </tr>
 <tr class="even">
 <td align="left"><p><strong>srcopt:</strong> <em>options</em></p></td>
-<td align="left"><p>ソースのソースの表示とプログラムをステップ実行オプションを制御する行のオプションを設定します。 詳細については、 <strong><a href="l---l---set-source-options-.md" data-raw-source="[l+, l- (Set Source Options)](l---l---set-source-options-.md)">l +、l - (ソース オプションの設定)</a></strong>を参照してください。</p></td>
+<td align="left"><p>ソースのソースの表示とプログラムをステップ実行オプションを制御する行のオプションを設定します。 詳細については、次を参照してください。  <strong><a href="l---l---set-source-options-.md" data-raw-source="[l+, l- (Set Source Options)](l---l---set-source-options-.md)">l +、l - (ソース オプションの設定)</a></strong>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>srcpath:</strong> <em>directory</em></p></td>
-<td align="left"><p>ソース ファイルの検索パスを設定します。 詳細については、 <strong><a href="-srcpath---lsrcpath--set-source-path-.md" data-raw-source="[.srcpath, .lsrcpath (Set Source Path)](-srcpath---lsrcpath--set-source-path-.md)">.srcpath、.lsrcpath (ソース パスの設定)</a></strong>を参照してください。</p></td>
+<td align="left"><p>ソース ファイルの検索パスを設定します。 詳細については、次を参照してください。  <strong><a href="-srcpath---lsrcpath--set-source-path-.md" data-raw-source="[.srcpath, .lsrcpath (Set Source Path)](-srcpath---lsrcpath--set-source-path-.md)">.srcpath、.lsrcpath (ソース パスの設定)</a></strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>enable_unicode:</strong> <em>flag</em></p></td>

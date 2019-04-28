@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_ACTION_FRAME_RESPONSE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ff8624775cbd9e950a0967bbe68897dcdcad20f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380172"
 ---
 # <a name="wditlvp2pactionframeresponseparameters"></a>WDI\_TLV\_P2P\_アクション\_フレーム\_応答\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_アクション\_フレーム\_応答\_パラメーターは、Wi
 ## <a name="values"></a>値
 
 
-| 種類                                                                    | 説明                                                                                                                          |
+| 型                                                                    | 説明                                                                                                                          |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_P2P\_アクション\_フレーム\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926086) | 送信する応答のフレームの型。                                                                                               |
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)                       | ターゲットのピア Wi-Fi Direct デバイスのデバイスのアドレス。                                                                           |

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PM_CAPABILITIES (0x42) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a7653b1d697a67f5ce28ed4243ee8de286139d1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379800"
 ---
 # <a name="wditlvpmcapabilities-0x42"></a>WDI\_TLV\_PM\_機能 (0x42)
 
@@ -137,7 +137,7 @@ WDI\_TLV\_PM\_機能は、電源管理機能を含む TLV します。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

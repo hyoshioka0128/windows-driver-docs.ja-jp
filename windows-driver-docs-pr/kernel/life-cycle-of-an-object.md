@@ -20,11 +20,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ee77d2900138b800722496dd6c4cc3128f6f295
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381366"
 ---
 # <a name="life-cycle-of-an-object"></a>オブジェクトのライフ サイクル
 
@@ -40,7 +40,7 @@ ms.locfileid: "56581294"
 
 ドライバーは、オブジェクト マネージャーが、正確な参照カウントのすべてのオブジェクトを操作することを確認する必要があります。 途中でリリースされているオブジェクトには、システムがクラッシュする可能性があります。 参照カウントが誤って高オブジェクトは解放されません。
 
-ハンドルまたはポインターのいずれかのオブジェクトを参照できます。 だけでなく、参照カウントは、オブジェクト マネージャーは、オブジェクトを開いているハンドルの数を保持します。 ルーチンはハンドルを開いて、それぞれは、オブジェクトの参照カウントとオブジェクトのハンドル数の両方を 1 つずつ増加します。 このようなルーチンを呼び出すたびに対応する呼び出しと照合する必要があります[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。 詳細については、[オブジェクトは処理](object-handles.md)を参照してください。
+ハンドルまたはポインターのいずれかのオブジェクトを参照できます。 だけでなく、参照カウントは、オブジェクト マネージャーは、オブジェクトを開いているハンドルの数を保持します。 ルーチンはハンドルを開いて、それぞれは、オブジェクトの参照カウントとオブジェクトのハンドル数の両方を 1 つずつ増加します。 このようなルーチンを呼び出すたびに対応する呼び出しと照合する必要があります[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。 詳細については、次を参照してください。[オブジェクトは処理](object-handles.md)します。
 
 カーネル モードでは、オブジェクトへのポインターでオブジェクトを参照できます。 など、オブジェクトにポインターを返すルーチン[ **IoGetAttachedDeviceReference**](https://msdn.microsoft.com/library/windows/hardware/ff549145)、参照カウントを 1 ずつ増加します。 ドライバーが完了すると、ポインターを使用して呼び出す必要があります[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)をいずれかによって、参照カウントを減らします。
 
@@ -72,7 +72,7 @@ ms.locfileid: "56581294"
 
 限りそのハンドルの数が 0 以外の場合、一時オブジェクトを名前でアクセスできます。 ハンドルの数をデクリメント 0、オブジェクトの名前には、オブジェクト マネージャーの名前空間から削除されるとします。 参照カウントが 0 より大きい限り、このようなオブジェクトはまだポインターによってアクセスできます。 存在する限り、永続的なオブジェクトを名前でアクセスできます。
 
-オブジェクトにできる永続的な作成時に、OBJ を指定することによって\_で永続的な属性、 [**オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)オブジェクトの構造体。 詳細については、[ **InitializeObjectAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff547804)を参照してください。
+オブジェクトにできる永続的な作成時に、OBJ を指定することによって\_で永続的な属性、 [**オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)オブジェクトの構造体。 詳細については、次を参照してください。 [ **InitializeObjectAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff547804)します。
 
 永続的なオブジェクトを一時的にするために、使用、 [ **ZwMakeTemporaryObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566477)ルーチン。 このルーチンは、オブジェクトを使用してが自動的に削除します。 (開いているハンドル オブジェクトがない場合は、オブジェクトの名前は直ちに削除オブジェクト マネージャーの名前空間。 オブジェクト自体は、参照カウントがゼロになるまでです。)
 

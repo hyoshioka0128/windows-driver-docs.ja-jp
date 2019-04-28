@@ -1,6 +1,6 @@
 ---
-title: AVStream でコントロールのミュー テックスをフィルター処理します。
-description: AVStream でコントロールのミュー テックスをフィルター処理します。
+title: AVStream のフィルター制御ミューテックス
+description: AVStream のフィルター制御ミューテックス
 ms.assetid: 402795a0-e567-4e7e-a7d8-b2ce29ffb8fd
 keywords:
 - コントロールのミュー テックス WDK AVStream をフィルター処理します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06a6af77bfa218d18fc6dab43c4f5c9b1d342d84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376106"
 ---
-# <a name="filter-control-mutex-in-avstream"></a>AVStream でコントロールのミュー テックスをフィルター処理します。
+# <a name="filter-control-mutex-in-avstream"></a>AVStream のフィルター制御ミューテックス
 
 
 

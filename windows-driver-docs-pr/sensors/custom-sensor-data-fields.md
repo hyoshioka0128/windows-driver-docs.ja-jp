@@ -1,17 +1,17 @@
 ---
-title: カスタムのセンサー データ フィールド
+title: カスタム センサー データ フィールド
 description: このトピックでは、カスタム センサーで使用できるデータ フィールドに関する情報を提供します。
 ms.assetid: 8034B185-8A1B-43D9-9FFC-02E85284008A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c5c42b552042e6987361dbef58657f2fd3881719
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377855"
 ---
-# <a name="custom-sensor-data-fields"></a>カスタムのセンサー データ フィールド
+# <a name="custom-sensor-data-fields"></a>カスタム センサー データ フィールド
 
 
 このトピックでは、カスタム センサーで使用できるデータ フィールドに関する情報を提供します。

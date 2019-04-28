@@ -9,11 +9,11 @@ keywords:
 ms.date: 03/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c0b3f92c2864a6d855d545934d7d35439d1653ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381913"
 ---
 # <a name="x64-architecture"></a>x64 アーキテクチャ
 

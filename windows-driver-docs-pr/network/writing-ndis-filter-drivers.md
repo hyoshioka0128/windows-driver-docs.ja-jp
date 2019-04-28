@@ -1,6 +1,6 @@
 ---
-title: NDIS フィルター ドライバーの記述
-description: NDIS フィルター ドライバーの記述
+title: NDIS フィルター ドライバーの作成
+description: NDIS フィルター ドライバーの作成
 ms.assetid: c98c4bc5-e2fe-45b6-b0fa-7f594ad42041
 keywords:
 - フィルター ドライバー WDK ネットワーク、書き込み
@@ -9,19 +9,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 682d1963a35e6565f99f833c6435394d3aeb6b22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379778"
 ---
-# <a name="writing-ndis-filter-drivers"></a>NDIS フィルター ドライバーの記述
+# <a name="writing-ndis-filter-drivers"></a>NDIS フィルター ドライバーの作成
 
 
 
 
 
-フィルター ドライバーを作成する前に、NDIS ミニポートとプロトコル ドライバーについてお読みください。 ミニポート ドライバーの詳細については、[書き込み NDIS ミニポート ドライバー](writing-ndis-miniport-drivers.md)を参照してください。 プロトコル ドライバーの詳細については、[書き込み NDIS プロトコル ドライバー](writing-ndis-protocol-drivers.md)を参照してください。
+フィルター ドライバーを作成する前に、NDIS ミニポートとプロトコル ドライバーについてお読みください。 ミニポート ドライバーの詳細については、次を参照してください。[書き込み NDIS ミニポート ドライバー](writing-ndis-miniport-drivers.md)します。 プロトコル ドライバーの詳細については、次を参照してください。[書き込み NDIS プロトコル ドライバー](writing-ndis-protocol-drivers.md)します。
 
 次のトピックでは、フィルター ドライバーを記述する方法についてを説明します。
 

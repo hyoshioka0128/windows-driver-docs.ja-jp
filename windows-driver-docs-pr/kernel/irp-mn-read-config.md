@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_READ_CONFIG カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bb3a95a97e2de5a3c139b7485f9f930da15ec02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381412"
 ---
 # <a name="irpmnreadconfig"></a>IRP\_MN\_読み取り\_構成
 
@@ -147,7 +147,7 @@ PCI\_*XXX*値 Wdm.h で定義されます。 Pc カード\_*XXX*値 Ntddpcm.h �
 
 ディスパッチから構成領域を読み取るなど\_レベル、ドライバーが呼び出せる**IRP\_MN\_クエリ\_インターフェイス**を取得するドライバーの初期化中に、 [**BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707)親バス ドライバーからのインターフェイス。 ドライバーは、IRQL パッシブから IRP のクエリを送信\_レベル。 以降、IRQL のディスパッチにコードから\_レベルなど、インターフェイスで返される適切なルーチンを呼び出すと、ドライバー、 **Interface.GetBusData**ルーチン。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

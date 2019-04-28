@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_DEVICE_CONTROL
-description: IRP\_MJ\_デバイス\_コントロール
+description: IRP\_MJ\_DEVICE\_CONTROL
 ms.assetid: 7a7f7372-ed69-42c1-95e2-b5a593d77d22
 keywords:
 - IRP_MJ_DEVICE_CONTROL インストール可能なファイル システム ドライバー
@@ -13,13 +13,13 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 221de9718e477bca9a5bde35cee8d23045e4ebd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379704"
 ---
-# <a name="irpmjdevicecontrol"></a>IRP\_MJ\_デバイス\_コントロール
+# <a name="irpmjdevicecontrol"></a>IRP\_MJ\_DEVICE\_CONTROL
 
 
 ## <a name="when-sent"></a>送信時

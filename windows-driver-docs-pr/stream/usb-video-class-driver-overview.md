@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a4595ae0a06228deb9872bbf14bb37d9cc068f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382547"
 ---
 # <a name="usb-video-class-driver-overview"></a>USB ビデオ クラス ドライバーの概要
 
@@ -35,7 +35,7 @@ USB ビデオ クラス モデルでベンダーを書き込みませんドラ�
 
  
 
-Windows 8 以降、H.264 ビデオ コーデック (エンコーダー/デコーダー) はサポートされています。 H.264 は、ネットワーク帯域幅とストレージ領域の使用を減らすのビデオの効率的な圧縮技法を許可するオープン規格です。 これは、指定されたビット レートのビデオ品質の向上につながります。 詳細については、[USB H.264 ビデオをカメラ サポート](usb-h-264-video-cameras-support.md)を参照してください。 参照することも、 [H.264 の USB ビデオ クラスに提案された拡張機能の Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233063)します。
+Windows 8 以降、H.264 ビデオ コーデック (エンコーダー/デコーダー) はサポートされています。 H.264 は、ネットワーク帯域幅とストレージ領域の使用を減らすのビデオの効率的な圧縮技法を許可するオープン規格です。 これは、指定されたビット レートのビデオ品質の向上につながります。 詳細については、次を参照してください。 [USB H.264 ビデオをカメラ サポート](usb-h-264-video-cameras-support.md)します。 参照することも、 [H.264 の USB ビデオ クラスに提案された拡張機能の Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233063)します。
 
 Usbvideo.sys ドライバーを使用するいくつかの利点を次に示します。
 
@@ -82,7 +82,7 @@ UVC 実装をテストするには、次のツールを使用できます。
 -   KsStudio
 -   USBView
 
-これらのツールの詳細については、[AVStream テストおよびデバッグ](avstream-testing-and-debugging.md)を参照してください。
+これらのツールの詳細については、次を参照してください。 [AVStream テストおよびデバッグ](avstream-testing-and-debugging.md)します。
 
 USB ビデオ クラス 1.1 の仕様の圧縮設定をダウンロードすることができます、[デバイス クラスのページ](https://go.microsoft.com/fwlink/p/?linkid=517016)USB Implementers Forum web サイト。
 

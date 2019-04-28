@@ -1,6 +1,6 @@
 ---
 title: 下のエッジ中間ドライバーのデータ受信を接続指向
-description: 接続指向の下端と中間のドライバーのデータの受信
+description: 接続指向の下端を含む中間ドライバーでのデータの受信
 ms.assetid: c14b4e8a-cfa2-4771-83b2-aa20fda79d39
 keywords:
 - 中間ドライバー WDK ネットワー キング、受信操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7cf5b282e06a4c0fb512ff0debc58559f4aeac3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383176"
 ---
-# <a name="receiving-data-in-an-intermediate-driver-with-a-connection-oriented-lower-edge"></a>接続指向の下端と中間のドライバーのデータの受信
+# <a name="receiving-data-in-an-intermediate-driver-with-a-connection-oriented-lower-edge"></a>接続指向の下端を含む中間ドライバーでのデータの受信
 
 
 
@@ -24,7 +24,7 @@ NDIS を呼び出して、中間のドライバーの場合は、中間ドライ
 
 基になる接続指向のミニポート ドライバーを呼び出すことでネットワーク データを示します[ **NdisMCoIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563561)、1 つまたは複数のリンク リストを渡して[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
 
-接続指向の下端と中間のドライバーのデータの受信についての詳細については、[Connection-Oriented 操作](connection-oriented-operations.md)を参照してください。
+接続指向の下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。 [Connection-Oriented 操作](connection-oriented-operations.md)します。
 
  
 

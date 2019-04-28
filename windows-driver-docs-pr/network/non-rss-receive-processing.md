@@ -1,6 +1,6 @@
 ---
-title: RSS 以外の受信処理
-description: RSS 以外の受信処理
+title: 非 RSS 受信処理
+description: 非 RSS 受信処理
 ms.assetid: 9fe262c3-9ce5-4625-8d29-ff7dc4ccb90a
 keywords:
 - 受信側のスケーリング WDK ネットワーク、非 RSS の受信処理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a438d2a11f122be219c7433e04a7629b4c622d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368977"
 ---
-# <a name="non-rss-receive-processing"></a>RSS 以外の受信処理
+# <a name="non-rss-receive-processing"></a>非 RSS 受信処理
 
 
 
@@ -47,7 +47,7 @@ ms.locfileid: "56527473"
 
 5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)現在の CPU に (DPC) の関数。
 
-6.  DPC ビルドでは、すべての受信バッファーの記述子が表示され、ドライバー スタック上のデータを示します。 詳細については、[ネットワーク データの受信](receiving-network-data.md)を参照してください。
+6.  DPC ビルドでは、すべての受信バッファーの記述子が表示され、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。[ネットワーク データの受信](receiving-network-data.md)します。
 
     複数の接続の多くのバッファーがあり、多くの処理を完了する可能性があります。 その他の Cpu では、後続の割り込みサイクルに関連付けられている受信したデータを処理できます。 特定のネットワーク接続の処理、送信は、別の CPU にも実行できます。
 

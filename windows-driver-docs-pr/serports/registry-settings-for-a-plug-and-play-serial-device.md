@@ -1,6 +1,6 @@
 ---
-title: プラグ アンド プレイ シリアル デバイス用のレジストリ設定
-description: プラグ アンド プレイ シリアル デバイス用のレジストリ設定
+title: PnP シリアル デバイス用のレジストリ設定
+description: PnP シリアル デバイス用のレジストリ設定
 ms.assetid: 57bd090a-20fe-41c6-b730-0479f6ae0982
 keywords:
 - シリアル ドライバー WDK、プラグ アンド プレイ デバイス
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e60723543d8165daf522242b232913250b8ea986
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382551"
 ---
-# <a name="registry-settings-for-a-plug-and-play-serial-device"></a>プラグ アンド プレイ シリアル デバイス用のレジストリ設定
+# <a name="registry-settings-for-a-plug-and-play-serial-device"></a>PnP シリアル デバイス用のレジストリ設定
 
 
 
@@ -61,7 +61,7 @@ Fifo を使用するシリアルを強制するかどうかを示すブール �
 シリアル デバイスのハードウェア割り込み状態のレジスタの内容を反転するかどうかを示すブール フラグを指定します。 場合**MaskInverted** 0 以外の場合、割り込み状態のレジスタが反転されます。 それ以外の場合、割り込み状態レジスタではありませんが反転します。 既定値**MaskInverted** 0x00000000 します。
 
 <a href="" id="serialskipexternalnaming--reg-dword-"></a>**SerialSkipExternalNaming** (REG\_DWORD)  
-シリアルとしてデバイスを構成するかどうかを示すブール フラグを指定します、 [COM ポート](configuration-of-com-ports.md)します。 場合**SerialSkipExternalNaming**設定は、0x00000000 に、シリアルは COM ポートとして、デバイスを構成します。 それ以外の場合、シリアルがいないデバイスとして構成する COM ポート。 既定値**SerialSkipExternalNaming** 0x00000000 します。 COM ポートとして、シリアルがデバイスを構成する方法の詳細については、[外部名前付けの COM ポート](external-naming-of-com-ports.md)を参照してください。
+シリアルとしてデバイスを構成するかどうかを示すブール フラグを指定します、 [COM ポート](configuration-of-com-ports.md)します。 場合**SerialSkipExternalNaming**設定は、0x00000000 に、シリアルは COM ポートとして、デバイスを構成します。 それ以外の場合、シリアルがいないデバイスとして構成する COM ポート。 既定値**SerialSkipExternalNaming** 0x00000000 します。 COM ポートとして、シリアルがデバイスを構成する方法の詳細については、次を参照してください。[外部名前付けの COM ポート](external-naming-of-com-ports.md)します。
 
 <a href="" id="serialrelinquishpowerpolicy--reg-dword-"></a>**SerialRelinquishPowerPolicy** (REG\_DWORD)  
 シリアルがシリアル デバイス スタックの電源ポリシーの所有者であるかどうかを示すブール型のフラグを指定します。 場合**SerialRelinquishPowerPolicy**は 0、シリアル電源ポリシー所有者は、シリアルはいない電源ポリシーの所有者。 既定値**SerialRelinquishPowerPolicy** 0x00000000 します。

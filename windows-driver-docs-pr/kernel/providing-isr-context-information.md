@@ -1,6 +1,6 @@
 ---
-title: ISR コンテキスト情報を提供します。
-description: ISR コンテキスト情報を提供します。
+title: ISR コンテキスト情報の提供
+description: ISR コンテキスト情報の提供
 ms.assetid: 216c3111-3638-4410-a720-ff3d65a1eadd
 keywords:
 - 割り込みサービス ルーチン WDK カーネル、コンテキスト情報
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e9720effb5636681dae6881c775d6e55c6178d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382654"
 ---
-# <a name="providing-isr-context-information"></a>ISR コンテキスト情報を提供します。
+# <a name="providing-isr-context-information"></a>ISR コンテキスト情報の提供
 
 
 

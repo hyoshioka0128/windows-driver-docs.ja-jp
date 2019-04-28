@@ -1,6 +1,6 @@
 ---
-title: 完全に型指定されたキャスト バック バッファー
-description: 完全に型指定されたキャスト バック バッファー
+title: 完全に型指定されたバック バッファー キャスト
+description: 完全に型指定されたバック バッファー キャスト
 ms.assetid: d34f95a4-e380-4bfb-9909-0938f63174be
 keywords:
 - キャスト バック バッファーを完全に型指定された Direct3D バージョン 10.1 WDK Windows 7 表示
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62600b1c0f7616139f859aff503cfef3c309328c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378000"
 ---
-# <a name="fully-typed-back-buffers-casting"></a>完全に型指定されたキャスト バック バッファー
+# <a name="fully-typed-back-buffers-casting"></a>完全に型指定されたバック バッファー キャスト
 
 
 このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。

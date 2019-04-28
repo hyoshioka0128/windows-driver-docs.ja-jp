@@ -1,24 +1,24 @@
 ---
-title: カット アンド ペースト テキスト
-description: カット アンド ペースト テキスト
+title: テキストの切り取りと貼り付け
+description: テキストの切り取りと貼り付け
 ms.assetid: efc62bee-ba35-4bff-b88b-3b287ededc38
 keywords:
 - テキストの切り取り
 - テキストを貼り付ける
 - テキストをコピーします。
 - デバッグ情報のウィンドウ、カット アンド ペースト テキスト
-- テキスト
+- text
 - テキストの編集
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bff0bfa7a3e076a9cb311bb8f91b8b0a404324b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374443"
 ---
-# <a name="cutting-and-pasting-text"></a>カット アンド ペースト テキスト
+# <a name="cutting-and-pasting-text"></a>テキストの切り取りと貼り付け
 
 
 ## <span id="ddk_cutting_and_pasting_text_dbg"></span><span id="DDK_CUTTING_AND_PASTING_TEXT_DBG"></span>

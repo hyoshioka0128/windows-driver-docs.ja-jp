@@ -1,6 +1,6 @@
 ---
-title: クロスバー プロパティ
-description: クロスバー プロパティ
+title: クロスバーのプロパティ
+description: クロスバーのプロパティ
 ms.assetid: 41e46d45-90f8-4b0c-ab27-1fec4202b711
 keywords:
 - クロスバー プロパティ WDK ビデオのキャプチャします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a1cbf2e50f7127c05801abf08ed14a4d8b2bb4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374163"
 ---
-# <a name="crossbar-properties"></a>クロスバー プロパティ
+# <a name="crossbar-properties"></a>クロスバーのプロパティ
 
 
 [PROPSETID\_しました\_クロスバー](https://msdn.microsoft.com/library/windows/hardware/ff567804)出力ピンを (対応するオーディオ、存在する場合) ビデオ入力ピンからデータのルーティングに関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_しました\_クロスバー プロパティ セット。

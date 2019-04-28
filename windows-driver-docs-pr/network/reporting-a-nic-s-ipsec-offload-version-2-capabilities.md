@@ -1,19 +1,19 @@
 ---
-title: NIC の IPsec オフロード バージョン 2 の機能の報告
-description: NIC の IPsec オフロード バージョン 2 の機能の報告
+title: NIC の IPsec Offload Version 2 の機能のレポート
+description: NIC の IPsec Offload Version 2 の機能のレポート
 ms.assetid: 0ce5c42d-5c0c-4dfa-8a9f-a80c8924201d
 keywords:
 - IPsecOV2 WDK TCP/IP トランスポート、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 024c6181c96cd3a775b8e72c3b987303aee4fa3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380878"
 ---
-# <a name="reporting-a-nics-ipsec-offload-version-2-capabilities"></a>NIC の IPsec オフロード バージョン 2 の機能の報告
+# <a name="reporting-a-nics-ipsec-offload-version-2-capabilities"></a>NIC の IPsec Offload Version 2 の機能のレポート
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 

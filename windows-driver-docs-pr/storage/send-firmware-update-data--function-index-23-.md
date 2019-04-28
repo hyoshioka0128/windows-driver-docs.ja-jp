@@ -1,17 +1,17 @@
 ---
-title: ファームウェアの更新データ (関数インデックス 23) の送信します。
+title: ファームウェア更新データの送信 (関数インデックス 23)
 description: この関数は、デバイスにファームウェアのデータを送信します。
 ms.assetid: 3F28C89B-040A-407B-B780-96D6767DC5C7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 03fa586e262c45e0e1f80c141bd3fb7732de7827
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372357"
 ---
-# <a name="send-firmware-update-data-function-index-23"></a>ファームウェアの更新データ (関数インデックス 23) の送信します。
+# <a name="send-firmware-update-data-function-index-23"></a>ファームウェア更新データの送信 (関数インデックス 23)
 
 
 この関数は、デバイスにファームウェアのデータを送信します。
@@ -90,7 +90,7 @@ ms.locfileid: "56551855"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

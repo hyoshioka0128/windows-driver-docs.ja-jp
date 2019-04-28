@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a862b13160c7f079c6b82584d01d60b30e6c075
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378108"
 ---
 # <a name="introduction-to-dma-in-windows-driver-framework"></a>Windows Driver framework での DMA の概要
 
@@ -34,7 +34,7 @@ DMA のフレームワークのサポートは、で構成されます。
 
 フレームワークには、両方の単一パケットとスキャッター/ギャザー DMA 転送がサポートされています。 一般的なバッファーの使用もサポートしています。
 
-Windows 8 以降を実行している SoC ベースのプラットフォームでは、フレームワークには、単一パケットのシステム モード DMA の転送がサポートされています。 詳細については、[をサポートしているシステム モード DMA](supporting-system-mode-dma.md)を参照してください。
+Windows 8 以降を実行している SoC ベースのプラットフォームでは、フレームワークには、単一パケットのシステム モード DMA の転送がサポートされています。 詳細については、次を参照してください。[をサポートしているシステム モード DMA](supporting-system-mode-dma.md)します。
 
 フレームワークは、PC ベースのプラットフォームでサポート システム モードの DMA 転送されません。
 

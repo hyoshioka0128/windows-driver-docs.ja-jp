@@ -5,11 +5,11 @@ ms.assetid: 788E2A1C-FBE9-40CD-A3EB-14A2DE266A2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a785fcf2b460884877c39e84d93877b171bf7028
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380516"
 ---
 # <a name="ws-discovery-mobile-printing-support"></a>WS-Discovery モバイル印刷サポート
 
@@ -100,7 +100,7 @@ Windows 10 Mobile からの印刷をサポートするデバイスは次の例�
 
  
 
-WS 探索メタデータの交換にデバイス カテゴリを追加する方法の詳細については、、 [Pnp-x 対応仕様](https://go.microsoft.com/fwlink/p/?linkid=509797)を参照してください。
+WS 探索メタデータの交換にデバイス カテゴリを追加する方法の詳細については、次を参照してください。、 [Pnp-x 対応仕様](https://go.microsoft.com/fwlink/p/?linkid=509797)します。
 
  
 

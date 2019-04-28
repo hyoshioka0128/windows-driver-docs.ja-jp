@@ -1,6 +1,6 @@
 ---
-title: ストレージ ミニポート ドライバーの WMI される Srb の処理
-description: ストレージ ミニポート ドライバーの WMI される Srb の処理
+title: 記憶域ミニポート ドライバーでの WMI SRB の処理
+description: 記憶域ミニポート ドライバーでの WMI SRB の処理
 ms.assetid: 92b78611-7e6f-4d77-9133-635df96584f0
 keywords:
 - ストレージ ミニポート ドライバー WDK、WMI される Srb
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fde44f7cd85051cd993054daa3bb3629508af880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383108"
 ---
-# <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>ストレージ ミニポート ドライバーの WMI される Srb の処理
+# <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>記憶域ミニポート ドライバーでの WMI SRB の処理
 
 
 ## <span id="ddk_handling_wmi_srbs_in_storage_miniport_drivers_kg"></span><span id="DDK_HANDLING_WMI_SRBS_IN_STORAGE_MINIPORT_DRIVERS_KG"></span>
@@ -29,7 +29,7 @@ WMI される Srb を処理するために、記憶域ミニポート ドライ�
 
 1.  デザインし、システム提供の MOF ファイルで定義されていない WMI スキーマの部分を説明する管理オブジェクト フォーマット (MOF) ファイルをコンパイルします。
 
-    MOF 構文については、[WMI データとイベント ブロックの MOF 構文](https://msdn.microsoft.com/library/windows/hardware/ff556400)を参照してください。
+    MOF 構文については、次を参照してください。 [WMI データとイベント ブロックの MOF 構文](https://msdn.microsoft.com/library/windows/hardware/ff556400)します。
 
 2.  ミニポート ドライバー コールバック ルーチンを実装します。
 

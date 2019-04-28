@@ -12,11 +12,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 429a2f8164504b133bb7e02beb60fff5ff012413
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371712"
 ---
 # <a name="debugformatxxx"></a>デバッグ\_形式\_XXX
 
@@ -190,7 +190,7 @@ DEBUG_FORMAT_XXX のビット フラグは、クラッシュ ダンプ ファイ
 
 
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

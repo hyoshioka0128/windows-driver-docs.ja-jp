@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ENABLE_WAKE_EVENTS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 749d4dd22b9446b23dd8674d9f33f56eb4224492
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380866"
 ---
 # <a name="wditlvenablewakeevents"></a>WDI\_TLV\_を有効にする\_WAKE\_イベント
 
@@ -31,7 +31,7 @@ WDI\_TLV\_を有効にする\_WAKE\_イベントが有効になっているウ�
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                          |
+| 型   | 説明                                                                                                                                                          |
 |--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32 | 記載されているフラグを使用して有効になっている wake on LAN パケットのパターンを指定します[ **NDIS\_PM\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566759)します。EnabledWoLPacketPatterns します。 |
 | UINT32 | 有効なプロトコルの負荷を軽減に記載されているフラグを使用して指定[ **NDIS\_PM\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566759)します。EnabledProtocolOffloads します。            |
@@ -40,7 +40,7 @@ WDI\_TLV\_を有効にする\_WAKE\_イベントが有効になっているウ�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

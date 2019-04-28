@@ -1,17 +1,17 @@
 ---
-title: 特別なプールの要求をキャンセルします。
-description: 特別なプールの要求をキャンセルします。
+title: 特別なプールの要求の取り消し
+description: 特別なプールの要求の取り消し
 ms.assetid: fb18cb15-33ee-4e6d-856e-70c4ffbf8383
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d19940f4cc708eb9421d8641aa75554ba92c273
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375147"
 ---
-# <a name="canceling-requests-for-special-pool"></a>特別なプールの要求をキャンセルします。
+# <a name="canceling-requests-for-special-pool"></a>特別なプールの要求の取り消し
 
 
 ## <span id="ddk_canceling_requests_for_special_pool_dtools"></span><span id="DDK_CANCELING_REQUESTS_FOR_SPECIAL_POOL_DTOOLS"></span>
@@ -19,7 +19,7 @@ ms.locfileid: "56531229"
 
 GFlags を使用すると、GFlags を使用して、要求が行われた場合は、特別なプールから割り当ての要求をキャンセルします。 Driver Verifier を使用して作成された特別なプールの要求をキャンセルするのに GFlags を使用することはできません。
 
-Windows Vista および以降のバージョンの Windows では、特別なプールの要求をキャンセルするのにコマンドラインを使用することもできます。 詳しくは、[ **GFlags コマンド**](gflags-commands.md)を参照してください。
+Windows Vista および以降のバージョンの Windows では、特別なプールの要求をキャンセルするのにコマンドラインを使用することもできます。 詳しくは、次を参照してください。 [ **GFlags コマンド**](gflags-commands.md)します。
 
 **特別なプールの要求をキャンセルするには**
 

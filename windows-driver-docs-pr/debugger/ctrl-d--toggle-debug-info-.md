@@ -1,5 +1,5 @@
 ---
-title: CTRL + D (デバッグ情報の表示/非表示)
+title: Ctrl + D (デバッグ情報の切り替え)
 description: CTRL + D キーは、オンとオフをデバッガー内部情報のフローを切り替えます。 これは、デバッガーが正しく通信できていない場合、通信を再開に使用されます。
 ms.assetid: fcc5d597-6a3f-4d6c-82f9-3624efb4f434
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3907900b3bdc971293c9aae752738d2c6445952d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374964"
 ---
-# <a name="ctrld-toggle-debug-info"></a>CTRL + D (デバッグ情報の表示/非表示)
+# <a name="ctrld-toggle-debug-info"></a>Ctrl + D (デバッグ情報の切り替え)
 
 
 CTRL + D キーは、オンとオフをデバッガー内部情報のフローを切り替えます。 これは、デバッガーが正しく通信できていない場合、ターゲット コンピューターとホスト コンピューター間の通信を再開に使用されます。

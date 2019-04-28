@@ -1,15 +1,15 @@
 ---
-title: デバッガーのデータ モデルの C++ の追加インターフェイス
+title: Debugger Data Model C++ のその他のインターフェイス
 description: このトピックでは、メタデータ、概念とオブジェクトの列挙など、デバッガーの C++ のデータ モデルに関連付けられている追加のインターフェイスについて説明します。
 ms.date: 10/05/2018
 ms.openlocfilehash: 3c0a9f9f11accd8d78a90b110cfae38d77257412
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374962"
 ---
-# <a name="debugger-data-model-c-additional-interfaces"></a>デバッガーのデータ モデルの C++ の追加インターフェイス
+# <a name="debugger-data-model-c-additional-interfaces"></a>Debugger Data Model C++ のその他のインターフェイス
 
 このトピックでは、メタデータ、概念とオブジェクトの列挙など、デバッガーの C++ のデータ モデルに関連付けられているいくつか追加のインターフェイスについて説明します。
 

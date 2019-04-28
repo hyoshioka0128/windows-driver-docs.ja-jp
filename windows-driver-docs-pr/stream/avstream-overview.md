@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd544857b853011b524d23d4bd1eff40d2f06cba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379748"
 ---
 # <a name="avstream-overview"></a>AVStream の概要
 
@@ -35,7 +35,7 @@ AVStream は、ベンダーに重要な利点を提供します。
 
 -   ストリーミング オーディオとビデオの両方のミニドライバーのクラス モデルの統一されたカーネルを提供します。
 
--   ユーザー モードのプラグインを記述するベンダーのサポートを提供します。これらは、プロパティの値にアクセスするメソッドを提供する COM インターフェイスです。 ミニドライバーの既存のバイナリを変更することがなく、プラグインを行うことができます。 詳細については、[カーネル ストリーミング プロキシ プラグイン](kernel-streaming-proxy-plug-ins-design-guide.md)を参照してください。
+-   ユーザー モードのプラグインを記述するベンダーのサポートを提供します。これらは、プロパティの値にアクセスするメソッドを提供する COM インターフェイスです。 ミニドライバーの既存のバイナリを変更することがなく、プラグインを行うことができます。 詳細については、次を参照してください。[カーネル ストリーミング プロキシ プラグイン](kernel-streaming-proxy-plug-ins-design-guide.md)します。
 
 AVStream ドライバー モデルで次の図に示すように、ベンダーは Microsoft から提供されたクラスのドライバーと対話するミニドライバーを指定します。
 

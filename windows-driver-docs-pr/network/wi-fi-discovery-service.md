@@ -4,11 +4,11 @@ description: Wi-Fi 探索サービス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 008b4f87b21fc8da11193247b952dd0598e924dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382864"
 ---
 # <a name="wi-fi-discovery-service"></a>Wi-Fi 探索サービス
 
@@ -79,7 +79,7 @@ WiFiProvider.exe を実行するには、次の構文を使用します。
 WifiProviderExe –DataFile filename -ProviderId GUID -ServiceEndpoint URL -CustomTransformer filename.dll [-MappingFile filename.xml] [-CertFile filename.pfx] [-CertPassword password] [-CertSubject name]
 ```
 
-例:
+次に、例を示します。
 
 ```cmd
 WifiProviderExe -DataFile "file.txt" -ProviderId 00000000-0000-0000-0000-000000000000 -ServiceEndpoint "https://submitwifiservice.windowsphone.com/v1/SubmitHotspots" -CustomTransformer "transformer.dll"
@@ -93,10 +93,10 @@ WifiProviderExe -DataFile "file.txt" -ProviderId 00000000-0000-0000-0000-0000000
 | ProviderId | 必須。 Microsoft によって割り当てられたプロバイダーの ID (GUID)。 |
 | サービス エンドポイント | 必須。 ホット スポットのデータのアップロード先となる検出サービス サーバーの URL。 たとえば、 https://wifi.windowsphone.com/v1/submithotspots と記述します。 |
 | CustomerTransformer | 必須。 トランスフォーマーを格納するアセンブリの名前。 | 
-| MappingFile | 任意。 プロバイダーのホット スポットのデータを探索サービスで必要な形式にマップするマッピング ファイル。 |
-| CertFile | 任意。 認証に証明書を含む実際の pfx ファイルへのポインター。 証明書のパスワードのパラメーター (**CertPassword**) この認証方法を使用する場合に指定する必要があります。 |
+| MappingFile | (省略可能)。 プロバイダーのホット スポットのデータを探索サービスで必要な形式にマップするマッピング ファイル。 |
+| CertFile | (省略可能)。 認証に証明書を含む実際の pfx ファイルへのポインター。 証明書のパスワードのパラメーター (**CertPassword**) この認証方法を使用する場合に指定する必要があります。 |
 | CertPassword | 任意。 指定された証明書にパスワード**CertFile**します。 |
-| CertSubject | 任意。 証明書のサブジェクト名。 現在のあるユーザーの My 証明書ストア。 この認証メカニズムを使用する場合**CertFile**と**CertPassword**は必要ありません。 ただし、証明書の秘密キーを作成し、アクセス制御リストでは、キーの証明書を使用するアカウントへのアクセス権を付与することが必要です。 |
+| CertSubject | (省略可能)。 証明書のサブジェクト名。 現在のあるユーザーの My 証明書ストア。 この認証メカニズムを使用する場合**CertFile**と**CertPassword**は必要ありません。 ただし、証明書の秘密キーを作成し、アクセス制御リストでは、キーの証明書を使用するアカウントへのアクセス権を付与することが必要です。 |
 
 #### <a name="transformers"></a>トランスフォーマー
 
@@ -122,7 +122,7 @@ WifiProviderExe -DataFile "file.txt" -ProviderId 00000000-0000-0000-0000-0000000
 * SSID
 * 範囲
 * Address
-* 市区町村
+* City
 * StateOrProvince
 * PostalCode
 * CountryOrRegion

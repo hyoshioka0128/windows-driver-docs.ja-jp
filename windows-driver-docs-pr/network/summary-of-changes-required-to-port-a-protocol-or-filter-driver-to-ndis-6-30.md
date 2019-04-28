@@ -5,11 +5,11 @@ ms.assetid: 1C6CB2E1-C129-4F3B-AF7D-357580BEE7F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfab77acb90427560709423227f8076ea5adfdd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376947"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-630"></a>プロトコルまたはフィルター ドライバーを NDIS 6.30 に移植するために必要な変更の概要
 
@@ -34,7 +34,7 @@ NDIS 6.30 をサポートする NDIS 6.x プロトコルまたはフィルター
 -   [NDIS 6.30 で電源管理の機能強化](power-management-enhancements-in-ndis-6-30.md)
 -   [PnP イベントの処理とプロトコル ドライバーで電源管理イベント](handling-pnp-events-and-power-management-events-in-a-protocol-driver.md)
 
-NDIS 6.30 機能の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
+NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
 
 ## <a name="general-porting-requirements-for-filter-drivers"></a>[全般] のフィルター ドライバーの要件の移植
 
@@ -46,7 +46,7 @@ NDIS 6.30 機能の詳細については、[NDIS 6.30 概要](introduction-to-nd
 -   [**NET\_PNP\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff568751)
 -   [OID\_PNP\_設定\_電源](https://msdn.microsoft.com/library/windows/hardware/ff569780)
 
-NDIS 6.30 機能の詳細については、[NDIS 6.30 概要](introduction-to-ndis-6-30.md)を参照してください。
+NDIS 6.30 機能の詳細については、次を参照してください。 [NDIS 6.30 概要](introduction-to-ndis-6-30.md)します。
 
  
 

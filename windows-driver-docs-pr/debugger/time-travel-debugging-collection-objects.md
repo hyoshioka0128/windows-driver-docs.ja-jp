@@ -4,11 +4,11 @@ description: このセクションでは、タイム トラベルのデバッグ
 ms.date: 09/25/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfe3301d049ad5b63e77b2da117332b2d3b680d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379149"
 ---
 > [!NOTE]
 > このトピックの情報は暫定的です。 ドキュメントの今後のリリースでは、最新の情報が行われます。 
@@ -63,7 +63,7 @@ ms.locfileid: "56549430"
 
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
 

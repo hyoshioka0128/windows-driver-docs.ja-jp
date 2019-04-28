@@ -1,6 +1,6 @@
 ---
-title: 取得し、Stream の状態を設定
-description: 取得し、Stream の状態を設定
+title: ストリーム状態の取得と設定
+description: ストリーム状態の取得と設定
 ms.assetid: e2fde528-d0cf-4ffe-945a-8672b76db61f
 keywords:
 - フィルター ドライバー WDK Avcstrm.sys ストリーミング ストリームを状態します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 914adb45fbc1fbcc7564abad60c63adb49a403f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372390"
 ---
-# <a name="get-and-set-the-stream-state"></a>取得し、Stream の状態を設定
+# <a name="get-and-set-the-stream-state"></a>ストリーム状態の取得と設定
 
 
 

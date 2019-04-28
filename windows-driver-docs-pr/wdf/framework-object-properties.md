@@ -1,6 +1,6 @@
 ---
-title: Framework オブジェクトのプロパティ
-description: Framework オブジェクトのプロパティ
+title: フレームワーク オブジェクトのプロパティ
+description: フレームワーク オブジェクトのプロパティ
 ms.assetid: d95a7f51-fe22-4cd6-8c46-6d571f7d9169
 keywords:
 - framework オブジェクト WDK KMDF、プロパティ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf8e9879929a8f08325ce6dbaa688c3c9920fd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370909"
 ---
-# <a name="framework-object-properties"></a>Framework オブジェクトのプロパティ
+# <a name="framework-object-properties"></a>フレームワーク オブジェクトのプロパティ
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンド (MB) の設計ガイド
-description: モバイル ブロード バンド (MB) の設計ガイド
+title: モバイル ブロード バンド (MB) 設計ガイド
+description: モバイル ブロード バンド (MB) 設計ガイド
 ms.assetid: d5db6b69-c5a9-41d5-88c9-7c4d1e7c9c03
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b44d8743cab7957f652e0421e1f18fa8f7ccfc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375708"
 ---
-# <a name="mobile-broadband-mb-design-guide"></a>モバイル ブロード バンド (MB) の設計ガイド
+# <a name="mobile-broadband-mb-design-guide"></a>モバイル ブロード バンド (MB) 設計ガイド
 
 
 モバイル ブロード バンド (MB) の設計ガイドのセクションでは、操作およびモバイル ブロード バンドのミニポート ドライバーを実行する必要がありますのタスクについて説明します。

@@ -1,17 +1,17 @@
 ---
-title: OPM および表示モード
-description: OPM および表示モード
+title: OPM と表示モード
+description: OPM と表示モード
 ms.assetid: d412a32b-7afd-4f48-9b8e-7cf66533349f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8afd9ce98d10af898f3bba37ebf7675f62b64e48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379857"
 ---
-# <a name="opm-and-display-modes"></a>OPM および表示モード
+# <a name="opm-and-display-modes"></a>OPM と表示モード
 
 
 ディスプレイのミニポート ドライバーには、現在使用されている表示モードに関係なく、保護された出力に関連付けられている物理コネクタでサポートされているすべての保護の種類を報告する必要があります。 呼び出しを受信すると、ディスプレイのミニポート ドライバーがサポートされている保護の種類を報告、 [ **DxgkDdiOPMGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559725)または[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720) DXGKMDT で関数を\_OPM\_取得\_サポートされている\_保護\_で設定の種類**guidInformation**のメンバー、 [ **DXGKMDT\_OPM\_取得\_情報\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff560868)構造体。 サポートの取得の詳細については、保護の種類を参照してください[の保護されている出力に情報の取得](retrieving-information-about-a-protected-output.md)または[保護されている出力に関する COPP と互換性のある情報を取得する](retrieving-copp-compatible-information-about-a-protected-output.md)します。

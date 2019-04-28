@@ -1,16 +1,16 @@
 ---
-Description: Windows support for USB Type-C connector and tasks for OEMs who are building USB Type-C systems.
-title: USB タイプ-c コネクタの Windows のサポート
+Description: Windows は、USB 型-c コネクタおよびタスク C-USB 型システムを構築する Oem のサポートします。
+title: USB Type-C コネクタに対する Windows サポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 313e6caf41852998ca277011a9abe13d956d0a1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376463"
 ---
-# <a name="windows-support-for-usb-type-c-connectors"></a>USB タイプ-c コネクタの Windows のサポート
+# <a name="windows-support-for-usb-type-c-connectors"></a>USB Type-C コネクタに対する Windows サポート
 
 このトピックでは、USB 型-C# のコネクタの使用の Windows 10 システムを構築し、ビルボードのデバイスを充電高速化、電源の配信、デュアル ロール、代替モード、およびエラーの通知を許可する OS 機能を活用する Oem 向けです。
 
@@ -64,19 +64,19 @@ USB タイプ-c コネクタは、元に戻すことと対称です。
 |---|---|
 |PD ステート マシンを実装していません |UcmTcpciCx クラスの拡張機能に、クライアント ドライバーを記述します。 <p>[USB タイプ-c ポート コント ローラー ドライバーを作成します。](write-a-usb-type-c-port-controller-driver.md)</p>|
 |実装 PD ハードウェアまたはファームウェア内のマシンの状態にあり、ACPI 経由での USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) のサポート| インボックス ドライバー、UcmUcsiCx.sys と UcmUcsiAcpiClient.sys、Microsoft を読み込みます。 <p>参照してください[UCSI ドライバー](ucsi.md)します。</p>|
-|ハードウェアまたはファームウェアが、いずれかの実装 PD ステート マシンは UCSI をサポートしていないか、サポート UCSI では、ACPI 以外のトランスポートが必要です。|UcmCx クラスの拡張機能用のクライアント ドライバーを記述します。<p>[USB タイプ-c コネクタのドライバーを作成します。](bring-up-a-usb-type-c-connector-on-a-windows-system.md)</p><p>[型 C ポリシー マネージャーの USB クライアント ドライバーを作成します。](policy-manager-client.md)</p>|
-|実装 UCSI ACPI 以外のトランスポートが必要です。|UcmUcsiCx クラスの拡張機能に、クライアント ドライバーを記述します。<p>使用[こちらのサンプル テンプレート](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)ハードウェアを使用するトランスポートに基づいてに変更します。</P><p>[UCSI クライアント ドライバーを作成します。](write-a-ucsi-driver.md)</P>|
+|ハードウェアまたはファームウェアが、いずれかの実装 PD ステート マシンは UCSI をサポートしていないか、サポート UCSI では、ACPI 以外のトランスポートが必要です。|UcmCx クラスの拡張機能用のクライアント ドライバーを記述します。<p>[USB タイプ-c コネクタのドライバーを作成します。](bring-up-a-usb-type-c-connector-on-a-windows-system.md)</p><p>[Write a USB Type-C Policy Manager client driver (USB Type-C ポリシー マネージャー クライアント ドライバーの作成)](policy-manager-client.md)</p>|
+|実装 UCSI ACPI 以外のトランスポートが必要です。|UcmUcsiCx クラスの拡張機能に、クライアント ドライバーを記述します。<p>使用[こちらのサンプル テンプレート](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)ハードウェアを使用するトランスポートに基づいてに変更します。</P><p>[Write a UCSI client driver (UCSI クライアント ドライバーの作成)](write-a-ucsi-driver.md)</P>|
 
 
 ## <a name="bring-up-drivers"></a>ドライバーを起動します。
 
 - USB 機能ドライバー bring アップは USB 機能モードをサポートするために必要な。 マイクロ B の USB コネクタ用に USB 機能ドライバーが既に実装されている場合について説明します、適切なコネクタ USB 型-C# で作業を続行する USB 機能ドライバーを ACPI テーブル。 
 
-    詳細については、[USB 機能ドライバーの作成について](developing-windows-drivers-for-usb-function-controllers.md)を参照してください。
+    詳細については、次を参照してください。 [USB 機能ドライバーの作成について](developing-windows-drivers-for-usb-function-controllers.md)します。
 
 - USB の役割の交代 bring ドライバー - アップはのみホストと関数の両方の役割を想定するロールのデュアル コント ローラーを持つデバイスに必要です。 ロールの切り替えの USB ドライバーの表示時に、Microsoft のインボックス USB 役割の交代ドライバーを有効にする ACPI テーブルを変更する必要があります。 
 
-    詳細については、、[ロール切り替えの USB ドライバーを取り込むためのガイダンス](dual-role-controller-bringup-for-a-usb-type-c-system.md)を参照してください。
+    詳細については、次を参照してください。、[ロール切り替えの USB ドライバーを取り込むためのガイダンス](dual-role-controller-bringup-for-a-usb-type-c-system.md)します。
 
 - USB コネクタ マネージャー ドライバーは、Windows システムの種類 C の USB ポートを管理する必要があります。 USB コネクタ マネージャー ドライバー用の bring アップ タスクは、型-C# の USB ポートの選択したドライバーによって異なります。Microsoft のインボックス UCSI (UcmUcsiCx.sys および UcmUcsiAcpiClient.sys) ドライバー、UcmCx クライアント ドライバーでは、または UcmTcpciCx クライアント ドライバー。 詳細については、C-USB 型システムに最適なソリューションを選択する方法を説明する前のセクションでリンクを参照してください。
 
@@ -92,7 +92,7 @@ USB タイプ-c コネクタは、元に戻すことと対称です。
 ## <a name="see-also"></a>関連項目
 
 
--   [FAQ：Windows システム上の C-USB 型コネクタ](faq--usb-type-c-connector-on-a-windows-system.md)
+-   [よく寄せられる質問:Windows システム上の C-USB 型コネクタ](faq--usb-type-c-connector-on-a-windows-system.md)
 -   [UI でのメッセージをトラブルシューティングします。](https://go.microsoft.com/fwlink/?LinkId=526894) 
 
  

@@ -1,6 +1,6 @@
 ---
-title: PoolMon を使用してカーネル モードのメモリ リークを検出するには
-description: PoolMon を使用してカーネル モードのメモリ リークを検出するには
+title: PoolMon を使用したカーネルモード メモリ リークの検出
+description: PoolMon を使用したカーネルモード メモリ リークの検出
 ms.assetid: 383b5d9a-3e99-4dc5-bce9-bd44f2ef1dc0
 keywords:
 - メモリ リークが発生する場合、カーネル モードの PoolMon
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 848b8e11bcd03bfa26161ff814dd034b3ffe8951
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381019"
 ---
-# <a name="using-poolmon-to-find-a-kernel-mode-memory-leak"></a>PoolMon を使用してカーネル モードのメモリ リークを検出するには
+# <a name="using-poolmon-to-find-a-kernel-mode-memory-leak"></a>PoolMon を使用したカーネルモード メモリ リークの検出
 
 
 カーネル モードのメモリ リークがあると思われる場合、どのプール タグがリークに関連付けを判断する最も簡単な方法は PoolMon ツールを使用するは。
@@ -24,7 +24,7 @@ PoolMon (Poolmon.exe) のモニターは、プール タグ名でメモリ使用
 
 ### <a name="span-idenablepooltaggingwindows2000andwindowsxpspanspan-idenablepooltaggingwindows2000andwindowsxpspanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>プール (Windows 2000 および Windows XP) のタグ付けを有効にします。
 
-Windows 2000 および Windows XP では、GFlags を使用してプールのタグ付けを有効にする必要があります。 Windows ツールをデバッグには GFlags が含まれます。 開始 GFlags、選択、**システム レジストリ** タブで、チェック、**プールのタグ付けを有効にする**ボックスをクリックして**適用**します。 この設定を有効にする Windows を再起動する必要があります。 詳細については、[GFlags](gflags.md)を参照してください。
+Windows 2000 および Windows XP では、GFlags を使用してプールのタグ付けを有効にする必要があります。 Windows ツールをデバッグには GFlags が含まれます。 開始 GFlags、選択、**システム レジストリ** タブで、チェック、**プールのタグ付けを有効にする**ボックスをクリックして**適用**します。 この設定を有効にする Windows を再起動する必要があります。 詳細については、次を参照してください。 [GFlags](gflags.md)します。
 
 Windows Server 2003 および Windows の以降のバージョンでは、プールのタグ付けは常に有効です。
 

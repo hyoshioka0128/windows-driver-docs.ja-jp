@@ -1,6 +1,6 @@
 ---
-title: 新しいドッキング ステーションを作成します。
-description: 新しいドッキング ステーションを作成します。
+title: 新しいドックの作成
+description: 新しいドックの作成
 ms.assetid: 99cba4f9-4025-4684-920b-43c7147b5385
 keywords:
 - 新しいを作成する、ドッキング ウィンドウをドッキングします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d2a56a9a42fa1b9f0dec63ff1799fd2f26facb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375470"
 ---
-# <a name="creating-a-new-dock"></a>新しいドッキング ステーションを作成します。
+# <a name="creating-a-new-dock"></a>新しいドックの作成
 
 
 ## <span id="ddk_creating_new_docks_dbg"></span><span id="DDK_CREATING_NEW_DOCKS_DBG"></span>

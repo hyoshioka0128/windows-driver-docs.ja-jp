@@ -1,6 +1,6 @@
 ---
-title: システム提供平行ドライバーの機能
-description: システム提供平行ドライバーの機能
+title: システム提供のパラレル ドライバーの機能
+description: システム提供のパラレル ドライバーの機能
 ms.assetid: 6d579a88-4608-4333-9789-e10c562fc644
 keywords:
 - システムから提供された並列ドライバー WDK、システム提供平行ドライバーについて
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46d98a154681c101233543d06cc2dd1194f1fa88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373545"
 ---
-# <a name="features-of-system-supplied-parallel-drivers"></a>システム提供平行ドライバーの機能
+# <a name="features-of-system-supplied-parallel-drivers"></a>システム提供のパラレル ドライバーの機能
 
 
 
@@ -86,9 +86,9 @@ Windows XP 以降では、Parclass が削除され、Parport パラレル ポー
 
 パラレル ポートおよびパラレル ポートに接続されたデバイスが動作する方法の詳細についてを参照してください。
 
-[パラレル ポートやデバイスの概要](introduction-to-parallel-ports-and-devices.md)
+[パラレル ポートとデバイスの概要](introduction-to-parallel-ports-and-devices.md)
 
-[並列ドライバーのベンダーから提供されました。](vendor-supplied-parallel-drivers.md)
+[ベンダー提供のパラレル ドライバー](vendor-supplied-parallel-drivers.md)
 
 [システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
 

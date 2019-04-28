@@ -1,22 +1,22 @@
 ---
-title: ドライバー パッケージからデバイス メタデータ パッケージをインストールします。
-description: ドライバー パッケージからデバイス メタデータ パッケージをインストールします。
+title: ドライバー パッケージからのデバイス メタデータ パッケージのインストール
+description: ドライバー パッケージからのデバイス メタデータ パッケージのインストール
 ms.assetid: fd140583-d4f9-4817-8edc-5bc3c6a2a1d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98af154c1b33bbc1f14dcad87642c9f6b6ba30b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369480"
 ---
-# <a name="installing-device-metadata-packages-through-a-driver-package"></a>ドライバー パッケージからデバイス メタデータ パッケージをインストールします。
+# <a name="installing-device-metadata-packages-through-a-driver-package"></a>ドライバー パッケージからのデバイス メタデータ パッケージのインストール
 
 
 A[ドライバー パッケージ](driver-packages.md)をコピーしてデバイス メタデータ パッケージをインストールすることができます、[デバイス メタデータ ストア](device-metadata-store.md)します。 これを使用して実現[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)内、 [ **DestinationDirs** ](inf-destinationdirs-section.md)と[ **DDInstall** ](inf-ddinstall-section.md)のセクションでは、 [INF ファイル](inf-files.md)ドライバー パッケージ。
 
-**注**WMIS サーバーからドライバー パッケージを通じての代わりに、デバイス メタデータ パッケージをインストールすることを強くお勧めします。 詳細については、[WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)を参照してください。
+**注**WMIS サーバーからドライバー パッケージを通じての代わりに、デバイス メタデータ パッケージをインストールすることを強くお勧めします。 詳細については、次を参照してください。 [WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)します。
 
 
 
@@ -31,14 +31,14 @@ A[ドライバー パッケージ](driver-packages.md)をコピーしてデバ�
 
 
 
-詳細については、[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)を参照してください。
+詳細については、次を参照してください。[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)します。
 
 
 -   ドライバー パッケージ内のすべてのメタデータ パッケージを適切なロケール固有フォルダーにコピーする必要があります、[デバイス メタデータ ストア](device-metadata-store.md)します。 これは、ロケールに動的な変更をサポートするために必要です。
 
 -   ありますフラグ (0x00000800) が必要です、 [ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)デバイス メタデータ パッケージを指定します。 このフラグは、デバイス メタデータ パッケージのバイナリの整合性が保持され、ドライバー パッケージがインストールされている場合は、デバイス メタデータ パッケージの圧縮解除を回避できますが保証されます。
 
--   必要があります最初にデジタル署名デバイス メタデータ パッケージ、ドライバー パッケージにデジタル署名する前にします。 デジタル署名の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+-   必要があります最初にデジタル署名デバイス メタデータ パッケージ、ドライバー パッケージにデジタル署名する前にします。 デジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
 -   メタデータ パッケージのインストールのインストール中に、エラーをすべてでは、ドライバーのインストールが失敗すると、します。
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0f7c58b1abeaf677c79cd6a10a825bd4cfb3c0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378308"
 ---
 # <a name="receive-side-scaling"></a>Receive Side Scaling
 
@@ -24,9 +24,9 @@ ms.locfileid: "56582623"
 
 受信側が scaling (RSS) マルチプロセッサ システムのネットワーク データの処理に関連するシステムのパフォーマンスが向上します。
 
-RSS の概要については、[Receive Side Scaling の概要](introduction-to-receive-side-scaling.md)を参照してください。
+RSS の概要については、次を参照してください。 [Receive Side Scaling の概要](introduction-to-receive-side-scaling.md)します。
 
-Windows 10 バージョン 1709 以降 RSS バージョン 2 (RSSv2) は、ミニポート ドライバーを使用できます。 RSSv2 あたり VPort の拡散を提供することでは、基本の RSS モデルが向上します。 詳細については、[受信側のスケーリングのバージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)を参照してください。 RSSv2 は、Windows 10 バージョン 1709 でのみプレビューです。
+Windows 10 バージョン 1709 以降 RSS バージョン 2 (RSSv2) は、ミニポート ドライバーを使用できます。 RSSv2 あたり VPort の拡散を提供することでは、基本の RSS モデルが向上します。 詳細については、次を参照してください。[受信側のスケーリングのバージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)します。 RSSv2 は、Windows 10 バージョン 1709 でのみプレビューです。
 
 次のトピックでは、ハードウェアとソフトウェアのサポートのさまざまなレベルで使用できる RSS 実装について説明します。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PD_QUERY_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c35c2c408bd89f804ebaafb2c80fa933dc3ded9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375656"
 ---
 # <a name="oidpdquerycurrentconfig"></a>OID\_PD\_クエリ\_現在\_構成
 

@@ -1,6 +1,6 @@
 ---
-title: 網掛けの要件
-description: 網掛けの要件
+title: シェーディング要件
+description: シェーディング要件
 ms.assetid: 6c4f3dee-a955-4140-8b64-e9289094f530
 keywords:
 - WDK Direct3D 網掛け
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5d4c8dfbcc11e7d0f6d8e1cd5cec489dcc8767a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382338"
 ---
-# <a name="shading-requirements"></a>網掛けの要件
+# <a name="shading-requirements"></a>シェーディング要件
 
 
 ## <span id="ddk_shading_requirements_gg"></span><span id="DDK_SHADING_REQUIREMENTS_GG"></span>

@@ -1,25 +1,25 @@
 ---
-title: スレッドとプロセスを制御します。
-description: スレッドとプロセスを制御します。
+title: スレッドとプロセスの制御
+description: スレッドとプロセスの制御
 ms.assetid: 6182ca34-ee5e-47e9-82fe-29266397e3a8
 keywords:
 - エンジン API、スレッドおよびプロセスをデバッガーします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab447354970c82ed874c4317e10fe5a569d9882d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375491"
 ---
-# <a name="controlling-threads-and-processes"></a>スレッドとプロセスを制御します。
+# <a name="controlling-threads-and-processes"></a>スレッドとプロセスの制御
 
 
 ## <span id="ddk_threads_and_processes_dbx"></span><span id="DDK_THREADS_AND_PROCESSES_DBX"></span>
 
 
-スレッドと、デバッガーのエンジン プロセスの概要については、[スレッドとプロセス](threads-and-processes.md)を参照してください。
+スレッドと、デバッガーのエンジン プロセスの概要については、次を参照してください。[スレッドとプロセス](threads-and-processes.md)します。
 
 イベントの発生時にイベント スレッドとプロセスのイベントは、スレッドとプロセスに設定されます (オペレーティング システムまたは仮想) で、イベントが発生しました。 使用して検出できます[ **GetEventThread** ](https://msdn.microsoft.com/library/windows/hardware/ff546646)と[ **GetEventProcess**](https://msdn.microsoft.com/library/windows/hardware/ff546640)、それぞれします。
 
@@ -93,7 +93,7 @@ ms.locfileid: "56529420"
 
 プロセスが作成されるたびに、ライブ ユーザー モードのデバッグまたはターゲットの終了では、作成プロセスと終了プロセスのデバッグ イベントが生成されます。 これらのイベントが発生するへの呼び出し、 [ **IDebugEventCallbacks::CreateProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff550697)と[ **IDebugEventCallbacks::ExitProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff550728)コールバック メソッド。
 
-イベントの詳細については、[監視イベント](monitoring-events.md)を参照してください。
+イベントの詳細については、次を参照してください。[監視イベント](monitoring-events.md)します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 

@@ -1,6 +1,6 @@
 ---
-title: メモリのセグメントへの仮想アドレスのマッピング
-description: メモリのセグメントへの仮想アドレスのマッピング
+title: メモリ セグメントへの仮想アドレスのマッピング
+description: メモリ セグメントへの仮想アドレスのマッピング
 ms.assetid: 3ff64e33-eceb-4603-a3d9-11cb2f7dac85
 keywords:
 - メモリのセグメントの WDK 表示、仮想アドレスのマッピング
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 053df494f4be2bcc4d1c1a0e4015a074d7697cfc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379084"
 ---
-# <a name="mapping-virtual-addresses-to-a-memory-segment"></a>メモリのセグメントへの仮想アドレスのマッピング
+# <a name="mapping-virtual-addresses-to-a-memory-segment"></a>メモリ セグメントへの仮想アドレスのマッピング
 
 
 ## <span id="ddk_mapping_virtual_addresses_to_a_memory_segment_gg"></span><span id="DDK_MAPPING_VIRTUAL_ADDRESSES_TO_A_MEMORY_SEGMENT_GG"></span>
@@ -42,7 +42,7 @@ CPU の仮想アドレス セグメントに割り当てると、セグメント
 
 ユーザー モード ドライバーの呼び出しを表示するときに、以前に作成した割り当てのコンテンツがシステム メモリ内ではかどうか、 [ **pfnLockCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568914)メモリ、ビデオ メモリ マネージャーに直接アクセスを要求する関数割り当てにアクセスするのには、ユーザー モードのディスプレイ ドライバーとディスプレイのミニポート ドライバーには、システム メモリ バッファーは関係しないを返します。 したがって、割り当てのコンテンツは、ディスプレイのミニポート ドライバーによっては変更されません、によってアンスウィズル形式のままになります。 つまり、ビデオ メモリから CPU アクセスの割り当てが削除されると、ときにディスプレイのミニポート ドライバーする必要がありますすべて割り当て結果のシステム メモリのビットは、アプリケーションで直接アクセスできるようにします。
 
-アクセスしてコンテンツを同じ仮想アプリケーションを続行するため、システム メモリを割り当てのコンテンツを転送する場合は、割り当てが直接のアプリケーション アクセス用に現在マップに関連付けられている GPU リソースが削除されると、アドレスが、別の物理メディア。 転送を設定するには、ビデオ メモリ マネージャーは、ディスプレイのミニポート ドライバーを呼び出します[ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587)ページング バッファーを作成する関数と GPU のスケジューラは、ドライバーのを呼び出す[。 **DxgkDdiSubmitCommand** ](https://msdn.microsoft.com/library/windows/hardware/ff560790)関数 GPU 実行単位にページング バッファーをキューに登録します。 ハードウェア固有の転送のコマンドはページング バッファーです。 詳細については、[コマンド バッファーを送信する](submitting-a-command-buffer.md)を参照してください。 ビデオ メモリ マネージャーにより、システム メモリへのビデオへの移行がアプリケーションに表示されないことです。 ただし、ドライバーことを確認します、バイト、バイトの順序付けの割り当て、割り当てが削除されるときに正確に PCI aperture を通じて割り当ての順序と一致します。
+アクセスしてコンテンツを同じ仮想アプリケーションを続行するため、システム メモリを割り当てのコンテンツを転送する場合は、割り当てが直接のアプリケーション アクセス用に現在マップに関連付けられている GPU リソースが削除されると、アドレスが、別の物理メディア。 転送を設定するには、ビデオ メモリ マネージャーは、ディスプレイのミニポート ドライバーを呼び出します[ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587)ページング バッファーを作成する関数と GPU のスケジューラは、ドライバーのを呼び出す[。 **DxgkDdiSubmitCommand** ](https://msdn.microsoft.com/library/windows/hardware/ff560790)関数 GPU 実行単位にページング バッファーをキューに登録します。 ハードウェア固有の転送のコマンドはページング バッファーです。 詳細については、次を参照してください。[コマンド バッファーを送信する](submitting-a-command-buffer.md)します。 ビデオ メモリ マネージャーにより、システム メモリへのビデオへの移行がアプリケーションに表示されないことです。 ただし、ドライバーことを確認します、バイト、バイトの順序付けの割り当て、割り当てが削除されるときに正確に PCI aperture を通じて割り当ての順序と一致します。
 
 Aperture 領域のセグメントの割り当ての基になる bits は、既にシステムのメモリ内でため、削除プロセス中にデータの転送 (アンスィズル) は必要ありません。 そのため、aperture 領域、セグメントにある CPU からアクセス可能な割り当てはスィズルの場合は、アプリケーションから直接アクセスすることはできません。
 

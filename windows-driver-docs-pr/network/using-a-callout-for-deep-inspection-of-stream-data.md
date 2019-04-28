@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8d4876ba56d25b5b9b5ae27223292936a475c8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372250"
 ---
 # <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>ストリーム データの詳細検査へのコールアウトの使用
 
@@ -136,7 +136,7 @@ VOID NTAPI
 
 値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://msdn.microsoft.com/library/windows/hardware/ff551215)構造体。
 
-パケットとストリームのデータ検査の詳細については、[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)を参照してください。
+パケットとストリームのデータ検査の詳細については、次を参照してください。[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)します。
 
  
 

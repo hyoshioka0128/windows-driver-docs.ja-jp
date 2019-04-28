@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -Windows Vista 以降のドライバーをネットワーク SIO_LOOPBACK_FAST_PATH 制御コード
 ms.localizationpriority: medium
 ms.openlocfilehash: 202a5925817abb81d7ce4b3df8f1b399222a9c16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370544"
 ---
 # <a name="sioloopbackfastpath-control-code"></a>SIO\_ループバック\_高速\_パス制御コード
 
@@ -44,7 +44,7 @@ WSK アプリケーションを呼び出すこの IOCTL を使用する、 [ **W
 <td><p><strong>SIO_LOOPBACK_FAST_PATH</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -106,7 +106,7 @@ TCP/IP ソケット オプションのサブセットのみがサポートされ
 
 呼び出すときに、WSK アプリケーションは IRP の完了のルーチンへのポインターを指定する必要があります、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)の要求のこの型の関数。 WSK サブシステムが IRP を完了するまで、アプリケーションはバッファーを解放する必要があります。 IRP が完了すると、サブシステムは、完了ルーチンを呼び出します。 完了ルーチンで、アプリケーションが IRP の状態を確認し、いた以前の要求の割り当てられているすべてのリソースを解放する必要があります。
 
-WSK IRP の処理の詳細については、[Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)を参照してください。
+WSK IRP の処理の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](https://msdn.microsoft.com/library/windows/hardware/ff571006)します。
 
 IRP を完了すると、サブシステムは設定*Irp -&gt;IoStatus.Status*に**状態\_成功**要求が成功した場合。 それ以外の場合、 *Irp -&gt;IoStatus.Status*に設定されます**状態\_無効な\_バッファー\_サイズ**または**状態\_いない\_サポートされている**呼び出しが成功しなかった場合。
 

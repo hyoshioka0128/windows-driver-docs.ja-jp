@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c39baf12266a735aac3d2afd61edb3fc9749928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368472"
 ---
 # <a name="debugger-engine-reference"></a>デバッガー エンジン リファレンス
 
@@ -31,7 +31,7 @@ ms.locfileid: "56571006"
 
 [構造体と定数](https://msdn.microsoft.com/library/windows/hardware/ff558820)
 
-特定の一般的な方法は、Microsoft Windows 上のすべての COM インターフェイスでサポートされます。 これらのメソッドは、このリファレンス セクションでは個別に表示されません。 詳細については、[クライアント オブジェクトを使用する](https://msdn.microsoft.com/library/windows/hardware/ff560088)を参照してください。
+特定の一般的な方法は、Microsoft Windows 上のすべての COM インターフェイスでサポートされます。 これらのメソッドは、このリファレンス セクションでは個別に表示されません。 詳細については、次を参照してください。[クライアント オブジェクトを使用する](https://msdn.microsoft.com/library/windows/hardware/ff560088)します。
 
  
 

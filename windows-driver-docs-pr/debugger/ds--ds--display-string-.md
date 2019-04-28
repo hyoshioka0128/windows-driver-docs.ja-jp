@@ -1,5 +1,5 @@
 ---
-title: ds、dS (表示文字列)
+title: ds、dS (文字列の表示)
 description: Ds および dS コマンドは、文字列、ANSI_STRING、または UNICODE_STRING 構造を表示します。
 ms.assetid: cb05e89c-6c83-476b-a577-a6aeefd8cdd6
 keywords:
@@ -13,20 +13,20 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a03159b71e8194b825ffb1df2f40c32ba20d8eaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377763"
 ---
-# <a name="ds-ds-display-string"></a>ds、dS (表示文字列)
+# <a name="ds-ds-display-string"></a>ds、dS (文字列の表示)
 
 
 **Ds**と**dS**コマンド表示文字列を ANSI\_文字列、または UNICODE\_文字列*構造*します。 
 
 これらのコマンドは、null 区切り文字の文字列には表示されませんが、構造体を文字列ではなく。
 
-Unicode 文字列の文字のアドレスがある場合は、代わりに du コマンドを使用し。 Da コマンドを使用すると、ASCII 文字を表示できます。 詳細については、[d、da、db、dc、dd、dD、df、dp、dq、du、dw (表示メモリ)](https://docs.microsoft.com/windows-hardware/drivers/debugger/d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor)を参照してください。
+Unicode 文字列の文字のアドレスがある場合は、代わりに du コマンドを使用し。 Da コマンドを使用すると、ASCII 文字を表示できます。 詳細については、次を参照してください。 [d、da、db、dc、dd、dD、df、dp、dq、du、dw (表示メモリ)](https://docs.microsoft.com/windows-hardware/drivers/debugger/d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor)します。
 
 ```dbgcmd
 d{s|S} [/c Width] [Address]
@@ -47,7 +47,7 @@ d{s|S} [/c Width] [Address]
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
 メモリ アドレス where UNICODE_STRING 構造が格納されます。 
 
-構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。 省略した場合、表示のコマンドで使用される最後のアドレスが使用されます。
+構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。 省略した場合、表示のコマンドで使用される最後のアドレスが使用されます。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -76,7 +76,7 @@ d{s|S} [/c Width] [Address]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>注釈
 -------

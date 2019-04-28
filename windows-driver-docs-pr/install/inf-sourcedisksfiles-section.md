@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 410a84f32309842a2437d6c6fdd9572dd5b28b01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380216"
 ---
 # <a name="inf-sourcedisksfiles-section"></a>INF SourceDisksFiles セクション
 
@@ -68,7 +68,7 @@ A **SourceDisksFiles**セクションは、任意の数の配布のディスク�
 
 インストール中に、SetupAPI 関数の参照アーキテクチャに固有の**SourceDisksFiles**セクションでは、汎用のセクションを使用する前にします。 たとえばかどうかは、x86 ベースのプラットフォームでのインストール時に Windows がファイルをコピーするという*ルート*、ファイルの説明で検索されます **[SourceDisksFiles.x86]** で検索する前に **[SourceDisksFiles]**。
 
-**重要な**  使用しないでください、 **SourceDisksFiles** INF ファイルをコピーするセクション。 INF ファイルをコピーする方法の詳細については、[コピー Inf](copying-inf-files.md)を参照してください。
+**重要な**  使用しないでください、 **SourceDisksFiles** INF ファイルをコピーするセクション。 INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](copying-inf-files.md)します。
 
  
 

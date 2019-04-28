@@ -1,17 +1,17 @@
 ---
-title: 標準的な XPS のフィルター
+title: 標準 XPS フィルター
 description: Windows では、レベル 3 の XPS から PCL6 と PostScript への組み込みの変換をサポートするために 2 つの (標準) XPS フィルターを提供します。
 ms.assetid: 6404D215-8154-4604-A67B-19B20D1CF229
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a20e14a5ae9b49553276a46b64b1b27766fe16f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375208"
 ---
-# <a name="standard-xps-filters"></a>標準的な XPS のフィルター
+# <a name="standard-xps-filters"></a>標準 XPS フィルター
 
 
 Windows では、レベル 3 の XPS から PCL6 と PostScript への組み込みの変換をサポートするために 2 つの (標準) XPS フィルターを提供します。
@@ -132,7 +132,7 @@ ii.  一致が検出されない場合、または PPD 機能名が"Job"で始�
 
 d. 場合、 **OrderDependency**セクションでは、PageSetup し PPD 機能名が「ページ」で始まらない、一致するように試行する前に、PPD 機能名を「ページ」が付加されます。
 
-e.  任意の文字でない\[A ~ Z\]、 \[a ~ z\]、 \[0 ~ 9\]または '\_' が置き換えられます、'\_' 一致を試みる前に文字。 ただし場合、 \*MSNoPunctuationCharSubstitute でしょうか。 文字列が TRUE に設定されて、フィルターは置き換えられません '.' または '-' で、'\_' 文字。
+e. 任意の文字でない\[A ~ Z\]、 \[a ~ z\]、 \[0 ~ 9\]または '\_' が置き換えられます、'\_' 一致を試みる前に文字。 ただし場合、 \*MSNoPunctuationCharSubstitute でしょうか。 文字列が TRUE に設定されて、フィルターは置き換えられません '.' または '-' で、'\_' 文字。
 
 GPD と PPD オプションは、次の順序でマップされます。
 1. PrintSchemaKeywordMap 値を指定して、PrintTicket のオプション名と一致します。

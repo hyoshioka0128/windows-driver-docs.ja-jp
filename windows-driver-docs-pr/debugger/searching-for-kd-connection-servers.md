@@ -1,5 +1,5 @@
 ---
-title: KD 接続のサーバーの検索
+title: KD 接続サーバーの検索
 description: ネットワーク サーバーで実行されている KD 接続の使用可能なサーバーの一覧を取得するのに -QR コマンド ライン オプションを使用して、KD、CDB またはを使用できます。
 ms.assetid: 24ff0e2f-d40a-4f52-91ef-e766b9387a8a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b6b1e0f630ea6c62633b081006ea59d199cf0168
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382002"
 ---
-# <a name="searching-for-kd-connection-servers"></a>KD 接続のサーバーの検索
+# <a name="searching-for-kd-connection-servers"></a>KD 接続サーバーの検索
 
 
 KD、CDB でまたはを使用することができます、 **-QR**ネットワーク サーバーで実行されている KD 接続の使用可能なサーバーの一覧を取得するコマンド ライン オプション。
@@ -39,7 +39,7 @@ Debugger -QR \\Server
 
 使用することができます、WinDbg で、**スタブのリモート サーバーへの接続**使用可能な KD 接続のサーバーの一覧を参照するダイアログ ボックス。 参照してください[ファイル |リモートのスタブに接続する](file---connect-to-remote-stub.md)の詳細。
 
-**注**  こと、KD 接続サーバー検出可能にするのには、昇格した特権でアクティブ必要があります。 詳細については、[KD 接続のサーバーをアクティブ化する](activating-a-kd-connection-server.md)を参照してください。
+**注**  こと、KD 接続サーバー検出可能にするのには、昇格した特権でアクティブ必要があります。 詳細については、次を参照してください。 [KD 接続のサーバーをアクティブ化する](activating-a-kd-connection-server.md)します。
 
  
 

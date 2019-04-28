@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: bb52e7c75bae01ae4b436982bd0cb9f7826690e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382660"
 ---
 # <a name="d3dkmtmultiplaneoverlay-structure"></a>D3DKMT\_MULTIPLANE\_オーバーレイ構造体
 
@@ -38,12 +38,12 @@ typedef struct D3DKMT_MULTIPLANE_OVERLAY {
 } D3DKMT_MULTIPLANE_OVERLAY;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **LayerIndex**
 
-**有効になっています。**
+**有効**
 
 **hAllocation**
 

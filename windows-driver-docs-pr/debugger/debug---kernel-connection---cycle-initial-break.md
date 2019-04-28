@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4f520cd1c3d1fb6ae882ddacbd0de8d41380050
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374354"
 ---
-# <a name="debug--kernel-connection--cycle-initial-break"></a>デバッグ |カーネルの接続 |サイクルの初期の中断
+# <a name="debug--kernel-connection--cycle-initial-break"></a>Debug | Kernel Connection | Cycle Initial Break (デバッグ | カーネル接続 | 初期の中断を切り替える)
 
 
 ## <span id="ddk_debug_kernel_connection_cycle_initial_break_dbg"></span><span id="DDK_DEBUG_KERNEL_CONNECTION_CYCLE_INITIAL_BREAK_DBG"></span>
@@ -38,7 +38,7 @@ ms.locfileid: "56560457"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、関連するコマンドおよび再起動プロセスがデバッガーに与える影響の詳細については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
+詳細については、関連するコマンドおよび再起動プロセスがデバッガーに与える影響の詳細については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
 
  
 

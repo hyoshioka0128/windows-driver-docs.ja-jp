@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_BSS_SELECTION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b8d548a7aae8947970042925aeaf748f0a707425
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382616"
 ---
 # <a name="wditlvbssselectionparameters"></a>WDI\_TLV\_BSS\_選択\_パラメーター
 
@@ -31,7 +31,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                     |
+| 型   | 説明                                                                                                     |
 |--------|-----------------------------------------------------------------------------------------------------------------|
 | UINT32 | [**WDI\_BSS\_選択\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/mt297629) BSS 選択範囲のホストによって使用されます。 |
 

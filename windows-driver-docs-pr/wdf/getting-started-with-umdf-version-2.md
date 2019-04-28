@@ -5,11 +5,11 @@ ms.assetid: 2C4DAFA4-783C-4739-8D27-A417AC63B447
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f65853badd7a6967387206e00d5f173ec9a812
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378080"
 ---
 # <a name="getting-started-with-umdf"></a>UMDF の概要
 
@@ -22,13 +22,13 @@ Windows 8.1 以降の場合は、2 つのメジャー バージョン UMDF、バ
 
 UMDF のバージョン 1 では、COM プログラミング モデルを使用して、C++ コードを記述する必要がありますを使用してドライバーを記述します。 UMDF バージョン 1 は KMDF と同じ概念ドライバーのプログラミング モデルに基づいて、UMDF 1 は、さまざまなコンポーネント、デバイス ドライバー インターフェイス (Ddi) データ構造とモデルを実装します。
 
-これに対し、UMDF バージョン 2 以降、多くの KMDF ドライバーを使用できるメソッドを呼び出し、C プログラミング言語で UMDF ドライバーを記述することができます。 すべてのバージョン 2 の UMDF および KMDF の間で共有されるインターフェイスは、同じ名前、パラメーター、および構造体の定義があります。 ドライバーは、共有機能のみを使用または 1 つのフレームワークでのみサポートされている呼び出しの周りの条件付きのマクロを使用して、UMDF または KMDF のいずれかでコンパイルすることが 1 つのドライバーを記述できます。 詳細については、[KMDF ドライバーから UMDF ドライバーを生成する方法](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)を参照してください。
+これに対し、UMDF バージョン 2 以降、多くの KMDF ドライバーを使用できるメソッドを呼び出し、C プログラミング言語で UMDF ドライバーを記述することができます。 すべてのバージョン 2 の UMDF および KMDF の間で共有されるインターフェイスは、同じ名前、パラメーター、および構造体の定義があります。 ドライバーは、共有機能のみを使用または 1 つのフレームワークでのみサポートされている呼び出しの周りの条件付きのマクロを使用して、UMDF または KMDF のいずれかでコンパイルすることが 1 つのドライバーを記述できます。 詳細については、次を参照してください。 [KMDF ドライバーから UMDF ドライバーを生成する方法](how-to-generate-a-umdf-driver-from-a-kmdf-driver.md)します。
 
-2 の UMDF および KMDF の間で共通する重要なが、まだ少量のどちらか 1 つのフレームワークでのみ使用できる機能 詳しくは、[KMDF に UMDF 2 機能を比較する](comparing-umdf-2-0-functionality-to-kmdf.md)を参照してください。 すべての 2 の UMDF および KMDF のコールバックとメソッドの一覧については、適用されるどの framework(s) を参照してくださいと[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。 いくつかの場合、構造体のメンバーまたはメソッドのパラメーターがどちらか 1 つのフレームワークにのみ適用されます。 ドキュメントでは、対応するリファレンス ページにこれらの違いについて説明します。
+2 の UMDF および KMDF の間で共通する重要なが、まだ少量のどちらか 1 つのフレームワークでのみ使用できる機能 詳しくは、次を参照してください。 [KMDF に UMDF 2 機能を比較する](comparing-umdf-2-0-functionality-to-kmdf.md)します。 すべての 2 の UMDF および KMDF のコールバックとメソッドの一覧については、適用されるどの framework(s) を参照してくださいと[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。 いくつかの場合、構造体のメンバーまたはメソッドのパラメーターがどちらか 1 つのフレームワークにのみ適用されます。 ドキュメントでは、対応するリファレンス ページにこれらの違いについて説明します。
 
 1 つ、または一方を選択する必要があります。両方の UMDF バージョン 1 と 2 からメソッドを呼び出して UMDF ドライバーを記述することはできません。
 
-UMDF ドライバーのバージョン 2 では、Windows 8.1 でのみ、またはそれ以降を実行します。 Windows 8.1 より前のオペレーティング システムで実行されている UMDF ドライバーを作成する必要がある場合は、1.x UMDF ドライバーを作成する必要があります。 1.11 バージョンを使用すると、Windows Vista 以降を実行しているドライバーをビルドします。 バージョン 1 の詳細については、[UMDF 1.x 設計ガイド](user-mode-driver-framework-design-guide.md)を参照してください。 このセクションでは、UMDF バージョン 2 について説明します。
+UMDF ドライバーのバージョン 2 では、Windows 8.1 でのみ、またはそれ以降を実行します。 Windows 8.1 より前のオペレーティング システムで実行されている UMDF ドライバーを作成する必要がある場合は、1.x UMDF ドライバーを作成する必要があります。 1.11 バージョンを使用すると、Windows Vista 以降を実行しているドライバーをビルドします。 バージョン 1 の詳細については、次を参照してください。 [UMDF 1.x 設計ガイド](user-mode-driver-framework-design-guide.md)します。 このセクションでは、UMDF バージョン 2 について説明します。
 
 
 

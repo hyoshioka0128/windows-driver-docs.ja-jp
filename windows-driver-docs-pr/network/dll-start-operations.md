@@ -1,6 +1,6 @@
 ---
-title: DLL の開始操作
-description: DLL の開始操作
+title: DLL 開始操作
+description: DLL 開始操作
 ms.assetid: cab7a4f9-35dc-44fc-bdd0-30bac8beb652
 keywords:
 - IHV 拡張 DLL WDK ネイティブ 802.11、開始操作
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a740d3e94306293d5cfaf5a1f2f682565c2fdce2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379557"
 ---
-# <a name="dll-start-operations"></a>DLL の開始操作
+# <a name="dll-start-operations"></a>DLL 開始操作
 
 
 
@@ -42,9 +42,9 @@ IHV 拡張機能の DLL が次のガイドラインに従う必要がありま�
 
 -   IHV 拡張機能の DLL から DLL を返します後に、その IHV ハンドラー関数を呼び出すのための準備の任意の内部の初期化とリソース割り当てを実行する必要があります[ *Dot11ExtIhvInitService*](https://msdn.microsoft.com/library/windows/hardware/ff547470)します。
 
-IHV 拡張機能の詳細については、[802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)を参照してください。
+IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)します。
 
-IHV ハンドラー関数の詳細については、[802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)を参照してください。
+IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)します。
 
  
 

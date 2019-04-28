@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 39f253f9095a330932c22673dc9b2f2528d618c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373572"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-devices"></a>パラレル デバイスの I/O 要求に対するデバイス固有の操作
 このトピックでは、並列のデバイスの I/O 要求の次のデバイスに固有の操作をドキュメントします。
@@ -70,7 +70,7 @@ STATUS_NOT_A_DIRECTORY
 ### <a name="operation"></a>操作
 並列デバイスは、排他的なデバイスです。 並列デバイスが開いている場合は、パラレル ポートのシステム提供のバス ドライバーがその後で失敗した[irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)まで、デバイスが閉じられているデバイスを要求します。 デバイスまたは呼び出しに他の I/O 要求を送信する前に、クライアントは並列のデバイスを開く必要があります、[デバイス コールバック ルーチンを並列](https://msdn.microsoft.com/library/windows/hardware/ff544275)します。
 
-詳細については、[の起動と使用の並列デバイス](https://msdn.microsoft.com/windows/hardware/drivers/parports/opening-and-using-a-parallel-device)を参照してください。
+詳細については、次を参照してください。[の起動と使用の並列デバイス](https://msdn.microsoft.com/windows/hardware/drivers/parports/opening-and-using-a-parallel-device)します。
 
 
 ##  <a name="irpmjdevicecontrol"></a>IRP_MJ_DEVICE_CONTROL
@@ -300,7 +300,7 @@ STATUS_DEVICE_REMOVED
 
 パラレル ポート バス ドライバーは、読み取り要求のキャンセル ルーチンの設定、読み取り要求を保留をマークし、作業キューに読み取り要求をキューします。 読み取り要求は、読み取り要求が完了したか、クライアントによって取り消されましたまでキャンセル可能な状態での作業キューに保持されます。
 
-詳細については、[並列デバイスの読み書き](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)を参照してください。
+詳細については、次を参照してください。[並列デバイスの読み書き](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)します。
 
 
 ##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
@@ -351,7 +351,7 @@ STATUS_DEVICE_REMOVED
 
 パラレル ポート バス ドライバー、書き込み要求のキャンセル ルーチンを設定するには、書き込み要求、保留中としてマークおよび作業キューに書き込み要求のキューします。 書き込み要求は、要求が完了またはキャンセルされるまでにキャンセルできる状態に保持されます。
 
-詳細については、[並列デバイスの読み書き](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)を参照してください。
+詳細については、次を参照してください。[並列デバイスの読み書き](https://msdn.microsoft.com/windows/hardware/drivers/parports/reading-and-writing-a-parallel-device)します。
 
 ## <a name="related-topics"></a>関連トピック
 

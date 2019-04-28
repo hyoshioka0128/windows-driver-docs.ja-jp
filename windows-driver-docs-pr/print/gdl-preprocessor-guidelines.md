@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec04844e5ff0377c384b21363e3e5101723a19f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380012"
 ---
 # <a name="gdl-preprocessor-guidelines"></a>GDL プリプロセッサ ガイドライン
 
@@ -34,7 +34,7 @@ GDL パーサーのインターフェイスは、ルート GDL ファイル事�
 
  
 
-論理演算子は GDL プリプロセッサ ディレクティブではサポートされていません。 このような状況を解決する方法については、[GDL プリプロセスでの論理演算子を含む問題](problems-with-logical-operators-in-gdl-preprocessing.md)を参照してください。
+論理演算子は GDL プリプロセッサ ディレクティブではサポートされていません。 このような状況を解決する方法については、次を参照してください。 [GDL プリプロセスでの論理演算子を含む問題](problems-with-logical-operators-in-gdl-preprocessing.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: 大量の割り込みのデバッグ
-description: 大量の割り込みのデバッグ
+title: 割り込みストームのデバッグ
+description: 割り込みストームのデバッグ
 ms.assetid: b863cb9c-dce0-4572-b0ed-6f7d3a6ba472
 keywords:
 - 保留中の Irp
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d78ad3206adb2f283c924098b620ce818e19dc0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377196"
 ---
-# <a name="debugging-an-interrupt-storm"></a>大量の割り込みのデバッグ
+# <a name="debugging-an-interrupt-storm"></a>割り込みストームのデバッグ
 
 
 ## <span id="ddk_debugging_pending_irps_dbg"></span><span id="DDK_DEBUGGING_PENDING_IRPS_DBG"></span>

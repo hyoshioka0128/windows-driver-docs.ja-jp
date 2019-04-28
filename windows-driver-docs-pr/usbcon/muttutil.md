@@ -1,14 +1,14 @@
 ---
-Description: MuttUtil performs various tasks on MUTT devices.
+Description: MuttUtil では、MUTT デバイスでさまざまなタスクを実行します。
 title: MuttUtil
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54ec748a8c01ba48162b56c6d0a98cd05468e4e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382711"
 ---
 # <a name="muttutil"></a>MuttUtil
 
@@ -45,7 +45,7 @@ DEVICE : 1 : USB\VID_045E&PID_078E&REV_8011 : 28           :
 Return value: 1
 ```
 
-上記のコマンドは、システムに SuperMUTT (1) と接続された MUTT パック (0) があることを示します。 Microsoft 提供のカーネル モード ドライバー、Winusb.sys は、SuperMUTT デバイス関数ドライバーです。 Winusb.sys の詳細については、[WinUSB](winusb.md)を参照してください。
+上記のコマンドは、システムに SuperMUTT (1) と接続された MUTT パック (0) があることを示します。 Microsoft 提供のカーネル モード ドライバー、Winusb.sys は、SuperMUTT デバイス関数ドライバーです。 Winusb.sys の詳細については、次を参照してください。 [WinUSB](winusb.md)します。
 
 MUTT パック デバイスの問題のコードの 28 は、デバイスのドライバーが読み込まれていないことを示します。
 

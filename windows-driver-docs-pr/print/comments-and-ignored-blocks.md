@@ -1,6 +1,6 @@
 ---
-title: コメントおよび無視されたブロック
-description: コメントおよび無視されたブロック
+title: コメントと無視されたブロック
+description: コメントと無視されたブロック
 ms.assetid: 8b3a0195-b2c8-491d-abcd-bfaebefbc77d
 keywords:
 - GPD ファイル エントリ WDK Unidrv、無視されたブロック
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5ec203052bfbd6368228c32786f28138342ff09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382610"
 ---
-# <a name="comments-and-ignored-blocks"></a>コメントおよび無視されたブロック
+# <a name="comments-and-ignored-blocks"></a>コメントと無視されたブロック
 
 
 

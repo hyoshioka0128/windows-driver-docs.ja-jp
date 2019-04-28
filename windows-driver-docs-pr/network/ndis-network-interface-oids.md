@@ -1,21 +1,21 @@
 ---
-title: ネットワーク インターフェイスの NDIS Oid
+title: NDIS ネットワーク インターフェイス OID
 description: このセクションには、すべての NDIS ドライバー用のネットワーク インターフェイスの Oid がについて説明します
 keywords:
-- ネットワーク インターフェイスの NDIS Oid
+- NDIS ネットワーク インターフェイス OID
 - ネットワーク インターフェイスの WDK NDIS Oid
 - WDK のネットワーク インターフェイスの Oid
 ms.assetid: A66B5AC6-9EAF-4234-8614-0EBF179B3DDE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d2a026cb2a86460b506fd55c0ca4036d6cb4641
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378344"
 ---
-# <a name="ndis-network-interface-oids"></a>ネットワーク インターフェイスの NDIS Oid
+# <a name="ndis-network-interface-oids"></a>NDIS ネットワーク インターフェイス OID
 
 NDIS ネットワーク インターフェイスのオブジェクト識別子 (Oid) は、MIB をサポートするネットワーク インターフェイスに関する情報を提供 ([RFC 2863](overview-of-ndis-network-interfaces.md))。
 

@@ -1,6 +1,6 @@
 ---
-title: カーネル スタックを使用してください。
-description: カーネル スタックを使用してください。
+title: カーネル スタックの使用
+description: カーネル スタックの使用
 ms.assetid: f1df01f4-f156-4267-a4a0-c548e16c02ea
 keywords:
 - メモリ管理の WDK カーネル、カーネル スタック
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 714dce6251579ae4f1285fca3345ca7252c3bbf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372303"
 ---
-# <a name="using-the-kernel-stack"></a>カーネル スタックを使用してください。
+# <a name="using-the-kernel-stack"></a>カーネル スタックの使用
 
 
 

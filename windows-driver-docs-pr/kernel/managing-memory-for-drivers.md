@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 796ec13ccedf25e4c2ae2b48bd457087a9b3afc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380267"
 ---
 # <a name="memory-management-for-windows-drivers"></a>Windows ドライバーのメモリ管理
 
@@ -24,11 +24,11 @@ ms.locfileid: "56578283"
 
 
 
-*メモリ マネージャー*は Windows でのメモリ管理操作を実行するカーネル コンポーネントです。 詳細については、[Windows カーネル モードのメモリ マネージャー](windows-kernel-mode-memory-manager.md)を参照してください。
+*メモリ マネージャー*は Windows でのメモリ管理操作を実行するカーネル コンポーネントです。 詳細については、次を参照してください。 [Windows カーネル モードのメモリ マネージャー](windows-kernel-mode-memory-manager.md)します。
 
-メモリ マネージャーは、さまざまなカーネル モードのサポート ルーチンの割り当てし、メモリを管理するドライバーを呼び出すことを実装します。 詳細については、[メモリの割り当てとバッファー管理](https://msdn.microsoft.com/library/windows/hardware/ff554422)を参照してください。
+メモリ マネージャーは、さまざまなカーネル モードのサポート ルーチンの割り当てし、メモリを管理するドライバーを呼び出すことを実装します。 詳細については、次を参照してください。[メモリの割り当てとバッファー管理](https://msdn.microsoft.com/library/windows/hardware/ff554422)します。
 
-カーネル モード ドライバーのメモリ管理機能がユーザー モード アプリケーションの異なるです。 アプリケーションのメモリ管理の詳細については、[メモリ管理](https://msdn.microsoft.com/library/windows/desktop/aa366779)を参照してください。
+カーネル モード ドライバーのメモリ管理機能がユーザー モード アプリケーションの異なるです。 アプリケーションのメモリ管理の詳細については、次を参照してください。[メモリ管理](https://msdn.microsoft.com/library/windows/desktop/aa366779)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

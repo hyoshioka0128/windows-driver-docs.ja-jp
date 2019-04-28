@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24679b1a2872e81170ab7bf14d93190a7ad9a513
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374861"
 ---
-# <a name="debug--resolve-unqualified-symbols"></a>デバッグ |修飾されていないシンボルを解決するには
+# <a name="debug--resolve-unqualified-symbols"></a>Debug | Resolve Unqualified Symbols (デバッグ | 修飾されていないシンボルを解決)
 
 
 選択**修飾されていないシンボルの解決**上、**デバッグ**モジュールのプレフィックスがないシンボルを解決するメニュー。

@@ -5,11 +5,11 @@ ms.assetid: 48999DF6-3AC2-4DEA-8ABC-C427237B31E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72c16f8406c3c834d5b15bb9991a531d81945752
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370916"
 ---
 # <a name="developer-guidelines"></a>開発者向けのガイドライン
 
@@ -92,7 +92,7 @@ Windows では、PIN 認証をセキュリティで保護された PIN チャネ
 <tr class="header">
 <th align="left">関数名</th>
 <th align="left">必須</th>
-<th align="left">説明</th>
+<th align="left">メモ</th>
 </tr>
 </thead>
 <tbody>

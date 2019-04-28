@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29069f3c74bf38b656045d9c00a621e92881fa4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378494"
 ---
 # <a name="usb-io-targets"></a>USB I/O ターゲット
 
@@ -29,7 +29,7 @@ ms.locfileid: "56580181"
 
 USB デバイスの I/O ターゲット USB 要求のブロックを送信することによって通信フレームワーク ([**翻訳**](https://msdn.microsoft.com/library/windows/hardware/ff538923))。 フレームワークは、構築自体を送信して、ドライバーがないように、ドライバーからの翻訳を非表示にするオブジェクトのメソッドを提供します。 ドライバーが翻訳を構築することをお望み、KMDF ドライバーは追加作成し、翻訳を送信するオブジェクトのメソッドのセットを使用できます。
 
-USB デバイスの必要なドライバーの種類を確認する方法については、[USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff540215)を参照してください。
+USB デバイスの必要なドライバーの種類を確認する方法については、次を参照してください。 [USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff540215)します。
 
 このセクションの内容:
 

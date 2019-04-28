@@ -1,6 +1,6 @@
 ---
-title: 印刷機能の Win32 API のサポート
-description: 印刷機能の Win32 API のサポート
+title: 印刷機能の Win32 API サポート
+description: 印刷機能の Win32 API サポート
 ms.assetid: 1b40cc3e-c6f6-460f-b514-4ef3a001f563
 keywords:
 - 印刷機能の WDK、Win32 API のサポート
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64eb5da6ffefe35026a6d716d490326d9b7aa7dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370515"
 ---
-# <a name="win32-api-support-for-print-capabilities"></a>印刷機能の Win32 API のサポート
+# <a name="win32-api-support-for-print-capabilities"></a>印刷機能の Win32 API サポート
 
 
 Windows Vista の印刷サブシステムを GDI ベースの印刷ドライバーを使用する Windows Presentation Foundation (WPF) アプリケーションと可能 XPSDrv プリンター ドライバーを使用する Microsoft Win32 ベースのアプリケーションの互換性サポートを提供します。 この互換性は、ソフトウェアの shim のレイヤーによって提供されます。 Shim とは、互換性のないソフトウェアがそれ以外の場合と相互運用できるように、データに対する変換操作を実行するソフトウェア モジュールです。 次の図は、この印刷機能の実装のデータ パスを示します。

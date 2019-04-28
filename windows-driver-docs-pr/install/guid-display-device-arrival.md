@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8ca0398bd54f65feef6a17cbc046d0fa72794ded
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369997"
 ---
 # <a name="guiddisplaydevicearrival"></a>GUID_DISPLAY_DEVICE_ARRIVAL
 
@@ -51,7 +51,7 @@ GUID_DISPLAY_DEVICE_ARRIVAL[デバイス インターフェイス クラス](htt
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 システム提供のコンポーネント、 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)オペレーティング システムとディスプレイ アダプターの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。

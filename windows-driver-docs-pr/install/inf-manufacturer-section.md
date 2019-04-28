@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ee959c01e9d4070aee4042ccc7951e53a19292f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378462"
 ---
 # <a name="inf-manufacturer-section"></a>INF Manufacturer セクション
 
@@ -54,7 +54,7 @@ manufacturer-name |
 製造元の名前を表す INF ファイル内で一意で、トークンを指定します。 このような各 %*strkey*で % トークンを定義する必要があります、 [ **INF 文字列セクション**](inf-strings-section.md)の INF ファイル。
 
 <a href="" id="models-section-name"></a>*models-section-name*  
-製造元の INF ライター定義名を指定[ **INF*モデル*セクション**](inf-models-section.md) INF ファイル内で。 この値は、INF ファイル内で一意である必要があります、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+製造元の INF ライター定義名を指定[ **INF*モデル*セクション**](inf-models-section.md) INF ファイル内で。 この値は、INF ファイル内で一意である必要があります、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 <a href="" id="targetosversion"></a>*TargetOSVersion*  
 1 つまたは複数のターゲット オペレーティング システムのバージョンを指定するさまざまな INF***モデル***セクションを使用できます。 Windows の選択、INF***モデル***実行されているオペレーティング システムのバージョンに最も近いセクション。

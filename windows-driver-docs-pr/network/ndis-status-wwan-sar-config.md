@@ -6,11 +6,11 @@ ms.date: 08/17/2018
 keywords: -NDIS_STATUS_WWAN_SAR_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4932270c9831ef9ecfd379c04e2278f1200db0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372884"
 ---
 # <a name="ndisstatuswwansarconfig"></a>NDIS_STATUS_WWAN_SAR_CONFIG
 
@@ -20,7 +20,7 @@ ms.locfileid: "56580095"
 
 この通知を使用して、 [ **NDIS_WWAN_SAR_CONFIG_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_config_info)構造体。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |

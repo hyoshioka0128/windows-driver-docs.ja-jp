@@ -1,17 +1,17 @@
 ---
-title: ドライバーによって WIA 項目プロパティの読み取り
-description: ドライバーによって WIA 項目プロパティの読み取り
+title: ドライバーによる WIA 項目のプロパティの読み取り
+description: ドライバーによる WIA 項目のプロパティの読み取り
 ms.assetid: 4e592c62-e8bf-4b25-9c65-5a0079d3a857
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05404be0525ece2288f5a2836952c712c79bcd7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379612"
 ---
-# <a name="reading-wia-item-properties-by-a-driver"></a>ドライバーによって WIA 項目プロパティの読み取り
+# <a name="reading-wia-item-properties-by-a-driver"></a>ドライバーによる WIA 項目のプロパティの読み取り
 
 
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b3a4fea4c1227e64da3185174f91789e0642e03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381578"
 ---
 # <a name="rotationvalue-element"></a>RotationValue 要素
 

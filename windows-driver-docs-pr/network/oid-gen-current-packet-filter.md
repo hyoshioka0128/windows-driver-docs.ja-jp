@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_CURRENT_PACKET_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac4d4f4033f6f4082f9aa5e44eb189bbf99b73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368952"
 ---
 # <a name="oidgencurrentpacketfilter"></a>OID\_GEN\_現在\_パケット\_フィルター
 
@@ -122,7 +122,7 @@ MPDU フラグメントが暗号化されている場合で、前に、示され
 
 有効な場合、この種類のフィルターにのみ影響 NDIS など、他の標準のパケット フィルター\_パケット\_型\_ダイレクトまたは NDIS\_パケット\_型\_ブロードキャストします。
 
-生の 802.11 データ パケットを指定する方法の詳細については、[Raw 802.11 パケットのことを示す](https://msdn.microsoft.com/library/windows/hardware/ff554833)を参照してください。
+生の 802.11 データ パケットを指定する方法の詳細については、次を参照してください。 [Raw 802.11 パケットのことを示す](https://msdn.microsoft.com/library/windows/hardware/ff554833)します。
 
 <a href="" id="ndis-packet-type-802-11-directed-mgmt"></a>NDIS\_パケット\_型\_802\_11\_ダイレクト\_管理  
 802.11 管理パケットが送られます。 有向パケット含む宛先アドレスが NIC のステーションのアドレスと一致しません
@@ -144,7 +144,7 @@ MPDU フラグメントが暗号化されている場合で、前に、示され
 
 有効な場合、この種類のフィルターにのみ影響 802.11 他の管理パケット フィルター、NDIS\_パケット\_型\_802\_11\_ダイレクト\_MGMT または NDIS\_パケット\_型\_802\_11\_マルチキャスト\_管理
 
-生の 802.11 管理パケットを指定する方法の詳細については、[Raw 802.11 パケットのことを示す](https://msdn.microsoft.com/library/windows/hardware/ff554833)を参照してください。
+生の 802.11 管理パケットを指定する方法の詳細については、次を参照してください。 [Raw 802.11 パケットのことを示す](https://msdn.microsoft.com/library/windows/hardware/ff554833)します。
 
 <a href="" id="ndis-packet-type-802-11-directed-ctrl"></a>NDIS\_パケット\_型\_802\_11\_ダイレクト\_CTRL  
 802.11 コントロール パケットが送られます。 有向パケット含む宛先アドレスが NIC のステーションのアドレスと一致しません

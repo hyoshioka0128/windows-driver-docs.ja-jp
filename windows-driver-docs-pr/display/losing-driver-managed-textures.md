@@ -1,6 +1,6 @@
 ---
-title: ドライバー管理のテクスチャが失われる
-description: ドライバー管理のテクスチャが失われる
+title: ドライバー管理対象テクスチャの喪失
+description: ドライバー管理対象テクスチャの喪失
 ms.assetid: 19f87190-bb3a-40a6-a216-8df9816e2842
 keywords:
 - WDK DirectDraw、失われたテクスチャの描画サーフェス
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09546d6cc08c3d567299ca92dbfc429b528c9212
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380410"
 ---
-# <a name="losing-driver-managed-textures"></a>ドライバー管理のテクスチャが失われる
+# <a name="losing-driver-managed-textures"></a>ドライバー管理対象テクスチャの喪失
 
 
 ## <span id="ddk_losing_driver_managed_textures_gg"></span><span id="DDK_LOSING_DRIVER_MANAGED_TEXTURES_GG"></span>

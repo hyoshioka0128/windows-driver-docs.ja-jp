@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3c7643a90b37ff7993fdde5582883ef31cb0d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373180"
 ---
 # <a name="destinationtoken-element"></a>DestinationToken 要素
 
@@ -70,7 +70,7 @@ ms.locfileid: "56573702"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 クライアントが含まれています、 **DestinationToken**トークンを送信するとき、 [ **CreateScanJobRequest** ](createscanjobrequest.md)操作の要素の後、 [ **ScanAvailableEvent** ](scanavailableevent.md)イベント。 WSD スキャン サービスでは、指定した文字列を使用して、適切なクライアントがスキャン要求を送信することを確認します。

@@ -1,5 +1,5 @@
 ---
-title: Windows Filtering Platform 定数
+title: Windows フィルタリング プラットフォーム定数
 description: このセクションでは、Windows フィルタ リング プラットフォームの定数について説明します。
 ms.assetid: 9ebf1db2-fae2-427d-9c9d-6fae707da55a
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be3a90276b772aa9130e2ec567d41e76d6cd6399
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378712"
 ---
-# <a name="windows-filtering-platform-constants"></a>Windows Filtering Platform 定数
+# <a name="windows-filtering-platform-constants"></a>Windows フィルタリング プラットフォーム定数
 
 このセクションでは、Windows Filtering Platform コールアウト ドライバーで使用される定数について説明します。
 

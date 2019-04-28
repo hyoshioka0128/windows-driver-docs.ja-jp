@@ -1,6 +1,6 @@
 ---
-title: プリンターの属性
-description: プリンターの属性
+title: プリンター属性
+description: プリンター属性
 ms.assetid: 46254c16-ecd3-47a4-ab2e-5a6687cde1ee
 keywords:
 - Unidrv、プリンターの属性
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36e9271ea3e076a563ae217c2dbe60db5d915509
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380537"
 ---
-# <a name="printer-attributes"></a>プリンターの属性
+# <a name="printer-attributes"></a>プリンター属性
 
 
 

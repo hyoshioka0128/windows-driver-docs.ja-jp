@@ -9,11 +9,11 @@ keywords:
 ms.date: 11/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b215f5c34c376d90b9dbd3ae969e97a87ffdc192
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378306"
 ---
 # <a name="miniport-drivers"></a>ミニポート ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "56578287"
 ミニポート ドライバーは、その Nic を持つと、NDIS ライブラリを介したより高度なドライバーと通信します。 NDIS ライブラリ関数の完全なセットをエクスポートします (**NdisM * Xxx*** およびその他の**Ndis * Xxx*** 関数) をカプセル化するすべてのオペレーティング システム関数、ミニポート ドライバーを呼び出す必要があります。 ミニポート ドライバーはさらに、エントリ ポイントのセットをエクスポートする必要があります (*MiniportXxx*関数) その NDIS が独自の目的で、またはより高度なドライバー、ミニポート ドライバーにアクセスする代わりに呼び出します。
 
 > [!NOTE]
-> NDIS ドライバー スタックと 4 つすべての NDIS ドライバーの種類間のリレーションシップを示す図の詳細については、[NDIS ドライバー スタック](ndis-driver-stack.md)を参照してください。
+> NDIS ドライバー スタックと 4 つすべての NDIS ドライバーの種類間のリレーションシップを示す図の詳細については、次を参照してください。 [NDIS ドライバー スタック](ndis-driver-stack.md)します。
 
 次の送信し、受信操作のミニポート ドライバーの NDIS とより高度なドライバーの操作を説明します。
 

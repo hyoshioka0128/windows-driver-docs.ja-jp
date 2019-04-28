@@ -1,19 +1,19 @@
 ---
-title: ブレークポイントを設定するときに含まれるリスク
-description: ブレークポイントを設定するときに含まれるリスク
+title: ブレークポイントの設定時に伴うリスク
+description: ブレークポイントの設定時に伴うリスク
 ms.assetid: 92c1007b-f871-48e9-a215-4d36ed1371ea
 keywords:
 - ブレークポイント、リスク
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 566bca02caa9e5fa55b5657b057696a14e5838a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382074"
 ---
-# <a name="risks-entailed-when-setting-breakpoints"></a>ブレークポイントを設定するときに含まれるリスク
+# <a name="risks-entailed-when-setting-breakpoints"></a>ブレークポイントの設定時に伴うリスク
 
 
 設定している場合、[ブレークポイント](using-breakpoints.md)メモリ アドレスまたは記号とオフセットを指定するとの命令の途中には、このブレークポイントを配置する必要がありますされません。

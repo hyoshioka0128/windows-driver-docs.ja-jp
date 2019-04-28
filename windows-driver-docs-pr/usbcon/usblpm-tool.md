@@ -1,14 +1,14 @@
 ---
-Description: The USBLPM tool monitors the U0/U1/U2/U3 power states of USB 3.0 ports.
+Description: USBLPM ツールでは、USB 3.0 ポートの U0 U1 と U2/U3 電源の状態を監視します。
 title: USBLPM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b78f84cda3a74955ae1861f093e95731fc841c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377220"
 ---
 # <a name="usblpm"></a>USBLPM
 
@@ -36,7 +36,7 @@ USBLPM は Windows 8 のみと、Microsoft USB 3.0 ドライバー スタック�
 
 場所、時刻の値には、整数 1 ~ 100000 です。 **/PollingInterval**オプションは省略可能です。 一般に、期間を変更しないでください。
 
-### <a name="testing"></a>テスト
+### <a name="testing"></a>Testing (テスト)
 
 **デバイスまたはハブをテストします。**
 

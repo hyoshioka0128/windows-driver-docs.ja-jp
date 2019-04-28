@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0589881083b5c32dbc2ecca9cd5e0e01ec20e6d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377975"
 ---
 # <a name="general-design-and-implementation-strategies"></a>一般的な設計および実装の戦略
 
@@ -30,7 +30,7 @@ ms.locfileid: "56578100"
 
 -   ビデオのミニポート ドライバーを使用して、リソースの管理、物理デバイスのメモリ マッピングを実行、出力が近接、発生するか、割り込みに応答に登録することを確認する操作。 ミニポート ドライバーは、主に、ハードウェア ファミリ内のバリエーションを処理するため、ディスプレイ ドライバーのハードウェアの種類の依存関係を最小限に抑えるために使用します。
 
-ドライバーの作成者を表示する目的の詳細については、[ドライバーの表示のグラフィックス DDI 関数](graphics-ddi-functions-for-display-drivers.md)を参照してください。 このトピックとサブトピックをそれに続く グラフィックスは、必要な条件付きで必要なディスプレイ ドライバーの省略可能な DDI 関数について説明します。 [Windows 2000 Display Driver Model でのビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)サブトピックがビデオのミニポート ドライバーの作成者を目的とした同様の情報を含めることができます。
+ドライバーの作成者を表示する目的の詳細については、次を参照してください。[ドライバーの表示のグラフィックス DDI 関数](graphics-ddi-functions-for-display-drivers.md)します。 このトピックとサブトピックをそれに続く グラフィックスは、必要な条件付きで必要なディスプレイ ドライバーの省略可能な DDI 関数について説明します。 [Windows 2000 Display Driver Model でのビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)サブトピックがビデオのミニポート ドライバーの作成者を目的とした同様の情報を含めることができます。
 
 次の点も考慮する必要があります。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56578100"
 
 -   エクスポートされた関数は、標準の NT ベースのオペレーティング システムを実行する必要があります*プロローグ*エントリで、*エピローグ*終了時にします。 詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-ディスプレイ ドライバーに固有の情報については、[ドライバーの表示のグラフィックス DDI 関数](graphics-ddi-functions-for-display-drivers.md)を参照してください。 そのセクションには、必要な条件付きで必要ですが、および必要に応じて必要なグラフィック DDI 関数に関する情報が含まれています。
+ディスプレイ ドライバーに固有の情報については、次を参照してください。[ドライバーの表示のグラフィックス DDI 関数](graphics-ddi-functions-for-display-drivers.md)します。 そのセクションには、必要な条件付きで必要ですが、および必要に応じて必要なグラフィック DDI 関数に関する情報が含まれています。
 
  
 

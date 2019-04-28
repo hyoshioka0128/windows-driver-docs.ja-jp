@@ -7,13 +7,13 @@ keywords:
 - IRP_MJ_POWER Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 0355a600ffe5ebd9e27358c95106966727382f5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368470"
 ---
-# <a name="irpmjpower"></a>IRP\_MJ\_電源
+# <a name="irpmjpower"></a>IRP\_MJ\_POWER
 
 
 すべてのドライバーは、サービスを準備する必要があります**IRP\_MJ\_POWER**で要求を[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
@@ -40,7 +40,7 @@ Irp の処理を制御する通常の規則だけでなく**IRP\_MJ\_POWER** Irp
 
 参照してください[電源管理のマイナー Irp](power-management-minor-irps.md)の詳細については**IRP\_MJ\_POWER**要求。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

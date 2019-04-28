@@ -1,16 +1,16 @@
 ---
-Description: Microsoft provides a set of proprietary device classes and USB descriptors, which are called Microsoft OS Descriptors (MODs).
-title: USB デバイスの Microsoft OS ディスクリプター
+Description: Microsoft では、一連の独自のデバイス クラスと Microsoft OS ディスクリプター (カスタム設定) と呼ばれる USB 記述子を提供します。
+title: USB デバイス向けの Microsoft OS 記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d08d4c9850338fc9e23ca57c2f61d3864fd513e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379932"
 ---
-# <a name="microsoft-os-descriptors-for-usb-devices"></a>USB デバイスの Microsoft OS ディスクリプター
+# <a name="microsoft-os-descriptors-for-usb-devices"></a>USB デバイス向けの Microsoft OS 記述子
 
 
 **要約**
@@ -70,7 +70,7 @@ Microsoft OS ディスクリプターをサポートするデバイスは、0 xe
 
 そのキーの下のレジストリ エントリを参照してください。 [USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)します。
 
-詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)を参照してください。
+詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
 
 ## <a name="what-types-of-os-feature-descriptors-are-supported-by-windows"></a>Windows では、どのような種類の OS 機能の記述子がサポートされているでしょうか。
 

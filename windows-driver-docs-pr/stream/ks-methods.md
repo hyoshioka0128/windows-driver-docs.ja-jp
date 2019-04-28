@@ -1,6 +1,6 @@
 ---
-title: KS メソッド
-description: KS メソッド
+title: KS のメソッド
+description: KS のメソッド
 ms.assetid: 1d7bd6f4-0aaf-4d77-8132-f551fd2ecbd2
 keywords:
 - カーネルの WDK、メソッドのストリーミング
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbfd0f7b38e0282710a812d60661b7532b1aebbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380112"
 ---
-# <a name="ks-methods"></a>KS メソッド
+# <a name="ks-methods"></a>KS のメソッド
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56548591"
 
 ドライバーが提供することで、特定のメソッドを要求する[ **KSMETHOD** ](https://msdn.microsoft.com/library/windows/hardware/ff563398)構造体、 *InBuffer*上の呼び出しのパラメーター。
 
-AVStream フィルターとピンが提供することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーいずれかを[ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、[Automation テーブルを定義する](defining-automation-tables.md)を参照してください。
+AVStream フィルターとピンが提供することによってサポートされる方法を説明します、 [ **KSAUTOMATION\_テーブル**](https://msdn.microsoft.com/library/windows/hardware/ff560990)構造体、 **AutomationTable**のメンバーいずれかを[ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造または[ **KSPIN\_記述子\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 詳細については、次を参照してください。 [Automation テーブルを定義する](defining-automation-tables.md)します。
 
  
 

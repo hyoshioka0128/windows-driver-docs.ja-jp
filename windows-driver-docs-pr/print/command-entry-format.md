@@ -1,6 +1,6 @@
 ---
-title: コマンド エントリの形式
-description: コマンド エントリの形式
+title: コマンド エントリ形式
+description: コマンド エントリ形式
 ms.assetid: f2b14c12-3c34-45b2-9ead-8cd57d657e9e
 keywords:
 - プリンターは、WDK Unidrv、エントリの形式をコマンドします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da6a4734f4555ecfe543cdcfc11b01891806f9e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382620"
 ---
-# <a name="command-entry-format"></a>コマンド エントリの形式
+# <a name="command-entry-format"></a>コマンド エントリ形式
 
 
 
@@ -62,7 +62,7 @@ GPD ファイルでプリンター コマンドの入力を指定するには、
 
  
 
-場所*クラスヒント*プリンター コマンドのエスケープ シーケンスを表す文字列です。 エスケープ シーケンスを指定する方法については、[コマンド文字列の形式](command-string-format.md)を参照してください。
+場所*クラスヒント*プリンター コマンドのエスケープ シーケンスを表す文字列です。 エスケープ シーケンスを指定する方法については、次を参照してください。[コマンド文字列の形式](command-string-format.md)します。
 
 たとえば、GPD ファイルには、太字のテキストをオンにする CmdBoldOn コマンドの次の仕様が含まれます。
 

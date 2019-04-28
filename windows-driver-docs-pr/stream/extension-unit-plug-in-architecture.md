@@ -1,6 +1,6 @@
 ---
-title: 拡張ユニット プラグイン アーキテクチャ
-description: 拡張ユニット プラグイン アーキテクチャ
+title: 拡張ユニット プラグインのアーキテクチャ
+description: 拡張ユニット プラグインのアーキテクチャ
 ms.assetid: cf2b32dd-0b65-41ce-b6e8-a9068e232600
 keywords:
 - 拡張機能ユニット WDK USB ビデオ クラスのアーキテクチャ
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c95caee3af5c5ca50ed22794edb6e8b1188adca5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379998"
 ---
-# <a name="extension-unit-plug-in-architecture"></a>拡張ユニット プラグイン アーキテクチャ
+# <a name="extension-unit-plug-in-architecture"></a>拡張ユニット プラグインのアーキテクチャ
 
 
 USB ビデオ クラス ドライバーは、USB ビデオ KS プロキシ フィルター内のノードとして単位の拡張機能を公開します。 単位の拡張機能のコントロールがユーザー モードで KSNODETYPE 型のノードで、設定のプロパティとしてさらに公開される\_DEV\_特定します。 プロパティ セットの GUID では、拡張機能ユニット記述子の GUID と一致します。
@@ -34,7 +34,7 @@ USB ビデオ クラス ドライバーは、USB ビデオ KS プロキシ フ�
 
 - IKsNodeControl という名前の拡張機能単位の API とインターフェイスを実装するヘッダーと cpp ファイル。 Vidcap.ax では、IKsNodeControl インターフェイスを使用して、プラグインの拡張機能ノードの識別子の通知を IKsControl のインスタンスを指定します。 サンプル コードでこれらのファイルが見つかります[サンプル拡張ユニット プラグイン DLL](sample-extension-unit-plug-in-dll.md)します。
 
-- *.Rgs* ノードのインターフェイスとクラス Id (Clsid) を登録するファイル、 **HKLM\\システム\\CCS\\コントロール\\NodeInterfaces\\**<em>プロパティ\_設定\_GUID</em>レジストリ サブキー。 このレジストリ サブキー内のエントリには、インターフェイス ID (IID) および CLSID のバイナリ値が含まれます。 詳細については、[UVC 拡張機能のユニットのレジストリ エントリをサンプル](sample-registry-entry-for-uvc-extension-units.md)を参照してください。
+- *.Rgs* ノードのインターフェイスとクラス Id (Clsid) を登録するファイル、 **HKLM\\システム\\CCS\\コントロール\\NodeInterfaces\\**<em>プロパティ\_設定\_GUID</em>レジストリ サブキー。 このレジストリ サブキー内のエントリには、インターフェイス ID (IID) および CLSID のバイナリ値が含まれます。 詳細については、次を参照してください。 [UVC 拡張機能のユニットのレジストリ エントリをサンプル](sample-registry-entry-for-uvc-extension-units.md)します。
 
 - このインターフェイスを起動するアプリケーション。 アプリケーションはまず、IKsTopologyInfo::CreateNodeInstance を使用して、適切なノード ID とノードのインスタンスを作成します。 その後、アプリケーションを呼び出す**QueryInterface**要求単位の拡張機能インターフェイスを取得するノードのインスタンスにします。 詳細については、次を参照してください[UVC 拡張機能の単位用のサンプル アプリケーション](sample-application-for-uvc-extension-units.md)と[単位の拡張機能での自動更新イベントのサポート。](supporting-autoupdate-events-with-extension-units.md)
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22a065d99a0c19f47d8a516a6f636a88a073cb4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373093"
 ---
 # <a name="wiadpccompressionsetting"></a>WIA\_DPC\_圧縮\_設定
 
@@ -35,12 +35,12 @@ WIA\_DPC\_圧縮\_プロパティ設定にはでは、範囲または見かけ�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA\_DPC\_圧縮\_約シーンのコンテンツの広範な範囲に見かけ上のイメージ品質を直線的に記述するプロパティの設定が対象としています。 小さい整数は低い画質 (つまり、最大圧縮) を表しより大きな整数が高品質 (つまり、最小限の圧縮) を表します。 デバイス上の任意の使用可能な設定は、そのデバイスにのみ相対デバイスに固有であるためです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

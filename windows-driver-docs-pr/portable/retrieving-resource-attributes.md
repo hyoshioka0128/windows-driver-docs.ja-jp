@@ -1,16 +1,16 @@
 ---
-Description: Retrieving Resource Attributes
-title: リソースの属性を取得します。
+Description: リソース属性の取得
+title: リソース属性の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2df0c06a25c298f8bb1fcd8fff03547c86d7cde1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376229"
 ---
-# <a name="retrieving-resource-attributes"></a>リソースの属性を取得します。
+# <a name="retrieving-resource-attributes"></a>リソース属性の取得
 
 
 呼び出しをアプリケーションが特定のリソースでサポートされている属性の一覧を取得する必要があるときに、 **IPortableDeviceResources::GetResourceAttributes**メソッドの識別子を指定する文字列を渡すと、対象となるリソースです。 この API 呼び出しをさらに、トリガー、 **WpdObjectResources::OnGetResourceAttributes**サンプル ドライバーでコマンド ハンドラー。 このメソッドを作成、 **IPortableDeviceValues**オブジェクトがリソースでサポートされている各属性の PROPERTYKEY/PROPVARIANT ペアが挿入されます。

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8950abae153c9c5dfa43c595b2570df162188f6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380679"
 ---
 # <a name="driverentry-of-tape-miniclass-driver-routine"></a>テープ Miniclass ドライバーの DriverEntry ルーチン
 
@@ -61,7 +61,7 @@ ULONG DriverEntry(
 
 **DriverEntry**呼び出し**TapeClassInitialize**し、テープのアドレスを渡します\_INIT\_データ\_EX と 2 つのポインターに渡された**DriverEntry**(*[引数 1]* と *[引数 2]*)。 **TapeClassInitialize**ドライバーの初期化が完了して、テープ miniclass ドライバーの状態を返します**DriverEntry**ルーチン。 **DriverEntry**から受信した状態を返します**TapeClassInitialize**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

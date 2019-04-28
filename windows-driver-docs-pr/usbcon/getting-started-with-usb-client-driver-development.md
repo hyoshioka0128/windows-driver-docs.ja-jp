@@ -4,11 +4,11 @@ title: USB クライアント ドライバー開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f8120c47fd0ff99ba20465d37061f5260fbb9e
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374466"
 ---
 # <a name="getting-started-with-usb-client-driver-development"></a>USB クライアント ドライバー開発の概要
 
@@ -59,7 +59,7 @@ ms.locfileid: "57464251"
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/ff554731" data-raw-source="[Concepts for All Driver Developers](https://msdn.microsoft.com/library/windows/hardware/ff554731)">すべてのドライバー開発者向けの概念</a></li>
 <li><a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">すべての USB 開発者の概念</a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/ff554721" data-raw-source="[Device nodes and device stacks](https://msdn.microsoft.com/library/windows/hardware/ff554721)">デバイス ノードとデバイス スタック</a></li>
-<li><em>Windows Driver Foundation でのドライバーの開発</em>少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/dn605830" data-raw-source="[Developing Drivers with WDF](https://msdn.microsoft.com/library/windows/hardware/dn605830)">WDF のドライバーが開発</a>を参照してください。</li>
+<li><em>Windows Driver Foundation でのドライバーの開発</em>少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/dn605830" data-raw-source="[Developing Drivers with WDF](https://msdn.microsoft.com/library/windows/hardware/dn605830)">WDF のドライバーが開発</a>します。</li>
 <li><a href="usb-driver-samples-in-wdk.md" data-raw-source="[USB driver samples](usb-driver-samples-in-wdk.md)">USB ドライバーのサンプル</a></li>
 </ul></td>
 <td><ul>
@@ -91,7 +91,7 @@ ms.locfileid: "57464251"
 </tr>
 <tr class="even">
 <td><strong>手順 8</strong>-USB 制御転送要求を送信することによって、ドライバーを拡張します。</td>
-<td>標準のコントロール要求、仕入先のコマンドをデバイスに送信します。 詳細については、<a href="usb-control-transfer.md" data-raw-source="[How to send a USB control transfer](usb-control-transfer.md)">USB 制御転送を送信する方法</a>を参照してください。</td>
+<td>標準のコントロール要求、仕入先のコマンドをデバイスに送信します。 詳細については、次を参照してください。 <a href="usb-control-transfer.md" data-raw-source="[How to send a USB control transfer](usb-control-transfer.md)">USB 制御転送を送信する方法</a>します。</td>
 </tr>
 <tr class="odd">
 <td><p><strong>手順 9</strong>-拡張、ドライバーを WDF USB I/O ターゲットのオブジェクトを使用して USB データ転送を実行します。 <a href="usb-device-i-o.md" data-raw-source="[USB data transfers](usb-device-i-o.md)">データ転送の USB</a>します。</p></td>

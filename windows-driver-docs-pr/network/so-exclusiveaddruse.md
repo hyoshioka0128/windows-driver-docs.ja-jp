@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SO_EXCLUSIVEADDRUSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 67f2d6739de37f83f374896125e95913593eb6aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373130"
 ---
 # <a name="soexclusiveaddruse"></a>したがって\_EXCLUSIVEADDRUSE
 
@@ -42,7 +42,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <td><p>SO_EXCLUSIVEADDRUSE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -94,7 +94,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <td><p>SO_EXCLUSIVEADDRUSE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -129,7 +129,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 SO を使用しての詳細については\_EXCLUSIVEADDRUSE ソケット オプションと、ソケットとの間ローカル トランスポート アドレスの共有への影響を参照してください。[トランスポート アドレスを共有](https://msdn.microsoft.com/library/windows/hardware/ff570806)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

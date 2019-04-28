@@ -1,6 +1,6 @@
 ---
-title: トレース セッションを作成します。
-description: トレース セッションを作成します。
+title: トレース セッションの作成
+description: トレース セッションの作成
 ms.assetid: 26f75b02-d830-4e3c-bbc9-03144d194e05
 keywords:
 - WDK のリアルタイムのトレース セッション
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b16a8986a75df60548ef75b1d9cdf7efc2f18ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381015"
 ---
-# <a name="creating-a-trace-session"></a>トレース セッションを作成します。
+# <a name="creating-a-trace-session"></a>トレース セッションの作成
 
 
 ## <span id="ddk_creating_a_real_time_trace_session_tools"></span><span id="DDK_CREATING_A_REAL_TIME_TRACE_SESSION_TOOLS"></span>

@@ -5,11 +5,11 @@ ms.assetid: 64D8999D-2E10-4836-9C17-7D809D9527BD
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 00585e1794fa558c54ba1e4eefdfb03a42abd294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383060"
 ---
 # <a name="i2c-read-function-index-27"></a>I2C 読み取り (関数インデックス 27)
 
@@ -74,7 +74,7 @@ ms.locfileid: "56530743"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>
@@ -82,7 +82,7 @@ ms.locfileid: "56530743"
 <p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>詳細についてはします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>データ</strong></td>
+<td align="left"><strong>Data</strong></td>
 <td align="left">1</td>
 <td align="left">4</td>
 <td align="left"><p>指定したデータを登録します。</p></td>

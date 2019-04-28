@@ -1,17 +1,17 @@
 ---
-title: プールでプールの特殊なタグを要求します。
-description: プールでプールの特殊なタグを要求します。
+title: プール タグによる特別なプールの要求
+description: プール タグによる特別なプールの要求
 ms.assetid: 201eb8a5-b38b-4625-853d-448488214e52
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc71c56b19d726ab0d558f8fad0b413bd039e95a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382118"
 ---
-# <a name="requesting-special-pool-by-pool-tag"></a>プールでプールの特殊なタグを要求します。
+# <a name="requesting-special-pool-by-pool-tag"></a>プール タグによる特別なプールの要求
 
 
 ## <span id="ddk_requesting_special_pool_for_allocations_with_a_specified_pool_tag_"></span><span id="DDK_REQUESTING_SPECIAL_POOL_FOR_ALLOCATIONS_WITH_A_SPECIFIED_POOL_TAG_"></span>
@@ -19,7 +19,7 @@ ms.locfileid: "56557622"
 
 指定されたプール タグを使用してすべての割り当てのための特別なプールを要求することができます。 システム上の 1 つのみのプール タグは一度に 1 つカーネル特別なプールの要求を関連付けることができます。
 
-Windows Vista および以降のバージョンの Windows では、プールでプールの特殊なタグを要求するのにコマンドラインを使用することもできます。 詳しくは、[ **GFlags コマンド**](gflags-commands.md)を参照してください。
+Windows Vista および以降のバージョンの Windows では、プールでプールの特殊なタグを要求するのにコマンドラインを使用することもできます。 詳しくは、次を参照してください。 [ **GFlags コマンド**](gflags-commands.md)します。
 
 **プールでプールの特殊なタグを要求するには**
 

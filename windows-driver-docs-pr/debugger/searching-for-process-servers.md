@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 652878d1ba1423eca72285f7f4651fc56e557b35
-ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382001"
 ---
 # <a name="searching-for-process-servers"></a>プロセス サーバーの検索
 
@@ -39,7 +39,7 @@ Debugger -QR \\Server
 
 使用することができます、WinDbg で、**スタブのリモート サーバーへの接続**利用可能なプロセス サーバーの一覧を参照するダイアログ ボックス。 参照してください[ファイル |リモートのスタブに接続する](file---connect-to-remote-stub.md)の詳細。
 
-**注**  が、検出可能にプロセス サーバーは、昇格した特権でアクティブ必要があります。 詳細については、[プロセス サーバーをアクティブ化する](activating-a-process-server.md)を参照してください。
+**注**  が、検出可能にプロセス サーバーは、昇格した特権でアクティブ必要があります。 詳細については、次を参照してください。[プロセス サーバーをアクティブ化する](activating-a-process-server.md)します。
 
  
 

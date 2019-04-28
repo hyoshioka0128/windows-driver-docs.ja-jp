@@ -4,11 +4,11 @@ title: USB セレクティブ サスペンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9c29b337842ee640f962eb6e262a896bbb75c9a
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377234"
 ---
 # <a name="usb-selective-suspend"></a>USB セレクティブ サスペンド
 
@@ -352,7 +352,7 @@ Windows xp の場合、ドライバーは、アイドル状態の通知のコー
 ### <a name="arming-devices-for-wakeup-in-the-idle-notification-callback-routine"></a>デバイスをアイドル状態の通知コールバック ルーチンでウェイク アップ取り組ま
 
 
-アイドル状態の通知のコールバック ルーチンがそのデバイスがあるかどうかを決定する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)保留中の要求。 場合ありません IRP\_MN\_待機\_スリープ解除要求が保留中、コールバック ルーチンは IRP を送信する必要があります\_MN\_待機\_デバイスを中断する前にスリープ解除要求。 待機のスリープ解除メカニズムの詳細については、[をサポートしているデバイスをあるウェイク アップ機能](https://msdn.microsoft.com/library/windows/hardware/ff563907)を参照してください。
+アイドル状態の通知のコールバック ルーチンがそのデバイスがあるかどうかを決定する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)保留中の要求。 場合ありません IRP\_MN\_待機\_スリープ解除要求が保留中、コールバック ルーチンは IRP を送信する必要があります\_MN\_待機\_デバイスを中断する前にスリープ解除要求。 待機のスリープ解除メカニズムの詳細については、次を参照してください。[をサポートしているデバイスをあるウェイク アップ機能](https://msdn.microsoft.com/library/windows/hardware/ff563907)します。
 
 
 ## <a name="usb-global-suspend"></a>USB のグローバルの一時停止します。

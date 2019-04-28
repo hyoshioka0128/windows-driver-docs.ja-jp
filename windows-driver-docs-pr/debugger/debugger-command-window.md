@@ -1,18 +1,18 @@
 ---
-title: WinDbg のデバッガー コマンドを入力します。
+title: WinDbg でのデバッガー コマンドの入力
 description: WinDbg デバッガー コマンド ウィンドウで、デバッガー コマンドを入力します。
 ms.assetid: 4d839170-efaf-43d5-a81c-ac3b9c33586c
 keywords: debugging information windows, command window, WinDbg
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abe50b414433ac31028a55e6ea0ee2c49092c817
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376902"
 ---
-# <a name="entering-debugger-commands-in-windbg"></a>WinDbg のデバッガー コマンドを入力します。
+# <a name="entering-debugger-commands-in-windbg"></a>WinDbg でのデバッガー コマンドの入力
 
 
 ## <span id="ddk_debugger_command_window_dbg"></span><span id="DDK_DEBUGGER_COMMAND_WINDOW_DBG"></span>
@@ -54,7 +54,7 @@ ms.locfileid: "56560469"
 
 -   **常に浮動**ドッキング場所にドラッグされる場合でも、ドッキングされていない場合、維持するウィンドウが。
 
--   **フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+-   **フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
  
 

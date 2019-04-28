@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_WAKE_PACKET_IPv6_TCP_SYNC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1569cbbf9ec150d963961045a00724ff9b8a6814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382136"
 ---
 # <a name="wditlvwakepacketipv6tcpsync"></a>WDI\_TLV\_WAKE\_パケット\_IPv6\_TCP\_同期
 
@@ -41,7 +41,7 @@ WDI\_TLV\_WAKE\_パケット\_IPv6\_TCP\_同期は、wake on LAN IPv6 TCP 同期
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

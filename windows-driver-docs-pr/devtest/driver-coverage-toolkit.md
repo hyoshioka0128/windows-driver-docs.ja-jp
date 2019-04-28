@@ -1,17 +1,17 @@
 ---
-title: ドライバーのカバレッジ ツールキット
+title: Driver Coverage Toolkit
 description: Toolkit モニターのドライバの対応とレポートは、さまざまな I/O 要求パケット (Irp) を入力するかのドライバー スタックのままにするには、デバイスを指定します。
 ms.assetid: b35ca87e-9ec7-4e25-89ce-0e7c121f6445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5facc6b1d8962aad294e99983f4a6372bfd407ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380614"
 ---
-# <a name="driver-coverage-toolkit"></a>ドライバーのカバレッジ ツールキット
+# <a name="driver-coverage-toolkit"></a>Driver Coverage Toolkit
 
 
 Toolkit モニターのドライバの対応とレポートは、さまざまな I/O 要求パケット (Irp) を入力するかのドライバー スタックのままにするには、デバイスを指定します。 ドライバの対応ツールキットからのデータは、ドライバーのテストおよび検証中にカバレッジの弱点を識別できます。
@@ -32,7 +32,7 @@ Toolkit モニターのドライバの対応とレポートは、さまざまな
 
 ドライバの対応 toolkit は、Windows Vista 以降のバージョンの Windows を実行するシステムでサポートされます。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [ドライバーのカバレッジ Toolkit の概要](overview-of-the-driver-coverage-toolkit.md)
 

@@ -1,6 +1,6 @@
 ---
-title: デバイスのプロパティを変更するための規則
-description: デバイスのプロパティを変更するための規則
+title: デバイス プロパティの変更の規則
+description: デバイス プロパティの変更の規則
 ms.assetid: EB554B5C-310A-4b2c-A2D5-22A113415400
 keywords:
 - デバイスのプロパティを変更するための規則の WDK デバイス インストール
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bedb78dec0465b00360a87a216ec4d0933d0c50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378357"
 ---
-# <a name="rules-for-modifying-device-properties"></a>デバイスのプロパティを変更するための規則
+# <a name="rules-for-modifying-device-properties"></a>デバイス プロパティの変更の規則
 
 
 多く[デバイス プロパティ](device-properties.md)複雑な依存関係があるその他のプロパティまたはデバイスの状態にします。 値などの[ **DEVPKEY_Device_Class** ](https://msdn.microsoft.com/library/windows/hardware/ff542385)と[ **DEVPKEY_Device_ClassGuid** ](https://msdn.microsoft.com/library/windows/hardware/ff542388)互いと一致する必要があります。
@@ -58,7 +58,7 @@ ms.locfileid: "56556756"
 
 -   [**DEVPKEY_Device_Manufacturer**](https://msdn.microsoft.com/library/windows/hardware/ff542558)
 
-**注**  *クラス インストーラー*と*共同インストーラー*フレンドリ名以外のデバイス プロパティを変更する必要があります ([**DEVPKEY_Device_FriendlyName**](https://msdn.microsoft.com/library/windows/hardware/ff542502)) とデバイスの上限と下限のフィルター ドライバー ([**DEVPKEY_Device_UpperFilters** ](https://msdn.microsoft.com/library/windows/hardware/ff542667)と[ **DEVPKEY_Device_LowerFilters**](https://msdn.microsoft.com/library/windows/hardware/ff542554)). 詳細については、[デバイス インスタンスのプロパティへのアクセス](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+**注**  *クラス インストーラー*と*共同インストーラー*フレンドリ名以外のデバイス プロパティを変更する必要があります ([**DEVPKEY_Device_FriendlyName**](https://msdn.microsoft.com/library/windows/hardware/ff542502)) とデバイスの上限と下限のフィルター ドライバー ([**DEVPKEY_Device_UpperFilters** ](https://msdn.microsoft.com/library/windows/hardware/ff542667)と[ **DEVPKEY_Device_LowerFilters**](https://msdn.microsoft.com/library/windows/hardware/ff542554)). 詳細については、次を参照してください。[デバイス インスタンスのプロパティへのアクセス](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
  
 

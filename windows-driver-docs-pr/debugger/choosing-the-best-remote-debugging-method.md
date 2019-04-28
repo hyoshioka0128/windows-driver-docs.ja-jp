@@ -1,19 +1,19 @@
 ---
-title: リモート デバッグの最適な方法を選択します。
-description: リモート デバッグの最適な方法を選択します。
+title: 最適なリレーショナル モデルデバッグ メソッドの選択
+description: 最適なリレーショナル モデルデバッグ メソッドの選択
 ms.assetid: af048b78-cb80-44d2-854f-11e0991e3353
 keywords:
 - リモート デバッグ、最適な方法の選択
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 196f5f1348605b626266fbd5d0282d56f93e09a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375105"
 ---
-# <a name="choosing-the-best-remote-debugging-method"></a>リモート デバッグの最適な方法を選択します。
+# <a name="choosing-the-best-remote-debugging-method"></a>最適なリレーショナル モデルデバッグ メソッドの選択
 
 
 ## <span id="ddk_choosing_the_best_remote_debugging_method_dbg"></span><span id="DDK_CHOOSING_THE_BEST_REMOTE_DEBUGGING_METHOD_DBG"></span>

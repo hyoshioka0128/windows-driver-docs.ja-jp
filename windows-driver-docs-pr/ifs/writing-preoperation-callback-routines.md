@@ -1,6 +1,6 @@
 ---
-title: Preoperation コールバック ルーチンを記述
-description: Preoperation コールバック ルーチンを記述
+title: 操作前コールバック ルーチンの記述
+description: 操作前コールバック ルーチンの記述
 ms.assetid: 3f863c44-152e-43c9-8ef5-ec426986a3fe
 keywords:
 - preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、書き込み
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d29454c4f456bace594ecb11a55d83cc008731
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377649"
 ---
-# <a name="writing-preoperation-callback-routines"></a>Preoperation コールバック ルーチンを記述
+# <a name="writing-preoperation-callback-routines"></a>操作前コールバック ルーチンの記述
 
 
 ## <span id="ddk_writing_preoperation_callback_routines_if"></span><span id="DDK_WRITING_PREOPERATION_CALLBACK_ROUTINES_IF"></span>
@@ -50,7 +50,7 @@ typedef FLT_PREOP_CALLBACK_STATUS
 
 ディスパッチ ルーチンのように、IRQL で preoperation コールバック ルーチンを呼び出すことができます = パッシブ\_レベル、または IRQL = APC\_レベル。 IRQL で呼び出された通常 = パッシブ\_I/O 要求を生成したスレッドのコンテキストでのレベル。 Preoperation コールバック ルーチンに常に IRQL でと呼ばれる高速な I/O とファイル システム フィルター (FsFilter) 操作では、パッシブ =\_レベル。 ただし、IRP ベースの操作では、ミニフィルター ドライバーの preoperation コールバック ルーチンを呼び出すシステム ワーカー スレッドのコンテキストで上位フィルターまたはミニフィルター ドライバー アプリケーションの場合、操作を処理するため、ワーカー スレッドが。
 
-IRQL で postoperation ルーチン内でコンテキスト オブジェクトを取得できない&gt;APC\_レベル。 代わりに、preoperation ルーチンの中に、コンテキスト オブジェクトを取得する postoperation ルーチンに渡すか IRQL で postoperation 処理を行う&lt;APC を =\_レベル。 コンテキストの詳細については、[管理コンテキスト](managing-contexts.md)を参照してください。
+IRQL で postoperation ルーチン内でコンテキスト オブジェクトを取得できない&gt;APC\_レベル。 代わりに、preoperation ルーチンの中に、コンテキスト オブジェクトを取得する postoperation ルーチンに渡すか IRQL で postoperation 処理を行う&lt;APC を =\_レベル。 コンテキストの詳細については、次を参照してください。[管理コンテキスト](managing-contexts.md)します。
 
 フィルター マネージャーは、指定した I/O 操作でミニフィルター ドライバーの preoperation コールバック ルーチンを呼び出す、ミニフィルター ドライバーは一時的に、I/O 操作を制御します。 ミニフィルター ドライバーでは、これは、次のいずれかになるまで、このコントロールが保持されます。
 

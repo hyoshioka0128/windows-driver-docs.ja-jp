@@ -15,11 +15,11 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: b3d0009724a22ad2aceb221c4dc99d89c21e8bc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382333"
 ---
 # <a name="edid-extension-vsdb-for-hmds-and-specialized-displays"></a>EDID 拡張機能 (VSDB) HMDs し、特殊な表示
 
@@ -111,6 +111,6 @@ Microsoft 表示のベンダー固有のデータ ブロックの内容に関連
 
 16 バイト ユニバーサル一意の識別子の各デバイスに一意であります。 これは、工場でに書き込まれる識別子です。 
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 以前のオペレーティング システムとの最大限の互換性を維持するために勧め HMDs がバージョンを使用し続けることに注意してください。`0x1`と`0x2`この EDID 拡張機能の。 HMDs に使用する値を指定のバージョンでは、前のセクションを参照してください。

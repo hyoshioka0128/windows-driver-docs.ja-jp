@@ -1,6 +1,6 @@
 ---
-title: 生のデータ型
-description: 生のデータ型
+title: RAW データ型
+description: RAW データ型
 ms.assetid: f53264c1-97aa-42f0-8bab-76bf984f2c79
 keywords:
 - プリント プロセッサ WDK、データ型
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06427b130d4960d932e6b992292d599243b84d30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372388"
 ---
-# <a name="raw-data-type"></a>生のデータ型
+# <a name="raw-data-type"></a>RAW データ型
 
 
 
@@ -25,7 +25,7 @@ ms.locfileid: "56548970"
 
 ターゲットのプリンタは、Postscript をサポートしている場合により、postscript コマンドに生データを検討できます。 その一方で、Sfmpsprt.dll プリント プロセッサは Postscript を入力し、非 Postscript プリンターを解釈します。 そのためその場合は、Postscript が生データ
 
-生データの種類に関する詳細については、、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+生データの種類に関する詳細については、次を参照してください。、 *Windows 2000 Professional リソース キット*または*Windows 2000 Server Resource Kit*します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

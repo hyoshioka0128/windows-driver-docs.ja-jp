@@ -1,5 +1,5 @@
 ---
-title: CTRL + \ (現在のデバッガーのデバッグ)
+title: Ctrl + \ (現在のデバッガーのデバッグ)
 description: CTRL + \ キーの組み合わせ CDB; の新しいインスタンスを起動します。現在のデバッガーは、この新しいデバッガーは、そのターゲットとして受け取ります。
 ms.assetid: c0c63af5-712c-47b6-8811-81e441ddb3df
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f377f5f248a0ea1d0a623f71b011d3dba8d7dc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374976"
 ---
 # <a name="ctrl-debug-current-debugger"></a>CTRL +\\ (現在のデバッガーのデバッグ)
 

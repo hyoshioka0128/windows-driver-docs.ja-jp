@@ -1,17 +1,17 @@
 ---
-title: 関数のインスタンス オブジェクトを取得します。
-description: 関数のインスタンス オブジェクトを取得します。
+title: 関数のインスタンス オブジェクトの取得
+description: 関数のインスタンス オブジェクトの取得
 ms.assetid: 2c750281-031b-4b9f-9012-3b341ebe1cd9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68243e112354ce8faeaf63dd41ddd1b814bb5eff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379652"
 ---
-# <a name="obtaining-a-function-instance-object"></a>関数のインスタンス オブジェクトを取得します。
+# <a name="obtaining-a-function-instance-object"></a>関数のインスタンス オブジェクトの取得
 
 
 WIA ミニドライバーは、現在のハードウェア デバイスとで実行されているサービスを識別する必要があります。 これらの項目を識別するためには、ミニドライバーは、機能探索サービスから実行時に関数のインスタンスのオブジェクトを取得し、デバイスのプロパティを読み取ります。

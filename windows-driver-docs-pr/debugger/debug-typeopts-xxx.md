@@ -15,11 +15,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 09cd01f7195520747426a56f25a75a40b53072b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374826"
 ---
 # <a name="debugtypeoptsxxx"></a>デバッグ\_TYPEOPTS\_XXX
 
@@ -66,7 +66,7 @@ ms.locfileid: "56551275"
 
 既定では、すべての型の書式設定オプションはになります。
 
-種類の詳細については、[型](https://msdn.microsoft.com/library/windows/hardware/ff558931)を参照してください。
+種類の詳細については、次を参照してください。[型](https://msdn.microsoft.com/library/windows/hardware/ff558931)します。
 
 <a name="requirements"></a>要件
 ------------

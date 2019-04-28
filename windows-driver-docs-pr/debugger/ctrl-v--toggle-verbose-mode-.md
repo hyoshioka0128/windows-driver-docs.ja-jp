@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4ddf221b72862cef4d520fe8e34a7c4524c709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374953"
 ---
 # <a name="ctrlv-toggle-verbose-mode"></a>Ctrl + V (詳細モードの切り替え)
 
@@ -68,7 +68,7 @@ CTRL+ALT+V
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 詳細モードをオンにすると (登録のダンプ) などのいくつかの表示コマンドは、さらに詳しい出力を生成します。 デバッガーに送信されるすべてのモジュールの読み込み操作が表示されます。 オペレーティング システムによってドライバーまたは DLL が読み込まれるたびに、デバッガーが通知されます。

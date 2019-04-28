@@ -4,11 +4,11 @@ title: ソース オブジェクトの定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 092e2a6207fee203b9af46854db5e3031ddc852d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378206"
 ---
 # <a name="defining-the-sensor-objects"></a>ソース オブジェクトの定義
 
@@ -21,7 +21,7 @@ WpdHelloWorldDriver には、次の表に示すオブジェクトがサポート
 |---------|----------------------------------------------------------------------------------------------------------------------------|
 | デバイス  | 説明のプロパティを含むルート オブジェクト、ファームウェアのバージョン、モデル、およびフレンドリ名。 |
 | ストレージ | たとえば、プロパティを公開するオブジェクトを記憶域容量、ファイル システムの種類では、および空きバイト数。         |
-| フォルダー  | たとえば、フォルダー名のプロパティを公開するオブジェクト。                                                             |
+| Folder  | たとえば、フォルダー名のプロパティを公開するオブジェクト。                                                             |
 | ファイル    | ファイル名と実際のファイルの内容などのプロパティを公開するオブジェクト。                                      |
 
  

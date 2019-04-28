@@ -5,11 +5,11 @@ ms.assetid: 8b544045-e9d7-422b-825c-f1a5531e0e11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d6abf2ddb043b2890ad42cb98f2c74f93009dfc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375844"
 ---
 # <a name="wia-diagnostic-log-macros"></a>WIA 診断ログのマクロ
 
@@ -17,11 +17,11 @@ ms.locfileid: "56548592"
 
 
 
-Windows Vista 以降のオペレーティング システムで処理エラーでは、[WIA ドライバー エラー Recovery for Windows Vista](wia-driver-error-recovery-for-windows-vista.md)を参照してください。
+Windows Vista 以降のオペレーティング システムで処理エラーでは、次を参照してください。 [WIA ドライバー エラー Recovery for Windows Vista](wia-driver-error-recovery-for-windows-vista.md)します。
 
 [診断ログ マクロ](https://msdn.microsoft.com/library/windows/hardware/ff540599)ミニドライバー ログ トレース、エラー、警告メッセージを有効にする、 *Wiaservc.log*診断のログ ファイル。
 
-Windows Vista 以降のオペレーティング システムでエラー処理の詳細については、[WIA ドライバー エラー Recovery for Windows Vista](wia-driver-error-recovery-for-windows-vista.md)を参照してください。
+Windows Vista 以降のオペレーティング システムでエラー処理の詳細については、次を参照してください。 [WIA ドライバー エラー Recovery for Windows Vista](wia-driver-error-recovery-for-windows-vista.md)します。
 
 それぞれのエラー、トレース、または警告の種類を指定してログ記録ステートメントを記述する最初の 3 つのマクロを使用できます。 4 番目のマクロを使用して、HRESULT を説明する文字列に変換することができます。
 
@@ -68,7 +68,7 @@ Windows Vista 以降のオペレーティング システムでエラー処理�
 
  
 
-これらのマクロの詳細については、[IWiaLog インターフェイスおよび診断ログ マクロ](https://msdn.microsoft.com/library/windows/hardware/ff543937)を参照してください。
+これらのマクロの詳細については、次を参照してください。 [IWiaLog インターフェイスおよび診断ログ マクロ](https://msdn.microsoft.com/library/windows/hardware/ff543937)します。
 
  
 

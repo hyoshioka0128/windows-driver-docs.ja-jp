@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2014768008e5ff4bf42f4ba3544e0a9af4781068
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381368"
 ---
 # <a name="local-and-global-ms-dos-device-names"></a>ローカルおよびグローバル MS-DOS デバイス名
 
@@ -64,7 +64,7 @@ if (!NT_SUCCESS(status)) {
 
 ドライバーは、ローカルの MS-DOS デバイス名を作成できます **\\\dosdevices\z** IOCTL への応答にシンボリック リンクを作成してディレクトリ。 ときに特定のローカル スレッド**\dosdevices\z**コンテキストから送信される、IOCTL、ドライバーの*DispatchDeviceControl*から現在のスレッドのコンテキスト内で呼び出されます。
 
-標準のドライバーのルーチンが実行されるコンテキストに関する詳細については、[ディスパッチ ルーチンは、Irql](dispatch-routines-and-irqls.md)を参照してください。
+標準のドライバーのルーチンが実行されるコンテキストに関する詳細については、次を参照してください。[ディスパッチ ルーチンは、Irql](dispatch-routines-and-irqls.md)します。
 
 ローカル システムを区別 **\\\dosdevices\z**ディレクトリとして次のとおりです。
 

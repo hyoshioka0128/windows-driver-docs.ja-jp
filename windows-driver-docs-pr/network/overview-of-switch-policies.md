@@ -5,11 +5,11 @@ ms.assetid: DB9368CE-96D4-48C9-AE18-601EE4A09001
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de8a6e03b8b3b9607ec440675ac56e009267d4ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372850"
 ---
 # <a name="overview-of-switch-policies"></a>スイッチ ポリシーの概要
 
@@ -19,7 +19,7 @@ NDIS 6.30 以降では、次の種類のポリシーは、HYPER-V 拡張可能�
 <a href="" id="built-in-switch-policies"></a>スイッチの組み込みのポリシー  
 スイッチの組み込みポリシーでは、拡張可能スイッチのインターフェイスによって適用されるプロパティを指定します。 拡張機能で拡張可能スイッチのドライバー スタックは、これらのポリシーのプロパティはプロビジョニングされません。
 
-スイッチの組み込みポリシーでは、一般に、スイッチの構成に影響が、個々 のスイッチ ポート経由でトラフィック フローは影響しませんプロパティを含めます。 たとえば、このような 1 つの組み込みのポリシーは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする物理アダプターにハードウェア オフロードを許可するスイッチを構成します。 このインターフェイスの詳細については、[Single Root I/O Virtualization (SR-IOV)](overview-of-single-root-i-o-virtualization--sr-iov-.md)を参照してください。
+スイッチの組み込みポリシーでは、一般に、スイッチの構成に影響が、個々 のスイッチ ポート経由でトラフィック フローは影響しませんプロパティを含めます。 たとえば、このような 1 つの組み込みのポリシーは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする物理アダプターにハードウェア オフロードを許可するスイッチを構成します。 このインターフェイスの詳細については、次を参照してください。 [Single Root I/O Virtualization (SR-IOV)](overview-of-single-root-i-o-virtualization--sr-iov-.md)します。
 
 <a href="" id="custom-switch-policies"></a>スイッチのカスタム ポリシー  
 スイッチのカスタム ポリシーでは、独立系ソフトウェア ベンダー (ISV) によって定義されている専用のプロパティを指定します。 これらのプロパティは、拡張可能スイッチのプロトコルの端でプロビジョニングされ、スイッチのカスタム ポリシーを管理する、基になる拡張機能によって適用されます。
@@ -48,7 +48,7 @@ ISV は、カスタムのスイッチのプロパティの書式を定義しま�
 
  
 
-スイッチのポリシーとプロパティを管理する方法の詳細については、[スイッチ ポリシーの管理](managing-switch-policies.md)を参照してください。
+スイッチのポリシーとプロパティを管理する方法の詳細については、次を参照してください。[スイッチ ポリシーの管理](managing-switch-policies.md)します。
 
  
 

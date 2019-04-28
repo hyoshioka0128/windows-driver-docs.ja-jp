@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_SINGLE_INSTANCE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: dfaea0793f295343a527b2f9f00f2fe7976eadaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381414"
 ---
 # <a name="irpmnquerysingleinstance"></a>IRP\_MN\_クエリ\_単一\_インスタンス
 
@@ -102,7 +102,7 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 インスタンスが有効では、ドライバーが要求を処理できない場合は、すべての該当するエラー状態を返すできます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

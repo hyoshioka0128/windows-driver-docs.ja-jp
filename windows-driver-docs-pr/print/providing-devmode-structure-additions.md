@@ -1,6 +1,6 @@
 ---
-title: DEVMODE 構造体の追加機能を提供します。
-description: DEVMODE 構造体の追加機能を提供します。
+title: DEVMODE 構造の追加機能を提供する
+description: DEVMODE 構造の追加機能を提供する
 ms.assetid: 7ce698f5-14c7-484d-be3d-b41c690b9576
 keywords:
 - ユーザー インターフェイスにプラグイン WDK 印刷、DEVMODEW 構造の追加
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a89551be81348cf9bdd95529fc8b5ca02ca167
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376572"
 ---
-# <a name="providing-devmode-structure-additions"></a>DEVMODE 構造体の追加機能を提供します。
+# <a name="providing-devmode-structure-additions"></a>DEVMODE 構造の追加機能を提供する
 
 
 

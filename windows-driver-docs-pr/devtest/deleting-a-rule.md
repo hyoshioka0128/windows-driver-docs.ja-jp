@@ -1,6 +1,6 @@
 ---
-title: ルールを削除します。
-description: ルールを削除します。
+title: 規則の削除
+description: 規則の削除
 ms.assetid: 3692c1c5-e090-43b0-9661-b8f720248826
 keywords:
 - WDK のルールを削除して、トレース メッセージをフィルター処理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3d2b9dce1aeb65a1a1cae2f447ba2b10817ddac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381894"
 ---
-# <a name="deleting-a-rule"></a>ルールを削除します。
+# <a name="deleting-a-rule"></a>規則の削除
 
 
 フィルターからルールを削除します。

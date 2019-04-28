@@ -5,11 +5,11 @@ ms.assetid: 52770566-1d03-4ae8-9925-240fffcc5f57
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f4ef05bee8372ad25a4d711ab1475f76aff0ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378075"
 ---
 # <a name="starting-and-stopping-the-still-image-service"></a>静止画像サービスの開始と停止
 

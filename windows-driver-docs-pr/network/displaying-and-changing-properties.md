@@ -1,6 +1,6 @@
 ---
-title: 表示して、プロパティを変更します。
-description: 表示して、プロパティを変更します。
+title: プロパティの表示と変更
+description: プロパティの表示と変更
 ms.assetid: 657b687d-b0c0-46e0-a948-242509590a4b
 keywords:
 - ネットワー キング WDK オブジェクト、プロパティ ページに通知します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f23c47240e50ac78268d69fa11bd29fbe410cbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379565"
 ---
-# <a name="displaying-and-changing-properties"></a>表示して、プロパティを変更します。
+# <a name="displaying-and-changing-properties"></a>プロパティの表示と変更
 
 
 

@@ -5,13 +5,13 @@ ms.assetid: c42ab1ad-6b8f-458f-ba29-e3553095c853
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 098abf6d7e5374b7e165beb3b82f59bf1ead41b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375408"
 ---
-# <a name="can-i-use-enumerations-in-my-tracing-code"></a>列挙体を使用して、トレース コードでできますか。
+# <a name="can-i-use-enumerations-in-my-tracing-code"></a>トレース コードで列挙を使用できますか?
 
 
 列挙体を使用すると、ユーザーをデコードする必要がありますの整数値を表示する代わりに、トレース メッセージに意味のある条件を表示します。
@@ -47,7 +47,7 @@ enum _wday {
  DoTraceMessage(NOISE " %!dayset!", p);
 ```
 
-最後に、非構成ファイル (.ini ファイル以外のファイル) に構成データを追加するため、追加、 **-スキャン**、実行するようにパラメーター\_WPP マクロは、WPP プリプロセッサを呼び出します。 これには、指定したファイルで構成データを検索する WPP に通知します。 次に、例を示します。
+最後に、非構成ファイル (.ini ファイル以外のファイル) に構成データを追加するため、追加、 **-スキャン**、実行するようにパラメーター\_WPP マクロは、WPP プリプロセッサを呼び出します。 これには、指定したファイルで構成データを検索する WPP に通知します。 例:
 
 ```
 RUN_WPP -scan:trace.c

@@ -1,6 +1,6 @@
 ---
-title: コマンド バッファーを送信します。
-description: コマンド バッファーを送信します。
+title: コマンド バッファーの送信
+description: コマンド バッファーの送信
 ms.assetid: 3622697a-3989-4756-89d4-c67c81815d49
 keywords:
 - コマンドの送信、WDK のバッファーを表示
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f37037b3738c32d88eb126b65025dd36d09427c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375951"
 ---
-# <a name="submitting-a-command-buffer"></a>コマンド バッファーを送信します。
+# <a name="submitting-a-command-buffer"></a>コマンド バッファーの送信
 
 
 ## <span id="ddk_submitting_a_command_buffer_gg"></span><span id="DDK_SUBMITTING_A_COMMAND_BUFFER_GG"></span>
@@ -38,7 +38,7 @@ ms.locfileid: "56536669"
 
      
 
-4.  ビデオ メモリ マネージャーには、ディスプレイのミニポート ドライバーの[ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587) DMA バッファー、指定された割り当てを移動するページング バッファーと呼ばれる特殊な目的を作成する関数DMA バッファーと GPU からアクセス可能なメモリの間に付属している割り当てリストします。 詳細については、[ビデオ メモリ リソースのページング](paging-video-memory-resources.md)を参照してください。
+4.  ビデオ メモリ マネージャーには、ディスプレイのミニポート ドライバーの[ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587) DMA バッファー、指定された割り当てを移動するページング バッファーと呼ばれる特殊な目的を作成する関数DMA バッファーと GPU からアクセス可能なメモリの間に付属している割り当てリストします。 詳細については、次を参照してください。[ビデオ メモリ リソースのページング](paging-video-memory-resources.md)します。
 
 5.  GPU スケジューラ呼び出しディスプレイ ミニポート ドライバーの[ **DxgkDdiPatch** ](https://msdn.microsoft.com/library/windows/hardware/ff559737) DMA バッファー内のリソースへの物理アドレスを割り当てる関数。 ただし、スケジューラを呼び出す必要はありません**DxgkDdiPatch**ページング バッファーの物理アドレスが渡され、中に割り当てられているため、ページング バッファーへの物理アドレスを割り当てる、 [ *DxgkDdiBuildPagingBuffer* ](https://msdn.microsoft.com/library/windows/hardware/ff559587)呼び出します。
 

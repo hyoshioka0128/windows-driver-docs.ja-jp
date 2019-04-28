@@ -1,6 +1,6 @@
 ---
-title: 設定およびパラレル ポートの通信モードを解除
-description: 設定およびパラレル ポートの通信モードを解除
+title: パラレル ポートの通信モードの設定と解除
+description: パラレル ポートの通信モードの設定と解除
 ms.assetid: a22cdeef-4ae7-49f8-b0b5-a4d68feb4235
 keywords:
 - パラレル ポート WDK、通信モード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be3891065f2b0d765be26f4ab3ed90fface720f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380548"
 ---
-# <a name="setting-and-clearing-the-communication-mode-on-a-parallel-port"></a>設定およびパラレル ポートの通信モードを解除
+# <a name="setting-and-clearing-the-communication-mode-on-a-parallel-port"></a>パラレル ポートの通信モードの設定と解除
 
 
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 12/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a9148b21b1d9c5c3c49dcbd9de9a2e353371e4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380804"
 ---
 # <a name="kspropertypinproposedataformat2"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2
 
@@ -66,7 +66,7 @@ OS の使用、 **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**ドライバーが指定�
 
 **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**型の構造体が含まれています[ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff561656)、
 
-プロパティはサポートされている唯一の属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード*を使用して指定されていると、 [ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**](https://msdn.microsoft.com/library/windows/hardware/mt727947)構造体。 なお、 **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**構造体の始まりを[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)メンバー。 詳細については、[オーディオ信号の処理モード](https://msdn.microsoft.com/library/windows/hardware/mt186386)を参照してください。
+プロパティはサポートされている唯一の属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード*を使用して指定されていると、 [ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**](https://msdn.microsoft.com/library/windows/hardware/mt727947)構造体。 なお、 **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**構造体の始まりを[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)メンバー。 詳細については、次を参照してください。[オーディオ信号の処理モード](https://msdn.microsoft.com/library/windows/hardware/mt186386)します。
 
 [**KSPROPERTY\_型\_取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)暗証番号 (pin) の形式が提示した場合にのみサポートします。 この関数は、指定した属性が指定された pin での既定のデータ形式に関する情報を提供するオーディオ ドライバーをできます。
 

@@ -1,6 +1,6 @@
 ---
-title: KS プロパティ、イベント、およびメソッド
-description: KS プロパティ、イベント、およびメソッド
+title: KS のプロパティ、イベント、メソッド
+description: KS のプロパティ、イベント、メソッド
 ms.assetid: 933bbe81-92d8-4bcc-b935-9ae929464ca1
 keywords:
 - カーネルの WDK、プロパティをストリーミングします。
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be71c7dd505e9376bbd18199b8a012a3c35a89d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382114"
 ---
-# <a name="ks-properties-events-and-methods"></a>KS プロパティ、イベント、およびメソッド
+# <a name="ks-properties-events-and-methods"></a>KS のプロパティ、イベント、メソッド
 
 
 
@@ -40,7 +40,7 @@ ms.locfileid: "56530033"
 
     機能的によく似た操作は、一連のグループ化されます。 各プロパティ、イベント、またはメソッドのセットは、GUID によって識別されます。 Microsoft では、標準的なテクノロジに特化した操作の Guid を定義します。 ミニドライバーは、カスタム操作の独自の Guid を定義できます。
 
--   **識別子**
+-   **[Identifier]**
 
     各操作は、セット内の ID 番号を指定します。
 

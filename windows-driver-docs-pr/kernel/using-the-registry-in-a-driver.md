@@ -1,6 +1,6 @@
 ---
-title: ドライバーでは、レジストリを使用します。
-description: ドライバーでは、レジストリを使用します。
+title: ドライバーでのレジストリの使用
+description: ドライバーでのレジストリの使用
 ms.assetid: 69d2d491-3cc1-4fd0-a1c9-0cc8e73e69b2
 keywords:
 - レジストリの WDK カーネル
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 738699c9c45539aac64cd9b468c6826d6c78220b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372354"
 ---
-# <a name="using-the-registry-in-a-driver"></a>ドライバーでは、レジストリを使用します。
+# <a name="using-the-registry-in-a-driver"></a>ドライバーでのレジストリの使用
 
 
 

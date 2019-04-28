@@ -1,6 +1,6 @@
 ---
-title: 矩形
-description: 矩形
+title: 四角形
+description: 四角形
 ms.assetid: c0991533-baf3-4fb6-8e1c-fb74c862b860
 keywords:
 - GPD ファイル エントリ WDK Unidrv、四角形
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51d759a7c98ebd21bb122de04b34635e82e262bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382594"
 ---
-# <a name="rectangles"></a>矩形
+# <a name="rectangles"></a>四角形
 
 
 

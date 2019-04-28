@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f6c8c42831599b340ca4f26a96ac9777fc3dfb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373218"
 ---
 # <a name="common-wsd-scan-service-operation-error-codes"></a>一般的な WSD スキャン サービス操作のエラー コード
 
@@ -133,7 +133,7 @@ ms.locfileid: "56536474"
     </tr>
     <tr class="even">
     <td><p>[詳細]</p></td>
-    <td><p><em>なし</em></p></td>
+    <td><p><em>None</em></p></td>
     </tr>
     </tbody>
     </table>
@@ -170,7 +170,7 @@ ms.locfileid: "56536474"
     </tr>
     <tr class="even">
     <td><p>[詳細]</p></td>
-    <td><p><em>なし</em></p></td>
+    <td><p><em>None</em></p></td>
     </tr>
     </tbody>
     </table>
@@ -207,7 +207,7 @@ ms.locfileid: "56536474"
     </tr>
     <tr class="even">
     <td><p>[詳細]</p></td>
-    <td><p><em>なし</em></p></td>
+    <td><p><em>None</em></p></td>
     </tr>
     </tbody>
     </table>

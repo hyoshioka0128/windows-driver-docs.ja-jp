@@ -5,11 +5,11 @@ ms.assetid: E7A289CA-29CE-4C6F-AD08-529E58379715
 ms.date: 10/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fa784a5cdb58fdcdb0830978688503f6b6e6e01f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381934"
 ---
 # <a name="setting-up-kernel-mode-debugging-of-a-virtual-machine-in-visual-studio"></a>Visual Studio での仮想マシンのカーネルモード デバッグの設定
 
@@ -17,7 +17,7 @@ ms.locfileid: "56573638"
 > この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
 >
 
-Microsoft Visual Studio を使用して、設定し、仮想マシンのカーネル モードのデバッグを実行することができます。 仮想マシンは、デバッガーと同じ物理コンピューターまたは同じネットワークに接続されている別のコンピューターに配置できます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
+Microsoft Visual Studio を使用して、設定し、仮想マシンのカーネル モードのデバッグを実行することができます。 仮想マシンは、デバッガーと同じ物理コンピューターまたは同じネットワークに接続されている別のコンピューターに配置できます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
 
 デバッガーを実行しているコンピューターと呼ばれる、*ホスト コンピューター*、され、デバッグ中に仮想マシンが呼び出されます、*ターゲット仮想マシン*します。
 

@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86859d492f81fa532a600f5835b7623f586230fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371672"
 ---
-# <a name="view--options"></a>ビュー |オプション
+# <a name="view--options"></a>View | Options (表示 | オプション)
 
 
 ## <span id="ddk_view_options_dbg"></span><span id="DDK_VIEW_OPTIONS_DBG"></span>
@@ -41,7 +41,7 @@ ms.locfileid: "56536790"
 場合、 **」と入力は、最後のコマンドを繰り返す** チェック ボックスが選択されているプロンプトで、空で ENTER キーを押すことができます場合、[デバッガー コマンド ウィンドウ](debugger-command-window.md)を前のコマンドを繰り返します。 このチェック ボックスをオフにした場合、ENTER キーは新しいプロンプトを生成します。
 
 <span id="Automatically_scroll"></span><span id="automatically_scroll"></span><span id="AUTOMATICALLY_SCROLL"></span>**自動スクロールします。**  
-**自動スクロール** チェック ボックスは、デバッガー コマンド ウィンドウに新しいテキストが送信されるときに発生する自動スクロールを制御します。 この機能を無効にする場合は、オフ、**自動スクロール**チェック ボックスをオンします。 このスクロールの詳細については、[デバッガー コマンドを使用して](using-debugger-commands.md)を参照してください。
+**自動スクロール** チェック ボックスは、デバッガー コマンド ウィンドウに新しいテキストが送信されるときに発生する自動スクロールを制御します。 この機能を無効にする場合は、オフ、**自動スクロール**チェック ボックスをオンします。 このスクロールの詳細については、次を参照してください。[デバッガー コマンドを使用して](using-debugger-commands.md)します。
 
 <span id="Workspace_Prompts"></span><span id="workspace_prompts"></span><span id="WORKSPACE_PROMPTS"></span>**ワークスペースのプロンプト**  
 **ワークスペースにメッセージが表示されます**領域で、クリックできます WinDbg でワークスペースを保存するタイミングと頻度を決定する 3 つのオプションのいずれか。

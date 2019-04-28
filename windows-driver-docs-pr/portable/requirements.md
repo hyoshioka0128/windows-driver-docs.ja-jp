@@ -1,14 +1,14 @@
 ---
-Description: Requirements
+Description: 必要条件
 title: 要件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65cfd58a71c6da5af4bfed01d51d8a48bc9b1835
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376222"
 ---
 # <a name="requirements"></a>要件
 

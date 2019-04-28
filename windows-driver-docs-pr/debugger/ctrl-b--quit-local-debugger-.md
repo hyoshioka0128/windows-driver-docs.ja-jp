@@ -1,5 +1,5 @@
 ---
-title: CTRL + B (Quit ローカル デバッガー)
+title: Ctrl + B (ローカル デバッガーの終了)
 description: Ctrl キーを押しながら B キーが原因と、デバッガーが突然終了します。 これには、リモート デバッグ セッションは終了しません。
 ms.assetid: f70f4c40-244f-4abf-982f-d738800ac621
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fa104f8e74e3cbf1e6caf6580588f09d9586ea0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374965"
 ---
-# <a name="ctrlb-quit-local-debugger"></a>CTRL + B (Quit ローカル デバッガー)
+# <a name="ctrlb-quit-local-debugger"></a>Ctrl + B (ローカル デバッガーの終了)
 
 
 Ctrl キーを押しながら B キーが原因と、デバッガーが突然終了します。 これには、リモート デバッグ セッションは終了しません。

@@ -1,6 +1,6 @@
 ---
-title: デバッガーの新しい拡張機能の記述
-description: デバッガーの新しい拡張機能の記述
+title: 新しいデバッガー拡張機能の作成
+description: 新しいデバッガー拡張機能の作成
 ms.assetid: 6a0d3478-1c7a-44e0-8e48-1334de228c64
 keywords:
 - 拡張機能コマンド (コマンド) 拡張機能の記述
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 274e77cd9b973be043f44cce4ca41f4670bc1e4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374816"
 ---
-# <a name="writing-new-debugger-extensions"></a>デバッガーの新しい拡張機能の記述
+# <a name="writing-new-debugger-extensions"></a>新しいデバッガー拡張機能の作成
 
 
 ## <span id="ddk_writing_new_debugger_extensions_dbg"></span><span id="DDK_WRITING_NEW_DEBUGGER_EXTENSIONS_DBG"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56550428"
 
 -   *拡張機能の WdbgExts*します。 これらは、wdbgexts.h ヘッダー ファイルのみでのプロトタイプに基づいています。
 
-デバッガーの拡張機能を記述する方法については、[DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)と[WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)を参照してください。
+デバッガーの拡張機能を記述する方法については、次を参照してください。 [DbgEng 拡張機能の作成](writing-dbgeng-extensions.md)と[WdbgExts 拡張機能の作成](writing-wdbgexts-extensions.md)です。
 
  
 

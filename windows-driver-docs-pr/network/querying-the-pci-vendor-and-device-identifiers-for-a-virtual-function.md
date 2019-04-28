@@ -1,17 +1,17 @@
 ---
 title: 仮想関数の PCI ベンダーとデバイス Id のクエリを実行します。
-description: 仮想関数の PCI ベンダーとデバイスのデバイス Id のクエリ
+description: 仮想関数の PCI ベンダーおよびデバイス ID のクエリ
 ms.assetid: A2FB0A35-A89B-4028-92BA-E75739B080FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dedd919337da585e7a4f63f7a10da63f9f75eda9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380579"
 ---
-# <a name="querying-the-pci-vendor-and-device-identifiers-for-a-virtual-function"></a>仮想関数の PCI ベンダーとデバイスのデバイス Id のクエリ
+# <a name="querying-the-pci-vendor-and-device-identifiers-for-a-virtual-function"></a>仮想関数の PCI ベンダーおよびデバイス ID のクエリ
 
 **注**このメソッドは、HYPER-V 親パーティションの管理オペレーティング システムで実行されているドライバーの関連でのみ使用できます。
 

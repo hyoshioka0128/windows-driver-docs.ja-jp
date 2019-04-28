@@ -7,13 +7,13 @@ keywords:
 - IRP_MJ_READ カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: fee47dc083df75a8e15a89a55e9563c2274c4f9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368447"
 ---
-# <a name="irpmjread"></a>IRP\_MJ\_読み取り
+# <a name="irpmjread"></a>IRP\_MJ\_READ
 
 
 システムにそのデバイスからデータを転送するすべてのデバイス ドライバーでの読み取り要求を処理する必要があります、 [ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)または[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)としてする必要があります、日常的な高度なドライバーの上層にこのようなデバイス ドライバー。

@@ -1,20 +1,20 @@
 ---
-title: MapTransferEx ルーチンを使用してください。
+title: MapTransferEx ルーチンの使用
 description: MapTransferEx ルーチンでは、以前に割り当てられた DMA リソースのセットを初期化し、DMA の転送を開始します。
 ms.assetid: 79D3DDB2-B134-43B2-A6CC-94035C793047
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c72ea9dd940cee71186c0b829bc536cf74143aed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372300"
 ---
-# <a name="using-the-maptransferex-routine"></a>MapTransferEx ルーチンを使用してください。
+# <a name="using-the-maptransferex-routine"></a>MapTransferEx ルーチンの使用
 
 
-[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチンは、DMA の以前に割り当てられたリソースのセットを初期化し、DMA の転送を開始します。 このルーチンは、バージョン 3 の DMA 操作インターフェイスで使用できます。 このインターフェイスのバージョン 3 は、Windows 8 以降ではサポートされています。 DMA 操作のインターフェイスの詳細については、[ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)を参照してください。
+[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチンは、DMA の以前に割り当てられたリソースのセットを初期化し、DMA の転送を開始します。 このルーチンは、バージョン 3 の DMA 操作インターフェイスで使用できます。 このインターフェイスのバージョン 3 は、Windows 8 以降ではサポートされています。 DMA 操作のインターフェイスの詳細については、次を参照してください。 [ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)します。
 
 ## <a name="comparison-of-maptransferex-to-maptransfer"></a>MapTransfer に MapTransferEx の比較
 
@@ -37,7 +37,7 @@ ms.locfileid: "56549245"
 <tbody>
 <tr class="odd">
 <td><em>Mdl</em></td>
-<td><p>1 つまたは複数の MDLs のチェーン内の最初の MDL へのポインター。 MDL チェーンの詳細については、<a href="using-mdls.md" data-raw-source="[Using MDLs](using-mdls.md)">を使用して MDLs</a>を参照してください。</p></td>
+<td><p>1 つまたは複数の MDLs のチェーン内の最初の MDL へのポインター。 MDL チェーンの詳細については、次を参照してください。<a href="using-mdls.md" data-raw-source="[Using MDLs](using-mdls.md)">を使用して MDLs</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><em>オフセット</em></td>

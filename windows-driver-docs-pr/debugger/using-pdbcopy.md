@@ -1,26 +1,26 @@
 ---
-title: PDBCopy を使用します。
-description: PDBCopy を使用します。
+title: PDBCopy の使用
+description: PDBCopy の使用
 ms.assetid: f8207b09-5a1b-4ff3-b99d-20daa88cfe10
 keywords:
 - PDBCopy を使用して
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0f5d61816aa99cb20dd7c91db0f2ca4ba266b12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376318"
 ---
-# <a name="using-pdbcopy"></a>PDBCopy を使用します。
+# <a name="using-pdbcopy"></a>PDBCopy の使用
 
 
 PDBCopy は、完全なシンボル ファイルから削除されたシンボル ファイルを作成するコマンド ライン ツールです。 つまり、プライベート シンボル データと、パブリック シンボル テーブルの両方が含まれていて、パブリック シンボル テーブルのみを含むファイルのコピーが作成されるシンボル ファイルがかかります。 PDBCopy オプションの使用によって削除されたシンボル ファイルには、全体のパブリック シンボルの表に、またはパブリック シンボル テーブルの指定したサブセットのいずれかが含まれています。
 
 PDB 形式シンボル ファイル (ファイル名拡張子 .pdb) と連携 PDBCopy は古い形式 (.dbg) シンボル ファイル使用できません。
 
-パブリック シンボル テーブルとプライベート シンボル データの説明は、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
+パブリック シンボル テーブルとプライベート シンボル データの説明は、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
 ### <a name="span-idremovingprivatesymbolsspanspan-idremovingprivatesymbolsspanremoving-private-symbols"></a><span id="removing_private_symbols"></span><span id="REMOVING_PRIVATE_SYMBOLS"></span>プライベート シンボルの削除
 

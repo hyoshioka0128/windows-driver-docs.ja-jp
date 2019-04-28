@@ -1,17 +1,17 @@
 ---
-title: オフロード低電力のプロトコルの現在のパラメーター設定を取得します。
-description: オフロード低電力のプロトコルの現在のパラメーター設定を取得します。
+title: 省電力プロトコル オフロードの現在のパラメーター設定の取得
+description: 省電力プロトコル オフロードの現在のパラメーター設定の取得
 ms.assetid: 53d8535f-0615-4ba2-92f4-1c20a7d12c8d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 951a7a6ec544544a248b7684b2ede5eb7471f5be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377286"
 ---
-# <a name="obtaining-the-current-parameter-settings-of-low-power-protocol-offloads"></a>オフロード低電力のプロトコルの現在のパラメーター設定を取得します。
+# <a name="obtaining-the-current-parameter-settings-of-low-power-protocol-offloads"></a>省電力プロトコル オフロードの現在のパラメーター設定の取得
 
 
 

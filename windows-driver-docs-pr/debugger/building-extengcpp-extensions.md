@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84a512e56167b719808be5271fe45ca21d83308b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374048"
 ---
 # <a name="building-engextcpp-extensions"></a>EngExtCpp 拡張機能の構築
 
@@ -19,7 +19,7 @@ ms.locfileid: "56578296"
 ## <span id="ddk_building_dbgeng_extensions_dbx"></span><span id="DDK_BUILDING_DBGENG_EXTENSIONS_DBX"></span>
 
 
-EngExtCpp 拡張ライブラリは、DbgEng の拡張機能ライブラリとほぼ同じ方法で構築されます。 詳細については、[DbgEng 拡張機能の作成](building-dbgeng-extensions.md)を参照してください。
+EngExtCpp 拡張ライブラリは、DbgEng の拡張機能ライブラリとほぼ同じ方法で構築されます。 詳細については、次を参照してください。 [DbgEng 拡張機能の作成](building-dbgeng-extensions.md)です。
 
 EngExtCpp 実装コード (engextcpp.cpp) は、スタティック ライブラリとリンクの代わりに使用されます。
 

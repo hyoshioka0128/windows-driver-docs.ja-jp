@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DISCONNECT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c1fb88e0f9796207ff57ec23ff096ae1c1fdd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380874"
 ---
 # <a name="wditlvdisconnectparameters"></a>WDI\_TLV\_切断\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_切断\_パラメーターはパラメーターを含む TLV [OID\_WDI
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                                                                                                                                                         |
+| 型                                              | 説明                                                                                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 関連付けを解除するピアの MAC アドレス。                                                                                                                                        |
 | UINT16                                            | ホストによってトリガーされる関連付け解除の理由です。 この値は、リトル エンディアン バイト順で提供される、送信の枠の理由コードに適切にコピーする必要があります。 |

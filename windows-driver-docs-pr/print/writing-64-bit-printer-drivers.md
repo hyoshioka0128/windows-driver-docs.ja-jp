@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a1c36223634ad720723c11b20cecbde29f3a2fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370359"
 ---
 # <a name="writing-64-bit-printer-drivers"></a>64 ビット プリンター ドライバーの記述
 
@@ -71,7 +71,7 @@ PDrvOptItems.UserData ポインター フィールドなど、 [ **OEMCUIPPARAM*
 ulSlotPhysAddr
 ```
 
-64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、[、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)を参照してください。
+64 ビット長ではなく 32 ビット長のみであるハードウェア レジスタの値を表すことができます。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)します。
  
 
  

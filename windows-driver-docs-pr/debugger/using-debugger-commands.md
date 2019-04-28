@@ -1,18 +1,18 @@
 ---
-title: デバッガー コマンドを使用します。
+title: デバッガー コマンドの使用
 description: このセクションでは、デバッガー コマンドを使用して説明します。 ウィンドウの下部にあるプロンプトでコマンドを入力したとします。
 ms.assetid: 64dcc364-53b5-41d3-9266-abcfe4b328f4
 keywords: コマンド、デバッガー コマンド、メタ コマンド
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77bf91529add011f250f17e483bc37311015597b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371630"
 ---
-# <a name="using-debugger-commands"></a>デバッガー コマンドを使用します。
+# <a name="using-debugger-commands"></a>デバッガー コマンドの使用
 
 
 ## <span id="ddk_using_debugger_commands_dbg"></span><span id="DDK_USING_DEBUGGER_COMMANDS_DBG"></span>
@@ -72,7 +72,7 @@ WinDbg、KD、CDB、さまざまなコマンドをサポートします。 い�
 
 いくつかのコマンドは、ユーザー モードのデバッグ中にのみ使用し、その他のコマンドは、カーネル モードのデバッグ中にのみ使用します。
 
-いくつかのコマンドは、特定のプロセッサで、ターゲットが実行されている場合にのみ使用できます。 すべてのコマンドとその制限に関する詳細については、[デバッガー コマンド](debugger-commands.md)を参照してください。
+いくつかのコマンドは、特定のプロセッサで、ターゲットが実行されている場合にのみ使用できます。 すべてのコマンドとその制限に関する詳細については、次を参照してください。[デバッガー コマンド](debugger-commands.md)します。
 
 ### <a name="span-ideditingrepeatingandcancelingcommandsspanspan-ideditingrepeatingandcancelingcommandsspanediting-repeating-and-canceling-commands"></a><span id="editing__repeating__and_canceling_commands"></span><span id="EDITING__REPEATING__AND_CANCELING_COMMANDS"></span>編集、繰り返し、およびコマンドのキャンセル
 
@@ -92,7 +92,7 @@ WinDbg、KD、CDB、さまざまなコマンドをサポートします。 い�
 
 コマンドの最大長は、4096 文字です。 ただし場合、[カーネル デバッガーからユーザー モード デバッガーの制御](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)行の最大長は 512 文字です。
 
-CDB および KD には、ENTER キーを押して自体と、前のコマンドを繰り返します。 、WinDbg では、有効または、この動作を無効にできます。 この動作の詳細については、[ **」と入力 (最後のコマンドを繰り返します)**](enter--repeat-last-command-.md)を参照してください。
+CDB および KD には、ENTER キーを押して自体と、前のコマンドを繰り返します。 、WinDbg では、有効または、この動作を無効にできます。 この動作の詳細については、次を参照してください。 [ **」と入力 (最後のコマンドを繰り返します)**](enter--repeat-last-command-.md)します。
 
 発行した最後のコマンドは、長い表示を表示します。 カットが、使用する場合、 [ **CTRL + C** ](ctrl-c--break-.md) KD、CDB、またはキー。 WinDbg を使用して[デバッグ |中断](debug---break.md)または ctrl キーを押しながら BREAK キーを押します。
 
@@ -102,11 +102,11 @@ CDB および KD には、ENTER キーを押して自体と、前のコマンド
 
 ### <a name="span-idexpressionsyntaxspanspan-idexpressionsyntaxspanexpression-syntax"></a><span id="expression_syntax"></span><span id="EXPRESSION_SYNTAX"></span>式の構文
 
-多くのコマンドおよび拡張機能のコマンドを受け入れる*式*が引数として。 デバッガーは、コマンドを実行する前に、これらの式を評価します。 式の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
+多くのコマンドおよび拡張機能のコマンドを受け入れる*式*が引数として。 デバッガーは、コマンドを実行する前に、これらの式を評価します。 式の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
 ### <a name="span-idaliasesspanspan-idaliasesspanaliases"></a><span id="aliases"></span><span id="ALIASES"></span>エイリアス
 
-*エイリアス*は複雑なフレーズを再入力しなくてもすむようにするために使用できるテキスト マクロです。 エイリアスの 2 種類があります。 エイリアスの詳細については、[Using エイリアス](using-aliases.md)を参照してください。
+*エイリアス*は複雑なフレーズを再入力しなくてもすむようにするために使用できるテキスト マクロです。 エイリアスの 2 種類があります。 エイリアスの詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
 
 ### <a name="span-idselfrepeatingcommandsspanspan-idselfrepeatingcommandsspanself-repeating-commands"></a><span id="self_repeating_commands"></span><span id="SELF_REPEATING_COMMANDS"></span>自己繰り返しコマンド
 
@@ -140,7 +140,7 @@ KD、CDB、またはを使用しているときに任意のキー入力は、下
 
 -   テキストと、デバッガー コマンド ウィンドウの背景に使用される色をカスタマイズすることができます。 さまざまな種類のテキストを別の色を指定することができます。 別の色でな 1 つの色で出力の自動登録、エラー メッセージを表示するなど、**による DbgPrint**内のメッセージの 3 つ目の色します。 このカスタマイズの詳細については、次を参照してください[ビュー |。オプション](view---options.md)します。
 
--   フォントのカスタマイズや、特別な編集コマンドを使用してなどの WinDbg のデバッグ情報ウィンドウには、すべての一般的な機能を使用できます。 これらの機能に関する詳細については、[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)を参照してください。
+-   フォントのカスタマイズや、特別な編集コマンドを使用してなどの WinDbg のデバッグ情報ウィンドウには、すべての一般的な機能を使用できます。 これらの機能に関する詳細については、次を参照してください。[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)します。
 
 ### <a name="span-idremotedebuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote_debugging"></span><span id="REMOTE_DEBUGGING"></span>リモート デバッグ
 

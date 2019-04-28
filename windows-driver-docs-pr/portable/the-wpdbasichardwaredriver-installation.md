@@ -1,16 +1,16 @@
 ---
-Description: Installing the Sample Driver
-title: サンプル ドライバーをインストールします。
+Description: サンプル ドライバーのインストール
+title: サンプル ドライバーのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b941ddd5d1ee3bc51b8b9e5a3b4fa69184725b0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378627"
 ---
-# <a name="installing-the-sample-driver"></a>サンプル ドライバーをインストールします。
+# <a name="installing-the-sample-driver"></a>サンプル ドライバーのインストール
 
 
 このサンプル ドライバー インストール ルート列挙デバイスとして Windows ポータブル デバイス (WPD) 他のサンプルと同様に、します。 ポータブル デバイスまたは WPD のノードの下に表示**デバイス マネージャー**、デバイス ID のルートであり\\WPD\\NNNN します。
@@ -21,7 +21,7 @@ ms.locfileid: "56527962"
 
 ### <a name="span-idenablingfile-handletargetsspanspan-idenablingfile-handletargetsspanspan-idenablingfile-handletargetsspanenabling-file-handle-targets"></a><span id="Enabling_File-Handle_Targets"></span><span id="enabling_file-handle_targets"></span><span id="ENABLING_FILE-HANDLE_TARGETS"></span>ファイル ハンドルのターゲットを有効にします。
 
-下に次のエントリが追加\[*基本的な\_Install.Wdf* \]ファイル ハンドル ベース UMDF I/O ターゲットを有効にします。 これらの I/O ターゲットは、rs-232 ポートを使用して、デバイスとのデータの交換に使用されます。 I/O のターゲットの詳細については、[をサポートしている I/O](the-wpdbasichardwaredriver-supporting-io.md)を参照してください。
+下に次のエントリが追加\[*基本的な\_Install.Wdf* \]ファイル ハンドル ベース UMDF I/O ターゲットを有効にします。 これらの I/O ターゲットは、rs-232 ポートを使用して、デバイスとのデータの交換に使用されます。 I/O のターゲットの詳細については、次を参照してください。[をサポートしている I/O](the-wpdbasichardwaredriver-supporting-io.md)します。
 
 ```cpp
 UmdfDispatcher = FileHandle

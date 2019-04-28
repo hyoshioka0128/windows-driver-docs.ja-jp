@@ -1,17 +1,17 @@
 ---
-title: 署名プロセスを管理します。
-description: 署名プロセスを管理します。
+title: 署名プロセスの管理
+description: 署名プロセスの管理
 ms.assetid: 80a1986f-1508-49c1-aec5-7084edff9485
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1532135acdf57327366e96bc9632084e40cbe950
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378369"
 ---
-# <a name="managing-the-signing-process"></a>署名プロセスを管理します。
+# <a name="managing-the-signing-process"></a>署名プロセスの管理
 
 
 署名のプロセスを[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)ドライバー ファイルの署名を埋め込むには、次の活動が含まれます。 またはします。
@@ -32,9 +32,9 @@ ms.locfileid: "56536686"
 
 -   ドライバーを実装します。
 
--   内部テスト署名されたドライバー パッケージを作成します。 テスト署名については、[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)を参照してください。
+-   内部テスト署名されたドライバー パッケージを作成します。 テスト署名については、次を参照してください。[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)します。
 
--   リリースの署名されたドライバー パッケージを作成します。 リリース用のドライバーに署名する方法については、[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)を参照してください。
+-   リリースの署名されたドライバー パッケージを作成します。 リリース用のドライバーに署名する方法については、次を参照してください。[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)します。
 
  
 

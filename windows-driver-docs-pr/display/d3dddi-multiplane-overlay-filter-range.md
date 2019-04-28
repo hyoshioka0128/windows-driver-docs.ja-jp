@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c012dc263fde65fc9f23b2bb8438b0e2ee8752c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382963"
 ---
 # <a name="d3dddimultiplaneoverlayfilterrange-structure"></a>D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_範囲の構造体
 
@@ -42,18 +42,18 @@ typedef struct D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE {
 } D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **最小値**
 
 **最大値**
 
-**既定値**
+**Default**
 
 **乗数**
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

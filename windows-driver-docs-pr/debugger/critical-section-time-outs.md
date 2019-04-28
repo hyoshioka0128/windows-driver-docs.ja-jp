@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90563b4284a138aae520e14b6da72bf2e82d90a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374437"
 ---
 # <a name="critical-section-time-outs"></a>クリティカル セクションのタイムアウト
 

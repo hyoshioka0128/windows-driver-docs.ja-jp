@@ -4,11 +4,11 @@ title: USB デバイスとの対話、開始から終了まで (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dba4c150128653fc2a724408bc1b70c6fb531871
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379921"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>USB デバイスとの対話、開始から終了まで (UWP アプリ)
 
@@ -77,7 +77,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <li>カスタム INF を使用して、ドライバーをインストールします。 これら 2 つの方法のいずれかで、INF を取得できます。
 <ul>
 <li>ハードウェア ベンダーから、INF を取得します。</li>
-<li>Microsoft 提供の Winusb.inf ファイルを参照するカスタム INF を記述します。 詳細については、<a href="winusb-installation.md" data-raw-source="[WinUSB (Winusb.sys) Installation](winusb-installation.md)">WinUSB (Winusb.sys) インストール</a>を参照してください。</li>
+<li>Microsoft 提供の Winusb.inf ファイルを参照するカスタム INF を記述します。 詳細については、次を参照してください。 <a href="winusb-installation.md" data-raw-source="[WinUSB (Winusb.sys) Installation](winusb-installation.md)">WinUSB (Winusb.sys) インストール</a>します。</li>
 </ul></li>
 </ul></td>
 </tr>
@@ -91,7 +91,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <li><strong>デバイス クラスやサブクラスでは、プロトコル コード</strong></li>
 <li><strong>デバイス インターフェイスの GUID</strong></li>
 </ul>
-または、レジストリの情報を表示できます。 詳細については、<a href="usb-device-specific-registry-settings.md" data-raw-source="[USB Device Registry Entries](usb-device-specific-registry-settings.md)">USB デバイスのレジストリ エントリ</a>を参照してください。</td>
+または、レジストリの情報を表示できます。 詳細については、次を参照してください。 <a href="usb-device-specific-registry-settings.md" data-raw-source="[USB Device Registry Entries](usb-device-specific-registry-settings.md)">USB デバイスのレジストリ エントリ</a>します。</td>
 </tr>
 <tr class="odd">
 <td><a href="" id="step3"></a>
@@ -112,7 +112,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <tr class="even">
 <td><a href="" id="step4"></a>
 <p><strong>手順 4</strong>-このチュートリアルでは拡張可能な基本的な Visual Studio 2013 プロジェクトを作成します。</p></td>
-<td>詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=617681" data-raw-source="[Getting started with UWP apps](https://go.microsoft.com/fwlink/p/?linkid=617681)">UWP アプリの概要</a>を参照してください。</td>
+<td>詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=617681" data-raw-source="[Getting started with UWP apps](https://go.microsoft.com/fwlink/p/?linkid=617681)">UWP アプリの概要</a>します。</td>
 </tr>
 <tr class="odd">
 <td><a href="" id="step5"></a>
@@ -151,7 +151,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <li>2 つの方法のいずれかで、デバイスを開きます。
 <ul>
 <li><p>AQS を渡して<a href="https://msdn.microsoft.com/library/windows/apps/br225432" data-raw-source="[&lt;strong&gt;FindAllAsync&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225432)"> <strong>FindAllAsync</strong> </a>を取得し、 <a href="https://msdn.microsoft.com/library/windows/apps/br225393" data-raw-source="[&lt;strong&gt;DeviceInformation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225393)"> <strong>DeviceInformation</strong> </a>デバイスのオブジェクト。</p>
-<p>詳細については、<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh872189" data-raw-source="[Quickstart: enumerating commonly used devices](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)">クイック スタート: デバイスを使用する一般的な列挙</a>を参照してください。</p></li>
+<p>詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh872189" data-raw-source="[Quickstart: enumerating commonly used devices](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)">クイック スタート: デバイスを使用する一般的な列挙</a>します。</p></li>
 <li>使用して、 <a href="https://msdn.microsoft.com/library/windows/apps/br225446" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225446)"> <strong>DeviceWatcher</strong> </a>デバイスが追加またはシステムから削除されるタイミングを検出するオブジェクト。
 <ol>
 <li>渡すを AQS <a href="https://msdn.microsoft.com/library/windows/apps/br225427" data-raw-source="[&lt;strong&gt;CreateWatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225427)"> <strong>CreateWatcher</strong> </a>を取得し、 <a href="https://msdn.microsoft.com/library/windows/apps/br225446" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225446)"> <strong>DeviceWatcher</strong> </a>オブジェクト。</li>
@@ -159,7 +159,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <li>取得、 <a href="https://msdn.microsoft.com/library/windows/apps/br225393" data-raw-source="[&lt;strong&gt;DeviceInformation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225393)"> <strong>DeviceInformation</strong> </a>でのデバイスのオブジェクト、 <a href="https://msdn.microsoft.com/library/windows/apps/br225450" data-raw-source="[&lt;strong&gt;Added&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225450)"> <strong>Added</strong> </a>イベント ハンドラー。</li>
 <li>開始し、停止、 <a href="https://msdn.microsoft.com/library/windows/apps/br225446" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225446)"> <strong>DeviceWatcher</strong> </a>オブジェクト。</li>
 </ol>
-詳細については、<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh967756" data-raw-source="[How to get notifications if devices are added, removed, or changed](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)">デバイスを追加する場合に通知を取得する方法は、削除、または変更</a>を参照してください。</li>
+詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh967756" data-raw-source="[How to get notifications if devices are added, removed, or changed](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)">デバイスを追加する場合に通知を取得する方法は、削除、または変更</a>します。</li>
 </ul></li>
 <li>デバイス インスタンスからの取得、 <a href="https://msdn.microsoft.com/library/windows/apps/br225437" data-raw-source="[&lt;strong&gt;DeviceInformation.Id&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225437)"> <strong>DeviceInformation.Id</strong> </a>プロパティ。</li>
 <li>呼び出す<a href="https://msdn.microsoft.com/library/windows/apps/dn264010" data-raw-source="[&lt;strong&gt;FromIdAsync&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn264010)"> <strong>FromIdAsync</strong> </a>デバイス インスタンスの文字列と取得を渡すことによって、 <a href="https://msdn.microsoft.com/library/windows/apps/dn263883" data-raw-source="[&lt;strong&gt;UsbDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn263883)"> <strong>UsbDevice</strong> </a>オブジェクト。</li>

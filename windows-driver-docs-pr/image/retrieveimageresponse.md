@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 225908d15af4b9e1c0e37427e82e8b5d76e8aece
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381584"
 ---
 # <a name="retrieveimageresponse-element"></a>RetrieveImageResponse 要素
 
@@ -62,7 +62,7 @@ ms.locfileid: "56572066"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスをサポートする必要があります、 **RetrieveImageResponse**操作の要素。 成功したクライアントが送信すると、スキャン サービスがこの要素を送信する[ **RetrieveImageRequest** ](retrieveimagerequest.md)要素。
@@ -78,7 +78,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
 
 スキャン サービスを使用してジョブを中止する必要があります、 [ **JobStateReason** ](jobstatereason.md)の**ImageTransferError**イメージ データの転送中に通信エラーがある場合。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、WSD スキャン サービスがクライアントにイメージ データを送信する方法を示します。

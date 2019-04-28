@@ -1,6 +1,6 @@
 ---
-title: 要件と IPsec オフロードに適用される制限
-description: 要件と IPsec オフロードに適用される制限
+title: IPsec オフロードに適用される要件と制限
+description: IPsec オフロードに適用される要件と制限
 ms.assetid: c016d6dd-f760-4340-8d56-9bd69e4fe84e
 keywords:
 - WDK の IPsec ESP により保護されたパケットのオフロード、要件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d739bf72342434c1b6e8e2cd97273f191d5b97e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376967"
 ---
-# <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>要件と IPsec オフロードに適用される制限
+# <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>IPsec オフロードに適用される要件と制限
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 
@@ -80,7 +80,7 @@ ms.locfileid: "56560633"
 
 -   IPsec タスクは、IP 断片化を必要とするパケットの送信またはオフロードされず IP 断片化から再構築を必要とするパケットを受信します。
 
--   IPsec タスクでは、送信はオフロードされずと、負荷分散のミニポート ドライバーに渡されるパケットを受信します。 負荷分散の詳細については、[負荷分散とフェールオーバー](https://msdn.microsoft.com/library/windows/hardware/ff549197)を参照してください。
+-   IPsec タスクでは、送信はオフロードされずと、負荷分散のミニポート ドライバーに渡されるパケットを受信します。 負荷分散の詳細については、次を参照してください。[負荷分散とフェールオーバー](https://msdn.microsoft.com/library/windows/hardware/ff549197)します。
 
  
 

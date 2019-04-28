@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6396d63a2992d6c90449ca8253303ce0dddadec7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376679"
 ---
 # <a name="iec-61883-client-drivers"></a>IEC-61883 クライアント ドライバー
 
@@ -27,7 +27,7 @@ IEC 61883 は、IEEE 1394 オーディオおよびビデオのデバイスで使
 
 IEC 61883 仕様では、どの多数のコンシューマーが電子的なオーディオおよびビデオ機器相互接続できますプロトコルを定義します。 これらの仕様には、一般的なデータ形式、データ フロー、およびオーディオビジュアル情報の接続の構成の定義が含まれます。 IEC 61883 プロトコル ドライバーには、次の承認済み IEC 61883 仕様に準拠しているデバイスがサポートされています。
 
--   IEC-61883-1:全般
+-   IEC-61883-1:全般的な情報
 
 -   IEC-61883-2:SD VCR データ転送
 

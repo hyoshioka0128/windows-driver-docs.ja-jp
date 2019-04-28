@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 574b33cce46ddbd0f1b745cc154c6901f9e819d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379270"
 ---
 # <a name="oidgencogettimecaps"></a>OID_GEN_CO_GET_TIME_CAPS
 
@@ -60,7 +60,7 @@ TIME_STAMP_CAPABLE
 ミニポート ドライバーでは、読み取り可能なクロックのプレゼンスを報告する場合は、すぐに OID_GEN_GET_NETCARD_TIME のクエリに応答する準備する必要があります。 この呼び出しに、ミニポート ドライバーの応答は、タイム クリティカル同期したがってする必要があります。
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

@@ -5,18 +5,18 @@ ms.assetid: 895F1B13-4F2D-4B6B-A3CE-60A8AC9EE7B0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ad64fa2cd12d9b0dadcb63d034e9c09dc7109f5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382753"
 ---
 # <a name="dsm-interface-for-byte-addressable-energy-backed-function-class-function-interface-1"></a>\_バイトのアドレス指定可能なエネルギーの DSM インターフェイス関数クラス (関数インターフェイス 1) のバックアップ
 
 
 このインターフェイスは、BIOS の複雑さを軽減するために、JEDEC バイト アドレス指定可能なエネルギー バックアップ インターフェイス マップに設計されています。 OS ソフトウェアが同じメカニズムを通じてさまざまな実装が操作できるよう、デバイスの機能と機能、レポートの共通の基盤を提供します。 さらに、I2C レジスタへのアクセスによりベンダー固有の機能をサポートできます。
 
-プラットフォームに準拠する\_DSM クラスのインターフェイスをバイト アドレス指定可能なエネルギー バックアップ関数 (関数のインターフェイスの 1) を実装する NVDIMM-N をサポートできる、 *JEDEC バイト アドレス指定可能なエネルギー バックアップ インターフェイス*(0x01 の関数クラスと関数インターフェイス 0x01) を指定します。 詳細については、、 [JEDEC バイト アドレス指定可能なエネルギー バックアップ Interface specification (ドキュメント JESD245)](https://www.jedec.org/document_search?search_api_views_fulltext=jesd245)を参照してください。
+プラットフォームに準拠する\_DSM クラスのインターフェイスをバイト アドレス指定可能なエネルギー バックアップ関数 (関数のインターフェイスの 1) を実装する NVDIMM-N をサポートできる、 *JEDEC バイト アドレス指定可能なエネルギー バックアップ インターフェイス*(0x01 の関数クラスと関数インターフェイス 0x01) を指定します。 詳細については、次を参照してください。、 [JEDEC バイト アドレス指定可能なエネルギー バックアップ Interface specification (ドキュメント JESD245)](https://www.jedec.org/document_search?search_api_views_fulltext=jesd245)します。
 
 ## <a name="span-iddsminterfaceforbyteaddressableenergybackedfunctionclassfunctioninterface1spanspan-iddsminterfaceforbyteaddressableenergybackedfunctionclassfunctioninterface1spanspan-iddsminterfaceforbyteaddressableenergybackedfunctionclassfunctioninterface1spandsm-interface-for-byte-addressable-energy-backed-function-class-function-interface-1"></a><span id="DSM_Interface_for_Byte_Addressable_Energy_Backed_Function_Class_Function_Interface_1"></span><span id="dsm_interface_for_byte_addressable_energy_backed_function_class_function_interface_1"></span><span id="DSM_INTERFACE_FOR_BYTE_ADDRESSABLE_ENERGY_BACKED_FUNCTION_CLASS_FUNCTION_INTERFACE_1"></span>\_バイトのアドレス指定可能なエネルギーの DSM インターフェイス バックアップ関数クラス、関数のインターフェイス 1
 

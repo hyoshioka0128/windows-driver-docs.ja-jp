@@ -1,16 +1,16 @@
 ---
-Description: This topic describes how KMDF function drivers support USB selective suspend.
-title: KMDF の USB 機能ドライバーでのセレクティブ サスペンドします。
+Description: このトピックでは、KMDF 関数ドライバー サポート USB のセレクティブを中断する方法について説明します。
+title: USB KMDF 機能ドライバーにおけるセレクティブ サスペンド
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 04fc0d1cce9a9609e846c4fcbe2729b5c529f212
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379512"
 ---
-# <a name="selective-suspend-in-usb-kmdf-function-drivers"></a>KMDF の USB 機能ドライバーでのセレクティブ サスペンドします。
+# <a name="selective-suspend-in-usb-kmdf-function-drivers"></a>USB KMDF 機能ドライバーにおけるセレクティブ サスペンド
 
 
 **重要な API**

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3010f683cb8233295e500ed564b2c1d1d6f458cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383174"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connectionless-lower-edge"></a>コネクションレスの下端を含む中間ドライバーでのデータの受信
 
@@ -24,7 +24,7 @@ ms.locfileid: "56582470"
 
 コネクションレスのミニポート ドライバーの呼び出しを基になる、 **NdisMIndicateReceiveNetBufferLists**、1 つ以上のリンクされたリストを渡すこと[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体より高いレベルのドライバーに示された構造体の所有権を放棄します。 NET を返すより高いレベルのドライバーのデータを使用すると、\_バッファー\_ミニポート ドライバーに構造体 (および指定したリソース) を一覧表示します。
 
-コネクションレスの下端と中間のドライバーのデータの受信についての詳細については、[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)を参照してください。
+コネクションレスの下端と中間のドライバーのデータの受信についての詳細については、次を参照してください。[プロトコル ドライバーの送信と受信操作](protocol-driver-send-and-receive-operations.md)します。
 
  
 

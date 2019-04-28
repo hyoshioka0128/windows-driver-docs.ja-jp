@@ -1,14 +1,14 @@
 ---
-Description: This topic describes best practices about implementing the remote wakeup capability in a client driver.
+Description: このトピックでは、クライアント ドライバーでは、リモート ウェイク アップ機能を実装する方法のベスト プラクティスについて説明します。
 title: USB デバイスのリモート ウェイクアップ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b8f3aee36800cf7d340cbfad3daf0fe158bee3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379548"
 ---
 # <a name="remote-wakeup-of-usb-devices"></a>USB デバイスのリモート ウェイクアップ
 

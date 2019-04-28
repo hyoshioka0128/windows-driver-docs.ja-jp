@@ -5,11 +5,11 @@ ms.assetid: 1ea5c4e3-ed70-449c-a49e-b1e3c892e981
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ecaf5b20ac14617420e08e38dad895a204a1bfc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380324"
 ---
 # <a name="windows-kernel-global-variables"></a>Windows カーネルのグローバル変数
 
@@ -35,7 +35,7 @@ ms.locfileid: "56573735"
 <td><code>PBOOLEAN Mm64BitPhysicalAddress</code>
 <p>Wdm.h で宣言されています。</p></td>
 <td><p>ハードウェアとオペレーティング システムが 64 ビットの物理アドレスをサポートするかどうかを指定します。 値が指す<strong>TRUE</strong> 64 ビットの物理アドレスをサポートして、ハードウェアとオペレーティング システムが場合<strong>FALSE</strong>それ以外の場合。</p>
-<p>この変数には、ドライバーで使用する方法の詳細については、<a href="performing-dma-in-64-bit-windows.md" data-raw-source="[Performing DMA in 64-Bit Windows](performing-dma-in-64-bit-windows.md)">64 ビット Windows で DMA を実行する</a>を参照してください。</p></td>
+<p>この変数には、ドライバーで使用する方法の詳細については、次を参照してください。 <a href="performing-dma-in-64-bit-windows.md" data-raw-source="[Performing DMA in 64-Bit Windows](performing-dma-in-64-bit-windows.md)">64 ビット Windows で DMA を実行する</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><strong>MmBadPointer</strong></td>

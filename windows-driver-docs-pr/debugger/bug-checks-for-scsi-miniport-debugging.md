@@ -1,22 +1,22 @@
 ---
-title: SCSI ミニポート デバッグするためのバグ チェック
-description: SCSI ミニポート デバッグするためのバグ チェック
+title: SCSI ミニポート デバッグのバグ チェック
+description: SCSI ミニポート デバッグのバグ チェック
 ms.assetid: 9a517096-f708-452b-83f6-e7d4f0d41ac3
 keywords:
 - デバッグ SCSI ミニポート、バグを確認します
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23de7d56bfd920a681e740b3808325461ed05e1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374000"
 ---
-# <a name="bug-checks-for-scsi-miniport-debugging"></a>SCSI ミニポート デバッグするためのバグ チェック
+# <a name="bug-checks-for-scsi-miniport-debugging"></a>SCSI ミニポート デバッグのバグ チェック
 
 
-SCSI ミニポート ドライバーをデバッグ中に生じる主に 2 つのバグ チェックが: バグ チェック 0x77 (カーネル\_スタック\_インページ\_エラー) とバグ チェック 0x7A (カーネル\_データ\_インページ\_エラー)。 そのパラメーターの詳細については、[**バグ チェック 0x77** ](bug-check-0x77--kernel-stack-inpage-error.md)と[**バグ チェック 0x7A**](bug-check-0x7a--kernel-data-inpage-error.md)を参照してください。
+SCSI ミニポート ドライバーをデバッグ中に生じる主に 2 つのバグ チェックが: バグ チェック 0x77 (カーネル\_スタック\_インページ\_エラー) とバグ チェック 0x7A (カーネル\_データ\_インページ\_エラー)。 そのパラメーターの詳細については、次を参照してください。 [**バグ チェック 0x77** ](bug-check-0x77--kernel-stack-inpage-error.md)と[**バグ チェック 0x7A**](bug-check-0x7a--kernel-data-inpage-error.md)します。
 
 これらのバグ チェックのそれぞれは、ページングのエラーが発生したことを示します。 これらのバグ チェックの 3 つの主な原因があります。
 

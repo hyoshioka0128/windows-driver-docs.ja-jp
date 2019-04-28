@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 252523edba3eea7350b9a096c0b9b5ee50df5d7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373197"
 ---
 # <a name="clientdisplayname-element"></a>ClientDisplayName 要素
 
@@ -67,7 +67,7 @@ ms.locfileid: "56572052"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 表示名は、ユーザーがスキャン先として要求元のクライアントを選択できます。 WSD スキャン サービスは、送信、ユーザーはこの表示名を選択し、[スキャン] ボタンを押す、する場合、 [ **ScanAvailableEvent** ](scanavailableevent.md)受信をサブスクライブしてスキャン先にイベント。

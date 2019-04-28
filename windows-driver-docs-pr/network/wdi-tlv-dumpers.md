@@ -1,17 +1,17 @@
 ---
-title: WDI TLV こと
+title: WDI TLV ダンパー
 description: パーサーのジェネレーターのライブラリには、トレース ステートメントに TLV バイト配列をデコードするルーチンがあります。
 ms.assetid: 4F8B53E5-1F51-4119-AC06-7A710340E4A4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cee50be2223923c03fa3ebcd1874dd9152f150a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380871"
 ---
-# <a name="wdi-tlv-dumpers"></a>WDI TLV こと
+# <a name="wdi-tlv-dumpers"></a>WDI TLV ダンパー
 
 
 パーサーのジェネレーターのライブラリには、トレース ステートメントに TLV バイト配列をデコードするルーチンがあります。
