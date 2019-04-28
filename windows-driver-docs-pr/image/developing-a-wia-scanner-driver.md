@@ -5,11 +5,11 @@ ms.assetid: befe7e36-cb42-48da-88b4-d8983876266f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 624fb0ee5f3755e4dcb115b5995fc92717c381eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364578"
 ---
 # <a name="developing-a-wia-scanner-driver"></a>WIA スキャナー ドライバーの開発
 
@@ -33,7 +33,7 @@ Microdriver は、単純なフラット ベッド スキャナーをサポート
 
 -   Microdrivers は、3 回のスキャン (色のフィルターを使用してカラー イメージをキャプチャするは、古い色スキャナーで使用) をサポートしていません。
 
-Microdrivers の開発に関する詳細については、[作成 WIA Microdriver](creating-a-wia-microdriver.md)を参照してください。
+Microdrivers の開発に関する詳細については、次を参照してください。[作成 WIA Microdriver](creating-a-wia-microdriver.md)します。
 
 ### <a name="minidriver"></a>ミニドライバー
 

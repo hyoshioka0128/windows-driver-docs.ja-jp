@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_PD_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4151d69824add438e64b1f853479d5cb6da00f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362886"
 ---
 # <a name="ndisstatuspdcurrentconfig"></a>NDIS\_状態\_PD\_現在\_構成
 
@@ -30,7 +30,7 @@ PacketDirect 対応ミニポート ドライバーは、NDIS を行う必要が�
 
 -   **StatusBufferSize**に設定する必要があります**sizeof**(ULONG)。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

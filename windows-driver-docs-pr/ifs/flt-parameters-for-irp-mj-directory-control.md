@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68a729a2977356e243b4fe3ab6ddbb4455b8edde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365017"
 ---
 # <a name="fltparameters-for-irpmjdirectorycontrol-union"></a>FLT\_IRP のパラメーター\_MJ\_ディレクトリ\_コントロール共用体
 
@@ -56,7 +56,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **DirectoryControl**  
@@ -74,7 +74,7 @@ IRP に使用される共用体のコンポーネント\_MN\_クエリ\_ディ�
 **FileInformationClass**  
 以下で説明する値のいずれかを指定します。
 
-| Value                          | 意味                                                                                                                   |
+| 値                          | 説明                                                                                                                   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | FileBothDirectoryInformation   | 返す、 [**ファイル\_両方\_DIR\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540235)ファイルごとに構造体。                      |
 | FileDirectoryInformation       | 返す、 [**ファイル\_ディレクトリ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540248)ファイルごとに構造体。                     |
@@ -105,7 +105,7 @@ IRP に使用される共用体のコンポーネント\_MN\_通知\_変更\_デ
 **CompletionFilter**  
 ファイルまたはディレクトリが完了する通知の一覧で、Irp をへの変更の種類を指定するフラグのビットマスク。 可能なフラグの値の次のとおりです。
 
-| Flag                                | 意味                                                                        |
+| Flag                                | 説明                                                                        |
 |-------------------------------------|--------------------------------------------------------------------------------|
 | ファイル\_通知\_変更\_ファイル\_名    | ファイルは、追加、削除、またはこのディレクトリの名前が変更されています。                  |
 | ファイル\_通知\_変更\_DIR\_名     | サブディレクトリを作成、削除、または名前が変更されています。                          |

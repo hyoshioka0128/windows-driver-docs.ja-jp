@@ -1,6 +1,6 @@
 ---
-title: DVD 720 全体の例
-description: DVD 720 全体の例
+title: DVD 720 幅の例
+description: DVD 720 幅の例
 ms.assetid: 02761bf5-afae-4f38-9178-6a721fcad84e
 keywords:
 - アルファ ブレンド組み合わせ WDK DirectX va なので、DVD 720 全体の例
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77e102ece3b39d64aea00ce195f064f4a79166df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361237"
 ---
-# <a name="dvd-720-wide-example"></a>DVD 720 全体の例
+# <a name="dvd-720-wide-example"></a>DVD 720 幅の例
 
 
 ## <span id="ddk_dvd_720_wide_example_gg"></span><span id="DDK_DVD_720_WIDE_EXAMPLE_GG"></span>

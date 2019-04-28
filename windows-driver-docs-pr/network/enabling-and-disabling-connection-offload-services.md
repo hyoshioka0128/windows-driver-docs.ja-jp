@@ -1,6 +1,6 @@
 ---
-title: オフロード サービスを有効にして、接続を無効化
-description: オフロード サービスを有効にして、接続を無効化
+title: 接続オフロード サービスの有効化と無効化
+description: 接続オフロード サービスの有効化と無効化
 ms.assetid: 3d353f87-1cd7-483a-b8eb-d45ec3b8f94e
 keywords:
 - 接続の負荷を軽減 WDK TCP/IP トランスポートは、サービスを有効にします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ada8f521a5c299193aabaac540ba302a47168f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372526"
 ---
-# <a name="enabling-and-disabling-connection-offload-services"></a>オフロード サービスを有効にして、接続を無効化
+# <a name="enabling-and-disabling-connection-offload-services"></a>接続オフロード サービスの有効化と無効化
 
 
 

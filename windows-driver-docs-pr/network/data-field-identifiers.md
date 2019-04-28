@@ -1,5 +1,5 @@
 ---
-title: データ フィールドの識別子
+title: データ フィールド識別子
 description: このセクションでは、Windows Filtering Platform コールアウト ドライバーのデータ フィールドの識別子について説明します。
 ms.assetid: 6e617ef4-807b-4564-8b95-b289edfee8d2
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 197da2051e3dac8a84863ff617b4782f72857891
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372696"
 ---
-# <a name="data-field-identifiers"></a>データ フィールドの識別子
+# <a name="data-field-identifiers"></a>データ フィールド識別子
 
 実行時のフィルター処理レイヤーは、データ フィールドの識別子に関連付けられます。 これらの識別子では、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されている定数値のセットを表します。
 

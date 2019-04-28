@@ -1,16 +1,16 @@
 ---
-Description: In this topic, you will learn about how to select a configuration in a universal serial bus (USB) device.
-title: USB デバイスの構成を選択する方法
+Description: このトピックでは、ユニバーサル シリアル バス (USB) デバイスで、構成を選択する方法について説明します。
+title: USB デバイス用の構成の選択方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3f0877c8f73c5a464ea76f21fd5c747faefe85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366042"
 ---
-# <a name="how-to-select-a-configuration-for-a-usb-device"></a>USB デバイスの構成を選択する方法
+# <a name="how-to-select-a-configuration-for-a-usb-device"></a>USB デバイス用の構成の選択方法
 
 
 このトピックでは、ユニバーサル シリアル バス (USB) デバイスで、構成を選択する方法について説明します。
@@ -25,7 +25,7 @@ USB デバイスの構成を選択するには、デバイスのクライアン�
 
 -   Windows 8 で[ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://msdn.microsoft.com/library/windows/hardware/hh406243)置き換えます[ **USBD\_CreateConfigurationRequestEx**](https://msdn.microsoft.com/library/windows/hardware/ff539029).
 -   選択構成要求を送信する前に、クライアント ドライバーの登録は USB ドライバー スタックと USBD ハンドルが必要です。 USBD ハンドルの呼び出しを作成する[ **USBD\_CreateHandle**](https://msdn.microsoft.com/library/windows/hardware/hh406241)します。
--   構成記述子を取得したかどうかを確認 ([**USB\_構成\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539241)構造) の構成を選択します。 通常、URB 型の URB を送信する\_関数\_取得\_記述子\_FROM\_デバイス (を参照してください[  **\_URB\_コントロール\_記述子\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff540357)) デバイスの構成に関する情報を取得します。 詳細については、[USB 構成記述子](usb-configuration-descriptors.md)を参照してください。
+-   構成記述子を取得したかどうかを確認 ([**USB\_構成\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539241)構造) の構成を選択します。 通常、URB 型の URB を送信する\_関数\_取得\_記述子\_FROM\_デバイス (を参照してください[  **\_URB\_コントロール\_記述子\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff540357)) デバイスの構成に関する情報を取得します。 詳細については、次を参照してください。 [USB 構成記述子](usb-configuration-descriptors.md)します。
 
 <a name="instructions"></a>手順
 ------------
@@ -50,7 +50,7 @@ USB デバイスの構成を選択するには、デバイスのクライアン�
 
     部分的な構成でインターフェイスを列挙中に、インターフェイスの数に基づくインターフェイスの数を計算することでインターフェイスを検索しないようにします。 前の例では場合、 [ **USBD\_ParseConfigurationDescriptorEx** ](https://msdn.microsoft.com/library/windows/hardware/ff539102) 0 から始まり、終わりをループで呼び出される`(bNumInterfaces - 1)`、(指定したインターフェイス インデックスをインクリメントして*InterfaceNumber*パラメーター) ルーチンを各反復処理では、適切なインターフェイスを取得するが失敗しました。 代わりに-1 を渡すことによって構成記述子ですべてのインターフェイスを検索することを必ず*InterfaceNumber*します。 実装の詳細については、このセクションのコード例を参照してください。
 
-    Usbccgp.sys クライアント ドライバーによって送信される選択構成要求を処理する方法については、[既定以外の USB の構成を選択する構成で、Usbccgp.sys](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)を参照してください。
+    Usbccgp.sys クライアント ドライバーによって送信される選択構成要求を処理する方法については、次を参照してください。[既定以外の USB の構成を選択する構成で、Usbccgp.sys](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)します。
 
 4.  各配列の要素 (最後の要素) を除く、設定、 **InterfaceDescriptor**インターフェイス、記述子のアドレスへのメンバー。 配列の最初の要素、設定、 **InterfaceDescriptor**構成では、最初のインターフェイスを表すインターフェイス記述子のアドレスへのメンバー。 同様に、 *n*番目の要素の配列内の設定、 **InterfaceDescriptor**メンバーを表すインターフェイス記述子のアドレスを*n*番目のインターフェイスで、構成します。
 5.  **InterfaceDescriptor**の最後の要素のメンバーを NULL に設定する必要があります。
@@ -68,7 +68,7 @@ USB デバイスの構成を選択するには、デバイスのクライアン�
 
 ### <a href="" id="submit-the-urb-to-the-usb-driver-stack-"></a>手順 3:USB ドライバー スタックに URB を送信します。
 
-USB ドライバー スタックに URB を送信するクライアント ドライバーを送信する必要があります、 [ **IOCTL\_内部\_USB\_送信\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271) I/O 制御要求。 URB を送信する方法の詳細については、[、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)を参照してください。
+USB ドライバー スタックに URB を送信するクライアント ドライバーを送信する必要があります、 [ **IOCTL\_内部\_USB\_送信\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271) I/O 制御要求。 URB を送信する方法の詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
 
 USB ドライバー スタックを URB を受信した後に、残りの部分の各メンバーの[ **USBD\_インターフェイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539068)構造体。 具体的には、**パイプ**配列メンバーは、インターフェイスのエンドポイントに関連付けられているパイプに関する情報を入力します。
 

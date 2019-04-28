@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1960a96da77404eae19df9edb45d0f6b9875919
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372690"
 ---
 # <a name="fsctlrequestfilteroplock-control-code"></a>FSCTL\_要求\_フィルター\_OPLOCK 制御コード
 
@@ -58,7 +58,7 @@ ms.locfileid: "56570267"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>

@@ -1,6 +1,6 @@
 ---
-title: ユーザー定義用紙サイズのサポート
-description: ユーザー定義用紙サイズのサポート
+title: ユーザー定義の用紙サイズをサポートする
+description: ユーザー定義の用紙サイズをサポートする
 ms.assetid: f9c0b759-687e-4d92-80ce-330e30cbc41c
 keywords:
 - ユーザー定義用紙サイズを WDK Unidrv
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dfbd1d19ac42c46391f0a36aadb5a2bd93fd0ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365328"
 ---
-# <a name="supporting-user-defined-paper-sizes"></a>ユーザー定義用紙サイズのサポート
+# <a name="supporting-user-defined-paper-sizes"></a>ユーザー定義の用紙サイズをサポートする
 
 
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_INDICATION_WAKE_REASON ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 883f368ed0da138f079f9657697f22ebc094f254
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361750"
 ---
 # <a name="wditlvindicationwakereason"></a>WDI\_TLV\_INDICATION\_WAKE\_理由
 
@@ -31,7 +31,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                |
+| 型   | 説明                |
 |--------|----------------------------|
 | UINT32 | ウェイク アップの理由を指定します。 |
 
@@ -39,7 +39,7 @@ Uint32 型のサイズをバイト単位で。
 
 有効なスリープ解除理由の値は次のとおりです。
 
-| ウェイク アップの理由                                       | Value  | 説明                                                                                                          |
+| ウェイク アップの理由                                       | 値  | 説明                                                                                                          |
 |---------------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------|
 | WDI\_WAKE\_理由\_コード\_パケット                   | 0x0001 | 受信したパケットでは、ウェイク アップのパターンと一致します。                                                                          |
 | WDI\_WAKE\_理由\_コード\_メディア\_切断        | 0x0002 | メディア切断します。                                                                                                 |

@@ -1,17 +1,17 @@
 ---
-title: 定義と例で使用される変数
-description: 定義と例で使用される変数
+title: 例で使用される定義と変数
+description: 例で使用される定義と変数
 ms.assetid: 55dd0618-2171-406b-a22a-437412c77cbc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 142e5d678d5e0460ec79ab893052173cc9fa7127
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364580"
 ---
-# <a name="definitions-and-variables-used-in-the-examples"></a>定義と例で使用される変数
+# <a name="definitions-and-variables-used-in-the-examples"></a>例で使用される定義と変数
 
 > [!IMPORTANT]  
 > WSD 見据えて機能は非推奨とされているし、WSD の挑戦者に関連するすべてのドキュメントは、2018 年に削除されます。

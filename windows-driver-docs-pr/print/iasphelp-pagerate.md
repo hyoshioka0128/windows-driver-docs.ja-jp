@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3bff7d93b6a3d3ddea2f937fbd4f0f39fd2efb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370407"
 ---
 # <a name="iasphelpgetpagerate-method"></a>Iasphelp::get\_PageRate メソッド
 
@@ -73,7 +73,7 @@ HRESULT get_PageRate(
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
-<td><p>メモリ不足です。</p></td>
+<td><p>メモリ不足。</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,17 +1,17 @@
 ---
-title: 追加と削除の省電力プロトコルのオフロード
-description: 追加と削除の省電力プロトコルのオフロード
+title: 省電力プロトコル オフロードの追加と削除
+description: 省電力プロトコル オフロードの追加と削除
 ms.assetid: f00f13b4-9204-4480-884a-407684a4b2d4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53e2d24faa332147e2f382850d459301184de8dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367775"
 ---
-# <a name="adding-and-deleting-low-power-protocol-offloads"></a>追加と削除の省電力プロトコルのオフロード
+# <a name="adding-and-deleting-low-power-protocol-offloads"></a>省電力プロトコル オフロードの追加と削除
 
 
 
@@ -55,7 +55,7 @@ NDIS プロトコル ドライバーがの OID セット要求を発行する低
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>NextProtocolOffloadOffset</strong></p></td>
-<td align="left"><p>OID 要求の開始のオフセットを含む<em>InformationBuffer</em>、[次へ] を<a href="https://msdn.microsoft.com/library/windows/hardware/ff566760" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566760)"> <strong>NDIS_PM_PROTOCOL_OFFLOAD</strong> </a>構造体のリストで、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569769" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](https://msdn.microsoft.com/library/windows/hardware/ff569769)">OID_PM_PROTOCOL_OFFLOAD_LIST</a> OID。 OID_PM_PROTOCOL_OFFLOAD_LIST の詳細については、<a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">取得、現在のパラメーターの設定の低電力プロトコルの負荷を軽減</a>を参照してください。</p></td>
+<td align="left"><p>OID 要求の開始のオフセットを含む<em>InformationBuffer</em>、[次へ] を<a href="https://msdn.microsoft.com/library/windows/hardware/ff566760" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566760)"> <strong>NDIS_PM_PROTOCOL_OFFLOAD</strong> </a>構造体のリストで、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569769" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](https://msdn.microsoft.com/library/windows/hardware/ff569769)">OID_PM_PROTOCOL_OFFLOAD_LIST</a> OID。 OID_PM_PROTOCOL_OFFLOAD_LIST の詳細については、次を参照してください。<a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">取得、現在のパラメーターの設定の低電力プロトコルの負荷を軽減</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadParameters</strong></p></td>

@@ -1,6 +1,6 @@
 ---
-title: Preparsed データを取得します。
-description: Preparsed データを取得します。
+title: 事前解析データを取得する
+description: 事前解析データを取得する
 ms.assetid: 7a2bdbd1-a970-421f-bbaa-40fe589bb49a
 keywords:
 - WDK を非表示に preparsed データ コレクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 089101113e7099787f7d36d760cc79fb96ced77a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372955"
 ---
-# <a name="obtaining-preparsed-data"></a>Preparsed データを取得します。
+# <a name="obtaining-preparsed-data"></a>事前解析データを取得する
 
 
 

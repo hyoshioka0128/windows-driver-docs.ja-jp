@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d35629ef83e832fa147661431be722ed065d9195
-ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58505150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374416"
 ---
 # <a name="ctrlf-break-to-kd"></a>Ctrl + F (中断して KD を起動)
 
@@ -58,7 +58,7 @@ CTRL+F  ENTER
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 通常の状況では、CTRL キーを押しながら F キーは、標準的な中断コマンドと同じです ([**CTRL + C** ](ctrl-c--break-.md) KD、CDB でと[デバッグ |中断](debug---break.md)または CTRL + BREAK WinDbg でします)。

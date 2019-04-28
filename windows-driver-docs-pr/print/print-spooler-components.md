@@ -1,6 +1,6 @@
 ---
-title: 印刷スプーラー コンポーネント
-description: 印刷スプーラー コンポーネント
+title: 印刷スプーラーのコンポーネント
+description: 印刷スプーラーのコンポーネント
 ms.assetid: 42b5e6cf-b434-4734-86f3-b3b9d15ea468
 keywords:
 - 印刷スプーラを WDK のカスタマイズ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecc39e3f466b5e9d654e0abd988ae7242d549a49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372073"
 ---
-# <a name="print-spooler-components"></a>印刷スプーラー コンポーネント
+# <a name="print-spooler-components"></a>印刷スプーラーのコンポーネント
 
 
 

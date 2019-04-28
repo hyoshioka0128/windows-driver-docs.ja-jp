@@ -6,11 +6,11 @@ keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2, OID_GEN_RECEIVE_SCALE_PARAMETERS_
 ms.date: 10/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 687db15ca59a2480ba2cf2a0a100599b3552b549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364198"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -26,7 +26,7 @@ OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID に送信される[RSSv2](receive-side-s
 - 有効または RSS を無効にします。
 - RSS モードの場合は、ハッシュ キー、ハッシュの種類とハッシュ関数の数のキュー、またはスケーリングのエンティティの間接指定テーブル エントリの数を変更するなどのタイミングが重要な管理機能を実行します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 RSS および RSS のパラメーターの設定を有効にするは、1 つの手順で実行できます. 上位のレイヤーをこの OID を使用して RSS を有効にすた後、スケーリングのエンティティの初期状態のとおりです。
 
@@ -39,7 +39,7 @@ RSS を有効にすると、上位のレイヤーの問題、 [OID_GEN_RSS_SET_I
 
 RSS を無効にする過程で、上位レイヤーはポイントすべて ite 用プライマリ プロセッサに RSS を無効にするには、この OID を呼び出す前にします。 その後、受信トラフィック、プライマリのプロセッサを対象とする必要があります。 ただし、ミニポート ドライバーでは、VPort の削除する前に RSS の無効化は限りません。 上位のレイヤーはことができますので、受信トラフィックが経由で流れていない、VPort を確保ゼロに VPort の受信フィルターを設定し、RSS を無効にしなくても、VPort の削除を続行します。
 
-上位のレイヤーは管理機能を実行する前に重要な不変性が違反していないことを確認します。 以下に例を示します。
+上位のレイヤーは管理機能を実行する前に重要な不変性が違反していないことを確認します。 次に、例を示します。
 
 - キューの数を変更する前に間接指定テーブルを VPort 用に構成されたより多くのプロセッサを参照していないこと、上位のレイヤーが保証されます。
 VMMQ によって制限されているアダプターの間接指定テーブル エントリの数を変更する前に、2 の累乗に間接指定テーブルの内容を正規化した上位のレイヤーが保証されます。

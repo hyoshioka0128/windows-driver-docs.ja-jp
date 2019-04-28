@@ -1,17 +1,17 @@
 ---
-title: デバイス インターフェイスのクラス プロパティにアクセスします。
-description: デバイス インターフェイスのクラス プロパティにアクセスします。
+title: デバイス インターフェイス クラスのプロパティへのアクセス
+description: デバイス インターフェイス クラスのプロパティへのアクセス
 ms.assetid: c9efe273-dc66-4585-8ab5-3842df1c95df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be0d5781dd6bc6e41865396f8a4d53815db0055
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373883"
 ---
-# <a name="accessing-device-interface-class-properties"></a>デバイス インターフェイスのクラス プロパティにアクセスします。
+# <a name="accessing-device-interface-class-properties"></a>デバイス インターフェイス クラスのプロパティへのアクセス
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)デバイス インターフェイスのクラスの特性を示すデバイス インターフェイス クラスのプロパティが含まれています。 統一されたデバイス プロパティのモデルを使用して[プロパティ キー](property-keys.md)をこれらのプロパティを表します。
@@ -24,9 +24,9 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性は維持するために、デバイス インターフェイスに関する情報にアクセスするこれら 2 つの方法もサポートします。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、[デバイス インターフェイスのクラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)を参照してください。 [デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子ごとに表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
+デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、次を参照してください。[デバイス インターフェイスのクラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)します。 [デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子ごとに表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
 
 ### <a href="" id="accessing-the-default-interface-for-a-device-interface-class"></a> デバイスのインターフェイス クラスの既定のインターフェイスにアクセスします。
 
@@ -66,7 +66,7 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 3.  呼び出す、 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543)キーへのアクセスは必要なくなりました後に、クラスのレジストリ キーを閉じます。
 
-インストールして、デバイス インターフェイスを使用する方法については、[デバイス インターフェイス クラス](device-interface-classes.md)と[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)を参照してください。
+インストールして、デバイス インターフェイスを使用する方法については、次を参照してください。[デバイス インターフェイス クラス](device-interface-classes.md)と[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)します。
 
  
 

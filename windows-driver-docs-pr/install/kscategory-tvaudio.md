@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f69f125f9b47a424ce294b3096f965007e8ec9f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362165"
 ---
 # <a name="kscategorytvaudio"></a>KSCATEGORY_TVAUDIO
 
@@ -58,7 +58,7 @@ KS デバイス用のドライバーは、デバイスが KSCATEGORY_TVAUDIO 機
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)、[フィルターのグラフ例](https://msdn.microsoft.com/library/windows/hardware/ff559605)、および[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)を参照してください。
+ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)、[フィルターのグラフ例](https://msdn.microsoft.com/library/windows/hardware/ff559605)、および[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)します。
 
 <a name="requirements"></a>要件
 ------------

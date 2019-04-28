@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef9e28fc56f907915eb6f88b8bebf6057b7bbb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367972"
 ---
 # <a name="deleting-the-registry-keys-of-a-device"></a>デバイスのレジストリ キーの削除
 
@@ -35,9 +35,9 @@ ms.locfileid: "56529295"
 
 デバイス レジストリ キーが存在するかどうかについて想定しないようにします。 デバイスがアンインストールされると、システムで、デバイスのすべてのソフトウェアとハードウェア キーが自動的に削除されます。
 
-安全を作成し、標準レジストリ関数を使用して、ハードウェアまたはソフトウェア キーの下のレジストリ サブキーを削除することができます。 これらの関数を使用すると、名前のシステムとその他のコンポーネント間の競合を回避します。 また、これらの関数を使用してサブキーを作成する場合、サブキーは、親のレジストリ キーの既定のアクセス許可を継承します。 詳細については、[オープン、作成、および終了キー](https://go.microsoft.com/fwlink/p/?linkid=194541)を参照してください。
+安全を作成し、標準レジストリ関数を使用して、ハードウェアまたはソフトウェア キーの下のレジストリ サブキーを削除することができます。 これらの関数を使用すると、名前のシステムとその他のコンポーネント間の競合を回避します。 また、これらの関数を使用してサブキーを作成する場合、サブキーは、親のレジストリ キーの既定のアクセス許可を継承します。 詳細については、次を参照してください。[オープン、作成、および終了キー](https://go.microsoft.com/fwlink/p/?linkid=194541)します。
 
-詳細については、標準レジストリ関数は、[レジストリ関数](https://go.microsoft.com/fwlink/p/?linkid=194529)を参照してください。
+詳細については、標準レジストリ関数は、次を参照してください。[レジストリ関数](https://go.microsoft.com/fwlink/p/?linkid=194529)します。
 
  
 

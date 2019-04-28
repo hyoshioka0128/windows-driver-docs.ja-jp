@@ -5,11 +5,11 @@ ms.assetid: fe589738-3f2a-495a-8023-14f335f44f66
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af31aaea1e591a1b8631b964685f2b1fce4a5179
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368769"
 ---
 # <a name="interface-description"></a>インターフェイスの説明
 

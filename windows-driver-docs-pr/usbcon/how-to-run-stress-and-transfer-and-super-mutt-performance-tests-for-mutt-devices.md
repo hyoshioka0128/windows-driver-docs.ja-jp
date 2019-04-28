@@ -1,16 +1,16 @@
 ---
-Description: How to run stress and transfer and Super MUTT performance tests.
-title: MUTT デバイス用のテストをストレスを実行し、パフォーマンスを転送する方法
+Description: ストレスおよび転送とスーパー MUTT パフォーマンスを実行する方法をテストします。
+title: MUTT デバイスのストレスおよび転送パフォーマンステストの実行方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d254c6e79297fa8ede9d4d7718afda88e3f03296
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366041"
 ---
-# <a name="how-to-run-stress-and-transfer-performance-tests-for-mutt-devices"></a>MUTT デバイス用のテストをストレスを実行し、パフォーマンスを転送する方法
+# <a name="how-to-run-stress-and-transfer-performance-tests-for-mutt-devices"></a>MUTT デバイスのストレスおよび転送パフォーマンステストの実行方法
 
 
 ストレスおよび転送とスーパー MUTT パフォーマンスを実行する方法を参照してテストします。

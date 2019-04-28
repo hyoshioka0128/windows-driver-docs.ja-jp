@@ -5,11 +5,11 @@ ms.assetid: 03D70079-37A4-4FAA-BF18-ACED3A9E8267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50632ad1dfc185fa50afb961b97a10d672f5fc0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373856"
 ---
 # <a name="registering-ndis-qos-capabilities"></a>NDIS QoS 機能の登録
 
@@ -28,7 +28,7 @@ ms.locfileid: "56574000"
 
      
 
-NDIS QoS INF キーワードの設定の詳細については、[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)を参照してください。
+NDIS QoS INF キーワードの設定の詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
 
 ミニポート ドライバーを通じて基になるネットワーク アダプターのハードウェアの NDIS QoS 機能の報告、 [ **NDIS\_QOS\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)初期化されている構造体次のように
 
@@ -36,7 +36,7 @@ NDIS QoS INF キーワードの設定の詳細については、[の NDIS QoS �
 
     NDIS 6.30 以降、ミニポート ドライバーの設定、**リビジョン**のメンバー**ヘッダー** NDIS に\_QOS\_機能\_リビジョン\_1 と**サイズ**NDIS メンバー\_SIZEOF\_QOS\_機能\_リビジョン\_1。
 
-2.  ミニポート ドライバーが、NDIS を設定する場合は、ネットワーク アダプターでは、優先伝送選択アルゴリズム (TSA) をサポートする\_QOS\_機能\_STRICT\_TSA\_でサポートされているフラグ**フラグ**メンバー。 このアルゴリズムの詳細については、[厳密な優先順位のアルゴリズム](strict-priority-algorithm.md)を参照してください。
+2.  ミニポート ドライバーが、NDIS を設定する場合は、ネットワーク アダプターでは、優先伝送選択アルゴリズム (TSA) をサポートする\_QOS\_機能\_STRICT\_TSA\_でサポートされているフラグ**フラグ**メンバー。 このアルゴリズムの詳細については、次を参照してください。[厳密な優先順位のアルゴリズム](strict-priority-algorithm.md)します。
 
     **注**  NDIS 6.30 以降、ミニポート ドライバーとネットワーク アダプターの IEEE データ センター ブリッジング (DCB) の NDIS QoS をサポートする必要があります、厳密な優先度をサポート TSA します。
 
@@ -48,7 +48,7 @@ NDIS QoS INF キーワードの設定の詳細については、[の NDIS QoS �
 
      
 
-4.  ミニポート ドライバーのセット、 **MaxNumTrafficClasses**メンバーをネットワーク アダプターをサポートする NDIS QoS トラフィック クラスの最大数。 トラフィック クラス定義の送信、または*エグレス*IEEE 802.1p の優先度のレベルと帯域幅の割り当てなど、qos ポリシー。 トラフィック クラスの詳細については、[NDIS QoS トラフィック クラス](ndis-qos-traffic-classes.md)を参照してください。
+4.  ミニポート ドライバーのセット、 **MaxNumTrafficClasses**メンバーをネットワーク アダプターをサポートする NDIS QoS トラフィック クラスの最大数。 トラフィック クラス定義の送信、または*エグレス*IEEE 802.1p の優先度のレベルと帯域幅の割り当てなど、qos ポリシー。 トラフィック クラスの詳細については、次を参照してください。 [NDIS QoS トラフィック クラス](ndis-qos-traffic-classes.md)します。
 
     **注**  NDIS 6.30 以降では、ネットワーク アダプターは 3 つのトラフィック クラスの最小値をサポートする必要があります。
 
@@ -56,7 +56,7 @@ NDIS QoS INF キーワードの設定の詳細については、[の NDIS QoS �
 
 5.  ミニポート ドライバーのセット、 **MaxNumEtsCapableTrafficClasses** NDIS QoS トラフィック クラス Enhanced Transmission Selection (ETS) アルゴリズムで使用できるネットワーク アダプターの最大数をメンバー。 この値の値未満である必要があります、 **MaxNumTrafficClasses**メンバー。
 
-    ETS の詳細については、[Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)を参照してください。
+    ETS の詳細については、次を参照してください。 [Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)します。
 
     **注**  NDIS QoS をサポートするために、ネットワーク アダプターの ETS 対応トラフィック クラスを 2 つの最小値をサポートする必要があります。
 
@@ -64,7 +64,7 @@ NDIS QoS INF キーワードの設定の詳細については、[の NDIS QoS �
 
 6.  ミニポート ドライバーのセット、 **MaxNumPfcEnabledTrafficClasses** NDIS QoS トラフィック クラス優先順位に基づくフロー制御 (PFC) アルゴリズムで使用できるネットワーク アダプターの最大数をメンバー。 この値の値未満である必要があります、 **MaxNumTrafficClasses**メンバー。
 
-    PFC の詳細については、[優先度に基づくフロー制御 (PFC)](priority-based-flow-control--pfc.md)を参照してください。
+    PFC の詳細については、次を参照してください。[優先度に基づくフロー制御 (PFC)](priority-based-flow-control--pfc.md)します。
 
     **注**  NDIS QoS をサポートするために、ネットワーク アダプターの少なくとも 1 つの PFC 対応トラフィック クラスをサポートする必要があります。
 
@@ -82,7 +82,7 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 2.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
+アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
  
 

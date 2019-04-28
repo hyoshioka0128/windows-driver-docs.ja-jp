@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5045f9a2fdc006215e8639ffb79219e809459928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369736"
 ---
 # <a name="limitations-of-traceview-workspaces"></a>TraceView ワークスペースの制限事項
 
@@ -22,7 +22,7 @@ Traceview でワークスペースの機能には、次の制限があります�
 
 -   ワークスペースへの変更は自動的に保存されませんし traceview でプロンプトが表示されません保存するようにします。
 
--   トレース セッションのグループに含まれているワークスペースを保存することはできません。 詳細については、[トレース セッションをグループ化](grouping-trace-sessions.md)を参照してください。
+-   トレース セッションのグループに含まれているワークスペースを保存することはできません。 詳細については、次を参照してください。[トレース セッションをグループ化](grouping-trace-sessions.md)します。
 
 -   各ワークスペースでは、1 つだけのトレース セッションまたはログの表示を保存できます。 1 つ以上のトレース セッションを保存またはログの表示、トレース セッションのグループを作成します。
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9004aadc69b1a2d2afa3d9b1ab426cc77df8adb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363278"
 ---
 # <a name="oidcogetaddresses"></a>OID_CO_GET_ADDRESSES
 
@@ -48,7 +48,7 @@ typedef struct _CO_ADDRESS {
 **AddressSize**  
 構造のバイト単位のサイズを指定します。**アドレス**します。
 
-**アドレス**  
+**Address**  
 アドレスの一覧を含む可変長配列を指定します。 アドレスの形式は、コール マネージャーによって使用される信号のプロトコルに固有です。
 
 **AddressList**ローカル ホストに到達できるネットワーク アドレスが含まれます。 **AddressList**特定に返されるクライアントには、クライアント自体が OID_CO_ADD_ADDRESS とアドレスのコール マネージャーの一覧に追加するすべてのアドレスと同様に、すべてのクライアントに共通するアドレスが含まれています。

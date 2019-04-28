@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f052a2e43b9596894b5dc63cba7a24603e8d3fa
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361740"
 ---
 # <a name="bug-check-bug-check-0x1ce-invalidkernelstackaddress"></a>チェックのバグ チェック 0x1CE をバグします。無効な\_カーネル\_スタック\_アドレス
 

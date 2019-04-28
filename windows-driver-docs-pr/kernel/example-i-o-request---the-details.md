@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4eee35c64e14cdced401cb233ab31b4e7230392
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362100"
 ---
 # <a name="example-io-request---the-details"></a>I/O 要求の例 - 詳細
 
@@ -55,7 +55,7 @@ ms.locfileid: "56579522"
 
 -   各 IRP と呼び出し元で、次の下位ドライバーの I/O スタックの場所を設定して、下位のドライバーに着信要求を渡す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。 (Irp の主要な関数のコードで注意[ **IRP\_MJ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff550784)、ドライバーを使用する必要があります[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654).)
 
-各デバイスのドライバーが作成したオブジェクトは、特定のドライバーが I/O 要求を実行する物理、論理、または仮想デバイスを表します。 作成、デバイス オブジェクトの設定の詳細については、[デバイス オブジェクトとデバイス スタック](device-objects-and-device-stacks.md)を参照してください。
+各デバイスのドライバーが作成したオブジェクトは、特定のドライバーが I/O 要求を実行する物理、論理、または仮想デバイスを表します。 作成、デバイス オブジェクトの設定の詳細については、次を参照してください。[デバイス オブジェクトとデバイス スタック](device-objects-and-device-stacks.md)します。
 
 として、[ドライバーでの処理の Irp](#ddk-example-i-o-request---the-details-kg)図も示していますが、ほとんどのドライバー処理各 IRP ドライバーによって提供される一連のシステム定義によって段階的*標準ルーチン*でさまざまなドライバーが、チェーン内のレベルには、さまざまな標準ルーチンとは限りませんがあります。 たとえば、のみ、物理デバイスから最下位レベルのドライバー ハンドル割り込み、最下位レベルのドライバーのみになります ISR、DPC 割り込み駆動の I/O 操作を完了します。 その一方で、このようなドライバーは、そのデバイスからの割り込みを受け取ったときに I/O が完了したことを知っている、ため、不要になった完了ルーチン。 高度なドライバーのみでは、この図では、FSD のような完了ルーチンを 1 つ以上があります。
 

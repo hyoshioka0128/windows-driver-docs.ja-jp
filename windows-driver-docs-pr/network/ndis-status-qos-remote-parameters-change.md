@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a281ceadb5bad5e45611603befa0fa553874ad1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362946"
 ---
 # <a name="ndisstatusqosremoteparameterschange"></a>NDIS\_状態\_QOS\_リモート\_パラメーター\_変更
 
@@ -29,7 +29,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
 ミニポート ドライバーでは、DCBX プロトコルを使用して、リモート ピアの QoS パラメーターを受信します。 ミニポート ドライバーでは、そのローカルおよびリモートの QoS 設定に基づき、運用の NDIS QoS パラメーターを解決します。 オペレーションのパラメーターが解決されると、ミニポート ドライバーは、QoS パケット転送のこれらのパラメーターを持つネットワーク アダプターを構成します。
 
-ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、[運用上の NDIS QoS パラメーターを解決する](https://msdn.microsoft.com/library/windows/hardware/hh440220)を参照してください。
+ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](https://msdn.microsoft.com/library/windows/hardware/hh440220)します。
 
 ミニポート ドライバーが発行するための次のガイドラインに従う必要があります、 **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**状態を示す値。
 
@@ -37,7 +37,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
 -   ミニポート ドライバーを発行する必要があります、 **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**から QoS の設定が最初に受信した後の状態を示す値をリモート ピア。
 
-    **注**  ネットワーク アダプターは、ドライバーのローカルの QoS パラメーターを設定する前に、ピアからリモートの QoS パラメーター設定を受信する場合、ミニポート ドライバーはこの状態を示す値を発行する必要があります。 詳細については、[NDIS QoS パラメーターをローカル設定](https://msdn.microsoft.com/library/windows/hardware/hh440225)を参照してください。
+    **注**  ネットワーク アダプターは、ドライバーのローカルの QoS パラメーターを設定する前に、ピアからリモートの QoS パラメーター設定を受信する場合、ミニポート ドライバーはこの状態を示す値を発行する必要があります。 詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](https://msdn.microsoft.com/library/windows/hardware/hh440225)します。
 
      
 
@@ -53,7 +53,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
 ミニポート ドライバーの問題の詳細については、 **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**状態を示す値を参照してください[リモートの NDIS QoS パラメーターへの変更を示す](https://msdn.microsoft.com/library/windows/hardware/hh406724)します。
 
-リモートの NDIS QoS パラメーターの詳細については、[NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)を参照してください。
+リモートの NDIS QoS パラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)します。
 
 <a name="requirements"></a>必要条件
 ------------

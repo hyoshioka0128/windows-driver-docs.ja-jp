@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9f8776a4c7b6a684ccb1d216bf8bf519d78e6482
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363736"
 ---
 # <a name="guiddevinterfacemodem"></a>GUID_DEVINTERFACE_MODEM
 
@@ -71,7 +71,7 @@ GUID_DEVINTERFACE_MODEM *Ntddmodm.h*のインクルードする前に、正し�
 ...
 ```
 
-モデム デバイスについては、[モデム デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff542476)を参照してください。
+モデム デバイスについては、次を参照してください。[モデム デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff542476)します。
 
 このデバイスのインターフェイス クラスを使用しての例は、次を参照してください。、 [FakeModem - ユニモデム コント ローラーのないモデム サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256110) WDK で提供されるサンプル。
 

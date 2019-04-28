@@ -5,11 +5,11 @@ ms.assetid: e45f7564-89a7-49c0-8011-69e5da3d5651
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 161f74f805aa5e326f3822e223f1239ee0241ce0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369442"
 ---
 # <a name="specifying-hardware-ids-for-a-multifunction-device"></a>多機能デバイス用のハードウェア ID の指定
 
@@ -26,7 +26,7 @@ ms.locfileid: "56572527"
 </HardwareIDList>
 ```
 
-デバイスが多機能デバイスの場合は、デバイス コンテナーは、すべてのハードウェア Id を組み合わせた) デバイス上の各ハードウェア関数。 デバイスのコンテナーとコンテナー Id の詳細については、[コンテナー Id](container-ids.md)を参照してください。
+デバイスが多機能デバイスの場合は、デバイス コンテナーは、すべてのハードウェア Id を組み合わせた) デバイス上の各ハードウェア関数。 デバイスのコンテナーとコンテナー Id の詳細については、次を参照してください。[コンテナー Id](container-ids.md)します。
 
 次の図は、多機能デバイスの devnode とデバイスのコンテナー間の関係を示します。
 
@@ -48,7 +48,7 @@ ms.locfileid: "56572527"
 
 -   新しいメタデータ パッケージだけを表示する場合*HardwareID1 1*、ユーザーは場合は、オペレーティング システムには、新しいパッケージは選択しません*HardwareID2 1*ランク付けされてよりも高い*HardwareID1-1。*
 
-メタデータ パッケージの選択と順位付けの詳細については、[、DMRC デバイス メタデータ パッケージを選択する方法](how-the-dmrc-selects-a-device-metadata-package.md)を参照してください。
+メタデータ パッケージの選択と順位付けの詳細については、次を参照してください。 [、DMRC デバイス メタデータ パッケージを選択する方法](how-the-dmrc-selects-a-device-metadata-package.md)します。
 
  
 

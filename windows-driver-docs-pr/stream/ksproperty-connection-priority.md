@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b190e1f2e7ca88ad5139521b8ddd59f9df3716cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368680"
 ---
 # <a name="kspropertyconnectionpriority"></a>KSPROPERTY\_接続\_優先順位
 
@@ -74,7 +74,7 @@ ms.locfileid: "56558422"
 
 KSPROPERTY\_接続\_優先順位は省略可能です。 クライアントが KSPRIORITY の優先順位を持つものとしてはサポートしないピンを扱う\_標準。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

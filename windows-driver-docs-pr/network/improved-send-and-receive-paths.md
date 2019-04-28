@@ -1,6 +1,6 @@
 ---
-title: 改善の送信と受信パス
-description: 改善の送信と受信パス
+title: 送信および受信パスの改善
+description: 送信および受信パスの改善
 ms.assetid: 7edecb49-576f-4058-92e8-39f14268a130
 keywords:
 - NDIS WDK、データを送受信します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3abde686105c8f92a86c9068e75647d1ad58e86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363156"
 ---
-# <a name="improved-send-and-receive-paths"></a>改善の送信と受信パス
+# <a name="improved-send-and-receive-paths"></a>送信および受信パスの改善
 
 
 

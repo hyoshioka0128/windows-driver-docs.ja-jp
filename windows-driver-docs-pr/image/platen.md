@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5de6cb52af56399dee1cd6d0ba67b6a4dd038028
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360672"
 ---
 # <a name="platen-element"></a>プラテン要素
 
@@ -88,7 +88,7 @@ ms.locfileid: "56581878"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスがすべての構成情報を提供する必要があります、デバイスのスキャンのフラット ベッドからプラテン上にある場合**プラテン**子要素。

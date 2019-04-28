@@ -1,5 +1,5 @@
 ---
-title: ドライバーを WDF のデバッグ
+title: WDF ドライバーのデバッグ
 description: このセクションのトピックでは、手法とカーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) ドライバーをデバッグに使用できるツールについて説明します。
 ms.assetid: e648a7c9-0fdc-477e-b1cd-bec5dd8f5386
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9568e327cbb71184276c9c7c9128cd54e41b4d2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362460"
 ---
-# <a name="debugging-wdf-drivers"></a>ドライバーを WDF のデバッグ
+# <a name="debugging-wdf-drivers"></a>WDF ドライバーのデバッグ
 
 
 このセクションのトピックでは、手法とカーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) ドライバーをデバッグに使用できるツールについて説明します。

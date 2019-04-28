@@ -5,11 +5,11 @@ ms.assetid: 62D7B69F-A64E-4E3C-9AEA-8C56495E3FF5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4179312c64f862ec8fc7409bb9e63cbc191faf1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372244"
 ---
 # <a name="ndis-qos-traffic-classifications"></a>NDIS QoS トラフィック分類
 
@@ -44,7 +44,7 @@ DCB のコンポーネントを指定します、*既定*トラフィックの�
 
 -   配列で定義されている最初のトラフィックの分類が[ **NDIS\_QOS\_分類\_要素**](https://msdn.microsoft.com/library/windows/hardware/hh451631)構造体。
 
-DCB のコンポーネントの詳細については、[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)を参照してください。
+DCB のコンポーネントの詳細については、次を参照してください。[データ センター ブリッジングの NDIS QoS アーキテクチャ](ndis-qos-architecture-for-data-center-bridging.md)します。
 
  
 

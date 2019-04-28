@@ -1,6 +1,6 @@
 ---
-title: プリンター グラフィックス Dll によって定義されている関数
-description: プリンター グラフィックス Dll によって定義されている関数
+title: プリンター グラフィックス DLL によって定義されている関数
+description: プリンター グラフィックス DLL によって定義されている関数
 ms.assetid: b0c9ce45-76c4-4058-af3f-7b9d230bcf94
 keywords:
 - プリンター グラフィックス DLL WDK、関数
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4811b065aa86d603bf9f649cb69222bc5a4bcd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363347"
 ---
-# <a name="functions-defined-by-printer-graphics-dlls"></a>プリンター グラフィックス Dll によって定義されている関数
+# <a name="functions-defined-by-printer-graphics-dlls"></a>プリンター グラフィックス DLL によって定義されている関数
 
 
 
@@ -125,9 +125,9 @@ ms.locfileid: "56549524"
 
 通常は、プリンター グラフィックス DLL も定義どのような追加のグラフィックス DDI 関数では、印刷ジョブの表示を実現するために必要です。 定義された関数の種類と数に依存します。
 
--   かどうか、ドライバーは、GDI が管理またはデバイス管理の描画サーフェス (または両方) の使用をサポートします。 詳細については、[画面型](https://msdn.microsoft.com/library/windows/hardware/ff569900)を参照してください。
+-   かどうか、ドライバーは、GDI が管理またはデバイス管理の描画サーフェス (または両方) の使用をサポートします。 詳細については、次を参照してください。[画面型](https://msdn.microsoft.com/library/windows/hardware/ff569900)します。
 
--   描画操作で処理できる GDI ドライバー自体によって実行されているのではなく拡張です。 詳細については、[グラフィックス DDI を使用して](https://msdn.microsoft.com/library/windows/hardware/ff570139)を参照してください。
+-   描画操作で処理できる GDI ドライバー自体によって実行されているのではなく拡張です。 詳細については、次を参照してください。[グラフィックス DDI を使用して](https://msdn.microsoft.com/library/windows/hardware/ff570139)します。
 
 プリンター グラフィックスによって定義されているすべての関数の Dll は、GDI のカーネル モードのグラフィックス レンダリング エンジン (GRE) によって呼び出されます。
 

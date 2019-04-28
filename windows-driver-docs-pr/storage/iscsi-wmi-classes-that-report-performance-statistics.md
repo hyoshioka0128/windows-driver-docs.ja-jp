@@ -1,17 +1,17 @@
 ---
-title: iSCSI WMI クラスのパフォーマンス統計情報を報告します。
-description: iSCSI WMI クラスのパフォーマンス統計情報を報告します。
+title: パフォーマンスの統計情報を報告する iSCSI WMI クラス
+description: パフォーマンスの統計情報を報告する iSCSI WMI クラス
 ms.assetid: c4d52902-9165-4351-96d6-77dc17bdb64f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3faa9f99bd3d767647de7d644c55bb61302c1d6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360886"
 ---
-# <a name="iscsi-wmi-classes-that-report-performance-statistics"></a>iSCSI WMI クラスのパフォーマンス統計情報を報告します。
+# <a name="iscsi-wmi-classes-that-report-performance-statistics"></a>パフォーマンスの統計情報を報告する iSCSI WMI クラス
 
 
 ## <span id="ddk_iscsi_wmi_classes_used_to_report_performance_statistics_kr"></span><span id="DDK_ISCSI_WMI_CLASSES_USED_TO_REPORT_PERFORMANCE_STATISTICS_KR"></span>

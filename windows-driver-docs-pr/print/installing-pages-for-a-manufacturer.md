@@ -1,6 +1,6 @@
 ---
-title: 製造元のページをインストールします。
-description: 製造元のページをインストールします。
+title: 製造元に合わせてページをインストールする
+description: 製造元に合わせてページをインストールする
 ms.assetid: 637b265f-9138-4696-b52a-ce63cd1f2c01
 keywords:
 - カスタマイズされた印刷 Web ページ WDK をインストールします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41b4b9ef2c8eac102fefef5b8530e60005aadd69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366572"
 ---
-# <a name="installing-pages-for-a-manufacturer"></a>製造元のページをインストールします。
+# <a name="installing-pages-for-a-manufacturer"></a>製造元に合わせてページをインストールする
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: Tracefmt 例
-description: Tracefmt 例
+title: Tracefmt の例
+description: Tracefmt の例
 ms.assetid: 2a7a24d1-8619-45fc-b624-096d95971c57
 keywords:
 - Tracefmt WDK、例
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf25992ba1bbba868c1929412ed2f3823e8773c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364690"
 ---
-# <a name="tracefmt-examples"></a>Tracefmt 例
+# <a name="tracefmt-examples"></a>Tracefmt の例
 
 
 ## <span id="ddk_tracefmt_examples_tools"></span><span id="DDK_TRACEFMT_EXAMPLES_TOOLS"></span>

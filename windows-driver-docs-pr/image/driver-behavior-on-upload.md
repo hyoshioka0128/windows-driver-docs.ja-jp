@@ -1,17 +1,17 @@
 ---
-title: アップロード時にドライバーの動作
-description: アップロード時にドライバーの動作
+title: アップロード中のドライバーの動作
+description: アップロード中のドライバーの動作
 ms.assetid: a8edfd88-89b9-4759-b9b3-6f1ff2ae7fc9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2ec498bb21afe07fbafc8012fcc39e12172851b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364496"
 ---
-# <a name="driver-behavior-on-upload"></a>アップロード時にドライバーの動作
+# <a name="driver-behavior-on-upload"></a>アップロード中のドライバーの動作
 
 
 ドライバーの動作は、アップロードがで呼び出されている項目の種類によって異なります。

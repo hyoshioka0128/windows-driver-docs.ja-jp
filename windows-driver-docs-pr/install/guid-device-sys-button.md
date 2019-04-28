@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a5850f59eebf1d7f3492c2f3ff74a9d44e9673c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372698"
 ---
 # <a name="guiddevicesysbutton"></a>GUID_DEVICE_SYS_BUTTON
 
@@ -56,9 +56,9 @@ GUID_DEVICE_SYS_BUTTON[デバイス インターフェイス クラス](https://
 
 システム提供[ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)オペレーティング システムとシステムの電源ボタンのデバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。 I8042prt、PS/2 形式のキーボードとマウス デバイス、システム提供のドライバーには、キーボードの場合、システムの電源ボタンをサポートするには、このクラスのインスタンスも登録します。
 
-WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、[ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)を参照してください。
+WDM を指定する方法については[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516) ACPI デバイスでは、次を参照してください。 [ACPI のデバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff536161)します。
 
-PS/2 形式のキーボードとマウス デバイスについては、[非 HIDClass キーボードとマウス デバイス](../hid/keyboard-and-mouse-class-drivers.md)を参照してください。
+PS/2 形式のキーボードとマウス デバイスについては、次を参照してください。[非 HIDClass キーボードとマウス デバイス](../hid/keyboard-and-mouse-class-drivers.md)します。
 
 <a name="requirements"></a>要件
 ------------

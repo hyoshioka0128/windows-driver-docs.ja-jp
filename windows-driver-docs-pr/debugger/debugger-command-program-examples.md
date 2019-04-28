@@ -1,19 +1,19 @@
 ---
-title: デバッガー コマンド プログラム例
-description: デバッガー コマンド プログラム例
+title: デバッガー コマンド プログラムの例
+description: デバッガー コマンド プログラムの例
 ms.assetid: da756906-6243-4cb9-b4e5-5b0b4540533d
 keywords:
 - デバッガー コマンド プログラム例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 161cd14ede3f952e299631ca29ee252963066230
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368151"
 ---
-# <a name="debugger-command-program-examples"></a>デバッガー コマンド プログラム例
+# <a name="debugger-command-program-examples"></a>デバッガー コマンド プログラムの例
 
 
 ## <span id="ddk_debugger_command_program_examples_dbg"></span><span id="DDK_DEBUGGER_COMMAND_PROGRAM_EXAMPLES_DBG"></span>

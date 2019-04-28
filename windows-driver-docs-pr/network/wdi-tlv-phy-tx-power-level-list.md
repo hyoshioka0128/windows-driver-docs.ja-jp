@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PHY_TX_POWER_LEVEL_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fedee8a5cea5c5ae2fc0473516e9d658784744f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363608"
 ---
 # <a name="wditlvphytxpowerlevellist"></a>WDI\_TLV\_PHY\_TX\_POWER\_レベル\_一覧
 
@@ -31,13 +31,13 @@ Uint32 型の要素の配列のサイズをバイト単位で。 配列には、
 ## <a name="values"></a>値
 
 
-| 種類       | 説明                                              |
+| 型       | 説明                                              |
 |------------|----------------------------------------------------------|
 | UINT32\[\] | 電源のレベルを指定する UINT32 要素の配列。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

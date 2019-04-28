@@ -1,17 +1,17 @@
 ---
-title: フィルム スキャナーの項目のツリーを実装します。
-description: フィルム スキャナーの項目のツリーを実装します。
+title: フィルム スキャナーの項目ツリーの実装
+description: フィルム スキャナーの項目ツリーの実装
 ms.assetid: 8ae8741d-9444-49bf-b38d-e955a285b198
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdeb4d86368c90f1337f5b63d351d00ccb2ecb93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362086"
 ---
-# <a name="implementing-film-scanner-item-trees"></a>フィルム スキャナーの項目のツリーを実装します。
+# <a name="implementing-film-scanner-item-trees"></a>フィルム スキャナーの項目ツリーの実装
 
 
 

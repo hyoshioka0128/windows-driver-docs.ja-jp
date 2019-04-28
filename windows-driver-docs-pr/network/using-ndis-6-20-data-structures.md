@@ -1,6 +1,6 @@
 ---
-title: NDIS 6.20 データ構造を使用
-description: NDIS 6.20 データ構造を使用
+title: NDIS 6.20 データ構造の使用
+description: NDIS 6.20 データ構造の使用
 ms.assetid: 19810a7c-91c1-4014-a364-2819d743627d
 keywords:
 - NDIS 6.20 WDK、データ構造体
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83a02ed132802747945b64f334588f7767e9f80f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372102"
 ---
-# <a name="using-ndis-620-data-structures"></a>NDIS 6.20 データ構造を使用
+# <a name="using-ndis-620-data-structures"></a>NDIS 6.20 データ構造の使用
 
 
 

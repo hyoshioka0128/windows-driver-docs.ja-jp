@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df9b36283db5b7c8c811ed12ae05a5d0da2ba880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371416"
 ---
 # <a name="yuv-format-ranges-in-windows81"></a>Windows 8.1 で YUV 形式の範囲
 

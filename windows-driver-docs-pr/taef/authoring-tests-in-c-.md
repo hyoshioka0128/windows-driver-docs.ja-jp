@@ -1,17 +1,17 @@
 ---
-title: によるテストの作成C#
-description: によるテストの作成C#
+title: C# でテストを作成する
+description: C# でテストを作成する
 ms.assetid: 4DD1D673-FEAF-44a4-8BAD-0E55318DC64B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb66992ef2f12ed5e6f9993827bc33e5edb76dbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361802"
 ---
-# <a name="authoring-tests-in-c"></a>によるテストの作成C#
+# <a name="authoring-tests-in-c"></a>C# でテストを作成する
 
 
 次の例に、 C# .cs ファイル 1 つの単純なテスト クラスを使用してその demostratesC#テスト マークアップ。 (なお、この例は demonstrational 目的にのみ、コンパイルまたは実行できないようにします。)

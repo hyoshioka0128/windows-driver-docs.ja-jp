@@ -7,13 +7,13 @@ keywords:
 - IRP_MJ_SET_INFORMATION Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d9f09dae2974297c39c5b901eff114f38906e7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368437"
 ---
-# <a name="irpmjsetinformation"></a>IRP\_MJ\_設定\_情報
+# <a name="irpmjsetinformation"></a>IRP\_MJ\_SET\_INFORMATION
 
 
 デバイス ドライバーが処理できる必要に応じて、 **IRP\_MJ\_設定\_情報**要求。
@@ -26,7 +26,7 @@ ms.locfileid: "56550163"
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.SetFile.FileInformationClass**メンバーは、**ファイル\_情報\_クラス**定数を設定するメタデータの型を指定します。 メタデータの種類の詳細については、、 *FileInformationClass*パラメーターの[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)を参照してください。
+**Parameters.SetFile.FileInformationClass**メンバーは、**ファイル\_情報\_クラス**定数を設定するメタデータの型を指定します。 メタデータの種類の詳細については、次を参照してください。、 *FileInformationClass*パラメーターの[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)します。
 
 **Parameters.SetFile.Length**メンバーは、バッファーの長さを指定する、 **AssociatedIrp.SystemBuffer**へのポインターします。
 

@@ -1,17 +1,17 @@
 ---
-title: ユーザーが開始したフィードバックの再現コード モード
+title: ユーザーが開始したフィードバック - 再現モード
 description: このトピックでは、WDI ドライバーでのログ記録 IHV トレースでユーザーが開始したフィードバックの再現コード モードをについて説明します。
 ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 48331866a493beda962b0d9334ec5c57c544697f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362502"
 ---
-# <a name="user-initiated-feedback---repro-mode"></a>ユーザーが開始したフィードバックの再現コード モード
+# <a name="user-initiated-feedback---repro-mode"></a>ユーザーが開始したフィードバック - 再現モード
 
 ユーザーが開始したフィードバック (し) 再現コード モードは、ユーザーがバグを再現中より詳細なログ記録を収集するシステムを許可します。 標準モードのようにはこれも、IHV で定義された ETW プロバイダーを使用した新しい WMI ログ セッションを作成して実現されます。 再現コードのモードが完了したら、詳細ログが収集し、分析のため Microsoft に送信します。 有効化またはファームウェアの詳細なログを無効にする拡張機能ポイントを IHV があります。 再現コードのログは、顧客の問題が発生する理由を追跡できるより詳細なが意図されています。 そのため、再現コード モードは、ログのログ ファイルのサイズは 10 MB の最大サイズに設定されます。 IHV は、ETW プロバイダー フラグ/レベル/keywords の値より詳細な設定を使用する必要があります。
 

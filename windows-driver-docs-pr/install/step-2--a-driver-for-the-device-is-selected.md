@@ -5,19 +5,19 @@ ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45dcb8b103765de7969092f6d8f802494c9a3234
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369384"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>手順 2:デバイスのドライバーが選択されます
 
 
 新しいデバイスが検出され、Windows を識別した後、その[デバイス インストールのコンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff541277)これらの手順に従います。
 
-1.  適切な Windows 検索[ドライバー パッケージ](driver-packages.md)デバイス。 この手順の詳細については、[ドライバー パッケージを探して](#searching-for-the-driver)を参照してください。
-2.  Windows では、1 つまたは複数のドライバー パッケージからデバイスの最適なドライバーを選択します。 この手順の詳細については、[、ドライバーを選択する](#selecting-the-driver)を参照してください。
+1.  適切な Windows 検索[ドライバー パッケージ](driver-packages.md)デバイス。 この手順の詳細については、次を参照してください。[ドライバー パッケージを探して](#searching-for-the-driver)します。
+2.  Windows では、1 つまたは複数のドライバー パッケージからデバイスの最適なドライバーを選択します。 この手順の詳細については、次を参照してください。 [、ドライバーを選択する](#selecting-the-driver)します。
 
 ### <a href="" id="searching-for-the-driver"></a>ドライバー パッケージの検索
 
@@ -91,17 +91,17 @@ Windows の 1 つまたは複数の一致が見つかるとすぐに[ドライ�
 
 2.  Windows が複数の一致するドライバー パッケージが見つかった場合 Windows 最初順位値に割り当てます、ドライバーからドライバー パッケージごと。 1 つのドライバーは、最も低い順位値がある、専用の場合は、そのパッケージのデバイスから、ドライバーがインストールされます。
 
-    順位付けのプロセスの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)を参照してください。
+    順位付けのプロセスの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)します。
 
 3.  複数のドライバーには、同じの最も低い順位値がある、Windows は、次の条件を使用して、デバイスの最適なドライバーを選択します。
 
-    -   ドライバーはデジタル署名するかどうか。 Windows Vista 以降、Windows は常に、他の選択条件に関係なく未署名のドライバーではなく、署名されたドライバーを選択します。 ドライバーのデジタル署名の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+    -   ドライバーはデジタル署名するかどうか。 Windows Vista 以降、Windows は常に、他の選択条件に関係なく未署名のドライバーではなく、署名されたドライバーを選択します。 ドライバーのデジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
     -   ドライバーの日付と日付とバージョンがで指定されているバージョン、 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)に含まれるドライバー パッケージの[INF ファイル](inf-files.md)します。
 
 」の説明に従って、Windows でドライバーをインストール後、Windows がデバイスのドライバーを選択すると、[手順 3。デバイスのドライバーがインストールされている](step-3--the-driver-for-the-device-is-installed.md)します。
 
-デバイスのドライバーを選択する方法の詳細については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
+デバイスのドライバーを選択する方法の詳細については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
  
 

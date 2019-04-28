@@ -1,5 +1,5 @@
 ---
-title: dds、dp、dqs (表示語およびシンボル)
+title: dds、dps、dqs (単語とシンボルの表示)
 description: Dds、dp、および dqs のコマンドは、特定の範囲内でメモリの内容を表示します。 このメモリは、一連のシンボル テーブル内のアドレスと見なされます。
 ms.assetid: 5a3ed1c4-723a-4902-bfbf-d4a44d2cd0b5
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e6754c4089f04672bfae8b65825e4a8923ab5b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373378"
 ---
-# <a name="dds-dps-dqs-display-words-and-symbols"></a>dds、dp、dqs (表示語およびシンボル)
+# <a name="dds-dps-dqs-display-words-and-symbols"></a>dds、dps、dqs (単語とシンボルの表示)
 
 
 **Dds**、 **dps**、および**dqs**コマンドは、特定の範囲内でメモリの内容を表示します。 このメモリは、一連のシンボル テーブル内のアドレスと見なされます。 対応するシンボルがも表示されます。
@@ -52,7 +52,7 @@ dps [Options] [Range]
 (カーネル モードのみ)同じ **/p**, 書き込み結合のメモリが読み取られる点が異なります。 かっこ、 **wc**含める必要があります。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-表示するメモリ領域を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。 省略した場合*範囲*、最後の表示コマンドの終了位置から始まるメモリが表示されます。 場合*範囲*省略してない前の表示は、コマンドが使用されている、現在の命令ポインターで、表示が開始されます。 単純なアドレスを指定すると、既定値の範囲の長さは 128 バイトになります。
+表示するメモリ領域を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。 省略した場合*範囲*、最後の表示コマンドの終了位置から始まるメモリが表示されます。 場合*範囲*省略してない前の表示は、コマンドが使用されている、現在の命令ポインターで、表示が開始されます。 単純なアドレスを指定すると、既定値の範囲の長さは 128 バイトになります。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -67,7 +67,7 @@ dps [Options] [Range]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>注釈
 -------

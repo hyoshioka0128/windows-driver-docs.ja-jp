@@ -1,17 +1,17 @@
 ---
-title: UPnP デバイス用のコンテナー Id
-description: UPnP デバイス用のコンテナー Id
+title: UPnP デバイス用のコンテナー ID
+description: UPnP デバイス用のコンテナー ID
 ms.assetid: 29d2ed0e-e746-4f0a-88f3-bd07d5750485
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab9e222fe45049ba9f563266192954f8c9b27669
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363451"
 ---
-# <a name="container-ids-for-upnp-devices"></a>UPnP デバイス用のコンテナー Id
+# <a name="container-ids-for-upnp-devices"></a>UPnP デバイス用のコンテナー ID
 
 
 Windows 7 以降、PnP 拡張機能 (PNP-X) とユニバーサル PnP (UPnP) をサポートするデバイス ID を指定できます、コンテナーを含めることによって、 **X_containerId**デバイスの説明ドキュメント内の XML 要素。 詳細については、UPnP および UPnP デバイスの説明ドキュメントを参照してください、 [UPnP デバイスのアーキテクチャの仕様。](https://go.microsoft.com/fwlink/p/?linkid=142402)

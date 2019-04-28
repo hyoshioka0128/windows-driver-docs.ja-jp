@@ -1,6 +1,6 @@
 ---
-title: 一般的なバッファー システム DMA を使用します。
-description: 一般的なバッファー システム DMA を使用します。
+title: 共通バッファー システム DMA の使用
+description: 共通バッファー システム DMA の使用
 ms.assetid: ee060aa4-2db4-4bd2-b107-b71acced97fd
 keywords:
 - システム DMA WDK カーネルでは、一般的なバッファー
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9aa962faedfdd8fed147bc5910be06237729b95e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361082"
 ---
-# <a name="using-common-buffer-system-dma"></a>一般的なバッファー システム DMA を使用します。
+# <a name="using-common-buffer-system-dma"></a>共通バッファー システム DMA の使用
 
 
 

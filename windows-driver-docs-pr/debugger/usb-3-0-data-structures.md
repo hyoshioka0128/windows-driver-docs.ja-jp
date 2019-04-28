@@ -1,22 +1,22 @@
 ---
-title: USB 3.0 データ構造体
+title: USB 3.0 データの構造
 description: このトピックでは、USB 3.0 ホスト コント ローラーのドライバーによって使用されるデータ構造について説明します。
 ms.assetid: 39BD7413-48A5-4199-BA8E-D2A77E4D23F1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e51c35d47e1bd4590fb18515f183bf40ff530755
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368229"
 ---
-# <a name="usb-30-data-structures"></a>USB 3.0 データ構造体
+# <a name="usb-30-data-structures"></a>USB 3.0 データの構造
 
 
 このトピックでは、USB 3.0 ホスト コント ローラーのドライバーによって使用されるデータ構造について説明します。 これらのデータ構造を理解する際に役立つを使用して、 [USB 3.0](usb-3-extensions.md)と[RCDRKD](rcdrkd-extensions.md)デバッガー拡張機能のコマンドを効果的にします。 ここでは、データ構造と一致する名前がある、 [USB 3.0 仕様](https://go.microsoft.com/fwlink/p?LinkID=224892)します。 仕様により、さらに、USB 3.0 に関する知識は、拡張機能のコマンドを使用して、USB 3.0 ドライバーをデバッグする機能を強化します。
 
-USB 3.0 ホスト コント ローラーのドライバーには、コアの USB 3.0 ドライバー スタックの一部です。 詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。
+USB 3.0 ホスト コント ローラーのドライバーには、コアの USB 3.0 ドライバー スタックの一部です。 詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
 
 各 USB 3.0 ホスト コント ローラーは最大 255 のデバイスを持つことができ、デバイスごとに最大 31 個のエンドポイントを持つことができます。 次の図は、1 つのホスト コント ローラーと接続されたデバイスを表すデータ構造体の一部を示します。
 

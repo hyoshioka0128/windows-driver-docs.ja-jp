@@ -1,17 +1,17 @@
 ---
-title: SMS の操作の MB
-description: SMS の操作の MB
+title: MB SMS 操作
+description: MB SMS 操作
 ms.assetid: 9a21495c-ec3d-4277-b880-dbf5b081814a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9afc71d278c03252a49703f8f81422a56f2d16d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367592"
 ---
-# <a name="mb-sms-operations"></a>SMS の操作の MB
+# <a name="mb-sms-operations"></a>MB SMS 操作
 
 
 このトピックでは、構成、読み取り/受信、送信、および MB デバイスのショート メッセージ サービス (SMS) 機能を使用してメッセージを削除する操作について説明します。

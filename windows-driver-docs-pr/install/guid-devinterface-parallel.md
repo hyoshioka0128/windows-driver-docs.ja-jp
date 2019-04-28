@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: be309712967d427624c2e4ab59a4aaf0df719c1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363729"
 ---
 # <a name="guiddevinterfaceparallel"></a>GUID_DEVINTERFACE_PARALLEL
 
@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_PARALLEL[デバイス インターフェイス クラス](http
 
 パラレル ポートのシステムによって提供される関数のドライバーでは、パラレル ポートの場合は、このデバイス クラスのインスタンスを登録します。
 
-並列デバイスとドライバーについては、[パラレル ポートやデバイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff543964)を参照してください。
+並列デバイスとドライバーについては、次を参照してください。[パラレル ポートやデバイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff543964)します。
 
-パラレル ポートに接続されているデバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)を参照してください。
+パラレル ポートに接続されているデバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)します。
 
 [**GUID_PARALLEL_DEVICE** ](guid-parallel-device.md)このデバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_PARALLEL を代わりに使用します。
 

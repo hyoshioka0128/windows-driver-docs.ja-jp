@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 44aa24a74b71830c91f2db5e68d31f627ade96bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362211"
 ---
 # <a name="getbindingcapability-function"></a>GetBindingCapability 関数
 
@@ -45,7 +45,7 @@ void GetBindingCapability(
 永続的なバインドを取得するポートを示す世界中の名前。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetBindingCapability\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553907)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetBindingCapability\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553907)構造体。
 
 *BindType*   
 永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示します。 このパラメーターには値の一覧は、の説明を参照して、 [HBA\_バインド\_型](hba-bind-type.md)WMI クラスの修飾子。

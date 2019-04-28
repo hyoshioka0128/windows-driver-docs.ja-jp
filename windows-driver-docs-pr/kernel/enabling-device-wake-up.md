@@ -1,6 +1,6 @@
 ---
-title: デバイスのウェイク アップを有効にします。
-description: デバイスのウェイク アップを有効にします。
+title: デバイス ウェイクアップの有効化
+description: デバイス ウェイクアップの有効化
 ms.assetid: 1c3b9ebc-cc77-4562-9c57-56f2c9a69772
 keywords:
 - Irp WDK の電源管理
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b2c1b7299c581b390a58e32e2825f8bc052aaa1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361898"
 ---
-# <a name="enabling-device-wake-up"></a>デバイスのウェイク アップを有効にします。
+# <a name="enabling-device-wake-up"></a>デバイス ウェイクアップの有効化
 
 
 

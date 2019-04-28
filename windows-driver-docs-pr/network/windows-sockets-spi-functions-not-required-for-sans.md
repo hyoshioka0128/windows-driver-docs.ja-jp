@@ -1,6 +1,6 @@
 ---
-title: Windows ソケットは必要ありません SPI 関数 San
-description: Windows ソケットは必要ありません SPI 関数 San
+title: SAN に不要な Windows ソケット SPI 関数
+description: SAN に不要な Windows ソケット SPI 関数
 ms.assetid: 995ff59e-8ee4-4468-914d-47c14d804c38
 keywords:
 - SAN サービス プロバイダー WDK、必須ではない関数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81b8690c37dda4cdb43b38827073aeae97a46421
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365678"
 ---
-# <a name="windows-sockets-spi-functions-not-required-for-sans"></a>Windows ソケットは必要ありません SPI 関数 San
+# <a name="windows-sockets-spi-functions-not-required-for-sans"></a>SAN に不要な Windows ソケット SPI 関数
 
 
 

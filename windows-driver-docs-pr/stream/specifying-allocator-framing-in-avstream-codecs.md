@@ -1,19 +1,19 @@
 ---
-title: アロケーター AVStream コーデックでフレームを指定します。
-description: アロケーター AVStream コーデックでフレームを指定します。
+title: AVStream コーデックのアロケーターのフレーム処理の指定
+description: AVStream コーデックのアロケーターのフレーム処理の指定
 ms.assetid: e5b042ae-9b9c-48e9-9f0c-449e205316a9
 keywords:
 - AVStream ハードウェア コーデック サポート WDK を指定するアロケーターのフレーム化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18555ff315f8d963aa5ec7290cc0c5a8f267cba8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360825"
 ---
-# <a name="specifying-allocator-framing-in-avstream-codecs"></a>アロケーター AVStream コーデックでフレームを指定します。
+# <a name="specifying-allocator-framing-in-avstream-codecs"></a>AVStream コーデックのアロケーターのフレーム処理の指定
 
 
 一般に、KS 暗証番号 (pin) のアロケーターの要件は、ストリーム AVStream によって提供されるバッファーの実際のサイズを決定します。

@@ -1,6 +1,6 @@
 ---
-title: CVS を使用します。
-description: CVS を使用します。
+title: CVS の使用
+description: CVS の使用
 ms.assetid: 4ad1202e-0be5-4adc-af8b-6b8d7cb34b04
 keywords:
 - 同時実行バージョンのシステム (CVS)
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3a916e4bfc75dd7e68edc42c42fc0a4f2b555e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371583"
 ---
-# <a name="using-cvs"></a>CVS を使用します。
+# <a name="using-cvs"></a>CVS の使用
 
 
 移行元サーバーの CVS モジュールは、同時実行バージョン システム (CVS) 1.11.17 (クライアント) を使用して開発されました。 CVS の他のバージョンでテストされていません。 さらに、モジュールの現在のバージョンは、ベータ版です。

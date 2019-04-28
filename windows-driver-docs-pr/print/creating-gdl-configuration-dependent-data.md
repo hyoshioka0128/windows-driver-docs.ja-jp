@@ -1,6 +1,6 @@
 ---
-title: GDL 構成に依存するデータを作成します。
-description: GDL 構成に依存するデータを作成します。
+title: GDL 構成依存データを作成する
+description: GDL 構成依存データを作成する
 ms.assetid: 5b00903c-a637-4f83-96b8-92fe850d309e
 keywords:
 - GDL WDK の構成
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9fd2f7d1ffc03a87164a47776dc77830b6db3d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365572"
 ---
-# <a name="creating-gdl-configuration-dependent-data"></a>GDL 構成に依存するデータを作成します。
+# <a name="creating-gdl-configuration-dependent-data"></a>GDL 構成依存データを作成する
 
 
 GDL 言語では、値が 1 つまたは複数のパラメーターに依存するデータを定義することができます。 GDL クライアントは、パラメーターのデータの依存関係を知っているか、気付いて、データがパラメーターに依存する必要はありません。 GDL クライアントは、各パラメーターに割り当てられる値のみを把握する必要がありますし、GDL は作成して、スナップショットが、指定されたパラメーター値を適切なすべてのデータ。

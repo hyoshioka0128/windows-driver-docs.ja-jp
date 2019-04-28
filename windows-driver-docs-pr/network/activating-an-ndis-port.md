@@ -1,6 +1,6 @@
 ---
-title: NDIS ポートをアクティブ化します。
-description: NDIS ポートをアクティブ化します。
+title: NDIS ポートのアクティブ化
+description: NDIS ポートのアクティブ化
 ms.assetid: 0f3bfda2-8faa-4a92-a76b-0c0c361bd667
 keywords:
 - ポート WDK NDIS、アクティブ化します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69f6a88960f4de5b5d90052d8cf472a8017d04bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367796"
 ---
-# <a name="activating-an-ndis-port"></a>NDIS ポートをアクティブ化します。
+# <a name="activating-an-ndis-port"></a>NDIS ポートのアクティブ化
 
 
 
@@ -49,7 +49,7 @@ NET の残りのメンバーを設定\_PNP\_イベント**NULL**します。
 
 ミニポート ドライバーは、ポートがアクティブ化された NDIS に通知します (し、返します呼び出すこの通知が送信される可能性)、ミニポート ドライバーが要求を送信し、ポートに関連付けられている OID 要求を処理できる場合があります。 ミニポート ドライバーの状態で、新しくアクティブになったポートのポート番号を使用して、または受信呼び出しの後になるまで表示する必要がありますいない[ **NdisMNetPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff563616)を返します。
 
-NDIS では、既定のポートがアクティブになった後までのアクティブ化されたポートの上にあるドライバーは通知されません。 NDIS を呼び出すと、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)プロトコル ドライバー、NDIS の関数で現在アクティブなすべてのポートの一覧を提供する、 **ActivePorts** のメンバー[**NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)構造体、 *BindParameters*パラメーターを指します。 ミニポート ドライバーでは、新しいポートがアクティブ化、すべてのミニポート ドライバーにバインドされているプロトコル ドライバーに通知 NDIS、 **NetEventPortActivation** PnP イベント。 プロトコル ドライバーでのこれらのポートのアクティブ化イベントの処理の詳細については、[ポート アクティベーション PnP イベントを処理する](handling-the-port-activation-pnp-event.md)を参照してください。
+NDIS では、既定のポートがアクティブになった後までのアクティブ化されたポートの上にあるドライバーは通知されません。 NDIS を呼び出すと、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)プロトコル ドライバー、NDIS の関数で現在アクティブなすべてのポートの一覧を提供する、 **ActivePorts** のメンバー[**NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)構造体、 *BindParameters*パラメーターを指します。 ミニポート ドライバーでは、新しいポートがアクティブ化、すべてのミニポート ドライバーにバインドされているプロトコル ドライバーに通知 NDIS、 **NetEventPortActivation** PnP イベント。 プロトコル ドライバーでのこれらのポートのアクティブ化イベントの処理の詳細については、次を参照してください。[ポート アクティベーション PnP イベントを処理する](handling-the-port-activation-pnp-event.md)します。
 
 ミニポート ドライバーは、NDIS ポートを割り当てる、前に、ドライバーを呼び出す必要があります、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)の登録を設定する関数の属性、 [ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)構造体。 ミニポート ドライバーは、NDIS を設定して、既定のポートのアクティブ化を制御できます\_ミニポート\_コントロール\_既定\_ポート属性フラグの呼び出し時に**NdisMSetMiniportAttributes**. ミニポート ドライバーは、既定のポートをアクティブ化する責任を引き受けると場合、NDIS がミニポート ドライバーには、ポートのアクティブ化の PnP イベントで、既定のポートがアクティブになるまでミニポート アダプターと関連付けたドライバーの間のバインドを開始していません。
 
@@ -61,7 +61,7 @@ NDIS では、既定のポートがアクティブになった後までのアク
 
 NDIS 通過する既定のポートの認証の状態、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数の**DefaultPortAuthStates**のメンバー、 [**NDIS\_ミニポート\_INIT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565972)構造体。 ミニポート ドライバーは、ミニポート ドライバーには、既定のポートがアクティブにしたときに、既定のポートを制御する場合は、既定の認証設定を使用して、既定のポートをアクティブ化できます。 既定の認証設定を使用する設定、NDIS\_ポート\_CHAR\_使用\_既定\_AUTH\_でフラグを設定、**フラグ**のメンバー[ **NDIS\_ポート\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566791)構造体。 ミニポート ドライバーは、NDIS を使用できます\_ポート\_CHAR\_を使用して、\_既定\_AUTH\_割り当てとアクティブ化を行うポートのフラグを設定します。 NDIS ライセンス認証の場合、既定の認証状態が新しくアクティブになったポートに割り当てるし、に渡される認証の状態を無視[ **NdisMNetPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff563616)の**NetEventPortActivation**イベント。
 
-既定のポートを制御して、ポートの割り当ての詳細については、[割り当て NDIS ポート](allocating-an-ndis-port.md)を参照してください。
+既定のポートを制御して、ポートの割り当ての詳細については、次を参照してください。[割り当て NDIS ポート](allocating-an-ndis-port.md)します。
 
  
 

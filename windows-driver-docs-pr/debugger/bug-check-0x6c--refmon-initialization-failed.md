@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed746464fd396304eb2072d7326b054ee1b85750
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367446"
 ---
 # <a name="bug-check-0x6c-refmoninitializationfailed"></a>バグ チェック 0x6C:REFMON\_初期化\_失敗
 

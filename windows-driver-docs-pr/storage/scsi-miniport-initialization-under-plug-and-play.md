@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92c3eac06cffafee1101168a74eb86a21c053e02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368724"
 ---
 # <a name="scsi-miniport-initialization-under-plug-and-play"></a>プラグ アンド プレイでの SCSI ミニポートの初期化
 
@@ -33,7 +33,7 @@ Windows 2000 以降では、従来のミニポート ドライバーが Microsof
 
 プラグ アンド プレイ ドライバーが nonenumerable バス上にあるデバイスを検出するために求められる場合が、開始されたミニポート ドライバー。 これには、ミニポート ドライバーの問題の HBA を検索するバスにコマンドを必要とするバス ISA などが含まれます。 このような検出中にあるデバイスはレジストリに記録し、次回システムを起動するときにプラグ アンド プレイ デバイスとして初期化します。
 
-プラグ アンド プレイの詳細については、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
+プラグ アンド プレイの詳細については、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
 
  
 

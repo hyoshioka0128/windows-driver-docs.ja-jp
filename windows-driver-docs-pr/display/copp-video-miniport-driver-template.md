@@ -1,6 +1,6 @@
 ---
-title: COPP ビデオのミニポート ドライバー テンプレート
-description: COPP ビデオのミニポート ドライバー テンプレート
+title: COPP ビデオ ミニポート ドライバーのテンプレート
+description: COPP ビデオ ミニポート ドライバーのテンプレート
 ms.assetid: 54a39df8-0916-4df7-9e2d-a2c3aad1a235
 keywords:
 - 保護 WDK COPP、ビデオのミニポート ドライバー コード テンプレートのコピーします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e3833a5855c433eff6d23cbf39e0ee8876ffe8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360737"
 ---
-# <a name="copp-video-miniport-driver-template"></a>COPP ビデオのミニポート ドライバー テンプレート
+# <a name="copp-video-miniport-driver-template"></a>COPP ビデオ ミニポート ドライバーのテンプレート
 
 
 ## <span id="ddk_copp_video_miniport_driver_template_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_TEMPLATE_GG"></span>

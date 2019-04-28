@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9411c954cb8468f34ea1565d834cf5cd4ced70d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364030"
 ---
 # <a name="kspropertyextxportinputsignalmode"></a>KSPROPERTY\_EXTXPORT\_入力\_信号\_モード
 
@@ -42,16 +42,16 @@ KSPROPERTY\_EXTXPORT\_入力\_信号\_モード プロパティを設定また�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>デバイス</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565167" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565167)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>ULONG</p></td>
@@ -63,12 +63,12 @@ KSPROPERTY\_EXTXPORT\_入力\_信号\_モード プロパティを設定また�
 
 プロパティの値 (データの操作) は、外部のトランスポートの現在の入力信号のモードを指定する ULONG です。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **SignalMode** 、KSPROPERTY のメンバー\_EXTXPORT\_の構造は、入力信号のモードを指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

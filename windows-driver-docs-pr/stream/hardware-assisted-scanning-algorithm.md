@@ -1,19 +1,19 @@
 ---
-title: ハードウェアによるスキャン アルゴリズム
-description: ハードウェアによるスキャン アルゴリズム
+title: ハードウェア補助スキャン アルゴリズム
+description: ハードウェア補助スキャン アルゴリズム
 ms.assetid: 9a24b985-9667-4424-84e5-b1c728b3c558
 keywords:
 - ハードウェアによる WDK ビデオ キャプチャのスキャン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 155d5c2ff1dd9c94ffc5a07e92d2fcdb21eeb13c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363508"
 ---
-# <a name="hardware-assisted-scanning-algorithm"></a>ハードウェアによるスキャン アルゴリズム
+# <a name="hardware-assisted-scanning-algorithm"></a>ハードウェア補助スキャン アルゴリズム
 
 
 **このセクションでは、Microsoft Windows Vista 以降のオペレーティング システムにのみ適用されます。**

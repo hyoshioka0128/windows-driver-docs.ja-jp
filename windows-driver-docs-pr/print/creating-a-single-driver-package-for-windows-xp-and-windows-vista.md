@@ -1,17 +1,17 @@
 ---
-title: Windows Vista、Windows XP 用の 1 つのドライバー パッケージを作成します。
-description: Windows Vista、Windows XP 用の 1 つのドライバー パッケージを作成します。
+title: Windows XP と Windows Vista 用にドライバー パッケージを 1 つ作成する
+description: Windows XP と Windows Vista 用にドライバー パッケージを 1 つ作成する
 ms.assetid: 5e350152-edd7-4afb-bcba-dd0217d0d17a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef93623ad1ebafd020388dff2034c9a64381ad2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365546"
 ---
-# <a name="creating-a-single-driver-package-for-windows-xp-and-windows-vista"></a>Windows Vista、Windows XP 用の 1 つのドライバー パッケージを作成します。
+# <a name="creating-a-single-driver-package-for-windows-xp-and-windows-vista"></a>Windows XP と Windows Vista 用にドライバー パッケージを 1 つ作成する
 
 
 Microsoft [Connect](https://go.microsoft.com/fwlink/p/?linkid=133880) Web サイトには、core ドライバーの更新プログラムの 2 つのグループが用意されています。

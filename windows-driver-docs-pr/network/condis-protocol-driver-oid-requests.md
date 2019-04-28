@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4f89e3c2366793d1c333bad592dc5fefb3ec142
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366777"
 ---
 # <a name="condis-protocol-driver-oid-requests"></a>CoNDIS プロトコル ドライバー OID 要求
 
@@ -20,7 +20,7 @@ ms.locfileid: "56574072"
 
 
 
-いる CoNDIS ドライバー、クライアントまたは呼び出しのマネージャーのいずれかのプロトコル、クエリを実行したり、ミニポート ドライバーおよびその他のプロトコル ドライバーの動作のパラメーターを設定できます。 いる CoNDIS プロトコル ドライバーはクエリを実行したり、ミニポート コール マネージャー (MCMs) で情報を設定できます。 OID 要求と MCMs に関する詳細については、[いる CoNDIS MCM OID 要求](condis-mcm-oid-requests.md)を参照してください。
+いる CoNDIS ドライバー、クライアントまたは呼び出しのマネージャーのいずれかのプロトコル、クエリを実行したり、ミニポート ドライバーおよびその他のプロトコル ドライバーの動作のパラメーターを設定できます。 いる CoNDIS プロトコル ドライバーはクエリを実行したり、ミニポート コール マネージャー (MCMs) で情報を設定できます。 OID 要求と MCMs に関する詳細については、次を参照してください。[いる CoNDIS MCM OID 要求](condis-mcm-oid-requests.md)します。
 
 プロトコル ドライバーを呼び出す、基になるドライバーに、OID 要求を発信、 [ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)関数およびアドレス ファミリ (AF) ハンドル セットは、 *NdisAfHandle*パラメーターに、 **NULL**します。 プロトコル ドライバーを呼び出している CoNDIS プロトコル ドライバーのもう 1 つの OID 要求を発信**NdisCoOidRequest**し AF の有効なハンドルを提供します。
 

@@ -5,18 +5,18 @@ ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c119aa1994b53ce79b7983bbee559455084b464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362187"
 ---
 # <a name="span-iddebuggergettingstartedwithwindbgkernel-modespangetting-started-with-windbg-kernel-mode"></a><span id="debugger.getting_started_with_windbg__kernel-mode_"></span>WinDbg (カーネル モード) の概要
 
 
 WinDbg では、Windows のツールのデバッグに含まれるカーネル モードとユーザー モード デバッガーです。 ここで、カーネル モード デバッガーとして WinDbg を使用するのに役立つ実践的な演習を開始する提供されています。
 
-Windows のツールのデバッグを取得する方法については、[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](index.md)を参照してください。 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 次に、例を示します。
+Windows のツールのデバッグを取得する方法については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](index.md)します。 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 以下に例を示します。
 
 -   C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\デバッガー\\x64
 -   C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\デバッガー\\x86
@@ -42,7 +42,7 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
 
 ![ホストとデバッグ ケーブルで対象のダイアグラム](images/configfortest02.png)
 
-詳細については、ホストとターゲット コンピューターを設定する方法は、[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)を参照してください。
+詳細については、ホストとターゲット コンピューターを設定する方法は、次を参照してください。[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)します。
 
 ## <a name="span-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanestablish-a-kernel-mode-debugging-session"></a><span id="Establish_a_kernel-mode_debugging_session"></span><span id="establish_a_kernel-mode_debugging_session"></span><span id="ESTABLISH_A_KERNEL-MODE_DEBUGGING_SESSION"></span>カーネル モードのデバッグ セッションを確立します。
 
@@ -418,13 +418,13 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[WinDbg (ユーザー モード) の概要](getting-started-with-windbg.md)
+[WinDbg ドライバーの概要 (ユーザー モード)](getting-started-with-windbg.md)
 
 [カーネル モードのデバッグを手動での設定](https://go.microsoft.com/fwlink/p?linkid=272138)
 
-[デバッガー操作](https://go.microsoft.com/fwlink/p?linkid=399247)
+[デバッガーの操作](https://go.microsoft.com/fwlink/p?linkid=399247)
 
-[デバッグ技術](https://go.microsoft.com/fwlink/p?linkid=399248)
+[デバッグの手法](https://go.microsoft.com/fwlink/p?linkid=399248)
 
 [(WinDbg、KD、CDB、NTSD)、Windows 用デバッグ ツール](https://go.microsoft.com/fwlink/p?linkid=223405)
 

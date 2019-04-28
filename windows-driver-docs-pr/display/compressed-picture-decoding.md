@@ -1,6 +1,6 @@
 ---
-title: 圧縮された画像のデコード
-description: 圧縮された画像のデコード
+title: 圧縮画像のデコード
+description: 圧縮画像のデコード
 ms.assetid: 61633a15-72e4-49a4-9a42-684bde21df9e
 keywords:
 - WDK DirectX VA をデコードする圧縮の画像
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dca118023d2e0cd49c5d0f23d4db0979d56a8a88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361256"
 ---
-# <a name="compressed-picture-decoding"></a>圧縮された画像のデコード
+# <a name="compressed-picture-decoding"></a>圧縮画像のデコード
 
 
 ## <span id="ddk_compressed_picture_decoding_gg"></span><span id="DDK_COMPRESSED_PICTURE_DECODING_GG"></span>

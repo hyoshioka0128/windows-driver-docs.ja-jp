@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bceebdf9976e17d3a727daebde61024f089c8eb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370225"
 ---
 # <a name="ks-events"></a>KS のイベント
 
@@ -22,7 +22,7 @@ ms.locfileid: "56578494"
 
 
 
-AVStream、ミニドライバーを作成する場合は、[AVStream でのイベント処理](event-handling-in-avstream.md)を参照してください。
+AVStream、ミニドライバーを作成する場合は、次を参照してください。 [AVStream でのイベント処理](event-handling-in-avstream.md)します。
 
 イベントのセットは、リスナーが通知を要求できる関連するイベントのグループです。 たとえば、リスナーは、デバイス状態の変更、またはストリームの位置の変更の通知を受ける登録でした。 イベントが発生したときにカーネルのストリーミング、このイベントに対して登録されているすべてのクライアントに通知します。
 

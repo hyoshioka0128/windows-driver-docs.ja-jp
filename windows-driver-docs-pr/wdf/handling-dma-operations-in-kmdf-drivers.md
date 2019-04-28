@@ -1,5 +1,5 @@
 ---
-title: KMDF ドライバーで DMA 操作の処理
+title: KMDF ドライバーでの DMA 操作の処理
 description: ダイレクト メモリ アクセス (DMA) 操作に、KMDF ドライバーが I/O 要求を変換する方法について説明します。 システム モードの DMA および KMDF サポート バス マスターします。
 ms.assetid: 1ca8ba66-201d-42f2-a6f1-6184a9d7c2a6
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 609be5b5f3c7b4f286dd5dc5e8eaf7540a7d0d2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366625"
 ---
-# <a name="handling-dma-operations-in-kmdf-drivers"></a>KMDF ドライバーで DMA 操作の処理
+# <a name="handling-dma-operations-in-kmdf-drivers"></a>KMDF ドライバーでの DMA 操作の処理
 
 
 \[KMDF にのみ適用されます。\]

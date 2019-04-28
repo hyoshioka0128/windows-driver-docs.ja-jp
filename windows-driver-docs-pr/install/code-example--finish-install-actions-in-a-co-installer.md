@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc087da0bed51e9c47ac2d2dc3d168f8f5bf7292
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361190"
 ---
-# <a name="code-example-finish-install-actions-in-a-co-installer"></a>コード例:共同インストーラー - インストールが完了アクション
+# <a name="code-example-finish-install-actions-in-a-co-installer"></a>コードの例:共同インストーラーでのインストールの完了アクション
 
 
 この例では、共同インストーラーは、完了-インストール操作をサポートするために、次の操作を実行します。

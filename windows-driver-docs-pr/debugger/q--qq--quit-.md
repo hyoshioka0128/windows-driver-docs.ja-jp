@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bfe9421c9da02d26bbbc58b3794de108c53093e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362382"
 ---
 # <a name="q-qq-quit"></a>q、qq (終了)
 
@@ -66,7 +66,7 @@ qq
 
 KD でこのコマンドが機能しない場合、以下のキーを押して[ **CTRL + R キーを押しながら ENTER** ](ctrl-r--re-synchronize-.md)デバッガーのキーボードと、再試行してください、 **q**コマンド。 このアクションが機能しない場合は、デバッガーを終了する CTRL + B キーを押しながら ENTER を使用する必要があります。
 
-**Qq**コマンドの動作と同様に、 **q**コマンドをリモート デバッグを実行している場合を除き、します。 リモート デバッグ中、 **q**コマンドには効果がありませんが、 **qq**コマンド デバッグ サーバーが終了します。 この効果の詳細については、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
+**Qq**コマンドの動作と同様に、 **q**コマンドをリモート デバッグを実行している場合を除き、します。 リモート デバッグ中、 **q**コマンドには効果がありませんが、 **qq**コマンド デバッグ サーバーが終了します。 この効果の詳細については、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
 
  
 

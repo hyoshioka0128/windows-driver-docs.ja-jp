@@ -5,11 +5,11 @@ ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6ed3809fd262637b30b31b515bc9d06457b804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360604"
 ---
 # <a name="hardware-id"></a>Hardware ID (ハードウェア ID)
 
@@ -22,10 +22,10 @@ ms.locfileid: "56536246"
 ハードウェア ID では、次の一般的な形式のいずれかがあります。
 
 <a href="" id="-enumerator---enumerator-specific-device-id-"></a>*&lt;列挙子&gt;\\&lt;列挙子特定のデバイス ID&gt;*  
-これは、プラグ アンド プレイ (PnP) manager を 1 つの列挙子によって報告された個々 の PnP デバイスの最も一般的な形式です。 新しい列挙子には、この形式または、次の形式を使用する必要があります。 列挙子に固有のデバイス Id の詳細については、[デバイス識別子の書式設定](device-identifier-formats.md)を参照してください。
+これは、プラグ アンド プレイ (PnP) manager を 1 つの列挙子によって報告された個々 の PnP デバイスの最も一般的な形式です。 新しい列挙子には、この形式または、次の形式を使用する必要があります。 列挙子に固有のデバイス Id の詳細については、次を参照してください。[デバイス識別子の書式設定](device-identifier-formats.md)します。
 
 <a href="" id="--generic-device-id-"></a>*\*&lt;generic-device-ID&gt;*  
-アスタリスクでは、デバイスが ISAPNP と BIOS などの 1 つ以上の列挙子によってサポートされていることを示します。 この種類の ID の詳細については、[ジェネリック識別子](generic-identifiers.md)を参照してください。
+アスタリスクでは、デバイスが ISAPNP と BIOS などの 1 つ以上の列挙子によってサポートされていることを示します。 この種類の ID の詳細については、次を参照してください。[ジェネリック識別子](generic-identifiers.md)します。
 
 <a href="" id="-device-class-specific-id-"></a>*&lt;デバイス クラス固有 ID&gt;*  
 確立されている独自の名前付け規則、既存のデバイス クラスには、カスタムの形式を使用します。 ハードウェア ID の形式については、このようなバスのハードウェア仕様を参照してください。 新しい列挙子では、この形式は使用しないでください。

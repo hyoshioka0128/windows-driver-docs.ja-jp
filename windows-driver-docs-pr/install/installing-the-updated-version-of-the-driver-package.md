@@ -1,17 +1,17 @@
 ---
-title: ドライバー パッケージの更新バージョンをインストールします。
-description: ドライバー パッケージの更新バージョンをインストールします。
+title: ドライバー パッケージの更新バージョンのインストール
+description: ドライバー パッケージの更新バージョンのインストール
 ms.assetid: c2138956-a036-410d-b34e-b7b6efbcbace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b88fdee7713ffa0602708b0215462654cc98b852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366538"
 ---
-# <a name="installing-the-updated-version-of-the-driver-package"></a>ドライバー パッケージの更新バージョンをインストールします。
+# <a name="installing-the-updated-version-of-the-driver-package"></a>ドライバー パッケージの更新バージョンのインストール
 
 
 したら[ランクのドライバーの署名に Windows を同じように構成](configuring-windows-to-rank-driver-signatures-equally.md)、受信トレイのドライバーのプライベート ビルドをインストールするには、ターゲット システムにします。 プライベート ビルドをインストールするには、次の手順を完了します。
@@ -30,7 +30,7 @@ ms.locfileid: "56536685"
 
     システムの再起動後にデバイスを再インストール時に、新しいドライバーが自動的に読み込まれます。 DevCon システムを自動的に再起動するのには、再起動の条件付きパラメーターを追加します (**/r**) を削除 コマンド。
 
-    **注**  、 [DevCon](https://msdn.microsoft.com/library/windows/hardware/ff544707) WDK でツールが用意されています。 そのコマンドの詳細については、[DevCon コマンド](https://msdn.microsoft.com/library/windows/hardware/ff544766)を参照してください。
+    **注**  、 [DevCon](https://msdn.microsoft.com/library/windows/hardware/ff544707) WDK でツールが用意されています。 そのコマンドの詳細については、次を参照してください。 [DevCon コマンド](https://msdn.microsoft.com/library/windows/hardware/ff544766)します。
 
      
 
@@ -40,7 +40,7 @@ DevCon 削除コマンドの代替では、更新、[ドライバー パッケ�
 
     デバイス マネージャーのウィンドウ内で、デバイスの名前またはアイコンを右クリックし、**プロパティ**します。 **プロパティ**ウィンドウがドライバー タブをクリックし、クリックして、**ドライバーの更新**ボタンをクリックします。
 
--   更新プログラムの DevCon コマンド。 このコマンドの詳細については、[ **DevCon コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff544766)を参照してください。
+-   更新プログラムの DevCon コマンド。 このコマンドの詳細については、次を参照してください。 [ **DevCon コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff544766)します。
 
  
 

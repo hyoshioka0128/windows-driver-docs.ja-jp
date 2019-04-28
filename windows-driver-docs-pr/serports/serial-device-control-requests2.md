@@ -1,6 +1,6 @@
 ---
-title: シリアル デバイス制御の要求
-description: シリアル デバイス制御の要求
+title: シリアル デバイスの制御要求
+description: シリアル デバイスの制御要求
 ms.assetid: 12dab038-e4da-47b5-ada8-e1c7ee980cde
 keywords:
 - WDK シリアル デバイスは、デバイスの制御を要求します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e52ef3186cfdb820a35b9adfef079c7622a5de2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366512"
 ---
-# <a name="serial-device-control-requests"></a>シリアル デバイス制御の要求
+# <a name="serial-device-control-requests"></a>シリアル デバイスの制御要求
 
 
 
@@ -53,7 +53,7 @@ ms.locfileid: "56550277"
 
 高度な操作の詳細については[COM ポート](configuration-of-com-ports.md)、Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソースに関する情報を参照してください。
 
-シリアル I/O 要求の詳細については、[シリアル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547476)を参照してください。
+シリアル I/O 要求の詳細については、次を参照してください。[シリアル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547476)します。
 
  
 

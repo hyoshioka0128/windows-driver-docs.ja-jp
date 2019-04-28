@@ -5,11 +5,11 @@ ms.assetid: 969333DA-0282-474B-8D56-72CD623C5329
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8dc48fc0d213413b7b031e0193af78cb7a91c4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369856"
 ---
 # <a name="network-adapter-index-values"></a>ネットワーク アダプター インデックス値
 
@@ -40,7 +40,7 @@ ms.locfileid: "56573850"
 
 -   外部ネットワーク アダプターは、物理ネットワーク アダプターの拡張可能スイッチ チームにバインドする場合、チーム内の各アダプターには、1 つ以上の一意のインデックス値が割り当てられます。 拡張可能スイッチ、チームは、1 つまたは複数の物理ネットワーク アダプターのチームが外部ネットワーク アダプターにバインドされている構成です。
 
-外部ネットワーク アダプターを物理ネットワーク アダプターのバインドのさまざまな構成に関する詳細については、[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)を参照してください。
+外部ネットワーク アダプターを物理ネットワーク アダプターのバインドのさまざまな構成に関する詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
 
  
 

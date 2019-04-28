@@ -1,6 +1,6 @@
 ---
-title: プラグインのプロパティ ページ
-description: プラグインのプロパティ ページ
+title: プロパティ ページ プラグイン
+description: プロパティ ページ プラグイン
 ms.assetid: cf5f5861-1670-413c-9c42-c1b6eb6d719a
 keywords:
 - カーネル ストリーミング プロキシ WDK AVStream、プロパティ ページ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca2464ee8b40dfb68b434d02b0f09d2f1ef60666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362208"
 ---
-# <a name="property-page-plug-in"></a>プラグインのプロパティ ページ
+# <a name="property-page-plug-in"></a>プロパティ ページ プラグイン
 
 
 KS プロキシ用のプラグインとしてのプロパティ ページを記述することで、デバイスのプロパティへのユーザー インターフェイスを行うことができます。 このトピックでは、このようなプラグインを作成する方法について説明します。 」の説明に従って、オブジェクトを最初に、登録[KS プロキシの登録にプラグイン](registering-ks-proxy-plug-ins.md)します。

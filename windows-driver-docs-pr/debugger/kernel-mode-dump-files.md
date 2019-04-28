@@ -1,19 +1,19 @@
 ---
-title: カーネル モードのダンプ ファイル
-description: カーネル モードのダンプ ファイル
+title: カーネルモード ダンプ ファイル
+description: カーネルモード ダンプ ファイル
 ms.assetid: f04dc580-0e14-41aa-88a2-e04f4406add8
 keywords:
 - ダンプ ファイル、カーネル モード
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38e361b55eb404124d5370632dfc416d124d612b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367184"
 ---
-# <a name="kernel-mode-dump-files"></a>カーネル モードのダンプ ファイル
+# <a name="kernel-mode-dump-files"></a>カーネルモード ダンプ ファイル
 
 
 ## <span id="ddk_kernel_mode_dump_files_dbg"></span><span id="DDK_KERNEL_MODE_DUMP_FILES_DBG"></span>

@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c50eab294c551264a12b58122f2a741d374e9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364977"
 ---
 # <a name="fltparameters-for-irpmjmdlwritecomplete-union"></a>FLT\_IRP のパラメーター\_MJ\_MDL\_書き込み\_完全な共用体
 
@@ -42,7 +42,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **MdlWriteComplete**  
@@ -61,7 +61,7 @@ typedef union _FLT_PARAMETERS {
 
 IRP\_MJ\_MDL\_書き込み\_完了は、高速な I/O 操作。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

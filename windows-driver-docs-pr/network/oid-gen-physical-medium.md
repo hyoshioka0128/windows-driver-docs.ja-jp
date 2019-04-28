@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_PHYSICAL_MEDIUM ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5627c37f1bef00ea906d4fa5f46f932898a6604b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371064"
 ---
 # <a name="oidgenphysicalmedium"></a>OID\_GEN\_物理\_中
 
@@ -48,7 +48,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 
 **NdisPhysicalMediumWirelessWan**ワイヤレス WAN リンク経由でパケットが転送されます。 たとえば、CDPD、CDMA、および GPRS に含まれています。
 
-<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**ネイティブ 802.11 インターフェイスに準拠のミニポート ドライバーを介してワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細については、[802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)を参照してください。
+<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**ネイティブ 802.11 インターフェイスに準拠のミニポート ドライバーを介してワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)します。
 
 **注**  NDIS 6.0 以降およびそれ以降、およびそれ以降のバージョンで、ネイティブの 802.11 インターフェイスがサポートされています。
 

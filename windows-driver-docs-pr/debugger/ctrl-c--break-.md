@@ -1,5 +1,5 @@
 ---
-title: CTRL + C (中断)
+title: Ctrl + C (中断)
 description: Ctrl キーを押しながら C キーは、対象のアプリケーションまたは対象のコンピューターを停止する、デバッガーを中断し、デバッガー コマンドを取り消します。
 ms.assetid: ee9df6d7-4a40-4006-90df-478e06899e3a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 82745fadf91909aad4b85c6760f3012a3eab3b4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374423"
 ---
-# <a name="ctrlc-break"></a>CTRL + C (中断)
+# <a name="ctrlc-break"></a>Ctrl + C (中断)
 
 
 Ctrl キーを押しながら C キーは、対象のアプリケーションまたは対象のコンピューターを停止する、デバッガーを中断し、デバッガー コマンドを取り消します。

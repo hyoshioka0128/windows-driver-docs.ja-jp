@@ -1,6 +1,6 @@
 ---
-title: アダプターの状態を変更します。
-description: アダプターの状態を変更します。
+title: アダプターの状態の変更
+description: アダプターの状態の変更
 ms.assetid: bf503a42-ac32-4d68-9ad9-afec69c5fe2a
 keywords:
 - ビデオ アダプターの状態変更 WDK ビデオのミニポート
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21732236d92de7125427ce57d136032fb7616e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363832"
 ---
-# <a name="changing-state-on-the-adapter"></a>アダプターの状態を変更します。
+# <a name="changing-state-on-the-adapter"></a>アダプターの状態の変更
 
 
 ## <span id="ddk_changing_state_on_the_adapter_gg"></span><span id="DDK_CHANGING_STATE_ON_THE_ADAPTER_GG"></span>

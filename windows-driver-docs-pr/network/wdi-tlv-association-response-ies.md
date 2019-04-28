@@ -7,18 +7,18 @@ keywords:
 - WDI_TLV_ASSOCIATION_RESPONSE_IES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 23d4316f300346661f661084b55168d5c6535bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363022"
 ---
 # <a name="wditlvassociationresponseies"></a>WDI\_TLV\_アソシエーション\_応答\_IES
 
 
 WDI\_TLV\_アソシエーション\_応答\_IES は未使用の TLV します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

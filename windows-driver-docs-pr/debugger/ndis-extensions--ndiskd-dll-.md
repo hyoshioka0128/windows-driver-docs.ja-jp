@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed9d9c53e7edbfebf651ac740136088808a93444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363921"
 ---
 # <a name="ndis-extensions-ndiskddll"></a>NDIS 拡張機能 (Ndiskd.dll)
 
@@ -186,7 +186,7 @@ Unicode 文字の出力が許可されているかどうかを制御します。
 
 参照の Windows Vista 以降、ドライバー NDIS の設計の詳細については、[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)します。
 
-Windows Vista 以降の NDIS ドライバーへの参照の詳細については、[Windows Vista との参照を後でネットワーク](https://msdn.microsoft.com/library/windows/hardware/ff571081)を参照してください。
+Windows Vista 以降の NDIS ドライバーへの参照の詳細については、次を参照してください。 [Windows Vista との参照を後でネットワーク](https://msdn.microsoft.com/library/windows/hardware/ff571081)します。
 
 使用しての例については、!、ネットワーク スタックをデバッグする ndiskd デバッガー コマンドを参照してください[ネットワーク スタックをデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)します。
 
