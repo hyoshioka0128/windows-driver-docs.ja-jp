@@ -1,6 +1,6 @@
 ---
-title: WMI のライブラリを使用してブロックを登録するには
-description: WMI のライブラリを使用してブロックを登録するには
+title: ブロックを登録するための WMI ライブラリの使用
+description: ブロックを登録するための WMI ライブラリの使用
 ms.assetid: 1f4b773d-ca24-47f5-87e8-84c98dad9267
 keywords:
 - WMI の WDK カーネルでは、WMI に登録します。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f343262d5e71fe5c3081920c66fbf21d209ca579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372230"
 ---
-# <a name="using-the-wmi-library-to-register-blocks"></a>WMI のライブラリを使用してブロックを登録するには
+# <a name="using-the-wmi-library-to-register-blocks"></a>ブロックを登録するための WMI ライブラリの使用
 
 
 

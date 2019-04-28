@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1adc2c37dbbcfc164eeef73fa99853abde93a1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365853"
 ---
 # <a name="obtaining-the-parent-of-a-device-in-the-device-tree"></a>デバイス ツリーでのデバイスの親の取得
 
@@ -47,7 +47,7 @@ ms.locfileid: "56577827"
 
 -   取得する各デバイス インスタンス ハンドルには、最初に呼び出す**CM_Get_Device_ID**デバイス インスタンス ID を取得し、呼び出す**SetupDiOpenDeviceInfo** SP_DEVINFO_DATA の構造を取得する、デバイスです。
 
-デバイスの存在を操作する方法については、[Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)を参照してください。
+デバイスの存在を操作する方法については、次を参照してください。 [Nonpresent デバイスの親を判断する](determining-the-parent-of-a-nonpresent-device.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: GPD または PPD ファイルに基づいて構成モジュール
-description: GPD または PPD ファイルに基づいて構成モジュール
+title: GPD または PPD ファイルを基盤とする構成モジュール
+description: GPD または PPD ファイルを基盤とする構成モジュール
 ms.assetid: b0aeea58-1c58-475e-8d4a-597778e42a7c
 keywords:
 - バージョン 3 XPS ドライバー WDK XPSDrv、GPD ファイル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cd79dada49ce41896df9ddb766fd63a10b6e478
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360578"
 ---
-# <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>GPD または PPD ファイルに基づいて構成モジュール
+# <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>GPD または PPD ファイルを基盤とする構成モジュール
 
 
 Windows vista の場合、GPD と PPD ファイルには、印刷スキーマのマッピングが含まれています、XPSDrv に固有の新しいエントリは印刷ドライバー。 これらの変更は、Unidrv または Pscript5 構成モジュールは印刷ドライバー プラグインを GPD 専用または PPD 専用の構成モジュールを作成する際に、GPD と PPD ファイルに適用されます。

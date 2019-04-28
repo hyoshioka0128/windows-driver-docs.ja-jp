@@ -5,11 +5,11 @@ ms.assetid: 3e4d0534-3cbd-40df-b7c1-4f2c15bcd757
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c89f14edf1f48f555134913bf7c6118833e51fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362135"
 ---
 # <a name="shared-memory-in-receive-buffers"></a>受信バッファー内の共有メモリ
 
@@ -21,7 +21,7 @@ ms.locfileid: "56580496"
 
 上位のプロトコル ドライバーの設定、NDIS 場合\_受信\_キュー\_パラメーター\_先読み\_分割\_で必須フラグ、**フラグ**のメンバー[ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造、ネットワーク アダプターを分割受信パケットのオフセットに等しいまたは先読みアサーションが要求されたサイズと使用 DMA 先読みデータと post 先読みのデータを別の共有メモリ セグメントに転送するよりも大きい。
 
-ミニポート ドライバー先読み型の設定の指定 (**NdisSharedMemoryUsageReceiveLookahead**) または共有メモリを割り当てるときにその他の共有メモリ型。 たとえば、ミニポート ドライバーが呼び出す、 [ **NdisAllocateSharedMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff561616)関数とセット、**使用状況**内のメンバー、 [ **NDIS\_共有\_メモリ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567303)構造体を**NdisSharedMemoryUsageReceiveLookahead**します。 ミニポート ドライバーは、キューの割り当てが完了すると、キューの共有メモリを割り当てる必要があります。 割り当てとキューの共有メモリ リソースの解放については、[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)を参照してください。
+ミニポート ドライバー先読み型の設定の指定 (**NdisSharedMemoryUsageReceiveLookahead**) または共有メモリを割り当てるときにその他の共有メモリ型。 たとえば、ミニポート ドライバーが呼び出す、 [ **NdisAllocateSharedMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff561616)関数とセット、**使用状況**内のメンバー、 [ **NDIS\_共有\_メモリ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567303)構造体を**NdisSharedMemoryUsageReceiveLookahead**します。 ミニポート ドライバーは、キューの割り当てが完了すると、キューの共有メモリを割り当てる必要があります。 割り当てとキューの共有メモリ リソースの解放については、次を参照してください。[共有メモリ リソース割り当て](shared-memory-resource-allocation.md)します。
 
 次の図は、受信データは 2 つの共有メモリ バッファーに分割するときに、ネットワーク データのリレーションシップを示します。
 

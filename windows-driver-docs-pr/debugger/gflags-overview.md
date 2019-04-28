@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 98d4e6f4ccc04420e4d9053445af6bd7d5cd2a54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370838"
 ---
 # <a name="gflags-overview"></a>GFlags の概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "56532011"
 
 GFlags (gflags.exe)、グローバル フラグ エディターは内部システムの高度な診断とトラブルシューティング機能を無効にできです。 コマンド プロンプト ウィンドウから GFlags を実行したり、そのグラフィカル ユーザー インターフェイス ダイアログ ボックスを使用します。
 
-Gflags.exe を探してインストールする方法については、[GFlags](gflags.md)を参照してください。
+Gflags.exe を探してインストールする方法については、次を参照してください。 [GFlags](gflags.md)します。
 
 
 次の機能をアクティブ化するのにには、GFlags を使用します。
@@ -50,7 +50,7 @@ Gflags.exe を探してインストールする方法については、[GFlags](
 有効にする、無効化、およびプログラムのページ ヒープの検証を構成します。 有効な場合、ページ ヒープは動的ヒープ メモリの割り当てや無料の操作などの操作を監視し、ヒープ エラーが検出されたときにデバッガー中断が発生します。
 
 <span id="Silent_process_exit"></span><span id="silent_process_exit"></span><span id="SILENT_PROCESS_EXIT"></span>サイレント プロセスの終了  
-有効にする、無効化、およびサイレント終了、プロセスの監視およびレポートを構成します。 プロセスの終了をサイレント モードでは、通知、イベント ログ、およびダンプ ファイルの作成を含む場合に発生するアクションを指定できます。 詳細については、[サイレント プロセス終了時の監視](registry-entries-for-silent-process-exit.md)を参照してください。
+有効にする、無効化、およびサイレント終了、プロセスの監視およびレポートを構成します。 プロセスの終了をサイレント モードでは、通知、イベント ログ、およびダンプ ファイルの作成を含む場合に発生するアクションを指定できます。 詳細については、次を参照してください。[サイレント プロセス終了時の監視](registry-entries-for-silent-process-exit.md)します。
 
  
 

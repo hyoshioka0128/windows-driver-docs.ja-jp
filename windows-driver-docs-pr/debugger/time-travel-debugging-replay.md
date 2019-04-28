@@ -1,18 +1,18 @@
 ---
-title: タイム トラベル デバッグ - トレースの再生
+title: Time Travel Debugging - トレースの再生
 description: 時間を再生する方法を説明するトレースを移動します。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f9eb21ef930c66b3995e4afbd587a347049b880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364774"
 ---
 ![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png) 
 
-# <a name="time-travel-debugging---replay-a-trace"></a>タイム トラベル デバッグ - トレースの再生 
+# <a name="time-travel-debugging---replay-a-trace"></a>Time Travel Debugging - トレースの再生 
 
 時間の直接的および下位タイム トラベルを再生するトレース、転送を移動する方法について説明します。
 
@@ -26,7 +26,7 @@ ms.locfileid: "56537754"
 | t-(さかのぼって)| 
 | g: (戻る)   |
 
-詳細については、[タイム トラベルのデバッグ - ナビゲーション コマンド](time-travel-debugging-navigation-commands.md)を参照してください。 
+詳細については、次を参照してください。[タイム トラベルのデバッグ - ナビゲーション コマンド](time-travel-debugging-navigation-commands.md)します。 
 
 ## <a name="ribbon-button-time-travel-navigation"></a>リボン ボタン タイム トラベル ナビゲーション
 
@@ -129,12 +129,12 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 - {0} 位置} が # である場合: #, # は、16 進数、送信するときにその位置にします。 たとえば、 `!tt 1A0:12F` 1A0:12F をトレースに位置に移動します。
 
-詳細については、[時のデバッグ出張 -! tt (タイム トラベル)](time-travel-debugging-extension-tt.md)を参照してください。
+詳細については、次を参照してください。[時のデバッグ出張 -! tt (タイム トラベル)](time-travel-debugging-extension-tt.md)します。
 
 
 ## <a name="positions"></a>! 位置
 
-使用`!positions`アクティブなすべてのスレッドをトレース内の位置を含むを表示します。 詳細については、[時のデバッグ出張 -! 位置 (タイム トラベル)](time-travel-debugging-extension-positions.md)を参照してください。
+使用`!positions`アクティブなすべてのスレッドをトレース内の位置を含むを表示します。 詳細については、次を参照してください。[時のデバッグ出張 -! 位置 (タイム トラベル)](time-travel-debugging-extension-positions.md)します。
 
 ```dbgcmd
 0:000> !positions

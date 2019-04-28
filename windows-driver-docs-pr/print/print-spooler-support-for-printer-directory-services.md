@@ -1,6 +1,6 @@
 ---
-title: 印刷スプーラ プリンター ディレクトリ サービスのサポート
-description: 印刷スプーラ プリンター ディレクトリ サービスのサポート
+title: プリンター ディレクトリ サービスの印刷スプーラー サポート
+description: プリンター ディレクトリ サービスの印刷スプーラー サポート
 ms.assetid: 23cd73a5-8628-4471-a6c6-e056536fcc75
 keywords:
 - ディレクトリ サービスの WDK プリンター
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 170dc2f1756fbea5763d073cd001bed8bc3013e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372076"
 ---
-# <a name="print-spooler-support-for-printer-directory-services"></a>印刷スプーラ プリンター ディレクトリ サービスのサポート
+# <a name="print-spooler-support-for-printer-directory-services"></a>プリンター ディレクトリ サービスの印刷スプーラー サポート
 
 
 

@@ -1,19 +1,19 @@
 ---
-title: GDI 指定ハーフトーン
-description: GDI 指定ハーフトーン
+title: GDI で指定されるハーフトーン
+description: GDI で指定されるハーフトーン
 ms.assetid: c7f3d148-4620-4060-bbf8-253e9e35c397
 keywords:
 - GDI 指定ハーフトーン WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c0c9abbdf8db43f14fbd86a9bda5e29ca72bca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363197"
 ---
-# <a name="gdi-supplied-halftoning"></a>GDI 指定ハーフトーン
+# <a name="gdi-supplied-halftoning"></a>GDI で指定されるハーフトーン
 
 
 
@@ -29,7 +29,7 @@ Unidrv は標準の HT\_PATSIZE\_GPD ファイル ハーフトーン オプシ�
 
 ハーフトーンの GDI が指定した機能を使用するには、する場合は、指定[ハーフトーンのミニドライバーが指定したパターン](minidriver-supplied-halftone-patterns.md)します。
 
-色の形式の詳細については、[色形式の処理](handling-color-formats.md)を参照してください。
+色の形式の詳細については、次を参照してください。[色形式の処理](handling-color-formats.md)します。
 
  
 

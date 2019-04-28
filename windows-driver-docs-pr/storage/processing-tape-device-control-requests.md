@@ -1,6 +1,6 @@
 ---
-title: テープ デバイスのコントロール要求を処理
-description: テープ デバイスのコントロール要求を処理
+title: テープ デバイス制御要求の処理
+description: テープ デバイス制御要求の処理
 ms.assetid: de6edfc6-9b4b-4866-8fdb-1047b43163de
 keywords:
 - テープ ドライバー WDK ストレージは、状態の値のマッピング
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06195bcdc418417fb497bdbacb6d9313d8af51b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366274"
 ---
-# <a name="processing-tape-device-control-requests"></a>テープ デバイスのコントロール要求を処理
+# <a name="processing-tape-device-control-requests"></a>テープ デバイス制御要求の処理
 
 
 ## <span id="ddk_processing_tape_device_control_requests_kg"></span><span id="DDK_PROCESSING_TAPE_DEVICE_CONTROL_REQUESTS_KG"></span>

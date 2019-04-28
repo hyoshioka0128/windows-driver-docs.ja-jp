@@ -1,6 +1,6 @@
 ---
-title: 64 ビット Windows は、ドライバーの移植
-description: 64 ビット Windows は、ドライバーの移植
+title: 64 ビット Windows へのドライバーの移植
+description: 64 ビット Windows へのドライバーの移植
 ms.assetid: f06e6aae-fc44-481c-a277-1c266d6e6d7b
 keywords:
 - 64 ビットの WDK カーネル、ドライバーの移植
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda3cbfe6771a49e8ae899a54cd85918920bd963
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369204"
 ---
-# <a name="porting-your-driver-to-64-bit-windows"></a>64 ビット Windows は、ドライバーの移植
+# <a name="porting-your-driver-to-64-bit-windows"></a>64 ビット Windows へのドライバーの移植
 
 
 

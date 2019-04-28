@@ -1,6 +1,6 @@
 ---
-title: NIC からセキュリティ アソシエーションを削除します。
-description: NIC からセキュリティ アソシエーションを削除します。
+title: NIC からのセキュリティ アソシエーションの削除
+description: NIC からのセキュリティ アソシエーションの削除
 ms.assetid: 739a3fef-f0b4-4d7c-9d92-df52fd27915d
 keywords:
 - セキュリティ アソシエーション WDK IPsec オフロードします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4383bcc985733b0e130945a9f70d77108ee64d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364238"
 ---
-# <a name="deleting-a-security-association-from-a-nic"></a>NIC からセキュリティ アソシエーションを削除します。
+# <a name="deleting-a-security-association-from-a-nic"></a>NIC からのセキュリティ アソシエーションの削除
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 

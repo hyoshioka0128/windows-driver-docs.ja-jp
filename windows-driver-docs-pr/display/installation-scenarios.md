@@ -1,22 +1,22 @@
 ---
-title: WDDM 1.2 のインストール シナリオ
+title: WDDM 1.2 インストールのシナリオ
 description: Windows 8 のインストールのグラフィックス ドライバーの動作は、可能であれば、お客様がテストされ、Windows 8 認定のグラフィック ドライバーを取得、設計されています。
 ms.assetid: AC4C214A-63C6-48C8-BA57-6DAE9E93BED9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2dfde081641921b512e572b3fe5a6b1c64fdcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365474"
 ---
-# <a name="wddm-12-installation-scenarios"></a>WDDM 1.2 のインストール シナリオ
+# <a name="wddm-12-installation-scenarios"></a>WDDM 1.2 インストールのシナリオ
 
 
 Windows 8 のインストールのグラフィックス ドライバーの動作は、可能であれば、お客様がテストされ、Windows 8 認定のグラフィック ドライバーを取得、設計されています。 この動作は、このセクションで説明されている規則によって定義されます。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>

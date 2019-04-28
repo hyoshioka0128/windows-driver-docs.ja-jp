@@ -1,6 +1,6 @@
 ---
-title: コールアウト ドライバーの動作
-description: コールアウト ドライバーの動作
+title: コールアウト ドライバーの操作
+description: コールアウト ドライバーの操作
 ms.assetid: 24940254-c9ed-45f7-8a67-20978a8efd3f
 keywords:
 - Windows Filtering Platform コールアウト ドライバー WDK、操作
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68de7080c8b708a435ed5f87059af76d9af49a24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369073"
 ---
-# <a name="callout-driver-operations"></a>コールアウト ドライバーの動作
+# <a name="callout-driver-operations"></a>コールアウト ドライバーの操作
 
 
 このセクションでは、一般的なコールアウト ドライバーの操作について説明し、次のトピックが含まれています。
@@ -38,7 +38,7 @@ ms.locfileid: "56556461"
 
 [コールアウト ドライバーをアンロード](unloading-a-callout-driver.md)
 
-これらの操作だけでなく、コールアウト ドライバーは、ベース エンジンをフィルター処理にフィルターを追加するなど、他の Windows フィルタ リング プラットフォーム管理タスクを実行できます。 コールアウト ドライバーを実行できるタスクの詳細については、[その他の Windows フィルタ リング プラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)を参照してください。
+これらの操作だけでなく、コールアウト ドライバーは、ベース エンジンをフィルター処理にフィルターを追加するなど、他の Windows フィルタ リング プラットフォーム管理タスクを実行できます。 コールアウト ドライバーを実行できるタスクの詳細については、次を参照してください。[その他の Windows フィルタ リング プラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)します。
 
  
 

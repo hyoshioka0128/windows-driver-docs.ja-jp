@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49c29a60fd6065c5bdd2048c69c24a273f168eb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369220"
 ---
 # <a name="points-to-consider-when-adding-drivers"></a>ドライバーを追加するときに考慮すべき点
 

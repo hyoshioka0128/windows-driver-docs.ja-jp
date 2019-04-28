@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa70c7824b0327ecc0cbc01ca47a7bd4b55885a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369764"
 ---
 # <a name="forcing-a-system-crash"></a>システム クラッシュの強制実行
 
@@ -29,7 +29,7 @@ ms.locfileid: "56572602"
 
 -   応答がありませんまったくに、マウスまたはキーボード、およびディスクは使用されていません。
 
-経験豊富なデバッグ技術者が存在する場合は、自分カーネル デバッガーをフックでき、問題を分析できます。 このような状況が発生したときに確認する項目のヒントについては、[デバッグを停止しているシステム](debugging-a-stalled-system.md)を参照してください。
+経験豊富なデバッグ技術者が存在する場合は、自分カーネル デバッガーをフックでき、問題を分析できます。 このような状況が発生したときに確認する項目のヒントについては、次を参照してください。[デバッグを停止しているシステム](debugging-a-stalled-system.md)します。
 
 ただし、技術者が存在しない場合、カーネル モードのダンプ ファイルを作成し、オフサイトの技術者に送信することがあります。 このダンプ ファイルは、エラーの原因の分析に使用できます。
 

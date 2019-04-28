@@ -1,15 +1,15 @@
 ---
-title: _Kernel_IoGetDmaAdapter_ドライバーの注釈
+title: ドライバーの _Kernel_IoGetDmaAdapter_ 注釈
 description: 使用して、 _Kernel_IoGetDmaAdapter_ DMA ポインターの誤用を検索するコード分析ツールに出力するための注釈。
 ms.assetid: 51F71815-D899-48F5-8F81-92B139FC6B8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: daa3e56cdfd451749b45dfb6dd360249c5f03db7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361470"
 ---
 # <a name="kerneliogetdmaadapter-annotation-for-drivers"></a>\_カーネル\_IoGetDmaAdapter\_ドライバーの注釈
 
@@ -35,7 +35,7 @@ IoGetDmaAdapter(
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[SAL 2.0 Annotations for Windows Drivers](sal-2-annotations-for-windows-drivers.md)
+[Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)
 
  
 

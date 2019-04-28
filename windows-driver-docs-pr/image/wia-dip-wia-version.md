@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f97a7f34911afd3e8777ca2717ee0b06fd5ce6e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372965"
 ---
 # <a name="wiadipwiaversion"></a>WIA\_DIP\_WIA\_バージョン
 
@@ -33,14 +33,14 @@ WIA\_DIP\_WIA\_バージョン プロパティには (文字列) としてのコ
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションの読み取り WIA\_DIP\_WIA\_WIA コンピューターにインストールされているのバージョンを特定のバージョン。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

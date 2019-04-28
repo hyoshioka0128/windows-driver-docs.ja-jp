@@ -1,6 +1,6 @@
 ---
-title: テクスチャ中
-description: テクスチャ中
+title: テクスチャ ビット ブロックの転送
+description: テクスチャ ビット ブロックの転送
 ms.assetid: 5a2e49c1-e99d-4b0d-a46c-b22b3dcefaf8
 keywords:
 - blt WDK Direct3D
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b37648cfed2fee5928f777bd88386f1ac682fd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362619"
 ---
-# <a name="texture-blitting"></a>テクスチャ中
+# <a name="texture-blitting"></a>テクスチャ ビット ブロックの転送
 
 
 ## <span id="ddk_texture_blitting_gg"></span><span id="DDK_TEXTURE_BLITTING_GG"></span>

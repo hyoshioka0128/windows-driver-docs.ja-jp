@@ -5,11 +5,11 @@ ms.assetid: E430AC59-34AC-4F8E-9A42-350C7A42BBA8
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ac26975bef9eb3025021585d5d9902d8b646cd8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368870"
 ---
 # <a name="sensor-data-fields"></a>センサー データ フィールド
 

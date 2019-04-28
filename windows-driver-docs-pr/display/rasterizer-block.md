@@ -1,17 +1,17 @@
 ---
-title: ラスタライザーのブロック
-description: ラスタライザーのブロック
+title: ラスタライザー ブロック
+description: ラスタライザー ブロック
 ms.assetid: 115c265d-0264-4a8a-b07b-710438394c68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08364909ef7f3bd3075ef83b04314e5e5d377b24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372985"
 ---
-# <a name="rasterizer-block"></a>ラスタライザーのブロック
+# <a name="rasterizer-block"></a>ラスタライザー ブロック
 
 
 ラスタライザー ブロックは、クリップ、プリミティブを設定し、ピクセル シェーダーのステージを呼び出す方法を決定します。 Direct3D のランタイムでは、パイプラインのステージとしてラスタライザー ブロックは表示されません。 代わりに、Direct3D のランタイムは、重要な固定機能の操作を実行するために発生するパイプライン ステージの間のインターフェイスとしてラスタライザーのブロックを表示します。 これらの固定機能操作の多くは、ソフトウェア開発者が調整できます。

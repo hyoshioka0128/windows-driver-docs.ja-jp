@@ -7,16 +7,16 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2006e9f2686fcd7cb93f656242e486f990c22211
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371598"
 ---
 # <a name="using-client-objects"></a>クライアント オブジェクトの使用
 
 
-デバッガー エンジンと対話するクライアント オブジェクトの役割の概要については、[クライアント オブジェクト](client-objects.md)を参照してください。
+デバッガー エンジンと対話するクライアント オブジェクトの役割の概要については、次を参照してください。[クライアント オブジェクト](client-objects.md)します。
 
 一般に、クライアントのメソッドは、クライアントが作成されたスレッドからのみ呼び出すことがあります。 通常、間違ったスレッドから呼び出されるメソッドはすぐに失敗します。 このルールの主な例外は、メソッド[ **CreateClient**](https://msdn.microsoft.com/library/windows/hardware/ff539320); このメソッドは、任意のスレッドから呼び出すことができ、呼び出し元のスレッドで使用できる新しいクライアントを返します。 参照セクションでは、その他の例外が記載されています。
 

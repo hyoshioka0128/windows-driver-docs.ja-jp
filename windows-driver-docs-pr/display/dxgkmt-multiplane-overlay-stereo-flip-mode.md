@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 93be0f79d9b13d4a599535dde514736bc518f9c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370821"
 ---
 # <a name="dxgkmtmultiplaneoverlaystereoflipmode-enumeration"></a>DXGKMT\_MULTIPLANE\_オーバーレイ\_ステレオ\_反転\_モード列挙型
 
@@ -46,7 +46,7 @@ typedef enum _DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE {
 
 <span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME1"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_frame1"></span>**DXGKMT\_MULTIPLANE\_OVERLAY\_STEREO\_FLIP\_FRAME1**
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

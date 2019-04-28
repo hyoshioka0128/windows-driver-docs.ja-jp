@@ -7,11 +7,11 @@ keywords:
 - WSK ソケット オプション ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 76964218815ade6580d7973da1d38acc75a684d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360592"
 ---
 # <a name="wsk-socket-options"></a>WSK ソケット オプション
 

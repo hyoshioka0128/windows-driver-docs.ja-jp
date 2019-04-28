@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WWAN_DEVICE_CAPS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7db36d959fb538fcbb35a5c49f11b7519e47fb2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369882"
 ---
 # <a name="ndisstatuswwandevicecaps"></a>NDIS\_状態\_WWAN\_デバイス\_キャップ
 

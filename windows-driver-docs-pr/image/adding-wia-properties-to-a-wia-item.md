@@ -1,17 +1,17 @@
 ---
-title: WIA 項目に WIA プロパティの追加
-description: WIA 項目に WIA プロパティの追加
+title: WIA 項目への WIA プロパティの追加
+description: WIA 項目への WIA プロパティの追加
 ms.assetid: 0cf4748f-c50a-4781-8b8d-3fb73e5d7242
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4522940e4279d4de8bde5672803edb0f3f4e88c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367086"
 ---
-# <a name="adding-wia-properties-to-a-wia-item"></a>WIA 項目に WIA プロパティの追加
+# <a name="adding-wia-properties-to-a-wia-item"></a>WIA 項目への WIA プロパティの追加
 
 
 

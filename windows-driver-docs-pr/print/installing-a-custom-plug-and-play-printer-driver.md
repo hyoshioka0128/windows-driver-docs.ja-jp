@@ -1,19 +1,19 @@
 ---
-title: カスタムのプラグ アンド プレイ プリンター ドライバーをインストールします。
-description: カスタムのプラグ アンド プレイ プリンター ドライバーをインストールします。
+title: カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする
+description: カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする
 ms.assetid: 0269afbe-c7d1-4227-ad77-b921852d6a0c
 keywords:
 - プリンター ドライバー WDK をカスタマイズするには、プラグ アンド プレイします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3124b506928018a113461baae3bb1b197431bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362754"
 ---
-# <a name="installing-a-custom-plug-and-play-printer-driver"></a>カスタムのプラグ アンド プレイ プリンター ドライバーをインストールします。
+# <a name="installing-a-custom-plug-and-play-printer-driver"></a>カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする
 
 
 
@@ -27,7 +27,7 @@ Windows xp では、プラグ アンド プレイ マネージャーは、(最�
 
 3.  符号なしの IHV ドライバー
 
-Windows 2000 では、ボックスで、符号付きの IHV ドライバーの間の違いはありません: ドライバーのいずれかの型が符号なしの IHV ドライバー方が優先的に読み込まれます。 ドライバーと「ボックス」ドライバーを置換する INF ファイルをインストールするためのアプリケーションの詳細については、[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)を参照してください。
+Windows 2000 では、ボックスで、符号付きの IHV ドライバーの間の違いはありません: ドライバーのいずれかの型が符号なしの IHV ドライバー方が優先的に読み込まれます。 ドライバーと「ボックス」ドライバーを置換する INF ファイルをインストールするためのアプリケーションの詳細については、次を参照してください。[デバイス インストール アプリケーションを記述して](https://msdn.microsoft.com/library/windows/hardware/ff554015)します。
 
 Windows 2000 のインボックス ドライバーを置換するドライバーを開発している場合、以下のことを確認、*ハードウェア Id*で、 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456) INF ファイルが含まれます、。適切なポートの列挙子。 Ntprint.inf の Windows 2000 バージョンには、モデルの INF セクションでは、エントリにはポートの列挙子が含まれます。 INF ファイルで同じエントリは、ポートの列挙子を省略、プラグ アンド プレイは皆さん方が優先的、インボックス Windows 2000 のドライバーを選択します。 場合、ドライバーは Windows XP のインボックス ドライバーにハードウェア ID で、ポートの列挙子を含める必要はありません。
 

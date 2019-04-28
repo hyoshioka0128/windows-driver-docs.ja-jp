@@ -5,11 +5,11 @@ ms.assetid: 4c88474e-f776-4876-a15f-c9d6fb0d20e5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14df38f512094aad337741984f3d3cf093b3023f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360617"
 ---
 # <a name="wia-compatibility-layer-data-transfers-overview"></a>WIA 互換性レイヤーのデータ転送の概要
 
@@ -36,7 +36,7 @@ WIA がメモリ ビットマップ形式をサポートしていません**WiaI
 
 Windows Vista のドライバーでは、転送中にイメージ全体をキャッシュ、ドライバーではなく、バンド内のデータを転送する更新プログラムのメッセージを送信できます。 この形式の転送は、すぐに、スクロール フィード スキャナーによるスキャンなど、転送されるイメージのサイズを決定することはできませんのスキャン中にデータを転送する場合に便利です。 バンドに画像データを転送するために、ドライバーを呼び出す必要があります**IStream::Seek**内で渡されたストリームに[ **IWiaTransferCallback::GetNextStream**](https://msdn.microsoft.com/library/windows/hardware/ff545039)します。
 
-TYMED と転送のストリーム ベースの詳細については、[Data Transfers](data-transfers.md)を参照してください。
+TYMED と転送のストリーム ベースの詳細については、次を参照してください。 [Data Transfers](data-transfers.md)します。
 
 **IWiaDataTransfer**、 **IWiaTransfer**、および**IStream**インターフェイスについては、Microsoft Windows SDK ドキュメントで説明します。
 

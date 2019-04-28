@@ -5,16 +5,16 @@ ms.assetid: 1703C402-D770-4D3F-AB70-F2D30712A5D9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f35df5cb6bc7b76170002ba43a3a4cfcaae20795
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370862"
 ---
 # <a name="gpio-extensions"></a>GPIO 拡張機能
 
 
-一般的な目的の入出力 (GPIO) の拡張機能コマンドでは、GPIO コント ローラーのソフトウェアの状態を表示します。 これらのコマンドは、GPIO フレームワークの拡張機能ドライバー (Msgpioclx.sys) によって管理されるデータ構造から情報を表示します。 GPIO フレームワークの拡張機能については、[汎用入出力 (GPIO) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=299823)を参照してください。
+一般的な目的の入出力 (GPIO) の拡張機能コマンドでは、GPIO コント ローラーのソフトウェアの状態を表示します。 これらのコマンドは、GPIO フレームワークの拡張機能ドライバー (Msgpioclx.sys) によって管理されるデータ構造から情報を表示します。 GPIO フレームワークの拡張機能については、次を参照してください。[汎用入出力 (GPIO) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=299823)します。
 
 GPIO デバッガー拡張機能のコマンドは、gpiokd.dll で実装されます。 GPIO コマンドを読み込むには、次のように入力します。 **.load gpiokd.dll**デバッガーでします。
 
@@ -39,7 +39,7 @@ GPIO フレームワークの拡張機能ドライバーのデバイス拡張機
 
 GPIO 問題のデバッグを開始するには、入力、 [ **! gpiokd.clientlist** ](-gpiokd-clientlist.md)コマンド。 **! Gpiokd.clientlist**コマンドは、すべての登録済みの GPIO コント ローラーおよび他の GPIO デバッガー コマンドに渡すことができる表示アドレスの概要を表示します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>

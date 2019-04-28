@@ -5,18 +5,18 @@ ms.assetid: 0e9aa9a1-c1aa-42e1-9c0b-a91a2424ad1a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 62cc50fc73edce4420f6d11eda97fee8cd1cd1ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364950"
 ---
 # <a name="using-interrupt-resource-descriptors"></a>割り込みリソース記述子の使用
 
 
 プラグ アンド プレイ (PnP) マネージャーは、割り込みメッセージを 2 つのパスを使用してデバイスに割り当てます。 PnP マネージャーを最初に、送信、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://msdn.microsoft.com/library/windows/hardware/ff550874) 、ハードウェア リソースの一覧で、ドライバーへの要求デバイスに割り当てる割り込みメッセージを含むです。 ドライバーは、いくつかのメッセージごとの設定と同様に、割り込みメッセージの数を変更するには、この一覧を変更できます。 次に後、PnP マネージャーは、実際には、リソースを割り当てる、送信、 [ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)を要求し、ハードウェアの完全な一覧を提供などのリソースは、ドライバーのデバイスに割り当てられているメッセージを中断します。
 
-**IRP\_MN\_フィルター\_リソース\_要件**要求の一覧を提供する[ **IO\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff550598)構造体。 デバイスが MSI (メッセージ シグナル割り込み) の機能構造 PCI 2.2 仕様で定義されている場合、PnP マネージャーは、1 つの割り込みメッセージ記述子を提供します。 デバイスが MSI X 機能の構造、PCI 3.0 仕様で定義されている場合、PnP マネージャーは、割り込みメッセージごとに 1 つの構造を提供します。 記述子が割り込みメッセージ**型** = **CmResourceTypeInterrupt**と**フラグ**= CM\_リソース\_中断\_LATCHED |CM\_リソース\_INTERRUPT\_メッセージ。 ドライバーでは、割り込みアフィニティなどの設定を変更しても変更できます、 **u.Interrupt**構造体のメンバー。 MSI を使用する場合すべて割り込みがある同じアフィニティは、さまざまな類似性を持つことができます MSI X を使用する場合に注意してください。 詳細については、[割り込みアフィニティと優先順位](interrupt-affinity-and-priority.md)を参照してください。
+**IRP\_MN\_フィルター\_リソース\_要件**要求の一覧を提供する[ **IO\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff550598)構造体。 デバイスが MSI (メッセージ シグナル割り込み) の機能構造 PCI 2.2 仕様で定義されている場合、PnP マネージャーは、1 つの割り込みメッセージ記述子を提供します。 デバイスが MSI X 機能の構造、PCI 3.0 仕様で定義されている場合、PnP マネージャーは、割り込みメッセージごとに 1 つの構造を提供します。 記述子が割り込みメッセージ**型** = **CmResourceTypeInterrupt**と**フラグ**= CM\_リソース\_中断\_LATCHED |CM\_リソース\_INTERRUPT\_メッセージ。 ドライバーでは、割り込みアフィニティなどの設定を変更しても変更できます、 **u.Interrupt**構造体のメンバー。 MSI を使用する場合すべて割り込みがある同じアフィニティは、さまざまな類似性を持つことができます MSI X を使用する場合に注意してください。 詳細については、次を参照してください。[割り込みアフィニティと優先順位](interrupt-affinity-and-priority.md)します。
 
 PCI の 2.2 で定義されている、MSI の**u.Interrupt.MaximumVector** - **u.Interrupt.MinimumVector** + 1 がデバイスに割り当てられた割り込みメッセージの数。 ドライバーは、変更することにより割り込みメッセージの数を変更できます**u.Interrupt.MinimumVector**します。 MSI 割り込みメッセージ、 **u.Interrupt.MaximumVector** CM では常に\_リソース\_割り込み\_メッセージ\_トークンです。 割り当てる*MessageCount*中断メッセージは、設定**u.Interrupt.MinimumVector** CM と等しい\_リソース\_割り込み\_メッセージ\_トークン - *MessageCount* + 1 です。
 

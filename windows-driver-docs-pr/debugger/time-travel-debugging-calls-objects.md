@@ -4,11 +4,11 @@ description: このセクションには、呼び出しがについて説明し�
 ms.date: 09/25/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9300b2b472ac0a354f9e0a08f1c1f7c5d914a8de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366188"
 ---
 # <a name="ttd-calls-objects"></a>TTD オブジェクトを呼び出す
 ## <a name="description"></a>説明
@@ -39,7 +39,7 @@ ms.locfileid: "56570991"
 | TimeStart | A[位置オブジェクト](time-travel-debugging-position-objects.md)呼び出しの開始位置をについて説明します。 |
 | 時刻終了 | A[位置オブジェクト](time-travel-debugging-position-objects.md)呼び出しの最後の位置をについて説明します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 タイム トラベルのデバッグは、Pdb で提供されるシンボル情報を使用して、関数とその型、戻り値の型と呼び出し規則のパラメーターの数を決定します。 シンボル情報が利用できないか、シンボルは、パブリック シンボル情報が制限されていること、クエリを実行することも可能です。 タイム トラベル クエリ エンジンはこのシナリオではいくつかの想定を行います。
 * 関数に次の 4 つの 64 ビット符号なし整数パラメーターがあります。
 * 戻り値は 64 ビット符号なし整数です。

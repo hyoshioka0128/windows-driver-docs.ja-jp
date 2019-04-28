@@ -5,11 +5,11 @@ ms.assetid: 67556275-EF02-4996-A3A2-E9D5D6FCD1AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8e2f92effdb6bb1c7d7ae06ac26781ea53e4d34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368896"
 ---
 # <a name="validation-ports"></a>検証ポート
 
@@ -26,7 +26,7 @@ Windows Server 2012 で NDIS 6.30 以降では、拡張可能スイッチのイ�
 
 -   VM は保存された状態になります。 VM が復元され、電源をオンに、検証のポートは削除され、運用上のポートがその場所に作成します。
 
-    詳細については、[Hyper-v 拡張可能スイッチの保存および復元操作](hyper-v-extensible-switch-save-and-restore-operations.md)を参照してください。
+    詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの保存および復元操作](hyper-v-extensible-switch-save-and-restore-operations.md)します。
 
 -   VM が停止され、電源を切断。 VM の電源を入れた後、検証ポートが削除され、運用上のポートがその場所に作成します。
 
@@ -50,7 +50,7 @@ Windows Server 2012 で NDIS 6.30 以降では、拡張可能スイッチのイ�
 
 -   拡張機能は、割り当てまたは検証ポートのリソースを予約する必要がありますできません。 たとえば、検証ポートの帯域幅予約の設定では、拡張可能スイッチの使用可能な帯域幅から控除する必要がありますされません。 予約は、運用上のポートが作成されたときのみ発生する必要があります。
 
-拡張可能スイッチの運用上のポートの詳細については、[操作ポート](operational-ports.md)を参照してください。
+拡張可能スイッチの運用上のポートの詳細については、次を参照してください。[操作ポート](operational-ports.md)します。
 
  
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a6c5995fe945d372d785da0710fc256a71767666
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363680"
 ---
 # <a name="bug-check-0x49-pagefaultwithinterruptsoff"></a>バグ チェック 0x49:ページ\_フォールト\_WITH\_割り込み\_OFF
 

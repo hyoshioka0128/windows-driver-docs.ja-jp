@@ -1,6 +1,6 @@
 ---
-title: ベンダー定義用紙サイズのサポート
-description: ベンダー定義用紙サイズのサポート
+title: ベンダー定義の用紙サイズをサポートする
+description: ベンダー定義の用紙サイズをサポートする
 ms.assetid: 5c356857-ef43-41e4-a4ed-fae6655bd9ce
 keywords:
 - WDK Unidrv のベンダーから提供された用紙サイズします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3962d8c19760145cceb7d4e818d8d2cea6213d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365318"
 ---
-# <a name="supporting-vendor-defined-paper-sizes"></a>ベンダー定義用紙サイズのサポート
+# <a name="supporting-vendor-defined-paper-sizes"></a>ベンダー定義の用紙サイズをサポートする
 
 
 

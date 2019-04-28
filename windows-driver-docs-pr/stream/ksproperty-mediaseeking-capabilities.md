@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9fd9354408d7c60865addf848646a619c56ee59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366109"
 ---
 # <a name="kspropertymediaseekingcapabilities"></a>KSPROPERTY\_MEDIASEEKING\_機能
 
@@ -42,16 +42,16 @@ KSPROPERTY\_MEDIASEEKING\_機能プロパティのフィルターのメディア
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>いいえ</p></td>
+<td><p>〇</p></td>
+<td><p>X</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>KS_SEEKING_CAPABILITIES</p></td>
@@ -61,14 +61,14 @@ KSPROPERTY\_MEDIASEEKING\_機能プロパティのフィルターのメディア
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプロパティを取得するフィルターの機能には、メディアの再生中に現在位置を取得または停止モード、または下位を再生する期間を取得する前後をシークする、絶対位置をシーク機能が含まれます。 これらが全体として、フィルターの機能であることに注意してください。このプロパティは、DirectShow フィルターしない暗証番号 (pin)、単位でのみこのような機能を照会する場所の機能をシークするマップに設計されています。
 
 このプロパティがサポートされていない場合、フィルターに位置情報が必要ないことと、パススルーとフィルターを扱うことができますと見なされます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

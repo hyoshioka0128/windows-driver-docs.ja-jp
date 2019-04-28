@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 565fa9634d9bd5a516b10e0179f8991588dd3229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361071"
 ---
 # <a name="guidndisgenpcidevicecustomproperties"></a>GUID\_NDIS\_GEN\_PCI\_デバイス\_カスタム\_プロパティ
 

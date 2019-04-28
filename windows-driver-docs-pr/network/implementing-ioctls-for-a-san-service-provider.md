@@ -1,6 +1,6 @@
 ---
-title: SAN サービス プロバイダーの Ioctl を実装します。
-description: SAN サービス プロバイダーの Ioctl を実装します。
+title: SAN サービス プロバイダー向けの IOCTL の実装
+description: SAN サービス プロバイダー向けの IOCTL の実装
 ms.assetid: 7d4c7039-6b42-4620-aee5-9189b4acd030
 keywords:
 - プロキシ ドライバー WDK San、Ioctl
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a831bf17ff3870e44bf7f43bdfb368c854f3260a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362948"
 ---
-# <a name="implementing-ioctls-for-a-san-service-provider"></a>SAN サービス プロバイダーの Ioctl を実装します。
+# <a name="implementing-ioctls-for-a-san-service-provider"></a>SAN サービス プロバイダー向けの IOCTL の実装
 
 
 

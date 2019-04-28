@@ -1,6 +1,6 @@
 ---
-title: デバイス エラーの状態
-description: デバイス エラーの状態
+title: デバイスのエラー状態
+description: デバイスのエラー状態
 ms.assetid: 7d0fee11-0fdf-4490-88d0-fb074cbf4082
 keywords:
 - エラー状態の WDK プリンター
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b1975fe02c6bad443df880c74c494d01e284943
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363602"
 ---
-# <a name="device-error-states"></a>デバイス エラーの状態
+# <a name="device-error-states"></a>デバイスのエラー状態
 
 
 印刷デバイスとそのドライバーは、ユーザーが発生する可能性がエラー状態から適切に回復する必要があります。 関連するすべてのデバイスの可能性のあるエラー状態のテストになります。 デバイスを各エラー状態のユーザーに通知して回復、および各エラーの状態から再開、デバイスが、操作をキャンセルを確認してください。 まず、エラー状態を設定し、適切なエラー状態のユーザーを通知することを確認します。

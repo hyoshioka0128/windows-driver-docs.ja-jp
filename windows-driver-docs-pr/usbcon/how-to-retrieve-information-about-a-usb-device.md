@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the USB hardware verifier tool (USB3HWVerifierAnalyzer.exe) that is used for testing and debugging specific hardware events.
+Description: このトピックでは、テストと特定のハードウェアのイベントのデバッグに使用する USB ハードウェア検証ツール (USB3HWVerifierAnalyzer.exe) について説明します。
 title: USB ハードウェア検証ツール (USB3HWVerifierAnalyzer.exe)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8b410e79dc93cdd79d55a89e97169ae127acd78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366185"
 ---
 # <a name="usb-hardware-verifier-usb3hwverifieranalyzerexe"></a>USB ハードウェア検証ツール (USB3HWVerifierAnalyzer.exe)
 

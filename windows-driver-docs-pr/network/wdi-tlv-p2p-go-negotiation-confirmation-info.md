@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 14acd2c2a81ab3abb1b01f9f0cd287b3b4e269cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362483"
 ---
 # <a name="wditlvp2pgonegotiationconfirmationinfo"></a>WDI\_TLV\_P2P\_移動\_ネゴシエーション\_確認\_情報
 
@@ -34,8 +34,8 @@ WDI\_TLV\_P2P\_移動\_ネゴシエーション\_確認\_情報は、Wi-Fi Direc
 | 種類                                                                                                                   | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_移動\_ネゴシエーション\_確認\_パラメーター**](wdi-tlv-p2p-go-negotiation-confirmation-parameters.md) |                                |          | Wi-Fi Direct 移動ネゴシエーション確認パラメーター。                                                                                |
-| [**WDI\_TLV\_P2P\_グループ\_ID**](wdi-tlv-p2p-group-id.md)                                                               |                                | X        | Wi-Fi Direct グループ id。                                                                                                              |
-| [**WDI\_TLV\_P2P\_チャネル\_数**](wdi-tlv-p2p-channel-number.md)                                                   |                                | X        | リモート デバイスのリッスン チャネル。 GO のネゴシエーション確認フレームは、これが指定されてたびに、このチャネルで送信する必要があります。 |
+| [**WDI\_TLV\_P2P\_グループ\_ID**](wdi-tlv-p2p-group-id.md)                                                               |                                | x        | Wi-Fi Direct グループ id。                                                                                                              |
+| [**WDI\_TLV\_P2P\_チャネル\_数**](wdi-tlv-p2p-channel-number.md)                                                   |                                | x        | リモート デバイスのリッスン チャネル。 GO のネゴシエーション確認フレームは、これが指定されてたびに、このチャネルで送信する必要があります。 |
 
  
 

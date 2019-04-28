@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2c2e683281d2a3073a4d950a3a78dfee2aa466b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367082"
 ---
 # <a name="adfopticalresolution-element"></a>ADFOpticalResolution 要素
 
@@ -82,7 +82,7 @@ ms.locfileid: "56579823"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 として解像度が指定されて、 [**幅**](width.md) × [**高さ**](height.md)のペアを両方**幅**と**高さ**1 インチあたりのピクセル単位で指定されます。

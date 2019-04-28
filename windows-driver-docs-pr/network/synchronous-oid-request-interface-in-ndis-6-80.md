@@ -6,11 +6,11 @@ keywords: 同期の OID 要求インターフェイス、OID の同期呼び出�
 ms.date: 09/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 834028856064246b1c74282574cadda65b1b4788
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362586"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>NDIS 6.80 で同期の OID 要求インターフェイス
 

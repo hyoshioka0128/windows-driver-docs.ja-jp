@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00871879bfdcd2f0506aa4432e1cee1ad1c68ec5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370163"
 ---
 # <a name="fltparameters-for-irpmjpreparemdlwrite-union"></a>FLT\_IRP のパラメーター\_MJ\_準備\_MDL\_書き込み共用体
 
@@ -44,7 +44,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **PrepareMdlWrite**  
@@ -56,7 +56,7 @@ typedef union _FLT_PARAMETERS {
 **長さ**  
 長さをバイト単位で、キャッシュされたファイルに書き込まれるデータ。
 
-**キー**  
+**[キー]**  
 ターゲット ファイルのバイト範囲ロックに関連付けられているキーの値。 書き込まれる範囲と重複またはファイル内で排他的にロックされている範囲のサブ範囲には、このパラメーターはその排他ロックのキーである必要があります。 呼び出し元のスレッドの親プロセスが排他ロックを保持する必要があります。それ以外の場合、このパラメーターは無視されます。
 
 **MdlChain**  

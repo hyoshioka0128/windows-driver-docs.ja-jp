@@ -1,6 +1,6 @@
 ---
-title: キャンセル ルーチンを実装します。
-description: キャンセル ルーチンを実装します。
+title: キャンセル ルーチンの実装
+description: キャンセル ルーチンの実装
 ms.assetid: 243b623b-317c-4084-a753-940c91c4cc50
 keywords:
 - Irp、ガイドラインのキャンセル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 69e55d6498d03e520584a5b88ec99cbeb1d7ac70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365360"
 ---
-# <a name="implementing-a-cancel-routine"></a>キャンセル ルーチンを実装します。
+# <a name="implementing-a-cancel-routine"></a>キャンセル ルーチンの実装
 
 
 

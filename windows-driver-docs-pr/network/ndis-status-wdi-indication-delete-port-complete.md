@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_DELETE_PORT_COMPLETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5909648d596edf7abf68b75734c37bb3adf91f0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366382"
 ---
 # <a name="ndisstatuswdiindicationdeleteportcomplete"></a>NDIS\_状態\_WDI\_INDICATION\_削除\_ポート\_完了
 
@@ -29,7 +29,7 @@ ms.locfileid: "56552749"
 
 この表示には、追加のデータが含まれていません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

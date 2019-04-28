@@ -1,17 +1,17 @@
 ---
 title: パフォーマンスの低下と NDIS ドライバーで DoS 攻撃を受ける
-description: パフォーマンスが低下し、サービス拒否攻撃、NDIS ドライバーには
+description: NDIS ドライバーでのパフォーマンスの低下とサービス拒否攻撃
 ms.assetid: 0e80c6e2-3e6d-4189-b2df-bdd9a4a40dd6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ee2aa40e48fb33f4e27e8c687389dd5598242be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366735"
 ---
-# <a name="performance-degradation-and-denial-of-service-attacks-in-ndis-drivers"></a>パフォーマンスが低下し、サービス拒否攻撃、NDIS ドライバーには
+# <a name="performance-degradation-and-denial-of-service-attacks-in-ndis-drivers"></a>NDIS ドライバーでのパフォーマンスの低下とサービス拒否攻撃
 
 
 

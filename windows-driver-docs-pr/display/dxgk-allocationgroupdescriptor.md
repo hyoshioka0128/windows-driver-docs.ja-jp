@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f5b8c7149b7664b78fd4a20e20fde5d0f4be6c16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372982"
 ---
 # <a name="dxgkallocationgroupdescriptor-structure"></a>\_DXGK\_ALLOCATIONGROUPDESCRIPTOR 構造体
 
@@ -37,7 +37,7 @@ typedef struct _DXGK_ALLOCATIONGROUPDESCRIPTOR {
 } DXGK_ALLOCATIONGROUPDESCRIPTOR;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **MinimumVirtualAddress**システム用に予約されています。

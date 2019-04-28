@@ -1,6 +1,6 @@
 ---
-title: TmXxx ルーチンを使用します。
-description: TmXxx ルーチンを使用します。
+title: TmXxx ルーチンの使用
+description: TmXxx ルーチンの使用
 ms.assetid: 8bc763e9-e67c-4810-9901-e5dc1a1cfd0c
 keywords:
 - カーネル トランザクション マネージャ WDK、TmXxx ルーチン
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f77f7e105dd630ea7c1a09971f5f827c100321
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372242"
 ---
-# <a name="using-tmxxx-routines"></a>TmXxx ルーチンを使用します。
+# <a name="using-tmxxx-routines"></a>TmXxx ルーチンの使用
 
 
 ほとんど[KTM ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff553232)の名前付け形式を使用して **Zw*Xxx * * *。 これらのルーチンでは、ハンドル ベースです。 これは、入力または出力パラメーターの少なくとも 1 つは KTM オブジェクトへのハンドルがあります。

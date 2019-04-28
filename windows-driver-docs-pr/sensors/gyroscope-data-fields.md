@@ -1,22 +1,22 @@
 ---
-title: データ フィールドのジャイロスコープなどがあります。
+title: ジャイロスコープ データ フィールド
 description: このトピックでは、ジャイロスコープなどがありますに固有のデータ フィールドの詳細についての情報を提供します。
 ms.assetid: A8F8EC33-B6B4-4CA3-8A45-5760F18116D3
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c68fbd7b53e76cb6044a09a5f5c877b535a3cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366516"
 ---
-# <a name="gyroscope-data-fields"></a>データ フィールドのジャイロスコープなどがあります。
+# <a name="gyroscope-data-fields"></a>ジャイロスコープ データ フィールド
 
 
 このトピックでは、ジャイロスコープなどがありますに固有のデータ フィールドの詳細についての情報を提供します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 <table>
 <colgroup>

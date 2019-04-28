@@ -1,5 +1,5 @@
 ---
-title: dtx (表示の種類 - デバッガー オブジェクト モデル情報の拡張)
+title: dtx (型の表示 - 拡張デバッガー オブジェクト モデル情報)
 description: Dtx コマンドは、デバッガーのオブジェクト モデルを使用してシンボリック拡張の型情報を表示します。 Dtx コマンドは、dt (表示の種類) コマンドに似ています。
 ms.assetid: 758D752E-65A0-4F1D-BB56-06E4ECEC6D48
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 148b1f9be720fcdfa9fbe669c64778803b49659f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370861"
 ---
 # <a name="span-iddebuggerdtxdisplaytype-extendeddebuggerobjectmodelinformationspandtx-display-type---extended-debugger-object-model-information"></a><span id="debugger.dtx__display_type_-_extended_debugger_object_model_information_"></span>dtx (表示の種類 - デバッガー オブジェクト モデル情報の拡張)
 

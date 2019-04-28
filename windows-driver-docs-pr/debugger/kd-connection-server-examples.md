@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e3e4e7a0a0c87a50c742c614f74acce2b32d8f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367426"
 ---
 # <a name="kd-connection-server-examples"></a>KD 接続サーバーの例
 
@@ -35,7 +35,7 @@ G:\Debugging Tools> windbg -k kdsrv:server=@{tcp:server=127.0.0.42,port=1027},tr
 
 シンボル パスは、スマート クライアントが実行されているコンピューターを基準になります。
 
-別の例を次に示します。 この場合、NPIPE プロトコルを選択すると、および KD は WinDbg の代わりに使用されます。 最初のユーザーは、パイプ名を選択します。 この例では、"KernelPipe"--任意の英数字の文字列を入力できます。 最初のユーザーは、管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) を開き、これらのコマンドを入力してデバッグ サーバーを開始します。
+別の例を示します。 この場合、NPIPE プロトコルを選択すると、および KD は WinDbg の代わりに使用されます。 最初のユーザーは、パイプ名を選択します。 この例では、"KernelPipe"--任意の英数字の文字列を入力できます。 最初のユーザーは、管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) を開き、これらのコマンドを入力してデバッグ サーバーを開始します。
 
 ```console
 E:\Debugging Tools for Windows> set _NT_DEBUG_PORT=com1 

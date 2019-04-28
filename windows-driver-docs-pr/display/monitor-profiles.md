@@ -1,6 +1,6 @@
 ---
-title: プロファイルを監視します。
-description: プロファイルを監視します。
+title: モニター プロファイル
+description: モニター プロファイル
 ms.assetid: aede7ada-3826-40a4-8b37-18ae242eea77
 keywords:
 - ディスプレイ ドライバー WDK Windows 2000 では、色の管理
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75530936648e2086c9f10b02e8686c30993bc442
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362093"
 ---
-# <a name="monitor-profiles"></a>プロファイルを監視します。
+# <a name="monitor-profiles"></a>モニター プロファイル
 
 
 ## <span id="ddk_monitor_profiles_gg"></span><span id="DDK_MONITOR_PROFILES_GG"></span>

@@ -7,18 +7,18 @@ keywords:
 - NDIS_STATUS_PORT_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b27ceec7371a06e5270b45071dcfa809274532c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362876"
 ---
 # <a name="ndisstatusportstate"></a>NDIS\_状態\_ポート\_状態
 
 
 NDIS ポートをサポートするミニポート ドライバーを使用して、NDIS\_状態\_ポート\_NDIS ポートの状態の変化を示す状態表示の状態。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ミニポート ドライバー ポート番号を設定する必要があります、 **PortNumber**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 **StatusBuffer**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_ポート\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566800)構造体。

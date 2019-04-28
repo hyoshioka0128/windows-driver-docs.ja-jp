@@ -1,19 +1,19 @@
 ---
-title: プリンター インターフェイス Dll の概要
-description: プリンター インターフェイス Dll の概要
+title: プリンター インターフェイス DLL の概要
+description: プリンター インターフェイス DLL の概要
 ms.assetid: 1993d818-9761-418e-96c3-e3c46965bef1
 keywords:
 - プリンター インターフェイス DLL の詳細については、プリンター インターフェイス DLL の WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d6f65a96b58a4557f128d52727c6e70ace6149c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366329"
 ---
-# <a name="introduction-to-printer-interface-dlls"></a>プリンター インターフェイス Dll の概要
+# <a name="introduction-to-printer-interface-dlls"></a>プリンター インターフェイス DLL の概要
 
 
 

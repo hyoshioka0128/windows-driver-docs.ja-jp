@@ -1,5 +1,5 @@
 ---
-title: DevCon クラス
+title: DevCon Classes
 description: システム上のデバイスを使用しないクラスを含む、すべてのデバイス セットアップ クラスを一覧表示します。 ローカルおよびリモート コンピューターで有効です。
 ms.assetid: 05b9339c-30d1-45df-8f43-20a07e520a42
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76725660621ec94910d8931cfce7e5ab6446b7ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360114"
 ---
-# <a name="devcon-classes"></a>DevCon クラス
+# <a name="devcon-classes"></a>DevCon Classes
 
 
 すべてを一覧表示[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)システム上のデバイスを使用しないクラスを含むです。 ローカルおよびリモート コンピューターで有効です。

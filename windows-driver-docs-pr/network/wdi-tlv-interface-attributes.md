@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_INTERFACE_ATTRIBUTES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 553ea43355a1cec591f6a83d780b97369c93ca23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361743"
 ---
 # <a name="wditlvinterfaceattributes"></a>WDI\_TLV\_インターフェイス\_属性
 
@@ -35,7 +35,7 @@ WDI\_TLV\_インターフェイス\_属性は、インターフェイスの属�
 |------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_インターフェイス\_機能**](wdi-tlv-interface-capabilities.md)  |                                |          | インターフェイスの機能です。                                                                                                                                                              |
 | [**WDI\_TLV\_ファームウェア\_バージョン**](wdi-tlv-firmware-version.md)              |                                |          | ファームウェアのバージョンを示す ASCII 文字列。                                                                                                                                            |
-| [**WDI\_TLV\_IHV\_非\_WDI\_OID\_一覧**](wdi-tlv-ihv-non-wdi-oids-list.md) |                                | X        | リストの非-WDI Oid、アダプターは、オペレーティング システムに提供する必要があります。 アダプターはオペレーティング システムで非-WDI Oid この一覧に一致するが既にフィルター処理すると想定する必要があります。 |
+| [**WDI\_TLV\_IHV\_非\_WDI\_OID\_一覧**](wdi-tlv-ihv-non-wdi-oids-list.md) |                                | x        | リストの非-WDI Oid、アダプターは、オペレーティング システムに提供する必要があります。 アダプターはオペレーティング システムで非-WDI Oid この一覧に一致するが既にフィルター処理すると想定する必要があります。 |
 
  
 

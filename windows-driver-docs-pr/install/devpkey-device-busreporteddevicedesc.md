@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3ddd29cb685f473f3b050e04f62077cc5b9547fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362364"
 ---
 # <a name="devpkeydevicebusreporteddevicedesc"></a>DEVPKEY_Device_BusReportedDeviceDesc
 
@@ -46,21 +46,21 @@ DEVPKEY_Device_BusReportedDeviceDesc デバイス プロパティは、デバイ
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DEVPKEY_Device_BusReportedDeviceDesc の値によって Windows のプラグ アンド プレイ (PnP) 値に設定されます、文字列インスタンスのデバイス、バス ドライバーによって報告されます。 クエリを実行時に、この値を返します、バス ドライバー [ **IRP_MN_QUERY_DEVICE_TEXT**](https://msdn.microsoft.com/library/windows/hardware/ff551674)します。
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_BusReportedDeviceDesc の値を取得します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

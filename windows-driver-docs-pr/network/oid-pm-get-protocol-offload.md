@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PM_GET_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2c88f2d96334bdf074d3ac1dcb994922e2bd6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362317"
 ---
 # <a name="oidpmgetprotocoloffload"></a>OID\_PM\_取得\_プロトコル\_オフロード
 
@@ -46,7 +46,7 @@ NDIS 6.20 が動作し、後でプロトコル ドライバーを使用して、
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 上記の理由以外の理由、要求が失敗しました。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

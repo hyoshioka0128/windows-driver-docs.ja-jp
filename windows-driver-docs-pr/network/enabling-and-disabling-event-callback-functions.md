@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 093182ac87234a111f9268a78e33053c5e4beb14
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372552"
 ---
 # <a name="enabling-and-disabling-event-callback-functions"></a>イベント コールバック関数の有効化と無効化
 
@@ -190,11 +190,11 @@ NTSTATUS
 }
 ```
 
-リッスン ソケットの場合、 [ *WskInspectEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571137)と[ *WskAbortEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571108)場合にのみ、イベントのコールバック関数が有効になっている、WSK条件付きのアプリケーションによりは受け入れソケットのモードです。 WSK アプリケーションにより条件付きでは、リスナ ソケットでモードを受け入れるを設定して、 [**ように\_条件付き\_ACCEPT** ](https://msdn.microsoft.com/library/windows/hardware/ff570829)ソケットをバインドする前に、ソケット オプション、ローカル トランスポート アドレスするソケット。 ソケット オプションを設定する方法の詳細については、[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)を参照してください。
+リッスン ソケットの場合、 [ *WskInspectEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571137)と[ *WskAbortEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571108)場合にのみ、イベントのコールバック関数が有効になっている、WSK条件付きのアプリケーションによりは受け入れソケットのモードです。 WSK アプリケーションにより条件付きでは、リスナ ソケットでモードを受け入れるを設定して、 [**ように\_条件付き\_ACCEPT** ](https://msdn.microsoft.com/library/windows/hardware/ff570829)ソケットをバインドする前に、ソケット オプション、ローカル トランスポート アドレスするソケット。 ソケット オプションを設定する方法の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
 
-条件に同意をリッスンしているのモードが有効になって後ソケット、ソケットの*WskInspectEvent*と*WskAbortEvent*イベント コールバック関数を無効にすることはできません。 条件付きでリッスンしているソケットでの着信接続の受け入れの詳細については、[リッスン中の接続と着信接続を受け入れる](listening-for-and-accepting-incoming-connections.md)を参照してください。
+条件に同意をリッスンしているのモードが有効になって後ソケット、ソケットの*WskInspectEvent*と*WskAbortEvent*イベント コールバック関数を無効にすることはできません。 条件付きでリッスンしているソケットでの着信接続の受け入れの詳細については、次を参照してください。[リッスン中の接続と着信接続を受け入れる](listening-for-and-accepting-incoming-connections.md)します。
 
-リッスン ソケットは接続指向のソケットでリッスン ソケットの受け入れられるでイベントのコールバック関数を自動的に有効に[ *WskAcceptEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571120)イベント コールバック関数。 WSK アプリケーションは、リッスン ソケットの接続指向のソケット イベント コールバック関数を有効にすると、これらのコールバック関数を自動的に有効です。 このプロセスの詳細については、[**ように\_WSK\_イベント\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff570834)を参照してください。
+リッスン ソケットは接続指向のソケットでリッスン ソケットの受け入れられるでイベントのコールバック関数を自動的に有効に[ *WskAcceptEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571120)イベント コールバック関数。 WSK アプリケーションは、リッスン ソケットの接続指向のソケット イベント コールバック関数を有効にすると、これらのコールバック関数を自動的に有効です。 このプロセスの詳細については、次を参照してください。 [**ように\_WSK\_イベント\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff570834)します。
 
 アプリケーションを使用して、それらのイベントのコールバック関数を自動的に有効にする WSK サブシステムを構成できます WSK アプリケーションは常に、特定のイベント コールバック関数で作成されたすべてのソケットでは可能である場合、 [ **WSK\_設定\_静的\_イベント\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff571181)クライアント管理の操作。 この方法で有効になっているイベントのコールバック関数は常に有効になっていると、無効になっているまたは WSK アプリケーションを後で再度有効にすることはできません。 WSK アプリケーションは常に、特定のイベント コールバック関数で作成されたすべてのソケットでは可能である場合でこのメソッドを使用してパフォーマンスをより向上が生成されますので、これらのイベントのコールバック関数を自動的に有効にする必要があります。
 

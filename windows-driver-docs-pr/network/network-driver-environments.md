@@ -1,6 +1,6 @@
 ---
-title: ドライバーのネットワーク環境
-description: ドライバーのネットワーク環境
+title: ネットワーク ドライバー環境
+description: ネットワーク ドライバー環境
 ms.assetid: 5336bdc5-bf91-473a-a97d-f06b27eae5d0
 keywords:
 - ネットワーク ドライバー WDK、ドライバーの環境
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f11a253ddde0c33e9f822b5913a2dd6b7f054fb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365735"
 ---
-# <a name="network-driver-environments"></a>ドライバーのネットワーク環境
+# <a name="network-driver-environments"></a>ネットワーク ドライバー環境
 
 
 

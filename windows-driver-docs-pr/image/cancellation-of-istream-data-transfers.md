@@ -5,11 +5,11 @@ ms.assetid: cefe8ef3-f0f8-4260-b666-c61f9902de5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08ce748565049b4aa05bc68d49856aa73e7dc7d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373373"
 ---
 # <a name="cancellation-of-istream-data-transfers"></a>IStream データ転送のキャンセル
 

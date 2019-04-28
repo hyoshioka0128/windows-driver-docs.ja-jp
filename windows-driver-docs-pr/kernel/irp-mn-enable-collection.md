@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_ENABLE_COLLECTION Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: cfe736b209065dc3575f9f9642ea0183cd4e1837
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368359"
 ---
 # <a name="irpmnenablecollection"></a>IRP\_MN\_を有効にする\_コレクション
 
@@ -72,7 +72,7 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 ドライバー データ ブロックのデータ収集が既に有効になっているかどうかを確認する必要はありません。 WMI では、最初のデータ コンシューマーのブロックを有効にすた後データ ブロックを有効にする 1 つの要求のみを送信します。 WMI は、その前の要求を無効にすることがなく有効にする別の要求を送信しません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

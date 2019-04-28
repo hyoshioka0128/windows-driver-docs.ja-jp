@@ -5,11 +5,11 @@ ms.assetid: AE93DD45-05D7-4E7A-B086-B40A6FA0904B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9895c52486ed41a48d92da60a0053c3761696db5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369709"
 ---
 # <a name="tracelogging-api"></a>TraceLogging API
 
@@ -21,7 +21,7 @@ TraceLogging は ETW 上に構築し、既存のツールとの互換性がし�
 
 [WPP ソフトウェア トレース](wpp-software-tracing.md)は引き続きサポートされます。 ただし、TraceLogging はメンテナンスと拡張性の観点から多くの利点し、コードで使用するも簡単です。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 <table>
 <colgroup>

@@ -1,6 +1,6 @@
 ---
-title: ピアのサブユニット デバイス識別子
-description: ピアのサブユニット デバイス識別子
+title: ピア サブユニット デバイス識別子
+description: ピア サブユニット デバイス識別子
 ms.assetid: f33c554b-77a7-4879-875e-12210b8a553f
 keywords:
 - AV/C WDK、識別子
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d2e8099058ab6524d79c43aaf285882cd6954c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366500"
 ---
-# <a name="peer-subunit-device-identifiers"></a>ピアのサブユニット デバイス識別子
+# <a name="peer-subunit-device-identifiers"></a>ピア サブユニット デバイス識別子
 
 
 次のハードウェア識別子と互換性のある識別子の例は、によって生成される*Avc.sys*で説明されている形式に基づいて、標準的なデバイス (つまり、1 つまたは複数のサブユニットを報告するデバイス) の[AV/Cデバイス Id](av-c-device-identifiers.md):

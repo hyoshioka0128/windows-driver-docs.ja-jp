@@ -5,11 +5,11 @@ ms.assetid: 0c6d324a-fd6f-462b-b8cd-1de4588e5c8c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a35120929f328ab0603cd1db786ad43f541f714
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362114"
 ---
 # <a name="introduction-to-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) の概要
 

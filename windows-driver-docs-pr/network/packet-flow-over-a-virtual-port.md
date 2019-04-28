@@ -1,20 +1,20 @@
 ---
-title: 仮想ポート経由でのパケット フロー
-description: 仮想ポート経由でのパケット フロー
+title: 仮想ポート経由のパケット フロー
+description: 仮想ポート経由のパケット フロー
 ms.assetid: 1E4B1987-3288-4082-B8A8-0F275C61597F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9119c8a97dd4203612d211d2674ff91bcfb55fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363780"
 ---
-# <a name="packet-flow-over-a-virtual-port"></a>仮想ポート経由でのパケット フロー
+# <a name="packet-flow-over-a-virtual-port"></a>仮想ポート経由のパケット フロー
 
 
-既定の NIC の切り替えは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートするネットワーク アダプターのコンポーネントです。 スイッチに、PCI Express (PCIe) 物理機能 (PF) 既定の仮想ポート (VPort) が常にアタッチします。 スイッチは、PF. に 1 つまたは複数の既定以外拡張をアタッチすることができます。 詳細については、[仮想ポートを作成する](creating-a-virtual-port.md)を参照してください。
+既定の NIC の切り替えは、シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートするネットワーク アダプターのコンポーネントです。 スイッチに、PCI Express (PCIe) 物理機能 (PF) 既定の仮想ポート (VPort) が常にアタッチします。 スイッチは、PF. に 1 つまたは複数の既定以外拡張をアタッチすることができます。 詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
 
 次の点は、PF に関連付けられている VPort に送受信パケットに適用されます。
 

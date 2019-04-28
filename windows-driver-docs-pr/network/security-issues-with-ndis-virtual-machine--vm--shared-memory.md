@@ -1,17 +1,17 @@
 ---
-title: 共有メモリの NDIS 仮想マシン (VM) セキュリティ上の問題
-description: 共有メモリの NDIS 仮想マシン (VM) セキュリティ上の問題
+title: NDIS 仮想マシン (VM) 共有メモリのセキュリティ上の問題
+description: NDIS 仮想マシン (VM) 共有メモリのセキュリティ上の問題
 ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7abc25dca98a2e04cd61dfe692e4ebf1d4854d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366158"
 ---
-# <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>共有メモリの NDIS 仮想マシン (VM) セキュリティ上の問題
+# <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 仮想マシン (VM) 共有メモリのセキュリティ上の問題
 
 
 
@@ -91,7 +91,7 @@ Windows Server 2012 以降、VSP は割り当てられません共有メモリ�
 
     -   ミニポート ドライバーを設定する必要があります、 **MinLookaheadSplitSize**と**MinLookaheadSplitSize**メンバーをゼロにします。
 
-    VMQ 機能を登録する方法の詳細については、[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)を参照してください。
+    VMQ 機能を登録する方法の詳細については、次を参照してください。[ネットワーク アダプターの VMQ 機能を判断する](determining-the-vmq-capabilities-of-a-network-adapter.md)します。
 
  
 

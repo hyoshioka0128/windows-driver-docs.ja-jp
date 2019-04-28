@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77994d407a948bb81f1742260aa1e9e6a53d0045
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367849"
 ---
 # <a name="80211-wlan-adapter-arrival"></a>802.11 WLAN アダプターの接続
 
@@ -41,15 +41,15 @@ IHV 拡張機能の DLL が次のガイドラインに従う必要がありま�
 
     通常、DLL は、ハンドル値として WLAN アダプター コンテキストの配列のアドレスを返します。
 
--   拡張 DLL の IHV 呼び出し[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL を受信するセキュリティ パケットに IEEE EtherTypes の一覧を登録します。 IHV 拡張機能の DLL には、一連のペイロードの暗号化解除を除外 EtherTypes も指定できます。 EtherTypes の登録の詳細については、[IEEE EtherType 処理](ieee-ethertype-handling.md)を参照してください。
+-   拡張 DLL の IHV 呼び出し[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL を受信するセキュリティ パケットに IEEE EtherTypes の一覧を登録します。 IHV 拡張機能の DLL には、一連のペイロードの暗号化解除を除外 EtherTypes も指定できます。 EtherTypes の登録の詳細については、次を参照してください。 [IEEE EtherType 処理](ieee-ethertype-handling.md)します。
 
     EtherTypes が登録されると、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513)が EtherType には、リスト内のエントリが一致するすべてのパケットの IHV ハンドラー関数。
 
--   オペレーティング システムでは、ネイティブ 802.11 オブジェクト識別子 (Oid) のセット要求を通じた 802.11 標準のパラメーターに、アダプターを構成します。 これらの Oid の詳細については、[ネイティブ 802.11 ワイヤレス LAN の Oid](https://msdn.microsoft.com/library/windows/hardware/ff560691)を参照してください。
+-   オペレーティング システムでは、ネイティブ 802.11 オブジェクト識別子 (Oid) のセット要求を通じた 802.11 標準のパラメーターに、アダプターを構成します。 これらの Oid の詳細については、次を参照してください。[ネイティブ 802.11 ワイヤレス LAN の Oid](https://msdn.microsoft.com/library/windows/hardware/ff560691)します。
 
     ただし、DLL は、呼び出しを通じて独自のパラメーターを持つのアダプターを構成できます、 [ **Dot11ExtNicSpecificExtension** ](https://msdn.microsoft.com/library/windows/hardware/ff547526)関数。 この関数の呼び出しを通じて DLL は、WLAN アダプターとクエリの問題を管理するネイティブの 802.11 ミニポート ドライバーと直接通信または要求を IHV によって定義された独自の形式に基づくドライバーに設定します。
 
-    DLL および WLAN のアダプターの通信インターフェイスの詳細については、[802.11 WLAN アダプターの通信チャネル](802-11-wlan-adapter-communication-channel.md)を参照してください。
+    DLL および WLAN のアダプターの通信インターフェイスの詳細については、次を参照してください。 [802.11 WLAN アダプターの通信チャネル](802-11-wlan-adapter-communication-channel.md)します。
 
  
 

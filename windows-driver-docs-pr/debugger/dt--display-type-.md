@@ -1,5 +1,5 @@
 ---
-title: dt (表示の種類)
+title: dt (型の表示)
 description: Dt コマンドには、ローカル変数、グローバル変数またはデータ型に関する情報が表示されます。 これにより、単純なデータの型だけでなく構造体と共用体についての情報が表示できます。
 ms.assetid: 82aba13e-6604-46ca-b3e5-bb865ecf3f1f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ee88b52ddfe5a3d843d7c82d89cf69afc795bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370872"
 ---
-# <a name="dt-display-type"></a>dt (表示の種類)
+# <a name="dt-display-type"></a>dt (型の表示)
 
 
 **Dt**コマンドは、ローカル変数、グローバル変数またはデータ型に関する情報を表示します。 これにより、単純なデータの型だけでなく構造体と共用体についての情報が表示できます。
@@ -44,7 +44,7 @@ dt -h
 
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-必要な情報を格納しているプロセスを実行しているプロセッサを指定します。 詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。 プロセッサは、カーネル モードでのみ指定できます。
+必要な情報を格納しているプロセスを実行しているプロセッサを指定します。 詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。 プロセッサは、カーネル モードでのみ指定できます。
 
 <span id="_______DisplayOpts______"></span><span id="_______displayopts______"></span><span id="_______DISPLAYOPTS______"></span> *DisplayOpts*   
 次の表で指定したオプションの 1 つ以上を指定します。 これらのオプションには、ハイフンが付きます。
@@ -186,7 +186,7 @@ dt -h
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>注釈
 -------
@@ -222,7 +222,7 @@ typedef struct _MY_DATA {
     } MY_DATA, *PMY_DATA; 
 ```
 
-いずれの場合も、型情報は、すべてのプライベート シンボル情報が削除されているシンボル ファイルではなく、完全なシンボル ファイルにのみ含まれます。 詳細については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
+いずれの場合も、型情報は、すべてのプライベート シンボル情報が削除されているシンボル ファイルではなく、完全なシンボル ファイルにのみ含まれます。 詳細については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
 Unicode 文字列を表示する場合は、使用する必要があります、 [**リストア\_(Unicode 表示を有効にする) unicode** ](-enable-unicode--enable-unicode-display-.md)最初コマンドします。 長整数の表示を制御することができます、 [**リストア\_長い\_ステータス (有効にする Long 整数を表示する)** ](-enable-long-status--enable-long-integer-display-.md)コマンド。
 

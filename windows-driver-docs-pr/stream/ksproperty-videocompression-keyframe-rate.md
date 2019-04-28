@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8350872822a8cd0ba39941b1f512e75503cd0724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360856"
 ---
 # <a name="kspropertyvideocompressionkeyframerate"></a>KSPROPERTY\_VIDEOCOMPRESSION\_キーフレーム\_率
 
@@ -42,19 +42,19 @@ KSPROPERTY\_VIDEOCOMPRESSION\_キーフレーム\_レート プロパティは�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,12 +63,12 @@ KSPROPERTY\_VIDEOCOMPRESSION\_キーフレーム\_レート プロパティは�
 
 プロパティの値 (データの操作) は、キー フレーム レートを指定する LONG が。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **値**、KSPROPERTY のメンバー\_VIDEOCOMPRESSION\_構造、プロパティの設定を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

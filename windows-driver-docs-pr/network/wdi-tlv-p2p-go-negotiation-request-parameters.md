@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_GO_NEGOTIATION_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 43f215cd6191ee1825615c6f111ae229c73d4621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363642"
 ---
 # <a name="wditlvp2pgonegotiationrequestparameters"></a>WDI\_TLV\_P2P\_移動\_ネゴシエーション\_要求\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_移動\_ネゴシエーション\_要求\_パラメーターは�
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                                                                                                                                                     |
+| 型                                              | 説明                                                                                                                                                                     |
 |---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                             | ローカル Wi-Fi Direct 移動して目的を指定します。 有効な値は、0 ~ 15 です。                                                                                                  |
 | UINT8                                             | 目的の移動の判断基準にフィールドを指定します。                                                                                                                                   |

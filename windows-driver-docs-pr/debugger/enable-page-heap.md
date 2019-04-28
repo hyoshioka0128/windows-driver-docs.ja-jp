@@ -1,19 +1,19 @@
 ---
-title: ページ ヒープを有効にします。
-description: ページ ヒープを有効にします。
+title: Enable page heap
+description: Enable page heap
 ms.assetid: b889b7b7-721c-4ecf-bf59-c1ccc0bc735d
 keywords:
 - ページ ヒープ (グローバル フラグ) を有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1ffe23db6ad6ab653ddab9a9d2b2c12e998dd18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363550"
 ---
-# <a name="enable-page-heap"></a>ページ ヒープを有効にします。
+# <a name="enable-page-heap"></a>Enable page heap
 
 
 ## <span id="ddk_enable_page_heap_dtools"></span><span id="DDK_ENABLE_PAGE_HEAP_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56537395"
 <td align="left"><p>FLG_HEAP_PAGE_ALLOCS</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ、カーネルのフラグ、イメージ ファイルのレジストリ エントリ</p></td>
 </tr>
 </tbody>

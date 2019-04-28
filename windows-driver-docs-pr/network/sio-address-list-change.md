@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SIO_ADDRESS_LIST_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb3f9f96087e2cf76f0df1ff01fc8db178f0d81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361814"
 ---
 # <a name="sioaddresslistchange"></a>SIO\_アドレス\_一覧\_変更
 
@@ -40,7 +40,7 @@ SIO\_アドレス\_一覧\_変更ソケット I/O 制御操作は、ソケット
 <td><p>SIO_ADDRESS_LIST_CHANGE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">

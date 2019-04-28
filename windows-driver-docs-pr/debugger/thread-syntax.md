@@ -14,11 +14,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed9b36168fc29b13fbe732662dc4ba2aeea26941
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366098"
 ---
 # <a name="thread-syntax"></a>スレッドの構文
 
@@ -81,9 +81,9 @@ ms.locfileid: "56551051"
 
 ### <a name="span-idcontrollingthreadsinkernelmodespanspan-idcontrollingthreadsinkernelmodespancontrolling-threads-in-kernel-mode"></a><span id="controlling_threads_in_kernel_mode"></span><span id="CONTROLLING_THREADS_IN_KERNEL_MODE"></span>カーネル モードでのスレッドを制御します。
 
-カーネル モードでは、スレッド識別子を使用してスレッドを制御できません。 カーネル モードでスレッド固有の情報にアクセスする方法の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+カーネル モードでは、スレッド識別子を使用してスレッドを制御できません。 カーネル モードでスレッド固有の情報にアクセスする方法の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
-**注**  チルダ (~) を使用して、ユーザー モードのデバッグ中にスレッドを指定することができます。 カーネル モードのデバッグは、プロセッサを指定するのにチルダを使用することができます。 プロセッサを指定する方法の詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。
+**注**  チルダ (~) を使用して、ユーザー モードのデバッグ中にスレッドを指定することができます。 カーネル モードのデバッグは、プロセッサを指定するのにチルダを使用することができます。 プロセッサを指定する方法の詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。
 
  
 

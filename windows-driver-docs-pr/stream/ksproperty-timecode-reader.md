@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd96b9dcb708218c4985a77dd743a1fe98d2585b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363976"
 ---
 # <a name="kspropertytimecodereader"></a>KSPROPERTY\_タイムコード\_リーダー
 

@@ -1,5 +1,5 @@
 ---
-title: トレース ログ
+title: Tracelog
 description: トレース ログ (Tracelog.exe) は、コマンド プロンプト ウィンドウで実行されているイベント トレース コント ローラーです。 ここでは、トレース ログについて説明します、そのコマンドの構文について説明しに使用するための実用的な例を示します。
 ms.assetid: aa3c144d-260b-44d2-b41c-d18be40ba541
 keywords:
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1505480232f53ad163fb5204c5d0375a8e0f0ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369716"
 ---
-# <a name="tracelog"></a>トレース ログ
+# <a name="tracelog"></a>Tracelog
 
 
 トレース ログ (Tracelog.exe) は、コマンド プロンプト ウィンドウで実行されているイベント トレース コント ローラーです。 ここでは、トレース ログについて説明します、そのコマンドの構文について説明しに使用するための実用的な例を示します。
@@ -33,7 +33,7 @@ ms.locfileid: "56530546"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、トレース ログ (Tracelog.exe) が含まれます。 キットのダウンロード方法の詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>を参照してください。</p>
+<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、トレース ログ (Tracelog.exe) が含まれます。 キットのダウンロード方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>します。</p>
 <p><strong>Windows Driver Kit (WDK) 8</strong> (インストール パス)</p>
 <p>%WindowsSdkDir%\tools\x64\tracelog.exe</p>
 <p>%WindowsSdkDir%\tools\x86\tracelog.exe</p>
@@ -81,7 +81,7 @@ ms.locfileid: "56530546"
 
 使用可能なトレース ログの機能の多くはも[traceview で](traceview.md)、コマンド ライン インターフェイスだけでなくグラフィカル ユーザー インターフェイスを持つ Windows Driver Kit (WDK) で含まれているツールです。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 -   [**Tracelog コマンドの構文**](tracelog-command-syntax.md)
 -   [トレース ログが表示されます。](tracelog-displays.md)

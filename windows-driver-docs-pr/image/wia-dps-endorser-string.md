@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0df4751804fe5054ccff7c6707ed3fdda124480
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369576"
 ---
 # <a name="wiadpsendorserstring"></a>WIA\_DPS\_裏書き\_文字列
 
@@ -39,7 +39,7 @@ WIA\_DPS\_裏書き\_文字列プロパティには、ミニドライバーを�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーション設定、WIA\_DPS\_裏書き\_で報告される文字列のプロパティ設定が有効な文字を使用して、 [ **WIA\_DPS\_裏書き\_文字**](wia-dps-endorser-characters.md)プロパティ。 WIA で文字列が設定されている場合にのみ、WIA ミニドライバーはドキュメントを保証する必要があります\_DPS\_裏書き\_文字列。 空の文字列では、裏書き機能が無効になっていることを意味します。
@@ -66,7 +66,7 @@ WIA をサポートしているドライバー\_DPS\_裏書き\_文字列プロ�
 <span id="_YEAR__"></span><span id="_year__"></span>$YEAR$ $   
 年 (YYYY の形式で)。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

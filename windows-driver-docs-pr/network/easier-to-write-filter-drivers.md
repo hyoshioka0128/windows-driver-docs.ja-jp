@@ -1,6 +1,6 @@
 ---
-title: 書き込みが簡単にフィルター ドライバー
-description: 書き込みが簡単にフィルター ドライバー
+title: 作成が簡単なフィルター ドライバー
+description: 作成が簡単なフィルター ドライバー
 ms.assetid: 77cb7a9a-f823-4dfa-a0fc-11c174f34250
 keywords:
 - フィルター ドライバー WDK ネットワークは、フィルター ドライバーの記述
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e40f2c5695ab020939b1d2b844d679115d174077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372571"
 ---
-# <a name="easier-to-write-filter-drivers"></a>書き込みが簡単にフィルター ドライバー
+# <a name="easier-to-write-filter-drivers"></a>作成が簡単なフィルター ドライバー
 
 
 
@@ -31,7 +31,7 @@ NDIS 6.0 フィルター ドライバーは、前の NDIS フィルター中間�
 
 -   フィルター ドライバーは、特定のサービスをフィルター処理、ドライバーは、他のサービスをバイパスできます。 ドライバーでは、バイパスがサービスのコードは必要ありません。 たとえば場合フィルター ドライバーのフィルターがフィルター処理しない要求の OID は、送信および受信操作、フィルター ドライバーはいない送信が必要です、エントリ ポイントを受信
 
-NDIS 6.0 フィルター ドライバーの詳細については、[NDIS 6.0 のフィルター ドライバー](ndis-filter-drivers.md)を参照してください。
+NDIS 6.0 フィルター ドライバーの詳細については、次を参照してください。 [NDIS 6.0 のフィルター ドライバー](ndis-filter-drivers.md)します。
 
  
 

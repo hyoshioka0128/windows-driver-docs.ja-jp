@@ -1,6 +1,6 @@
 ---
-title: NIC のチェックサム機能の報告
-description: NIC のチェックサム機能の報告
+title: NIC のチェックサム機能のレポート
+description: NIC のチェックサム機能のレポート
 ms.assetid: a90f8d01-8318-44de-acf0-7903ef7e85e0
 keywords:
 - タスクのオフロード WDK TCP/IP トランスポート、チェックサム タスク
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a00faa6a5cbe908f075c4fa822ffa2adce92d3de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361818"
 ---
-# <a name="reporting-a-nics-checksum-capabilities"></a>NIC のチェックサム機能の報告
+# <a name="reporting-a-nics-checksum-capabilities"></a>NIC のチェックサム機能のレポート
 
 
 

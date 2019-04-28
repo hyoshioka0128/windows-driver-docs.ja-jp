@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 542611a320b70611dba3be2d7a12db44b245cd1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366097"
 ---
 # <a name="threads-and-processes"></a>スレッドとプロセス
 
@@ -40,7 +40,7 @@ ms.locfileid: "56558342"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドおよびプロセスの使用に関する詳細については、[を制御するスレッドとプロセス](controlling-threads-and-processes.md)を参照してください。
+スレッドおよびプロセスの使用に関する詳細については、次を参照してください。[を制御するスレッドとプロセス](controlling-threads-and-processes.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ネイティブの 802.11 IHV 拡張機能
-description: ネイティブの 802.11 IHV 拡張機能
+title: ネイティブ 802.11 IHV 拡張機能
+description: ネイティブ 802.11 IHV 拡張機能
 ms.assetid: 14eb9f2b-4f6f-42cc-b367-ac139a446dc4
 keywords:
 - 独立系ハードウェア ベンダー拡張 WDK ネイティブ 802.11
@@ -13,20 +13,20 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da476cb85aa38f9e0ef45215ae86e63731db2f54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368284"
 ---
-# <a name="native-80211-ihv-extensions"></a>ネイティブの 802.11 IHV 拡張機能
+# <a name="native-80211-ihv-extensions"></a>ネイティブ 802.11 IHV 拡張機能
 
 
 
 
  
 
-このセクションでは、独立系ハードウェア ベンダー (IHV) が、ネイティブの 802.11 framework に機能を追加する方法について説明します。 ネイティブの 802.11 フレームワークの詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
+このセクションでは、独立系ハードウェア ベンダー (IHV) が、ネイティブの 802.11 framework に機能を追加する方法について説明します。 ネイティブの 802.11 フレームワークの詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
 
 ここでは、次のトピックについて説明します。
 

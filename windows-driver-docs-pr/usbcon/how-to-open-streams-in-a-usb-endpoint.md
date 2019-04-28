@@ -1,14 +1,14 @@
 ---
-Description: This topic discusses static streams capability and explains how a USB client driver can open and close streams in a bulk endpoint of a USB 3.0 device.
+Description: このトピックでは、静的なストリームの機能について説明し、USB クライアント ドライバーが開くし、USB 3.0 デバイスの一括エンドポイントでのストリームを閉じる方法について説明します。
 title: USB バルク エンドポイントにおける静的ストリームのオープン/クローズ方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e14aba7a384634b31fec0e4635c981c5005834d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363578"
 ---
 # <a name="how-to-open-and-close-static-streams-in-a-usb-bulk-endpoint"></a>USB バルク エンドポイントにおける静的ストリームのオープン/クローズ方法
 
@@ -43,7 +43,7 @@ Windows 8 の Microsoft 提供の USB ドライバー スタックは、複数�
 
 - デバイスを構成し、ストリームをサポートする一括エンドポイントへの WDFUSBPIPE パイプ ハンドルを取得します。 パイプ ハンドルを取得するには、呼び出し、 [ **WdfUsbInterfaceGetConfiguredPipe** ](https://msdn.microsoft.com/library/windows/hardware/ff550057)メソッドを選択した構成でインターフェイスの現在の代替設定します。
 
-  * * WDM ドライバー: * * 構成を選択または選択インターフェイスの要求を送信することによって USBD パイプ ハンドルを取得します。 詳細については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)を参照してください。
+  * * WDM ドライバー: * * 構成を選択または選択インターフェイスの要求を送信することによって USBD パイプ ハンドルを取得します。 詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
 
 <a name="instructions"></a>手順
 ------------
@@ -53,7 +53,7 @@ Windows 8 の Microsoft 提供の USB ドライバー スタックは、複数�
 <a href="" id="open-streams"></a>
 1. 基になる USB ドライバー スタックとコント ローラーのホストが呼び出すことによって静的ストリームの機能をサポートするかどうかを確認、 [ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)メソッド。 通常、クライアント ドライバーがドライバーのルーチンを呼び出す[ **EVT_WDF_DEVICE_PREPARE_HARDWARE** ](https://msdn.microsoft.com/library/windows/hardware/ff540880)イベント コールバック ルーチン。
 
-   <strong>WDM ドライバー: * * を呼び出す、 [ </strong>USBD\_QueryUsbCapability<strong> ](<https://msdn.microsoft.com/library/windows/hardware/hh406230>)ルーチン。ドライバーのデバイスの起動のルーチンで使用したい機能のドライバー クエリでは通常、([</strong>IRP\_MN\_開始\_デバイス<strong>](<https://msdn.microsoft.com/library/windows/hardware/ff551749>))。コード例では、* * USBD\_QueryUsbCapability</strong>を参照してください。
+   <strong>WDM ドライバー: * * を呼び出す、 [ </strong>USBD\_QueryUsbCapability<strong> ](<https://msdn.microsoft.com/library/windows/hardware/hh406230>)ルーチン。ドライバーのデバイスの起動のルーチンで使用したい機能のドライバー クエリでは通常、([</strong>IRP\_MN\_開始\_デバイス<strong>](<https://msdn.microsoft.com/library/windows/hardware/ff551749>))。コード例では、次を参照してください。 * * USBD\_QueryUsbCapability</strong>します。
 
    次の情報を提供します。
 
@@ -90,7 +90,7 @@ Windows 8 の Microsoft 提供の USB ドライバー スタックは、複数�
    URB の書式を設定するには、呼び出す[ **UsbBuildOpenStaticStreamsRequest** ](https://msdn.microsoft.com/library/windows/hardware/hh406226)パラメーター値として必要な情報を渡します。 ストリームの数を指定することを確認**UsbBuildOpenStaticStreamsRequest**がサポートされているストリームの最大数を超えていません。
 7. WDF の要求オブジェクトとして呼び出すことによって、URB を送信、 [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド。 要求を同期的に送信する、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)メソッド代わりにします。
 
-   * * WDM ドライバー: * *、IRP URB を関連付けるし、USB ドライバー スタックに IRP を送信します。 詳細については、[、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)を参照してください。
+   * * WDM ドライバー: * *、IRP URB を関連付けるし、USB ドライバー スタックに IRP を送信します。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
 
 8. 要求が完了した後は、要求の状態を確認します。
 

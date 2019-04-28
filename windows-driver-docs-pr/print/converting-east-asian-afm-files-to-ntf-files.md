@@ -1,6 +1,6 @@
 ---
-title: 東アジアしてを NTF ファイルに変換します。
-description: 東アジアしてを NTF ファイルに変換します。
+title: 東アジア AFM ファイルを NTF ファイルに変換する
+description: 東アジア AFM ファイルを NTF ファイルに変換する
 ms.assetid: 0932068a-9101-4cdc-8c80-b2d3a4b507ba
 keywords:
 - ミニドライバー WDK Pscript、して変換します。
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef9272459d5353a20f2273779bb596627aeb207e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365696"
 ---
-# <a name="converting-east-asian-afm-files-to-ntf-files"></a>東アジアしてを NTF ファイルに変換します。
+# <a name="converting-east-asian-afm-files-to-ntf-files"></a>東アジア AFM ファイルを NTF ファイルに変換する
 
 
 

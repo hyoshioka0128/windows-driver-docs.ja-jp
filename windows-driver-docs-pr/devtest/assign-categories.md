@@ -1,19 +1,19 @@
 ---
-title: デバイス メタデータの作成ウィザードのカテゴリを割り当てる
-description: デバイス メタデータの作成ウィザードのカテゴリを割り当てる
+title: デバイス メタデータ作成ウィザードでのカテゴリの割り当て
+description: デバイス メタデータ作成ウィザードでのカテゴリの割り当て
 ms.assetid: B96C46A7-A276-4410-83D1-BCE4CC8D2807
 keywords:
-- デバイス メタデータの作成ウィザードのカテゴリを割り当てる
+- デバイス メタデータ作成ウィザードでのカテゴリの割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef641316531917e68f41912b92fcb50e80ede32c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361292"
 ---
-# <a name="assign-categories-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータの作成ウィザードのカテゴリを割り当てる
+# <a name="assign-categories-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのカテゴリの割り当て
 
 
 カテゴリは、デバイスをグループ化する方法を決定します。

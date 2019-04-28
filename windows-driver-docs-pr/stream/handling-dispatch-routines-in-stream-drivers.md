@@ -1,16 +1,16 @@
 ---
-title: ストリームのドライバーで処理ディスパッチ ルーチン
+title: ストリーム ドライバーのディスパッチ ルーチンの処理
 description: ドライバーのディスパッチ ルーチンの処理に関するガイダンスを提供します。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a093548a83921a7d3f49da61887c7e968a8660
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363531"
 ---
-# <a name="handling-dispatch-routines-in-stream-drivers"></a>ストリームのドライバーで処理ディスパッチ ルーチン
+# <a name="handling-dispatch-routines-in-stream-drivers"></a>ストリーム ドライバーのディスパッチ ルーチンの処理
 
 このトピックでは、ドライバーのディスパッチ ルーチンの処理に関するガイダンスを提供します。
 

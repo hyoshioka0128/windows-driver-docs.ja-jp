@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0edaa4a89efc6af300ef180c6515084b42801a62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361914"
 ---
 # <a name="fsctlupdateoverlay-control-code"></a>FSCTL\_UPDATE\_オーバーレイ コントロール コード
 
@@ -28,7 +28,7 @@ ms.locfileid: "56527303"
 
 この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
@@ -49,7 +49,7 @@ ms.locfileid: "56527303"
 設定**sizeof**([**WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)) さらに、追加のプロバイダーの入力データのサイズ。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-使用されません。 NULL に設定します。
+使用されていません。 NULL に設定します。
 
 <a href="" id="outputbufferlength--in-"></a>*OutputBufferLength\[で\]*  
 0 に設定します。

@@ -5,11 +5,11 @@ ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bec3acad4a88463a2cc1c85cd2cd7f84a41579e1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360142"
 ---
 # <a name="file-system-requirements"></a>ファイル システムの要件
 
@@ -189,7 +189,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <tr class="header">
 <th align="left">ディレクトリ名</th>
 <th align="left">ファイル名</th>
-<th align="left">型</th>
+<th align="left">種類</th>
 <th align="left">アクセス条件</th>
 <th align="left">コメント</th>
 </tr>
@@ -220,7 +220,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <tr class="even">
 <td align="left">mscp</td>
 <td align="left"></td>
-<td align="left">dir</td>
+<td align="left">Dir</td>
 <td align="left">E(R) U(RW) A(RW)</td>
 <td align="left">基本 CSP または KSP アプリ ディレクトリ</td>
 </tr>
@@ -277,7 +277,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
 | 名前          | 説明                                                                                                                                                                                                                                                                                 | アクセラレータ キー | PIN\_ID マッピング    |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------|
-| Everyone (Everyone)      | 要求元、ユーザーが認証されていない (または匿名) を含むです。                                                                                                                                                                                                                              | E        | ロール\_EVERYONE (0) |
+| すべてのユーザー      | 要求元、ユーザーが認証されていない (または匿名) を含むです。                                                                                                                                                                                                                              | E        | ロール\_EVERYONE (0) |
 | ユーザー          | カードに、PIN の使用による自身の id を提示したユーザー、カードのクライアント。                                                                                                                                                                                                             | U        | ロール\_ユーザー (1)     |
 | 管理者 | カード発行者またはカードまたはカードのデータへの管理のリレーションシップを持つその他のパーティです。 特殊な暗証番号 (pin) またはキー (または可能性のあるカードまたはユーザーに一意でない可能性があります) を使用すると、暗証番号 (pin) のブロック解除など、このデータを使用せず、ユーザーが実行できない管理タスクを実行します。 | A        | ロール\_管理者 (2)    |
 

@@ -1,5 +1,5 @@
 ---
-title: ss (セット記号サフィックス)
+title: ss (シンボル サフィックスの設定)
 description: Ss コマンドを設定またはシンボルの数値式の照合に使用される現在のサフィックスの値を表示します。
 ms.assetid: acf4cf2e-5b09-4d46-aa42-e539ee968685
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c230128657006ddbaa3d1504fe8c88515e6d6e3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368078"
 ---
-# <a name="ss-set-symbol-suffix"></a>ss (セット記号サフィックス)
+# <a name="ss-set-symbol-suffix"></a>ss (シンボル サフィックスの設定)
 
 
 **Ss**コマンドを設定またはシンボルの数値式の照合に使用される現在のサフィックスの値が表示されます。
@@ -67,7 +67,7 @@ ss [a|w|n]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-一致するシンボルの詳細については、[シンボルの構文と照合シンボル](symbol-syntax-and-symbol-matching.md)を参照してください。
+一致するシンボルの詳細については、次を参照してください。[シンボルの構文と照合シンボル](symbol-syntax-and-symbol-matching.md)します。
 
 <a name="remarks"></a>注釈
 -------

@@ -1,16 +1,16 @@
 ---
-title: Wi-fi ホット スポットのアーキテクチャのオフロード
-description: Wi-fi ホット スポットのアーキテクチャのオフロード
+title: Wi-Fi ホット スポット オフロード アーキテクチャ
+description: Wi-Fi ホット スポット オフロード アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28e848f5f4c92eb741c7dc023964d5952a2d9600
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365755"
 ---
-# <a name="wi-fi-hotspot-offloading-architecture"></a>Wi-fi ホット スポットのアーキテクチャのオフロード
+# <a name="wi-fi-hotspot-offloading-architecture"></a>Wi-Fi ホット スポット オフロード アーキテクチャ
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 

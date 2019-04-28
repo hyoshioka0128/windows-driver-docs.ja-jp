@@ -1,17 +1,17 @@
 ---
-title: レジストリ通知内のキー オブジェクトが無効なポインター
-description: レジストリ通知内のキー オブジェクトが無効なポインター
+title: レジストリ通知内の無効なキー オブジェクト ポインター
+description: レジストリ通知内の無効なキー オブジェクト ポインター
 ms.assetid: 96709c34-63a7-4b4e-8588-c7e8b41b5dea
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3ad92e0663df7dc22756e05fea0c29d2a1c425e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369281"
 ---
-# <a name="invalid-key-object-pointers-in-registry-notifications"></a>レジストリ通知内のキー オブジェクトが無効なポインター
+# <a name="invalid-key-object-pointers-in-registry-notifications"></a>レジストリ通知内の無効なキー オブジェクト ポインター
 
 
 致命的なエラーやメモリ破損の可能性を避けるため、無効なオブジェクト ポインターを使用して、キー オブジェクトへのアクセスにレジストリのフィルター ドライバーしないでください。 このトピックでは、状況、**オブジェクト**レジストリ コールバック通知構造体のメンバーを含む可能性があります、未定義以外**NULL**値。

@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 977b4a1933e1627e26176f009ec027bb4eebd97d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372676"
 ---
 # <a name="wiaipsoverscantop"></a>WIA\_IP\_経由で\_スキャン\_上部
 
@@ -33,14 +33,14 @@ ms.locfileid: "56553229"
 
 有効な値 :WIA\_PROP\_範囲
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
 <a name="remarks"></a>注釈
 -------
 
 このプロパティは、フラット ベッドを含むすべてプログラミング可能なイメージのデータ ソース アイテムの有効な (WIA\_カテゴリ\_ベッド) とフィーダー (WIA\_カテゴリ\_フィーダー) が、場合にのみ、 [ **WIA\_IP\_経由で\_スキャン**](wia-ips-over-scan.md)プロパティがサポートされています。 サポートされている場合は、このプロパティが必要です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

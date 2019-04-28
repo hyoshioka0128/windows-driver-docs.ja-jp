@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23fb27c51706f02193555d07b9198dad288ab1ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364003"
 ---
 # <a name="kspropertyextxportmediuminfo"></a>KSPROPERTY\_EXTXPORT\_MEDIUM\_情報
 
@@ -68,7 +68,7 @@ KSPROPERTY\_EXTXPORT\_MEDIUM\_情報プロパティは、外部のデバイス�
 
 **MediumInfo** 、KSPROPERTY のメンバー\_EXTXPORT\_構造情報を指定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

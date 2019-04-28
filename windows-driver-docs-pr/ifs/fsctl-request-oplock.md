@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb0a204fb81b43ce9e4160ab280dfb29848f46d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372692"
 ---
 # <a name="fsctlrequestoplock-control-code"></a>FSCTL\_要求\_OPLOCK 制御コード
 
@@ -45,7 +45,7 @@ IRP の IRP へのポインター\_MJ\_ファイル\_システム\_コントロ�
 Oplock が関連する操作に対応するビットマスク。 ファイル システムまたはフィルター ドライバーの動作を指定するビットを設定する[ **FsRtlOplockFsctrlEx**](https://msdn.microsoft.com/library/windows/hardware/ff547113)します。 *フラグ*パラメーターには、次のオプション。
 
 <a href="" id="oplock-fsctrl-flag-all-keys-match--0x00000001-"></a>OPLOCK\_FSCTRL\_FLAG\_ALL\_KEYS\_MATCH (0x00000001)  
-便宜的ロックのすべてのキーが現在開かれているいずれかのハンドルに一致するファイル システムが検証することを指定します。 このフラグを指定すると、oplock のパッケージをファイルに 1 つ以上の開いているハンドルが存在する場合のレベルの RW または RWH oplock を与えることができます。 Oplock の種類の詳細については、[概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)を参照してください。
+便宜的ロックのすべてのキーが現在開かれているいずれかのハンドルに一致するファイル システムが検証することを指定します。 このフラグを指定すると、oplock のパッケージをファイルに 1 つ以上の開いているハンドルが存在する場合のレベルの RW または RWH oplock を与えることができます。 Oplock の種類の詳細については、次を参照してください。[概要](https://msdn.microsoft.com/library/windows/hardware/ff551011)します。
 
 <a name="status-block"></a>ステータス ブロック
 ------------

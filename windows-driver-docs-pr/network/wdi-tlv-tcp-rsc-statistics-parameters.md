@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 26b1b9fa0f06a91546f308e077937cdd8fa4eca0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366632"
 ---
 # <a name="wditlvtcprscstatisticsparameters"></a>WDI\_TLV\_TCP\_RSC\_統計\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_TCP\_RSC\_統計\_パラメーターがの TCP RSC の統計情報を�
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                                                                                               |
+| 型   | 説明                                                                                                                                                                                                                               |
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT64 | 結合されたパケットの合計数。                                                                                                                                                                                          |
 | UINT64 | 結合されたバイトの合計数。                                                                                                                                                                                            |

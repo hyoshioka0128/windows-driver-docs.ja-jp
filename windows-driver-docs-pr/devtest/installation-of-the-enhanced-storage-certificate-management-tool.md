@@ -1,17 +1,17 @@
 ---
-title: 拡張記憶域証明書の管理ツールのインストール
-description: 拡張記憶域証明書の管理ツールのインストール
+title: Enhanced Storage Certificate Management Tool のインストール
+description: Enhanced Storage Certificate Management Tool のインストール
 ms.assetid: 1494a911-73a4-4a8c-a29d-aecb65c846dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c07f5baa2d88d3cd9ecd4453195721fc6f6947f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360766"
 ---
-# <a name="installation-of-the-enhanced-storage-certificate-management-tool"></a>拡張記憶域証明書の管理ツールのインストール
+# <a name="installation-of-the-enhanced-storage-certificate-management-tool"></a>Enhanced Storage Certificate Management Tool のインストール
 
 
 記憶域証明書の管理の強化されたツールは Windows 7 および Windows の以降のバージョンを実行する x86 ベース、Itanium ベースおよび x64 ベースのコンピューター。 コンピューターで、記憶域証明書の管理の強化されたツールをインストールするには、次の手順を完了します。

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09ce7469fdffcb588e122929e669287297204f5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368553"
 ---
 # <a name="contrast-element"></a>コントラスト要素
 
@@ -48,7 +48,7 @@ ms.locfileid: "56574470"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -57,16 +57,16 @@ ms.locfileid: "56574470"
 <tr class="odd">
 <td><p><strong><strong>上書き</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +100,7 @@ ms.locfileid: "56574470"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **コントラスト**要素を拡張またはスキャンしたドキュメントのコントラストを下げるに相対的な量を示します。 値 0 は、WSD スキャン サービスことは避けてくださいスキャンしたコントラストを調整を示します。

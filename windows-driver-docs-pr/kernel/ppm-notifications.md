@@ -1,5 +1,5 @@
 ---
-title: プロセッサの電源管理 (PPM) の通知
+title: プロセッサ電源管理 (PPM) の通知
 description: 各プロセッサの電源管理 (PPM) 通知、PEP の AcceptProcessorNotification コールバック ルーチンを受信する通知の種類を示す通知パラメーターとデータ構造体を指すデータ パラメーターが付属します。指定した通知の種類の情報を格納します。
 ms.assetid: 4BA89D0F-78F0-44DF-BC9B-0F9F3256CD59
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 01/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a7e925c079a0b727c558c9020ce6a88e3fffaaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369138"
 ---
-# <a name="processor-power-management-ppm-notifications"></a>プロセッサの電源管理 (PPM) の通知
+# <a name="processor-power-management-ppm-notifications"></a>プロセッサ電源管理 (PPM) の通知
 各プロセッサの電源管理 (PPM) 通知、PEP の AcceptProcessorNotification コールバック ルーチンを受信する通知の種類を示す通知パラメーターとデータ構造体を指すデータ パラメーターが付属します。指定した通知の種類の情報を格納します。
 
 この呼び出しでは、通知のパラメーターは、通知の種類を示す PEP_NOTIFY_PPM_XXX 定数値に設定されます。 データのパラメーターは、この通知の種類に関連付けられている PEP_PPM_XXX 構造体型を指します。

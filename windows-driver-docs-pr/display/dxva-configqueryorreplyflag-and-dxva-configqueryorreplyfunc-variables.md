@@ -1,6 +1,6 @@
 ---
 title: DXVA_ConfigQueryOrReplyFlag and DXVA_ConfigQueryorReplyFunc
-description: DXVA_ConfigQueryOrReplyFlag and DXVA_ConfigQueryorReplyFunc Variables
+description: DXVA_ConfigQueryOrReplyFlag 変数と DXVA_ConfigQueryorReplyFunc 変数
 ms.assetid: bfb1a98e-b9f0-4baa-b486-b2ff33a8bac5
 keywords:
 - ビデオのデコード WDK DirectX va なので、書式設定します。
@@ -21,11 +21,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 68d0c0727156b80ffac718897cd1e3e9d1b8a6e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370818"
 ---
 # <a name="dxvaconfigqueryorreplyflag-and-dxvaconfigqueryorreplyfunc-variables"></a>DXVA\_ConfigQueryOrReplyFlag と DXVA\_ConfigQueryorReplyFunc 変数
 
@@ -46,7 +46,7 @@ ms.locfileid: "56560585"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

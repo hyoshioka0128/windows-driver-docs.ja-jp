@@ -1,17 +1,17 @@
 ---
-title: WIA ドライバー エラー処理と回復
-description: WIA ドライバー エラー処理と回復
+title: WIA ドライバーのエラー処理と回復
+description: WIA ドライバーのエラー処理と回復
 ms.assetid: 6b7772d9-cc54-492a-b849-27cfe8f043f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d305f2dff0875ea9f067fe8f713f6e3bb2ae3989
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366958"
 ---
-# <a name="wia-driver-error-handling-and-recovery"></a>WIA ドライバー エラー処理と回復
+# <a name="wia-driver-error-handling-and-recovery"></a>WIA ドライバーのエラー処理と回復
 
 
 

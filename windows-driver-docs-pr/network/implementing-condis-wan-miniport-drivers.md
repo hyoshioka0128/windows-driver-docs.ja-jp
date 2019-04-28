@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca672773b0b97205854b89aff736d38a19365db6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363174"
 ---
 # <a name="implementing-condis-wan-miniport-drivers"></a>CoNDIS WAN ミニポート ドライバーの実装
 
@@ -20,7 +20,7 @@ ms.locfileid: "56581925"
 
 
 
-いる CoNDIS WAN ミニポート ドライバーでは、WAN の操作をサポートするために追加された機能の例外では、その他のいる CoNDIS ドライバーと同じです。 接続指向の NDIS の詳細については、[Connection-Oriented NDIS](connection-oriented-ndis.md)を参照してください。 WAN の操作をサポートする機能の詳細については、[WAN に固有の機能のいる CoNDIS WAN ドライバー](wan-specific-capabilities-of-condis-wan-drivers.md)を参照してください。
+いる CoNDIS WAN ミニポート ドライバーでは、WAN の操作をサポートするために追加された機能の例外では、その他のいる CoNDIS ドライバーと同じです。 接続指向の NDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](connection-oriented-ndis.md)します。 WAN の操作をサポートする機能の詳細については、次を参照してください。 [WAN に固有の機能のいる CoNDIS WAN ドライバー](wan-specific-capabilities-of-condis-wan-drivers.md)します。
 
 次のトピックでは、いる CoNDIS WAN ミニポート ドライバーに固有の情報を提供します。
 

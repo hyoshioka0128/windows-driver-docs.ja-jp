@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ab08bb06e662e97bc956d7d5dfca21228f4810fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363698"
 ---
 # <a name="guiddevinterfaceparclass"></a>GUID_DEVINTERFACE_PARCLASS
 
@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_PARCLASS[デバイス インターフェイス クラス](http
 
 パラレル ポートのシステム提供のバス ドライバーでは、パラレル ポートに接続されているハードウェア デバイスごとにこのデバイスのインターフェイス クラスのインスタンスを作成します。
 
-並列デバイスとドライバーについては、[並列のデバイス デザイン ガイド](https://msdn.microsoft.com/library/windows/hardware/ff544263)を参照してください。
+並列デバイスとドライバーについては、次を参照してください。[並列のデバイス デザイン ガイド](https://msdn.microsoft.com/library/windows/hardware/ff544263)します。
 
-パラレル ポート、デバイス インターフェイスのクラスについては、[ **GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)を参照してください。
+パラレル ポート、デバイス インターフェイスのクラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)します。
 
 [**GUID_PARCLASS_DEVICE** ](guid-parclass-device.md)このデバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_PARCLASS を代わりに使用します。
 

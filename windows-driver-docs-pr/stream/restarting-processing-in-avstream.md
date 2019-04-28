@@ -1,6 +1,6 @@
 ---
-title: AVStream で処理を再起動します。
-description: AVStream で処理を再起動します。
+title: AVStream での処理の再開
+description: AVStream での処理の再開
 ms.assetid: f60d4dbd-61e6-4ae2-aa43-9edc8f36c3ff
 keywords:
 - AVStream 処理を再起動します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c37c47133e927627987a8a8f8b9840e41dd19792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368306"
 ---
-# <a name="restarting-processing-in-avstream"></a>AVStream で処理を再起動します。
+# <a name="restarting-processing-in-avstream"></a>AVStream での処理の再開
 
 
 

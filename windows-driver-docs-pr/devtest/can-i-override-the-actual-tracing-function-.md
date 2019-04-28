@@ -5,13 +5,13 @@ ms.assetid: 215e6fb6-a1f4-4188-a3aa-9688ce17d04b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ea70b656d77ed08456cc59556b184210071968
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364724"
 ---
-# <a name="can-i-override-the-actual-tracing-function"></a>実際のトレース機能をオーバーライドすることができますか。
+# <a name="can-i-override-the-actual-tracing-function"></a>実際のトレース関数をオーバーライドできますか?
 
 
 [はい]。 カスタム WPP を定義することでこれを行う\_TRACE マクロ。 インクルードする前に、このマクロのバージョンを定義する必要があります、[トレース メッセージのヘッダー (.tmh) ファイル](trace-message-header-file.md)のソース ファイルで、[トレース プロバイダー](trace-provider.md)、カーネル モード ドライバーまたはユーザー モード アプリケーションなどです。

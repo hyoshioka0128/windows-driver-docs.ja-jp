@@ -1,19 +1,19 @@
 ---
-title: 特別な USB 識別子
-description: 特別な USB 識別子
+title: 特殊な USB 識別子
+description: 特殊な USB 識別子
 ms.assetid: b69ea1c8-7ba5-42de-afe8-9b1efd275972
 keywords:
 - USB 識別子 WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1618ef6c4352be13aa551c609eeb0d6c91c20a64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369422"
 ---
-# <a name="special-usb-identifiers"></a>特別な USB 識別子
+# <a name="special-usb-identifiers"></a>特殊な USB 識別子
 
 
 

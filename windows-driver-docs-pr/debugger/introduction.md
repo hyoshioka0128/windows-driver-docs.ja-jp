@@ -1,17 +1,17 @@
 ---
-title: デバッガー エンジンの概要
-description: デバッガー エンジンの概要
+title: デバッガー エンジンの基本
+description: デバッガー エンジンの基本
 ms.assetid: fa52a1f0-9397-48a5-acbd-ce5347c0baef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 885969afbd5699e9f3652d33076d89b9aa4ebdd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367224"
 ---
-# <a name="debugger-engine-introduction"></a>デバッガー エンジンの概要
+# <a name="debugger-engine-introduction"></a>デバッガー エンジンの基本
 
 このドキュメントでは、WinDbg、KD、CDB、NTSD で実行される拡張機能を記述する方法と、デバッガー エンジンを使用する方法について説明します。 ユーザー モードまたはカーネル モードの Microsoft Windows のデバッグを実行するときに、これらのデバッガー拡張機能を使用できます。
 
@@ -61,12 +61,12 @@ ms.locfileid: "56560735"
 ## <a name="span-idcustomizingdebuggeroutputusingdmlspanspan-idcustomizingdebuggeroutputusingdmlspanspan-idcustomizingdebuggeroutputusingdmlspancustomizing-debugger-output-using-dml"></a><span id="Customizing_Debugger_Output_Using_DML"></span><span id="customizing_debugger_output_using_dml"></span><span id="CUSTOMIZING_DEBUGGER_OUTPUT_USING_DML"></span>DML を使用して出力をデバッガーのカスタマイズ
 
 
-DML を使用して出力をデバッガーをカスタマイズすることができます。 詳細については、[DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)を参照してください。
+DML を使用して出力をデバッガーをカスタマイズすることができます。 詳細については、次を参照してください。 [DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)します。
 
 ## <a name="span-idjavascriptspanspan-idjavascriptspanspan-idjavascriptspanusing-javascript-to-extend-the-capabilities-of-the-debugger"></a><span id="JavaScript"></span><span id="javascript"></span><span id="JAVASCRIPT"></span>JavaScript を使用して、デバッガーの機能を拡張するには
 
 
-デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成するのにには、JavaScript を使用します。 JavaScript のプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。 詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。
+デバッガー オブジェクトについて理解し、拡張、およびデバッガーの機能をカスタマイズするスクリプトを作成するのにには、JavaScript を使用します。 JavaScript のプロバイダーは、デバッガーの内部オブジェクト モデルへのスクリプト言語をブリッジします。 プロバイダー、スクリプト、JavaScript デバッガーを使うと、デバッガーでの JavaScript の使用。 詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。
 
  
 

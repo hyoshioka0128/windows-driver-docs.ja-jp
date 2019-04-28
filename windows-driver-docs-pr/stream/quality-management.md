@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76f1e4d8ba5a4a43a7899f8532f6090aff099296
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365206"
 ---
 # <a name="quality-management"></a>品質管理
 
@@ -33,7 +33,7 @@ ms.locfileid: "56574108"
 
 Pin では、パフォーマンス低下の戦略を許可している場合、ミニドライバーをサポートしています、 [ **KSPROPERTY\_ストリーム\_低下**](https://msdn.microsoft.com/library/windows/hardware/ff565690)プロパティ。
 
-詳細については、[ **KSDEGRADE** ](https://msdn.microsoft.com/library/windows/hardware/ff561671)と[ **KSDEGRADE\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff561673)を参照してください。
+詳細については、次を参照してください。 [ **KSDEGRADE** ](https://msdn.microsoft.com/library/windows/hardware/ff561671)と[ **KSDEGRADE\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff561673)します。
 
  
 

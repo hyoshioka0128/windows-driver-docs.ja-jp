@@ -1,6 +1,6 @@
 ---
-title: トランスポート アドレスを共有
-description: トランスポート アドレスを共有
+title: トランスポート アドレスの共有
+description: トランスポート アドレスの共有
 ms.assetid: 1f5bc91a-75eb-466c-ad7d-cfbe0e83dc17
 keywords:
 - トランスポート アドレスを共有
@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd4d6fd1cc3f110e6694616c7196bc4a123f5c6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362013"
 ---
-# <a name="sharing-transport-addresses"></a>トランスポート アドレスを共有
+# <a name="sharing-transport-addresses"></a>トランスポート アドレスの共有
 
 
-ほとんどの場合は、Winsock カーネル (WSK) アプリケーションは既に別のソケットが使用されているローカル トランスポート アドレスにソケットをバインドできません。 WSK アプリケーションで使用できます、[ように\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/hardware/ff570830)と[ように\_REUSEADDR](https://msdn.microsoft.com/library/windows/hardware/ff570833)ソケットをバインドするローカル トランスポートの共有を制御するソケット オプションに対応します。 どちらのソケット オプションは、既定では、ソケットに対して設定されます。 ソケット オプションの設定の詳細については、[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)を参照してください。
+ほとんどの場合は、Winsock カーネル (WSK) アプリケーションは既に別のソケットが使用されているローカル トランスポート アドレスにソケットをバインドできません。 WSK アプリケーションで使用できます、[ように\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/hardware/ff570830)と[ように\_REUSEADDR](https://msdn.microsoft.com/library/windows/hardware/ff570833)ソケットをバインドするローカル トランスポートの共有を制御するソケット オプションに対応します。 どちらのソケット オプションは、既定では、ソケットに対して設定されます。 ソケット オプションの設定の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
 
 次の表では、既に別のソケットが使用されているローカル トランスポート アドレスを 2 つ目のソケットをバインドした結果を示します。 *ワイルドカード*と*特定*の場合は、ワイルドカードのローカル トランスポート アドレスまたは特定のローカル トランスポート アドレスに、ソケットがバインドされているかどうかを指定します。
 
@@ -91,19 +91,19 @@ ms.locfileid: "56529273"
        <p>使用中</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
        <p>使用中</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
        <p>使用中</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
      </tr>
      <tr>
@@ -113,13 +113,13 @@ ms.locfileid: "56529273"
        </p>
       </td>
       <td>
-       <p>チェック</p>
+       <p>CHECK</p>
       </td>
       <td>
        <p>使用中</p>
       </td>
       <td>
-       <p>チェック</p>
+       <p>CHECK</p>
       </td>
       <td>
        <p>拒否されました</p>
@@ -146,19 +146,19 @@ ms.locfileid: "56529273"
        <p>拒否されました</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
        <p>拒否されました</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
      </tr>
      <tr>
@@ -168,16 +168,16 @@ ms.locfileid: "56529273"
        </p>
       </td>
       <td>
-       <p>チェック</p>
+       <p>CHECK</p>
       </td>
       <td>
        <p>拒否されました</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
-       <p>成功</p>
+       <p>SUCCESS</p>
       </td>
       <td>
        <p>拒否されました</p>
@@ -223,13 +223,13 @@ ms.locfileid: "56529273"
        </p>
       </td>
       <td>
-       <p>チェック</p>
+       <p>CHECK</p>
       </td>
       <td>
        <p>使用中</p>
       </td>
       <td>
-       <p>チェック</p>
+       <p>CHECK</p>
       </td>
       <td>
        <p>使用中</p>

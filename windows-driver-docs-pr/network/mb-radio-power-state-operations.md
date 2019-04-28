@@ -5,11 +5,11 @@ ms.assetid: 9b745ff3-c00b-4a43-9bf3-52f9bf61e062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 917eb72e9d21dffcff502fe69f53f9501d1bf21b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367660"
 ---
 # <a name="mb-radio-power-state-operations"></a>MB ラジオ電源状態操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "56573387"
 
 -   MB サービスは電源を節約するために、または、環境でのラジオ干渉を避けるためには、低電力状態に無線ミニポート ドライバーにコマンドを送信することがあります (など、飛行機に)。
 
-ラジオ電源の状態の操作の詳細については、[OID\_WWAN\_ラジオ\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569832)を参照してください。
+ラジオ電源の状態の操作の詳細については、次を参照してください。 [OID\_WWAN\_ラジオ\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569832)します。
 
  
 

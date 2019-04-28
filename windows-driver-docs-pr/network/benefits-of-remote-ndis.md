@@ -1,19 +1,19 @@
 ---
-title: リモートの NDIS の利点
-description: リモートの NDIS の利点
+title: リモート NDIS の利点
+description: リモート NDIS の利点
 ms.assetid: ca559f2e-c7e3-4b8e-a04d-f3a544d33a68
 keywords:
 - リモートの NDIS WDK のネットワーク接続の利点があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 101186eaf0d6017731111d74fd02a6358f01b675
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367691"
 ---
-# <a name="benefits-of-remote-ndis"></a>リモートの NDIS の利点
+# <a name="benefits-of-remote-ndis"></a>リモート NDIS の利点
 
 
 

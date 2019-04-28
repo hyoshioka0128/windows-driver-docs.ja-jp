@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e56ce477e184f0fb631d8a9ed4910842803fb878
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367300"
 ---
 # <a name="bug-check-0xfc-attemptedexecuteofnoexecutememory"></a>バグ チェック 0xFC:試行\_EXECUTE\_の\_NOEXECUTE\_メモリ
 

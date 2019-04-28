@@ -5,11 +5,11 @@ ms.assetid: F0663631-AD7B-4BFE-8E07-7BB2FFC72911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8c956588adc855333659e8978ead5156ff09636
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361450"
 ---
 #  <a name="static-driver-verifier-commands-msbuild"></a>静的ドライバー検証ツールのコマンド (MSBuild)
 
@@ -22,7 +22,7 @@ Static Driver Verifier (SDV) で実行することができます、 **Visual St
 msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration /p:Platform=platform     
 ```
 
-リリース構成を選択する必要があります (たとえば、 **/p:Configuration =「Windows 7 リリース」**)。 サポートされるリリース構成の一覧で、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。 プラットフォームは、 **Win32** x86 または**x64** (たとえば、 **/p:Platform = Win32**)。
+リリース構成を選択する必要があります (たとえば、 **/p:Configuration =「Windows 7 リリース」**)。 サポートされるリリース構成の一覧で、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。 プラットフォームは、 **Win32** x86 または**x64** (たとえば、 **/p:Platform = Win32**)。
 
 **注**をコンピュータに、コンピューターの電源管理プランは省きますスリープ状態の分析中に確認してください。
 
@@ -34,9 +34,9 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 ### <span id="parameters"></span><span id="PARAMETERS"></span>
 
 <span id="_scan"></span><span id="_SCAN"></span>/**scan**  
-関数の役割の型宣言に対して、ドライバーのソース コードをスキャンします。 提供されているドライバーのコールバック関数を宣言してルーチンをディスパッチする方法については、[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)を参照してください。 このスキャンでは、SDV は、ドライバーを確認するために必要なドライバーのエントリ ポイントを検出しようとします。 スキャンの結果を記録[Sdv map.h](sdv-map-h.md)ドライバーのプロジェクト ディレクトリで作成したファイル。
+関数の役割の型宣言に対して、ドライバーのソース コードをスキャンします。 提供されているドライバーのコールバック関数を宣言してルーチンをディスパッチする方法については、次を参照してください。[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 このスキャンでは、SDV は、ドライバーを確認するために必要なドライバーのエントリ ポイントを検出しようとします。 スキャンの結果を記録[Sdv map.h](sdv-map-h.md)ドライバーのプロジェクト ディレクトリで作成したファイル。
 
-詳細については、[、ソース コードを準備する](using-static-driver-verifier-to-find-defects-in-drivers.md#preparing_your_source_code)を参照してください。
+詳細については、次を参照してください。 [、ソース コードを準備する](using-static-driver-verifier-to-find-defects-in-drivers.md#preparing_your_source_code)します。
 
 <span id="________check_Rule____Rule_..._"></span><span id="________check_rule____rule_..._"></span><span id="________CHECK_RULE____RULE_..._"></span> **/check:**<em>ルール</em> | *ルール*、.  
 指定した規則と検証を開始します。 1 つ以上のルールを指定するには、各ルールをコンマで区切ります。 実行、 **/check:** コマンドし、ドライバーの Visual Studio プロジェクト ファイルを指定します (\*.vcxproj)。

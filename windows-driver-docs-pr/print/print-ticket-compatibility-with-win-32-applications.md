@@ -1,6 +1,6 @@
 ---
-title: Win 32 アプリケーションとの互換性を印刷チケット
-description: Win 32 アプリケーションとの互換性を印刷チケット
+title: Win 32 アプリケーションと印刷チケットの互換性
+description: Win 32 アプリケーションと印刷チケットの互換性
 ms.assetid: 3e358f8a-e950-4da0-b8ef-4e350ea28091
 keywords:
 - WDK の Win32 アプリケーションを印刷します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af24bec9343a18fc82e34a07581453aa5a833dfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362712"
 ---
-# <a name="print-ticket-compatibility-with-win-32-applications"></a>Win 32 アプリケーションとの互換性を印刷チケット
+# <a name="print-ticket-compatibility-with-win-32-applications"></a>Win 32 アプリケーションと印刷チケットの互換性
 
 
 Microsoft Win32 ベースのアプリケーションと GDI ベースの印刷ドライバーでの印刷チケットを使用する場合は、次の互換性のシナリオを考慮する必要があります。

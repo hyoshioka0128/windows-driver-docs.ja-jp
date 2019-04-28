@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8221ab8d8df854c6a32b280ab29898afd21e196a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368544"
 ---
 # <a name="createscanjobrequest-element"></a>CreateScanJobRequest 要素
 
@@ -92,7 +92,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 
 次の要素を持つことができます、 **MustHonor**属性。[**ColorProcessing**](colorprocessing.md)、 [ **CompressionQualityFactor**](compressionqualityfactor.md)、 [ **ContentType**](contenttype.md)、 [**露出**](exposure.md)、 [ **FilmScanMode**](filmscanmode.md)、 [ **ImagesToTransfer** ](imagestotransfer.md)、 [ **InputSize**](inputsize.md)、 [**指定**](inputsource.md)、 [ **MediaSides** ](mediasides.md)、 [**解決**](resolution.md)、 [**回転**](rotation.md)、 [**スケーリング** ](scaling.md)、 [ **ScanRegionHeight**](scanregionheight.md)、 [ **ScanRegionWidth**](scanregionwidth.md)、 [**ScanRegionXOffset**](scanregionxoffset.md)、および[ **ScanRegionYOffset**](scanregionyoffset.md)します。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
 
 **CreateScanJobRequest**次のエラーを返すこともできます。
 
@@ -102,7 +102,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
     |----------------|------------------------------------------------------------------------------------|
     | \[コード\]       | soap の受信者:                                                                      |
     | \[サブコード\]    | wscn:ServerErrorNotAcceptingJobs                                                   |
-    | \[理由\]     | サービスが一時的にブロックされて、新しいジョブまたはドキュメントの要求を受け入れることはできません。 |
+    | \[Reason\]     | サービスが一時的にブロックされて、新しいジョブまたはドキュメントの要求を受け入れることはできません。 |
     | \[詳細\]     | なし                                                                               |
 
      
@@ -113,7 +113,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
     |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
     | \[コード\]       | soap 送信者:                                                                                                                                     |
     | \[サブコード\]    | wscn:ClientErrorFormatNotSupported                                                                                                              |
-    | \[理由\]     | ドキュメント形式のパラメーター値がサポートされていません。                                                                                           |
+    | \[Reason\]     | ドキュメント形式のパラメーター値がサポートされていません。                                                                                           |
     | \[詳細\]     | (省略可能)。 スキャン サービスは、サポートされている形式の一覧を返すことができます。 この要素のデータ型でなければなりません&lt;wscn:FormatSupportedType&gt;します。 |
 
      
@@ -124,7 +124,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
     |----------------|------------------------------------------------------------|
     | \[コード\]       | soap 送信者:                                                |
     | \[サブコード\]    | wscn:ClientErrorInvalidScanIdentifier                      |
-    | \[理由\]     | ScanIdentifier パラメーターの値は現在無効です。 |
+    | \[Reason\]     | ScanIdentifier パラメーターの値は現在無効です。 |
     | \[詳細\]     | なし                                                       |
 
      
@@ -135,7 +135,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
     |----------------|--------------------------------------------------------------|
     | \[コード\]       | soap 送信者:                                                  |
     | \[サブコード\]    | wscn:ClientErrorInvalidDestinationToken                      |
-    | \[理由\]     | DestinationToken パラメーターの値は現在無効です。 |
+    | \[Reason\]     | DestinationToken パラメーターの値は現在無効です。 |
     | \[詳細\]     | なし                                                         |
 
      
@@ -146,7 +146,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
     |----------------|------------------------------------------------|
     | \[コード\]       | soap 送信者:                                    |
     | \[サブコード\]    | wscn:ClientErrorNoImagesAvailable              |
-    | \[理由\]     | サーバーには、取得に使用できるイメージがありません。 |
+    | \[Reason\]     | サーバーには、取得に使用できるイメージがありません。 |
     | \[詳細\]     | なし                                           |
 
      

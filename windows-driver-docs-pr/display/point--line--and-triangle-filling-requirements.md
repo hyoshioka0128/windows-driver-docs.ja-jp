@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21c812aa82f357bd87c4c185a4434947205bfad3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366302"
 ---
 # <a name="point-line-and-triangle-filling-requirements"></a>点、線、および三角形の塗りつぶし要件
 
@@ -43,7 +43,7 @@ P4(x,y) = (x + 0.5, y âˆ’ 0.5)
 
 ### <a name="span-idlinesspanspan-idlinesspanlines"></a><span id="lines"></span><span id="LINES"></span>行
 
-線の塗りつぶしルール (つまり、行を表示する方法を決定するルール) では、グリッドの交点量子化 (GIQ) 用のひし形の規則に従います。 GIQ ひし形の規則の詳細については、[表面的な行](cosmetic-lines.md)を参照してください。 これらの規則を次の行を描画するコードの例はあります DirectX DDK、リファレンス ラスタライザーのソース ファイルで*setup.cpp*と*scancnv.cpp*します。
+線の塗りつぶしルール (つまり、行を表示する方法を決定するルール) では、グリッドの交点量子化 (GIQ) 用のひし形の規則に従います。 GIQ ひし形の規則の詳細については、次を参照してください。[表面的な行](cosmetic-lines.md)します。 これらの規則を次の行を描画するコードの例はあります DirectX DDK、リファレンス ラスタライザーのソース ファイルで*setup.cpp*と*scancnv.cpp*します。
 
 ### <a name="span-idtrianglesspanspan-idtrianglesspantriangles"></a><span id="triangles"></span><span id="TRIANGLES"></span>三角形
 

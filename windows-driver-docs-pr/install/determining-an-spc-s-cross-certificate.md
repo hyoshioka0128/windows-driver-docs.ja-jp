@@ -1,24 +1,24 @@
 ---
-title: SPC のクロス証明書を決定します。
-description: SPC のクロス証明書を決定します。
+title: SPC のクロス証明書の決定
+description: SPC のクロス証明書の決定
 ms.assetid: e54c6c69-6b80-4a03-b4ff-e46d565a56d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ab1438a4a3849dac0d38c0346b8eaee526e71c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368088"
 ---
-# <a name="determining-an-spcs-cross-certificate"></a>SPC のクロス証明書を決定します。
+# <a name="determining-an-spcs-cross-certificate"></a>SPC のクロス証明書の決定
 
 
 商用証明書機関 (CA) からのソフトウェア発行元証明書 (SPC) の取得、だけでなくには、その Microsoft 問題クロス証明書を取得する必要があります。 クロス証明書は、SPC を発行した CA が信頼されたルート機関であることを確認に使用されます。 クロス証明書と、SPC の両方が必要なリリース署名します。
 
 クロス証明書は、別の CA のルート証明書の公開キーを署名する CA によって発行された X.509 証明書です。 クロス証明書は、1 つ信頼された Microsoft ルート機関、SPCs を発行する商用の Ca を信頼チェーンを拡張する柔軟性も備えていて、カーネルを使用できます。
 
-どのクロス証明書が必要なリリース署名を決定するには、前にする必要があります最初にインポートする Personal Information Exchange (.*pfx*) ファイルで、ソフトウェア発行元証明書 (SPC) と、プライベートおよびパブリック キーを個人証明書ストアに格納します。 このプロセスの詳細については、[SPC を証明書ストアにインポート](importing-an-spc-into-a-certificate-store.md)を参照してください。
+どのクロス証明書が必要なリリース署名を決定するには、前にする必要があります最初にインポートする Personal Information Exchange (.*pfx*) ファイルで、ソフトウェア発行元証明書 (SPC) と、プライベートおよびパブリック キーを個人証明書ストアに格納します。 このプロセスの詳細については、次を参照してください。 [SPC を証明書ストアにインポート](importing-an-spc-into-a-certificate-store.md)します。
 
 1 回、 *.pfx*ファイルは、署名のコンピューター上の個人用ストアにインポートされます、操作を行いますクロス証明書を確認するには、次できますと共に使用する、SPC リリース署名します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "56557582"
 
 8.  「ルート機関クロス証明書の一覧」セクションから関連するクロス証明書をダウンロードして、デジタル署名するときに、クロス証明書を使用して[ドライバー パッケージ](driver-packages.md)します。
 
-SPCs とその管理の詳細については、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)を参照してください。
+SPCs とその管理の詳細については、次を参照してください。[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。
 
  
 

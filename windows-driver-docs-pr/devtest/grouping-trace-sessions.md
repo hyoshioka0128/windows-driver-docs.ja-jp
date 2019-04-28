@@ -1,6 +1,6 @@
 ---
-title: トレース セッションをグループ化
-description: トレース セッションをグループ化
+title: トレース セッションのグループ化
+description: トレース セッションのグループ化
 ms.assetid: dd9f39ee-fb93-4bf8-ac5c-5e884e57fcaa
 keywords:
 - Traceview で WDK、セッションをグループ化
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5213575fba7d6ed92ed494d1350dfaca87d28bf5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360392"
 ---
-# <a name="grouping-trace-sessions"></a>トレース セッションをグループ化
+# <a name="grouping-trace-sessions"></a>トレース セッションのグループ化
 
 
 複数の実行中のトレース セッションを組み合わせたり、トレース セッションのグループに複数の既存のトレース ログを表示します。 グループ化されたセッションからのトレース メッセージとログは、1 つにまとめて表示されます。[トレース メッセージ一覧](trace-message-lists.md)ウィンドウ。

@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_SYSTEM_CONTROL Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: c0db08fa71ee399d4193e297dab91d51a37ebdaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368407"
 ---
 # <a name="irpmjsystemcontrol"></a>IRP\_MJ\_SYSTEM\_CONTROL
 
@@ -38,7 +38,7 @@ WMI のカーネル モード コンポーネントに送信できる、 **IRP\_
 
 すべてのドライバーをサポートする必要があります**IRP\_MJ\_システム\_コントロール**要求を指定することによって、 [ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン.
 
-サポートするドライバー [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI) を処理する必要があります**IRP\_MJ\_システム\_コントロール**マイナー関数を処理することによって要求この主な機能のコードに関連付けられたコードです。 WMI のマイナー関数コードの詳細については、[WMI マイナー Irp](wmi-minor-irps.md)を参照してください。
+サポートするドライバー [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI) を処理する必要があります**IRP\_MJ\_システム\_コントロール**マイナー関数を処理することによって要求この主な機能のコードに関連付けられたコードです。 WMI のマイナー関数コードの詳細については、次を参照してください。 [WMI マイナー Irp](wmi-minor-irps.md)します。
 
 ドライバーで WMI をサポートしていない[WMI データ プロバイダーとして登録する](https://msdn.microsoft.com/library/windows/hardware/ff560870)渡す必要があります**IRP\_MJ\_システム\_コントロール**[次へ] の下のドライバーに要求します。
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b3f67c559898f2126af1024f2ae095bcfd5130a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360601"
 ---
 # <a name="inf-models-section"></a>INF Models セクション
 
@@ -41,7 +41,7 @@ device-description=install-section-name[,hw-id][,compatible-id...]
 インストールするのには、デバイスを識別する、文字の表示などの一意の組み合わせで表される、 **%** <em>strkey</em> **%** トークンが定義されています。[ **INF 文字列セクション**](inf-strings-section.md)します。 デバイスの説明の文字の最大長は、LINE_LEN です。
 
 <a href="" id="install-section-name"></a>*install-section-name*  
-デバイス (および存在する場合は、デバイスの互換性のあるモデル) に使用する INF インストール セクションの非装飾名を指定します。 詳細については、[ **INF *DDInstall*セクション**](inf-ddinstall-section.md)を参照してください。
+デバイス (および存在する場合は、デバイスの互換性のあるモデル) に使用する INF インストール セクションの非装飾名を指定します。 詳細については、次を参照してください。 [ **INF *DDInstall*セクション**](inf-ddinstall-section.md)します。
 
 <a href="" id="hw-id"></a>*ハードウェア id*  
 ベンダー定義を指定します。[ハードウェア ID](hardware-ids.md) PnP マネージャーはこのデバイスの INF ファイルと一致するものを使用してデバイスを識別する文字列。 このようなハードウェア ID では、次の形式のいずれかがあります。

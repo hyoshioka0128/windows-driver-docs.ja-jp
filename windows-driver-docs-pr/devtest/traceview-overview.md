@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 918f780ddce5811e056fb078ad393c60eb53fc2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369624"
 ---
 # <a name="traceview-overview"></a>TraceView の概要
 
@@ -23,7 +23,7 @@ Traceview でウィンドウは、簡単に使用し、検索またはコマン�
 
 Traceview でのトレース メッセージが表示されます、[トレース メッセージ一覧](trace-message-lists.md)ウィンドウ、表示、フィルター、およびトレース メッセージを簡単に並べ替えることができます。 また、ウィンドウから直接、トレース メッセージをコピーしてテキスト ファイル、スプレッドシート ファイル、またはデータベース ファイルを保存したり、後で処理に貼り付けます。
 
-Traceview で機能の詳細については、[を使用して traceview で](using-traceview.md)を参照してください。
+Traceview で機能の詳細については、次を参照してください。[を使用して traceview で](using-traceview.md)します。
 
 このセクションの内容:
 

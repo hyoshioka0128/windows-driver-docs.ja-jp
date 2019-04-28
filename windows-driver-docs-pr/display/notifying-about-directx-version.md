@@ -1,6 +1,6 @@
 ---
-title: DirectX のバージョンについて通知します。
-description: DirectX のバージョンについて通知します。
+title: DirectX バージョンに関する通知
+description: DirectX バージョンに関する通知
 ms.assetid: 62c030cf-8eb6-4a94-bd15-730b9219291c
 keywords:
 - WDK DirectX 9.0 のバージョン番号
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d911214831a0f03d764a1e20692f20d14f27190
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370202"
 ---
-# <a name="notifying-about-directx-version"></a>DirectX のバージョンについて通知します。
+# <a name="notifying-about-directx-version"></a>DirectX バージョンに関する通知
 
 
 ## <span id="ddk_notifying_about_directx_version_gg"></span><span id="DDK_NOTIFYING_ABOUT_DIRECTX_VERSION_GG"></span>

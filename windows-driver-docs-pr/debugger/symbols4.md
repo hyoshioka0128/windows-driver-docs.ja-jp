@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 516dced9ed3291a43dbea785931e1a990c478afd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368144"
 ---
 # <a name="symbols"></a>シンボル
 
@@ -28,7 +28,7 @@ A*シンボル*はデータやコード モジュールに表示されるソー�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-シンボルの使用に関する詳細については、[を使用してシンボル](using-symbols.md)を参照してください。 シンボル ファイルとシンボル サーバーの使用の概要については、[シンボル](symbols.md)このドキュメントの [デバッガー] セクションでを参照してください。
+シンボルの使用に関する詳細については、次を参照してください。[を使用してシンボル](using-symbols.md)します。 シンボル ファイルとシンボル サーバーの使用の概要については、次を参照してください。[シンボル](symbols.md)このドキュメントの [デバッガー] セクションでします。
 
  
 

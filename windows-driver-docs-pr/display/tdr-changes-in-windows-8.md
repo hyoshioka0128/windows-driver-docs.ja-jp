@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a7ad0cd9205de14e01b4ccb197090c856f68298
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362723"
 ---
 # <a name="tdr-changes-in-windows-8"></a>Windows 8 での TDR の変更
 
@@ -75,7 +75,7 @@ GPU のタイムアウト検出と復旧 (TDR) の動作の Windows 8 以降で�
 
 Windows Vista と Windows 7 の両方をこれら問題のある状況がハングし、応答性の高いデスクトップを動的に回復を検出するために再試行してください。 システムは再起動されませんが、ほとんどの場合、画面のちらつきが再描画されるようにします。 ただし、一部の古い Microsoft DirectX アプリケーションの回復の最後に黒い画面をレンダリングして、ユーザーがこれらのアプリケーションを再起動する必要があります。 これらの GPU のハングがタイムアウト検出と回復エラー (TDRs) と呼ばれます。
 
-図では、タイムアウト検出と回復プロセスを示します。 このプロセスの詳細については、[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)を参照してください。
+図では、タイムアウト検出と回復プロセスを示します。 このプロセスの詳細については、次を参照してください。[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)します。
 
 ![タイムアウト検出と wddm を通じて gpu の復旧 (tdr)](images/timeoutdetectionrecoverygpusthroughwddm.jpg)
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb24fad8155abc27d2a270f794be19d1ba9a2fc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364016"
 ---
 # <a name="kspropertyextxportstate"></a>KSPROPERTY\_EXTXPORT\_状態
 
@@ -42,16 +42,16 @@ KSPROPERTY\_EXTXPORT\_状態プロパティを設定または外部のデバイ�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>デバイス</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565167" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565167)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568546" data-raw-source="[&lt;strong&gt;TRANSPORT_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568546)"><strong>TRANSPORT_STATE</strong></a></p></td>
@@ -63,12 +63,12 @@ KSPROPERTY\_EXTXPORT\_状態プロパティを設定または外部のデバイ�
 
 プロパティの値 (データの操作) は、トランスポート\_現在のモードと外部のトランスポートの状態を記述する状態の構造体。 たとえば、モード設定されている場合 (一時停止) を固定するを再生する状態を設定する場合があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **XPrtState** 、KSPROPERTY のメンバー\_EXTXPORT\_の構造は、モードと状態を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

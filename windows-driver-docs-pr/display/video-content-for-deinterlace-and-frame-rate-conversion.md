@@ -1,6 +1,6 @@
 ---
-title: ビデオ コンテンツのインターとフレーム レートの変換
-description: ビデオ コンテンツのインターとフレーム レートの変換
+title: デインターレースおよびフレーム レート変換のビデオ コンテンツ
+description: デインターレースおよびフレーム レート変換のビデオ コンテンツ
 ms.assetid: 627b394e-c2e1-4327-adaa-0c3436ba3d1a
 keywords:
 - WDK DirectX VA デインター レース、ビデオ コンテンツを受信しました
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bd9bbf34e0176d2f8fc38e42b1f32fd7b7b3ba6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365022"
 ---
-# <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>ビデオ コンテンツのインターとフレーム レートの変換
+# <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>デインターレースおよびフレーム レート変換のビデオ コンテンツ
 
 
 ## <span id="ddk_video_content_for_deinterlace_and_frame_rate_conversion_gg"></span><span id="DDK_VIDEO_CONTENT_FOR_DEINTERLACE_AND_FRAME_RATE_CONVERSION_GG"></span>
@@ -44,8 +44,8 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -97,8 +97,8 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -126,8 +126,8 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -155,8 +155,8 @@ DXVA\_480 p コンテンツのフレーム レートの変換を実行して、�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

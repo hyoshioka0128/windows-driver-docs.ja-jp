@@ -4,11 +4,11 @@ description: DDInstall.Software セクションには、ソフトウェア コ�
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 834120ca5ae4fc2c96f1e0f7ea0d30ffafe36340
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370674"
 ---
 # <a name="inf-ddinstallsoftware-section"></a>INF DDInstall.Software セクション
 
@@ -34,7 +34,7 @@ AddSoftware=SoftwareName,[flags],software-install-section
 
 **AddSoftware**=*SoftwareName,[flags],software-install-section*
 
-このディレクティブは、INF ライターの定義を参照*ソフトウェアのインストール-セクション*ソフトウェア コンポーネントの INF ファイルに別の場所。  詳細については、[ **INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md)を参照してください。
+このディレクティブは、INF ライターの定義を参照*ソフトウェアのインストール-セクション*ソフトウェア コンポーネントの INF ファイルに別の場所。  詳細については、次を参照してください。 [ **INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md)します。
 
 ## <a name="remarks"></a>注釈
 

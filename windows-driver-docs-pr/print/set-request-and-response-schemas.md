@@ -1,17 +1,17 @@
 ---
-title: セットの要求および応答スキーマ
+title: Set 要求と応答のスキーマ
 description: セットの要求スキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。
 ms.assetid: 88E7F06C-3232-48C3-A0D6-2BEFF4ABA188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9fddf9586613f4a19dc42e81e627951ccef7398
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367590"
 ---
-# <a name="set-request-and-response-schemas"></a>セットの要求および応答スキーマ
+# <a name="set-request-and-response-schemas"></a>Set 要求と応答のスキーマ
 
 
 セットの要求スキーマと対応する応答のスキーマ定義と、それぞれの例が下回っています。

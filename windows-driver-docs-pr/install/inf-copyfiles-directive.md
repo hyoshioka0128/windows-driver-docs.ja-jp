@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d5609c42f721688632bb6c70405057993588fa3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371074"
 ---
 # <a name="inf-copyfiles-directive"></a>INF CopyFiles ディレクティブ
 
@@ -124,7 +124,7 @@ INF-ライター定義*ファイルのセクション一覧*それぞれ別々 �
 <a href="" id="security-descriptor-string"></a>*セキュリティ記述子の文字列*  
 名前付きによってコピーされたすべてのファイルに適用する、セキュリティ記述子を指定*ファイルのセクション一覧*します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:**) セキュリティ コンポーネント。
 
-セキュリティ記述子文字列については、[セキュリティ記述子定義言語 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)を参照してください。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
+セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
 
 場合、<em>ファイルのセクション一覧</em>**.security**セクションが指定されていない、ファイルがファイルのコピー先ディレクトリのセキュリティ特性を継承します。
 
@@ -135,7 +135,7 @@ INF-ライター定義*ファイルのセクション一覧*それぞれ別々 �
 
 *いない*特権を持たないユーザーに書き込みアクセスを許可する ACE 文字列を指定します。
 
-セキュリティ記述子を指定する方法の詳細については、[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)を参照してください。
+セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
 
 <a name="remarks"></a>コメント
 -------
@@ -154,7 +154,7 @@ INF ファイル ライターは、INF を使用して、ソース メディア�
 - すべて*ファイルのセクション一覧*名は、INF ファイルに固有である必要がありますが、それを参照できます**CopyFiles**、 [ **DelFiles**](inf-delfiles-directive.md)、または[**RenFiles** ](inf-renfiles-directive.md)他の場所で同じ INF ファイルのディレクティブ。 セクション名が記載されている一般的な規則に従う必要があります[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 - いずれかで指定されているファイル名、 **@** <em>filename</em>または*ファイルのセクション一覧*エントリは、ソース メディア上のファイルの正確な名前である必要があります。 % を使用することはできません*strkey*% トークン ファイル名を指定します。 % の詳細については*strkey*% のトークンを参照してください[ **INF 文字列セクション**](inf-strings-section.md)します。
 - **CopyFiles**ディレクティブが修飾をサポートしていません、*ファイルのセクション一覧*システム定義のプラットフォームの拡張機能の名前 (**.nt**、 **.ntx86**、 **.ntia64**、または **.ntamd64**)。
-- 使用しない**CopyFiles** INF ファイルをコピーするディレクティブ。 詳細については、[INF ファイルのコピー](copying-inf-files.md)を参照してください。
+- 使用しない**CopyFiles** INF ファイルをコピーするディレクティブ。 詳細については、次を参照してください。 [INF ファイルのコピー](copying-inf-files.md)します。
 
 Windows Vista 以降では、次の点にも適用されます、INF **CopyFiles**ディレクティブ。
 

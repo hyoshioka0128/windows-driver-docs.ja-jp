@@ -5,11 +5,11 @@ ms.assetid: 4b8ed75e-1f03-4b7a-ad9d-0dfa9b20274c
 ms.date: 11/29/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 019da4445482ffffe61e6117e0d17eff1a478ce4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368188"
 ---
 # <a name="spb-io-requests"></a>SPB の I/O 要求
 システム提供 CTL_CODE マクロを定義する I/O 制御コードに記載されてを使用して、Spb.h で IOCTL_SPB_ * 制御コードを定義します。

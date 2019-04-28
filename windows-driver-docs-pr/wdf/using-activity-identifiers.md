@@ -1,17 +1,17 @@
 ---
-title: アクティビティの識別子を使用してください。
-description: アクティビティの識別子を使用してください。
+title: アクティビティ識別子の使用
+description: アクティビティ識別子の使用
 ms.assetid: 2B70953F-5192-4654-9506-6A84373D20B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f180ccd37ac7c5d12adc3cb820f9da59fdc7a77f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363479"
 ---
-# <a name="using-activity-identifiers"></a>アクティビティの識別子を使用してください。
+# <a name="using-activity-identifiers"></a>アクティビティ識別子の使用
 
 
 フレームワーク バージョン 1.11 以降では、UMDF ドライバーは、設定し、アクティビティ識別子 (Id) を取得します。 アクティビティ Id では、複数の I/O 要求を関連付けることが許可されること Event Tracing for Windows (ETW) を使用してそれらを追跡できるようにトレースします。 このトピックでは、アクティビティ Id、ドライバーが使用して可能なシナリオについて説明します。
@@ -21,7 +21,7 @@ ms.locfileid: "56537557"
 
 ドライバーの I/O ディスパッチ コールバック関数では、複数のフレームワークに、受信要求の結果として I/O 要求を作成可能性があります。 ドライバーが元の要求アクティビティ ID を取得し、新しい要求で呼び出すことによって設定[ **WdfRequestRetrieveActivityId** ](https://msdn.microsoft.com/library/windows/hardware/dn265621)と[ **WdfRequestSetActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265622)します。
 
-コード例では、[ **WdfRequestRetrieveActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265621)を参照してください。
+コード例では、次を参照してください。 [ **WdfRequestRetrieveActivityId**](https://msdn.microsoft.com/library/windows/hardware/dn265621)します。
 
 ## <a name="associating-new-requests-with-an-existing-thread"></a>新しい要求を既存のスレッドに関連付ける
 

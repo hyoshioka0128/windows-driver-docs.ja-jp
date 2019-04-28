@@ -1,6 +1,6 @@
 ---
-title: ハードウェア ベースの DVD のデコード
-description: ハードウェア ベースの DVD のデコード
+title: ハードウェアベースの DVD デコード
+description: ハードウェアベースの DVD デコード
 ms.assetid: 73a32be7-f740-47e8-8177-f204e432c5a6
 keywords:
 - DVD デコーダー ミニドライバー WDK、ハードウェア ベース DVD のデコード
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b69934b2ad6ce257048e084fd40495799832f81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363510"
 ---
-# <a name="hardware-based-dvd-decoding"></a>ハードウェア ベースの DVD のデコード
+# <a name="hardware-based-dvd-decoding"></a>ハードウェアベースの DVD デコード
 
 
 

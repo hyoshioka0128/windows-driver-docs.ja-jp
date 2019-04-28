@@ -1,5 +1,5 @@
 ---
-title: WDDM 1.2 以降のシームレスな状態遷移を提供します。
+title: WDDM 1.2 以降でのシームレスな状態遷移の提供
 description: いくつかの機能は、ブート プロセス、電力の少ない状態から遷移、およびオペレーティング システムのコントロールに遷移中に画面の点滅を最小限に抑えるのに役立ちます。
 ms.assetid: CD2208AA-62B6-4BAD-BE7C-0791B13D1E96
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 110fad8e532db83f0010651275cc867add39de5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361938"
 ---
-# <a name="providing-seamless-state-transitions-in-wddm-12-and-later"></a>WDDM 1.2 以降のシームレスな状態遷移を提供します。
+# <a name="providing-seamless-state-transitions-in-wddm-12-and-later"></a>WDDM 1.2 以降でのシームレスな状態遷移の提供
 
 
 以降 Windows 8 では、いくつかの機能を画面の点滅を排除または最小限に役立つ、ちらつきのブート プロセス中に、電力の少ない状態から遷移中に、および遷移中にでは、チェックをドライバーをアップグレードまたはシステムのバグのオペレーティング システムのコントロールに戻します。 さらに、Windows 8 およびそれ以降のコンピューターでシステム ファームウェアでは、時の電源をパネルを表示し、オペレーティング システムにこの情報を渡すネイティブの解像度との統合されたタイミングを検出する必要があります。 Windows 表示 Driver Model (WDDM) 1.2 および以降の表示のミニポート ドライバーには、この動作をサポートする必要があります。

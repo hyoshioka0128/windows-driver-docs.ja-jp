@@ -1,6 +1,6 @@
 ---
-title: 撤退操作
-description: 撤退操作
+title: リトリート操作
+description: リトリート操作
 ms.assetid: fdf1228b-ccae-4079-b968-b4dbb5665555
 keywords:
 - ネットワーク データ WDK、撤退操作
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c627ac99fb778ce7a3346f899804f5ce77c9b306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362933"
 ---
-# <a name="retreat-operations"></a>撤退操作
+# <a name="retreat-operations"></a>リトリート操作
 
 
 

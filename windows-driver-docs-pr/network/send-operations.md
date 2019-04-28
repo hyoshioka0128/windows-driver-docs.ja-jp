@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b2840ade07e8e9f7531afdc4fe3bf329c1aadae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365762"
 ---
 # <a name="send-operations"></a>送信操作
 
@@ -20,9 +20,9 @@ ms.locfileid: "56548810"
 
  
 
-呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
+呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
 
-通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://msdn.microsoft.com/library/windows/hardware/ff547571)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
+通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://msdn.microsoft.com/library/windows/hardware/ff547571)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
 **注**  Windows Vista の IHV 拡張機能の DLL は、基本的なサービスのインフラストラクチャ (BSS) ネットワークの設定のみをサポートします。
 
@@ -58,7 +58,7 @@ ms.locfileid: "56548810"
     </tr>
     <tr class="even">
     <td align="left"><p>Frame コントロール</p></td>
-    <td align="left"><p>種類</p></td>
+    <td align="left"><p>型</p></td>
     <td align="left"><p>X</p></td>
     <td align="left"></td>
     </tr>
@@ -148,7 +148,7 @@ ms.locfileid: "56548810"
     </tr>
     <tr class="odd">
     <td align="left"><p>シーケンス コントロール</p></td>
-    <td align="left"><p>シーケンス番号</p></td>
+    <td align="left"><p>Sequence Number</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>

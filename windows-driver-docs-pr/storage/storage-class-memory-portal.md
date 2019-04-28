@@ -5,11 +5,11 @@ ms.assetid: e4f354d0-f292-4dc2-a7e3-edd8dfa63b90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: abdc8fa4f230f816119a4f21f73b7371b1241909
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360865"
 ---
 # <a name="storage-class-memory"></a>記憶域クラス メモリ
 

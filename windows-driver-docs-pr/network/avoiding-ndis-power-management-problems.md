@@ -1,6 +1,6 @@
 ---
-title: NDIS 電源管理の問題を回避
-description: NDIS 電源管理の問題を回避
+title: NDIS 電源管理の問題の回避
+description: NDIS 電源管理の問題の回避
 ms.assetid: 58bd91d5-68bd-471d-a961-6e0676d4a352
 keywords:
 - WDK の NDIS ミニポート、問題の電源管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbe1e28f0b61cf833cae2e14fdc48519fab449cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367695"
 ---
-# <a name="avoiding-ndis-power-management-problems"></a>NDIS 電源管理の問題を回避
+# <a name="avoiding-ndis-power-management-problems"></a>NDIS 電源管理の問題の回避
 
 
 

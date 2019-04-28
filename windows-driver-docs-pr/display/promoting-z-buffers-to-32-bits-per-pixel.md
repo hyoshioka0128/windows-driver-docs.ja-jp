@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4924724a84da6506aa7cd08bbbd4abb2148e18b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370350"
 ---
 # <a name="promoting-z-buffers-to-32-bits-per-pixel"></a>Z バッファーを 32 ビット/ピクセルに昇格
 

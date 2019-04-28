@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチの拡張機能を有効にします。
-description: HYPER-V 拡張可能スイッチの拡張機能を有効にします。
+title: Hyper-V 拡張可能スイッチ拡張機能の有効化
+description: Hyper-V 拡張可能スイッチ拡張機能の有効化
 ms.assetid: 13FD68CB-8F50-4BE3-8822-03464D8C118C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d1a3a90dcff5d00d692ca2d4598d2b3568e05ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372499"
 ---
-# <a name="enabling-hyper-v-extensible-switch-extensions"></a>HYPER-V 拡張可能スイッチの拡張機能を有効にします。
+# <a name="enabling-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能の有効化
 
 
 HYPER-V 拡張可能スイッチの拡張機能がインストールされているときに、拡張可能スイッチの各インスタンスにバインドされます。 ただし、拡張機能は既定で無効になっている、拡張可能スイッチのインスタンスごとに明示的に有効にする必要があります。

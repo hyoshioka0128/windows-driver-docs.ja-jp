@@ -1,6 +1,6 @@
 ---
-title: ネットワーク アダプターのデバイスの電源の状態
-description: ネットワーク アダプターのデバイスの電源の状態
+title: ネットワーク アダプターのデバイス電源状態
+description: ネットワーク アダプターのデバイス電源状態
 ms.assetid: 969aadc9-e797-4a07-9714-8c2c5a6357da
 keywords:
 - Nic の WDK ネットワーク、電源の状態
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d05eb24845eea55e44ebc3900835fcab9282229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364180"
 ---
-# <a name="device-power-states-for-network-adapters"></a>ネットワーク アダプターのデバイスの電源の状態
+# <a name="device-power-states-for-network-adapters"></a>ネットワーク アダプターのデバイス電源状態
 
 
 
@@ -100,7 +100,7 @@ D1 の場合と同じです。
 この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。 ネットワーク アダプターおよびミニポート ドライバー。
 
 <a href="" id="power-consumption"></a>電力消費量  
-電力量が少なくとスリープの状態。 電力量がゼロ以外 (D3hot) あります。 または、正確に 0 (D3cold) がある可能性があります。 D3hot と D3cold の詳細については、[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)を参照してください。
+電力量が少なくとスリープの状態。 電力量がゼロ以外 (D3hot) あります。 または、正確に 0 (D3cold) がある可能性があります。 D3hot と D3cold の詳細については、次を参照してください。[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。
 
 <a href="" id="device-context"></a>デバイス コンテキスト  
 D1 の場合と同じです。

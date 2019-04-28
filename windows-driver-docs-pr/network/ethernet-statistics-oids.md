@@ -1,5 +1,5 @@
 ---
-title: イーサネットの統計情報の Oid
+title: イーサネット統計情報 OID
 description: このトピックでは、イーサネットの統計情報の Oid をについて説明します
 ms.assetid: b38ec79d-d8f3-46fa-9e6f-d42fa18f467c
 keywords:
@@ -7,17 +7,17 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15ca916da71bc065f6110428ed0606807ff817a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368316"
 ---
-# <a name="ethernet-statistics-oids"></a>イーサネットの統計情報の Oid
+# <a name="ethernet-statistics-oids"></a>イーサネット統計情報 OID
 
 次の表は、ネットワーク インターフェイス コント ローラー (Nic) のイーサネットの統計情報を取得するために使用する Oid をまとめたものです。
 
-| 長さ | クエリ | 設定 | 名前 |
+| 長さ | クエリ | Set | 名前 |
 | --- | --- | --- | --- |
 | 4 | O |   | [OID_802_3_RCV_OVERRUN](oid-802-3-rcv-overrun.md) |
 | 4 | O |   | [OID_802_3_XMIT_DEFERRED](oid-802-3-xmit-deferred.md) |

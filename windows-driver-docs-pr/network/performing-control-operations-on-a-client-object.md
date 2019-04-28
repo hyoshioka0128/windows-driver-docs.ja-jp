@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37c33669d826048428025bfc781d1040ad37c3d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372216"
 ---
 # <a name="performing-control-operations-on-a-client-object"></a>クライアント オブジェクトの制御操作の実行
 
 
-クライアント オブジェクトで管理操作を実行できます後は、Winsock カーネル (WSK) アプリケーションが正常に WSK サブシステムにアタッチと、( [ **WSK\_クライアント**](https://msdn.microsoft.com/library/windows/hardware/ff571155)) によって返された、添付ファイルの中に WSK サブシステムです。 これらのコントロールの操作では、特定のソケットに固有ではありませんが、代わりに一般的な範囲があります。 各クライアント オブジェクトで実行できる管理操作の詳細については、[WSK クライアントの管理操作](https://msdn.microsoft.com/library/windows/hardware/ff571157)を参照してください。
+クライアント オブジェクトで管理操作を実行できます後は、Winsock カーネル (WSK) アプリケーションが正常に WSK サブシステムにアタッチと、( [ **WSK\_クライアント**](https://msdn.microsoft.com/library/windows/hardware/ff571155)) によって返された、添付ファイルの中に WSK サブシステムです。 これらのコントロールの操作では、特定のソケットに固有ではありませんが、代わりに一般的な範囲があります。 各クライアント オブジェクトで実行できる管理操作の詳細については、次を参照してください。 [WSK クライアントの管理操作](https://msdn.microsoft.com/library/windows/hardware/ff571157)します。
 
 WSK アプリケーションを呼び出してコントロールのクライアント操作を実行します、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数。 **WskControlClient**関数で指し示されます、 **WskControlClient**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571175)添付ファイルの中に、WSK サブシステムによって返された構造体。
 

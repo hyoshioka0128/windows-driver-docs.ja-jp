@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_SCALE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c63bdc1a616b91d8e7f262c9107bcaac4e5d773
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362852"
 ---
 # <a name="oidgenreceivescalecapabilities"></a>OID\_GEN\_受信\_スケール\_機能
 

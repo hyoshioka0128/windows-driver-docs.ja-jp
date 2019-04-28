@@ -5,11 +5,11 @@ ms.assetid: 87583d0a-f7c9-49f0-953a-f51891260d75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa5257be05265c900a5047f786ecd9c173817d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364299"
 ---
 # <a name="introduction-to-release-signing"></a>リリース署名の概要
 
@@ -46,9 +46,9 @@ WHQL によってデジタル署名されたドライバー パッケージの�
 
 SPC と商用リリース証明書と総称されますとして[証明書をリリース](release-certificates.md)、リリースの証明書を使用して生成されたシグネチャと呼ばれる、*リリース署名*。
 
-リリース署名の要件と手順の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)を参照してください。
+リリース署名の要件と手順の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)します。
 
-**注**  ドライバー パッケージのリリースの署名に関連する手順については、[リリース ドライバー パッケージを署名する方法](how-to-release-sign-a-driver-package.md)を参照してください。 このトピックでは、リリース署名プロセスの概要を提供し、リリース署名の例の多くを使用してステップ実行、 *ToastPkg*サンプル ドライバー パッケージ内で、Windows Driver Kit (WDK)。
+**注**  ドライバー パッケージのリリースの署名に関連する手順については、次を参照してください。[リリース ドライバー パッケージを署名する方法](how-to-release-sign-a-driver-package.md)します。 このトピックでは、リリース署名プロセスの概要を提供し、リリース署名の例の多くを使用してステップ実行、 *ToastPkg*サンプル ドライバー パッケージ内で、Windows Driver Kit (WDK)。
 
  
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d93d6da03e3a1904a1e905e63ce223ef3500ea99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364511"
 ---
 # <a name="documentsizeautodetect-element"></a>DocumentSizeAutoDetect 要素
 
@@ -67,7 +67,7 @@ ms.locfileid: "56572724"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 指定したテキスト値が 1 の場合、または**true**デバイスのスキャンが自動的にスキャンの元のメディアのサイズを決定します。 場合、 **DocumentSizeAutoDetect**と共に要素が指定されて、 [ **ScanRegion** ](scanregion.md)要素の外側にある場合、スキャンのリージョンは無視されます、メディアのサイズをデバイスが検出されました。

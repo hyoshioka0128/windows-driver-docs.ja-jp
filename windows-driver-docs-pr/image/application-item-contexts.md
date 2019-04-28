@@ -1,17 +1,17 @@
 ---
-title: アプリケーション アイテムのコンテキスト
-description: アプリケーション アイテムのコンテキスト
+title: アプリケーション項目のコンテキスト
+description: アプリケーション項目のコンテキスト
 ms.assetid: d11b1750-999f-411c-9e83-6d2b20ce65db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfdd92b362f40573f2c4ced936a56dc21cb5fa5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367059"
 ---
-# <a name="application-item-contexts"></a>アプリケーション アイテムのコンテキスト
+# <a name="application-item-contexts"></a>アプリケーション項目のコンテキスト
 
 
 

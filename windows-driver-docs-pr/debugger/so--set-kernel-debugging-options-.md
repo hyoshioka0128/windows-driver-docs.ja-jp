@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 331c83819a53e818e1dfb962224b3e6583025d05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368108"
 ---
 # <a name="so-set-kernel-debugging-options"></a>so (カーネル デバッグ オプションの設定)
 
@@ -67,7 +67,7 @@ so [Options]
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 カーネル デバッグを使用してオプションを設定することも、 \_NT\_デバッグ\_オプション[環境変数](kernel-mode-environment-variables.md)します。

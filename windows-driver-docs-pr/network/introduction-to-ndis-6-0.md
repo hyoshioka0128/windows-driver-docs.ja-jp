@@ -9,11 +9,11 @@ keywords:
 ms.date: 01/09/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e70eeafb773d27d9cfdc47f9f72a92caafaaf6ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362903"
 ---
 # <a name="introduction-to-ndis-60"></a>NDIS 6.0 の概要
 
@@ -38,7 +38,7 @@ NDIS 6.0 とそれ以前のバージョンの違いの説明および NDIS 6.0 �
 ## <a name="related-topics"></a>関連トピック
 
 
-[ネットワークのドライバーの概要](introduction-to-network-drivers.md)
+[ネットワーク ドライバーの概要](introduction-to-network-drivers.md)
 
 [NDIS 6.1 の概要](introduction-to-ndis-6-1.md)
 

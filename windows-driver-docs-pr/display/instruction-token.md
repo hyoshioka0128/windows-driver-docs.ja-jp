@@ -1,17 +1,17 @@
 ---
-title: 命令のトークン
-description: 命令のトークン
+title: 命令トークン
+description: 命令トークン
 ms.assetid: bfeee1ad-aaf3-41d0-a667-15d22eccd1e9
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 91cbfeb2201b6c715617b2cbe5d6304476fe3f41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368584"
 ---
-# <a name="instruction-token"></a>命令のトークン
+# <a name="instruction-token"></a>命令トークン
 
 
 ## <span id="ddk_instruction_token_gg"></span><span id="DDK_INSTRUCTION_TOKEN_GG"></span>

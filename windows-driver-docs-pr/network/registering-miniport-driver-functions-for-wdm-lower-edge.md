@@ -1,6 +1,6 @@
 ---
-title: WDM 下端のミニポート ドライバー関数を登録します。
-description: WDM 下端のミニポート ドライバー関数を登録します。
+title: WDM の下端用のミニポート ドライバー関数の登録
+description: WDM の下端用のミニポート ドライバー関数の登録
 ms.assetid: 68048d36-d57c-4ad9-a15e-92b1d7866d4a
 keywords:
 - 関数の登録、NDIS WDM ミニポート ドライバー WDK ネットワーク
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2096d9945108bdf0fd1b18516da51bd2972af0c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373864"
 ---
-# <a name="registering-miniport-driver-functions-for-wdm-lower-edge"></a>WDM 下端のミニポート ドライバー関数を登録します。
+# <a name="registering-miniport-driver-functions-for-wdm-lower-edge"></a>WDM の下端用のミニポート ドライバー関数の登録
 
 
 

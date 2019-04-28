@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier のエラー コード
+title: 静的ドライバー検証ツールのエラー コード
 description: 次の表は、エラー コードと、可能ながそれらを解決するためのメソッドを提案 Static Driver Verifier が返す可能性のあるを一覧表示します。
 ms.assetid: AB644106-EB4A-448F-9DA3-D208A38B31F5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df0e5232033360497d000913ee13e4313c4bfb12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369732"
 ---
-# <a name="static-driver-verifier-error-codes"></a>Static Driver Verifier のエラー コード
+# <a name="static-driver-verifier-error-codes"></a>静的ドライバー検証ツールのエラー コード
 
 
 次の表では、Static Driver Verifier が可能であれば、それらを解決するためのメソッドを提示して、GUI から実行している場合に返す可能性のあるエラー コードを示します。  これらのコードでは、コマンドラインから実行する場合は表示されません。

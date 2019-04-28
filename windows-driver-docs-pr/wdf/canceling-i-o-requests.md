@@ -1,6 +1,6 @@
 ---
-title: I/O 要求をキャンセルします。
-description: I/O 要求をキャンセルします。
+title: I/O 要求のキャンセル
+description: I/O 要求のキャンセル
 ms.assetid: 9a486fa4-7fd3-4433-88aa-34a54d9b1e16
 keywords:
 - 要求の WDK KMDF、キャンセル要求を処理します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6859211afb123d3bc10039a67a203fe4490892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362800"
 ---
-# <a name="canceling-io-requests"></a>I/O 要求をキャンセルします。
+# <a name="canceling-io-requests"></a>I/O 要求のキャンセル
 
 
 

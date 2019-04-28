@@ -1,6 +1,6 @@
 ---
-title: セキュア デジタル (SD) デバイスの識別子
-description: セキュア デジタル (SD) デバイスの識別子
+title: Secure Digital (SD) デバイスの識別子
+description: Secure Digital (SD) デバイスの識別子
 ms.assetid: d5e112b7-29ed-4950-858c-81fe0d19a902
 keywords:
 - デバイスの識別文字列 WDK、SD デバイス
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91ba0562c4f2d84b2e81d3453ae6c9e28c8e85b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362992"
 ---
-# <a name="identifiers-for-secure-digital-sd-devices"></a>セキュア デジタル (SD) デバイスの識別子
+# <a name="identifiers-for-secure-digital-sd-devices"></a>Secure Digital (SD) デバイスの識別子
 
 
 SD バス ドライバーでは、ホスト コント ローラーのソケットに SD デバイスを検出すると、デバイスとその関数のデバイスやハードウェア Id を構築するカードのデバイスの構成を確認します。 SD の組み合わせのカードと多機能 SDIO デバイスは、バス ドライバーは、PDO とそれぞれの各関数のハードウェア ID を作成します。

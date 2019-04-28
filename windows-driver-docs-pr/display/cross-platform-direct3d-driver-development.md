@@ -1,6 +1,6 @@
 ---
-title: クロス プラットフォームの Direct3D ドライバーの開発
-description: クロス プラットフォームの Direct3D ドライバーの開発
+title: クロス プラットフォーム Direct3D ドライバーの開発
+description: クロス プラットフォーム Direct3D ドライバーの開発
 ms.assetid: 9363e0f9-4a58-4473-969f-eb54d0678632
 keywords:
 - クロス プラットフォーム開発の Direct3D WDK Windows 2000 の表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f4b318399ffa6c6d89e69d569b50653c6e6423
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370772"
 ---
-# <a name="cross-platform-direct3d-driver-development"></a>クロス プラットフォームの Direct3D ドライバーの開発
+# <a name="cross-platform-direct3d-driver-development"></a>クロス プラットフォーム Direct3D ドライバーの開発
 
 
 ## <span id="ddk_cross_platform_direct3d_driver_development_gg"></span><span id="DDK_CROSS_PLATFORM_DIRECT3D_DRIVER_DEVELOPMENT_GG"></span>

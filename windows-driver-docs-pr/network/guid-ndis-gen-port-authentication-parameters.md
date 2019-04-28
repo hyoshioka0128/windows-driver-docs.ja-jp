@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab1650b1f53d7feaff5eb98fef013107e77e8e18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361070"
 ---
 # <a name="guidndisgenportauthenticationparameters"></a>GUID_NDIS_GEN_PORT_AUTHENTICATION_PARAMETERS
 
@@ -21,5 +21,5 @@ NDIS に変換するには、この GUID、 [OID_GEN_PORT_AUTHENTICATION_PARAMET
 
 WMI の入力バッファーを指定します、 [NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904) NDIS_PORT_AUTHENTICATION_PARAMETERS 構造体が続く構造体。
 
-ポート パラメーターの詳細については、[OID_GEN_PORT_AUTHENTICATION_PARAMETERS](oid-gen-port-authentication-parameters.md)を参照してください。
+ポート パラメーターの詳細については、次を参照してください。 [OID_GEN_PORT_AUTHENTICATION_PARAMETERS](oid-gen-port-authentication-parameters.md)します。
 

@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a668010517364b7594fb0d58d736bc6af7442512
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364970"
 ---
 # <a name="fltparameters-for-irpmjmdlread-union"></a>FLT\_IRP のパラメーター\_MJ\_MDL\_読み取り共用体
 
@@ -53,16 +53,16 @@ typedef union _FLT_PARAMETERS {
 **FileOffset**  
 キャッシュされたファイル内のバイトを開始しています。
 
-**Length**  
+**長さ**  
 長さをバイト単位で、キャッシュされたファイルから読み取られるデータ。
 
-**Key**  
+**[キー]**  
 ターゲット ファイルのバイト範囲ロックに関連付けられているキーの値。 読み取る範囲と重複や、ファイル内で排他的にロックされている範囲のサブ範囲、このパラメーターはその排他ロックのキーである必要があります。 呼び出し元のスレッドの親プロセスが排他ロックを保持する必要があります。それ以外の場合、このパラメーターは無視されます。
 
 **MdlChain**  
 1 つ以上メモリ記述子のリスト (MDL) 読み取るデータを含むページを記述するのチェーンへのポインターを受け取る変数へのポインター。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673) IRP の構造\_MJ\_MDL\_読み取り操作が高速の I/O のパラメーターを含む**MdlRead**コールバック データによって表される操作 ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
@@ -71,7 +71,7 @@ typedef union _FLT_PARAMETERS {
 
 IRP\_MJ\_MDL\_は高速な I/O 操作の読み取り。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

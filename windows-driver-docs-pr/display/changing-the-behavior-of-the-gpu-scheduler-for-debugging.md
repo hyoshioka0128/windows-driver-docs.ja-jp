@@ -1,19 +1,19 @@
 ---
-title: デバッグの GPU のスケジューラの動作を変更します。
-description: デバッグの GPU のスケジューラの動作を変更します。
+title: デバッグ用の GPU スケジューラの動作の変更
+description: デバッグ用の GPU スケジューラの動作の変更
 ms.assetid: 72eef7bf-b775-4e02-acc6-b745a41c616a
 keywords:
 - GPU スケジューラ変更 WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27e02aeb61026ed4cf029dc42c6cac63abfe389
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363810"
 ---
-# <a name="changing-the-behavior-of-the-gpu-scheduler-for-debugging"></a>デバッグの GPU のスケジューラの動作を変更します。
+# <a name="changing-the-behavior-of-the-gpu-scheduler-for-debugging"></a>デバッグ用の GPU スケジューラの動作の変更
 
 
 ドライバーのデバッグのために、レジストリを構成することによってグラフィックス処理ユニット (GPU) のスケジューラの動作を変更できます。

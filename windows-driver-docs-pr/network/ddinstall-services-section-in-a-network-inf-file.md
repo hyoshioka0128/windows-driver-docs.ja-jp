@@ -1,6 +1,6 @@
 ---
-title: ネットワークの INF ファイルで DDInstall.Services セクション
-description: ネットワークの INF ファイルで DDInstall.Services セクション
+title: ネットワーク INF ファイル内の DDInstall.Services セクション
+description: ネットワーク INF ファイル内の DDInstall.Services セクション
 ms.assetid: 5d5cc0ac-fbe2-4791-9c74-fdf9906faff6
 keywords:
 - INF ファイルの WDK ネットワーク、DDInstall.Services セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dea6eebe720c0ed9ee78d4d28c4b9fc4a9d426a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370653"
 ---
-# <a name="ddinstallservices-section-in-a-network-inf-file"></a>ネットワークの INF ファイルで DDInstall.Services セクション
+# <a name="ddinstallservices-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の DDInstall.Services セクション
 
 
 
@@ -33,7 +33,7 @@ A *DDInstall*.**サービス**Net コンポーネント (アダプター) をイ
 
 **AddService**ディレクティブで、 *DDInstall*.**サービス**セクションを参照できます、*エラー ログ-インストール セクション*コンポーネントのエラー ログをインストールします。 エラー ログでは、すべてのネットワーク コンポーネントの省略可能です。
 
-詳細については、[ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)を参照してください。
+詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)します。
 
 例を次に、 *DDInstall*.**サービス** セクションで、*サービス-インストール セクション*、*エラー ログ-インストール セクション*、および*追加レジストリ セクション*によって参照されます。**AddReg**ディレクティブで、*エラー ログ-インストール セクション*:
 
@@ -57,7 +57,7 @@ HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\netevent.dll"
 HKR,,TypesSupported,0x00010001,7
 ```
 
-*ServiceName*のパラメーター、 **AddService**ディレクティブであり、上記の例では**a1**(最初の**AddService**パラメーター)、コンポーネントに一致する必要があります**Ndi\\サービス**値。 詳細については、[Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)を参照してください。
+*ServiceName*のパラメーター、 **AddService**ディレクティブであり、上記の例では**a1**(最初の**AddService**パラメーター)、コンポーネントに一致する必要があります**Ndi\\サービス**値。 詳細については、次を参照してください。 [Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)します。
 
  
 

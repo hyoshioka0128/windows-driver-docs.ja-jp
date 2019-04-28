@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd49afd8bca4bae0f4c37858374fa2e4e7f13120
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363280"
 ---
 # <a name="oidcodeletepvc"></a>OID_CO_DELETE_PVC
 
@@ -34,7 +34,7 @@ typedef struct _CO_PVC {
 
 PVC は、管理者によって手動で削除されます。 このようなアクティビティを監視するクライアントでは、この OID をコール マネージャーに送信することによって削除された PVC のコール マネージャーに通知します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

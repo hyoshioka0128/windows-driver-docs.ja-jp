@@ -1,6 +1,6 @@
 ---
-title: SAN 接続を設定します。
-description: SAN 接続を設定します。
+title: SAN 接続の設定
+description: SAN 接続の設定
 ms.assetid: f5d5e759-d77c-4db8-9b63-fb4c79344dff
 keywords:
 - Windows Sockets 直接 WDK、接続のセットアップ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc5330f637ae8d672220e1dcc59fc55dba08c30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362023"
 ---
-# <a name="setting-up-a-san-connection"></a>SAN 接続を設定します。
+# <a name="setting-up-a-san-connection"></a>SAN 接続の設定
 
 
 

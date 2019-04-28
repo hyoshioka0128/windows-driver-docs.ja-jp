@@ -1,17 +1,17 @@
 ---
-title: D3cold への切り替えを有効にします。
+title: D3cold への遷移の有効化
 description: Windows のすべてのバージョンでは、D3cold にする (S1 S4 から、システム低電力状態のいずれか) で、コンピューターがスリープ状態中にデバイスを有効にします。
 ms.assetid: C2C6166D-8269-4FCE-81A8-B350626052D4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 13ce1874616b11a35323b9acce5b247bdaee4f2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362017"
 ---
-# <a name="enabling-transitions-to-d3cold"></a>D3cold への切り替えを有効にします。
+# <a name="enabling-transitions-to-d3cold"></a>D3cold への遷移の有効化
 
 
 Windows のすべてのバージョンでは、D3cold にする (S1 S4 から、システム低電力状態のいずれか) で、コンピューターがスリープ状態中にデバイスを有効にします。 コンピューターでは、S0 が終了する前に関数ドライバー、バス ドライバー、およびフィルター ドライバー連携 D3hot にデバイスを移動します。 コンピューターが省電力 Sx 状態になったときこの遷移副作用 D3cold D3hot からデバイスに移動します。
@@ -22,7 +22,7 @@ Windows 8 以降では、デバイスは入力をコンピューターは、S0 �
 
 ドライバーは、D3hot から D3cold へのデバイスの移行を開始しません。 代わりに、このデバイスで共通の電源を共有する他のすべてのデバイスが D3hot では、D3cold を入力する準備がときに、この遷移が発生します。 これらのデバイスの最後には、D3hot が入るは、基になるバス ドライバーとシステム ファームウェアは、電源を削除し、デバイスを調和よく D3cold を入力します。
 
-デバイスの PPO ドライバーは、D3hot から D3cold へのデバイスの移行を有効にするかどうかをオペレーティング システムに指示します。 ドライバーが、デバイスをインストールする INF ファイルでは、この情報を指定またはドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://msdn.microsoft.com/library/windows/hardware/hh967716)実行時に動的に有効または無効に、デバイスの日常的なD3cold に遷移します。 詳細については、[GUID を使用して\_D3COLD\_サポート\_ドライバー インターフェイス](using-guid-d3cold-support-interface.md)を参照してください。
+デバイスの PPO ドライバーは、D3hot から D3cold へのデバイスの移行を有効にするかどうかをオペレーティング システムに指示します。 ドライバーが、デバイスをインストールする INF ファイルでは、この情報を指定またはドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://msdn.microsoft.com/library/windows/hardware/hh967716)実行時に動的に有効または無効に、デバイスの日常的なD3cold に遷移します。 詳細については、次を参照してください。 [GUID を使用して\_D3COLD\_サポート\_ドライバー インターフェイス](using-guid-d3cold-support-interface.md)します。
 
 D3cold を入力するデバイスを有効にすると、ドライバーは、次の動作を保証します。
 

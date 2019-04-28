@@ -1,5 +1,5 @@
 ---
-title: フィルタ リング層識別子の管理
+title: 管理フィルター レイヤー識別子
 description: このセクションでは、レイヤーの識別子をフィルター処理の管理について説明します。
 ms.assetid: 3287d763-9d73-4bf3-8a32-81acb27f0d36
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a97d54fdbf5f0b2f9ff8d51b5821e6b280bcac6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365778"
 ---
-# <a name="management-filtering-layer-identifiers"></a>フィルタ リング層識別子の管理
+# <a name="management-filtering-layer-identifiers"></a>管理フィルター レイヤー識別子
 
 管理のフィルタ リング層識別子は通常、ユーザー モード アプリケーションとは、128 ビット サイズでは、GUID によって表される各によって使用されます。 これらの識別子の定義は次のとおりです。
 

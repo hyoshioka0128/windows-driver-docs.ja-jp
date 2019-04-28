@@ -1,6 +1,6 @@
 ---
-title: Traceview でコマンド ライン インターフェイス
-description: Traceview でコマンド ライン インターフェイス
+title: TraceView のコマンド ライン インターフェイス
+description: TraceView のコマンド ライン インターフェイス
 ms.assetid: da38268f-ebdf-468c-95fe-500ba747047a
 keywords:
 - Traceview で WDK、コマンド ライン インターフェイス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2e74c971fc34d4d7da368ccf676d9d847b54c4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369620"
 ---
-# <a name="traceview-command-line-interface"></a>Traceview でコマンド ライン インターフェイス
+# <a name="traceview-command-line-interface"></a>TraceView のコマンド ライン インターフェイス
 
 > [!IMPORTANT]
 > Traceview でのコマンド ライン インターフェイスをすべてのスタンドアロン ツールで使用できる最新の更新プログラムにするにはありません。 使用することをお勧め[Tracelog](tracelog.md)、 [Tracefmt](tracefmt.md)、および[Tracepdb](tracepdb.md)代わりにします。

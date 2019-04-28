@@ -5,11 +5,11 @@ ms.assetid: 85967cd6-6945-46d1-8872-7b000689b6db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a9de76262279f54f1fa8d203d97ce86f2f6798a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365863"
 ---
 # <a name="looping-back-ndis-packets"></a>NDIS パケットのループ バック
 

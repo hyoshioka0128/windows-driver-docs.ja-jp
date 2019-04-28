@@ -1,17 +1,17 @@
 ---
-title: HID のコレクションを開く
+title: HID コレクションを開く
 description: このセクションでは、HID クラス ドライバー、デバイスの HID コレクションを操作するには、(HIDClass) を使用した HID クライアントと通信する方法について説明します。
 ms.assetid: 97550D1D-2C37-4996-8522-DB18B1AA3C4A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be15d880b997d6bff9ab3b1c6637270212955a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364616"
 ---
-# <a name="opening-hid-collections"></a>HID のコレクションを開く
+# <a name="opening-hid-collections"></a>HID コレクションを開く
 
 
 このセクションでは、HID クラス ドライバー、デバイスの HID コレクションを操作するには、(HIDClass) を使用した HID クライアントと通信する方法について説明します。

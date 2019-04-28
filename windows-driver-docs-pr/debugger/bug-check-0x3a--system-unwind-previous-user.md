@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bc85cbf68b893ebac3a18fa501b6c81515d40b1a
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361524"
 ---
 # <a name="bug-check-0x3a-systemunwindprevioususer"></a>バグ チェック 0x3A:システム\_アンワインド\_前\_ユーザー
 

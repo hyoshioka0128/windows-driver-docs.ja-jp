@@ -13,11 +13,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1589aa5303b74952d2d4327155091a6a76093a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368812"
 ---
 # <a name="sensor-icon-constants"></a>センサー アイコン定数
 
@@ -37,7 +37,7 @@ ms.locfileid: "56559372"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>一般</p></td>
+<td><p>ジェネリック</p></td>
 <td><p>1000</p></td>
 </tr>
 <tr class="even">
@@ -89,7 +89,7 @@ ms.locfileid: "56559372"
 <td><p>1012</p></td>
 </tr>
 <tr class="even">
-<td><p>Orientation</p></td>
+<td><p>方向</p></td>
 <td><p>1013</p></td>
 </tr>
 <tr class="odd">

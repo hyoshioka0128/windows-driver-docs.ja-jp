@@ -1,6 +1,6 @@
 ---
-title: テクスチャのステージ
-description: テクスチャのステージ
+title: テクスチャ ステージ
+description: テクスチャ ステージ
 ms.assetid: 98149615-ef64-4b0d-9adf-d6b72324e1b4
 keywords:
 - 複数のテクスチャ WDK Direct3D テクスチャ ステージ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 646d0bc618c5836d4ea062fb8c066e9a19815fea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362624"
 ---
-# <a name="texture-stages"></a>テクスチャのステージ
+# <a name="texture-stages"></a>テクスチャ ステージ
 
 
 ## <span id="ddk_texture_stages_gg"></span><span id="DDK_TEXTURE_STAGES_GG"></span>

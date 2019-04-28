@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_FLUSH_BUFFERS カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: dafd90b42a77ddaa816278fd6b484ce6a664d6f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368518"
 ---
 # <a name="irpmjflushbuffers"></a>IRP\_MJ\_フラッシュ\_バッファー
 
@@ -38,7 +38,7 @@ ms.locfileid: "56531751"
 
 ドライバーは、現在、デバイスにキャッシュされているか、フラッシュの要求を完了する前に、ドライバーの内部バッファーに保持されているすべてのデータを転送します。 ドライバーを専用デバイス内部的にデータ バッファーに格納する可能性があります単にデータを破棄現在バッファリングされているデバイス、デバイスの性質によって、フラッシュの IRP を完了する前にします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: ビデオのデコード DirectX VA 2.0 の高速化
-description: ビデオのデコード DirectX VA 2.0 の高速化
+title: DirectX VA 2.0 のビデオ デコード アクセラレータ
+description: DirectX VA 2.0 のビデオ デコード アクセラレータ
 ms.assetid: c393a16c-24bd-4a76-b502-3e8287085307
 keywords:
 - ビデオ アクセラレータ WDK の DirectX の表示、ビデオのデコード
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e01a98f453e494d47cd5c5a6942371e2a62c70c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365066"
 ---
-# <a name="video-decode-acceleration-for-directx-va-20"></a>ビデオのデコード DirectX VA 2.0 の高速化
+# <a name="video-decode-acceleration-for-directx-va-20"></a>DirectX VA 2.0 のビデオ デコード アクセラレータ
 
 
 ## <span id="ddk_video_decode_acceleration_for_directx_va_2_0_gg"></span><span id="DDK_VIDEO_DECODE_ACCELERATION_FOR_DIRECTX_VA_2_0_GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: 列挙のプロパティ
+title: 列挙プロパティ
 description: このトピックでは、PnP ドライバー ストアから利用可能なセンサーの静的なプロパティについて説明します。
 ms.assetid: E4663410-375F-48B9-A9E4-6E608FA8D2FF
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c39511243b80dd0b15a0cbfaae2cfdad6b31efe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362287"
 ---
-# <a name="enumeration-properties"></a>列挙のプロパティ
+# <a name="enumeration-properties"></a>列挙プロパティ
 
 
 このトピックでは、PnP ドライバー ストアから利用可能なセンサーの静的なプロパティについて説明します。
@@ -40,7 +40,7 @@ ms.locfileid: "56553410"
 <td><p>DEVPKEY_Sensor_Type</p></td>
 <td><p>VT_CLSID</p></td>
 <td><p>必須</p></td>
-<td><p>センサーの種類を識別する GUID。 センサーの種類の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>を参照してください。</p></td>
+<td><p>センサーの種類を識別する GUID。 センサーの種類の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_Category</p></td>

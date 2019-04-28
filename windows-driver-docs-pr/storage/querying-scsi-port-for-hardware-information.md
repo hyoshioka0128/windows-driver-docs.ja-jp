@@ -1,17 +1,17 @@
 ---
-title: SCSI ポート ハードウェア情報の照会
-description: SCSI ポート ハードウェア情報の照会
+title: SCSI ポートへのハードウェア情報のクエリ
+description: SCSI ポートへのハードウェア情報のクエリ
 ms.assetid: 2f3adc40-6e5a-4a70-8298-60359b77f04f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e567adf2764ba2962acc8fad0d13eb6091ad30d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360873"
 ---
-# <a name="querying-scsi-port-for-hardware-information"></a>SCSI ポート ハードウェア情報の照会
+# <a name="querying-scsi-port-for-hardware-information"></a>SCSI ポートへのハードウェア情報のクエリ
 
 
 ## <span id="ddk_querying_scsi_port_for_hardware_information_kg"></span><span id="DDK_QUERYING_SCSI_PORT_FOR_HARDWARE_INFORMATION_KG"></span>

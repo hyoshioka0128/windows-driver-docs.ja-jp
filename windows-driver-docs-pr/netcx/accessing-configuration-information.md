@@ -1,19 +1,19 @@
 ---
-title: 構成情報にアクセスします。
-description: 構成情報にアクセスします。
+title: 構成情報へのアクセス
+description: 構成情報へのアクセス
 ms.assetid: ABEC75AE-9CE3-4574-B388-BC48D2BC8154
 keywords:
 - NetAdapterCx NetCx 構成情報へのアクセスの構成情報にアクセスします。
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1980dd36326717ce7d1b2cdd7d7790c236f6a387
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363672"
 ---
-# <a name="accessing-configuration-information"></a>構成情報にアクセスします。
+# <a name="accessing-configuration-information"></a>構成情報へのアクセス
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

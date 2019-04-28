@@ -1,6 +1,6 @@
 ---
-title: PnP ドライバー設計のガイドライン
-description: PnP ドライバー設計のガイドライン
+title: PnP ドライバーの設計ガイドライン
+description: PnP ドライバーの設計ガイドライン
 ms.assetid: 4e4a6a8e-3c7f-4561-bbe1-a8c06fe22d0a
 keywords:
 - PnP WDK カーネルでは、デザインのガイドライン
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 368f95f7c62af38a3bcd99033c160b66cffb1382
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369234"
 ---
-# <a name="pnp-driver-design-guidelines"></a>PnP ドライバー設計のガイドライン
+# <a name="pnp-driver-design-guidelines"></a>PnP ドライバーの設計ガイドライン
 
 
 
@@ -36,7 +36,7 @@ PnP をサポートするには、ドライバーは次のガイドラインに�
 
 -   含める必要があります、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)ルーチン。
 
-    このディスパッチ ルーチンを処理する必要があります[ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)要求と関連付けられているマイナー機能コード。 詳細については、[DispatchPnP ルーチン](dispatchpnp-routines.md)を参照してください。
+    このディスパッチ ルーチンを処理する必要があります[ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)要求と関連付けられているマイナー機能コード。 詳細については、次を参照してください。 [DispatchPnP ルーチン](dispatchpnp-routines.md)します。
 
 -   ハードウェアは、検索する必要があります。
 

@@ -1,17 +1,17 @@
 ---
-title: NDIS 6.40 データ構造を使用
+title: NDIS 6.40 データ構造の使用
 description: 次のような構造および列挙体は、NDIS 6.40 に更新されました。
 ms.assetid: 99E71C21-023A-4E17-B689-89FB2C3A404E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 102fc6f47c3da5e5e237dc2dce23dce8de818444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372097"
 ---
-# <a name="using-ndis-640-data-structures"></a>NDIS 6.40 データ構造を使用
+# <a name="using-ndis-640-data-structures"></a>NDIS 6.40 データ構造の使用
 
 
 次のような構造および列挙体は、NDIS 6.40 に更新されました。

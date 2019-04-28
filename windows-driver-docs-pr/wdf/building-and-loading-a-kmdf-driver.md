@@ -1,5 +1,5 @@
 ---
-title: ビルドと WDF ドライバーの読み込み
+title: WDF ドライバーのビルドと読み込み
 description: このトピックでは、Visual Studio で、対象のオペレーティング システムとドライバーのプロジェクトのフレームワークのバージョンを選択する方法について説明します。 共同インストーラーとかどうか、ドライバー パッケージにこのコンポーネントを含める必要がありますを決定する方法についても説明します。
 ms.assetid: 82c77b1f-4bf0-46d9-bae3-822e9be5a7fb
 keywords:
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d70338ba8c3834b803fad13de109cea49061ca98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362706"
 ---
-# <a name="building-and-loading-a-wdf-driver"></a>ビルドと WDF ドライバーの読み込み
+# <a name="building-and-loading-a-wdf-driver"></a>WDF ドライバーのビルドと読み込み
 
 
 このトピックでは、Visual Studio で、対象のオペレーティング システムとドライバーのプロジェクトのフレームワークのバージョンを選択する方法について説明します。 共同インストーラーとかどうか、ドライバー パッケージにこのコンポーネントを含める必要がありますを決定する方法についても説明します。
@@ -47,7 +47,7 @@ Windows Driver Kit (WDK) に付属する Windows 8.1 をビルド KMDF 1.9、1.1
 -   変更、**プロジェクト構成**での設定、 **Configuration Manager**に適切な値 (など**Win7 デバッグ**)。
 -   変更、KMDF\_バージョン\_わずかであるか UMDF\_バージョン\_マイナー値、[ドライバー モデルの設定](https://msdn.microsoft.com/windows-drivers/develop/driver_model_settings_properties_for_driver_projects)(11) などの適切な値にします。
 
-KMDF および UMDF バージョンに関する詳細については、[KMDF バージョン履歴](kmdf-version-history.md)と[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
+KMDF および UMDF バージョンに関する詳細については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)と[UMDF バージョン履歴](umdf-version-history.md)します。
 
 ## <a name="when-do-i-need-to-include-a-co-installer-or-msu-in-my-driver-package"></a>ときに共同インストーラーまたは .msu を ドライバー パッケージに含める必要があるのでしょうか。
 

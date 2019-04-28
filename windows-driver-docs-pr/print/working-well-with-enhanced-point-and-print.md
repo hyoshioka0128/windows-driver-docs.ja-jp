@@ -1,17 +1,17 @@
 ---
-title: ポイント アンド プリントの強化されたもの操作
+title: 強化されたポイント アンド プリントを使いこなす
 description: 更新済みのプリンターの共有メカニズムは拡張されたポイント アンド プリントと呼ばれます、印刷クライアント製造元で提供されるデバイス ドライバーをプリント サーバーからダウンロードすることがなく v4 共有に印刷することができます。
 ms.assetid: AD01AAD1-B209-419A-B73B-CA746F1B772A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a791b6b9c0c6ae788da290968f6686a27566926d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366534"
 ---
-# <a name="working-well-with-enhanced-point-and-print"></a>ポイント アンド プリントの強化されたもの操作
+# <a name="working-well-with-enhanced-point-and-print"></a>強化されたポイント アンド プリントを使いこなす
 
 
 更新済みのプリンターの共有メカニズムは拡張されたポイント アンド プリントと呼ばれます、印刷クライアント製造元で提供されるデバイス ドライバーをプリント サーバーからダウンロードすることがなく v4 共有に印刷することができます。

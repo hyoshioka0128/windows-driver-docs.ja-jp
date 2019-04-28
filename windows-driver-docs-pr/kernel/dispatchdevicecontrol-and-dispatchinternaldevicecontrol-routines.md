@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9cd9fc4afcf5b0a8483b767409bbe5d9eeb9360
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362034"
 ---
 # <a name="dispatchdevicecontrol-and-dispatchinternaldevicecontrol-routines"></a>DispatchDeviceControl および DispatchInternalDeviceControl ルーチン
 
@@ -32,7 +32,7 @@ I/O 制御コードのセットを定義しているシステムの周辺機器�
 
 新しいドライバーのサポートし、相互運用するように設計特定システム提供のドライバー、オペレーティング システムものセットを定義の I/O 制御コード**IRP\_MJ\_内部\_デバイス\_コントロール**要求。 ほとんどの場合では、これらのパブリックの I/O 制御コードは、基になるデバイス ドライバーを使用した相互運用するより高度なドライバーのアドオンを許可します。
 
-システム提供平行ドライバーがドライバーのベンダーから提供された送信 I/O 制御コードが内部のセットをサポートする例として、 **IRP\_MJ\_内部\_デバイス\_コントロール**要求。 詳細については、[パラレル ポートの内部のデバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff543963)と[並列デバイスに対するデバイス コントロール要求は内部](https://msdn.microsoft.com/library/windows/hardware/ff543959)を参照してください。
+システム提供平行ドライバーがドライバーのベンダーから提供された送信 I/O 制御コードが内部のセットをサポートする例として、 **IRP\_MJ\_内部\_デバイス\_コントロール**要求。 詳細については、次を参照してください。[パラレル ポートの内部のデバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff543963)と[並列デバイスに対するデバイス コントロール要求は内部](https://msdn.microsoft.com/library/windows/hardware/ff543959)します。
 
 システム定義の I/O 制御コードを通じて要求されたほぼすべての操作は、この種の要求は頻度の低い大量のデータの転送を必要とするために、バッファー内の I/O を使用します。 ダイレクト I/O に対してそのデバイス オブジェクトの設定もドライバーは Irp のバッファーの内外に転送するデータとデバイス制御要求の送信される**Irp -&gt;AssociatedIrp.SystemBuffer** (以外の特定の種類の密接に結合された Win32 マルチ メディアのドライバーのデバイス ドライバーが最上位レベル)。
 

@@ -1,19 +1,19 @@
 ---
-title: ファイルを共有しない印刷ドライバーをパッケージに注意してください。
-description: ファイルを共有しない印刷ドライバーをパッケージに注意してください。
+title: ファイルを共有しないパッケージ対応印刷ドライバー
+description: ファイルを共有しないパッケージ対応印刷ドライバー
 ms.assetid: cd114766-37f4-43b5-8e2a-d85f95c973ab
 keywords:
 - パッケージに対応した印刷ドライバー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b76f1947ae78a9c321fe66068bf870900002489
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362843"
 ---
-# <a name="package-aware-print-drivers-that-do-not-share-files"></a>ファイルを共有しない印刷ドライバーをパッケージに注意してください。
+# <a name="package-aware-print-drivers-that-do-not-share-files"></a>ファイルを共有しないパッケージ対応印刷ドライバー
 
 
 ドライバー パッケージ内のファイルは、名前は一意とが、他のドライバー パッケージで行われない、PrinterPackageInstallation セクションを INF ファイルに追加します。 ここでは、追加、 **PackageAware**23 行目の次の例で示すように、キーワードを =。

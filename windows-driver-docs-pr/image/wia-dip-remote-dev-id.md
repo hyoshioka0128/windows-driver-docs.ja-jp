@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4db4d1ace7932f0599592d09d32bca6d435f12f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365914"
 ---
 # <a name="wiadipremotedevid"></a>WIA\_DIP\_リモート\_DEV\_ID
 
@@ -33,9 +33,9 @@ WIA\_DIP\_リモート\_DEV\_ID プロパティには、リモート コンピ�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA サービスの使用、WIA\_DIP\_リモート\_DEV\_プロパティを内部でのみ ID。

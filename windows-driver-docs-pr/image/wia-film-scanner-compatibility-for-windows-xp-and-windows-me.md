@@ -1,17 +1,17 @@
 ---
-title: WIA フィルム スキャナー互換性 Windows XP と Windows Me
-description: WIA フィルム スキャナー互換性 Windows XP と Windows Me
+title: Windows XP および Windows Me の WIA フィルム スキャナー互換性
+description: Windows XP および Windows Me の WIA フィルム スキャナー互換性
 ms.assetid: 9f96ef72-2482-435f-b512-b48c12dc1628
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 427f4e8d5a222bb24e9b536d245a0c7e5e6c3f26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360335"
 ---
-# <a name="wia-film-scanner-compatibility-for-windows-xp-and-windows-me"></a>WIA フィルム スキャナー互換性 Windows XP と Windows Me
+# <a name="wia-film-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP および Windows Me の WIA フィルム スキャナー互換性
 
 
 
@@ -25,7 +25,7 @@ ms.locfileid: "56553593"
 
  
 
-Windows XP および Windows Me の互換性の詳細については、[WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)を参照してください。
+Windows XP および Windows Me の互換性の詳細については、次を参照してください。 [WIA フラット ベッド スキャナーの互換性の Windows と Windows XP](wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md)します。
 
  
 

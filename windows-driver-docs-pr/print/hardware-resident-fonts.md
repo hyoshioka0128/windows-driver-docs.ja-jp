@@ -1,6 +1,6 @@
 ---
-title: ハードウェアに常駐フォント
-description: ハードウェアに常駐フォント
+title: ハードウェア常駐フォント
+description: ハードウェア常駐フォント
 ms.assetid: 359735c2-bfa3-4c32-82a5-1d455c4eacb1
 keywords:
 - プリンターのフォントの記述 WDK Unidrv、ハードウェアに常駐フォント
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c43bb2017697472d74065064bb9e57fbc258063
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360532"
 ---
-# <a name="hardware-resident-fonts"></a>ハードウェアに常駐フォント
+# <a name="hardware-resident-fonts"></a>ハードウェア常駐フォント
 
 
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RNDIS_CONFIG_PARAMETER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b45e4bea6361574ac528beef381c03ad0b1708c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364168"
 ---
 # <a name="oidgenrndisconfigparameter"></a>OID\_GEN\_RNDIS\_CONFIG\_パラメーター
 
@@ -37,7 +37,7 @@ OID、セットとして\_GEN\_RNDIS\_CONFIG\_デバイス固有のパラメー�
 <a name="remarks"></a>コメント
 -------
 
-OID\_GEN\_RNDIS\_CONFIG\_RNDIS デバイスとパラメーターを使用します。 デバイス固有のパラメーターを設定するのにホストを使用します。 ミニポート ドライバーでは使用されません。 この OID の詳細については、[デバイスに固有のパラメーターの設定](https://msdn.microsoft.com/library/windows/hardware/ff570784)を参照してください。
+OID\_GEN\_RNDIS\_CONFIG\_RNDIS デバイスとパラメーターを使用します。 デバイス固有のパラメーターを設定するのにホストを使用します。 ミニポート ドライバーでは使用されません。 この OID の詳細については、次を参照してください。[デバイスに固有のパラメーターの設定](https://msdn.microsoft.com/library/windows/hardware/ff570784)します。
 
 <a name="requirements"></a>必要条件
 ------------

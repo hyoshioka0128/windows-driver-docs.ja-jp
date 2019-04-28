@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28122
 ms.openlocfilehash: a389313c6c9a794ba516c288dd9ceb9e077855ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361432"
 ---
 # <a name="c28122"></a>C28122
 
@@ -42,7 +42,7 @@ C28122 を警告します。関数は、低い IRQ レベルで呼び出され�
 
 コード分析ツールでは、現在の IRQL を推測し、エラーを検出するために、IRQL の話は推定場合にのみ、この警告を報告します。 この推定に基づきますが、*関数シグネチャ*(引数と結果型) または分析されて、関数の実行パスの前の呼び出しから。
 
-同様の状況については、[警告 28123](28123-inconsistent-irq-level-calls-high.md)を参照してください。
+同様の状況については、次を参照してください。[警告 28123](28123-inconsistent-irq-level-calls-high.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ビデオの存在するネットワーク用語
-description: ビデオの存在するネットワーク用語
+title: ビデオ表現ネットワークの用語
+description: ビデオ表現ネットワークの用語
 ms.assetid: a7a02522-de13-419f-8dc5-065943fd4645
 keywords:
 - ビデオが存在するネットワーク用語、WDK の表示
@@ -8,16 +8,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d12c40803419d2f0e39ac3706bb35ecdac9dcf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365090"
 ---
-# <a name="video-present-network-terminology"></a>ビデオの存在するネットワーク用語
+# <a name="video-present-network-terminology"></a>ビデオ表現ネットワークの用語
 
 
-VidPN マネージャーでは、ビデオの存在するネットワーク (VidPN) の概念を使用してディスプレイ アダプターに接続されているディスプレイ デバイスのセットを管理します。 詳細については、[ビデオ存在するネットワークの概要](introduction-to-video-present-networks.md)を参照してください。
+VidPN マネージャーでは、ビデオの存在するネットワーク (VidPN) の概念を使用してディスプレイ アダプターに接続されているディスプレイ デバイスのセットを管理します。 詳細については、次を参照してください。[ビデオ存在するネットワークの概要](introduction-to-video-present-networks.md)します。
 
 VidPNs について説明します、アダプター、およびディスプレイ アダプターに接続するデバイスを表示するために使用する主な用語の定義を次に示します。
 

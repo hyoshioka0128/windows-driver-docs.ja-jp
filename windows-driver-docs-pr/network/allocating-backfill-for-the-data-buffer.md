@@ -1,6 +1,6 @@
 ---
-title: バックフィルをデータ バッファーの割り当てください。
-description: バックフィルをデータ バッファーの割り当てください。
+title: データ バッファーのバックフィルの割り当て
+description: データ バッファーのバックフィルの割り当て
 ms.assetid: 2588986d-8d51-4f34-a3b9-d0df406afcba
 keywords:
 - ヘッダー データの分割 WDK、バックフィル割り当て
@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed03f808baab51a3dd6bb47581b6717a9b6b90f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367710"
 ---
-# <a name="allocating-backfill-for-the-data-buffer"></a>バックフィルをデータ バッファーの割り当てください。
+# <a name="allocating-backfill-for-the-data-buffer"></a>データ バッファーのバックフィルの割り当て
 
 
 
 
 
-NDIS ミニポート ドライバーに割り当てる必要がありますデータ バックフィルの領域の量を指定する、 **BackfillSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)を参照してください。
+NDIS ミニポート ドライバーに割り当てる必要がありますデータ バックフィルの領域の量を指定する、 **BackfillSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、次を参照してください。[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)します。
 
 ミニポート ドライバーが、少なくとものバックフィル記憶域を割り当てる必要があります事前 NIC では、ヘッダーと受信したイーサネット フレーム内のデータを分割、ときにバイト数を**BackfillSize**前のデータ部分の開始アドレスに、を指定します、フレーム。 バックフィル ストレージがページ境界を越えないする必要があります。
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 990877a9d7f1fc69e24de6ef7cf9cec115750cbf
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363544"
 ---
 # <a name="bug-check-0x51-registryerror"></a>バグ チェック 0x51:レジストリ\_エラー
 

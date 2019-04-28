@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b8fda6b76d06d3b2ee71e4455814f2b5cc2be63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367474"
 ---
 # <a name="ksmethodbdastartchanges"></a>KSMETHOD\_BDA\_開始\_の変更
 
@@ -37,12 +37,12 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 
 なし
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 変更を加えるネットワーク プロバイダーが開始する前に、KSMETHOD になります\_BDA\_開始\_変更要求は、破棄されるコミットされていない既存の変更一覧を原因し、フィルターのピンに通知し、一連の変更の追跡を開始するノード。 ネットワーク プロバイダーは、フィルターやその pin に必要なインターフェイス メソッドを呼び出しますが、メソッドが実際に呼び出されないまだ。 任意の時点では、ネットワーク プロバイダーは、変更は動作しないことを判断した場合は、リストをクリアするには、このメソッドを呼び出すことができます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

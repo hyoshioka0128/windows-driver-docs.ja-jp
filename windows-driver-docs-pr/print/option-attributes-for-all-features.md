@@ -5,11 +5,11 @@ ms.assetid: 0d269fdf-f4a1-431a-9f07-044289b9f0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca8ce8bb8392726042b2727072d6e8d7ab2e9526
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366324"
 ---
 # <a name="option-attributes-for-all-features"></a>すべての機能のオプション属性
 
@@ -43,7 +43,7 @@ ms.locfileid: "57349205"
 <td><p>オプションが選択されている場合に無効にする機能を識別する、機能名の文字列の一覧です。</p>
 <p>現在、双方向、および collate の各機能がサポートされています。 FeatureType PRINTER_PROPERTY に設定する機能では、このオプションの属性を使用する必要があります。</p></td>
 <td><p>任意。</p>
-<p>表示されている機能を使用できない<em><strong>インストール可能ですか?</strong>に設定<strong>TRUE</strong>します。 詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
+<p>表示されている機能を使用できない<em><strong>インストール可能ですか?</strong>に設定<strong>TRUE</strong>します。 詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>オンライン ヘルプ</strong></p></td>
@@ -54,13 +54,13 @@ ms.locfileid: "57349205"
 <tr class="even">
 <td><p></em><strong>インストール可能な場合でしょうか。</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>かを示す、オプションはインストールが可能かどうか。 (<strong>FALSE</strong>常にインストールされていることを意味します)。</p>
-<p>詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
 <td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 (また、<a href="feature-attributes.md" data-raw-source="[feature attribute](feature-attributes.md)">機能属性</a>)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em><strong>InstallableFeatureName</strong></p></td>
 <td><p>インストール可能なオプションが実際にインストールされているかどうかをユーザーに要求に表示されるテキスト文字列。</p>
-<p>詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
 <td><p>必要な場合 *<strong>インストール可能でしょうか。</strong>は<strong>TRUE</strong>と *<strong>rcInstallableFeatureNameID</strong>が指定されていません。 (また、<a href="feature-attributes.md" data-raw-source="[feature attribute](feature-attributes.md)">機能属性</a>)。</p></td>
 </tr>
 <tr class="even">
@@ -81,7 +81,7 @@ ms.locfileid: "57349205"
 <tr class="odd">
 <td><p></em><strong>rcInstallableFeatureNameID</strong></p></td>
 <td><p>インストール可能なオプションが実際にインストールされているかどうかをユーザーに要求に表示されるテキスト文字列のリソース ID。</p>
-<p>詳細については、<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">インストール可能な機能の処理とオプション</a>します。</p></td>
 <td><p>場合は必須<em><strong>インストール可能ですか?</strong>は<strong>TRUE</strong>と *<strong>InstallableFeatureName</strong>が指定されていません。 (また、<a href="feature-attributes.md" data-raw-source="[feature attribute](feature-attributes.md)">機能属性</a>)。</p></td>
 </tr>
 <tr class="even">
@@ -95,7 +95,7 @@ ms.locfileid: "57349205"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
  
 

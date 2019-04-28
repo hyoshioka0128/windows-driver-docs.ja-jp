@@ -1,19 +1,19 @@
 ---
-title: RPC 状態情報を表示します。
-description: RPC 状態情報を表示します。
+title: RPC 状態情報の表示
+description: RPC 状態情報の表示
 ms.assetid: 9931cf62-a7c2-4270-8664-a77a82207aa9
 keywords:
 - RPC デバッグ、RPC 状態情報を表示します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4391d3286be2d33b5c0843d39fb9c5047fe78171
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363927"
 ---
-# <a name="displaying-rpc-state-information"></a>RPC 状態情報を表示します。
+# <a name="displaying-rpc-state-information"></a>RPC 状態情報の表示
 
 
 ## <span id="ddk_displaying_rpc_state_information_dbg"></span><span id="DDK_DISPLAYING_RPC_STATE_INFORMATION_DBG"></span>

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca4df3872f33d49efb001c62d77b2a75008b241e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370664"
 ---
 # <a name="inf-delfiles-directive"></a>INF DelFiles ディレクティブ
 
@@ -91,7 +91,7 @@ A*ファイルのセクション一覧*それぞれ別々 の行に任意の数�
 
  
 
-すべて*ファイルのセクション一覧*名は、INF ファイルに固有である必要がありますが、それを参照できます[ **CopyFiles**](inf-copyfiles-directive.md)、 **DelFiles**、または[ **RenFiles** ](inf-renfiles-directive.md)他の場所で同じ INF ディレクティブ。 このような INF ライター定義セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+すべて*ファイルのセクション一覧*名は、INF ファイルに固有である必要がありますが、それを参照できます[ **CopyFiles**](inf-copyfiles-directive.md)、 **DelFiles**、または[ **RenFiles** ](inf-renfiles-directive.md)他の場所で同じ INF ディレクティブ。 このような INF ライター定義セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 **DelFiles**ディレクティブが修飾をサポートしていません、*ファイルのセクション一覧*システム定義のプラットフォームの拡張機能の名前 (**.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、または **.ntarm64**)。
 

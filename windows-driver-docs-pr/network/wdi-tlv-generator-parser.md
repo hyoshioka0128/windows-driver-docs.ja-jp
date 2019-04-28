@@ -5,11 +5,11 @@ ms.assetid: 7193C30B-B9F0-488E-B1C6-4C5C4F29BA50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01c8c347a2be23a026915d9d8dbd2335a62739e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368360"
 ---
 # <a name="wdi-tlv-generatorparser"></a>WDI TLV ジェネレーター/パーサー
 

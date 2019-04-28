@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e2b8963ff529bd5e2e6eff2035db22a9ec36232
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373374"
 ---
 # <a name="unidrv-minidrivers"></a>Unidrv ミニドライバー
 
@@ -42,13 +42,13 @@ GPD ファイルを使用してプリンターを記述する、Unidrv には、
 
 -   標準のヘルプ ファイルを記述するために、Unidrv で提供されるだけでなく、カスタマイズされたヘルプ ファイルは、機能をカスタマイズします。
 
-GPD ファイルを作成する方法の詳細については、[GPD Files の概要](introduction-to-gpd-files.md)を参照してください。
+GPD ファイルを作成する方法の詳細については、次を参照してください。 [GPD Files の概要](introduction-to-gpd-files.md)します。
 
-Unidrv ミニドライバーは、1 つ以上の GPD ファイルで構成できます。 詳細については、[複数 GPD ファイルで、ミニドライバーを使用して](using-multiple-gpd-files-in-a-minidriver.md)を参照してください。
+Unidrv ミニドライバーは、1 つ以上の GPD ファイルで構成できます。 詳細については、次を参照してください。[複数 GPD ファイルで、ミニドライバーを使用して](using-multiple-gpd-files-in-a-minidriver.md)します。
 
 プリンターがインストールされている場合、Unidrv の GPD パーサーは、すべてのプリンターの GPD ファイルを読み取ります。 プリンターの一時的なバイナリ ファイルを作成する GPD ファイル内の情報が使用されます。 両方の[Unidrv ユーザー インターフェイス](unidrv-user-interface.md)と[Unidrv レンダラー](unidrv-renderer.md)このバイナリ ファイルを参照します。
 
-通常、ミニドライバーは、フォント、ビットマップ、およびローカライズ可能なテキスト文字列などのリソースを提供する必要があります。 これらのリソースは、リソース DLL に配置されます。 詳細については、[、ミニドライバーのリソース Dll を使用して](using-resource-dlls-in-a-minidriver.md)を参照してください。
+通常、ミニドライバーは、フォント、ビットマップ、およびローカライズ可能なテキスト文字列などのリソースを提供する必要があります。 これらのリソースは、リソース DLL に配置されます。 詳細については、次を参照してください。 [、ミニドライバーのリソース Dll を使用して](using-resource-dlls-in-a-minidriver.md)します。
 
  
 

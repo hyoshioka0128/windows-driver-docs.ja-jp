@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c8ddc5377c4fe41503085ca4a018b9e315cce9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362960"
 ---
 # <a name="wditlvpmprotocoloffloadipv6ns"></a>WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS
 
@@ -42,7 +42,7 @@ WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS は IPv6 NS プロトコ�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

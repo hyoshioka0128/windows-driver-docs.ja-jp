@@ -1,6 +1,6 @@
 ---
-title: カーネル デバッグをストリーミングの概要
-description: カーネル デバッグをストリーミングの概要
+title: カーネル ストリーミングのデバッグの概要
+description: カーネル ストリーミングのデバッグの概要
 ms.assetid: 7e09eccf-f74e-4faa-bb59-5c11f93c4b90
 keywords:
 - カーネル デバッグ ストリーム
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a67013761de690522cff4248584823456b2ecd7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363886"
 ---
-# <a name="overview-of-kernel-streaming-debugging"></a>カーネル デバッグをストリーミングの概要
+# <a name="overview-of-kernel-streaming-debugging"></a>カーネル ストリーミングのデバッグの概要
 
 
 カーネル ストリーミング デバッグ拡張機能は、拡張機能モジュール Ks.dll で確認できます。

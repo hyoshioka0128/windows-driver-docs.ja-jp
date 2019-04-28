@@ -1,6 +1,6 @@
 ---
-title: DMA デバイスの電源管理をサポートしています。
-description: DMA デバイスの電源管理をサポートしています。
+title: DMA デバイスの電源管理のサポート
+description: DMA デバイスの電源管理のサポート
 ms.assetid: abbb8f60-560f-41c9-85c5-1ec82078b99e
 keywords:
 - DMA 操作 WDK KMDF、電源管理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b51108cd48db25de18192183ff2f1831fe5769e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363961"
 ---
-# <a name="supporting-power-management-for-dma-devices"></a>DMA デバイスの電源管理をサポートしています。
+# <a name="supporting-power-management-for-dma-devices"></a>DMA デバイスの電源管理のサポート
 
 
 \[KMDF にのみ適用されます。\]
@@ -46,7 +46,7 @@ DMA デバイスの自己管理型の I/O 操作を停止します。
 <a href="" id="---------evtdmaenablerflush--------"></a>[*EvtDmaEnablerFlush*](https://msdn.microsoft.com/library/windows/hardware/ff541655)  
 デバイスの DMA バッファーの割り当てを解除します。
 
-これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
+これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
 
  
 

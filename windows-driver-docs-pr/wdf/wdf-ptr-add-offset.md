@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1af84b12017ede07c9785dd21c357ddc84087faf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366469"
 ---
 # <a name="wdfptraddoffset-macro"></a>WDF_PTR_ADD_OFFSET macro
 
@@ -42,7 +42,7 @@ PVOID WDF_PTR_ADD_OFFSET(
 
 結果として得られるアドレスへのポインターを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このマクロを呼び出す[ **WDF_PTR_ADD_OFFSET_TYPE** ](wdf-ptr-add-offset-type.md)で、*種類 (_t)* に PVOID パラメーターを設定します。

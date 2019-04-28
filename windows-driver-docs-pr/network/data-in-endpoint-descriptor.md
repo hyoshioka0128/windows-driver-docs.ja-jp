@@ -5,11 +5,11 @@ ms.assetid: bf311754-3ef8-483b-8c34-419d2d9c7512
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b01a2967676e23b1353e25395029097863f6f583
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372701"
 ---
 # <a name="data-in-endpoint-descriptor"></a>エンドポイント記述子内のデータ
 
@@ -30,7 +30,7 @@ ms.locfileid: "56548868"
 <th align="left">Offset</th>
 <th align="left">フィールド</th>
 <th align="left">サイズ</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

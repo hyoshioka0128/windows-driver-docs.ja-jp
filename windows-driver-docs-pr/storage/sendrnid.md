@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3b2173c904da6ec23cf0b27cb32ee0a609f5ef4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365212"
 ---
 # <a name="sendrnid-function"></a>SendRNID 関数
 
@@ -50,7 +50,7 @@ RNID コマンドを送信するポートの世界中の名前。 この情報�
 使用しないでください。 使わないでください。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
 
 *ResponseBufferCount*   
 RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ResponseBufferCount**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。

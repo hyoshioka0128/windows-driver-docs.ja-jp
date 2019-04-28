@@ -1,6 +1,6 @@
 ---
-title: セグメントの線形のメモリ領域
-description: セグメントの線形のメモリ領域
+title: 線形のメモリ領域セグメント
+description: 線形のメモリ領域セグメント
 ms.assetid: c937eb39-b9ec-454e-98c5-7f5274328226
 keywords:
 - メモリのセグメントの WDK 表示、線形のメモリ領域のセグメント
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd6f6f0d76197f83abd89257d97368dfa3bff75a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363182"
 ---
-# <a name="linear-memory-space-segments"></a>セグメントの線形のメモリ領域
+# <a name="linear-memory-space-segments"></a>線形のメモリ領域セグメント
 
 
 ## <span id="ddk_linear_memory_space_segments_gg"></span><span id="DDK_LINEAR_MEMORY_SPACE_SEGMENTS_GG"></span>

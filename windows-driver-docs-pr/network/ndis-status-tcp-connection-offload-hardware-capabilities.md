@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a97a33ab6ca824dcf7045bc36b9edc902feb34d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361050"
 ---
 # <a name="ndisstatustcpconnectionoffloadhardwarecapabilities"></a>NDIS\_状態\_TCP\_接続\_オフロード\_ハードウェア\_機能
 
@@ -25,7 +25,7 @@ MUX 中間ドライバーを使用して、NDIS\_状態\_TCP\_接続\_オフロ�
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_TCP\_接続\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567875)構造体。 NDIS\_TCP\_接続\_オフロードは、タスクのオフロード ハードウェア機能を指定します。
 
-タスクのオフロード ハードウェア機能の詳細については、[OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569803)を参照してください。
+タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569803)します。
 
 <a name="requirements"></a>要件
 ------------

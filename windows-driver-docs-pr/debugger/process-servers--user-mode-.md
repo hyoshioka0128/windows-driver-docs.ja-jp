@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 169761324cce07939590b34ec0e1421d5377b02d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362405"
 ---
 # <a name="process-servers-user-mode"></a>プロセス サーバー (ユーザー モード)
 
@@ -32,7 +32,7 @@ Windows のツールをデバッグ パッケージには、ユーザー モー�
 
 このリモート セッションをセットアップするプロセス サーバーは、最初に設定し、スマート クライアントがアクティブ化します。 スマート クライアントの任意の数が 1 つのプロセス サーバーを通じて動作できる - これらのデバッグ セッションは独立したままになりは互いに影響しません。 実行するプロセス サーバーは引き続きデバッグ セッションが終了した場合の新しいデバッグ セッションで使用します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 -   [**プロセス サーバーをアクティブ化します。**](activating-a-process-server.md)

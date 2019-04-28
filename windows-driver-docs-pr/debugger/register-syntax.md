@@ -1,6 +1,6 @@
 ---
-title: 構文を登録します。
-description: 構文を登録します。
+title: レジスタの構文
+description: レジスタの構文
 ms.assetid: 64a566b1-c10b-4329-947c-af69904a21f8
 keywords:
 - 式、レジスタ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79b4dfeea0548d23d0ca17bb31850bbf35a22478
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370204"
 ---
-# <a name="register-syntax"></a>構文を登録します。
+# <a name="register-syntax"></a>レジスタの構文
 
 
 ## <span id="ddk_register_syntax_dbg"></span><span id="DDK_REGISTER_SYNTAX_DBG"></span>
@@ -37,17 +37,17 @@ C++ の式の構文を使用している場合、アット マークは必須で
 0:000> r eax = @ebx
 ```
 
-レジスタと各プロセッサに固有の手順の詳細については、[プロセッサ アーキテクチャ](processor-architecture.md)を参照してください。
+レジスタと各プロセッサに固有の手順の詳細については、次を参照してください。[プロセッサ アーキテクチャ](processor-architecture.md)します。
 
 ### <a name="span-idflagsonanx86basedprocessorspanspan-idflagsonanx86basedprocessorspanflags-on-an-x86-based-processor"></a><span id="flags_on_an_x86_based_processor"></span><span id="FLAGS_ON_AN_X86_BASED_PROCESSOR"></span>X86 ベースのプロセッサのフラグ
 
-x86 ベースのプロセッサが使用してもいくつかの 1 ビット レジスタと呼ばれる*フラグ*します。 これらのフラグとを表示または変更に使用できる構文の詳細については、[x86 フラグ](x86-architecture.md#x86-flags)を参照してください。
+x86 ベースのプロセッサが使用してもいくつかの 1 ビット レジスタと呼ばれる*フラグ*します。 これらのフラグとを表示または変更に使用できる構文の詳細については、次を参照してください。 [x86 フラグ](x86-architecture.md#x86-flags)します。
 
 ### <a name="span-idregistersandthreadsspanspan-idregistersandthreadsspanregisters-and-threads"></a><span id="registers_and_threads"></span><span id="REGISTERS_AND_THREADS"></span>レジスタとスレッド
 
 各スレッドは、独自のレジスタの値を持っています。 これらの値は、別のスレッドを実行するときにメモリ内と、スレッドを実行するときに、CPU レジスタに格納されます。
 
-ユーザー モードでは、レジスタへの参照は、現在のスレッドに関連付けられている登録として解釈されます。 現在のスレッドの詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+ユーザー モードでは、レジスタへの参照は、現在のスレッドに関連付けられている登録として解釈されます。 現在のスレッドの詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 カーネル モードでは、レジスタへの参照が現在のレジスタのコンテキストに関連付けられている登録として解釈されます。 特定のスレッド、コンテキストのレコードを一致するように登録するコンテキストを設定したり、フレームをトラップします。 指定したコンテキストを登録すると、その値を変更することはできません、最も重要なレジスタのみを表示できます。
 

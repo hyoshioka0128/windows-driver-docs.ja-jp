@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68c797365bdc3e99e10e587d294c72d5207cd843
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368084"
 ---
 # <a name="specific-exceptions"></a>特定の例外
 
@@ -33,7 +33,7 @@ ms.locfileid: "56536745"
 <thead>
 <tr class="header">
 <th align="left">例外コード</th>
-<th align="left">Exception</th>
+<th align="left">例外</th>
 <th align="left">ヘッダー ファイルまたは値</th>
 </tr>
 </thead>

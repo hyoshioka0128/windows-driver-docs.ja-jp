@@ -1,17 +1,17 @@
 ---
-title: 低電力状態から起動中にプロセッサ リソースの共有
-description: 低電力状態から起動中にプロセッサ リソースの共有
+title: 低電力状態からスタートアップするときのプロセッサ リソースの共有
+description: 低電力状態からスタートアップするときのプロセッサ リソースの共有
 ms.assetid: 2b2e6a1b-7c2d-4f38-9407-a417b75daa6a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c6faa61189f36e60c0692bc99cf643a5b8fa4427
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367864"
 ---
-# <a name="sharing-processor-resources-during-startup-from-a-low-power-state"></a>低電力状態から起動中にプロセッサ リソースの共有
+# <a name="sharing-processor-resources-during-startup-from-a-low-power-state"></a>低電力状態からスタートアップするときのプロセッサ リソースの共有
 
 
 コンピューターがスタンバイ状態または休止状態 (ウォーム起動) から開始されると、ドライバーは必要がありますよりも長い期間のプロセッサ リソースの使用を避ける必要があります。 最も重要なは、遅延プロシージャ呼び出し (DPC) のルーチンと IRQL で実行されるコード&gt;= ディスパッチ\_レベルは、実行時間を最小限に抑える必要があります。 ドライバーでは、DPC ルーチンを使用してデバイスを初期化します。 ドライバーは、ディスパッチに初期化コードを実行する必要があります\_ポート ミニポート インターフェイス コントラクトの一部としてのレベル。
@@ -30,7 +30,7 @@ DPC ルーチンを設計するのにには、次のベスト プラクティス
 
 -   DPC ルーチンの実行時間を評価する WDK で説明されているパフォーマンス分析ツールを使用します。
 
-パフォーマンス分析ツールの詳細については、[Windows Vista でのシステム再開パフォーマンスの測定](https://go.microsoft.com/fwlink/p/?linkid=69964)を参照してください。
+パフォーマンス分析ツールの詳細については、次を参照してください。 [Windows Vista でのシステム再開パフォーマンスの測定](https://go.microsoft.com/fwlink/p/?linkid=69964)します。
 
  
 

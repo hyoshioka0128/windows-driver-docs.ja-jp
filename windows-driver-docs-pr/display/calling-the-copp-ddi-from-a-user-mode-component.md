@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d7a054180da99e52402cc6958918973569dac0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370800"
 ---
 # <a name="calling-the-copp-ddi-from-a-user-mode-component"></a>ユーザー モード コンポーネントからの COPP DDI の呼び出し
 
@@ -26,11 +26,11 @@ VMR などのユーザー モード コンポーネントは、COPP DDI への�
 
 ディスプレイ ドライバーが実装する必要があります VMR が、グラフィックス アダプターのビデオ出力に保護を適用するビデオのミニポート ドライバーを通知するため、[補正コールバック関数のモーション](motion-compensation-callbacks.md)、のメンバーが定義されています。[**DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。
 
-ドライバーの開発を簡素化するドライバー開発者は動き補正コード テンプレートを使用し、COPP Ioctl を実装し、 [COPP サンプル関数](sample-functions-for-copp.md)します。 ディスプレイ ドライバーとビデオのミニポート ドライバーは、COPP Ioctl を使用して通信します。 詳細については、[COPP DDI をディスプレイ ドライバーから呼び出す](calling-the-copp-ddi-from-the-display-driver.md)を参照してください。 動き補正コード テンプレートは、COPP サンプル関数の呼び出しを開始します。 詳細については動き補正コード テンプレートを使用して、[DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)を参照してください。
+ドライバーの開発を簡素化するドライバー開発者は動き補正コード テンプレートを使用し、COPP Ioctl を実装し、 [COPP サンプル関数](sample-functions-for-copp.md)します。 ディスプレイ ドライバーとビデオのミニポート ドライバーは、COPP Ioctl を使用して通信します。 詳細については、次を参照してください。 [COPP DDI をディスプレイ ドライバーから呼び出す](calling-the-copp-ddi-from-the-display-driver.md)します。 動き補正コード テンプレートは、COPP サンプル関数の呼び出しを開始します。 詳細については動き補正コード テンプレートを使用して、次を参照してください。 [DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)します。
 
 次の手順では、VMR COPP DDI への呼び出しを開始する方法について説明します。
 
-1.  フィルターのグラフに VMR を追加するときに、ドライバーによって提供される、表示するための呼び出しを開始します。 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)ドライバーでサポートされているデバイスの一覧を取得するコールバック関数。 **GetMoCompGuids** 、DD のメンバー\_MOTIONCOMPCALLBACKS このコールバック関数へのポインターを構造体します。 フィルターのグラフの詳細については、[KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)を参照してください。
+1.  フィルターのグラフに VMR を追加するときに、ドライバーによって提供される、表示するための呼び出しを開始します。 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)ドライバーでサポートされているデバイスの一覧を取得するコールバック関数。 **GetMoCompGuids** 、DD のメンバー\_MOTIONCOMPCALLBACKS このコールバック関数へのポインターを構造体します。 フィルターのグラフの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)します。
 
 2.  DirectX VA COPP デバイス GUID が存在するかどうかは、VMR への呼び出しを開始する、 [ *DdMoCompCreate* ](https://msdn.microsoft.com/library/windows/hardware/ff549656) COPP デバイスを現在のビデオ セッションを初期化するためにコールバック関数。 **CreateMoComp** DD のメンバー\_MOTIONCOMPCALLBACKS がコールバック関数を指します。 *DdMoCompCreate*呼び出すには、GUID がで指定された COPP デバイスへのポインター、 **lpGuid**のメンバー、 [ **DD\_CREATEMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff550529)構造体。 GUID COPP デバイスの定義は次のとおりです。
 

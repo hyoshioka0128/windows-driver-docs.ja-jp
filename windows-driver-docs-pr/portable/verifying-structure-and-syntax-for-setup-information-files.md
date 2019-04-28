@@ -1,16 +1,16 @@
 ---
-Description: Verifying Structure and Syntax for Setup Information Files
-title: セットアップ情報ファイルの構造と構文を確認しています
+Description: セットアップ情報ファイルの構造と構文の確認
+title: セットアップ情報ファイルの構造と構文の確認
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b90b8eab6a30fa8cfe43b42bb955a769410c44ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370440"
 ---
-# <a name="verifying-structure-and-syntax-for-setup-information-files"></a>セットアップ情報ファイルの構造と構文を確認しています
+# <a name="verifying-structure-and-syntax-for-setup-information-files"></a>セットアップ情報ファイルの構造と構文の確認
 
 
 Windows Driver Kit (WDK) には、一連の ChkINF ツールとして参照される Perl スクリプトが用意されています。 これらのスクリプトは、構造体とセットアップ情報 (.inf) ファイルの構文を確認します。 これらのスクリプトの詳細については、WDK ドキュメントのドライバーの開発ツール セクションを参照してください。

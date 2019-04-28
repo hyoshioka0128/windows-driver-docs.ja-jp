@@ -1,19 +1,19 @@
 ---
-title: コンテキストを取得します。
-description: コンテキストを取得します。
+title: コンテキストの取得
+description: コンテキストの取得
 ms.assetid: e0e659e5-6f95-4378-8764-63d96c7d07d4
 keywords:
 - ファイル システム ミニフィルターの WDK のコンテキストを取得します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b9c17b94974189899b796ec8aac72249b646f00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370333"
 ---
-# <a name="getting-contexts"></a>コンテキストを取得します。
+# <a name="getting-contexts"></a>コンテキストの取得
 
 
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>

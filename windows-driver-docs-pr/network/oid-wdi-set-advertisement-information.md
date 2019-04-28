@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_SET_ADVERTISEMENT_INFORMATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 234a9a733e924990ad39668c2ad04f434929d683
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365771"
 ---
 # <a name="oidwdisetadvertisementinformation"></a>OID\_WDI\_設定\_広告\_情報
 
@@ -33,12 +33,12 @@ WDI は、提供するサービスの構成済みの一連のプレフィック�
 
 | TLV                                                                                                 | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                     |
 |-----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------|
-| [**WDI\_TLV\_追加\_IES**](https://msdn.microsoft.com/library/windows/hardware/dn926122)                                    |                                | X        | 含まれる IEs を追加します。                  |
-| [**WDI\_TLV\_P2P\_デバイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897875)                                 |                                | X        | Wi-Fi Direct デバイス情報。                |
-| [**WDI\_TLV\_P2P\_デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897872)                     |                                | X        | Wi-Fi Direct デバイス機能。               |
-| [**WDI\_TLV\_P2P\_グループ\_所有者\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897954)          |                                | X        | グループ所有者を Wi-Fi Direct 機能情報 |
-| [**WDI\_TLV\_P2P\_SECONDARY\_DEVICE\_TYPE\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897991) |                                | X        | Wi-Fi Direct のセカンダリ デバイスの種類の一覧です。    |
-| [**WDI\_TLV\_P2P\_アドバタイズ\_サービス**](https://msdn.microsoft.com/library/windows/hardware/dn897860)                 |                                | X        | Wi-Fi Direct サービスを提供します。               |
+| [**WDI\_TLV\_追加\_IES**](https://msdn.microsoft.com/library/windows/hardware/dn926122)                                    |                                | x        | 含まれる IEs を追加します。                  |
+| [**WDI\_TLV\_P2P\_デバイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897875)                                 |                                | x        | Wi-Fi Direct デバイス情報。                |
+| [**WDI\_TLV\_P2P\_デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897872)                     |                                | x        | Wi-Fi Direct デバイス機能。               |
+| [**WDI\_TLV\_P2P\_グループ\_所有者\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897954)          |                                | x        | グループ所有者を Wi-Fi Direct 機能情報 |
+| [**WDI\_TLV\_P2P\_SECONDARY\_DEVICE\_TYPE\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897991) |                                | x        | Wi-Fi Direct のセカンダリ デバイスの種類の一覧です。    |
+| [**WDI\_TLV\_P2P\_アドバタイズ\_サービス**](https://msdn.microsoft.com/library/windows/hardware/dn897860)                 |                                | x        | Wi-Fi Direct サービスを提供します。               |
 
  
 
@@ -51,7 +51,7 @@ WDI は、提供するサービスの構成済みの一連のプレフィック�
 
 [NDIS\_状態\_WDI\_INDICATION\_アクション\_フレーム\_RECEIVED](ndis-status-wdi-indication-action-frame-received.md)アダプターは、場合に、サービスについての ANQP 操作フレームの要求を示す必要があります、ピアから ANQP 要求を (またはその他の不明なアクションのフレーム) を受信します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6caa307ecdfe6a720f8f1050c89193a9a6e72040
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360784"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF の検証エラーと警告
 
@@ -202,7 +202,7 @@ HKR,,DllPath,%%SystemRoot%%\System32\myDll.sys
 
 以前いない含める場合このセクションで、サービスはありませんでしたし、受信トレイのドライバー サービスに依存しているため、しを作成しなければならないのです。サービスのセクションで、ニーズを使用して受信トレイ INF のサービスを参照し、ステートメントが含まれています。  
 
-例:INF ファイルに次の必要があります。このエラーを解決するには、各 OS ターゲット セクションをサービスします。
+次に、例を示します。INF ファイルに次の必要があります。このエラーを解決するには、各 OS ターゲット セクションをサービスします。
 
 <pre>
 [XXXXXXXX.Install.NTx86.Services]

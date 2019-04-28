@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 15c8ca4c096ac71383e0b68ca59c674700cc8e55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361152"
 ---
 # <a name="kscategorytopology"></a>KSCATEGORY_TOPOLOGY
 
@@ -56,7 +56,7 @@ KSCATEGORY_TOPOLOGY[デバイス インターフェイス クラス](https://msd
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_TOPOLOGY 機能カテゴリをサポートすることを示す KSCATEGORY_TOPOLOGY のインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 [AC'97 サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256075)で提供されている、WDK KSCATEGORY_TOPOLOGY デバイス インターフェイス クラスのインスタンスを列挙します。
 

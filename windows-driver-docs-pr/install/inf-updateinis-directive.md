@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a67243a4c387317b5d5b60bab28915d27b52221d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363222"
 ---
 # <a name="inf-updateinis-directive"></a>INF UpdateInis ディレクティブ
 
@@ -127,7 +127,7 @@ ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 <a name="remarks"></a>コメント
 -------
 
-指定された*update-section ini*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+指定された*update-section ini*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 完全なパスを提供する、INF、指定された*ini ファイル*配布メディアの次のいずれかの。
 

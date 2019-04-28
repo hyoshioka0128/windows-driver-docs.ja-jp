@@ -5,18 +5,18 @@ ms.assetid: 7BB8B087-6CE5-4BD2-9286-350AE607B1D7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6715820e6eb21af2b4452bfa9d00b67078c9f655
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360931"
 ---
 # <a name="accelerometer-thresholds"></a>加速度計のしきい値
 
 
 このトピックでは、加速度計しきい値に関する情報を提供します。
 
-次の表では、加速度計に利用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、加速度計に利用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 |プロパティのキー|種類|必須/オプション|既定値|説明|
 |---|---|---|---|---|

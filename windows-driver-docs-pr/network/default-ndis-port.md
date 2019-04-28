@@ -1,6 +1,6 @@
 ---
-title: NDIS の既定のポート
-description: NDIS の既定のポート
+title: 既定の NDIS ポート
+description: 既定の NDIS ポート
 ms.assetid: a9edf83f-9226-4c75-a04e-1879a05df24c
 keywords:
 - WDK NDIS、既定のポート
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fcee3e9181e21c4d35bf18ae457016cfc4a5e0ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367668"
 ---
-# <a name="default-ndis-port"></a>NDIS の既定のポート
+# <a name="default-ndis-port"></a>既定の NDIS ポート
 
 
 

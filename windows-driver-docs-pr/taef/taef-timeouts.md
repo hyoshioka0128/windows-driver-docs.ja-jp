@@ -5,18 +5,18 @@ ms.assetid: 43FE81A2-71DF-4e3a-998E-1B1F8C1398AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b4aa6ed9f767e57cfeff6c1f2a65d76c00febb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362194"
 ---
 # <a name="taef-timeouts"></a>TAEF タイムアウト
 
 
 TAEF タイムアウトは、次の形式で指定します。*\[1 日です。\]時間\[: 分\[: 2 つ目\[します。FractionalSeconds\]\]\]* します。
 
-例:
+次に、例を示します。
 
 *0:0:0.5*  
 .5 秒のタイムアウトを指定します。

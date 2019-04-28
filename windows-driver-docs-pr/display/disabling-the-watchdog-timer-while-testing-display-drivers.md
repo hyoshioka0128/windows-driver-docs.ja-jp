@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 661d919bdfa4fa9d0579f6b4e1866e33b3466522
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362629"
 ---
 # <a name="disabling-the-watchdog-timer-while-testing-display-drivers"></a>ディスプレイ ドライバーのテスト中におけるウォッチドッグ タイマーの無効化
 

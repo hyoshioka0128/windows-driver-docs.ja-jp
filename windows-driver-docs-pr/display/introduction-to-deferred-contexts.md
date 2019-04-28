@@ -10,18 +10,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf6bd9399a9c0ab4808fa3e28cde1ef2a8aa4680
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362132"
 ---
 # <a name="introduction-to-deferred-contexts"></a>遅延コンテキストの概要
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
 
-遅延コンテキストは、コマンドのリストを作成するアプリケーションによって使用されます。 ユーザー モードのディスプレイ ドライバーは、D3D11DDICAPS によってコマンド リストをサポートしていることを示す場合\_COMMANDLISTS\_ビルド\_の 2 つのフラグ、 [ **D3D11DDI\_スレッド処理\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff542163)構造を作成し、遅延のコンテキストを操作する機能もサポートする必要があります。 ドライバーがスレッド処理の機能を示す方法の詳細については、[スレッド処理をサポートしている、コマンドを一覧表示、および 3-D パイプライン](supporting-threading--command-lists--and-3-d-pipeline.md)を参照してください。 遅延コンテキストは、生成されたコマンドの一覧を実行することによって、コマンドを実行するアプリケーションが明示的に要求されるまで、遅延のコンテキストを記録するコマンドを実行することはできません、イミディ エイト コンテキストとは異なります。 作成して、遅延のコンテキストを使用して、Direct3D のバージョン 11 は、次の新しい DDI 関数を提供します。 これらの関数は、デバイス/イミディ エイト コンテキストの組み合わせを作成するために必要な情報のサブセットです。
+遅延コンテキストは、コマンドのリストを作成するアプリケーションによって使用されます。 ユーザー モードのディスプレイ ドライバーは、D3D11DDICAPS によってコマンド リストをサポートしていることを示す場合\_COMMANDLISTS\_ビルド\_の 2 つのフラグ、 [ **D3D11DDI\_スレッド処理\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff542163)構造を作成し、遅延のコンテキストを操作する機能もサポートする必要があります。 ドライバーがスレッド処理の機能を示す方法の詳細については、次を参照してください。[スレッド処理をサポートしている、コマンドを一覧表示、および 3-D パイプライン](supporting-threading--command-lists--and-3-d-pipeline.md)します。 遅延コンテキストは、生成されたコマンドの一覧を実行することによって、コマンドを実行するアプリケーションが明示的に要求されるまで、遅延のコンテキストを記録するコマンドを実行することはできません、イミディ エイト コンテキストとは異なります。 作成して、遅延のコンテキストを使用して、Direct3D のバージョン 11 は、次の新しい DDI 関数を提供します。 これらの関数は、デバイス/イミディ エイト コンテキストの組み合わせを作成するために必要な情報のサブセットです。
 
 -   [**AbandonCommandList**](https://msdn.microsoft.com/library/windows/hardware/ff538199)
 

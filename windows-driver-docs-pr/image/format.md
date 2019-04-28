@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c17cf3b9a3179d6509a1f6e7f54e5d14ce699e7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362201"
 ---
 # <a name="format-element"></a>Format 要素
 
@@ -63,14 +63,14 @@ ms.locfileid: "56551168"
 <td><p>xs:string</p></td>
 <td><p>X</p></td>
 <td><p></p>
-<p>(省略可能)。 ブール値を 0 にする必要がある<strong>false</strong>、1、または<strong>true</strong>します。</p></td>
+<p>任意。 ブール値を 0 にする必要がある<strong>false</strong>、1、または<strong>true</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>UsedDefault</strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>X</p></td>
 <td><p></p>
-<p>(省略可能)。 ブール値を 0 にする必要がある<strong>false</strong>、1、または<strong>true</strong>します。</p></td>
+<p>任意。 ブール値を 0 にする必要がある<strong>false</strong>、1、または<strong>true</strong>します。</p></td>
 </tr>
 </tbody>
 </table>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 209c46de89254fe0c83d27d162374ee52016db64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365919"
 ---
 # <a name="wiadipdevname"></a>WIA\_DIP\_DEV\_名
 
@@ -40,7 +40,7 @@ WIA\_DIP\_DEV\_NAME プロパティには、デバイスの名前が含まれて
 
 デバイス名に含まれる、WIA\_DIP\_DEV\_NAME プロパティは、ドライバーの INF ファイルから取得されます。 アプリケーションでは、デバイスの名前を取得するには、このプロパティを読み取ります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

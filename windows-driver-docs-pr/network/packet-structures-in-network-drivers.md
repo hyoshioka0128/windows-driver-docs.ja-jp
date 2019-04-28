@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce6457858795a35bce59d022c0c3262bbb24e45e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366746"
 ---
 # <a name="packet-structures-in-network-drivers"></a>ネットワーク ドライバーのパケット構造
 
@@ -29,7 +29,7 @@ ms.locfileid: "56574980"
 
 NDIS 6.0 とそれ以降のバージョンでは、以上のレイヤー ドライバーを割り当てる[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)と[ **NET\_バッファー リスト**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ネットワーク パケットの情報を保持する構造体し、ネットワーク上のデータを送信できるように、[次へ] の下の NDIS ドライバーを構造体を送信します。 下位レベルのドライバーは、NET を割り当てる\_バッファーと NET\_バッファー\_リストの構造体を受信したデータを保持し、最大の構造体を渡すには、上位層のドライバーが関心があります。 場合によっては、以上のレイヤー ドライバーでは、構造体に割り当てを指定されたバッファーに受信したデータをコピーする下位レイヤーのドライバーの要求で下位層のドライバーに渡します。 NDIS 割り当ておよびネットワークを構成するサブ構造体を操作するための機能を提供する\_バッファーと NET\_バッファー\_リストの構造体。
 
-NDIS ドライバーでネットワーク データ バッファーの構造の詳細については、[NET\_バッファー アーキテクチャ](net-buffer-architecture.md)を参照してください。
+NDIS ドライバーでネットワーク データ バッファーの構造の詳細については、次を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
 
  
 

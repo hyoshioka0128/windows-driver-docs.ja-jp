@@ -1,6 +1,6 @@
 ---
-title: ドライバーが作成したスレッドにインタロックされたキューを管理します。
-description: ドライバーが作成したスレッドにインタロックされたキューを管理します。
+title: ドライバーによって作成されたスレッドを使用したインタロック キューの管理
+description: ドライバーによって作成されたスレッドを使用したインタロック キューの管理
 ms.assetid: e2712d52-e98a-4450-b010-9278db3a7a1e
 keywords:
 - インタロックされた IRP キュー WDK カーネル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7be720cc186db2dc10f4e3511953d72c09e21144
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360280"
 ---
-# <a name="managing-interlocked-queues-with-a-driver-created-thread"></a>ドライバーが作成したスレッドにインタロックされたキューを管理します。
+# <a name="managing-interlocked-queues-with-a-driver-created-thread"></a>ドライバーによって作成されたスレッドを使用したインタロック キューの管理
 
 
 
@@ -52,9 +52,9 @@ IRQL でいずれかのドライバーが作成したスレッドが実行され
 
     これを使用する必要があります、スレッドは、ISR でデバイスまたは状態を共有する場合[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンまたは共有の状態にアクセスするデバイスをプログラミングします。 参照してください[クリティカル セクションを使用して](using-critical-sections.md)します。
 
-    スレッドは、ISR 以外のルーチンに状態またはリソースを共有する場合、ドライバーの共有状態またはドライバーが、記憶域を提供するドライバー初期化 executive スピン ロックでリソースを保護する必要があります。 詳細については、[スピン ロック](spin-locks.md)を参照してください。
+    スレッドは、ISR 以外のルーチンに状態またはリソースを共有する場合、ドライバーの共有状態またはドライバーが、記憶域を提供するドライバー初期化 executive スピン ロックでリソースを保護する必要があります。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
 
-低速のデバイスのドライバーのスレッドを使用して、設計上のトレードオフの詳細については、[デバイスのポーリング](avoid-polling-devices.md)を参照してください。 参照してください[ハードウェアの優先度を管理する](managing-hardware-priorities.md)します。 特定のサポート ルーチンの Irql の特定については、ルーチンのリファレンス ページを参照してください。
+低速のデバイスのドライバーのスレッドを使用して、設計上のトレードオフの詳細については、次を参照してください。[デバイスのポーリング](avoid-polling-devices.md)します。 参照してください[ハードウェアの優先度を管理する](managing-hardware-priorities.md)します。 特定のサポート ルーチンの Irql の特定については、ルーチンのリファレンス ページを参照してください。
 
  
 

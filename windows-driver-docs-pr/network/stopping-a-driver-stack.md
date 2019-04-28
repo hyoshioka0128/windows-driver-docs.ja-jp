@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e897216b548b996cdd5b1a2c3fa5d714b868903
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366477"
 ---
 # <a name="stopping-a-driver-stack"></a>ドライバー スタックの停止
 
@@ -22,7 +22,7 @@ ms.locfileid: "56574032"
 
 デバイスが削除されると、NDIS ドライバー スタックは停止します。 ドライバー スタックは、次のように操作を停止します。
 
-1.  NDIS は、ドライバー スタックを一時停止します。 ドライバー スタックを一時停止の詳細については、[ドライバー スタックを一時停止](pausing-a-driver-stack.md)を参照してください。
+1.  NDIS は、ドライバー スタックを一時停止します。 ドライバー スタックを一時停止の詳細については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
 
 2.  NDIS 呼び出しプロトコル ドライバーの[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)関数。
 

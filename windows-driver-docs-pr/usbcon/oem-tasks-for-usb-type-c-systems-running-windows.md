@@ -4,11 +4,11 @@ title: USB Type-C システムの OEM タスク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c82a8d7a88289e19d547fa006ea07accabd08ee7
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366633"
 ---
 # <a name="oem-tasks-for-usb-type-c-systems"></a>USB Type-C システムの OEM タスク
 
@@ -78,9 +78,9 @@ ms.locfileid: "57463897"
 <td><p>Windows 10 デスクトップ エディションの場合は、ほとんどのデバイス クラスをサポートします。 デバイス ドライバーとそのインストール ファイルは、Windows に含まれる</p>
 <p>Windows 10 Mobile を実行しているデバイスでは、接続でき、USB デバイス/周辺、一連のインボックス ドライバーと対話することができます。 オペレーティング システムでは、デバイス クラスのサブセットをサポートします。</p>
 <p>参照してください、 <a href="supported-usb-classes.md" data-raw-source="[USB device class drivers included in Windows](supported-usb-classes.md)">USB デバイス クラス ドライバーが Windows に含まれる</a>します。</p></td>
-<td><p>システムは、Windows がドライバーを含まないカスタム USB デバイスに接続する場合、汎用ドライバー (Winusb.sys) の読み込みまたはドライバーを作成することもできます。 ガイダンスについては、<a href="winusb-considerations.md" data-raw-source="[Choosing a driver model for developing a USB client driver](winusb-considerations.md)">USB クライアント ドライバーを開発するためのドライバー モデルを選択する</a>を参照してください。</p>
+<td><p>システムは、Windows がドライバーを含まないカスタム USB デバイスに接続する場合、汎用ドライバー (Winusb.sys) の読み込みまたはドライバーを作成することもできます。 ガイダンスについては、次を参照してください。 <a href="winusb-considerations.md" data-raw-source="[Choosing a driver model for developing a USB client driver](winusb-considerations.md)">USB クライアント ドライバーを開発するためのドライバー モデルを選択する</a>します。</p>
 <p>Windows 10 デスクトップ エディションと Windows 10 Mobile を実行する 1 つのドライバーを記述することをお勧めします。 詳しくは、「<a href="https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)">ユニバーサル Windows ドライバーの概要</a>」をご覧ください。</p>
-<p>デバイスと通信するアプリケーションを作成するには、Windows ランタイム Api を使用します。 詳細については、<a href="talking-to-usb-devices-start-to-finish.md" data-raw-source="[Talking to USB devices, start to finish (UWP app)](talking-to-usb-devices-start-to-finish.md)">(UWP アプリ) を終了する開始の USB デバイスとの対話、</a>を参照してください。</p></td>
+<p>デバイスと通信するアプリケーションを作成するには、Windows ランタイム Api を使用します。 詳細については、次を参照してください。 <a href="talking-to-usb-devices-start-to-finish.md" data-raw-source="[Talking to USB devices, start to finish (UWP app)](talking-to-usb-devices-start-to-finish.md)">(UWP アプリ) を終了する開始の USB デバイスとの対話、</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>別のモード</strong>
@@ -103,7 +103,7 @@ ms.locfileid: "57463897"
 <p></p></td>
 <td><p>代替モード アダプターまたはデバイスを別のモードのネゴシエーションが成功したかどうかを示すビルボード デバイスを実装する必要があります。</p>
 <p>別のモードのアダプターまたはデバイスは、その他の USB 機能を実装する場合、ビルボード記述子の内容を更新する必要がありますを切断および再接続機能を中断する可能性があること、デバイス (ファイル転送など場合、デバイスUSB 大容量記憶装置デバイスである)。 防ぐには、ビルボードの仕様では、お使いのデバイスで、統合されたハブを使用し、いずれかのポートは別の USB デバイスとして表示されるビルボード デバイスがあることをお勧めします。</p>
-<p>詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=620207" data-raw-source="[USB Device Class Definition for Billboard Devices specification](https://go.microsoft.com/fwlink/p/?linkid=620207)">ビルボード デバイス仕様の USB デバイス クラス定義</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。<a href="https://go.microsoft.com/fwlink/p/?linkid=620207" data-raw-source="[USB Device Class Definition for Billboard Devices specification](https://go.microsoft.com/fwlink/p/?linkid=620207)">ビルボード デバイス仕様の USB デバイス クラス定義</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>USB デュアル ロール</strong>

@@ -1,6 +1,6 @@
 ---
-title: ルック アサイド リストの使用
-description: ルック アサイド リストの使用
+title: ルックアサイド リストの使用
+description: ルックアサイド リストの使用
 ms.assetid: 07a75b8b-04b9-48ea-bda4-53889dd661a9
 keywords:
 - メモリ管理の WDK カーネル、ルック アサイド リスト
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0582df0a1cf5966ffdf2a620d0a613a527c68c56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364929"
 ---
-# <a name="using-lookaside-lists"></a>ルック アサイド リストの使用
+# <a name="using-lookaside-lists"></a>ルックアサイド リストの使用
 
 
 

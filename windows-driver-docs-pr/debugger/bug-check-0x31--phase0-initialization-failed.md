@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd30b12f6aabeac39e96b09ecb766233b3196217
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361760"
 ---
 # <a name="bug-check-0x31-phase0initializationfailed"></a>バグ チェック 0x31:PHASE0\_初期化\_失敗
 

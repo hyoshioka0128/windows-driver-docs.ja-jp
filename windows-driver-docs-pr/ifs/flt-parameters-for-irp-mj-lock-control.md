@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a84304a4abd2e921a06c0e78d7886651d1a45b1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364986"
 ---
 # <a name="fltparameters-for-irpmjlockcontrol-union"></a>FLT\_IRP のパラメーター\_MJ\_ロック\_コントロール共用体
 
@@ -46,7 +46,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **LockControl**  
@@ -55,7 +55,7 @@ typedef union _FLT_PARAMETERS {
 **長さ**  
 ロックする範囲のバイト単位の長さを指定する変数へのポインター。
 
-**キー**  
+**[キー]**  
 バイト範囲ロックに割り当てられるキーの値。
 
 **ByteOffset**  

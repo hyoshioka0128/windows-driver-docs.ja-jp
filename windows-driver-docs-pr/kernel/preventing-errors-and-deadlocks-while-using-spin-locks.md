@@ -1,6 +1,6 @@
 ---
-title: 使用してスピン ロック中にエラーおよびデッドロックの防止
-description: 使用してスピン ロック中にエラーおよびデッドロックの防止
+title: スピン ロック使用中のエラーおよびデッドロックの防止
+description: スピン ロック使用中のエラーおよびデッドロックの防止
 ms.assetid: 1df563e6-7ad2-4684-9778-ffa1b845ac31
 keywords:
 - デッドロック WDK カーネル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eedd8ec0e6d377870830c91723588da17b1e36ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369130"
 ---
-# <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>使用してスピン ロック中にエラーおよびデッドロックの防止
+# <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>スピン ロック使用中のエラーおよびデッドロックの防止
 
 
 
@@ -39,7 +39,7 @@ ms.locfileid: "56552495"
 
 -   再帰ルーチンは、スピン ロックを保持しているときに別のドライバーのルーチンは再帰がデッドロックが発生する場合、再帰的なルーチンを呼び出しませんする必要があります。 または 25 (マイクロ秒) よりも長く、スピン ロックを保持するために、呼び出し元が発生する可能性があります。
 
-ドライバーの再帰ルーチンの詳細については、[カーネル スタックを使用して](using-the-kernel-stack.md)を参照してください。
+ドライバーの再帰ルーチンの詳細については、次を参照してください。[カーネル スタックを使用して](using-the-kernel-stack.md)します。
 
 ### <a name="nested-spin-lock-acquisitions"></a>入れ子になったスピン ロックの取得
 
@@ -55,7 +55,7 @@ ms.locfileid: "56552495"
 
 一般に、重複するサブセットまたは共有データとリソースの個別のセットを保護する入れ子になったスピン ロックを使用しないでください。 何が起こることを検討してください。 ドライバーは、個別のリソースを保護する 2 つの executive スピン ロックを使用している場合タイマー オブジェクトのペアなどが設定される可能性総称して個別にさまざまなドライバーのルーチンでします。 SMP マシン、ドライバーのデッドロックが断続的にたびに、その他のスピン ロックを取得しようとしたそれぞれ 1 つのスピン ロックを保持している 2 つのルーチンのいずれかになります。
 
-入れ子になったスピン ロックの取得の詳細については、[ロック、デッドロック、その同期](https://go.microsoft.com/fwlink/p/?linkid=57456 )を参照してください。
+入れ子になったスピン ロックの取得の詳細については、次を参照してください。[ロック、デッドロック、その同期](https://go.microsoft.com/fwlink/p/?linkid=57456 )します。
 
  
 

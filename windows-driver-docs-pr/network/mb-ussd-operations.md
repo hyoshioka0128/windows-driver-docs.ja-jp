@@ -5,11 +5,11 @@ description: MB デバイスの非構造化補助サービス データ (USSD) �
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6409c8be13c890dac5d8c0c156cfc62c2ad7a2dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367578"
 ---
 # <a name="mb-ussd-operations"></a>MB USSD 操作
 
@@ -28,7 +28,7 @@ MB ドライバー モデルには、次の USSD 操作がサポートされて�
 
 -   USSD セッションを終了しています
 
-デバイスが開始した操作の詳細については、[OID\_WWAN\_USSD](https://msdn.microsoft.com/library/windows/hardware/hh440100)を参照してください。
+デバイスが開始した操作の詳細については、次を参照してください。 [OID\_WWAN\_USSD](https://msdn.microsoft.com/library/windows/hardware/hh440100)します。
 
 開始された操作をネットワークします。
 
@@ -38,7 +38,7 @@ MB ドライバー モデルには、次の USSD 操作がサポートされて�
 
 -   USSD セッションの終了
 
-ネットワークが開始した操作の詳細については、[ **NDIS\_状態\_WWAN\_USSD**](https://msdn.microsoft.com/library/windows/hardware/hh439822)を参照してください。
+ネットワークが開始した操作の詳細については、次を参照してください。 [ **NDIS\_状態\_WWAN\_USSD**](https://msdn.microsoft.com/library/windows/hardware/hh439822)します。
 
 USSD プロトコルは、いつでも 1 つの USSD セッションのみを許可します。 デバイスの操作を開始、 **RequestType**のメンバー、 [ **WWAN\_USSD\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh464138)構造の目的を示す、OID の要求:
 

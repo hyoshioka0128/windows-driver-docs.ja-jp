@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 16f7b2c43dc21a2cf24a0cde9349b926a20805c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361255"
 ---
 # <a name="driverentry-of-display-miniport-driver-function"></a>ディスプレイ ミニポート ドライバーの DriverEntry 関数
 
@@ -48,7 +48,7 @@ NTSTATUS DriverEntry(
 
 **DriverEntry**呼び出し[ **DxgkInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff560824)によって返される値を返す必要がありますと**DxgkInitialize**します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **DriverEntry**次の手順を実行する必要があります。
@@ -158,7 +158,7 @@ KMDOD が、垂直同期の制御機能をサポートしていない場合は�
 * [DXGKARGCB_PRESENT_DISPLAYONLY_PROGRESS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_present_displayonly_progress)
 
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

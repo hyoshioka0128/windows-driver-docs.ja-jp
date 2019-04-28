@@ -7,11 +7,11 @@ keywords: -OID_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows V
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 8f766507dc6b298a831d80e4d9244c647c80290f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368248"
 ---
 # <a name="oidwwansignalstate"></a>OID\_WWAN\_信号\_状態
 
@@ -74,7 +74,7 @@ NDIS\_状態\_いない\_サポートされています。
 
         RssiThreshold = &lt; WWAN\_RSSI\_無効、WWAN\_RSSI\_既定値またはセットの最後の値&gt;
 
-### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+### <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
 Windows 10、バージョンが 1903 年以降 OID_WWAN_SIGNAL_STATE は、リビジョン 3 にアップグレードされています。 このリビジョンでは、新しい参照信号を受信した電力 (RSRP) およびミニポート ドライバーからのシグナル ノイズ (SNR) 値のクエリをホストできるようにします。 ミニポート ドライバーは、ドライバーは、5 G をサポートしている場合、この OID とそのデータ構造体のリビジョン 3 を使用する必要があります。
 

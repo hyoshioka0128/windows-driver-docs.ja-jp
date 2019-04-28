@@ -5,11 +5,11 @@ ms.assetid: 5546eeca-f251-4b2f-8539-591b95c093f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 373c0cb8b2d0101448cdb7431cf7a600304dda4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370744"
 ---
 # <a name="registry-entries-for-wia-drivers"></a>WIA ドライバーのレジストリ エントリ
 

@@ -1,6 +1,6 @@
 ---
-title: DVD に関連したクロック関数
-description: DVD に関連したクロック関数
+title: DVD 関連のクロック関数
+description: DVD 関連のクロック関数
 ms.assetid: 495f25dc-cd79-4f7f-acbc-b8b271269fb3
 keywords:
 - DVD デコーダー ミニドライバー WDK、マスターのクロック
@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f11e19af62d483e943fae8ef1f6d41a91e09b159
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363826"
 ---
-# <a name="dvd-related-clock-functions"></a>DVD に関連したクロック関数
+# <a name="dvd-related-clock-functions"></a>DVD 関連のクロック関数
 
 
 
 
 
-クロックのすべてのハンドルは、適切な個別のストリームに格納する必要があります。 グローバルまたは静的変数でない保存します。 詳細については、[KS クロック](ks-clocks.md)を参照してください。
+クロックのすべてのハンドルは、適切な個別のストリームに格納する必要があります。 グローバルまたは静的変数でない保存します。 詳細については、次を参照してください。 [KS クロック](ks-clocks.md)します。
 
 <table>
 <colgroup>

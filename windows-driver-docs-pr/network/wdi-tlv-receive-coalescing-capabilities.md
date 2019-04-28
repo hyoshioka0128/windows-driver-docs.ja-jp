@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_RECEIVE_COALESCING_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c7d1434689d85916a941568db6b644998891b623
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360179"
 ---
 # <a name="wditlvreceivecoalescingcapabilities"></a>WDI\_TLV\_受信\_COALESCING\_機能
 
@@ -80,8 +80,8 @@ WDI\_TLV\_受信\_COALESCING\_機能は、ハードウェア支援によるを�
 </dd>
 <dt>NDIS_RECEIVE_FILTER_VM_QUEUE_SUPPORTED</dt>
 <dd><p>ネットワーク アダプターでは、VM キュー パケットのフィルター処理をサポートする最小要件を提供します。 VMQ または SR-IOV インターフェイスを使用する有効な場合、ミニポート ドライバーはこのフラグを設定する必要があります。</p>
-<p>VM キュー パケットのフィルター処理するために VMQ 要件の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff570780" data-raw-source="[Setting and Clearing VMQ Filters](https://msdn.microsoft.com/library/windows/hardware/ff570780)">設定および VMQ のフィルターをクリアする</a>を参照してください。</p>
-<p>VM キュー パケットのフィルター処理するための SR-IOV 要件の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh440224" data-raw-source="[Setting a Receive Filter on a Virtual Port](https://msdn.microsoft.com/library/windows/hardware/hh440224)">仮想ポートで受信フィルターを設定</a>を参照してください。</p>
+<p>VM キュー パケットのフィルター処理するために VMQ 要件の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff570780" data-raw-source="[Setting and Clearing VMQ Filters](https://msdn.microsoft.com/library/windows/hardware/ff570780)">設定および VMQ のフィルターをクリアする</a>します。</p>
+<p>VM キュー パケットのフィルター処理するための SR-IOV 要件の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh440224" data-raw-source="[Setting a Receive Filter on a Virtual Port](https://msdn.microsoft.com/library/windows/hardware/hh440224)">仮想ポートで受信フィルターを設定</a>します。</p>
 </dd>
 <dt>NDIS_RECEIVE_FILTER_LOOKAHEAD_SPLIT_SUPPORTED</dt>
 <dd><p>ネットワーク アダプターでは、VM キュー先読みオフセット入力方向の受信パケットの分割をサポートしています。 このオフセットは先読みアサーションが要求されたサイズ以上です。 ネットワーク アダプターでは、DMA を使用して、共有メモリ セグメントを区切る先読みアサーションと後先読みのデータを転送します。</p>
@@ -279,7 +279,7 @@ WDI\_TLV\_受信\_COALESCING\_機能は、ハードウェア支援によるを�
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>1 つのパケットの結合フィルターのパケット ヘッダー フィールドに指定できるテストの最大数。 パケットの結合の詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/hh451601" data-raw-source="[NDIS Packet Coalescing](https://msdn.microsoft.com/library/windows/hardware/hh451601)">NDIS パケット結合</a>を参照してください。
+<td>1 つのパケットの結合フィルターのパケット ヘッダー フィールドに指定できるテストの最大数。 パケットの結合の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451601" data-raw-source="[NDIS Packet Coalescing](https://msdn.microsoft.com/library/windows/hardware/hh451601)">NDIS パケット結合</a>します。
 <div class="alert">
 <strong>注</strong>  パケットの結合をサポートするネットワーク アダプターが 1 つのパケットの結合フィルターの指定できる 5 つ以上のパケット ヘッダー フィールドをサポートする必要があります。 アダプターがパケットの結合をサポートしていない場合、ミニポート ドライバーは 0 にこの値を設定する必要があります。
 </div>

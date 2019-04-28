@@ -12,11 +12,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: f3f7b50a8401cd5f49e8cf80f9a99a6d43f5e4d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368678"
 ---
 # <a name="debugasmoptxxx"></a>デバッグ\_ASMOPT\_XXX
 
@@ -73,7 +73,7 @@ ms.locfileid: "56559866"
 </table>
 
 
-**「解説」**
+**注釈**
 
 さらに、DEBUG_ASMOPT_DEFAULT 値は、アセンブリとの逆アセンブル オプションの既定のセットを表します。 これは、上の表でのすべてのオプションをオフにされていることを意味します。 
 

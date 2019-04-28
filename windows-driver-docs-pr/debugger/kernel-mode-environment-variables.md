@@ -15,11 +15,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e16627de75b81be5d8429ff9f1150df4be288670
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367190"
 ---
 # <a name="kernel-mode-environment-variables"></a>カーネルモードの環境変数
 
@@ -43,7 +43,7 @@ ms.locfileid: "56581989"
 <tbody>
 <tr class="odd">
 <td align="left"><p>_NT_DEBUG_PORT = <em>comPort</em></p></td>
-<td align="left"><p>カーネルの接続で使用する COM ポートを指定します。 詳細については、<a href="getting-set-up-for-debugging.md" data-raw-source="[Getting Set Up for Debugging](getting-set-up-for-debugging.md)">を取得する設定をデバッグ用</a>を参照してください。</p></td>
+<td align="left"><p>カーネルの接続で使用する COM ポートを指定します。 詳細については、次を参照してください。<a href="getting-set-up-for-debugging.md" data-raw-source="[Getting Set Up for Debugging](getting-set-up-for-debugging.md)">を取得する設定をデバッグ用</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>_NT_DEBUG_BAUD_RATE = <em>BaudRate</em></p></td>

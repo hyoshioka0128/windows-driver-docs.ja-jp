@@ -5,11 +5,11 @@ ms.assetid: E2995039-E8FD-4EC2-9B2F-9BFB767AEE16
 ms.date: 04/06/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6981b0296f5500439205ad0703477cd58c1f808d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370258"
 ---
 # <a name="new-camera-driver-controls-for-windows-10"></a>Windows 10 用の新しいカメラ ドライバー コントロール
 

@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_PM_CAPABILITIES_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fd5f1e2dadeb9ff4a8b2c9fbfb62fc7fc18f6d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362888"
 ---
 # <a name="ndisstatuspmcapabilitieschange"></a>NDIS\_状態\_PM\_機能\_変更
 
@@ -25,7 +25,7 @@ NDIS 生成、NDIS\_状態\_PM\_機能\_変更状態の表示時に以前に報�
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体にはへのポインターが含まれています、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)更新された電源管理機能を含む構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

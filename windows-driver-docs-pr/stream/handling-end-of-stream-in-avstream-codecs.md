@@ -1,6 +1,6 @@
 ---
-title: AVStream コーデックで Stream の最後の処理
-description: AVStream コーデックで Stream の最後の処理
+title: AVStream コーデックのストリームの終了処理
+description: AVStream コーデックのストリームの終了処理
 ms.assetid: ee57137b-999a-449f-9f9d-50bc19e07ba8
 keywords:
 - WDK AVStream のストリームの末尾の処理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eeff1d7677e08e40fb00f431ea9df7b9a061d36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363528"
 ---
-# <a name="handling-end-of-stream-in-avstream-codecs"></a>AVStream コーデックで Stream の最後の処理
+# <a name="handling-end-of-stream-in-avstream-codecs"></a>AVStream コーデックのストリームの終了処理
 
 
 KSSTREAM HW MFT は、ストリーム (EOS) フラグのセットの末尾を使用するサンプルを受信すると、設定\_ヘッダー\_OPTIONSF\_で ENDOFSTREAM、 **OptionsFlag**のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)サンプルに対応する構造体。

@@ -1,6 +1,6 @@
 ---
-title: Stream クラスの子デバイス
-description: Stream クラスの子デバイス
+title: ストリーム クラスの子デバイス
+description: ストリーム クラスの子デバイス
 ms.assetid: 2885a77d-5e39-4730-b715-99f0a426f273
 keywords:
 - Stream.sys クラス ドライバー WDK Windows 2000 のカーネルが子デバイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2193cb84d3c7713ce0b74b403f4dcea1308d84f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371207"
 ---
-# <a name="stream-class-child-devices"></a>Stream クラスの子デバイス
+# <a name="stream-class-child-devices"></a>ストリーム クラスの子デバイス
 
 
 

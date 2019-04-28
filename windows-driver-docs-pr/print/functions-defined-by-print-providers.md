@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec343fd5db0345044216287d0d559aa4c32d43f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363444"
 ---
 # <a name="functions-defined-by-print-providers"></a>印刷プロバイダーによって定義されている関数
 
@@ -26,7 +26,7 @@ ms.locfileid: "57349739"
 
 このトピックでは、すべての印刷のプロバイダーが提供できる機能を一覧表示します。 これらの関数のほとんどは、Microsoft Windows SDK ドキュメントで説明します。 関数は、Windows Driver Kit (WDK) で説明されている、関数名は、関連付けられている参照ページへのリンクを提供します。
 
-すべての印刷プロバイダーは、上記のすべての関数のポインターを提供する必要があります。 ただし、ほとんどのベンダーから提供された印刷プロバイダーは、関数で定義されている操作の多くをサポートする必要はありません「部分的なプロバイダー」です。 関数ポインターの多くは、そのため、 **NULL**します。 部分的な印刷プロバイダーの詳細については、[ネットワーク印刷のプロバイダーを記述](writing-a-network-print-provider.md)を参照してください。
+すべての印刷プロバイダーは、上記のすべての関数のポインターを提供する必要があります。 ただし、ほとんどのベンダーから提供された印刷プロバイダーは、関数で定義されている操作の多くをサポートする必要はありません「部分的なプロバイダー」です。 関数ポインターの多くは、そのため、 **NULL**します。 部分的な印刷プロバイダーの詳細については、次を参照してください。[ネットワーク印刷のプロバイダーを記述](writing-a-network-print-provider.md)します。
 
 サポートする必要がある関数は次の関数のリストで、"Required"ラベル付けされます。
 

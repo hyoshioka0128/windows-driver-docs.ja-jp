@@ -1,17 +1,17 @@
 ---
-title: Storport は、ハードウェア情報の照会
-description: Storport は、ハードウェア情報の照会
+title: Storport へのハードウェア情報のクエリ
+description: Storport へのハードウェア情報のクエリ
 ms.assetid: 1e807e42-d03f-44be-a0a4-8187e2d5667a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27a746adc7e6fd5983e963906fd6ffc5e8344e42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366362"
 ---
-# <a name="querying-storport-for-hardware-information"></a>Storport は、ハードウェア情報の照会
+# <a name="querying-storport-for-hardware-information"></a>Storport へのハードウェア情報のクエリ
 
 
 記憶域クラスおよびその他の上位レベルのドライバーできます Storport をデバイスの機能に関する情報のクエリし、クエリ プロパティ要求を使用してホスト バス アダプター ([**IOCTL\_ストレージ\_クエリ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff560590))。 クエリ プロパティ要求が、レガシ システムの PnP と同等の照会と機能の要求 ([**IOCTL\_SCSI\_取得\_照会\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff560509)と[ **IOCTL\_SCSI\_取得\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff560502))。 Storport 記憶装置、ストレージ デバイスの記述子を返します ([**ストレージ\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566971)) SCSI 問い合わせデータまたは非 SCSI と同等の格納しているとホスト アダプター Storport 記憶域アダプター記述子を返します ([**ストレージ\_アダプター\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566346)) 機能と制限事項のデータを格納しています。

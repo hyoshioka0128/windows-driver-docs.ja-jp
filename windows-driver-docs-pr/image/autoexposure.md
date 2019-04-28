@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecfd7d6adfa3eea0602ad04e93ef464e973c1eb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373365"
 ---
 # <a name="autoexposure-element"></a>AutoExposure 要素
 
@@ -67,7 +67,7 @@ ms.locfileid: "56571912"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ときのブール値、 **AutoExposure**要素が 1 または**true**、スキャン デバイスは白にドキュメントの背景を軽減するイメージの処理の方法を使用します。

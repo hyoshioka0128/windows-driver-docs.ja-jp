@@ -5,11 +5,11 @@ ms.assetid: 28f560dd-b919-4652-93f6-691051a0ffbe
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3e718257c2cf5e14e71a8eed9dbfdb708223d218
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365454"
 ---
 # <a name="obtaining-hid-reports-by-user-mode-applications"></a>ユーザー モード アプリケーションでの HID レポートを取得します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "56579409"
 <a href="" id="hidd-getfeature"></a>[**HidD\_GetFeature**](https://msdn.microsoft.com/library/windows/hardware/ff538910)  
 HID コレクションから機能のレポートを返します。
 
-アプリケーションでは、特定のレポートの戻り値を要求できます。 これらのルーチンを使用して特定のレポートを取得するには、アプリケーション レポートの出力バッファーを割り当て、バッファーを 0 に初期化および特定のレポート ID に、バッファー内の最初のバイトを設定 詳細については、[HID レポートの初期化](initializing-hid-reports.md)を参照してください。
+アプリケーションでは、特定のレポートの戻り値を要求できます。 これらのルーチンを使用して特定のレポートを取得するには、アプリケーション レポートの出力バッファーを割り当て、バッファーを 0 に初期化および特定のレポート ID に、バッファー内の最初のバイトを設定 詳細については、次を参照してください。 [HID レポートの初期化](initializing-hid-reports.md)します。
 
  
 

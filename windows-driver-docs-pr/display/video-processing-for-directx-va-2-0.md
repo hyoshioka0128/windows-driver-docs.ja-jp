@@ -1,6 +1,6 @@
 ---
-title: ビデオの DirectX VA 2.0 の処理
-description: ビデオの DirectX VA 2.0 の処理
+title: DirectX VA 2.0 のビデオ処理
+description: DirectX VA 2.0 のビデオ処理
 ms.assetid: 8b14fe56-54bd-4f27-9713-917a16cc39c7
 keywords:
 - ビデオ アクセラレータ WDK の DirectX の表示、ビデオの処理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d3b791974e1228c0565b116f48cb17082687db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365007"
 ---
-# <a name="video-processing-for-directx-va-20"></a>ビデオの DirectX VA 2.0 の処理
+# <a name="video-processing-for-directx-va-20"></a>DirectX VA 2.0 のビデオ処理
 
 
 次のトピックでは、DirectX VA 2.0 向けのビデオの処理について説明します。

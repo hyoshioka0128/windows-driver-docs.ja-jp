@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 507c38243eb92aabc1d81daa423eaafa0e52e361
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369108"
 ---
 # <a name="processing-irps-in-an-intermediate-level-driver"></a>中間レベル ドライバーでの IRP の処理
 
@@ -80,7 +80,7 @@ I/O マネージャーが、中間のミラー ドライバーを呼び出して
 
 ステータスの設定も DupIRP2 で I/O のステータスのブロックと仮定すると\_成功した場合、 *IoCompletion*ルーチンが DupIRP2 から元の IRP に状態の I/O ブロックをコピーし、DupIRP2 を解放します。 呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)元 IRP と状態を返します。\_詳細\_処理\_必須。 この状態を返すしないように I/O マネージャー DupIRP2; で処理をさらに補完IRP はスレッドに関連付けられていないため、それを作成したドライバーを使用した完了処理を終了する必要があります。
 
-下位レベルのドライバーの両方のセットがミラー ドライバーの Irp を正常に完了しない場合、ミラー ドライバーの*IoCompletion*ルーチンがエラーと試行の適切なのミラー化されたデータ回復にログインする必要があります。 詳細については、[ログ エラー](logging-errors.md)を参照してください。
+下位レベルのドライバーの両方のセットがミラー ドライバーの Irp を正常に完了しない場合、ミラー ドライバーの*IoCompletion*ルーチンがエラーと試行の適切なのミラー化されたデータ回復にログインする必要があります。 詳細については、次を参照してください。[ログ エラー](logging-errors.md)します。
 
  
 

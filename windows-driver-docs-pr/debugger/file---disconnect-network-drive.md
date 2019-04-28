@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bae2d0bcfd8ddd61417d5ca3a406085669ddb604
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366820"
 ---
-# <a name="file--disconnect-network-drive"></a>ファイル |ネットワーク ドライブを切断します。
+# <a name="file--disconnect-network-drive"></a>File | Disconnect Network Drive (ファイル | ネットワーク ドライブの切断)
 
 
 ## <span id="ddk_file_disconnect_network_drive_dbg"></span><span id="DDK_FILE_DISCONNECT_NETWORK_DRIVE_DBG"></span>
@@ -32,7 +32,7 @@ ms.locfileid: "56529575"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-コマンド シェルにアクセスする方法の詳細については、[シェル コマンドを使用して](using-shell-commands.md)を参照してください。
+コマンド シェルにアクセスする方法の詳細については、次を参照してください。[シェル コマンドを使用して](using-shell-commands.md)します。
 
  
 

@@ -21,18 +21,18 @@ keywords:
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cac00eb60b57dee3eb425bfa6ec86f8c25abd7c3
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360776"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows Driver Kit のツールの索引
 
 
 このトピックでは、Windows Driver Kit (WDK) に付属するツールについて基本的な情報を提供します。 このトピックでは、ドライバーの開発に役立つその他のツールへの参照も含まれています。 これらのツールは、使用可能なオペレーティング システムまたは個別のダウンロードとして使用できますがの一部として。 各ツールの詳細については、このトピックの「ツールの説明のドキュメントを参照してください。
 
-最新の WDK を取得する方法については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=261797)を参照してください。
+最新の WDK を取得する方法については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=261797)します。
 
 このトピックで、次のとおりです。
 
@@ -312,7 +312,7 @@ ms.locfileid: "57349559"
 <td align="left"><p>XPS および OPC 仕様に XPS ファイルの準拠を検証します。</p>
 <p>コマンド オプションについては、次のように入力します。</p>
 <p><strong>isxps 適合/でしょうか。</strong> コマンド プロンプト ウィンドウでします。</p>
-<p>詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=150004" data-raw-source="[isXPS Conformance Tool](https://go.microsoft.com/fwlink/p/?linkid=150004)">isxps 適合性ツール</a>を参照してください。</p></td>
+<p>詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=150004" data-raw-source="[isXPS Conformance Tool](https://go.microsoft.com/fwlink/p/?linkid=150004)">isxps 適合性ツール</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Looksgood (Looksgood.exe)</p>
@@ -530,7 +530,7 @@ ms.locfileid: "57349559"
 <p><strong>WDK ツール:</strong>はい</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\ECManGen.exe</p>
 <p>%WindowsSdkDir%\bin\x86\ECManGen.exe</p></td>
-<td align="left"><p>イベントまたはパフォーマンスのカウンター マニフェストを作成するためのツール (* .man) XML を使用することがなく最初からタグを付けます。 マニフェスト ファイルを作成する方法の詳細については、<a href="https://msdn.microsoft.com/library/windows/desktop/dd996930" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd996930)">インストルメンテーション マニフェスト (Windows) を記述</a>セクションと<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">カーネル モード ドライバーへのイベント トレースの追加</a>を参照してください。</p></td>
+<td align="left"><p>イベントまたはパフォーマンスのカウンター マニフェストを作成するためのツール (* .man) XML を使用することがなく最初からタグを付けます。 マニフェスト ファイルを作成する方法の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/dd996930" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd996930)">インストルメンテーション マニフェスト (Windows) を記述</a>セクションと<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">カーネル モード ドライバーへのイベント トレースの追加</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUIDgen (Guidgen.exe)</p>

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8ae3d375364af04c44885430f53ea11c30213b9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363896"
 ---
 # <a name="guiddevinterfacepartition"></a>GUID_DEVINTERFACE_PARTITION
 

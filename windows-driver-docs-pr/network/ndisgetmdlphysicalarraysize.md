@@ -7,11 +7,11 @@ keywords:
 - Windows Vista 以降のドライバーをネットワーク NdisGetMdlPhysicalArraySize マクロ
 ms.localizationpriority: medium
 ms.openlocfilehash: bc8cd67880d36826e04479559492b713ab7fa6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361014"
 ---
 # <a name="ndisgetmdlphysicalarraysize-macro"></a>NdisGetMdlPhysicalArraySize マクロ
 
@@ -47,7 +47,7 @@ MDL へのポインター。
 
 **NdisGetMdlPhysicalArraySize**マクロの MDL ベースのバージョンの提供、 [ **NdisGetBufferPhysicalArraySize** ](https://msdn.microsoft.com/library/windows/hardware/ff552033)関数。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

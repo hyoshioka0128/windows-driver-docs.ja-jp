@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 297cdad645e14cf4faddc429544b4f87865a4eb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372689"
 ---
 # <a name="fsctlrequestoplocklevel1-control-code"></a>FSCTL\_要求\_OPLOCK\_レベル\_1 個のコントロールのコード
 
@@ -30,7 +30,7 @@ ms.locfileid: "56538194"
 
 便宜的ロックについて、バージョン情報の詳細については、 **FSCTL\_要求\_OPLOCK\_レベル\_1**制御コードを Microsoft Windows SDK のマニュアルを参照してください。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="oplock"></a>*Oplock*  
 ファイルの oplock の不透明なオブジェクトのポインター。
@@ -80,7 +80,7 @@ ms.locfileid: "56538194"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

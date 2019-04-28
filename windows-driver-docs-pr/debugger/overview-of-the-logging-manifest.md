@@ -1,6 +1,6 @@
 ---
-title: ログ記録のマニフェストの概要
-description: ログ記録のマニフェストの概要
+title: ログのマニフェストの概要
+description: ログのマニフェストの概要
 ms.assetid: abf550c5-6b70-4043-b2e9-d3dc5096cc4e
 keywords:
 - LogViewer、マニフェスト
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eea59260a5928503ff0e670758c24d5983bbf9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366459"
 ---
-# <a name="overview-of-the-logging-manifest"></a>ログ記録のマニフェストの概要
+# <a name="overview-of-the-logging-manifest"></a>ログのマニフェストの概要
 
 
 ## <span id="ddk_overview_of_the_logging_manifest_dtoolq"></span><span id="DDK_OVERVIEW_OF_THE_LOGGING_MANIFEST_DTOOLQ"></span>

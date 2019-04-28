@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b727e046055c0baf2de077f4e916b6824b8823d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370646"
 ---
 # <a name="wiaipsbarcodesearchdirection"></a>WIA\_IP\_バーコード\_検索\_方向
 
@@ -33,7 +33,7 @@ ms.locfileid: "56535699"
 
 有効な値 :WIA\_PROP\_一覧
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
 <a name="remarks"></a>注釈
 -------
@@ -47,7 +47,7 @@ ms.locfileid: "56535699"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -79,7 +79,7 @@ ms.locfileid: "56535699"
 
 このプロパティは、バーコード リーダーのすべてのアイテムに必要な WIA のみをサポートするために実装することが\_バーコード\_自動\_検索値。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

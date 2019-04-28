@@ -5,16 +5,16 @@ ms.assetid: 42A78738-CE0D-42EA-9E3D-04CDC2060266
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b506fe76da4e30b53a5c220b3b2d0e5a85caafa2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367990"
 ---
 # <a name="usb-20-extensions"></a>USB 2.0 の拡張機能
 
 
-このセクションでは、USB 2.0 デバッガー拡張機能のコマンドについて説明します。 これらのコマンドは、USB 2.0 ドライバー スタックのドライバーによって管理されるデータ構造から情報を表示します。 これら 3 つのドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)を参照してください。
+このセクションでは、USB 2.0 デバッガー拡張機能のコマンドについて説明します。 これらのコマンドは、USB 2.0 ドライバー スタックのドライバーによって管理されるデータ構造から情報を表示します。 これら 3 つのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)します。
 
 USB 2.0 デバッガー拡張機能のコマンドは、Usbkd.dll で実装されます。 Usbkd コマンドを読み込むには、次のように入力します。 **.load usbkd.dll**デバッガーでします。
 
@@ -34,7 +34,7 @@ USB 2.0 ツリーには、ハブを表す子ノードと共に EHCI ホスト �
 
 USB 2.0 の問題のデバッグを開始するには、入力、 [ **! usb2tree** ](-usbkd-usb2tree.md)コマンド。 **! Usb2tree**コマンドは、コマンドとホスト コント ローラー、ハブ、ポート、デバイス、エンドポイント、および USB 2.0 ツリーの他の要素を調査するために使用できるアドレスの一覧を表示します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 -   [**!usbkd.usbhelp**](-usbkd-usbhelp.md)

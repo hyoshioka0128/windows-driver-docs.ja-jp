@@ -1,6 +1,6 @@
 ---
-title: ネットワークのデータ構造体
-description: ネットワークのデータ構造体
+title: ネットワーク データ構造
+description: ネットワーク データ構造
 ms.assetid: c29aaae6-6f68-404a-90dc-bae005ac9b6e
 keywords:
 - NET_BUFFER
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b78ea7cf518886afdba3899b584325a59b743553
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369890"
 ---
-# <a name="network-data-structures"></a>ネットワークのデータ構造体
+# <a name="network-data-structures"></a>ネットワーク データ構造
 
 
 

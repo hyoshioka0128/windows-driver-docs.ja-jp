@@ -5,11 +5,11 @@ ms.assetid: 080992B1-AB36-4BA1-BF44-7CF0C9F4EEE3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b28626a1f26d62cab03d8cae7724815d7fc5ce38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364640"
 ---
 # <a name="installing-hid-clients"></a>HID クライアントをインストールする
 
@@ -22,7 +22,7 @@ ms.locfileid: "56572107"
 
 -   Windows Vista および Windows の以降のバージョンでは、ベンダーは USB HID デバイスをセレクティブ サスペンドの機能を有効にできます。 この機能はバージョン 2.0 で定義されている、*ユニバーサル シリアル バス仕様。* Windows で USB のセレクティブをサポートする方法の詳細については、機能を中断しを参照してください[USB のセレクティブ サスペンド](../usbcon/usb-selective-suspend.md)します。
 
-HIDClass デバイスをインストールするには、その他の HIDClass 固有要件はありません。 デバイスをインストールする方法の詳細については、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
+HIDClass デバイスをインストールするには、その他の HIDClass 固有要件はありません。 デバイスをインストールする方法の詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
 
  
 

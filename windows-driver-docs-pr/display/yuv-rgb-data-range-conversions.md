@@ -1,15 +1,15 @@
 ---
-title: YUV RGB データ範囲の変換
+title: YUV-RGB データ範囲の変換
 ms.assetid: 0A439686-0BAE-4E4D-AA23-06A6EF72C4B3
 description: 入力データの範囲の予期されるビデオの変換の動作への影響
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6022ff07872ee15099e8d4f96674eed88ec540b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371472"
 ---
 # <a name="span-iddisplayyuv-rgbdatarangeconversionsspanyuv-rgb-data-range-conversions"></a><span id="display.yuv-rgb_data_range_conversions"></span>YUV RGB データ範囲の変換
 
@@ -43,25 +43,25 @@ YUV または RGB の出力に入力を RGB または YUV から変換する場�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">データ</td>
+<td align="left">data</td>
 <td align="left">format</td>
 <td align="left">RGB</td>
 <td align="left">標準</td>
 <td align="left">RGB</td>
 <td align="left">標準</td>
 <td align="left">format</td>
-<td align="left">データ</td>
+<td align="left">data</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">範囲</td>
+<td align="left">範囲 (range)</td>
 <td align="left"></td>
-<td align="left">範囲</td>
-<td align="left">範囲</td>
-<td align="left">範囲</td>
-<td align="left">範囲</td>
+<td align="left">範囲 (range)</td>
+<td align="left">範囲 (range)</td>
+<td align="left">範囲 (range)</td>
+<td align="left">範囲 (range)</td>
 <td align="left"></td>
-<td align="left">範囲</td>
+<td align="left">範囲 (range)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">

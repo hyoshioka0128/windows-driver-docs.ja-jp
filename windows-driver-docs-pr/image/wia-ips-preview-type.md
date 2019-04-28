@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 437810cba29f462a053a8e648ae5dbedb3afa999
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366789"
 ---
 # <a name="wiaipspreviewtype"></a>WIA\_IP\_プレビュー\_型
 
@@ -44,7 +44,7 @@ WIA\_IP\_プレビュー\_TYPE プロパティを示す場合[ **WIA\_IPA\_DATAT
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -66,7 +66,7 @@ WIA\_IP\_プレビュー\_TYPE プロパティを示す場合[ **WIA\_IPA\_DATAT
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

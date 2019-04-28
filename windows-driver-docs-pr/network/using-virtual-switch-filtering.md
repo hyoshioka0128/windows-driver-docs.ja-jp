@@ -1,17 +1,17 @@
 ---
-title: 仮想スイッチのフィルターを使用します。
-description: 仮想スイッチのフィルターを使用します。
+title: 仮想スイッチ フィルターの使用
+description: 仮想スイッチ フィルターの使用
 ms.assetid: 09325037-F9A4-45C8-97E0-8FCA7D42A120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c48c44856961ddf2b5cc7ee8abddda0289b13344
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361808"
 ---
-# <a name="using-virtual-switch-filtering"></a>仮想スイッチのフィルターを使用します。
+# <a name="using-virtual-switch-filtering"></a>仮想スイッチ フィルターの使用
 
 ## <a name="overview-of-virtual-switch-filtering"></a>仮想スイッチのフィルタ リングの概要
 
@@ -63,7 +63,7 @@ ms.locfileid: "56559150"
 
 ### <a name="port-0-traffic"></a>ポート 0 のトラフィック
 
-WFP 仮想スイッチのコールアウトのポート (既定のポートの ID) の 0 からのトラフィックが信頼されていると、フィルター処理する必要がありますされません。 これは、一般に、ポート 0 でのトラフィックは他の拡張機能ドライバー スタックの発生元し、特権と信頼されているデータ パスによって扱われるためです。 仮想スイッチ拡張機能は、フィルター処理され、基になる拡張機能によって拒否する必要があります、いないコントロール パケットを送信するなどの場合ポート 0 を使用して限定的に使用します。 HYPER-V 拡張可能スイッチ ソース ポート mofification の詳細については、[データを変更するパケットの拡張可能スイッチ ソース ポート](modifying-a-packet-s-extensible-switch-source-port-data.md)を参照してください。
+WFP 仮想スイッチのコールアウトのポート (既定のポートの ID) の 0 からのトラフィックが信頼されていると、フィルター処理する必要がありますされません。 これは、一般に、ポート 0 でのトラフィックは他の拡張機能ドライバー スタックの発生元し、特権と信頼されているデータ パスによって扱われるためです。 仮想スイッチ拡張機能は、フィルター処理され、基になる拡張機能によって拒否する必要があります、いないコントロール パケットを送信するなどの場合ポート 0 を使用して限定的に使用します。 HYPER-V 拡張可能スイッチ ソース ポート mofification の詳細については、次を参照してください。[データを変更するパケットの拡張可能スイッチ ソース ポート](modifying-a-packet-s-extensible-switch-source-port-data.md)します。
 
 ### <a name="callout-matching-rules"></a>照合ルールの吹き出し
 

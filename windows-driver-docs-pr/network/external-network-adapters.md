@@ -5,11 +5,11 @@ ms.assetid: 4029437C-97EA-4F21-A3F0-3B29DC650233
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0be2ec56d6a62996590d1cde869781622c2d692
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360202"
 ---
 # <a name="external-network-adapters"></a>外部ネットワーク アダプター
 
@@ -20,7 +20,7 @@ ms.locfileid: "56548598"
 
 外部ネットワーク アダプターは、基になる物理ネットワーク アダプター、ホスト上の仮想表現です。 外部ネットワーク アダプターでは、パケット、オブジェクト識別子 (Oid) の要求、および 1 つ以上の物理ネットワーク アダプターを基になるとの間の NDIS 状態インジケーターを転送します。
 
-内部的には、外部ネットワーク アダプターは、基になる物理ネットワーク アダプターのさまざまな構成にバインドします。 これらの構成は、1 つまたは複数の物理ネットワーク アダプターを介して外部ネットワーク インターフェイスへのアクセスを提供します。 これらの物理アダプター構成の詳細については、[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)を参照してください。
+内部的には、外部ネットワーク アダプターは、基になる物理ネットワーク アダプターのさまざまな構成にバインドします。 これらの構成は、1 つまたは複数の物理ネットワーク アダプターを介して外部ネットワーク インターフェイスへのアクセスを提供します。 これらの物理アダプター構成の詳細については、次を参照してください。[型の物理ネットワーク アダプターの構成](types-of-physical-network-adapter-configurations.md)します。
 
 外部ネットワーク アダプターの接続を提供する拡張可能スイッチを構成する場合、次の手順は、スイッチが開始されると発生します。
 

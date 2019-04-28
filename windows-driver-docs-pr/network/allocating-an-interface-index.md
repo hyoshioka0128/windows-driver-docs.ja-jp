@@ -1,6 +1,6 @@
 ---
-title: インターフェイス インデックスの割り当てください。
-description: インターフェイス インデックスの割り当てください。
+title: インターフェイス インデックスの割り当て
+description: インターフェイス インデックスの割り当て
 ms.assetid: f1315da2-16da-4320-9d0d-1270396af38b
 keywords:
 - NDIS ネットワーク インターフェイス、WDK インターフェイス インデックスの割り当て
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d31446074b97bfda64a064564d7447249af36dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367802"
 ---
-# <a name="allocating-an-interface-index"></a>インターフェイス インデックスの割り当てください。
+# <a name="allocating-an-interface-index"></a>インターフェイス インデックスの割り当て
 
 
 

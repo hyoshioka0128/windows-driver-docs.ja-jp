@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a114d62d61926242fca5152e9ae705f629c14b1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363158"
 ---
 # <a name="kspropertycameracontrolpanrelative"></a>KSPROPERTY\_CAMERACONTROL\_パン\_相対
 
@@ -42,19 +42,19 @@ KSPROPERTY\_CAMERACONTROL\_パン\_相対プロパティが垂直の軸を中心
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564439" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564439)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff564420" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564420)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_CAMERACONTROL\_パン\_相対プロパティが垂直の軸を中心
 </colgroup>
 <thead>
 <tr class="header">
-<th>[値]</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -92,7 +92,7 @@ KSPROPERTY\_CAMERACONTROL\_パン\_相対プロパティが垂直の軸を中心
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **値**のメンバー、 [ **KSPROPERTY\_CAMERACONTROL\_ノード\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff564420)構造が相対的な pan を指定します。

@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 600f330141fdec96ac179db42aed178967535aaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362858"
 ---
 # <a name="ndisstatusreceivefiltercurrentcapabilities"></a>NDIS\_状態\_受信\_フィルター\_現在\_機能
 
@@ -39,7 +39,7 @@ NDIS フィルターが表示される次の NDIS インターフェイスで使
 
 -   現在有効になっている 1 つのネットワーク アダプターのフィルター機能の変更が表示されます。 たとえば、受信フィルターを有効になっているまたは独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションで無効になっていることができます。
 
--   現在有効になっている負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属しているネットワーク アダプターを 1 つまたは複数のフィルター機能の変更が表示されます。 詳細については、[NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)を参照してください。
+-   現在有効になっている負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属しているネットワーク アダプターを 1 つまたは複数のフィルター機能の変更が表示されます。 詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)します。
 
 ミニポート ドライバーが発行するとき、次の手順を次の**NDIS\_状態\_受信\_フィルター\_現在\_機能**状態を示す値。
 

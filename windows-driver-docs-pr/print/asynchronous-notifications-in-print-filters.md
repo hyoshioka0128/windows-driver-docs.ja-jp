@@ -1,6 +1,6 @@
 ---
-title: 印刷フィルターで非同期通知
-description: 印刷フィルターで非同期通知
+title: 印刷フィルターの非同期通知
+description: 印刷フィルターの非同期通知
 ms.assetid: 52b0790b-4927-4e1b-8ae5-6e2afc7c9df6
 keywords:
 - モジュール WDK XPSDrv、XPS フィルターを表示します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 795bdb45d55077d12eedca434223f5cce34c8812
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368903"
 ---
-# <a name="asynchronous-notifications-in-print-filters"></a>印刷フィルターで非同期通知
+# <a name="asynchronous-notifications-in-print-filters"></a>印刷フィルターの非同期通知
 
 
 印刷フィルター パイプラインでは、アプリケーション用の印刷スプーラーでサポートされている非同期の通知に非常に類似した非同期の通知機能があります。 [ **RouterCreatePrintAsyncNotificationChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff562009)印刷スプーラで使用できる関数が印刷フィルターをご利用いただけません。 印刷のフィルターを使用する必要があります、 [IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955) IPrintAsyncNotify オブジェクトを作成するインターフェイス。
@@ -107,7 +107,7 @@ if (SUCCEEDED(hr))
 
 変数、上記のコード例では`pIAsyncCallback`の呼び出し元の実装へのポインター、 [IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)インターフェイス。
 
-場合によってとそれが済んだら、双方向の通知チャネルをリリースする必要があります。 これを行うには、呼び出し、[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッド[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)します。 チャネルを解放する場合については、[通知チャネル](notification-channel.md)を参照してください。
+場合によってとそれが済んだら、双方向の通知チャネルをリリースする必要があります。 これを行うには、呼び出し、[リリース](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッド[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)します。 チャネルを解放する場合については、次を参照してください。[通知チャネル](notification-channel.md)します。
 
 ### <a name="impersonation-and-notification"></a>権限借用と通知
 

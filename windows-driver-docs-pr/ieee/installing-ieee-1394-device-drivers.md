@@ -1,6 +1,6 @@
 ---
-title: IEEE 1394 のデバイス ドライバーのインストール
-description: IEEE 1394 のデバイス ドライバーのインストール
+title: IEEE 1394 デバイス ドライバーのインストール
+description: IEEE 1394 デバイス ドライバーのインストール
 ms.assetid: 3f99bec7-e657-4de7-bce4-36a779cc0442
 keywords:
 - IEEE 1394 WDK バス ドライバーのインストール
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8f1a4454b102f00aa4187aa475564c39b0ffdd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371056"
 ---
-# <a name="installing-ieee-1394-device-drivers"></a>IEEE 1394 のデバイス ドライバーのインストール
+# <a name="installing-ieee-1394-device-drivers"></a>IEEE 1394 デバイス ドライバーのインストール
 
 
 
@@ -32,7 +32,7 @@ Class = Base
 
 IEEE 1394 デバイス ドライバーのインストールに関連付けられているその他の特別な要件はありません。
 
-Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
+Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
 
  
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: dfd6fd10142ae4457849732c50876103fc9a89f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372239"
 ---
 # <a name="ndisstatuswwansignalstate"></a>NDIS\_状態\_WWAN\_信号\_状態
 

@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_TASK_SET_RADIO_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c39173824acf545f079d3cf83095a43ca4953e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365717"
 ---
 # <a name="oidwditasksetradiostate"></a>OID\_WDI\_タスク\_設定\_ラジオ\_状態
 
@@ -20,7 +20,7 @@ OID\_WDI\_タスク\_設定\_ラジオ\_状態を使用して、アダプター�
 
 | オブジェクト  | 中止できます。 | 既定の優先順位 (ホスト ドライバー ポリシー) | 通常の実行時間 (秒) |
 |---------|---------------|---------------------------------------|---------------------------------|
-| アダプタ | X            | 1                                     | 1                               |
+| [アダプター] | X            | 1                                     | 1                               |
 
  
 

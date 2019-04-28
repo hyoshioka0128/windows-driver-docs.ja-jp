@@ -7,18 +7,18 @@ keywords:
 - WDI_TLV_PHY_SUPPORTED_RX_DATA_RATES_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 09549b3b0acc14cea95d6c90749ee770d9f40e97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363634"
 ---
 # <a name="wditlvphysupportedrxdatarateslist"></a>WDI\_TLV\_PHY\_サポートされている\_RX\_データ\_料金\_一覧
 
 
 WDI\_TLV\_PHY\_サポートされている\_RX\_データ\_料金\_リストは、未使用の TLV します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: ドライバーの読み込み順序を指定します。
-description: ドライバーの読み込み順序を指定します。
+title: ドライバーの読み込み順序の指定
+description: ドライバーの読み込み順序の指定
 ms.assetid: 2e06671a-5664-4042-bc7a-e8ab12938cea
 keywords:
 - INF ファイル WDK デバイスのインストール、ドライバーの読み込み順序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f055ce9426c61d3baf30752039dec44fe95a58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369435"
 ---
-# <a name="specifying-driver-load-order"></a>ドライバーの読み込み順序を指定します。
+# <a name="specifying-driver-load-order"></a>ドライバーの読み込み順序の指定
 
 
 
@@ -103,7 +103,7 @@ Windows デバイスを構成するときに読み込むことができるよう
 -   Verifier ブートが有効になっているによるブート中にドライバーを昇格する場合は、指定**0x40** (CM_SERVICE_VERIFIER_BOOT_LOAD)。
 -   ドライバーを WinPE の起動時に昇格させる必要があります場合、指定**0x80** (CM_SERVICE_WINPE_BOOT_LOAD)。
 
-ドライバーの昇格の詳細については**StartType**ブートのシナリオに応じて、起動時に、[ **INF AddService ディレクティブ**](inf-addservice-directive.md)を参照してください。
+ドライバーの昇格の詳細については**StartType**ブートのシナリオに応じて、起動時に、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87822a0c19665898549cab5f3ed6b984aa19377c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371573"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>カーネル モードのパフォーマンス カウンターの使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "56574109"
 
 1.  プロバイダーとそのカウンターを記述するマニフェストを設定します。
 
-    要素と、マニフェスト内の属性の詳細については、[パフォーマンス カウンター スキーマ](https://go.microsoft.com/fwlink/p/?linkid=147029)を参照してください。 カウンター マニフェストは、パフォーマンス カウンター プロバイダーとそのカウンターを定義する XML フォーマット ファイルを設定します。
+    要素と、マニフェスト内の属性の詳細については、次を参照してください。[パフォーマンス カウンター スキーマ](https://go.microsoft.com/fwlink/p/?linkid=147029)します。 カウンター マニフェストは、パフォーマンス カウンター プロバイダーとそのカウンターを定義する XML フォーマット ファイルを設定します。
 
     マニフェストを手動で作成または Ecmangen.exe、マニフェスト ジェネレータ ツールを使用して作成できます。 ツールは WDK に含まれているし、ビルド環境ウィンドウにある (型**ecmangen**コマンド プロンプトで)。
 

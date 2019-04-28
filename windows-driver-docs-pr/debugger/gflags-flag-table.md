@@ -1,19 +1,19 @@
 ---
-title: GFlags フラグ テーブル
-description: GFlags フラグ テーブル
+title: GFlags のフラグ テーブル
+description: GFlags のフラグ テーブル
 ms.assetid: 09029471-8b29-4232-bee1-d2802035b0fb
 keywords:
 - GFlags、フラグ テーブル
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb658615d208ca432f411b0a0cb9896f1a867c50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370866"
 ---
-# <a name="gflags-flag-table"></a>GFlags フラグ テーブル
+# <a name="gflags-flag-table"></a>GFlags のフラグ テーブル
 
 
 ## <span id="ddk_gflags_flag_table_dtools"></span><span id="DDK_GFLAGS_FLAG_TABLE_DTOOLS"></span>
@@ -21,9 +21,9 @@ ms.locfileid: "56558048"
 
 次の表は、GFlags を変更するフラグ、16 進数の値と、各フラグとフラグが有効である宛先 (R はレジストリにイメージ ファイルには、カーネルは K) の省略形を示します。
 
-各フラグの詳細については、、[グローバル フラグ参照](global-flag-reference.md)を参照してください。
+各フラグの詳細については、次を参照してください。、[グローバル フラグ参照](global-flag-reference.md)します。
 
-GFlags の使用方法の詳細については、[GFlags 概要](gflags-overview.md)と[GFlags 詳細](gflags-details.md)を参照してください。
+GFlags の使用方法の詳細については、次を参照してください。 [GFlags 概要](gflags-overview.md)と[GFlags 詳細](gflags-details.md)します。
 
 **重要な**   Windows Server 2003 および以降のバージョンの Windows では完全に有効になってプール タグ付けします。 これらのシステムで、**プール タグ付けを有効にする**チェック ボックスをオン、**グローバル フラグ** ダイアログ ボックスは淡色表示になり、プール タグ付けの失敗を有効または無効にするコマンド。
 
@@ -112,7 +112,7 @@ GFlags の使用方法の詳細については、[GFlags 概要](gflags-overview
 <td align="left"><p>FLG_DISABLE_STACK_EXTENSION</p></td>
 <td align="left"><p>0x010000</p></td>
 <td align="left"><p>dse</p></td>
-<td align="left"><p>私</p></td>
+<td align="left"><p>I</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="early-critical-section-event-creation.md" data-raw-source="[Early critical section event creation](early-critical-section-event-creation.md)">初期のクリティカル セクション イベントの作成</a></p></td>
@@ -239,7 +239,7 @@ GFlags の使用方法の詳細については、[GFlags 概要](gflags-overview
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>lpg</p></td>
-<td align="left"><p>私</p></td>
+<td align="left"><p>I</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="maintain-a-list-of-objects-for-each-type.md" data-raw-source="[Maintain a list of objects for each type](maintain-a-list-of-objects-for-each-type.md)">各型のオブジェクトの一覧を管理します。</a></p></td>

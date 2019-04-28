@@ -1,6 +1,6 @@
 ---
-title: デバイスがアイドル状態とスリープ解除の動作のユーザーによる制御
-description: デバイスがアイドル状態とスリープ解除の動作のユーザーによる制御
+title: デバイスのアイドル動作とウェイク動作のユーザーによる制御
+description: デバイスのアイドル動作とウェイク動作のユーザーによる制御
 ms.assetid: 776fcf82-2235-489a-8d46-3ad230da3402
 keywords:
 - システム ウェイク アップ WDK KMDF
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 297fb89ccc37a7d2fc34f9bf40e7026941410085
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363693"
 ---
-# <a name="user-control-of-device-idle-and-wake-behavior"></a>デバイスがアイドル状態とスリープ解除の動作のユーザーによる制御
+# <a name="user-control-of-device-idle-and-wake-behavior"></a>デバイスのアイドル動作とウェイク動作のユーザーによる制御
 
 
 デバイスを電源オフまたはウェイク アップ機能のアイドル状態にある場合を有効にするか、これらの機能を無効にするユーザーを許可するかどうかを決定できます。

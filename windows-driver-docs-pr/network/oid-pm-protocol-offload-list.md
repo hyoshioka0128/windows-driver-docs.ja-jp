@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PM_PROTOCOL_OFFLOAD_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 22de938d1a7ddd65909dee50331dd51ac9333b09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361963"
 ---
 # <a name="oidpmprotocoloffloadlist"></a>OID\_PM\_プロトコル\_オフロード\_一覧
 
@@ -40,7 +40,7 @@ NDIS は、要求の次のステータス コードのいずれかを返しま�
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 上記の理由以外の理由、要求が失敗しました。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

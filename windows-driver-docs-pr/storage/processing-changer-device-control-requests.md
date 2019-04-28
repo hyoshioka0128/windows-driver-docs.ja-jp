@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac5f163d74cb8a014f7b914186940a799db8d0d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366276"
 ---
 # <a name="processing-changer-device-control-requests"></a>チェンジャー デバイス制御要求の処理
 

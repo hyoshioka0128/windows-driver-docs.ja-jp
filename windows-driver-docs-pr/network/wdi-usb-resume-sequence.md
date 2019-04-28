@@ -5,11 +5,11 @@ ms.assetid: 4A4A9EF8-5EBD-4EB2-BBB0-E91DE7BF04AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86eda90bbe493fbfd7fda4441e4d8279d01f7852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368355"
 ---
 # <a name="wdi-usb-resume-sequence"></a>WDI USB 再開シーケンス
 

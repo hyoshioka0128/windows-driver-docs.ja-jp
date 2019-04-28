@@ -1,19 +1,19 @@
 ---
-title: ハンドルの割り当ての例
-description: ハンドルの割り当ての例
+title: ハンドル割り当ての例
+description: ハンドル割り当ての例
 ms.assetid: 44239e13-ebe7-48c4-83b2-40f603dc1c98
 keywords:
 - 複数ヘッド ハードウェア WDK DirectX 9.0、ハンドルの割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3f708021d3e47b490be44fc2bf200f3f8bd991b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365941"
 ---
-# <a name="example-of-handle-assignments"></a>ハンドルの割り当ての例
+# <a name="example-of-handle-assignments"></a>ハンドル割り当ての例
 
 
 ## <span id="ddk_example_of_handle_assignments_gg"></span><span id="DDK_EXAMPLE_OF_HANDLE_ASSIGNMENTS_GG"></span>

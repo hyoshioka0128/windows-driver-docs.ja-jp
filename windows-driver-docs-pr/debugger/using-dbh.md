@@ -1,19 +1,19 @@
 ---
-title: DBH を使用します。
-description: DBH を使用します。
+title: DBH の使用
+description: DBH の使用
 ms.assetid: c544013d-e925-40bf-b76d-bf9cefb9fd6d
 keywords:
 - DBH を使用して
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b11826f966fc73ef4f0404c93ab0f5f00e88027
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371586"
 ---
-# <a name="using-dbh"></a>DBH を使用します。
+# <a name="using-dbh"></a>DBH の使用
 
 
 DBH は DbgHelp API (dbghelp.dll) 内の関数の多くを公開するコマンド ライン ツールです。 シンボル ファイルの内容に関する情報を表示し、ファイルにシンボルの特定の詳細を表示、さまざまな条件に一致するシンボル ファイルを検索できます。
@@ -84,7 +84,7 @@ DBH は、デバッガーが行うような方法でターゲット プロセス
 
 既定では、DBH は非装飾のシンボル名を表示すると、シンボルの検索を使用します。 無効にした場合、 [SYMOPT\_UNDNAME](symbol-options.md#symopt-undname)シンボルのオプション、または DBH コマンドラインで-d オプションを含める、装飾が含まれます。
 
-シンボルの装飾については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
+シンボルの装飾については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
 ### <a name="span-idexitingdbhspanspan-idexitingdbhspanexiting-dbh"></a><span id="exiting_dbh"></span><span id="EXITING_DBH"></span>DBH を終了します。
 

@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_PM_WAKE_REASON ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e713e87cc13c2114fe10d4223f17b18779876463
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362882"
 ---
 # <a name="ndisstatuspmwakereason"></a>NDIS\_状態\_PM\_WAKE\_理由
 

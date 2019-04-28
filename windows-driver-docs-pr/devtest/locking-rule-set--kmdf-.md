@@ -5,11 +5,11 @@ ms.assetid: B6DD41A5-E7E5-4070-8752-68E26804A5D5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fb8bf5374ac1c57800d68203cbb489e8f58b3eb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369729"
 ---
 # <a name="locking-rule-set-kmdf"></a>ロックの規則セット (KMDF)
 
@@ -92,7 +92,7 @@ ms.locfileid: "56572378"
     msbuild /t:sdv /p:Inputs="/check:Locking.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

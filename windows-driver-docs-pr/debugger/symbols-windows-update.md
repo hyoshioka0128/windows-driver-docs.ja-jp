@@ -1,5 +1,5 @@
 ---
-title: Windows Update のオフラインのシンボル
+title: Windows Update のオフライン シンボル
 description: このトピックでは、操作する方法で行のシンボルを Windows Update のについて説明します。
 keywords:
 - シンボル
@@ -8,17 +8,17 @@ keywords:
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e861b78408f3a1fb5ef19c9e46d58fe09865c29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368038"
 ---
-# <a name="offline-symbols-for-windows-update"></a>Windows Update のオフラインのシンボル
+# <a name="offline-symbols-for-windows-update"></a>Windows Update のオフライン シンボル
 
 このトピックでは、Windows 更新プログラムをオフラインのシンボルを使用する方法について説明します。 これには、Microsoft シンボル サーバーへのアクセス権がないコンピューターで Windows Update ログのデコードに使用できる手順について説明します。 
 
-多くの場合、これを実行する必要がある場合は、シンボル サーバーのプロキシ設定が、ネットワークの構成可能な状態が表示されます。 詳細については、[SymProxy](https://docs.microsoft.com/windows-hardware/drivers/debugger/symproxy)を参照してください。
+多くの場合、これを実行する必要がある場合は、シンボル サーバーのプロキシ設定が、ネットワークの構成可能な状態が表示されます。 詳細については、次を参照してください。 [SymProxy](https://docs.microsoft.com/windows-hardware/drivers/debugger/symproxy)します。
 
 以下のオプションでは、Microsoft のシンボル サーバーに接続し、ログがあるコンピューターからファイルをコピーすることを 1 つのマシンがある必要があります。 シンボル サーバーにアクセスできないコンピューターとして参照される、*オフライン*マシン、およびマシンとしてへのアクセスが、*オンライン*マシン。
 

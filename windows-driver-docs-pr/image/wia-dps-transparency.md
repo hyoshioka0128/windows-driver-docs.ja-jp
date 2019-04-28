@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 133c1a0dcf91f9205aa8943a42f44adb27f72d19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367003"
 ---
 # <a name="wiadpstransparency"></a>WIA\_DPS\_透過性
 
@@ -33,7 +33,7 @@ WIA\_DPS\_透過性プロパティは廃止され、使用する必要があり�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
 <a name="requirements"></a>必要条件
 ------------

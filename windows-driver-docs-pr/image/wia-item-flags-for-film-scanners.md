@@ -1,17 +1,17 @@
 ---
-title: WIA 項目フラグのフィルム スキャナー
-description: WIA 項目フラグのフィルム スキャナー
+title: フィルム スキャナーの WIA 項目のフラグ
+description: フィルム スキャナーの WIA 項目のフラグ
 ms.assetid: 50aad730-6897-488d-a9de-58ce24738c17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a87701e76ad97c6d9ad81ae2f0f790ab110f2809
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363046"
 ---
-# <a name="wia-item-flags-for-film-scanners"></a>WIA 項目フラグのフィルム スキャナー
+# <a name="wia-item-flags-for-film-scanners"></a>フィルム スキャナーの WIA 項目のフラグ
 
 
 

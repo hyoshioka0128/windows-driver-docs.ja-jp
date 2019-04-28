@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ac219e4533db2e430d9403c219145b7eee71d8f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367293"
 ---
 # <a name="bug-check-0x97-boundimageunsupported"></a>バグ チェック 0x97:バインドされている\_イメージ\_サポートされていません
 

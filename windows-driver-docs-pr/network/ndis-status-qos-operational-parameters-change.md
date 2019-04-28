@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c4dec947ec172e250874f3305e70b19fcdfad8a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362953"
 ---
 # <a name="ndisstatusqosoperationalparameterschange"></a>NDIS\_状態\_QOS\_運用\_パラメーター\_変更
 
@@ -39,7 +39,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
     ミニポート ドライバーに通知を発行して、ローカルの NDIS QoS パラメーターをオーバーライドする意向上にあるドライバーの NDIS および、 **NDIS\_状態\_QOS\_OPERATIONAL\_パラメーター\_変更**状態を示す値。
 
-    詳細については、[NDIS QoS パラメーターを管理する](https://msdn.microsoft.com/library/windows/hardware/hh464015)を参照してください。
+    詳細については、次を参照してください。 [NDIS QoS パラメーターを管理する](https://msdn.microsoft.com/library/windows/hardware/hh464015)します。
 
 **注**  重なってドライバーを使用できます、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**に状態を示す値運用上の NDIS QoS パラメーターを決定します。 または、これらのドライバーにはの OID クエリ要求が発行できますも[OID\_QOS\_運用\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451832)をいつでも運用の NDIS QoS パラメーターを取得します。
 
@@ -47,7 +47,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
 ミニポート ドライバーの問題については、 **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**状態を示す値を参照してください[運用上の NDIS QoS パラメーターへの変更を示す](https://msdn.microsoft.com/library/windows/hardware/hh451447)します。
 
-NDIS QoS パラメーターのさまざまな種類の詳細については、[NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)を参照してください。
+NDIS QoS パラメーターのさまざまな種類の詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)します。
 
 <a name="requirements"></a>必要条件
 ------------

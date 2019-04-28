@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e21d5a357a50a80211922019781688770539a1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372555"
 ---
 # <a name="ehsupdateresult-enumeration"></a>eHS\_UPDATE\_結果の列挙型
 
@@ -52,7 +52,7 @@ typedef enum _eHS_UPDATE_RESULT {
 
 プラグインが使用してホット スポットのプラグインのホストにこの列挙値を渡す、 [ **HS\_ホスト\_UPDATE\_構成\_完了**](hs-host-update-configuration-completion.md)関数の呼び出しの結果のホット スポットのプラグインのホストに通知するために使用[ **HS\_プラグイン\_確認\_の\_更新**](hs-plugin-check-for-updates.md).
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

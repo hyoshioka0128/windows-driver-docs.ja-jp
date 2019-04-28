@@ -1,5 +1,5 @@
 ---
-title: Traceview で parsepdb
+title: TraceView -parsepdb
 description: Traceview で - parsepdb コマンドを使用すると、PDB シンボル ファイル内のデータからトレース メッセージのフォーマット ファイルを作成できます。
 ms.assetid: d193aa3c-17ee-4fcf-a4ee-afb50c78ec54
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86e176fc5e92cc7166c492ee8ebd2d63d3967040
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369652"
 ---
-# <a name="traceview--parsepdb"></a>Traceview で parsepdb
+# <a name="traceview--parsepdb"></a>TraceView -parsepdb
 
 使用して、 **traceview で parsepdb**を作成するコマンド[トレース メッセージの形式のファイル](trace-message-format-file.md)内のデータから、 [PDB シンボル ファイル](pdb-symbol-files.md)します。
 
@@ -50,4 +50,4 @@ traceview -parsepdb tracedrv.pdb -p d:\tracing
 
 Traceview でも作成、[トレース メッセージのコントロール (.tmc) ファイル](trace-message-control-file.md)ごと[トレース プロバイダー](trace-provider.md)ソース コードにします。 TMC ファイルが含まれています、[コントロール GUID](control-guid.md)と PDB ファイルで表される各トレース プロバイダーのトレース レベル。 TMC ファイルの名前は、コントロールのトレース プロバイダーの GUID です。
 
-Traceview で応答する場合、 **- parsepdb**コマンドを表示するだけで、**を終了する任意のキーを押して**メッセージ、必要な DLL がディレクトリに移動されていないこと可能性があります、traceview でtraceview.exe を実行可能ファイルが配置されています。 詳細については、[traceview での使用の準備](preparing-to-use-traceview.md)を参照してください。 これも可能性が PDB ファイルには、トレースの必要なコンポーネントがありません。 PDB ファイルの作成元のソース コードがソフトウェア トレースに対してインストルメント化されていることを確認します。
+Traceview で応答する場合、 **- parsepdb**コマンドを表示するだけで、**を終了する任意のキーを押して**メッセージ、必要な DLL がディレクトリに移動されていないこと可能性があります、traceview でtraceview.exe を実行可能ファイルが配置されています。 詳細については、次を参照してください。 [traceview での使用の準備](preparing-to-use-traceview.md)します。 これも可能性が PDB ファイルには、トレースの必要なコンポーネントがありません。 PDB ファイルの作成元のソース コードがソフトウェア トレースに対してインストルメント化されていることを確認します。

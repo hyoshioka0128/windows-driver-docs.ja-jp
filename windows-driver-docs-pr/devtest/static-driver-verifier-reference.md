@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier の参照
-description: Static Driver Verifier の参照
+title: 静的ドライバー検証ツール リファレンス
+description: 静的ドライバー検証ツール リファレンス
 ms.assetid: 94cdf0b8-d3e0-4720-a003-73e63367c38a
 keywords:
 - 静的ドライバー検証ツール WDK を参照
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2811cf8a4af7c183cc6af57834142fbacfd92b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365156"
 ---
-# <a name="static-driver-verifier-reference"></a>Static Driver Verifier の参照
+# <a name="static-driver-verifier-reference"></a>静的ドライバー検証ツール リファレンス
 
 
 このセクションの内容:

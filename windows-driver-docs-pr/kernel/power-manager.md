@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 757bc30cb3c9f4e0cae3ef2468e339a851ac9e7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369141"
 ---
 # <a name="power-manager"></a>電源マネージャー
 
@@ -42,7 +42,7 @@ ms.locfileid: "56535559"
 
 -   コントロール パネルの設定
 
-詳細については、[Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)を参照してください。
+詳細については、次を参照してください。 [Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)します。
 
  
 

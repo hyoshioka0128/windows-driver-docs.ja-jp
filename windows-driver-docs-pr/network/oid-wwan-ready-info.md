@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_READY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b34a8b706684b9b3871f6ae1f71d3ed20b4132a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368517"
 ---
 # <a name="oidwwanreadyinfo"></a>OID\_WWAN\_準備\_情報
 
@@ -24,7 +24,7 @@ OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscr
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、[MB デバイスの準備](https://msdn.microsoft.com/library/windows/hardware/ff557164)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [MB デバイスの準備](https://msdn.microsoft.com/library/windows/hardware/ff557164)します。
 
 ミニポート ドライバーがデバイスのメモリをアクセスまたは SIM カードの処理時にクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 

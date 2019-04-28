@@ -1,6 +1,6 @@
 ---
-title: DirectShow のキャッシュの暗証番号 (pin) 情報
-description: DirectShow のキャッシュの暗証番号 (pin) 情報
+title: DirectShow のピン情報のキャッシュ
+description: DirectShow のピン情報のキャッシュ
 ms.assetid: 1e6a973b-32d2-4ac2-9cd6-f4d3c329cecf
 keywords:
 - 暗証番号 (pin) のデータ キャッシュ WDK BDA
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f215ce1a0a39092dc180dc1e5390dd7a5a1a6f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370266"
 ---
-# <a name="caching-pin-information-for-directshow"></a>DirectShow のキャッシュの暗証番号 (pin) 情報
+# <a name="caching-pin-information-for-directshow"></a>DirectShow のピン情報のキャッシュ
 
 
 

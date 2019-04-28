@@ -1,6 +1,6 @@
 ---
-title: Vs の Winsock カーネル関数を使用しています。イベントのコールバック関数
-description: Vs の Winsock カーネル関数を使用しています。
+title: Winsock カーネル関数とイベント コールバック関数の使用
+description: Winsock カーネル関数と
 ms.assetid: 63a3f933-f74a-4cb8-a7a9-9498e1c17afa
 keywords:
 - Winsock カーネル WDK が、ネットワーク関数
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2362f1c9194a4a55442a6d65a007ea8056e32249
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368917"
 ---
-# <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>Vs の Winsock カーネル関数を使用しています。イベントのコールバック関数
+# <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>Winsock カーネル関数とイベント コールバック関数の使用
 
 
 特定のソケット操作では、Winsock カーネル (WSK) アプリケーションを呼び出すことができますか、操作を実行または実装 WSK サブシステムを呼び出すときにソケットでのイベントのコールバック関数を有効にし、ソケットの WSK 関数の 1 つ、[イベント](winsock-kernel-events.md)操作に関連付けられたに発生します。 たとえば、接続指向のソケット上のデータを受信するときに WSK アプリケーションか、呼び出すことができます、ソケットに[ **WskReceive** ](https://msdn.microsoft.com/library/windows/hardware/ff571139)関数、または実装し、有効にする、 [ *WskReceiveEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571140)ソケットでのイベントのコールバック関数。 WSK アプリケーションは、要件、アプリケーションで使用する方法です。 両方のメソッドを使用する方法の例は、WSK ドキュメント全体で提供されます。
@@ -30,7 +30,7 @@ ms.locfileid: "56559096"
 
 -   WSK アプリケーション ドライブのソケット操作は、ソケット操作が発生したときに、WSK アプリケーション制御を意味します。 これは、WSK アプリケーションで必要な同期を簡略化があります。
 
--   WSK アプリケーションでは、ソケット関数 Irp を提供します。 ソケット操作が完了するまで、これら Irp は WSK サブシステムによってキューに登録します。 Irp を WSK 関数を使用する方法の詳細については、[Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)を参照してください。
+-   WSK アプリケーションでは、ソケット関数 Irp を提供します。 ソケット操作が完了するまで、これら Irp は WSK サブシステムによってキューに登録します。 Irp を WSK 関数を使用する方法の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)します。
 
 -   WSK アプリケーションでは、各操作の IRP WSK サブシステムによって完了するを待機してブロックのソケット操作を実行できます。
 

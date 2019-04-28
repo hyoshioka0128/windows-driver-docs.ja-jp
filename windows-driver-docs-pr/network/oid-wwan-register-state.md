@@ -7,11 +7,11 @@ keywords: -OID_WWAN_REGISTER_STATE ネットワーク ドライバーが Windows
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: a4eb8530c35d537061fd8e7b138efd5f6bec4127
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368534"
 ---
 # <a name="oidwwanregisterstate"></a>OID\_WWAN\_登録\_状態
 
@@ -45,7 +45,7 @@ RegisterAction 値のセマンティクスの定義は次のとおりです。
 
 -   *手動*と*自動*登録モードでは、ネットワークの選択モードのみに影響します。 MB デバイスは、無線がオンになっているときに、選択したネットワークに登録しようとする必要があります。
 
-### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+### <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
 この OID の新しいリビジョン 3 は、Windows 10、バージョンが 1903 以降はサポートされています。 この拡張機能では、クエリ、ミニポート ドライバーから優先の無線アクセス テクノロジ (Rat) をホストできるようにします。 
 

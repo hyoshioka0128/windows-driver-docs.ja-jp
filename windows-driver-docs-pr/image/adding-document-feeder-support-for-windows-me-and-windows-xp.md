@@ -1,15 +1,15 @@
 ---
-title: Windows XP と Windows ドキュメント フィーダー サポートを追加します。
-description: Windows XP と Windows ドキュメント フィーダー サポートを追加します。
+title: Windows Me および Windows XP のドキュメント フィーダー サポートの追加
+description: Windows Me および Windows XP のドキュメント フィーダー サポートの追加
 ms.assetid: f3be94fa-6fb7-45de-a3ce-f3d173e802cf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc97e835bb9b0b7a0d461c44a43769c3bc2da41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367102"
 ---
 # <a name="adding-document-feeder-support"></a>ドキュメント フィーダーのサポートを追加します。
 

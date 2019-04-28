@@ -1,17 +1,17 @@
 ---
-title: ドライバーの項目
-description: ドライバーの項目
+title: ドライバー項目
+description: ドライバー項目
 ms.assetid: 7b557c92-400e-45e5-bee6-328489d20cae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c76041ecda460b7954b83fa91a9f94e26a09275
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364503"
 ---
-# <a name="driver-items"></a>ドライバーの項目
+# <a name="driver-items"></a>ドライバー項目
 
 
 

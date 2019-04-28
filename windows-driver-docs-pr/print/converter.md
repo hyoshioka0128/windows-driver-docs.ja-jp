@@ -5,11 +5,11 @@ ms.assetid: eadbbaf5-3fe3-484f-b3f1-3d543ddc817f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 662846dc5874f362c4a26852ffc9b411212f44b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365377"
 ---
 # <a name="converter"></a>Converter
 
@@ -63,7 +63,7 @@ TCP/IP コンバーター コンストラクトでは、拡張することがで
 
 変換ルーチンでは、次の MIB データ型がサポートされています。
 
-整数
+INTEGER
 
 Integer32
 

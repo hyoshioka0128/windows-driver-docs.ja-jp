@@ -1,17 +1,17 @@
 ---
-title: 複数の転送中にドライバーの動作
-description: 複数の転送中にドライバーの動作
+title: 複数ページ転送中のドライバーの動作
+description: 複数ページ転送中のドライバーの動作
 ms.assetid: ecf0428b-c11c-49ff-9aa3-322e55dbca07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c5d0fd08773bbf980c24bbc4469fc622cf746ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364513"
 ---
-# <a name="driver-behavior-during-multipage-transfers"></a>複数の転送中にドライバーの動作
+# <a name="driver-behavior-during-multipage-transfers"></a>複数ページ転送中のドライバーの動作
 
 
 ドライバーは、フォルダーの取得を直接サポートする必要はありません。 項目のツリーと呼び出しを説明しますドライバーが、これもサポートしていない場合、WIA サービスは再帰的に[ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956)を持つすべてのアイテムで、 **WiaItemTypeTransfer**ビットが設定、 [ **WIA\_IPA\_項目\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff551585)プロパティ。

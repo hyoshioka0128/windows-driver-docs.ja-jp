@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 676df98a2afb890a539e348a2b5e7b3a8c493c1c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369117"
 ---
 # <a name="processing-an-application-notification"></a>アプリケーション通知の処理
 
@@ -26,7 +26,7 @@ ms.locfileid: "57348657"
 
 ### <a name="win32-applications"></a>Win32 アプリケーション
 
-Win32 ベースのアプリケーションが実装することによって、アプリケーションのウィンドウに送信されるメッセージを処理する*ウィンドウ プロシージャ*します。 ウィンドウ プロシージャの詳細については、、[ウィンドウ プロシージャ](https://go.microsoft.com/fwlink/p/?linkid=96748)、Microsoft Windows SDK ドキュメントのトピックを参照してください。
+Win32 ベースのアプリケーションが実装することによって、アプリケーションのウィンドウに送信されるメッセージを処理する*ウィンドウ プロシージャ*します。 ウィンドウ プロシージャの詳細については、次を参照してください。、[ウィンドウ プロシージャ](https://go.microsoft.com/fwlink/p/?linkid=96748)、Microsoft Windows SDK ドキュメントのトピックです。
 
 次のコード例は、WM を処理する方法を示しています。\_Win32 ベースのアプリケーションで DEVICECHANGE メッセージ。
 

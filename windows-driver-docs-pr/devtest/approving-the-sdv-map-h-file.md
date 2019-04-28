@@ -1,6 +1,6 @@
 ---
-title: Sdv map.h ファイルを承認します。
-description: Sdv map.h ファイルを承認します。
+title: Sdv-map.h ファイルの承認
+description: Sdv-map.h ファイルの承認
 ms.assetid: eb192eb2-7a2c-47eb-846e-3d641d5046a8
 keywords:
 - Sdv map.h WDK Static Driver Verifier を承認します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65e1ac75efd01e57684a09fd11ff386c47b46a26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361308"
 ---
-# <a name="approving-the-sdv-maph-file"></a>Sdv map.h ファイルを承認します。
+# <a name="approving-the-sdv-maph-file"></a>Sdv-map.h ファイルの承認
 
 
 Sdv map.h ファイルには、ファイルを調べることと、すべてのエラーを修正した後、ファイルをおそらく承認した SDV を指示するテキストの行が含まれています。 作成されると、Sdv map.h ファイルには、語句が含まれます。"承認済み = false"。

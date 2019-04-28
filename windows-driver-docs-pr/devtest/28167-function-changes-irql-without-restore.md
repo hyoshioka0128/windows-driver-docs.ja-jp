@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28167
 ms.openlocfilehash: 790a0e6c241e043c31994e6d4ed12dc3c30131fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361332"
 ---
 # <a name="c28167"></a>C28167
 
@@ -31,7 +31,7 @@ C28167 を警告します。関数は IRQL を変更し、終了前に、IRQL �
 
 この警告を回避するために、ドライバーが正しく、初期の IRQL の値を保存し、IRQL の変更が意図しない場合は、関数の終了時、同じ IRQL の値を復元する必要があります。
 
-意図的に、IRQL を関数のエントリをドライバーが実行中の IRQL とは異なる値に変更する関数をこの動作を示すために注釈を付ける必要があります。 たとえば、使用する、  **\_IRQL\_発生\_**(*irql*)、関数が位置 IRQL からの IRQL を変更することを示すの注釈関数呼び出されました。 保存し、IRQL の値を復元して対応する注釈を適用 (**\_IRQL\_保存\_**、  **\_IRQL\_の復元\_**). 注釈には、この警告が抑制されます。 詳細については、[ドライバーの IRQL の注釈](irql-annotations-for-drivers.md)を参照してください。 IRQL を誤って変更関数を修正する必要があります。
+意図的に、IRQL を関数のエントリをドライバーが実行中の IRQL とは異なる値に変更する関数をこの動作を示すために注釈を付ける必要があります。 たとえば、使用する、  **\_IRQL\_発生\_**(*irql*)、関数が位置 IRQL からの IRQL を変更することを示すの注釈関数呼び出されました。 保存し、IRQL の値を復元して対応する注釈を適用 (**\_IRQL\_保存\_**、  **\_IRQL\_の復元\_**). 注釈には、この警告が抑制されます。 詳細については、次を参照してください。[ドライバーの IRQL の注釈](irql-annotations-for-drivers.md)します。 IRQL を誤って変更関数を修正する必要があります。
 
  
 

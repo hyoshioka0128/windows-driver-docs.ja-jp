@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f2d0da83456ef4219aa579fc8b79f2a09b82e5f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367878"
 ---
 # <a name="kscategorycrossbar"></a>KSCATEGORY_CROSSBAR
 
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src\\swtuner\\algtuner。* WDK のディレクトリ。
 
-オーディオとビデオに対するクロスバー デバイスについては、[ビデオ キャプチャ デバイスでのフィルター使用](https://msdn.microsoft.com/library/windows/hardware/ff559598)と[アナログ ビデオ カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff554095)を参照してください。
+オーディオとビデオに対するクロスバー デバイスについては、次を参照してください。[ビデオ キャプチャ デバイスでのフィルター使用](https://msdn.microsoft.com/library/windows/hardware/ff559598)と[アナログ ビデオ カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff554095)します。
 
 <a name="requirements"></a>必要条件
 ------------

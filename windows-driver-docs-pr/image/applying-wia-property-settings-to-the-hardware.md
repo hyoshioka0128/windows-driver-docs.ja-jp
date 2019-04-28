@@ -1,17 +1,17 @@
 ---
-title: ハードウェアに WIA プロパティの設定を適用します。
-description: ハードウェアに WIA プロパティの設定を適用します。
+title: WIA プロパティ設定のハードウェアへの適用
+description: WIA プロパティ設定のハードウェアへの適用
 ms.assetid: adb85f77-1814-427b-8b75-0bfce4c8ca06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67fda89e59039903db39b9c63feae35747fb96ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373342"
 ---
-# <a name="applying-wia-property-settings-to-the-hardware"></a>ハードウェアに WIA プロパティの設定を適用します。
+# <a name="applying-wia-property-settings-to-the-hardware"></a>WIA プロパティ設定のハードウェアへの適用
 
 
 

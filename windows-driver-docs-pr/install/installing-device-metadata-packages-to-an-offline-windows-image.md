@@ -1,17 +1,17 @@
 ---
-title: オフライン Windows イメージにデバイス メタデータ パッケージをインストールします。
-description: オフライン Windows イメージにデバイス メタデータ パッケージをインストールします。
+title: オフラインの Windows イメージへのデバイス メタデータ パッケージのインストール
+description: オフラインの Windows イメージへのデバイス メタデータ パッケージのインストール
 ms.assetid: 53480324-951f-4c51-9b5b-051ce1a3b709
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8fa07b9c066b08e52724f052feec8087c3faf19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366294"
 ---
-# <a name="installing-device-metadata-packages-to-an-offline-windows-image"></a>オフライン Windows イメージにデバイス メタデータ パッケージをインストールします。
+# <a name="installing-device-metadata-packages-to-an-offline-windows-image"></a>オフラインの Windows イメージへのデバイス メタデータ パッケージのインストール
 
 
 コンピューターの Oem は、ローカル デバイスのメタデータ ストアにパッケージをコピーすることによって、Windows のオフライン イメージにデバイス メタデータ パッケージを追加できます。 このストアは、次の場所には。
@@ -34,7 +34,7 @@ ms.locfileid: "56529391"
 %PROGRAMDATA%\Microsoft\Windows\DeviceMetadataStore\JA
 ```
 
-詳細については、[デバイス メタデータ ストア](device-metadata-store.md)を参照してください。
+詳細については、次を参照してください。[デバイス メタデータ ストア](device-metadata-store.md)します。
 
  
 

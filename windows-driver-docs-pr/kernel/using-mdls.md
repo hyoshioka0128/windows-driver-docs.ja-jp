@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9f8a0e9a8acd2d3d9972f060ebea95c405c48c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364905"
 ---
 # <a name="using-mdls"></a>MDL の使用
 
@@ -75,7 +75,7 @@ VOID MyFreeMdl(PMDL Mdl)
 
 チェーンの MDL によって記述される物理的なページがロックされている場合、例関数は、 [ **MmUnlockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff556381)ルーチンを呼び出す前に、ページのロックを解除する[ **IoFreeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff549126) MDL を解放します。 ただし、例の関数は、ページを呼び出す前に明示的にマップ解除する必要はありません**IoFreeMdl**します。 代わりに、 **IoFreeMdl**自動的に MDL を解放する場合、ページの割り当てを解除します。
 
-割り当て、解放、および MDLs を管理するシステム ルーチンの概要については、[アドレス マッピングと MDLs](https://msdn.microsoft.com/library/windows/hardware/ff540568)を参照してください。
+割り当て、解放、および MDLs を管理するシステム ルーチンの概要については、次を参照してください。[アドレス マッピングと MDLs](https://msdn.microsoft.com/library/windows/hardware/ff540568)します。
 
  
 

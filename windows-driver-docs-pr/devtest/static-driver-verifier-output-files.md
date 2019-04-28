@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier の出力ファイル
-description: Static Driver Verifier の出力ファイル
+title: 静的ドライバー検証ツールの出力ファイル
+description: 静的ドライバー検証ツールの出力ファイル
 ms.assetid: 54784603-23a3-42b0-b5ba-6fe403ef6403
 keywords:
 - Static Driver Verifier WDK、出力ファイル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cf0546da6e6af58b7a1a65a0ac84b15add9e93a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365174"
 ---
-# <a name="static-driver-verifier-output-files"></a>Static Driver Verifier の出力ファイル
+# <a name="static-driver-verifier-output-files"></a>静的ドライバー検証ツールの出力ファイル
 
 
 SDV は、さまざまな種類の出力を生成し、結果ファイル。 このセクションでは、ファイルとその使用方法について説明します。

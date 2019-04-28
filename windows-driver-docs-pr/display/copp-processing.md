@@ -1,6 +1,6 @@
 ---
-title: COPP 処理
-description: COPP 処理
+title: COPP の処理
+description: COPP の処理
 ms.assetid: c9ff0fd3-c063-4450-ae66-54153b3dc53c
 keywords:
 - DirectX ビデオ アクセラレータ WDK Windows 2000 の表示、COPP
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53caf237ebf422fbaf0036ad77ada0613fd6624e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361942"
 ---
-# <a name="copp-processing"></a>COPP 処理
+# <a name="copp-processing"></a>COPP の処理
 
 
 ## <span id="ddk_certified_output_protection_protocol_processing_gg"></span><span id="DDK_CERTIFIED_OUTPUT_PROTECTION_PROTOCOL_PROCESSING_GG"></span>

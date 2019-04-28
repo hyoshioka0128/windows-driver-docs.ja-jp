@@ -5,11 +5,11 @@ ms.assetid: 0D16C46F-4622-4191-83F2-579FC17DE985
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9b63b47f6a8aeab61f29e575ca63fbabbef1ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371138"
 ---
 # <a name="adding-support-for-real-hardware-to-the-geolocation-driver-sample"></a>地理的位置情報ドライバー サンプルへの実際のハードウェアのサポートの追加
 
@@ -22,7 +22,7 @@ ms.locfileid: "56559747"
 
 |                                                                                                  |                                                                                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| リビジョンまたは追加                                                                             | 説明                                                                                                                                                                                               |
+| リビジョンまたは追加                                                                             | 詳細情報                                                                                                                                                                                               |
 | 新しいセンサーの目的を反映するように、ソースとヘッダー ファイルの名前を変更します。                    | "のカスタマイズ、Sample"と、Windows Driver Kit でサンプルのソースに含まれている readme ファイル (SensorsGeolocationSample.htm) の」を追加する、追加センサーを「サンプルのセクションを参照してください。 |
 | 地理的位置情報のプロパティを新しいセンサーでサポートされるプロパティに置き換えます。            | Windows Driver Kit でサンプルのソースに含まれている readme ファイル (SensorsGeolocationSample.htm) の」を追加する、追加センサーを「サンプルのセクションで、を参照してください。                                  |
 | 新しいセンサーで必要なトランスポートをサポートするために必要なコードを含むモジュールを追加します。 | .                                                                                                                                                                                                              |

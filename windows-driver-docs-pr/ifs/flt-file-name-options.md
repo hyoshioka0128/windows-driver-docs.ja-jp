@@ -5,11 +5,11 @@ ms.assetid: 6e21c11e-d2c8-4c57-8225-1fbc365cbbac
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cffba2edcd9116c1ebe12c1e5096276d92e76973
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365094"
 ---
 # <a name="fltfilenameoptions"></a>FLT\_ファイル\_名前\_オプション
 
@@ -35,7 +35,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
     #define FLT_FILE_NAME_DO_NOT_CACHE                  0x02000000
 ```
 
-ビット 0 ~ 7 を使用してクエリできるファイル形式を示すため、 [ **FltGetFileNameFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff543030)マクロ。 これらの形式の詳細については、[ **FLT\_ファイル\_名前\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff544633)を参照してください。 現在、次の値が定義されています。
+ビット 0 ~ 7 を使用してクエリできるファイル形式を示すため、 [ **FltGetFileNameFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff543030)マクロ。 これらの形式の詳細については、次を参照してください。 [ **FLT\_ファイル\_名前\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff544633)します。 現在、次の値が定義されています。
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[値]</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -66,7 +66,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 
  
 
-8 ~ 15 のビットを使用してクエリできるフィルター マネージャーによって使用されるファイル名のクエリ メソッドを指定する、 [ **FltGetFileNameQueryMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff543040)マクロ。 これらの値の詳細については、[ **FltGetFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543032)を参照してください。 現在、次の値が定義されています。
+8 ~ 15 のビットを使用してクエリできるフィルター マネージャーによって使用されるファイル名のクエリ メソッドを指定する、 [ **FltGetFileNameQueryMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff543040)マクロ。 これらの値の詳細については、次を参照してください。 [ **FltGetFileNameInformation**](https://msdn.microsoft.com/library/windows/hardware/ff543032)します。 現在、次の値が定義されています。
 
 <table>
 <colgroup>

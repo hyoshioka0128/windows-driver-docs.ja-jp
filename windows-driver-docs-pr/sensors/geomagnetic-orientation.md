@@ -5,18 +5,18 @@ ms.assetid: C164E5A9-A664-4EE5-91CE-918233DFFB6D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 619f6a6b1b6609bc36ab07508fea5c2695538910
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366693"
 ---
-# <a name="geomagnetic-orientation"></a>Geomagnetic 向き
+# <a name="geomagnetic-orientation"></a>地磁気の方向
 
 
 このトピックでは、geomagnetic 方向センサーに固有のデータ フィールドに関する情報を提供します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 <table>
 <colgroup>

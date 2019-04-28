@@ -18,11 +18,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: f95f36d60efeebdd5657274e745b9c96c8dec8f2
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363107"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps メソッド
 
@@ -51,7 +51,7 @@ HRESULT ProcAmpControlQueryCaps(
 
 0 を返します (S\_[ok] または DD\_OK) 成功した場合、それ以外の場合、エラー コードを返します。 参照してください*ddraw.h*エラー コードの完全な一覧についてはします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ドライバーの ProcAmp コントロール モードでのユーザー モード コンポーネントには、その機能の報告、 [ **DXVA\_ProcAmpControlCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff564019)によって示される構造*lpProcAmpCaps*.
@@ -72,7 +72,7 @@ HRESULT ProcAmpControlQueryCaps(
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dwNumBuffers</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpBufferInfo</strong></p></td>
@@ -125,7 +125,7 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps(
 }
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

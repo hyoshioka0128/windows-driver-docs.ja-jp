@@ -1,17 +1,17 @@
 ---
-title: 拡張のカメラ コントロール ペイロード
+title: 拡張カメラ コントロール ペイロード
 description: KSPROPERTYSETID_ExtendedCameraControl プロパティ セット内のコントロールのプロパティを取得および設定のプロパティのデータの一般的なペイロード形式を使用します。
 ms.assetid: 347413DB-229B-40D7-BD3E-931493EE1FBC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aae6659e5b423f6c84af29a3e3a1ccbd7489643
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363734"
 ---
-# <a name="extended-camera-control-payloads"></a>拡張のカメラ コントロール ペイロード
+# <a name="extended-camera-control-payloads"></a>拡張カメラ コントロール ペイロード
 
 
 内のコントロールのプロパティ、 [KSPROPERTYSETID\_ExtendedCameraControl](https://msdn.microsoft.com/library/windows/hardware/dn567570)プロパティ セットを取得および設定のプロパティのデータの一般的なペイロード形式を使用します。

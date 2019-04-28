@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b71ca15eb81e6704484a734f9e42e159282587c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369074"
 ---
 # <a name="callout-driver-programming-considerations"></a>コールアウト ドライバーのプログラミングに関する考慮事項
 
@@ -28,7 +28,7 @@ Windows フィルタ リング プラットフォームのコールアウト ド
 
 ### <a name="choice-of-filtering-layer"></a>レイヤーをフィルター処理の選択
 
-コールアウト ドライバーは、ネットワーク スタックで最高の使用可能なフィルター処理層でネットワーク データをフィルター処理する必要があります。 たとえば、ストリーム レイヤーでは、必要なフィルター処理タスクを処理することができる場合する必要があります実装されません、ネットワーク層で。 ドライバーを Windows で IPsec との互換性を保証するために使用する必要があります、フィルタ リング層の推奨事項の詳細については、[IPsec と互換性のあるコールアウト ドライバーの開発](developing-ipsec-compatible-callout-drivers.md)を参照してください。
+コールアウト ドライバーは、ネットワーク スタックで最高の使用可能なフィルター処理層でネットワーク データをフィルター処理する必要があります。 たとえば、ストリーム レイヤーでは、必要なフィルター処理タスクを処理することができる場合する必要があります実装されません、ネットワーク層で。 ドライバーを Windows で IPsec との互換性を保証するために使用する必要があります、フィルタ リング層の推奨事項の詳細については、次を参照してください。 [IPsec と互換性のあるコールアウト ドライバーの開発](developing-ipsec-compatible-callout-drivers.md)します。
 
 ### <a href="" id="blocking-at-the-application-layer-enforcement--ale--flow-established-l"></a>レイヤーが確立されている、アプリケーション レイヤーの強制 (ALE) フローでブロック
 

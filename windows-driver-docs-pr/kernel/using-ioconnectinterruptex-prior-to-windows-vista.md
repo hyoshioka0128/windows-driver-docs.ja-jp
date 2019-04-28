@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b54195eb15989893d764b1168297de390032c099
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364942"
 ---
 # <a name="using-ioconnectinterruptex-prior-to-windows-vista"></a>Windows Vista より前の IoConnectInterruptEx の使用
 

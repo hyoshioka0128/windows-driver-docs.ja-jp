@@ -1,6 +1,6 @@
 ---
-title: 一般的なバッファーのバス マスター DMA を使用してください。
-description: 一般的なバッファーのバス マスター DMA を使用してください。
+title: 共通バッファー バス マスター DMA の使用
+description: 共通バッファー バス マスター DMA の使用
 ms.assetid: 55b5d819-e257-4863-b02a-5eeb83f72c65
 keywords:
 - 継続的な DMA WDK カーネル
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eee81671cc1e0125112803c23cfc76109a2377ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361100"
 ---
-# <a name="using-common-buffer-bus-master-dma"></a>一般的なバッファーのバス マスター DMA を使用してください。
+# <a name="using-common-buffer-bus-master-dma"></a>共通バッファー バス マスター DMA の使用
 
 
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SIO_ADDRESS_LIST_QUERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 06e8f6308dd07e453592c612a65f91189d913eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362050"
 ---
 # <a name="sioaddresslistquery"></a>SIO\_アドレス\_一覧\_クエリ
 
@@ -40,7 +40,7 @@ WSK アプリケーションを呼び出して、現在、ソケットのアド�
 <td><p>SIO_ADDRESS_LIST_QUERY</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -76,7 +76,7 @@ WSK アプリケーションを呼び出して、現在、ソケットのアド�
 
 [ **SIO\_アドレス\_一覧\_変更**](sio-address-list-change.md)ソケット I/O 制御操作により、ローカルの一覧への変更があったときに通知する WSK アプリケーションソケットのアドレス ファミリ用のトランスポート アドレス。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

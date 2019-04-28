@@ -1,17 +1,17 @@
 ---
-title: 割り込みを使用して、デバイスのスリープを解除するには
+title: デバイスのウェイクに対する割り込みの使用
 description: デバイスは、低電力状態に遷移、ときに、フレームワークが切断されます (または非アクティブとして報告) I/O に使用される割り込みを処理します。
 ms.assetid: 6A4E62BD-B10F-4F01-B4B4-1FF5086710D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c618dea1cdc8b54bd11579df398b9b19aa1a6895
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363476"
 ---
-# <a name="using-an-interrupt-to-wake-a-device"></a>割り込みを使用して、デバイスのスリープを解除するには
+# <a name="using-an-interrupt-to-wake-a-device"></a>デバイスのウェイクに対する割り込みの使用
 
 
 デバイスは、低電力状態に遷移、ときに、フレームワークが切断されます (または非アクティブとして報告) I/O に使用される割り込みを処理します。 KMDF 以降 1.13 および UMDF 2.0 は Windows 8.1 で実行されている、WDF ドライバー オブジェクトを作成できます framework 割り込みをアクティブなままデバイスが、低電力状態に遷移し、デバイスがスリープ解除して、完全に D0 状態に復元するために使用するとします。

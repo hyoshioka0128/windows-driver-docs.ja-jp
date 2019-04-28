@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f77ee6c3844009a7f23c31dc1bbd97946a17a07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361051"
 ---
 # <a name="ndisstatustaskoffloadhardwarecapabilities"></a>NDIS\_状態\_タスク\_オフロード\_ハードウェア\_機能
 
@@ -25,7 +25,7 @@ NDIS ミニポート ドライバーと MUX 中間ドライバーの使用、 **
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。 この構造体は、タスクのオフロード ハードウェア機能を指定します。
 
-タスクのオフロード ハードウェア機能の詳細については、[OID\_TCP\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569806)を参照してください。
+タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569806)します。
 
 <a name="requirements"></a>要件
 ------------

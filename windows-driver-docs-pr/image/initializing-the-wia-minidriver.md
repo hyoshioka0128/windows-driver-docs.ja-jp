@@ -5,11 +5,11 @@ ms.assetid: 9ccb136b-41f7-438a-9e07-1fd7c8971417
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ebe3adeaf9f9026d8d216fa6ef3b1d48d1cc0d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366024"
 ---
 # <a name="initializing-the-wia-minidriver"></a>WIA ミニドライバーの初期化
 
@@ -45,7 +45,7 @@ WIA サービスが、適切なドライバーを呼び出す前に述べた、�
 
  
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [ミニドライバー関数の順序を呼び出す](calling-order-for-minidriver-functions.md)
 

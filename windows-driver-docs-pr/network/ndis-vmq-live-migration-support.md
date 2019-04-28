@@ -1,17 +1,17 @@
 ---
-title: NDIS VMQ のライブ マイグレーションのサポート
-description: NDIS VMQ のライブ マイグレーションのサポート
+title: NDIS VMQ ライブ マイグレーションのサポート
+description: NDIS VMQ ライブ マイグレーションのサポート
 ms.assetid: 6872594a-35f8-4fbf-b764-22b286fb940c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48e61e6bfa1e72abd3cc25effeee6841e96f1820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368993"
 ---
-# <a name="ndis-vmq-live-migration-support"></a>NDIS VMQ のライブ マイグレーションのサポート
+# <a name="ndis-vmq-live-migration-support"></a>NDIS VMQ ライブ マイグレーションのサポート
 
 
 
@@ -41,7 +41,7 @@ NDIS ミニポート ドライバー、VMQ を解放するための要求の受�
 
 5.  ミニポート ドライバーが完了すると、 [OID\_受信\_フィルター\_FREE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569789) OID 要求を受信キューを解放します。
 
-キューの状態の詳細については、[NDIS VM キュー状態](ndis-virtual-machine-queue-states.md)を参照してください。
+キューの状態の詳細については、次を参照してください。 [NDIS VM キュー状態](ndis-virtual-machine-queue-states.md)します。
 
  
 

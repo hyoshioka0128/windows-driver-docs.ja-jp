@@ -1,6 +1,6 @@
 ---
-title: 拡張せず Subrectangles の処理
-description: 拡張せず Subrectangles の処理
+title: ストレッチを使用しないサブ矩形の処理
+description: ストレッチを使用しないサブ矩形の処理
 ms.assetid: ee59b06c-a3fb-41ac-875e-754d20a5eaa6
 keywords:
 - デインター レース WDK DirectX va なので、subrectangular 処理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82740d69a5af194bbd2feca611988b2205e41a6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370212"
 ---
-# <a name="processing-subrectangles-without-stretching"></a>拡張せず Subrectangles の処理
+# <a name="processing-subrectangles-without-stretching"></a>ストレッチを使用しないサブ矩形の処理
 
 
 ## <span id="ddk_processing_subrectangles_without_stretching_gg"></span><span id="DDK_PROCESSING_SUBRECTANGLES_WITHOUT_STRETCHING_GG"></span>

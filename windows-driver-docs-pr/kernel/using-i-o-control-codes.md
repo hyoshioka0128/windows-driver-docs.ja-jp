@@ -1,6 +1,6 @@
 ---
-title: I/O 制御コードを使用
-description: I/O 制御コードを使用
+title: I/O 制御コードの使用
+description: I/O 制御コードの使用
 ms.assetid: 3f124ee7-bfd9-417f-ae7a-849d02a1b97a
 keywords:
 - Irp WDK カーネルでは、I/O 制御コード
@@ -10,19 +10,19 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 217d6d0777e4948f1e0d249e1e1bd9284d36a7e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364954"
 ---
-# <a name="using-io-control-codes"></a>I/O 制御コードを使用
+# <a name="using-io-control-codes"></a>I/O 制御コードの使用
 
 
 
 
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [I/O 制御コードの概要](introduction-to-i-o-control-codes.md)
 

@@ -5,11 +5,11 @@ ms.assetid: c6289dcf-9ab2-45c3-b7f6-fb48161c726c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ebba88e5a10a36961bd45bc702af4dbce81fc40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360622"
 ---
 # <a name="wia-camera-minidriver"></a>WIA カメラ ミニドライバー
 

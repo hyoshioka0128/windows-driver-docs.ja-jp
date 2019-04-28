@@ -1,6 +1,6 @@
 ---
-title: 64 ビット Windows で DMA を実行します。
-description: 64 ビット Windows で DMA を実行します。
+title: 64 ビットの Windows での DMA の実行
+description: 64 ビットの Windows での DMA の実行
 ms.assetid: 3ef00c05-356d-488a-8422-503d8132344d
 keywords:
 - 64 ビットの WDK カーネル、ドライバーの移植
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce93b2f995c56f39514948f59845234c9aee7f97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369270"
 ---
-# <a name="performing-dma-in-64-bit-windows"></a>64 ビット Windows で DMA を実行します。
+# <a name="performing-dma-in-64-bit-windows"></a>64 ビットの Windows での DMA の実行
 
 
 
