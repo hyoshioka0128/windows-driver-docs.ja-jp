@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_LINK_SPEED_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a43927435161ab2e5a4737b1db3ae7450681188
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375685"
 ---
 # <a name="ndisstatuslinkspeedchange"></a>NDIS\_状態\_リンク\_速度\_変更
 
@@ -25,7 +25,7 @@ NDIS 変換 NDIS\_状態\_リンク\_速度\_変更の状態インジケータ�
 
 NDIS 5。*x*または以前のミニポート ドライバーにある DWORD 型の値を指定する、 *StatusBuffer*のパラメーター、 [ **NdisMIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff553538)関数。 NDIS の詳細については\_状態\_リンク\_速度\_変更を参照してください[OID\_IRDA\_レート\_スニフ](https://msdn.microsoft.com/library/windows/hardware/ff560287)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

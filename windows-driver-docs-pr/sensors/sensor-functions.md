@@ -5,11 +5,11 @@ ms.assetid: 270FF517-4980-4D9B-AA28-F5EEB2A38A7B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c0eb1217464d87ad45d5b36c69eedd479466e8cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368822"
 ---
 # <a name="sensor-functions"></a>センサー関数
 

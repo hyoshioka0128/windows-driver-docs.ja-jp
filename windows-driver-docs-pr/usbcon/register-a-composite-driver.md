@@ -1,14 +1,14 @@
 ---
-Description: How a USB multi-function device, called a composite driver, registers and unregisters the composite device with the underlying USB driver stack.
+Description: 方法、複合のドライバーと呼ばれる USB 多機能デバイスを登録し、基になる USB ドライバー スタックと複合デバイスの登録を解除します。
 title: 複合デバイスを登録する方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72e092c6de69302762c0caec881974a95038bd4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378847"
 ---
 # <a name="how-to-register-a-composite-device"></a>複合デバイスを登録する方法
 
@@ -17,7 +17,7 @@ ms.locfileid: "56572559"
 
 ユニバーサル シリアル バス (USB) デバイスでは、同時にアクティブになっている複数の関数を提供できます。 このような多機能デバイスとも呼ばれます*複合デバイス*します。 たとえば、キーボード機能のための関数とマウスの別の関数複合デバイスを定義します。 デバイスの機能は、複合、ドライバーによって列挙されます。 複合のドライバーでは、モノリシック モデル自体これらの機能を管理したり、各関数の物理デバイス オブジェクト (Pdo) を作成することができます。 これらの個々 の Pdo は、それぞれのそれぞれの USB 機能ドライバー、キーボード ドライバーおよびマウス ドライバーによって管理されます。
 
-USB 3.0 の仕様の定義、*関数の中断とリモート ウェイク アップ機能*個々 の関数を入力し、その他の関数または全体のデバイスの電源状態の影響を与えずに低電力状態を終了できるようにします。 機能の詳細については、[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)を参照してください。
+USB 3.0 の仕様の定義、*関数の中断とリモート ウェイク アップ機能*個々 の関数を入力し、その他の関数または全体のデバイスの電源状態の影響を与えずに低電力状態を終了できるようにします。 機能の詳細については、次を参照してください。[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)します。
 
 機能を使用するには、複合ドライバーは、基になる USB ドライバー スタックと、デバイスを登録する必要があります。 複合のドライバーを基になるスタック USBD のバージョンをサポートしていることを確認して行う必要があります機能は、USB 3.0 デバイスに適用される、ため\_インターフェイス\_バージョン\_602 します。 登録要求は、複合ドライバー: から
 
@@ -34,7 +34,7 @@ USB 3.0 の仕様の定義、*関数の中断とリモート ウェイク アッ
 -   以前の呼び出しで USBD ハンドルを取得した[ **USBD\_CreateHandle**](https://msdn.microsoft.com/library/windows/hardware/hh406241)します。
 -   基になる USB ドライバー スタックは、USB 3.0 デバイスをサポートします。 これを行うには、呼び出す[ **USBD\_IsInterfaceVersionSupported** ](https://msdn.microsoft.com/library/windows/hardware/hh406233) USBD を渡すと\_インターフェイス\_バージョン\_602 バージョンを確認するとします。
 
-コード例では、[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)を参照してください。
+コード例では、次を参照してください。[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)します。
 手順
 ------------
 

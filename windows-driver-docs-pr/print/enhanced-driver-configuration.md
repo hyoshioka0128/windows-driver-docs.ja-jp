@@ -5,11 +5,11 @@ ms.assetid: B208C661-4D5B-467A-8451-4382453EC09A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: faafea3dfbe1dbe85258807e26345432e3105b3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378586"
 ---
 # <a name="enhanced-driver-configuration"></a>拡張ドライバー構成
 
@@ -34,7 +34,7 @@ GPD ファイルを読み取るための拡張機能
 
 **スキーマのパス:**\\Printer.Configuration.DriverConfigFiles:GPDFile
 
-**ノードの種類:**[値]
+**ノードの種類:** 値
 
 **データの種類:** BIDI\_文字列
 
@@ -46,7 +46,7 @@ PPD ファイルを読み取るための拡張機能
 
 **スキーマのパス:**\\Printer.Configuration.DriverConfigFiles:PPDFile
 
-**ノードの種類:**[値]
+**ノードの種類:** 値
 
 **データの種類:** BIDI\_文字列
 

@@ -1,18 +1,18 @@
 ---
-title: PCI を有効にする Windows のネイティブ コントロールを Express
+title: Windows での PCI Express ネイティブ コントロールの有効化
 description: Windows の PCI Express のネイティブ コントロールの機能によって制御できる、PCI Express 機能
 ms:assetid: 0E3A4408-CBF7-494F-9F25-7C78E04526B4
 keywords: ACPI、ACPI \_OSC メソッド
 ms.date: 06/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b6d3572482779b7b0db40bd1e6936fb59034a88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379760"
 ---
-# <a name="enabling-pci-express-native-control-in-windows"></a>PCI を有効にする Windows のネイティブ コントロールを Express
+# <a name="enabling-pci-express-native-control-in-windows"></a>Windows での PCI Express ネイティブ コントロールの有効化
 
 Advanced Configuration and Power Interface (ACPI) オペレーティング システムの機能 (\_OSC) 機能の中の通信にメソッドを使用またはオペレーティング システムでは、プラットフォームで利用できる機能を制御できます。 このメソッドは、バージョン 4.0 は、ACPI 仕様で定義されます。
 
@@ -36,5 +36,5 @@ Advanced Configuration and Power Interface (ACPI) オペレーティング シ�
   - [ACPI の web サイト](https://www.uefi.org/specifications)
   - [PCI SIG の web サイト](http://www.pcisig.org/)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [デバイス固有のデータ (_DSD) PCIe ルート ポート](dsd-for-pcie-root-ports.md)

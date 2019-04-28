@@ -9,16 +9,16 @@ ms.assetid: 0E7CC153-5434-459D-9773-8CCAFBACD016
 ms.date: 04/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f6fcbe43c6bce7fc63bbae4bed1cb7923851124
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382628"
 ---
 # <a name="native-80211-ihv-extensibility-functions"></a>ネイティブの 802.11 IHV 拡張関数
 
 > [!IMPORTANT]
-> [ネイティブ 802.11 ワイヤレス LAN](native-802-11-wireless-lan4.md)インターフェイスが Windows 10 以降非推奨とされます。 代わりに、WLAN デバイス ドライバー インターフェイス (WDI) を使用してください。 WDI の詳細については、[WLAN のユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)を参照してください。
+> [ネイティブ 802.11 ワイヤレス LAN](native-802-11-wireless-lan4.md)インターフェイスが Windows 10 以降非推奨とされます。 代わりに、WLAN デバイス ドライバー インターフェイス (WDI) を使用してください。 WDI の詳細については、次を参照してください。 [WLAN のユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)します。
 
 802.11 IHV のネイティブ機能拡張関数では、オペレーティング システムによって提供されは、次の操作を IHV 拡張機能の DLL によって呼び出されます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "56575002"
 - 任意の認証および IHV の拡張機能の DLL によってサポートされている暗号アルゴリズムのさまざまなセキュリティ設定、IHV の WLAN のアダプターを構成します。
 - IHV UI 拡張 dll (インストールされている) 場合イベント通知を処理するインターフェイスします。 たとえば、IHV 拡張機能の DLL は、基本的なサービスのセット (BSS) ネットワーク接続に関連するさまざまな段階について IHV UI 拡張機能の DLL を通知できます。 
 
-IHV UI 拡張機能の DLL の詳細については、[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)を参照してください。
+IHV UI 拡張機能の DLL の詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)します。
 
 > [!NOTE]
 > IHV 拡張機能の DLL のメンバーに関連付けられている関数ポインターを通じて各ネイティブ 802.11 IHV 拡張関数を呼び出し、 [DOT11EXT_APIS](https://msdn.microsoft.com/library/windows/hardware/ff547617)構造体。 オペレーティング システムを呼び出すと、 [Dot11ExtIhvInitService](https://msdn.microsoft.com/library/windows/hardware/ff547470) IHV ハンドラー関数を使用して、IHV 拡張関数をポインターのリストを渡しますが、 *pDot11ExtAPI*パラメーター。
@@ -78,6 +78,6 @@ IHV 拡張関数では、BSS のネットワーク接続でセキュリティ �
 | [Dot11ExtSetUnicastCipherAlgorithm](https://msdn.microsoft.com/library/windows/hardware/ff547606) |   | x |   |   |
 | [Dot11ExtSetVirtualStationAPProperties](https://msdn.microsoft.com/library/windows/hardware/ff547609) |   |   | x |   | 
 
-IHV ハンドラー関数の詳細については、[802.11 IHV ハンドラー関数をネイティブ](native-802-11-ihv-handler-functions.md)を参照してください。
+IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](native-802-11-ihv-handler-functions.md)します。
 
 

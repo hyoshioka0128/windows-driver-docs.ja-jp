@@ -1,17 +1,17 @@
 ---
-title: ビデオ キャプチャ ミニドライバー プロパティ セット
-description: ビデオ キャプチャ ミニドライバー プロパティ セット
+title: ビデオ キャプチャ ミニドライバーのプロパティ セット
+description: ビデオ キャプチャ ミニドライバーのプロパティ セット
 ms.assetid: adbf62c4-1c66-46e9-ae8e-867a88bb107c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e596e25e29914dc7f8f49fa30376f41ffa11b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380618"
 ---
-# <a name="video-capture-minidriver-property-sets"></a>ビデオ キャプチャ ミニドライバー プロパティ セット
+# <a name="video-capture-minidriver-property-sets"></a>ビデオ キャプチャ ミニドライバーのプロパティ セット
 
 
 ## <span id="ddk_video_capture_minidriver_property_sets_ks"></span><span id="DDK_VIDEO_CAPTURE_MINIDRIVER_PROPERTY_SETS_KS"></span>
@@ -36,7 +36,7 @@ ms.locfileid: "56538186"
 
     KS ターゲット オブジェクトのサポート、KSPROPERTY\_型\_セット プロパティ要求でしょうか。
 
--   **ターゲット**
+-   **移行先**
 
     ターゲットは、要求が送信されるどのプロパティに KS オブジェクトです。 ビデオ キャプチャ プロパティの対象は、フィルターまたは pin のいずれかです。 (プロパティ要求を指定します、ターゲット オブジェクトがカーネル ハンドルによって。)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56538186"
 
 -   KSPROPERTY\_型\_設定
 
-フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティがありますのみが必要です、*設定*操作が、get 操作が現在の設定を読み取るために役立つ可能性も。 ビデオ キャプチャ プロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)を参照してください。
+フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティがありますのみが必要です、*設定*操作が、get 操作が現在の設定を読み取るために役立つ可能性も。 ビデオ キャプチャ プロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
 
 すべてのプロパティの説明には、ビデオ キャプチャ ミニドライバーが読み取りまたは書き込みのプロパティをサポートする必要があるかどうかを示すテーブルが含まれています。 ビデオ キャプチャ ミニドライバーは、状態を返す必要があります\_いない\_を取得または設定、ミニドライバーでサポートされていないプロパティに対する要求の応答ではサポートされています。
 

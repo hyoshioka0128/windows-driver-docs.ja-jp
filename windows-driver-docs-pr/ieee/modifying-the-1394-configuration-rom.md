@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5715354142e237460d5959926ae813a2f5c0b60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370986"
 ---
 # <a name="modifying-the-1394-configuration-rom"></a>1394 構成 ROM の修正
 
@@ -29,7 +29,7 @@ ms.locfileid: "56581404"
 
 2.  ドライバーは、仮想の物理デバイス オブジェクト (Pdo) を使用して、デバイス ドライバーのテストを容易にするための方法でハードウェアをエミュレートします。
 
-    デバイスのエミュレーションでは、まだ受信がいないデバイスのドライバーをテストできます。 ハードウェア エミュレーション ドライバーは、1394 バス上の仮想 1394 デバイスに公開できます。 開発者は、別のシステムで新しいハードウェアのドライバーをデバッグできます。 詳細については、デバイスのエミュレーションは、[ハードウェア エミュレーション ドライバーの IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537214)を参照してください。
+    デバイスのエミュレーションでは、まだ受信がいないデバイスのドライバーをテストできます。 ハードウェア エミュレーション ドライバーは、1394 バス上の仮想 1394 デバイスに公開できます。 開発者は、別のシステムで新しいハードウェアのドライバーをデバッグできます。 詳細については、デバイスのエミュレーションは、次を参照してください。[ハードウェア エミュレーション ドライバーの IEEE 1394](https://msdn.microsoft.com/library/windows/hardware/ff537214)します。
 
 ## <a name="related-topics"></a>関連トピック
 [IEEE 1394 ノードの構成 ROM の内容を取得します。](https://msdn.microsoft.com/library/windows/hardware/gg266408)  

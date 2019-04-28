@@ -1,6 +1,6 @@
 ---
-title: Stream のポインターの複製
-description: Stream のポインターの複製
+title: ストリーム ポインターの複製
+description: ストリーム ポインターの複製
 ms.assetid: bbe01f48-db86-41c9-b7b8-b48a4a295d21
 keywords:
 - WDK の AVStream のポインターをストリームの複製
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dee974f8d927e30c24ec2f7a283b02f9c2bf528
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372780"
 ---
-# <a name="cloning-stream-pointers"></a>Stream のポインターの複製
+# <a name="cloning-stream-pointers"></a>ストリーム ポインターの複製
 
 
 

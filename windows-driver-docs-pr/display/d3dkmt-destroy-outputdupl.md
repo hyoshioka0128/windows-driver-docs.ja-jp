@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5703b027077ec0adf5c0e782b88096529b71a065
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382950"
 ---
 # <a name="d3dkmtdestroyoutputdupl-structure"></a>D3DKMT\_破棄\_OUTPUTDUPL 構造体
 
@@ -37,7 +37,7 @@ typedef struct _D3DKMT_DESTROY_OUTPUTDUPL {
 } D3DKMT_DESTROY_OUTPUTDUPL;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **hAdapter**

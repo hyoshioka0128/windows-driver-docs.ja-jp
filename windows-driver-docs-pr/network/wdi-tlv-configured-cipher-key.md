@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CONFIGURED_CIPHER_KEY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a568784b252013a5f7a803612755c176087f2c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383170"
 ---
 # <a name="wditlvconfiguredcipherkey"></a>WDI_TLV_CONFIGURED_CIPHER_KEY
 
@@ -27,7 +27,7 @@ WDI_TLV_CONFIGURED_CIPHER_KEY 設定する構成済みの暗号のリストを�
 
 ## <a name="values"></a>値
 
-| 種類 | 説明 |
+| 型 | 説明 |
 | --- | --- |
 | [WDI_CIPHER_KEY_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_key_type) | 返されるキーの型。 |
 | [WDI_CIPHER_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm) | このキーを使用する暗号アルゴリズムを指定します。 |
@@ -40,7 +40,7 @@ WDI_TLV_CONFIGURED_CIPHER_KEY 設定する構成済みの暗号のリストを�
 | TLV &LT; 一覧\<UINT8 &GT;&GT; | 存在する場合、場合にのみ**CipherAlgorithm**の範囲では**WDI_CIPHER_ALGO_IHV_START**に**WDI_CIPHER_ALGO_IHV_END**します。 |
  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

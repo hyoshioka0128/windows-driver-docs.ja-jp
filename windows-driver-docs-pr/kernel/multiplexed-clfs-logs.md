@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 139c31e579d9ef321025f9e7a962125d1c5acc4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380292"
 ---
 # <a name="multiplexed-clfs-logs"></a>多重化された CLFS ログ
 
@@ -23,7 +23,7 @@ ms.locfileid: "56580980"
 
 
 
-A*ログを多重化*は複数のストリームの安定したストレージとして機能します。 A*専用ログ*は 1 つのストリームの安定したストレージとして機能します。 このトピックでは、多重化されたログについて説明します。 専用ログについては、[専用 CLFS ログ](dedicated-clfs-logs.md)を参照してください。
+A*ログを多重化*は複数のストリームの安定したストレージとして機能します。 A*専用ログ*は 1 つのストリームの安定したストレージとして機能します。 このトピックでは、多重化されたログについて説明します。 専用ログについては、次を参照してください。[専用 CLFS ログ](dedicated-clfs-logs.md)します。
 
 多重化されたログの各ストリームでは、そのクライアント、ストリームは、ログ全体を錯覚を提供します。 このコンテキストで、クライアントとは、ドライバー、スレッド、または Common Log File System (CLFS) ログから読み取りし、書き込みするソフトウェアの他のいくつかの単位です。 いくつかのクライアントが 1 つのストリームのことができます。 各クライアントが、独自[**ログ\_ファイル\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff554316)構造体は、ストリームのオープン インスタンスを表します。
 

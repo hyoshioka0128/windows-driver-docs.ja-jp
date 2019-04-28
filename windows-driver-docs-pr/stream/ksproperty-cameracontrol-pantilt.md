@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1fa9526e25ac23f8c3df2dea5d6d7b7535d053
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374042"
 ---
 # <a name="kspropertycameracontrolpantilt"></a>KSPROPERTY\_CAMERACONTROL\_PANTILT
 
@@ -42,16 +42,16 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564451" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564451)"><strong>KSPROPERTY_CAMERACONTROL_S2</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff564421" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564421)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong> </a>要求をフィルターまたはノードがあるかによって</p></td>
 <td><p>長整数のペア</p></td>
@@ -69,7 +69,7 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT プロパティを絶対指定方向へパン
 
 正の値が、カメラを傾けます傾き要求を行うときに、負の値をカメラを傾けます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **Value1**のメンバー、 [ **KSPROPERTY\_CAMERACONTROL\_S2** ](https://msdn.microsoft.com/library/windows/hardware/ff564451)または[ **KSPROPERTY\_CAMERACONTROL\_ノード\_S2** ](https://msdn.microsoft.com/library/windows/hardware/ff564421)構造体をパン設定を指定します。 **Value2**メンバー傾きの設定を指定します。

@@ -1,6 +1,6 @@
 ---
-title: プリント プロセッサの記述
-description: プリント プロセッサの記述
+title: 印刷プロセッサの記述
+description: 印刷プロセッサの記述
 ms.assetid: 2443ec67-ef5d-46eb-b00a-deafad9abc69
 keywords:
 - 印刷スプーラー WDK、プリント プロセッサのカスタマイズ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9aad123eb372b60465f4d50443c430e98a67d1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380520"
 ---
-# <a name="writing-a-print-processor"></a>プリント プロセッサの記述
+# <a name="writing-a-print-processor"></a>印刷プロセッサの記述
 
 
 

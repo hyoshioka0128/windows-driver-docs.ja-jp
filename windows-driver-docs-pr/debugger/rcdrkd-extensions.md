@@ -5,11 +5,11 @@ ms.assetid: 11CEBCED-2C11-4450-A5FB-BC5B48B1E1A3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6586529095d871411cba84d7fd35667477399182
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374802"
 ---
 # <a name="rcdrkd-extensions"></a>RCDRKD 拡張機能
 

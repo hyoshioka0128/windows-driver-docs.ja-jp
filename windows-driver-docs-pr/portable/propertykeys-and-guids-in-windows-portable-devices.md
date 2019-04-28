@@ -1,14 +1,14 @@
 ---
-Description: PROPERTYKEYs and GUIDs in Windows Portable Devices
+Description: Windows ポータブル デバイスの PROPERTYKEY と GUID
 title: Windows ポータブル デバイスの PROPERTYKEY と GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba408fa498b0e543d8de61c16571e77d86ee9c69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376230"
 ---
 # <a name="propertykeys-and-guids-in-windows-portable-devices"></a>Windows ポータブル デバイスの PROPERTYKEY と GUID
 

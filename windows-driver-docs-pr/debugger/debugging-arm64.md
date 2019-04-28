@@ -8,15 +8,15 @@ keywords:
 ms.date: 07/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c22cbe5a780f1353c15b9c5dabde6e83e2d262dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377192"
 ---
 # <a name="debugging-on-arm64"></a>ARM64 でのデバッグ
 
-このトピックでは、ARM プロセッサ上の Windows 10 のデバッグについて説明します。 ARM の Windows 10 の全般については、[ARM64 の Windows 10 デスクトップ](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm)を参照してください。
+このトピックでは、ARM プロセッサ上の Windows 10 のデバッグについて説明します。 ARM の Windows 10 の全般については、次を参照してください。 [ARM64 の Windows 10 デスクトップ](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm)します。
 
 一般に、ユーザー モードのアプリをデバッグする開発者は、バージョンの対象とするアプリケーションのアーキテクチャに一致するデバッガーを使用する必要があります。 WinDbg の ARM64 バージョンを使用して、ユーザー モード ARM64 アプリケーションをデバッグして、WinDbg の ARM バージョンを使用して、ユーザー モード ARM32 アプリケーションをデバッグします。 ARM64 プロセッサで実行されるユーザー モード x86 アプリケーションをデバッグする WinDbg のバージョンを x86 を使用します。  
 
@@ -36,7 +36,7 @@ ARM64 コードをデバッグするには、ARM64 WinDbg が必要です。 デ
 - Sp x0 に x28 と fp、lr、- 32 汎用レジスタがあります。 
 - プログラム カウンター レジスタ、pc が汎用レジスタではありません。 
 - すべての汎用レジスタし、pc レジスタは 64 ビット幅でします。 
-- 最大で 2 アクティブなデータ用のブレークポイントの実行とメモリの読み取り/書き込みの 2 つのアクティブなデータ ブレークポイント。 詳細については、[プロセッサ ブレークポイント](https://docs.microsoft.com/windows-hardware/drivers/debugger/processor-breakpoints---ba-breakpoints-)を参照してください。 
+- 最大で 2 アクティブなデータ用のブレークポイントの実行とメモリの読み取り/書き込みの 2 つのアクティブなデータ ブレークポイント。 詳細については、次を参照してください。[プロセッサ ブレークポイント](https://docs.microsoft.com/windows-hardware/drivers/debugger/processor-breakpoints---ba-breakpoints-)します。 
 
 
 ## <a name="debugging-x86-user-mode-code"></a>ユーザー モード コードの x86 のデバッグ 
@@ -57,19 +57,19 @@ X86 をデバッグするときにアプリがユーザー モードに関係な
 
 ARM64 および WOW64 の全般的な情報を参照してください。[を実行している 32 ビット アプリケーション](https://msdn.microsoft.com/library/windows/desktop/aa384249.aspx)64 ビット Windows プログラミング ガイド。 
 
-WOW64 の下で実行されているアプリケーションをデバッグする方法の詳細については、[デバッグ WOW64](https://msdn.microsoft.com/library/windows/desktop/aa384163.aspx)を参照してください。
+WOW64 の下で実行されているアプリケーションをデバッグする方法の詳細については、次を参照してください。[デバッグ WOW64](https://msdn.microsoft.com/library/windows/desktop/aa384163.aspx)します。
 
 
 
 ## <a name="debugging-in-visual-studio"></a>Visual Studio でのデバッグ 
 
-Visual Studio での ARM のデバッグ方法の詳細については、[リモート デバッグ](https://docs.microsoft.com/visualstudio/debugger/remote-debugging)を参照してください。
+Visual Studio での ARM のデバッグ方法の詳細については、次を参照してください。[リモート デバッグ](https://docs.microsoft.com/visualstudio/debugger/remote-debugging)します。
 
 
 
 ## <a name="see-also"></a>参照
 
-[ARM64 ドライバー WDK で構築](../develop/building-arm64-drivers.md)
+[WDK を使った ARM64 ドライバーのビルド](../develop/building-arm64-drivers.md)
 
 [Windows コミュニティにスタンド アップ、常に接続されている PC の説明](https://blogs.windows.com/buildingapps/2018/01/22/windows-community-standup-discussing-always-connected-pc/)
 

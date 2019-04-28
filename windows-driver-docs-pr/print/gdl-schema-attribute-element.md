@@ -1,6 +1,6 @@
 ---
-title: GDL スキーマ属性要素
-description: GDL スキーマ属性要素
+title: GDL スキーマの属性要素
+description: GDL スキーマの属性要素
 ms.assetid: b46c0c6c-28af-4121-9182-65dc23b0ce7d
 keywords:
 - GDL WDK、要素
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff08d7b1f570dc8f52d67260c996251feeac2f71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380166"
 ---
-# <a name="gdl-schema-attribute-element"></a>GDL スキーマ属性要素
+# <a name="gdl-schema-attribute-element"></a>GDL スキーマの属性要素
 
 
 すべてのデータ型&lt;GDL\_属性&gt;を使用して、インスタンスごとの要素が指定された**xsi:type**します。 特定のデータ型の定義は、汎用の属性要素のインスタンスを指定せずに属性 (&lt;GDL\_UntypedAtt&gt;)、次のように GDL で生成されたスキーマで定義します。

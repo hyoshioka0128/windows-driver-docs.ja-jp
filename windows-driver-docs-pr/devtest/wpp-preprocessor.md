@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85b399b4e2490cbec2ec4fd6a3c3d02f9d832d91
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379111"
 ---
 # <a name="wpp-preprocessor"></a>WPP プリプロセッサ
 
@@ -44,7 +44,7 @@ Visual Studio と MSBuild 環境を使用してプリプロセッサ WPP を呼�
     -scan:"$(KMDF_INC_PATH)\$(KMDF_VER_PATH)\WdfTraceEnums.h"
     ```
 
-ビルド プロセスに関する詳細については、[TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)を参照してください。
+ビルド プロセスに関する詳細については、次を参照してください。 [TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
 
 TraceWPP ツール (TraceWPP.exe) を使用して、ビルド環境から個別のプリプロセッサを実行することもできます。 このツールは、WDK の x86 bin サブディレクトリにあります。
 

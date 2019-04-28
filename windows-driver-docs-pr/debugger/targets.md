@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 623b9eed23754f965a5b23a4c691a0b970463dd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380490"
 ---
 # <a name="targets"></a>ターゲット
 
@@ -52,7 +52,7 @@ ms.locfileid: "56578075"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ターゲットへのアタッチに関する詳細については、[ターゲットへの接続](connecting-to-targets.md)を参照してください。
+ターゲットへのアタッチに関する詳細については、次を参照してください。[ターゲットへの接続](connecting-to-targets.md)します。
 
  
 

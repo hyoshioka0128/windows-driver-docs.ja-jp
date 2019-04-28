@@ -1,6 +1,6 @@
 ---
-title: 受信して、NIC のアドレスに変換
-description: 受信して、NIC のアドレスに変換
+title: NIC アドレスの受信と変換
+description: NIC アドレスの受信と変換
 ms.assetid: c7171a4d-cc77-427e-8d23-8811f650e543
 keywords:
 - SAN 使用率を初期化しています。 Windows Sockets 直接 WDK
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 609ca32c79f95a298742d5f1d326dd58cfef3e95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367522"
 ---
-# <a name="receiving-and-translating-nic-addresses"></a>受信して、NIC のアドレスに変換
+# <a name="receiving-and-translating-nic-addresses"></a>NIC アドレスの受信と変換
 
 
 

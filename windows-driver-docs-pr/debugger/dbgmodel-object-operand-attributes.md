@@ -1,14 +1,14 @@
 ---
-title: デバッガーのデータ モデル - オペランドのオブジェクトを属性します。
+title: Debugger Data Model - オペランド属性オブジェクト
 description: マシン語命令のオペランドは、オペランドの属性オブジェクトによって記述されます。
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a5d8cd8b7a0915f07de8fb5748aee06ab3afbc5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374360"
 ---
 # <a name="operand-attributes-objects"></a>オペランドのオブジェクトを属性します。 
 ## <a name="summary"></a>概要

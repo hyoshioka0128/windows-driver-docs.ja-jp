@@ -1,5 +1,5 @@
 ---
-title: 値 (TCP/IP)
+title: Value (TCP/IP)
 description: TCP/IP 値コンス トラクターを使用すると、特定の MIB オブジェクトからデータを取得するクエリで双方向通信スキーマを拡張できます。
 ms.assetid: 46b24830-10a1-405b-9c12-b5804f76d668
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f48c5e71e3f3779efee4c1641841ff04009acae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376442"
 ---
-# <a name="value-tcpip"></a>値 (TCP/IP)
+# <a name="value-tcpip"></a>Value (TCP/IP)
 
 
 TCP/IP`Value`コンストラクトでは、MIB の特定のオブジェクトからデータを取得するクエリで双方向通信のスキーマを拡張できます。 `Value` Tcpbidi.xsd でコンス トラクターが定義されています。
@@ -51,7 +51,7 @@ TCP/IP`Value`コンストラクトでは、MIB の特定のオブジェクトか
 <td><p>(省略可能)ポーリング間隔を秒単位の値。 既定値は、600 秒です。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>型</strong></p></td>
+<td><p><strong>type</strong></p></td>
 <td><p>内のデータ型、<code> Value</code>で値を構成、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 </tbody>

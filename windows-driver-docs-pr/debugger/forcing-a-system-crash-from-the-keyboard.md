@@ -1,6 +1,6 @@
 ---
-title: キーボードから強制的にシステムのクラッシュ
-description: キーボードから強制的にシステムのクラッシュ
+title: キーボードからのシステム クラッシュの強制実行
+description: キーボードからのシステム クラッシュの強制実行
 ms.assetid: 0c3ec6f3-d233-46e4-b599-1a0f89318ed2
 keywords:
 - 起動プロセス、キーボードからシステムのクラッシュの原因
@@ -14,13 +14,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 728380861030e3add4703505836eeb7ecbd807be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371700"
 ---
-# <a name="forcing-a-system-crash-from-the-keyboard"></a>キーボードから強制的にシステムのクラッシュ
+# <a name="forcing-a-system-crash-from-the-keyboard"></a>キーボードからのシステム クラッシュの強制実行
 
 
 ## <span id="ddk_forcing_a_system_crash_from_the_keyboard_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_KEYBOARD_DBG"></span>
@@ -52,7 +52,7 @@ ms.locfileid: "56535866"
 
 キーボードできますシステム クラッシュが発生する前に、次の 3 つの設定を確認する必要があります。
 
-1.  このようなダンプ ファイルを有効にする必要があります、書き込まれるクラッシュ ダンプ ファイルを希望する場合、パスとファイル名を選択し、ダンプ ファイルのサイズを選択します。 詳細については、[カーネル モードのダンプ ファイルを有効にする](enabling-a-kernel-mode-dump-file.md)を参照してください。
+1.  このようなダンプ ファイルを有効にする必要があります、書き込まれるクラッシュ ダンプ ファイルを希望する場合、パスとファイル名を選択し、ダンプ ファイルのサイズを選択します。 詳細については、次を参照してください。[カーネル モードのダンプ ファイルを有効にする](enabling-a-kernel-mode-dump-file.md)します。
 
 2.  Ps/2 キーボードでは、レジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\i8042prt\\パラメーター**、という名前の値を作成**します**、21 と等しい設定\_DWORD 値 0x01 になります。
 

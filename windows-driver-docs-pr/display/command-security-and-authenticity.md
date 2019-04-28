@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e27ce3bab19312abf3f704d377e7873521441cb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382341"
 ---
 # <a name="command-security-and-authenticity"></a>コマンドのセキュリティと信頼性
 
@@ -26,7 +26,7 @@ ms.locfileid: "56582359"
 
 ![exchange のコマンドを示す図](images/coppcmnd.png)
 
-これらのコマンドのメッセージは、エンベロープに含まれます。 エンベロープには、データと MAC セクションが含まれています。 アプリケーションでは、データ整合性キーと、OMAC を使用して、MAC のコマンドのデータを計算します。 MAC と OMAC の詳細については、[COPP で使用される暗号化プリミティブ](cryptographic-primitives-used-by-copp.md)を参照してください。
+これらのコマンドのメッセージは、エンベロープに含まれます。 エンベロープには、データと MAC セクションが含まれています。 アプリケーションでは、データ整合性キーと、OMAC を使用して、MAC のコマンドのデータを計算します。 MAC と OMAC の詳細については、次を参照してください。 [COPP で使用される暗号化プリミティブ](cryptographic-primitives-used-by-copp.md)します。
 
 次の表では、上記の図の値について説明します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "56582359"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[値]</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

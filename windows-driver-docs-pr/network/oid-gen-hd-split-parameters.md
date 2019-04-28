@@ -6,18 +6,18 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_HD_SPLIT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b593f58e8f3b110ece32602633eccd773de2540c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381329"
 ---
 # <a name="oidgenhdsplitparameters"></a>OID\_GEN\_HD\_分割\_パラメーター
 
 
 セットとして NDIS と関連付けたドライバーまたはユーザー モード アプリケーションで、OID が使用\_GEN\_HD\_分割\_を現在のヘッダー データを設定するパラメーターの OID がミニポート アダプターの設定を分割します。 NDIS 6.1 と以降のミニポート ドライバー ヘッダー データの分割サービスを提供するには、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **InformationBuffer**のメンバー [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [ **NDIS\_HD\_分割\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565701)構造体。

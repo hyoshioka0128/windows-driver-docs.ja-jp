@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a005a5a85d09ac0fe396ddfc19ab2593af19c12e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380818"
 ---
 # <a name="kspropertypinglobalcinstances"></a>KSPROPERTY\_PIN\_GLOBALCINSTANCES
 
@@ -42,15 +42,15 @@ ms.locfileid: "56571030"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56571030"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 KSP を使用してこのプロパティを指定\_暗証番号 (pin)、場所、 **PinId**メンバーが、ピン留めするファクトリを指定します。
@@ -87,7 +87,7 @@ typedef struct {
 
 KSPROPERTY\_PIN\_GLOBALCINSTANCES フィルターのすべてのインスタンスに対するインスタンスの絶対と現在の最大数を指定します。 フィルターごとの値を調べるには[ **KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

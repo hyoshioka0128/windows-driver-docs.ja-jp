@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53aea7985010841a83d0447ef7cb073ba4c5b018
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377209"
 ---
 # <a name="kspropertydvdcopyregion"></a>KSPROPERTY\_DVDCOPY\_リージョン
 
@@ -42,15 +42,15 @@ KSPROPERTY\_DVDCOPY\_REGION プロパティは、言語の制限に従って DVD
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_REGION プロパティは、言語の制限に従って DVD
 <a name="remarks"></a>コメント
 -------
 
-言語の制限の詳細については、[DVD 加入](https://msdn.microsoft.com/library/windows/hardware/ff559512)と[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
+言語の制限の詳細については、次を参照してください。 [DVD 加入](https://msdn.microsoft.com/library/windows/hardware/ff559512)と[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
 
 <a name="requirements"></a>必要条件
 ------------

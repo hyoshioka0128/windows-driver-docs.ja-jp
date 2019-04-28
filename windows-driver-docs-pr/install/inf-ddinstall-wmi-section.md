@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f02b590e141faf4a96dc6aef12d4bafdd19cb15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370578"
 ---
 # <a name="inf-ddinstallwmi-section"></a>INF DDInstall.WMI セクション
 
@@ -67,7 +67,7 @@ INF <em>DDInstall</em>**します。WMI**セクションは、Microsoft Windows 
 
 既定の記述子を使用して、含めるたくない場合と、ドライバーには、WMI クラスが定義されている場合、 <em>DDInstall</em>**します。WMI**セクションは、レジストリに格納され、システムの既定の記述子をオーバーライドするセキュリティ記述子を指定します。
 
-INF ファイルのセキュリティ記述子を指定する方法の詳細については、[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)を参照してください。
+INF ファイルのセキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
 
 <a name="examples"></a>使用例
 --------

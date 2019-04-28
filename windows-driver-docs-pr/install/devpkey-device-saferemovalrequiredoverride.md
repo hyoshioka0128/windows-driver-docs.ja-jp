@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a802b18e53834bd36ae655177f994ee920c05767
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380088"
 ---
 # <a name="devpkeydevicesaferemovalrequiredoverride"></a>DEVPKEY_Device_SafeRemovalRequiredOverride
 
@@ -60,7 +60,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride デバイス プロパティは、デ
 
 -   DEVPROP_TRUE に DEVPKEY_Device_SafeRemovalRequiredOverride デバイスのプロパティを設定し、デバイス インスタンスが取り外し可能またはリムーバブル先祖、PnP セット DEVPROP_TRUE DEVPKEY_Device_SafeRemovalRequired デバイス プロパティを持つし、使用しない場合、ヒューリスティックです。
 
-    **注**  デバイス インスタンスは、リムーバブル デバイスの機能が設定されている場合は、リムーバブルと見なされます。 詳細については、[リムーバブル デバイスの機能の概要](https://msdn.microsoft.com/library/windows/hardware/ff549564)を参照してください。
+    **注**  デバイス インスタンスは、リムーバブル デバイスの機能が設定されている場合は、リムーバブルと見なされます。 詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](https://msdn.microsoft.com/library/windows/hardware/ff549564)します。
 
      
 

@@ -5,13 +5,13 @@ ms.assetid: 5E6759E3-3AF8-4427-BDD0-DB64B3D480A1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 35bfdd62da933142cabb4fe4e05f60074be83887
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380290"
 ---
-# <a name="multiple-binary-opt-in-poolnxoptinauto"></a>複数バイナリ オプトインします。プール\_NX\_OPTIN\_自動
+# <a name="multiple-binary-opt-in-poolnxoptinauto"></a>複数バイナリ オプトイン: プール\_NX\_OPTIN\_自動
 
 
 ハードウェア ベンダーが Windows のバージョンごとに別のドライバー バイナリを提供している場合は、プールを使用することができます\_NX\_OPTIN\_自動オプトイン メカニズム。 この移植の補助は、Windows 8 以降、ドライバーがサポートする Windows の以前のバージョンごとに個別のドライバー バイナリをビルドします。

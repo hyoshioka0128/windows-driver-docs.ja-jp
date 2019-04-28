@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbadee5acb93cf4e00be28b4ef2ddcc1626bf3c8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382314"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo ルーチン
 
@@ -115,7 +115,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 RDBSS への呼び出しを発行する*MRxSetEaInfo*受信に応答する[ **IRP\_MJ\_設定\_EA** ](irp-mj-set-ea.md)要求。

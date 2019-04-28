@@ -5,11 +5,11 @@ ms.assetid: 8f45dbf0-4f96-4d11-b2a2-41b9e75b5e9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c3b835a15c6fd02855bf69f1e81344f6b6b7c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376992"
 ---
 # <a name="testing-your-desktop-cosaapn-database-submission"></a>デスクトップ COSA/APN データベースの提出のテスト
 
@@ -36,7 +36,7 @@ Windows 10 バージョン 1703 以降では、このプロセスを使用しま
 
 TAM に、APN 情報を含む、完成したスプレッドシートを送信すると後、Microsoft がプロビジョニング パッケージ (.ppkg) ファイルを作成してをインストールして、APN をテストできるようにした後に返送します。 
 
-プロビジョニング パッケージ ファイルをインストールする方法の詳細については、[プロビジョニング パッケージの適用](https://technet.microsoft.com/itpro/windows/deploy/provisioning-apply-package)を参照してください。
+プロビジョニング パッケージ ファイルをインストールする方法の詳細については、次を参照してください。[プロビジョニング パッケージの適用](https://technet.microsoft.com/itpro/windows/deploy/provisioning-apply-package)します。
 
 ### <a name="modify-the-local-cosa-database-desktop-cosa"></a>ローカル COSA データベース (デスクトップ COSA) の変更します。
 
@@ -112,7 +112,7 @@ APN の更新を送信する前に、ローカルの APN データベースの�
 
 2. **パブリッシュされた APN スキーマに従った XML ファイル内の値を変更**– APN エントリは、次のことを確認、 [APN データベースのスキーマ リファレンス](apn-database-schema-reference.md)します。
 
-3. **ハードウェア Id を生成**-いずれかを指定するハードウェア Id または複数のハードウェア id 文字列をデータベース内の APN エントリに SIM 特性に一致します。 各文字列がで指定された、 [HardwareId](hardwareid-apnxml.md)要素。 Mbidgenerator.exe を使用して、ハードウェア Id を生成することをお勧めします。 詳細については、[mbidgenerator.exe を使用して、ハードウェア Id を生成する](using-mbidgeneratorexe-to-generate-hardware-ids.md)を参照してください。
+3. **ハードウェア Id を生成**-いずれかを指定するハードウェア Id または複数のハードウェア id 文字列をデータベース内の APN エントリに SIM 特性に一致します。 各文字列がで指定された、 [HardwareId](hardwareid-apnxml.md)要素。 Mbidgenerator.exe を使用して、ハードウェア Id を生成することをお勧めします。 詳細については、次を参照してください。 [mbidgenerator.exe を使用して、ハードウェア Id を生成する](using-mbidgeneratorexe-to-generate-hardware-ids.md)します。
 
 4. **生成したファイルが公開されている APN データベース スキーマに準拠していることを検証**-スキーマの確認を生成したファイルが準拠していることを確認して、常に実行、 [APN データベースのスキーマ リファレンス](apn-database-schema-reference.md)します。
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 711c81d0e78b01ca3198556dbc8f086b66cf6ada
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382198"
 ---
 # <a name="kscategoryaudio"></a>KSCATEGORY_AUDIO
 
@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO[デバイス インターフェイス クラス](https://msdn.m
 
 KS オーディオ デバイス用のドライバーは、デバイスが KSCATEGORY_AUDIO 機能カテゴリをサポートするオペレーティング システムに示すためにこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 INF ファイルでこの機能のカテゴリを登録する方法については、ヘルプ ファイルを参照してください*INFViewer.html*と*ac97smpl.inf*、付属している、 [AC'97 サンプル ドライバー。](https://go.microsoft.com/fwlink/p/?linkid=256075) WDK に含まれています。
 

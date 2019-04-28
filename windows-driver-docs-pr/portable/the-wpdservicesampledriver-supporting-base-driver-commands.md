@@ -1,14 +1,14 @@
 ---
-Description: Support for base-driver commands (WpdServiceSampleDriver)
+Description: 基本ドライバー コマンド (WpdServiceSampleDriver) のサポート
 title: 基本ドライバー コマンド (WpdServiceSampleDriver) のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e97804a357b14431b945461821b1441da193c6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370492"
 ---
 # <a name="support-for-base-driver-commands-wpdservicesampledriver"></a>基本ドライバー コマンド (WpdServiceSampleDriver) のサポート
 

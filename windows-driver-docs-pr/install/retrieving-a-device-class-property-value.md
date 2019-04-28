@@ -1,17 +1,17 @@
 ---
-title: デバイス クラスのプロパティ値を取得します。
-description: デバイス クラスのプロパティ値を取得します。
+title: デバイス クラスのプロパティ値の取得
+description: デバイス クラスのプロパティ値の取得
 ms.assetid: 50b16bd9-7f38-4128-af8f-8b39b099931f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a305bdf1de39ecbc277910b808dd51f00ac816d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381441"
 ---
-# <a name="retrieving-a-device-class-property-value"></a>デバイス クラスのプロパティ値を取得します。
+# <a name="retrieving-a-device-class-property-value"></a>デバイス クラスのプロパティ値の取得
 
 
 次のトピックでは、Windows Vista 以降のバージョンの Windows でのデバイス クラス プロパティ値を取得する方法について説明します。

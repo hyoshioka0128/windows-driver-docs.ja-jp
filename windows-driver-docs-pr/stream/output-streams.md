@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7b2ade7a2ee476a87b46944adc8fe03f56d1fa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372336"
 ---
 # <a name="output-streams"></a>出力ストリーム
 
@@ -54,7 +54,7 @@ ms.locfileid: "56549528"
 
  
 
-カーネル モード インターフェイスでは、ビデオ ポート (VPE) の拡張機能設定の制御を提供します。 詳細については、[ビデオ ポート拡張機能のバック グラウンド](https://msdn.microsoft.com/library/windows/hardware/ff570536)を参照してください。
+カーネル モード インターフェイスでは、ビデオ ポート (VPE) の拡張機能設定の制御を提供します。 詳細については、次を参照してください。[ビデオ ポート拡張機能のバック グラウンド](https://msdn.microsoft.com/library/windows/hardware/ff570536)します。
 
 次の表では、クローズド キャプション (CC) 出力ストリーム メディアを Dvd で使用される型について説明します。
 
@@ -91,7 +91,7 @@ ms.locfileid: "56549528"
 
  
 
-200 (小数) でのフレーム サイズ、 **SampleSize**のメンバー、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)構造を指定する必要があります。 詳細については、[クローズド キャプション ストリーム](closed-captioning-streams.md)を参照してください。
+200 (小数) でのフレーム サイズ、 **SampleSize**のメンバー、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)構造を指定する必要があります。 詳細については、次を参照してください。[クローズド キャプション ストリーム](closed-captioning-streams.md)します。
 
  
 

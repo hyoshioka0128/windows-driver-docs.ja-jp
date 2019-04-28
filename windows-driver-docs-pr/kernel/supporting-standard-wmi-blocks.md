@@ -1,6 +1,6 @@
 ---
-title: 標準の WMI のブロックをサポートしています。
-description: 標準の WMI のブロックをサポートしています。
+title: 標準 WMI ブロックのサポート
+description: 標準 WMI ブロックのサポート
 ms.assetid: ddec3afb-8274-4eff-93ef-b0a07fd7c13a
 keywords:
 - WMI の WDK カーネルでは、イベント ブロック
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee18351c104f7d79c262528f9153d066004d663d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378003"
 ---
-# <a name="supporting-standard-wmi-blocks"></a>標準の WMI のブロックをサポートしています。
+# <a name="supporting-standard-wmi-blocks"></a>標準 WMI ブロックのサポート
 
 
 

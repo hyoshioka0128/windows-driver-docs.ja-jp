@@ -1,6 +1,6 @@
 ---
-title: TCP/IP ポート モニタの双方向の拡張機能のサンプル
-description: TCP/IP ポート モニタの双方向の拡張機能のサンプル
+title: TCP/IP ポート モニターの双方向拡張機能サンプル
+description: TCP/IP ポート モニターの双方向拡張機能サンプル
 ms.assetid: 76454b0c-0e02-4372-97ed-2401a785cef8
 keywords:
 - 双方向の拡張機能は、WDK プリンター autoconfig をファイルします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dbcadbc5803c82c622f728ebbf3e390b8c602b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379264"
 ---
-# <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>TCP/IP ポート モニタの双方向の拡張機能のサンプル
+# <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>TCP/IP ポート モニターの双方向拡張機能サンプル
 
 
 次のコード例は、標準の TCP/IP ポート モニタの双方向通信のスキーマを拡張するサンプル XML ファイルです。

@@ -1,17 +1,17 @@
 ---
-title: 仕入先ログ ページ (関数インデックス 15) を取得します。
+title: ベンダーのログ ページの取得 (関数インデックス 15)
 description: この関数は、仕入先ログ ページを返します。
 ms.assetid: 71BFFD91-FAC2-473C-B453-B54578FAE1A0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fb7295c7219c8e9927807f639ea57abac8290b5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383146"
 ---
-# <a name="get-vendor-log-page-function-index-15"></a>仕入先ログ ページ (関数インデックス 15) を取得します。
+# <a name="get-vendor-log-page-function-index-15"></a>ベンダーのログ ページの取得 (関数インデックス 15)
 
 
 この関数は、仕入先ログ ページを返します。 呼び出す[取得ベンダー ログ ページ サイズ (関数インデックス 14)](get-vendor-log-page-size--function-index-14-.md)ページ サイズを取得します。
@@ -43,7 +43,7 @@ ms.locfileid: "56549507"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>

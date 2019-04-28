@@ -4,18 +4,18 @@ description: フローチャートおよび階層の読み取りと書き込み�
 ms.assetid: 7B4B4902-FD16-4C9B-BB54-A1D6EFCAE9DB
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a902df6b003ffc0740dbde6558807ed346a009a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372448"
 ---
 # <a name="functional-flow"></a>機能のフロー
 

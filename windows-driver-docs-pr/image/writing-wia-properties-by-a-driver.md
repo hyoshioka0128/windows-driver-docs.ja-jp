@@ -1,17 +1,17 @@
 ---
-title: ドライバーによって WIA プロパティを書き込む
-description: ドライバーによって WIA プロパティを書き込む
+title: ドライバーによる WIA プロパティの書き込み
+description: ドライバーによる WIA プロパティの書き込み
 ms.assetid: 6d2164ac-0fbc-4ecb-b3bf-a46efbe07f51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5c56ff01f0b867de158b01ef9825b974cdfa6e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380180"
 ---
-# <a name="writing-wia-properties-by-a-driver"></a>ドライバーによって WIA プロパティを書き込む
+# <a name="writing-wia-properties-by-a-driver"></a>ドライバーによる WIA プロパティの書き込み
 
 
 

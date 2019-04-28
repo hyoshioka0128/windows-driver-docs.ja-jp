@@ -1,14 +1,14 @@
 ---
-Description: This topic describes how a client driver can build a USB Request Block (URB) to transfer data to and from isochronous endpoints in a USB device.
+Description: このトピックでは、クライアント ドライバーが、USB 要求ブロック (URB) USB デバイス アイソクロナス エンドポイントとの間のデータ転送を作成する方法について説明します。
 title: USB 等時性エンドポイントへのデータの転送方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7895644493e58c4d72ce0a7054007d12655b26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379912"
 ---
 # <a name="how-to-transfer-data-to-usb-isochronous-endpoints"></a>USB 等時性エンドポイントへのデータの転送方法
 
@@ -243,7 +243,7 @@ Total length transferred is 360,000 bytes.
 
 **UrbIsochronousTransfer.IsoPacket\[は\]** します。長さのメンバーでは、アイソクロナス URB の各パケットの長さは意味しません。 **IsoPacket\[は\]します。長さ**を実際のアイソクロナス内のデバイスから受信したバイト数を示すために、USB ドライバー スタックによって更新された転送。 転送をアイソクロナスで設定されている値はドライバー スタックには無視**IsoPacket\[は\]します。長さ**します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **転送の開始の USB フレーム番号を指定します。**

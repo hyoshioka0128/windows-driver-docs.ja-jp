@@ -1,6 +1,6 @@
 ---
-title: デバイスのデータへのアクセスを同期します。
-description: デバイスのデータへのアクセスを同期します。
+title: デバイス データへのアクセスの同期
+description: デバイス データへのアクセスの同期
 ms.assetid: aaed8006-6773-4d20-b3a0-b48131f728c6
 keywords:
 - 割り込みサービス ルーチン WDK カーネルの同期
@@ -18,13 +18,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4f704b4295982d69aaff4aae7ef08879864615
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377905"
 ---
-# <a name="synchronizing-access-to-device-data"></a>デバイスのデータへのアクセスを同期します。
+# <a name="synchronizing-access-to-device-data"></a>デバイス データへのアクセスの同期
 
 
 
@@ -44,9 +44,9 @@ ms.locfileid: "56528986"
 
 -   ドライバーの接続を使用している場合\_完全\_の指定されたバージョン**IoConnectInterruptEx**であり、1 つの割り込みベクトルのみ、ドライバーを指定できます、 **NULL**スピン ロックします。 のみその特定の割り込み、独自の重要なセクションが表示されます、スピン ロックに割り当てられます。
 
-接続を使用する場合にのみ、ドライバーはスピン ロックを割り当てる必要があります\_完全\_の指定されたバージョン**IoConnectInterruptEx**と同じ重大を共有する複数の割り込みベクターがある場合セクション。 ドライバーを使用して、独自のスピン ロックおよび同期 IRQL を指定できます、**スピンロック**と**SynchronizeIrql**のメンバー **IO\_CONNECT\_割り込み\_パラメーター**します。 詳細については、[ **IO\_CONNECT\_INTERRUPT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff550541)を参照してください。
+接続を使用する場合にのみ、ドライバーはスピン ロックを割り当てる必要があります\_完全\_の指定されたバージョン**IoConnectInterruptEx**と同じ重大を共有する複数の割り込みベクターがある場合セクション。 ドライバーを使用して、独自のスピン ロックおよび同期 IRQL を指定できます、**スピンロック**と**SynchronizeIrql**のメンバー **IO\_CONNECT\_割り込み\_パラメーター**します。 詳細については、次を参照してください。 [ **IO\_CONNECT\_INTERRUPT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff550541)します。
 
-書き込みとクリティカル セクションの入力については、[クリティカル セクションを使用して](using-critical-sections.md)を参照してください。
+書き込みとクリティカル セクションの入力については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
 
  
 

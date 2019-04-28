@@ -1,17 +1,17 @@
 ---
-title: PwrTest 熱のシナリオ
+title: PwrTest の温度シナリオ
 description: PwrTest 熱のシナリオでは、ACPI 熱のゾーンの情報と統計情報を監視します。
 ms.assetid: C6941A50-EA0F-4C46-A290-8CAAD292E156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92add792882c0a50b7697b1976181fbf2e2a10c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380958"
 ---
-# <a name="pwrtest-thermal-scenario"></a>PwrTest 熱のシナリオ
+# <a name="pwrtest-thermal-scenario"></a>PwrTest の温度シナリオ
 
 
 PwrTest 熱のシナリオでは、ACPI 熱のゾーンの情報と統計情報を監視します。 このシナリオは、温度のゾーンと気温の変化を報告するシステムでのみサポートされます。
@@ -33,7 +33,7 @@ pwrtest /thermal [/t:n] [/?]
 <span id="_temp_kcf"></span><span id="_TEMP_KCF"></span>**/temp:**{**k**|**c**|**f**}  
 ケルビンの温度尺度を指定します (**k**)、摂氏 (**c**)、華氏 (**f**) すべての出力とログ記録を使用する (既定値はケルビン)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /thermal  

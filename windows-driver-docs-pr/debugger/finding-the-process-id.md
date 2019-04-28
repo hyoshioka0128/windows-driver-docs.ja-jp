@@ -10,11 +10,11 @@ keywords:
 ms.date: 01/18/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2add0a5362e6f9bbadf0fdddbc464c7cda144d02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371666"
 ---
 # <a name="finding-the-process-id"></a>プロセス ID の検索
 
@@ -44,7 +44,7 @@ TList (タスク リスト ビューアー、tlist.exe) は、タスク、また
 
 TList をコマンド プロンプトから実行すると、一意のプロセス id (PID) 番号によってメモリ内ですべてのユーザー モード プロセスの一覧表示されます。 PID、プロセス名、プロセスごとに表示し、プロセスのウィンドウで、そのウィンドウのタイトル。
 
-詳細については、[TList](tlist.md)を参照してください。
+詳細については、次を参照してください。 [TList](tlist.md)します。
 
 ### <a name="span-idthetlistdebuggercommandspanspan-idthetlistdebuggercommandspanthe-tlist-debugger-command"></a><span id="the__tlist_debugger_command"></span><span id="THE__TLIST_DEBUGGER_COMMAND"></span>.Tlist のデバッガー コマンド
 
@@ -52,7 +52,7 @@ TList をコマンド プロンプトから実行すると、一意のプロセ�
 
 ### <a name="span-idcsrssandusermodedriversspanspan-idcsrssandusermodedriversspancsrss-and-user-mode-drivers"></a><span id="csrss_and_user_mode_drivers"></span><span id="CSRSS_AND_USER_MODE_DRIVERS"></span>CSRSS とユーザー モード ドライバー
 
-別のコンピューターで実行されているユーザー モード ドライバーをデバッグするには、クライアント サーバー ランタイム サブシステム (CSRSS) プロセスをデバッグします。 詳細については、[デバッグ CSRSS](debugging-csrss.md)を参照してください。
+別のコンピューターで実行されているユーザー モード ドライバーをデバッグするには、クライアント サーバー ランタイム サブシステム (CSRSS) プロセスをデバッグします。 詳細については、次を参照してください。[デバッグ CSRSS](debugging-csrss.md)します。
 
  
 

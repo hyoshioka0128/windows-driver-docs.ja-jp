@@ -1,6 +1,6 @@
 ---
-title: マクロ ブロック コントロール コマンド バッファー
-description: マクロ ブロック コントロール コマンド バッファー
+title: マクロブロック制御コマンド バッファー
+description: マクロブロック制御コマンド バッファー
 ms.assetid: ed6905f6-7e7c-47d2-8f6e-95cfa03e21cb
 keywords:
 - マクロ ブロック WDK DirectX va なので、コマンド バッファー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8674be88550a4d13cc8559e44f9f2137634410a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375394"
 ---
-# <a name="macroblock-control-command-buffers"></a>マクロ ブロック コントロール コマンド バッファー
+# <a name="macroblock-control-command-buffers"></a>マクロブロック制御コマンド バッファー
 
 
 ## <span id="ddk_macroblock_control_command_buffers_gg"></span><span id="DDK_MACROBLOCK_CONTROL_COMMAND_BUFFERS_GG"></span>

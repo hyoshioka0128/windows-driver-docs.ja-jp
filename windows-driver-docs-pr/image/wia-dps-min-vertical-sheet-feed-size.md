@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 383a9eac15ec2c42cd7ded59b7de51215f5d283e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378022"
 ---
 # <a name="wiadpsminverticalsheetfeedsize"></a>WIA\_DPS\_MIN\_垂直\_シート\_フィード\_サイズ
 
@@ -35,7 +35,7 @@ WIA\_DPS\_MIN\_垂直\_シート\_フィード\_サイズ プロパティには�
 
 アクセス権:読み取り専用かどうか
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

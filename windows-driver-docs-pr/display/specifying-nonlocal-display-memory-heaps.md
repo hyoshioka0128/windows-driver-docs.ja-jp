@@ -1,6 +1,6 @@
 ---
-title: ヒープ表示の非ローカル メモリを指定します。
-description: ヒープ表示の非ローカル メモリを指定します。
+title: 非ローカルの表示メモリ ヒープの指定
+description: 非ローカルの表示メモリ ヒープの指定
 ms.assetid: 4320b6e7-81ef-4bb4-bda8-680467b6421f
 keywords:
 - ヒープ WDK DirectDraw
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d76dad4381703ce654ae57316690131a12338cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376032"
 ---
-# <a name="specifying-nonlocal-display-memory-heaps"></a>ヒープ表示の非ローカル メモリを指定します。
+# <a name="specifying-nonlocal-display-memory-heaps"></a>非ローカルの表示メモリ ヒープの指定
 
 
 ## <span id="ddk_specifying_nonlocal_display_memory_heaps_gg"></span><span id="DDK_SPECIFYING_NONLOCAL_DISPLAY_MEMORY_HEAPS_GG"></span>

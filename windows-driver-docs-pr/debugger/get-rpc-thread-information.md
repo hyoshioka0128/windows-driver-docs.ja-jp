@@ -1,19 +1,19 @@
 ---
-title: RPC スレッド情報を取得します。
-description: RPC スレッド情報を取得します。
+title: RPC スレッド情報の取得
+description: RPC スレッド情報の取得
 ms.assetid: 4cb8d11f-5b0a-4526-9f64-ee69fd15d1ba
 keywords:
 - RPC スレッド情報
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbee1913f1dd40f0d4a27809e611f781a2d1bde7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380790"
 ---
-# <a name="get-rpc-thread-information"></a>RPC スレッド情報を取得します。
+# <a name="get-rpc-thread-information"></a>RPC スレッド情報の取得
 
 
 ## <span id="ddk_get_rpc_thread_information_dbg"></span><span id="DDK_GET_RPC_THREAD_INFORMATION_DBG"></span>

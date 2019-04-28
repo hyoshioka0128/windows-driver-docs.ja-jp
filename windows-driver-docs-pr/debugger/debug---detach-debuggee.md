@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: daacbfdefa7f894b2775851b951e5a8404797ddd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374914"
 ---
-# <a name="debug--detach-debuggee"></a>デバッグ |デバッグ対象をデタッチします。
+# <a name="debug--detach-debuggee"></a>Debug | Detach Debuggee (デバッグ | デバッグ対象をデタッチ)
 
 
 ## <span id="ddk_debug_detach_debuggee_dbg"></span><span id="DDK_DEBUG_DETACH_DEBUGGEE_DBG"></span>
@@ -29,7 +29,7 @@ ms.locfileid: "56537619"
 
 Windows 2000 では、ライブのターゲットをデバッグしている場合、**デバッグ対象のデタッチ**コマンドは Windows のこのバージョンがターゲット プロセスからのデタッチをサポートしていないため、ご利用いただけません。
 
-デバッガーを終了またはターゲットからデタッチする方法の詳細については、[WinDbg でデバッグ セッションを終了する](ending-a-debugging-session-in-windbg.md)を参照してください。
+デバッガーを終了またはターゲットからデタッチする方法の詳細については、次を参照してください。 [WinDbg でデバッグ セッションを終了する](ending-a-debugging-session-in-windbg.md)します。
 
  
 

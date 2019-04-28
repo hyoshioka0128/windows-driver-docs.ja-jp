@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SMS_RECEIVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a85ebb8003f12fe7f0d696d0a4a5437912fe8814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379343"
 ---
 # <a name="ndisstatuswwansmsreceive"></a>NDIS\_状態\_WWAN\_SMS\_受信
 
@@ -32,7 +32,7 @@ ms.locfileid: "56561051"
 
 ![sms においてレコード取得の数が多いの複数の indication メソッドの使用状況を示す図](images/wwansmsrecordretrieval.png)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

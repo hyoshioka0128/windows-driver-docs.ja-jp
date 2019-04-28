@@ -1,6 +1,6 @@
 ---
-title: 画像のマクロ ブロック指向のデコード
-description: 画像のマクロ ブロック指向のデコード
+title: マクロブロック指向の画像のデコード
+description: マクロブロック指向の画像のデコード
 ms.assetid: 7a416992-04d3-4307-83b3-9fb94c17d60e
 keywords:
 - WDK DirectX VA マクロ ブロック
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c01270f84d0068459cfa792f20aa33ab3623c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380408"
 ---
-# <a name="macroblock-oriented-picture-decoding"></a>画像のマクロ ブロック指向のデコード
+# <a name="macroblock-oriented-picture-decoding"></a>マクロブロック指向の画像のデコード
 
 
 ## <span id="ddk_macroblock_oriented_picture_decoding_gg"></span><span id="DDK_MACROBLOCK_ORIENTED_PICTURE_DECODING_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccf11cd9c23287cef6b1bdd7a7e130420d21665f
-ms.sourcegitcommit: c7fd0b78f613ffa76ae9f2c00fdc9fa77574269b
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379358"
 ---
 # <a name="release-signing"></a>リリース署名
 
@@ -56,7 +56,7 @@ SPC を入手すると、だけでなく、クロス証明書は Microsoft に�
 
 **適切なクロス証明書を選択します。**
 
-Microsoft では、カーネル モード コードのコード署名の SPCs を発行する各 CA に対して特定の間の証明書を提供します。 クロス証明書の詳細については、[カーネル モード コード署名用クロス証明書](cross-certificates-for-kernel-mode-code-signing.md)を参照してください。 このトピックのリスト、Microsoft の名前は、CA ベンダーと、適切なクロス証明書、SPC を発行したルート証明機関の権限。 CA ベンダーによって発行された SPC 用の適切なクロス証明を見つけて、クロス証明書を署名するには、リリースを使用し、ドライバー ディレクトリに保存は、署名のコンピューターにダウンロードします。 署名のいずれかのコマンドで使用する場合、この証明書に絶対パスを提供することをお勧めします。
+Microsoft では、カーネル モード コードのコード署名の SPCs を発行する各 CA に対して特定の間の証明書を提供します。 クロス証明書の詳細については、次を参照してください。[カーネル モード コード署名用クロス証明書](cross-certificates-for-kernel-mode-code-signing.md)します。 このトピックのリスト、Microsoft の名前は、CA ベンダーと、適切なクロス証明書、SPC を発行したルート証明機関の権限。 CA ベンダーによって発行された SPC 用の適切なクロス証明を見つけて、クロス証明書を署名するには、リリースを使用し、ドライバー ディレクトリに保存は、署名のコンピューターにダウンロードします。 署名のいずれかのコマンドで使用する場合、この証明書に絶対パスを提供することをお勧めします。
 
 ## <a name="installing-spc-information-in-the-personal-certificate-store"></a>個人証明書ストアに SPC 情報をインストールします。
 

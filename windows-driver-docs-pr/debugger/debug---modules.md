@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80a1d251f6d5f9edc95f2ffaf21f05219e4ba9c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374343"
 ---
-# <a name="debug--modules"></a>デバッグ |モジュール
+# <a name="debug--modules"></a>Debug | Modules (デバッグ | モジュール)
 
 
 ## <span id="ddk_debug_modules_dbg"></span><span id="DDK_DEBUG_MODULES_DBG"></span>
@@ -36,7 +36,7 @@ ms.locfileid: "56556969"
 
 -   **チェックサム**列は、チェックサム値を指定します。
 
--   **シンボル**列には、このモジュールを使用するシンボルに関する情報が表示されます。 この列に表示される値の詳細については、[シンボルの状態の省略形](symbol-status-abbreviations.md)を参照してください。
+-   **シンボル**列には、このモジュールを使用するシンボルに関する情報が表示されます。 この列に表示される値の詳細については、次を参照してください。[シンボルの状態の省略形](symbol-status-abbreviations.md)します。
 
 -   **シンボル ファイル**列が関連付けられているシンボル ファイルのパスとファイル名を指定します。 デバッガーがシンボル ファイルの対応でない場合は、実行可能ファイルの名前が指定されました。
 

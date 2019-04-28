@@ -1,6 +1,6 @@
 ---
-title: ビデオのミニポート ドライバーのデバイスの開始
-description: ビデオのミニポート ドライバーのデバイスの開始
+title: ビデオのミニポート ドライバーのデバイスの起動
+description: ビデオのミニポート ドライバーのデバイスの起動
 ms.assetid: e51a9483-eb12-4f7c-943f-075e670e97b1
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000、デバイスの起動
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be1bbeaed4dca5523f9f2c541a448da54ba820a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376010"
 ---
-# <a name="starting-the-device-of-the-video-miniport-driver"></a>ビデオのミニポート ドライバーのデバイスの開始
+# <a name="starting-the-device-of-the-video-miniport-driver"></a>ビデオのミニポート ドライバーのデバイスの起動
 
 
 ## <span id="ddk_starting_the_device_of_the_video_miniport_driver_gg"></span><span id="DDK_STARTING_THE_DEVICE_OF_THE_VIDEO_MINIPORT_DRIVER_GG"></span>

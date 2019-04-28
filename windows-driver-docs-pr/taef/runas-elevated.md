@@ -1,17 +1,17 @@
 ---
-title: RunAs の管理者特権
+title: RunAs Elevated
 description: TAEF が確実に必要な場合は、テストを実行する管理者特権でのプロセスによって昇格されたプロセスでテストを実行します。
 ms.assetid: 6292E431-6EB5-4962-BBB0-B86FC4CE4643
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b31b4353a29f00362cadf84322440197bd11e94d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380206"
 ---
-# <a name="runas-elevated"></a>RunAs の管理者特権
+# <a name="runas-elevated"></a>RunAs Elevated
 
 
 TAEF が確実に必要な場合は、テストを実行する管理者特権でのプロセスによって昇格されたプロセスでテストを実行します。

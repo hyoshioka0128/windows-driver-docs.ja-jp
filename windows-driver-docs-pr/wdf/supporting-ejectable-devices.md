@@ -1,6 +1,6 @@
 ---
-title: 移動可能なリムーバブル デバイスのサポート
-description: 移動可能なリムーバブル デバイスのサポート
+title: 取り出し可能デバイスのサポート
+description: 取り出し可能デバイスのサポート
 ms.assetid: 7820bb71-7218-4c5f-af2b-f41e1b5f696d
 keywords:
 - PnP WDK KMDF、フロッピー デバイス
@@ -20,13 +20,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f017f893bf5673b1e9fb307e62334922c59cd820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382085"
 ---
-# <a name="supporting-ejectable-devices"></a>移動可能なリムーバブル デバイスのサポート
+# <a name="supporting-ejectable-devices"></a>取り出し可能デバイスのサポート
 
 
 *移動可能なリムーバブル デバイス*デバイスがドッキング ステーションに挿入され、ドッキング ステーションから取り出すことができます。 通常、デバイスを削除する前に移動可能なリムーバブル デバイスのバスの電源は無効にする必要があります。

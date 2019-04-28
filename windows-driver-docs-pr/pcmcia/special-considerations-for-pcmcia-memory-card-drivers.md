@@ -1,19 +1,19 @@
 ---
-title: PCMCIA メモリ カードのドライバーの特別な考慮事項
-description: PCMCIA メモリ カードのドライバーの特別な考慮事項
+title: PCMCIA メモリ カード ドライバーの特別な考慮事項
+description: PCMCIA メモリ カード ドライバーの特別な考慮事項
 ms.assetid: de6de14a-d8de-45fa-9bb9-93307f61114e
 keywords:
 - PCMCIA_INTERFACE_STANDARD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01fffa20620a7fe2752db58c39119a67181664b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378187"
 ---
-# <a name="special-considerations-for-pcmcia-memory-card-drivers"></a>PCMCIA メモリ カードのドライバーの特別な考慮事項
+# <a name="special-considerations-for-pcmcia-memory-card-drivers"></a>PCMCIA メモリ カード ドライバーの特別な考慮事項
 
 
 

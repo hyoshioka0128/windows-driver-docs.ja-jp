@@ -5,16 +5,16 @@ ms.assetid: 87acefcd-8db3-4b1e-972a-13fba629d52d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77e944cccb0c5abbcf3f88f3fffb2e33f3e8e1a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372783"
 ---
 # <a name="wdffitester-overview"></a>WdfFiTester の概要
 
 
-WdfFiTester、KMDF デバイス ドライバー インターフェイス (DDI) 関数の呼び出しを返す、NTSTATUS コードが失敗するを構成することができます。 関数は、190 システム提供 KMDF version 1.11 を NTSTATUS コードを返します。 これらの関数の一覧は、[KMDF 関数そののリターン送らコード](wdftester-functions-that-return-nstatus-codes.md)を参照してください。
+WdfFiTester、KMDF デバイス ドライバー インターフェイス (DDI) 関数の呼び出しを返す、NTSTATUS コードが失敗するを構成することができます。 関数は、190 システム提供 KMDF version 1.11 を NTSTATUS コードを返します。 これらの関数の一覧は、次を参照してください。 [KMDF 関数そののリターン送らコード](wdftester-functions-that-return-nstatus-codes.md)します。
 
 通常、KMDF 関数呼び出しを処理するコードでは、次のコード例に示すようにパターンがあります。
 

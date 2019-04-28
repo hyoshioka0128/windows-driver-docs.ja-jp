@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c0bd65790530946f0874ef3a197175b81aad2c7
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380688"
 ---
 # <a name="pcd-source-file-format"></a>PCD ソース ファイル形式
 
@@ -81,7 +81,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>を参照してください。</p></td>
+<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、次を参照してください。、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>します。</p></td>
 <td><p>既定値は 0、値を計算する GDI の原因です。</p></td>
 </tr>
 <tr class="odd">

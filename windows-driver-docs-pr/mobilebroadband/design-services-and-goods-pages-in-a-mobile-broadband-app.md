@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンド アプリでのサービスと商品ページをデザインします。
-description: モバイル ブロード バンド アプリでのサービスと商品ページをデザインします。
+title: モバイル ブロードバンド アプリでサービス ページと商品ページを設計する
+description: モバイル ブロードバンド アプリでサービス ページと商品ページを設計する
 ms.assetid: 7c13a42f-b808-4f33-a740-a8596b3520f7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a84ecc4c73c676032f9972e061d7789ca8d1aaa6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378335"
 ---
-# <a name="design-services-and-goods-pages-in-a-mobile-broadband-app"></a>モバイル ブロード バンド アプリでのサービスと商品ページをデザインします。
+# <a name="design-services-and-goods-pages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリでサービス ページと商品ページを設計する
 
 
 モバイル ブロード バンド アプリを使用すると、関連するその他のサービスを公開します。 お勧めのレイアウトを使用すると、Microsoft Store から昇格させるさまざまなサービスを構成できます。 カテゴリに組織でのサービスの上位変換の例は、ここで提供されます。

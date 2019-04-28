@@ -1,17 +1,17 @@
 ---
-title: 二重モード対応の高度なドキュメント フィーダー
-description: 二重モード対応の高度なドキュメント フィーダー
+title: 詳細両面印刷対応のドキュメント フィーダー
+description: 詳細両面印刷対応のドキュメント フィーダー
 ms.assetid: 05b91864-7573-4d99-8a03-701d6cdd650b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04351c8218656b32e8f059c368aa63978890b6e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367098"
 ---
-# <a name="advanced-duplex-capable-document-feeder"></a>二重モード対応の高度なドキュメント フィーダー
+# <a name="advanced-duplex-capable-document-feeder"></a>詳細両面印刷対応のドキュメント フィーダー
 
 
 

@@ -4,14 +4,14 @@ description: 基本的な要素は、(通常は) 1 つのエントリ ポイン�
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c121f4969b21474dc301d6488dabaf166691f1cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376079"
 ---
 # <a name="basic-block-objects"></a>基本的なブロックのオブジェクト 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 基本的な要素は、(通常は) 1 つのエントリ ポイントと 1 つの終了ポイントを使用したコードの領域です。 [逆アセンブラー](dbgmodel-object-disassembler.md)DisassembleBlocks と DisassembleFunction メソッドは両方ともの基本的な要素のコレクションを返します。 DisassembleBlocks メソッドは、基本的な要素の簡単な分析を行い、複数のエントリ ポイントでブロックがあります。 DisassembleFunction では、1 つのエントリと 1 つの終了を使用して基本的な要素に関数の完全なフロー分析を実行します。
 ## <a name="object-properties"></a>オブジェクトのプロパティ
 |名前|説明|

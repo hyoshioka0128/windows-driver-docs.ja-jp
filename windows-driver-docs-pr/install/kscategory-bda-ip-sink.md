@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2925b32deaf17d1f40a9bef4b34a44131078a13a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382205"
 ---
 # <a name="kscategorybdaipsink"></a>KSCATEGORY_BDA_IP_SINK
 
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_IP_SINK[デバイス インターフェイス クラス](https://
 
 BDA デバイス用のドライバーでは、デバイスがシンク BDA IP フィルターをサポートすることを示す KSCATEGORY_BDA_IP_SINK のインスタンスを登録します。
 
-詳細については、[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)を参照してください。
+詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
 
 <a name="requirements"></a>要件
 ------------

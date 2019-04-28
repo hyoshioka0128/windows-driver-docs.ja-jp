@@ -1,6 +1,6 @@
 ---
-title: ミニフィルター ドライバーによって生成される I/O 要求
-description: ミニフィルター ドライバーによって生成される I/O 要求
+title: ミニフィルター ドライバーで生成された I/O 要求
+description: ミニフィルター ドライバーで生成された I/O 要求
 ms.assetid: cf06dcb9-58e2-4341-8229-8f172f37c176
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター ドライバーによって生成される I/O 要求
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cee420f417f842a34155f79361d96329b68c03a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379058"
 ---
-# <a name="io-requests-generated-by-the-minifilter-driver"></a>ミニフィルター ドライバーによって生成される I/O 要求
+# <a name="io-requests-generated-by-the-minifilter-driver"></a>ミニフィルター ドライバーで生成された I/O 要求
 
 
 ミニフィルター ドライバーでは、生成でき、現在のボリュームまたは別のボリューム ドライバーのインスタンス、ミニフィルターのいずれかから IRP ベースの I/O 要求を送信することができます。 生成される I/O とファイル システム ミニフィルター ドライバーのインスタンスと、指定したインスタンスの下に接続されているレガシ フィルター ドライバーによってのみが表示されます。 これは、レガシ フィルター ドライバー モデルが表示され、以降、最上位のドライバーでは、全体のファイル システム スタックを介して移動する必要がある I/O レガシ フィルター ドライバーによって生成された要求で再帰 I/O に関連する多くの問題を解決します。

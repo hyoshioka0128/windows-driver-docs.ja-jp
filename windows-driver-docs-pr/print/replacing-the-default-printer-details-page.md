@@ -1,6 +1,6 @@
 ---
-title: 既定のプリンターの詳細ページを置き換える
-description: 既定のプリンターの詳細ページを置き換える
+title: 既定のプリンター詳細ページを置換する
+description: 既定のプリンター詳細ページを置換する
 ms.assetid: 451f442b-a882-4540-82dd-e96dab5e7619
 keywords:
 - カスタマイズされた印刷の Web ページの既定のページを置き換える WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa10d88c203be24a246eb7937bc1a0bad70308cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382575"
 ---
-# <a name="replacing-the-default-printer-details-page"></a>既定のプリンターの詳細ページを置き換える
+# <a name="replacing-the-default-printer-details-page"></a>既定のプリンター詳細ページを置換する
 
 
 

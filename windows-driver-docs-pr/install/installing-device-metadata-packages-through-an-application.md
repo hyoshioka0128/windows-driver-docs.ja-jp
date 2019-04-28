@@ -1,17 +1,17 @@
 ---
-title: アプリケーションを通じてデバイス メタデータ パッケージをインストールします。
-description: アプリケーションを通じてデバイス メタデータ パッケージをインストールします。
+title: アプリケーションからのデバイス メタデータ パッケージのインストール
+description: アプリケーションからのデバイス メタデータ パッケージのインストール
 ms.assetid: 3fec5938-b81b-4efe-8bcd-b2ef4b1c4b8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d522b4f759455843b774385cf6781a359880d70d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369461"
 ---
-# <a name="installing-device-metadata-packages-through-an-application"></a>アプリケーションを通じてデバイス メタデータ パッケージをインストールします。
+# <a name="installing-device-metadata-packages-through-an-application"></a>アプリケーションからのデバイス メタデータ パッケージのインストール
 
 
 デバイス メタデータ パッケージをインストールする、[デバイス メタデータ ストア](device-metadata-store.md)デバイスのインストール アプリケーションなど、アプリケーションを使用してこれらの手順に従います。

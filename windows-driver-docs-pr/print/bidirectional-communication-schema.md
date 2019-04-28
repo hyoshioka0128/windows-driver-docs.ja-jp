@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2938b1fe9ab1635aa6960cc97662f2821f1f60c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381106"
 ---
 # <a name="bidirectional-communication-schema"></a>双方向通信スキーマ
 
@@ -31,6 +31,6 @@ ms.locfileid: "56580513"
 
 双方向の拡張機能ファイルを作成してで bidi スキーマを拡張できます。 このファイルは、特定のドライバーを特定の新しいスキーマを定義する XML ファイルです。 双方向の拡張ファイル内のスキーマは、標準印刷スキーマのサブセットであるされ、XSD ファイル (双方向の拡張機能フレームワーク) の構成要素を使用して定義されます。
 
-スキーマのプロパティと値の完全な一覧については、[双方向通信スキーマ階層](bidirectional-communication-schema-hierarchy.md)を参照してください。 クエリを作成する方法については、[双方向通信のスキーマのクエリを構築する](constructing-a-bidi-communication-schema-query.md)を参照してください。 双方向通信のスキーマ内の値とプロパティの詳細については、[双方向通信のスキーマ リファレンス](bidi-communications-schema-reference.md)を参照してください。
+スキーマのプロパティと値の完全な一覧については、次を参照してください。[双方向通信スキーマ階層](bidirectional-communication-schema-hierarchy.md)します。 クエリを作成する方法については、次を参照してください。[双方向通信のスキーマのクエリを構築する](constructing-a-bidi-communication-schema-query.md)します。 双方向通信のスキーマ内の値とプロパティの詳細については、次を参照してください。[双方向通信のスキーマ リファレンス](bidi-communications-schema-reference.md)します。
 
-双方向の拡張機能ファイルをインストールする便利な方法が、ファイルを作成するには、*依存ファイル*のプリンター ドライバー。 依存ファイルの詳細については、[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)を参照してください。
+双方向の拡張機能ファイルをインストールする便利な方法が、ファイルを作成するには、*依存ファイル*のプリンター ドライバー。 依存ファイルの詳細については、次を参照してください。[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)します。

@@ -1,6 +1,6 @@
 ---
-title: WAN のパケットのフレーミング
-description: WAN のパケットのフレーミング
+title: WAN パケット フレーミング
+description: WAN パケット フレーミング
 ms.assetid: 11a6fbf5-c7a9-474b-811e-c77a36e834f3
 keywords:
 - WAN ミニポート ドライバー WDK ネットワー キング、パケット
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec833a021ffec7f8dba9e4d78a5889f19ccdd4f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380564"
 ---
-# <a name="wan-packet-framing"></a>WAN のパケットのフレーミング
+# <a name="wan-packet-framing"></a>WAN パケット フレーミング
 
 
 

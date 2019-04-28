@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c5496b8bfbd6e84c2aae72eeec826b71474565
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381040"
 ---
-# <a name="view--command"></a>ビュー |コマンド
+# <a name="view--command"></a>View | Command (表示 | コマンド)
 
 
 ## <span id="ddk_view_command_dbg"></span><span id="DDK_VIEW_COMMAND_DBG"></span>
@@ -23,7 +23,7 @@ ms.locfileid: "56560452"
 
 このコマンドは、ALT + 1 を押すことと同等かをクリックして、**コマンド (Alt + 1)** ボタン (![デバッガー コマンド ウィンドウのボタンのスクリーン ショット](images/tbcmd.png))、ツールバーの。
 
-このウィンドウとその使用方法の詳細については、[デバッガー コマンド ウィンドウ](debugger-command-window.md)を参照してください。
+このウィンドウとその使用方法の詳細については、次を参照してください。[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。
 
  
 

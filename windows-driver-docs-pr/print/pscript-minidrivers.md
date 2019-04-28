@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcac1bd853231bcb038c174216d8d6e87f08908c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376540"
 ---
 # <a name="pscript-minidrivers"></a>Pscript ミニドライバー
 
@@ -40,7 +40,7 @@ Windows 2000 およびそれ以降のフォント ファイル (.ntf ファイ�
 
 Microsoft では、よく生じる米国デバイス フォントの説明を含む、pscript.ntf という名前の既定の .ntf ファイルを提供します。 東アジア言語のプリンターの Microsoft も提供します、よく生じる東アジア言語の説明を含む pscrptfe.ntf という名前の既定の .ntf ファイル デバイス フォント。
 
-さらに、ハードウェア ベンダーは pscript.ntf でサポートされていないフォントをデバイス フォントの説明を指定できます。 これらのフォントの記述を作成できる[してを NTF ファイルに変換する](converting-afm-files-to-ntf-files.md)します。 カスタマイズすると、プリンターのモデルに固有の .ntf ファイル インストールできるに依存しているファイルを一覧表示することによって、[プリンター INF ファイル](printer-inf-files.md)します。 詳細については、[Pscript ミニドライバーをインストールする](installing-a-pscript-minidriver.md)を参照してください。
+さらに、ハードウェア ベンダーは pscript.ntf でサポートされていないフォントをデバイス フォントの説明を指定できます。 これらのフォントの記述を作成できる[してを NTF ファイルに変換する](converting-afm-files-to-ntf-files.md)します。 カスタマイズすると、プリンターのモデルに固有の .ntf ファイル インストールできるに依存しているファイルを一覧表示することによって、[プリンター INF ファイル](printer-inf-files.md)します。 詳細については、次を参照してください。 [Pscript ミニドライバーをインストールする](installing-a-pscript-minidriver.md)します。
 
 Pscript 最初チェック プリンターのモデルに固有の .ntf ファイルによって、pscript.ntf を確認し、見つかった最初のフォントの説明を使用してフォント メトリックを検索します。
 

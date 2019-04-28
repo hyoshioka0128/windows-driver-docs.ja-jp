@@ -1,17 +1,17 @@
 ---
-title: ホット スポット認証イベントの処理
-description: ホット スポット認証イベントの処理
+title: ホットスポット認証イベントの処理
+description: ホットスポット認証イベントの処理
 ms.assetid: e293757e-de4b-4669-a6c4-a57fff157cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c31bc322f1d13a0df31179eec2459c63e64a1bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380157"
 ---
-# <a name="handling-the-hotspot-authentication-event"></a>ホット スポット認証イベントの処理
+# <a name="handling-the-hotspot-authentication-event"></a>ホットスポット認証イベントの処理
 
 
 Windows 8、Windows 8.1、および Windows 10 ローミング (WISPr) をホット スポット認証イベント ワイヤレス インターネット サービス プロバイダーをサポートする専用ポータルを検出したときにトリガーします。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de18f627adbca92c95da655f01db06c5db76c29c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372707"
 ---
 # <a name="configuring-power-management"></a>電源管理の構成
 
@@ -24,7 +24,7 @@ ms.locfileid: "56531271"
 詳細については、共通の WDF 動作は、次のページを参照してください。
 
 *  」の説明に従って、クライアントは省略可能な電源の遷移の通知を受け取る WDF イベントのコールバックを登録します。 [PnP をサポートしていると関数のドライバーでの電源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)します。
-*  WDF のクライアントでの PnP と電力のコールバック関数の登録方法の詳細については、[Function ドライバーのデバイス オブジェクトの作成](../wdf/creating-device-objects-in-a-function-driver.md)を参照してください。
+*  WDF のクライアントでの PnP と電力のコールバック関数の登録方法の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](../wdf/creating-device-objects-in-a-function-driver.md)です。
 *  デバイスがシステム全体の低電力状態からシステムをスリープ解除する方法の詳細については、「[システムのウェイク アップをサポートしている](../wdf/supporting-system-wake-up.md)します。
 
 ## <a name="setting-power-capabilities-of-the-network-adapter"></a>ネットワーク アダプターの設定の 電源機能

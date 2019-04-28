@@ -5,13 +5,13 @@ ms.assetid: 57b402c5-31ad-4096-be70-a1dbbee86b83
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14554651b373df12c2b71740b5e49274171af9ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370524"
 ---
-# <a name="what-is-device-stage"></a>Device Stage は何ですか。
+# <a name="what-is-device-stage"></a>デバイス ステージとは?
 
 
 Device Stage は、デバイスの製造元固有のブランドに合った豊富なユーザー エクスペリエンス、機能、および自分のデバイスのコンテンツを配信することができる新しい Windows プラットフォームです。 Device Stage、Windows 7 PC を自分のデバイスを簡単に接続できるユーザーと製造元から提供されたエクスペリエンスを自動的にインストールしてデバイスと PC 間でシームレスなエクスペリエンスを確保、ユーザーに提示します。

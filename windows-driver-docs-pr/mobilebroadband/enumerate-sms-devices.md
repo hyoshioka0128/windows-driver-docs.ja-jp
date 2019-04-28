@@ -5,11 +5,11 @@ ms.assetid: d0d57a4f-df83-4f3b-b7b4-417ad4e11350
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2415989df11aba351d28b3a9da915070fd773ac2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380241"
 ---
 # <a name="enumerate-sms-devices"></a>SMS デバイスの列挙
 

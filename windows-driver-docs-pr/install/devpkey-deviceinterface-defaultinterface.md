@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1d1d424c478cac1140b25f48e65e34e829fcf49f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381491"
 ---
 # <a name="devpkeydeviceinterfaceclassdefaultinterface"></a>DEVPKEY_DeviceInterfaceClass_DefaultInterface
 
@@ -60,7 +60,7 @@ DEVPKEY_DeviceInterfaceClass_DefaultInterface デバイス プロパティは、
 
 DEVPKEY_DeviceInterfaceClass_DefaultInterface の値を取得するには呼び出すことによって[ **SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)します。 呼び出して DEVPKEY_DeviceInterfaceClass_DefaultInterface を設定する[ **SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterfaceClass_DefaultInterface プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインターフェイス クラスの既定のインターフェイスにアクセスする方法については、[インターフェイス クラス プロパティのデバイスへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537739)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterfaceClass_DefaultInterface プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインターフェイス クラスの既定のインターフェイスにアクセスする方法については、次を参照してください。[インターフェイス クラス プロパティのデバイスへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537739)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0bf54b37d4ac1e7941f83276a8744c93b8e7e15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376086"
 ---
 # <a name="customizing-a-theme"></a>テーマのカスタマイズ
 
@@ -57,7 +57,7 @@ WinDbg でソース ウィンドウを開くことから始めます。 タブ�
 
 タブのドッキングするプレース ホルダーの必要なウィンドウの上のすべてのウィンドウ型。
 
-WinDbg のウィンドウの位置の調整に関する詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+WinDbg のウィンドウの位置の調整に関する詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
  
 

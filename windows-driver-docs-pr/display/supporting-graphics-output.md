@@ -1,6 +1,6 @@
 ---
-title: グラフィックスの出力をサポートしています。
-description: グラフィックスの出力をサポートしています。
+title: グラフィックス出力のサポート
+description: グラフィックス出力のサポート
 ms.assetid: 2ac9b01d-9dca-44b4-9645-9c5eefb2ef1b
 keywords:
 - GDI WDK Windows 2000 の表示、グラフィックス出力
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c204a83447a8f64cdbc14b76552da3f729024a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372757"
 ---
-# <a name="supporting-graphics-output"></a>グラフィックスの出力をサポートしています。
+# <a name="supporting-graphics-output"></a>グラフィックス出力のサポート
 
 
 ## <span id="ddk_supporting_graphics_output_gg"></span><span id="DDK_SUPPORTING_GRAPHICS_OUTPUT_GG"></span>

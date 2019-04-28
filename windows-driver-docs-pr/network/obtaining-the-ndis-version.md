@@ -1,19 +1,19 @@
 ---
-title: NDIS 版を入手します。
-description: NDIS 版を入手します。
+title: NDIS バージョンの取得
+description: NDIS バージョンの取得
 ms.assetid: f7bbd11c-b6ec-4adb-8c42-ec438d518ed8
 keywords:
 - WDK、NDIS バージョンについては、オペレーティング システムのバージョンとの比較
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be779b52198253d9acc8bc7292c9d9169c25861d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378301"
 ---
-# <a name="obtaining-the-ndis-version"></a>NDIS 版を入手します。
+# <a name="obtaining-the-ndis-version"></a>NDIS バージョンの取得
 
 
 

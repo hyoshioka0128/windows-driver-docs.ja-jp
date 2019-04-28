@@ -1,6 +1,6 @@
 ---
-title: ブート パラメーターを変更します。
-description: ブート パラメーターを変更します。
+title: ブート パラメーターの変更
+description: ブート パラメーターの変更
 ms.assetid: e835e1e9-ad80-462b-b55f-2fa0e55009a5
 keywords:
 - ブート エントリ パラメーター WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f330203a0065139f51f0a37a564f461845d0344
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375360"
 ---
-# <a name="changing-boot-parameters"></a>ブート パラメーターを変更します。
+# <a name="changing-boot-parameters"></a>ブート パラメーターの変更
 
 有効にし、デバッグなど、オペレーティング システムのブートに関連する機能を構成するには、ブート パラメーターをオペレーティング システムのブート エントリを追加する必要があります。
 

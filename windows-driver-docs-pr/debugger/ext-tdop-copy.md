@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d55cee518a69ad1ea1ef6e2cf9f2b405ceddf8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379739"
 ---
 # <a name="exttdopcopy"></a>EXT\_TDOP\_コピー
 
 
 EXT\_TDOP\_のサブ操作のコピー、 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI** ](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作は、型指定されたデータの説明のコピーを作成します。
 
-**パラメーター**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**操作**  
 EXT に設定\_TDOP\_このサブ操作のコピーします。
@@ -43,7 +43,7 @@ EXT に設定\_TDOP\_このサブ操作のコピーします。
 
 EXT\_TDOP\_コピーがの値、 [ **EXT\_TDOP** ](https://msdn.microsoft.com/library/windows/hardware/ff544529)列挙体。
 
-このサブ操作のパラメーターのメンバーである、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)構造体。 EXT のメンバー\_型指定された\_データは、前のパラメーター セクションには示されていないこのサブ操作では使用されませんし、0 に設定する必要があります。 前のパラメーター セクション内のメンバーの説明では、使用は、メンバーを指定します。 メンバーの詳細については、**EXT\_型指定された\_データ**を参照してください。
+このサブ操作のパラメーターのメンバーである、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)構造体。 EXT のメンバー\_型指定された\_データは、前のパラメーター セクションには示されていないこのサブ操作では使用されませんし、0 に設定する必要があります。 前のパラメーター セクション内のメンバーの説明では、使用は、メンバーを指定します。 メンバーの詳細については、次を参照してください。 **EXT\_型指定された\_データ**します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

@@ -5,11 +5,11 @@ ms.assetid: 1ddf45e1-06bb-42c6-9409-0f54143bb350
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5653626fa9643f431686e2254437d85785c8c97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383085"
 ---
 # <a name="history-of-storport"></a>Storport の履歴
 

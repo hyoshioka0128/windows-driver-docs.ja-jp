@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CONNECT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3f2119db4c760ac4c1c13c99cf40ee81927439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371050"
 ---
 # <a name="wditlvconnectparameters"></a>WDI\_TLV\_CONNECT\_パラメーター
 
@@ -30,7 +30,7 @@ WDI\_TLV\_CONNECT\_パラメーターはパラメーターを含む TLV [OID\_WD
 
 ## <a name="values"></a>値
 
-| 型 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
+| 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
 | --- | --- | --- | --- |
 | [**WDI\_TLV\_接続\_設定**](wdi-tlv-connection-settings.md) |   |   | 接続の設定。 |
 | [**WDI\_TLV\_SSID**](wdi-tlv-ssid.md) | x |   | 接続にポートが許可されている Ssid の一覧です。 |
@@ -43,7 +43,7 @@ WDI\_TLV\_CONNECT\_パラメーターはパラメーターを含む TLV [OID\_WD
 | [**WDI\_TLV\_許可しない\_BSSID\_一覧**](wdi-tlv-disallowed-bssids-list.md) |   | x | 関連付けに使用するのには許可されていない Bssid の一覧。 指定した場合、アダプターいないこのリストである任意の AP に関連付ける必要があります。 |
 | [**WDI\_TLV\_許可\_BSSID\_一覧**](wdi-tlv-allowed-bssids-list.md) |   | x | 関連付けに使用することができる Bssid の一覧。 WDI 255.255.255.255 を指定する場合は、すべて Bssid が許可されます。 | 
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

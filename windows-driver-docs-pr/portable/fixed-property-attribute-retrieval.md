@@ -1,14 +1,14 @@
 ---
-Description: Fixed Property-Attribute Retrieval
+Description: 固定プロパティ属性の取得
 title: 固定プロパティ属性の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61f8a57acb7d91fe37daa32b9fe93bf0560f7d0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378168"
 ---
 # <a name="fixed-property-attribute-retrieval"></a>固定プロパティ属性の取得
 

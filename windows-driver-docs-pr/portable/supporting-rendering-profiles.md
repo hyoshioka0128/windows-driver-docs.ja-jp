@@ -1,21 +1,21 @@
 ---
-Description: Supporting Rendering Profiles
-title: プロファイルのレンダリングをサポートしています。
+Description: レンダリング プロファイルのサポート
+title: レンダリング プロファイルのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f63bf4649bc0e378f0784a6e4a51c63f13c0b47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380844"
 ---
-# <a name="supporting-rendering-profiles"></a>プロファイルのレンダリングをサポートしています。
+# <a name="supporting-rendering-profiles"></a>レンダリング プロファイルのサポート
 
 
 オーディオまたはビデオ デバイスは特定のレンダリングのプロファイルに対応します。 たとえば、ストリーミング オーディオ デバイスでは、複数のチャネル特定の種類の特定のビットレートでコンテンツをストリームする可能性があります。 コンテンツの種類、ストリーミングのビットレートとチャネルの数と呼びます、*レンダリング プロファイル*します。
 
-WPD アプリケーションは、ドライバーから多くの場合、レンダリングのプロファイルを取得します。 アプリケーションがレンダリング プロファイルを取得する方法の詳細については、、[デバイスでサポートされるレンダリング機能を取得する](https://go.microsoft.com/fwlink/p/?linkid=150363)WPD SDK のトピックを参照してください。
+WPD アプリケーションは、ドライバーから多くの場合、レンダリングのプロファイルを取得します。 アプリケーションがレンダリング プロファイルを取得する方法の詳細については、次を参照してください。、[デバイスでサポートされるレンダリング機能を取得する](https://go.microsoft.com/fwlink/p/?linkid=150363)WPD SDK のトピックです。
 
 このトピックでは、WpdWudfSampleDriver ドライバーがオーディオのストリーミング サポートを実装する方法について説明します、 *Helpers.cpp*モジュール。
 

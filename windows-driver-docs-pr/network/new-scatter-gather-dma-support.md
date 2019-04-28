@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a234cf49067a47d0bbc224329c29448c616cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380590"
 ---
 # <a name="new-scattergather-dma-support"></a>新しい Scatter/Gather DMA のサポート
 
@@ -33,7 +33,7 @@ NDIS の以前のバージョンとは異なり NDIS 6.0 では DMA の転送パ
 
 -   ミニポート ドライバーがスキャッター/ギャザーの一覧については、メモリ事前割り当てを行うことができますので、NDIS がスキャッター/ギャザー リストの実行時にメモリを割り当てることはありません。
 
-NDIS 6.0 のスキャッター/ギャザー DMA の詳細については、[NDIS 6.0 のスキャッター/ギャザー DMA](ndis-scatter-gather-dma.md)を参照してください。
+NDIS 6.0 のスキャッター/ギャザー DMA の詳細については、次を参照してください。 [NDIS 6.0 のスキャッター/ギャザー DMA](ndis-scatter-gather-dma.md)します。
 
  
 

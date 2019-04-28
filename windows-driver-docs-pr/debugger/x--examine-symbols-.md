@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cf8fe0e8af0ae4eefd8de0b99998e00c7d6284
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381922"
 ---
 # <a name="x-examine-symbols"></a>x (シンボルの検証)
 
@@ -87,10 +87,10 @@ x [Options] *
 表示サイズを降順で並べ替えます。
 
 <span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *モジュール*   
-検索するモジュールを指定します。 このモジュールは、.exe、.dll、または .sys ファイルであることができます。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+検索するモジュールを指定します。 このモジュールは、.exe、.dll、または .sys ファイルであることができます。 *モジュール*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 <span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span> *シンボル*   
-シンボルを含める必要があるパターンを指定します。 *シンボル*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+シンボルを含める必要があるパターンを指定します。 *シンボル*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 照合が大文字小文字を区別し、1 つの先頭のアンダー スコアがないため、このパターンは、シンボルに一致すると、(\_) 任意の分量の先頭にアンダー スコアを表します。 内のスペースを追加することができます*シンボル*スペースが含まれるシンボル名を指定できるように、("operator new"などまたは"テンプレート&lt;A、B&gt;") せず、ワイルドカード文字を使用します。
 

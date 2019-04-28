@@ -1,5 +1,5 @@
 ---
-title: DbgSrv コマンド ライン オプション
+title: DbgSrv のコマンドライン オプション
 description: DbgSrv コマンドラインは、次の構文を使用します。
 ms.assetid: 817f7ede-bdaf-4d4e-a1bd-579c67ea1ab9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fe270ca2f7e6fd79e87f418914becf893ec2c94d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376093"
 ---
-# <a name="dbgsrv-command-line-options"></a>DbgSrv コマンド ライン オプション
+# <a name="dbgsrv-command-line-options"></a>DbgSrv のコマンドライン オプション
 
 
 DbgSrv コマンドラインは、次の構文を使用します。
@@ -59,7 +59,7 @@ dbgsrv -?
 <span id="_______-_______"></span> **-?**   
 DbgSrv コマンドラインのヘルプ テキストを含むメッセージ ボックスが表示されます。
 
-DbgSrv の使用方法の詳細については、[プロセス サーバー (ユーザー モード)](process-servers--user-mode-.md)を参照してください。
+DbgSrv の使用方法の詳細については、次を参照してください。[プロセス サーバー (ユーザー モード)](process-servers--user-mode-.md)します。
 
  
 

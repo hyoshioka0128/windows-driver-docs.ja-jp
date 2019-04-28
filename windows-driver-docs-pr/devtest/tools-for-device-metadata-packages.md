@@ -5,11 +5,11 @@ ms.assetid: 3d0daa9b-79c8-456d-bdbf-d7efa2d898c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8520379d1b6ab0ed74a650a17c9c652d1ebe230
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367934"
 ---
 # <a name="tools-for-device-metadata-packages"></a>デバイス メタデータ パッケージ用のツール
 

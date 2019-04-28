@@ -1,23 +1,23 @@
 ---
-title: NFC クライアント ドライバーの電源管理の要件
+title: NFC クライアント ドライバーの電源の管理要件
 ms.assetid: FBA0821B-859F-4A44-998E-E00162FBD265
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 description: コネクト スタンバイの NFP デバイスの要件を満たすについて説明します。 プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d3968dbe771d7cdb638beddfbd7411b8f0e76
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378841"
 ---
-# <a name="nfc-client-driver-power-management-requirements"></a>NFC クライアント ドライバーの電源管理の要件
+# <a name="nfc-client-driver-power-management-requirements"></a>NFC クライアント ドライバーの電源の管理要件
 
 
 NFC クライアント ドライバーでは、D0 と D3 の能力を NFP プラットフォームのデバイスをコネクテッド スタンバイの要件を満たすために、次のようにコールバックを処理を実装する必要があります。

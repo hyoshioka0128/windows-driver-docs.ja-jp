@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_SERVICE_SESSION_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d6daf4f042907c9b8803cd8d57e5054ba2067a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375648"
 ---
 # <a name="wditlvp2pservicesessioninfo"></a>WDI\_TLV\_P2P\_サービス\_セッション\_情報
 
@@ -37,7 +37,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

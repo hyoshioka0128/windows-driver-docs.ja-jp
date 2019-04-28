@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ddbd534db0b801ba91190115e3bf010af23f8962
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379694"
 ---
 # <a name="mrxcreate-routine"></a>MRxCreate ルーチン
 
@@ -103,7 +103,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *MRxCreate*はネットワークのミニ リダイレクターがネットワーク経由でファイル システム オブジェクトを開くことを要求する RDBSS によって呼び出されます。 この呼び出しが受信する応答 RDBSS によって発行された、 [ **IRP\_MJ\_作成**](irp-mj-create.md)要求。
@@ -122,7 +122,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 、戻る前に*MRxCreate*設定する必要があります、 **CurrentIrp -&gt;IoStatus.Information** 、RX のメンバー\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SO_RCVBUF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ee27d5493475bf6a8cbabd46a3bca144bac299fb
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373772"
 ---
 # <a name="sorcvbuf"></a>したがって\_RCVBUF
 
@@ -27,7 +27,7 @@ SO\_RCVBUF ソケット オプションは、ソケットのサイズには、�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +40,7 @@ SO\_RCVBUF ソケット オプションは、ソケットのサイズには、�
 <td><p>SO_RCVBUF</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -76,7 +76,7 @@ SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケ
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +89,7 @@ SO の値を取得する\_RCVBUF ソケット オプション、WSK アプリケ
 <td><p>SO_RCVBUF</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">

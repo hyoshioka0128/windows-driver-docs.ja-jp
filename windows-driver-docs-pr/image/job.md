@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1608d20448afa736b8c0f69f965776e423810ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381644"
 ---
 # <a name="job-element"></a>ジョブ要素
 
@@ -82,7 +82,7 @@ ms.locfileid: "56581553"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 スキャン ジョブ (この、**ジョブ**要素を表します) 1 つまたは複数のドキュメントを含めることができます。 両方の WSD スキャン サービスの処理手順については、ジョブとそのドキュメントで実行される、**ジョブ**レベル。

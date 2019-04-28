@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a68d948e02e536b78e5f5df9225134d20c8a497b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380282"
 ---
 # <a name="eula-xml-element"></a>eula XML 要素
 
@@ -45,7 +45,7 @@ ms.locfileid: "57464148"
 <td align="left"><p>ベンダーから提供された使用許諾契約書の種類。 文字列"txt"は、プレーン テキスト ファイルには、この属性の値を設定する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Path</strong></p></td>
+<td align="left"><p><strong>[パス]</strong></p></td>
 <td align="left"><p>DPInst EULA ページのテキストを含むファイルの名前を識別する文字列。 Utf-8 エンコーディングを使用して、使用許諾契約書のテキスト ファイルをエンコードする必要があります。 DPInst の実行可能ファイルを含むディレクトリである DPInst のルート ディレクトリに、EULA ファイルを配置する必要があります (<em>DPInst.exe</em>)、または DPInst のルート ディレクトリの下のサブディレクトリ。 使用許諾契約書のファイルがサブディレクトリ内にある場合は、DPInst のルート ディレクトリに対して相対的な完全修飾ファイル名を指定します。</p></td>
 </tr>
 </tbody>

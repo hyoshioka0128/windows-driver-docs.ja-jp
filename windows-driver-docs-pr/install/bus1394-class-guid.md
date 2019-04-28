@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a1a0655553e33af83f35f10fb583f071ee0cd219
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378464"
 ---
 # <a name="bus1394classguid"></a>BUS1394_CLASS_GUID
 
@@ -56,7 +56,7 @@ BUS1394_CLASS_GUID[デバイス インターフェイス クラス](https://msdn
 
 1394 のバスのバス ドライバーでは、オペレーティング システムと 1394 bus デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-1394 バスについては、[1394 バス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537209)を参照してください。
+1394 バスについては、次を参照してください。 [1394 バス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537209)します。
 
 WDK サンプルに含まれて、 [1394api サンプル](https://msdn.microsoft.com/library/windows/hardware/ff536887)アプリケーション。 このアプリケーションでは、BUS1394_CLASS_GUID を使用して、このデバイスのインターフェイス クラスのインスタンスの存在の通知に登録します。
 

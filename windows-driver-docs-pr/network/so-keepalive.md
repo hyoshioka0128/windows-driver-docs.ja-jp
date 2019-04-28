@@ -1,16 +1,16 @@
 ---
-title: 接続
-description: 接続
+title: SO_KEEPALIVE
+description: SO_KEEPALIVE
 ms.assetid: 47b29218-f227-4d36-b206-d8bf009252c0
 ms.date: 08/08/2017
 keywords: -接続ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6dc1c84d48b2c0daae9e315c8703ed45cbcffb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373776"
 ---
 # <a name="sokeepalive"></a>したがって\_KEEPALIVE
 
@@ -37,10 +37,10 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 </tr>
 <tr class="even">
 <td><p><em>ControlCode</em></p></td>
-<td><p>接続</p></td>
+<td><p>SO_KEEPALIVE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -92,10 +92,10 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 </tr>
 <tr class="even">
 <td><p><em>ControlCode</em></p></td>
-<td><p>接続</p></td>
+<td><p>SO_KEEPALIVE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f611063e3a6207db1cddb9017b08b2a3bf9a21d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374888"
 ---
 # <a name="debug--kernel-connection--cycle-baud-rate"></a>Debug | Kernel Connection | Cycle Baud Rate (デバッグ | カーネル接続 | ボーレートを切り替える)
 

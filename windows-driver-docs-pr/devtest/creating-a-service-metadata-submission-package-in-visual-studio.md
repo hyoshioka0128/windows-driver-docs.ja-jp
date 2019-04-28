@@ -1,19 +1,19 @@
 ---
-title: Visual Studio でのサービス メタデータの提出パッケージの作成
-description: Visual Studio でのサービス メタデータの提出パッケージの作成
+title: Visual Studio でのサービス メタデータ申請パッケージの作成
+description: Visual Studio でのサービス メタデータ申請パッケージの作成
 ms.assetid: 93C2F66B-EAD3-4C7B-A761-E0AF861101D0
 keywords:
-- Visual Studio でのサービス メタデータの提出パッケージの作成
+- Visual Studio でのサービス メタデータ申請パッケージの作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad5168e4e74f1fb56cdd6c4cb92dd548ff857cc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381013"
 ---
-# <a name="creating-a-service-metadata-submission-package-in-visual-studio"></a>Visual Studio でのサービス メタデータの提出パッケージの作成
+# <a name="creating-a-service-metadata-submission-package-in-visual-studio"></a>Visual Studio でのサービス メタデータ申請パッケージの作成
 
 
 提出パッケージを作成するのにには、Microsoft Visual Studio での送信ツールを使用します。
@@ -54,11 +54,11 @@ ms.locfileid: "56529803"
 
 12. をクリックしてパッケージを送信する準備ができたら、**起動 Windows デベロッパー センター - ハードウェア ダッシュ ボード**します。
 
-パッケージを送信する方法の詳細については、[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)を参照してください。
+パッケージを送信する方法の詳細については、次を参照してください。[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)します。
 
-Devicemanifest ファイルに関する詳細については、[モバイル ブロード バンドの UWP アプリを送信](https://go.microsoft.com/fwlink/p/?linkid=248426)を参照してください。
+Devicemanifest ファイルに関する詳細については、次を参照してください。[モバイル ブロード バンドの UWP アプリを送信](https://go.microsoft.com/fwlink/p/?linkid=248426)します。
 
-Bulkmetadata ファイルに関する詳細については、[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)を参照してください。
+Bulkmetadata ファイルに関する詳細については、次を参照してください。[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)します。
 
  
 

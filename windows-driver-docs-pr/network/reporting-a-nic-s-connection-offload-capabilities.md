@@ -1,6 +1,6 @@
 ---
-title: NIC の接続のオフロード機能の報告
-description: NIC の接続のオフロード機能の報告
+title: NIC の接続オフロード機能のレポート
+description: NIC の接続オフロード機能のレポート
 ms.assetid: a9bf798b-382c-4904-b0b2-ed1e54f9c36b
 keywords:
 - 接続は、WDK TCP/IP トランスポートは、レポート機能をオフロードします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1608e2c07905df3d4fefcc6de2aa479ec636857c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380886"
 ---
-# <a name="reporting-a-nics-connection-offload-capabilities"></a>NIC の接続のオフロード機能の報告
+# <a name="reporting-a-nics-connection-offload-capabilities"></a>NIC の接続オフロード機能のレポート
 
 
 

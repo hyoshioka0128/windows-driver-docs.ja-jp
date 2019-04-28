@@ -1,6 +1,6 @@
 ---
-title: コンテキストの種類を登録します。
-description: コンテキストの種類を登録します。
+title: コンテキストの種類の登録
+description: コンテキストの種類の登録
 ms.assetid: ddf03426-5c49-4621-b81d-59d1cb002ae9
 keywords:
 - 型の登録、コンテキスト WDK ファイル システム ミニフィルター
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 242c3363cdcb79f479bd13360ad623be53b57740
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370110"
 ---
-# <a name="registering-context-types"></a>コンテキストの種類を登録します。
+# <a name="registering-context-types"></a>コンテキストの種類の登録
 
 
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
@@ -35,9 +35,9 @@ ms.locfileid: "56530552"
 
 **フラグ**、FLT のメンバー\_コンテキスト\_登録構造、FLTFL\_コンテキスト\_登録\_いいえ\_EXACT\_サイズ\_のマッチ フラグを指定することができます。 ミニフィルター ドライバーは固定サイズのコンテキストを使用すると、このフラグが指定されて、フィルター マネージャーは、コンテキストのサイズが要求されたサイズ以上である場合、ルック アサイド リストからコンテキストを割り当てます。 それ以外の場合、コンテキストのサイズは、要求されたサイズと同じである必要があります。
 
-ミニフィルター ドライバーには、特定のコンテキスト型の場合、それぞれに別のサイズ、最大 3 つ固定サイズのコンテキストの定義と変数サイズの 1 つの定義を指定できます。 詳細については、[ **FLT\_コンテキスト\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff544629)を参照してください。
+ミニフィルター ドライバーには、特定のコンテキスト型の場合、それぞれに別のサイズ、最大 3 つ固定サイズのコンテキストの定義と変数サイズの 1 つの定義を指定できます。 詳細については、次を参照してください。 [ **FLT\_コンテキスト\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff544629)します。
 
-ミニフィルター ドライバーは、必要に応じて、コンテキストが解放される前に呼び出されるコンテキスト クリーンアップ コールバック ルーチンを指定できます。 詳細については、[ **PFLT\_コンテキスト\_クリーンアップ\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551078)を参照してください。
+ミニフィルター ドライバーは、必要に応じて、コンテキストが解放される前に呼び出されるコンテキスト クリーンアップ コールバック ルーチンを指定できます。 詳細については、次を参照してください。 [ **PFLT\_コンテキスト\_クリーンアップ\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551078)します。
 
 ミニフィルター ドライバーでは、これらのタスクを実行するフィルター マネージャーではなく、コンテキストを解放したり、独自のコールバック ルーチンを必要に応じて定義できます。 ただし、この非常にまれに必要です。 詳細については、次を参照してください[ **PFLT\_コンテキスト\_ALLOCATE\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551075)と[ **PFLT\_コンテキスト。\_無料\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551082)します。
 

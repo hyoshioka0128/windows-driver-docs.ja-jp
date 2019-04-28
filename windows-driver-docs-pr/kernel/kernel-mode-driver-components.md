@@ -1,6 +1,6 @@
 ---
-title: カーネル モード ドライバー コンポーネント
-description: カーネル モード ドライバー コンポーネント
+title: カーネルモード ドライバーのコンポーネント
+description: カーネルモード ドライバーのコンポーネント
 ms.assetid: 79be2948-cc74-4f0b-8ffa-1e57f44d7b0c
 keywords:
 - カーネル モード ドライバー WDK、コンポーネント
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4658ce73b6ae6d7d6cf68dd56c6e7f35ed0e2456
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381382"
 ---
-# <a name="kernel-mode-driver-components"></a>カーネル モード ドライバー コンポーネント
+# <a name="kernel-mode-driver-components"></a>カーネルモード ドライバーのコンポーネント
 
 
 

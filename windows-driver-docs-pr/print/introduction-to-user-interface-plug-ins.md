@@ -1,6 +1,6 @@
 ---
-title: ユーザー インターフェイスのプラグインの概要
-description: ユーザー インターフェイスのプラグインの概要
+title: ユーザー インターフェイス プラグインの概要
+description: ユーザー インターフェイス プラグインの概要
 ms.assetid: 7f01bd14-bcc5-4c26-a9b8-a12aa1ffe242
 keywords:
 - ユーザー インターフェイスにプラグイン WDK 印刷、ユーザー インターフェイスのプラグインについて
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ae0feca471cbaab42b958a8ae98e65918859654
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376918"
 ---
-# <a name="introduction-to-user-interface-plug-ins"></a>ユーザー インターフェイスのプラグインの概要
+# <a name="introduction-to-user-interface-plug-ins"></a>ユーザー インターフェイス プラグインの概要
 
 
 
@@ -34,7 +34,7 @@ Windows Vista から Unidrv を使用している場合を実装できます、 
 
 [プリンター インターフェイス DLL](printer-interface-dll.md)呼び出し UI プラグイン Unidrv または Pscript、COM インターフェイスのセットを使用します。 Dll が CPSUI、およびプラグインの UI を使用して実装されているプリンター インターフェイスと対話しない直接 CPSUI ドライバーのプリンター インターフェイス DLL を使用します。 そのため、必ず、 [CPSUI](common-property-sheet-user-interface.md)プラグイン UI を開発する前にセクションします。
 
-だけでなく、プリンター ドライバーのユーザー インターフェイスを変更するには、プラグイン UI はサポートされている機能の特定のプリンター イベントを処理およびレポートなど、他の操作を実行できます。 詳細については、[プリンター インターフェイスのその他の操作のカスタマイズ](customizing-other-printer-interface-operations.md)を参照してください。
+だけでなく、プリンター ドライバーのユーザー インターフェイスを変更するには、プラグイン UI はサポートされている機能の特定のプリンター イベントを処理およびレポートなど、他の操作を実行できます。 詳細については、次を参照してください。[プリンター インターフェイスのその他の操作のカスタマイズ](customizing-other-printer-interface-operations.md)します。
 
  
 

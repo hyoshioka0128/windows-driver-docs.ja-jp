@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ed30e496cbffc0a55f84fb574ef43cd12de7d2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373962"
 ---
 # <a name="fsctldeleteexternalbacking-control-code"></a>FSCTL\_削除\_外部\_バッキング制御コード
 
@@ -66,7 +66,7 @@ ms.locfileid: "56582289"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -88,12 +88,12 @@ ms.locfileid: "56582289"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 削除操作の結果としては、ファイルの内容がバックアップ ソースから読み取られ、ファイル全体がボリュームに書き込まれます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

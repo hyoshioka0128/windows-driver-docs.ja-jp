@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dc180099c5f358bc1ae852b31c8b4ebd9cbf31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379588"
 ---
 # <a name="wiadpcpicturesremaining"></a>WIA\_DPC\_画像\_残り
 
@@ -33,14 +33,14 @@ WIA\_DPC\_画像\_残りのプロパティには、ユーザーがデバイス�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 場合、WIA\_DPC\_画像\_カメラ デバイスを生成するイメージのサイズに影響する残りのプロパティの設定の変更と、変更、WIA ミニドライバーは、残りの画像の数を更新する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

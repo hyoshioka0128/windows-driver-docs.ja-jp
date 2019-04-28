@@ -5,11 +5,11 @@ ms.assetid: 433ad114-46aa-470b-b529-e6b6fb7f6bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1078a9fe4e6f69035f855fe0817f1f6e1e02eb97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375709"
 ---
 # <a name="accessing-device-driver-properties"></a>デバイス ドライバーのプロパティへのアクセス
 
@@ -23,9 +23,9 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性は維持するために、デバイス インターフェイスに関する情報にアクセスするこれら 2 つの方法もサポートします。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-システム定義のデバイス ドライバーのプロパティの一覧は、[デバイス ドライバーのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541205)を参照してください。 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するシステム定義のレジストリ エントリの値の名前が含まれます。
+システム定義のデバイス ドライバーのプロパティの一覧は、次を参照してください。[デバイス ドライバーのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541205)します。 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するシステム定義のレジストリ エントリの値の名前が含まれます。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
 ### <a href="" id="accessing-device-driver-properties-that-have-corresponding-registry-en"></a> 対応するレジストリ エントリの値を持つデバイス ドライバーのプロパティにアクセスします。
 

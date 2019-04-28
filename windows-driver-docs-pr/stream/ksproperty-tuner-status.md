@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 883662e0fdad11a8fdf6017605b6a986ce730a04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379952"
 ---
 # <a name="kspropertytunerstatus"></a>KSPROPERTY\_チューナー\_状態
 
@@ -51,7 +51,7 @@ KSPROPERTY\_チューナー\_STATUS プロパティは、現在の頻度を含�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565925" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565925)"><strong>KSPROPERTY_TUNER_STATUS_S</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565925" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565925)"><strong>KSPROPERTY_TUNER_STATUS_S</strong></a></p></td>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_CLEAR_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 00135aa3af9c79964fcdfa14622421b3a256598e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380892"
 ---
 # <a name="oidreceivefilterclearfilter"></a>OID\_受信\_フィルター\_クリア\_フィルター
 
@@ -19,7 +19,7 @@ OID の要求を設定しました OID ドライバーの問題を後続\_受信
 
 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_フィルター\_クリア\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567166)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
@@ -77,7 +77,7 @@ NDIS プロトコルまたはフィルター ドライバーなどの上にあ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>

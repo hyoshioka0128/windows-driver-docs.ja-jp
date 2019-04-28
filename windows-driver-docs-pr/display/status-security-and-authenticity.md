@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f51d9830df9a37c3d8bc14b782344922c23d3c55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376045"
 ---
 # <a name="status-security-and-authenticity"></a>状態のセキュリティと信頼性
 
@@ -26,7 +26,7 @@ ms.locfileid: "56558747"
 
 ![exchange の状態を示す図](images/coppstus.png)
 
-これらのステータス メッセージは、エンベロープに含まれます。 エンベロープには、データと MAC セクションが含まれています。 ビデオのミニポート ドライバーでは、データ整合性キーと、OMAC を使用して、状態データの MAC を計算します。 MAC と OMAC の詳細については、[COPP で使用される暗号化プリミティブ](cryptographic-primitives-used-by-copp.md)を参照してください。
+これらのステータス メッセージは、エンベロープに含まれます。 エンベロープには、データと MAC セクションが含まれています。 ビデオのミニポート ドライバーでは、データ整合性キーと、OMAC を使用して、状態データの MAC を計算します。 MAC と OMAC の詳細については、次を参照してください。 [COPP で使用される暗号化プリミティブ](cryptographic-primitives-used-by-copp.md)します。
 
 次の表では、上記の図の値について説明します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "56558747"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

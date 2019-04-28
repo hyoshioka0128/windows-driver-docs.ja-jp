@@ -5,11 +5,11 @@ ms.assetid: ''
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bb96aa0d8dd80f0a478a9512b1eaef9e9a9b3ebf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373724"
 ---
 # <a name="pcsc-interface-for-smart-cards"></a>スマート カードの PC/SC インターフェイス
 
@@ -17,7 +17,7 @@ ms.locfileid: "56551816"
 
 ## <a name="atr-format-for-iso14443-4-cards"></a>ISO14443 4 のカードの ATR 形式
 
-| バイト オフセット | Value | 指定      | 説明                                                                                                                 |
+| バイト オフセット | 値 | 指定      | 説明                                                                                                                 |
 |-------------|-------|------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | 0           | 3B    | 初期ヘッダー   |                                                                                                                             |
 | 1           | 8n    | T0               | 高いニブルでは、TD1 の存在のみを示します。 下のニブルが履歴のバイトのサイズを示します                       |
@@ -31,7 +31,7 @@ ms.locfileid: "56551816"
     <tbody>
         <tr>
             <th>バイト オフセット</th>
-            <th>Value</th>
+            <th>値</th>
             <th>指定</th>
             <th>説明</th>
         </tr>
@@ -71,7 +71,7 @@ ms.locfileid: "56551816"
         </tr>
         <tr>
             <td>4 を 3 + N</td>
-            <td>0 の C</td>
+            <td>0C</td>
             <td>TK</td>
             <td>長さ</td>
         </tr>

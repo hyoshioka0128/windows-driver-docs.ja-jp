@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_PNP Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: eeaf4ba1c289f3fa4aaa84bc14f9f0f758a7c6b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368482"
 ---
 # <a name="irpmjpnp"></a>IRP\_MJ\_PNP
 

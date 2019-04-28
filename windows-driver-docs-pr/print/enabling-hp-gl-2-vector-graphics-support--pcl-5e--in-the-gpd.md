@@ -1,6 +1,6 @@
 ---
-title: GPD で HP-GL/2 のベクター グラフィックス サポート (5e PCL) を有効にします。
-description: GPD で HP-GL/2 のベクター グラフィックス サポート (5e PCL) を有効にします。
+title: GPD で HP-GL/2 ベクトル グラフィックス サポート (PCL-5e) を有効にする
+description: GPD で HP-GL/2 ベクトル グラフィックス サポート (PCL-5e) を有効にする
 ms.assetid: 2ca5a2fe-4c37-4b7f-bd9b-d41240f8843f
 keywords:
 - HP-GL/2 モノクロ WDK Unidrv、サポートを有効にします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04530d80df3245667c5d904e0c741d4b5a453a8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378642"
 ---
-# <a name="enabling-hp-gl2-vector-graphics-support-pcl-5e-in-the-gpd"></a>GPD で HP-GL/2 のベクター グラフィックス サポート (5e PCL) を有効にします。
+# <a name="enabling-hp-gl2-vector-graphics-support-pcl-5e-in-the-gpd"></a>GPD で HP-GL/2 ベクトル グラフィックス サポート (PCL-5e) を有効にする
 
 
 

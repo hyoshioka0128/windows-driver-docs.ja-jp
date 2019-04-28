@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ca93425375b610ad3eaa5c77da7916b4df5e20b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373930"
 ---
 # <a name="wiadpsdocumenthandlingstatus"></a>WIA\_DPS\_ドキュメント\_処理\_状態
 
@@ -49,7 +49,7 @@ WIA\_DPS\_ドキュメント\_処理\_STATUS プロパティには、スキャ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -88,7 +88,7 @@ WIA\_DPS\_ドキュメント\_処理\_STATUS プロパティには、スキャ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -131,7 +131,7 @@ WIA\_DPS\_ドキュメント\_処理\_STATUS プロパティには、スキャ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -169,7 +169,7 @@ WIA\_DPS\_ドキュメント\_処理\_STATUS プロパティには、スキャ�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: ビデオ キャプチャ イベント
-description: ビデオ キャプチャ イベント
+title: ビデオ キャプチャのイベント
+description: ビデオ キャプチャのイベント
 ms.assetid: 9d40b9f7-41c1-4410-afc7-9b4ff1c2fe7e
 keywords:
 - イベントの WDK ビデオのキャプチャ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3094178fd038d734f0f4e28c95c535023ba0fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380620"
 ---
-# <a name="video-capture-events"></a>ビデオ キャプチャ イベント
+# <a name="video-capture-events"></a>ビデオ キャプチャのイベント
 
 
 [KSEVENTSETID\_VIDCAPNotify](https://msdn.microsoft.com/library/windows/hardware/ff561773)チューナー イベントに関連するイベントがイベント セットに含まれています。 次の表は、KSEVENTSETID の一部となるイベント\_VIDCAPNotify イベントのセット。

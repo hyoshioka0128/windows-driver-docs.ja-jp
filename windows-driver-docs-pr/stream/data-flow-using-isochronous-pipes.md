@@ -1,6 +1,6 @@
 ---
-title: アイソクロナス パイプを使用してデータをフローします。
-description: アイソクロナス パイプを使用してデータをフローします。
+title: 等時性パイプを使用したデータ フロー
+description: 等時性パイプを使用したデータ フロー
 ms.assetid: a66f4191-53ce-4ca2-aae7-8fb24a1a9a16
 keywords:
 - アイソクロナス パイプ WDK USBCAMD2
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d88d01b372ea8c9a73794786fe88e322bca03748
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374124"
 ---
-# <a name="data-flow-using-isochronous-pipes"></a>アイソクロナス パイプを使用してデータをフローします。
+# <a name="data-flow-using-isochronous-pipes"></a>等時性パイプを使用したデータ フロー
 
 
 

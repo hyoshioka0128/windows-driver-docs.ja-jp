@@ -1,17 +1,17 @@
 ---
-title: 更新されたコアの印刷ドライバーを使用します。
-description: 更新されたコアの印刷ドライバーを使用します。
+title: 更新されたコア印刷ドライバーの使用
+description: 更新されたコア印刷ドライバーの使用
 ms.assetid: a2a31627-a453-4776-b4f2-13660e4ad7a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b2eb2a60a0f7fbd989a02a1a4393c3fabd3e63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376454"
 ---
-# <a name="using-updated-core-print-drivers"></a>更新されたコアの印刷ドライバーを使用します。
+# <a name="using-updated-core-print-drivers"></a>更新されたコア印刷ドライバーの使用
 
 
 ほとんどの製造元から提供された印刷ドライバーのみデバイスに依存する関数を実装して、一般的なプリンターの機能を管理するシステム提供のコア ドライバー コンポーネントに依存しています。 UniDrv、PostScript、および XPSDrv プリンターの管理および構成のヘルプに多くの製造元から提供されたドライバーが依存しているコア ドライバー コンポーネントの例に示します。
@@ -34,7 +34,7 @@ Windows が完全な単位として各ドライバ パッケージを格納し�
 
 このセクションでは、中核となる更新されたドライバー ファイル、依存関係にあるパッケージに対応したドライバーを作成する方法と、製造元から提供されたパッケージに対応したドライバーがインストールされている場合に、中核となる更新されたドライバー パッケージがインストールされていることを確認する方法について説明します。
 
-次のトピックがについて説明します。
+次のトピックについて説明します。
 
 [コアが更新されたドライバーをパッケージに対応したドライバーを構築します。](constructing-a-package-aware-driver-with-updated-core-drivers.md)
 

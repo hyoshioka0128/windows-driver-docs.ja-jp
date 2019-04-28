@@ -1,6 +1,6 @@
 ---
-title: 個々 のデバイスの電源を管理します。
-description: 個々 のデバイスの電源を管理します。
+title: 個々のデバイスの電源の管理
+description: 個々のデバイスの電源の管理
 ms.assetid: 95c7e900-5d51-4eb7-8780-1c40befa3599
 keywords:
 - 電源管理の WDK カーネル、デバイスの管理
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d7df6d5266e19b0d8cde98506123533e13183eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380264"
 ---
-# <a name="managing-power-for-individual-devices"></a>個々 のデバイスの電源を管理します。
+# <a name="managing-power-for-individual-devices"></a>個々のデバイスの電源の管理
 
 
 

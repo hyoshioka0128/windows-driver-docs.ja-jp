@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09d3b8389f85c7f140adc2ab86bf9d9e41386b89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379689"
 ---
 # <a name="mrxqueryvolumeinfo-routine"></a>MRxQueryVolumeInfo routine
 
@@ -101,7 +101,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 RDBSS への呼び出しを発行する*MRxQueryVolumeInfo*場合は、次のいずれかで。
@@ -152,7 +152,7 @@ IRP の\_MJ\_クエリ\_ボリューム\_情報要求、 **Info.FsInformationCla
 
 IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に制御を*MRxQueryVolumeInfo*状態の戻り値を持つ\_成功または状態\_バッファー\_オーバーフロー、RDBSS コピー、 **ObjectId**ファイルのメンバー\_FS\_OBJECTID\_情報構造体が渡された、 **Info.Buffer** RX のメンバー\_ための構造体、 **NetRoot -&gt;DiskParameters.VolumeId** FCB 構造とメンバー、 **AssociatedIrp.SystemBuffer.VolumeId** IRP のメンバー。 場合に呼び出し*MRxQueryVolumeInfo*が成功した場合は、RDBSS セット、**型**リンクのメンバー\_追跡\_情報構造体。 場合、 **NetRoot -&gt;フラグ**FCB 構造体のメンバーが、NETROOT\_フラグ\_DFS\_AWARE\_NETROOT ビットが設定、**型**RDBSS によってメンバーが設定される**DfsLinkTrackingInformation**します。 場合、 **NetRoot -&gt;フラグ**FCB 構造体のメンバーには、NETROOT はありません\_フラグ\_DFS\_AWARE\_NETROOT ビットが設定、 **の種類。** に RDBSS によってメンバーが設定される**NtfsLinkTrackingInformation**します。 成功した場合、RDBSS の設定、 **IoStatus.Information**リンクのサイズに IRP のメンバー\_追跡\_情報構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

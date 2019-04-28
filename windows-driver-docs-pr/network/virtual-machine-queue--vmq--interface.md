@@ -5,11 +5,11 @@ ms.assetid: AE0F65F0-7A5B-48FA-8635-617E71D86479
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5caf6ae4646b3baee1bbd0b877b71e779d5d87b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378231"
 ---
 # <a name="virtual-machine-queue-vmq-interface"></a>仮想マシン キュー (VMQ) インターフェイス
 
@@ -34,7 +34,7 @@ VMQ インターフェイスをサポートするネットワーク アダプタ
 
 VMQ、下は、物理ネットワーク アダプターは、そのキューに直接の VMQ の受信フィルターのテストに一致するデータを転送します。 これには、ソフトウェアで拡張可能スイッチの処理ができないようにします。 フィルター テストに合格しないデータは、既定のキューに拡張可能スイッチがデータを処理する必要があります。 だけでなく、ルーティングや拡張可能スイッチでのコピーを防止するには、VM のキューの受信の割り込みは、別のプロセッサに割り当てられます。
 
-VMQ インターフェイスの詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。
+VMQ インターフェイスの詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
 
  
 

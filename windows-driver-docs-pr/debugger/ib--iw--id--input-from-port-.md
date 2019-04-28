@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b7e5a6658f9bcb46e0e5e3616e3f7ef3c3a56f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381035"
 ---
 # <a name="ib-iw-id-input-from-port"></a>ib、iw、id (ポートから入力)
 
@@ -61,7 +61,7 @@ id Address
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **Ib**コマンドは、1 バイトを読み取ります、 **iw**コマンド、単語の読み取りおよび**id**コマンドは、ダブル ワードを読み取ります。

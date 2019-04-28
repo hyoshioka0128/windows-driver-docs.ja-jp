@@ -1,6 +1,6 @@
 ---
-title: 色ポインターの描画
-description: 色ポインターの描画
+title: カラー ポインターの描画
+description: カラー ポインターの描画
 ms.assetid: f2791ccc-3d9e-46f0-bc70-051ac298c1ee
 keywords:
 - 描画ポインター WDK Windows 2000 を表示します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49424ca9fd9b40b375da98debfb79bdb3bfb98a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377692"
 ---
-# <a name="drawing-color-pointers"></a>色ポインターの描画
+# <a name="drawing-color-pointers"></a>カラー ポインターの描画
 
 
 ## <span id="ddk_drawing_color_pointers_gg"></span><span id="DDK_DRAWING_COLOR_POINTERS_GG"></span>

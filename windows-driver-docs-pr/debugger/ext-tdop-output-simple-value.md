@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acaf37b2c3c1c157a112b23a0cf0da3b7607eed2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379886"
 ---
 # <a name="exttdopoutputsimplevalue"></a>EXT\_TDOP\_出力\_単純\_値
 
 
 EXT\_TDOP\_出力\_単純\_のサブ操作の値、 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作には、指定した型指定されたデータの値が出力されます。
 
-**パラメーター**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**操作**  
 EXT に設定\_TDOP\_出力\_単純\_このサブ操作の値。

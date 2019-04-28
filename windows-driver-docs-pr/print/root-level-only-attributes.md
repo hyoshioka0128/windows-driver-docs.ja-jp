@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6550ee4d1503c1130ed287b710dfb82dbf7868a7
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382555"
 ---
 # <a name="root-level-only-attributes"></a>ルート レベル専用属性
 
@@ -159,9 +159,9 @@ PPM ページ/分 CPS - 文字 1 秒あたりの線/分 IPM、LPM インチ/分�
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
-Windows Vista の新しいルート レベルのみの属性については、[Root-Level-Only GPD 属性を Windows Vista の新しい](new-root-level-only-gpd-attributes-for-windows-vista.md)と[Root-Level-Only PPD 属性を Windows Vista の新しい](new-root-level-only-ppd-attributes-for-windows-vista.md)を参照してください。
+Windows Vista の新しいルート レベルのみの属性については、次を参照してください。 [Root-Level-Only GPD 属性を Windows Vista の新しい](new-root-level-only-gpd-attributes-for-windows-vista.md)と[Root-Level-Only PPD 属性を Windows Vista の新しい](new-root-level-only-ppd-attributes-for-windows-vista.md)します。
 
  
 

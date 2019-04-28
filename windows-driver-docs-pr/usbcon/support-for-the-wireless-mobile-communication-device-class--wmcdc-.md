@@ -1,14 +1,14 @@
 ---
-Description: Support for the Wireless Mobile Communication Device Class
+Description: ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
 title: ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1402c9bbfafbba24753cf76539ee406b1c00bfb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379927"
 ---
 # <a name="support-for-the-wireless-mobile-communication-device-class"></a>ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
 
@@ -47,7 +47,7 @@ HKR,,EnumeratorClass, 0x00000001,02,00,00
 
 値を割り当てる必要がある**EnumeratorClass** INF ファイルで 16 進数の組によって表される 3 つの 1 バイトのバイナリ値から構成されます。02、00 および 00 です。 これら 3 つの数値は、USB Implementers Forum がそれぞれの CDC デバイス クラス、CDC デバイス サブクラスおよび CDC デバイス プロトコルに割り当てられている値に対応します。
 
-正しく WMCDC デバイスを列挙するためにレジストリを構成する方法の詳細については、[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)を参照してください。
+正しく WMCDC デバイスを列挙するためにレジストリを構成する方法の詳細については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。
 
 さらに、次のトピックには、WMCDC について説明します。
 

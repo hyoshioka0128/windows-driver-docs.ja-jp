@@ -1,21 +1,21 @@
 ---
-Description: This topic describes the WDF-provided continuous reader object. The procedures in this topic provide step-by-step instructions about how to configure the object and use it to read data from a USB pipe.
+Description: このトピックでは、WDF の継続的なリーダー オブジェクトについて説明します。 このトピックの手順では、オブジェクトを構成し、USB パイプからデータの読み取りに使用する方法についての詳細な手順を説明します。
 title: 継続的リーダーを使用して USB パイプからデータを読み取る方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1189bc0a691e605083181a55538c1d76a2970d6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373456"
 ---
 # <a name="how-to-use-the-continuous-reader-for-reading-data-from-a-usb-pipe"></a>継続的リーダーを使用して USB パイプからデータを読み取る方法
 
 
 このトピックでは、WDF の継続的なリーダー オブジェクトについて説明します。 このトピックの手順では、オブジェクトを構成し、USB パイプからデータの読み取りに使用する方法についての詳細な手順を説明します。
 
-Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提供する、*継続的なリーダー*します。 このオブジェクトは、データがある使用可能な限り、継続的に、一括および割り込みのエンドポイントからデータを読み取る USB クライアント ドライバーを使用できます。 リーダーを使用するには、クライアント ドライバーにドライバーがデータを読み取るエンドポイントに関連付けられている USB ターゲット パイプ オブジェクトを識別するハンドルが必要です。 エンドポイントは、アクティブな構成である必要があります。 構成をアクティブにできます 2 つの方法のいずれかで: USB 構成を選択するか、現在の構成で別の設定を変更することで。 これらの操作の詳細については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)と[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)を参照してください。
+Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提供する、*継続的なリーダー*します。 このオブジェクトは、データがある使用可能な限り、継続的に、一括および割り込みのエンドポイントからデータを読み取る USB クライアント ドライバーを使用できます。 リーダーを使用するには、クライアント ドライバーにドライバーがデータを読み取るエンドポイントに関連付けられている USB ターゲット パイプ オブジェクトを識別するハンドルが必要です。 エンドポイントは、アクティブな構成である必要があります。 構成をアクティブにできます 2 つの方法のいずれかで: USB 構成を選択するか、現在の構成で別の設定を変更することで。 これらの操作の詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)と[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)します。
 
 継続的なリーダーを作成した後は、クライアント ドライバーは開始および必要な場合に、リーダーを停止できます。 読み取り要求が常にターゲット パイプ オブジェクトと、クライアント ドライバーで使用できるようにする継続的なリーダーでは、エンドポイントからデータを受信する準備が常にします。
 
@@ -44,11 +44,11 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
 
     **クライアント ドライバーの UMDF:**
 
-    UMDF クライアント ドライバーを入手する必要があります、 [ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)フレームワーク ターゲットのデバイス オブジェクトのクエリを実行してポインター。 詳細については、"[**IPnpCallbackHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF) について](understanding-the-umdf-template-code-for-usb.md)を参照してください。
+    UMDF クライアント ドライバーを入手する必要があります、 [ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)フレームワーク ターゲットのデバイス オブジェクトのクエリを実行してポインター。 詳細については、次を参照してください。"[**IPnpCallbackHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF) について](understanding-the-umdf-template-code-for-usb.md)します。
 
 -   デバイスをアクティブな構成が必要です。
 
-    USB テンプレートを使用している場合に、コードは、各インターフェイスの最初の構成と既定の代替設定を選択します。 別の設定を変更する方法については、[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)を参照してください。
+    USB テンプレートを使用している場合に、コードは、各インターフェイスの最初の構成と既定の代替設定を選択します。 別の設定を変更する方法については、次を参照してください。 [USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)します。
 
     **KMDF クライアント ドライバー:**
 
@@ -58,7 +58,7 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
 
     UMDF のクライアント ドライバーの場合は、フレームワークは、その構成の最初の構成と各インターフェイスの既定の代替設定を選択します。
 
--   クライアント ドライバーのエンドポイントのフレームワーク ターゲット パイプ オブジェクトを識別するハンドルが必要です。 詳細については、[USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)を参照してください。
+-   クライアント ドライバーのエンドポイントのフレームワーク ターゲット パイプ オブジェクトを識別するハンドルが必要です。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
 
 <a name="instructions"></a>手順
 ------------
@@ -124,7 +124,7 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
 
 -   ドライバーを実装する完了ルーチンへのポインター。 フレームワークは、読み取り要求を完了すると、このルーチンを呼び出します。 入力候補のルーチンで、ドライバーは読み取られたデータが含まれるメモリ位置にアクセスできます。 完了ルーチンの実装は、手順 2. で説明します。
 -   ドライバー定義のコンテキストへのポインター。
--   1 つの転送にデバイスから読み取ることができるバイト数。 クライアント ドライバーは、その情報を取得できます、 [ **WDF\_USB\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff553037)呼び出して構造[ **WdfUsbInterfaceGetConfiguredPipe**](https://msdn.microsoft.com/library/windows/hardware/ff550057)または[ **WdfUsbTargetPipeGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff551142)メソッド。 詳細については、[USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)を参照してください。
+-   1 つの転送にデバイスから読み取ることができるバイト数。 クライアント ドライバーは、その情報を取得できます、 [ **WDF\_USB\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff553037)呼び出して構造[ **WdfUsbInterfaceGetConfiguredPipe**](https://msdn.microsoft.com/library/windows/hardware/ff550057)または[ **WdfUsbTargetPipeGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff551142)メソッド。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
 
 [**WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552566)構成の既定値を使用する継続的なリーダー *NumPendingReads*. その値は、フレームワークが保留中のキューに追加の読み取り要求の数を決定します。 多くのプロセッサ構成の多くのデバイスのそれなりのパフォーマンスを提供する既定値と判断されました。
 
@@ -207,7 +207,7 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
 
 または、クライアント ドライバーは、FALSE を返すし、パイプで停止条件が発生した場合、エラー回復メカニズムを提供します。 たとえば、ドライバーは USBD 状態を確認し、停止状態をクリアするパイプのリセット要求を発行できます。
 
-エラー回復パイプの詳細については、[USB パイプ エラーから回復する方法](how-to-recover-from-usb-pipe-errors.md)を参照してください。
+エラー回復パイプの詳細については、次を参照してください。 [USB パイプ エラーから回復する方法](how-to-recover-from-usb-pipe-errors.md)します。
 
 4.  デバイスが稼働状態に入ったときに、継続的なリーダーを開始するためにフレームワークを指示します。デバイスが稼働状態になったときに、リーダーを停止します。 これらのメソッドを呼び出すし、I/O の対象オブジェクトとしてターゲット パイプ オブジェクトを指定します。
 

@@ -1,19 +1,19 @@
 ---
-title: COPP ビデオのミニポート ドライバー証明書テンプレート コードを取得
-description: COPP ビデオのミニポート ドライバー証明書テンプレート コードを取得
+title: COPP ビデオ ミニポート ドライバーの証明書取得テンプレート コード
+description: COPP ビデオ ミニポート ドライバーの証明書取得テンプレート コード
 ms.assetid: 13810013-389a-458d-be9d-e81a0b248dec
 keywords:
 - 証明書 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af62efe54b47df8359169fa80bd4a8197ca5ba70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373398"
 ---
-# <a name="copp-video-miniport-driver-get-certificate-template-code"></a>COPP ビデオのミニポート ドライバー証明書テンプレート コードを取得
+# <a name="copp-video-miniport-driver-get-certificate-template-code"></a>COPP ビデオ ミニポート ドライバーの証明書取得テンプレート コード
 
 
 ## <span id="ddk_copp_video_miniport_driver_get_certificate_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_GET_CERTIFICATE_TEMPLATE_CODE_GG"></span>

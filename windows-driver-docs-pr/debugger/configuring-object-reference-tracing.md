@@ -7,16 +7,16 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea7e974fe7e4540f222dbde024353c6a58b9087d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375579"
 ---
 # <a name="configuring-object-reference-tracing"></a>オブジェクト参照トレースの構成
 
 
-Gflags を使用して、有効化、無効にするには、Windows のオブジェクト参照のトレース機能を構成することができます。 オブジェクト参照のトレース レコード シーケンシャルなスタック トレースされるたびにオブジェクトの参照カウンターは、インクリメントまたはデクリメントします。 トレースは、二重逆参照、エラーを参照するオブジェクトを逆参照の失敗など、オブジェクト参照エラーを検出するのに役立ちます。 この機能は、Windows Vista および Windows の以降のバージョンでのみサポートされます。 この機能の詳細については、[オブジェクト参照トレース](object-reference-tracing.md)を参照してください。
+Gflags を使用して、有効化、無効にするには、Windows のオブジェクト参照のトレース機能を構成することができます。 オブジェクト参照のトレース レコード シーケンシャルなスタック トレースされるたびにオブジェクトの参照カウンターは、インクリメントまたはデクリメントします。 トレースは、二重逆参照、エラーを参照するオブジェクトを逆参照の失敗など、オブジェクト参照エラーを検出するのに役立ちます。 この機能は、Windows Vista および Windows の以降のバージョンでのみサポートされます。 この機能の詳細については、次を参照してください。[オブジェクト参照トレース](object-reference-tracing.md)します。
 
 **オブジェクト参照の追跡を有効にするには**
 

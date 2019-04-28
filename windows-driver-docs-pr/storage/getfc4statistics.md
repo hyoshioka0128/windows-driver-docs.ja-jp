@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b420920bf57c4a27de06a54abe86adc2410ddad3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383135"
 ---
 # <a name="getfc4statistics-function"></a>GetFC4Statistics 関数
 
@@ -43,7 +43,7 @@ void GetFC4Statistics(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFC4Statistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553960)構造体。
 
 *PortWWN*   
 Nx 型のローカル ポートの世界中の名前\_がトラフィックの統計情報が報告されることをポート。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **GetFC4Statistics\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff553958)構造体。
@@ -59,12 +59,12 @@ FC 4 プロトコルの種類を示す値。 FC4 型の詳細については、T
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

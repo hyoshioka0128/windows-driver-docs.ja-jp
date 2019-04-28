@@ -1,5 +1,5 @@
 ---
-title: z (実行中に)
+title: z (While の実行)
 description: Z コマンドは、指定された条件が true の場合のコマンドを実行します。
 ms.assetid: 075dc012-68c2-4172-9d37-57bc8358297c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 24447078209a4c97c2d359c9ccf1b3c9c1974d93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381893"
 ---
-# <a name="z-execute-while"></a>z (実行中に)
+# <a name="z-execute-while"></a>z (While の実行)
 
 
 **Z**が特定の条件が true の場合、コマンドがコマンドを実行します。
@@ -43,10 +43,10 @@ Command ; [Processor] z( Expression )
 実行するコマンドを指定します。 中に、*式*条件の評価が 0 以外の値。 このコマンドは常に少なくとも 1 回に実行します。
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span> *プロセッサ*   
-テストに適用されるプロセッサを指定します。 構文の詳細については、[マルチプロセッサ構文](multiprocessor-syntax.md)を参照してください。 プロセッサは、カーネル モードでのみ指定できます。
+テストに適用されるプロセッサを指定します。 構文の詳細については、次を参照してください。[マルチプロセッサ構文](multiprocessor-syntax.md)します。 プロセッサは、カーネル モードでのみ指定できます。
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-テストする条件を指定します。 この条件は、0 以外の値に評価された場合、*コマンド*コマンドをもう一度実行し、*式*をもう一度テストします。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
+テストする条件を指定します。 この条件は、0 以外の値に評価された場合、*コマンド*コマンドをもう一度実行し、*式*をもう一度テストします。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

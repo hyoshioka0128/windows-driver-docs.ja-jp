@@ -1,6 +1,6 @@
 ---
-title: デバイスのパフォーマンスの状態を管理します。
-description: デバイスのパフォーマンスの状態を管理します。
+title: デバイスのパフォーマンス状態の管理
+description: デバイスのパフォーマンス状態の管理
 ms.assetid: 5a4cc09a-e86e-4e5a-98b2-0351b253b5b6
 keywords:
 - 電源管理の WDK カーネル、デバイスのパフォーマンス状態します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5f05478854cfd09c60da765371607e72dc3d90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378730"
 ---
-# <a name="managing-device-performance-states"></a>デバイスのパフォーマンスの状態を管理します。
+# <a name="managing-device-performance-states"></a>デバイスのパフォーマンス状態の管理
 
 
 Windows Vista の機能が向上するスタックのドライバーをできるようにする拡張された電源管理インフラストラクチャは、自分のデバイスの電源ポリシーを管理します。 ドライバーは、システム定義の電源設定の変更、またはシステム電源イベントが発生したときに通知を登録できます。 デバイスの電源ポリシー所有者は、これらの通知を使用して、そのデバイスの電力使用状況を適切に調整します。 さらに、デバイス固有能力とパフォーマンスの機能、電源ポリシーがシステムに密接に統合できるへのアクセスを提供するカスタムの電源設定を作成することができます。 システム電源ポリシーとデバイスのパフォーマンスの状態と動作の省電力を統合する 2 つの主要な方法を次に示します。

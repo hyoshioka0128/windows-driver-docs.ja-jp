@@ -1,16 +1,16 @@
 ---
-Description: Closing a Resource
-title: リソースを閉じる
+Description: リソースの終了
+title: リソースの終了
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 338a3dc252b900fe66163ba75dbf6c69ad146924
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378185"
 ---
-# <a name="closing-a-resource"></a>リソースを閉じる
+# <a name="closing-a-resource"></a>リソースの終了
 
 
 アプリケーションを使用して、読み取りまたは書き込み操作が完了した後、指定された**IStream**オブジェクトを呼び出すことによって、ストリームを閉じ、 **IStream::Release**または**IStream::Commit**(を保存するリソースの変更書き込み要求)。 アプリケーション レベルのトリガーで終了要求、 **WpdObjectResources::OnCloseResource**ドライバーのメソッド。

@@ -1,17 +1,17 @@
 ---
-title: Direct3D のバージョン 10 DDI のサポートを有効にします。
-description: Direct3D のバージョン 10 DDI のサポートを有効にします。
+title: Direct3D バージョン 10 DDI のサポートの有効化
+description: Direct3D バージョン 10 DDI のサポートの有効化
 ms.assetid: ccbfecd2-8609-4e59-ac43-911f57af7980
 ms.date: 10/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e2d6a58a784ea894eec8bfb506c36b74c90966
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379485"
 ---
-# <a name="enabling-support-for-the-direct3d-version-10-ddi"></a>Direct3D のバージョン 10 DDI のサポートを有効にします。
+# <a name="enabling-support-for-the-direct3d-version-10-ddi"></a>Direct3D バージョン 10 DDI のサポートの有効化
 
 
 DDI 10、INF ファイルをユーザー モード ディスプレイ ドライバー DLL のバージョンがグラフィックス デバイスかどうかに関係なく、DLL の名前をリストする必要があります、ディスプレイ ドライバーをインストール用にサポートを有効にする Direct3D のバージョン 10 DDI が存在するのと同じ DLL、 [Direct3D のバージョン 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/direct3d-functions-implemented-by-user-mode#direct3d-version-9-functions)または個別の DLL にします。

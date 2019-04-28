@@ -7,11 +7,11 @@ keywords:
 - SIO_WSK_QUERY_IDEAL_SEND_BACKLOG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a47bf3db1321bf8efdab1367165ff2d03121d64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377231"
 ---
 # <a name="siowskqueryidealsendbacklog"></a>SIO\_WSK\_クエリ\_理想的な\_送信\_バックログ
 
@@ -32,7 +32,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -45,7 +45,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 <td><p>SIO_WSK_QUERY_IDEAL_SEND_BACKLOG</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -75,7 +75,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの理想�
 
 接続指向のソケットは、有効にすると、最適な送信バックログのサイズに対する変更の通知ことができます、 [ *WskSendBacklogEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571147)イベント コールバック関数。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

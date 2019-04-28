@@ -5,17 +5,17 @@ ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 10/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d11e51525659a53c16a4356b013dc782e4f97019
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381081"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg ドライバーの概要 (ユーザー モード)
 
 WinDbg では、Windows のツールのデバッグに含まれるカーネル モードとユーザー モード デバッガーです。 ここでユーザー モード デバッガーとして WinDbg を使用するのに役立つ実践的な演習を開始する提供されています。
 
-Windows のツールのデバッグを取得する方法については、[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)を参照してください。 
+Windows のツールのデバッグを取得する方法については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)します。 
 
 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 以下に例を示します。
 

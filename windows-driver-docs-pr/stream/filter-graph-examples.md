@@ -1,6 +1,6 @@
 ---
-title: グラフの例をフィルター処理します。
-description: グラフの例をフィルター処理します。
+title: フィルター グラフの例
+description: フィルター グラフの例
 ms.assetid: 7888da79-b21d-4935-ac6c-25ef2f947931
 keywords:
 - ビデオの WDK AVStream のキャプチャ、グラフの構成をフィルター処理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ef9d262a3a5567eafc1c6819417a06cd0438596
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376112"
 ---
-# <a name="filter-graph-examples"></a>グラフの例をフィルター処理します。
+# <a name="filter-graph-examples"></a>フィルター グラフの例
 
 
 DirectShow の柔軟性により、基になるハードウェアの機能をミラー化されたフィルター グラフのさまざまな構成をできます。

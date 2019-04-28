@@ -7,13 +7,13 @@ keywords:
 - IRP_MJ_INTERNAL_DEVICE_CONTROL カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 486036d7d8b3a085fba4a45857f727d9914218e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368492"
 ---
-# <a name="irpmjinternaldevicecontrol"></a>IRP\_MJ\_内部\_デバイス\_コントロール
+# <a name="irpmjinternaldevicecontrol"></a>IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
 
 一般に、内部デバイス制御の要求をサポートする既存のドライバーの置換がでこの要求を処理する、 [ *DispatchInternalDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 このようなドライバーは、少なくとも置き換えますドライバーと内部の I/O 制御コードの同じセットをサポートする必要があります。 それ以外の場合、既存のより高度なドライバーは、新しいドライバーでは動作しません。
@@ -30,12 +30,12 @@ ms.locfileid: "56556832"
 
 I/O 制御コードが含まれている**Parameters.DeviceIoControl.IoControlCode** I/O スタック IRP の場所。
 
-その他の入力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、[I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)を参照してください。
+その他の入力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、次を参照してください。 [I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)します。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-出力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、[I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)を参照してください。
+出力パラメーターは、I/O 制御コードの値によって異なります。 詳細については、次を参照してください。 [I/O 制御コードの説明をバッファー](https://msdn.microsoft.com/library/windows/hardware/ff540663)します。
 
 <a name="operation"></a>操作
 ---------

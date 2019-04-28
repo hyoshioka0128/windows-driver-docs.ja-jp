@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41a4ad4b014f058c0e548d16bfcd2ea9b9e2e827
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380130"
 ---
 # <a name="ata-port-drivers-power-management"></a>ATA ポート ドライバーの電源管理
 

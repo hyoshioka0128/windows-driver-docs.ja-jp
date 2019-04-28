@@ -1,23 +1,23 @@
 ---
-title: NFCEE 探索シーケンス
+title: NFCEE 検出シーケンス
 ms.assetid: F6894EFD-4140-490B-B0BB-1A9BDA4DCECE
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 description: NFCEE 管理のさまざまな実装をサポートするために操作の 2 つのモードを提供する NFC CX について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ef73466084e3d016cf644a45c29c6a0ee88a2dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378658"
 ---
-# <a name="nfcee-discovery-sequence"></a>NFCEE 探索シーケンス
+# <a name="nfcee-discovery-sequence"></a>NFCEE 検出シーケンス
 
 
 チップセット メーカーでは、NCI 1.0 仕様の制限、により NFCEE 管理のさまざまな実装があります。 これらのさまざまな実装をサポートするためには、NFC CX には、2 つの操作モードが用意されています。

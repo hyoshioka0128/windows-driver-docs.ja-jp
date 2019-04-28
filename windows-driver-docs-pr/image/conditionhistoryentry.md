@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d270449409f1722108ef2dbce7ab06e0b60f579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373208"
 ---
 # <a name="conditionhistoryentry-element"></a>ConditionHistoryEntry 要素
 
@@ -47,7 +47,7 @@ ms.locfileid: "56572861"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -56,7 +56,7 @@ ms.locfileid: "56572861"
 <tr class="odd">
 <td><p><strong><strong>id</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
 <p>必須。 1 ~ 2147483648 整数。</p></td>
 </tr>
@@ -113,7 +113,7 @@ ms.locfileid: "56572861"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスの一意の識別子を指定します、 **Id**この属性**ConditionHistoryEntry**要素。 クライアントが使用できる**Id**の値と共に、 [**時間**](time.md)要素が、エラー状態が新しいかがなくなったかを判断します。 WSD スキャン サービスには、可能な限りの識別子が再利用する必要があります。 この遅延により、クライアントは正確の追跡個々**ConditionHistoryEntry**要素。

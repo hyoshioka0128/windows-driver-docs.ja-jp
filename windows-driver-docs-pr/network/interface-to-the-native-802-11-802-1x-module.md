@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1a7e66214cbb91b2adb545285e2ad0fcfa5e449
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380724"
 ---
 # <a name="interface-to-the-native-80211-8021x-module"></a>ネイティブ 802.11 802.1X モジュールへのインターフェイス
 
@@ -27,7 +27,7 @@ ms.locfileid: "56571504"
 
 EAPOL 形式の詳細については、X-2001 標準の IEEE 802.1 句 7 を参照します。
 
-802.1 X モジュールとネイティブの 802.11 フレームワークの詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
+802.1 X モジュールとネイティブの 802.11 フレームワークの詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
 
 ユーザー認証用の 802.1 X モジュール インターフェイシングは、IHV 拡張機能の DLL は次のガイドラインに従う必要があります。
 
@@ -35,7 +35,7 @@ EAPOL 形式の詳細については、X-2001 標準の IEEE 802.1 句 7 を参�
 
 -   IHV 拡張機能の DLL は、EAPOL パケットを受信するオペレーティング システムを登録する必要があります。 このような状況で、DLL を呼び出す必要があります、 [ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587)関数し、IEEE EAPOL EtherType (0x888E) を経由で渡される登録済みのEtherTypesの一覧に追加*pusRegistration*パラメーター。 オペレーティング システムが呼び出しを通じて IHV 拡張機能の DLL に受信の EAPOL パケットを転送、EtherType は、登録後、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513) IHV ハンドラー関数。
 
-    EtherTypes の登録の詳細については、[IEEE EtherType 処理](ieee-ethertype-handling.md)を参照してください。
+    EtherTypes の登録の詳細については、次を参照してください。 [IEEE EtherType 処理](ieee-ethertype-handling.md)します。
 
 -   IHV 拡張機能の DLL が呼び出すことによって、802.1 X 認証操作を開始後の関連付け操作、実行中、 [ **Dot11ExtStartOneX** ](https://msdn.microsoft.com/library/windows/hardware/ff547610)関数。 この関数が呼び出されると、オペレーティング システムは、次を行います。
 
@@ -46,9 +46,9 @@ EAPOL 形式の詳細については、X-2001 標準の IEEE 802.1 句 7 を参�
     IHV 拡張機能の DLL を呼び出すことができます**Dot11ExtStartOneX**への呼び出し内で[ *Dot11ExtIhvPerformPostAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547492)または関数の後に呼び出しを返します。
 
 -   IHV 拡張機能の DLL を呼び出すことができます、 [ **Dot11ExtStartOneX** ](https://msdn.microsoft.com/library/windows/hardware/ff547610)ネイティブ 802.11 ミニポート ドライバーには、AP との関連付け操作が完了した後にのみ機能します。 このような状況で、IHV 拡張 DLL は呼び出す必要がありますいない、 **Dot11ExtStartOneX**関数は、次の条件のいずれか。
-    -   オペレーティング システムの呼び出しの前に[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)します。 オペレーティング システムは、ミニポート ドライバーには、関連付け操作が正常に完了した後に、この関数を呼び出します。 この操作の詳細については、[関連付け操作](association-operations.md)を参照してください。
-    -   オペレーティング システムの呼び出し後[ *Dot11ExtIhvStopPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547521)します。 オペレーティング システムは、ミニポート ドライバーには、AP との関連付け解除操作が完了した後に、この関数を呼び出します。 この操作の詳細については、[関連付け解除操作](disassociation-operations.md)を参照してください。
-    -   オペレーティング システムの呼び出し後[ *Dot11ExtIhvAdapterReset*](https://msdn.microsoft.com/library/windows/hardware/ff547434)します。 オペレーティング システムは、ミニポート ドライバーに基本的なサービスのセット (BSS) ネットワークを切断操作が完了した後に、この関数を呼び出します。 この操作の詳細については、[切断操作](disconnection-operations.md)を参照してください。
+    -   オペレーティング システムの呼び出しの前に[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)します。 オペレーティング システムは、ミニポート ドライバーには、関連付け操作が正常に完了した後に、この関数を呼び出します。 この操作の詳細については、次を参照してください。[関連付け操作](association-operations.md)します。
+    -   オペレーティング システムの呼び出し後[ *Dot11ExtIhvStopPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547521)します。 オペレーティング システムは、ミニポート ドライバーには、AP との関連付け解除操作が完了した後に、この関数を呼び出します。 この操作の詳細については、次を参照してください。[関連付け解除操作](disassociation-operations.md)します。
+    -   オペレーティング システムの呼び出し後[ *Dot11ExtIhvAdapterReset*](https://msdn.microsoft.com/library/windows/hardware/ff547434)します。 オペレーティング システムは、ミニポート ドライバーに基本的なサービスのセット (BSS) ネットワークを切断操作が完了した後に、この関数を呼び出します。 この操作の詳細については、次を参照してください。[切断操作](disconnection-operations.md)します。
 -   IHV 拡張機能の DLL が呼び出すことによって、操作をキャンセルできます 802.1 X 認証操作の進行中は、 [ **Dot11ExtStopOneX**](https://msdn.microsoft.com/library/windows/hardware/ff547614)します。
 
 -   IHV 拡張機能の DLL を呼び出す必要があります、802.1 X 認証操作の進行中は、 [ **Dot11ExtProcessOneXPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547541) EAPOL パケット処理用のオペレーティング システムを転送します。

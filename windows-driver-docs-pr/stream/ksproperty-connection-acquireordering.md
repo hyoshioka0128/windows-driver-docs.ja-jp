@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efe4be575e6a2b8ece4d5223a44bfc6b0be5d7cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375596"
 ---
 # <a name="kspropertyconnectionacquireordering"></a>KSPROPERTY\_接続\_ACQUIREORDERING
 
@@ -42,15 +42,15 @@ KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパ�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
@@ -61,14 +61,14 @@ KSPROPERTY\_接続\_ACQUIREORDERING プロパティが省略可能なプロパ�
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプロパティを返します**TRUE**状態変更の順序が重要な場合。 場合**FALSE**を返すプロパティを実装しない必要があります。
 
 この読み取り専用プロパティは取得停止状態の変更がこの通信のシンクの pin の重要なかどうかを判断するために使用します。 プロパティが実装されていない場合、前提は、こと順序重要です。 IRP ベースのデータ フローでは、これは実装されます pin 要求の場合、新しい作成の Irp ではなくストリーミング Irp を転送し、接続されたソースの暗証番号 (pin) を適切なスタックの深さを示す必要がある場合。 Pin は Irp を転送しませんが場合、し、スタックの深さの再計算はできません、重要なフィルターのスタックの深さが静的とします。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

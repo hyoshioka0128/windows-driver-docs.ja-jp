@@ -1,6 +1,6 @@
 ---
-title: 最適化されたテクスチャ
-description: 最適化されたテクスチャ
+title: 最適化テクスチャ
+description: 最適化テクスチャ
 ms.assetid: 2c1af9c0-f15a-426a-b861-09f3e1c8899e
 keywords:
 - テクスチャ管理 WDK Direct3D、最適化されたテクスチャ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 673a90cce1884e6e1809fc45465f04cd638e472e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379848"
 ---
-# <a name="optimized-textures"></a>最適化されたテクスチャ
+# <a name="optimized-textures"></a>最適化テクスチャ
 
 
 ## <span id="ddk_optimized_textures_gg"></span><span id="DDK_OPTIMIZED_TEXTURES_GG"></span>

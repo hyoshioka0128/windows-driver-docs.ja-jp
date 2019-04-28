@@ -1,17 +1,17 @@
 ---
-title: NDKPI 用語集
+title: NDKPI の用語
 description: NDKPI ドキュメントでは、次の用語を使用して、NDK プロバイダーとコンシューマーについて説明します。
 ms.assetid: 740A78B3-B7AD-4A8C-8097-D49B39BC9F47
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 609cf7e422c81a3d25b8e6f7a5f585116e11bd7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380906"
 ---
-# <a name="ndkpi-terminology"></a>NDKPI 用語集
+# <a name="ndkpi-terminology"></a>NDKPI の用語
 
 
 NDKPI ドキュメントでは、次の用語を使用して、NDK プロバイダーとコンシューマーについて説明します。
@@ -135,7 +135,7 @@ NDK 保護ドメイン (PD) オブジェクト ([**NDK\_PD**](https://msdn.micro
 
  
 
-## <a name="endpoint"></a>endpoint
+## <a name="endpoint"></a>エンドポイント (endpoint)
 
 
 どの接続を開始したり、10.1.1.1:445 を受け入れられる、ローカルのポイントを識別するローカル アドレスと NetworkDirect ポート番号の暗黙的または明示的な形式:

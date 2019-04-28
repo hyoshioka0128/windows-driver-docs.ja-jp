@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SO_CONDITIONAL_ACCEPT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ce45eb619d33c7feae23cf24c6f6b337bbd52bba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373770"
 ---
 # <a name="soconditionalaccept"></a>したがって\_条件付き\_ACCEPT
 
@@ -42,7 +42,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <td><p>SO_CONDITIONAL_ACCEPT</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -94,7 +94,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 <td><p>SO_CONDITIONAL_ACCEPT</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -130,7 +130,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 一部のトランスポート プロトコル サポート条件ではありませんがリスニング ソケットでモードを受け付ける場合があります。
 
-条件付きで着信接続の受け入れの詳細については、[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)を参照してください。
+条件付きで着信接続の受け入れの詳細については、次を参照してください。[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)します。
 
 <a name="requirements"></a>要件
 ------------

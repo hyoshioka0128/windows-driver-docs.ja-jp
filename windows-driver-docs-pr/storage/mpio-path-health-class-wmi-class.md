@@ -5,11 +5,11 @@ ms.assetid: fcbc86a4-9035-489e-a406-9901c5af0a32
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 0ca61df04c831b8097da76f45b103b9f3d999a5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383059"
 ---
 # <a name="mpiopathhealthclass-wmi-class"></a>MPIO\_パス\_ヘルス\_クラスの WMI クラス
 

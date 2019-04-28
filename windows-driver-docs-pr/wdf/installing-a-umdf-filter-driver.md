@@ -5,11 +5,11 @@ ms.assetid: AE6D4E36-B758-451A-983E-6F0D7ADFD7A7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 009e718c2a1b1f2b0f58358960f0f4f926eb0c95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378066"
 ---
 # <a name="installing-a-umdf-filter-driver"></a>UMDF フィルター ドライバーのインストール
 
@@ -35,7 +35,7 @@ ms.locfileid: "56577740"
 
     ドライバーが記載されている順序でデバイス スタックに追加されます、 **UmdfServiceOrder**エントリ。 最初のパラメーターは、デバイス スタックの最下位の UMDF ドライバーを指定します。 下位のフィルター ドライバーをインストールするには、単純の引数を逆**UmdfServiceOrder**します。
 
-    これらおよびその他の UMDF 固有 INF ディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)を参照してください。
+    これらおよびその他の UMDF 固有 INF ディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
 3.  ドライバーのデバイスのスタックに UMDF ドライバーのみが含まれている場合は、この手順をスキップします。
 

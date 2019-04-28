@@ -1,6 +1,6 @@
 ---
-title: エクスポートとインポートの efi ブート エントリ
-description: エクスポートとインポートの efi ブート エントリ
+title: EFI でのブート エントリのエクスポートとインポート
+description: EFI でのブート エントリのエクスポートとインポート
 ms.assetid: bd019064-cb8c-434c-b471-192168564540
 keywords:
 - NVRAM ブート オプション、WDK をエクスポートします。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d0f19d6219aa1c1fdf057ad2884b71f75ef3f508
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378812"
 ---
-# <a name="exporting-and-importing-boot-entries-in-efi"></a>エクスポートとインポートの efi ブート エントリ
+# <a name="exporting-and-importing-boot-entries-in-efi"></a>EFI でのブート エントリのエクスポートとインポート
 
 使用して、 **nvrboot x**ブート エントリのバックアップ コピーを作成する (エクスポート) コマンド。 簡単に必要なときに、バックアップ コピーのファイルを検索する規則に名前付けとストレージを設計します。
 

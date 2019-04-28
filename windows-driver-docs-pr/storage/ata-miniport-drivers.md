@@ -1,6 +1,6 @@
 ---
-title: ATA のミニポート ドライバー
-description: ATA のミニポート ドライバー
+title: ATA ミニポート ドライバー
+description: ATA ミニポート ドライバー
 ms.assetid: 4e5cf0e3-72c5-43df-b61e-0039c3666de4
 keywords:
 - ATA のミニポート ドライバー WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f729d5b9098d251d660223cbacfbe657127d344
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380195"
 ---
-# <a name="ata-miniport-drivers"></a>ATA のミニポート ドライバー
+# <a name="ata-miniport-drivers"></a>ATA ミニポート ドライバー
 
 
 ## <span id="ddk_ata_miniport_drivers_kg"></span><span id="DDK_ATA_MINIPORT_DRIVERS_KG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 94b21eef-5660-4d05-8eb5-da6589c85e65
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5bc455a9c54ef9811c6b35ebff8f396b12f5575
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374590"
 ---
 # <a name="guidelines-for-starting-device-installation-applications-through-co-installers"></a>共同インストーラーを介したデバイスのインストール アプリケーションの起動のガイドライン
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578114"
 
     共同インストーラーは、dbch_devicetype DBT_DEVTYP_VOLUME と dbcv_flags DBTF_MEDIA に設定する設定と WM_DEVICECHANGED/DBT_DEVICEARRIVAL メッセージをリッスンして、新しいメディアを検出できます。
 
-    詳細については、[を検出するメディアが挿入または削除](https://go.microsoft.com/fwlink/p/?linkid=161958)を参照してください。
+    詳細については、次を参照してください。[を検出するメディアが挿入または削除](https://go.microsoft.com/fwlink/p/?linkid=161958)します。
 
 -   インストール中に、配布メディアがある共同インストーラーは想定しません。 たとえば、共同インストーラーは共同インストーラー内からメディアを検索するのに %1% DirId を使用する必要がありますしないでください。
 
@@ -32,9 +32,9 @@ ms.locfileid: "56578114"
 
 -   共同インストーラーは、デバイスのインストール アプリケーションをダウンロードする Windows Internet Explorer を起動する場合は、悪意のあるコードに対してユーザーを保護するための機能を持つ保護モードで起動にする必要があります。
 
-    保護モードで Internet Explorer を起動する方法の詳細については、[を理解すると、保護モードの Internet Explorer での作業](https://go.microsoft.com/fwlink/p/?linkid=133163)を参照してください。
+    保護モードで Internet Explorer を起動する方法の詳細については、次を参照してください。[を理解すると、保護モードの Internet Explorer での作業](https://go.microsoft.com/fwlink/p/?linkid=133163)します。
 
-共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
  
 

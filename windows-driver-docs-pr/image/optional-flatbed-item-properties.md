@@ -1,17 +1,17 @@
 ---
-title: フラット ベッドの省略可能な項目のプロパティ
-description: フラット ベッドの省略可能な項目のプロパティ
+title: 省略可能フラットベッド項目のプロパティ
+description: 省略可能フラットベッド項目のプロパティ
 ms.assetid: 6a4a42f6-7a6e-49da-845b-a857c12c4cfd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 226b10175ca994240a440d31e6a8a80a962d58ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379648"
 ---
-# <a name="optional-flatbed-item-properties"></a>フラット ベッドの省略可能な項目のプロパティ
+# <a name="optional-flatbed-item-properties"></a>省略可能フラットベッド項目のプロパティ
 
 
 

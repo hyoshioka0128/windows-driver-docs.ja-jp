@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PNP_ADD_WAKE_UP_PATTERN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d0868a29a7ad7afd80af101b6a335f197fffd184
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382194"
 ---
 # <a name="oidpnpaddwakeuppattern"></a>OID\_PNP\_追加\_WAKE\_を\_パターン
 
@@ -26,9 +26,9 @@ OID\_PNP\_追加\_WAKE\_を\_ウェイク アップのパターンを指定す�
 
 -   [ **NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)パターンとそのマスクについての情報を提供する構造体。
 
--   着信パケットのデータの量を示すマスク パターンに対応するバイト数と比較する必要があります。 マスクは、パケットの最初のバイトを開始します。 マスクの直後に、 [ **NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)構造体、 *InformationBuffer*します。 このマスクのしくみの詳細については、、[ネットワーク デバイス クラスの電源管理の参照の仕様](https://go.microsoft.com/fwlink/p/?linkid=27255)を参照してください。
+-   着信パケットのデータの量を示すマスク パターンに対応するバイト数と比較する必要があります。 マスクは、パケットの最初のバイトを開始します。 マスクの直後に、 [ **NDIS\_PM\_パケット\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566756)構造体、 *InformationBuffer*します。 このマスクのしくみの詳細については、次を参照してください。、[ネットワーク デバイス クラスの電源管理の参照の仕様](https://go.microsoft.com/fwlink/p/?linkid=27255)します。
 
--   ウェイク アップ パターンでは、開始**PatternOffset**の先頭からのバイト、 *InformationBuffer*します。 ウェイク アップのパターンの詳細については、、[ネットワーク デバイス クラスの電源管理の参照の仕様](https://go.microsoft.com/fwlink/p/?linkid=27255)を参照してください。
+-   ウェイク アップ パターンでは、開始**PatternOffset**の先頭からのバイト、 *InformationBuffer*します。 ウェイク アップのパターンの詳細については、次を参照してください。、[ネットワーク デバイス クラスの電源管理の参照の仕様](https://go.microsoft.com/fwlink/p/?linkid=27255)します。
 
 ウェイク アップ パターン プロトコルから受け入れることができる、ミニポート ドライバーの数、このようなパターンでは、または、ネットワーク アダプターで使用可能記憶域ミニポート ドライバーによって割り当てられたホストのメモリなどのリソースの可用性に依存します。 かどうか、ミニポート ドライバーは、リソース不足のため、ウェイク アップのパターンを追加できません、ミニポート ドライバーを返します**NDIS\_状態\_リソース**OID への応答で\_PNP\_の追加\_WAKE\_を\_パターン。
 

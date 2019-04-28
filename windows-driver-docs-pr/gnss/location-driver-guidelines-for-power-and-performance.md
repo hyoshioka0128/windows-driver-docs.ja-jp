@@ -1,17 +1,17 @@
 ---
-title: 能力とパフォーマンスの場所のドライバーのガイドライン
+title: 電力とパフォーマンスに関する位置情報ドライバーのガイドライン
 description: 次のセクションでは、場所は、ドライバーが電力を節約し、効率的にデータを提供することを確認するためのガイドラインについて説明します。
 ms.assetid: 81B9A3A1-D273-48C8-A808-CDB1533A1B6A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbf754176ec9cacb224eae7ccd8c883bda638cf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371042"
 ---
-# <a name="location-driver-guidelines-for-power-and-performance"></a>能力とパフォーマンスの場所のドライバーのガイドライン
+# <a name="location-driver-guidelines-for-power-and-performance"></a>電力とパフォーマンスに関する位置情報ドライバーのガイドライン
 
 
 次のセクションでは、場所は、ドライバーが電力を節約し、効率的にデータを提供することを確認するためのガイドラインについて説明します。
@@ -49,7 +49,7 @@ ms.locfileid: "56538535"
 
 イベントをサブスクライブして、場所データを使用するアプリケーション、センサーを設定してデータ更新イベントの最大の頻度を要求する\_プロパティ\_現在\_レポート\_INTERVAL プロパティ。 電源を節約するために、ドライバーは、要求された最下位のレポート間隔よりもしないより頻繁にデータ レポートを送信する必要があります。
 
-各アプリケーションの値を追跡する方法の詳細については、[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)を参照してください。 レポート間隔での追跡の例を検索することもできます、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)WDK に含まれています。
+各アプリケーションの値を追跡する方法の詳細については、次を参照してください。[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)します。 レポート間隔での追跡の例を検索することもできます、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)WDK に含まれています。
 
 ### <a name="tracking-desired-accuracy"></a>必要な正確性の追跡
 

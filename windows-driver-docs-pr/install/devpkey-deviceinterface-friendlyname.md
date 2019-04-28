@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3663da355ec776d50c0519c0bd960c133f8765d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381488"
 ---
 # <a name="devpkeydeviceinterfacefriendlyname"></a>DEVPKEY_DeviceInterface_FriendlyName
 
@@ -66,9 +66,9 @@ Windows 設定の値、 [ **DEVPKEY_NAME** ](devpkey-name--device-interface-.md)
 
 呼び出すことによって、DEVPKEY_DeviceInterface_FriendlyName の値を取得する[ **SetupDiGetDeviceInterfaceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122)し、呼び出すことによって設定[ **SetupDiSetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552158)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_FriendlyName プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**FriendlyName**デバイス インターフェイスのレジストリ エントリの値。 デバイスのインターフェイスのレジストリ エントリの値にアクセスする方法については、[デバイス インターフェイスのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537740)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_FriendlyName プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**FriendlyName**デバイス インターフェイスのレジストリ エントリの値。 デバイスのインターフェイスのレジストリ エントリの値にアクセスする方法については、次を参照してください。[デバイス インターフェイスのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537740)します。
 
-デバイスのインターフェイスについては、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
+デバイスのインターフェイスについては、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
 
 <a name="requirements"></a>要件
 ------------

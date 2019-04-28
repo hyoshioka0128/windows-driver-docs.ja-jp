@@ -1,6 +1,6 @@
 ---
-title: ハードウェア情報を登録します。
-description: ハードウェア情報を登録します。
+title: ハードウェア情報の登録
+description: ハードウェア情報の登録
 ms.assetid: 1fec9fcf-3ec7-4926-9ceb-ef1f7f42e963
 keywords:
 - レジストリ WDK の表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca8910e3aafbbc0532a6694a9f7db9ea3405cd00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378554"
 ---
-# <a name="registering-hardware-information"></a>ハードウェア情報を登録します。
+# <a name="registering-hardware-information"></a>ハードウェア情報の登録
 
 
 ユーザーとデバッグについての支援を有用な情報を表示するには、ディスプレイのミニポート ドライバーは、レジストリの特定のハードウェア情報を設定する必要があります。 ディスプレイのミニポート ドライバーには、チップの種類、アナログ デジタル コンバーター (DAC) 型、(アダプター) のメモリ サイズおよびアダプターを識別する文字列を設定する必要があります。 この情報で表示されます、**表示**コントロール パネルの アプリケーション。 通常、ドライバーがこの情報を設定その[ **DxgkDdiAddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff559586)関数。

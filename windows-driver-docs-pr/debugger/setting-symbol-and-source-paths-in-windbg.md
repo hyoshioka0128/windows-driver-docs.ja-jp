@@ -1,25 +1,25 @@
 ---
-title: WinDbg でシンボルと実行可能イメージのパスの設定
-description: WinDbg でシンボルと実行可能イメージのパスの設定
+title: WinDbg でのシンボルと実行可能イメージ パスの設定
+description: WinDbg でのシンボルと実行可能イメージ パスの設定
 ms.assetid: 8EA2509E-0B47-4D28-B934-F1F58F5CFC45
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c945c4d6df1ac25b7be7aaeca7a77d4d25b2c97b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381944"
 ---
-# <a name="setting-symbol-and-executable-image-paths-in-windbg"></a>WinDbg でシンボルと実行可能イメージのパスの設定
+# <a name="setting-symbol-and-executable-image-paths-in-windbg"></a>WinDbg でのシンボルと実行可能イメージ パスの設定
 
 
 ## <a name="span-idddksymbolpathdbgspanspan-idddksymbolpathdbgspansymbol-path"></a><span id="ddk_symbol_path_dbg"></span><span id="DDK_SYMBOL_PATH_DBG"></span>シンボル パス
 
 
-シンボル パスは、シンボル ファイルが配置されるディレクトリを指定します。 シンボルとシンボル ファイルの詳細については、[シンボル](symbols.md)を参照してください。
+シンボル パスは、シンボル ファイルが配置されるディレクトリを指定します。 シンボルとシンボル ファイルの詳細については、次を参照してください。[シンボル](symbols.md)します。
 
-**注**  シンボル サーバーを使用するアクセスのシンボルを最も効率的な方法は、インターネットまたは企業ネットワークに接続している場合。 シンボル サーバーを使用するには、srv を使用して\*または symsrv\*シンボル パス内の文字列。 シンボル サーバーの詳細については、[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)を参照してください。
+**注**  シンボル サーバーを使用するアクセスのシンボルを最も効率的な方法は、インターネットまたは企業ネットワークに接続している場合。 シンボル サーバーを使用するには、srv を使用して\*または symsrv\*シンボル パス内の文字列。 シンボル サーバーの詳細については、次を参照してください。[シンボル ストアとシンボル サーバー](symbol-stores-and-symbol-servers.md)します。
 
  
 

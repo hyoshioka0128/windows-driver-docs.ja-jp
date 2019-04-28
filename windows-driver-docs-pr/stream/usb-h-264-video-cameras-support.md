@@ -1,17 +1,17 @@
 ---
-title: USB H.264 ビデオをカメラのサポート
+title: USB H.264 ビデオ カメラのサポート
 description: Windows 8 以降、H.264 ビデオ コーデック (エンコーダー/デコーダー) はサポートされています。
 ms.assetid: EB73E2B2-B34E-4DC1-807A-4990A54E6E8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aa183949986475444c3cded4944b598d231c40f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382492"
 ---
-# <a name="usb-h264-video-cameras-support"></a>USB H.264 ビデオをカメラのサポート
+# <a name="usb-h264-video-cameras-support"></a>USB H.264 ビデオ カメラのサポート
 
 
 Windows 8 以降、H.264 ビデオ コーデック (エンコーダー/デコーダー) はサポートされています。 コーデックは、エンコードおよびデコードのビデオ データを高品質で高解像度ビデオのストリーミングを可能にするためのアルゴリズムに基づいています。 Windows 8 UVC クラス ドライバー、Usbvideo.sys、既定でサポートされる機能の一部を次に示します。

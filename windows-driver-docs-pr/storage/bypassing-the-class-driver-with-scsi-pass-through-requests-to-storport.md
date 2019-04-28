@@ -5,11 +5,11 @@ ms.assetid: 1162a1e7-a4f8-446f-8106-527f9b916382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3247c818297208a8ca97d35c0a438dca791b9a81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380122"
 ---
 # <a name="bypass-a-class-driver-with-scsi-pass-through-requests-to-storport"></a>Storport に SCSI パススルー要求クラス ドライバーをバイパスします。
 
@@ -21,7 +21,7 @@ SCSI パススルー要求から成る型 IRP の IRP\_MJ\_デバイス\_の IOC
 
 Storport パススルー要求に埋め込まれている SCSI コマンドの有効性をチェックしません。
 
-ストレージ クラス ドライバーの観点から SCSI パススルーの要求の詳細については、[SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)を参照してください。
+ストレージ クラス ドライバーの観点から SCSI パススルーの要求の詳細については、次を参照してください。 [SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)します。
 
  
 

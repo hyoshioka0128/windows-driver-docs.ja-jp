@@ -1,17 +1,17 @@
 ---
-title: NDKPI 作業要求の投稿の要件
+title: NDKPI 作業要求投稿要件
 description: このセクションは、NDKPI 作業要求投稿するための要件を説明します
 ms.assetid: 2BF6F253-FCB4-4A61-9A67-81092F3C44E4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c063b33f5396498d020e4150a1ffc71f35fb6755
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380900"
 ---
-# <a name="ndkpi-work-request-posting-requirements"></a>NDKPI 作業要求の投稿の要件
+# <a name="ndkpi-work-request-posting-requirements"></a>NDKPI 作業要求投稿要件
 
 
 ## <a name="work-request-posting-rules-for-the-consumer"></a>作業要求が、コンシューマーの転記ルール

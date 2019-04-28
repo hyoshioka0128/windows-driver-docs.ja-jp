@@ -1,6 +1,6 @@
 ---
-title: 書き込みの NDIS ミニポート ドライバー
-description: 書き込みの NDIS ミニポート ドライバー
+title: NDIS ミニポート ドライバーの作成
+description: NDIS ミニポート ドライバーの作成
 ms.assetid: ebcc06a1-bc3a-454b-9437-8c38bf9b4434
 keywords:
 - ミニポート ドライバー WDK ネットワーク、ミニポート ドライバーの記述
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2cae199f5b862f78c1988665c80b9b5079c883
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379769"
 ---
-# <a name="writing-ndis-miniport-drivers"></a>書き込みの NDIS ミニポート ドライバー
+# <a name="writing-ndis-miniport-drivers"></a>NDIS ミニポート ドライバーの作成
 
 
 

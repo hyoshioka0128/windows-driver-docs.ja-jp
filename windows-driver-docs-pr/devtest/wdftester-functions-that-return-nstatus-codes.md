@@ -1,17 +1,17 @@
 ---
-title: リターン コードの送ら KMDF 関数
-description: リターン コードの送ら KMDF 関数
+title: NSTATUS コードを返す KMDF 関数
+description: NSTATUS コードを返す KMDF 関数
 ms.assetid: 0edd35c0-2357-4502-8c59-36b16cf7f294
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df14fede11fdf33d609439c4479f42dd0eef8b26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378588"
 ---
-# <a name="kmdf-functions-that-return-nstatus-codes"></a>リターン コードの送ら KMDF 関数
+# <a name="kmdf-functions-that-return-nstatus-codes"></a>NSTATUS コードを返す KMDF 関数
 
 
 リターン コードの NTSTATUS KMDF Ddi の一覧を次に示します。 次の 2 つを除くこれら Ddi のいずれかが失敗しましたでした。**WdfRequestReuse**と**WdfWaitLockAcquire**します。

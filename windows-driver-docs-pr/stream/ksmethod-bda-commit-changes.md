@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eee13b9cb218b938f96e2f3f9ac384fc16ef9b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376910"
 ---
 # <a name="ksmethodbdacommitchanges"></a>KSMETHOD\_BDA\_コミット\_の変更
 
@@ -37,12 +37,12 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 
 なし
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ネットワーク プロバイダーが、KSMETHOD をにより、\_BDA\_コミット\_変更要求、変更の一覧は、基になるフィルターでコミットされた、この時点で、フィルターには、その状態がリセットされます。 新しいサイクルを開始できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

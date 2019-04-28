@@ -5,11 +5,11 @@ ms.assetid: dff22144-43a0-427f-8075-9c9152670933
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe5655e2916d59eca26b695e569aeeadc22a85f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382969"
 ---
 # <a name="static-driver-verifier-diagnostics"></a>静的ドライバー検証ツールの診断
 
@@ -18,7 +18,7 @@ SDV は、お客様とマイクロソフトの SDV が発生する可能性の�
 
 ### <a name="span-idenablingdiagnosticsspanspan-idenablingdiagnosticsspanenabling-diagnostics"></a><span id="enabling_diagnostics"></span><span id="ENABLING_DIAGNOSTICS"></span>診断を有効にします。
 
-SDV (デバッグ モードとも呼ばれます) は現在の診断モードのみ有効にする、コマンドラインから実行する場合。  コマンドラインからの実行に関する詳細については、[Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)を参照してください。
+SDV (デバッグ モードとも呼ばれます) は現在の診断モードのみ有効にする、コマンドラインから実行する場合。  コマンドラインからの実行に関する詳細については、次を参照してください。 [Static Driver Verifier のコマンド (MSBuild)](-static-driver-verifier-commands--msbuild-.md)します。
 
 診断を有効にするには、追加、 **/debug**フラグを設定した後、 **/check**コマンド。  以下に例を示します。
 

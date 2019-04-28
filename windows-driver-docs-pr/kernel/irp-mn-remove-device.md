@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_REMOVE_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 54a269203a867f81b2c65eb2e57b330d3a47732a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381408"
 ---
 # <a name="irpmnremovedevice"></a>IRP\_MN\_削除\_デバイス
 
@@ -54,7 +54,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 この IRP に応答して、ドライバーは、デバイスの電源、デバイスのソフトウェアの表現 (デバイス オブジェクト、およびなど) を削除して、デバイスのすべてのリソースを解放などのタスクを実行します。
 
-この IRP の処理の詳細については、[IRP の処理\_MN\_削除\_デバイス要求](https://msdn.microsoft.com/library/windows/hardware/ff546687)を参照してください。 デバイスの削除のサポートに関する概要については、[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)を参照してください。
+この IRP の処理の詳細については、次を参照してください。 [IRP の処理\_MN\_削除\_デバイス要求](https://msdn.microsoft.com/library/windows/hardware/ff546687)します。 デバイスの削除のサポートに関する概要については、次を参照してください。[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
 
 **この IRP を送信します。**
 

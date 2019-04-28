@@ -1,19 +1,19 @@
 ---
-title: デバッガー コマンド プログラムを実行します。
-description: デバッガー コマンド プログラムを実行します。
+title: デバッガー コマンド プログラムの実行
+description: デバッガー コマンド プログラムの実行
 ms.assetid: ad28a5d6-0d6a-42c0-82f3-6760a8c773ab
 keywords:
 - デバッガー コマンド プログラムの実行
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 412bb20e950615b2247f31a52ba16ba2ea990b2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379744"
 ---
-# <a name="executing-a-debugger-command-program"></a>デバッガー コマンド プログラムを実行します。
+# <a name="executing-a-debugger-command-program"></a>デバッガー コマンド プログラムの実行
 
 
 ## <span id="ddk_debugger_command_program_execution_dbg"></span><span id="DDK_DEBUGGER_COMMAND_PROGRAM_EXECUTION_DBG"></span>

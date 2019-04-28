@@ -1,6 +1,6 @@
 ---
-title: デコード操作のビデオを同期します。
-description: デコード操作のビデオを同期します。
+title: ビデオ デコード操作の同期
+description: ビデオ デコード操作の同期
 ms.assetid: 4c88bf8f-0f10-4281-b856-a0e056d69d0e
 keywords:
 - WDK の DirectX va なので、同期をデコードするビデオ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 484ec083e1f210d23dce3d97334978bf8ae9d4ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375354"
 ---
-# <a name="synchronizing-video-decode-operations"></a>デコード操作のビデオを同期します。
+# <a name="synchronizing-video-decode-operations"></a>ビデオ デコード操作の同期
 
 
 ## <span id="ddk_synchronizing_video_decode_operations_gg"></span><span id="DDK_SYNCHRONIZING_VIDEO_DECODE_OPERATIONS_GG"></span>

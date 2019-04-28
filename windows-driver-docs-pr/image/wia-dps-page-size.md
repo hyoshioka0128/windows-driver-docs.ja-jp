@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa377ae400a9a5da4a0ba92fe68c4eb649f6848a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380942"
 ---
 # <a name="wiadpspagesize"></a>WIA\_DPS\_ページ\_サイズ
 
@@ -35,7 +35,7 @@ WIA\_DPS\_ページ\_サイズ プロパティには、スキャンする現在�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションをスキャンするページの寸法を選択するには、設定の WIA\_DPS\_ページ\_サイズ。 WIA ミニドライバーは、作成し、このプロパティを保持します。
@@ -117,7 +117,7 @@ WIA_DPS_PAGE_SIZE WIA_PAGE_LETTER WIA_DPS_PAGE_HEIGHT = 11000 WIA_DPS_PAGE_WIDTH
 
 WIA_DPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT を = = 10000 WIA_DPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION LANSCAPE WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1000 WIA_IPS_YEXTENT 850 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

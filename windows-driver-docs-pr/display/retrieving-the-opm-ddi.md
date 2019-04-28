@@ -1,19 +1,19 @@
 ---
-title: OPM DDI を取得します。
-description: OPM DDI を取得します。
+title: OPM DDI の取得
+description: OPM DDI の取得
 ms.assetid: 84218245-f5f3-4a6f-88ed-9cd5db224e30
 keywords:
 - OPM WDK の表示、DDI を取得します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b178d08fc6616c6b81d860a97e8587f0bf600347
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379440"
 ---
-# <a name="retrieving-the-opm-ddi"></a>OPM DDI を取得します。
+# <a name="retrieving-the-opm-ddi"></a>OPM DDI の取得
 
 
 次の順序は、Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) を表示ミニポート ドライバーを取得する方法を示しています[OPM DDI](supporting-output-protection-manager.md):。
@@ -32,7 +32,7 @@ ms.locfileid: "56536283"
    <tr class="header">
    <th align="left">メンバー名</th>
    <th align="left">メンバーの種類</th>
-   <th align="left">Value</th>
+   <th align="left">値</th>
    </tr>
    </thead>
    <tbody>
@@ -53,7 +53,7 @@ ms.locfileid: "56536283"
    <td align="left"><p>DXGK_OPM_INTERFACE_VERSION_1</p></td>
    </tr>
    <tr class="even">
-   <td align="left"><p><strong>インターフェイス</strong></p></td>
+   <td align="left"><p><strong>Interface</strong></p></td>
    <td align="left"><p>PINTERFACE</p></td>
    <td align="left"><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff561986" data-raw-source="[&lt;strong&gt;DXGK_OPM_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561986)"> <strong>DXGK_OPM_INTERFACE</strong> </a>構造体</p></td>
    </tr>

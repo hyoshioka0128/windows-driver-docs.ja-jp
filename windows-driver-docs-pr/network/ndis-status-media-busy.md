@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_MEDIA_BUSY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 38c0f8b53a90add4e68cff18ea900b7b6ea8ec38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380211"
 ---
 # <a name="ndisstatusmediabusy"></a>NDIS\_状態\_メディア\_ビジー
 

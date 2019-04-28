@@ -1,6 +1,6 @@
 ---
-title: ドライバーが提供するプロパティ シートのページを置き換える
-description: ドライバーが提供するプロパティ シートのページを置き換える
+title: ドライバー提供のプロパティ シート ページを置換する
+description: ドライバー提供のプロパティ シート ページを置換する
 ms.assetid: b7f79841-f82c-4a60-9c2f-58772a65a5eb
 keywords:
 - ユーザー インターフェイスにプラグイン WDK 印刷、プロパティ シート ページ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7bc30e52dcbfc099bd0ebc754cfa33c99055ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382578"
 ---
-# <a name="replacing-driver-supplied-property-sheet-pages"></a>ドライバーが提供するプロパティ シートのページを置き換える
+# <a name="replacing-driver-supplied-property-sheet-pages"></a>ドライバー提供のプロパティ シート ページを置換する
 
 
 

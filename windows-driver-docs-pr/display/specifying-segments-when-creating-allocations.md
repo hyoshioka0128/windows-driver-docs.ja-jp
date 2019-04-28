@@ -1,6 +1,6 @@
 ---
-title: 割り当てを作成するときにセグメントを指定します。
-description: 割り当てを作成するときにセグメントを指定します。
+title: 割り当て作成時のセグメントの指定
+description: 割り当て作成時のセグメントの指定
 ms.assetid: 31bfbfd9-89e5-42fe-90bc-8ff54bac4f8b
 keywords:
 - メモリのセグメントの WDK 表示、割り当ての作成
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2186ca0e2f57633fd8ad791e445ed9c9c69f3f1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376023"
 ---
-# <a name="specifying-segments-when-creating-allocations"></a>割り当てを作成するときにセグメントを指定します。
+# <a name="specifying-segments-when-creating-allocations"></a>割り当て作成時のセグメントの指定
 
 
 ## <span id="ddk_specifying_segments_for_creating_and_rendering_allocations_gg"></span><span id="DDK_SPECIFYING_SEGMENTS_FOR_CREATING_AND_RENDERING_ALLOCATIONS_GG"></span>

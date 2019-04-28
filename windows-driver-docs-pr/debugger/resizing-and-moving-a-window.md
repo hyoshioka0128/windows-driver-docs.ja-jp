@@ -1,6 +1,6 @@
 ---
-title: サイズ変更と、ウィンドウを移動します。
-description: サイズ変更と、ウィンドウを移動します。
+title: ウィンドウのサイズ変更と移動
+description: ウィンドウのサイズ変更と移動
 ms.assetid: 135e1ec1-9d58-45de-a0b4-5f962ed9e1f7
 keywords:
 - デバッグ情報のウィンドウ、サイズ変更、およびウィンドウを移動します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78ed01fb656b4c9550c91c9625955ff4278da7bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382071"
 ---
-# <a name="resizing-and-moving-a-window"></a>サイズ変更と、ウィンドウを移動します。
+# <a name="resizing-and-moving-a-window"></a>ウィンドウのサイズ変更と移動
 
 
 ## <span id="ddk_resizing_and_moving_windows_dbg"></span><span id="DDK_RESIZING_AND_MOVING_WINDOWS_DBG"></span>

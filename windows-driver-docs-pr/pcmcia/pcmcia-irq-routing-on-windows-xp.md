@@ -1,6 +1,6 @@
 ---
-title: Windows XP でのルーティング PCMCIA IRQ
-description: Windows XP でのルーティング PCMCIA IRQ
+title: Windows XP での PCMCIA IRQ ルーティング
+description: Windows XP での PCMCIA IRQ ルーティング
 ms.assetid: 9b3501ce-c536-4ec7-bb01-c449d3900fee
 keywords:
 - PCIC ブリッジ WDK PCMCIA バス
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e5c5f072224b59eac99aad8c84f6483373cffb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378194"
 ---
-# <a name="pcmcia-irq-routing-on-windows-xp"></a>Windows XP でのルーティング PCMCIA IRQ
+# <a name="pcmcia-irq-routing-on-windows-xp"></a>Windows XP での PCMCIA IRQ ルーティング
 
 
 

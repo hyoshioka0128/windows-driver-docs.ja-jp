@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f352142c99d7e3623de5b401e914f24fcc18651b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376914"
 ---
 # <a name="kspropertymapcapturehandletovramaddress"></a>KSPROPERTY\_マップ\_キャプチャ\_処理\_TO\_VRAM\_アドレス
 
@@ -50,7 +50,7 @@ VRAM トランスポートを使用するには、キャプチャ ミニドラ�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568785" data-raw-source="[&lt;strong&gt;VRAM_SURFACE_INFO_PROPERTY_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568785)"><strong>VRAM_SURFACE_INFO_PROPERTY_S</strong></a></p></td>
 <td><p>DWORD</p></td>

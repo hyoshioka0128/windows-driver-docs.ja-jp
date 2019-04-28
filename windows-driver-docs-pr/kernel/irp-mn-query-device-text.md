@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_DEVICE_TEXT カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: eedcf3d55e5e95ee877360a3ded21b914ffe5d45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381438"
 ---
 # <a name="irpmnquerydevicetext"></a>IRP\_MN\_クエリ\_デバイス\_テキスト
 

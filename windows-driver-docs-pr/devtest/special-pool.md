@@ -1,6 +1,6 @@
 ---
-title: 特別なプール
-description: 特別なプール
+title: Special Pool
+description: Special Pool
 ms.assetid: b1381a75-279a-42b7-b18d-43aba796424b
 keywords:
 - 特別なプール機能 WDK Driver Verifier
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28e20ecd0216b2556780281d2af4c424c346628a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378064"
 ---
-# <a name="special-pool"></a>特別なプール
+# <a name="special-pool"></a>Special Pool
 
 
 ## <span id="ddk_special_memory_pool_tools"></span><span id="DDK_SPECIAL_MEMORY_POOL_TOOLS"></span>
@@ -56,7 +56,7 @@ Windows 7 および Windows オペレーティング システムの以降のバ
 
 -   **サイズ。** 指定したサイズの範囲内のすべての割り当て用の特別なプールを要求します。
 
-プールのタグまたはサイズの範囲の特別なプールを要求する Gflags に付属のツールを使用して、*ツールを Windows のデバッグ*します。 詳細については、[グローバル フラグ ユーティリティを使用して](using-the-global-flags-utility.md)を参照してください。
+プールのタグまたはサイズの範囲の特別なプールを要求する Gflags に付属のツールを使用して、*ツールを Windows のデバッグ*します。 詳細については、次を参照してください。[グローバル フラグ ユーティリティを使用して](using-the-global-flags-utility.md)します。
 
 同時には、Driver Verifier の特別なプール機能と Gflags の特別なプール機能を使用できます。 この場合、特別なプールが制限される、特別なは、プールが成功し、Windows が通常メモリの割り当てによって満たされる特別なプールからの割り当ての失敗の回数を成功状態を返すことから割り当てることの試みがすべてないことを注意してください。プール。
 
@@ -80,11 +80,11 @@ Windows 7 および Windows オペレーティング システムの以降のバ
 
 特別なプール機能が有効になっているすべてのプール割り当ての 95% 未満を特別なプールから割り当てられている場合は、警告がドライバー検証マネージャーで表示されます。 Windows 2000 でこの警告が表示されます、 **ドライバ ステータスの**画面。 Windows XP 以降では、この警告に表示されます、**グローバル カウンター**画面。 この場合、ドライバーの短い一覧を確認します。 プールのタグを使用して個々 のプールを確認します、以上の物理メモリをシステムに追加またはする必要があります。
 
-カーネル デバッガー拡張機能 **! verifier**特別なプールの使用状況を監視できます。 ドライバー検証マネージャーのする同様の情報が表示されます。 デバッガーの拡張機能については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
+カーネル デバッガー拡張機能 **! verifier**特別なプールの使用状況を監視できます。 ドライバー検証マネージャーのする同様の情報が表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に特別なプール機能をアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に特別なプール機能をアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
 **注**  プール タグまたは割り当てのサイズの特別なプール機能をアクティブ化するかを設定する、**開始を確認します**(アンダーランの検出) と**終了の確認**(オーバーランの検出) 配置、使用して、[グローバル フラグ ユーティリティ](using-the-global-flags-utility.md); 特別なプールのすべての割り当てにこれらの配置の設定が適用されます。
 
@@ -106,7 +106,7 @@ Windows 7 および Windows オペレーティング システムの以降のバ
     verifier /volatile /flags 0x1 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、[揮発性の設定を使用する](using-volatile-settings.md)を参照してください。
+    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
     特別なプール機能は、標準の設定にも含まれます。 次に、例を示します。
 

@@ -1,6 +1,6 @@
 ---
-title: IEEE 1394 デバイス アイソクロナス リッスン オプション
-description: IEEE 1394 デバイス アイソクロナス リッスン オプション
+title: IEEE 1394 デバイスの等時性リッスンのオプション
+description: IEEE 1394 デバイスの等時性リッスンのオプション
 ms.assetid: a369b7f0-be85-49f0-bb09-d07cbd3d3558
 keywords:
 - アイソクロナス I/O WDK の IEEE 1394 バス、リッスン オプション
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f3a23f2d45c6d8b7f24114b059ef599cc3901c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371006"
 ---
-# <a name="isochronous-listen-options-for-ieee-1394-devices"></a>IEEE 1394 デバイス アイソクロナス リッスン オプション
+# <a name="isochronous-listen-options-for-ieee-1394-devices"></a>IEEE 1394 デバイスの等時性リッスンのオプション
 
 
 

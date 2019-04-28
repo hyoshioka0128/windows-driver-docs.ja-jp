@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ab87b04eac3c5bbfce2bdd4c481c5e3e2461972
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380529"
 ---
 # <a name="printer-configuration-commands"></a>プリンター構成コマンド
 
@@ -81,7 +81,7 @@ ms.locfileid: "56579756"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
  
 

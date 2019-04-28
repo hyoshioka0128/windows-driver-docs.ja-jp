@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 41b1c1f5235ec72bec364c8afe8776f2b18f22ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379822"
 ---
 # <a name="wiaipsoverscan"></a>WIA\_IP\_経由で\_スキャン
 
@@ -33,7 +33,7 @@ ms.locfileid: "56536397"
 
 有効な値 :WIA\_PROP\_一覧
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
 <a name="remarks"></a>注釈
 -------
@@ -47,7 +47,7 @@ ms.locfileid: "56536397"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -75,7 +75,7 @@ ms.locfileid: "56536397"
 
 このプロパティは、フラット ベッドを含むすべてプログラミング可能なイメージのデータ ソース アイテムの有効な (WIA\_カテゴリ\_ベッド) とフィーダー (WIA\_カテゴリ\_フィーダー) は省略可能です。 プロパティがサポートされている、WIA\_経由で\_スキャン\_無効になっていますが、必要な既定値。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

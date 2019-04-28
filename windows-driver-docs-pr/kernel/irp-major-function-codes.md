@@ -1,17 +1,17 @@
 ---
-title: IRP の主要な関数のコード
-description: IRP の主要な関数のコード
+title: IRP の主要な関数コード
+description: IRP の主要な関数コード
 ms.date: 08/12/2017
 ms.assetid: 11c5b1a9-74c0-47fb-8cce-a008ece9efae
 ms.localizationpriority: medium
 ms.openlocfilehash: c42a08cb8dab6ce5102d0a0e485a0a991936ea62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382914"
 ---
-# <a name="irp-major-function-codes"></a>IRP の主要な関数のコード
+# <a name="irp-major-function-codes"></a>IRP の主要な関数コード
 
 
 
@@ -59,7 +59,7 @@ ms.locfileid: "56556830"
 
 このセクションで説明されているパラメーターの入力と出力のパラメーターは、IRP の関数に固有のパラメーターです。
 
-Irp の詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)を参照してください。
+Irp の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
 
  
 

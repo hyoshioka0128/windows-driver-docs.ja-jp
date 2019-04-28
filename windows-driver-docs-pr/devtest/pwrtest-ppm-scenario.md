@@ -5,11 +5,11 @@ ms.assetid: 735834dc-7351-44d1-a63f-9cb541184fde
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8596f134de9cf018fbc254fee0b7acab44d86749
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382694"
 ---
 # <a name="pwrtest-ppm-scenario"></a>PwrTest の PPM シナリオ
 
@@ -44,7 +44,7 @@ CPU 使用率情報をキャプチャするかどうかを指定します。 オ
 <span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
 指定します、分単位での合計のランタイムを示します、 **live/** オプション (既定値は 30 になります)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /ppm /c:y /p:y /u:y /n:60 /i:1000

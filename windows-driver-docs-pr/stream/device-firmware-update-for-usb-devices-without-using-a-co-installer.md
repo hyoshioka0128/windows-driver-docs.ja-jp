@@ -4,11 +4,11 @@ description: 共同インストーラーなしの USB デバイスのファー�
 ms.date: 11/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ad53b257200cd14db227111a6cf7ed0767b2acf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374104"
 ---
 # <a name="device-firmware-update-for-usb-devices-without-using-a-co-installer"></a>デバイスのファームウェア共同インストーラーを使用せずに USB デバイスを更新します。
 

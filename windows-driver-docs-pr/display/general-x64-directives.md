@@ -1,22 +1,22 @@
 ---
-title: '[全般] x 64 ディレクティブ'
+title: 一般的な x64 のディレクティブ
 description: このトピックでは、64 ビット Windows で使用するための INF を適切に修飾するために必要な変更について説明します。
 ms.assetid: FC372524-0422-4022-AF54-4C6116C89F30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2531f37de4e26fe355f575660ed2e085b0da45c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379073"
 ---
-# <a name="general-x64-directives"></a>[全般] x 64 ディレクティブ
+# <a name="general-x64-directives"></a>一般的な x64 のディレクティブ
 
 
 このトピックでは、64 ビット Windows で使用するための INF を適切に修飾するために必要な変更について説明します。
 
-次に、例を示します。
+例:
 
 ``` syntax
 [DestinationDirs]

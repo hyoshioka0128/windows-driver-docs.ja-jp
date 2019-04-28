@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d079eda2b815270ee37f367a9fcb6b7262fd855
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380616"
 ---
 # <a name="file-system-references-and-symbol-files"></a>ファイル システムの参照とシンボル ファイル
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578533"
 
 ツールは、シンボル ファイルを作成するときに、シンボル ファイルのデバッグ レコードに記録されているファイル名のバージョンは、ツール、および実行する方法によって異なります。 ファイルの省略名がシステムによって異なるためシンボル ファイルに組み込まれているレコードの実際のファイル名ではなく省略の MS-DOS 8.3 ファイル名がある場合に、シンボルの読み込み時にデバッグで問題が発生します。 この問題が発生した場合は、これらのシンボル ファイルの内容アクセスできないデバッグ中にします。 可能であれば、ユーザーがからシンボル ファイルを作成するときに省略ファイルのパス名を使用しないようにします。 ファイルの省略名を誤って使用するいくつかの点がソース ファイルの場合省略ファイルのパス名を使用する、*含める*ディレクトリ、またはライブラリが含まれるファイル。
 
-詳細については、[シンボル名の一致する](matching-symbol-names.md)を参照してください。
+詳細については、次を参照してください。[シンボル名の一致する](matching-symbol-names.md)します。
 
  
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 245bde98b14365c3a5e619447d2a751540070d8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370062"
 ---
 # <a name="scannerinfo-element"></a>ScannerInfo 要素
 
@@ -47,7 +47,7 @@ ms.locfileid: "56574310"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -56,7 +56,7 @@ ms.locfileid: "56574310"
 <tr class="odd">
 <td><p><strong><strong>lang</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
 <p>(省略可能)文字列を指定する文字列の言語を識別する文字列。<em>文字列</em></p></td>
 </tr>
@@ -92,12 +92,12 @@ ms.locfileid: "56574310"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 構成、 **ScannerInfo**要素の値は実装固有。 たとえば、スキャナーのローカルのコンソールまたはデバイスの web サーバーでは、この値を構成することができます。 スキャン デバイスを使用して複数のローカライズされた言語のサポートを有効にするには、この要素の複数のバージョンを返すことができます、 **xml:lang**属性。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、ScannerInfo 要素を使用する方法を示します。

@@ -1,17 +1,17 @@
 ---
-title: Web Services on Devices (Ws-print) を印刷します。
+title: Web Services on Devices for Printing (WS-Print)
 description: 印刷およびスキャンの周辺機器を接続プロトコルを提供する、Windows Vista で導入された印刷 (Print WS) のデバイス上のサービスを web です。
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c4afbe76e0f522c62d3785d7b416680503e10b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380511"
 ---
-# <a name="web-services-on-devices-for-printing-ws-print"></a>Web Services on Devices (Ws-print) を印刷します。
+# <a name="web-services-on-devices-for-printing-ws-print"></a>Web Services on Devices for Printing (WS-Print)
 
 
 印刷およびスキャンの周辺機器を接続プロトコルを提供する、Windows Vista で導入された印刷 (Print WS) のデバイス上のサービスを web です。
@@ -67,12 +67,12 @@ Ws-print v1.2 をサポートしていること確認すると、プリンター
 
 **Ws-print v1.1**
 
-**Namespace:**<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
+**名前空間:**<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
 **XML の Namespace 定義:** xmlns:wprt12 ="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"
 
 **WS 印刷 v1.2**
 
-**Namespace:**<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
+**名前空間:**<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
 **XML の Namespace 定義:** xmlns:wprt11 ="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"
 ## <a name="specifying-ws-print-11-support"></a>WS 印刷 1.1 のサポートを指定します。
 
@@ -240,7 +240,7 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
 ## <a name="device-model-id"></a>デバイスのモデル ID
 
 
-次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、[ModelID 要素](https://msdn.microsoft.com/library/windows/hardware/ff549295.aspx)を参照してください。
+次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、次を参照してください。 [ModelID 要素](https://msdn.microsoft.com/library/windows/hardware/ff549295.aspx)します。
 
 ```xml
     <xs:annotation>

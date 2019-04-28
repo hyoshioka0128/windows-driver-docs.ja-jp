@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS (0xD2) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b4b965a0bb49874db4c5c73d5e35c56a38a8d81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382893"
 ---
 # <a name="wditlvchecksumoffloadv4rxparameters-0xd2"></a>WDI\_TLV\_チェックサム\_オフロード\_V4\_RX\_パラメーター (0xD2)
 
@@ -40,7 +40,7 @@ WDI\_TLV\_チェックサム\_オフロード\_V4\_RX\_パラメーターは、I
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>

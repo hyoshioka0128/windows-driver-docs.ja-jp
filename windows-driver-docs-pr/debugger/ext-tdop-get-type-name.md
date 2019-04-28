@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 132d5a92956d3fed4dd25e0b7a4c8e10688c3ab0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379893"
 ---
 # <a name="exttdopgettypename"></a>EXT\_TDOP\_取得\_型\_名
 
@@ -44,7 +44,7 @@ EXT に設定\_TDOP\_取得\_型\_このサブ操作の名前。
 <span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状態**  
 このサブ操作によって返されるステータス コードを受け取ります。 これは、によって返される値と同じ[**要求**](request.md)します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 EXT\_TDOP\_取得\_型\_名は、値、 [ **EXT\_TDOP** ](https://msdn.microsoft.com/library/windows/hardware/ff544529)列挙体。

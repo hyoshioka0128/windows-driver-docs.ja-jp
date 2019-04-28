@@ -1,17 +1,17 @@
 ---
-title: スキャナーのストレージ アーキテクチャ
-description: スキャナーのストレージ アーキテクチャ
+title: スキャナー記憶域アーキテクチャ
+description: スキャナー記憶域アーキテクチャ
 ms.assetid: 90b2367f-c611-47c6-bd60-4125bd7ca709
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f439a6f9e6a52806c4581b636fcdf3ed6cb5fb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370091"
 ---
-# <a name="scanner-storage-architecture"></a>スキャナーのストレージ アーキテクチャ
+# <a name="scanner-storage-architecture"></a>スキャナー記憶域アーキテクチャ
 
 
 1 つまたは複数の記憶域ユニットを搭載しているスキャナー デバイスは、少なくとも 1 つのルート記憶域フォルダー スキャナー アイテムを実装する必要が (WIA\_カテゴリ\_フォルダー) を表す 1 つの個々 のストレージ単位または論理、WIA 項目ツリー使用可能記憶域ユニットをすべてのルートです。 ストレージ ルート項目では、下にある可能性がありますサブフォルダー項目 (WIA\_カテゴリ\_フォルダー) (すべてのストレージ ユニットは、この一意のストレージのルート項目の下にマップされます) 場合は、個々 のストレージ ユニットを表すまたは記憶域ユニット上のフォルダーのファイルと個々 のファイル アイテム (WIA\_カテゴリ\_FINISHED\_ファイル)。

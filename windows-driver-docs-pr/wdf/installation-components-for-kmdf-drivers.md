@@ -1,5 +1,5 @@
 ---
-title: 再頒布可能フレームワーク コンポーネント
+title: 再頒布可能なフレームワーク コンポーネント
 description: このトピックでは、Windows 8.1、Windows Driver Kit (WDK) の一部と、ドライバー パッケージに追加するものを確認する方法として含まれている再頒布可能フレームワークの Microsoft 提供の更新プログラムについて説明します。
 ms.assetid: 63fbe66e-fa1b-4a70-a8ea-df4f3df9bad4
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a7404106beb9881c7764c25c3fe4f24bc782be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378170"
 ---
-# <a name="redistributable-framework-components"></a>再頒布可能フレームワーク コンポーネント
+# <a name="redistributable-framework-components"></a>再頒布可能なフレームワーク コンポーネント
 
 
 このトピックでは、Windows 8.1、Windows Driver Kit (WDK) の一部と、ドライバー パッケージに追加するものを確認する方法として含まれている再頒布可能フレームワークの Microsoft 提供の更新プログラムについて説明します。
@@ -59,7 +59,7 @@ Visual Studio で、ドライバーをビルドすると、MSBuild は、ドラ�
 
 ドライバー パッケージに含めることが共同インストーラーのバージョンは、フレームワーク ライブラリ、ドライバーを開発するために使用のバージョンに一致する必要があります。
 
-フレームワーク ライブラリのファイル名が、メジャー バージョン番号のみが含まれることに注意してください。 ライブラリ ファイル名の詳細については、[Framework ライブラリのバージョン管理](framework-library-versioning.md)を参照してください。
+フレームワーク ライブラリのファイル名が、メジャー バージョン番号のみが含まれることに注意してください。 ライブラリ ファイル名の詳細については、次を参照してください。 [Framework ライブラリのバージョン管理](framework-library-versioning.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 53242205-4fd3-471d-abe2-35474491b29d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: de5a7bebe25dc2c725ef2cd32e8b8078db200dff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372761"
 ---
 # <a name="iscsiconnectionstatetypequalifiers"></a>ISCSI\_接続\_状態\_型\_修飾子
 
@@ -29,7 +29,7 @@ ISCSI\_接続\_状態\_型\_修飾子 WMI プロパティ修飾子は、接続�
 <thead>
 <tr class="header">
 <th align="left">接続状態の値</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

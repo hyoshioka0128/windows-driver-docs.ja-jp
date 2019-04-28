@@ -1,17 +1,17 @@
 ---
-title: モデル Id を指定するためのベスト プラクティス
-description: モデル Id を指定するためのベスト プラクティス
+title: モデル ID の指定のベスト プラクティス
+description: モデル ID の指定のベスト プラクティス
 ms.assetid: ed0cdfb4-1de8-4b4f-8bab-7c5e06cf96f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 242e032b547c35560831e7859299d82987d34b83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380318"
 ---
-# <a name="best-practices-for-specifying-model-ids"></a>モデル Id を指定するためのベスト プラクティス
+# <a name="best-practices-for-specifying-model-ids"></a>モデル ID の指定のベスト プラクティス
 
 
 モデル Id は、物理デバイスのビジネス定義または在庫保管単位 (SKU) に基づいています。 各モデルの ID は、すべての製造元とモデルの物理デバイスに一意である必要があります。

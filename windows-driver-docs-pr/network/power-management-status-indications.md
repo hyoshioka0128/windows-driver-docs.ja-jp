@@ -1,6 +1,6 @@
 ---
-title: 電源管理の状態インジケーター
-description: 電源管理の状態インジケーター
+title: 電源管理状態表示
+description: 電源管理状態表示
 ms.assetid: f6a8fef7-2bdd-42b1-8afa-c93a7d6dcce6
 ms.date: 07/18/2017
 keywords:
@@ -10,13 +10,13 @@ keywords:
 - 電源管理 WDK NDIS 6.20 が動作状態インジケーター
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e91434b5b6fbe4463939b1d79d08883afc71ad4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380078"
 ---
-# <a name="power-management-status-indications"></a>電源管理の状態インジケーター
+# <a name="power-management-status-indications"></a>電源管理状態表示
 
 
 

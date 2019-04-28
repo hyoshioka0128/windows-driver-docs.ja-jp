@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PLDR_SUPPORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3339b7a4555f1a288ba0f28be901899eb130a60d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380020"
 ---
 # <a name="wditlvpldrsupport"></a>WDI\_TLV\_PLDR\_サポート
 
@@ -35,7 +35,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類  | 説明                                                                                                                                                                                                                       |
+| 型  | 説明                                                                                                                                                                                                                       |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8 | PLDR がサポートされているかどうかを指定します。 この値は、デバイスまたはバスでサポートされない場合のリセット機能 (通常は、ACPI または PCI メソッドのクエリを実行するには) を 0 に設定されます。 0 以外の値は、リセット機能がサポートされていることを指定します。 |
 

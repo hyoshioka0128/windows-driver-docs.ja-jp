@@ -1,17 +1,17 @@
 ---
-title: Mobile operator notifications とシステム イベントを有効にします。
-description: Mobile operator notifications とシステム イベントを有効にします。
+title: 通信事業者の通知とシステム イベントを有効にする
+description: 通信事業者の通知とシステム イベントを有効にする
 ms.assetid: 988bafcc-ad8e-446d-9336-85c19cf05577
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e16f59242649b95b7eb19ca129babf43569b7bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380225"
 ---
-# <a name="enabling-mobile-operator-notifications-and-system-events"></a>Mobile operator notifications とシステム イベントを有効にします。
+# <a name="enabling-mobile-operator-notifications-and-system-events"></a>通信事業者の通知とシステム イベントを有効にする
 
 
 このトピックでは、Mobile Operator Notification システム イベントに関する情報を提供します。 SMS、USSD ベースの受信の mobile operator notifications と関連するモバイル ブロード バンドのシステム イベントを処理する UWP モバイル ブロード バンド アプリを開発するためのガイドラインを示します。
@@ -41,7 +41,7 @@ Windows 10 では、アプリ タイル最新の状態も時に保持する、�
 
 一般に、バック グラウンド イベントは、簡単なトリガー ポイントとしてし、大量の処理を通知するものではありません。 そのため、アプリごとのクォータは、バック グラウンド イベントを許可されている処理時間に配置されます。 ネットワーク オペレーター API によって提供されるバック グラウンド イベントを含む、 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)イベントと[HotspotAuthentication](handling-the-hotspot-authentication-event.md)イベント、重大なイベントとして Windows によって扱われます。 関連付けられている作業項目イベントの一般的な情報と比較して、バック グラウンド**MobileOperatorNotification**と**HotspotAuthentication**イベントの実行に関係なく、イベントのすべてのインスタンス、バック グラウンドの作業項目の各インスタンスは、処理時間のクォータの対象は、時間のクォータを処理します。 バック グラウンドのイベント ハンドラーで処理を制限し、モバイル ブロード バンド アプリへの大規模な処理を延期する必要があります。
 
-## <a name="span-idinthissectionspanspan-idinthissectionspanspan-idinthissectionspanin-this-section"></a><span id="In_this_section"></span><span id="in_this_section"></span><span id="IN_THIS_SECTION"></span>このセクションでは
+## <a name="span-idinthissectionspanspan-idinthissectionspanspan-idinthissectionspanin-this-section"></a><span id="In_this_section"></span><span id="in_this_section"></span><span id="IN_THIS_SECTION"></span>このセクションの内容
 
 
 -   [MobileOperatorNotification イベントを処理するアプリを開発します。](develop-an-app-to-handle-the-mobileoperatornotification-event.md)

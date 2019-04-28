@@ -1,14 +1,14 @@
 ---
-title: デバッガーのデータ モデル - ファイル オブジェクト
+title: Debugger Data Model - ファイル オブジェクト
 description: ファイル オブジェクトは、開く、編集、およびそれ以外の場合、ファイル システム上のファイルの操作に使用されます。
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: eb3f164e08775bfac769ba0edfd24f5056c2748d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376084"
 ---
 # <a name="file-objects"></a>ファイル オブジェクト 
 ## <a name="summary"></a>概要
@@ -18,8 +18,8 @@ ms.locfileid: "56538657"
 |名前|戻り値の型|署名|説明|
 |--- |--- |--- |--- |
 |Close||Close()|ファイルを閉じます。 |
-|削除||Delete()|ファイルを削除します|
-|Open||Open(disposition)|ファイルを開き、指定された*廃棄*します。 *廃棄*"OpenExisting"、"CreateNew"または"CreateAlways"のいずれかを指定することがあります。|
+|DELETE||Delete()|ファイルを削除します|
+|[ファイル]||Open(disposition)|ファイルを開き、指定された*廃棄*します。 *廃棄*"OpenExisting"、"CreateNew"または"CreateAlways"のいずれかを指定することがあります。|
 |ReadBytes|バイトの配列|ReadBytes(byteCount)|ファイルから指定したバイト数を読み取り、それらのバイトのインデックスを付けると、反復可能な配列を返します。|
 |WriteBytes||WriteBytes(bytes, [byteCount])|指定したバイトをファイルに書き込みます。 場合*byteCount*が指定されていないの反復処理できるすべてのバイト*バイト*それ以外のファイルに書き込まれた最初の*byteCount*内のバイト *。バイト*が書き込まれます。|
 

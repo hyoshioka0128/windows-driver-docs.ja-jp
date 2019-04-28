@@ -5,11 +5,11 @@ ms.assetid: 8895d0ca-b9bd-4f8d-bf8f-4ba2f459c264
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d010206ab8be17f4dd1f33ade327aa83fb99f188
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380671"
 ---
 # <a name="dsmloadbalancepolicyv2-wmi-class"></a>DSM\_ロード\_残高\_ポリシー\_V2 WMI クラス
 

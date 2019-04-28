@@ -1,17 +1,17 @@
 ---
-title: フレームワークを確認します。
-description: フレームワークを確認します。
+title: フレームワークを検証する
+description: フレームワークを検証する
 ms.assetid: A954B5E2-E3C7-4021-BE53-AE1257139607
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a9aaf7a41b6a6d0f1c137c2c456cf0283d22a98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383032"
 ---
-# <a name="verify-framework"></a>フレームワークを確認します。
+# <a name="verify-framework"></a>フレームワークを検証する
 
 
 TAEF を簡単にテストを作成するには、利用する「確認」フレームワークを提供します、 [WexLogger](wexlogger.md)最小限のコードの詳細なログを報告します。 検証フレームワークにより、構造化ログ出力を提供するためのテスト - 特定の検証が成功し、検証に失敗した場合は、詳細な情報が出力に成功したログを出力します。

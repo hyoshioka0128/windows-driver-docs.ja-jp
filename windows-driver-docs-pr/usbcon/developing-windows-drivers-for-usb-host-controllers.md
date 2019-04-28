@@ -1,14 +1,14 @@
 ---
-Description: Developing Windows drivers for USB host controllers
+Description: USB ホスト コントローラー用 Windows ドライバーの開発
 title: USB ホスト コントローラー用 Windows ドライバーの開発
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cee2cfac0dd75e730bf43ce1307ea73279dcaf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377404"
 ---
 # <a name="developing-windows-drivers-for-usb-host-controllers"></a>USB ホスト コントローラー用 Windows ドライバーの開発
 
@@ -47,8 +47,8 @@ ms.locfileid: "56579107"
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">Windows での USB ホスト側ドライバー</a>
 <a href="get-started-with-host-controller-driver-development.md" data-raw-source="[Architecture: USB host controller extension (UCX)](get-started-with-host-controller-driver-development.md)">アーキテクチャ。USB ホスト コント ローラーの拡張機能 (UCX)</a>
 <p><strong>UCX オブジェクトおよびハンドルと理解します。</strong></p>
-<p>UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>を参照してください。</p>
-<p>基になるホスト コント ローラー ドライバーにキュー要求の場合は、UCX は、これらのオブジェクトを使用します。 詳細については、<a href="ucx-objects-and-handles-used-by-host-controller-driver.md" data-raw-source="[UCX objects and handles used by a host controller driver](ucx-objects-and-handles-used-by-host-controller-driver.md)">UCX オブジェクトと、処理ホスト コント ローラーのドライバーによって使用される</a>を参照してください。</p>
+<p>UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
+<p>基になるホスト コント ローラー ドライバーにキュー要求の場合は、UCX は、これらのオブジェクトを使用します。 詳細については、次を参照してください。 <a href="ucx-objects-and-handles-used-by-host-controller-driver.md" data-raw-source="[UCX objects and handles used by a host controller driver](ucx-objects-and-handles-used-by-host-controller-driver.md)">UCX オブジェクトと、処理ホスト コント ローラーのドライバーによって使用される</a>します。</p>
 <p></p>
 <dl>
 <dt>ホスト コント ローラーのオブジェクト (UCXCONTROLLER)</dt>

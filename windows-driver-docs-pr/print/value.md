@@ -1,5 +1,5 @@
 ---
-title: 値 (WSD)
+title: Value (WSD)
 description: WSD 値コンス トラクターを使用すると、特定のスキーマ要素からデータを取得するクエリで双方向通信のスキーマを拡張できます。
 ms.assetid: 8930e012-88ee-44ff-9abc-a15367f04ca3
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dda2e223f51cf507b07411db7d51d8f227255d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376456"
 ---
-# <a name="value-wsd"></a>値 (WSD)
+# <a name="value-wsd"></a>Value (WSD)
 
 
 WSD`Value`コンストラクトでは、Web サービス インターフェイス内の特定のスキーマ要素からデータを取得するクエリで双方向通信のスキーマを拡張できます。
@@ -35,7 +35,7 @@ WSD`Value`コンストラクトでは、Web サービス インターフェイ�
 <td><p>(省略可能)ポート モニターが、ドライバーに通知を送信するかどうかを示すブール値。 A <strong>TRUE</strong>値では、ドライバーをポート モニターが通知を送信することを示します<strong>FALSE</strong>ポート モニター ドライバーに、通知が送信しないことを示します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>フィルター</strong></p></td>
+<td><p><strong>フィルター (filter)</strong></p></td>
 <td><p>WSD モニターがクエリで指定された XML ドキュメントに適用される XPath クエリ。 このトピックで後述を参照してください。</p></td>
 </tr>
 <tr class="odd">
@@ -43,11 +43,11 @@ WSD`Value`コンストラクトでは、Web サービス インターフェイ�
 <td><p>スキーマの値の名前。</p></td>
 </tr>
 <tr class="even">
-<td><p>query</p></td>
+<td><p>クエリ (query)</p></td>
 <td><p>WSD モニターを実行するクエリの型。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>型</strong></p></td>
+<td><p><strong>type</strong></p></td>
 <td><p>内のデータ型、 <code>Value</code> 値を構築、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 <tr class="even">

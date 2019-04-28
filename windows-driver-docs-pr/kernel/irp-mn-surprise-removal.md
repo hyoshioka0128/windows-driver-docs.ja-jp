@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_SURPRISE_REMOVAL Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: fb0889a768a4593e713ac9489471c4b6794590fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381398"
 ---
 # <a name="irpmnsurpriseremoval"></a>IRP\_MN\_SURPRISE\_REMOVAL
 
@@ -54,7 +54,7 @@ PnP マネージャー IRQL でこの IRP の送信 = パッシブ\_システム
 
 この IRP では、デバイス スタックの上部にあるドライバーによって最初に処理され、各スタックの下位のドライバーに渡されます。
 
-この IRP の詳細については、[IRP の処理\_MN\_突然\_削除要求](https://msdn.microsoft.com/library/windows/hardware/ff546699)を参照してください。 デバイスの削除のサポートに関する詳細については、[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)を参照してください。
+この IRP の詳細については、次を参照してください。 [IRP の処理\_MN\_突然\_削除要求](https://msdn.microsoft.com/library/windows/hardware/ff546699)します。 デバイスの削除のサポートに関する詳細については、次を参照してください。[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
 
 **この IRP を送信します。**
 

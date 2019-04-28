@@ -1,6 +1,6 @@
 ---
-title: 印刷ジョブの表示
-description: 印刷ジョブの表示
+title: 印刷ジョブのレンダリング
+description: 印刷ジョブのレンダリング
 ms.assetid: 78967839-b518-41c0-8825-b00f8b8560e6
 keywords:
 - 印刷ジョブをプリンター グラフィックス レンダリングの DLL の WDK
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3741a69d816548e56914f5446b6166999022548
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382597"
 ---
-# <a name="rendering-a-print-job"></a>印刷ジョブの表示
+# <a name="rendering-a-print-job"></a>印刷ジョブのレンダリング
 
 
 

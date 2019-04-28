@@ -1,6 +1,6 @@
 ---
-title: GDL 構成の競合を解決します。
-description: GDL 構成の競合を解決します。
+title: GDL 構成の競合を解決する
+description: GDL 構成の競合を解決する
 ms.assetid: 02a2da63-0b7f-4aa9-b3c3-72784f409d94
 keywords:
 - GDL WDK の構成
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d73673105fbd89d939c89d5da54db30f942a801
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382567"
 ---
-# <a name="resolving-gdl-configuration-conflicts"></a>GDL 構成の競合を解決します。
+# <a name="resolving-gdl-configuration-conflicts"></a>GDL 構成の競合を解決する
 
 
 GDL パーサーは、制約に違反しないように構成を変更して自動的には、次の情報に注意してください、パーサーは、開発者の意図を認識できるようにします。

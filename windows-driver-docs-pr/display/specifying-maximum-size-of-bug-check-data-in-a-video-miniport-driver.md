@@ -1,5 +1,5 @@
 ---
-title: ビデオのミニポート ドライバーのバグ チェックのデータの最大サイズ
+title: ビデオ ミニポート ドライバーのバグ チェック データの最大サイズ
 description: ビデオのミニポート ドライバーのバグ チェックのデータの最大サイズを指定します。
 ms.assetid: 1644fe85-b5f5-44b5-96b7-258f43607171
 keywords:
@@ -10,13 +10,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 5505f45a4d2bb32dd9c3394a8da1aa383fcf71a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376040"
 ---
-# <a name="the-max-size-of-bug-check-data-in-a-video-miniport-driver"></a>ビデオのミニポート ドライバーのバグ チェックのデータの最大サイズ
+# <a name="the-max-size-of-bug-check-data-in-a-video-miniport-driver"></a>ビデオ ミニポート ドライバーのバグ チェック データの最大サイズ
 
 
 **このトピックでは、Microsoft Windows XP Service Pack 1 (SP1) 以降にのみ適用されます。**

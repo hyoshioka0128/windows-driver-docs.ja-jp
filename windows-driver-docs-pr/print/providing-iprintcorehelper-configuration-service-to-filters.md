@@ -1,17 +1,17 @@
 ---
-title: フィルターに IPrintCoreHelper 構成サービスを提供します。
-description: フィルターに IPrintCoreHelper 構成サービスを提供します。
+title: IPrintCoreHelper 構成サービスをフィルターに提供する
+description: IPrintCoreHelper 構成サービスをフィルターに提供する
 ms.assetid: 78f12957-fc05-4183-a79b-4c637afe25b2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ff7e3e6def8ff3a315da86a57ee0b27cb07acf0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376544"
 ---
-# <a name="providing-iprintcorehelper-configuration-service-to-filters"></a>フィルターに IPrintCoreHelper 構成サービスを提供します。
+# <a name="providing-iprintcorehelper-configuration-service-to-filters"></a>IPrintCoreHelper 構成サービスをフィルターに提供する
 
 
 **IPrintCoreHelper**インターフェイスは、Windows Vista Unidrv/PScript5 構成モジュールによって実装される新しいインターフェイスです。 このインターフェイスは、クライアント コンピューターを使用できます。

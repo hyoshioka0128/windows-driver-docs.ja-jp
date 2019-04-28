@@ -1,14 +1,14 @@
 ---
-Description: Describes the various tasks that a function controller client driver performs while interacting with USB function controller extension (UFX).
+Description: 関数のコント ローラーのクライアント ドライバーを USB 関数コント ローラーの拡張機能 (UFX) と対話中に実行するさまざまなタスクについて説明します。
 title: 関数のコント ローラーのクライアント ドライバーを記述します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d590b462e8898d7644737ccca9c035dfb34674c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383015"
 ---
 # <a name="write-a-function-controller-client-driver"></a>関数のコント ローラーのクライアント ドライバーを記述します。
 
@@ -17,7 +17,7 @@ ms.locfileid: "56560194"
 
 -   関数のコント ローラーのクライアント ドライバーの想定される動作をについて説明します。
 
-**適用されます。**
+**適用対象**
 
 -   Windows 10
 -   USB デバイスのコント ローラーのドライバーを記述するドライバー開発者
@@ -100,7 +100,7 @@ UFX 呼び出してドライバーの前に、クライアント ドライバー
 
 UFX エンドポイントのすべてのキューを削除し、送信、 [ **IOCTL\_内部\_USBFN\_記述子\_更新**](https://msdn.microsoft.com/library/windows/hardware/mt187895)要求クライアント ドライバーを更新するには**wMaxPacketSize**エンドポイント 0 の。 既定のエンドポイントのキューを開始し、状態を設定します UFX**既定**します。
 
-**既定値**
+**Default**
 
 UFX 呼び出し、クライアント ドライバーの[ *EVT\_UFX\_デバイス\_USB\_状態\_変更*](https://msdn.microsoft.com/library/windows/hardware/mt187863)関数。 また、状態のクラス ドライバーを通知します。 UFX セットの受信後\_UFX、アドレスの標準セットアップ パケットでは、状態を設定**アドレス**します。
 
@@ -158,7 +158,7 @@ UFX を入力し、呼び出すことによって動作状態を終了する[ *E
 
 ## <a name="related-topics"></a>関連トピック
 [Windows での USB デバイス側のドライバー](usb-device-side-drivers-in-windows.md)  
-[関数の USB コント ローラーの Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)  
+[USB ファンクション コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)  
 [UFX オブジェクトと関数の USB クライアント ドライバーによって使用されるハンドル](ufx-objects-and-handles-used-by-a-usb-function-controller.md)  
 
 

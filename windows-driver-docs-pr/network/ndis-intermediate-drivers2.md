@@ -1,6 +1,6 @@
 ---
-title: NDIS 中間ドライバ
-description: NDIS 中間ドライバ
+title: NDIS 中間ドライバー
+description: NDIS 中間ドライバー
 ms.assetid: 773d9711-fdea-4541-bb0d-6b07b50892fc
 keywords:
 - 中間ドライバー WDK ネットワーク
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4393badc6ca918eaf0ecf5120de93f329f5d587b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378317"
 ---
-# <a name="ndis-intermediate-drivers"></a>NDIS 中間ドライバ
+# <a name="ndis-intermediate-drivers"></a>NDIS 中間ドライバー
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "56528973"
 
 -   の監視とネットワーク データの統計の収集
 
-中間のドライバーを作成する前に、NDIS ミニポートとプロトコル ドライバーについてお読みください。 NDIS ミニポート ドライバーの詳細については、[NDIS ミニポート ドライバー](ndis-miniport-drivers.md)を参照してください。 NDIS プロトコル ドライバーの詳細については、[NDIS プロトコル ドライバー](ndis-protocol-drivers.md)を参照してください。
+中間のドライバーを作成する前に、NDIS ミニポートとプロトコル ドライバーについてお読みください。 NDIS ミニポート ドライバーの詳細については、次を参照してください。 [NDIS ミニポート ドライバー](ndis-miniport-drivers.md)します。 NDIS プロトコル ドライバーの詳細については、次を参照してください。 [NDIS プロトコル ドライバー](ndis-protocol-drivers.md)します。
 
 次のセクションでは、中間ドライバーを紹介し、作成し、このようなドライバーをインストールする方法について説明します。
 

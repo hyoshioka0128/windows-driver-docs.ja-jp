@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ETHERTYPE_ENCAP_TABLE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 09984b650f05b0c6b455ac3a308f1bc7a8cc1e5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380868"
 ---
 # <a name="wditlvethertypeencaptable"></a>WDI\_TLV\_ETHERTYPE\_全て\_テーブル
 
@@ -37,7 +37,7 @@ WDI\_TLV\_ETHERTYPE\_全て\_テーブルは、アソシエーションの Ether
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

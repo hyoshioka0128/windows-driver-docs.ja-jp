@@ -1,26 +1,26 @@
 ---
-title: クラスのレジストリ キーの下のレジストリ エントリの値にアクセスします。
-description: クラスのレジストリ キーの下のレジストリ エントリの値にアクセスします。
+title: クラスのレジストリ キーの下のレジストリ エントリ値へのアクセス
+description: クラスのレジストリ キーの下のレジストリ エントリ値へのアクセス
 ms.assetid: 771b5751-db9f-43fa-90d1-1c43918a3a80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54aa6b0955850869d358f9a700c7f5b85149ce5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370016"
 ---
-# <a name="accessing-registry-entry-values-under-the-class-registry-key"></a>クラスのレジストリ キーの下のレジストリ エントリの値にアクセスします。
+# <a name="accessing-registry-entry-values-under-the-class-registry-key"></a>クラスのレジストリ キーの下のレジストリ エントリ値へのアクセス
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)が含まれています[デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)対応する SPCRP_ を持たない*Xxx*識別子。 これらのプロパティには、デバイス セットアップ クラスが特徴付けられます。 統一されたデバイス プロパティのモデルを使用して[プロパティ キー](property-keys.md)をこれらのプロパティを表します。
 
 Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバイス セットアップ クラスのプロパティのほとんどをサポートします。 ただし、Windows の以前のバージョンには、統一されたデバイス プロパティのモデルのプロパティのキーはできません。 代わりに、これらのバージョンの Windows では、クラスのレジストリ キーの下の対応するシステム定義のレジストリ エントリ値を使用してこれらのプロパティを表します。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポートしてこれらのシステム定義のレジストリ エントリの値。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-システム定義のデバイス セットアップ クラスのプロパティの一覧は、[デバイス セットアップ クラス プロパティことはできませんがある対応する SPCRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff542250)を参照してください。 デバイス セットアップ クラスのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
+システム定義のデバイス セットアップ クラスのプロパティの一覧は、次を参照してください。[デバイス セットアップ クラス プロパティことはできませんがある対応する SPCRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff542250)します。 デバイス セットアップ クラスのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報には、Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる対応するレジストリ エントリの値も含まれています。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
 
 Windows Server 2003、Windows XP、および Windows 2000 でこれらのプロパティにアクセスするには、クラスのレジストリ キーを開き、これらのプロパティに対応するレジストリ エントリの値にアクセスする Windows レジストリの関数を使用します。
 

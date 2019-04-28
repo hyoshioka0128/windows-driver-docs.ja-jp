@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fd7ffd441ad6460f0ea5992da68c21b6d40696ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380090"
 ---
 # <a name="devpkeydevicesaferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
 
@@ -46,7 +46,7 @@ DEVPKEY_Device_SafeRemovalRequired デバイス プロパティは、ホット �
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +68,7 @@ Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバ�
 
 -   デバイス インスタンスが開始されたか、または、システムによって自動的に取り出すことができます。
 
--   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、[ **SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)を参照してください。
+-   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、次を参照してください。 [ **SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)します。
 
 -   デバイス インスタンスが持っていない、 [ **DEVPKEY_Device_SafeRemovalRequiredOverride** ](devpkey-device-saferemovalrequiredoverride.md)デバイス プロパティ DEVPROP_FALSE に設定します。
 

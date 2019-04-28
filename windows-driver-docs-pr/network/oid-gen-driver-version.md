@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_DRIVER_VERSION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ec8884119840a4f8af74f42663abb5368f54ff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381354"
 ---
 # <a name="oidgendriverversion"></a>OID\_GEN\_ドライバー\_バージョン
 
@@ -34,14 +34,14 @@ ms.locfileid: "56580712"
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
 必須。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS は、NDIS 6.0 とそれ以降のミニポート ドライバーのこの OID を処理します。
 
 上位バイトはメジャー バージョン番号です。下位バイトは、マイナー バージョン番号です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: テキスト ログ セクション ヘッダーの形式
-description: テキスト ログ セクション ヘッダーの形式
+title: テキスト ログ セクション ヘッダーの書式
+description: テキスト ログ セクション ヘッダーの書式
 ms.assetid: ec46a540-e888-426d-85fc-6ad2d756c7b8
 keywords:
 - セクション ヘッダーの WDK SetupAPI ログ記録
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1802e4caf2a7998bc557004201e9756eb311a745
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377072"
 ---
-# <a name="format-of-a-text-log-section-header"></a>テキスト ログ セクション ヘッダーの形式
+# <a name="format-of-a-text-log-section-header"></a>テキスト ログ セクション ヘッダーの書式
 
 
 A*テキスト ログ セクション ヘッダー*の 2 つのログ エントリで構成されます。 最初のエントリの形式が含まれています、"&gt; &gt; &gt; "プレフィックス文字列に続けて、 *section_title*フィールドおよび*instance_identifier*フィールド。 次の例では、斜体のフォント スタイル内のテキスト セクションの作成者が指定されているセクション固有のテキストのプレース ホルダーは、太字のフォントのスタイル内のテキストは、SetupAPI によって提供されるログ記録します。

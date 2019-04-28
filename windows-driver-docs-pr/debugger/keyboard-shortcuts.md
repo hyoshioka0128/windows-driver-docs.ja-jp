@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efbdfc75906ef4ecb0f054cd53f071eb0981c5d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376850"
 ---
 # <a name="keyboard-shortcuts"></a>キーボード ショートカット
 
@@ -21,7 +21,7 @@ ms.locfileid: "56580061"
 ## <span id="ddk_shortcut_keys_dbg"></span><span id="DDK_SHORTCUT_KEYS_DBG"></span>
 
 
-次のキーボード ショートカットを使用して、ウィンドウを切り替えることができます。 ウィンドウ間を移動する方法の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+次のキーボード ショートカットを使用して、ウィンドウを切り替えることができます。 ウィンドウ間を移動する方法の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
 <table>
 <colgroup>
@@ -87,7 +87,7 @@ ms.locfileid: "56580061"
 <td align="left"><p><a href="debug---go.md" data-raw-source="[Debug | Go](debug---go.md)">デバッグ |移動</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>SHIFT + F5</p></td>
+<td align="left"><p>Shift + F5</p></td>
 <td align="left"><p><a href="debug---stop-debugging.md" data-raw-source="[Debug | Stop Debugging](debug---stop-debugging.md)">デバッグ |デバッグを停止します。</a></p></td>
 </tr>
 <tr class="even">
@@ -128,7 +128,7 @@ ms.locfileid: "56580061"
 <td align="left"><p><a href="debug---step-into.md" data-raw-source="[Debug | Step Into](debug---step-into.md)">デバッグ |ステップ イン</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>SHIFT + F11</p></td>
+<td align="left"><p>Shift + F11</p></td>
 <td align="left"><p><a href="debug---step-out.md" data-raw-source="[Debug | Step Out](debug---step-out.md)">デバッグ |ステップ アウト</a></p></td>
 </tr>
 <tr class="even">
@@ -376,11 +376,11 @@ ALT +<strong> *</strong> (テンキー)</td>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1 文字左</p></td>
-<td align="left"><p>左</p></td>
+<td align="left"><p>[LEFT]</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右側の 1 つの文字</p></td>
-<td align="left"><p>そうです</p></td>
+<td align="left"><p>[RIGHT]</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>1 単語左</p></td>
@@ -392,7 +392,7 @@ ALT +<strong> *</strong> (テンキー)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>を整列します。</p></td>
-<td align="left"><p>アップ</p></td>
+<td align="left"><p>UP</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1 行下へ</p></td>

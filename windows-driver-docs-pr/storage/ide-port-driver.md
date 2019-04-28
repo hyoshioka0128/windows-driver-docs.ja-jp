@@ -5,11 +5,11 @@ ms.assetid: 8e292680-6fa7-4f6b-b4ec-6f0f0d795d03
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efa9dacd5faa39a346baac25e80b70ac8a7fcded
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383068"
 ---
 # <a name="ide-port-driver"></a>IDE ポート ドライバー
 **注**ATA ポートはドライバーと ATA ミニポート ドライバー モデルが変更されるか利用今後します。 代わりに、使用をお勧め、 [Storport ドライバー](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-driver)と[Storport ミニポート](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-miniport-drivers)ドライバー モデル。
@@ -34,7 +34,7 @@ Windows 2000 および Windows XP の IDE ドライバー モデルでは次の 
 
 5.  Microsoft では、CD-ROM (タイプ 5 SCSI) のすべてのデバイスを管理できる CD-ROM クラス ドライバーを提供します。
 
-前の図に、ドライバー スタックに対応するデバイス オブジェクトのスタックの図を表示するには、[PCI IDE コント ローラーのデバイス オブジェクトの例](device-object-example-for-a-pci-ide-controller.md)を参照してください。
+前の図に、ドライバー スタックに対応するデバイス オブジェクトのスタックの図を表示するには、次を参照してください。 [PCI IDE コント ローラーのデバイス オブジェクトの例](device-object-example-for-a-pci-ide-controller.md)します。
 
 Windows Vista およびそれ以降のバージョンのオペレーティング システムでは、IDE のスタックはによって管理、 [ATA ポート ドライバー](ata-port-driver.md)します。
 

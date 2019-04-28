@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd55b2703f6b691084f8928de0dcd8ec6e564f6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379250"
 ---
 # <a name="oidgencogetnetcardtime"></a>OID_GEN_CO_GET_NETCARD_TIME
 
@@ -31,7 +31,7 @@ typedef struct _GEN_GET_NETCARD_TIME{
 **ReadTime**  
     NIC の現地時刻。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 ミニポート ドライバーでは、そのローカル時刻の単位を指定する、 **ClockPrecision**ミニポート ドライバーが前の OID_GEN_CO_GET_TIME_CAPS クエリ応答で返される GEN_GET_TIME_CAPS 構造体の要素。
 
@@ -41,7 +41,7 @@ typedef struct _GEN_GET_NETCARD_TIME{
 
 ミニポート ドライバー返す必要があります、現地時刻に同期的に OID_GEN_CO_GET_NETCARD_TIME クエリへの応答ため、このクエリは、NIC の現地時刻とプロトコル ドライバーを同期します。 プロトコル ドライバーは、応答時間の待機時間を除外する連続 OID_GEN_CO_GET_NETCARD_TIME クエリ数回を送信する必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

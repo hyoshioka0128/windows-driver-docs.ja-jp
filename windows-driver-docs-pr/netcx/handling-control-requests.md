@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a69a536cee452975b9c0853d4911dcc0232c78b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372768"
 ---
 # <a name="handling-control-requests"></a>制御要求の処理
 
@@ -21,7 +21,7 @@ NetAdapterCx モデルでは、クライアント ドライバーは、OID (オ�
 
 NETREQUESTQUEUE オブジェクトは、管理する各 NETREQUEST の親です。 キューが自動的に NETADAPTER オブジェクト、WDF の子があるため、各キューの削除と、アダプターが削除されたときに、関連する要求。
 
-NetAdapterCx の既定親のすべての子リレーションシップを表示する、[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)を参照してください。
+NetAdapterCx の既定親のすべての子リレーションシップを表示する、次を参照してください。[概要の NetAdapterCx オブジェクト](summary-of-netadaptercx-objects.md)します。
 
 ## <a name="creating-queue-objects"></a>キューのオブジェクトを作成します。
 
@@ -29,7 +29,7 @@ NetAdapterCx モデルでは、クライアントは、(Oid) のコントロー�
 * 通常の要求 (Oid) のシーケンシャルのキューです。 NetAdapterCx では、一度に 1 つのクライアントに要求を提供します。
 * 直接要求 (Oid) の並列のキューです。 NetAdapterCx は並列で要求を提供します。
 
-これらのディスパッチ方法の詳細については、[I/O 要求のディスパッチ メソッド](../wdf/dispatching-methods-for-i-o-requests.md)を参照してください。
+これらのディスパッチ方法の詳細については、次を参照してください。 [I/O 要求のディスパッチ メソッド](../wdf/dispatching-methods-for-i-o-requests.md)します。
 
 キューを作成するこれらのメソッドを呼び出します。
 

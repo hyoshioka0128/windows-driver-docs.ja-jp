@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 494d8a3e8cd043e31c5cd526dda627439f006342
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381960"
 ---
 # <a name="setting-breakpoints"></a>ブレークポイントの設定
 
@@ -27,7 +27,7 @@ ms.locfileid: "56570791"
 
  
 
-一意な指定はブレークポイントの作成時に*ブレークポイント ID*します。 この識別子は変更されません。 ただし、ブレークポイントが削除されると、その ID は別のブレークポイントの使用可能性があります。 ブレークポイントの削除の通知を受け取る方法の詳細については、[監視イベント](monitoring-events.md)を参照してください。
+一意な指定はブレークポイントの作成時に*ブレークポイント ID*します。 この識別子は変更されません。 ただし、ブレークポイントが削除されると、その ID は別のブレークポイントの使用可能性があります。 ブレークポイントの削除の通知を受け取る方法の詳細については、次を参照してください。[監視イベント](monitoring-events.md)します。
 
 ブレークポイントの作成時に最初に無効です。つまり、実行を停止するターゲットは発生しません。 メソッドを使用して、このブレークポイントを有効にすることがあります[ **AddFlags** ](https://msdn.microsoft.com/library/windows/hardware/ff537903) 、デバッグを追加する\_ブレークポイント\_ENABLED フラグ。
 

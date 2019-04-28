@@ -1,23 +1,23 @@
 ---
-title: メッセージの発行
-description: メッセージの発行
+title: メッセージの公開
+description: メッセージの公開
 ms.assetid: 44F8FB0B-6709-4A1C-886D-3788CA39A4D2
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e41994d78d57e5049dc0efd1d7bb43aab1a64637
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373700"
 ---
-# <a name="publishing-messages"></a>メッセージの発行
+# <a name="publishing-messages"></a>メッセージの公開
 
 
 クライアントは、特定の種類でメッセージを発行できますが、サポート技術情報のメッセージを受信するユーザーまたは別のアプリまたはデバイスでメッセージを受け取ったときに制限されます。 これにより、簡単に「通知」のメッセージ送信のタイミングを管理することがなく目的のユーザーに情報をクライアントができます。

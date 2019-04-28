@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf05620ed9ad77c9f0113c6cb0e31bf525af3544
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382919"
 ---
 # <a name="runonce-registry-key"></a>RunOnce Registry キー
 
@@ -93,7 +93,7 @@ KSCATEGORY_WDMAUD = "{3E227E76-690D-11D2-8161-0000F8775BF1}"
 
     前に、*デバイス インストール アプリケーション*を作成、 **RunOnce**エントリ、システムの再起動後に管理者特権を持つユーザーがログオンする必要がありますが、現在のユーザーに通知します。
 
-    詳細については、[ログオン時に Windows Vista で実行されるアプリケーションの開発](https://go.microsoft.com/fwlink/p/?linkid=133224)を参照してください。
+    詳細については、次を参照してください。[ログオン時に Windows Vista で実行されるアプリケーションの開発](https://go.microsoft.com/fwlink/p/?linkid=133224)します。
 
  
 

@@ -8,13 +8,13 @@ ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 5c53052e59474ab79bbb7745508d28795a37ca75
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369947"
 ---
-# <a name="sending-network-data-with-net-rings"></a>Net のリングとネットワーク データを送信します。
+# <a name="sending-network-data-with-net-rings"></a>ネット リングを使用したネットワーク データの送信
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

@@ -1,6 +1,6 @@
 ---
-title: USB ビデオ クラスの拡張機能のユニット数
-description: USB ビデオ クラスの拡張機能のユニット数
+title: USB ビデオ クラス拡張ユニット
+description: USB ビデオ クラス拡張ユニット
 ms.assetid: 91addb52-4681-4f3d-bdd8-bf64f4917fc9
 keywords:
 - USB ビデオ クラス ドライバー WDK AVStream、拡張機能ユニット
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 604a0bed62f32ff21c708878f69ef8e4e8211369
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378512"
 ---
-# <a name="usb-video-class-extension-units"></a>USB ビデオ クラスの拡張機能のユニット数
+# <a name="usb-video-class-extension-units"></a>USB ビデオ クラス拡張ユニット
 
 
 このセクションでは、ユーザー モード デバイスの USB ビデオ クラスを拡張するプラグインを記述するためのガイドラインを示します。 ユーザー モード プラグインを使用すると、標準的な方法で COM アプリケーション プログラミング インターフェイス (API) とデバイスの拡張機能を公開できます。

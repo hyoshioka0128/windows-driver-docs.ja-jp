@@ -1,17 +1,17 @@
 ---
-title: C++ でのテストを作成
-description: C++ でのテストを作成
+title: C++ でテストを作成する
+description: C++ でテストを作成する
 ms.assetid: ECADDDD6-5BD4-4c43-803F-47AE44467342
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09279d214edab919394e26c6e4e1f541d3876dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372775"
 ---
-# <a name="authoring-tests-in-c"></a>C++ でのテストを作成
+# <a name="authoring-tests-in-c"></a>C++ でテストを作成する
 
 
 次のコード例では、ネイティブの C++ ファイル 1 つのテスト クラスが含まれ、2 つのテストのメソッドを示します。

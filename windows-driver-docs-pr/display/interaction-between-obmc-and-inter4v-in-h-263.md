@@ -1,19 +1,19 @@
 ---
-title: OBMC と H.263 で INTER4V 間の対話
-description: OBMC と H.263 で INTER4V 間の対話
+title: H.263 での OBMC と INTER4V の相互作用
+description: H.263 での OBMC と INTER4V の相互作用
 ms.assetid: 096c723d-ec16-49f7-acaa-62ed228338c3
 keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40cf3a96a51a07948e032c63f4c00448f6232acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381871"
 ---
-# <a name="interaction-between-obmc-and-inter4v-in-h263"></a>OBMC と H.263 で INTER4V 間の対話
+# <a name="interaction-between-obmc-and-inter4v-in-h263"></a>H.263 での OBMC と INTER4V の相互作用
 
 
 ## <span id="ddk_interaction_between_obmc_and_inter4v_in_h_263_gg"></span><span id="DDK_INTERACTION_BETWEEN_OBMC_AND_INTER4V_IN_H_263_GG"></span>
@@ -41,7 +41,7 @@ H. 263 の間の相互作用についての詳細*OBMC*、 *INTER4V*、 *B*、 *
 
 *MBdataLocation*変数は、マクロ ブロック コントロール コマンド バッファー内の最初のマクロ ブロックに 0 である必要があります。 *MBdataLocation*場合は、任意の値を含めることができます**wPatternCode**は 0 です。 ときに**wPatternCode** 0 の場合は、デコーダーはお勧めしますが、0 または次のマクロ ブロック コントロール コマンドのように同じ値のいずれかに、この値を設定する必要がありません。
 
-スキップされたマクロ ブロックを生成する詳細については、[スキップ マクロ ブロックの生成](generating-skipped-macroblocks.md)を参照してください。
+スキップされたマクロ ブロックを生成する詳細については、次を参照してください。[スキップ マクロ ブロックの生成](generating-skipped-macroblocks.md)します。
 
 ### <a name="span-idwpatterncodespanspan-idwpatterncodespanspan-idwpatterncodespanwpatterncode"></a><span id="wPatternCode"></span><span id="wpatterncode"></span><span id="WPATTERNCODE"></span>wPatternCode
 

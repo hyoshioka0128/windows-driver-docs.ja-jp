@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_LINK_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fac22d61a6ce300cb234cc680e93117e1d1bcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375686"
 ---
 # <a name="oidgenlinkparameters"></a>OID\_GEN\_リンク\_パラメーター
 
@@ -85,7 +85,7 @@ IEEE 802.3 pause フレームのサポートの種類。 このメンバーは�
 <a href="" id="ndis-link-state-pause-functions-auto-negotiated"></a>NDIS\_リンク\_状態\_一時停止\_関数\_自動\_NEGOTIATED  
 ミニポート ドライバーが自動ネゴシエーションもう一方の end で一時停止のフレームのサポート。 ミニポート ドライバーがで指定されている一時停止のフレームのサポートを使用する必要がありますこのフラグが設定されていない場合、 **PauseFunctions**メンバー。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **注**設定 OID\_GEN\_リンク\_パラメーター接続の損失が発生することができます。 この OID が設定されている場合に、ミニポート ドライバーはミニポート アダプターを再構成する必要があります。 たとえば、ミニポート ドライバーでは、ミニポート アダプターの既存の接続が失われるとをリセットできます。 再構成の特定のメカニズムは、アプリケーションに依存します。
@@ -94,7 +94,7 @@ IEEE 802.3 pause フレームのサポートの種類。 このメンバーは�
 
 OID のためのミニポート アダプターのリンクの状態が変更された場合\_GEN\_リンク\_パラメーターが要求を設定、ミニポート ドライバーを生成する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391) NDIS と新しいリンクの状態の上にあるドライバーを通知する状態を示す値。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: FC717B1C-A68A-4002-A528-BFC3521C5E8A
 ms.date: 07/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c09ae58a59a182fbb01170a7402927b9dd88336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374326"
 ---
 # <a name="setting-up-local-kernel-debugging-of-a-single-computer-manually"></a>単一コンピューターのローカル カーネル デバッグの手動設定
 

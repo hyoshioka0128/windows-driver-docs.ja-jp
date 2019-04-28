@@ -1,6 +1,6 @@
 ---
-title: 仮想アドレスを物理アドレスに変換します。
-description: 仮想アドレスを物理アドレスに変換します。
+title: 仮想アドレスから物理アドレスへの変換
+description: 仮想アドレスから物理アドレスへの変換
 ms.assetid: 5b3d19df-09cc-4131-ae64-5ce64d986df3
 keywords:
 - 仮想アドレス
@@ -14,13 +14,13 @@ keywords:
 ms.date: 05/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e870d2322fc236b90131af0ac45166caee44f224
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375496"
 ---
-# <a name="converting-virtual-addresses-to-physical-addresses"></a>仮想アドレスを物理アドレスに変換します。
+# <a name="converting-virtual-addresses-to-physical-addresses"></a>仮想アドレスから物理アドレスへの変換
 
 ## <span id="ddk_converting_virtual_addresses_to_physical_addresses_dbg"></span><span id="DDK_CONVERTING_VIRTUAL_ADDRESSES_TO_PHYSICAL_ADDRESSES_DBG"></span>
 
@@ -29,7 +29,7 @@ ms.locfileid: "56559873"
 
 仮想アドレスを物理アドレスに変換する 2 つの方法があります: を使用して、 **! vtop**拡張機能を使用して、 **! pte**拡張機能。
 
-Windows での仮想アドレスの概要については、[仮想アドレス空間](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/virtual-address-spaces)を参照してください。 
+Windows での仮想アドレスの概要については、次を参照してください。[仮想アドレス空間](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/virtual-address-spaces)します。 
 
 
 ### <a name="span-idaddressconversionusingvtopspanspan-idaddressconversionusingvtopspanaddress-conversion-using-vtop"></a><span id="address_conversion_using__vtop"></span><span id="ADDRESS_CONVERSION_USING__VTOP"></span>変換を使用して対処! vtop
@@ -194,7 +194,7 @@ c00004bc  09de9067
 
 この PTE は 0x09DE9067 の値を持ちます。 これは、2 つのフィールドのされます。
 
--   PTE の下位の 12 ビットは、*状態フラグ*します。 この場合、これらのフラグが 0x067--を等しくまたはバイナリ、0y000001100111 でします。 状態フラグの詳細については、、 [ **! pte** ](-pte.md)リファレンス ページを参照してください。
+-   PTE の下位の 12 ビットは、*状態フラグ*します。 この場合、これらのフラグが 0x067--を等しくまたはバイナリ、0y000001100111 でします。 状態フラグの詳細については、次を参照してください。、 [ **! pte** ](-pte.md)リファレンス ページです。
 
 -   PTE の上位 20 のビットが等しく、*ページ フレーム番号*(PFN) の PTE。 ここで、PFN は 0x09DE9 です。
 

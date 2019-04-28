@@ -1,17 +1,17 @@
 ---
-title: WDI TLV ジェネレーター/パーサーの特別なメンバー
+title: WDI TLV ジェネレーター/パーサーの特殊メンバー
 description: このセクションには、WDI TLV ジェネレーター/パーサーの特殊なメンバーがについて説明します
 ms.assetid: 2FD485E5-E2F9-4B21-A777-ABA9693B1223
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fdbc21dac128aa40c307f0f3a2580f578e1d73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382862"
 ---
-# <a name="wdi-tlv-generatorparser-special-members"></a>WDI TLV ジェネレーター/パーサーの特別なメンバー
+# <a name="wdi-tlv-generatorparser-special-members"></a>WDI TLV ジェネレーター/パーサーの特殊メンバー
 
 
 ## <a name="optional-members"></a>省略可能なメンバー

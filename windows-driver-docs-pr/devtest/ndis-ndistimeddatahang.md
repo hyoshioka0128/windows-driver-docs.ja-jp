@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 960fa64c4f64193f69eddf09c9f69e3eae97dd9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382973"
 ---
 # <a name="ndistimeddatahang-rule-ndis"></a>NdisTimedDataHang ルール (ndis)
 
@@ -26,7 +26,7 @@ ms.locfileid: "56531192"
 
 ミニポート ドライバーを呼び出す必要があります、 [ **NdisMSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563668)関数がすべての保留中の送信要求を完了する[ **NET\_バッファー\_リスト**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 保留中の送信要求があるを場合は、NDIS ミニポート ドライバーがそれらを完了する続行する必要があります。 少なくとも 1 つの保留中の送信要求がある場合にこの規則に違反を**NET\_バッファー\_一覧**構造とないこのような過去 22 秒で完了した要求を送信します。
 
-カーネル デバッガーを使用するには、問題の原因を識別できるようにします。 ルールのチェック\_PendingNbl、最も古いものを指すの状態を保留中[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。 使用して、 [ **! ndiskd.nbl** ](https://msdn.microsoft.com/library/windows/hardware/ff564156)デバッガー拡張機能。 デバッガーの使用方法の詳細については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
+カーネル デバッガーを使用するには、問題の原因を識別できるようにします。 ルールのチェック\_PendingNbl、最も古いものを指すの状態を保留中[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。 使用して、 [ **! ndiskd.nbl** ](https://msdn.microsoft.com/library/windows/hardware/ff564156)デバッガー拡張機能。 デバッガーの使用方法の詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
 
 |              |      |
 |--------------|------|

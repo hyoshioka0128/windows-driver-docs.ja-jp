@@ -1,6 +1,6 @@
 ---
-title: Apc の種類
-description: Apc の種類
+title: APC の種類
+description: APC の種類
 ms.assetid: 74ed953c-1b2a-40b9-9df3-16869b198b38
 keywords:
 - 非同期プロシージャ呼び出しの WDK カーネル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 514f03879913030db26c5bfc094b394de2d9768e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377026"
 ---
-# <a name="types-of-apcs"></a>Apc の種類
+# <a name="types-of-apcs"></a>APC の種類
 
 
 非同期プロシージャ コール (APC) は、非同期に実行される関数です。 Apc が遅延プロシージャ呼び出し (Dpc) と同じですが、Dpc とは異なり、Apc が特定のスレッドのコンテキスト内で実行します。 (ファイル システムとファイル システム フィルター ドライバー) 以外のドライバーを使用しないで Apc を直接、オペレーティング システムの他の部分には、Apc のしくみを認識する必要があります。

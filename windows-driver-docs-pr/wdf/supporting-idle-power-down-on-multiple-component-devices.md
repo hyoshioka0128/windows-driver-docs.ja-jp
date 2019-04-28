@@ -1,17 +1,17 @@
 ---
-title: 複数コンポーネントのデバイスでのアイドル状態の電源のサポート
-description: 複数コンポーネントのデバイスでのアイドル状態の電源のサポート
+title: 複数コンポーネント デバイスでのアイドル電源切断のサポート
+description: 複数コンポーネント デバイスでのアイドル電源切断のサポート
 ms.assetid: 81C80E30-DAF4-4EE4-AA29-AB40A6827C26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 984e23f2e2a2fc9d15d4e7b7e4105d12fb1df166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379458"
 ---
-# <a name="supporting-idle-power-down-on-multiple-component-devices"></a>複数コンポーネントのデバイスでのアイドル状態の電源のサポート
+# <a name="supporting-idle-power-down-on-multiple-component-devices"></a>複数コンポーネント デバイスでのアイドル電源切断のサポート
 
 
 \[KMDF にのみ適用されます。\]
@@ -50,7 +50,7 @@ WDF が電源のすべての参照がリリースされた後すぐに低電力�
 
 代わりに、ドライバーがパッシブのレベルで実行しているし、はしないように保証するワーカー スレッドをブロックしている呼び出しを延期する必要があります、 [ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)電源管理対象のキューの I/O のコンテキストでを呼び出すルーチンをディスパッチします。
 
-ドライバーが呼び出されていた場合[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)ドライバーを呼び出すことができます (つまり、電源の遷移中にページング可能なデータにアクセスできる)、 [ **WdfWorkItemCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff551201)フレームワークの作業項目を作成します。 ドライバーが設定されていない電源ページング可能な場合、ドライバーは、独自のシステム スレッドを作成する必要があります。 詳細については、[ **PsCreateSystemThread**](https://msdn.microsoft.com/library/windows/hardware/ff559932)を参照してください。
+ドライバーが呼び出されていた場合[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)ドライバーを呼び出すことができます (つまり、電源の遷移中にページング可能なデータにアクセスできる)、 [ **WdfWorkItemCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff551201)フレームワークの作業項目を作成します。 ドライバーが設定されていない電源ページング可能な場合、ドライバーは、独自のシステム スレッドを作成する必要があります。 詳細については、次を参照してください。 [ **PsCreateSystemThread**](https://msdn.microsoft.com/library/windows/hardware/ff559932)します。
 
 後[ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)メソッドでエラーが返されます場合でも、取得、ドライバーを呼び出す必要があります[ **PoFxReportDevicePoweredOn**](https://msdn.microsoft.com/library/windows/hardware/hh439526)します。
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad08ed5b761578950db69174323bd4d7c2e3c2de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376876"
 ---
 # <a name="completing-io-requests"></a>I/O 要求の完了
 
@@ -86,7 +86,7 @@ I/O 操作があった場合[キャンセル](canceling-i-o-requests.md)、ド�
 
 ドライバーは、同期的に、I/O 要求を送信する場合、通常呼び出し[ **WdfRequestGetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff549974)、 [ **WdfRequestGetCompletionParams** ](https://msdn.microsoft.com/library/windows/hardware/ff549961)、および[ **WdfRequestGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549965)同期呼び出しが返された後にします。 通常内からこれらのメソッドを呼び出し、ドライバーは、非同期的に、I/O 要求を送信する場合、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)コールバック関数。
 
-I/O 要求を完了する詳細については、[の同期をキャンセルし完了コード](synchronizing-cancel-and-completion-code.md)を参照してください。
+I/O 要求を完了する詳細については、次を参照してください。[の同期をキャンセルし完了コード](synchronizing-cancel-and-completion-code.md)します。
 
  
 

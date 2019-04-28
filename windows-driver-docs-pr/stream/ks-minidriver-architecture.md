@@ -1,6 +1,6 @@
 ---
-title: KS ミニドライバーのアーキテクチャ
-description: KS ミニドライバーのアーキテクチャ
+title: KS のミニドライバー アーキテクチャ
+description: KS のミニドライバー アーキテクチャ
 ms.assetid: a9c17040-72a8-4290-831b-7fb46b00f532
 keywords:
 - カーネルのアーキテクチャ、WDK のストリーミング
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87a7e23238e8591b73542fba72108da94d028667
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380111"
 ---
-# <a name="ks-minidriver-architecture"></a>KS ミニドライバーのアーキテクチャ
+# <a name="ks-minidriver-architecture"></a>KS のミニドライバー アーキテクチャ
 
 
 

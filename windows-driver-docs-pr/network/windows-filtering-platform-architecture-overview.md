@@ -1,6 +1,6 @@
 ---
-title: Windows フィルタ リング プラットフォーム アーキテクチャの概要
-description: Windows フィルタ リング プラットフォーム アーキテクチャの概要
+title: Windows フィルタリング プラットフォーム アーキテクチャの概要
+description: Windows フィルタリング プラットフォーム アーキテクチャの概要
 ms.assetid: a20efbe1-f98c-452d-a134-9f65eb6dbc04
 keywords:
 - Windows フィルタ リング プラットフォーム アーキテクチャ WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32a7a3021c4137b763a524df7c5601ec69aa5ced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378735"
 ---
-# <a name="windows-filtering-platform-architecture-overview"></a>Windows フィルタ リング プラットフォーム アーキテクチャの概要
+# <a name="windows-filtering-platform-architecture-overview"></a>Windows フィルタリング プラットフォーム アーキテクチャの概要
 
 
 このセクションでは、Windows フィルタ リング プラットフォーム アーキテクチャの概要を提供します。 Windows フィルタ リング プラットフォーム アーキテクチャの詳細については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。

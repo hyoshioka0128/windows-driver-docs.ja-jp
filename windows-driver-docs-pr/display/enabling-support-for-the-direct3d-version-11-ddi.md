@@ -1,6 +1,6 @@
 ---
-title: Direct3D のバージョン 11 DDI のサポートを有効にします。
-description: Direct3D のバージョン 11 DDI のサポートを有効にします。
+title: Direct3D バージョン 11 DDI のサポートの有効化
+description: Direct3D バージョン 11 DDI のサポートの有効化
 ms.assetid: 997d6b06-110b-403d-bcf5-350a26ecffbd
 keywords:
 - DDI サポートを有効にすると、Direct3D バージョン 11 WDK Windows 7 表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73bdda91b8dee52a87bddf59585efbc610e9e1c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379478"
 ---
-# <a name="enabling-support-for-the-direct3d-version-11-ddi"></a>Direct3D のバージョン 11 DDI のサポートを有効にします。
+# <a name="enabling-support-for-the-direct3d-version-11-ddi"></a>Direct3D バージョン 11 DDI のサポートの有効化
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

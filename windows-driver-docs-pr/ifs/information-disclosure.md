@@ -1,6 +1,6 @@
 ---
-title: 情報漏えいが起こる
-description: 情報漏えいが起こる
+title: 情報の漏洩
+description: 情報の漏洩
 ms.assetid: e5794acb-44f7-4775-854b-69884f60658a
 keywords:
 - 脅威モデルの WDK ファイル システム、情報漏えいが起こる
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c0d0885ff139ee76fc800b28e1dfbbc95bf9ac2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380956"
 ---
-# <a name="information-disclosure"></a>情報漏えいが起こる
+# <a name="information-disclosure"></a>情報の漏洩
 
 
 ## <span id="ddk_information_disclosure_if"></span><span id="DDK_INFORMATION_DISCLOSURE_IF"></span>

@@ -1,6 +1,6 @@
 ---
-title: USB ベースのカメラ キャプチャ ボタン
-description: USB ベースのカメラ キャプチャ ボタン
+title: キャプチャ ボタン付きの USB ベース カメラ
+description: キャプチャ ボタン付きの USB ベース カメラ
 ms.assetid: abbd824c-1ade-4dbc-8807-e558c444a3ea
 keywords:
 - フィルター グラフ構成 WDK ビデオ キャプチャには、USB ベースのカメラ キャプチャ ボタン
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 052c22163d86ebb35a975a3bbbcca58ec65c31f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382523"
 ---
-# <a name="usb-based-camera-with-a-capture-button"></a>USB ベースのカメラ キャプチャ ボタン
+# <a name="usb-based-camera-with-a-capture-button"></a>キャプチャ ボタン付きの USB ベース カメラ
 
 
 比較すると、少し複雑なフィルター グラフを[USB またはベース 1394 会議カメラ](usb-or-1394-based-conferencing-camera.md)ミニドライバーが静止画像をキャプチャするためのボタンをサポートするもの pin を公開する会議カメラが作成されます。 まだ暗証番号 (pin) は、ユーザー、カメラの電源ボタンをプッシュするときより高い解像度のイメージを提供できます。

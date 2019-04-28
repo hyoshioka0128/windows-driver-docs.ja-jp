@@ -1,17 +1,17 @@
 ---
-title: ストレージ カードの要件
+title: 記憶域カードの要件
 description: このトピックでは、メモリ カードの APDU 要件を説明します
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3b18621098a4a28084b8d8a54b3098a23e2595cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373620"
 ---
-# <a name="storage-card-requirements"></a>ストレージ カードの要件
+# <a name="storage-card-requirements"></a>記憶域カードの要件
 
 このセクションでは、ISO14443 4 では非準拠のカード (ストレージ カードと呼ばれます) の [全般] の [apdu] コマンド セットの要件について説明します。
 
@@ -135,7 +135,7 @@ PCSC 仕様に準拠した、このコマンドの実装があります。
 
 | コマンド | CLA  | アドイン  | P1   | P2   | Lc                | 内のデータ                                         |
 |---------|------|------|------|------|-------------------|-------------------------------------------------|
-| チェック   | 0 xff の場合 | 0xB0 | 0x00 | 0x00 | データの長さ | サービス、ブロックの数、ブロック一覧の数 |
+| CHECK   | 0 xff の場合 | 0xB0 | 0x00 | 0x00 | データの長さ | サービス、ブロックの数、ブロック一覧の数 |
 
 ### <a name="iso-15693-family"></a>ISO 15693 ファミリ
 
@@ -162,7 +162,7 @@ PCSC 仕様に準拠した、このコマンドの実装があります。
 | Tag    | データ オブジェクト                       |
 |--------|-----------------------------------|
 | 0x95   | 利用の送信し、受信 |
-| 0x5F46 | タイマー                             |
+| 0x5F46 | Timer                             |
 
 ## <a name="update-binary-command"></a>更新プログラム バイナリのコマンド
 

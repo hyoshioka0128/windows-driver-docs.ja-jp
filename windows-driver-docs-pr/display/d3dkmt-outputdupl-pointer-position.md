@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f061784980ad578f8b9f68ea5ab5420669122c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379728"
 ---
 # <a name="d3dkmtoutputduplpointerposition-structure"></a>D3DKMT\_OUTPUTDUPL\_ポインター\_位置構造体
 
@@ -36,10 +36,10 @@ typedef struct _D3DKMT_OUTPUTDUPL_POINTER_POSITION {
 } D3DKMT_OUTPUTDUPL_POINTER_POSITION;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
-**位置**
+**[Position]**
 
 **表示されます。**
 

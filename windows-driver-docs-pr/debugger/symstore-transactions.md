@@ -1,19 +1,19 @@
 ---
-title: SymStore トランザクション
-description: SymStore トランザクション
+title: SymStore のトランザクション
+description: SymStore のトランザクション
 ms.assetid: f0bb2f3f-0f6b-4ed6-809e-f55b1c537d7f
 keywords:
 - SymStore、トランザクション
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a4a657cd27e7a852210c6ae5f982e9f1e4390b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368020"
 ---
-# <a name="symstore-transactions"></a>SymStore トランザクション
+# <a name="symstore-transactions"></a>SymStore のトランザクション
 
 
 ## <span id="ddk_symbol_files_overview_dbg"></span><span id="DDK_SYMBOL_FILES_OVERVIEW_DBG"></span>
@@ -31,7 +31,7 @@ SymStore の格納方法や、シンボル ファイルを削除するたびに�
 
 これは、さまざまな理由から便利な方法です。 たとえば、これにより、簡単に再作成する場合は、ストアが失われ、何らかの方法でインデックス ファイルがまだ存在する限り、シンボル ストアです。 または、おそらくシンボル ストアを作成するときに、コンピューターに低速ネットワーク接続されているシンボル ファイルを格納しているコンピューター。 この場合、シンボル ファイルと同じコンピューター上のインデックス ファイルを作成、インデックス ファイルを 2 つ目のマシンに転送、および 2 つ目のコンピューターで、ストアを作成します。
 
-SymStore のすべてのパラメーターの完全な一覧については、[ **SymStore コマンド ライン オプション**](symstore-command-line-options.md)を参照してください。
+SymStore のすべてのパラメーターの完全な一覧については、次を参照してください。 [ **SymStore コマンド ライン オプション**](symstore-command-line-options.md)します。
 
 **注**   SymStore は複数のユーザーからの同時トランザクションをサポートしていません。 その 1 つのユーザーが指定するをお勧め記号の「管理者」を格納し、すべてを担当する**追加**と**del**トランザクション。
 

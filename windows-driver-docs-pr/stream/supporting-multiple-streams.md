@@ -1,6 +1,6 @@
 ---
-title: 複数のストリームをサポートしています。
-description: 複数のストリームをサポートしています。
+title: 複数ストリームのサポート
+description: 複数ストリームのサポート
 ms.assetid: 89f79078-129a-44cc-8b7e-5f5c1c33a473
 keywords:
 - Stream.sys クラス ドライバー WDK Windows 2000 のカーネル、複数のストリーム
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 460dc4969c5937ba7a8b67461624e5e67328a9f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371819"
 ---
-# <a name="supporting-multiple-streams"></a>複数のストリームをサポートしています。
+# <a name="supporting-multiple-streams"></a>複数ストリームのサポート
 
 
 

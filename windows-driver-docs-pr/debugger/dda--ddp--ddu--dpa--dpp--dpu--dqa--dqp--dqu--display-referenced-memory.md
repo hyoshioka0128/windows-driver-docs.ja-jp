@@ -1,5 +1,5 @@
 ---
-title: dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu (参照されているメモリを表示する)
+title: dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu (参照メモリの表示)
 description: Dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、および dqu コマンド指定した位置にポインターを表示、そのポインターを逆参照および関連付けられているメモリを表示します。
 ms.assetid: af3db4e2-e3fc-4c4d-9432-13b87e699716
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0141024d6efe46fce102f7880ea94f5026e8be4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374916"
 ---
-# <a name="dda-ddp-ddu-dpa-dpp-dpu-dqa-dqp-dqu-display-referenced-memory"></a>dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu (参照されているメモリを表示する)
+# <a name="dda-ddp-ddu-dpa-dpp-dpu-dqa-dqp-dqu-display-referenced-memory"></a>dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu (参照メモリの表示)
 
 
 **Dda**、 **ddp**、 **ddu**、 **dpa**、 **dpp**、 **dpu**、 **dqa**、 **dqp**、および**dqu**コマンドは、指定した位置にポインターを表示し、そのポインターを逆参照し、メモリをその結果を表示さまざまな形式での場所です。
@@ -58,7 +58,7 @@ dpu [Options] [Range]
 (カーネル モードのみ)同じ **/p**, 書き込み結合のメモリが読み取られる点が異なります。 かっこ、 **wc**含める必要があります。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-表示するメモリ領域を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。 省略した場合*範囲*、最後の表示コマンドの終了位置から始まるメモリが表示されます。 場合*範囲*省略してない前の表示は、コマンドが使用されている、現在の命令ポインターで、表示が開始されます。 単純なアドレスを指定すると、既定値の範囲の長さは 128 バイトになります。
+表示するメモリ領域を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。 省略した場合*範囲*、最後の表示コマンドの終了位置から始まるメモリが表示されます。 場合*範囲*省略してない前の表示は、コマンドが使用されている、現在の命令ポインターで、表示が開始されます。 単純なアドレスを指定すると、既定値の範囲の長さは 128 バイトになります。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -71,7 +71,7 @@ dpu [Options] [Range]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>注釈
 -------

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_STATISTICS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cdf0225cb619a87db386adb6140a3472e80edfae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372440"
 ---
 # <a name="oidgenstatistics"></a>OID\_GEN\_統計情報
 
@@ -177,12 +177,12 @@ NDIS\_統計\_情報の構造は次のように定義されます。
 <a href="" id="ifhcoutbroadcastoctets"></a>**ifHCOutBroadcastOctets**  
 ブロードキャスト パケットのエラーのない転送されるバイト数。 この数は同じ値を[OID\_GEN\_ブロードキャスト\_バイト\_XMIT](oid-gen-broadcast-bytes-xmit.md)を返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ミニポート ドライバーは、統計カウンターを実装し、正しい統計値をレポートする必要があります。 統計カウンターは、符号なし 64 ビット値です。 NDIS ミニポート ドライバーが統計を返します\_統計\_情報構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

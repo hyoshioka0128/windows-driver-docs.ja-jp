@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bae16d094d3067ab461aa019a0d8c1a872947220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369486"
 ---
 # <a name="definedevpropkey"></a>DEFINE_DEVPROPKEY
 
@@ -76,14 +76,14 @@ DEFINE_DEVPROPKEY マクロでは、Windows Vista および Windows の以降の
 <a href="" id="pid"></a>*pid*  
 DEVPROPID に型指定された変数の値を提供する、 **pid** DEVPROPKEY 構造体のメンバーを (プロパティの識別子)。 プロパティの識別子は、2 つ以上である必要があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DEFINE_DEVPROPKEY 構造がの一部、[統一されたデバイス プロパティのモデル](https://msdn.microsoft.com/library/windows/hardware/ff553515)します。
 
 DEFINE_DEVPROPKEY マクロは、作成に使用できる、 [ **DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff543544)カスタム デバイス プロパティを表す構造体です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

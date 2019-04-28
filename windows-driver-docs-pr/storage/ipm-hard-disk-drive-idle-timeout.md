@@ -5,11 +5,11 @@ ms.assetid: 1dcc261a-803c-4c0e-a68e-29b00f46cd32
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd731f1b57f8c4c6050431247ae0302f6286bf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378736"
 ---
 # <a name="ipm-hard-disk-drive-idle-timeout"></a>IPM ハード ディスク ドライブのアイドル タイムアウト
 
@@ -28,7 +28,7 @@ HDD メディアのスピン ダウン時に、実現する省電力は、製造
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>詳細</strong></p></td>
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>フレンドリ名</p></td>

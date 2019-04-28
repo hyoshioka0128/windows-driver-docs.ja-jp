@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6901252e447d6635428b41b42d48f50b6a9f7e59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376070"
 ---
 # <a name="dbh-commands"></a>DBH コマンド
 
@@ -45,7 +45,7 @@ DBH オプションを制御して他の基本的なタスクを実行するコ�
 <p><strong>symopt +</strong><em>オプション</em></p>
 <p><strong>symopt -</strong><em>オプション</em></p>
 <p><strong>symopt</strong></p></td>
-<td align="left"><p>シンボル オプションを設定します。 ない<strong>+</strong>または<strong>-</strong>の値<em>オプション</em>現在のシンボルのオプションが置き換えられます。 場合<strong>+</strong>または<strong>-</strong>を使用する<em>オプション</em>追加または削除するオプションを指定する前にスペースが必要があります、 <strong> +</strong>または<strong>-</strong>が、その後に領域がありません。 パラメーターなしでは、現在のシンボルのオプションが表示されます。 DBH が起動され、すべてのシンボルのオプションの既定値は 0x10C13 が。 使用可能なオプションの一覧は、<a href="symbol-options.md" data-raw-source="[Setting Symbol Options](symbol-options.md)">シンボル オプションを設定</a>を参照してください。</p></td>
+<td align="left"><p>シンボル オプションを設定します。 ない<strong>+</strong>または<strong>-</strong>の値<em>オプション</em>現在のシンボルのオプションが置き換えられます。 場合<strong>+</strong>または<strong>-</strong>を使用する<em>オプション</em>追加または削除するオプションを指定する前にスペースが必要があります、 <strong> +</strong>または<strong>-</strong>が、その後に領域がありません。 パラメーターなしでは、現在のシンボルのオプションが表示されます。 DBH が起動され、すべてのシンボルのオプションの既定値は 0x10C13 が。 使用可能なオプションの一覧は、次を参照してください。<a href="symbol-options.md" data-raw-source="[Setting Symbol Options](symbol-options.md)">シンボル オプションを設定</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>help</strong></p></td>

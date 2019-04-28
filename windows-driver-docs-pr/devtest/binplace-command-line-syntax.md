@@ -1,5 +1,5 @@
 ---
-title: BinPlace コマンドライン構文
+title: BinPlace のコマンド ライン構文
 description: BinPlace は、コマンドラインで、次の構文を使用します。
 ms.assetid: 8489b7ae-3e3b-41d5-b9a6-0b69aa92087e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f30c322ba0ab87ed2c47e38afe96a6be1f203cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381887"
 ---
-# <a name="binplace-command-line-syntax"></a>BinPlace コマンドライン構文
+# <a name="binplace-command-line-syntax"></a>BinPlace のコマンド ライン構文
 
 
 BinPlace は、コマンドラインで、次の構文を使用します。
@@ -146,7 +146,7 @@ BinPlace は左から右へのコマンド ラインを解析します。 いく
 
 ### <a name="span-idsupplyingparametersinafilespanspan-idsupplyingparametersinafilespansupplying-parameters-in-a-file"></a><span id="supplying_parameters_in_a_file"></span><span id="SUPPLYING_PARAMETERS_IN_A_FILE"></span>ファイル内のパラメーターを指定します。
 
-テキスト ファイルから BinPlace にパラメーターを渡すことになります。 これを行う 2 つの方法はあります。
+テキスト ファイルから BinPlace にパラメーターを渡すことになります。 これには 2 つの方法があります。
 
 -   ファイル名を指定するには、BINPLACE で\_オーバーライド\_環境変数のフラグ。 このファイルは、読み取りとその内容を BinPlace が実行されるたびに、パラメーターとして使用されます。 このファイル内のパラメーターは、実際に BinPlace コマンドラインに表示されるパラメーターの前に解析されます。
 

@@ -1,19 +1,19 @@
 ---
-title: 使用できないシンボル ストアを処理します。
-description: 使用できないシンボル ストアを処理します。
+title: 使用できないシンボル ストアの処理
+description: 使用できないシンボル ストアの処理
 ms.assetid: 42e3518b-b139-49cd-96cc-ea31f6df7964
 keywords:
 - SymProxy、ストアが利用不可
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 838b9e52c1bb27d61bb4a250201fe58face94809
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374912"
 ---
-# <a name="dealing-with-unavailable-symbol-stores"></a>使用できないシンボル ストアを処理します。
+# <a name="dealing-with-unavailable-symbol-stores"></a>使用できないシンボル ストアの処理
 
 
 取得する SymSrv が構成されているシンボルの 1 つ格納されている場合は、ファイルからが停止しているか利用できない状態には、結果ファイルの要求ごとに、クライアントから待機時間が長い場合があります。 SymSrv は SymProxy から呼び出されると、問題のストアにアクセスしようとして停止する SymSrv を設定してこれらの待機のほとんどを回避できます。 この機能が関与している場合は、一定の時間間隔を設定中に指定された数の同じストアからのタイムアウトが発生した後のストアを使用しようとしています。 SymSrv が停止します。 .Ini ファイルまたはレジストリから、これらの変数の値を制御できます。

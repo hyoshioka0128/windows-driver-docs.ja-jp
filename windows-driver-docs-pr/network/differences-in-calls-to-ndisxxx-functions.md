@@ -1,19 +1,19 @@
 ---
-title: NdisXxx 関数への呼び出しの違い
-description: NdisXxx 関数への呼び出しの違い
+title: NdisXxx 関数の呼び出しの違い
+description: NdisXxx 関数の呼び出しの違い
 ms.assetid: 967ad913-24ca-4f05-b10b-1daa88845ed3
 keywords:
 - NdisCmXxx 関数 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e60f11be0dba00b38df3876e4cd53ea46dce6924
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379580"
 ---
-# <a name="differences-in-calls-to-ndisxxx-functions"></a>NdisXxx 関数への呼び出しの違い
+# <a name="differences-in-calls-to-ndisxxx-functions"></a>NdisXxx 関数の呼び出しの違い
 
 
 

@@ -5,11 +5,11 @@ description: このトピックで IWiaMiniDrv COM インターフェイスの�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c50ca3271d97ba61cf381660e414438bc85f07d4
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381812"
 ---
 # <a name="iwiaminidrv-com-interface"></a>IWiaMiniDrv COM インターフェイス
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: af4639590b1e434e15273f978c192112d78096c8
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379740"
 ---
 # <a name="symchk-command-line-options"></a>SymChk のコマンドライン オプション
 
@@ -89,7 +89,7 @@ Quiet モードを有効にします。 すべての出力が表示されなく�
 このファイル内の行にスペースが含まれている場合は、引用符で囲む必要があります。 このファイル内でセミコロンは、コメント文字です--すべてセミコロンと行の末尾の間は無視されます。
 
 <span id="________im_______ManifestList______"></span><span id="________im_______manifestlist______"></span><span id="________IM_______MANIFESTLIST______"></span> **/im** *ManifestList*   
-コマンドへの入力を使用して、以前に作成したマニフェスト ファイルに指定します、 **/om**パラメーター。 マニフェスト ファイルには、シンボルが取得されるファイルに関する情報が含まれています。 詳細についてはマニフェスト ファイルを使用して、[SymChk でマニフェスト ファイルの使用](using-a-manifest-file-with-symchk.md)を参照してください。
+コマンドへの入力を使用して、以前に作成したマニフェスト ファイルに指定します、 **/om**パラメーター。 マニフェスト ファイルには、シンボルが取得されるファイルに関する情報が含まれています。 詳細についてはマニフェスト ファイルを使用して、次を参照してください。 [SymChk でマニフェスト ファイルの使用](using-a-manifest-file-with-symchk.md)します。
 
 <span id="________om_______Manifest______"></span><span id="________om_______manifest______"></span><span id="________OM_______MANIFEST______"></span> **/om** *Manifest*   
 マニフェスト ファイルが作成されたことを指定します。 マニフェスト ファイルにはシンボルが取得されを使用してファイルのセットに関する情報が含まれています、 **/im**は後でのパラメーター。
@@ -310,7 +310,7 @@ SymChk では、一度にすべてのパスを確認する代わりに個別に�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-SymChk の詳細については、[を使用して SymChk](using-symchk.md)を参照してください。
+SymChk の詳細については、次を参照してください。[を使用して SymChk](using-symchk.md)します。
 
  
 

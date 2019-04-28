@@ -5,11 +5,11 @@ ms.assetid: 9507fb1a-ce2a-4ce9-8272-77c8c9d0a92c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a5428809627f1e8a7559a192d9bf060fefea84fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378972"
 ---
 # <a name="msfclinkevent-wmi-class"></a>MSFC\_LinkEvent WMI クラス
 

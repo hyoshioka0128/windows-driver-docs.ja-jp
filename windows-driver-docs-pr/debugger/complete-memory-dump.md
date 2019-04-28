@@ -1,20 +1,20 @@
 ---
-title: 完全メモリ ダンプ
-description: 完全メモリ ダンプ
+title: 詳細なメモリ ダンプ
+description: 詳細なメモリ ダンプ
 ms.assetid: ccc4d22a-89af-4c7d-a982-f77c682cd001
 keywords:
 - 完全メモリ ダンプ、ダンプ ファイル
-- 完全メモリ ダンプ
+- 詳細なメモリ ダンプ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab8af3de383a4830d162bb0368b22392cced4c79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375072"
 ---
-# <a name="complete-memory-dump"></a>完全メモリ ダンプ
+# <a name="complete-memory-dump"></a>詳細なメモリ ダンプ
 
 
 ## <span id="ddk_complete_memory_dump_dbg"></span><span id="DDK_COMPLETE_MEMORY_DUMP_DBG"></span>

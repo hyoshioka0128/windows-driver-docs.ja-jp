@@ -1,17 +1,17 @@
 ---
-title: Windows 10 の組み込みのカメラ アプリの設定の OEM のガイダンス
+title: Windows 10 組み込みカメラ アプリの設定に関する OEM ガイダンス
 description: Windows 10 用の新しい組み込みのカメラ アプリは、さまざまな OEM によって必要な構成を行わなくても、Windows プラットフォームでサポートされるハードウェアで機能する設計されています。
 ms.assetid: 567D2083-9837-44A6-97FB-AD0C9B9EB067
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88056937684d00ff2a0fa5c66c32c86a06d9b67d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372380"
 ---
-# <a name="oem-guidance-on-settings-for-the-windows-10-in-box-camera-app"></a>Windows 10 の組み込みのカメラ アプリの設定の OEM のガイダンス
+# <a name="oem-guidance-on-settings-for-the-windows-10-in-box-camera-app"></a>Windows 10 組み込みカメラ アプリの設定に関する OEM ガイダンス
 
 
 Windows 10 用の新しい組み込みのカメラ アプリは、さまざまな OEM によって必要な構成を行わなくても、Windows プラットフォームでサポートされるハードウェアで機能する設計されています。 カメラ アプリについては、によって通知デバイスのハードウェアと、適切な既定値と、ユーザーのオプションを選択する設定を確認しています。

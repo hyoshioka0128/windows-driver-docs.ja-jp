@@ -1,6 +1,6 @@
 ---
-title: 擬似ベクター グラフィックスのサポート
-description: 擬似ベクター グラフィックスのサポート
+title: 擬似ベクトル グラフィックス サポート
+description: 擬似ベクトル グラフィックス サポート
 ms.assetid: 8eeba51b-00fa-4bf3-a78c-ac1d1adc9696
 keywords:
 - ベクター グラフィックス WDK Unidrv、pseudovector グラフィック
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80d139ccde5437e1ea3d0f27d7ac9ca863ecb8ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372444"
 ---
-# <a name="pseudo-vector-graphics-support"></a>擬似ベクター グラフィックスのサポート
+# <a name="pseudo-vector-graphics-support"></a>擬似ベクトル グラフィックス サポート
 
 
 

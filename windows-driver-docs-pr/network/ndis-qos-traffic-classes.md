@@ -5,11 +5,11 @@ ms.assetid: 0DE61F97-7173-4D91-90F3-20EAFB810251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e05568cda29e6447344c3251b3786b9dc89abb15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378256"
 ---
 # <a name="ndis-qos-traffic-classes"></a>NDIS QoS トラフィック クラス
 
@@ -19,14 +19,14 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 <a href="" id="priority-level-and-flow-control"></a>優先度レベルとフロー制御  
 このポリシーは、エグレス トラフィックの IEEE 802.1p の優先度レベルと省略可能なフロー コントロール アルゴリズムを定義します。
 
-詳細については、[優先度レベルとフロー制御](priority-levels-and-flow-control.md)を参照してください。
+詳細については、次を参照してください。[優先度レベルとフロー制御](priority-levels-and-flow-control.md)します。
 
 <a href="" id="traffic-selection-algorithms--tsas-"></a>トラフィックの選択アルゴリズム (TSAs)  
 このポリシーは、ネットワーク アダプターがその送信キューからの配信のエグレス トラフィックがどのように選択する方法を指定します。 たとえば、アダプターでは、IEEE 802.1p の優先度またはトラフィック クラスごとに割り当てられているエグレス帯域幅の割合に基づく送信パケットを選択できます。
 
-詳細については、[伝送選択アルゴリズム (TSAs)](transmission-selection-algorithms--tsas-.md)を参照してください。
+詳細については、次を参照してください。[伝送選択アルゴリズム (TSAs)](transmission-selection-algorithms--tsas-.md)します。
 
-**注**  帯域幅の割り当てはの Enhanced Transmission Selection (ETS) TSA のみをサポートします。 詳細については、[Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)を参照してください。
+**注**  帯域幅の割り当てはの Enhanced Transmission Selection (ETS) TSA のみをサポートします。 詳細については、次を参照してください。 [Enhanced Transmission Selection (ETS) アルゴリズム](enhanced-transmission-selection--ets--algorithm.md)します。
 
  
 
@@ -44,7 +44,7 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 
 -   ETS TSA を使用するトラフィック クラスごとに割り当てられている送信帯域幅。
 
-OID メソッド要求[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)もトラフィックの分類を指定します。 これらの分類は、送信パケットと IEEE 802.1p の優先度のレベル間のリレーションシップを定義します。 詳細については、[NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)を参照してください。
+OID メソッド要求[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)もトラフィックの分類を指定します。 これらの分類は、送信パケットと IEEE 802.1p の優先度のレベル間のリレーションシップを定義します。 詳細については、次を参照してください。 [NDIS QoS トラフィックの分類](ndis-qos-traffic-classifications.md)します。
 
  
 

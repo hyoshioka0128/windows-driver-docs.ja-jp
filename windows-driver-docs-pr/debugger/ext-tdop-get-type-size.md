@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10e1481ff1b5e54ac5a2479ee7eda94978be54ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379895"
 ---
 # <a name="exttdopgettypesize"></a>EXT\_TDOP\_取得\_型\_サイズ
 
 
 EXT\_TDOP\_取得\_型\_のサブ操作のサイズ、 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作は、指定された型指定されたデータのサイズを返します。
 
-**パラメーター**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**操作**  
 EXT に設定\_TDOP\_取得\_型\_このサブ操作のサイズ。

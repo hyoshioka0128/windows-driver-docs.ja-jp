@@ -1,14 +1,14 @@
 ---
-Description: Here are some example designs for USB Type-C system.
+Description: ここでは、C-USB 型システムの一部の例のデザインです。
 title: USB タイプ-c システムのハードウェアの設計
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44a2677550b5c56a958b77a9af31ec3844a8263d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371851"
 ---
 # <a name="hardware-design-usb-type-c-systems"></a>ハードウェアのデザイン:USB Type-C システム
 
@@ -44,7 +44,7 @@ USB タイプを押しながら C システム埋め込みコント ローラー
 
 システム埋め込みコント ローラーでは、Microsoft によって提供されるインボックス ドライバーを USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) 仕様を実装するには、UcmUcsi.sys を読み込みます。
 
-[UCSI ドライバー](ucsi.md)します。 ドライバーの読み込まれたデバイス スタックの詳細については、[ドライバーとシステムの USB 型-C# のコンポーネントをサポートするためにコント ローラーが埋め込まれた](architecture--usb-type-c-in-a-windows-system.md#drivers)を参照してください。
+[UCSI ドライバー](ucsi.md)します。 ドライバーの読み込まれたデバイス スタックの詳細については、次を参照してください。[ドライバーとシステムの USB 型-C# のコンポーネントをサポートするためにコント ローラーが埋め込まれた](architecture--usb-type-c-in-a-windows-system.md#drivers)します。
 
 
 埋め込みコント ローラーを搭載したシステム非 ACPI のトランスポートを使用しています。 

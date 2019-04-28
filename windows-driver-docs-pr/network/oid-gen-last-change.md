@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_LAST_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 40330e5150a2ef45be4c3057ec319fd971adbd66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375696"
 ---
 # <a name="oidgenlastchange"></a>OID\_GEN\_最後\_変更
 
@@ -25,7 +25,7 @@ ms.locfileid: "56571881"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 要求されません。 NDIS インターフェイス プロバイダーのみです。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
@@ -36,7 +36,7 @@ ms.locfileid: "56571881"
 
 インターフェイスのプロバイダーは、NDIS を返した場合\_状態\_成功すると、クエリの結果は、最後のコンピューターの再起動 (ミリ秒単位) の状態の変更時刻を指定する ULONG64 値。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

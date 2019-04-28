@@ -1,6 +1,6 @@
 ---
-title: 書き込み NDIS 中間ドライバ
-description: 書き込み NDIS 中間ドライバ
+title: NDIS 中間ドライバーの作成
+description: NDIS 中間ドライバーの作成
 ms.assetid: c37224b2-8d96-44c2-8b56-884089b9cfcd
 keywords:
 - 中間ドライバー WDK ネットワーク
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 778305aac1f12c04b2a1569e32533e7aba4fe4f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379776"
 ---
-# <a name="writing-ndis-intermediate-drivers"></a>書き込み NDIS 中間ドライバ
+# <a name="writing-ndis-intermediate-drivers"></a>NDIS 中間ドライバーの作成
 
 
 

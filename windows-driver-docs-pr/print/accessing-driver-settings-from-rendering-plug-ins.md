@@ -1,6 +1,6 @@
 ---
-title: プラグインのレンダリングからドライバーの設定へのアクセス
-description: プラグインのレンダリングからドライバーの設定へのアクセス
+title: レンダリング プラグインからドライバー設定にアクセスする
+description: レンダリング プラグインからドライバー設定にアクセスする
 ms.assetid: d13526f5-85e1-4036-98fb-aea2c6d5a1e3
 keywords:
 - プラグインを WDK 印刷ドライバーへのアクセス設定の表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0784a4ebe720ecd0124c5edc29b28d75d386aa84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372876"
 ---
-# <a name="accessing-driver-settings-from-rendering-plug-ins"></a>プラグインのレンダリングからドライバーの設定へのアクセス
+# <a name="accessing-driver-settings-from-rendering-plug-ins"></a>レンダリング プラグインからドライバー設定にアクセスする
 
 
 

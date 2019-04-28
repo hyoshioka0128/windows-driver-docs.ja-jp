@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87869a9f37bb50b1ff3688ae0b92f946c7b0fb67
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369505"
 ---
 # <a name="wiaipaitemcategory"></a>WIA\_IPA\_項目\_カテゴリ
 
@@ -33,7 +33,7 @@ WIA\_IPA\_項目\_WIA 項目のグループ化されたカテゴリがカテゴ�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
 <a name="remarks"></a>コメント
 -------
@@ -84,7 +84,7 @@ WIA には、次のカテゴリを定義します。
 <span id="WIA_CATEGORY_AUTO"></span><span id="wia_category_auto"></span>WIA\_カテゴリ\_自動  
 Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windows/hardware/ff539395)WIA プロパティをサポートするために必要なは[スキャンの自動構成](https://msdn.microsoft.com/library/windows/hardware/ff539393)します。
 
-上記のカテゴリは、WIA 項目を処理するかを使用する方法を定義します。 たとえば、項目が完成したファイルである場合は、データが静的で、デバイスに配置されていることを想定できます。 項目は、フィーダーを表している場合は、ドキュメント フィーダーの必要なプロパティが含まれると、ドキュメント フィーダー付きのように動作することを期待できます。 これらのカテゴリの詳細については、[WIA 項目カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff552678)を参照してください。
+上記のカテゴリは、WIA 項目を処理するかを使用する方法を定義します。 たとえば、項目が完成したファイルである場合は、データが静的で、デバイスに配置されていることを想定できます。 項目は、フィーダーを表している場合は、ドキュメント フィーダーの必要なプロパティが含まれると、ドキュメント フィーダー付きのように動作することを期待できます。 これらのカテゴリの詳細については、次を参照してください。 [WIA 項目カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff552678)します。
 
 次の表では、カテゴリとその項目のフラグ、WIA がグループ化を示します。 次の表では、すべての WIA を定義する WIA 項目フラグの完全な一覧は含まれません。 これらのフラグの完全な一覧を参照してください。 [ **WIA\_IPA\_項目\_フラグ**](wia-ipa-item-flags.md)します。
 
@@ -296,7 +296,7 @@ Windows 7 以降では、[自動項目](https://msdn.microsoft.com/library/windo
 </tr>
 <tr class="odd">
 <td><p>WIA_CATEGORY_AUTO</p></td>
-<td><p>プロパティには、自動構成をスキャンするためのものが含まれます。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff552744" data-raw-source="[WIA Properties Supported by an Auto Item](https://msdn.microsoft.com/library/windows/hardware/ff552744)">WIA して自動アイテムのプロパティがサポートされている</a>を参照してください。</p></td>
+<td><p>プロパティには、自動構成をスキャンするためのものが含まれます。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff552744" data-raw-source="[WIA Properties Supported by an Auto Item](https://msdn.microsoft.com/library/windows/hardware/ff552744)">WIA して自動アイテムのプロパティがサポートされている</a>します。</p></td>
 <td><p>スキャナーのスキャン設定を自動構成を表す WIA 自動項目。</p></td>
 </tr>
 </tbody>

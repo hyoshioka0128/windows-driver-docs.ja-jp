@@ -5,13 +5,13 @@ ms.assetid: bff8eb0b-f571-405f-b930-3003e2c50621
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4aeffbafc960ad92289d51f5ae7738d4582851d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379130"
 ---
-# <a name="what-is-the-text-that-precedes-each-trace-message"></a>各トレース メッセージの前にあるテキストとは何ですか。
+# <a name="what-is-the-text-that-precedes-each-trace-message"></a>各トレース メッセージの前にあるテキスト
 
 
 [Tracefmt](tracefmt.md)と[traceview で](traceview.md)追加、[トレース メッセージのプレフィックス](trace-message-prefix.md)を書式を設定する各トレース メッセージ。 プレフィックスは、トレース メッセージに関するデータから成る文字列です。 Tracefmt と traceview で出力では、プレフィックスを表示できます。

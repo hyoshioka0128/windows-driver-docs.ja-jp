@@ -1,17 +1,17 @@
 ---
-title: SMS のアプリの開発
-description: SMS のアプリの開発
+title: SMS アプリの開発
+description: SMS アプリの開発
 ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a557fd4fd86601539752af582208ead05fe5ae2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380275"
 ---
-# <a name="developing-sms-apps"></a>SMS のアプリの開発
+# <a name="developing-sms-apps"></a>SMS アプリの開発
 
 
 Windows 8、Windows 8.1、および Windows 10 UWP アプリにモバイル ネットワーク オペレーター、モバイル ブロード バンド アダプター Ihv、Oem、および SMS のアクセス権を持つ、パートナーのソフトウェア ベンダーのアプリのショート メッセージ サービス (SMS) のテキスト メッセージング プラットフォームを提供します。
@@ -86,7 +86,7 @@ Windows 8、Windows 8.1、および Windows 10 UWP アプリにモバイル ネ�
 
 SMS へのアクセスは、サービスのメタデータやデバイスのメタデータで指定されます。 デバイス メタデータ パッケージは、特定のデバイスとその UWP デバイスのアプリ間のリンクを作成する XML ファイルのセットです。 リンクは、モバイル ブロード バンドのアダプターが埋め込まれているコンピューターを構築する oem 向けの HardwareId の IHV モバイル ブロード バンド アダプター、またはコンピューターのハードウェア コンピューター デバイスのコンテナーの Id に基づいています。
 
-サービス メタデータの詳細については、[サービス メタデータ](service-metadata.md)を参照してください。
+サービス メタデータの詳細については、次を参照してください。[サービス メタデータ](service-metadata.md)します。
 
 モバイル ネットワーク オペレーターと Ihv、Windows 8、Windows 8.1、および Windows 10 モバイル ブロード バンドのアダプターを自動的にダウンロードして、ユーザーが初めてデバイスを接続すると、Microsoft Store からモバイル ブロード バンドのアプリをインストールします。 Windows 8.1 および Windows 10 では、モバイル ブロード バンド アプリに追加されます、**すべてのアプリ**ビュー。
 
@@ -109,7 +109,7 @@ Windows 8 を実行しているユーザー、設定チャームを使用して�
 
 MNOs は、Windows のプロビジョニングし、プラットフォームに SMS 通知の管理用のカスタムのフィルタ リング規則を指定します。 メッセージのフィルタ リング規則が指定されていない場合、SMS プラットフォームはすべてのアプリに使用できる一般的な SMS メッセージとしてすべての SMS メッセージを分類します。
 
-通知フィルターの詳細については、[mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)を参照してください。
+通知フィルターの詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
 
 ## <a name="span-iddevelopsmsappspanspan-iddevelopsmsappspanspan-iddevelopsmsappspandeveloping-your-sms-app"></a><span id="DevelopSMSApp"></span><span id="developsmsapp"></span><span id="DEVELOPSMSAPP"></span>SMS アプリの開発
 

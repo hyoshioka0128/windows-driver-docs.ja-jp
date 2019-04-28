@@ -1,6 +1,6 @@
 ---
-title: ヒープ AGP を管理します。
-description: ヒープ AGP を管理します。
+title: AGP ヒープの管理
+description: AGP ヒープの管理
 ms.assetid: edeed3bc-c107-4286-9d5a-7fdef89cc4e1
 keywords:
 - ヒープ WDK DirectDraw
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f49054ed927054834d35b11682c854b2eccb2db0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380404"
 ---
-# <a name="managing-agp-heaps"></a>ヒープ AGP を管理します。
+# <a name="managing-agp-heaps"></a>AGP ヒープの管理
 
 
 ## <span id="ddk_managing_agp_heaps_gg"></span><span id="DDK_MANAGING_AGP_HEAPS_GG"></span>

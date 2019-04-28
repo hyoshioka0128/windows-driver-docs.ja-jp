@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ee4b5b1da62391dfafdf226ceeaa3686364e1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381994"
 ---
 # <a name="security-during-kernel-mode-debugging"></a>カーネルモード デバッグ中のセキュリティ
 
@@ -34,7 +34,7 @@ ms.locfileid: "56578716"
 
 リモート ユーザーがアクションを実行するホスト コンピューターに使用するを防ぐために必要な場合[保護モード](secure-mode.md)します。
 
-予期しないリモート接続を防ぐ方法の推奨事項は、[セキュリティ リモート デバッグ中に](security-during-remote-debugging.md)を参照してください。
+予期しないリモート接続を防ぐ方法の推奨事項は、次を参照してください。[セキュリティ リモート デバッグ中に](security-during-remote-debugging.md)します。
 
 リモート デバッグを実行していない場合は、正しくないシンボル ファイルおよび拡張 Dll の注意する必要がありますもします。 シンボルまたは信頼する拡張機能は読み込まれません。
 

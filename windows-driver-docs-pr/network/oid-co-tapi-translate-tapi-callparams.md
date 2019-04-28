@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48009bed0a7d7f7a66e83ad3b3de62bafc768c60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380703"
 ---
 # <a name="oidcotapitranslatetapicallparams"></a>OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 
@@ -57,7 +57,7 @@ typedef struct _CO_TAPI_TRANSLATE_TAPI_CALLPARAMS {
 場合は、クライアント設定内のビット CO_TAPI_USE_DEFAULT_CALLPARAMS **ulFlags**クライアントが TAPI 呼び出しのパラメーターを指定していません。 この場合、コール マネージャーまたは MCM ドライバーは、デバイスの既定の NDIS 呼び出しパラメーターを返す必要があります。 デバイスの既定の NDIS 呼び出しパラメーターがない場合、コール マネージャーまたは MCM ドライバーは NDIS_STATUS_FAILURE を返す必要があります。
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

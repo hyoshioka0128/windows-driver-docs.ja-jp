@@ -5,11 +5,11 @@ ms.assetid: 99C2BF61-E87E-4C3B-BE7E-C16B5318EC1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e49faced65a34a893e64b6c5b67c64696f92b01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376595"
 ---
 # <a name="querying-the-pci-base-address-registers-of-a-virtual-function"></a>仮想関数の PCI ベース アドレス レジスターのクエリ
 
@@ -41,7 +41,7 @@ OID\_SRIOV\_PROBED\_バー クエリ要求に含まれる、 [ **NDIS\_SRIOV\_PR
 
 同じ値は、管理オペレーティング システムで実行されている PCI ドライバによって実行される PCI バーのクエリを次に各棒、ドライバーによって返される値があります。 PF のミニポート ドライバーを呼び出すことができます[ **NdisMQueryProbedBars** ](https://msdn.microsoft.com/library/windows/hardware/hh451520)にこの情報を確認します。
 
-PCI デバイスの詳細については、ベース アドレスのレジスタは、、 *PCI ローカル バス仕様*を参照してください。
+PCI デバイスの詳細については、ベース アドレスのレジスタは、次を参照してください。、 *PCI ローカル バス仕様*します。
 
  
 

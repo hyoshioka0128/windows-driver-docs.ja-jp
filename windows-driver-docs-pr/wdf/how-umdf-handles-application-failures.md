@@ -1,5 +1,5 @@
 ---
-title: UMDF がアプリケーションのエラーを処理する方法
+title: UMDF によるアプリケーション エラーの処理方法
 description: ユーザー モード ドライバー フレームワーク (UMDF) とオペレーティング システム、アプリケーションが失敗したときの操作について説明します。 両方の UMDF バージョン 1 と 2 に適用されます。
 ms.assetid: ac59a5fe-5975-455f-9da3-318c0692bf9c
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58794bae3ae80ed4a737240b5bd3f0180963f752
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377407"
 ---
-# <a name="how-umdf-handles-application-failures"></a>UMDF がアプリケーションのエラーを処理する方法
+# <a name="how-umdf-handles-application-failures"></a>UMDF によるアプリケーション エラーの処理方法
 
 
 このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) とオペレーティング システム、アプリケーションが失敗したときの操作について説明します。 両方の UMDF バージョン 1 と 2 に適用されます。

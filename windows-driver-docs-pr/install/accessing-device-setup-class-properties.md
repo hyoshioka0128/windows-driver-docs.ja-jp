@@ -1,17 +1,17 @@
 ---
-title: デバイス セットアップ クラスのプロパティにアクセスします。
-description: デバイス セットアップ クラスのプロパティにアクセスします。
+title: デバイス セットアップ クラスのプロパティへのアクセス
+description: デバイス セットアップ クラスのプロパティへのアクセス
 ms.assetid: cea33f31-1aaf-445e-9175-def58ea26588
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af2ccfe7b4477e146e5569820251c84a58b12a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382925"
 ---
-# <a name="accessing-device-setup-class-properties"></a>デバイス セットアップ クラスのプロパティにアクセスします。
+# <a name="accessing-device-setup-class-properties"></a>デバイス セットアップ クラスのプロパティへのアクセス
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)次が含まれています。
@@ -20,7 +20,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 -   SPCRP_ を持たないプロパティ*Xxx*識別子が、対応するシステム定義のレジストリ エントリの値。
 
-Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラス プロパティにアクセスする方法については、[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)を参照してください。
+Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラス プロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
 
 Windows Server 2003、Windows XP、Windows 2000 に対応するデバイス セットアップ クラス プロパティにアクセスする方法については、次のトピックを参照してください。
 

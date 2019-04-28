@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dbbedd2128f5627539b9ad4f27ab9f896aa3294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382962"
 ---
 # <a name="d3dddimultiplaneoverlayfiltertype-enumeration"></a>D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_種類の列挙型
 

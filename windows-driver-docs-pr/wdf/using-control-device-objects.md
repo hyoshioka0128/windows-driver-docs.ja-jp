@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccdd70f979d6822baeb0acb643ec2022a77dc03c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374009"
 ---
 # <a name="using-control-device-objects"></a>制御デバイス オブジェクトの使用
 
@@ -43,7 +43,7 @@ A*制御デバイス オブジェクト*プラグ アンド プレイ (PnP) や�
 
 2.  PnP がサポートされていないデバイス用のドライバーです。
 
-    このようなドライバーは、このようなデバイスのデバイス オブジェクトがデバイス スタックに存在していない、PnP 機能を提供しないためコントロール デバイス オブジェクトを使用する必要があります。 非 PnP デバイスのサポートの詳細については、[非 PnP ドライバーとカーネル モード ドライバー フレームワークを使用して](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)を参照してください。
+    このようなドライバーは、このようなデバイスのデバイス オブジェクトがデバイス スタックに存在していない、PnP 機能を提供しないためコントロール デバイス オブジェクトを使用する必要があります。 非 PnP デバイスのサポートの詳細については、次を参照してください。[非 PnP ドライバーとカーネル モード ドライバー フレームワークを使用して](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)します。
 
 ### <a name="creating-a-control-device-object"></a>コントロールのデバイス オブジェクトを作成します。
 

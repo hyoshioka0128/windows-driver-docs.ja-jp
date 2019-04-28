@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69b533ecdd1c4be9efe7a0576e7c0d45dce6a205
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379603"
 ---
 # <a name="wiadpcexposuremode"></a>WIA\_DPC\_露出\_モード
 
@@ -49,7 +49,7 @@ WIA\_DPC\_露出\_モード プロパティは、カメラの現在の露出モ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

@@ -1,6 +1,6 @@
 ---
-title: 表面的な行のスタイル
-description: 表面的な行のスタイル
+title: スタイル付きのコスメティック線
+description: スタイル付きのコスメティック線
 ms.assetid: 07e72190-7c8e-471e-9851-ccc037312c5c
 keywords:
 - WDK の GDI の行に表面的なスタイル
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff6006683ce59cfb0f38598a6fe3f0d9984fd20b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375990"
 ---
-# <a name="styled-cosmetic-lines"></a>表面的な行のスタイル
+# <a name="styled-cosmetic-lines"></a>スタイル付きのコスメティック線
 
 
 ## <span id="ddk_styled_cosmetic_lines_gg"></span><span id="DDK_STYLED_COSMETIC_LINES_GG"></span>

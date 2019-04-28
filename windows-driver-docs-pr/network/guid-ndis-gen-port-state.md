@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2909886d1406b833e5926535e4ceeac812ad1a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380925"
 ---
 # <a name="guidndisgenportstate"></a>GUID_NDIS_GEN_PORT_STATE
 
@@ -23,5 +23,5 @@ NDIS は、この GUID を処理し、ミニポート ドライバーが、OID �
 
 GUID を持つ NDIS が返すデータ バッファーを含む、 [NDIS_PORT_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569624)構造体。
 
-ポートの状態の詳細については、[OID_GEN_PORT_STATE](oid-gen-port-state.md)を参照してください。
+ポートの状態の詳細については、次を参照してください。 [OID_GEN_PORT_STATE](oid-gen-port-state.md)します。
 

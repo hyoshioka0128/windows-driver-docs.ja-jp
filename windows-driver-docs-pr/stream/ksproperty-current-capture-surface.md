@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8813c23df76d2f92ef2b8027b8f9e0afbfd0ab86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375190"
 ---
 # <a name="kspropertycurrentcapturesurface"></a>KSPROPERTY\_現在\_キャプチャ\_画面
 
@@ -69,7 +69,7 @@ KSPROPERTY\_現在\_キャプチャ\_サーフェスのステータスを返し�
 
 無効な値は 0 です[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff557647)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

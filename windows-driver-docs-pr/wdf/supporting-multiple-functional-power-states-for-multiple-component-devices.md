@@ -1,17 +1,17 @@
 ---
 title: 複数コンポーネントのデバイス、1 つまたは複数の機能の電力状態
-description: 1 つまたは複数の機能の電力状態での複数コンポーネントのデバイスのサポート
+description: 1 つまたは複数の機能電源状態を持つ複数コンポーネント デバイスのサポート
 ms.assetid: D601A0F6-A035-4161-879A-D495518E7EC6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d91b5bc63d0c7913db3bdd0c0fb106339fce3c3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379452"
 ---
-# <a name="supporting-multiple-component-devices-with-single-or-multiple-functional-power-states"></a>1 つまたは複数の機能の電力状態での複数コンポーネントのデバイスのサポート
+# <a name="supporting-multiple-component-devices-with-single-or-multiple-functional-power-states"></a>1 つまたは複数の機能電源状態を持つ複数コンポーネント デバイスのサポート
 
 
 \[KMDF にのみ適用されます。\]
@@ -32,7 +32,7 @@ ms.locfileid: "56549242"
 
 さらに、ドライバーを呼び出すことができます[framework ルーチンの電源を](https://msdn.microsoft.com/library/windows/hardware/hh450961)power control の要求を送信して、待機時間の指定に直接保存場所、およびウェイク要件。
 
-PoFx の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
+PoFx の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
 
  
 

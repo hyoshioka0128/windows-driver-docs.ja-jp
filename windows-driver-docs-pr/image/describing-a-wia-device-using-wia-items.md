@@ -1,17 +1,17 @@
 ---
-title: WIA を WIA 項目を使用してデバイスを記述します。
-description: WIA を WIA 項目を使用してデバイスを記述します。
+title: WIA 項目を使用する WIA デバイスの記述
+description: WIA 項目を使用する WIA デバイスの記述
 ms.assetid: d8149f78-e095-48f9-be79-ff115b25f14e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5df21a7249de123b39cb2a049a697ae09143be51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373206"
 ---
-# <a name="describing-a-wia-device-using-wia-items"></a>WIA を WIA 項目を使用してデバイスを記述します。
+# <a name="describing-a-wia-device-using-wia-items"></a>WIA 項目を使用する WIA デバイスの記述
 
 
 

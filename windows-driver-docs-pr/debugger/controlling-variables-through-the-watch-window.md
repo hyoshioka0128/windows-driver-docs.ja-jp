@@ -1,6 +1,6 @@
 ---
-title: '[ウォッチ] ウィンドウで変数を制御します。'
-description: '[ウォッチ] ウィンドウで変数を制御します。'
+title: ウォッチ ウィンドウからの変数の制御
+description: ウォッチ ウィンドウからの変数の制御
 ms.assetid: bd857442-fbd7-4c00-9743-6077d38ee38e
 keywords:
 - ウォッチ ウィンドウで、グローバル変数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fd952b95525585095a9008dcdfef5c5ca7c6a92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375040"
 ---
-# <a name="controlling-variables-through-the-watch-window"></a>[ウォッチ] ウィンドウで変数を制御します。
+# <a name="controlling-variables-through-the-watch-window"></a>ウォッチ ウィンドウからの変数の制御
 
 
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>

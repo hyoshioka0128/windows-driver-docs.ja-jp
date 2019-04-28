@@ -1,6 +1,6 @@
 ---
-title: プリンターの色の機能を識別します。
-description: プリンターの色の機能を識別します。
+title: プリンターの色機能を特定する
+description: プリンターの色機能を特定する
 ms.assetid: 24abf76d-c0f9-440e-b825-8b39ea9ab807
 keywords:
 - プリンター インターフェイス DLL の WDK、サポートされている色の機能
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85344b81de44a0e82d1c9e4b5f80e96544b8c307
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380837"
 ---
-# <a name="identifying-a-printers-color-capability"></a>プリンターの色の機能を識別します。
+# <a name="identifying-a-printers-color-capability"></a>プリンターの色機能を特定する
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 83b496dc-8c47-46fb-b703-837eb536cb66
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11bf5496941d34ac84e1c2bca748e7cca915d184
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370963"
 ---
 # <a name="creating-a-wia-camera-item-tree-layout"></a>WIA カメラ項目のツリー レイアウトを作成します。
 
@@ -21,7 +21,7 @@ Microsoft Windows Me、および Windows XP で WIA カメラの項目のツリ�
 
 ![windows 用の wia カメラの項目を示すダイアグラムがツリー me および windows xp](images/camera-tree.png)
 
-Windows Vista 以降のオペレーティング システムでカメラのツリーの図では、[WIA 項目フラグの使用状況の例とカテゴリ](example-usage-of-wia-item-flags-and-categories.md)を参照してください。
+Windows Vista 以降のオペレーティング システムでカメラのツリーの図では、次を参照してください。 [WIA 項目フラグの使用状況の例とカテゴリ](example-usage-of-wia-item-flags-and-categories.md)します。
 
 カメラの項目のツリーのルート項目には、すべての標準的な WIA ミニドライバー情報およびカメラ固有のプロパティが含まれています。 カメラに固有のプロパティには、撮影した画像の数とその他のカメラ コントロールのプロパティが含まれます。
 
@@ -29,7 +29,7 @@ Windows Vista 以降のオペレーティング システムでカメラのツ�
 
 ミニドライバー ライターがファイルを与えることができますおよびフォルダーは、どの名前をそのユーザーの要望を項目します。 ただし、WIA 項目のツリー内の各項目は、カメラの物理的なデータ項目を表すし、カメラの実際のデータ項目の候補を示す名前を指定する必要があります。
 
-データ項目が追加またはカメラから削除されたときに、カメラの内容とその WIA 項目のツリーを同期する WIA ミニドライバーの責任になります。 これを行う方法の例は、[WIA 項目のツリー構造を変更する](changing-the-wia-item-tree-structure.md)を参照してください。
+データ項目が追加またはカメラから削除されたときに、カメラの内容とその WIA 項目のツリーを同期する WIA ミニドライバーの責任になります。 これを行う方法の例は、次を参照してください。 [WIA 項目のツリー構造を変更する](changing-the-wia-item-tree-structure.md)します。
 
 WIA サービスを介して、アプリケーションは、次の操作を実行できます。
 

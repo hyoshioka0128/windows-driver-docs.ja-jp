@@ -1,6 +1,6 @@
 ---
-title: Stream クラスのインターフェイスに登録します。
-description: Stream クラスのインターフェイスに登録します。
+title: ストリーム クラス インターフェイスへの登録
+description: ストリーム クラス インターフェイスへの登録
 ms.assetid: dfc94f8d-0c0a-44ed-a4f8-791ce49aba2d
 keywords:
 - ビデオ キャプチャ WDK AVStream、Stream クラス インターフェイスを登録します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df66766eebcaa06a8d0636c1fd4d9c4c3f9c1c15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376394"
 ---
-# <a name="registering-with-the-stream-class-interface"></a>Stream クラスのインターフェイスに登録します。
+# <a name="registering-with-the-stream-class-interface"></a>ストリーム クラス インターフェイスへの登録
 
 
 Stream クラス ミニドライバーでは、次の手順を使用して初期化し、データをストリーミングする準備します。

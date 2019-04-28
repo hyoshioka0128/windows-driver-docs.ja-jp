@@ -9,11 +9,11 @@ keywords:
 ms.date: 11/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ec7bbab7c8c72979949578e3b6b782c8288da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378270"
 ---
 # <a name="protocol-drivers"></a>プロトコル ドライバー
 
@@ -24,7 +24,7 @@ ms.locfileid: "56551562"
 トランスポート プロトコルのドライバーでは、上端にあるプロトコル スタックの上位レベルのドライバーにプライベート インターフェイスがあります。
 
 > [!NOTE]
-> NDIS ドライバー スタックと 4 つすべての NDIS ドライバーの種類間のリレーションシップを示す図の詳細については、[NDIS ドライバー スタック](ndis-driver-stack.md)を参照してください。
+> NDIS ドライバー スタックと 4 つすべての NDIS ドライバーの種類間のリレーションシップを示す図の詳細については、次を参照してください。 [NDIS ドライバー スタック](ndis-driver-stack.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 

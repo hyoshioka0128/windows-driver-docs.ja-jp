@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_ENUMERATE_PORTS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b622ba3d331a92898e07e07d55233ebaff71a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381352"
 ---
 # <a name="oidgenenumerateports"></a>OID\_GEN\_ENUMERATE\_ポート
 
@@ -32,7 +32,7 @@ NDIS は、この OID を処理し、ミニポート ドライバーには、こ
 
 NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功でクエリの結果を示し、 [ **NDIS\_ポート\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff566786)構造体. **NumberOfPorts**の NDIS メンバー\_ポート\_ミニポート アダプターに関連付けられているアクティブなポートの数が配列に含まれています。 **ポート**の NDIS メンバー\_ポート\_配列へのポインターのリストに含まれる[ **NDIS\_ポート\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566791)構造体。 各 NDIS\_ポート\_の特性構造が 1 つの NDIDS ポートの特性を定義します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

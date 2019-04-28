@@ -1,6 +1,6 @@
 ---
-title: ポート設定のタイムアウト値
-description: ポート設定のタイムアウト値
+title: ポート タイムアウト値の設定
+description: ポート タイムアウト値の設定
 ms.assetid: bf39670b-440d-46f9-9110-790d36eb3b49
 keywords:
 - ポート管理 WDK 印刷、タイムアウト値
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c4dfcd6fd4ad424b61c57f2f92b9c42f339c45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372064"
 ---
-# <a name="setting-port-time-out-values"></a>ポート設定のタイムアウト値
+# <a name="setting-port-time-out-values"></a>ポート タイムアウト値の設定
 
 
 

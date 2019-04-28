@@ -1,20 +1,20 @@
 ---
-Description: Describes the USB connector manager (UCM) that manages a USB Type-C connector and the expected behavior of a connector driver.
-title: USB タイプ-c コネクタのドライバーを作成します。
+Description: USB タイプ-c コネクタとコネクタのドライバーの想定される動作を管理する USB コネクタ マネージャ (UCM) について説明します。
+title: USB Type-C コネクタ ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 98120b794c42334977fbe6f8bbadb18f2adddf32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377472"
 ---
-# <a name="write-a-usb-type-c-connector-driver"></a>USB タイプ-c コネクタのドライバーを作成します。
+# <a name="write-a-usb-type-c-connector-driver"></a>USB Type-C コネクタ ドライバーを記述する
 
 これらのシナリオで USB 型-c コネクタのドライバーを記述する必要があります。
 
--   USB タイプ-c ハードウェアに電源 (PD) の配信のステート マシンを処理する機能がある場合。 それ以外の場合、型-C# の USB ポート コント ローラーのドライバーを書き込むことを検討します。 詳細については、[型-C# の USB ポート コント ローラー ドライバー](write-a-usb-type-c-port-controller-driver.md)を参照してください。
+-   USB タイプ-c ハードウェアに電源 (PD) の配信のステート マシンを処理する機能がある場合。 それ以外の場合、型-C# の USB ポート コント ローラーのドライバーを書き込むことを検討します。 詳細については、次を参照してください。[型-C# の USB ポート コント ローラー ドライバー](write-a-usb-type-c-port-controller-driver.md)します。
 
 -   場合は、ハードウェアの埋め込みコント ローラーではありません。 それ以外の場合、Microsoft によって提供されるインボックス ドライバー、UcmUcsi.sys を読み込みます。 (を参照してください[UCSI ドライバー](ucsi.md)) ACPI トランスポートまたは[UCSI クライアント ドライバーを書く](write-a-ucsi-driver.md)非 ACPI トランスポート。 
 
@@ -29,7 +29,7 @@ ms.locfileid: "56549725"
 -   [USB 3.1 と USB 型-C# の仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)
 -   [USB 電源配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows 10
 
@@ -101,7 +101,7 @@ UCM クラスの拡張機能は、データと電源のロール、充電レベ�
 
     オペレーティング システムは、現在のデータ ロールが正しくないことにあります。 その場合は、クラス拡張は、必要なロールのスワップ操作を実行するドライバーのコールバック関数を呼び出します。
 
-> Microsoft から提供された USB 型 C ポリシー マネージャーは、USB 型-C# のコネクタのアクティビティを監視します。 Windows、バージョンは 1809 には、一連のポリシー マネージャーにクライアント ドライバーを記述するインターフェイスのプログラミングが導入されています。 クライアント ドライバーは、USB 型-C# のコネクタのポリシーの決定に参加できます。 この設定すると、エクスポート カーネル モード ドライバーまたはユーザー モード ドライバーを記述できます。 詳細については、[種類 C ポリシー マネージャーの USB クライアント ドライバーの記述](policy-manager-client.md)を参照してください。
+> Microsoft から提供された USB 型 C ポリシー マネージャーは、USB 型-C# のコネクタのアクティビティを監視します。 Windows、バージョンは 1809 には、一連のポリシー マネージャーにクライアント ドライバーを記述するインターフェイスのプログラミングが導入されています。 クライアント ドライバーは、USB 型-C# のコネクタのポリシーの決定に参加できます。 この設定すると、エクスポート カーネル モード ドライバーまたはユーザー モード ドライバーを記述できます。 詳細については、次を参照してください。[種類 C ポリシー マネージャーの USB クライアント ドライバーの記述](policy-manager-client.md)します。
 
 ## <a name="expected-behavior-of-the-client-driver"></a>クライアント ドライバーの想定される動作
 
@@ -395,7 +395,7 @@ UCM クラスの拡張機能は、コネクタのデータまたは電源の方�
 
 
 ## <a name="related-topics"></a>関連トピック
-[USB タイプ-c コネクタの Windows ドライバーの開発](developing-windows-drivers-for-usb-type-c-connectors.md)  
+[USB Type-C コネクタ用 Windows ドライバーの開発](developing-windows-drivers-for-usb-type-c-connectors.md)  
 
 
 

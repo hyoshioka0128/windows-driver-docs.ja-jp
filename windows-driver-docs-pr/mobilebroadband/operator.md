@@ -5,11 +5,11 @@ ms.assetid: 770ad50d-d42d-49ad-a302-e839a0ca1fb4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bbcdd8a09ec6e0235d0be7dbdb76115614ac561c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375748"
 ---
 # <a name="operator"></a>演算子
 
@@ -142,7 +142,7 @@ ms.locfileid: "56553885"
 </xs:element>
 ```
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 演算子の要素が必要です。

@@ -1,12 +1,12 @@
 ---
-title: NFC CX のクイック スタート ガイド
+title: NFC CX クイック スタート ガイド
 author: EliotSeattle
 description: NFC クラスの拡張機能を使用して、NFC 機能ドライバーを記述するためのクイック スタート ガイドです。
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 - CX
 ms.author: eliotgra
@@ -16,13 +16,13 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
 ms.openlocfilehash: 7fab3eb7b3e5d420717f88a7deab73b9687bdc9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378885"
 ---
-# <a name="nfc-cx-quick-start-guide"></a>NFC CX のクイック スタート ガイド
+# <a name="nfc-cx-quick-start-guide"></a>NFC CX クイック スタート ガイド
 
 このガイドでは、NFC クラスの拡張機能 (NFC CX) ドライバーを使用して、NFC 機能ドライバーを作成する方法を示します。
 
@@ -50,7 +50,7 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
 
 1. Visual Studio で、作成、新しい「ユーザー モード ドライバー、空 (UMDF V2)」プロジェクト。
 
-    **ファイル**メニューで、**新規**、 をクリックし、**プロジェクト**します。 **Visual C**ノード [ **Windows ドライバー**、] をクリックして**WDF**、順にクリックします**ユーザー モード ドライバー、空 (UMDF V2)**
+    **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。 **Visual C**ノード [ **Windows ドライバー**、] をクリックして**WDF**、順にクリックします**ユーザー モード ドライバー、空 (UMDF V2)**
 
     ![image](images/quick-start-new-project.png)
 
@@ -426,6 +426,6 @@ NFC コント ローラーに NCI パケットを送信する方法を決定す�
     - A [GPIO 割り込み](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-interrupts)イベント コールバック。 (は<sup>2</sup>C および SPI)
     - A [USB の継続的なリーダー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-)コールバック。
 
-## <a name="logging"></a>ログ記録
+## <a name="logging"></a>ログの記録
 
 デバッグを容易にできるように、クライアント ドライバーへのログ記録の追加を検討してください。 両方[ETW トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)と[WPP トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)優れたオプションです。

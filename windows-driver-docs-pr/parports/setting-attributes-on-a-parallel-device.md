@@ -1,6 +1,6 @@
 ---
-title: 並列のデバイスに属性を設定
-description: 並列のデバイスに属性を設定
+title: パラレル デバイスの属性の設定
+description: パラレル デバイスの属性の設定
 ms.assetid: 10df9a1b-99ec-46b1-b515-10fb20fe2aed
 keywords:
 - デバイスの属性、WDK を並列します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0d430a405c113f99b0ad4c307e88464ef490da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370940"
 ---
-# <a name="setting-attributes-on-a-parallel-device"></a>並列のデバイスに属性を設定
+# <a name="setting-attributes-on-a-parallel-device"></a>パラレル デバイスの属性の設定
 
 
 

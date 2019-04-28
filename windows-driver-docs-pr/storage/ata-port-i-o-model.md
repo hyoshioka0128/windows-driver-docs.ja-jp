@@ -1,6 +1,6 @@
 ---
-title: ATA のポートの I/O モデル
-description: ATA のポートの I/O モデル
+title: ATA ポート I/O モデル
+description: ATA ポート I/O モデル
 ms.assetid: 6feaf2c4-63b2-4ab2-9d4d-7259406be652
 keywords:
 - ATA ポート ドライバー WDK、I/O
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fc0e040f38737b1fa1b197e98b0018d70f2af25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380128"
 ---
-# <a name="ata-port-io-model"></a>ATA のポートの I/O モデル
+# <a name="ata-port-io-model"></a>ATA ポート I/O モデル
 
 
 ## <span id="ddk_ata_port_i_o_model_kg"></span><span id="DDK_ATA_PORT_I_O_MODEL_KG"></span>
@@ -27,9 +27,9 @@ ATA ポート ドライバー、Storport ドライバーと同様には、I/O �
 
 その一方で、SCSI ポート ドライバーは、I/O のプル モデルを使用します。 I/O のプル モデルでは、SCSI ポート ドライバーは、ミニポート ドライバーへの I/O 要求を同期的に転送し、[次へ] の I/O 要求を送信する前に、新しい入力を要求するミニポート ドライバーに待機します。 さらに、ミニポート ドライバーでは、I/O 要求のフローを制御し、ポート ドライバーからの要求をプルダウンします。
 
-Storport ドライバーの I/O モデルの詳細については、[Storport I/O モデル](storport-i-o-model.md)を参照してください。
+Storport ドライバーの I/O モデルの詳細については、次を参照してください。 [Storport I/O モデル](storport-i-o-model.md)します。
 
-SCSI ポート ドライバーの I/O モデルの詳細については、[SCSI ポート I/O モデル](scsi-port-i-o-model.md)を参照してください。
+SCSI ポート ドライバーの I/O モデルの詳細については、次を参照してください。 [SCSI ポート I/O モデル](scsi-port-i-o-model.md)します。
 
  
 

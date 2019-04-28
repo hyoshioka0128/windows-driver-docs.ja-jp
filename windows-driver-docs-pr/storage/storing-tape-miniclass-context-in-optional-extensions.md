@@ -1,6 +1,6 @@
 ---
-title: 省略可能な拡張機能でテープ Miniclass コンテキストを格納します。
-description: 省略可能な拡張機能でテープ Miniclass コンテキストを格納します。
+title: オプションの拡張でのテープ ミニクラス コンテキストの格納
+description: オプションの拡張でのテープ ミニクラス コンテキストの格納
 ms.assetid: 9b259403-2fae-4708-8765-2d998a535620
 keywords:
 - テープ ドライバー WDK 記憶域、記憶域のコンテキスト
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9a3330ca4ee4770a4bb3bfbb47c45e103b9f217
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376467"
 ---
-# <a name="storing-tape-miniclass-context-in-optional-extensions"></a>省略可能な拡張機能でテープ Miniclass コンテキストを格納します。
+# <a name="storing-tape-miniclass-context-in-optional-extensions"></a>オプションの拡張でのテープ ミニクラス コンテキストの格納
 
 
 ## <span id="ddk_storing_tape_miniclass_context_in_optional_extensions_kg"></span><span id="DDK_STORING_TAPE_MINICLASS_CONTEXT_IN_OPTIONAL_EXTENSIONS_KG"></span>

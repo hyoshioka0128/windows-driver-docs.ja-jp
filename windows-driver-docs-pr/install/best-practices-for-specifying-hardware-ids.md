@@ -1,17 +1,17 @@
 ---
-title: ハードウェア Id を指定するためのベスト プラクティス
-description: ハードウェア Id を指定するためのベスト プラクティス
+title: ハードウェア ID の指定のベスト プラクティス
+description: ハードウェア ID の指定のベスト プラクティス
 ms.assetid: 95dcf1b1-b2cd-473f-9660-a91fda20ffc2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e4d0487a3f14a456896014a30802902dbddf939
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378376"
 ---
-# <a name="best-practices-for-specifying-hardware-ids"></a>ハードウェア Id を指定するためのベスト プラクティス
+# <a name="best-practices-for-specifying-hardware-ids"></a>ハードウェア ID の指定のベスト プラクティス
 
 
 [ **HardwareIDList** ](https://msdn.microsoft.com/library/windows/hardware/ff546121)要素は、デバイスの 1 つまたは複数のハードウェアの識別文字列を指定します。 各文字列がで指定された、 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114) XML 要素。 オペレーティング システムが最初の識別文字列については、デバイスを照会し、しを持つデバイス メタデータ パッケージを読み込み、 **HardwareID**この文字列と一致する値。

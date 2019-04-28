@@ -1,16 +1,16 @@
 ---
-Description: A USB device provides information about itself in data structures called USB descriptors. This section provides information about device, configuration, interface, and endpoint descriptors and ways to retrieve them from a USB device.
-title: 標準の USB ディスクリプター
+Description: USB デバイスは、USB 記述子と呼ばれるデータ構造自体に関する情報を提供します。 このセクションでは、デバイス、構成、インターフェイス、およびエンドポイント記述子および USB デバイスから取得する方法についての情報を提供します。
+title: 標準の USB 記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d72b445cd88a078b261dfcdee731338b8e332bcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379935"
 ---
-# <a name="standard-usb-descriptors"></a>標準の USB ディスクリプター
+# <a name="standard-usb-descriptors"></a>標準の USB 記述子
 
 
 **要約**
@@ -194,7 +194,7 @@ iInterface:           0x02
 <tr class="odd">
 <td>WDM ベースのクライアント ドライバー</td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538943" data-raw-source="[&lt;strong&gt;UsbBuildGetDescriptorRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538943)"><strong>UsbBuildGetDescriptorRequest</strong></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff540365" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_CONFIGURATION_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540365)"><strong>_URB_CONTROL_GET_CONFIGURATION_REQUEST</strong> </a>各インターフェイスの記述子を解析します。 詳細については、<a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>を参照してください。</p></td>
+<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff540365" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_CONFIGURATION_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540365)"><strong>_URB_CONTROL_GET_CONFIGURATION_REQUEST</strong> </a>各インターフェイスの記述子を解析します。 詳細については、次を参照してください。 <a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -251,7 +251,7 @@ bInterval:          0x01
 <tr class="odd">
 <td>WDM ベースのクライアント ドライバー</td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538943" data-raw-source="[&lt;strong&gt;UsbBuildGetDescriptorRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538943)"><strong>UsbBuildGetDescriptorRequest</strong></a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff540365" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_CONFIGURATION_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540365)"><strong>_URB_CONTROL_GET_CONFIGURATION_REQUEST</strong> </a>の各エンドポイント記述子解析します。 詳細については、<a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>を参照してください。</p></td>
+<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff540365" data-raw-source="[&lt;strong&gt;_URB_CONTROL_GET_CONFIGURATION_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540365)"><strong>_URB_CONTROL_GET_CONFIGURATION_REQUEST</strong> </a>の各エンドポイント記述子解析します。 詳細については、次を参照してください。 <a href="how-to-select-a-configuration-for-a-usb-device.md" data-raw-source="[How to select a configuration for a USB device](how-to-select-a-configuration-for-a-usb-device.md)">USB デバイスの構成を選択する方法</a>します。</p></td>
 </tr>
 </tbody>
 </table>

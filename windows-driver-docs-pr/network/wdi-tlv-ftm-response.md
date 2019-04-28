@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 6d2b4ba9140eb8577e76af1f48bfcc458f04ebe6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382885"
 ---
 # <a name="wditlvftmresponse"></a>WDI_TLV_FTM_RESPONSE
 
@@ -44,10 +44,10 @@ ms.locfileid: "59905285"
 | [WDI_TLV_LCI_REPORT_STATUS](wdi-tlv-lci-report-status.md) | [**WDI_LCI_REPORT_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_lci_report_status) |   |   | LCI レポートが要求された場合、このフィールドは、状態の結果を提供します。 成功した場合、次のフィールドが存在し、必須にします。 |
 | [WDI_TLV_LCI_REPORT_BODY](wdi-tlv-lci-report-body.md) | TLV\<一覧\<UINT8 &GT;&GT; |   |   | 9.4.2.22.10 のセクションで定義されている、場所の構成情報 (LCI) レポート、 [802-11-2016 standard](https://standards.ieee.org/standard/802_11-2016.html)LCI サブ要素とその他のオプションのサブ要素を含めて、します。 つまり、これは、測定レポート要素の測定レポート セクション (セクション 9.4.2.22 からに従って、 [802-11-2016 standard](https://standards.ieee.org/standard/802_11-2016.html))。 |
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |
-| サポートされている最小のクライアント | Windows 10、バージョンが 1903 |
+| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
 | サポートされている最小のサーバー | Windows Server 2016 |
 | Header | Wditypes.hpp |

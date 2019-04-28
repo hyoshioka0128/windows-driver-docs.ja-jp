@@ -1,19 +1,19 @@
 ---
-title: KD 接続サーバー セッションを制御します。
-description: KD 接続サーバー セッションを制御します。
+title: KD 接続サーバー セッションの制御
+description: KD 接続サーバー セッションの制御
 ms.assetid: d927575f-f408-48d0-81f4-0711a09b0015
 keywords:
 - KD 接続のサーバー、セッションを制御します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66343156fd13ace296c6aed7f7079df155e60b55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375562"
 ---
-# <a name="controlling-a-kd-connection-server-session"></a>KD 接続サーバー セッションを制御します。
+# <a name="controlling-a-kd-connection-server-session"></a>KD 接続サーバー セッションの制御
 
 
 ## <span id="ddk_controlling_a_kd_connection_server_session_dbg"></span><span id="DDK_CONTROLLING_A_KD_CONNECTION_SERVER_SESSION_DBG"></span>

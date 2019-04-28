@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 69b8bf854f4365b10048906c84efb2f34b0260f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382663"
 ---
 # <a name="d3dkmtmultiplaneoverlaystereoformat-enumeration"></a>D3DKMT\_MULTIPLANE\_オーバーレイ\_ステレオ\_形式の列挙型
 
@@ -61,7 +61,7 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT {
 
 <span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_CHECKERBOARD"></span><span id="dxgkmt_multiplane_overlay_stereo_format_checkerboard"></span>**DXGKMT\_MULTIPLANE\_オーバーレイ\_ステレオ\_形式\_チェッカー ボード**
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

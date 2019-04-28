@@ -1,16 +1,16 @@
 ---
-Description: Handling Device Control and File Creation
-title: デバイスの制御とファイルの作成の処理
+Description: デバイス制御とファイル作成の処理
+title: デバイス制御とファイル作成の処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa6dc7786e023435495483e88e004742c9c27144
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378150"
 ---
-# <a name="handling-device-control-and-file-creation"></a>デバイスの制御とファイルの作成の処理
+# <a name="handling-device-control-and-file-creation"></a>デバイス制御とファイル作成の処理
 
 
 Windows ベースのアプリケーションを呼び出すたびに、 **DeviceIoControl**メソッドのいずれかを呼び出して Win32 関数では、ユーザー モード ドライバー フレームワーク (UMDF) の通知、ドライバー、 **IQueueCallbackDeviceIlControl**インターフェイス。 Windows ベースのアプリケーションを呼び出すたびに、 **CreateFile** Win32 関数では、UMDF ドライバーに通知、メソッドを呼び出すことによって、 **IQueueCallbackCreate**インターフェイス。 この機能はすべてが、サンプル ドライバーの*Queue.cpp*と*Queue.h*モジュール。

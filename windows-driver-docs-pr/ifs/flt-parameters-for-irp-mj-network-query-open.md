@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 805319c2f22f45cdb573498407b84d4670ee35e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377654"
 ---
 # <a name="fltparameters-for-irpmjnetworkqueryopen-union"></a>FLT\_IRP のパラメーター\_MJ\_ネットワーク\_クエリ\_オープン共用体
 
@@ -42,7 +42,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **NetworkQueryOpen**  
@@ -66,7 +66,7 @@ typedef union _FLT_PARAMETERS {
 
 IRP\_MJ\_ネットワーク\_クエリ\_な高速な I/O 操作のファイルを開く。 FastIoQueryOpen (FastIoQueryNetworkOpenInfo ではない) 操作に相当することをお勧めします。 フィルターは、この操作に登録する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

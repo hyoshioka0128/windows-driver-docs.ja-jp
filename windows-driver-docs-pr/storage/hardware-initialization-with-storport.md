@@ -1,17 +1,17 @@
 ---
-title: Storport でハードウェアの初期化
-description: Storport でハードウェアの初期化
+title: Storport でのハードウェアの初期化
+description: Storport でのハードウェアの初期化
 ms.assetid: 98930338-d192-4b25-a558-01614ef9662b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ddc1f047cb2a079d3943c88dae361c72608735
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383109"
 ---
-# <a name="hardware-initialization-with-storport"></a>Storport でハードウェアの初期化
+# <a name="hardware-initialization-with-storport"></a>Storport でのハードウェアの初期化
 
 
 ## <span id="ddk_hardware_initialization_with_storport_kg"></span><span id="DDK_HARDWARE_INITIALIZATION_WITH_STORPORT_KG"></span>

@@ -1,6 +1,6 @@
 ---
-title: クロスバー変更イベント
-description: クロスバー変更イベント
+title: クロスバーの変更イベント
+description: クロスバーの変更イベント
 ms.assetid: 67202a53-d981-47db-9bc1-7de18f9192aa
 keywords:
 - クロスバーは、イベント WDK ビデオ キャプチャの変更
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5409e229f2cafb6cc92441da0d64fd4c5947ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374164"
 ---
-# <a name="crossbar-change-event"></a>クロスバー変更イベント
+# <a name="crossbar-change-event"></a>クロスバーの変更イベント
 
 
 [EVENTSETID\_クロスバー](https://msdn.microsoft.com/library/windows/hardware/ff559562)クロスバー変更イベントがイベント セットに含まれています。 次の表に、イベント、EVENTSETID の一部である\_クロスバー イベントのセット。

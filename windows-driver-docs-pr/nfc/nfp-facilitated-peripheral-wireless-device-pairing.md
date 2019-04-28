@@ -1,23 +1,23 @@
 ---
-title: 周辺機器のワイヤレス デバイスを NFP 促進のペアリング
-description: 周辺機器のワイヤレス デバイスを NFP 促進のペアリング
+title: NFP によるワイヤレス周辺デバイスのペアリング
+description: NFP によるワイヤレス周辺デバイスのペアリング
 ms.assetid: 7B57019F-C80A-4E74-BBC2-A26BEDEB20DD
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88935187221e5e387936a63f7dd6cc4b31e75fb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378640"
 ---
-# <a name="nfp-facilitated-peripheral-wireless-device-pairing"></a>周辺機器のワイヤレス デバイスを NFP 促進のペアリング
+# <a name="nfp-facilitated-peripheral-wireless-device-pairing"></a>NFP によるワイヤレス周辺デバイスのペアリング
 
 
 NFP テクノロジを有効にすることができます、シナリオの 1 つは、Bluetooth キーボード、マウス、ヘッドホンなどのワイヤレス デバイスの Windows でのペアです。 一方向のペアのみがサポートされています。 携帯電話などのスマート デバイスに必要な双方向のペアリングすることはサポートされていません。

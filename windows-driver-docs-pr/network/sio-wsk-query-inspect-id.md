@@ -7,11 +7,11 @@ keywords:
 - SIO_WSK_QUERY_INSPECT_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 07e89fe2c4ace3a6fa4c90ac7ca1bf427cb71119
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377228"
 ---
 # <a name="siowskqueryinspectid"></a>SIO\_WSK\_クエリ\_検査\_ID
 
@@ -41,7 +41,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの検査�
 <td><p>SIO_WSK_QUERY_INSPECT_ID</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -73,7 +73,7 @@ WSK アプリケーションを呼び出す接続指向のソケットの検査�
 
 WSK アプリケーションから呼び出す場合、 **WskControlSocket**関数を持つ条件付きリッスン ソケットの受け入れられた接続指向のソケット以外の任意のソケットの検査識別データを照会するには、モードがそのまま使用有効になって、 **WskControlSocket**ステータスを返します\_無効な\_デバイス\_要求。
 
-条件付きで接続の受け入れの詳細については、[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)を参照してください。
+条件付きで接続の受け入れの詳細については、次を参照してください。[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)します。
 
 <a name="requirements"></a>要件
 ------------

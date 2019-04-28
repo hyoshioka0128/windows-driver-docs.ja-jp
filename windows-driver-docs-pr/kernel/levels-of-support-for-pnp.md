@@ -1,6 +1,6 @@
 ---
-title: サポートのレベルを PnP します。
-description: サポートのレベルを PnP します。
+title: PnP のサポートのレベル
+description: PnP のサポートのレベル
 ms.assetid: 33e0b4c6-858c-4822-ba49-38eb87a5923d
 keywords:
 - PnP WDK カーネル、デバイスのサポート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1cff716770493462329a32569282fadae54c570
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381376"
 ---
-# <a name="levels-of-support-for-pnp"></a>サポートのレベルを PnP します。
+# <a name="levels-of-support-for-pnp"></a>PnP のサポートのレベル
 
 
 

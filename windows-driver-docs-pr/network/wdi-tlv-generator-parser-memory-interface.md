@@ -5,11 +5,11 @@ ms.assetid: 318519FF-AF1F-4D86-96A9-ED0918D91310
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a50a22edbd4e4ee495ea517e82dcdf0255f01a95
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382861"
 ---
 # <a name="wdi-tlv-generatorparser-memory-interface"></a>WDI TLV ジェネレーター/パーサー メモリ インターフェイス
 

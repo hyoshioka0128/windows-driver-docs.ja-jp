@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcc9c81fd9830486dab1d9fdeced1fcc9705e117
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381581"
 ---
 # <a name="rotation-element"></a>回転要素
 
@@ -49,7 +49,7 @@ ms.locfileid: "56575113"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -58,23 +58,23 @@ ms.locfileid: "56575113"
 <tr class="odd">
 <td><p><strong><strong>MustHonor</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>上書き</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -111,7 +111,7 @@ ms.locfileid: "56575113"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 整数値、**回転**要素は、スキャンしたドキュメントの各イメージに適用する時計回りの回転を指定します。 すべての WSD スキャン サービスには、値 0 (つまり、回転なし) をサポートする必要があります。

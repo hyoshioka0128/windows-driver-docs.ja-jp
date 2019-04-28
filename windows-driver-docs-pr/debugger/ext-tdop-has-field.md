@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f81f57aa3beebbc3813c2cc8ba392031d6e8f60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379896"
 ---
 # <a name="exttdophasfield"></a>EXT\_TDOP\_HAS\_フィールド
 
@@ -40,7 +40,7 @@ EXT に設定\_TDOP\_HAS\_このサブ操作のフィールド。
 
 型指定されたデータには、メンバーが含まれている場合**状態**受信 S\_ok をクリックします。 型指定されたデータには、メンバーが含まれていない場合**状態**受信電子メール\_NOINTERFACE します。 その他のエラー値も返されます場合があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 EXT\_TDOP\_HAS\_フィールドの値では、 [ **EXT\_TDOP** ](https://msdn.microsoft.com/library/windows/hardware/ff544529)列挙体。

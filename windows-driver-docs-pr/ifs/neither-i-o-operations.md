@@ -1,6 +1,6 @@
 ---
-title: どちらの I/O 操作
-description: どちらの I/O 操作
+title: I/O のどちらでもない操作
+description: I/O のどちらでもない操作
 ms.assetid: c8fc4742-e220-45c4-9113-ec5658bc09cc
 keywords:
 - WDK ファイル システムのセキュリティ、セマンティック モデルを確認します
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a58f9e6cae93e83d48a09c282cd7c003216800f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379460"
 ---
-# <a name="neither-io-operations"></a>どちらの I/O 操作
+# <a name="neither-io-operations"></a>I/O のどちらでもない操作
 
 
 ## <span id="ddk_neither_i_o_operations_if"></span><span id="DDK_NEITHER_I_O_OPERATIONS_IF"></span>

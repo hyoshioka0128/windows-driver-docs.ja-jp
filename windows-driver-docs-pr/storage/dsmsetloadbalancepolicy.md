@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f2daa093204fe1b916c06dc6a29d871cab8589da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380656"
 ---
 # <a name="dsmsetloadbalancepolicy-function"></a>DsmSetLoadBalancePolicy 関数
 
@@ -55,7 +55,7 @@ A [ **DsmSetLoadBalancePolicy\_アウト**](https://msdn.microsoft.com/library/w
 
 この WMI メソッドが属する、 [DSM\_LB\_操作](dsm-lb-operations-wmi-class.md)WMI クラスです。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

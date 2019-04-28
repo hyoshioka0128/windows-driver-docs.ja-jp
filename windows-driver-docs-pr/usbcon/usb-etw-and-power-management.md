@@ -1,16 +1,16 @@
 ---
-Description: This topic provides a brief overview about using ETW to examine USB selective suspend state and identifying system energy efficiency problems by using the Windows PowerCfg utility.
-title: USB ETW および電源管理
+Description: このトピックでは、簡単な ETW を使用して、USB のセレクティブを確認する方法の概要は中断状態と Windows PowerCfg ユーティリティを使用してシステムのエネルギー効率の問題を識別します。
+title: USB ETW と電源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5272a329a7c42a29921e40e2d5196e78b8d2b0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376392"
 ---
-# <a name="usb-etw-and-power-management"></a>USB ETW および電源管理
+# <a name="usb-etw-and-power-management"></a>USB ETW と電源管理
 
 
 このトピックでは、簡単な ETW を使用して、USB のセレクティブを確認する方法の概要は中断状態と Windows PowerCfg ユーティリティを使用してシステムのエネルギー効率の問題を識別します。
@@ -23,7 +23,7 @@ USB の ETW を使用して、USB デバイスを確認し、選択的に正常�
 
 PowerCfg では、さまざまなエネルギー効率が USB デバイス、過剰なプロセッサ使用率、増加のタイマー精度、非効率な電源ポリシーの設定、およびバッテリ容量低下して選択的の非効率的な使用を含む、問題を中断を検出します。 PowerCfg では、さまざまなレベルのサーバーの問題 (エラー)、軽微な問題 (警告) などの問題を識別します。
 
-詳細については、Windows 電源管理と、PowerCfg ツールは、[Powercfg のコマンドライン オプション](https://technet.microsoft.com/library/cc748940(WS.10).aspx)と[システムのエネルギー効率の評価に PowerCfg を使用して](https://msdn.microsoft.com/library/windows/hardware/gg463250.aspx)を参照してください。
+詳細については、Windows 電源管理と、PowerCfg ツールは、次を参照してください。 [Powercfg のコマンドライン オプション](https://technet.microsoft.com/library/cc748940(WS.10).aspx)と[システムのエネルギー効率の評価に PowerCfg を使用して](https://msdn.microsoft.com/library/windows/hardware/gg463250.aspx)します。
 
 ## <a name="related-topics"></a>関連トピック
 [Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  

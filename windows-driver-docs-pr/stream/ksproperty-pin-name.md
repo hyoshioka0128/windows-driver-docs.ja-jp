@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 640ef35b52fc0cff31c11d768e5631a61cb2f8ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380811"
 ---
 # <a name="kspropertypinname"></a>KSPROPERTY\_PIN\_名
 
@@ -51,7 +51,7 @@ ms.locfileid: "56549037"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>ローカライズされた Unicode 文字列を格納するバッファー。</p></td>
@@ -68,7 +68,7 @@ KSP を使用してこのプロパティを指定\_暗証番号 (pin)、メン�
 
 Stream ミニドライバーは、このプロパティを直接処理する必要はありません。ストリーム クラス ドライバーは、ストリーム要求のブロックを使用して詳細情報を照会するこのプロパティを処理します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

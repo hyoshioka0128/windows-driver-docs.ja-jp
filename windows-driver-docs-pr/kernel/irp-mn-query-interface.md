@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_INTERFACE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: d33afe8a8fc3e6f0030ade6ccc8fc60eb1c06955
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381433"
 ---
 # <a name="irpmnqueryinterface"></a>IRP\_MN\_クエリ\_インターフェイス
 
@@ -109,7 +109,7 @@ PVOID InterfaceSpecificData
 
 参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
-複数層のカーネル モード デバイス ドライバーの間で日常的なエントリ ポイントを渡すためには、具体的には、この IRP が使用されます。 この IRP によって公開されるインターフェイスを混同しないでください*デバイス インターフェイス*します。 デバイスのインターフェイスは、ユーザー モード コンポーネントまたはその他のカーネル コンポーネントで使用するためのデバイスへのパスを公開するためには、主に使用されます。 デバイス インターフェイスの詳細については、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)を参照してください。
+複数層のカーネル モード デバイス ドライバーの間で日常的なエントリ ポイントを渡すためには、具体的には、この IRP が使用されます。 この IRP によって公開されるインターフェイスを混同しないでください*デバイス インターフェイス*します。 デバイスのインターフェイスは、ユーザー モード コンポーネントまたはその他のカーネル コンポーネントで使用するためのデバイスへのパスを公開するためには、主に使用されます。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)します。
 
 **この IRP を送信します。**
 

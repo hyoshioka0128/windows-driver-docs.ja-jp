@@ -1,17 +1,17 @@
 ---
-title: GPU のプリエンプション
+title: GPU プリエンプション
 description: 新しい GPU 優先権モデルでは、Windows 8 以降で使用できます。
 ms.assetid: 9382786E-2E1E-408F-A9E9-04EEEA1CC34A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f9a82d289cf09ab3eddea7d73813308d82b1721
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379474"
 ---
-# <a name="gpu-preemption"></a>GPU のプリエンプション
+# <a name="gpu-preemption"></a>GPU プリエンプション
 
 
 新しい GPU 優先権モデルでは、Windows 8 以降で使用できます。 このモデルではオペレーティング システムされなく GPU ダイレクト メモリの優先を無効にする、アクセス (DMA) パケットでは、割り込み要求する前に、GPU に送信されることが保証されます、[タイムアウト検出と復旧 (TDR)](timeout-detection-and-recovery.md)プロセスが開始されます。

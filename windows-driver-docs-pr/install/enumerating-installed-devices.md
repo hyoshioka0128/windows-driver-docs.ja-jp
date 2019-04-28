@@ -1,6 +1,6 @@
 ---
-title: インストールされているデバイスを列挙します。
-description: インストールされているデバイスを列挙します。
+title: インストール済みのデバイスの列挙
+description: インストール済みのデバイスの列挙
 ms.assetid: 98EF9A16-6415-4778-BB5D-C0B7160C1509
 keywords:
 - インストールされているデバイス WDK の列挙
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2fdbc37e48a6b6428ac08e017e1e68c6f7c78e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380284"
 ---
-# <a name="enumerating-installed-devices"></a>インストールされているデバイスを列挙します。
+# <a name="enumerating-installed-devices"></a>インストール済みのデバイスの列挙
 
 
 レジストリ キーを直接使用してデバイスを列挙する必要がありますできません。 レジストリ キーでは、システムにインストールされているデバイスを列挙するために必要な情報は含まれません。 など、デバイスが実際に存在するかはファントムのデバイス (1 つに接続されていない)、この情報が保持している、[プラグ アンド プレイ (PnP) manager](pnp-manager.md)します。 PnP マネージャーでは、レジストリ情報の追加のフィルター処理も実行します。

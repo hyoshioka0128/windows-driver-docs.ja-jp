@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb9d8d0a50856519cfb0dbea749e63a52f986ab8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378792"
 ---
 # <a name="wiadpvlastpicturetaken"></a>WIA\_DPV\_最後\_画像\_取得
 
@@ -35,7 +35,7 @@ WIA\_DPV\_最後\_画像\_はプロパティは将来使用するために Micro
 
 アクセス権:読み取り専用かどうか
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

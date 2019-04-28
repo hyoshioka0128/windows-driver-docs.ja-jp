@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 153a1e71943b3ef96f0be3e4636554d003dec5b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381378"
 ---
 # <a name="ktm-objects"></a>KTM オブジェクト
 
@@ -42,7 +42,7 @@ KTM では、各オブジェクトに識別子の GUID を割り当てます。 
 
 KTM を使用する任意の TP コンポーネントを呼び出すことができます[ **ZwEnumerateTransactionObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566450) KTM を列挙するオブジェクトが、ほとんどのコンポーネントは、このルーチンを呼び出す必要はありません。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [トランザクション マネージャー オブジェクト](transaction-manager-objects.md)
 

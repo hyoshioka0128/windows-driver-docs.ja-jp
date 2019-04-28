@@ -1,6 +1,6 @@
 ---
-title: ネットワークのドライバーでの移植性
-description: ネットワークのドライバーでの移植性
+title: ネットワーク ドライバーの移植性
+description: ネットワーク ドライバーの移植性
 ms.assetid: 2cc74131-a80b-4d21-b969-56b61d1f7269
 keywords:
 - ネットワーク ドライバー WDK、ドライバーの移植
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 918a55747ae4a99eba93018c24f379a1fbe6963d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377584"
 ---
-# <a name="portability-in-network-drivers"></a>ネットワークのドライバーでの移植性
+# <a name="portability-in-network-drivers"></a>ネットワーク ドライバーの移植性
 
 
 

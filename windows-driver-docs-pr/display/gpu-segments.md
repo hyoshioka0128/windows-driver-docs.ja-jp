@@ -5,11 +5,11 @@ ms.assetid: E6CAD808-73C0-48AB-BF95-76911D5C104A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b678ad688a0587ed965fff1028d9218b4ee12b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373934"
 ---
 # <a name="gpu-segments"></a>GPU セグメント
 

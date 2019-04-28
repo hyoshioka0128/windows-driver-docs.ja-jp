@@ -1,6 +1,6 @@
 ---
-title: 保護されたビデオ セッションを開始します。
-description: 保護されたビデオ セッションを開始します。
+title: 保護されたビデオ セッションの開始
+description: 保護されたビデオ セッションの開始
 ms.assetid: c92f2d1a-ac15-49d4-858b-ff207ff4810c
 keywords:
 - コピー防止 WDK COPP、保護されたビデオ セッションを開始します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15ecca5754a3df8e0857d69de15de968fde21e59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376014"
 ---
-# <a name="starting-a-protected-video-session"></a>保護されたビデオ セッションを開始します。
+# <a name="starting-a-protected-video-session"></a>保護されたビデオ セッションの開始
 
 
 ## <span id="ddk_starting_a_protected_video_session_gg"></span><span id="DDK_STARTING_A_PROTECTED_VIDEO_SESSION_GG"></span>

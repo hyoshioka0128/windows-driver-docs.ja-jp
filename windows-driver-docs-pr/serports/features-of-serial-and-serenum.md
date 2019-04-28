@@ -1,6 +1,6 @@
 ---
-title: シリアルおよび Serenum の機能
-description: シリアルおよび Serenum の機能
+title: シリアルと Serenum の機能
+description: シリアルと Serenum の機能
 ms.assetid: 47202203-935a-4e1a-9b05-5555f7cbcfa8
 keywords:
 - シリアル デバイス シリアル ドライバー WDK
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c0095d082663c70cbdb3158c5304054396b2433
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380003"
 ---
-# <a name="features-of-serial-and-serenum"></a>シリアルおよび Serenum の機能
+# <a name="features-of-serial-and-serenum"></a>シリアルと Serenum の機能
 
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56527251"
 
 Windows 2000 以降では、システム提供の際に、Serenum.sys ドライバーは 16550 ユニバーサル非同期受信側の送信機 (UART) と互換性のあるハードウェア インターフェイスをコント ローラーのシリアル デバイスを管理します。 以下のようでは、スタンドアロンのシリアル ポート、COM ポート、およびマルチポート ボードを制御します。 Serenum.sys はスタックまたは互換性のあるシリアル ドライバーによって制御されているシリアル ポートに接続されているデバイスを列挙します。
 
-スタックの SerCx2 と SerCx、シリアル フレームワーク拡張機能の比較については、[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)を参照してください。 SerCx2 は Windows 8.1 以降から使用できます。 SerCx では、Windows 8 以降で使用できます。
+スタックの SerCx2 と SerCx、シリアル フレームワーク拡張機能の比較については、次を参照してください。[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)します。 SerCx2 は Windows 8.1 以降から使用できます。 SerCx では、Windows 8 以降で使用できます。
 
 シリアル シリアル サービスを実装します。実行可能イメージは、以下のようです。
 

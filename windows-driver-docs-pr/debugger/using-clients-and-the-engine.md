@@ -1,19 +1,19 @@
 ---
-title: クライアントと、エンジンを使用してください。
-description: クライアントと、エンジンを使用してください。
+title: クライアントとエンジンの使用
+description: クライアントとエンジンの使用
 ms.assetid: 899184f5-334b-4fd1-98ce-64475650ace5
 keywords:
 - DbgEng 拡張機能、エンジン クライアント オブジェクト
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b132eb720e055bc5bf994ef431e01d35d844fd71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371696"
 ---
-# <a name="using-clients-and-the-engine"></a>クライアントと、エンジンを使用してください。
+# <a name="using-clients-and-the-engine"></a>クライアントとエンジンの使用
 
 
 ## <span id="ddk_using_clients_and_the_engine_dbx"></span><span id="DDK_USING_CLIENTS_AND_THE_ENGINE_DBX"></span>

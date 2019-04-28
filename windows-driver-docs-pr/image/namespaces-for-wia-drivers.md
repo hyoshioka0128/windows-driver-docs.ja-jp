@@ -5,11 +5,11 @@ ms.assetid: 67260a25-6233-4738-a08f-26223cc8e563
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9411744e22d6073a7f6d9a7ae18017144845b10e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379658"
 ---
 # <a name="namespaces-for-wia-drivers"></a>WIA ドライバーの名前空間
 

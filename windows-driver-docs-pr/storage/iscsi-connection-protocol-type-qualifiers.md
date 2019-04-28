@@ -5,11 +5,11 @@ ms.assetid: 76243fa2-6783-40ef-b569-0f69ae9d4f45
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3bef8b311cb80407466939dfa94db35681efd321
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372749"
 ---
 # <a name="iscsiconnectionprotocoltypequalifiers"></a>ISCSI\_接続\_プロトコル\_型\_修飾子
 
@@ -29,7 +29,7 @@ ISCSI\_接続\_プロトコル\_型\_修飾子 WMI プロパティ修飾子は�
 <thead>
 <tr class="header">
 <th align="left">プロトコルの種類の値</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

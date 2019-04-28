@@ -1,6 +1,6 @@
 ---
-title: 特定の WMI のトラブルシューティング
-description: 特定の WMI のトラブルシューティング
+title: WMI に関する特定の問題のトラブルシューティング
+description: WMI に関する特定の問題のトラブルシューティング
 ms.assetid: 966191e7-aec4-4eff-b975-99a6d3eb8d02
 keywords:
 - WMI の WDK のカーネルのトラブルシューティング
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1759ae885a46d2e8a45e08e5916ac25ca7723025
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377034"
 ---
-# <a name="troubleshooting-specific-wmi-problems"></a>特定の WMI のトラブルシューティング
+# <a name="troubleshooting-specific-wmi-problems"></a>WMI に関する特定の問題のトラブルシューティング
 
 
 
@@ -44,9 +44,9 @@ ms.locfileid: "56529441"
 
 ### <a name="drivers-wmi-properties-or-methods-cannot-be-accessed"></a>ドライバーの WMI のプロパティまたはメソッドにアクセスすることはできません。
 
-1. 使用**wmimofck driver.bmf**バイナリの MOF ファイルの形式が正しいかどうかを確認します。 詳細については、[wmimofck.exe を使用して](using-wmimofck-exe.md)を参照してください。
+1. 使用**wmimofck driver.bmf**バイナリの MOF ファイルの形式が正しいかどうかを確認します。 詳細については、次を参照してください。 [wmimofck.exe を使用して](using-wmimofck-exe.md)します。
 
-2. システム イベント ログのエラーを確認します。 詳細については、[とシステム イベント ログの WMI Irp](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-irps-and-the-system-event-log-kg)を参照してください。
+2. システム イベント ログのエラーを確認します。 詳細については、次を参照してください。[とシステム イベント ログの WMI Irp](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-irps-and-the-system-event-log-kg)します。
 
 3. チェック、 [WMI WDM プロバイダー ログ](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-wdm-provider-log-kg)エラー。
 

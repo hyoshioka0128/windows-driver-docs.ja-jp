@@ -1,6 +1,6 @@
 ---
-title: 設定して、カーネル フラグをクリアします。
-description: 設定して、カーネル フラグをクリアします。
+title: カーネル フラグの設定とクリア
+description: カーネル フラグの設定とクリア
 ms.assetid: 6bca8007-2d9f-4b93-b5fb-300c262604c8
 keywords:
 - GFlags、カーネル フラグ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fe55fef0fd81b02ca7b5a976e3bbc2e81d5a160
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381968"
 ---
-# <a name="setting-and-clearing-kernel-flags"></a>設定して、カーネル フラグをクリアします。
+# <a name="setting-and-clearing-kernel-flags"></a>カーネル フラグの設定とクリア
 
 
 ## <span id="ddk_setting_and_clearing_kernel_mode_flags_dtools"></span><span id="DDK_SETTING_AND_CLEARING_KERNEL_MODE_FLAGS_DTOOLS"></span>

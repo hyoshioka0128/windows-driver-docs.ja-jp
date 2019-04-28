@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6823f929ad1c0951ae30e15fb0087209dbba542a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379471"
 ---
 # <a name="mrxstop-routine"></a>MRxStop ルーチン
 
@@ -102,7 +102,7 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 
 ネットワークのミニ リダイレクターは、ネットワークのミニ リダイレクターが開始したかどうかを示す内部変数を保持して通常します。 など、開始、停止されるとき、および操作の開始または停止操作が進行中、ネットワークのミニ リダイレクターは追跡可能性があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

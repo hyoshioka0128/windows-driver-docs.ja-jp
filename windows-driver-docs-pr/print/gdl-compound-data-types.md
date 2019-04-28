@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7c59ea37c98780cd654cb506ebdff831b12621c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372739"
 ---
 # <a name="gdl-compound-data-types"></a>GDL 複合データ型
 
@@ -28,7 +28,7 @@ GDL 複合データ型が定義されている[GDL プリミティブ データ�
 
 [複数のパーソナリティ](multiple-personality-template-data-types.md)
 
-複合データ型に関連した問題の詳細については、[テンプレート データ型の問題の GDL](compound-template-data-type-issues.md)を参照してください。
+複合データ型に関連した問題の詳細については、次を参照してください。[テンプレート データ型の問題の GDL](compound-template-data-type-issues.md)します。
 
  
 

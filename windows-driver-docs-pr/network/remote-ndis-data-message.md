@@ -1,17 +1,17 @@
 ---
-title: リモートの NDIS データ メッセージ
-Description: Remote NDIS Data Message
+title: リモート NDIS データ メッセージ
+Description: リモート NDIS データ メッセージ
 ms.assetid: 99ba2f83-9e2c-4681-a4ff-d61fedb20884
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0222a81f9e86a9f434fad7375ddbb7315181e82c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373781"
 ---
-# <a name="remote-ndis-data-message"></a>リモートの NDIS データ メッセージ
+# <a name="remote-ndis-data-message"></a>リモート NDIS データ メッセージ
 
 
 

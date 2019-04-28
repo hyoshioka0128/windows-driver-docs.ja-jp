@@ -9,11 +9,11 @@ keywords:
 ms.date: 01/30/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: b66013b4d263c4386070bd6467d4bb0ce5e98acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374509"
 ---
 # <a name="microsoft-postscript-printer-driver"></a>Microsoft PostScript プリンター ドライバー
 

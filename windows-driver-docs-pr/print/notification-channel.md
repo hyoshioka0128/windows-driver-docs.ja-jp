@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b7ee7af0e2306b9e27cd1964ee98a02b7e63799
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382779"
 ---
 # <a name="notification-channel"></a>通知チャンネル
 

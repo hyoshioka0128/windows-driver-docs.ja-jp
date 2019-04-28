@@ -5,11 +5,11 @@ ms.assetid: 5ce0875f-2687-42d9-b980-ed184b552a62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4412180ff2ee00ed20e73490e409867b9eb15730
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379368"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties"></a>デバイス プロパティを変更する INF ファイルのエントリ値
 
@@ -22,7 +22,7 @@ ms.locfileid: "56574026"
 
 -   INF **AddReg**ディレクティブと INF**して**ディレクティブを設定またはカスタムのレジストリ エントリの値を削除します。
 
--   [**INF AddProperty ディレクティブ**](inf-addproperty-directive.md)と**INF DelProperty ディレクティブ**設定して、デバイスのプロパティを削除します。 これらのディレクティブを使用する方法の詳細については、[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)を参照してください。
+-   [**INF AddProperty ディレクティブ**](inf-addproperty-directive.md)と**INF DelProperty ディレクティブ**設定して、デバイスのプロパティを削除します。 これらのディレクティブを使用する方法の詳細については、次を参照してください。 [INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
 
 概要については、INF ファイルのセクションでは、デバイスのインスタンスをインストールする[デバイス セットアップ クラス](device-setup-classes.md)、[デバイス インターフェイス クラス](device-interface-classes.md)、し、デバイスのインターフェイスは、次のトピックを参照してください。
 

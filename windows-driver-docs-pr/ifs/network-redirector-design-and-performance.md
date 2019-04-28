@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f126c86e0224f9f9f9a3d55089f3a1476a33349
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379468"
 ---
 # <a name="network-redirector-design-and-performance"></a>ネットワーク リダイレクターの設計とパフォーマンス
 

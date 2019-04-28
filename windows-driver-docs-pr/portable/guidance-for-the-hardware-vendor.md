@@ -1,16 +1,16 @@
 ---
-Description: Guidance for the Hardware Vendor
-title: ハードウェア ベンダーのガイダンス
+Description: ハードウェア ベンダー向けのガイダンス
+title: ハードウェア ベンダー向けのガイダンス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56f5dddc0b11c2139c132d0ac410d11b980c2316
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378158"
 ---
-# <a name="guidance-for-the-hardware-vendor"></a>ハードウェア ベンダーのガイダンス
+# <a name="guidance-for-the-hardware-vendor"></a>ハードウェア ベンダー向けのガイダンス
 
 
 ポータブル デバイスを製造し、Windows との接続を必要とすると場合、は、次のオプションがあります。

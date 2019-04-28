@@ -1,17 +1,17 @@
 ---
-title: WIA 形式の Guid へ PTP 書式コードのマッピング
-description: WIA 形式の Guid へ PTP 書式コードのマッピング
+title: WIA 形式 GUID への PTP 形式のコードのマッピング
+description: WIA 形式 GUID への PTP 形式のコードのマッピング
 ms.assetid: a69269c0-1474-4de5-9a08-94902ef1f089
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e19dcb705575aa728b4a167379795247c4b9aa6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380382"
 ---
-# <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>WIA 形式の Guid へ PTP 書式コードのマッピング
+# <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>WIA 形式 GUID への PTP 形式のコードのマッピング
 
 
 
@@ -40,7 +40,7 @@ ms.locfileid: "56535762"
 </tr>
 <tr class="even">
 <td><p>0x3001</p></td>
-<td><p>関連付け</p></td>
+<td><p>アソシエーション</p></td>
 <td><p>参照してください<a href="mapping-ptp-associations-to-wia-folders.md" data-raw-source="[Mapping PTP Associations to WIA Folders](mapping-ptp-associations-to-wia-folders.md)">WIA フォルダーに PTP アソシエーションのマッピング</a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -60,7 +60,7 @@ ms.locfileid: "56535762"
 </tr>
 <tr class="even">
 <td><p>0x3005</p></td>
-<td><p>HTML</p></td>
+<td><p>HTML (HTML)</p></td>
 <td><p>DATAFMT_HTML</p></td>
 </tr>
 <tr class="odd">

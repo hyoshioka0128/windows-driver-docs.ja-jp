@@ -1,19 +1,19 @@
 ---
-title: ログ記録を使用して、重要なイベントを追跡するには
-description: ログ記録を使用して、重要なイベントを追跡するには
+title: ログを使用した重要イベントの追跡
+description: ログを使用した重要イベントの追跡
 ms.assetid: 297336c2-85fb-4235-a7ab-0bbf571b8b98
 keywords:
 - カーネル デバッグ ストリーム、ビデオ ストリーム失速、ログ記録
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc8b7ee79e43c7e50043218a41f278cc51753eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376362"
 ---
-# <a name="using-logging-to-track-important-events"></a>ログ記録を使用して、重要なイベントを追跡するには
+# <a name="using-logging-to-track-important-events"></a>ログを使用した重要イベントの追跡
 
 
 一般に、データは、イベント、ミニドライバーの処理、およびバッファーの入力候補をトリガーすることによってのみ下流移動されます。 ハングの原因を特定または停止します。

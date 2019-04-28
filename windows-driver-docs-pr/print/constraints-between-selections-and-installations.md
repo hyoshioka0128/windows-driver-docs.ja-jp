@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e09254f2efed71de895b90b2393deeece3761e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383163"
 ---
 # <a name="constraints-between-selections-and-installations"></a>選択とインストールの間の制約
 

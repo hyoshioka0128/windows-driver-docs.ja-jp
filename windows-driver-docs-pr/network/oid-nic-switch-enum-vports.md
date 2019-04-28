@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_ENUM_VPORTS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f3f621dae5fbf00dc0883f8b97bcbfdc58af9126
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382200"
 ---
 # <a name="oidnicswitchenumvports"></a>OID\_NIC\_スイッチ\_ENUM\_拡張
 
@@ -50,7 +50,7 @@ ms.locfileid: "56553524"
 
 -   場合、**フラグ**メンバーが 0 に設定されている、すべての拡張が VF、PF にネットワーク アダプターの接続情報が返されます。 ここでの値、 **SwitchId**と**AttachedFunctionId**は無視されます。
 
-詳細については、[ネットワーク アダプターの仮想ポートを列挙](https://msdn.microsoft.com/library/windows/hardware/hh406710)を参照してください。
+詳細については、次を参照してください。[ネットワーク アダプターの仮想ポートを列挙](https://msdn.microsoft.com/library/windows/hardware/hh406710)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 

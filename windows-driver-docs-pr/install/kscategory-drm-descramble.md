@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2cea6c348f4c37d6d3e1d7d5bb935236b7a0cc34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374259"
 ---
 # <a name="kscategorydrmdescramble"></a>KSCATEGORY_DRM_DESCRAMBLE
 
@@ -56,7 +56,7 @@ KSCATEGORY_DRM_DESCRAMBLE[デバイス インターフェイス クラス](https
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_DRM_DESCRAMBLE 機能カテゴリをサポートすることを示す KSCATEGORY_DRM_DESCRAMBLE のインスタンスを登録します。
 
-この機能のカテゴリの詳細については、[オーディオ アダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+この機能のカテゴリの詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 <a name="requirements"></a>要件
 ------------

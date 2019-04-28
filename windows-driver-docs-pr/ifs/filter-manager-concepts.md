@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 823a62f6203bc8b4713b9f478ff7dbde62d5f8b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372730"
 ---
 # <a name="filter-manager-concepts"></a>フィルター マネージャーの概念
 
@@ -43,7 +43,7 @@ ms.locfileid: "56571819"
 
 フィルター マネージャーは、それらの間が既にフィルター マネージャーのフレームがない限り、接続されている 2 つのレガシ フィルター間ミニフィルターをアタッチできません。 ミニフィルター上レガシ フィルターをアタッチする場合はアタッチできます下にある、2 つ目の接続されているレガシ フィルターの有無に応じて。 ミニフィルターが以下のレガシ フィルターをアタッチするためのものは、レガシ フィルター上代わりに、接続されていることができます。
 
-**重要な**  常にミニフィルターのレガシ フィルターの相互運用性を確認またはレガシ フィルターを置き換えてミニフィルターを検討してください。 詳細については、[レガシ フィルター ドライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)を参照してください。
+**重要な**  常にミニフィルターのレガシ フィルターの相互運用性を確認またはレガシ フィルターを置き換えてミニフィルターを検討してください。 詳細については、次を参照してください。[レガシ フィルター ドライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)します。
 
  
 

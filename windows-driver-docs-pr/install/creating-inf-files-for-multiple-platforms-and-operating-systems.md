@@ -1,6 +1,6 @@
 ---
-title: 複数のプラットフォームやオペレーティング システムの INF ファイルの作成
-description: 複数のプラットフォームやオペレーティング システムの INF ファイルの作成
+title: 複数のプラットフォームおよびオペレーティング システム用の INF ファイルの作成
+description: 複数のプラットフォームおよびオペレーティング システム用の INF ファイルの作成
 ms.assetid: 61996c72-c5a7-4ff0-aeb3-6e77b77542c8
 keywords:
 - INF ファイル WDK デバイス インストールでは、複数のプラットフォームやオペレーティング システム
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e1eea87b4be2374b764981dcc7288e94ae469a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381501"
 ---
-# <a name="creating-inf-files-for-multiple-platforms-and-operating-systems"></a>複数のプラットフォームやオペレーティング システムの INF ファイルの作成
+# <a name="creating-inf-files-for-multiple-platforms-and-operating-systems"></a>複数のプラットフォームおよびオペレーティング システム用の INF ファイルの作成
 
 
 
@@ -89,13 +89,13 @@ ms.locfileid: "56560870"
 -   [クロス プラットフォームの INF ファイル](cross-platform-inf-files.md)
 -   [その他のセクション名の拡張子を持つプラットフォーム拡張機能を組み合わせること](combining-platform-extensions-with-other-section-name-extensions.md)
 
-INF ファイル プラットフォーム拡張機能を使用して、クロス プラットフォームのインストールをサポートする方法の例は、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
+INF ファイル プラットフォーム拡張機能を使用して、クロス プラットフォームのインストールをサポートする方法の例は、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
 
-セクション名の拡張機能と組み合わせてプラットフォーム拡張機能を使用する方法については、[結合プラットフォーム拡張機能とその他のセクション名の拡張機能](combining-platform-extensions-with-other-section-name-extensions.md)を参照してください。
+セクション名の拡張機能と組み合わせてプラットフォーム拡張機能を使用する方法については、次を参照してください。[結合プラットフォーム拡張機能とその他のセクション名の拡張機能](combining-platform-extensions-with-other-section-name-extensions.md)します。
 
-プラットフォームの拡張機能を通じてターゲットのオペレーティング システムを指定する方法については、[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)を参照してください。
+プラットフォームの拡張機能を通じてターゲットのオペレーティング システムを指定する方法については、次を参照してください。[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)します。
 
-複数のオペレーティング システム バージョンでドライバーをインストールするのに使用できるサンプルの INF ファイルについては、[複数バージョンの Windows デバイスのインストール用のサンプル INF ファイル](sample-inf-file-for-device-installation-on-multiple-versions-of-windows.md)を参照してください。
+複数のオペレーティング システム バージョンでドライバーをインストールするのに使用できるサンプルの INF ファイルについては、次を参照してください。[複数バージョンの Windows デバイスのインストール用のサンプル INF ファイル](sample-inf-file-for-device-installation-on-multiple-versions-of-windows.md)します。
 
  
 

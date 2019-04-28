@@ -1,17 +1,17 @@
 ---
-title: 一時的なネットワーク接続を確立します。
-description: 一時的なネットワーク接続を確立します。
+title: 一時的なネットワーク接続を確立する
+description: 一時的なネットワーク接続を確立する
 ms.assetid: 5ee9d1ab-cc6f-4262-b2b0-e8b0b0c0c1d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ff0a3a43aec6a585a67c4a44a74ce05d7ce734c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380171"
 ---
-# <a name="establish-temporary-network-connectivity"></a>一時的なネットワーク接続を確立します。
+# <a name="establish-temporary-network-connectivity"></a>一時的なネットワーク接続を確立する
 
 
 電気通信のアプリケーションでは、長期的な接続を開始できません。 ただし、特定のネットワークに一時的な接続が必要な場合、モバイル ブロード バンド API を次のように使用できます。

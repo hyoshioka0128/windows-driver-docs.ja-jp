@@ -5,11 +5,11 @@ ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21b6854177caada0cd72e669aa2eff6ad6c3267
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382082"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供されている WDTF シンプル I/O プラグイン
 
@@ -302,7 +302,7 @@ ms.locfileid: "56570490"
 
 -   テスト用の特別な要件はありません。
 
-    **注**web カメラ デバイス用のプラグイン単純な I/O では、依存関係を持つ MFPlat.dll ファイルでは、Media Player と関連テクノロジ、Windows 7 の N または Windows 7 KN などが含まれていない Windows のバージョンでは使用できません。 これらのバージョンの Windows で、Media Feature Pack をインストールする必要があります。 Media Feature Pack は、ダウンロードできます。 詳細については、[KB 記事 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)を参照してください。
+    **注**web カメラ デバイス用のプラグイン単純な I/O では、依存関係を持つ MFPlat.dll ファイルでは、Media Player と関連テクノロジ、Windows 7 の N または Windows 7 KN などが含まれていない Windows のバージョンでは使用できません。 これらのバージョンの Windows で、Media Feature Pack をインストールする必要があります。 Media Feature Pack は、ダウンロードできます。 詳細については、次を参照してください。 [KB 記事 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)します。
 
 
 

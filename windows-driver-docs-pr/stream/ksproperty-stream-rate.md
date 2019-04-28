@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 364579feb88b0e98ce28825cba30b74a775145be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379954"
 ---
 # <a name="kspropertystreamrate"></a>KSPROPERTY\_ストリーム\_率
 
@@ -76,7 +76,7 @@ Pin を再サンプリングを使用してデータの間隔を変更できま�
 
 生成した場合、pin もクロック、単価が変更する必要がありますので変更できません、物理の時間の傾きレートが一致する、クロックを使用しているクライアントが、基になるハードウェアが公称 1.0 速度で実行されていたかのように傾斜を指定してください。 つまり、物理クロックの傾斜の重要な誤差なく一貫性が保たを保証できない pin がレート調整の要求を受け付けることができません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

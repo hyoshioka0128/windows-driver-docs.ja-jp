@@ -1,6 +1,6 @@
 ---
-title: IEEE 1394 の仮想デバイスの削除
-description: IEEE 1394 の仮想デバイスの削除
+title: IEEE 1394 仮想デバイスの削除
+description: IEEE 1394 仮想デバイスの削除
 ms.assetid: ea2d4b9e-7774-42dc-98dd-d95298012d72
 keywords:
 - エミュレーション ドライバー WDK IEEE 1394 バス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f37fcbd77653fcc4e0b7b34931265a595758766
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370976"
 ---
-# <a name="removing-ieee-1394-virtual-devices"></a>IEEE 1394 の仮想デバイスの削除
+# <a name="removing-ieee-1394-virtual-devices"></a>IEEE 1394 仮想デバイスの削除
 
 
 

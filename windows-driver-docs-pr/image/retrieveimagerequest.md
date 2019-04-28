@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0023e7ca3f8211e5d626455ae634e983b79145c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381614"
 ---
 # <a name="retrieveimagerequest-element"></a>RetrieveImageRequest 要素
 
@@ -75,7 +75,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
 
 スキャン サービスを検証する必要があります、 [ **JobId** ](jobid.md)と[ **JobToken** ](jobtoken.md)ジョブが有効であることを確認するクライアントを提供する要素と取得を要求しているクライアントによって作成されました。 スキャン サービスが応答する必要があります、要求が有効な場合、 [ **RetrieveImageResponse** ](retrieveimageresponse.md)操作の要素。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
 
 この操作は、次のエラーを返すも可能性があります。
 
@@ -85,7 +85,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
     |----------------|------------------------------------|
     | \[コード\]       | soap 送信者:                        |
     | \[サブコード\]    | wscn:ClientErrorJobIdNotFound      |
-    | \[理由\]     | 指定したジョブ Id が見つかりませんでした。 |
+    | \[Reason\]     | 指定したジョブ Id が見つかりませんでした。 |
     | \[詳細\]     | JobId:JobId が正しくありません。             |
 
      
@@ -96,7 +96,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
     |----------------|------------------------------------------------|
     | \[コード\]       | soap 送信者:                                    |
     | \[サブコード\]    | wscn:ClientErrorNoImagesAvailable              |
-    | \[理由\]     | サーバーには、取得に使用できるイメージがありません。 |
+    | \[Reason\]     | サーバーには、取得に使用できるイメージがありません。 |
     | \[詳細\]     | なし                                           |
 
      
@@ -107,7 +107,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
     |----------------|---------------------------------------------------------------------|
     | \[コード\]       | soap 送信者:                                                         |
     | \[サブコード\]    | wscn:ClientErrorInvalidJobToken                                     |
-    | \[理由\]     | JobId パラメーターを持つ JobToken パラメーターの値が正しくありません。 |
+    | \[Reason\]     | JobId パラメーターを持つ JobToken パラメーターの値が正しくありません。 |
     | \[詳細\]     | なし                                                                |
 
      
@@ -118,7 +118,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
     |----------------|-----------------------------------------|
     | \[コード\]       | soap 送信者:                             |
     | \[サブコード\]    | wscn:ClientErrorJobCancelled            |
-    | \[理由\]     | 現在のスキャン ジョブが取り消されました。 |
+    | \[Reason\]     | 現在のスキャン ジョブが取り消されました。 |
     | \[詳細\]     | なし                                    |
 
      

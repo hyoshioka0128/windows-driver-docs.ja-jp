@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e149509b47163193ad9e2f3bd10d08eb69f78b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380355"
 ---
 # <a name="mediaback-element"></a>MediaBack 要素
 
@@ -82,7 +82,7 @@ ms.locfileid: "56574346"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **MediaBack**要素が無効にすると、スキャナーとのみをサポート双方向のスキャンで定義されている現在の入力ソース、 [**指定**](inputsource.md)要素は**ADFDuplex**します。

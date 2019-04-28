@@ -1,6 +1,6 @@
 ---
-title: ウィンドウのタブ移動
-description: ウィンドウのタブ移動
+title: ウィンドウのタブ表示
+description: ウィンドウのタブ表示
 ms.assetid: 4fff713b-ce76-42a6-91f7-9ae8f2acaafd
 keywords:
 - デバッグ情報のウィンドウ、タブ付きウィンドウ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb64ed0fa7393ff505ef063f5b77500cf23d20d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383010"
 ---
-# <a name="tabbing-a-window"></a>ウィンドウのタブ移動
+# <a name="tabbing-a-window"></a>ウィンドウのタブ表示
 
 
 フローティングかドッキング ウィンドウ] タブの [別のドッキング ウィンドウの上にドラッグします。 マウス ポインターでウィンドウをドラッグして、既にドッキング ウィンドウの中央に覆いかぶさるとマウスのボタンを離します。 ドラッグ中のウィンドウでは、タブ付きウィンドウのコレクションとして既にドッキング ウィンドウを結合します。

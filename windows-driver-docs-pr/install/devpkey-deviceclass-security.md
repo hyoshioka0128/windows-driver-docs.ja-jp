@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bba431e210bb4924f2699e3c72d6b4a72fd54294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374260"
 ---
 # <a name="devpkeydeviceclasssecurity"></a>DEVPKEY_DeviceClass_Security
 
@@ -60,11 +60,11 @@ DEVPKEY_DeviceClass_Security デバイス プロパティは、のセキュリ�
 <a name="remarks"></a>注釈
 -------
 
-値を設定する DEVPKEY_DeviceClass_Security 中またはインストール後のアプリケーションは、デバイス セットアップ クラスをインストールします。 このプロパティを設定する方法の詳細については、[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)を参照してください。
+値を設定する DEVPKEY_DeviceClass_Security 中またはインストール後のアプリケーションは、デバイス セットアップ クラスをインストールします。 このプロパティを設定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。
 
 DEVPKEY_DeviceClass_Security の値を取得するには呼び出すことによって[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090). 呼び出して DEVPKEY_DeviceClass_Security を設定する[ **SetupDiSetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552128)または[ **SetupDiSetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff552132)します。
 
-Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_Security プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_SECURITY 識別子を使用できます。 このプロパティの値にアクセスする方法については、[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)と[デバイス セットアップ クラス SPCRP_Xxx プロパティの設定](https://msdn.microsoft.com/library/windows/hardware/ff550814)を参照してください。
+Windows Server 2003 および Windows XP は、このプロパティをサポートは DEVPKEY_DeviceClass_Security プロパティのキーをサポートしていません。 この以前のバージョンの Windows では、このプロパティの値にアクセスするのに SPCRP_SECURITY 識別子を使用できます。 このプロパティの値にアクセスする方法については、次を参照してください。[デバイス セットアップ クラス SPCRP_Xxx のプロパティを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550644)と[デバイス セットアップ クラス SPCRP_Xxx プロパティの設定](https://msdn.microsoft.com/library/windows/hardware/ff550814)します。
 
 <a name="requirements"></a>要件
 ------------

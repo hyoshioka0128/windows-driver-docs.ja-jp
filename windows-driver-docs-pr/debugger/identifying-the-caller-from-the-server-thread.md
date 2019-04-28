@@ -1,19 +1,19 @@
 ---
-title: サーバーのスレッドから呼び出し元を識別します。
-description: サーバーのスレッドから呼び出し元を識別します。
+title: サーバー スレッドからの呼び出し元の特定
+description: サーバー スレッドからの呼び出し元の特定
 ms.assetid: d19dc242-1043-4e61-9fcb-eadac0ab63c8
 keywords:
 - RPC デバッグ、呼び出し元を識別します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecea5be6fff755074eebc25c1fc64dcf56af8dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381036"
 ---
-# <a name="identifying-the-caller-from-the-server-thread"></a>サーバーのスレッドから呼び出し元を識別します。
+# <a name="identifying-the-caller-from-the-server-thread"></a>サーバー スレッドからの呼び出し元の特定
 
 
 ## <span id="ddk_identifying_the_caller_from_the_server_thread_dbg"></span><span id="DDK_IDENTIFYING_THE_CALLER_FROM_THE_SERVER_THREAD_DBG"></span>
@@ -73,7 +73,7 @@ TCP をトランスポートとして使用する場合は、呼び出し元の 
 
 リモートの名前付きパイプをトランスポートとして使用する場合の情報は使用できません。
 
-**注**  前の例は、サーバー スレッドがわかっている場合は、クライアント スレッドを見つける方法を示しています。 逆の手法の例は、[呼び出しスタックしている問題を分析](analyzing-a-stuck-call-problem.md)を参照してください。
+**注**  前の例は、サーバー スレッドがわかっている場合は、クライアント スレッドを見つける方法を示しています。 逆の手法の例は、次を参照してください。[呼び出しスタックしている問題を分析](analyzing-a-stuck-call-problem.md)します。
 
  
 

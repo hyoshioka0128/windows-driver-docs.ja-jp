@@ -6,13 +6,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: cca9037dfd98b8420c6156c416e45c9b306d372c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375870"
 ---
-# <a name="windows-8-in-box-graphics-drivers-treated-as-generic-drivers"></a>Windows 8 インボックス グラフィック ドライバーが汎用ドライバーとして扱われます
+# <a name="windows-8-in-box-graphics-drivers-treated-as-generic-drivers"></a>Windows 8 インボックス グラフィックス ドライバーが汎用ドライバーとして扱われる
 
 
 このシナリオで、MS 基本的なディスプレイ ドライバー (MSBDD) を含む Windows 8 インボックス グラフィックス ドライバーすべて扱わ汎用ドライバーにより、Windows と Windows Update。

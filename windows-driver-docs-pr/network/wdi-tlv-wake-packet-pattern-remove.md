@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_WAKE_PACKET_PATTERN_REMOVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 650254b6a9f35d2d9ff75e7392a4c8fefc200813
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382132"
 ---
 # <a name="wditlvwakepacketpatternremove"></a>WDI\_TLV\_WAKE\_パケット\_パターン\_削除
 
@@ -31,13 +31,13 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                           |
+| 型   | 説明                           |
 |--------|---------------------------------------|
 | UINT32 | ウェイク アップ パケットのパターンの ID を指定します |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

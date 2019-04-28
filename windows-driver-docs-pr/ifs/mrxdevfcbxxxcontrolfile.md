@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfce585a92100ceb8f541839671e1e1edbc8b434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379693"
 ---
 # <a name="mrxdevfcbxxxcontrolfile-routine"></a>MRxDevFcbXXXControlFile ルーチン
 
@@ -87,7 +87,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *MRxDevFcbXXXControlFile* IOCTL と FSCTL を要求を処理 FCB のデバイスに関連するネットワークのミニ リダイレクターに送信されます。
@@ -108,7 +108,7 @@ IRP が場合\_MJ\_ファイル\_システム\_RDBSS、RX では、次のメン�
 
 場合*MRxDevFcbXXXControlFile*ステータスを返します\_成功すると、そのルーチンが成功しました。 その他の戻り値は、エラーが発生したことを示します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

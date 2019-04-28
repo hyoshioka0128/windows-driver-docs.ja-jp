@@ -9,11 +9,11 @@ keywords:
 ms.date: 03/12/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e47fd16f420e3464a6cc1420aab93b94f8e8534a
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375585"
 ---
 # <a name="configuring-the-registry"></a>レジストリの構成
 
@@ -167,21 +167,21 @@ SymProxy には、次のイベントが記録されます。
 
 |              |                                   |             |
 |--------------|-----------------------------------|-------------|
-| **イベント ID** | **[説明]**                   | **チャネル** |
-| 1            | ISAPI フィルターの開始         | 管理者       |
-| 2            | ISAPI フィルターを停止します。          | 管理者       |
-| 3            | ISAPI フィルターの構成 | 管理者       |
-| 4            | キャッシュ ミスの統計             | 管理者       |
+| **イベント ID** | **説明**                   | **チャネル** |
+| 1            | ISAPI フィルターの開始         | 管理       |
+| 2            | ISAPI フィルターを停止します。          | 管理       |
+| 3            | ISAPI フィルターの構成 | 管理       |
+| 4            | キャッシュ ミスの統計             | 管理       |
 | 10           | URL の要求]-[ローカル キャッシュ ヒット     | Operational |
 | 11           | URL の要求]-[ローカル キャッシュ ミス    | Operational |
 | 20           | SymSrv を使用してシンボルのダウンロード        | Operational |
-| 30           | 重要なシンボルがありません。           | 管理者       |
-| 31           | 重要なイメージがありません。            | 管理者       |
-| 40           | SymSrv – パスが見つかりません           | 管理者       |
-| 41           | SymSrv – ファイルが見つかりませんでした。           | 管理者       |
-| 42           | SymSrv – アクセスが拒否されました            | 管理者       |
-| 43           | SymSrv – パスが長すぎます            | 管理者       |
-| 49           | SymSrv – エラー コード               | 管理者       |
+| 30           | 重要なシンボルがありません。           | 管理       |
+| 31           | 重要なイメージがありません。            | 管理       |
+| 40           | SymSrv – パスが見つかりません           | 管理       |
+| 41           | SymSrv – ファイルが見つかりませんでした。           | 管理       |
+| 42           | SymSrv – アクセスが拒否されました            | 管理       |
+| 43           | SymSrv – パスが長すぎます            | 管理       |
+| 49           | SymSrv – エラー コード               | 管理       |
 | 90           | ロックの競合                   | Operational |
 | 100          | 一般的な重大なメッセージ          | 分析    |
 | 101          | 一般的なエラー メッセージ             | 分析    |

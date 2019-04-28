@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5f4a853dc7dbe9c28913fd6070a37c4d7c5d284
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382852"
 ---
 # <a name="introduction-to-printing"></a>印刷の概要
 
@@ -27,7 +27,7 @@ Microsoft Win32 GDI アプリケーションを印刷するときは、Win32 API
 
 XPS 印刷パスでは、プリンター ドライバーは XML Paper Specification (XPS) 上に基づきます。 Microsoft Win32 XPS アプリケーションを印刷するとき、アプリケーションは、XPS 印刷 API で XPS 関数を呼び出します。 キューへの印刷時[XPSDrv プリンター ドライバー](xpsdrv-printer-drivers.md)スプーラーのレンダリングや出力デバイスに直接 XPS のスプール ファイルを渡します。 GDI のデバイスには、XPS ファイルを印刷する場合は、GDI 変換モジュールを XPS を通じて EMF ファイルに変換されます。 GDI の Win32 アプリケーションと同様の方法で GDI 印刷パスを通じて送信されます。
 
-Windows Presentation Foundation (WPF) アプリケーションでは、XPS のスプール ファイル形式で、スプーラーに XPS ドキュメントをスプールする WPF の印刷のサポート関数を呼び出します。 ように、Win32 XPS アプリケーションからの印刷スプーラーが印刷キューに XPSDrv プリンター ドライバーを印刷するとき、スプーラーに元の形式でスプール ファイルが XPSDrv プリンター ドライバーのレンダリングやプリンターへの出力に渡されます。 GDI ベースになっているプリンターには、スプーラが印刷、バージョン 3 のプリンター ドライバーでは、スプーラー データを送信、XPS スプール ファイル形式で EMF ファイルへの変換については、GDI 変換モジュール。 データを印刷用の GDI ベースのプリンター ドライバーに送信します。 これらのデータ パスの詳細については、[Windows 印刷パスの概要](windows-print-path-overview.md)を参照してください。 XPS の詳細については、、 [XML 仕様概要](https://msdn.microsoft.com/library/windows/hardware/dn641615)を参照してください。
+Windows Presentation Foundation (WPF) アプリケーションでは、XPS のスプール ファイル形式で、スプーラーに XPS ドキュメントをスプールする WPF の印刷のサポート関数を呼び出します。 ように、Win32 XPS アプリケーションからの印刷スプーラーが印刷キューに XPSDrv プリンター ドライバーを印刷するとき、スプーラーに元の形式でスプール ファイルが XPSDrv プリンター ドライバーのレンダリングやプリンターへの出力に渡されます。 GDI ベースになっているプリンターには、スプーラが印刷、バージョン 3 のプリンター ドライバーでは、スプーラー データを送信、XPS スプール ファイル形式で EMF ファイルへの変換については、GDI 変換モジュール。 データを印刷用の GDI ベースのプリンター ドライバーに送信します。 これらのデータ パスの詳細については、次を参照してください。 [Windows 印刷パスの概要](windows-print-path-overview.md)します。 XPS の詳細については、次を参照してください。、 [XML 仕様概要](https://msdn.microsoft.com/library/windows/hardware/dn641615)します。
 
 Spooler」および「ドライバー コンポーネントは、ハードウェア ベンダーが新しいハードウェアのサポートを簡単に追加できるように、置き換え可能な。 印刷スプーラとドライバー コンポーネントの詳細については、次のセクションを参照してください。
 
@@ -35,9 +35,9 @@ Spooler」および「ドライバー コンポーネントは、ハードウェ
 
 [プリンター ドライバーのアーキテクチャ](printer-driver-architecture.md)
 
-新しいプリンターのサポートは、通常、Microsoft から提供されたプリンター ドライバーのいずれかでのみ使用するための新しいデータ ファイルを作成する必要があります。 Microsoft のプリンター ドライバーの詳細については、[プリンター ドライバーの概要](printer-driver-overview.md)を参照してください。
+新しいプリンターのサポートは、通常、Microsoft から提供されたプリンター ドライバーのいずれかでのみ使用するための新しいデータ ファイルを作成する必要があります。 Microsoft のプリンター ドライバーの詳細については、次を参照してください。[プリンター ドライバーの概要](printer-driver-overview.md)します。
 
-Microsoft ユニバーサル プリンター ドライバーと Microsoft Postscript プリンター ドライバーの動作をカスタマイズすることができます。 詳細については、[をカスタマイズする Microsoft のプリンター ドライバー](customizing-microsoft-s-printer-drivers.md)を参照してください。 印刷スプーラをカスタマイズすることもできます。 詳細については、[印刷スプーラー コンポーネントのカスタマイズ](print-spooler-components.md)を参照してください。
+Microsoft ユニバーサル プリンター ドライバーと Microsoft Postscript プリンター ドライバーの動作をカスタマイズすることができます。 詳細については、次を参照してください。[をカスタマイズする Microsoft のプリンター ドライバー](customizing-microsoft-s-printer-drivers.md)します。 印刷スプーラをカスタマイズすることもできます。 詳細については、次を参照してください。[印刷スプーラー コンポーネントのカスタマイズ](print-spooler-components.md)します。
 
 その他のセクションでは、次のトピックを説明します。
 

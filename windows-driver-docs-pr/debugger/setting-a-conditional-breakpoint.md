@@ -1,5 +1,5 @@
 ---
-title: WinDbg およびその他の Windows デバッガーでの条件付きブレークポイント
+title: WinDbg および他の Windows デバッガーの条件付きブレークポイント
 description: WinDbg およびその他の Windows デバッガーでの条件付きブレークポイントは、特定の条件が満たされる場合にのみ中断する必要がある場合に便利です。
 ms.assetid: 9fa5b417-8904-48bc-ad5c-62ba35d70b73
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5687bf16b7330076ec81802772c02f9110f16a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381984"
 ---
-# <a name="conditional-breakpoints-in-windbg-and-other-windows-debuggers"></a>WinDbg およびその他の Windows デバッガーでの条件付きブレークポイント
+# <a name="conditional-breakpoints-in-windbg-and-other-windows-debuggers"></a>WinDbg および他の Windows デバッガーの条件付きブレークポイント
 
 
 WinDbg およびその他の Windows デバッガーでの条件付きブレークポイントは、特定の条件が満たされる場合にのみ中断する必要がある場合に便利です。
@@ -45,13 +45,13 @@ WinDbg およびその他の Windows デバッガーでの条件付きブレー�
 
 上記のコマンドでは、次の要素を含む非常に複雑な構文があります。
 
--   [ **Bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドにブレークポイントを設定します。 前の例は、bp コマンドを使用して、使用することも、 **bu (未解決のブレークポイントの設定)** コマンド。 間の相違点の詳細については**bp**と**bu**、ブレークポイントに基本的な概要については、と[を使用してブレークポイント](using-breakpoints.md)を参照してください。
+-   [ **Bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドにブレークポイントを設定します。 前の例は、bp コマンドを使用して、使用することも、 **bu (未解決のブレークポイントの設定)** コマンド。 間の相違点の詳細については**bp**と**bu**、ブレークポイントに基本的な概要については、次を参照してください。 と[を使用してブレークポイント](using-breakpoints.md)します。
 
--   グレーブ アクセント記号を使用してソース行番号を指定 ( **\`** )。 詳細については、[ソース行構文](source-line-syntax.md)を参照してください。
+-   グレーブ アクセント記号を使用してソース行番号を指定 ( **\`** )。 詳細については、次を参照してください。[ソース行構文](source-line-syntax.md)します。
 
 -   ブレークポイントにヒットすると、二重引用符内のコマンド ( **"** ) を実行します。 このコマンドは、この例で、 [ **j (を実行する場合 - その他)** ](j--execute-if---else-.md)コマンドまたは[ **.if** ](-if.md)トークンは、かっこで囲まれた式をテストします。
 
--   ソース プログラムで、 **MyVar**は整数です。 C++ の式の構文を使用している場合**MyVar**は整数として解釈されます。 ただし、この例 (とデバッガーの既定の構成)、MASM 式の構文が使用されます。 MASM 式、 **MyVar**アドレスとして扱われます。 そのため、使用する必要があります、 **poi**逆参照演算子。 (実際には、変数に C ポインターの場合必要がありますを 2 回 - 逆参照することなど**poi(poi(MyPtr))**)。**0n**プレフィックスは、この数値が 10 進数であるを指定します。 構文の詳細については、[MASM 数字と演算子](masm-numbers-and-operators.md)を参照してください。
+-   ソース プログラムで、 **MyVar**は整数です。 C++ の式の構文を使用している場合**MyVar**は整数として解釈されます。 ただし、この例 (とデバッガーの既定の構成)、MASM 式の構文が使用されます。 MASM 式、 **MyVar**アドレスとして扱われます。 そのため、使用する必要があります、 **poi**逆参照演算子。 (実際には、変数に C ポインターの場合必要がありますを 2 回 - 逆参照することなど**poi(poi(MyPtr))**)。**0n**プレフィックスは、この数値が 10 進数であるを指定します。 構文の詳細については、次を参照してください。 [MASM 数字と演算子](masm-numbers-and-operators.md)します。
 
 -   かっこ内の式には単一引用符で囲まれた 2 つのコマンドが続きます ( **'** ) の**j**コマンドと中かっこ ( {} ) の **.if**トークンです。 式が true の場合は、最初のコマンドが実行されます。 この例ではありません最初のコマンドは、コマンドの実行が終了すると、コントロールはデバッガーと共にとどまります。 かっこで囲まれた式が false の場合は、2 番目のコマンドが実行されます。 2 番目のコマンドではほぼ常に、 [ **gc (条件付きブレークポイントから移動)** ](gc--go-from-conditional-breakpoint-.md)コマンド、このコマンドによって、実行、ブレークポイントの前に発生しているのと同じ方法で再開するため(ステップ実行、トレース、または無料の実行) がヒットしました。
 
@@ -118,7 +118,7 @@ bp kernel32!CreateEventW "$$<c:\\commands.txt"
 0:000> bp mydriver!myFunction ".if (@eax & 0x0`ffffffff) = 0x0`c0004321  {} .else {gc}"
 ```
 
-詳細については、デバッガーによって符号拡張が番号については、[符号拡張](sign-extension.md)を参照してください。
+詳細については、デバッガーによって符号拡張が番号については、次を参照してください。[符号拡張](sign-extension.md)します。
 
 ### <a name="span-idconditionalbreakpointsinwindbgspanspan-idconditionalbreakpointsinwindbgspanconditional-breakpoints-in-windbg"></a><span id="conditional_breakpoints_in_windbg"></span><span id="CONDITIONAL_BREAKPOINTS_IN_WINDBG"></span>WinDbg で条件付きブレークポイント
 

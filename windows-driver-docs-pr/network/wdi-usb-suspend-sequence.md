@@ -1,17 +1,17 @@
 ---
-title: WDI USB シーケンスを中断します。
+title: WDI USB 中断シーケンス
 description: NDIS がセレクティブ サスペンドのアイドル タイムアウト (SSIdleTimeout) よりも長時間アイドル状態が検出すると、UE は NDIS を呼び出します。
 ms.assetid: EEDA274F-AC7D-4515-BAAF-FBEDDF95D2DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 126e031d53aeac5190a5785948a648ab1f41a3f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373793"
 ---
-# <a name="wdi-usb-suspend-sequence"></a>WDI USB シーケンスを中断します。
+# <a name="wdi-usb-suspend-sequence"></a>WDI USB 中断シーケンス
 
 
 NDIS 検出セレクティブ サスペンドのアイドル タイムアウトより長くアイドル状態にした場合 (*SSIdleTimeout*)、NDIS、UE を呼び出します。 NDIS を返すことによって、アイドル状態の通知を拒否することがあります、UE\_状態\_ビジーです。 UE と LE を呼び出す場合は、UE はアイドル状態の通知を拒否していない、 **LeIdleNotificationHander**、および、LE が拒否するか、そのまま使用します。

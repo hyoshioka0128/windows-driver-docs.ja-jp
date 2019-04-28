@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a1ab975584a559681ac350097641ba20b0bdc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382600"
 ---
 # <a name="rectangle-area-fill-commands"></a>長方形領域塗りつぶしコマンド
 
@@ -72,7 +72,7 @@ ms.locfileid: "56570589"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
  
 

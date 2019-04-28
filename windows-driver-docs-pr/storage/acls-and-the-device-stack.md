@@ -1,17 +1,17 @@
 ---
-title: Acl とデバイス スタック
-description: Acl とデバイス スタック
+title: ACL とデバイス スタック
+description: ACL とデバイス スタック
 ms.assetid: DAFC851D-E808-4588-86D2-E608584FD05B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd6567b89243c3f685217e250e0a7678c89110cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382751"
 ---
-# <a name="acls-and-the-device-stack"></a>Acl とデバイス スタック
+# <a name="acls-and-the-device-stack"></a>ACL とデバイス スタック
 
 
 ボリュームとデバイスへのアクセスは、それぞれのインターフェイスのそれぞれに設定されている Acl によって制御されます。 デバイス インターフェイスの Acl を確認します。
@@ -63,7 +63,7 @@ UFD などのホット プラグ可能なデバイスのドライバー スタ�
 |          |                                  |
 |----------|----------------------------------|
 | プロパティ | SPDRP\_セキュリティ                  |
-| Value    | **セキュリティ\_記述子**         |
+| 値    | **セキュリティ\_記述子**         |
 | サイズ     | **sizeof**(セキュリティ\_記述子) |
 
  

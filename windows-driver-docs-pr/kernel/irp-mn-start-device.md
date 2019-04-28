@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_START_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9e11350d5677f252c1a84ac90eaaf71039733b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381400"
 ---
 # <a name="irpmnstartdevice"></a>IRP\_MN\_開始\_デバイス
 
@@ -60,7 +60,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 Windows Vista およびそれ以降のオペレーティング システムでは、ことをお勧めドライバー保留常に、 **IRP\_MN\_開始\_デバイス**IRP 後でその処理を完了します。 この順序により、デバイスの再起動を非同期に処理するシステムです。 (Windows Vista より前に、のオペレーティング システムでは、ドライバーが状態を返すことができます\_PENDING からは、ディスパッチ ルーチンが PnP マネージャーには、他の操作と、デバイスの再起動が重複していない)。
 
-開始 IRP の処理の詳細については、[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)を参照してください。
+開始 IRP の処理の詳細については、次を参照してください。[デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563849)します。
 
 **この IRP を送信します。**
 

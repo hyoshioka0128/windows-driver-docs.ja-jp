@@ -1,6 +1,6 @@
 ---
-title: マクロ ブロックの予測
-description: マクロ ブロックの予測
+title: マクロブロック予測
+description: マクロブロック予測
 ms.assetid: 95e779ab-b110-4636-9475-6881dba89649
 keywords:
 - MCP WDK DirectX VA
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2452e2bc5027d89aee452a9a358442024ff1b8c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380421"
 ---
-# <a name="macroblock-prediction"></a>マクロ ブロックの予測
+# <a name="macroblock-prediction"></a>マクロブロック予測
 
 
 ## <span id="ddk_macroblock_prediction_gg"></span><span id="DDK_MACROBLOCK_PREDICTION_GG"></span>

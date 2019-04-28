@@ -1,6 +1,6 @@
 ---
-title: プラグインのハンドラーをインターフェイスします。
-description: プラグインのハンドラーをインターフェイスします。
+title: インターフェイス ハンドラー プラグイン
+description: インターフェイス ハンドラー プラグイン
 ms.assetid: cd81f622-d11c-4b40-ac78-9324716e0a2c
 keywords:
 - カーネル ストリーミング プロキシ WDK AVStream、ハンドラーのインターフェイス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d84fba54f75adecaa81bab881d8790e3a63c377
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370915"
 ---
-# <a name="interface-handler-plug-in"></a>プラグインのハンドラーをインターフェイスします。
+# <a name="interface-handler-plug-in"></a>インターフェイス ハンドラー プラグイン
 
 
 KS ミニドライバーによって公開されるドライバー固有のプロパティ セットへのユーザー モードのプログラムによるアクセスを提供するプラグイン インターフェイス ハンドラーを記述することができます。 」の説明に従って、オブジェクトを最初に、登録[KS プロキシの登録にプラグイン](registering-ks-proxy-plug-ins.md)します。

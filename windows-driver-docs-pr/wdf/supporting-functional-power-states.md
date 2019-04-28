@@ -1,17 +1,17 @@
 ---
-title: 電源状態の機能をサポートしています。
-description: 電源状態の機能をサポートしています。
+title: 機能電源状態のサポート
+description: 機能電源状態のサポート
 ms.assetid: F96214C9-702D-402E-B873-5DF57C521B34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b35c98b3faa551fbdf954c2d2a6ee0d9a24d5ca4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382083"
 ---
-# <a name="supporting-functional-power-states"></a>電源状態の機能をサポートしています。
+# <a name="supporting-functional-power-states"></a>機能電源状態のサポート
 
 
 Windows 8 以降、電源マネージャーには、実行時の電源管理フレームワーク (PoFx) が含まれています。 PoFx では、コンポーネント (またはサブデバイス) レベルでの電源とクロックの管理をサポートします。
@@ -55,14 +55,14 @@ KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoF
 <li>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545903" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545903)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>します。</li>
 </ul>
 <p>この場合は、KMDF、PoFx やり取りのほとんどを処理します。</p>
-<p>サンプル コードでは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>を参照してください。</p></td>
+<p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="supporting-multiple-functional-power-states-for-multiple-component-devices.md" data-raw-source="[Multiple components, single or multiple states](supporting-multiple-functional-power-states-for-multiple-component-devices.md)">複数のコンポーネント、1 つまたは複数の状態</a></p></td>
 <td align="left"><p>WDM インターフェイスを使用してサポートされています。</p></td>
 <td align="left"><p>サポートされない</p></td>
 <td align="left"><p>ドライバーは、複数のコンポーネントが場合。 この場合、PoFx インターフェイスを直接使用する必要があります。</p>
-<p>サンプル コードでは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>を参照してください。</p></td>
+<p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
 </tr>
 </tbody>
 </table>

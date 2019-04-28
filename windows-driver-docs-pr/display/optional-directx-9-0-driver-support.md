@@ -1,17 +1,17 @@
 ---
-title: 省略可能な DirectX 9.0 ドライバーのサポート
-description: 省略可能な DirectX 9.0 ドライバーのサポート
+title: DirectX 9.0 ドライバーのオプションのサポート
+description: DirectX 9.0 ドライバーのオプションのサポート
 ms.assetid: 9caa1ac9-0444-4c0b-8dbf-fa34a6b62fc1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41f06975d0b28266b564b6d9c2d3eefe7fd5e5c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379847"
 ---
-# <a name="optional-directx-90-driver-support"></a>省略可能な DirectX 9.0 ドライバーのサポート
+# <a name="optional-directx-90-driver-support"></a>DirectX 9.0 ドライバーのオプションのサポート
 
 
 ## <span id="ddk_optional_directx_9_0_driver_support_gg"></span><span id="DDK_OPTIONAL_DIRECTX_9_0_DRIVER_SUPPORT_GG"></span>

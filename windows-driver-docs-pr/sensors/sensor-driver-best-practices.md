@@ -5,11 +5,11 @@ ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 08bbeaf79f0cb6e91fc0ee847df4b1211c8644bc
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368854"
 ---
 # <a name="sensor-driver-best-practices"></a>センサー ドライバーのベスト プラクティス
 
@@ -48,7 +48,7 @@ Location API とセンサーの API を使用する場合は、センサーの�
 
 センサーのイベントに次の推奨事項が適用されます。
 
--   データ更新イベント、現在のレポート間隔が経過し、感度の変更を超えた場合にのみ発生します。 これは、デバイスのファームウェアの関数ではほとんどです。 ただし、ドライバーは、複数のクライアント間で判別する必要があります。 詳細については、[センサー ドライバー イベントについて](about-sensor-driver-events.md)を参照してください。
+-   データ更新イベント、現在のレポート間隔が経過し、感度の変更を超えた場合にのみ発生します。 これは、デバイスのファームウェアの関数ではほとんどです。 ただし、ドライバーは、複数のクライアント間で判別する必要があります。 詳細については、次を参照してください。[センサー ドライバー イベントについて](about-sensor-driver-events.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 [場所のセンサー ドライバーの記述](https://docs.microsoft.com/windows-hardware/drivers/gnss/writing-a-location-sensor-driver)

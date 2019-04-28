@@ -5,11 +5,11 @@ ms.assetid: 53BAC457-BB6A-44a8-AD8D-3B621F41A245
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43e45ed79f1bb9c33ade51578d80b83751308555
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383042"
 ---
 # <a name="assembly-config-files"></a>アセンブリの構成ファイル
 
@@ -39,7 +39,7 @@ TAEF サポートは、アセンブリの構成ファイルをテストします
 ## <a name="span-idreadingcfspanspan-idreadingcfspanreading-the-configuration-file-from-your-tests"></a><span id="reading_cf"></span><span id="READING_CF"></span>テストから構成ファイルの読み取り
 
 
-使用することができます、 **System.Configuration.ConfigurationManager**構成ファイルからデータを読み取るクラス。 例えば以下のようにします。
+使用することができます、 **System.Configuration.ConfigurationManager**構成ファイルからデータを読み取るクラス。 以下に例を示します。
 
 ```cpp
 NameValueCollection appStgs = ConfigurationManager.AppSettings;

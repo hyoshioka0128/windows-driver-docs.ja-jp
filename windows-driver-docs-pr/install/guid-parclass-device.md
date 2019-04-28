@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9ffbfb3dd1449ee8e6419afe3d99a17e6fd4145d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369978"
 ---
 # <a name="guidparclassdevice"></a>GUID_PARCLASS_DEVICE
 
 
 GUID_PARCLASS_DEVICE は、パラレル ポートに接続されているデバイスに対するデバイスのインターフェイス クラスの古い形式の識別子です。 このクラスの新しいインスタンスを使用して、 [ **GUID_DEVINTERFACE_PARCLASS** ](guid-devinterface-parclass.md)クラス識別子の代わりにします。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

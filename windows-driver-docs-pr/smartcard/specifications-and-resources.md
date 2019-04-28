@@ -1,20 +1,20 @@
 ---
-title: 仕様書、およびリソース
-description: リーダーおよびカードがスマート カード、Microsoft Windows オペレーティング システムでスマート カードのサポートを使用するには、は、ICCs およびパーソナル コンピューター システムの相互運用性の仕様と互換性があります。
+title: 仕様とリソース
+description: Microsoft Windows オペレーティング システムでスマート カードのサポートを使用するには、「Interoperability Specification for ICCs and Personal Computer Systems (ICC およびパーソナル コンピューター システムの互換性の仕様)」に対応したスマート カード リーダーおよびカードが必要です。
 ms.assetid: 2987B55B-0A2E-405D-B497-2EB7FB0E458D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f038f7186a400f69d7a22e82843e5f1c5b5dd46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382541"
 ---
-# <a name="specifications-and-resources"></a>仕様書、およびリソース
+# <a name="specifications-and-resources"></a>仕様とリソース
 
 
-リーダーおよびカードがスマート カード、Microsoft Windows オペレーティング システムでスマート カードのサポートを使用するには、は、ICCs およびパーソナル コンピューター システムの相互運用性の仕様と互換性があります。 スマート カード リーダーとデバイス ドライバーには、プラグ アンド プレイが準拠している必要があります。
+Microsoft Windows オペレーティング システムでスマート カードのサポートを使用するには、「Interoperability Specification for ICCs and Personal Computer Systems (ICC およびパーソナル コンピューター システムの互換性の仕様)」に対応したスマート カード リーダーおよびカードが必要です。 また、スマート カード リーダーとデバイス ドライバーはプラグ アンド プレイに対応している必要があります。
 
 ## <a name="span-idsmartcardreaderspanspan-idsmartcardreaderspanspan-idsmartcardreaderspansmart-card-reader"></a><span id="Smart_Card_Reader"></span><span id="smart_card_reader"></span><span id="SMART_CARD_READER"></span>スマート カード リーダー
 

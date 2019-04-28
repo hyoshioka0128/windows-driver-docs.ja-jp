@@ -1,6 +1,6 @@
 ---
-title: Automation のテーブルを定義します。
-description: Automation のテーブルを定義します。
+title: 自動化テーブルの定義
+description: 自動化テーブルの定義
 ms.assetid: 1c0dace6-b618-4705-bf5d-65457d14c072
 keywords:
 - BDA ミニドライバー WDK AVStream、automation テーブル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f9944d2f233d8c8e478a629399ed8d4e2d5cbf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374088"
 ---
-# <a name="defining-automation-tables"></a>Automation のテーブルを定義します。
+# <a name="defining-automation-tables"></a>自動化テーブルの定義
 
 
 

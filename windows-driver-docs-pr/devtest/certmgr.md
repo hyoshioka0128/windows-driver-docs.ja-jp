@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fad959a411067d190c0fa04ec2919b2b1b00aa00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375370"
 ---
 # <a name="certmgr"></a>CertMgr
 
@@ -71,7 +71,7 @@ HKEY レジストリの場所を指定します\_ローカル\_マシン。
 
 場合、 **/r**と共にスイッチが指定されていない、 **/s**切り替えるには、 *currentUser*既定値です。
 
-これらの証明書ストアの詳細については、[証明書ストア](https://msdn.microsoft.com/library/windows/hardware/ff537890)を参照してください。
+これらの証明書ストアの詳細については、次を参照してください。[証明書ストア](https://msdn.microsoft.com/library/windows/hardware/ff537890)します。
 
 <span id="_v"></span><span id="_V"></span>**/v**  
 CertMgr の証明書、Ctl、および Crl に関する詳細情報を表示するよう構成します。 このスイッチが指定されていない場合、CertMgr には簡単な情報のみが表示されます。

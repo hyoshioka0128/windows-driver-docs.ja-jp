@@ -1,16 +1,16 @@
 ---
-Description: The client driver can participate in the policy decisions for USB Type-C connectors.
-title: 型 C ポリシー マネージャーの USB クライアント ドライバーを作成します。
+Description: クライアント ドライバーは、USB 型-C# のコネクタのポリシーの決定に参加できます。
+title: USB Type-C ポリシー マネージャー クライアント ドライバーを記述する
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cd587e74ed4541f06974a0b4fda43f740315677b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378894"
 ---
-# <a name="write-a-usb-type-c-policy-manager-client-driver"></a>型 C ポリシー マネージャーの USB クライアント ドライバーを作成します。
+# <a name="write-a-usb-type-c-policy-manager-client-driver"></a>USB Type-C ポリシー マネージャー クライアント ドライバーを記述する
 
 Microsoft から提供された USB 型 C ポリシー マネージャーは、USB 型-C# のコネクタのアクティビティを監視します。 Windows、バージョンは 1809、プログラミング ポリシー マネージャーにクライアント ドライバーを記述するのに使用できるインターフェイスのセットが導入されています (と呼ばれる、 _PM クライアント ドライバー_このトピックの「)。 クライアント ドライバーは、USB 型-C# のコネクタのポリシーの決定に参加できます。 この設定すると、エクスポート カーネル モード ドライバーまたはユーザー モード ドライバーを記述できます。
 
@@ -64,7 +64,7 @@ PM Api がで宣言されている、 [Usbpmapi.h](https://docs.microsoft.com/wi
 1. クライアント ドライバーの呼び出し[ **UsbPm_Deregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbpmapi/nf-usbpmapi-usbpm_register)通知が不要になったドライバーに必要がある場合。
 2. Policy Manager の登録を解除するクライアント ハンドルの登録をマークおよびは呼び出しません**EVT_USBPM_EVENT_CALLBACK**コールバック。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [USB タイプ-c コネクタのドライバーを作成します。](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)
 

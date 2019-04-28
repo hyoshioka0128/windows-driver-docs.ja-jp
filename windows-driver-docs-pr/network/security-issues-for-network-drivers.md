@@ -1,5 +1,5 @@
 ---
-title: ネットワークのドライバーに関するセキュリティの問題
+title: ネットワーク ドライバーのセキュリティの問題
 description: このセクションには、ネットワーク ドライバーに固有のセキュリティの問題がについて説明します
 ms.assetid: 04400213-9bd4-4dbe-b302-24917450829f
 keywords:
@@ -8,15 +8,15 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae0dc4ac862d4fadfae7b610923667dacfe90fc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374556"
 ---
-# <a name="security-issues-for-network-drivers"></a>ネットワークのドライバーに関するセキュリティの問題
+# <a name="security-issues-for-network-drivers"></a>ネットワーク ドライバーのセキュリティの問題
 
-セキュリティで保護されたドライバーの記述の概要については、[信頼性の高いカーネル モード ドライバーの作成](https://msdn.microsoft.com/library/windows/hardware/ff542904)を参照してください。
+セキュリティで保護されたドライバーの記述の概要については、次を参照してください。[信頼性の高いカーネル モード ドライバーの作成](https://msdn.microsoft.com/library/windows/hardware/ff542904)です。
 
 次の安全なコーディング手法を全般的なデバイス ドライバーに関するガイダンスだけでなく、ネットワーク ドライバーはセキュリティを強化するために、次を実行してください。
 
@@ -24,9 +24,9 @@ ms.locfileid: "56530401"
 
 ## <a name="oid-specific-issues"></a>OID に固有の問題
 
-- ミニポート ドライバーで、その[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)または[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)関数の場合は、任意のオブジェクト識別子を検証する必要があります設定 (OID) の値をドライバーが要求されました。 ドライバーは、設定する値が範囲外であるかを決定します、これはセットの要求が失敗します。 オブジェクト識別子の詳細については、[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)を参照してください。
+- ミニポート ドライバーで、その[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)または[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)関数の場合は、任意のオブジェクト識別子を検証する必要があります設定 (OID) の値をドライバーが要求されました。 ドライバーは、設定する値が範囲外であるかを決定します、これはセットの要求が失敗します。 オブジェクト識別子の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
 
-- 場合、中間ドライバー *MiniportOidRequest*関数は、基になるミニポート ドライバーにセットの操作を渡さない、関数は、OID 値を検証する必要があります。 詳細については、[ドライバー クエリの中間と設定操作](intermediate-driver-query-and-set-operations.md)を参照してください。
+- 場合、中間ドライバー *MiniportOidRequest*関数は、基になるミニポート ドライバーにセットの操作を渡さない、関数は、OID 値を検証する必要があります。 詳細については、次を参照してください。[ドライバー クエリの中間と設定操作](intermediate-driver-query-and-set-operations.md)します。
 
 ### <a name="query-oid-security-guidelines"></a>クエリの OID のセキュリティ ガイドライン
 
@@ -152,7 +152,7 @@ ms.locfileid: "56530401"
 
 ## <a name="other-network-driver-security-issues"></a>その他のネットワーク ドライバーのセキュリティの問題
 
-- 多くの NDIS ミニポート ドライバーでは、NdisRegisterDeviceEx を使用して制御装置を公開します。 WDM ドライバーと同じすべてのセキュリティ規則では、IOCTL ハンドラー、これを監査する必要があります。 詳細については、[I/O 制御コードに関するセキュリティの問題](https://msdn.microsoft.com/library/windows/hardware/ff563700(v=vs.85).aspx)を参照してください。
+- 多くの NDIS ミニポート ドライバーでは、NdisRegisterDeviceEx を使用して制御装置を公開します。 WDM ドライバーと同じすべてのセキュリティ規則では、IOCTL ハンドラー、これを監査する必要があります。 詳細については、次を参照してください。 [I/O 制御コードに関するセキュリティの問題](https://msdn.microsoft.com/library/windows/hardware/ff563700(v=vs.85).aspx)します。
 
 - 適切に設計された NDIS ミニポート ドライバーは、特定のプロセスのコンテキストで呼び出される依存したり (Ioctl) 例外をされている Oid で usermode を非常に密接に対話する必要がありますしません。 Usermode ハンドルを開いたり、ユーザー モードの待機を実行したり usermode クォータに対してメモリを割り当てられているミニポートを表示する赤いフラグがあります。 そのコードを調査する必要があります。
 

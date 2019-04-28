@@ -5,11 +5,11 @@ ms.assetid: 846AC7E6-28D9-4610-9493-BE547869AB15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a998ea9d816eb812ae4bd26846270e8003bd70aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373121"
 ---
 # <a name="traffic-class-priority-assignment"></a>トラフィック クラス優先順位割り当て
 
@@ -20,7 +20,7 @@ NDIS サービスの品質 (QoS) トラフィック クラスは、一連のネ�
 
 NDIS QoS パラメーターを使用して指定、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 **PriorityAssignmentTable**メンバーにトラフィック クラスごとに優先順位の割り当てを指定する配列が含まれています。
 
-優先度レベルの詳細については、[IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)を参照してください。
+優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
 
  
 

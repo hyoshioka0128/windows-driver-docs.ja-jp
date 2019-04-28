@@ -5,11 +5,11 @@ ms.assetid: AE65A450-62A4-4774-A935-B7CB4301CCF4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f2e345399fd9a7b0e885b2bb3bf7979198543d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382543"
 ---
 # <a name="smart-card-plug-and-play"></a>スマート カードのプラグ アンド プレイ
 
