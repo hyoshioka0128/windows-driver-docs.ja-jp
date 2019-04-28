@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 71f42b3f9c1b423753d6e21fcd0d33057c696f33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372382"
 ---
 # <a name="kscategoryaudiogfx"></a>KSCATEGORY_AUDIO_GFX
 
@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO_GFX[デバイス インターフェイス クラス](https://ms
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_AUDIO_GFX 機能カテゴリをサポートすることを示す KSCATEGORY_AUDIO_GFX のインスタンスを登録します。
 
-オーディオのアダプターの他のデバイスのインターフェイス クラスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+オーディオのアダプターの他のデバイスのインターフェイス クラスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 <a name="requirements"></a>必要条件
 ------------

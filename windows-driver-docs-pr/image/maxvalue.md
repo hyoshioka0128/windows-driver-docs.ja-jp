@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c858baf02a7c3920bb98213ac9575ff97bb20e3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380356"
 ---
 # <a name="maxvalue-element"></a>MaxValue 要素
 
@@ -73,7 +73,7 @@ ms.locfileid: "56580264"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 値、 **MaxValue**要素がその親要素に依存します。 有効な値では、適切な親要素を参照してください。

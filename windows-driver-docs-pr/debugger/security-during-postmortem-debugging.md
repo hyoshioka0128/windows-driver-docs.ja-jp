@@ -1,6 +1,6 @@
 ---
-title: 事後のデバッグ中のセキュリティ
-description: 事後のデバッグ中のセキュリティ
+title: 事後デバッグ中のセキュリティ
+description: 事後デバッグ中のセキュリティ
 ms.assetid: 59c411c4-d829-4d1c-9820-e58188f0656c
 keywords:
 - セキュリティに関する考慮事項、事後検証のデバッグ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ea002c275df1969aa466579345bb3c543ca95b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381992"
 ---
-# <a name="security-during-postmortem-debugging"></a>事後のデバッグ中のセキュリティ
+# <a name="security-during-postmortem-debugging"></a>事後デバッグ中のセキュリティ
 
 
 ## <span id="ddk_security_during_postmortem_debugging_dbg"></span><span id="DDK_SECURITY_DURING_POSTMORTEM_DEBUGGING_DBG"></span>

@@ -1,6 +1,6 @@
 ---
-title: IoCompletion ルーチンを実装します。
-description: IoCompletion ルーチンを実装します。
+title: IoCompletion ルーチンの実装
+description: IoCompletion ルーチンの実装
 ms.assetid: 669860b1-5e85-4b28-a9b1-1ccf8c689b7a
 keywords:
 - IoCompletion ルーチン
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5de8d46a1c3e58183b30929914a0bc4779b7fa73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378764"
 ---
-# <a name="implementing-an-iocompletion-routine"></a>IoCompletion ルーチンを実装します。
+# <a name="implementing-an-iocompletion-routine"></a>IoCompletion ルーチンの実装
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: MUX の NDIS 中間ドライバ
-description: MUX の NDIS 中間ドライバ
+title: NDIS MUX 中間ドライバー
+description: NDIS MUX 中間ドライバー
 ms.assetid: 2c2e0af8-aa33-47fb-8605-26eae184ea22
 keywords:
 - MUX 中間ドライバー WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2538c3552d783d85c0712100af6eafee97e3d58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378408"
 ---
-# <a name="ndis-mux-intermediate-drivers"></a>MUX の NDIS 中間ドライバ
+# <a name="ndis-mux-intermediate-drivers"></a>NDIS MUX 中間ドライバー
 
 
 
@@ -36,7 +36,7 @@ MUX 中間ドライバーによって公開されている仮想ミニポート�
 
 ![n 対一のマルチプレクサーの中間ドライバー構成を示す図](images/nto1mux.png)
 
-MUX 中間ドライバーでは、通知オブジェクトの DLL が必要です。 MUX 中間ドライバーが初期化されると、そのバインドは、通知オブジェクトの DLL によって確立された設定によって決まります。 MUX 中間ドライバーをインストールする方法の詳細については、[MUX 中間ドライバーのインストール](mux-intermediate-driver-installation.md)を参照してください。
+MUX 中間ドライバーでは、通知オブジェクトの DLL が必要です。 MUX 中間ドライバーが初期化されると、そのバインドは、通知オブジェクトの DLL によって確立された設定によって決まります。 MUX 中間ドライバーをインストールする方法の詳細については、次を参照してください。 [MUX 中間ドライバーのインストール](mux-intermediate-driver-installation.md)します。
 
 以下の例に示します*n*-を-1 つのマルチプレクサー中間ドライバー。
 

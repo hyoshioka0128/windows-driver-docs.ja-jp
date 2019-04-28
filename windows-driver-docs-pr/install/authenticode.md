@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8363c07338a3b5098f4acc673a4883409d22c95b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374578"
 ---
 # <a name="authenticode-digital-signatures"></a>Authenticode デジタル署名
 
@@ -28,11 +28,11 @@ Authenticode では、暗号化技術を使用して、パブリッシャーの 
 
 Authenticode コード署名では、ドライバーの実行可能ファイルの部分は変更されません。 代わりに、次は。
 
--   埋め込みのシグネチャを持つ署名プロセスには、ドライバー ファイルの nonexecution 部分に含まれるデジタル署名が埋め込まれます。 このプロセスの詳細については、[ドライバー ファイルの埋め込み署名](embedded-signatures-in-a-driver-file.md)を参照してください。
+-   埋め込みのシグネチャを持つ署名プロセスには、ドライバー ファイルの nonexecution 部分に含まれるデジタル署名が埋め込まれます。 このプロセスの詳細については、次を参照してください。[ドライバー ファイルの埋め込み署名](embedded-signatures-in-a-driver-file.md)します。
 
 -   デジタル署名された[カタログ ファイル](catalog-files.md)(*.cat*)、署名プロセス内の各ファイルの内容からファイルのハッシュ値を生成する必要があります、[ドライバー パッケージ](driver-packages.md)します。 カタログ ファイルでは、このハッシュ値が含まれます。 カタログ ファイルは、埋め込みの署名で署名し、されます。 この方法では、カタログ ファイルは、デタッチされた署名の種類です。
 
-**注**  、[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)さまざまなデバイスの種類のテスト カテゴリがあります。 テスト カテゴリの一覧をご覧[認定テスト参照](https://msdn.microsoft.com/library/windows/hardware/hh998741)します。 ソフトウェア パブリッシャーを取得する必要があります、デバイスの種類のテスト カテゴリがこの一覧に含まれる場合、 [WHQL リリース署名](whql-release-signature.md)の[ドライバー パッケージ](driver-packages.md)ただし、HCK がテスト プログラムを持たないかどうか、デバイスの種類、ソフトウェアの発行元は、Microsoft Authenticode テクノロジを使用して、ドライバー パッケージを署名できます。 このプロセスの詳細については、[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)を参照してください。
+**注**  、[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)さまざまなデバイスの種類のテスト カテゴリがあります。 テスト カテゴリの一覧をご覧[認定テスト参照](https://msdn.microsoft.com/library/windows/hardware/hh998741)します。 ソフトウェア パブリッシャーを取得する必要があります、デバイスの種類のテスト カテゴリがこの一覧に含まれる場合、 [WHQL リリース署名](whql-release-signature.md)の[ドライバー パッケージ](driver-packages.md)ただし、HCK がテスト プログラムを持たないかどうか、デバイスの種類、ソフトウェアの発行元は、Microsoft Authenticode テクノロジを使用して、ドライバー パッケージを署名できます。 このプロセスの詳細については、次を参照してください。[パブリック リリース用のドライバーの署名](signing-drivers-for-public-release.md)します。
 
  
 

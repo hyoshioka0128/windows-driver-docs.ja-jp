@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e4dd50771339718b2a6c77a6c062100db3e8dca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380768"
 ---
 # <a name="uf-unassemble-function"></a>uf (関数の逆アセンブル)
 
@@ -53,7 +53,7 @@ uf [Options] Address
 ルーチンでは、命令の数を表示します。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-逆アセンブルする関数のアドレスを指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+逆アセンブルする関数のアドレスを指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

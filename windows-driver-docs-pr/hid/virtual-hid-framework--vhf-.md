@@ -5,11 +5,11 @@ ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92286f38db7ec35cd94b6f64f2ab7ac8fdd4a539
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376732"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>仮想 HID フレームワーク (VHF) を使用して、HID ソース ドライバーを作成します。
 
@@ -18,7 +18,7 @@ ms.locfileid: "56532911"
 -   オペレーティング システムに読み取りの HID レポートを送信するカーネル モード ドライバー フレームワーク (KMDF) HID ソース ドライバーを記述します。
 -   仮想の HID デバイス スタックの HID ソース ドライバーには、下位のフィルターとして VHF ドライバーを読み込みます。
 
-**適用されます。**
+**適用対象**
 
 -   Windows 10
 -   HID デバイスのドライバー開発者向け
@@ -119,7 +119,7 @@ VHF は、これらの Ioctl の HID ソース ドライバー実装イベント
 
 -   [**IOCTL\_HID\_読み取り\_レポート**](https://msdn.microsoft.com/library/windows/hardware/ff541172)
 
-    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、[入力の HID レポートを提出](#submit)を参照してください。
+    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、次を参照してください。[入力の HID レポートを提出](#submit)します。
 
 -   [**IOCTL\_HID\_取得\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541103)または[ **IOCTL\_HID\_設定\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541184)
 
@@ -135,7 +135,7 @@ VHF は、これらの Ioctl の HID ソース ドライバー実装イベント
 
 その他の[HID ミニドライバー IOCTL](https://msdn.microsoft.com/library/windows/hardware/ff539926)、VHF 状態要求が完了すると\_いない\_サポートされています。
 
-呼び出すことによって仮想 HID デバイスが削除された、 [ **VhfDelete**](https://msdn.microsoft.com/library/windows/hardware/dn925038)します。 [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)ドライバーでは、仮想の HID デバイスのリソースが割り当てられている場合は、callback は必須です。 ドライバーを実装する必要があります、 *EvtVhfCleanup*関数し、その関数へのポインターを指定、 **EvtVhfCleanup**のメンバー [ **VHF\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn925044). *EvtVhfCleanup*する前に呼び出される、 **VhfDelete**呼び出しが完了します。 詳細については、[仮想 HID デバイスを削除](#delete-the-virtual-hid-device)を参照してください。
+呼び出すことによって仮想 HID デバイスが削除された、 [ **VhfDelete**](https://msdn.microsoft.com/library/windows/hardware/dn925038)します。 [ *EvtVhfCleanup* ](https://msdn.microsoft.com/library/windows/hardware/dn897134)ドライバーでは、仮想の HID デバイスのリソースが割り当てられている場合は、callback は必須です。 ドライバーを実装する必要があります、 *EvtVhfCleanup*関数し、その関数へのポインターを指定、 **EvtVhfCleanup**のメンバー [ **VHF\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn925044). *EvtVhfCleanup*する前に呼び出される、 **VhfDelete**呼び出しが完了します。 詳細については、次を参照してください。[仮想 HID デバイスを削除](#delete-the-virtual-hid-device)します。
 
 **注**  非同期の操作の完了後、ドライバーを呼び出す必要があります[ **VhfAsyncOperationComplete** ](https://msdn.microsoft.com/library/windows/hardware/dn925060)操作の結果を設定します。 または、コールバックから戻った後に後で、イベント コールバックからメソッドを呼び出すことができます。
 

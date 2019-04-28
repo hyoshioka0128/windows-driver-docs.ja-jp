@@ -1,14 +1,14 @@
 ---
-Description: Selective suspend is disabled for upgrade versions of Microsoft Windows XP. It is enabled for clean installations of Windows XP, Windows Vista, and later versions of Windows.
+Description: セレクティブ サスペンドのアップグレードのバージョンの Microsoft Windows XP は無効です。 Windows XP、Windows Vista、および以降のバージョンの Windows のクリーン インストールする場合は有効です。
 title: 選択的に有効化を中断
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1b913f4206fb1d0eeae890e39f06395bd83ee637
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383022"
 ---
 # <a name="enabling-selective-suspend"></a>選択的に有効化を中断
 

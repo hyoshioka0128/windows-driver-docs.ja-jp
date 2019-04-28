@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 714800ce1d24b0394c98210eeb817752ef54d23e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375218"
 ---
 # <a name="smart-card-design-guide"></a>スマート カード設計ガイド
 
@@ -37,7 +37,7 @@ GUID_DEVINTERFACE_SMARTCARD_READER
 -   IOCTL\_スマート カード\_飲み込む
 
 ## <a name="smart-card-attributes"></a>スマート カードの属性
-Windows スマート カード DDI には、Get と Set の属性の IOCTL 要求が含まれています。 NFC コンタクトレス リーダーをサポートする最小要件を満たすためにのみサポートされています、GET_ATTRIBUTE リーダーと ICC の状態の最小セット。 詳細については、[でサポートされるスマート カード属性](smart-card-attributes.md)を参照してください。
+Windows スマート カード DDI には、Get と Set の属性の IOCTL 要求が含まれています。 NFC コンタクトレス リーダーをサポートする最小要件を満たすためにのみサポートされています、GET_ATTRIBUTE リーダーと ICC の状態の最小セット。 詳細については、次を参照してください。[でサポートされるスマート カード属性](smart-card-attributes.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

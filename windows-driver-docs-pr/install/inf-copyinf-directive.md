@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a120bab01fffa6957f8a204cf206f5eb48a0a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373889"
 ---
 # <a name="inf-copyinf-directive"></a>INF CopyINF ディレクティブ
 
@@ -60,7 +60,7 @@ Windows Vista 以降では、次の点にも適用されます、 **CopyINF**デ
 
 Windows 10、特定の状況では、バージョン 1511 以降では (たとえば、Windows Update または呼び出しをいくつか実行している[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710))、Inf でコピー **CopyINF**適用可能なデバイスにもインストールされます。
 
-INF ファイルをコピーする方法の詳細については、[コピー Inf](copying-inf-files.md)を参照してください。
+INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](copying-inf-files.md)します。
 
 <a name="examples"></a>使用例
 --------

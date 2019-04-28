@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5fe73505d431e642319a403638b023219cc0aa66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377204"
 ---
 # <a name="setfc3mgmtinfo-function"></a>SetFC3MgmtInfo 関数
 
@@ -40,7 +40,7 @@ void SetFC3MgmtInfo(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565667)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetFC3MgmtInfo\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565667)構造体。
 
 *MgmtInfo*   
 型の構造体[ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)ファイバー チャネル アダプターを構成するために使用する FC3 管理情報を保持します。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SetFC3MgmtInfo\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565661)構造体。

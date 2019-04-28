@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00878d784264b7327f1c27d11017a131647d73a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382006"
 ---
 # <a name="scsi-miniport-extensions-scsikddll-and-minipkddll"></a>SCSI ミニポート拡張機能 (Scsikd.dll と Minipkd.dll)
 
@@ -23,7 +23,7 @@ SCSI ミニポート ドライバーのデバッグに役立つ拡張機能の�
 
 Scsikd.dll 拡張機能のコマンドは、任意のバージョンの Windows で使用できます。 ただし、Minipkd.dll 拡張機能のコマンドは、Windows XP 以降のバージョンの Windows でのみ使用できます。 Minipkd.dll でのコマンドでは、SCSIport ベース ミニポートに適用できるのみです。
 
-詳細については、[SCSI ミニポート デバッグ](scsi-miniport-debugging.md)を参照してください。
+詳細については、次を参照してください。 [SCSI ミニポート デバッグ](scsi-miniport-debugging.md)します。
 
  
 

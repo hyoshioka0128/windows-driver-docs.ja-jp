@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b15fd2a12a55088c3667d1dbbc6edca93e6748e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380701"
 ---
 # <a name="oidcotapitranslatetapisap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
 
@@ -85,7 +85,7 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 - **LINEMEDIAMODE_VOICEVIEW**  
 呼び出しのメディア モードでは、VoiceView です。
 
-**予約されています**  
+**Reserved**  
 これは予約されています。 クライアントは、このフィールドを 0 に設定する必要があります。
 
 **NumberOfSaps**  
@@ -94,7 +94,7 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 **NdisSapParams**  
 1 つまたは複数の NDIS_VAR_DATA_DESC 構造体を含む可変長配列を指定します。 各 NDIS_VAR_DATA_DESC 構造体にはの長さと同様に、オフセットが含まれています、 [CO_SAP](https://msdn.microsoft.com/library/windows/hardware/ff545392)構造体。 各 CO_SAP 構造体には、接続指向のクライアントが着信呼び出しを受信できるサービス アクセス ポイント (SAP) を指定します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

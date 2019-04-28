@@ -5,11 +5,11 @@ ms.assetid: d39ed448-5608-4f19-b49c-bbd6727e9491
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cb1143cb392b3e4fd498879bfc2917357241db1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377460"
 ---
 # <a name="iscsistatusqualifiers"></a>ISCSI\_状態\_修飾子
 
@@ -29,7 +29,7 @@ ISCSI\_状態\_修飾子 WMI プロパティ修飾子は、iSCSI HBA イニシ�
 <thead>
 <tr class="header">
 <th align="left">状態値</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

@@ -13,20 +13,20 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4113478be650c3c8cccd820b1cbbc123b10677b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376376"
 ---
 # <a name="whea-hardware-error-events"></a>WHEA ハードウェア エラー イベント
 
 
-Windows ハードウェア エラー アーキテクチャ (WHEA) は、ハードウェア エラーが発生したときに、Event Tracing for Windows (ETW) イベントを発生させます。 これらのハードウェア エラー イベントは、システム イベント ログに記録されます。 WHEA によって発生するさまざまなハードウェアのエラー イベントの説明については、[ハードウェア エラー イベント](https://msdn.microsoft.com/library/windows/hardware/ff559387)を参照してください。
+Windows ハードウェア エラー アーキテクチャ (WHEA) は、ハードウェア エラーが発生したときに、Event Tracing for Windows (ETW) イベントを発生させます。 これらのハードウェア エラー イベントは、システム イベント ログに記録されます。 WHEA によって発生するさまざまなハードウェアのエラー イベントの説明については、次を参照してください。[ハードウェア エラー イベント](https://msdn.microsoft.com/library/windows/hardware/ff559387)します。
 
-アプリケーションは、WHEA によってログに記録されたイベントをクエリすることによって、システム イベント ログからハードウェア エラー イベントを取得できます。 システム イベント ログから WHEA ハードウェア エラーのイベントを取得する方法の例については、[のハードウェア エラー イベント、システム イベント ログを照会](querying-the-system-event-log-for-hardware-error-events.md)を参照してください。
+アプリケーションは、WHEA によってログに記録されたイベントをクエリすることによって、システム イベント ログからハードウェア エラー イベントを取得できます。 システム イベント ログから WHEA ハードウェア エラーのイベントを取得する方法の例については、次を参照してください。[のハードウェア エラー イベント、システム イベント ログを照会](querying-the-system-event-log-for-hardware-error-events.md)します。
 
-アプリケーションは、WHEA によって新しいハードウェアのエラー イベントが発行されるたびに通知にも登録できます。 新しいハードウェアのエラー イベントの通知に登録する方法の例については、[ハードウェア エラー イベントの通知の登録](registering-for-notification-of-hardware-error-events.md)を参照してください。
+アプリケーションは、WHEA によって新しいハードウェアのエラー イベントが発行されるたびに通知にも登録できます。 新しいハードウェアのエラー イベントの通知に登録する方法の例については、次を参照してください。[ハードウェア エラー イベントの通知の登録](registering-for-notification-of-hardware-error-events.md)します。
 
 かどうか、特定のハードウェアのエラー イベントは、システム イベント ログを照会することによって、またはイベント通知を受信することによって取得されたに関係なく、イベントから、ハードウェア エラーのデータを取得するプロセスは同じです。
 

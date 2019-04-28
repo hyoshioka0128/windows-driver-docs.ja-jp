@@ -1,18 +1,18 @@
 ---
-title: ディスプレイ ドライバー Dll の書式設定ファイルのバージョン
+title: ディスプレイ ドライバー DLL のファイル バージョン書式設定
 description: このトピックでは、ディスプレイ アダプターとチップセット、ディスプレイ ドライバー Dll の適切な形式について説明します。
 ms.assetid: E39B2A48-D3F8-4EA5-BCF3-23B1053E8D96
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 831415adc7b00cb71eaad09e7bd3fb029577317e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377671"
 ---
-# <a name="file-version-formatting-for-display-driver-dlls"></a>ディスプレイ ドライバー Dll の書式設定ファイルのバージョン
+# <a name="file-version-formatting-for-display-driver-dlls"></a>ディスプレイ ドライバー DLL のファイル バージョン書式設定
 
 
 このトピックでは、ディスプレイ アダプターまたはチップセットのディスプレイ ドライバー Dll の書式設定、適切なファイルについて説明します。

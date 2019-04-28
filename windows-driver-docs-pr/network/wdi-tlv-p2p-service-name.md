@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_SERVICE_NAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: adaeec3ca664978df0c1e00677a75346e12389b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375651"
 ---
 # <a name="wditlvp2pservicename"></a>WDI\_TLV\_P2P\_サービス\_名
 
@@ -31,7 +31,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                         |
+| 型      | 説明                                         |
 |-----------|-----------------------------------------------------|
 | UINT8\[\] | Utf-8、最大 255 バイトでは、サービスの名前。 |
 

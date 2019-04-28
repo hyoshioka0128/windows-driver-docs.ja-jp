@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2c1e5e9c10adff45a1d86c6aaf55a69096676a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380494"
 ---
 # <a name="n-set-number-base"></a>n (基底数の設定)
 
@@ -95,7 +95,7 @@ n [Radix]
 <a name="remarks"></a>コメント
 -------
 
-現在の基数は、入力と出力の MASM 式に影響します。 入力または C++ の式の出力は影響しません。 これらの式の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
+現在の基数は、入力と出力の MASM 式に影響します。 入力または C++ の式の出力は影響しません。 これらの式の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
 デバッガーが開始されると、既定の基数は 16 に設定します。
 

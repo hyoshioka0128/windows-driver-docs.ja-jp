@@ -1,15 +1,15 @@
 ---
-title: Visual Studio でのシリアル ケーブル経由でのカーネル モードのデバッグのセットアップ
+title: Visual Studio でのシリアル ケーブル経由でのカーネルモード デバッグの設定
 description: Microsoft Visual Studio を使用して、設定し、ヌル モデム ケーブル経由でのカーネル モードのデバッグを実行することができます。
 ms.assetid: 9E50AA5F-92A2-4360-BB21-A9D4F3E9CA83
 ms.date: 04/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 368ebc2681fce48dc5ef26a11538515be7fda63f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381933"
 ---
 # <a name="span-iddebuggersettingupanull-modemcableconnectioninvisualstudiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>Visual Studio でのシリアル ケーブル経由でのカーネル モードのデバッグのセットアップ
 
@@ -19,9 +19,9 @@ ms.locfileid: "56529706"
 
 Microsoft Visual Studio を使用して、設定し、ヌル モデム ケーブル経由でのカーネル モードのデバッグを実行することができます。 ヌル モデム ケーブルは、2 つのシリアル ポートの間でデータを送信するように構成されているシリアル ケーブルです。 これらは、ほとんどのコンピューター ストアで使用できます。 標準のシリアル ケーブルでヌル モデム ケーブルを混同しないでください。 標準のシリアル ケーブルは、互いにシリアル ポートを接続できません。 方法については、ヌル モデム ケーブルはワイヤード (有線) を参照してください[ヌル モデム ケーブル配線](#null-modem-cable-wiring)します。
 
-カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
+カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
 
-Visual Studio を使用してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](setting-up-a-null-modem-cable-connection.md)を参照してください。
+Visual Studio を使用してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](setting-up-a-null-modem-cable-connection.md)します。
 
 デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。
 
@@ -112,7 +112,7 @@ Visual Studio を使用してシリアル デバッグを設定する代わり�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Visual Studio でのカーネル モード デバッグのセットアップ](setting-up-kernel-mode-debugging-in-visual-studio.md)
+[Visual Studio でのカーネル モード デバッグの設定](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
 

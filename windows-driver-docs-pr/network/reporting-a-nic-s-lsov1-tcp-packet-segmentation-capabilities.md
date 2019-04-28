@@ -1,6 +1,6 @@
 ---
-title: レポートの NIC の LSOV1 TCP パケットのセグメンテーション機能
-description: レポートの NIC の LSOV1 TCP パケットのセグメンテーション機能
+title: NIC の LSOV1 TCP パケット セグメンテーション機能のレポート
+description: NIC の LSOV1 TCP パケット セグメンテーション機能のレポート
 ms.assetid: 976f5943-a50e-413b-8520-e280b04122f9
 keywords:
 - LSOV1 WDK ネットワーク
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5af5c69dbc43f8718d44bbc68743ceb19f4a756f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380881"
 ---
-# <a name="reporting-a-nics-lsov1-tcp-packet-segmentation-capabilities"></a>レポートの NIC の LSOV1 TCP パケットのセグメンテーション機能
+# <a name="reporting-a-nics-lsov1-tcp-packet-segmentation-capabilities"></a>NIC の LSOV1 TCP パケット セグメンテーション機能のレポート
 
 
 
@@ -28,7 +28,7 @@ NDIS ミニポート ドライバーが現在の大量送信オフロード バ�
 
 クエリに対する応答で[OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)、NDIS には、NDIS が含まれています\_TCP\_LARGE\_送信\_オフロード\_V1 構造、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599) NDIS を表す構造体、 **InformationBuffer**のメンバー[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 NDIS は、ミニポート ドライバーが提供される情報を使用します。
 
-NDIS サポートする多数の送信は、LSO の拡張のバージョンは、バージョン 2 (LSOV2) をオフロードします。 LSOV2 機能に関する詳細については、[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)を参照してください。
+NDIS サポートする多数の送信は、LSO の拡張のバージョンは、バージョン 2 (LSOV2) をオフロードします。 LSOV2 機能に関する詳細については、次を参照してください。[レポート NIC の LSOV2 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
 
 ミニポート ドライバーは、NDIS で、次の情報を指定する必要があります\_TCP\_LARGE\_送信\_オフロード\_V1 構造体。
 

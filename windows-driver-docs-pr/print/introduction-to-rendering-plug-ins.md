@@ -1,19 +1,19 @@
 ---
-title: プラグインのレンダリングの概要
-description: プラグインのレンダリングの概要
+title: レンダリング プラグインの概要
+description: レンダリング プラグインの概要
 ms.assetid: 7e6756ca-822a-4386-bcbd-363a10b1b2a3
 keywords:
 - プラグインを WDK の印刷、レンダリング プラグインに関するレンダリング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cb9467f0a4797426f8a9707e1737df2775e92e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382608"
 ---
-# <a name="introduction-to-rendering-plug-ins"></a>プラグインのレンダリングの概要
+# <a name="introduction-to-rendering-plug-ins"></a>レンダリング プラグインの概要
 
 
 

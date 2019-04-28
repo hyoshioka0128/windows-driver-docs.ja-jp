@@ -1,17 +1,17 @@
 ---
-title: デバイス サービス拡張機能 API
-description: デバイス サービス拡張機能 API
+title: デバイス サービス拡張 API
+description: デバイス サービス拡張 API
 ms.assetid: e1539ae1-78fd-4d79-81bf-4030e69e191c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d31db3adff55b008392fcbf834a115b33026129
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380268"
 ---
-# <a name="device-services-extension-api"></a>デバイス サービス拡張機能 API
+# <a name="device-services-extension-api"></a>デバイス サービス拡張 API
 
 
 Windows 対応のモバイル ブロード バンド デバイスは、デバイスのサービスとしてサポートされている各機能をプロジェクトします。 サービスには IP 接続 (接続およびモバイル ブロード バンド ネットワークから切断する機能)、電話帳、SIM Toolkit、SMS、USSD などがあります。 各デバイスのサービスでは、対応する GUID があります。 すべてのコントロールのメッセージとモバイル ブロード バンドの一般的なドライバーとデバイスの実行要求に関連付けられているサービスを識別する GUID の間で交換される非 IP パケット。 コマンド識別子 (Cid) と状態を示す値のコードは、サービスの GUID の名前空間で定義されます。 たとえば、電話帳 and SIM Toolkit が両方同じコードを共有 CID が、デバイス サービス要求で交換される GUID によって識別されます。

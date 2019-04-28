@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c32486dfe75292f29c2e34fb807574f8ecc0fff4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383006"
 ---
 # <a name="umdf-driver-host-process"></a>UMDF ドライバーのホスト プロセス
 
@@ -32,7 +32,7 @@ ms.locfileid: "56531781"
 
 -   ドライバーが UMDF 1.9 またはそれ以前のバージョンでビルドされている場合、フレームワークは各デバイス スタックのホスト プロセス (Wudfhost) の個別のインスタンスを作成します。
 
-デバイスのプールに関する詳細は、[デバイスの UMDF ドライバーでプールを使用して](using-device-pooling-in-umdf-drivers.md)を参照してください。
+デバイスのプールに関する詳細は、次を参照してください。[デバイスの UMDF ドライバーでプールを使用して](using-device-pooling-in-umdf-drivers.md)します。
 
 Wudfhost.exe、内では、それぞれ UMDF ドライバーは、独自のアドレス空間で実行され、アプリケーションのプロセスとドライバーのホストの他のインスタンスから分離されたため。
 

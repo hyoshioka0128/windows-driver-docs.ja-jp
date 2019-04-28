@@ -1,6 +1,6 @@
 ---
-title: フレームワークの要求オブジェクト
-description: フレームワークの要求オブジェクト
+title: フレームワーク要求オブジェクト
+description: フレームワーク要求オブジェクト
 ms.assetid: 564f3600-4784-4a37-ac13-38338c38a9d2
 keywords:
 - I/O 要求の WDK KMDF、要求オブジェクト
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80436e8fb83717536cadfbe3c8fe822d40eb5731
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378123"
 ---
-# <a name="framework-request-objects"></a>フレームワークの要求オブジェクト
+# <a name="framework-request-objects"></a>フレームワーク要求オブジェクト
 
 
 

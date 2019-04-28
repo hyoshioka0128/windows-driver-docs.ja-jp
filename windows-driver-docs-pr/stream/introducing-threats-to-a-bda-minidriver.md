@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b74d6b8c9fe74769e0fbed12a75f798023bbb4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370997"
 ---
 # <a name="introducing-threats-to-a-bda-minidriver"></a>BDA ミニドライバーの脅威の概要
 

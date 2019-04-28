@@ -17,11 +17,11 @@ keywords:
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b96b1bbdda31d970127dc4ee1c1ddf763cba7a14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377800"
 ---
 # <a name="filtering-data"></a>データのフィルター処理
 
@@ -66,7 +66,7 @@ ms.locfileid: "56531390"
 | Gyrometer     | 100                                 |
 | Compass       | 100                                 |
 | Inclinometer  | 50                                  |
-| Orientation   | 50                                  |
+| 方向   | 50                                  |
 
  
 
@@ -79,7 +79,7 @@ ms.locfileid: "56531390"
 | Gyrometer     | 0.50                                   |
 | Compass       | 0.20                                   |
 | Inclinometer  | 0.50                                   |
-| Orientation   | 0.50                                   |
+| 方向   | 0.50                                   |
 
 
 ## <a name="change-sensitivity-cs-for-the-inclinometer-and-orientation-sensors"></a>感度 (CS) を傾斜計センサーと方位センサーの変更します。

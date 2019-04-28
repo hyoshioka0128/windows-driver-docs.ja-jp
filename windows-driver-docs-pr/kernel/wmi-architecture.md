@@ -1,19 +1,19 @@
 ---
-title: WMI アーキテクチャ
-description: WMI アーキテクチャ
+title: WMI のアーキテクチャ
+description: WMI のアーキテクチャ
 ms.assetid: cdc8f318-1931-426e-bd9c-da7aa6a11036
 keywords:
 - WMI の WDK カーネルのアーキテクチャ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d025215e6de0ee64f6c527ed476df32696e5e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379370"
 ---
-# <a name="wmi-architecture"></a>WMI アーキテクチャ
+# <a name="wmi-architecture"></a>WMI のアーキテクチャ
 
 
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c32a3743b44db5299f0becc4f6e80320656bc51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368485"
 ---
 # <a name="windows-symbol-packages"></a>Windows シンボル パッケージ
 
@@ -34,7 +34,7 @@ ms.locfileid: "56572084"
 
 ## <a name="symbol-resources-and-feedback"></a>シンボルのリソースとフィードバック
 
-シンボルを使用して、デバッグの詳細については、[シンボルとシンボル ファイル](symbols-and-symbol-files.md)を参照してください。
+シンボルを使用して、デバッグの詳細については、次を参照してください。[シンボルとシンボル ファイル](symbols-and-symbol-files.md)します。
 
 デバッグについてヘルプが必要な場合は、[デバッグ用のリソースに関するページ](debugging-resources.md)をご覧ください。 
 

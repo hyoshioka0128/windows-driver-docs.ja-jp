@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc01cdc7ec9bb6acc00ca933db27e59d1819ba50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374050"
 ---
 # <a name="kspropertycameracontrolpantiltrelative"></a>KSPROPERTY\_CAMERACONTROL\_PANTILT\_相対
 
@@ -136,7 +136,7 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT\_相対プロパティは、カメラの水�
 
 一部のデバイスでは、パンが 1 つのみをサポートするか、傾きの速度。 ここでの符号、 **Value1**または**Value2**メンバーをパンする方向を示します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

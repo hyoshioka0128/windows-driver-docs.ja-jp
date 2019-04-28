@@ -1,6 +1,6 @@
 ---
-title: 幾何学的線
-description: 幾何学的線
+title: ジオメトリック太線
+description: ジオメトリック太線
 ms.assetid: 769b801c-6950-4f0f-9163-c4ddf070e519
 keywords:
 - WDK GDI、ジオメトリ全体を行します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f5107e6d12480f11309c8c39e7974099755edb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373455"
 ---
-# <a name="geometric-wide-lines"></a>幾何学的線
+# <a name="geometric-wide-lines"></a>ジオメトリック太線
 
 
 ## <span id="ddk_geometric_wide_lines_gg"></span><span id="DDK_GEOMETRIC_WIDE_LINES_GG"></span>

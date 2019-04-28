@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17813963f5f5435cae131e7848ebca8e500a021d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382905"
 ---
 # <a name="obtaining-configuration-information-from-other-driver-stacks"></a>その他のドライバー スタックからの構成情報の取得
 
@@ -24,7 +24,7 @@ ms.locfileid: "56580781"
 
 
 
-時以外に、ドライバーがある 1 つのスタック上のドライバーがデバイスの構成領域から情報を取得する必要があります。 たとえば、PCI、PCI へのブリッジの構成領域でビットを設定して、ブリッジの PDO へのポインターがありません。 オペレーティング システムでは、PCI、PCI へのブリッジを列挙し、システム上のすべてのブリッジの PDO を作成がこれらのデバイスのデバイスのインターフェイスは登録されません。 そのため、これらのブリッジの構成領域にアクセスするのにデバイス インターフェイス メカニズムを使用することはできません。 デバイス インターフェイスの詳細については、[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)を参照してください。
+時以外に、ドライバーがある 1 つのスタック上のドライバーがデバイスの構成領域から情報を取得する必要があります。 たとえば、PCI、PCI へのブリッジの構成領域でビットを設定して、ブリッジの PDO へのポインターがありません。 オペレーティング システムでは、PCI、PCI へのブリッジを列挙し、システム上のすべてのブリッジの PDO を作成がこれらのデバイスのデバイスのインターフェイスは登録されません。 そのため、これらのブリッジの構成領域にアクセスするのにデバイス インターフェイス メカニズムを使用することはできません。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)します。
 
 Windows NT 4.0 では、ドライバーがアクセスを使用してこのようなデバイスの構成領域、 [ **HalGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff546599)と[ **HalSetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff546628)ルーチン。 Windows 2000 および以降のバージョンの Windows では、これは、不要になった場合。
 

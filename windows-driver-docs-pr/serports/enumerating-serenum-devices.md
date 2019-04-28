@@ -1,6 +1,6 @@
 ---
-title: Serenum デバイスの列挙
-description: Serenum デバイスの列挙
+title: Serenum デバイスを列挙する
+description: Serenum デバイスを列挙する
 ms.assetid: c850c52b-82d7-48c2-a6c4-bfd071756632
 keywords:
 - Serenum ドライバー WDK、デバイスの列挙
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db8c6cf08bc875c2f096b0d1c3b5156b1caaf8d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370985"
 ---
-# <a name="enumerating-serenum-devices"></a>Serenum デバイスの列挙
+# <a name="enumerating-serenum-devices"></a>Serenum デバイスを列挙する
 
 
 

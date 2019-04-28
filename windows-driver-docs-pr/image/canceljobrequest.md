@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3028dc3472eb3cd74a87e6c9e2812a9a77b57297
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373301"
 ---
 # <a name="canceljobrequest-element"></a>CancelJobRequest 要素
 
@@ -78,7 +78,7 @@ WSD スキャン サービスに指定されたジョブを移動する必要が
 
 [**WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)[WSD スキャン サービス操作エラーの報告](wsd-scan-service-operation-error-reporting.md)
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
 
 **CancelJobRequest**次のエラー コードを返すことがもできます。
 

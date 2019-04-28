@@ -1,18 +1,18 @@
 ---
-title: HID の新機能新機能
+title: HID の新機能
 description: このトピックでは、新機能とのヒューマン インターフェイス デバイス (HID) で Windows 10 の機能強化をまとめたものです。
 Search.SourceType: Video
 ms.assetid: AA8590B4-AAEA-4D41-972F-38149CE328E2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a267b4477edf11779e36af9533e0d1976e83de7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376718"
 ---
-# <a name="whats-new-in-hid"></a>HID の新機能新機能
+# <a name="whats-new-in-hid"></a>HID の新機能
 
 
 このトピックでは、新機能とのヒューマン インターフェイス デバイス (HID) で Windows 10 の機能強化をまとめたものです。

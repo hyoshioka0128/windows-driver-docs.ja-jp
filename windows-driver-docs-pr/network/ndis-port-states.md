@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be46838e27f92691ad8faf299fc028a3f906dfa0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378382"
 ---
 # <a name="ndis-port-states"></a>NDIS ポートの状態
 
@@ -35,7 +35,7 @@ NDIS ポート リンクの状態はミニポート アダプターに関連付�
 <a href="" id="authentication-states"></a>認証の状態  
 NDIS ポート認証の状態、ポートが制御されるかどうかを示します (承認が必要)、データ転送の方向 (send、receive、またはその両方)、およびポート (承認または許可されていません) の承認の状態。 ポートが制御されていない場合は、認証と、未認証の状態は無視されます。
 
-ミニポート ドライバーでは、ポートをアクティブ化したり、PnP イベントでのポートを非アクティブ化することができます。 アクティブ化して、ポートを非アクティブ化の詳細については、[ライセンス NDIS ポート](activating-an-ndis-port.md)と[Deactivating NDIS ポート](deactivating-an-ndis-port.md)を参照してください。
+ミニポート ドライバーでは、ポートをアクティブ化したり、PnP イベントでのポートを非アクティブ化することができます。 アクティブ化して、ポートを非アクティブ化の詳細については、次を参照してください。[ライセンス NDIS ポート](activating-an-ndis-port.md)と[Deactivating NDIS ポート](deactivating-an-ndis-port.md)します。
 
 ドライバーの使用が重なって、 [OID\_GEN\_ポート\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569624)で指定されているポートの現在の状態を取得する OID、 **PortNumber** のメンバー[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 NDIS が、この OID を処理し、ミニポート ドライバーには、この OID クエリは受け取りません。
 

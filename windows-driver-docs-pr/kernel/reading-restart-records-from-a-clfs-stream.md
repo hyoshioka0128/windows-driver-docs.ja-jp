@@ -1,6 +1,6 @@
 ---
-title: CLFS Stream から再開レコードの読み取り
-description: CLFS Stream から再開レコードの読み取り
+title: CLFS ストリームからの再開始レコードの読み取り
+description: CLFS ストリームからの再開始レコードの読み取り
 ms.assetid: 310545f6-d10d-481e-829d-287b045b98cd
 keywords:
 - 一般的なログ ファイル システムの WDK カーネル、再開レコード
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a454aeb3dc38c15dd322dcfb139f6e56638bf258
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382650"
 ---
-# <a name="reading-restart-records-from-a-clfs-stream"></a>CLFS Stream から再開レコードの読み取り
+# <a name="reading-restart-records-from-a-clfs-stream"></a>CLFS ストリームからの再開始レコードの読み取り
 
 
 

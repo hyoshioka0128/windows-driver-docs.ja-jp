@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 387850c5e7a7baab4af22e4e4dd2ddcfdec59fa4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370609"
 ---
 # <a name="wiaipsdocumenthandlingselect"></a>WIA\_IP\_ドキュメント\_処理\_を選択します
 
@@ -46,7 +46,7 @@ WIA\_IP\_ドキュメント\_処理\_プロパティ選択にはでは、現在�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -70,7 +70,7 @@ WIA\_IP\_ドキュメント\_処理\_プロパティ選択にはでは、現在�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -113,7 +113,7 @@ WIA 2.0 ミニドライバーは、既定値は前面にこのプロパティの
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

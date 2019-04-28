@@ -16,16 +16,16 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c5f095ea49fc39b62bee5a87f7006a0aec1ba0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382649"
 ---
 # <a name="reading-data-records-from-a-clfs-stream"></a>CLFS ストリームからのデータ レコードの読み取り
 
 
-Common Log File System (CLFS) ストリーム内のレコードの 2 種類があります。 データがレコードとレコードを再起動します。 このトピックでは、データ レコードのシーケンスをストリームから読み取る方法について説明します。 再起動のレコードを読み取る方法については、[CLFS Stream から読み取りを再開レコード](reading-restart-records-from-a-clfs-stream.md)を参照してください。
+Common Log File System (CLFS) ストリーム内のレコードの 2 種類があります。 データがレコードとレコードを再起動します。 このトピックでは、データ レコードのシーケンスをストリームから読み取る方法について説明します。 再起動のレコードを読み取る方法については、次を参照してください。 [CLFS Stream から読み取りを再開レコード](reading-restart-records-from-a-clfs-stream.md)します。
 
 ストリームからデータ レコードのシーケンスの読み取りでいくつかのバリエーションがあります。 転送、指定されたレコードからのストリームに読み取ることができますか、後方リンクされたレコードのチェーンに読み取ることができます。
 
@@ -53,7 +53,7 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 <thead>
 <tr class="header">
 <th>パラメーター名</th>
-<th>値</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 <thead>
 <tr class="header">
 <th>パラメーター名</th>
-<th>[値]</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -159,7 +159,7 @@ CLFS ストリームからデータ レコードを書き込む場合は、ス�
 <thead>
 <tr class="header">
 <th>パラメーター名</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -259,7 +259,7 @@ CLFS ストリームからデータ レコードを書き込む場合は、ス�
 
 ### <a name="reading-a-chain-of-data-records-linked-by-the-undo-next-lsn"></a>元に戻す次の LSN によってリンクされているデータ レコードのチェーンの読み取り
 
-CLFS ストリームからデータ レコードを書き込む場合は、ストリームに以前作成した任意のレコードの LSN をデータ レコードの元に戻す次の LSN を設定できます。 元に戻す次の LSN を設定するには、逆の順序で走査できる関連するレコードのチェーンを作成できます。 作成して、元に戻す次チェーンの解釈の詳細については、[CLFS ログ シーケンス番号](clfs-log-sequence-numbers.md)を参照してください。
+CLFS ストリームからデータ レコードを書き込む場合は、ストリームに以前作成した任意のレコードの LSN をデータ レコードの元に戻す次の LSN を設定できます。 元に戻す次の LSN を設定するには、逆の順序で走査できる関連するレコードのチェーンを作成できます。 作成して、元に戻す次チェーンの解釈の詳細については、次を参照してください。 [CLFS ログ シーケンス番号](clfs-log-sequence-numbers.md)します。
 
 元に戻す次の Lsn によってリンクされているデータ レコードのチェーンを記述したとします。 レコードのチェーンを読み取りを呼び出す必要がある[ **ClfsReadLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541682)そのモードになっている読み取りコンテキストを作成する設定**ClfsContextUndoNext**します。 その後、プロセスは、(このトピックで既に説明した) 前回の Lsn によってリンクされているチェーンの読み取りと同じです。
 

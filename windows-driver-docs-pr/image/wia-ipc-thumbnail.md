@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22e04d69180a1924b879a6ed87a0ba2958613274
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378396"
 ---
 # <a name="wiaipcthumbnail"></a>WIA\_IPC\_サムネイル
 
@@ -33,9 +33,9 @@ WIA\_IPC\_サムネイルのプロパティには、サムネイルのデータ�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 サムネイルのデータを WIA\_IPC\_サムネイルのプロパティには、する必要がありますが含まれています。 ビットマップの非圧縮データであり、32 ビットの境界にアラインされます。 アプリケーションがの値を読み取り、 [ **WIA\_IPC\_サムネイル\_幅**](wia-ipc-thumbnail-width.md)と[ **WIA\_IPC\_サムネイル\_高さ**](wia-ipc-thumbnail-height.md)プロパティ (これは、Microsoft Windows SDK ドキュメントで説明されている) BITMAPINFOHEADER 構造を作成します。 アプリケーションの WIA を読み取ることができるよう\_IPC\_サムネイル プロパティ (これは実際のサムネイル画像データを表します) と、このプロパティを使用して、新しく作成されたビットマップ サムネイル イメージを作成するには直接データを書き込みます。

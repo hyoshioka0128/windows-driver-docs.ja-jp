@@ -1,6 +1,6 @@
 ---
-title: ドライバー スタックを一時停止
-description: ドライバー スタックを一時停止
+title: ドライバー スタックの一時停止
+description: ドライバー スタックの一時停止
 ms.assetid: 6c6300e9-aea6-4da3-a91a-73db6ba8ff1f
 keywords:
 - ドライバー スタックの WDK ネットワーク、一時停止
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a414f751dd242c165dbeba95c375488fd5320c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376254"
 ---
-# <a name="pausing-a-driver-stack"></a>ドライバー スタックを一時停止
+# <a name="pausing-a-driver-stack"></a>ドライバー スタックの一時停止
 
 
 

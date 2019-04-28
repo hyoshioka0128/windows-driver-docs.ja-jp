@@ -7,18 +7,18 @@ keywords:
 - NDIS_STATUS_NETWORK_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 93867577d2a2ec73afe379040c4f05334103bff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380148"
 ---
 # <a name="ndisstatusnetworkchange"></a>NDIS\_状態\_ネットワーク\_変更
 
 
 NDIS\_状態\_ネットワーク\_状態の変更が後続のネットワーク アドレスの再ネゴシエーションを開始するドライバーを許可するネットワークの変更を示します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS ミニポート ドライバーでは、レイヤー 3 つのアドレスを再ネゴシエートする上位のプロトコルのドライバーを入手するには、この状態表示を生成できます。

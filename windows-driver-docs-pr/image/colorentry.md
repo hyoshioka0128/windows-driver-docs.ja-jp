@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 922af823ba1849dba65dc99846dbbe6493d16fea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373191"
 ---
 # <a name="colorentry-element"></a>ColorEntry 要素
 
@@ -127,7 +127,7 @@ ms.locfileid: "56536502"
 
 各キーワードの値には、データ型し、ビット深さ、およびチャネルあたりのビット数のエンコード、色がについて説明します。 次の表では、値のキーワードが処理のプロパティ、スキャナーの色にマップする方法を示します。
 
-| キーワード        | ピクセル ビット深度 | チャネルあたりのビット数 |
+| Keyword        | ピクセル ビット深度 | チャネルあたりのビット数 |
 |----------------|-----------------|------------------|
 | BlackAndWhite1 | 1               | 1                |
 | Grayscale4     | 4               | {4}              |

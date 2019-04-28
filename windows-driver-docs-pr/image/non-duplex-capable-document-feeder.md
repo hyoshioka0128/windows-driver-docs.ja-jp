@@ -1,17 +1,17 @@
 ---
-title: 二重モード対応のドキュメント フィーダー付き
-description: 二重モード対応のドキュメント フィーダー付き
+title: 両面印刷非対応のドキュメント フィーダー
+description: 両面印刷非対応のドキュメント フィーダー
 ms.assetid: e22ec1bb-623e-45c6-88f4-d3b6a45fa175
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b19996c226a8fd2a5b8b08f40410ad9e9fce8a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379664"
 ---
-# <a name="non-duplex-capable-document-feeder"></a>二重モード対応のドキュメント フィーダー付き
+# <a name="non-duplex-capable-document-feeder"></a>両面印刷非対応のドキュメント フィーダー
 
 
 
@@ -33,7 +33,7 @@ ms.locfileid: "56553865"
 
 ### <a name="image-acquisition"></a>Image Acquisition
 
-標準の取得とフォルダーの取得、WIA フィーダー項目プロパティの設定はすべてのフロント ページ使用されます。 標準の取得とフォルダーの取得の詳細については、[二重モード対応ドキュメント フィーダー付きの高度な](advanced-duplex-capable-document-feeder.md)を参照してください。
+標準の取得とフォルダーの取得、WIA フィーダー項目プロパティの設定はすべてのフロント ページ使用されます。 標準の取得とフォルダーの取得の詳細については、次を参照してください。[二重モード対応ドキュメント フィーダー付きの高度な](advanced-duplex-capable-document-feeder.md)します。
 
  
 

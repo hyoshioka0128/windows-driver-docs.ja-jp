@@ -1,14 +1,14 @@
 ---
-Description: The MUTT software package contains several tools to be used with MUTT devices. The suite of tools include firmware upgrade application, driver installation package, and applications that send transfers to the device.
+Description: MUTT ソフトウェア パッケージには、MUTT デバイスで使用するいくつかのツールが含まれています。 ツールのスイートには、ファームウェア アップグレード アプリケーション、ドライバーのインストール パッケージ、およびデバイスに転送を送信するアプリケーションが含まれます。
 title: MUTT ソフトウェア パッケージに含まれるツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f3f3455ee8f9f9db1e66b9b04dc009b602d38d8
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379943"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT ソフトウェア パッケージに含まれるツール
 
@@ -17,7 +17,7 @@ ms.locfileid: "56743439"
 
 -   2019 年 2 月
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows 10
 -   Windows 8.1

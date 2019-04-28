@@ -4,21 +4,21 @@ description: このセクションでは、NFC クラス拡張 (CX) と、NFC �
 ms.assetid: 64599C5E-7E72-4712-B733-24C078919B84
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 - CX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25ff8f74e80942dc8d8578e9921cf23e9b7995a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378868"
 ---
-# <a name="nfc-class-extension-cx-design-guide"></a>NFC クラスの拡張機能 (CX) 設計ガイド
+# <a name="nfc-class-extension-cx-design-guide"></a>NFC クラスの拡張 (CX) 設計ガイド
 
 
 このセクションでは、NFC クラス拡張 (CX) と、NFC クライアント ドライバー間のインターフェイスについて説明します。 NFC CX ドライバーではすべての NFC デバイス ドライバー インターフェイスと標準の NFC プロトコルと形式に基づいて、 *NFC フォーラム NFC コント ローラー インターフェイス (NCI) の技術仕様*します。
@@ -75,7 +75,7 @@ NFC のスマート カードと NFC CX ドライバーでサポートされて�
 -   [エラーの処理](error-handling.md)
 -   [電源の状態](power-states.md)
 -   [NFC クライアント ドライバーの電源管理の要件](nfc-client-driver-power-management-requirements.md)
--   [ログ記録](logging.md)
+-   [ログ](logging.md)
 -   [永続化されたデータ](persisted-data.md)
 
  

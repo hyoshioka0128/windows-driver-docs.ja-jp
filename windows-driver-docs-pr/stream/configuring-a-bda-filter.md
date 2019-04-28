@@ -1,6 +1,6 @@
 ---
-title: BDA フィルターを構成します。
-description: BDA フィルターを構成します。
+title: BDA フィルターの構成
+description: BDA フィルターの構成
 ms.assetid: 4af9efc3-8073-4111-9ad0-8b2fba4d1545
 keywords:
 - メソッドは、WDK BDA、フィルターの構成を設定します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67271ef4282cf2e8634f16dc35bafe50db68bfd6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374188"
 ---
-# <a name="configuring-a-bda-filter"></a>BDA フィルターを構成します。
+# <a name="configuring-a-bda-filter"></a>BDA フィルターの構成
 
 
 

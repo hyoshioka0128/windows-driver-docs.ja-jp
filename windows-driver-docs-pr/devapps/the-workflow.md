@@ -5,16 +5,16 @@ ms.assetid: DB88876E-3C92-40E9-A2E2-19493F3357B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 213869001380bd45adae241e6f26d31ef7266e28
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379492"
 ---
 # <a name="building-uwp-device-apps"></a>UWP デバイス アプリを構築する
 
 
-デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 このトピックでは、UWP デバイスのアプリ、1 つは、構築するための基本的な手順を送信する必要あります、Microsoft Store のダッシュ ボードと、Windows デベロッパー センター ハードウェア ダッシュ ボードには、アプリとデバイスのメタデータそれぞれ順のコンポーネントについて説明します。 各手順の詳細については、[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)を参照してください。
+デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 このトピックでは、UWP デバイスのアプリ、1 つは、構築するための基本的な手順を送信する必要あります、Microsoft Store のダッシュ ボードと、Windows デベロッパー センター ハードウェア ダッシュ ボードには、アプリとデバイスのメタデータそれぞれ順のコンポーネントについて説明します。 各手順の詳細については、次を参照してください。[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)します。
 
 ## <a name="span-idthebuildingblocksspanspan-idthebuildingblocksspanspan-idthebuildingblocksspanthe-building-blocks"></a><span id="The_building_blocks"></span><span id="the_building_blocks"></span><span id="THE_BUILDING_BLOCKS"></span>構成要素
 
@@ -40,10 +40,10 @@ ms.locfileid: "57349737"
 <td align="left">これは、Windows 7 を既に作成した可能性がありますデバイス メタデータ パッケージの拡張バージョンです。 Windows 8.1 のでは、デバイスのメタデータは、デバイスとアプリ間のリンクを作成します。 そのリンクがエクスペリエンス ID で識別されます。 デバイス メタデータ パッケージを指定します (ローカライズ可能なモデル名、説明、およびリアルなアイコンなど)、PC 用の UI コンテンツだけでなく<a href="autoplay-for-uwp-device-apps.md" data-raw-source="[AutoPlay](autoplay-for-uwp-device-apps.md)">自動再生</a>構成し、どのアプリがデバイスにアクセスする権限。 Windows では、Windows メタデータ Internet Service (WMIS) からデバイスのメタデータが自動的にダウンロードします。</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>ドライバー</strong></td>
+<td align="left"><strong>[ドライバー]</strong></td>
 <td align="left">すべての UWP デバイス アプリは、デバイスにアクセスするドライバーを直接に使用します。 たとえば、Windows ランタイムのデバイス プロトコル Api、Windows 8.1 で導入されたは使用インボックス ドライバーを使用、アプリが USB、HID、および Bluetooth 経由で通信できるようにします。 これらの Api で使用されるドライバーに関する詳細については、次を参照してください。<a href="step-1--create-a-uwp-device-app.md" data-raw-source="[Step 1: Create a UWP device app](step-1--create-a-uwp-device-app.md)">手順 1。UWP デバイスのアプリ作成</a>です。
 <div class="alert">
-<strong>重要な</strong>カスタム ドライバーを使用してデバイスのアクセスには、Microsoft からの承認が必要です。 詳細については、<a href="https://go.microsoft.com/fwlink/p/?LinkId=306693" data-raw-source="[UWP device app Design Guide for Specialized Devices Internal to the PC](https://go.microsoft.com/fwlink/p/?LinkId=306693)">UWP デバイス アプリ、PC にデバイスの内部の特殊化の設計ガイド</a>を参照してください。
+<strong>重要な</strong>カスタム ドライバーを使用してデバイスのアクセスには、Microsoft からの承認が必要です。 詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=306693" data-raw-source="[UWP device app Design Guide for Specialized Devices Internal to the PC](https://go.microsoft.com/fwlink/p/?LinkId=306693)">UWP デバイス アプリ、PC にデバイスの内部の特殊化の設計ガイド</a>します。
 </div>
 <div>
  
@@ -75,7 +75,7 @@ ms.locfileid: "57349737"
 
 [手順 5:Microsoft Store のダッシュ ボードにアプリを送信](step-5--submit-the-app.md)します。 販売の詳細を確認し、アプリがある UWP デバイスのアプリのテスト担当者にことを示すダッシュ ボードを使用します。
 
-**注**  アプリ特権のあるアプリは、自動インストールが構成されていない場合は、手順 6 の後に Microsoft Store のダッシュ ボードにアプリを送信することができます。 詳細については、[アプリ送信のシーケンスを特権](#priv-sequence)を参照してください。
+**注**  アプリ特権のあるアプリは、自動インストールが構成されていない場合は、手順 6 の後に Microsoft Store のダッシュ ボードにアプリを送信することができます。 詳細については、次を参照してください。[アプリ送信のシーケンスを特権](#priv-sequence)します。
 
  
 

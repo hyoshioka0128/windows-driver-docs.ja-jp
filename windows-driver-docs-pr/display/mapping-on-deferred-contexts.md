@@ -1,6 +1,6 @@
 ---
-title: 遅延コンテキストでのマッピング
-description: 遅延コンテキストでのマッピング
+title: 遅延コンテキストに対するマッピング
+description: 遅延コンテキストに対するマッピング
 ms.assetid: 29c44639-ea5e-4255-8e8c-f6d5e3af0dfb
 keywords:
 - Direct3D のバージョン 11 WDK Windows 7 を表示する遅延のコンテキストのマッピング
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ac25dd17ef160c9352011c6c21154f0d3791a52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373912"
 ---
-# <a name="mapping-on-deferred-contexts"></a>遅延コンテキストでのマッピング
+# <a name="mapping-on-deferred-contexts"></a>遅延コンテキストに対するマッピング
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76b4fddfb7ba74d4a9784cdafd54d15f32bfbb67
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380738"
 ---
 # <a name="inf-logconfig-directive"></a>INF LogConfig ディレクティブ
 
@@ -92,7 +92,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =**\[*DMAattrs:*\]*DMANum*\[<strong>、</strong>DMANum\].\]  
 *DMAattrs*デバイスが唯一の 8 ビット DMA チャネルを持つバスに接続されているし、デバイスは、標準のシステム DMA を使用する場合は省略可能です。 それ以外の場合、次の文字のいずれかを指定できます。
 
-| 文字 | 説明    |
+| Letter | 説明    |
 |--------|------------|
 | **D**  | 32 ビットの DMA |
 | **W**  | 16 ビット DMA |
@@ -128,7 +128,7 @@ ConfigPriority=priority-value[,config-type]
  
 
 <a href="" id="alias-offset-"></a>*エイリアスのオフセット値*   
-使用されません。
+使用されていません。
 
 <a href="" id="attr"></a>*attr*  
 文字を指定**M**システム メモリ内の特定の範囲がある場合。 省略した場合、特定の範囲は I/O ポートの領域では。
@@ -160,7 +160,7 @@ ConfigPriority=priority-value[,config-type]
  
 
 <a href="" id="alias-offset-"></a>*エイリアスのオフセット値*   
-使用されません。
+使用されていません。
 
 <a href="" id="attr"></a>*attr*  
 文字を指定**M**システム メモリ内の特定の範囲がある場合。 省略した場合、特定の範囲は I/O ポートの領域では。
@@ -181,7 +181,7 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 <a href="" id="attr"></a>*attr*  
 1 つまたは複数の次の文字として、メモリ範囲の属性を指定します。
 
-| 文字 | 説明                                             |
+| Letter | 説明                                             |
 |--------|-----------------------------------------------------|
 | **R**  | 読み取り専用です。                                           |
 | **W**  | 書き込みのみ                                          |
@@ -336,13 +336,13 @@ PnP デバイスの場合は、PnP マネージャーは、一連の論理ハー
 
 結果として、 **LogConfig** ディレクティブを*DDInstall* PnP デバイスは、セクションは無視されます。 PnP デバイスのバスによって報告されたリソースをオーバーライドするには、 **LogConfig** ディレクティブを[ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクション。 ここで指定のリソース、*ログの構成 セクションで*バスによって報告された代わりに使用されます。
 
-プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、[INF ファイルを作成する](overview-of-inf-files.md)を参照してください。
+プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
 
-指定された*ログの構成 セクションで*名は、INF ファイルに固有である必要がありますが、それを参照できます**LogConfig**他 INF でディレクティブ*DDInstall*セクションに、同じデバイス. 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+指定された*ログの構成 セクションで*名は、INF ファイルに固有である必要がありますが、それを参照できます**LogConfig**他 INF でディレクティブ*DDInstall*セクションに、同じデバイス. 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 1 つだけ**ConfigPriority**エントリは、それぞれで使用できる*ログの構成 セクションで*します。 ありますの各デバイスのハードウェア リソース要件に応じて、その他のエントリの 1 つ以上。
 
-1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em>**.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)を参照してください。
+1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em>**.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、次を参照してください。[多機能デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff542743)します。
 
 ### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig 参照セクションのエントリと値
 

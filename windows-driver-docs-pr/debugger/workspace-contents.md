@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 591693a2b54a1eeecb3dd66cc39748976c058d2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374806"
 ---
 # <a name="workspace-contents"></a>ワークスペースのコンテンツ
 
@@ -86,7 +86,7 @@ ms.locfileid: "56570379"
 
 ### <a name="span-iddebuggingclientsandworkspacesspanspan-iddebuggingclientsandworkspacesspandebugging-clients-and-workspaces"></a><span id="debugging_clients_and_workspaces"></span><span id="DEBUGGING_CLIENTS_AND_WORKSPACES"></span>クライアントとワークスペースのデバッグ
 
-デバッグ クライアントとして WinDbg を使用すると、グラフィカル インターフェイスを使用して設定する値のみがそのワークスペースに保存します。 デバッガー コマンド ウィンドウで行った変更は保存されません。 (この制約は、ローカルのクライアントが行われた変更のみが反映されることのデバッガー コマンド ウィンドウはすべてのクライアントとデバッグ サーバーからの入力を受け入れるため。)詳細については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
+デバッグ クライアントとして WinDbg を使用すると、グラフィカル インターフェイスを使用して設定する値のみがそのワークスペースに保存します。 デバッガー コマンド ウィンドウで行った変更は保存されません。 (この制約は、ローカルのクライアントが行われた変更のみが反映されることのデバッガー コマンド ウィンドウはすべてのクライアントとデバッグ サーバーからの入力を受け入れるため。)詳細については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
 
 ### <a name="span-idbreakpointsinworkspacesspanspan-idbreakpointsinworkspacesspanbreakpoints-in-workspaces"></a><span id="breakpoints_in_workspaces"></span><span id="BREAKPOINTS_IN_WORKSPACES"></span>ワークスペース内のブレークポイント
 

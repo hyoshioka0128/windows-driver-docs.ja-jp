@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95af97b65234292312176e43e56c3edcae44db36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377608"
 ---
 # <a name="jobhistory-element"></a>JobHistory 要素
 
@@ -76,7 +76,7 @@ ms.locfileid: "56580749"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **JobHistory**要素が含まれています、 [ **JobSummary** ](jobsummary.md)スキャナーが最近完了したジョブのすべての要素。 **JobHistory** WSD スキャン サービスには、最近完了したジョブのレコードがあるない場合は空です。 スキャン サービスからこの一覧を返します[ **GetJobHistoryResponse**](getjobhistoryresponse.md)します。

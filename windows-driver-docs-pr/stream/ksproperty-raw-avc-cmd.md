@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c7c6226bb8d79c7a7aa2a861fb2b2a7d01d26d2
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380796"
 ---
 # <a name="kspropertyrawavccmd"></a>KSPROPERTY\_RAW\_AVC\_CMD
 
@@ -38,16 +38,16 @@ KSPROPERTY\_RAW\_AVC\_CMD プロパティは、生の AV/C コマンドを発行
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>デバイス</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565167" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565167)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>埋め込み<strong>RawAVC</strong>構造体</p></td>
@@ -57,7 +57,7 @@ KSPROPERTY\_RAW\_AVC\_CMD プロパティは、生の AV/C コマンドを発行
 
 プロパティの値 (データの操作) は、埋め込まれた**RawAVC** 、KSPROPERTY のメンバー\_EXTXPORT\_を実行する生の AV/C コマンドを記述する S 構造体。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 このプロパティは、AV/C コマンドをサポートできるデバイスでのみ使用できます、 [ **KSPROPERTY\_EXTDEVICE\_ポート**](ksproperty-extdevice-port.md)偏差を返します\_ポート\_で 1394、 **DevPort**のメンバー、 [ **KSPROPERTY\_EXTDEVICE\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565156)構造体。
 

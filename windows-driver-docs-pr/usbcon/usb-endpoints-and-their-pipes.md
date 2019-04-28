@@ -1,16 +1,16 @@
 ---
-Description: A USB device has endpoints that are used to for data transfers.
-title: USB の端点と、パイプ
+Description: USB デバイスには、データ転送に使用されるエンドポイントがあります。
+title: USB エンドポイントとそのパイプ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6e04a27d03fe54fcd80370d8ae6e40b66b22566
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376402"
 ---
-# <a name="usb-endpoints-and-their-pipes"></a>USB の端点と、パイプ
+# <a name="usb-endpoints-and-their-pipes"></a>USB エンドポイントとそのパイプ
 
 
 **要約**

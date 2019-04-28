@@ -1,15 +1,15 @@
 ---
-title: いる CoNDIS ドライバーで NET_BUFFER 構造体の受信
-description: いる CoNDIS ドライバーで NET_BUFFER 構造体の受信
+title: CoNDIS ドライバーでの NET_BUFFER 構造の受信
+description: CoNDIS ドライバーでの NET_BUFFER 構造の受信
 ms.assetid: b3bbd3ef-9206-4edc-8f7a-4ce896d77150
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e923133330db0932a3c0656c6607736e8e575df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380584"
 ---
 # <a name="receiving-netbuffer-structures-in-condis-drivers"></a>NET の受信\_いる CoNDIS ドライバーにバッファーの構造体
 

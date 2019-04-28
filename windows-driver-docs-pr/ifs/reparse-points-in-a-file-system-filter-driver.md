@@ -1,6 +1,6 @@
 ---
-title: 再解析ポイントは、ファイル システム フィルター ドライバー
-description: 再解析ポイントは、ファイル システム フィルター ドライバー
+title: ファイル システム フィルター ドライバーの再解析ポイント
+description: ファイル システム フィルター ドライバーの再解析ポイント
 ms.assetid: 6aae70d9-c934-4759-bb26-728b0ac025d1
 keywords:
 - WDK ファイル システムのセキュリティ、再解析ポイント
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9dccec8fc849213a3a07b6f4a4346852e0de52d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377942"
 ---
-# <a name="reparse-points-in-a-file-system-filter-driver"></a>再解析ポイントは、ファイル システム フィルター ドライバー
+# <a name="reparse-points-in-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバーの再解析ポイント
 
 
 ## <span id="ddk_reparse_points_in_a_file_system_filter_driver_if"></span><span id="DDK_REPARSE_POINTS_IN_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>

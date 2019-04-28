@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_WAKE_PACKET_BITMAP_PATTERN_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 39a2a8f54951c638b5f121110379580416418d07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376583"
 ---
 # <a name="wditlvwakepacketbitmappatternid"></a>WDI\_TLV\_WAKE\_パケット\_ビットマップ\_パターン\_ID
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                 |
+| 型   | 説明                 |
 |--------|-----------------------------|
 | UINT32 | Wake on LAN のパターンの id。 |
 

@@ -1,6 +1,6 @@
 ---
-title: ネットワーク インターフェイスを登録します。
-description: ネットワーク インターフェイスを登録します。
+title: ネットワーク インターフェイスの登録
+description: ネットワーク インターフェイスの登録
 ms.assetid: 7e3c3b0f-2013-4133-8b52-fa9e66f963cb
 keywords:
 - NDIS ネットワーク インターフェイス、WDK を登録します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d7b723dd4fc720198754c44ef486121e302e75e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372470"
 ---
-# <a name="registering-a-network-interface"></a>ネットワーク インターフェイスを登録します。
+# <a name="registering-a-network-interface"></a>ネットワーク インターフェイスの登録
 
 
 

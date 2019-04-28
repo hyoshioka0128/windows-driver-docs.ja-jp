@@ -1,6 +1,6 @@
 ---
-title: コントロールのフロー トークン
-description: コントロールのフロー トークン
+title: 制御フロー トークン
+description: 制御フロー トークン
 ms.assetid: c38852aa-3dfe-4f70-9ef4-8c86e4a8334d
 keywords:
 - スクリプト ファイル、コントロールのフロー トークン
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a52a84a2f0c1dd81b3955cbc7a268069b9fac6c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375037"
 ---
-# <a name="control-flow-tokens"></a>コントロールのフロー トークン
+# <a name="control-flow-tokens"></a>制御フロー トークン
 
 
 ## <span id="ddk_control_flow_tokens_dbg"></span><span id="DDK_CONTROL_FLOW_TOKENS_DBG"></span>

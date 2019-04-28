@@ -1,17 +1,17 @@
 ---
-title: Windows カーネル マクロ
-description: Windows カーネル マクロ
+title: Windows カーネルのマクロ
+description: Windows カーネルのマクロ
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cc92a84d8af5cf9d5b9752633e34c1ebdbf49dbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380246"
 ---
-# <a name="windows-kernel-macros"></a>Windows カーネル マクロ
+# <a name="windows-kernel-macros"></a>Windows カーネルのマクロ
 
 
 次の一覧には、Windows カーネルのマクロが含まれています。
@@ -112,7 +112,7 @@ _[In] アドレスします。_
 
 _[In] 入力します。_
 
-**型**
+**TYPE**
 
 ベース アドレスが返される構造体の型の名前。
 
@@ -224,7 +224,7 @@ _[In] Mdl_
 
 **PMDL**
 
-ポインター、 [ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)物理メモリ内の仮想メモリ バッファーのレイアウトを記述する構造体。 詳細については、[を使用して MDLs](using-mdls.md)を参照してください。
+ポインター、 [ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)物理メモリ内の仮想メモリ バッファーのレイアウトを記述する構造体。 詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
 
 **戻り値**
 
@@ -288,7 +288,7 @@ MDL に関連付けられている物理ページ番号の配列の先頭への�
 
 ページング可能なメモリは、配列の内容はロックされているバッファーでのみ有効です[ **MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)します。 非ページ プールは、配列の内容は更新 MDL のみ有効です[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)、 [ **MmAllocatePagesForMdlEx**](https://msdn.microsoft.com/library/windows/hardware/ff554489)、または[ **MmAllocatePagesForMdl**](https://msdn.microsoft.com/library/windows/hardware/ff554482)します。
 
-MDLs の詳細については、[を使用して MDLs](using-mdls.md)を参照してください。
+MDLs の詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
 
 Windows 2000 以降を使用できます。
 
@@ -450,7 +450,7 @@ _[In] Mdl_
 
 **MmPrepareMdlForReuse**してビルドされる部分的な MDLs のみを受け入れる**IoBuildPartialMdl**します。 場合**MmPrepareMdlForReuse**受信システム アドレス空間にマップされますがビルドされませんでしたが、MDL **IoBuildPartialMdl**、 **MmPrepareMdlForReuse**によって解放されません。マッピングと、チェックのビルドが原因で失敗するアサーション。
 
-部分的な MDLs の詳細については、[を使用して MDLs](using-mdls.md)を参照してください。
+部分的な MDLs の詳細については、次を参照してください。[を使用して MDLs](using-mdls.md)します。
 
 Windows 2000 および以降のバージョンの Windows で使用できます。
 
@@ -513,7 +513,7 @@ Windows 2000 以降を使用できます。
 
 ページング可能なコードが特定の制限に従う必要があります (IRQL など < = APC_LEVEL) にロックされていることがない限り、します。 ページング可能なルーチンを正常にロックする必要がありますがへの呼び出しで開始する必要があります**PAGED_CODE_LOCKED**します。
 
-所定の位置にコード セクションのロックの詳細については、[ページング可能なコードをロックまたはデータ](locking-pageable-code-or-data.md)を参照してください。
+所定の位置にコード セクションのロックの詳細については、次を参照してください。[ページング可能なコードをロックまたはデータ](locking-pageable-code-or-data.md)します。
 
 
 ## <a name="posetdevicebusy"></a>**PoSetDeviceBusy**

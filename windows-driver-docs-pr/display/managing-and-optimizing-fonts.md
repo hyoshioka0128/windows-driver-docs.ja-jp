@@ -1,6 +1,6 @@
 ---
-title: 管理とフォントを最適化します。
-description: 管理とフォントを最適化します。
+title: フォントの管理と最適化
+description: フォントの管理と最適化
 ms.assetid: 5cfc2174-c605-4399-97a6-62f51df21c16
 keywords:
 - フォント WDK のグラフィックスの管理と最適化
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58ba536fe67dddf0d32c34adb166744fa70aeb82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380406"
 ---
-# <a name="managing-and-optimizing-fonts"></a>管理とフォントを最適化します。
+# <a name="managing-and-optimizing-fonts"></a>フォントの管理と最適化
 
 
 ## <span id="ddk_managing_and_optimizing_fonts_gg"></span><span id="DDK_MANAGING_AND_OPTIMIZING_FONTS_GG"></span>

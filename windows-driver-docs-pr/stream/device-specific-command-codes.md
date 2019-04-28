@@ -1,17 +1,17 @@
 ---
-title: デバイスに固有のコマンド コード
-description: デバイスに固有のコマンド コード
+title: デバイス固有のコマンド コード
+description: デバイス固有のコマンド コード
 ms.assetid: 5dae7269-7a5d-4e34-b164-cfb02f17ee2c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b01c7e14be699383ff624617d6200cd0ede3f6d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374060"
 ---
-# <a name="device-specific-command-codes"></a>デバイスに固有のコマンド コード
+# <a name="device-specific-command-codes"></a>デバイス固有のコマンド コード
 
 
 ## <span id="ddk_device_specific_command_codes_ks"></span><span id="DDK_DEVICE_SPECIFIC_COMMAND_CODES_KS"></span>

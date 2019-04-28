@@ -1,14 +1,14 @@
 ---
-Description: This topic provides information about registry settings that configure the way Usbccgp.sys selects a USB configuration.
+Description: このトピックで、Usbccgp.sys USB 構成を選択する方法を構成するレジストリ設定について説明します。
 title: 既定以外の USB 構成を選択するための Usbccgp.sys の構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45009bca190ff1fc97611511e6282af18781436a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379510"
 ---
 # <a name="configuring-usbccgpsys-to-select-a-non-default-usb-configuration"></a>既定以外の USB 構成を選択するための Usbccgp.sys の構成
 
@@ -41,7 +41,7 @@ ms.locfileid: "56581276"
 
 ### <a href="" id="compatibility-feature"></a> 互換性の機能
 
-関数の複合デバイスでのクライアント ドライバーを複合デバイスの構成 を選択できない場合でもクライアント ドライバーがで、Usbccgp.sys に選択構成要求を送信できますも。 その要求を構築する方法については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)を参照してください。 Usbccgp.sys では、クライアント ドライバーから選択構成要求を受信した後、次のタスクを実行します。
+関数の複合デバイスでのクライアント ドライバーを複合デバイスの構成 を選択できない場合でもクライアント ドライバーがで、Usbccgp.sys に選択構成要求を送信できますも。 その要求を構築する方法については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。 Usbccgp.sys では、クライアント ドライバーから選択構成要求を受信した後、次のタスクを実行します。
 
 1.  USB ポート ドライバーによって、選択構成要求の検証に使用する同じ条件を使用して、受信した要求を検証します。
 2.  Usbccgp.sys が URB 型の URB を送信することによって選択インターフェイス要求を発行する場合は、要求では、現在の設定とは異なるインターフェイスまたはパイプの設定を指定します、\_関数\_選択\_インターフェイスを変更するには新しいインターフェイスとパイプの設定を既存の設定。

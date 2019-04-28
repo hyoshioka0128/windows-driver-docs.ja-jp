@@ -1,6 +1,6 @@
 ---
-title: 共有ネットワーク ドライバーのメモリを使用
-description: 共有ネットワーク ドライバーのメモリを使用
+title: ネットワーク ドライバーの共有メモリの使用
+description: ネットワーク ドライバーの共有メモリの使用
 ms.assetid: f7dfe785-6c1a-4f56-9018-76be9cdec7fc
 keywords:
 - ネットワーク ドライバー WDK、共有メモリ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 806c597dcb2e7193567c5b757ea541a3c5cba99a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373782"
 ---
-# <a name="using-shared-memory-in-network-drivers"></a>共有ネットワーク ドライバーのメモリを使用
+# <a name="using-shared-memory-in-network-drivers"></a>ネットワーク ドライバーの共有メモリの使用
 
 
 

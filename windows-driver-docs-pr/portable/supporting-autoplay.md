@@ -4,11 +4,11 @@ title: 自動再生のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae2236bccd98008dadffbb349c988caac1e65c42
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380856"
 ---
 # <a name="supporting-autoplay"></a>自動再生のサポート
 
@@ -24,7 +24,7 @@ WPD 自動再生のスキームは、Windows Vista の自動再生の機能と�
 
 | カテゴリ | 説明                                                                                                         |
 |----------|---------------------------------------------------------------------------------------------------------------------|
-| ソース   | WPD デバイスは、コンテンツのソースとして扱うことが、デバイスからは、コンテンツを転送できます。        |
+| Source   | WPD デバイスは、コンテンツのソースとして扱うことが、デバイスからは、コンテンツを転送できます。        |
 | シンク     | WPD デバイスは、コンテンツの保存先として扱うことが、デバイスには、コンテンツを転送できます。    |
 | 関数 | たとえば、送信して SMS メッセージを受信、WPD デバイスは、プログラミング可能なまたは制御可能な機能をサポートします。 |
 
@@ -55,7 +55,7 @@ WPD 自動再生のスキームは、Windows Vista の自動再生の機能と�
 <li>種類は 0x10001 である必要があります。</li>
 <li>1 の値を設定する必要があります。</li>
 </ul>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[Device_AddReg]</code></p>
 <p><code>HKR,,"AutoPlaySourceOnly",0x10001,1</code></p></td>
 </tr>
@@ -68,7 +68,7 @@ WPD 自動再生のスキームは、Windows Vista の自動再生の機能と�
 <li>種類は 0x10001 である必要があります。</li>
 <li>有効な値 (0 または 1) を設定する必要があります。</li>
 </ul>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[Device_AddReg]</code></p>
 <p><code>HKR,,"EnableDefaultAutoPlaySupport",0x10001,1</code></p></td>
 </tr>

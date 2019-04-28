@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a03d207896a9a0b07a0ef8e0570c4ecdd17ced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375096"
 ---
 # <a name="client-and-server-examples"></a>クライアントとサーバーの例
 
@@ -33,7 +33,7 @@ E:\Debugging Tools for Windows> cdb -server tcp:port=1025 -p 122
 G:\Debugging Tools> windbg -remote tcp:server=BOX17,port=1025
 ```
 
-別の例を次に示します。 この場合、NPIPE プロトコルを選択すると、および CDB は WinDbg の代わりに使用されます。 最初のユーザーは、パイプ名を選択します。 この例では、"MainPipe"--任意の英数字の文字列を入力できます。 最初のユーザーは、管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) を開き、このコマンドを入力してデバッグ サーバーを開始します。
+別の例を示します。 この場合、NPIPE プロトコルを選択すると、および CDB は WinDbg の代わりに使用されます。 最初のユーザーは、パイプ名を選択します。 この例では、"MainPipe"--任意の英数字の文字列を入力できます。 最初のユーザーは、管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) を開き、このコマンドを入力してデバッグ サーバーを開始します。
 
 ```console
 E:\Debugging Tools for Windows> cdb -server npipe:pipe=MainPipe -v winmine.exe 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ee12871ac07e4b873fabf27ad76d23e6124837de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379466"
 ---
 # <a name="guiddevinterfacevideooutputarrival"></a>GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
 
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[デバイス インターフェイス ク
 
 この Windows オペレーティング システムでは、このデバイスのインターフェイス クラスを使用しません。
 
-ディスプレイ デバイスについては、[Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)を参照してください。
+ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)します。
 
-ディスプレイ アダプターのデバイスのインターフェイス クラスについては、[ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)を参照してください。
+ディスプレイ アダプターのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)します。
 
 <a name="requirements"></a>要件
 ------------

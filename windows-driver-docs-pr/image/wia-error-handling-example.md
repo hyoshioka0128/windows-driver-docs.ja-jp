@@ -5,11 +5,11 @@ ms.assetid: 7dc4b15e-40db-4e64-be41-d6bcc44603c6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4e145ab226945a8f79182cc95f26350e709ca75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379582"
 ---
 # <a name="wia-error-handling-example"></a>WIA エラー処理の例
 

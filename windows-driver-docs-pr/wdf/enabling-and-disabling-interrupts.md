@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb5e9d1f02c7f6d68cf8cc4c52927dc82840244
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379496"
 ---
 # <a name="enabling-and-disabling-interrupts"></a>割り込みの有効化と無効化
 
@@ -27,7 +27,7 @@ IRQL でこれらの追加の操作を実行できない場合、ドライバー
 
 フレームワークは、ドライバーの[ *EvtInterruptEnable* ](https://msdn.microsoft.com/library/windows/hardware/ff541730)と[ *EvtDeviceD0EntryPostInterruptsEnabled* ](https://msdn.microsoft.com/library/windows/hardware/ff540853)コールバック関数毎回デバイス状態にその作業 (D0)、フレームワークには、ドライバーが呼び出された後[ *EvtDeviceD0Entry* ](https://msdn.microsoft.com/library/windows/hardware/ff540848)コールバック関数。
 
-フレームワークは、ドライバーの[ *EvtDeviceD0ExitPreInterruptsDisabled* ](https://msdn.microsoft.com/library/windows/hardware/ff540856)と[ *EvtInterruptDisable* ](https://msdn.microsoft.com/library/windows/hardware/ff541714)コールバック関数フレームワークは、ドライバーの前に、デバイスが、作業の状態を離れるたび[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)コールバック関数。 詳細については、フレームワークがドライバーのコールバック関数を呼び出すと、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
+フレームワークは、ドライバーの[ *EvtDeviceD0ExitPreInterruptsDisabled* ](https://msdn.microsoft.com/library/windows/hardware/ff540856)と[ *EvtInterruptDisable* ](https://msdn.microsoft.com/library/windows/hardware/ff541714)コールバック関数フレームワークは、ドライバーの前に、デバイスが、作業の状態を離れるたび[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)コールバック関数。 詳細については、フレームワークがドライバーのコールバック関数を呼び出すと、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
 
 あるデバイスが同じリソースを使用割り込みたびに、フレームワーク、ドライバーを想定する必要があります[ *EvtInterruptEnable* ](https://msdn.microsoft.com/library/windows/hardware/ff541730)コールバック関数。 PnP マネージャーも[システム リソースを再分配します](the-pnp-manager-redistributes-system-resources.md)、し、デバイスに割り込みの新しいリソースに割り当てることができます。
 

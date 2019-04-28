@@ -1,6 +1,6 @@
 ---
-title: デバイスのソフトウェア キーのレジストリ値を変更します。
-description: デバイスのソフトウェア キーのレジストリ値を変更します。
+title: デバイスのソフトウェア キーのレジストリ値の変更
+description: デバイスのソフトウェア キーのレジストリ値の変更
 ms.assetid: 4DBDB53D-CA64-4c19-84A5-FBE1529FD0C5
 keywords:
 - レジストリ WDK デバイスのインストール、デバイスのソフトウェア キーのレジストリ値を変更します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7750413002377ad67d9ff3206ba8041e997a1f87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378353"
 ---
-# <a name="modifying-registry-values-in-a-devices-software-key"></a>デバイスのソフトウェア キーのレジストリ値を変更します。
+# <a name="modifying-registry-values-in-a-devices-software-key"></a>デバイスのソフトウェア キーのレジストリ値の変更
 
 
 次のレジストリ エントリの値を変更する必要があります (*デバイス プロパティ*) で、デバイスの*ソフトウェア キー*:
@@ -25,7 +25,7 @@ ms.locfileid: "56527568"
 
 -   DriverDesc
 
--   driverVersion
+-   DriverVersion
 
 -   次のよう
 
@@ -49,7 +49,7 @@ ms.locfileid: "56527568"
 
 -   使用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)と[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)標準またはカスタム プロパティを取得および設定します。
 
-    詳細については、[デバイス ドライバーのプロパティへのアクセス](accessing-device-driver-properties.md)を参照してください。
+    詳細については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](accessing-device-driver-properties.md)します。
 
 -   オペレーティング システムに予約されていないデバイス プロパティのみを設定します。
 

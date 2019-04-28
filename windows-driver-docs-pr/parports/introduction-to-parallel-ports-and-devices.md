@@ -1,6 +1,6 @@
 ---
-title: パラレル ポートやデバイスの概要
-description: パラレル ポートやデバイスの概要
+title: パラレル ポートとデバイスの概要
+description: パラレル ポートとデバイスの概要
 ms.assetid: b0aaf63d-cc2d-4273-9760-6446cbb28938
 keywords:
 - WDK のパラレル ポート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83915f7f1db60def28425c00ecaff99708889b3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373534"
 ---
-# <a name="introduction-to-parallel-ports-and-devices"></a>パラレル ポートやデバイスの概要
+# <a name="introduction-to-parallel-ports-and-devices"></a>パラレル ポートとデバイスの概要
 
 
 
@@ -46,9 +46,9 @@ ms.locfileid: "56548759"
 
 パラレル ポートやデバイスの Windows のサポートの詳細についてを参照してください。
 
-[システム提供平行ドライバー](system-supplied-parallel-drivers.md)
+[システム提供のパラレル ドライバー](system-supplied-parallel-drivers.md)
 
-[並列ドライバーのベンダーから提供されました。](vendor-supplied-parallel-drivers.md)
+[ベンダー提供のパラレル ドライバー](vendor-supplied-parallel-drivers.md)
 
 [システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
 

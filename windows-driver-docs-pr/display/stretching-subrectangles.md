@@ -1,6 +1,6 @@
 ---
-title: 伸縮 Subrectangles
-description: 伸縮 Subrectangles
+title: サブ矩形のストレッチ
+description: サブ矩形のストレッチ
 ms.assetid: c8642ea4-67e9-4a15-9636-8d7efbfd8c9e
 keywords:
 - デインター レース WDK DirectX va なので、subrectangular 処理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2874ddb904f8f13a8cf979f93dd2e6104dabbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376005"
 ---
-# <a name="stretching-subrectangles"></a>伸縮 Subrectangles
+# <a name="stretching-subrectangles"></a>サブ矩形のストレッチ
 
 
 ## <span id="ddk_stretching_subrectangles_gg"></span><span id="DDK_STRETCHING_SUBRECTANGLES_GG"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e1cb63bedb92457f4dec24ec35aace06c4a1b5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380813"
 ---
 # <a name="kspropertypinnecessaryinstances"></a>KSPROPERTY\_PIN\_NECESSARYINSTANCES
 
@@ -51,7 +51,7 @@ ms.locfileid: "56552720"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>ULONG</p></td>

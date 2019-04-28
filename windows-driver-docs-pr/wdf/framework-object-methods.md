@@ -1,19 +1,19 @@
 ---
-title: Framework オブジェクトのメソッド
-description: Framework オブジェクトのメソッド
+title: フレームワーク オブジェクトのメソッド
+description: フレームワーク オブジェクトのメソッド
 ms.assetid: f82275c5-15f9-43f5-91bb-b83446526c28
 keywords:
 - framework オブジェクト WDK KMDF、メソッド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a9954c646788651ed1045fa64c60193adf82c53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370978"
 ---
-# <a name="framework-object-methods"></a>Framework オブジェクトのメソッド
+# <a name="framework-object-methods"></a>フレームワーク オブジェクトのメソッド
 
 
 

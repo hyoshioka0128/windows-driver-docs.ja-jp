@@ -5,11 +5,11 @@ ms.assetid: 8b1b09ab-7ab8-4d6d-9ea6-395a109def91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53061611095ebec830ce4fb80af4424cd2319893
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376976"
 ---
 # <a name="trustedcertificate-apn-element"></a>TrustedCertificate (APN 要素)
 
@@ -37,7 +37,7 @@ TrustedCertificate 要素は、指定したオペレーターの信頼された�
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -46,13 +46,13 @@ TrustedCertificate 要素は、指定したオペレーターの信頼された�
 <tr class="odd">
 <td><p>SubjectName</p></td>
 <td><p>xs:string</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>証明書のサブジェクト名。</p></td>
 </tr>
 <tr class="even">
 <td><p>IssuerName</p></td>
 <td><p>xs:string</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>証明書の発行者名。</p></td>
 </tr>
 </tbody>

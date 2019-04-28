@@ -1,19 +1,19 @@
 ---
-title: コマンドのマクロ ブロックの制御構造の一般的なフォーム
-description: コマンドのマクロ ブロックの制御構造の一般的なフォーム
+title: マクロブロック制御コマンド構造の一般的なフォーム
+description: マクロブロック制御コマンド構造の一般的なフォーム
 ms.assetid: 44009238-0a8e-4018-9b50-06729640f5e4
 keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cb8d6a9bd201341c4d06c19ebdbf2ae65fc3af6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373411"
 ---
-# <a name="generic-form-of-macroblock-control-command-structures"></a>コマンドのマクロ ブロックの制御構造の一般的なフォーム
+# <a name="generic-form-of-macroblock-control-command-structures"></a>マクロブロック制御コマンド構造の一般的なフォーム
 
 
 ## <span id="ddk_generic_form_of_macroblock_control_command_structures_gg"></span><span id="DDK_GENERIC_FORM_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURES_GG"></span>

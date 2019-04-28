@@ -1,17 +1,17 @@
 ---
-title: ファームウェア イメージのスロット (25 のインデックス関数) を選択します。
+title: ファームウェア イメージ スロットの選択 (関数インデックス 25)
 description: この関数は、ファームウェア イメージがアクティブなを選択します。
 ms.assetid: 65B8BF11-4377-455A-9A08-0C15FADC0BBC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: db61d647aabb4c20f6006d3bc348773eb80f9f08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378534"
 ---
-# <a name="select-firmware-image-slot-function-index-25"></a>ファームウェア イメージのスロット (25 のインデックス関数) を選択します。
+# <a name="select-firmware-image-slot-function-index-25"></a>ファームウェア イメージ スロットの選択 (関数インデックス 25)
 
 
 この関数は、ファームウェア イメージがアクティブなを選択します。 デバイスをリセットすると、選択したイメージを読み込む必要があります。
@@ -76,7 +76,7 @@ ms.locfileid: "56532460"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

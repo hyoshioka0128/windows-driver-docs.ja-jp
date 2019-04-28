@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cceb9b5b163ebe8750402363c42a074edf202c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373769"
 ---
 # <a name="using-registry-values-to-enable-and-disable-task-offloading"></a>タスク オフロードを有効および無効にするレジストリ値の使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "56577947"
 
 
 
-デバッグするときにドライバーのタスクのオフロード機能を有効または無効で、レジストリ キー設定タスク オフロード サービスに役に立つ場合があります。 INF ファイルとレジストリを定義する標準化されたキーワードが指定されています。 標準化されたキーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+デバッグするときにドライバーのタスクのオフロード機能を有効または無効で、レジストリ キー設定タスク オフロード サービスに役に立つ場合があります。 INF ファイルとレジストリを定義する標準化されたキーワードが指定されています。 標準化されたキーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
 2 つのグループのいずれかに属しているタスク オフロード キーワード: 細かいキーワードまたはグループ化されたキーワードです。 *詳細なキーワード*トランスポート層の差別化、IP プロトコルの差別化オフロード機能 - ごとのキーワードを提供します。 *キーワードをグループ化*トランスポート層で結合されたキーワードの機能を提供します。
 
@@ -74,7 +74,7 @@ ms.locfileid: "56577947"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">値</th>
+<th align="left">[値]</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -337,7 +337,7 @@ ms.locfileid: "56577947"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">値</th>
+<th align="left">[値]</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -395,7 +395,7 @@ ms.locfileid: "56577947"
 
  
 
-有効にできるオフロードの組み合わせに対して制限があります。 たとえば、ミニポート アダプターが LSOV1 または LSOV2 をサポートする場合、ミニポート アダプターも ip アドレスと TCP チェックサムを計算します。 有効な組み合わせのオフロードの詳細については、[結合の種類のタスクをオフロード](combining-types-of-task-offloads.md)を参照してください。
+有効にできるオフロードの組み合わせに対して制限があります。 たとえば、ミニポート アダプターが LSOV1 または LSOV2 をサポートする場合、ミニポート アダプターも ip アドレスと TCP チェックサムを計算します。 有効な組み合わせのオフロードの詳細については、次を参照してください。[結合の種類のタスクをオフロード](combining-types-of-task-offloads.md)します。
 
 プロトコル ドライバーを発行する必要がありますいないレジストリ キーの設定では、タスクのオフロード サービスが無効にした場合、 [OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)オブジェクト識別子 (OID)。
 

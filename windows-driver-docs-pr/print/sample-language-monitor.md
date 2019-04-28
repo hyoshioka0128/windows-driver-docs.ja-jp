@@ -1,19 +1,19 @@
 ---
-title: 言語モニターのサンプル
-description: 言語モニターのサンプル
+title: サンプル言語モニター
+description: サンプル言語モニター
 ms.assetid: fd1ef790-c17b-4735-87fc-6b7b8597ac4d
 keywords:
 - 言語は、WDK の印刷、サンプルを監視します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf91bd9cdf6b3505074b593c6fe6fd607c44e440
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376526"
 ---
-# <a name="sample-language-monitor"></a>言語モニターのサンプル
+# <a name="sample-language-monitor"></a>サンプル言語モニター
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: 既定の差分コード ハンドラーを呼び出す
-description: 既定の差分コード ハンドラーを呼び出す
+title: 既定の DIF コード ハンドラーの呼び出し
+description: 既定の DIF コード ハンドラーの呼び出し
 ms.assetid: bc168c30-2269-4760-bc0a-e3e6ee3ce720
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c67142d1b5f71d813c1df651d42f56fb8702986
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374308"
 ---
-# <a name="calling-the-default-dif-code-handlers"></a>既定の差分コード ハンドラーを呼び出す
+# <a name="calling-the-default-dif-code-handlers"></a>既定の DIF コード ハンドラーの呼び出し
 
 
 差分の既定のコード ハンドラーが差分コードのシステム定義の既定の操作を実行し、*共同インストーラー*差分の要求の前に処理が最初に**SetupDiCallClassInstaller**リコール、登録要求の処理後の共同インストーラー。

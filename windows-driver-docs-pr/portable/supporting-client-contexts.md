@@ -1,16 +1,16 @@
 ---
-Description: Supporting Client Contexts
-title: クライアント コンテキストをサポートしています。
+Description: クライアント コンテキストのサポート
+title: クライアント コンテキストのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b227917f936a9f0a0136e786b06b4bd91ea39c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380853"
 ---
-# <a name="supporting-client-contexts"></a>クライアント コンテキストをサポートしています。
+# <a name="supporting-client-contexts"></a>クライアント コンテキストのサポート
 
 
 Windows ポータブル デバイス (WPD) ドライバーは、アプリケーション、および物理デバイス間の通信チャネルを提供します。 複数の WPD アプリケーションをいつでも実行できます。 ドライバーは、コンピューター上の別のクライアントからの要求を処理し、キューに置かれた要求に基づいてクライアントを識別する必要があります。 つまり、ドライバーには、接続ごとに、クライアントのデータを格納および要求時にデータを取得する、効率的かつ簡単な方法が必要があります。

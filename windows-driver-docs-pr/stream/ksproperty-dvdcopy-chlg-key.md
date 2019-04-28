@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37c409bc89a4bda598119b083e659601e4623c61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380639"
 ---
 # <a name="kspropertydvdcopychlgkey"></a>KSPROPERTY\_DVDCOPY\_CHLG\_キー
 
@@ -68,7 +68,7 @@ KSPROPERTY\_DVDCOPY\_CHLG\_キー プロパティは、DVD デコーダーと DV
 
 **取得**要求すると、DVD デコーダーがそのバス チャレンジのキーを提供します。 **設定**要求すると、DVD デコーダーが DVD ドライブから bus チャレンジのキーを提供します。
 
-バスの課題のキーの詳細については、[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)を参照してください。
+バスの課題のキーの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
 
 <a name="requirements"></a>要件
 ------------

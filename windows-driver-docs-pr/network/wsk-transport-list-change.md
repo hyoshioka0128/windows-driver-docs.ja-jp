@@ -7,11 +7,11 @@ keywords:
 - WSK_TRANSPORT_LIST_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f5a9e6657e6d1d4d58956ad99695e0da5370bb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375231"
 ---
 # <a name="wsktransportlistchange"></a>WSK\_トランスポート\_一覧\_変更
 

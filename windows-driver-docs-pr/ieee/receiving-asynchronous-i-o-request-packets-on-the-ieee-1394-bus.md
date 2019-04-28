@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 695ba4688e41c73a1d2b21d3652912a3b9e7f8c7
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370980"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>IEEE 1394 バスでの非同期 I/O 要求パケットの受信
 

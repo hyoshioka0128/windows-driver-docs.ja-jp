@@ -1,16 +1,16 @@
 ---
-Description: Defining the Sensor Properties
-title: センサーのプロパティを定義します。
+Description: センサー プロパティの定義
+title: センサー プロパティの定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d36174949ef6b5dd40e0f6b53c3e3270219500af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378663"
 ---
-# <a name="defining-the-sensor-properties"></a>センサーのプロパティを定義します。
+# <a name="defining-the-sensor-properties"></a>センサー プロパティの定義
 
 
 Windows ポータブル デバイス (WPD) プロパティは、オブジェクトの説明するメタデータです。 このセクションでは、サンプルのドライバーがサポートするプロパティについて説明します。 デバイス オブジェクトは、18 のプロパティをサポートしているし、センサーの個々 のオブジェクトは、10 個のプロパティをサポートします。 一部のオブジェクト プロパティに WPD などのドライバーの機能に必要な\_オブジェクト\_ID と WPD\_オブジェクト\_持続\_UNIQUE\_id。 WPD などのオブジェクトを記述する情報を提供するその他のプロパティが存在\_デバイス\_製造元。
@@ -27,7 +27,7 @@ WDK には、WPD ドライバー開発者向けのいくつかのツールが含
 
 このオブジェクトは、10 個のプロパティをサポートします。 1 つに、センサー\_読み取りとセンサー\_UPDATE\_間隔は WpdBasicHardwareDriver、によって定義され、センサー ファームウェアによって発行されたデータを表現するカスタム プロパティ。 この例では、センサーで\_読み取りプロパティは、センサーを識別します (2 = Sensiron 気温・湿度センサー)、要素の数 (1)、要素のサイズ (バイト単位の 7)、現在の気温 (74.4 F) および相対湿度 (37.3%)。 センサー\_UPDATE\_INTERVAL プロパティは、デバイスがイベントを起動する頻度を指定します。 この値は、02000 は、2 秒の更新間隔を示します (ミリ秒単位) で指定されます。 ファームウェアでは、2 ~ 60 秒間の更新の間隔の構成をサポートします。
 
-WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造体は、2 つの部分で構成されています: GUID と DWORD。 グローバル一意識別子 (GUID) がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、[PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md) Windows Driver Kit (WDK) ドキュメントを参照してください。
+WPD では、プロパティが PROPERTYKEY データ構造体によって表されます。 この構造体は、2 つの部分で構成されています: GUID と DWORD。 グローバル一意識別子 (GUID) がプロパティのカテゴリを識別し、dword 値がそのカテゴリ内の特定のプロパティを識別します。 PROPERTYKEY 構造の詳細については、次を参照してください。 [PROPERTYKEYs と WPD で Guid](propertykeys-and-guids-in-windows-portable-devices.md) Windows Driver Kit (WDK) ドキュメントです。
 
 DECLARE を使用して\_PROPERTYKEY のマクロには、ドライバーで新しいプロパティの PROPERTYKEY 構造体を宣言できます。 次の例は、センサー、PROPERTYKEY の宣言\_読み取りプロパティ。 この例が表示されます、 *WpdObjectProperties.cpp*ファイル。
 

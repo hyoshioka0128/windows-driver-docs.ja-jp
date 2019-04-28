@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3d4106176ec1f63560cc5a919c16562df2e2a57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380882"
 ---
 # <a name="reporting-a-nics-lsov2-tcp-packet-segmentation-capabilities"></a>NIC の LSOV2 TCP パケット セグメンテーション機能のレポート
 
@@ -28,7 +28,7 @@ NDIS ミニポート ドライバーが現在大量送信オフロード バー�
 
 クエリに対する応答で[OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)、NDIS には、NDIS が含まれています\_TCP\_LARGE\_送信\_オフロード\_V2 構造、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599) NDIS を表す構造体、 **InformationBuffer**のメンバー[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 NDIS は、ミニポート ドライバーが提供される情報を使用します。
 
-LSOV2 ハードウェアをサポートしているミニポート ドライバーが LSOV1 をサポートする必要がありますもことをお勧めします。 このサポートは、NDIS 5 の場合は、LSOV1 を使用する TCP/IP トランスポートを有効になります。*x*ミニポート アダプタ上で中間ドライバーがインストールされています。 LSOV1 機能に関する詳細については、[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)を参照してください。
+LSOV2 ハードウェアをサポートしているミニポート ドライバーが LSOV1 をサポートする必要がありますもことをお勧めします。 このサポートは、NDIS 5 の場合は、LSOV1 を使用する TCP/IP トランスポートを有効になります。*x*ミニポート アダプタ上で中間ドライバーがインストールされています。 LSOV1 機能に関する詳細については、次を参照してください。[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)します。
 
 LSOV2 には、IPv4 と IPv6 パケットがサポートされています。 ミニポート ドライバーは、IPv4 と IPv6 の両方に対して、次の情報を指定する必要があります、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff567884)構造体。
 

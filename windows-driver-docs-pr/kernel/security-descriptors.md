@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1d2e9fc52a04ba5c3d3363750fb3e0964249e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377290"
 ---
 # <a name="security-descriptors"></a>セキュリティ記述子
 
@@ -38,11 +38,11 @@ ms.locfileid: "56574336"
 
 -   A*セキュリティ識別子*(SID)。 セキュリティ識別子は、ACE を適用するユーザーを決定します。 SID は、1 人のユーザーまたはユーザーのグループを表すことができます。 たとえば、世界の SID は、すべてのユーザーのセットを表します。
 
--   アクセス権のセット。 アクセス権については、[アクセス権](access-rights.md)を参照してください。
+-   アクセス権のセット。 アクセス権については、次を参照してください。[アクセス権](access-rights.md)します。
 
 -   アクセス権のセットが許可または拒否するかどうか。
 
-最も重要なセキュリティ記述子ではされる、ドライバーのドライバーのデバイス オブジェクトです。 詳細については、[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)を参照してください。
+最も重要なセキュリティ記述子ではされる、ドライバーのドライバーのデバイス オブジェクトです。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)します。
 
 記述子のセキュリティの詳細については、Windows SDK は一般を参照してください。
 

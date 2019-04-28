@@ -1,6 +1,6 @@
 ---
-title: x86 命令
-description: x86 命令
+title: x86 の手順
+description: x86 の手順
 ms.assetid: 237796d5-ef82-4eab-8d56-3191b3e63597
 keywords:
 - x86 プロセッサで命令
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2310fd4e39c0c1072df7099c58c35bdc808cf2be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381895"
 ---
-# <a name="x86-instructions"></a>x86 命令
+# <a name="x86-instructions"></a>x86 の手順
 
 
 ## <span id="ddk_x86_instructions_dbg"></span><span id="DDK_X86_INSTRUCTIONS_DBG"></span>
@@ -739,13 +739,13 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 </tr>
 <tr class="even">
 <td align="left"><p><strong></em></strong></p></td>
-<td align="left"><p>呼び出し</p></td>
+<td align="left"><p>CALL</p></td>
 <td align="left"><p>追加先</p></td>
 <td align="left"><p>直接呼び出します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*</strong></p></td>
-<td align="left"><p>呼び出し</p></td>
+<td align="left"><p>CALL</p></td>
 <td align="left"><p><strong>r</strong>/m</p></td>
 <td align="left"><p>間接的な呼び出しです。</p></td>
 </tr>
@@ -894,7 +894,7 @@ Shift キーを押し**r1**右**cl**/\#の下位ビットに n **r2**/m。 最�
 <td align="left"><p>割り込みを有効にします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>CLI</p></td>
+<td align="left"><p>CLI (CLI)</p></td>
 <td align="left"><p>割り込みを無効にします。</p></td>
 </tr>
 </tbody>

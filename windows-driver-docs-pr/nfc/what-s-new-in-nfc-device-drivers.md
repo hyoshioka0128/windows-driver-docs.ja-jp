@@ -1,21 +1,21 @@
 ---
-title: NFC のデバイス ドライバーの新機能新機能
+title: NFC デバイス ドライバーの新機能
 description: このトピックでは、新機能と Windows 10 の NFC デバイス ドライバーの機能強化をまとめたものです。
 ms.assetid: 07E0E7F4-9D2B-423F-925C-D6923D8D9A4A
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ebe2fefa7c28b14d3e0f55f90b15ec8af95fec56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373712"
 ---
 # <a name="whats-new-for-nfc-device-drivers-in-windows-10"></a>Windows 10 でデバイス ドライバーの NFC は新機能
 

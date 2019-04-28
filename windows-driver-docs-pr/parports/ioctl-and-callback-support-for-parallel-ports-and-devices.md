@@ -1,6 +1,6 @@
 ---
-title: IOCTL およびパラレル ポートとデバイスのコールバック サポート
-description: IOCTL およびパラレル ポートとデバイスのコールバック サポート
+title: パラレル ポートとデバイスの IOCTL とコールバックのサポート
+description: パラレル ポートとデバイスの IOCTL とコールバックのサポート
 ms.assetid: 72a31f50-2f59-4a4d-aac7-571f83a94259
 keywords:
 - システム提供平行ドライバー WDK、Ioctl
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8d707bbd2b70b5af8ce580c5ba9ab489eceff6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373532"
 ---
-# <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>IOCTL およびパラレル ポートとデバイスのコールバック サポート
+# <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>パラレル ポートとデバイスの IOCTL とコールバックのサポート
 
 
 

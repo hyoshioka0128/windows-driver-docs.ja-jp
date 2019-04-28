@@ -5,11 +5,11 @@ ms.assetid: 5473C6AC-284C-41B1-AA67-75696BE96C24
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 890f70f01b1d2950d256b67585cd14d00f376938
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376690"
 ---
 # <a name="device-driver-interface-ddi-changes-in-windows-7"></a>Windows 7 のデバイス ドライバー インターフェイス (DDI) の変更点
 

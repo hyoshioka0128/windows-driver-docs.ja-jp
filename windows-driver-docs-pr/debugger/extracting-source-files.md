@@ -1,6 +1,6 @@
 ---
-title: ソース ファイルを抽出します。
-description: ソース ファイルを抽出します。
+title: ソース ファイルの抽出
+description: ソース ファイルの抽出
 ms.assetid: b7c859a9-5264-401c-ad96-ad044bcc140e
 keywords:
 - ソース ファイルを抽出します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acd9accb0cec0ee66680071bbdd607f14ad9ee29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375407"
 ---
-# <a name="extracting-source-files"></a>ソース ファイルを抽出します。
+# <a name="extracting-source-files"></a>ソース ファイルの抽出
 
 
 ソースを提供するすべてのモジュールからすべてのソース ファイルを抽出するには、コマンドを使用します。

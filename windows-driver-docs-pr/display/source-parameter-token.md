@@ -5,11 +5,11 @@ ms.assetid: 280b9fb2-9b5c-4830-9ba5-cfb6201960e0
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b68529bb18f761446865e58d85644f22b7d6b28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382329"
 ---
 # <a name="source-parameter-token"></a>ソース パラメーター トークン
 
@@ -188,7 +188,7 @@ ms.locfileid: "56553570"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-ビット 28、29、30、11、および 12 フォーム register 型を示す 5 ビット値です。 登録の種類については、[シェーダー登録型](https://msdn.microsoft.com/library/windows/hardware/ff569707)を参照してください。
+ビット 28、29、30、11、および 12 フォーム register 型を示す 5 ビット値です。 登録の種類については、次を参照してください。[シェーダー登録型](https://msdn.microsoft.com/library/windows/hardware/ff569707)します。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要件
 

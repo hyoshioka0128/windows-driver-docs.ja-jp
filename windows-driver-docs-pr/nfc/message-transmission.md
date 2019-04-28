@@ -1,23 +1,23 @@
 ---
-title: メッセージの送信
-description: メッセージの送信
+title: メッセージの転送
+description: メッセージの転送
 ms.assetid: 96C5CE38-25EE-425A-A7C5-05990CBE2C3E
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0de859385c7290117af64cdfdf66b3a705fbb06a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378714"
 ---
-# <a name="message-transmission"></a>メッセージの送信
+# <a name="message-transmission"></a>メッセージの転送
 
 
 NFP テクノロジは、近接テクノロジで定義されている別のデバイスが近接、判断した場合は、これがデバイス間で公開されたメッセージを送信するトリガーとして機能します。

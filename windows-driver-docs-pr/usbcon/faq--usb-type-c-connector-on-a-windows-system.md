@@ -1,14 +1,14 @@
 ---
-Description: Frequently asked questions for OEMs who want to build Windows systems with USB Type-C connectors.
+Description: よく寄せられる型-C# の USB コネクタでの Windows システムを構築したい Oem の質問です。
 title: よく寄せられる質問 - Windows システム上の C-USB 型コネクタ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de24442fd628eee893fce57e08deac76308fa89b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383016"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>よくあるご質問:Windows システムにおける USB Type-C コネクタ
 
@@ -127,12 +127,12 @@ No. UCSI は Windows 10 以前の Windows のバージョンでサポートさ�
 ## <a name="what-is-the-exact-condition-and-ui-for-the-different-errors"></a>正確な条件と UI のさまざまなエラーは?
 
 
-Windows 10 では、USB 型-C# のハードウェアとソフトウェアのさまざまな組み合わせでの制限事項についてユーザーを教育する USB 型から C のエラー メッセージのセットを表示できます。 たとえば、ユーザーが「デバイスが充電緩やかに変化」充電器は、型-C# の USB コネクタに接続されている場合はメッセージが十分に強力で、システムと互換性がないまたは充電中以外のポートに接続されているを取得する可能性があります。 詳細については、[USB 型 C Windows システムのメッセージのトラブルシューティングを行う](https://go.microsoft.com/fwlink/?LinkId=526894)を参照してください。
+Windows 10 では、USB 型-C# のハードウェアとソフトウェアのさまざまな組み合わせでの制限事項についてユーザーを教育する USB 型から C のエラー メッセージのセットを表示できます。 たとえば、ユーザーが「デバイスが充電緩やかに変化」充電器は、型-C# の USB コネクタに接続されている場合はメッセージが十分に強力で、システムと互換性がないまたは充電中以外のポートに接続されているを取得する可能性があります。 詳細については、次を参照してください。 [USB 型 C Windows システムのメッセージのトラブルシューティングを行う](https://go.microsoft.com/fwlink/?LinkId=526894)します。
 
 ## <a name="what-happens-when-a-non-pd-port-is-connected-to-pd-provider-conversely-what-happens-when-a-pd-consumer-is-connected-to-a-system-that-is-not-a-pd-provider"></a>PD 以外のポートが PD プロバイダーに接続されている場合に起こる 逆に、PD コンシューマーが PD プロバイダーではないシステムに接続されているときの動作ですか。
 
 
-PD 以外のポートが USB 型-C# の現在のレベルを使用して、システムを請求しようとするとします。 詳細については、[USB 3.1 と USB 型-C# 仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)を参照してください。
+PD 以外のポートが USB 型-C# の現在のレベルを使用して、システムを請求しようとするとします。 詳細については、次を参照してください。 [USB 3.1 と USB 型-C# 仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)します。
 
 ## <a name="what-happens-when-thunderbolt-supermhl-or-pci-express-is-connected-to-a-pc-that-does-not-support-those-capabilities"></a>Thunderbolt や SuperMHL、PCI express がこれらの機能をサポートしていない PC に接続されている場合に起こる
 
@@ -140,7 +140,7 @@ PD 以外のポートが USB 型-C# の現在のレベルを使用して、シ�
 代替モード機能では、同時に USB 2.0 の維持および機能の充電中に、USB ケーブルで実行するため (Thunderbolt、SuperMHL) などの USB 以外のプロトコルを使用できます。 ユーザーは、USB 型-c 代替モードのデバイスまたは接続されている PC または Windows 10 を実行している電話でサポートされていないアダプターを接続する場合は、エラー条件が検出され、ユーザーにメッセージが表示されます。
 
 -   デバイスまたはアダプターは、ビルボードのデバイスを公開する場合、ユーザーには、問題をトラブルシューティングを行うのに役立つエラー条件についての情報が表示されます。 Windows 10 では、ビルボードのデバイスに、インボックス ドライバーを提供し、ユーザー エラーが発生したことを通知します。
--   ユーザーは、エラー通知が表示される、「USB 接続の改善を試してください」可能性があります。 詳細については、[USB 型 C Windows システムのエラー メッセージ](introduction-to-usb-type-c-connectors.md#-4)を参照してください。
+-   ユーザーは、エラー通知が表示される、「USB 接続の改善を試してください」可能性があります。 詳細については、次を参照してください。 [USB 型 C Windows システムのエラー メッセージ](introduction-to-usb-type-c-connectors.md#-4)します。
 
 最適な結果を PC または電話ケーブルで別のモードのデバイスまたはアダプターの要件を満たしていることを確認します。
 
@@ -167,7 +167,7 @@ Windows 10 用 Windows HLK には、USB ホストと関数のコント ローラ
 -   デスクトップ エディションの Windows 10 を実行している 2 つの Pc に接続することはできません。
 -   Windows 10 Mobile を実行している 2 つのモバイル デバイスを接続することはできません。
 
-ユーザーがこのような接続を確立しようとすると、Windows では、エラー メッセージが表示されます。 詳細については、[USB 型 C Windows システムのエラー メッセージ](introduction-to-usb-type-c-connectors.md#-6)を参照してください。
+ユーザーがこのような接続を確立しようとすると、Windows では、エラー メッセージが表示されます。 詳細については、次を参照してください。 [USB 型 C Windows システムのエラー メッセージ](introduction-to-usb-type-c-connectors.md#-6)します。
 
 Windows Mobile デバイスと Windows デスクトップ デバイスの間の唯一の有効な接続です。
 
@@ -201,7 +201,7 @@ Windows 10 用 Windows HLK で USB テストを実行することをお勧めし
 ## <a name="is-vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension-or-partner-would-need-to-implement-event-callback-function-to-handle-vbus-control-and-usb-mode-switch"></a>UCM クラスの拡張機能で処理操作は VBus/VConn 制御とロールから切り替えるでしょうか。 または、パートナーは VBUS コントロールと USB モードの切り替えを処理するイベントのコールバック関数を実装する必要があります。
 
 
-UCM クラスの拡張機能は、コネクタのデータまたは電源の方向を変更するオペレーティング システムから要求を取得する可能性があります。 クライアント ドライバーの実装を呼び出すときに、それらの要求を取得、 [ *EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187818)と[ *EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187819)コールバック関数 (場合、コネクタPD を実装)。 実装では、クライアント ドライバーが必要なコントロール、VBUS と VCONN pin です。 これらのコールバック関数の詳細については、[型-C# の USB コネクタ ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)を参照してください。
+UCM クラスの拡張機能は、コネクタのデータまたは電源の方向を変更するオペレーティング システムから要求を取得する可能性があります。 クライアント ドライバーの実装を呼び出すときに、それらの要求を取得、 [ *EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187818)と[ *EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187819)コールバック関数 (場合、コネクタPD を実装)。 実装では、クライアント ドライバーが必要なコントロール、VBUS と VCONN pin です。 これらのコールバック関数の詳細については、次を参照してください。[型-C# の USB コネクタ ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: 地理的位置情報ドライバー サンプルをインストールします。
+title: 位置情報ドライバー サンプルのインストール
 description: 地理的位置情報ドライバー サンプルでは、ハードウェアをシミュレート、ために、インストールを自動化するプラグ アンド プレイ機能はありません。 サンプルをインストールするのに Windows ユーティリティ、devcon.exe が代わりに、使用する必要があります。
 ms.assetid: A08EA9B0-E1D6-47AE-BD89-C43D7D817DAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40cca5ae13c929345f9409de21fcdf0a0043b125
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371032"
 ---
-# <a name="installing-the-geolocation-driver-sample"></a>地理的位置情報ドライバー サンプルをインストールします。
+# <a name="installing-the-geolocation-driver-sample"></a>位置情報ドライバー サンプルのインストール
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。

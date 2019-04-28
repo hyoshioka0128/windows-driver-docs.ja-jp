@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a589ca1199be8449996903ab155a35f5f771cbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377938"
 ---
 # <a name="wiadpspageheight"></a>WIA\_DPS\_ページ\_高さ
 
@@ -33,16 +33,16 @@ WIA\_DPS\_ページ\_1/1000 インチの高さが高さのプロパティに含�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションの読み取り WIA\_DPS\_ページ\_スキャンされているページの物理的なサイズを決定する高さ。 エクステント設定が既知のページ サイズと異なる場合、このプロパティは、ページの高さを報告が[ **WIA\_DPS\_ページ\_サイズ**](wia-dps-page-size.md)プロパティは、WIA に設定\_ページ\_カスタム (これは、値、WIA の\_DPS\_ページ\_SIZE プロパティ)。
 
 WIA\_DPS\_ページ\_高さによって報告されたピクセル値と等価のインチの 1/10、1/100、1/1000 での測定値を指定する必要があります、 [ **WIA\_IP\_YEXTENT** ](wia-ips-yextent.md)プロパティで、スキャンするページのピクセルの高さを報告します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

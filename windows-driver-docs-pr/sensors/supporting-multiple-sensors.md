@@ -5,11 +5,11 @@ ms.assetid: 633B7CB5-EF4A-42BE-A60E-7D12BDAFA34F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05876f4790b01a2589c92e1bafab2809b599ad7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378579"
 ---
 # <a name="supporting-multiple-sensors"></a>複数のセンサーをサポートしています。
 

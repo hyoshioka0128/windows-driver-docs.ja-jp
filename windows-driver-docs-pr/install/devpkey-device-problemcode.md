@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 353fb9888ae7132190173f7727edfee877f0999f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374582"
 ---
 # <a name="devpkeydeviceproblemcode"></a>DEVPKEY_Device_ProblemCode
 
@@ -60,7 +60,7 @@ DEVPKEY_Device_ProblemCode の値がいずれか、CM_PROB_*Xxx* Cfg.h で定義
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_ProblemCode の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの問題のコードにアクセスする方法については、[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの問題のコードにアクセスする方法については、次を参照してください。[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)します。
 
 <a name="requirements"></a>要件
 ------------

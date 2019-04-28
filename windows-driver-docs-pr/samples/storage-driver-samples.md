@@ -5,11 +5,11 @@ ms.assetid: 4FEB911D-78D5-403E-91AB-8A064E31F4FA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1826460c27c89f359a14929d6027db13950d8b89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374210"
 ---
 # <a name="storage-driver-samples"></a>ストレージ ドライバーのサンプル
 
@@ -23,7 +23,7 @@ ms.locfileid: "56529942"
 |---------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CDROM クラス ドライバー                          | [cdrom](https://go.microsoft.com/fwlink/p/?LinkId=617971)     | CD-ROM クラス ドライバーを使用して、CD、DVD およびブルーレイ ドライブへのアクセスを提供します。 プラグ アンド プレイ、電源管理、および自動実行をサポートしています (メディアは、通知を変更)。                                                                          |
 | ClassPnP クラス ドライバー ライブラリ               | [classpnp](https://go.microsoft.com/fwlink/p/?LinkId=617978)  | ライブラリ ストレージ クラス ドライバーです。 プラグ アンド プレイ (PnP)、電源管理、およびその他の機能をサポートするために必要なコードのほとんどで、記憶域クラス ドライバーの記述が簡単になります。 このライブラリは、ディスク、cd-rom ドライブ、およびテープのクラス ドライバーによって使用されます。 |
-| ディスク クラス ドライバー                           | [ディスク](https://go.microsoft.com/fwlink/p/?LinkId=617979)      | ディスク デバイス用のクラス ドライバー。                                                                                                                                                                                                                |
+| ディスク クラス ドライバー                           | [disk](https://go.microsoft.com/fwlink/p/?LinkId=617979)      | ディスク デバイス用のクラス ドライバー。                                                                                                                                                                                                                |
 | AddFilter ストレージ フィルター ツール               | [addfilter](https://go.microsoft.com/fwlink/p/?LinkId=617980) | 追加し、特定のドライブまたはボリューム フィルター ドライバーを削除するコマンド ライン アプリケーションです。                                                                                                                                                    |
 | iSCSI WMI クライアント                            | [iscsi](https://go.microsoft.com/fwlink/p/?LinkId=617981)     | ISCSICLI.exe ツール、iSCSI イニシエーターのプロパティ ページ、WBEMTEST.exe ツール、およびカスタムの WMI スクリプトを使用してテストできる iSCSI ミニポートに WMI 実装します。                                                               |
 | LSI\_U3 StorPort ミニポート                   | [lsi\_u3](https://go.microsoft.com/fwlink/p/?LinkId=617982)   | 並列 SCSI ホスト バス アダプターまたは LSI 53C 1010 SCSI ASIC を使用して、マザーボードのソリューションで使用するためのアダプター ドライバー。                                                                                                                  |

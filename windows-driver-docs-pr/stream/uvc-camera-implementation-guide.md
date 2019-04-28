@@ -4,11 +4,11 @@ description: 受信トレイのドライバーを使ってアプリケーショ�
 ms.date: 11/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e550bd9332abb197b4857b29e1ddd399ec4985d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376955"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC カメラ実装ガイド
 
@@ -16,7 +16,7 @@ Windows 10 がデバイスを USB ビデオ クラス (バージョン 1.0 ~ 1.5
 
 ## <a name="terminology"></a>用語
 
-| キーワード              | 説明                                                                  |
+| Keyword              | 説明                                                                  |
 |----------------------|------------------------------------------------------------------------------|
 | UVC                  | USB ビデオ クラス                                                              |
 | UVC ドライバー           | OS に付属する USBVideo.sys ドライバー                                   |

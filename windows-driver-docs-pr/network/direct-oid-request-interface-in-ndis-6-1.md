@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 925ce2225b19e0b3c22d72ebf992bf19da9a4804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379575"
 ---
 # <a name="direct-oid-request-interface-in-ndis-61"></a>NDIS 6.1 の Direct OID 要求インターフェイス
 
@@ -28,7 +28,7 @@ NDIS は、NDIS 6.1 と以降のドライバーの直接の OID 要求インタ�
 
  
 
-NDIS 6.1、IPsecOV2 は直接の OID 要求インターフェイスを使用する唯一のインターフェイスです。 IPsecOV2 の詳細については、[IPsec タスク オフロード バージョン 2 で NDIS 6.1](ipsec-task-offload-version-2-in-ndis-6-1.md)を参照してください。
+NDIS 6.1、IPsecOV2 は直接の OID 要求インターフェイスを使用する唯一のインターフェイスです。 IPsecOV2 の詳細については、次を参照してください。 [IPsec タスク オフロード バージョン 2 で NDIS 6.1](ipsec-task-offload-version-2-in-ndis-6-1.md)します。
 
 Windows Server 2008 および Windows Vista Service Pack 1 (SP1) オペレーティング システムとドライバーを NDIS 6.1、OID 要求インターフェイスを直接、次のアルゴリズムのみを使用できます。
 

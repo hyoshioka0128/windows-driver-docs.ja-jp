@@ -1,17 +1,17 @@
 ---
-title: WIA フラット ベッド スキャナー
-description: WIA フラット ベッド スキャナー
+title: WIA フラットベッド スキャナー
+description: WIA フラットベッド スキャナー
 ms.assetid: 8ff6342b-94b1-404e-9d04-b513511f65dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd611f607100318c1b95ed47c86a628a8957063
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380936"
 ---
-# <a name="wia-flatbed-scanners"></a>WIA フラット ベッド スキャナー
+# <a name="wia-flatbed-scanners"></a>WIA フラットベッド スキャナー
 
 
 

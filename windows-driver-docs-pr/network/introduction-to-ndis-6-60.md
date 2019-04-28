@@ -5,17 +5,17 @@ ms.assetid: AFDFD1CD-2E07-4A4F-82E2-5E6C5AABD5A3
 ms.date: 06/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe12b73f1a4db94720a6468cf480407f2449d19d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380599"
 ---
 # <a name="introduction-to-ndis-660"></a>NDIS 6.60 の概要
 
 このトピックでは、Network Driver Interface Specification (NDIS) 6.60 を示し、その主要な設計の追加機能を説明します。 NDIS 6.60 は、Windows 10、バージョン 1607 および Windows Server 2016 に含まれる以降です。
 
-NDIS 6.60 は、NDIS 6.50 にマイナー バージョン更新です。 NDIS 6.60 する NDIS 6.x ドライバーの移植の詳細については、[NDIS 6.60 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-60.md)を参照してください。
+NDIS 6.60 は、NDIS 6.50 にマイナー バージョン更新です。 NDIS 6.60 する NDIS 6.x ドライバーの移植の詳細については、次を参照してください。 [NDIS 6.60 に移植する NDIS 6.x ドライバー](porting-ndis-6-x-drivers-to-ndis-6-60.md)します。
 
 ## <a name="feature-updates"></a>機能更新プログラム
 
@@ -31,7 +31,7 @@ NDIS 6.60 NDIS 6.50 を増分更新は、主要な新機能が含まれていま
    
    必要があります、メジャーおよびマイナー NDIS バージョン番号を更新 NDIS_Xxx_DRIVER_CHARACTERISTICS 構造で NDIS 6.60 をサポートするためにします。 MajorNdisVersion メンバーは、6 を含める必要があり、MinorNdisVersion メンバーは、60 を含める必要があります。 この要件は、ミニポート、プロトコル、およびフィルター ドライバーに適用されます。 コンパイラのバージョン情報を更新することも必要があります (を参照してください[コンパイル、NDIS 6.60 ドライバー](#compiling-an-ndis-660-driver))。
 
-- Windows 10、バージョン 1607 および Windows Server 2016 以降の NDIS 6.60 ミニポート ドライバーでは、データ構造の NDIS 6.60 バージョンを使用する必要があります。 詳細については、[データ構造を使用する NDIS 6.60](#using-ndis-660-data-structures)を参照してください。
+- Windows 10、バージョン 1607 および Windows Server 2016 以降の NDIS 6.60 ミニポート ドライバーでは、データ構造の NDIS 6.60 バージョンを使用する必要があります。 詳細については、次を参照してください。[データ構造を使用する NDIS 6.60](#using-ndis-660-data-structures)します。
 
 ## <a name="compiling-an-ndis-660-driver"></a>コンパイル、NDIS 6.60 ドライバー
 

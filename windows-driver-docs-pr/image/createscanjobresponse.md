@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd61b561afd387dc7cf0c9a6d16d01996a15beb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370974"
 ---
 # <a name="createscanjobresponse-element"></a>CreateScanJobResponse 要素
 
@@ -71,7 +71,7 @@ ms.locfileid: "56572538"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスをサポートする必要があります、 **CreateScanJobResponse**操作の要素。
@@ -87,7 +87,7 @@ WSD スキャン サービスに送信、 **CreateScanJobResponse**操作の要�
 
 クライアントは、実際の画像データを送信してスキャン サービスから 1 つまたは複数を取得する必要があります[ **RetrieveImageRequest** ](retrieveimagerequest.md)操作要素。 クライアントに送信する 60 秒、 **RetrieveImageRequest**操作の要素をクライアントのスキャン サービスが応答したら[ **CreateScanJobRequest**](createscanjobrequest.md)します。 スキャン サービスが受信しなかった場合、 **RetrieveImageRequest** 、この時間内にジョブを中止にする必要があります、 [ **JobStateReason** ](jobstatereason.md)の**JobTimedOut**. 場合は、ジョブは、複数のドキュメントで構成され、このタイムアウトが間に適用されます。 連続する各**RetrieveImageRequest/応答**操作。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、WSD スキャン サービス応答を CreateScanJobRequest を示しています。

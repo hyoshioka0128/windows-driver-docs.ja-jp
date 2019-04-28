@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチの拡張機能を列挙します。
-description: HYPER-V 拡張可能スイッチの拡張機能を列挙します。
+title: Hyper-V 拡張可能スイッチ拡張機能の列挙
+description: Hyper-V 拡張可能スイッチ拡張機能の列挙
 ms.assetid: AC468A8F-5C48-419B-9E9E-D63925E1CE9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06c2019cdc8ce75135a6fa279d48573bc0132432
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372472"
 ---
-# <a name="enumerating-hyper-v-extensible-switch-extensions"></a>HYPER-V 拡張可能スイッチの拡張機能を列挙します。
+# <a name="enumerating-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能の列挙
 
 
 [Get-vmswitchextension](https://technet.microsoft.com/library/hh848603.aspx) PowerShell コマンドレットは、拡張可能スイッチのインスタンスにバインドされている HYPER-V 拡張可能スイッチ拡張機能を列挙します。 このコマンドレットは、拡張可能スイッチのインスタンスで、拡張機能が有効になっているかどうかも報告されます。

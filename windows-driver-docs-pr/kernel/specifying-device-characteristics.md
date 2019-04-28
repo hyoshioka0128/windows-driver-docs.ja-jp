@@ -1,6 +1,6 @@
 ---
-title: デバイスの特性を指定します。
-description: デバイスの特性を指定します。
+title: デバイスの特性の指定
+description: デバイスの特性の指定
 ms.assetid: 8b73ed62-d611-4515-b9d0-8e0a37555a1a
 keywords:
 - デバイス オブジェクトの WDK カーネル、デバイスの特性
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1adc7d7d5416fd08aaacf3d1ab24c358335063f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367930"
 ---
-# <a name="specifying-device-characteristics"></a>デバイスの特性を指定します。
+# <a name="specifying-device-characteristics"></a>デバイスの特性の指定
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "56538715"
 
 各デバイス オブジェクトには、1 つまたは複数のデバイスの特性を設定できます。 デバイスの特性が flags でフラグとして格納されている、**特性**デバイス オブジェクトのメンバー [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。
 
-ほとんどのドライバー ファイルのみを指定する\_デバイス\_SECURE\_特性を開きます。 これにより、デバイスの名前空間に同じセキュリティ設定が開いているすべての要求に適用されることができます。 詳細については、[デバイス Namespace のアクセスを制御する](controlling-device-namespace-access.md)を参照してください。
+ほとんどのドライバー ファイルのみを指定する\_デバイス\_SECURE\_特性を開きます。 これにより、デバイスの名前空間に同じセキュリティ設定が開いているすべての要求に適用されることができます。 詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](controlling-device-namespace-access.md)します。
 
 ファイル\_自動生成された\_デバイス\_名は Pdo のみ使用します。 ファイル\_フロッピー\_フロッピー ディスク、ファイル\_リムーバブル\_メディア、およびファイル\_書き込み\_1 回\_メディアの特性は記憶域デバイスに固有です。 可能なデバイスの特性フラグの説明は、の説明を参照して、**特性**のメンバー [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)します。
 

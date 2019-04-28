@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9f1a58238ff1f83e45559f62a00c3ee6d9a4770
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378084"
 ---
 # <a name="framework-objects"></a>フレームワーク オブジェクト
 
@@ -46,23 +46,23 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558893" data-raw-source="[IWDFDriver](https://msdn.microsoft.com/library/windows/hardware/ff558893)">IWDFDriver</a></p></td>
 <td align="left"><p>ドライバーを表します</p></td>
 <td align="left"><p>なし</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="framework-device-object.md" data-raw-source="[Device object](framework-device-object.md)">デバイス オブジェクト</a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556917" data-raw-source="[IWDFDevice](https://msdn.microsoft.com/library/windows/hardware/ff556917)">IWDFDevice</a></p></td>
 <td align="left"><p>デバイスを表します</p></td>
 <td align="left"><p>ドライバー オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="framework-file-object.md" data-raw-source="[File object](framework-file-object.md)">ファイル オブジェクト</a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558912" data-raw-source="[IWDFFile](https://msdn.microsoft.com/library/windows/hardware/ff558912)">IWDFFile</a></p></td>
 <td align="left"><p>ファイルを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p></p>
 フレームワークの機能によって作成された場合は、なしドライバーによって作成された場合ははい。</td>
 </tr>
@@ -71,16 +71,16 @@ ms.locfileid: "56570646"
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/hh451283" data-raw-source="[IWDFInterrupt](https://msdn.microsoft.com/library/windows/hardware/hh451283)">IWDFInterrupt</a></td>
 <td align="left"><p>割り込みを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="framework-i-o-queue-object.md" data-raw-source="[Queue object](framework-i-o-queue-object.md)">キュー オブジェクト</a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558943" data-raw-source="[IWDFIoQueue](https://msdn.microsoft.com/library/windows/hardware/ff558943)">IWDFIoQueue</a></p></td>
 <td align="left"><p>I/O 要求を受信する I/O キューを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="framework-i-o-request-object.md" data-raw-source="[Request object](framework-i-o-request-object.md)">オブジェクトを要求します。</a></p></td>
@@ -97,7 +97,7 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559170" data-raw-source="[IWDFIoTarget](https://msdn.microsoft.com/library/windows/hardware/ff559170)">IWDFIoTarget</a></p></td>
 <td align="left"><p>別のドライバーが要求を送信するドライバーを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p></p>
 いいえ、既定のターゲット。はい、その他のすべてのターゲット</td>
 </tr>
@@ -106,7 +106,7 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560362" data-raw-source="[IWDFUsbTargetDevice](https://msdn.microsoft.com/library/windows/hardware/ff560362)">IWDFUsbTargetDevice</a></p></td>
 <td align="left"><p>USB に接続されているデバイスを表します。</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p>[はい] (ターゲット オブジェクトを参照してください)</p></td>
 </tr>
 <tr class="odd">
@@ -114,7 +114,7 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560391" data-raw-source="[IWDFUsbTargetPipe](https://msdn.microsoft.com/library/windows/hardware/ff560391)">IWDFUsbTargetPipe</a></p></td>
 <td align="left"><p>USB デバイスのパイプを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p>[はい] (ターゲット オブジェクトを参照してください)</p></td>
 </tr>
 <tr class="even">
@@ -122,7 +122,7 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560312" data-raw-source="[IWDFUsbInterface](https://msdn.microsoft.com/library/windows/hardware/ff560312)">IWDFUsbInterface</a></p></td>
 <td align="left"><p>USB デバイスのインターフェイスを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p>[はい] (ターゲット オブジェクトを参照してください)</p></td>
 </tr>
 <tr class="odd">
@@ -130,7 +130,7 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560200" data-raw-source="[IWDFObject](https://msdn.microsoft.com/library/windows/hardware/ff560200)">IWDFObject</a></p></td>
 <td align="left"><p>一般的な基本オブジェクトを表します</p></td>
 <td align="left"><p>ドライバー オブジェクト</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>ドライバーによって作成された場合ははい。</p></td>
 </tr>
 <tr class="even">
@@ -138,7 +138,7 @@ ms.locfileid: "56570646"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559249" data-raw-source="[IWDFMemory](https://msdn.microsoft.com/library/windows/hardware/ff559249)">IWDFMemory</a></p></td>
 <td align="left"><p>メモリ オブジェクトを表します</p></td>
 <td align="left"><p>ドライバー オブジェクト</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p></p>
 フレームワークの機能によって作成された場合は、なしドライバーによって作成された場合ははい。</td>
 </tr>

@@ -1,17 +1,17 @@
 ---
-title: 仕入先ログ ページ サイズ (関数インデックス 14) を取得します。
+title: ベンダーのログ ページ サイズの取得 (関数インデックス 14)
 description: この関数は、ホストは、仕入先のログのページの読み取りに割り当てが必要なバッファーのサイズを認識するように、仕入先のサイズのログ ページを返します。
 ms.assetid: 24211D67-1D36-4711-B87B-C99546E206FC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 772c34ded9f25f64eea11d6a06e0f626b02ff557
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383144"
 ---
-# <a name="get-vendor-log-page-size-function-index-14"></a>仕入先ログ ページ サイズ (関数インデックス 14) を取得します。
+# <a name="get-vendor-log-page-size-function-index-14"></a>ベンダーのログ ページ サイズの取得 (関数インデックス 14)
 
 
 この関数は、ホストは、仕入先のログのページの読み取りに割り当てが必要なバッファーのサイズを認識するように、仕入先のサイズのログ ページを返します。
@@ -47,7 +47,7 @@ ms.locfileid: "56551170"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>

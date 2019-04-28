@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f22e34f84a446b3e922a3568e18de85cfcba25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379838"
 ---
 # <a name="fltparameters-for-irpmjquerysecurity-union"></a>FLT\_IRP のパラメーター\_MJ\_クエリ\_セキュリティ共用体
 
@@ -100,7 +100,7 @@ typedef union _FLT_PARAMETERS {
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の構造体[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)操作にコールバック データによって表される IRP ベースのセキュリティ情報の照会操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620))構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
 
-Windows xp 以降、オブジェクトを**TargetFileObject** 、FLT のメンバー\_IO\_パラメーター\_ブロック構造のポイントには、名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、[**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)を参照してください。
+Windows xp 以降、オブジェクトを**TargetFileObject** 、FLT のメンバー\_IO\_パラメーター\_ブロック構造のポイントには、名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、次を参照してください。 [**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)します。
 
 IRP\_MJ\_クエリ\_セキュリティは IRP ベースの操作。
 

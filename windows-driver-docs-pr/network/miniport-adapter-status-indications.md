@@ -1,6 +1,6 @@
 ---
-title: ミニポート アダプタの状態インジケーター
-description: ミニポート アダプタの状態インジケーター
+title: ミニポート アダプター状態表示
+description: ミニポート アダプター状態表示
 ms.assetid: feb5259f-ce9b-40eb-85d2-0064bce692fc
 keywords:
 - 状態インジケーターの WDK ネットワー キング、ミニポート アダプター
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ddead5af15fc7a1527fc3cd1cb65acd58105d1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379807"
 ---
-# <a name="miniport-adapter-status-indications"></a>ミニポート アダプタの状態インジケーター
+# <a name="miniport-adapter-status-indications"></a>ミニポート アダプター状態表示
 
 
 

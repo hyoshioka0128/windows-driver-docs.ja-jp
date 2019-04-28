@@ -1,24 +1,24 @@
 ---
-title: ミットで UART テスト
+title: MITT の UART テスト
 description: ミット ソフトウェア パッケージには、UART コント ローラーとそのドライバーへのデータ転送を検証するためのテストが含まれています。 ミット board's UART インターフェイスは、UART ループバック デバイスとして機能します。
 ms.assetid: 239F131C-5416-4E86-B0EE-E3156CDA11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee233cd76caccb9d34192b8ed56404ba6767f4b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382776"
 ---
-# <a name="uart-tests-in-mitt"></a>ミットで UART テスト
+# <a name="uart-tests-in-mitt"></a>MITT の UART テスト
 
 
 **最終更新日**
 
 -   2015 年 1 月
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows 8.1
 

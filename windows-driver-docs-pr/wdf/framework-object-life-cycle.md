@@ -1,6 +1,6 @@
 ---
-title: Framework オブジェクトのライフ サイクル
-description: Framework オブジェクトのライフ サイクル
+title: フレームワーク オブジェクトのライフ サイクル
+description: フレームワーク オブジェクトのライフ サイクル
 ms.assetid: 33efc3a8-ac46-4626-ba0f-beb1eaa9ee47
 keywords:
 - framework オブジェクト WDK KMDF、ライフ サイクル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31db062268fc2f45dffd6fb0c1889bbbd4308df3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370888"
 ---
-# <a name="framework-object-life-cycle"></a>Framework オブジェクトのライフ サイクル
+# <a name="framework-object-life-cycle"></a>フレームワーク オブジェクトのライフ サイクル
 
 
 
@@ -57,7 +57,7 @@ Framework オブジェクトの親の子オブジェクトである親が削除�
 
 これらのコールバック関数のいずれかのオブジェクトが作成されたときに、ドライバーが割り当てられているオブジェクトに固有のリソースの割り当てを解除する必要があります。
 
-フレームワークは、常に、フレームワークの一部のオブジェクトの削除を処理して、ドライバーがこれらのオブジェクトを削除しないでください。 ドライバーを削除できません framework オブジェクトの一覧は、[ **WdfObjectDelete**](https://msdn.microsoft.com/library/windows/hardware/ff548734)を参照してください。
+フレームワークは、常に、フレームワークの一部のオブジェクトの削除を処理して、ドライバーがこれらのオブジェクトを削除しないでください。 ドライバーを削除できません framework オブジェクトの一覧は、次を参照してください。 [ **WdfObjectDelete**](https://msdn.microsoft.com/library/windows/hardware/ff548734)します。
 
  
 

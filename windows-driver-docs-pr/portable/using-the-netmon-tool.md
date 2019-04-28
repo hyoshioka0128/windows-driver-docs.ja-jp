@@ -1,16 +1,16 @@
 ---
-Description: The Network Monitor tool (NetMon.exe) is a Windows-based application that you can use to view traces from WPD components.
-title: ネットワーク監視ツールを使用します。
+Description: ネットワーク モニター ツール (NetMon.exe) は、WPD コンポーネントからトレースを表示するために使用できる Windows ベースのアプリケーションです。
+title: Network Monitor Tool の使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0de82fbc512572af5f18e1524fe032adbed34a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370468"
 ---
-# <a name="using-the-network-monitor-tool"></a>ネットワーク監視ツールを使用します。
+# <a name="using-the-network-monitor-tool"></a>Network Monitor Tool の使用
 
 
 ネットワーク モニター ツール (*NetMon.exe*) WPD コンポーネントからトレースを表示するために使用できる Windows ベースのアプリケーションです。 代わりに、ツール*WpdMon.exe*の収集し、Windows 8 で WPD トレースを表示する新しい手段を提供します。

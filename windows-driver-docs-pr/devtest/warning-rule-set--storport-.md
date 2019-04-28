@@ -1,17 +1,17 @@
 ---
-title: 警告ルール (Storport) を設定します。
+title: 警告の規則セット (Storport)
 description: これらの規則を使用すると、さまざまなコンテキストでは、ドライバーが Irp を正しく処理を次のように Microsoft が推奨されるベスト プラクティスを確認します。
 ms.assetid: 6557A741-C49F-456B-B285-DE6D171DDCEE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 90c6e93119e5230ac4cabbb3a1e8255c8e990ed1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380468"
 ---
-# <a name="warning-rule-set-storport"></a>警告ルール (Storport) を設定します。
+# <a name="warning-rule-set-storport"></a>警告の規則セット (Storport)
 
 
 これらの規則を使用すると、さまざまなコンテキストでは、ドライバーが Irp を正しく処理を次のように Microsoft が推奨されるベスト プラクティスを確認します。
@@ -56,7 +56,7 @@ ms.locfileid: "56527642"
     msbuild /t:sdv /p:Inputs="/check:Warning.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b83cfdad72ec12d5f6beec0819dac1ed40f0605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380782"
 ---
 # <a name="types"></a>型
 
@@ -58,7 +58,7 @@ ms.locfileid: "56537730"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、出力のコールバックは、[入力と出力](using-input-and-output.md)を参照してください。
+詳細については、出力のコールバックは、次を参照してください。[入力と出力](using-input-and-output.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 21ddf804-fff5-4cdc-adb5-f85d769ccc1f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e005b5647dafda46e3a782571f1f6c912a514f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373337"
 ---
 # <a name="camera-driver-ui-extension-sample"></a>カメラ ドライバー UI 拡張機能のサンプル
 

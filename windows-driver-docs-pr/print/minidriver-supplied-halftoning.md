@@ -1,6 +1,6 @@
 ---
-title: ミニドライバーが指定したハーフトーン
-description: ミニドライバーが指定したハーフトーン
+title: ミニドライバーで指定されるハーフトーン
+description: ミニドライバーで指定されるハーフトーン
 ms.assetid: 15af499a-c541-4d61-ace3-5a211574674c
 keywords:
 - ミニドライバーが指定したハーフトーン WDK Unidrv
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4439ad68f41c64474c25cc4a683a1f49da921b94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380164"
 ---
-# <a name="minidriver-supplied-halftoning"></a>ミニドライバーが指定したハーフトーン
+# <a name="minidriver-supplied-halftoning"></a>ミニドライバーで指定されるハーフトーン
 
 
 
@@ -79,7 +79,7 @@ ms.locfileid: "56536833"
 
 説明したように例では、ColorFormat1 と ColorFormat2 返さの両方のオプションが Unidrv を処理できる、色の形式を表す[色形式の処理](handling-color-formats.md)します。 ColorFormat2、用、 \* **IPCallbackID**属性が指定されています。 Unidrv にプリンターの呼び出し、プリンターのユーザーは、色の書式として ColorFormat2 を選択した場合[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)ハーフトーン処理するために COM メソッド。 メソッドのパラメーターの 1 つは、現在選択されているハーフトーン メソッドを表す文字列名へのポインターです。
 
-ハーフトーンの詳細については、[カスタマイズ ハーフトーン](customized-halftoning.md)を参照してください。
+ハーフトーンの詳細については、次を参照してください。[カスタマイズ ハーフトーン](customized-halftoning.md)します。
 
  
 

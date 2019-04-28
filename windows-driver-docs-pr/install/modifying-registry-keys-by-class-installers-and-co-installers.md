@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ab7836c01266cc19a03b133642ba39dbd44545f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378401"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーでのレジストリ キーの変更
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578319"
 
  
 
-特定の状況では、except*クラス インストーラー*と*co-installer*作成、変更、またはレジストリ キーを削除する、標準レジストリ関数を使用しないでください。 ほとんどの場合、レジストリ キー変更がのみに格納されるディレクティブを使用して[INF ファイル](inf-files.md)します。 これらのディレクティブの詳細については、[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
+特定の状況では、except*クラス インストーラー*と*co-installer*作成、変更、またはレジストリ キーを削除する、標準レジストリ関数を使用しないでください。 ほとんどの場合、レジストリ キー変更がのみに格納されるディレクティブを使用して[INF ファイル](inf-files.md)します。 これらのディレクティブの詳細については、次を参照してください。 [INF ディレクティブの概要](summary-of-inf-directives.md)します。
 
 次に、この規則の例外を示します。
 
@@ -40,9 +40,9 @@ ms.locfileid: "56578319"
 
 -   クラスのインストーラーと共同インストーラーを使用する必要がありますまず[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)または[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)へのハンドルを開く変更するレジストリ キーです。 ハンドルが開かれた後は、レジストリ キーを変更するのにクラスのインストーラーと共同インストーラーが標準レジストリ関数を使用できます。
 
--   クラスのインストーラーと共同インストーラーを使用する必要がありますいない**SetupDiDeleteDevRegKey**または*ハードウェア キー*デバイス。 詳細については、[デバイスのレジストリ キーを削除する](deleting-the-registry-keys-of-a-device.md)を参照してください。
+-   クラスのインストーラーと共同インストーラーを使用する必要がありますいない**SetupDiDeleteDevRegKey**または*ハードウェア キー*デバイス。 詳細については、次を参照してください。[デバイスのレジストリ キーを削除する](deleting-the-registry-keys-of-a-device.md)します。
 
-詳細については、標準レジストリ関数は、[レジストリ関数](https://go.microsoft.com/fwlink/p/?linkid=194529)を参照してください。
+詳細については、標準レジストリ関数は、次を参照してください。[レジストリ関数](https://go.microsoft.com/fwlink/p/?linkid=194529)します。
 
  
 

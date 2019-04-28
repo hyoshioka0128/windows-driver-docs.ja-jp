@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e1a5b4f3e2c222b1822cd59452122ef1762f68
-ms.sourcegitcommit: a43a696c5b4d2f08ee77d507631b41ecfdea6742
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382014"
 ---
 # <a name="s-search-memory"></a>s (メモリの検索)
 
@@ -75,7 +75,7 @@ s -[[Flags]]su Range
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>B</strong></p></td>
+<td align="left"><p><strong>b</strong></p></td>
 <td align="left"><p>バイト (8 ビット)</p></td>
 </tr>
 <tr class="even">
@@ -114,7 +114,7 @@ Unicode 文字列 (null で終わる文字列必須ではありません)</td>
 印刷可能な Unicode 文字列を含む任意のメモリを検索します。 使用して、 **l** *長さ*このような文字列の最小長を指定するフラグ。 既定の最小長には、3 文字です。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-検索するメモリ領域を指定します。 この範囲は、使用する場合を除き、256 MB 以上にすることはできません、 **L?** 構文。 この構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+検索するメモリ領域を指定します。 この範囲は、使用する場合を除き、256 MB 以上にすることはできません、 **L?** 構文。 この構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______Pattern______"></span><span id="_______pattern______"></span><span id="_______PATTERN______"></span> *パターン*   
 検索する 1 つまたは複数の値を指定します。 既定では、これらの値は、バイト値です。 メモリ内のさまざまな種類を指定する*型*します。 選択すると、その他のオプションによって、WORD、DWORD、または QWORD 値を指定する場合は、検索パターンを単一引用符で囲む必要があります (たとえば、 **'H'**)。 
@@ -168,7 +168,7 @@ Unicode 文字列 (null で終わる文字列必須ではありません)</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-メモリの操作とその他のメモリに関連するコマンドの説明の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+メモリの操作とその他のメモリに関連するコマンドの説明の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>コメント
 -------
@@ -178,7 +178,7 @@ Unicode 文字列 (null で終わる文字列必須ではありません)</td>
 指定する必要があります、*パターン*(バイト単位) を一連のパラメーターをさまざまなを指定しない限り*型*値。 数値としてバイト値や ASCII 文字を入力できます。
 
 -   数値の値は、現在の基数 (16、10、または 8) では数値として解釈されます。 既定の基数を変更するには、使用、 [ **n (設定数の基本)** ](n--set-number-base-.md)コマンド。 既定の基数を指定して上書きできます、 **0 x**プレフィックス (16 進数)、 **0n**プレフィックス (10 進数)、 **0t**プレフィックス (8 進数)、または**0y**プレフィックス (バイナリ)。
-    **注**  既定の基数は C++ の式を使用すると動作が異なります。 これらの式と基数の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
+    **注**  既定の基数は C++ の式を使用すると動作が異なります。 これらの式と基数の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
      
 

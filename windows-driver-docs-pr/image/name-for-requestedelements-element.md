@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4b37e6430ebba91062f593a6fc048a6d4f42264
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379673"
 ---
 # <a name="name-for-requestedelements-element"></a>RequestedElements 要素の名前
 
@@ -137,7 +137,7 @@ ms.locfileid: "56581595"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Qname は、クライアントの情報を必要がある WSD スキャン サービス スキーマ内で最上位の要素を識別する必要があります。 クライアントは、スキーマ名前空間と要素名の両方を指定する必要があります。

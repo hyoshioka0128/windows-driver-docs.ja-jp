@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 136a7b1a892e817cff0c6acd1a5a13fd01624c87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380712"
 ---
 # <a name="oidcotapiaddresscaps"></a>OID_CO_TAPI_ADDRESS_CAPS
 
@@ -42,7 +42,7 @@ typedef struct _CO_TAPI_ADDRESS_CAPS {
 **LineAddressCaps**  
 LINE_ADDRESS_CAPS 構造として書式設定された、アドレスのテレフォニー機能を指定します。 この構造体の詳細については、Microsoft Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 コール マネージャーのまたは MCM ドライバーのデバイスの行の機能を照会した[OID_CO_TAPI_LINE_CAPS](oid-co-tapi-line-caps.md)、接続指向のクライアントは、各行のアドレスの機能を次のようにクエリします。
 
@@ -52,7 +52,7 @@ LINE_ADDRESS_CAPS 構造として書式設定された、アドレスのテレ�
 
 指定されたアドレスのアドレスの機能を返します、コール マネージャーまたは MCM ドライバー **LineAddressCaps**します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

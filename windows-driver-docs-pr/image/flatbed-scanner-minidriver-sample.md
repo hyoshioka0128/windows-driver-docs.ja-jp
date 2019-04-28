@@ -1,17 +1,17 @@
 ---
-title: フラット ベッド スキャナーのミニドライバーのサンプル
-description: フラット ベッド スキャナーのミニドライバーのサンプル
+title: フラットベッド スキャナーのミニドライバーのサンプル
+description: フラットベッド スキャナーのミニドライバーのサンプル
 ms.assetid: 8c1ad90a-cff9-45a0-b2d9-e2605436f128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f87a4e80ceb6be62e781990a80d06286b57a028
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378402"
 ---
-# <a name="flatbed-scanner-minidriver-sample"></a>フラット ベッド スキャナーのミニドライバーのサンプル
+# <a name="flatbed-scanner-minidriver-sample"></a>フラットベッド スキャナーのミニドライバーのサンプル
 
 
 

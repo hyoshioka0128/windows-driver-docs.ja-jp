@@ -1,16 +1,16 @@
 ---
-Description: This topic provides information for client driver developers about the tracing and logging features for Universal Serial Bus (USB).
-title: Windows のイベント トレースは USB
+Description: このトピックでは、ユニバーサル シリアル バス (USB) 用に、トレースとログ記録機能についてドライバー開発者をクライアントの情報に示します。
+title: Windows USB イベント トレーシング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fcdf5d475339f928e83557fc36d42793e4ceb878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376102"
 ---
-# <a name="usb-event-tracing-for-windows"></a>Windows のイベント トレースは USB
+# <a name="usb-event-tracing-for-windows"></a>Windows USB イベント トレーシング
 
 
 このトピックでは、ユニバーサル シリアル バス (USB) 用に、トレースとログ記録機能についてドライバー開発者をクライアントの情報に示します。 この情報は、ユーザーの開発し、デバッグの USB デバイスに提供されます。 ツールをインストールし、トレース ファイルを作成し、USB のトレース ファイル内のイベントを分析する方法に関する情報が含まれます。 トピックでは、USB のエコシステムと USB のトレースとログ機能を使用して、正常に必要なハードウェアの包括的な知識があることを前提としています。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_SERVICE_ACTIVATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 15574dd8a63a321b7c0e07e3dfbeba068eab3a1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368452"
 ---
 # <a name="oidwwanserviceactivation"></a>OID\_WWAN\_サービス\_アクティブ化
 
@@ -24,7 +24,7 @@ OID\_WWAN\_サービス\_ライセンス認証プロバイダーのネットワ�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、[MB サービスの検出とアクティブ化](https://msdn.microsoft.com/library/windows/hardware/ff559122)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [MB サービスの検出とアクティブ化](https://msdn.microsoft.com/library/windows/hardware/ff559122)します。
 
 処理するときに、プロバイダーのネットワークは、クエリまたは要求を設定またはミニポート ドライバーが Subscriber Identity Module (SIM カード) にアクセスできます。
 

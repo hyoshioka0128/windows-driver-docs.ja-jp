@@ -1,18 +1,18 @@
 ---
-title: WPA3 SAE 認証
+title: WPA3-SAE 認証
 description: このトピックで説明をバージョン 1.1.8 WDI WPA3 SAE 認証およびそれ以降。
 ms.assetid: BE6EF8E4-F4EB-4D39-AC33-B67F8935DCBC
 ms.date: 02/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 90ead0fe0ef244a3ee0f5a5e3439ba0f6ae530e0
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379789"
 ---
-# <a name="wpa3-sae-authentication"></a>WPA3 SAE 認証
+# <a name="wpa3-sae-authentication"></a>WPA3-SAE 認証
 
 WPA3 SAE とも呼ばれますの WPA3 個人は、WDI バージョン 1.1.8 と Windows でサポートされている以降です。 フレームのコンテンツの生成と SAE (セキュリティで保護された認証の値) の認証用の解析で、Windows 内で行われますが、OS WPA3 SAE 認証フレームを送受信するためのドライバーのサポートが必要です。
 

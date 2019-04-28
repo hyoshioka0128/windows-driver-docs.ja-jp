@@ -1,17 +1,17 @@
 ---
-title: サブスクライバーとデバイスの情報の API
-description: サブスクライバーとデバイスの情報の API
+title: サブスクライバーとデバイス情報 API
+description: サブスクライバーとデバイス情報 API
 ms.assetid: 45d6c053-b64b-4768-8e79-a090dcdf346e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bd1ac10579fd1f36f4b3c5075816cafbe5a565f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378323"
 ---
-# <a name="subscriber-and-device-information-api"></a>サブスクライバーとデバイスの情報の API
+# <a name="subscriber-and-device-information-api"></a>サブスクライバーとデバイス情報 API
 
 
 サブスクライバーとデバイス情報の API は、モバイル ブロード バンド アプリには、次のサブスクライバーとデバイスの次の情報を提供します。
@@ -32,7 +32,7 @@ ms.locfileid: "56537286"
 
 -   **ファームウェアとハードウェア バージョン**ファームウェアとハードウェアのバージョン。
 
-サブスクライバーとデバイス情報 API の詳細については、[ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)を参照してください。
+サブスクライバーとデバイス情報 API の詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

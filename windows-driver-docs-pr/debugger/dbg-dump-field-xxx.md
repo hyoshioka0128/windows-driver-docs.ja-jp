@@ -15,11 +15,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 801f794c62a429485a550f72dd53ec9c9f86caa1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376116"
 ---
 # <a name="dbgdumpfieldxxx"></a>DBG\_ダンプ\_フィールド\_XXX
 
@@ -91,7 +91,7 @@ DBG\_ダンプ\_フィールド\_*XXX*ビット フラグを使って、**方法
 
 また、DBG マクロの結果\_ダンプ\_RECUR\_レベル (*レベル*) 構造体を再帰の深さを指定するビット セットに追加できます。 *レベル*0 ~ 15 の数値を指定できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

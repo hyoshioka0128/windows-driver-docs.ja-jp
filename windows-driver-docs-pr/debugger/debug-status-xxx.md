@@ -15,11 +15,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d519107896a617b3d66091ff2f16a4e447b5434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374836"
 ---
 # <a name="debugstatusxxx"></a>デバッグ\_状態\_XXX
 
@@ -52,25 +52,25 @@ ms.locfileid: "56573868"
 <tr class="odd">
 <td align="left"><p>DEBUG_STATUS_NO_DEBUGGEE</p></td>
 <td align="left"><p>デバッグ セッションがアクティブではありません。</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_STATUS_OUT_OF_SYNC</p></td>
 <td align="left"><p>デバッガーの通信チャネルは同期されていません。</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_STATUS_WAIT_INPUT</p></td>
 <td align="left"><p>ターゲットは、ユーザーからの入力を待機しています。</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_STATUS_TIMEOUT</p></td>
 <td align="left"><p>デバッガーの通信チャネルがタイムアウトしました。</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -99,13 +99,13 @@ ms.locfileid: "56573868"
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_STATUS_GO_NOT_HANDLED</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"><p>未処理の例外として、イベントにフラグを設定、ターゲットの実行を続行します。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_STATUS_GO_HANDLED</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"><p>イベントを処理済みとしてフラグ設定、ターゲットの実行を続行します。</p></td>
 <td align="left"></td>
 </tr>
@@ -117,7 +117,7 @@ ms.locfileid: "56573868"
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_STATUS_IGNORE_EVENT</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"><p>イベントを無視して、ターゲットの前回の実行を続行します。</p></td>
 <td align="left"></td>
 </tr>
@@ -129,7 +129,7 @@ ms.locfileid: "56573868"
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_STATUS_NO_CHANGE</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>なし</p></td>
 <td align="left"><p>いない命令です。 ターゲットの実行を続行する方法をエンジンに指示する望んでいない場合、イベントのコールバック メソッドでこの値が返されます。</p></td>
 <td align="left"><p>最低の優先順位</p></td>
 </tr>
@@ -142,7 +142,7 @@ ms.locfileid: "56573868"
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

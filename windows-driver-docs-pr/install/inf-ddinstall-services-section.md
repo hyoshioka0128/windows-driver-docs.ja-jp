@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efb03b5b2f1243d6230941206526f119761f4861
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370585"
 ---
 # <a name="inf-ddinstallservices-section"></a>INF DDInstall.Services セクション
 
@@ -47,10 +47,10 @@ AddService=ServiceName,[flags],service-install-section
 <a href="" id="addservice-servicename--flags--service-install-section"></a>
 <a href="" id="------------------------------------------------event-log-install-section---eventlogtype---eventname-------"></a>
 **AddService =**<em>ServiceName</em>、\[*フラグ*\]**、**<em>サービス-インストール セクション</em>\[、*イベント ログ-インストール セクション*\[**、**\[*EventLogType* \] \[ **、**<em>EventName</em>\]\]\].\]  
-このディレクティブは、INF ライターの定義を参照*サービス-インストール セクション*と、おそらく、*イベント ログ-インストール セクション*別の場所、INF、デバイスのドライバーのファイルで覆われてこの*DDInstall*セクション。 詳細については、[ **INF AddService ディレクティブ**](inf-addservice-directive.md)を参照してください。
+このディレクティブは、INF ライターの定義を参照*サービス-インストール セクション*と、おそらく、*イベント ログ-インストール セクション*別の場所、INF、デバイスのドライバーのファイルで覆われてこの*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
 
 <a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**DelService =**<em>ServiceName</em>\[**、**\[*フラグ*\]\[**、**\[ *EventLogType*\]\[**、**<em>EventName</em> \] \] \]...  
-このディレクティブは、対象のコンピューターから、以前にインストールされたサービスを削除します。 このディレクティブが使用される非常にまれです。 詳細については、[ **INF DelService ディレクティブ**](inf-delservice-directive.md)を参照してください。
+このディレクティブは、対象のコンピューターから、以前にインストールされたサービスを削除します。 このディレクティブが使用される非常にまれです。 詳細については、次を参照してください。 [ **INF DelService ディレクティブ**](inf-delservice-directive.md)します。
 
 <a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
 この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。

@@ -1,24 +1,24 @@
 ---
-title: コアが更新されたドライバーをパッケージに対応したドライバーを構築します。
-description: コアが更新されたドライバーをパッケージに対応したドライバーを構築します。
+title: 更新されたコア ドライバーでパッケージ対応ドライバーを構築する
+description: 更新されたコア ドライバーでパッケージ対応ドライバーを構築する
 ms.assetid: 801ac83c-a04a-4a3f-81a9-24010a390ee5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e998d1c7793f524b846f5b3318765023fedcdb45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383160"
 ---
-# <a name="constructing-a-package-aware-driver-with-updated-core-drivers"></a>コアが更新されたドライバーをパッケージに対応したドライバーを構築します。
+# <a name="constructing-a-package-aware-driver-with-updated-core-drivers"></a>更新されたコア ドライバーでパッケージ対応ドライバーを構築する
 
 
-パッケージに対応したドライバーにより、すべてのパッケージにドライバー コンポーネントは構成されている使用するため、ポイント アンド プリントの操作中にします。 ポイント アンド プリントには、ディスクまたはその他のインストール メディアを指定せず、リモート プリンターへの接続を作成する Windows ユーザーができるようにします。 代わりに、プリント サーバーは、クライアントに、印刷ドライバー パッケージを自動的にダウンロードします。 詳細については、[ポイント アンド プリント ドライバー パッケージを使用した](point-and-print-with-driver-packages.md)を参照してください。
+パッケージに対応したドライバーにより、すべてのパッケージにドライバー コンポーネントは構成されている使用するため、ポイント アンド プリントの操作中にします。 ポイント アンド プリントには、ディスクまたはその他のインストール メディアを指定せず、リモート プリンターへの接続を作成する Windows ユーザーができるようにします。 代わりに、プリント サーバーは、クライアントに、印刷ドライバー パッケージを自動的にダウンロードします。 詳細については、次を参照してください。[ポイント アンド プリント ドライバー パッケージを使用した](point-and-print-with-driver-packages.md)します。
 
 ### <a name="including-updated-core-drivers"></a>更新されたコアのドライバーを含む
 
-Windows Vista の最初のリリースには、1 つしかコア ドライバー パッケージが含まれています。 そのパッケージには、Ntprint.inf XPSDrv、UniDrv、および PostScript コア ドライバー コンポーネントが含まれています。 Core のドライバー パッケージは定期的に更新され、サービス パック、および quick fix engineering (QFE) パッケージによって Windows 継続的なエンジニア リング (SE) の分散の Windows のメジャー リリースで利用できます。 通常、このパッケージは Windows MSU インストーラー (Wusa.exe) - PnP インストーラーではなくインストールする必要があります Microsoft のスタンドアロンの更新プログラム (MSU) パッケージとして配布されます。 PnP インストールで使用するための MSU からコアのドライバー パッケージを抽出するためのプロセスについては、[Core ドライバーの更新パッケージを取得する](getting-the-updated-core-driver-package.md)を参照してください。
+Windows Vista の最初のリリースには、1 つしかコア ドライバー パッケージが含まれています。 そのパッケージには、Ntprint.inf XPSDrv、UniDrv、および PostScript コア ドライバー コンポーネントが含まれています。 Core のドライバー パッケージは定期的に更新され、サービス パック、および quick fix engineering (QFE) パッケージによって Windows 継続的なエンジニア リング (SE) の分散の Windows のメジャー リリースで利用できます。 通常、このパッケージは Windows MSU インストーラー (Wusa.exe) - PnP インストーラーではなくインストールする必要があります Microsoft のスタンドアロンの更新プログラム (MSU) パッケージとして配布されます。 PnP インストールで使用するための MSU からコアのドライバー パッケージを抽出するためのプロセスについては、次を参照してください。 [Core ドライバーの更新パッケージを取得する](getting-the-updated-core-driver-package.md)します。
 
 Microsoft の中核となる更新されたドライバー パッケージの転記さらに、 [Connect](https://go.microsoft.com/fwlink/p/?linkid=133880)主要な Windows を解放し、サービス パック後の Web サイトをリリースして、そこから、再配布にもだれでも使用可能されます。 通常、これらのドライバーの可用性を 4 ~ 6 週間の主要な Windows 更新プログラムの通知が遅れます。 これらのドライバー パッケージを使用するための再配布契約中できなくなります、Microsoft Connect Web サイトからドライバー パッケージを取得するプロセス。 コアの印刷ドライバーの QFE パッケージがある場合は、Windows SE から直接 QFE パッケージを取得し、Microsoft Connect Web サイトに公開の遅延を回避できます。 追加の再配布の契約書に署名することを必要とする、Microsoft テクニカル アカウント マネージャー (TAM) を通じて、QFE パッケージを要求する必要があります。 Windows SE から QFE パッケージは、Microsoft Connect Web サイトに投稿されたものと同じになります。
 

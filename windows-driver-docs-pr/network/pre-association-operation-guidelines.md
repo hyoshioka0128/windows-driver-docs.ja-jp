@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 863d3eadbcd0a9f03037c7380952bf1ac7445e09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380074"
 ---
 # <a name="pre-association-operation-guidelines"></a>関連付け前の操作ガイドライン
 
@@ -32,9 +32,9 @@ ms.locfileid: "56573233"
 
 -   IHV 拡張 DLL の後に呼び出す[ **Dot11ExtPreAssociateCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff547538)関連付け前の操作を完了するには、接続のセッションのハンドルは無効になりました。 オペレーティング システムを使ってこのハンドルを渡す、 *hConnectSession*パラメーターの[ *Dot11ExtIhvPerformPreAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547499)します。 宣言をすべての IHV 拡張関数を呼び出すときに、DLL がこのハンドル値を使用する必要があります、 *hConnectSession*パラメーター。
 
-    IHV 拡張機能の詳細については、[802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)を参照してください。
+    IHV 拡張機能の詳細については、次を参照してください。 [802.11 IHV 拡張関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560609)します。
 
--   場合、 [ *Dot11ExtIhvAdapterReset* ](https://msdn.microsoft.com/library/windows/hardware/ff547434)関数が呼び出されると、IHV 拡張機能の DLL が呼び出すことによって、関連付け前の操作を取り消す必要があります[ **Dot11ExtPreAssociateCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff547538)します。 リセット操作の詳細については、[802.11 WLAN アダプターはリセット](802-11-wlan-adapter-reset.md)を参照してください。
+-   場合、 [ *Dot11ExtIhvAdapterReset* ](https://msdn.microsoft.com/library/windows/hardware/ff547434)関数が呼び出されると、IHV 拡張機能の DLL が呼び出すことによって、関連付け前の操作を取り消す必要があります[ **Dot11ExtPreAssociateCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff547538)します。 リセット操作の詳細については、次を参照してください。 [802.11 WLAN アダプターはリセット](802-11-wlan-adapter-reset.md)します。
 
 -   場合、 [ *Dot11ExtIhvDeinitAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff547452)関数が呼び出されると、IHV 拡張機能の DLL が内部的には、関連付け前の操作を取り消す必要があります。 ただし、これを呼び出してはならないアダプターの初期化後にのみ呼び出すことができる IHV 拡張関数のいずれかを含む[ **Dot11ExtPreAssociateCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff547538)します。
 

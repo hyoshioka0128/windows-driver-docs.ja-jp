@@ -1,17 +1,17 @@
 ---
-title: スマート カードのサポートされている属性
+title: サポートされているスマート カードの属性
 description: このトピックでは、サポートされているスマート カードの属性について説明します。
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8fbb292ea7c4e3e1bb5f60dc89d89b2e37e67dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373695"
 ---
-# <a name="supported-smart-card-attributes"></a>スマート カードのサポートされている属性
+# <a name="supported-smart-card-attributes"></a>サポートされているスマート カードの属性
 このトピックでは、現在サポートされているスマート カードの属性について説明します。 以下に示します。 サポートされている属性のみが表示されています。STATUS_NOT_SUPPORTED として、Winsmcrd.h で定義されている他のすべての属性が返されます。 属性は「 *ICCs およびパーソナル コンピューター システムの相互運用性の仕様*します。
 
 <table>

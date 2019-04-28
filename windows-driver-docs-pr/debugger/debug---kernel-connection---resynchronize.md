@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b34fdf2d201e757faded0aac433e73a9a087640
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374854"
 ---
-# <a name="debug--kernel-connection--resynchronize"></a>デバッグ |カーネルの接続 |再同期します。
+# <a name="debug--kernel-connection--resynchronize"></a>Debug | Kernel Connection | Resynchronize (デバッグ | カーネル接続 | 再同期)
 
 
 ## <span id="ddk_debug_kernel_connection_resynchronize_dbg"></span><span id="DDK_DEBUG_KERNEL_CONNECTION_RESYNCHRONIZE_DBG"></span>
@@ -28,7 +28,7 @@ ms.locfileid: "56549644"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ターゲットとの接続を再確立の詳細については、[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)を参照してください。
+ターゲットとの接続を再確立の詳細については、次を参照してください。[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)します。
 
  
 

@@ -5,16 +5,16 @@ ms.assetid: e0df70ca-cea3-44a1-b5ff-407f72a216f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abf5b6914755652ac95a0d10532eb12067c1d3f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369394"
 ---
-# <a name="step-1-the-new-device-is-identified"></a>手順 1:新しいデバイスを識別します。
+# <a name="step-1-the-new-device-is-identified"></a>手順 1:新しいデバイスが識別されます
 
 
-デバイスが接続されている割り当てに新しいデバイス、バス、またはハブ ドライバーのドライバーをインストールする前に、[ハードウェア識別子 (ID)](hardware-ids.md)デバイスにします。 Windows がハードウェア Id を使用して、デバイス間で最も近い一致を見つけ、[ドライバー パッケージ](driver-packages.md)デバイスのドライバーを格納しています。 ハードウェア Id の詳細については、[識別文字列](device-identification-strings.md)を参照してください。
+デバイスが接続されている割り当てに新しいデバイス、バス、またはハブ ドライバーのドライバーをインストールする前に、[ハードウェア識別子 (ID)](hardware-ids.md)デバイスにします。 Windows がハードウェア Id を使用して、デバイス間で最も近い一致を見つけ、[ドライバー パッケージ](driver-packages.md)デバイスのドライバーを格納しています。 ハードウェア Id の詳細については、次を参照してください。[識別文字列](device-identification-strings.md)します。
 
 通常、ハードウェア ID の形式は、次ので構成されます。
 
@@ -35,7 +35,7 @@ Windows ハードウェア Id および互換性 Id を使用して検索を[ド
     -   PID_5678 は、デバイスの製品、またはモデルの識別子です。
     -   REV_0001 は、デバイスのリビジョン識別子です。
 
-    USB ハードウェア Id の形式の詳細については、[USB デバイスの識別子](identifiers-for-usb-devices.md)を参照してください。
+    USB ハードウェア Id の形式の詳細については、次を参照してください。 [USB デバイスの識別子](identifiers-for-usb-devices.md)します。
 
 2.  USB ハブのドライバーに通知、[プラグ アンド プレイ (PnP) manager](pnp-manager.md)を新しいデバイスが検出されました。 PnP マネージャーでは、デバイスのハードウェア Id のすべてのハブのドライバーをクエリします。 ハブのドライバーでは、同じデバイスに複数のハードウェア Id を作成できます。
 

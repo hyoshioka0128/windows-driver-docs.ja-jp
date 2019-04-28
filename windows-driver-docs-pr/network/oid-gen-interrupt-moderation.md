@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_INTERRUPT_MODERATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e80cad2d81817bf4ad523d1900a26dd471f65fca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375690"
 ---
 # <a name="oidgeninterruptmoderation"></a>OID\_GEN\_INTERRUPT\_モデレート
 
@@ -27,14 +27,14 @@ ms.locfileid: "56581646"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 必須。 設定し、クエリを実行します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 クエリの場合、ミニポート ドライバーが割り込み節度をサポートしていない場合、ドライバーする必要があります指定**NdisInterruptModerationNotSupported**で、 **InterruptModeration**の NDIS メンバー\_割り込み\_モデレート\_パラメーター構造体。
 
 ドライバーによって報告された場合、セットに対して**NdisInterruptModerationNotSupported** OID への応答で\_GEN\_INTERRUPT\_モデレート クエリでは、ドライバーは、NDIS を返す必要があります\_ステータス\_無効な\_データ セットの要求に応答します。 ミニポート ドライバーが、受信、 [ **NDIS\_INTERRUPT\_モデレート\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565793)構造体。 場合、 **InterruptModeration**の NDIS メンバー\_INTERRUPT\_モデレート\_にパラメーターが設定されている**NdisInterruptModerationEnabled**、ミニポート ドライバー割り込み節度を有効にする必要があります。 それ以外の場合、割り込み節度を無効にしてする必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

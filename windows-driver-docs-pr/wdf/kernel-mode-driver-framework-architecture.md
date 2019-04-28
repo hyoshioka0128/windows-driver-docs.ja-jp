@@ -13,17 +13,17 @@ keywords:
 - WDK KMDF オブジェクトのプロパティ
 - オブジェクトは WDK KMDF を処理します。
 - WDK KMDF インターフェイス
-- WDK KMDF オブジェクト
+- オブジェクト WDK KMDF
 - framework オブジェクト WDK KMDF、アーキテクチャ
 - フレームワーク ベースのドライバー WDK KMDF、アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a008ce9d6caaa072269775fbdbe638d75091abf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376377"
 ---
 # <a name="wdf-architecture"></a>WDF のアーキテクチャ
 
@@ -55,7 +55,7 @@ WDF は、ドライバーのオブジェクト ベースのインターフェイ
 
 -   *フレームワークの要求オブジェクト*I/O キューごとに受け取る I/O 要求を表します。
 
-すべてのフレームワークを定義するオブジェクトの一覧は、[Framework オブジェクトの概要](summary-of-framework-objects.md)を参照してください。
+すべてのフレームワークを定義するオブジェクトの一覧は、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
 
  
 

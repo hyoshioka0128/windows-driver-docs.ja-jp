@@ -1,6 +1,6 @@
 ---
-title: 書式設定 DXT を列挙します。
-description: 書式設定 DXT を列挙します。
+title: DXT 形式の列挙
+description: DXT 形式の列挙
 ms.assetid: 77fc961f-1b94-43c1-b238-86f7d8e96835
 keywords:
 - 圧縮されたテクスチャ WDK DirectDraw を描画するには、フォーマット DXT を列挙します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9bf6bc2c61adbd7ce141c31cfeb6f39436ee8f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380762"
 ---
-# <a name="enumerating-dxt-formats"></a>書式設定 DXT を列挙します。
+# <a name="enumerating-dxt-formats"></a>DXT 形式の列挙
 
 
 ## <span id="ddk_enumerating_dxt_formats_gg"></span><span id="DDK_ENUMERATING_DXT_FORMATS_GG"></span>

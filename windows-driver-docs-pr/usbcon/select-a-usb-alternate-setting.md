@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the steps for issuing a select-interface request to activate an alternate setting in a USB interface.
+Description: このトピックでは、選択インターフェイス USB インターフェイスでの代替設定をアクティブ化要求を発行する手順について説明します。
 title: USB インターフェイスにおける代替設定の選択方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa8746c5b091a12aa15bd2a24855d529a60e34ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379515"
 ---
 # <a name="how-to-select-an-alternate-setting-in-a-usb-interface"></a>USB インターフェイスにおける代替設定の選択方法
 
@@ -23,7 +23,7 @@ ms.locfileid: "56571553"
 
 たとえば、インターフェイスは、アイソクロナス 2 と 3 つの代替設定 (インデックス 0、1、2) を使用して 2 つの一括エンドポイントを公開します。 別の設定 0 で任意のエンドポイントが定義されていません代替 Setting 1; 一括のエンドポイントを定義します代替設定 2 は、アイソクロナス エンドポイントを定義します。 代替の設定を 0 にエンドポイントがあるないために、クライアント ドライバーは、帯域幅を節約するためにデータ転送を無効にするには、この設定を選択できます。 その他の設定のいずれかが、アクティブな場合、デバイスがデータ転送の準備ができてです。 代替 Setting 1 は、一括データ転送に使用できます。 デバイスがストリーミング モードの場合、代替設定 2 を選択できます。 そのため、代替の設定の柔軟性のクライアント ドライバー、必要に応じて、デバイスの構成を変更します。 この例では、クライアント ドライバーは、代替の設定を選択するだけで、ストリーミングを一括転送からデバイスの機能を切り替えることができます。
 
-代替設定が帯域幅の要件を設定することもできます。 例については、、 [USB デバイス レイアウト](usb-device-layout.md)を参照してください。
+代替設定が帯域幅の要件を設定することもできます。 例については、次を参照してください。、 [USB デバイス レイアウト](usb-device-layout.md)します。
 
 Windows Driver Foundation (WDF) は、メソッドを提供します。[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)と[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)クライアント ドライバーが別の代替設定を選択して呼び出すことができます。 KMDF クライアント ドライバーは、インデックス設定、設定のインターフェイスの記述子を指定するか、要求を含む、URB を送信することで、設定を選択できます。 UMDF クライアント ドライバーでは、そのインデックスの設定を指定することによってのみ、代替の設定を選択できます。
 
@@ -73,17 +73,17 @@ Windows Driver Foundation (WDF) は、メソッドを提供します。[カー�
     -   別の設定を記述するインターフェイスの記述子のポインターを指定します。 ドライバー インターフェイスでの代替設定を呼び出すことによって列挙中にインターフェイスの記述子を取得できますし、 [ **WdfUsbInterfaceGetDescriptor** ](https://msdn.microsoft.com/library/windows/hardware/ff550060)メソッド。 ドライバーの列挙が完了したら、すべての列挙の代替設定に関する情報を取得します、 [ **USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065)構造体。
     -   選択インターフェイス要求に必要なすべての情報を含む、URB へのポインターを指定します。
 
-        1.  配列を割り当てる[ **USBD\_インターフェイス\_一覧\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/ff539076)構造体。 この配列の要素の数は、選択した構成でインターフェイスの数によって異なります。 この配列の初期化については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)を参照してください。
+        1.  配列を割り当てる[ **USBD\_インターフェイス\_一覧\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/ff539076)構造体。 この配列の要素の数は、選択した構成でインターフェイスの数によって異なります。 この配列の初期化については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
         2.  割り当て、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)呼び出すことによって選択インターフェイス要求に対して、 [ **USBD\_SelectInterfaceUrbAllocateAndBuild** ](https://msdn.microsoft.com/library/windows/hardware/hh406245)ルーチン。 この呼び出しでは、インターフェイスのリストの配列と構成の選択後に取得した構成のハンドルを指定します。 そのハンドルを呼び出して取得することができます、 [ **WdfUsbTargetDeviceWdmGetConfigurationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff551127)メソッド。
         3.  呼び出す[ **WdfUsbInterfaceSelectSetting** ](https://msdn.microsoft.com/library/windows/hardware/ff550073) URB を指定します。
 
-        **WDM ドライバー:  **URB を送信する、IRP URB を関連付けるし、USB ドライバー スタックに IRP を送信します。 詳細については、[、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)を参照してください。
+        **WDM ドライバー:  **URB を送信する、IRP URB を関連付けるし、USB ドライバー スタックに IRP を送信します。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
 
     リストのオプションは、選択条件を指定するための柔軟性をクライアント ドライバーを提供します。 別の設定のエンドポイントの機能に注意してください。 既に場合は、一覧に (別の設定の番号) を含む最初のオプションを選択します。 それ以外の場合、インターフェイスの記述子を指定する 2 番目のオプションを選択します。 検査[ **USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065)構造体がすべての代替設定します。 設定ごとに、そのエンドポイントとエンドポイントの種類、最大パケット サイズなどの特性を列挙しなど。 データ転送に必要なエンドポイントのセットを検索するときに呼び出す[ **WdfUsbInterfaceSelectSetting** ](https://msdn.microsoft.com/library/windows/hardware/ff550073)そのインターフェイス記述子へのポインターを指定しています。 通常、USB ドライバー スタックに翻訳を送信して要求を送信できるだけ WDM ベースのクライアント ドライバーでない限り、3 番目のオプションを必要ありませんが。
 
     クライアント ドライバーによって提供される情報に基づき、USB ドライバー スタック標準のコントロール要求 (インターフェイスの設定) を作成し、デバイスに送信します。 要求が正常に完了すると、USB ドライバー スタックは、別の設定のエンドポイントへのパイプ ハンドルを取得します。
 
-    代替の設定を選択した後、クライアント ドライバーは、新しい設定でエンドポイントのパイプ ハンドルを常に取得する必要があります。 これに失敗、ドライバーが古いパイプ ハンドルを使用してデータ転送の要求を送信することがあります。 パイプ ハンドルを取得する方法の詳細については、[USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)を参照してください。
+    代替の設定を選択した後、クライアント ドライバーは、新しい設定でエンドポイントのパイプ ハンドルを常に取得する必要があります。 これに失敗、ドライバーが古いパイプ ハンドルを使用してデータ転送の要求を送信することがあります。 パイプ ハンドルを取得する方法の詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
 
 ```cpp
 NTSTATUS  FX3SelectInterfaceSetting(  
@@ -160,7 +160,7 @@ Exit:
 <a name="remarks"></a>コメント
 -------
 
-KMDF クライアント ドライバーでその[ **WdfUsbInterfaceSelectSetting** ](https://msdn.microsoft.com/library/windows/hardware/ff550073)を呼び出すには、ドライバーがドライバーの定義済みのパイプ コンテキストへのポインターを指定できます。 クライアント ドライバーは、パイプのコンテキストでパイプに関する情報を格納することができます。 パイプ情報の詳細については、[USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)を参照してください。
+KMDF クライアント ドライバーでその[ **WdfUsbInterfaceSelectSetting** ](https://msdn.microsoft.com/library/windows/hardware/ff550073)を呼び出すには、ドライバーがドライバーの定義済みのパイプ コンテキストへのポインターを指定できます。 クライアント ドライバーは、パイプのコンテキストでパイプに関する情報を格納することができます。 パイプ情報の詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB デバイスの構成](configuring-usb-devices.md)  

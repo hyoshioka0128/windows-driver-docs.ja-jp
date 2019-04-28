@@ -1,6 +1,6 @@
 ---
-title: I/O を再利用可能な Irp をパケットに基づく
-description: I/O を再利用可能な Irp をパケットに基づく
+title: 再利用可能な IRP を使用したパケット駆動型 I/O
+description: 再利用可能な IRP を使用したパケット駆動型 I/O
 ms.assetid: ff315b61-9fa3-4a20-bc3e-82db0ea3cde7
 keywords:
 - I/O スタックの場所の WDK カーネル
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 908b910039544ae9de2409af2e89ee9682f316e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377912"
 ---
-# <a name="packet-driven-io-with-reusable-irps"></a>I/O を再利用可能な Irp をパケットに基づく
+# <a name="packet-driven-io-with-reusable-irps"></a>再利用可能な IRP を使用したパケット駆動型 I/O
 
 
 
@@ -51,7 +51,7 @@ IRP は、1 つ以上のドライバーにルーティングされる可能性�
 
 各ドライバーは IRP を処理するよう、IRP がドライバーの操作の各段階で IRP のため再利用で、I/O スタックの場所にアクセスできます。 さらより高度なドライバー作成 (したり再利用) Irp も下位のドライバーに要求を送信します。
 
-Irp の詳細については、[Irp の処理](handling-irps.md)を参照してください。
+Irp の詳細については、次を参照してください。 [Irp の処理](handling-irps.md)します。
 
  
 

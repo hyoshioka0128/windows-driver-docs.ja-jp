@@ -1,17 +1,17 @@
 ---
-title: NDIS/WIFI の検証
+title: NDIS/WIFI 検証
 description: NDIS/WIFI の確認オプションは、NDIS かどうかを決定します。 または、Windows オペレーティング システムのカーネルと WIFI のドライバーが適切にやり取りします。
 ms.assetid: EB553449-9460-403D-8ED2-343048C4B38C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a264380ac31820651232bd8ea018243ff99e117f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379494"
 ---
-# <a name="ndiswifi-verification"></a>NDIS/WIFI の検証
+# <a name="ndiswifi-verification"></a>NDIS/WIFI 検証
 
 
 NDIS/WIFI の確認オプションは、NDIS かどうかを決定します。 または、Windows オペレーティング システムのカーネルと WIFI のドライバーが適切にやり取りします。
@@ -57,7 +57,7 @@ Driver Verifier では、このオプションがアクティブで、Driver Ver
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの NDIS/WIFI 検証の機能をアクティブにできます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 NDIS/WIFI の確認オプションをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの NDIS/WIFI 検証の機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 NDIS/WIFI の確認オプションをアクティブ化またはコンピューターを再起動する必要があります。
 
 -   **コマンドラインで**
 

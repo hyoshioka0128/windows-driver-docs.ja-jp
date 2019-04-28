@@ -1,6 +1,6 @@
 ---
-title: 仮想のクロックの値を使用してください。
-description: 仮想のクロックの値を使用してください。
+title: 仮想クロック値の使用
+description: 仮想クロック値の使用
 ms.assetid: de01b0f1-86b1-4e7d-af22-84dbbe3a3f83
 keywords:
 - 仮想のクロック値 WDK KTM
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 451719c34ad3abd491a4f370cbce920284fa6910
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372188"
 ---
-# <a name="using-virtual-clock-values"></a>仮想のクロックの値を使用してください。
+# <a name="using-virtual-clock-values"></a>仮想クロック値の使用
 
 
 KTM では、トランザクション マネージャーの各オブジェクトに対して仮想クロックを提供します。 リソース マネージャーを呼び出すと[ **ZwCreateTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff566430)KTM では、仮想のクロックにオブジェクトの値を 1 に設定します。 KTM では、コミット操作を開始するたびに仮想のクロックの値をインクリメントします。 KTM では、そのログ ストリームに書き込み、たびにログ レコードで仮想のクロックの現在の値が含まれます。

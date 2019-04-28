@@ -1,17 +1,17 @@
 ---
-title: 実装のヒントと OPM の要件
-description: 実装のヒントと OPM の要件
+title: OPM の実装のヒントと要件
+description: OPM の実装のヒントと要件
 ms.assetid: 8270db83-a352-4da8-86fc-b5ac952bd6e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b34a7c0c65547807ef3e49de800ed8fd66d162d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376750"
 ---
-# <a name="implementation-tips-and-requirements-for-opm"></a>実装のヒントと OPM の要件
+# <a name="implementation-tips-and-requirements-for-opm"></a>OPM の実装のヒントと要件
 
 
 次のトピックについてのヒントを説明しで OPM 機能を実装するための要件のミニポート ドライバーを表示します。

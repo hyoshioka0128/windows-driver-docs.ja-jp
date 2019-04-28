@@ -1,6 +1,6 @@
 ---
-title: プリンターの INF ファイルのデータ セクション
-description: プリンターの INF ファイルのデータ セクション
+title: プリンター INF ファイル データ セクション
+description: プリンター INF ファイル データ セクション
 ms.assetid: d060716c-7c26-41a8-afbc-6fe83829d46a
 keywords:
 - WDK の INF ファイルを印刷するデータ セクション
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94320614a29d8ee17c58969f89205e9454793123
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380162"
 ---
-# <a name="printer-inf-file-data-sections"></a>プリンターの INF ファイルのデータ セクション
+# <a name="printer-inf-file-data-sections"></a>プリンター INF ファイル データ セクション
 
 
 
@@ -44,7 +44,7 @@ Microsoft のプリンター INF ファイル、Ntprint.inf では、次のデ�
 
     値を割り当てます、 **DriverFile**、 **ConfigFile**、 **HelpFile**、および**LanguageMonitor** Microsoft Universal のエントリ双方向のプリンターのプリンター ドライバー。
 
-これらのデータ セクションは、ベンダーから提供された INF ファイル内から参照する必要があります。 例については、[Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)と[Pscript ミニドライバーをインストールする](installing-a-pscript-minidriver.md)を参照してください。
+これらのデータ セクションは、ベンダーから提供された INF ファイル内から参照する必要があります。 例については、次を参照してください。 [Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)と[Pscript ミニドライバーをインストールする](installing-a-pscript-minidriver.md)します。
 
 **注**  されている、IHV プリンター INF ファイル、**必要があります**エントリまたは**Include** Ntprint.inf を参照するエントリは、INF と同じであるデータ セクション名を含めることはできませんセクション名 Ntprint.inf 内に存在します。 プリンターのベンダーから提供された INF ファイルのデータ セクションの名前を付け、前に、セクション名が Ntprint.inf 内 (任意の型) のセクション名として存在しないことを必ず %windir%/inf/Ntprint.inf を検索します。
 

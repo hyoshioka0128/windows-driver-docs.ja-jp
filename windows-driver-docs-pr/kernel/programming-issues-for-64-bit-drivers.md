@@ -1,6 +1,6 @@
 ---
-title: 64 ビット ドライバーのプログラミングの問題
-description: 64 ビット ドライバーのプログラミングの問題
+title: 64 ビット ドライバーのプログラミングに関する問題
+description: 64 ビット ドライバーのプログラミングに関する問題
 ms.assetid: 36794bd3-1d44-4edf-b789-a4da4165ea60
 keywords:
 - 64 ビットの WDK カーネル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5732fd7888c22a25644fa35d9e8fbcbbb090f33f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376640"
 ---
-# <a name="programming-issues-for-64-bit-drivers"></a>64 ビット ドライバーのプログラミングの問題
+# <a name="programming-issues-for-64-bit-drivers"></a>64 ビット ドライバーのプログラミングに関する問題
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56556493"
 
 [X64 ドライバの制限](driver-x64-restrictions.md)
 
-64 ビット コンパイラを使用したプログラミングについては、[64 ビットの Visual c を使用したプログラミング](https://go.microsoft.com/fwlink/p/?linkid=165521)を参照してください。
+64 ビット コンパイラを使用したプログラミングについては、次を参照してください。 [64 ビットの Visual c を使用したプログラミング](https://go.microsoft.com/fwlink/p/?linkid=165521)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: Windows XP の WIA フラット ベッド スキャナーの互換性と Windows Me
-description: Windows XP の WIA フラット ベッド スキャナーの互換性と Windows Me
+title: Windows XP および Windows Me の WIA フラットベッド スキャナー互換性
+description: Windows XP および Windows Me の WIA フラットベッド スキャナー互換性
 ms.assetid: fc3424fa-3898-4f6a-a611-f81d97db8b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4665903ce1cc4e878167bfc801ce702b2ccbe8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380944"
 ---
-# <a name="wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP の WIA フラット ベッド スキャナーの互換性と Windows Me
+# <a name="wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP および Windows Me の WIA フラットベッド スキャナー互換性
 
 
 
@@ -19,7 +19,7 @@ ms.locfileid: "56532702"
 
 Windows Vista WIA 項目ツリーし、Windows XP および Windows me 向けに作成されたアプリケーションである互換性の問題を原因します。
 
-Windows Vista WIA ドライバーとアプリケーションと古い WIA ドライバーとアプリケーション間の互換性の問題を簡略化するのには、Windows Vista は、内部互換性レイヤーが。 この互換レイヤーを使用して、Windows Vista のドライバーとアプリケーション、Windows XP (および Windows Me) ドライバーとアプリケーションをそれぞれ使用するができます。 Windows vista では、この変換処理では、ドライバーとアプリケーションの両方に対して透過的です。 この互換レイヤーの詳細については、[WIA 互換性レイヤー](wia-compatibility-layer.md)を参照してください。
+Windows Vista WIA ドライバーとアプリケーションと古い WIA ドライバーとアプリケーション間の互換性の問題を簡略化するのには、Windows Vista は、内部互換性レイヤーが。 この互換レイヤーを使用して、Windows Vista のドライバーとアプリケーション、Windows XP (および Windows Me) ドライバーとアプリケーションをそれぞれ使用するができます。 Windows vista では、この変換処理では、ドライバーとアプリケーションの両方に対して透過的です。 この互換レイヤーの詳細については、次を参照してください。 [WIA 互換性レイヤー](wia-compatibility-layer.md)します。
 
 ただし、Windows Vista のドライバーと Windows XP または Windows Me でアプリケーションの互換性は複雑です。 従来、オペレーティング システムに存在していた WIA のバージョン用に作成されたアプリケーションでは、異なる一連の規則と前提条件に従います。 Windows XP と Windows アイテム ツリー内の 1 つの項目の上にスキャナーの機能を組み合わせて Me WIA スキャナー項目ツリーです。 ルート項目は、その子項目の転送動作を制御します。 スキャナーは最初の子項目を使用して、プログラミング可能なデータ ソースと、ルート項目のプロパティとしてなど[ **WIA\_DPS\_ドキュメント\_処理\_選択**](https://msdn.microsoft.com/library/windows/hardware/ff551384) (WIA と呼ばれる\_IP\_ドキュメント\_処理\_Windows Vista で選択) スキャン ベッドとスキャン フィーダーを切り替えます。
 
@@ -29,7 +29,7 @@ Windows Vista WIA ドライバーとアプリケーションと古い WIA ドラ
 
  
 
-互換性の詳細については、[WIA 項目のプロパティと場所の変更](wia-item-property-and-location-changes.md)を参照してください。
+互換性の詳細については、次を参照してください。 [WIA 項目のプロパティと場所の変更](wia-item-property-and-location-changes.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: デバイス セットアップ クラスのアイコンのプロパティにアクセスします。
-description: デバイス セットアップ クラスのアイコンのプロパティにアクセスします。
+title: デバイス セットアップ クラスのアイコン プロパティへのアクセス
+description: デバイス セットアップ クラスのアイコン プロパティへのアクセス
 ms.assetid: 082b23ee-8f5c-41ad-9bb1-1437b71aa921
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65a13f7e5922ccd2ab98b60a58b2fd6a56077228
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382260"
 ---
-# <a name="accessing-icon-properties-of-a-device-setup-class"></a>デバイス セットアップ クラスのアイコンのプロパティにアクセスします。
+# <a name="accessing-icon-properties-of-a-device-setup-class"></a>デバイス セットアップ クラスのアイコン プロパティへのアクセス
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)が含まれています[デバイス セットアップ クラスのプロパティ](accessing-device-setup-class-properties.md)デバイス セットアップ クラスのアイコンのプロパティを表します。 統一されたデバイス プロパティのモデルを使用して、 [ **DEVPKEY_DeviceClass_Icon**](https://msdn.microsoft.com/library/windows/hardware/ff542299) [プロパティ キー](property-keys.md)と[ **DEVPKEY_DeviceClass_IconPath** ](https://msdn.microsoft.com/library/windows/hardware/ff542303)をこれらのプロパティを表すプロパティのキー。

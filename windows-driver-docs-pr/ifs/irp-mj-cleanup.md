@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_CLEANUP
-description: IRP\_MJ\_クリーンアップ
+description: IRP\_MJ\_CLEANUP
 ms.assetid: e4593d99-a721-4ab1-82a5-b32b9c312b25
 keywords:
 - IRP_MJ_CLEANUP インストール可能なファイル システム ドライバー
@@ -13,13 +13,13 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3cfcac0ecd2fedb768c79e997c2d4e06fa4b0f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379712"
 ---
-# <a name="irpmjcleanup"></a>IRP\_MJ\_クリーンアップ
+# <a name="irpmjcleanup"></a>IRP\_MJ\_CLEANUP
 
 
 ## <a name="when-sent"></a>送信時

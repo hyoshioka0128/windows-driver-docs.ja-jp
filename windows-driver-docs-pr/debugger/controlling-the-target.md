@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2acf1e476f88b61b83056ae1a3340264d78909f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375590"
 ---
 # <a name="controlling-the-target"></a>ターゲットの制御
 
@@ -26,7 +26,7 @@ ms.locfileid: "56570745"
 
 使用しない限り、デバッガーが実行されている、ターゲットを離れる、デバッガーは、カーネル モードのターゲットに接続するとき、 **-b** [コマンド ライン オプション](command-line-options.md)、ターゲット システムが応答を停止した (つまり、 *クラッシュ*)、または、ターゲット システムは、以前のカーネル デバッグ操作のため停止されます。
 
-使用しない限り、デバッガーがそのターゲットをすぐに停止、デバッガーが起動するか、ユーザー モードのターゲットに接続するときに、 **-g**コマンド ライン オプション。 詳細については、[最初のブレークポイント](initial-breakpoint.md)を参照してください。
+使用しない限り、デバッガーがそのターゲットをすぐに停止、デバッガーが起動するか、ユーザー モードのターゲットに接続するときに、 **-g**コマンド ライン オプション。 詳細については、次を参照してください。[最初のブレークポイント](initial-breakpoint.md)します。
 
 ### <a name="span-idwhenthetargetisrunningspanspan-idwhenthetargetisrunningspanwhen-the-target-is-running"></a><span id="when_the_target_is_running"></span><span id="WHEN_THE_TARGET_IS_RUNNING"></span>ターゲットが実行されています。
 
@@ -246,11 +246,11 @@ ms.locfileid: "56570745"
 
  
 
-ターゲット コンピューターを再起動する方法の詳細については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
+ターゲット コンピューターを再起動する方法の詳細については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
 
 ### <a name="span-idcommandlineoptionsspanspan-idcommandlineoptionsspancommand-line-options"></a><span id="command_line_options"></span><span id="COMMAND_LINE_OPTIONS"></span>コマンド ライン オプション
 
-アプリケーションを開始または読み込むときにすぐに停止したくない場合は、CDB またはと共に WinDbg を使用して、 **-g**コマンド ライン オプション。 このような状況の詳細については、[最初のブレークポイント](initial-breakpoint.md)を参照してください。
+アプリケーションを開始または読み込むときにすぐに停止したくない場合は、CDB またはと共に WinDbg を使用して、 **-g**コマンド ライン オプション。 このような状況の詳細については、次を参照してください。[最初のブレークポイント](initial-breakpoint.md)します。
 
 CDB および WinDbg もサポートして、 **-g** [コマンド ライン オプション](command-line-options.md)します。 このオプションでは、デバッグ セッションをアプリケーションが正しく完了した場合を終了します。
 

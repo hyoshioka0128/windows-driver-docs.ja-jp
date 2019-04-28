@@ -1,6 +1,6 @@
 ---
-title: ビデオのキャプチャの概要
-description: ビデオのキャプチャの概要
+title: ビデオ キャプチャの概要
+description: ビデオ キャプチャの概要
 ms.assetid: 3f299905-beab-48e2-b5c9-9850452115c6
 keywords:
 - ビデオ キャプチャ WDK AVStream、ビデオのキャプチャについて
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2b6819daba4ab50acccf93fe2047ea7f40c7046
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377773"
 ---
-# <a name="video-capture-overview"></a>ビデオのキャプチャの概要
+# <a name="video-capture-overview"></a>ビデオ キャプチャの概要
 
 
 ビデオ キャプチャ ミニドライバーは、主に、テレビのオーディオなどの補助的なデータと共に、ビデオのデータのストリームを生成または自分をハードウェア デバイスを制御するか、AVStream の Stream クラス インターフェイスと対話/FM チューナー機能。 ベンダーは、ビデオ キャプチャ ミニドライバーを記述します。

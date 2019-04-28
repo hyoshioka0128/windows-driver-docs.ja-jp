@@ -1,6 +1,6 @@
 ---
-title: COM ポートを高度なプロパティ ページをインストールします。
-description: COM ポートを高度なプロパティ ページをインストールします。
+title: COM ポート用の詳細プロパティ ページをインストールする
+description: COM ポート用の詳細プロパティ ページをインストールする
 ms.assetid: 056fd245-a9d2-4a10-9e92-fe75e51f6770
 keywords:
 - 高度な COM ポートのプロパティ ページの WDK シリアル デバイス
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e86144ee1d2565be45ca0140acd8d61037e7c615
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370921"
 ---
-# <a name="installing-an-advanced-properties-page-for-a-com-port"></a>COM ポートを高度なプロパティ ページをインストールします。
+# <a name="installing-an-advanced-properties-page-for-a-com-port"></a>COM ポート用の詳細プロパティ ページをインストールする
 
 
 
@@ -29,7 +29,7 @@ ms.locfileid: "56558722"
 
 COM ポートのシステム提供のプロパティ ページと既定のダイアログ ボックスをインストールするには、次の操作を行います。
 
-1.  Microsoft Win32 プロパティ ページのプロバイダーを実装します。 プロパティ シートのダイアログ ボックスのインストールの概要については、[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)を参照してください。
+1.  Microsoft Win32 プロパティ ページのプロバイダーを実装します。 プロパティ シートのダイアログ ボックスのインストールの概要については、次を参照してください。[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)します。
 
     プロパティ ページのプロバイダーを呼び出して、システムが提供[ **SerialDisplayAdvancedSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff547447)ルーチンで、既定のシステム提供のダイアログ ボックスが表示されます。
 

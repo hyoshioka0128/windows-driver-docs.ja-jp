@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b1c04f8881864db0ccd034761340bb68f278859
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380277"
 ---
 # <a name="width-element"></a>要素の幅
 
@@ -48,7 +48,7 @@ ms.locfileid: "56571675"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -57,16 +57,16 @@ ms.locfileid: "56571675"
 <tr class="odd">
 <td><p><strong><strong>上書き</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
-<p>任意。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
+<p>(省略可能)。 ブール値 false、0 にする必要がある、1 または true です。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +115,7 @@ ms.locfileid: "56571675"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **幅**要素はその親要素のすべての必須の子要素です。 値**幅**その親要素によって異なります。 使用可能な値は、適切な親要素を参照してください。

@@ -1,6 +1,6 @@
 ---
-title: 拡張機能単位にイベントを自動更新をサポートしています。
-description: 拡張機能単位にイベントを自動更新をサポートしています。
+title: 拡張ユニットによる自動更新イベントのサポート
+description: 拡張ユニットによる自動更新イベントのサポート
 ms.assetid: 3dc75f48-adc7-4443-8090-2e61b3306798
 keywords:
 - 自動更新イベント WDK USB ビデオ クラス
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 904f7662fe10907f6dc2e11a250abf3e7a48b2c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378517"
 ---
-# <a name="supporting-autoupdate-events-with-extension-units"></a>拡張機能単位にイベントを自動更新をサポートしています。
+# <a name="supporting-autoupdate-events-with-extension-units"></a>拡張ユニットによる自動更新イベントのサポート
 
 
 このトピックには、自動更新イベントをサポートする方法を示すサンプル コードが含まれています。

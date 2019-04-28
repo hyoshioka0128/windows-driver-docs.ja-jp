@@ -1,6 +1,6 @@
 ---
-title: テンプレートのデータの複数のパーソナリティの種類
-description: テンプレートのデータの複数のパーソナリティの種類
+title: 複数パーソナリティ テンプレート データ型
+description: 複数パーソナリティ テンプレート データ型
 ms.assetid: ee550416-9185-41fa-b113-6a1d22c3aa96
 keywords:
 - WDK GDL、データ型のテンプレート
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c3d34adb0c002da6fdd019ad85f9e37dd5edce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372468"
 ---
-# <a name="multiple-personality-template-data-types"></a>テンプレートのデータの複数のパーソナリティの種類
+# <a name="multiple-personality-template-data-types"></a>複数パーソナリティ テンプレート データ型
 
 
 倍数\_パーソナリティのデータ型が異なる時刻でさまざまなデータ型を保持できる値を表します。 このデータ型は、C 言語のような**共用体**データ型。

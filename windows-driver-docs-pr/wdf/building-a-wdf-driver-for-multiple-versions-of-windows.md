@@ -1,16 +1,16 @@
 ---
-title: 複数のバージョンの Windows 用のドライバーを WDF の構築
+title: Windows の複数バージョン用 WDF ドライバーのビルド
 description: 説明する複数のバージョンの Windows 用のドライバーを WDF をビルドする方法。
 ms.date: 04/06/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 85816ea4d802853f730b5279e83724d4f4890b3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376922"
 ---
-# <a name="building-a-wdf-driver-for-multiple-versions-of-windows"></a>複数のバージョンの Windows 用のドライバーを WDF の構築
+# <a name="building-a-wdf-driver-for-multiple-versions-of-windows"></a>Windows の複数バージョン用 WDF ドライバーのビルド
 
 WDF は常に許可すると、1 回、ドライバーを作成し、Windows の複数のバージョンで、生成されたバイナリを使用していますが、Windows 10 バージョン 1803 (Redstone 4)、前にこの"以前ビルドで実行する新しい"に制限されていました WDF 追加 Windows 10 バージョン 1803 以降、「ビルド新しい、古いで実行」の条件付きの実行の追加特典を使用します。 要約。
 * **既存の**:新しいバージョンのメジャー バージョンを提供するフレームワークが含まれる Windows のバージョンで実行する framework の旧バージョンでビルドされたバイナリと一致します。 たとえば、KMDF 1.9 (Windows 7) で構築されたドライバーは、Windows 8 システム (KMDF 1.11) で実行されます。 例では、ドライバーは、KMDF 1.9 の機能に制限されます。
@@ -80,4 +80,4 @@ if (WDF_IS_FUNCTION_AVAILABLE(WdfSomeNewFeature)) {
 
 ドライバー クラッシュには、障害が発生したドライバー名、フレームワーク名、および失敗した API のインデックスが含まれています。 API の名前を取得するには、WDFFUNCENUM WdfFuncEnum.h 内の値を検索します。
 
-WDF の Visual Studio のプロパティの詳細については、[ドライバー プロジェクトのモデルの設定のプロパティをドライバー](../develop/driver-model-settings-properties-for-driver-projects.md)を参照してください。
+WDF の Visual Studio のプロパティの詳細については、次を参照してください。[ドライバー プロジェクトのモデルの設定のプロパティをドライバー](../develop/driver-model-settings-properties-for-driver-projects.md)します。

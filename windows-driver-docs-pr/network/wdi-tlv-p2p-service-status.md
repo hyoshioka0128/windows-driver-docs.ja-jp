@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_SERVICE_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af8a7662fbb0b6cc9836b402304ce4f8f915e37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375646"
 ---
 # <a name="wditlvp2pservicestatus"></a>WDI\_TLV\_P2P\_サービス\_状態
 
@@ -31,7 +31,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類  | 説明                      |
+| 型  | 説明                      |
 |-------|----------------------------------|
 | UINT8 | サービスのサービスの状態。 |
 

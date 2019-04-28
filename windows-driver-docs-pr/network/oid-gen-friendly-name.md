@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_FRIENDLY_NAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 32a461abc7217a9e6704a888805fb8e974abdc07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381351"
 ---
 # <a name="oidgenfriendlyname"></a>OID\_GEN\_フレンドリ\_名
 
@@ -24,7 +24,7 @@ OID\_GEN\_フレンドリ\_名の OID がミニポート アダプタのフレ�
 
 フレンドリ名は、ユーザーをすばやくおよびミニポート アダプター - たとえば、「PCI イーサネット アダプター」を正確に特定するためのものし、「仮想プライベート ネットワーク アダプター」には、フレンドリ名と見なされます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

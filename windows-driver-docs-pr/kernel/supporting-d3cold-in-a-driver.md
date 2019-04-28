@@ -1,17 +1,17 @@
 ---
-title: ドライバーで D3cold のサポート
+title: ドライバーでの D3cold のサポート
 description: Windows 8 以降、(オフ) デバイスの電源状態 D3 は D3hot と D3cold 2 つの異なる下位に分割されます。
 ms.assetid: D085820E-EDAC-4353-8500-207F77D9CC1F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 71bc176204f94c2be25ba71c0e2b7ecaf8a4e65c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378008"
 ---
-# <a name="supporting-d3cold-in-a-driver"></a>ドライバーで D3cold のサポート
+# <a name="supporting-d3cold-in-a-driver"></a>ドライバーでの D3cold のサポート
 
 
 Windows 8 以降、(オフ) デバイスの電源状態 D3 は D3hot と D3cold 2 つの異なる下位に分割されます。 D3 が最も低い搭載デバイスの電源の状態と D3cold は、最も低いを利用した下位状態の D3 します。 下位 D3cold 状態にアイドル状態のデバイスの移動、電力消費量を削減し、モバイル ハードウェア プラットフォームは、バッテリの充電で実行できる時間を拡張できます。

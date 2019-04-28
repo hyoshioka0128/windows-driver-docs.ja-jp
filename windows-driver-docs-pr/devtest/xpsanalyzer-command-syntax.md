@@ -1,5 +1,5 @@
 ---
-title: XpsAnalyzer コマンドの構文
+title: XpsAnalyzer のコマンド構文
 description: XpsAnalyzer を実行するには、次の構文とパラメーターを使用してコマンドラインでコマンドを入力します。
 ms.assetid: f91be3ee-e92a-46c8-ab93-96423a35fd86
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc2bab8bdba1fdd7cfb202b6f93514e83625fe36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379082"
 ---
-# <a name="xpsanalyzer-command-syntax"></a>XpsAnalyzer コマンドの構文
+# <a name="xpsanalyzer-command-syntax"></a>XpsAnalyzer のコマンド構文
 
 
 XpsAnalyzer を実行するには、次の構文とパラメーターを使用してコマンドラインでコマンドを入力します。
@@ -71,7 +71,7 @@ EXtensible Markup Language (XML) 形式で XPS 分析レポートです。
 <span id="update_sqlserver.sql_______"></span><span id="UPDATE_SQLSERVER.SQL_______"></span>**Update\_SqlServer.sql**   
 このファイルには、設定を使用して作成した SQL database に XPS 分析の結果を挿入するスクリプトが含まれています。\_SqlServer.sql スクリプト。
 
-XPS の分析レポートの例は、[XpsAnalyzer 出力](xpsanalyzer-output.md)を参照してください。
+XPS の分析レポートの例は、次を参照してください。 [XpsAnalyzer 出力](xpsanalyzer-output.md)します。
 
 
 

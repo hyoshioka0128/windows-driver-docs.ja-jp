@@ -1,5 +1,5 @@
 ---
-title: Windows 8.1 の地理的位置情報ドライバー サンプル
+title: Windows 8.1 用位置情報ドライバー サンプル
 description: Windows 8.1 用の地理的位置情報サンプル ドライバーでは、グローバル配置 System (GPS) デバイス用センサー ドライバーを示します。
 ms.assetid: 2675DB47-B973-419C-930D-1F1B9D65E42D
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1186ad76fdaff67e21e848a074a67d7b4f5af31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382312"
 ---
-# <a name="geolocation-driver-sample-for-windows-81"></a>Windows 8.1 の地理的位置情報ドライバー サンプル
+# <a name="geolocation-driver-sample-for-windows-81"></a>Windows 8.1 用位置情報ドライバー サンプル
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。

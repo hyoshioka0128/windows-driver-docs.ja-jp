@@ -5,11 +5,11 @@ ms.assetid: 72DE8C76-B910-4979-BCEC-7CFFABA4CC19
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: edd5f2dea1c80235154e4042a7fc2f70aee8e67f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375176"
 ---
 # <a name="i2c-write-function-index-28"></a>I2C 書き込み (関数インデックス 28)
 
@@ -50,7 +50,7 @@ ms.locfileid: "56530919"
 <td align="left"><p>登録は、ページ内のオフセットします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>データ</strong></td>
+<td align="left"><strong>Data</strong></td>
 <td align="left">1</td>
 <td align="left">2</td>
 <td align="left"><p>レジスタに書き込まれるデータ。</p></td>
@@ -80,7 +80,7 @@ ms.locfileid: "56530919"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

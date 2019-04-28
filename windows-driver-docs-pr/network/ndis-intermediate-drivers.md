@@ -8,11 +8,11 @@ keywords:
 ms.date: 11/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9097dfcd64af18584b8668d855724b579683821f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378429"
 ---
 # <a name="intermediate-drivers"></a>中間ドライバー
 
@@ -21,7 +21,7 @@ ms.locfileid: "56577761"
 ![ミニポート ドライバーとトランスポート ドライバー間層、中間のドライバーを示す図](images/id-1.png)
 
 > [!NOTE]
-> NDIS ドライバー スタックと 4 つすべての NDIS ドライバーの種類間のリレーションシップを示す図の詳細については、[NDIS ドライバー スタック](ndis-driver-stack.md)を参照してください。
+> NDIS ドライバー スタックと 4 つすべての NDIS ドライバーの種類間のリレーションシップを示す図の詳細については、次を参照してください。 [NDIS ドライバー スタック](ndis-driver-stack.md)します。
 
 ドライバー階層の中間の位置のため中間のドライバーは、公開するために上位プロトコル ドライバーと基になるミニポート ドライバーの両方で通信する必要があります。
 

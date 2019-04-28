@@ -5,11 +5,11 @@ ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72ab94c9d61fdb211e6591d16d083bb6e3a41a4b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382630"
 ---
 # <a name="multipacket-messages"></a>マルチパケット メッセージ
 
@@ -37,14 +37,14 @@ ms.locfileid: "57349675"
 <th align="left">Offset</th>
 <th align="left">サイズ</th>
 <th align="left">フィールド</th>
-<th align="left">[値]</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>メッセージの種類</p></td>
+<td align="left"><p>[MessageType]</p></td>
 <td align="left"><p>0x1</p></td>
 </tr>
 <tr class="even">

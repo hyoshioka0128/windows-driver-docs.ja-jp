@@ -1,6 +1,6 @@
 ---
-title: ファイル システム フィルター ドライバーをアンインストールする INF ファイルを使用します。
-description: ファイル システム フィルター ドライバーをアンインストールする INF ファイルを使用します。
+title: INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
+description: INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
 ms.assetid: e41deb65-7977-479c-ac42-c550aa6a3f1b
 keywords:
 - INF ファイル WDK ファイル システム フィルター ドライバーをアンインストールします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 062b126b9bc0becca59cff7a1ef470c4fbd83dd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379438"
 ---
-# <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバーをアンインストールする INF ファイルを使用します。
+# <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
 
 
 ## <span id="ddk_using_an_inf_file_to_uninstall_a_file_system_filter_driver_if"></span><span id="DDK_USING_AN_INF_FILE_TO_UNINSTALL_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3029c27c35aa3f8f09e7df6951acc413f3dda16a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374492"
 ---
 # <a name="registry-entries-for-scsi-miniport-drivers"></a>SCSI ミニポート ドライバーのレジストリ エントリ
 
@@ -26,7 +26,7 @@ ms.locfileid: "56580773"
 ## <span id="ddk_registry_entries_for_scsi_miniport_drivers_kg"></span><span id="DDK_REGISTRY_ENTRIES_FOR_SCSI_MINIPORT_DRIVERS_KG"></span>
 
 
-次のレジストリ エントリを使用すると、ポート ドライバー/SCSI ミニポート ドライバーのペアの動作を構成できます。 PnpInterface レジストリ エントリをすべてプラグ アンド プレイ (PnP) デバイスに必要な詳細については、[プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ](registry-entries-for-plug-and-play-scsi-miniport-drivers.md)を参照してください。
+次のレジストリ エントリを使用すると、ポート ドライバー/SCSI ミニポート ドライバーのペアの動作を構成できます。 PnpInterface レジストリ エントリをすべてプラグ アンド プレイ (PnP) デバイスに必要な詳細については、次を参照してください。[プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ](registry-entries-for-plug-and-play-scsi-miniport-drivers.md)します。
 
 -   **TimeoutValue**
     -   所在地:HKLM\\システム\\CurrentControlSet\\サービス\\ディスク\\TimeoutValue

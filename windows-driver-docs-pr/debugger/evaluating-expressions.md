@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 107b2371f223bb31933bfcfc346496fcfd8d4820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379445"
 ---
 # <a name="evaluating-expressions"></a>式の評価
 
@@ -62,7 +62,7 @@ C++ の式は、実際の C++ コードで使用されるものと同じです�
 
  
 
-2 つの式のさまざまな種類の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
+2 つの式のさまざまな種類の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
 ### <a name="span-idnumbersinexpressionsspanspan-idnumbersinexpressionsspannumbers-in-expressions"></a><span id="numbers_in_expressions"></span><span id="NUMBERS_IN_EXPRESSIONS"></span>式内の番号
 
@@ -80,19 +80,19 @@ C++ の式内の番号は、異なる方法で指定しない限り、10 進数�
 
 -   C++ の式では、各シンボルはその型に従って解釈されます。 によって、シンボルが参照する対象、整数、データ構造体、関数ポインター、またはその他の任意のデータ型として解釈可能性があります。 (変更されていないモジュール名) などの C++ データ型に対応していないシンボルは、構文エラーを作成します。
 
-シンボルが不明確な場合、場合の前に、モジュール名と感嘆符 ( **!** ). シンボル名は、16 進数として解釈されますが場合の前に、モジュール名と感嘆符 ( **!** ) または感嘆符のみです。 ローカル シンボルはさせようとしているを指定するには、モジュール名を省略し、ドル記号と感嘆符が含まれます ( **$!** ) シンボル名の前にします。 シンボルの解釈に関する詳細については、[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)を参照してください。
+シンボルが不明確な場合、場合の前に、モジュール名と感嘆符 ( **!** ). シンボル名は、16 進数として解釈されますが場合の前に、モジュール名と感嘆符 ( **!** ) または感嘆符のみです。 ローカル シンボルはさせようとしているを指定するには、モジュール名を省略し、ドル記号と感嘆符が含まれます ( **$!** ) シンボル名の前にします。 シンボルの解釈に関する詳細については、次を参照してください。[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
 
 ### <a name="span-idoperatorsinexpressionsspanspan-idoperatorsinexpressionsspanoperators-in-expressions"></a><span id="operators_in_expressions"></span><span id="OPERATORS_IN_EXPRESSIONS"></span>式の演算子
 
 各式の型は、演算子の別のコレクションを使用します。
 
-MASM の式とその優先順位ルールで使用できる演算子の詳細については、[MASM 数字と演算子](masm-numbers-and-operators.md)を参照してください。
+MASM の式とその優先順位ルールで使用できる演算子の詳細については、次を参照してください。 [MASM 数字と演算子](masm-numbers-and-operators.md)します。
 
-C++ の式とその優先順位ルールで使用できる演算子の詳細については、[C++ 数字と演算子](c---numbers-and-operators.md)を参照してください。
+C++ の式とその優先順位ルールで使用できる演算子の詳細については、次を参照してください。 [C++ 数字と演算子](c---numbers-and-operators.md)します。
 
 MASM の操作はバイト単位では常に、C++ の操作 (ポインターの算術演算のスケーリングを含む) C++ 型のルールに従うことに注意してください。
 
-別の構文の例については、[式の例](expression-examples.md)を参照してください。
+別の構文の例については、次を参照してください。[式の例](expression-examples.md)します。
 
  
 

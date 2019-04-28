@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67070e10e043ae8df87a11c08e3a5ee41a61518e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374239"
 ---
 # <a name="sample-plotter-driver-files"></a>サンプル プロッター ドライバー ファイル
 
@@ -30,7 +30,7 @@ Windows Driver Kit (WDK) には、次の MSPlot サンプル コードが含ま�
 
 -   サンプル ミニドライバー テキスト ファイル、plotgpc.exe への入力として使用することができます。
 
-サンプルは、WDK サンプルが含まれているディレクトリ ツリーのサブディレクトリに配置されます。 プロッター ドライバー レンダラー (plotter.dll) は、ユーザー モードまたはカーネル モード DLL としてコンパイルできます。 詳細については、[選択ユーザー モードまたはカーネル モード](choosing-user-mode-or-kernel-mode.md)を参照してください。
+サンプルは、WDK サンプルが含まれているディレクトリ ツリーのサブディレクトリに配置されます。 プロッター ドライバー レンダラー (plotter.dll) は、ユーザー モードまたはカーネル モード DLL としてコンパイルできます。 詳細については、次を参照してください。[選択ユーザー モードまたはカーネル モード](choosing-user-mode-or-kernel-mode.md)します。
 
  
 

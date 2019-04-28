@@ -5,11 +5,11 @@ ms.assetid: 7d988a1b-4c2f-43f7-be09-a250d9ede35c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43cdf8dcc7124beb17079222e90f28fad33082f3
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373177"
 ---
 # <a name="common-camera-and-scanner-properties"></a>一般的なカメラおよびスキャナーのプロパティ
 

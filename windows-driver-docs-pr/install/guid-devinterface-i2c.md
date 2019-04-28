@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f6ea7eed9fcb6e4f59d2ffe99926a18968f31345
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380086"
 ---
 # <a name="guiddevinterfacei2c"></a>GUID_DEVINTERFACE_I2C
 
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_I2C[デバイス インターフェイス クラス](https://m
 
 ディスプレイのミニポート ドライバーがこの直接呼出し I2C インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_I2C を指定します。
 
-I2C バスについては、[I2C バスとディスプレイ アダプターの子デバイス](https://msdn.microsoft.com/library/windows/hardware/ff567381)を参照してください。
+I2C バスについては、次を参照してください。 [I2C バスとディスプレイ アダプターの子デバイス](https://msdn.microsoft.com/library/windows/hardware/ff567381)します。
 
 <a name="requirements"></a>必要条件
 ------------

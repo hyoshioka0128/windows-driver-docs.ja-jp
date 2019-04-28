@@ -1,19 +1,19 @@
 ---
-title: 失敗したプロセスの検索
-description: 失敗したプロセスの検索
+title: エラーが発生したプロセスの検索
+description: エラーが発生したプロセスの検索
 ms.assetid: 64d1fa71-940f-4f67-87a6-00d41d6f24e0
 keywords:
 - 失敗したプロセス検索プロセス
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b13581d75dcb0a68d9b8840af69f741a90b38ec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372338"
 ---
-# <a name="finding-the-failed-process"></a>失敗したプロセスの検索
+# <a name="finding-the-failed-process"></a>エラーが発生したプロセスの検索
 
 
 ## <span id="ddk_finding_the_failed_process_dbg"></span><span id="DDK_FINDING_THE_FAILED_PROCESS_DBG"></span>

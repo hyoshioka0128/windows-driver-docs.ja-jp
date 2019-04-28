@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DOT11_RESET_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: acafb7853668961d8e866f6c248d7faee80d9028
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380872"
 ---
 # <a name="wditlvdot11resetparameters"></a>WDI\_TLV\_DOT11\_リセット\_パラメーター
 
@@ -31,7 +31,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類  | 説明                                                                                                     |
+| 型  | 説明                                                                                                     |
 |-------|-----------------------------------------------------------------------------------------------------------------|
 | UINT8 | 場合 (および場合にのみ) 1 に設定されて、その既定値にリセットされるポートのすべての MIB 属性が設定されます。 |
 

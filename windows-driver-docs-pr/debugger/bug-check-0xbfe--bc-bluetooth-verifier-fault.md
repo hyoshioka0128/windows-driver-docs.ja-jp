@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 28bd555afbcef2c0ce127066c8d4bd0c90565931
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370886"
 ---
 # <a name="bug-check-0xbfe-bcbluetoothverifierfault"></a>バグ チェック 0xBFE:BC\_BLUETOOTH\_VERIFIER\_エラー
 

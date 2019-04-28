@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 46edb7fd52062034beb21670285e2020ff5528a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377332"
 ---
 # <a name="kscategorybdatransportinformation"></a>KSCATEGORY_BDA_TRANSPORT_INFORMATION
 
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_TRANSPORT_INFORMATION[デバイス インターフェイス ク�
 
 BDA デバイス用のドライバーでは、オペレーティング システムに、デバイスが BDA トランスポートについてフィルターをサポートすることを示す KSCATEGORY_BDA_TRANSPORT_INFORMATION のインスタンスを登録します。
 
-BDA トランスポート情報のフィルターの KS 機能のカテゴリの詳細については、[BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)を参照してください。
+BDA トランスポート情報のフィルターの KS 機能のカテゴリの詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
 
 <a name="requirements"></a>要件
 ------------

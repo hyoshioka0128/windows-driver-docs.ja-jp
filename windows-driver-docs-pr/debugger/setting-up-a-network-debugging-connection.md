@@ -1,5 +1,5 @@
 ---
-title: KDNET のネットワーク カーネル デバッグを手動での設定
+title: KDNET ネットワーク カーネル デバッグの手動設定
 description: デバッグ ツールの Windows カーネルがネットワーク経由でデバッグをサポートします。
 ms.assetid: B4A79B2E-D4B1-42CA-9121-DEC923C76927
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 12/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 79081114edf4e475df2fcf353851bfa12642a005
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381928"
 ---
-# <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>KDNET のネットワーク カーネル デバッグを手動での設定
+# <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>KDNET ネットワーク カーネル デバッグの手動設定
 
 デバッグ ツールの Windows カーネルがネットワーク経由でデバッグをサポートします。 このトピックでは、手動でのデバッグを設定する方法について説明します。
 
@@ -35,11 +35,11 @@ ms.locfileid: "56529245"
 
 ## <a name="supported-network-adapters"></a>サポートされているネットワーク アダプター
 
-ホスト コンピューターは、任意のネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)と[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)を参照してください。
+ホスト コンピューターは、任意のネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、次を参照してください。[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)と[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)します。
 
 ## <a name="install-the-debugging-tools-for-windows"></a>Windows 用デバッグ ツールをインストールします。
 
-ホスト システムで、デバッグ ツールの Windows がインストールされていることを確認します。 ダウンロードして、デバッガー ツールのインストールについては、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。
+ホスト システムで、デバッグ ツールの Windows がインストールされていることを確認します。 ダウンロードして、デバッガー ツールのインストールについては、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。
 
 ## <a name="determining-the-ip-address-of-the-host-computer"></a>ホスト コンピューターの IP アドレスを決定します。
 
@@ -220,9 +220,9 @@ shutdown -r -t 0
 
 手動で削除していますが、通常必要はありませんはここに特殊な状況のトラブルシューティング手順として。
 
-Kdnet ユーティリティを使用する場合、エントリを手動で削除する必要はありません。 詳細については、[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
+Kdnet ユーティリティを使用する場合、エントリを手動で削除する必要はありません。 詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
 
-Bcdedit – deletevalue を使用する場合は、有効な bcd 要素名を指定する必要があります。 詳細については、[BCDEdit/deletevalue](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--deletevalue)を参照してください。
+Bcdedit – deletevalue を使用する場合は、有効な bcd 要素名を指定する必要があります。 詳細については、次を参照してください。 [BCDEdit/deletevalue](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--deletevalue)します。
 
 BCDEdit のエントリを手動で削除するには、次の手順を完了します。
 
@@ -250,7 +250,7 @@ BCDEdit のエントリを手動で削除するには、次の手順を完了し
 
 ターゲット コンピューターに HYPER-V の役割をインストールする場合を参照してください。[ネットワーク デバッグのセットアップ、バーチャル マシン ホストの](setting-up-network-debugging-of-a-virtual-machine-host.md)します。
 
-Hyper-v の hyper-v 仮想マシン (VM) をデバッグする方法の詳細については、[ネットワーク デバッグのセットアップの仮想マシン - KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)を参照してください。
+Hyper-v の hyper-v 仮想マシン (VM) をデバッグする方法の詳細については、次を参照してください。[ネットワーク デバッグのセットアップの仮想マシン - KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)します。
 
 ### <a name="enabling-kdnet-on-a-hyper-v-host-that-is-running-vms-with-external-network-connectivity"></a>外部ネットワーク接続を備えた Vm を実行している hyper-v ホストで KDNET の有効化
 

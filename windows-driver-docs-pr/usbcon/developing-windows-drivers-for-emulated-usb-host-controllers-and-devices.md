@@ -1,14 +1,14 @@
 ---
-Description: Developing Windows drivers for emulated USB devices (UDE)
+Description: 列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
 title: 列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b36a2057ea3a8ab84023ef2bfa96e830d28f5d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377414"
 ---
 # <a name="developing-windows-drivers-for-emulated-usb-devices-ude"></a>列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
 
@@ -44,7 +44,7 @@ ms.locfileid: "56581277"
 <a href="usb-emulated-device--ude--architecture.md" data-raw-source="[Architecture: USB Device Emulation (UDE)](usb-emulated-device--ude--architecture.md)">アーキテクチャ:USB デバイスのエミュレーション (UDE)</a>
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers](usb-3-0-driver-stack-architecture.md)">ホスト側の USB ドライバー</a> Windows で
 <p><strong>エミュレートされたホスト コント ローラーとデバイスのドライバーの記述</strong></p>
-<p>UDE オブジェクトとハンドルの把握します。 詳細については、WDF オブジェクトは、<a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>を参照してください。</p>
+<p>UDE オブジェクトとハンドルの把握します。 詳細については、WDF オブジェクトは、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
 <p>動作を理解、UDE のクライアント ドライバーと、クライアント ドライバーである機能との対話方法を実装する必要があります。</p>
 <p><a href="writing-a-ude-client-driver.md" data-raw-source="[Write a UDE client driver](writing-a-ude-client-driver.md)">UDE クライアント ドライバーを作成します。</a></p>
 <p><strong>プログラミング リファレンスのセクション</strong></p>

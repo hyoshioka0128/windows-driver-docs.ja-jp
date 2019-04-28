@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88642600c5a82518f58f9b5487d2a3adcb8e5259
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380735"
 ---
 # <a name="process-for-installing-network-components"></a>ネットワーク コンポーネントをインストールするためのプロセス
 

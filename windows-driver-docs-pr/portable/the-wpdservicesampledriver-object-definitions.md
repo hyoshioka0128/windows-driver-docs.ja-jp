@@ -1,16 +1,16 @@
 ---
-Description: Defining the Service Objects
-title: サービス オブジェクトを定義します。
+Description: サービス オブジェクトの定義
+title: サービス オブジェクトの定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 965836fb50baeb873f8f5edee9be2c618fc5cdcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370630"
 ---
-# <a name="defining-the-service-objects"></a>サービス オブジェクトを定義します。
+# <a name="defining-the-service-objects"></a>サービス オブジェクトの定義
 
 
 WPD では、デバイス上の論理エンティティをオブジェクトと呼びます。 オブジェクトは、デバイスの情報や機能の部分を表すことができます。 任意のオブジェクトには、1 つまたは複数のプロパティがあります。 プロパティは、オブジェクトの説明のメタデータとして考えることができます。 たとえば、サンプル ドライバーでアドレス帳サービス オブジェクトは、サービスのフレンドリ名を指定する名前プロパティをサポートします。

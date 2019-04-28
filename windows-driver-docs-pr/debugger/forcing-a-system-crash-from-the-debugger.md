@@ -1,6 +1,6 @@
 ---
-title: デバッガーから強制的にシステムのクラッシュ
-description: デバッガーから強制的にシステムのクラッシュ
+title: デバッガーからのシステム クラッシュの強制実行
+description: デバッガーからのシステム クラッシュの強制実行
 ms.assetid: 7d7d9b07-00a3-4f87-8eb9-01b3f2fa312f
 keywords:
 - デバッガーの原因と、システムのクラッシュ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6cb6b4a90323a247a652f8f6b4c1567206f68a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371655"
 ---
-# <a name="forcing-a-system-crash-from-the-debugger"></a>デバッガーから強制的にシステムのクラッシュ
+# <a name="forcing-a-system-crash-from-the-debugger"></a>デバッガーからのシステム クラッシュの強制実行
 
 
 ## <span id="ddk_forcing_a_system_crash_from_the_debugger_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_DEBUGGER_DBG"></span>

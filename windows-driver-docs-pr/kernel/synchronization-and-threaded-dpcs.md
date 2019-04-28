@@ -1,6 +1,6 @@
 ---
-title: 同期とスレッド Dpc
-description: 同期とスレッド Dpc
+title: 同期とスレッド DPC
+description: 同期とスレッド DPC
 ms.assetid: b4f2c77b-226c-4229-bcbb-5eebabdc28a4
 keywords:
 - スレッドの Dpc WDK カーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43c99ddab8dde7102ad0ab4fc8d6762c5b4f1709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378004"
 ---
-# <a name="synchronization-and-threaded-dpcs"></a>同期とスレッド Dpc
+# <a name="synchronization-and-threaded-dpcs"></a>同期とスレッド DPC
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56532340"
 
 **KeAcquireSpinLockForDpc**と**KeAcquireInStackQueuedSpinLockForDpc**ディスパッチで呼び出されたときに、IRQL をリセットしない\_レベルが高速に実行よりも**KeAcquireSpinLock**と**KeAcquireInStackQueuedSpinLock**、それぞれします。
 
-スピン ロックについての詳細については、[スピン ロック](spin-locks.md)を参照してください。
+スピン ロックについての詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
 
  
 

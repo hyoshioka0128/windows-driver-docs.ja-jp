@@ -1,19 +1,19 @@
 ---
-title: クラスのインストーラーと共同インストーラーによってレジストリへのアクセス
-description: クラスのインストーラーと共同インストーラーによってレジストリへのアクセス
+title: クラス インストーラーと共同インストーラーでのレジストリへのアクセス
+description: クラス インストーラーと共同インストーラーでのレジストリへのアクセス
 ms.assetid: 40034E3C-4248-4783-A9D8-3E968F7A7F79
 keywords:
 - レジストリ WDK デバイスのインストール、アクセスします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30857d4864044def08504e83661d0ff906ec1aea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374580"
 ---
-# <a name="accessing-the-registry-by-class-installers-and-co-installers"></a>クラスのインストーラーと共同インストーラーによってレジストリへのアクセス
+# <a name="accessing-the-registry-by-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーでのレジストリへのアクセス
 
 
 このセクションの説明に関するガイドライン*クラス インストーラー*と*co-installer*アクセスまたはレジストリ キーと値を変更したときに従う必要があります。 次のガイドラインは、次のトピックについて説明します。

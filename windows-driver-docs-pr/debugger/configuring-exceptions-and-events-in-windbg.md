@@ -1,17 +1,17 @@
 ---
-title: WinDbg で例外とイベントの構成
+title: WinDbg での例外とイベントの構成
 description: 特定の方法で指定された例外とイベントに対応するための WinDbg を構成することができます。 例外ごとに、中断状態と処理の状態を設定できます。
 ms.assetid: B91DD7B6-5206-4BA6-8B49-8ECCA2FA730B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10c50d9012bda84a5a02afacfccb8b6c2cfda45b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375570"
 ---
-# <a name="configuring-exceptions-and-events-in-windbg"></a>WinDbg で例外とイベントの構成
+# <a name="configuring-exceptions-and-events-in-windbg"></a>WinDbg での例外とイベントの構成
 
 
 特定の方法で指定された例外とイベントに対応するための WinDbg を構成することができます。 例外ごとに、中断状態と処理の状態を設定できます。 各イベントに対して、中断状態を設定できます。
@@ -28,7 +28,7 @@ ms.locfileid: "56532246"
 
 -   使用して、 [ **SXE**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)、 **SXD**、 **SXN**、または**SXI**コマンド。
 
-例外とイベントの詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+例外とイベントの詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
  
 

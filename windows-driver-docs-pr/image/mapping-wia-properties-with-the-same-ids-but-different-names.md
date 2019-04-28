@@ -1,17 +1,17 @@
 ---
-title: WIA プロパティで同じ Id が異なる名前のマッピング
-description: WIA プロパティで同じ Id が異なる名前のマッピング
+title: 同じ ID で異なる名前を持つ WIA プロパティのマッピング
+description: 同じ ID で異なる名前を持つ WIA プロパティのマッピング
 ms.assetid: 0321db59-74a1-4294-bbaf-ec0b9317464b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12b5e4b21bc58c97c2e04130ceb3181e6f0719f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380360"
 ---
-# <a name="mapping-wia-properties-with-the-same-ids-but-different-names"></a>WIA プロパティで同じ Id が異なる名前のマッピング
+# <a name="mapping-wia-properties-with-the-same-ids-but-different-names"></a>同じ ID で異なる名前を持つ WIA プロパティのマッピング
 
 
 Windows Vista 対応よりもさまざまなプロパティ名が同じプロパティ Id を持つ Windows XP プロパティがあります。 これらの Windows XP ルート プロパティと Windows vista に変換されるフラット ベッドとフィーダー (ADF) のプロパティのテーブルは、次のとおりです。

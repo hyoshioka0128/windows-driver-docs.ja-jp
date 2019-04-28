@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 47c58d1e3c69326d49447c3eace367cc69ad4b92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375305"
 ---
 # <a name="wditlvdisassociationindicationparameters"></a>WDI\_TLV\_戻せません\_INDICATION\_パラメーター
 
@@ -38,7 +38,7 @@ WDI\_TLV\_関連付け解除\_INDICATION\_パラメーターがの関連付け�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

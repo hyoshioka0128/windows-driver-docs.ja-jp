@@ -1,6 +1,6 @@
 ---
-title: 取得して、情報を設定します。
-description: 取得して、情報を設定します。
+title: 情報の取得と設定
+description: 情報の取得と設定
 ms.assetid: 48de3b16-0aaf-4703-ac19-03d7808b687a
 keywords:
 - 接続指向 NDIS WDK、情報の収集
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3bf64e366993919a9a8aa2f88c44f86c35191d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376636"
 ---
-# <a name="obtaining-and-setting-information"></a>取得して、情報を設定します。
+# <a name="obtaining-and-setting-information"></a>情報の取得と設定
 
 
 

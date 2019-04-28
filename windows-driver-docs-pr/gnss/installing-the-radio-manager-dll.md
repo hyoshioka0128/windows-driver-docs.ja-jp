@@ -1,17 +1,17 @@
 ---
-title: ラジオ マネージャー DLL をインストールします。
+title: 無線マネージャー DLL のインストール
 description: ラジオ manager DLL をインストールするには、次の手順に従う必要があります。
 ms.assetid: 49D9DF01-2440-49DE-91C3-2DCAF8CA1C64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 090c2b41f2774d0d68399afe7785fa8093d7d4dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371034"
 ---
-# <a name="installing-the-radio-manager-dll"></a>ラジオ マネージャー DLL をインストールします。
+# <a name="installing-the-radio-manager-dll"></a>無線マネージャー DLL のインストール
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。

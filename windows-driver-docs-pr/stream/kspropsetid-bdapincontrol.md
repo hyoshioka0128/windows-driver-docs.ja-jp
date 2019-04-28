@@ -5,11 +5,11 @@ ms.assetid: f3c6ae83-d50f-49c8-a851-763f191f1932
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c7d765eef00b29bc36c20fb68337b9d90104d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371840"
 ---
 # <a name="kspropsetidbdapincontrol"></a>KSPROPSETID\_BdaPinControl
 
@@ -35,7 +35,7 @@ BDA フィルターの各ピンの工場出荷時に、このプロパティを�
 
 このプロパティのプロパティは、戻り値については、pin を設定します。 通常、フィルターのピンは、これらのプロパティのいずれか傍受する必要はありません。 BDA サポート ライブラリには、 **BdaPropertyGetPinControl**既定のこのプロパティのセットを処理する関数。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**BdaCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff556445), [**BdaInitFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556464), [**BdaPropertyGetPinControl**](https://msdn.microsoft.com/library/windows/hardware/ff556483), [KSMETHODSETID\_BdaDeviceConfiguration](ksmethodsetid-bdadeviceconfiguration.md)
 

@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c61818f522849d9738d622feee193944ff2faa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379381"
 ---
 # <a name="wcifsredirectionecpcontext-structure"></a>WCIFS\_リダイレクト\_ECP\_CONTEXT 構造体
 
@@ -39,7 +39,7 @@ typedef struct _WCIFS_REDIRECTION_ECP_CONTEXT {
 } WCIFS_REDIRECTION_ECP_CONTEXT, *PWCIFS_REDIRECTION_ECP_CONTEXT;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **サイズ**  
@@ -55,8 +55,8 @@ typedef struct _WCIFS_REDIRECTION_ECP_CONTEXT {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

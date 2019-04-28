@@ -1,6 +1,6 @@
 ---
-title: ミニドライバーが指定したコールバック
-description: ミニドライバーが指定したコールバック
+title: ミニドライバーで指定されるコールバック
+description: ミニドライバーで指定されるコールバック
 ms.assetid: df5bbc1c-988f-4e07-9783-4f380f85c2b6
 keywords:
 - ジョイスティックに WDK を非表示にコールバック
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f3cbf1b6f41f9cfe73584847a40aa24a6e8b1d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372971"
 ---
-# <a name="minidriver-supplied-callbacks"></a>ミニドライバーが指定したコールバック
+# <a name="minidriver-supplied-callbacks"></a>ミニドライバーで指定されるコールバック
 
 
 

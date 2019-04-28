@@ -1,17 +1,17 @@
 ---
-title: PwrTest 要求シナリオ
+title: PwrTest の要求シナリオ
 description: PwrTest 要求のシナリオでは、プロセスとが発生したときに、システムで実行されているサービスから power 要求を記録します。
 ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a75d6084b5e3650dd795892235105e2f6e81854
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382666"
 ---
-# <a name="pwrtest-requests-scenario"></a>PwrTest 要求シナリオ
+# <a name="pwrtest-requests-scenario"></a>PwrTest の要求シナリオ
 
 
 PwrTest 要求のシナリオでは、プロセスとが発生したときに、システムで実行されているサービスから power 要求を記録します。
@@ -30,7 +30,7 @@ pwrtest /requests [/t:n] [/?]
 <span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
 シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /requests  

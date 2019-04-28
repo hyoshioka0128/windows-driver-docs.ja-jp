@@ -5,11 +5,11 @@ ms.assetid: ca5fe108-b4fb-4c90-87bc-9901854780d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2832acc46db365c425315e4b92f6dcdd51d6dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378496"
 ---
 # <a name="accessing-umdf-metadata-in-wer-reports"></a>WER レポートでの UMDF メタデータへのアクセス
 
@@ -213,7 +213,7 @@ WdfComponentMax</code>
 <tr class="odd">
 <td align="left">2</td>
 <td align="left">ExceptionCode</td>
-<td align="left"><p>理由、例外が発生しました。 値の一覧は、<a href="https://msdn.microsoft.com/library/windows/desktop/aa363082" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363082)"> <strong>EXCEPTION_RECORD</strong></a>を参照してください。</p></td>
+<td align="left"><p>理由、例外が発生しました。 値の一覧は、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/desktop/aa363082" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363082)"> <strong>EXCEPTION_RECORD</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">3</td>
@@ -299,12 +299,12 @@ WdfComponentMax</code>
 <tr class="even">
 <td align="left">3</td>
 <td align="left">エラー番号</td>
-<td align="left">内部でのみ使用します。</td>
+<td align="left">内部使用のみです。</td>
 </tr>
 <tr class="odd">
 <td align="left">4</td>
 <td align="left">Location</td>
-<td align="left">内部でのみ使用します。</td>
+<td align="left">内部使用のみです。</td>
 </tr>
 <tr class="even">
 <td align="left">5</td>

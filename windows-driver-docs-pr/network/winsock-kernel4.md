@@ -1,6 +1,6 @@
 ---
-title: Winsock Kernel
-description: Winsock Kernel
+title: Winsock カーネル
+description: Winsock カーネル
 ms.assetid: 89d389ff-1a5e-4889-8009-c0fe3b6273f9
 keywords:
 - Winsock カーネル WDK ネットワーク
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ebcdf392e9063330793ce8c470088197d06416e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379792"
 ---
-# <a name="winsock-kernel"></a>Winsock Kernel
+# <a name="winsock-kernel"></a>Winsock カーネル
 
 
 このセクションでは、Winsock カーネル (WSK) について説明し、次のトピックが含まれています。

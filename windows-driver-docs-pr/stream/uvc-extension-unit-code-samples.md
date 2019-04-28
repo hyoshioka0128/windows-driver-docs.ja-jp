@@ -1,6 +1,6 @@
 ---
-title: UVC 拡張機能単位のコード サンプル
-description: UVC 拡張機能単位のコード サンプル
+title: UVC 拡張ユニットのコード サンプル
+description: UVC 拡張ユニットのコード サンプル
 ms.assetid: c4f24646-57ea-4467-ad48-a3e6044658e3
 keywords:
 - 拡張機能ユニット WDK USB ビデオ クラスのサンプル
@@ -8,16 +8,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61190b022ef78b5e0d40c9eacb588806fbc8b0ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374044"
 ---
-# <a name="uvc-extension-unit-code-samples"></a>UVC 拡張機能単位のコード サンプル
+# <a name="uvc-extension-unit-code-samples"></a>UVC 拡張ユニットのコード サンプル
 
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [単位の拡張機能サンプル コントロールを作成](building-the-extension-unit-sample-control.md)
 
@@ -35,7 +35,7 @@ ms.locfileid: "56538667"
 
 [UVC INF ファイルを提供します。](providing-a-uvc-inf-file.md)
 
-Windows の UVC ドライバーの詳細については、[USB ビデオ クラス ドライバーの概要](usb-video-class-driver-overview.md)を参照してください。
+Windows の UVC ドライバーの詳細については、次を参照してください。 [USB ビデオ クラス ドライバーの概要](usb-video-class-driver-overview.md)します。
 
  
 

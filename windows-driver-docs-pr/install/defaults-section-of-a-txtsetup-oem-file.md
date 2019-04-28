@@ -1,5 +1,5 @@
 ---
-title: TxtSetup.oem ファイルの既定値のセクション
+title: TxtSetup.oem ファイルの既定のセクション
 description: 既定値のセクションでは、このファイルでサポートされる各ハードウェア コンポーネントの既定のドライバーが一覧表示します。 Windows では、ユーザーにドライバーの一覧を表示するときに、既定の選択が強調表示されます。
 ms.assetid: 5f7fc7c8-543d-442a-911d-320aa19c72f0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7c98d6f4028da4a476219e87393a656d8e1e9603
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369497"
 ---
-# <a name="defaults-section-of-a-txtsetupoem-file"></a>TxtSetup.oem ファイルの既定値のセクション
+# <a name="defaults-section-of-a-txtsetupoem-file"></a>TxtSetup.oem ファイルの既定のセクション
 
 
 **既定**セクションには、このファイルでサポートされる各ハードウェア コンポーネントの既定のドライバーが一覧表示されます。 Windows では、ユーザーにドライバーの一覧を表示するときに、既定の選択が強調表示されます。

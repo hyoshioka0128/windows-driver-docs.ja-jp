@@ -1,6 +1,6 @@
 ---
-title: モードのアセンブリでのデバッグ
-description: モードのアセンブリでのデバッグ
+title: アセンブリ モードでのデバッグ
+description: アセンブリ モードでのデバッグ
 ms.assetid: 048c43ff-7f9e-4a20-a524-44f66d92eefe
 keywords:
 - アセンブリのデバッグ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78107ec7196f9948dddecd85dd12458c01a14347
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377227"
 ---
-# <a name="debugging-in-assembly-mode"></a>モードのアセンブリでのデバッグ
+# <a name="debugging-in-assembly-mode"></a>アセンブリ モードでのデバッグ
 
 
 ## <span id="ddk_debugging_in_assembly_mode_dbg"></span><span id="DDK_DEBUGGING_IN_ASSEMBLY_MODE_DBG"></span>
@@ -89,7 +89,7 @@ WinDbg の逆アセンブル ウィンドウでショートカット メニュ�
 
 アプリケーションは、アセンブリ言語で記述されたが、デバッガーを生成する逆アセンブリに、元のコードが一致も一致しないがあります。 具体的には、キャッシュなしで、コメントは表示されません。
 
-元の .asm ファイルを参照することで、コードをデバッグする場合は、ソース モードのデバッグを使用する必要があります。 アセンブリ ファイルなど、C または C++ ソース ファイルを読み込むことができます。 この種のデバッグの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
+元の .asm ファイルを参照することで、コードをデバッグする場合は、ソース モードのデバッグを使用する必要があります。 アセンブリ ファイルなど、C または C++ ソース ファイルを読み込むことができます。 この種のデバッグの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。
 
  
 

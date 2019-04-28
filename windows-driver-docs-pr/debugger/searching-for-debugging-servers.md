@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3dfbf210bd28e7ff008da18015e0f24d95af58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382005"
 ---
 # <a name="searching-for-debugging-servers"></a>デバッグ サーバーの検索
 
@@ -39,7 +39,7 @@ Debugger -QR \\Server
 
 使用することができます、WinDbg で、**リモート デバッガー セッションへの接続**使用可能なサーバーの一覧を参照するダイアログ ボックス。 参照してください[ファイル |リモート セッションに接続する](file---connect-to-remote-session.md)詳細についてはします。
 
-**注**  こと、デバッグ サーバーを検出するには、昇格した特権でアクティブ必要があります。 詳細については、[デバッグ サーバー アクティブ化する](activating-a-debugging-server.md)を参照してください。
+**注**  こと、デバッグ サーバーを検出するには、昇格した特権でアクティブ必要があります。 詳細については、次を参照してください。[デバッグ サーバー アクティブ化する](activating-a-debugging-server.md)します。
 
  
 

@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da5af0cfc1d32625baa6a14654a209fbde2ba8c1
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377919"
 ---
 # <a name="release-signing-driver-packages"></a>ドライバー パッケージのリリース署名
 
@@ -96,7 +96,7 @@ PnP デバイス インストールの署名要件を遵守するには、署名
 
 PnP デバイス インストールの署名の要件は、非 PnP ドライバーには適用されません。
 
-**注**  署名済みカタログ ファイルを使用して通常より簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、[テスト署名ドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)を参照してください。
+**注**  署名済みカタログ ファイルを使用して通常より簡単かつよりも効率的には埋め込み署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)します。
 
  
 
@@ -114,7 +114,7 @@ PnP デバイス インストールの署名の要件は、非 PnP ドライバ�
 
 3.  [カタログ ファイルの SPC 署名を検証](verifying-the-spc-signature-of-a-catalog-file.md)です。
 
-この種類のドライバーが署名付き[カタログ ファイル](catalog-files.md)埋め込みの署名ではなく、ドライバーをインストールするインストール アプリケーションは、システム コンポーネントおよびドライバー データベースでカタログ ファイルをインストールする必要があります。 詳細については、[Release-Signed カタログ ファイルを非 PnP ドライバーのインストール](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)を参照してください。
+この種類のドライバーが署名付き[カタログ ファイル](catalog-files.md)埋め込みの署名ではなく、ドライバーをインストールするインストール アプリケーションは、システム コンポーネントおよびドライバー データベースでカタログ ファイルをインストールする必要があります。 詳細については、次を参照してください。 [Release-Signed カタログ ファイルを非 PnP ドライバーのインストール](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)します。
 
  
 

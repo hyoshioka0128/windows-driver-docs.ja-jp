@@ -5,11 +5,11 @@ ms.assetid: A7973588-5AED-494E-92CA-D5EFB2C7950A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1a96c82c7ce74f3d9d36b4eff463ff11978b018
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380596"
 ---
 # <a name="networkdirect-disconnect-scheme"></a>NetworkDirect 切断スキーム
 
@@ -22,7 +22,7 @@ ms.locfileid: "56548653"
 
 以下は、A と B は、ND 接続の両側を参照してください。 A のコンシューマーが ND コンシューマー側に、プロバイダー、側に、ND プロバイダーを参照およびコンシューマー B/プロバイダー B が B. 側でこれらの同じエンティティを指す同様にA のコンシューマーを呼び出すと*NdDisconnect*、プロバイダーの A を正常に送信する必要がありますが B の側に通知を切断し、コンシューマー A の完了*NdDisconnect*要求のみの両方の次の条件が発生した場合。
 
--   次のいずれかを行います。
+-   次のいずれかの操作を行います。
     -   正常な切断通知 B から受信した (A のコンシューマーが正常に完了につながる*NdDisconnect*)、または
     -   接続の中断やタイムアウトなど、エラーが発生しました (A のコンシューマーにつながる*NdDisconnect*エラーで完了する)。
 -   (サイレント成功フラグで投稿された作業要求 DMA アクティビティ) を含む QP 上のすべての DMA アクティビティが終了しました。

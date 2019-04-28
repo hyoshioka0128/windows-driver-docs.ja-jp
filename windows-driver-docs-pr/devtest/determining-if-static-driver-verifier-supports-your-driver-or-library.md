@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier に、ドライバーまたはライブラリがサポートしているかを決定します。
+title: ドライバーまたはライブラリが静的ドライバー検証ツールでサポートされているかどうかの判定
 description: Static Driver Verifier (SDV) は、WDM、KMDF、NDIS、および Storport のドライバーとライブラリをサポートできます。 調べるには、ドライバーまたはライブラリがサポートされていて正しく構成されているかどうか、このセクションで説明されている要件を参照してください。
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe67c93afa12172b53cca50763f77eb2f3d6f87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382980"
 ---
-# <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>Static Driver Verifier に、ドライバーまたはライブラリがサポートしているかを決定します。
+# <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>ドライバーまたはライブラリが静的ドライバー検証ツールでサポートされているかどうかの判定
 
 
 Static Driver Verifier (SDV) は完全に WDM、KMDF、NDIS、および Storport のドライバーとライブラリをサポートし、その他のドライバーのサポートが限られています。 調べるには、ドライバーまたはライブラリがサポートされていて正しく構成されているかどうか、このセクションで説明されている要件を参照してください。
@@ -21,7 +21,7 @@ Static Driver Verifier (SDV) は完全に WDM、KMDF、NDIS、および Storport
 
 ドライバーまたはライブラリは次の条件のいずれかを満たす場合は、SDV の分析ツールでルールの完全なセットを実行できます。
 
--   WDM ドライバーやライブラリがあるし、ドライバーまたはライブラリがクラスのフレームワーク (Microsoft 提供のライブラリ) にリンクされません。 詳細については、[クラス フレームワーク ライブラリ](#class-framework-libraries)を参照してください。
+-   WDM ドライバーやライブラリがあるし、ドライバーまたはライブラリがクラスのフレームワーク (Microsoft 提供のライブラリ) にリンクされません。 詳細については、次を参照してください。[クラス フレームワーク ライブラリ](#class-framework-libraries)します。
 -   ある、ドライバーやライブラリ WdfLdr.lib または WdfDriverEntry.lib にリンクします。
 -   ある、ドライバーやライブラリ NDIS.lib にリンクします。
 -   ある、ドライバーやライブラリ Storport.lib にリンクします。

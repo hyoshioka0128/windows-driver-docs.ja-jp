@@ -5,11 +5,11 @@ ms.assetid: 39d51828-cfb3-4692-be9b-a89411ba7841
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a207ce0bfb05f886a6328c3018cedb9d7c584c1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377630"
 ---
 # <a name="about-contexts"></a>コンテキストについて
 

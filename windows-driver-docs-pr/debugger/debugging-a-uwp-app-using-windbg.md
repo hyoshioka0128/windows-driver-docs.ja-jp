@@ -1,27 +1,27 @@
 ---
-title: WinDbg を使用して UWP アプリのデバッグ
+title: WinDbg を使用した UWP アプリのデバッグ
 description: WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1e3ffdbbde7fd0177e3ab5707f1be90e887d1a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377195"
 ---
-# <a name="debugging-a-uwp-app-using-windbg"></a>WinDbg を使用して UWP アプリのデバッグ
+# <a name="debugging-a-uwp-app-using-windbg"></a>WinDbg を使用した UWP アプリのデバッグ
 
 
-WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。 このアプローチは通常使用の高度なシナリオは、場所、ビルドを使用して Visual Studio デバッガーでデバッグ タスクを完了することはできません。 Visual Studio でのデバッグの詳細については、[Visual Studio でのデバッグ](https://msdn.microsoft.com/library/sc65sadd.aspx)を参照してください。
+WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。 このアプローチは通常使用の高度なシナリオは、場所、ビルドを使用して Visual Studio デバッガーでデバッグ タスクを完了することはできません。 Visual Studio でのデバッグの詳細については、次を参照してください。 [Visual Studio でのデバッグ](https://msdn.microsoft.com/library/sc65sadd.aspx)します。
 
 ## <a name="span-idattachingtoauwpappspanspan-idattachingtoauwpappspanspan-idattachingtoauwpappspanattaching-to-a-uwp-app"></a><span id="Attaching_to_a_UWP_app"></span><span id="attaching_to_a_uwp_app"></span><span id="ATTACHING_TO_A_UWP_APP"></span>UWP アプリへのアタッチ
 
 
-UWP のプロセスにアタッチすると、ユーザー モード プロセスにアタッチする場合と同じです。 たとえば、WinDbg で割り当てることができます、実行中のプロセスを選択して**ファイルからプロセスにアタッチ**メニューまたは F6 キーを押しています。 詳細については、[デバッグ ユーザー モード プロセスを使用して WinDbg](debugging-a-user-mode-process-using-windbg.md)を参照してください。
+UWP のプロセスにアタッチすると、ユーザー モード プロセスにアタッチする場合と同じです。 たとえば、WinDbg で割り当てることができます、実行中のプロセスを選択して**ファイルからプロセスにアタッチ**メニューまたは F6 キーを押しています。 詳細については、次を参照してください。[デバッグ ユーザー モード プロセスを使用して WinDbg](debugging-a-user-mode-process-using-windbg.md)します。
 
-UWP アプリは、デバッグ中でない場合と同じ方法では中断されません。 明示的に中断または再開するため、UWP アプリを .suspendpackage と .resumepackage コマンド (以下の詳細) を使用できます。 プロセスのライフ サイクル管理 (PLM) UWP アプリで使用される一般的な情報は、[アプリのライフ サイクル](https://msdn.microsoft.com/library/windows/apps/mt243287)と[Launching, resuming, とバック グラウンド タスク](https://msdn.microsoft.com/library/windows/apps/mt227652)を参照してください。
+UWP アプリは、デバッグ中でない場合と同じ方法では中断されません。 明示的に中断または再開するため、UWP アプリを .suspendpackage と .resumepackage コマンド (以下の詳細) を使用できます。 プロセスのライフ サイクル管理 (PLM) UWP アプリで使用される一般的な情報は、次を参照してください。[アプリのライフ サイクル](https://msdn.microsoft.com/library/windows/apps/mt243287)と[Launching, resuming, とバック グラウンド タスク](https://msdn.microsoft.com/library/windows/apps/mt227652)します。
 
 ## <a name="span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app"></a><span id="Launching_and_debugging__a_UWP_app"></span><span id="launching_and_debugging__a_uwp_app"></span><span id="LAUNCHING_AND_DEBUGGING__A_UWP_APP"></span>起動して、UWP アプリのデバッグ
 
@@ -51,7 +51,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId は、アプリケーション マニフェスト ファイルにあるし、このトピックで説明したように、.querypackage または .querypackages コマンドを使用して表示できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>を参照してください。</p></td>
+<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;パラメーター&gt;]</td>
@@ -150,7 +150,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tr class="odd">
 <td align="left">&lt;BackgroundTaskId&gt;</td>
 <td align="left"><p>BackgroundTaskId を以下に示すように、.querypackages コマンドを使用して配置できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>を参照してください。</p></td>
+<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -186,7 +186,7 @@ Background Task Id: {ee4438ee-22db-4cdd-85e4-8ad8a1063523}
 
 表示する .querypackage を使用するには、完全なパッケージ名がわかっている場合、*バック グラウンド タスク Id*フィールド。
 
-PLMDebug の enumerateBgTasks オプションを使用して、BackgroundTaskId を検索することもできます。 PMLDebug utiltity の詳細については、[ **PLMDebug**](plmdebug.md)を参照してください。
+PLMDebug の enumerateBgTasks オプションを使用して、BackgroundTaskId を検索することもできます。 PMLDebug utiltity の詳細については、次を参照してください。 [ **PLMDebug**](plmdebug.md)します。
 
 ```console
 C:\Program Files\Debugging Tools for Windows (x64)>PLMDebug /enumerateBgTasks Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe
@@ -315,7 +315,7 @@ AppId: BackgroundTask.App
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId は、このトピックで前述したように、.querypackage または .querypackages を使用して配置できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>を参照してください。</p></td>
+<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;パラメーター&gt;]</td>

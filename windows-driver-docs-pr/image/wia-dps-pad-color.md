@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45da42ad8c6d7d70794a31c49e9d3ea44d79beca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378070"
 ---
 # <a name="wiadpspadcolor"></a>WIA\_DPS\_パッド\_色
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc5a4284a241b2756acdef04bcbe55a133473bd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374362"
 ---
 # <a name="debug--event-filters"></a>Debug | Event Filters (デバッグ | イベント フィルター)
 
@@ -43,7 +43,7 @@ ms.locfileid: "56574557"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断状態と状態、イベントのすべてのコード、すべてのイベント、およびこの状態を制御するための他のメソッドの既定の状態の処理の詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+中断状態と状態、イベントのすべてのコード、すべてのイベント、およびこの状態を制御するための他のメソッドの既定の状態の処理の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
  
 

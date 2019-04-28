@@ -1,6 +1,6 @@
 ---
-title: モニター クラスの関数のドライバー
-description: モニター クラスの関数のドライバー
+title: モニター クラスの関数ドライバー
+description: モニター クラスの関数ドライバー
 ms.assetid: d16c3dcc-2fbf-4579-8962-1b89e6e7b347
 keywords:
 - 複数のモニター WDK
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a46c032183e55f26c665f3e3bd40c2e6553e55a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376762"
 ---
-# <a name="monitor-class-function-driver"></a>モニター クラスの関数のドライバー
+# <a name="monitor-class-function-driver"></a>モニター クラスの関数ドライバー
 
 
 ## <span id="ddk_monitor_class_function_driver_gg"></span><span id="DDK_MONITOR_CLASS_FUNCTION_DRIVER_GG"></span>

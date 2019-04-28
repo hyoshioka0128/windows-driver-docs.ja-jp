@@ -1,6 +1,6 @@
 ---
-title: バインディングを一時停止
-description: バインディングを一時停止
+title: バインドの一時停止
+description: バインドの一時停止
 ms.assetid: 7f693904-d995-4fcb-8b88-9343a567602e
 keywords:
 - プロトコル ドライバー WDK ネットワークは、一時停止のバインド
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51b05346510c8582c71482312464a1bcb3e58aa2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376248"
 ---
-# <a name="pausing-a-binding"></a>バインディングを一時停止
+# <a name="pausing-a-binding"></a>バインドの一時停止
 
 
 

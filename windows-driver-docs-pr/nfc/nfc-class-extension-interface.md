@@ -4,18 +4,18 @@ description: NFC CX のインターフェイスは、UMDF クラスの拡張機�
 ms.assetid: 400043BE-4C16-40C7-B0EB-BA223F882F21
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d60d7e74f98e30aa4ff0f22085b1be7ddff40ca5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378679"
 ---
 # <a name="nfc-class-extension-interface"></a>NFC クラスの拡張機能インターフェイス
 

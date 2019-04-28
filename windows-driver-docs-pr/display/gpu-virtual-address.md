@@ -1,17 +1,17 @@
 ---
-title: GPU の仮想アドレス
+title: GPU 仮想アドレス
 description: グラフィックス プロセッシング ユニット (GPU) の仮想アドレスは、デバイス ドライバー インターフェイス (DDI) レベルで 4 KB (64 kb) の論理ページで管理されます。
 ms.assetid: 65BD05FC-06FD-4DC2-977A-7F48E72B4858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e710b677e222d1b93f7b57c3714e8b81c420c4fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373941"
 ---
-# <a name="gpu-virtual-address"></a>GPU の仮想アドレス
+# <a name="gpu-virtual-address"></a>GPU 仮想アドレス
 
 
 グラフィックス プロセッシング ユニット (GPU) の仮想アドレスは、デバイス ドライバー インターフェイス (DDI) レベルで 4 KB (64 kb) の論理ページで管理されます。 これにより、システム メモリ、4 KB の粒度で常に割り当てられた、または管理できるは 4 KB (64 kb) のいずれかでメモリ セグメントのページを参照する GPU の仮想アドレス。

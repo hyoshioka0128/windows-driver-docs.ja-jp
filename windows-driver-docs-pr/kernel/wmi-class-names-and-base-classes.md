@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ff351f5606a65786c69fb4b635229e30dd5c581
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380926"
 ---
 # <a name="wmi-class-names-and-base-classes"></a>WMI クラス名と基本クラス
 
@@ -46,7 +46,7 @@ class MSSerial_StandardSerialInformation : MSSerial
 }
 ```
 
-デバイスに固有のカスタム データ ブロックが基底クラス名では、製造元、モデル、およびドライバーまたはデバイスの種類を含める必要があります。 例:
+デバイスに固有のカスタム データ ブロックが基底クラス名では、製造元、モデル、およびドライバーまたはデバイスの種類を含める必要があります。 次に、例を示します。
 
 ```cpp
 [abstract]
@@ -62,7 +62,7 @@ class Adaptec1542_Speed : Adaptec1542 {
 }
 ```
 
-WMI は、特定のクラス階層内の 1 つだけの抽象基本クラスをできます。 イベント ブロックを定義するクラスがから派生する必要があります**WmiEvent**、抽象基本クラスであるため、**抽象**イベント ブロックのドライバーの定義の基本クラスで修飾子は使用できません。 代わりに、非抽象基本クラスから派生させる**WmiEvent**、基本クラスから個々 のイベント クラスを派生します。 例:
+WMI は、特定のクラス階層内の 1 つだけの抽象基本クラスをできます。 イベント ブロックを定義するクラスがから派生する必要があります**WmiEvent**、抽象基本クラスであるため、**抽象**イベント ブロックのドライバーの定義の基本クラスで修飾子は使用できません。 代わりに、非抽象基本クラスから派生させる**WmiEvent**、基本クラスから個々 のイベント クラスを派生します。 次に、例を示します。
 
 ```cpp
 //Serial driver's base class for event blocks

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DISALLOWED_BSSIDS_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ad8824c6a1264b3601d24fc52a8ebefb6c164373
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380884"
 ---
 # <a name="wditlvdisallowedbssidslist"></a>WDI\_TLV\_許可しない\_BSSID\_一覧
 
@@ -31,7 +31,7 @@ WDI\_TLV\_許可しない\_BSSID\_リストは、関連付けに使用するの�
 ## <a name="values"></a>値
 
 
-| 種類                                                  | 説明                                                                                                                                               |
+| 型                                                  | 説明                                                                                                                                               |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)\[\] | 関連付けに使用するのには許可されていない Bssid の一覧。 アダプターがこの一覧にない任意の AP に関連付ける必要がありますいない場合、これを指定すると、 |
 

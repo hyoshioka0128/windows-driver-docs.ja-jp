@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 25b0276fee830c90e681222fa078712aea7fdbfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378938"
 ---
 # <a name="smsendctpassthru-function"></a>SM\_SendCTPassThru 関数
 
@@ -58,7 +58,7 @@ void SM_SendCTPassThru(
 一般的なトランスポート コマンドの結果。 ミニポート ドライバーでは、この情報を返します、SM の RequestBuffer メンバー\_SendCTPassThru\_構造体。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendCTPassThru\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_SendCTPassThru\_構造体。
 
 *TotalResponseBufferSize*   
 結果の一般的なトランスポート コマンドのバイト単位のサイズ。 ミニポート ドライバーでは、この情報を返します、SM の TotalResponseBufferSize メンバー\_SendCTPassThru\_構造体。

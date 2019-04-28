@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2285475e6da8a4a66c7e0ed5b44977a42db4bc62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382937"
 ---
 # <a name="d3dkmtwddm20caps-structure"></a>D3DKMT\_WDDM\_2\_0\_CAPS 構造体
 
@@ -43,7 +43,7 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS {
 } D3DKMT_WDDM_2_0_CAPS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **Support64BitAtomics**
@@ -52,11 +52,11 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS {
 
 **IoMmuSupported**
 
-**予約されています**
+**Reserved**
 
 **値**
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

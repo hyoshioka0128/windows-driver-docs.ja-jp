@@ -1,6 +1,6 @@
 ---
-title: 現在の位置を使用します。
-description: 現在の位置を使用します。
+title: 現在のファイル位置の使用
+description: 現在のファイル位置の使用
 ms.assetid: d342d973-8fff-4d00-a275-114012c17727
 keywords:
 - ファイルの WDK カーネル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d1fc467973915a96aa87b646c0784561f1423c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372362"
 ---
-# <a name="using-the-current-file-position"></a>現在の位置を使用します。
+# <a name="using-the-current-file-position"></a>現在のファイル位置の使用
 
 
 

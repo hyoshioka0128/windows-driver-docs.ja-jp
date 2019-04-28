@@ -1,17 +1,17 @@
 ---
-title: WIA 項目のフラグとカテゴリの使用例
-description: WIA 項目のフラグとカテゴリの使用例
+title: WIA 項目のフラグおよびカテゴリの使用例
+description: WIA 項目のフラグおよびカテゴリの使用例
 ms.assetid: 8c9f7d85-6c84-4df9-9db3-6554d7eddf93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9ca6a4825773e4be9998ee3cef7554b6f012207
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373160"
 ---
-# <a name="example-usage-of-wia-item-flags-and-categories"></a>WIA 項目のフラグとカテゴリの使用例
+# <a name="example-usage-of-wia-item-flags-and-categories"></a>WIA 項目のフラグおよびカテゴリの使用例
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 上位のサーフェス
-description: 上位のサーフェス
+title: 高次サーフェス
+description: 高次サーフェス
 ms.assetid: 2cbca6e0-ab32-454f-999a-89862eb8ece5
 keywords:
 - WDK の Windows 2000 の表示、上位のサーフェスの DirectX 8.0 リリース ノートします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b1674cd78c8777f05f086ecbf5990ec7b3abe15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374597"
 ---
-# <a name="high-order-surfaces"></a>上位のサーフェス
+# <a name="high-order-surfaces"></a>高次サーフェス
 
 
 ## <span id="ddk_high_order_surfaces_gg"></span><span id="DDK_HIGH_ORDER_SURFACES_GG"></span>

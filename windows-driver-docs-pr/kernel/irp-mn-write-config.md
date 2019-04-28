@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_WRITE_CONFIG Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bb1da29df64250ee92f5f00d1edce07afa2b871
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381394"
 ---
 # <a name="irpmnwriteconfig"></a>IRP\_MN\_書き込み\_構成
 

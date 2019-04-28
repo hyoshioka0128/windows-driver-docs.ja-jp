@@ -1,6 +1,6 @@
 ---
-title: I/O スタックの場所
-description: I/O スタックの場所
+title: I/O スタック位置
+description: I/O スタック位置
 ms.assetid: 62c8ee00-c7cb-4aa1-90ab-b8bedbd818ee
 keywords:
 - Irp WDK カーネルでは、I/O スタックの場所
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae09b1cddf0813a586a499b5f2c360011eeffc27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380941"
 ---
-# <a name="io-stack-locations"></a>I/O スタックの場所
+# <a name="io-stack-locations"></a>I/O スタック位置
 
 
 
@@ -66,7 +66,7 @@ I/O マネージャーは、複数層のドライバーのチェーンでは、�
 
 -   [**IRP\_MJ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff550784) -デバイスの電源操作を実行します。 **IRP\_MJ\_POWER** I/O マネージャーを通じて電源マネージャー要求を送信します。
 
-ドライバーが処理するために必要な主要な IRP の関数コードの詳細については、[IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)を参照してください。
+ドライバーが処理するために必要な主要な IRP の関数コードの詳細については、次を参照してください。 [IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)します。
 
 一般に、I/O マネージャーは、ファイル システムが他のドライバーの大容量記憶装置上に構築されたために、少なくとも 2 つの大容量記憶装置デバイス ドライバーへの I/O スタックの場所で Irp を送信します。 I/O マネージャーは、Irp をその上層の他のドライバーがない任意のドライバーを 1 つのスタックの場所に送信します。
 

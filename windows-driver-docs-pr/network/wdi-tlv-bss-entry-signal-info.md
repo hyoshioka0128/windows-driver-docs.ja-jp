@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_BSS_ENTRY_SIGNAL_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 589ce10edc66861e06ec1721367e5876dce2dc32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379182"
 ---
 # <a name="wditlvbssentrysignalinfo"></a>WDI\_TLV\_BSS\_エントリ\_信号\_情報
 
@@ -31,7 +31,7 @@ WDI\_TLV\_BSS\_エントリ\_信号\_情報が BSS エントリのシグナル�
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                                        |
+| 型   | 説明                                                                                                                                                                        |
 |--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | INT32  | ピアからビーコンまたはプローブの応答の受信信号強度指標 (RSSI) 値。 この値は 1.0 ミリ ワット (dBm) を参照するデシベル単位で指定します。 |
 | UINT32 | 0 ~ 100 の値で指定されたリンクの品質。 100 の値には、リンクの最高の品質を指定します。                                                                            |

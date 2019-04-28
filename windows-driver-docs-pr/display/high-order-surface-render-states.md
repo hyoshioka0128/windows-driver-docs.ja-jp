@@ -1,6 +1,6 @@
 ---
-title: 高注文画面描画状態
-description: 高注文画面描画状態
+title: 高次サーフェスのレンダー状態
+description: 高次サーフェスのレンダー状態
 ms.assetid: c664e0b8-8b96-4f66-bb9c-b87c5d5e7a05
 keywords:
 - DirectX 8.0 リリース ノート WDK Windows 2000 の表示、上位のサーフェスの状態を表示します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df0e494a2d1bfd1071c9632aca13f96027da877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374594"
 ---
-# <a name="high-order-surface-render-states"></a>高注文画面描画状態
+# <a name="high-order-surface-render-states"></a>高次サーフェスのレンダー状態
 
 
 ## <span id="ddk_high_order_surface_render_states_gg"></span><span id="DDK_HIGH_ORDER_SURFACE_RENDER_STATES_GG"></span>
@@ -34,7 +34,7 @@ ms.locfileid: "56560945"
 
 ### <a name="span-idd3drsdeletertpatchspanspan-idd3drsdeletertpatchspan-d3drsdeletertpatch"></a><span id="d3drs_deletertpatch"></span><span id="D3DRS_DELETERTPATCH"></span> D3DRS\_DELETERTPATCH
 
-このレンダリング状態では、修正プログラムが削除するのには、ドライバーに通知します。 詳細については、[ **D3DRENDERSTATETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff549036)を参照してください。
+このレンダリング状態では、修正プログラムが削除するのには、ドライバーに通知します。 詳細については、次を参照してください。 [ **D3DRENDERSTATETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff549036)します。
 
  
 

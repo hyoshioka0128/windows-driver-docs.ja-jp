@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_LINK_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a574119515ed9402407593b374e40dd3176886e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375698"
 ---
 # <a name="ndisstatuslinkstate"></a>NDIS\_状態\_リンク\_状態
 
@@ -41,7 +41,7 @@ NDIS は、NDIS 5 も変換します。*x* NDIS 6.0 とそれ以降のドライ�
 
 -   [ **NDIS\_状態\_リンク\_速度\_変更**](ndis-status-link-speed-change.md)状態を示す値、および[OID\_GEN\_リンク\_速度](https://msdn.microsoft.com/library/windows/hardware/ff569593)OID を使用して、リンク速度の状態を生成します。
 
-リンクのステータスの詳細については、[OID\_GEN\_リンク\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569595)を参照してください。
+リンクのステータスの詳細については、次を参照してください。 [OID\_GEN\_リンク\_状態](https://msdn.microsoft.com/library/windows/hardware/ff569595)します。
 
 <a name="requirements"></a>要件
 ------------

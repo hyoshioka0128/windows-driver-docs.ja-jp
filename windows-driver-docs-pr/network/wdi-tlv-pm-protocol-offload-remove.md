@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 779f047d2fef0119316cd945bfafbff74de34792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382151"
 ---
 # <a name="wditlvpmprotocoloffloadremove"></a>WDI\_TLV\_PM\_プロトコル\_オフロード\_削除
 
@@ -31,13 +31,13 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                        |
+| 型   | 説明                        |
 |--------|------------------------------------|
 | UINT32 | プロトコルのオフロード ID を指定します |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: be0e255440c752edb89520acbef67c24423603e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368014"
 ---
 # <a name="dxvadeinterlacebobdeviceclassdeinterlaceblt-method"></a>DXVA\_DeinterlaceBobDeviceClass::DeinterlaceBlt メソッド
 
@@ -67,7 +67,7 @@ HRESULT DeinterlaceBlt(
 
 0 を返します (S\_[ok] または DD\_OK) 成功した場合、それ以外の場合、エラー コードを返します。 参照してください*ddraw.h*エラー コードの完全な一覧についてはします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *DeinterlaceBlt*関数のマップへの呼び出しに直接、 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 **RenderMoComp**メンバーが参照するディスプレイ ドライバーによって提供される関数を指す、 [ **DD\_RENDERMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551693)構造体。 DD\_RENDERMOCOMPDATA 構造は次のように入力されます。

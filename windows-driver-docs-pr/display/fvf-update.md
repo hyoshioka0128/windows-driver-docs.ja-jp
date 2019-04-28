@@ -1,19 +1,19 @@
 ---
-title: FVF Update
-description: FVF Update
+title: FVF 更新
+description: FVF 更新
 ms.assetid: 2bbcb1fd-b29f-41f4-93eb-5bd1cde9cb20
 keywords:
 - FVF WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 842af6b95b24364acd77dc15f8e66fa20ddf60cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377988"
 ---
-# <a name="fvf-update"></a>FVF Update
+# <a name="fvf-update"></a>FVF 更新
 
 
 ## <span id="ddk_fvf_update_gg"></span><span id="DDK_FVF_UPDATE_GG"></span>
@@ -44,8 +44,8 @@ FVF コード最初に定義された DirectX 6.0 ようになりました Direc
 <div>
  
 </div>
-Value</th>
-<th align="left">意味</th>
+値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +86,7 @@ D3DRENDERSTATE で使用するフラグ\_ラップ*n*レンダリングの状態
 <thead>
 <tr class="header">
 <th align="left">フラグ</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

@@ -1,17 +1,17 @@
 ---
-title: イベント通知を提供します。
-description: イベント通知を提供します。
+title: イベント通知の提供
+description: イベント通知の提供
 ms.assetid: 53ca7ef0-fa8b-4ae1-9b5e-b145c2d02db2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9651d28f798138c8ba78f67e18c0ed11f33732ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379628"
 ---
-# <a name="providing-event-notification"></a>イベント通知を提供します。
+# <a name="providing-event-notification"></a>イベント通知の提供
 
 
 

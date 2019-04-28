@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f1a2ff29bd16f0eba6a57b54be41173c750db8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373576"
 ---
 # <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi Direct ペアリングの実装
 
@@ -26,7 +26,7 @@ ms.locfileid: "57464196"
 
  
 
-**注**  Wi-fi alliance の Wi-fi P2P 通信事業者の構成レコードを Wi-Fi Direct の静的な接続に移行する Windows 10 が NFC にもサポートしています。 詳細については、[Wi-fi Alliance](http://www.wi-fi.org)を参照してください。
+**注**  Wi-fi alliance の Wi-fi P2P 通信事業者の構成レコードを Wi-Fi Direct の静的な接続に移行する Windows 10 が NFC にもサポートしています。 詳細については、次を参照してください。 [Wi-fi Alliance](http://www.wi-fi.org)します。
 
  
 
@@ -127,7 +127,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 
 ### <a name="oob-header-attribute-format"></a>OOB ヘッダー属性の形式
 
-| フィールド名        | サイズ (オクテット) | [値]    | 説明                                                                                                    |
+| フィールド名        | サイズ (オクテット) | 値    | 説明                                                                                                    |
 |-------------------|---------------|----------|----------------------------------------------------------------------------------------------------------------|
 | データの合計の長さ | 2             | 変数 | OOB データ Blob 全体 (ヘッダーを含む) の長さ。                                                             |
 | 長さ            | 2             | 変数 | OOB のヘッダーには、次のフィールドの長さ。                                                                  |
@@ -253,7 +253,7 @@ Wi-Fi Direct ペアリングを使用して、NFC フォーラムに標準化さ
 
 ### <a name="oob-provisioning-info-attribute-format"></a>OOB プロビジョニング情報の属性の形式
 
-| フィールド名                   | サイズ (オクテット) | [値]                   | 説明                                                                                                                                                             |
+| フィールド名                   | サイズ (オクテット) | 値                   | 説明                                                                                                                                                             |
 |------------------------------|---------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                 | 1             | 1                       | P2P OOB 属性の型を識別します。 特定の値が定義されている*P2P OOB 属性*テーブル。                                                                 |
 | 長さ                       | 2             | 変数                | 属性には、次のフィールドの長さ。                                                                                                                        |

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f872dd485775f2f05552c2ce539accbad0ee309
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377885"
 ---
 # <a name="virtual-connection-context"></a>仮想接続のコンテキスト
 
@@ -31,7 +31,7 @@ VC では、接続指向の 2 つのエンティティ間の論理接続です�
 
 コール マネージャーに呼び出すことによって、VC できます非アクティブ化後の呼び出しが完了するか、VC、それ以外の場合は必要ありません、 [ **Ndis (M) CmDeactivateVc**](https://msdn.microsoft.com/library/windows/hardware/ff561657)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeactivateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559356)関数。 接続指向クライアントまたはコール マネージャーは、呼び出すことによって、VC の削除を開始できる[ **NdisCoDeleteVc**](https://msdn.microsoft.com/library/windows/hardware/ff561698)、それが原因でを呼び出す、ミニポート ドライバーの NDIS [ **MiniportCoDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff559358)関数。
 
-Vc のミニポート ドライバー操作の詳細については、[VCs に対する操作](operations-on-vcs.md)を参照してください。
+Vc のミニポート ドライバー操作の詳細については、次を参照してください。 [VCs に対する操作](operations-on-vcs.md)します。
 
  
 

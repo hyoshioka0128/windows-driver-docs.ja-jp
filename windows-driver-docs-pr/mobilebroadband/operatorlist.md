@@ -5,11 +5,11 @@ ms.assetid: 28006331-aa65-4b33-ae94-a027c8a60d48
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f74580ab4eca2660504b1c1b43fd588176fc4587
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375705"
 ---
 # <a name="operatorlist"></a>OperatorList
 
@@ -46,7 +46,7 @@ OperatorList 要素には、APN データベースに含まれる演算子の一
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="operator.md" data-raw-source="[Operator](operator.md)">演算子</a></p></td>
+<td><p><a href="operator.md" data-raw-source="[Operator](operator.md)">[演算子]</a></p></td>
 <td><p>演算子の詳細を指定します。</p></td>
 </tr>
 </tbody>

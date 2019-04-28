@@ -1,17 +1,17 @@
 ---
-title: WIA Microdriver の構築
-description: WIA Microdriver の構築
+title: WIA マイクロドライバーの作成
+description: WIA マイクロドライバーの作成
 ms.assetid: dcec3079-2844-4d87-b2e4-0c1850118192
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fe2bdb19ccc7141c2a32cf72b7305339d2207ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373321"
 ---
-# <a name="building-a-wia-microdriver"></a>WIA Microdriver の構築
+# <a name="building-a-wia-microdriver"></a>WIA マイクロドライバーの作成
 
 
 

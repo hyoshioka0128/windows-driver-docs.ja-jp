@@ -1,6 +1,6 @@
 ---
-title: クライアント ドライバー スタックで IEC 61883 プロトコル ドライバー
-description: クライアント ドライバー スタックで IEC 61883 プロトコル ドライバー
+title: クライアント ドライバー スタックの IEC-61883 プロトコル ドライバー
+description: クライアント ドライバー スタックの IEC-61883 プロトコル ドライバー
 ms.assetid: cee0c0ee-7326-421c-af5a-b483c878b289
 keywords:
 - IEC 61883 クライアント ドライバー WDK IEEE 1394 バス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac6e3d63d61c8c9d711d791f96670eaf321d70ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376688"
 ---
-# <a name="iec-61883-protocol-driver-in-a-client-driver-stack"></a>クライアント ドライバー スタックで IEC 61883 プロトコル ドライバー
+# <a name="iec-61883-protocol-driver-in-a-client-driver-stack"></a>クライアント ドライバー スタックの IEC-61883 プロトコル ドライバー
 
 
 

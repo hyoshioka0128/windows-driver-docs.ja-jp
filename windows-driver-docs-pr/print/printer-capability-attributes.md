@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eefb56f0fc8d4f93c6b7d370972197e986141c6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380532"
 ---
 # <a name="printer-capability-attributes"></a>プリンター機能属性
 
@@ -42,7 +42,7 @@ ms.locfileid: "57349029"
 <td><p></p>
 プリンターのメモリに格納されているデータの種類を示す定数のリスト。 1 つ以上を指定できます。フォントのラスター ベクター
 <p>データ型が表示されているが、プリンターでサポートされていない、する場合は無視されます。</p></td>
-<td><p>任意。 指定しない場合、既定値は (フォント、ラスター、ベクトル) の一覧にします。 詳細については、<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">プリンター メモリの構成を記述する</a>を参照してください。</p></td>
+<td><p>任意。 指定しない場合、既定値は (フォント、ラスター、ベクトル) の一覧にします。 詳細については、次を参照してください。<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">プリンター メモリの構成を記述する</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>OEMCustomData</strong></p></td>
@@ -97,7 +97,7 @@ AFTER_FF - CmdFF コマンドの後にします。</td>
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
 ### <a href="" id="additional-information-about--reversebandorderforevenpages-"></a>に関する追加情報\*ReverseBandOrderForEvenPages でしょうか。
 

@@ -1,17 +1,17 @@
 ---
-title: カーネル モードの管理者とライブラリ
-description: カーネル モードの管理者とライブラリ
+title: カーネルモードのマネージャーとライブラリ
+description: カーネルモードのマネージャーとライブラリ
 ms.assetid: 6361224b-ab7c-411f-91b5-48bf51ee634d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 474fb404d7f4b7af541917b37709210d0c1a0469
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381380"
 ---
-# <a name="kernel-mode-managers-and-libraries"></a>カーネル モードの管理者とライブラリ
+# <a name="kernel-mode-managers-and-libraries"></a>カーネルモードのマネージャーとライブラリ
 
 
 Windows では、デバイス ドライバーを呼び出すルーチンをエクスポートするいくつかのコンポーネントがあります。 次のトピックでは、これらのコンポーネントについて説明し、それらがエクスポート ルーチンとそれらに関する詳細情報へのリンクを提供します。

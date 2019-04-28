@@ -1,19 +1,19 @@
 ---
-title: マクロ ブロックのアドレス
-description: マクロ ブロックのアドレス
+title: マクロブロック アドレス
+description: マクロブロック アドレス
 ms.assetid: f04c5462-db7c-4917-b8ef-22a630c82994
 keywords:
 - WDK DirectX va なので、マクロ ブロックをアドレスします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e609bb2729ffb292677697735cd821b790681efc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375377"
 ---
-# <a name="macroblock-addresses"></a>マクロ ブロックのアドレス
+# <a name="macroblock-addresses"></a>マクロブロック アドレス
 
 
 ## <span id="ddk_macroblock_addresses_gg"></span><span id="DDK_MACROBLOCK_ADDRESSES_GG"></span>
@@ -35,7 +35,7 @@ ms.locfileid: "56559914"
 <tbody>
 <tr class="odd">
 <td align="left"><p>左</p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右上</p></td>

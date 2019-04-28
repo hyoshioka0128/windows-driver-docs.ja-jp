@@ -1,6 +1,6 @@
 ---
-title: 双方向通信のスキーマの階層構造
-description: 双方向通信のスキーマの階層構造
+title: 双方向通信のスキーマ履歴
+description: 双方向通信のスキーマ履歴
 ms.assetid: b3435c17-f72b-4925-8d13-bd3e71b4947e
 keywords:
 - 双方向通信スキーマ WDK の印刷
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17a038643a66fabf8374255195d22fd1ffa909d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379042"
 ---
-# <a name="bidirectional-communication-schema-hierarchy"></a>双方向通信のスキーマの階層構造
+# <a name="bidirectional-communication-schema-hierarchy"></a>双方向通信のスキーマ履歴
 
 双方向通信のスキーマには、次の階層またはツリーのプロパティと値が含まれています。
 

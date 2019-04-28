@@ -5,18 +5,18 @@ ms.assetid: 8b1bf9d4-1aea-4d82-b783-f6dc62b9f8f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f76526d1a75834facd711b09636b5547b82fc5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377639"
 ---
 # <a name="container-ids-generated-from-a-removable-device-capability-override"></a>リムーバブル デバイス機能のオーバーライドで生成されるコンテナー ID
 
 
 Windows 7 以降、新しいデバイスはバスに固有の一意の ID を提供する必要があります (」の説明に従って[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md))。
 
-または、デバイスとバス ドライバーする必要がありますリムーバブル デバイスの機能が正しく設定 (」の説明に従って[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md))。 リムーバブル デバイスの機能の詳細については、[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)を参照してください。
+または、デバイスとバス ドライバーする必要がありますリムーバブル デバイスの機能が正しく設定 (」の説明に従って[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md))。 リムーバブル デバイスの機能の詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)します。
 
 Windows 7 および Windows の以降のバージョンは、報告されたリムーバブル デバイスの機能をオーバーライドするためのメカニズムもサポートします。 このメカニズムは、リムーバブル デバイスの機能の報告する従来のデバイスに適しています。
 

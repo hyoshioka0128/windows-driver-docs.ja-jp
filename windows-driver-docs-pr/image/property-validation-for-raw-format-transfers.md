@@ -1,17 +1,17 @@
 ---
-title: RAW 形式転送プロパティの検証
-description: RAW 形式転送プロパティの検証
+title: 未処理形式転送のプロパティ検証
+description: 未処理形式転送のプロパティ検証
 ms.assetid: ad58f94e-d59e-4d04-be27-cc87f89f3d76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5aa60825d0339c62c13640eb9c57126f8350d4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379632"
 ---
-# <a name="property-validation-for-raw-format-transfers"></a>RAW 形式転送プロパティの検証
+# <a name="property-validation-for-raw-format-transfers"></a>未処理形式転送のプロパティ検証
 
 
 ドライバーは、RAW 形式のデータ転送する前に、WIA プロパティの設定を検証する必要があります。 WIA プロパティは、次のように設定する必要があります。

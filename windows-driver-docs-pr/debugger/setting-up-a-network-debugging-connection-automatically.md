@@ -10,11 +10,11 @@ keywords:
 ms.date: 09/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d33e84652f94172fa4df340ae488450cee94615f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381946"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>KDNET ネットワーク カーネル デバッグの自動設定
 
@@ -50,7 +50,7 @@ ms.locfileid: "56573659"
 
 Kdnet.exe ユーティリティを使用すると、次の手順では対象のコンピューターのデバッガーの設定を自動的に構成します。
 
-1. Windows デバッグ ツールがホスト システム上にインストールされていることを確認します。 ダウンロードして、デバッガー ツールのインストールについては、[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)を参照してください。 
+1. Windows デバッグ ツールがホスト システム上にインストールされていることを確認します。 ダウンロードして、デバッガー ツールのインストールについては、次を参照してください。[デバッグ ツールの Windows にダウンロード](debugger-download-tools.md)します。 
 
 2. 検索、 *kdnet.exe*と*VerifiedNICList.xml*ファイル。 既定では、これらはここにします。
 
@@ -59,7 +59,7 @@ Kdnet.exe ユーティリティを使用すると、次の手順では対象の�
    ```
 
    > [!NOTE]
-   > 次の手順では、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットは、32 ビット Windows を実行している、ホスト上の 32 のバージョンのデバッガーを実行します。 詳細については、[32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)を参照してください。
+   > 次の手順では、両方の Pc に、ターゲットとホストの両方で Windows の 64 ビット バージョンが実行されていることを前提としています。 場合はそうでない、最適な方法では、ターゲットを実行しているホストでツールの同じ「ビット数」を実行します。 たとえば、ターゲットは、32 ビット Windows を実行している、ホスト上の 32 のバージョンのデバッガーを実行します。 詳細については、次を参照してください。 [32 ビットまたは 64 ビット デバッグ ツールを選択する](choosing-a-32-bit-or-64-bit-debugger-package.md)します。
    > 
 
 3. ホスト コンピューターでは、2 つのファイルをネットワーク共有にコピーまたはつまみのドライブでは、ターゲット コンピューター上で使用できるようにします。
@@ -153,7 +153,7 @@ WinDbg のポートにアクセスを許可するポートをファイアウォ�
 
 Kdnet.exe を実行すると、そのネットワーク アダプターがサポートされていないことと、「このマシンの Nic のいずれかのネットワークのデバッグはサポートされていません」の場合は表示されます。 
 
-ホスト コンピューターは、任意のネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)と[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)を参照してください。
+ホスト コンピューターは、任意のネットワーク アダプターを使用できますが、ターゲット コンピューターが Windows のツールをデバッグでサポートされているネットワーク アダプターを使用する必要があります。 サポートされているネットワーク アダプターの一覧は、次を参照してください。[イーサネット Nic を Windows 10 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)と[イーサネット Nic を Windows 8.1 でのネットワーク カーネル デバッグのサポートされている](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)します。
 
 
 

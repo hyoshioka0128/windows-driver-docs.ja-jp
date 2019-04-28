@@ -1,6 +1,6 @@
 ---
-title: UMDF 1.x ドライバーでクライアントの偽装を処理します。
-description: UMDF 1.x ドライバーでクライアントの偽装を処理します。
+title: UMDF 1.x ドライバーでのクライアント偽装の処理
+description: UMDF 1.x ドライバーでのクライアント偽装の処理
 ms.assetid: 25beab8c-e6b8-479b-ad60-fcc3b5b56a6d
 keywords:
 - ユーザー モード ドライバー フレームワーク WDK、権限借用
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 329f57369e88186a9dcc750ed11fac48b4003a98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378118"
 ---
-# <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでクライアントの偽装を処理します。
+# <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのクライアント偽装の処理
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
@@ -31,7 +31,7 @@ UMDF ドライバーは通常、LocalService アカウントで実行し、フ�
 
 UMDF ドライバーのインストール パッケージと、クライアント アプリケーションの両方必要がありますを有効にするフレームワークの権限の借用機能では、次のように。
 
--   UMDF ドライバーのインストール パッケージの INF ファイルを含める必要があります、 **UmdfImpersonationLevel**ディレクティブと許容される最大の偽装レベルを設定します。 偽装を有効にすると、INF ファイルが含まれる場合にのみ、 **UmdfImpersonationLevel**ディレクティブ。 権限借用レベルを設定する方法についての詳細については、[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)を参照してください。
+-   UMDF ドライバーのインストール パッケージの INF ファイルを含める必要があります、 **UmdfImpersonationLevel**ディレクティブと許容される最大の偽装レベルを設定します。 偽装を有効にすると、INF ファイルが含まれる場合にのみ、 **UmdfImpersonationLevel**ディレクティブ。 権限借用レベルを設定する方法についての詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
 -   クライアント アプリケーションでは、各ファイル ハンドル用に許可される偽装レベルを設定する必要があります。 アプリケーションでは、Microsoft Win32 の品質 (QoS) のサービスの設定の**CreateFile**許可される偽装レベルを設定します。 これらの設定の詳細については、次を参照してください。、 *dwFlagsAndAttributes*パラメーターの**CreateFile** Windows SDK のドキュメント。
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c854288285992a6e451d02a4b3715411700a3e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373444"
 ---
 # <a name="wdfdeclarecustomtype-macro"></a>WDF_DECLARE_CUSTOM_TYPE マクロ
 
@@ -45,7 +45,7 @@ void WDF_DECLARE_CUSTOM_TYPE(
 
 呼び出すときに**WDF_DECLARE_CUSTOM_TYPE**ドライバーは、独自のカスタム型の名前を定義します。 カスタム型の名前を選択する場合は、ドライバーのドメインに固有の名前を選択します。 通常、始めないでください、カスタムの型名のプレフィックスを持つ*Wdf*します。
 
-オブジェクトのカスタム種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
+オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
 
 <a name="examples"></a>例
 --------

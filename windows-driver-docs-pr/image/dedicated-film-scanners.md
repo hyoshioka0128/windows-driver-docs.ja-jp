@@ -5,11 +5,11 @@ ms.assetid: 1f8b73eb-a81a-4db3-b5be-b0a01a12696a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a83fc8ff94eb9b5b3962b249d82ab9d17cb8f0c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373242"
 ---
 # <a name="dedicated-film-scanners"></a>専用のフィルム スキャナー
 

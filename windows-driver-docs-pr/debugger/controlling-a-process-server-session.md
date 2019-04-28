@@ -1,19 +1,19 @@
 ---
-title: プロセス サーバーのセッションを制御します。
-description: プロセス サーバーのセッションを制御します。
+title: プロセス サーバー セッションの制御
+description: プロセス サーバー セッションの制御
 ms.assetid: 4219b08a-d353-43dc-8640-96c504b8075b
 keywords:
 - プロセス サーバー、セッションを制御します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c193ba0539d8fed3ce7ff2c934275a4f32009da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375564"
 ---
-# <a name="controlling-a-process-server-session"></a>プロセス サーバーのセッションを制御します。
+# <a name="controlling-a-process-server-session"></a>プロセス サーバー セッションの制御
 
 
 ## <span id="ddk_controlling_a_process_server_session_dbg"></span><span id="DDK_CONTROLLING_A_PROCESS_SERVER_SESSION_DBG"></span>

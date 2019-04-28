@@ -1,6 +1,6 @@
 ---
-title: ACPI の概要 4.0 オブジェクトの使用状況測定の電源
-description: ACPI の概要 4.0 オブジェクトの使用状況測定の電源
+title: ACPI 4.0 電力計測オブジェクトの概要
+description: ACPI 4.0 電力計測オブジェクトの概要
 ms.assetid: 91488b88-bbdc-40e9-9095-2ea3fb7d69ad
 keywords:
 - 使用状況の測定と予算の WDK、オブジェクトの使用状況測定 ACPI 4.0 電源を電源します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f03bd14336c5fddca298b6f7775ef8114bf4d161
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381261"
 ---
-# <a name="overview-of-the-acpi-40-power-metering-objects"></a>ACPI の概要 4.0 オブジェクトの使用状況測定の電源
+# <a name="overview-of-the-acpi-40-power-metering-objects"></a>ACPI 4.0 電力計測オブジェクトの概要
 
 
 ACPI 電力メーター インターフェイス (PMI) では、使用状況測定、予算 WDM PMI インターフェイスを提供するドライバーへのハードウェア プラットフォームの機能と能力を公開します。

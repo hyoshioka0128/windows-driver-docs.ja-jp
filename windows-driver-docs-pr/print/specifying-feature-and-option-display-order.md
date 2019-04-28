@@ -1,6 +1,6 @@
 ---
-title: 指定する機能とオプションの表示順序
-description: 指定する機能とオプションの表示順序
+title: 機能とオプションの表示順序を指定する
+description: 機能とオプションの表示順序を指定する
 ms.assetid: 51e18121-540b-40f0-85f8-eb2755a583f7
 keywords:
 - Unidrv、機能およびオプションの表示順序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2acd8b8c621ce6c9822388c988778ff9dd59c7e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372067"
 ---
-# <a name="specifying-feature-and-option-display-order"></a>指定する機能とオプションの表示順序
+# <a name="specifying-feature-and-option-display-order"></a>機能とオプションの表示順序を指定する
 
 
 

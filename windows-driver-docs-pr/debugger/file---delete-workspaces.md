@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03cd2f8ea06bc8d50cdf1bbdc549319b8a94e474
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374351"
 ---
-# <a name="file--delete-workspaces"></a>ファイル |ワークスペースを削除します。
+# <a name="file--delete-workspaces"></a>File | Delete Workspaces (ファイル | ワークスペースを削除)
 
 
 ## <span id="ddk_file_delete_workspaces_dbg"></span><span id="DDK_FILE_DELETE_WORKSPACES_DBG"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56527836"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ワークスペースとその使用方法のさまざまなレベルの詳細については、[を使用してワークスペース](using-workspaces.md)を参照してください。
+ワークスペースとその使用方法のさまざまなレベルの詳細については、次を参照してください。[を使用してワークスペース](using-workspaces.md)します。
 
  
 

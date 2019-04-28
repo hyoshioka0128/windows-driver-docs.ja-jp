@@ -1,6 +1,6 @@
 ---
-title: WdbgExts 拡張機能の作成
-description: WdbgExts 拡張機能の作成
+title: WdbgExts 拡張機能の構築
+description: WdbgExts 拡張機能の構築
 ms.assetid: a3923de6-bed5-40e0-a9cb-99e0f4354448
 keywords:
 - ビルド ユーティリティ (build.exe) WdbgExts 拡張機能の作成
@@ -9,13 +9,13 @@ keywords:
 ms.date: 10/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d76e961f07cb4cedab340efcfd8b0f82d96c3527
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373972"
 ---
-# <a name="building-wdbgexts-extensions"></a>WdbgExts 拡張機能の作成
+# <a name="building-wdbgexts-extensions"></a>WdbgExts 拡張機能の構築
 
 
 ## <span id="ddk_building_wdbgexts_extensions_dbwx"></span><span id="DDK_BUILDING_WDBGEXTS_EXTENSIONS_DBWX"></span>
@@ -42,7 +42,7 @@ ms.locfileid: "56530587"
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Value</th>
+    <th align="left">値</th>
     <th align="left">Windows のバージョン</th>
     </tr>
     </thead>

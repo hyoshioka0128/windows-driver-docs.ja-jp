@@ -1,6 +1,6 @@
 ---
-title: AVStream コーデックでの動的形式の変更のサポート
-description: AVStream コーデックでの動的形式の変更のサポート
+title: AVStream コーデックの動的形式変更のサポート
+description: AVStream コーデックの動的形式変更のサポート
 ms.assetid: ae222512-fd19-404a-aaf8-6fbfa2a3349e
 keywords:
 - ハードウェアのコーデック サポート WDK AVStream、動的形式の変更
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 030d22c07134ede6ea81131f30d783c3bbc452e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371838"
 ---
-# <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>AVStream コーデックでの動的形式の変更のサポート
+# <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>AVStream コーデックの動的形式変更のサポート
 
 
 実行中のメディア ストリームの動的形式の変更が発生したときにキャプチャ pin に新しい形式が許容されるかどうかを判断するシステム提供の Devproxy モジュールをネゴシエートします。

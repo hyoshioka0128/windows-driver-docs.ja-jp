@@ -5,11 +5,11 @@ ms.assetid: b30c9e5f-85af-4e7f-81aa-67fe2df8a178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 004d3f794cea8e65df1fa7abe9c3ee403914f847
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380346"
 ---
 # <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>デバイスのインストールとドライバーの更新プログラムの中にシステムの再起動を回避します。
 
@@ -53,7 +53,7 @@ INF ファイルを使用している場合は、次の手順に従います。
     MyDriver.sys,,,0x00004000  ; COPYFLG_IN_USE_RENAME
     ```
 
-    このフラグを使用する場合、Windows はディスク上のドライバー ファイルを置換しようとします。 詳細については、[INF CopyFiles ディレクティブ](inf-copyfiles-directive.md)を参照してください。
+    このフラグを使用する場合、Windows はディスク上のドライバー ファイルを置換しようとします。 詳細については、次を参照してください。 [INF CopyFiles ディレクティブ](inf-copyfiles-directive.md)します。
 
 2.  PnP ドライバーに対して、INF の場合は、デバイスのインストール中に、Windows が実行中のドライバーをアンロードして、新しいバージョンのドライバーを取得するために使用するデバイスを再起動するしようとします。 失敗した場合、デバイスのインストールはシステムを再起動することを示します。
 3.  PnP ドライバーに対して、INF でない場合など、メソッドを使用している[ **InstallHInfSection** ](https://msdn.microsoft.com/library/windows/desktop/aa376957) INF を処理し、手動で停止して、ドライバーを再起動します。
@@ -62,7 +62,7 @@ INF ファイルを使用している場合は、次の手順に従います。
         -   **sc.exe stop** *&lt;mydriver&gt;*
         -   **ControlService(SERVICE_CONTROL_STOP)**
 
-        詳細については、[ **ControlService 関数**](https://msdn.microsoft.com/library/windows/desktop/ms682108)を参照してください。
+        詳細については、次を参照してください。 [ **ControlService 関数**](https://msdn.microsoft.com/library/windows/desktop/ms682108)します。
 
 INF ファイルを使用していない場合は、次の手順を使用します。
 

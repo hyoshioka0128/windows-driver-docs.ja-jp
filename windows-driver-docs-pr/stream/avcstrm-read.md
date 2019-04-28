@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de3cfc78bd3bd34b4ed2880a140b41e9b7d5739c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374488"
 ---
 # <a name="avcstrmread"></a>AVCSTRM\_READ
 
@@ -117,7 +117,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 この関数のコードは、IRQL で呼び出す必要があります = パッシブ\_レベル。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**AVC\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff554194)、 [ **INIT\_AVCSTRM\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff560750)、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)、 [ **IOCTL\_AVCSTRM\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560778)、 [ **AVCSTRM\_バッファー\_構造体**](https://msdn.microsoft.com/library/windows/hardware/ff554108)、 [ **AVCSTRM\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554120)
 

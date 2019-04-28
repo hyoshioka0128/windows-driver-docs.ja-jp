@@ -1,6 +1,6 @@
 ---
-title: Stream を開閉します。
-description: Stream を開閉します。
+title: ストリームの開始と終了
+description: ストリームの開始と終了
 ms.assetid: a4895e99-ab2e-482e-b89f-04b01177ec03
 keywords:
 - ビデオ キャプチャ WDK AVStream、ストリームを開く
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9004de0fb5108653c7e532679c5bde7954cb3da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372358"
 ---
-# <a name="opening-and-closing-a-stream"></a>Stream を開閉します。
+# <a name="opening-and-closing-a-stream"></a>ストリームの開始と終了
 
 
 Stream クラス インターフェイスの送信、 [ **SRB\_開く\_ストリーム**](https://msdn.microsoft.com/library/windows/hardware/ff568191)選択されているビデオ形式でストリームを開き、Stream クラス ミニドライバーに要求します。 SRB で渡される情報\_開く\_ストリームには、ストリームを開くとへのポインターへのポインターのインデックスが含まれています、 [ **KS\_VIDEOINFOHEADER** ](https://msdn.microsoft.com/library/windows/hardware/ff567700)構造体。 ストリーム インデックスの配列内のストリームのインデックスに対応して[ **KS\_DATARANGE\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/ff567628)ようにミニドライバーに以前の応答によって返される構造体[**SRB\_取得\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff568173)要求。 SRB の処理の詳細については\_取得\_ストリーム\_についてを参照してください[Stream カテゴリ](stream-categories.md)します。

@@ -4,11 +4,11 @@ title: サンプル ドライバー セットアップ情報 (.inf) ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b24563cf737fa71dc3594efb68d8aa0f9825263a
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375212"
 ---
 # <a name="the-sample-driver-setup-information-inf-file"></a>サンプル ドライバー セットアップ情報 (.inf) ファイル
 
@@ -76,7 +76,7 @@ WpdHelloWorldDriver プロジェクトには、という名前のセットアッ
 <li>種類は 0x10001 である必要があります。</li>
 <li>有効な値 (0 または 1) を設定する必要があります。</li>
 </ul>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[Device_AddReg]</code></p>
 <p><code>HKR,,"EnableDefaultAutoPlaySupport",0x10001,1</code></p></td>
 </tr>
@@ -89,7 +89,7 @@ WpdHelloWorldDriver プロジェクトには、という名前のセットアッ
 <li>種類は 0x10001 である必要があります。</li>
 <li>有効な値 (0、1、2、または 3) を設定する必要があります。</li>
 </ul>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[Device_AddReg]</code></p>
 <p><code>HKR,,"EnableLegacySupport",0x10001,1</code></p></td>
 </tr>
@@ -124,7 +124,7 @@ WpdHelloWorldDriver プロジェクトには、という名前のセットアッ
 <td align="left">ServiceType ディレクティブ</td>
 <td align="left">このディレクティブが必要です。
 <p>このディレクティブは、1 の値を指定する必要があります。</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[WUDFRD_ServiceInstall]</code></p>
 <p><code>ServiceType=1</code></p></td>
 </tr>
@@ -133,7 +133,7 @@ WpdHelloWorldDriver プロジェクトには、という名前のセットアッ
 <td align="left">StartType ディレクティブ</td>
 <td align="left">このディレクティブが必要です。
 <p>このディレクティブは、3 の値を指定する必要があります。</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[WUDFRD_ServiceInstall]</code></p>
 <p><code>StartType=3</code></p></td>
 </tr>
@@ -141,7 +141,7 @@ WpdHelloWorldDriver プロジェクトには、という名前のセットアッ
 <td align="left">バージョン</td>
 <td align="left">クラスのパラメーター</td>
 <td align="left">このパラメーターは必須です。 "WPD"に設定する必要があります。
-<p>例:</p>
+<p>以下に例を示します。</p>
 <pre space="preserve"><code>[Version]
 Class=WPD</code></pre></td>
 </tr>
@@ -149,7 +149,7 @@ Class=WPD</code></pre></td>
 <td align="left">バージョン</td>
 <td align="left">ClassGuid パラメーター</td>
 <td align="left">このパラメーターは必須です。 有効な GUID に設定する必要があります。
-<p>例:</p>
+<p>以下に例を示します。</p>
 <pre space="preserve"><code>[Version]
 ClassGuid={EEC5AD98-8080-425f-922A-DABF3DE3F69A}</code></pre></td>
 </tr>
@@ -158,7 +158,7 @@ ClassGuid={EEC5AD98-8080-425f-922A-DABF3DE3F69A}</code></pre></td>
 <td align="left">DriverCLSID ディレクティブ</td>
 <td align="left">このディレクティブが必要です。
 <p>このディレクティブは、適切な形式の GUID を指定する必要があります。</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <pre space="preserve"><code>[WpdHelloWorldDriver_Install]
 DriverCLSID="{EC7445EE-BC00-4CED-AFE7-A52849F10239}"</code></pre></td>
 </tr>
@@ -167,7 +167,7 @@ DriverCLSID="{EC7445EE-BC00-4CED-AFE7-A52849F10239}"</code></pre></td>
 <td align="left">ServiceBinary ディレクティブ</td>
 <td align="left">このディレクティブが必要です。
 <p>このディレクティブは、フォームのパスを指定する必要があります"% 12%\wudfrd.sys"。</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p><code>[WUDFRD_ServiceInstall]</code></p>
 <p><code>ServiceBinary=%12%\WUDFRd.sys</code></p></td>
 </tr>

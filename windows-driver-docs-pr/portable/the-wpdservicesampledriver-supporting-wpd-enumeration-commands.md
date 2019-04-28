@@ -1,14 +1,14 @@
 ---
-Description: Support for enumeration commands (WpdServiceSampleDriver)
+Description: 列挙型のコマンド (WpdServiceSampleDriver) のサポート
 title: 列挙型のコマンド (WpdServiceSampleDriver) のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ee7271f82d41f60408f886682f1b2484adde82f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370480"
 ---
 # <a name="support-for-enumeration-commands-wpdservicesampledriver"></a>列挙型のコマンド (WpdServiceSampleDriver) のサポート
 

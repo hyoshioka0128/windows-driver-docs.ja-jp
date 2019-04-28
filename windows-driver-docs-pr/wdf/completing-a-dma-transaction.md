@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1956df42c795feeb8da6794f1b5b939544b20934
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376856"
 ---
 # <a name="completing-a-dma-transaction"></a>DMA トランザクションの完了
 

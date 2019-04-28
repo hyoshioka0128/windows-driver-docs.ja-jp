@@ -5,11 +5,11 @@ ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dcc5dead79529f0fe8dacc4e40fdc7a4e56516c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382927"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>Windows Vista より前に、のデバイス インターフェイスのプロパティにアクセスします。
 
@@ -24,11 +24,11 @@ Windows Server 2003、Windows XP、および Windows 2000 は、これらのデ�
 
 以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性は維持するために、デバイス インターフェイスに関する情報にアクセスするこれら 2 つの方法もサポートします。 ただし、Windows Vista およびそれ以降のバージョンでこれらのプロパティにアクセスするのにプロパティのキーを使用する必要があります。
 
-デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、[デバイス インターフェイスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541409)を参照してください。 デバイスのインターフェイス クラスのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティにアクセスするために使用に対応するキーのプロパティが表示されます。 プロパティのキーで提供される情報が含まれています、対応するレジストリ エントリの値には、存在する場合のプロパティを Windows Server 2003、Windows XP、および Windows 2000 へのアクセスに使用できます。
+デバイスのシステム定義のインターフェイス クラスのプロパティの一覧は、次を参照してください。[デバイス インターフェイスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541409)します。 デバイスのインターフェイス クラスのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティにアクセスするために使用に対応するキーのプロパティが表示されます。 プロパティのキーで提供される情報が含まれています、対応するレジストリ エントリの値には、存在する場合のプロパティを Windows Server 2003、Windows XP、および Windows 2000 へのアクセスに使用できます。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インターフェイス (Windows Vista 以降)](accessing-device-interface-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インターフェイス (Windows Vista 以降)](accessing-device-interface-properties--windows-vista-and-later-.md)します。
 
-インストールして、デバイス インターフェイスを使用する方法については、[デバイス インターフェイス クラス](device-interface-classes.md)と[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)を参照してください。
+インストールして、デバイス インターフェイスを使用する方法については、次を参照してください。[デバイス インターフェイス クラス](device-interface-classes.md)と[ **INF AddInterface ディレクティブ**](inf-addinterface-directive.md)します。
 
 ### <a href="" id="accessing-device-interface-properties-that-have-corresponding-registry"></a> 対応するレジストリ エントリの値を持つデバイス インターフェイスのプロパティにアクセスします。
 

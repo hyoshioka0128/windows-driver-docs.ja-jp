@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンドの Windows ランタイム Api の一覧
-description: モバイル ブロード バンドの Windows ランタイム Api の一覧
+title: モバイル ブロードバンド Windows ランタイム API の一覧
+description: モバイル ブロードバンド Windows ランタイム API の一覧
 ms.assetid: 45ec97c4-1a58-48a8-ad50-1cd8fcc4763f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 561d6c1eabda02ac372a62d083f855c7100ccdab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380376"
 ---
-# <a name="list-of-mobile-broadband-windows-runtime-apis"></a>モバイル ブロード バンドの Windows ランタイム Api の一覧
+# <a name="list-of-mobile-broadband-windows-runtime-apis"></a>モバイル ブロードバンド Windows ランタイム API の一覧
 
 
 次の表では、モバイル ブロード バンドのアプリを作成するための Api を示します。

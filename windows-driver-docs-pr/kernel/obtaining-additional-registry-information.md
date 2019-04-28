@@ -1,6 +1,6 @@
 ---
-title: 追加のレジストリ情報を取得します。
-description: 追加のレジストリ情報を取得します。
+title: 追加のレジストリ情報の取得
+description: 追加のレジストリ情報の取得
 ms.assetid: 989acf63-3bb1-4d9a-a7a8-3eea1e2bc68a
 keywords:
 - レジストリの呼び出しの WDK カーネル、追加の情報を取得するフィルター処理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa93162f0f9e189e34d63a2003b9fe8d0de15792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382911"
 ---
-# <a name="obtaining-additional-registry-information"></a>追加のレジストリ情報を取得します。
+# <a name="obtaining-additional-registry-information"></a>追加のレジストリ情報の取得
 
 
 Windows Vista およびそれ以降のオペレーティング システム バージョンで実行されるドライバーをフィルタ リング レジストリは、レジストリの操作に関する追加情報を取得できます。

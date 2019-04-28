@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c573cc59dd2510df307511d061f0e251170e3fde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378110"
 ---
 # <a name="scsiinquiry-function"></a>ScsiInquiry 関数
 
@@ -49,7 +49,7 @@ void ScsiInquiry(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564604)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **ScsiInquiry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564604)構造体。
 
 *Cdb*   
 ターゲット デバイスに送信される SCSI 照会コマンドを保持するコマンドの記述子ブロックします。 この情報は、ミニポート ドライバーに配信される、 **Cdb**のメンバー、 [ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564598)構造体。
@@ -83,12 +83,12 @@ SCSI 問い合わせコマンドの結果。 ミニポート ドライバーに�
 
 WMI メソッドには適用されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この WMI メソッドが属する、 [MSFC\_HBAAdapterMethods WMI クラス](msfc-hbaadaptermethods-wmi-class.md)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

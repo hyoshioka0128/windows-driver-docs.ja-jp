@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6861c3e060420c1b66be6c8f11c7571d37c3a04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375091"
 ---
 # <a name="client-objects"></a>クライアント オブジェクト
 
@@ -42,7 +42,7 @@ A*プライマリ クライアント*は現在参加して、クライアント�
 
 ### <a name="span-idadditional-informationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-作成して、クライアント オブジェクトの使用に関する詳細については、[コールバック オブジェクトを使用する](using-callback-objects.md)を参照してください。 コールバック オブジェクトの登録方法の詳細については、コールバック オブジェクトを使用するを参照してください。
+作成して、クライアント オブジェクトの使用に関する詳細については、次を参照してください。[コールバック オブジェクトを使用する](using-callback-objects.md)します。 コールバック オブジェクトの登録方法の詳細については、コールバック オブジェクトを使用するを参照してください。
 
  
 

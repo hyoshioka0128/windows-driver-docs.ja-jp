@@ -1,17 +1,17 @@
 ---
-title: Windows 用デバッグ ツールに関連するツール
+title: Debugging Tools for Windows に関連するツール
 description: このセクションでは、デバッグに関連するが、Windows のツールをデバッグ パッケージに含まれないツールについて説明します。
 ms.assetid: A121BF0C-53BF-48E0-9000-3BDA255FD884
 ms.date: 02/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eae584ca47cd113b26eb7550c8c0ff08590aa1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380794"
 ---
-# <a name="tools-related-to-debugging-tools-for-windows"></a>Windows 用デバッグ ツールに関連するツール
+# <a name="tools-related-to-debugging-tools-for-windows"></a>Debugging Tools for Windows に関連するツール
 
 
 このセクションでは、デバッグに関連するが、Windows のツールをデバッグ パッケージに含まれないツールについて説明します。

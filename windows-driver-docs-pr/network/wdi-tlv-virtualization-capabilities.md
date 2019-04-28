@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_VIRTUALIZATION_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e5b3fae800f2d84916ff8a4ea3ce408cbc9fd745
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376632"
 ---
 # <a name="wditlvvirtualizationcapabilities"></a>WDI\_TLV\_VIRTUALIZATION\_機能
 
@@ -31,7 +31,7 @@ WDI\_TLV\_VIRTUALIZATION\_機能が仮想化機能を含む TLV します。
 ## <a name="values"></a>値
 
 
-| 種類  | 説明                                                                                                                                                                                                                       |
+| 型  | 説明                                                                                                                                                                                                                       |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8 | サポートされている ExtSTA ポートの数。                                                                                                                                                                                             |
 | UINT8 | サポートされているポートを Wi-Fi Direct のグループ化の数。 この数は、ロール ポートのみを含める必要があります。 この値が 0 以外の場合、Wi-Fi Direct デバイスのポートがあると見なされます。                                               |
@@ -42,7 +42,7 @@ WDI\_TLV\_VIRTUALIZATION\_機能が仮想化機能を含む TLV します。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

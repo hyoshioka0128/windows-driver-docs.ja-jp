@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f599ee65e3f3cd977cdd8a8d474bdd8dd2a6be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378053"
 ---
 # <a name="inf-ddinstallfactdef-section"></a>INF DDInstall.FactDef セクション
 
@@ -62,7 +62,7 @@ ConfigPriority=Priority-Value
 | 電源オフ       | 電源サイクルが必要です。                                                                                                                                                                                   |
 | HARDRECONFIG   | ジャンパー変更が必要です。                                                                                                                                                                                 |
 | 固定      | 変更することはできません。                                                                                                                                                                                        |
-| 無効になっています。       | デバイスが無効になっていることを示します。                                                                                                                                                                    |
+| DISABLED       | デバイスが無効になっていることを示します。                                                                                                                                                                    |
 
  
 
@@ -95,7 +95,7 @@ start-end[([decode-mask][:alias-offset][:attr])]
  
 
 <a href="" id="alias-offset"></a>*エイリアスのオフセット値*  
-使用されません。
+使用されていません。
 
 <a href="" id="attr"></a>*attr*  
 文字を指定**M**システム メモリ内での指定した範囲がある場合。 省略した場合、指定された範囲は I/O ポートの領域では。
@@ -132,7 +132,7 @@ start-end[(attr)]
 <a name="remarks"></a>コメント
 -------
 
-指定した*DDInstall* - 製造元でデバイスに固有のエントリでは、セクションを参照する必要があります*モデル*INF ファイルのセクション。 大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 <em>DDInstall</em>**します。FactDef**クロス オペレーティング システムやクロス プラットフォーム INF ファイルでセクション名。 これらのシステム定義された拡張機能の詳細については、[INF ファイルを作成する](overview-of-inf-files.md)を参照してください。
+指定した*DDInstall* - 製造元でデバイスに固有のエントリでは、セクションを参照する必要があります*モデル*INF ファイルのセクション。 大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 <em>DDInstall</em>**します。FactDef**クロス オペレーティング システムやクロス プラットフォーム INF ファイルでセクション名。 これらのシステム定義された拡張機能の詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
 
 このセクションでは、1 つのデバイスをインストールするための完全な工場出荷時の既定の情報を含める必要があります。 INF では、このドライバーがそのデバイスを初期化する方法に適した最高の順序でエントリのセットを指定する必要があります。 必要に応じて、特定の種類のエントリの 1 つ以上のことができます。
 

@@ -4,18 +4,18 @@ description: NFP デバイス識別子
 ms.assetid: B387D3F8-A9A7-47F0-B5E3-8437581947E4
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35c5832c12c7748297d1215d79f1fef8d7323dff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375222"
 ---
 # <a name="nfp-device-identifiers"></a>NFP デバイス識別子
 

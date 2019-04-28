@@ -5,11 +5,11 @@ ms.assetid: 6382fdf6-109a-430a-b6b5-322d3eebc4a1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b52a61d4c7eb3065d71edd94b347fdb219b3be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373118"
 ---
 # <a name="retrieving-a-device-instance-identifier"></a>デバイス インスタンス識別子の取得
 
@@ -18,7 +18,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティもサポートします。 ただし、以前の Windows バージョンには、統一されたデバイス プロパティのモデルのプロパティのキーはできません。 呼び出すことによって、以前のバージョンの Windows でのデバイス インスタンス id を取得する代わりに、 [ **SetupDiGetDeviceInstanceId**](https://msdn.microsoft.com/library/windows/hardware/ff551106)します。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポート**SetupDiGetDeviceInstanceId**します。 ただし、Windows Vista では、このプロパティにアクセスするキーおよびそれ以降は、対応するプロパティを使用する必要があります。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
 Windows Server 2003、Windows XP、および Windows 2000 でデバイス インスタンス id を取得するには、次の手順に従います。
 

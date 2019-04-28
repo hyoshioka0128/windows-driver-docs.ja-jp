@@ -1,6 +1,6 @@
 ---
-title: グラフィックス DDI フォントおよびテキストの機能をサポート
-description: グラフィックス DDI フォントおよびテキストの機能をサポート
+title: グラフィックス DDI のフォントおよびテキストの関数のサポート
+description: グラフィックス DDI のフォントおよびテキストの関数のサポート
 ms.assetid: c8abf3bd-7a5a-4a48-988e-a1de1b426656
 keywords:
 - フォント WDK グラフィック
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3f8d85aad1255505674b5672949cd426fb44d72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372786"
 ---
-# <a name="supporting-graphics-ddi-font-and-text-functions"></a>グラフィックス DDI フォントおよびテキストの機能をサポート
+# <a name="supporting-graphics-ddi-font-and-text-functions"></a>グラフィックス DDI のフォントおよびテキストの関数のサポート
 
 
 ## <span id="ddk_supporting_graphics_ddi_font_and_text_functions_gg"></span><span id="DDK_SUPPORTING_GRAPHICS_DDI_FONT_AND_TEXT_FUNCTIONS_GG"></span>

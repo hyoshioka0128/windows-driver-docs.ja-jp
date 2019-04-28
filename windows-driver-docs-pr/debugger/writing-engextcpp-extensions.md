@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0afc5ef5c44130258a540645b65d5033817dabf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379885"
 ---
 # <a name="writing-engextcpp-extensions"></a>EngExtCpp 拡張機能の作成
 
@@ -21,9 +21,9 @@ ms.locfileid: "56557601"
 
 EngExtCpp の拡張機能ライブラリには、標準の C++ コードを含めることができます。 Engextcpp.h と dbgeng.h ヘッダー ファイルの C 関数 wdbgexts.h ヘッダー ファイルに表示されるだけでなくに表示される C++ インターフェイス型を含めることもできます。 Dbgeng.h と wdbgexts.h の両方 engextcpp.h から含まれます。
 
-拡張機能コマンドで使用できる dbgeng.h でインターフェイスの一覧については、[デバッガー エンジンのリファレンス](https://msdn.microsoft.com/library/windows/hardware/ff540540)を参照してください。
+拡張機能コマンドで使用できる dbgeng.h でインターフェイスの一覧については、次を参照してください。[デバッガー エンジンのリファレンス](https://msdn.microsoft.com/library/windows/hardware/ff540540)します。
 
-拡張機能コマンドで使用できる wdbgexts.h 内の関数の一覧については、[WdbgExts 関数](https://msdn.microsoft.com/library/windows/hardware/ff561258)を参照してください。 32 ビット版と 64 ビット バージョンにこれらの関数の数が表示されます。 通常、「64」32 ビット バージョンで 64 ビット版の終了があるない数値終了--など**ReadIoSpace64**と**ReadIoSpace**します。 DbgEng 拡張機能から wdbgexts.h 関数を呼び出すときに、常に関数名の拡張子が「64」を使用する必要があります。 これは、ため、[デバッガー エンジン](introduction.md#debugger-engine)64 ビットのポインターは、ターゲット プラットフォームに関係なく内部的には、常に使用します。 Wdbgexts.h を含む、engextcpp.h は API の 64 ビット バージョンを選択します。 **ExtensionApis** WDbgExts API によって使用されるグローバル変数が自動的に EngExtCpp メソッドへのエントリに初期化され、終了時に消去します。
+拡張機能コマンドで使用できる wdbgexts.h 内の関数の一覧については、次を参照してください。 [WdbgExts 関数](https://msdn.microsoft.com/library/windows/hardware/ff561258)します。 32 ビット版と 64 ビット バージョンにこれらの関数の数が表示されます。 通常、「64」32 ビット バージョンで 64 ビット版の終了があるない数値終了--など**ReadIoSpace64**と**ReadIoSpace**します。 DbgEng 拡張機能から wdbgexts.h 関数を呼び出すときに、常に関数名の拡張子が「64」を使用する必要があります。 これは、ため、[デバッガー エンジン](introduction.md#debugger-engine)64 ビットのポインターは、ターゲット プラットフォームに関係なく内部的には、常に使用します。 Wdbgexts.h を含む、engextcpp.h は API の 64 ビット バージョンを選択します。 **ExtensionApis** WDbgExts API によって使用されるグローバル変数が自動的に EngExtCpp メソッドへのエントリに初期化され、終了時に消去します。
 
 リモートの DbgEng インターフェイスを持つ EngExtCpp 拡張機能を使用する場合、WDbgExts インターフェイスが使用できなくなります、 **ExtensionApis**構造体をゼロに設定することができます。 EngExtCpp 拡張機能のような環境で機能が予想される場合は、WDbgExts API を使用して、避ける必要があります。
 

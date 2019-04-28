@@ -1,6 +1,6 @@
 ---
-title: PDB ファイルを使用してトレース セッションを作成します。
-description: PDB ファイルを使用してトレース セッションを作成します。
+title: PDB ファイルでのトレース セッションの作成
+description: PDB ファイルでのトレース セッションの作成
 ms.assetid: dae78674-3563-4fd5-869b-abd4c13aa202
 keywords:
 - プログラム データベース シンボル ファイル WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d08ac7b33e8fcc72ee185f9ff7ad9d96e40d481
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381011"
 ---
-# <a name="creating-a-trace-session-with-a-pdb-file"></a>PDB ファイルを使用してトレース セッションを作成します。
+# <a name="creating-a-trace-session-with-a-pdb-file"></a>PDB ファイルでのトレース セッションの作成
 
 
 ## <span id="ddk_create_a_trace_session_with_a_pdb_file_tools"></span><span id="DDK_CREATE_A_TRACE_SESSION_WITH_A_PDB_FILE_TOOLS"></span>

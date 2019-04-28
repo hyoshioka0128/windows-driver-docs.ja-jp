@@ -1,6 +1,6 @@
 ---
-title: IRP ベース IOCTL と FSCTL 操作
-description: IRP ベース IOCTL と FSCTL 操作
+title: IRP ベースの IOCTL と FSCTL 操作
+description: IRP ベースの IOCTL と FSCTL 操作
 ms.assetid: 08d6cf89-aaba-4aa1-baff-eb6aece2875f
 keywords:
 - WDK の Ioctl ファイル システム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73cbfd8855a3481090d997b436f5d80d36dd1c84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379716"
 ---
-# <a name="irp-based-ioctl-and-fsctl-operations"></a>IRP ベース IOCTL と FSCTL 操作
+# <a name="irp-based-ioctl-and-fsctl-operations"></a>IRP ベースの IOCTL と FSCTL 操作
 
 
 ## <span id="ddk_irp_based_ioctl_and_fsctl_operations_if"></span><span id="DDK_IRP_BASED_IOCTL_AND_FSCTL_OPERATIONS_IF"></span>
@@ -23,11 +23,11 @@ ms.locfileid: "56530384"
 
 次の IRP ベースの I/O 操作では、I/O 制御コード (IOCTL) またはファイル システムの制御コード (FSCTL) の定義で指定されている転送の種類に一致するバッファリング メソッドを使用します。
 
--   IRP\_MJ\_デバイス\_コントロール
+-   IRP\_MJ\_DEVICE\_CONTROL
 
 -   IRP\_MJ\_ファイル\_システム\_コントロール
 
--   IRP\_MJ\_内部\_デバイス\_コントロール
+-   IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
 転送の種類がで指定された、 *TransferType*パラメーターは、CTL の\_コード マクロ。 特定の IOCTL または FSCTL 転送の種類を取得するには、次のマクロを使用します。
 

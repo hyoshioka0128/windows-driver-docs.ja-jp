@@ -1,5 +1,5 @@
 ---
-title: スケーラブルなネットワーク
+title: スケーラブル ネットワーク
 description: このセクションでは、スケーラブルなネットワークの次のコンポーネントについて説明します。
 ms.assetid: 9b8219bd-c544-4ffb-90c3-db7248f7b75e
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 01/09/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 32cb81db69112e7ebbaba5ee3d4c1d4fb539eec9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377516"
 ---
-# <a name="scalable-networking"></a>スケーラブルなネットワーク
+# <a name="scalable-networking"></a>スケーラブル ネットワーク
 
 このセクションでは、スケーラブルなネットワークの次のコンポーネントについて説明します。
 

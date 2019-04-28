@@ -1,6 +1,6 @@
 ---
-title: BDA デバイス トポロジを決定します。
-description: BDA デバイス トポロジを決定します。
+title: BDA デバイス トポロジの決定
+description: BDA デバイス トポロジの決定
 ms.assetid: fdac317e-d4fc-47c9-87d3-bec597f758f5
 keywords:
 - メソッドは、WDK BDA、BDA デバイス トポロジを設定します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e9fd63ba928358c3ae5395f3a3544c04c29ae1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374068"
 ---
-# <a name="determining-bda-device-topology"></a>BDA デバイス トポロジを決定します。
+# <a name="determining-bda-device-topology"></a>BDA デバイス トポロジの決定
 
 
 

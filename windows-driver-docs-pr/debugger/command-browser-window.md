@@ -1,6 +1,6 @@
 ---
-title: WinDbg でコマンドのブラウザー ウィンドウを使用します。
-description: WinDbg でコマンドのブラウザー ウィンドウを使用します。
+title: WinDbg でのコマンド ブラウザー ウィンドウの使用
+description: WinDbg でのコマンド ブラウザー ウィンドウの使用
 ms.assetid: b895f463-38ec-451a-8c0a-0deb8650a904
 keywords:
 - デバッグ情報のウィンドウでコマンドのブラウザー ウィンドウ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fd0e489b10125f6ef2174aa80c65a8a7a1a8bca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375088"
 ---
-# <a name="using-the-command-browser-window-in-windbg"></a>WinDbg でコマンドのブラウザー ウィンドウを使用します。
+# <a name="using-the-command-browser-window-in-windbg"></a>WinDbg でのコマンド ブラウザー ウィンドウの使用
 
 
 コマンドのブラウザー ウィンドウでは、表示し、デバッガー コマンドの結果をテキストを格納します。 このウィンドウは、コマンドのリファレンス、コマンドを再入力しなくても、特定のコマンドの結果を表示することができますを作成します。 コマンドのブラウザー ウィンドウには、ストアドのコマンドを使用してナビゲーションも用意されていますとよりコマンドにすばやくアクセスの詳細はできるように、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。
@@ -50,7 +50,7 @@ ms.locfileid: "56531582"
 
 -   **常に浮動**によって、ウィンドウをドッキング場所にドラッグされる場合でも、ドッキングされていないままにします。
 
--   **フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+-   **フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
 コマンドのブラウザー ウィンドウに入力するコマンドは、WinDbg のユーザー インターフェイスではなく、デバッガー エンジンによって実行されます。 つまりなどのユーザー インターフェイスのコマンドを入力することはできません[ **.cls** ](-cls--clear-screen-.md)コマンド ブラウザーのウィンドウでします。 ユーザー インターフェイスがリモート クライアントの場合、サーバー (クライアントではなく) は、コマンドを実行します。
 

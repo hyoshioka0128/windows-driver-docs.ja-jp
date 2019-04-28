@@ -4,11 +4,11 @@ description: このセクションでは、タイム トラベル デバッガ�
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e46b66c7beb256c32a62c49617d65d5a0fe09c5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378478"
 ---
 #  <a name="time-travel-debugging-extension-commands"></a>タイム トラベルの拡張機能コマンドのデバッグ
 
@@ -50,7 +50,7 @@ ms.locfileid: "56572535"
 
 ### <a name="spanspan-idadditionalinformationspanadditional-information"></a></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、[時出張デバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
+この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
 
 ### <a name="dll"></a>DLL
 

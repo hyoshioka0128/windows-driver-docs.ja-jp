@@ -4,11 +4,11 @@ title: Logman を使用して USB イベント トレースをキャプチャす
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cb23adec030ad43785acdc47776ef3d0eb6e182
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381039"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>Logman を使用して USB イベント トレースをキャプチャする方法
 
@@ -115,7 +115,7 @@ ETW のキーワードをなどに注意してください**既定**と**Partial
 </tr>
 <tr class="even">
 <td><p><strong>FullDataBusTrace</strong></p></td>
-<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540414" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540414)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>を参照してください。</p></td>
+<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540414" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540414)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyHost</strong></p></td>

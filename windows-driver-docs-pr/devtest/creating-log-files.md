@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5de449515a57945ab411524d55c6fbdeccf4b777
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380962"
 ---
 # <a name="creating-log-files"></a>ログ ファイルの作成
 
@@ -26,7 +26,7 @@ Driver Verifier は、ログ ファイルを作成できます。 これらの�
 
 各エントリはグローバル カウンターと、個々 のカウンターだけと同様、 **verifier/query**コマンド。
 
-これらの統計情報の詳細については、[グローバル カウンターの監視](monitoring-global-counters.md)と[カウンターを個別に監視](monitoring-individual-counters.md)を参照してください。
+これらの統計情報の詳細については、次を参照してください。[グローバル カウンターの監視](monitoring-global-counters.md)と[カウンターを個別に監視](monitoring-individual-counters.md)します。
 
  
 

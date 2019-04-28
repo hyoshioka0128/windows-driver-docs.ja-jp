@@ -1,24 +1,24 @@
 ---
-title: デバイス クラスのプロパティにアクセスします。
-description: デバイス クラスのプロパティにアクセスします。
+title: デバイス クラス プロパティへのアクセス
+description: デバイス クラス プロパティへのアクセス
 ms.assetid: 51eef1f4-ca7d-46ab-a33f-be53de277541
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b4d9683e54f8d53c587629e9f3821de976200d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375719"
 ---
-# <a name="accessing-device-class-properties"></a>デバイス クラスのプロパティにアクセスします。
+# <a name="accessing-device-class-properties"></a>デバイス クラス プロパティへのアクセス
 
 
 アプリケーションとのインストーラーにアクセスできる Windows Vista および以降のバージョンの Windows では、[デバイス セットアップ クラスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff542239)と[デバイス インターフェイスのクラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)次 SetupAPI を呼び出すことによって関数:
 
 -   [**SetupDiGetClassPropertyKeys** ](https://msdn.microsoft.com/library/windows/hardware/ff551091)と[ **SetupDiGetClassPropertyKeysEx**](https://msdn.microsoft.com/library/windows/hardware/ff551093)
 
-    **SetupDiGetClassPropertyKeys**関数は、ローカル コンピューター上のデバイス セットアップ クラスまたはデバイスのインターフェイス クラスを現在設定されているクラスのプロパティを識別するクラスのプロパティのキーの配列を取得します。 **SetupDiGetClassPropertyKeysEx**関数がローカル コンピューターまたはリモート コンピューターで同じ操作を実行します。 デバイス クラスのどのようなプロパティが設定を確認する方法については、[を決定するプロパティ設定のデバイス クラスに対する](determining-which-properties-are-set-for-a-device-class.md)を参照してください。
+    **SetupDiGetClassPropertyKeys**関数は、ローカル コンピューター上のデバイス セットアップ クラスまたはデバイスのインターフェイス クラスを現在設定されているクラスのプロパティを識別するクラスのプロパティのキーの配列を取得します。 **SetupDiGetClassPropertyKeysEx**関数がローカル コンピューターまたはリモート コンピューターで同じ操作を実行します。 デバイス クラスのどのようなプロパティが設定を確認する方法については、次を参照してください。[を決定するプロパティ設定のデバイス クラスに対する](determining-which-properties-are-set-for-a-device-class.md)します。
 
 -   [**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
 

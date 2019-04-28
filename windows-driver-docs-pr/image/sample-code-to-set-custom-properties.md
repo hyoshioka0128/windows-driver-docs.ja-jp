@@ -1,17 +1,17 @@
 ---
-title: カスタム プロパティを設定するサンプル コード
-description: カスタム プロパティを設定するサンプル コード
+title: カスタム プロパティの設定のサンプル コード
+description: カスタム プロパティの設定のサンプル コード
 ms.assetid: 726315eb-de5c-47b6-a35b-524ec1c97d52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 400c7f0f99334d8d6ea877b58249884648043ea1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381548"
 ---
-# <a name="sample-code-to-set-custom-properties"></a>カスタム プロパティを設定するサンプル コード
+# <a name="sample-code-to-set-custom-properties"></a>カスタム プロパティの設定のサンプル コード
 
 
 

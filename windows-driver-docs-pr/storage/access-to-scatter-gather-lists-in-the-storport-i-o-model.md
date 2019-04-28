@@ -1,17 +1,17 @@
 ---
-title: Storport の I/O モデル内のスキャッター/ギャザー リストへのアクセス
-description: Storport の I/O モデル内のスキャッター/ギャザー リストへのアクセス
+title: Storport I/O モデルでのスキャッター/ギャザー リストへのアクセス
+description: Storport I/O モデルでのスキャッター/ギャザー リストへのアクセス
 ms.assetid: db05ac58-3317-44b2-9550-e4520537955f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48b9036521c3fa8f0bfb4d30f2ac1ac9fcc8a10b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382748"
 ---
-# <a name="access-to-scattergather-lists-in-the-storport-io-model"></a>Storport の I/O モデル内のスキャッター/ギャザー リストへのアクセス
+# <a name="access-to-scattergather-lists-in-the-storport-io-model"></a>Storport I/O モデルでのスキャッター/ギャザー リストへのアクセス
 
 
 ## <span id="ddk_access_to_scatter_gather_lists_in_the_storport_i_o_model_kg"></span><span id="DDK_ACCESS_TO_SCATTER_GATHER_LISTS_IN_THE_STORPORT_I_O_MODEL_KG"></span>

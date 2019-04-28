@@ -1,6 +1,6 @@
 ---
-title: 拡張形式の認識をサポートしています。
-description: 拡張形式の認識をサポートしています。
+title: 拡張形式の認識のサポート
+description: 拡張形式の認識のサポート
 ms.assetid: b473ebf2-75a0-4e3f-8190-d1a557ae6da0
 keywords:
 - Direct3D のバージョン 10.1 WDK Windows 7 の表示
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a54a7815037d84009221ab2dc2309a3e144e0f95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372752"
 ---
-# <a name="supporting-extended-format-awareness"></a>拡張形式の認識をサポートしています。
+# <a name="supporting-extended-format-awareness"></a>拡張形式の認識のサポート
 
 
 このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c24df40a70030dfed450ba60a37f98a58f48928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376830"
 ---
 # <a name="interacting-with-the-engine"></a>エンジンの操作
 
@@ -26,7 +26,7 @@ ms.locfileid: "56577773"
 
 ### <a name="span-idaliasesspanspan-idaliasesspanaliases"></a><span id="aliases"></span><span id="ALIASES"></span>エイリアス
 
-*エイリアス*は他のデバッガー コマンドと式で使用する場合は、文字の文字列に自動的に置き換え、文字の文字列。 エイリアスの概要については、[Using エイリアス](using-aliases.md)を参照してください。 デバッガー エンジンでは、エイリアスのいくつかのクラスがあります。
+*エイリアス*は他のデバッガー コマンドと式で使用する場合は、文字の文字列に自動的に置き換え、文字の文字列。 エイリアスの概要については、次を参照してください。 [Using エイリアス](using-aliases.md)します。 デバッガー エンジンでは、エイリアスのいくつかのクラスがあります。
 
 *固定名のエイリアス*番号でインデックスが作成され、名前を持つ**ドル u0**、 **$u1**,...,**ドル u9**します。 使用して、これらの別名の値を設定することができます、 [ **SetTextMacro** ](https://msdn.microsoft.com/library/windows/hardware/ff556809)メソッドを使用して取得できると[ **GetTextMacro** ](https://msdn.microsoft.com/library/windows/hardware/ff549270)メソッド。
 

@@ -1,6 +1,6 @@
 ---
-title: 複製された NET_BUFFER_LIST 構造体
-description: 複製された NET_BUFFER_LIST 構造体
+title: 複製された NET_BUFFER_LIST 構造
+description: 複製された NET_BUFFER_LIST 構造
 ms.assetid: efcf7d03-401e-46da-9ca3-8423af1e385a
 keywords:
 - NET_BUFFER_LIST
@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 302d4a906b04bd8340f8a42d400edad5d66c8098
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373137"
 ---
 # <a name="cloned-netbufferlist-structures"></a>NET の複製\_バッファー\_リストの構造体
 

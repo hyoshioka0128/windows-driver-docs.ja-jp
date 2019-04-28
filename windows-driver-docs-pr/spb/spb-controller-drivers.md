@@ -1,20 +1,20 @@
 ---
-title: SPB コント ローラーのドライバー
+title: SPB コントローラー ドライバー
 description: SPB のコント ローラーは、シンプルな周辺機器バス (SPB) を制御し、SPB に接続されている周辺機器とデータを転送するデバイスです。
 ms.assetid: 046353F9-315F-4328-8ECA-1C23AF87B4B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb56a5d4d05e8a7fa5c6200166555509523e6ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377797"
 ---
-# <a name="spb-controller-drivers"></a>SPB コント ローラーのドライバー
+# <a name="spb-controller-drivers"></a>SPB コントローラー ドライバー
 
 
-SPB のコント ローラーが制御するデバイスを[シンプルな周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPB) SPB に接続されている周辺機器とデータを転送するとします。 SPB コント ローラーのハードウェア ベンダーは、コント ローラーのハードウェア機能を管理する SPB コント ローラーのドライバーを提供します。
+SPB コントローラーは、SPB ([simple peripheral bus](https://msdn.microsoft.com/library/windows/hardware/hh450903)) を制御し、SPB に接続された周辺機器との間でデータを転送するデバイスです。 SPB コントローラーのハードウェア ベンダーにより、コントローラーのハードウェア機能を管理するための SPB コントローラー ドライバーが提供されます。
 
 簡略化のコント ローラーのドライバーの開発を SPB フレームワーク拡張機能 (SpbCx) Windows 8 以降、[単純な周辺機器のバス](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPBs)。 SpbCx がするシステム提供の拡張機能、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)(KMDF)。 SPB コント ローラー デバイスのハードウェア ベンダーには、ハードウェア固有のドライバーのすべての操作を実行するためのコント ローラー ドライバーが用意されています。 このドライバーを使用して、SpbCx SPB コント ローラーに固有の操作を実行する通信、KMDF ドライバーが汎用的な操作を実行すると直接通信します。
 

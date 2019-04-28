@@ -1,17 +1,17 @@
 ---
-title: グラフィックスの PCI Express よく寄せられる質問
+title: PCI Express のグラフィックスについてよく寄せられる質問
 description: このホワイト ペーパーは、Microsoft Windows オペレーティング システムでは、PCI Express グラフィックについての情報を提供し、よく寄せられる質問の回答します。
 ms.assetid: 30FC1CF9-B642-4E00-869C-63009BA3F128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcdf1aa33dd0bb170d63a21adca2dc9d55cf4b42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380542"
 ---
-# <a name="pci-express-faq-for-graphics"></a>グラフィックスの PCI Express よく寄せられる質問
+# <a name="pci-express-faq-for-graphics"></a>PCI Express のグラフィックスについてよく寄せられる質問
 
 
 **最終更新日。**
@@ -19,7 +19,7 @@ ms.locfileid: "56550928"
 -   2004 年 6 月 30 日
 -   アーカイブされた用紙。 Url の通貨のコンテンツの技術的な正確性に関して保証は行われません。
 
-**適用対象します。**
+**適用対象:**
 
 -   Microsoft Windows Vista
 -   Microsoft Windows Server 2003

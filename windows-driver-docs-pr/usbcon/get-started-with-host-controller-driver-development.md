@@ -1,16 +1,16 @@
 ---
-Description: This section introduces you to high-level concepts and tasks for host driver development.
+Description: このセクションでは、高度な概念とドライバーの開発をホストするためのタスクを紹介します。
 title: USB ホスト コント ローラーの拡張機能 (UCX) のアーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d53d333bc749b6a99394d55ec9adac3eed17d617
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383028"
 ---
-# <a name="architecture-usb-host-controller-extension-ucx"></a>アーキテクチャ:USB ホスト コント ローラーの拡張機能 (UCX)
+# <a name="architecture-usb-host-controller-extension-ucx"></a>アーキテクチャ:USB ホスト コントローラー拡張 (UCX)
 
 
 このセクションでは、高度な概念とドライバーの開発をホストするためのタスクを紹介します。 Microsoft 提供の USB ホスト コント ローラー拡張機能ドライバー (Ucx01000.sys) を使用したコント ローラー ドライバーと通信する新しいホストを作成する場合に、セクションが適用されます。

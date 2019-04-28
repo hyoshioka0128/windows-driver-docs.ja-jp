@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d9ac1f25cbcda65fdcc167111b97fa5a80e2da6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375602"
 ---
 # <a name="kspropertyclockresolution"></a>KSPROPERTY\_クロック\_解決
 
@@ -51,7 +51,7 @@ ms.locfileid: "56528224"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566806" data-raw-source="[&lt;strong&gt;KSRESOLUTION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566806)"><strong>KSRESOLUTION</strong></a></p></td>

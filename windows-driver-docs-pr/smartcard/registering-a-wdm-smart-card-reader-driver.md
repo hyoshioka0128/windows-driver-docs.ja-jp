@@ -1,6 +1,6 @@
 ---
-title: WDM スマート カード リーダーのドライバーの登録
-description: WDM スマート カード リーダーのドライバーの登録
+title: WDM スマート カード リーダー ドライバーの登録
+description: WDM スマート カード リーダー ドライバーの登録
 ms.assetid: 0f82c18b-3bbc-4bc6-825a-58e957f4e3aa
 keywords:
 - スマート カードのドライバー WDK、レジストリ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21003952ed0e6527b9e25b78b51a6175ba4ce128
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379771"
 ---
-# <a name="registering-a-wdm-smart-card-reader-driver"></a>WDM スマート カード リーダーのドライバーの登録
+# <a name="registering-a-wdm-smart-card-reader-driver"></a>WDM スマート カード リーダー ドライバーの登録
 
 
 ## <span id="_ntovr_registering_a_wdm_smart_card_reader_driver"></span><span id="_NTOVR_REGISTERING_A_WDM_SMART_CARD_READER_DRIVER"></span>
@@ -38,7 +38,7 @@ ms.locfileid: "56550196"
 <tr class="header">
 <th align="left">レジストリ値の名前</th>
 <th align="left">レジストリ値の内容</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

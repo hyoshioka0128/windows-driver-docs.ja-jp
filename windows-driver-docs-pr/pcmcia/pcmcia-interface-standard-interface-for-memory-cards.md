@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b0a66a5d3311d4f29bd05bab984db6278851d7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378196"
 ---
 # <a name="pcmciainterfacestandard-interface-for-memory-cards"></a>PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス
 

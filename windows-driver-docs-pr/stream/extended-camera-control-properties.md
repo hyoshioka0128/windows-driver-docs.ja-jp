@@ -1,17 +1,17 @@
 ---
-title: 拡張のカメラ コントロールのプロパティ
+title: 拡張カメラ コントロールのプロパティ
 ms.assetid: 27D94D73-D190-4C01-B082-7798CA71EDB4
 description: 拡張のカメラのコントロール インターフェイスは、イメージ キャプチャ中にカメラの機能の制御に使用されます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ed19dacfca630a12f51bb8b3e7d974c1b27ba23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374481"
 ---
-# <a name="extended-camera-control-properties"></a>拡張のカメラ コントロールのプロパティ
+# <a name="extended-camera-control-properties"></a>拡張カメラ コントロールのプロパティ
 
 
 以降、Windows 8 で利用可能な拡張のカメラのコントロール インターフェイスは、イメージ キャプチャ中にカメラの機能の制御に使用されます。 ドライバーは、これらのカメラ機能を制御できます。

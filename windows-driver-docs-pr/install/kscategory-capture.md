@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a0fe40612ad4d3b9092f3185287fa4bdb70fbdaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377325"
 ---
 # <a name="kscategorycapture"></a>KSCATEGORY_CAPTURE
 
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、デバイスが KSCATEGORY_CAPTURE 
 
 INF ファイルでこの機能のカテゴリを登録する方法については、次を参照してください。、 *Ac97smpl.inf* INF ファイルに含まれている、 [AC'97 サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256075) WDK で提供されています。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)を参照してください。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
 
 <a name="requirements"></a>要件
 ------------

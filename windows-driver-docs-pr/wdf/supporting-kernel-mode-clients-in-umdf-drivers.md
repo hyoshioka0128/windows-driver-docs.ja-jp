@@ -5,11 +5,11 @@ ms.assetid: 5C0180BF-F0C7-4225-8388-C3315C282516
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1f063de3763282286e49446a437db126606073
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379454"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-drivers"></a>UMDF ドライバーでのカーネルモード クライアントのサポート
 
@@ -38,7 +38,7 @@ A*カーネル モードのクライアント*は UMDF ドライバーに I/O �
 
 -   ユーザー モード ドライバーには、ポインターが逆参照できませんので、I/O 要求のバッファーは追加の情報へのポインターを含めないでください。
 
--   I/O 要求が含まれている場合、 [I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff565406)「も」バッファーへのアクセス方法を指定する、カーネル モード ドライバーは、I/O 要求を作成したアプリケーションのプロセスのコンテキストで I/O 要求を送信する必要があります。 UMDF ドライバーで「も」メソッドをサポートする方法の詳細については、[UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md)を参照してください。
+-   I/O 要求が含まれている場合、 [I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff565406)「も」バッファーへのアクセス方法を指定する、カーネル モード ドライバーは、I/O 要求を作成したアプリケーションのプロセスのコンテキストで I/O 要求を送信する必要があります。 UMDF ドライバーで「も」メソッドをサポートする方法の詳細については、次を参照してください。 [UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md)します。
 
 -   UMDF ドライバーでは、ユーザー モードでの I/O 要求の出力データを変更可能性があります。 そのため、カーネル モード ドライバーでは、ユーザー モード ドライバーから受信したすべての出力データを検証する必要があります。
 

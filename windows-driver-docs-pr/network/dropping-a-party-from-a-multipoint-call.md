@@ -1,6 +1,6 @@
 ---
-title: Multipoint 呼び出しからパーティを削除します。
-description: Multipoint 呼び出しからパーティを削除します。
+title: マルチポイント呼び出しからのパーティーの削除
+description: マルチポイント呼び出しからのパーティーの削除
 ms.assetid: db23e911-7c70-432e-992a-fdfdf8cb28ae
 keywords:
 - パーティ WDK いる CoNDIS
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a5c3775dad289a577d688db78ee22f2de438d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372712"
 ---
-# <a name="dropping-a-party-from-a-multipoint-call"></a>Multipoint 呼び出しからパーティを削除します。
+# <a name="dropping-a-party-from-a-multipoint-call"></a>マルチポイント呼び出しからのパーティーの削除
 
 
 

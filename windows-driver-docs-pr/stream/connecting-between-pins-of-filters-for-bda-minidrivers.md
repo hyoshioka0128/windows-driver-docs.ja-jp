@@ -1,6 +1,6 @@
 ---
-title: BDA ミニドライバーのフィルターのピンの間の接続
-description: BDA ミニドライバーのフィルターのピンの間の接続
+title: BDA ミニドライバー用フィルターのピン間接続
+description: BDA ミニドライバー用フィルターのピン間接続
 ms.assetid: 549031f3-1501-43c0-b172-bc88613d7e61
 keywords:
 - ドライバーのアーキテクチャの WDK AVStream、暗証番号 (pin) のデータ範囲のブロードキャストします。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e35c6ab3cd37933b211526363154c9dcbd544c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374190"
 ---
-# <a name="connecting-between-pins-of-filters-for-bda-minidrivers"></a>BDA ミニドライバーのフィルターのピンの間の接続
+# <a name="connecting-between-pins-of-filters-for-bda-minidrivers"></a>BDA ミニドライバー用フィルターのピン間接続
 
 
 

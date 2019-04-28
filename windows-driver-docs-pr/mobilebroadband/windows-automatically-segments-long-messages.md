@@ -1,17 +1,17 @@
 ---
-title: Windows が自動的に時間の長いメッセージをセグメントします。
-description: Windows が自動的に時間の長いメッセージをセグメントします。
+title: Windows で自動的に長いメッセージをセグメント化する
+description: Windows で自動的に長いメッセージをセグメント化する
 ms.assetid: 0c1d7347-4e53-4f17-bdb5-908479f903de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb156e8c27999f69ed367eb1ef3a625fe63cb1af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377295"
 ---
-# <a name="windows-automatically-segments-long-messages"></a>Windows が自動的に時間の長いメッセージをセグメントします。
+# <a name="windows-automatically-segments-long-messages"></a>Windows で自動的に長いメッセージをセグメント化する
 
 
 モバイル ブロード バンド SMS プラットフォームは、メッセージの内容に基づいてサポートされている文字数の上限に収まる個別のセグメントに GSM ネットワークで送信される時間の長いメッセージを自動的にセグメントします。 セグメント化の情報 (つまり、2 の 1 の部分) で SMS ユーザー データのヘッダー (UDH)、1 つのメッセージにセグメントを結合する受信 SMS クライアントを有効にするのにはエンコードされます。 マルチパートの SMS のすべてのセグメントは、同じ文字セットを使用してエンコードされます。

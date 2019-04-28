@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 604d057c478e3ffa66488e0d89abe760633cf019
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379220"
 ---
 # <a name="oidgencolinkspeed"></a>OID_GEN_CO_LINK_SPEED
 

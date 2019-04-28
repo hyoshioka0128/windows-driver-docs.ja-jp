@@ -1,17 +1,17 @@
 ---
-title: Unicode で Windows 7 のディスプレイ ドライバーの INF ファイルのエンコード
-description: Unicode で Windows 7 のディスプレイ ドライバーの INF ファイルのエンコード
+title: Windows 7 ディスプレイ ドライバーの INF ファイルの Unicode でのエンコード
+description: Windows 7 ディスプレイ ドライバーの INF ファイルの Unicode でのエンコード
 ms.assetid: b371d6cf-02b2-4ba7-966c-8f18324d5782
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2912318c5a131cbe8d641f24ff4d21ccc6d35743
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379076"
 ---
-# <a name="encoding-windows-7-display-driver-inf-files-in-unicode"></a>Unicode で Windows 7 のディスプレイ ドライバーの INF ファイルのエンコード
+# <a name="encoding-windows-7-display-driver-inf-files-in-unicode"></a>Windows 7 ディスプレイ ドライバーの INF ファイルの Unicode でのエンコード
 
 
 Unicode; としてボックス内のすべての INF ファイルをエンコードする必要があります。ANSI はできません。

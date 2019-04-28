@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2e031668ed6abbc5bc50412c051ecc5cb0a8f523
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379508"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF ドライバー用 DriverEntry ルーチン
 
@@ -50,7 +50,7 @@ NTSTATUS DriverEntry(
 
 状態を返す必要があります、ルーチンが成功すると、\_成功します。 それ以外の場合、いずれかで定義されているエラー状態の値を返す必要が*ntstatus.h*します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WDM ドライバーをすべてのように、フレームワーク ベースのドライバーが必要、 **DriverEntry**ルーチンは、ドライバーが読み込まれた後に呼び出されます。 フレームワーク ベースのドライバーの**DriverEntry**ルーチンにする必要があります。
@@ -99,7 +99,7 @@ DriverEntry(
 }
 ```
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例に示しますシリアル (KMDF) サンプル ドライバーの**DriverEntry**ルーチン。

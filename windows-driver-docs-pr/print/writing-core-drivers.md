@@ -1,17 +1,17 @@
 ---
-title: 書き込みコア ドライバー
-description: 書き込みコア ドライバー
+title: コア ドライバーの記述
+description: コア ドライバーの記述
 ms.assetid: 3a41a91b-3cc3-462a-8836-448203ccb4c2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f3a540cb9c657a470872dd52be14c5b36b8b646
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380518"
 ---
-# <a name="writing-core-drivers"></a>書き込みコア ドライバー
+# <a name="writing-core-drivers"></a>コア ドライバーの記述
 
 
 ライターの印刷ドライバーでは、Windows Vista では、中核となるドライバーの機能を使用できます。 コア ドライバーを作成するには、コア ドライバーを構成する一連のファイルを参照するその他のドライバー パッケージが使用できる GUID を生成します。 たとえば、Ntprint.inf では、次の例では Unidrv core ドライバー ファイルの定義が表示します。

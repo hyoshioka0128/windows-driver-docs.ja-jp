@@ -1,6 +1,6 @@
 ---
-title: パラレル ポートを開いたり、閉じたりします。
-description: パラレル ポートを開いたり、閉じたりします。
+title: パラレル ポートの開始と終了
+description: パラレル ポートの開始と終了
 ms.assetid: 2183ffd9-8265-4848-b5d1-703643e0d0e6
 keywords:
 - パラレル ポートを開く WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94e66a666784484a185eb8253754d335578a2363
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373484"
 ---
-# <a name="opening-and-closing-a-parallel-port"></a>パラレル ポートを開いたり、閉じたりします。
+# <a name="opening-and-closing-a-parallel-port"></a>パラレル ポートの開始と終了
 
 
 

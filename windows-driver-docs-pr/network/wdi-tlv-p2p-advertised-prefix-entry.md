@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_ADVERTISED_PREFIX_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a4018c0eeb561d6963a43c14f37fe40252e8617e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383167"
 ---
 # <a name="wditlvp2padvertisedprefixentry"></a>WDI\_TLV\_P2P\_アドバタイズ\_プレフィックス\_エントリ
 

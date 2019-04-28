@@ -1,6 +1,6 @@
 ---
-title: 描画の直線と曲線
-description: 描画の直線と曲線
+title: 直線と曲線の描画
+description: 直線と曲線の描画
 ms.assetid: 0816fb69-7811-4319-b050-00ded21a10d4
 keywords:
 - WDK GDI の行
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 085512c36bfec63b9fa0eb16fab025108d42f1d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377690"
 ---
-# <a name="drawing-lines-and-curves"></a>描画の直線と曲線
+# <a name="drawing-lines-and-curves"></a>直線と曲線の描画
 
 
 ## <span id="ddk_drawing_lines_and_curves_gg"></span><span id="DDK_DRAWING_LINES_AND_CURVES_GG"></span>

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf6ad08d2da00edec66311c5428a3c5b89e750f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380400"
 ---
 # <a name="managing-display-palettes"></a>ディスプレイ パレットの管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "56579674"
 ## <span id="ddk_managing_display_palettes_gg"></span><span id="DDK_MANAGING_DISPLAY_PALETTES_GG"></span>
 
 
-ビデオ ハードウェアは、設定できる色をサポートする場合と呼ばれる色ルックアップ テーブルを保持する*パレット*します。 GDI 各 RGB 値を受け取るし、デバイスに変換します*カラー インデックス*表示できるようにします。 GDI は、翻訳の事前計算済みおよびキャッシュされたテーブルを使用します。 ユーザー オブジェクトとこれらのテーブルがドライバーにアクセスできる[ **XLATEOBJ**](https://msdn.microsoft.com/library/windows/hardware/ff570634)します。 そのため、すべての GDI グラフィックス関数を元の色を受け取り、ターゲット デバイスに移動しますは XLATEOBJ 構造を使用して、色を変換します。 パレットと GDI での処理方法の詳細については、[パレットの GDI サポート](gdi-support-for-palettes.md)を参照してください。
+ビデオ ハードウェアは、設定できる色をサポートする場合と呼ばれる色ルックアップ テーブルを保持する*パレット*します。 GDI 各 RGB 値を受け取るし、デバイスに変換します*カラー インデックス*表示できるようにします。 GDI は、翻訳の事前計算済みおよびキャッシュされたテーブルを使用します。 ユーザー オブジェクトとこれらのテーブルがドライバーにアクセスできる[ **XLATEOBJ**](https://msdn.microsoft.com/library/windows/hardware/ff570634)します。 そのため、すべての GDI グラフィックス関数を元の色を受け取り、ターゲット デバイスに移動しますは XLATEOBJ 構造を使用して、色を変換します。 パレットと GDI での処理方法の詳細については、次を参照してください。[パレットの GDI サポート](gdi-support-for-palettes.md)します。
 
 ビデオ ハードウェアは、設定できるパレットをサポートする場合に、GDI が呼び出し、 **DrvSetPalette**アプリケーションによって要求されました。 GDI は、ディスプレイ ドライバーとドライバーのクエリに新しいパレットを渡す、 **PALOBJ**します。
 

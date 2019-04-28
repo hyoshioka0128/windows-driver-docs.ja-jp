@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SMS_CONFIGURATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6edeb040b97225603118c9313d61b490536387f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379302"
 ---
 # <a name="ndisstatuswwansmsconfiguration"></a>NDIS\_状態\_WWAN\_SMS\_構成
 
@@ -26,7 +26,7 @@ ms.locfileid: "56538594"
 
 ミニポート ドライバーは、MB デバイスの SMS サブシステムが SMS 操作の準備ができたときこの迷惑なを示す値を送信する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

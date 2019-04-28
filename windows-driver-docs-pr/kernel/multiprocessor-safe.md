@@ -18,11 +18,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8985ac00d69fcadda8a7b2fb05e57068d9061494
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380289"
 ---
 # <a name="multiprocessor-safe"></a>マルチプロセッサ セーフ
 
@@ -62,7 +62,7 @@ Windows NT カーネル コンポーネントと呼ばれる、同期メカニ�
 
 カーネル モードのスレッドのセットは、カーネルのディスパッチャー オブジェクトの 1 つを待機して共有データまたはリソースへのアクセスを同期することができます: イベント、ミュー テックス、セマフォ、タイマー、または別のスレッド。 ただし、ほとんどのドライバー設定しないでください、独自のスレッドをスレッド コンテキストの切り替えを回避するときにパフォーマンスが向上しているためです。 タイム クリティカルなカーネル モードのサポート ルーチンとドライバーが IRQL でどのように実行するたびにディスパッチを =\_共有のデータやリソースへのアクセスを同期する、カーネルのスピン ロックを使用する必要がありますレベル、または DIRQL、します。
 
-詳細については、[スピン ロック](spin-locks.md)、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)、および[カーネルのディスパッチャー オブジェクト](kernel-dispatcher-objects.md)を参照してください。
+詳細については、次を参照してください。[スピン ロック](spin-locks.md)、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)、および[カーネルのディスパッチャー オブジェクト](kernel-dispatcher-objects.md)します。
 
  
 

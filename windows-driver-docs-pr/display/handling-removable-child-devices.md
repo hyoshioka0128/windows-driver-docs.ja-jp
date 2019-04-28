@@ -1,19 +1,19 @@
 ---
-title: 子のリムーバブル デバイスの処理
-description: 子のリムーバブル デバイスの処理
+title: リムーバブル子デバイスの処理
+description: リムーバブル子デバイスの処理
 ms.assetid: 0edc0331-7178-4986-b818-9f1ee8f12995
 keywords:
 - Windows 2000 の WDK の子のリムーバブル デバイスを表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f0a3a58964bfb1cca7aaed2aa4fb1d385073845
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380232"
 ---
-# <a name="handling-removable-child-devices"></a>子のリムーバブル デバイスの処理
+# <a name="handling-removable-child-devices"></a>リムーバブル子デバイスの処理
 
 
 ビデオのミニポート ドライバーをドライバーがプラグ アンド プレイ (PnP) を防ぐため、元の子デバイスのデータを使用してから、デバイスなどの別の子のリムーバブル デバイスが変更されたときに検出する必要があります。 たとえば、ビデオのミニポート ドライバーでは、ユーザーは、モニターを切り替えたときを検出する必要があります。

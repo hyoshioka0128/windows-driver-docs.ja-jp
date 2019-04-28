@@ -1,6 +1,6 @@
 ---
-title: IEEE 1394 デバイス アイソクロナス同期オプション
-description: IEEE 1394 デバイス アイソクロナス同期オプション
+title: IEEE 1394 デバイスの等時性同期のオプション
+description: IEEE 1394 デバイスの等時性同期のオプション
 ms.assetid: 27137890-09e7-45d5-b268-7e93c943b489
 keywords:
 - バス I/O WDK の IEEE 1394 アイソクロナス同期
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5199a6544b01148e52bbc8990077b9023356b91e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371002"
 ---
-# <a name="isochronous-synchronization-options-for-ieee-1394-devices"></a>IEEE 1394 デバイス アイソクロナス同期オプション
+# <a name="isochronous-synchronization-options-for-ieee-1394-devices"></a>IEEE 1394 デバイスの等時性同期のオプション
 
 
 

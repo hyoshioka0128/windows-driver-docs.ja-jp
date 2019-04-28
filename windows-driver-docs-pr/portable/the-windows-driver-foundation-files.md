@@ -1,16 +1,16 @@
 ---
-Description: The Windows Driver Frameworks Files
-title: Windows ドライバー フレームワーク ファイル
+Description: Windows Driver Framework ファイル
+title: Windows Driver Framework ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 745b470dd602b4098587f4a3faf433c14ccff7b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378200"
 ---
-# <a name="the-windows-driver-frameworks-files"></a>Windows ドライバー フレームワーク ファイル
+# <a name="the-windows-driver-frameworks-files"></a>Windows Driver Framework ファイル
 
 
 WpdHelloWorldDriver プロジェクトには、次の Windows ユーザー モード ドライバー フレームワーク (UMDF) ファイルが含まれています。

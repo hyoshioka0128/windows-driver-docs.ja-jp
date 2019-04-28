@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45ff2d742393568e2e2d1973de07ff1101a11f7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376906"
 ---
 # <a name="controlling-a-general-io-targets-state-in-umdf"></a>UMDF での一般 I/O ターゲットの状態の制御
 
@@ -54,7 +54,7 @@ I/O ターゲットのデバイスが削除されました。
 
 かどうか、必要に応じて、ドライバーを呼び出して[ **IWDFIoTargetStateManagement::Stop** ](https://msdn.microsoft.com/library/windows/hardware/ff559217)ローカルのターゲットの I/O および呼び出しを一時的に停止する[ **IWDFIoTargetStateManagement::Start** ](https://msdn.microsoft.com/library/windows/hardware/ff559213)を再起動します。 たとえば、ドライバーは、一時的なエラー条件を検出した場合は、ローカル I/O ターゲットを停止し、エラー状態が修正された場合に I/O ターゲットを再起動することが。
 
-フレームワークが自動的に停止し、I/O ターゲットを閉じる場合は、ローカルの I/O 対象のデバイスを削除すると、および[キャンセル](canceling-i-o-requests.md)ターゲットのキューにあるすべての I/O 要求。 フレームワークは、デバイス オブジェクトのイベントのコールバック関数を呼び出すことによって、デバイスが使用可能なでなくなったことをドライバーに通知します。 これらのコールバック関数の詳細については、[UMDF での PnP および電源管理のシナリオ](pnp-and-power-management-scenarios-in-umdf.md)を参照してください。
+フレームワークが自動的に停止し、I/O ターゲットを閉じる場合は、ローカルの I/O 対象のデバイスを削除すると、および[キャンセル](canceling-i-o-requests.md)ターゲットのキューにあるすべての I/O 要求。 フレームワークは、デバイス オブジェクトのイベントのコールバック関数を呼び出すことによって、デバイスが使用可能なでなくなったことをドライバーに通知します。 これらのコールバック関数の詳細については、次を参照してください。 [UMDF での PnP および電源管理のシナリオ](pnp-and-power-management-scenarios-in-umdf.md)します。
 
 ドライバーを呼び出すことができます[ **IWDFIoTargetStateManagement::GetState** ](https://msdn.microsoft.com/library/windows/hardware/ff559202)ローカル I/O ターゲットの現在の状態を取得します。
 

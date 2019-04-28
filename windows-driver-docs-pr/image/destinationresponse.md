@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43cf9feb3851452b48e97db1cefb9ec492eb649b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373199"
 ---
 # <a name="destinationresponse-element"></a>DestinationResponse 要素
 
@@ -82,7 +82,7 @@ ms.locfileid: "56582260"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **DestinationResponse**要素が含まれています、 [ **ClientContext** ](clientcontext.md)要素からその照合[ **ScanDestination**](scandestination.md)要素、クライアントが応答を識別できるようにします。 **DestinationResponse**も含まれています、 [ **DestinationToken** ](destinationtoken.md)すべてで使用するための要素[ **CreateScanJobRequest** ](createscanjobrequest.md)このターゲットからの要素を操作します。

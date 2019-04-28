@@ -5,11 +5,11 @@ ms.assetid: D6E1C124-9A5F-486B-865E-45A0BC58A5A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b896b9147b2e5470c27992cad01a6fd1d766952
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374654"
 ---
 # <a name="nmake2msbuild"></a>Nmake2MsBuild
 
@@ -20,7 +20,7 @@ ms.locfileid: "57349425"
 
 Nmake2MsBuild ユーティリティとドライバーのソース コード ファイルから以前のバージョンの WDK を使用して構築されたドライバー用の Visual Studio プロジェクトの生成、*ソース*、*ディレクトリ*、および*makefile.inc*ファイル。 ユーティリティでは、Visual Studio のプロジェクト ファイルを作成、既存のと同じディレクトリに*ソース*ファイル。 このユーティリティは、ソース コードや、以前のビルド ファイルには変更されません。
 
-ユーティリティの使用方法の詳細については、[、WDK を変換するファイルを Visual Studio プロジェクトをソース](converting-a-wdk-sources-file-to-a-visual-studio-project.md)を参照してください。
+ユーティリティの使用方法の詳細については、次を参照してください。 [、WDK を変換するファイルを Visual Studio プロジェクトをソース](converting-a-wdk-sources-file-to-a-visual-studio-project.md)します。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
 

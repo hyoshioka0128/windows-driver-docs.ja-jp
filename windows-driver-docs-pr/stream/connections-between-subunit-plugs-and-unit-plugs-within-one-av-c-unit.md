@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33da5a4d4cdc15be31aae2c7eb21593a941e8003
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374231"
 ---
 # <a name="connections-between-subunit-plugs-and-unit-plugs-within-one-avc-unit"></a>サブユニット プラグと 1 つの AV/C 単位内でユニット プラグ間の接続
 
@@ -52,7 +52,7 @@ ms.locfileid: "57348963"
 <td><p>ソース単位のデバイス識別子が、サブユニットを含む単位のために使用されません。</p></td>
 <td><p>0 xff (のサブユニットを含むユニット)</p></td>
 <td><p>iPlug (0x0 に 0x1E または 0x7F)</p></td>
-<td><p>N/A</p></td>
+<td><p>なし</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ ms.locfileid: "57348963"
 <td><p>このシナリオでは、別の単位は関与しませんので、使用されません。</p></td>
 <td><p>サブユニット アドレス</p></td>
 <td><p>移行先プラグ (0x0 0x1E)</p></td>
-<td><p>N/A</p></td>
+<td><p>なし</p></td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +118,7 @@ ms.locfileid: "57348963"
 <td><p>ソース単位のデバイス識別子が、サブユニットを含む単位のために使用されません。</p></td>
 <td><p>サブユニット アドレス</p></td>
 <td><p>ソース プラグイン (0x0 0x1E)</p></td>
-<td><p>N/A</p></td>
+<td><p>なし</p></td>
 </tr>
 </tbody>
 </table>
@@ -147,7 +147,7 @@ ms.locfileid: "57348963"
 <td><p>このシナリオでは、別の単位は関与しませんので、使用されません。</p></td>
 <td><p>0 xff (のサブユニットを格納している単位)</p></td>
 <td><p>oPCR (0x0 に 0x1E または 0x7F)</p></td>
-<td><p>N/A</p></td>
+<td><p>なし</p></td>
 </tr>
 </tbody>
 </table>

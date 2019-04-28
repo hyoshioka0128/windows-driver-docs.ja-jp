@@ -1,6 +1,6 @@
 ---
-title: リモートの NDIS 概念と定義
-description: リモートの NDIS 概念と定義
+title: リモート NDIS の概念と定義
+description: リモート NDIS の概念と定義
 ms.assetid: caf01e69-9368-4b9b-a343-ef17a2154bb8
 keywords:
 - リモートの NDIS WDK のネットワークの概念
@@ -23,13 +23,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10377ce25890a86721f9f3e52e8af631c991c8a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373796"
 ---
-# <a name="remote-ndis-concepts-and-definitions"></a>リモートの NDIS 概念と定義
+# <a name="remote-ndis-concepts-and-definitions"></a>リモート NDIS の概念と定義
 
 
 

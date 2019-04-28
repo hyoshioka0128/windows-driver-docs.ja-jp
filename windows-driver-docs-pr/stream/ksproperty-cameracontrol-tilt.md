@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a0fe3f77cc5e1e36424b38e5d1f64d198b71fdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381108"
 ---
 # <a name="kspropertycameracontroltilt"></a>KSPROPERTY\_CAMERACONTROL\_傾き
 
@@ -42,19 +42,19 @@ ms.locfileid: "56581010"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564439" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564439)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff564420" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564420)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -73,7 +73,7 @@ ms.locfileid: "56581010"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **値**、KSPROPERTY のメンバー\_CAMERACONTROL\_S 構造体の傾きの設定を指定します。

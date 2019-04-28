@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5baa3e6ee8d4719e79b2174dde8ba6749f9934
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379733"
 ---
 # <a name="d3dkmtoutputduplmetadatatype-enumeration"></a>D3DKMT\_OUTPUTDUPL\_METADATATYPE 列挙型
 

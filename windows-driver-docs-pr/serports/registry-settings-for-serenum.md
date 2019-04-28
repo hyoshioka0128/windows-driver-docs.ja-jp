@@ -1,6 +1,6 @@
 ---
-title: Serenum のレジストリ設定
-description: Serenum のレジストリ設定
+title: Serenum 用のレジストリ設定
+description: Serenum 用のレジストリ設定
 ms.assetid: c8a8f1b7-ea58-49ed-98e0-40297ec9a769
 keywords:
 - Serenum ドライバー WDK、レジストリ設定
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 128249a1ec0591190b4c2763a05edda3f8663484
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379007"
 ---
-# <a name="registry-settings-for-serenum"></a>Serenum のレジストリ設定
+# <a name="registry-settings-for-serenum"></a>Serenum 用のレジストリ設定
 
 
 

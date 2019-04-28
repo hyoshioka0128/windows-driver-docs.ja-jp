@@ -5,11 +5,11 @@ ms.assetid: 15ee51f8-1904-43ee-8bc2-311688c860e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f502ed9ae1bd56d222bd9a36cbe33826598203f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373895"
 ---
 # <a name="accessing-device-instance-spdrpxxx-properties"></a>デバイス インスタンス SPDRP_Xxx プロパティへのアクセス
 
@@ -18,9 +18,9 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 維持するために、デバイス インスタンス プロパティにアクセスする SPDRP_Xxx 識別子を使用してを以前のバージョンの Windows、Windows Vista およびそれ以降のバージョンとの互換性もサポートします。 ただし、Windows Vista および Windows の以降のバージョンでこれらのプロパティへのアクセスに対応するプロパティのキーを使用する必要があります。
 
-SPDRP_Xxx 識別子が対応するデバイスのシステム定義のインスタンスのプロパティの一覧は、[デバイス プロパティをある対応する SPDRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff541469)を参照してください。 デバイス インスタンスのプロパティは、Windows Vista 以降のバージョンの Windows でのプロパティにアクセスするために使用するプロパティのキーを一覧表示されます。 各プロパティはキーに対応する SPDRP_ が含まれる示される情報*Xxx* Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる識別子。
+SPDRP_Xxx 識別子が対応するデバイスのシステム定義のインスタンスのプロパティの一覧は、次を参照してください。[デバイス プロパティをある対応する SPDRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff541469)します。 デバイス インスタンスのプロパティは、Windows Vista 以降のバージョンの Windows でのプロパティにアクセスするために使用するプロパティのキーを一覧表示されます。 各プロパティはキーに対応する SPDRP_ が含まれる示される情報*Xxx* Windows Server 2003、Windows XP、および Windows 2000 のプロパティへのアクセスに使用できる識別子。
 
-プロパティのキーを使用して、Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista および以降のバージョンの Windows デバイスのインスタンスのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
 ### <a name="accessing-a-device-property"></a>デバイスのプロパティにアクセスします。
 

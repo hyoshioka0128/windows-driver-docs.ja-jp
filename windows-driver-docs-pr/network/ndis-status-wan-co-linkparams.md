@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WAN_CO_LINKPARAMS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 996bfab89bfb5debd7fd1429c9fafb6a3d244354
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380917"
 ---
 # <a name="ndisstatuswancolinkparams"></a>NDIS\_状態\_WAN\_CO\_LINKPARAMS
 
@@ -23,7 +23,7 @@ NDIS\_状態\_WAN\_CO\_フラグメントの状態は、VC いる CoNDIS ミニ�
 
 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体にはへのポインターが含まれています、 [ **WAN\_CO\_LINKPARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff565819)構造体。 WAN\_CO\_LINKPARAMS 構造は、VC の新しいパラメーターをについて説明します。
 
-NDIS の詳細については\_状態\_WAN\_CO\_LINKPARAMS を参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)を参照してください。
+NDIS の詳細については\_状態\_WAN\_CO\_LINKPARAMS を参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)します。
 
 <a name="requirements"></a>要件
 ------------

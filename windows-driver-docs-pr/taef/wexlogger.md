@@ -5,11 +5,11 @@ ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4270d21d5b4ca1313e50d54c97a355cd3b9c179f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383024"
 ---
 # <a name="wexlogger"></a>WexLogger
 
@@ -253,7 +253,7 @@ log.Comment("Render succeeded");
 
     ```
 
-2.  その環境ブロックに設定することで、またはコマンド プロンプトの引数として渡すことによって、子プロセスと接続データを通信します。 次に、例を示します。
+2.  その環境ブロックに設定することで、またはコマンド プロンプトの引数として渡すことによって、子プロセスと接続データを通信します。 例:
 
     **WexLogger で認識されるコマンド プロンプトで名前付き引数として渡します。**  
     /wexlogger\_connectiondata =*\[接続データ\]*

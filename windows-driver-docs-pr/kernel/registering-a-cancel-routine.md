@@ -1,6 +1,6 @@
 ---
-title: キャンセル ルーチンを登録します。
-description: キャンセル ルーチンを登録します。
+title: キャンセル ルーチンの登録
+description: キャンセル ルーチンの登録
 ms.assetid: ebc63fb6-bf4d-4de3-9232-08d810c2f730
 keywords:
 - キャンセル ルーチンを登録する Irp のキャンセル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9b5316b713470832d64a5454e9c7f68309ed177
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382652"
 ---
-# <a name="registering-a-cancel-routine"></a>キャンセル ルーチンを登録します。
+# <a name="registering-a-cancel-routine"></a>キャンセル ルーチンの登録
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "56548741"
 
 3.  呼び出す[ **IoReleaseCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff549550)します。
 
-キャンセルのスピン ロックについては、[システムのキャンセル スピン ロックを使用して](using-the-system-s-cancel-spin-lock.md)を参照してください。
+キャンセルのスピン ロックについては、次を参照してください。[システムのキャンセル スピン ロックを使用して](using-the-system-s-cancel-spin-lock.md)します。
 
 I/O マネージャーが指定したデバイスのキューを使用するのではなく、Irp の独自のキューを管理するドライバーを呼び出すときに、キャンセル スピン ロックを取得する必要はありません**IoSetCancelRoutine**します。 ただし、これらのドライバーを確認する必要があります、*キャンセル*日常的なポインターを**IoSetCancelRoutine**判断を返すかどうか、*キャンセル*ルーチンが既に開始します。
 

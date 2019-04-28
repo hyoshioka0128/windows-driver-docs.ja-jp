@@ -4,18 +4,18 @@ description: NDEF プロトコル
 ms.assetid: 5AF082EC-70D6-4117-BFCE-B28A8DBAC210
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55fd1ca5757f3847303eca218c0e827c76d7386b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378681"
 ---
 # <a name="ndef-protocol"></a>NDEF プロトコル
 

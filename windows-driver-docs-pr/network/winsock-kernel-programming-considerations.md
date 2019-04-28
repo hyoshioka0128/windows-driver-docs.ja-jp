@@ -1,6 +1,6 @@
 ---
-title: Winsock Kernel プログラミングに関する考慮事項
-description: Winsock Kernel プログラミングに関する考慮事項
+title: Winsock カーネル プログラミングに関する考慮事項
+description: Winsock カーネル プログラミングに関する考慮事項
 ms.assetid: 55fb4882-fcbf-4bc5-ad94-1aba3df04f6d
 keywords:
 - Winsock カーネル WDK ネットワーク、プログラミングの考慮事項
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c06cec81b56fd6ba39653cc67f85ef4280df5f3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379802"
 ---
-# <a name="winsock-kernel-programming-considerations"></a>Winsock Kernel プログラミングに関する考慮事項
+# <a name="winsock-kernel-programming-considerations"></a>Winsock カーネル プログラミングに関する考慮事項
 
 
 このセクションでは、Winsock カーネル (WSK) プログラミングの考慮事項について説明し、次のトピックが含まれています。

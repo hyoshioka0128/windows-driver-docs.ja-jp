@@ -4,18 +4,18 @@ description: クライアントは、以前に無効なサブスクリプショ�
 ms.assetid: 5F5F3C85-6B66-4335-ADA1-E4B6E702FFCB
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e35aa4bc374926694c531f5b1cd7865d355d9557
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375210"
 ---
 # <a name="enabling-nfp"></a>NFP を有効にします。
 

@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_STOP_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 81dc0f034b028e240b637525b3e5026a5b78b938
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381418"
 ---
 # <a name="irpmnquerystopdevice"></a>IRP\_MN\_クエリ\_停止\_デバイス
 

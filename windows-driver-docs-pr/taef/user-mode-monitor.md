@@ -5,11 +5,11 @@ ms.assetid: CE6CEC2C-5E8E-40aa-A5D3-0062D6F82EFE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51048cfe66858aef208bc094026869dbcadd975b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383034"
 ---
 # <a name="user-mode-monitor"></a>ユーザー モードのモニター
 
@@ -40,7 +40,7 @@ UMM コードを使用する場合に、次の点を考慮する必要があり�
 
 ユーザー モードのモニターには、監視対象のプロセスで指定されたデバッガー イベントが発生したときにかかることが 'アクション' のセットがあります。 現在の実装では、特定のイベントだけ呼び出しの既定のアクション。現在の構成のサポートはありません。
 
-| 操作     | 説明                                                            |
+| アクション     | 説明                                                            |
 |------------|------------------------------------------------------------------------|
 | LogComment | イベントからコンテキスト情報と共に、ログには、コメントを追加します。 |
 | LogError   | 現在のテストが失敗すると、ログにエラーが記録されます。            |

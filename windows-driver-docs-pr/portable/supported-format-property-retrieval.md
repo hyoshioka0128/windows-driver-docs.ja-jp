@@ -1,16 +1,16 @@
 ---
-Description: Supported Format-Property Retrieval
-title: サポートされている書式設定プロパティの取得
+Description: サポートされているファイル形式プロパティの取得
+title: サポートされているファイル形式プロパティの取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13b9f56445c052333adcf74069fcd12412d8cfdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376190"
 ---
-# <a name="supported-format-property-retrieval"></a>サポートされている書式設定プロパティの取得
+# <a name="supported-format-property-retrieval"></a>サポートされているファイル形式プロパティの取得
 
 
 WPD アプリケーションを呼び出すと、 **IPortableDeviceCapabilities::GetSupportedFormatProperties**メソッドでは、このメソッドは、さらへの呼び出しをトリガー、 **WpdCapabilities::OnGetSupportedFormatProperties**サンプル ドライバーでのメソッド。 後者のメソッドを作成、 **IPortableDeviceKeyCollection**先、ドライバーがサポート、特定形式のオブジェクトのプロパティを格納するオブジェクト。

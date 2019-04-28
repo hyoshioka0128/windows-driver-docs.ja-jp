@@ -7,11 +7,11 @@ keywords:
 - WSK_TDI_DEVICENAME_MAPPING ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 626198cc16d0a30a644485fcf8e486cc31e48c36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375252"
 ---
 # <a name="wsktdidevicenamemapping"></a>WSK\_TDI\_DEVICENAME\_マッピング
 
@@ -65,7 +65,7 @@ WSK アプリケーション、WSK を使用している場合\_TDI\_DEVICENAME\
 </tbody>
 </table>
 
-TDI トランスポートの使用に関する詳細については、[TDI トランスポートを使用して](https://msdn.microsoft.com/library/windows/hardware/ff571015)を参照してください。
+TDI トランスポートの使用に関する詳細については、次を参照してください。 [TDI トランスポートを使用して](https://msdn.microsoft.com/library/windows/hardware/ff571015)します。
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 

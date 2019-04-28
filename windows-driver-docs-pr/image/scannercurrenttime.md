@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4ca5252e639acd9ae6d72c82ed55e1986849c6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370075"
 ---
 # <a name="scannercurrenttime-element"></a>ScannerCurrentTime 要素
 
@@ -67,7 +67,7 @@ ms.locfileid: "56580040"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 スキャナーの内部時計はリアルタイム クロックではありません。 クロックは、0 から開始できます (0001-01-01T00:00:00Z) までカウントするデバイスをオンにすると開始します。

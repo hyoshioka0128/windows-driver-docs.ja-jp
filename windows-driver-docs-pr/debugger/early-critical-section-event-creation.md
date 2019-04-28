@@ -1,19 +1,19 @@
 ---
-title: 初期のクリティカル セクション イベントの作成
-description: 初期のクリティカル セクション イベントの作成
+title: Early critical section event creation
+description: Early critical section event creation
 ms.assetid: a9453e6d-7566-4226-a950-d32d6192f8ac
 keywords:
 - 初期クリティカル セクション イベントの作成 (グローバル フラグ)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6d9cfcae920046584bf2decab62f48649ed7a77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378634"
 ---
-# <a name="early-critical-section-event-creation"></a>初期のクリティカル セクション イベントの作成
+# <a name="early-critical-section-event-creation"></a>Early critical section event creation
 
 
 ## <span id="ddk_early_critical_section_event_creation_dtools"></span><span id="DDK_EARLY_CRITICAL_SECTION_EVENT_CREATION_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56552907"
 <td align="left"><p>FLG_CRITSEC_EVENT_CREATION</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ、カーネルのフラグ、イメージ ファイルのレジストリ エントリ</p></td>
 </tr>
 </tbody>

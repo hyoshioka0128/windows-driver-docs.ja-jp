@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38295f636423026536ce2a3df749dd7339b217c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378893"
 ---
 # <a name="usbcamd2-camera-configurations"></a>USBCAMD2 カメラの構成
 
@@ -31,7 +31,7 @@ USBCAMD2 と連動するが、 *stream.sys*クラス ドライバーは、現在
 
 USBCAMD2 の主な目的は、web カメラなどのストリーミング ビデオのカメラをサポートします。 ただし、USBCAMD2 USB 一括を使用して、静止カメラから送信されたイメージをキャプチャする転送パイプの割り込みのサポートも提供します。 この機能は、まだフレームをキャプチャするスナップショット機能を備えた USB カメラをサポートします。
 
-場合は、カメラでは、主にビデオをストリーミングし、必要に応じてスナップショット機能を提供しますは USBCAMD2 ミニドライバーのみ書き込む必要があります。 ハイブリッド cameras (カメラを主に静止画像を撮影しますが、ビデオをストリーミングすることもできます) のベンダーは、まだイメージの保存をサポートするには、ストリーミングの機能と、個別の Windows Image Acquisition (WIA) 静止カメラ ドライバーをサポートするために USBCAMD2 ミニドライバーを作成します。管理。 WIA と静止画像をキャプチャするデジタル カメラのサポートの詳細については、[Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)を参照してください。
+場合は、カメラでは、主にビデオをストリーミングし、必要に応じてスナップショット機能を提供しますは USBCAMD2 ミニドライバーのみ書き込む必要があります。 ハイブリッド cameras (カメラを主に静止画像を撮影しますが、ビデオをストリーミングすることもできます) のベンダーは、まだイメージの保存をサポートするには、ストリーミングの機能と、個別の Windows Image Acquisition (WIA) 静止カメラ ドライバーをサポートするために USBCAMD2 ミニドライバーを作成します。管理。 WIA と静止画像をキャプチャするデジタル カメラのサポートの詳細については、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)します。
 
 USBCAMD2 ライブラリには、アイソクロナス pipe(s)、一括 I/O pipe(s) や、割り込みパイプの組み合わせを使用してデータ ストリームを転送し、設定を制御するカメラがサポートしています。 USBCAMD2 には、次の USB パイプの構成を実装するカメラがサポートされています。
 

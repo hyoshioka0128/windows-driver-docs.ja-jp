@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e786087f4768db0fbbbafc05df1cacb45b56cd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374859"
 ---
-# <a name="debug--source-mode"></a>デバッグ |ソース モード
+# <a name="debug--source-mode"></a>Debug | Source Mode (デバッグ | ソース モード)
 
 
 ## <span id="ddk_debug_source_mode_dbg"></span><span id="DDK_DEBUG_SOURCE_MODE_DBG"></span>
@@ -31,7 +31,7 @@ ms.locfileid: "56532857"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソース モードのデバッグの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。 モードのアセンブリのデバッグの詳細については、[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)を参照してください。
+ソース モードのデバッグの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。 モードのアセンブリのデバッグの詳細については、次を参照してください。[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
 
  
 

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d441a6ad1f7746ec5a3e0efce4a89ef90e88e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376880"
 ---
 # <a name="configuring-dispatch-mode-for-an-io-queue"></a>I/O キューのディスパッチ モードの構成
 
@@ -52,7 +52,7 @@ ms.locfileid: "56536660"
 
 すべてのディスパッチ モード、 [I/O キュー オブジェクト](framework-i-o-queue-object.md)を受け取るし、ドライバーが要求を処理するか、要求が取り消されるまで、要求を追跡します。
 
-ドライバーが直列または並列ディスパッチ用のキューを構成した場合、フレームワークは、ドライバーの場合、ドライバー、キューを作成するか、既定のキューを構成します、ドライバーによって登録されているコールバック関数を使用して要求を通知します。 詳細については、[I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)を参照してください。
+ドライバーが直列または並列ディスパッチ用のキューを構成した場合、フレームワークは、ドライバーの場合、ドライバー、キューを作成するか、既定のキューを構成します、ドライバーによって登録されているコールバック関数を使用して要求を通知します。 詳細については、次を参照してください。 [I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)します。
 
  
 

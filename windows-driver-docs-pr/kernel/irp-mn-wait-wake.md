@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_WAIT_WAKE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: ee57b89cba2d0aeefee1621ab9c1f42182896d3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381396"
 ---
 # <a name="irpmnwaitwake"></a>IRP\_MN\_WAIT\_WAKE
 
@@ -86,7 +86,7 @@ IRP が取り消されました。
 
 内のコールバック ルーチンを指定する必要があります、ドライバーは、待機/ウェイク IRP を送信するとき、 **PoRequestPowerIrp**呼び出します。 コールバック ルーチンで、ドライバーは、デバイスを通常サービスです。 たとえば、デバイスの電源ポリシーの所有者を呼び出す必要があります**PoRequestPowerIrp**を送信する、 [ **IRP\_MN\_設定\_POWER** ](irp-mn-set-power.md)D0 の状態のデバイス。
 
-1 つのデバイスのバス ドライバーと親デバイスのポリシーの所有者として動作するドライバーは、要求、 **IRP\_MN\_待機\_WAKE** を受信したときに、親のデバイススタックのIRP**IRP\_MN\_待機\_WAKE** PDO 子からの要求。 ドライバーは、1 つ以上の子の PDO を列挙する場合 1 つだけ待機/ウェイク IRP の子 Pdo 送信待機またはスリープ解除要求の数に関係なく、親のデバイス スタックを要求する必要があります。 代わりに、このようなドライバーが待機/ウェイク Irp の内部でカウントを保持する必要があります、毎回インクリメント受信要求とカウントをデクリメントする操作を要求を完了するたびにします。 待機/ウェイク IRP の完了後に、カウントが 0 以外の場合、ドライバーは"rearm"自体のウェイク アップするもう 1 つの待機またはスリープ解除 IRP をそのデバイス スタックに送信する必要があります。 詳細については、[デバイス ツリーを通じて待機/ウェイク Irp のパスを理解する](https://msdn.microsoft.com/library/windows/hardware/ff564867)を参照してください。
+1 つのデバイスのバス ドライバーと親デバイスのポリシーの所有者として動作するドライバーは、要求、 **IRP\_MN\_待機\_WAKE** を受信したときに、親のデバイススタックのIRP**IRP\_MN\_待機\_WAKE** PDO 子からの要求。 ドライバーは、1 つ以上の子の PDO を列挙する場合 1 つだけ待機/ウェイク IRP の子 Pdo 送信待機またはスリープ解除要求の数に関係なく、親のデバイス スタックを要求する必要があります。 代わりに、このようなドライバーが待機/ウェイク Irp の内部でカウントを保持する必要があります、毎回インクリメント受信要求とカウントをデクリメントする操作を要求を完了するたびにします。 待機/ウェイク IRP の完了後に、カウントが 0 以外の場合、ドライバーは"rearm"自体のウェイク アップするもう 1 つの待機またはスリープ解除 IRP をそのデバイス スタックに送信する必要があります。 詳細については、次を参照してください。[デバイス ツリーを通じて待機/ウェイク Irp のパスを理解する](https://msdn.microsoft.com/library/windows/hardware/ff564867)します。
 
 キャンセル、 **IRP\_MN\_待機\_WAKE**、ドライバーを呼び出す[ **IoCancelIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548338)。 IRP を発生させたドライバーだけをキャンセルできます。 ドライバーをキャンセル、保留中**IRP\_MN\_待機\_WAKE**次のいずれかに発生します。
 

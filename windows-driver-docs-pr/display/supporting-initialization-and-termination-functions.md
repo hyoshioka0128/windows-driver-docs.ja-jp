@@ -1,6 +1,6 @@
 ---
-title: 初期化と終了関数をサポートしています。
-description: 初期化と終了関数をサポートしています。
+title: 初期化関数と終了関数のサポート
+description: 初期化関数と終了関数のサポート
 ms.assetid: 306be966-be23-4680-aeda-32e9cb1ac4a9
 keywords:
 - 描画の WDK GDI, 初期化
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2e83a50a9f43bbd8ff8c659cbe3d7cbaa32dc8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377662"
 ---
-# <a name="supporting-initialization-and-termination-functions"></a>初期化と終了関数をサポートしています。
+# <a name="supporting-initialization-and-termination-functions"></a>初期化関数と終了関数のサポート
 
 
 ## <span id="ddk_supporting_initialization_and_termination_functions_gg"></span><span id="DDK_SUPPORTING_INITIALIZATION_AND_TERMINATION_FUNCTIONS_GG"></span>

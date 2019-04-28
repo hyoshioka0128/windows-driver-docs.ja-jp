@@ -5,16 +5,16 @@ ms.assetid: 9ff3f30d-fd1c-4241-a068-1af2160e9296
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b6e556d692e62151b5f5f09f94ceb355073b6c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373230"
 ---
 # <a name="code-example-for-reading-device-properties"></a>デバイス プロパティを読み取るためのコード例
 
 
-次のコード例では、プロパティ ストアからデバイスのプロパティを読み取る方法を示します。 現在の関数インスタンス オブジェクトのプロパティ ストアを開く方法の例は、[プロパティ ストアを開くためのコード例](code-example-for-opening-a-property-store.md)を参照してください。
+次のコード例では、プロパティ ストアからデバイスのプロパティを読み取る方法を示します。 現在の関数インスタンス オブジェクトのプロパティ ストアを開く方法の例は、次を参照してください。[プロパティ ストアを開くためのコード例](code-example-for-opening-a-property-store.md)します。
 
 ```cpp
 /**************************************************************************\

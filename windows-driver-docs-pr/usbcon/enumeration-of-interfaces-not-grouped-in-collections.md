@@ -1,14 +1,14 @@
 ---
-Description: Interfaces on a composite USB device can be grouped in collections or represent one USB function individually.
+Description: 複合 USB デバイス上のインターフェイスは、個別に 1 つの USB 関数を表すこともコレクションにグループ化することができます。
 title: USB 複合デバイス上のインターフェイスの列挙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbf80573b7a1b02012e13216d1215a8bf6b90e30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383020"
 ---
 # <a name="enumeration-of-interfaces-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイスの列挙
 

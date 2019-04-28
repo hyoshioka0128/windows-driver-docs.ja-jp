@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6ea4d68725323566729b0eed0a28003b61e0107
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370836"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバー用の INF ファイルの作成
 
@@ -31,9 +31,9 @@ Windows セットアップとデバイスのインストーラー サービス�
 
 ファイル システム フィルター ドライバーの INF ファイルでは、SetupAPI を使用してドライバーをインストールする手順を説明します。 INF ファイルは、ドライバー ファイルをドライバーを実行し、ソースと変換先のディレクトリに存在する必要があるファイルを指定するテキスト ファイルです。 INF ファイルには、SetupAPI がレジストリに格納するドライバーの構成情報も含まれていますなど、ドライバーのスタートアップの種類および順序グループをロードします。
 
-INF ファイルとの作成方法の詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。 ドライバーの署名の詳細については、[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)を参照してください。
+INF ファイルとの作成方法の詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。 ドライバーの署名の詳細については、次を参照してください。[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)します。
 
-Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 このような INF ファイルを作成する方法の詳細については、[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540206)と[International INF ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/ff540208)を参照してください。
+Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 このような INF ファイルを作成する方法の詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540206)と[International INF ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/ff540208)です。
 
 以降では、64 ビット バージョンの Windows Vista では、すべてのカーネル モード コンポーネントでは、ファイル システム ドライバー (ファイル システム、従来のフィルターおよびミニフィルター ドライバー) などの非 PnP (プラグ アンド プレイ) ドライバーを含む署名が必要読み込みおよび実行するためにします。 これらの Windows オペレーティング システムのバージョンでは、次の一覧には、ファイル システム フィルター ドライバーに関連する情報が含まれます。
 
@@ -47,7 +47,7 @@ Windows オペレーティング システムの複数のバージョンでは�
 
 -   運転署名プロセスの詳細については、運転、署名の 64 ビット バージョンの Windows Vista では、プロセスを参照してください[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)します。
 
--   カスタム カーネル モード開発ツールを含むすべてのカーネル モード コンポーネントに署名する必要があります。 詳細については、[開発およびテスト (Windows Vista 以降) の中にドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552275)を参照してください。
+-   カスタム カーネル モード開発ツールを含むすべてのカーネル モード コンポーネントに署名する必要があります。 詳細については、次を参照してください。[開発およびテスト (Windows Vista 以降) の中にドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552275)します。
 
 レジストリから情報を読み取る、またはユーザー モード アプリケーションを起動する INF ファイルを使用できません。
 
@@ -138,7 +138,7 @@ CatalogFile =
 
 [ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクションでは、フィルター ドライバーおよびアプリケーションのファイルのコピー先ディレクトリを指定します。
 
-このセクションで、 **ServiceInstall**  セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)を参照してください。 次のコード例では、「12」の値はドライバー ディレクトリを指します (%windir%\\system32\\ドライバー)、Windows ディレクトリ (%windir%) を参照して、値「10」とします。
+このセクションで、 **ServiceInstall** セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。 次のコード例では、「12」の値はドライバー ディレクトリを指します (%windir%\\system32\\ドライバー)、Windows ディレクトリ (%windir%) を参照して、値「10」とします。
 
 ```cpp
 [DestinationDirs]
@@ -178,7 +178,7 @@ myLegacyFilter.sys = 1
 
  
 
-Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 この種類の INF ファイルを作成して追加する[ **DefaultInstall**](https://msdn.microsoft.com/library/windows/hardware/ff547356)、 [ **DefaultInstall.Services**](https://msdn.microsoft.com/library/windows/hardware/ff547360)、 **DefaultUninstall**、および**DefaultUninstall.Services**セクションの各オペレーティング システムのバージョン。 各セクションのラベルでは、*装飾*(.ntx86、.ntia64、または .nt など) を適用するオペレーティング システムのバージョンを指定します。 この種類の INF ファイルを作成する方法の詳細については、[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540206)を参照してください。
+Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 この種類の INF ファイルを作成して追加する[ **DefaultInstall**](https://msdn.microsoft.com/library/windows/hardware/ff547356)、 [ **DefaultInstall.Services**](https://msdn.microsoft.com/library/windows/hardware/ff547360)、 **DefaultUninstall**、および**DefaultUninstall.Services**セクションの各オペレーティング システムのバージョン。 各セクションのラベルでは、*装飾*(.ntx86、.ntia64、または .nt など) を適用するオペレーティング システムのバージョンを指定します。 この種類の INF ファイルを作成する方法の詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540206)します。
 
 次のコード例で、 [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブは、INF ファイルのセクションの MyLegacyFilter.DriverFiles と MyLegacyFilter.UserFiles セクションに記載されているファイルをコピーします。
 
@@ -269,7 +269,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">[値]</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -301,7 +301,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 
 これらの詳細については、型をスタートを参照してください。[何を決定しますと、ドライバーが読み込まれる](what-determines-when-a-driver-is-loaded.md)します。
 
-ドライバーのスタートアップの種類がサービスの場合\_ブート\_開始 (これは、ドライバーがブート開始ドライバーがある) も確認する必要があります、 **LoadOrderGroup**エントリはフィルターの種類に適した開発しています。 ロード順序グループを選択するを参照してください。[順序グループをファイル システム フィルター ドライバーの読み込み](load-order-groups-for-file-system-filter-drivers.md)します。 さらに、以降 Windows Vista の x64 ベース システムでは、ブート開始ドライバーのバイナリ イメージ ファイルは埋め込みの署名を含める必要があります。 この要件により、起動パフォーマンスの最適なシステムです。 詳細については、[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)を参照してください。
+ドライバーのスタートアップの種類がサービスの場合\_ブート\_開始 (これは、ドライバーがブート開始ドライバーがある) も確認する必要があります、 **LoadOrderGroup**エントリはフィルターの種類に適した開発しています。 ロード順序グループを選択するを参照してください。[順序グループをファイル システム フィルター ドライバーの読み込み](load-order-groups-for-file-system-filter-drivers.md)します。 さらに、以降 Windows Vista の x64 ベース システムでは、ブート開始ドライバーのバイナリ イメージ ファイルは埋め込みの署名を含める必要があります。 この要件により、起動パフォーマンスの最適なシステムです。 詳細については、次を参照してください。[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)します。
 
 方法については**StartType**と**LoadOrderGroup**エントリが特定のドライバーが読み込まれるときを参照してください[何を決定しますと、ドライバーが読み込まれる](what-determines-when-a-driver-is-loaded.md)します。
 
@@ -314,7 +314,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">[値]</th>
 <th align="left">操作</th>
 </tr>
 </thead>
@@ -398,7 +398,7 @@ MyLegacyFilterDebugFlags  = "DebugFlags"
 Disk1                     = "MyLegacyFilter Source Media"
 ```
 
-1 つの国際 INF ファイルを作成するにはロケールに固有の追加を作成して[**文字列**。](https://msdn.microsoft.com/library/windows/hardware/ff547485) *LanguageID* INF ファイルのセクション。 国際対応の INF ファイルの詳細については、[International INF ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/ff540208)を参照してください。
+1 つの国際 INF ファイルを作成するにはロケールに固有の追加を作成して[**文字列**。](https://msdn.microsoft.com/library/windows/hardware/ff547485) *LanguageID* INF ファイルのセクション。 国際対応の INF ファイルの詳細については、次を参照してください。 [International INF ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/ff540208)です。
 
  
 

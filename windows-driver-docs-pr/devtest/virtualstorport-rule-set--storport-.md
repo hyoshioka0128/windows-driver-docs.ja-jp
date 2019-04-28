@@ -5,11 +5,11 @@ ms.assetid: 7223AFF1-7EB7-4E25-BC50-8A7BF4E4BE59
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f9c493b16ac25e242b7640741547f14a7df08049
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380477"
 ---
 # <a name="virtualstorport-rule-set-storport"></a>VirtualStorport の規則セット (Storport)
 
@@ -80,7 +80,7 @@ ms.locfileid: "57349135"
     msbuild /t:sdv /p:Inputs="/check:VirtualStorport.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

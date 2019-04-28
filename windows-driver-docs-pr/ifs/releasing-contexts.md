@@ -1,6 +1,6 @@
 ---
-title: コンテキストを解放します。
-description: コンテキストを解放します。
+title: コンテキストのリリース
+description: コンテキストのリリース
 ms.assetid: 29d855cd-cca6-486b-86d9-f74810ae12c1
 keywords:
 - WDK のコンテキストのファイル システム ミニフィルターを解放します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd7f28a6421bfbd784f0b276cbee9a1578be7408
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370114"
 ---
-# <a name="releasing-contexts"></a>コンテキストを解放します。
+# <a name="releasing-contexts"></a>コンテキストのリリース
 
 
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>

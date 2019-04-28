@@ -1,17 +1,17 @@
 ---
-title: ISR をアクティブにする際または非アクティブ
+title: ISR をアクティブまたは非アクティブにする
 description: Windows 8 以降、ドライバーは、アクティブまたは非アクティブに登録されている割り込みサービス ルーチン (ISR) IoReportInterruptActive または IoReportInterruptInactive ルーチンを呼び出すことができます。
 ms.assetid: 788D9341-D1F8-4126-8C30-AA49DE27F4BB
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6dfb0b4a3e803d2368dbc0657cebf0df5d00f12d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378740"
 ---
-# <a name="making-an-isr-active-or-inactive"></a>ISR をアクティブにする際または非アクティブ
+# <a name="making-an-isr-active-or-inactive"></a>ISR をアクティブまたは非アクティブにする
 
 
 Windows 8 以降、ドライバーが呼び出すことができます、 [ **IoReportInterruptActive** ](https://msdn.microsoft.com/library/windows/hardware/jj158875)または[ **IoReportInterruptInactive** ](https://msdn.microsoft.com/library/windows/hardware/jj158876)ルーチンを作成します。登録済みの割り込みサービス ルーチン (ISR) アクティブまたは非アクティブです。

@@ -5,11 +5,11 @@ ms.assetid: 18521fec-c9fb-48d0-9de2-d0482e4807d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba7b3aa144a62d7465ecffcaa45f61d209f5d703
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372714"
 ---
 # <a name="dual-sim"></a>デュアル SIM
 
@@ -35,7 +35,7 @@ Windows Phone 8.1 GDR1 には、C + G. サポートが追加されます。
 
 C + G を入力するオプションがあるデバイスの場合は、CDMA UICC が常に含まれるスロットは、executor 0 を使用します。 2 つの GSM UICCs がある場合は、データ行の選択 UICC は executor 0 に関連付けられます。
 
-C + G を構成する方法の詳細については、[デュアル SIM 設定の構成 C + G](https://msdn.microsoft.com/library/windows/hardware/dn757414)を参照してください。
+C + G を構成する方法の詳細については、次を参照してください。[デュアル SIM 設定の構成 C + G](https://msdn.microsoft.com/library/windows/hardware/dn757414)します。
 
 ## <a name="uicc-swapping"></a>UICC スワップ
 
@@ -54,7 +54,7 @@ C + G を構成する方法の詳細については、[デュアル SIM 設定�
 
 PIN1、暗証番号 2、および PUK が両方 UICCs のサポートされています。
 
-## <a name="sim-toolkit"></a>SIM toolkit
+## <a name="sim-toolkit"></a>SIM ツールキット
 
 
 UTK は、両方の UICCs でサポートされます。 UTK UI は、一度に 1 つだけ UICC でサポートされます。

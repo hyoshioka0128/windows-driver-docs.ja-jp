@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_DISCONTINUITY_TIME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c21d8223fec9e08bfee378b5edb19fb762c92b7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381357"
 ---
 # <a name="oidgendiscontinuitytime"></a>OID\_GEN\_以降の不連続性\_時間
 
@@ -30,7 +30,7 @@ ms.locfileid: "56560330"
 
 のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
-この OID は、インターフェイスがある、統計カウンターを維持する上で連続していない場合に、最後のコンピューターの再起動から開始時間を返します。 インターフェイスが無効になっているか、関連付けられているアダプターがコンピューターから削除されたため、以降の不連続性がありましたなど。 統計カウンターの詳細については、[OID\_GEN\_統計](oid-gen-statistics.md)を参照してください。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562675)関数。
+この OID は、インターフェイスがある、統計カウンターを維持する上で連続していない場合に、最後のコンピューターの再起動から開始時間を返します。 インターフェイスが無効になっているか、関連付けられているアダプターがコンピューターから削除されたため、以降の不連続性がありましたなど。 統計カウンターの詳細については、次を参照してください。 [OID\_GEN\_統計](oid-gen-statistics.md)します。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562675)関数。
 
 インターフェイスの最後の再初期化後にこのような不連続性が発生していない場合は、この値は 0 にする必要があります。 インターフェイス プロバイダーは、以降の不連続性の時間を追跡していない、この値は 0 にする必要があります。
 

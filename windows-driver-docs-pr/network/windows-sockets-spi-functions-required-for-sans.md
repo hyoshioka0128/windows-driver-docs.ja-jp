@@ -1,6 +1,6 @@
 ---
-title: Windows ソケットの SPI 関数のために必要な San
-description: Windows ソケットの SPI 関数のために必要な San
+title: SAN に必要な Windows ソケット SPI 関数
+description: SAN に必要な Windows ソケット SPI 関数
 ms.assetid: b41bd7e0-bb6c-4933-a5d0-18e4d067601b
 keywords:
 - SAN サービス プロバイダーに必要な関数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9da03118f624130a3465120f7f6b8be82139315
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382856"
 ---
-# <a name="windows-sockets-spi-functions-required-for-sans"></a>Windows ソケットの SPI 関数のために必要な San
+# <a name="windows-sockets-spi-functions-required-for-sans"></a>SAN に必要な Windows ソケット SPI 関数
 
 
 

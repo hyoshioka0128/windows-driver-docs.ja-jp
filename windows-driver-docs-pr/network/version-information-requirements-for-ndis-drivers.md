@@ -1,19 +1,19 @@
 ---
-title: NDIS ドライバーのバージョン情報の要件
-description: NDIS ドライバーのバージョン情報の要件
+title: NDIS ドライバーのバージョン情報要件
+description: NDIS ドライバーのバージョン情報要件
 ms.assetid: a05e7dde-d1f9-458d-8d7b-ead9bb9af7af
 keywords:
 - NDIS バージョン情報 WDK、NDIS 責任
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 564854aa86a18b009113be468e8505afddaa544f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382197"
 ---
-# <a name="version-information-requirements-for-ndis-drivers"></a>NDIS ドライバーのバージョン情報の要件
+# <a name="version-information-requirements-for-ndis-drivers"></a>NDIS ドライバーのバージョン情報要件
 
 
 
@@ -21,7 +21,7 @@ ms.locfileid: "56527291"
 
 バージョン情報を提供する NDIS 構造体が、**ヘッダー**メンバーとして定義されている、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588)構造体および NDIS ドライバーは、このようなバージョン情報のサポートを提供する必要があります。
 
-NDIS はより高いまたは低い NDIS バージョンをサポートするドライバーをサポートできる、*現在のバージョンの NDIS* (つまり、NDIS、コンピューターが実行されているオペレーティング システムのバージョンでサポートされているのバージョン)。 また、*登録済みのバージョンの NDIS* (ドライバーが初期化中に報告されたバージョン) のドライバーはドライバーがサポートする最上位バージョンより低くすることができます。 たとえば、NDIS 6.1、NDIS 5.1 ドライバーは、NDIS 6.0 を実行しているオペレーティング システムのバージョンで実行できます。 5.1 の NDIS ドライバーは、単に、初期化中に、5.1 の NDIS ドライバーとして登録します。 ただし、NDIS 6.1 ドライバーは、NDIS の現在のバージョンを確認する必要があります、(この例では、NDIS 6.0) で提供される NDIS の最高レベルをサポートしているドライバーとして登録する必要があります。 現在の NDIS バージョンを取得する方法の詳細については、[NDIS バージョンを入手](obtaining-the-ndis-version.md)を参照してください。
+NDIS はより高いまたは低い NDIS バージョンをサポートするドライバーをサポートできる、*現在のバージョンの NDIS* (つまり、NDIS、コンピューターが実行されているオペレーティング システムのバージョンでサポートされているのバージョン)。 また、*登録済みのバージョンの NDIS* (ドライバーが初期化中に報告されたバージョン) のドライバーはドライバーがサポートする最上位バージョンより低くすることができます。 たとえば、NDIS 6.1、NDIS 5.1 ドライバーは、NDIS 6.0 を実行しているオペレーティング システムのバージョンで実行できます。 5.1 の NDIS ドライバーは、単に、初期化中に、5.1 の NDIS ドライバーとして登録します。 ただし、NDIS 6.1 ドライバーは、NDIS の現在のバージョンを確認する必要があります、(この例では、NDIS 6.0) で提供される NDIS の最高レベルをサポートしているドライバーとして登録する必要があります。 現在の NDIS バージョンを取得する方法の詳細については、次を参照してください。 [NDIS バージョンを入手](obtaining-the-ndis-version.md)します。
 
 **注**  ドライバーは、構造体の新しいバージョンのすべての機能をサポートする必要はありません。 たとえば、ミニポート ドライバーは、バージョン 2 の構造を作成し、バージョン 1 の構造体の適切な値を指定します。
 

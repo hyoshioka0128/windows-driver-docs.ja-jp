@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcb3322a59223d95fa1d50e4bf930ecce47b6d64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369542"
 ---
 # <a name="wiaipaicmprofilename"></a>WIA\_IPA\_ICM\_プロファイル\_名
 
@@ -35,7 +35,7 @@ WIA\_IPA\_ICM\_プロファイル\_NAME プロパティが正しくイメージ�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 アプリケーションの読み取り、WIA\_IPA\_ICM\_プロファイル\_名プロパティに、イメージの処理に使用する ICM プロファイルを決定します。 WIA サービスは、作成し、ドライバーのインストール ファイルの ICMProfiles エントリに基づいてこのプロパティを保持します。

@@ -1,6 +1,6 @@
 ---
-title: C++ の数字と演算子
-description: C++ の数字と演算子
+title: C++ の数値と演算子
+description: C++ の数値と演算子
 ms.assetid: e5d3ac7f-fd79-48bb-b927-9ad72570dcbe
 keywords:
 - 式では、C++ 式の構文
@@ -15,13 +15,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b294b37ad5627b6d7b708552a6da79e89cd6b1c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373961"
 ---
-# <a name="c-numbers-and-operators"></a>C++ の数字と演算子
+# <a name="c-numbers-and-operators"></a>C++ の数値と演算子
 
 
 ## <span id="ddk_c_numbers_and_operators_dbg"></span><span id="DDK_C_NUMBERS_AND_OPERATORS_DBG"></span>
@@ -53,7 +53,7 @@ C++ の式内の番号は、別の方法でそれらを指定しない限りの 
 
 C++ の式では、各シンボルはその型に従って解釈されます。 によって、シンボルが参照する対象、整数、データ構造体、関数ポインター、またはその他の任意のデータ型として解釈可能性があります。 C++ 式の中で (変更されていないモジュール名) など、C++ データ型に対応していないシンボルを使用する場合は、構文エラーが発生します。
 
-場合は、シンボルが不明確な場合、モジュール名と感嘆符を追加することができます ( **!** ) または記号の前に感嘆符のみです。 シンボルの認識の詳細については、[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)を参照してください。
+場合は、シンボルが不明確な場合、モジュール名と感嘆符を追加することができます ( **!** ) または記号の前に感嘆符のみです。 シンボルの認識の詳細については、次を参照してください。[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
 
 アクサン グラーブを使用することができます ( **\`** ) またはアポストロフィ ( **'** ) 感嘆符シンボル名の前に、モジュール名を追加する場合にのみ、シンボル名。
 
@@ -90,7 +90,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <td align="left"><p>後続のすべてのテキストを無視します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>クラス</em> <strong>:。</strong><em>メンバー</em></p>
+<td align="left"><p><em>クラス</em> <strong>:。</strong><em>Member</em></p>
 <p><em>クラス</em> <strong>:: ~</strong><em>メンバー</em></p>
 <p><strong>::</strong><em>名前</em></p></td>
 <td align="left"><p>クラスのメンバー</p>
@@ -124,7 +124,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <p><strong>++</strong> <em>LValue</em></p>
 <p><strong>--</strong> <em>LValue</em></p>
 <p><strong>~</strong> <em>値</em></p>
-<p><strong>!</strong> <em>値</em></p>
+<p><strong>\!</strong> <em>値</em></p>
 <p><em>値</em></p>
 <p><strong>+</strong> <em>値</em></p>
 <p><strong>&amp;</strong> <em>LValue</em></p>
@@ -248,7 +248,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 
 登録または擬似レジスタ割り当てまたは副作用演算子によってを変更することはできません。 使用する必要があります、 [ **r (レジスタ)** ](r--registers-.md)これらの値を変更するコマンド。
 
-レジスタおよび擬似レジスタの詳細については、[登録構文](register-syntax.md)と[擬似レジスタ構文](pseudo-register-syntax.md)を参照してください。
+レジスタおよび擬似レジスタの詳細については、次を参照してください。[登録構文](register-syntax.md)と[擬似レジスタ構文](pseudo-register-syntax.md)します。
 
 ### <a name="span-idmacrosincexpressionsspanspan-idmacrosincexpressionsspanmacros-in-c-expressions"></a><span id="macros_in_c___expressions"></span><span id="MACROS_IN_C___EXPRESSIONS"></span>C++ の式内のマクロ
 

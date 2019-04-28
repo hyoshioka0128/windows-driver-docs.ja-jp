@@ -1,6 +1,6 @@
 ---
-title: システムのキャンセル スピン ロックを使用します。
-description: システムのキャンセル スピン ロックを使用します。
+title: システムのキャンセル スピン ロックの使用
+description: システムのキャンセル スピン ロックの使用
 ms.assetid: dd3cf1e7-8ecc-4721-9160-86bf928687e4
 keywords:
 - スピン ロック WDK カーネルをキャンセルします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be892b1e996ecfcd8f14a7119ea362fd2adcb463
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372312"
 ---
-# <a name="using-the-systems-cancel-spin-lock"></a>システムのキャンセル スピン ロックを使用します。
+# <a name="using-the-systems-cancel-spin-lock"></a>システムのキャンセル スピン ロックの使用
 
 
 

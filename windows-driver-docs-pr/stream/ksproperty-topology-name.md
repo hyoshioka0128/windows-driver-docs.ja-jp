@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2e24e108230a506754bc8a2f53bba9a9e8634c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376410"
 ---
 # <a name="kspropertytopologyname"></a>KSPROPERTY\_トポロジ\_名
 
@@ -66,7 +66,7 @@ KSPROPERTY\_トポロジ\_NAME プロパティは、ノードのローカライ�
 
 **NodeId** KSP のメンバー\_ノード構造は、文字列名を返す対象のノード ID を指定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

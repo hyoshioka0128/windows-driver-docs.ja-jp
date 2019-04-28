@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f403828220749a4e67121400096d2a18df72ce9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375094"
 ---
 # <a name="client-objects-and-the-engine"></a>クライアント オブジェクトとエンジン
 
@@ -161,7 +161,7 @@ EngExtCpp 拡張機能の対話、[デバッガー エンジン](introduction.md
 
 拡張ライブラリは、独自のクライアントのメソッドを使用してオブジェクトを作成もできる[ **IDebugClient::CreateClient** ](https://msdn.microsoft.com/library/windows/hardware/ff539320)または関数[ **DebugCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff540469)または[ **DebugConnect**](https://msdn.microsoft.com/library/windows/hardware/ff540465)します。
 
-クライアント オブジェクトの概要については、[クライアント オブジェクト](client-objects.md)を参照してください。
+クライアント オブジェクトの概要については、次を参照してください。[クライアント オブジェクト](client-objects.md)します。
 
  
 

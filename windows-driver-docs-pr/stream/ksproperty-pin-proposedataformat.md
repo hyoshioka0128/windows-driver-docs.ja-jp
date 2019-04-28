@@ -15,11 +15,11 @@ api_type:
 ms.date: 12/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e6976f513c795a58600894cf8a3cc483bcbdcc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380806"
 ---
 # <a name="kspropertypinproposedataformat"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT
 
@@ -42,16 +42,16 @@ ms.locfileid: "56580662"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56580662"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 KSPROPERTY_PIN_PROPOSEDATAFORMAT には KSDATAFORMAT、提案されたデータ形式を指定する型の構造が含まれます。 メンバーが、関連する pin ファクトリを指定します、KSP_PIN を使用してこのプロパティを指定します。
@@ -79,7 +79,7 @@ KS フィルター ステータスを返します\_ピンに設定または提�
 KSPROPERTY_TYPE_SET にこのプロパティを使用しても、データ形式が実際に変更はされません。 クライアントを使用して、 [ **KSPROPERTY\_接続\_DATAFORMAT** ](ksproperty-connection-dataformat.md)データ形式を変更します。 **KSPROPERTY_TYPE_SET**はこのプロパティを実装するために省略可能です。
 
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

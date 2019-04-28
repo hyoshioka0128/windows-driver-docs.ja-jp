@@ -1,20 +1,20 @@
 ---
-title: カスタムのデバイスのプロパティにアクセスします。
-description: カスタムのデバイスのプロパティにアクセスします。
+title: カスタム デバイス プロパティへのアクセス
+description: カスタム デバイス プロパティへのアクセス
 ms.assetid: 81170fd5-f1fb-4a06-a651-4651fc894070
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b49c22d6241e2fa41508d7c54be80f0c84cf077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375712"
 ---
-# <a name="accessing-custom-device-properties"></a>カスタムのデバイスのプロパティにアクセスします。
+# <a name="accessing-custom-device-properties"></a>カスタム デバイス プロパティへのアクセス
 
 
-Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)の使用をサポート[プロパティ キー](property-keys.md)を作成し、カスタムのデバイスのプロパティにアクセスします。 詳細については、[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)を参照してください。
+Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)の使用をサポート[プロパティ キー](property-keys.md)を作成し、カスタムのデバイスのプロパティにアクセスします。 詳細については、次を参照してください。[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)です。
 
 Windows Server 2003、Windows XP、および Windows 2000 では、カスタム レジストリにデバイス関連のコンポーネントのシステム提供のレジストリ キーの下のエントリの値を作成できます。 次の一覧には、対応するシステム提供のレジストリ キーをデバイス コンポーネントの種類ごとに呼び出される SetupAPI 関数が含まれています。 システム定義のレジストリ キーを開くと、アプリケーションおよびインストーラーは、開いているレジストリ キーの下のカスタム レジストリ エントリの値を変更する Windows ベースのレジストリの関数を呼び出すことができます。
 

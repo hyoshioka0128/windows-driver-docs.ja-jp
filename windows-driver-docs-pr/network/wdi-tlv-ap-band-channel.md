@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_AP_BAND_CHANNEL ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8da2db372b59d25c5560309e8ceb30f4143308b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374553"
 ---
 # <a name="wditlvapbandchannel"></a>WDI\_TLV\_AP\_バンド\_チャネル
 
@@ -38,7 +38,7 @@ WDI\_TLV\_AP\_バンド\_チャネルは、アクセス ポイントのバンド
 | 種類                                                               | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                |
 |--------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------|
 | [**WDI\_TLV\_BANDID**](wdi-tlv-bandid.md)                         |                                |          | バンドの識別子を指定します。                     |
-| [**WDI\_TLV\_チャネル\_情報\_一覧**](wdi-tlv-channel-info-list.md) |                                | X        | アクセス ポイントを開始するチャネルのリストを指定します。 |
+| [**WDI\_TLV\_チャネル\_情報\_一覧**](wdi-tlv-channel-info-list.md) |                                | x        | アクセス ポイントを開始するチャネルのリストを指定します。 |
 
  
 

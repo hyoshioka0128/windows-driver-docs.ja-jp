@@ -1,19 +1,19 @@
 ---
-title: スレッドのスタックのチェック
-description: スレッドのスタックのチェック
+title: スタックしたスレッドの確認
+description: スタックしたスレッドの確認
 ms.assetid: ffb1ff13-fc4c-4aaf-a8fe-b473b51b9db0
 keywords:
 - RPC がスタックしているスレッドのデバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39db2ef7eb8143fd4d44a7ea384403bea7302eb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375108"
 ---
-# <a name="checking-for-stuck-threads"></a>スレッドのスタックのチェック
+# <a name="checking-for-stuck-threads"></a>スタックしたスレッドの確認
 
 
 ## <span id="ddk_checking_for_stuck_threads_dbg"></span><span id="DDK_CHECKING_FOR_STUCK_THREADS_DBG"></span>

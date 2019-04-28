@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 368bf4c50ba01f01a503d9b0f5c24876cb4e2247
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372190"
 ---
 # <a name="receive-operations"></a>受信操作
 
@@ -20,11 +20,11 @@ ms.locfileid: "56529307"
 
  
 
-呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513) HV 拡張機能の DLL にパケットを転送する関数は、ワイヤレス LAN (WLAN) アダプターを介して受信します。 詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
+呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513) HV 拡張機能の DLL にパケットを転送する関数は、ワイヤレス LAN (WLAN) アダプターを介して受信します。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
 
 パケットを受信するには、IHV 拡張機能の DLL を呼び出す必要があります[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587)を 1 つまたは複数の IEEE EtherTypes の一覧を登録します。 このリスト内のエントリに一致する、EtherType でパケットが受信されると、オペレーティング システムの呼び出し、 [ *Dot11ExtIhvReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff547513)関数し、関数のを通じてパケット バッファーを渡します*pvInBuffer*パラメーター。
 
-**注**  IHV 拡張 DLL を呼び出す必要があります[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL は、関連付け前の操作を完了する前にします。 この操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
+**注**  IHV 拡張 DLL を呼び出す必要があります[ **Dot11ExtSetEtherTypeHandling** ](https://msdn.microsoft.com/library/windows/hardware/ff547587) DLL は、関連付け前の操作を完了する前にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
  
 

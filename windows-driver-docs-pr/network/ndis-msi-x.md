@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8228dcc831573067e11d94bd0c7da2caf54f766a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378355"
 ---
 # <a name="ndis-msi-x"></a>NDIS MSI-X
 
@@ -32,7 +32,7 @@ MSI をサポートするミニポート ドライバーを指定できます、
 
 MSI X のサポートは、特にのネットワーク インターフェイス カード (Nic) のサポートが側 scaling (RSS) を受信する場合の大幅なパフォーマンスの利点を提供できます。 詳細については、受信側のスケーリングを参照してください[Receive Side Scaling](ndis-receive-side-scaling2.md)します。
 
-詳細については、行ベースの割り込みは、[管理の割り込み](managing-interrupts.md)を参照してください。
+詳細については、行ベースの割り込みは、次を参照してください。[管理の割り込み](managing-interrupts.md)します。
 
 このセクションの内容:
 

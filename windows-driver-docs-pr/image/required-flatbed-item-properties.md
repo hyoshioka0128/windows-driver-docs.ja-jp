@@ -1,17 +1,17 @@
 ---
-title: フラット ベッドの必要なアイテムのプロパティ
-description: フラット ベッドの必要なアイテムのプロパティ
+title: 必須フラットベッド項目のプロパティ
+description: 必須フラットベッド項目のプロパティ
 ms.assetid: 5af295de-b5ad-47c7-b1db-9d5685ed8d19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9f091b3bd940514f4eeeb9a3b83d5102e7a2139
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379827"
 ---
-# <a name="required-flatbed-item-properties"></a>フラット ベッドの必要なアイテムのプロパティ
+# <a name="required-flatbed-item-properties"></a>必須フラットベッド項目のプロパティ
 
 
 

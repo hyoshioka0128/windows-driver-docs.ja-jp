@@ -4,11 +4,11 @@ description: カメラの組み込み関数についてを説明します。
 ms.date: 09/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 06081bc39204298abdf8899239d31d9fa1e6de9e
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370496"
 ---
 # <a name="camera-intrinsics"></a>カメラの組み込み
 

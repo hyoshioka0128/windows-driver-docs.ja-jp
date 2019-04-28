@@ -1,6 +1,6 @@
 ---
-title: Stream を閉じる
-description: Stream を閉じる
+title: ストリームを閉じる
+description: ストリームを閉じる
 ms.assetid: 1ed9b07c-8d22-485f-a7e8-3a27ca3768b0
 keywords:
 - Avcstrm.sys フィルター ドライバー WDK のストリーミング、ストリームを閉じる
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6713a9e053d918b2569663ac7b0e9ae24b8e9ff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372361"
 ---
-# <a name="close-a-stream"></a>Stream を閉じる
+# <a name="close-a-stream"></a>ストリームを閉じる
 
 ストリームの処理が完了すると、ストリームを開く要求によって割り当てられたリソースを解放するデータ ストリームを閉じる必要があります。
 

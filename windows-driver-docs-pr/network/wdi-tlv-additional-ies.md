@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ADDITIONAL_IES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b9435f3958ae96bf91457b629d5ab9e80c9e5e21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380560"
 ---
 # <a name="wditlvadditionalies"></a>WDI\_TLV\_追加\_IES
 
@@ -31,7 +31,7 @@ WDI\_TLV\_追加\_IES は追加の要素 (IE) の設定を含む TLV します�
 ## <a name="values"></a>値
 
 
-| 型                                                                                                       | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                                          |
+| 種類                                                                                                       | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                                                                                                          |
 |------------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_追加\_ビーコン\_IES**](wdi-tlv-additional-beacon-ies.md)                                 |                                | x        | ビーコン IEs の配列。 Wi-Fi Direct のポートはグループの所有者として動作しているときにビーコン パケットにこれらの追加 IEs を追加する必要があります。 これには、Wi-Fi Direct のポートはデバイスまたはクライアントのモードで動作しているときは無視されます。                                                                                              |
 | [**WDI\_TLV\_追加\_プローブ\_応答\_IES**](wdi-tlv-additional-probe-response-ies.md)                |                                | x        | プローブの応答での配列。 Wi-Fi Direct のポートは、Wi-Fi Direct デバイスまたはグループの所有者として動作しているときに、プローブ応答パケットをこれら追加 IEs を追加する必要があります。 これには、Wi-Fi Direct のポートは、クライアント モードで動作している場合は無視されます。                                                                 |
@@ -39,7 +39,7 @@ WDI\_TLV\_追加\_IES は追加の要素 (IE) の設定を含む TLV します�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

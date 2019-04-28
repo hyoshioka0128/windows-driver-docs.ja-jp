@@ -1,19 +1,19 @@
 ---
-title: 印刷のプロバイダーの機能
-description: 印刷のプロバイダーの機能
+title: 印刷プロバイダー機能
+description: 印刷プロバイダー機能
 ms.assetid: 1b01aac5-673a-4593-a52e-6017d9683c42
 keywords:
 - WDK、機能のプロバイダーを印刷します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fede6441e8c1268b00815b68219ad9fca52305c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377874"
 ---
-# <a name="print-provider-capabilities"></a>印刷のプロバイダーの機能
+# <a name="print-provider-capabilities"></a>印刷プロバイダー機能
 
 
 

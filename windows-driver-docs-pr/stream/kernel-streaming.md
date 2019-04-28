@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69095716a217e18fb93825f1c2fff581d2865cd6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376474"
 ---
 # <a name="kernel-streaming"></a>カーネル ストリーミング
 
@@ -48,7 +48,7 @@ Windows XP SP2 以降では、Microsoft が提供、 [USB ビデオ クラス](u
 
 詳細については、 *stream.sys*ドライバーを参照してください[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)します。
 
-AVStream については、、 [AVStream の概要](avstream-overview.md)を参照してください。
+AVStream については、次を参照してください。、 [AVStream の概要](avstream-overview.md)します。
 
 [DVD デコーダー ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff558742)のクライアント*stream.sys*します。
 

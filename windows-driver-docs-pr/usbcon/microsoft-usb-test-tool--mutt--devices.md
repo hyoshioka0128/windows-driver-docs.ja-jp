@@ -1,16 +1,16 @@
 ---
-Description: The Microsoft USB Test Tool (MUTT) is collection of devices for testing interoperability of your USB hardware with the Microsoft USB driver stack.
-title: Microsoft USB Test Tool (MUTT) デバイス
+Description: Microsoft USB Test Tool (MUTT) には、USB のハードウェアは Microsoft USB ドライバー スタックとの相互運用性をテストするためのデバイスのコレクションです。
+title: Microsoft USB テスト ツール (MUTT) デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 894db9398ea4e54685131e01e8ae2c6b9168802c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379982"
 ---
-# <a name="microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB Test Tool (MUTT) デバイス
+# <a name="microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB テスト ツール (MUTT) デバイス
 
 
 **要約**
@@ -128,7 +128,7 @@ SuperMUTT パックは、いずれかで 2 つのデバイスです。 USB 3.0 �
 ## <a name="usb-type-c-connex"></a>USB タイプ C ConnEx
 
 
-USB タイプ C 接続 Exerciser (USB 型 C ConnEx) では、USB 型-C# の相互運用性シナリオを自動化する 4 対 1 のスイッチのあるカスタム シールドです。 Arduino マイクロ コント ローラーとして使用するシールドは設計されています。 詳細については、[USB 型 C ConnEx でシステムをテスト USB 型-c](test-usb-type-c-systems-with-mutt-connex-c.md)を参照してください。
+USB タイプ C 接続 Exerciser (USB 型 C ConnEx) では、USB 型-C# の相互運用性シナリオを自動化する 4 対 1 のスイッチのあるカスタム シールドです。 Arduino マイクロ コント ローラーとして使用するシールドは設計されています。 詳細については、次を参照してください。 [USB 型 C ConnEx でシステムをテスト USB 型-c](test-usb-type-c-systems-with-mutt-connex-c.md)します。
 
 ![USB タイプ C ConnEx](images/connexc-side.jpg)
 

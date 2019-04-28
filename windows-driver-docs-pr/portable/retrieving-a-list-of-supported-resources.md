@@ -4,11 +4,11 @@ title: サポートされているリソース一覧の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98ff05f45b7dfb4c46fe67a5f9c761453c43e0ae
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376227"
 ---
 # <a name="retrieving-a-list-of-supported-resources"></a>サポートされているリソース一覧の取得
 

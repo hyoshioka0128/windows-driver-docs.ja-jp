@@ -1,6 +1,6 @@
 ---
-title: WMI データとイベント ブロックの MOF 構文
-description: WMI データとイベント ブロックの MOF 構文
+title: WMI データ ブロックとイベント ブロックの MOF 構文
+description: WMI データ ブロックとイベント ブロックの MOF 構文
 ms.assetid: 247037b7-d62e-4f74-8fa4-57e74f6c412f
 keywords:
 - WMI の WDK カーネルでは、イベント ブロック
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9afa4b343242215a3d724f37e4bcec3e6221413
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380310"
 ---
-# <a name="mof-syntax-for-wmi-data-and-event-blocks"></a>WMI データとイベント ブロックの MOF 構文
+# <a name="mof-syntax-for-wmi-data-and-event-blocks"></a>WMI データ ブロックとイベント ブロックの MOF 構文
 
 
 

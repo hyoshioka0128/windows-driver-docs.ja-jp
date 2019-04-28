@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 675e7593dbd47703b7881ca9320bf4aea8f7d7bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378742"
 ---
 # <a name="file-log-functions"></a>ファイル ログ関数
 
@@ -22,7 +22,7 @@ ms.locfileid: "56549698"
 
 ログ ファイルを使用すると、インストール中にシステムにコピーされたファイルに関する情報を記録します。 ログ ファイルには、システム ログまたは独自のインストール ログ ファイルのいずれかを指定できます。
 
-次の表には、ログ ファイルを操作するために使用できる関数が一覧表示します。 関数の説明の詳細については、、 [Microsoft Windows SDK ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=131248)を参照してください。
+次の表には、ログ ファイルを操作するために使用できる関数が一覧表示します。 関数の説明の詳細については、次を参照してください。、 [Microsoft Windows SDK ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=131248)します。
 
 <table>
 <colgroup>

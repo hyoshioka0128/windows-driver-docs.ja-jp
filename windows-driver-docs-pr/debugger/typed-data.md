@@ -5,11 +5,11 @@ ms.assetid: 44a84dfd-03f8-4d7b-8d71-e4b3ee23d105
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f38b61e3b831d78c869943d4e02077c8f9c3f01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380777"
 ---
 # <a name="typed-data"></a>型指定されたデータ
 
@@ -18,7 +18,7 @@ EngExtCpp の拡張機能フレームワークでは、ターゲットのメモ�
 
 キーを使用して場所を空ける Windows リストを反復処理できる[ **ExtRemoteList** ](https://msdn.microsoft.com/library/windows/hardware/ff544114)と、リスト内のオブジェクトの種類がわかっている場合は[ **ExtRemoteTypedList** ](https://msdn.microsoft.com/library/windows/hardware/ff544173).
 
-**注**  などのクライアント オブジェクトで[ **ExtExtension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)、これらのクラスのインスタンスは、拡張ライブラリは、拡張機能のコマンドを実行するために使用中にのみ有効ですか形式の出力構造体。 具体的には、これらはキャッシュされません。 クライアント オブジェクトが有効な場合の詳細については、[クライアント オブジェクトと、エンジン](client-objects-and-the-engine.md)、を参照してください。
+**注**  などのクライアント オブジェクトで[ **ExtExtension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)、これらのクラスのインスタンスは、拡張ライブラリは、拡張機能のコマンドを実行するために使用中にのみ有効ですか形式の出力構造体。 具体的には、これらはキャッシュされません。 クライアント オブジェクトが有効な場合の詳細については、次を参照してください。[クライアント オブジェクトと、エンジン](client-objects-and-the-engine.md)、します。
 
  
 

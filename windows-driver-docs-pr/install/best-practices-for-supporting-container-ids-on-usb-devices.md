@@ -5,11 +5,11 @@ ms.assetid: 58086d52-196f-4ea3-9ce6-62d3fcb43f9e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e971f39e21b655de026db86486e14f17838a6aa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378379"
 ---
 # <a name="best-practices-for-supporting-container-ids-on-usb-devices"></a>USB デバイスでコンテナー ID をサポートするためのベスト プラクティス
 

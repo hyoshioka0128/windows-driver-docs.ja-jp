@@ -4,18 +4,18 @@ description: ACPI を表す NFCC、PnP デバイス ノードを作成する場�
 ms.assetid: 8094B525-A4A1-42D2-8D1F-4B32D77418E3
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1b3305bec5c9b69d4e846306244be1cc42261eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375235"
 ---
 # <a name="nfc-driver-load-order"></a>NFC ドライバーの読み込み順序
 

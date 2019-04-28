@@ -1,17 +1,17 @@
 ---
-title: WDDM 2.1 機能
+title: WDDM 2.1 の機能
 description: このセクションでは、新機能と Windows Display Driver Model (WDDM) バージョン 2.1 の機能強化について説明します。
 ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 9299bf0a565c4765c1cfe506c6e4fdc513cd0a08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378416"
 ---
-# <a name="wddm-21-features"></a>WDDM 2.1 機能
+# <a name="wddm-21-features"></a>WDDM 2.1 の機能
 
 
 このトピックでは、以降、Windows 10 Anniversary Edition で利用できるある新機能と Windows Display Driver Model (WDDM) バージョン 2.1 では、機能強化の詳細についてを説明します。
@@ -178,7 +178,7 @@ WDDM 2.1 グラフィック ドライバーには、WDDM 2.0 または以前の�
 
 3. WDDM 2.1 グラフィックス ドライバーの INF は、"Store"がドライバーのインストールを変更します。
 
-詳細については、[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)を参照してください。
+詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 ドライバー ファイル、32 ビットと 64 ビットに保持され、ドライバー ストアから読み込まれます。 WoW64 ファイル システムのリダイレクトは、ドライバー ストアには適用されません。 Ihv は、必要な場合は、一意のドライバー ストアのフォルダーの下の WoW64 フォルダーなどを作成する標準の INF 構文を使用して、サブフォルダーを指定できます。
 

@@ -1,17 +1,17 @@
 ---
-title: WIA プロパティの変更 - 特殊なケースがない必要があります。
-description: WIA プロパティの変更 - 特殊なケースがない必要があります。
+title: 変更する必要のない WIA プロパティのマッピング - 特殊なケース
+description: 変更する必要のない WIA プロパティのマッピング - 特殊なケース
 ms.assetid: 4ed02c01-efe8-4728-a54a-26fe27aa403c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64c997952055b0c72f9463b4f99558cd2793d6bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380378"
 ---
-# <a name="mapping-wia-properties-that-need-no-changes---special-cases"></a>WIA プロパティの変更 - 特殊なケースがない必要があります。
+# <a name="mapping-wia-properties-that-need-no-changes---special-cases"></a>変更する必要のない WIA プロパティのマッピング - 特殊なケース
 
 
 互換レイヤーが失敗する場合は次のとおりです。

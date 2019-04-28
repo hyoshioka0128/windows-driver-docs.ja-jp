@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c05a055a4a2363e830364e2234c2af1f6b7ba6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382626"
 ---
 # <a name="mux-intermediate-driver-installation"></a>MUX 中間ドライバーのインストール
 
@@ -20,7 +20,7 @@ ms.locfileid: "56581805"
 
 
 
-このトピックでは、MUX 中間ドライバーのインストールに関する問題の概要を示します。 中間ドライバーの INF ファイルの構造については、[ネットワーク MUX 中間ドライバーのインストール要件](installation-requirements-for-network-mux-intermediate-drivers.md)を参照してください。
+このトピックでは、MUX 中間ドライバーのインストールに関する問題の概要を示します。 中間ドライバーの INF ファイルの構造については、次を参照してください。[ネットワーク MUX 中間ドライバーのインストール要件](installation-requirements-for-network-mux-intermediate-drivers.md)します。
 
 MUX 中間ドライバーでは、2 つの INF ファイルが必要です。 プロトコルの INF ファイルでは、プロトコルの下端のインストール パラメーターを定義します。 ミニポートの INF ファイルでは、仮想ミニポートの上端のインストール パラメーターを定義します。 設定、**クラス**INF ファイルのエントリを**Net**仮想ミニポート INF ファイルで、 **NetTrans**プロトコル INF ファイル。 次のコード例は、**クラス**プロトコル INF ファイルのエントリ。
 
@@ -44,7 +44,7 @@ Characteristics = 0x21
 
 **特性**0x21 の値を NCF を示します\_仮想 (0x1) および NCF\_いない\_ユーザー\_リムーバブル (0x20) フラグが設定されます。 NCF\_仮想では、デバイスが仮想アダプターを指定します。 NCF\_いない\_ユーザー\_リムーバブル記憶域は省略可能であり、ユーザーが中間のドライバーを削除できないことを指定します。 (する必要がありますいないこれを行う場合は、ユーザーがデバイスを手動でインストールする必要があります)、ユーザーから仮想ミニポートを非表示にする場合は、NCF を定義できます\_(0x8) を非表示フラグ。 NCF\_*Xxx* Netcfgx.h でフラグが定義されます。 詳細については、**特性**エントリおよび NCF\_*Xxx*フラグを参照してください[DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)します。
 
-*DDInstall* MUX 中間ドライバー用のプロトコル INF ファイルのセクションを含める必要があります、 **Addreg**ディレクティブを**Ndi**キー。 詳細については、[Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)と[DDInstall.Services セクション](ddinstall-services-section-in-a-network-inf-file.md)を参照してください。
+*DDInstall* MUX 中間ドライバー用のプロトコル INF ファイルのセクションを含める必要があります、 **Addreg**ディレクティブを**Ndi**キー。 詳細については、次を参照してください。 [Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)と[DDInstall.Services セクション](ddinstall-services-section-in-a-network-inf-file.md)します。
 
 INF ファイルに加えて MUX 中間ドライバーを使用した通知オブジェクトを指定することも必要があります。 通知オブジェクトは、仮想ミニポートのインストールを担当します。 通知オブジェクトを参照して、 **ComponentDll**で次のように、プロトコル INF エントリ。
 

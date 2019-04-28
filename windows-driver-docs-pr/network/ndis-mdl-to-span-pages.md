@@ -7,11 +7,11 @@ keywords:
 - Windows Vista 以降のドライバーをネットワーク NDIS_MDL_TO_SPAN_PAGES マクロ
 ms.localizationpriority: medium
 ms.openlocfilehash: e5903a6f9505aa9ef4cade6b141154fa874b95c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378412"
 ---
 # <a name="ndismdltospanpages-macro"></a>NDIS\_MDL\_TO\_スパン\_ページ マクロ
 

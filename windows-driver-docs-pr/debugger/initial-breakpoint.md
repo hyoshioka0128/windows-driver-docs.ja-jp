@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 393e0bb94aa8788310f944fe99ca8fad747e5094
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371633"
 ---
 # <a name="initial-breakpoint"></a>最初のブレークポイント
 
@@ -21,11 +21,11 @@ ms.locfileid: "56580341"
 
 既存のユーザー モード アプリケーション、最初に、デバッガーをアタッチするときに[ブレークポイント](using-breakpoints.md)直後に発生します。
 
-**-G**コマンド ライン オプションは、最初のブレークポイントを無視するには、WinDbg または CDB します。 この時点で自動的にコマンドを実行することができます。 このような状況の詳細については、[を制御する例外とイベント](controlling-exceptions-and-events.md)を参照してください。
+**-G**コマンド ライン オプションは、最初のブレークポイントを無視するには、WinDbg または CDB します。 この時点で自動的にコマンドを実行することができます。 このような状況の詳細については、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
 新しいターゲットを起動し、実際のアプリケーションの実行が開始するときに、そこに中断する場合は使用しないでください、 **-g**オプション。 代わりに、最初のブレークポイントが発生することができます。 デバッガーがアクティブで後にブレークポイントを設定、**メイン**または**winmain**ルーチンと、次を使用して、 [ **g (移動)** ](g--go-.md)コマンド。 実行し、すべての初期化手順と、メイン アプリケーションの実行が開始するときに、アプリケーションを停止します。
 
-カーネル モードで自動のブレークポイントの詳細については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
+カーネル モードで自動のブレークポイントの詳細については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
 
  
 

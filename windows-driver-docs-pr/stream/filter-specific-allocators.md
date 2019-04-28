@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bcf1aa09f27661e2cff582796f17fe38d3a733c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376110"
 ---
 # <a name="filter-specific-allocators"></a>特定のアロケーターのフィルター処理
 
@@ -20,7 +20,7 @@ ms.locfileid: "56573160"
 
 
 
-オンボード メモリやその他のデバイスの依存するストレージ メソッドのアロケーターを必要とするフィルターは、アロケーターをサポートすることで特定のアロケーターを提供できます[プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff566592)と[メソッド](https://msdn.microsoft.com/library/windows/hardware/ff563406)します。 詳細については、[ **KSPROPERTY\_ストリーム\_アロケーター**](https://msdn.microsoft.com/library/windows/hardware/ff565684)を参照してください。
+オンボード メモリやその他のデバイスの依存するストレージ メソッドのアロケーターを必要とするフィルターは、アロケーターをサポートすることで特定のアロケーターを提供できます[プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff566592)と[メソッド](https://msdn.microsoft.com/library/windows/hardware/ff563406)します。 詳細については、次を参照してください。 [ **KSPROPERTY\_ストリーム\_アロケーター**](https://msdn.microsoft.com/library/windows/hardware/ff565684)します。
 
 フィルターは IRP を受信\_MJ\_KSCREATE の種類の作成\_要求\_アロケーターは、アロケーターのフレームのオプションを指定します。 ミニドライバーのアロケーター作成ルーチンを呼び出して、要求の作成を検証する[ **KsValidateAllocatorCreateRequest**](https://msdn.microsoft.com/library/windows/hardware/ff567219)します。 このルーチンが、関連するへのポインターを返します、呼び出しが成功した場合[ **KSALLOCATOR\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/ff560979)構造体。
 

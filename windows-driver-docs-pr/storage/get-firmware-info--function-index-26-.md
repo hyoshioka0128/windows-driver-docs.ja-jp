@@ -1,17 +1,17 @@
 ---
-title: ファームウェア情報 (関数インデックス 26) を取得します。
+title: ファームウェア情報の取得 (関数インデックス 26)
 description: この関数では、ファームウェア イメージのスロットに関する情報を取得します。
 ms.assetid: ABE67651-6351-4D8E-BCFF-0488D2A34DC5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 131dd2bfe35d3abb3164943835ebe578b8982f58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379212"
 ---
-# <a name="get-firmware-info-function-index-26"></a>ファームウェア情報 (関数インデックス 26) を取得します。
+# <a name="get-firmware-info-function-index-26"></a>ファームウェア情報の取得 (関数インデックス 26)
 
 
 この関数では、ファームウェア イメージのスロットに関する情報を取得します。 呼び出す[NVDIMM-N の Id を取得する (関数インデックス 1)](get-nvdimm-n-identification--function-index-1-.md)現在のスロット番号を取得します。
@@ -72,7 +72,7 @@ ms.locfileid: "56558090"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
