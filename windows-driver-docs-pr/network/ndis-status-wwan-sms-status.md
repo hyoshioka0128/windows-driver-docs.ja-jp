@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SMS_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c60af8cff49121851565aa71b41cd1eb8dcb20e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372214"
 ---
 # <a name="ndisstatuswwansmsstatus"></a>NDIS\_状態\_WWAN\_SMS\_状態
 
@@ -32,7 +32,7 @@ ms.locfileid: "56530460"
 
 この表示でのトランザクション通知可能性があります、*クエリ*OID の要求\_WWAN\_SMS\_状態または要請されていないイベント。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

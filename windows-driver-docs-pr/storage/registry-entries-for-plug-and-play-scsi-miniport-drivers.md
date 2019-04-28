@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03afdab59d1a54b7d24f137405ffc2b1785e4ac9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366245"
 ---
 # <a name="registry-entries-for-plug-and-play-scsi-miniport-drivers"></a>プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ
 
@@ -29,7 +29,7 @@ ms.locfileid: "56557534"
 
 -   **PnPInterface**インターフェイスを示すレジストリ エントリで、ミニポート ドライバーがプラグ アンド プレイをサポートします。
 
-SCSI HBA のサービスとしてのミニポート ドライバーのインストールは、そのデバイスを制御するための適切なドライバーを指定された HBA のプラグ アンド プレイ ハードウェア ID と一致するセットアップ情報 (INF) ファイルを提供することで通常行われます。 詳細については、INF ファイルの設定は、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)*を参照してください。*
+SCSI HBA のサービスとしてのミニポート ドライバーのインストールは、そのデバイスを制御するための適切なドライバーを指定された HBA のプラグ アンド プレイ ハードウェア ID と一致するセットアップ情報 (INF) ファイルを提供することで通常行われます。 詳細については、INF ファイルの設定は、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)*します。*
 
 HBA、用のサービスとしてのミニポート ドライバーがインストールされていない場合、 **PnPInterface**レジストリ エントリは*ように*ミニポート ドライバーを初期化します。 指定したインターフェイスは、プラグ アンド プレイ適切な HBA を検索する場合にのみ初期化されます。 サービスが正しく割り当てられていない場合、HBA に、プラグ アンド プレイはしないデバイスを検出したときに通知するドライバーを決定します。 この動作は仕様であり、ミニポート ドライバーはこれを回避しようとはしないでください。
 

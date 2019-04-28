@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e5cc1286d49e4b6b48343b0248f83dc4bd46280
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364266"
 ---
 # <a name="io-status-blocks"></a>I/O ステータス ブロック
 
@@ -32,7 +32,7 @@ ms.locfileid: "56572668"
 
 、、の IRP の完了時に、**状態**フィールドは、ドライバーが IRP の処理が実際には、要求を満たすか、IRP がエラー状態が失敗したかを示します。 **情報**フィールドは、呼び出し元に実際に発生した内容についての詳細情報を提供します。 たとえば、読み取りまたは書き込み操作の後に実際に転送されたバイト数が含まれています。
 
-詳細については、[IRP の状態の I/O ブロックを設定](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)を参照してください。
+詳細については、次を参照してください。 [IRP の状態の I/O ブロックを設定](processing-irps-in-a-lowest-level-driver.md#ddk-setting-the-i-o-status-block-in-an-irp-kg)します。
 
  
 

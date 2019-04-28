@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c85a3e31e247dbdf927aac31aebad5ec51c9c6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366914"
 ---
 # <a name="wiadpvdshowdevicepath"></a>WIA\_DPV\_DSHOW\_デバイス\_パス
 

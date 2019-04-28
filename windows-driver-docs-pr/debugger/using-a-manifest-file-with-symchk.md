@@ -1,17 +1,17 @@
 ---
-title: SymChk でマニフェスト ファイルの使用
-description: SymChk でマニフェスト ファイルの使用
+title: SymChk でのマニフェスト ファイルの使用
+description: SymChk でのマニフェスト ファイルの使用
 ms.assetid: ee5d0c39-1838-4595-adf4-6cd1261a57c8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7db76f75ecab5769c2ce33554f3c5500b247fdc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367968"
 ---
-# <a name="using-a-manifest-file-with-symchk"></a>SymChk でマニフェスト ファイルの使用
+# <a name="using-a-manifest-file-with-symchk"></a>SymChk でのマニフェスト ファイルの使用
 
 
 ## <span id="ddk_using_symchk_dtoolq"></span><span id="DDK_USING_SYMCHK_DTOOLQ"></span>

@@ -1,6 +1,6 @@
 ---
-title: BDA フィルターを使用してテストの BDA ドライバー
-description: BDA フィルターを使用してテストの BDA ドライバー
+title: BDA フィルターを使用した BDA ドライバーのテスト
+description: BDA フィルターを使用した BDA ドライバーのテスト
 ms.assetid: 136810b7-9378-482b-8e21-a7eae0142909
 keywords:
 - ドライバーをテスト ドライバーのアーキテクチャの WDK AVStream をブロードキャストします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2a9dec9af2e17292f22cb8ab242bc95c6c3c579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364802"
 ---
-# <a name="testing-bda-drivers-using-bda-filters"></a>BDA フィルターを使用してテストの BDA ドライバー
+# <a name="testing-bda-drivers-using-bda-filters"></a>BDA フィルターを使用した BDA ドライバーのテスト
 
 
 

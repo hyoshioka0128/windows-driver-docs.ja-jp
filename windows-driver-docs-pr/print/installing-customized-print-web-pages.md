@@ -1,6 +1,6 @@
 ---
-title: 印刷のカスタマイズされた Web ページをインストールします。
-description: 印刷のカスタマイズされた Web ページをインストールします。
+title: カスタマイズされた印刷 Web ページをインストールする
+description: カスタマイズされた印刷 Web ページをインストールする
 ms.assetid: 8a50e7ea-0e91-476f-86cb-935329b76f91
 keywords:
 - ドライバー WDK プリンター、Web ページをインストールします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 476a2c45d6d3fd6bbb00694dc21c3ea355bb30d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366810"
 ---
-# <a name="installing-customized-print-web-pages"></a>印刷のカスタマイズされた Web ページをインストールします。
+# <a name="installing-customized-print-web-pages"></a>カスタマイズされた印刷 Web ページをインストールする
 
 
 

@@ -1,20 +1,20 @@
 ---
-title: 小さいメモリ ダンプ
-description: 小さいメモリ ダンプ
+title: 小さなメモリ ダンプ
+description: 小さなメモリ ダンプ
 ms.assetid: bc502411-5366-49d3-b650-9dddda286934
 keywords:
 - ダンプ ファイル、小さいメモリ ダンプ
-- 小さいメモリ ダンプ
+- 小さなメモリ ダンプ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e7d9533432a68881b66c4ae9f99d18d8c7bfaff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368436"
 ---
-# <a name="small-memory-dump"></a>小さいメモリ ダンプ
+# <a name="small-memory-dump"></a>小さなメモリ ダンプ
 
 
 ## <span id="ddk_small_memory_dump_dbg"></span><span id="DDK_SMALL_MEMORY_DUMP_DBG"></span>

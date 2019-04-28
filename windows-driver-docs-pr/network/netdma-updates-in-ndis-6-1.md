@@ -7,11 +7,11 @@ keywords:
 ms.date: 01/09/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fad15a17d85a824db12bb4817ac89401e1a7e99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369886"
 ---
 # <a name="netdma-updates-in-ndis-61"></a>NDIS 6.1 で NetDMA 更新プログラム
 
@@ -22,4 +22,4 @@ NetDMA DMA エンジンをサポートするダイレクト メモリ アクセ�
 
 NetDMA インターフェイスは、Nic とその他のドライバーに対して提供されている省略可能なサービスです。
 
-NetDMA の詳細については、[NetDMA ドライバー](netdma-drivers.md)を参照してください。
+NetDMA の詳細については、次を参照してください。 [NetDMA ドライバー](netdma-drivers.md)します。

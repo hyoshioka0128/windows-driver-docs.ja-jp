@@ -1,19 +1,19 @@
 ---
-title: ストレージ形式のシンボル
-description: ストレージ形式のシンボル
+title: シンボル ストレージの形式
+description: シンボル ストレージの形式
 ms.assetid: 4aeaa644-9da4-4567-9dc7-86db38b7e93c
 keywords:
 - SymStore、ストレージ形式
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8e0d2252edf1a1ee5aed505e448de3c04f25d33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368067"
 ---
-# <a name="symbol-storage-format"></a>ストレージ形式のシンボル
+# <a name="symbol-storage-format"></a>シンボル ストレージの形式
 
 
 ## <span id="ddk_symbol_files_overview_dbg"></span><span id="DDK_SYMBOL_FILES_OVERVIEW_DBG"></span>

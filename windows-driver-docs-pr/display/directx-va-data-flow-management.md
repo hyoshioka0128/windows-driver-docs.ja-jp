@@ -1,6 +1,6 @@
 ---
-title: DirectX VA データ フローの管理
-description: DirectX VA データ フローの管理
+title: DirectX VA データ フロー管理
+description: DirectX VA データ フロー管理
 ms.assetid: ce6c4c2d-c290-4cc1-9f95-43480cd025ab
 keywords:
 - DirectX ビデオ アクセラレータ WDK Windows 2000 の表示、データ フロー
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3ebd594d52326a1309c6551669ebbba63886d7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368604"
 ---
-# <a name="directx-va-data-flow-management"></a>DirectX VA データ フローの管理
+# <a name="directx-va-data-flow-management"></a>DirectX VA データ フロー管理
 
 
 ## <span id="ddk_directx_va_data_flow_management_gg"></span><span id="DDK_DIRECTX_VA_DATA_FLOW_MANAGEMENT_GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: WDF で電源参照リークのデバッグ
+title: WDF での電源参照リークのデバッグ
 description: Windows Driver Frameworks (WDF) ドライバー呼び出し WdfDeviceStopIdle ときに、フレームワークは、デバイスの電源の参照カウントをインクリメントします。
 ms.assetid: 25F4EEBB-4733-498C-8704-8E015F81FE06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 585be1886c274efcfbbb23ddc16568f4d5d91468
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362736"
 ---
-# <a name="debugging-power-reference-leaks-in-wdf"></a>WDF で電源参照リークのデバッグ
+# <a name="debugging-power-reference-leaks-in-wdf"></a>WDF での電源参照リークのデバッグ
 
 
 Windows Driver Frameworks (WDF) ドライバーを呼び出すと[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)フレームワークは、デバイスの電源の参照カウントをインクリメントします。 すべての成功した呼び出し**WdfDeviceStopIdle**への呼び出しで一致する必要があります[ **WdfDeviceResumeIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546838) power 参照カウントをデクリメントします。

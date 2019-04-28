@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09b0907cebc3a4b08ac03471373c3690e2649566
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363992"
 ---
 # <a name="kspropertygeneralcomponentid"></a>KSPROPERTY\_全般\_COMPONENTID
 
@@ -66,7 +66,7 @@ KSPROPERTY\_全般\_COMPONENTID プロパティが省略可能なプロパティ
 
 [ **KSCOMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff561027)構造の GUID 値に含まれる**製造元**、**製品**、**コンポーネント**、および**名前**します。 ULONG の値が含まれている**バージョン**と**リビジョン**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

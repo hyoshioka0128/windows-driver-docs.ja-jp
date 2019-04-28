@@ -1,19 +1,19 @@
 ---
-title: ポイント アンド プリント ドライバー パッケージを使用しました。
-description: ポイント アンド プリント ドライバー パッケージを使用しました。
+title: ドライバー パッケージのポイント アンド プリント
+description: ドライバー パッケージのポイント アンド プリント
 ms.assetid: 4574d0c3-2ec5-4870-96ac-f828ba8515b3
 keywords:
 - ポイント アンド プリントの WDK、パッケージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 915933d74555707a885ab4181bd8929ca9c54a68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362726"
 ---
-# <a name="point-and-print-with-driver-packages"></a>ポイント アンド プリント ドライバー パッケージを使用しました。
+# <a name="point-and-print-with-driver-packages"></a>ドライバー パッケージのポイント アンド プリント
 
 
 プリント サーバーに接続されているプリント クライアントは、ポイントを使用し、インストール用の全体のドライバー パッケージのコピーを印刷できます。 使用する利点は、ポイントし、そのパッケージを使用した印刷します。

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 1631e42945f5e4e73177003dbcbe45b50cc764fe
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365737"
 ---
 # <a name="oidwditaskstartap"></a>OID\_WDI\_タスク\_開始\_アジア太平洋
 
@@ -112,7 +112,7 @@ OID\_WDI\_タスク\_開始\_AP 要求 IHV コンポーネントが、Wi-Fi Dire
 
 [NDIS\_STATUS\_WDI\_INDICATION\_START\_AP\_COMPLETE](ndis-status-wdi-indication-start-ap-complete.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

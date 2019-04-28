@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 821d469359adb012f4c2b8227703d7347022206d
-ms.sourcegitcommit: a58b4859254a651502e4329a6e521fe0fa11c7f2
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56582949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361064"
 ---
 # <a name="keywords-not-displayed-in-the-user-interface"></a>ユーザー インターフェイスに表示されないキーワード
 
@@ -26,13 +26,13 @@ NDIS 6.0 および以降のバージョンの NDIS ミニポート ドライバ�
 これらの一般的なキーワードは、次の一覧について説明します。 特定のキーワードの詳細については、WDK ドキュメントでのキーワードを検索してください。
 
 <a href="" id="-iftype"></a>**\*IfType**  
-デバイスの NDIS インターフェイスの型。 NDIS インターフェイスの種類の詳細については、[NDIS インターフェイス型](https://msdn.microsoft.com/library/windows/hardware/ff565767)を参照してください。
+デバイスの NDIS インターフェイスの型。 NDIS インターフェイスの種類の詳細については、次を参照してください。 [NDIS インターフェイス型](https://msdn.microsoft.com/library/windows/hardware/ff565767)します。
 
 <a href="" id="-mediatype"></a>**\*メディアの種類**  
-デバイスのメディアを種類します。 ミニポート アダプターのメディアの種類の詳細については、[OID\_GEN\_メディア\_サポートされている](https://msdn.microsoft.com/library/windows/hardware/ff569609)を参照してください。
+デバイスのメディアを種類します。 ミニポート アダプターのメディアの種類の詳細については、次を参照してください。 [OID\_GEN\_メディア\_サポートされている](https://msdn.microsoft.com/library/windows/hardware/ff569609)します。
 
 <a href="" id="-physicalmediatype"></a>**\*PhysicalMediaType**  
-デバイスの物理メディアを種類します。 ミニポート アダプタの物理メディアの種類の詳細については、[OID\_GEN\_物理\_MEDIUM](https://msdn.microsoft.com/library/windows/hardware/ff569621)を参照してください。
+デバイスの物理メディアを種類します。 ミニポート アダプタの物理メディアの種類の詳細については、次を参照してください。 [OID\_GEN\_物理\_MEDIUM](https://msdn.microsoft.com/library/windows/hardware/ff569621)します。
 
 <a href="" id="-ndisdevicetype-------"></a>**\*NdisDeviceType**   
 デバイスの種類。 既定値は、0 で、標準的なネットワーク デバイスをネットワークに接続することを示します。 設定 **\*NdisDeviceType** NDIS に\_デバイス\_型\_エンドポイント (1) 場合、このデバイスは、エンドポイント デバイスとは、ネットワークに接続する場合は true。 ネットワーク インターフェイスではありません。 たとえば、NDIS を指定する必要があります\_デバイス\_型\_ネットワーク インフラストラクチャを使用して、ローカル コンピューターのシステムとの通信が外部への接続を提供しないスマート フォンなどのデバイス用のエンドポイントネットワーク。 ただし、必要があります**\*いない\*** 外部ネットワークへの接続を提供するために VPN インタ フェースなどの仮想アダプター NDIS_DEVICE_TYPE_ENDPOINT にこのキーワードを設定します。

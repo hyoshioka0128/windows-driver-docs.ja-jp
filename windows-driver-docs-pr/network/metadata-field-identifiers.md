@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b7184bf3303cc236f1d78e4cbcc265d51b978a8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367568"
 ---
 # <a name="metadata-field-identifiers"></a>メタデータ フィールド識別子
 

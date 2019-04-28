@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RCV_CRC_ERROR ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 30c0a211ed4ccab25a1641902599d7f736672fbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367580"
 ---
 # <a name="oidgenrcvcrcerror"></a>OID\_GEN\_受信\_CRC\_エラー
 
@@ -26,20 +26,20 @@ ms.locfileid: "56573814"
 要求されません。
 
 <a href="" id="ndis-5-1-drivers"></a>5.1 の NDIS ドライバー  
-任意。
+(省略可能)。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
 <a href="" id="ndis-5-1-drivers"></a>5.1 の NDIS ドライバー  
-任意。
+(省略可能)。
 
 <a name="remarks"></a>コメント
 -------
 
-値、 [OID\_GEN\_受信\_破棄](oid-gen-rcv-discards.md)OID には CRC エラーが含まれています。 Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
+値、 [OID\_GEN\_受信\_破棄](oid-gen-rcv-discards.md)OID には CRC エラーが含まれています。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_LINK_SPEED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 097bc08b6a61f54b242d1ab844e23f2b94964a31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369844"
 ---
 # <a name="oidgenlinkspeed"></a>OID\_GEN\_リンク\_速度
 

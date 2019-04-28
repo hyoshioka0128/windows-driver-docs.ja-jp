@@ -1,17 +1,17 @@
 ---
-title: パケット データ サービスの受け渡し
-description: パケット データ サービスの受け渡し
+title: パケット データ サービスのハンドオフ
+description: パケット データ サービスのハンドオフ
 ms.assetid: 33cb68ac-42db-4bb0-8855-a8575e6e6331
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 336d0a23441ce5cd7f6983b98661548bc8c90d62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363666"
 ---
-# <a name="packet-data-service-handoffs"></a>パケット データ サービスの受け渡し
+# <a name="packet-data-service-handoffs"></a>パケット データ サービスのハンドオフ
 
 
 次の図は、ミニポート ドライバーがパケット サービス GPRS、EDGE、UMTS、HSDPA、TD SCDMA など、さまざまな GSM ベースのテクノロジとの間を移動または EV DO、1 xrtt など、さまざまな CDMA ベースのテクノロジの間で移動ときに従う必要のある手順を示しています。または、EV DO RevA します。 太字のラベルは、OID 識別子またはトランザクションのフロー制御を通常のテキストに表示されるラベル OID 構造内で重要なフラグ。

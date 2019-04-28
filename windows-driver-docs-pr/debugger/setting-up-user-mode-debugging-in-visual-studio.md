@@ -5,11 +5,11 @@ ms.assetid: D36220DF-1ACB-4D8B-BC4C-1A6FCB54CA15
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ca46bafc45a4a507148ccbf049c2d5caef408e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368119"
 ---
 # <a name="span-iddebuggersettingupuser-modedebugginginvisualstudiospansetting-up-user-mode-debugging-in-visual-studio"></a><span id="debugger.setting_up_user-mode_debugging_in_visual_studio"></span>Visual Studio でのユーザー モード デバッグのセットアップ
 
@@ -23,7 +23,7 @@ ms.locfileid: "56574622"
 ## <a name="span-iddebuggingauser-modeprocessonthelocalcomputerspanspan-iddebuggingauser-modeprocessonthelocalcomputerspanspan-iddebuggingauser-modeprocessonthelocalcomputerspandebugging-a-user-mode-process-on-the-local-computer"></a><span id="Debugging_a_User-Mode_Process_on_the_Local_Computer"></span><span id="debugging_a_user-mode_process_on_the_local_computer"></span><span id="DEBUGGING_A_USER-MODE_PROCESS_ON_THE_LOCAL_COMPUTER"></span>ローカル コンピューターのユーザー モード プロセスのデバッグ
 
 
-特別な設定は、ローカル コンピューター上のユーザー モード プロセスをデバッグするために必要ありません。 プロセスにアタッチまたはデバッガーでプロセスの起動については、[ユーザー モード プロセスを使用して Visual Studio のデバッグ](debugging-a-user-mode-process-using-visual-studio.md)を参照してください。
+特別な設定は、ローカル コンピューター上のユーザー モード プロセスをデバッグするために必要ありません。 プロセスにアタッチまたはデバッガーでプロセスの起動については、次を参照してください。[ユーザー モード プロセスを使用して Visual Studio のデバッグ](debugging-a-user-mode-process-using-visual-studio.md)します。
 
 ## <a name="span-iddebuggingauser-modeprocessonatargetcomputerspanspan-iddebuggingauser-modeprocessonatargetcomputerspanspan-iddebuggingauser-modeprocessonatargetcomputerspandebugging-a-user-mode-process-on-a-target-computer"></a><span id="Debugging_a_User-Mode_Process_on_a_Target_Computer"></span><span id="debugging_a_user-mode_process_on_a_target_computer"></span><span id="DEBUGGING_A_USER-MODE_PROCESS_ON_A_TARGET_COMPUTER"></span>ターゲット コンピューター上のユーザー モード プロセスのデバッグ
 

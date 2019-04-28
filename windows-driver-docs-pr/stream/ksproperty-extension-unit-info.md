@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06cdecfe40ea2386046e2900dd330cae69d2e977
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360139"
 ---
 # <a name="kspropertyextensionunitinfo"></a>KSPROPERTY\_拡張子\_単位\_情報
 
@@ -68,7 +68,7 @@ KSPROPERTY\_拡張子\_単位\_情報プロパティが拡張機能単位の記�
 
 システム提供の USB ビデオ クラス ドライバー、デバイスの起動中に (*Usbvideo.sys*) は、デバイスの拡張単位記述子から情報をキャッシュします。 *Usbvideo.sys*では情報 KSPROPERTY に応答をキャッシュし、\_拡張子\_単位\_情報。
 
-そのため、このプロパティによって返されるフィールドは、拡張機能ユニット記述子のデバイスで提供されるものと同じです。 このような記述子の例は、[サンプル拡張機能ユニット記述子](https://msdn.microsoft.com/library/windows/hardware/ff568133)を参照してください。
+そのため、このプロパティによって返されるフィールドは、拡張機能ユニット記述子のデバイスで提供されるものと同じです。 このような記述子の例は、次を参照してください。[サンプル拡張機能ユニット記述子](https://msdn.microsoft.com/library/windows/hardware/ff568133)します。
 
 具体的には、KSPROPERTY\_拡張機能\_単位\_GUID の次の表に示すように、記述子から、データ フィールドを続けて拡張単位が情報を返します。
 

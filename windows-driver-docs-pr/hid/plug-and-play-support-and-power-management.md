@@ -5,11 +5,11 @@ ms.assetid: 2D51B1B7-345E-4311-81D6-8A14CE2B44FE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c8ab4e5227671e191e68336422157605adfaa75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372988"
 ---
 # <a name="plug-and-play-support-for-i2c"></a>プラグ アンド プレイ I2C のサポート
 
@@ -24,8 +24,8 @@ ACPI 5.0 仕様には、クラスの HID デバイスのサポートが含まれ
 
 |                           |                                             |             |                                                 |                                                                                      |
 |---------------------------|---------------------------------------------|-------------|-------------------------------------------------|--------------------------------------------------------------------------------------|
-| フィールド                     | Value                                       | ACPI オブジェクト | 表記                                          | コメント                                                                             |
-| 互換性のある ID             | PNP0C50                                     | \_CID       | ACPI0C50 または PNP0C50 の形式を文字列します。     | CompatibleID                                                                         |
+| フィールド                     | 値                                       | ACPI オブジェクト | 表記                                          | コメント                                                                             |
+| 互換性 ID             | PNP0C50                                     | \_CID       | ACPI0C50 または PNP0C50 の形式を文字列します。     | CompatibleID                                                                         |
 | Hardware ID (ハードウェア ID)               | ベンダー固有                             | \_非表示       | VVVVdddd (例: NVDA0001) の形式の文字列します。 | VendorID + DeviceID                                                                  |
 | サブシステム                 | ベンダー固有                             | \_SUB       | VVVVssss (例: INTL1234) の形式の文字列します。 | SubVendorID + SubSystemID                                                            |
 | ハードウェアのリビジョン         | ベンダー固有                             | \_HRV       | 0xRRRR (2 バイト リビジョン)                         | リビジョン Id                                                                           |
@@ -36,7 +36,7 @@ ACPI 5.0 仕様には、クラスの HID デバイスのサポートが含まれ
 
 HID I²C のすべてのデバイスでは、次の必須フィールドを指定する必要があります。
 
--   互換性のある ID
+-   互換性 ID
 -   Hardware ID (ハードウェア ID)
 -   ハードウェアのリビジョン
 -   リソースの現在の設定

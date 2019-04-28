@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85f56bc39fdb6c712edb85abd0a97a54c0dbe48d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365685"
 ---
 # <a name="converting-afm-files-to-ntf-files"></a>AFM ファイルを NTF ファイルに変換する
 
@@ -70,7 +70,7 @@ Comment UniqueID IDnumber
 
 場所*id 番号:* フォント ベンダーによって発行されたフォントの一意の識別子を表します。
 
-Makentf.txt には、いくつかの追加の .map とするのと同じディレクトリ内に存在する必要があります .ps ファイルが必要です東アジア フォントの .afm ファイルを処理しているときに **-o** PSFamily.dat とします。 追加の .map と (PSFamily.dat) と WDK で提供される、.ps ファイルは、フォントの Unicode コードから CID へのマッピング テーブルを作成するために必要なは。 詳細については、[東アジア言語 AFM ファイルの変換を NTF ファイル](converting-east-asian-afm-files-to-ntf-files.md)を参照してください。
+Makentf.txt には、いくつかの追加の .map とするのと同じディレクトリ内に存在する必要があります .ps ファイルが必要です東アジア フォントの .afm ファイルを処理しているときに **-o** PSFamily.dat とします。 追加の .map と (PSFamily.dat) と WDK で提供される、.ps ファイルは、フォントの Unicode コードから CID へのマッピング テーブルを作成するために必要なは。 詳細については、次を参照してください。[東アジア言語 AFM ファイルの変換を NTF ファイル](converting-east-asian-afm-files-to-ntf-files.md)します。
 
 .Ntf ファイルに変換される .afm ファイルに含めることができます、 **FontBBox2**キーワード。 このキーワードの引数がの場合と同様**FontBBox** (を参照してください、 *Adobe フォント メトリック ファイル形式の仕様*、Adobe Systems, Inc. から) ことを除いて、 **FontBBox2**引数を指定する設定 (約) などの特定の文字で使用されるグリフの境界ボックス中**FontBBox**引数が .afm ファイルで説明されているすべての文字の和集合の境界ボックスについて説明します。 場合**FontBBox2**が検出されなければ、指定された値**FontBBox**境界ボックスのために使用します。
 

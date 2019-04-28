@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52e01b65932935224b6e9f823d3d33fa973758b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368904"
 ---
 # <a name="validating-network-profile-extensions"></a>ネットワーク プロファイル拡張機能の検証
 
@@ -33,9 +33,9 @@ ms.locfileid: "56573875"
 
 -   オペレーティング システムを呼び出して関連付け前の操作を開始する、 [ *Dot11ExtIhvPerformPreAssociate* ](https://msdn.microsoft.com/library/windows/hardware/ff547499)関数。 このような状況で IHV 拡張機能の DLL をする必要があります、接続およびセキュリティ設定が有効である確認します。 関数にエラーが返されます、設定が有効な場合は、\_成功と DLL は、関連付け前の操作を続行します。 それ以外の場合、関数は、Winerror.h で定義されている、該当するエラー コードを返します。
 
-    前の関連付け操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
+    前の関連付け操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
-IHV ハンドラー関数の詳細については、[802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)を参照してください。
+IHV ハンドラー関数の詳細については、次を参照してください。 [802.11 IHV ハンドラー関数をネイティブ](https://msdn.microsoft.com/library/windows/hardware/ff560627)します。
 
  
 

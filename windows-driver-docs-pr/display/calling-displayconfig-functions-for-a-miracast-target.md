@@ -1,17 +1,17 @@
 ---
-title: Miracast ターゲット DisplayConfig 関数の呼び出し
+title: Miracast ターゲットに対する DisplayConfig 関数の呼び出し
 ms.assetid: D408986B-B33B-4A96-B93C-2A2F301E74AF
-description: Miracast ターゲット DisplayConfig 関数の呼び出し
+description: Miracast ターゲットに対する DisplayConfig 関数の呼び出し
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 252ce447878a3d2742ee25954b90c33052f1c124
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370827"
 ---
-# <a name="calling-displayconfig-functions-for-a-miracast-target"></a>Miracast ターゲット DisplayConfig 関数の呼び出し
+# <a name="calling-displayconfig-functions-for-a-miracast-target"></a>Miracast ターゲットに対する DisplayConfig 関数の呼び出し
 
 
 新しい Miracast ターゲットに公開されている既存のアプリの互換性の問題を軽減する、 [ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)と[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)関数の実装に向け Miracast ターゲットを検出する方法があります。

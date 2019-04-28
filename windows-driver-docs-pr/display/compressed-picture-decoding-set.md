@@ -1,19 +1,19 @@
 ---
-title: 圧縮する画像のセットをデコード
-description: 圧縮する画像のセットをデコード
+title: 圧縮画像のデコード セット
+description: 圧縮画像のデコード セット
 ms.assetid: 7d6e2050-663e-4370-a210-1d319cfbde6d
 keywords:
 - 圧縮の画像セット WDK DirectX VA のデコード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d556a2cb35dd002155f0d74dbbce0f90d04c322e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362478"
 ---
-# <a name="compressed-picture-decoding-set"></a>圧縮する画像のセットをデコード
+# <a name="compressed-picture-decoding-set"></a>圧縮画像のデコード セット
 
 
 ## <span id="ddk_compressed_picture_decoding_set_gg"></span><span id="DDK_COMPRESSED_PICTURE_DECODING_SET_GG"></span>

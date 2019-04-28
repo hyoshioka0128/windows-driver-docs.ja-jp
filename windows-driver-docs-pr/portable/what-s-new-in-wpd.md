@@ -1,16 +1,16 @@
 ---
-Description: This topic summarizes the new features and improvements for Windows Portable Devices (WPD) in Windows 8.
-title: 新機能については WPD
+Description: このトピックでは、新機能との Windows ポータブル デバイス (WPD) Windows 8 の機能強化をまとめたものです。
+title: WPD の新機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfa7eda3504c42d2f067b074a219bf377876b8ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370436"
 ---
-# <a name="whats-new-in-wpd"></a>新機能については WPD
+# <a name="whats-new-in-wpd"></a>WPD の新機能
 
 
 このトピックでは、Windows ポータブル デバイス (WPD) の機能強化、新しい機能をまとめたものです。

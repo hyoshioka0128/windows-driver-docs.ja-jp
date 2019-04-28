@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dfbc0b46e48adbdb7bb8a64c85fa096c8730cde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360523"
 ---
 # <a name="how-to-use-decorations-in-inf-files-for-printer-drivers"></a>プリンター ドライバーの INF ファイルで装飾を使用する方法
 

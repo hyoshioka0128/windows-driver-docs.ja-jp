@@ -1,18 +1,18 @@
 ---
-title: UVC デバイス DShow ブリッジ実装ガイダンス
+title: UVC デバイス用の DShow Bridge 実装ガイダンス
 description: UVC デバイス DShow ブリッジ実装ガイダンスを提供します。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ccaa5be9ac2ff404335aaa5dc2f3a31caf75464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363611"
 ---
-# <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>UVC デバイス DShow ブリッジ実装ガイダンス
+# <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>UVC デバイス用の DShow Bridge 実装ガイダンス
 
-このトピックでは、カメラと USB ビデオ クラス (UVC) 仕様に準拠しているデバイス DShow ブリッジを構成するための実装のガイダンスを提供します。 プラットフォームは[Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors) DShow ブリッジを構成する標準の USB バスから。 拡張プロパティの OS ディスクリプター USB の標準的な記述子の拡張機能は、USB デバイスでは標準の仕様を有効になっていない Windows の特定のデバイス プロパティを返すために使用します。
+このトピックでは、カメラと USB ビデオ クラス (UVC) 仕様に準拠しているデバイス DShow ブリッジを構成するための実装のガイダンスを提供します。 プラットフォームは[Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors) DShow ブリッジを構成する標準の USB バスから。 拡張プロパティ OS 記述子は USB の標準的な記述子の拡張機能です。標準仕様では有効にされない Windows 固有のデバイス プロパティを返すために、USB デバイスによって使用されます。
 
 ## <a name="overview"></a>概要
 
@@ -68,7 +68,7 @@ USB の OS ディスクリプターを使用して DShow ブリッジを構成�
 
 ヘッダー セクションには、長さの合計とバージョン番号を含む、全体の拡張プロパティの記述子がについて説明します。
 
-| Offset | フィールド      | サイズ (バイト) | Value      | 説明                     |
+| Offset | フィールド      | サイズ (バイト) | 値      | 説明                     |
 |--------|------------|--------------|------------|---------------------------------|
 | 0      | dwLength   | 4            | 0x0000004c | 10 進数の 76                      |
 | 4      | bcdVersion | 2            | 0x0100     | バージョン 1.0                     |
@@ -79,7 +79,7 @@ USB の OS ディスクリプターを使用して DShow ブリッジを構成�
 
 USB HID デバイスは、作成する 1 つのカスタム プロパティ セクションに OS の記述子がプロパティの拡張、 **EnableDshowRedirection** DWORD レジストリ キー。
 
-| Offset | フィールド | サイズ (バイト) | Value |
+| Offset | フィールド | サイズ (バイト) | 値 |
 |--------|----------------------|---------|-------------------------------------------|
 | 0      | ない dwSize               | 4       | 0x00000042 (このプロパティの 66 のバイト数)   |
 | 4      | dwPropertyDataType   | 4       | 0x00000004 (REG\_DWORD\_リトル\_ENDIAN)   |
@@ -94,7 +94,7 @@ USB HID デバイスは、作成する 1 つのカスタム プロパティ セ�
 
 #### <a name="custom-property-section"></a>カスタム プロパティ」セクション
 
-| Offset | フィールド | サイズ (バイト) | Value |
+| Offset | フィールド | サイズ (バイト) | 値 |
 |--------|----------------------|----------|-----------------------------------------|
 | 0      | wLength              | 2        | この記述子のバイト長      |
 | 4      | wDescriptorType      | 2        | 0x00000004 (REG\_DWORD\_リトル\_ENDIAN) |

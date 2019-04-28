@@ -1,6 +1,6 @@
 ---
-title: ビデオ メモリ管理と GPU がスケジュール設定
-description: ビデオ メモリ管理と GPU がスケジュール設定
+title: ビデオ メモリ管理と GPU スケジュール設定
+description: ビデオ メモリ管理と GPU スケジュール設定
 ms.assetid: 33fc9f0a-57ed-479f-9cb0-3f3f540047ab
 keywords:
 - ドライバー モデル WDK Windows Vista では、ビデオ メモリ管理の表示します。
@@ -16,13 +16,13 @@ keywords:
 ms.date: 01/23/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 986f7e00453d6cefab58fa6759f62801c1bf2acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365063"
 ---
-# <a name="video-memory-management-and-gpu-scheduling"></a>ビデオ メモリ管理と GPU がスケジュール設定
+# <a name="video-memory-management-and-gpu-scheduling"></a>ビデオ メモリ管理と GPU スケジュール設定
 
 
 ## <span id="ddk_video_memory_management_and_gpu_scheduling_gg"></span><span id="DDK_VIDEO_MEMORY_MANAGEMENT_AND_GPU_SCHEDULING_GG"></span>

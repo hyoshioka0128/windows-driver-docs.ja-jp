@@ -1,6 +1,6 @@
 ---
-title: SAN の操作にメモリを登録します。
-description: SAN の操作にメモリを登録します。
+title: SAN の操作用のメモリの登録
+description: SAN の操作用のメモリの登録
 ms.assetid: 5492466e-4765-4d43-b6bc-1d5bc74996ba
 keywords:
 - SAN 接続のセットアップ WDK、メモリを登録します。
@@ -13,19 +13,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bc6a51cde8a8cb5cd7369a8a0c045f3aa8325dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373859"
 ---
-# <a name="registering-memory-for-operations-on-a-san"></a>SAN の操作にメモリを登録します。
+# <a name="registering-memory-for-operations-on-a-san"></a>SAN の操作用のメモリの登録
 
 
 
 
 
-Windows ソケットは、SAN サービス プロバイダーの拡張は、メッセージを送受信するため、および rdma システム エリア ネットワーク上のすべてのデータ バッファーを登録する関数の呼び出しを切り替えます。 これらの拡張関数では、リモート ピアに接続されている特定の SAN ソケットで使用するための物理メモリの領域にバッファーを登録します。 これらの拡張関数の説明は、、 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。
+Windows ソケットは、SAN サービス プロバイダーの拡張は、メッセージを送受信するため、および rdma システム エリア ネットワーク上のすべてのデータ バッファーを登録する関数の呼び出しを切り替えます。 これらの拡張関数では、リモート ピアに接続されている特定の SAN ソケットで使用するための物理メモリの領域にバッファーを登録します。 これらの拡張関数の説明は、次を参照してください。、 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。
 
 ### <a name="registering-data-buffers"></a>データ バッファーを登録します。
 

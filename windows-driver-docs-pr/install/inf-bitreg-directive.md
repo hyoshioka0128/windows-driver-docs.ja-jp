@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8085f27eeef0a58f253728384c831e1afd415183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366772"
 ---
 # <a name="inf-bitreg-directive"></a>INF BitReg ディレクティブ
 
@@ -125,7 +125,7 @@ A*ビットのレジストリ セクション*それぞれ別々 の行に任意
 <a name="remarks"></a>注釈
 -------
 
-各*ビットのレジストリ セクション*名は、INF ファイルに固有である必要がありますが、それを参照できます**BitReg**同じ INF の他のセクション ディレクティブ。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各*ビットのレジストリ セクション*名は、INF ファイルに固有である必要がありますが、それを参照できます**BitReg**同じ INF の他のセクション ディレクティブ。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 既存の値[REG_BINARY](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)-INF ファイルで別の場所の追加レジストリ セクション内の現在の値を上書きすることで、型の値のエントリを変更こともできます。 詳細については、レジストリの追加のセクションでは、のリファレンスを参照してください、 [ **AddReg**](inf-addreg-directive.md)ディレクティブ。
 

@@ -1,6 +1,6 @@
 ---
-title: PCL XL GPD ファイルへの書き込み
-description: PCL XL GPD ファイルへの書き込み
+title: PCL XL GPD ファイルを記述する
+description: PCL XL GPD ファイルを記述する
 ms.assetid: 35abc33a-a046-452b-b650-5c4f626bf6cb
 keywords:
 - PCL XL ベクター グラフィックス WDK Unidrv、GPD ファイルの書き込み
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b89db1789728e3d220193fd5247cdd6ceddd67a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370355"
 ---
-# <a name="writing-a-pcl-xl-gpd-file"></a>PCL XL GPD ファイルへの書き込み
+# <a name="writing-a-pcl-xl-gpd-file"></a>PCL XL GPD ファイルを記述する
 
 
 

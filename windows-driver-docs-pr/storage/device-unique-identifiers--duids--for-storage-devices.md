@@ -1,6 +1,6 @@
 ---
-title: デバイスの一意の識別子 (Duid) ストレージ デバイス
-description: デバイスの一意の識別子 (Duid) ストレージ デバイス
+title: 記憶装置のデバイス一意識別子 (DUID)
+description: 記憶装置のデバイス一意識別子 (DUID)
 ms.assetid: 3846961c-5b75-4a1b-bced-601fc25bf071
 keywords:
 - ストレージ ドライバー WDK、Duid
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9906f16975c3d3c5139c121da512c0a9560d1da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365255"
 ---
-# <a name="device-unique-identifiers-duids-for-storage-devices"></a>デバイスの一意の識別子 (Duid) ストレージ デバイス
+# <a name="device-unique-identifiers-duids-for-storage-devices"></a>記憶装置のデバイス一意識別子 (DUID)
 
 
 ファイル システムのアーキテクチャがより複雑になると、オペレーティング システムのコンポーネントの数を乗算し、およびイニシエーターがますます多様なハードウェアとソフトウェアのパスを通じてストレージ ターゲットをアクセスと、ストレージ デバイスを識別するための手法が不適切になります。

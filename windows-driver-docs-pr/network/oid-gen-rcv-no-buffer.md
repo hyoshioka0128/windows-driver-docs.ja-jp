@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RCV_NO_BUFFER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9565b066f12b8644204ce836b7efdc8209fec583
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367682"
 ---
 # <a name="oidgenrcvnobuffer"></a>OID\_GEN\_受信\_いいえ\_バッファー
 
@@ -34,10 +34,10 @@ ms.locfileid: "56531012"
 <a href="" id="ndis-5-1-drivers"></a>5.1 の NDIS ドライバー  
 必須。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
 
 <a name="requirements"></a>要件
 ------------

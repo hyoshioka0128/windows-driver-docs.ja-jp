@@ -1,6 +1,6 @@
 ---
-title: カーネル モードのビデオ トランスポート コールバック関数
-description: カーネル モードのビデオ トランスポート コールバック関数
+title: カーネル モード ビデオ トランスポートのコールバック関数
+description: カーネル モード ビデオ トランスポートのコールバック関数
 ms.assetid: 1edd5b68-91da-4846-87bd-6fcabb9e5abf
 keywords:
 - DxApi ミニポート ドライバー WDK DirectDraw、カーネル モードのビデオ トランスポート コールバック関数
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f19634e6823db1d54eb6ff39b1d13e934783d68a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363096"
 ---
-# <a name="kernel-mode-video-transport-callback-functions"></a>カーネル モードのビデオ トランスポート コールバック関数
+# <a name="kernel-mode-video-transport-callback-functions"></a>カーネル モード ビデオ トランスポートのコールバック関数
 
 
 ## <span id="ddk_kernel_mode_video_transport_callback_functions_gg"></span><span id="DDK_KERNEL_MODE_VIDEO_TRANSPORT_CALLBACK_FUNCTIONS_GG"></span>

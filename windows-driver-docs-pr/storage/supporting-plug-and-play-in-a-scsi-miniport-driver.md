@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 982e5f875ec298c8c6b2bd1ff0426ee456ba0dc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366234"
 ---
 # <a name="supporting-plug-and-play-in-a-scsi-miniport-driver"></a>SCSI ミニポート ドライバーでのプラグ アンド プレイのサポート
 
@@ -25,7 +25,7 @@ Microsoft Windows 2000 と以降のオペレーティング システムは、�
 
 プラグ アンド プレイのミニポート ドライバーを実装する必要があります、 *HwScsiAdapterControl*ルーチンを停止し、HBA に電源を管理します。 ルーチンを追加するドライバーの初期化の変化に合わせて、プラグ アンド プレイのミニポート ドライバーの必要はありません。
 
-SCSI ポート ドライバーでは、追加、開始またはミニポート ドライバーに代わって、デバイスをアンロードするには、ターゲット デバイスの Pdo とミニポート ドライバー、および要求を処理 FDO を作成します。 プラグ アンド プレイ ドライバーについては、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
+SCSI ポート ドライバーでは、追加、開始またはミニポート ドライバーに代わって、デバイスをアンロードするには、ターゲット デバイスの Pdo とミニポート ドライバー、および要求を処理 FDO を作成します。 プラグ アンド プレイ ドライバーについては、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
 
  
 

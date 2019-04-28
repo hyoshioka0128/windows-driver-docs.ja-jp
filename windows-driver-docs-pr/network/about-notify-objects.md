@@ -1,6 +1,6 @@
 ---
-title: 約オブジェクトに通知します。
-description: 約オブジェクトに通知します。
+title: 通知オブジェクトについて
+description: 通知オブジェクトについて
 ms.assetid: 87e4bcb6-dbdc-487d-9e21-0738165bf834
 keywords:
 - オブジェクトの WDK ネットワークへの通知、約オブジェクトに通知
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 651e61b0c18fe7cee505042249248d41357d36d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367911"
 ---
-# <a name="about-notify-objects"></a>約オブジェクトに通知します。
+# <a name="about-notify-objects"></a>通知オブジェクトについて
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "56527254"
 -   Microsoft ネットワーク用クライアントなどのクライアント
 
 **注**  ネットワーク カードをサポートしておらず、所有できないオブジェクトに通知します。 ネットワークを構成するか、またはのインストールとアンインストールに参加している物理または仮想ネットワーク カードには、INF ファイルまたはデバイスの共同インストーラー機構を使用する必要があります。
-詳細については、[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)を参照してください。
+詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
 
  
 
@@ -40,7 +40,7 @@ ms.locfileid: "56527254"
 
 -   ネットワーク構成のサブシステム通知オブジェクトが通知を要求されたイベントの発生について通知オブジェクトに通知できるように、インターフェイスのネットワーク構成のサブシステムにメソッドを公開します。
 
--   サブシステムの構成のパブリック インターフェイスが含まれますが、インストールおよびネットワーク デバイスを削除するのに限定されないアクションを実行するネットワークのメソッドを呼び出します。 詳細については、[構成のネットワーク インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff559080)を参照してください。
+-   サブシステムの構成のパブリック インターフェイスが含まれますが、インストールおよびネットワーク デバイスを削除するのに限定されないアクションを実行するネットワークのメソッドを呼び出します。 詳細については、次を参照してください。[構成のネットワーク インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff559080)します。
 
 要求および通知を受信して、相互の通知との通信にオブジェクトと、ネットワーク構成のサブシステムは、コンポーネント オブジェクト モデル (COM) インターフェイスを実装します。
 

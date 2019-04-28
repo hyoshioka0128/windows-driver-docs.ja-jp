@@ -1,19 +1,19 @@
 ---
-title: コネクションレスのミニポート ドライバーのクエリを実行します。
-description: コネクションレスのミニポート ドライバーのクエリを実行します。
+title: コネクションレス ミニポート ドライバーのクエリ
+description: コネクションレス ミニポート ドライバーのクエリ
 ms.assetid: a556d7ba-52ea-443b-994b-4c517e80ac55
 keywords:
 - コネクションレス ドライバー WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5fa9bf331d82c2d8be871e9efb1ca221f5acef9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366504"
 ---
-# <a name="querying-a-connectionless-miniport-driver"></a>コネクションレスのミニポート ドライバーのクエリを実行します。
+# <a name="querying-a-connectionless-miniport-driver"></a>コネクションレス ミニポート ドライバーのクエリ
 
 
 
@@ -41,7 +41,7 @@ NDIS は、ミニポート ドライバーの代わりに多くの OID 要求に
 
 *MiniportOidRequest*は、NIC の現在のアドレスを決定するメディア固有の OID でもクエリを実行します。 OID での型 802.3 の NIC のミニポート ドライバーの照会、\_802\_3\_現在\_アドレス。
 
-メディアに固有である追加の Oid は、特定のメディア タイプのミニポート ドライバーが表示されます。 OID での NIC が型 802.3 ミニポート ドライバーを照会するなど、\_802.3\_最大\_一覧\_サイズ。 詳細については、[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)を参照してください。
+メディアに固有である追加の Oid は、特定のメディア タイプのミニポート ドライバーが表示されます。 OID での NIC が型 802.3 ミニポート ドライバーを照会するなど、\_802.3\_最大\_一覧\_サイズ。 詳細については、次を参照してください。[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。
 
  
 

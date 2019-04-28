@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b8d49557c2d767d44bb3e58bc75091be2e2f7719
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364096"
 ---
 # <a name="kspropertycameracontrolextendedhistogram"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_ヒストグラム
 
@@ -79,7 +79,7 @@ ms.locfileid: "56549826"
 </colgroup>
 <thead>
 <tr class="header">
-<th>メンバー</th>
+<th>Member</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -102,7 +102,7 @@ ms.locfileid: "56549826"
 </tr>
 <tr class="odd">
 <td><p>機能</p></td>
-<td><p>0 である必要があります。</p></td>
+<td><p>0 を指定する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p>フラグ</p></td>
@@ -113,7 +113,7 @@ ms.locfileid: "56549826"
 
  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>

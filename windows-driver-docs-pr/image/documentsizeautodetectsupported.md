@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec59f6f1847f0ce3653cc129d36956aeb1492070
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364508"
 ---
 # <a name="documentsizeautodetectsupported-element"></a>DocumentSizeAutoDetectSupported 要素
 
@@ -67,7 +67,7 @@ ms.locfileid: "56581611"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 デバイスのスキャンが、元のメディアのサイズを検出できる場合、WSD スキャン サービスは 1 を返す必要があります (**true**)、それ以外の 0 を返す必要があります (**false**)。

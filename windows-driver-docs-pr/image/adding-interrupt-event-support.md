@@ -1,17 +1,17 @@
 ---
-title: 中断イベントのサポートを追加します。
-description: 中断イベントのサポートを追加します。
+title: 割り込みイベントのサポートの追加
+description: 割り込みイベントのサポートの追加
 ms.assetid: 74fbaa7c-f058-4b17-b278-3dea0faf4431
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10ab2b05085bac6de7c2f17190bbc46cb1de072e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367093"
 ---
-# <a name="adding-interrupt-event-support"></a>中断イベントのサポートを追加します。
+# <a name="adding-interrupt-event-support"></a>割り込みイベントのサポートの追加
 
 
 
@@ -334,7 +334,7 @@ STDMETHODIMP CWIADevice::GetNotificationData( LPSTINOTIFY pBuffer )
 
  
 
-WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド作成して送信し、WIA\_イベント\_POWER\_中断イベント、システムがスリープ状態に配置するとします。 この呼び出しが発生した場合、デバイスが、待機状態からに既に可能性があります。 スリープ状態は、このシャット ダウン状態にシステムを許可する任意の待機状態を終了するカーネル モード ドライバーを自動的にトリガーします。 システムのスリープ状態から再開 WIA サービスが送信、WIA\_イベント\_POWER\_再開イベント。 この時点で、WIA ミニドライバーは、割り込みイベントの待機状態を再確立する必要があります。 スリープ状態の詳細については、[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)と[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)を参照してください。
+WIA サービスの呼び出し、 **IWiaMiniDrv::drvNotifyPnpEvent**メソッド作成して送信し、WIA\_イベント\_POWER\_中断イベント、システムがスリープ状態に配置するとします。 この呼び出しが発生した場合、デバイスが、待機状態からに既に可能性があります。 スリープ状態は、このシャット ダウン状態にシステムを許可する任意の待機状態を終了するカーネル モード ドライバーを自動的にトリガーします。 システムのスリープ状態から再開 WIA サービスが送信、WIA\_イベント\_POWER\_再開イベント。 この時点で、WIA ミニドライバーは、割り込みイベントの待機状態を再確立する必要があります。 スリープ状態の詳細については、次を参照してください。[システム電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff564571)と[デバイスの電源状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)します。
 
 WIA ミニドライバー キャッシュ イベント ハンドル最初に渡されることをお勧めしますが、 [ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840)システムをスリープ状態から再開したときにその it を再利用できるようにメソッドまたは休止状態。
 

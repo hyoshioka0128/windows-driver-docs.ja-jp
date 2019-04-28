@@ -1,17 +1,17 @@
 ---
-title: Windows Vista SP1 と Windows Server 2008 の WFP 変更
-description: Windows Vista SP1 と Windows Server 2008 の WFP 変更
+title: Windows Vista SP1 と Windows Server 2008 での WFP の変更
+description: Windows Vista SP1 と Windows Server 2008 での WFP の変更
 ms.assetid: c901dbed-639d-473b-aaf0-8470e9c04009
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 209bab48526a194e9c2a57143a461939bb83b6ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365703"
 ---
-# <a name="wfp-changes-for-windows-vista-sp1-and-windows-server-2008"></a>Windows Vista SP1 と Windows Server 2008 の WFP 変更
+# <a name="wfp-changes-for-windows-vista-sp1-and-windows-server-2008"></a>Windows Vista SP1 と Windows Server 2008 での WFP の変更
 
 
 使用可能な関数と、Windows フィルタ リング プラットフォームを開始するには、Windows Vista Service Pack 1 (SP1)、Windows Server 2008 の動作では、いくつかの変更が加えられました。 多くの場合、新しい機能を利用する必要がありますのコンパイル時またはを持つ、NTDDI コールアウト ドライバーを再コンパイル\_バージョン マクロ設定 NTDDI\_WIN6SP1 します。

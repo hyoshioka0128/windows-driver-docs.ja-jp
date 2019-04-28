@@ -5,11 +5,11 @@ ms.assetid: E9FAE9F1-841F-4E70-A279-7CB5AD80D80B
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 174d1250613711d4ef46e9d8ecd5580e38023f48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366671"
 ---
 # <a name="gravity-vector-data-fields"></a>重力ベクトル データ フィールド
 
@@ -17,7 +17,7 @@ ms.locfileid: "56581960"
 
 このトピックでは、重力ベクトルに固有のデータ フィールドの詳細についての情報を提供します。
 
-次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、データ フィールドを示します。 型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ ms.locfileid: "56581960"
 <thead>
 <tr class="header">
 <th>プロパティのキー</th>
-<th>型</th>
+<th>種類</th>
 <th>必須/オプション</th>
 <th>説明</th>
 </tr>

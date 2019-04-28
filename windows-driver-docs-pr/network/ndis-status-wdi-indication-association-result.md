@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_ASSOCIATION_RESULT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: fb71ef33a3008a20e973dafcd59204b302088d6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366408"
 ---
 # <a name="ndisstatuswdiindicationassociationresult"></a>NDIS\_状態\_WDI\_INDICATION\_アソシエーション\_結果
 
@@ -29,7 +29,7 @@ ms.locfileid: "56535353"
 
 | 種類                                                                     | 許可されている複数の TLV インスタンス | 省略可能 | 説明                    |
 |--------------------------------------------------------------------------|--------------------------------|----------|--------------------------------|
-| [**WDI\_TLV\_アソシエーション\_結果**](https://msdn.microsoft.com/library/windows/hardware/dn926140) | X                              |          | 関連付けの結果の一覧。 |
+| [**WDI\_TLV\_アソシエーション\_結果**](https://msdn.microsoft.com/library/windows/hardware/dn926140) | x                              |          | 関連付けの結果の一覧。 |
 
  
 

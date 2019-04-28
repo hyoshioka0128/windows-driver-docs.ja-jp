@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4c3e53bda132aef5c66b348f69eb4a03415642c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363722"
 ---
 # <a name="guiddevinterfacekeyboard"></a>GUID_DEVINTERFACE_KEYBOARD
 
@@ -58,11 +58,11 @@ GUID_DEVINTERFACE_KEYBOARD[デバイス インターフェイス クラス](http
 
 システム提供[キーボード クラス ドライバー](../hid/keyboard-and-mouse-class-drivers.md)キーボード デバイスに対するこのデバイスのインターフェイス クラスのインスタンスを登録します。 キーボード クラス ドライバーでサポートされている I/O インターフェイスを使用してこのデバイスのインターフェイス クラスのインスタンスにアクセスします。
 
-キーボード デバイスのサポートについては、[HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)と[Kbdclass と Mouclass ドライバーの機能](../hid/keyboard-and-mouse-class-drivers.md)を参照してください。
+キーボード デバイスのサポートについては、次を参照してください。 [HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)と[Kbdclass と Mouclass ドライバーの機能](../hid/keyboard-and-mouse-class-drivers.md)します。
 
 WDK には、システム提供のキーボード クラス ドライバーのサンプル コードが含まれています。 キーボード クラス ドライバーが古い形式の識別子を使用して[ **GUID_CLASS_KEYBOARD** ](guid-class-keyboard.md)のこのインスタンスを登録する[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
 
-マウス デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)を参照してください。
+マウス デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)します。
 
 <a name="requirements"></a>要件
 ------------

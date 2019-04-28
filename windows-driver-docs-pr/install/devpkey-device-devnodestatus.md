@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9237670b04b259027cf898ba11f21478f555233b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360308"
 ---
 # <a name="devpkeydevicedevnodestatus"></a>DEVPKEY_Device_DevNodeStatus
 
@@ -60,7 +60,7 @@ DEVPKEY_Device_DevNodeStatus の値は、DN_ のビットごとの OR*Xxx* Cfg.h
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DevNodeStatus の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの状態にアクセスする方法については、[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの状態にアクセスする方法については、次を参照してください。[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)します。
 
 <a name="requirements"></a>要件
 ------------

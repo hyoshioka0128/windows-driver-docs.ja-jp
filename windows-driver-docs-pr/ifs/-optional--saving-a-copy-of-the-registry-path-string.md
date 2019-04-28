@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd0bac911f9fd2e9a8fc1fcc8dc387c9f4c5ad7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366794"
 ---
 # <a name="optional-saving-a-copy-of-the-registry-path-string"></a>\[省略可能な\]レジストリのパス文字列のコピーを保存しています
 

@@ -1,5 +1,5 @@
 ---
-title: (再同期) CTRL + R
+title: Ctrl + R (再同期)
 description: CTRL + R キーを同期対象のコンピューターにします。
 ms.assetid: 95ffa380-af90-4d56-b973-038e7ccc6760
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fb95a8994c80d6cc36432ae71eb9ac064bb33229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374393"
 ---
-# <a name="ctrlr-re-synchronize"></a>(再同期) CTRL + R
+# <a name="ctrlr-re-synchronize"></a>Ctrl + R (再同期)
 
 
 CTRL + R キーを同期対象のコンピューターにします。
@@ -70,7 +70,7 @@ CTRL+ALT+R
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメソッドの再ターゲットとの接続を確立するには、[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)を参照してください。
+その他のメソッドの再ターゲットとの接続を確立するには、次を参照してください。[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)します。
 
 <a name="remarks"></a>注釈
 -------

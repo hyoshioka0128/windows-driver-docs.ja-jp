@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c53bf1a88a042900c6dcd040bb90079d0e2f50e2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367418"
 ---
 # <a name="bug-check-0x72-assigndrivelettersfailed"></a>バグ チェック 0x72:割り当てる\_ドライブ\_文字\_失敗
 

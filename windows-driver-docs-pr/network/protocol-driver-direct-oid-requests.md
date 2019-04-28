@@ -1,6 +1,6 @@
 ---
-title: ドライバーの OID を直接要求するプロトコル
-description: ドライバーの OID を直接要求するプロトコル
+title: プロトコル ドライバー Direct OID 要求
+description: プロトコル ドライバー Direct OID 要求
 ms.assetid: 387d27de-3214-4f93-8f45-9a2f28e5036f
 keywords:
 - 直接の OID 要求インターフェイス WDK ネットワーク
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1faea9159af9c0ec03a8efe654eebd29f2a7b65f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373866"
 ---
-# <a name="protocol-driver-direct-oid-requests"></a>ドライバーの OID を直接要求するプロトコル
+# <a name="protocol-driver-direct-oid-requests"></a>プロトコル ドライバー Direct OID 要求
 
 
 

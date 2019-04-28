@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b67117f9a9f75071c12f3819fbd4ed8d806c5f11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363682"
 ---
 # <a name="kscategorydatadecompressor"></a>KSCATEGORY_DATADECOMPRESSOR
 
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 KSCATEGORY_DATADECOMPRESSOR 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)します。
 
-データ ストリームを圧縮する KS 機能カテゴリに対して定義されているデバイスのインターフェイス クラスについては、[ **KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)を参照してください。
+データ ストリームを圧縮する KS 機能カテゴリに対して定義されているデバイスのインターフェイス クラスについては、次を参照してください。 [ **KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_LINK_QUALITY_BAR_MAP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8f9386f063b706ebd69bab342a3208b5c618a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360181"
 ---
 # <a name="wditlvlinkqualitybarmap"></a>WDI\_TLV\_リンク\_品質\_バー\_マップ
 
@@ -43,7 +43,7 @@ WDI の配列のサイズをバイト単位で\_リンク\_品質\_バー\_マ�
 
 WDI\_リンク\_品質\_バー\_マップ\_パラメーターは、次の要素で構成されます。
 
-| 型  | 説明                                                                  |
+| 種類  | 説明                                                                  |
 |-------|------------------------------------------------------------------------------|
 | UINT8 | 制限リンク品質の低下 (0-100) の現在の信号強度バー。    |
 | UINT8 | 現在の信号強度バーのリンクの品質 (0-100) の上限値。 |

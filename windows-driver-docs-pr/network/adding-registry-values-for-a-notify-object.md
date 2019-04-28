@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc082fffc5a5d0724f6ad19729190bfe726b7909
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367902"
 ---
 # <a name="adding-registry-values-for-a-notify-object"></a>通知オブジェクトのレジストリ値の追加
 
@@ -40,7 +40,7 @@ A **NetTrans**、 **NetClient**、または**NetService**コンポーネント�
 
  
 
-共同インストーラーの詳細については、[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)を参照してください。
+共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
 
 コンポーネントのかどうか、通知オブジェクトが、そのコンポーネントの INF ファイルを追加する必要があります (を通じて、*追加レジストリ セクション*) コンポーネントのための値を**Ndi**キー。
 

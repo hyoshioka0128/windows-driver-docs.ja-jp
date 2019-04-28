@@ -5,11 +5,11 @@ description: HID USB 経由での他の参照。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a18dc1172ca3eec69a6aa5fa73eb455a4ee23c6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360346"
 ---
 # <a name="resources-for-hid-over-usb"></a>HID over USB のリソース
 

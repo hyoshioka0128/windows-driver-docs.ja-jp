@@ -1,5 +1,5 @@
 ---
-title: アセンブリ コードの WinDbg でのデバッグ
+title: WinDbg でのアセンブリ コードのデバッグ
 description: コマンドを入力するか、[逆アセンブル] ウィンドウを使用して、WinDbg でアセンブリ コードを表示できます。
 ms.assetid: e00ea29e-4153-4588-8353-de69910bfc65
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0a6a42777178a219cc1b47a85aed07bb520e1a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363984"
 ---
-# <a name="assembly-code-debugging-in-windbg"></a>アセンブリ コードの WinDbg でのデバッグ
+# <a name="assembly-code-debugging-in-windbg"></a>WinDbg でのアセンブリ コードのデバッグ
 
 
 コマンドを入力するか、[逆アセンブル] ウィンドウを使用して、WinDbg でアセンブリ コードを表示できます。

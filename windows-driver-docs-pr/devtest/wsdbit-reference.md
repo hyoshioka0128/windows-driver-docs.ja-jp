@@ -1,6 +1,6 @@
 ---
-title: WSDBIT 参照
-description: WSDBIT 参照
+title: WSDBIT リファレンス
+description: WSDBIT リファレンス
 ms.assetid: 69d9e7db-fceb-4d1b-a22b-fe63756048d7
 keywords:
 - WSDBIT ツールを WDK サンプルします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 736c1cf68ddbbbb3e9edefa113d5f69e39fe9c65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362296"
 ---
-# <a name="wsdbit-reference"></a>WSDBIT 参照
+# <a name="wsdbit-reference"></a>WSDBIT リファレンス
 
 
 このセクションには、サンプルと WSDBIT を使用するときに役立つ追加情報が含まれています。

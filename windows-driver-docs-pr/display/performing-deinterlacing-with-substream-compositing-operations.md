@@ -10,11 +10,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: b08d08a3f8e935575be9c496ca38cfac7571aaaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366195"
 ---
 # <a name="performing-deinterlacing-with-substream-compositing-operations"></a>サブストリーム合成操作によるデインターレースの実行
 

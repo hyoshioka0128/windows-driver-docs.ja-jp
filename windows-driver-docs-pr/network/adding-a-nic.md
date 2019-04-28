@@ -1,6 +1,6 @@
 ---
-title: NIC を追加します。
-description: NIC を追加します。
+title: NIC の追加
+description: NIC の追加
 ms.assetid: 3da89acc-5504-4362-b148-e8228795721f
 keywords:
 - WDK の Nic を追加するネットワークを
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d17cb4f22b8329a45bc722a486ef851e246f46e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367780"
 ---
-# <a name="adding-a-nic"></a>NIC を追加します。
+# <a name="adding-a-nic"></a>NIC の追加
 
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56559018"
 
 1.  PnP マネージャーがドライバーを読み込むし、呼び出してミニポート ドライバーの NIC のミニポート ドライバーが既に読み込まれていない場合[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff548818)関数。 ドライバーは既に読み込まれている場合は、手順 4 で処理が続行されます。
 
-2.  その**DriverEntry**関数、ミニポート ドライバーは、ミニポート ドライバーとして登録し、その他のドライバーの初期化を実行します。 ミニポート ドライバーとして登録の詳細については、[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)を参照してください。
+2.  その**DriverEntry**関数、ミニポート ドライバーは、ミニポート ドライバーとして登録し、その他のドライバーの初期化を実行します。 ミニポート ドライバーとして登録の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
 
 3.  NDIS は、ミニポート ドライバーのドライバー オブジェクトに次のエントリを入力します。
     -   エントリ ポイント、 *AddDevice*ルーチン。

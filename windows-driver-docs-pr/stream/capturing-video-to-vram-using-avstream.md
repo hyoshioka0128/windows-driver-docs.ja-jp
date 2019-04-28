@@ -1,6 +1,6 @@
 ---
-title: VRAM AVStream を使用するビデオのキャプチャ
-description: VRAM AVStream を使用するビデオのキャプチャ
+title: AVStream を使用してビデオを VRAM にキャプチャする
+description: AVStream を使用してビデオを VRAM にキャプチャする
 ms.assetid: c4ca4a67-83cb-4a89-bc84-e06b1dc67b66
 keywords:
 - AVStream WDK、VRAM のキャプチャ
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15648b4a90d3be8e89662406132babbad8ab4a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370368"
 ---
-# <a name="capturing-video-to-vram-using-avstream"></a>VRAM AVStream を使用するビデオのキャプチャ
+# <a name="capturing-video-to-vram-using-avstream"></a>AVStream を使用してビデオを VRAM にキャプチャする
 
 
 Windows vista 以降では、ビデオおよびオーディオ グラフィックス アダプターの VRAM に直接、AVStream ドライバーはキャプチャできます。 Windows Vista より前に存在していた AVStream ドライバーでは、まず VRAM にデータ、システム メモリに転送する、および VRAM を表示するため最後にバックアップする必要があります。

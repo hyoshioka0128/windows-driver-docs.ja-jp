@@ -1,17 +1,17 @@
 ---
-title: データのメモリの割り当てください。
-description: データのメモリの割り当てください。
+title: データのメモリの割り当て
+description: データのメモリの割り当て
 ms.assetid: 15df5616-ddce-44ec-bd10-65cae0d95cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5179716df822729294bf7c35291eb63b3bd89fcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367078"
 ---
-# <a name="allocating-memory-for-data"></a>データのメモリの割り当てください。
+# <a name="allocating-memory-for-data"></a>データのメモリの割り当て
 
 
 

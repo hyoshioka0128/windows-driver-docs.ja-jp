@@ -1,19 +1,19 @@
 ---
-title: ウェイク アップのイベントを有効にします。
-description: ウェイク アップのイベントを有効にします。
+title: ウェイクアップ イベントの有効化
+description: ウェイクアップ イベントの有効化
 ms.assetid: 48ed0f41-efa0-4040-8589-8d477c5ddd0e
 keywords:
 - ウェイク アップ機能 WDK ネットワー キング、ウェイク アップのイベントを有効にします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26ce831906fac95a70a85e24273609bbfce8c565
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372501"
 ---
-# <a name="enabling-wake-up-events"></a>ウェイク アップのイベントを有効にします。
+# <a name="enabling-wake-up-events"></a>ウェイクアップ イベントの有効化
 
 
 

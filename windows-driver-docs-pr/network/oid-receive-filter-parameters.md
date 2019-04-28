@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 17503b1d9edc9b54073ddf6c2032b01e129b0bdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362566"
 ---
 # <a name="oidreceivefilterparameters"></a>OID\_受信\_フィルター\_パラメーター
 
@@ -25,7 +25,7 @@ OID メソッドの要求から正常に戻った後、 **InformationBuffer**の
 
 -   配列の[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)フィルターを指定する構造体のフィールドの条件をテストします。ネットワーク パケットのヘッダー。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
@@ -59,7 +59,7 @@ OID の OID 要求を処理する NDIS\_受信\_フィルター\_ミニポート
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 他の理由から、要求が失敗しました。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 870f5b3c071c51123331ca58c502895f300899bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360734"
 ---
 # <a name="removing-a-trace-provider"></a>トレース プロバイダーの削除
 
@@ -38,7 +38,7 @@ Traceview では、コマンド プロンプト ウィンドウで、次のコ�
 traceview -disable SessionName -guid {#GUID | GUIDFile}
 ```
 
-ただし、このコマンドは、トレース セッションを停止する traceview でを実行します。 続けるを使用して、**traceview で-スタート * * * SessionName*トレース セッションを再起動するコマンド。 詳細については、[ **traceview で管理コマンド**](traceview-control-commands.md)を参照してください。
+ただし、このコマンドは、トレース セッションを停止する traceview でを実行します。 続けるを使用して、**traceview で-スタート * * * SessionName*トレース セッションを再起動するコマンド。 詳細については、次を参照してください。 [ **traceview で管理コマンド**](traceview-control-commands.md)します。
 
  
 

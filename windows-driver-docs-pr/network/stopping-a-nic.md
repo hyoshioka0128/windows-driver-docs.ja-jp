@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8959b978c59e52ad6e4b28042c186b1a23e730ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366372"
 ---
 # <a name="stopping-a-nic"></a>NIC の停止
 
@@ -78,7 +78,7 @@ ms.locfileid: "56578765"
 
 12. IRP の処理時に\_MN\_停止\_NDIS は NIC 用に作成する機能のデバイス オブジェクト (FDO) を破棄していないデバイスで要求時に、 *AddDevice*ルーチンが呼び出されました。 NDIS は、受信した後にのみデバイス オブジェクトを破棄する[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738) nic 要求
 
-    PnP マネージャー IRP が発行された場合\_MN\_開始\_NDIS、NIC を再起動するデバイスが NIC に既に作成されている FDO を再利用 NDIS は NIC を再起動し、 この手順の詳細については、[開始 NIC](starting-a-nic.md)を参照してください。
+    PnP マネージャー IRP が発行された場合\_MN\_開始\_NDIS、NIC を再起動するデバイスが NIC に既に作成されている FDO を再利用 NDIS は NIC を再起動し、 この手順の詳細については、次を参照してください。[開始 NIC](starting-a-nic.md)します。
 
  
 

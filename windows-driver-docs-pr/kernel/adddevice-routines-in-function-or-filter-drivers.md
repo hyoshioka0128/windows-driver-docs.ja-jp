@@ -1,6 +1,6 @@
 ---
-title: 関数またはフィルター ドライバーで AddDevice ルーチン
-description: 関数またはフィルター ドライバーで AddDevice ルーチン
+title: ファンクション ドライバーまたはフィルター ドライバー内の AddDevice ルーチン
+description: ファンクション ドライバーまたはフィルター ドライバー内の AddDevice ルーチン
 ms.assetid: 0a095c17-2295-46df-9908-f306f7fe9f67
 keywords:
 - 関数のドライバー WDK カーネル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e81268fadb1224f7c747c621b5643bb3daba98a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365833"
 ---
-# <a name="adddevice-routines-in-function-or-filter-drivers"></a>関数またはフィルター ドライバーで AddDevice ルーチン
+# <a name="adddevice-routines-in-function-or-filter-drivers"></a>ファンクション ドライバーまたはフィルター ドライバー内の AddDevice ルーチン
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "56536314"
 
 2.  \[省略可能な\]デバイスに 1 つまたは複数のシンボリック リンクを作成します。
 
-    呼び出す[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)デバイスの機能を登録し、そのアプリケーションまたはシステムにシンボリック リンクを作成するコンポーネントが、デバイスを開くに使用できます。 呼び出して、インターフェイスを有効にする必要があります、ドライバー [ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)処理すると、 [ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求。 詳細については、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)を参照してください。
+    呼び出す[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)デバイスの機能を登録し、そのアプリケーションまたはシステムにシンボリック リンクを作成するコンポーネントが、デバイスを開くに使用できます。 呼び出して、インターフェイスを有効にする必要があります、ドライバー [ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)処理すると、 [ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求。 詳細については、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)します。
 
 3.  デバイスの拡張機能には、デバイスの PDO へのポインターを格納します。
 
@@ -42,9 +42,9 @@ ms.locfileid: "56536314"
 
     たとえば、デバイスが一時停止状態の間に受信 Irp を保持することを示す 1 つのフラグを定義します。 ドライバーがまだない場合、メカニズム キュー Irp の Irp で保持するためのキューを作成します。 参照してください[キューおよびデキュー Irp](queuing-and-dequeuing-irps.md)詳細についてはします。
 
-    割り当てることも、 **IO\_削除\_ロック**デバイス拡張機能と呼び出しで構造[ **IoInitializeRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549324)これを初期化するには構造体。 詳細については、[ロックを使用して削除](using-remove-locks.md)を参照してください。
+    割り当てることも、 **IO\_削除\_ロック**デバイス拡張機能と呼び出しで構造[ **IoInitializeRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549324)これを初期化するには構造体。 詳細については、次を参照してください。[ロックを使用して削除](using-remove-locks.md)します。
 
-5.  設定\_バッファーに格納された\_IO または\_直接\_I/O マネージャーで、デバイス スタックに送信される I/O 要求を使用するバッファーの種類を指定するデバイス オブジェクトの IO フラグ ビットです。 高度なドライバーまたはこのメンバーと同じ値をスタックでは、次の下位ドライバーとしてを除く可能性がある最上位レベルのドライバーです。 詳細については、[デバイス オブジェクトを初期化して](initializing-a-device-object.md)を参照してください。
+5.  設定\_バッファーに格納された\_IO または\_直接\_I/O マネージャーで、デバイス スタックに送信される I/O 要求を使用するバッファーの種類を指定するデバイス オブジェクトの IO フラグ ビットです。 高度なドライバーまたはこのメンバーと同じ値をスタックでは、次の下位ドライバーとしてを除く可能性がある最上位レベルのドライバーです。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
 
 6.  設定\_POWER\_突入または\_POWER\_電源管理、必要に応じてページング可能なフラグ。 ページング可能なドライバーをする必要があります設定\_POWER\_ページング可能なフラグ。 デバイス オブジェクトのフラグは、デバイスの PDO を作成するときに通常、バス ドライバーによって設定されます。 ただしより高度なドライバーは、これらのフラグでの値を変更する必要があります、 *AddDevice*ルーチン、FDO を作成または操作フィルターを適用したとき。 参照してください[電源管理のためのデバイス オブジェクトのフラグの設定](setting-device-object-flags-for-power-management.md)詳細についてはします。
 

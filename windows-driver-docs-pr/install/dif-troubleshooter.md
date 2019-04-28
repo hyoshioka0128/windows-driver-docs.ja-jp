@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a8e26cffb01fc59273548eaf3f455b4b0e8fd368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365855"
 ---
 # <a name="diftroubleshooter"></a>DIF_TROUBLESHOOTER
 
@@ -104,9 +104,9 @@ DIF_TROUBLESHOOTER の既定のハンドラーはありませんが、オペレ�
 
 クラスのインストール パラメーターでは、1 つだけ含めることが**ChmFile**と**HtmlTroubleShooter**ペア。 1 つ以上のインストーラーは、これらの値を指定する場合、Windows は、差分の要求を処理した最後のインストーラーによって設定された値を使用します。
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

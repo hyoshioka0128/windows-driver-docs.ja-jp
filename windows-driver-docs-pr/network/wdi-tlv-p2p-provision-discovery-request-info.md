@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_PROVISION_DISCOVERY_REQUEST_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: cac289c152243e71c6ab03c98518bdfd88eb763a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362812"
 ---
 # <a name="wditlvp2pprovisiondiscoveryrequestinfo"></a>WDI\_TLV\_P2P\_プロビジョニング\_検出\_要求\_情報
 
@@ -34,14 +34,14 @@ WDI\_TLV\_P2P\_プロビジョニング\_検出\_要求\_情報は、Wi-Fi Direc
 | 種類                                                                                                                   | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_プロビジョニング\_検出\_要求\_パラメーター**](wdi-tlv-p2p-provision-discovery-request-parameters.md) |                                |          | Wi-Fi Direct のプロビジョニングの検出要求のパラメーター。                                                                                                                                                                                |
-| [**WDI\_TLV\_P2P\_グループ\_ID**](wdi-tlv-p2p-group-id.md)                                                               |                                | X        | Wi-Fi Direct 移動対象のグループ ID。 グループ ID は省略可能です。 Wi-Fi Direct サービスの場合、ローカル Wi-Fi Direct GO 用のリモート側が参加するグループ ID です。                                       |
-| [**WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)                      |                                | X        | Wi-Fi Direct サービスのプロビジョニングの属性。                                                                                                                                                                                          |
-| [**WDI\_TLV\_P2P\_持続\_グループ\_ID**](wdi-tlv-p2p-persistent-group-id.md)                                        |                                | X        | 接続に使用する永続的なグループのグループの ip アドレス。 このフィールドは、永続的なグループにフラグを設定する場合に有効な[ **WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)が 1 に設定します。 |
-| [**WDI\_TLV\_P2P\_サービス\_セッション\_情報**](wdi-tlv-p2p-service-session-info.md)                                      |                                | X        | サービスのセッションの情報。 このフィールドは有効な場合は[ **WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)が存在します。                                                                       |
+| [**WDI\_TLV\_P2P\_グループ\_ID**](wdi-tlv-p2p-group-id.md)                                                               |                                | x        | Wi-Fi Direct 移動対象のグループ ID。 グループ ID は省略可能です。 Wi-Fi Direct サービスの場合、ローカル Wi-Fi Direct GO 用のリモート側が参加するグループ ID です。                                       |
+| [**WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)                      |                                | x        | Wi-Fi Direct サービスのプロビジョニングの属性。                                                                                                                                                                                          |
+| [**WDI\_TLV\_P2P\_持続\_グループ\_ID**](wdi-tlv-p2p-persistent-group-id.md)                                        |                                | x        | 接続に使用する永続的なグループのグループの ip アドレス。 このフィールドは、永続的なグループにフラグを設定する場合に有効な[ **WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)が 1 に設定します。 |
+| [**WDI\_TLV\_P2P\_サービス\_セッション\_情報**](wdi-tlv-p2p-service-session-info.md)                                      |                                | x        | サービスのセッションの情報。 このフィールドは有効な場合は[ **WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)が存在します。                                                                       |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

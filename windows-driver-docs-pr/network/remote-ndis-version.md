@@ -1,17 +1,17 @@
 ---
-title: リモートの NDIS バージョン
-description: リモートの NDIS バージョン
+title: リモート NDIS バージョン
+description: リモート NDIS バージョン
 ms.assetid: d7f1b3b7-fdfc-45d6-bb62-19b475d466c6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f10d1637f526618209ebabfefc974b77bc47ac81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367525"
 ---
-# <a name="remote-ndis-version"></a>リモートの NDIS バージョン
+# <a name="remote-ndis-version"></a>リモート NDIS バージョン
 
 
 
@@ -28,7 +28,7 @@ ms.locfileid: "56528614"
 <thead>
 <tr class="header">
 <th align="left">バージョン識別子</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

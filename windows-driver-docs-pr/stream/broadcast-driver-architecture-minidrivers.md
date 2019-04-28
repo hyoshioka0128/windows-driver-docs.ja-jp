@@ -1,6 +1,6 @@
 ---
-title: ドライバーのアーキテクチャのミニドライバーをブロードキャストします。
-description: ドライバーのアーキテクチャのミニドライバーをブロードキャストします。
+title: ブロードキャスト ドライバー アーキテクチャ ミニドライバー
+description: ブロードキャスト ドライバー アーキテクチャ ミニドライバー
 ms.assetid: 0ad56dbd-6f79-439f-8dfc-8d118d114ddd
 keywords:
 - ドライバーのアーキテクチャの WDK AVStream、ミニドライバーをブロードキャストします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66199c036d4c62916810700d4a0e93e3faf43b59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370430"
 ---
-# <a name="broadcast-driver-architecture-minidrivers"></a>ドライバーのアーキテクチャのミニドライバーをブロードキャストします。
+# <a name="broadcast-driver-architecture-minidrivers"></a>ブロードキャスト ドライバー アーキテクチャ ミニドライバー
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: WMI のマイナー Irp
-description: WMI のマイナー Irp
+title: WMI のマイナー IRP
+description: WMI のマイナー IRP
 ms.date: 08/12/2017
 ms.assetid: 5788294f-2145-4381-9b06-3b138b2d26df
 ms.localizationpriority: medium
 ms.openlocfilehash: cba176d23ac21f913ebedc1f128970e3764edc4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365374"
 ---
-# <a name="wmi-minor-irps"></a>WMI のマイナー Irp
+# <a name="wmi-minor-irps"></a>WMI のマイナー IRP
 
 
 

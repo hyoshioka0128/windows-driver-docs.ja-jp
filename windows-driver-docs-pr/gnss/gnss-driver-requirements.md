@@ -5,11 +5,11 @@ ms.assetid: BA117292-4877-4753-8FEB-2DEE6450155D
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac983cd92fb2079311e079f98a58ae79f637cd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371118"
 ---
 # <a name="gnss-driver-requirements"></a>GNSS ドライバーの要件
 
@@ -111,7 +111,7 @@ Windows 10 用 GNSS ドライバーを開発する際に考慮すべき要件、
 <th>機能</th>
 <th>すべてのプラットフォームの要件</th>
 <th>スマート フォン用の特定の要件</th>
-<th>説明</th>
+<th>メモ</th>
 </tr>
 </thead>
 <tbody>

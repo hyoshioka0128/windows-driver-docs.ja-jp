@@ -1,6 +1,6 @@
 ---
-title: インターフェイスをプロバイダーとして登録します。
-description: インターフェイスをプロバイダーとして登録します。
+title: インターフェイス プロバイダーとしての登録
+description: インターフェイス プロバイダーとしての登録
 ms.assetid: 7eb4b86d-077a-48de-94b6-11906e847569
 keywords:
 - NDIS ネットワーク インターフェイス、WDK インターフェイス プロバイダー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb5c2189951c1fdc7c49c244c95df022f20c22ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364092"
 ---
-# <a name="registering-as-an-interface-provider"></a>インターフェイスをプロバイダーとして登録します。
+# <a name="registering-as-an-interface-provider"></a>インターフェイス プロバイダーとしての登録
 
 
 

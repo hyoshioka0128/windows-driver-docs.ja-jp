@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2c744d5160f981939c2650b0cfb88dc89d6ae69c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365849"
 ---
 # <a name="difremove"></a>DIF_REMOVE
 
@@ -87,7 +87,7 @@ DI_CLASSINSTALLPARAMS フラグがオフの場合、要求のクラスのイン�
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
+既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -109,7 +109,7 @@ DIF_REMOVE 要求に応答して、インストーラーは通常、一部のク
 
 Windows では、PnP - クエリの削除を開始する前に、この差分要求を送信し、処理を削除します。
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
 <a name="requirements"></a>要件
 ------------

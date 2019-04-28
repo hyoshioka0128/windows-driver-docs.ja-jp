@@ -1,6 +1,6 @@
 ---
-title: DVD 704 全体のパン スキャンではない例
-description: DVD 704 全体のパン スキャンではない例
+title: DVD 704 幅の非パン スキャンの例
+description: DVD 704 幅の非パン スキャンの例
 ms.assetid: df335e5e-4f7c-440a-88ef-00f6e0f916e2
 keywords:
 - アルファ ブレンド組み合わせ WDK DirectX va なので、DVD 704 全体のパン スキャンではない例
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c9e6580ecd28b2eb4aaff7df6a90fa8e3b91d62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361241"
 ---
-# <a name="dvd-704-wide-non-pan-scan-example"></a>DVD 704 全体のパン スキャンではない例
+# <a name="dvd-704-wide-non-pan-scan-example"></a>DVD 704 幅の非パン スキャンの例
 
 
 ## <span id="ddk_dvd_704_wide_non_pan_scan_example_gg"></span><span id="DDK_DVD_704_WIDE_NON_PAN_SCAN_EXAMPLE_GG"></span>

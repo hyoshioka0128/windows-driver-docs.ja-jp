@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f695e31a9a1b937d7c5e09e675548a4c8fbb273
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366986"
 ---
 # <a name="wiadpsserviceid"></a>WIA\_DPS\_サービス\_ID
 
@@ -30,14 +30,14 @@ WIA\_DPS\_サービス\_ID プロパティには、web サービス スキャナ
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA ミニドライバーの鍵を読み取ることによって実行時にこのプロパティを初期化します\_PNPX\_関数インスタンスのオブジェクトから ServiceId デバイス プロパティ。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

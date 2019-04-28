@@ -1,6 +1,6 @@
 ---
-title: PCMCIA デバイスのアクセス属性メモリ
-description: PCMCIA デバイスのアクセス属性メモリ
+title: PCMCIA デバイスの属性メモリにアクセスする
+description: PCMCIA デバイスの属性メモリにアクセスする
 ms.assetid: 270b8821-6322-4694-83eb-de319197dd6a
 keywords:
 - PCMCIA WDK バス、属性のメモリ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b083c2ef3c163e78b74e1e83705a4ec2d43c6d65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362474"
 ---
-# <a name="access-attribute-memory-of-a-pcmcia-device"></a>PCMCIA デバイスのアクセス属性メモリ
+# <a name="access-attribute-memory-of-a-pcmcia-device"></a>PCMCIA デバイスの属性メモリにアクセスする
 
 
 

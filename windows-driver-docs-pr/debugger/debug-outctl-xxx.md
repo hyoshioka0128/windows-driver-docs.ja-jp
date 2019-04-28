@@ -15,11 +15,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 071d675430ac36829a6f7121d24ac02dcff836e9
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366222"
 ---
 # <a name="debugoutctlxxx"></a>デバッグ\_OUTCTL\_XXX
 

@@ -1,6 +1,6 @@
 ---
-title: オプションの属性
-description: オプションの属性
+title: オプション属性
+description: オプション属性
 ms.assetid: 140837b9-2af6-485c-8b59-95fcd6502e18
 keywords:
 - プリンターは、WDK Unidrv、オプションを属性します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 349a6d75ee82d07a486e94dab2ac37b8f44d7721
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366784"
 ---
-# <a name="option-attributes"></a>オプションの属性
+# <a name="option-attributes"></a>オプション属性
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "56549266"
 
 -   オプションに固有の情報のさまざまな種類。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [すべての機能のオプションの属性](option-attributes-for-all-features.md)
 

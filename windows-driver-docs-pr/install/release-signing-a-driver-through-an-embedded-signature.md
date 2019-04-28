@@ -5,11 +5,11 @@ ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3a5211765376f79d059820454d2f7747b3256a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371069"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>埋め込みの署名を使用したドライバーのリリース署名
 
@@ -58,9 +58,9 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 
 -   *amd64\\toaster.sys*埋め込まれた署名されるカーネル モード バイナリ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
+SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
 
-埋め込みの署名でのドライバーをリリース署名の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[ドライバー ファイルをリリース署名](release-signing-a-driver-file.md)を参照してください。
+埋め込みの署名でのドライバーをリリース署名の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[ドライバー ファイルをリリース署名](release-signing-a-driver-file.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ソフトウェア専用のドライバーでの PnP や電源管理のサポート
-description: ソフトウェア専用のドライバーでの PnP や電源管理のサポート
+title: ソフトウェア専用ドライバーでの PnP と電源管理のサポート
+description: ソフトウェア専用ドライバーでの PnP と電源管理のサポート
 ms.assetid: bcfca8b2-68d6-4875-8687-27351becd6f4
 keywords:
 - PnP WDK KMDF、ソフトウェアのみのドライバー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eeb96e085cbb0c3c087b24c8410465204174ea47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363963"
 ---
-# <a name="supporting-pnp-and-power-management-in-software-only-drivers"></a>ソフトウェア専用のドライバーでの PnP や電源管理のサポート
+# <a name="supporting-pnp-and-power-management-in-software-only-drivers"></a>ソフトウェア専用ドライバーでの PnP と電源管理のサポート
 
 
 *ソフトウェア専用のドライバー*ドライバーは、ハードウェアにアクセスしません。 一部のソフトウェア専用のドライバーは、ハードウェアにアクセスしないドライバー スタック内に存在します。 これらのドライバーはハードウェアにアクセスしないため、通常がない PnP または電源管理操作を実行します。

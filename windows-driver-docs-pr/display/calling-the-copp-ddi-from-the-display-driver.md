@@ -1,6 +1,6 @@
 ---
-title: ディスプレイ ドライバーから COPP DDI の呼び出し
-description: ディスプレイ ドライバーから COPP DDI の呼び出し
+title: ディスプレイ ドライバーからの COPP DDI の呼び出し
+description: ディスプレイ ドライバーからの COPP DDI の呼び出し
 ms.assetid: d91d8a62-f212-4ae7-be61-b973d6495880
 keywords:
 - COPP DDI WDK DirectX VA を呼び出す
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fae21bc42e4183ae0e25605c9f9d917b044574d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370768"
 ---
-# <a name="calling-the-copp-ddi-from-the-display-driver"></a>ディスプレイ ドライバーから COPP DDI の呼び出し
+# <a name="calling-the-copp-ddi-from-the-display-driver"></a>ディスプレイ ドライバーからの COPP DDI の呼び出し
 
 
 ## <span id="ddk_calling_the_copp_ddi_from_the_display_driver_gg"></span><span id="DDK_CALLING_THE_COPP_DDI_FROM_THE_DISPLAY_DRIVER_GG"></span>

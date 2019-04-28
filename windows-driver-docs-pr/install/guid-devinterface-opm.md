@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 554943cb78fa3690d74e5dae11538f048dc42210
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363708"
 ---
 # <a name="guiddevinterfaceopm"></a>GUID_DEVINTERFACE_OPM
 
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://m
 
 ディスプレイのミニポート ドライバーがこの直接呼出し OPM インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_OPM を指定します。
 
-OPM については、[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)を参照してください。
+OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)します。
 
 <a name="requirements"></a>要件
 ------------

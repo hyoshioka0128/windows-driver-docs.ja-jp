@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2d63a59ae3a3fdfe5f81e3dc3d73a87b6a36d5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369210"
 ---
 # <a name="porting-issues-checklist"></a>移植に関する問題のチェックリスト
 
@@ -20,7 +20,7 @@ ms.locfileid: "57349795"
 
 
 
-### <a name="general"></a>全般
+### <a name="general"></a>全般的な情報
 
 -   新しい 64 ビット セーフ Windows のデータ型を使用します。
 
@@ -56,7 +56,7 @@ ms.locfileid: "57349795"
 
     使用 **%p**を 16 進数でポインターを印刷します。 これは、印刷のポインターの最適な選択肢です。
 
-    **注**  サポートは今後のバージョンの Visual C **%I**ポリモーフィックなデータを印刷します。 これは、64 ビット Windows で 32 ビットに 32 ビット Windows の 64 ビットの値を扱います。 Visual C もサポート **%i64** 64 ビット値を出力します。
+    **注**  将来のバージョンの VisualC++サポート **%I**ポリモーフィックなデータを印刷します。 これは、64 ビット Windows で 32 ビットに 32 ビット Windows の 64 ビットの値を扱います。 VisualC++サポートではまた **%i64** 64 ビット値を出力します。
 
      
 
@@ -153,7 +153,7 @@ ms.locfileid: "57349795"
 
 -   64 ビットの Windows で 0 xffffffff は、いない-1 と同じです。
 
-    例:
+    次に、例を示します。
 
     ```cpp
     DWORD index = 0;
@@ -221,7 +221,7 @@ ms.locfileid: "57349795"
 
   使用**UINT**\_**PTR**と**INT**\_**PTR**適切な場所 (とされるかどうかがない場合必要に応じて、ありませんケースだけで使用しても問題)。 ポインター型にキャストしません**ULONG**、**長い**、 **INT**、 **UINT**、または**DWORD**します。
 
-  **注****処理**として定義されます、 **void \\** <em>ので型キャスト、**処理</em>* に値**ULONG**値をテスト、設定、または安値をオフにする 2 つのビットは、プログラミング エラーです。  
+  **注****処理**として定義されます、 **void \\** <em>ので型キャスト、**処理</em>* に値**ULONG**値をテスト、設定、または安値をオフにする 2 つのビットは、プログラミング エラーです。
 
      
 
@@ -245,7 +245,7 @@ ms.locfileid: "57349795"
 
 -   使用して、 [**フィールド\_オフセット**](https://msdn.microsoft.com/library/windows/hardware/ff545727)マクロ。
 
-    以下に例を示します。
+    次に、例を示します。
 
     ```cpp
     struct xx {
@@ -270,7 +270,7 @@ ms.locfileid: "57349795"
 
 -   使用して、**型\_配置**マクロ。
 
-    **型\_配置**マクロは、現在のプラットフォームで特定のデータ型のアラインメント要件を返します。 以下に例を示します。
+    **型\_配置**マクロは、現在のプラットフォームで特定のデータ型のアラインメント要件を返します。 次に、例を示します。
 
     ```cpp
     TYPE_ALIGNMENT(KFLOATING_SAVE) == 4 on x86, 8 on Itanium
@@ -295,7 +295,7 @@ ms.locfileid: "57349795"
 
 -   構造体のパッキング ディレクティブを使用する場合は注意してください。
 
-    64 ビットの Windows の場合は、データ構造がずれている場合は、ルーチン操作する構造体など[ **RtlCopyMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff561808)と**memcpy**、エラーは発生しません。 代わりに、例外が発生します。 例:
+    64 ビットの Windows の場合は、データ構造がずれている場合は、ルーチン操作する構造体など[ **RtlCopyMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff561808)と**memcpy**、エラーは発生しません。 代わりに、例外が発生します。 次に、例を示します。
 
     ```cpp
     #pragma pack (1)  /* also set by /Zp switch */

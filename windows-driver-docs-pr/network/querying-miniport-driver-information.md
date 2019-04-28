@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバー情報の照会
-description: ミニポート ドライバー情報の照会
+title: ミニポート ドライバー情報のクエリ
+description: ミニポート ドライバー情報のクエリ
 ms.assetid: b7bf2baf-3e66-4fc5-bd6a-b321744c1ae9
 keywords:
 - WMI の WDK ネットワー キング、ミニポート ドライバーの照会
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d2cfdc51bdd32b7362723d181347175866e632
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360958"
 ---
-# <a name="querying-miniport-driver-information"></a>ミニポート ドライバー情報の照会
+# <a name="querying-miniport-driver-information"></a>ミニポート ドライバー情報のクエリ
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: Windows Vista のアプリケーションとレガシ ドライバー間データ転送
-description: Windows Vista のアプリケーションとレガシ ドライバー間データ転送
+title: Windows Vista アプリケーションとレガシ ドライバー間のデータ転送
+description: Windows Vista アプリケーションとレガシ ドライバー間のデータ転送
 ms.assetid: 0acb2ca3-6ac6-441d-a12d-446ae5b70295
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75ea897f1a5be214671057a2fbdb26fe1db4e132
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364630"
 ---
-# <a name="data-transfer-between-windows-vista-application-and-legacy-driver"></a>Windows Vista のアプリケーションとレガシ ドライバー間データ転送
+# <a name="data-transfer-between-windows-vista-application-and-legacy-driver"></a>Windows Vista アプリケーションとレガシ ドライバー間のデータ転送
 
 
 互換性層では、Windows Vista アプリケーションを呼び出す**IWiaTransfer::Download** (Microsoft Windows SDK のドキュメントで説明) レガシ ドライバー。 互換性レイヤーは、形式変換するほかフォルダー転送コードを実装する必要があります。 互換レイヤーは、従来、ドライバーから複数のページを転送することが常にフィーダー転送用の特別なコードを実装します。 Windows Vista のアプリケーションが、フラグを使用しても、フィーダー項目から、スキャン中に複数のページを要求することは常に\_ファイル転送。 次の図は、Windows Vista のアプリケーションと従来のドライバーを示します。

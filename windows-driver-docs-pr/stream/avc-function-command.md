@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 551b3d61fe01e73cb890033b0c053df2c459d211
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369801"
 ---
 # <a name="avcfunctioncommand"></a>AVC\_関数\_コマンド
 
@@ -93,7 +93,7 @@ typedef struct _AVC_COMMAND_IRB {
 } AVC_COMMAND_IRB, *PAVC_COMMAND_IRB;
 ```
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 **ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
 
@@ -163,7 +163,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 これは、IRQL で呼び出す必要がある = パッシブ\_レベル。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**AVC\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)、 [ **AvcCommandType**](https://msdn.microsoft.com/library/windows/hardware/ff554099)、 [ **AvcResponseCode**](https://msdn.microsoft.com/library/windows/hardware/ff554105)、 [**AVC\_関数\_検索\_ピア\_は**](avc-function-find-peer-do.md)、 [ **AVC\_関数\_ピア\_は\_一覧**](avc-function-peer-do-list.md)、 [ **AVC\_関数\_取得\_サブユニット\_情報**](avc-function-get-subunit-info.md)
 

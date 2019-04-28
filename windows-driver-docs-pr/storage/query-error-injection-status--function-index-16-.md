@@ -1,17 +1,17 @@
 ---
-title: クエリ エラーの挿入の状態 (関数インデックス 16)
+title: エラー挿入状態のクエリ (関数インデックス 16)
 description: この関数は、NVDIMM-N のエラー挿入の状態を返します。
 ms.assetid: 7CE07551-666F-4E07-8115-806F6256B595
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1f12342d3466f019ff23a431496bb4c4f86b77af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366266"
 ---
-# <a name="query-error-injection-status-function-index-16"></a>クエリ エラーの挿入の状態 (関数インデックス 16)
+# <a name="query-error-injection-status-function-index-16"></a>エラー挿入状態のクエリ (関数インデックス 16)
 
 
 この関数は、NVDIMM-N のエラー挿入の状態を返します。 プラットフォームのみなど、特定のシナリオでのエラーの挿入を有効にすることもできます、ユーザーが BIOS 設定を構成した後。
@@ -43,7 +43,7 @@ ms.locfileid: "56527418"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>

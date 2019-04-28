@@ -1,23 +1,23 @@
 ---
-title: ドライバーのアーキテクチャのプロパティ、イベント、およびメソッドのセットをブロードキャストします。
-description: ドライバーのアーキテクチャのプロパティ、イベント、およびメソッドのセットをブロードキャストします。
+title: ブロードキャスト ドライバー アーキテクチャのプロパティ、イベント、メソッド セット
+description: ブロードキャスト ドライバー アーキテクチャのプロパティ、イベント、メソッド セット
 ms.assetid: 4323c19a-e47d-4ec6-a39c-3f2e95c526e4
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1f6c9ddf7941cc9cd6a2b8a0f68d76d1b1cc9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370418"
 ---
-# <a name="broadcast-driver-architecture-property-event-and-method-sets"></a>ドライバーのアーキテクチャのプロパティ、イベント、およびメソッドのセットをブロードキャストします。
+# <a name="broadcast-driver-architecture-property-event-and-method-sets"></a>ブロードキャスト ドライバー アーキテクチャのプロパティ、イベント、メソッド セット
 
 
 ## <span id="ddk_broadcast_driver_architecture_property_event_and_method_sets_ks"></span><span id="DDK_BROADCAST_DRIVER_ARCHITECTURE_PROPERTY_EVENT_AND_METHOD_SETS_KS"></span>
 
 
-このセクションでは、BDA ミニドライバーを実装するプロパティ、イベント、およびメソッドのセットを説明します。 これらのセットが定義されている*bdamedia.h*します。 BDA ミニドライバーは、いくつかのプロパティと BDA サポート ライブラリ内の既定の実装にこれらのセット内のメソッドをディスパッチできます。 詳細については、[ドライバー アーキテクチャ ミニドライバーのブロードキャスト](https://msdn.microsoft.com/library/windows/hardware/ff556588)、ミニドライバーが関数の BDA サポート ライブラリを使用して、これらのセットの既定の処理を提供する方法にを参照してください。
+このセクションでは、BDA ミニドライバーを実装するプロパティ、イベント、およびメソッドのセットを説明します。 これらのセットが定義されている*bdamedia.h*します。 BDA ミニドライバーは、いくつかのプロパティと BDA サポート ライブラリ内の既定の実装にこれらのセット内のメソッドをディスパッチできます。 詳細については、次を参照してください。[ドライバー アーキテクチャ ミニドライバーのブロードキャスト](https://msdn.microsoft.com/library/windows/hardware/ff556588)、ミニドライバーが関数の BDA サポート ライブラリを使用して、これらのセットの既定の処理を提供する方法にします。
 
 次のセクションでは、BDA プロパティ、イベント、およびメソッドのセットの詳細についてを提供します。
 

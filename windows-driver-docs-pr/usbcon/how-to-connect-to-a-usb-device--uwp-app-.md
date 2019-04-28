@@ -1,14 +1,14 @@
 ---
-Description: In Windows 8.1, you can write a UWP app that interacts with a USB device.
+Description: Windows 8.1 では、USB デバイスと対話する UWP アプリを記述できます。
 title: USB デバイスへの接続方法 (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5eca6881309b15cda4619af2df05e708a826aa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364826"
 ---
 # <a name="how-to-connect-to-a-usb-device-uwp-app"></a>USB デバイスへの接続方法 (UWP アプリ)
 
@@ -73,7 +73,7 @@ USB の割り当ての場合はこれらの id とデバイスの製造元する
 
     **HKEY\_ローカル\_マシン\\システム\\ControlSet001\\Enum\\USB\\&lt;ハードウェア id&gt;**
 
-    詳細については、[USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)を参照してください。
+    詳細については、次を参照してください。 [USB デバイスのレジストリ エントリ](usb-device-specific-registry-settings.md)します。
 
 -   アプリ マニフェストによってハードウェア ID を使用して、デバイスを識別します。
 
@@ -130,7 +130,7 @@ UWP アプリでは、クラス、サブクラスでは、およびプロトコ�
 ## <a name="finding-the-devicethe-basic-way"></a>デバイスの検索-基本的な方法
 
 
-これは、USB デバイスを検索する最も簡単な方法です。 詳細については、[クイック スタート: デバイスを使用する一般的な列挙](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)を参照してください。
+これは、USB デバイスを検索する最も簡単な方法です。 詳細については、次を参照してください。[クイック スタート: デバイスを使用する一般的な列挙](https://msdn.microsoft.com/library/windows/apps/xaml/hh872189)します。
 
 1.  取得した AQS 文字列を渡す[ **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)します。 呼び出しを取得、 [ **DeviceInformationCollection** ](https://msdn.microsoft.com/library/windows/apps/br225395)オブジェクト。
 2.  コレクションをループします。 各イテレーションの取得、 [ **DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/br225393)オブジェクト。
@@ -169,7 +169,7 @@ UWP アプリでは、クラス、サブクラスでは、およびプロトコ�
 ## <a name="find-the-deviceusing-devicewatcher"></a>デバイスの検出-DeviceWatcher を使用します。
 
 
-デバイスを動的に列挙することができます。 次に、アプリは、デバイスが追加または削除される場合、またはデバイスのプロパティを変更する場合、通知を受信できます。 詳細については、[デバイスを追加する場合に通知を取得する方法は、削除、または変更](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)を参照してください。
+デバイスを動的に列挙することができます。 次に、アプリは、デバイスが追加または削除される場合、またはデバイスのプロパティを変更する場合、通知を受信できます。 詳細については、次を参照してください。[デバイスを追加する場合に通知を取得する方法は、削除、または変更](https://msdn.microsoft.com/library/windows/apps/xaml/hh967756)します。
 
 A [ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225446)オブジェクトが動的にデバイスを検出するように、追加、システムから削除するアプリを使用できます。
 

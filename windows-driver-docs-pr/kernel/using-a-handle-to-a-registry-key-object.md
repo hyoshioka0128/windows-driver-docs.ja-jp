@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b67083cc8fae55895917b1805d0f5074255a4a9d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361140"
 ---
 # <a name="using-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルの使用
 
@@ -176,7 +176,7 @@ if (NULL != handleRegKey)
 
 システムでは、メモリ内のキーの変更をキャッシュし、数秒ごとのディスクに書き込みます。 ディスクに、キーの変更を強制的に[ **ZwFlushKey**](https://msdn.microsoft.com/library/windows/hardware/ff566457)します。
 
-シンプルなインターフェイス経由でのレジストリを操作するドライバーを呼び出すことも、 **Rtl*Xxx*レジストリ * Xxx*** ルーチン。 詳細については、[レジストリ ランタイム ライブラリ ルーチン](registry-run-time-library-routines.md)を参照してください。
+シンプルなインターフェイス経由でのレジストリを操作するドライバーを呼び出すことも、 **Rtl*Xxx*レジストリ * Xxx*** ルーチン。 詳細については、次を参照してください。[レジストリ ランタイム ライブラリ ルーチン](registry-run-time-library-routines.md)します。
 
  
 

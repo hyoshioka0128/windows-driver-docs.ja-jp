@@ -1,17 +1,17 @@
 ---
-title: パッシブ、アクティブな冷却モード
+title: パッシブとアクティブの冷却モード
 description: Windows 8 以降、温度管理機能を備えたデバイスは GUID_THERMAL_COOLING_INTERFACE ドライバー インターフェイスを介してオペレーティング システムにこれらの機能を公開できます。
 ms.assetid: 4AB70ED3-E71A-45EE-818D-7DCDE0FFBCB3
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 16a346a52e347e5859030e57dc8057abcfc7269a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369274"
 ---
-# <a name="passive-and-active-cooling-modes"></a>パッシブ、アクティブな冷却モード
+# <a name="passive-and-active-cooling-modes"></a>パッシブとアクティブの冷却モード
 
 
 Windows 8 以降、温度管理機能を備えたデバイスはこれらの機能により、オペレーティング システムを公開できます、 [GUID\_熱\_冷却\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh698265)ドライバーインターフェイスです。 このインターフェイスで 2 つのプリンシパルのドライバーによって実装されるコールバック ルーチンは[ *PassiveCooling* ](https://msdn.microsoft.com/library/windows/hardware/hh698270)と[ *ActiveCooling*](https://msdn.microsoft.com/library/windows/hardware/hh698235)します。 ドライバーのパッシブ冷却機能の実装、 *PassiveCooling*ルーチン。 ドライバーのアクティブな冷却機能の実装、 *ActiveCooling*ルーチン。 コンピューターの使用状況や環境の変更に応答してでは、オペレーティング システムは、1 つ (または可能性があります両方) これらのルーチンのハードウェア プラットフォームでの動的な温度レベルの管理を呼び出します。

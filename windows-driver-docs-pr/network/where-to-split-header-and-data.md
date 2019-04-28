@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7288e9b056e0e569fb4980b877965cef30e8987d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365724"
 ---
 # <a name="where-to-split-header-and-data"></a>ヘッダーとデータを分割する場所
 
@@ -28,7 +28,7 @@ ms.locfileid: "56532769"
 
 -   [TCP ペイロードの先頭](splitting-frames-at-the-tcp-payload.md)します。
 
-**注**  ヘッダー データの分割のプロバイダーにのみ、これらの要件が適用されます。 ヘッダー データの分割が使用されていない場合にフレームを分割の詳細については、[の場合、ヘッダー データ分割が使用されていない](cases-where-header-data-split-is-not-used.md)を参照してください。
+**注**  ヘッダー データの分割のプロバイダーにのみ、これらの要件が適用されます。 ヘッダー データの分割が使用されていない場合にフレームを分割の詳細については、次を参照してください。[の場合、ヘッダー データ分割が使用されていない](cases-where-header-data-split-is-not-used.md)します。
 
  
 

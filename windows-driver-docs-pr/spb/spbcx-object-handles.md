@@ -4,16 +4,16 @@ description: このトピックでは、SPB フレームワークの拡張機能
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 89ff2985adbc199650000ce27741c71928dfd94a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368177"
 ---
 # <a name="spbcx-object-handles"></a>SpbCx オブジェクト ハンドル
 このトピックでは、SPB フレームワークの拡張機能 (SpbCx) ライブラリに対して定義されているオブジェクトのハンドルをについて説明します。 
 
-さらに、SerCx2 DDI を使用して 2 つのジェネリック オブジェクト ハンドルの種類を WDFDEVICE と WDFREQUEST、カーネル モード ドライバー フレームワーク (KMDF) では定義されています。 フレームワークのハンドルの種類の詳細については、[Framework オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/summary-of-framework-objects)を参照してください。
+さらに、SerCx2 DDI を使用して 2 つのジェネリック オブジェクト ハンドルの種類を WDFDEVICE と WDFREQUEST、カーネル モード ドライバー フレームワーク (KMDF) では定義されています。 フレームワークのハンドルの種類の詳細については、次を参照してください。 [Framework オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/summary-of-framework-objects)します。
 
 このトピックでは、次のオブジェクト ハンドルをについて説明します。
 
@@ -29,7 +29,7 @@ ms.locfileid: "56527472"
 DECLARE_HANDLE(SPBREQUEST)
 ```
 
-**SPBREQUEST**から派生したオブジェクトのクラスは、 **WDFREQUEST**オブジェクト クラスは、I/O マネージャーによって送出される I/O 要求を表します。 したがって、 **WdfRequestXxx**取るメソッド**WDFREQUEST**値を処理するようにパラメーターを受け入れる**SPBREQUEST**有効なパラメーター値として値を処理します。 これらのメソッドの詳細については、[Framework 要求オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects)を参照してください。
+**SPBREQUEST**から派生したオブジェクトのクラスは、 **WDFREQUEST**オブジェクト クラスは、I/O マネージャーによって送出される I/O 要求を表します。 したがって、 **WdfRequestXxx**取るメソッド**WDFREQUEST**値を処理するようにパラメーターを受け入れる**SPBREQUEST**有効なパラメーター値として値を処理します。 これらのメソッドの詳細については、次を参照してください。 [Framework 要求オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects)します。
 
 ただし、一部の SpbCx メソッドとコールバック関数具体的には必要**SPBREQUEST**パラメーターとして処理します。 このようなパラメーターの場合の置換を**WDFREQUEST**ハンドルではない、 **SPBREQUEST**ハンドルは、エラーです。
 

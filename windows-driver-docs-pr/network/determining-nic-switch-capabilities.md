@@ -1,20 +1,20 @@
 ---
-title: NIC のスイッチ機能を判断します。
-description: NIC のスイッチ機能を判断します。
+title: NIC スイッチ機能の判断
+description: NIC スイッチ機能の判断
 ms.assetid: 5E627E52-2D47-4EA0-80D9-6979891CCE96
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 990104d4b1d07ef6bdb8e1f4b3933c4316457bee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364223"
 ---
-# <a name="determining-nic-switch-capabilities"></a>NIC のスイッチ機能を判断します。
+# <a name="determining-nic-switch-capabilities"></a>NIC スイッチ機能の判断
 
 
-このトピックでは、NDIS および上にあるドライバーを NIC はスイッチ シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの機能を特定する方法について説明します。 このトピックには、次の情報が含まれています。
+このトピックでは、NDIS および上にあるドライバーを NIC はスイッチ シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの機能を特定する方法について説明します。 このトピックの内容は次のとおりです。
 
 [レポートの中に NIC のスイッチ機能*MiniportInitializeEx*](#report)
 
@@ -24,7 +24,7 @@ ms.locfileid: "56549460"
 
  
 
-NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
+NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
 
 ## <a name="reporting-nic-switch-capabilities-during-miniportinitializeex"></a>レポートの中に NIC のスイッチ機能*MiniportInitializeEx*
 
@@ -49,7 +49,7 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 3.  ミニポート ドライバーの設定の他のメンバー、 [ **NDIS\_NIC\_切り替える\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583) NIC のスイッチ機能の値の範囲の構造体SR-IOV ネットワーク アダプター。 たとえば、ミニポート ドライバーの設定、 **MaxNumVFs**と**MaxNumVPorts** Vf とアダプターをサポートする拡張の最大数をメンバー。
 
-    **注**  ネットワーク アダプターで使用可能なハードウェア リソースに応じて、ミニポート ドライバーを設定できます、 **MaxNumVFs**メンバーである値をより小さい、  **\*NumVFs**キーワード。 このキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
+    **注**  ネットワーク アダプターで使用可能なハードウェア リソースに応じて、ミニポート ドライバーを設定できます、 **MaxNumVFs**メンバーである値をより小さい、  **\*NumVFs**キーワード。 このキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
      
 
@@ -67,7 +67,7 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 2.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
+アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
 ## <a name="querying-nic-switch-capabilities-by-overlying-drivers"></a>上にあるドライバーによって NIC スイッチ機能の照会
 

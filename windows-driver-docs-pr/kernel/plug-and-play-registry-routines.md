@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffa464523400ac527775ae1a350c74a45749e4cb
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369248"
 ---
 # <a name="plug-and-play-registry-routines"></a>プラグ アンド プレイ レジストリ ルーチン
 
@@ -41,9 +41,9 @@ PnP マネージャーでは、ドライバーの場合、ドライバーのソ�
 
 **IoOpenDeviceInterfaceRegistryKey**特定のデバイス インターフェイスのインスタンスに関連付けられたキーを開きます。 これは、その名前で、インスタンスが識別される、 [ **UNICODE\_文字列**](https://msdn.microsoft.com/library/windows/hardware/ff564879)によって返される[ **IoGetDeviceInterfaces**](https://msdn.microsoft.com/library/windows/hardware/ff549186)、[ **IoGetDeviceInterfaceAlias**](https://msdn.microsoft.com/library/windows/hardware/ff549180)、または[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)します。 として文字列が渡される、 *SymbolicLinkValue*パラメーターを**IoOpenDeviceInterfaceRegistryKey**します。
 
-INF ファイル、またはを使用して、これらのキーを設定することも、 **SetupDi * Xxx*** ルーチン。 詳細については、[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)を参照してください。
+INF ファイル、またはを使用して、これらのキーを設定することも、 **SetupDi * Xxx*** ルーチン。 詳細については、次を参照してください。[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)します。
 
-両方[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)としてアクセス権を持つ、開いているキー ハンドルを提供指定された、 *DesiredAccess*パラメーター。 ドライバーを使用して、その後、 **Zw * Xxx*** レジストリのルーチンなど[ **ZwQueryValueKey** ](https://msdn.microsoft.com/library/windows/hardware/ff567069)と[ **ZwSetValueKey**](https://msdn.microsoft.com/library/windows/hardware/ff567109)にアクセスして、キーを操作します。 ドライバーが呼び出すことによって、ハンドルを閉じ、ドライバーは不要になったハンドルを使用して後、 [ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。 詳細については、[レジストリ キー オブジェクトを識別するハンドルを使用して](using-a-handle-to-a-registry-key-object.md)を参照してください。
+両方[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)と[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)としてアクセス権を持つ、開いているキー ハンドルを提供指定された、 *DesiredAccess*パラメーター。 ドライバーを使用して、その後、 **Zw * Xxx*** レジストリのルーチンなど[ **ZwQueryValueKey** ](https://msdn.microsoft.com/library/windows/hardware/ff567069)と[ **ZwSetValueKey**](https://msdn.microsoft.com/library/windows/hardware/ff567109)にアクセスして、キーを操作します。 ドライバーが呼び出すことによって、ハンドルを閉じ、ドライバーは不要になったハンドルを使用して後、 [ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。 詳細については、次を参照してください。[レジストリ キー オブジェクトを識別するハンドルを使用して](using-a-handle-to-a-registry-key-object.md)します。
 
 次のコード サンプルでは、使用方法を示します**IoOpenDeviceRegistryKey**と**ZwSetValueKey**デバイスのハードウェア キーの下に"Value"をという名前の値に関連付けられているデータを設定します。
 

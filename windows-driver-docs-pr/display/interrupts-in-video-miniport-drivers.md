@@ -1,6 +1,6 @@
 ---
-title: ビデオのミニポート ドライバーでの割り込み
-description: ビデオのミニポート ドライバーでの割り込み
+title: ビデオ ミニポート ドライバーでの割り込み
+description: ビデオ ミニポート ドライバーでの割り込み
 ms.assetid: bf84a3fb-860a-4647-ac34-93f3a22b166b
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、割り込み
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bdcf2c0fea7d89b117c135238833bf0ae565746b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362263"
 ---
-# <a name="interrupts-in-video-miniport-drivers"></a>ビデオのミニポート ドライバーでの割り込み
+# <a name="interrupts-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーでの割り込み
 
 
 ## <span id="ddk_interrupts_in_video_miniport_drivers_gg"></span><span id="DDK_INTERRUPTS_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>

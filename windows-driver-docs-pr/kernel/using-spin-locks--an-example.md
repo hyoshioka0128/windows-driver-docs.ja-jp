@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d25aa18c1bfe8cc1b2559ca39013d150d0021cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363822"
 ---
-# <a name="using-spin-locks-an-example"></a>スピン ロックを使用します。例
+# <a name="using-spin-locks-an-example"></a>スピン ロックの使用: 例
 
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "56558006"
 
 前の図に示す 1 つのプロセッサで実行されているルーチンは、スピン ロックを保持している間、そのスピン ロックを取得しようとしています。 その他のすべてのルーチンの作業がないです。 単に、スピンを既に保持されているロックの取得を日常的な各試行しても、所有者は、スピン ロックを解放するまで、現在のプロセッサ上が回転します。 1 つだけのルーチンがそれを取得できます、スピン ロックが解放されると、同じスピン ロックを取得しようとして現在の他のすべてのルーチンは、スピンし続けます。
 
-発生した IRQL でスピン ロックの所有者が実行されます: のいずれかでディスパッチ\_executive スピン ロックでは、または、DIRQL 割り込みスピン ロックのレベル。 呼び出し元[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と**KeAcquireInStackQueuedSpinLock**ディスパッチ時に実行\_レベルを呼び出すまで[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)または**KeReleaseInStackQueuedSpinLock**ロックを解除します。 呼び出し元[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)呼び出し元が指定されるまで、現在のプロセッサに割り込みオブジェクトの SynchronizeIrql の IRQL を自動的に発生*SynchCritSection*ルーチンが終了し、 **KeSynchronizeExecution**コントロールを返します。 詳細については、[呼び出しサポート ルーチンを使用してスピン ロック](calling-support-routines-that-use-spin-locks.md)を参照してください。
+発生した IRQL でスピン ロックの所有者が実行されます: のいずれかでディスパッチ\_executive スピン ロックでは、または、DIRQL 割り込みスピン ロックのレベル。 呼び出し元[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と**KeAcquireInStackQueuedSpinLock**ディスパッチ時に実行\_レベルを呼び出すまで[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)または**KeReleaseInStackQueuedSpinLock**ロックを解除します。 呼び出し元[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)呼び出し元が指定されるまで、現在のプロセッサに割り込みオブジェクトの SynchronizeIrql の IRQL を自動的に発生*SynchCritSection*ルーチンが終了し、 **KeSynchronizeExecution**コントロールを返します。 詳細については、次を参照してください。[呼び出しサポート ルーチンを使用してスピン ロック](calling-support-routines-that-use-spin-locks.md)します。
 
 **スピン ロックの使用の詳細については、次の点に注意してください。**
 

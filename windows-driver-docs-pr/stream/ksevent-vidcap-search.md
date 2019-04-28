@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8a9dab39084f124240b94bfa0b5761550e19be4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360456"
 ---
 # <a name="kseventvidcapsearch"></a>KSEVENT\_しました\_検索
 
@@ -64,7 +64,7 @@ KSEVENT\_しました\_自動\_検索が完了したときに、更新イベン�
 
 クライアントは、検索が完了したときに通知するために、特定トラックを検索するときは、このイベントの登録があります。
 
-DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
 
  
 

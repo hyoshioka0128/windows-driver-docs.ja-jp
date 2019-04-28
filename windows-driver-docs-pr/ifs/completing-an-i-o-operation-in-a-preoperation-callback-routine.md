@@ -1,6 +1,6 @@
 ---
-title: Preoperation コールバック ルーチン内の I/O 操作の完了
-description: Preoperation コールバック ルーチン内の I/O 操作の完了
+title: 操作前コールバック ルーチン内で I/O 操作を完了する
+description: 操作前コールバック ルーチン内で I/O 操作を完了する
 ms.assetid: 1f339779-dc88-4673-87d5-36cee0b27fc2
 keywords:
 - preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、I/O 操作の完了
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0265d13001fa251b3a5ac769b5d1f25b8b7fa631
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370708"
 ---
-# <a name="completing-an-io-operation-in-a-preoperation-callback-routine"></a>Preoperation コールバック ルーチン内の I/O 操作の完了
+# <a name="completing-an-io-operation-in-a-preoperation-callback-routine"></a>操作前コールバック ルーチン内で I/O 操作を完了する
 
 
 ## <span id="ddk_completing_an_io_operation_in_a_preoperation_callback_routine_if"></span><span id="DDK_COMPLETING_AN_IO_OPERATION_IN_A_PREOPERATION_CALLBACK_ROUTINE_IF"></span>
@@ -52,7 +52,7 @@ I/O 操作の完了は、成功または失敗した NTSTATUS 値に応じて、
 
 -   *失敗*、I/O 操作の状態など、エラーまたは警告 NTSTATUS 値で完了することを意味\_無効な\_デバイス\_要求または状態\_バッファー\_オーバーフローしました。
 
-NTSTATUS の値は ntstatus.h に定義されます。 これらの値は 4 つのカテゴリに分類されます。 成功すると、情報、警告、およびエラー。 これらの値の詳細については、[NTSTATUS 値を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565436)を参照してください。
+NTSTATUS の値は ntstatus.h に定義されます。 これらの値は 4 つのカテゴリに分類されます。 成功すると、情報、警告、およびエラー。 これらの値の詳細については、次を参照してください。 [NTSTATUS 値を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565436)します。
 
  
 

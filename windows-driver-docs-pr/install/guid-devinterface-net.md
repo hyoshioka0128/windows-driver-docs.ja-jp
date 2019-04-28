@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5970f5a734e17a9b59c3a4db9b163b89aa71c68e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363744"
 ---
 # <a name="guiddevinterfacenet"></a>GUID_DEVINTERFACE_NET
 
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_NET[デバイス インターフェイス クラス](https://m
 
 NDIS は、NDIS ミニポート ドライバーの場合は、このインターフェイス クラスのインスタンスを登録します。
 
-ネットワーク デバイスとドライバーについては、[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)を参照してください。
+ネットワーク デバイスとドライバーについては、次を参照してください。[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)します。
 
 <a name="requirements"></a>要件
 ------------

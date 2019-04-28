@@ -1,17 +1,17 @@
 ---
-title: 拡張のカメラ コントロールのプロパティを実装するには、方法
+title: 拡張カメラ コントロールのプロパティを実装する方法
 description: カメラのドライバーの拡張のカメラ コントロールのプロパティを実装します。
 ms.assetid: BF5B2F1F-AC1D-4ED1-B1FC-64E8FA1218DA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df91e1cef783dc6e70bd43c4505c7aaee426e48b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363500"
 ---
-# <a name="how-to-implement-extended-camera-control-properties"></a>拡張のカメラ コントロールのプロパティを実装するには、方法
+# <a name="how-to-implement-extended-camera-control-properties"></a>拡張カメラ コントロールのプロパティを実装する方法
 
 
 カメラのドライバーを実装する必要があります[カメラ コントロールのプロパティを拡張](extended-camera-control-properties.md)個々 のプロパティとして設定-は、1 つのプロパティ セットとして各プロパティを実装する必要があります。 次のコード例は、これらのプロパティを実装するための開始点として使用できます。

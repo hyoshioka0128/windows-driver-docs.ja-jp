@@ -5,11 +5,11 @@ ms.assetid: a0fba9b3-7ce3-407d-b53f-fd54a50cbdcb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ae8d8b65c7146bca14fda44ccf1b8374d1ea8c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363659"
 ---
 # <a name="encapiparambitrate"></a>ENCAPIPARAM\_ビットレート
 
@@ -53,7 +53,7 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスで
 
 ### <a name="comments"></a>コメント
 
-このプロパティを使用する方法のサンプルでは、[エンコーダーのコード例](https://msdn.microsoft.com/library/windows/hardware/ff559532)を参照してください。
+このプロパティを使用する方法のサンプルでは、次を参照してください。[エンコーダーのコード例](https://msdn.microsoft.com/library/windows/hardware/ff559532)します。
 
 ミニドライバーは、静的なを指定するかに必要な**PropertyItem.Values**プロパティ項目またはハンドルの基本的な説明がクエリをサポートし、値を入力します。 ミニドライバーは、このプロパティの既定値も指定する必要があります。
 

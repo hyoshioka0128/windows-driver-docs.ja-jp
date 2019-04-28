@@ -1,6 +1,6 @@
 ---
-title: 形式の対応要件の拡張
-description: 形式の対応要件の拡張
+title: 拡張形式の認識要件
+description: 拡張形式の認識要件
 ms.assetid: eab9c254-fca7-449d-a6cf-1b20d2e7173c
 keywords:
 - 拡張形式の対応要件 Direct3D バージョン 10.1 WDK Windows 7 表示
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f81c0837544feb8c612a09b31a73c934a3d2d36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363373"
 ---
-# <a name="extended-format-aware-requirements"></a>形式の対応要件の拡張
+# <a name="extended-format-aware-requirements"></a>拡張形式の認識要件
 
 
 このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。

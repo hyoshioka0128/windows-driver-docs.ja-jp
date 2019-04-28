@@ -1,17 +1,17 @@
 ---
-title: クエリの NDIS QoS 機能
-description: クエリの NDIS QoS 機能
+title: NDIS QoS 機能のクエリ
+description: NDIS QoS 機能のクエリ
 ms.assetid: 00A2EFCD-CD90-446C-B588-EC66E3E730B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79f4c4a77d0c8154c56cc57c74d8f9dcb5c8037a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360955"
 ---
-# <a name="querying-ndis-qos-capabilities"></a>クエリの NDIS QoS 機能
+# <a name="querying-ndis-qos-capabilities"></a>NDIS QoS 機能のクエリ
 
 
 プロトコルとフィルター ドライバーに関連は次のように、ネットワーク アダプターの NDIS サービスの品質 (QoS) 機能を照会できます。
@@ -22,7 +22,7 @@ ms.locfileid: "56536251"
 
 NDIS は、ミニポート ドライバーのこれらの OID 要求を処理します。 登録すると、ミニポート ドライバー ハードウェアおよびネットワーク アダプターの NDIS QoS 機能が現在有効なネットワーク アダプターの初期化中に、NDIS は、この情報をキャッシュします。 NDIS は、上にある、ドライバーから OID の要求を処理する場合、このデータを返します。
 
-ミニポート ドライバーが NDIS QoS 機能を登録する方法の詳細については、[NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)を参照してください。
+ミニポート ドライバーが NDIS QoS 機能を登録する方法の詳細については、次を参照してください。 [NDIS QoS 機能の登録](registering-ndis-qos-capabilities.md)します。
 
  
 

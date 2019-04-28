@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d4a8610da1562236a1a2c3a648b56b31c9da903e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360198"
 ---
 # <a name="ndisstatuswdiindicationp2psendrequestactionframecomplete"></a>NDIS\_状態\_WDI\_INDICATION\_P2P\_送信\_要求\_アクション\_フレーム\_完了
 

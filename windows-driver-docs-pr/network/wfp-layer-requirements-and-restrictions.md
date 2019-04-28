@@ -1,6 +1,6 @@
 ---
-title: WFP 層の要件と制限
-description: WFP 層の要件と制限
+title: WFP レイヤーの要件と制限
+description: WFP レイヤーの要件と制限
 ms.assetid: 3677cc12-3242-4fbd-809d-303b9d324139
 keywords:
 - WDK Windows フィルタ リング プラットフォーム パケットの処理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e4db65596a45510cc9722fb025367ccef437bce2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365683"
 ---
-# <a name="wfp-layer-requirements-and-restrictions"></a>WFP 層の要件と制限
+# <a name="wfp-layer-requirements-and-restrictions"></a>WFP レイヤーの要件と制限
 
 
 WFP レイヤーには、次の要件と制限が適用されます。

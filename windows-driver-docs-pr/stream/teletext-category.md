@@ -1,6 +1,6 @@
 ---
-title: 文字放送のカテゴリ
-description: 文字放送のカテゴリ
+title: テレテキスト カテゴリ
+description: テレテキスト カテゴリ
 ms.assetid: f8eb289f-0b01-43cc-8160-f16dc6de12d9
 keywords:
 - ストリームのカテゴリの WDK ビデオ キャプチャ、文字放送
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55644df80bb964d4fb4d9094ccb042ae61cb0b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364819"
 ---
-# <a name="teletext-category"></a>文字放送のカテゴリ
+# <a name="teletext-category"></a>テレテキスト カテゴリ
 
 
 次の GUID は、文字放送のカテゴリに対応します。

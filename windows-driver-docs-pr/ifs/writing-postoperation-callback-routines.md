@@ -1,6 +1,6 @@
 ---
-title: Postoperation コールバック ルーチンを記述
-description: Postoperation コールバック ルーチンを記述
+title: 操作後コールバック ルーチンの記述
+description: 操作後コールバック ルーチンの記述
 ms.assetid: 4940e38d-107b-45c4-aa71-6e8543330f39
 keywords:
 - postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、書き込み
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fb1e5ca4d47cd98c0f40d13098cdd19b37bee55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367113"
 ---
-# <a name="writing-postoperation-callback-routines"></a>Postoperation コールバック ルーチンを記述
+# <a name="writing-postoperation-callback-routines"></a>操作後コールバック ルーチンの記述
 
 
 ## <span id="ddk_writing_postoperation_callback_routines_if"></span><span id="DDK_WRITING_POSTOPERATION_CALLBACK_ROUTINES_IF"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 402e81314a87874df1f418fe155cdd93e5643efe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364968"
 ---
 # <a name="kscategoryaudiodevice"></a>KSCATEGORY_AUDIO_DEVICE
 
@@ -51,7 +51,7 @@ KSCATEGORY_AUDIO_DEVICE[デバイス インターフェイス クラス](https:/
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5570d2eb47afb79b9a2a90d081a1f2d90d641743
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362798"
 ---
 # <a name="wditlvp2pprovisionserviceattributes"></a>WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性は、Wi-Fi Direct 
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                                                                                                                        |
+| 型                                              | 説明                                                                                                                                        |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                             | Wi-Fi Direct ステータス コード、Wi-Fi Direct の仕様で定義されています。                                                                            |
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 以降の Wi-Fi Direct 接続のローカルの MAC アドレス。                                                                                              |

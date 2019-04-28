@@ -1,16 +1,16 @@
 ---
-Description: An app that communicates with a USB device usually sends several control transfers requests.
-title: USB 制御転送 (UWP アプリ) を送信する方法
+Description: 通常、USB デバイスと通信するアプリは、いくつかのコントロールの転送要求を送信します。
+title: USB コントロール転送の送信方法 (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b2251863942c5ab21c4fae499603422459930ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360147"
 ---
-# <a name="how-to-send-a-usb-control-transfer-uwp-app"></a>USB 制御転送 (UWP アプリ) を送信する方法
+# <a name="how-to-send-a-usb-control-transfer-uwp-app"></a>USB コントロール転送の送信方法 (UWP アプリ)
 
 
 **要約**
@@ -52,9 +52,9 @@ USB 制御転送は、データの記述子を取得または標準のコマン�
 
 このトピックでは、コントロールの転送をさまざまなパターンでライトが点滅しているデバイスに送信されます。 セットアップのパケットを設定するには、制御コマンドは、ハードウェア ベンダーによって定義されますを知る必要があります。
 
--   **bmRequestType** (D7)。アウト
+-   **bmRequestType** (D7)。OUT
 -   **bmRequestType** (D4)。デバイス
--   **bmRequestType** (D6.D5):Vendor (ベンダー)
+-   **bmRequestType** (D6.D5):製造元
 -   **bRequest**:0x03
 -   **wValue**:0 ~ 7 (包括的に、その範囲の任意の数)
 -   **wIndex**:0

@@ -1,6 +1,6 @@
 ---
-title: テクスチャのアドレス指定およびフィルター処理
-description: テクスチャのアドレス指定およびフィルター処理
+title: テクスチャのアドレス指定およびフィルター処理操作
+description: テクスチャのアドレス指定およびフィルター処理操作
 ms.assetid: d468c83e-2e9c-4e4b-885e-0427714dd8a3
 keywords:
 - 複数のテクスチャ WDK の Direct3D のアドレス指定
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 209bd66b2de11c79d532f36ca089ad995c572f17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362614"
 ---
-# <a name="texture-addressing-and-filtering-operations"></a>テクスチャのアドレス指定およびフィルター処理
+# <a name="texture-addressing-and-filtering-operations"></a>テクスチャのアドレス指定およびフィルター処理操作
 
 
 ## <span id="ddk_texture_addressing_and_filtering_operations_gg"></span><span id="DDK_TEXTURE_ADDRESSING_AND_FILTERING_OPERATIONS_GG"></span>

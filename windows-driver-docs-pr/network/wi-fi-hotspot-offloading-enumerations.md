@@ -1,17 +1,17 @@
 ---
-title: Wi-fi ホット スポットの列挙体のオフロード
-description: Wi-fi ホット スポットの列挙体のオフロード
+title: Wi-Fi ホット スポット オフロード列挙
+description: Wi-Fi ホット スポット オフロード列挙
 ms.assetid: f8f5f13a-30e4-4a7a-9ea7-ca0e9c3746f7
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1a56227b573342035059ea8a015fe0cc5f7bcd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365956"
 ---
-# <a name="wi-fi-hotspot-offloading-enumerations"></a>Wi-fi ホット スポットの列挙体のオフロード
+# <a name="wi-fi-hotspot-offloading-enumerations"></a>Wi-Fi ホット スポット オフロード列挙
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 

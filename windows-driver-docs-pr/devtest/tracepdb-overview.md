@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cd4d57a3e28d7f47f05d866f3ad4c5d43c661c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369682"
 ---
 # <a name="tracepdb-overview"></a>Tracepdb の概要
 
@@ -36,7 +36,7 @@ Windows Vista より前にシステムでは、mspdb70.dll と msvcr70.dll Trace
 
 Windows Vista より前にシステムでは、箱から Dbghelp.dll ファイルをコピーする必要があります\\&lt;*プラットフォーム*&gt; Windows Driver Kit (WDK) のサブディレクトリ (ここ&lt; *プラットフォーム*&gt;は x86、amd64、または ia64) Tracefmt.exe が配置されているディレクトリにします。
 
-イベントのトレースの詳細については、Windows SDK のドキュメントを参照してください。 カーネル モード ドライバーとユーザー モード アプリケーションでのイベント トレーシングの使用方法の詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)を参照してください。
+イベントのトレースの詳細については、Windows SDK のドキュメントを参照してください。 カーネル モード ドライバーとユーザー モード アプリケーションでのイベント トレーシングの使用方法の詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)します。
 
  
 

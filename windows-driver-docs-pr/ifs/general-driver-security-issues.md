@@ -1,17 +1,17 @@
 ---
-title: セキュリティ上の問題の一般的なドライバー
-description: セキュリティ上の問題の一般的なドライバー
+title: ドライバーの一般的なセキュリティに関する問題
+description: ドライバーの一般的なセキュリティに関する問題
 ms.assetid: 6788dc1e-585b-4a64-b65c-b8857a716cae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef25acdb2d847084ea548de41dcde553280260f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370154"
 ---
-# <a name="general-driver-security-issues"></a>セキュリティ上の問題の一般的なドライバー
+# <a name="general-driver-security-issues"></a>ドライバーの一般的なセキュリティに関する問題
 
 
 ## <span id="ddk_general_driver_security_issues_if"></span><span id="DDK_GENERAL_DRIVER_SECURITY_ISSUES_IF"></span>
@@ -19,7 +19,7 @@ ms.locfileid: "56557100"
 
 このセクションでは、ファイル システムおよびファイル システム フィルター ドライバーを含む、すべてのドライバーに適用されるセキュリティの問題について説明します。
 
-このセクションが含まれます。
+このセクションには、次のトピックが含まれています。
 
 [ドライバーのセキュリティとは](what-is-driver-security.md)
 

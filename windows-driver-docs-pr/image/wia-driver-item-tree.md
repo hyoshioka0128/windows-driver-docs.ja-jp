@@ -1,17 +1,17 @@
 ---
-title: WIA ドライバー項目ツリー
-description: WIA ドライバー項目ツリー
+title: WIA ドライバーの項目ツリー
+description: WIA ドライバーの項目ツリー
 ms.assetid: 67232179-4b9b-49a0-b8b0-5ed0914d4156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 241e5b28472b23cddcfef2b1fe1669b4bb439d61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366881"
 ---
-# <a name="wia-driver-item-tree"></a>WIA ドライバー項目ツリー
+# <a name="wia-driver-item-tree"></a>WIA ドライバーの項目ツリー
 
 
 

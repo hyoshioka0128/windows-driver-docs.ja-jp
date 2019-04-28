@@ -1,6 +1,6 @@
 ---
-title: カスタム UI を表示するためのクエリ
-description: カスタム UI を表示するためのクエリ
+title: カスタム UI の表示のクエリ
+description: カスタム UI の表示のクエリ
 ms.assetid: 89f39281-db97-4cbe-8753-43ab30d840c8
 keywords:
 - カスタム UI WDK ネイティブ 802.11 IHV UI 拡張機能の DLL、クエリを実行します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f359fb087120412a9bbdd99fc6ed99cfb39d51b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360962"
 ---
-# <a name="querying-for-the-display-of-a-custom-ui"></a>カスタム UI を表示するためのクエリ
+# <a name="querying-for-the-display-of-a-custom-ui"></a>カスタム UI の表示のクエリ
 
 
 
@@ -24,10 +24,10 @@ ms.locfileid: "56550108"
 オペレーティング システムでは、DLL に表示するカスタム UI があるかどうかを判断するネイティブの 802.11 IHV 拡張機能の DLL を照会できます。 ワイヤレス LAN (WLAN) アダプターが WLAN のネットワーク接続プロセス内で次のフェーズのいずれかに移行するたびに、オペレーティング システムは、DLL を照会します。
 
 <a href="" id="pre-association-------"></a>**前の関連付け**   
-IHV 拡張 DLL の前に、接続フェーズでは、関連付け前の操作を開始します。 前の関連付け操作の詳細については、[関連付け前操作](pre-association-operations.md)を参照してください。
+IHV 拡張 DLL の前に、接続フェーズでは、関連付け前の操作を開始します。 前の関連付け操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
 <a href="" id="post-association-------"></a>**後の関連付け**   
-IHV 拡張 DLL の後に、接続フェーズでは、後の関連付け操作を完了します。 詳細については、後の関連付け操作は、[後関連付け操作](post-association-operations.md)を参照してください。
+IHV 拡張 DLL の後に、接続フェーズでは、後の関連付け操作を完了します。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
 
 オペレーティング システム DLL を呼び出すネイティブ 802.11 IHV 拡張機能の[ *Dot11ExtIhvQueryUIRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff547507) IHV ハンドラーは、カスタム UI を表示できるかどうかをクエリする関数。 オペレーティング システムが使用して、接続プロセスの現在のフェーズを通過、 *connectionPhase*パラメーター。 かどうかには、カスタムの UI を表示する必要があります、DLL を返します、 [ **DOT11EXT\_IHV\_UI\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff547637) p 構造*pIhvUIRequest*パラメーター。
 
@@ -43,7 +43,7 @@ IHV 拡張 DLL の後に、接続フェーズでは、後の関連付け操作�
 
 -   独立系ハードウェア ベンダー (IHV) によって定義され、指定した処理されている独自の形式でデータを格納しているバッファー **IWizardExtension** COM インターフェイスです。 たとえば、バッファーには、カスタム UI 内で表示される既定値が含まれます。
 
-カスタムの UI が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)を参照してください。
+カスタムの UI が標準のネットワーク接続 UI 内のウィザード ページのセットとして表示されます。 このプロセスの詳細については、次を参照してください。[内、ネットワーク接続ウィザードでカスタム UI ページを表示する](displaying-custom-ui-pages-within-the-network-connection-wizard.md)します。
 
  
 

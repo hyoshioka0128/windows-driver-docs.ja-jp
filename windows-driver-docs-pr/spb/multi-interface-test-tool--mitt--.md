@@ -1,17 +1,17 @@
 ---
-title: ミットを使用するためのハードウェアを購入します。
+title: MITT を使用するためのハードウェアの購入
 description: 複数インタ フェース テスト ツール (ミット) を使用して、ミット ボードを作成する必要があるし、バス固有のアダプターでは、そのプラグインをボード ミット ボード上のポートに注文します。 アダプターの掲示板の種類は、テストするバスによって異なります。
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dde67b15c83688ad3eaa57bd41edad6954060a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361992"
 ---
-# <a name="buy-hardware-for-using-mitt"></a>ミットを使用するためのハードウェアを購入します。
+# <a name="buy-hardware-for-using-mitt"></a>MITT を使用するためのハードウェアの購入
 
 
 複数インタ フェース テスト ツール (ミット) を使用して、ミット ボードを作成する必要があるし、バス固有のアダプターでは、そのプラグインをボード ミット ボード上のポートに注文します。 アダプターの掲示板の種類は、テストするバスによって異なります。

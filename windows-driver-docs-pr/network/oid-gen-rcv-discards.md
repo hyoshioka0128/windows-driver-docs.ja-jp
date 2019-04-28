@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RCV_DISCARDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 962c63cb3dc0a4d6f71260e80466de31e5fd5a1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367704"
 ---
 # <a name="oidgenrcvdiscards"></a>OID\_GEN\_受信\_破棄
 
@@ -32,7 +32,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 
 カウントは、RFC 2863」の説明に従って削除-受信-バッファーのエラーの数です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

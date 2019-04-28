@@ -1,17 +1,17 @@
 ---
-title: ポートのポリシーの概要
-description: ポートのポリシーの概要
+title: ポート ポリシーの概要
+description: ポート ポリシーの概要
 ms.assetid: 9FA63E67-F5CC-4508-A36F-7A5956568D0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ef4dc49e1f5b526ff568bd82c58208e54bd804c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360194"
 ---
-# <a name="overview-of-port-policies"></a>ポートのポリシーの概要
+# <a name="overview-of-port-policies"></a>ポート ポリシーの概要
 
 
 NDIS 6.30 以降では、次の種類のポリシーは、HYPER-V 拡張可能スイッチ ポートのサポートされています。
@@ -21,7 +21,7 @@ NDIS 6.30 以降では、次の種類のポリシーは、HYPER-V 拡張可能�
 
 品質 (QoS) のプロパティのサービスおよびポートの組み込みポリシーにはアクセス制御リスト (Acl) が含まれます。 イングレス データ パス パケットの拡張可能スイッチのミニポート端が到着すると、スイッチは、パケットをフィルター処理し、これらのポリシーを適用します。 パケット フィルター処理が成功した場合、スイッチは、追加の処理と後続の拡張機能でフィルター処理のエグレス データ パスのパケットを転送します。
 
-拡張可能スイッチのデータ パスの詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
+拡張可能スイッチのデータ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。
 
 <a href="" id="standard-port-policies"></a>標準ポート ポリシー  
 標準のポートのポリシーは、セキュリティ、プロファイル、または仮想 LAN (VLAN) のプロパティを指定します。 これらのプロパティは、拡張可能スイッチのプロトコルの端から発行されたオブジェクト識別子 (OID) 要求がプロビジョニングされます。 転送拡張機能がインストールおよび拡張可能スイッチのデータ パスで有効になっている、基になる拡張可能スイッチのミニポート edge によってこれらのポリシーが強制されます。 それ以外の場合、転送拡張機能は、プロビジョニングするポリシーを許可する場合、これらのポリシーを適用します。
@@ -57,7 +57,7 @@ NDIS 6.30 以降では、次の種類のポリシーは、HYPER-V 拡張可能�
 
  
 
-ポートのポリシーとプロパティを管理する方法の詳細については、[ポート ポリシーの管理](managing-port-policies.md)を参照してください。
+ポートのポリシーとプロパティを管理する方法の詳細については、次を参照してください。[ポート ポリシーの管理](managing-port-policies.md)します。
 
  
 

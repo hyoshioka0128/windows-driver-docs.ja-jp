@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4cc770e4647f0d62c51f1e6d82aa4dcaf995c8d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367880"
 ---
 # <a name="kscategoryclock"></a>KSCATEGORY_CLOCK
 
@@ -56,7 +56,7 @@ KSCATEGORY_CLOCK[デバイス インターフェイス クラス](https://msdn.m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_CLOCK 機能カテゴリをサポートすることを示す KSCATEGORY_CLOCK のインスタンスを登録します。
 
-カーネルのクロックのストリームの詳細については、[KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)、 [KS クロック](https://msdn.microsoft.com/library/windows/hardware/ff567307)、および[AVStream クロック](https://msdn.microsoft.com/library/windows/hardware/ff554208)を参照してください。
+カーネルのクロックのストリームの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)、 [KS クロック](https://msdn.microsoft.com/library/windows/hardware/ff567307)、および[AVStream クロック](https://msdn.microsoft.com/library/windows/hardware/ff554208)します。
 
 <a name="requirements"></a>要件
 ------------

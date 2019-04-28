@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28120
 ms.openlocfilehash: e92d9ed3dfdb9788ab007d7cee8f2d281cd1bcb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361434"
 ---
 # <a name="c28120"></a>C28120
 
@@ -44,7 +44,7 @@ C28120 を警告します。関数は、現在の IRQ レベルで呼び出さ�
 
 コード分析ツールは、位置、ドライバーが実行中の IRQL を特定できない場合、間違った IRQL で、関数が呼び出される場合でも、この警告は報告されます。
 
-同様の状況については、[警告 28121](28121-irq-execution-too-high.md)を参照してください。
+同様の状況については、次を参照してください。[警告 28121](28121-irq-execution-too-high.md)します。
 
  
 

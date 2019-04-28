@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_RADIO_STATE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 314f694f36127b4887bf2829273e4aef5e8cf819
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362498"
 ---
 # <a name="wditlvradiostateparameters"></a>WDI\_TLV\_ラジオ\_状態\_パラメーター
 
@@ -38,7 +38,7 @@ UINT8 のサイズをバイト単位で。
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>

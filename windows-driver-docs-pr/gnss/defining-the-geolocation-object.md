@@ -5,11 +5,11 @@ ms.assetid: CDAA93A1-9B20-4602-9A8A-A2C7CF52B576
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b578074781b44439f818ab1644d56e1abfc296ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371253"
 ---
 # <a name="defining-the-geolocation-sensor-as-an-object"></a>地理的位置情報センサーをオブジェクトとして定義します。
 
@@ -25,7 +25,7 @@ ms.locfileid: "56531214"
 
 という名前のソース ファイル内の対応するメソッドの定義にある: geolocation.cpp します。
 
-ハードウェアをサポートするには、このサンプルを拡張するには、同様のヘッダーと宣言し、デバイスの対応するオブジェクトを定義するソース ファイルを作成します。 このサンプルを拡張する方法の詳細については、[実際のハードウェアのサポートの追加](adding-support-for-actual-hardware.md)を参照してください。
+ハードウェアをサポートするには、このサンプルを拡張するには、同様のヘッダーと宣言し、デバイスの対応するオブジェクトを定義するソース ファイルを作成します。 このサンプルを拡張する方法の詳細については、次を参照してください。[実際のハードウェアのサポートの追加](adding-support-for-actual-hardware.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 [実際のハードウェアのサポートの追加](adding-support-for-actual-hardware.md)  

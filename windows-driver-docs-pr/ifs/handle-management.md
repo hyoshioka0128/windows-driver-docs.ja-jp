@@ -1,6 +1,6 @@
 ---
-title: ハンドルの管理
-description: ハンドルの管理
+title: ハンドル管理
+description: ハンドル管理
 ms.assetid: 09d9c836-1754-4a50-92a3-229a3ae05ccb
 keywords:
 - WDK のファイル システムを処理します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0845ab39acdb99bf15bce48f5714355f8d924339
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370134"
 ---
-# <a name="handle-management"></a>ハンドルの管理
+# <a name="handle-management"></a>ハンドル管理
 
 
 ## <span id="ddk_handle_management_if"></span><span id="DDK_HANDLE_MANAGEMENT_IF"></span>

@@ -5,11 +5,11 @@ ms.assetid: 8240841C-FFA0-48EC-AB7E-4E15E262C23D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ce4c3af38584d5bde545b7a295564cf1041e5ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368200"
 ---
 # <a name="spi-tests-in-mitt"></a>MITT の SPI テスト
 
@@ -18,7 +18,7 @@ ms.locfileid: "56578715"
 
 -   2015 年 1 月
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows 8.1
 

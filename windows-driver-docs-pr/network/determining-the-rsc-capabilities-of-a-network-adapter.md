@@ -1,17 +1,17 @@
 ---
-title: ネットワーク アダプターの RSC 機能を判断します。
+title: ネットワーク アダプターの RSC 機能の判断
 description: セグメント coalescing (RSC) を持つ"、受信-対応ミニポート ドライバーが NdisMSetMiniportAttributes に渡される NDIS_OFFLOAD 構造体を使用して、RSC 機能を報告します。
 ms.assetid: 043A09F9-7D5D-4401-9645-19FDBD614659
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6e0fa03b1618b98e20b94ec5e6d74043434f696
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364196"
 ---
-# <a name="determining-the-rsc-capabilities-of-a-network-adapter"></a>ネットワーク アダプターの RSC 機能を判断します。
+# <a name="determining-the-rsc-capabilities-of-a-network-adapter"></a>ネットワーク アダプターの RSC 機能の判断
 
 
 セグメント coalescing (RSC) を持つ"、受信-対応ミニポート ドライバーで、RSC 機能の報告、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599)に渡される構造[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。

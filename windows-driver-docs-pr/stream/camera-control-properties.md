@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b658830552bfc68f31da8d31c624072257a1f51
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370264"
 ---
 # <a name="camera-control-properties"></a>カメラ コントロールのプロパティ
 
@@ -120,7 +120,7 @@ ms.locfileid: "57350079"
 ## <a name="windows8-extended-camera-control-properties"></a>Windows 8 がカメラ コントロールのプロパティを拡張
 
 
-Windows 8 以降、これらの追加プロパティはサポートされてユーザー モードのクライアントを取得またはカメラのコントロールの設定を設定します。 詳細については、[カメラ コントロールのプロパティの拡張](extended-camera-control-properties.md)と[方法を実装拡張カメラ コントロール プロパティ](how-to-implement-extended-camera-control-properties.md)を参照してください。
+Windows 8 以降、これらの追加プロパティはサポートされてユーザー モードのクライアントを取得またはカメラのコントロールの設定を設定します。 詳細については、次を参照してください。[カメラ コントロールのプロパティの拡張](extended-camera-control-properties.md)と[方法を実装拡張カメラ コントロール プロパティ](how-to-implement-extended-camera-control-properties.md)します。
 
 | PROPSETID\_しました\_CAMERACONTROL KS プロパティ                                                                                           | プロパティの説明                                                                                                  |
 |------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|

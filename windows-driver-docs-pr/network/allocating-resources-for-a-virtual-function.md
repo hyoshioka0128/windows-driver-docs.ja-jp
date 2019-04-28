@@ -5,11 +5,11 @@ ms.assetid: 00191D2C-E093-4DB7-AC82-8E8E5A74656F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d53fae6f93dccd62de66edfe2be9a7e4f857266
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367720"
 ---
 # <a name="allocating-resources-for-a-virtual-function"></a>仮想関数のリソースの割り当て
 
@@ -18,15 +18,15 @@ ms.locfileid: "56535837"
 
 -   1 つの PCI Express、(PCIe) 物理機能 (PF)。 PF は常にネットワーク アダプターに存在し、HYPER-V 親パーティションにアタッチされます。
 
-    このハードウェア コンポーネントの詳細については、[SR-IOV 物理機能 (PF)](sr-iov-physical-function--pf-.md)を参照してください。
+    このハードウェア コンポーネントの詳細については、次を参照してください。 [SR-IOV 物理機能 (PF)](sr-iov-physical-function--pf-.md)します。
 
 -   1 つまたは複数 PCIe 仮想機能 (VF)。 各 VF は初期化され、ゲスト オペレーティング システムのネットワーク コンポーネントを送信したり、VF 経由のパケットの受信前に、HYPER-V 子パーティションに接続されている必要があります。
 
-    このハードウェア コンポーネントの詳細については、[SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)を参照してください。
+    このハードウェア コンポーネントの詳細については、次を参照してください。 [SR-IOV 仮想機能 (Vf)](sr-iov-virtual-functions--vfs-.md)します。
 
 HYPER-V 親パーティションの管理オペレーティング システムで実行され、PF ミニポート ドライバーでは、PF と各 VF、SR-IOV ネットワーク アダプター上のリソースを割り当てます。 このドライバーでは、任意のネットワーク アダプターの場合と同様に、PF のリソースを割り当てます。 ただし、ドライバーは、次のように各 VF のリソースを割り当てます。
 
--   PF のミニポート ドライバーは、ドライバーは、ネットワーク アダプターのネットワーク インターフェイス カード (NIC) を作成するときに、各 VF のハードウェア リソースを割り当てます。 ドライバーは、呼び出すことにより、VFs のハードウェア リソースの割り当てを完了[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)します。 このプロセスの詳細については、[NIC スイッチの作成](creating-a-nic-switch.md)を参照してください。
+-   PF のミニポート ドライバーは、ドライバーは、ネットワーク アダプターのネットワーク インターフェイス カード (NIC) を作成するときに、各 VF のハードウェア リソースを割り当てます。 ドライバーは、呼び出すことにより、VFs のハードウェア リソースの割り当てを完了[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)します。 このプロセスの詳細については、次を参照してください。 [NIC スイッチの作成](creating-a-nic-switch.md)です。
 
 -   PF のミニポート ドライバーでは、ドライバーのオブジェクト識別子 (OID) メソッド要求を処理する際に VF のソフトウェア リソースを割り当てます[OID\_NIC\_スイッチ\_ALLOCATE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)します。 場合でも、ハードウェア リソースを VF に対して割り当てられていると見なされる操作不可状態 PF ミニポート ドライバーでは、OID が正常に完了するまで\_NIC\_スイッチ\_ALLOCATE\_VF します。
 

@@ -1,18 +1,18 @@
 ---
-title: AMLI デバッガー
+title: AMLI Debugger
 description: このトピックでは、AMLI デバッガーをについて説明します
 ms.assetid: f9a9c646-e8a0-4ae0-b2a2-147e256f8683
 keywords: デバッグ、デバッグ ACPI AML、AMLI、デバッグ、ACPI 機械語では、BIOS のデバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab46912892c2b2aefa00db45f3d0bcdfeda5675a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366124"
 ---
-# <a name="the-amli-debugger"></a>AMLI デバッガー
+# <a name="the-amli-debugger"></a>AMLI Debugger
 
 
 ## <span id="ddk_the_amli_debugger_dbg"></span><span id="DDK_THE_AMLI_DEBUGGER_DBG"></span>

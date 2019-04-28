@@ -1,17 +1,17 @@
 ---
-title: RDMA でバック グラウンドの読み取り
+title: RDMA でのバック グラウンド読み取り
 description: RDMA は、CPU 使用率を最小限に抑え、高スループット、低待機時間の通信を提供するネットワーク テクノロジです。
 ms.assetid: 583A806D-B7E8-40F5-9CEB-406FAEE8B6C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6153a230feba6b0a4ec6c4b7abfbffef0f46e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367693"
 ---
-# <a name="background-reading-on-rdma"></a>RDMA でバック グラウンドの読み取り
+# <a name="background-reading-on-rdma"></a>RDMA でのバック グラウンド読み取り
 
 
 RDMA は、CPU 使用率を最小限に抑え、高スループット、低待機時間の通信を提供するネットワーク テクノロジです。 現在、NDK には、次の RDMA テクノロジがサポートされています。

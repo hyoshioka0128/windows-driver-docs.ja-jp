@@ -1,6 +1,6 @@
 ---
-title: バス上のデバイスを列挙します。
-description: バス上のデバイスを列挙します。
+title: バス上のデバイスの列挙
+description: バス上のデバイスの列挙
 ms.assetid: 5731db82-2bc8-4a8d-98f1-3977845f572c
 keywords:
 - PnP WDK KMDF、バスの列挙型
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4952b68f29f3b0ce539255941764b63861182c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369792"
 ---
-# <a name="enumerating-the-devices-on-a-bus"></a>バス上のデバイスを列挙します。
+# <a name="enumerating-the-devices-on-a-bus"></a>バス上のデバイスの列挙
 
 
 *列挙体のバス*はどの子デバイスは、親デバイスに接続を確認する動作。 親デバイスは通常、バス アダプターですが、各関数が、別の一連のドライバーが必要です、サウンド カードなどの複数の関数をサポートするデバイスにもできます。
@@ -31,7 +31,7 @@ ms.locfileid: "56527498"
 
 バス ドライバーには、バスの列挙体のいずれかまたは両方の型を使用できます。
 
-KMDF バス ドライバーの記述方法の詳細については、[バス ドライバー開発に基づいて KMDF](https://msdn.microsoft.com/windows/hardware/gg463281)を参照してください。
+KMDF バス ドライバーの記述方法の詳細については、次を参照してください。[バス ドライバー開発に基づいて KMDF](https://msdn.microsoft.com/windows/hardware/gg463281)します。
 
  
 

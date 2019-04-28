@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 54a92b68383cd388c92989c654f14c9a4500f687
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360627"
 ---
 # <a name="devproptypecurrency"></a>DEVPROP_TYPE_CURRENCY
 
 
 Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPE_CURRENCY 識別子は、データ型が通貨に型指定された値であるかを示す基本データ型識別子を表します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DEVPROP_TYPE_CURRENCY は、のみと組み合わせることができます、 [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)プロパティ データ型の修飾子。

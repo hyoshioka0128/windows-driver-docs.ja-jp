@@ -1,17 +1,17 @@
 ---
-title: Wi-fi ホット スポットの定数がオフロード
+title: Wi-Fi ホット スポット オフロード定数
 description: このセクションでは、Wi-fi ホット スポットのオフロード フレームワークに対して定義されている定数について説明します。
 ms.assetid: F09DCB81-C9FF-493B-AE8F-97DE441A4BC3
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c692c307188c4574bc592470b5cb36331ac8877a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365698"
 ---
-# <a name="wi-fi-hotspot-offloading-constants"></a>Wi-fi ホット スポットの定数がオフロード
+# <a name="wi-fi-hotspot-offloading-constants"></a>Wi-Fi ホット スポット オフロード定数
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
@@ -127,7 +127,7 @@ EAP-AKA の認証を指定します。
 0x00010000  
 ネットワーク認証のためのカスタムの領域の値の使用を指定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

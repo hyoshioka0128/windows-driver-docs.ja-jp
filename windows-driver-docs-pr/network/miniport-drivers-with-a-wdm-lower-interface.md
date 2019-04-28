@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバー WDM がインターフェイスを削減します。
-description: ミニポート ドライバー WDM がインターフェイスを削減します。
+title: WDM の下位インターフェイスを含むミニポート ドライバー
+description: WDM の下位インターフェイスを含むミニポート ドライバー
 ms.assetid: defa955b-c1d2-4c78-a983-584aedc8a1a3
 keywords:
 - ミニポート ドライバー WDK ネットワー キング、WDM 低いインターフェイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3bb792ffb6d3328e33a8fcbcd719e06e1dd75fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362324"
 ---
-# <a name="miniport-drivers-with-a-wdm-lower-interface"></a>ミニポート ドライバー WDM がインターフェイスを削減します。
+# <a name="miniport-drivers-with-a-wdm-lower-interface"></a>WDM の下位インターフェイスを含むミニポート ドライバー
 
 
 

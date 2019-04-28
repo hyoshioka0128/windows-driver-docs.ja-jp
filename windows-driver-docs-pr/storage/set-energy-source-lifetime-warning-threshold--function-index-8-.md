@@ -1,17 +1,17 @@
 ---
-title: エネルギーのソースの有効期間の警告しきい値 (関数インデックス 8) の設定します。
+title: 電力源の有効期間に関する警告しきい値の設定 (関数インデックス 8)
 description: この関数は、エネルギー ソース (ES) の有効期間の残りの割合の警告しきい値を設定します。
 ms.assetid: 18D80829-8B54-48CE-A4A1-C3D57D0F60DC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3ccd5d51b5aed7bcd56847cb66db1fab274c4726
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362262"
 ---
-# <a name="set-energy-source-lifetime-warning-threshold-function-index-8"></a>エネルギーのソースの有効期間の警告しきい値 (関数インデックス 8) の設定します。
+# <a name="set-energy-source-lifetime-warning-threshold-function-index-8"></a>電力源の有効期間に関する警告しきい値の設定 (関数インデックス 8)
 
 
 この関数は、エネルギー ソース (ES) の有効期間の残りの割合の警告しきい値を設定します。 この関数は、ES が管理されているホストし、プラットフォームがしきい値をサポートしていない場合、エラー状態を返す可能性があります。
@@ -73,7 +73,7 @@ ms.locfileid: "56559182"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>

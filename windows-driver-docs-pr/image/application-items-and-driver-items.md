@@ -1,17 +1,17 @@
 ---
-title: アプリケーションのアイテムとアイテムのドライバー
-description: アプリケーションのアイテムとアイテムのドライバー
+title: アプリケーション項目とドライバー項目
+description: アプリケーション項目とドライバー項目
 ms.assetid: 33b602dc-4a0b-47e1-90e2-b77ecc05f66d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4135db29b33359919bd2e911384bad9d852ce3d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367064"
 ---
-# <a name="application-items-and-driver-items"></a>アプリケーションのアイテムとアイテムのドライバー
+# <a name="application-items-and-driver-items"></a>アプリケーション項目とドライバー項目
 
 
 

@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db3edc57ecb3bdd3520be9908f3a65c76a5579cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364205"
 ---
-# <a name="determining-the-current-task-offload-settings"></a>現在のタスクのオフロード設定を決定します。
+# <a name="determining-the-current-task-offload-settings"></a>現在のタスク オフロード設定の判断
 
 
 プロトコル ドライバーは、発行することによって、基になるミニポート アダプターの現在のタスク オフロードのカプセル化の設定を確認できます、 [OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)OID クエリ要求。
@@ -22,7 +22,7 @@ ms.locfileid: "56553656"
 
 
 
-OID 要求を発行の詳細については、[NDIS プロトコル ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-protocol-driver.md)を参照してください。
+OID 要求を発行の詳細については、次を参照してください。 [NDIS プロトコル ドライバーから OID の要求を生成する](generating-oid-requests-from-an-ndis-protocol-driver.md)します。
 
  
 

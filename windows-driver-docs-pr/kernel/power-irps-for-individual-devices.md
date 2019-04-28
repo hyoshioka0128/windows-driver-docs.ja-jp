@@ -1,6 +1,6 @@
 ---
-title: 個々 のデバイスの電源 Irp
-description: 個々 のデバイスの電源 Irp
+title: 個々のデバイスの電源 IRP
+description: 個々のデバイスの電源 IRP
 ms.assetid: a8d5db12-8f6b-4c65-9814-0bc3e476dd1c
 keywords:
 - 電源 Irp WDK カーネル、デバイス
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 745120e7270a05fca085e969fb0066770c806d9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369187"
 ---
-# <a name="power-irps-for-individual-devices"></a>個々 のデバイスの電源 Irp
+# <a name="power-irps-for-individual-devices"></a>個々のデバイスの電源 IRP
 
 
 
@@ -73,7 +73,7 @@ A*デバイスの電源 IRP* IRP の主要なコードを指定します[ **IRP\
 
 5.  I/O マネージャー呼び出し*IoCompletion* IRP が渡されるときに、ドライバーによって設定されたルーチンがスタックをダウンします。 結局、 *IoCompletion*ルーチンが呼び出された、コールバック ルーチンを実行します。
 
-デバイスの電源 Irp の詳細については、[個々 のデバイスを管理する Power](managing-power-for-individual-devices.md)と[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)を参照してください。 電源シーケンス IRP の詳細については、「 [ **IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644)します。
+デバイスの電源 Irp の詳細については、次を参照してください。[個々 のデバイスを管理する Power](managing-power-for-individual-devices.md)と[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)します。 電源シーケンス IRP の詳細については、「 [ **IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644)します。
 
  
 

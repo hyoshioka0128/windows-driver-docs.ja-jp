@@ -5,11 +5,11 @@ ms.assetid: FCE0B5F5-5E2E-493A-BE25-57FB2C8B0389
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f1875343a6de5ef827f13f3b2b699618deda236
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366649"
 ---
 # <a name="virtual-ports-vports"></a>仮想ポート (VPort)
 
@@ -58,9 +58,9 @@ Windows Server 2012 の 1 つだけの既定以外の NDIS 6.30 以降 VPort は
 
     キュー ペアは、ネットワーク アダプターの限られたリソースです。 NIC スイッチの作成時に、既定と既定以外の拡張で使用するために予約されているキュー ペアの合計数が指定します。 これにより、既定以外の拡張とは異なるに VPort の既定値に割り当てられているキュー ペアの数。
 
-    各既定以外の VPort を構成して、キュー ペアの数が異なるすることができます。 これと呼ばれます*非対称割り当て*キュー ペアの。 NIC がこのような非対称割り当てを許可しない場合は、各既定以外の VPort を構成するキューのペアの数が等しい。 これと呼ばれます*対称割り当て*キュー ペアの。 詳細については、[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)を参照してください。
+    各既定以外の VPort を構成して、キュー ペアの数が異なるすることができます。 これと呼ばれます*非対称割り当て*キュー ペアの。 NIC がこのような非対称割り当てを許可しない場合は、各既定以外の VPort を構成するキューのペアの数が等しい。 これと呼ばれます*対称割り当て*キュー ペアの。 詳細については、次を参照してください。[対称と非対称の割り当てのキュー ペア](symmetric-and-asymmetric-assignment-of-queue-pairs.md)します。
 
-    **注**、PF ミニポート ドライバーの中にキュー ペアの非対称の割り当てをサポートするかどうかを報告[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 詳細については、[PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)を参照してください。
+    **注**、PF ミニポート ドライバーの中にキュー ペアの非対称の割り当てをサポートするかどうかを報告[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 詳細については、次を参照してください。 [PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)します。
 
 
 

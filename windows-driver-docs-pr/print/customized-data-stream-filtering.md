@@ -1,6 +1,6 @@
 ---
-title: カスタマイズされたデータ Stream がフィルター処理
-description: カスタマイズされたデータ Stream がフィルター処理
+title: カスタマイズされたデータ ストリーム フィルター処理
+description: カスタマイズされたデータ ストリーム フィルター処理
 ms.assetid: 768d4b95-4d8d-4460-9a8c-c80785f7f799
 keywords:
 - Unidrv、データ ストリームのフィルター処理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7a6c4f2681062f9f3cbb76b03765c8ace093e1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365550"
 ---
-# <a name="customized-data-stream-filtering"></a>カスタマイズされたデータ Stream がフィルター処理
+# <a name="customized-data-stream-filtering"></a>カスタマイズされたデータ ストリーム フィルター処理
 
 
 

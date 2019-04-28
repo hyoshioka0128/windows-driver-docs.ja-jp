@@ -1,6 +1,6 @@
 ---
-title: クリティカル セクションを表示します。
-description: クリティカル セクションを表示します。
+title: クリティカル セクションの表示
+description: クリティカル セクションの表示
 ms.assetid: d55971f6-9112-417d-8fb6-e299c7fc90a7
 keywords:
 - クリティカル セクション
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 625a4c5361746a3c3e56a3c1cc174b28c76dad20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363940"
 ---
-# <a name="displaying-a-critical-section"></a>クリティカル セクションを表示します。
+# <a name="displaying-a-critical-section"></a>クリティカル セクションの表示
 
 
 ## <span id="ddk_displaying_a_critical_section_dbg"></span><span id="DDK_DISPLAYING_A_CRITICAL_SECTION_DBG"></span>
@@ -209,7 +209,7 @@ Evaluate expression: 5 = 00000005
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-クリティカル セクションのタイムアウトをデバッグする方法については、[クリティカル セクション タイムアウト](critical-section-time-outs.md)を参照してください。 重要なセクションについては、Microsoft Windows SDK、Windows Driver Kit (WDK) を参照してください。 または*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+クリティカル セクションのタイムアウトをデバッグする方法については、次を参照してください。[クリティカル セクション タイムアウト](critical-section-time-outs.md)します。 重要なセクションについては、Microsoft Windows SDK、Windows Driver Kit (WDK) を参照してください。 または*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

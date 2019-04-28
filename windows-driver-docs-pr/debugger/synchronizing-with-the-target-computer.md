@@ -1,6 +1,6 @@
 ---
-title: 対象のコンピュータとの同期
-description: 対象のコンピュータとの同期
+title: ターゲット コンピューターとの同期
+description: ターゲット コンピューターとの同期
 ms.assetid: bc9bbe35-6665-49ee-ba95-16ff03e25e96
 keywords:
 - 対象のコンピュータとの同期
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e739d249ee1356490e7166413055894b1e2427f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368138"
 ---
-# <a name="synchronizing-with-the-target-computer"></a>対象のコンピュータとの同期
+# <a name="synchronizing-with-the-target-computer"></a>ターゲット コンピューターとの同期
 
 
 ## <span id="ddk_synchronizing_with_the_target_computer_dbg"></span><span id="DDK_SYNCHRONIZING_WITH_THE_TARGET_COMPUTER_DBG"></span>

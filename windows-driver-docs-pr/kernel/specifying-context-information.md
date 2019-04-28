@@ -1,6 +1,6 @@
 ---
-title: コンテキスト情報を指定します。
-description: コンテキスト情報を指定します。
+title: コンテキスト情報の指定
+description: コンテキスト情報の指定
 ms.assetid: 7133529f-5a6c-4df1-8d03-1c79c0d98fa9
 keywords:
 - レジストリの呼び出しの WDK カーネル、コンテキスト情報をフィルター処理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42749cfe5bc25ca98405d0061cb3f3acade2dd70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367933"
 ---
-# <a name="specifying-context-information"></a>コンテキスト情報を指定します。
+# <a name="specifying-context-information"></a>コンテキスト情報の指定
 
 
 Configuration manager では、レジストリにレジストリの操作にコンテキスト情報を割り当てるドライバーをフィルター処理をいくつかの方法を提供します。 レジストリのフィルター ドライバーを実行できます。

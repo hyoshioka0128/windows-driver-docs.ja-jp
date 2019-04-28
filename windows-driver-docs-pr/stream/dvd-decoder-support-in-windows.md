@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b25e03803d53e607152bc98987ca81ceef156b18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363584"
 ---
 # <a name="dvd-decoder-support-in-windows"></a>Windows での DVD デコーダーのサポート
 
@@ -34,7 +34,7 @@ Windows XP では、下では、次のコンポーネントは、DVD のデコ�
 
 -   **WDM Stream クラス ドライバー**
 
-    WDM ストリーム クラス ドライバーは、ストリーミング データ型と mpeg-2 と ac-3 のハードウェア デコーダーをサポートします。 詳細については、[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)を参照してください。
+    WDM ストリーム クラス ドライバーは、ストリーミング データ型と mpeg-2 と ac-3 のハードウェア デコーダーをサポートします。 詳細については、次を参照してください。[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)します。
 
 **注**  は提供されません mpeg-2 または ac-3 ソフトウェア/ハードウェア Windows XP を備えたデコーダー フィルター。 ベンダーは、必要な各 DVD データ ストリームのいずれか、DirectShow と互換性のあるソフトウェア デコーダーを指定または、その DVD のハードウェア デコーダーをサポートするために WDM ストリーミングと互換性のある DVD デコーダー ミニドライバーを提供する必要があります。
 

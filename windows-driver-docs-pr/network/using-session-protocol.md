@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72aa62121eb1546eaf41390f229e387aead420c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373809"
 ---
 # <a name="using-session-protocol"></a>セッション プロトコルの使用
 
@@ -68,7 +68,7 @@ Windows Sockets スイッチは、SAN 接続経由でデータを転送するの
 -   リモート ピアの呼び出しにあるスイッチ[ **WSPRegisterRdmaMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff566313) RDMA メモリに対する書き込みアクセスを登録します。
 -   リモートにあるスイッチをピアリングし、呼び出し[ **WSPSend** ](https://msdn.microsoft.com/library/windows/hardware/ff566316) -local スイッチを記述できます RDMA メモリの場所を示す-local スイッチをコントロール メッセージを送信します。
 -   -Local スイッチ呼び出し、 [ **WSPRdmaWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff566306) RDMA メモリにアプリケーション データを転送する関数。 SAN サービス プロバイダーは、バック グラウンドでは、バッファー内のデータを送信します。 これにより、別の投稿に一度に 1 つ以上の送信を投稿しないアプリケーションが SAN サービス プロバイダーがバッファー内のデータを送信中に、要求を送信します。
--   -Local スイッチ呼び出し、 [ **WSPGetOverlappedResult** ](https://msdn.microsoft.com/library/windows/hardware/ff566288)転送の結果を取得します。 詳細については、[データの転送要求の完了](completing-data-transfer-requests.md)を参照してください。
+-   -Local スイッチ呼び出し、 [ **WSPGetOverlappedResult** ](https://msdn.microsoft.com/library/windows/hardware/ff566288)転送の結果を取得します。 詳細については、次を参照してください。[データの転送要求の完了](completing-data-transfer-requests.md)します。
 -   -Local スイッチ呼び出し[ **WSPSend** ](https://msdn.microsoft.com/library/windows/hardware/ff566316)転送が完了したことを示すために、リモート ピアをコントロール メッセージを送信します。
 -   リモート ピアの呼び出しにあるスイッチ[ **WSPDeregisterRdmaMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff566281) RDMA のメモリを解放します。
 -   -Local スイッチでは、アプリケーションの送信要求を完了します。 スイッチは、アプリケーションのデータ バッファー用のメモリを登録できませんまたは一時的なメモリの割り当てができない場合で、アプリケーションの送信要求を完了する場合、 **WSAENOBUFS**エラー コード。

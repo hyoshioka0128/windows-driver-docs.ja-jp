@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 984e040b1b7d48ba59f136f727624a671bdaa235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368791"
 ---
 # <a name="installing-ide-controller-minidrivers"></a>IDE コントローラー ミニドライバーのインストール
 
@@ -35,7 +35,7 @@ IDE コント ローラーのミニドライバーをインストールに関連
 
 インストールの詳細については、Windows 2000 以降のオペレーティング システムでサポートされているコント ローラーのハードウェアの一覧を含むハード ディスク コント ローラーのシステム提供の INF ファイルを参照*ある*します。
 
-Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、[Vendor-Supplied IDE コント ローラーのミニドライバーの要件](requirements-for-vendor-supplied-ide-controller-minidrivers.md)と[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)を参照してください。
+Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。 [Vendor-Supplied IDE コント ローラーのミニドライバーの要件](requirements-for-vendor-supplied-ide-controller-minidrivers.md)と[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
 
  
 

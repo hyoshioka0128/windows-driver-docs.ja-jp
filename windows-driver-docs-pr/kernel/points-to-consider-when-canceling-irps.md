@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a78aae240bd690a6507e3a3ad9ec555d99f2f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369224"
 ---
 # <a name="points-to-consider-when-canceling-irps"></a>IRP をキャンセルするときに考慮すべき点
 
@@ -22,7 +22,7 @@ ms.locfileid: "56571226"
 
 
 
-このセクションを実装するためのガイドラインをについて説明します、*キャンセル*ルーチンとキャンセル可能な Irp の処理します。 キャンセル可能な Irp の処理の詳細については、、[キャンセル セーフ IRP のキューのフローの制御](https://go.microsoft.com/fwlink/p/?linkid=57844)を参照してください。
+このセクションを実装するためのガイドラインをについて説明します、*キャンセル*ルーチンとキャンセル可能な Irp の処理します。 キャンセル可能な Irp の処理の詳細については、次を参照してください。、[キャンセル セーフ IRP のキューのフローの制御](https://go.microsoft.com/fwlink/p/?linkid=57844)します。
 
 ### <a name="general-guidelines-for-all-cancel-routines"></a>すべてのキャンセル ルーチンの一般的なガイドライン
 
@@ -82,7 +82,7 @@ ms.locfileid: "56571226"
 
 これらの他のルーチンが ISR と共有状態へのアクセスを同期する必要がありますデバイス ドライバーがドライバーのさまざまなルーチンは、ISR と共有するキャンセル可能な Irp に関する状態情報を保持する場合 のみ、ドライバーによって提供される*SynchCritSection*ルーチンは、ISR マルチプロセッサの安全な方法で共有される状態情報にアクセスできます。
 
-詳細については、[同期手法](synchronization-techniques.md)を参照してください。
+詳細については、次を参照してください。[同期手法](synchronization-techniques.md)します。
 
  
 

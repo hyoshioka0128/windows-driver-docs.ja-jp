@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_PM_WOL_PATTERN_REJECTED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e1448707fc13435ea58e8e7c0fbeef8a645def9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363072"
 ---
 # <a name="ndisstatuspmwolpatternrejected"></a>NDIS\_状態\_PM\_WOL\_パターン\_拒否済み
 
@@ -31,7 +31,7 @@ WiFi ドライバーは、ウェイク アップのパターンをローカル�
 
 インフラストラクチャでは、すべてのウェイク アップのパターンに対応するために十分なリソースがあります。 ここでは、インフラストラクチャでは、ウェイク アップ パターンの一覧の一部を受け入れることができます。 ミニポート ドライバーが、OID が完了したとき\_PM\_パラメーターが要求を設定、ドライバーは、NDIS を行う必要があります\_状態\_PM\_WOL\_パターン\_拒否済みの状態各アクセス ポイント (AP) を拒否する WOL パターンの兆候です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)
+title: Network Direct Kernel Provider Interface (NDKPI)
 description: このセクションでは、に関するネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI) NDIS 6.30 以降のトピックの一覧を提供します。
 ms.assetid: B7E52112-E049-42E2-9BB3-311EB0D1C577
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92bdd378eca7398e7d00e5c9ae6484dc20f400e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365784"
 ---
-# <a name="network-direct-kernel-provider-interface-ndkpi"></a>ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI)
+# <a name="network-direct-kernel-provider-interface-ndkpi"></a>Network Direct Kernel Provider Interface (NDKPI)
 
 
 NDIS 6.30 以降 (Windows Server 2012 以降) で、ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI) により、SMB サーバーとクライアントによって提供されるリモート ダイレクト メモリ アクセス (RDMA) 機能を使用するなどのカーネル モードの Windows コンポーネント独立系ハードウェア ベンダー (Ihv)。

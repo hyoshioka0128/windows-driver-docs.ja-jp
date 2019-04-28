@@ -1,6 +1,6 @@
 ---
-title: 高速な I/O ディスパッチ ルーチンを登録します。
-description: 高速な I/O ディスパッチ ルーチンを登録します。
+title: 高速 I/O ディスパッチ ルーチンの登録
+description: 高速 I/O ディスパッチ ルーチンの登録
 ms.assetid: e559d3f2-be33-4a35-8931-4716e6082fc9
 keywords:
 - 高速の I/O ディスパッチ ルーチンを登録します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07967e2347cd4a7f41edfa80e80ee196969d8850
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370314"
 ---
-# <a name="registering-fast-io-dispatch-routines"></a>高速な I/O ディスパッチ ルーチンを登録します。
+# <a name="registering-fast-io-dispatch-routines"></a>高速 I/O ディスパッチ ルーチンの登録
 
 
 ## <span id="ddk_registering_fast_io_dispatch_routines_if"></span><span id="DDK_REGISTERING_FAST_IO_DISPATCH_ROUTINES_IF"></span>

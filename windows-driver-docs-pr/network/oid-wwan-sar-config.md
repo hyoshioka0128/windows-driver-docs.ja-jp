@@ -6,11 +6,11 @@ ms.date: 08/17/2018
 keywords: -OID_WWAN_SAR_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: bbeb8edcb8140c506cdcedb96d867c0488a35a43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368254"
 ---
 # <a name="oidwwansarconfig"></a>OID_WWAN_SAR_CONFIG
 
@@ -24,7 +24,7 @@ OID_WWAN_SAR_CONFIG を取得または情報について、モバイル ブロ�
 
 各クエリまたは一連の要求後に、ミニポート ドライバーを返す必要があります、 [ **NDIS_WWAN_SAR_CONFIG_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_config_info)モバイル ブロード バンドに関連付けられているデバイス上のすべてのアンテナの情報を含む構造体.
 
-この OID の使用状況に関する詳細については、[MBIM_CID_MS_SAR_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmssarconfig)を参照してください。
+この OID の使用状況に関する詳細については、次を参照してください。 [MBIM_CID_MS_SAR_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support#mbimcidmssarconfig)します。
 
 ## <a name="requirements"></a>要件
 

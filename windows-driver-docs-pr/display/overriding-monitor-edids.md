@@ -5,18 +5,18 @@ ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 007e804eb65b6713ae015c6ae16a506bbedc5ed6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366209"
 ---
 # <a name="overriding-monitor-edids-with-an-inf"></a>モニター EDIDs、INF をオーバーライドします。
 
 
 INF ファイルを使用して、拡張 Display Identification Data (EDID) のいずれかのモニターを上書きできます。 Monsamp.inf、これを行う方法を示すサンプル INF ファイルから Windows 7 (WDK バージョン 7600) Windows Driver Kit (WDK) とが指定されています。 Monsamp.inf がここに再掲します。
 
-使用して、および Monsamp.inf を変更する方法については、[INF ファイルのセクションではモニター](monitor-inf-file-sections.md)を参照してください。
+使用して、および Monsamp.inf を変更する方法については、次を参照してください。 [INF ファイルのセクションではモニター](monitor-inf-file-sections.md)します。
 
 ## <a name="span-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanapproaches-to-correcting-edids"></a><span id="Approaches_to_correcting_EDIDs"></span><span id="approaches_to_correcting_edids"></span><span id="APPROACHES_TO_CORRECTING_EDIDS"></span>EDIDs を修正する方法
 

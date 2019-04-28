@@ -1,17 +1,17 @@
 ---
-title: Bind を使用して、またはリダイレクトの接続
-description: Bind を使用して、またはリダイレクトの接続
+title: バインドまたは接続リダイレクトの使用
+description: バインドまたは接続リダイレクトの使用
 ms.assetid: 6b27a9ad-53e9-4e80-bf03-79665f8a82a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97183ea47da2174722cac9b6316375dbb92261af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372139"
 ---
-# <a name="using-bind-or-connect-redirection"></a>Bind を使用して、またはリダイレクトの接続
+# <a name="using-bind-or-connect-redirection"></a>バインドまたは接続リダイレクトの使用
 
 
 接続またはバインド リダイレクト機能 Windows フィルタ リング プラットフォーム (WFP) のでは、アプリケーション レイヤーの強制 (ALE) コールアウト ドライバーを検査し、必要な場合は、接続をリダイレクトできるようにします。

@@ -5,11 +5,11 @@ ms.assetid: 9c26e305-0d5c-4442-9bcf-a9cdc1778c6b
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc794e1f0e2d68bc074c5fa3ee349b1d831ce19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360946"
 ---
 # <a name="about-sensor-constants"></a>センサーの定数について
 
@@ -49,7 +49,7 @@ Windows Sensor and Location プラットフォームのさまざまな方法で�
 
 ## <a name="persistent-unique-identifier"></a>永続的な一意識別子
 
-センサーをという名前のセンサー プロパティ\_プロパティ\_持続\_UNIQUE\_ID には、特別な注意が必要です。 このプロパティの値は、デバイスで各センサーに対して一意である必要があります。 同時に、この値する必要がありますのままに一貫性のある特定のセンサーのセンサー プラットフォームでは、それを使用するたびにします。 ドライバーのコードで永続的な一意識別子を作成する方法の例は、[永続的な一意の識別子を作成する](creating-a-persistent-unique-identifier.md)を参照してください。
+センサーをという名前のセンサー プロパティ\_プロパティ\_持続\_UNIQUE\_ID には、特別な注意が必要です。 このプロパティの値は、デバイスで各センサーに対して一意である必要があります。 同時に、この値する必要がありますのままに一貫性のある特定のセンサーのセンサー プラットフォームでは、それを使用するたびにします。 ドライバーのコードで永続的な一意識別子を作成する方法の例は、次を参照してください。[永続的な一意の識別子を作成する](creating-a-persistent-unique-identifier.md)します。
 
 ## <a name="providing-geolocation-information"></a>地理的位置情報の情報を提供します。
 
@@ -63,7 +63,7 @@ Windows は、センサー、場所の種類のいずれかで、既存の場所
 
 カテゴリ、種類のセンサー、データ フィールド、プロパティ、およびイベントのカスタム値を定義することができます。
 
-ガイドラインと定数のカスタム値を定義する方法の例では、[定数のカスタム値を定義する](defining-custom-values-for-constants.md)を参照してください。
+ガイドラインと定数のカスタム値を定義する方法の例では、次を参照してください。[定数のカスタム値を定義する](defining-custom-values-for-constants.md)します。
 
  
 

@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28169
 ms.openlocfilehash: 18719142bb32fd32fada4cdd8db479d3c112ab1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361463"
 ---
 # <a name="c28169"></a>C28169
 
@@ -20,7 +20,7 @@ C28169 を警告します。ディスパッチ関数が含まれない**\_ディ
 
 コード分析ツールは、この警告を報告への代入の右側にある、 **MajorFunction**テーブルがあるない (有効) **\_ディスパッチ\_型\_** 注釈。 右側にあるが、キャストを削除する場合、警告は発生場合があります、 **\_ディスパッチ\_型\_** 注釈。 右側にあるドライバーの種類の関数である必要があります\_と適切なディスパッチ タイプ**\_ディスパッチ\_型\_** 注釈。
 
-詳細については、[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)を参照してください。
+詳細については、次を参照してください。[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
 

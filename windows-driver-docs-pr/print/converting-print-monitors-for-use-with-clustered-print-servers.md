@@ -1,6 +1,6 @@
 ---
-title: クラスター化されたプリント サーバーで使用するための印刷のモニターに変換します。
-description: クラスター化されたプリント サーバーで使用するための印刷のモニターに変換します。
+title: クラスター化された印刷サーバーで使用するために印刷モニターを変換する
+description: クラスター化された印刷サーバーで使用するために印刷モニターを変換する
 ms.assetid: 6b374d61-bb2b-42a4-9609-3cde9b82bb2b
 keywords:
 - 印刷モニター WDK、クラスター化されたプリント サーバー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbb874569adeaf200cc00a20256ca711a4bd7e03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365694"
 ---
-# <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>クラスター化されたプリント サーバーで使用するための印刷のモニターに変換します。
+# <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>クラスター化された印刷サーバーで使用するために印刷モニターを変換する
 
 
 

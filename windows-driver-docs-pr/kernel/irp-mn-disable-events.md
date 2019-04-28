@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_DISABLE_EVENTS Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 372197386e8e1755dc65fcdd079e1ecd11859cd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368384"
 ---
 # <a name="irpmndisableevents"></a>IRP\_MN\_を無効にする\_イベント
 
@@ -70,7 +70,7 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 WMI が最後のデータ コンシューマーがイベントを無効にされた場合、イベント ブロックに対して 1 つの無効化要求を送信するため、イベントがイベント ブロックの無効既にかどうかを確認するドライバーの必要はありません。 WMI は、介在する要求を有効にすることがなく別の無効化要求を送信しません。
 
-イベント ブロックを定義する方法については、[WMI データの設計とイベント ブロック](https://msdn.microsoft.com/library/windows/hardware/ff543036)を参照してください。
+イベント ブロックを定義する方法については、次を参照してください。 [WMI データの設計とイベント ブロック](https://msdn.microsoft.com/library/windows/hardware/ff543036)します。
 
 <a name="requirements"></a>要件
 ------------

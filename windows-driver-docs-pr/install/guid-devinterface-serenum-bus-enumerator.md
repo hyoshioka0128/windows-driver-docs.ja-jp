@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3b7ee4a3072973692e74f58ebba24c99632676ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363694"
 ---
 # <a name="guiddevinterfaceserenumbusenumerator"></a>GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
 
@@ -58,9 +58,9 @@ GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR[デバイス インターフェイス �
 
 WDK には、シリアル列挙子のサンプルが含まれています。 [serenum](https://msdn.microsoft.com/library/windows/hardware/ff546505)します。 Serenum サンプルが古い形式の識別子を使用して[ **GUID_SERENUM_BUS_ENUMERATOR** ](guid-serenum-bus-enumerator.md)をこのデバイスのインターフェイス クラスのインスタンスを登録します。 Serenum サンプルが記載されています、 *src\\カーネル*WDK のディレクトリ。
 
-シリアル デバイスとドライバーについては、[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)を参照してください。
+シリアル デバイスとドライバーについては、次を参照してください。[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
 
-シリアル ポートのデバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)を参照してください。
+シリアル ポートのデバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)します。
 
 <a name="requirements"></a>要件
 ------------

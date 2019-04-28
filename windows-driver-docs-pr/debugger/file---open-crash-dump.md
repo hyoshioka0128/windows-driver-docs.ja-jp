@@ -9,13 +9,13 @@ keywords:
 ms.date: 08/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 997ec56fa1ebe7b5c784a61e43d5981e025893ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361952"
 ---
-# <a name="file--open-crash-dump"></a>ファイル |開いているクラッシュ ダンプ
+# <a name="file--open-crash-dump"></a>File | Open Crash Dump (ファイル | クラッシュ ダンプを開く)
 
 
 ## <span id="ddk_file_open_crash_dump_dbg"></span><span id="DDK_FILE_OPEN_CRASH_DUMP_DBG"></span>
@@ -33,7 +33,7 @@ ms.locfileid: "56527831"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-クラッシュ ダンプ ファイルの分析に関する詳細については、[ユーザー モード ダンプ ファイルの分析](analyzing-a-user-mode-dump-file.md)または[WinDbg にカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)を参照してください。
+クラッシュ ダンプ ファイルの分析に関する詳細については、次を参照してください。[ユーザー モード ダンプ ファイルの分析](analyzing-a-user-mode-dump-file.md)または[WinDbg にカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)します。
 
  
 

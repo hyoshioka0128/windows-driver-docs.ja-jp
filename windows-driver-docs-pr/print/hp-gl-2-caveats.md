@@ -1,6 +1,6 @@
 ---
-title: HP-GL/2 の注意事項
-description: HP-GL/2 の注意事項
+title: HP-GL/2 注意事項
+description: HP-GL/2 注意事項
 ms.assetid: 201a894e-5d22-46f8-965d-0e5b88dc54d7
 keywords:
 - HP-GL/2 モノクロ WDK Unidrv、追加の考慮事項
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48978b4c47b9e42d9dc1e07cb5bb06dffac3089e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360506"
 ---
-# <a name="hp-gl2-caveats"></a>HP-GL/2 の注意事項
+# <a name="hp-gl2-caveats"></a>HP-GL/2 注意事項
 
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56559625"
     1.  以降のバージョンのオペレーティング システムでは、レンダリング コマンドのハード コーディングが削除されます。
     2.  HP-GL/2 のドライバーがラスター モードに切り替えるオプションを提供しています (つまり、HP-GL/2 のドライバーを使用しない)。 ラスター モードの場合、GPD に存在するすべてのコマンドがあります。
 
-        適切な経験則は、実際に何か (たとえば、CmdDownloadPattern または CmdSelectBlackBrush) を描画するために使用される任意の PCL-XL/HP-GL/2 コマンドは無視されることです。 コマンドが描画されるページ設定、ドキュメントのセットアップ、およびその他のユーザーなどのコマンドは無視されません。 これらのコマンドの詳細については、[色コマンド](color-commands.md)を参照してください。
+        適切な経験則は、実際に何か (たとえば、CmdDownloadPattern または CmdSelectBlackBrush) を描画するために使用される任意の PCL-XL/HP-GL/2 コマンドは無視されることです。 コマンドが描画されるページ設定、ドキュメントのセットアップ、およびその他のユーザーなどのコマンドは無視されません。 これらのコマンドの詳細については、次を参照してください。[色コマンド](color-commands.md)します。
 
         さらに、HP-GL/2 のすべてのコマンドは、ドライバーでハードコードします。
 

@@ -1,6 +1,6 @@
 ---
-title: 一般的なバッファーを使用します。
-description: 一般的なバッファーを使用します。
+title: 共通バッファーの使用
+description: 共通バッファーの使用
 ms.assetid: 81a56f62-917e-4798-b2cc-6469c802fab8
 keywords:
 - DMA 操作 WDK KMDF、一般的なバッファー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc15afc844dd6e06befcb323d28df6437f922ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365518"
 ---
-# <a name="using-common-buffers"></a>一般的なバッファーを使用します。
+# <a name="using-common-buffers"></a>共通バッファーの使用
 
 
 \[KMDF にのみ適用されます。\]

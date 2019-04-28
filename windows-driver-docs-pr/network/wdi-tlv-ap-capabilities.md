@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_AP_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b3d2f981feba63dd6f43a012e9719e16920bc0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362844"
 ---
 # <a name="wditlvapcapabilities"></a>WDI\_TLV\_AP\_機能
 
@@ -38,7 +38,7 @@ WDI\_TLV\_AP\_機能は、アクセス ポイントの機能を含む TLV しま
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f170a0910b0067dd47b957d93e1b993d4d07458e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367709"
 ---
 # <a name="applying-component-changes-to-the-registry"></a>レジストリへのコンポーネントの変更の適用
 
@@ -21,7 +21,7 @@ ms.locfileid: "56574981"
 
 
 
-後は、ネットワーク構成のサブシステムが通知オブジェクトを呼び出します[ **INetCfgComponentControl::ApplyRegistryChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547727)メソッド、通知オブジェクトが設定、変更、またはからの情報を削除します通知オブジェクトによって以前に実行されるアクションに応じてレジストリ。 通知オブジェクトがインストール、削除、またはオブジェクトを所有するコンポーネントのパラメーターの変更に関連する特定のアクションを実行した後、通知オブジェクトは、実行されるアクションを示すデータ メンバーを設定する必要があります。 サブシステムの呼び出し後**ApplyRegistryChanges**をレジストリに構成の変更を適用する**ApplyRegistryChanges**レジストリを変更する方法については、このデータ メンバーを使用する必要があります。 以下に例を示します。
+後は、ネットワーク構成のサブシステムが通知オブジェクトを呼び出します[ **INetCfgComponentControl::ApplyRegistryChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547727)メソッド、通知オブジェクトが設定、変更、またはからの情報を削除します通知オブジェクトによって以前に実行されるアクションに応じてレジストリ。 通知オブジェクトがインストール、削除、またはオブジェクトを所有するコンポーネントのパラメーターの変更に関連する特定のアクションを実行した後、通知オブジェクトは、実行されるアクションを示すデータ メンバーを設定する必要があります。 サブシステムの呼び出し後**ApplyRegistryChanges**をレジストリに構成の変更を適用する**ApplyRegistryChanges**レジストリを変更する方法については、このデータ メンバーを使用する必要があります。 次に、例を示します。
 
 -   通知オブジェクトが以前に関連するオブジェクトを所有するコンポーネントをインストールする操作を実行している場合、通知オブジェクトが「インストール」アクションを示すデータ メンバーを設定が必要があります。 サブシステムの呼び出し後**ApplyRegistryChanges**をレジストリに構成の変更を適用する**ApplyRegistryChanges**コンポーネントに関する情報がレジストリに設定する必要があります。
 

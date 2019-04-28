@@ -1,17 +1,17 @@
 ---
-title: Windows 7 の WFP 変更
-description: Windows 7 の WFP 変更
+title: Windows 7 での WFP の変更
+description: Windows 7 での WFP の変更
 ms.assetid: c7b15182-592a-4cdb-98aa-5283ed2f51a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a743b026f257a29ae6edb8ec8d69125d977f3ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365709"
 ---
-# <a name="wfp-changes-for-windows-7"></a>Windows 7 の WFP 変更
+# <a name="wfp-changes-for-windows-7"></a>Windows 7 での WFP の変更
 
 
 使用可能な関数と、Windows フィルタ リング プラットフォームを開始する Windows 7 での動作では、いくつかの変更が加えられました。 多くの場合、新しい機能を利用する必要がありますのコンパイル時またはを持つ、NTDDI コールアウト ドライバーを再コンパイル\_バージョン マクロ設定 NTDDI\_WIN7 します。

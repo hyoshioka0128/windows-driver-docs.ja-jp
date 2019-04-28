@@ -5,11 +5,11 @@ ms.assetid: 6AF8DD2C-400F-4E9D-A6DF-40A847BCBD76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b98d079b1c206957e4d92db710f24c0d8dffad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369696"
 ---
 # <a name="tracelogging-for-kernel-mode-drivers-and-components"></a>カーネル モード ドライバーとコンポーネント用の TraceLogging
 
@@ -120,8 +120,8 @@ TraceLoggingWrite(
 );
 ```
 
-カーネル モード ドライバー (C) で、インストルメント化する場合は、TraceLoggingProvider.h へのリンクを使用することができます、 **TraceLoggingWrite**、 **TraceLoggingWriteActivity**、または**TraceLoggingActivityMarker**マクロ。 トレース ログの例については、[TraceLogging 例](tracelogging-examples.md)を参照してください。
+カーネル モード ドライバー (C) で、インストルメント化する場合は、TraceLoggingProvider.h へのリンクを使用することができます、 **TraceLoggingWrite**、 **TraceLoggingWriteActivity**、または**TraceLoggingActivityMarker**マクロ。 トレース ログの例については、次を参照してください。 [TraceLogging 例](tracelogging-examples.md)します。
 
 TraceLoggingProvider.h と TraceLoggingActivity.h にリンクする場合は、ドライバーまたは C++ で記述されたコンポーネントをインストルメント化は。 イベント ログに記録できる C++ ヘッダーにリンクすると、 **TraceLoggingWriteStart**、 **TraceLoggingWriteStop**、および**TraceLoggingWriteTagged**マクロ。
 
-キャプチャして TraceLogging データを表示する方法の例については、[キャプチャとビュー TraceLogging データ](capture-and-view-tracelogging-data.md)を参照してください。
+キャプチャして TraceLogging データを表示する方法の例については、次を参照してください。[キャプチャとビュー TraceLogging データ](capture-and-view-tracelogging-data.md)します。

@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_ENABLE_EVENTS Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a8d64cb6f0f900bda09ad1bf3b6d3bfa55f3a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368350"
 ---
 # <a name="irpmnenableevents"></a>IRP\_MN\_を有効にする\_イベント
 

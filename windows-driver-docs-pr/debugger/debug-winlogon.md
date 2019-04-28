@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef49034e95e55e3f1a8aa55c69a8172759eb7a47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368156"
 ---
 # <a name="debug-winlogon"></a>Debug WinLogon
 
@@ -52,7 +52,7 @@ ms.locfileid: "56570567"
 
 Winlogon プロセスをデバッグする NTSD (コマンドを使用して**ntsd-d-g-x**)、コントロールは、カーネル デバッガーにリダイレクトされますが、します。
 
-NTSD について詳しくは、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
+NTSD について詳しくは、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
 
 ### <a name="span-idseealsospanspan-idseealsospansee-also"></a><span id="see_also"></span><span id="SEE_ALSO"></span>参照してください。
 

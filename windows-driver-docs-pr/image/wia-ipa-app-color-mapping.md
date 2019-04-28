@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d4afe4e81c09fdd54bb06b3bd77e73696cf6295
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369570"
 ---
 # <a name="wiaipaappcolormapping"></a>WIA\_IPA\_アプリ\_色\_マッピング
 
@@ -35,7 +35,7 @@ WIA\_IPA\_アプリ\_色\_マッピング プロパティは将来使用する�
 
 アクセス権:読み取り専用かどうか
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: データ フローとキー交換の同期
-description: データ フローとキー交換の同期
+title: キー交換とデータ フローの同期
+description: キー交換とデータ フローの同期
 ms.assetid: 54abc258-d26a-4d42-a5aa-712cdae76b6d
 keywords:
 - DVD デコーダー ミニドライバー WDK、著作権保護
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a46dd2a8bacef749819c0878a2a5fc780e1d0a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364805"
 ---
-# <a name="synchronizing-key-exchange-with-data-flow"></a>データ フローとキー交換の同期
+# <a name="synchronizing-key-exchange-with-data-flow"></a>キー交換とデータ フローの同期
 
 
 

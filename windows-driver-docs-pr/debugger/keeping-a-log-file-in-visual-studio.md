@@ -5,11 +5,11 @@ ms.assetid: 6A7588D0-A477-4BE9-874F-3AFB52561903
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d87a58ba5c3cee9b6aa35633a8e578e3bfa0dffa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367192"
 ---
 # <a name="keeping-a-log-file-in-visual-studio"></a>Visual Studio でのログ ファイルの保持
 
@@ -20,7 +20,7 @@ ms.locfileid: "56573103"
 
 Windows デバッガーを記述できますログ ファイルを記録する、デバッグ セッション。 このログ ファイルには、すべてのコマンドを入力して、デバッガーからの応答が含まれています。 Microsoft Visual studio で、追加するを開いて、デバッガーのイミディ エイト ウィンドウでコマンドを入力してログ ファイルを閉じます。
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)を参照してください。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)します。
 
 ## <span id="ddk_keeping_a_log_file_dbg"></span><span id="DDK_KEEPING_A_LOG_FILE_DBG"></span>
 

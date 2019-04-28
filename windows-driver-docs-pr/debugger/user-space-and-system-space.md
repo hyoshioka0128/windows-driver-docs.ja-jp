@@ -1,6 +1,6 @@
 ---
-title: ユーザー領域とシステム領域
-description: ユーザー領域とシステム領域
+title: ユーザー空間とシステム空間
+description: ユーザー空間とシステム空間
 ms.assetid: 2d988178-cd19-4dc4-8dc1-39b9b6a1aaad
 keywords:
 - システムの領域
@@ -15,18 +15,18 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: afa8db8bef2370d36aa4d0038b6ec0d34c1f55ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368096"
 ---
-# <a name="user-space-and-system-space"></a>ユーザー領域とシステム領域
+# <a name="user-space-and-system-space"></a>ユーザー空間とシステム空間
 
 
 Windows では、各ユーザー モード アプリケーションに、仮想アドレスのブロックが与えられます。 これと呼ばれますが、*ユーザー空間*そのアプリケーションの。 呼ばれるアドレスの他の大きなブロック*システム領域*または*カーネル領域*アプリケーションが直接アクセスできません。
 
-WinDbg または CDB が設定した場合、[ブレークポイント](using-breakpoints.md)ユーザー領域でこのブレークポイントが 1 つのプロセスのユーザー領域で指定したアドレスに設定します。 ユーザー モードのデバッグは、中には、現在のプロセスは、仮想アドレスの意味を決定します。 詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+WinDbg または CDB が設定した場合、[ブレークポイント](using-breakpoints.md)ユーザー領域でこのブレークポイントが 1 つのプロセスのユーザー領域で指定したアドレスに設定します。 ユーザー モードのデバッグは、中には、現在のプロセスは、仮想アドレスの意味を決定します。 詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 カーネル モードでのユーザー領域でブレークポイントを設定することができます、 **bp**、 **bu**、および**ba**コマンド、または、**ブレークポイント** ダイアログ ボックス。 最初に使用する必要があります、*プロセス コンテキスト*を使用してそのアドレス空間を所有するユーザー モード プロセスを指定する **.process/i** (またはプロセスに固有のブレークポイント一部カーネル領域関数) を切り替える、正しいターゲット[プロセス コンテキスト](changing-contexts.md#process-context)します。
 

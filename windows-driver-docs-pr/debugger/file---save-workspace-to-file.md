@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9751ac62e4566f43177f6bb72c60bc34b178346f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360406"
 ---
-# <a name="file--save-workspace-to-file"></a>ファイル |ワークスペースをファイルに保存します。
+# <a name="file--save-workspace-to-file"></a>File | Save Workspace to File (ファイル | ワークスペースをファイルに保存)
 
 
 ## <span id="ddk_file_save_workspace_to_file_dbg"></span><span id="DDK_FILE_SAVE_WORKSPACE_TO_FILE_DBG"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56549571"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ワークスペースとその使用方法のさまざまなレベルの詳細については、[を使用してワークスペース](using-workspaces.md)を参照してください。
+ワークスペースとその使用方法のさまざまなレベルの詳細については、次を参照してください。[を使用してワークスペース](using-workspaces.md)します。
 
  
 

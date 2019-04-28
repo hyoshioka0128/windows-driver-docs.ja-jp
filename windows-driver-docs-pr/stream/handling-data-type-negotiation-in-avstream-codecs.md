@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd97a63202e9d56b6d62228536be2a99a3e80da2
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363532"
 ---
 # <a name="handling-data-type-negotiation-in-avstream-codecs"></a>AVStream コーデックのデータ型ネゴシエーションの処理
 
@@ -35,7 +35,7 @@ ms.locfileid: "58419558"
 
 成功したデータの種類のネゴシエーションを有効にするには、ミニドライバーは以下の手順を実行する必要があります。
 
-1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 以下に例を示します。
+1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 例:
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {

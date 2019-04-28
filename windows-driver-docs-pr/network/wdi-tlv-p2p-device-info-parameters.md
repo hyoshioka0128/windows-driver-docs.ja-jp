@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_DEVICE_INFO_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c34165d616b00bed68c2d78ad056b02cc696c0c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366346"
 ---
 # <a name="wditlvp2pdeviceinfoparameters"></a>WDI\_TLV\_P2P\_デバイス\_情報\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_デバイス\_情報\_パラメーターは、Wi-Fi Direct デバ
 ## <a name="values"></a>値
 
 
-| 種類       | 説明                                            |
+| 型       | 説明                                            |
 |------------|--------------------------------------------------------|
 | UINT8\[6\] | ピアの Wi-Fi Direct デバイス アドレス。           |
 | UINT16     | デバイスでサポートされる構成メソッド。     |

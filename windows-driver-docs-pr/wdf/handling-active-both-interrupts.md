@@ -1,17 +1,17 @@
 ---
-title: アクティブな両方の割り込みを処理
-description: アクティブな両方の割り込みを処理
+title: Active-Both 割り込みの処理
+description: Active-Both 割り込みの処理
 ms.assetid: CFA205B1-FDDD-4E27-8CF9-106C8D1CC4EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15a72528f4cadb34bd9c91b75385dca8370bc0b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366494"
 ---
-# <a name="handling-active-both-interrupts"></a>アクティブな両方の割り込みを処理
+# <a name="handling-active-both-interrupts"></a>Active-Both 割り込みの処理
 
 
 **注**  このトピックには、のみをカーネル モード ドライバー フレームワーク (KMDF) 1.13 およびそれ以前のバージョンが適用されます。

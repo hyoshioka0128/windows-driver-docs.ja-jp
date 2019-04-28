@@ -5,11 +5,11 @@ ms.assetid: 7504677D-9B3A-47A2-9990-7BBF50A832EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 638eaa417f3071171511f719491b4f21abcdbe4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362026"
 ---
 # <a name="setting-the-power-state-of-a-virtual-function"></a>仮想関数の電源状態の設定
 

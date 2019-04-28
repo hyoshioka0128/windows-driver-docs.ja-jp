@@ -1,6 +1,6 @@
 ---
-title: IRP の要求の待機またはスリープ解除
-description: IRP の要求の待機またはスリープ解除
+title: 待機/ウェイク IRP 要求
+description: 待機/ウェイク IRP 要求
 ms.assetid: c67d6dcb-f4a9-4df0-abb8-9d84fc44ec40
 keywords:
 - 送信待機/ウェイク Irp
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37ff7eb9fd32eda5466199c075ea536f3bcda846
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362976"
 ---
-# <a name="waitwake-irp-requests"></a>IRP の要求の待機またはスリープ解除
+# <a name="waitwake-irp-requests"></a>待機/ウェイク IRP 要求
 
 
 

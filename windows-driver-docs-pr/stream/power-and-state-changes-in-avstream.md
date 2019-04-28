@@ -1,6 +1,6 @@
 ---
-title: 電源と AVStream の状態の変更点
-description: 電源と AVStream の状態の変更点
+title: AVStream の電源と状態の変更
+description: AVStream の電源と状態の変更
 ms.assetid: f62f4306-97c0-40fe-89ec-d08eb18988c9
 keywords:
 - AVStream WDK、電源と状態の変化
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32b676e55353c1dbfd290149bba7ba1d79631ec0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362230"
 ---
-# <a name="power-and-state-changes-in-avstream"></a>電源と AVStream の状態の変更点
+# <a name="power-and-state-changes-in-avstream"></a>AVStream の電源と状態の変更
 
 
 AVStream を受信すると、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)要求、ミニドライバーの呼び出す[ *AVStrMiniDeviceSetPower* ](https://msdn.microsoft.com/library/windows/hardware/ff554309)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。

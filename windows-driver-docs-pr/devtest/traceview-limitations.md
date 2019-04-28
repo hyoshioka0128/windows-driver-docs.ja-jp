@@ -1,19 +1,19 @@
 ---
-title: Traceview での制限事項
-description: Traceview での制限事項
+title: TraceView の制限事項
+description: TraceView の制限事項
 ms.assetid: 946d7c69-7c6a-4bab-8fa5-fc21dcf85ddb
 keywords:
 - Traceview で WDK、制限事項
 ms.date: 09/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 852cc78489f444d45429c8176bccfabc45e07368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369622"
 ---
-# <a name="traceview-limitations"></a>Traceview での制限事項
+# <a name="traceview-limitations"></a>TraceView の制限事項
 
 
 このトピックでは、traceview での制限事項について説明します。
@@ -36,7 +36,7 @@ Traceview でとを Event Tracing for Windows (ETW) に基づくその他のト�
 
 ## <a name="global-logger-trace-sessions"></a>グローバルのロガーのトレース セッション
 
-Traceview でウィンドウには、開始するためのオプションはありません、[グローバル ロガー トレース セッション](global-logger-trace-session.md)します。 ただし、グローバルのロガーを入力してグローバル ロガー トレース セッションを開始するウィンドウを使用することができます[コントロール GUID](control-guid.md)、e8908abc aa84-11 d 2-9a93-00805f85d7c6、またはコントロールの GUID を保存することによってで、[制御 GUID ファイル](control-guid-file.md). これらの手順の詳細については、[トレース セッションを作成するコントロールの GUID を持つ](creating-a-trace-session-with-a-control-guid.md)と[CTL ファイルを使用してトレース セッションを作成する](creating-a-trace-session-with-a-ctl-file.md)を参照してください。
+Traceview でウィンドウには、開始するためのオプションはありません、[グローバル ロガー トレース セッション](global-logger-trace-session.md)します。 ただし、グローバルのロガーを入力してグローバル ロガー トレース セッションを開始するウィンドウを使用することができます[コントロール GUID](control-guid.md)、e8908abc aa84-11 d 2-9a93-00805f85d7c6、またはコントロールの GUID を保存することによってで、[制御 GUID ファイル](control-guid-file.md). これらの手順の詳細については、次を参照してください。[トレース セッションを作成するコントロールの GUID を持つ](creating-a-trace-session-with-a-control-guid.md)と[CTL ファイルを使用してトレース セッションを作成する](creating-a-trace-session-with-a-ctl-file.md)します。
 
 使用することも、 [traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)グローバル ロガーのトレース セッションを開始します。 グローバル ロガー トレース セッションを開始するのにには、次のコマンドを使用します。 このコマンドでは、"GlobalLogger"という単語が大文字小文字を区別します。
 
@@ -44,10 +44,10 @@ Traceview でウィンドウには、開始するためのオプションはあ�
 traceview -start GlobalLogger [parameters]
 ```
 
-Traceview でコマンドの詳細については、[traceview で管理コマンド](traceview-control-commands.md)を参照してください。
+Traceview でコマンドの詳細については、次を参照してください。 [traceview で管理コマンド](traceview-control-commands.md)します。
 
-## <a name="enabling-trace-providers"></a>トレース プロバイダーを有効にします。
+## <a name="enabling-trace-providers"></a>トレース プロバイダーの有効化
 
 Traceview では、トレース セッションに追加したトレース プロバイダーを自動的に有効にします。 ただし、トレース セッションを作成した後、トレース セッションを別のトレース プロバイダーを有効にするか、トレース セッションに追加したトレース プロバイダーを無効にする traceview でウィンドウを使用することはできません。
 
-有効またはプロバイダーを無効にする、使用、 **traceview で-有効にする**コマンド。 このコマンドの詳細については、[ **traceview で管理コマンド**](traceview-control-commands.md)を参照してください。
+有効またはプロバイダーを無効にする、使用、 **traceview で-有効にする**コマンド。 このコマンドの詳細については、次を参照してください。 [ **traceview で管理コマンド**](traceview-control-commands.md)します。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ecd055a87c6a25c7f55bf30118e4ea9594579b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367600"
 ---
 # <a name="setidlepollingstate"></a>SetIdlePollingState
 
@@ -32,11 +32,11 @@ ms.locfileid: "56570366"
 <tbody>
 <tr class="odd">
 <td><p>ポーリングを有効にします。</p></td>
-<td><p><strong>true</strong></p></td>
+<td><p><strong>True</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>ポーリングを無効にします。</p></td>
-<td><p><strong>false</strong></p></td>
+<td><p><strong>False</strong></p></td>
 </tr>
 </tbody>
 </table>

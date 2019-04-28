@@ -1,6 +1,6 @@
 ---
-title: プリンターのインストールのセクションでは INF ファイル
-description: プリンターのインストールのセクションでは INF ファイル
+title: プリンター INF ファイル インストール セクション
+description: プリンター INF ファイル インストール セクション
 ms.assetid: fb544271-1f0f-4bbd-b0a7-88dc89cc8186
 keywords:
 - WDK の INF ファイルを印刷するインストール セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d7da8881e8ab5afe26ecb3bd5fc1a2416f5b41b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362300"
 ---
-# <a name="printer-inf-file-install-sections"></a>プリンターのインストールのセクションでは INF ファイル
+# <a name="printer-inf-file-install-sections"></a>プリンター INF ファイル インストール セクション
 
 
 
@@ -25,7 +25,7 @@ Windows NT 4.0 と以前は、ミニドライバーを顧客に提供するベ�
 
 通常、Windows 2000 以降、ベンダーは、ミニドライバーと Microsoft のプリンター ドライバーを配布しないでください。 代わりに、各仕入先は、仕入先のファイルをインストールし、Microsoft のプリンターの INF ファイル、Ntprint.inf で、適切なプリンター ドライバーのコンポーネントがインストールされますが呼び出され、INF ファイルを提供します。
 
-**注**  マイクロソフトは、そのプリンター ドライバーの更新バージョンを定期的にリリースします。更新されたバージョンでのみ使用可能な機能を必要とするミニドライバーは、追加の手順を必要があります。 詳細については、[更新コア印刷ドライバーを使用して](using-updated-core-print-drivers.md)を参照してください。
+**注**  マイクロソフトは、そのプリンター ドライバーの更新バージョンを定期的にリリースします。更新されたバージョンでのみ使用可能な機能を必要とするミニドライバーは、追加の手順を必要があります。 詳細については、次を参照してください。[更新コア印刷ドライバーを使用して](using-updated-core-print-drivers.md)します。
 
  
 

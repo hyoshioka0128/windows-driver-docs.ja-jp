@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2969e6314ebd2fb24b0ce09104070069811476cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363314"
 ---
 # <a name="oidcoaddaddress"></a>OID_CO_ADD_ADDRESS
 
@@ -29,13 +29,13 @@ typedef struct _CO_ADDRESS{
 **AddressSize**  
 構造のバイト単位のサイズを指定します。**アドレス**します。
 
-**アドレス**  
+**Address**  
 エイリアスのアドレスを含む可変長配列を指定します。 アドレスの形式は、コール マネージャーによって使用される信号のプロトコルに固有です。
 
 この OID は通常ホストが特定のサービスを提供する、よく知られているアドレスを指定するために使用します。 たとえば、クライアントは、LAN エミュレーションのサーバーの既知のアドレスを指定できます。 この oid コール マネージャーの応答は、コール マネージャーによって使用される信号のプロトコルに固有です。 ATM コール マネージャーは、たとえば、エイリアスのアドレスのスイッチに通知するスイッチにメッセージを送信します。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

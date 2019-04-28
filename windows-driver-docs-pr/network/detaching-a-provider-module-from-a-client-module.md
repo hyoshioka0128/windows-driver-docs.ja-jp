@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6852d48f426a1c09c124eb1d510dc694e9ef3a51
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364233"
 ---
 # <a name="detaching-a-provider-module-from-a-client-module"></a>クライアント モジュールからのプロバイダー モジュールのデタッチ
 
@@ -29,7 +29,7 @@ ms.locfileid: "57350425"
 
 モジュールの NPI コールバック関数を 1 つ以上のクライアントの進行中の呼び出しがある場合と、プロバイダー モジュールの[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)コールバック関数が呼び出された、 *ProviderDetachClient*コールバック関数は、状態を返す必要があります\_保留します。 この場合、プロバイダー モジュールを呼び出す必要があります、 [ **NmrProviderDetachClientComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff568781)クライアント モジュールの NPI コールバック関数へのすべての実行中の呼び出しが完了した後も機能します。 呼び出し**NmrProviderDetachClientComplete** NMR プロバイダー モジュール クライアント モジュールからのデタッチが完了したことを通知します。
 
-クライアント モジュールの NPI コールバック関数の実行中の呼び出しの数を追跡する方法の詳細については、[プログラミングに関する考慮事項](programming-considerations.md)を参照してください。
+クライアント モジュールの NPI コールバック関数の実行中の呼び出しの数を追跡する方法の詳細については、次を参照してください。[プログラミングに関する考慮事項](programming-considerations.md)します。
 
 プロバイダーのモジュールを実装する場合、 [ *ProviderCleanupBindingContext* ](https://msdn.microsoft.com/library/windows/hardware/ff570396)コールバック関数、NMR 呼び出し、プロバイダー モジュールの*ProviderCleanupBindingContext*プロバイダー モジュールおよびクライアント モジュールの両方がお互いからのデタッチを完了してからのコールバック関数。 プロバイダー モジュールの*ProviderCleanupBindingContext*コールバック関数は、プロバイダー モジュールのバインド コンテキストの構造体に含まれるデータのために必要なクリーンアップを実行する必要があります。 バインド コンテキストの構造体のメモリは、プロバイダー モジュールは、構造のメモリを動的に割り当てられる場合そのに解放する必要があります。
 

@@ -1,6 +1,6 @@
 ---
-title: トレース ログのプロパティの表示
-description: トレース ログのプロパティの表示
+title: Tracelog のプロパティの表示
+description: Tracelog のプロパティの表示
 ms.assetid: 9adfb4d5-5a0b-4e79-9aa8-ae81e2e1df3e
 keywords:
 - Tracelog WDK、プロパティ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de983da6a83b9c80fd4da513ca9b05af06d344d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369718"
 ---
-# <a name="tracelog-properties-display"></a>トレース ログのプロパティの表示
+# <a name="tracelog-properties-display"></a>Tracelog のプロパティの表示
 
 ## <span id="ddk_tracelog_display_tools"></span><span id="DDK_TRACELOG_DISPLAY_TOOLS"></span>
 

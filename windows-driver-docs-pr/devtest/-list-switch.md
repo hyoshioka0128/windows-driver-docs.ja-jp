@@ -1,5 +1,5 @@
 ---
-title: /一覧表示の切り替え
+title: /List スイッチ
 description: 記憶域証明書の管理の強化されたツールの/List スイッチではすべて、IEEE 1667 準拠の USB ストレージ デバイス、コンピューターに接続されているが一覧表示します。
 ms.assetid: ae0e2991-32db-42b3-839d-83b7e2b8b35f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da7b84a0cf06767ae209e6822168982ad87c8f45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361459"
 ---
-# <a name="list-switch"></a>/一覧表示の切り替え
+# <a name="list-switch"></a>/List スイッチ
 
 
 **/List**拡張記憶域証明書管理ツールのスイッチにはすべて、IEEE 1667 準拠の USB ストレージ デバイス、コンピューターに接続されているが一覧表示されます。 このスイッチは指定された USB ストレージ デバイスに認証サイロ (ASC) の証明書ストア内で (プロパティ) と証明書を一覧表示を使用することもできます。
@@ -34,7 +34,7 @@ ms.locfileid: "56529746"
 
 
 <span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span> **-ボリューム:**   
-IEEE 1667 準拠の USB ストレージのボリュームの名前。 このパラメーターの書式設定に関する詳細については、[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)を参照してください。
+IEEE 1667 準拠の USB ストレージのボリュームの名前。 このパラメーターの書式設定に関する詳細については、次を参照してください。[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)します。
 
 **注**IEEE 1667 準拠 USB ストレージ デバイスをコンピューターに現在接続されているボリューム名の一覧を生成する入力**EhStorCertMgrCmd/List**コマンド プロンプトで Enter キーを押します。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61ebc76b73a9e648991c6189cda319371b61dd2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367763"
 ---
 # <a name="condis-miniport-driver-oid-requests"></a>CoNDIS ミニポート ドライバー OID 要求
 
@@ -26,7 +26,7 @@ NDIS 渡します*MiniportCoOidRequest*へのポインター、 [ **NDIS\_OID\_�
 
 **タイムアウト**メンバーは、秒単位の要求で、タイムアウトを指定します。 NDIS は、ドライバーをリセットしたり、ドライバーは、要求を完了する前にタイムアウトに達すると、要求をキャンセルできます。
 
-**RequestId**メンバーは、要求のオプションの識別子を指定します。 ミニポート ドライバーを設定できる、 **RequestId**ドライバーがから取得した値に状態表示のメンバー、 **RequestId**関連付けられている OID 要求のメンバー。 通常、ミニポート ドライバーでは、このメンバーを無視できます。 ドライバーは、このメンバーを設定する必要がある場合、ドライバーは、特定の OID のリファレンス ページで指定された必要な値のいずれかを使用する必要があります。 状態インジケーターの詳細については、[いる CoNDIS ミニポート ドライバーの状態インジケーター](condis-miniport-driver-status-indications.md)を参照してください。
+**RequestId**メンバーは、要求のオプションの識別子を指定します。 ミニポート ドライバーを設定できる、 **RequestId**ドライバーがから取得した値に状態表示のメンバー、 **RequestId**関連付けられている OID 要求のメンバー。 通常、ミニポート ドライバーでは、このメンバーを無視できます。 ドライバーは、このメンバーを設定する必要がある場合、ドライバーは、特定の OID のリファレンス ページで指定された必要な値のいずれかを使用する必要があります。 状態インジケーターの詳細については、次を参照してください。[いる CoNDIS ミニポート ドライバーの状態インジケーター](condis-miniport-driver-status-indications.md)します。
 
 ミニポート ドライバーは、成功または失敗の状態を返すことによって、OID 要求を同期的に完了できます。 ドライバーは NDIS を返すことによって、OID 要求を非同期的に実行できる\_状態\_保留します。 この場合、ドライバーを呼び出す必要があります、 [ **NdisMCoOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563568)操作を完了する関数。
 

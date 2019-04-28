@@ -1,6 +1,6 @@
 ---
-title: 確認済みのバイナリをインストールします。
-description: 確認済みのバイナリをインストールします。
+title: 確認済みのバイナリのインストール
+description: 確認済みのバイナリのインストール
 ms.assetid: a289206a-e793-48a6-875c-f0204edfaaf3
 keywords:
 - 確認済みのバイナリ WDK を表示します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a6c9beb6395f17a2cd5c225231a0c22357bf846
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365461"
 ---
-# <a name="installing-checked-binaries"></a>確認済みのバイナリをインストールします。
+# <a name="installing-checked-binaries"></a>確認済みのバイナリのインストール
 
 
 Windows Display Driver Model (WDDM) の新しいドライバーを開発する場合は、WDDM コンポーネントの確認済みのバイナリを使用する必要があります。 これらのコンポーネントのチェック バイナリ バージョンがある広範な検証およびデバッグ支援ツールは無料のバイナリを使用できません。 ただし、パフォーマンス チューニングのバイナリは、低速をチェックするための無料のバイナリを使用する必要があります。

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 33309fa68a9020f71d449fa8f131d6ac00fa785d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361982"
 ---
 # <a name="wditlvinterfacecapabilities"></a>WDI\_TLV\_インターフェイス\_機能
 
@@ -61,7 +61,7 @@ WDI\_TLV\_インターフェイス\_機能は、Wi-fi インターフェイス�
 | UINT8 | デバイスが Multiband 操作 (MBO) をサポートしているかを指定します。 有効な値は 0 (サポートされていません) および 1 (サポートです)。 <p>Windows 10、バージョンが 1903 年バージョン 1.1.8 WDI に追加されます。</p> |
 | UINT8 | アダプターがビーコン レポートの測定を実装するかどうかを指定します。 有効な値は 0 (アダプターはビーコン レポートの測定を実装していません) および 1 (アダプターは、独自の 11 k ビーコン レポートを実装)。 <p>Windows 10、バージョンが 1903 年バージョン 1.1.8 WDI に追加されます。</p> |
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

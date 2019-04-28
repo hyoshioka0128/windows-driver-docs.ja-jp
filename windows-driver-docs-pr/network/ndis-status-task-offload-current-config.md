@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 26a5655a658ab48030c2bb41e0903e25a7dce706
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361060"
 ---
 # <a name="ndisstatustaskoffloadcurrentconfig"></a>NDIS\_状態\_タスク\_オフロード\_現在\_構成
 
@@ -32,7 +32,7 @@ ms.locfileid: "56559761"
 
  
 
-現在のタスク オフロードの構成の詳細については、[OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)を参照してください。
+現在のタスク オフロードの構成の詳細については、次を参照してください。 [OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)します。
 
 <a name="requirements"></a>要件
 ------------

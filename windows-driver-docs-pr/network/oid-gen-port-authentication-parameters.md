@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_PORT_AUTHENTICATION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: dcc74e0a1d5ef936c94d51c50547d91270fa0a45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367583"
 ---
 # <a name="oidgenportauthenticationparameters"></a>OID\_GEN\_ポート\_認証\_パラメーター
 
@@ -23,7 +23,7 @@ ms.locfileid: "56549931"
 サポートされています。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-(省略可能)。 NDIS ポートは必須です。 (「解説」を参照してください セクション)
+任意。 NDIS ポートは必須です。 (「解説」を参照してください セクション)
 
 <a name="remarks"></a>注釈
 -------
@@ -34,7 +34,7 @@ NDIS ポートをサポートするミニポート ドライバーでは、こ�
 
 ミニポート ドライバーでは、この OID をサポートする場合、ドライバーは返します NDIS\_状態\_成功には、受信ポートの方向、ポート コントロールの状態、および認証の状態、 [ **NDIS\_ポート\_認証\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566788)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

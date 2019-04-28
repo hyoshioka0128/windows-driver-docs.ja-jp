@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dcd91d44f7883d5e4a75388f72304935ef13534
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362600"
 ---
 # <a name="process-server-examples"></a>プロセス サーバーの例
 
@@ -33,7 +33,7 @@ E:\Debugging Tools for Windows> dbgsrv -t tcp:port=1025
 G:\Debugging Tools> windbg -premote tcp:server=BOX17,port=1025 -p 122 
 ```
 
-別の例を次に示します。 この場合、NPIPE プロトコルを選択すると、および CDB は WinDbg の代わりに使用されます。 最初のユーザーは、パイプ名を選択します。 この例では、"AnotherPipe"--任意の英数字の文字列を入力できます。 最初のユーザーは、管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) を開き、このコマンドを入力してデバッグ サーバーを開始します。
+別の例を示します。 この場合、NPIPE プロトコルを選択すると、および CDB は WinDbg の代わりに使用されます。 最初のユーザーは、パイプ名を選択します。 この例では、"AnotherPipe"--任意の英数字の文字列を入力できます。 最初のユーザーは、管理者特権でコマンド プロンプト ウィンドウ (管理者として実行) を開き、このコマンドを入力してデバッグ サーバーを開始します。
 
 ```console
 E:\Debugging Tools for Windows> dbgsrv -t npipe:pipe=AnotherPipe
@@ -62,7 +62,7 @@ Remote Process Server - npipe:Pipe=AnotherPipe
 G:\Debugging Tools> cdb -premote npipe:server=BOX17,pipe=AnotherPipe -v sol.exe 
 ```
 
-複雑な例では、プロセス サーバーを使用して、[途中でシンボル](symbols-in-the-middle.md)を参照してください。
+複雑な例では、プロセス サーバーを使用して、次を参照してください。[途中でシンボル](symbols-in-the-middle.md)します。
 
  
 

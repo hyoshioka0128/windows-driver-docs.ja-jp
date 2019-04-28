@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a87b4a37c9e90a667ab65c51262c5900fd606d3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363661"
 ---
 # <a name="configuring-an-inf-file-for-a-monitoring-filter-driver"></a>監視フィルター ドライバーの INF ファイルの構成
 
@@ -59,7 +59,7 @@ ms.locfileid: "56570466"
     HKR, Ndi,FilterRunType,0x00010001 ,0x00000002
     ```
 
-    前の例で 0x00000002 値は、フィルター モジュールが省略可能なことを示します。 必須のフィルター モジュールをインストールするには、設定、 **FilterRunType** 0x00000001 のエントリ。 詳細については、[必須フィルター ドライバー](mandatory-filter-drivers.md)を参照してください。
+    前の例で 0x00000002 値は、フィルター モジュールが省略可能なことを示します。 必須のフィルター モジュールをインストールするには、設定、 **FilterRunType** 0x00000001 のエントリ。 詳細については、次を参照してください。[必須フィルター ドライバー](mandatory-filter-drivers.md)します。
 
     **注**  制御された環境で使用する、場所がありますしないオプションがない限りに監視の lightweight filter (LWF) ドライバーを必須にしないことを強くお勧め LWF ドライバーを変更します。 これは必須の監視 LWF ドライバーが原因であるために失敗する LWF ドライバーを変更する省略可能な[ *FilterAttach*](https://msdn.microsoft.com/library/windows/hardware/ff549905)します。 監視 LWF ドライバーは、すべてのレベルでネットワーク トラフィックの監視を容易にするように設計上すべての変更のフィルターとバインディングにバインドされます。 次のシナリオを考えてみましょう。
     -   必須の監視 LWF ドライバーのインスタンスは、オプションの変更 LWF ドライバー経由でインストールされます。
@@ -110,7 +110,7 @@ ms.locfileid: "56570466"
     HKR, Ndi\Interfaces, FilterMediaTypes,,"ethernet"
     ```
 
-    ドライバーのバインディングを制御する方法の詳細については、[フィルター ドライバーのバインドのリレーションシップの指定](specifying-filter-driver-binding-relationships.md)を参照してください。
+    ドライバーのバインディングを制御する方法の詳細については、次を参照してください。[フィルター ドライバーのバインドのリレーションシップの指定](specifying-filter-driver-binding-relationships.md)します。
 
 -   監視フィルター INF ファイルには、フィルター ドライバー、特定のアダプターに関連付けられているパラメーターおよび特定のインスタンス (フィルター モジュール) に関連付けられているパラメーターの共通のパラメーター定義を指定する必要があります。 次の例では、いくつかの一般的なパラメーター定義を示します。
     ```INF

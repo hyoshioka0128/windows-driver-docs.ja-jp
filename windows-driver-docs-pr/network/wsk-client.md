@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66f179ebd5bb092ff30a0d83b0588607fca157dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362480"
 ---
 # <a name="wskclient"></a>WSK_CLIENT
 
@@ -28,7 +28,7 @@ typedef PVOID PWSK_CLIENT;
 
 WSK アプリケーションを呼び出すと、 [WskCaptureProviderNPI](https://msdn.microsoft.com/library/windows/hardware/ff571122)関数で WSK サブシステムで、WSK_CLIENT 構造体の WSK アプリケーションへのポインターが返されます、 *WskProviderNpi*パラメーター。 WSK サブシステムは、WSK アプリケーションと WSK サブシステム間のバインドの状態を追跡するために、この構造体を使用します。 WSK アプリケーションは、内のすべての関数をパラメーターとしてこのポインターを渡して[WSK_PROVIDER_DISPATCH](https://msdn.microsoft.com/library/windows/hardware/ff571175) ([WskControlClient](https://msdn.microsoft.com/library/windows/hardware/ff571126)、 [WskSocket](https://msdn.microsoft.com/library/windows/hardware/ff571149)、および[WskSocketConnect](https://msdn.microsoft.com/library/windows/hardware/ff571150))。
 
-詳細については、[Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)を参照してください。
+詳細については、次を参照してください。 [Winsock カーネル アプリケーションを登録する](registering-a-winsock-kernel-application.md)します。
 
 ## <a name="requirements"></a>要件
 

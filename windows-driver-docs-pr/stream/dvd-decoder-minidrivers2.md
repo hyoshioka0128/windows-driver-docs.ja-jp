@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32203fa7e859a19a4056f92b1e2b386e9eda5444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363720"
 ---
 # <a name="dvd-decoder-minidrivers"></a>DVD デコーダーのミニドライバー
 
@@ -31,7 +31,7 @@ DVD は、オーディオ、ビデオ、およびその他のデジタル デー
 
 Stream クラス ドライバーを使用した DVD デコーダー ミニドライバー インターフェイスです。 これにより、すべてのデータ型の動作を 1 つのドライバー モデルを使用して、ストリーム クラスでビルドする多機能デバイス用のドライバーを作成する開発者 (mpeg-2、ac-3、DTS、)。
 
-DVD デコーダー ミニドライバーは移植性があり、同期を提供するストリーム クラス ドライバーを使用している場合マルチプロセッサの問題点がありません。 MPEG - 2 で、オーディオ ドライバーのさまざまなモデルを使用して個別のドライバーを作成する開発者が、以前は、MIDI、およびサブピクチャします。 詳細については、[ストリーミング ミニドライバー](streaming-minidrivers2.md)を参照してください。
+DVD デコーダー ミニドライバーは移植性があり、同期を提供するストリーム クラス ドライバーを使用している場合マルチプロセッサの問題点がありません。 MPEG - 2 で、オーディオ ドライバーのさまざまなモデルを使用して個別のドライバーを作成する開発者が、以前は、MIDI、およびサブピクチャします。 詳細については、次を参照してください。[ストリーミング ミニドライバー](streaming-minidrivers2.md)します。
 
 次のトピックについて説明します。
 

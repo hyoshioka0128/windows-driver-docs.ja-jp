@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 442d37abc86ca0b8936032b859602b9da69175e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364957"
 ---
 # <a name="kernel-mode-code-signing-requirements"></a>カーネル モードのコード署名の要件
 
@@ -25,7 +25,7 @@ Windows Vista では、カーネル モード コード署名では、カーネ�
 
 仮想ドライバーでは、実際のハードウェア ドライバーと同じ要件があります。 つまり、ターゲットが OS のバージョンの要件に準拠する必要があります。
 
-署名とダッシュ ボードの送信については、[複数の Windows バージョンの Microsoft によって署名されたドライバーを入手](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions)を参照してください。
+署名とダッシュ ボードの送信については、次を参照してください。[複数の Windows バージョンの Microsoft によって署名されたドライバーを入手](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions)します。
 
 ### <a href="" id="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a> カーネル モード コード署名のドライバーのリリースを公開するための要件
 

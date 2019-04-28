@@ -1,6 +1,6 @@
 ---
-title: D3dCreateSurfaceEx およびバッキング サーフェス
-description: D3dCreateSurfaceEx およびバッキング サーフェス
+title: D3dCreateSurfaceEx とバッキング サーフェス
+description: D3dCreateSurfaceEx とバッキング サーフェス
 ms.assetid: aad37654-616f-4cbd-9a9c-07458fb61947
 keywords:
 - コンテキスト WDK の Direct3D D3dCreateSurfaceEx
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d9afd6f955c1a8c5eea51e406eba2490bd3cb3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370877"
 ---
-# <a name="d3dcreatesurfaceex-and-backing-surfaces"></a>D3dCreateSurfaceEx およびバッキング サーフェス
+# <a name="d3dcreatesurfaceex-and-backing-surfaces"></a>D3dCreateSurfaceEx とバッキング サーフェス
 
 
 ## <span id="ddk_d3dcreatesurfaceex_and_backing_surfaces_gg"></span><span id="DDK_D3DCREATESURFACEEX_AND_BACKING_SURFACES_GG"></span>

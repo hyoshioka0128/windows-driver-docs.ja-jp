@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bebafb031a2958c7e09c5baf3396d4d175f051a2
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366562"
 ---
 # <a name="option-attributes-for-the-resolution-feature"></a>Resolution 機能のオプション属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "57349923"
 
 
 
-次の表は、解決の機能に関連付けられている属性を一覧表示します。 解決策機能の詳細については、[標準機能](standard-features.md)を参照してください。
+次の表は、解決の機能に関連付けられている属性を一覧表示します。 解決策機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
 
 <table>
 <colgroup>
@@ -80,9 +80,9 @@ ms.locfileid: "57349923"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
-追加のオプションの属性については、[すべての機能のオプション属性](option-attributes-for-all-features.md)を参照してください。
+追加のオプションの属性については、次を参照してください。[すべての機能のオプション属性](option-attributes-for-all-features.md)します。
 
 参照してください[画質を制御する](controlling-image-quality.md)します。
 

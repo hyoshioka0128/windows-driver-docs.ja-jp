@@ -1,20 +1,20 @@
 ---
-title: SR-IOV 機能を判断します。
-description: SR-IOV 機能を判断します。
+title: SR-IOV 機能の判断
+description: SR-IOV 機能の判断
 ms.assetid: 61895987-2469-471E-BB29-FF1CDD2869DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc33088464d31588e6cde641f6758e7441413610
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364201"
 ---
-# <a name="determining-sr-iov-capabilities"></a>SR-IOV 機能を判断します。
+# <a name="determining-sr-iov-capabilities"></a>SR-IOV 機能の判断
 
 
-このトピックでは、NDIS とドライバーの後続のネットワーク アダプターのシングル ルート I/O 仮想化 (SR-IOV) 機能を特定する方法について説明します。 このトピックには、次の情報が含まれています。
+このトピックでは、NDIS とドライバーの後続のネットワーク アダプターのシングル ルート I/O 仮想化 (SR-IOV) 機能を特定する方法について説明します。 このトピックの内容は次のとおりです。
 
 [レポートの中に、SR-IOV 機能*MiniportInitializeEx*](#report)
 
@@ -62,7 +62,7 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 2.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-アダプターの初期化プロセスの詳細については、[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
+アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
 ## <a name="querying-sr-iov-capabilities-by-overlying-drivers"></a>上にあるドライバーが SR-IOV 機能の照会
 

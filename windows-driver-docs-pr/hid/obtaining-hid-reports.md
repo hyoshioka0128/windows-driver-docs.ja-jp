@@ -1,6 +1,6 @@
 ---
-title: HID レポートを取得します。
-description: HID レポートを取得します。
+title: HID レポートを取得する
+description: HID レポートを取得する
 ms.assetid: b6312dce-39af-4fff-b17d-4a50b9ab823b
 keywords:
 - WDK を非表示にレポートを取得します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03787890708afd9b235206e6ede3b937ba96139a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372990"
 ---
-# <a name="obtaining-hid-reports"></a>HID レポートを取得します。
+# <a name="obtaining-hid-reports"></a>HID レポートを取得する
 
 
 

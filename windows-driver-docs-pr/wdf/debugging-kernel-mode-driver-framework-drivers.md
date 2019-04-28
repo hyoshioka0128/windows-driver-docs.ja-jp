@@ -5,11 +5,11 @@ ms.assetid: 62D0F1DA-318F-4989-94C5-968C67F420C8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f34255e1be2c2fad5f8e8f6241796212514bcb16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362451"
 ---
 # <a name="videos-debugging-kmdf-drivers"></a>ビデオ: KMDF ドライバーのデバッグ
 

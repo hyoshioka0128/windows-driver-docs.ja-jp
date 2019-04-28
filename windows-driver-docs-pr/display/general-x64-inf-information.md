@@ -1,6 +1,6 @@
 ---
-title: X 64 の INF 情報には、[全般]
-description: X 64 の INF 情報には、[全般]
+title: 一般的な x64 INF 情報
+description: 一般的な x64 INF 情報
 ms.assetid: a1a96e8f-74d3-403d-994a-b21436d166d2
 keywords:
 - INF ファイル WDK の表示、64 ビット
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6460ae99f513dcf006f491efa871019739276a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366332"
 ---
-# <a name="general-x64-inf-information"></a>X 64 の INF 情報には、[全般]
+# <a name="general-x64-inf-information"></a>一般的な x64 INF 情報
 
 
 X64 に固有の次の情報は、64 ビット Windows Vista 以降を実行しているディスプレイ ドライバーをロードする INF ファイルに必要です。

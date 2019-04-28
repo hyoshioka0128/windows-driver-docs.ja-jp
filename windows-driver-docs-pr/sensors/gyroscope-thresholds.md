@@ -1,22 +1,22 @@
 ---
-title: ジャイロスコープしきい値
+title: ジャイロスコープのしきい値
 description: このトピックでは、ジャイロスコープしきい値に関する情報を提供します。
 ms.assetid: 68B11108-CA1A-4A49-BC44-4E9FE09955A9
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: dadbee3a04b7d89e7d2f33e1cb7e7ce26ca86b59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366511"
 ---
-# <a name="gyroscope-thresholds"></a>ジャイロスコープしきい値
+# <a name="gyroscope-thresholds"></a>ジャイロスコープのしきい値
 
 
 このトピックでは、ジャイロスコープしきい値に関する情報を提供します。
 
-次の表は、既定のしきい値をジャイロスコープなどがあります。 型の列に示すように種類の詳細については、、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表は、既定のしきい値をジャイロスコープなどがあります。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
 |プロパティのキー|種類|必須/オプション|既定値|説明|
 |---|---|---|---|---|

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cbbe32663674087b7e50ff607c01860efc55ab4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369876"
 ---
 # <a name="ndisstatuswwanpacketservice"></a>NDIS\_状態\_WWAN\_パケット\_サービス
 
@@ -21,7 +21,7 @@ ms.locfileid: "56580100"
 
 この通知を使用して、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567910)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 CDMA ベースのミニポート ドライバーを自動的に開始できるパケットの場合に接続サービスがリソース割り当て/解放しない可能性があり、MB サービスにイベント通知を送信することができます。
@@ -52,7 +52,7 @@ CDMA ベースのミニポート ドライバーを自動的に開始できる�
 
 -   一時的な状態を返すことはありません、*設定*要求。 最終状態のみ**WwanPacketServiceStateAttached**または**WwanPacketServiceStateDetached** WWANでパケットのサービス操作を正常に完了した後に返す必要がある\_状態\_成功
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

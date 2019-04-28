@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: eb14a734528f9798126eecabe898fe63a3617240
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368022"
 ---
 # <a name="symstore-command-line-options"></a>SymStore のコマンドライン オプション
 
@@ -114,7 +114,7 @@ SymStore コマンドのヘルプを表示します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-SymStore の詳細については、[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)を参照してください。
+SymStore の詳細については、次を参照してください。[シンボル サーバーを使用して、シンボル ストア](symbol-stores-and-symbol-servers.md)します。
 
 
 

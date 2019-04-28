@@ -1,17 +1,17 @@
 ---
-title: シンプルな周辺機器バス (SPB) ドライバーのサンプル
+title: SPB (Simple Peripheral Bus) ドライバーのサンプル
 description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム SPB ドライバーを記述するための開始点を提供します。
 ms.assetid: E9A667EA-3AE5-4A0E-BC3F-CD442141886B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 691244e8d41c104439b91219e148116edb0d0707
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366290"
 ---
-# <a name="simple-peripheral-bus-spb-driver-samples"></a>シンプルな周辺機器バス (SPB) ドライバーのサンプル
+# <a name="simple-peripheral-bus-spb-driver-samples"></a>SPB (Simple Peripheral Bus) ドライバーのサンプル
 
 
 このディレクトリにドライバーのサンプルでは、デバイスのカスタム SPB ドライバーを記述するための開始点を提供します。

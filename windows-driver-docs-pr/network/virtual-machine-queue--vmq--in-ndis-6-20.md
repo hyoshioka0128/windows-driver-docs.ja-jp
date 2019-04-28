@@ -1,6 +1,6 @@
 ---
-title: NDIS 6.20 が動作では、仮想マシン キュー (VMQ)
-description: NDIS 6.20 が動作では、仮想マシン キュー (VMQ)
+title: NDIS 6.20 の仮想マシン キュー (VMQ)
+description: NDIS 6.20 の仮想マシン キュー (VMQ)
 ms.assetid: fb48b019-4646-426d-b10e-d760788f9985
 keywords:
 - NDIS 6.20 WDK、仮想マシン キュー (VMQ)
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df2443645c7ce6614b57d3eb2f25dd8880cb10b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366646"
 ---
-# <a name="virtual-machine-queue-vmq-in-ndis-620"></a>NDIS 6.20 が動作では、仮想マシン キュー (VMQ)
+# <a name="virtual-machine-queue-vmq-in-ndis-620"></a>NDIS 6.20 の仮想マシン キュー (VMQ)
 
 
 
@@ -33,7 +33,7 @@ NDIS 6.20 が動作には、Microsoft、HYPER-V ネットワーク パフォー�
 
 Microsoft、HYPER-V ネットワーク パフォーマンスの強化も chimney をサポートして、HYPER-V 子ドライバーを変更せずにパーティション。
 
-VMQ の詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。
+VMQ の詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
 
  
 

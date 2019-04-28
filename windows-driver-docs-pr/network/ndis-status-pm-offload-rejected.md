@@ -7,18 +7,18 @@ keywords:
 - NDIS_STATUS_PM_OFFLOAD_REJECTED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a40d53d133bf2adc2e2515b8a208f0efdea3621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362969"
 ---
 # <a name="ndisstatuspmoffloadrejected"></a>NDIS\_状態\_PM\_オフロード\_拒否済み
 
 
 NDIS\_状態\_PM\_オフロード\_拒否状態が電源管理のプロトコルのオフロードが拒否されたことをドライバーに関連することを示します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS ミニポート ドライバーは、NDIS を生成できる\_状態\_PM\_オフロード\_いずれかのオフロードのプロトコルを削除すると拒否の状態を示す値。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造には ULONG プロトコルのオフロード識別子にはが含まれています拒否されたプロトコルの負荷を軽減します。 NDIS のプロトコルのオフロード識別子を提供する、 **ProtocolOffloadId**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)構造体。

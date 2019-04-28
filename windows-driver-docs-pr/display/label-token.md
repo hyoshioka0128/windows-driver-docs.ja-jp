@@ -1,17 +1,17 @@
 ---
-title: トークンにラベルを付ける
-description: トークンにラベルを付ける
+title: ラベル トークン
+description: ラベル トークン
 ms.assetid: 29b2b4b1-c599-4bea-9d83-3a10eedac4a6
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: bae11eb53c3de8110e1068cc9c5bcac5e95be8f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363090"
 ---
-# <a name="label-token"></a>トークンにラベルを付ける
+# <a name="label-token"></a>ラベル トークン
 
 
 ## <span id="ddk_label_token_gg"></span><span id="DDK_LABEL_TOKEN_GG"></span>
@@ -35,7 +35,7 @@ ms.locfileid: "56530766"
 
 ラベルのトークンの形式と同じ、[ソース パラメーター トークン](source-parameter-token.md)レジスタ数と種類フィールドのみが使用される点が異なります。
 
-ビット 28、29、30、11、および 12 フォーム register 型を示す 5 ビット値です。 登録の種類については、[シェーダー登録型](https://msdn.microsoft.com/library/windows/hardware/ff569707)を参照してください。 D3DSPR としてラベル トークンを register 型を指定する必要があります\_ラベル。
+ビット 28、29、30、11、および 12 フォーム register 型を示す 5 ビット値です。 登録の種類については、次を参照してください。[シェーダー登録型](https://msdn.microsoft.com/library/windows/hardware/ff569707)します。 D3DSPR としてラベル トークンを register 型を指定する必要があります\_ラベル。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要件
 

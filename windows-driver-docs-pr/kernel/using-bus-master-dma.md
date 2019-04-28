@@ -1,6 +1,6 @@
 ---
-title: バス マスター DMA を使用してください。
-description: バス マスター DMA を使用してください。
+title: バス マスター DMA の使用
+description: バス マスター DMA の使用
 ms.assetid: 08357a55-aec2-4454-923f-6daaf1583a25
 keywords:
 - AdapterControl ルーチン、バス マスター DMA
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f83451eeae3184bd7ef0438443ff3a92c95f8a1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361081"
 ---
-# <a name="using-bus-master-dma"></a>バス マスター DMA を使用してください。
+# <a name="using-bus-master-dma"></a>バス マスター DMA の使用
 
 
 

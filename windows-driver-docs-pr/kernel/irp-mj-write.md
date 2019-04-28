@@ -7,13 +7,13 @@ keywords:
 - IRP_MJ_WRITE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 26abfb3d0f584ed6bd637fc1975e5d7a1f34528e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368398"
 ---
-# <a name="irpmjwrite"></a>IRP\_MJ\_書き込み
+# <a name="irpmjwrite"></a>IRP\_MJ\_WRITE
 
 
 システムからそのデバイスにデータを転送するすべてのデバイス ドライバーがで書き込み要求を処理する必要があります、 [ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchread--dispatchwrite--and-dispatchreadwrite-routines)または[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchread--dispatchwrite--and-dispatchreadwrite-routines)としてする必要があります、日常的な高度なドライバーの上層にこのようなデバイス ドライバー。
@@ -52,7 +52,7 @@ IRP のドライバーの I/O スタックの場所に転送するバイト数�
 
 書き込み要求の受信後は、デバイス ドライバーは、システム メモリからそのデバイスにデータを転送します。 デバイス ドライバーのセット、**情報**IRP の完了時に I/O 状態ブロックのバイト数のフィールドが転送されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

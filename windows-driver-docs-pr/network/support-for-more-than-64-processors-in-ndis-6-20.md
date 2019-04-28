@@ -1,19 +1,19 @@
 ---
-title: NDIS 6.20 で 64 を超えるプロセッサのサポート
-description: NDIS 6.20 で 64 を超えるプロセッサのサポート
+title: NDIS 6.20 の 64 を超えるプロセッサのサポート
+description: NDIS 6.20 の 64 を超えるプロセッサのサポート
 ms.assetid: 3fb2a09c-e2dd-48b8-a631-3793bd023ef0
 keywords:
 - NDIS 6.20 WDK、64 を超えるプロセッサのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ebeb4656b3ad69370d7da6899d8ac1f113b8a986
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368234"
 ---
-# <a name="support-for-more-than-64-processors-in-ndis-620"></a>NDIS 6.20 で 64 を超えるプロセッサのサポート
+# <a name="support-for-more-than-64-processors-in-ndis-620"></a>NDIS 6.20 の 64 を超えるプロセッサのサポート
 
 
 
@@ -33,7 +33,7 @@ NDIS 6.20 インターフェイスには、64 を超えるプロセッサのサ�
 
 -   読み取り/書き込みロック (を参照してください[NDIS 読み取り書き込みロック参照](https://msdn.microsoft.com/library/windows/hardware/ff564797))
 
-デバイス ドライバーの NDIS インターフェイス要素の一部は、NDIS 6.20 が動作し、以降のドライバーの廃止されています。 古い形式のインターフェイスの詳細については、[NDIS 6.20 で古いインターフェイス](obsolete-interfaces-in-ndis-6-20.md)を参照してください。
+デバイス ドライバーの NDIS インターフェイス要素の一部は、NDIS 6.20 が動作し、以降のドライバーの廃止されています。 古い形式のインターフェイスの詳細については、次を参照してください。 [NDIS 6.20 で古いインターフェイス](obsolete-interfaces-in-ndis-6-20.md)します。
 
  
 

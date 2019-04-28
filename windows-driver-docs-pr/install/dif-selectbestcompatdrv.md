@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2c9b98c6cf2bb598f7b577a0a0208747fc23b4c9
-ms.sourcegitcommit: f133a551833ea10d27356663e8687f87d5401358
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56582853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366062"
 ---
 # <a name="difselectbestcompatdrv"></a>DIF_SELECTBESTCOMPATDRV
 
@@ -93,7 +93,7 @@ DIF_SELECTBESTCOMPATDRV 要求は、インストーラー、デバイス情報�
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)を参照してください。
+既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -127,9 +127,9 @@ DIF_SELECTBESTCOMPATDRV 要求は、インストーラー、デバイス情報�
 
     共同インストーラーを選択すると、ドライバー場合、処理後の実行にする必要があります。
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

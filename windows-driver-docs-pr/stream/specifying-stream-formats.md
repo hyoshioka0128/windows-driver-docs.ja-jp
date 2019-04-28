@@ -1,6 +1,6 @@
 ---
-title: Stream を指定する書式設定します。
-description: Stream を指定する書式設定します。
+title: ストリーム形式の指定
+description: ストリーム形式の指定
 ms.assetid: 60ef129c-f4a1-4eb5-97d9-6be6c7803258
 keywords:
 - ビデオ キャプチャ WDK AVStream、stream の形式
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9438d9c0151e83b5f9bdd035c5184af76a3e9eb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360820"
 ---
-# <a name="specifying-stream-formats"></a>Stream を指定する書式設定します。
+# <a name="specifying-stream-formats"></a>ストリーム形式の指定
 
 
 一般に、DirectShow とストリーミング メディアを共有カーネルは、定義とストリーミングの規則をフォーマットします。 この統一性は、カーネル モードとユーザー モード コンポーネントによって使用される名前付け規則の違いによって多少隠されています。 多くのメディアをフォーマットし、カーネル モードで使用される GUID の定義は、プレフィックスを付ける*KS\_* は対応するユーザー モードと同じです。 カーネル モード構造体の Win32 ユーザー モードのバージョンなど、 [ **KS\_BITMAPINFOHEADER**](https://msdn.microsoft.com/library/windows/hardware/ff567305)、BITMAPINFOHEADER です。

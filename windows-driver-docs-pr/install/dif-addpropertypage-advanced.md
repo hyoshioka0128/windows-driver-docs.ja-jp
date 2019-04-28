@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 661364e75d37b9f0515b155b1826a95949947cea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362056"
 ---
 # <a name="difaddpropertypageadvanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -110,11 +110,11 @@ Windows には、[ドライバ] ページの 1 つ、1 つのリソース ペー
 
 インストーラーでは、Windows を削除し、デバイスの再起動が必要なプロパティを設定するユーザーを許可している場合、インストーラーする必要がありますフラグを設定、DI_FLAGSEX_PROPCHANGE_PENDING デバイスからのインストール パラメーター、 **DialogProc**ルーチン.
 
-デバイスのプロパティ ページを提供する方法の詳細については、[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)を参照してください。
+デバイスのプロパティ ページを提供する方法の詳細については、次を参照してください。[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)します。
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

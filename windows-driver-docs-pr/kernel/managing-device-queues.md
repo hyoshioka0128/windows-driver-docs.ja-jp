@@ -1,6 +1,6 @@
 ---
-title: デバイスのキューを管理します。
-description: デバイスのキューを管理します。
+title: デバイス キューの管理
+description: デバイス キューの管理
 ms.assetid: 8b7d39f8-0449-4e9b-a54c-fe60ee60842c
 keywords:
 - WDK の Irp で管理するデバイスのキュー
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4770452519f3a944611d088f93884e18d81e2b45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360290"
 ---
-# <a name="managing-device-queues"></a>デバイスのキューを管理します。
+# <a name="managing-device-queues"></a>デバイス キューの管理
 
 
 

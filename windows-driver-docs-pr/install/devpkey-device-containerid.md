@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8e7777bdb0976c458b82948b2093622b717635cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362330"
 ---
 # <a name="devpkeydevicecontainerid"></a>DEVPKEY_Device_ContainerId
 
@@ -74,7 +74,7 @@ DEVPKEY_Device_ContainerId は特定のデバイスのコンテナーのグル�
 
  
 
-ContainerIDs の詳細については、[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)を参照してください。
+ContainerIDs の詳細については、次を参照してください。[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)します。
 
 <a name="requirements"></a>要件
 ------------

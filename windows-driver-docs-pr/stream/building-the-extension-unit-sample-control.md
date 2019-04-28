@@ -1,6 +1,6 @@
 ---
-title: 単位の拡張機能サンプル コントロールを作成
-description: 単位の拡張機能サンプル コントロールを作成
+title: 拡張ユニットのサンプル コントロールの構築
+description: 拡張ユニットのサンプル コントロールの構築
 ms.assetid: 57dd0bc3-2aab-42a2-b0c5-7f6ecaefd300
 keywords:
 - WDK USB ビデオ クラスを制御する拡張ユニット
@@ -8,13 +8,13 @@ keywords:
 ms.date: 01/30/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 522a9e5a433ec8c079212207954c9e45454f52ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370383"
 ---
-# <a name="building-the-extension-unit-sample-control"></a>単位の拡張機能サンプル コントロールを作成
+# <a name="building-the-extension-unit-sample-control"></a>拡張ユニットのサンプル コントロールの構築
 
 UVC 拡張ユニット サンプル コントロールを作成するには、このセクションのコードをコンパイルすることができます。 このプロジェクトをビルドするときに取得し、拡張機能単位にプロパティを設定する、対応するアプリケーションで使用できる Microsoft ActiveX コントロールを作成します。
 

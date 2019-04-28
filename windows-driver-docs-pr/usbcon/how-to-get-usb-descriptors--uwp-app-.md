@@ -4,11 +4,11 @@ title: USB 記述子の取得方法 (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d18df5103cc11a300748a3070e212b015dd38b79
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364807"
 ---
 # <a name="how-to-get-usb-descriptors-uwp-app"></a>USB 記述子の取得方法 (UWP アプリ)
 
@@ -38,7 +38,7 @@ USB デバイスを提供する必要があります、*デバイス記述子*�
 
 USB デバイスを完全なも提供する必要があります*構成記述子*します。 この記述子の開始部分が 9 バイトの長さを固定、残りの部分は可変長インターフェイスとエンドポイントの数によってはそれらのインターフェイスをサポートします。 固定長の部分は、USB 構成に関する情報を提供します。 数インターフェイス サポートと電力消費量と、デバイスはその構成します。 その最初の 9 バイトには、すべての USB インターフェイスに関する情報を提供する記述子の可変部分が続きます。 各インターフェイスは 1 つまたは複数のインターフェイスの設定と各設定は、一連のエンドポイントの構成されます。 可変部分では、インターフェイス、代替の設定、およびエンドポイントの記述子が含まれます。
 
-デバイスのレイアウトに関する詳細については、[標準の USB ディスクリプター](standard-usb-descriptors.md)を参照してください。
+デバイスのレイアウトに関する詳細については、次を参照してください。[標準の USB ディスクリプター](standard-usb-descriptors.md)します。
 
 ## <a name="before-you-start"></a>はじめに...
 

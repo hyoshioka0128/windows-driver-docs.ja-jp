@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be3b2fc09ff6a1a808001f191342d724ec9737e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369578"
 ---
 # <a name="ccunmapfileoffsetfromsystemcache-routine"></a>CcUnmapFileOffsetFromSystemCache ルーチン
 
@@ -51,7 +51,7 @@ VOID CcUnmapFileOffsetFromSystemCache(
 キャッシュからマップ解除するファイルの部分の長さ。 場合*長さ*0 の場合、ファイルから始まるメモリ セクションの残りの部分は、 *FileOffset*、マップ解除されています。
 
 *フラグ*\[で\]  
-使用されません。 設定*フラグ*を 0 にします。
+使用されていません。 設定*フラグ*を 0 にします。
 
 <a name="return-value"></a>戻り値
 ------------

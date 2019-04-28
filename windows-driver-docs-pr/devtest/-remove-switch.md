@@ -1,5 +1,5 @@
 ---
-title: /スイッチを削除します。
+title: /Remove スイッチ
 description: 拡張記憶域証明書管理ツールの/remove と入力しスイッチは、IEEE 1667 準拠 USB ストレージ デバイスに認証サイロ (ASC) の証明書ストアから指定された証明書を削除します。注 IEEE 1667 準拠 USB ストレージ デバイスをコンピューターに現在接続されているボリューム名のリストを生成し、EhStorCertMgrCmd/List をコマンド プロンプトで入力し、Enter キーを押します。
 ms.assetid: c74fe7c3-264e-4bbd-9036-b5a254b3ba5b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fed0152a0c2205763ab058072da62f7162b4758
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361722"
 ---
-# <a name="remove-switch"></a>/スイッチを削除します。
+# <a name="remove-switch"></a>/Remove スイッチ
 
 
 **/Remove**拡張記憶域証明書管理ツールのスイッチは、IEEE 1667 準拠 USB ストレージ デバイスに認証サイロ (ASC) の証明書ストアから指定された証明書を削除します。
@@ -39,7 +39,7 @@ ms.locfileid: "56535530"
 
 
 <span id="_______-Volume_______"></span><span id="_______-volume_______"></span><span id="_______-VOLUME_______"></span> **-ボリューム:**   
-ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)を参照してください。
+ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、次を参照してください。[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)します。
 
 **注**IEEE 1667 準拠 USB ストレージ デバイスをコンピューターに現在接続されているボリューム名の一覧を生成する入力**EhStorCertMgrCmd/List**コマンド プロンプトで Enter キーを押します。
 

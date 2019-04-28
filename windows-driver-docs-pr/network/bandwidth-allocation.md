@@ -5,11 +5,11 @@ ms.assetid: 775B4085-6028-441F-9D52-341077FF1647
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d6fd1060206b4dc8ed11c93ec7788bb1e973e5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367687"
 ---
 # <a name="bandwidth-allocation"></a>帯域幅割り当て
 
@@ -20,7 +20,7 @@ ETS、トラフィック クラスごとに 2 つの直接接続されている�
 
 NDIS のサービス品質 (QoS) パラメーターを使用して指定、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 **TcBandwidthAssignmentTable**メンバーには、ETS のアルゴリズムを使用するクラスをトラフィックの帯域幅の割り当てを指定する配列が含まれています。
 
-優先度レベルの詳細については、[IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)を参照してください。
+優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
 
  
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_UNICAST_CIPHER_ALGO_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c164db319b3f8aff3fed9f80c71f08c39254cd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366900"
 ---
 # <a name="wditlvunicastcipheralgolist"></a>WDI\_TLV\_ユニキャスト\_暗号\_ALGO\_一覧
 
@@ -31,7 +31,7 @@ WDI\_TLV\_ユニキャスト\_暗号\_ALGO\_リストがユニキャスト暗号
 ## <a name="values"></a>値
 
 
-| 種類                                                            | 説明                            |
+| 型                                                            | 説明                            |
 |-----------------------------------------------------------------|----------------------------------------|
 | [**WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802)\[\] | ユニキャスト暗号アルゴリズムの配列。 |
 

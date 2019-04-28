@@ -1,24 +1,24 @@
 ---
-title: デバイスの関係を取得します。
-description: デバイスの関係を取得します。
+title: デバイスの関係の取得
+description: デバイスの関係の取得
 ms.assetid: 2b0ead69-1fda-4024-a7c2-d6350060b5fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f51fbb5d270610e2cbc83ffcdfb36e8ac788de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363340"
 ---
-# <a name="retrieving-device-relations"></a>デバイスの関係を取得します。
+# <a name="retrieving-device-relations"></a>デバイスの関係の取得
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)が含まれています[デバイス リレーション プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541498)します。 統一されたデバイス プロパティのモデルを使用して[プロパティ キー](property-keys.md)をこれらのプロパティを表します。
 
 Windows Server 2003、Windows XP、および Windows 2000、統一されたプロパティのモデルのプロパティのキーをサポートしても、これらのプロパティを表す対応するレジストリ エントリの値をサポートしています。 ただし、プラグ アンド プレイ (PnP) configuration manager の関数を呼び出すことによって、対応する情報を取得することができます。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンもサポート デバイス関係のプロパティを取得する PnP 構成マネージャーの関数の呼び出し。 ただし、デバイスのリレーションシップのプロパティにアクセスするのに、統一されたデバイス プロパティのモデルのプロパティのキーを使用する必要があります。
 
-プロパティのキーを使用して、デバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、デバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
 Windows Server 2003、Windows XP、および Windows 2000 でデバイスの関係のプロパティにアクセスする方法については、次のトピックを参照してください。
 

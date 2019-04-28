@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_PROVISION_DISCOVERY_RESPONSE_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b050269fe829f12a5db03f6576015983316ea334
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362810"
 ---
 # <a name="wditlvp2pprovisiondiscoveryresponseinfo"></a>WDI\_TLV\_P2P\_プロビジョニング\_検出\_応答\_情報
 
@@ -34,10 +34,10 @@ WDI\_TLV\_P2P\_プロビジョニング\_検出\_応答\_情報は、Wi-Fi Direc
 | 種類                                                                                                                     | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                                                                                                             |
 |--------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_プロビジョニング\_検出\_応答\_パラメーター**](wdi-tlv-p2p-provision-discovery-response-parameters.md) |                                |          | プロビジョニング検出応答のパラメーター。                                                                                                                                                                                            |
-| [**WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)                        |                                | X        | サービスのプロビジョニングの属性。                                                                                                                                                                                                       |
-| [**WDI\_TLV\_P2P\_グループ\_ID**](wdi-tlv-p2p-group-id.md)                                                                 |                                | X        | Wi-Fi Direct サービスがサポートされている場合は、グループ ID。                                                                                                                                                                                      |
-| [**WDI\_TLV\_P2P\_持続\_グループ\_ID**](wdi-tlv-p2p-persistent-group-id.md)                                          |                                | X        | 接続に使用する永続的なグループのグループの ip アドレス。 このフィールドは、永続的なグループにフラグを設定する場合に有効な[ **WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)が 1 に設定します。 |
-| [**WDI\_TLV\_P2P\_サービス\_セッション\_情報**](wdi-tlv-p2p-service-session-info.md)                                        |                                | X        | サービスのセッションの情報。                                                                                                                                                                                                        |
+| [**WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)                        |                                | x        | サービスのプロビジョニングの属性。                                                                                                                                                                                                       |
+| [**WDI\_TLV\_P2P\_グループ\_ID**](wdi-tlv-p2p-group-id.md)                                                                 |                                | x        | Wi-Fi Direct サービスがサポートされている場合は、グループ ID。                                                                                                                                                                                      |
+| [**WDI\_TLV\_P2P\_持続\_グループ\_ID**](wdi-tlv-p2p-persistent-group-id.md)                                          |                                | x        | 接続に使用する永続的なグループのグループの ip アドレス。 このフィールドは、永続的なグループにフラグを設定する場合に有効な[ **WDI\_TLV\_P2P\_プロビジョニング\_サービス\_属性**](wdi-tlv-p2p-provision-service-attributes.md)が 1 に設定します。 |
+| [**WDI\_TLV\_P2P\_サービス\_セッション\_情報**](wdi-tlv-p2p-service-session-info.md)                                        |                                | x        | サービスのセッションの情報。                                                                                                                                                                                                        |
 
  
 

@@ -13,21 +13,21 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6567bbb3032dbcea06789b507221ad555f2b418
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369786"
 ---
 # <a name="debugrequestgetcapturedeventcodeoffset"></a>デバッグ\_要求\_取得\_CAPTURED\_イベント\_コード\_オフセット
 
 
 デバッグ\_要求\_取得\_CAPTURED\_イベント\_コード\_オフセット[**要求**](request.md)操作は戻り、現在のイベントの命令ポインター。
 
-**パラメーター**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-使用されません。
+使用されていません。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 現在のイベントの命令ポインター。 命令ポインターの型は、ULONG64 です。

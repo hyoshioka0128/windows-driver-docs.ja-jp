@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7c15eefeb4ae8cdc2c57095a3f457531f29127
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367810"
 ---
 # <a name="accessing-netbufferlist-information-in-ipsec-offload-version-2"></a>NET にアクセスする\_バッファー\_IPsec オフロード バージョン 2 でリストの情報
 

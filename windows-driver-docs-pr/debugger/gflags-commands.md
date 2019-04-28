@@ -13,15 +13,15 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5d1ea9041b1d4d5fee011516c1f2a1e5a61ea9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370859"
 ---
 # <a name="gflags-command-overview"></a>GFlags コマンドの概要
 
-Gflags.exe を探してインストールする方法の概要については、[GFlags](gflags.md)を参照してください。
+Gflags.exe を探してインストールする方法の概要については、次を参照してください。 [GFlags](gflags.md)します。
 
 GFlags コマンドを使用して、[グローバル フラグ ダイアログ ボックス](global-flags-dialog-box.md)同じ意味で。
 
@@ -293,7 +293,7 @@ Windows Server 2003 およびそれ以前のシステムで、 **/アドレス**
 
 既定で、このパラメーターは、コマンドラインを使用した NTSD デバッガーを使用して**ntsd-g-g-x**とページを使用することがヒープで有効になっている、 *DebuggerCommand*変数を別のデバッガーとコマンドを指定するには行です。
 
-NTSD については、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
+NTSD については、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
 
 このオプションは、プログラム、コマンド プロンプトと他のプロセスによって起動される出発点となるが困難な場合に便利です。
 
@@ -305,7 +305,7 @@ NTSD については、[デバッグを使用して CDB、NTSD](debugging-using-
 <span id="________kdebug______"></span><span id="________KDEBUG______"></span> **/kdebug**   
 指定されたプロセスが自動的に起動、**を有効にする/** コマンドラインを使用した NTSD デバッガーの下のパラメーター **ntsd-g-g-x**、ページ ヒープを有効になっている、および制御にリダイレクトする NTSD、カーネル デバッガーです。
 
-NTSD については、[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)を参照してください。
+NTSD については、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
 
 <span id="________unaligned______"></span><span id="________UNALIGNED______"></span> **/unaligned**   
 これで、開始アドレスは、8 バイトのブロックで整列していません、その場合でも、最後のページの境界では、各割り当ての末尾を揃えて配置します。 既定では、ヒープ マネージャーは、8 バイトのブロックの割り当ての開始アドレスが配置されるを保証します。

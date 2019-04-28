@@ -5,11 +5,11 @@ ms.assetid: FC1BE797-7097-4BEF-A530-3846CED3E400
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc1d54085cece9e86be0710a51e2883d6370b077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365340"
 ---
 # <a name="sample-printticket-file-for-pin-printing"></a>PIN 印刷のサンプル PrintTicket ファイル
 
@@ -32,7 +32,7 @@ ms.locfileid: "56575091"
    </psf:PrintTicket>
 ```
 
-保護された印刷の詳細については、[の保護された印刷ドライバー サポート](driver-support-for-protected-printing.md)を参照してください。
+保護された印刷の詳細については、次を参照してください。[の保護された印刷ドライバー サポート](driver-support-for-protected-printing.md)します。
 
  
 

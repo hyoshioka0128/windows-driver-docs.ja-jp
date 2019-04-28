@@ -1,19 +1,19 @@
 ---
-title: パケット インスペクション ポイント
-description: パケット インスペクション ポイント
+title: パケット検査ポイント
+description: パケット検査ポイント
 ms.assetid: 9ad1c660-6811-4659-94ad-201a102a9ded
 keywords:
 - パケット インスペクション ポイント WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21d158c06999e6f60a6f24ad8ea917ee5225e928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363636"
 ---
-# <a name="packet-inspection-points"></a>パケット インスペクション ポイント
+# <a name="packet-inspection-points"></a>パケット検査ポイント
 
 
 次の順序で WFP レイヤーを受信側のコンピューター (ローカル ホスト トラフィック) の走査に割り当てられているアドレス宛ての受信パケットは:

@@ -1,5 +1,5 @@
 ---
-title: インストールされている (WSD)
+title: Installed (WSD)
 description: Devices (WSD) のインストール済みのコンストラクトの Web サービスでは、指定された一連の条件に一致するプリンターの機能がインストールされているかどうかを示します。
 ms.assetid: f05add2a-d37e-4eb5-8408-dd5eeef4b13c
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7940468d4083e31ffaee5c7dfd1ff6fa60a8dd6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362760"
 ---
-# <a name="installed-wsd"></a>インストールされている (WSD)
+# <a name="installed-wsd"></a>Installed (WSD)
 
 
 Devices (WSD) のインストール済みのコンストラクトの Web サービスでは、指定された一連の条件に一致するプリンターの機能がインストールされているかどうかを示します。 このアルゴリズムを返しますのかどうか、XPath フィルターは、指定された条件に適用する場合は、有効な XML 結果を取得する**TRUE**します。 インストールされているコンス トラクターは、WsdBidi.xsd で定義されます。
@@ -35,7 +35,7 @@ Devices (WSD) のインストール済みのコンストラクトの Web サー�
 <td><p>(省略可能)ポート モニターが、ドライバーに通知を送信するかどうかを示すブール値。 A <strong>TRUE</strong>値では、ドライバーをポート モニターが通知を送信することを示します<strong>FALSE</strong>ポート モニター ドライバーに、通知が送信しないことを示します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>フィルター</strong></p></td>
+<td><p><strong>フィルター (filter)</strong></p></td>
 <td><p>WSD モニターは、クエリで指定された XML ドキュメントに適用される XPath クエリ。 このトピックで後述を参照してください。</p></td>
 </tr>
 <tr class="odd">
@@ -43,7 +43,7 @@ Devices (WSD) のインストール済みのコンストラクトの Web サー�
 <td><p>スキーマの値の名前。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>クエリ</strong></p></td>
+<td><p><strong>query</strong></p></td>
 <td><p>WSD モニターを実行するクエリの型。</p></td>
 </tr>
 </tbody>

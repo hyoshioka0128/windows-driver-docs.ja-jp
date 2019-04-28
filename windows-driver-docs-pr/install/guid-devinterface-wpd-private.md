@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9ffecf467ded2996a682634312c0ea684657af45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360598"
 ---
 # <a name="guiddevinterfacewpdprivate"></a>GUID_DEVINTERFACE_WPD_PRIVATE
 
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_WPD_PRIVATE は、カスタムの WPD アプリケーション
 
 カスタム アプリケーションが呼び出すことによってこのインターフェイスを登録するプライベートのデバイスを列挙できる**IPortableDeviceManager::GetPrivateDevices** (Windows SDK に記載されている)。
 
-汎用 WPD デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)を参照してください。
+汎用 WPD デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)します。
 
 <a name="requirements"></a>必要条件
 ------------

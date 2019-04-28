@@ -1,6 +1,6 @@
 ---
-title: 高度な Direct3D ドライバーに関するトピック
-description: 高度な Direct3D ドライバーに関するトピック
+title: Direct3D ドライバーに関する詳細なトピック
+description: Direct3D ドライバーに関する詳細なトピック
 ms.assetid: 1df15e92-387a-4e2f-ab91-4eac56d4fec7
 keywords:
 - Direct3D WDK Windows 2000 の表示
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f63d1a79ee677b77a7c586abf2cb153aa69b8cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360384"
 ---
-# <a name="advanced-direct3d-driver-topics"></a>高度な Direct3D ドライバーに関するトピック
+# <a name="advanced-direct3d-driver-topics"></a>Direct3D ドライバーに関する詳細なトピック
 
 
 ## <span id="ddk_advanced_direct3d_driver_topics_gg"></span><span id="DDK_ADVANCED_DIRECT3D_DRIVER_TOPICS_GG"></span>

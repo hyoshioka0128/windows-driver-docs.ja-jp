@@ -1,17 +1,17 @@
 ---
-title: イメージ処理のコード例
-description: イメージ処理のコード例
+title: 画像処理コードの例
+description: 画像処理コードの例
 ms.assetid: fe5ac3db-46e0-4162-9add-c3b0ae736926
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5007b5edd26d1f2eae9db4f9f9d4e09f2c866d65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364978"
 ---
-# <a name="image-processing-code-example"></a>イメージ処理のコード例
+# <a name="image-processing-code-example"></a>画像処理コードの例
 
 
 

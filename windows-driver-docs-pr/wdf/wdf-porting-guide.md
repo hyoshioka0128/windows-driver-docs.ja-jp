@@ -1,17 +1,17 @@
 ---
-title: WDM からドライバーを WDF の移植
+title: WDM から WDF へのドライバーの移植
 description: このセクションのトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 のドライバーに既存の WDM ドライバーを変換する方法について説明します。
 ms.assetid: 3B4D677D-2FCC-45A1-95B4-DA9CA9D7B452
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abd404b5d06ce049d16fa0149db4a250e3cbd883
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549630"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366868"
 ---
-# <a name="porting-a-driver-from-wdm-to-wdf"></a>WDM からドライバーを WDF の移植
+# <a name="porting-a-driver-from-wdm-to-wdf"></a>WDM から WDF へのドライバーの移植
 
 
 このセクションのトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 のドライバーに既存の WDM ドライバーを変換する方法について説明します。

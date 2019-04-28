@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72e6352203196ace9a938e80eb20273d41c1c4ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363650"
 ---
 # <a name="encoder-installation-and-registration"></a>エンコーダーのインストールと登録
 
@@ -38,7 +38,7 @@ ms.locfileid: "56528120"
 
 ### <a name="additional-kernel-streaming-capture-components"></a>**Capture コンポーネントの追加のカーネルのストリーミング**
 
-エンコーダーのデバイスを参照する必要がありますのドライバーをインストールするために使用する INF ファイル*ks.inf*と*kscaptur.inf*でその\[DefaultInstall\]のためキャプチャ ドライバーとしてセクションこれらファイルは、エンコーダー コンポーネントのために必要なサポートを追加します。 次に、例を示します。
+エンコーダーのデバイスを参照する必要がありますのドライバーをインストールするために使用する INF ファイル*ks.inf*と*kscaptur.inf*でその\[DefaultInstall\]のためキャプチャ ドライバーとしてセクションこれらファイルは、エンコーダー コンポーネントのために必要なサポートを追加します。 例:
 
 ```INF
 [DefaultInstall]

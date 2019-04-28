@@ -5,11 +5,11 @@ ms.assetid: 9c616805-a25b-4fd3-bc84-4bf40b58cab6
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 630ca755ac141b86d41cb90da4e81a4307f26b30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370302"
 ---
 # <a name="scanner-status-elements"></a>スキャナーの状態要素
 

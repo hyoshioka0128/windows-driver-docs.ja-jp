@@ -1,17 +1,17 @@
 ---
-title: キューのペアの対称と非対称の割り当て
-description: キューのペアの対称と非対称の割り当て
+title: キュー ペアの対称および非対称割り当て
+description: キュー ペアの対称および非対称割り当て
 ms.assetid: B4BA1567-D536-4E7D-924C-7476FB82DAEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54cc1a7bc46684996c0b402af5665d536fb6e672
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362557"
 ---
-# <a name="symmetric-and-asymmetric-assignment-of-queue-pairs"></a>キューのペアの対称と非対称の割り当て
+# <a name="symmetric-and-asymmetric-assignment-of-queue-pairs"></a>キュー ペアの対称および非対称割り当て
 
 
 キュー ペアは、個別の送信で構成され、受信ネットワーク アダプターのキュー。 キュー ペアは、VPort の作成時に仮想ポート (VPort) で構成されます。 VPort がの OID メソッド要求を通じてスイッチの作成時に構成されている既定値に関連付けられているキュー ペア[OID\_NIC\_切り替える\_作成\_切り替える](https://msdn.microsoft.com/library/windows/hardware/hh451815)します。 1 つまたは複数のキュー ペアは、既定以外で構成されている OID メソッドを通じて VPort 要求[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。

@@ -1,17 +1,17 @@
 ---
-title: コンピューターのハードウェア Id を指定します。
-description: コンピューターのハードウェア Id を指定します。
+title: コンピューターのハードウェア ID の指定
+description: コンピューターのハードウェア ID の指定
 ms.assetid: af0dbfc4-747c-4e16-a3ed-678df0e07757
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d72d987afa5f0358d16a766f13ffe77ab2791149
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369426"
 ---
-#  <a name="specifying-hardware-ids-for-a-computer"></a>コンピューターのハードウェア Id を指定します。
+#  <a name="specifying-hardware-ids-for-a-computer"></a>コンピューターのハードウェア ID の指定
 
 デバイスとプリンターとコンピューターを認識する[デバイス コンテナー](container-ids.md)します。 使用して、コンピューターをデバイス メタデータ パッケージ内で識別する結果として、 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)一意を指定する XML 要素[ハードウェア ID](hardware-ids.md)値。  (コンピューターのハードウェア ID、または CHID とも呼ばれます)、コンピューターのハードウェア ID 値は、System Management BIOS (SMBIOS) フィールドのデータの組み合わせを指定できます。
 
@@ -19,12 +19,12 @@ ms.locfileid: "56559225"
 
 ComputerHardwareIds ツールでは、フィールド、システムの System Management BIOS (SMBIOS) からの情報に基づいているコンピューターのハードウェア Id のセットを生成します。 次の表では、これらの SMBIOS フィールドについて説明します。
 
-|フィールド名|構造体の名前とタイプ|SMBIOS 仕様のバージョン|Offset|長さ|Value|説明|
+|フィールド名|構造体の名前とタイプ|SMBIOS 仕様のバージョン|Offset|長さ|値|説明|
 |--- |--- |--- |--- |--- |--- |--- |
 |製造元|システム情報 (タイプ 1)|2.0+|04h|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、コンピューターの製造元の名前を指定します。|
 |Family (ファミリ)|システム情報 (タイプ 1)|2.4+|1Ah|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、特定のコンピューターが属するファミリを指定します。  ファミリと似ていますが、ハードウェアまたはソフトウェアの観点から同一であるコンピューターのセットを指します。  通常、ファミリは別のコンピューターのモデルは、さまざまな構成と価格のポイントがあるので構成されます。 同じファミリのコンピューターは、多くの場合、ブランドや外観の面で類似した特徴があります。|
 |製品名|システム情報 (タイプ 1)|2.0+|05h|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、コンピューターの製品名を指定します。|
-|Vendor (ベンダー)|BIOS 情報 (タイプ 0)|2.0+|04h|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、BIOS のベンダーの名前を指定します。|
+|製造元|BIOS 情報 (タイプ 0)|2.0+|04h|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、BIOS のベンダーの名前を指定します。|
 |BIOS Version (BIOS のバージョン)|BIOS 情報 (タイプ 0)|2.+0|05h|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列には、プロセッサ コアと OEM バージョンについての情報を含めることができます。|
 |System BIOS Major Release (システム BIOS のメジャー リリース)|BIOS 情報 (タイプ 0)|2.4+|14h|BYTE|状況により異なる。|システム BIOS のメジャー リリース。|
 |System BIOS Minor Release (システム BIOS のマイナー リリース)|BIOS 情報 (タイプ 0)|2.4+|15h|BYTE|不定|システム BIOS のマイナー リリース。|

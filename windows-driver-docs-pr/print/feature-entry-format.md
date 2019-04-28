@@ -1,6 +1,6 @@
 ---
-title: 機能のエントリの形式
-description: 機能のエントリの形式
+title: 機能エントリ形式
+description: 機能エントリ形式
 ms.assetid: f4e91611-aa68-4426-82ef-9ad3f09d62f2
 keywords:
 - プリンター機能 WDK Unidrv、エントリの形式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31cefd326154fe90d4a11d9e027d947f28af26db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361985"
 ---
-# <a name="feature-entry-format"></a>機能のエントリの形式
+# <a name="feature-entry-format"></a>機能エントリ形式
 
 
 

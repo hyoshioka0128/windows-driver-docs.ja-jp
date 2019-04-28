@@ -1,6 +1,6 @@
 ---
-title: 信頼性の高い印刷出力
-description: 信頼性の高い印刷出力
+title: 忠実度の高い印刷出力
+description: 忠実度の高い印刷出力
 ms.assetid: 37ff186e-d078-40f4-b7dc-9bf75e0b2847
 keywords:
 - 色の忠実性 WDK XPSDrv
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d304940921850603c4ed84ef85b5f78ce0e535a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360526"
 ---
-# <a name="high-fidelity-print-output"></a>信頼性の高い印刷出力
+# <a name="high-fidelity-print-output"></a>忠実度の高い印刷出力
 
 
 XPS ベースのプリンターには、全体的な改善された印刷と色の忠実性を提供できます。 XPS 印刷パスを縮小または可能であれば、常に、イメージのデータ変換と色空間の変換を排除エンドユーザーは、Windows Presentation Foundation (WPF) または XPS ベースのプリンターまたはドライバーに直接出力上に構築されたアプリケーションから印刷するときにそのため、印刷出力には、その元の忠実性を保持できます。

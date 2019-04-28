@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd29935e2de3aae94f170c5b0fe3aaa64aa37f75
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363556"
 ---
 # <a name="encoder-implementation-and-support"></a>エンコーダーの実装とサポート
 
@@ -123,4 +123,4 @@ Basic のサポートを実装する必要があります、ミニドライバ�
 
 エンコーダー フィルターを開発する場合は、ビデオ キャプチャ フィルターから別のフィルターにエンコード機能を移動します。 グラフ ビルダーが正しくエンコーダーを接続してフィルターをキャプチャできるように、独自のプライベート メディアを定義します。 ハードウェアがエンコードされていないコンテンツをマスターするバスの対応の場合は、パブリック メディアも公開できます。 パブリックとプライベート両方のメディアを実装する場合、最初に表示プライベート メディア グラフの作成に時間が減るため、フィルターのグラフを作成するときに、適切なフィルターが見つかりません。
 
-(別個のフィルターのグラフ) でのメディアとフィルターの複数のインスタンスの使用の詳細については、[メディアとカテゴリ](mediums-and-categories.md)を参照してください。
+(別個のフィルターのグラフ) でのメディアとフィルターの複数のインスタンスの使用の詳細については、次を参照してください。[メディアとカテゴリ](mediums-and-categories.md)します。

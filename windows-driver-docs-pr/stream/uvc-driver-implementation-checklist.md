@@ -4,11 +4,11 @@ description: デバイスの USB ビデオ クラス (UVC) ドライバーを実
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ae4a63cf21c92ba4dad28a357fdcf35bbea51d7
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367462"
 ---
 # <a name="usb-video-class-uvc-driver-implementation-checklist"></a>USB ビデオ クラス (UVC) ドライバー実装チェックリスト
 

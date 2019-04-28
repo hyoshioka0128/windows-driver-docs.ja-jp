@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e0a3406d78d85bb7292fd2156194defa40ff97c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366139"
 ---
 # <a name="unloading-a-filter-driver"></a>フィルター ドライバーのアンロード
 
@@ -25,8 +25,8 @@ NDIS フィルター ドライバーに関連付けられているドライバ�
 
 [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバー固有のリソースを解放する必要があります。 フィルター ドライバーを作成したすべてのデバイス オブジェクトを破棄する必要があります。 システムは、後にドライバー アンロード操作を完了できる*FilterDriverUnload*を返します。
 
-アンロード関数の機能は、ドライバー固有です。 一般的な規則として[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、[フィルター ドライバーの初期化](initializing-a-filter-driver.md)を参照してください。
+アンロード関数の機能は、ドライバー固有です。 一般的な規則として[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、次を参照してください。[フィルター ドライバーの初期化](initializing-a-filter-driver.md)します。
 
 フィルター ドライバーを呼び出す必要があります、 [ **NdisFDeregisterFilterDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff561800)関数[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)します。 **NdisFDeregisterFilterDriver**呼び出し[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)このフィルター ドライバーに関連付けられているすべてのフィルターが現在アタッチされているモジュールをデタッチします。
 
-アンロードのフィルター ドライバーの詳細については、[ドライバー スタックを停止する](stopping-a-driver-stack.md)を参照してください。
+アンロードのフィルター ドライバーの詳細については、次を参照してください。[ドライバー スタックを停止する](stopping-a-driver-stack.md)します。

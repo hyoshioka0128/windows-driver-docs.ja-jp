@@ -1,6 +1,6 @@
 ---
-title: ファイル ハンドルを使用してください。
-description: ファイル ハンドルを使用してください。
+title: ファイル ハンドルの使用
+description: ファイル ハンドルの使用
 ms.assetid: f5a4d3f6-b74f-411e-9fa9-a41d83152fd7
 keywords:
 - ファイルの WDK カーネル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6898283ebcacc5c43631a0c6887ef396326c1a3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361135"
 ---
-# <a name="using-a-file-handle"></a>ファイル ハンドルを使用してください。
+# <a name="using-a-file-handle"></a>ファイル ハンドルの使用
 
 
 
@@ -62,7 +62,7 @@ ms.locfileid: "56535624"
 
 ファイル ハンドルを開いた場合\_追加\_データ アクセス、すべてのデータは、ファイルの末尾に記述された、 *ByteOffset*パラメーターは無視されます。
 
-特定の条件下では、I/O マネージャーは、ファイルの現在のファイル位置ポインターを保持します。 読み取りを開始したり、その位置にある操作を指定することで書き込み**NULL**の*ByteOffset*します。 詳細については、現在のファイル位置のポインターが存在するときに、[ファイルの現在位置を使用して](using-the-current-file-position.md)このセクションで後述を参照してください。
+特定の条件下では、I/O マネージャーは、ファイルの現在のファイル位置ポインターを保持します。 読み取りを開始したり、その位置にある操作を指定することで書き込み**NULL**の*ByteOffset*します。 詳細については、現在のファイル位置のポインターが存在するときに、次を参照してください。[ファイルの現在位置を使用して](using-the-current-file-position.md)このセクションで後述します。
 
 調査または変更されたファイルに関する情報、呼び出す[ **ZwQueryInformationFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567052)または[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)、それぞれします。 特定の種類の情報を指定する、 *FileInformationClass*各ルーチンへのパラメーター。 たとえば、設定*FileInformationClass*に**FileBasicInformation**を調査または変更することができます、 [**ファイル\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545762)構造体は、ファイル作成時刻と他のユーザーの間で最終アクセス日時のメンバーが含まれています。 すべての可能な値については*FileInformationClass*を参照してください[**ファイル\_情報\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff728840)します。
 

@@ -1,6 +1,6 @@
 ---
-title: 縦横比とカスタム スケーリング モードを使用してください。
-description: 縦横比とカスタム スケーリング モードを使用してください。
+title: 縦横比とカスタム スケーリング モードの使用
+description: 縦横比とカスタム スケーリング モードの使用
 ms.assetid: cafb6597-64a2-4d0f-bf7b-ab37f9a53bdc
 keywords:
 - 縦横比の WDK ディスプレイのスケーリング
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb3cbc649a3df2b2bdab04b14f6072914344d439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361218"
 ---
-# <a name="using-aspect-ratio-and-custom-scaling-modes"></a>縦横比とカスタム スケーリング モードを使用してください。
+# <a name="using-aspect-ratio-and-custom-scaling-modes"></a>縦横比とカスタム スケーリング モードの使用
 
 
 拡張されたスケーリングの縦横比保持とカスタム スケーリング モード以降で利用可能 Windows 7 をサポートするために (場所**DXGKDDI\_インターフェイス\_バージョン** &gt; =  **DXGKDDI\_インターフェイス\_バージョン\_WIN7**) で使用されるパスのデータ表示のミニポート ドライバー VidPN 存在に追加されます、次の機能。

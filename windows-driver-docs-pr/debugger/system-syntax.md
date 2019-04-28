@@ -11,11 +11,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4acefb5c143f880f05225fcc6b58591f32f624d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368030"
 ---
 # <a name="system-syntax"></a>システムの構文
 
@@ -79,7 +79,7 @@ ms.locfileid: "56531379"
 <a name="remarks"></a>注釈
 -------
 
-複数のシステムを操作するに使用することができます、 [.opendump](-opendump--open-dump-file-.md)と同時に複数のクラッシュ ダンプをデバッグします。 複数のターゲットのセッションを制御する方法の詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+複数のシステムを操作するに使用することができます、 [.opendump](-opendump--open-dump-file-.md)と同時に複数のクラッシュ ダンプをデバッグします。 複数のターゲットのセッションを制御する方法の詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
 **注**コマンドのデバッグの種類ごとに異なる方法で動作しているために、ライブのターゲットと、ダンプ ターゲットをデバッグするときに、問題があります。 たとえば、使用する場合、 **g (移動)** コマンドの場合は、現在のシステムは、ダンプ ファイル、デバッガーが実行を開始がすることはできません戻るデバッガーに割り込む、break コマンドが認識されないため、ダンプ ファイルのデバッグの有効とします。
 

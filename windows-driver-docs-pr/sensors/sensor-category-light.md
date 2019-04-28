@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b4ca05c45f2f7c03d93c450bc41a6febf266d8ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370322"
 ---
 # <a name="sensorcategorylight"></a>センサー\_カテゴリ\_ライト
 
@@ -38,7 +38,7 @@ ms.locfileid: "56538175"
 <thead>
 <tr class="header">
 <th>センサーの種類</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +65,7 @@ ms.locfileid: "56538175"
 <tr class="header">
 <th>データの種類</th>
 <th>種類</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +96,7 @@ ms.locfileid: "56538175"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

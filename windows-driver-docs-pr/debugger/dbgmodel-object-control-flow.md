@@ -4,14 +4,14 @@ description: 完全分析の逆アセンブリの各基本ブロックには、�
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b410b04de5f2ad5172bbd1c3fe85498ac71c6f28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374388"
 ---
 # <a name="control-flow-objects"></a>制御フロー オブジェクト 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 完全分析の逆アセンブリの各`basic block`InboundControlFlows と OutboundControlFlows の両方のプロパティで制御フロー オブジェクトのセットが含まれています。
 ## <a name="object-properties"></a>オブジェクトのプロパティ
 |名前|説明|

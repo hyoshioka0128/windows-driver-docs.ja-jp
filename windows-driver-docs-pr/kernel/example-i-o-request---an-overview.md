@@ -1,6 +1,6 @@
 ---
-title: I/O 要求の例の概要
-description: I/O 要求の例の概要
+title: I/O 要求の例 - 概要
+description: I/O 要求の例 - 概要
 ms.assetid: ffc9030e-4b03-4899-88a0-ed6ffd79fd58
 keywords:
 - ファイル オブジェクトを開く
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d44dbffe7ca156f9341cdc7e8416379d45e344ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361864"
 ---
-# <a name="example-io-request---an-overview"></a>I/O 要求の例の概要
+# <a name="example-io-request---an-overview"></a>I/O 要求の例 - 概要
 
 
 

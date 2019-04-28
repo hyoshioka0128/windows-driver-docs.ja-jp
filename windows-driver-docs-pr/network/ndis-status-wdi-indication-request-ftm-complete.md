@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 90d173cbabb928e587cadf16c2f8c92855748059
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361062"
 ---
 # <a name="ndisstatuswdiindicationrequestftmcomplete"></a>NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
 
@@ -25,10 +25,10 @@ ms.locfileid: "59905439"
 | WDI_STATUS | ヘッダー フィールド。  |   | イベントの一般的な完了状態。 |
 | [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md) | 複数の TLV\<WDI_TLV_FTM_RESPONSE > | x |   | 各ターゲット FTM 応答の一覧。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |
-| サポートされている最小のクライアント | Windows 10、バージョンが 1903 |
+| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
 | サポートされている最小のサーバー | Windows Server 2016 |
 | Header | Dot11wdi.h |

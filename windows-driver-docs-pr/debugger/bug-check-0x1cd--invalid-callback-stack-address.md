@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 67e4619ff0d40926a3084e0a4c04260ce1836cfc
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361764"
 ---
 # <a name="bug-check-bug-check-0x1cd-invalidcallbackstackaddress"></a>チェックのバグ チェック 0x1CD をバグします。無効な\_コールバック\_スタック\_アドレス 
 

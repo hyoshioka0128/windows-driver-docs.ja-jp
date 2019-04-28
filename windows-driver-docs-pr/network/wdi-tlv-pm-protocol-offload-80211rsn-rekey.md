@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 72033a9acd362cc10e77814e659e3b8ef8a92d8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362894"
 ---
 # <a name="wditlvpmprotocoloffload80211rsnrekey"></a>WDI\_TLV\_PM\_プロトコル\_オフロード\_80211RSN\_キー更新
 
@@ -31,12 +31,12 @@ WDI\_TLV\_PM\_プロトコル\_オフロード\_80211RSN\_RSN キーを再入力
 ## <a name="values"></a>値
 
 
-| 種類 | 説明  |
+| 型 | 説明  |
 | --- | --- |
 | [WDI_TLV_RSN_KEY_INFO](wdi-tlv-rsn-key-info.md) | Rsn Eapol キー パラメーター。 |
 | LIST<[WDI_TLV_CONFIGURED_CIPHER_KEY](wdi-tlv-configured-cipher-key.md)> | 設定する構成済みの暗号のリスト[OID_WDI_GET_PM_PROTOCOL_OFFLOAD](oid-wdi-get-pm-protocol-offload.md)します。 ドライバーは、現在構成されている GTK または iGTK キーを返す必要があります。 |
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

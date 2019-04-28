@@ -1,5 +1,5 @@
 ---
-title: Windows - WinDbg のデバッグ ツールをダウンロードします。
+title: Debugging Tools for Windows のダウンロード - WinDbg
 description: このページは、WinDbg などの Windows デバッグ ツールのダウンロードを提供します。
 keywords:
 - Windows デバッグのダウンロードします。
@@ -8,11 +8,11 @@ keywords:
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 478f32454966e96982a46ad4fafab2403362bafe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368141"
 ---
 # <a name="download-debugging-tools-for-windows"></a>Windows 用デバッグ ツールをダウンロードします。
 

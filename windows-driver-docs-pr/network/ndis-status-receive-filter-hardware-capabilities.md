@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_RECEIVE_FILTER_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 258db7d1a2e6e1367bec0d6d87ebfed6b0a18b81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363053"
 ---
 # <a name="ndisstatusreceivefilterhardwarecapabilities"></a>NDIS\_状態\_受信\_フィルター\_ハードウェア\_機能
 
@@ -41,7 +41,7 @@ NDIS フィルターが表示される次の NDIS インターフェイスで使
 
 -   ハードウェアは、負荷分散マルチプレクサー中間ドライバーによって管理されているネットワーク アダプターのフェールオーバー (LBFO) チームのフィルター機能の変更を受信します。 たとえば、ハードウェア受信のフィルターのアダプターを追加またはチームから削除されたときに機能が変わる可能性があります。
 
-    詳細については、[NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)を参照してください。
+    詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)します。
 
 ミニポート ドライバーが発行するとき、次の手順を次の**NDIS\_状態\_受信\_フィルター\_ハードウェア\_機能**状態を示す値。
 

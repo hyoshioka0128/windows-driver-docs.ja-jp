@@ -5,11 +5,11 @@ ms.assetid: 6dcf7c03-e39c-4c1c-b892-2e3e2c8c4b20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5d0736cb652d1636d501a7824e29a345c8d15a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365463"
 ---
 # <a name="installation-requirements-for-display-drivers-optimized-for-windows-7-and-later"></a>Windows 7 以降用に最適化されたディスプレイ ドライバーのインストール要件
 

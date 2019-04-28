@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 564fe7b775c33150bdca8005870c18936abdb2f6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367304"
 ---
 # <a name="bug-check-0x98-endofntevaluationperiod"></a>バグ チェック 0x98:終了\_の\_NT\_評価\_期間
 

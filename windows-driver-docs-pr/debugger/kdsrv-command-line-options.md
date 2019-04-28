@@ -1,5 +1,5 @@
 ---
-title: KdSrv コマンド ライン オプション
+title: KdSrv のコマンドライン オプション
 description: KdSrv コマンドラインは、次の構文を使用します。
 ms.assetid: 95b144c0-4507-4ce4-b828-1ac385dd7165
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b0274b726d70671866fba8728aca9e08e95e58a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367206"
 ---
-# <a name="kdsrv-command-line-options"></a>KdSrv コマンド ライン オプション
+# <a name="kdsrv-command-line-options"></a>KdSrv のコマンドライン オプション
 
 
 KdSrv コマンドラインは、次の構文を使用します。
@@ -36,7 +36,7 @@ kdsrv -t ServerTransport
 
 入力した場合**kdsrv**パラメーターなしのヘルプ テキストを含むメッセージ ボックスが表示されます。
 
-KdSrv の使用方法の詳細については、[KD 接続サーバー (カーネル モード)](kd-connection-servers--kernel-mode-.md)を参照してください。
+KdSrv の使用方法の詳細については、次を参照してください。 [KD 接続サーバー (カーネル モード)](kd-connection-servers--kernel-mode-.md)します。
 
  
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64a709470f58b593f2d53f9421faf4be09e26706
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366982"
 ---
 # <a name="wiadpssheetfeederregistration"></a>WIA\_DPS\_シート\_フィーダー\_登録
 
@@ -33,9 +33,9 @@ WIA\_DPS\_シート\_フィーダー\_REGISTRATION プロパティには、登�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA\_DPS\_シート\_フィーダー\_登録プロパティは、シート フィーダー型、またはハンドヘルド スキャナーのスキャニング ヘッドにドキュメントを水平方向に配置方法を示します。 スキャナーでは、プロパティを使用して、予測のスキャニング ヘッドにユーザーがドキュメントを配置します。

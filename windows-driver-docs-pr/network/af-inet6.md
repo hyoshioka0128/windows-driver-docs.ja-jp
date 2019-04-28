@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -AF_INET6 ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c706e97e6072e23efbbf48b48b043f268ed782c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367812"
 ---
 # <a name="afinet6"></a>AF\_INET6
 
@@ -141,7 +141,7 @@ IPv6 は、各 WSK の次のようなソケットの種類とプロトコルの�
 
 Datagram Sockets SOCK\_DGRAM + IPPROTO\_UDP SOCK\_RAW + IPPROTO\_*Xxx* Connection-Oriented Sockets SOCK\_STREAM + IPPROTO\_TCP
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

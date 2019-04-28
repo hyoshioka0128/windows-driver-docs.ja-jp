@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1ae103d05ffd2262ada7c8043809e7e39b97e07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370752"
 ---
 # <a name="fltparameters-for-irpmjread-union"></a>FLT\_IRP のパラメーター\_MJ\_読み取り共用体
 
@@ -45,7 +45,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **読み取り**  
@@ -54,7 +54,7 @@ typedef union _FLT_PARAMETERS {
 **長さ**  
 長さをバイト単位でデータを読み取る。
 
-**キー**  
+**[キー]**  
 ターゲット ファイルのバイト範囲ロックに関連付けられているキーの値。
 
 **ByteOffset**  

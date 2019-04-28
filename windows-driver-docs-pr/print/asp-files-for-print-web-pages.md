@@ -1,6 +1,6 @@
 ---
-title: Web ページの印刷の ASP ファイル
-description: Web ページの印刷の ASP ファイル
+title: 印刷 Web ページの ASP ファイル
+description: 印刷 Web ページの ASP ファイル
 ms.assetid: 01ca39ed-be16-41fb-b432-1cbd0908358d
 keywords:
 - カスタマイズされた印刷 Web ページ WDK、ASP ファイル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 842227883a534b96507975e210f077872a904ec2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363244"
 ---
-# <a name="asp-files-for-print-web-pages"></a>Web ページの印刷の ASP ファイル
+# <a name="asp-files-for-print-web-pages"></a>印刷 Web ページの ASP ファイル
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56532589"
 
 - キュー内にドキュメント、プリンターのプロパティ、およびプリンター固有の詳細の追加のページ。 印刷キューのページのフレーム内では、これらのページが表示されます。
 
-プリンター固有の詳細ページは、その ASP ファイルを置き換えることでカスタマイズできます。 詳細については、[プリンターの詳細の Web ページをカスタマイズする](customizing-the-printer-details-web-page.md)を参照してください。
+プリンター固有の詳細ページは、その ASP ファイルを置き換えることでカスタマイズできます。 詳細については、次を参照してください。[プリンターの詳細の Web ページをカスタマイズする](customizing-the-printer-details-web-page.md)します。
 
  
 

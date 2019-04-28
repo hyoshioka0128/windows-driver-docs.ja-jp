@@ -1,19 +1,19 @@
 ---
-title: AVStream でハードウェアのコーデック サポートの概要
-description: AVStream でハードウェアのコーデック サポートの概要
+title: AVStream のハードウェア コーデック サポートの概要
+description: AVStream のハードウェア コーデック サポートの概要
 ms.assetid: f8335285-e74f-4600-aee9-7e2881cb0764
 keywords:
 - ハードウェアのコーデック サポート WDK AVStream を使用して
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e21751d64eac49db8337e789474709134f08782
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363623"
 ---
-# <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream でハードウェアのコーデック サポートの概要
+# <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream のハードウェア コーデック サポートの概要
 
 
 以降、Windows 7 で[Windows メディア ファンデーション](https://go.microsoft.com/fwlink/p/?linkid=155069)ユーザー モード Media Foundation 変換 (仕様) として AVStream ベースのメディア コンポーネントを表します。

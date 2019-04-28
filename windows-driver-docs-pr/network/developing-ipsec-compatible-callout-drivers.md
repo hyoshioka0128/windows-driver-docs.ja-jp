@@ -1,6 +1,6 @@
 ---
-title: IPsec と互換性のあるコールアウト ドライバーの開発
-description: IPsec と互換性のあるコールアウト ドライバーの開発
+title: IPsec 互換コールアウト ドライバーの開発
+description: IPsec 互換コールアウト ドライバーの開発
 ms.assetid: 5e4fad4e-a790-4294-b3ac-a796f76265ad
 keywords:
 - IPsec WDK Windows フィルタ リング プラットフォーム、WFP コールアウト ドライバーとの互換性
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4df4238dce5f8e40169e09c891e33fdc42a4ea0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364204"
 ---
-# <a name="developing-ipsec-compatible-callout-drivers"></a>IPsec と互換性のあるコールアウト ドライバーの開発
+# <a name="developing-ipsec-compatible-callout-drivers"></a>IPsec 互換コールアウト ドライバーの開発
 
 
 ### <a name="layers-that-are-compatible-with-ipsec"></a>IPsec と互換性があるレイヤー

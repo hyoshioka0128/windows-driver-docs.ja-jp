@@ -5,11 +5,11 @@ ms.assetid: B2FC1293-F9E4-43A4-84BF-21EF8C3D27E0
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 22ef2a07b95369716d567bb4bfd4c8d3cb94ca63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370386"
 ---
 # <a name="wi-fi-direct-printing"></a>Wi-Fi Direct 印刷
 

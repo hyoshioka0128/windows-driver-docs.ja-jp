@@ -1,6 +1,6 @@
 ---
-title: チューナーを持つビデオ キャプチャ デバイスをサポートしています。
-description: チューナーを持つビデオ キャプチャ デバイスをサポートしています。
+title: チューナーを使用したビデオ キャプチャ デバイスのサポート
+description: チューナーを使用したビデオ キャプチャ デバイスのサポート
 ms.assetid: 3dc71bf7-fee2-4390-bb01-2877b5bd4298
 keywords:
 - ビデオ キャプチャ WDK AVStream、チューナー
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94a05f1fb9f805e6070ba334eeb0877eda5fe60d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364854"
 ---
-# <a name="supporting-video-capture-devices-with-tuners"></a>チューナーを持つビデオ キャプチャ デバイスをサポートしています。
+# <a name="supporting-video-capture-devices-with-tuners"></a>チューナーを使用したビデオ キャプチャ デバイスのサポート
 
 
 次のセクションでは、ビデオ キャプチャ ミニドライバーがさまざまなチューニングのサポートを実装する方法について説明します。

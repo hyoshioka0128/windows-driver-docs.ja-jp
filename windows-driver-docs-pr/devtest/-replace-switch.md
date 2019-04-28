@@ -1,5 +1,5 @@
 ---
-title: /スイッチを置換します。
+title: /Replace スイッチ
 description: 記憶域証明書の管理の強化されたツールの/Replace スイッチには、デバイスに認証サイロ (ASC) の証明書ストアから証明書が置き換えられます。
 ms.assetid: 8fbdeb88-ec38-4ffc-a669-83fd612819ed
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 636891f8495724145fd65d546000b210dfafa246
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361440"
 ---
-# <a name="replace-switch"></a>/スイッチを置換します。
+# <a name="replace-switch"></a>/Replace スイッチ
 
 
 **置換/** 拡張記憶域証明書管理ツールのスイッチには、IEEE 1667 準拠 USB ストレージ デバイスに認証サイロ (ASC) の証明書ストアから指定された証明書が置き換えられます。
@@ -39,7 +39,7 @@ ms.locfileid: "56559777"
 
 
 <span id="_______-Volume______"></span><span id="_______-volume______"></span><span id="_______-VOLUME______"></span> **-ボリューム**   
-ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)を参照してください。
+ターゲット デバイスのボリューム名。 このパラメーターの書式設定に関する詳細については、次を参照してください。[拡張記憶域証明書の管理ツールの概要](overview-of-the-enhanced-storage-certificate-management-tool.md)します。
 
 **注**  IEEE 1667 準拠 USB ストレージ デバイスをコンピューターに現在接続されているボリューム名の一覧を生成する入力**EhStorCertMgrCmd/List**コマンド プロンプトで、キーを押します入力します。
 
@@ -98,11 +98,11 @@ ms.locfileid: "56559777"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>なし</strong></p></td>
+<td align="left"><p><strong>None</strong></p></td>
 <td align="left"><p>証明書は検証されません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>基本的な</strong></p></td>
+<td align="left"><p><strong>基本</strong></p></td>
 <td align="left"><p>証明書は、標準的な IEEE 1667 内で定義されている基本的な検証ポリシーを使用して検証します。</p></td>
 </tr>
 <tr class="odd">
@@ -128,17 +128,17 @@ ms.locfileid: "56559777"
 <span id="_______-Store______"></span><span id="_______-store______"></span><span id="_______-STORE______"></span> **ストア**   
 ホスト上の証明書ストアに証明書の名前。 証明書ストアに証明書が見つかった場合は、それがターゲット デバイスに追加されます。
 
-詳細については、[Windows 証明書ストアから証明書をインポートする](importing-certificates-from-a-windows-certificate-store.md)を参照してください。
+詳細については、次を参照してください。 [Windows 証明書ストアから証明書をインポートする](importing-certificates-from-a-windows-certificate-store.md)します。
 
 <span id="_______-File______"></span><span id="_______-file______"></span><span id="_______-FILE______"></span> **-ファイル**   
 パスと証明書を含むファイルの名前。 証明書ファイルが見つかると、ツールにより、ターゲット デバイスに追加します。 MakeCert ツールを使用して作成またはインポートを使用してこの証明書がでした、 [ **/Export スイッチ**](-export-switch.md)の記憶域証明書の管理の強化されたツールです。
 
-詳細については、[ファイルから証明書をインポートする](importing-certificates-from-a-file.md)を参照してください。
+詳細については、次を参照してください。[ファイルから証明書をインポートする](importing-certificates-from-a-file.md)します。
 
 <span id="_______-New______"></span><span id="_______-new______"></span><span id="_______-NEW______"></span> **-新しい**   
 パスと、自己署名証明書の作成に使用される仕様を含むファイルの名前。 ファイルが検出された、仕様は有効な場合は、ツール、証明書を作成、デジタル署名、およびターゲット デバイスに証明書を追加します。
 
-詳細については、[ **USB ストレージ デバイス用の証明書を作成する**](creating-certificates-for-usb-storage-devices.md)を参照してください。
+詳細については、次を参照してください。 [ **USB ストレージ デバイス用の証明書を作成する**](creating-certificates-for-usb-storage-devices.md)します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 

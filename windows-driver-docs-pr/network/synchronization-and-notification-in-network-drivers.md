@@ -1,6 +1,6 @@
 ---
-title: 同期とネットワーク ドライバーでの通知
-description: 同期とネットワーク ドライバーでの通知
+title: ネットワーク ドライバーの同期と通知
+description: ネットワーク ドライバーの同期と通知
 ms.assetid: 9fd9306f-5431-485f-9d6b-f7d6f25ea1ce
 keywords:
 - WDK ネットワークのリソースへのアクセスを同期します。
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 419fb53f0e53eecb6441c148ad975dcb70622c32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362550"
 ---
-# <a name="synchronization-and-notification-in-network-drivers"></a>同期とネットワーク ドライバーでの通知
+# <a name="synchronization-and-notification-in-network-drivers"></a>ネットワーク ドライバーの同期と通知
 
 
 

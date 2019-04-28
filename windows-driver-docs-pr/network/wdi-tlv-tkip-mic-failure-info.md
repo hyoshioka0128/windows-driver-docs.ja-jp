@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_TKIP_MIC_FAILURE_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 13b6330657672957b1ed7d59f4dea9c82a3f8ced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366626"
 ---
 # <a name="wditlvtkipmicfailureinfo"></a>WDI\_TLV\_TKIP\_MIC\_エラー\_情報
 
@@ -39,7 +39,7 @@ WDI\_TLV\_TKIP\_MIC\_エラー\_情報が [tkip] MIC のエラー情報を含む
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_PHY_SUPPORTED_TX_DATA_RATES_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 51f2ab4d7ae7858b3ba265207daace6dc5c19bd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363741"
 ---
 # <a name="wditlvphysupportedtxdatarateslist"></a>WDI\_TLV\_PHY\_サポートされている\_TX\_データ\_料金\_一覧
 

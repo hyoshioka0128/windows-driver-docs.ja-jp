@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d80259093c3b6b18952cd90e88dd2df51983cb5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363687"
 ---
 # <a name="guiddevinterfacesideshow"></a>GUID_DEVINTERFACE_SIDESHOW
 
@@ -51,12 +51,12 @@ GUID_DEVINTERFACE_SIDESHOW[デバイス インターフェイス クラス](http
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Windows Sideshow と互換性のあるデバイスのドライバーでは、システムと Windows SideShow デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_SIDESHOW のインスタンスを登録します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

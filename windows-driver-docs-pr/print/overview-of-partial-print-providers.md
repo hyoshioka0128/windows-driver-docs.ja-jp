@@ -1,6 +1,6 @@
 ---
-title: 部分的な印刷プロバイダーの概要
-description: 部分的な印刷プロバイダーの概要
+title: 部分的印刷プロバイダーの概要
+description: 部分的印刷プロバイダーの概要
 ms.assetid: 622f99e3-d4a5-42f0-ab71-4d256e0ea02c
 keywords:
 - WDK、部分的な印刷プロバイダーのプロバイダーを印刷します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4115664165373c56a771180dad0187f65636830
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362742"
 ---
-# <a name="overview-of-partial-print-providers"></a>部分的な印刷プロバイダーの概要
+# <a name="overview-of-partial-print-providers"></a>部分的印刷プロバイダーの概要
 
 
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc6396f97175122301d7dcd471c455ba2c02fdc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369286"
 ---
 # <a name="controlling-device-namespace-access"></a>デバイスの名前空間アクセスの制御
 
@@ -30,7 +30,7 @@ WDM ドライバーは、デバイスの名前空間のすべての名前をオ�
 
 ほとんどのドライバーは、デバイスの名前空間にオープン操作のサポートを実装していませんが、すべてのドライバーがデバイスの名前空間に未承認のアクセスを防ぐためにセキュリティがチェックを提供する必要があります。 デバイスの名前空間内のファイル オープン要求の既定では、セキュリティを確認します (たとえば、"\\*デバイス*\\*DeviceName* \\ *ファイル名*")、ドライバーを自由に残されます: デバイス オブジェクトの ACL は、オペレーティング システムによってチェックされません。
 
-デバイス オブジェクトのファイルの場合\_デバイス\_SECURE\_オープンの特性が設定されている、システムでは、デバイスの名前空間のすべてのファイル オープン要求にデバイス オブジェクトのセキュリティ記述子が適用されます。 ドライバー ファイルを設定できます\_デバイス\_SECURE\_でデバイス オブジェクトを作成するときに開く[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)または[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。 WDM ドライバー、ファイル\_デバイス\_SECURE\_オープンをレジストリに設定することもできます。 デバイス オブジェクトによって作成される非 WDM ドライバーのレジストリに設定することも**IoCreateDeviceSecure**します。 デバイス オブジェクト プロパティの設定、レジストリ内のデバイスの特性などの詳細については、[レジストリにデバイス オブジェクト プロパティの設定](setting-device-object-properties-in-the-registry.md)を参照してください。 デバイスの特性の詳細については、[デバイスの特性を指定する](specifying-device-characteristics.md)を参照してください。
+デバイス オブジェクトのファイルの場合\_デバイス\_SECURE\_オープンの特性が設定されている、システムでは、デバイスの名前空間のすべてのファイル オープン要求にデバイス オブジェクトのセキュリティ記述子が適用されます。 ドライバー ファイルを設定できます\_デバイス\_SECURE\_でデバイス オブジェクトを作成するときに開く[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)または[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。 WDM ドライバー、ファイル\_デバイス\_SECURE\_オープンをレジストリに設定することもできます。 デバイス オブジェクトによって作成される非 WDM ドライバーのレジストリに設定することも**IoCreateDeviceSecure**します。 デバイス オブジェクト プロパティの設定、レジストリ内のデバイスの特性などの詳細については、次を参照してください。[レジストリにデバイス オブジェクト プロパティの設定](setting-device-object-properties-in-the-registry.md)します。 デバイスの特性の詳細については、次を参照してください。[デバイスの特性を指定する](specifying-device-characteristics.md)します。
 
 名前空間をサポートしているデバイスのドライバーは、デバイスの名前空間内のファイル オープン要求が正しく処理されることを確認するのに 2 つのメソッドのいずれかを使用する必要があります。
 

@@ -1,17 +1,17 @@
 ---
-title: アイドル状態とアクティブな電源の GPU の電源管理
+title: アイドル状態および現在使用されている電源の GPU 電源管理
 description: GPU の電源管理インフラストラクチャにより Windows Display Driver Model (WDDM) 1.2、およびそれ以降のドライバーは、個々 のデバイスまたは一連のデバイスの電源を管理します。
 ms.assetid: F8096F7E-39EA-45CB-8A1C-60A7A298AFEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 944d08c13f17ec0853897f855e1d8cc4d9a50bc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365027"
 ---
-# <a name="gpu-power-management-of-idle-states-and-active-power"></a>アイドル状態とアクティブな電源の GPU の電源管理
+# <a name="gpu-power-management-of-idle-states-and-active-power"></a>アイドル状態および現在使用されている電源の GPU 電源管理
 
 
 Windows 8 以降では、省略可能な GPU の電源管理インフラストラクチャが使用可能な Windows Display Driver Model (WDDM) 1.2 を使用して、以降のドライバーが個々 のデバイスまたは一連のデバイスの電源を管理します。 このインフラストラクチャは、Windows とのコラボレーションに F 状態と P 状態の電源管理をサポートするために標準化されたメカニズムを提供します。

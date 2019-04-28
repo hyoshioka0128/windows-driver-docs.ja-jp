@@ -5,11 +5,11 @@ ms.assetid: 11B54F92-DC84-4D74-9BBE-C85047AD2167
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 125af7694a4e113e821ad9f4d196dc4cb2a7a96c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371215"
 ---
 # <a name="gnss-driver-architecture"></a>GNSS ドライバーのアーキテクチャ
 
@@ -200,7 +200,7 @@ GNSS アダプター GNSS ドライバーからこのような要求を積極的
 
 診断用には、GNSS ドライバーはエラーとその他の診断情報を以下に示すログ メカニズム (WPP) が規定されている Microsoft または ETW を使用してログインする必要があります。 お勧め、ETW ではなく、ログ目的で、WPP を使用するドライバーの両方のメカニズムがサポートされています。 WPP 推奨される理由は、ドライバーのデバッグに役立つツールの可用性です。
 
-ドライバーは、人間が判読できる、情報をログインしない必要があります。 またはログ記録方法を規定これ以外の場合は、します。 詳細については、[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)を参照してください。
+ドライバーは、人間が判読できる、情報をログインしない必要があります。 またはログ記録方法を規定これ以外の場合は、します。 詳細については、次を参照してください。 [WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)します。
 
 WPP ソフトウェア トレースとメッセージのログ記録は、Windows イベント ログ サービスを使用すると似ています。 ドライバーでは、メッセージ ID と書式設定されていないバイナリ データをログ ファイルに記録します。 その後、ポスト プロセッサは、人間が判読できる形式にログ ファイルの情報を変換します。 ただし、WPP ソフトウェア トレースは、可能で、イベント ログ サービスでサポートされているよりも柔軟なメッセージ形式をサポートします。 たとえば、WPP ソフトウェア トレースでは、IP アドレス、Guid、システム Id、タイムスタンプ、およびその他の有用なデータ型の組み込みサポートがあります。 さらに、ユーザーは、そのアプリケーションに関連するカスタム データ型を追加できます。
 

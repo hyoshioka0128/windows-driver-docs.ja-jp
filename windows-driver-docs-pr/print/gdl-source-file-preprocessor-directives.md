@@ -1,6 +1,6 @@
 ---
-title: GDL ソース ファイルのプリプロセッサ ディレクティブ
-description: GDL ソース ファイルのプリプロセッサ ディレクティブ
+title: GDL ソース ファイル プリプロセッサ ディレクティブ
+description: GDL ソース ファイル プリプロセッサ ディレクティブ
 ms.assetid: cc0f807f-5c06-4add-bed1-c15c8251dc98
 keywords:
 - WDK GDL、ソース ファイルのプリプロセッサ ディレクティブのディレクティブ
@@ -22,13 +22,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ba7be92d123a993a953bcf7fbb665d9dc5efdc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368892"
 ---
-# <a name="gdl-source-file-preprocessor-directives"></a>GDL ソース ファイルのプリプロセッサ ディレクティブ
+# <a name="gdl-source-file-preprocessor-directives"></a>GDL ソース ファイル プリプロセッサ ディレクティブ
 
 
 元の GPD パーサーのように、GDL パーサーには、プリプロセッサ ディレクティブがサポートされています。 プリプロセッサ ディレクティブは、その他の解析前に処理されます。 プリプロセス フェーズでは、プリプロセッサ ディレクティブだけが認識され、ディレクティブ以外のすべてのエントリはブラック ボックス データとして扱われます。 前処理のフレーズの中にすべてのプリプロセッサ ディレクティブは、後続の解析フェーズは、プリプロセッサ構文に対処する必要はありませんので、入力ストリームから削除されます。
@@ -37,9 +37,9 @@ ms.locfileid: "56536574"
 
 プリプロセッサ ディレクティブを使用して、特定の[GDL プリプロセッサ構文](gdl-preprocessor-syntax.md)と[GDL プリプロセッサ キーワード](gdl-preprocessor-keywords.md)します。
 
-GDL プリプロセッサ ディレクティブは、GPD プリプロセッサ ディレクティブの拡張機能です。 GDL および GPD のプリプロセッサ ディレクティブの違いの詳細については、[GDL 間の相違点と GPD 前処理](differences-between-gdl-and-gpd-preprocessing.md)を参照してください。
+GDL プリプロセッサ ディレクティブは、GPD プリプロセッサ ディレクティブの拡張機能です。 GDL および GPD のプリプロセッサ ディレクティブの違いの詳細については、次を参照してください。 [GDL 間の相違点と GPD 前処理](differences-between-gdl-and-gpd-preprocessing.md)します。
 
-GDL プリプロセッサ ディレクティブは、1 つだけな GDL ディレクティブです。 GDL ディレクティブの他の種類の詳細については、[GDL ディレクティブ](gdl-directives.md)を参照してください。
+GDL プリプロセッサ ディレクティブは、1 つだけな GDL ディレクティブです。 GDL ディレクティブの他の種類の詳細については、次を参照してください。 [GDL ディレクティブ](gdl-directives.md)します。
 
 次に、GDL プリプロセッサのキーワードの概要を示します。
 

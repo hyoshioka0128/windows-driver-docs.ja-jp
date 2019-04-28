@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 276622c2e08332d08edf16d759371a717fc528a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361923"
 ---
 # <a name="fltparameters-for-irpmjqueryquota-union"></a>FLT\_IRP のパラメーター\_MJ\_クエリ\_クォータ共用体
 
@@ -52,7 +52,7 @@ typedef union _FLT_PARAMETERS {
 **QueryQuota**  
 次のメンバーを含む構造体。
 
-**Length**  
+**長さ**  
 バッファーのバイト単位の長さを**QuotaBuffer**を指します。
 
 **StartSid**  
@@ -70,14 +70,14 @@ typedef union _FLT_PARAMETERS {
 **MdlAddress**  
 バッファーを記述するメモリ記述子一覧 (MDL) のアドレスを**QuotaBuffer**を指します。 このメンバーは省略可能とは、 **NULL**します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の構造体[ **IRP\_MJ\_クエリ\_クォータ**](irp-mj-query-quota.md)操作にコールバック データによって表される IRP ベース クォータ情報の照会操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620))構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
 
 IRP\_MJ\_クエリ\_クォータは IRP ベースの操作。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

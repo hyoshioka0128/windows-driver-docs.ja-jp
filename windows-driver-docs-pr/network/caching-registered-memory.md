@@ -1,6 +1,6 @@
 ---
-title: 登録済みのメモリのキャッシュ
-description: 登録済みのメモリのキャッシュ
+title: 登録済みメモリのキャッシュ
+description: 登録済みメモリのキャッシュ
 ms.assetid: e1040f6a-6e65-462a-a79a-5d05d36787b0
 keywords:
 - SAN 接続のセットアップ WDK、登録されているメモリのキャッシュ
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a0f85cef0e19d4dd2fe97cd85e733723e016665
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367680"
 ---
-# <a name="caching-registered-memory"></a>登録済みのメモリのキャッシュ
+# <a name="caching-registered-memory"></a>登録済みメモリのキャッシュ
 
 
 
@@ -43,7 +43,7 @@ SAN サービス プロバイダーは、キャッシュし、次の一覧に示
 
 5.  SAN ソケットをローカルとリモート ピア間の接続が閉じられる前に SAN サービス プロバイダーはキャッシュ バッファーをリリースする必要があります。
 
-**注**  プロキシ ドライバーを使用する必要があります、**試用/を除く**メカニズムを呼び出すことによって保護されたユーザー モード バッファーにアクセスするコードの周り**MmSecureVirtualMemory**にオペレーティング システムのクラッシュを防止します。 プロキシのドライバーがセキュリティで保護してバッファーを解放する方法についての詳細については、[の保護と仮想アドレスの所有権を解放する](securing-and-releasing-ownership-of-virtual-addresses.md)を参照してください。 詳細については**試用/を除く**、Visual C のドキュメントを参照してください。 について**VirtualFree**、Microsoft Windows SDK のドキュメントを参照してください。
+**注**  プロキシ ドライバーを使用する必要があります、**試用/を除く**メカニズムを呼び出すことによって保護されたユーザー モード バッファーにアクセスするコードの周り**MmSecureVirtualMemory**にオペレーティング システムのクラッシュを防止します。 プロキシのドライバーがセキュリティで保護してバッファーを解放する方法についての詳細については、次を参照してください。[の保護と仮想アドレスの所有権を解放する](securing-and-releasing-ownership-of-virtual-addresses.md)します。 詳細については**試用/を除く**、Visual C のドキュメントを参照してください。 について**VirtualFree**、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d76c003ba7304593bea2007bcadadbfa4dfe2bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366200"
 ---
 # <a name="the-vssdump-tool"></a>VSSDump ツール
 
@@ -27,7 +27,7 @@ VSSDump (Vssdump.exe) ツールは、Microsoft Visual SourceSafe のインデッ
 
 **ssindex.cmd -server=vss**
 
-SSIndex はどこからでもスクリプトを実行して、ソース ファイルと .pdb ファイルの場所を個別に指定できるようにするパラメーターを受け取ります。 これは、ソースが出力の .pdb ファイルから別の場所に保持される場合に便利です。 次に、例を示します。
+SSIndex はどこからでもスクリプトを実行して、ソース ファイルと .pdb ファイルの場所を個別に指定できるようにするパラメーターを受け取ります。 これは、ソースが出力の .pdb ファイルから別の場所に保持される場合に便利です。 例:
 
 **ssindex.cmd -server=vss -source=c:\\**<em>source</em> **-symbols=c:\\**<em>outputdir</em>
 

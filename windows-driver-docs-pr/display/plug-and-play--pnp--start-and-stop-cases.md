@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f7ea04050b879a58e41dbb6a143e77dbd90756f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366183"
 ---
 # <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>WDDM 1.2 以降でのプラグ アンド プレイ (PnP)
 
@@ -141,7 +141,7 @@ Windows 8 以降、Microsoft DirectX グラフィックスのカーネルのサ�
 
  
 
-PnP の要件についての詳細とその他の状態遷移は、[WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md)を参照してください。
+PnP の要件についての詳細とその他の状態遷移は、次を参照してください。 [WDDM 1.2 以降のシームレスな状態遷移を提供する](seamless-state-transitions-in-wddm-1-2-and-later.md)します。
 
 ## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
 

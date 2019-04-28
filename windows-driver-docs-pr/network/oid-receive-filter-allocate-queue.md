@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_ALLOCATE_QUEUE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d319435cfe9d5856dd03438343a6905598556483
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364095"
 ---
 # <a name="oidreceivefilterallocatequeue"></a>OID\_受信\_フィルター\_ALLOCATE\_キュー
 
@@ -19,7 +19,7 @@ ms.locfileid: "56578423"
 
 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造体。 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 **NDIS\_OID\_要求**構造体にはへのポインターが含まれています、 **NDIS\_受信\_キュー\_パラメーター**新しいキューの識別子を持つ構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 OID の OID メソッド要求\_受信\_フィルター\_ALLOCATE\_キューは NDIS 6.20 が動作し、それ以降のミニポート ドライバーの省略可能です。 仮想マシン キュー (VMQ) インターフェイスをサポートするミニポート ドライバーに対して必要があります。
@@ -91,7 +91,7 @@ NDIS またはミニポート ドライバーのいずれかの OID の OID メ�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

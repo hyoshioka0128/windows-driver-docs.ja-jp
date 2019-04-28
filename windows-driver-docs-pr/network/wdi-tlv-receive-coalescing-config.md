@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_RECEIVE_COALESCING_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ca82dfd24a199ca5180bb93d2139fd7f915e9c73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360193"
 ---
 # <a name="wditlvreceivecoalescingconfig"></a>WDI\_TLV\_受信\_COALESCING\_構成
 
@@ -31,7 +31,7 @@ WDI\_TLV\_受信\_COALESCING\_構成が含む TLV は、結合の構成を受信
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                         |
+| 型   | 説明                                                         |
 |--------|---------------------------------------------------------------------|
 | UINT32 | このフィルターに一致するパケットをキューに一意のキュー ID。            |
 | UINT32 | 1 からサポートされているフィルターの数の値でフィルター ID。 |
@@ -39,7 +39,7 @@ WDI\_TLV\_受信\_COALESCING\_構成が含む TLV は、結合の構成を受信
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

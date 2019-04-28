@@ -1,22 +1,22 @@
 ---
-title: GDI のハードウェア高速化
-description: GDI のハードウェア高速化
+title: GDI ハードウェア アクセラレータ
+description: GDI ハードウェア アクセラレータ
 ms.assetid: 03db58e6-a6d5-4b6f-ba71-d22a985f9c57
 keywords:
-- ミニポート ドライバー WDK を表示します。
+- ミニポート ドライバー WDK ディスプレイ
 - GDI ハードウェア アクセラレータ WDK の表示
 - 接続と構成が表示されます (CCD) WDK の表示
 - GDI WDK ディスプレイを使用したハードウェア高速化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a6ec582440317c85574b81987c5405065f3366f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363846"
 ---
-# <a name="gdi-hardware-acceleration"></a>GDI のハードウェア高速化
+# <a name="gdi-hardware-acceleration"></a>GDI ハードウェア アクセラレータ
 
 
 Windows 7 で導入された GDI ハードウェア アクセラレータ機能は、高速コア グラフィックス グラフィックス処理装置 (GPU) でデバイス インターフェイス (GDI) の操作を提供します。

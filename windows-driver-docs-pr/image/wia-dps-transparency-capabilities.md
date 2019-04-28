@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f139d481dcb75b280c5794449356e8d38435e6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366974"
 ---
 # <a name="wiadpstransparencycapabilities"></a>WIA\_DPS\_透明度\_機能
 

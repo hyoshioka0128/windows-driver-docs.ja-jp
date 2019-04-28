@@ -5,11 +5,11 @@ ms.assetid: 74CAAD8B-7009-4C79-A496-93B4A3DA0B43
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c7fcadadbc051005d0ae467cf986bb93731da5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362024"
 ---
 # <a name="setting-the-pci-configuration-data-of-a-virtual-function"></a>仮想関数の PCI 構成データの設定
 

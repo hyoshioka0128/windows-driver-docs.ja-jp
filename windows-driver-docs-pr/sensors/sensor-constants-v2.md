@@ -5,11 +5,11 @@ ms.assetid: F3ED56C2-56AF-44FA-9ED8-7A16F1711AC7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d51eff0565c82d4d4999b8cb3e6370b36230b678
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368874"
 ---
 # <a name="sensor-constants"></a>センサー定数
 
@@ -40,11 +40,11 @@ Windows ユニバーサル センサーでは、さまざまな方法で定数�
 
 ## <a name="persistent-unique-identifier"></a>永続的な一意識別子
 
-DEVPKEY_Sensor_PersistentUniqueId をという名前のセンサー プロパティには、特別な注意が必要です。 このプロパティの値は、デバイスで各センサーに対して一意である必要があります。 同時に、この値する必要がありますのままに一貫性のある特定のセンサーのセンサー プラットフォームでは、それを使用するたびにします。 ドライバーのコードで永続的な一意識別子を作成する方法の例は、[永続的な一意の識別子を作成する](creating-a-persistent-unique-identifier-v2.md)を参照してください。
+DEVPKEY_Sensor_PersistentUniqueId をという名前のセンサー プロパティには、特別な注意が必要です。 このプロパティの値は、デバイスで各センサーに対して一意である必要があります。 同時に、この値する必要がありますのままに一貫性のある特定のセンサーのセンサー プラットフォームでは、それを使用するたびにします。 ドライバーのコードで永続的な一意識別子を作成する方法の例は、次を参照してください。[永続的な一意の識別子を作成する](creating-a-persistent-unique-identifier-v2.md)します。
 
 ### <a name="custom-values"></a>カスタム値
 
 カテゴリ、種類のセンサー、データ フィールド、およびプロパティのカスタム値を定義することができます。
 
-ガイドラインと定数のカスタム値を定義する方法の例では、[定数のカスタム値を定義する](defining-custom-values-for-constants-v2.md)を参照してください。
+ガイドラインと定数のカスタム値を定義する方法の例では、次を参照してください。[定数のカスタム値を定義する](defining-custom-values-for-constants-v2.md)します。
 

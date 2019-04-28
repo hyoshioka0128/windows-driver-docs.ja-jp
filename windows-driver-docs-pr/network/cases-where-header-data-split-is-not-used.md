@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c09a64994118e165413f086281dd0250655638a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368334"
 ---
 # <a name="cases-where-header-data-split-is-not-used"></a>ヘッダー データの分割が使用されないケース
 
@@ -34,7 +34,7 @@ ms.locfileid: "56579372"
 
 -   これらの場所のいずれかで、分割できない場合は、フレームを分割しない: 上のレイヤー プロトコル ヘッダーの先頭、TCP ペイロードの先頭または UDP ペイロードの先頭にあります。
 
--   ヘッダーに分割できる場合を除き、構成されているヘッダーの最大サイズを超えるフレームに分割しない、[上のレイヤー プロトコル ヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。 ヘッダーの最大サイズの詳細については、[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)を参照してください。
+-   ヘッダーに分割できる場合を除き、構成されているヘッダーの最大サイズを超えるフレームに分割しない、[上のレイヤー プロトコル ヘッダーの先頭](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)します。 ヘッダーの最大サイズの詳細については、次を参照してください。[ヘッダーのバッファーを割り当てる](allocating-the-header-buffer.md)します。
 
 -   NIC が認識されない IPv4 オプションを含むフレームに分割しません。
 

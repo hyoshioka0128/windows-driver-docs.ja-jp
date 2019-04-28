@@ -1,16 +1,16 @@
 ---
-Description: Using the WpdInfo Tool
-title: WpdInfo ツールを使用します。
+Description: WpdInfo Tool の使用
+title: WpdInfo Tool の使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9aa82e03e15fe8334a20a437e1ef558442c1de59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370685"
 ---
-# <a name="using-the-wpdinfo-tool"></a>WpdInfo ツールを使用します。
+# <a name="using-the-wpdinfo-tool"></a>WpdInfo Tool の使用
 
 
 *WpdInfo.exe*ツールは Windows ベースのアプリケーションで、機能をテストするには、ドライバーで使用することができます。 このツールを使用するには、次のタスクを実行します。

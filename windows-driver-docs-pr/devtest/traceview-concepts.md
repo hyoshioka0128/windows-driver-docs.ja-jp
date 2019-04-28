@@ -1,6 +1,6 @@
 ---
-title: Traceview での概念
-description: Traceview での概念
+title: TraceView の概念
+description: TraceView の概念
 ms.assetid: 4fab2b23-8f7b-407b-b944-41ac8caf1a75
 keywords:
 - Traceview で WDK、用語集
@@ -17,19 +17,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de4318021c115d9e983f4339eb94f50824fb28e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369625"
 ---
-# <a name="traceview-concepts"></a>Traceview での概念
+# <a name="traceview-concepts"></a>TraceView の概念
 
 ## <span id="ddk_traceview_concepts_tools"></span><span id="DDK_TRACEVIEW_CONCEPTS_TOOLS"></span>
 
 このトピックでは、traceview で使用される概念を説明します。
 
-WDK のトレース ツールに共通する概念については、[トレース ツールの概念](tracing-tool-concepts.md)を参照してください。
+WDK のトレース ツールに共通する概念については、次を参照してください。[トレース ツールの概念](tracing-tool-concepts.md)します。
 
 ### <a name="span-idtracesessiongroupspanspan-idtracesessiongroupspanspan-idtracesessiongroupspantrace-session-group"></a><span id="Trace_Session_Group"></span><span id="trace_session_group"></span><span id="TRACE_SESSION_GROUP"></span>トレース セッションのグループ
 
@@ -37,7 +37,7 @@ Traceview で結合できます。[トレース ログ](trace-log.md)表示ま�
 
 既定では、各トレース セッションは、そのトレース セッションのみで構成されるトレース セッションのグループのメンバーです。
 
-トレース セッションのグループを作成する方法の詳細については、[トレース セッションをグループ化](grouping-trace-sessions.md)を参照してください。
+トレース セッションのグループを作成する方法の詳細については、次を参照してください。[トレース セッションをグループ化](grouping-trace-sessions.md)します。
 
 ### <a name="span-idworkspacespanspan-idworkspacespanspan-idworkspacespanworkspace"></a><span id="Workspace"></span><span id="workspace"></span><span id="WORKSPACE"></span>ワークスペース
 
@@ -55,7 +55,7 @@ Traceview で、*ワークスペース*一連のトレース セッションの�
 
 リアルタイムのトレース セッションのワークスペースを開くと、traceview では、保存されているプロパティおよび構成設定の新しいトレース セッションを開始します。 トレース ログの表示のためのワークスペースを開くと、それを構成したとおり、ログが表示されます。
 
-詳細については、[traceview でワークスペースを使用して](using-traceview-workspaces.md)を参照してください。
+詳細については、次を参照してください。 [traceview でワークスペースを使用して](using-traceview-workspaces.md)します。
 
 ### <a name="span-idspecifyingtraceprovidersspanspan-idspecifyingtraceprovidersspanspan-idspecifyingtraceprovidersspanspecifying-trace-providers"></a><span id="Specifying_Trace_Providers"></span><span id="specifying_trace_providers"></span><span id="SPECIFYING_TRACE_PROVIDERS"></span>トレース プロバイダーを指定します。
 

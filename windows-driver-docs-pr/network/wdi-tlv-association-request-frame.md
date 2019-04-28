@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_ASSOCIATION_REQUEST_FRAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ed020c91b3dafcd8490f1a86f850a4d7f21b207
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363038"
 ---
 # <a name="wditlvassociationrequestframe"></a>WDI\_TLV\_アソシエーション\_要求\_フレーム
 
@@ -31,13 +31,13 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                                                                                                                       |
+| 型      | 説明                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8\[\] | 関連付けに使用された関連要求を指定する UINT8 要素の配列。 これは、802.11 MAC ヘッダーには含まれません。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

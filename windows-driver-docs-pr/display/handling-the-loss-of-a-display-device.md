@@ -1,19 +1,19 @@
 ---
-title: ディスプレイ デバイスの損失を処理
-description: ディスプレイ デバイスの損失を処理
+title: ディスプレイ デバイスの喪失の処理
+description: ディスプレイ デバイスの喪失の処理
 ms.assetid: 7af8d7e6-733d-4976-a516-7b41fa74dd5d
 keywords:
 - OPM WDK ディスプレイ、デバイスの紛失
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 70740e4ce89c1aaebe5b9230019826dbd51941c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366020"
 ---
-# <a name="handling-the-loss-of-a-display-device"></a>ディスプレイ デバイスの損失を処理
+# <a name="handling-the-loss-of-a-display-device"></a>ディスプレイ デバイスの喪失の処理
 
 
 次のシナリオは、表示のミニポート ドライバーに呼び出しを開始する[ **DxgkDdiOPMDestroyProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559708)グラフィックス アダプターのコンテンツの保護のコネクタがありますの出力中に関数有効になります。

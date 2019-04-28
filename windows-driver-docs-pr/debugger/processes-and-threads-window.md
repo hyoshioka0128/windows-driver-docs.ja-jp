@@ -1,6 +1,6 @@
 ---
-title: プロセスと WinDbg でスレッドを制御します。
-description: プロセスと WinDbg でスレッドを制御します。
+title: WinDbg でのプロセスとスレッドの制御
+description: WinDbg でのプロセスとスレッドの制御
 ms.assetid: d4755889-9a65-4e81-b3a3-e0bbc6324d3e
 keywords:
 - デバッグ情報のウィンドウ、プロセスとスレッド ウィンドウ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee0b3de8d15f9fa23b2c7c754efbcf7716f5e14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362407"
 ---
-# <a name="controlling-processes-and-threads-in-windbg"></a>プロセスと WinDbg でスレッドを制御します。
+# <a name="controlling-processes-and-threads-in-windbg"></a>WinDbg でのプロセスとスレッドの制御
 
 
 ## <span id="ddk_processes_and_threads_window_dbg"></span><span id="DDK_PROCESSES_AND_THREADS_WINDOW_DBG"></span>
@@ -54,7 +54,7 @@ ms.locfileid: "56553552"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のメソッドを表示するか、システムを制御するのでは、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。 その他のメソッドを表示するか、プロセスとスレッドを制御するのでは、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+その他のメソッドを表示するか、システムを制御するのでは、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。 その他のメソッドを表示するか、プロセスとスレッドを制御するのでは、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
  
 

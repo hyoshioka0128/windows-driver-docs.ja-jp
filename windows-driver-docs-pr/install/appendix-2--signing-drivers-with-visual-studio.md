@@ -5,13 +5,13 @@ ms.assetid: 4021543C-A3F3-421D-A6C2-087DA350B21D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e36070b8d348106f5dcf26dbcb9cc11a6bee3e9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366180"
 ---
-# <a name="appendix-2-signing-drivers-with-visual-studio"></a>付録 2:Visual Studio を使用したドライバーの署名
+# <a name="appendix-2-signing-drivers-with-visual-studio"></a>付録 2: Visual Studio を使用したドライバーの署名
 
 
 ## <a name="driver-signing-using-visual-studio-development-environment"></a>Visual Studio 開発環境を使用してドライバーの署名

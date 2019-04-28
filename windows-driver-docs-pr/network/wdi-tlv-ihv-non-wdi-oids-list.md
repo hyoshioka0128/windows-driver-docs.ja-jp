@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_IHV_NON_WDI_OIDS_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d031a2495a8cedf6195ac4ea9438862a3c8b029
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365387"
 ---
 # <a name="wditlvihvnonwdioidslist"></a>WDI\_TLV\_IHV\_非\_WDI\_OID\_一覧
 
@@ -31,13 +31,13 @@ Uint32 型の要素の配列のサイズをバイト単位で。 配列には、
 ## <a name="values"></a>値
 
 
-| 種類       | 説明                                                                                                                                                                                       |
+| 型       | 説明                                                                                                                                                                                       |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32\[\] | リストの非-WDI Oid、アダプターは、オペレーティング システムに提供する必要があります。 アダプターはオペレーティング システムで非-WDI Oid この一覧に一致するが既にフィルター処理すると想定する必要があります。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

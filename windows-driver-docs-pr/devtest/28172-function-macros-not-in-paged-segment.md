@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28172
 ms.openlocfilehash: 1569c1bc5f8e3cceed3c41a51fa3a2bb17f45de8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361472"
 ---
 # <a name="c28172"></a>C28172
 
@@ -23,7 +23,7 @@ C28172 を警告します。関数がページングされた\_コードまた�
 
 ページを含む関数\_コードまたはページング\_コード\_を使用してページングされたメモリ内にロック済みのマクロが配置されていません**\#プラグマ アロケーション\_テキスト**または**\#プラグマ コード\_seg**します。 コード分析ツールでは、ページ セクション名の開始時にセクションではページング可能を推測します。 このエラーは、最初の中かっこに対応する行番号の位置報告 (**{**) 関数。
 
-このエラーは、ページングの関数である場合に通常発生しますが、省略するか、間違っている、プラグマのいずれかがまたは非ページにページから、関数が変更された場合。 詳細については、[警告 C28170](28170-pageable-code-macro-not-found.md)を参照してください。
+このエラーは、ページングの関数である場合に通常発生しますが、省略するか、間違っている、プラグマのいずれかがまたは非ページにページから、関数が変更された場合。 詳細については、次を参照してください。[警告 C28170](28170-pageable-code-macro-not-found.md)します。
 
  
 

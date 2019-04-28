@@ -5,11 +5,11 @@ ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 685fecb635c435e52ecd5a3f7adde5d6075fbab8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363064"
 ---
 # <a name="implementing-ipv6-ns-offload"></a>IPv6 NS オフロードの実装
 
@@ -25,7 +25,7 @@ NDIS プロトコル ドライバーに送信します (NS) として要求を�
 
  
 
-**注**  、一部の Windows ハードウェア認定要件など**Device.Network.LAN.PM.PowMgmtNDIS**と**Device.Network.WLAN.WoWLAN.ImplementWakeOnWLAN**、ミニポート アダプターが少なくとも 2 つの NS オフロード要求をサポートする必要がありますを指定します。 (つまり、他の値、これらの要件に合わせて**NumNSOffloadIPv6Addresses** 2 以上にする必要があります)。詳細については、、 [Windows 8 ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=268621)を参照してください。
+**注**  、一部の Windows ハードウェア認定要件など**Device.Network.LAN.PM.PowMgmtNDIS**と**Device.Network.WLAN.WoWLAN.ImplementWakeOnWLAN**、ミニポート アダプターが少なくとも 2 つの NS オフロード要求をサポートする必要がありますを指定します。 (つまり、他の値、これらの要件に合わせて**NumNSOffloadIPv6Addresses** 2 以上にする必要があります)。詳細については、次を参照してください。、 [Windows 8 ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=268621)します。
 
  
 

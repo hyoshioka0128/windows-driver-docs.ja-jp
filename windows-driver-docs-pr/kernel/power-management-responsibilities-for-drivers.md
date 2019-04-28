@@ -1,6 +1,6 @@
 ---
-title: ドライバーの電源管理の責任
-description: ドライバーの電源管理の責任
+title: ドライバーの電源管理の役割
+description: ドライバーの電源管理の役割
 ms.assetid: c42a5b95-76f3-4975-b452-4858bbbe532e
 keywords:
 - 電源管理の WDK カーネル、ドライバーの責任
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64c14ee52d52d3b1997243ac4906eb5c1eb1178d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369144"
 ---
-# <a name="power-management-responsibilities-for-drivers"></a>ドライバーの電源管理の責任
+# <a name="power-management-responsibilities-for-drivers"></a>ドライバーの電源管理の役割
 
 
 

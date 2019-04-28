@@ -1,6 +1,6 @@
 ---
-title: コードの整合性の診断システム ログのイベント
-description: コードの整合性の診断システム ログのイベント
+title: コードの整合性の診断のシステム ログ イベント
+description: コードの整合性の診断のシステム ログ イベント
 ms.assetid: 4aa8db3e-033c-4f38-a813-623518e36485
 keywords:
 - コード整合性 WDK ドライバーの署名
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9f1f19c3272fa47845cd41e7e64f3e02a729747
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361175"
 ---
-# <a name="code-integrity-diagnostic-system-log-events"></a>コードの整合性の診断システム ログのイベント
+# <a name="code-integrity-diagnostic-system-log-events"></a>コードの整合性の診断のシステム ログ イベント
 
 
 Windows Vista のコンポーネントと以降のバージョンの Windows カーネル モード ドライバーがある要件を適用するコードの整合性を読み込むために署名します。 Windows Vista および Windows の以降のバージョンは、操作イベントのコードの整合性を常に生成して、その他のシステムの監査イベントと次のようにドライバーの署名の状態に関する情報を提供する詳細な診断イベントに、必要に応じて生成されます。
@@ -32,9 +32,9 @@ Windows Vista のコンポーネントと以降のバージョンの Windows カ
 
 -   コードの整合性の詳細ログ記録が有効になっている場合、コードの整合性は分析ログし、デバッグ カーネル モード ドライバー ファイルを読み込む前に発生するが正常に検証チェックに関する情報を提供するイベント。 既定では、コードの整合性の詳細ログ記録が有効になっていません。
 
-」の説明に従って、イベント ビューアーを使用して、コードの整合性イベントを表示することができますを[を表示するコードの整合性イベント](viewing-code-integrity-events.md)します。 これらのイベント ログ メッセージの詳細については、[コードの整合性イベント ログ メッセージ](code-integrity-event-log-messages.md)を参照してください。
+」の説明に従って、イベント ビューアーを使用して、コードの整合性イベントを表示することができますを[を表示するコードの整合性イベント](viewing-code-integrity-events.md)します。 これらのイベント ログ メッセージの詳細については、次を参照してください。[コードの整合性イベント ログ メッセージ](code-integrity-event-log-messages.md)します。
 
-システム監査ログと詳細なログ記録を有効にする方法の詳細については、[システム イベントの監査ログを有効にする](enabling-the-system-event-audit-log.md)を参照してください。
+システム監査ログと詳細なログ記録を有効にする方法の詳細については、次を参照してください。[システム イベントの監査ログを有効にする](enabling-the-system-event-audit-log.md)します。
 
  
 

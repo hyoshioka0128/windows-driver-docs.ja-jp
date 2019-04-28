@@ -5,11 +5,11 @@ ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04ef7180f4854a12bfbe45fe6f7d8ee95501dc62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369430"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>デバイスのプロパティ ページのプロバイダーの一般的な要件 (プロパティ ページの拡張 DLL)
 
@@ -22,7 +22,7 @@ ms.locfileid: "56571871"
 
 この要求に応答してで、DLL は各カスタム プロパティ ページの情報を提供します、ページを作成し、デバイスの動的プロパティ ページの一覧に、作成したページを追加します。
 
-プロパティ ページの拡張 DLL でカスタム デバイスのプロパティ ページを作成する方法については、[デバイスのプロパティ ページのプロバイダーの一般的な要件](general-requirements-for-device-property-page-providers.md)を参照してください。
+プロパティ ページの拡張 DLL でカスタム デバイスのプロパティ ページを作成する方法については、次を参照してください。[デバイスのプロパティ ページのプロバイダーの一般的な要件](general-requirements-for-device-property-page-providers.md)します。
 
 ### <a name="installing-a-device-property-page"></a>デバイスのプロパティ ページのインストール
 
@@ -47,7 +47,7 @@ ms.locfileid: "56571871"
 
 3.  デバイスがネットワーク アダプターの場合は、いずれかとして NCF_HAS_UI を指定する必要があります、**特性**値、 [ **INF DDInstall セクション**](inf-ddinstall-section.md)します。 この値は、アダプターがユーザー インターフェイスをサポートしていることを示します。
 
-    詳細については、[ネットワーク アダプターのカスタム プロパティ ページを指定する](https://msdn.microsoft.com/library/windows/hardware/ff570843)を参照してください。
+    詳細については、次を参照してください。[ネットワーク アダプターのカスタム プロパティ ページを指定する](https://msdn.microsoft.com/library/windows/hardware/ff570843)します。
 
  
 

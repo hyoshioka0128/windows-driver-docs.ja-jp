@@ -1,17 +1,17 @@
 ---
-title: 脆弱性のある NDIS ドライバーをテストするための追加のコスト
-description: 脆弱性のある NDIS ドライバーをテストするための追加のコスト
+title: 脆弱な NDIS ドライバーをテストするための追加のコスト
+description: 脆弱な NDIS ドライバーをテストするための追加のコスト
 ms.assetid: ee748650-92e6-4885-895e-c030cf33f315
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1862e368e5d07f16822cc85a71e8339461609649
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367788"
 ---
-# <a name="added-costs-for-testing-vulnerable-ndis-drivers"></a>脆弱性のある NDIS ドライバーをテストするための追加のコスト
+# <a name="added-costs-for-testing-vulnerable-ndis-drivers"></a>脆弱な NDIS ドライバーをテストするための追加のコスト
 
 
 

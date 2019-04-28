@@ -1,5 +1,5 @@
 ---
-title: WFP ユーザー モードの管理機能
+title: WFP ユーザー モード管理関数
 description: このトピックでは、WFP ユーザー モードの管理機能について説明します。
 ms.assetid: 14accd49-5b96-40]()e6-b9d7-6638a4e5c2dc
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8fd4d0cf0aa8818acd22c2a49553abd2d7fe99e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365745"
 ---
-# <a name="wfp-user-mode-management-functions"></a>WFP ユーザー モードの管理機能
+# <a name="wfp-user-mode-management-functions"></a>WFP ユーザー モード管理関数
 
 Windows フィルタ リング プラットフォームのユーザー モードの管理機能のセマンティクスはまったく同じから呼び出されるとコールアウト ドライバーとして、ユーザー モード アプリケーションから呼び出されたときに、戻り値の型がある点が、 **NTSTATUS**コードWin32 エラー コードではなく。 
 

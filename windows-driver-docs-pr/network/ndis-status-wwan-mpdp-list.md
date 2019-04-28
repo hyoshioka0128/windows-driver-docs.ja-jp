@@ -15,11 +15,11 @@ api_type:
 ms.date: 10/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ac1879c8ea04b76c8947aaf8f24ab03a9c6501
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362492"
 ---
 # <a name="ndisstatuswwanmpdplist"></a>NDIS_STATUS_WWAN_MPDP_LIST
 
@@ -29,7 +29,7 @@ ms.locfileid: "56580092"
 
 この通知を使用して、 [ **NDIS_WWAN_MPDP_LIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mpdp_list)構造体。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |   |   |
 | --- | --- |

@@ -1,6 +1,6 @@
 ---
-title: プロキシ モジュールをストリーミングするカーネルで AVStream の使用
-description: プロキシ モジュールをストリーミングするカーネルで AVStream の使用
+title: カーネル ストリーミング プロキシ モジュールでの AVStream の使用
+description: カーネル ストリーミング プロキシ モジュールでの AVStream の使用
 ms.assetid: c8ae1385-337e-46ad-841e-fbdf5d685210
 keywords:
 - カーネル ストリーミング プロキシ WDK AVStream
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a99a391a0b448b68f2d1f86c0b4130776572b9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367460"
 ---
-# <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>プロキシ モジュールをストリーミングするカーネルで AVStream の使用
+# <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>カーネル ストリーミング プロキシ モジュールでの AVStream の使用
 
 
 

@@ -16,11 +16,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: c69cc3bed839714f3efab8718c15aa06ce23b015
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360344"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassdeinterlacequeryavailablemodes-method"></a>DXVA\_DeinterlaceContainerDeviceClass::DeinterlaceQueryAvailableModes メソッド
 
@@ -55,7 +55,7 @@ HRESULT DeinterlaceQueryAvailableModes(
 <a name="remarks"></a>注釈
 -------
 
-*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)を参照してください。
+*LpVideoDescription*ドライバーは、解像度と、ソース ビデオの形式をサポートできるようにパラメーターは、ドライバーに渡されます。 など、ドライバーを実行することがありますが、3 つのフィールド アダプティブ 480i のコンテンツのインター レースを解除、1080 i コンテンツを bob できる可能性があります。 詳細については、次を参照してください。[ビデオ コンテンツのインターとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)します。
 
 によって返される Guid、 *pGuidsDeinterlaceModes*パラメーターの品質を降順で返す (つまり、最高品質のモードに占める返される GUID の配列の最初の要素)。
 
@@ -78,8 +78,8 @@ DD\_RENDERMOCOMPDATA 構造は次のように入力されます。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

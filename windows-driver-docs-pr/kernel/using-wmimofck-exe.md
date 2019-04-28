@@ -1,6 +1,6 @@
 ---
-title: Wmimofck.exe を使用します。
-description: Wmimofck.exe を使用します。
+title: Wmimofck.exe の使用
+description: Wmimofck.exe の使用
 ms.assetid: cbf735c4-1c0d-4ff3-8a5c-b9d1de84bca4
 keywords:
 - WMI の WDK カーネル、Wmimofck.exe ユーティリティ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1733c154eb9cd68e167d352bd414149c73315412
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363100"
 ---
-# <a name="using-wmimofckexe"></a>Wmimofck.exe を使用します。
+# <a name="using-wmimofckexe"></a>Wmimofck.exe の使用
 
 
 

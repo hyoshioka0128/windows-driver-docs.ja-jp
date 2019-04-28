@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_DEVICE_USAGE_NOTIFICATION Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ce83261421bbddb47b3653a6ddff1e0707256c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368392"
 ---
 # <a name="irpmndeviceusagenotification"></a>IRP\_MN\_デバイス\_使用状況\_通知
 
@@ -140,7 +140,7 @@ ms.locfileid: "56571130"
 
 ドライバーを送信する、 **IRP\_MN\_デバイス\_使用状況\_情報**IRP、のみを別のデバイス スタックにデバイスの使用状況情報を伝達することができます。 ドライバーは、デバイスの使用状況情報の最初のソースではありません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -4,11 +4,11 @@ title: Netmon と USB ETW パーサーのインストール方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a7f62cf203e6e0071db1c03d6e93924b4469876
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364796"
 ---
 # <a name="how-to-install-netmon-and-usb-etw-parsers"></a>Netmon と USB ETW パーサーのインストール方法
 
@@ -58,7 +58,7 @@ Netmon、Microsoft ダウンロード センターからインストールして
 
     3. **[OK]** をクリックします。
 
-Netmon が USB ETW トレース ファイルを使用するために構成されました。 詳細については、[Netmon で USB の ETW トレースを表示する方法](how-to-examining-a-trace-file-by-using-netmon.md)を参照してください。
+Netmon が USB ETW トレース ファイルを使用するために構成されました。 詳細については、次を参照してください。 [Netmon で USB の ETW トレースを表示する方法](how-to-examining-a-trace-file-by-using-netmon.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 

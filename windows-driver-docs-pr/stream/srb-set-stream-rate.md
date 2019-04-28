@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aed3d1368e532c3e0986a3ead553490d31d13c85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360821"
 ---
 # <a name="srbsetstreamrate"></a>SRB\_設定\_ストリーム\_率
 

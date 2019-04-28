@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0e258c385af2e7dcce00d736219fca8895140dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372572"
 ---
 # <a name="ehsnetworkstate-enumeration"></a>eHS\_ネットワーク\_の状態の列挙
 
@@ -47,7 +47,7 @@ typedef enum _eHS_NETWORK_STATE {
 <a href="" id="hs-network-state-max"></a>**HS\_ネットワーク\_状態\_MAX**  
 範囲外の値を示します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

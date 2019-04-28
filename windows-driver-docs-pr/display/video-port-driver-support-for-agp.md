@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 103af71e2aeea5f75b3535384ea3d7496fc3d533
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365058"
 ---
 # <a name="video-port-driver-support-for-agp"></a>AGP のビデオ ポート ドライバー サポート
 
@@ -41,7 +41,7 @@ ms.locfileid: "56561136"
 
 [**AgpSetRate**](https://msdn.microsoft.com/library/windows/hardware/ff538226)
 
-呼び出すことで関数ポインターを取得する必要があります、ビデオのミニポート ドライバーでは、関数を呼び出す上記の一覧で、前に[ **VideoPortQueryServices**](https://msdn.microsoft.com/library/windows/hardware/ff570337)します。 AGP 関数へのポインターを取得する方法の詳細については、[AGP ビデオ ポート ドライバーによって関数が実装されている](https://msdn.microsoft.com/library/windows/hardware/ff538227)を参照してください。
+呼び出すことで関数ポインターを取得する必要があります、ビデオのミニポート ドライバーでは、関数を呼び出す上記の一覧で、前に[ **VideoPortQueryServices**](https://msdn.microsoft.com/library/windows/hardware/ff570337)します。 AGP 関数へのポインターを取得する方法の詳細については、次を参照してください。 [AGP ビデオ ポート ドライバーによって関数が実装されている](https://msdn.microsoft.com/library/windows/hardware/ff538227)します。
 
 ビデオのミニポート ドライバーでは、予約し、ディスプレイ アダプターがシステム メモリをアクセス AGP aperture の一部をコミットするには、次の手順を実行します。
 

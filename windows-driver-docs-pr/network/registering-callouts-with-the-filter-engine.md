@@ -1,6 +1,6 @@
 ---
-title: フィルター エンジンとコールアウトを登録します。
-description: フィルター エンジンとコールアウトを登録します。
+title: フィルター エンジンへのコールアウトの登録
+description: フィルター エンジンへのコールアウトの登録
 ms.assetid: a5bade33-e3d1-4e1d-8503-51485097046e
 keywords:
 - Windows Filtering Platform コールアウト ドライバー WDK、初期化しています
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb8d789bb064798dff30d65a0be8da8385f35d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364063"
 ---
-# <a name="registering-callouts-with-the-filter-engine"></a>フィルター エンジンとコールアウトを登録します。
+# <a name="registering-callouts-with-the-filter-engine"></a>フィルター エンジンへのコールアウトの登録
 
 
 コールアウト ドライバーには、デバイス オブジェクトが作成、フィルター エンジンがそのコールアウトし登録できます。 コールアウト ドライバーを登録できます、コールアウト、フィルター エンジン、いつでも場合でも、フィルター エンジンが現在実行されていません。 コールアウト ドライバーの呼び出しに、フィルター エンジンを吹き出しを登録する、 [ **FwpsCalloutRegister0** ](https://msdn.microsoft.com/library/windows/hardware/ff551140)関数。 次に、例を示します。

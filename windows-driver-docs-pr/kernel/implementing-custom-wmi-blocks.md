@@ -1,6 +1,6 @@
 ---
-title: カスタムの WMI のブロックを実装します。
-description: カスタムの WMI のブロックを実装します。
+title: カスタム WMI ブロックの実装
+description: カスタム WMI ブロックの実装
 ms.assetid: c596924f-9f82-4ca7-b0f0-afc596d7bf99
 keywords:
 - WMI の WDK カーネルでは、イベント ブロック
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 808fe8aeb00c8b711885285ee2f7c1b3f021ae78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365355"
 ---
-# <a name="implementing-custom-wmi-blocks"></a>カスタムの WMI のブロックを実装します。
+# <a name="implementing-custom-wmi-blocks"></a>カスタム WMI ブロックの実装
 
 
 
@@ -58,7 +58,7 @@ ms.locfileid: "56535463"
 
     たとえば、データ ブロックを持つ 3 つの DWORD データ項目とそのいずれかの可変長文字列入れる 3 つの Dword 最初に、後に文字列。 ブロックの先頭に固定サイズのデータ項目を配置することをより簡単に抽出する WMI クライアントを許可します。
 
--   ドライバーのデータ ブロックにアクセスするには、システムのユーザーの種類を検討してください。 システムでは、WMI クラスの Guid をすべての既定のセキュリティ記述子を提供します。 必要に応じて、デバイスの INF ファイル内の代替のセキュリティ記述子を行うことができます。 詳細については、[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)を参照してください。
+-   ドライバーのデータ ブロックにアクセスするには、システムのユーザーの種類を検討してください。 システムでは、WMI クラスの Guid をすべての既定のセキュリティ記述子を提供します。 必要に応じて、デバイスの INF ファイル内の代替のセキュリティ記述子を行うことができます。 詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。
 
 WMI は、バージョン管理をサポートしていないため、ドライバーのライターが新しい MOF クラスを定義し、既存のカスタム ブロックの変更には、新しい GUID を生成する必要があります。
 

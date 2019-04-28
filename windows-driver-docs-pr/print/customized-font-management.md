@@ -20,11 +20,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0316bf0a365cf18eb7e7cbf2a68afc73712c36d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365584"
 ---
 # <a name="customized-font-management"></a>カスタマイズされたフォント管理
 
@@ -100,7 +100,7 @@ Unidrv フォント形式のファイルから成る、 [ **UFF\_fileheader で�
 
 さらに、ダウンロード可能な*PCL*ソフト フォントは、バイナリ データをダウンロードするが .uff ファイルに格納されます。
 
-.uff ファイルの作成では、ベンダーから提供されたフォントのインストール ソフトウェアの役割です。 Unidrv は、フォントとグリフの情報を取得するプリンターの .uff ファイルを読み取ります。 フォントのインストーラーは、フォントを追加または削除されたとき、.uff ファイルの内容を変更する必要があります。 フォントのインストーラーを作成する方法の詳細については、[Unidrv のフォントのカスタマイズされたインストーラー](customized-font-installers-for-unidrv.md)を参照してください。
+.uff ファイルの作成では、ベンダーから提供されたフォントのインストール ソフトウェアの役割です。 Unidrv は、フォントとグリフの情報を取得するプリンターの .uff ファイルを読み取ります。 フォントのインストーラーは、フォントを追加または削除されたとき、.uff ファイルの内容を変更する必要があります。 フォントのインストーラーを作成する方法の詳細については、次を参照してください。 [Unidrv のフォントのカスタマイズされたインストーラー](customized-font-installers-for-unidrv.md)します。
 
 %Systemroot% .uff のすべてのファイルを格納する必要があります\\System32\\スプール\\ドライバー\\Unifont ディレクトリ。 特定のプリンターで関連付ける個々 .uff ファイルには、インストール ソフトウェアが、各プリンターのレジストリ キーの下のレジストリ値を作成する (Windows SDK のドキュメントで説明) SetPrinterData 関数を呼び出す必要があります。 次の表を使用する必要があり、各値のメンテナンス ツールを示すレジストリ値の名前を一覧表示します。
 

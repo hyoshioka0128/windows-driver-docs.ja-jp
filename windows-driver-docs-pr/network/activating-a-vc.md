@@ -1,6 +1,6 @@
 ---
-title: VC をアクティブ化します。
-description: VC をアクティブ化します。
+title: VC のアクティブ化
+description: VC のアクティブ化
 ms.assetid: 93bac975-3c9c-424b-a815-b1589b703fb5
 keywords:
 - 仮想接続 WDK いる CoNDIS、アクティブ化します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef37c5890defea210427ea7e1a37e026030a2a2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367952"
 ---
-# <a name="activating-a-vc"></a>VC をアクティブ化します。
+# <a name="activating-a-vc"></a>VC のアクティブ化
 
 
 

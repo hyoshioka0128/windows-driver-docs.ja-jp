@@ -1,6 +1,6 @@
 ---
-title: デバイスに固有のアイドル状態の検出を実行します。
-description: デバイスに固有のアイドル状態の検出を実行します。
+title: デバイス固有のアイドル状態検出の実行
+description: デバイス固有のアイドル状態検出の実行
 ms.assetid: 1a4e3b66-f1dc-4dc8-af8b-ed8138270c3c
 keywords:
 - アイドル状態検出 WDK 電源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39749616b5348b6415eb2c6c7a52d13b693c0c64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369268"
 ---
-# <a name="performing-device-specific-idle-detection"></a>デバイスに固有のアイドル状態の検出を実行します。
+# <a name="performing-device-specific-idle-detection"></a>デバイス固有のアイドル状態検出の実行
 
 
 

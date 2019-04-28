@@ -1,6 +1,6 @@
 ---
-title: 削除と清掃のコントロール
-description: 削除と清掃のコントロール
+title: 消去と清掃の制御
+description: 消去と清掃の制御
 ms.assetid: 103b05e6-333a-441a-a4f8-784ae43df59e
 keywords:
 - RDBSS WDK ファイル システムでは、消去し、構造体の清掃を行う
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4669709474c913c6b13bb4786c60d5744c72739
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370125"
 ---
-# <a name="purging-and-scavenging-control"></a>削除と清掃のコントロール
+# <a name="purging-and-scavenging-control"></a>消去と清掃の制御
 
 
 ## <span id="ddk_purging_and_scavenging_control_if"></span><span id="DDK_PURGING_AND_SCAVENGING_CONTROL_IF"></span>

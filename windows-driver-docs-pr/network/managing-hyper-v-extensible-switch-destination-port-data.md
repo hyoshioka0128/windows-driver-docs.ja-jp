@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 拡張可能スイッチの宛先ポートのデータを管理します。
-description: HYPER-V 拡張可能スイッチの宛先ポートのデータを管理します。
+title: Hyper-V 拡張可能スイッチの宛先ポート データの管理
+description: Hyper-V 拡張可能スイッチの宛先ポート データの管理
 ms.assetid: 2781E64A-61D6-49A9-AD9B-F6B348560E30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cd7e363d3547f0b6f8f92b4803a0c5d699a9c09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365383"
 ---
-# <a name="managing-hyper-v-extensible-switch-destination-port-data"></a>HYPER-V 拡張可能スイッチの宛先ポートのデータを管理します。
+# <a name="managing-hyper-v-extensible-switch-destination-port-data"></a>Hyper-V 拡張可能スイッチの宛先ポート データの管理
 
 
 このセクションでは、HYPER-V 拡張可能スイッチの拡張機能がパケットの帯域外の (OOB) データ内の変換先の拡張可能スイッチ ポート データを管理する方法について説明します。 ここでは、次のトピックについて説明します。

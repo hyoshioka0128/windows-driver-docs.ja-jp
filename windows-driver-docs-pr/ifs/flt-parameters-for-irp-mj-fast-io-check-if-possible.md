@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 168968665c215adcb7a540b12f2564d567d6ffad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365004"
 ---
 # <a name="fltparameters-for-irpmjfastiocheckifpossible-union"></a>FLT\_IRP のパラメーター\_MJ\_高速\_IO\_確認\_場合\_可能な共用体
 
@@ -53,7 +53,7 @@ typedef union _FLT_PARAMETERS {
 **FileOffset**  
 キャッシュされたファイル内のバイト オフセットを開始しています。
 
-**Length**  
+**長さ**  
 (バイト単位) の長さ、データを読み取りまたは書き込み。
 
 **LockKey**  
@@ -62,14 +62,14 @@ typedef union _FLT_PARAMETERS {
 **CheckForReadOperation**  
 この操作は、読み取りを確認するか、操作を記述するかどうかを指定します。 設定されている**TRUE**読み取り操作と**FALSE**書き込み操作の。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673) IRP の構造\_MJ\_高速\_IO\_確認\_場合\_可能な操作のパラメーターを格納する、 **FastIoCheckIfPossible**コールバック データによって表される操作 ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
 
 IRP\_MJ\_高速\_IO\_確認\_場合\_可能な限り高速な I/O 操作は、します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

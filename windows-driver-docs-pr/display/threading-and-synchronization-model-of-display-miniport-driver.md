@@ -1,6 +1,6 @@
 ---
 title: スレッド処理と表示のミニポート ドライバーのモデルの同期
-description: スレッド処理と表示のミニポート ドライバーの同期モデル
+description: ディスプレイ ミニポート ドライバーのスレッドおよび同期モデル
 ms.assetid: 4e5cf498-a2d1-44d5-b7a3-427f48b5da50
 keywords:
 - WDK の表示、ミニポート ドライバーをスレッド処理
@@ -11,13 +11,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 53da24251f21d6fa574d496fd91558b85b0085cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361217"
 ---
-# <a name="threading-and-synchronization-model-of-display-miniport-driver"></a>スレッド処理と表示のミニポート ドライバーの同期モデル
+# <a name="threading-and-synchronization-model-of-display-miniport-driver"></a>ディスプレイ ミニポート ドライバーのスレッドおよび同期モデル
 
 複数のスレッドを同時にディスプレイのミニポート ドライバー内に存在することはできます。 これは一般に、ディスプレイのミニポート ドライバーがある再入可能です。 ただし、一部の呼び出し、ディスプレイのミニポート ドライバーをすることはできません再入可能か、グラフィックス ハードウェアまたはアクセスのスレッド間のグローバルなデータ構造体にアクセスするためです。 再入または nonreentrancy は呼び出しごとのレベルで選択することはできません、Windows Display Driver Model (WDDM) 事前代入すると、1 回の呼び出しを正確にドライバーが期待どおりの呼び出しを定義する次の同期レベル。
 

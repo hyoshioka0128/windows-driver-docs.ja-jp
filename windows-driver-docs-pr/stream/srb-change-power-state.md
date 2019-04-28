@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d975d8569d98eb5bd8a00a0603627a8903446a3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365223"
 ---
 # <a name="srbchangepowerstate"></a>SRB\_変更\_POWER\_状態
 
@@ -44,7 +44,7 @@ ms.locfileid: "56573322"
 
 ミニドライバーは、保存またはデバイスに固有のデータを復元する必要がある場合に行ってください、SRB を処理するときに\_変更\_POWER\_状態要求。
 
-電源状態の詳細については、[個々 のデバイスを管理する Power](https://msdn.microsoft.com/library/windows/hardware/ff554397)を参照してください。
+電源状態の詳細については、次を参照してください。[個々 のデバイスを管理する Power](https://msdn.microsoft.com/library/windows/hardware/ff554397)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: 選択して、パラレル ポートに接続されている IEEE 1284 デバイスの選択を解除
-description: 選択して、パラレル ポートに接続されている IEEE 1284 デバイスの選択を解除
+title: パラレル ポートに接続されている IEEE 1284 デバイスの選択と選択解除
+description: パラレル ポートに接続されている IEEE 1284 デバイスの選択と選択解除
 ms.assetid: 1a3ac1b1-9180-4b71-8740-70c6fbe9a885
 keywords:
 - IEEE 1284 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2258c60201d3a224206dcc969fdea10851ef119
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365372"
 ---
-# <a name="selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-port"></a>選択して、パラレル ポートに接続されている IEEE 1284 デバイスの選択を解除
+# <a name="selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-port"></a>パラレル ポートに接続されている IEEE 1284 デバイスの選択と選択解除
 
 
 

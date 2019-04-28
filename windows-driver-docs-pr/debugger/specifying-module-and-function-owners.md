@@ -1,6 +1,6 @@
 ---
-title: モジュールと関数の所有者を指定します。
-description: モジュールと関数の所有者を指定します。
+title: モジュールおよび関数所有者の指定
+description: モジュールおよび関数所有者の指定
 ms.assetid: be227712-7f70-4e74-b090-ca8b3ecd1e13
 keywords:
 - 実行可能ファイルとパス、モジュールの所有者を指定します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27077d9553a11a96755abf3eb6897496bad6040
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368081"
 ---
-# <a name="specifying-module-and-function-owners"></a>モジュールと関数の所有者を指定します。
+# <a name="specifying-module-and-function-owners"></a>モジュールおよび関数所有者の指定
 
 
 ## <span id="ddk_specifying_module_and_function_owners_dbg"></span><span id="DDK_SPECIFYING_MODULE_AND_FUNCTION_OWNERS_DBG"></span>

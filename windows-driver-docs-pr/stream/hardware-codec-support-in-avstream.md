@@ -1,6 +1,6 @@
 ---
-title: AVStream でハードウェアのコーデック サポート
-description: AVStream でハードウェアのコーデック サポート
+title: AVStream のハードウェア コーデックのサポート
+description: AVStream のハードウェア コーデックのサポート
 ms.assetid: 19ffd906-e198-4ede-b132-45e53431603c
 keywords:
 - AVStream WDK、ハードウェアのコーデック サポート
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7908decf3f5e5355277d3e27eac4fd0f1011cf4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363600"
 ---
-# <a name="hardware-codec-support-in-avstream"></a>AVStream でハードウェアのコーデック サポート
+# <a name="hardware-codec-support-in-avstream"></a>AVStream のハードウェア コーデックのサポート
 
 
 Windows 7 および Windows の以降のバージョンでは、ユーザー モード アプリケーションに Media Foundation の変換 (MFT) フィルターとして AVStream ベースのメディア デバイスを表示できます。
@@ -28,7 +28,7 @@ AVStream でハードウェアのコーデック サポートを有効にする�
 
 このセクションでは、この機能を使用する AVStream ドライバーに必要な変更について説明します。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [AVStream でハードウェアのコーデック サポートの概要](getting-started-with-hardware-codec-support-in-avstream.md)
 

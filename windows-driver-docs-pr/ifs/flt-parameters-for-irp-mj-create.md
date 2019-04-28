@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d54dd95ae168e5b6245df0d63d2759e98d9614aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365088"
 ---
 # <a name="fltparameters-for-irpmjcreate-union"></a>FLT\_IRP のパラメーター\_MJ\_共用体の作成
 
@@ -50,7 +50,7 @@ typedef union _FLT_PARAMETERS {
 <a name="members"></a>メンバー
 -------
 
-**作成します。**  
+**作成**  
 次のメンバーを含む構造体。
 
 **SecurityContext**  
@@ -60,25 +60,25 @@ SecurityContext-&gt;AccessState
 
 SecurityContext-&gt;DesiredAccess
 
-[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)ファイルに対して要求されたアクセス権を指定する構造体。 詳細については、、 *DesiredAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
+[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)ファイルに対して要求されたアクセス権を指定する構造体。 詳細については、次を参照してください。、 *DesiredAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
 
 **[オプション]**  
 作成またはファイルが既に存在する場合に実行されるアクションと同様に、ファイルを開くときに適用されるオプションを指定するフラグのビットマスク。 このメンバーの下位 24 ビットに対応しています、 *CreateOptions*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。 上位の 8 ビットに対応しています、 *CreateDisposition*パラメーターを**FltCreateFile**します。
 
 **FileAttributes**  
-属性の作成またはファイルを開く際に適用するビット マスク。 詳細については、、 *FileAttributes*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
+属性の作成またはファイルを開く際に適用するビット マスク。 詳細については、次を参照してください。、 *FileAttributes*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
 
 **ShareAccess**  
-ファイルに、要求は共有アクセス権限のビットマスクです。 このパラメーターが 0 の場合は、排他的アクセスが要求されています。 詳細については、、 *ShareAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
+ファイルに、要求は共有アクセス権限のビットマスクです。 このパラメーターが 0 の場合は、排他的アクセスが要求されています。 詳細については、次を参照してください。、 *ShareAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
 
 **EaLength**  
-バッファーのバイト単位の長さを**EaBuffer**へのポインターします。 詳細については、、 *EaLength*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
+バッファーのバイト単位の長さを**EaBuffer**へのポインターします。 詳細については、次を参照してください。、 *EaLength*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
 
 **EaBuffer**  
-呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)-に適用される拡張属性 (EA) の情報を格納している構造化されたバッファーファイルです。 詳細については、、 *EaBuffer*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
+呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)-に適用される拡張属性 (EA) の情報を格納している構造化されたバッファーファイルです。 詳細については、次を参照してください。、 *EaBuffer*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
 
 **AllocationSize**  
-必要に応じて、ファイルのバイト単位で初期割り当てサイズを指定します。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。 詳細については、、 *AllocationSize*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)を参照してください。
+必要に応じて、ファイルのバイト単位で初期割り当てサイズを指定します。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。 詳細については、次を参照してください。、 *AllocationSize*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
 
 <a name="remarks"></a>コメント
 -------

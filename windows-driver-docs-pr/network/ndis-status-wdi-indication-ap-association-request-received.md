@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 15132e04dd58c0c7de3a2329b04dc31240f8ee7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366530"
 ---
 # <a name="ndisstatuswdiindicationapassociationrequestreceived"></a>NDIS\_状態\_WDI\_INDICATION\_AP\_アソシエーション\_要求\_受信日時
 
@@ -33,7 +33,7 @@ ms.locfileid: "56549999"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

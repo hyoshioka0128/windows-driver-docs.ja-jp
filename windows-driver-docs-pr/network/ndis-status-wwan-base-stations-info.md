@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/21/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdfb122201656f58a84db7b54042ef94c7e5479d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369897"
 ---
 # <a name="ndisstatuswwanbasestationsinfo"></a>NDIS_STATUS_WWAN_BASE_STATIONS_INFO
 

@@ -1,5 +1,5 @@
 ---
-title: インストールされている (TCP/IP)
+title: Installed (TCP/IP)
 description: TCP/IP がインストールされているコンス トラクターには、MIB テーブルの行の ID (OID) と、参照値の一覧のオブジェクトが含まれています。
 ms.assetid: 4e14d8c1-7c66-4035-845d-f3f92dad8c4f
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc940e2b3b5d5f40cf0ddd587281c3782a976de2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362862"
 ---
-# <a name="installed-tcpip"></a>インストールされている (TCP/IP)
+# <a name="installed-tcpip"></a>Installed (TCP/IP)
 
 
 TCP/IP がインストールされているコンス トラクターには、MIB テーブルの行の ID (OID) と、参照値の一覧のオブジェクトが含まれています。 参照値のいずれかに存在するかどうか、行、このアルゴリズムを返します**TRUE**します。 プリンターの構成に関連するほとんどのクエリでは、特定の値が、プリンターの MIB に格納されているし、ブール型の結果を返すがあるかどうかを判断する必要があります。 インストールされているコンス トラクターは、Tcpbidi.xsd で定義されます。

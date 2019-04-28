@@ -1,6 +1,6 @@
 ---
-title: カスタマイズされたドライバー コンポーネントをインストールします。
-description: カスタマイズされたドライバー コンポーネントをインストールします。
+title: カスタマイズされたドライバー コンポーネントをインストールする
+description: カスタマイズされたドライバー コンポーネントをインストールする
 ms.assetid: 88f189bd-97f5-4bc6-ba3e-3d9da18e2102
 keywords:
 - プリンター ドライバー WDK のカスタマイズ、コンポーネントをインストールします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c23c770664e571cf2a75e5e2b274e4e070cf54a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366833"
 ---
-# <a name="installing-customized-driver-components"></a>カスタマイズされたドライバー コンポーネントをインストールします。
+# <a name="installing-customized-driver-components"></a>カスタマイズされたドライバー コンポーネントをインストールする
 
 
 
@@ -51,9 +51,9 @@ OEMDriverFile2=XYZDRV2.DLL
 
 .Ini ファイルは ANSI または Unicode のいずれかのテキストを含めることができますが、Unicode テキストがお勧めします。 .Ini ファイル内の行、シャープ記号で始まる (\#) コメントします。
 
-詳細については、[INF ファイルの一般的なガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff544975)と[Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)を参照してください。
+詳細については、次を参照してください。 [INF ファイルの一般的なガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff544975)と[Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)します。
 
-コンポーネントをインストールし、カスタマイズされたコンポーネントを登録するための便利な方法は、プリンターの INF ファイルを指定する場合、*依存ファイル*のプリンター ドライバー。 さらに、関連付けられている .inf ファイルは、依存ファイルとしてインストールできます。 プリンター ドライバーの依存ファイルの詳細については、[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)を参照してください。
+コンポーネントをインストールし、カスタマイズされたコンポーネントを登録するための便利な方法は、プリンターの INF ファイルを指定する場合、*依存ファイル*のプリンター ドライバー。 さらに、関連付けられている .inf ファイルは、依存ファイルとしてインストールできます。 プリンター ドライバーの依存ファイルの詳細については、次を参照してください。[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)します。
 
 また、コンポーネント ポート モニターや状態のアプリケーションなどの別の印刷コンポーネントの依存ファイルを作成してカスタマイズされたコンポーネントをインストールできます。 ただし、このメソッドを作成問題のため[ポイント アンド プリント](introduction-to-point-and-print.md)操作は、ドライバーと、クライアント ドライバーに依存するファイルのみをインストールします。 カスタマイズされたコンポーネントが、プリンター ドライバーの依存ファイルとして表示されない場合、コンポーネントはポイント アンド プリントの操作の一部として以外の何らかの方法でクライアントにインストールする必要があります。
 

@@ -1,6 +1,6 @@
 ---
-title: GDL アソシエーションの検索条件
-description: GDL アソシエーションの検索条件
+title: GDL 関連付けの検索条件
+description: GDL 関連付けの検索条件
 ms.assetid: f591e944-a6dc-406a-a15e-7af0cc70d7f5
 keywords:
 - テンプレートのテンプレートに関連付けるキーワードの WDK GDL
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f92f230af25594233252c97189733db532c7868c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363192"
 ---
-# <a name="gdl-association-search-criteria"></a>GDL アソシエーションの検索条件
+# <a name="gdl-association-search-criteria"></a>GDL 関連付けの検索条件
 
 
 すべてのデータ エントリは、ルート レベルまたは親の構成体のメンバーとして存在します。 ルート レベルのエントリが存在する場合、ルート レベルのテンプレートを定義するメンバーの一覧に、エントリに関連付けられるを修飾する最初のテンプレートが検索されます。 コンストラクト内で、データのエントリが見つかった場合は、親の構造に関連付けられているテンプレートのメンバー リストが使用されます。

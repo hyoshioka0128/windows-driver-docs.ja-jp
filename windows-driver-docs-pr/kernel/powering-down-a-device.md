@@ -22,11 +22,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91053c853868ea8bc43347fd855472fbb508aa59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369142"
 ---
 # <a name="powering-down-a-device"></a>デバイスの電源切断
 
@@ -44,7 +44,7 @@ ms.locfileid: "56572571"
 
 システムのシャット ダウン、電源マネージャー送信、 **IRP\_MN\_設定\_POWER**システム電源の状態 (S4 または S5)。 デバイスの電源ポリシー所有者は、この IRP を受信するときに送信する必要があります、 **IRP\_MN\_設定\_POWER**の**PowerDeviceD3**下位のドライバーを終了できるように、職場と電力は、デバイスをダウンします。
 
-ドライバーは、そのデバイスのアイドル状態の検出を実行できます必要に応じてまたはデバイス電源を切断できる場合に使用中でないように電源マネージャーがアイドル状態の検出を実行することを要求できます。 詳細については、[、アイドル状態のデバイスを検出する](detecting-an-idle-device.md)を参照してください。
+ドライバーは、そのデバイスのアイドル状態の検出を実行できます必要に応じてまたはデバイス電源を切断できる場合に使用中でないように電源マネージャーがアイドル状態の検出を実行することを要求できます。 詳細については、次を参照してください。 [、アイドル状態のデバイスを検出する](detecting-an-idle-device.md)します。
 
  
 

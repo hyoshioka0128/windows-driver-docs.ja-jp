@@ -1,6 +1,6 @@
 ---
-title: 圧縮されたテクスチャ サーフェス
-description: 圧縮されたテクスチャ サーフェス
+title: 圧縮テクスチャ サーフェス
+description: 圧縮テクスチャ サーフェス
 ms.assetid: 72096a2a-5a4b-4800-bd99-6d403c54889d
 keywords:
 - 圧縮描画では、WDK DirectDraw をテクスチャ圧縮テクスチャ サーフェスについて
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 337c54f5856085967ce86b6b567369a881eba7d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362156"
 ---
-# <a name="compressed-texture-surfaces"></a>圧縮されたテクスチャ サーフェス
+# <a name="compressed-texture-surfaces"></a>圧縮テクスチャ サーフェス
 
 
 ## <span id="ddk_compressed_texture_surfaces_gg"></span><span id="DDK_COMPRESSED_TEXTURE_SURFACES_GG"></span>

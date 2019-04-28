@@ -1,6 +1,6 @@
 ---
-title: NIC の IPsec の機能の報告
-description: NIC の IPsec の機能の報告
+title: NIC の IPsec 機能のレポート
+description: NIC の IPsec 機能のレポート
 ms.assetid: 6ed02d4a-9b5e-4245-a3f9-f0b5fc8366a7
 keywords:
 - タスクのオフロード WDK TCP/IP トランスポート、IPsec タスク
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb715f1e9e3b01cc9ec53099807a835e28259707
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365801"
 ---
-# <a name="reporting-a-nics-ipsec-capabilities"></a>NIC の IPsec の機能の報告
+# <a name="reporting-a-nics-ipsec-capabilities"></a>NIC の IPsec 機能のレポート
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 

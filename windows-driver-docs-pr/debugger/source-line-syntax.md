@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71f2595e618906116bbe89a05e91082d3051912a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368099"
 ---
 # <a name="source-line-syntax"></a>ソース行の構文
 
@@ -26,7 +26,7 @@ ms.locfileid: "56537647"
 
 MASM 式の一部または全体としては、ソース ファイルの行番号を指定できます。 これらの数値は、このソース行に対応する実行可能コードのオフセットに評価されます。
 
-**注**   C++ 式の一部としてソース行番号を使用することはできません。 詳細については、MASM および C++ の式の構文を使用する場合、[を評価する式](evaluating-expressions.md)を参照してください。
+**注**   C++ 式の一部としてソース行番号を使用することはできません。 詳細については、MASM および C++ の式の構文を使用する場合、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
  
 
@@ -44,7 +44,7 @@ MASM 式の一部または全体としては、ソース ファイルの行番�
 
 実行しない限り、CDB でソース行の式は評価されません、 [ **.lines (切り替えのソース行のサポート)** ](-lines--toggle-source-line-support-.md)コマンドが含まれて、 [ **-コマンド ライン オプション行**](cdb-command-line-options.md) WinDbg を開始する.
 
-ソースのデバッグの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
+ソースのデバッグの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。
 
  
 

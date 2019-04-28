@@ -1,19 +1,19 @@
 ---
-title: フィルター マネージャーの操作を制御します。
-description: フィルター マネージャーの操作を制御します。
+title: フィルター マネージャー操作の制御
+description: フィルター マネージャー操作の制御
 ms.assetid: 884e6a15-5bfa-41bf-b759-af6e43078fad
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター、操作を制御します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b87373d79ec8c9e5c99b85001a1d402040512b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370694"
 ---
-# <a name="controlling-filter-manager-operation"></a>フィルター マネージャーの操作を制御します。
+# <a name="controlling-filter-manager-operation"></a>フィルター マネージャー操作の制御
 
 
 Windows Vista は、REG によって制御されるより前のバージョンの Windows 上のフィルター マネージャーの操作\_DWORD *AttachWhenLoaded*レジストリ値が次のキーに格納されます。

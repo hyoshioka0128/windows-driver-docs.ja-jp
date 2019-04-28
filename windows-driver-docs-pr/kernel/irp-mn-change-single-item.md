@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_CHANGE_SINGLE_ITEM Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: eb1267e8ccece7310cd1d3627068cac41b230418
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369280"
 ---
 # <a name="irpmnchangesingleitem"></a>IRP\_MN\_変更\_単一\_項目
 
@@ -102,7 +102,7 @@ WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテ
 
 インスタンスが有効では、ドライバーが要求を処理できない場合は、すべての該当するエラー状態を返すできます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

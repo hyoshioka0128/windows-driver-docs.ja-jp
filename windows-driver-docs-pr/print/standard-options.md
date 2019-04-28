@@ -8,11 +8,11 @@ keywords:
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 317a195cc757606fc1684a23b044a31ac4ed1caa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362488"
 ---
 # <a name="standard-options"></a>標準オプション
 
@@ -56,7 +56,7 @@ ms.locfileid: "56571968"
         </tr>
         <tr>
             <td rowspan="5"><b>InputBin</b></td>
-            <td>自動<br>カセット<br>ENVFEED<br>ENVMANUAL</td>
+            <td>AUTO<br>カセット<br>ENVFEED<br>ENVMANUAL</td>
             <td>カセット</td>
             <td rowspan="5">はい</td>
         </tr>
@@ -78,7 +78,7 @@ ms.locfileid: "56571968"
         </tr>
         <tr>
             <td><b>メディアの種類</b></td>
-            <td>光沢紙<br>標準<br>透過性</td>
+            <td>光沢紙<br>STANDARD<br>透過性</td>
             <td>PhotographicGlossy<br>プレーン<br>透過性</td>
             <td>はい<br>参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/print/controlling-image-quality">画質を制御する</a>します。</td>
         </tr>
@@ -89,7 +89,7 @@ ms.locfileid: "56571968"
         </tr>
         <tr>
             <td><b>印刷の向き</b></td>
-            <td>縦向き<br>LANDSCAPE_CC90<br>LANDSCAPE_CC270<br><br>後者の 2 つのオプションの詳細については、<a href="https://docs.microsoft.com/windows-hardware/drivers/print/specifying-paper-orientation">用紙の向きを指定する</a>を参照してください。</td>
+            <td>縦向き<br>LANDSCAPE_CC90<br>LANDSCAPE_CC270<br><br>後者の 2 つのオプションの詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/print/specifying-paper-orientation">用紙の向きを指定する</a>します。</td>
             <td>縦向き<br>横向き<br>ReverseLandscape</td>
             <td>いいえ</td>
         </tr>

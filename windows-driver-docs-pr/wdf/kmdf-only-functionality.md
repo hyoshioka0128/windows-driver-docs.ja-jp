@@ -1,17 +1,17 @@
 ---
-title: KMDF ドライバーに関する他のトピック
+title: KMDF ドライバーに関するその他のトピック
 description: このセクションには、のみをカーネル モード ドライバー フレームワーク (KMDF) に適用される情報が含まれています。
 ms.assetid: 6607ABFF-43EB-47FA-BA87-BDD417F1BBB8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f03a1ba6209db7ad3692634f6c539a1874caaba6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363684"
 ---
-# <a name="additional-topics-for-kmdf-drivers"></a>KMDF ドライバーに関する他のトピック
+# <a name="additional-topics-for-kmdf-drivers"></a>KMDF ドライバーに関するその他のトピック
 
 
 このセクションには、のみをカーネル モード ドライバー フレームワーク (KMDF) に適用される情報が含まれています。

@@ -5,11 +5,11 @@ ms.assetid: D909CA2C-3870-4521-8F23-FBF93738F338
 ms.date: 04/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5449f89d31cffeb2f7e55275d9ec3e6c84a5c01f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364780"
 ---
 # <a name="span-iddebuggersettingupkernel-modedebuggingusingserialoverusbinvisualstudiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>カーネル モード デバッグのセットアップ シリアルを使用して、Visual Studio での USB 経由で
 
@@ -19,9 +19,9 @@ ms.locfileid: "56528869"
 
 [サメ Cove 開発ボード](https://go.microsoft.com/fwlink/p?linkid=403168)USB ケーブルを介してシリアル デバッグをサポートしています。
 
-カーネル モード デバッグの Microsoft Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=301383)を参照してください。
+カーネル モード デバッグの Microsoft Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=301383)します。
 
-Visual Studio を使用して、USB ケーブルを介してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、[カーネル モード デバッグのセットアップを手動で USB シリアルを使用して](setting-up-kernel-mode-debugging-using-serial-over-usb-manually-.md)を参照してください。
+Visual Studio を使用して、USB ケーブルを介してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動で USB シリアルを使用して](setting-up-kernel-mode-debugging-using-serial-over-usb-manually-.md)します。
 
 デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。 このトピックでは、サメ Cove ボードは、ターゲット コンピューターです。
 
@@ -95,7 +95,7 @@ Visual Studio を使用して、USB ケーブルを介してシリアル デバ�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Visual Studio でのカーネル モード デバッグのセットアップ](setting-up-kernel-mode-debugging-in-visual-studio.md)
+[Visual Studio でのカーネル モード デバッグの設定](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
 

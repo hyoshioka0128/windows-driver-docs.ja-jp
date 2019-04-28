@@ -1,6 +1,6 @@
 ---
-title: パケットの挿入関数
-description: パケットの挿入関数
+title: パケット挿入関数
+description: パケット挿入関数
 ms.assetid: ebbcafb6-7fbf-40e6-8806-0131aa1d4df5
 keywords:
 - パケットの挿入関数 WDK Windows フィルタ リング プラットフォーム
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e080489c18e8ff80fd1b804e82e5cb0d35d566d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363777"
 ---
-# <a name="packet-injection-functions"></a>パケットの挿入関数
+# <a name="packet-injection-functions"></a>パケット挿入関数
 
 
 コールアウト ドライバーは保留を挿入する次の WFP 関数を呼び出すことができます。 または TCP/IP スタックにパケット データを変更します。 元のデータを挿入できるか、可能な変換先、と共に適用可能なレイヤーは、次の表に一覧表示されます。
@@ -89,9 +89,9 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
 
 ChecksumInfo.Transmit.NdisPacketTcpChecksum 場合**TRUE**、TCP 送信の操作がオフロードされます。 ChecksumInfo.Transmit.NdisPacketUdpChecksum 場合**TRUE**UDP の送信操作がオフロードします。
 
-Service Pack 1 (SP1) および Windows Server 2008、Windows Vista で場合 inMetaValues-&gt;headerIncludeHeaderLength が 0 より大きい、パケットの送信は、IP ヘッダーを含む生送信 reinjection します。 Windows Vista SP1 および Windows Server 2008 用の IP ヘッダーを含む生送信 reinjections を実行するのには、inMetaValues-の量で、複製されたパケットを退却&gt;headerIncludeHeaderLength inMetaValues - コピーと&gt;新しく拡張された領域を headerIncludeHeader します。 次に、net バッファーの一覧で、パケットの FwpsInjectTransportSendAsync0 を使用し、FWPS のままに\_トランスポート\_送信\_PARAMS0 パラメーターを設定**NULL**します。 Net のバッファーのリストに撤退操作の詳細については、[撤退と高度な操作](retreat-and-advance-operations.md)を参照してください。
+Service Pack 1 (SP1) および Windows Server 2008、Windows Vista で場合 inMetaValues-&gt;headerIncludeHeaderLength が 0 より大きい、パケットの送信は、IP ヘッダーを含む生送信 reinjection します。 Windows Vista SP1 および Windows Server 2008 用の IP ヘッダーを含む生送信 reinjections を実行するのには、inMetaValues-の量で、複製されたパケットを退却&gt;headerIncludeHeaderLength inMetaValues - コピーと&gt;新しく拡張された領域を headerIncludeHeader します。 次に、net バッファーの一覧で、パケットの FwpsInjectTransportSendAsync0 を使用し、FWPS のままに\_トランスポート\_送信\_PARAMS0 パラメーターを設定**NULL**します。 Net のバッファーのリストに撤退操作の詳細については、次を参照してください。[撤退と高度な操作](retreat-and-advance-operations.md)します。
 
-**注**  net バッファーの一覧の生の送信操作では、1 つのネット バッファーのみを含める必要があります。 Net バッファー一覧に 1 つ以上のネットワーク バッファーが含まれている場合、net のバッファーの一覧を一連の net バッファーのリストに変換する必要が、各シリーズの 1 つのネットワーク バッファーを含める必要があります。 Net バッファー リストの管理についての詳細については、[NET\_バッファー アーキテクチャ](net-buffer-architecture.md)を参照してください。
+**注**  net バッファーの一覧の生の送信操作では、1 つのネット バッファーのみを含める必要があります。 Net バッファー一覧に 1 つ以上のネットワーク バッファーが含まれている場合、net のバッファーの一覧を一連の net バッファーのリストに変換する必要が、各シリーズの 1 つのネットワーク バッファーを含める必要があります。 Net バッファー リストの管理についての詳細については、次を参照してください。 [NET\_バッファー アーキテクチャ](net-buffer-architecture.md)します。
 
  
 

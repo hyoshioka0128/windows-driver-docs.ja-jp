@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c81a656e84895a10024b79a393cbac6d299ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365727"
 ---
 # <a name="wditlvp2pasp2serviceinformationdiscoveryentry"></a>WDI\_TLV\_P2P\_ASP2\_サービス\_情報\_検出\_エントリ
 
@@ -39,13 +39,13 @@ WDI\_TLV\_P2P\_ASP2\_サービス\_情報\_検出\_エントリが ASP2 サー�
 |-------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_P2P\_サービス\_名**](wdi-tlv-p2p-service-name.md)                          |                                |          | 最大 21 バイト (utf-8)、サービスの名前です。                                                                        |
 | [**WDI\_TLV\_P2P\_INSTANCE\_NAME**](wdi-tlv-p2p-instance-name.md)                        |                                |          | 最大 63 バイト (utf-8)、サービスのインスタンスの名前です。                                                               |
-| [**WDI\_TLV\_P2P\_サービス\_情報**](wdi-tlv-p2p-service-information.md)            |                                | X        | このサービスのサービス情報をダウンロードする ANQP クエリ要求に使用するサービスの情報を要求します。 |
-| [**WDI\_TLV\_P2P\_サービス\_UPDATE\_インジケーター**](wdi-tlv-p2p-service-update-indicator.md) |                                | X        | ANQP クエリ要求に使用するサービスの更新のインジケーター。                                                     |
-| [**WDI\_TLV\_P2P\_サービス\_トランザクション\_ID**](wdi-tlv-p2p-service-transaction-id.md)     |                                | X        | ANQP クエリ要求に使用するサービスのトランザクション ID。                                                       |
+| [**WDI\_TLV\_P2P\_サービス\_情報**](wdi-tlv-p2p-service-information.md)            |                                | x        | このサービスのサービス情報をダウンロードする ANQP クエリ要求に使用するサービスの情報を要求します。 |
+| [**WDI\_TLV\_P2P\_サービス\_UPDATE\_インジケーター**](wdi-tlv-p2p-service-update-indicator.md) |                                | x        | ANQP クエリ要求に使用するサービスの更新のインジケーター。                                                     |
+| [**WDI\_TLV\_P2P\_サービス\_トランザクション\_ID**](wdi-tlv-p2p-service-transaction-id.md)     |                                | x        | ANQP クエリ要求に使用するサービスのトランザクション ID。                                                       |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_QOS_OPERATIONAL_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 07caef0308875b398f3ee917751fa418057809f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364126"
 ---
 # <a name="oidqosoperationalparameters"></a>OID\_QOS\_OPERATIONAL\_パラメーター
 
@@ -34,7 +34,7 @@ NDIS を返します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.micro
 
 -   ミニポート ドライバーを発行していない場合、 [ **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)状態示す値、NDIS を返します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)すべてのメンバーを含む構造体 (例外として、**ヘッダー**メンバー) を 0 に設定します。
 
-運用上の NDIS QoS パラメーターの詳細については、[NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)を参照してください。
+運用上の NDIS QoS パラメーターの詳細については、次を参照してください。 [NDIS QoS パラメーターの概要](https://msdn.microsoft.com/library/windows/hardware/hh440130)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -73,7 +73,7 @@ NDIS は、次のステータス コードのいずれかを返します。
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

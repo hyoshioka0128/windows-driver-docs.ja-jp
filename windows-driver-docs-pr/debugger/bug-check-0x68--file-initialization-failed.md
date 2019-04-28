@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 64983a773d7e11221dfd607002fa489bcdf3783c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363145"
 ---
 # <a name="bug-check-0x68-fileinitializationfailed"></a>バグ チェック 0x68:ファイル\_初期化\_失敗
 

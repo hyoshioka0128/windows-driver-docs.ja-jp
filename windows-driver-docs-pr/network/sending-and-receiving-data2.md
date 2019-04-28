@@ -1,19 +1,19 @@
 ---
-title: いる CoNDIS でデータを送受信します。
-description: いる CoNDIS でデータを送受信します。
+title: CoNDIS でのデータの送信と受信
+description: CoNDIS でのデータの送信と受信
 ms.assetid: aad7ccf9-0eaa-4327-b048-268d12593a70
 keywords:
 - WDK いる CoNDIS 仮想接続は、データを転送します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 242b9228d72472cd2d07fe18b8f2141c21fc64a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366258"
 ---
-# <a name="sending-and-receiving-data-in-condis"></a>いる CoNDIS でデータを送受信します。
+# <a name="sending-and-receiving-data-in-condis"></a>CoNDIS でのデータの送信と受信
 
 
 

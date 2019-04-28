@@ -1,6 +1,6 @@
 ---
-title: プリント プロセッサによって定義されている関数
-description: プリント プロセッサによって定義されている関数
+title: 印刷プロセッサによって定義されている関数
+description: 印刷プロセッサによって定義されている関数
 ms.assetid: ada376f0-515e-4995-b612-4da9523b6fcf
 keywords:
 - プリント プロセッサ WDK、関数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17c27218af95da7714b9e9d99ce18ab0a97d3f13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363212"
 ---
-# <a name="functions-defined-by-print-processors"></a>プリント プロセッサによって定義されている関数
+# <a name="functions-defined-by-print-processors"></a>印刷プロセッサによって定義されている関数
 
 
 

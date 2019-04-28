@@ -1,6 +1,6 @@
 ---
-title: 中間ドライバーで Irp の設定
-description: 中間ドライバーで Irp の設定
+title: 中間ドライバーでの IRP の設定
+description: 中間ドライバーでの IRP の設定
 ms.assetid: 0d04a951-a68e-4fa1-bdc6-dd92ec49deae
 keywords:
 - リムーバブル メディア WDK カーネルでは、中間ドライバー Irp
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc848103b57c6c6b52c96c89c88c452004c5375e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367867"
 ---
-# <a name="setting-up-irps-in-intermediate-drivers"></a>中間ドライバーで Irp の設定
+# <a name="setting-up-irps-in-intermediate-drivers"></a>中間ドライバーでの IRP の設定
 
 
 
