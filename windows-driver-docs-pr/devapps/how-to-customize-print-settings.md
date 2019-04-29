@@ -5,18 +5,18 @@ ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 653724ee75540e1bcff7b23853696cd43d53edd1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330683"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>印刷の設定 (UWP デバイス アプリ) をカスタマイズする方法
 
 
-Windows 8.1 では、UWP デバイス アプリは、カスタマイズの詳細設定のフライアウトを表示するプリンタの製造元を使用できます。 このトピックでは、高度な印刷設定のフライアウトが導入されていて、表示方法、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプル カスタム ポップアップ付きの既定のフライアウトが置き換えられます。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+Windows 8.1 では、UWP デバイス アプリは、カスタマイズの詳細設定のフライアウトを表示するプリンタの製造元を使用できます。 このトピックでは、高度な印刷設定のフライアウトが導入されていて、表示方法、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプル カスタム ポップアップ付きの既定のフライアウトが置き換えられます。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
-C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)使用して、 **Preferences.xaml**カスタム ポップアップの UI を示すためにページの印刷設定の詳細。 印刷のヘルパー クラスは、デバイス コンテキスト (IPrinterExtensionContext) を作成し、デバイス クエリの実行に使用されます。 **PrinterHelperClass.cs**ファイルは、 **DeviceAppForPrintersLibrary**プロジェクトで定義されている Api を使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)を参照してください。
+C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)使用して、 **Preferences.xaml**カスタム ポップアップの UI を示すためにページの印刷設定の詳細。 印刷のヘルパー クラスは、デバイス コンテキスト (IPrinterExtensionContext) を作成し、デバイス クエリの実行に使用されます。 **PrinterHelperClass.cs**ファイルは、 **DeviceAppForPrintersLibrary**プロジェクトで定義されている Api を使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、次を参照してください。、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
 
 **注**  このトピックで示すコード例に基づいています、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプル。 このサンプルも JavaScript および C++ で使用できます。 C++ は COM を直接アクセスできるため、C++ のバージョン サンプルにはが含まれていないことコード ライブラリ プロジェクトに注意してください。 コードの最新バージョンを参照するサンプルをダウンロードします。
 
@@ -51,7 +51,7 @@ C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p
 
 開始する前に。
 
-1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)を参照してください。
+1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
 2.  開発用 PC の設定を取得します。 参照してください[Getting started](getting-started.md)については、ツールをダウンロードして開発者アカウントを作成します。
 3.  アプリをストアに関連付けます。 参照してください[UWP デバイスのアプリを作成](step-1--create-a-uwp-device-app.md)についてです。
 4.  アプリに関連付けているプリンター用のデバイス メタデータを作成します。 参照してください[デバイス メタデータを作成する](step-2--create-device-metadata.md)の詳細についてはします。
@@ -199,7 +199,7 @@ partial class App : Application
 渡されるイベント引数、`LoadAdvancedPrintSettingsContext`メソッドにアクセスすると、プリンターを制御するプロパティを公開します。
 
 -   **Args.configuration** Windows.Devices.Printers.Extensions.PrintTaskConfiguration 型のオブジェクトのプロパティを提供します。 このオブジェクトは、印刷タスク拡張機能のコンテキストにアクセスできるように、印刷チケットを更新するイベント ハンドラーを追加することもできます。
--   **Args.configuration.printerExtensionContext** Windows.Devices.Printers.Extensions.PrinterExtensionContext 型のオブジェクトのプロパティを提供します。 このオブジェクトは、印刷スキーマでは、PrintTicket、PrinterExtensionLibrary インターフェイスへのポインターし、キュー情報を出力します。 インターフェイスは公開されない場合は null になります。 詳細については、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)を参照してください。
+-   **Args.configuration.printerExtensionContext** Windows.Devices.Printers.Extensions.PrinterExtensionContext 型のオブジェクトのプロパティを提供します。 このオブジェクトは、印刷スキーマでは、PrintTicket、PrinterExtensionLibrary インターフェイスへのポインターし、キュー情報を出力します。 インターフェイスは公開されない場合は null になります。 詳細については、次を参照してください。[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
 
 この例では、`LoadAdvancedPrintSettingsContext`ほどのメソッドに表示されます、 **Constants.cs**ファイル。
 

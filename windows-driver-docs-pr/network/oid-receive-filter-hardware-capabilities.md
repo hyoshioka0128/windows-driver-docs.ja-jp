@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d64ecb4baf0db3fcb15af9de2d75002ec0a8c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384239"
 ---
 # <a name="oidreceivefilterhardwarecapabilities"></a>OID\_受信\_フィルター\_ハードウェア\_機能
 
@@ -19,7 +19,7 @@ ms.locfileid: "56574604"
 
 OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、[**NDIS\_受信\_フィルター\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS フィルターが表示される次の NDIS インターフェイスで使用されます。
@@ -63,7 +63,7 @@ OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_ハ
 <a href="" id="ndis-status-failure"></a>NDIS\_状態\_エラー  
 他の理由から、要求が失敗しました。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

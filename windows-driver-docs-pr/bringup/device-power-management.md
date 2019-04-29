@@ -5,11 +5,11 @@ ms.assetid: F57AD5A0-F459-4A20-BDBE-87C30CF957B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc8b420f2d84b7c9342bfab10303f761dfc22da3
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328056"
 ---
 # <a name="device-power-management"></a>デバイス電源管理
 
@@ -19,14 +19,14 @@ ms.locfileid: "58441931"
 
 システムの実行中に (つまり、ACPI 定義作業の状態、S0 がシステム)、個々 のデバイスが電力を節約の利用状況に応じて、デバイスの電源状態の間で切り替えを行うためです。 従来の PC システムでスリープ ACPI 定義 (S1 S4 から) を示す power がこれらの状態は Windows SoC プラットフォームでは使用されません切断された、待機時間の長いスリープの保存にも使用されます。 そのため、バッテリの寿命は、プラットフォームでの実行時のデバイスの電源管理の実装方法に大きく依存します。
 
-SoC に統合されているデバイスは、電源管理対象 Windows Power フレームワーク (PoFx) を使用できます。 これらのフレームワークに統合されたデバイスは、SoC の電源と時計コントロールの詳細を知っている PoFx、SoC 固有 power エンジン プラグイン (microPEP) 経由で電源管理です。 PoFx の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
+SoC に統合されているデバイスは、電源管理対象 Windows Power フレームワーク (PoFx) を使用できます。 これらのフレームワークに統合されたデバイスは、SoC の電源と時計コントロールの詳細を知っている PoFx、SoC 固有 power エンジン プラグイン (microPEP) 経由で電源管理です。 PoFx の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
 
 SoC に統合されていない周辺機器は、Windows は、ACPI デバイスの電源管理を使用します。 これら ACPI で管理されたデバイスのデバイス ドライバー スタック (通常は関数またはクラス ドライバー) の電源ポリシー所有者はデバイスの電源状態遷移の決定をおよび[ACPI の Windows ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)Acpi.sys、呼び出す ASL コントロール必要なプラットフォーム固有の電源制御を適用するメソッド。
 
 > [!NOTE]
 > 、することができますし、一部のデバイス スタックには、ACPI デバイスの電源管理を使用して、単独、または、microPEP と組み合わせて: SoC にデバイスの電源管理のため。
 
-」の説明に従って[ACPI のデバイスの電源管理](https://docs.microsoft.com/windows-hardware/drivers/bringup/device-power-management#device-power-management-in-acpi)Windows は、ACPI 5.0 仕様で定義されている D3cold 電源管理機能をサポートしています。 このサポートを使用すると、デバイス、プラットフォームおよびドライバー オプトインできるデバイスの電源が実行時のアイドル時間中に完全に削除します。 この機能は、バッテリの寿命を大幅に改善できます。 ただし、電源を削除する必要がありますでサポートされなければすべて影響を受けるコンポーネント D0 を正常に完了するには。 このため、ドライバー (バスおよび関数) と、プラットフォーム自体には、示す必要がありますそれをサポートすることです。 D3cold ドライバー オプトインの詳細については、[ドライバーではサポートしている D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)を参照してください。
+」の説明に従って[ACPI のデバイスの電源管理](https://docs.microsoft.com/windows-hardware/drivers/bringup/device-power-management#device-power-management-in-acpi)Windows は、ACPI 5.0 仕様で定義されている D3cold 電源管理機能をサポートしています。 このサポートを使用すると、デバイス、プラットフォームおよびドライバー オプトインできるデバイスの電源が実行時のアイドル時間中に完全に削除します。 この機能は、バッテリの寿命を大幅に改善できます。 ただし、電源を削除する必要がありますでサポートされなければすべて影響を受けるコンポーネント D0 を正常に完了するには。 このため、ドライバー (バスおよび関数) と、プラットフォーム自体には、示す必要がありますそれをサポートすることです。 D3cold ドライバー オプトインの詳細については、次を参照してください。[ドライバーではサポートしている D3cold](https://msdn.microsoft.com/library/windows/hardware/hh967717)します。
 
 ## <a name="device-power-management-in-acpi"></a>ACPI のデバイスの電源管理
 
@@ -91,7 +91,7 @@ Namespace デバイス サポートに最大 4 つデバイスの電源状態を
  > [!NOTE]
  > 特定のプラットフォームが、D3cold 機能をサポートしているデバイスのデバイス ドライバー opts に D3cold、デバイスの場合\_PR3 power リソースは、他のデバイスで使用されてはいない場合はオフになります D3hot への移行されてからしばらくします。
 
-D3cold をサポートするデバイスの電源のリソース要件の詳細については、[D3cold のファームウェア要件](firmware-requirements-for-d3cold.md)を参照してください。
+D3cold をサポートするデバイスの電源のリソース要件の詳細については、次を参照してください。 [D3cold のファームウェア要件](firmware-requirements-for-d3cold.md)します。
 
 #### <a name="device-power-state-psx"></a>デバイスの電源状態 (\_PSx)
 

@@ -1,15 +1,15 @@
 ---
-title: False の欠陥を抑制するのに _analysis_assume 関数の使用
-description: False の欠陥を抑制するのに _analysis_assume 関数の使用
+title: 誤検知を抑制するための _analysis_assume 関数の使用
+description: 誤検知を抑制するための _analysis_assume 関数の使用
 ms.assetid: eb71a664-ada5-44e3-b75d-b1a7348b115f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 215121b46c1fb8f49f24bb8eece471e62f20f7fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325421"
 ---
 # <a name="using-the-analysisassume-function-to-suppress-false-defects"></a>使用して、 \_analysis\_False 欠陥を抑制する関数を想定しています
 

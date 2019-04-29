@@ -5,11 +5,11 @@ ms.assetid: 56efebda-970f-4885-9c5f-1eac97aecfdd
 ms.date: 01/30/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 95b02d3d8d8f1b51ebea6cc41ffc02e0c1b1d461
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387264"
 ---
 # <a name="driver-features"></a>ドライバー機能
 
@@ -39,7 +39,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%AddEuro</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>デバイス フォントには、ユーロの通貨記号を追加します。</p>
 <p>この機能は、レベル 2 + プリンターのみサポートされます。 レベル 1 のプリンター <strong>SetOptions</strong> 、この機能は無視されますと<strong>GetOptions</strong>常に"False"を返します。</p>
 <p>プリンター固定</p></td>
@@ -48,7 +48,7 @@ ms.locfileid: "57463981"
 <td><p><strong>% CtrlDAfter</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>ジョブの後に Ctrl-D を送信します。</p>
 <p>プリンター固定</p></td>
 </tr>
@@ -56,14 +56,14 @@ ms.locfileid: "57463981"
 <td><p><strong>% CtrlDBefore</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>各ジョブの前に Ctrl-D を送信します。</p>
 <p>プリンター固定</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%CustomPageSize</strong></p></td>
 <td><p>詳細については、下の注 1 を参照してください。</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>PostScript カスタム ページのサイズ パラメーターを指定します。</p>
 <p>固定ドキュメント</p></td>
 </tr>
@@ -71,7 +71,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%GraphicsTrueGray</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>PostScript 灰色グレー グラフィックスに変換します。</p>
 <p>プリンター固定</p></td>
 </tr>
@@ -79,7 +79,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%JobTimeout</strong></p></td>
 <td><p>NULL で終わる ANSI 文字列の 0 ~ 2,147, 483,647 の範囲で、タイムアウトの秒数の符号なし整数を表す 10 進文字を含んでいます。</p>
 <p><strong>SetOptions</strong>、余分なタブまたは空白文字の前に、または後の 10 進数字が許可されている場合がの記号は許可されません。</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>ジョブのタイムアウト値を指定します。</p>
 <p>プリンター固定</p></td>
 </tr>
@@ -87,7 +87,7 @@ ms.locfileid: "57463981"
 <td><p><strong>% MaxFontSizeAsBitmap</strong></p></td>
 <td><p>NULL で終わる ANSI 文字列の 0 ~ 32,767 の範囲内のピクセル数の符号なし整数を表す 10 進文字を含んでいます。</p>
 <p><strong>SetOptions</strong>、余分なタブまたは空白文字の前に、または後の 10 進数字が許可されている場合がの記号は許可されません。</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>ビットマップとしてダウンロードするフォントの最大サイズを指定します。</p>
 <p>プリンター固定</p></td>
 </tr>
@@ -95,7 +95,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%MetafileSpooling</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>高度な印刷機能を有効または無効にします。</p>
 <p>固定ドキュメント</p>
 <p>詳細については、下の注 2 を参照してください。</p></td>
@@ -104,7 +104,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%MinFontSizeAsOutline</strong></p></td>
 <td><p>NULL で終わる ANSI 文字列の 0 ~ 32,767 の範囲内のピクセル数の符号なし整数を表す 10 進文字を含んでいます。</p>
 <p><strong>SetOptions</strong>、余分なタブまたは空白文字の前に、または後の 10 進数字が許可されている場合がの記号は許可されません。</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>アウトラインとしてダウンロードする最小のフォント サイズを指定します。</p>
 <p>プリンター固定</p></td>
 </tr>
@@ -112,7 +112,7 @@ ms.locfileid: "57463981"
 <td><p><strong>% ミラーリング</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>ミラーが水平方向の座標を反転して出力します。</p>
 <p>固定ドキュメント</p></td>
 </tr>
@@ -120,21 +120,21 @@ ms.locfileid: "57463981"
 <td><p><strong>%Negative</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>負の値の出力を生成するには、白と黒の値を反転します。 この機能は、モノクロ プリンターのみサポートされます。 カラー プリンターの<strong>SetOptions</strong> 、この機能を無視し、 <strong>GetOptions</strong>常に"False"を返します。</p>
 <p>固定ドキュメント</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%Orientation</strong></p></td>
 <td><p>"Portrait", "Landscape", "RotatedLandscape"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>出力方向を指定します。</p>
 <p>固定ドキュメント</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%OutputFormat</strong></p></td>
 <td><p>「速度」、「移植性」、"EPS"、「アーカイブ」</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>PostScript 出力形式を指定します。</p>
 <p>固定ドキュメント</p>
 <p>詳細については、下の注 5 を参照してください。</p></td>
@@ -142,14 +142,14 @@ ms.locfileid: "57463981"
 <tr class="even">
 <td><p><strong>%OutputProtocol</strong></p></td>
 <td><p>"ASCII"、"BCP"、"TBCP"、"Binary"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>プリンターで印刷ジョブを使用するプロトコルを指定します。 PostScript プリンターは、これらのオプションは常に利用するために、"ASCII"、"Binary"をサポートするためと見なされます。 "BCP"と"TBCP"オプションはサポートされている場合にのみ使用できます。 (これを見つけるには、確認、グローバル属性 [プロトコル]。</p>
 <p>プリンター固定</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%OutputPSLevel</strong></p></td>
 <td><p>"1", "2", "3"</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>印刷ジョブに使用する PostScript 言語レベルを指定します。 設定は、"LanguageLevel"グローバル属性で指定された値より大きくすることはありませんが。</p>
 <p>固定ドキュメント</p></td>
 </tr>
@@ -157,7 +157,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%PageOrder</strong></p></td>
 <td><p>"FrontToBack"</p>
 <p>"BackToFront"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>ページの印刷順序を指定します。</p>
 <p>固定ドキュメント</p>
 <p>詳細については、下の注 3 を参照してください。</p></td>
@@ -166,7 +166,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%PagePerSheet</strong></p></td>
 <td><p>"1", "2", "4", "6",</p>
 <p>「9」、「16」、「小冊子」</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>物理的なシートごとの論理ページの数を指定します。 この機能は、"n-up"印刷とも呼ばれます。</p>
 <p>固定ドキュメント</p>
 <p>詳細については、下の注 4 を参照してください。</p></td>
@@ -175,7 +175,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%PSErrorHandler</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>PostScript エラー ハンドラーを送信します。</p>
 <p>固定ドキュメント</p></td>
 </tr>
@@ -183,7 +183,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%PSMemory</strong></p></td>
 <td><p>NULL で終わる ANSI 文字列の 0 ~ 2,147, 483,647 の範囲で、PostScript メモリのキロバイト数の符号なし整数を表す 10 進文字を含んでいます。</p>
 <p><strong>SetOptions</strong>、余分なタブまたは空白文字の前に、または後の 10 進数字が許可されている場合がの記号は許可されません。</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>使用できる PostScript 仮想メモリの量を指定します。</p>
 <p>コア ドライバーでは、その処理の PostScript 仮想メモリの使用量が必要です。 場合<strong>%psmemory</strong>設定は、新しい値としてこの最小値を下回って最小の値が使用されます。 現在、最小値は、レベル 1 のプリンター 172 KB とレベル 2 + プリンターは 249 KB です。</p>
 <p>プリンター固定</p></td>
@@ -192,14 +192,14 @@ ms.locfileid: "57463981"
 <td><p><strong>%TextTrueGray</strong></p></td>
 <td><p>"True"</p>
 <p>"False"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>PostScript 灰色に灰色のテキストに変換します。</p>
 <p>プリンター固定</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%TTDownloadFormat</strong></p></td>
 <td><p>"Automatic", "Outline", "Bitmap", "NativeTrueType"</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>形式をダウンロードする TrueType フォントを指定します。 "TTRasterizer"グローバルな属性"Type42"のサポートを指定する場合にのみ、"NativeTrueType"はサポートされています。</p>
 <p>固定ドキュメント</p></td>
 </tr>
@@ -207,7 +207,7 @@ ms.locfileid: "57463981"
 <td><p><strong>%WaitTimeout</strong></p></td>
 <td><p>NULL で終わる ANSI 文字列の 0 ~ 2,147, 483,647 の範囲で、タイムアウトの秒数の符号なし整数を表す 10 進文字を含んでいます。</p>
 <p><strong>SetOptions</strong>、余分なタブまたは空白文字の前に、または後の 10 進数字が許可されている場合がの記号は許可されません。</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>待機のタイムアウト値を指定します。</p>
 <p>プリンター固定</p></td>
 </tr>
@@ -275,18 +275,18 @@ ms.locfileid: "57463981"
         <tbody>
         <tr class="odd">
         <td><p>アーカイブ</p></td>
-        <td><p>はい</p></td>
-        <td><p>いいえ</p></td>
+        <td><p>〇</p></td>
+        <td><p>X</p></td>
         </tr>
         <tr class="even">
         <td><p>移植性</p></td>
-        <td><p>はい</p></td>
-        <td><p>はい</p></td>
+        <td><p>〇</p></td>
+        <td><p>〇</p></td>
         </tr>
         <tr class="odd">
         <td><p>速度</p></td>
-        <td><p>いいえ</p></td>
-        <td><p>はい</p></td>
+        <td><p>X</p></td>
+        <td><p>〇</p></td>
         </tr>
         </tbody>
         </table>

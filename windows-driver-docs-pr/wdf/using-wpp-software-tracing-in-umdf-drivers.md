@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8763ef709eee0286984b769c22ca83515325856f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391822"
 ---
 # <a name="using-wpp-software-tracing-in-umdf-drivers"></a>UMDF ドライバーでの WPP ソフトウェア トレースの使用
 
@@ -53,7 +53,7 @@ ms.locfileid: "56579471"
     {km-WdfDefault.tpl}*.tmh
     ```
 
-トレース メッセージをドライバーを追加する方法の詳細については、[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)を参照してください。
+トレース メッセージをドライバーを追加する方法の詳細については、次を参照してください。[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)します。
 
 ### <a name="sample-drivers-that-use-wpp-software-tracing"></a>WPP ソフトウェア トレースを使用しているサンプル ドライバー
 
@@ -63,7 +63,7 @@ ms.locfileid: "56579471"
 
 ドライバーは、トレース メッセージをドライバーを追加した場合、[トレース プロバイダー](https://msdn.microsoft.com/library/windows/hardware/ff553944)します。 使用することができます、[トレース コント ローラー](https://msdn.microsoft.com/library/windows/hardware/ff553901)など[Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994)、制御、[トレース セッション](https://msdn.microsoft.com/library/windows/hardware/ff553950)を作成し、[トレース ログ](https://msdn.microsoft.com/library/windows/hardware/ff553911)。 使用することができます、[トレース コンシューマー](https://msdn.microsoft.com/library/windows/hardware/ff553900)など[Tracefmt](https://msdn.microsoft.com/library/windows/hardware/ff552974)メッセージを表示します。
 
-ソフトウェア トレース ツールを使用する方法の詳細については、[ソフトウェア トレース ツールのアンケート](https://msdn.microsoft.com/library/windows/hardware/ff552869)を参照してください。
+ソフトウェア トレース ツールを使用する方法の詳細については、次を参照してください。[ソフトウェア トレース ツールのアンケート](https://msdn.microsoft.com/library/windows/hardware/ff552869)します。
 
 ### <a name="viewing-the-umdf-trace-log"></a>UMDF トレース ログを表示します。
 
@@ -79,7 +79,7 @@ UMDF のログ ファイルを表示するにはいずれかを使用して[trac
 
 使用することも、 [ **! wmitrace** ](https://msdn.microsoft.com/library/windows/hardware/ff561362)デバッガー拡張機能を[トレース メッセージを表示](https://msdn.microsoft.com/library/windows/hardware/ff546837)デバッガーで。
 
-1.  、WinDbg でドライバーをホストする WUDFHost のインスタンスにアタッチします。 詳細については、[UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md)を参照してください。
+1.  、WinDbg でドライバーをホストする WUDFHost のインスタンスにアタッチします。 詳細については、次を参照してください。 [UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md)します。
 2.  ドライバー バージョン 1.11 以降を使用して、Windows 8 またはそれ以降、カーネル デバッガーを使用している場合は、この手順をスキップすることができます。 ドライバーは、UMDF 1.11 より前のバージョンを使用している場合を使用して、 [ **! wmitrace.tmffile** ](https://msdn.microsoft.com/library/windows/hardware/ff566173)または[ **! wmitrace.searchpath** ](https://msdn.microsoft.com/library/windows/hardware/ff566163)を指定する、プラットフォーム固有のトレース メッセージの形式 (.tmf) ファイル、または .tmf ファイルへのパス。 .Tmf ファイルは、WDK でプラットフォーム固有のサブディレクトリに配置されます。
 
 3.  使用して、 [ **! wmitrace.logdump** ](https://msdn.microsoft.com/library/windows/hardware/ff566159)トレース バッファーの内容を表示するコマンド。

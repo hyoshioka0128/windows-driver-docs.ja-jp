@@ -1,6 +1,6 @@
 ---
-title: 片方向と双方向リンク リスト
-description: 片方向と双方向リンク リスト
+title: 片方向および双方向リンク リスト
+description: 片方向および双方向リンク リスト
 ms.assetid: 3a305f54-7866-4163-a3e4-e078d1927adc
 keywords:
 - シングル リンク リストの WDK カーネル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c36c7b617e22035e0ec52df045ddf14b3c37332
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331994"
 ---
-# <a name="singly-and-doubly-linked-lists"></a>片方向と双方向リンク リスト
+# <a name="singly-and-doubly-linked-lists"></a>片方向および双方向リンク リスト
 
 
 
@@ -86,7 +86,7 @@ PopXxxEntry(PSINGLE_LIST_ENTRY ListHead)
 
 同じリストにリスト操作の原子性と非アトミックなトランザクションのバージョンへの呼び出しを混在させないでください。 データ構造体が壊れている可能性になる場合は、アトミックと非アトミックなトランザクションのバージョンは、同じリストで同時に実行と、コンピューターが応答を停止する可能性がありますまたはバグのチェック (つまり、*クラッシュ*)。 (リスト操作の原子性と非アトミックなトランザクションのバージョンへの呼び出しを混在する代わりに非アトミック ルーチンの呼び出し中に、スピン ロックを取得できません。 スピン ロックを使用して、この方法ではサポートされていませんし、一覧の破損が発生する可能性がありますもします。)
 
-システムには、効率的なアトミック シングル リンク リストの代替実装も提供します。 詳細については、[Sequenced シングル リンク リスト](#sequenced-singly-linked-lists)を参照してください。
+システムには、効率的なアトミック シングル リンク リストの代替実装も提供します。 詳細については、次を参照してください。 [Sequenced シングル リンク リスト](#sequenced-singly-linked-lists)します。
 
 ### <a name="doubly-linked-lists"></a>ダブルリンク リスト
 

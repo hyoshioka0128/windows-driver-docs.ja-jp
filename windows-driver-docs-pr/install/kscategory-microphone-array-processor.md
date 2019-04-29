@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 37188d6581a3cd62249f55d2f9473577c42c09df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391095"
 ---
 # <a name="kscategorymicrophonearrayprocessor"></a>KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
 
@@ -51,7 +51,7 @@ KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[デバイス インターフェイス ク�
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 機能カテゴリをサポートすることを示す KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR のインスタンスを登録します。
@@ -60,7 +60,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 Windows Vista のマイク配列を処理する方法の詳細についてを参照してください、 [Windows Vista でのマイク配列サポート](https://go.microsoft.com/fwlink/p/?linkid=120592)と[方法の構築および Windows Vista のマイク配列を使用して](https://go.microsoft.com/fwlink/p/?linkid=120593)ホワイト ペーパー。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
