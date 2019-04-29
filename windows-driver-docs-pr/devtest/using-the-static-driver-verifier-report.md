@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier のレポートを使用します。
-description: Static Driver Verifier のレポートを使用します。
+title: 静的ドライバー検証ツールのレポートの使用
+description: 静的ドライバー検証ツールのレポートの使用
 ms.assetid: ca6eaa53-cee5-4caf-b1e1-035ea800779b
 keywords:
 - 静的ドライバー検証ツールの WDK、検証結果
@@ -24,13 +24,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cc0afed9f938254957b4cd9d8c08a83e6102158
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327271"
 ---
-# <a name="using-the-static-driver-verifier-report"></a>Static Driver Verifier のレポートを使用します。
+# <a name="using-the-static-driver-verifier-report"></a>静的ドライバー検証ツールのレポートの使用
 
 
 SDV レポートは、検証結果の対話型の表示です。 このセクションでは、SDV レポートを使用して、ドライバー内でコードのエラーを検索する方法について説明します。 レポートの詳細については、windows、および windows で要素の機能を参照してください[静的ドライバー検証ツールのレポート](static-driver-verifier-report.md)します。

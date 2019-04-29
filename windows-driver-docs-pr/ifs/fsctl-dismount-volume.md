@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20d8a298c337d1db095bb5d7243a0005701aa3b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327896"
 ---
 # <a name="fsctldismountvolume-control-code"></a>FSCTL\_マウント解除\_ボリューム コントロール コード
 
@@ -62,7 +62,7 @@ ms.locfileid: "56573947"
 <a name="remarks"></a>コメント
 -------
 
-**FSCTL\_マウント解除\_ボリューム**制御コードは、他のプロセスに場合、それらのプロセスの予期しない結果を持つことができると、ボリュームを使用しているかどうかに関係なく、ボリュームのマウントを解除しようとします。ボリュームのロックを保持、操作を行います。 ボリュームのロックについては、[ **FSCTL\_ロック\_ボリューム**](https://msdn.microsoft.com/library/windows/desktop/aa364575)を参照してください。
+**FSCTL\_マウント解除\_ボリューム**制御コードは、他のプロセスに場合、それらのプロセスの予期しない結果を持つことができると、ボリュームを使用しているかどうかに関係なく、ボリュームのマウントを解除しようとします。ボリュームのロックを保持、操作を行います。 ボリュームのロックについては、次を参照してください。 [ **FSCTL\_ロック\_ボリューム**](https://msdn.microsoft.com/library/windows/desktop/aa364575)します。
 
 オペレーティング システムでは、マウント ボリュームを検出しません。 マウントのボリュームにアクセスしようとすると、オペレーティング システムは、ボリュームのマウントを試みます。 呼び出しなど[ **GetLogicalDrives** ](https://msdn.microsoft.com/library/windows/desktop/aa364972)マウント ボリュームをマウントするオペレーティング システムをトリガーします。
 

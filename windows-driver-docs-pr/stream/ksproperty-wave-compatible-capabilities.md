@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7377393d7df9c1c927d719083447a20b36be0865
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329974"
 ---
 # <a name="kspropertywavecompatiblecapabilities"></a>KSPROPERTY\_WAVE\_互換性のある\_機能
 
@@ -51,7 +51,7 @@ KSPROPERTY\_WAVE\_互換性のある\_機能プロパティは、デバイスの
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567242" data-raw-source="[&lt;strong&gt;KSWAVE_COMPATCAPS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567242)"><strong>KSWAVE_COMPATCAPS</strong></a></p></td>
@@ -63,7 +63,7 @@ KSPROPERTY\_WAVE\_互換性のある\_機能プロパティは、デバイスの
 
 プロパティの値 (データの操作) は、KSWAVE\_wave デバイスは、入力を受け付ける場合について説明します COMPATCAPS 構造の出力は、または両方します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

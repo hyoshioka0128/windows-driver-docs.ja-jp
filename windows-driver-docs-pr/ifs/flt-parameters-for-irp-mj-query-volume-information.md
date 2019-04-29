@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b349d79a89b9e4ec9c11e61dd65a705277ca31d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393029"
 ---
 # <a name="fltparameters-for-irpmjqueryvolumeinformation-union"></a>FLT\_IRP のパラメーター\_MJ\_クエリ\_ボリューム\_情報共用体
 
@@ -49,7 +49,7 @@ typedef union _FLT_PARAMETERS {
 **QueryVolumeInformation**  
 次のメンバーを含む構造体。
 
-**Length**  
+**長さ**  
 バッファーの長さを (バイト単位) で**VolumeBuffer**します。
 
 **FsInformationClass**  
@@ -120,14 +120,14 @@ typedef union _FLT_PARAMETERS {
 **VolumeBuffer**  
 ボリュームの情報が返される出力バッファーへのポインター。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673) IRP の構造\_MJ\_クエリ\_ボリューム\_情報の操作には、パラメーターが含まれます。コールバック データによって表される IRP ベース ボリューム情報の照会操作 ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
 
 IRP\_MJ\_クエリ\_ボリューム\_情報は IRP ベースの操作。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

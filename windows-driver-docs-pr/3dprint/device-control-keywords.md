@@ -5,11 +5,11 @@ ms.assetid: 1F0CBFC4-F641-4D82-9173-C89218E822B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87ec29efb414e47f69866dba34ad695b4763dcb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325706"
 ---
 # <a name="device-control-keywords"></a>デバイス制御のキーワード
 
@@ -49,7 +49,7 @@ Psk3d:Job3DOutputArea プロパティは、実際に印刷できるデバイス�
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;Job3DOutputAreaWidth、Job3DOutputAreaDepth、および Job3DOutputAreaHeight プロパティを含める必要があるあり、Job3DOutputAreaMesh を含めることができる子要素。</p>
 <p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong>N/A</p>
+<p><strong>xsi:type:</strong>なし</p>
 <p><strong>値:</strong>OutputDimensions</p>
 <p><strong>説明 :</strong>OutputDimensions には、各出力領域のサイズを構成する 3 つのプロパティのセットが含まれています。</p></td>
 </tr>
@@ -165,7 +165,7 @@ Job3DOutputArea キーワードの使用状況
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>[値]</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:integer</p>
 <p><strong>値:</strong>OutputDepth</p>
 <p><strong>説明 :</strong>ミクロン内の Y 軸では、出力領域の深さと同じである 0 より大きい整数を含める OutputDepth 必要があります。</p></td>
@@ -289,7 +289,7 @@ Job3DOutputArea キーワードの使用状況
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>[値]</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:string</p>
 <p><strong>値:</strong></p>
 <p><strong>説明 :</strong>最新の印刷 ダイアログ ボックスでこのプリンターを使用するワークフロー アプリのパッケージ名</p></td>
@@ -339,7 +339,7 @@ Job3DAppName キーワードの使用状況
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>[値]</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:string</p>
 <p><strong>値:</strong></p>
 <p><strong>説明 :</strong>このプリンターを使用する UWP デバイス アプリのパッケージ名には、設定を詳細します。</p></td>
@@ -439,7 +439,7 @@ Job3D3MFVersion キーワードの使用状況
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>[値]</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong> xsd:string</p>
 <p><strong>値:</strong></p>
 <p><strong>説明 :</strong>入力として、デバイスでサポートされている 3MF 拡張機能を定義する URI 名前空間のスペースで区切られたリスト。</p></td>

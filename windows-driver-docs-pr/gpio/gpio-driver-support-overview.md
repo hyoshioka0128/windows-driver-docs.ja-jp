@@ -1,20 +1,20 @@
 ---
 title: GPIO ドライバー サポートの概要
-description: 以降では、Windows 8、GPIO フレームワークの拡張機能 (GpioClx) には、GPIO コント ローラー デバイス用のドライバーの記述のタスクが簡略化します。
+description: Windows 8 以降では、GPIO フレームワーク拡張機能 (GpioClx) により、GPIO コントローラー デバイス用のドライバーを記述するタスクが簡略化されます。
 ms.assetid: 450E7F80-D9AC-4F52-8062-2DA5343C8D0F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdd49c365f797b1271206f9af87ecdde0a16b686
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326161"
 ---
 # <a name="gpio-driver-support-overview"></a>GPIO ドライバー サポートの概要
 
 
-以降では、Windows 8、GPIO フレームワークの拡張機能 (GpioClx) には、GPIO コント ローラー デバイス用のドライバーの記述のタスクが簡略化します。 さらに、GpioClx では、GPIO ピンに接続するための周辺機器のドライバーのサポートを提供します。 カーネル モード ドライバー フレームワーク (KMDF) をシステム提供の拡張機能である、GpioClx GPIO デバイス クラスのメンバーに共通するタスクの処理を実行します。
+Windows 8 以降では、GPIO フレームワーク拡張機能 (GpioClx) により、GPIO コントローラー デバイス用のドライバーを記述するタスクが簡略化されます。 さらに、GpioClx により、GPIO ピンに接続される周辺機器に対してドライバー サポートが提供されます。 カーネル モード ドライバー フレームワーク (KMDF) のシステム提供の拡張機能である GpioClx では、GPIO デバイス クラスのメンバーに共通す処理タスクが実行されます。
 
 この概要では、次のトピックについて説明します。
 
@@ -48,7 +48,7 @@ GpioClx は、GPIO ピンに物理的に接続するための周辺機器のド�
 
 GpioClx は、GPIO コント ローラーのデバイスからのハードウェアによって生成された、プライマリの割り込みを処理する ISR を実装します。 周辺機器の GPIO ピンでは、割り込みをアサートし、上、この pin が有効になっているし、マスクが解除されたプロセッサに対して割り込みを GPIO コント ローラー。 応答をカーネル トラップ ハンドラーを実行する GpioClx ISR をスケジュールします。 GpioClx ISR を呼び出して、割り込みの原因となった GPIO ピンを識別するために、 [*クライアント\_QueryActiveInterrupts* ](https://msdn.microsoft.com/library/windows/hardware/hh439395) GPIO コント ローラーによって実装されているイベントのコールバック関数ドライバー。 この pin に割り当てられているし、ハードウェア アブストラクション レイヤー (HAL) にこの GSI を渡します GSI し GpioClx ISR を検索します。 HAL は、この GSI に対して登録されている ISR を呼び出すことによって、セカンダリの割り込みを生成します。 この ISR は、最初に、割り込みをアサートする周辺機器のデバイスのドライバーに属しています。
 
-プライマリとセカンダリの割り込みの詳細については、[GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)を参照してください。
+プライマリとセカンダリの割り込みの詳細については、次を参照してください。 [GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)します。
 
 ## <a name="drivers-for-peripheral-devices-that-use-gpio-pins"></a>GPIO ピンを使用している周辺機器のデバイスのドライバー
 

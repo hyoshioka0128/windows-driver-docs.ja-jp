@@ -1,6 +1,6 @@
 ---
-title: ユーザー モード ライブラリ
-description: ユーザー モード ライブラリ
+title: ユーザーモード ライブラリ
+description: ユーザーモード ライブラリ
 ms.assetid: a471ae15-bbdd-47c8-ad77-9b82281dd430
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター、ユーザー モード ライブラリ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01d57cbc7cebe19d46a33505edff7188921fef6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389597"
 ---
-# <a name="user-mode-library"></a>ユーザー モード ライブラリ
+# <a name="user-mode-library"></a>ユーザーモード ライブラリ
 
 
 フィルター マネージャーのユーザー モード インターフェイスでは、フィルター ドライバーが含まれている製品の共通機能を提供します。 ユーザー モードのライブラリは*Fltlib.dll*します。 アプリケーションがヘッダー ファイルをインクルード*FltUser.h*と*FltUserStructures.h*へのリンクと*FltLib.lib*します。

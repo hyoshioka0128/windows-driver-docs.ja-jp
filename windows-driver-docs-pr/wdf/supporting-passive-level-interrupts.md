@@ -1,17 +1,17 @@
 ---
-title: 割り込みパッシブ レベルをサポートしています。
+title: パッシブ レベルの割り込みのサポート
 description: フレームワーク バージョン 1.11 以降、WDF ドライバーはパッシブ レベルの処理が必要な割り込みオブジェクトを作成できます。
 ms.assetid: E464F885-928C-40BC-A09F-7A7921F8FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2980eaf64483fd2ceb74708a7a8286986f0f4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331605"
 ---
-# <a name="supporting-passive-level-interrupts"></a>割り込みパッシブ レベルをサポートしています。
+# <a name="supporting-passive-level-interrupts"></a>パッシブ レベルの割り込みのサポート
 
 
 Windows 8 またはそれ以降のバージョンのオペレーティング システムで実行されているドライバーは、framework のバージョン 1.11、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) で始まるパッシブ レベルの処理が必要な割り込みオブジェクトを作成できます。 フレームワークが、ドライバーの割り込みサービス ルーチン (ISR) およびその他の場合は、ドライバーは、パッシブ レベル割り込み処理の割り込みオブジェクトを構成、[オブジェクト イベントのコールバック関数を中断](https://msdn.microsoft.com/library/windows/hardware/dn265640)IRQL = パッシブ\_パッシブ レベル割り込みロックを保持しているときにレベル。
@@ -32,8 +32,8 @@ Windows 8 またはそれ以降のバージョンのオペレーティング シ
 -   必要に応じて設定、 **AutomaticSerialization**を TRUE にします。 ドライバーが設定されている場合**AutomaticSerialization**を TRUE に、フレームワークは、割り込みオブジェクトの実行を同期し、 [ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)または[*EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422)割り込みの親オブジェクトの下にあるその他のオブジェクトからのコールバック関数のコールバック関数。
 -   どちらも、ドライバーが必要に応じて、提供、 [ *EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422) IRQL で呼び出されるコールバック関数、パッシブ =\_レベル、または[ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721) IRQL で呼び出されるコールバック関数のディスパッチを =\_レベル。
 
-上記構成構造体のメンバーの設定の詳細については、[ **WDF\_INTERRUPT\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff552347)を参照してください。
-有効にして、パッシブ レベルの割り込みを無効化については、[の有効化と無効にする割り込み](enabling-and-disabling-interrupts.md)を参照してください。
+上記構成構造体のメンバーの設定の詳細については、次を参照してください。 [ **WDF\_INTERRUPT\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff552347)します。
+有効にして、パッシブ レベルの割り込みを無効化については、次を参照してください。[の有効化と無効にする割り込み](enabling-and-disabling-interrupts.md)します。
 
 ## <a href="" id="servicing"></a>パッシブ レベル割り込みを処理します。
 
@@ -315,11 +315,11 @@ EvtIoInternalDeviceControl(
 -   提供[ *EvtInterruptDisable*](https://msdn.microsoft.com/library/windows/hardware/ff541714)、 [ *EvtInterruptEnable*](https://msdn.microsoft.com/library/windows/hardware/ff541730)、および[ *EvtInterruptWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/hh406422)に応じて。
 -   場合は、ドライバーになど、任意のスレッド コンテキストでは、割り込みに関連する作業を実行する必要があります、[要求ハンドラー](request-handlers.md)を使用して、 [ **WdfInterruptTryToAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439284)と[**WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376)します。 呼び出さない[ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)、 [ **WdfInterruptSynchronize**](https://msdn.microsoft.com/library/windows/hardware/ff547389)、 [ **WdfInterruptEnable**](https://msdn.microsoft.com/library/windows/hardware/ff547354)、または[ **WdfInterruptDisable** ](https://msdn.microsoft.com/library/windows/hardware/ff547351)任意のスレッド コンテキストから。 呼び出すことによって生じるおそれのあるデッドロックのシナリオの例については**WdfInterruptAcquireLock**任意のスレッド コンテキストからの「解説」を参照してください。 [ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340).
 
-    場合への呼び出し[ **WdfInterruptTryToAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439284)作業項目に割り込みに関連する作業を延期できるは、ドライバーは失敗します。 その作業項目で、ドライバーに安全にロックを取得できる割り込みを呼び出して[ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)します。 詳細については、[ **WdfInterruptTryToAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/hh439284)を参照してください。
+    場合への呼び出し[ **WdfInterruptTryToAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439284)作業項目に割り込みに関連する作業を延期できるは、ドライバーは失敗します。 その作業項目で、ドライバーに安全にロックを取得できる割り込みを呼び出して[ **WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)します。 詳細については、次を参照してください。 [ **WdfInterruptTryToAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/hh439284)します。
 
     ドライバーを呼び出すことができます、作業項目などの非任意のスレッド コンテキストで[ **WdfInterruptAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/ff547340)または[ **WdfInterruptSynchronize** ](https://msdn.microsoft.com/library/windows/hardware/ff547389).
 
-詳細については、割り込みのロックを使用して、[同期割り込みコード](synchronizing-interrupt-code.md)を参照してください。
+詳細については、割り込みのロックを使用して、次を参照してください。[同期割り込みコード](synchronizing-interrupt-code.md)します。
 
  
 

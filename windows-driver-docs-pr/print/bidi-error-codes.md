@@ -1,5 +1,5 @@
 ---
-title: 双方向通信のエラー コード
+title: 双方向通信エラー コード
 description: 次のエラー コードは、プリンターの双方向通信で使用されます。
 ms.assetid: e273f5eb-e4f4-4aa7-9ed9-b418eebc6144
 keywords:
@@ -21,18 +21,18 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91ae6dcf22bf6b4fc238ae5612418cfb36e3305e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387277"
 ---
-# <a name="bidirectional-communication-error-codes"></a>双方向通信のエラー コード
+# <a name="bidirectional-communication-error-codes"></a>双方向通信エラー コード
 
 
 次のエラー コードは、プリンターの双方向通信で使用されます。
 
-| Value                               | 説明                                                                                            |
+| 値                               | 説明                                                                                            |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------|
 | エラー\_BIDI\_デバイス\_オフライン        | 双方向の呼び出しがサポートされていますが、リモート プリンターへの接続は使用できません。                  |
 | エラー\_BIDI\_エラー\_ベース            | Bidi 呼び出しが正常に完了したが、個々 の応答で 1 つまたは複数のエラーが発生します。    |

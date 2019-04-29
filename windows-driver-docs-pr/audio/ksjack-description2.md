@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 283100a9053b80de46afa42697bf8fe84f947d9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333337"
 ---
 # <a name="ksjackdescription2-structure"></a>KSJACK\_DESCRIPTION2 構造体
 
@@ -69,7 +69,7 @@ typedef struct _tagKSJACK_DESCRIPTION2 {
 
  
 
-動的な形式の変更の詳細については、[動的形式変更](https://msdn.microsoft.com/library/windows/hardware/ff536371)を参照してください。
+動的な形式の変更の詳細については、次を参照してください。[動的形式変更](https://msdn.microsoft.com/library/windows/hardware/ff536371)します。
 
 <a name="remarks"></a>コメント
 -------

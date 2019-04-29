@@ -1,17 +1,17 @@
 ---
-title: 記録中に、Stream の待機時間
-description: 記録中に、Stream の待機時間
+title: 記録時のストリームの待機時間
+description: 記録時のストリームの待機時間
 ms.assetid: b9391b34-acd8-4434-b00c-48bbbc0b6647
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36f1f5f4987e239ea0c05949b580bf1e7c2b81b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328610"
 ---
-# <a name="stream-latency-during-recording"></a>記録中に、Stream の待機時間
+# <a name="stream-latency-during-recording"></a>記録時のストリームの待機時間
 
 
 実行状態では、レコードのオーディオ ストリームが、WaveRT ポート ドライバーのロールは最小限です。 記録中に、次の図に示すように、オーディオ デバイスはオーディオ データをキャプチャし、循環バッファーに書き込みます。 オーディオ エンジンは、バッファーから、このデータを読み取ります。 このアクティビティには、ポート、ドライバーの介入は不要です。 つまり、オーディオ データは、カーネル モード ソフトウェア コンポーネントで処理されることがなくオーディオ ハードウェアとユーザー モード アプリケーション間で直接フローします。

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8e12638d8ad8ba5c02646e759f888fbebc517c39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331097"
 ---
 # <a name="setpersistententry-function"></a>SetPersistentEntry 関数
 
@@ -47,7 +47,7 @@ void SetPersistentEntry(
 型の構造体[ **HBAFCPBindingEntry2** ](https://msdn.microsoft.com/library/windows/hardware/ff556035)バインドの指定されたポートの一覧から削除するバインディングを示します。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetPersistentEntry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565795)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetPersistentEntry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565795)構造体。
 
 <a name="return-value"></a>戻り値
 ------------

@@ -1,6 +1,6 @@
 ---
-title: Stream ミニドライバーを作成します。
-description: Stream ミニドライバーを作成します。
+title: ストリーム ミニドライバーの作成
+description: ストリーム ミニドライバーの作成
 ms.assetid: 83540dff-3774-4197-8ba1-d28e12b4e366
 keywords:
 - Stream.sys クラス ドライバー WDK Windows 2000 のカーネルでは、書き込み
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c00bcd9db95bd9e3ca27da17f8236685996e9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327522"
 ---
-# <a name="writing-a-stream-minidriver"></a>Stream ミニドライバーを作成します。
+# <a name="writing-a-stream-minidriver"></a>ストリーム ミニドライバーの作成
 
 
 

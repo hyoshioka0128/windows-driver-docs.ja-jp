@@ -1,6 +1,6 @@
 ---
-title: 起動処理
-description: 起動処理
+title: 開始シーケンス
+description: 開始シーケンス
 ms.assetid: bf88b9de-f4c4-4f9c-9355-603789b9ad3d
 keywords:
 - アダプターのドライバー WDK オーディオ、スタートアップ シーケンス
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f455e1346e47ac97071caa2d9bdafa2bc76f84ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328609"
 ---
-# <a name="startup-sequence"></a>起動処理
+# <a name="startup-sequence"></a>開始シーケンス
 
 
 ## <span id="startup_sequence"></span><span id="STARTUP_SEQUENCE"></span>

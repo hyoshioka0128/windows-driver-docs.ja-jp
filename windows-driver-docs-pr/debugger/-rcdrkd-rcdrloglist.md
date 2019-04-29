@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c4de589f5c06e062baa4846a512a688674de7255
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335785"
 ---
 # <a name="rcdrkdrcdrloglist"></a>!rcdrkd.rcdrloglist
 
@@ -39,12 +39,12 @@ ms.locfileid: "56578159"
 
 Rcdrkd.dll
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このコマンドは、WppRecorder API を使用してメッセージをさまざまなログに記録するドライバーに対してだけに関連します。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次の例では、USB 3.0 ホスト コント ローラー ドライバー (usbxhci.sys) によって所有されているすべてのレコーダー ログの一覧が表示されます。

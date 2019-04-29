@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 788d55c9f1a0c810da0d0952cdf56d9f6fe40f51
-ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57693059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392511"
 ---
 # <a name="general-guidelines-for-inf-files"></a>INF ファイルの一般的なガイドライン
 
@@ -28,7 +28,7 @@ INF ファイルには多くの共通部分があり、次の構文規則の 1 �
 
 -   INF ファイル用のツールを WDK です。
 
-    詳細については、[INF ファイル用のツール](https://msdn.microsoft.com/library/windows/hardware/ff552956)を参照してください。 これらのツールに含まれる、 \\WDK の Tools サブディレクトリ。
+    詳細については、次を参照してください。 [INF ファイル用のツール](https://msdn.microsoft.com/library/windows/hardware/ff552956)します。 これらのツールに含まれる、 \\WDK の Tools サブディレクトリ。
 
 -   サンプルの INF ファイルと類似したデバイスの INF ファイル。
 

@@ -7,11 +7,11 @@ keywords:
 - SO_WSK_SECURITY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 49658a55beabad6539913604a6ccdc5a2f425d8f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331225"
 ---
 # <a name="sowsksecurity"></a>したがって\_WSK\_セキュリティ
 
@@ -32,7 +32,7 @@ WSK アプリケーションの呼び出しにソケットをセキュリティ�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -45,7 +45,7 @@ WSK アプリケーションの呼び出しにソケットをセキュリティ�
 <td><p>SO_WSK_SECURITY</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -91,7 +91,7 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 <thead>
 <tr class="header">
 <th>パラメーター</th>
-<th>[値]</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -104,7 +104,7 @@ WSK アプリケーションでソケットにセキュリティ記述子が適�
 <td><p>SO_WSK_SECURITY</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>レベル</em></p></td>
+<td><p><em>Level</em></p></td>
 <td><p>取得</p></td>
 </tr>
 <tr class="even">
@@ -136,7 +136,7 @@ WSK アプリケーションを呼び出す必要があります、 [ **WskContr
 
 セキュリティの詳細については\_記述子構造体をセキュリティのリファレンス ページを参照してください\_Microsoft Windows SDK ドキュメントの記述子。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: ドライバーの注釈のポイントを浮動小数点
+title: ドライバーの浮動小数点注釈
 description: 注釈がコード分析ツールを浮動小数点の使用を検出できます。 浮動小数点では、カーネル モード コードをポイントし、浮動小数点状態が適切に保護されていない場合、エラーを報告できます。 浮動小数点のルールは、カーネル モード コードに対してのみチェックされます。
 ms.assetid: 86FF1A21-674F-4BDA-AC03-C1E5F06A4439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45f5d626d7c43d231514d92b98d96671e6a03754
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329706"
 ---
-# <a name="floating-point-annotations-for-drivers"></a>ドライバーの注釈のポイントを浮動小数点
+# <a name="floating-point-annotations-for-drivers"></a>ドライバーの浮動小数点注釈
 
 
 注釈がコード分析ツールを浮動小数点の使用を検出できます。 浮動小数点では、カーネル モード コードをポイントし、浮動小数点状態が適切に保護されていない場合、エラーを報告できます。 浮動小数点のルールは、カーネル モード コードに対してのみチェックされます。
@@ -79,7 +79,7 @@ void
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[SAL 2.0 Annotations for Windows Drivers](sal-2-annotations-for-windows-drivers.md)
+[Windows ドライバーの SAL 2.0 注釈](sal-2-annotations-for-windows-drivers.md)
 
 
 

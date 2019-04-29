@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de4278fc0413aa89186e43482d2c6684b40bea25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392552"
 ---
 # <a name="wiadpcthumbwidth"></a>WIA\_DPC\_THUMB\_幅
 
@@ -42,7 +42,7 @@ WIA\_DPC\_THUMB\_WIDTH プロパティ (ピクセル単位)、新しくキャプ
 
 場合、値または WIA\_DPC\_THUMB\_幅が WIA\_PROP\_、アクセス権があります読み取り専用。 値は、WIA 場合\_PROP\_一覧で、アクセス権は読み取り/書き込みである必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

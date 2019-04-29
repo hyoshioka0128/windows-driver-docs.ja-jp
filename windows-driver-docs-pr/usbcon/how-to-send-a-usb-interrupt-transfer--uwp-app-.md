@@ -1,16 +1,16 @@
 ---
-Description: A USB device can support interrupt endpoints so that it can send or receive data at regular intervals.
-title: USB 割り込み転送要求 (UWP アプリ) を送信する方法
+Description: USB デバイスは、送信または一定の間隔でデータを受信できるように、割り込みのエンドポイントをサポートできます。
+title: USB 割り込み転送要求の送信方法 (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c5a44305f4e7a2cd0b52ea3d1d96a44ce6b3e95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390547"
 ---
-# <a name="how-to-send-a-usb-interrupt-transfer-request-uwp-app"></a>USB 割り込み転送要求 (UWP アプリ) を送信する方法
+# <a name="how-to-send-a-usb-interrupt-transfer-request-uwp-app"></a>USB 割り込み転送要求の送信方法 (UWP アプリ)
 
 
 **要約**
@@ -64,7 +64,7 @@ USB デバイスは、一定の間隔で、ホストからデータを受信す�
 ## <a name="writing-to-the-interrupt-out-endpoint"></a>外部エンドポイント割り込みへの書き込み
 
 
-転送要求を割り込みに一括転送のターゲットを除く、アウトと同じですが、アプリに送信する方法は、割り込みによって表される、パイプを[ **UsbInterruptOutPipe**](https://msdn.microsoft.com/library/windows/apps/dn278425)します。 詳細については、[USB 一括転送要求 (UWP アプリ) を送信する方法](how-to-send-a-usb-bulk-transfer--uwp-app-.md)を参照してください。
+転送要求を割り込みに一括転送のターゲットを除く、アウトと同じですが、アプリに送信する方法は、割り込みによって表される、パイプを[ **UsbInterruptOutPipe**](https://msdn.microsoft.com/library/windows/apps/dn278425)します。 詳細については、次を参照してください。 [USB 一括転送要求 (UWP アプリ) を送信する方法](how-to-send-a-usb-bulk-transfer--uwp-app-.md)します。
 
 ## <a name="step-1-implement-the-interrupt-event-handler-interrupt-in"></a>手順 1:(割り込みの) 割り込みイベント ハンドラーを実装します。
 

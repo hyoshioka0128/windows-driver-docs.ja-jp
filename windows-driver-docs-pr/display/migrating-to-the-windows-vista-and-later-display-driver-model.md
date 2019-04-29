@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61e17f6a2b21b788cb515780879d5c1622c29930
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390825"
 ---
 # <a name="migrating-to-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) への移行
 
@@ -27,7 +27,7 @@ WDDM は、表示と XDDM に従って記述されたビデオのミニポート
 
 新しいデバイス ドライバー インターフェイス (DDI) を書き直す必要がありますが、ドライバーの作成者は、WDDM ドライバーでの低レベルのハードウェアに依存するコードを再利用できるの関連コードです。 WDDMdrivers を記述する場合は、これらの点を考慮します。
 
--   ディスプレイのミニポート ドライバーでは、改訂された一連のオペレーティング システムおよび DirectX グラフィックスのカーネル サブシステムと対話するエントリ ポイント関数を実装する必要があります。 詳細については、[**ディスプレイ ミニポート ドライバーの DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556157)を参照してください。 ディスプレイのミニポート ドライバーでは、任意の文書化されているカーネル関数を呼び出すことができます。
+-   ディスプレイのミニポート ドライバーでは、改訂された一連のオペレーティング システムおよび DirectX グラフィックスのカーネル サブシステムと対話するエントリ ポイント関数を実装する必要があります。 詳細については、次を参照してください。 [**ディスプレイ ミニポート ドライバーの DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556157)します。 ディスプレイのミニポート ドライバーでは、任意の文書化されているカーネル関数を呼び出すことができます。
 
 -   ディスプレイのミニポート ドライバーは、適切な DirectX グラフィックスのカーネル サブシステムを動的に読み込みます。 ディスプレイのミニポート ドライバーと DirectX グラフィックスのカーネル サブシステム インターフェイスを介して相互に呼び出します。
 

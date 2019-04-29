@@ -1,17 +1,17 @@
 ---
-title: タイルのリソース
+title: タイル リソース
 description: タイルのリソースに対して十分でないデバイスのページングのキューで実行されている非同期ビデオ メモリ マネージャーのサービス。
 ms.assetid: D48D2046-64A6-4B0E-9235-84DD2A83DB39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8a663c211d154411e5191072aaf1464ca93f3b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389848"
 ---
-# <a name="tile-resources"></a>タイルのリソース
+# <a name="tile-resources"></a>タイル リソース
 
 
 タイルのリソースに対して十分でないデバイスのページングのキューで実行されている非同期ビデオ メモリ マネージャーのサービス。 具体的には、タイル リソースのレンダリングとキューのページ テーブルの更新を描画操作の間で同期的に、更新プログラムが適用されていることを確認します。

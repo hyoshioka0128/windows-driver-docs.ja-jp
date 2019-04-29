@@ -14,11 +14,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8437c21fd7e2895330f60f09798eedcb4fc55026
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328007"
 ---
 # <a name="efirngalgorithmlist-structure"></a>EFI\_RNG\_アルゴリズム\_リスト構造
 
@@ -35,7 +35,7 @@ typedef struct _EFI_RNG_ALGORITHM_LIST {
 } EFI_RNG_ALGORITHM_LIST, *PEFI_RNG_ALGORITHM_LIST;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **AlgorithmsCount**  

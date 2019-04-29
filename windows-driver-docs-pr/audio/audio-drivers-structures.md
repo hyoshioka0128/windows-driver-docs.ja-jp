@@ -5,11 +5,11 @@ ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e3734729886afe5fb2f203381ab6f9cd88949f
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58845543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331503"
 ---
 # <a name="audio-drivers-structures"></a>オーディオ ドライバーの構造体
 

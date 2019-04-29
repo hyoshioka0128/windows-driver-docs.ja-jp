@@ -1,6 +1,6 @@
 ---
-title: PCI の IDE コント ローラーのデバイス オブジェクトの例
-description: PCI の IDE コント ローラーのデバイス オブジェクトの例
+title: PCI IDE コントローラーのデバイス オブジェクトの例
+description: PCI IDE コントローラーのデバイス オブジェクトの例
 ms.assetid: 7cb97da7-1d94-42a1-af3a-9085e68c8f28
 keywords:
 - ストレージ ドライバー WDK、デバイス オブジェクト
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28748d270a4b8d06b8d4c7a65ea683546626b01d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331733"
 ---
-# <a name="device-object-example-for-a-pci-ide-controller"></a>PCI の IDE コント ローラーのデバイス オブジェクトの例
+# <a name="device-object-example-for-a-pci-ide-controller"></a>PCI IDE コントローラーのデバイス オブジェクトの例
 
 
 ## <span id="ddk_device_object_example_for_a_pci_ide_controller_kg"></span><span id="DDK_DEVICE_OBJECT_EXAMPLE_FOR_A_PCI_IDE_CONTROLLER_KG"></span>

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99322162d66bd0ed65a424d0e054c11d4dde1151
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390615"
 ---
 # <a name="gdl-template-directives"></a>GDL テンプレート ディレクティブ
 
@@ -23,7 +23,7 @@ ms.locfileid: "56559397"
 
 [ArrayLabel](arraylabel-template-directive.md)
 
-[データ型](datatype-template-directive.md)
+[DataType](datatype-template-directive.md)
 
 [ElementTags](elementtags-template-directive.md)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56559397"
 
 [継承](inherits-template-directive.md)
 
-[メンバー](member-template-directive.md)
+[Member](member-template-directive.md)
 
 [メンバー](members-template-directive.md)
 

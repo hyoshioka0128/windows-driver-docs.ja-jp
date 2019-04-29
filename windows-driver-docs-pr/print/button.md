@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8abffb192f94b44696a93db9cb7c8e0e6a794be3
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330348"
 ---
 # <a name="button-element"></a>Button 要素
 
@@ -49,7 +49,7 @@ ms.locfileid: "57464308"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -58,7 +58,7 @@ ms.locfileid: "57464308"
 <tr class="odd">
 <td><p><strong>buttonID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p></p>
 <p>ユーザーがボタンをクリックすると、プリンター ドライバーに返される文字列を指定する必須の属性。 この属性には、値は次のいずれかを実行できます。</p>
 名前 [IDOK A] ボタンを表示して、メッセージ ボックスには"OK"されます。 ユーザーは、ボタンをクリックすると、メッセージ ボックスは"IDOK"文字列を返します。
@@ -67,14 +67,14 @@ ms.locfileid: "57464308"
 <tr class="even">
 <td><p><strong>ResourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
 <p>リソースのボタンに表示するテキストを含んでいる DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p></p>
 <p>ボタンを表示するテキストを指定する必須の属性。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
 </tr>
@@ -109,12 +109,12 @@ ms.locfileid: "57464308"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ボタンがメッセージ ボックスの下部に表示されます。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例を使用する方法を示しています、**ボタン**を表示する要素**OK**と**キャンセル**互いの隣のボタン。

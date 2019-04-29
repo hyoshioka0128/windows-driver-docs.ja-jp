@@ -1,6 +1,6 @@
 ---
-title: ACPI 関数デバイスの操作
-description: ACPI 関数デバイスの操作
+title: ACPI デバイス機能ドライバーの操作
+description: ACPI デバイス機能ドライバーの操作
 ms.assetid: 56c63373-5094-4ae5-a7b0-56d61e3fa9b1
 keywords:
 - ACPI デバイス WDK、関数のドライバーの操作
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d5b3a525ae6d76504249758a0bf8ec1a0ac127f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328828"
 ---
-# <a name="operation-of-an-acpi-device-function-driver"></a>ACPI 関数デバイスの操作
+# <a name="operation-of-an-acpi-device-function-driver"></a>ACPI デバイス機能ドライバーの操作
 
 
 
@@ -30,11 +30,11 @@ ms.locfileid: "56557334"
 
 -   関数のドライバーと ACPI BIOS との間の通信インターフェイスは、デバイスの操作の領域をサポートしています。
 
-    詳細については、[サポート、営業地域](supporting-an-operation-region.md)を参照してください。
+    詳細については、次を参照してください。[サポート、営業地域](supporting-an-operation-region.md)します。
 
 -   ベンダー定義を必要に応じて、サポート*デバイス インターフェイス*と*Ioctl*デバイスを操作するその他のドライバーやユーザー モード アプリケーションが使用されます。
 
-    詳細については、[Vendor-Defined ACPI デバイス インターフェイスを提供する](providing-a-vendor-defined-acpi-device-interface.md)を参照してください。
+    詳細については、次を参照してください。 [Vendor-Defined ACPI デバイス インターフェイスを提供する](providing-a-vendor-defined-acpi-device-interface.md)します。
 
  
 

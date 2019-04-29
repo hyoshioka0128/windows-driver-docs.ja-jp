@@ -1,16 +1,16 @@
 ---
-Description: This section provides guidance concerning the careful management of USB bandwidth.
-title: USB の帯域幅の割り当て
+Description: このセクションでは、慎重に USB の帯域幅の管理に関するガイダンスを提供します。
+title: USB 帯域幅割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6f96f0b7d9390f4627a9fd156fc63bb7f7ba4d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331691"
 ---
-# <a name="usb-bandwidth-allocation"></a>USB の帯域幅の割り当て
+# <a name="usb-bandwidth-allocation"></a>USB 帯域幅割り当て
 
 
 このセクションでは、慎重に USB の帯域幅の管理に関するガイダンスを提供します。
@@ -168,7 +168,7 @@ USB 転送サイズは、次の制限が適用されます。
 -   変更、 **MaximumPacketSize**のメンバー、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。 値に設定する値の小さい**wMaxPacketSize**デバイス ファームウェアの現在のインターフェイスの設定で定義されています。
 -   設定、USBD\_PF\_変更\_最大\_パケット フラグ、 **PipeFlags**メンバー [ **USBD\_パイプ\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。
 
-インターフェイスの設定を選択する方法の詳細については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)を参照してください。
+インターフェイスの設定を選択する方法の詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
 
 ### <a name="maximum-packet-size-restriction-on-read-transfer-buffers"></a>読み取り転送バッファーの最大パケット サイズの制限
 

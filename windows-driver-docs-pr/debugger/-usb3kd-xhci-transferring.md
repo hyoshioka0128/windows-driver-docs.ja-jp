@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fa9d4a24348284957ddf781bd93382ec4c9fada8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335646"
 ---
 # <a name="usb3kdxhcitransferring"></a>! usb3kd.xhci\_を転送します。
 
@@ -49,7 +49,7 @@ Usb3kd.dll
 <a name="remarks"></a>コメント
 -------
 
-出力、 **! xhci\_転送**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。
+出力、 **! xhci\_転送**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
 
 転送のリングは、転送要求のブロック (TRBs) の一覧を維持するために、USB 3.0 ホスト コント ローラー ドライバーによって使用される構造です。 このコマンドは、転送のリングでは、仮想または物理アドレスを受け取りますが、TRBs の物理アドレスが表示されます。 これは、コマンドが正しくリンク TRBs を走査できるようにします。
 

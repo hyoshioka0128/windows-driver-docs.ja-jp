@@ -1,6 +1,6 @@
 ---
-title: ハードウェア アクセラレータ スライダーを表示します。
-description: ハードウェア アクセラレータ スライダーを表示します。
+title: ディスプレイ ハードウェア アクセラレータ スライダー
+description: ディスプレイ ハードウェア アクセラレータ スライダー
 ms.assetid: af3daa64-196a-4163-872d-713bc4cf0335
 keywords:
 - ディスプレイ ドライバー WDK Windows 2000 では、デバッグ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74baba77a1777d602d5274a77437565e7fd76eb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329820"
 ---
-# <a name="display-hardware-acceleration-slider"></a>ハードウェア アクセラレータ スライダーを表示します。
+# <a name="display-hardware-acceleration-slider"></a>ディスプレイ ハードウェア アクセラレータ スライダー
 
 
 ## <span id="ddk_display_hardware_acceleration_slider_gg"></span><span id="DDK_DISPLAY_HARDWARE_ACCELERATION_SLIDER_GG"></span>

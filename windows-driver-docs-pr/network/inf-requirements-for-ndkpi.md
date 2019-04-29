@@ -5,11 +5,11 @@ ms.assetid: 1399CEB8-82A5-4F91-833E-66FC5A5663C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c32d8905eeebde5745aa1d6af054a38d1751784c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327714"
 ---
 # <a name="inf-requirements-for-ndkpi"></a>NDKPI の INF 要件
 
@@ -52,9 +52,9 @@ Network Direct カーネル (NDK) をサポートしているミニポート ド
     HKR, Ndi\Params\*NetworkDirectTechnology,        Optional,   0,  "0"
     ```
 
-    高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
+    高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 
-    詳細については、標準化された INF キーワードを使用して、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+    詳細については、標準化された INF キーワードを使用して、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 

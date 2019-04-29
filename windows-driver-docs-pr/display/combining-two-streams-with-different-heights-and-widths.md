@@ -1,6 +1,6 @@
 ---
-title: 異なる高さと幅の 2 つのストリームを結合
-description: 異なる高さと幅の 2 つのストリームを結合
+title: 高さと幅が異なる 2 つのストリームの結合
+description: 高さと幅が異なる 2 つのストリームの結合
 ms.assetid: a4b0e32d-17f0-4373-bed2-ce9248b3ceb2
 keywords:
 - 結合は、WDK DirectX VA をストリームします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 763a1186579773c932f05f067130d6aaa0f89ee6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329857"
 ---
-# <a name="combining-two-streams-with-different-heights-and-widths"></a>異なる高さと幅の 2 つのストリームを結合
+# <a name="combining-two-streams-with-different-heights-and-widths"></a>高さと幅が異なる 2 つのストリームの結合
 
 
 ## <span id="ddk_combining_two_streams_with_different_heights_and_widths_gg"></span><span id="DDK_COMBINING_TWO_STREAMS_WITH_DIFFERENT_HEIGHTS_AND_WIDTHS_GG"></span>

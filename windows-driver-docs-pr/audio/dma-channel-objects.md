@@ -1,6 +1,6 @@
 ---
-title: DMA チャネル オブジェクト
-description: DMA チャネル オブジェクト
+title: DMA チャネルのオブジェクト
+description: DMA チャネルのオブジェクト
 ms.assetid: 2064bbdf-62b7-454f-8764-b2aa21636c02
 keywords:
 - ヘルパー オブジェクト WDK オーディオ、DMA チャネル オブジェクト
@@ -12,19 +12,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dcafb093a09c729eaec0850d4dd1f74d1c5b46d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333761"
 ---
-# <a name="dma-channel-objects"></a>DMA チャネル オブジェクト
+# <a name="dma-channel-objects"></a>DMA チャネルのオブジェクト
 
 
 ## <span id="dma_channel_objects"></span><span id="DMA_CHANNEL_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IDmaChannel](https://msdn.microsoft.com/library/windows/hardware/ff536547)と[IDmaChannelSlave](https://msdn.microsoft.com/library/windows/hardware/ff536548) WaveCyclic と WavePci のミニポート ドライバーのためのインターフェイス。 **IDmaChannel** DMA チャネルとその関連する DMA バッファーおよびバッファーの使用状況パラメーターを表します。 WaveCyclic ミニポート ドライバーを使用して、さらに、 **IDmaChannelSlave**下位デバイス DMA チャネルを管理します。 **IDmaChannelSlave**継承**IDmaChannel**します。 制御の DMA 操作については、[アダプター オブジェクトと DMA](https://msdn.microsoft.com/library/windows/hardware/ff540519)を参照してください。
+PortCls システム ドライバーの実装、 [IDmaChannel](https://msdn.microsoft.com/library/windows/hardware/ff536547)と[IDmaChannelSlave](https://msdn.microsoft.com/library/windows/hardware/ff536548) WaveCyclic と WavePci のミニポート ドライバーのためのインターフェイス。 **IDmaChannel** DMA チャネルとその関連する DMA バッファーおよびバッファーの使用状況パラメーターを表します。 WaveCyclic ミニポート ドライバーを使用して、さらに、 **IDmaChannelSlave**下位デバイス DMA チャネルを管理します。 **IDmaChannelSlave**継承**IDmaChannel**します。 制御の DMA 操作については、次を参照してください。[アダプター オブジェクトと DMA](https://msdn.microsoft.com/library/windows/hardware/ff540519)します。
 
 **IDmaChannel**オブジェクトは、次をカプセル化します。
 
@@ -42,7 +42,7 @@ PortCls システム ドライバーの実装、 [IDmaChannel](https://msdn.micr
 
 -   マスターのデバイスでは、バス マスター DMA の独自のハードウェアを使用して、システム バス上のデータ転送を実行します。
 
-下位の DMA チャネル オブジェクトを使用して WaveCyclic デバイスの例は、Sb16 サンプル オーディオ ドライバーで、Microsoft Windows Driver Kit (WDK) を参照してください。 マスター DMA チャネル オブジェクトが、ポートおよびミニポート ドライバー間 DMA チャネルについての情報を共有するための backboard よりも少し。 マスターおよび下位のデバイスの詳細については、[アダプター オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff547986)を参照してください。
+下位の DMA チャネル オブジェクトを使用して WaveCyclic デバイスの例は、Sb16 サンプル オーディオ ドライバーで、Microsoft Windows Driver Kit (WDK) を参照してください。 マスター DMA チャネル オブジェクトが、ポートおよびミニポート ドライバー間 DMA チャネルについての情報を共有するための backboard よりも少し。 マスターおよび下位のデバイスの詳細については、次を参照してください。[アダプター オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff547986)します。
 
 マスターまたは下位のデバイスの DMA チャネル オブジェクトには、次は公開します。
 

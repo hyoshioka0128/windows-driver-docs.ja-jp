@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_SET_ENCAPSULATION_OFFLOAD_V4_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0cb169cddebc1f46cf1403b2bd5502af7b1695
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330424"
 ---
 # <a name="wditlvsetencapsulationoffloadv4parameters"></a>WDI\_TLV\_設定\_カプセル化\_オフロード\_V4\_パラメーター
 
@@ -31,7 +31,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類  | 説明                                                                                                                                             |
+| 型  | 説明                                                                                                                                             |
 |-------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8 | IPv4 のオフロードを開始する必要があるかどうかを指定します。 NDIS にこの設定は\_オフロード\_設定\_ON を有効にして、NDIS に設定\_オフロード\_設定\_無効になっている場合はオフです。 |
 

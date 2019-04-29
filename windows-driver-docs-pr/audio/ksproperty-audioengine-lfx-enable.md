@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdaaa30a4937fe8490c792fdd5d0bc7c0aecf7a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332813"
 ---
 # <a name="kspropertyaudioenginelfxenable"></a>KSPROPERTY\_AUDIOENGINE\_LFXENABLE
 
@@ -39,16 +39,16 @@ ms.locfileid: "56580592"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>暗証番号 (pin) のインスタンスを使用してノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
 <td align="left"><p>BOOL</p></td>
@@ -64,7 +64,7 @@ ms.locfileid: "56580592"
 
 **KSPROPERTY\_AUDIOENGINE\_LFXENABLE**プロパティ要求を返します**状態\_成功**を正常に完了したことを示します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

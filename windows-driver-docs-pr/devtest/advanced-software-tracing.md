@@ -5,11 +5,11 @@ ms.assetid: 07df682d-27d3-40d7-b890-426bc98d1432
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c18553c861ed0e59e08eea128c240b63662bf5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332013"
 ---
 # <a name="advanced-software-tracing"></a>高度なソフトウェア トレース
 

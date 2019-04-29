@@ -4,11 +4,11 @@ description: このセクションでは、プレビューの WinDbg デバッ�
 ms.date: 08/04/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c27d3ada4127adb697eb81349c7212afa67597df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390046"
 ---
 # <a name="windbg-preview---start-a-user-mode-session"></a>WinDbg プレビュー - ユーザー モードのセッションを開始  
 
@@ -66,7 +66,7 @@ ms.locfileid: "56527967"
 
 ---
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
 

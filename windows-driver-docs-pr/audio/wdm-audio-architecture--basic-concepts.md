@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7f1987806864d96439fccf100c70ddb829d7edf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328752"
 ---
-# <a name="wdm-audio-architecture-basic-concepts"></a>WDM オーディオ アーキテクチャ:基本的な概念
+# <a name="wdm-audio-architecture-basic-concepts"></a>WDM オーディオ アーキテクチャ: 基本的な概念
 
 
 ## <span id="wdm_audio_architecture_basic_concepts"></span><span id="WDM_AUDIO_ARCHITECTURE_BASIC_CONCEPTS"></span>
 
 
-このセクションでの基本的なアーキテクチャの概念は[Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) オーディオ ドライバー。 WDM オーディオ アーキテクチャは、ベース カーネル ストリーミング (KS) サービスし、は、Microsoft Windows 2000 ではサポートされている以降および Windows Me/98 です。 KS サービスについては、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)を参照してください。
+このセクションでの基本的なアーキテクチャの概念は[Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) オーディオ ドライバー。 WDM オーディオ アーキテクチャは、ベース カーネル ストリーミング (KS) サービスし、は、Microsoft Windows 2000 ではサポートされている以降および Windows Me/98 です。 KS サービスについては、次を参照してください。[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)します。
 
 このセクションでは、次のトピックについて説明します。
 

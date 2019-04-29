@@ -5,11 +5,11 @@ ms.assetid: 318ec3f4-f2c2-437c-a767-494ac240cb89
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 433dec1ec7f9de7b0113e04bdeabdce8472be9db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330233"
 ---
 # <a name="overview-of-device-setup-classes"></a>デバイス セットアップ クラスの概要
 

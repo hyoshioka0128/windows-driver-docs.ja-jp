@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0113800dd9746a101f3a93687ffd08537978b82b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391655"
 ---
 # <a name="intermediate-driver-query-and-set-operations"></a>中間ドライバーのクエリおよび設定操作
 
@@ -29,7 +29,7 @@ ms.locfileid: "56579474"
 
 中間のドライバーのクエリを受信して要求をより高いレベルのドライバーから設定できるもその[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。 ドライバーするそれらの要求に応答か、基になるドライバーに渡したりします。 中間のドライバーがクエリとセットにどのように応答する方法は、実装によって異なります。
 
-**注**  中間ドライバーの動作は、仮想ミニポートと基になるミニポート ドライバーの電源の状態によっても影響します。 クエリでの電源の状態の影響の詳細をセット操作では、[設定 Power 要求を処理](handling-a-set-power-request.md)を参照してください。
+**注**  中間ドライバーの動作は、仮想ミニポートと基になるミニポート ドライバーの電源の状態によっても影響します。 クエリでの電源の状態の影響の詳細をセット操作では、次を参照してください。[設定 Power 要求を処理](handling-a-set-power-request.md)します。
 
  
 

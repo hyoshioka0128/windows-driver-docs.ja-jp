@@ -1,17 +1,17 @@
 ---
-title: ソフトウェアのボリューム コントロールのサポート
-description: ソフトウェアのボリューム コントロールのサポート
+title: ソフトウェア音量制御のサポート
+description: ソフトウェア音量制御のサポート
 ms.assetid: 2bdc7d01-9e47-4deb-b551-13e9cbc9c844
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d2fad43f553c9168788ba98341b8fad7389573
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328646"
 ---
-# <a name="software-volume-control-support"></a>ソフトウェアのボリューム コントロールのサポート
+# <a name="software-volume-control-support"></a>ソフトウェア音量制御のサポート
 
 
 Windows Vista 以降では、オーディオ ハードウェアが含まれていないと、関連付けられている物理ボリューム コントロールとアンプのソフトウェアのボリュームのサポートが提供されます。
@@ -40,7 +40,7 @@ Bluetooth または USB オーディオが存在する場合、ボリューム �
 
 モデル化する物理ボリューム コントロールがないため、KSNODETYPE\_トポロジ フィルターで [ボリューム] ノードは公開されません。 ボリュームの減衰と向上は、APO ソフトウェアのボリュームのサポート コンポーネントによって実行されます。
 
-ボリュームの範囲と異なるバージョンの Windows の既定のボリューム レベルについては、[既定のオーディオ音量設定](default-audio-volume-settings.md)を参照してください。
+ボリュームの範囲と異なるバージョンの Windows の既定のボリューム レベルについては、次を参照してください。[既定のオーディオ音量設定](default-audio-volume-settings.md)します。
 
  
 

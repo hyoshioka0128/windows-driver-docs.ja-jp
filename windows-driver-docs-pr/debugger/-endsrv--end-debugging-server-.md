@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d2dbf56eebfa51b66db806433fdb10a94722ec8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334519"
 ---
 # <a name="endsrv-end-debugging-server"></a>.endsrv (デバッグ サーバーの終了)
 
@@ -63,7 +63,7 @@ ms.locfileid: "56571317"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リモート デバッグの詳細については、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
+リモート デバッグの詳細については、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
 
 <a name="remarks"></a>コメント
 -------
@@ -72,7 +72,7 @@ ms.locfileid: "56571317"
 
 デバッグ サーバーの ID を調べるには、 [ **.servers (デバッグ サーバーの一覧)** ](-servers--list-debugging-servers-.md)コマンド。
 
-**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)を参照してください。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://msdn.microsoft.com/library/windows/hardware/ff558810).)
+**.Endsrv**コマンドは、デバッグのサーバーを終了できますが、プロセス サーバー、または KD 接続サーバーので終了することはできません。 これらのサーバーを終了する方法については、次を参照してください。[プロセス サーバーのセッションを制御する](controlling-a-process-server-session.md)と[KD 接続サーバー セッションを制御する](controlling-a-kd-connection-server-session.md)します。 (がある、ただし、1 つの例外的な場合 **.endsrv**をプログラムで起動されました詳細については、次を参照してください。 プロセス サーバーを終了できます[ **IDebugClient::StartProcessServer** 。](https://msdn.microsoft.com/library/windows/hardware/ff558810).)
 
 デバッグ サーバーをキャンセルした場合、サーバーにアタッチ今後デバッグ クライアントを防ぐ。 ただし、デバッグ サーバーをキャンセルすると、サーバーから現在接続されているすべてのクライアントが切断できません。
 

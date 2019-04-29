@@ -5,11 +5,11 @@ ms.assetid: 7ACD6BFC-AB92-4BCC-A9E1-9574D959B577
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f07f71943a6ad1a5433d26da7c66b01be0f8e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328106"
 ---
 # <a name="boot-screen-components"></a>ブート画面のコンポーネント
 
@@ -132,7 +132,7 @@ UX capsule がカプセルの配列に表示される順序の保証はありま
 <td>将来使用するために予約されています。 0 にする必要があります。</td>
 </tr>
 <tr class="odd">
-<td>モード</td>
+<td>Mode</td>
 <td>4</td>
 <td>32</td>
 <td>モードを指定します、グラフィック出力プロトコル ビデオの埋め込み画像を表示できます。 ビデオ モードでは、UpdateCapsule を呼び出す前にクエリを実行し、ブート ローダーによって埋め込み画像が表示されるときに、現在のビデオ モードとローカルのディスプレイのビデオ モードをについて説明します。 イメージが表示されるときに、モード、EFI_GRAPHICS_OUTPUT_PROTOCOL_MODE 構造体のフィールドを値します。</td>
@@ -152,7 +152,7 @@ UX capsule がカプセルの配列に表示される順序の保証はありま
 </tr>
 <tr class="even">
 <td>イメージ</td>
-<td>N/A</td>
+<td>なし</td>
 <td>44</td>
 <td>バイト配列、ファームウェア更新プロセス中に表示する埋め込みビットマップが含まれています。 ビットマップは、24 ビット ビットマップ ピクセル形式の 0xRRGGBB をまたは 32 ビット ビットマップ ピクセル形式 0xrrRRGGBB を 'rr' は予約されていますを指定できます。</td>
 </tr>
@@ -165,7 +165,7 @@ UX capsule がカプセルの配列に表示される順序の保証はありま
 
 ファームウェアの更新プログラムの表示 capsule から、ブート グラフィックス リソース テーブル (BGRT) ACPI 5.0 で定義されているがモデル化されます。 BGRT システム ファームウェア、OS ブート ローダーにグラフィックを提供するためのメカニズムを定義します。 2 つのテーブルと似ていますが、いくつかの注目すべき違いがあります。
 
-| BGRT | ファームウェア更新表示 capsule | 原因 |
+| BGRT | ファームウェア更新表示 capsule | Reason |
 |---|---|---|
 | ビットマップへのポインター | ビットマップを埋め込むには、ターミネータに保存し、1 回の操作で復元が使用できます。 | 0 |
 | ビデオ モードが含まれていません。 | ビデオ モードが含まれています | 完了すると、UpdateCapsule 呼び出し中にビデオ モードのクエリにファームウェアを要求しないでください。 |

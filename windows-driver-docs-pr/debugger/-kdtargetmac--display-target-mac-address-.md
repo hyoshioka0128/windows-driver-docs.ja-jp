@@ -1,5 +1,5 @@
 ---
-title: .kdtargetmac (ターゲットの MAC アドレスの表示)
+title: .kdtargetmac (ターゲット MAC アドレスの表示)
 description: 表示対象の MAC アドレスです。
 ms.assetid: 95042682-BD92-44B0-AAA8-AB8661393230
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c92bc89fa5ba62ce8aca2a33240b6761eb9444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336341"
 ---
-# <a name="kdtargetmac-display-target-mac-address"></a>.kdtargetmac (ターゲットの MAC アドレスの表示)
+# <a name="kdtargetmac-display-target-mac-address"></a>.kdtargetmac (ターゲット MAC アドレスの表示)
 
 
 表示対象の MAC アドレス
@@ -78,7 +78,7 @@ dhcp                    Yes
 The operation completed successfully.
 ```
 
-詳細については、[KDNET ネットワーク カーネル デバッグ手作業でセットアップ](setting-up-a-network-debugging-connection.md)を参照してください。
+詳細については、次を参照してください。 [KDNET ネットワーク カーネル デバッグ手作業でセットアップ](setting-up-a-network-debugging-connection.md)します。
 
 <a name="remarks"></a>注釈
 -------

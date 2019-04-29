@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d72b0060c69fa6b7bd3df118b51699e727c31bcb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325812"
 ---
 # <a name="installation-component-overview"></a>インストール コンポーネントの概要
 
@@ -42,7 +42,7 @@ ms.locfileid: "56574327"
 
 -   方法についての情報と使用すると、各ドライバー (Windows 2000 および Windows の以降のバージョン) によって提供されるサービスを読み込む
 
-デバイスの INF ファイルでは、すべての情報を指定できます。 ほとんどのデバイスとドライバーの組み合わせに対して、INF ファイルは、必要なのみのインストール コンポーネントです。 すべてのデバイスとドライバー、INF ファイルを必要とします。 詳細については、[、INF ファイルを指定して](supplying-an-inf-file.md)を参照してください。
+デバイスの INF ファイルでは、すべての情報を指定できます。 ほとんどのデバイスとドライバーの組み合わせに対して、INF ファイルは、必要なのみのインストール コンポーネントです。 すべてのデバイスとドライバー、INF ファイルを必要とします。 詳細については、次を参照してください。 [、INF ファイルを指定して](supplying-an-inf-file.md)します。
 
 システムのブート時に、デバイスが関係している場合は、インストールの要件が異なります。 参照してください[ブート ドライバーをインストールする](installing-a-boot-start-driver.md)します。
 

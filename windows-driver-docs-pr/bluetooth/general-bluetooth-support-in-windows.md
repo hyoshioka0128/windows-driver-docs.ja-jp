@@ -5,20 +5,20 @@ ms.assetid: F43DA802-37D0-4527-AA51-DA3C0AEF6914
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a13c2a3cc1c4dd9d69ddde93b5d66df3f5bb3bbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328231"
 ---
-# <a name="bluetooth-version-and-profile-support-in-windows-10"></a>Bluetooth のバージョンと Windows 10 でのプロファイルのサポート
+# <a name="bluetooth-version-and-profile-support-in-windows-10"></a>Windows 10 での Bluetooth バージョンとプロファイルのサポート
 
 
 **注**   Bluetooth オーディオ デバイスのドライバーを探してでしょうか。 参照してください[Bluetooth オーディオ デバイスおよびワイヤレス ディスプレイへの接続を修正](https://go.microsoft.com/fwlink/p/?LinkID=623629)します。
 
  
 
-**注**   Windows 10 以前 Bluetooth サポートについては、[以前のバージョンの Windows での Bluetooth サポート](bluetooth-support-in-previous-windows-versions.md)を参照してください。
+**注**   Windows 10 以前 Bluetooth サポートについては、次を参照してください。[以前のバージョンの Windows での Bluetooth サポート](bluetooth-support-in-previous-windows-versions.md)します。
 
  
 

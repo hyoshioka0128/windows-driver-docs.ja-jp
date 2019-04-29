@@ -1,17 +1,17 @@
 ---
-title: 状態の更新のコールバック関数を使用します。
-description: 状態の更新のコールバック関数を使用します。
+title: 状態更新コールバック関数の使用
+description: 状態更新コールバック関数の使用
 ms.assetid: fadd2edb-776b-4ef1-b663-cc004522f8ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4edba9ebd26408382aa9ab9deb46569e2c5044e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388977"
 ---
-# <a name="using-the-state-refresh-callback-functions"></a>状態の更新のコールバック関数を使用します。
+# <a name="using-the-state-refresh-callback-functions"></a>状態更新コールバック関数の使用
 
 
 ユーザー モードのディスプレイ ドライバーを使用して、 [Direct3D ランタイム バージョン 10 状態更新コールバック関数](https://msdn.microsoft.com/library/windows/hardware/ff552879)ステートレスのドライバーを実現するために、またはコマンド バッファー プリアンブル データが蓄積されます。

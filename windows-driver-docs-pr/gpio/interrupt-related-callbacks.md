@@ -5,16 +5,16 @@ ms.assetid: 638B52A0-CB8D-4A79-B7D1-ED2474E46DAE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 755abefdf6f0d1e866d6f00c883eaac5cbbf451d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326140"
 ---
 # <a name="interrupt-related-callbacks"></a>割り込み関連のコールバック
 
 
-オプションとして、汎用入出力 (GPIO) コント ローラーのドライバーは、GPIO 割り込みのサポートを提供できます。 GPIO 割り込みをサポートするためには、GPIO コント ローラーのドライバーは、これらの割り込みを管理するコールバック関数のセットを実装します。 ドライバーには、GPIO フレームワークの拡張機能 (GpioClx) のクライアントとして自身を登録するときに、ドライバーが提供する登録パケット内のこれらのコールバック関数へのポインターが含まれています。 この登録パケットの詳細については、[ **GPIO\_クライアント\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/hh439479)を参照してください。
+オプションとして、汎用入出力 (GPIO) コント ローラーのドライバーは、GPIO 割り込みのサポートを提供できます。 GPIO 割り込みをサポートするためには、GPIO コント ローラーのドライバーは、これらの割り込みを管理するコールバック関数のセットを実装します。 ドライバーには、GPIO フレームワークの拡張機能 (GpioClx) のクライアントとして自身を登録するときに、ドライバーが提供する登録パケット内のこれらのコールバック関数へのポインターが含まれています。 この登録パケットの詳細については、次を参照してください。 [ **GPIO\_クライアント\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/hh439479)します。
 
 原則としては、チップ (SoC) チップでのシステムの一部として統合されている GPIO コント ローラーは、SoC チップでのプロセッサによって直接アクセスできるメモリ マップト ハードウェア レジスタを持ちます。 ただし、GPIO コント ローラーは別のデバイス可能性がありますに接続する外部 SoC チップを介してシリアル バスでは、次の図に示すように。
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578229"
 
 GPIO コント ローラーのデバイスがメモリ マップされている場合は、GPIO コント ローラーのドライバーは DIRQL でコント ローラーのハードウェア レジスタを直接アクセスできます。 ただし、GPIO コント ローラーが順番に接続されている場合、GPIO コント ローラー ドライバー アクセス IRQL でのみハードウェア レジスタ = パッシブ\_レベルで説明したよう[パッシブ レベル Isr](https://msdn.microsoft.com/library/windows/hardware/hh698262)します。
 
-持つメモリ マップト ハードウェア GPIO コント ローラーの登録のドライバーを設定する必要があります、 **MemoryMappedController** GpioClx にドライバーを提供するデバイス情報でフラグ ビットです。 GpioClx がハードウェア レジスタはメモリ マップがないと IRQL でのみ登録、ドライバーがこれらをアクセスできることを想定するそれ以外の場合、パッシブ =\_レベル。 このフラグのビットの詳細については、[**コント ローラー\_属性\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/hh439449)を参照してください。
+持つメモリ マップト ハードウェア GPIO コント ローラーの登録のドライバーを設定する必要があります、 **MemoryMappedController** GpioClx にドライバーを提供するデバイス情報でフラグ ビットです。 GpioClx がハードウェア レジスタはメモリ マップがないと IRQL でのみ登録、ドライバーがこれらをアクセスできることを想定するそれ以外の場合、パッシブ =\_レベル。 このフラグのビットの詳細については、次を参照してください。 [**コント ローラー\_属性\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/hh439449)します。
 
 GpioClx では、GPIO コント ローラーから割り込み要求を処理する割り込みサービス ルーチン (ISR) を実装します。 この ISR では、次の割り込みに関連するコールバック関数を呼び出します。
 
@@ -45,7 +45,7 @@ GPIO フレームワークの拡張機能がパッシブにのみ、次の割り
 
 割り込みの同期をサポートするためには、GpioClx は、一連の割り込みのロックを実装します。 パッシブで実行されているコールバック関数\_レベルを呼び出すことができます、 [ **GPIO\_CLX\_AcquireInterruptLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439482)割り込みのロックを取得するメソッドを呼び出すと、[ **GPIO\_CLX\_ReleaseInterruptLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439494)ロックを解放するメソッド。 関数は、割り込みのロックを保持しているときに、GpioClx ISR を実行できず、この ISR、割り込みに関連するコールバック関数を呼び出すことはできません。 迅速に処理する GPIO 割り込みを有効にするには、ドライバーする必要があります、割り込みに対してロックを保持されなくが必要です。
 
-詳細については、[GPIO コント ローラーのドライバーの同期を中断](https://msdn.microsoft.com/library/windows/hardware/jj851070)を参照してください。
+詳細については、次を参照してください。 [GPIO コント ローラーのドライバーの同期を中断](https://msdn.microsoft.com/library/windows/hardware/jj851070)します。
 
  
 

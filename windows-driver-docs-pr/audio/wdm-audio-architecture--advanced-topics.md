@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: caab0c90370b24d99ffc5acd52477bc297a19a10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328462"
 ---
-# <a name="wdm-audio-architecture-advanced-topics"></a>WDM オーディオ アーキテクチャ:高度なトピック
+# <a name="wdm-audio-architecture-advanced-topics"></a>WDM オーディオ アーキテクチャ: 高度なトピック
 
 
 ## <span id="wdm_audio_architecture_advanced_topics"></span><span id="WDM_AUDIO_ARCHITECTURE_ADVANCED_TOPICS"></span>

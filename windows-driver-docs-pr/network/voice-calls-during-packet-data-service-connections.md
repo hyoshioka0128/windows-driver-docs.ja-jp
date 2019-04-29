@@ -1,17 +1,17 @@
 ---
-title: パケット データ サービスへの接続中に音声通話
-description: パケット データ サービスへの接続中に音声通話
+title: パケット データ サービス接続時の音声通話
+description: パケット データ サービス接続時の音声通話
 ms.assetid: 441d2fea-eb39-4af5-a8de-c288c81be99a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b60c20acd9c88d3119c6df8e07f742a93598848c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327592"
 ---
-# <a name="voice-calls-during-packet-data-service-connections"></a>パケット データ サービスへの接続中に音声通話
+# <a name="voice-calls-during-packet-data-service-connections"></a>パケット データ サービス接続時の音声通話
 
 
 次の図は、ミニポート ドライバーが音声通話がパケット データ サービスがアクティブな間に配置した場合に従う必要のあるプロセスを表します。 図は、例として、1 xrtt を使用しますが、手順も、他のエア インターフェイスに適用されます。 次の図に記載されているプロセスが返すミニポート ドライバーにのみ適用されます**WwanVoiceClassSeparateVoiceData**で、 **WwanVoiceClass** OID への応答でメンバー\_WWAN\_デバイス\_CAP*クエリ*要求。 太字表す OID の識別子またはトランザクションのフロー制御には、ラベルと通常のテキストに表示されるラベルは、OID 構造内で重要なフラグを表します。

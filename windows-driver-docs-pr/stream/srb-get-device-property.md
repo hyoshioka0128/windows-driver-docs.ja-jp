@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb6c684c785322aa18c7950b4d26f3b8f5e27bd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390875"
 ---
 # <a name="srbgetdeviceproperty"></a>SRB\_取得\_デバイス\_プロパティ
 
@@ -44,7 +44,7 @@ ms.locfileid: "56551812"
 
 クラス ドライバーは、操作のパラメーターを渡す、 *pSrb*-&gt;**CommandData.PropertyInfo**バッファー、フォームの構造[ **ストリーム\_プロパティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff568442)します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。 **プロパティ**ストリームのメンバー\_プロパティ\_記述子には、問題の中にプロパティがについて説明します、 **PropertyInfo**メンバー プロパティのデータをコピーするバッファーを指定します。します。 バッファーが小さすぎる場合、ミニドライバーを設定する必要があります、**状態**のメンバー *pSrb*ステータス\_バッファー\_オーバーフローが発生します。
 
-プロパティ セットの詳細については、[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)を参照してください。
+プロパティ セットの詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
 
 ## <a name="see-also"></a>関連項目
 

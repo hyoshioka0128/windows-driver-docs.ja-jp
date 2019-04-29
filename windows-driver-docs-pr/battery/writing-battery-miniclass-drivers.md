@@ -1,6 +1,6 @@
 ---
-title: 書き込みバッテリ Miniclass ドライバー
-description: 書き込みバッテリ Miniclass ドライバー
+title: バッテリ ミニクラス ドライバーの作成
+description: バッテリ ミニクラス ドライバーの作成
 ms.assetid: 4135af1a-1448-46ad-af6f-26ce8aee6b1d
 keywords:
 - バッテリ miniclass ドライバー WDK
@@ -12,21 +12,21 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc25453bdb285ae71edd8fd64d59296ccc9115a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328419"
 ---
-# <a name="writing-battery-miniclass-drivers"></a>書き込みバッテリ Miniclass ドライバー
+# <a name="writing-battery-miniclass-drivers"></a>バッテリ ミニクラス ドライバーの作成
 
 
 ## <span id="ddk_writing_battery_miniclass_drivers_dg"></span><span id="DDK_WRITING_BATTERY_MINICLASS_DRIVERS_DG"></span>
 
 
-ドライバーのペアが通常、バッテリには: Microsoft が提供する汎用的なバッテリ クラス ドライバーとバッテリの個々 の型専用に作成された miniclass ドライバー。
+通常、バッテリには 1 組のドライバーがあります。Microsoft が提供する汎用的なバッテリ クラス ドライバーと、そのバッテリの種類専用に作成されたミニクラス ドライバーです。
 
-クラス ドライバーは、システムのバッテリの全体的な機能を定義し、電源マネージャーと対話します。
+クラス ドライバーはシステム内のバッテリの全体的な機能を定義し、電源マネージャーとやり取りします。
 
 Miniclass ドライバーでは、デバイス固有の関数を追加して、バッテリの削除の容量と料金の追跡などを処理します。 Miniclass ドライバーでは、クラス ドライバーは制御デバイスに関する情報を取得するために呼び出すルーチンをエクスポートします。
 

@@ -5,13 +5,13 @@ ms.assetid: 5CE619F4-E136-4F8F-8F90-F7F96DE4642E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0842652ef965ac39a694619d4640ec1648b88cc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387972"
 ---
-# <a name="camera-driver-bring-up-guide"></a>カメラのドライバー ガイドを表示します。
+# <a name="camera-driver-bring-up-guide"></a>カメラ ドライバー構築ガイド
 
 このトピックでは、赤外線 (IR) カメラの場合、顔認証を有効にする方法について説明し、相手先ブランド供給 (Oem) および独立系ハードウェア ベンダー (Ihv) が自分のデバイスでこの機能を提供するものです。
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aea6f11c8cd2e5e0d350f1be85cb58a435597cd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327887"
 ---
 # <a name="fsctlfileleveltrim-control-code"></a>FSCTL\_ファイル\_レベル\_トリム制御コード
 
@@ -66,7 +66,7 @@ ms.locfileid: "56580694"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -100,7 +100,7 @@ ms.locfileid: "56580694"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 特定の記憶域デバイスで trim を実行すると、将来の書き込みのパフォーマンスを大幅に向上させることができます。 シン プロビジョニング ストレージ システムにも割り当てプールに返しますリソースをトリミングします。 仮想ディスク上のファイルが削除されると、仮想ディスク ファイル自体のサイズは変更されません。 仮想ディスクに解放されたデータ範囲は、仮想ディスク ファイルが存在する物理ストレージには切り捨てられません。 仮想ディスクのデバイスは、ファイル システムを通知できる物理記憶域デバイスで仮想ディスク ファイル内の特定のデータ範囲をトリミングすることができます、 **FSCTL\_ファイル\_レベル\_トリミング**要求。 物理ストレージに、trim 要求をファイル システムで発行されます。 **FSCTL\_ファイル\_レベル\_トリミング**データベースやメモリのスワップ ファイルを管理するサービス アプリケーションによって要求が発行することも可能性があります。
@@ -121,7 +121,7 @@ ms.locfileid: "56580694"
 
 含まれる場合*OutputBuffer*、 **NumRangesProcessed**のメンバー、 [**ファイル\_レベル\_トリミング\_出力**](https://msdn.microsoft.com/library/windows/hardware/hh406402)は正常に処理されたトリムの範囲の数を示します。 トリムの範囲の処理中にエラーが発生した場合**NumRangesProcessed**で終わる、残りの未処理範囲の開始インデックスを指定、 **NumRanges**のメンバー [**ファイル\_レベル\_トリミング**](https://msdn.microsoft.com/library/windows/hardware/hh406398) - 1。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

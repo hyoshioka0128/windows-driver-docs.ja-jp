@@ -1,17 +1,17 @@
 ---
-title: ビデオ メモリのプランと再利用
+title: ビデオ メモリの提供と再利用
 description: Windows 表示 Driver Model (WDDM) 1.2 およびそれ以降のユーザー モードのディスプレイ ドライバーがメモリ プランを使用して、、メモリにローカルとシステムのメモリに一時的なサーフェイスに必要なオーバーヘッドを削減する、Windows 8 以降で利用可能な機能を再利用する必要があります。
 ms.assetid: 8BB6A7A3-E102-4069-BFC2-9605DDE9F020
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fe712818c8e32756d6008c4457f05746009081a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389666"
 ---
-# <a name="video-memory-offer-and-reclaim"></a>ビデオ メモリのプランと再利用
+# <a name="video-memory-offer-and-reclaim"></a>ビデオ メモリの提供と再利用
 
 
 Windows 表示 Driver Model (WDDM) 1.2 およびそれ以降のユーザー モードのディスプレイ ドライバーがメモリ プランを使用して、、メモリにローカルとシステムのメモリに一時的なサーフェイスに必要なオーバーヘッドを削減する、Windows 8 以降で利用可能な機能を再利用する必要があります。

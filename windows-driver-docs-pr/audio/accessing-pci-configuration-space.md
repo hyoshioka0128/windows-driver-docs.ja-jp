@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4b1ba8f3e1412004c97a482f65706019ad7ec9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327626"
 ---
 # <a name="accessing-pci-configuration-space"></a>PCI 構成領域へのアクセス
 
@@ -25,7 +25,7 @@ Windows で Me/98、Windows 2000 以降のアダプター ドライバーが IRQ
 
 Windows 2000 以降では、PCI ドライバー スタックのエクスポート、 [ **BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707) IRQL ディスパッチで PCI 構成領域へのアクセスを提供するインターフェイス\_レベル。
 
-詳細については、[へのアクセスのデバイス構成領域](https://msdn.microsoft.com/library/windows/hardware/ff540450)を参照してください。
+詳細については、次を参照してください。[へのアクセスのデバイス構成領域](https://msdn.microsoft.com/library/windows/hardware/ff540450)します。
 
  
 

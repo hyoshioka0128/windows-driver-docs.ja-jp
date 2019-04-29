@@ -5,11 +5,11 @@ ms.assetid: FBA8141D-8DBA-4C68-8BB5-44B3EDB7D062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86a8556376cc86cc43c30b2cc8bdfa0561c2071d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390365"
 ---
 # <a name="hid-button-drivers"></a>HID ボタン ドライバー
 
@@ -96,7 +96,7 @@ GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します
 
 Windows 10 以降、HID ドライバーのプログラミング インターフェイスは、Windows OneCoreUAP ベース エディションの一部です。 使用して、ボタン ドライバーを記述するその共通のインターフェイスのセットを使用すると、[仮想 HID Framework](https://msdn.microsoft.com/library/windows/hardware/dn925048)または[トランスポート ミニドライバー](transport-minidrivers.md)インターフェイス。 これらのドライバーは、バージョンに両方のデスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の Windows 10 および Windows 10 Mobile、だけでなく他の Windows 10 で実行されます。
 
-ステップ バイ ステップ ガイダンスについては、[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を参照してください。
+ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。
 
 ## <a name="related-topics"></a>関連トピック
 [ヒューマン インターフェイス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff543301)  

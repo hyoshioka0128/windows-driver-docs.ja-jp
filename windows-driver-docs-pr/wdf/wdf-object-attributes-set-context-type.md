@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff6576bcf7e3c04dce211fdacc6cfc15b9c664ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390854"
 ---
 # <a name="wdfobjectattributessetcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE macro
 
@@ -49,7 +49,7 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 
 呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)します。
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
 
 このマクロを使用するためのコード例を参照してください。 [ **WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)します。
 

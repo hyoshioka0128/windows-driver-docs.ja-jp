@@ -1,17 +1,17 @@
 ---
-title: エラー (関数インデックス 17) を挿入します。
+title: エラーの挿入 (関数インデックス 17)
 description: この関数は、NVDIMM-N のモジュールのファームウェアでエラーを挿入します。 この関数では、ソフトウェアの検証を有効にします。
 ms.assetid: 4D77DC95-25BC-4D28-83B7-7A62383803E6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 25d749b13a6a4b3e34629532c942e0d391af03f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327000"
 ---
-# <a name="inject-error-function-index-17"></a>エラー (関数インデックス 17) を挿入します。
+# <a name="inject-error-function-index-17"></a>エラーの挿入 (関数インデックス 17)
 
 
 この関数は、NVDIMM-N のモジュールのファームウェアでエラーを挿入します。 この関数では、ソフトウェアの検証を有効にします。 プラットフォームのみなど、特定のシナリオでのエラーの挿入を有効にすることもできます、ユーザーが BIOS 設定を構成した後。 ホストを呼び出すことが[クエリ エラーの挿入の状態 (関数インデックス 16)](query-error-injection-status--function-index-16-.md)学習するかどうか、エラーの挿入関数は、有効です。
@@ -88,7 +88,7 @@ ms.locfileid: "56539740"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>この関数は、次の関数に固有のエラー コードを返すことができます。</p>
@@ -105,7 +105,7 @@ ms.locfileid: "56539740"
 
  
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 一部のエラーの挿入機能は、省略可能なデバイスでサポートされていない可能性があります。 省略可能なエラー インジェクションの一覧については、適切なバイト アドレス指定可能なエネルギー バックアップ インターフェイス JEDEC 仕様を参照してください。

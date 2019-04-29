@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e74f5d92ba334153c61b8c92c0d49c7619d71287
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336477"
 ---
-# <a name="htrace"></a>! htrace
+# <a name="htrace"></a>!htrace
 
 
 **! Htrace**ハンドルの 1 つまたは複数の拡張機能が表示されますスタック トレース情報。

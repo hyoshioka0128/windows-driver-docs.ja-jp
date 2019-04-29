@@ -5,11 +5,11 @@ ms.assetid: B8D71C86-E2FF-48F1-8DC1-F232399F324D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b455a1880e696212edbc50d8cf88eb2e3700ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331595"
 ---
 # <a name="architectural-overview"></a>アーキテクチャの概要
 
@@ -38,7 +38,7 @@ Windows 7 と以前のバージョンの Windows では、オーディオ エン
 
 ソフトウェアのオーディオ エンジンと WASAPI インターフェイスによるパリティを維持するためには、ハードウェアのオーディオ エンジン ループバック ストリームの形式で、オーディオ スタックに最後のオーディオ出力ストリームを提供するために必要なは。 これは、アプリケーションとアコースティック エコー キャンセルでは、エコーをキャンセルし、フィードバックを回避するには、最終的な出力ストリームの知識が必要に依存するシナリオで特に重要です。
 
-ストリームのループバック パスを実装するために、オーディオ ドライバーはループバック暗証番号 (pin) を公開する責任を負います。 この pin が PCM 形式にデータがエンコードされている場合は、出力、最終的なオーディオ エンジンからオーディオ データを返します。 それ以外の場合、後 (場合によっては事前エンコードですが) 結果の混在が返されます。 これは、ハードウェア非 PCM 形式にエンコード GFX で処理されるオーディオのデータの場合は、ループバック ストリームは取得されるハードウェア ミキサーのすぐ後に、ハードウェアのオーディオ エンジンで GFX ステージの前にことを意味します。 ハードウェアのオーディオ エンジンを表す新しい KS フィルター トポロジについては、[実装の概要](implementation-overview.md)を参照してください。
+ストリームのループバック パスを実装するために、オーディオ ドライバーはループバック暗証番号 (pin) を公開する責任を負います。 この pin が PCM 形式にデータがエンコードされている場合は、出力、最終的なオーディオ エンジンからオーディオ データを返します。 それ以外の場合、後 (場合によっては事前エンコードですが) 結果の混在が返されます。 これは、ハードウェア非 PCM 形式にエンコード GFX で処理されるオーディオのデータの場合は、ループバック ストリームは取得されるハードウェア ミキサーのすぐ後に、ハードウェアのオーディオ エンジンで GFX ステージの前にことを意味します。 ハードウェアのオーディオ エンジンを表す新しい KS フィルター トポロジについては、次を参照してください。[実装の概要](implementation-overview.md)します。
 
 ## <a name="span-idtheoverallarchitecturespanspan-idtheoverallarchitecturespanspan-idtheoverallarchitecturespanthe-overall-architecture"></a><span id="The_overall_architecture"></span><span id="the_overall_architecture"></span><span id="THE_OVERALL_ARCHITECTURE"></span>全体的なアーキテクチャ
 

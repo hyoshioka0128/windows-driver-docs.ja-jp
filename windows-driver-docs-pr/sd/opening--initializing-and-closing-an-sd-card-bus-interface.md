@@ -13,16 +13,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a07b7a44f28c6c91184718a2d9b96295eb1fb2bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325952"
 ---
 # <a name="opening-initializing-and-closing-an-sd-card-bus-interface"></a>SD カードのバス インターフェイスを開く、初期化する、および閉じる
 
 
-デジタル (SD) デバイス ドライバーを開くおよび管理するデバイスやホスト コント ローラーと対話する SD バスのインターフェイスを初期化する必要がありますをセキュリティで保護します。 2 つの SD バス ライブラリの呼び出しが必要です: への呼び出し[ **SdBusOpenInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff537906)インターフェイスを初期化するバス ドライバーによって提供されるルーチンの呼び出し後にします。 **SdBusOpenInterface**でインターフェイスを初期化するルーチンへのポインターを返します、 **InterfaceReference**のメンバー、 [ **SDBUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff537923)構造体。 デバイス ドライバーは、割り込み通知コールバック ルーチンへのポインターをバス ドライバーを提供するには、この初期化ルーチンを呼び出す必要があります。 バス ドライバーでは、このコールバックを使用して、ハードウェア割り込みのデバイス ドライバーに通知します。 SD バスのインターフェイスを初期化するルーチンの詳細については、[ **PSDBUS\_初期化\_インターフェイス\_ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff537618)を参照してください。 通常、デバイス ドライバーは開き、内から SD バスのインターフェイスを初期化します、 [ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。
+デジタル (SD) デバイス ドライバーを開くおよび管理するデバイスやホスト コント ローラーと対話する SD バスのインターフェイスを初期化する必要がありますをセキュリティで保護します。 2 つの SD バス ライブラリの呼び出しが必要です: への呼び出し[ **SdBusOpenInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff537906)インターフェイスを初期化するバス ドライバーによって提供されるルーチンの呼び出し後にします。 **SdBusOpenInterface**でインターフェイスを初期化するルーチンへのポインターを返します、 **InterfaceReference**のメンバー、 [ **SDBUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff537923)構造体。 デバイス ドライバーは、割り込み通知コールバック ルーチンへのポインターをバス ドライバーを提供するには、この初期化ルーチンを呼び出す必要があります。 バス ドライバーでは、このコールバックを使用して、ハードウェア割り込みのデバイス ドライバーに通知します。 SD バスのインターフェイスを初期化するルーチンの詳細については、次を参照してください。 [ **PSDBUS\_初期化\_インターフェイス\_ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff537618)します。 通常、デバイス ドライバーは開き、内から SD バスのインターフェイスを初期化します、 [ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。
 
 次のコード例は、開き SD バスのインターフェイスの初期化呼び出しのシーケンスを示しています。
 

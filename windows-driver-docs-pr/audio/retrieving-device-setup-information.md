@@ -1,6 +1,6 @@
 ---
-title: デバイスのセットアップ情報の取得
-description: デバイスのセットアップ情報の取得
+title: デバイス セットアップ情報の取得
+description: デバイス セットアップ情報の取得
 ms.assetid: 95e88e4a-5a31-4d82-99ea-c9a4d7766c0f
 keywords:
 - オーディオ アダプター WDK、セットアップ情報の取得
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 230312578cde427e1503f6a4b647ce43eece226f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328671"
 ---
-# <a name="retrieving-device-setup-information"></a>デバイスのセットアップ情報の取得
+# <a name="retrieving-device-setup-information"></a>デバイス セットアップ情報の取得
 
 
 ## <span id="retrieving_device_setup_information"></span><span id="RETRIEVING_DEVICE_SETUP_INFORMATION"></span>

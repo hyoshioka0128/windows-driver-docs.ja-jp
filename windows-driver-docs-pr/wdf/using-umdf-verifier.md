@@ -1,17 +1,17 @@
 ---
-title: UMDF Verifier を使用します。
-description: UMDF Verifier を使用します。
+title: UMDF 検証ツールの使用
+description: UMDF 検証ツールの使用
 ms.assetid: 95D85894-86AF-4312-B5BD-F1C9E8F8B2E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1825120f534ba82299792ae6971ee0775bdf2dd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391827"
 ---
-# <a name="using-umdf-verifier"></a>UMDF Verifier を使用します。
+# <a name="using-umdf-verifier"></a>UMDF 検証ツールの使用
 
 
 フレームワークは、実行中のユーザー モード ドライバー フレームワーク (UMDF) ドライバーをテストに使用できる組み込みの検証機能を提供します。 ドライバーの状態と、ドライバーが framework オブジェクトのメソッドに渡される引数を幅広く UMDF 検証機能とも呼ばれます。 この機能は、検証します。 UMDF Verifier を使用するには、単独または汎用と共に[Application Verifier (AppVerif.exe)](../debugger/debugger-download-tools.md)ツール。
@@ -57,7 +57,7 @@ UMDF 検証機能が有効になっているかどうかを確認するには、
 
 **!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
 
-デバッガーの拡張機能コマンドの詳細については、[Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)を参照してください。
+デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
 
 ## <a name="controlling-the-verifiers-behavior"></a>検証の動作を制御します。
 

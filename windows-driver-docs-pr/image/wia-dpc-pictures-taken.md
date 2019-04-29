@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee85cebe7ba0701a13f9f527cb34ab7a0d37d7ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392564"
 ---
 # <a name="wiadpcpicturestaken"></a>WIA\_DPC\_画像\_取得
 
@@ -35,7 +35,7 @@ WIA\_DPC\_画像\_はプロパティには、カメラが実行した画像の�
 
 アクセス権:読み取り専用かどうか
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

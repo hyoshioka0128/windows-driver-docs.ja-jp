@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b549a6bc2e32ab23fd3b999450b09e948c22fe39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333096"
 ---
 # <a name="kspropertyaudiocpuresources"></a>KSPROPERTY\_オーディオ\_CPU\_リソース
 
@@ -84,7 +84,7 @@ KSPROPERTY\_オーディオ\_CPU\_リソース プロパティの要求がステ
 
 -   Peakmeter ノード ([**KSNODETYPE\_PEAKMETER**](ksnodetype-peakmeter.md))
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

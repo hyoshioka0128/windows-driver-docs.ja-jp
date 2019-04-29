@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b668ad57b5c6bdb7f2f27afb70f677ff32ac3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333623"
 ---
 # <a name="wdm-audio-drivers-overview"></a>WDM オーディオ ドライバーの概要
 
@@ -26,9 +26,9 @@ ms.locfileid: "56553196"
 
 最初の意思決定は、ベンダーから提供されたカスタム ドライバーを必要とするオーディオ デバイスを設計するかどうか。 Windows には、Microsoft に準拠する PCI、USB、および IEEE 1394 のデバイスのオペレーティング システムのサポートが含まれています。[ユニバーサル オーディオ アーキテクチャ](universal-audio-architecture.md)(UAA) ガイドライン。 仕入先は、UAA と互換性のあるオーディオ デバイスのカスタム ドライバーを提供する必要はありません。
 
-ただし、ベンダーから提供されたカスタム オーディオ ドライバーが必要な場合、ベンダーによって必要があります、PortCls システム ドライバー (Portcls.sys) または AVStream クラスのシステム ドライバー (Ks.sys) と連携して動作するドライバーを設計するかどうかを選択します。 PortCls と AVStream の両方は、Windows オペレーティング システムの一部です。 PortCls は、ほとんどのオーディオ アダプターに対して適切な選択です。 PortCls の詳細については、[ポート クラスの概要](introduction-to-port-class.md)を参照してください。 AVStream の詳細については、[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)を参照してください。
+ただし、ベンダーから提供されたカスタム オーディオ ドライバーが必要な場合、ベンダーによって必要があります、PortCls システム ドライバー (Portcls.sys) または AVStream クラスのシステム ドライバー (Ks.sys) と連携して動作するドライバーを設計するかどうかを選択します。 PortCls と AVStream の両方は、Windows オペレーティング システムの一部です。 PortCls は、ほとんどのオーディオ アダプターに対して適切な選択です。 PortCls の詳細については、次を参照してください。[ポート クラスの概要](introduction-to-port-class.md)します。 AVStream の詳細については、次を参照してください。 [AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)します。
 
-PortCls を使用するカスタム アダプターのドライバーを設計するとき、オーディオ アダプター上のデバイスは WaveRT を使用してアプリケーションで使用されます。 詳細については、[WaveRT ポート ドライバー導入](introducing-the-wavert-port-driver.md)を参照してください。
+PortCls を使用するカスタム アダプターのドライバーを設計するとき、オーディオ アダプター上のデバイスは WaveRT を使用してアプリケーションで使用されます。 詳細については、次を参照してください。 [WaveRT ポート ドライバー導入](introducing-the-wavert-port-driver.md)します。
 
 2 つの決定事項には、アダプターのオーディオ アプリケーションへのトポロジと pin のデータ範囲を表示する方法が含まれます。 トポロジは、データ パスとアダプター回路内のコントロールのノードの論理のマップです。 データの範囲は、デバイスは、wave と MIDI ストリームでサポートできるデータ形式を指定します。 両方の決定は、アプリケーションにオーディオ アダプター上のデバイスを表示する方法に影響します。
 

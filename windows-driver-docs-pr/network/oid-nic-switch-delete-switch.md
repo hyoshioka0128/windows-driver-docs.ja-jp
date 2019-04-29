@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_DELETE_SWITCH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 001a154a2c3de62ccbbdd19214011ed621bb0f66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330506"
 ---
 # <a name="oidnicswitchdeleteswitch"></a>OID\_NIC\_スイッチ\_削除\_スイッチ
 
@@ -34,11 +34,11 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削�
 
 1.  PF のミニポート ドライバーでは、静的な作成と NIC のスイッチの構成をサポートする場合は、指定した NIC スイッチに関連付けられているソフトウェア リソースを解放にする必要があります。 ただし、ドライバーのみを解放できますハードウェア リソースの NIC を切り替えるときに[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)が呼び出されます。
 
-    静的な NIC スイッチの作成の詳細については、[NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)を参照してください。
+    静的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)します。
 
 2.  PF ミニポート ドライバーでは、動的な作成と NIC のスイッチの構成をサポートする場合、指定した NIC スイッチに関連付けられているハードウェアおよびソフトウェア リソースを無料する必要があります。
 
-    動的な NIC スイッチの作成の詳細については、[NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)を参照してください。
+    動的な NIC スイッチの作成の詳細については、次を参照してください。 [NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)です。
 
 3.  ドライバーが呼び出すことによってに、アダプターで仮想化を無効にする必要があります、PF ミニポート ドライバーでは、動的に作成し、NIC のスイッチが削除されているすべてをサポートする場合[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)します。 ネットワーク アダプターの設定を仮想化を無効にする必要があります、 *EnableVirtualization*パラメーターを FALSE と*NumVFs*パラメーターを 0 にします。
 
@@ -48,7 +48,7 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削�
 
      
 
-詳細については、[NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)を参照してください。
+詳細については、次を参照してください。 [NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -61,7 +61,7 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_削�
 </colgroup>
 <thead>
 <tr class="header">
-<th>項目</th>
+<th>用語</th>
 <th>説明</th>
 </tr>
 </thead>

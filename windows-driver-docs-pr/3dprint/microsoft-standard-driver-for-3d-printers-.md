@@ -5,11 +5,11 @@ ms.assetid: DAFC5B26-09BA-483C-B964-1DA96E77765F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0faefc875791e74ed3e8c8b6498a046a58640d2f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328917"
 ---
 # <a name="getting-started-guide---microsoft-standard-driver-for-3d-printers"></a>ファースト ステップ ガイド - Microsoft 標準のドライバーの 3D プリンター
 
@@ -33,7 +33,7 @@ Windows 10 での作業 3 D プリンターを取得する一般的なプロセ�
 
 次のセクションでの具体的な例を使用して各手順を表していますが。
 
-詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)を参照してください。
+詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)します。
 
 ## <a name="compatible-id"></a>互換性 ID
 

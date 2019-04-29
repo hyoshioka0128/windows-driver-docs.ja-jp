@@ -7,17 +7,17 @@ keywords:
 ms.date: 12/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dbff0e504ed489843bba098ceaba315ecaa7b4c
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338368"
 ---
 # <a name="cd-rom-io-control-codes"></a>CD-ROM I/O 制御コード
 
 パブリックのすべての I/O 制御コードが CD-ROM デバイスのドライバーでは、バッファー内の I/O を使用します。 その結果、入力または出力データは、これらの要求を Irp で]-> [AssociatedIrp.SystemBuffer します。
 
-Cd-rom クラス ドライバーは処理追加パブリック I/O 制御コード、このセクションで説明したものとします。 記憶域クラス ドライバーの要件の詳細については、[全般ストレージ I/O 制御コード](general-storage-io-control-codes.md)を参照してください。
+Cd-rom クラス ドライバーは処理追加パブリック I/O 制御コード、このセクションで説明したものとします。 記憶域クラス ドライバーの要件の詳細については、次を参照してください。[全般ストレージ I/O 制御コード](general-storage-io-control-codes.md)します。
 
 |I/O 制御コード|説明|
 |----|----|

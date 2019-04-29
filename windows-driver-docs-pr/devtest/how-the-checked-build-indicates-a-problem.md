@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81478c63008e35f60b35159a6e51537d5200b373
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330649"
 ---
 # <a name="how-the-checked-build-indicates-a-problem"></a>チェック ビルドで問題が示される方法
 
@@ -68,7 +68,7 @@ KdPrint(( "EX: Pageable code called at IRQL %d\n", KeGetCurrentIrql() )); \
 
 通常、失敗した場合、テキストを調べることができます、ドライバーのアクションのアサートが発生したときに呼び出された機能を含むアサーション エラーの原因を特定するための式のコードします。 **KB (スタック トレースの表示)** デバッガー コマンドがこの分析に重要です。
 
-最も一般的なアサート呼び出しの一覧は、[チェック ビルド アサート](checked-build-asserts.md)を参照してください。
+最も一般的なアサート呼び出しの一覧は、次を参照してください。[チェック ビルド アサート](checked-build-asserts.md)します。
 
 ### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>ブレークポイント
 

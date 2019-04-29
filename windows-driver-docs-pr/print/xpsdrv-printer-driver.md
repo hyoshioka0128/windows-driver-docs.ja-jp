@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1efd2c4dae9ebefc57be5d9ef17fc19047eb2c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390229"
 ---
 # <a name="xps-printer-driver-xpsdrv"></a>XPS プリンター ドライバー (XPSDrv)
 
@@ -34,7 +34,7 @@ XPSDrv プリンター ドライバーの構成のモジュールの構成のモ
 
 XPSDrv プリンター ドライバーのレンダリングのモジュールは必ずしも、GDI ベースのプリンター ドライバーの GDI ベースのレンダリング関数を使用しません。 代わりに、XPSDrv プリンター ドライバーのレンダリングのモジュールは、0 個以上のフィルターと各フィルターのアクションを記述した構成ファイルで構成されます。 XPSDrv プリンター ドライバーのレンダリングのモジュール内のフィルターでは、プリンターの印刷ジョブを正しく処理する印刷チケット テクノロジもサポートする必要があります。
 
-XPSDrv ドライバーのインストールの詳細については、[XPSDrv インストール](xpsdrv-installation.md)を参照してください。
+XPSDrv ドライバーのインストールの詳細については、次を参照してください。 [XPSDrv インストール](xpsdrv-installation.md)します。
 
  
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bda252290d66e281fa4172cad9ddaa7ffe1d09f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330128"
 ---
 # <a name="installing-a-print-processor"></a>印刷プロセッサをインストールする
 
@@ -24,7 +24,7 @@ ms.locfileid: "56572859"
 
 
 
-プリント プロセッサをインストールするには、インストール アプリケーションが、スプーラーを呼び出す必要があります**AddPrintProcessor**関数。 印刷キューにプリント プロセッサを関連付けるには、PrintProcessor エントリで、INF ファイルでは、そのファイル名を一覧表示します。 このエントリは、プリント プロセッサが関連付けられるすべての印刷キューを含める必要があります。 詳細については、[プリンター INF ファイル](printer-inf-files.md)を参照してください。
+プリント プロセッサをインストールするには、インストール アプリケーションが、スプーラーを呼び出す必要があります**AddPrintProcessor**関数。 印刷キューにプリント プロセッサを関連付けるには、PrintProcessor エントリで、INF ファイルでは、そのファイル名を一覧表示します。 このエントリは、プリント プロセッサが関連付けられるすべての印刷キューを含める必要があります。 詳細については、次を参照してください。[プリンター INF ファイル](printer-inf-files.md)します。
 
 インストール アプリケーションから、スプーラーの**AddPrinter**関数は、プリンターを使用して\_情報\_2 は、入力引数として構造体、プリント プロセッサを指定します (INF ファイルから取得した) の名前として、構造体のメンバー。 (、 **AddPrintProcessor**と**AddPrinter**関数とプリンター\_情報\_2 構造が、Microsoft Windows SDK ドキュメントに記載されています)。
 

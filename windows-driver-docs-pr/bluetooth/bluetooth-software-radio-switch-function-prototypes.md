@@ -1,17 +1,17 @@
 ---
-title: Bluetooth のバージョンと以前の Windows バージョンのプロファイルのサポート
-description: Bluetooth のバージョンと以前の Windows バージョンのプロファイルのサポート
+title: 以前の Windows バージョンでの Bluetooth バージョンとプロファイルのサポート
+description: 以前の Windows バージョンでの Bluetooth バージョンとプロファイルのサポート
 ms.assetid: A5A81EAA-0DC7-4725-AA0D-5C4867DDE47C
 ms.date: 02/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ce02d9d590e14f1cbff085c8f403e6f83aca5306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328246"
 ---
-# <a name="bluetooth-software-radio-switch-function-prototypes"></a>Bluetooth ソフトウェア無線スイッチ関数プロトタイプ
+# <a name="bluetooth-software-radio-switch-function-prototypes"></a>Bluetooth ソフトウェアの無線スイッチ関数のプロトタイプ
 
 > 注:以降では、Windows 8.1 オペレーティング システムがこの機能を今すぐ処理するため、ソフトウェアのように、このトピックで説明されている DLL で無線 (Bluetooth 4.0 ラジオ) の機能のオン/オフを実装するためにベンダーは必要なくなりました。 Windows 8.1 では、このような DLL を無視します。 存在する場合でもです。
 

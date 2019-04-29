@@ -1,17 +1,17 @@
 ---
-title: アカウントの削除と到着のイベントを処理するためのベスト プラクティス
-description: アカウントの削除と到着のイベントを処理するためのベスト プラクティス
+title: アカウントの受信イベントと削除イベントを処理するためのベスト プラクティス
+description: アカウントの受信イベントと削除イベントを処理するためのベスト プラクティス
 ms.assetid: e299a920-a27e-4832-b81d-1562f86f37e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fbe660d79a3e47cca3c290e2974ac3a9801d3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392986"
 ---
-# <a name="best-practices-for-handling-account-arrival-and-removal-events"></a>アカウントの削除と到着のイベントを処理するためのベスト プラクティス
+# <a name="best-practices-for-handling-account-arrival-and-removal-events"></a>アカウントの受信イベントと削除イベントを処理するためのベスト プラクティス
 
 
 モバイル ブロード バンド アカウントを追加またはブロード バンドのモバイル アプリの有効期間中に削除できます。 これは、追加または削除のハードウェア、暗証番号 (pin) のロックを解除、または SIM スワップによって発生できます。 到達またはアカウントの削除は、多くの場合に一時的なものです。 これらのイベントの適切な処理は、アプリケーションの使いやすさに大きな影響を与えます。 次のベスト プラクティスは、アカウントの削除と到着のイベントの処理に適用されます。

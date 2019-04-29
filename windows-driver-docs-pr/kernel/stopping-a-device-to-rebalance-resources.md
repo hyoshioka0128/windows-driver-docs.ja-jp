@@ -1,6 +1,6 @@
 ---
-title: リソースを再調整するデバイスを停止しています
-description: リソースを再調整するデバイスを停止しています
+title: リソースを再調整するためのデバイスの停止
+description: リソースを再調整するためのデバイスの停止
 ms.assetid: eed28d41-8a9d-4b9e-90d7-ea4ddeeaad2d
 keywords:
 - PnP WDK リソースを再調整
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bad732842210f4ff390b73815506f1d88c3968a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331969"
 ---
-# <a name="stopping-a-device-to-rebalance-resources"></a>リソースを再調整するデバイスを停止しています
+# <a name="stopping-a-device-to-rebalance-resources"></a>リソースを再調整するためのデバイスの停止
 
 
 

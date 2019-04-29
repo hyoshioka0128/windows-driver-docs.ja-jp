@@ -23,11 +23,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a6441c861987621cee2c56dc0d7188db4cc2902
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328170"
 ---
 # <a name="using-the-bluetooth-driver-stack"></a>Bluetooth ドライバー スタックの使用
 
@@ -118,9 +118,9 @@ Bluetooth ドライバー スタックは、次の Ioctl をサポートして�
 
 [**IOCTL\_内部\_BTHENUM\_取得\_ENUMINFO**](https://msdn.microsoft.com/library/windows/hardware/ff536750)
 
-前の一覧で説明されている Ioctl を使用する方法の詳細については、[Bluetooth Ioctl](bluetooth-ioctls2.md)を参照してください。
+前の一覧で説明されている Ioctl を使用する方法の詳細については、次を参照してください。 [Bluetooth Ioctl](bluetooth-ioctls2.md)します。
 
-プロファイルのドライバーでは、IOCTL 主に使用して\_内部\_両方\_送信\_BRB と通信して、Bluetooth ドライバー スタックで提供される機能と対話します。 プロファイルのドライバーは IOCTL\_内部\_両方\_送信\_BRB 可変長のデータ構造を提供するには Bluetooth 要求のブロックが呼び出されます ( [ **BRB** ](https://msdn.microsoft.com/library/windows/hardware/ff536607))デバイスを管理します。 プロファイルのドライバーは、リモート デバイスへの接続を開いたり閉じたりして、入力と出力のほとんどのタスクを実行する BRBs を使用します。 IOCTL\_内部\_両方\_送信\_BRB には、Bluetooth の操作を実行する詳細を説明する BRB が含まれています。 構築し、Bluetooth ドライバー スタック ダウン BRBs を送信する方法の詳細については、[のビルドと送信を BRB](building-and-sending-a-brb.md)を参照してください。
+プロファイルのドライバーでは、IOCTL 主に使用して\_内部\_両方\_送信\_BRB と通信して、Bluetooth ドライバー スタックで提供される機能と対話します。 プロファイルのドライバーは IOCTL\_内部\_両方\_送信\_BRB 可変長のデータ構造を提供するには Bluetooth 要求のブロックが呼び出されます ( [ **BRB** ](https://msdn.microsoft.com/library/windows/hardware/ff536607))デバイスを管理します。 プロファイルのドライバーは、リモート デバイスへの接続を開いたり閉じたりして、入力と出力のほとんどのタスクを実行する BRBs を使用します。 IOCTL\_内部\_両方\_送信\_BRB には、Bluetooth の操作を実行する詳細を説明する BRB が含まれています。 構築し、Bluetooth ドライバー スタック ダウン BRBs を送信する方法の詳細については、次を参照してください。[のビルドと送信を BRB](building-and-sending-a-brb.md)します。
 
 各 BRB がによって定義されている標準ヘッダーで始まる、 [ **BRB\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff536612)構造、BRB の残りの部分の構造を決定する、BRB の型を指定します。 **型**で見つかった値のいずれかでなければなりませんメンバー、 [ **BRB\_型**](https://msdn.microsoft.com/library/windows/hardware/ff536631)列挙型では、Bluetooth 操作の種類を決定しますが、。ドライバーの要求をプロファイルします。 サイズと BRB 構造は、BRB の種類に応じて変わります。 **長さ**、BRB のメンバー\_ヘッダー構造、BRB のバイト単位のサイズを指定します。 [ **BthAllocateBrb**](https://msdn.microsoft.com/library/windows/hardware/ff536634)、 [ **BthInitializeBrb**](https://msdn.microsoft.com/library/windows/hardware/ff536639)、および[ **BthReuseBrb**](https://msdn.microsoft.com/library/windows/hardware/ff536640)関数が自動的に設定、**型**と**長さ**メンバー。
 
@@ -239,7 +239,7 @@ Bluetooth ドライバー スタックは、次の Ioctl をサポートして�
 
  
 
-Bluetooth の Ioctl および BRBs の使用に関する詳細については、[のビルドと送信を BRB](building-and-sending-a-brb.md)を参照してください。
+Bluetooth の Ioctl および BRBs の使用に関する詳細については、次を参照してください。[のビルドと送信を BRB](building-and-sending-a-brb.md)します。
 
  
 

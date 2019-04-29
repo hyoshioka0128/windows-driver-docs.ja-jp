@@ -1,17 +1,17 @@
 ---
-title: デバイスを ACPI 定義
+title: ACPI で定義されたデバイス
 description: ACPI 5.0 仕様には、数を表し、一般的なプラットフォーム機能を制御するデバイスの種類が定義されています。
 ms.assetid: 10BD17C9-E8FE-41E0-BD8C-E622B60E6BB6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5be0e0a433a2dc6346e5f29d7e1dd8643e62cdab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328140"
 ---
-# <a name="acpi-defined-devices"></a>デバイスを ACPI 定義
+# <a name="acpi-defined-devices"></a>ACPI で定義されたデバイス
 
 
 [ACPI 5.0 仕様](https://www.uefi.org/specifications)数を表し、一般的なプラットフォーム機能を制御するデバイスの種類を定義します。 たとえば、ACPI は、電源ボタンやスリープ ボタンの場合は、システムの評価指標を定義します。 SoC ベースのプラットフォームでは、Windows は、この記事で説明されている ACPI 定義されているデバイスをサポートする組み込みのドライバーを提供します。
@@ -28,7 +28,7 @@ ms.locfileid: "56528746"
 
 このデバイスについて説明するには、構成、およびプラットフォームのバッテリの状態を報告します。 詳細については、10.2、「コントロール メソッド バッテリ」セクションを参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。 SoC プラットフォーム上のコントロールのメソッドのバッテリ実装は ACPI 5.0 仕様で 5.6.5、「GPIO-Signaled ACPI イベント」のセクションで説明されている GPIO シグナル ACPI イベント メカニズムを使用します。 バッテリと課金のハードウェアへのアクセスは、GPIO または 5.5.2.4.4 と 5.5.2.4.5 ACPI 5.0 仕様のセクションで説明されている SPB OpRegions を操作するメソッドによって実行されます。
 
-Windows でバッテリの管理の詳細については、[Windows 電源とバッテリ サブシステム要件](https://msdn.microsoft.com/library/windows/hardware/mt614876)を参照してください。
+Windows でバッテリの管理の詳細については、次を参照してください。 [Windows 電源とバッテリ サブシステム要件](https://msdn.microsoft.com/library/windows/hardware/mt614876)します。
 
 **バッテリのデバイスに固有のメソッド (\_DSM)**
 
@@ -91,7 +91,7 @@ ACPI 熱ゾーンに関する詳細については、11、「温度管理」の�
 
 温度のゾーン内のプロセッサ コアをアイドル状態が、オペレーティング システムを指定できます、プラットフォーム (スロットルの代わりに)。 これについては、1 つまたは複数の熱のゾーンでプロセッサ アグリゲーター デバイス (ACPI000C) を含めることによって行います。 Windows の数が駐車はコアの場合に、温度のゾーンの\_PSV を超えました。 数が *(1 -&lt;ゾーン パッシブ制限&gt;) \* &lt;熱のゾーンで使用できるコア数&gt;* で報告されたコアの数または\_PUR、大きい方になります。 詳細については、「論理プロセッサ アイドル状態である」、8.5.1 セクションを参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
 
-Oem は、デバイス固有のメソッドを含めることができます (\_DSM) Windows の Microsoft 熱の拡張機能をサポートするためにします。 詳細については、[熱の Microsoft 拡張機能のデバイス固有のメソッド](device-specific-method-for-microsoft-thermal-extensions.md)を参照してください。
+Oem は、デバイス固有のメソッドを含めることができます (\_DSM) Windows の Microsoft 熱の拡張機能をサポートするためにします。 詳細については、次を参照してください。[熱の Microsoft 拡張機能のデバイス固有のメソッド](device-specific-method-for-microsoft-thermal-extensions.md)します。
 
  
 

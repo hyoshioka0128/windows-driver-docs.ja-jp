@@ -1,6 +1,6 @@
 ---
-title: 中間の NDIS フィルター ドライバー
-description: 中間の NDIS フィルター ドライバー
+title: NDIS フィルター中間ドライバー
+description: NDIS フィルター中間ドライバー
 ms.assetid: aace049a-fc1b-46e0-a13f-1406310226d0
 keywords:
 - NDIS フィルター中間ドライバー WDK
@@ -8,19 +8,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 422eadcb93965070a718f91720795e0fe2efba5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392920"
 ---
-# <a name="ndis-filter-intermediate-drivers"></a>中間の NDIS フィルター ドライバー
+# <a name="ndis-filter-intermediate-drivers"></a>NDIS フィルター中間ドライバー
 
 
 
 
 
-**注**  NDIS 6.0 以降、中間のフィルター ドライバーはサポートされていません。 代わりに、NDIS フィルター ドライバー インターフェイスを使用する必要があります。 NDIS フィルター ドライバーの詳細については、[NDIS フィルター ドライバー](ndis-filter-drivers.md)を参照してください。
+**注**  NDIS 6.0 以降、中間のフィルター ドライバーはサポートされていません。 代わりに、NDIS フィルター ドライバー インターフェイスを使用する必要があります。 NDIS フィルター ドライバーの詳細については、次を参照してください。 [NDIS フィルター ドライバー](ndis-filter-drivers.md)します。
 
  
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ce9e53d0d34080fd3188fbc5ec1b81f7d2c4d04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333772"
 ---
 # <a name="directsound-speaker-configuration-settings"></a>DirectSound スピーカー構成の設定
 
@@ -21,7 +21,7 @@ ms.locfileid: "56536373"
 ## <span id="directsound_speaker_configuration_settings"></span><span id="DIRECTSOUND_SPEAKER_CONFIGURATION_SETTINGS"></span>
 
 
-このセクションでは、DirectSound のスピーカー構成設定とこれらの構成をサポートしている WDM オーディオ ドライバーを実装する方法について説明します。 次のトピックがについて説明します。
+このセクションでは、DirectSound のスピーカー構成設定とこれらの構成をサポートしている WDM オーディオ ドライバーを実装する方法について説明します。 次のトピックについて説明します。
 
 [スピーカー構成要求を変換します。](translating-speaker-configuration-requests.md)
 

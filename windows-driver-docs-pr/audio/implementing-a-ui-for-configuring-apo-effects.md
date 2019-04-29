@@ -1,20 +1,20 @@
 ---
-title: APO 効果を構成するための UI を実装します。
+title: APO 効果を構成するための UI の実装
 description: このトピックでは、ユーザーが、効果を構成できるユーザー インターフェイス (UI) を実装する方法について説明します。
 ms.assetid: C8D1CB20-2E77-430A-9933-4BDFFB997158
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfac675a3f9b846ca43822e1036e2947b3de20b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333497"
 ---
-# <a name="implementing-a-ui-for-configuring-apo-effects"></a>APO 効果を構成するための UI を実装します。
+# <a name="implementing-a-ui-for-configuring-apo-effects"></a>APO 効果を構成するための UI の実装
 
 
-このトピックでは、ユーザーが、効果を構成できるユーザー インターフェイス (UI) を実装する方法について説明します。 パスワードの詳細については、[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)を参照してください。
+このトピックでは、ユーザーが、効果を構成できるユーザー インターフェイス (UI) を実装する方法について説明します。 パスワードの詳細については、次を参照してください。[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)します。
 
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
 
@@ -139,7 +139,7 @@ Windows で提供される効果を直接使用または、それらをラップ
 ## <a name="span-idsysvadswapapouisamplecodespanspan-idsysvadswapapouisamplecodespanspan-idsysvadswapapouisamplecodespansysvad-swapapo-ui-sample-code"></a><span id="SYSVAD_SwapAPO_UI_Sample_Code"></span><span id="sysvad_swapapo_ui_sample_code"></span><span id="SYSVAD_SWAPAPO_UI_SAMPLE_CODE"></span>SYSVAD SwapAPO UI のサンプル コード
 
 
-コード サンプルをテンプレートとしては、SYVAD スワップ APO を使用してカスタム APO 開発プロセスを推し進めることができます。 スワップ APO サンプルについては、[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)を参照してください。
+コード サンプルをテンプレートとしては、SYVAD スワップ APO を使用してカスタム APO 開発プロセスを推し進めることができます。 スワップ APO サンプルについては、次を参照してください。[オーディオ処理オブジェクトを実装する](implementing-audio-processing-objects.md)します。
 
 **コード例**
 

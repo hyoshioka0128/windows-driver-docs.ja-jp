@@ -1,17 +1,17 @@
 ---
-title: UMDF ドライバーについては、セッション 0
-description: UMDF ドライバーについては、セッション 0
+title: UMDF ドライバーに対するセッション 0 のガイドライン
+description: UMDF ドライバーに対するセッション 0 のガイドライン
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ed6d6c7dac34cbcd9a74420ad6ab2d47a7d0805
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325132"
 ---
-# <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF ドライバーについては、セッション 0
+# <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF ドライバーに対するセッション 0 のガイドライン
 
 
 Windows Vista 以降、オペレーティング システムでは、サービスとそれ以降で実行中のアプリケーションにセッション 0 でシステム プロセス、上位の番号付きセッションを分離します。 UMDF ホスト プロセス (WUDFHost.exe) は、セッション 0 で実行されているシステム プロセスのいずれかであるために、UMDF ドライバーは、アプリケーションから分離されます。 結果としてには、ドライバーを開発するときに、次のガイドラインを使用する必要があります。
@@ -31,13 +31,13 @@ Windows Vista 以降、オペレーティング システムでは、サービ�
          
 
     -   手動のキューからの I/O 要求を取得するドライバーは、キューをポーリングする定期的なタイマーを作成する場合があります。 たとえば、 [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)サンプルでは、呼び出すことにより、タイマー コールバック ルーチンを登録します[ **CreateThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms682466)、を呼び出すことによって定期的なタイマーを設定および[。 **SetThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms686271)します。
-        **注**  バージョン 1.11 以降、UMDF では、作業項目。 詳細については、[を使用して作業項目](using-workitems.md)を参照してください。
+        **注**  バージョン 1.11 以降、UMDF では、作業項目。 詳細については、次を参照してください。[を使用して作業項目](using-workitems.md)します。
 
          
 
 Orwick の 14 (「以外のフレームワーク」) の章を参照してください、フレームワーク外でシステム サービスの使用に関する追加情報は、小額と Guy Smith。 *Windows Driver Foundation でのドライバーの開発*します。 Redmond、WA:Microsoft Press、2007 年。
 
-Session 0 分離の詳細については、[サービスと Windows でドライバーの影響の Session 0 分離](https://go.microsoft.com/fwlink/p/?linkid=240132)を参照してください。
+Session 0 分離の詳細については、次を参照してください。[サービスと Windows でドライバーの影響の Session 0 分離](https://go.microsoft.com/fwlink/p/?linkid=240132)します。
 
  
 

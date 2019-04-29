@@ -5,11 +5,11 @@ ms.assetid: BAE99C83-2732-4216-BC49-23F541AA3F10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe6d26aa23d4ea493b3b90344be1107460bcc953
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327754"
 ---
 # <a name="indicating-changes-to-the-operational-ndis-qos-parameters"></a>稼働中の NDIS QoS パラメーターへの変更の表示
 
@@ -22,7 +22,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
     **注**場合は、レジストリの専用のローカル NDIS QoS パラメーターを持つ、ミニポート ドライバーがプロビジョニングされると、ドライバーを発行する必要があります、 [ **NDIS\_状態\_QOS\_操作\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)状態の表示中またはへの呼び出し後すぐに[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 この場合、ドライバーを初期化します、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)その独自のローカル NDIS QoS パラメーター設定を含む構造体。
 
-    ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)を参照してください。
+    ドライバーがその運用上の NDIS QoS パラメーター設定を解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
 
 -   この最初の状態を示す値後、ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)運用上の NDIS QoS パラメーターが変更されたときに状態を示す値。 たとえば、運用上の NDIS QoS パラメーターは、次の条件下で変更できます。
 
@@ -40,11 +40,11 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
     ミニポート ドライバーに通知の NDIS および上にあるドライバーを発行して、ローカルの NDIS QoS パラメーターがオーバーライドされること、 [ **NDIS\_状態\_QOS\_OPERATIONAL\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)状態を示す値。 この種類の表示にするには、ドライバーは、適切な設定する必要があります**NDIS\_QOS\_パラメーター\_*Xxx*\_CHANGED** フラグ**フラグ**のメンバー、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体をローカルの NDIS QoS パラメーターをオーバーライドの理由を指定します。
 
-    ミニポート ドライバーがローカルの QoS パラメーターを管理する方法の詳細については、[NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)を参照してください。
+    ミニポート ドライバーがローカルの QoS パラメーターを管理する方法の詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
 
-    ミニポート ドライバーがその運用上の QoS パラメーターを解決する方法の詳細については、[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)を参照してください。
+    ミニポート ドライバーがその運用上の QoS パラメーターを解決する方法の詳細については、次を参照してください。[運用上の NDIS QoS パラメーターを解決する](resolving-operational-ndis-qos-parameters.md)します。
 
-**注**ミニポート ドライバーを発行する必要があります[ **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)状態インジケーターの NDIS QoS 機能は、現在を有効になっている場合、  **\*QOS**キーワードに標準化された INF キーワード。 詳細については、[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)を参照してください。
+**注**ミニポート ドライバーを発行する必要があります[ **NDIS\_状態\_QOS\_運用\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439810)状態インジケーターの NDIS QoS 機能は、現在を有効になっている場合、  **\*QOS**キーワードに標準化された INF キーワード。 詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
 
 ## <a name="guidelines-for-issuing-the-ndisstatusqosoperationalparameterschange-status-indication"></a>NDIS を発行するためのガイドライン\_状態\_QOS\_運用\_パラメーター\_変更状態の表示
 

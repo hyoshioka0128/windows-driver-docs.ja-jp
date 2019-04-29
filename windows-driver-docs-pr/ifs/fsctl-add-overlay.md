@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53b4ceecfa7e9a541a53d8fd28febc1bd1bcb114
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327890"
 ---
 # <a name="fsctladdoverlay-control-code"></a>FSCTL\_追加\_オーバーレイ コントロール コード
 
@@ -66,7 +66,7 @@ ms.locfileid: "56571742"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -92,14 +92,14 @@ ms.locfileid: "56571742"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 追加のバックアップ ソースは、Windows Imaging Format (WIM) ファイルが、入力バッファーに格納されます、 [ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造が続く、 [**WIM\_プロバイダー\_追加\_オーバーレイ\_入力**](https://msdn.microsoft.com/library/windows/hardware/dn632447)構造体。 *InputBufferLength*ここでは、 **sizeof**(**WOF\_外部\_情報**) + **sizeof**(**WIM\_プロバイダー\_追加\_オーバーレイ\_入力**)。 要求の完了時に、データによって示される*OutputBuffer*含む 1 つの大きな\_WIM ファイルの新しいデータ ソース識別子を指定する整数値。
 
 その他のバックアップ プロバイダーでは、独自の特定の入力パラメーターの構造を定義し、データ型を出力します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

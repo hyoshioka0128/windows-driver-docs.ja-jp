@@ -1,6 +1,6 @@
 ---
-title: Windows 2000 Display Driver Model (XDDM) 設計ガイド
-description: Windows 2000 Display Driver Model (XDDM) 設計ガイド
+title: Windows 2000 Display Driver Model (XDDM) の設計ガイド
+description: Windows 2000 Display Driver Model (XDDM) の設計ガイド
 ms.assetid: 24cb232b-e289-45c8-8d55-42614a4dfd54
 keywords:
 - WDK のデバイスを表示します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9215569fd9aedb45b36a8246a7c21f89d1cd8b72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391133"
 ---
-# <a name="windows-2000-display-driver-model-xddm-design-guide"></a>Windows 2000 Display Driver Model (XDDM) 設計ガイド
+# <a name="windows-2000-display-driver-model-xddm-design-guide"></a>Windows 2000 Display Driver Model (XDDM) の設計ガイド
 
 
 ## <span id="ddk_windows_2000_display_driver_model_gg"></span><span id="DDK_WINDOWS_2000_DISPLAY_DRIVER_MODEL_GG"></span>

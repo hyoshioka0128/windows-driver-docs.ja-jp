@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8da4755023abac4168106b0c3329d47757d370be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331402"
 ---
-# <a name="edit--go-to-line"></a>編集 |行に移動します。
+# <a name="edit--go-to-line"></a>Edit | Go to Line (編集 | 行に移動)
 
 
 ## <span id="ddk_edit_go_to_line_dbg"></span><span id="DDK_EDIT_GO_TO_LINE_DBG"></span>
@@ -31,7 +31,7 @@ ms.locfileid: "56557802"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のデバッグ情報のウィンドウでテキストの検索方法の詳細については、[ウィンドウの移動](moving-through-a-window.md)を参照してください。
+その他のデバッグ情報のウィンドウでテキストの検索方法の詳細については、次を参照してください。[ウィンドウの移動](moving-through-a-window.md)します。
 
  
 

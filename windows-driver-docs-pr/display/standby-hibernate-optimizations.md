@@ -1,17 +1,17 @@
 ---
-title: スタンバイの最適化を休止状態します。
+title: スタンバイ休止状態の最適化
 description: Windows 8 には、最適化をドライバー オプションで利用できるのスリープ状態にシステム パフォーマンスが向上し、再開するグラフィックス スタックが用意されています。
 ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e12306d7874d99cb0900c94353baeb1c3a2877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327922"
 ---
-# <a name="standby-hibernate-optimizations"></a>スタンバイの最適化を休止状態します。
+# <a name="standby-hibernate-optimizations"></a>スタンバイ休止状態の最適化
 
 
 Windows 8 には、最適化をドライバー オプションで利用できるのスリープ状態にシステム パフォーマンスが向上し、再開するグラフィックス スタックが用意されています。

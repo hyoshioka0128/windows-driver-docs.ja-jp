@@ -1,6 +1,6 @@
 ---
-title: アクセラレータの機能を定義します。
-description: アクセラレータの機能を定義します。
+title: アクセラレータ機能の定義
+description: アクセラレータ機能の定義
 ms.assetid: 1f590cfd-74b8-4a08-848d-fcbb2c0c9486
 keywords:
 - DirectX ビデオ アクセラレータ WDK Windows 2000 の表示、アクセラレータの機能
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b6751a906b48c22c4bc989e962a7bc658c4cd37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327157"
 ---
-# <a name="defining-accelerator-capabilities"></a>アクセラレータの機能を定義します。
+# <a name="defining-accelerator-capabilities"></a>アクセラレータ機能の定義
 
 
 ## <span id="ddk_defining_accelerator_capabilities_gg"></span><span id="DDK_DEFINING_ACCELERATOR_CAPABILITIES_GG"></span>

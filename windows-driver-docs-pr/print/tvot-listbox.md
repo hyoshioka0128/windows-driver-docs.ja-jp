@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d232a061d729fd52d781e5357f9a846ef3beba3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390252"
 ---
 # <a name="tvotlistbox"></a>TVOT\_LISTBOX
 
@@ -51,7 +51,7 @@ TVOT\_LISTBOX オプションの種類は、グループ ボックス内でリ�
 **pOptParam**\[*n*\]-&gt;**IconID**に関連付けるアイコンを識別、 *n*番目のテキスト文字列。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-使用されません。
+使用されていません。
 
 <span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)構造体  
 
@@ -122,7 +122,7 @@ CPSUI セットには、アルファベット順でのテキスト文字列が�
 
  
 
-詳細については、[Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)を参照してください。
+詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
 
 <a name="requirements"></a>要件
 ------------

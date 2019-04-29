@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f21cc89dd5d464b6d993178b70342571b1f2707f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327031"
 ---
 # <a name="determining-the-buffering-method-for-an-io-operation"></a>I/O 操作用のバッファー処理メソッドの確認
 
@@ -38,7 +38,7 @@ ms.locfileid: "56578633"
 
 すべての標準的な Microsoft ファイル システムでは、ほとんどの I/O 処理バッファーもダイレクト I/O を使用します。
 
-バッファリング メソッドの詳細については、[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)を参照してください。
+バッファリング メソッドの詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)します。
 
 IRP ベースの I/O 操作では、バッファリングに使用されるメソッドは操作固有でありは、次の要因によって決まります。
 

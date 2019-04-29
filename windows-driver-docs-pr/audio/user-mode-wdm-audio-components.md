@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21bdb025f98a292fc81252fb4051d0bbb4492113
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328522"
 ---
 # <a name="user-mode-wdm-audio-components"></a>ユーザー モード WDM オーディオ コンポーネント
 
@@ -50,7 +50,7 @@ WinMM システム コンポーネント (Winmm.dll と 16 ビットの対応す
 
 ### <a name="span-iddirectsoundsystemcomponentspanspan-iddirectsoundsystemcomponentspandirectsound-system-component"></a><span id="directsound_system_component"></span><span id="DIRECTSOUND_SYSTEM_COMPONENT"></span>DirectSound システム コンポーネント
 
-DirectSound システム コンポーネント (Dsound.dll) サポート、DirectSound API (Microsoft Windows SDK のドキュメントを参照してください)。 DirectSound コンポーネントは、SysAudio ドライバーのクライアントです。 ハードウェアの混在が使用可能な場合は、SysAudio ドライバーは、レンダリング デバイスに直接 DirectSound ハードウェア バッファーを接続します。 それ以外の場合、SysAudio ドライバーは DirectSound ソフトウェア バッファーを KMixer システムのドライバーに接続します。 詳細については、[レンダリング Wave コンテンツを使用して DirectSound ソフトウェアおよびハードウェア バッファー](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)を参照してください。
+DirectSound システム コンポーネント (Dsound.dll) サポート、DirectSound API (Microsoft Windows SDK のドキュメントを参照してください)。 DirectSound コンポーネントは、SysAudio ドライバーのクライアントです。 ハードウェアの混在が使用可能な場合は、SysAudio ドライバーは、レンダリング デバイスに直接 DirectSound ハードウェア バッファーを接続します。 それ以外の場合、SysAudio ドライバーは DirectSound ソフトウェア バッファーを KMixer システムのドライバーに接続します。 詳細については、次を参照してください。[レンダリング Wave コンテンツを使用して DirectSound ソフトウェアおよびハードウェア バッファー](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)します。
 
 ### <a name="span-iddirectmusicsystemcomponentspanspan-iddirectmusicsystemcomponentspandirectmusic-system-component"></a><span id="directmusic_system_component"></span><span id="DIRECTMUSIC_SYSTEM_COMPONENT"></span>DirectMusic システム コンポーネント
 

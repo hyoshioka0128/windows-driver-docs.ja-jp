@@ -1,6 +1,6 @@
 ---
-title: NDIS 6.20 で古いインターフェイス
-description: NDIS 6.20 で古いインターフェイス
+title: NDIS 6.20 の古いインターフェイス
+description: NDIS 6.20 の古いインターフェイス
 ms.assetid: 11c3abd5-651e-4f9c-9f0b-ced6c00947f1
 keywords:
 - NDIS 6.20 WDK、旧式の NDIS 6.1 インターフェイスします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ea07ff327bf81f2d8e57bac380008cb680fa6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331234"
 ---
-# <a name="obsolete-interfaces-in-ndis-620"></a>NDIS 6.20 で古いインターフェイス
+# <a name="obsolete-interfaces-in-ndis-620"></a>NDIS 6.20 の古いインターフェイス
 
 
 

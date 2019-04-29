@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32b22c090abbb36dda353946fb2360044a6928b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332678"
 ---
 # <a name="kspropertyrtaudioclockregister"></a>KSPROPERTY\_RTAUDIO\_CLOCKREGISTER
 
@@ -41,15 +41,15 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティは、クライアントがア
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537498" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537498)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
@@ -68,7 +68,7 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティは、クライアントがア
 
 KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は失敗を示すエラー コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 一部のオーディオ デバイスには、クロックのレジスタが含まれています。 クロックの登録は、ハードウェアの電源が入るし、ハードウェアの電源と停止の実行を開始するウォール クロック カウンターです。 ソフトウェアは、デバイスのハードウェア クロックの間の相対的な誤差を測定することで、2 つまたは複数のコント ローラー デバイス間で同期する時計のレジスタを使用します。
@@ -81,7 +81,7 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティ要求がステータスを返
 
 これは通常高速化を送信するよりも、クロックの登録を読み取る、 [ **KSPROPERTY\_クロック\_時間**](https://msdn.microsoft.com/library/windows/hardware/ff565095)要求は、ユーザー モードとカーネル モードの間の遷移が必要ですユーザー モードのクライアントです。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

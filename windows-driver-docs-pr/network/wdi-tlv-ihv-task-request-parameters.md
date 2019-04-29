@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_IHV_TASK_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b5b4fdf1a6404c128fd32ff69e504ca567ad471
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329876"
 ---
 # <a name="wditlvihvtaskrequestparameters"></a>WDI\_TLV\_IHV\_タスク\_要求\_パラメーター
 
@@ -31,13 +31,13 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                             |
+| 型   | 説明                                                                                                                             |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32 | このタスクの IHV から要求された優先順位。 参照してください[ **WDI\_IHV\_タスク\_優先度**](https://msdn.microsoft.com/library/windows/hardware/dn926064)の有効な優先度の値。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

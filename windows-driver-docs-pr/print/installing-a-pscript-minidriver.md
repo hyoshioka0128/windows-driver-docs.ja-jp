@@ -1,6 +1,6 @@
 ---
-title: Pscript ミニドライバーをインストールします。
-description: Pscript ミニドライバーをインストールします。
+title: Pscript ミニドライバーをインストールする
+description: Pscript ミニドライバーをインストールする
 ms.assetid: 9c48b2b0-c293-4606-bbaa-3fcaca01c300
 keywords:
 - WDK Pscript、ミニドライバーをインストールします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccc32feb728606af4095aa4c6908c9249f5508bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330120"
 ---
-# <a name="installing-a-pscript-minidriver"></a>Pscript ミニドライバーをインストールします。
+# <a name="installing-a-pscript-minidriver"></a>Pscript ミニドライバーをインストールする
 
 
 
@@ -37,7 +37,7 @@ Include=NTPRINT.INF         ; Include NTPRINT.INF.
 Needs=PSCRIPT.OEM           ; Install PSCRIPT.
 ```
 
-指定する場合、[プラグインのユーザー インターフェイス](user-interface-plug-ins.md)または[プラグインでレンダリング](rendering-plug-ins.md)、INF ファイル内でこれらのコンポーネントの名前を含める必要があります。 カスタマイズされたコードをインストールする方法の詳細については、[カスタマイズされたドライバー コンポーネントをインストール](installing-customized-driver-components.md)を参照してください。
+指定する場合、[プラグインのユーザー インターフェイス](user-interface-plug-ins.md)または[プラグインでレンダリング](rendering-plug-ins.md)、INF ファイル内でこれらのコンポーネントの名前を含める必要があります。 カスタマイズされたコードをインストールする方法の詳細については、次を参照してください。[カスタマイズされたドライバー コンポーネントをインストール](installing-customized-driver-components.md)します。
 
  
 

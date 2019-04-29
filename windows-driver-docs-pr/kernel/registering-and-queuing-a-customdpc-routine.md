@@ -1,6 +1,6 @@
 ---
-title: 登録して、CustomDpc ルーチンのキュー
-description: 登録して、CustomDpc ルーチンのキュー
+title: CustomDpc ルーチンの登録とキュー
+description: CustomDpc ルーチンの登録とキュー
 ms.assetid: 7c35f8f8-a6dc-43b1-9120-701227d7b4c5
 keywords:
 - CustomDpc
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec8f265a45fd052996cc52fbe068b8e1b2490306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391104"
 ---
-# <a name="registering-and-queuing-a-customdpc-routine"></a>登録して、CustomDpc ルーチンのキュー
+# <a name="registering-and-queuing-a-customdpc-routine"></a>CustomDpc ルーチンの登録とキュー
 
 
 

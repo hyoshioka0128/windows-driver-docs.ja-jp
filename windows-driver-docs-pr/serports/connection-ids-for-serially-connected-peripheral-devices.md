@@ -1,17 +1,17 @@
 ---
-title: 接続 Id を逐次的に周辺機器を接続
+title: シリアル接続される周辺デバイスの接続 ID
 description: SerCx2 によって管理されているシリアル ポートに接続されている周辺機器のデバイスのドライバーを記述する場合、ドライバーを受信するハードウェア リソースの一覧には、プラットフォーム ファームウェアからデバイスの接続情報をカプセル化する接続 ID が含まれます。
 ms.assetid: 9A688552-DFAF-48A1-935D-70C3B13F30EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a7e22bef2608daf2719213a74a4ec4b37502876
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327554"
 ---
-# <a name="connection-ids-for-serially-connected-peripheral-devices"></a>接続 Id を逐次的に周辺機器を接続
+# <a name="connection-ids-for-serially-connected-peripheral-devices"></a>シリアル接続される周辺デバイスの接続 ID
 
 
 SerCx2 周辺機器を完全に接続するシリアル ポートを管理します。 これらの物理接続が固定であるためには、ハードウェア プラットフォームの ACPI ファームウェアで記述できます。 SerCx2 によって管理されているシリアル ポートに接続されている周辺機器のデバイスのドライバーを記述する場合、ドライバーを受信するハードウェア リソースの一覧が含まれています、*接続 ID*デバイスの接続情報をカプセル化します。プラットフォーム ファームウェア。
@@ -29,7 +29,7 @@ PnP マネージャーでは、この周辺機器のデバイスの接続パラ�
 
 クライアントは、シリアル ポートを開いた直後に、未知または不定状態で、ポートが想定してください。 クライアントは、使用できる状態にあるように、ポートを構成する責任を負います。
 
-操作のシリアル ポートを構成するには、クライアント要求を送信 I/O コントロール (IOCTL) シリアル コント ローラーにします。 クライアントは通常、送信、 [ **IOCTL\_シリアル\_適用\_既定\_構成**](https://msdn.microsoft.com/library/windows/hardware/hh406621)ポートを設定する、コント ローラーへの要求の既定の構成。 必要に応じて、クライアントは、1 つまたは複数の既定の構成設定をオーバーライドする追加のシリアル Ioctl を送信できます。 たとえば、Windows では、ボー レート、フロー制御パラメーター、行コントロールの設定、およびタイムアウト値を変更の読み取りおよび書き込み要求をシリアル Ioctl を定義します。 SerCx2 でサポートされているシリアル Ioctl の一覧は、[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)を参照してください。
+操作のシリアル ポートを構成するには、クライアント要求を送信 I/O コントロール (IOCTL) シリアル コント ローラーにします。 クライアントは通常、送信、 [ **IOCTL\_シリアル\_適用\_既定\_構成**](https://msdn.microsoft.com/library/windows/hardware/hh406621)ポートを設定する、コント ローラーへの要求の既定の構成。 必要に応じて、クライアントは、1 つまたは複数の既定の構成設定をオーバーライドする追加のシリアル Ioctl を送信できます。 たとえば、Windows では、ボー レート、フロー制御パラメーター、行コントロールの設定、およびタイムアウト値を変更の読み取りおよび書き込み要求をシリアル Ioctl を定義します。 SerCx2 でサポートされているシリアル Ioctl の一覧は、次を参照してください。[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: NetworkProvider セクションを含む
-description: NetworkProvider セクションを含む
+title: NetworkProvider セクションを含める
+description: NetworkProvider セクションを含める
 ms.assetid: 8972f926-c4f5-4a2f-8f2d-f9353fdbd83f
 keywords:
 - INF ファイルの WDK ネットワーク、NetworkProvider セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e13c6bbbc5927cf4577f5c854d9c3089950126dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327813"
 ---
-# <a name="including-a-networkprovider-section"></a>NetworkProvider セクションを含む
+# <a name="including-a-networkprovider-section"></a>NetworkProvider セクションを含める
 
 
 
@@ -35,7 +35,7 @@ A **NetworkProvider**セクションのいずれか、代替デバイス名を�
 
 ### <a name="specifying-a-device-name"></a>デバイス名を指定します。
 
-ネットワーク クラスのインストーラーは、コピーして、ネットワーク プロバイダー、デバイス名を作成する通常の**Ndi\\サービス**NetworkProvider キー コンポーネントのコンポーネントの値**サービス**キー。 詳細については、[Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)を参照してください。 コンポーネントの別のデバイス名を指定する、 **DeviceName**内のエントリ、 **NetworkProvider**の次の例に示すように、コンポーネントのセクションします。
+ネットワーク クラスのインストーラーは、コピーして、ネットワーク プロバイダー、デバイス名を作成する通常の**Ndi\\サービス**NetworkProvider キー コンポーネントのコンポーネントの値**サービス**キー。 詳細については、次を参照してください。 [Ndi キーに値を Adding Service-Related](adding-service-related-values-to-the-ndi-key.md)します。 コンポーネントの別のデバイス名を指定する、 **DeviceName**内のエントリ、 **NetworkProvider**の次の例に示すように、コンポーネントのセクションします。
 
 ```INF
 [DDInstall-section.NetworkProvider]

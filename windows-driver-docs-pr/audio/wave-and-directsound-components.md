@@ -19,11 +19,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2acbfc84da63ea183c31742ee8a0a3b108824356
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328510"
 ---
 # <a name="wave-and-directsound-components"></a>Wave と DirectSound コンポーネント
 
@@ -57,7 +57,7 @@ DirectSound と Windows のマルチ メディア wave 関数は、クライア�
 
 KMixer は、wave PCM 1 つまたは複数のソースからストリームし、wave PCM 形式でも、単一出力ストリームを形成する合成を受信するシステム コンポーネントです。
 
-KMixer は、wave ポートおよびミニポート ドライバーが前の図の左側にある KMixer 下に表示されます、WaveCyclic または WavePci デバイスにストリームを出力します。 ミニポート ドライバーでは、基になるオーディオのレンダリング デバイスを表す wave フィルターを形成するポート ドライバーに自体をバインドします。 一般的なレンダリング デバイスは、一連のスピーカーまたは外部のオーディオ ユニットを駆動するアナログ信号を出力します。 レンダリング デバイスには、S/PDIF コネクタ経由のデジタル オーディオ出力も可能性があります。 WaveCyclic と WavePci の詳細については、[Wave フィルター](wave-filters.md)を参照してください。
+KMixer は、wave ポートおよびミニポート ドライバーが前の図の左側にある KMixer 下に表示されます、WaveCyclic または WavePci デバイスにストリームを出力します。 ミニポート ドライバーでは、基になるオーディオのレンダリング デバイスを表す wave フィルターを形成するポート ドライバーに自体をバインドします。 一般的なレンダリング デバイスは、一連のスピーカーまたは外部のオーディオ ユニットを駆動するアナログ信号を出力します。 レンダリング デバイスには、S/PDIF コネクタ経由のデジタル オーディオ出力も可能性があります。 WaveCyclic と WavePci の詳細については、次を参照してください。 [Wave フィルター](wave-filters.md)します。
 
 または、KMixer はによって制御される、USB オーディオ デバイスにその出力ストリームを渡すことができます、 [USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver) (非表示の図)、WaveCyclic または WavePci デバイスではなく。
 

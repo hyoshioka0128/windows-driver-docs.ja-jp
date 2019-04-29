@@ -1,6 +1,6 @@
 ---
-title: MIDI と DirectMusic フィルター
-description: MIDI と DirectMusic フィルター
+title: MIDI フィルターと DirectMusic フィルター
+description: MIDI フィルターと DirectMusic フィルター
 ms.assetid: 622aa4ae-c855-4088-bc1a-30dff7a24d23
 keywords:
 - オーディオ フィルター WDK オーディオ、MIDI
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eaac8459cff2e29ebb2ee8f6bed6beced2629321
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332342"
 ---
-# <a name="midi-and-directmusic-filters"></a>MIDI と DirectMusic フィルター
+# <a name="midi-and-directmusic-filters"></a>MIDI フィルターと DirectMusic フィルター
 
 
 ## <span id="midi_and_directmusic_filters"></span><span id="MIDI_AND_DIRECTMUSIC_FILTERS"></span>

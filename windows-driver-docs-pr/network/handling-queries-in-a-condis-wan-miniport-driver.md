@@ -1,6 +1,6 @@
 ---
-title: いる CoNDIS WAN ミニポート ドライバーでのクエリの処理
-description: いる CoNDIS WAN ミニポート ドライバーでのクエリの処理
+title: CoNDIS WAN ミニポート ドライバーのクエリの処理
+description: CoNDIS WAN ミニポート ドライバーのクエリの処理
 ms.assetid: 634618ce-3168-4729-b74a-e69f27b62ef4
 keywords:
 - ドライバー WDK のいる CoNDIS WAN ネットワーク接続、クエリ処理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 554c9ffb60ed9a1e36992ef230a76f137afe779e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325022"
 ---
-# <a name="handling-queries-in-a-condis-wan-miniport-driver"></a>いる CoNDIS WAN ミニポート ドライバーでのクエリの処理
+# <a name="handling-queries-in-a-condis-wan-miniport-driver"></a>CoNDIS WAN ミニポート ドライバーのクエリの処理
 
 
 
@@ -67,7 +67,7 @@ NDIS を呼び出すと*MiniportCoOidRequest*、NDIS へのポインターを渡
 
  
 
-いる CoNDIS WAN ミニポート ドライバーは、NDIS のすべてをサポートできる[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、[クエリの実行または情報を設定する](querying-or-setting-information.md)を参照してください。
+いる CoNDIS WAN ミニポート ドライバーは、NDIS のすべてをサポートできる[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、次を参照してください。[クエリの実行または情報を設定する](querying-or-setting-information.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: 非同期プロシージャ コール
-description: 非同期プロシージャ コール
+title: 非同期プロシージャ呼び出し
+description: 非同期プロシージャ呼び出し
 ms.assetid: c2d45c84-9b61-41e1-9a8e-eabbc0609a0b
 keywords:
 - 同期 WDK のカーネルの非同期プロシージャ呼び出し
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95127f88b470e7dbf8940377c55acba216d9c271
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326056"
 ---
-# <a name="asynchronous-procedure-calls"></a>非同期プロシージャ コール
+# <a name="asynchronous-procedure-calls"></a>非同期プロシージャ呼び出し
 
 
 このセクションの内容:

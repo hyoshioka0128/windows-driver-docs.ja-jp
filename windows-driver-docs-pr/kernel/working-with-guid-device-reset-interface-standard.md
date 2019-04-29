@@ -6,11 +6,11 @@ keywords:
 ms.date: 11/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b13eff1d7988e5f18ef23cc2d057b830b749a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327234"
 ---
 # <a name="working-with-the-guiddeviceresetinterfacestandard"></a>GUID_DEVICE_RESET_INTERFACE_STANDARD の操作
 
@@ -146,7 +146,7 @@ bcdedit /set GUID_DEVICE_RESET_INTERFACE_STANDARD testsigning on
 
 6. テーブルが読み込まれていることを確認します。 Windows デバッガーでは、これらのコマンドを使用します。 
 
-- ! acpicache 
+- !acpicache 
 - SSDT テーブルの dt _DESCRIPTION_HEADER アドレス 
 
 ```dbgcmd
@@ -170,7 +170,7 @@ ACPI!_DESCRIPTION_HEADER
    +0x020 CreatorRev       : 0x5000000
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [_DEVICE_RESET_INTERFACE_STANDARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_reset_interface_standard) 
 

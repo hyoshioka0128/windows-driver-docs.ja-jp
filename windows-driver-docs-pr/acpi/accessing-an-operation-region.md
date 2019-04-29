@@ -1,6 +1,6 @@
 ---
-title: 操作の領域へのアクセス
-description: 操作の領域へのアクセス
+title: 操作領域にアクセスする
+description: 操作領域にアクセスする
 ms.assetid: 9a1aa29e-679c-4f7f-a16c-3e1c94be66a7
 keywords:
 - ACPI デバイス WDK、領域の操作
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a8bb43106093c91786fbbb8999fe3fc809d6f5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328884"
 ---
-# <a name="accessing-an-operation-region"></a>操作の領域へのアクセス
+# <a name="accessing-an-operation-region"></a>操作領域にアクセスする
 
 
 

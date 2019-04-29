@@ -1,17 +1,17 @@
 ---
-title: WIA デバイスで診断を実行します。
-description: WIA デバイスで診断を実行します。
+title: WIA デバイスでの診断の実行
+description: WIA デバイスでの診断の実行
 ms.assetid: 15962c49-f03c-409b-b138-033893a50ec2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff78cc4d2a51078109eee2589dbdcb94ed44d60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327851"
 ---
-# <a name="performing-diagnostics-on-a-wia-device"></a>WIA デバイスで診断を実行します。
+# <a name="performing-diagnostics-on-a-wia-device"></a>WIA デバイスでの診断の実行
 
 
 

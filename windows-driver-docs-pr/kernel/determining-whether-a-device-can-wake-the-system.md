@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c9d4a32b4715d571f372dbd4188aec767440af6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388173"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>デバイスがシステムをウェイクできるかどうかの判断
 
@@ -85,7 +85,7 @@ ms.locfileid: "56580254"
 
  
 
-**DeviceWake**エントリには、元のデバイスがウェイク アップ信号に応答できる最小のデバイスの電源状態が一覧表示されます。 PowerDeviceUnspecified 値では、デバイスが、システムのスリープを解除できないことを示します。 **SystemWake**エントリには、元のシステムを起動できます最も低いシステム電源の状態が一覧表示されます。 これらの値は親 devnode の機能に基づいており、ドライバーは変更はできません。 詳細については、[デバイスの電源機能の報告](reporting-device-power-capabilities.md)を参照してください。
+**DeviceWake**エントリには、元のデバイスがウェイク アップ信号に応答できる最小のデバイスの電源状態が一覧表示されます。 PowerDeviceUnspecified 値では、デバイスが、システムのスリープを解除できないことを示します。 **SystemWake**エントリには、元のシステムを起動できます最も低いシステム電源の状態が一覧表示されます。 これらの値は親 devnode の機能に基づいており、ドライバーは変更はできません。 詳細については、次を参照してください。[デバイスの電源機能の報告](reporting-device-power-capabilities.md)します。
 
 一般に、デバイスは、次の条件に当てはまる場合に、システムをスリープ解除できます。
 

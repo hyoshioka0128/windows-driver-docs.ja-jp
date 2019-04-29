@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_GROUP_BSSID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f943ce4cea36f08bf7157ee1f7a6ba2ae89ef012
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392195"
 ---
 # <a name="wditlvp2pgroupbssid"></a>WDI\_TLV\_P2P\_グループ\_BSSID
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_グループ\_BSSID はローカル Wi-Fi Direct GO 用のグル�
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                          |
+| 型                                              | 説明                                          |
 |---------------------------------------------------|------------------------------------------------------|
 | [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | ローカル Wi-Fi Direct GO 用グループ BSSID を指定します。 |
 

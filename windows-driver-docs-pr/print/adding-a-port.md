@@ -1,6 +1,6 @@
 ---
-title: ポートを追加します。
-description: ポートを追加します。
+title: ポートの追加
+description: ポートの追加
 ms.assetid: ec908ddd-761b-4a82-8fc3-ac45c39a0571
 keywords:
 - ポート管理 WDK の印刷、ポートの追加
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 613cb46a4fd7c383c008c7212bc4fd928dc36c67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390621"
 ---
-# <a name="adding-a-port"></a>ポートを追加します。
+# <a name="adding-a-port"></a>ポートの追加
 
 
 

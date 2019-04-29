@@ -1,15 +1,15 @@
 ---
-title: Visual Studio を使用してユーザー モード プロセスのデバッグ
+title: Visual Studio を使用したユーザーモード プロセスのデバッグ
 description: Microsoft Visual studio では、実行中のプロセスにアタッチまたはを生成し、新しいプロセスにアタッチする Windows ユーザー モードのデバッガーを使用できます。
 ms.assetid: C19D1B6F-B97B-4C1B-AD84-AC974C5F5C8C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f04f48700e6a6633d84e8be61ec6bb2faedf155
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327352"
 ---
 # <a name="span-iddebuggerdebuggingauser-modeprocessusingvisualstudiospandebugging-a-user-mode-process-using-visual-studio"></a><span id="debugger.debugging_a_user-mode_process_using_visual_studio"></span>Visual Studio を使用してユーザー モード プロセスのデバッグ
 
@@ -19,7 +19,7 @@ ms.locfileid: "56558114"
 
 Microsoft Visual studio では、実行中のプロセスにアタッチまたはを生成し、新しいプロセスにアタッチする Windows ユーザー モードのデバッガーを使用できます。 プロセスをデバッガーを実行している同じコンピューターで実行できる、または別のコンピューターで実行できます。
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)を参照してください。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)します。
 
 ## <a name="span-idattachingtoarunningprocessonthesamecomputerspanspan-idattachingtoarunningprocessonthesamecomputerspanspan-idattachingtoarunningprocessonthesamecomputerspanattaching-to-a-running-process-on-the-same-computer"></a><span id="Attaching_to_a_running_process_on_the_same_computer"></span><span id="attaching_to_a_running_process_on_the_same_computer"></span><span id="ATTACHING_TO_A_RUNNING_PROCESS_ON_THE_SAME_COMPUTER"></span>同じコンピューターで実行中のプロセスにアタッチします。
 

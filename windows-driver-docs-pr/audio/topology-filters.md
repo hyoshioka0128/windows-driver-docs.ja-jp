@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9851047bb4543c196f8953ddb74adb03ab15dba9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328565"
 ---
 # <a name="topology-filters"></a>トポロジ フィルター
 
@@ -57,7 +57,7 @@ A*トポロジ フィルター*さまざまな wave と、カード上で管理�
 
 SysAudio のトポロジのフィルター処理するクエリ フィルター グラフを作成するときに、 [ **KSPROPERTY\_PIN\_PHYSICALCONNECTION** ](https://msdn.microsoft.com/library/windows/hardware/ff565205) wave、MIDI を判断するには、そのピンでのプロパティ、または DirectMusic フィルター暗証番号 (pin) がどのトポロジ フィルター ピンに接続されています。
 
-Wave とは異なり、MIDI または DirectMusic がフィルター、フィルターをトポロジにピンがインスタンス化できません。 そのため、トポロジ フィルターの pin のプロパティのクエリを処理するの暗証番号 (pin) のオブジェクトはありません。 トポロジ フィルター自体では、そのピンに物理的な接続に関するすべてのクエリを処理します。 詳細については、[KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)を参照してください。
+Wave とは異なり、MIDI または DirectMusic がフィルター、フィルターをトポロジにピンがインスタンス化できません。 そのため、トポロジ フィルターの pin のプロパティのクエリを処理するの暗証番号 (pin) のオブジェクトはありません。 トポロジ フィルター自体では、そのピンに物理的な接続に関するすべてのクエリを処理します。 詳細については、次を参照してください。 [KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)します。
 
 その他の種類のオーディオ フィルターと同様に、トポロジのフィルターを使用して配列の[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)内部のトポロジを記述する構造体。 ミニポート ドライバーでは、この配列を公開する、 [ **PCFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537694)から出力の構造、 [ **IMiniport::GetDescription**](https://msdn.microsoft.com/library/windows/hardware/ff536765)メソッド。 配列は、トポロジのフィルターのノードと pin の間の接続の一覧としてトポロジを指定します (を参照してください[ノードと接続](nodes-and-connections.md))。 [WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)ミキサーの線およびミキサー API をアプリケーションに公開するコントロールにこれらの接続とノードを変換します。 説明したよう[オーディオ フィルター](audio-filters.md)KS フィルターの入力ピンが SRC ミキサー行にマップし、上の出力ピン留め、フィルターが DST ミキサーの行にマップされます。
 
@@ -114,9 +114,9 @@ Wave とは異なり、MIDI または DirectMusic がフィルター、フィル
     };
 ```
 
-定数[ **PCFILTER\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff537695)上記のコード例が null のノード ID と Portcls.h のヘッダー ファイルで定義されます。 ノードの論理ピンから外部 pin では、フィルターを区別するためにこの定数を使用する方法については、[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)を参照してください。
+定数[ **PCFILTER\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff537695)上記のコード例が null のノード ID と Portcls.h のヘッダー ファイルで定義されます。 ノードの論理ピンから外部 pin では、フィルターを区別するためにこの定数を使用する方法については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
 
-上記のコード例では、各暗証番号 (pin) 名は、ミキサー API が送信元または送信先ミキサーの行に、暗証番号 (pin) をマップするかどうかに応じて、"SRC"または"DST"のいずれかで終了します。 そのソースと宛先ミキサーに注意してください、混乱を避けるシンク (入力) とソース (出力) KS フィルターのピンのマッピングをそれぞれ行します。 詳細については、[オーディオ フィルター](audio-filters.md)を参照してください。
+上記のコード例では、各暗証番号 (pin) 名は、ミキサー API が送信元または送信先ミキサーの行に、暗証番号 (pin) をマップするかどうかに応じて、"SRC"または"DST"のいずれかで終了します。 そのソースと宛先ミキサーに注意してください、混乱を避けるシンク (入力) とソース (出力) KS フィルターのピンのマッピングをそれぞれ行します。 詳細については、次を参照してください。[オーディオ フィルター](audio-filters.md)します。
 
 PCCONNECTION\_記述子の配列を上記のコード例では、次の図にトポロジのフィルターをについて説明します。
 

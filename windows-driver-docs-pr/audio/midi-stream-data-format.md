@@ -1,19 +1,19 @@
 ---
-title: MIDI Stream データの形式
-description: MIDI Stream データの形式
+title: MIDI ストリームのデータ形式
+description: MIDI ストリームのデータ形式
 ms.assetid: c179cf74-7493-4c27-97bd-5eb4d0dffbe6
 keywords:
 - MIDI ストリームのデータ形式の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1edb84cf06c56e713dc9f41d3297e68a25efa447
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332346"
 ---
-# <a name="midi-stream-data-format"></a>MIDI Stream データの形式
+# <a name="midi-stream-data-format"></a>MIDI ストリームのデータ形式
 
 
 ## <span id="midi_stream_data_format"></span><span id="MIDI_STREAM_DATA_FORMAT"></span>

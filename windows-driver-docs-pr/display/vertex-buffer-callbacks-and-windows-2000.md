@@ -1,6 +1,6 @@
 ---
-title: 頂点バッファーのコールバックと Windows 2000
-description: 頂点バッファーのコールバックと Windows 2000
+title: 頂点バッファー コールバックと Windows 2000
+description: 頂点バッファー コールバックと Windows 2000
 ms.assetid: d3b92bc9-d4f1-4079-86f1-53c04bcab443
 keywords:
 - DirectX 8.0 WDK Windows 2000 のリリース ノートを表示する頂点バッファー、コールバック
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6091eb4bb6539f35d864913ec7076b5c1d848b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390761"
 ---
-# <a name="vertex-buffer-callbacks-and-windows-2000"></a>頂点バッファーのコールバックと Windows 2000
+# <a name="vertex-buffer-callbacks-and-windows-2000"></a>頂点バッファー コールバックと Windows 2000
 
 
 ## <span id="ddk_vertex_buffer_callbacks_and_windows_2000_gg"></span><span id="DDK_VERTEX_BUFFER_CALLBACKS_AND_WINDOWS_2000_GG"></span>

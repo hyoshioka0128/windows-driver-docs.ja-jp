@@ -1,19 +1,19 @@
 ---
-title: 確認して、モバイル ブロード バンド メタデータの作成ウィザードでパッケージを保存します。
-description: 確認して、モバイル ブロード バンド メタデータの作成ウィザードでパッケージを保存します。
+title: モバイル ブロードバンド メタデータ作成ウィザードでのパッケージのレビューと保存
+description: モバイル ブロードバンド メタデータ作成ウィザードでのパッケージのレビューと保存
 ms.assetid: D719BB8A-9629-4B67-B2A2-4324D0318117
 keywords:
-- 確認して、モバイル ブロード バンド メタデータの作成ウィザードでパッケージを保存します。
+- モバイル ブロードバンド メタデータ作成ウィザードでのパッケージのレビューと保存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99661da2b80f5636bc43f77b5257a0c75a6e757a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340247"
 ---
-# <a name="review-and-save-package-in-the-mobile-broadband-metadata-authoring-wizard"></a>確認して、モバイル ブロード バンド メタデータの作成ウィザードでパッケージを保存します。
+# <a name="review-and-save-package-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのパッケージのレビューと保存
 
 
 すべてのタブで、ウィザードを完了後に確認し、パッケージを保存します。

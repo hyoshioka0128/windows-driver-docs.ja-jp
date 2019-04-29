@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 801511ec90b5da361854e13658ea9d43515ffd0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332958"
 ---
 # <a name="kspropertyaudiopositionex"></a>KSPROPERTY\_オーディオ\_POSITIONEX
 
@@ -48,7 +48,7 @@ KSPROPERTY\_オーディオ\_POSITIONEX プロパティは、ストリームの�
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537092" data-raw-source="[&lt;strong&gt;KSAUDIO_POSITIONEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537092)"><strong>KSAUDIO_POSITIONEX</strong></a></p></td>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_PROPERTY_UPDATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: fa311a072f34bdd99262fdca1dc1b5a2ae799d1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331819"
 ---
 # <a name="oidswitchpropertyupdate"></a>OID\_スイッチ\_プロパティ\_UPDATE
 

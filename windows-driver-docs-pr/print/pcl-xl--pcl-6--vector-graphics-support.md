@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a78a59cc42ce54e3d8bff47c04dfca0cc0a71ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390920"
 ---
 # <a name="pcl-xl-pcl-6-vector-graphics-support"></a>PCL XL (PCL-6) ベクトル グラフィックス サポート
 

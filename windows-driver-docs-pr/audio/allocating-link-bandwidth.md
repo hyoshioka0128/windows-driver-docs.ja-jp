@@ -1,6 +1,6 @@
 ---
-title: リンクの帯域幅の割り当てください。
-description: リンクの帯域幅の割り当てください。
+title: リンク帯域幅の割り当て
+description: リンク帯域幅の割り当て
 ms.assetid: 7a5d5364-d869-4f6a-a7c3-9326ec347150
 keywords:
 - HD オーディオ、帯域幅
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49e7c4082d6a4ab11ac7d1cc376e03a29af2a66e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331572"
 ---
-# <a name="allocating-link-bandwidth"></a>リンクの帯域幅の割り当てください。
+# <a name="allocating-link-bandwidth"></a>リンク帯域幅の割り当て
 
 
 HD オーディオのリンクが、一定のバスのレンダリングに使用できる帯域幅と、使用するストリームをキャプチャします。 Glitchless ことを確認するには、オーディオ、HD オーディオ バス ドライバー バスの帯域幅をリソースとして管理共有します。 関数のドライバーが DMA エンジンによって割り当てられるときに、DMA エンジンのレンダリングのバスの使用可能な帯域幅の一部を割り当てるかを使用するストリームをキャプチャする必要があります。

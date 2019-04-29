@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_BSS_ENTRY_AGE_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b89ffc3be66d87efc8ed80ecdf8d8a03eb127b87
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327570"
 ---
 # <a name="wditlvbssentryageinfo"></a>WDI\_TLV\_BSS\_エントリ\_年齢\_情報
 

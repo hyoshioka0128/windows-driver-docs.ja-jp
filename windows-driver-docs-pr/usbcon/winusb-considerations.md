@@ -1,16 +1,16 @@
 ---
-Description: Guidelines for choosing the best driver model for developing a USB client driver that acts as the device's function driver.
+Description: デバイスの機能のドライバーとして機能する USB クライアント ドライバーを開発するための最適なドライバー モデルの選択に関するガイドラインです。
 title: USB ドライバーを開発するためのドライバー モデルを選択します。
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 86e7f84cfe9b766beb4a0cd7c59d8089f8dd19e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389174"
 ---
-# <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>USB クライアント ドライバーを開発するためのドライバー モデルの選択
+# <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>USB クライアント ドライバー開発用のドライバー モデルの選択
 
 
 このトピックでは、デバイスの機能のドライバーとして機能する USB クライアント ドライバーを開発するための最適なドライバー モデルを選択するためのガイドラインを提供します。
@@ -37,7 +37,7 @@ USB デバイスへのアクセスを提供する最も柔軟な方法は、デ�
 
 -   デバイスは、Microsoft でサポートされている USB デバイス クラスに属しています。
 
-    その場合は、デバイス ドライバーとしてクラスに対応するドライバーが読み込まれます。 Windows に付属している受信トレイのドライバーのデバイス クラスの一覧は、[USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)を参照してください。
+    その場合は、デバイス ドライバーとしてクラスに対応するドライバーが読み込まれます。 Windows に付属している受信トレイのドライバーのデバイス クラスの一覧は、次を参照してください。 [USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)します。
 
 -   デバイスはデバイス クラスに属していません。
 
@@ -56,7 +56,7 @@ USB デバイスへのアクセスを提供する最も柔軟な方法は、デ�
     -   デバイスは、複数のアプリケーションによってアクセスされます。
     -   デバイスでは、カーネル モードの Windows オペレーティング システムでサポートされている関数があります。 たとえば、モデム関数 (ある TAPI をサポートしています) または LAN 関数 (ある NDIS をサポートしています) は、ユーザー モード ソフトウェア モデム デバイスを管理する Usbser.sys ドライバーをサポートするインターフェイスを使用する必要があります。
 
-    Windows 8 の新しい互換性 ID WinUSB インストールの INF に追加されました。 デバイスのファームウェアに互換性のあるその ID が含まれている場合は、デバイスの機能のドライバーとして既定で WinUSB が読み込まれます。 これは、ハードウェアの製造元が、WinUSB デバイスの INF ファイルを配布する必要はないことを意味します。 詳細については、[WinUSB デバイス](automatic-installation-of-winusb.md)を参照してください。
+    Windows 8 の新しい互換性 ID WinUSB インストールの INF に追加されました。 デバイスのファームウェアに互換性のあるその ID が含まれている場合は、デバイスの機能のドライバーとして既定で WinUSB が読み込まれます。 これは、ハードウェアの製造元が、WinUSB デバイスの INF ファイルを配布する必要はないことを意味します。 詳細については、次を参照してください。 [WinUSB デバイス](automatic-installation-of-winusb.md)します。
 
 ## <a name="if-you-write-a-usb-client-driver-which-driver-model-is-best"></a>USB クライアント ドライバーを作成する場合は、どのドライバー モデルをお勧めしますか。
 
@@ -142,7 +142,7 @@ Yes⁴:アイソクロナス転送は、Windows 8.1 または Windows の以降�
 Windows XP SP2support WinUSB の 32 ビット バージョンのすべてのクライアント Sku。 WinUSB は Windows XP; にネイティブではありません。WinUSB 共同インストーラーによるインストールがあります。 すべての Windows Vista Sku と以降のバージョンの Windows WinUSB をサポートします。
 
 ## <a name="related-topics"></a>関連トピック
-[USB クライアント ドライバー開発を入門](getting-started-with-usb-client-driver-development.md)  
+[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
 [WinUSB](winusb.md)  
 [最初、USB クライアント ドライバー (UMDF) の記述します。](implement-driver-entry-for-a-usb-driver--umdf-.md)  
 [最初、USB クライアント ドライバー (KMDF) の記述します。](tutorial--write-your-first-usb-client-driver--kmdf-.md)  

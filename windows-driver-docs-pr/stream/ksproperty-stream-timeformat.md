@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ea517a877738cdeba4a802a44fd1140a00ac4c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325999"
 ---
 # <a name="kspropertystreamtimeformat"></a>KSPROPERTY\_ストリーム\_TIMEFORMAT
 
@@ -42,15 +42,15 @@ KSPROPERTY\_ストリーム\_TIMEFORMAT プロパティを使用して、特定�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
@@ -61,7 +61,7 @@ KSPROPERTY\_ストリーム\_TIMEFORMAT プロパティを使用して、特定�
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 プロパティは、接続に使用して、プレゼンテーション時間とエクステントの形式を示す時間形式を指定する GUID を返します。 定義されている時刻の形式は、DirectShow によって定義されているものに対応します。

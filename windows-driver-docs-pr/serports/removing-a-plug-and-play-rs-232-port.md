@@ -1,6 +1,6 @@
 ---
-title: プラグ アンド プレイ rs-232 のポートを削除します。
-description: プラグ アンド プレイ rs-232 のポートを削除します。
+title: PnP RS-232 ポートを削除する
+description: PnP RS-232 ポートを削除する
 ms.assetid: b439dc51-09f2-4149-a562-2e376bb504c5
 keywords:
 - Rs-232 WDK シリアル デバイスをポートします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ea89439b59d7b1f35b1f7d3194e3e0ed5403af2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388040"
 ---
-# <a name="removing-a-plug-and-play-rs-232-port"></a>プラグ アンド プレイ rs-232 のポートを削除します。
+# <a name="removing-a-plug-and-play-rs-232-port"></a>PnP RS-232 ポートを削除する
 
 
 

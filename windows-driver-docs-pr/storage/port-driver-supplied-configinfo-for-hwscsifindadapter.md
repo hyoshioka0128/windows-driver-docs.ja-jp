@@ -1,6 +1,6 @@
 ---
-title: ConfigInfo HwScsiFindAdapter 用にドライバーによって提供されるポート
-description: ConfigInfo HwScsiFindAdapter 用にドライバーによって提供されるポート
+title: HwScsiFindAdapter に関するポート ドライバー提供の ConfigInfo
+description: HwScsiFindAdapter に関するポート ドライバー提供の ConfigInfo
 ms.assetid: 9691f47d-1ea8-4ef6-8e0d-57570ff70a16
 keywords:
 - HwScsiFindAdapter
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd526ffb3bb0f295f0e42403508ee4e03958f2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389414"
 ---
-# <a name="port-driver-supplied-configinfo-for-hwscsifindadapter"></a>ConfigInfo HwScsiFindAdapter 用にドライバーによって提供されるポート
+# <a name="port-driver-supplied-configinfo-for-hwscsifindadapter"></a>HwScsiFindAdapter に関するポート ドライバー提供の ConfigInfo
 
 
 ## <span id="ddk_port_driver_supplied_configinfo_for_hwscsifindadapter_kg"></span><span id="DDK_PORT_DRIVER_SUPPLIED_CONFIGINFO_FOR_HWSCSIFINDADAPTER_KG"></span>
@@ -54,7 +54,7 @@ ms.locfileid: "56548612"
 
     ミニポート ドライバーでポート ドライバーによって提供される相対バスへのアクセス範囲値をマップする必要があります[ **ScsiPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff564629)論理アドレスが割り当てられた値を使用してを決定するかどうか、対応する HBA は、ドライバーをサポートしています。 *決して*マップし、バス上の HBA へのアクセス ポート ドライバー、ポート範囲要素に塗りつぶされたアクセスを提供する場合に、ミニポート ドライバーが指定した範囲を使用して\_構成\_に渡す情報、 *HwScsiFindAdapter*ルーチン。 ポート ドライバーには、範囲の構成情報が提供されているときに、ミニポート ドライバーが指定したアドレスを使用して、機能しなくなるので、既に構成されている HBA をリセットしたり、システムのブート プロセスが失敗するおそれもできます。
 
-    詳細については、マップされた論理アクセスの範囲を使用して、[HwScsiFindAdapter で ConfigInfo セットアップ](setting-up-configinfo-in-hwscsifindadapter.md)を参照してください。
+    詳細については、マップされた論理アクセスの範囲を使用して、次を参照してください。 [HwScsiFindAdapter で ConfigInfo セットアップ](setting-up-configinfo-in-hwscsifindadapter.md)します。
 
 -   **BusInterruptLevel**または**BusInterruptVector**
 

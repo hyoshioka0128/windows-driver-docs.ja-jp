@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9f785d9bffeba2ec6746b39d9de9f60626bdc38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329618"
 ---
 # <a name="gdl-values"></a>GDL 値
 
@@ -41,9 +41,9 @@ Linebreak の終端文字のシーケンスまたはコンストラクトの区�
 
 値は省略可能で、 [GDL 属性](gdl-attributes.md)します。
 
-*マクロの参照を値*任意の場所が表示される GDL 値でリテラルでない空白が許可されています。 等号 (=) でこれらの参照を開始します。 このようなコンテキストで等号を使用すると、値マクロのリファレンスを紹介するものではありません、等号 (=) は非記号文字 (空白) などで後にする必要があります。 マクロの値の詳細については、[GDL 値マクロ](gdl-value-macros.md)を参照してください。
+*マクロの参照を値*任意の場所が表示される GDL 値でリテラルでない空白が許可されています。 等号 (=) でこれらの参照を開始します。 このようなコンテキストで等号を使用すると、値マクロのリファレンスを紹介するものではありません、等号 (=) は非記号文字 (空白) などで後にする必要があります。 マクロの値の詳細については、次を参照してください。 [GDL 値マクロ](gdl-value-macros.md)します。
 
-GDL コンテキストの詳細については、[GDL コンテキスト](gdl-contexts.md)を参照してください。
+GDL コンテキストの詳細については、次を参照してください。 [GDL コンテキスト](gdl-contexts.md)します。
 
 次のコード例では、GDL パーサーに許容される値を示します。
 

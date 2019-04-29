@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c532922db525009f52f0059a20c0cdc490087018
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388765"
 ---
 # <a name="wiaipsprinterendorsergraphicsminheight"></a>WIA\_IP\_プリンター\_裏書き\_グラフィックス\_MIN\_高さ
 
@@ -44,7 +44,7 @@ ms.locfileid: "56537307"
 
 このプロパティは、必要なの 0 以外の値 (True) を報告するすべての・ インプリント ・/裏書き項目に対して有効な[ **WIA\_IP\_プリンター\_裏書き\_グラフィックス**](wia-ips-printer-endorser-graphics.md). これらのプロパティはそれ以外の場合有効ではありません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

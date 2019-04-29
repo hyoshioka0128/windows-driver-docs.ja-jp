@@ -1,6 +1,6 @@
 ---
-title: レンダリングと Wave コンテンツをキャプチャします。
-description: レンダリングと Wave コンテンツをキャプチャします。
+title: Wave コンテンツのレンダリングとキャプチャ
+description: Wave コンテンツのレンダリングとキャプチャ
 ms.assetid: 575499a9-e572-4ccc-bcee-8f2843310b05
 keywords:
 - wave WDK オーディオのレンダリング
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d4466631153a102d59b373eebc2cba6984a7c59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328726"
 ---
-# <a name="rendering-and-capturing-wave-content"></a>レンダリングと Wave コンテンツをキャプチャします。
+# <a name="rendering-and-capturing-wave-content"></a>Wave コンテンツのレンダリングとキャプチャ
 
 
 ## <span id="rendering_and_capturing_wave_content"></span><span id="RENDERING_AND_CAPTURING_WAVE_CONTENT"></span>

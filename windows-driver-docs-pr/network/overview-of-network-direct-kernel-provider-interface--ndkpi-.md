@@ -5,11 +5,11 @@ ms.assetid: D9667238-FD2E-44DE-920F-FA4CF3365D93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c99b01f4560326b4bf393172166ba3bbe38f0c99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391022"
 ---
 # <a name="overview-of-network-direct-kernel-provider-interface-ndkpi"></a>Network Direct Kernel Provider Interface (NDKPI) の概要
 
@@ -28,13 +28,13 @@ RDMA の Windows 実装には、ネットワーク ダイレクト (ND) が呼�
 
 NDK プロバイダーは、NDK 対応のミニポート アダプターに割り当てられた IPv4 と IPv6 の両方のアドレスを使用して直接ネットワーク接続をサポートする必要があります。
 
-RDMA の詳細については、[RDMA でバック グラウンド読み込み](background-reading-on-rdma.md)を参照してください。
+RDMA の詳細については、次を参照してください。 [RDMA でバック グラウンド読み込み](background-reading-on-rdma.md)します。
 
 ### <a name="the-ndk-provider"></a>NDK プロバイダー
 
 NDK プロバイダーは、NDKPI インターフェイスを実装するミニポート ドライバーです。
 
-NDK プロバイダーが読み込まれ、PnP マネージャーによって初期化されます。 詳細については、[NDK 対応のミニポート ドライバーの初期化](initializing-an-ndk-capable-miniport-driver.md)と[NDK ミニポート アダプターの初期化](initializing-an-ndk-miniport-adapter.md)を参照してください。
+NDK プロバイダーが読み込まれ、PnP マネージャーによって初期化されます。 詳細については、次を参照してください。 [NDK 対応のミニポート ドライバーの初期化](initializing-an-ndk-capable-miniport-driver.md)と[NDK ミニポート アダプターの初期化](initializing-an-ndk-miniport-adapter.md)します。
 
 NDK プロバイダーがロードされ、初期化、NDK コンシューマーから要求を処理する準備ができてです。 プロバイダーの機能への呼び出しとしてこれらの要求が到着します。
 

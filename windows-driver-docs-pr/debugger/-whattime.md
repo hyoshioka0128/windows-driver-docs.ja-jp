@@ -3,7 +3,7 @@ title: whattime
 description: Whattime 拡張機能は、ティック カウントを標準時の値に変換します。
 ms.assetid: c63e8bad-3a87-4209-b9f0-b6c433c294b2
 keywords:
-- ティック カウント
+- ティック数 (tick count)
 - Windows デバッグ whattime
 ms.date: 05/23/2017
 topic_type:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ca6f8eb2d6e84afefbc253cdf59d474b0feaf2c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327958"
 ---
-# <a name="whattime"></a>! whattime
+# <a name="whattime"></a>!whattime
 
 
 **! Whattime**拡張機能は、標準時の値にティック カウントを変換します。

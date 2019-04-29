@@ -1,6 +1,6 @@
 ---
-title: プリンター グラフィックス DLL の構築
-description: プリンター グラフィックス DLL の構築
+title: プリンター グラフィックス DLL をビルドする
+description: プリンター グラフィックス DLL をビルドする
 ms.assetid: bec1e9cc-a846-43e5-bc9e-e43a151ef6c4
 keywords:
 - プリンター グラフィックスの構築、DLL の WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e203066f09f027d734a131089edb42948f218eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330384"
 ---
-# <a name="building-a-printer-graphics-dll"></a>プリンター グラフィックス DLL の構築
+# <a name="building-a-printer-graphics-dll"></a>プリンター グラフィックス DLL をビルドする
 
 
 
@@ -22,7 +22,7 @@ ms.locfileid: "56550044"
 
 プリンター グラフィックス DLL をビルドする場合は、Dll は、ユーザー モードでの実行およびカーネル モードでの実行用の次の違いに注意する必要があります。
 
-**注**   Windows Vista では、ユーザー モードでプリンター グラフィックス Dll は実行できるのみです。 詳細については、[選択ユーザー モードまたはカーネル モード](choosing-user-mode-or-kernel-mode.md)を参照してください。
+**注**   Windows Vista では、ユーザー モードでプリンター グラフィックス Dll は実行できるのみです。 詳細については、次を参照してください。[選択ユーザー モードまたはカーネル モード](choosing-user-mode-or-kernel-mode.md)します。
 
  
 

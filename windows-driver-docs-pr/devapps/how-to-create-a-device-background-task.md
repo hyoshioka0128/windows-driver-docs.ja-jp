@@ -5,16 +5,16 @@ ms.assetid: 34263DB8-BB42-480B-AF7F-CC45772E6E84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f47e173582c5007bb8ac90310926fd19ff49a2d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330668"
 ---
 # <a name="creating-a-device-background-task-in-windows-81-uwp-device-apps"></a>Windows 8.1 (UWP デバイス アプリ) でのデバイスのバック グラウンド タスクの作成
 
 
-Windows 8.1 では、UWP アプリは、周辺機器のデバイス上のデータを同期できます。 アプリがデバイスのメタデータに関連付けられている場合は、その uwp デバイス ファームウェアの更新プログラムなど、デバイスの更新プログラムも実行できます。 このトピックでは、使用するデバイスのバック グラウンド タスクを作成する方法を説明します、 [DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)または[DeviceServicingTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308965)します。 これらのトリガーを使用するデバイスのバック グラウンド エージェントは、同期され更新されているユーザーの同意を確認し、デバイスは、バッテリの寿命を保てるようにするポリシーが適用されます。 デバイスのバック グラウンド タスクの詳細については、[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)を参照してください。
+Windows 8.1 では、UWP アプリは、周辺機器のデバイス上のデータを同期できます。 アプリがデバイスのメタデータに関連付けられている場合は、その uwp デバイス ファームウェアの更新プログラムなど、デバイスの更新プログラムも実行できます。 このトピックでは、使用するデバイスのバック グラウンド タスクを作成する方法を説明します、 [DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)または[DeviceServicingTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308965)します。 これらのトリガーを使用するデバイスのバック グラウンド エージェントは、同期され更新されているユーザーの同意を確認し、デバイスは、バッテリの寿命を保てるようにするポリシーが適用されます。 デバイスのバック グラウンド タスクの詳細については、次を参照してください。[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)します。
 
 **注**に対応するこのトピックで、[カスタム USB デバイス サンプル](https://go.microsoft.com/fwlink/p/?LinkId=301975 )します。 カスタム USB デバイスのサンプルでは、デバイス、DeviceUseTrigger との同期を実行するバック グラウンド タスクを示します。 DeviceServicingTrigger、ファームウェアの更新プログラムを実行するバック グラウンド タスクの例を表示するには、ダウンロード、[ファームウェア更新の USB デバイス サンプル](https://go.microsoft.com/fwlink/p/?LinkId=309186)します。
 
@@ -25,7 +25,7 @@ Windows 8.1 では、UWP アプリは、周辺機器のデバイス上のデー�
 ## <a name="span-idtheappmanifestspanspan-idtheappmanifestspanspan-idtheappmanifestspanthe-app-manifest"></a><span id="The_app_manifest"></span><span id="the_app_manifest"></span><span id="THE_APP_MANIFEST"></span>アプリ マニフェスト
 
 
-デバイスのバック グラウンド タスクを使用するには、アプリはフォア グラウンド アプリのアプリ マニフェスト ファイルで宣言する必要がありますなどがシステムによってトリガーされるバック グラウンド タスクを完了します。 詳細については、[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)を参照してください。
+デバイスのバック グラウンド タスクを使用するには、アプリはフォア グラウンド アプリのアプリ マニフェスト ファイルで宣言する必要がありますなどがシステムによってトリガーされるバック グラウンド タスクを完了します。 詳細については、次を参照してください。[デバイスとの同期と UWP デバイス アプリ用の更新プログラム](device-sync-and-update-for-uwp-device-apps.md)します。
 
 アプリ パッケージ マニフェスト ファイルからこの例では**DeviceLibrary.SyncContent**はフォア グラウンド アプリから、エントリ ポイントです。 **DeviceLibrary.SyncContent**バック グラウンド タスクを使用するためのエントリ ポイントは、 [DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)します。
 
@@ -111,7 +111,7 @@ Windows 8.1 では、UWP アプリは、周辺機器のデバイス上のデー�
 
 [ファームウェア更新の USB デバイスのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=309186)
 
-[デバイスとの同期と UWP デバイス アプリの更新](device-sync-and-update-for-uwp-device-apps.md)
+[UWP デバイス アプリによるデバイスの同期と更新](device-sync-and-update-for-uwp-device-apps.md)
 
 [起動する、再開、およびマルチタス キング](https://go.microsoft.com/fwlink/p/?LinkId=309316)
 

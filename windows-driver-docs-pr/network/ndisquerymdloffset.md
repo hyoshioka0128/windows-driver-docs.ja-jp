@@ -7,11 +7,11 @@ keywords:
 - Windows Vista 以降のドライバーをネットワーク NdisQueryMdlOffset マクロ
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4ab915d2d096f3262904bb98d8256542aedfe6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392391"
 ---
 # <a name="ndisquerymdloffset-macro"></a>NdisQueryMdlOffset macro
 

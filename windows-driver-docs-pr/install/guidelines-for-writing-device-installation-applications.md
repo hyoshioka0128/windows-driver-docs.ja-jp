@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4836c78f2e1a864c291ad56f8b899bed6eb84676
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391101"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>デバイスのインストール アプリケーションの記述に関するガイドライン
 
@@ -55,7 +55,7 @@ ms.locfileid: "56532073"
 
     使用してデバイスのインストール後にデバイスのインストールのアプリケーションを安全に起動できます[完了-インストール アクション](finish-install-actions--windows-vista-and-later-.md)クラスのインストーラーや共同インストーラーによって提供されます。
 
-    共同インストーラーの詳細については、[共同インストーラーの作成](writing-a-co-installer.md)を参照してください。
+    共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)です。
 
 -   スタートアップ グループを使用して開始*デバイス インストール アプリケーション*します。
 

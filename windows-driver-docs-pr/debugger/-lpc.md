@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e7d92d68ccd103c89f747baf87557e837778c39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336160"
 ---
-# <a name="lpc"></a>! lpc
+# <a name="lpc"></a>!lpc
 
 
 **重要な**   alpc で Lpc がエミュレートされるようになりましたを使用して、! alpc 拡張子代わりにします。

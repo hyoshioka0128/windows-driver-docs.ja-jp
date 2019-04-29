@@ -1,19 +1,19 @@
 ---
-title: フィルター ドライバーでのデバイスの起動
-description: フィルター ドライバーでのデバイスの起動
+title: フィルター ドライバーでのデバイスの開始
+description: フィルター ドライバーでのデバイスの開始
 ms.assetid: d7c527b6-a5fb-4c4f-a8bc-29f961d31125
 keywords:
 - フィルター ドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eade9154195e5bd97f6e17b089587ba407783553
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331974"
 ---
-# <a name="starting-a-device-in-a-filter-driver"></a>フィルター ドライバーでのデバイスの起動
+# <a name="starting-a-device-in-a-filter-driver"></a>フィルター ドライバーでのデバイスの開始
 
 
 

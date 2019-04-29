@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/31/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: aaa3bc9613bd4e57d3b181015ddee9baeaeb8b3a
-ms.sourcegitcommit: 239b10612b3ddb6702dc16490566069cc3aa1c6c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "56582718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332667"
 ---
 # <a name="kspropertyrtaudiopresentationposition"></a>KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置
 
@@ -39,15 +39,15 @@ KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置がストリームのプ
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
@@ -65,7 +65,7 @@ KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置がストリームのプ
 
 KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 OS は、オーディオ ストリームとビデオやその他のアクティビティを同期する上位の層を許可するには、ドライバーから最近使用したプレゼンテーションの位置情報を取得するドライバーからこのプロパティを定期的に取得可能性があります。
@@ -74,7 +74,7 @@ U64PositionInBlocks メンバーでは、値が返される[ **KSAUDIO\_プレ�
 
 限りませんその KSPROPERTY\_RTAUDIO\_PACKETCOUNT と KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置、同時に、呼び出された場合は値を返し、同じサンプルを参照してください。 KSPROPERTY\_RTAUDIO\_PACKETCOUNT が WaveRT バッファーから KSPROPERTY 中に、ハードウェアに転送されるサンプルに関する情報を返します\_RTAUDIO\_プレゼンテーション\_位置を返します。システムの出力を紹介するサンプルについて説明します。 これらは、2 つの異なる情報です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

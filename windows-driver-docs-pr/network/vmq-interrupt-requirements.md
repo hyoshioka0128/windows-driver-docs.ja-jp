@@ -1,17 +1,17 @@
 ---
-title: VMQ 割り込みの要件
-description: VMQ 割り込みの要件
+title: VMQ 割り込み要件
+description: VMQ 割り込み要件
 ms.assetid: 7ECC9031-D41B-4664-963D-F1C20B297B7C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7230021daa6b10cbc4599c22fe86d9d165ff449
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327588"
 ---
-# <a name="vmq-interrupt-requirements"></a>VMQ 割り込みの要件
+# <a name="vmq-interrupt-requirements"></a>VMQ 割り込み要件
 
 
 仮想マシン キュー (VMQ) 機能をサポートしているミニポート ドライバーでは、次の割り込み配賦の要件もサポートする必要があります。

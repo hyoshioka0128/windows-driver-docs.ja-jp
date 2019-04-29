@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_IPV4_CHECKSUM_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 856197e294922427b34d1e28f4795aa575c82453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327598"
 ---
 # <a name="wditlvipv4checksumoffload"></a>WDI\_TLV\_IPV4\_チェックサム\_オフロード
 
@@ -38,7 +38,7 @@ WDI\_TLV\_IPV4\_チェックサム\_オフロードが IPv4 のチェックサ�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: KMDF および UMDF 2 で実行中のトレース レコーダー (IFR) を使用してドライバー
+title: KMDF および UMDF 2 ドライバーでのインフライト トレース レコーダー (IFR) の使用
 description: Windows 10 以降、Windows ソフトウェア トレース前処理を使用して情報をデバッグする追加のドライバーを取得できるように、WDF ドライバーを構築できます。
 ms.assetid: CA2A7ED3-4372-4EE9-8B04-042A8C864BD5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8deb7a4491b22e674fb1329dc7b5b8c42e17b59b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391831"
 ---
-# <a name="using-inflight-trace-recorder-ifr-in-kmdf-and-umdf-2-drivers"></a>KMDF および UMDF 2 で実行中のトレース レコーダー (IFR) を使用してドライバー
+# <a name="using-inflight-trace-recorder-ifr-in-kmdf-and-umdf-2-drivers"></a>KMDF および UMDF 2 ドライバーでのインフライト トレース レコーダー (IFR) の使用
 
 
 Windows 10 以降、Windows ソフトウェア トレース前処理を使用して情報をデバッグする追加のドライバーを取得できるように、KMDF ドライバーまたは UMDF ドライバーを構築できます。 この機能は、転送トレース レコーダー (), 違いますと呼ばれる、KMDF バージョン 1.15 および UMDF 2.15 バージョン以降があります。
@@ -142,7 +142,7 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
 
    ミニダンプに格納されたログ情報が入力した名前が一致しない場合は、ミニダンプには、ドライバーのログが含まれていません。
 
-トレース メッセージをドライバーを追加する方法の詳細については、[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)を参照してください。
+トレース メッセージをドライバーを追加する方法の詳細については、次を参照してください。[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)します。
 
 ## <a name="related-topics"></a>関連トピック
 

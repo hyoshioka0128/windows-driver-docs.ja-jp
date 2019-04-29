@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7de658f66d005123dcd2179762100a7c5fd5b543
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327222"
 ---
 # <a name="devpkeydevicepowerrelations"></a>DEVPKEY_Device_PowerRelations
 
@@ -58,7 +58,7 @@ DEVPKEY_Device_PowerRelations デバイス プロパティを表します、 [**
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_PowerRelations の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows でのデバイスのリレーションのプロパティを取得する方法については、[デバイス関係の取得](https://msdn.microsoft.com/library/windows/hardware/ff550630)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows でのデバイスのリレーションのプロパティを取得する方法については、次を参照してください。[デバイス関係の取得](https://msdn.microsoft.com/library/windows/hardware/ff550630)します。
 
 <a name="requirements"></a>要件
 ------------

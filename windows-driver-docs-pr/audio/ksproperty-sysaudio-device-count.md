@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 236fc2fe7e9d81780665dbcc0683c6b60adbb6f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332616"
 ---
 # <a name="kspropertysysaudiodevicecount"></a>KSPROPERTY\_SYSAUDIO\_デバイス\_数
 
@@ -76,7 +76,7 @@ SysAudio は、wave レンダリングを実行するシステムで有効にな
 
 SysAudio KSCATEGORY カテゴリの下のシステム レジストリ内の仮想のオーディオ デバイスのリストを保持して\_オーディオ\_デバイス。 このカテゴリは、SysAudio 専用として予約されています。 DirectSound が、システム レジストリからの仮想のオーディオ デバイスに関する情報を直接にアクセスしません。 代わりに、仮想のオーディオ デバイスのプロパティの SysAudio を照会します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

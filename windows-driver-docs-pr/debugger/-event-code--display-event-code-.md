@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f0badc8a5a9b9befb7fce0e58f054291b755da5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336765"
 ---
 # <a name="eventcode-display-event-code"></a>イベントに対する\_コード (イベント コードの表示)
 
@@ -53,7 +53,7 @@ ms.locfileid: "56571299"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **イベントに対する\_コード**コマンドは、現在のイベントの命令ポインターで 16 進数の命令を表示します。 表示には、可能な場合、64 バイトまでの手順が含まれます。

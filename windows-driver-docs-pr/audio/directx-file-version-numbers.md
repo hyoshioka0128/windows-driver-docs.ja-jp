@@ -1,6 +1,6 @@
 ---
-title: DirectX のファイルのバージョン番号
-description: DirectX のファイルのバージョン番号
+title: DirectX ファイル バージョン番号
+description: DirectX ファイル バージョン番号
 ms.assetid: 60f840d2-384c-49be-bf05-c16613b4858c
 keywords:
 - DirectX ファイル バージョン番号の WDK オーディオ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3172713d0d0435ec2d969e7f6cb3c704c09bccc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333766"
 ---
-# <a name="directx-file-version-numbers"></a>DirectX のファイルのバージョン番号
+# <a name="directx-file-version-numbers"></a>DirectX ファイル バージョン番号
 
 
 ## <span id="directx_file_version_numbers"></span><span id="DIRECTX_FILE_VERSION_NUMBERS"></span>

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c46bd37a7562cbcd78bda72a402bf3d4880ad46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553630"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330220"
 ---
 # <a name="registry-trees-for-devices-and-drivers"></a>デバイスとドライバーのレジストリ ツリー
 
@@ -35,7 +35,7 @@ ms.locfileid: "56553630"
 
 -   [HKLM\\システム\\CurrentControlSet\\HardwareProfiles レジストリ ツリー](hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md)
 
-WDF (KMDF または UMDF) ドライバーからレジストリ キーへのアクセス方法の詳細については、[ドライバーのレジストリ キーの概要](../wdf/introduction-to-registry-keys-for-drivers.md)を参照してください。
+WDF (KMDF または UMDF) ドライバーからレジストリ キーへのアクセス方法の詳細については、次を参照してください。[ドライバーのレジストリ キーの概要](../wdf/introduction-to-registry-keys-for-drivers.md)します。
 
 **注**  下キー **HKLM\\システム\\CurrentControlSet**システム hive でデータが格納されているため、ドライバーに重要なデータを保持するために、安全な場所は。 (たとえば、複数のコピーを維持する方法) のシステム ハイブを保護するのには追加の予防措置が取得されます。
 

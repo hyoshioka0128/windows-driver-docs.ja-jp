@@ -1,6 +1,6 @@
 ---
-title: ネットワーク モジュールの登録の概要
-description: ネットワーク モジュールの登録の概要
+title: ネットワーク モジュール レジストラーの概要
+description: ネットワーク モジュール レジストラーの概要
 ms.assetid: affa7979-bc43-4e34-a528-5484982d940d
 keywords:
 - ネットワーク モジュール レジストラー ネットワーク モジュールのレジストラーについての WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11ba64a692753aaa6981352f4aa3ea2568b0c319
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329808"
 ---
-# <a name="introduction-to-the-network-module-registrar"></a>ネットワーク モジュールの登録の概要
+# <a name="introduction-to-the-network-module-registrar"></a>ネットワーク モジュール レジストラーの概要
 
 
 ネットワーク モジュール レジストラー (NMR) は、オペレーティング システムのモジュールの添付ファイルを容易にする[モジュールをネットワーク](network-module.md)互いにします。 各ネットワーク モジュールは、ネットワーク モジュールを記述する特性を指定する、NMR で自身を登録します。 NMR は相互に関連付けることができる登録済みのネットワーク モジュールのペア間の添付ファイルを開始します。 アタッチした後ネットワーク モジュールできる相互作用、NMR に依存しません。 NMR は、NMR でネットワーク モジュールの 1 つの登録を解除するときもネットワーク モジュールの接続のペアのデタッチを容易にします。 ネットワーク モジュールが完全にすることが関連付けられていたすべてのネットワーク モジュールから切断するまでは、ネットワーク モジュールの登録解除を完了しません。

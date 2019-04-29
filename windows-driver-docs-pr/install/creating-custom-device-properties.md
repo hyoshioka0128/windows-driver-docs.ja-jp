@@ -1,19 +1,19 @@
 ---
-title: カスタムのデバイスのプロパティを作成します。
-description: カスタムのデバイスのプロパティを作成します。
+title: カスタム デバイス プロパティの作成
+description: カスタム デバイス プロパティの作成
 ms.assetid: e18fcbe8-6083-451e-b1be-5a543b61c627
 keywords:
 - デバイスのプロパティのカスタムの作成、WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ec294e7d9e6dacaa47fdb9e7d8de8664aa4d0fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392534"
 ---
-# <a name="creating-custom-device-properties"></a>カスタムのデバイスのプロパティを作成します。
+# <a name="creating-custom-device-properties"></a>カスタム デバイス プロパティの作成
 
 
 Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)デバイスのインスタンスのプロパティのカスタム デバイス カテゴリの作成をサポート[デバイス セットアップ クラス](device-setup-classes.md)、デバイスクラス、およびデバイスのインターフェイスをインターフェイスします。 カスタム プロパティを呼び出して、適切なアクセスできる[SetupAPI プロパティ関数](https://msdn.microsoft.com/library/windows/hardware/ff541483)します。 使用して、カスタムのデバイス プロパティを変更こともできます、 [ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md)または[ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)します。
@@ -30,7 +30,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 カスタムのデバイス プロパティのカテゴリは、論理的に関連するカスタム デバイスのプロパティのコレクションです。 プログラムによってカスタム デバイス プロパティのカテゴリを作成するには、使用、 [ **DEFINE_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)マクロを次のようにプロパティのカテゴリのプロパティを表すプロパティのキーを作成します。
 
--   プロパティのカテゴリを表す一意の GUID 値を作成し、各プロパティのキーの GUID 値をこの一意の GUID 値に設定します。 新しい GUID 値を作成する方法については、[の定義およびエクスポートする新しい Guid](https://msdn.microsoft.com/library/windows/hardware/ff542998)を参照してください。
+-   プロパティのカテゴリを表す一意の GUID 値を作成し、各プロパティのキーの GUID 値をこの一意の GUID 値に設定します。 新しい GUID 値を作成する方法については、次を参照してください。[の定義およびエクスポートする新しい Guid](https://msdn.microsoft.com/library/windows/hardware/ff542998)します。
 
     **注**  プロパティのシステム定義のカテゴリはオペレーティング システム専用として予約されています。
 
@@ -62,7 +62,7 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 使用して、 [ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)カスタム デバイス プロパティを削除します。
 
-これらのディレクティブを使用する方法の詳細については、、 [INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)を参照してください。
+これらのディレクティブを使用する方法の詳細については、次を参照してください。、 [INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
 
  
 

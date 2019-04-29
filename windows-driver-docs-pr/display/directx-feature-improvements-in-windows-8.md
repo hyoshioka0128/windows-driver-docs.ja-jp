@@ -1,17 +1,17 @@
 ---
-title: Windows 8 での DirectX 機能の改善
+title: Windows 8 での DirectX 機能の向上
 description: Windows 8 には、開発者、エンドユーザーおよびシステムの製造元の利点を得られる Microsoft DirectX の機能強化が含まれています。
 ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa4fb6c19989f24a30f5ced4630387a9474d3fad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328402"
 ---
-# <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 での DirectX 機能の改善
+# <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 での DirectX 機能の向上
 
 
 Windows 8 には、開発者、エンドユーザーおよびシステムの製造元の利点を得られる Microsoft DirectX の機能強化が含まれています。
@@ -51,12 +51,12 @@ DirectX を使用して低電力の構成でグラフィックスのサポート
 | TextureCube                      | 必須                                                | 必須                                                       | 必須                                  | 必須                                  |
 | シェーダー %ld\*                      | X                                                      | 必須                                                       | 必須                                  | 必須                                  |
 | シェーダー サンプル\*(フィルター) を含む | 必須                                                | 必須                                                       | 必須                                  | 必須                                  |
-| シェーダー gather4                   | X                                                      | X                                                             | X                                        | 必須                                  |
+| シェーダー gather4                   | X                                                      | いいえ                                                             | X                                        | 必須                                  |
 | Mipmap                           | 必須                                                | 必須                                                       | 必須                                  | 必須                                  |
 | Mipmap の自動生成           | 5551 必要な 565、4444、省略可能です。               | 5551 必要な 565、4444、省略可能です。                      | 5551 必要な 565、4444、省略可能です。 | 5551 必要な 565、4444、省略可能です。 |
 | レンダリング ターゲット                     | 必要な 565、いいえ、4444 5551                     | 5551 必要な 565、4444、省略可能です。                      | 5551 必要な 565、4444、省略可能です。 | 5551 必要な 565、4444、省略可能です。 |
 | Blendable レンダリング ターゲット           | 必要な 565、いいえ、4444 5551                     | 5551 必要な 565、4444、省略可能です。                      | 5551 必要な 565、4444、省略可能です。 | 5551 必要な 565、4444、省略可能です。 |
-| UAV 型指定されたストア                  | X                                                      | X                                                             | X                                        | 省略可能                                  |
+| UAV 型指定されたストア                  | X                                                      | いいえ                                                             | X                                        | 省略可能                                  |
 | ロック可能な CPU                     | 必須                                                | 必須                                                       | 必須                                  | 必須                                  |
 | 4 x MSAA                          | 省略可能                                                | 省略可能                                                       | 5551 必要な 565、4444、省略可能です。 | 5551 必要な 565、4444、省略可能です。 |
 | 8 x MSAA                          | 省略可能                                                | 省略可能                                                       | 省略可能                                  | 5551 必要な 565、4444、省略可能です。 |
@@ -141,7 +141,7 @@ DirectX 10 (またはそれ以上)-対応のグラフィックス ハードウ�
 
 この要件によって、ステレオのアプリケーションが mono のモードでの障害を必要はありません。 例: ケースの場合でもステレオが、システムで有効になっていないときにアプリケーション ステレオ スワップ チェーンを作成できる必要がありますまたはバッファーのレンダー ターゲットを呼び出して、配列化された**存在**します。 ここでは、左側のビューのみが表示されます (または、*右を好む* Microsoft DirectX Graphics Infrastructure (DXGI) 存在するフラグを設定すると、右側のビューのみ)。
 
-したがって、WDDM 1.2 ドライバー (完全なグラフィックスおよびレンダリング デバイス) では、クロス テクスチャ配列のプロセスが共有のサポートを追加することで direct3d11 の Api をサポートする必要があります。 以前のバージョンでは、プロセス間の共有リソースにのみ単一レイヤー サーフェス可能性があります。 Windows 8 では、共有配列の最大サイズは 2 つの要素 (これは、ステレオ用だけで十分です) です。 この要件の詳細については、**Device.Graphics... Stereoscopic3DArraySupport**で[Windows ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=324537)を参照してください。 関連するその他の Microsoft WindowsWindowsWindows HCK 要件は**Device.Graphics... ProcessingStereoscopicVideoContent**と**Device.Display.Monitor.Stereoscopic3DModes**します。
+したがって、WDDM 1.2 ドライバー (完全なグラフィックスおよびレンダリング デバイス) では、クロス テクスチャ配列のプロセスが共有のサポートを追加することで direct3d11 の Api をサポートする必要があります。 以前のバージョンでは、プロセス間の共有リソースにのみ単一レイヤー サーフェス可能性があります。 Windows 8 では、共有配列の最大サイズは 2 つの要素 (これは、ステレオ用だけで十分です) です。 この要件の詳細については、次を参照してください。 **Device.Graphics... Stereoscopic3DArraySupport**で[Windows ハードウェア認定要件](https://go.microsoft.com/fwlink/p/?linkid=324537)します。 関連するその他の Microsoft WindowsWindowsWindows HCK 要件は**Device.Graphics... ProcessingStereoscopicVideoContent**と**Device.Display.Monitor.Stereoscopic3DModes**します。
 
 ## <a name="span-idunorderedspanspan-idunorderedspanuavs-with-multi-sample-anti-alias-sample-access"></a><span id="unordered"></span><span id="UNORDERED"></span>アンチ エイリアス サンプルのマルチ サンプルのアクセス権を持つ UAVs
 

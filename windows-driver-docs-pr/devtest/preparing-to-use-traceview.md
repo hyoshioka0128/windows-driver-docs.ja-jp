@@ -1,6 +1,6 @@
 ---
-title: Traceview での使用を準備します。
-description: Traceview での使用を準備します。
+title: TraceView の使用の準備
+description: TraceView の使用の準備
 ms.assetid: 724e3c8a-7760-4e53-8d44-1927e5ad1efd
 keywords:
 - Traceview で WDK を使用する準備
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ff91a47ea2c8a4a31b791d1d2acf870ccbdb1f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327333"
 ---
-# <a name="preparing-to-use-traceview"></a>Traceview での使用を準備します。
+# <a name="preparing-to-use-traceview"></a>TraceView の使用の準備
 
 
 ## <span id="ddk_preparing_to_use_traceview_tools"></span><span id="DDK_PREPARING_TO_USE_TRACEVIEW_TOOLS"></span>
@@ -30,7 +30,7 @@ Traceview でを使用する前に約およびイベント トレース情報を
 
 ### <a name="span-idunderstandeventtracingspanspan-idunderstandeventtracingspanunderstand-event-tracing"></a><span id="understand_event_tracing"></span><span id="UNDERSTAND_EVENT_TRACING"></span>イベントのトレースを理解します。
 
-理解しておく必要があります traceview でを使用する前に*イベント トレース*します。 詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)と"[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=60384)"Microsoft Windows SDK のトピックを参照してください。
+理解しておく必要があります traceview でを使用する前に*イベント トレース*します。 詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)と"[イベント トレーシング](https://go.microsoft.com/fwlink/p/?linkid=60384)"Microsoft Windows SDK のトピックです。
 
 また、Tracedrv (Tracedrv.c)、WPP ソフトウェア トレースとインストルメント化されたドライバーのサンプルを確認します。 [Tracedrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)サンプルは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507 )GitHub リポジトリにあります。 Tracedrv ドライバーとそのエンジン、Tracectl (Tracectl.c) をビルドし、traceview でみたりする場合、ドライバーとエンジンを使用します。
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b5a343424a291448b09f95f65b926eda4392d05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329978"
 ---
 # <a name="kspropertybdarftunerbandwidth"></a>KSPROPERTY\_BDA\_RF\_チューナー\_帯域幅
 
@@ -61,7 +61,7 @@ ms.locfileid: "56531819"
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 **NodeId** KSP のメンバー\_ノードは、チューナーのノードの識別子を指定します。
@@ -74,7 +74,7 @@ ms.locfileid: "56531819"
 
 -   BDA\_CHAN\_BANDWITH\_いない\_定義 (0) では、帯域幅が定義されていないことを示します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

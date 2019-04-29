@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa026692d15c9f50be0fc14929a4298326781444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333468"
 ---
 # <a name="imxf-interfaces"></a>IMXF インターフェイス
 
@@ -50,7 +50,7 @@ MIDI データはユーザー モードとカーネル モード パックされ
 
 [**IAllocatorMXF::PutBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536495)
 
-これらのインターフェイスの使用に関する詳細については、[アロケーター](allocator.md)を参照してください。
+これらのインターフェイスの使用に関する詳細については、次を参照してください。[アロケーター](allocator.md)します。
 
  
 

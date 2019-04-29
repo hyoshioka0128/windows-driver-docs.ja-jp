@@ -1,5 +1,5 @@
 ---
-title: BCDEdit/deletevalue
+title: BCDEdit /deletevalue
 description: BCDEdit/deletevalue コマンドを削除しますか、Windows ブート構成データ ストア (BCD) からブート エントリのオプション (とその値) を削除します。
 ms.assetid: 70833A12-B1F7-4AF6-952F-02A70718E870
 ms.date: 05/21/2018
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f229284215ca334b4925d4bc83db5220c43b45d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327348"
 ---
-# <a name="bcdedit-deletevalue"></a>BCDEdit/deletevalue
+# <a name="bcdedit-deletevalue"></a>BCDEdit /deletevalue
 
 
 **BCDEdit/deletevalue**コマンドを削除または Windows のブート構成データ ストア (BCD) からのブート エントリのオプション (とその値) を削除します。 使用して、 **BCDEdit/deletevalue**コマンドを使用して追加されたオプションを削除する、 [ **BCDEdit/set** ](bcdedit--set.md)コマンド。 
@@ -37,7 +37,7 @@ ms.locfileid: "56531457"
 bcdedit /deletevalue groupsize
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

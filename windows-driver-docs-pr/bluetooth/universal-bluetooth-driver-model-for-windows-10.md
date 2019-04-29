@@ -1,25 +1,25 @@
 ---
-title: Windows 10 用ユニバーサル Windows の Bluetooth ドライバー モデル
+title: Windows 10 向けの Bluetooth ユニバーサル Windows ドライバー モデル
 description: Windows 10 ですべてのデバイスの Bluetooth トランスポート ドライバー インターフェイスは集約し、ユニバーサル Windows ドライバー モデルを使用します。
 ms.assetid: E65A71D3-C0D2-4E13-9E19-1E6C6C1A172E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2b359640276f55b0df5ab8923b35f41ed931f27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328172"
 ---
-# <a name="bluetooth-universal-windows-driver-model-for-windows-10"></a>Windows 10 用ユニバーサル Windows の Bluetooth ドライバー モデル
+# <a name="bluetooth-universal-windows-driver-model-for-windows-10"></a>Windows 10 向けの Bluetooth ユニバーサル Windows ドライバー モデル
 
 
 Windows 10 ですべてのデバイスの Bluetooth トランスポート ドライバー インターフェイスは集約し、ユニバーサル Windows ドライバー モデルを使用します。 つまり、すべての Windows デバイス プラットフォームで動作する単一のドライバーを作成できます。
 
-Bluetooth オーディオ ドライバーの画面領域では、Windows 10 を困難になった場合し、次の 2 つのオプションを利用できます。
+Bluetooth オーディオ ドライバーの表層部は Windows 10 用に分かれ、次の 2 つのオプションを選択できるようになっています。
 
 -   デスクトップとモバイルの両方のデバイスに合った新しいオーディオ ユニバーサル Windows ドライバーを作成することができます。
--   既存の Windows Phone 8.1 の Bluetooth オーディオ ドライバーは、Windows 10 Mobile で実行されます。
+-   既存の Windows Phone 8.1 Bluetooth オーディオ ドライバーは、Windows 10 Mobile でも動作します。
 
 ## <a name="span-idhowtowriteabluetoothuniversalwindowsdriverspanspan-idhowtowriteabluetoothuniversalwindowsdriverspanspan-idhowtowriteabluetoothuniversalwindowsdriverspanhow-to-write-a-bluetooth-universal-windows-driver"></a><span id="How_to_write_a_Bluetooth_Universal_Windows_driver"></span><span id="how_to_write_a_bluetooth_universal_windows_driver"></span><span id="HOW_TO_WRITE_A_BLUETOOTH_UNIVERSAL_WINDOWS_DRIVER"></span>Bluetooth のユニバーサル Windows ドライバーを作成する方法
 

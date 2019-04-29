@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4281db54d2058600cd2c96ade9d4a3edefab852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330298"
 ---
 # <a name="kspropertycameracontrolautoexposurepriority"></a>KSPROPERTY\_CAMERACONTROL\_自動\_露出\_優先順位
 
@@ -67,7 +67,7 @@ KSPROPERTY\_CAMERACONTROL\_自動\_露出\_PRIORITY プロパティは、デバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>

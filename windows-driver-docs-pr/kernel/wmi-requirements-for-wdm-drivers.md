@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4e9121c10cd0dd8dcf45da939bc079140575982
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327003"
 ---
 # <a name="wmi-requirements-for-wdm-drivers"></a>WDM ドライバーについての WMI の要件
 
@@ -24,7 +24,7 @@ ms.locfileid: "56578437"
 
 
 
-Irp を処理するドライバーは WMI で登録を*データ プロバイダー*します。 システムが指定したストレージ ポート ドライバー、クラスのドライバーおよび NDIS プロトコル ドライバーは、このカテゴリに分類されます。 WMI データ プロバイダーとして登録する方法の詳細については、[WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)を参照してください。
+Irp を処理するドライバーは WMI で登録を*データ プロバイダー*します。 システムが指定したストレージ ポート ドライバー、クラスのドライバーおよび NDIS プロトコル ドライバーは、このカテゴリに分類されます。 WMI データ プロバイダーとして登録する方法の詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
 
 Irp を処理しないドライバーをドライバー スタックで、次の下位ドライバーへの WMI 要求を転送だけです。 次の下位ドライバーでは、WMI で登録し、最初のドライバーの代わりに WMI 要求を処理します。 たとえば、SCSI ミニポート ドライバーおよび NDIS ミニポート ドライバー WMI プロバイダーとして登録でき、対応するクラス ドライバーに WMI データを提供できます。
 

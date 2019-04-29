@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_DELETE_VPORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 08694aa633a52fa0bf415ece1bf4bd01800354a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335391"
 ---
 # <a name="oidnicswitchdeletevport"></a>OID\_NIC\_スイッチ\_削除\_VPORT
 
@@ -28,9 +28,9 @@ ms.locfileid: "56531686"
 
 PF のミニポート ドライバーが OID の OID 要求を受信すると\_NIC\_スイッチ\_削除\_VPORT、ドライバーは、指定した VPort に割り当てられたハードウェアとソフトウェア リソースを解放する必要があります。
 
-詳細については、[仮想ポートを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439418)を参照してください。
+詳細については、次を参照してください。[仮想ポートを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439418)します。
 
-**注**  OID の OID 要求を通じて、拡張を明示的に削除できる以外のみ\_NIC\_スイッチ\_削除\_VPORT します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、[NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)を参照してください。
+**注**  OID の OID 要求を通じて、拡張を明示的に削除できる以外のみ\_NIC\_スイッチ\_削除\_VPORT します。 PF のミニポート ドライバーが既定の NIC スイッチを削除するときに既定 VPort は暗黙的に削除されます。 詳細については、次を参照してください。 [NIC スイッチを削除する](https://msdn.microsoft.com/library/windows/hardware/hh439415)します。
 
  
 

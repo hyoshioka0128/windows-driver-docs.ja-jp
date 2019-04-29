@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b9dd7474b5a1c15b843587cd0bb54d09e12cbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334795"
 ---
-# <a name="amli-bc"></a>! amli bc
+# <a name="amli-bc"></a>!amli bc
 
 
 **! Amli bc**拡張機能では、AML ブレークポイントを完全に消去します。
@@ -46,7 +46,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-関連するコマンドとその用途については、[AMLI デバッガー](the-amli-debugger.md)を参照してください。
+関連するコマンドとその用途については、次を参照してください。 [AMLI デバッガー](the-amli-debugger.md)します。
 
 <a name="remarks"></a>注釈
 -------

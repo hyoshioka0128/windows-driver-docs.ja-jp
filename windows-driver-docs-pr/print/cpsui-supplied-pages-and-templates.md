@@ -1,6 +1,6 @@
 ---
-title: CPSUI が指定したページとテンプレート
-description: CPSUI が指定したページとテンプレート
+title: CPSUI 指定のページとテンプレート
+description: CPSUI 指定のページとテンプレート
 ms.assetid: de33cb29-3941-4232-bd61-d36fb04d69d3
 keywords:
 - 共通のプロパティ シートのユーザー インターフェイスの WDK、印刷テンプレート
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da497338da5f78c088ed7b862407f97341faa5a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390955"
 ---
-# <a name="cpsui-supplied-pages-and-templates"></a>CPSUI が指定したページとテンプレート
+# <a name="cpsui-supplied-pages-and-templates"></a>CPSUI 指定のページとテンプレート
 
 
 

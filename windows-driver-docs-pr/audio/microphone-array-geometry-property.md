@@ -1,6 +1,6 @@
 ---
-title: マイク配列 Geometry プロパティ
-description: マイク配列 Geometry プロパティ
+title: マイク配列ジオメトリのプロパティ
+description: マイク配列ジオメトリのプロパティ
 ms.assetid: 7f280677-f86d-4687-b992-e2580046bd57
 keywords:
 - mic の配列の WDK オーディオ
@@ -9,22 +9,22 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a9ca3ddc96b3ece4005691749373dfc0f9d2d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332334"
 ---
-# <a name="microphone-array-geometry-property"></a>マイク配列 Geometry プロパティ
+# <a name="microphone-array-geometry-property"></a>マイク配列ジオメトリのプロパティ
 
 
 Windows Vista 以降では、マイク配列のサポートが提供されます。 ほとんどの場合、ラップトップ コンピューターやモニターに埋め込まれている 1 つのマイクをキャプチャしませんサウンドも非常にします。 マイクの配列が優れてをサウンドのソースを特定し、アンビエント ノイズとリバーブを拒否します。 [ **KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY** ](https://msdn.microsoft.com/library/windows/hardware/ff537289)プロパティがマイク配列のジオメトリを指定します。 プロパティの値[ **KSAUDIO\_MIC\_配列\_GEOMETRY**](https://msdn.microsoft.com/library/windows/hardware/ff537087)配列型 (線形、平面、)、マイク、配列内の数を記述し、その他の機能です。
 
 このトピックでは、外部 USB マイクが配列を使用できます Windows Vista で提供されているマイク配列のサポートについて説明します。 外部 USB マイク配列は、ジオメトリとその配列への応答の他の機能を説明するために必要なパラメーターを指定する必要があります、**取得\_MEM**要求。
 
-USB のマイク配列は、ジオメトリの情報を提供するのに標準書式指定を使用します。 Windows Vista の USB オーディオ クラス ドライバーは、ジオメトリの情報を読み取る際に、同じ形式を使用する必要があります。 標準の形式の詳細については、[マイク配列 Geometry 記述子形式](microphone-array-geometry-descriptor-format.md)を参照してください。
+USB のマイク配列は、ジオメトリの情報を提供するのに標準書式指定を使用します。 Windows Vista の USB オーディオ クラス ドライバーは、ジオメトリの情報を読み取る際に、同じ形式を使用する必要があります。 標準の形式の詳細については、次を参照してください。[マイク配列 Geometry 記述子形式](microphone-array-geometry-descriptor-format.md)します。
 
-アプリケーションが呼び出すことができます[IPart::GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)ジャック、ジャックに接続されたデバイスがマイク配列かどうかを決定に関する情報を取得します。 **IPart::GetSubType**入力ジャックに接続の種類を表す暗証番号 (pin) カテゴリの GUID を返します。 接続されているデバイスのマイク配列が返される GUID は KSNODETYPE に等しく\_マイク\_配列。 アプリケーションは、マイク配列を間違ったジャックに接続したかどうかを判断することができます。 後者のシナリオでは、返された pin のカテゴリの GUID は、別のデバイスのいずれかまたはマイクのジャックに接続されたデバイスがないことを示します。 暗証番号 (pin) カテゴリの Guid の詳細については、[Pin Category プロパティ](pin-category-property.md)を参照してください。
+アプリケーションが呼び出すことができます[IPart::GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)ジャック、ジャックに接続されたデバイスがマイク配列かどうかを決定に関する情報を取得します。 **IPart::GetSubType**入力ジャックに接続の種類を表す暗証番号 (pin) カテゴリの GUID を返します。 接続されているデバイスのマイク配列が返される GUID は KSNODETYPE に等しく\_マイク\_配列。 アプリケーションは、マイク配列を間違ったジャックに接続したかどうかを判断することができます。 後者のシナリオでは、返された pin のカテゴリの GUID は、別のデバイスのいずれかまたはマイクのジャックに接続されたデバイスがないことを示します。 暗証番号 (pin) カテゴリの Guid の詳細については、次を参照してください。 [Pin Category プロパティ](pin-category-property.md)します。
 
 アプリケーションが適切な入力ジャックに接続されているマイク配列を検出した後、次の手順では、配列のジオメトリを決定します。 次の 3 つの基本的なジオメトリがある:*線形*、*平面*、および*3 次元 (3 D)* します。 ジオメトリの情報には、周波数の範囲と各マイクの x、y、z 座標などの詳細情報も提供します。
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9008446f982d3bfc80ba40f16c8c9915524456c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328356"
 ---
 # <a name="using-winusb-in-a-wbdi-driver"></a>WBDI ドライバーでの WinUSB の使用
 
@@ -32,7 +32,7 @@ UmdfService=WudfBioUsbSample, WudfBioUsbSample_Install
 UmdfServiceOrder=WudfBioUsbSample
 ```
 
-UmdfDispatcher 詳細については、[UmdfDispatcher INF ディレクティブの指定](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。 WDF レジストリ ディレクティブについては、[WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。
+UmdfDispatcher 詳細については、次を参照してください。 [UmdfDispatcher INF ディレクティブの指定](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 WDF レジストリ ディレクティブについては、次を参照してください。 [WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。
 
 ### <a name="span-idpendingasynchronousreadrequestsspanspan-idpendingasynchronousreadrequestsspanpending-asynchronous-read-requests"></a><span id="pending_asynchronous_read_requests"></span><span id="PENDING_ASYNCHRONOUS_READ_REQUESTS"></span>保留中の非同期読み取り要求
 

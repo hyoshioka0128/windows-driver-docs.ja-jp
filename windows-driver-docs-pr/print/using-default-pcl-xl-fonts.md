@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7db9235d061d8a655c194563bfba89ec2d209c21
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330312"
 ---
 # <a name="using-default-pcl-xl-fonts"></a>既定の PCL XL フォントを使用する
 

@@ -6,11 +6,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: afee91f20e74543be9f6fa2e30713957affe0f33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391198"
 ---
 # <a name="wddm-display-miniport-driver-tasks-to-support-miracast-wireless-displays"></a>Miracast ワイヤレス ディスプレイをサポートする WDDM ディスプレイ ミニポート ドライバーのタスク
 
@@ -30,7 +30,7 @@ Dxgkrnl 呼び出し後[ *DxgkDdiQueryInterface* ](https://msdn.microsoft.com/li
 
 Miracast ターゲットは必要があります、Miracast にセッションが接続されている Dxgkrnl 開始まで、切断状態に残ります。 Miracast セッションを開始すると、し、モニターが Miracast シンクに接続されている、または Miracast シンクに新しいモニターが接続されているため、ドライバーが、Miracast ユーザー モード ドライバーから I/O 要求を受信、ときにディスプレイのミニポート ドライバーは、モニターを報告する必要があります。呼び出すことによって、オペレーティング システムに到着ホットプラグ検出 (HPD) 認識値、 [ **DxgkCbIndicateChildStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff559522)関数。 この呼び出しで、ドライバーは、これらの値を設定する必要があります。
 
-| [**DXGK\_子\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff561010)メンバー | [値]                                                                                                                                                                                                                                                                      |
+| [**DXGK\_子\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff561010)メンバー | 値                                                                                                                                                                                                                                                                      |
 |-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **型**                                                    | **StatusMiracast**の定数値、 [ **DXGK\_子\_状態\_型**](https://msdn.microsoft.com/library/windows/hardware/ff561015)列挙型                                                                                                                                                       |
 | **Miracast**.**接続されています。**                                  | **TRUE**                                                                                                                                                                                                                                                                   |

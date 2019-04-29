@@ -1,24 +1,24 @@
 ---
-title: ドライバーで Bluetooth プロファイル L2CAP 接続の受け入れ
-description: ドライバーで Bluetooth プロファイル L2CAP 接続の受け入れ
+title: Bluetooth プロファイル ドライバーでの L2CAP 接続の受け入れ
+description: Bluetooth プロファイル ドライバーでの L2CAP 接続の受け入れ
 ms.assetid: 26a8238d-717a-438f-84d0-047ce9618928
 keywords:
 - L2CAP プロファイル ドライバー WDK Bluetooth
 - 論理リンク コント ローラーとプロトコルの適応 WDK Bluetooth
 - 着信 L2CAP 接続要求が WDK Bluetooth
-- WDK の Bluetooth の接続
+- 接続 WDK Bluetooth
 - リモート接続通知 WDK Bluetooth
 - WDK の Bluetooth の通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 358c02116c2bbae1a35a543e0ef8a9f35fe816b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328346"
 ---
-# <a name="accepting-l2cap-connections-in-a-bluetooth-profile-driver"></a>ドライバーで Bluetooth プロファイル L2CAP 接続の受け入れ
+# <a name="accepting-l2cap-connections-in-a-bluetooth-profile-driver"></a>Bluetooth プロファイル ドライバーでの L2CAP 接続の受け入れ
 
 
 L2CAP サーバー プロファイル ドライバーは、リモート デバイスからの受信の論理リンク コントロールと適応プロトコル (L2CAP) 接続要求に応答します。 たとえば、PDA の L2CAP サーバー プロファイル ドライバーに PDA から受信接続要求に応答。
@@ -52,7 +52,7 @@ L2CAP サーバー プロファイル ドライバーは、リモート デバ�
 
 リモート デバイス L2CAP 接続試行の通知の受信を停止するプロファイルのドライバーがする必要があります[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_登録解除\_SERVER** ](https://msdn.microsoft.com/library/windows/hardware/ff536619)プロファイル ドライバーが処理するときに、サーバーの登録を解除する要求[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)プラグ アンド プレイが通知を削除します。
 
-通知とコールバック関数の詳細については、[Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)を参照してください。
+通知とコールバック関数の詳細については、次を参照してください。 [Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)します。
 
  
 

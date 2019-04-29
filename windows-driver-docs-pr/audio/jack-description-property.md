@@ -1,30 +1,30 @@
 ---
-title: Jack の Description プロパティ
-description: Jack の Description プロパティ
+title: ジャック説明のプロパティ
+description: ジャック説明のプロパティ
 ms.assetid: 6398efc9-4435-4234-bd72-1ed0f96c9f9f
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b8f579dab6541c820f0cc1af2be276b4801c2cd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333383"
 ---
-# <a name="jack-description-property"></a>Jack の Description プロパティ
+# <a name="jack-description-property"></a>ジャック説明のプロパティ
 
 
-Windows Vista 以降では、 [ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)プロパティがオーディオのアダプターでのオーディオ ジャックまたはその他の物理的なコネクタをについて説明します。 プロパティの値には、回線のモジュラー ジャックの色、ジャック、コネクタの種類、およびその他の回線のモジュラー ジャック機能の物理的な場所について説明します。 この情報の目的は、マイク、ヘッドホン、スピーカーなど、エンドポイントのオーディオ デバイスを接続するための正しいジャックを検索するユーザーを支援します。 詳細については、[オーディオ エンドポイント デバイス](https://go.microsoft.com/fwlink/p/?linkid=130876)を参照してください。
+Windows Vista 以降では、 [ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)プロパティがオーディオのアダプターでのオーディオ ジャックまたはその他の物理的なコネクタをについて説明します。 プロパティの値には、回線のモジュラー ジャックの色、ジャック、コネクタの種類、およびその他の回線のモジュラー ジャック機能の物理的な場所について説明します。 この情報の目的は、マイク、ヘッドホン、スピーカーなど、エンドポイントのオーディオ デバイスを接続するための正しいジャックを検索するユーザーを支援します。 詳細については、次を参照してください。[オーディオ エンドポイント デバイス](https://go.microsoft.com/fwlink/p/?linkid=130876)します。
 
-オーディオのアダプターで KS フィルターが、KSPROPERTY をサポートしているか\_ジャック\_DESCRIPTION プロパティ、フィルターにピン留め、ブリッジのジャック情報、Windows マルチ メディア コントロール パネル、Mmsys.cpl、表示します。 ブリッジ暗証番号 (pin) は、エンドポイントのオーディオ デバイスへの接続を (通常、ジャック) を表します。 プロパティの値には、pin (または代わりに、回線のモジュラー ジャックまたはジャック、暗証番号 (pin) に関連付けられている) に関する情報が含まれますが、プロパティ、プロパティのフィルターではなく、暗証番号 (pin) です。 ブリッジの pin の詳細については、[オーディオ フィルター グラフ](audio-filter-graphs.md)を参照してください。 フィルターのプロパティと pin のプロパティの詳細については、[フィルター、Pin、およびノードのプロパティ](filter--pin--and-node-properties.md)を参照してください。
+オーディオのアダプターで KS フィルターが、KSPROPERTY をサポートしているか\_ジャック\_DESCRIPTION プロパティ、フィルターにピン留め、ブリッジのジャック情報、Windows マルチ メディア コントロール パネル、Mmsys.cpl、表示します。 ブリッジ暗証番号 (pin) は、エンドポイントのオーディオ デバイスへの接続を (通常、ジャック) を表します。 プロパティの値には、pin (または代わりに、回線のモジュラー ジャックまたはジャック、暗証番号 (pin) に関連付けられている) に関する情報が含まれますが、プロパティ、プロパティのフィルターではなく、暗証番号 (pin) です。 ブリッジの pin の詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 フィルターのプロパティと pin のプロパティの詳細については、次を参照してください。[フィルター、Pin、およびノードのプロパティ](filter--pin--and-node-properties.md)します。
 
-オーディオのアプリケーションは、KSPROPERTY を取得できます\_ジャック\_呼び出すことによって、エンドポイントのオーディオ デバイスの説明プロパティの値、 **IKsJackDescription::GetJackDescription** DeviceTopology メソッドAPI です。 たとえば、アプリケーションでは、オレンジ色の XLR ジャックに接続されているマイクから緑 XLR ジャックに接続したマイクを区別するためにユーザーを支援するのにジャック情報を使用できます。 DeviceTopology API の詳細については、[デバイス トポロジ](https://go.microsoft.com/fwlink/p/?linkid=130878)を参照してください。
+オーディオのアプリケーションは、KSPROPERTY を取得できます\_ジャック\_呼び出すことによって、エンドポイントのオーディオ デバイスの説明プロパティの値、 **IKsJackDescription::GetJackDescription** DeviceTopology メソッドAPI です。 たとえば、アプリケーションでは、オレンジ色の XLR ジャックに接続されているマイクから緑 XLR ジャックに接続したマイクを区別するためにユーザーを支援するのにジャック情報を使用できます。 DeviceTopology API の詳細については、次を参照してください。[デバイス トポロジ](https://go.microsoft.com/fwlink/p/?linkid=130878)します。
 
-Microsoft HD オーディオ クラス ドライバーによって自動的に構築、KSPROPERTY\_ジャック\_HD オーディオ コーデックでピン構成のレジスタから読み取ったデータからプロパティ値を説明します。 ただし、KS ベースとするオーディオ ドライバー、フィルターのオートメーション テーブルで、このプロパティのサポートを実装できます。 HD オーディオ クラス ドライバーの詳細については、[HD オーディオおよび UAA](hd-audio-and-uaa.md)を参照してください。 レジスタの暗証番号 (pin) 構成の詳細については、次を参照してください。[高定義オーディオ デバイスの暗証番号 (pin) の構成ガイドライン](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PinConfig.doc)ホワイト ペーパー。
+Microsoft HD オーディオ クラス ドライバーによって自動的に構築、KSPROPERTY\_ジャック\_HD オーディオ コーデックでピン構成のレジスタから読み取ったデータからプロパティ値を説明します。 ただし、KS ベースとするオーディオ ドライバー、フィルターのオートメーション テーブルで、このプロパティのサポートを実装できます。 HD オーディオ クラス ドライバーの詳細については、次を参照してください。 [HD オーディオおよび UAA](hd-audio-and-uaa.md)します。 レジスタの暗証番号 (pin) 構成の詳細については、次を参照してください。[高定義オーディオ デバイスの暗証番号 (pin) の構成ガイドライン](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PinConfig.doc)ホワイト ペーパー。
 
 エンドポイントのオーディオ デバイスは、1 つまたは複数のジャックからブリッジのピンに接続できます。 たとえば、ステレオのスピーカーの (2 つのチャネル) のセットが 1 つのジャックが必要ですが、5.1 サラウンド サウンドのスピーカーのセットは、(各ジャックが 2 つの 6 つのチャネルを処理) すると仮定すると 3 つのジャックが必要です。
 
-各ジャックの説明が含まれている、 [ **KSJACK\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537136)構造体。 KSPROPERTY など\_ジャック\_DESCRIPTION プロパティの値 1 つのジャックが付いたオーディオ エンドポイント デバイスにはには、1 つ KSJACK が含まれています\_説明構造体が 3 つのジャックとデバイスのエンドポイント プロパティの値。次の 3 つ KSJACK が含まれています\_構造を説明します。 どちらの場合、KSJACK\_構造を定義またはプロパティの値構造体の前は、 [ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)構造体のサイズを指定する、プロパティ値です。 詳細については、[ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)を参照してください。
+各ジャックの説明が含まれている、 [ **KSJACK\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537136)構造体。 KSPROPERTY など\_ジャック\_DESCRIPTION プロパティの値 1 つのジャックが付いたオーディオ エンドポイント デバイスにはには、1 つ KSJACK が含まれています\_説明構造体が 3 つのジャックとデバイスのエンドポイント プロパティの値。次の 3 つ KSJACK が含まれています\_構造を説明します。 どちらの場合、KSJACK\_構造を定義またはプロパティの値構造体の前は、 [ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)構造体のサイズを指定する、プロパティ値です。 詳細については、次を参照してください。 [ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)します。
 
 回線のモジュラー ジャック情報は、マルチ チャネルのスピーカーの構成に接続するジャックを区別するために特に便利です。 次のコード例は、KSJACK の配列を示しています。\_オーディオ ドライバーを使用して、5.1 サラウンド スピーカー一連の 3 つのジャックを記述する構造を説明します。
 
@@ -100,7 +100,7 @@ KSJACK_DESCRIPTION ar_SPDIF_Jacks[] =
 
 上記のコード例の値で、 **ChannelMapping** KSJACK を 2 つのメンバー\_説明構造は同じです。
 
-「簡単」MSVAD サンプル ドライバー WDK に含まれて (サンプル ディレクトリ Src\\オーディオ\\Msvad\\単純な)、KSPROPERTY をサポートするために採用できる\_ジャック\_DESCRIPTION プロパティ。 このサンプル ドライバーは、実際のハードウェアが必要がないため、プロパティの使用方法を示すために便利です。 したがって、Windows を実行するコンピューターでインストールできます。 (ただし、Windows Vista およびそれ以降のオペレーティング システム、KSPROPERTY の完全なサポートを提供するだけ\_ジャック\_DESCRIPTION プロパティ)。このサンプルの詳細については、[Windows ドライバー キット サンプル](https://msdn.microsoft.com/library/windows/hardware/ff554118)を参照してください。
+「簡単」MSVAD サンプル ドライバー WDK に含まれて (サンプル ディレクトリ Src\\オーディオ\\Msvad\\単純な)、KSPROPERTY をサポートするために採用できる\_ジャック\_DESCRIPTION プロパティ。 このサンプル ドライバーは、実際のハードウェアが必要がないため、プロパティの使用方法を示すために便利です。 したがって、Windows を実行するコンピューターでインストールできます。 (ただし、Windows Vista およびそれ以降のオペレーティング システム、KSPROPERTY の完全なサポートを提供するだけ\_ジャック\_DESCRIPTION プロパティ)。このサンプルの詳細については、次を参照してください。 [Windows ドライバー キット サンプル](https://msdn.microsoft.com/library/windows/hardware/ff554118)します。
 
 用の単純な MSVAD サンプル トポロジ フィルターは、次の 3 つのブリッジのピンを定義します。 これらのピンは、次の表に一覧表示されます。
 
@@ -324,7 +324,7 @@ DEFINE_PCAUTOMATION_TABLE_PROP(AutomationTopoFilter, PropertiesTopoFilter);
 
 上記のコード例で、**ハンドラー**のメンバー、 [ **PCPROPERTY\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff537722)構造には、プロパティ ハンドラーへの関数ポインターが含まれています前の手順で Mintopo.cpp に追加されます。 プロパティ ハンドラーをヘッダー ファイルからアクセスできるようにするには挿入、 **extern**関数の宣言の PropertyHandler\_TopoFilter ヘッダー ファイルの先頭。
 
-Jack の description プロパティの詳細については、[動的オーディオ サブデバイスのジャック説明](jack-descriptions-for-dynamic-audio-subdevices.md)を参照してください。
+Jack の description プロパティの詳細については、次を参照してください。[動的オーディオ サブデバイスのジャック説明](jack-descriptions-for-dynamic-audio-subdevices.md)します。
 
  
 

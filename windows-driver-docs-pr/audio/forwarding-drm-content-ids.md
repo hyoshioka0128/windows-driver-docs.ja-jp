@@ -1,6 +1,6 @@
 ---
-title: DRM コンテンツ Id の転送
-description: DRM コンテンツ Id の転送
+title: DRM コンテンツ ID の転送
+description: DRM コンテンツ ID の転送
 ms.assetid: 62bcc44f-303a-4e72-8140-4b9bee59c252
 keywords:
 - デジタル権利管理の WDK オーディオ、セキュリティで保護されたデータのパス
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 327c4b69ffb80849e4f7ecd28a68ad7ad91019a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333659"
 ---
-# <a name="forwarding-drm-content-ids"></a>DRM コンテンツ Id の転送
+# <a name="forwarding-drm-content-ids"></a>DRM コンテンツ ID の転送
 
 
 ## <span id="forwarding_drm_content_ids"></span><span id="FORWARDING_DRM_CONTENT_IDS"></span>
@@ -82,7 +82,7 @@ DRMK は転送をセキュリティで保護されたデータのパスのアッ
 
 [**IDrmPort2::AddContentHandlers**](https://msdn.microsoft.com/library/windows/hardware/ff536575)
 
-詳細については、[DRM 関数](https://msdn.microsoft.com/library/windows/hardware/ff536356)を参照してください。
+詳細については、次を参照してください。 [DRM 関数](https://msdn.microsoft.com/library/windows/hardware/ff536356)します。
 
 わかりやすくするため、これまでの説明には、データ パス内の各モジュールが 1 つのソースからのストリームを受け入れるし、ダウン ストリーム モジュールは 1 つには、そのストリームの転送が想定しています。 実際には、モジュールは、2 つ以上の下位モジュールにストリーム転送できますが、各ダウン ストリームのモジュール 3 の転送関数のいずれかを呼び出すことによって最初に認証する必要があります。 同様に、モジュールがまとめて複数の入力ストリームで混在できますが、適切なレベルの混在の出力ストリームの保護を提供することで、入力ストリームのコンテンツの権利を尊重にする必要があります。 詳細については、の説明を参照してください、 [ **DrmCreateContentMixed** ](https://msdn.microsoft.com/library/windows/hardware/ff536348)関数[コンテンツの Id とコンテンツの権利](content-ids-and-content-rights.md)します。
 

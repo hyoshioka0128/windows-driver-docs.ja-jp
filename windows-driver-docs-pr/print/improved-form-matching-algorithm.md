@@ -1,6 +1,6 @@
 ---
-title: 改善されたフォームをアルゴリズムに一致します。
-description: 改善されたフォームをアルゴリズムに一致します。
+title: 改善されたフォーム照合アルゴリズム
+description: 改善されたフォーム照合アルゴリズム
 ms.assetid: 6b4f5ce5-c206-42ee-a707-3205f08e0ee0
 keywords:
 - 一致するアルゴリズムの WDK フォーム
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 980b11e86955f84f79e45260d9763606f75798da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392768"
 ---
-# <a name="improved-form-matching-algorithm"></a>改善されたフォームをアルゴリズムに一致します。
+# <a name="improved-form-matching-algorithm"></a>改善されたフォーム照合アルゴリズム
 
 
 Windows Vista で Unidrv プリンター ドライバーで、フォームの一致アルゴリズムが、最適なドライバーが要求された形式をサポートできるかどうかを決定するときに検索条件に一致するフォームにも向上します。

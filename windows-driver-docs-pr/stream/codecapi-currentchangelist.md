@@ -5,11 +5,11 @@ ms.assetid: f783857f-d1a1-417f-8f69-198b6f328a69
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04ae314793bae53c9805e7b632533d181ee092ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329588"
 ---
 # <a name="codecapicurrentchangelist"></a>CODECAPI\_CURRENTCHANGELIST
 
@@ -61,11 +61,11 @@ CODECAPI\_など変更前のプロパティ「セット」呼び出しでパラ�
 
 現在の変更された Guid の一覧がリセットされます。
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 **ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier), [CODECAPI\_ALLSETTINGS](codecapi-allsettings.md), [CODECAPI\_SETALLDEFAULTS](codecapi-setalldefaults.md)
 

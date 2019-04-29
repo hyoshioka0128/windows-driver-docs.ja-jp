@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a84d0b877af59b917b2a1bcbdf0b1d619ca64be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327882"
 ---
 # <a name="fsctlgetexternalbacking-control-code"></a>FSCTL\_取得\_外部\_バッキング制御コード
 
@@ -28,7 +28,7 @@ ms.locfileid: "56553874"
 
 この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
@@ -92,7 +92,7 @@ ms.locfileid: "56553874"
 
 更新するデータ ソースのバックアップ プロバイダーが、WIM ファイルの場合は、出力バッファーには、 [ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造が続く、 [**WIM\_プロバイダー\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632448)構造体。 *OutputBufferLength*以上である必要があります**sizeof**(WOF\_外部\_情報) + **sizeof**(WIM\_プロバイダー\_外部\_情報)。 バックアップ プロバイダーが、個別に圧縮されたファイルの場合は、出力バッファーに格納されます、 **WOF\_外部\_情報**構造が続く、 [**ファイル\_プロバイダー\_外部\_情報\_V1** ](https://msdn.microsoft.com/library/windows/hardware/mt426732)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

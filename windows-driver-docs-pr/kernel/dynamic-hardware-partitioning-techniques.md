@@ -1,6 +1,6 @@
 ---
-title: 動的なハードウェア パーティション分割手法
-description: 動的なハードウェア パーティション分割手法
+title: 動的ハードウェア パーティション分割の手法
+description: 動的ハードウェア パーティション分割の手法
 ms.assetid: 6a99e848-a0db-40e1-81b4-fd73a0e1c321
 keywords:
 - 動的なハードウェアの WDK をパーティション分割
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6a7dbf10715be1a1cd90568534a9bb95ff39d2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331259"
 ---
-# <a name="dynamic-hardware-partitioning-techniques"></a>動的なハードウェア パーティション分割手法
+# <a name="dynamic-hardware-partitioning-techniques"></a>動的ハードウェア パーティション分割の手法
 
 
 呼ばれますが、サーバーが実行されているときに、サーバーのハードウェア構成を変更する*動的なハードウェア パーティショニング*します。 動的なハードウェアのパーティション分割をサポートしているサーバーで、デバイス ドライバーを実行する場合、ドライバーでは、サーバーのハードウェア構成の動的変更をサポートする必要があります。

@@ -1,16 +1,16 @@
 ---
-Description: A USB function driver supports runtime idle detection by implementing USB selective suspend.
-title: USB drivers (WDF) でのセレクティブ サスペンドします。
+Description: USB 関数ドライバー サポート ランタイム アイドル検出 USB のセレクティブを実装することによって中断します。
+title: USB ドライバーにおけるセレクティブ サスペンド (WDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be1759f7aee84db8120eb104e491fd3e3fbcd1d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331329"
 ---
-# <a name="selective-suspend-in-usb-drivers-wdf"></a>USB drivers (WDF) でのセレクティブ サスペンドします。
+# <a name="selective-suspend-in-usb-drivers-wdf"></a>USB ドライバーにおけるセレクティブ サスペンド (WDF)
 
 
 USB 関数ドライバー サポート ランタイム アイドル検出 USB のセレクティブを実装することによって中断します。 ここでは、Windows® Driver Foundation (WDF) に基づいている USB ドライバーの選択的に実装する方法についてドライバー開発者向けの中断のコンテンツします。
@@ -90,7 +90,7 @@ USB ドライバー サポート オプションを選択では、中断し、�
  
 
 ## <a name="related-topics"></a>関連トピック
-[Windows Driver Frameworks (WDF)](https://go.microsoft.com/fwlink/p/?linkid=53698)  
+[Windows Driver Framework (WDF)](https://go.microsoft.com/fwlink/p/?linkid=53698)  
 [プラグ アンド プレイ - アーキテクチャとドライバー サポート](https://go.microsoft.com/fwlink/p/?linkid=320985)  
 [KMDF ドライバーでの PnP と電源管理](https://go.microsoft.com/fwlink/p/?linkid=320986)  
 [WDF のドライバーが電源管理対象の I/O キューを使用する場合](https://go.microsoft.com/fwlink/p/?linkid=320987)  

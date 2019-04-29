@@ -1,6 +1,6 @@
 ---
-title: 既定のサウンドのサンプル セット
-description: 既定のサウンドのサンプル セット
+title: 既定のサウンド サンプル セット
+description: 既定のサウンド サンプル セット
 ms.assetid: 9ffcb7ef-173f-4db9-85e8-2af7eb64cb75
 keywords:
 - ハードウェア アクセラレータ WDK オーディオ
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b2ac801dd1e954468bd5954968a890921ed2e64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333810"
 ---
-# <a name="default-sound-sample-sets"></a>既定のサウンドのサンプル セット
+# <a name="default-sound-sample-sets"></a>既定のサウンド サンプル セット
 
 
 ## <span id="default_sound_sample_sets"></span><span id="DEFAULT_SOUND_SAMPLE_SETS"></span>

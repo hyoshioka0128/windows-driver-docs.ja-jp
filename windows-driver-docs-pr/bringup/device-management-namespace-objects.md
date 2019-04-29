@@ -1,17 +1,17 @@
 ---
-title: デバイス管理の名前空間のオブジェクト
+title: デバイス管理用の名前空間オブジェクト
 description: ACPI 5.0 仕様には、いくつかの種類のデバイスを管理するために使用する名前空間オブジェクトが定義されています。
 ms.assetid: 26C3312D-B1B0-4843-BF4E-1B03630C0BDD
 ms.date: 06/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ad7dd987f5988c45fd4486c854b086090fad601c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328059"
 ---
-# <a name="device-management-namespace-objects"></a>デバイス管理の名前空間のオブジェクト
+# <a name="device-management-namespace-objects"></a>デバイス管理用の名前空間オブジェクト
 
 
 [ACPI 5.0 仕様](https://www.uefi.org/specifications)いくつかの種類のデバイスを管理するために使用する名前空間オブジェクトを定義します。 たとえば、デバイスの id オブジェクトには、子デバイスのハードウェアの列挙をサポートしていない、I2C などのバスに接続するデバイスの id 情報が含まれます。 その他の種類の名前空間のオブジェクトでは、システム リソースを指定、デバイス依存関係を記述、およびデバイスを無効にすることができますを示すことができます。
@@ -50,7 +50,7 @@ ACPI のデバイスを特定するための最小要件は、ハードウェア
 
 Microsoft には、Windows に付属して受信トレイのドライバーと互換性のあるデバイスのベンダー ID"PNP"は予約されています。 Windows では、デバイスの Windows で提供されるドライバーの読み込みに使用できるこのベンダー ID を使用するためのデバイス id の数を定義します。 別のオブジェクトを互換性のある ID (\_CID) オブジェクト、これらの識別子を返すために使用します。 Windows は、ハードウェア Id を常に優先 (によって返される\_HID) 互換性 Id 経由で (によって返される\_CID) に一致して、ドライバーの INF の選択。 この設定により、ベンダー提供のデバイス固有ドライバーが利用できない場合、既定のドライバーとして扱う場合に、Windows で提供されるドライバーです。 次の表に、互換性 Id は、SoC プラットフォームで使用する新しく作成されます。
 
-| 互換性のある ID | 説明                                           |
+| 互換性 ID | 説明                                           |
 |---------------|-------------------------------------------------------|
 | PNP0C40       | Windows と互換性のあるボタン配列                       |
 | PNP0C50       | HID-over-I²C 準拠しているデバイス                         |
@@ -88,7 +88,7 @@ ACPI 5.0 の定義、 \_SUB、 \_HRV、および\_CLS オブジェクトと共�
 
 名前空間で識別されるデバイスごとに、デバイスによって消費されるシステム リソース (メモリ アドレス、割り込み、) も報告する必要が現在のリソースの設定によって (\_CRS) オブジェクト。 複数の可能なリソース構成のレポート (\_PR) とデバイスのリソースの構成を変更するためのコントロール (\_SRS) はサポートされているが、省略可能。
 
-新しい SoC プラットフォームは、GPIO、デバイスが使用できるシンプルな周辺機器バス (SPB) リソースです。 詳細については、[一般的な目的 I/O (GPIO)](general-purpose-i-o--gpio-.md)と[単純な周辺機器バス (SPB)](simple-peripheral-bus--spb-.md)を参照してください。
+新しい SoC プラットフォームは、GPIO、デバイスが使用できるシンプルな周辺機器バス (SPB) リソースです。 詳細については、次を参照してください。[一般的な目的 I/O (GPIO)](general-purpose-i-o--gpio-.md)と[単純な周辺機器バス (SPB)](simple-peripheral-bus--spb-.md)します。
 
 また新しい SoC プラットフォームでは、汎用的な固定 DMA 記述子です。 FixedDMA 記述子は、多数のシステム デバイスによって、DMA コント ローラーのハードウェアの共有をサポートします。 FixedDMA 記述子には、特定のシステム デバイスに静的に割り当てられている DMA リソース (要求行とチャネル レジスタ) が一覧表示します。 詳細については、セクション、19.5.49"FixedDMA (DMA リソース記述子マクロ)"を参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
 
@@ -98,7 +98,7 @@ ACPI 5.0 の定義、 \_SUB、 \_HRV、および\_CLS オブジェクトと共�
 
 さらに、ACPI ASL を使用して、デバイスの dock の一部として削除されるなど、プラットフォームでのイベントのドライバーを通知に通知メカニズムを提供します。 一般に、ACPI デバイスの状態が変更されたときに、ファームウェア実行する必要あります「デバイスの確認」または「チェックをバス」の通知がデバイスを再列挙を再評価するために Windows の\_の STA ACPI の通知については、5.6.6、「デバイス オブジェクトの通知」のセクションを参照して、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
 
-## <a name="enabledisable"></a>有効/無効にします。
+## <a name="enabledisable"></a>有効化/無効化
 
 
 Windows のプラグ アンド プレイの一環として、ドライバーがあることのできる動的に有効になっており、ユーザー、または (たとえば、ドライバーを更新する) のシステムを無効になっています。
@@ -123,7 +123,7 @@ SoC のデバイスでは、SoC チップが統合され、削除することは
 
 デバイス ドライバーの間はソフトウェアの依存関係はできますがあります。 これらの依存関係も記載されている必要があります。 詳しくは、次のリソースをご覧ください。
 
--   ドライバーの読み込み順序の依存関係は、[ドライバーの読み込み順序を指定する](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)を参照してください。
+-   ドライバーの読み込み順序の依存関係は、次を参照してください。[ドライバーの読み込み順序を指定する](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)します。
 -   電源関係の依存関係を参照してください。
 
     -   [**IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)ルーチン (電源関係を確立することをトリガーする呼び出し、 **IoInvalidateDeviceRelations**ルーチン、**デバイス\_の関係\_入力**列挙型値**PowerRelations**)。

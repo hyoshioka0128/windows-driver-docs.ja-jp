@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bb47ba37497f378082b855452ab8db79f334df3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330257"
 ---
 # <a name="inf-ini2reg-directive"></a>INF Ini2Reg ディレクティブ
 
@@ -96,7 +96,7 @@ INI ファイル、レジストリにコピーするには、キーの名前を�
 
 INF ファイルにはする必要がありますが含まれていない場合は、INF ファイルを使用するには、Windows XP および以降のバージョンの Windows デバイスをインストールすると、 **Ini2Reg**ディレクティブ。 INF ファイルが含まれている**Ini2Reg**ディレクティブに合格しない["Windows 用に設計されています"のロゴ テスト](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)、デジタル署名は表示されず、そのため、Windows によって信頼されます (を参照してください[方法Windows ドライバーを選択します。](how-setup-selects-drivers.md))。
 
-各*セクション レジストリ ini*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各*セクション レジストリ ini*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 完全なパスを提供する、INF、指定された*ini ファイル*配布メディアの次のいずれかの。
 

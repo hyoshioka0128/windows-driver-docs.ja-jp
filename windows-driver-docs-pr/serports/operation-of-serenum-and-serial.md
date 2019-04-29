@@ -1,6 +1,6 @@
 ---
-title: Serenum およびシリアルの操作
-description: Serenum およびシリアルの操作
+title: Serenum とシリアルの操作
+description: Serenum とシリアルの操作
 ms.assetid: d14b6655-c031-42dd-921e-b6a09afde86d
 keywords:
 - シリアル ドライバー WDK、動作
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78c8db2faeeada5f76c39429fad50a1cab12c5c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331120"
 ---
-# <a name="operation-of-serenum-and-serial"></a>Serenum およびシリアルの操作
+# <a name="operation-of-serenum-and-serial"></a>Serenum とシリアルの操作
 
 
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfd95af57956eef7cef81fe1a112aaaaf1af2543
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391825"
 ---
 # <a name="verifyisirqlpassivelevel-macro"></a>VERIFY_IS_IRQL_PASSIVE_LEVEL マクロ
 
@@ -48,9 +48,9 @@ VOID VERIFY_IS_IRQL_PASSIVE_LEVEL(void);
 -   **VerifierOn** 0 以外の値に設定されていると**DbgBreakOnError**が設定されていません。
 -   ドライバーの検証が有効になっている、ドライバーは、フレームワーク バージョン 1.9 以降でビルドされたあり**VerifierOn**も**DbgBreakOnError**設定されます。
 
-ドライバーをデバッグする際のレジストリ エントリの詳細については、[Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)を参照してください。
+ドライバーをデバッグする際のレジストリ エントリの詳細については、次を参照してください。 [Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)します。
 
-ドライバーのデバッグの詳細については、[KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。
+ドライバーのデバッグの詳細については、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
 
 <a name="examples"></a>例
 --------

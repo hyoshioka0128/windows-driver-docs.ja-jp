@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba4df830b50bebf7b832799734dcff4c7fed6424
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391110"
 ---
 # <a name="wiadpadevicetime"></a>WIA\_DPA\_デバイス\_時間
 
@@ -35,7 +35,7 @@ WIA\_DPA\_デバイス\_時のプロパティには、デバイスに格納さ�
 
 アクセス権:読み取り/書き込みまたは読み取り専用
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ときに、WIA\_DPA\_デバイス\_時のプロパティは読み取り専用で、ミニドライバーは、デバイスの現在の時刻を確認する必要があり、現在の時刻を常に返す必要があります。 このプロパティは、内部のクロックのデバイスでのみサポートされます。 デバイスの時計を設定できますが場合、このプロパティは、読み取り/書き込みです。それ以外の場合、読み取り専用です。 WIA デバイスは、(これは、Microsoft Windows SDK ドキュメントで説明されている)、SYSTEMTIME 構造体の時間を報告します。

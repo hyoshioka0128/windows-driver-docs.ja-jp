@@ -1,17 +1,17 @@
 ---
-title: バッテリのデバイスに固有のメソッド
+title: バッテリーのデバイス固有のメソッド
 description: このトピックでは、_DSM control メソッドとパッシブの熱バッテリ管理用のパラメーターについて説明します。
 ms.assetid: 622803F4-2548-4E8A-A330-179ABDF374AD
 ms.date: 05/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d31df93181b72a9c42767fe2e494ea5c5a8962e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328104"
 ---
-# <a name="battery-device-specific-method"></a>バッテリのデバイスに固有のメソッド
+# <a name="battery-device-specific-method"></a>バッテリーのデバイス固有のメソッド
 
 
 Microsoft の定義、プラットフォームによって、バッテリのパッシブの温度管理をサポートするために、\_熱の調整、プラットフォーム ファームウェアとの通信に DSM メソッドが、バッテリの熱のゾーンでセットを制限します。
@@ -23,7 +23,7 @@ Microsoft の定義、プラットフォームによって、バッテリのパ�
 
 \_バッテリの充電熱制限関数の DSM 制御メソッドのパラメーターは、次のようにします。
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>引数
 
 -   **Arg0:** UUID = 4c2067e3-887d-475c-9720-4af1d3ed602e
 -   **Arg1:** リビジョン = 0

@@ -1,18 +1,18 @@
 ---
-title: 記憶域クラス メモリの用語集
+title: 記憶域クラス メモリ用語集
 description: 用語ページ
 Robots: noindex, nofollow
 ms.assetid: 6897E3E2-9F93-4100-BB99-1B224AFE2B68
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 11419c1596fdc032e8506cada6f85e2be8bd1fa2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390908"
 ---
-# <a name="storage-class-memory-glossary"></a>記憶域クラス メモリの用語集
+# <a name="storage-class-memory-glossary"></a>記憶域クラス メモリ用語集
 
 
 ## <a name="span-idstartswithaspanspan-idstartswithaspanspan-idstartswithaspana"></a><span id="starts_with_A"></span><span id="starts_with_a"></span><span id="STARTS_WITH_A"></span>A

@@ -1,6 +1,6 @@
 ---
-title: HD オーディオ アーキテクチャの UAA 拡張機能
-description: HD オーディオ アーキテクチャの UAA 拡張機能
+title: HD オーディオ アーキテクチャに対する UAA 拡張機能
+description: HD オーディオ アーキテクチャに対する UAA 拡張機能
 ms.assetid: 895dc7b6-f484-4be2-8f43-112254d6ef4b
 keywords:
 - HD オーディオ、ユニバーサル オーディオのアーキテクチャ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1da9370a41fad1c787d476f6a0b96b0fcf52e242
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328526"
 ---
-# <a name="uaa-extensions-to-the-hd-audio-architecture"></a>HD オーディオ アーキテクチャの UAA 拡張機能
+# <a name="uaa-extensions-to-the-hd-audio-architecture"></a>HD オーディオ アーキテクチャに対する UAA 拡張機能
 
 
 UAA 準拠するハードウェア コント ローラーは次の変更を実装する必要があります、 *Intel 高度な定義オーディオ仕様*:

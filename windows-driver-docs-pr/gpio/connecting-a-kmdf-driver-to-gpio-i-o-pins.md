@@ -1,17 +1,17 @@
 ---
-title: KMDF ドライバーを GPIO I/O ピンに接続します。
+title: KMDF ドライバーの GPIO I/O ピンへの接続
 description: どの周辺機器のカーネル モード ドライバー フレームワーク (KMDF) ドライバーでは、GPIO I/O リソースの説明を取得できます。
 ms.assetid: 02F6431C-7B55-4DFB-9792-4A72F0268C76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf771912ecf322e67b2e6e697b2f73740312e76
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326164"
 ---
-# <a name="connecting-a-kmdf-driver-to-gpio-io-pins"></a>KMDF ドライバーを GPIO I/O ピンに接続します。
+# <a name="connecting-a-kmdf-driver-to-gpio-io-pins"></a>KMDF ドライバーの GPIO I/O ピンへの接続
 
 
 GPIO I/O リソース、一連の 1 つまたは複数の GPIO ピンを入力またはデータのデータの出力として構成されます。 これらのピンに物理的に接続するための周辺機器のドライバーでは、オペレーティング システムから対応する GPIO I/O リソースを取得します。 周辺機器のデバイス ドライバーは、このリソースの GPIO ピンへの接続を開きし、この接続を表すハンドルを I/O 要求を送信します。

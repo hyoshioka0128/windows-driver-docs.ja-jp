@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ca03126ac57aa6b9a45056e50f2eb7a1cee3f72a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334727"
 ---
 # <a name="attach-attach-to-process"></a>.attach (プロセスにアタッチ)
 
@@ -99,7 +99,7 @@ ms.locfileid: "56558867"
 
 新しいプロセスにアタッチする、既存のすべてのターゲットを固定は、使用する場合、 **-f**オプション。 たとえば、可能性があります、クライアント アプリケーションでのクラッシュのデバッグありするクライアント アプリケーションを実行できるようにすることがなく、サーバー プロセスにアタッチします。
 
-場合、 **-premote**オプションを使用すると、新しいプロセスは、新しいシステムの一部になります。 詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+場合、 **-premote**オプションを使用すると、新しいプロセスは、新しいシステムの一部になります。 詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
  
 

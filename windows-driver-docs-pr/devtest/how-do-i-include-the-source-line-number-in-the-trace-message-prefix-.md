@@ -5,11 +5,11 @@ ms.assetid: 07fbdd27-59a9-4fe1-8662-6c2489efdb7f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf5bde84c25e0936ad7ccdd4a47eb8a2d564f65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329880"
 ---
 # <a name="how-to-include-the-source-line-number-in-the-trace-message-prefix"></a>トレース メッセージのプレフィックスにソースの行番号を含める方法
 
@@ -43,4 +43,4 @@ set TRACE\_FORMAT\_PREFIX="\[%9!d!\]%8!04X!.%3!04X!::%4!s! \[%1!s!\](**%!COMPNAM
 
 \[*CPUNumber*\]*ProcessID*.*ThreadID*::*SystemTime* \[ *MessageGUIDFriendlyName*\](*ComponentName*:*FunctionName*:*Filename*\_*LineNumber*)
 
-詳細の例では、次を参照してください。[例 7。トレース メッセージのプレフィックスをカスタマイズする](example-7--customizing-the-trace-message-prefix.md)します。 トレース メッセージのプレフィックスに含まれるすべての定義済み変数の一覧では、[トレース メッセージのプレフィックス](trace-message-prefix.md)を参照してください。
+詳細の例では、次を参照してください。[例 7。トレース メッセージのプレフィックスをカスタマイズする](example-7--customizing-the-trace-message-prefix.md)します。 トレース メッセージのプレフィックスに含まれるすべての定義済み変数の一覧では、次を参照してください。[トレース メッセージのプレフィックス](trace-message-prefix.md)します。

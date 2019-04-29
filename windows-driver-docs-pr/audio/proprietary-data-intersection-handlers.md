@@ -1,6 +1,6 @@
 ---
-title: 独自のデータの積集合のハンドラー
-description: 独自のデータの積集合のハンドラー
+title: 独自のデータ交差ハンドラー
+description: 独自のデータ交差ハンドラー
 ms.assetid: 8ed497d3-2344-4979-9859-e66a4713e6c5
 keywords:
 - 交差部分のデータ ハンドラー WDK オーディオ、専用
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20503c2ac74e39556e569c0d2023c9d457c8708c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328734"
 ---
-# <a name="proprietary-data-intersection-handlers"></a>独自のデータの積集合のハンドラー
+# <a name="proprietary-data-intersection-handlers"></a>独自のデータ交差ハンドラー
 
 
 ## <span id="proprietary_data_intersection_handlers"></span><span id="PROPRIETARY_DATA_INTERSECTION_HANDLERS"></span>

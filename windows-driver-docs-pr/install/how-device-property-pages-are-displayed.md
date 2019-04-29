@@ -5,11 +5,11 @@ ms.assetid: 14967f38-2f46-475d-a062-afcb7bd3042b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59896b3cf839ece04b087989455de5579c662722
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325809"
 ---
 # <a name="how-device-property-pages-are-displayed"></a>デバイスのプロパティ ページを表示する方法
 

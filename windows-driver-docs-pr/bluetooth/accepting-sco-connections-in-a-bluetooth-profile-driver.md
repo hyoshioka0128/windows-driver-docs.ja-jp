@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8637ca3f86556e94a1cc8b047abc01fdc9e5f925
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328345"
 ---
 # <a name="accepting-sco-connections-in-a-bluetooth-profile-driver"></a>Bluetooth プロファイル ドライバーでの SCO 接続の受け入れ
 
@@ -37,7 +37,7 @@ Server プロファイルのドライバーでは、リモートの Bluetooth �
 
 SCO 接続のリモート デバイスの通知の受信を停止すると、プロファイルのドライバーが[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_SCO\_登録解除\_サーバー** ](https://msdn.microsoft.com/library/windows/hardware/ff536630)プロファイル ドライバーが処理するときに、サーバーの登録を解除する要求[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)プラグ アンド プレイでは、通知を削除します。
 
-通知とコールバック関数の詳細については、[Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)を参照してください。
+通知とコールバック関数の詳細については、次を参照してください。 [Bluetooth イベント通知のサポート](supporting-bluetooth-event-notifications.md)します。
 
  
 

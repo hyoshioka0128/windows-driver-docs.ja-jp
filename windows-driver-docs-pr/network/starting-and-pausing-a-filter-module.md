@@ -5,11 +5,11 @@ ms.assetid: 7c12846a-0934-4397-b236-487a812a01f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f099383eb8281263018f7846634a7567b8012e1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390627"
 ---
 # <a name="starting-and-pausing-a-filter-module"></a>フィルター モジュールの起動と一時停止
 
@@ -17,7 +17,7 @@ ms.locfileid: "56581955"
 
 
 
-NDIS には、たとえばプラグ アンド プレイ操作を妨げる可能性があるデータ フロー、追加するドライバー スタック内のフィルター モジュールを削除または停止するか、新しいバインディングを追加する、フィルター モジュールが一時停止します。 実行中のドライバー スタックを変更する方法の詳細については、[変更を実行しているドライバー スタック](modifying-a-running-driver-stack.md)を参照してください。
+NDIS には、たとえばプラグ アンド プレイ操作を妨げる可能性があるデータ フロー、追加するドライバー スタック内のフィルター モジュールを削除または停止するか、新しいバインディングを追加する、フィルター モジュールが一時停止します。 実行中のドライバー スタックを変更する方法の詳細については、次を参照してください。[変更を実行しているドライバー スタック](modifying-a-running-driver-stack.md)します。
 
 NDIS フィルター モジュールからの起動、 *Paused*状態。 フィルター モジュールが入力、 *Paused*アタッチ操作が完了した後、または一時停止操作が完了した後に状態。
 

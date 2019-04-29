@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1423d301b123deded0b7f0dc972049b770c085c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333063"
 ---
 # <a name="kspropertyaudiodynamicrange"></a>KSPROPERTY\_オーディオ\_動的\_範囲
 
@@ -42,16 +42,16 @@ KSPROPERTY\_オーディオ\_動的\_RANGE プロパティは、ラウドネス�
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537085" data-raw-source="[&lt;strong&gt;KSAUDIO_DYNAMIC_RANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537085)"><strong>KSAUDIO_DYNAMIC_RANGE</strong></a></p></td>
@@ -67,14 +67,14 @@ KSPROPERTY\_オーディオ\_動的\_RANGE プロパティは、ラウドネス�
 
 KSPROPERTY\_オーディオ\_動的\_範囲プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 既定では、値によって、 **QuietCompression**と**LoudCompression** 、KSAUDIO のメンバー\_動的\_構造体の範囲は 0% に設定されます。 これには、オーディオ ストリームの完全なダイナミック レンジが生成されます。 ミニポート ドライバーは、データ パスを持つノードを含む暗証番号 (pin) をインスタンス化時に、既定値にプロパティを設定します。
 
 一部のデバイスを変更できない場合があります**QuietCompression**と**LoudCompression**します。 クライアントが、デバイスがサポートされていない値を変更しようとすると、ミニポート ドライバーはエラーを返す必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

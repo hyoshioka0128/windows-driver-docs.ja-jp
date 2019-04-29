@@ -5,11 +5,11 @@ ms.assetid: 7ECE8006-3181-451C-B047-A3D767A7B98A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 423c229b5b0da49df7a3ab9f5a8c948fff12d88c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328536"
 ---
 # <a name="usb-audio-class-system-driver-usbaudiosys"></a>USB オーディオ クラス システム ドライバー (Usbaudio.sys)
 
@@ -19,7 +19,7 @@ USB オーディオ クラスのシステム ドライバー (Usbaudio.sys) で�
 ## <span id="usbaudio_class_system_driver"></span><span id="USBAUDIO_CLASS_SYSTEM_DRIVER"></span>
 
 
-オーディオ デバイス仕様 (リリース 1.0) の USB デバイス クラス定義は、 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780) web サイト。 Usbaudio.sys では、USB オーディオ仕様で説明されている機能のサブセットをサポートしています。 Usbaudio.sys、に加えていくつかその他のカーネル モード オーディオ コンポーネントが Windows Driver Model (WDM) で。 詳細については、[カーネル モード WDM オーディオ コンポーネント](kernel-mode-wdm-audio-components.md)を参照してください。
+オーディオ デバイス仕様 (リリース 1.0) の USB デバイス クラス定義は、 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780) web サイト。 Usbaudio.sys では、USB オーディオ仕様で説明されている機能のサブセットをサポートしています。 Usbaudio.sys、に加えていくつかその他のカーネル モード オーディオ コンポーネントが Windows Driver Model (WDM) で。 詳細については、次を参照してください。[カーネル モード WDM オーディオ コンポーネント](kernel-mode-wdm-audio-components.md)します。
 
 Windows 98 Usbaudio.sys のスピーカーおよびマイクなどの USB デバイスのサポートが導入されました。 Windows me で MIDI デバイスのサポートが追加されました
 

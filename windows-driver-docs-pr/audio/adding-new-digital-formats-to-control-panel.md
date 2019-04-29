@@ -1,17 +1,17 @@
 ---
-title: 新しいデジタルを追加するコントロール パネルに書式設定します。
-description: 新しいデジタルを追加するコントロール パネルに書式設定します。
+title: コントロール パネルに新しいデジタル形式を追加する
+description: コントロール パネルに新しいデジタル形式を追加する
 ms.assetid: ce36738c-6471-4b68-82ad-80b8509c052b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f063c2d35dc62e8d9310a0adbfdc8b2b4f58908
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325996"
 ---
-# <a name="adding-new-digital-formats-to-control-panel"></a>新しいデジタルを追加するコントロール パネルに書式設定します。
+# <a name="adding-new-digital-formats-to-control-panel"></a>コントロール パネルに新しいデジタル形式を追加する
 
 
 Windows Vista および以降のバージョンの Windows では、SPDIF 経由でサード パーティ製のデジタル オーディオ形式そのストリームを開発し、コントロール パネルの この形式を利用できます。

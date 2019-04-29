@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f252d61cb1d699a0804e957d0a23726ccd404bbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330389"
 ---
 # <a name="body-element"></a>本文要素
 
@@ -50,7 +50,7 @@ ms.locfileid: "56578906"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -59,14 +59,14 @@ ms.locfileid: "56578906"
 <tr class="odd">
 <td><p><strong>ResourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
 <p>通知メッセージを表示、イベント本文テキストを含んでいる DLL のリソースを指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p></p>
 <p>イベント通知メッセージの本文に表示するテキストを指定する必須の属性。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
 </tr>
@@ -124,7 +124,7 @@ ms.locfileid: "56578906"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 リソース DLL から読み込まれた本文が割合 (%) を含めることができます。指定されたテキスト文字列で置き換えられるタグ、 [**パラメーター** ](parameter.md)子要素。
@@ -147,7 +147,7 @@ ms.locfileid: "56578906"
 -   ユーザーに関連した方法でイベントについて説明します。 通知メッセージは、関連するは、ユーザーはタスクを実行または通知の結果としての動作を変更する可能性がある場合です。
 -   技術的な問題の観点からではなく、ユーザーの目的の観点からのイベントについて説明します。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例を使用する方法を示しています、**本文**要素。

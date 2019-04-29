@@ -1,17 +1,17 @@
 ---
-title: Bluetooth Core ドライバー レイヤーとサポートされている電源遷移
+title: Bluetooth コア ドライバー レイヤーとサポートされている電源遷移
 description: 次の表では、Bluetooth core のドライバーがサポートするデバイスとシステムの電源状態をまとめたものです。
 ms.assetid: 25A3598E-51A7-4B16-92F7-9D2F39177946
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58fbf752748e57c0fe0017d902d942474d0af1e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328322"
 ---
-# <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>Bluetooth Core ドライバー レイヤーとサポートされている電源遷移
+# <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>Bluetooth コア ドライバー レイヤーとサポートされている電源遷移
 
 
 次の表では、Bluetooth core のドライバーがサポートするデバイスとシステムの電源状態をまとめたものです。 「スリープ」状態に使用されるスループットは、このセクションと、Bluetooth 無線の内部設定と構成は永続的状態のサブトピックを非常に低電力について説明します。

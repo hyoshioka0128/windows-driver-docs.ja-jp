@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_DISCONNECT_COMPLETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 329daf40c8c6410dfafcaee5e59812ec629f9885
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330555"
 ---
 # <a name="ndisstatuswdiindicationdisconnectcomplete"></a>NDIS\_状態\_WDI\_INDICATION\_切断\_完了
 

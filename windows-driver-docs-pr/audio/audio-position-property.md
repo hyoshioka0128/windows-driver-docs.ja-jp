@@ -19,11 +19,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 230bad5bd1ba68780c944e1bd57283c41c164221
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331435"
 ---
 # <a name="audio-position-property"></a>オーディオの位置プロパティ
 
@@ -52,7 +52,7 @@ WaveCyclic または WavePci ポート ドライバーがの再生位置を追�
 
     既定では、毎回 WavePci のミニポート ドライバー呼び出し[ **IPortWavePciStream::GetMapping** ](https://msdn.microsoft.com/library/windows/hardware/ff536909) (クライアント バッファーの一部) の新しいマッピングと呼び出しの取得に成功すると、書き込み位置の進歩新しいマッピングの最後のバイトの (クライアントのバッファー) の場所。
 
-    WavePci ミニポート ドライバーでは、プリフェッチ ポート ドライバーにオフセットを指定することで、既定の動作をオーバーライドする場合は常に、現在の書き込み位置を現在の再生位置とプリフェッチ オフセットの合計を等しくします。 詳細については、[プリフェッチ オフセット](prefetch-offsets.md)を参照してください。
+    WavePci ミニポート ドライバーでは、プリフェッチ ポート ドライバーにオフセットを指定することで、既定の動作をオーバーライドする場合は常に、現在の書き込み位置を現在の再生位置とプリフェッチ オフセットの合計を等しくします。 詳細については、次を参照してください。[プリフェッチ オフセット](prefetch-offsets.md)します。
 
 キャプチャのストリームの場合、 **PlayOffset**メンバーは、ストリームのレコードの位置を指定し、 **WriteOffset**メンバーが、ストリームの読み取り位置を指定します。 次の図は、レコードを表示し、クライアント バッファー内の位置を読み取る。
 

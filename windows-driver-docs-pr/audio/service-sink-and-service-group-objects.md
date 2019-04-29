@@ -1,6 +1,6 @@
 ---
-title: サービスのシンクとサービスのグループ オブジェクト
-description: サービスのシンクとサービスのグループ オブジェクト
+title: サービス シンクとサービスのグループのオブジェクト
+description: サービス シンクとサービスのグループのオブジェクト
 ms.assetid: 00e17e01-8889-4fae-a0ff-e110d7a9b21e
 keywords:
 - ヘルパー オブジェクト WDK オーディオ、サービス シンク オブジェクト
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d74c1d4e44e8c0721c586fe1499bce0c56735fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328649"
 ---
-# <a name="service-sink-and-service-group-objects"></a>サービスのシンクとサービスのグループ オブジェクト
+# <a name="service-sink-and-service-group-objects"></a>サービス シンクとサービスのグループのオブジェクト
 
 
 ## <span id="service_sink_and_service_group_objects"></span><span id="SERVICE_SINK_AND_SERVICE_GROUP_OBJECTS"></span>

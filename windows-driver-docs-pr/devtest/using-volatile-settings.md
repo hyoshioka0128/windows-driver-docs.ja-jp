@@ -1,6 +1,6 @@
 ---
-title: 揮発性の設定を使用します。
-description: 揮発性の設定を使用します。
+title: 揮発性の設定の使用
+description: 揮発性の設定の使用
 ms.assetid: 16fb8c2a-60d8-4c0a-879d-447a1cda5415
 keywords:
 - Driver Verifier の WDK、揮発性の設定
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb1aa9c074a96f4da35f7e0b366c7dbfa43117c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326182"
 ---
-# <a name="using-volatile-settings"></a>揮発性の設定を使用します。
+# <a name="using-volatile-settings"></a>揮発性の設定の使用
 
 
 ## <span id="ddk_using_volatile_settings_tools"></span><span id="DDK_USING_VOLATILE_SETTINGS_TOOLS"></span>

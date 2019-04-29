@@ -1,17 +1,17 @@
 ---
-title: NVM のしきい値 (関数インデックス 5) を取得します。
+title: NVM しきい値の取得 (関数インデックス 5)
 description: この関数は NVDIMM N. 問題がある場合はヒットまたは群を抜いて、警告およびエラーのしきい値の有効期間の割合を返します
 ms.assetid: E243AF8B-D70A-4FEF-BB88-ED78C4883D42
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9de60d95aeb322250c93a840d96a3e8ebfd27710
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330049"
 ---
-# <a name="get-nvm-thresholds-function-index-5"></a>NVM のしきい値 (関数インデックス 5) を取得します。
+# <a name="get-nvm-thresholds-function-index-5"></a>NVM しきい値の取得 (関数インデックス 5)
 
 
 この関数は NVDIMM N. 問題がある場合はヒットまたは群を抜いて、警告およびエラーのしきい値の有効期間の割合を返します
@@ -47,7 +47,7 @@ ms.locfileid: "56529675"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>

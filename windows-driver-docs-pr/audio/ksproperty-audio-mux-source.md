@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8454969ac993c5dbb9d41526bc920688aa37109c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332988"
 ---
 # <a name="kspropertyaudiomuxsource"></a>KSPROPERTY\_オーディオ\_MUX\_ソース
 
@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_MUX\_ソース プロパティの要求がステー
 <a name="remarks"></a>注釈
 -------
 
-暗証番号 (pin) の ID は、MUX ノード上の論理ピンを識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)を参照してください。
+暗証番号 (pin) の ID は、MUX ノード上の論理ピンを識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
 
 <a name="requirements"></a>要件
 ------------

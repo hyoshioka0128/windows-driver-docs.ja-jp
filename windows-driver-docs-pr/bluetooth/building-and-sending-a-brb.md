@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03c883b19f878fd37a636282eb1d512eb98c3972
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328249"
 ---
 # <a name="building-and-sending-a-brb"></a>BRB の構築と送信
 
@@ -24,11 +24,11 @@ ms.locfileid: "57350183"
 
 ### <a name="span-idtobuildandsendabrbspanspan-idtobuildandsendabrbspanto-build-and-send-a-brb"></a><span id="to_build_and_send_a_brb"></span><span id="TO_BUILD_AND_SEND_A_BRB"></span>構築し、BRB の送信
 
-1.  IRP を割り当てます。 Irp を使用する方法の詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)を参照してください。
+1.  IRP を割り当てます。 Irp を使用する方法の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
 
 2.  BRB を割り当てます。 BRBs を割り当てるには、呼び出し、 [ **BthAllocateBrb** ](https://msdn.microsoft.com/library/windows/hardware/ff536634)プロファイル ドライバーで使用するため、Bluetooth ドライバー スタックをエクスポートする関数。 ポインターを取得する、 *BthAllocateBrb*関数を参照してください[Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
 
-3.  BRB のパラメーターを初期化します。 各 BRB では、対応する構造体を使用します。 使用目的に従って構造体のメンバーを設定します。 BRBs と、対応する構造の一覧については、[Bluetooth ドライバー スタックを使用して](using-the-bluetooth-driver-stack.md)を参照してください。
+3.  BRB のパラメーターを初期化します。 各 BRB では、対応する構造体を使用します。 使用目的に従って構造体のメンバーを設定します。 BRBs と、対応する構造の一覧については、次を参照してください。 [Bluetooth ドライバー スタックを使用して](using-the-bluetooth-driver-stack.md)します。
 
 4.  IRP のパラメーターを初期化します。 設定、 **MajorFunction** IRP に IRP のメンバー\_MJ\_内部\_デバイス\_コントロール。 設定、 **Parameters.DeviceIoControl.IoControlCode** IOCTL メンバー\_内部\_両方\_送信\_BRB します。 設定、 **Parameters.Others.Argument1** BRB をポイントするメンバー。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1ac6cd84875d3e93fb22f5b9a4524d5141eb000
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331186"
 ---
 # <a name="attributes-for-device-fonts"></a>デバイス フォントの属性
 
@@ -73,7 +73,7 @@ ms.locfileid: "57464058"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
 ### <a href="" id="note-on--lookaheadregion"></a>Note on \*LookAheadRegion
 

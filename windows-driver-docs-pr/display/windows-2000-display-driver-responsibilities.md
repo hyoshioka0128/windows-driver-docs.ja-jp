@@ -1,6 +1,6 @@
 ---
-title: Windows 2000 のディスプレイ ドライバーの責任
-description: Windows 2000 のディスプレイ ドライバーの責任
+title: Windows 2000 ディスプレイ ドライバーの役割
+description: Windows 2000 ディスプレイ ドライバーの役割
 ms.assetid: ccd7ff38-a4a3-4917-bf59-c2a1b864d026
 keywords:
 - ドライバー モデル WDK Windows 2000 では、責任を表示します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4f6d8315573030aad84cc541a915f0812b19f4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391124"
 ---
-# <a name="windows-2000-display-driver-responsibilities"></a>Windows 2000 のディスプレイ ドライバーの責任
+# <a name="windows-2000-display-driver-responsibilities"></a>Windows 2000 ディスプレイ ドライバーの役割
 
 
 ## <span id="ddk_display_driver_responsibilities_gg"></span><span id="DDK_DISPLAY_DRIVER_RESPONSIBILITIES_GG"></span>

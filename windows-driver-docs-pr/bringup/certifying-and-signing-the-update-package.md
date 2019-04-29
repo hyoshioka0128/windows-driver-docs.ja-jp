@@ -1,17 +1,17 @@
 ---
-title: 認定と更新プログラム パッケージの署名
+title: 更新プログラム パッケージの認定と署名
 description: ファームウェアの更新プログラムは、ドライバー パッケージとして配信され、同様の検証および署名プロセスを通じて通常のドライバー パッケージとして移動する必要があります。
 ms.assetid: 054E98A5-E860-43BD-9AD2-7CCE55D2164B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1152a98b27d4a9d17a82374f37003d6b535c362f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328117"
 ---
-# <a name="certifying-and-signing-the-update-package"></a>認定と更新プログラム パッケージの署名
+# <a name="certifying-and-signing-the-update-package"></a>更新プログラム パッケージの認定と署名
 
 
 ファームウェアの更新プログラムは、ドライバー パッケージとして配布される、ためには、正規のドライバー パッケージとすべての同様の検証と署名プロセス経由する必要があります。 Windows ハードウェア ラボ キット (Windows HLK) のテストに合格する必要があります、ドライバー パッケージに署名するため、パートナー センターに送信する必要があります。 署名済み、ドライバー パッケージ、申請者に配布されます。
@@ -56,7 +56,7 @@ ARM 以外のシステムでは、ターミネータは、UEFI 許可されて�
 ファームウェアの更新プログラム パッケージに署名するため、パートナー センターに送信します。
 
 1. 前のセクションの指示に従って capsule の内容に署名します。
-2. 含む、capsule ファームウェアの更新プログラム パッケージを作成し、テストは、ファームウェアの更新プログラム パッケージを署名します。 詳細については、[update のドライバー パッケージの作成](authoring-an-update-driver-package.md)を参照してください。
+2. 含む、capsule ファームウェアの更新プログラム パッケージを作成し、テストは、ファームウェアの更新プログラム パッケージを署名します。 詳細については、次を参照してください。 [update のドライバー パッケージの作成](authoring-an-update-driver-package.md)です。
    > [!NOTE]
    > Windows 8 以降、Windows は、テスト環境であっても OEM Verisign 署名されたファームウェアの更新パッケージを許可しません。
 3. ファームウェアの更新プログラム パッケージをインストールすることによって、ファームウェアを更新します。

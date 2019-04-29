@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CIPHER_KEY_GCMP_KEY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f56320145b5c9d88151ba773aa233158e8968bfc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391015"
 ---
 # <a name="wditlvcipherkeygcmpkey"></a>WDI\_TLV\_暗号\_キー\_GCMP\_キー
 

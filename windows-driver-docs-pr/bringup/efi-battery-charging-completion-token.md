@@ -5,11 +5,11 @@ ms.assetid: 1151643e-8b22-4034-b043-ac4d44c01082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e9e931cccf04e2d90410c85c249815302c9eb29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328052"
 ---
 # <a name="efibatterychargingcompletiontoken"></a>EFI\_バッテリ\_充電中\_完了\_トークン
 
@@ -26,7 +26,7 @@ typedef struct _EFI_BATTERY_CHARGING_COMPLETION_TOKEN {
 } EFI_BATTERY_CHARGING_COMPLETION_TOKEN;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 
 <a href="" id="event"></a>**イベント**  

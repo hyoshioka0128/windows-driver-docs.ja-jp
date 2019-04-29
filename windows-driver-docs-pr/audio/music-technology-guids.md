@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8620aca8fe141af1adb0e9a02b73b167e2ca857b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332292"
 ---
 # <a name="music-technology-guids"></a>音楽テクノロジ GUID
 
@@ -83,7 +83,7 @@ MIDI または Dmu のミニポート ドライバーでは、そのピンのそ
 
 **MidiOutGetDevCaps**関数変換テクノロジに書き込みを行うインデックスに、ドライバーから受信した GUID、 **wTechnology**に出力する MIDIOUTCAPS 構造体のメンバー、呼び出し元。 上記の表に示す、 **wTechnology** GUID は、それぞれのテクノロジに対応する値 (中央の列)。 詳細については**midiOutGetDevCaps** MIDIOUTCAPS、Microsoft Windows SDK のマニュアルを参照するとします。
 
-デバイスを列挙する場合、Windows マルチ メディア midiOut または midiIn API を使用して、MIDI アプリケーションは MIDI のピンが DirectMusic ピンいないを確認できます。 DirectMusic アプリケーションでは、MIDI と DirectMusic の両方の pin を確認できます。 MIDI または Dmu のミニポート ドライバーでは、MIDI 暗証番号 (pin) を識別 KSDATAFORMAT に暗証番号 (pin) のデータ範囲のサブタイプの GUID を設定して\_サブタイプ\_MIDI します。 Dmu のミニポート ドライバー KSDATAFORMAT サブタイプ GUID に設定して DirectMusic 暗証番号 (pin) を識別する\_サブタイプ\_DIRECTMUSIC します。 MIDI と DirectMusic ピンのデータ範囲の例については、[MIDI Stream データ範囲](midi-stream-data-range.md)と[DirectMusic Stream データ範囲](directmusic-stream-data-range.md)を参照してください。
+デバイスを列挙する場合、Windows マルチ メディア midiOut または midiIn API を使用して、MIDI アプリケーションは MIDI のピンが DirectMusic ピンいないを確認できます。 DirectMusic アプリケーションでは、MIDI と DirectMusic の両方の pin を確認できます。 MIDI または Dmu のミニポート ドライバーでは、MIDI 暗証番号 (pin) を識別 KSDATAFORMAT に暗証番号 (pin) のデータ範囲のサブタイプの GUID を設定して\_サブタイプ\_MIDI します。 Dmu のミニポート ドライバー KSDATAFORMAT サブタイプ GUID に設定して DirectMusic 暗証番号 (pin) を識別する\_サブタイプ\_DIRECTMUSIC します。 MIDI と DirectMusic ピンのデータ範囲の例については、次を参照してください。 [MIDI Stream データ範囲](midi-stream-data-range.md)と[DirectMusic Stream データ範囲](directmusic-stream-data-range.md)します。
 
 説明したよう[MIDI と DirectMusic フィルター](midi-and-directmusic-filters.md)、アダプタのドライバを呼び出す、 [ **PcNewMiniport** ](https://msdn.microsoft.com/library/windows/hardware/ff537714)システム提供のミニポートのいずれかのインスタンスを作成する関数Portcls.sys でドライバー。 呼び出し元のインスタンスを作成するミニポート ドライバーを指定するには、次の表で、ドライバーの Guid のいずれかを指定します。
 

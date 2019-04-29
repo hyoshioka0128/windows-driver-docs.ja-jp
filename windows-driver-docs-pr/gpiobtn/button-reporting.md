@@ -1,17 +1,17 @@
 ---
-title: レポート作成ボタン
+title: ボタンのレポート
 description: ボックスで汎用入出力 (GPIO) ボタン ドライバーは、Windows に報告ボタン配列の定義済みの GPIO リソースで受信した割り込みに基づいています。
 ms.assetid: 7D96E1CB-3406-4D61-9D5C-65BC6BFD1FFA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6f0c40026327c04bb08d41e0927643dfc18518e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326096"
 ---
-# <a name="button-reporting"></a>レポート作成ボタン
+# <a name="button-reporting"></a>ボタンのレポート
 
 
 ボックスで汎用入出力 (GPIO) ボタン ドライバーは、Windows に報告ボタン配列の定義済みの GPIO リソースで受信した割り込みに基づいています。
@@ -32,7 +32,7 @@ ms.locfileid: "56557619"
 
 すべての非 GPIO ベースの実装は、レポートの同じスキームに従う必要があります。
 
-定義の順序は、Power、Windows、Volume Up、Volume Down、回転ロックは。 これらの HID 記述子を作成する方法の例については、[HID ボタンのレポート記述子](hid-button-report-descriptors.md)を参照してください。
+定義の順序は、Power、Windows、Volume Up、Volume Down、回転ロックは。 これらの HID 記述子を作成する方法の例については、次を参照してください。 [HID ボタンのレポート記述子](hid-button-report-descriptors.md)します。
 
 **注**  前の要件の使い方を説明した**Win + O**回転ロックします。 キーボード レイアウトの変更、あくまではいないこの組み合わせはまだ機能ですが、一方**Win + F14**レイアウトに依存しないのです。
 
@@ -97,9 +97,9 @@ ms.locfileid: "56557619"
  
 
 **注:**  
--   完全なガイダンスと、電源ボタンの実装では、[電源ボタンの動作と実装](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)を参照してください。
--   ボタンのコネクト スタンバイのガイダンスについては、[スタンバイ状態の接続されたソースのスリープ解除](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)を参照してください。
--   ACPI の実装の詳細については、[ACPI 設計ガイド](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)を参照してください。
+-   完全なガイダンスと、電源ボタンの実装では、次を参照してください。[電源ボタンの動作と実装](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)します。
+-   ボタンのコネクト スタンバイのガイダンスについては、次を参照してください。[スタンバイ状態の接続されたソースのスリープ解除](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)します。
+-   ACPI の実装の詳細については、次を参照してください。 [ACPI 設計ガイド](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)します。
 
  
 

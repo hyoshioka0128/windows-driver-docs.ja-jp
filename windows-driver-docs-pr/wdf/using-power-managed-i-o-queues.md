@@ -1,6 +1,6 @@
 ---
-title: 電源管理対象の I/O キューを使用します。
-description: 電源管理対象の I/O キューを使用します。
+title: 電力管理された I/O キューの使用
+description: 電力管理された I/O キューの使用
 ms.assetid: 271d55ef-d82e-4ffd-bf41-a602c42c3f0e
 keywords:
 - I/O は、WDK KMDF、電源管理対象のキューします。
@@ -9,18 +9,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40e964f09d464c0ee5d0c9140fa364be84ddc1ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391842"
 ---
-# <a name="using-power-managed-io-queues"></a>電源管理対象の I/O キューを使用します。
+# <a name="using-power-managed-io-queues"></a>電力管理された I/O キューの使用
 
 
 キューがかどうかを指定できます、ドライバー、I/O キューを作成するとき*電源管理対象*します。 I/O 要求が電源管理対象のキューで利用できる場合は、フレームワークは、デバイスの作業 (D0) 状態にある場合にのみ、ドライバーを要求を配信します。 フレームワークはフレームワークがドライバーに電源管理対象のキューから配信されるすべての I/O 要求が完了、キャンセル、または延期するまでの作業状態のままにするデバイスを許可しません。
 
-電源管理対象の I/O キューの詳細については、[の I/O キューの電源管理](power-management-for-i-o-queues.md)を参照してください。
+電源管理対象の I/O キューの詳細については、次を参照してください。[の I/O キューの電源管理](power-management-for-i-o-queues.md)します。
 
 ## <a name="callback-functions-for-power-managed-queues"></a>Power-Managed キューのコールバック関数
 
@@ -48,7 +48,7 @@ ms.locfileid: "56557639"
 
 [要求ハンドラー](request-handlers.md)任意のスレッド コンテキストで実行すると、電源管理対象のキューの要求ハンドラーを待つ必要がありますいないカーネルのディスパッチャー オブジェクトを設定します。 そうと、デッドロックが発生する可能性があります。
 
-ディスパッチャー オブジェクトでは、ドライバーが待機できる場合とできない場合の対処方法の詳細については、[カーネルのディスパッチャー オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff548068)を参照してください。
+ディスパッチャー オブジェクトでは、ドライバーが待機できる場合とできない場合の対処方法の詳細については、次を参照してください。[カーネルのディスパッチャー オブジェクトの概要](https://msdn.microsoft.com/library/windows/hardware/ff548068)します。
 
  
 

@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_OPER_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f990eed12f8de9ee1abe72ac8dd1df63ce461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392907"
 ---
 # <a name="ndisstatusoperstatus"></a>NDIS\_状態\_工程\_状態
 
@@ -27,7 +27,7 @@ NDIS の提供、 [ **NDIS\_工程\_状態**](https://msdn.microsoft.com/library
 
 **StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373) sizeof に構造体が設定されている (NDIS\_工程\_状態の場合)。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

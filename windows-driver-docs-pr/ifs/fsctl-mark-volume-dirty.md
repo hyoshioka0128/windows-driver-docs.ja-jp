@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d90cde19dc53dfc9ebefcd8f876d5643a161afd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391782"
 ---
 # <a name="fsctlmarkvolumedirty-control-code"></a>FSCTL\_マーク\_ボリューム\_ダーティ制御コード
 
@@ -66,7 +66,7 @@ ms.locfileid: "56578947"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -96,12 +96,12 @@ ms.locfileid: "56578947"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **ReFS:  **このコードはサポートされていません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

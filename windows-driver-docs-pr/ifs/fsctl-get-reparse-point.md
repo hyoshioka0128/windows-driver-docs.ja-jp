@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c935357f6ce270037409c71e57e3324945098f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327892"
 ---
 # <a name="fsctlgetreparsepoint-control-code"></a>FSCTL\_取得\_再解析\_ポイント制御コード
 
@@ -30,7 +30,7 @@ FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイル
 
 再解析ポイントと FSCTL の詳細については\_取得\_再解析\_ポイント制御コードを Microsoft Windows SDK のマニュアルを参照してください。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ファイルまたはディレクトリから、再解析ポイントのデータを取得する対象のファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
@@ -91,7 +91,7 @@ FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイル
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

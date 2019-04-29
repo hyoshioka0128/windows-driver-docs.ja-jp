@@ -1,6 +1,6 @@
 ---
-title: ファイル システム フィルター ドライバーは、デバイス ドライバーではありません。
-description: ファイル システム フィルター ドライバーは、デバイス ドライバーではありません。
+title: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
+description: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
 ms.assetid: 4a1b2470-0062-4241-952d-ea9351b1a2f9
 keywords:
 - フィルター ドライバー WDK ファイル システム、デバイス ドライバーとの比較
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a2c42aa75aa10d6ccd743c512ab54219e4a69e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327486"
 ---
-# <a name="file-system-filter-drivers-are-not-device-drivers"></a>ファイル システム フィルター ドライバーは、デバイス ドライバーではありません。
+# <a name="file-system-filter-drivers-are-not-device-drivers"></a>ファイル システム フィルター ドライバーとデバイス ドライバーの違い
 
 
 ## <span id="ddk_a_file_system_filter_driver_is_not_a_device_driver_if"></span><span id="DDK_A_FILE_SYSTEM_FILTER_DRIVER_IS_NOT_A_DEVICE_DRIVER_IF"></span>

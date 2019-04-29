@@ -5,11 +5,11 @@ ms.assetid: 19E92978-12DE-4B0E-A386-024B88A64B39
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22811ba13a6b449e237f939e087280b01887e20c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332140"
 ---
 # <a name="pkeyfxendpointeffectclsid"></a>鍵\_FX\_EndpointEffectClsid
 

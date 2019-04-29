@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 452a233fdb5ef3316d86c96875e1a331f7856c79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327214"
 ---
 # <a name="kspropertycameracontrolextendedphotomaxframerate"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE
 
@@ -38,16 +38,16 @@ ms.locfileid: "56571469"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
@@ -63,7 +63,7 @@ ms.locfileid: "56571469"
 
 このプロパティのコントロールは、非同期およびないキャンセル可能なは。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバーの設定、 [ **KSCAMERA\_EXTENDEDPROP\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)に、次の場合。
 
@@ -95,7 +95,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tr class="even">
 <td>結果</td>
 <td><p>結果の最大フレーム レートを読み取ろうとしてエラー値。</p>
-<p>それ以外の場合、0 を返します。</p></td>
+<p>それ以外の場合は、0 に設定されます。</p></td>
 </tr>
 <tr class="odd">
 <td>機能</td>

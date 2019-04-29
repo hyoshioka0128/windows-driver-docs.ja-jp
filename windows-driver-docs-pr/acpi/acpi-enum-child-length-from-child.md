@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb682142fe13b46dc324d52379360ac4422c29e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328868"
 ---
 # <a name="acpienumchildlengthfromchild-macro"></a>ACPI\_ENUM\_子\_長さ\_FROM\_子マクロ
 
@@ -43,7 +43,7 @@ ACPI のバイト単位のサイズを\_ENUM\_子構造体*子*を指します�
 
 ドライバーは、このマクロを使用して ACPI のバイト単位のサイズを計算する\_ENUM\_内の子構造体、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536112)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

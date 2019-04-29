@@ -5,11 +5,11 @@ ms.assetid: 9C78621E-9824-4992-9D7E-BCF3B51F1BFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cd0728ed4ad791d1b3411c90139861e53d71b24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333559"
 ---
 # <a name="helper-interfaces-for-offloaded-audio-processing"></a>オフロードされたオーディオ処理のためのヘルパー インターフェイス
 
@@ -80,7 +80,7 @@ class CMiniportWaveRTStream :
 };
 ```
 
-*Portcls.h*ヘッダー ファイルは、これらのインターフェイスを定義します。 によるハードウェア オフロードされたオーディオ ストリームを処理できるドライバーを開発する方法の詳細については、および[ドライバーの実装詳細](driver-implementation-details.md)を参照してください。
+*Portcls.h*ヘッダー ファイルは、これらのインターフェイスを定義します。 によるハードウェア オフロードされたオーディオ ストリームを処理できるドライバーを開発する方法の詳細については、次を参照してください。 および[ドライバーの実装詳細](driver-implementation-details.md)します。
 
  
 

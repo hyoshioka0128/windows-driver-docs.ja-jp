@@ -1,6 +1,6 @@
 ---
-title: 6 番目の画像をデコードの構成
-description: 6 番目の画像をデコードの構成
+title: 6 番目の画像デコード構成
+description: 6 番目の画像デコード構成
 ms.assetid: 3d4f70c7-bdad-4511-a180-2825c4bafd5f
 keywords:
 - 圧縮の画像セット WDK DirectX VA のデコード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bc024045e6399508635989a6a5e86da6218971d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391228"
 ---
-# <a name="sixth-picture-decoding-configuration"></a>6 番目の画像をデコードの構成
+# <a name="sixth-picture-decoding-configuration"></a>6 番目の画像デコード構成
 
 
 ## <span id="ddk_sixth_picture_decoding_configuration_gg"></span><span id="DDK_SIXTH_PICTURE_DECODING_CONFIGURATION_GG"></span>
@@ -29,8 +29,8 @@ ms.locfileid: "56536282"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

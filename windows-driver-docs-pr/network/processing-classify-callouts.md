@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5c7d973e7099df39b372a64286a043fd191338d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327638"
 ---
 # <a name="processing-classify-callouts"></a>分類コールアウトの処理
 
@@ -48,9 +48,9 @@ ms.locfileid: "56582161"
 
 特定のコールアウトの実際の実装*classifyFn*コールアウト関数は、これらの例の組み合わせに基づくことができます。
 
-コールアウトのプロセスのデータをフィルター処理には層をサポートでデータ フローまで、引き出し線の*classifyFn*コールアウト関数は、各データ フローでコンテキストを関連付けることができます。 *ClassifyFn*関数は、このコンテキストを使用して、そのデータ フローのフィルター エンジンによって呼び出されたときに [次へ] に状態情報を保存します。 吹き出し関数がデータ フローでコンテキストを関連付けることができる方法の詳細については、[データ フローに関連付けるコンテキスト](associating-context-with-a-data-flow.md)を参照してください。
+コールアウトのプロセスのデータをフィルター処理には層をサポートでデータ フローまで、引き出し線の*classifyFn*コールアウト関数は、各データ フローでコンテキストを関連付けることができます。 *ClassifyFn*関数は、このコンテキストを使用して、そのデータ フローのフィルター エンジンによって呼び出されたときに [次へ] に状態情報を保存します。 吹き出し関数がデータ フローでコンテキストを関連付けることができる方法の詳細については、次を参照してください。[データ フローに関連付けるコンテキスト](associating-context-with-a-data-flow.md)します。
 
-WFP の非同期処理をサポートしている、 *classifyFn*コールアウト関数。 非同期処理の詳細については、[分類コールアウト非同期を処理](processing-classify-callouts-asynchronously.md)を参照してください。
+WFP の非同期処理をサポートしている、 *classifyFn*コールアウト関数。 非同期処理の詳細については、次を参照してください。[分類コールアウト非同期を処理](processing-classify-callouts-asynchronously.md)します。
 
  
 

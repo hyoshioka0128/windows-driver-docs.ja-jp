@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e67a23a69ce81d08da03f3a2a78a9c3c4bf9fd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325931"
 ---
 # <a name="vertarget-show-target-computer-version"></a>vertarget (ターゲット コンピューター バージョンの表示)
 

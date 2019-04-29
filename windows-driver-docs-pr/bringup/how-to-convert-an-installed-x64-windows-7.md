@@ -1,16 +1,16 @@
 ---
-title: インストールされている x64 に変換する方法 システムの Windows 7
-description: インストールされている x64 に変換する方法 システムの Windows 7
+title: インストールされている x64 Windows 7 システムを変換する方法
+description: インストールされている x64 Windows 7 システムを変換する方法
 ms.date: 01/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: cffd5cfbf35961844f840f4b4b6e40c8e8e1107e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337524"
 ---
-# <a name="how-to-convert-an-installed-x64-windows-7-system"></a>インストールされている x64 に変換する方法 システムの Windows 7
+# <a name="how-to-convert-an-installed-x64-windows-7-system"></a>インストールされている x64 Windows 7 システムを変換する方法
 
 次の手順は、使用するためで、it プロフェッショナルのシナリオでレガシ MBR + CSM から UEFI と GPT に変換する必要があります。 通常、このプロセスは、Windows 7 がインストールされている x64 いるシステムから始まります。
 

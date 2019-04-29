@@ -5,11 +5,11 @@ ms.assetid: 31bc58a0-ec2b-4b5e-ad1b-e6107cc083b1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09a3678c88ad507b5e9fbd03533e923beb3f38fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337717"
 ---
 # <a name="efiusbfnioprotocolconfigureenableendpoints"></a>EFI\_USBFN\_IO\_プロトコル。ConfigureEnableEndpoints
 
@@ -79,14 +79,14 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 
  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
 この関数が、指定されたを使用してエンドポイントを構成して、ハードウェアは既に初期化されていると仮定*DeviceInfo*ポートをアクティブにし、USB イベントの受信を開始します。
 
 この関数を無視する必要があります、 *bMaxPacketSize0*標準デバイス記述子フィールドと*wMaxPacketSize*指定を介して公開されている標準のエンドポイント記述子フィールド*DeviceInfo*します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 **ヘッダー:** ユーザーが生成しました。

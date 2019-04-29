@@ -1,17 +1,17 @@
 ---
-title: 説明の ACPI システム テーブル
+title: ACPI システム記述テーブル
 description: SoC ベースのプラットフォームでは、Advanced Configuration and Power Interface (ACPI) ハードウェアの仕様の実装は必要はありませんが、ACPI ソフトウェアの仕様の多くは (または、) 必要です。
 ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 07/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8392a2f25f3a62be193cfd93bb62d9c4bc9f27a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328112"
 ---
-# <a name="acpi-system-description-tables"></a>説明の ACPI システム テーブル
+# <a name="acpi-system-description-tables"></a>ACPI システム記述テーブル
 
 
 SoC ベースのプラットフォームでは、Advanced Configuration and Power Interface (ACPI) ハードウェアの仕様の実装は必要はありませんが、ACPI ソフトウェアの仕様の多くは (または、) 必要です。 ACPI は、ジェネリック、拡張可能なテーブルを渡すメカニズム、およびオペレーティング システム プラットフォームを記述するための特定のテーブルを定義します。
@@ -80,7 +80,7 @@ CSRT では、各リソース グループが特定の種類のハードウェ�
 
 HAL 拡張機能のメンテナンスをサポートし、これらの拡張機能で使用されるシステム リソースを管理するには、CSRT で説明されている各リソース グループをプラットフォームの ACPI 名前空間内のデバイスとして表されますもする必要があります。 詳細については、次の「差別化されたシステムの説明テーブル (します。)」セクションを参照してください。 リソース グループのヘッダーで使用されるデバイスの識別子は、デバイスの名前空間ノードで使用される識別子と一致する必要があります。 詳細については、次を参照してください。、 **ACPI のデバイスの識別**セクション、[デバイス管理の名前空間オブジェクト](device-management-namespace-objects.md)トピック。 これらのリソース グループの名前空間のデバイスの存在は、Windows の更新サービスによって提供されるを HAL 拡張機能を使用できます。
 
-詳細については、、[コア システム リソース テーブル (CSRT) 仕様](http://acpica.org/related-documents)を参照してください。
+詳細については、次を参照してください。、[コア システム リソース テーブル (CSRT) 仕様](http://acpica.org/related-documents)します。
 
 ## <a name="debug-port-table-2-dbg2"></a>デバッグ ポート テーブル 2 (DBG2)
 
@@ -89,7 +89,7 @@ Microsoft では、すべてのシステムでのデバッグ ポートが必要
 
 Windows を識別し、システムを必要とする Kernel Debugger (KD) トランスポート (USB またはシリアルなど) を読み込む DBG2 テーブル内のポートの種類の値を使用します。 KD トランスポート値が使用されますポート サブタイプ DBG2 の表に、ポートが使用するハードウェア インターフェイスを識別するためにします。 DBG2 テーブル内の他の情報には、指定されたサブタイプのハードウェア インターフェイスのモジュールで使用されるポートのレジスタのシステムのアドレスを指定します。 最後に、DBG2 テーブルでは、対応するデバッグ ポートを ACPI 名前空間内デバイス ノードへの参照を含める必要があります。 この参照は、Windows が存在する場合に使用し、デバイスの通常の使用をデバッグの間の競合を管理し、電源の遷移と、デバッガーを統合できます。
 
-詳細については、、 [Microsoft デバッグ ポート テーブル 2 (DBG2) 仕様](https://go.microsoft.com/fwlink/p/?linkid=330996)を参照してください。
+詳細については、次を参照してください。、 [Microsoft デバッグ ポート テーブル 2 (DBG2) 仕様](https://go.microsoft.com/fwlink/p/?linkid=330996)します。
 
 ## <a name="differentiated-system-description-table-dsdt"></a>差別化されたシステムの説明テーブル (します。)
 
@@ -100,7 +100,7 @@ ACPI は、システム デバイス、機能、および OS に依存しない�
 
 OpRegions に関する詳細については、5.5.2.4、「アクセスする操作領域」のセクションを参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。 ASL と制御の方法の詳細については、ACPI 5.0 仕様の 5.5 では、"ACPI Namespace"」セクションを参照してください。
 
-Windows では、開発および ASL コードをデバッグするためのサポートを提供します。 ASL コンパイラには、名前空間をデバッグ対象から読み込む実行者を有効にする逆アセンブラーが含まれています。 迅速なプロトタイプ作成とテストの対象に、名前空間を再適用する ASL コンパイラを使用しできます-システム ファームウェアをフラッシュする必要はありません。 さらに、Windows カーネル デバッガー Acpi.sys ドライバーのチェックを行う (CHK) バージョンと共にトレースとサポート AML 実行を分析します。 詳細については、[AMLI デバッガー](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction-to-the-amli-debugger)を参照してください。
+Windows では、開発および ASL コードをデバッグするためのサポートを提供します。 ASL コンパイラには、名前空間をデバッグ対象から読み込む実行者を有効にする逆アセンブラーが含まれています。 迅速なプロトタイプ作成とテストの対象に、名前空間を再適用する ASL コンパイラを使用しできます-システム ファームウェアをフラッシュする必要はありません。 さらに、Windows カーネル デバッガー Acpi.sys ドライバーのチェックを行う (CHK) バージョンと共にトレースとサポート AML 実行を分析します。 詳細については、次を参照してください。 [AMLI デバッガー](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction-to-the-amli-debugger)します。
 
 ## <a name="windows-smm-security-mitigations-table-wsmt"></a>Windows SMM セキュリティ緩和策テーブル (WSMT)
 
@@ -113,5 +113,5 @@ Windows Server 2016
 
 Windows 10 バージョン 1607
 
-詳細については、、 [Windows SMM セキュリティ緩和策テーブル (WMST) 仕様](https://go.microsoft.com/fwlink/p/?LinkId=786943)を参照してください。
+詳細については、次を参照してください。、 [Windows SMM セキュリティ緩和策テーブル (WMST) 仕様](https://go.microsoft.com/fwlink/p/?LinkId=786943)します。
 

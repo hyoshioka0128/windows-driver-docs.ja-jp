@@ -1,14 +1,14 @@
 ---
-Description: A USB device defines its capabilities and features through configurations, interfaces, alternate settings, and endpoints.
+Description: USB デバイスは、その機能と機能の構成、インターフェイス、代替の設定、およびエンドポイントを定義します。
 title: USB デバイスのレイアウト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d993ebce6f93018be7e0ed01a3af7e27f8ef9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331620"
 ---
 # <a name="usb-device-layout"></a>USB デバイスのレイアウト
 
@@ -21,7 +21,7 @@ A *USB 構成*機能と、デバイス、主にその電源機能とインター
 
 各インターフェイスは、1 つ以上含まれています。*エンドポイント*、デバイスとデータの転送に使用されます。 インターフェイスには、さらに、*代替設定*インターフェイスに関連付けられている関数の帯域幅の要件を定義します。 要するに、エンドポイントのグループが、インターフェイスを形成し、一連のインターフェイスでデバイスの構成を構成します。
 
-これはどういう、アクティブな構成を選択するか。 デバイスの初期化中に USB デバイスのデバイス ドライバーは 1 つまたは複数を構成またはその構成、および各インターフェイスの別の設定内でインターフェイスを選択してください。 ほとんどの USB デバイスには、複数のインターフェイスまたは複数の代替設定を提供しません。 たとえば、OSR USB FX2 Learning Kit デバイスでは、1 つの代替設定と 3 つのエンドポイントの 1 つのインターフェイスがあります。 ラーニング キットの詳細については、[OSR オンライン](http://www.osronline.com/)を参照してください。
+これはどういう、アクティブな構成を選択するか。 デバイスの初期化中に USB デバイスのデバイス ドライバーは 1 つまたは複数を構成またはその構成、および各インターフェイスの別の設定内でインターフェイスを選択してください。 ほとんどの USB デバイスには、複数のインターフェイスまたは複数の代替設定を提供しません。 たとえば、OSR USB FX2 Learning Kit デバイスでは、1 つの代替設定と 3 つのエンドポイントの 1 つのインターフェイスがあります。 ラーニング キットの詳細については、次を参照してください。 [OSR オンライン](http://www.osronline.com/)します。
 
 **デバイスの 1 つのインターフェイス**
 

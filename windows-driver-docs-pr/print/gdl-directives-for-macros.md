@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 281c204e37ce24637791c4b6ee702945ac791760
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392147"
 ---
 # <a name="gdl-directives-for-macros"></a>マクロの GDL ディレクティブ
 
@@ -35,7 +35,7 @@ GDL には、次のマクロ ディレクティブが含まれています。
 
 -   **=** (等号) は、値マクロの名前が続く場合、値の符号を参照します。
 
-マクロ ディレクティブの詳細については、[GDL マクロ](gdl-macros.md)を参照してください。
+マクロ ディレクティブの詳細については、次を参照してください。 [GDL マクロ](gdl-macros.md)します。
 
  
 

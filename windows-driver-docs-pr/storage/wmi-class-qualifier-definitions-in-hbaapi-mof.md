@@ -5,11 +5,11 @@ ms.assetid: 9db543f1-f6ad-4735-8ba0-21476aa229ba
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a03a93846b33159ceabe2760e093927dae4d8393
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330300"
 ---
 # <a name="wmi-class-qualifier-definitions-in-hbaapimof"></a>Hbaapi.mof 内の WMI クラス修飾子の定義
 
@@ -29,7 +29,7 @@ ms.locfileid: "56574461"
 
 含めることで、ただし、 *Hbaapi.h*ドライバーまたはアプリケーションが定義されている WMI クラスの修飾子に関連付けられている各値に対して、覚えやすい名前を指定するために定義されているシンボリック定数のセットを使用できます*Hbaapi.mof*します。
 
-WMI クラスの修飾子の概要については、[WMI クラスの修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566348)を参照してください。
+WMI クラスの修飾子の概要については、次を参照してください。 [WMI クラスの修飾子](https://msdn.microsoft.com/library/windows/hardware/ff566348)します。
 
  
 

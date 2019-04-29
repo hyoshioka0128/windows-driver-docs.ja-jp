@@ -5,11 +5,11 @@ ms.assetid: eec9474c-5aad-4b81-b7df-5e89cbfe92ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81b932c128bc20b87c13ad617e99ef47ea6ebbf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330225"
 ---
 # <a name="overview-of-installing-private-builds-of-inbox-drivers"></a>受信トレイのドライバーのビルドでプライベートのインストールの概要
 
@@ -46,13 +46,13 @@ Microsoft 署名の種類を以下に示します。
 
 -   受信トレイのドライバーのプライベート バージョンをビルドします。 署名が均等に扱われた場合に、プライベート ビルドで、Microsoft によって署名されたバージョンを outranks することを確認する必要があります。 WDK で提供されるツールを使用してプライベートのビルドはデジタル署名もする必要があります。
 
-    詳細については、[受信トレイのドライバーのプライベート ビルドを作成する](creating-a-private-build-of-an-in-box-driver.md)を参照してください。
+    詳細については、次を参照してください。[受信トレイのドライバーのプライベート ビルドを作成する](creating-a-private-build-of-an-in-box-driver.md)します。
 
 -   有効にする、 [AllSignersEqual グループ ポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)ターゲット システムにようにドライバーを選択するとすべての Microsoft 署名の種類とサード パーティの署名とランクが等しいとしてをオペレーティング システムがビューであることをデバイスに最適なものです。
 
-    詳細については、[に均等にドライバー署名を順位を構成する Windows](configuring-windows-to-rank-driver-signatures-equally.md)を参照してください。
+    詳細については、次を参照してください。[に均等にドライバー署名を順位を構成する Windows](configuring-windows-to-rank-driver-signatures-equally.md)します。
 
-Windows ドライバーをランク付けする方法の詳細については、[Windows ドライバーを選択する方法](how-setup-selects-drivers.md)を参照してください。
+Windows ドライバーをランク付けする方法の詳細については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
 
  
 

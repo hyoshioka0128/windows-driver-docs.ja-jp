@@ -1,6 +1,6 @@
 ---
-title: Storport の多階層のリセット
-description: Storport の多階層のリセット
+title: Storport の多階層リセット
+description: Storport の多階層リセット
 ms.assetid: 11c717b9-5154-43dd-b357-ff093cabec4b
 keywords:
 - Storport ドライバー WDK、エラー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0313a9e2c2982f752cc1dc5b576bd7af2757843d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389427"
 ---
-# <a name="multi-tier-reset-in-storport"></a>Storport の多階層のリセット
+# <a name="multi-tier-reset-in-storport"></a>Storport の多階層リセット
 
 
 ## <span id="ddk_multi_tier_reset_in_storport_kg"></span><span id="DDK_MULTI_TIER_RESET_IN_STORPORT_KG"></span>

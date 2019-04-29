@@ -1,5 +1,5 @@
 ---
-title: ~ u (スレッドを解除)
+title: ~u (スレッドの凍結解除)
 description: ~、指定されたスレッドの凍結を u コマンド。U (Unassemble) コマンドを使用してこのコマンドを混同しないでください。
 ms.assetid: 6ac3c84a-3734-4b16-a239-4233e186c2df
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f1a6a3486589d110713195e82536b06ba07b7f68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334172"
 ---
-# <a name="u-unfreeze-thread"></a>~ u (スレッドを解除)
+# <a name="u-unfreeze-thread"></a>~u (スレッドの凍結解除)
 
 
 **~ U**コマンドは、指定したスレッドを凍結します。
@@ -34,7 +34,7 @@ ms.locfileid: "56529749"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-固定解除するスレッドを指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+固定解除するスレッドを指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

@@ -1,15 +1,15 @@
 ---
-title: DirectX グラフィックスのカーネル サブシステム
+title: DirectX グラフィックス カーネル サブシステム
 description: Microsoft DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys) は、ディスプレイのミニポート ドライバーによって呼び出される関数を実装します。
 ms.assetid: 7601c761-bdab-4d18-8a84-7d69a71ec41c
 ms.date: 10/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: bca6196b5e14d5138e4bbb81e2a55a8756c49075
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327942"
 ---
 # <a name="directx-graphics-kernel-subsystem-dxgkrnlsys"></a>DirectX グラフィックスのカーネル サブシステム (Dxgkrnl.sys)
 

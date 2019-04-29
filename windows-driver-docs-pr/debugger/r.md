@@ -6,11 +6,11 @@ ms.assetid: 77bd1a66-39b3-4990-801e-4192a6e9cf47
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86867e78f0da56f9458801e53829532a5f3c6ea1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335539"
 ---
 # <a name="r"></a>R
 
@@ -24,7 +24,7 @@ ms.locfileid: "56556733"
 
 さらに、リモート デバッグの他のメソッドがある: リモート ツールを使用して、KD 接続のサーバーを使用して、または repeater を使用します。 選択する必要がある方法は、問題のコンピューターと利用可能な接続の構成によって異なります。
 
-詳細については、[リモート デバッグ](remote-debugging.md)を参照してください。
+詳細については、次を参照してください。[リモート デバッグ](remote-debugging.md)します。
 
 <span id="register"></span><span id="REGISTER"></span>**登録**  
 CPU の非常に高速な一時メモリ位置。
@@ -32,7 +32,7 @@ CPU の非常に高速な一時メモリ位置。
 <span id="register_context"></span><span id="REGISTER_CONTEXT"></span>**コンテキストに登録します。**  
 すべてのプロセッサのレジスタを含む完全なプロセッサの状態。
 
-詳細については、[**登録コンテキスト**](-thread--set-register-context-.md)を参照してください。
+詳細については、次を参照してください。 [**登録コンテキスト**](-thread--set-register-context-.md)します。
 
 <span id="retail_build"></span><span id="RETAIL_BUILD"></span>**製品版ビルド**  
 無料のビルドを参照してください。

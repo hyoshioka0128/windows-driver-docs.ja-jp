@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dd6779cd00fb756fccc96f5a057e1eb3ad7110c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329730"
 ---
 # <a name="how-to-analyze-irp-coverage-data"></a>IRP カバレッジ データを分析する方法
 
@@ -20,13 +20,13 @@ ms.locfileid: "56538310"
 
  
 
-このトピックでは、IRP カバレッジ データを分析するのに役立つガイドラインを提供します。 IRP カバレッジ データを収集するためのガイドラインについては、[IRP カバレッジ データを収集する方法](how-to-collect-irp-coverage-data.md)を参照してください。
+このトピックでは、IRP カバレッジ データを分析するのに役立つガイドラインを提供します。 IRP カバレッジ データを収集するためのガイドラインについては、次を参照してください。 [IRP カバレッジ データを収集する方法](how-to-collect-irp-coverage-data.md)します。
 
 使用することができます、テスト コンピューターで 1 つまたは複数のデバイスの IRP のカバレッジ データを収集した後、[カバレッジのテスト (デバイスの基本)](coverage-tests--device-fundamentals-.md)にこのデータからレポートを作成します。 これらのレポートは、指定したデバイスのドライバー スタックを左または入力される個々 の I/O 要求パケット (Irp) の数を表示します。 入力またはドライバー スタックのままにしていない Irp の種類も報告されます。
 
 このトピックでは、使用して、例として、テスト コンピューター上のデバイス ノード (devnode) が有効になっている IRP カバレッジ データから生成されたレポート。 Devnode は 9740、および IRP カバレッジ有効だった devnode を実行して、 **IRP を有効にするカバレッジ データ コレクション**テスト コンピューター上のツール。
 
-WDK と Visual Studio のテスト環境の設定の詳細については、[Visual Studio を使用して実行時にドライバーをテストする方法を](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)を参照してください。 選択して、テストとツールのパラメーターの構成については、[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)と[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)を参照してください。
+WDK と Visual Studio のテスト環境の設定の詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法を](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。 選択して、テストとツールのパラメーターの構成については、次を参照してください。[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)と[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
 
 この devnode IRP カバレッジ レポートを実行して生成 IRP のカバレッジ データを収集すると、**表示 IRP カバレッジ データを収集する**テスト コンピューター上のツール。
 

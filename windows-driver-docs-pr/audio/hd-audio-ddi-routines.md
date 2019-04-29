@@ -1,17 +1,17 @@
 ---
-title: HD オーディオ DDI ルーチン
-description: HD オーディオ DDI ルーチン
+title: HD Audio DDI のルーチン
+description: HD Audio DDI のルーチン
 ms.assetid: 2f360031-39bd-457e-8b64-04b37e21a7fe
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 571394fa686deb866253d5d9712f12de92a81d87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333595"
 ---
-# <a name="hd-audio-ddi-routines"></a>HD オーディオ DDI ルーチン
+# <a name="hd-audio-ddi-routines"></a>HD Audio DDI のルーチン
 
 
 説明したよう[の相違点の間、HD オーディオ DDI バージョン](https://msdn.microsoft.com/library/windows/hardware/ff536258)、HD オーディオ DDI の 3 つのバージョンが存在します。 これら 3 つの DDI バージョンがによって定義されている、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)、 [ **HDAUDIO\_BUS\_インターフェイス\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff536418)、および[ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)構造体。

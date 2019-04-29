@@ -5,11 +5,11 @@ ms.assetid: DA07E2C2-6478-40DD-AAD8-8ABD2777CA73
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf0f24cd1218d67c1ea763f4dcbf29e86e572192
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330520"
 ---
 # <a name="wdi-data-transfer"></a>WDI データ転送
 
@@ -23,7 +23,7 @@ ms.locfileid: "57463975"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>

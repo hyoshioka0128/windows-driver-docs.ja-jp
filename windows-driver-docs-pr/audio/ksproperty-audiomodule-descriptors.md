@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42fb8facd76b5bda28a8b8099ff9b5d2ec3c84d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332786"
 ---
 # <a name="kspropertyaudiomoduledescriptors"></a>KSPROPERTY\_AUDIOMODULE\_記述子
 
@@ -65,7 +65,7 @@ ms.locfileid: "56556972"
 
 返します、ksmultiple、ドライバーは、このプロパティをサポート、オーディオのすべてのモジュールがない場合は、\_0 個の要素数を持つ項目。
 
-オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
+オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7e171287ffb0ad9a0e1dd3ccb04cadda5c00481
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333024"
 ---
 # <a name="kspropertyaudiolatency"></a>KSPROPERTY\_オーディオ\_待機時間
 
@@ -51,7 +51,7 @@ KSPROPERTY\_オーディオ\_遅延 (またはオーディオのバッファー�
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567145" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567145)"><strong>KSTIME</strong></a></p></td>
@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_プロパティ要求の待機時間のステータ
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、AEC のフィルターを 暗証番号 (pin) のストリームの待機時間をクエリに使用されます。 詳細については、[Exposing Hardware-Accelerated キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536379)を参照してください。
+このプロパティは、AEC のフィルターを 暗証番号 (pin) のストリームの待機時間をクエリに使用されます。 詳細については、次を参照してください。 [Exposing Hardware-Accelerated キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536379)します。
 
 <a name="requirements"></a>要件
 ------------

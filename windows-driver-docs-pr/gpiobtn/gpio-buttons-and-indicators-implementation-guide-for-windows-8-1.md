@@ -1,22 +1,22 @@
 ---
-title: GPIO ボタンとインジケーター実装ガイド
-description: Windows 8 では、HID ミニポート クラス ドライバーを使用して汎用の I/O (GPIO) ボタンとインジケーターのサポートが導入されました。
+title: GPIO のボタンおよびインジケーター実装ガイド
+description: Windows 8 では、HID ミニポート クラス ドライバーを使用して、汎用 I/O (GPIO) のボタンとインジケーターのサポートが導入されていました。
 ms.assetid: E073E15A-7068-43D0-9DBA-7DD2E7FE2993
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1e0083c8497436b5f422510e8320e5f833712afb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326089"
 ---
-# <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO ボタンとインジケーター実装ガイド
+# <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO のボタンおよびインジケーター実装ガイド
 
 
-Windows 8 では、HID ミニポート クラス ドライバーを使用して汎用の I/O (GPIO) ボタンとインジケーターのサポートが導入されました。 目標と関連付けられている対応する Windows エンジニア リング ガイダンス (WEG)、標準化された方法でキー ボタン (電源、Windows、ボリュームと回転ロック) のサポートを提供することでした。 Windows 8.1 は、エンド ツー エンド ユーザー エクスペリエンスの質を向上し、さまざまな革新的なフォーム ファクターでの動作を統合にフォーカスがあります。
+Windows 8 では、HID ミニポート クラス ドライバーを使用して、汎用 I/O (GPIO) のボタンとインジケーターのサポートが導入されていました。 その目的は、主要なボタン (電源、Windows、ボリューム、回転ロック) の標準化された方法でのサポート、および関連する Windows Engineering Guidance (WEG) を提供することでした。 Windows 8.1 では、エンド ツー エンドのユーザー エクスペリエンスの品質の向上および革新的なさまざまなフォーム ファクター間での動作の統一に重点を置いています。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>
@@ -83,7 +83,7 @@ GPIO ボタンとインジケーターの実装に関する質問がある場合
 [HID I²C 経由で](https://go.microsoft.com/fwlink/p/?linkid=324690)  
 [ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)  
 [Windows システム イメージ マネージャー テクニカル リファレンス](https://go.microsoft.com/fwlink/p/?linkid=324691)  
-[無人 Windows セットアップのリファレンス](https://go.microsoft.com/fwlink/p/?linkid=276788)  
+[Windows の無人セットアップに関するリファレンス](https://go.microsoft.com/fwlink/p/?linkid=276788)  
 [Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?linkid=310164)  
 
 

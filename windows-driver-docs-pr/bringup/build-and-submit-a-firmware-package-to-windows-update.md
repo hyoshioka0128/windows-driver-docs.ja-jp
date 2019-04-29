@@ -1,16 +1,16 @@
 ---
-title: 構築し、ファームウェア パッケージを Windows Update (WU) の提出
-description: 構築し、ファームウェア パッケージを Windows Update (WU) の提出
+title: ファームウェア パッケージを構築して Windows Update (WU) に送信する
+description: ファームウェア パッケージを構築して Windows Update (WU) に送信する
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e94d3d264a4d8bb4afecbe7e597f10f62eee9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328099"
 ---
-# <a name="build-and-submit-a-firmware-package-to-windows-update-wu"></a>構築し、ファームウェア パッケージを Windows Update (WU) の提出
+# <a name="build-and-submit-a-firmware-package-to-windows-update-wu"></a>ファームウェア パッケージを構築して Windows Update (WU) に送信する
 
 ファームウェアの更新プログラムは、ドライバー パッケージとして配布される、ためデバイス ドライバー パッケージとして、同様の検証と署名プロセスに従います。
 
@@ -69,7 +69,7 @@ C:\Desktop
 
 [認定と更新プログラム パッケージの署名](https://docs.microsoft.com/windows-hardware/drivers/bringup/certifying-and-signing-the-update-package)
 
-[Device.Fundamentals 信頼性テストの前提条件](https://docs.microsoft.com/windows-hardware/test/hlk/testref/devicefundamentals-reliability-testing-prerequisites)
+[Device.Fundamentals の信頼性テストの前提条件](https://docs.microsoft.com/windows-hardware/test/hlk/testref/devicefundamentals-reliability-testing-prerequisites)
 
 [ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/dashboard)
 
@@ -81,7 +81,7 @@ C:\Desktop
 
 [ファームウェアのドライバー パッケージを使用してシステムとデバイスのファームウェア更新プログラム](https://docs.microsoft.com/windows-hardware/drivers/bringup/system-and-device-firmware-updates-via-a-firmware-driver-package)
 
-[Windows HLK を使用してデバイスの基礎の信頼性テストのトラブルシューティング](https://docs.microsoft.com/windows-hardware/test/hlk/testref/troubleshooting-device-fundamentals-reliability-testing-by-using-the-windows-hck)
+[Windows HLK を使用した Device Fundamentals 信頼性テストのトラブルシューティング](https://docs.microsoft.com/windows-hardware/test/hlk/testref/troubleshooting-device-fundamentals-reliability-testing-by-using-the-windows-hck)
 
 [Windows ハードウェア認定のブログ](https://blogs.msdn.microsoft.com/windows_hardware_certification)
 

@@ -1,17 +1,17 @@
 ---
-title: パッシブ レベル isr を特定します。
+title: パッシブレベルの ISR
 description: Windows 8、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) ドライバーを開始できます、オプションとして、登録、割り込みサービス ルーチン (Isr) パッシブ レベルで実行します。
 ms.assetid: E7556046-D85C-4CD1-8C27-578BF5CAFF2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4530aab95ee8564db0230bcaccca66efbd588aa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326122"
 ---
-# <a name="passive-level-isrs"></a>パッシブ レベル isr を特定します。
+# <a name="passive-level-isrs"></a>パッシブレベルの ISR
 
 
 Windows 8、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) ドライバーを開始できます、オプションとして、登録、割り込みサービス ルーチン (Isr) パッシブ レベルで実行します。

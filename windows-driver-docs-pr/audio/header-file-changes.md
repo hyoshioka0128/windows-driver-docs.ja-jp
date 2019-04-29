@@ -27,11 +27,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7e27ec98c27599f251f2c49062874110fd43b09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333549"
 ---
 # <a name="header-file-changes"></a>ヘッダー ファイルの変更
 
@@ -132,7 +132,7 @@ Windows XP SP2、および以降のバージョンの Windows では、Ksmedia.h
 
 DSSPEAKER\_7POINT1\_ブロックの挿入は、コントロール パネルの 新しいホーム シアターを 7.1 スピーカーの構成を表します。 DSSPEAKER\_7POINT1 と DSSPEAKER\_7POINT1\_ワイド同じ全体の構成を 7.1 スピーカー構成の両方の名前が。
 
-DirectSound のスピーカーの構成の詳細については、[DirectSound スピーカー構成設定](directsound-speaker-configuration-settings.md)を参照してください。
+DirectSound のスピーカーの構成の詳細については、次を参照してください。 [DirectSound スピーカー構成設定](directsound-speaker-configuration-settings.md)します。
 
  
 

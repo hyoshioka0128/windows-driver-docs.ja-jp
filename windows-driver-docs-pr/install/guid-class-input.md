@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: faa3437f37eac87a062153f21e7ad87d9f474316
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392471"
 ---
 # <a name="guidclassinput"></a>GUID_CLASS_INPUT
 
 
 GUID_CLASS_INPUT は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)の[HID コレクション](https://msdn.microsoft.com/library/windows/hardware/ff539861)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_HID** ](guid-devinterface-hid.md)このクラスの新しいインスタンスのクラス識別子。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

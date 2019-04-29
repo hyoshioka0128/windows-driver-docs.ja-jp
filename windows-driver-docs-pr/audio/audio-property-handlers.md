@@ -17,11 +17,11 @@ keywords:
 ms.date: 08/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c33f8bd792e46e14e98061e59a236e13c625805
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331420"
 ---
 # <a name="audio-property-handlers"></a>オーディオのプロパティのハンドラー
 
@@ -41,7 +41,7 @@ ms.locfileid: "56560898"
 
 ミニポート ドライバーでは、各プロパティの一意のプロパティ ハンドラー ルーチンを指定できます。 ただし、ドライバーは、いくつかのようなプロパティを処理する場合これらできる場合があります統合便宜上 1 つのハンドラー ルーチンです。 ドライバー開発者が作成した実装上の決定は、各プロパティの一意のハンドラーを指定するか、単一のハンドラーにいくつかのプロパティを統合するプロパティの要求を送信するクライアントに対して透過的である必要があります。
 
-ユーザー モードのクライアントは Microsoft Win32 関数を呼び出すことによって取得、セット、またはプロパティの基本サポート要求を送信できます[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)で、 *dwIoControlCode*を呼び出すパラメーターには、IOCTL 設定\_KS\_プロパティ。 オペレーティング システムがこの呼び出しに変換する[ **IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)、クラス ドライバーにディスパッチします。 詳細については、[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)を参照してください。
+ユーザー モードのクライアントは Microsoft Win32 関数を呼び出すことによって取得、セット、またはプロパティの基本サポート要求を送信できます[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)で、 *dwIoControlCode*を呼び出すパラメーターには、IOCTL 設定\_KS\_プロパティ。 オペレーティング システムがこの呼び出しに変換する[ **IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)、クラス ドライバーにディスパッチします。 詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
 
 クライアントが KS プロパティの要求を送信します (IOCTL では、\_KS\_プロパティ I/O-コントロール IRP) フィルター ハンドルまたは暗証番号 (pin) のハンドルでは、KS システム ドライバー (Ks.sys) は、フィルター オブジェクトまたは pin オブジェクト用のポート ドライバーへの要求を提供します。 ミニポート ドライバーでは、プロパティのハンドラーを提供する場合、ポート、ドライバーは、ハンドラーに要求を転送します。 要求を転送する前に、ポート ドライバー情報を変換しますプロパティ要求で指定された形式に、 [ **PCPROPERTY\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537723)構造体。 ポートのドライバーでは、この構造体をミニポート ドライバーのハンドラーに渡します。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e20d6bb441d7afb1452eaf3bf5e0852e2b56d8ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391036"
 ---
 # <a name="configuring-an-inf-file-for-a-modifying-filter-driver"></a>変更フィルター ドライバーの INF ファイルの構成
 
@@ -43,7 +43,7 @@ ms.locfileid: "56577733"
 
     使用することができます、 *Uuidgen.exe*の GUID を作成するためのツール、 **NetCfgInstanceId**エントリ。
 
--   *DDInstall*フィルター ドライバーの INF ファイルのセクションを含める必要があります、 **Addreg**ディレクティブを**Ndi**キー。 INF ファイルを指定する必要があります、**サービス**の下のエントリ、 **Ndi**キー。 **ServiceBinary**内のエントリ、*サービス インストール*INF ファイルのセクションは、フィルター ドライバーのバイナリへのパスを指定します。 詳細については、[追加サービス関連する値を Ndi キー](adding-service-related-values-to-the-ndi-key.md)と[ネットワーク INF ファイルで DDInstall.Services セクション](ddinstall-services-section-in-a-network-inf-file.md)を参照してください。
+-   *DDInstall*フィルター ドライバーの INF ファイルのセクションを含める必要があります、 **Addreg**ディレクティブを**Ndi**キー。 INF ファイルを指定する必要があります、**サービス**の下のエントリ、 **Ndi**キー。 **ServiceBinary**内のエントリ、*サービス インストール*INF ファイルのセクションは、フィルター ドライバーのバイナリへのパスを指定します。 詳細については、次を参照してください。[追加サービス関連する値を Ndi キー](adding-service-related-values-to-the-ndi-key.md)と[ネットワーク INF ファイルで DDInstall.Services セクション](ddinstall-services-section-in-a-network-inf-file.md)します。
 
 -   *DDInstall*フィルター ドライバーの INF ファイルのセクションがあります**FilterType**と**FilterRunType**エントリ。 変更のフィルターを指定するには、定義、 **FilterType**として次の例は、INF ファイルのエントリ。
 
@@ -59,7 +59,7 @@ ms.locfileid: "56577733"
     HKR, Ndi,FilterRunType,0x00010001 ,0x00000001
     ```
 
-    前の例では、0x00000001 値は、フィルター モジュールが必須ことを示します。 オプションのフィルター モジュールをインストールするには、設定、 **FilterRunType** 0x00000002 エントリ。 詳細については、[必須フィルター ドライバー](mandatory-filter-drivers.md)を参照してください。
+    前の例では、0x00000001 値は、フィルター モジュールが必須ことを示します。 オプションのフィルター モジュールをインストールするには、設定、 **FilterRunType** 0x00000002 エントリ。 詳細については、次を参照してください。[必須フィルター ドライバー](mandatory-filter-drivers.md)します。
 
 -   次の例では、変更フィルター ドライバーの INF ファイルで、サービスの名前を指定する方法を示します。
 
@@ -177,17 +177,17 @@ HKR, Ndi,FilterClass,, compression
   <tr class="odd">
   <td align="left"><p>ms_switch_capture</p></td>
   <td align="left"><p>NDIS 6.30 以降、ドライバーは、HYPER-V 拡張可能スイッチ ドライバー スタックのパケット トラフィックを監視するをキャプチャします。 カスタム ドライバー スタックの次のフィルター ドライバーには、このクラスが存在します。</p>
-  <p>このクラスのドライバーの詳細については、<a href="capturing-extensions.md" data-raw-source="[Capturing Extensions](capturing-extensions.md)">キャプチャ拡張機能</a>を参照してください。</p></td>
+  <p>このクラスのドライバーの詳細については、次を参照してください。<a href="capturing-extensions.md" data-raw-source="[Capturing Extensions](capturing-extensions.md)">キャプチャ拡張機能</a>します。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p>ms_switch_filter</p></td>
   <td align="left"><p>NDIS 6.30 以降では、フィルター ドライバーはパケット トラフィックをフィルター処理しポートを適用するか、拡張可能スイッチ ドライバー スタックを通じてパケット配信ポリシーを切り替えます。 フィルター ドライバーのこのクラスの下にある<strong>ms_switch_capture</strong>スタックのドライバーです。</p>
-  <p>このクラスのドライバーの詳細については、<a href="filtering-extensions.md" data-raw-source="[Filtering Extensions](filtering-extensions.md)">拡張機能のフィルタ リング</a>を参照してください。</p></td>
+  <p>このクラスのドライバーの詳細については、次を参照してください。<a href="filtering-extensions.md" data-raw-source="[Filtering Extensions](filtering-extensions.md)">拡張機能のフィルタ リング</a>します。</p></td>
   </tr>
   <tr class="odd">
   <td align="left"><p>ms_switch_forward</p></td>
   <td align="left"><p>NDIS 6.30 以降は、同じドライバーのフィルターの実行を転送するフィルター ドライバーとして機能します。 転送のドライバーは、ポートと拡張可能スイッチの間のパケットを転送することも。 フィルター ドライバーのこのクラスの下にある<strong>ms_switch_filter</strong>スタックのドライバーです。</p>
-  <p>このクラスのドライバーの詳細については、<a href="forwarding-extensions.md" data-raw-source="[Forwarding Extensions](forwarding-extensions.md)">転送拡張機能</a>を参照してください。</p></td>
+  <p>このクラスのドライバーの詳細については、次を参照してください。<a href="forwarding-extensions.md" data-raw-source="[Forwarding Extensions](forwarding-extensions.md)">転送拡張機能</a>します。</p></td>
   </tr>
   </tbody>
   </table>
@@ -202,7 +202,7 @@ HKR, Ndi,FilterClass,, compression
   HKR, Ndi\Interfaces, FilterMediaTypes,,"ethernet"
   ```
 
-  ドライバーのバインディングを制御する方法の詳細については、[フィルター ドライバーのバインドのリレーションシップの指定](specifying-filter-driver-binding-relationships.md)を参照してください。
+  ドライバーのバインディングを制御する方法の詳細については、次を参照してください。[フィルター ドライバーのバインドのリレーションシップの指定](specifying-filter-driver-binding-relationships.md)します。
 
 - 変更フィルター INF ファイルには、ドライバーと特定のアダプターに関連付けられているパラメーターの共通のパラメーター定義を指定する必要があります。 次の例では、いくつかの一般的なパラメーター定義を示します。
   ```INF

@@ -1,19 +1,19 @@
 ---
-title: PCM Stream データ範囲
-description: PCM Stream データ範囲
+title: PCM ストリームのデータ範囲
+description: PCM ストリームのデータ範囲
 ms.assetid: e8a9b681-3bd2-46ed-970f-5217dbfb2e4e
 keywords:
 - PCM のストリーム データ範囲 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38557a6373eb1f3c07a711c14eef4299f54cbb4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332234"
 ---
-# <a name="pcm-stream-data-range"></a>PCM Stream データ範囲
+# <a name="pcm-stream-data-range"></a>PCM ストリームのデータ範囲
 
 
 ## <span id="pcm_stream_data_range"></span><span id="PCM_STREAM_DATA_RANGE"></span>

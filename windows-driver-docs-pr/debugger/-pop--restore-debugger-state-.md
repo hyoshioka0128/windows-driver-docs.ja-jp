@@ -1,5 +1,5 @@
 ---
-title: .pop (デバッガーの状態の復元)
+title: .pop (デバッガー状態の復元)
 description: .Pop コマンドは、デバッガーの状態が .push (デバッガーの状態を保存) コマンドを使用して既に保存されている状態に復元します。
 ms.assetid: 31f94b2a-3597-40e4-845a-d686274e36c3
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d8f2f5878de2a13c3e09e00fcec6e03424b9d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334361"
 ---
-# <a name="pop-restore-debugger-state"></a>.pop (デバッガーの状態の復元)
+# <a name="pop-restore-debugger-state"></a>.pop (デバッガー状態の復元)
 
 
 **.Pop**コマンドはデバッガーの状態に復元を使用して保存されている以前の状態、 [ **.push (デバッガーの状態を保存)** ](-push--save-debugger-state-.md)コマンド。

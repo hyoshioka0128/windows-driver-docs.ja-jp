@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d05697309b7d8bfc3778d532482f8334fc9c1c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329597"
 ---
 # <a name="kseventvpnotifyformatchange"></a>KSEVENT\_VPNOTIFY\_段落
 
@@ -40,16 +40,16 @@ KSEVENT\_VPNOTIFY\_段落イベントは、ユーザー モードで DirectShow 
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>イベント記述子の種類</th>
 <th>イベント値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>いいえ</p></td>
-<td><p>はい</p></td>
+<td><p>X</p></td>
+<td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561937" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561937)"><strong>KSE_NODE</strong></a></p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561750" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561750)"><strong>KSEVENTDATA</strong></a></p></td>
@@ -67,7 +67,7 @@ KsProxy の VPE フィルターは、イベントのハンドルを保存する�
 
 KsProxy VPE フィルターは、IOCTL を送信することによって、イベント通知を無効にします\_KS\_を無効にする\_同じイベント ハンドルを持つイベント I/O 制御コード。 VPE フィルターによってイベント ハンドルが閉じられます。 ミニドライバーは、イベント ハンドルを終了しないで必要があります。
 
-DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。 ビデオの解像度の変更などのストリームの変更の処理の詳細については、[Stream 変更](https://msdn.microsoft.com/library/windows/hardware/ff568284)を参照してください。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。 ビデオの解像度の変更などのストリームの変更の処理の詳細については、次を参照してください。 [Stream 変更](https://msdn.microsoft.com/library/windows/hardware/ff568284)します。
 
  
 

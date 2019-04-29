@@ -1,17 +1,17 @@
 ---
-title: WdbgExts メモリへのアクセス
-description: WdbgExts メモリへのアクセス
+title: WdbgExts のメモリ アクセス
+description: WdbgExts のメモリ アクセス
 ms.assetid: 7b600d18-343e-4c22-b1e9-5dcc83d88695
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c51b1297822e443bd1b93ae9f00f62a591194f20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325834"
 ---
-# <a name="wdbgexts-memory-access"></a>WdbgExts メモリへのアクセス
+# <a name="wdbgexts-memory-access"></a>WdbgExts のメモリ アクセス
 
 
 このトピックでは、メモリにアクセスする方法の概要は WdbgExts API を使用して実行できます。 メモリ アクセスの概要については、[デバッガー エンジン](introduction.md#debugger-engine)を参照してください[メモリ](memory.md)で、[デバッガー エンジンの概要](debugger-engine-overview.md)このドキュメントの「します。
@@ -54,7 +54,7 @@ ms.locfileid: "56527678"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-強力なメモリ アクセス API を[メモリ アクセス](memory-access.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
+強力なメモリ アクセス API を次を参照してください。[メモリ アクセス](memory-access.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
 
  
 

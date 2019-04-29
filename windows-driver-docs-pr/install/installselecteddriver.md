@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e47d1c83babe694ba9e3a99fe0dd5aa11c026338
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390291"
 ---
 # <a name="installselecteddriver-function"></a>InstallSelectedDriver 関数
 
@@ -82,7 +82,7 @@ DWORD 型の変数へのポインターを**InstallSelectedDriver**をインス�
 </tr>
 <tr class="even">
 <td align="left"><strong>ERROR_IN_WOW64</strong></td>
-<td align="left"><p>呼び出し元のアプリケーションとは、これは許可されていない 64 ビット環境で実行しようとする 32 ビット アプリケーションです。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff541255" data-raw-source="[Installing Devices on 64-Bit Systems](https://msdn.microsoft.com/library/windows/hardware/ff541255)">64 ビット システムでのデバイスのインストール</a>を参照してください。</p></td>
+<td align="left"><p>呼び出し元のアプリケーションとは、これは許可されていない 64 ビット環境で実行しようとする 32 ビット アプリケーションです。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541255" data-raw-source="[Installing Devices on 64-Bit Systems](https://msdn.microsoft.com/library/windows/hardware/ff541255)">64 ビット システムでのデバイスのインストール</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +100,7 @@ DWORD 型の変数へのポインターを**InstallSelectedDriver**をインス�
 
  
 
-特定のデバイスで特定のドライバーのインストールを必要とする特別なアプリケーション、以外、インストール アプリケーションはデバイスに最適なものであるドライバーをインストールする必要があります。 デバイスに最適なものであるドライバーをインストールするには、呼び出す[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)または[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)します。 これらのデバイス ドライバーをインストールするために呼び出す関数の詳細については、[SetupAPI 関数を ドライバーのインストールの簡略化](https://msdn.microsoft.com/library/windows/hardware/ff550867)を参照してください。
+特定のデバイスで特定のドライバーのインストールを必要とする特別なアプリケーション、以外、インストール アプリケーションはデバイスに最適なものであるドライバーをインストールする必要があります。 デバイスに最適なものであるドライバーをインストールするには、呼び出す[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)または[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)します。 これらのデバイス ドライバーをインストールするために呼び出す関数の詳細については、次を参照してください。 [SetupAPI 関数を ドライバーのインストールの簡略化](https://msdn.microsoft.com/library/windows/hardware/ff550867)します。
 
 呼び出しの前に**InstallSelectedDriver**デバイスを含むデバイス情報のセットを取得、セットでデバイスを選択およびデバイスのドライバーを選択する必要があります、呼び出し元。
 

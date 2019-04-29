@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d863b23ce42ef9854171537c4856001f7053a4c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327328"
 ---
 # <a name="code-analysis-for-drivers-warnings"></a>ドライバーのコード分析の警告
 
@@ -22,7 +22,7 @@ ms.locfileid: "57350193"
 
 コード Analysis for Drivers は、次の種類の警告を報告します。
 
--   **一般的な警告**(6000 6999)。C および C++ の構文と一般的なコーディングのプラクティスに潜在的なエラー。 これらの警告の説明は、[c/c++ の警告のコード分析](/visualstudio/code-quality/code-analysis-for-c-cpp-warnings)を参照してください。
+-   **一般的な警告**(6000 6999)。C および C++ の構文と一般的なコーディングのプラクティスに潜在的なエラー。 これらの警告の説明は、次を参照してください。 [c/c++ の警告のコード分析](/visualstudio/code-quality/code-analysis-for-c-cpp-warnings)します。
 
 -   **Windows の特定の警告**(28600 28799)。これらの警告は、Windows での使用の特定のパターンに固有のものが、ドライバーに固有ではありません。
 

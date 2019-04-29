@@ -1,22 +1,22 @@
 ---
-title: テスト署名ドライバー パッケージ
+title: ドライバー パッケージのテスト署名
 description: このセクションの説明テスト ドライバー パッケージを署名する方法。
 ms.assetid: 3BC92099-A464-4C62-9EB7-DD6AA0D1FB03
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ac12f24d66237581ba90831b04a7da3237192ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328898"
 ---
-# <a name="test-sign-a-driver-package"></a>テスト署名ドライバー パッケージ
+# <a name="test-sign-a-driver-package"></a>ドライバー パッケージのテスト署名
 
 
 このセクションの説明テスト ドライバー パッケージを署名する方法。
 
-## <a name="test-sign-a-driver-package"></a>テスト署名ドライバー パッケージ
+## <a name="test-sign-a-driver-package"></a>ドライバー パッケージのテスト署名
 
 
 次の手順をテスト署名テスト証明書を使用してドライバー パッケージを使用します。
@@ -48,6 +48,6 @@ ms.locfileid: "56539598"
 
 4.  手順 2. で作成した pfx ファイル「FabrikamPrintDriverV4 パッケージ」に署名します。 他のプロジェクトは、としては、この手順で署名されたドライバーはどのようなパッケージを作成する必要はありません。
 
-詳細については、[テスト署名ドライバー パッケージ方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-to-test-sign-a-driver-package)を参照してください。
+詳細については、次を参照してください。[テスト署名ドライバー パッケージ方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-to-test-sign-a-driver-package)します。
 
 

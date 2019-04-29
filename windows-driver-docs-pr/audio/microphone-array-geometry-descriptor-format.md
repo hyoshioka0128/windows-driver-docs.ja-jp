@@ -1,17 +1,17 @@
 ---
-title: マイク配列 Geometry 記述子の形式
-description: マイク配列 Geometry 記述子の形式
+title: マイク配列ジオメトリ記述子の形式
+description: マイク配列ジオメトリ記述子の形式
 ms.assetid: 83fae1e2-cc67-4322-8250-f642508383ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99d8b688d21a898ca0b726d5bc3bd0a2a57b2de3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332341"
 ---
-# <a name="microphone-array-geometry-descriptor-format"></a>マイク配列 Geometry 記述子の形式
+# <a name="microphone-array-geometry-descriptor-format"></a>マイク配列ジオメトリ記述子の形式
 
 
 USB オーディオ マイクの配列が接続されているシステムに自体を記述する必要があります。 つまり、配列デバイス自体で配列を記述するために必要なパラメーターを埋め込む必要があります。 使用して、デバイスから配列のジオメトリの情報を取得、**取得\_MEM**要求。
@@ -31,7 +31,7 @@ USB オーディオ マイクの配列が接続されているシステムに自
 <th align="left">Offset</th>
 <th align="left">フィールド</th>
 <th align="left">サイズ</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

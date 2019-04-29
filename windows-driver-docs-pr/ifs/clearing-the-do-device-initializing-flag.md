@@ -1,6 +1,6 @@
 ---
-title: DO_DEVICE_INITIALIZING フラグをクリアします。
-description: DO_DEVICE_INITIALIZING フラグをクリアします。
+title: DO_DEVICE_INITIALIZING フラグのクリア
+description: DO_DEVICE_INITIALIZING フラグのクリア
 ms.assetid: 1c1cca60-bb95-4a8d-9e17-4db54983bbb0
 keywords:
 - フィルターをアタッチ、フィルター ドライバー WDK ファイル システム
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d081669fc1795ac1afe625c8b2b04b777d953da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327902"
 ---
 # <a name="clearing-the-dodeviceinitializing-flag"></a>オフ\_デバイス\_初期化フラグ
 

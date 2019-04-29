@@ -5,11 +5,11 @@ ms.assetid: 8ed412b2-1e7c-440f-8949-a3b1fff09b16
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d583201b00164b6082ed5d5a8f5b173838cb806a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331768"
 ---
 # <a name="summary"></a>概要
 
@@ -36,7 +36,7 @@ ms.locfileid: "56538799"
 
 アイドル
 
-Processing
+処理
 
 ［停止］
 

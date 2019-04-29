@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e6591271f42e4ff777b0daf4d6df9ccfc75d01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390240"
 ---
 # <a name="xpsdrv-installation"></a>XPSDrv インストール
 
@@ -21,7 +21,7 @@ ms.locfileid: "56570543"
 
 -   [ **CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ドライバーの INF ファイルのディレクティブが参照する必要があります、[フィルター パイプライン構成ファイル](filter-pipeline-configuration-file.md)します。
 
--   ニーズ ディレクティブは、Xpsdrv.oem を参照する必要があります。 ニーズ ディレクティブの詳細については、[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[Inf のソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)を参照してください。
+-   ニーズ ディレクティブは、Xpsdrv.oem を参照する必要があります。 ニーズ ディレクティブの詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[Inf のソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)します。
 
 -   構成のモジュールは、Unidrv に基づいている場合、Unidrv.oem と Xpsgpd.oem にニーズ ディレクティブが参照する必要があります。 同様に、XPSDrv ドライバーの構成のモジュールは、PScript5 に基づいている場合は、ニーズのディレクティブは Pscript.oem と Xpsppd.oem 参照する必要があります。
 

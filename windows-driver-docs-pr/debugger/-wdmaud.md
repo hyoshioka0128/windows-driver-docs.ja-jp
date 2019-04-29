@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: aca91133acf2c075587b69fe8666b0d68be915c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327953"
 ---
 # <a name="wdmaud"></a>!wdmaud
 
@@ -77,7 +77,7 @@ Wdmaud.sys にアタッチされているすべてのアクティブなコンテ
 
 WDM オーディオ アーキテクチャとオーディオ ドライバーについては、Windows Driver Kit (WDK) ドキュメントを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Wdmaud.sys にアタッチされているコンテキスト (**pContext**) 各デバイスの状態データの大部分が含まれています。 Wdmaud.drv は新しいプロセスに読み込まれる、たびに wdmaud.sys 到着が通知されます。 Wdmaud.drv がアンロードされるたびに、wdmaud.sys はそのコンテキストで行われたすべての割り当てをクリーンアップします。

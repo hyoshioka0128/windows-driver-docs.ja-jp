@@ -1,17 +1,17 @@
 ---
-title: バスに固有の一意の ID から生成されたコンテナー Id
-description: バスに固有の一意の ID から生成されたコンテナー Id
+title: バスに固有の一意の ID から生成されたコンテナー ID
+description: バスに固有の一意の ID から生成されたコンテナー ID
 ms.assetid: 06bd4f06-51f2-4983-9ddc-bff27eaa367e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 270a709ce21667d57740e46c56d1da443446141b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387221"
 ---
-# <a name="container-ids-generated-from-a-bus-specific-unique-id"></a>バスに固有の一意の ID から生成されたコンテナー Id
+# <a name="container-ids-generated-from-a-bus-specific-unique-id"></a>バスに固有の一意の ID から生成されたコンテナー ID
 
 
 デバイスがバスに固有の一意の ID に基づいて、コンテナー ID を生成することをお勧め これは、コンテナー id が生成する最も正確で信頼性の高い方法です。

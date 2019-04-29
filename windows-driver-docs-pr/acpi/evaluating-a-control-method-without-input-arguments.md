@@ -1,17 +1,17 @@
 ---
-title: 入力引数なしの制御方法を評価します。
-description: 入力引数なしの制御方法を評価します。
+title: 入力引数なしの制御メソッドを評価する
+description: 入力引数なしの制御メソッドを評価する
 ms.assetid: dd989b4d-46db-4fe3-aa7b-8dbfe37057cb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 334fa6bab425915bb4aaeec4721f2450e63c2b96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328839"
 ---
-# <a name="evaluating-a-control-method-without-input-arguments"></a>入力引数なしの制御方法を評価します。
+# <a name="evaluating-a-control-method-without-input-arguments"></a>入力引数なしの制御メソッドを評価する
 
 
 デバイスのドライバーの送信を入力引数を受け取らないコントロール メソッドを同期的に評価する、 [ **IOCTL\_ACPI\_EVAL\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff536148)要求または[ **IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)デバイスに要求します。 これら両方の要求を使用するための一般的な手順については、「 [ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)します。 これら 2 つの要求を使用しての特定の違いは次のとおりです。

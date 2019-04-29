@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 09215fa94fb7d05caf7c0dd393b3679a42fb05c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331268"
 ---
 # <a name="devproptypemodlist"></a>DEVPROP_TYPEMOD_LIST
 
@@ -35,7 +35,7 @@ Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPE
 
 サイズ、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) NULL で終わる Unicode 文字列の一覧は、最終版を含むリストのサイズ**NULL**リストを終了します。
 
-固定長データ値の配列を表すデータ型のプロパティの識別子を作成する方法については、[ **DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md)を参照してください。
+固定長データ値の配列を表すデータ型のプロパティの識別子を作成する方法については、次を参照してください。 [ **DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md)します。
 
 <a name="requirements"></a>要件
 ------------

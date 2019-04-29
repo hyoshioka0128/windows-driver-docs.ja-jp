@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 95848b6dc0eded63d377144d75aa0d3d3be0f1ae
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336561"
 ---
 # <a name="gflag"></a>!gflag
 
@@ -69,7 +69,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 
 グローバル フラグ ユーティリティ (Gflags.exe) を使用して、これらのフラグを設定することもできます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 任意の引数を指定しない場合、 **! gflag**拡張機能は、現在のグローバル フラグの設定を表示します。
@@ -173,7 +173,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 <tr class="odd">
 <td align="left"><p>0x00010000</p></td>
 <td align="left"><p>"idp"</p></td>
-<td align="left"><p>使用されていません。</p></td>
+<td align="left"><p>未使用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00020000</p></td>
@@ -233,7 +233,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 <tr class="odd">
 <td align="left"><p>0x10000000</p></td>
 <td align="left"><p>NULL</p></td>
-<td align="left"><p>使用されていません。</p></td>
+<td align="left"><p>未使用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x20000000</p></td>
@@ -243,7 +243,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 <tr class="odd">
 <td align="left"><p>0x40000000</p></td>
 <td align="left"><p>NULL</p></td>
-<td align="left"><p>使用されていません。</p></td>
+<td align="left"><p>未使用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x80000000</p></td>

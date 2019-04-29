@@ -1,17 +1,17 @@
 ---
-title: ジョブの管理
+title: ジョブ管理
 description: ジョブ キューのライブ ビューを提供するには、Windows 8.1 および以降のバージョンの Windows で、ジョブの管理機能が導入されました。
 ms.assetid: D1236DD2-D4AD-4615-9036-7EC75D6CADCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6002e168002c41a4d67ff98b6ba96d3272ead709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326026"
 ---
-# <a name="job-management"></a>ジョブの管理
+# <a name="job-management"></a>ジョブ管理
 
 
 ジョブ キューのライブ ビューを提供するには、Windows 8.1 および以降のバージョンの Windows で、ジョブの管理機能が導入されました。

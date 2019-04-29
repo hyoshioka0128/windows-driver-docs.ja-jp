@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7336945ef936002bc5337316af88626355b591f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332974"
 ---
 # <a name="kspropertyaudioposition"></a>KSPROPERTY\_オーディオ\_位置
 
@@ -42,16 +42,16 @@ KSPROPERTY\_オーディオ\_位置プロパティは、pin のオーディオ �
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537091" data-raw-source="[&lt;strong&gt;KSAUDIO_POSITION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537091)"><strong>KSAUDIO_POSITION</strong></a></p></td>
@@ -74,7 +74,7 @@ DirectSound は、KSPROPERTY\_オーディオ\_POSITION プロパティを実装
 
 WaveCyclic と WavePci のミニポート ドライバーは KSPROPERTY のプロパティのハンドラーを実装する必要はありません\_オーディオ\_WaveCyclic と WavePci ポート ドライバー ミニポート ドライバーの代わりにこのプロパティを処理するために配置します。 ポート ドライバー プロパティ ハンドラーが、ミニポート ドライバーを呼び出すレンダリング ストリームの再生位置またはキャプチャ ストリーム内のレコードの位置を取得する[ **IMiniportWaveCyclicStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536716)または[ **IMiniportWavePciStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536727)メソッド。
 
-詳細については、[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)を参照してください。
+詳細については、次を参照してください。[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)します。
 
 <a name="requirements"></a>必要条件
 ------------

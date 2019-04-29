@@ -5,11 +5,11 @@ ms.assetid: 55FCA402-191B-4DC9-A126-77AA15183E90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00801e7d5a61dcf5c0b7e570c7a40704a7796d29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326032"
 ---
 # <a name="custom-port-property-definition-and-registration"></a>カスタム ポート プロパティの定義と登録
 
@@ -68,7 +68,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_PortCustomSettingData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)を参照してください。
+MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
 
 次の例では、サンプルの機能を構成する方法を示します。 この例では、Fabrikam\_PortCustomSettingData MOF クラスは、"TestVm"という名前の HYPER-V パーティションからのポートを構成するために使用します。
 

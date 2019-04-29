@@ -5,11 +5,11 @@ ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc2c4d12bd3c55ba6ec0a1f531e781415e8eff06
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327324"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
@@ -133,7 +133,7 @@ error TRK0002: Failed to execute command: ""C:\Program Files (x86)\Windows Kits\
 error : Verification Error: Driver package has no driver version.    C:\Program Files (x86)\Windows Kits\8.0\build\WindowsDriver8.0.common.targets   1338    5   KMDF Driver1 Package
 ```
 
-**回避策:** 2 つの変更を加える必要があります。
+**対応策 :** 2 つの変更を加える必要があります。
 
 1.  **WindowsDriver8.0.x64.props と WindowsDriver8.0.Win32.props ファイルを修正します。**
 
@@ -181,7 +181,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
 
     プロジェクト ファイルを開きます (\*.vcxproj) は、ドライバーの。
 
-    プロジェクト ファイル (リリースおよびデバッグ) では、Vista 対象となる構成を見つけます。 以下に例を示します。
+    プロジェクト ファイル (リリースおよびデバッグ) では、Vista 対象となる構成を見つけます。 例:
 
     ```XML
        <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">

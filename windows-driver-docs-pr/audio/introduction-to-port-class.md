@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50718cd3a4f084e94a267ac30d902af04388fcd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333390"
 ---
 # <a name="introduction-to-port-class"></a>ポート クラスの概要
 
@@ -32,7 +32,7 @@ ms.locfileid: "56528501"
 
 PCI や DMA ベースでのオーディオ デバイスのほとんどのハードウェア ドライバーは、PortCls システム ドライバー (Portcls.sys) からアクセスできるポートをクラス ライブラリに基づいています。 PortCls は、オペレーティング システムの一部として Microsoft を含むオーディオ ポート クラス ドライバーです。 PortCls には、ストリーム配信 (KS) フィルター機能の一般的なカーネルのほとんどを実装しているポート ドライバーのセットが用意されています。 そのため、PortCls は、オーディオ ドライバー開発者のタスクを簡略化します。 ハードウェア ベンダーのみ、オーディオのアダプターのハードウェア固有の関数を処理するために、ミニポート ドライバーのセットを指定する必要があります。
 
-ハードウェア ベンダーには、オーディオ デバイスの場合は、独自 KS フィルターを実装するオプションがありますが、このオプションは難しいと通常のオーディオ デバイスに不要なです。 KS Stream.sys、Stream クラス ドライバー、または Avstream.sys、AVStream クラス ドライバーのいずれかに準拠するようにフィルターを開発することができます。 ただし、Stream.sys に基づいている KS フィルターは AVStream でのみ利用する機能強化を利用できません。 KS フィルターと PortCls についての詳細については、[WDM オーディオ ドライバーの概要](getting-started-with-wdm-audio-drivers.md)を参照してください。
+ハードウェア ベンダーには、オーディオ デバイスの場合は、独自 KS フィルターを実装するオプションがありますが、このオプションは難しいと通常のオーディオ デバイスに不要なです。 KS Stream.sys、Stream クラス ドライバー、または Avstream.sys、AVStream クラス ドライバーのいずれかに準拠するようにフィルターを開発することができます。 ただし、Stream.sys に基づいている KS フィルターは AVStream でのみ利用する機能強化を利用できません。 KS フィルターと PortCls についての詳細については、次を参照してください。 [WDM オーディオ ドライバーの概要](getting-started-with-wdm-audio-drivers.md)します。
 
 PortCls の内部の実装は、既存のドライバーとの互換性を保持中に、後続の Windows リリースの機能強化をストリーミングするカーネルを活用するために展開できます。
 
@@ -48,13 +48,13 @@ PortCls は Portcls.sys システム ファイルのエクスポート ドライ
 
 通常、ポート、ドライバーは、オーディオ サブデバイスの各クラスの機能の大半を提供します。 たとえば、WaveRT ポート ドライバーは、ミニポート ドライバーは、DMA のアドレスとデバイスの名前などのデバイスに固有の詳細を提供します。 一方、DMA ベースのオーディオ デバイスにオーディオ データをストリームに必要な作業のほとんどは。
 
-オーディオ アダプターおよびミニポートのドライバーは、通常は Microsoft C で記述し、COM インターフェイスの広範に利用します。 ポート ミニポート ドライバーのアーキテクチャでは、モジュール設計を推進します。 派生した C++ クラスとして、ミニポート ドライバーの作成者は、ドライバーを実装する必要があります、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698) Portcls.h ヘッダー ファイルで定義されているインターフェイス。 ハードウェア初期化が行われ--ドライバーの読み込み時に通常**Init**のメソッド、 **IMiniport**-派生クラス (たとえば、 [ **IMiniportWaveRT::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536759)). オーディオのミニポート ドライバーの COM の実装の詳細については、[カーネルで COM](com-in-the-kernel.md)を参照してください。
+オーディオ アダプターおよびミニポートのドライバーは、通常は Microsoft C で記述し、COM インターフェイスの広範に利用します。 ポート ミニポート ドライバーのアーキテクチャでは、モジュール設計を推進します。 派生した C++ クラスとして、ミニポート ドライバーの作成者は、ドライバーを実装する必要があります、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698) Portcls.h ヘッダー ファイルで定義されているインターフェイス。 ハードウェア初期化が行われ--ドライバーの読み込み時に通常**Init**のメソッド、 **IMiniport**-派生クラス (たとえば、 [ **IMiniportWaveRT::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536759)). オーディオのミニポート ドライバーの COM の実装の詳細については、次を参照してください。[カーネルで COM](com-in-the-kernel.md)します。
 
 次の図は、ポートおよびミニポート ドライバーと、オーディオ スタック内の位置間のリレーションシップを示しています。
 
 ![ポートおよびミニポートのドライバーの間の関係を示す図](images/portcls-diag.png)
 
-上の図では、KSEndpoint コンポーネントは、Windows Vista および Windows の以降のバージョンに付属しているシステムが指定したファイルです。 このコンポーネントは、DLL (Audiokse.dll) の形式で提供されます。 KSEndpoint では、カーネル モード デバイスのエンドポイントを抽象化し、抽象化されたエンドポイントへのアクセス権を持つオーディオ エンジンを提供します。 オーディオ エンジンの詳細については、[、Windows Vista のオーディオ エンジンが調べる](exploring-the-windows-vista-audio-engine.md)を参照してください。
+上の図では、KSEndpoint コンポーネントは、Windows Vista および Windows の以降のバージョンに付属しているシステムが指定したファイルです。 このコンポーネントは、DLL (Audiokse.dll) の形式で提供されます。 KSEndpoint では、カーネル モード デバイスのエンドポイントを抽象化し、抽象化されたエンドポイントへのアクセス権を持つオーディオ エンジンを提供します。 オーディオ エンジンの詳細については、次を参照してください。 [、Windows Vista のオーディオ エンジンが調べる](exploring-the-windows-vista-audio-engine.md)します。
 
 上の図の凡例には、ベンダーが提供するドライバー コンポーネントを表すボックスが表示されます。 各ミニポート ドライバーの上端のインターフェイスがポート、各ドライバーの下端ことに注意してください。 WaveRT ポート ドライバーが公開するなど、 **IPortWaveRT**インターフェイスを公開する WaveRT ミニポート ドライバーを**IMiniportWaveRT**ポート ドライバーへのインターフェイス。 これらのインターフェイスと呼ばれるあります*上端*と*下端*インターフェイス。
 

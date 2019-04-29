@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3baaf63f05b9fa93aff0c72317408bf7d32a7289
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328384"
 ---
 # <a name="installing-a-biometric-driver"></a>生体認証ドライバーのインストール
 
@@ -84,9 +84,9 @@ ms.locfileid: "56573093"
     HKLM,System\CurrentControlSet\Services\WbioSrvc\Databases\{6E9D4C5A-55B4-4c52-90B7-DDDC75CA4D50},ConnectionString,,""
     ```
 
--   WBDI と従来のドライバーを区別する、ベンダーする必要があります特徴スコア ドライバーのファイルで設定、INX。 特徴のスコアに設定されていない、 [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)サンプル。 特徴のスコアを設定する方法についての詳細については、[生体認証ドライバーを Windows Update で順位付け](ranking-a-biometric-driver-on-windows-update.md)を参照してください。
+-   WBDI と従来のドライバーを区別する、ベンダーする必要があります特徴スコア ドライバーのファイルで設定、INX。 特徴のスコアに設定されていない、 [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)サンプル。 特徴のスコアを設定する方法についての詳細については、次を参照してください。[生体認証ドライバーを Windows Update で順位付け](ranking-a-biometric-driver-on-windows-update.md)します。
 
-INX ファイルと INF ファイルからの違いについては、[INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)を参照してください。
+INX ファイルと INF ファイルからの違いについては、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)します。
 
 従来、ドライバーを使用した WBDI ドライバーを置き換えるためには、次の手順を使用します。
 

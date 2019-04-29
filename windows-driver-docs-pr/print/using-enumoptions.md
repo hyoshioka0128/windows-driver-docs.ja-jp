@@ -1,19 +1,19 @@
 ---
-title: EnumOptions を使用します。
-description: EnumOptions を使用します。
+title: EnumOptions の使用
+description: EnumOptions の使用
 ms.assetid: 6ce16d28-eff7-4701-a592-046f364cda44
 keywords:
 - EnumOptions
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ce4ebc7f2eb92905d5577525c3baf4a19654bf1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330290"
 ---
-# <a name="using-enumoptions"></a>EnumOptions を使用します。
+# <a name="using-enumoptions"></a>EnumOptions の使用
 
 
 

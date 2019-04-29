@@ -1,19 +1,19 @@
 ---
-title: デバイスのメタデータの編集ウィザードでハードウェアとモデル Id を追加します。
-description: デバイスのメタデータの編集ウィザードでハードウェアとモデル Id を追加します。
+title: デバイス メタデータ作成ウィザードでのハードウェア ID とモデル ID の追加
+description: デバイス メタデータ作成ウィザードでのハードウェア ID とモデル ID の追加
 ms.assetid: 1BF563AE-B37B-4105-BA76-2D13F88B2BBD
 keywords:
-- デバイスのメタデータの編集ウィザードでハードウェアとモデル Id を追加します。
+- デバイス メタデータ作成ウィザードでのハードウェア ID とモデル ID の追加
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e77e7073e38b0cd567b058fe8e11b30803f30aa2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332061"
 ---
-# <a name="add-hardware-and-model-ids-in-the-device-metadata-authoring-wizard"></a>デバイスのメタデータの編集ウィザードでハードウェアとモデル Id を追加します。
+# <a name="add-hardware-and-model-ids-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのハードウェア ID とモデル ID の追加
 
 
 ハードウェア Id では、bus 固有の値に基づくハードウェアの機能を識別して、デバイス ドライバーをデバイスにマップするために使用できます。 たとえば、同じハードウェア ID を持つ 2 つのデバイスは、同じドライバーによって使用される機能インターフェイスを共有します。 デバイス メタデータ パッケージを特定のバスまたはインターフェイス上のデバイスのインスタンスにマップするハードウェア Id が使用されます。
@@ -40,7 +40,7 @@ ms.locfileid: "56530817"
 3.  表示されるボックスで、モデル ID の GUID 値を入力します。
 4.  **[OK]** をクリックします。
 
-各デバイスのスタイルのハードウェア ID の詳細については、、[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)を参照してください。
+各デバイスのスタイルのハードウェア ID の詳細については、次を参照してください。、[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)します。
 
  
 

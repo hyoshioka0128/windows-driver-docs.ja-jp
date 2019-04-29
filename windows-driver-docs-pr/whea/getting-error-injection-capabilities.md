@@ -1,6 +1,6 @@
 ---
-title: エラーの挿入機能を取得します。
-description: エラーの挿入機能を取得します。
+title: エラー挿入機能の取得
+description: エラー挿入機能の取得
 ms.assetid: d4ff0d9c-bb17-4dff-8008-bf8d59e44621
 keywords:
 - エラーの挿入機能 WDK WHEA
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a778288b41c07419acb4dea2ce44223130d943e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333955"
 ---
-# <a name="getting-error-injection-capabilities"></a>エラーの挿入機能を取得します。
+# <a name="getting-error-injection-capabilities"></a>エラー挿入機能の取得
 
 
 ユーザー モード アプリケーション機能を取得できます、エラーに関する情報の挿入、ハードウェア プラットフォームの呼び出すことによって、 [ **WHEAErrorInjectionMethods::GetErrorInjectionCapabilitiesRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559516)メソッド。 このメソッドが戻る、 [ **WHEA\_エラー\_インジェクション\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff560460)でサポートされているエラーの挿入機能を記述する構造体、ハードウェア プラットフォームです。

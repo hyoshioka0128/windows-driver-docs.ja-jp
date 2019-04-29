@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b8227040f4b0b4655ae6de25b5331f61ebaaa02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391886"
 ---
 # <a name="usbcamd-minidriver-library"></a>USBCAMD ミニドライバー ライブラリ
 
@@ -47,9 +47,9 @@ Windows 2000 以降と Windows Millennium Edition と以降のオペレーティ
 
 開発者の内容を理解する必要があります[カーネル ストリーミング](kernel-streaming.md)、[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)と[ビデオ キャプチャ デバイス](video-capture-devices.md)します。
 
-USB の仕様を含むその他の開発者については、[USB-IF 開発者領域](https://go.microsoft.com/fwlink/p/?linkid=8781)を参照してください。
+USB の仕様を含むその他の開発者については、次を参照してください。 [USB-IF 開発者領域](https://go.microsoft.com/fwlink/p/?linkid=8781)します。
 
-[全般]、またはコンシューマーは、[USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780)を参照してください。
+[全般]、またはコンシューマーは、次を参照してください。 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780)します。
 
  
 

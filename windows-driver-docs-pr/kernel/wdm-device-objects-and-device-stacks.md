@@ -1,19 +1,19 @@
 ---
-title: WDM デバイス オブジェクトとデバイス スタック
-description: WDM デバイス オブジェクトとデバイス スタック
+title: WDM のデバイス オブジェクトとデバイス スタック
+description: WDM のデバイス オブジェクトとデバイス スタック
 ms.assetid: 1ca151b4-40f8-43e4-a9f7-e754234609ce
 keywords:
 - スタックの WDK、カーネル モード
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5df4c181fea556503166d9391ff0583a8eabcd42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391439"
 ---
-# <a name="wdm-device-objects-and-device-stacks"></a>WDM デバイス オブジェクトとデバイス スタック
+# <a name="wdm-device-objects-and-device-stacks"></a>WDM のデバイス オブジェクトとデバイス スタック
 
 
 

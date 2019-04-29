@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: def9f8c1db230865a5da8d76644a6a9a1a74248a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387229"
 ---
 # <a name="wiaipsprinterendorsertextupload"></a>WIA\_IP\_プリンター\_裏書き\_テキスト\_アップロード
 
@@ -42,7 +42,7 @@ ms.locfileid: "56556718"
 
 このプロパティは必須のすべての・ インプリント ・/裏書き項目が常に 0 (False) の値をレポートに実装できます。 また、WiaItemTypeFile と WiaItemTypeTransfer ・ インプリント ・/裏書き項目を報告する場合このプロパティが必要です (True)、0 以外の値を報告する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

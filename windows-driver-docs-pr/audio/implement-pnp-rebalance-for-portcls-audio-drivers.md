@@ -1,17 +1,17 @@
 ---
-title: PortCls オーディオ ドライバーの PnP 実装を再調整します。
+title: PortCls オーディオ ドライバー用に PnP 再調整を実装する
 description: PnP 再調整はシナリオで使用特定 PCI を再割り当てするメモリ リソースが必要があります。
 ms.assetid: FCAD7F8B-AA9B-430A-BCAF-04E13FA15382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0881661fb05211711bfcb13845fd748293d7fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333486"
 ---
-# <a name="implement-pnp-rebalance-for-portcls-audio-drivers"></a>PortCls オーディオ ドライバーの PnP 実装を再調整します。
+# <a name="implement-pnp-rebalance-for-portcls-audio-drivers"></a>PortCls オーディオ ドライバー用に PnP 再調整を実装する
 
 
 PnP 再調整はシナリオで使用特定 PCI を再割り当てするメモリ リソースが必要があります。
@@ -35,7 +35,7 @@ Portcls オーディオ ドライバーには、次の条件が満たされた�
 
 アクティブなオーディオ ストリームがある場合に再調整をサポートするために、portcls オーディオ ドライバーは、これら 2 つの追加要件の 1 つを満たす必要があります。
 
--   ドライバーでは、 [ **IMiniportWaveRTInputStream::GetReadPacket** ](https://msdn.microsoft.com/library/windows/hardware/dn946533)と[IMiniportWaveRTOutputStream](https://msdn.microsoft.com/library/windows/hardware/dn946534)オーディオ ストリームのパケットのインターフェイス。 このオプションを選択することをお勧めします。
+-   ドライバーでは、 [ **IMiniportWaveRTInputStream::GetReadPacket** ](https://msdn.microsoft.com/library/windows/hardware/dn946533)と[IMiniportWaveRTOutputStream](https://msdn.microsoft.com/library/windows/hardware/dn946534)オーディオ ストリームのパケットのインターフェイス。 これが推奨されるオプションです。
 
 または
 

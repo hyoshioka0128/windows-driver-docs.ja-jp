@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f923c4ab920dacf08ae6f1749f7480e281614203
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331023"
 ---
 # <a name="no-header-information-available"></a>No Header Information Available
 
@@ -22,7 +22,7 @@ ms.locfileid: "56573634"
 
 デバッガーでは、関連するモジュールのヘッダーを調べることで適切なシンボルを識別します。 これらのモジュールのヘッダーをページ アウト場合、デバッガー (とシンボル サーバー) できない適切なシンボルを検索します。 これが発生したときに、シンボルのエラー メッセージ内で「No ヘッダー情報利用可能な」が表示されます。
 
-モジュール ヘッダーをページ アウト時にターゲットをデバッグする方法については、[Paged-Out ヘッダーからシンボルを読み取り](reading-symbols-from-paged-out-headers.md)を参照してください。
+モジュール ヘッダーをページ アウト時にターゲットをデバッグする方法については、次を参照してください。 [Paged-Out ヘッダーからシンボルを読み取り](reading-symbols-from-paged-out-headers.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 9018900A-3670-4C78-9094-1DDAB82847DD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1644d0f152627fb8f043160bbf8ee514edcf9a2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328102"
 ---
 # <a name="authoring-an-update-driver-package"></a>更新プログラム ドライバー パッケージの作成
 
@@ -269,7 +269,7 @@ Modify any strings here [optional]
 
 ドライバー パッケージ INF ファイルおよびファームウェア ペイロード バイナリは、準備ができたら後、は、カタログ ファイルを生成するためにドライバー パッケージ全体を署名する必要があります。 このカタログ ファイルは、有効性と INF ファイルおよびファームウェアのペイロードのバイナリに安全にファームウェアのリソースの更新を開始する Windows を有効にするには、ドライバー パッケージ内に含まれる信頼性の保証が重要になります。
 
-自己テスト目的でドライバー パッケージに署名する手順は以下に列挙します。 この手順は、テスト目的でのみに注意してください。 、運用環境では、ファームウェアの更新プログラムのドライバー パッケージに署名するため、パートナー センターに送信する必要があります。 運用環境用のファームウェア ドライバー パッケージに署名する手順については、[Certifying と更新プログラム パッケージを署名](certifying-and-signing-the-update-package.md)を参照してください。
+自己テスト目的でドライバー パッケージに署名する手順は以下に列挙します。 この手順は、テスト目的でのみに注意してください。 、運用環境では、ファームウェアの更新プログラムのドライバー パッケージに署名するため、パートナー センターに送信する必要があります。 運用環境用のファームウェア ドライバー パッケージに署名する手順については、次を参照してください。 [Certifying と更新プログラム パッケージを署名](certifying-and-signing-the-update-package.md)します。
 
 1.  最新の Windows SDK と Windows Driver Kit をインストールします。 これは、makecert、pvk2pfx inf2cat と signtool のツールを次の %] の [でインストールされます\\Program Files (x86)\\Windows キット\\&lt;*バージョン*&gt; \\bin\\x86。
 2.  テスト証明書を作成するには、次のコマンドを実行します。
@@ -279,7 +279,7 @@ Modify any strings here [optional]
     pvk2pfx.exe -pvk fwu.pvk -spc fwu.cer -pi <Password entered during makecert prompt> -spc fwu.cer -pfx fwu.pfx
     ```
 
-    詳細については、[ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)を参照してください。
+    詳細については、次を参照してください。 [ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)します。
 
 3.  カタログ ファイルを作成するには、次のコマンドを実行します。
 
@@ -287,9 +287,9 @@ Modify any strings here [optional]
     Inf2Cat.exe /driver:"." /os:8_x64
     ```
 
-    */Driver*引数は、INF の場所を指します。 値を変更、 */os*のファームウェアのドライバー パッケージの対象となる OS に応じて引数。 詳細については、[ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)を参照してください。
+    */Driver*引数は、INF の場所を指します。 値を変更、 */os*のファームウェアのドライバー パッケージの対象となる OS に応じて引数。 詳細については、次を参照してください。 [ **Inf2Cat**](https://msdn.microsoft.com/library/windows/hardware/ff547089)します。
 
-    セキュリティ カタログとドライバーの詳細については、[カタログ ファイルとデジタル署名](https://msdn.microsoft.com/library/windows/hardware/ff537872)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540161)を参照してください。
+    セキュリティ カタログとドライバーの詳細については、次を参照してください。[カタログ ファイルとデジタル署名](https://msdn.microsoft.com/library/windows/hardware/ff537872)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540161)します。
 
 4.  カタログ ファイルの署名には、次のコマンドを実行します。
 
@@ -297,7 +297,7 @@ Modify any strings here [optional]
     signtool sign /fd sha256 /f fwu.pfx /p <Password entered during makecert prompt> delta.cat
     ```
 
-    詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
+    詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
 
 5.  テスト システムでは、テスト証明書をインストールします。
     1.  Fwu.cer ファイルをダブルクリックし、選択、**証明書のインストール**オプション。

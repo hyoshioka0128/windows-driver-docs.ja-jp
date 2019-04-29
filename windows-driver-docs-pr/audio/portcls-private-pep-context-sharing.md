@@ -1,17 +1,17 @@
 ---
-title: 共有 PortCls プライベート PEP コンテキスト
+title: PortCls プライベート PEP コンテキストの共有
 description: Windows 8 以降、ミニポート ドライバーは Windows Power エンジン プラグイン (PEP) での共有秘密のコンテキストの IPortClsRuntimePower の新しいインターフェイスを使用できます。
 ms.assetid: 27A0DD72-8AD0-4F38-B17C-9BDD63C5E7E1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a6770297adafe12a4cb6d01637c2766c232039e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328762"
 ---
-# <a name="portcls-private-pep-context-sharing"></a>共有 PortCls プライベート PEP コンテキスト
+# <a name="portcls-private-pep-context-sharing"></a>PortCls プライベート PEP コンテキストの共有
 
 
 Windows 8 以降、ミニポート ドライバーは Windows Power エンジン プラグイン (PEP) での共有秘密のコンテキストの IPortClsRuntimePower の新しいインターフェイスを使用できます。

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CREATE_PORT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a616c4e5f15aef28de73d8ad7581e6be39f8145f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331808"
 ---
 # <a name="wditlvcreateportparameters"></a>WDI\_TLV\_作成\_ポート\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_作成\_ポート\_パラメーターはパラメーターを含む TL
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                                             |
+| 型   | 説明                                                                                                                                                                             |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT16 | 操作モードのビットごとの OR 値、ホストが作成されているポートで構成できます。 操作モードがで定義されている[ **WDI\_操作\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn926085)します。 |
 | UINT32 | NDIS\_ポート\_番号を作成したポートに関連付けられます。 アダプターは、WDI 以外の Oid を処理する必要がある場合を除き、このフィールドに何もする必要はありません。                 |

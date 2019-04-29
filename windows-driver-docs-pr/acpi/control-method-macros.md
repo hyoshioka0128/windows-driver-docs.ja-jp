@@ -1,19 +1,19 @@
 ---
-title: コントロールのメソッドに関するマクロ
-description: コントロールのメソッドに関するマクロ
+title: 制御メソッドのマクロ
+description: 制御メソッドのマクロ
 ms.assetid: cffcfb7a-c949-4bc9-a92f-349f5637ab84
 keywords:
 - ACPI 制御メソッド WDK、マクロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6489eeb7e3c5e0758bbb3df0b1bfd304fba98335
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328851"
 ---
-# <a name="control-method-macros"></a>コントロールのメソッドに関するマクロ
+# <a name="control-method-macros"></a>制御メソッドのマクロ
 
 
 ドライバーは次のマクロを使用して、ACPI Ioctl で使用される入力引数を設定する[制御メソッドを評価](evaluating-acpi-control-methods.md):

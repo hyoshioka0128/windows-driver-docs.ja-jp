@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_IHV_TASK_COMPLETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 01103caf1cfb5b576ee47556ae64447d94c0a118
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390721"
 ---
 # <a name="ndisstatuswdiindicationihvtaskcomplete"></a>NDIS\_状態\_WDI\_INDICATION\_IHV\_タスク\_完了
 
@@ -29,7 +29,7 @@ NDIS\_状態\_WDI\_INDICATION\_IHV\_タスク\_完了の完了を示します[OI
 
 この表示には、追加のデータが含まれていません。 ヘッダー内のデータで十分です。 メッセージの完了ステータスがだれにも転送されません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34574ad8c0a8528f750e9a5ce296564517dd540e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331708"
 ---
 # <a name="avcfunctiongetconnectinfo"></a>AVC\_関数\_取得\_接続情報
 
@@ -108,7 +108,7 @@ AV/C デバイスの接続情報を指定します。
 
 これは、IRQL で呼び出す必要がある = パッシブ\_レベル。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177), [**AVC\_PRECONNECT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff554190), [**AVCPRECONNECTINFO**](https://msdn.microsoft.com/library/windows/hardware/ff554103), [**AVC\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
 

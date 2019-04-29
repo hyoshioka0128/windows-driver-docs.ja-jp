@@ -1,17 +1,17 @@
 ---
-title: WDDM ドライバーと機能の上限
+title: WDDM ドライバーと機能の性能
 description: このトピックでは、Windows Display Driver Model (WDDM) ドライバー機能 (cap) について説明します。
 ms.assetid: 452ADF64-A5CC-4694-BE31-FBED29B32DC1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90692da67e4ce8b062a1952c1ce1c7311dfbcb8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391197"
 ---
-# <a name="wddm-driver-and-feature-caps"></a>WDDM ドライバーと機能の上限
+# <a name="wddm-driver-and-feature-caps"></a>WDDM ドライバーと機能の性能
 
 
 このトピックでは、Windows Display Driver Model (WDDM) ドライバー機能 (cap) について説明します。

@@ -1,6 +1,6 @@
 ---
-title: 作業項目のフレームワークの使用
-description: 作業項目のフレームワークの使用
+title: フレームワーク作業項目の使用
+description: フレームワーク作業項目の使用
 ms.assetid: d7e6d187-bed4-4071-a50b-90f32c4f0d5a
 keywords:
 - WDK KMDF の作業項目します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab60d2b4898e02bea4557196b228fd660854245f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327256"
 ---
-# <a name="using-framework-work-items"></a>作業項目のフレームワークの使用
+# <a name="using-framework-work-items"></a>フレームワーク作業項目の使用
 
 
 
@@ -42,7 +42,7 @@ A*作業項目*でドライバーを実行するタスクは、 [ *EvtWorkItem* 
 
 2.  作業項目に関する情報を格納します。
 
-    通常、ドライバーを使用して作業項目オブジェクトのコンテキストのメモリ タスクに関する情報を格納する、 [ *EvtWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/ff541859)コールバック関数を実行する必要があります。 ときに、 *EvtWorkItem*コールバック関数が呼び出されると、このコンテキストのメモリにアクセスして、情報を取得できます。 割り当てるし、コンテキストのメモリにアクセスする方法については、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
+    通常、ドライバーを使用して作業項目オブジェクトのコンテキストのメモリ タスクに関する情報を格納する、 [ *EvtWorkItem* ](https://msdn.microsoft.com/library/windows/hardware/ff541859)コールバック関数を実行する必要があります。 ときに、 *EvtWorkItem*コールバック関数が呼び出されると、このコンテキストのメモリにアクセスして、情報を取得できます。 割り当てるし、コンテキストのメモリにアクセスする方法については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
 
 3.  システムの作業項目のキューに作業項目を追加します。
 

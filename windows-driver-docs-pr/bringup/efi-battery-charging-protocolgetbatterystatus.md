@@ -1,15 +1,15 @@
 ---
-title: EFI_BATTERY_CHARGING_PROTOCOL します。GetBatteryStatus
-description: EFI_BATTERY_CHARGING_PROTOCOL します。GetBatteryStatus
+title: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus
+description: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus
 ms.assetid: dc2b647b-b3b6-4d85-9faf-9e401fa67571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6159f4fea5db4361067d0ec066a5574b9f393df8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328020"
 ---
 # <a name="efibatterychargingprotocolgetbatterystatus"></a>EFI\_バッテリ\_充電中\_プロトコル。GetBatteryStatus
 
@@ -85,7 +85,7 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_STATUS) (
 
 この関数は、評価済みの容量とメイン バッテリの充電 (SOC) の状態を返します。 この関数は定期的に支援するためにこのプロトコルを実装するドライバーによる追加の処理します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 **ヘッダー:** ユーザーが生成しました。

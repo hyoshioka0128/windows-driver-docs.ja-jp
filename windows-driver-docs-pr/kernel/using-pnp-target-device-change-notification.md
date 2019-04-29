@@ -1,6 +1,6 @@
 ---
-title: ターゲットの PnP デバイスの変更通知を使用してください。
-description: ターゲットの PnP デバイスの変更通知を使用してください。
+title: PnP ターゲット デバイス変更通知の使用
+description: PnP ターゲット デバイス変更通知の使用
 ms.assetid: a56bda5c-e398-442d-bc90-2e63f8f7e6bf
 keywords:
 - 通知 WDK PnP、ターゲット デバイスの変更
@@ -9,13 +9,13 @@ keywords:
 ms.date: 10/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ec75ef243cc1b8dd7f6b6bb6dda05a4dc84ba3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391065"
 ---
-# <a name="using-pnp-target-device-change-notification"></a>ターゲットの PnP デバイスの変更通知を使用してください。
+# <a name="using-pnp-target-device-change-notification"></a>PnP ターゲット デバイス変更通知の使用
 
 ドライバーの登録の**EventCategoryTargetDeviceChange**通知デバイス、デバイスが削除される直前にある場合、ドライバーに通知することができます。 たとえば、ドライバーがデバイスを識別するハンドルを開いた場合、ドライバーに登録する必要があります**EventCategoryTargetDeviceChange** PnP マネージャーがデバイスを削除する必要がある場合、ドライバーはそのハンドルを閉じることができますので、デバイスに通知します。
 

@@ -1,17 +1,17 @@
 ---
-title: DSSPEAKER_DIRECTOUT スピーカーの構成
-description: DSSPEAKER_DIRECTOUT スピーカーの構成
+title: DSSPEAKER_DIRECTOUT スピーカー構成
+description: DSSPEAKER_DIRECTOUT スピーカー構成
 ms.assetid: a4198fb7-157f-40e3-8cca-5a9e392087d2
 keywords:
 - DSSPEAKER_DIRECTOUT スピーカー構成 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 096dfcfbd3f8f0bf9f525c688802381daaab09eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333719"
 ---
 # <a name="dsspeakerdirectout-speaker-configuration"></a>DSSPEAKER\_DIRECTOUT スピーカーの構成
 

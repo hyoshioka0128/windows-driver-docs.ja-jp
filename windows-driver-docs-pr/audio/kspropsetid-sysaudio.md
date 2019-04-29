@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bcc6fdd80274d2f73349c292fd11a339d5c2a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332452"
 ---
 # <a name="kspropsetidsysaudio"></a>KSPROPSETID\_Sysaudio
 
@@ -33,7 +33,7 @@ SysAudio のクライアントは、このプロパティには、次の設定�
 
 -   データの経路を含めるか、AEC のノードをバイパスする際に pin を構成します。
 
-使用可能な仮想オーディオ デバイスのプロパティを表示するには、後にクライアントが仮想のオーディオ デバイスのいずれかを選択し、そのデバイスで pin を作成する準備があります。 一部のクライアントは、仮想のオーディオ デバイスでは、複数の pin を作成するか、1 つ以上のデバイスで pin を作成することができます。 ピンを作成する方法の詳細については、[Pin ファクトリ](https://msdn.microsoft.com/library/windows/hardware/ff537747)を参照してください。
+使用可能な仮想オーディオ デバイスのプロパティを表示するには、後にクライアントが仮想のオーディオ デバイスのいずれかを選択し、そのデバイスで pin を作成する準備があります。 一部のクライアントは、仮想のオーディオ デバイスでは、複数の pin を作成するか、1 つ以上のデバイスで pin を作成することができます。 ピンを作成する方法の詳細については、次を参照してください。 [Pin ファクトリ](https://msdn.microsoft.com/library/windows/hardware/ff537747)します。
 
 クライアントが使用できる、暗証番号 (pin) を作成した後、 [KSPROPSETID\_Sysaudio\_Pin](kspropsetid-sysaudio-pin.md)暗証番号 (pin) を管理するプロパティに設定します。
 

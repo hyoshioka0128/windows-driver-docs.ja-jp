@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_NETWORK_LIST_OFFLOAD_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a57cef35df6f346d947deec674c27b8b554e067
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392268"
 ---
 # <a name="wditlvnetworklistoffloadparameters"></a>WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーター
 
@@ -34,7 +34,7 @@ WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーターは、�
 | 種類                                                                                    | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                  |
 |-----------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_ネットワーク\_一覧\_オフロード\_構成**](wdi-tlv-network-list-offload-config.md) |                                |          | NLO 構成を指定します。                                                                 |
-| [**WDI\_TLV\_SSID\_オフロード**](wdi-tlv-ssid-offload.md)                                 | X                              | X        | 指定の Ssid をオフロードします。 この要素は、存在しない場合は、ファームウェアが NLO スキャンを停止する必要があります。 |
+| [**WDI\_TLV\_SSID\_オフロード**](wdi-tlv-ssid-offload.md)                                 | x                              | x        | 指定の Ssid をオフロードします。 この要素は、存在しない場合は、ファームウェアが NLO スキャンを停止する必要があります。 |
 
  
 

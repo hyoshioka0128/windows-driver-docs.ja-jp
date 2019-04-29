@@ -1,17 +1,17 @@
 ---
-title: 表示でコンテナー ID のサポート
+title: ディスプレイ用のコンテナー ID のサポート
 description: 表示またはモニターのデバイス内に埋め込まれたデバイスのビジュアル表現が表示されます - のコンテナー ID サポートについて説明します。
 ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d613567fd2d9c73ac4fb5388037c5b02db010ff5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327541"
 ---
-# <a name="container-id-support-for-displays"></a>表示でコンテナー ID のサポート
+# <a name="container-id-support-for-displays"></a>ディスプレイ用のコンテナー ID のサポート
 
 
 このトピックでは、ディスプレイのコンテナーの ID のサポートを説明します: ディスプレイやモニターのデバイス内に埋め込まれたデバイスのビジュアル表現。
@@ -21,7 +21,7 @@ ms.locfileid: "56532906"
 | Windows Display Driver Model (WDDM) の最小バージョン                               | 1.2                                      |
 | Windows の最小バージョン                                                           | 8                                        |
 | ドライバーの実装: 完全なグラフィックスおよび表示のみ                              | 必須                                |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要件とテスト |  [コンテナー ID のモニターの機能のテスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
+| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要件とテスト |  [モニター コンテナー ID の機能テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
 
  
 

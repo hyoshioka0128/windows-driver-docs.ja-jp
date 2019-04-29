@@ -5,11 +5,11 @@ ms.assetid: eabac2ec-6e2f-448f-9793-117e12c288d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e69976ba90a8fd4d87c0d2a29a2e223a05669aa8
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328137"
 ---
 # <a name="architecture-of-the-uefi-battery-charging-application-provided-by-microsoft"></a>Microsoft が提供する UEFI バッテリ充電アプリケーションのアーキテクチャ
 
@@ -19,12 +19,12 @@ UEFI バッテリが充電アプリケーションでは、Microsoft が所有�
 
 - デバイスが起動するには、十分な能力を確認します。
 
-- 提供*電源オフ充電*OEM が有効になっている場合をサポートします。 電源オフは、課金の詳細については、[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)を参照してください。
+- 提供*電源オフ充電*OEM が有効になっている場合をサポートします。 電源オフは、課金の詳細については、次を参照してください。[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)します。
 
 UEFI バッテリが充電アプリケーションはキーの UEFI プロトコルを使用し、関連のドライバーによって返されるさまざまな状態に反応します。
 
 > [!NOTE]
-> 用語*UEFI バッテリの充電アプリケーション*このトピックでは、UEFI のバッテリ充電 mobilestartup.efi によって読み込まれるライブラリを指します。 Mobilestartup.efi の詳細については、[ブートおよび UEFI](boot-and-uefi.md)を参照してください。
+> 用語*UEFI バッテリの充電アプリケーション*このトピックでは、UEFI のバッテリ充電 mobilestartup.efi によって読み込まれるライブラリを指します。 Mobilestartup.efi の詳細については、次を参照してください。[ブートおよび UEFI](boot-and-uefi.md)します。
 
 ## <a name="uefi-protocols-used-by-the-uefi-battery-charging-application"></a>UEFI バッテリが充電アプリケーションによって使用される UEFI プロトコル
 
@@ -42,19 +42,19 @@ UEFI バッテリの充電中アプリケーション (Microsoft が所有) は�
 
 4. UEFI バッテリのアプリケーションの呼び出しを充電[EFI\_バッテリ\_充電中\_プロトコル。ChargeBattery](efi-battery-charging-protocolchargebattery.md) 、デバイスを充電する待機を**CompletionEvent**対応する[EFI\_バッテリ\_充電中\_の状態](efi-battery-charging-status.md)が返されます。
 
-このプロトコルの詳細については、[UEFI バッテリの充電プロトコル](uefi-battery-charging-protocol.md)を参照してください。
+このプロトコルの詳細については、次を参照してください。 [UEFI バッテリの充電プロトコル](uefi-battery-charging-protocol.md)します。
 
 ### <a name="uefi-display-power-state-protocol-efidisplaypowerprotocol"></a>UEFI の電源状態のプロトコルの表示 (EFI\_表示\_POWER\_プロトコル)
 
-UEFI バッテリの充電中のプロセス中に、UEFI のバッテリ充電アプリケーションには、代替の省電力 UI が表示されます。 電源ボタンが押された、アプリケーション呼び出しなし 10 秒後に[EFI\_表示\_POWER\_プロトコル。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)表示とバックライトをオフにします。 これにより、UEFI バッテリの充電中に電力を消費するデバイス、デバイスに対する課金およびメインの OS に迅速に処理できます。 アプリケーションが EFI を呼び出す場合は、ディスプレイがオフに、ユーザーが [電源] ボタンを押す、\_表示\_POWER\_プロトコル。戻り、表示を有効にするには、もう一度 SetDisplayPowerState します。 詳細については、[ユーザー エクスペリエンス](#user-experience)このトピックで後述を参照してください。
+UEFI バッテリの充電中のプロセス中に、UEFI のバッテリ充電アプリケーションには、代替の省電力 UI が表示されます。 電源ボタンが押された、アプリケーション呼び出しなし 10 秒後に[EFI\_表示\_POWER\_プロトコル。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)表示とバックライトをオフにします。 これにより、UEFI バッテリの充電中に電力を消費するデバイス、デバイスに対する課金およびメインの OS に迅速に処理できます。 アプリケーションが EFI を呼び出す場合は、ディスプレイがオフに、ユーザーが [電源] ボタンを押す、\_表示\_POWER\_プロトコル。戻り、表示を有効にするには、もう一度 SetDisplayPowerState します。 詳細については、次を参照してください。[ユーザー エクスペリエンス](#user-experience)このトピックで後述します。
 
-このプロトコルの詳細については、[UEFI 電源状態のプロトコルを表示する](uefi-display-power-state-protocol.md)を参照してください。
+このプロトコルの詳細については、次を参照してください。 [UEFI 電源状態のプロトコルを表示する](uefi-display-power-state-protocol.md)します。
 
 ### <a name="uefi-usb-function-protocol-efiusbfnioprotocol"></a>UEFI USB 関数プロトコル (EFI\_USBFN\_IO\_プロトコル)
 
 UEFI バッテリが充電アプリケーションが排他的に依拠しています[EFI\_USBFN\_IO\_プロトコル。DetectPort](efi-usbfn-io-protocoldetectport.md)接続されているポートの種類を判断します。 ポートの種類に基づいて、アプリケーションが呼び出す[EFI\_バッテリ\_充電中\_プロトコル。ChargeBattery](efi-battery-charging-protocolchargebattery.md) 1500 mA または 500 のいずれかで mA します。
 
-このプロトコルの詳細については、[UEFI USB 関数プロトコル](uefi-usb-function-protocol.md)を参照してください。
+このプロトコルの詳細については、次を参照してください。 [UEFI USB 関数プロトコル](uefi-usb-function-protocol.md)します。
 
 ## <a name="application-logic"></a>アプリケーション ロジック
 
@@ -76,7 +76,7 @@ UEFI バッテリが充電アプリケーションが排他的に依拠してい
 
 - デバイスのバッテリはありませんが、アプリケーションが接続されている電源に接続がある場合[EFI\_バッテリ\_充電中\_プロトコル。ChargeBattery](efi-battery-charging-protocolchargebattery.md)バッテリを充電する UEFI バッテリのドライバーを充電が返す必要があります**EfiBatteryChargingStatusBatteryNotDetected**します。 アプリケーションでは、UI エラーを表示して、デバイスをシャット ダウンしてこのエラーを処理します。
 
-- [EFI\_バッテリ\_充電中\_状態](efi-battery-charging-status.md)の値は、両方で同じ方法で解釈されます*しきい値充電*と*充電電源オフ*以外のモード**EfiBatteryChargingStatusSuccess**します。 これらのモードを課金の詳細については、[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)を参照してください。
+- [EFI\_バッテリ\_充電中\_状態](efi-battery-charging-status.md)の値は、両方で同じ方法で解釈されます*しきい値充電*と*充電電源オフ*以外のモード**EfiBatteryChargingStatusSuccess**します。 これらのモードを課金の詳細については、次を参照してください。[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)します。
 
 - 課金モードで、デバイスがある場合、電源を切断するが結果として予想ファームウェアを使用してアプリケーションをシグナル通知の**EfiBatteryChargingSourceNotDetected**、その結果、アプリケーションのシャット ダウンしていますデバイスです。
 

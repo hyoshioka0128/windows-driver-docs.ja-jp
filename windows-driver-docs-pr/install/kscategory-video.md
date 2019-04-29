@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 0c972856e24ea2ceec3104ec3ae79dd5bf1f3e9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330535"
 ---
 # <a name="kscategoryvideo"></a>KSCATEGORY_VIDEO
 
@@ -58,9 +58,9 @@ KS ビデオ デバイスのドライバーでは、オペレーティング シ
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-この機能のカテゴリの詳細については、[UVC INF ファイルを提供する](https://msdn.microsoft.com/library/windows/hardware/ff568123)を参照してください。
+この機能のカテゴリの詳細については、次を参照してください。 [UVC INF ファイルを提供する](https://msdn.microsoft.com/library/windows/hardware/ff568123)します。
 
-概要ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)を参照してください。
+概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
 
 ビデオ デバイスの他のデバイスのインターフェイス クラスについては、次を参照してください[ **KSCATEGORY_TVAUDIO** ](kscategory-tvaudio.md)と[ **KSCATEGORY_TVTUNER** ](kscategory-tvtuner.md) .
 

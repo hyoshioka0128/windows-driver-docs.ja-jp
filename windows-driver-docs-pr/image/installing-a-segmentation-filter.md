@@ -1,17 +1,17 @@
 ---
-title: セグメント化フィルターのインストール
-description: セグメント化フィルターのインストール
+title: セグメンテーション フィルターのインストール
+description: セグメンテーション フィルターのインストール
 ms.assetid: 39f96c16-2408-460c-8aa3-08b6a6584bef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8422cb60810455087efbcf2be9fce69539d3651
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326077"
 ---
-# <a name="installing-a-segmentation-filter"></a>セグメント化フィルターのインストール
+# <a name="installing-a-segmentation-filter"></a>セグメンテーション フィルターのインストール
 
 
 
@@ -48,7 +48,7 @@ Mysegfilter.dll=1
 
 COM **ThreadingModel**あります**両方**します。
 
-INF ファイルの詳細については、[WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)を参照してください。
+INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](inf-files-for-wia-devices.md)します。
 
  
 

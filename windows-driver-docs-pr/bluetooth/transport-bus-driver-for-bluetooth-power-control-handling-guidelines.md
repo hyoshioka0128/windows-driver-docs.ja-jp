@@ -1,17 +1,17 @@
 ---
-title: Bluetooth の電源管理のガイドラインを処理用トランスポート バス ドライバー
+title: Bluetooth 電源管理処理用トランスポート バス ドライバーのガイドライン
 description: Ihv は、多くの場合、チップ (SoC) システム上のシステムに統合されている多機能コント ローラーの Bluetooth 機能をサポートするためにトランスポート バス ドライバーを実装する必要があります。
 ms.assetid: 00792128-320E-45C1-9F58-343B72565CA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5cec025dd7c59e8bf9ab46105fd46211ef7b152
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328176"
 ---
-# <a name="transport-bus-driver-for-bluetooth-power-control-handling-guidelines"></a>Bluetooth の電源管理のガイドラインを処理用トランスポート バス ドライバー
+# <a name="transport-bus-driver-for-bluetooth-power-control-handling-guidelines"></a>Bluetooth 電源管理処理用トランスポート バス ドライバーのガイドライン
 
 
 Ihv は、多くの場合、チップ (SoC) システム上のシステムに統合されている多機能コント ローラーの Bluetooth 機能をサポートするためにトランスポート バス ドライバーを実装する必要があります。

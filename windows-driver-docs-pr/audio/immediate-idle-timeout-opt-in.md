@@ -1,15 +1,15 @@
 ---
-title: イミディ エイト アイドル タイムアウトのオプトイン
+title: 即時アイドル タイムアウトのオプトイン
 description: このトピックでは、Windows 8 ドライバーのオプトイン状態、電源がすぐに電源が不要になったときに使用できる ImmediateIdle レジストリ値について説明します。
 ms.assetid: 43721EC9-4901-4C68-9CCC-E0A71BF2200E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2de1bcac68be13f32c96039adea5e499282f640
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333505"
 ---
 # <a name="span-idaudioimmediateidletimeoutopt-inspanimmediate-idle-timeout-opt-in"></a><span id="audio.immediate_idle_timeout_opt-in"></span>イミディ エイト アイドル タイムアウトのオプトイン
 

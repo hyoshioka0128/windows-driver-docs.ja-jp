@@ -1,17 +1,17 @@
 ---
-title: 使用可能なインターフェイスと関連 Api
+title: 使用できるインターフェイスと関連する API
 description: デバイスごとに 3 つの GPIO インターフェイス 1 つがあります。 各インターフェイスは、GUID によって参照されます。
 ms.assetid: 87A275B0-825A-47F1-9701-D7E91C493877
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1964a81972ae77c7034ae9d516437ab2f7b01274
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326117"
 ---
-# <a name="available-interfaces-and-related-apis"></a>使用可能なインターフェイスと関連 Api
+# <a name="available-interfaces-and-related-apis"></a>使用できるインターフェイスと関連する API
 
 
 次の 3 つの GPIO インターフェイスがあります。 デバイスごとに 1 つ。 各インターフェイスは、GUID によって参照されます。

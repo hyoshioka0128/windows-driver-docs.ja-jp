@@ -1,19 +1,19 @@
 ---
-title: DirectSound Stream データ範囲
-description: DirectSound Stream データ範囲
+title: DirectSound ストリームのデータ範囲
+description: DirectSound ストリームのデータ範囲
 ms.assetid: cc31eb2d-7421-4748-b14c-f4d3d15f9884
 keywords:
 - DirectSound WDK、オーディオ ストリームのデータ範囲
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12eebfffc9b53a3770eaeb47247fb9dda58ea38a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333763"
 ---
-# <a name="directsound-stream-data-range"></a>DirectSound Stream データ範囲
+# <a name="directsound-stream-data-range"></a>DirectSound ストリームのデータ範囲
 
 
 ## <span id="directsound_stream_data_range"></span><span id="DIRECTSOUND_STREAM_DATA_RANGE"></span>

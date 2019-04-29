@@ -5,11 +5,11 @@ ms.assetid: e59907fc-94dc-45c4-943d-1628c63961dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3a73392af7f2d75256a8a2cc76f8e3900fed33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327618"
 ---
 # <a name="vmq-receive-path"></a>VMQ 受信パス
 
@@ -17,7 +17,7 @@ ms.locfileid: "56552287"
 
 
 
-ネットワーク アダプターは、そのキューに設定されているフィルターのすべてのフィルター フィールドのテストに合格した場合にのみ、キューで受信したパケットを示します。 フィルターの条件の詳細については、[VMQ フィルター操作](vmq-filter-operations.md)を参照してください。
+ネットワーク アダプターは、そのキューに設定されているフィルターのすべてのフィルター フィールドのテストに合格した場合にのみ、キューで受信したパケットを示します。 フィルターの条件の詳細については、次を参照してください。 [VMQ フィルター操作](vmq-filter-operations.md)します。
 
 上位のプロトコル ドライバーに設定する場合、 **NDIS\_受信\_キュー\_パラメーター\_1 秒あたり\_キュー\_受信\_INDICATION**フラグ、**フラグ**のメンバー、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造体、ミニポートドライバーを組み合わせる必要がない[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)他の構造を持つキューの受信、 **NET\_バッファー\_一覧**構造体がこのキューに 1 回の呼び出しで、 [ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)関数。 また、ドライバーを設定する必要があります、 **NDIS\_受信\_フラグ\_単一\_キュー**フラグ、 *ReceiveFlags*のパラメーター、 **NdisMIndicateReceiveNetBufferLists**関数。
 

@@ -5,11 +5,11 @@ ms.assetid: 348950d3-fb80-4800-a606-290d473aa412
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ef6f9d7653241245c1c462bb008cfc2a766bef36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326093"
 ---
 # <a name="create-a-hardware-notification-client-driver"></a>ハードウェア通知クライアント ドライバーの作成
 
@@ -38,7 +38,7 @@ ms.locfileid: "56581995"
 
     -   呼び出す[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)クライアント ドライバーのフレームワーク ドライバー オブジェクトを作成します。
 
-    -   内容を定義する、 [ **HWN\_クライアント\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/mt843560)クラスの拡張機能で使用するためのコールバック関数のポインターを含むです。 必要なコールバック関数の詳細については、[ハードウェア通知参照](https://msdn.microsoft.com/library/windows/hardware/dn789336)を参照してください。
+    -   内容を定義する、 [ **HWN\_クライアント\_登録\_パケット**](https://msdn.microsoft.com/library/windows/hardware/mt843560)クラスの拡張機能で使用するためのコールバック関数のポインターを含むです。 必要なコールバック関数の詳細については、次を参照してください。[ハードウェア通知参照](https://msdn.microsoft.com/library/windows/hardware/dn789336)します。
 
     -   呼び出す[HwNRegisterClient](https://msdn.microsoft.com/library/windows/hardware/mt843550)クライアント ドライバーをクラス拡張を登録します。
 

@@ -1,5 +1,5 @@
 ---
-title: ユニバーサルのオーディオのアーキテクチャ
+title: ユニバーサル オーディオ アーキテクチャ
 description: Microsoft Universal オーディオ アーキテクチャ (UAA) は、ドライバーのサポート用のオペレーティング システムに完全に依存するアーキテクチャに準拠しているオーディオ デバイスを使用できます。
 ms.assetid: a42eff33-7952-4004-903d-9b202d1864b9
 keywords:
@@ -16,13 +16,13 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 18ac085175fe4928f6772e27b094f0f4e08927b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328533"
 ---
-# <a name="universal-audio-architecture"></a>ユニバーサルのオーディオのアーキテクチャ
+# <a name="universal-audio-architecture"></a>ユニバーサル オーディオ アーキテクチャ
 
 
 Microsoft Universal オーディオ アーキテクチャ (UAA) は、ドライバーのサポート用のオペレーティング システムに完全に依存するアーキテクチャに準拠しているオーディオ デバイスを使用できます。
@@ -33,7 +33,7 @@ UAA 互換にするには、USB オーディオ デバイスが USB オーディ
 
 UAA 互換にするには、IEEE 1394 AV/C のオーディオ デバイスは、関連の IEEE 1394 仕様と IEEE 1394 AV/C オーディオ デバイスの UAA デザイン ガイドラインに従う必要があります。 オーディオ デバイスを使用することができます、IEEE 1394 を使用して、 [AVCAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver) (Avcaudio.sys)、Windows の一部として指定されます。
 
-Microsoft UAA イニシアチブの詳細については、次を参照してください。、[ユニバーサル オーディオ アーキテクチャ](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/UAA_Guidelines.doc)ホワイト ペーパー。 Intel HD オーディオの詳細については、次を参照してください。、 [Intel HD オーディオ](https://go.microsoft.com/fwlink/p/?linkid=42508)web サイト。 USB と IEEE 1394 のオーディオ デバイスに関連する仕様の一覧は、[USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)と[AVCAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver)を参照してください。
+Microsoft UAA イニシアチブの詳細については、次を参照してください。、[ユニバーサル オーディオ アーキテクチャ](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/UAA_Guidelines.doc)ホワイト ペーパー。 Intel HD オーディオの詳細については、次を参照してください。、 [Intel HD オーディオ](https://go.microsoft.com/fwlink/p/?linkid=42508)web サイト。 USB と IEEE 1394 のオーディオ デバイスに関連する仕様の一覧は、次を参照してください。 [USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)と[AVCAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver)します。
 
  
 

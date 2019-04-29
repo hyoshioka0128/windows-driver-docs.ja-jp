@@ -9,11 +9,11 @@ keywords:
 ms.date: 07/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bdb6caa7e3d4773a60f19f324e7dd87e1f04452d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327242"
 ---
 # <a name="poolmon-examples"></a>PoolMon の例
 
@@ -383,7 +383,7 @@ poolmon
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">キー</th>
+<th align="left">Key</th>
 <th align="left">結果</th>
 <th align="left">説明</th>
 </tr>
@@ -435,17 +435,17 @@ poolmon
 <td align="left"><p>せず<strong>は</strong>、セッション Id 0 ~ 9 のみを入力することができます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>私</strong></p></td>
+<td align="left"><p><strong>i</strong></p></td>
 <td align="left"><p>ターミナル サーバー セッションの ID のプロンプト</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>10</strong></p></td>
+<td align="left"><p>"<strong>10</strong>"</p></td>
 <td align="left"><p>セッションの 10 の割り当てを表示します。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>私</strong></p></td>
+<td align="left"><p><strong>i</strong></p></td>
 <td align="left"><p>ターミナル サーバー セッションの ID のプロンプト</p></td>
 <td align="left"><p>セッションのすべてのプールを表示するには、キーを押します<strong>は</strong>し、ENTER キーを押します。</p></td>
 </tr>

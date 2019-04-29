@@ -1,6 +1,6 @@
 ---
-title: IP ヘルパーのヘッダー ファイルを含む
-description: IP ヘルパーのヘッダー ファイルを含む
+title: IP ヘルパーのヘッダー ファイルを含める
+description: IP ヘルパーのヘッダー ファイルを含める
 ms.assetid: f4642717-223c-425a-8389-cbbc75567ae3
 keywords:
 - IP ヘルパー WDK ネットワー キング、ヘッダー ファイルを含む
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e9427cf63f510262c5704092267661f34edc0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327778"
 ---
-# <a name="including-header-files-for-ip-helper"></a>IP ヘルパーのヘッダー ファイルを含む
+# <a name="including-header-files-for-ip-helper"></a>IP ヘルパーのヘッダー ファイルを含める
 
 
 ドライバー コード IP ヘルパー関数のカーネル モード、MIB 構造体、および Netioapi.h で宣言されている列挙型を使用する必要があります**\#含める**次の一連のステートメント。

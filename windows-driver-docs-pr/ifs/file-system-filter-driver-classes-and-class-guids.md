@@ -1,6 +1,6 @@
 ---
-title: ファイル システム フィルター ドライバーのクラスおよびクラスの Guid
-description: ファイル システム フィルター ドライバーのクラスおよびクラスの Guid
+title: ファイル システム フィルター ドライバー クラスとクラス GUID
+description: ファイル システム フィルター ドライバー クラスとクラス GUID
 ms.assetid: dd247b06-4529-4818-9239-b89c25f5c1df
 keywords:
 - WDK の Guid はファイル システム
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6787d8b4cb6787cfae6003d263b42001a6e8d1ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327495"
 ---
-# <a name="file-system-filter-driver-classes-and-class-guids"></a>ファイル システム フィルター ドライバーのクラスおよびクラスの Guid
+# <a name="file-system-filter-driver-classes-and-class-guids"></a>ファイル システム フィルター ドライバー クラスとクラス GUID
 
 
 ## <span id="ddk_file_system_filter_driver_classes_and_class_guids_if"></span><span id="DDK_FILE_SYSTEM_FILTER_DRIVER_CLASSES_AND_CLASS_GUIDS_IF"></span>

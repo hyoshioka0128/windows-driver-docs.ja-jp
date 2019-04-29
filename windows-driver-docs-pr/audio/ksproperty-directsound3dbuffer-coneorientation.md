@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d694ed772866be9b531796fde13f2f50f2c5c0c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332782"
 ---
 # <a name="kspropertydirectsound3dbufferconeorientation"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEORIENTATION
 
@@ -42,16 +42,16 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEORIENTATION プロパティが 3D サウン
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff536367" data-raw-source="[&lt;strong&gt;DS3DVECTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536367)"><strong>DS3DVECTOR</strong></a></p></td>
@@ -67,7 +67,7 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEORIENTATION プロパティが 3D サウン
 
 KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEORIENTATION プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DirectSound 3D バッファーのプロジェクションのサウンド コーンの方向についての詳細については、Microsoft Windows SDK のドキュメントでは、次を参照してください。

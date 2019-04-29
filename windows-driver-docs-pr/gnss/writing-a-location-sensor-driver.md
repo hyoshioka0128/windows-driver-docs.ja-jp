@@ -5,11 +5,11 @@ ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3c8d0a8e8015545f12f82bc4fe4e5e01829004f
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326166"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>Windows 8.1 用位置センサー ドライバーの作成
 
@@ -87,7 +87,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="support-the-required-properties"></a>必要なプロパティをサポートします。
 
-その他のセンサー ドライバーのようには、場所ドライバーは、一連のプロパティのセンサー自体に関する情報を提供します。 Windows ハードウェア認定プログラムでは、最低限必要な一連の位置情報センサーをサポートする必要がありますプロパティを指定します。 センサーのプロパティ、その意味、およびプロパティは、センサー ドライバーに必要な詳細については、[**センサー プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff545859)を参照してください。 次の一覧には、必要なプロパティが含まれています。
+その他のセンサー ドライバーのようには、場所ドライバーは、一連のプロパティのセンサー自体に関する情報を提供します。 Windows ハードウェア認定プログラムでは、最低限必要な一連の位置情報センサーをサポートする必要がありますプロパティを指定します。 センサーのプロパティ、その意味、およびプロパティは、センサー ドライバーに必要な詳細については、次を参照してください。 [**センサー プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff545859)します。 次の一覧には、必要なプロパティが含まれています。
 
 -   WPD\_機能\_オブジェクト\_カテゴリ
 
@@ -272,7 +272,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="raising-data-updated-and-state-changed-events"></a>データ更新、および状態変更イベントを発生させる
 
-Location API、データと状態変更情報を提供するイベントを発生させる、GPS センサーなどの場所のセンサーが必要です。 センサーのイベントの発生に関する詳細については、[センサー ドライバー イベントについて](https://msdn.microsoft.com/library/windows/hardware/ff545385)を参照してください。
+Location API、データと状態変更情報を提供するイベントを発生させる、GPS センサーなどの場所のセンサーが必要です。 センサーのイベントの発生に関する詳細については、次を参照してください。[センサー ドライバー イベントについて](https://msdn.microsoft.com/library/windows/hardware/ff545385)します。
 
 これらのイベントを発生させる場合ドライバーの場所はこれらの規則に従う必要があります。
 
@@ -291,7 +291,7 @@ Location API、データと状態変更情報を提供するイベントを発�
 
 -   不完全なデータのレポートは提供されません。
 
--   GPS センサーがその修正を失ったときなど、必要なデータ フィールドの現在のデータができないことがあります。 この場合、センサーなどの拡張データ フィールドの更新に関する通知を提供する可能性がありますも\_データ\_型\_NMEA\_文。 このような通知を提供するにはカスタム イベントの種類を使用して、必要なデータ フィールドのデータが使用可能になるまでのカスタム イベントのみが発生します。 カスタム型を定義する方法については、[定数のカスタム値を定義する](https://msdn.microsoft.com/library/windows/hardware/ff545437)を参照してください。
+-   GPS センサーがその修正を失ったときなど、必要なデータ フィールドの現在のデータができないことがあります。 この場合、センサーなどの拡張データ フィールドの更新に関する通知を提供する可能性がありますも\_データ\_型\_NMEA\_文。 このような通知を提供するにはカスタム イベントの種類を使用して、必要なデータ フィールドのデータが使用可能になるまでのカスタム イベントのみが発生します。 カスタム型を定義する方法については、次を参照してください。[定数のカスタム値を定義する](https://msdn.microsoft.com/library/windows/hardware/ff545437)します。
 
 ## <a name="related-topics"></a>関連トピック
 

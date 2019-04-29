@@ -1,6 +1,6 @@
 ---
-title: データ範囲は、プロパティの積集合をピン留め
-description: データ範囲は、プロパティの積集合をピン留め
+title: ピンのデータ範囲と交差のプロパティ
+description: ピンのデータ範囲と交差のプロパティ
 ms.assetid: 55a749b2-1f54-42f8-876c-f391112d7bab
 keywords:
 - WDK、ピンのオーディオのプロパティ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c75222f1c2bcf2bdfa92b14cfbfc68c57592f7e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332225"
 ---
-# <a name="pin-data-range-and-intersection-properties"></a>データ範囲は、プロパティの積集合をピン留め
+# <a name="pin-data-range-and-intersection-properties"></a>ピンのデータ範囲と交差のプロパティ
 
 
 ## <span id="pin_data_range_and_intersection_properties"></span><span id="PIN_DATA_RANGE_AND_INTERSECTION_PROPERTIES"></span>
@@ -33,7 +33,7 @@ Pin がサポートできるオーディオ ストリームのデータ形式が
 [**KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://msdn.microsoft.com/library/windows/hardware/ff565198)このプロパティは、データ範囲の一覧からデータ形式を選択します。 選択範囲は動的な機能に基づいており、形式は、ドライバーは、プロパティの要求時にサポートできる形式のサブセットから取得されます。 このプロパティを使用して、呼び出し元は、データ範囲の配列を提供します。 現在サポート可能であるデータの範囲が見つかるまで、配列の検索をプロパティ ハンドラー以降の最初の要素では、します。 かどうか成功すると、ハンドラーは出力データ形式は、そのデータの範囲から取得し、ステータスを返しますを\_成功します。 ハンドラーが状態を返しますそれ以外の場合、\_いいえ\_一致します。
 オーディオ システム コンポーネントの使用、KSPROPERTY\_暗証番号 (pin)\_DATARANGES と KSPROPERTY\_PIN\_DATAINTERSECTION プロパティ。 ミニポート ドライバーでは、これらのプロパティをサポートする必要があります。 KSPROPERTY サポート\_PIN\_CONSTRAINEDDATARANGES は省略可能です。
 
-詳細については、[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)を参照してください。
+詳細については、次を参照してください。[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)します。
 
 **注**   、KSPROPERTY\_PIN\_DATARANGES と KSPROPERTY\_暗証番号 (pin)\_各 CONSTRAINEDDATARANGES が 8 バイト固定アドレスで開始します。
 

@@ -1,17 +1,17 @@
 ---
-title: オーディオの INF ファイルの設定
-description: オーディオの INF ファイルの設定
+title: オーディオ INF ファイルの設定
+description: オーディオ INF ファイルの設定
 ms.assetid: dcfa18cb-05c6-4192-9478-469258fb9719
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8dc07325b0d8d772db7739cfa11bf70724eab5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332372"
 ---
-# <a name="audio-inf-file-settings"></a>オーディオの INF ファイルの設定
+# <a name="audio-inf-file-settings"></a>オーディオ INF ファイルの設定
 
 
 ## <span id="ddk_media_class_inf_extensions_ks"></span><span id="DDK_MEDIA_CLASS_INF_EXTENSIONS_KS"></span>

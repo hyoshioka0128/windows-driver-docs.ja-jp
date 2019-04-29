@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7d4a3958e062ce9501dd2d12b805cad6e6ad18a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392853"
 ---
 # <a name="iasphelpgetistcpmonsupported-method"></a>Iasphelp::get\_IsTCPMonSupported メソッド
 
@@ -73,7 +73,7 @@ Win32 エラー コードを返すこともできます。
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
-<td><p>メモリ不足です。</p></td>
+<td><p>メモリ不足。</p></td>
 </tr>
 </tbody>
 </table>
@@ -90,7 +90,7 @@ objPrinter.Open strPrinter
 UseStdMon = objPrinter.IsTCPMonSupported
 ```
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

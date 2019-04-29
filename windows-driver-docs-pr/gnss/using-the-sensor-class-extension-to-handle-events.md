@@ -1,17 +1,17 @@
 ---
-title: センサー クラスの拡張機能を使用してイベントを処理するには
+title: センサー クラス拡張機能によるイベントの処理
 description: センサー クラスの拡張機能は、センサー ドライバーとセンサー API の間リンケージ イベントを処理します。
 ms.assetid: A49489EF-1721-4F12-9793-6FBA76BA7976
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 795e5e55a545dc6fd42fc0979c79aeb86cb57e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326176"
 ---
-# <a name="using-the-sensor-class-extension-to-handle-events"></a>センサー クラスの拡張機能を使用してイベントを処理するには
+# <a name="using-the-sensor-class-extension-to-handle-events"></a>センサー クラス拡張機能によるイベントの処理
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。

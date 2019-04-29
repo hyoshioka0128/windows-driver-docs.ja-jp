@@ -1,6 +1,6 @@
 ---
-title: IEEE 1394 コント ローラーのデバイス オブジェクトの例
-description: IEEE 1394 コント ローラーのデバイス オブジェクトの例
+title: IEEE 1394 コントローラーのデバイス オブジェクトの例
+description: IEEE 1394 コントローラーのデバイス オブジェクトの例
 ms.assetid: 9a83786b-8821-43b7-bf86-c85f2dcb9749
 keywords:
 - ストレージ ドライバー WDK、デバイス オブジェクト
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77a6f784544a26f8a37010986f0f6d2fd9e23fc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331724"
 ---
-# <a name="device-object-example-for-an-ieee-1394-controller"></a>IEEE 1394 コント ローラーのデバイス オブジェクトの例
+# <a name="device-object-example-for-an-ieee-1394-controller"></a>IEEE 1394 コントローラーのデバイス オブジェクトの例
 
 
 ## <span id="ddk_device_object_example_for_an_ieee_1394_controller_kg"></span><span id="DDK_DEVICE_OBJECT_EXAMPLE_FOR_AN_IEEE_1394_CONTROLLER_KG"></span>
@@ -30,7 +30,7 @@ IEEE 1394 のコント ローラー上の CD-ROM デバイス用のデバイス 
 
 以降、図の下部では、次に示します各デバイス オブジェクトとその対応するドライバー。
 
-1.  Pdo のアダプターの最大記憶域バス FDO から、デバイス ツリーの説明は、[SCSI HBA のデバイス オブジェクトの例](device-object-example-for-a-scsi-hba.md)を参照してください。
+1.  Pdo のアダプターの最大記憶域バス FDO から、デバイス ツリーの説明は、次を参照してください。 [SCSI HBA のデバイス オブジェクトの例](device-object-example-for-a-scsi-hba.md)します。
 
 2.  IEEE 1394 ドライバー スタックの最上位のドライバーでは、SBP2 ディスク デバイス PDO を作成します。 最終的には、IEEE 1394 のドライバー スタックは、IEEE 1394 バス上のターゲットの CD-ROM デバイスに SBP2 コマンドを発行します。
 

@@ -1,6 +1,6 @@
 ---
-title: 中間ドライバーのリセット操作
-description: 中間ドライバーのリセット操作
+title: 中間ドライバー リセット操作
+description: 中間ドライバー リセット操作
 ms.assetid: 473dce77-4636-40da-ac38-cda1676eba3f
 keywords:
 - 中間ドライバー WDK ネットワー キング、リセットの操作
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4027bcbd6bbc4013877eb42dee0344ec4712fe8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391653"
 ---
-# <a name="intermediate-driver-reset-operations"></a>中間ドライバーのリセット操作
+# <a name="intermediate-driver-reset-operations"></a>中間ドライバー リセット操作
 
 
 

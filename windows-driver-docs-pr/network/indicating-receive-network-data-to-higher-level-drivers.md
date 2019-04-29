@@ -1,6 +1,6 @@
 ---
-title: 高いレベルのドライバーへのネットワーク データの受信を示す
-description: 高いレベルのドライバーへのネットワーク データの受信を示す
+title: 高レベル ドライバーへの受信ネットワーク データの表示
+description: 高レベル ドライバーへの受信ネットワーク データの表示
 ms.assetid: 27272427-86bc-4fd3-bd2f-12d94273fcd4
 keywords:
 - 中間ドライバー WDK ネットワー キング、受信操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4bb97a5a664978159a5cae81afd6292eb7cb7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327809"
 ---
-# <a name="indicating-receive-network-data-to-higher-level-drivers"></a>高いレベルのドライバーへのネットワーク データの受信を示す
+# <a name="indicating-receive-network-data-to-higher-level-drivers"></a>高レベル ドライバーへの受信ネットワーク データの表示
 
 
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5498f1a765e6cfff252c7a3afa2e36d2ffdb3ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392745"
 ---
 # <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-data-fields"></a>データ フィールドを含む WMI クラスを処理するミニポート ドライバー コールバック ルーチンの設計
 
@@ -59,7 +59,7 @@ typedef struct _HBAFCPBindingEntry
 
 データ入力と出力データを管理するときに、SRB の入力と出力バッファーにこの構造体宣言をキャストすることができます。
 
-、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されているデータの詳細については、[ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946)を参照してください。
+、戻る前に、コールバック ルーチンを呼び出す必要があります[ **ScsiPortWmiPostProcess**](https://msdn.microsoft.com/library/windows/hardware/ff564796)します。 この SCSI ポート WMI ライブラリ ルーチンでは、要求の状態と戻り値のデータのサイズなどの情報を要求コンテキストを更新します。 要求コンテキストに格納されているデータの詳細については、次を参照してください。 [ **SCSIWMI\_要求\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff564946)します。
 
  
 

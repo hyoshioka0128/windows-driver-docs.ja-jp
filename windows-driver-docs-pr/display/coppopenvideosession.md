@@ -11,11 +11,11 @@ keywords:
 ms.date: 02/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf12e148b6df3cfbd273036dc0c308a41e35237
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331304"
 ---
 # <a name="coppopenvideosession-function"></a>COPPOpenVideoSession 関数
 
@@ -44,7 +44,7 @@ HRESULT COPPOpenVideoSession(
 
 0 (S_OK または DD_OK) を返します成功した場合。それ以外の場合、エラー コードを返します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 COPP デバイス クラスの他のメンバー関数が呼び出される前に、COPPOpenVideoSession 呼び出しを通じて COPP デバイスを初期化する必要があります。 COPPOpenVideoSession は、それぞれのサポートされている保護の種類と対応するグローバルな保護レベルのカウンターをインクリメントのビデオ セッションのローカルでの保護レベル (0 に設定) を初期化する必要があります。 詳細については、保護レベルの処理を参照してください。
 

@@ -1,6 +1,6 @@
 ---
-title: UPS ミニドライバーの書き込み
-description: UPS ミニドライバーの書き込み
+title: UPS ミニドライバーの作成
+description: UPS ミニドライバーの作成
 ms.assetid: 85142cbf-cb3b-4ccf-a005-8fcb7a7ad12b
 keywords:
 - UPS ミニドライバー WDK
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a19094bacda3114155c76f70eba10bc7b30870
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328679"
 ---
-# <a name="writing-ups-minidrivers"></a>UPS ミニドライバーの書き込み
+# <a name="writing-ups-minidrivers"></a>UPS ミニドライバーの作成
 
 
 ## <span id="ddk_writing_ups_minidrivers_kg"></span><span id="DDK_WRITING_UPS_MINIDRIVERS_KG"></span>

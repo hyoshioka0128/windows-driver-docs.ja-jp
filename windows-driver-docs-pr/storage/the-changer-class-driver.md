@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91613ffdd4037b6622537eff242a6d9cd72c25a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390208"
 ---
 # <a name="the-changer-class-driver"></a>チェンジャー クラス ドライバー
 
@@ -21,7 +21,7 @@ ms.locfileid: "56539093"
 ## <span id="ddk_the_changer_class_driver_kg"></span><span id="DDK_THE_CHANGER_CLASS_DRIVER_KG"></span>
 
 
-チェンジャー クラス ドライバーは、ハードウェア ベンダーによって提供されるチェンジャー miniclass ドライバーの特定のオペレーティング システム、デバイスに依存しないサービスを実行します。 チェンジャー miniclass ドライバーの詳細については、[Vendor-Supplied チェンジャー ドライバー](vendor-supplied-changer-drivers.md)を参照してください。
+チェンジャー クラス ドライバーは、ハードウェア ベンダーによって提供されるチェンジャー miniclass ドライバーの特定のオペレーティング システム、デバイスに依存しないサービスを実行します。 チェンジャー miniclass ドライバーの詳細については、次を参照してください。 [Vendor-Supplied チェンジャー ドライバー](vendor-supplied-changer-drivers.md)します。
 
 チェンジャー クラス ドライバー:
 

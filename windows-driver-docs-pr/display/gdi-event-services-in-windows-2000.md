@@ -1,6 +1,6 @@
 ---
-title: Windows 2000 で GDI イベント サービス
-description: Windows 2000 で GDI イベント サービス
+title: Windows 2000 での GDI イベント サービス
+description: Windows 2000 での GDI イベント サービス
 ms.assetid: bf7f2127-cd3e-430c-99fd-62c824394a57
 keywords:
 - DirectX 8.0 リリース ノートには、Windows 2000 の WDK 表示 GDI イベント サービス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 570ba9e5fa8c5d4c457915ec109d14226e58b3d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326188"
 ---
-# <a name="gdi-event-services-in-windows-2000"></a>Windows 2000 で GDI イベント サービス
+# <a name="gdi-event-services-in-windows-2000"></a>Windows 2000 での GDI イベント サービス
 
 
 ## <span id="ddk_gdi_event_services_in_windows_2000_gg"></span><span id="DDK_GDI_EVENT_SERVICES_IN_WINDOWS_2000_GG"></span>

@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bf22d72b2b5fbf6bb02154851014ea0cde0b248
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331422"
 ---
 # <a name="audio-property-requests"></a>オーディオのプロパティの要求
 
@@ -30,9 +30,9 @@ ms.locfileid: "56551591"
 
 Microsoft Windows Driver Model (WDM) オーディオ ドライバーのクライアント要求を送信できる[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)KS フィルターと pin をドライバーがインスタンス化します。 ユーザー モードのクライアントが呼び出して KS プロパティの要求を送信するなど、 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) IOCTL、O コントロール コード (Microsoft Windows SDK のドキュメントを参照してください) を関数\_KS\_プロパティ。 この関数は、指定したフィルターまたは pin オブジェクトにプロパティの要求を含む IRP を送信します。
 
-オーディオ ドライバーのプロパティの get、セット、および basic サポート要求をサポート (KSPROPERTY\_型\_GET、KSPROPERTY\_型\_セット、および KSPROPERTY\_型\_BASICSUPPORT)。 詳細については、[オーディオ ドライバーのプロパティ セット](https://msdn.microsoft.com/library/windows/hardware/ff536197)を参照してください。
+オーディオ ドライバーのプロパティの get、セット、および basic サポート要求をサポート (KSPROPERTY\_型\_GET、KSPROPERTY\_型\_セット、および KSPROPERTY\_型\_BASICSUPPORT)。 詳細については、次を参照してください。[オーディオ ドライバーのプロパティ セット](https://msdn.microsoft.com/library/windows/hardware/ff536197)します。
 
-クライアントは、プロパティの 3 種類の要求を送信できます。 プロパティ、pin のプロパティ、およびノードのプロパティをフィルター処理します。 詳細については、[フィルター、Pin、およびノードのプロパティ](filter--pin--and-node-properties.md)を参照してください。
+クライアントは、プロパティの 3 種類の要求を送信できます。 プロパティ、pin のプロパティ、およびノードのプロパティをフィルター処理します。 詳細については、次を参照してください。[フィルター、Pin、およびノードのプロパティ](filter--pin--and-node-properties.md)します。
 
 クライアントがそのインスタンス ハンドルによってターゲット フィルターを指定するフィルター オブジェクトにフィルター プロパティの要求を送信するときに (を参照してください[フィルター ファクトリ](filter-factories.md))。 同様に、暗証番号 (pin) のオブジェクトにピン留めするプロパティの要求を送信するときにターゲットの暗証番号 (pin) がそのインスタンスのハンドルで指定された (を参照してください[Pin ファクトリ](pin-factories.md))。 要求のいずれかの型が含まれています、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)次を指定する構造体。
 
@@ -54,7 +54,7 @@ Microsoft Windows Driver Model (WDM) オーディオ ドライバーのクライ
 
 これらの規則を特定のデータ パス上の特定のノードを一意に識別できます。
 
-ミキサー API を使用して、データ パスのノードを走査する方法については、[オーディオ Mixer API 翻訳にカーネル ストリーミング トポロジ](kernel-streaming-topology-to-audio-mixer-api-translation.md)を参照してください。
+ミキサー API を使用して、データ パスのノードを走査する方法については、次を参照してください。[オーディオ Mixer API 翻訳にカーネル ストリーミング トポロジ](kernel-streaming-topology-to-audio-mixer-api-translation.md)します。
 
  
 

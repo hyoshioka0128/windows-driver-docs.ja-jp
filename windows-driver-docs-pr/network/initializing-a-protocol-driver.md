@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d043809b5a93e4e6feb8a08dce74b6f8c3fdf3e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324992"
 ---
 # <a name="initializing-a-protocol-driver"></a>プロトコル ドライバーの初期化
 
@@ -60,7 +60,7 @@ NDIS プロトコル ドライバーのすべての種類を完全に機能に�
 
 呼び出しに成功した後にエラーが発生した場合[NdisRegisterProtocolDriver](https://msdn.microsoft.com/library/windows/hardware/ff564520)、ドライバーを呼び出す必要があります、 [NdisDeregisterProtocolDriver](https://msdn.microsoft.com/library/windows/hardware/ff561743)する前に関数**DriverEntry**返します。
 
-省略可能なサービスを構成するプロトコル ドライバーには、NDIS 呼び出しは、 *ProtocolSetOptions*プロトコル ドライバーの呼び出しのコンテキスト内で関数**NdisRegisterProtocolDriver**します。 省略可能なサービスの詳細については、[省略可能なプロトコル ドライバー サービスを構成する](configuring-optional-protocol-driver-services.md)を参照してください。
+省略可能なサービスを構成するプロトコル ドライバーには、NDIS 呼び出しは、 *ProtocolSetOptions*プロトコル ドライバーの呼び出しのコンテキスト内で関数**NdisRegisterProtocolDriver**します。 省略可能なサービスの詳細については、次を参照してください。[省略可能なプロトコル ドライバー サービスを構成する](configuring-optional-protocol-driver-services.md)します。
 
 いる CoNDIS クライアント ドライバーを呼び出す必要があります、 [NdisSetOptionalHandlers](https://msdn.microsoft.com/library/windows/hardware/ff564550)関数を[ *ProtocolSetOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff570269)関数。 ドライバーの初期化、 [ **NDIS_CO_CLIENT_OPTIONAL_HANDLERS** ](https://msdn.microsoft.com/library/windows/hardware/ff564884)を構造化し、これで、 *OptionalHandlers*パラメーターの**NdisSetOptionalHandlers**します。
 

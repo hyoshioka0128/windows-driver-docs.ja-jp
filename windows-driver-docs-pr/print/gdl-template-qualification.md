@@ -1,6 +1,6 @@
 ---
-title: GDL テンプレート認定
-description: GDL テンプレート認定
+title: GDL テンプレート資格
+description: GDL テンプレート資格
 ms.assetid: 6a0fef55-4097-4d5b-b192-ce8a03b9c41f
 keywords:
 - テンプレートのテンプレートに関連付けるキーワードの WDK GDL
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff92b14bc2dea64ae09253ba86dd670cb4bf322f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390599"
 ---
-# <a name="gdl-template-qualification"></a>GDL テンプレート認定
+# <a name="gdl-template-qualification"></a>GDL テンプレート資格
 
 
 テンプレートとそのテンプレート フォームから直接または間接的に派生したすべてのテンプレート、*継承ツリー*または*サブツリー*します。 ただし、再定義されているテンプレートを派生\*名の構成要素は、このツリーから除外されます。

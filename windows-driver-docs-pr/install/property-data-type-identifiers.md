@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d10b78ef93b9fd16bff273efe30d01e6cfa20fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325975"
 ---
 # <a name="property-data-type-identifiers"></a>Property-Data-Type 識別子
 
@@ -36,7 +36,7 @@ Windows プロパティのデータ型識別子の要件を適用するだけで
 
 SetupAPI プロパティ関数を取得し、プロパティを設定する値を*PropertyType*パラメーター。 プロパティの値を取得する関数を*PropertyType*プロパティのデータ型のプロパティの識別子を受け取る出力パラメーターです。 プロパティ値を設定する関数を*PropertyType*デバイス プロパティのデータ型のプロパティの識別子を提供する入力パラメーターです。
 
-詳細については、[プロパティにアクセスするデバイス (Windows Vista 以降) を使用して SetupAPI](using-setupapi-to-access-device-properties--windows-vista-and-later-.md)を参照してください。
+詳細については、次を参照してください。[プロパティにアクセスするデバイス (Windows Vista 以降) を使用して SetupAPI](using-setupapi-to-access-device-properties--windows-vista-and-later-.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: SerCx2 I/O トランザクションの概要
+title: SerCx2 の I/O トランザクションの概要
 description: SerCx2 シリアル コント ローラーのドライバーを 1 つまたは複数の I/O トランザクションを発行して、クライアントからの読み取りまたは書き込み要求を処理します。
 ms.assetid: 04DDFE53-4855-4029-BE1E-9D184B02A998
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c29685682913abc8e3f9976aebbeb164ceb86ded
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331113"
 ---
-# <a name="overview-of-sercx2-io-transactions"></a>SerCx2 I/O トランザクションの概要
+# <a name="overview-of-sercx2-io-transactions"></a>SerCx2 の I/O トランザクションの概要
 
 
 SerCx2 シリアル コント ローラーのドライバーを 1 つまたは複数の I/O トランザクションを発行して、クライアントからの読み取りまたは書き込み要求を処理します。 各トランザクションは、このドライバーは、シリアル コント ローラーと、要求のデータ バッファー間でデータを転送する I/O 操作を自己完結型として扱います。

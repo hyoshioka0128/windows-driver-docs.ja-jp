@@ -1,5 +1,5 @@
 ---
-title: ラジオの管理をサポートしています。
+title: 無線管理のサポート
 description: ユーザーが、Windows 8 ラップトップ、ノートブック、または tablet PC 設定で [ワイヤレス] オプションをオンまたはオフ、接続しているワイヤレス デバイスを有効にできます。
 ms.assetid: AA7AB429-30C5-4C10-AA85-41ED9EAEE69A
 keywords:
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6bc428469d1290065e4669cd86eec6d3073dbbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326178"
 ---
-# <a name="supporting-radio-management"></a>ラジオの管理をサポートしています。
+# <a name="supporting-radio-management"></a>無線管理のサポート
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。

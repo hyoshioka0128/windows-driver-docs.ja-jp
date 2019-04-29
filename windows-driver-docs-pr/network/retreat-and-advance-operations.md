@@ -1,6 +1,6 @@
 ---
-title: 撤退と高度な操作
-description: 撤退と高度な操作
+title: リトリートおよびアドバンス操作
+description: リトリートおよびアドバンス操作
 ms.assetid: 90d4acae-e66c-486b-8b38-59f7fe159047
 keywords:
 - ネットワーク データ WDK、高度な操作
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed28a175b80fa6a74e019968d00fffad49bba9c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391646"
 ---
-# <a name="retreat-and-advance-operations"></a>撤退と高度な操作
+# <a name="retreat-and-advance-operations"></a>リトリートおよびアドバンス操作
 
 
 

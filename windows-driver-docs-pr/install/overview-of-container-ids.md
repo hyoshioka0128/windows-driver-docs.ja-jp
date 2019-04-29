@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3ca4c823eeb57be16b15bb94eee1326045a37e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330261"
 ---
 # <a name="overview-of-container-ids"></a>コンテナー ID の概要
 

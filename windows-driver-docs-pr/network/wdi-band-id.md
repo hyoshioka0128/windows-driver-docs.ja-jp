@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8782091eaf19c4217ff0d7e57b2eb4d85895e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391922"
 ---
 # <a name="wdibandid"></a>WDI_BAND_ID
 
@@ -25,7 +25,7 @@ typedef UINT32 WDI_BAND_ID;
 
 可能なバンド ID の値は次のとおりです。
 
-| Value |   | 説明 |
+| 値 |   | 説明 |
 | --- | --- | --- |
 | WDI_BAND_ID_ANY | 0 xffffffff | すべてのバンド |
 | WDI_BAND_ID_2400 | 1 | 2.4 GHz |

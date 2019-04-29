@@ -9,18 +9,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 658900f0a2614e096a854bac49d0871ed5bb1bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390781"
 ---
 # <a name="version-numbers-for-wddm-drivers"></a>WDDM ドライバーのバージョン番号
 
 
 ディスプレイ ドライバー Windows 表示 Driver Model (WDDM) に準拠していることを確認するまたは[Windows 2000 display driver model (XDDM)](windows-2000-display-driver-model-design-guide.md) Microsoft Windows で Microsoft DirectX の特定のバージョンで実行する を適用する必要がある、ドライバーを適切なバージョン番号です。 任意の DirectX アプリケーションをインストールするときに、ベンダーは、正しくない形式を使用するバージョン番号または不適切なバージョン番号にディスプレイ ドライバーを配布する場合に、エンドユーザーで問題が発生します。
 
-**注**   、 **DriverVer**ディレクティブは、ドライバー パッケージをドライバー ファイル、INF ファイル自体には、INF ファイルなどのバージョン情報を追加する方法を提供します。 使用して、 **DriverVer**ディレクティブ、安全かつ明確を置換できますドライバー パッケージを同じパッケージの将来のバージョン。 このディレクティブの詳細については、[ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)を参照してください。
+**注**   、 **DriverVer**ディレクティブは、ドライバー パッケージをドライバー ファイル、INF ファイル自体には、INF ファイルなどのバージョン情報を追加する方法を提供します。 使用して、 **DriverVer**ディレクティブ、安全かつ明確を置換できますドライバー パッケージを同じパッケージの将来のバージョン。 このディレクティブの詳細については、次を参照してください。 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)します。
 
  
 
@@ -74,7 +74,7 @@ ms.locfileid: "56581558"
 
  
 
-ディスプレイ ドライバーのバージョン管理の詳細については、[表示ドライバーのバージョン番号](version-numbers-for-display-drivers.md)と[ドライバーのバージョン管理](wddm-2-1-features.md#driver-versioning)を参照してください。
+ディスプレイ ドライバーのバージョン管理の詳細については、次を参照してください。[表示ドライバーのバージョン番号](version-numbers-for-display-drivers.md)と[ドライバーのバージョン管理](wddm-2-1-features.md#driver-versioning)します。
 
  
 

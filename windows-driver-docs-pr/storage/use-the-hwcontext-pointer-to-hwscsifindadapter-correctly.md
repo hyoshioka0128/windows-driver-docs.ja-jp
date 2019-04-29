@@ -1,6 +1,6 @@
 ---
-title: HwScsiFindAdapter へ HwContext のポインターを正しく使用します。
-description: HwScsiFindAdapter へ HwContext のポインターを正しく使用します。
+title: HwScsiFindAdapter に対する HwContext ポインターの正しい使用
+description: HwScsiFindAdapter に対する HwContext ポインターの正しい使用
 ms.assetid: 9f287989-423b-4084-bf18-8df8676f7123
 keywords:
 - SCSI ミニポート ドライバー WDK 記憶域、PnP
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20fb54b6db08f04b7e2087f83392fb9cf30680df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390201"
 ---
-# <a name="use-the-hwcontext-pointer-to-hwscsifindadapter-correctly"></a>HwScsiFindAdapter へ HwContext のポインターを正しく使用します。
+# <a name="use-the-hwcontext-pointer-to-hwscsifindadapter-correctly"></a>HwScsiFindAdapter に対する HwContext ポインターの正しい使用
 
 
 ## <span id="ddk_use_the_hwcontext_pointer_to_hwscsifindadapter_correctly_kg"></span><span id="DDK_USE_THE_HWCONTEXT_POINTER_TO_HWSCSIFINDADAPTER_CORRECTLY_KG"></span>

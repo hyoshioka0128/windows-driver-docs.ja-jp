@@ -1,6 +1,6 @@
 ---
-title: WdbgExts 入力と出力
-description: WdbgExts 入力と出力
+title: WdbgExts の入力と出力
+description: WdbgExts の入力と出力
 ms.assetid: 5648b509-7bdd-4d2a-947f-db55a8c69100
 keywords:
 - 入力、WdbgExts 拡張機能
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86965d13bba089e951bc55165baab8aa41653d82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325994"
 ---
-# <a name="wdbgexts-input-and-output"></a>WdbgExts 入力と出力
+# <a name="wdbgexts-input-and-output"></a>WdbgExts の入力と出力
 
 
 このトピックでは、入力と出力の概要は WdbgExts API を使用して実行できます。 入力と出力のストリームの概要については、[デバッガー エンジン](introduction.md#debugger-engine)を参照してください[入力し、出力](input-and-output.md)で、[デバッガー エンジンの概要](debugger-engine-overview.md)このドキュメントの「します。
@@ -23,7 +23,7 @@ ms.locfileid: "56529372"
 
 ユーザーによる割り込みを確認するには、使用[ **CheckControlC**](https://msdn.microsoft.com/library/windows/hardware/ff539072)します。 この関数は、ユーザーが拡張機能の実行をキャンセルしようとしたかどうかを判断するループ内で使用する必要があります。
 
-強力な入力と出力の API では、[を使用して入力と出力](using-input-and-output.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
+強力な入力と出力の API では、次を参照してください。[を使用して入力と出力](using-input-and-output.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: 処理がコールアウトを非同期的に分類します。
-description: 処理がコールアウトを非同期的に分類します。
+title: 分類コールアウトの非同期の処理
+description: 分類コールアウトの非同期の処理
 ms.assetid: 1026f917-7b21-4b01-8cfd-4d14e92106fe
 keywords:
 - WFP の非同期処理コールアウト WDK Windows フィルタ リング プラットフォームの分類します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17932ca1577d5817bc23c46c5f7359424751429b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327706"
 ---
-# <a name="processing-classify-callouts-asynchronously"></a>処理がコールアウトを非同期的に分類します。
+# <a name="processing-classify-callouts-asynchronously"></a>分類コールアウトの非同期の処理
 
 
 WFP コールアウト ドライバーを承認または拒否のネットワーク操作または認めざるを得ませんまたはアクションの種類を返すことによって、ネットワーク パケットを破棄**FWP\_アクション\_許可**、 **FWP\_アクション\_続行**、または**FWP\_アクション\_ブロック**から、 [ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数。 頻繁にコールアウト ドライバーが検査決定を返すことはできません、 *classifyFn*別に処理関数まで分類可能なフィールド、メタデータ、またはパケットをなど、指定された情報を転送できますユーザー モード アプリケーションなどのコンポーネント。 このような場合、意思決定が後で非同期に実行する必要があります。

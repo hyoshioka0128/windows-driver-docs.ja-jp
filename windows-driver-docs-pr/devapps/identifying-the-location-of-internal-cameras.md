@@ -5,16 +5,16 @@ ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af9bc003e24c90fa776d8161af8879e8ca9d1fc6
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330698"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>内蔵カメラ (UWP デバイス アプリ) の場所を識別します。
 
 
-このトピックでは、Windows 8.1 でのシステムで内蔵カメラのサポートについての情報を提供します。 これには、UWP アプリで正しく動作するために、組み込みのカメラの物理的な場所を特定する方法について説明します。 UWP デバイス アプリを使用して、カメラが動作するように、モデル ID を設定する方法も説明します。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+このトピックでは、Windows 8.1 でのシステムで内蔵カメラのサポートについての情報を提供します。 これには、UWP アプリで正しく動作するために、組み込みのカメラの物理的な場所を特定する方法について説明します。 UWP デバイス アプリを使用して、カメラが動作するように、モデル ID を設定する方法も説明します。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
 ## <a name="span-idprovidingphysicallocationspanspan-idprovidingphysicallocationspanspan-idprovidingphysicallocationspanproviding-physical-location"></a><span id="Providing_physical_location"></span><span id="providing_physical_location"></span><span id="PROVIDING_PHYSICAL_LOCATION"></span>物理的な場所を提供します。
 
@@ -40,7 +40,7 @@ Windows では、次の理由で内蔵カメラの物理的な場所を把握す
 
 認定要件に従って**System.Client.PCContainer.PCAppearsAsSingleObject**とも呼ばれますの SYSFUND 0200 PC デバイス コンテナーの下で、内部のカメラのデバイス ノードをグループ化する必要があります。 つまり、内部のカメラに表示されるされません**デバイスとプリンター**し、PC のコンテナーに統合する必要があります。
 
-この要件を実装する方法は、内部のカメラのバスの種類によって異なります。 含めることによって、ACPI レイヤーで適切なグループ化を指定できます、デバイスは、ACPI テーブル内の物理デバイスの場所に関する情報を公開できますが場合、 \_PLD については、テーブルと」の説明に従って、ACPI テーブルで UserVisible フラグを変更します。[多機能デバイスのサポートとデバイスのコンテナー グループ分け](https://go.microsoft.com/fwlink/p/?LinkId=320505)します。 それ以外の場合、DeviceOverrides のレジストリ キーを使用してリムーバブル フラグをオーバーライドします。 詳細については、[DeviceOverrides レジストリ キー](https://go.microsoft.com/fwlink/p/?LinkId=320506)を参照してください。
+この要件を実装する方法は、内部のカメラのバスの種類によって異なります。 含めることによって、ACPI レイヤーで適切なグループ化を指定できます、デバイスは、ACPI テーブル内の物理デバイスの場所に関する情報を公開できますが場合、 \_PLD については、テーブルと」の説明に従って、ACPI テーブルで UserVisible フラグを変更します。[多機能デバイスのサポートとデバイスのコンテナー グループ分け](https://go.microsoft.com/fwlink/p/?LinkId=320505)します。 それ以外の場合、DeviceOverrides のレジストリ キーを使用してリムーバブル フラグをオーバーライドします。 詳細については、次を参照してください。 [DeviceOverrides レジストリ キー](https://go.microsoft.com/fwlink/p/?LinkId=320506)します。
 
 ### <a name="span-idhowtoprovidephysicallocationusingpldinfointheacpitablespanspan-idhowtoprovidephysicallocationusingpldinfointheacpitablespanspan-idhowtoprovidephysicallocationusingpldinfointheacpitablespanhow-to-provide-physical-location-using-pld-info-in-the-acpi-table"></a><span id="How_to_provide_physical_location_using__PLD_info_in_the_ACPI_table"></span><span id="how_to_provide_physical_location_using__pld_info_in_the_acpi_table"></span><span id="HOW_TO_PROVIDE_PHYSICAL_LOCATION_USING__PLD_INFO_IN_THE_ACPI_TABLE"></span>物理的な場所を使用して提供する方法\_ACPI テーブル PLD 情報
 
@@ -244,7 +244,7 @@ Windows Registry Editor Version 5.00
 
 内部のカメラのデバイス メタデータ パッケージには、その他のデバイスのデバイス メタデータ パッケージと同じ構造があります。 MetadataKey **packageinfo.xml**デバイス メタデータ パッケージは InternalDeviceModification のレジストリ キーを使用して定義されているモデルの ID。 Windows メタデータ システムは、モデルの ID に基づくデバイス メタデータ パッケージをダウンロードします。 内部のカメラのハードウェア ID は使用されません。
 
-UWP デバイス アプリのデバイス メタデータを作成する方法の詳細については、[構築 UWP デバイス アプリ](the-workflow.md)を参照してください。
+UWP デバイス アプリのデバイス メタデータを作成する方法の詳細については、次を参照してください。[構築 UWP デバイス アプリ](the-workflow.md)します。
 
 ### <a name="span-idpre-installationspanspan-idpre-installationspanspan-idpre-installationspanpre-installation"></a><span id="Pre-installation"></span><span id="pre-installation"></span><span id="PRE-INSTALLATION"></span>インストール前
 

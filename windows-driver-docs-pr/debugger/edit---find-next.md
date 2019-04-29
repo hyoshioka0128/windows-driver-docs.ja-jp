@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80006ab1fcadb4e04aea61663a03c70c9f2ab40f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331418"
 ---
-# <a name="edit--find-next"></a>編集 |次を検索します。
+# <a name="edit--find-next"></a>Edit | Find Next (編集 | 次を検索)
 
 
 ## <span id="ddk_edit_find_next_dbg"></span><span id="DDK_EDIT_FIND_NEXT_DBG"></span>
@@ -29,7 +29,7 @@ ms.locfileid: "56559559"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-その他のデバッグ情報のウィンドウでテキストの検索方法の詳細については、[ウィンドウの移動](moving-through-a-window.md)を参照してください。
+その他のデバッグ情報のウィンドウでテキストの検索方法の詳細については、次を参照してください。[ウィンドウの移動](moving-through-a-window.md)します。
 
  
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56986dd49aa3293cefa8c4774ad9cb0d28b2a2b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326062"
 ---
 # <a name="allocating-an-adapter-channel-for-packet-based-dma"></a>パケットベース DMA 用のアダプター チャネルの割り当て
 
@@ -60,7 +60,7 @@ ms.locfileid: "56570104"
 
 2.  返す**KeepObject**します。
 
-詳細については、[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)を参照してください。
+詳細については、次を参照してください。[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)します。
 
 他のドライバー ルーチン (おそらく、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン) 呼び出す必要があります[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)各 DMA で操作を転送する場合完了しました。 このルーチンも呼び出す必要があります**MapTransfer**と**FlushAdapterBuffers**もう一度は現在 IRP の転送要求を満たすために複数回 DMA コント ローラーを設定するために必要なかどうか。
 

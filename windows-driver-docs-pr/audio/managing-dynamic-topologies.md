@@ -1,6 +1,6 @@
 ---
-title: 動的トポロジを管理します。
-description: 動的トポロジを管理します。
+title: 動的なトポロジの管理
+description: 動的なトポロジの管理
 ms.assetid: 324c372b-c8d6-4eed-b4ea-071b3d5412b1
 keywords:
 - 動的トポロジ WDK オーディオ
@@ -10,18 +10,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d2d15b75ea0368eaae4f07acb10bbcd31d6488b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332392"
 ---
-# <a name="managing-dynamic-topologies"></a>動的トポロジを管理します。
+# <a name="managing-dynamic-topologies"></a>動的なトポロジの管理
 
 
 オーディオのアダプターには、サブデバイス スピーカー、マイク、ユーザーは、アダプターの前面または背面パネルのオーディオ ジャックに接続するなど、外部のオーディオ デバイスを提供するためのいくつかの数が含まれています。 各サブデバイス サービスの特定のオーディオ ジャックまたはジャックのグループ。
 
-オーディオ ドライバーには、内部接続のマップでは基本的には、トポロジを表示して、サブデバイス内の要素の処理で各サブデバイスがについて説明します。 システム提供の Windows API モジュールとベンダーから提供されたコントロール パネル アプリケーション、サブデバイスの機能を決定し、コントロールの内部のポイントを識別するために、トポロジ情報を使用します。 詳細については、[フィルター トポロジを公開する](exposing-filter-topology.md)を参照してください。
+オーディオ ドライバーには、内部接続のマップでは基本的には、トポロジを表示して、サブデバイス内の要素の処理で各サブデバイスがについて説明します。 システム提供の Windows API モジュールとベンダーから提供されたコントロール パネル アプリケーション、サブデバイスの機能を決定し、コントロールの内部のポイントを識別するために、トポロジ情報を使用します。 詳細については、次を参照してください。[フィルター トポロジを公開する](exposing-filter-topology.md)します。
 
 前に開発された WDM オーディオ ドライバー、 [IUnregisterSubdevice](https://msdn.microsoft.com/library/windows/hardware/ff537030)と[IUnregisterPhysicalConnection](https://msdn.microsoft.com/library/windows/hardware/ff537022)インターフェイスが利用可能になったほぼ静的なトポロジを持ちます。 これらのドライバーのアダプター ドライバー、サブデバイスを管理するためのミニポート ドライバー オブジェクトが作成された後オブジェクトとその関連付けられているサブデバイス永続化アダプターのドライバー オブジェクトの有効期間。
 

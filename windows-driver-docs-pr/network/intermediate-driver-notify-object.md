@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bdc7bc871446b4a8308949c4376a7da33bd3be8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391657"
 ---
 # <a name="intermediate-driver-notify-object"></a>中間ドライバー通知オブジェクト
 
@@ -23,7 +23,7 @@ ms.locfileid: "56571801"
 
 通知オブジェクトをインストールに含めるには、中間ドライバー プロトコル INF に参照する必要があります。 中間のフィルター ドライバーでは、通知オブジェクトは必要ありません。 柔軟な構成オプションをユーザーに提供したい場合は、フィルター、中間ドライバーに通知オブジェクトを含めることができます。
 
-Windows vista では、ミニポート INF ファイルをシステム INF ディレクトリにコピーするのにには、通知オブジェクトまたはカスタム セットアップ アプリケーションを使用できます。 これらのいずれかを使用する**SetupCopyOEMInf** (Microsoft Windows SDK のドキュメントで説明)、INF をコピーします。 Windows Vista およびそれ以降のオペレーティング システム バージョンでは、使用する必要があります、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)プロトコル ミニポート INF をコピーする INF でします。 INF ファイルをコピーする方法の詳細については、[コピー Inf](https://msdn.microsoft.com/library/windows/hardware/ff540117)を参照してください。
+Windows vista では、ミニポート INF ファイルをシステム INF ディレクトリにコピーするのにには、通知オブジェクトまたはカスタム セットアップ アプリケーションを使用できます。 これらのいずれかを使用する**SetupCopyOEMInf** (Microsoft Windows SDK のドキュメントで説明)、INF をコピーします。 Windows Vista およびそれ以降のオペレーティング システム バージョンでは、使用する必要があります、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)プロトコル ミニポート INF をコピーする INF でします。 INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](https://msdn.microsoft.com/library/windows/hardware/ff540117)します。
 
 MUX 中間ドライバーに通知オブジェクトがインストールおよび仮想 miniports を削除するサービスを提供する必要があります。 これは、自動またはユーザー インターフェイスを提供することで実行できます。 仮想ミニポートのレジストリにデバイス名の一覧が管理する必要があります。 デバイス名の一覧は、仮想ミニポートと物理デバイス間のバインドを定義します。 たとえば、n 対一 MUX 中間ドライバーのサンプルは通知オブジェクト内の各物理デバイスにバインドされている仮想ミニポートのリストを保持する、 **UpperBindings**レジストリ エントリ。 MUX サンプル ドライバーの読み込み、 **UpperBindings**を一覧表示し、各エントリに対して仮想ミニポートを初期化します。
 

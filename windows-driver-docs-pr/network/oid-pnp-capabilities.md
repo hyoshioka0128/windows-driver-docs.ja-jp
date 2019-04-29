@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PNP_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 80e05b1fa546f0bec9139954c15a4d529a873186
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391639"
 ---
 # <a name="oidpnpcapabilities"></a>OID\_PNP\_機能
 
@@ -110,7 +110,7 @@ OID\_PNP\_機能では、ミニポート ドライバーのウェイク アッ�
 
 中間のドライバーを返す必要があります、基になるネットワーク アダプターがないかどうか PM に対応した、 **NDIS\_状態\_いない\_サポートされている**OID のクエリに\_PNP\_機能。
 
-**注**  NDIS 6.20 が動作し、それ以降のミニポート ドライバーの電源管理機能を報告する方法については、[電源管理機能の報告](https://msdn.microsoft.com/library/windows/hardware/ff570672)を参照してください。
+**注**  NDIS 6.20 が動作し、それ以降のミニポート ドライバーの電源管理機能を報告する方法については、次を参照してください。[電源管理機能の報告](https://msdn.microsoft.com/library/windows/hardware/ff570672)します。
 
  
 

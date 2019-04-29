@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 16afbd844b7a29c2b15db887ca83a44110c92411
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330768"
 ---
 # <a name="usb3kdxhcicommandring"></a>! usb3kd.xhci\_commandring
 
@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>コメント
 -------
 
-出力、 **! xhci\_commandring**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。
+出力、 **! xhci\_commandring**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
 
 コマンドのリングは、ホスト コント ローラーにコマンドを渡すために、USB 3.0 ホスト コント ローラー ドライバーによって使用データ構造です。
 

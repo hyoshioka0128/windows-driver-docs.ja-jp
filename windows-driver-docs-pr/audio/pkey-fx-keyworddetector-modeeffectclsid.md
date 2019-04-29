@@ -5,11 +5,11 @@ ms.assetid: 67030999-0658-4880-9CC8-A25496DE584E
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce7adbf5a9ccd819806f80ae19ef7d6b70e18be7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332134"
 ---
 # <a name="pkeyfxkeyworddetectormodeeffectclsid"></a>鍵\_FX\_KeywordDetector\_ModeEffectClsid
 
